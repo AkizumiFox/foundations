@@ -60,7 +60,7 @@ by (F5), (F6) and (F9), and \( kx + ly \in \nZ \). So \( a \mid bx + cy \).
 
 (h) Let \( a \ne 0 \). By the converse part of @prp-order-from-positives, applied to the ordered ring \( \nZ \), the set \( \{ x \in \nZ : x > 0 \} \) satisfies (P2), so exactly one of \( a > 0 \), \( -a > 0 \) holds. That set is \( \nZ_{>0} \) by @thm-integers-ordered-ring (b).
 
-(e) Let \( b = ka \) with \( k \in \nZ \), \( a > 0 \) and \( b > 0 \). We show first that \( k > 0 \). If \( k = 0 \), then \( b = 0 \cdot a = 0 \) by @prp-ring-algebra (b), against \( b > 0 \). If \( k < 0 \), then \( ka < 0 \cdot a = 0 \) by @prp-ordered-ring-rules (c) (multiplying \( k < 0 \) by \( a > 0 \)), again against \( b > 0 \). So \( k > 0 \), and by discreteness (@thm-integers-ordered-ring (c), with \( 0 < k \)) \( 1 \le k \). If \( k = 1 \), then \( b = a \). If \( 1 < k \), then \( k - 1 > 0 \) by @prp-ordered-ring-rules (a), so \( (k - 1)a > 0 \cdot a = 0 \) by @prp-ordered-ring-rules (c), that is, \( b - a = ka - a = (k - 1)a > 0 \), and \( a < b \) by @prp-ordered-ring-rules (a). In both cases \( a \le b \).
+(e) Let \( b = ka \) with \( k \in \nZ \), \( a > 0 \) and \( b > 0 \). We show first that \( k > 0 \). If \( k = 0 \), then \( b = 0 \cdot a = 0 \) by @prp-ring-algebra (b), against \( b > 0 \). If \( k < 0 \), then \( ka < 0 \cdot a = 0 \) by @prp-ordered-ring-rules (c) (multiplying \( k < 0 \) by \( a > 0 \)), again against \( b > 0 \). So \( k > 0 \), and by discreteness (@thm-integers-ordered-ring (c), with \( 0 < k \)) \( 1 \le k \). If \( k = 1 \), then \( b = a \). If \( 1 < k \), then \( k - 1 > 0 \) by @prp-ordered-ring-rules (a), so \( (k - 1)a > 0 \cdot a = 0 \) by @prp-ordered-ring-rules (c), that is, \( b - a = ka + (-1)a = (k - 1)a > 0 \) (@prp-ring-algebra (c), (F7) and (F9)), and \( a < b \) by @prp-ordered-ring-rules (a). In both cases \( a \le b \).
 
 (f) Let \( a, b \in \nN \) with \( a \mid b \) and \( b \mid a \). If \( a = 0 \), then \( 0 \mid b \), so \( b = 0 = a \) by (a). If \( b = 0 \), then \( a = 0 \) in the same way. Otherwise \( a, b \in \nN \) are non-zero, hence positive (@thm-integers-ordered-ring (b)), and (e) gives \( a \le b \) and \( b \le a \). Since \( \le \) is a total order (@prp-ordered-ring-rules (i)), it is antisymmetric, and \( a = b \).
 
@@ -106,11 +106,11 @@ Among the integers \( a - kn \), \( k \in \nZ \), look at the non-negative ones.
 \[
 R \coloneqq \{ a - kn : k \in \nZ \} \cap \{ x \in \nZ : x \ge 0 \} .
 \]
-We show \( R \ne \emptyset \). If \( a \ge 0 \), take \( k = 0 \): \( a - 0 \cdot n = a - 0 = a \ge 0 \), by @prp-ring-algebra (b). If \( a < 0 \), take \( k = a \): then \( a - an = a + a(-n) = a(1 - n) \) by @prp-ring-algebra (c), (F7) and (F9). Since \( n > 0 \), discreteness (@thm-integers-ordered-ring (c)) gives \( 1 \le n \). If \( n = 1 \), then \( a(1 - n) = a \cdot 0 = 0 \) by @prp-ring-algebra (b). If \( 1 < n \), then \( -n < -1 \) by @prp-ordered-ring-rules (a), so \( 1 - n < 0 \) by (O3); multiplying \( a < 0 \) by \( 1 - n < 0 \) reverses the inequality (@prp-ordered-ring-rules (d)), so \( a(1 - n) > 0 \cdot (1 - n) = 0 \). In every case \( R \) has an element.
+We show \( R \ne \emptyset \). If \( a \ge 0 \), take \( k = 0 \): \( a - 0 \cdot n = a - 0 = a \ge 0 \), by (F6), @prp-ring-algebra (b) and \( -0 = 0 \) (\( 0 + 0 = 0 \) and @prp-ring-algebra (a)). If \( a < 0 \), take \( k = a \): then \( a - an = a + a(-n) = a(1 - n) \) by @prp-ring-algebra (c), (F7) and (F9). Since \( n > 0 \), discreteness (@thm-integers-ordered-ring (c)) gives \( 1 \le n \). If \( n = 1 \), then \( a(1 - n) = a \cdot 0 = 0 \) by @prp-ring-algebra (b). If \( 1 < n \), then \( -n < -1 \) by @prp-ordered-ring-rules (a), so \( 1 - n < 0 \) by (O3); multiplying \( a < 0 \) by \( 1 - n < 0 \) reverses the inequality (@prp-ordered-ring-rules (d)), so \( a(1 - n) > 0 \cdot (1 - n) = 0 \). In every case \( R \) has an element.
 
 The set \( R \subseteq \nZ \) is non-empty and has the lower bound \( 0 \), so by @prp-integer-least-element it has a least element \( r \). Write \( r = a - qn \) with \( q \in \nZ \). Then \( a = qn + r \) and \( r \ge 0 \).
 
-Suppose \( r \ge n \). Then \( r - n \ge 0 \): if \( r = n \), then \( r - n = 0 \) by (F4); if \( r > n \), then \( r - n > 0 \) by @prp-ordered-ring-rules (a). Also \( r - n = a - qn - n = a - (q + 1)n \), so \( r - n \in R \). But \( -n < 0 \) (@prp-ordered-ring-rules (a), since \( n > 0 \)), so \( r - n < r \) by (O3). This contradicts the choice of \( r \) as least. Hence \( r < n \).
+Suppose \( r \ge n \). Then \( r - n \ge 0 \): if \( r = n \), then \( r - n = 0 \) by (F4); if \( r > n \), then \( r - n > 0 \) by @prp-ordered-ring-rules (a). Also \( r - n = a - qn - n = a + (-1)(qn) + (-1)n = a + (-1)\bigl((q + 1)n\bigr) = a - (q + 1)n \), since \( -x = (-1)x \) for every \( x \) (@prp-ring-algebra (c) and (F7)) and by (F9), so \( r - n \in R \). But \( -n < -0 = 0 \) (@prp-ordered-ring-rules (a), since \( n > 0 \)), so \( r - n < r \) by (O3). This contradicts the choice of \( r \) as least. Hence \( r < n \).
 
 *Uniqueness.* Let \( a = qn + r = q'n + r' \) with \( q, q', r, r' \in \nZ \), \( 0 \le r < n \) and \( 0 \le r' < n \). Suppose \( r \ne r' \). Exchanging \( (q, r) \) and \( (q', r') \) changes neither the hypotheses nor the goal, so we may suppose \( r' < r \). Then
 \[
@@ -279,10 +279,12 @@ The hypothesis \( n > 0 \) is used when multiplying by \( n \): for \( n < 0 \),
 <!-- dependency ledger
 prp-divisibility-rules-integers (proof): ring laws (F1)-(F7), (F9) of Z | thm-integers-commutative-ring (cited at the start of the proof)
 prp-divisibility-rules-integers (proof): (h), exactly one of a > 0, -a > 0 for a != 0 | prp-order-from-positives (converse part, (P2)), thm-integers-ordered-ring (b), cited
+prp-divisibility-rules-integers (proof): (e), b - a = ka + (-1)a = (k - 1)a | prp-ring-algebra (c), (F7), (F9), cited
 prp-divisibility-rules-integers (proof): antisymmetry of <= on Z | prp-ordered-ring-rules (i) (total order, fd2 def-partial-order), cited
-thm-integers-division-remainder (proof): a - an = a + a(-n) = a(1 - n) and a - 0 = a | prp-ring-algebra (c), (F7), (F9), prp-ring-algebra (b), cited
+thm-integers-division-remainder (proof): a - an = a + a(-n) = a(1 - n) and a - 0 = a | prp-ring-algebra (c), (F7), (F9), prp-ring-algebra (b), (F6), cited
+thm-integers-division-remainder (proof): -0 = 0 (in a - 0 = a and -n < -0 = 0) | 0 + 0 = 0 by (F3), uniqueness prp-ring-algebra (a), cited
 thm-integers-division-remainder (proof): r - n >= 0 from r >= n | (F4) if r = n, prp-ordered-ring-rules (a) if r > n, cited
-thm-integers-division-remainder (proof): r - n = a - (q + 1)n | ring laws of Z, thm-integers-commutative-ring
+thm-integers-division-remainder (proof): r - n = a + (-1)(qn) + (-1)n = a + (-1)((q + 1)n) = a - (q + 1)n | -x = (-1)x by prp-ring-algebra (c), (F7); (F9), cited
 thm-integers-division-remainder (proof): adding r - r' to 0 <= r' gives r - r' <= r; adding qn to 0 <= r < n | prp-ordered-ring-rules (b), cited
 thm-integers-division-remainder (proof): integer sums, products and comparisons are the same in Q | prp-integers-embed-rationals, thm-rationals-ordered-field (b) (cited); identification of F3.2 §04
 thm-integers-division-remainder (proof): qn * n^{-1} = q and (qn + n) n^{-1} = q + 1 | field laws of Q (thm-rationals-field via thm-rationals-ordered-field), (F5), (F8), (F9)

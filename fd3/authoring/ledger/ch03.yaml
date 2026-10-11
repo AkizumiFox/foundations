@@ -81,6 +81,16 @@ items:
       and it is not cited. This is the same kind of omission that was fixed in the division proof (:109).
       Fix: write ''b - a = ka + (-1)a = (k - 1)a by @prp-ring-algebra (c), (F7) and (F9)'', and add it
       to the ledger line.'
+  - stage: S7r
+    verdict: correct
+    by: rereferee
+    hash: baa3ae37e6cc
+    date: '2026-10-12'
+    model: claude-opus-5-5
+    evidence: = (k-1)a by ring-algebra (c), (F7) and (F9), with (F6) under the :47 blanket, and a < b
+      by rules (a). (f) uses (a), (e) and antisymmetry from rules (i). (g) uses 1 != 0 from thm-integers-commutative-ring,
+      then (h), (d), rules (e), part (e) and discreteness, and a = -(-a) = -1 by ring-algebra (a). Every
+      cited label says what the proof uses (checked against 03-ordered-rings.md:105-111 and :311-320).
 - key: check:01-division-with-remainder:1
   kind: check
   file: 01-division-with-remainder.md
@@ -168,6 +178,17 @@ items:
       of negatives (@prp-ring-algebra (a)) or (-1)x = -x (@prp-ring-algebra (c)). Neither is a ring law,
       and the ledger line says only ''ring laws of Z''. Fix: cite @prp-ring-algebra (c) (or (a)) there
       and in the ledger.'
+  - stage: S7r
+    verdict: correct
+    by: rereferee
+    hash: dcf1ee16608b
+    date: '2026-10-12'
+    model: claude-opus-5-5
+    evidence: ' rules (f). (b): adding qn gives qn <= a < qn + n. Pass to Q (prp-integers-embed-rationals,
+      thm-rationals-ordered-field (b)), use n^{-1} > 0 (prp-reciprocal-order (a)) and multiply by rules
+      (c), then uniqueness in prp-rational-integer-part. Some axiom steps are left tacit ((F2), and (F6)
+      for 1·x = x and right distributivity), consistent with the rest of the proof. No derived lemma is
+      left uncited.'
 - key: check:01-division-with-remainder:2
   kind: check
   file: 01-division-with-remainder.md
@@ -1027,6 +1048,17 @@ items:
       is the ''In words'' paragraph at line 51, which checks nothing; the check is in the ''Why the product
       exists'' paragraph at line 53. Fix: write ''the paragraph "Why the product exists" below checks
       directly ...''.'
+  - stage: S7r
+    verdict: correct
+    by: rereferee
+    hash: b96cae27324b
+    date: '2026-10-12'
+    model: claude-opus-5-5
+    evidence: 'ist has product 1 and meets the prime and order conditions vacuously, and the statement
+      that the existence proof uses it to rule out n = 1 agrees with the earlier S7 finding about line
+      164. The non-examples are right: (2,3,2,5) has 3 > 2 at positions 2 < 3, and (2,2,15) fails because
+      15 = 3·5 is not prime. The count of twelve orderings of {2,2,3,5} is right, since 4!/2! = 12. No
+      remaining defects.'
 - key: check:03-unique-factorization:1
   kind: check
   file: 03-unique-factorization.md

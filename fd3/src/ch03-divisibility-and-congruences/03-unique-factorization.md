@@ -34,7 +34,7 @@ Each hypothesis has a job. Without \( \gcd(a, b) = 1 \) the conclusion fails: \(
 
 To say that a factorization is unique, we must first say what a factorization is. The products \( 2 \cdot 2 \cdot 3 \cdot 5 \) and \( 3 \cdot 2 \cdot 5 \cdot 2 \) are equal and use the same primes, and we want to count them as one. We do so by writing the primes in order, smallest first. A factorization also has a length, and the length may be \( 0 \): the number \( 1 \) is the product of no primes at all.
 
-Products of lists are defined by the recursion of @fd2:def-sum-product. That definition was made for sequences of real numbers, and we use it as a pattern, as group (iii) of the citing rule of Section 1.7 allows, with the ordered field \( \nQ \) (@thm-rationals-ordered-field) in place of \( \nR \). A product of integers is an integer (@prp-integers-embed-rationals), so the products of lists below lie in \( \nZ \); the paragraph after the definition checks directly that the recursion runs in \( \nZ \).
+Products of lists are defined by the recursion of @fd2:def-sum-product. That definition was made for sequences of real numbers, and we use it as a pattern, as group (iii) of the citing rule of Section 1.7 allows, with the ordered field \( \nQ \) (@thm-rationals-ordered-field) in place of \( \nR \). A product of integers is an integer (@prp-integers-embed-rationals), so the products of lists below lie in \( \nZ \); the paragraph "Why the product exists" below checks directly that the recursion runs in \( \nZ \).
 
 ::: {#def-prime-factorization}
 [List, Product of a List, Prime Factorization]
