@@ -6,520 +6,2316 @@ items:
   file: 01-polynomials-as-sequences.md
   line: 25
   hash: 5c907723e6ed
-  verdicts: []
+  verdicts:
+  - stage: S5a
+    verdict: correct
+    by: refereeA
+    hash: 5c907723e6ed
+    date: '2026-10-12'
+    model: claude-opus-5-5
+    evidence: '01:25-31 and surrounding prose 01:9-51. Checked: the F_2 hook values; x^3+x and x^4+x^2
+      both vanish at 0 and 1; equality via fd2:prp-function-equality (fd2 04-functions.md:116); every
+      M >= N admissible; the zero ring has one function N->{0}, so x = 0 (fd3 03-ordered-rings.md:36).
+      Sidecar def-polynomial.py ok.'
+  - stage: S5b
+    verdict: minor
+    by: refereeB
+    hash: 5c907723e6ed
+    date: '2026-10-12'
+    model: claude-opus-5-5
+    evidence: '01-polynomials-as-sequences.md:83 The meta-claim ''school rules about polynomials cannot
+      be assumed: each one is proved in this chapter'' is false. The list of what results need from R
+      also leaves out one item that the chapter index names.'
 - key: exm-elements-of-rx
   kind: exm
   file: 01-polynomials-as-sequences.md
   line: 53
   hash: d19d182b256a
-  verdicts: []
+  verdicts:
+  - stage: S5a
+    verdict: minor
+    by: refereeA
+    hash: d19d182b256a
+    date: '2026-10-12'
+    model: claude-opus-5-5
+    evidence: 01-polynomials-as-sequences.md:74 Integer symbols are read as elements of Z/nZ (7 in Z/5Z,
+      6 in Z/6Z, 1 in Z/4Z) without a stated convention. The only convention on record, def-field-fp,
+      covers F_p only.
+  - stage: S5b
+    verdict: correct
+    by: refereeB
+    hash: d19d182b256a
+    date: '2026-10-12'
+    model: claude-opus-5-5
+    evidence: '01:68-76: all five coefficient sequences are right. [7]=[2] in Z/5Z and 7=1 in F_2 match
+      def-field-fp. The admissible N are right. The sidecar runs ok.'
 - key: check:01-polynomials-as-sequences:1
   kind: check
   file: 01-polynomials-as-sequences.md
   line: 89
   hash: fe8959f916fb
-  verdicts: []
+  verdicts:
+  - stage: S5a
+    verdict: minor
+    by: refereeA
+    hash: fe8959f916fb
+    date: '2026-10-12'
+    model: claude-opus-5-5
+    evidence: '01:94. The answer is right ([6]=[0] in Z/6Z, and 6 != 0 in Z). Only issue: reading 6 as
+      [6] in Z/6Z rests on an unstated convention (same finding as exm-elements-of-rx).'
+  - stage: S5b
+    verdict: correct
+    by: refereeB
+    hash: fe8959f916fb
+    date: '2026-10-12'
+    model: claude-opus-5-5
+    evidence: '01:94: [6]=[0] in Z/6Z, and 6 != 0 in Z. The ledger records both at 01:269.'
 - key: lem-finite-sums-and-powers
   kind: lem
   file: 01-polynomials-as-sequences.md
   line: 103
   hash: ce1d2f8b8553
-  verdicts: []
+  verdicts:
+  - stage: S5a
+    verdict: minor
+    by: refereeA
+    hash: ce1d2f8b8553
+    date: '2026-10-12'
+    model: claude-opus-5-5
+    evidence: 01-polynomials-as-sequences.md:120 (Σ3) is presented as @lem-ring-finite-sums (d), but as
+      stated it has a weaker hypothesis, and its index j is unquantified.
+  - stage: S5b
+    verdict: minor
+    by: refereeB
+    hash: ce1d2f8b8553
+    date: '2026-10-12'
+    model: claude-opus-5-5
+    evidence: 01-polynomials-as-sequences.md:138 Two meta-claims are false. 01:138 says (a) 'needs no
+      law of addition at all', and 01:101 says (a) 'asks for an addition and nothing more'.
+  - stage: S8
+    verdict: minor
+    by: seam
+    hash: ce1d2f8b8553
+    date: '2026-10-12'
+    model: claude-opus-5-5
+    evidence: 01-polynomials-as-sequences.md:120 (Σ3) is credited to @lem-ring-finite-sums (d), but it
+      is stated under a weaker hypothesis. The step from one to the other (extend by zeros) is not said.
 - key: proof:lem-finite-sums-and-powers
   kind: proof
   file: 01-polynomials-as-sequences.md
   line: 147
   hash: e29506f780d1
-  verdicts: []
+  verdicts:
+  - stage: S5a
+    verdict: correct
+    by: refereeA
+    hash: e29506f780d1
+    date: '2026-10-12'
+    model: claude-opus-5-5
+    evidence: '01:148-156. (a): fd2:thm-recursion with g(j,y)=y+u_j; Σ_0 = S_1 = 0+u_0 = u_0 uses the
+      0+u=u hypothesis; uniqueness and dependence on u_0..u_k go through by induction (j+1<=k+1 gives
+      j<=k). Products are handled the same way. (c): fd3:thm-omega-arithmetic-laws (c) is associativity,
+      giving m+(n+1)=(m+n)+1; (d),(e) give m(n+1)=mn+m; (F5),(F6),(F7) are used correctly against fd3
+      03-ordered-rings.md:17'
+  - stage: S5b
+    verdict: minor
+    by: refereeB
+    hash: e29506f780d1
+    date: '2026-10-12'
+    model: claude-opus-5-5
+    evidence: 01-polynomials-as-sequences.md:156 The base case '(s^m)^0 = 1 = s^0 = s^{m*0}' uses m*0
+      = 0 without a citation, and the ledger's source for it is wrong.
 - key: exr-polynomials-as-sequences-a1
   kind: exr
   file: 01-polynomials-as-sequences.md
   line: 166
   hash: f5f3a221ee95
-  verdicts: []
+  verdicts:
+  - stage: S5a
+    verdict: correct
+    by: refereeA
+    hash: f5f3a221ee95
+    date: '2026-10-12'
+    model: claude-opus-5-5
+    evidence: 01:178-184. (0,-2,0,1,...) is right; [2]x^2+[4]x = [2]x^2 because [4]=[0]; (c) is a valid
+      counterexample from x^2+x versus 0; the admissible N are exactly N >= 2. Sidecar ok.
+  - stage: S5b
+    verdict: minor
+    by: refereeB
+    hash: f5f3a221ee95
+    date: '2026-10-12'
+    model: claude-opus-5-5
+    evidence: 01-polynomials-as-sequences.md:172 Part (c) uses an undefined unbounded sum 'c -> sum_k
+      p_k c^k'.
+  - stage: S6
+    verdict: correct
+    by: verifier
+    hash: f5f3a221ee95
+    date: '2026-10-12'
+    model: claude-opus-5-5
+    evidence: '01:177-185. My own answers match: (a) (0,-2,0,1,...) and ([0],[0],[2],...) = [2]x^2, a
+      monomial (script: [0,4,2] mod 4 = [0,0,2]); (b) ''only finitely many'' fails; (c) false, x^2+x vs
+      0; (d) every N >= 2.'
 - key: exr-polynomials-as-sequences-b1
   kind: exr
   file: 01-polynomials-as-sequences.md
   line: 189
   hash: 13943186e648
-  verdicts: []
+  verdicts:
+  - stage: S5a
+    verdict: minor
+    by: refereeA
+    hash: 13943186e648
+    date: '2026-10-12'
+    model: claude-opus-5-5
+    evidence: 01-polynomials-as-sequences.md:196 R^{N+1}, with tuples indexed from 0, is attributed to
+      fd2:def-cartesian-product, which defines X^n only for n >= 2 and indexes from 1. So N = 0 (R^1)
+      is not covered.
+  - stage: S5b
+    verdict: minor
+    by: refereeB
+    hash: 13943186e648
+    date: '2026-10-12'
+    model: claude-opus-5-5
+    evidence: 01-polynomials-as-sequences.md:196 R^{N+1} is not defined by the cited definition when N
+      = 0.
+  - stage: S6
+    verdict: minor
+    by: verifier
+    hash: 13943186e648
+    date: '2026-10-12'
+    model: claude-opus-5-5
+    evidence: 01-polynomials-as-sequences.md:196 R^{N+1} indexed from 0 is cited to a definition that
+      covers only n >= 2 and indexes from 1, and §01 has no worked example of the bijection-proof type.
 - key: exr-polynomials-as-sequences-b2
   kind: exr
   file: 01-polynomials-as-sequences.md
   line: 211
   hash: cdccc5531edf
-  verdicts: []
+  verdicts:
+  - stage: S5a
+    verdict: minor
+    by: refereeA
+    hash: cdccc5531edf
+    date: '2026-10-12'
+    model: claude-opus-5-5
+    evidence: '01:225-233. (a) least N=1, (b) k=2N+1, (c) k-r=4q is one of the four factors (fd3:thm-integers-division-remainder
+      (a)), (d) all correct; sidecar ok. Only issue: (a) writes the answer as ''1 + [2]x'', so the constant
+      is unbracketed in Z/4Z, against the bracket convention used for Z/nZ elsewhere (e.g. [2]x).'
+  - stage: S5b
+    verdict: correct
+    by: refereeB
+    hash: cdccc5531edf
+    date: '2026-10-12'
+    model: claude-opus-5-5
+    evidence: '01:227-233: each case checks. 2^k=4*2^{k-2} holds for k>=2. k^2 and 2k are 1 and 2 mod
+      4 at odd k. One of k,...,k-3 equals 4q by thm-integers-division-remainder. The least N are 1 and
+      0. The sidecar runs ok.'
+  - stage: S6
+    verdict: correct
+    by: verifier
+    hash: cdccc5531edf
+    date: '2026-10-12'
+    model: claude-opus-5-5
+    evidence: '01:224-236. I agree with all four parts: (a) least N = 1, polynomial 1+[2]x; (b) not a
+      polynomial; (c) zero polynomial, least N = 0; (d) not a polynomial. Script over k < 12: 2^k mod
+      4 = 1,2,0,...; k^2 mod 4 alternates 0,1; k(k-1)(k-2)(k-3) mod 4 is always 0; 2k mod 4 alternates
+      0,2. The worked example type is exm-elements-of-rx plus the (1,1,1,...) non-example.'
 - key: exr-polynomials-as-sequences-c1
   kind: exr
   file: 01-polynomials-as-sequences.md
   line: 240
   hash: f5ba41c5ba33
-  verdicts: []
+  verdicts:
+  - stage: S5a
+    verdict: correct
+    by: refereeA
+    hash: f5ba41c5ba33
+    date: '2026-10-12'
+    model: claude-opus-5-5
+    evidence: '01:247-253. (=>): S ⊆ {0..N}, which has N+1 elements (3rd example after fd2:def-finite),
+      and fd2:prp-subset-finite applies. (<=): induction on n; the restriction of φ to {1..n} is a bijection
+      onto A'' (checked); the max comes from fd3:thm-omega-order (a). The closing remark''s use of fd3:prp-integer-least-element
+      (greatest element for a bounded-above set) is correct.'
+  - stage: S5b
+    verdict: correct
+    by: refereeB
+    hash: f5ba41c5ba33
+    date: '2026-10-12'
+    model: claude-opus-5-5
+    evidence: '01:247-253: (=>) uses fd2''s third example after def-finite and prp-subset-finite correctly.
+      (<=) is a sound induction on the size of the set, restricting the bijection. prp-integer-least-element
+      does give a greatest element (fd3 03-ordered-rings.md:375).'
+  - stage: S6
+    verdict: minor
+    by: verifier
+    hash: f5ba41c5ba33
+    date: '2026-10-12'
+    model: claude-opus-5-5
+    evidence: 01-polynomials-as-sequences.md:246 This full proof C item has no marking scheme.
 - key: def-polynomial-ring
   kind: def
   file: 02-polynomial-ring.md
   line: 13
   hash: 0cf898aaa87f
-  verdicts: []
+  verdicts:
+  - stage: S5a
+    verdict: correct
+    by: refereeA
+    hash: 0cf898aaa87f
+    date: '2026-10-12'
+    model: claude-opus-5-5
+    evidence: '02:13-31. All three closure arguments check: max(m,n) via (F3); -0=0 via 0+0=0 and uniqueness
+      in fd3:prp-ring-algebra (a); for k>m+n and i<=m, k-i>=k-m>n; the zero terms come from (b)+(F6),
+      and the sum of zeros is 0 by (Σ3) with j=k+1>k. The warning computation (x·x)_k is correct.'
+  - stage: S5b
+    verdict: correct
+    by: refereeB
+    hash: 0cf898aaa87f
+    date: '2026-10-12'
+    model: claude-opus-5-5
+    evidence: '02:13-31: the definition and the closure paragraph check out. (F3) gives 0+0=0. (-0)=0
+      follows from fd3:prp-ring-algebra (a). For k>m+n, (Σ3) with j=k+1>k gives a zero sum. The index
+      facts are ledgered at 02:373-375.'
 - key: exm-polynomial-product
   kind: exm
   file: 02-polynomial-ring.md
   line: 33
   hash: d7fd9669bc56
-  verdicts: []
+  verdicts:
+  - stage: S5a
+    verdict: correct
+    by: refereeA
+    hash: d7fd9669bc56
+    date: '2026-10-12'
+    model: claude-opus-5-5
+    evidence: '02:33-56. Over Q: (2,1,2,3), and expanding by hand gives 3x^3+2x^2+x+2. Over F_3: p=(2,2,0),
+      pq=(2,1,2,0). Over Z/6: ([2],[1],[2],[3]). The sidecar passes.'
+  - stage: S5b
+    verdict: correct
+    by: refereeB
+    hash: d7fd9669bc56
+    date: '2026-10-12'
+    model: claude-opus-5-5
+    evidence: '02:40-55: recomputed. Over Q the coefficients are [2,1,2,3]. Mod 3 they are [2,1,2,0],
+      matching 2x^2+x+2. Mod 6 they are [2,1,2,3]. The claim that Section 4.4 explains this is paid by
+      cor-polynomial-coefficient-change (04:217).'
 - key: prp-polynomial-sum-of-monomials
   kind: prp
   file: 02-polynomial-ring.md
   line: 66
   hash: b651395d06e0
-  verdicts: []
+  verdicts:
+  - stage: S5a
+    verdict: correct
+    by: refereeA
+    hash: b651395d06e0
+    date: '2026-10-12'
+    model: claude-opus-5-5
+    evidence: 02:66-73. The sum is well formed by lem-finite-sums-and-powers (a), since 0+u=u was checked
+      at line 64 using (F1),(F3).
+  - stage: S5b
+    verdict: correct
+    by: refereeB
+    hash: b651395d06e0
+    date: '2026-10-12'
+    model: claude-opus-5-5
+    evidence: '02:66-73: the statement is consistent with def-polynomial (01:28-30) and with lem-finite-sums-and-powers
+      (a), which needs only + and a left-neutral 0 (01:109). Line 64 shows the zero polynomial is left-neutral.'
 - key: proof:prp-polynomial-sum-of-monomials
   kind: proof
   file: 02-polynomial-ring.md
   line: 75
   hash: '370092532036'
-  verdicts: []
+  verdicts:
+  - stage: S5a
+    verdict: correct
+    by: refereeA
+    hash: '370092532036'
+    date: '2026-10-12'
+    model: claude-opus-5-5
+    evidence: 02:75-79. Induction on N with p fixed. The base case s_0=u_0 comes from the recursion. The
+      step checks the three position cases with (F1),(F3), and the last part uses function equality.
+  - stage: S5b
+    verdict: correct
+    by: refereeB
+    hash: '370092532036'
+    date: '2026-10-12'
+    model: claude-opus-5-5
+    evidence: '02:76-78: the induction on N uses only + of R[x] and (F1), (F3) in R. The final step compares
+      coefficients via fd2:prp-function-equality. The induction source is ledgered at 02:379.'
 - key: lem-monomial-product
   kind: lem
   file: 02-polynomial-ring.md
   line: 85
   hash: cc6937b75824
-  verdicts: []
+  verdicts:
+  - stage: S5a
+    verdict: correct
+    by: refereeA
+    hash: cc6937b75824
+    date: '2026-10-12'
+    model: claude-opus-5-5
+    evidence: 02:85-94. Both parts are true and the sidecar passes.
+  - stage: S5b
+    verdict: correct
+    by: refereeB
+    hash: cc6937b75824
+    date: '2026-10-12'
+    model: claude-opus-5-5
+    evidence: '02:85-94: (a) and (b) are true as stated, including the case k<m.'
 - key: proof:lem-monomial-product
   kind: proof
   file: 02-polynomial-ring.md
   line: 96
   hash: 582f51f7042a
-  verdicts: []
+  verdicts:
+  - stage: S5a
+    verdict: correct
+    by: refereeA
+    hash: 582f51f7042a
+    date: '2026-10-12'
+    model: claude-opus-5-5
+    evidence: '02:96-100. (Σ3) applies with j=m, since the terms with i≠m are 0·q=0 by fd3:prp-ring-algebra
+      (b)+(F6). (b): a·0=0 directly, and k<m rules out k=m+n.'
+  - stage: S5b
+    verdict: minor
+    by: refereeB
+    hash: 582f51f7042a
+    date: '2026-10-12'
+    model: claude-opus-5-5
+    evidence: 02-polynomial-ring.md:99 The step 'a·0 = 0' in part (b) of the proof has no reference and
+      no ledger line.
 - key: lem-check-on-monomials
   kind: lem
   file: 02-polynomial-ring.md
   line: 119
   hash: 8c0b947b7701
-  verdicts: []
+  verdicts:
+  - stage: S5a
+    verdict: minor
+    by: refereeA
+    hash: 8c0b947b7701
+    date: '2026-10-12'
+    model: claude-opus-5-5
+    evidence: 02:119-127. The statement is correct. The arity symbol m clashes with the monomial exponent
+      m wherever the lemma is applied (see finding).
+  - stage: S5b
+    verdict: correct
+    by: refereeB
+    hash: 8c0b947b7701
+    date: '2026-10-12'
+    model: claude-opus-5-5
+    evidence: '02:119-127: true. The hypotheses (T needs only a function +, with additivity for all fixed
+      values of the other arguments) are exactly what the proof uses. ''j ≤ m'' implicitly means 1 ≤ j
+      ≤ m, which is harmless.'
 - key: proof:lem-check-on-monomials
   kind: proof
   file: 02-polynomial-ring.md
   line: 137
   hash: 5ec07288c6c3
-  verdicts: []
+  verdicts:
+  - stage: S5a
+    verdict: minor
+    by: refereeA
+    hash: 5ec07288c6c3
+    date: '2026-10-12'
+    model: claude-opus-5-5
+    evidence: 02-polynomial-ring.md:122 The lemma's arity symbol m collides with the exponent m wherever
+      the lemma is applied. This is the source of the finding above.
+  - stage: S5b
+    verdict: correct
+    by: refereeB
+    hash: 5ec07288c6c3
+    date: '2026-10-12'
+    model: claude-opus-5-5
+    evidence: '02:138-150: the m=1 induction is sound: p'' has N admissible by prp-polynomial-sum-of-monomials,
+      and p = p'' + p_{N+1}x^{N+1} by the recursion. The m=2 and m=3 cases correctly unlock one argument
+      at a time, and no law of T is used, as line 129 claims.'
 - key: thm-polynomial-ring-laws
   kind: thm
   file: 02-polynomial-ring.md
   line: 161
   hash: f6b2d8cf3d11
-  verdicts: []
+  verdicts:
+  - stage: S5a
+    verdict: minor
+    by: refereeA
+    hash: f6b2d8cf3d11
+    date: '2026-10-12'
+    model: claude-opus-5-5
+    evidence: 02:161-172. All parts are true. The only issue is the m arity/exponent clash in the proof
+      (finding).
+  - stage: S5b
+    verdict: minor
+    by: refereeB
+    hash: f6b2d8cf3d11
+    date: '2026-10-12'
+    model: claude-opus-5-5
+    evidence: 02-polynomial-ring.md:159 The sentence about the linear algebra companion's numbering is
+      a meta-claim the reader cannot check on the page. It also points at a specific result of another
+      book in a form STYLE does not allow.
 - key: proof:thm-polynomial-ring-laws
   kind: proof
   file: 02-polynomial-ring.md
   line: 186
   hash: c3038913b521
-  verdicts: []
+  verdicts:
+  - stage: S5a
+    verdict: minor
+    by: refereeA
+    hash: c3038913b521
+    date: '2026-10-12'
+    model: claude-opus-5-5
+    evidence: 02-polynomial-ring.md:197 The arity parameter m of lem-check-on-monomials is cited as 'with
+      m = 2' / 'with m = 3' inside arguments where m is already bound as the exponent of the monomial
+      a x^m.
+  - stage: S5b
+    verdict: minor
+    by: refereeB
+    hash: c3038913b521
+    date: '2026-10-12'
+    model: claude-opus-5-5
+    evidence: '02-polynomial-ring.md:197 The letter m has two meanings in the same sentence: the arity
+      of lem-check-on-monomials, and the exponent of the monomial a x^m. This breaks STYLE §9''s ''none
+      reused with a new meaning''.'
 - key: check:02-polynomial-ring:1
   kind: check
   file: 02-polynomial-ring.md
   line: 228
   hash: 5b4d23c45936
-  verdicts: []
+  verdicts:
+  - stage: S5a
+    verdict: minor
+    by: refereeA
+    hash: 5b4d23c45936
+    date: '2026-10-12'
+    model: claude-opus-5-5
+    evidence: 02-polynomial-ring.md:233 The solution credits '(x + 1)^2 = (x + 1)(x + 1)' to def-polynomial-ring.
+      But the square is the ring power of lem-finite-sums-and-powers (c), and unfolding it uses (F7) in
+      R[x].
+  - stage: S5b
+    verdict: correct
+    by: refereeB
+    hash: 5b4d23c45936
+    date: '2026-10-12'
+    model: claude-opus-5-5
+    evidence: '02:229-234: the coefficients (1,2,1) are correct. Over F_2, 2=0 gives (1,0,1). Both displays
+      name the same sequence over F_2, and 2≠0 over Q.'
 - key: exr-polynomial-ring-a1
   kind: exr
   file: 02-polynomial-ring.md
   line: 240
   hash: 4e2de4f69a01
-  verdicts: []
+  verdicts:
+  - stage: S5a
+    verdict: correct
+    by: refereeA
+    hash: 4e2de4f69a01
+    date: '2026-10-12'
+    model: claude-opus-5-5
+    evidence: '02:240-261. (a) The list is complete for the proof as written: the (F6) monomial line,
+      (∗), the 0·b steps (closure, lem (a)), and (F7), since fd3''s (F7) is a·1=a. The (F5) monomial line
+      does not use commutativity. (b) 6x^4 both ways. (c),(d) correct.'
+  - stage: S5b
+    verdict: minor
+    by: refereeB
+    hash: 4e2de4f69a01
+    date: '2026-10-12'
+    model: claude-opus-5-5
+    evidence: 02-polynomial-ring.md:254 The A1(a) solution says the monomial line of (F5) does not use
+      commutativity of R. That contradicts the solution's own earlier sentence, and the claim is false.
+  - stage: S6
+    verdict: minor
+    by: verifier
+    hash: 4e2de4f69a01
+    date: '2026-10-12'
+    model: claude-opus-5-5
+    evidence: 02-polynomial-ring.md:254 The (a) answer says the monomial line of (F5) does not use commutativity
+      of R, but as written it does, indirectly.
 - key: exr-polynomial-ring-b1
   kind: exr
   file: 02-polynomial-ring.md
   line: 265
   hash: 5eae3e8f9e2d
-  verdicts: []
+  verdicts:
+  - stage: S5a
+    verdict: correct
+    by: refereeA
+    hash: 5eae3e8f9e2d
+    date: '2026-10-12'
+    model: claude-opus-5-5
+    evidence: '02:265-289. Recomputed: 12,-3,4,-3,2,2,-4. Over F_2 the factors are x and x^2+1, the product
+      is x^3+x, and this agrees with reduction mod 2. The sidecar passes.'
+  - stage: S5b
+    verdict: correct
+    by: refereeB
+    hash: 5eae3e8f9e2d
+    date: '2026-10-12'
+    model: claude-opus-5-5
+    evidence: '02:272-288: recomputed the convolution of (4,-1,0,2) and (3,0,1,-2) to get [12,-3,4,-3,2,2,-4].
+      Mod 2 this is [0,1,0,1,0,0,0], which is x^3+x = x(x^2+1), as stated.'
+  - stage: S6
+    verdict: correct
+    by: verifier
+    hash: 5eae3e8f9e2d
+    date: '2026-10-12'
+    model: claude-opus-5-5
+    evidence: '02:271-289. Script: the product over Z is [12,-3,4,-3,2,2,-4]. Reducing mod 2 gives [0,1,0,1,0,0,0],
+      which equals x(x^2+1) computed in F_2. The worked example type is exm-polynomial-product.'
 - key: exr-polynomial-ring-b2
   kind: exr
   file: 02-polynomial-ring.md
   line: 291
   hash: 790262830d1f
-  verdicts: []
+  verdicts:
+  - stage: S5a
+    verdict: minor
+    by: refereeA
+    hash: 790262830d1f
+    date: '2026-10-12'
+    model: claude-opus-5-5
+    evidence: '02:291-314. The math is correct: σ(ax^m)=((-1)^m a)x^m, the coefficients agree by (F5),(F6)
+      and s^{m+n}=s^m s^n, and the additivity of Φ,Ψ is as given. Same m arity/exponent clash at 311 (''a
+      x^m ... with m = 2'').'
+  - stage: S5b
+    verdict: minor
+    by: refereeB
+    hash: 790262830d1f
+    date: '2026-10-12'
+    model: claude-opus-5-5
+    evidence: '02:304-311: the math is correct. σ(ax^m)=((-1)^m a)x^m, and the coefficients agree by (F5),
+      (F6) and s^{m+n}=s^m s^n. Section 4.4''s p(-x) is confirmed at 04:261. The only problem is the same
+      m clash: ''lem-check-on-monomials with m = 2'' right after monomials a x^m (02:311).'
+  - stage: S6
+    verdict: correct
+    by: verifier
+    hash: 790262830d1f
+    date: '2026-10-12'
+    model: claude-opus-5-5
+    evidence: '02:301-314. The faded blank has one reasonable completion: name the move, then do the monomial
+      check, using the coefficient identity (-1)^m(-1)^n = (-1)^{m+n} from lem (c). Script: sigma is multiplicative
+      on random pairs over Z/nZ for n in {2,3,4,6,9}. The pattern is modelled by the (F6) proof.'
 - key: exr-polynomial-ring-c1
   kind: exr
   file: 02-polynomial-ring.md
   line: 318
   hash: a7743c7e07f2
-  verdicts: []
+  verdicts:
+  - stage: S5a
+    verdict: correct
+    by: refereeA
+    hash: a7743c7e07f2
+    date: '2026-10-12'
+    model: claude-opus-5-5
+    evidence: 02:318-345. The solution re-derives distributivity, the monomial product and the one-argument-at-a-time
+      reduction without citing the theorem. It is compressed but complete in outline.
+  - stage: S5b
+    verdict: minor
+    by: refereeB
+    hash: a7743c7e07f2
+    date: '2026-10-12'
+    model: claude-opus-5-5
+    evidence: 02-polynomial-ring.md:321 The exercise statement does not say whether @lem-monomial-product
+      and @lem-check-on-monomials may be cited, so the task is not fully well-posed.
+  - stage: S6
+    verdict: gap
+    by: verifier
+    hash: a7743c7e07f2
+    date: '2026-10-12'
+    model: claude-opus-5-5
+    evidence: 02-polynomial-ring.md:329 In the exit-check solution, the reduction to monomials is a sketch,
+      not a proof.
 - key: exr-polynomial-ring-c2
   kind: exr
   file: 02-polynomial-ring.md
   line: 347
   hash: 26f55a9ff67b
-  verdicts: []
+  verdicts:
+  - stage: S5a
+    verdict: correct
+    by: refereeA
+    hash: 26f55a9ff67b
+    date: '2026-10-12'
+    model: claude-opus-5-5
+    evidence: 02:347-370. (a) Each coefficient looks only at positions <=k. (b) This is the closure paragraph.
+      (c) Position k>=1 gives 1-1=0. (d) The admissible N is what is used. The ring laws on R^N are stated
+      as not proved here, and nothing depends on them.
+  - stage: S5b
+    verdict: minor
+    by: refereeB
+    hash: 26f55a9ff67b
+    date: '2026-10-12'
+    model: claude-opus-5-5
+    evidence: '02-polynomial-ring.md:367 The C2(d) solution says the ring laws for R^N can only be proved
+      by reordering double sums. That is false: a truncation argument reduces them to the polynomial case.'
+  - stage: S6
+    verdict: minor
+    by: verifier
+    hash: 26f55a9ff67b
+    date: '2026-10-12'
+    model: claude-opus-5-5
+    evidence: 02-polynomial-ring.md:365 Part (c) collapses a sum with two non-zero terms by citing nothing,
+      and the closing remark calls s an inverse of 1 - x on the strength of a one-sided product.
 - key: def-degree
   kind: def
   file: 03-degree.md
   line: 24
   hash: b9cf21a49bdd
-  verdicts: []
+  verdicts:
+  - stage: S5a
+    verdict: correct
+    by: refereeA
+    hash: b9cf21a49bdd
+    date: '2026-10-12'
+    model: claude-opus-5-5
+    evidence: '03-degree.md:24-43: S non-empty, bounded by an admissible N, greatest element by fd3:prp-integer-least-element
+      (checked: needs non-empty and an upper bound in Z, both given); the two facts and least-admissible
+      claim follow. Opening computation (pq)_0..3 = 0,1,5,6 is right; sidecar def-degree.py ok.'
+  - stage: S5b
+    verdict: minor
+    by: refereeB
+    hash: b9cf21a49bdd
+    date: '2026-10-12'
+    model: claude-opus-5-5
+    evidence: '03-degree.md:55 The fold calls −∞ ''the one value that makes this true for every q''. Any
+      absorbing symbol does the same job: a symbol +∞ with +∞ + n = +∞ also satisfies deg 0 = deg 0 +
+      deg q. Only the order requirement in the next sentence singles out −∞.'
 - key: thm-degree-of-sum
   kind: thm
   file: 03-degree.md
   line: 66
   hash: 4cc86374feeb
-  verdicts: []
+  verdicts:
+  - stage: S5a
+    verdict: correct
+    by: refereeA
+    hash: 4cc86374feeb
+    date: '2026-10-12'
+    model: claude-opus-5-5
+    evidence: 03-degree.md:66-74; statement true over any commutative ring, -inf cases covered by conventions.
+  - stage: S5b
+    verdict: correct
+    by: refereeB
+    hash: 4cc86374feeb
+    date: '2026-10-12'
+    model: claude-opus-5-5
+    evidence: :66-74 statement true; remark :91 'strict exactly when equal degrees and leading coefficients
+      cancel' checked
 - key: proof:thm-degree-of-sum
   kind: proof
   file: 03-degree.md
   line: 80
   hash: c70aaabf6454
-  verdicts: []
+  verdicts:
+  - stage: S5a
+    verdict: correct
+    by: refereeA
+    hash: c70aaabf6454
+    date: '2026-10-12'
+    model: claude-opus-5-5
+    evidence: '03-degree.md:81-87: M=-inf case; k>M gives p_k=q_k=0 (two facts / zero poly); equality
+      case: deg q<deg p forces p!=0, q_M=0 in both q=0 and q!=0 cases; (p+q)_M=p_M!=0.'
+  - stage: S5b
+    verdict: correct
+    by: refereeB
+    hash: c70aaabf6454
+    date: '2026-10-12'
+    model: claude-opus-5-5
+    evidence: :81-87 uses two facts after def-degree, def-polynomial-ring, (F3); max on N u {-inf} ledgered
+      (:450)
 - key: thm-degree-of-product
   kind: thm
   file: 03-degree.md
   line: 98
   hash: b62b2d976895
-  verdicts: []
+  verdicts:
+  - stage: S5a
+    verdict: correct
+    by: refereeA
+    hash: b62b2d976895
+    date: '2026-10-12'
+    model: claude-opus-5-5
+    evidence: 03-degree.md:98-109; (a),(b) true in every commutative ring; unit and no-zero-divisor sufficient
+      conditions true; cited thm-field-basic-properties (f) says ab=0 => a=0 or b=0. Hypothesis p,q!=0
+      needed for m,n.
+  - stage: S5b
+    verdict: correct
+    by: refereeB
+    hash: b62b2d976895
+    date: '2026-10-12'
+    model: claude-opus-5-5
+    evidence: :98-109; @thm-field-basic-properties (f) is 'ab=0 implies a=0 or b=0' (fd4 ch02 01:74);
+      monic implies 1!=0 per :50
+  - stage: S8
+    verdict: minor
+    by: seam
+    hash: b62b2d976895
+    date: '2026-10-12'
+    model: claude-opus-5-5
+    evidence: 03-degree.md:105 This label migrated from la, but its field case no longer contains la's
+      statement deg(pq) = deg p + deg q for ALL p, q, zero included. index.md:7 still says every la citation
+      is the case R = F of the statement proved here.
 - key: proof:thm-degree-of-product
   kind: proof
   file: 03-degree.md
   line: 119
   hash: 5bb0e19086e1
-  verdicts: []
+  verdicts:
+  - stage: S5a
+    verdict: minor
+    by: refereeA
+    hash: 5bb0e19086e1
+    date: '2026-10-12'
+    model: claude-opus-5-5
+    evidence: 03-degree.md:120 'in that case q_{k-i} = 0' grammatically refers to the exceptional case
+      k = m+n, i = m, where q_{k-i} = q_n != 0.
+  - stage: S5b
+    verdict: minor
+    by: refereeB
+    hash: 5bb0e19086e1
+    date: '2026-10-12'
+    model: claude-opus-5-5
+    evidence: 03-degree.md:134 The meta-claim 'Part (a), including the inequality, uses only (F1)–(F7),
+      (F9) and @fd3:prp-ring-algebra (b)' is not literally true of the proof on the page. Part (a) also
+      cites (Σ3) of @lem-finite-sums-and-powers (b), at :122 twice, and uses the two facts after @def-degree.
 - key: check:03-degree:1
   kind: check
   file: 03-degree.md
   line: 144
   hash: 324a99395c10
-  verdicts: []
+  verdicts:
+  - stage: S5a
+    verdict: correct
+    by: refereeA
+    hash: 324a99395c10
+    date: '2026-10-12'
+    model: claude-opus-5-5
+    evidence: '03-degree.md:144-150: deg(pq)=5, deg(p^2)=6 (Q field), deg(p+q)=3 (3!=2); p-x^3 has coefficient
+      lc(p)-1 at 3; three cases correct.'
+  - stage: S5b
+    verdict: correct
+    by: refereeB
+    hash: 324a99395c10
+    date: '2026-10-12'
+    model: claude-opus-5-5
+    evidence: ':145-149: deg(pq)=5, deg(p^2)=6 by Q a field, deg(p+q)=3 by equality case; p - x^3 has
+      coefficient lc(p)-1 at 3: 3, <=2, or -inf; consistent'
 - key: def-integral-domain
   kind: def
   file: 03-degree.md
   line: 158
   hash: 19505f38e042
-  verdicts: []
+  verdicts:
+  - stage: S5a
+    verdict: correct
+    by: refereeA
+    hash: 19505f38e042
+    date: '2026-10-12'
+    model: claude-opus-5-5
+    evidence: '03-degree.md:158-162: standard; 1!=0 and no zero divisors.'
+  - stage: S5b
+    verdict: correct
+    by: refereeB
+    hash: 19505f38e042
+    date: '2026-10-12'
+    model: claude-opus-5-5
+    evidence: :161 matches blueprint; no other definition of integral domain in fd3/fd4
 - key: exm-integral-domains
   kind: exm
   file: 03-degree.md
   line: 166
   hash: 915061b171ff
-  verdicts: []
+  verdicts:
+  - stage: S5a
+    verdict: minor
+    by: refereeA
+    hash: 915061b171ff
+    date: '2026-10-12'
+    model: claude-opus-5-5
+    evidence: 03-degree.md:177 The factorization n = rs with 1<r<n, 1<s<n of a 'composite' n is asserted
+      without derivation, 'composite' is defined nowhere in the series, and [r][s] = [rs] is uncited.
+  - stage: S5b
+    verdict: minor
+    by: refereeB
+    hash: 915061b171ff
+    date: '2026-10-12'
+    model: claude-opus-5-5
+    evidence: '03-degree.md:183 The meta-claim points at the wrong answer: the equivalence ''Z/nZ is an
+      integral domain iff a field iff n prime'' is assembled from the second answer (fields are integral
+      domains) and the third (composite n fails). The first answer (Z) plays no part.'
 - key: cor-polynomial-no-zero-divisors
   kind: cor
   file: 03-degree.md
   line: 188
   hash: 8d9522f900a5
-  verdicts: []
+  verdicts:
+  - stage: S5a
+    verdict: correct
+    by: refereeA
+    hash: 8d9522f900a5
+    date: '2026-10-12'
+    model: claude-opus-5-5
+    evidence: 03-degree.md:188-198; (a),(b),(c) true; dropping 'integral domain' fails by Z/6Z example
+      at line 210; dropping p!=0 in (b) fails (p=0).
+  - stage: S5b
+    verdict: correct
+    by: refereeB
+    hash: 8d9522f900a5
+    date: '2026-10-12'
+    model: claude-opus-5-5
+    evidence: :191-197 statement true (deviation 1 recorded in blueprint :64)
 - key: proof:cor-polynomial-no-zero-divisors
   kind: proof
   file: 03-degree.md
   line: 200
   hash: f59fa4082ffc
-  verdicts: []
+  verdicts:
+  - stage: S5a
+    verdict: correct
+    by: refereeA
+    hash: f59fa4082ffc
+    date: '2026-10-12'
+    model: claude-opus-5-5
+    evidence: '03-degree.md:201-205: (a) via thm-degree-of-product (b), 1!=0 via thm-polynomial-ring-laws
+      (b) (which states exactly ''if 1!=0 in R then 1!=0 in R[x]''); (b) p(q-r)=pq+(-(pr))=0 via (F9),
+      prp-ring-algebra (c); (c) via injectivity and multiplicativity of a->ax^0, thm-polynomial-ring-laws
+      (b).'
+  - stage: S5b
+    verdict: correct
+    by: refereeB
+    hash: f59fa4082ffc
+    date: '2026-10-12'
+    model: claude-opus-5-5
+    evidence: :201-205; thm-polynomial-ring-laws (b) gives injectivity and 1!=0 in R[x]; prp-ring-algebra
+      (c) gives p(-r)=-(pr); ledger :457
 - key: prp-polynomial-units
   kind: prp
   file: 03-degree.md
   line: 216
   hash: be1b2ce13113
-  verdicts: []
+  verdicts:
+  - stage: S5a
+    verdict: correct
+    by: refereeA
+    hash: be1b2ce13113
+    date: '2026-10-12'
+    model: claude-opus-5-5
+    evidence: 03-degree.md:216-220; true; Z/4Z warning at 231-236 shows the integral-domain hypothesis
+      is needed.
+  - stage: S5b
+    verdict: minor
+    by: refereeB
+    hash: be1b2ce13113
+    date: '2026-10-12'
+    model: claude-opus-5-5
+    evidence: 03-degree.md:228 The claim that the units of Z[x] are exactly ±1 cites only one direction.
+      @fd3:prp-divisibility-rules-integers (g) shows that a unit is ±1. The text omits that 1 and −1 are
+      units, and that Z is an integral domain (@exm-integral-domains), which @prp-polynomial-units requires.
+      In the same paragraph, '0 · b = 0' is uncited.
 - key: proof:prp-polynomial-units
   kind: proof
   file: 03-degree.md
   line: 222
   hash: 7720a1f81a08
-  verdicts: []
+  verdicts:
+  - stage: S5a
+    verdict: correct
+    by: refereeA
+    hash: 7720a1f81a08
+    date: '2026-10-12'
+    model: claude-opus-5-5
+    evidence: '03-degree.md:223-225: p,q!=0 from 1!=0 in R[x]; deg p+deg q=deg 1=0 by thm-degree-of-product
+      (b) (no zero divisors used); deg 0 => p=ax^0; ab=1 by injectivity. Converse fine.'
+  - stage: S5b
+    verdict: minor
+    by: refereeB
+    hash: 7720a1f81a08
+    date: '2026-10-12'
+    model: claude-opus-5-5
+    evidence: 03-degree.md:223 Two facts the proof uses have neither an @ref nor a ledger line. The step
+      from deg p = 0 to 'p = a x^0' is @prp-polynomial-sum-of-monomials with N = 0, or @fd2:prp-function-equality
+      with the two facts after @def-degree. The step 0 · q = 0 in R[x] is @fd3:prp-ring-algebra (b), applied
+      to the ring R[x] by @thm-polynomial-ring-laws (a).
 - key: def-polynomials-bounded-degree
   kind: def
   file: 03-degree.md
   line: 242
   hash: c44fd28160d7
-  verdicts: []
+  verdicts:
+  - stage: S5a
+    verdict: correct
+    by: refereeA
+    hash: c44fd28160d7
+    date: '2026-10-12'
+    model: claude-opus-5-5
+    evidence: '03-degree.md:242-257: equivalence with p_k=0 for k>n, second description via prp-polynomial-sum-of-monomials
+      (checked), closure under +, -, constants via thm-polynomial-ring-laws (d); x^{n+1} witness.'
+  - stage: S5b
+    verdict: minor
+    by: refereeB
+    hash: c44fd28160d7
+    date: '2026-10-12'
+    model: claude-opus-5-5
+    evidence: '03-degree.md:240 The section''s forward pointers are not correctly reported in STATUS''s
+      promise table. The pointer at :240 to interpolation (F4.5) is missing from row F4.4 (STATUS :158),
+      which lists §02, §04, §05 and index only. The pointers to the linear-algebra companion''s vector
+      space and subspace (LA1.1) at :240 and :289 are filed in row :161 under ''F4.4 §04'', but §04 holds
+      no subspace pointer:'
 - key: exm-elements-of-rx-leq-2
   kind: exm
   file: 03-degree.md
   line: 259
   hash: 8abc36898179
-  verdicts: []
+  verdicts:
+  - stage: S5a
+    verdict: correct
+    by: refereeA
+    hash: 8abc36898179
+    date: '2026-10-12'
+    model: claude-opus-5-5
+    evidence: '03-degree.md:259-267: degrees 2,1,0,-inf,1 correct.'
+  - stage: S5b
+    verdict: correct
+    by: refereeB
+    hash: 8abc36898179
+    date: '2026-10-12'
+    model: claude-opus-5-5
+    evidence: :262-266 degrees 2,1,0,-inf,1; all five in Q[x]_{<=2}, -4 and 0 in Q[x]_{<=0}
 - key: def-polynomials-exact-degree
   kind: def
   file: 03-degree.md
   line: 269
   hash: b279348b475c
-  verdicts: []
+  verdicts:
+  - stage: S5a
+    verdict: correct
+    by: refereeA
+    hash: b279348b475c
+    date: '2026-10-12'
+    model: claude-opus-5-5
+    evidence: 03-degree.md:269-273.
+  - stage: S5b
+    verdict: correct
+    by: refereeB
+    hash: b279348b475c
+    date: '2026-10-12'
+    model: claude-opus-5-5
+    evidence: :272 matches NOTATION row :262
 - key: exm-comparing-notations
   kind: exm
   file: 03-degree.md
   line: 275
   hash: 4f92cab59ee1
-  verdicts: []
+  verdicts:
+  - stage: S5a
+    verdict: correct
+    by: refereeA
+    hash: 4f92cab59ee1
+    date: '2026-10-12'
+    model: claude-opus-5-5
+    evidence: '03-degree.md:275-290: memberships right; disjoint union for n>=1 right; (x^2+x)+(-x^2+1)=x+1
+      witness; sidecar ok.'
+  - stage: S5b
+    verdict: minor
+    by: refereeB
+    hash: 4f92cab59ee1
+    date: '2026-10-12'
+    model: claude-opus-5-5
+    evidence: :282-289 math correct, sidecar passes; LA1.1 pointer at :289 is recorded in STATUS row 161
+      as 'F4.4 §04', but §04 has no subspace pointer (it is §03)
 - key: exr-degree-a1
   kind: exr
   file: 03-degree.md
   line: 296
   hash: 2601830e1eb5
-  verdicts: []
+  verdicts:
+  - stage: S5a
+    verdict: correct
+    by: refereeA
+    hash: 2601830e1eb5
+    date: '2026-10-12'
+    model: claude-opus-5-5
+    evidence: '03-degree.md:296-318: (e) uses exm-integral-domains and cor (a),(c) correctly; (c) witness
+      x, -x.'
+  - stage: S5b
+    verdict: correct
+    by: refereeB
+    hash: 2601830e1eb5
+    date: '2026-10-12'
+    model: claude-opus-5-5
+    evidence: :299-317; (e) uses exm-integral-domains with cor (a) and (c); sidecar exr-degree-a1.py passes
+  - stage: S6
+    verdict: correct
+    by: verifier
+    hash: 2601830e1eb5
+    date: '2026-10-12'
+    model: claude-opus-5-5
+    evidence: '03:308-318. Script: (2x+1)(3x^2+x) = [0,1,5,6] over Z and [0,1,5,0] over Z/6Z, so (pq)_3
+      = 6, which is [0] mod 6. (c) counterexample x + (-x) is correct. (e) prime n follows by cor (a)
+      and composite n by cor (c), both correct.'
 - key: exr-degree-b1
   kind: exr
   file: 03-degree.md
   line: 322
   hash: 0464953338bc
-  verdicts: []
+  verdicts:
+  - stage: S5a
+    verdict: correct
+    by: refereeA
+    hash: 0464953338bc
+    date: '2026-10-12'
+    model: claude-opus-5-5
+    evidence: '03-degree.md:322-349: order (vi),(iii),(vii),(i),(v),(ii) valid, only (vii)/(i) swappable;
+      distractors (iv),(viii) correctly refuted with Z/6Z.'
+  - stage: S5b
+    verdict: correct
+    by: refereeB
+    hash: 0464953338bc
+    date: '2026-10-12'
+    model: claude-opus-5-5
+    evidence: :325-348; the two admissible orders are exactly right (iii) introduces m,n; distractors
+      explained correctly
+  - stage: S6
+    verdict: correct
+    by: verifier
+    hash: 0464953338bc
+    date: '2026-10-12'
+    model: claude-opus-5-5
+    evidence: '03:339-349. Order (vi),(iii),(vii),(i),(v),(ii) is admissible. The only other admissible
+      order swaps (vii) and (i), and I find no further one. (iv) fails as stated: its i != m terms are
+      0, and a sum of non-zero terms can be 0. (viii) fails: [2][3] = [0] in Z/6Z. Neither distractor
+      can be used in place of a correct line.'
 - key: exr-degree-b2
   kind: exr
   file: 03-degree.md
   line: 351
   hash: a4868038b92e
-  verdicts: []
+  verdicts:
+  - stage: S5a
+    verdict: correct
+    by: refereeA
+    hash: a4868038b92e
+    date: '2026-10-12'
+    model: claude-opus-5-5
+    evidence: '03-degree.md:351-376: (1+[3]x)(1+[6]x)=1 in Z/9Z; p^2 coefficients 1,[4],[8],[8],[4] =
+      1 in Z/4Z; sidecar ok.'
+  - stage: S5b
+    verdict: correct
+    by: refereeB
+    hash: a4868038b92e
+    date: '2026-10-12'
+    model: claude-opus-5-5
+    evidence: :355-375; (1+3x)(1-3x)=1 in Z/9Z, (p^2) coefficients 1,[4],[8],[8],[4]; sidecar passes
+  - stage: S6
+    verdict: minor
+    by: verifier
+    hash: a4868038b92e
+    date: '2026-10-12'
+    model: claude-opus-5-5
+    evidence: 03-degree.md:360 The hint carries out the key step of (b).
 - key: exr-degree-b3
   kind: exr
   file: 03-degree.md
   line: 378
   hash: 51b8cbc92636
-  verdicts: []
+  verdicts:
+  - stage: S5a
+    verdict: minor
+    by: refereeA
+    hash: 51b8cbc92636
+    date: '2026-10-12'
+    model: claude-opus-5-5
+    evidence: 03-degree.md:389 The letter p denotes the prime and, in the same sentence block, a generic
+      polynomial.
+  - stage: S5b
+    verdict: correct
+    by: refereeB
+    hash: 51b8cbc92636
+    date: '2026-10-12'
+    model: claude-opus-5-5
+    evidence: :381-391; exr-polynomials-as-sequences-b1 gives the bijection P_N -> R^{N+1}; fd2:exr-finite-sets-c2
+      (a),(b) are the product and function counts; p^{n+1}, (p-1)p^n; n=0 gives p-1; sidecar passes
+  - stage: S6
+    verdict: minor
+    by: verifier
+    hash: 51b8cbc92636
+    date: '2026-10-12'
+    model: claude-opus-5-5
+    evidence: 03-degree.md:381 §03 has no worked example of this B item's type (counting a set of polynomials).
 - key: exr-degree-c1
   kind: exr
   file: 03-degree.md
   line: 396
   hash: e843df5e9170
-  verdicts: []
+  verdicts:
+  - stage: S5a
+    verdict: minor
+    by: refereeA
+    hash: e843df5e9170
+    date: '2026-10-12'
+    model: claude-opus-5-5
+    evidence: 03-degree.md:403 The vanishing of terms with p_i = 0 is cited to fd3:prp-ring-algebra (b)
+      alone, which states a*0 = 0, not 0*a = 0.
+  - stage: S5b
+    verdict: correct
+    by: refereeB
+    hash: e843df5e9170
+    date: '2026-10-12'
+    model: claude-opus-5-5
+    evidence: :399-419; solution covers all requested parts, lem-monomial-product (b) is (ax^m)(bx^n)=(ab)x^{m+n};
+      marking scheme sums to 10
+  - stage: S6
+    verdict: minor
+    by: verifier
+    hash: e843df5e9170
+    date: '2026-10-12'
+    model: claude-opus-5-5
+    evidence: 03-degree.md:415 The marking scheme does not score the 'only if' half of the equivalence
+      the problem asks for, nor the zero cases.
 - key: exr-degree-c2
   kind: exr
   file: 03-degree.md
   line: 422
   hash: 48e234fae62b
-  verdicts: []
+  verdicts:
+  - stage: S5a
+    verdict: correct
+    by: refereeA
+    hash: 48e234fae62b
+    date: '2026-10-12'
+    model: claude-opus-5-5
+    evidence: '03-degree.md:422-442: line (1) fails (p=x), (N9) matches fd1 catalogue entry 9; bottom
+      repair via least indices (fd3:prp-integer-least-element) and (Sigma3) is correct.'
+  - stage: S5b
+    verdict: correct
+    by: refereeB
+    hash: 48e234fae62b
+    date: '2026-10-12'
+    model: claude-opus-5-5
+    evidence: :427-441; failing line (1) with p=x; (N9) of fd1:exm-not-allowed-catalogue is 'unproved
+      general fact' (fd1 06:336); bottom repair index argument correct
+  - stage: S6
+    verdict: correct
+    by: verifier
+    hash: 48e234fae62b
+    date: '2026-10-12'
+    model: claude-opus-5-5
+    evidence: 03:434-442. Line (1) is the only flawed line, and p = x defeats the step from p != 0 to
+      p_0 != 0. Lines (2)-(4) are valid. Entry (N9) matches fd1's usage (fd1 06-checking-proofs.md:336).
+      The bottom repair via least indices is correct.
 - key: def-polynomial-evaluation
   kind: def
   file: 04-evaluation-and-substitution.md
   line: 11
   hash: d0cf2b68fa25
-  verdicts: []
+  verdicts:
+  - stage: S5a
+    verdict: minor
+    by: refereeA
+    hash: d0cf2b68fa25
+    date: '2026-10-12'
+    model: claude-opus-5-5
+    evidence: '04-evaluation-and-substitution.md:43 The warning calls p(0)=p_0 ''a coincidence of position
+      0, not a rule''. That is false: p(0)=p_0 holds for every polynomial over every commutative ring.'
+  - stage: S5b
+    verdict: correct
+    by: refereeB
+    hash: d0cf2b68fa25
+    date: '2026-10-12'
+    model: claude-opus-5-5
+    evidence: '04:11-40. The definition, the well-definedness fold at 25-34 (induction on j, Σ recursion,
+      prp-ring-algebra (b)) and the examples check out: x^2-3x+2 has values 2,0,0 at 0,1,2, and x^3+2
+      over F_3 has values 2,0,1. Sidecar passes.'
 - key: thm-evaluation-respects-operations
   kind: thm
   file: 04-evaluation-and-substitution.md
   line: 50
   hash: c7e7322998a0
-  verdicts: []
+  verdicts:
+  - stage: S5a
+    verdict: correct
+    by: refereeA
+    hash: c7e7322998a0
+    date: '2026-10-12'
+    model: claude-opus-5-5
+    evidence: 'Line 53: the statement is fine. All hypotheses are used. R commutative enters through R[x]''s
+      ring laws and the monomial line.'
+  - stage: S5b
+    verdict: minor
+    by: refereeB
+    hash: c7e7322998a0
+    date: '2026-10-12'
+    model: claude-opus-5-5
+    evidence: '04-evaluation-and-substitution.md:90 False meta-claim in the remark: the monomial line
+      ''is the one place where the commutativity of R is used''.'
 - key: proof:thm-evaluation-respects-operations
   kind: proof
   file: 04-evaluation-and-substitution.md
   line: 64
   hash: db6b60626a92
-  verdicts: []
+  verdicts:
+  - stage: S5a
+    verdict: minor
+    by: refereeA
+    hash: db6b60626a92
+    date: '2026-10-12'
+    model: claude-opus-5-5
+    evidence: 'Lines 65-86: every step is justified. Sums: def-polynomial-ring, (F6)+(F9), (Σ1). Products:
+      lem-check-on-monomials m=2, T=R, with both maps additive in each argument via (∗)/(∗∗) and (F6),(F9);
+      monomial line via lem-monomial-product (b) and the power law. The remark at line 90 says the monomial
+      line is ''the one place where the commutativity of R is used'', but lines 72 and 80 also cite (F6)
+      to get '
+  - stage: S5b
+    verdict: minor
+    by: refereeB
+    hash: db6b60626a92
+    date: '2026-10-12'
+    model: claude-opus-5-5
+    evidence: 04-evaluation-and-substitution.md:86 In one paragraph, m is the exponent of the monomial
+      a x^m and also the arity of lem-check-on-monomials. The same clash occurs at line 192.
 - key: def-ring-homomorphism
   kind: def
   file: 04-evaluation-and-substitution.md
   line: 101
   hash: f1c273f6ba55
-  verdicts: []
+  verdicts:
+  - stage: S5a
+    verdict: correct
+    by: refereeA
+    hash: f1c273f6ba55
+    date: '2026-10-12'
+    model: claude-opus-5-5
+    evidence: 'Lines 104-118: the definition is standard. The consequences are correct: φ(0)=0 by cancellation
+      (F2-F4 in S), φ(-a) by uniqueness of negatives (prp-ring-algebra (a)), φ(s^n) by induction on the
+      power recursion, and closure under composites.'
+  - stage: S5b
+    verdict: correct
+    by: refereeB
+    hash: f1c273f6ba55
+    date: '2026-10-12'
+    model: claude-opus-5-5
+    evidence: 04:101-118. φ(0)=0 by cancellation, with the parenthetical correctly contrasted with fd3:prp-ring-algebra
+      (a) (uniqueness of 0). φ(-a), φ(s^n) and composites are all fine.
+  - stage: S8
+    verdict: minor
+    by: seam
+    hash: f1c273f6ba55
+    date: '2026-10-12'
+    model: claude-opus-5-5
+    evidence: 04-evaluation-and-substitution.md:113 The definition is F4.2's field homomorphism widened
+      to commutative rings, and the consequences paragraph re-proves F4.2's properties. The text never
+      relates the two, although F4.4 -> F4.2 is an s-edge and citing is allowed.
 - key: exm-ring-homomorphisms
   kind: exm
   file: 04-evaluation-and-substitution.md
   line: 120
   hash: a5ef15686d8f
-  verdicts: []
+  verdicts:
+  - stage: S5a
+    verdict: correct
+    by: refereeA
+    hash: a5ef15686d8f
+    date: '2026-10-12'
+    model: claude-opus-5-5
+    evidence: 'Lines 123-137: (i) thm-quotient-ring-by-ideal (c) gives all three properties (n=1, the
+      zero ring, is allowed since fd3 rings need not have 1≠0). (ii) thm-polynomial-ring-laws (b). (iii)
+      thm-chinese-remainder-two (b) states additivity, multiplicativity and Φ([1])=([1],[1]). (iv) and
+      (v) computations are correct.'
+  - stage: S5b
+    verdict: minor
+    by: refereeB
+    hash: a5ef15686d8f
+    date: '2026-10-12'
+    model: claude-opus-5-5
+    evidence: 04-evaluation-and-substitution.md:123 (iii) uses x as an integer variable, [x]_{mn} ↦ ([x]_m,
+      [x]_n), in the chapter where x is the indeterminate.
+  - stage: S8
+    verdict: correct
+    by: seam
+    hash: a5ef15686d8f
+    date: '2026-10-12'
+    model: claude-opus-5-5
+    evidence: 04:137 credits complex conjugation only to Chapter 1's rules. F4.2 (04-field-homomorphisms.md:26)
+      already showed that it is a homomorphism, and in fact an automorphism. [finding refuted by skeptics]
 - key: thm-polynomial-substitution
   kind: thm
   file: 04-evaluation-and-substitution.md
   line: 144
   hash: abadd9356c10
-  verdicts: []
+  verdicts:
+  - stage: S5a
+    verdict: correct
+    by: refereeA
+    hash: abadd9356c10
+    date: '2026-10-12'
+    model: claude-opus-5-5
+    evidence: 'Lines 147-156: hypotheses are complete. φ additive is used in the additive step, φ multiplicative
+      in the monomial line, φ(1)=1 for Φ(1) and Φ(x), S commutative in the monomial reordering. Dropping
+      φ(1)=1 (zero map φ) gives Φ(1)=0, which is not a ring homomorphism.'
+  - stage: S5b
+    verdict: minor
+    by: refereeB
+    hash: abadd9356c10
+    date: '2026-10-12'
+    model: claude-opus-5-5
+    evidence: '04-evaluation-and-substitution.md:203 False meta-claim: ''Commutativity of S is used in
+      one place, the middle line of the monomial computation.'''
 - key: proof:thm-polynomial-substitution
   kind: proof
   file: 04-evaluation-and-substitution.md
   line: 169
   hash: 83bd83835842
-  verdicts: []
+  verdicts:
+  - stage: S5a
+    verdict: minor
+    by: refereeA
+    hash: 83bd83835842
+    date: '2026-10-12'
+    model: claude-opus-5-5
+    evidence: '04-evaluation-and-substitution.md:203 Several meta-claims say commutativity is used in
+      exactly one place, the monomial line. The proofs'' own citations contradict this. The places: ''Commutativity
+      of S is used in one place'' (line 203); A1(b) ''Once'' (line 349); the remark ''that is the one
+      place where the commutativity of R is used'' (line 90); ledger line 576 ''the monomial line is the
+      only use of (F6)'
+  - stage: S5b
+    verdict: minor
+    by: refereeB
+    hash: 83bd83835842
+    date: '2026-10-12'
+    model: claude-opus-5-5
+    evidence: '04:184-192: the same clash, with m the exponent of a x^m and ''lem-check-on-monomials with
+      m = 2''. All steps are otherwise valid: well-definedness from φ(0)=0, additivity, the monomial line,
+      Φ(1)=1, and uniqueness with m=1, T=S.'
 - key: cor-polynomial-coefficient-change
   kind: cor
   file: 04-evaluation-and-substitution.md
   line: 217
   hash: 735f6350e464
-  verdicts: []
+  verdicts:
+  - stage: S5a
+    verdict: correct
+    by: refereeA
+    hash: 735f6350e464
+    date: '2026-10-12'
+    model: claude-opus-5-5
+    evidence: 'Line 220: true as stated. The degree criterion for p≠0 is correct, and p=0 is handled.'
+  - stage: S5b
+    verdict: minor
+    by: refereeB
+    hash: 735f6350e464
+    date: '2026-10-12'
+    model: claude-opus-5-5
+    evidence: 04-evaluation-and-substitution.md:213 The meta-claim 'Two special cases ... get names, because
+      later chapters use them by name' is not checkable and is not true within fd4.
 - key: proof:cor-polynomial-coefficient-change
   kind: proof
   file: 04-evaluation-and-substitution.md
   line: 227
   hash: 818482c2e98a
-  verdicts: []
+  verdicts:
+  - stage: S5a
+    verdict: correct
+    by: refereeA
+    hash: 818482c2e98a
+    date: '2026-10-12'
+    model: claude-opus-5-5
+    evidence: 'Lines 228-237: γ is a composite of ring homomorphisms (exm (ii) plus the composite rule).
+      The substitution gives Σ(φ(p_k)x^0)x^k. thm-polynomial-ring-laws (c) gives (a x^0)·x^k = a x^k.
+      prp-polynomial-sum-of-monomials applies since N is admissible for φ_*(p). The degree argument is
+      complete. The mod-6 example matches 03-degree.md line 18.'
+  - stage: S5b
+    verdict: correct
+    by: refereeB
+    hash: 818482c2e98a
+    date: '2026-10-12'
+    model: claude-opus-5-5
+    evidence: 04:227-238. γ is a composite of homomorphisms, the theorem is applied with target S[x],
+      and the middle equality via thm-polynomial-ring-laws (c) and prp-polynomial-sum-of-monomials holds.
+      The degree argument is correct.
 - key: def-polynomial-composition
   kind: def
   file: 04-evaluation-and-substitution.md
   line: 248
   hash: 58f6af919a5c
-  verdicts: []
+  verdicts:
+  - stage: S5a
+    verdict: correct
+    by: refereeA
+    hash: 58f6af919a5c
+    date: '2026-10-12'
+    model: claude-opus-5-5
+    evidence: 'Lines 251-261: the definition is an instance of the theorem with φ = constants and s =
+      q. p∘x = p by (c) and prp-polynomial-sum-of-monomials. (x^2+1)∘(x+1) = x^2+2x+2 is correct. p(-x)
+      coefficients (-1)^k p_k come from (st)^n = s^n t^n. The exercise pointer (exr-polynomial-ring-b2)
+      is a comparison only; no claim rests on it.'
+  - stage: S5b
+    verdict: minor
+    by: refereeB
+    hash: 58f6af919a5c
+    date: '2026-10-12'
+    model: claude-opus-5-5
+    evidence: 04-evaluation-and-substitution.md:261 'p(-x) := p ∘ (-x)' gives the value notation p(·)
+      a second meaning, a polynomial argument outside R.
 - key: check:04-evaluation-and-substitution:1
   kind: check
   file: 04-evaluation-and-substitution.md
   line: 263
   hash: 2216e7f5c4d6
-  verdicts: []
+  verdicts:
+  - stage: S5a
+    verdict: correct
+    by: refereeA
+    hash: 2216e7f5c4d6
+    date: '2026-10-12'
+    model: claude-opus-5-5
+    evidence: 'Lines 264-268: [3]^2-[1]=[8]=[0]. The identification Φ with R=S=Z/8Z, φ=id, s=[3] is correct.'
+  - stage: S5b
+    verdict: correct
+    by: refereeB
+    hash: 2216e7f5c4d6
+    date: '2026-10-12'
+    model: claude-opus-5-5
+    evidence: '04:263-269: [3]^2-[1] = [8] = [0] in Z/8Z, and Φ with R=S=Z/8Z, φ = id, s=[3] is correct.'
 - key: prp-polynomial-function-map
   kind: prp
   file: 04-evaluation-and-substitution.md
   line: 275
   hash: 3af1e8f8ed9b
-  verdicts: []
+  verdicts:
+  - stage: S5a
+    verdict: correct
+    by: refereeA
+    hash: 3af1e8f8ed9b
+    date: '2026-10-12'
+    model: claude-opus-5-5
+    evidence: 'Lines 278-288: (a)-(c) are true. In (d), finiteness and 1≠0 are both needed: over the zero
+      ring P=0. P is monic of degree r and vanishes everywhere.'
+  - stage: S5b
+    verdict: correct
+    by: refereeB
+    hash: 3af1e8f8ed9b
+    date: '2026-10-12'
+    model: claude-opus-5-5
+    evidence: 04:275-290. All four parts are true. For (d), the zero ring is excluded correctly, since
+      1≠0 is needed for P to be monic.
 - key: proof:prp-polynomial-function-map
   kind: proof
   file: 04-evaluation-and-substitution.md
   line: 296
   hash: 1712d582087e
-  verdicts: []
+  verdicts:
+  - stage: S5a
+    verdict: correct
+    by: refereeA
+    hash: 1712d582087e
+    date: '2026-10-12'
+    model: claude-opus-5-5
+    evidence: 'Lines 297-305: (a) pointwise via fd2:prp-function-equality. (b) via thm-evaluation-respects-operations.
+      (c) q and c are fixed first, then α and β; both are ring homomorphisms agreeing on constants and
+      x; uniqueness with S=R, φ=id, s=q(c). (d) induction: P_j is monic as the first factor, so thm-degree-of-product
+      (b) applies in the unit case; base uses 1≠0. Vanishing at c_l propagates by a·0=0.'
+  - stage: S5b
+    verdict: correct
+    by: refereeB
+    hash: 1712d582087e
+    date: '2026-10-12'
+    model: claude-opus-5-5
+    evidence: 04:296-306. (a) pointwise via fd2:prp-function-equality. (c) uniqueness via thm-polynomial-substitution
+      (b). (d) induction with the monic case of thm-degree-of-product (b), and the vanishing argument
+      is correct.
 - key: exm-polynomial-vs-function-f2
   kind: exm
   file: 04-evaluation-and-substitution.md
   line: 310
   hash: 0feb65fbb1f1
-  verdicts: []
+  verdicts:
+  - stage: S5a
+    verdict: correct
+    by: refereeA
+    hash: 0feb65fbb1f1
+    date: '2026-10-12'
+    model: claude-opus-5-5
+    evidence: 'Lines 313-321: the values are correct in F_2 (exm-finite-fields). P=(x-0)(x-1)=x^2+x since
+      -1=1. Sidecar passes.'
+  - stage: S5b
+    verdict: minor
+    by: refereeB
+    hash: 0feb65fbb1f1
+    date: '2026-10-12'
+    model: claude-opus-5-5
+    evidence: 04-evaluation-and-substitution.md:325 The warning says the implication 'reaches Z[x] through
+      Z ⊆ Q and a change of coefficients' as if that were proved. It is proved nowhere, is not marked
+      as not proved here, and by its placement reads as part of what Chapter 5 does.
 - key: exr-evaluation-and-substitution-a1
   kind: exr
   file: 04-evaluation-and-substitution.md
   line: 332
   hash: 27eca5a48238
-  verdicts: []
+  verdicts:
+  - stage: S5a
+    verdict: minor
+    by: refereeA
+    hash: 27eca5a48238
+    date: '2026-10-12'
+    model: claude-opus-5-5
+    evidence: 'Lines 347-355: (c) [1+6+4]=[1] and [3][2]^2=[2] are correct. (e) values 2,0,1 and the expansion
+      x^3+2 are correct. (b) answers ''Once'', but the additive steps of the proof also use (F6) in S
+      (lines 182, 184). Same issue as the meta-claim finding.'
+  - stage: S5b
+    verdict: minor
+    by: refereeB
+    hash: 27eca5a48238
+    date: '2026-10-12'
+    model: claude-opus-5-5
+    evidence: 04-evaluation-and-substitution.md:349 The solution to A1(b) answers 'Once' for where the
+      commutativity of S is used, but the proof on the page cites (F6) in S three times.
+  - stage: S6
+    verdict: minor
+    by: verifier
+    hash: 27eca5a48238
+    date: '2026-10-12'
+    model: claude-opus-5-5
+    evidence: 04-evaluation-and-substitution.md:349 A1(b) says commutativity of S is used 'Once', in the
+      monomial computation. The proof it asks about cites (F6) in S at two more places. The same claim
+      appears at line 203 and in the ledger at line 576.
 - key: exr-evaluation-and-substitution-b1
   kind: exr
   file: 04-evaluation-and-substitution.md
   line: 360
   hash: 88738901fe28
-  verdicts: []
+  verdicts:
+  - stage: S5a
+    verdict: correct
+    by: refereeA
+    hash: 88738901fe28
+    date: '2026-10-12'
+    model: claude-opus-5-5
+    evidence: 'Lines 367-373: the induction for q^k uses no zero divisors and 1≠0 (integral domain). Top
+      term has degree de; lower terms have degree < de since e≥1. thm-degree-of-sum strict case gives
+      the result; d=0 is handled. Counterexample p=x-1, q=1 gives p∘q=0, degree -∞ ≠ 0. Correct.'
+  - stage: S5b
+    verdict: correct
+    by: refereeB
+    hash: 88738901fe28
+    date: '2026-10-12'
+    model: claude-opus-5-5
+    evidence: 04:360-374. deg q^k = ke by induction. The top term p_d q^d has degree de, the lower terms
+      have degree < de, and thm-degree-of-sum finishes. Counterexample p=x-1, q=1 gives p∘q = 0, against
+      deg p · deg q = 0.
+  - stage: S6
+    verdict: correct
+    by: verifier
+    hash: 88738901fe28
+    date: '2026-10-12'
+    model: claude-opus-5-5
+    evidence: 04:366-373. Matches my proof (induction on deg q^k, the top term p_d q^d, the strict case
+      of thm-degree-of-sum, which gives equality when deg p != deg q). The counterexample p=x-1, q=1 gives
+      0, of degree -inf, against 1*0=0. Checked by script. The worked type is the monic-degree induction
+      in prp-polynomial-function-map (d).
 - key: exr-evaluation-and-substitution-b2
   kind: exr
   file: 04-evaluation-and-substitution.md
   line: 376
   hash: 1b19aae6cb8b
-  verdicts: []
+  verdicts:
+  - stage: S5a
+    verdict: correct
+    by: refereeA
+    hash: 1b19aae6cb8b
+    date: '2026-10-12'
+    model: claude-opus-5-5
+    evidence: 'Lines 383-397: all eight rows verified (p(1)=a0+a1+a2). There are 4 functions, each from
+      exactly 2 polynomials differing by x^2+x. Citing exr-degree-b3 from a solution is allowed (STYLE
+      line 237).'
+  - stage: S5b
+    verdict: minor
+    by: refereeB
+    hash: 1b19aae6cb8b
+    date: '2026-10-12'
+    model: claude-opus-5-5
+    evidence: 04-evaluation-and-substitution.md:383 In the B2 solution, p is a prime ('@exr-degree-b3
+      with p = 2') and also the name of the polynomials in the table header two lines later.
+  - stage: S6
+    verdict: correct
+    by: verifier
+    hash: 1b19aae6cb8b
+    date: '2026-10-12'
+    model: claude-opus-5-5
+    evidence: 04:382-397. Table, 4 functions and 2 polynomials each all confirmed by exhaustive enumeration.
+      The worked type is exm-polynomial-vs-function-f2. exr-degree-b3 is the right count.
 - key: exr-evaluation-and-substitution-b3
   kind: exr
   file: 04-evaluation-and-substitution.md
   line: 400
   hash: 7c244b39f60b
-  verdicts: []
+  verdicts:
+  - stage: S5a
+    verdict: correct
+    by: refereeA
+    hash: 7c244b39f60b
+    date: '2026-10-12'
+    model: claude-opus-5-5
+    evidence: 'Lines 407-411: T_{-c}∘T_c is a ring homomorphism fixing constants with x ↦ (x-c)+c = x.
+      Uniqueness (b) with φ = constants and s=x gives id. The symmetric case follows, so it is a bijection
+      with a two-sided inverse.'
+  - stage: S5b
+    verdict: correct
+    by: refereeB
+    hash: 7c244b39f60b
+    date: '2026-10-12'
+    model: claude-opus-5-5
+    evidence: 04:400-412. T_{-c}∘T_c and id agree on constants and on x, so uniqueness gives identity,
+      and symmetrically. Bijective by fd2:def-bijective.
+  - stage: S6
+    verdict: correct
+    by: verifier
+    hash: 7c244b39f60b
+    date: '2026-10-12'
+    model: claude-opus-5-5
+    evidence: '04:406-411. The uniqueness argument is complete: T_{-c}(c)=c because T_{-c} fixes constants.
+      The worked type is prp-polynomial-function-map (c).'
 - key: exr-evaluation-and-substitution-c1
   kind: exr
   file: 04-evaluation-and-substitution.md
   line: 416
   hash: 513485235eed
-  verdicts: []
+  verdicts:
+  - stage: S5a
+    verdict: correct
+    by: refereeA
+    hash: 513485235eed
+    date: '2026-10-12'
+    model: claude-opus-5-5
+    evidence: 'Lines 423-448: the solution reproduces the main proof correctly, including φ(0)=0 from
+      φ(0)+φ(0)=φ(0). The marking scheme is consistent.'
+  - stage: S5b
+    verdict: correct
+    by: refereeB
+    hash: 513485235eed
+    date: '2026-10-12'
+    model: claude-opus-5-5
+    evidence: 04:416-449. The statement matches thm-polynomial-substitution, the proof is complete, and
+      the marking scheme sums to 1+1+3+2+1+2 = 10 with fatal errors named.
+  - stage: S6
+    verdict: minor
+    by: verifier
+    hash: 513485235eed
+    date: '2026-10-12'
+    model: claude-opus-5-5
+    evidence: '04-evaluation-and-substitution.md:443 The scheme''s 3-point and 2-point steps are tied
+      to the book''s route and to wording. A correct alternative proof can lose points (applies to both
+      exit-check schemes: 04-C1 here and 05-C1).'
 - key: exr-evaluation-and-substitution-c2
   kind: exr
   file: 04-evaluation-and-substitution.md
   line: 451
   hash: 7df218532b11
-  verdicts: []
+  verdicts:
+  - stage: S5a
+    verdict: correct
+    by: refereeA
+    hash: 7df218532b11
+    date: '2026-10-12'
+    model: claude-opus-5-5
+    evidence: 'Lines 466-474: (ax^n)∘q = a q^n by homomorphism plus power property. (aq^n)∘r = a(q∘r)^n
+      likewise. The right side gives the same. lem-check-on-monomials m=1, T=R[x], with both sides additive
+      by the given half.'
+  - stage: S5b
+    verdict: correct
+    by: refereeB
+    hash: 7df218532b11
+    date: '2026-10-12'
+    model: claude-opus-5-5
+    evidence: 04:451-475. The move is named. (a x^n)∘q = a q^n by the power property, and lem-check-on-monomials
+      with m=1, T=R[x] finishes. The statement is well posed.
+  - stage: S6
+    verdict: minor
+    by: verifier
+    hash: 7df218532b11
+    date: '2026-10-12'
+    model: claude-opus-5-5
+    evidence: 04-evaluation-and-substitution.md:464 The faded blank has two reasonable completions, and
+      the solution accepts only one ('The move is check on monomials').
 - key: exr-evaluation-and-substitution-c3
   kind: exr
   file: 04-evaluation-and-substitution.md
   line: 477
   hash: 62d0ce375a34
-  verdicts: []
+  verdicts:
+  - stage: S5a
+    verdict: correct
+    by: refereeA
+    hash: 62d0ce375a34
+    date: '2026-10-12'
+    model: claude-opus-5-5
+    evidence: '(a) lines 505-512: coefficient computation verified, including n=1. (c) roots [1],[3],[5],[7]
+      and [2][4]=[0] are correct. (b) line 520: writes Σ_{k=1}^{N} after dropping the k=0 term. lem-finite-sums-and-powers
+      (a) defines only sums from index 0, and the re-indexing (dropping a zero first term) is not justified.
+      [finding refuted by skeptics]'
+  - stage: S5b
+    verdict: minor
+    by: refereeB
+    hash: 62d0ce375a34
+    date: '2026-10-12'
+    model: claude-opus-5-5
+    evidence: '04-evaluation-and-substitution.md:493 The two-rung hint ladder is not a ladder: Hint 1
+      concerns part (b) and Hint 2 concerns part (a). Hint 1 also gives away the key step of (b).'
+  - stage: S6
+    verdict: minor
+    by: verifier
+    hash: 62d0ce375a34
+    date: '2026-10-12'
+    model: claude-opus-5-5
+    evidence: 04-evaluation-and-substitution.md:493 The hint ladder breaks STYLE §11.7. Rung 1 is the
+      first line of part (b), and rung 2 names a tool for part (a). The order is inverted and the rungs
+      address different parts.
+  - stage: S8
+    verdict: minor
+    by: seam
+    hash: 62d0ce375a34
+    date: '2026-10-12'
+    model: claude-opus-5-5
+    evidence: 04-evaluation-and-substitution.md:484 Part (a) asks the reader to prove, and the solution
+      proves again, an identity already proved in Chapter 1 for every commutative ring. The solution does
+      not say so.
 - key: exr-evaluation-and-substitution-c4
   kind: exr
   file: 04-evaluation-and-substitution.md
   line: 530
   hash: b7f67990a948
-  verdicts: []
+  verdicts:
+  - stage: S5a
+    verdict: correct
+    by: refereeA
+    hash: b7f67990a948
+    date: '2026-10-12'
+    model: claude-opus-5-5
+    evidence: 'Lines 543-560: (a) injectivity via thm-field-basic-properties (f); surjectivity via fd2:thm-finite-no-proper-copy
+      applied to the bijection F*→image. (b) the deletion rule is a separate induction on length: base
+      is the recursion; for k≤r it uses the length-r rule, then (F5),(F6) and the recursion for the deleted
+      list ending in u_{r+1}. σ'' is a bijection of {1..r}; the outer induction closes. Cancel'
+  - stage: S5b
+    verdict: minor
+    by: refereeB
+    hash: b7f67990a948
+    date: '2026-10-12'
+    model: claude-opus-5-5
+    evidence: 04-evaluation-and-substitution.md:558 'This is a second witness, beside the P of prp-polynomial-function-map
+      (d) with R = F_p' implies x^p - x and P are different polynomials. They are equal.
+  - stage: S6
+    verdict: minor
+    by: verifier
+    hash: b7f67990a948
+    date: '2026-10-12'
+    model: claude-opus-5-5
+    evidence: 04-evaluation-and-substitution.md:558 'This is a second witness, beside the P of @prp-polynomial-function-map
+      (d) with R = F_p' suggests a different polynomial. Over F_p the two are the same polynomial.
+  - stage: S8
+    verdict: minor
+    by: seam
+    hash: b7f67990a948
+    date: '2026-10-12'
+    model: claude-opus-5-5
+    evidence: 04-evaluation-and-substitution.md:543 The chapter uses two notations for the set of non-zero
+      elements of a field. F^* appears only here and has no NOTATION row.
 - key: def-formal-derivative
   kind: def
   file: 05-formal-derivative.md
   line: 15
   hash: b341898c03ec
-  verdicts: []
+  verdicts:
+  - stage: S5a
+    verdict: correct
+    by: refereeA
+    hash: b341898c03ec
+    date: '2026-10-12'
+    model: claude-opus-5-5
+    evidence: '05:15-47. Checked that f'' is a polynomial (N admissible, k>=N gives k+1>N, m·0=0 from
+      lem-finite-sums-and-powers (d) and fd3:prp-ring-algebra (b)). Higher derivatives come from fd2:thm-recursion
+      with step (k,u)->u''. (M) holds for n>=1 and for n=0. The warning identity sum (k·f_k)x^k = x f''
+      checks: (xf'')_k=(f'')_{k-1}=k·f_k, and 0·f_0=0.'
+  - stage: S5b
+    verdict: minor
+    by: refereeB
+    hash: b341898c03ec
+    date: '2026-10-12'
+    model: claude-opus-5-5
+    evidence: '05-formal-derivative.md:47 A main-text claim rests on an exercise: ''nothing else would
+      do: Exercise C1 shows that the formal derivative is the only additive map ...''. STYLE 9 checklist:
+      ''No proof, idea or claim rests on an exercise.'''
 - key: exm-formal-derivatives
   kind: exm
   file: 05-formal-derivative.md
   line: 53
   hash: 4b1b250e717d
-  verdicts: []
+  verdicts:
+  - stage: S5a
+    verdict: correct
+    by: refereeA
+    hash: 4b1b250e717d
+    date: '2026-10-12'
+    model: claude-opus-5-5
+    evidence: 05:53-85. (i) 2, 0, -6, 4 are correct. (ii) uses def-polynomial (x = 1x^1). (iii) 3·1=0
+      in F_3 by fd3:thm-integers-mod-n-ring (d). (iv) 3·[2]=[6]=[0]. (v) is fine. The sidecar passes.
+  - stage: S5b
+    verdict: correct
+    by: refereeB
+    hash: 4b1b250e717d
+    date: '2026-10-12'
+    model: claude-opus-5-5
+    evidence: '05:53-85: (i) 4x^3-6x^2+2, (ii) a''=0, x''=1, (x-c)''=1, (iii) 1 and 0, (iv) 3.[2]=[0]
+      so the derivative is 1, (v) n x^(n-1). All recomputed and checked; the sidecar passes. Citations
+      (fd3:thm-integers-mod-n-ring (d), fd3:thm-quotient-ring-by-ideal (b), the Multiples paragraph of
+      fd3 Section 2.3) match their content.'
 - key: check:05-formal-derivative:1
   kind: check
   file: 05-formal-derivative.md
   line: 89
   hash: 7f2d6fb5bc83
-  verdicts: []
+  verdicts:
+  - stage: S5a
+    verdict: correct
+    by: refereeA
+    hash: 7f2d6fb5bc83
+    date: '2026-10-12'
+    model: claude-opus-5-5
+    evidence: '05:89-95: over F_2, (x^3+x^2+x+1)'' = x^2+1, since 3·1=1 and 2·1=0.'
+  - stage: S5b
+    verdict: correct
+    by: refereeB
+    hash: 7f2d6fb5bc83
+    date: '2026-10-12'
+    model: claude-opus-5-5
+    evidence: '05:89-95: (3.1)x^2+(2.1)x+1 = x^2+1 over F_2.'
 - key: thm-formal-derivative-rules
   kind: thm
   file: 05-formal-derivative.md
   line: 101
   hash: 78015241f148
-  verdicts: []
+  verdicts:
+  - stage: S5a
+    verdict: correct
+    by: refereeA
+    hash: 78015241f148
+    date: '2026-10-12'
+    model: claude-opus-5-5
+    evidence: '05:101-111. Every hypothesis is used: R commutative throughout; m>0 so that g^{m-1} is
+      defined.'
+  - stage: S5b
+    verdict: correct
+    by: refereeB
+    hash: 78015241f148
+    date: '2026-10-12'
+    model: claude-opus-5-5
+    evidence: 05:101-111 matches the blueprint (bp l.192). Every hypothesis is used (m in Z_{>0} for g^(m-1)).
 - key: proof:thm-formal-derivative-rules
   kind: proof
   file: 05-formal-derivative.md
   line: 117
   hash: e593c2fa70a5
-  verdicts: []
+  verdicts:
+  - stage: S5a
+    verdict: minor
+    by: refereeA
+    hash: e593c2fa70a5
+    date: '2026-10-12'
+    model: claude-opus-5-5
+    evidence: 05-formal-derivative.md:140 Line 140 says (F1)–(F9) hold in R[x], but (F8) does not hold
+      there.
+  - stage: S5b
+    verdict: minor
+    by: refereeB
+    hash: e593c2fa70a5
+    date: '2026-10-12'
+    model: claude-opus-5-5
+    evidence: '05-formal-derivative.md:140 False sentence: ''R[x] is a commutative ring, so (F1)-(F9)
+      ... hold in it''. (F8), inverses of non-zero elements, is not a commutative-ring axiom and fails
+      in R[x].'
 - key: check:05-formal-derivative:2
   kind: check
   file: 05-formal-derivative.md
   line: 195
   hash: 9a36cdde4dcc
-  verdicts: []
+  verdicts:
+  - stage: S5a
+    verdict: correct
+    by: refereeA
+    hash: 9a36cdde4dcc
+    date: '2026-10-12'
+    model: claude-opus-5-5
+    evidence: '05:195-201: over F_3, (x+1)^3 = x^3+1, and both routes give 0.'
+  - stage: S5b
+    verdict: correct
+    by: refereeB
+    hash: 9a36cdde4dcc
+    date: '2026-10-12'
+    model: claude-opus-5-5
+    evidence: '05:195-201: (3.1)(x+1)^2 = 0, and (x+1)^3 = x^3+1 in F_3[x], whose derivative is 0.'
 - key: prp-formal-derivative-zero
   kind: prp
   file: 05-formal-derivative.md
   line: 207
   hash: ef0191c7dfaa
-  verdicts: []
+  verdicts:
+  - stage: S5a
+    verdict: correct
+    by: refereeA
+    hash: ef0191c7dfaa
+    date: '2026-10-12'
+    model: claude-opus-5-5
+    evidence: '05:207-216. Field is needed: without it (a) fails, e.g. over Z×F_2 (characteristic 0) f=(0,1)x^2
+      has f''=0. Characteristic 0 or p is needed (F_2, x^2). Both hypotheses are used.'
+  - stage: S5b
+    verdict: correct
+    by: refereeB
+    hash: ef0191c7dfaa
+    date: '2026-10-12'
+    model: claude-opus-5-5
+    evidence: 05:207-216 matches the blueprint. The characteristic is cited from def-characteristic and
+      thm-characteristic-prime (fd4 ch02 sec 05); def-polynomial-composition exists in 04:248.
 - key: proof:prp-formal-derivative-zero
   kind: proof
   file: 05-formal-derivative.md
   line: 222
   hash: 119d3b2fd8a5
-  verdicts: []
+  verdicts:
+  - stage: S5a
+    verdict: minor
+    by: refereeA
+    hash: 119d3b2fd8a5
+    date: '2026-10-12'
+    model: claude-opus-5-5
+    evidence: 05-formal-derivative.md:235 The inline claim "k·1 = 0 iff p | k" re-proves an approved earlier
+      result instead of citing it.
+  - stage: S5b
+    verdict: minor
+    by: refereeB
+    hash: 119d3b2fd8a5
+    date: '2026-10-12'
+    model: claude-opus-5-5
+    evidence: '05-formal-derivative.md:252 ''k = pj_0 for exactly one j_0 in N'': p | k gives j_0 in Z
+      only. The non-negativity of j_0, needed to index g_{j_0} and the sum over j in N, is neither justified
+      nor ledgered.'
 - key: check:05-formal-derivative:3
   kind: check
   file: 05-formal-derivative.md
   line: 265
   hash: 4dedd2734a54
-  verdicts: []
+  verdicts:
+  - stage: S5a
+    verdict: correct
+    by: refereeA
+    hash: 4dedd2734a54
+    date: '2026-10-12'
+    model: claude-opus-5-5
+    evidence: '05:265-271: over F_5, (x^5+x)'' = 1.'
+  - stage: S5b
+    verdict: correct
+    by: refereeB
+    hash: 4dedd2734a54
+    date: '2026-10-12'
+    model: claude-opus-5-5
+    evidence: '05:265-271: (5.1)x^4+1 = 1 over F_5.'
 - key: exr-formal-derivative-a1
   kind: exr
   file: 05-formal-derivative.md
   line: 277
   hash: 6fefc7b48160
-  verdicts: []
+  verdicts:
+  - stage: S5a
+    verdict: correct
+    by: refereeA
+    hash: 6fefc7b48160
+    date: '2026-10-12'
+    model: claude-opus-5-5
+    evidence: 05:277-300. (a) gives 5x^4-1, and -1 = 4 in F_5. (b) is true over Q (characteristic 0) and
+      false over F_2 (witness x^2). (c) f' = (2·f_2)x + f_1, so the degree is in {1, 0, -inf}, with witnesses
+      [2]x^3+x^2 -> [2]x, [2]x^3+x -> 1, and [2]x^3 -> 0. All correct. (d) is fine.
+  - stage: S5b
+    verdict: minor
+    by: refereeB
+    hash: 6fefc7b48160
+    date: '2026-10-12'
+    model: claude-opus-5-5
+    evidence: 05-formal-derivative.md:291 The ledger misdescribes the text. Ledger 05:578 says 'Q has
+      characteristic 0 (k.1 = k != 0)' is 'the computation of exm-formal-derivatives (i), cited by position'.
+      The solution gives the fact bare, with no pointer.
+  - stage: S6
+    verdict: correct
+    by: verifier
+    hash: 6fefc7b48160
+    date: '2026-10-12'
+    model: claude-opus-5-5
+    evidence: '05:288-300. (a) 5x^4-1 and -1 confirmed. (c): exhaustive search over all f of degree 3
+      with lc [2] in Z/6Z gives deg f'' in {1,0,-inf}, and the witnesses check. (b) and (d) are correct.'
 - key: exr-formal-derivative-b1
   kind: exr
   file: 05-formal-derivative.md
   line: 304
   hash: afed6b96da9c
-  verdicts: []
+  verdicts:
+  - stage: S5a
+    verdict: correct
+    by: refereeA
+    hash: afed6b96da9c
+    date: '2026-10-12'
+    model: claude-opus-5-5
+    evidence: 05:304-343. Phi and Psi are additive because composition is a ring homomorphism (def-polynomial-composition).
+      On monomials, (ax^n)∘g = a g^n. The n=0 and n>=1 cases agree via a(n·1) = n·a. lem-check-on-monomials
+      m=1 applies. The check 4x^3+4x is correct.
+  - stage: S5b
+    verdict: correct
+    by: refereeB
+    hash: afed6b96da9c
+    date: '2026-10-12'
+    model: claude-opus-5-5
+    evidence: '05:304-343: additivity, the n=0 and n>=1 monomial cases, and lem-check-on-monomials with
+      m=1 are correct. Check: (x^2+1)^2 has derivative 4x^3+4x = 2(x^2+1).2x.'
+  - stage: S6
+    verdict: correct
+    by: verifier
+    hash: afed6b96da9c
+    date: '2026-10-12'
+    model: claude-opus-5-5
+    evidence: 05:314-342. Matches my proof (one-argument monomial check, n=0 case separate). The check
+      4x^3+4x is confirmed by script. The worked type is the product-rule proof.
 - key: exr-formal-derivative-b2
   kind: exr
   file: 05-formal-derivative.md
   line: 345
   hash: 53fb3ebec98e
-  verdicts: []
+  verdicts:
+  - stage: S5a
+    verdict: correct
+    by: refereeA
+    hash: 53fb3ebec98e
+    date: '2026-10-12'
+    model: claude-opus-5-5
+    evidence: '05:345-384. (a) The induction uses (mn)·a = m·(n·a) and P(n,k+1) = P(n,k)(n-k); for k>n
+      the values are 0. (b) The coefficient formula (f^{(k)})_j = P(j+k,k)·f_{j+k} is proved by induction,
+      since the added factor is j+1. One of j+1..j+p is divisible by p, so P(j+p,p) = Mp. Example: P(4,3)
+      = 24 ≡ 0 mod 3.'
+  - stage: S5b
+    verdict: minor
+    by: refereeB
+    hash: 53fb3ebec98e
+    date: '2026-10-12'
+    model: claude-opus-5-5
+    evidence: 05-formal-derivative.md:379 'So P(j+p,p) = Mp with M in N' is unjustified. Divisibility
+      only gives M in Z.
+  - stage: S6
+    verdict: minor
+    by: verifier
+    hash: 53fb3ebec98e
+    date: '2026-10-12'
+    model: claude-opus-5-5
+    evidence: 05-formal-derivative.md:345 B2 has no worked example of its type in the section, which STYLE
+      §6 and §9 require for every B item.
 - key: exr-formal-derivative-c1
   kind: exr
   file: 05-formal-derivative.md
   line: 388
   hash: b47c935ad65f
-  verdicts: []
+  verdicts:
+  - stage: S5a
+    verdict: correct
+    by: refereeA
+    hash: b47c935ad65f
+    date: '2026-10-12'
+    model: claude-opus-5-5
+    evidence: 05:388-427. Both sides are additive. δ(x^n) is computed by induction from the Leibniz rule;
+      δ(ax^n) = aδ(x^n) uses δ(a)=0. The n=0 case is handled. lem-check-on-monomials (m=1, T=R[x]) applies.
+      Uniqueness is correct.
+  - stage: S5b
+    verdict: correct
+    by: refereeB
+    hash: b47c935ad65f
+    date: '2026-10-12'
+    model: claude-opus-5-5
+    evidence: '05:388-427: induction for delta(x^n), the monomial step via delta(a)=0, check on monomials,
+      and uniqueness are correct. The marking scheme sums to 10 (2+2+3+2+1) and names fatal errors. The
+      statement matches the claim at 05:47.'
+  - stage: S6
+    verdict: minor
+    by: verifier
+    hash: b47c935ad65f
+    date: '2026-10-12'
+    model: claude-opus-5-5
+    evidence: 05:398-426. The solution is correct and earns 10/10. The scheme fails the subring/closure
+      route (finding 5).
 - key: exr-formal-derivative-c2
   kind: exr
   file: 05-formal-derivative.md
   line: 429
   hash: 0162d30f5b78
-  verdicts: []
+  verdicts:
+  - stage: S5a
+    verdict: correct
+    by: refereeA
+    hash: 0162d30f5b78
+    date: '2026-10-12'
+    model: claude-opus-5-5
+    evidence: 05:429-456. The claim is true. Line (3)'s inference 'k≠0 so k·1≠0' is the unproved general
+      'fact' (N9 exists in fd1:exm-not-allowed-catalogue, fd1 ch?? line 336/384 usage). The counterexample
+      2·1=0 in F_2 is valid, and the repair via characteristic 0 of Q is valid.
+  - stage: S5b
+    verdict: correct
+    by: refereeB
+    hash: 0162d30f5b78
+    date: '2026-10-12'
+    model: claude-opus-5-5
+    evidence: '05:429-456: the conclusion is true, line (3) first half fails, entry (N9) is the ''cites
+      nothing'' entry of fd1 06-checking-proofs, the counterexample to the step is 2.1=0 in F_2, and the
+      repair is characteristic 0. The marking scheme sums to 10. Matches STYLE 11.3.'
+  - stage: S6
+    verdict: minor
+    by: verifier
+    hash: 0162d30f5b78
+    date: '2026-10-12'
+    model: claude-opus-5-5
+    evidence: 05-formal-derivative.md:454 The marking scheme gives the 3 repair points only for a repair
+      'by the characteristic of Q, with a reason why k*1 = k in Q'. A shorter correct repair gets nothing.
 - key: exr-formal-derivative-r1
   kind: exr
   file: 05-formal-derivative.md
   line: 460
   hash: 60f1c3323c7b
-  verdicts: []
+  verdicts:
+  - stage: S5a
+    verdict: correct
+    by: refereeA
+    hash: 60f1c3323c7b
+    date: '2026-10-12'
+    model: claude-opus-5-5
+    evidence: 05:460-482. T is a ring homomorphism by def-polynomial-composition. S∘T and T∘S fix the
+      constants and x, so the uniqueness in thm-polynomial-substitution (b) gives the identity. A bijective
+      homomorphism is an isomorphism (def-group-homomorphism). Over F_2, (T∘T)(x) = x.
+  - stage: S5b
+    verdict: minor
+    by: refereeB
+    hash: 60f1c3323c7b
+    date: '2026-10-12'
+    model: claude-opus-5-5
+    evidence: 05-formal-derivative.md:477 The step 'S is a two-sided inverse ..., T is bijective' uses
+      fd2:thm-bijection-iff-inverse without citing or ledgering it. fd2:def-inverse-function only defines
+      inverses.
+  - stage: S6
+    verdict: minor
+    by: verifier
+    hash: 60f1c3323c7b
+    date: '2026-10-12'
+    model: claude-opus-5-5
+    evidence: 05-formal-derivative.md:463 R1 restates this chapter's exercise B3 of §4.4 (T_c with c =
+      1), and its solution reuses that exercise's argument. It applies the method to data the reader has
+      already seen, against the STYLE §6 calibration ('an R item uses one method from its source chapter,
+      applied to data it has not seen').
 - key: exr-formal-derivative-r2
   kind: exr
   file: 05-formal-derivative.md
   line: 484
   hash: dc03d9bd1902
-  verdicts: []
+  verdicts:
+  - stage: S5a
+    verdict: correct
+    by: refereeA
+    hash: dc03d9bd1902
+    date: '2026-10-12'
+    model: claude-opus-5-5
+    evidence: 05:484-502. A = conj∘Phi_z and B = Phi_{conj z} are ring homomorphisms agreeing on constants
+      (conj a = a) and on x, so thm-polynomial-substitution (b) applies. For conj z0 ≠ z0, use 2b=0 =>
+      b=0 via fd3:prp-ordered-ring-rules (h) (n·1>0) and (f) (no zero divisors).
+  - stage: S5b
+    verdict: minor
+    by: refereeB
+    hash: dc03d9bd1902
+    date: '2026-10-12'
+    model: claude-opus-5-5
+    evidence: 05-formal-derivative.md:501 Meta-claim 'This is the statement of @prp-real-coefficients-conjugate-roots'
+      overstates. The exercise also asks that the conjugate root be different, which is not in that proposition's
+      statement.
+  - stage: S6
+    verdict: correct
+    by: verifier
+    hash: dc03d9bd1902
+    date: '2026-10-12'
+    model: claude-opus-5-5
+    evidence: 05:490-501. The uniqueness argument and the proof that b != 0 gives conj z0 != z0 (via prp-ordered-ring-rules
+      (h), (f)) are correct. The source is hidden and named (@prp-real-coefficients-conjugate-roots).
+      The overlap with its source statement is the blueprint's recorded decision.
 - key: exr-formal-derivative-r3
   kind: exr
   file: 05-formal-derivative.md
   line: 504
   hash: 4a04da76a8a7
-  verdicts: []
+  verdicts:
+  - stage: S5a
+    verdict: correct
+    by: refereeA
+    hash: 4a04da76a8a7
+    date: '2026-10-12'
+    model: claude-opus-5-5
+    evidence: 05:504-522. Z is the image of N×N; F_2 is the image of N (fd2:def-countable). A_N ≅ R^{N+1}
+      (exr-polynomials-as-sequences-b1; R^{N+1} is countable by fd2:cor-product-countable (b) with k=N+1>=2).
+      The union uses fd2:thm-countable-union (a), and binary sequences are uncountable. Citations match
+      their statements.
+  - stage: S5b
+    verdict: correct
+    by: refereeB
+    hash: 4a04da76a8a7
+    date: '2026-10-12'
+    model: claude-opus-5-5
+    evidence: '05:507-522: fd2:def-countable (empty or the image of N) makes F_2 and each A_N countable.
+      cor-product-countable (b) needs k>=2, and the text applies it with N+1>=2. thm-countable-union (a)
+      with its choice flag; binary sequences via prp-countable-image. Z=(NxN)/~ matches fd3.'
+  - stage: S6
+    verdict: correct
+    by: verifier
+    hash: 4a04da76a8a7
+    date: '2026-10-12'
+    model: claude-opus-5-5
+    evidence: '05:510-521. Every cited fd2/fd3 label exists with the stated content: def-countable allows
+      a surjection from N, cor-product-countable (b) needs k>=2, which holds for N>=1, and thm-countable-union
+      (a) applies. The ''only finitely many'' clause is correctly identified.'
+  - stage: S8
+    verdict: correct
+    by: seam
+    hash: 4a04da76a8a7
+    date: '2026-10-12'
+    model: claude-opus-5-5
+    evidence: STYLE §11.5 says R3 is 'taken from the spiral table in curriculum.md'. curriculum.md:448-456
+      has no row for countability or polynomials, and no F4.4 entry. [finding refuted by skeptics]
 - key: exr-formal-derivative-r4
   kind: exr
   file: 05-formal-derivative.md
   line: 524
   hash: fa1bfae80819
-  verdicts: []
+  verdicts:
+  - stage: S5a
+    verdict: correct
+    by: refereeA
+    hash: fa1bfae80819
+    date: '2026-10-12'
+    model: claude-opus-5-5
+    evidence: '05:524-546. The answer 0, x^n is correct. Top coefficient: a^2 = a with a≠0, so a=1. Next:
+      the coefficient at n+k is 2r_k on the f^2 side and 0 on the f∘x^2 side (n+k=2j gives k<j<n). deg
+      r^2 <= 2k < n+k. Over F_2 every f works (Frobenius and c^2=c). All checked.'
+  - stage: S5b
+    verdict: minor
+    by: refereeB
+    hash: fa1bfae80819
+    date: '2026-10-12'
+    model: claude-opus-5-5
+    evidence: '05-formal-derivative.md:543 ''@prp-polynomial-function-map (d) shows that over a finite
+      ring it is false'': (d) assumes 1 != 0, and over the zero ring, which is finite, the statement is
+      true.'
+  - stage: S6
+    verdict: correct
+    by: verifier
+    hash: fa1bfae80819
+    date: '2026-10-12'
+    model: claude-opus-5-5
+    evidence: '05:530-545. Matches my solution: lc forces a=1, and for k=deg r < n the coefficient at
+      n+k is 2r_k on one side and 0 on the other, because n+k=2j forces k<j<n. Brute force over deg<=3
+      with coefficients in [-2,2] finds only 0, 1, x, x^2, x^3. The look-alikes and the F_2 remark are
+      correct.'
