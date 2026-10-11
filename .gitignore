@@ -19,7 +19,7 @@ site/
 *.synctex.gz
 templates/latex/*.pdf
 *.toc
-.venv/
+.venv
 .vscode/
 # per-volume build output and deploy clones
 */_build/
