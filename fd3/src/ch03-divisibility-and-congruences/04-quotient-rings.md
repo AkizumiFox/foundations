@@ -1,6 +1,6 @@
 # Ideals, Quotient Rings, and the Integers Modulo n
 
-*Sets, Relations, and Cardinality*, Section 2.5 turned the school integers into a clock, \( \nZ/n \), and checked by hand that its sum and product are well defined (@fd2:prp-congruence-arithmetic). Chapter 2 made the same kind of check twice more, for \( \nZ \) and for \( \nQ \), each time through @thm-well-defined-on-classes and a computation special to the formula. This section makes the check **once**, for every commutative ring and every subset of the right kind, called an ideal. The integers modulo \( n \), now a ring, are the first example. Chapter 5 builds \( \nR \) by the same pattern, from classes of Cauchy sequences of rationals, and *Algebraic Preliminaries*, Chapter 5 builds rings of polynomials modulo a fixed polynomial.
+*Sets, Relations, and Cardinality*, Section 2.5 turned the school integers into a clock, \( \nZ/n \), and checked by hand that its sum and product are well defined (@fd2:prp-congruence-arithmetic). Chapter 2 made the same kind of check twice more, for \( \nZ \) and for \( \nQ \), each time through @thm-well-defined-on-classes and a computation special to the formula. This section makes the check **once**, for every commutative ring and every subset of the right kind, called an ideal. The integers modulo \( n \), now a ring, are the first example. Chapter 5 builds \( \nR \) in the same shape, from classes of Cauchy sequences of rationals that differ by a null sequence, and checks its operations there directly; *Algebraic Preliminaries*, Chapter 5 runs division with remainder, gcd and unique factorization again for polynomials over a field.
 
 Throughout, \( R \) is a commutative ring (@def-commutative-ring-and-field), with \( a - b \coloneqq a + (-b) \).
 
@@ -44,7 +44,7 @@ Two consequences are used constantly. First, an ideal is closed under negatives 
 - For \( n \in \nZ \), the multiples \( n\nZ = \{ kn : k \in \nZ \} \) form an ideal of \( \nZ \) (@def-integer-linear-combinations): \( 0 = 0 \cdot n \); \( kn + ln = (k + l)n \); \( r(kn) = (rk)n \). In particular the even integers \( 2\nZ \) form an ideal.
 - For \( a, b \in \nZ \), the combinations \( a\nZ + b\nZ \) form an ideal of \( \nZ \), by the closure properties in @def-integer-linear-combinations; @thm-integer-ideals-principal below records this.
 
-**Non-examples by minimal change.** \( \nN \subseteq \nZ \) satisfies (I1) and (I2), but (I3) fails at \( a = 1 \), \( r = -1 \): \( (-1) \cdot 1 = -1 \notin \nN \), since \( -1 < 0 \) (@thm-integers-ordered-ring (b)). And \( \nZ \subseteq \nQ \) satisfies (I1), (I2) and is even closed under negatives and products, but (I3) fails at \( a = 1 \), \( r = 1/2 \): \( (1/2) \cdot 1 = 1/2 \notin \nZ \). (If \( 1/2 = m \in \nZ \), then \( 2m = 1 \), but \( 1 = 2 \cdot 0 + 1 \) is odd and so not of the form \( 2m \), by @cor-integers-even-odd (a).) In both cases the ring element \( r \) comes from **outside** the subset, which is exactly what (I3) allows.
+**Non-examples by minimal change.** \( \nN \subseteq \nZ \) satisfies (I1) and (I2), but (I3) fails at \( a = 1 \), \( r = -1 \): \( (-1) \cdot 1 = -1 \notin \nN \), since \( -1 < 0 \) (\( 1 > 0 \) by @prp-ordered-ring-rules (e), as \( 1 \ne 0 \) in \( \nZ \) by @thm-integers-commutative-ring, then (a)) while \( \nN = \{ x \in \nZ : x \ge 0 \} \) (@thm-integers-ordered-ring (b)). And \( \nZ \subseteq \nQ \) satisfies (I1), (I2) and is even closed under negatives and products, but (I3) fails at \( a = 1 \), \( r = 1/2 \): \( (1/2) \cdot 1 = 1/2 \notin \nZ \). (If \( 1/2 = m \in \nZ \), then \( 2m = 1 \), but \( 1 = 2 \cdot 0 + 1 \) is odd and so not of the form \( 2m \), by @cor-integers-even-odd (a).) In both cases the ring element \( r \) comes from **outside** the subset, which is exactly what (I3) allows.
 
 **Why these clauses.** Each clause was forced by one of the five wishes above, and dropping one loses its wish: without (I1) or (I2), \( \sim_I \) is not reflexive or not transitive; without (I3), the product on classes can fail, as the warning after the next theorem shows for \( \nZ \subseteq \nQ \).
 
@@ -94,7 +94,7 @@ using (F9) in \( R \) in the middle; for (F3), \( [a] + [0] = [a + 0] = [a] \); 
 *(d)* \( [a] = [0] \) holds if and only if \( a \sim_I 0 \) (@fd2:thm-classes-partition (b)), that is, \( a - 0 \in I \); and \( a - 0 = a + 0 = a \), since \( -0 = 0 \) (\( 0 + 0 = 0 \) and @prp-ring-algebra (a)). So \( [a] = [0] \iff a \in I \). In particular \( [1] = [0] \iff 1 \in I \). If \( 1 \in I \), then \( I = R \), since \( r = r \cdot 1 \in I \) for every \( r \in R \) by (I3); and if \( I = R \), then \( 1 \in I \). This proves the theorem.
 :::
 
-The answer to the prompt. Absorption, (I3), is used exactly once in the proof of (a) and (b): in the product, at \( ab - a'b = (a - a')b \), where the change of representative \( a - a' \in I \) is multiplied by an arbitrary \( b \in R \). Everywhere else the proof of (a) and (b) uses only (I1), (I2) and closure under negatives. Closure under \( + \) does not suffice for the product because \( b \) need not lie in \( I \): the product changes by a multiple of the error, not by a sum of errors.
+The answer to the prompt. Absorption with an arbitrary \( r \in R \), the full force of (I3), is used exactly once in the proof of (a) and (b): in the product, at \( ab - a'b = (a - a')b \), where the change of representative \( a - a' \in I \) is multiplied by an arbitrary \( b \in R \). Elsewhere (I3) enters only with \( r = -1 \), through closure under negatives (\( -x = (-1)x \)), and otherwise the proof uses (I1) and (I2). Closure under \( + \) does not suffice for the product because \( b \) need not lie in \( I \): the product changes by a multiple of the error, not by a sum of errors.
 
 We call this move **compute on representatives; the ideal absorbs the change**. It is the move of Chapter 2's "one argument at a time", now with the change of representative recorded as one element of \( I \).
 
@@ -132,7 +132,7 @@ For (b), take the least positive element \( n \) of \( I \). Its multiples lie i
 :::
 
 ::: {.remark}
-For \( I = a\nZ + b\nZ \) with \( (a, b) \ne (0, 0) \), (b) says \( a\nZ + b\nZ = n\nZ \) where \( n \) is the least positive combination. That is @thm-integers-bezout (a), (e), with \( n = \gcd(a, b) \): the theorem of Section 3.2 was this one in disguise.
+For \( I = a\nZ + b\nZ \) with \( (a, b) \ne (0, 0) \), (b) says \( a\nZ + b\nZ = n\nZ \) where \( n \) is the least positive combination. That is @thm-integers-bezout (a), (d), (e), with \( n = \gcd(a, b) \): the theorem of Section 3.2 was this one in disguise.
 :::
 
 ## The ring of integers modulo n
@@ -174,7 +174,7 @@ Most of the work is done: (a) is the general theorem, and (b) is division with r
 
 *Uniqueness.* Let \( r, s \in \{0, \dots, n - 1\} \) with \( [r] = [s] \). Then \( r - s = kn \) for some \( k \in \nZ \), so \( r = kn + s \) and \( r = 0 \cdot n + r \) are two divisions of \( r \) by \( n \), with remainders \( s \) and \( r \), each at least \( 0 \) and less than \( n \). By the uniqueness in @thm-integers-division-remainder (a), \( s = r \).
 
-So the map \( \varphi \colon \{0, \dots, n - 1\} \to \nZ/n\nZ \), \( r \mapsto [r] \), is surjective (existence: every class is some \( [a] \), @fd2:def-quotient-set) and injective (uniqueness), hence a bijection (@fd2:def-bijective). Since \( n \ge 1 \), \( n - 1 \in \nN \), and the third example after @fd2:def-finite, with \( n - 1 \) in place of its \( n \), gives the bijection \( \psi \colon \{1, \dots, n\} \to \{0, \dots, n - 1\} \), \( k \mapsto k - 1 \). The composite \( \varphi \circ \psi \colon \{1, \dots, n\} \to \nZ/n\nZ \) is a bijection (@fd2:prp-equinumerous-properties (c)), so \( \nZ/n\nZ \) has \( n \) elements.
+So the map \( \varphi \colon \{0, \dots, n - 1\} \to \nZ/n\nZ \), \( r \mapsto [r] \), is surjective (existence: every class is some \( [a] \), @fd2:def-quotient-set) and injective (uniqueness), hence a bijection (@fd2:def-bijective). Since \( n \ge 1 \), adding \( -1 \) gives \( n - 1 \ge 0 \) (O3), so \( n - 1 \in \nN \) by @thm-integers-ordered-ring (b), and the third example after @fd2:def-finite, with \( n - 1 \) in place of its \( n \), gives the bijection \( \psi \colon \{1, \dots, n\} \to \{0, \dots, n - 1\} \), \( k \mapsto k - 1 \). The composite \( \varphi \circ \psi \colon \{1, \dots, n\} \to \nZ/n\nZ \) is a bijection (@fd2:thm-composition-injective-surjective (c)), so \( \nZ/n\nZ \) has \( n \) elements.
 
 *(c)* By @thm-quotient-ring-by-ideal (d), \( [1] = [0] \) if and only if \( 1 \in n\nZ \), that is, \( n \mid 1 \). By @prp-divisibility-rules-integers (g) and \( n > 0 \), this happens exactly when \( n = 1 \). As \( n \ge 1 \) by discreteness, \( n \ne 1 \) means \( n \ge 2 \).
 
@@ -310,7 +310,7 @@ For each subset of \( \nZ \) below, decide whether it is an ideal of \( \nZ \). 
 :::
 
 ::: {.solution}
-(a) No. (I3) fails: \( 1 \in \nN \), but \( (-1) \cdot 1 = -1 \notin \nN \), since \( -1 < 0 \) (@thm-integers-ordered-ring (b)).
+(a) No. (I3) fails: \( 1 \in \nN \), but \( (-1) \cdot 1 = -1 \notin \nN \), since \( -1 < 0 \) (\( 1 > 0 \) by @prp-ordered-ring-rules (e), as \( 1 \ne 0 \) in \( \nZ \) by @thm-integers-commutative-ring, then (a)) while \( \nN = \{ x \in \nZ : x \ge 0 \} \) (@thm-integers-ordered-ring (b)).
 
 (b) No. (I2) fails: \( 2 \in 2\nZ \) and \( 3 \in 3\nZ \), but \( 5 \) is in neither, since \( 5 = 2 \cdot 2 + 1 \) and \( 5 = 1 \cdot 3 + 2 \) leave non-zero remainders (uniqueness in @thm-integers-division-remainder (a)).
 
@@ -336,11 +336,18 @@ Let \( m, n \in \nZ_{>0} \). Prove that there is a function \( F \colon \nZ/n\nZ
 \[
 [n]_m = F([n]_n) = F([0]_n) = [0]_m ,
 \]
-that is, \( n - 0 \in m\nZ \), and \( m \mid n \).
+so \( n \in m\nZ \) by @thm-quotient-ring-by-ideal (d), that is, \( m \mid n \).
 
 *Operations.* \( F([a]_n + [b]_n) = F([a + b]_n) = [a + b]_m = [a]_m + [b]_m \), by the definition of \( + \) in @thm-quotient-ring-by-ideal (b) on both sides; likewise for products, and \( F([1]_n) = [1]_m \).
 
 This is the general form of @fd2:exm-ill-defined-class-map: \( [a]_6 \mapsto [a]_4 \) fails because \( 4 \nmid 6 \), and \( [a]_6 \mapsto [a]_3 \) works because \( 3 \mid 6 \).
+
+**Marking scheme.** (10 points)
+- 3: \( (\Leftarrow) \) writes \( n = lm \), shows \( n\nZ \subseteq m\nZ \), and invokes @thm-well-defined-on-classes (a) with \( f(a) = a \).
+- 3: \( (\Rightarrow) \) uses \( [n]_n = [0]_n \) and applies \( F \) to get \( [n]_m = [0]_m \), hence \( m \mid n \).
+- 3: computes \( F \) of a sum and of a product on representatives, citing the definition of the operations on both quotient rings.
+- 1: \( F([1]_n) = [1]_m \).
+Fatal errors (0 for the step): defining \( F \) by a formula on representatives without checking that it does not depend on the representative; in \( (\Rightarrow) \), assuming \( n\nZ \subseteq m\nZ \) (circular).
 :::
 
 ::: {#exr-quotient-rings-c2}
@@ -366,18 +373,19 @@ Hence \( S = n\nZ \). No multiplication hypothesis was needed: closure under sub
 :::
 
 <!-- dependency ledger
-def-ideal-commutative-ring (claim): (opening) Chapter 5 builds R from classes of rational Cauchy sequences; Algebraic Preliminaries Ch 5 builds F[x]/(f) | F3.10 (prose pointer; blueprint ch05.md def-reals-cauchy-classes), F4.5 (prose pointer); nothing here depends on them
+def-ideal-commutative-ring (claim): (opening) Chapter 5 builds R from classes of rational Cauchy sequences up to a null difference, checking its operations directly; Algebraic Preliminaries Ch 5 redoes division, gcd and unique factorization for polynomials | F3.10 (prose pointer; blueprint ch05.md def-reals-cauchy-classes), F4.5 (prose pointer; math-atlas spec/06-migration.md F4.5 plan); nothing here depends on them
 def-ideal-commutative-ring (claim): (motivation) b - a = -(a - b), a - c = (a - b) + (b - c), ab - a'b = (a - a')b | ring axioms; proved again in thm-quotient-ring-by-ideal
 def-ideal-commutative-ring (claim): -x = (-1)x | prp-ring-algebra (c) (cited) with (F7), (F6)
 def-ideal-commutative-ring (example): nZ is an ideal; aZ + bZ is an ideal | def-integer-linear-combinations (cited); (F9), (F5)
 def-ideal-commutative-ring (example): Z not an ideal of Q: 1/2 not in Z | cor-integers-even-odd (a) (cited); identification of Section 2.4 (2m = 1 in Q gives 2m = 1 in Z, j injective and preserves products, prp-integers-embed-rationals), used silently
 thm-quotient-ring-by-ideal (proof): rearrangements (a + b) - (a' + b) = a - a', a = (a - b) + ... | (F1)-(F4), named in the proof
 thm-quotient-ring-by-ideal (proof): -0 = 0 | 0 + 0 = 0 by (F3), uniqueness prp-ring-algebra (a), named in the proof
-thm-quotient-ring-by-ideal (claim): (answer to prompt) (I3) is used once in (a), (b), in the product step; elsewhere only (I1), (I2), closure under negatives | meta-claim about the proof on the page: (a) uses (I1), (I2), negatives; (b) sum uses nothing, product uses (I3), negative uses closure under negatives; (d) uses (I3) to get I = R, outside (a), (b)
+thm-quotient-ring-by-ideal (claim): (answer to prompt) (I3) with arbitrary r is used once in (a), (b), in the product step; elsewhere (I3) only with r = -1 (closure under negatives), otherwise (I1), (I2) | meta-claim about the proof on the page: (a) uses (I1), (I2), negatives; (b) sum uses nothing, product uses (I3), negative uses closure under negatives; (d) uses (I3) to get I = R, outside (a), (b)
 thm-quotient-ring-by-ideal (claim): (warning) Z in Q closed under +, -, contains 0; 1/2 * 1/2 = 1/4, 3/2 * 1/2 = 3/4, 3/4 - 1/4 = 1/2 not in Z | field arithmetic in Q (thm-rationals-field); 1/2 not in Z as in the non-example; verify/ch03/thm-quotient-ring-by-ideal.py
 thm-integer-ideals-principal (proof): r = a + (-q)n | (F1)-(F4), prp-ring-algebra (c), used silently
 def-integers-mod-n-ring (claim): a - b in nZ iff n | a - b iff a = b mod n | fd2:def-divides, fd2:def-congruence read on the constructed Z (definitions only; blueprint ledger line "definitions on the constructed Z")
 thm-integers-mod-n-ring (proof): r <= n - 1 from r + 1 <= n; n - 1 in N for n >= 1 | (O3); thm-integers-ordered-ring (b) (cited)
+thm-integers-mod-n-ring (proof): phi o psi is a bijection | fd2:thm-composition-injective-surjective (c) (cited)
 thm-integers-mod-n-ring (proof): {0, ..., n - 1} has n elements by the third example after fd2:def-finite with n - 1 in place of n, read on omega | fd2:def-finite and its examples, group (i) of the F3.1 citing rule (cor-omega-identification); cited by position as the blueprint allows
 thm-integers-mod-n-ring (proof): multiples k . x defined for every commutative ring by recursion (Section 2.3, "Multiples") | F3.2 §03 paragraph before prp-ordered-ring-rules (cited by section, no label); prp-ordered-ring-rules (h) (cited) for n . 1 > 0
 thm-integers-mod-n-ring (claim): Z/2Z has the tables of exm-finite-ring-not-orderable | thm-integers-mod-n-ring (b) and the definitions; computed: 1 + 1 = 2 = 0 mod 2; verify/ch03/exm-integers-mod-six.py
@@ -386,6 +394,9 @@ exm-integers-mod-six (claim): units of Section 3.5; Chapter 6 uses Z/5Z | bluepr
 thm-integers-mod-n-ring (claim): (check) [7] + [8] = [3], [7][8] = [8] in Z/12Z; Z/1Z has one element | numerals; verify/ch03/thm-integers-mod-n-ring.py
 thm-integers-mod-n-ring (claim): (warning) the class 3 + 12Z | thm-quotient-ring-by-ideal (a) (cited by section)
 exr-quotient-rings-a1 (solution): 2 - 8 = -6, 10 - 40 = -30 = (-5) * 6 | numerals; verify/ch03/exr-quotient-rings-a1.py
+def-ideal-commutative-ring (example): (non-example N) -1 < 0 | prp-ordered-ring-rules (a), (e) (cited), with 1 != 0 from thm-integers-commutative-ring (cited); -0 = 0 used silently
+exr-quotient-rings-b2 (solution): (a) -1 < 0 | as for the non-example N after def-ideal-commutative-ring, cited the same way
+exr-quotient-rings-c1 (solution): [n]_m = [0]_m gives n in mZ | thm-quotient-ring-by-ideal (d) (cited), n - 0 = n as in its proof
 exr-quotient-rings-b1 (solution): tables of Z/4Z | numerals; verify/ch03/exr-quotient-rings-b1.py
 exr-quotient-rings-b2 (solution): 5 = 2*2 + 1 = 1*3 + 2; 4x + 6y = 2(2x + 3y); 2k = 4(-k) + 6k; 1 = (-1)*2 + 1*3; n^2 = 6m gives 2 | nn and 3 | nn | numerals and ring algebra; verify/ch03/exr-quotient-rings-b2.py
 exr-quotient-rings-c2 (solution): induction on k in N | fd1:ax-induction, read on omega through cor-omega-identification (b) as elsewhere in the chapter

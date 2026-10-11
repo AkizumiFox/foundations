@@ -15,4 +15,7 @@ assert sorted({y % 8 for y in s2}) == QUOTED["classes8"] and (6 - 2) % 8 != 0
 phi = {c: (c % 2, c % 4) for c in range(8)}
 assert phi[0] == phi[4] == (0, 0) and (0, 1) not in phi.values()
 assert gcd(2, 4) == 2
+# remark after the example: [x] -> [2][x] on Z/5Z, [3][2] = [6] = [1], injective and onto
+assert 3 * 2 == 6 and 6 % 5 == 1
+assert sorted({2 * c % 5 for c in range(5)}) == list(range(5))
 print("ok")

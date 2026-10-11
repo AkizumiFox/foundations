@@ -6,13 +6,13 @@ Throughout, \( \nZ \) is the ordered ring of @thm-integers-ordered-ring, with \(
 
 ## Divisibility on the constructed integers
 
-The definition of divisibility needs nothing that the ring \( \nZ \) lacks. We restate it, and the definition of a prime, word for word from *Sets, Relations, and Cardinality*, Section 2.2, with \( \nZ \) now the ring of Chapter 2.
+The definition of divisibility needs nothing that the ring \( \nZ \) lacks. We restate it, and the definition of a prime, from *Sets, Relations, and Cardinality*, Section 2.2, with \( \nZ \) now the ring of Chapter 2.
 
 **Divisibility** (@fd2:def-divides). Let \( a, b \in \nZ \). Then \( a \) **divides** \( b \), written \( a \mid b \), if **there exists** \( k \in \nZ \) with \( b = ka \). Then \( a \) is a **divisor** of \( b \), and \( b \) is a **multiple** of \( a \). We write \( a \nmid b \) when \( a \) does not divide \( b \).
 
 **Prime** (@fd2:def-prime). An integer \( p \) is **prime** if \( p \ge 2 \) and the only **positive** divisors of \( p \) are \( 1 \) and \( p \). A **prime factor** of an integer \( n \) is a prime \( p \) with \( p \mid n \).
 
-Both definitions use only the multiplication of \( \nZ \), its order \( \le \), and the set \( \nZ_{>0} \), and Chapter 2 provides all three. They are the same words as before; what changes is that every fact about them must now be proved from Chapter 2.
+Both definitions use only the multiplication of \( \nZ \), its order \( \le \), and the set \( \nZ_{>0} \), and Chapter 2 provides all three. They are the same definitions as before; what changes is that every fact about them must now be proved from Chapter 2.
 
 *Divisibility is a question about existence: is \( b \) some integer times \( a \)?*
 
@@ -40,11 +40,11 @@ Let \( a, b, c, x, y \in \nZ \).
 :::
 
 ::: {.idea}
-Parts (a)–(d) are identities in the commutative ring \( \nZ \): write each hypothesis as an equation \( b = ka \) and rearrange. Part (e) is the one that needs the order. If \( b = ka \) with \( a, b > 0 \), the factor \( k \) cannot be zero or negative, so by discreteness it is at least \( 1 \), and multiplying \( a \) by something at least \( 1 \) cannot make it smaller. Parts (f) and (g) then follow from (e), and (h) is trichotomy.
+Parts (a)–(d) are identities in the commutative ring \( \nZ \): write each hypothesis as an equation \( b = ka \) and rearrange. Part (e) is the one that needs the order. If \( b = ka \) with \( a, b > 0 \), the factor \( k \) cannot be zero or negative, so by discreteness it is at least \( 1 \), and multiplying \( a \) by something at least \( 1 \) cannot make it smaller. Parts (f) and (g) then follow from (e), and (h) is (P2) for the positives of \( \nZ \).
 :::
 
 ::: {.proof}
-We use the ring laws (F1)–(F9) of \( \nZ \) (@thm-integers-commutative-ring) without further mention.
+We use the ring laws (F1)–(F7) and (F9) of \( \nZ \) (@thm-integers-commutative-ring) without further mention.
 
 (a) \( 0 = a \cdot 0 = 0 \cdot a \) by @prp-ring-algebra (b) and (F6), so \( a \mid 0 \) with \( k = 0 \). Also \( a = a \cdot 1 \) by (F7), so \( 1 \mid a \) with \( k = a \); and \( a = 1 \cdot a \), so \( a \mid a \) with \( k = 1 \). If \( 0 \mid a \), then \( a = k \cdot 0 = 0 \) for some \( k \in \nZ \), by @prp-ring-algebra (b).
 
@@ -58,7 +58,7 @@ by (F5), (F6) and (F9), and \( kx + ly \in \nZ \). So \( a \mid bx + cy \).
 
 (d) Let \( b = ka \). By @prp-ring-algebra (c), \( (-k)(-a) = ka = b \), so \( (-a) \mid b \); and \( (-k)a = -(ka) = -b \), so \( a \mid (-b) \).
 
-(h) Let \( a \ne 0 \). By trichotomy (O1), exactly one of \( a < 0 \), \( a = 0 \), \( 0 < a \) holds, so exactly one of \( a < 0 \) and \( 0 < a \) does. By @prp-ordered-ring-rules (a), \( a < 0 \) if and only if \( -0 < -a \), that is, \( 0 < -a \) (here \( -0 = 0 \), since \( 0 + 0 = 0 \) and negatives are unique by @prp-ring-algebra (a)). Since \( \nZ_{>0} = \{ n \in \nZ : n > 0 \} \) (@thm-integers-ordered-ring (b)), exactly one of \( a \), \( -a \) lies in \( \nZ_{>0} \).
+(h) Let \( a \ne 0 \). By the converse part of @prp-order-from-positives, applied to the ordered ring \( \nZ \), the set \( \{ x \in \nZ : x > 0 \} \) satisfies (P2), so exactly one of \( a > 0 \), \( -a > 0 \) holds. That set is \( \nZ_{>0} \) by @thm-integers-ordered-ring (b).
 
 (e) Let \( b = ka \) with \( k \in \nZ \), \( a > 0 \) and \( b > 0 \). We show first that \( k > 0 \). If \( k = 0 \), then \( b = 0 \cdot a = 0 \) by @prp-ring-algebra (b), against \( b > 0 \). If \( k < 0 \), then \( ka < 0 \cdot a = 0 \) by @prp-ordered-ring-rules (c) (multiplying \( k < 0 \) by \( a > 0 \)), again against \( b > 0 \). So \( k > 0 \), and by discreteness (@thm-integers-ordered-ring (c), with \( 0 < k \)) \( 1 \le k \). If \( k = 1 \), then \( b = a \). If \( 1 < k \), then \( k - 1 > 0 \) by @prp-ordered-ring-rules (a), so \( (k - 1)a > 0 \cdot a = 0 \) by @prp-ordered-ring-rules (c), that is, \( b - a = ka - a = (k - 1)a > 0 \), and \( a < b \) by @prp-ordered-ring-rules (a). In both cases \( a \le b \).
 
@@ -67,7 +67,7 @@ by (F5), (F6) and (F9), and \( kx + ly \in \nZ \). So \( a \mid bx + cy \).
 (g) Let \( a \mid 1 \), say \( 1 = ka \). Then \( a \ne 0 \): otherwise \( 1 = k \cdot 0 = 0 \), against \( 1 \ne 0 \) in \( \nZ \) (@thm-integers-commutative-ring). By (h), one of \( a \), \( -a \) is positive; call it \( e \). Then \( e \mid 1 \), by (d) if \( e = -a \). Since \( 1 > 0 \) (@prp-ordered-ring-rules (e)), part (e) gives \( e \le 1 \); and \( e > 0 \) gives \( 1 \le e \) by discreteness. So \( e = 1 \). If \( e = a \), then \( a = 1 \); if \( e = -a \), then \( a = -(-a) = -1 \) by @prp-ring-algebra (a). This proves the proposition.
 :::
 
-Part (f) is the antisymmetry of divisibility on \( \nN \), @fd2:prp-divides-partial-order of *Sets, Relations, and Cardinality*, Section 2.4, now proved on \( \nN \subseteq \nZ \) for the constructed integers. On all of \( \nZ \) it fails: \( 2 \mid -2 \) and \( -2 \mid 2 \), by (d), yet \( 2 \ne -2 \). That is why (f) is stated for \( a, b \in \nN \), and why (e) needs both \( a > 0 \) and \( b > 0 \): \( 3 \mid -3 \), but \( 3 > -3 \).
+Part (f) is the antisymmetry of divisibility on \( \nN \), @fd2:prp-divides-partial-order of *Sets, Relations, and Cardinality*, Section 2.4, now proved on \( \nN \subseteq \nZ \) for the constructed integers. On all of \( \nZ \) it fails: \( 2 \mid -2 \) and \( -2 \mid 2 \), by (d), yet \( 2 \ne -2 \). That is why (f) is stated for \( a, b \in \nN \), and why (e) needs \( b > 0 \): \( 3 \mid -3 \), but \( 3 > -3 \). (The hypothesis \( a > 0 \) is a convenience for the proof: \( a = 0 \) cannot divide \( b > 0 \), by (a), and if \( a < 0 < b \), then \( a \le b \) holds anyway.)
 
 ::: {.check}
 Which hypothesis of (e) fails for \( a = 3 \), \( b = 0 \), and is the conclusion \( a \le b \) true there?
@@ -106,17 +106,17 @@ Among the integers \( a - kn \), \( k \in \nZ \), look at the non-negative ones.
 \[
 R \coloneqq \{ a - kn : k \in \nZ \} \cap \{ x \in \nZ : x \ge 0 \} .
 \]
-We show \( R \ne \emptyset \). If \( a \ge 0 \), take \( k = 0 \): \( a - 0 \cdot n = a - 0 = a \ge 0 \), by @prp-ring-algebra (b). If \( a < 0 \), take \( k = a \): then \( a - an = a(1 - n) \) by (F7) and (F9). Since \( n > 0 \), discreteness (@thm-integers-ordered-ring (c)) gives \( 1 \le n \). If \( n = 1 \), then \( a(1 - n) = a \cdot 0 = 0 \) by @prp-ring-algebra (b). If \( 1 < n \), then \( -n < -1 \) by @prp-ordered-ring-rules (a), so \( 1 - n < 0 \) by (O3); multiplying \( a < 0 \) by \( 1 - n < 0 \) reverses the inequality (@prp-ordered-ring-rules (d)), so \( a(1 - n) > 0 \cdot (1 - n) = 0 \). In every case \( R \) has an element.
+We show \( R \ne \emptyset \). If \( a \ge 0 \), take \( k = 0 \): \( a - 0 \cdot n = a - 0 = a \ge 0 \), by @prp-ring-algebra (b). If \( a < 0 \), take \( k = a \): then \( a - an = a + a(-n) = a(1 - n) \) by @prp-ring-algebra (c), (F7) and (F9). Since \( n > 0 \), discreteness (@thm-integers-ordered-ring (c)) gives \( 1 \le n \). If \( n = 1 \), then \( a(1 - n) = a \cdot 0 = 0 \) by @prp-ring-algebra (b). If \( 1 < n \), then \( -n < -1 \) by @prp-ordered-ring-rules (a), so \( 1 - n < 0 \) by (O3); multiplying \( a < 0 \) by \( 1 - n < 0 \) reverses the inequality (@prp-ordered-ring-rules (d)), so \( a(1 - n) > 0 \cdot (1 - n) = 0 \). In every case \( R \) has an element.
 
 The set \( R \subseteq \nZ \) is non-empty and has the lower bound \( 0 \), so by @prp-integer-least-element it has a least element \( r \). Write \( r = a - qn \) with \( q \in \nZ \). Then \( a = qn + r \) and \( r \ge 0 \).
 
-Suppose \( r \ge n \). Then \( r - n \ge 0 \) by @prp-ordered-ring-rules (a), and \( r - n = a - qn - n = a - (q + 1)n \), so \( r - n \in R \). But \( -n < 0 \) (@prp-ordered-ring-rules (a), since \( n > 0 \)), so \( r - n < r \) by (O3). This contradicts the choice of \( r \) as least. Hence \( r < n \).
+Suppose \( r \ge n \). Then \( r - n \ge 0 \): if \( r = n \), then \( r - n = 0 \) by (F4); if \( r > n \), then \( r - n > 0 \) by @prp-ordered-ring-rules (a). Also \( r - n = a - qn - n = a - (q + 1)n \), so \( r - n \in R \). But \( -n < 0 \) (@prp-ordered-ring-rules (a), since \( n > 0 \)), so \( r - n < r \) by (O3). This contradicts the choice of \( r \) as least. Hence \( r < n \).
 
 *Uniqueness.* Let \( a = qn + r = q'n + r' \) with \( q, q', r, r' \in \nZ \), \( 0 \le r < n \) and \( 0 \le r' < n \). Suppose \( r \ne r' \). Exchanging \( (q, r) \) and \( (q', r') \) changes neither the hypotheses nor the goal, so we may suppose \( r' < r \). Then
 \[
 r - r' = (q' - q)n ,
 \]
-so \( n \mid r - r' \). Here \( r - r' > 0 \) by @prp-ordered-ring-rules (a), and \( n > 0 \), so @prp-divisibility-rules-integers (e) gives \( n \le r - r' \). But \( r' \ge 0 \) gives \( r - r' \le r \) (@prp-ordered-ring-rules (b)), and \( r < n \); so \( r - r' < n \), a contradiction. Hence \( r = r' \). Then \( qn = q'n \), so \( (q - q')n = 0 \), and since \( n \ne 0 \), @prp-ordered-ring-rules (f) gives \( q - q' = 0 \), that is, \( q = q' \).
+so \( n \mid r - r' \). Here \( r - r' > 0 \) by @prp-ordered-ring-rules (a), and \( n > 0 \), so @prp-divisibility-rules-integers (e) gives \( n \le r - r' \). But adding \( r - r' \) to \( 0 \le r' \) gives \( r - r' \le (r - r') + r' = r \) (@prp-ordered-ring-rules (b)), and \( r < n \); so \( r - r' < n \), a contradiction. Hence \( r = r' \). Then \( qn = q'n \), so \( (q - q')n = 0 \), and since \( n \ne 0 \), @prp-ordered-ring-rules (f) gives \( q - q' = 0 \), that is, \( q = q' \).
 
 (b) From (a), \( 0 \le r < n \); adding \( qn \) (@prp-ordered-ring-rules (b)) gives
 \[
@@ -129,7 +129,7 @@ q = qn \cdot n^{-1} \le a \cdot n^{-1} < (qn + n) \cdot n^{-1} = q + 1 .
 That is, \( q \le a/n < q + 1 \), with \( q \in \nZ \). By the uniqueness in @prp-rational-integer-part, \( q = \floor{a/n} \), and then \( r = a - qn = a - n \floor{a/n} \). This proves the theorem.
 :::
 
-The hypothesis \( n > 0 \) is used three times in (a): to find an element of \( R \) when \( a < 0 \) (through \( 1 - n \le 0 \)), to see that \( r - n < r \), and to apply @prp-divisibility-rules-integers (e) in the uniqueness. For \( n = 0 \) the statement fails outright: no \( r \) satisfies \( 0 \le r < 0 \). Exercise B1 handles \( n < 0 \).
+The hypothesis \( n > 0 \) is used four times in (a): to find an element of \( R \) when \( a < 0 \) (through \( 1 - n \le 0 \)), to see that \( r - n < r \), and in the uniqueness both to apply @prp-divisibility-rules-integers (e) and, as \( n \ne 0 \), to cancel \( n \) from \( (q - q')n = 0 \). For \( n = 0 \) the statement fails outright: no \( r \) satisfies \( 0 \le r < 0 \). Exercise B1 handles \( n < 0 \).
 
 Uniqueness is what turns the theorem into a test for divisibility: **\( n \mid a \) if and only if the remainder of \( a \) on division by \( n \) is \( 0 \)**. Indeed, if \( a = kn \), then \( a = kn + 0 \) is a division with remainder, and by uniqueness it is the only one; conversely \( a = qn + 0 \) says \( n \mid a \). For instance \( 12 = 2 \cdot 5 + 2 \) with \( 0 \le 2 < 5 \), so the remainder is \( 2 \ne 0 \), and \( 5 \nmid 12 \).
 
@@ -178,7 +178,9 @@ a^2 = (2q + 1)^2 = 4q^2 + 4q + 1 = 2(2q^2 + 2q) + 1 ,
 by @prp-ring-algebra (d) and (F5), (F6), (F9), so \( a^2 \) is odd, and by (a) it is not even. This proves (b) by contraposition.
 :::
 
-Section 2.6 proved that no rational squares to \( 2 \) by a descent on denominators (@thm-no-rational-square-two), a route that needs only the order of \( \nZ \) and adapts to other non-squares. With (b), and with lowest terms from Section 3.3, the classical parity proof of *Logic and Proof*, Chapter 2 can also be run on the constructed \( \nQ \), every step citable; one of the review exercises at the end of this chapter does so.
+Part (b) is @fd1:thm-square-even-implies-even of *Logic and Proof*, Section 2.1, proved there from the school facts (E1)–(E3) about the integers. Part (a) proves (E1) and (E2) for the constructed \( \nZ \), and the computation in (b) is (E3). We compare with that proof and do not use it. *Sets, Relations, and Cardinality*, Section 2.2 proved (E1) and (E2) for the school integers right after @fd2:thm-division-algorithm.
+
+Section 2.6 proved that no rational squares to \( 2 \) by a descent on denominators (@thm-no-rational-square-two), a route that needs only the order and the least-element property of \( \nZ \) and adapts to other non-squares. With (b), and with lowest terms from Section 3.3, the classical parity proof of *Logic and Proof*, Chapter 2 can also be run on the constructed \( \nQ \), every step citable; one of the review exercises at the end of this chapter does so.
 
 ## Small primes
 
@@ -275,12 +277,13 @@ The hypothesis \( n > 0 \) is used when multiplying by \( n \): for \( n < 0 \),
 :::
 
 <!-- dependency ledger
-prp-divisibility-rules-integers (proof): ring laws (F1)-(F9) of Z | thm-integers-commutative-ring (cited at the start of the proof)
-prp-divisibility-rules-integers (proof): -0 = 0 | prp-ring-algebra (a) (uniqueness of negatives), with 0 + 0 = 0 by (F3)
+prp-divisibility-rules-integers (proof): ring laws (F1)-(F7), (F9) of Z | thm-integers-commutative-ring (cited at the start of the proof)
+prp-divisibility-rules-integers (proof): (h), exactly one of a > 0, -a > 0 for a != 0 | prp-order-from-positives (converse part, (P2)), thm-integers-ordered-ring (b), cited
 prp-divisibility-rules-integers (proof): antisymmetry of <= on Z | prp-ordered-ring-rules (i) (total order, fd2 def-partial-order), cited
-thm-integers-division-remainder (proof): a - an = a(1 - n) and a - 0 = a | (F7), (F9), prp-ring-algebra (b), cited
+thm-integers-division-remainder (proof): a - an = a + a(-n) = a(1 - n) and a - 0 = a | prp-ring-algebra (c), (F7), (F9), prp-ring-algebra (b), cited
+thm-integers-division-remainder (proof): r - n >= 0 from r >= n | (F4) if r = n, prp-ordered-ring-rules (a) if r > n, cited
 thm-integers-division-remainder (proof): r - n = a - (q + 1)n | ring laws of Z, thm-integers-commutative-ring
-thm-integers-division-remainder (proof): r' >= 0 gives r - r' <= r; adding qn to 0 <= r < n | prp-ordered-ring-rules (b), cited
+thm-integers-division-remainder (proof): adding r - r' to 0 <= r' gives r - r' <= r; adding qn to 0 <= r < n | prp-ordered-ring-rules (b), cited
 thm-integers-division-remainder (proof): integer sums, products and comparisons are the same in Q | prp-integers-embed-rationals, thm-rationals-ordered-field (b) (cited); identification of F3.2 §04
 thm-integers-division-remainder (proof): qn * n^{-1} = q and (qn + n) n^{-1} = q + 1 | field laws of Q (thm-rationals-field via thm-rationals-ordered-field), (F5), (F8), (F9)
 thm-integers-division-remainder (claim): (the paragraph after the proof) no r with 0 <= r < 0 | (O1)
@@ -288,10 +291,11 @@ thm-integers-division-remainder (claim): (remark) fd2's uniqueness argument is t
 cor-integers-even-odd (proof): 2 = 1 + 1 > 0 | prp-ordered-ring-rules (b), (e) (1 > 0)
 cor-integers-even-odd (proof): (2q + 1)^2 = 4q^2 + 4q + 1 = 2(2q^2 + 2q) + 1 | prp-ring-algebra (d) with ring laws; numerals 4 = 2 * 2 computed in N (opening paragraph)
 cor-integers-even-odd (proof): contraposition | fd1 (classical reasoning, F1.2), standard
+cor-integers-even-odd (claim): (the paragraph after the proof) part (b) is fd1:thm-square-even-implies-even, (E1)-(E3) there; fd2 proved (E1), (E2) after fd2:thm-division-algorithm | read against fd1 F1.2 §01 and fd2 F2.2 §02 (compared, not used)
 cor-integers-even-odd (claim): the classical parity proof can now be rerun on the constructed Q, with lowest terms from Section 3.3 | prp-rationals-lowest-terms (Section 3.3) and Exercise R3 of Section 3.5 (blueprint ch03.md; prose pointer within the chapter, nothing depends on it)
 cor-integers-even-odd (claim): (the small-primes remark after it) d in {1, ..., p} from 1 <= d <= p | thm-integers-ordered-ring (c) applied repeatedly, cited
 cor-integers-even-odd (claim): (the small-primes remark after it) the displayed divisions, e.g. 7 = 1 * 4 + 3 with 0 <= 3 < 4 | numerals computed in N via prp-naturals-embed-integers (opening paragraph); verify/ch03/thm-integers-division-remainder.py
-cor-integers-even-odd (claim): (the small-primes remark after it) Section 3.3 shortens the primality check | blueprint ch03.md, 03-unique-factorization B3 (prose pointer within the chapter)
+cor-integers-even-odd (claim): (the small-primes remark after it) Section 3.3 shortens the primality check | the remark after lem-least-divisor-prime (03-unique-factorization; blueprint ch03.md S3 deviation), applied in B3 (prose pointer within the chapter)
 prp-divisibility-rules-integers (example): (the instances before it and the paragraph after it) 3 | -12, -4 | 0, 0 | 0, 5 does not divide 12, 2 | -2 | 2 | numerals; verify/ch03/prp-divisibility-rules-integers.py
 cor-integers-even-odd (proof): the identity for (2q + 1)^2 | verify/ch03/cor-integers-even-odd.py
 exr-division-with-remainder-a1 (solution): 47 = 7 * 6 + 5, -47 = (-8) * 6 + 1 | numerals; verify/ch03/exr-division-with-remainder-a1.py

@@ -30,7 +30,7 @@ Examples:
 
 - \( 12\nZ + 42\nZ \) contains \( 12 \), \( 42 \), \( 30 = 42 - 12 \) and \( 6 = 12 \cdot (-3) + 42 \cdot 1 \), so it contains every multiple of \( 6 \), by the third closure property.
 - \( 2\nZ + 3\nZ = \nZ \): it contains \( 1 = 2 \cdot (-1) + 3 \cdot 1 \), and with it \( m \cdot 1 = m \) for every \( m \in \nZ \).
-- The degenerate case: \( 0\nZ + 0\nZ = \{0\} \). It is the only case in which \( a\nZ + b\nZ \) has no positive element (if \( a \ne 0 \), one of \( a \), \( -a \) is a positive element, by @prp-divisibility-rules-integers (h); likewise for \( b \)), and the theorem below must exclude it.
+- The degenerate case: \( 0\nZ + 0\nZ = \{0\} \) (the case \( n = 0 \) above, since \( 0\nZ = \{ k \cdot 0 : k \in \nZ \} = \{0\} \) by @prp-ring-algebra (b)). It is the only case in which \( a\nZ + b\nZ \) has no positive element (if \( a \ne 0 \), one of \( a \), \( -a \) is a positive element, by @prp-divisibility-rules-integers (h); likewise for \( b \)), and the theorem below must exclude it.
 
 *Non-example by minimal change.* Allow only paying, with no change given: \( \{ 12x + 42y : x, y \in \nN \} \). It contains \( 12 \) and \( 42 \) and is closed under \( + \), but not under \( - \): it contains no negative integer, since \( x, y \ge 0 \) give \( 12x + 42y \ge 0 \). Nor does it contain \( 6 \): a non-zero element has \( x \ge 1 \) or \( y \ge 1 \), so it is at least \( 12 \). The coefficients must range over all of \( \nZ \).
 
@@ -52,13 +52,13 @@ In words: among all integers dividing both \( a \) and \( b \), take the largest
 
 Examples:
 
-- \( \gcd(4, 6) = 2 \). A positive common divisor \( d \) satisfies \( d \le 4 \), by @prp-divisibility-rules-integers (e). Now \( 4 \nmid 6 \) and \( 3 \nmid 4 \), because \( 6 = 1 \cdot 4 + 2 \) and \( 4 = 1 \cdot 3 + 1 \) have non-zero remainders (the divisibility test after @thm-integers-division-remainder), while \( 2 \) divides both. So the greatest common divisor is \( 2 \).
-- \( \gcd(-5, 5) = 5 \): the common divisors of \( -5 \) and \( 5 \) are the divisors of \( 5 \) (@prp-divisibility-rules-integers (d)), and the greatest is \( 5 \), by @prp-divisibility-rules-integers (e).
+- \( \gcd(4, 6) = 2 \). A positive common divisor \( d \) satisfies \( d \le 4 \), by @prp-divisibility-rules-integers (e), and \( d \ge 1 \), so \( d \in \{1, 2, 3, 4\} \) by discreteness (@thm-integers-ordered-ring (c)), as in the small-primes remark of Section 3.1. Now \( 4 \nmid 6 \) and \( 3 \nmid 4 \), because \( 6 = 1 \cdot 4 + 2 \) and \( 4 = 1 \cdot 3 + 1 \) have non-zero remainders (the divisibility test after @thm-integers-division-remainder), while \( 2 \) divides both. So the greatest common divisor is \( 2 \).
+- \( \gcd(-5, 5) = 5 \): the common divisors of \( -5 \) and \( 5 \) are the divisors of \( 5 \) (@prp-divisibility-rules-integers (d) and @prp-ring-algebra (a)), and the greatest is \( 5 \), by @prp-divisibility-rules-integers (e).
 - \( \gcd(1, b) = 1 \) for every \( b \in \nZ \): a common divisor \( d \) divides \( 1 \), so \( d = \pm 1 \) (@prp-divisibility-rules-integers (g)), and the greater is \( 1 \).
 
 *Why the convention for \( (0, 0) \).* Every integer divides \( 0 \), so \( 0 \) and \( 0 \) have no greatest common divisor for \( \le \), and some value has to be chosen. The value \( 0 \) is the one that keeps clauses (c) and (e) of the theorem below true for \( (0, 0) \), as the remark after it shows. It also matches @fd2:exm-divisibility-lcm of *Sets, Relations, and Cardinality*, Section 2.6, where \( 0 \) is the top of \( (\nN, \mid) \), divisible by everything.
 
-Listing divisors one by one, as in the first example, is slow. Bézout's theorem replaces the list by one division per step.
+Listing divisors one by one, as in the first example, is slow. The Euclidean algorithm below replaces the list by one division per step, and Bézout's theorem is what makes it work.
 
 ## Bézout's theorem
 
@@ -102,14 +102,14 @@ so \( r \in a\nZ + b\nZ \). If \( r > 0 \), then \( r \in S \) and \( r < d \), 
 (e) \( (\supseteq) \) Let \( k \in \nZ \). Then \( kd = k(ax_0 + by_0) = a(kx_0) + b(ky_0) \in a\nZ + b\nZ \). \( (\subseteq) \) Let \( x, y \in \nZ \). By (b), \( d \mid a \) and \( d \mid b \), so \( d \mid ax + by \) by @prp-divisibility-rules-integers (c), that is, \( ax + by \in d\nZ \). This proves the theorem.
 :::
 
-The answer to the prompt: the minimality of \( d \) is used once, in (b), to force the remainder \( r \) to be \( 0 \). Positivity is used three times: to divide by \( d \) at all (@thm-integers-division-remainder needs a positive divisor), to conclude \( r \in S \) from \( r > 0 \), and in (d), where \( c \le d \) for positive \( c \) comes from @prp-divisibility-rules-integers (e) and for the other \( c \) from \( 0 < d \).
+The answer to the prompt: the minimality of \( d \) is used once, in (b), to force the remainder \( r \) to be \( 0 \). The positivity of \( d \) is used twice: to divide by \( d \) at all (@thm-integers-division-remainder needs a positive divisor), and in (d), where \( c \le d \) for positive \( c \) comes from @prp-divisibility-rules-integers (e) and for the other \( c \) from \( 0 < d \). (The step \( r \in S \) uses the positivity of \( r \), not of \( d \), which is why the case \( r = 0 \) is split off.)
 
 The proof of (b) is the move this chapter is built on, and we give it a name: **least positive element, then divide**. Take the least positive element \( d \) of a set closed under integer combinations; divide any element of the set by \( d \); the remainder lies in the set and is smaller than \( d \), so it is \( 0 \). Section 3.3 uses the move again for common multiples, and Section 3.4 for sets closed under subtraction.
 
 For the coins, the theorem says: the payable amounts form \( 12\nZ + 42\nZ = d\nZ \), where \( d \) is the least positive payable amount, and \( d = \gcd(12, 42) \). The Try-it-first list finds \( d = 6 = 12 \cdot (-3) + 42 \cdot 1 \).
 
 ::: {.remark}
-Clause (c) says that \( \gcd(a, b) \) is greatest also for divisibility, not only for \( \le \). For \( a, b \in \nN \), not both \( 0 \), it is the infimum of \( \{a, b\} \) in \( (\nN, \mid) \) (@fd2:def-order-supremum): it divides both, and every \( c \in \nN \) dividing both divides it. This is the mirror image of @fd2:exm-divisibility-lcm, where the supremum is the least common multiple. For general \( a, b \in \nZ \), let \( a' \) be the one of \( a \), \( -a \) that lies in \( \nN \), and likewise \( b' \) (@prp-divisibility-rules-integers (h), with \( a' = 0 \) if \( a = 0 \)). Since \( a \) and \( -a \) have the same divisors (@prp-divisibility-rules-integers (d)), \( \gcd(a, b) = \gcd(a', b') \). With the convention \( \gcd(0, 0) = 0 \), clauses (c) and (e) also hold for \( (0, 0) \) when \( d \) is read as \( 0 \): every integer divides \( 0 \), and \( 0\nZ + 0\nZ = \{0\} = 0\nZ \). So \( 0 \), the top of \( (\nN, \mid) \), is also the infimum of \( \{0, 0\} = \{0\} \).
+Clause (c) says that \( \gcd(a, b) \) is greatest also for divisibility, not only for \( \le \). For \( a, b \in \nN \), not both \( 0 \), it is the infimum of \( \{a, b\} \) in \( (\nN, \mid) \) (@fd2:def-order-supremum): it divides both, and every \( c \in \nN \) dividing both divides it. This is the mirror image of @fd2:exm-divisibility-lcm, where the supremum is the least common multiple. For general \( a, b \in \nZ \), let \( a' \) be the one of \( a \), \( -a \) that lies in \( \nN \), and likewise \( b' \) (@prp-divisibility-rules-integers (h), with \( a' = 0 \) if \( a = 0 \)). Since \( a \) and \( -a \) have the same divisors (@prp-divisibility-rules-integers (d) and @prp-ring-algebra (a)), \( \gcd(a, b) = \gcd(a', b') \). With the convention \( \gcd(0, 0) = 0 \), clauses (c) and (e) also hold for \( (0, 0) \) when \( d \) is read as \( 0 \): every integer divides \( 0 \), and \( 0\nZ + 0\nZ = \{0\} = 0\nZ \). So \( 0 \), the top of \( (\nN, \mid) \), is also the infimum of \( \{0, 0\} = \{0\} \).
 :::
 
 Pairs whose greatest common divisor is \( 1 \) get a name of their own.
@@ -191,7 +191,7 @@ If \( y_k = 0 \), then \( (x_{k+1}, y_{k+1}) = (x_k, y_k) \), and \( P(k + 1) \)
 \[
 a\nZ + b\nZ = x_K\nZ + 0\nZ = x_K\nZ .
 \]
-The least positive element of \( x_K\nZ \) is \( x_K \): it lies in the set (\( x_K = 1 \cdot x_K \)), and every positive element \( m x_K \) is divisible by \( x_K \), so \( x_K \le m x_K \) by @prp-divisibility-rules-integers (e). By @thm-integers-bezout (a) and (d), the least element of \( (a\nZ + b\nZ) \cap \nZ_{>0} \) is \( \gcd(a, b) \). Hence \( x_K = \gcd(a, b) \).
+The least positive element of \( x_K\nZ \) is \( x_K \): it lies in the set (\( x_K = 1 \cdot x_K \)), and every positive element \( m x_K \) is divisible by \( x_K \), so \( x_K \le m x_K \) by @prp-divisibility-rules-integers (e). Since \( b > 0 \), \( (a, b) \ne (0, 0) \), and by @thm-integers-bezout (a) and (d), the least element of \( (a\nZ + b\nZ) \cap \nZ_{>0} \) is \( \gcd(a, b) \). Hence \( x_K = \gcd(a, b) \).
 :::
 
 In practice the sequence is written as a chain of divisions, each dividing the previous divisor by the previous remainder, until a remainder is \( 0 \); then \( x_K = y_{K-1} \), the last non-zero second entry, is the gcd. If \( K \ge 2 \), it is the last non-zero remainder \( r_{K-2} \); if \( K = 1 \), it is \( b \), and then \( b \mid a \). Exercise B3 shows that at most \( b \) divisions are needed.
@@ -261,7 +261,7 @@ Compute \( \gcd(0, -6) \) and \( \gcd(84, 35) \).
 :::
 
 ::: {.solution}
-\( \gcd(0, -6) = 6 \). Every integer divides \( 0 \), so the common divisors of \( 0 \) and \( -6 \) are the divisors of \( -6 \), which are those of \( 6 \) (@prp-divisibility-rules-integers (d)). The positive ones are at most \( 6 \) (@prp-divisibility-rules-integers (e)), and \( 6 \) is one of them. (The theorem does not apply directly to \( (0, -6) \), since its second entry is negative; it does apply to \( (0, 6) \), with the one division \( 0 = 0 \cdot 6 + 0 \).)
+\( \gcd(0, -6) = 6 \). Every integer divides \( 0 \), so the common divisors of \( 0 \) and \( -6 \) are the divisors of \( -6 \), which are those of \( 6 \) (@prp-divisibility-rules-integers (d) and @prp-ring-algebra (a)). The positive ones are at most \( 6 \) (@prp-divisibility-rules-integers (e)), and \( 6 \) is one of them. (The theorem does not apply directly to \( (0, -6) \), since its second entry is negative; it does apply to \( (0, 6) \), with the one division \( 0 = 0 \cdot 6 + 0 \).)
 
 \( \gcd(84, 35) = 7 \), by the chain \( 84 = 2 \cdot 35 + 14 \), \( 35 = 2 \cdot 14 + 7 \), \( 14 = 2 \cdot 7 + 0 \).
 :::
@@ -328,7 +328,7 @@ Let \( a, b \in \nZ \). Prove that \( \gcd(a, b) = \gcd(-a, b) \), and that \( \
 :::
 
 ::: {.solution}
-*First claim.* If \( (a, b) = (0, 0) \), then also \( (-a, b) = (0, 0) \), and both sides are \( 0 \) by convention. Otherwise \( (-a, b) \ne (0, 0) \) as well. By @prp-divisibility-rules-integers (d), \( c \mid a \) implies \( c \mid -a \), and \( c \mid -a \) implies \( c \mid -(-a) = a \) (@prp-ring-algebra (a)). So \( a \) and \( -a \) have the same divisors, the pairs \( (a, b) \) and \( (-a, b) \) have the same common divisors, and the greatest is the same (@def-integer-gcd).
+*First claim.* If \( (a, b) = (0, 0) \), then also \( (-a, b) = (0, 0) \), and both sides are \( 0 \) by convention. Otherwise \( (-a, b) \ne (0, 0) \) as well, since \( -a = 0 \) would give \( a = -(-a) = -0 = 0 \) (@prp-ring-algebra (a); \( -0 = 0 \) because \( 0 + 0 = 0 \) and the inverse is unique). By @prp-divisibility-rules-integers (d), \( c \mid a \) implies \( c \mid -a \), and \( c \mid -a \) implies \( c \mid -(-a) = a \) (@prp-ring-algebra (a)). So \( a \) and \( -a \) have the same divisors, the pairs \( (a, b) \) and \( (-a, b) \) have the same common divisors, and the greatest is the same (@def-integer-gcd).
 
 *Second claim.* Let \( a > 0 \). Every integer divides \( 0 \) (@prp-divisibility-rules-integers (a)), so the common divisors of \( a \) and \( 0 \) are the divisors of \( a \). Among them is \( a \) itself. A positive divisor \( c \) satisfies \( c \le a \) by @prp-divisibility-rules-integers (e), and a non-positive one satisfies \( c \le 0 < a \). So \( a \) is the greatest, and \( \gcd(a, 0) = a \).
 :::
@@ -368,7 +368,7 @@ Let \( a, b \in \nZ \), not both \( 0 \), and let \( S \coloneqq (a\nZ + b\nZ) \
 - 3: divides \( a \) by \( d \) and writes the remainder as a combination of \( a \) and \( b \).
 - 2: uses the minimality of \( d \) to force the remainder to be \( 0 \), for \( a \) and for \( b \).
 - 2: shows every common divisor divides \( d \), and deduces that \( d \) is the greatest (with the case of non-positive divisors).
-Fatal errors (0 for the step): assuming that the gcd is a combination of \( a \) and \( b \) (circular); "\( d \) divides \( a \) because \( d \) is the least positive combination", with no division step. A second route, through the Euclidean algorithm with back-substitution, by induction on the number of steps, maps to the same points: the invariant that each step keeps the set of combinations (or the gcd) unchanged earns the 3 points for the division, termination earns the 2 points for minimality, and the rest is marked as written.
+Fatal errors (0 for the step): assuming that the gcd is a combination of \( a \) and \( b \) (circular); citing @thm-euclidean-algorithm-integers (c) or the gcd clause of @lem-gcd-remainder-step (both are proved from @thm-integers-bezout, so this is circular); "\( d \) divides \( a \) because \( d \) is the least positive combination", with no division step. A second route goes through the Euclidean algorithm, with back-substitution, by induction on the number of steps. Citing @thm-euclidean-algorithm-integers (a), (b) and the equality \( a\nZ + b\nZ = b\nZ + r\nZ \) of @lem-gcd-remainder-step is allowed; if the invariant used is "the common divisors are unchanged", it must be proved directly from \( r = a - qb \). The invariant earns the 3 points for the division, and termination earns the 2 points for minimality. The answer must still identify the gcd with the least element \( d \) of \( S \) (\( d \le \gcd(a, b) \) since \( \gcd(a, b) \in S \); \( \gcd(a, b) \mid d \) since the gcd divides every combination). The rest is marked as written.
 :::
 
 ::: {#exr-gcd-and-bezout-c2}
@@ -392,7 +392,7 @@ If \( (a, b) \ne (0, 0) \) and \( d \coloneqq \gcd(a, b) \), first show \( (ka)\
 ::: {.solution}
 If \( (a, b) = (0, 0) \), then \( (ka, kb) = (0, 0) \) by @prp-ring-algebra (b), and both sides are \( 0 \): \( \gcd(0, 0) = 0 = k \cdot 0 \).
 
-Otherwise let \( d \coloneqq \gcd(a, b) \), so \( d \ge 1 \). Say \( a \ne 0 \); then \( ka \ne 0 \), since \( k \ne 0 \) and \( \nZ \) has no zero divisors (@prp-ordered-ring-rules (f)). So \( (ka, kb) \ne (0, 0) \), and @thm-integers-bezout applies to both pairs.
+Otherwise let \( d \coloneqq \gcd(a, b) \), so \( d \ge 1 \). Say \( a \ne 0 \) (otherwise \( b \ne 0 \); exchange the roles of \( a \) and \( b \)); then \( ka \ne 0 \), since \( k \ne 0 \) and \( \nZ \) has no zero divisors (@prp-ordered-ring-rules (f)). So \( (ka, kb) \ne (0, 0) \), and @thm-integers-bezout applies to both pairs.
 
 *The combinations.* For \( x, y \in \nZ \), \( (ka)x + (kb)y = k(ax + by) \). As \( x, y \) range over \( \nZ \), \( ax + by \) ranges over \( a\nZ + b\nZ = d\nZ \) (@thm-integers-bezout (e)), so
 \[
@@ -408,21 +408,24 @@ For instance, \( \gcd(12, 42) = 6 \gcd(2, 7) = 6 \), since \( 2 \) and \( 7 \) a
 - 4: shows \( (ka)\nZ + (kb)\nZ = (kd)\nZ \), citing @thm-integers-bezout (e) for \( (a, b) \).
 - 2: shows that \( kd \) is the least positive element of \( (kd)\nZ \).
 - 2: concludes \( \gcd(ka, kb) = kd \) through @thm-integers-bezout (a), (d) for \( (ka, kb) \).
-Fatal errors (0 for the step): asserting that every common divisor of \( ka \) and \( kb \) is \( k \) times a common divisor of \( a \) and \( b \) (false: \( 1 \) divides \( 6 = 3 \cdot 2 \) and \( 9 = 3 \cdot 3 \), and \( 1 \) is not \( 3 \) times an integer); using prime factorizations, which this section does not have. A second route, showing \( k d \) is a common divisor and every common divisor \( c \) divides \( kd \) because \( c \mid (ka)x_0 + (kb)y_0 = kd \), earns the same points: 4 for the common divisor and the combination, 4 for every common divisor dividing \( kd \), 2 for the conclusion.
+Fatal errors (0 for the step): asserting that every common divisor of \( ka \) and \( kb \) is \( k \) times a common divisor of \( a \) and \( b \) (false: \( 1 \) divides \( 6 = 3 \cdot 2 \) and \( 9 = 3 \cdot 3 \), and \( 1 \) is not \( 3 \) times an integer); using prime factorizations, which this section does not have. A second route, showing \( k d \) is a common divisor and every common divisor \( c \) divides \( kd \) because \( c \mid (ka)x_0 + (kb)y_0 = kd \), earns the same total: 2 for treating \( (a, b) = (0, 0) \) by the convention and checking \( (ka, kb) \ne (0, 0) \) otherwise (no zero divisors); 3 for showing \( kd \) is a common divisor and a combination (\( kd = (ka)x_0 + (kb)y_0 \) with \( ax_0 + by_0 = d \) from @thm-integers-bezout); 3 for every common divisor dividing \( kd \); 2 for concluding \( kd \) is the greatest (\( kd > 0 \), rule (e) for positive divisors, and the non-positive divisors) via @def-integer-gcd.
 :::
 
 <!-- dependency ledger
 def-integer-linear-combinations (claim): the three closure identities | ring laws of Z (thm-integers-commutative-ring) and prp-ring-algebra (c), cited
 def-integer-linear-combinations (example): 6 = 12 * (-3) + 42 * 1, 30 = 42 - 12, 1 = 2 * (-1) + 3 * 1; non-zero N-combinations of 12, 42 are >= 12 | verify/ch03/def-integer-linear-combinations.py
 def-integer-linear-combinations (claim): n Z + 0 Z = n Z | prp-ring-algebra (b), (F6), cited
+def-integer-linear-combinations (example): 0 Z + 0 Z = {0} | case n = 0 of n Z + 0 Z = n Z; 0 Z = {0} by prp-ring-algebra (b), cited
 def-integer-gcd (claim): (well-definedness) the argument with b in place of a when a = 0 | symmetric repeat of the argument given
 def-integer-gcd (example): 6 = 1 * 4 + 2, 4 = 1 * 3 + 1, and 2 | 4, 2 | 6 | numerals (01-division-with-remainder opening paragraph); verify/ch03/def-integer-gcd.py
+def-integer-gcd (example): a positive d <= 4 lies in {1, 2, 3, 4} | discreteness, thm-integers-ordered-ring (c), cited
+def-integer-gcd (example): a and -a have the same divisors (gcd(-5, 5), gcd(0, -6)) | prp-divisibility-rules-integers (d), prp-ring-algebra (a), cited
 def-integer-gcd (claim): the convention gcd(0, 0) = 0 matches fd2 exm-divisibility-lcm (0 the top of (N, |)) | fd2 F2.2 §06 exm-divisibility-lcm (cited)
 thm-integers-bezout (proof): the case a = 0 is the same with b in place of a | symmetric repeat (a Z + b Z is symmetric in a, b by (F1))
 thm-integers-bezout (proof): r = a - q(a x0 + b y0) = a(1 - q x0) + b(-q y0) | ring laws of Z, thm-integers-commutative-ring; prp-ring-algebra (c)
 thm-integers-bezout (claim): the coin hook, 42 - 3 * 12 = 6 and the Try-it-first list | verify/ch03/thm-integers-bezout.py
 thm-integers-bezout (claim): Section 3.3 uses the move for common multiples, Section 3.4 for sets closed under subtraction | blueprint ch03.md, §03 B2 and §04 C2 (faded triple); prose pointers within the chapter, nothing depends on them
-thm-integers-bezout (claim): (remark) gcd is the infimum in (N, |); a' in N with a' = 0 if a = 0 | fd2 def-order-supremum (cited), prp-divisibility-rules-integers (h), (d) (cited)
+thm-integers-bezout (claim): (remark) gcd is the infimum in (N, |); a' in N with a' = 0 if a = 0 | fd2 def-order-supremum (cited), prp-divisibility-rules-integers (h), (d), prp-ring-algebra (a) (cited)
 cor-coprime-iff-combination (proof): g >= 1 rules out g = -1 | -1 < 0 < 1, prp-ordered-ring-rules (a), (e)
 lem-gcd-remainder-step (proof): (qb + r)x + by = b(qx + y) + rx and bx + (a - qb)y = ay + b(x - qy) | ring laws of Z, thm-integers-commutative-ring
 thm-euclidean-algorithm-integers (claim): the step G is a function Z x N -> Z x N; recursion theorem read on omega | thm-integers-division-remainder (a), thm-integers-ordered-ring (b), fd2 thm-recursion via thm-omega-recursion and cor-omega-identification (b), cited in the paragraph after the statement

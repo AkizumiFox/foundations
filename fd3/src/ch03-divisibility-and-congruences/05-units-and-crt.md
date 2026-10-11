@@ -1,6 +1,6 @@
 # Units, Prime Moduli, and the Chinese Remainder Theorem
 
-Section 3.4 made \( \nZ/n\nZ \) a commutative ring, and @exm-integers-mod-six put two of these rings side by side. In \( \nZ/5\nZ \) every non-zero class has a partner whose product with it is \( [1] \), so we may divide by it. In \( \nZ/6\nZ \) the class \( [2] \) has no such partner: the products \( [2][x] \) are only \( [0], [2], [4] \). Which classes can be divided by, and for which moduli can all non-zero classes? This section answers both questions with the gcd of Section 3.2, and finds a field with \( p \) elements for every prime \( p \). It then solves two congruences at once, the Chinese remainder theorem, by the move that ran through the whole chapter: write \( 1 \) as a combination and multiply.
+Section 3.4 made \( \nZ/n\nZ \) a commutative ring, and @exm-integers-mod-six put two of these rings side by side. In \( \nZ/5\nZ \) every non-zero class has a partner whose product with it is \( [1] \), so we may divide by it. In \( \nZ/6\nZ \) the class \( [2] \) has no such partner: the products \( [2][x] \) are only \( [0], [2], [4] \). Which classes can be divided by, and for which moduli can all non-zero classes? This section answers both questions with the gcd of Section 3.2, and finds a field with \( p \) elements for every prime \( p \). It then solves two congruences at once, the Chinese remainder theorem, by the move of Section 3.3, multiply the Bézout identity: write \( 1 \) as a combination and multiply.
 
 Throughout, \( n \in \nZ_{>0} \) and classes are taken in \( \nZ/n\nZ \) unless another modulus is named. Two classes are equal exactly when their representatives are congruent:
 \[
@@ -38,7 +38,7 @@ reordering the four factors by (F5) and (F6); so \( uw \) is a unit and \( (uw)^
 \[
 x = (u^{-1} u) x = u^{-1}(ux) = u^{-1} \cdot 0 = 0 ,
 \]
-by (F5) and @prp-ring-algebra (b). So a unit times a non-zero element is never \( 0 \).
+by \( u^{-1} u = 1 \) (above) and \( 1 \cdot x = x \cdot 1 = x \) ((F6), (F7)) in the first equality, (F5) in the second, and @prp-ring-algebra (b) in the third. So a unit times a non-zero element is never \( 0 \).
 
 **Examples.**
 
@@ -165,11 +165,11 @@ and an integer \( x' \) satisfies both congruences **if and only if** \( x' \equ
 2. The rule \( \Phi([x]_{mn}) \coloneqq ([x]_m, [x]_n) \) is a well-defined **bijection** \( \nZ/mn\nZ \to \nZ/m\nZ \times \nZ/n\nZ \). With \( + \) and \( \cdot \) on \( \nZ/m\nZ \times \nZ/n\nZ \) taken componentwise, for all \( x, y \in \nZ \),
 \[
 \begin{aligned}
-\Phi([x] + [y]) &= \Phi([x]) + \Phi([y]) , \\
-\Phi([x][y]) &= \Phi([x]) \, \Phi([y]) ,
+\Phi([x]_{mn} + [y]_{mn}) &= \Phi([x]_{mn}) + \Phi([y]_{mn}) , \\
+\Phi([x]_{mn}[y]_{mn}) &= \Phi([x]_{mn}) \, \Phi([y]_{mn}) ,
 \end{aligned}
 \]
-and \( \Phi([1]) = ([1], [1]) \).
+and \( \Phi([1]_{mn}) = ([1]_m, [1]_n) \).
 :::
 :::
 
@@ -204,14 +204,14 @@ Let \( x' \in \nZ \). Suppose first that \( x' \equiv a \pmod{m} \) and \( x' \e
 *The operations.* By the definition of \( + \) on each of the three rings (@thm-quotient-ring-by-ideal (b)) and of the componentwise sum,
 \[
 \begin{aligned}
-\Phi([x] + [y]) &= \Phi([x + y]) = ([x + y]_m, [x + y]_n) \\
-&= ([x]_m + [y]_m, [x]_n + [y]_n) = \Phi([x]) + \Phi([y]) .
+\Phi([x]_{mn} + [y]_{mn}) &= \Phi([x + y]_{mn}) = ([x + y]_m, [x + y]_n) \\
+&= ([x]_m + [y]_m, [x]_n + [y]_n) = \Phi([x]_{mn}) + \Phi([y]_{mn}) .
 \end{aligned}
 \]
-The same lines with \( xy \) in place of \( x + y \) give the product, and \( \Phi([1]) = ([1]_m, [1]_n) \) is the definition. This proves the theorem.
+The same lines with \( xy \) in place of \( x + y \) give the product, and \( \Phi([1]_{mn}) = ([1]_m, [1]_n) \) is the definition. This proves the theorem.
 :::
 
-The theorem answers the opening question: the numbers with remainder \( 2 \) modulo \( 3 \) and remainder \( 3 \) modulo \( 5 \) form one class modulo \( 15 \), and the formula of (a) names a representative. Clause (b) says the same thing as a bijection. Each class modulo \( mn \) is the same information as a pair of classes, one modulo \( m \) and one modulo \( n \), and the sums and products of classes can be computed in either form. Each coordinate of \( \nZ/m\nZ \times \nZ/n\nZ \) is a commutative ring, so with zero \( ([0], [0]) \), one \( ([1], [1]) \) and negatives taken componentwise, every axiom (F1)–(F7), (F9) holds in each coordinate and hence for the pairs; then \( \Phi \) matches two commutative rings, element for element and operation for operation.
+The theorem answers the opening question: the numbers with remainder \( 2 \) modulo \( 3 \) and remainder \( 3 \) modulo \( 5 \) form one class modulo \( 15 \), and the formula of (a) names a representative. Clause (b) says the same thing as a bijection. Each class modulo \( mn \) is the same information as a pair of classes, one modulo \( m \) and one modulo \( n \), and the sums and products of classes can be computed in either form. Each coordinate of \( \nZ/m\nZ \times \nZ/n\nZ \) is a commutative ring, so with zero \( ([0]_m, [0]_n) \), one \( ([1]_m, [1]_n) \) and negatives taken componentwise, every axiom (F1)–(F7), (F9) holds in each coordinate and hence for the pairs; then \( \Phi \) matches two commutative rings, element for element and operation for operation.
 
 ::: {#exm-chinese-remainder-instances}
 [Two remainders at once, and two failures]
@@ -238,7 +238,7 @@ Check: \( 8 = 2 \cdot 3 + 2 \) and \( 8 = 1 \cdot 5 + 3 \). The solutions are ex
 :::
 
 ::: {.remark}
-Could injectivity alone have given surjectivity, by counting the elements on both sides? Exercise B3 asks this. The formula of (a) is kept because it does more: it **computes** the solution.
+For a map from a finite set to itself, injectivity alone gives surjectivity, by counting. Take \( g \colon \nZ/5\nZ \to \nZ/5\nZ \), \( g([x]) \coloneqq [2][x] \). It is injective: if \( [2][x] = [2][y] \), multiplying by \( [3] \), with \( [3][2] = [6] = [1] \), gives \( [x] = [y] \) ((F5)–(F7)). Let \( T \coloneqq g(\nZ/5\nZ) \). With codomain \( T \), \( g \) is a bijection \( \nZ/5\nZ \to T \), and \( \nZ/5\nZ \) is finite (@thm-integers-mod-n-ring (b)); so \( T \) is not a proper subset of \( \nZ/5\nZ \) (@fd2:thm-finite-no-proper-copy), that is, \( T = \nZ/5\nZ \), and \( g \) is surjective. Could injectivity of \( \Phi \) alone have given its surjectivity in the same way? Its source and target are different sets, so their sizes must be compared first; Exercise B3 asks for this. The formula of (a) is kept because it does more: it **computes** the solution.
 :::
 
 ::: {.warning}
@@ -360,7 +360,7 @@ Here is an argument.
 
 > **Claim.** For every prime \( p \), \( \nZ/p\nZ \) is a field.
 >
-> **Proof.** (1) Let \( [a] \ne [0] \) in \( \nZ/p\nZ \). (2) If \( [a][x] = [a][y] \), then canceling \( [a] \) gives \( [x] = [y] \). (3) So the map \( f \colon \nZ/p\nZ \to \nZ/p\nZ \), \( f([x]) \coloneqq [a][x] \), is injective. (4) An injective map from a finite set to itself is surjective, by @fd2:cor-pigeonhole-finite-sets. (5) So some \( [x] \) has \( [a][x] = [1] \), and \( [a] \) is a unit.
+> **Proof.** (0) By @thm-integers-mod-n-ring (a) and (c), \( \nZ/p\nZ \) is a commutative ring with \( [1] \ne [0] \), since \( p \ge 2 \). (1) Let \( [a] \ne [0] \) in \( \nZ/p\nZ \). (2) If \( [a][x] = [a][y] \), then canceling \( [a] \) gives \( [x] = [y] \). (3) So the map \( f \colon \nZ/p\nZ \to \nZ/p\nZ \), \( f([x]) \coloneqq [a][x] \), is injective. (4) With codomain its image, \( f \) is a bijection from \( \nZ/p\nZ \) onto \( f(\nZ/p\nZ) \), a subset of the finite set \( \nZ/p\nZ \) (@thm-integers-mod-n-ring (b)). By @fd2:thm-finite-no-proper-copy the image is not a proper subset, so \( f \) is surjective. (5) So some \( [x] \) has \( [a][x] = [1] \), and \( [a] \) is a unit. So (F8) holds, and \( \nZ/p\nZ \) is a field.
 
 Is the claim true? Does the argument prove it? Name the line that fails and the reason, give a counterexample to the illegal step, and repair the argument.
 :::
@@ -368,7 +368,7 @@ Is the claim true? Does the argument prove it? Name the line that fails and the 
 ::: {.solution}
 [Hint 1]
 
-Ask what line (2) assumes about \( [a] \), and whether that assumption holds in every \( \nZ/n\nZ \).
+List the properties of \( \nZ/p\nZ \) that each line uses. Which of them have been proved in this chapter, and which are things a field has?
 :::
 
 ::: {.solution}
@@ -382,17 +382,14 @@ Write \( [a][x] = [a][y] \) as a divisibility statement about integers.
 
 *Line (2) fails.* "Cancel a non-zero factor" is a rule of fields (multiply by the inverse) or of rings without zero divisors, and neither has been established for \( \nZ/p\nZ \): it is close to what the argument is trying to prove, and it is false in general. So the line cites a "fact" that is neither proved nor true, entry (N9) of @fd1:exm-not-allowed-catalogue. Counterexample to the step: in \( \nZ/6\nZ \), \( [2][1] = [2] \) and \( [2][4] = [8] = [2] \), so \( [2][1] = [2][4] \) with \( [2] \ne [0] \), yet \( [1] \ne [4] \). There is no counterexample to the conclusion.
 
-*Repair of line (2).* If \( [a][x] = [a][y] \), then \( [a(x - y)] = [0] \), so \( p \mid a(x - y) \) by the class test. Since \( [a] \ne [0] \), \( p \nmid a \), so \( p \mid x - y \) by @cor-prime-divides-product (b), and \( [x] = [y] \). This uses that \( p \) is prime, the hypothesis the flawed line never touched.
-
-*A second, smaller slip in line (4).* @fd2:cor-pigeonhole-finite-sets covers only sets of sizes \( m > n \) (no injection) and \( m < n \) (no surjection), not a map from a set to itself. The correct citation is @fd2:thm-finite-no-proper-copy: \( f \), with codomain its image \( f(\nZ/p\nZ) \), is a bijection, so the image is not a proper subset of the finite set \( \nZ/p\nZ \) (@thm-integers-mod-n-ring (b)), and \( f \) is surjective. (Equivalently, @fd2:prp-subset-finite with @fd2:cor-finite-size-unique.) With both repairs, and \( [1] \ne [0] \) from @thm-integers-mod-n-ring (c), the argument is a correct second proof.
+*Repair of line (2).* If \( [a][x] = [a][y] \), then \( [a(x - y)] = [0] \), so \( p \mid a(x - y) \) by the class test. Since \( [a] \ne [0] \), \( p \nmid a \), so \( p \mid x - y \) by @cor-prime-divides-product (b), and \( [x] = [y] \). This uses that \( p \) is prime, the hypothesis the flawed line never touched. With this repair, the argument is a correct second proof.
 
 **Marking scheme.** (10 points)
 - 2: says the claim is true and the argument, as written, does not prove it.
-- 3: names line (2) and the reason: cancellation by a non-zero class is unproved here and false in general, (N9).
+- 3: names line (2) and the reason: cancellation by a non-zero class is unproved here and false in general, (N9), or an equivalent statement of the reason.
 - 2: a counterexample to the step, such as \( [2][1] = [2][4] \) in \( \nZ/6\nZ \).
-- 2: repairs line (2) with the class test and Euclid's lemma for a prime (@cor-prime-divides-product (b), from @thm-euclid-lemma-integers).
-- 1: notices that line (4) needs @fd2:thm-finite-no-proper-copy (or the subset count), not the pigeonhole corollary.
-Fatal errors (0 for the step): a counterexample to the conclusion (there is none); a repair that cancels \( [a] \) by appeal to the field property being proved.
+- 3: repairs line (2) without assuming the field property: \( p \mid a(x - y) \) by the class test and Euclid's lemma for a prime (@cor-prime-divides-product (b), from @thm-euclid-lemma-integers); or \( \gcd(a, p) = 1 \) (@cor-prime-divides-product (a)) and an inverse of \( [a] \) from @thm-units-mod-n, which earns full points even though it makes lines (3)–(5) redundant.
+Fatal errors (0 for the step): a counterexample to the conclusion (there is none); a repair that cancels \( [a] \) by appeal to the field property being proved (citing @thm-units-mod-n is not such an appeal).
 :::
 
 ::: {#exr-units-and-crt-c3}
@@ -430,7 +427,7 @@ Let \( \nZ = (\nN \times \nN)/{\sim} \) be the integers built as classes of pair
 :::
 
 ::: {.solution}
-This is the method of @thm-well-defined-on-classes (a), from the construction @def-integers-as-classes. Take \( X = \nN \times \nN \) with \( \sim \), \( Y = \nZ \) with congruence modulo \( 2 \), and \( f(a, b) \coloneqq a + b \). Let \( (a, b) \sim (a', b') \), so \( a + b' = a' + b \). Then, in \( \nZ \),
+This is the method of @thm-well-defined-on-classes (a), from the construction @def-integers-as-classes. Take \( X = \nN \times \nN \) with \( \sim \), \( Y = \nZ \) with congruence modulo \( 2 \), the equivalence relation \( \sim_{2\nZ} \) whose quotient set is \( \nZ/2\nZ \) (@def-integers-mod-n-ring, @thm-quotient-ring-by-ideal (a)), and \( f(a, b) \coloneqq a + b \). Let \( (a, b) \sim (a', b') \), so \( a + b' = a' + b \). Then, in \( \nZ \),
 \[
 \begin{aligned}
 (a + b) - (a' + b') &= (a + b' - a' - b) + 2b - 2b' \\
@@ -467,7 +464,7 @@ Prove that no \( x \in \nQ \) satisfies \( x^2 = 2 \), by the parity argument: w
 ::: {.solution}
 This is the school argument of @fd1:thm-sqrt2-irrational, now with every step citable.
 
-*The case \( 2 \).* Suppose \( x \in \nQ \) and \( x^2 = 2 \). By @prp-rationals-lowest-terms, \( x = a/b \) with \( a \in \nZ \), \( b \in \nZ_{>0} \) and \( \gcd(a, b) = 1 \). By @def-rational-operations, \( x^2 = a^2/b^2 \), and \( 2 = 2/1 \), so \( a^2 = 2b^2 \) (@prp-integers-embed-rationals (b)). Then \( a^2 \) is even, so \( a \) is even by @cor-integers-even-odd (b): \( a = 2c \) with \( c \in \nZ \). Then \( 4c^2 = 2b^2 \), and canceling the non-zero factor \( 2 \) (@prp-ordered-ring-rules (f), applied to \( 2(b^2 - 2c^2) = 0 \)) gives \( b^2 = 2c^2 \). So \( b \) is even as well. Now \( 2 \) divides \( a \) and \( b \), hence divides \( \gcd(a, b) = 1 \) (@thm-integers-bezout (c)), so \( 2 \in \{1, -1\} \) (@prp-divisibility-rules-integers (g)): a contradiction.
+*The case \( 2 \).* Suppose \( x \in \nQ \) and \( x^2 = 2 \). By @prp-rationals-lowest-terms, \( x = a/b \) with \( a \in \nZ \), \( b \in \nZ_{>0} \) and \( \gcd(a, b) = 1 \). By @def-rational-operations, \( x^2 = a^2/b^2 \), and \( 2 = 2/1 \), so \( a^2 = 2b^2 \) (@prp-integers-embed-rationals (b)). Then \( a^2 \) is even, so \( a \) is even by @cor-integers-even-odd (b): \( a = 2c \) with \( c \in \nZ \). Then \( 4c^2 = 2b^2 \), and canceling the non-zero factor \( 2 \) (@prp-ordered-ring-rules (f), applied to \( 2(b^2 - 2c^2) = 0 \)) gives \( b^2 = 2c^2 \). So \( b \) is even as well. Now \( 2 \) divides \( a \) and \( b \), hence divides \( \gcd(a, b) = 1 \) (@thm-integers-bezout (c), (d)), so \( 2 \in \{1, -1\} \) (@prp-divisibility-rules-integers (g)): a contradiction.
 
 *A prime \( p \).* The same argument works with "\( p \mid \)" in place of "even": from \( a^2 = p b^2 \), \( p \mid a \cdot a \), so \( p \mid a \) by @cor-prime-divides-product (b); \( a = pc \) gives \( p^2 c^2 = p b^2 \), so \( b^2 = p c^2 \) (cancel \( p \ne 0 \)), and \( p \mid b \) in the same way. Then \( p \mid \gcd(a, b) = 1 \), against \( p \ge 2 \).
 
@@ -489,7 +486,7 @@ Find all \( x \in \nZ \) with \( 6x \equiv 4 \pmod{10} \).
 \]
 if \( 2(3x - 2) = 10k = 2(5k) \), cancel \( 2 \ne 0 \) (@prp-ordered-ring-rules (f)); conversely, multiply \( 3x - 2 = 5k \) by \( 2 \). So the condition is \( [3][x] = [2] \) in \( \nZ/5\nZ \). There \( [3]^{-1} = [2] \), since \( 3 \cdot 2 = 6 = 5 + 1 \). Multiplying by \( [2] \), \( [x] = [2][2] = [4] \); and conversely \( [3][4] = [12] = [2] \). So the solutions are exactly the \( x \equiv 4 \pmod{5} \). Check: \( 6 \cdot 4 - 4 = 20 \) and \( 6 \cdot 9 - 4 = 50 \) are multiples of \( 10 \).
 
-*Why the look-alikes fail.* "Multiply by \( [6]^{-1} \) in \( \nZ/10\nZ \)" fails: \( \gcd(6, 10) = 2 \), so \( [6] \) is not a unit there (@thm-units-mod-n). The Chinese remainder theorem solves two congruences in coprime moduli; here there is one congruence, and its modulus \( 10 \) has the factor \( 2 \) in common with the coefficient \( 6 \), so the theorem gives no reduction by itself. Note also that the answer is a class modulo \( 5 \), not modulo \( 10 \): it is the two classes \( [4]_{10} \) and \( [9]_{10} \).
+*Why the look-alikes fail.* "Multiply by \( [6]^{-1} \) in \( \nZ/10\nZ \)" fails: \( \gcd(6, 10) = 2 \), so \( [6] \) is not a unit there (@thm-units-mod-n). Canceling the \( 2 \) from every term but keeping the modulus gives \( 3x \equiv 2 \pmod{10} \), and that is wrong: it keeps \( 4 \) and loses \( 9 \) (\( 6 \cdot 9 - 4 = 50 \), while \( 3 \cdot 9 - 2 = 25 \)). The modulus must be divided too. The Chinese remainder theorem is not a look-alike that fails: splitting \( 10 = 2 \cdot 5 \), @thm-chinese-remainder-two (b) turns the condition \( [6]_{10}[x]_{10} = [4]_{10} \) into \( [0]_2 [x]_2 = [0]_2 \), which always holds, and \( [x]_5 = [4]_5 \), since \( [6]_5 = [1]_5 \); so it is a second route to the same answer. Note also that the answer is a class modulo \( 5 \), not modulo \( 10 \): it is the two classes \( [4]_{10} \) and \( [9]_{10} \).
 :::
 
 <!-- dependency ledger
@@ -509,17 +506,19 @@ thm-chinese-remainder-two (claim): (aftermath) the componentwise product of two 
 thm-chinese-remainder-two (idea): try-it-first numbers e = -5, f = 6, 2e + 3f = 8 | verify/ch03/thm-chinese-remainder-two.py
 exm-chinese-remainder-instances (example): x = 8, 8 + 15Z; 2 + 4Z, 6 - 2 = 4, Phi([0]) = Phi([4]) | inline arithmetic; verify/ch03/exm-chinese-remainder-instances.py
 exm-chinese-remainder-instances (example): well-definedness of Phi for non-coprime 2, 4 | first step of the proof of thm-chinese-remainder-two (b), which uses only m | mn and n | mn; inline
+exm-chinese-remainder-instances (claim): (remark after it) [x] -> [2][x] on Z/5Z is injective via [3][2] = [1], hence surjective by counting | (F5)-(F7); thm-integers-mod-n-ring (b); fd2:thm-finite-no-proper-copy, group (i) of F3.1's citing rule (cor-omega-identification), cited; verify/ch03/exm-chinese-remainder-instances.py
 exr-units-and-crt-a1 (solution): [5]^2 = [1] mod 12; units of Z/12Z; x = -7, 29 + 36Z | verify/ch03/exr-units-and-crt-a1.py
 exr-units-and-crt-b1 (solution): a^2 - 1 = (a - 1)(a + 1); [3]^2 = [1] in Z/8Z, units of Z/8Z square to [1] | prp-ring-algebra; verify/ch03/exr-units-and-crt-b1.py
 exr-units-and-crt-b2 (solution): the product identity (xs + mt)(xs' + nt') | prp-ring-algebra; verify/ch03/exr-units-and-crt-b2.py
 exr-units-and-crt-b3 (solution): count of a product of finite sets | fd2:exr-finite-sets-c2 (a), an exercise cited from an exercise solution, which STYLE allows; group (i) of F3.1's citing rule (cor-omega-identification)
 exr-units-and-crt-b3 (solution): fd2 finite-set results read on omega | group (i) of F3.1's citing rule after cor-omega-identification, cited by label
 exr-units-and-crt-c2 (solution): [2][1] = [2][4] in Z/6Z | verify/ch03/exr-units-and-crt-c2.py
+exr-units-and-crt-c2 (solution): (statement) the quoted proof's lines (0) and (4) | thm-integers-mod-n-ring (a), (b), (c); fd2:thm-finite-no-proper-copy, group (i) of F3.1's citing rule (cor-omega-identification), cited
 exr-units-and-crt-c3 (solution): x_1 = 7, x_2 = -53, 52 + 105Z | verify/ch03/exr-units-and-crt-c3.py
-exr-units-and-crt-r1 (solution): (a + b) - (a' + b') = 2(b - b'); [(a, b)] = a - b | prp-ring-algebra; remark after thm-integers-commutative-ring (prp-naturals-embed-integers), cited; verify/ch03/exr-units-and-crt-r1.py
+exr-units-and-crt-r1 (solution): (a + b) - (a' + b') = 2(b - b'); [(a, b)] = a - b | prp-ring-algebra; remark after thm-integers-commutative-ring (prp-naturals-embed-integers), cited; def-integers-mod-n-ring, thm-quotient-ring-by-ideal (a) (congruence mod 2 is the equivalence relation of Z/2Z), cited; verify/ch03/exr-units-and-crt-r1.py
 exr-units-and-crt-r2 (solution): powers b^n on omega carried into Z; product of the list L_{m,n} by induction | prp-omega-powers-parity, prp-naturals-embed-integers, def-prime-factorization (its recursion), fd1:ax-induction read on omega (cor-omega-identification (b)); inline
 exr-units-and-crt-r2 (solution): 2^m 3^n > 0 | prp-ordered-ring-rules (c), induction; inline
 exr-units-and-crt-r2 (solution): fd2:thm-product-countable mentioned for comparison | group (ii) of F3.1's citing rule; R item, prose comparison only
 exr-units-and-crt-r3 (solution): (a/b)^2 = a^2/b^2 | def-rational-operations, cited
-exr-units-and-crt-r4 (solution): 6x - 4 = 2(3x - 2); [3][2] = [1] mod 5; 20, 50 | verify/ch03/exr-units-and-crt-r4.py
+exr-units-and-crt-r4 (solution): 6x - 4 = 2(3x - 2); [3][2] = [1] mod 5; 20, 50; look-alike 3x = 2 mod 10 loses 9 (25); CRT route via 10 = 2 * 5, [6]_5 = [1]_5 | thm-chinese-remainder-two (b), cited; verify/ch03/exr-units-and-crt-r4.py
 -->

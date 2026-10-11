@@ -34,7 +34,7 @@ Each hypothesis has a job. Without \( \gcd(a, b) = 1 \) the conclusion fails: \(
 
 To say that a factorization is unique, we must first say what a factorization is. The products \( 2 \cdot 2 \cdot 3 \cdot 5 \) and \( 3 \cdot 2 \cdot 5 \cdot 2 \) are equal and use the same primes, and we want to count them as one. We do so by writing the primes in order, smallest first. A factorization also has a length, and the length may be \( 0 \): the number \( 1 \) is the product of no primes at all.
 
-Products of lists are defined by the recursion of @fd2:def-sum-product. That definition was made for sequences of real numbers, and we use it as a pattern, as group (iii) of the citing rule of Section 1.7 allows.
+Products of lists are defined by the recursion of @fd2:def-sum-product. That definition was made for sequences of real numbers, and we use it as a pattern, as group (iii) of the citing rule of Section 1.7 allows, with the ordered field \( \nQ \) (@thm-rationals-ordered-field) in place of \( \nR \). A product of integers is an integer (@prp-integers-embed-rationals), so the products of lists below lie in \( \nZ \); the paragraph after the definition checks directly that the recursion runs in \( \nZ \).
 
 ::: {#def-prime-factorization}
 [List, Product of a List, Prime Factorization]
@@ -50,13 +50,13 @@ A **prime factorization** of \( n \in \nZ_{>0} \) is a list \( (p_1, \dots, p_k)
 
 In words: a list is a finite sequence of integers, possibly empty; its product starts at \( 1 \) and multiplies by one more entry at each stage; and a prime factorization lists primes in non-decreasing order with the right product.
 
-**Why the product exists.** Extend the list to a sequence \( \bar p \) on \( \nZ_{>0} \) by \( \bar p_i \coloneqq p_i \) for \( i \le k \) and \( \bar p_i \coloneqq 1 \) for \( i > k \). Then @fd2:thm-recursion, read on \( \nN = \omega \) through @cor-omega-identification (b), with \( X = \nZ \), starting value \( 1 \) and step \( g(j, x) \coloneqq x \bar p_{j+1} \), gives exactly one function \( P \colon \nN \to \nZ \) with \( P_0 = 1 \) and \( P_{j+1} = P_j \bar p_{j+1} \); we set \( \prod_{i=1}^{j} p_i \coloneqq P_j \) for \( j \le k \). The "Finite lists" remark after @fd2:def-sum-product shows that \( P_j \) depends only on \( p_1, \dots, p_j \), not on how the list was extended. Its proof is an induction on \( j \) that uses only the recursion and the multiplication of the target set, so it runs unchanged with \( \nZ \) in place of \( \nR \). In particular \( P_j \) is also the product of the shortened list \( (p_1, \dots, p_j) \), which is the displayed recursion. We cite it as **the recursion of @def-prime-factorization**: it peels the **last** entry off a product.
+**Why the product exists.** Extend the list to a sequence \( \bar p \) on \( \nZ_{>0} \) by \( \bar p_i \coloneqq p_i \) for \( i \le k \) and \( \bar p_i \coloneqq 1 \) for \( i > k \). Then @fd2:thm-recursion, read on \( \nN = \omega \) through @cor-omega-identification (b), with \( X = \nZ \), starting value \( 1 \) and step \( g(j, x) \coloneqq x \bar p_{j+1} \), gives exactly one function \( P \colon \nN \to \nZ \) with \( P_0 = 1 \) and \( P_{j+1} = P_j \bar p_{j+1} \); we set \( \prod_{i=1}^{j} p_i \coloneqq P_j \) for \( j \le k \). The "Finite lists" remark after @fd2:def-sum-product shows that \( P_j \) depends only on \( p_1, \dots, p_j \), not on how the list was extended. Its proof is an induction on \( j \) that uses only the recursion and the multiplication of the target set, so it runs unchanged in \( \nQ \), and, since \( \nZ \) is closed under multiplication, with target set \( \nZ \). In particular \( P_j \) is also the product of the shortened list \( (p_1, \dots, p_j) \), which is the displayed recursion. We cite it as **the recursion of @def-prime-factorization**: it peels the **last** entry off a product.
 
 **Examples.**
 
 - \( (2, 2, 3, 5) \) is a prime factorization of \( 60 \). Its entries are prime by the small-primes remark of Section 3.1; it is non-decreasing; and the recursion gives the products \( 1, 2, 4, 12, 60 \).
 - \( (5) \) is a prime factorization of \( 5 \), with products \( 1, 5 \). A prime \( p \) has the one-entry factorization \( (p) \).
-- The degenerate case: the empty list is a prime factorization of \( 1 \). Its product is \( 1 \) by the first clause of the recursion, and the conditions "every entry is prime" and "non-decreasing" hold vacuously. Without this case the number \( 1 \) would have no factorization, and the uniqueness proof below would have no base case.
+- The degenerate case: the empty list is a prime factorization of \( 1 \). Its product is \( 1 \) by the first clause of the recursion, and the conditions "every entry is prime" and "non-decreasing" hold vacuously. Without this case the number \( 1 \) would have no factorization, and the theorem below would fail for \( n = 1 \); its existence proof uses this case to rule out \( n = 1 \).
 
 **Non-examples by minimal change.** Exchange two entries of the first example: \( (2, 3, 2, 5) \) has prime entries and product \( 60 \), but it is not non-decreasing, since positions \( 2 \le 3 \) carry \( 3 > 2 \). Merge two entries: \( (2, 2, 15) \) is non-decreasing with product \( 60 \), but \( 15 = 3 \cdot 5 \) is not prime.
 
@@ -87,7 +87,7 @@ Let \( p \) be prime.
 :::
 
 ::: {.idea}
-For (a), the gcd of \( p \) and \( a \) is a positive divisor of \( p \), so it is \( 1 \) or \( p \), and the second case says \( p \mid a \). Then (b) is Euclid's lemma in the first case of (a). For (c), peel the last prime off the product and apply (b) to the two factors; an induction on the length handles the rest, and a prime that divides a prime is equal to it.
+For (a), the gcd of \( p \) and \( a \) is a positive divisor of \( p \), so it is \( 1 \) or \( p \), and the second case says \( p \mid a \). Then (b) is Euclid's lemma in the case \( \gcd(p, b) = 1 \) of (a). For (c), peel the last prime off the product and apply (b) to the two factors; an induction on the length handles the rest, and a prime that divides a prime is equal to it.
 :::
 
 ::: {.proof}
@@ -139,7 +139,7 @@ Suppose \( p \) were not prime. Since \( p \ge 2 \), the clause of @fd2:def-prim
 :::
 
 ::: {.remark}
-This is @fd2:thm-prime-factor on the constructed \( \nZ \), proved by a least element instead of strong induction. It also shortens the primality test of Section 3.1's small-primes remark. If \( p \ge 2 \) is not prime, its least divisor \( e \ge 2 \) is prime by the lemma, so it is not \( p \) itself, and \( p = ef \) with \( f \in \nZ \); then \( f > 0 \) (as \( e, p > 0 \)), \( f \ne 1 \), so \( f \ge 2 \) and \( f \mid p \), and therefore \( e \le f \) by the choice of \( e \). Multiplying by \( e > 0 \) gives \( e \cdot e \le ef = p \) (@prp-ordered-ring-rules (c)). So to prove \( p \ge 2 \) prime it is enough to check that **no** \( d \) with \( d \ge 2 \) and \( d \cdot d \le p \) divides \( p \). For \( 11 \) only \( d = 2, 3 \) need checking, since \( 4 \cdot 4 = 16 > 11 \).
+This is @fd2:thm-prime-factor on the constructed \( \nZ \), proved by a least element instead of strong induction. It also shortens the primality test of Section 3.1's small-primes remark. If \( p \ge 2 \) is not prime, its least divisor \( e \ge 2 \) is prime by the lemma, so it is not \( p \) itself, and \( p = ef \) with \( f \in \nZ \); then \( f > 0 \) (as \( e, p > 0 \)), \( f \ne 1 \), so \( f \ge 2 \) and \( f \mid p \), and therefore \( e \le f \) by the choice of \( e \). Multiplying by \( e > 0 \) gives \( e \cdot e \le ef = p \) (@prp-ordered-ring-rules (c), or equality if \( e = f \)). So to prove \( p \ge 2 \) prime it is enough to check that **no** \( d \) with \( d \ge 2 \) and \( d \cdot d \le p \) divides \( p \). For \( 11 \) only \( d = 2, 3 \) need checking, since \( 4 \cdot 4 = 16 > 11 \).
 :::
 
 ## The fundamental theorem
@@ -254,7 +254,7 @@ These questions are about the uniqueness half of the proof of @thm-fundamental-a
 :::
 
 ::: {.solution}
-(a) Without it the base case \( P(0) \) would be about nothing, and the number \( 1 \) would have no prime factorization, so the theorem would be false for \( n = 1 \). The existence proof also uses it, to exclude \( n = 1 \) from \( B \).
+(a) Otherwise the number \( 1 \) would have no prime factorization, and the theorem would be false for \( n = 1 \). The existence proof uses it to exclude \( n = 1 \) from \( B \). (The base case \( P(0) \) of the uniqueness proof concerns the empty list as a list of primes with product \( 1 \), which it is in any case.)
 
 (b) The step first gets \( l \ge 1 \), since the product is \( 60 \ne 1 \). Then \( p_4 = 5 \) divides \( \prod q_j \), so \( 5 = q_j \le q_l \) for some \( j \); and \( q_l \) divides \( 60 = 2 \cdot 2 \cdot 3 \cdot 5 \), so \( q_l = p_i \le 5 \) for some \( i \). Hence \( q_l = 5 \). Canceling \( 5 \) gives \( \prod_{j=1}^{l-1} q_j = 2 \cdot 2 \cdot 3 = 12 \), and \( P(3) \) is applied to \( (2, 2, 3) \) and \( (q_1, \dots, q_{l-1}) \), which gives \( l - 1 = 3 \) and \( (q_1, q_2, q_3) = (2, 2, 3) \).
 
@@ -296,11 +296,11 @@ An admissible order is (i), (ii), (iii), (iv), (v), (vi), (vii):
 
 > Suppose \( a \mid bc \) and \( \gcd(a, b) = 1 \). There are \( x, y \in \nZ \) with \( ax + by = 1 \) (@cor-coprime-iff-combination). Multiplying by \( c \): \( c = acx + bcy \). Then \( a \mid acx \), since \( acx = a(cx) \). Write \( bc = ak \); then \( bcy = a(ky) \), so \( a \mid bcy \). Hence \( a \mid acx + bcy \) (@prp-divisibility-rules-integers (c)). So \( a \mid c \).
 
-Lines (iv) and (v) mention the \( x \) and \( y \) introduced in (ii), and (v) also uses the hypothesis \( a \mid bc \) of (i); neither uses the other or (iii). So they may be exchanged, and either may come before (iii), as long as both follow (ii). Everything else is forced: (ii) needs the hypothesis \( \gcd(a, b) = 1 \) of (i); (iii) multiplies the equation of (ii); (vi) needs both (iv) and (v); (vii) rewrites (vi) through the equation of (iii).
+Line (i) comes first, and (ii) needs its hypothesis \( \gcd(a, b) = 1 \). Lines (iii), (iv) and (v) each need only (ii): (iii) multiplies its equation, and (iv) and (v) mention its \( x \) and \( y \); (v) also uses the hypothesis \( a \mid bc \) of (i). None of these three uses another of them. Line (vi) needs both (iv) and (v), but not (iii), since \( acx + bcy \) is just an expression in \( a, b, c, x, y \). Line (vii) rewrites (vi) through the equation of (iii), so it needs both and comes last. The admissible orders are therefore those that start (i), (ii), end with (vii), and place (vi) after (iv) and (v); there are eight. For example, (i), (ii), (iv), (v), (vi), (iii), (vii) is admissible: (iii) may come anywhere before (vii).
 
-The distractor (ii′) cites a "fact" that is not available. For a prime \( a \) it is @cor-prime-divides-product (b), which is proved **from** this lemma, so citing it here is circular; for a composite \( a \) nothing provides it. Either way the line uses what has not been established, which is (N9) of @fd1:exm-not-allowed-catalogue.
+The distractor (ii′) cites a "fact" that is not available as a step for arbitrary \( a \). For a prime \( a \) it is @cor-prime-divides-product (b), which is proved **from** this lemma, so citing it here is circular. For a general integer \( a \) the line is the lemma itself in a weaker form, so citing it is circular again; only special cases are available (for \( a = \pm 1 \), \( a \mid b \) by @prp-divisibility-rules-integers (a), with (d) for \( -1 \)), and the proof must work for every \( a \). Either way the line uses what has not been established, which is (N9) of @fd1:exm-not-allowed-catalogue.
 
-The distractor (iii′) divides in \( \nZ \), where there is no division: \( 1/a \) is not an integer for \( a \ge 2 \), and divisibility is defined by multiplication (@fd2:def-divides), not by fractions.
+The distractor (iii′) divides in \( \nZ \), where there is no division: \( a \) may be \( 0 \) (\( \gcd(0, 1) = 1 \)), and then the line divides by \( 0 \); for \( a \ne 0 \), \( 1/a \) is not an integer unless \( a = \pm 1 \). Divisibility is defined by multiplication (@fd2:def-divides), not by fractions.
 :::
 
 ::: {#exr-unique-factorization-b2}
@@ -326,9 +326,9 @@ The same argument proved @thm-integers-bezout (b), with the set of positive comb
 ::: {#exr-unique-factorization-b3}
 [B3: Two factorizations and a gcd]
 
-Find the prime factorizations of \( 1001 \) and of \( 2^{10} - 1 \), proving that each entry is prime. Then show that \( \gcd(1001, 1023) = 11 \) in two ways: from the factorizations, and by the Euclidean algorithm.
+Find the prime factorizations of \( 1001 \) and of \( 2^{10} - 1 \), proving that each entry is prime. Then show that \( \gcd(1001, 1023) = 11 \) in two ways. First, use the factorizations to write \( 1001 = 11 \cdot 91 \) and \( 1023 = 11 \cdot 93 \): show \( \gcd(91, 93) = 1 \), and deduce \( \gcd(1001, 1023) = 11 \) from a Bézout identity for \( 91 \) and \( 93 \) (@cor-coprime-iff-combination). Second, use the Euclidean algorithm.
 
-*Hint: the remark after @lem-least-divisor-prime shortens each primality check.*
+*Hint: the remark after @lem-least-divisor-prime shortens each primality check. Do not use the school rule "the gcd is the product of the shared primes": this chapter does not prove it.*
 :::
 
 ::: {.solution}
@@ -353,7 +353,7 @@ So every common divisor of \( 1001 \) and \( 1023 \) divides \( 11 \) (@prp-divi
 ::: {#exr-unique-factorization-c1}
 [C1: Exit check: unique factorization]
 
-Prove that two prime factorizations of the same positive integer are equal: the uniqueness half of @thm-fundamental-arithmetic. You may cite @thm-euclid-lemma-integers.
+Prove that two prime factorizations of the same positive integer are equal: the uniqueness half of @thm-fundamental-arithmetic. You may cite @thm-euclid-lemma-integers and @cor-prime-divides-product.
 :::
 
 ::: {.solution}
@@ -361,11 +361,11 @@ The proof of uniqueness in @thm-fundamental-arithmetic is a complete answer. Its
 
 **Marking scheme.** (10 points)
 - 2: sets up an induction on the length of one list (or a least counterexample), with the statement quantified over all lengths of the other list, and proves the base case.
-- 3: shows that the largest (or any chosen) prime of one list divides the other product, and identifies it with an entry of the other list by Euclid's lemma for products of several factors, proved or cited.
-- 2: uses the symmetric step and the non-decreasing order to get equality of the two largest entries.
+- 3: shows that the largest (or any chosen) prime of one list divides the other product, and identifies it with an entry of the other list by Euclid's lemma for products of several factors (cited as @cor-prime-divides-product (c), or proved by induction from Euclid's lemma).
+- 2: uses the symmetric step and the non-decreasing order to get equality of the two chosen extreme entries (both largest, or both smallest).
 - 1: justifies the cancellation by the absence of zero divisors.
 - 2: applies the induction hypothesis (or minimality) to the shortened lists and concludes equality of length and entries.
-Fatal errors (0 for the step): using the uniqueness of the factorization of a smaller number without an induction or a least counterexample set up; applying Euclid's lemma for two factors to a product of many with no induction. Canceling a prime without noting that it is non-zero costs 1 point and is not fatal. A least-counterexample proof on \( n \) (the least positive integer with two different factorizations) maps to the same points: its set-up and the case \( n = 1 \) take the first 2, and "the cofactor \( m \) in \( n = m p_k \) has only one factorization" takes the last 2.
+Fatal errors (0 for the step): using the uniqueness of the factorization of a smaller number without an induction or a least counterexample set up; applying Euclid's lemma for two factors to a product of many with no induction. Canceling a prime without noting that it is non-zero costs 1 point and is not fatal. A least-counterexample proof on \( n \) (the least positive integer with two different factorizations) maps to the same points: its set-up and the case \( n = 1 \) take the first 2, and "the cofactor \( m \) in \( n = m p_k \) has only one factorization" takes the last 2. A proof that compares the smallest entries \( p_1 = q_1 \) earns the same points, provided it proves (for example by induction on the length) that a product equals its first entry times the product of the re-indexed list \( (p_2, \dots, p_{k+1}) \), and states the re-indexing of the shortened lists \( (p_2, \dots, p_{k+1}) \) and \( (q_2, \dots, q_l) \) before applying the induction hypothesis; asserting that identity without proof costs the 1 cancellation point.
 :::
 
 ::: {#exr-unique-factorization-c2}
@@ -413,6 +413,8 @@ First prove, by induction on \( k \), that every entry of a list of primes divid
 
 For the empty list, \( N = 2 \) and \( q = 2 \). For \( (2, 3, 5, 7) \), \( N = 211 \), which happens to be prime; for \( (2, 3, 5, 7, 11, 13) \), \( N = 30031 = 59 \cdot 509 \) is not, and the new prime is \( 59 \). The proof promises a new prime factor of \( N \), not that \( N \) itself is prime.
 
+This is the direct proof asked for in part (c) of @fd1:exr-connective-rhetoric-c1, now on the constructed \( \nZ \) and including the empty list. Its two school facts are replaced by @lem-least-divisor-prime and @prp-divisibility-rules-integers (c).
+
 **Marking scheme.** (10 points)
 - 2: defines \( N \) as the product plus \( 1 \) and shows \( N \ge 2 \), with a reason that the product is positive.
 - 2: shows that each \( p_i \) divides the product, by an induction or a cited result.
@@ -426,7 +428,7 @@ Fatal errors (0 for the step): claiming that \( N \) is prime; assuming "the set
 thm-euclid-lemma-integers (claim): (opening) 60 = 2*30 = 6*10 = 4*15, factored to 2, 2, 3, 5 | numerals computed in N via prp-naturals-embed-integers (a) (cited); verify/ch03/def-prime-factorization.py
 thm-euclid-lemma-integers (proof): c = c * 1 = c(ax + by) = a(cx) + (bc)y, rearrangements | ring axioms (F5)-(F7), (F9) of def-commutative-ring-and-field for Z (thm-integers-commutative-ring), named in the proof
 thm-euclid-lemma-integers (claim): (aftermath) 4 | 12, 6 = 1*4 + 2, gcd(4, 2) = 2 | numerals; thm-integers-division-remainder (a) (cited); gcd(4, 2) = 2 from def-integer-gcd: 2 is a common divisor, a positive common divisor of 2 is <= 2 (prp-divisibility-rules-integers (e)); verify/ch03/thm-euclid-lemma-integers.py
-def-prime-factorization (claim): products of lists by fd2:def-sum-product used as a pattern; its recursive clause and the proof of its "Finite lists" remark use only fd2:thm-recursion, fd1:ax-induction on omega and the multiplication of the target set, so they run with X = Z (an ordered commutative ring, F3.2); equivalently read in Q containing Z, closed under * (prp-integers-embed-rationals); the general-index part (fd2:prp-integers-closed) is not used | F3.1 citing rule, group (iii) (cor-omega-identification, Section 1.7), stated in the text; blueprint ch03.md template ledger line
+def-prime-factorization (claim): products of lists by fd2:def-sum-product used as a pattern; its recursive clause and the proof of its "Finite lists" remark use only fd2:thm-recursion, fd1:ax-induction on omega and the multiplication of the target set, so they run with X = Z (an ordered commutative ring, F3.2); equivalently read in Q containing Z, closed under * (prp-integers-embed-rationals); the general-index part (fd2:prp-integers-closed) is not used | the "Why the product exists" paragraph (fd2:thm-recursion with X = Z), stated in the text; group (iii) of the F3.1 citing rule (Section 1.7) with F = Q (thm-rationals-ordered-field), and products of integers stay in Z (prp-integers-embed-rationals), both cited in the text; blueprint ch03.md template ledger line
 def-prime-factorization (claim): the extension pbar with pbar_i = 1 for i > k is a function on Z>0 | definition by cases on i <= k (thm-integers-ordered-ring (a), order of N), inline
 def-prime-factorization (example): (2, 2, 3, 5) products 1, 2, 4, 12, 60; non-examples (2, 3, 2, 5), (2, 2, 15); 15 = 3 * 5 not prime | small-primes remark of Section 3.1 (by name); numerals; verify/ch03/def-prime-factorization.py
 def-prime-factorization (claim): (why) 60 has twelve orderings of (2, 2, 3, 5) | counting 4!/2! = 12, stated as motivation, nothing depends on it; verify/ch03/def-prime-factorization.py
@@ -447,10 +449,11 @@ prp-rationals-lowest-terms (proof): q > 0 and t > 0 from products of positives b
 prp-rationals-lowest-terms (claim): N(x) of Section 2.4 C1 equals q | exr-rationals-as-classes-c1 (F3.2, an exercise; prose remark only, no proof uses it)
 prp-rationals-lowest-terms (example): 252 = 18 * 14, 198 = 18 * 11, lowest terms 14/11; gcd(14, 11) = 1 by (a) | exm-euclidean-algorithm-run (cited); numerals; verify/ch03/prp-rationals-lowest-terms.py
 exr-unique-factorization-a1 (solution): run of the step on (2, 2, 3, 5); q_l divides 60 so q_l in {2, 3, 5} | cor-prime-divides-product (c) (cited); verify/ch03/exr-unique-factorization-a1.py
-exr-unique-factorization-b1 (solution): admissible orders; distractors | the solution's own analysis
+exr-unique-factorization-b1 (solution): admissible orders (eight: (i), (ii) first, (vii) last, (vi) after (iv) and (v)); distractors, gcd(0, 1) = 1 | the solution's own analysis; def-integer-gcd for gcd(0, 1)
 exr-unique-factorization-b2 (solution): ab > 0 by (O4); a | ab | def-ordered-ring-and-field (O4), fd2:def-divides
 exr-unique-factorization-b3 (solution): 1001 = 7 * 11 * 13, 1023 = 3 * 11 * 31, 2^10 = 1024; the divisions by 2, 3, 4, 5; 91 * 46 - 93 * 45 = 1; Euclidean run | numerals; 2^10 as a power on N (prp-omega-powers-parity (a)), computed; verify/ch03/exr-unique-factorization-b3.py
 exr-unique-factorization-b3 (solution): d >= 4 gives d * d >= 16, d >= 6 gives d * d >= 36 | prp-ordered-ring-rules (c), numerals; verify/ch03/exr-unique-factorization-b3.py
 exr-unique-factorization-c2 (solution): 4 | 4, 4 does not divide 2; 4 | 12, 6 | 12, 24 does not divide 12 | prp-divisibility-rules-integers (e) (cited); verify/ch03/exr-unique-factorization-c2.py
 exr-unique-factorization-c3 (solution): 2*3*5*7 + 1 = 211 prime; 2*3*5*7*11*13 + 1 = 30031 = 59 * 509 | numerals; primality of 211 and 59 stated as illustration, nothing depends on it; verify/ch03/exr-unique-factorization-c3.py
+exr-unique-factorization-c3 (solution): (the paragraph before the marking scheme) the same direct proof as fd1:exr-connective-rhetoric-c1 (c), whose school facts are lem-least-divisor-prime and prp-divisibility-rules-integers (c) here | read against fd1 F1.5 §01 (compared, not used)
 -->
