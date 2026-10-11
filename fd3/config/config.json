@@ -98,7 +98,8 @@
   "reading-paths": [],
   "chapters": [
     "src/ch01-zf-and-natural-numbers",
-    "src/ch02-integers-and-rationals"
+    "src/ch02-integers-and-rationals",
+    "src/ch03-divisibility-and-congruences"
   ],
   "macros": "../latex/macros.tex",
   "deploy-dir": "site",
