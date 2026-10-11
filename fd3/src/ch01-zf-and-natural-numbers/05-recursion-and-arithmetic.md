@@ -1,10 +1,10 @@
 # The Recursion Theorem; Addition and Multiplication
 
-The set \( \omega \) now has a zero, a successor map and an induction theorem, and @thm-omega-peano shows that together they satisfy Peano's axioms. It has no addition yet. In Chapter 7 the sum \( m + n \) of two natural numbers came for free, from the real numbers; in \( \omega \) a natural number is a set, and nothing we know about sets adds two of them. This section defines addition and multiplication by recursion, as school does ("\( m + (n + 1) \) is one more than \( m + n \)"), after first proving, from the axioms, that recursion defines something. Then it proves the laws of arithmetic one by one, most of them by an induction.
+The set \( \omega \) now has a zero, a successor map and an induction theorem, and @thm-omega-peano shows that together they satisfy Peano's axioms. It has no addition yet. In *Sets, Relations, and Cardinality*, Chapter 2 the sum \( m + n \) of two natural numbers came for free, from the real numbers; in \( \omega \) a natural number is a set, and nothing we know about sets adds two of them. This section defines addition and multiplication by recursion, as school does ("\( m + (n + 1) \) is one more than \( m + n \)"), after first proving, from the axioms, that recursion defines something. Then it proves the laws of arithmetic one by one, most of them by an induction.
 
 ## Recursion on ω
 
-Section 7.3 proved @thm-recursion: a starting value and a rule for the next value determine exactly one function on \( \nN \). That proof ran inside the familiar real numbers, where \( \nN \) is given. Its ingredients, though, were few: induction, and some facts about the sets \( \{0, \dots, n\} \) on which the partial solutions live. On \( \omega \) there is a natural replacement for \( \{0, \dots, n\} \), namely the set \( \mathrm{S}(n) = n \cup \{n\} \) itself. (The next section proves that \( \mathrm{S}(n) \) is exactly the set of \( k \in \omega \) with \( k \le n \); here we need no order, only \( \mathrm{S}(n) \) as a set.) So the proof can be repeated on \( \omega \), with one change, which we point out when we reach it.
+*Sets, Relations, and Cardinality*, Section 2.3 proved @fd2:thm-recursion: a starting value and a rule for the next value determine exactly one function on \( \nN \). That proof ran inside the familiar real numbers, where \( \nN \) is given. Its ingredients, though, were few: induction, and some facts about the sets \( \{0, \dots, n\} \) on which the partial solutions live. On \( \omega \) there is a natural replacement for \( \{0, \dots, n\} \), namely the set \( \mathrm{S}(n) = n \cup \{n\} \) itself. (The next section proves that \( \mathrm{S}(n) \) is exactly the set of \( k \in \omega \) with \( k \le n \); here we need no order, only \( \mathrm{S}(n) \) as a set.) So the proof can be repeated on \( \omega \), with one change, which we point out when we reach it.
 
 *A starting value and a rule for the next value determine exactly one function on \( \omega \).*
 
@@ -17,10 +17,10 @@ f(0) = a \quad \text{and} \quad f\bigl(\mathrm{S}(n)\bigr) = g\bigl(n, f(n)\bigr
 \]
 :::
 
-This is the statement of @thm-recursion word for word, with \( \omega \) in place of \( \nN \) and \( \mathrm{S}(n) \) in place of \( n + 1 \). The set \( \omega \times X \) exists by @prp-cartesian-product-exists. As before, \( a \) is the starting value and \( g \) turns the stage \( n \) and the current value into the next value; the conclusion has an existence half and a uniqueness half.
+This is the statement of @fd2:thm-recursion word for word, with \( \omega \) in place of \( \nN \) and \( \mathrm{S}(n) \) in place of \( n + 1 \). The set \( \omega \times X \) exists by @prp-cartesian-product-exists. As before, \( a \) is the starting value and \( g \) turns the stage \( n \) and the current value into the next value; the conclusion has an existence half and a uniqueness half.
 
 ::: {.idea}
-Uniqueness is an induction. For existence, induction cannot build \( f \), so we prove by induction that the finite pieces of \( f \) exist and are unique, and then glue them. The roadmap is that of Section 7.3:
+Uniqueness is an induction. For existence, induction cannot build \( f \), so we prove by induction that the finite pieces of \( f \) exist and are unique, and then glue them. The roadmap is that of *Sets, Relations, and Cardinality*, Section 2.3:
 
 ① **Uniqueness**, by @thm-omega-induction.
 
@@ -30,7 +30,7 @@ Uniqueness is an induction. For existence, induction cannot build \( f \), so we
 
 ④ **Glue:** the union of all their graphs is the graph of \( f \).
 
-The glue step of Section 7.3 compared two indices: if \( m \le n \), the piece up to \( m \) lies inside the piece up to \( n \). We have no order on \( \omega \) yet, so at each point \( k \) where both pieces are defined we cut both down to \( \mathrm{S}(k) \): by ② and ③, each restriction is the unique partial solution up to \( k \).
+The glue step of *Sets, Relations, and Cardinality*, Section 2.3 compared two indices: if \( m \le n \), the piece up to \( m \) lies inside the piece up to \( n \). We have no order on \( \omega \) yet, so at each point \( k \) where both pieces are defined we cut both down to \( \mathrm{S}(k) \): by ② and ③, each restriction is the unique partial solution up to \( k \).
 
 *Before reading on: where is \( \mathrm{S}(n) \notin \mathrm{S}(n) \) used?*
 :::
@@ -50,7 +50,7 @@ The glue step of Section 7.3 compared two indices: if \( m \le n \), the piece u
 \[
 f\bigl(\mathrm{S}(n)\bigr) = g\bigl(n, f(n)\bigr) = g\bigl(n, f'(n)\bigr) = f'\bigl(\mathrm{S}(n)\bigr) ,
 \]
-so \( P(\mathrm{S}(n)) \) holds. By @thm-omega-induction (b), \( P(n) \) holds for every \( n \in \omega \). The two functions have the same domain and codomain, so \( f = f' \) by @prp-function-equality.
+so \( P(\mathrm{S}(n)) \) holds. By @thm-omega-induction (b), \( P(n) \) holds for every \( n \in \omega \). The two functions have the same domain and codomain, so \( f = f' \) by @fd2:prp-function-equality.
 
 **Step 2 (partial solutions and their restrictions).** For \( n \in \omega \), a **partial solution up to \( n \)** is a function \( h \colon \mathrm{S}(n) \to X \) with \( h(0) = a \) and \( h(\mathrm{S}(k)) = g(k, h(k)) \) for every \( k \in \omega \) with \( \mathrm{S}(k) \in \mathrm{S}(n) \). The equations make sense: \( 0 \in \mathrm{S}(n) \) by (i), and for such \( k \), also \( k \in \mathrm{S}(n) \) by (ii).
 
@@ -59,7 +59,7 @@ If \( h \) is a partial solution up to \( m \) and \( j \in \mathrm{S}(m) \), th
 :::
 
 ::: {.proofofclaim}
-Here \( j \in \omega \) by (v), and \( \mathrm{S}(j) \subseteq \mathrm{S}(m) \) by (iii), so the restriction (Section 6.4) is a function \( \mathrm{S}(j) \to X \) with the same values as \( h \). Its value at \( 0 \) is \( h(0) = a \), since \( 0 \in \mathrm{S}(j) \) by (i). Let \( i \in \omega \) with \( \mathrm{S}(i) \in \mathrm{S}(j) \). Then \( \mathrm{S}(i) \in \mathrm{S}(m) \), because \( \mathrm{S}(j) \subseteq \mathrm{S}(m) \), and \( i \in \mathrm{S}(j) \) by (ii). So the equation at \( \mathrm{S}(i) \) is one of the equations of \( h \), and both of its sides are values at points of \( \mathrm{S}(j) \):
+Here \( j \in \omega \) by (v), and \( \mathrm{S}(j) \subseteq \mathrm{S}(m) \) by (iii), so the restriction (*Sets, Relations, and Cardinality*, Section 1.4) is a function \( \mathrm{S}(j) \to X \) with the same values as \( h \). Its value at \( 0 \) is \( h(0) = a \), since \( 0 \in \mathrm{S}(j) \) by (i). Let \( i \in \omega \) with \( \mathrm{S}(i) \in \mathrm{S}(j) \). Then \( \mathrm{S}(i) \in \mathrm{S}(m) \), because \( \mathrm{S}(j) \subseteq \mathrm{S}(m) \), and \( i \in \mathrm{S}(j) \) by (ii). So the equation at \( \mathrm{S}(i) \) is one of the equations of \( h \), and both of its sides are values at points of \( \mathrm{S}(j) \):
 \[
 h|_{\mathrm{S}(j)}\bigl(\mathrm{S}(i)\bigr) = g\bigl(i, h(i)\bigr) = g\bigl(i, h|_{\mathrm{S}(j)}(i)\bigr) .
 \]
@@ -74,13 +74,13 @@ For every \( n \in \omega \) there is exactly one partial solution up to \( n \)
 ::: {.proofofclaim}
 We use @thm-omega-induction (b) on \( n \).
 
-*Base case.* \( \mathrm{S}(0) = \emptyset \cup \{0\} = \{0\} \). The graph \( \{(0, a)\} \) with codomain \( X \) is a function on \( \{0\} \), since \( a \in X \). It is a partial solution up to \( 0 \): its value at \( 0 \) is \( a \), and the second condition is vacuous, because \( \mathrm{S}(k) \in \{0\} \) would mean \( \mathrm{S}(k) = 0 \), which (P3) of @thm-omega-peano excludes. Any partial solution up to \( 0 \) has the value \( a \) at \( 0 \), so it equals this one by @prp-function-equality.
+*Base case.* \( \mathrm{S}(0) = \emptyset \cup \{0\} = \{0\} \). The graph \( \{(0, a)\} \) with codomain \( X \) is a function on \( \{0\} \), since \( a \in X \). It is a partial solution up to \( 0 \): its value at \( 0 \) is \( a \), and the second condition is vacuous, because \( \mathrm{S}(k) \in \{0\} \) would mean \( \mathrm{S}(k) = 0 \), which (P3) of @thm-omega-peano excludes. Any partial solution up to \( 0 \) has the value \( a \) at \( 0 \), so it equals this one by @fd2:prp-function-equality.
 
 *Inductive step.* Let \( n \in \omega \), and suppose there is exactly one partial solution up to \( n \); call it \( f_n \), with graph \( G_n \subseteq \mathrm{S}(n) \times X \). Since \( n \in \mathrm{S}(n) \), the value \( f_n(n) \) is defined. Let
 \[
 G' \coloneqq G_n \cup \Bigl\{ \bigl(\mathrm{S}(n), \ g(n, f_n(n))\bigr) \Bigr\} .
 \]
-We check @def-function for \( G' \) on \( \mathrm{S}(\mathrm{S}(n)) \) with codomain \( X \). By (v) and because \( g \) takes values in \( X \), every pair of \( G' \) lies in \( \mathrm{S}(\mathrm{S}(n)) \times X \). (Fn1): by (v), an input is an element of \( \mathrm{S}(n) \), which has an output in \( G_n \), or is \( \mathrm{S}(n) \), which has the added output. (Fn2): every first coordinate in \( G_n \) lies in \( \mathrm{S}(n) \), while \( \mathrm{S}(n) \notin \mathrm{S}(n) \) by (iv). So the added pair is the only pair of \( G' \) with first coordinate \( \mathrm{S}(n) \), and for an input in \( \mathrm{S}(n) \) all pairs of \( G' \) lie in \( G_n \), which satisfies (Fn2). Hence \( f' \coloneqq (G', X) \) is a function \( \mathrm{S}(\mathrm{S}(n)) \to X \) that agrees with \( f_n \) on \( \mathrm{S}(n) \).
+We check @fd2:def-function for \( G' \) on \( \mathrm{S}(\mathrm{S}(n)) \) with codomain \( X \). By (v) and because \( g \) takes values in \( X \), every pair of \( G' \) lies in \( \mathrm{S}(\mathrm{S}(n)) \times X \). (Fn1): by (v), an input is an element of \( \mathrm{S}(n) \), which has an output in \( G_n \), or is \( \mathrm{S}(n) \), which has the added output. (Fn2): every first coordinate in \( G_n \) lies in \( \mathrm{S}(n) \), while \( \mathrm{S}(n) \notin \mathrm{S}(n) \) by (iv). So the added pair is the only pair of \( G' \) with first coordinate \( \mathrm{S}(n) \), and for an input in \( \mathrm{S}(n) \) all pairs of \( G' \) lie in \( G_n \), which satisfies (Fn2). Hence \( f' \coloneqq (G', X) \) is a function \( \mathrm{S}(\mathrm{S}(n)) \to X \) that agrees with \( f_n \) on \( \mathrm{S}(n) \).
 
 It is a partial solution up to \( \mathrm{S}(n) \). Its value at \( 0 \) is \( f_n(0) = a \), since \( 0 \in \mathrm{S}(n) \). Let \( k \in \omega \) with \( \mathrm{S}(k) \in \mathrm{S}(\mathrm{S}(n)) \). By (v), there are two cases.
 
@@ -95,7 +95,7 @@ It is the only one. Let \( h \) be a partial solution up to \( \mathrm{S}(n) \).
 \[
 h\bigl(\mathrm{S}(n)\bigr) = g\bigl(n, h(n)\bigr) = g\bigl(n, f_n(n)\bigr) = f'\bigl(\mathrm{S}(n)\bigr) .
 \]
-By (v) these are all the inputs, so \( h = f' \) by @prp-function-equality. This proves the claim.
+By (v) these are all the inputs, so \( h = f' \) by @fd2:prp-function-equality. This proves the claim.
 :::
 
 For each \( n \in \omega \), let \( f_n \) be the partial solution up to \( n \), and \( G_n \) its graph. One consequence of the two claims is used below. If \( k \in \mathrm{S}(m) \), then \( f_m|_{\mathrm{S}(k)} \) is a partial solution up to \( k \) (Step 2), hence equals \( f_k \) (Step 3), and since \( k \in \mathrm{S}(k) \),
@@ -107,7 +107,7 @@ f_m(k) = f_k(k) \qquad \text{whenever } k \in \mathrm{S}(m) . \tag{$\ast$}
 \[
 \sS \coloneqq \bigl\{ G \in \powerset{\omega \times X} : (G, X) \text{ is a partial solution up to some } n \in \omega \bigr\} ,
 \]
-a set by (Z5) and (Z6) of @ax-zf-fragment. By Step 3, the elements of \( \sS \) are exactly the graphs \( G_n \). Let \( F \coloneqq \bigcup \sS \), a set by (Z4); a pair lies in \( F \) if and only if it lies in some \( G_n \), and \( F \subseteq \omega \times X \). We check @def-function for \( F \).
+a set by (Z5) and (Z6) of @ax-zf-fragment. By Step 3, the elements of \( \sS \) are exactly the graphs \( G_n \). Let \( F \coloneqq \bigcup \sS \), a set by (Z4); a pair lies in \( F \) if and only if it lies in some \( G_n \), and \( F \subseteq \omega \times X \). We check @fd2:def-function for \( F \).
 
 (Fn1): for \( k \in \omega \), the pair \( (k, f_k(k)) \) lies in \( G_k \in \sS \), hence in \( F \).
 
@@ -124,9 +124,9 @@ f\bigl(\mathrm{S}(n)\bigr) = f_{\mathrm{S}(n)}\bigl(\mathrm{S}(n)\bigr) = g\bigl
 This proves existence, and with Step 1, the theorem.
 :::
 
-The proof is that of Section 7.3 with \( \{0, \dots, n\} \) replaced by \( \mathrm{S}(n) \), and with one departure, in (Fn2) of Step 4. There, Section 7.3 used that two indices \( m, n \) satisfy \( m \le n \) or \( n < m \), and that \( \{0, \dots, m\} \subseteq \{0, \dots, n\} \) when \( m \le n \). On \( \omega \) those are facts about order, which the next section proves. Cutting both pieces down to \( \mathrm{S}(k) \) avoids the comparison altogether, so the recursion theorem does not have to wait for the order. In Step 3, (P4) did a quiet job: the new input \( \mathrm{S}(n) \) is the successor of \( n \) and of nothing else, so the added pair had to satisfy exactly one equation.
+The proof is that of *Sets, Relations, and Cardinality*, Section 2.3 with \( \{0, \dots, n\} \) replaced by \( \mathrm{S}(n) \), and with one departure, in (Fn2) of Step 4. There, *Sets, Relations, and Cardinality*, Section 2.3 used that two indices \( m, n \) satisfy \( m \le n \) or \( n < m \), and that \( \{0, \dots, m\} \subseteq \{0, \dots, n\} \) when \( m \le n \). On \( \omega \) those are facts about order, which the next section proves. Cutting both pieces down to \( \mathrm{S}(k) \) avoids the comparison altogether, so the recursion theorem does not have to wait for the order. In Step 3, (P4) did a quiet job: the new input \( \mathrm{S}(n) \) is the successor of \( n \) and of nothing else, so the added pair had to satisfy exactly one equation.
 
-As in Section 7.3, no choice is made: each partial solution is the only one, and \( \sS \) is cut out of a power set by a condition, so no family \( n \mapsto f_n \) had to be formed first. From now on a definition "\( f(0) \coloneqq a \), \( f(\mathrm{S}(n)) \coloneqq g(n, f(n)) \)" on \( \omega \) is legitimate whenever \( a \in X \) and \( g \colon \omega \times X \to X \) is a function, and \( f \) is **defined by recursion**.
+As in *Sets, Relations, and Cardinality*, Section 2.3, no choice is made: each partial solution is the only one, and \( \sS \) is cut out of a power set by a condition, so no family \( n \mapsto f_n \) had to be formed first. From now on a definition "\( f(0) \coloneqq a \), \( f(\mathrm{S}(n)) \coloneqq g(n, f(n)) \)" on \( \omega \) is legitimate whenever \( a \in X \) and \( g \colon \omega \times X \to X \) is a function, and \( f \) is **defined by recursion**.
 
 ::: {.remark}
 The functions \( g \) that we feed to the theorem are usually given by a formula, such as \( g(n, x) = \mathrm{S}(x) \). Such a \( g \) is a function as soon as each pair \( (n, x) \) gets exactly one value in \( X \): its graph, the set of pairs \( ((n, x), y) \in (\omega \times X) \times X \) such that \( y \) is the value the formula assigns to \( (n, x) \), is a set by (Z6) of @ax-zf-fragment inside a product (@prp-cartesian-product-exists), and (Fn1), (Fn2) say exactly that the formula gives one value in \( X \) for each pair.
@@ -210,7 +210,7 @@ and \( 0 + 2 = \mathrm{S}(0 + 1) = \mathrm{S}(\mathrm{S}(0 + 0)) = \mathrm{S}(\m
 
 ## The laws of arithmetic
 
-Every law of arithmetic that Chapter 7 took from the real numbers must now be proved, and the only tools are the four defining equations and induction. The equations are lopsided: they say what happens when the **second** argument goes up by one, and nothing about the first. So in every induction below we fix all variables but one and induct on the variable that the recursion runs on, the second argument of \( + \) or \( \cdot \).
+Every law of arithmetic that *Sets, Relations, and Cardinality*, Chapter 2 took from the real numbers must now be proved, and the only tools are the four defining equations and induction. The equations are lopsided: they say what happens when the **second** argument goes up by one, and nothing about the first. So in every induction below we fix all variables but one and induct on the variable that the recursion runs on, the second argument of \( + \) or \( \cdot \).
 
 ::: {#thm-omega-arithmetic-laws}
 [Laws of Arithmetic on \( \omega \)]
@@ -444,13 +444,13 @@ where the first equality is the defining equation of @def-omega-arithmetic (a), 
 :::
 
 <!-- dependency ledger
-thm-omega-recursion (proof): restriction of a function to a subset of its domain is a function with the same values | restriction, Section 6.4 (no label)
+thm-omega-recursion (proof): restriction of a function to a subset of its domain is a function with the same values | restriction, F2.1 §04 (no label)
 thm-omega-recursion (proof): G subset of omega x X is a set; P(omega x X) is a set; the set S of graphs is cut out by a first-order condition | prp-cartesian-product-exists, ax-zf-fragment (Z5), (Z6) (cited)
 thm-omega-recursion (proof): S(0) = {0}; S(S(n)) = S(n) u {S(n)}; n in S(n) | def-set-successor (cited), prp-zf-basic-sets (c) (union of two sets)
 thm-omega-recursion (proof): a graph together with its codomain determines the function; functions with the same domain, codomain and values are equal | def-function, prp-function-equality (cited)
 thm-omega-recursion (claim): (the remark after it) a function given by a formula has a graph that is a set | ax-zf-fragment (Z6), prp-cartesian-product-exists (cited)
 def-omega-arithmetic (claim): the graph of + is a set and a function | ax-zf-fragment (Z6), uniqueness half of thm-omega-recursion (cited)
 def-omega-arithmetic (claim): the numerals 4, 5, 6 as successors | exm-von-neumann-numerals (cited); 5, 6 defined where used (B1)
-thm-omega-arithmetic-laws (proof): rewriting inside a term with an equation (substitution of equals) | equality rules of Ch 4 (=E), used throughout
+thm-omega-arithmetic-laws (proof): rewriting inside a term with an equation (substitution of equals) | equality rules of F1.4 (=E), used throughout
 exr-recursion-and-arithmetic-c3 (solution): 2n = n + n | inline, from def-omega-arithmetic and thm-omega-arithmetic-laws (e), (f)
 -->

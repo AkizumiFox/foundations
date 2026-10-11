@@ -1,5 +1,5 @@
-chapter: 6
-dir: ch06-sets-and-functions
+chapter: 1
+dir: ch01-sets-and-functions
 items:
 - key: def-set-equality
   kind: def

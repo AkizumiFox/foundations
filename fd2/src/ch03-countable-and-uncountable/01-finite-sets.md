@@ -1,6 +1,6 @@
 # Equinumerous Sets and Finite Sets
 
-Chapter 6 made functions exact and sorted them into injective, surjective and bijective ones. Chapter 7 put the natural numbers on firm ground: their arithmetic, well-ordering, induction from any base and definition by recursion. This chapter asks how large a set is. For a finite set we count. For \( \nN \), \( \nQ \) or \( \nR \) counting gives no answer, and the question "are there more rational numbers than natural numbers?" needs a meaning before it can have an answer. This section gives "the same size" its meaning, a pairing, and then proves the facts about finite sets on which counting rests, starting with the pigeonhole principle.
+Chapter 1 made functions exact and sorted them into injective, surjective and bijective ones. Chapter 2 put the natural numbers on firm ground: their arithmetic, well-ordering, induction from any base and definition by recursion. This chapter asks how large a set is. For a finite set we count. For \( \nN \), \( \nQ \) or \( \nR \) counting gives no answer, and the question "are there more rational numbers than natural numbers?" needs a meaning before it can have an answer. This section gives "the same size" its meaning, a pairing, and then proves the facts about finite sets on which counting rests, starting with the pigeonhole principle.
 
 ## Same size without counting
 
@@ -58,17 +58,17 @@ For all sets \( A \), \( B \) and \( C \):
 *(c)* If \( f \colon A \to B \) and \( g \colon B \to C \) are bijections, then \( g \circ f \colon A \to C \) is a bijection by @thm-composition-injective-surjective (c). This proves the proposition.
 :::
 
-Clauses (a)–(c) have the form of (Eq1)–(Eq3) of @def-equivalence-relation, and yet we do not call equinumerosity an equivalence relation. An equivalence relation in Chapter 7 is a relation **on a set** \( X \), a subset of \( X \times X \). Equinumerosity relates any two sets whatever, and there is no set of all sets for it to live on (@thm-russell). That is also why the book reserves the symbol \( \sim \) for equivalence relations and writes \( \card{A} = \card{B} \) here.
+Clauses (a)–(c) have the form of (Eq1)–(Eq3) of @def-equivalence-relation, and yet we do not call equinumerosity an equivalence relation. An equivalence relation in Chapter 2 is a relation **on a set** \( X \), a subset of \( X \times X \). Equinumerosity relates any two sets whatever, and there is no set of all sets for it to live on (@thm-russell). That is also why the book reserves the symbol \( \sim \) for equivalence relations and writes \( \card{A} = \card{B} \) here.
 
 ::: {.remark}
 Why not define \( \card{A} \) as "the collection of all sets equinumerous with \( A \)"? Because that collection is in general not a set. The next paragraph proves this for \( A = \{0\} \).
 :::
 
-Take \( A = \{0\} \). Every singleton \( \{x\} \) is equinumerous with \( \{0\} \), by \( 0 \mapsto x \). If the singletons formed a set \( \sS \), its union \( \bigcup \sS \) would be a set by (W3) of Section 6.1, and every object \( x \) would be an element of it, since \( x \in \{x\} \in \sS \). That is a set of which every set is an element, which @thm-russell rules out.
+Take \( A = \{0\} \). Every singleton \( \{x\} \) is equinumerous with \( \{0\} \), by \( 0 \mapsto x \). If the singletons formed a set \( \sS \), its union \( \bigcup \sS \) would be a set by (W3) of Section 1.1, and every object \( x \) would be an element of it, since \( x \in \{x\} \in \sS \). That is a set of which every set is an element, which @thm-russell rules out.
 
 ## Finite sets
 
-Counting is pairing with \( \{1, \dots, n\} \), so "finite" is defined by such a pairing. Recall from Section 7.1 that for \( n \in \nN \),
+Counting is pairing with \( \{1, \dots, n\} \), so "finite" is defined by such a pairing. Recall from Section 2.1 that for \( n \in \nN \),
 \[
 \{1, \dots, n\} \coloneqq \{ k \in \nN : 1 \le k \le n \} ,
 \]
@@ -103,7 +103,7 @@ To prove a set infinite we must rule out every \( n \) at once, and for every \(
 
 ## The pigeonhole principle
 
-If more pigeons than holes fly into a dovecote, some hole gets two pigeons. In Chapter 6 we found one function from a three-element set to a two-element set that is not injective (@exm-injective-surjective-first (c)), and observed without proof that none can be. Here is the general fact, for the standard sets \( \{1, \dots, m\} \) and \( \{1, \dots, n\} \).
+If more pigeons than holes fly into a dovecote, some hole gets two pigeons. In Chapter 1 we found one function from a three-element set to a two-element set that is not injective (@exm-injective-surjective-first (c)), and observed without proof that none can be. Here is the general fact, for the standard sets \( \{1, \dots, m\} \) and \( \{1, \dots, n\} \).
 
 ::: {#thm-pigeonhole}
 [Pigeonhole Principle]
@@ -120,7 +120,7 @@ For \( n \in \nN \) let \( P(n) \) be the statement
 
 > for every \( m \in \nN \) with \( m > n \), there is no injection \( \{1, \dots, m\} \to \{1, \dots, n\} \).
 
-We prove \( P(n) \) for every \( n \in \nN \) by @ax-induction.
+We prove \( P(n) \) for every \( n \in \nN \) by @fd1:ax-induction.
 
 *Base case \( P(0) \).* Let \( m \in \nN \) with \( m > 0 \). Then \( m \ge 1 \) (@lem-naturals-arithmetic (a)), so \( 1 \in \{1, \dots, m\} \) and the domain is non-empty, while \( \{1, \dots, 0\} = \emptyset \). By @prp-empty-function (b) there is no function \( \{1, \dots, m\} \to \emptyset \) at all, so there is no injection.
 
@@ -140,7 +140,7 @@ m & \text{if } i = j .
 
 Let \( g \coloneqq f \circ \sigma \). It is injective by @thm-composition-injective-surjective (a). For every \( i \), \( \sigma(i) \ne j \), and \( f \) is injective with \( f(j) = n + 1 \), so \( g(i) = f(\sigma(i)) \ne n + 1 \); as in Case 1, \( g(i) \in \{1, \dots, n\} \). So \( g \) with codomain \( \{1, \dots, n\} \) is an injection \( \{1, \dots, m - 1\} \to \{1, \dots, n\} \), with \( m - 1 > n \). This contradicts \( P(n) \), applied to the number \( m - 1 \).
 
-In both cases the injection \( f \) cannot exist, so \( P(n + 1) \) holds. By @ax-induction, \( P(n) \) holds for every \( n \in \nN \). This proves the theorem.
+In both cases the injection \( f \) cannot exist, so \( P(n + 1) \) holds. By @fd1:ax-induction, \( P(n) \) holds for every \( n \in \nN \). This proves the theorem.
 :::
 
 The theorem is about the standard sets only, but bijections carry it to any finite sets. Part (b) below is its mirror image for surjections.
@@ -172,9 +172,9 @@ S_b \coloneqq \{ i \in \{1, \dots, m\} : g(\varphi(i)) = b \} .
 It is non-empty: since \( g \) is onto, \( b = g(a) \) for some \( a \in A \), and \( a = \varphi(i) \) for some \( i \), since \( \varphi \) is onto. By @thm-well-ordering, \( S_b \) has a least element. Define \( h \colon B \to A \) by \( h(b) \coloneqq \varphi(\min S_b) \). Then \( g(h(b)) = b \) for every \( b \in B \), because \( \min S_b \in S_b \). So \( g \circ h = \id_B \): the function \( g \) is a left inverse of \( h \), and \( h \) is injective by @thm-left-inverse-iff-injective (a). Now \( h \) is an injection from the \( n \)-element set \( B \) to the \( m \)-element set \( A \), with \( n > m \), which contradicts (a). This proves the corollary.
 :::
 
-The function \( h \) in (b) is defined by a **rule**, "the least element", applied to each \( b \) at once, so its existence needs nothing beyond specification. Section 8.3 meets surjections for which no such rule is available, and there the book adds a new principle.
+The function \( h \) in (b) is defined by a **rule**, "the least element", applied to each \( b \) at once, so its existence needs nothing beyond specification. Section 3.3 meets surjections for which no such rule is available, and there the book adds a new principle.
 
-Two special cases settle earlier loose ends. With \( m = n + 1 \), part (a) says that a set with \( n \) elements has no \( n + 1 \) different elements: there is no injection \( \{1, \dots, n + 1\} \to A \). That is the second school fact that @exr-models-c2 took on trust. With \( m = 3 \), \( n = 2 \) in (a) and \( m = 2 \), \( n = 3 \) in (b), the corollary gives the two observations after @exm-injective-surjective-first in general.
+Two special cases settle earlier loose ends. With \( m = n + 1 \), part (a) says that a set with \( n \) elements has no \( n + 1 \) different elements: there is no injection \( \{1, \dots, n + 1\} \to A \). That is the second school fact that @fd1:exr-models-c2 took on trust. With \( m = 3 \), \( n = 2 \) in (a) and \( m = 2 \), \( n = 3 \) in (b), the corollary gives the two observations after @exm-injective-surjective-first in general.
 
 Here is a typical use of (a). Among any three integers, two have an even sum. Let \( A \) be a set of three integers, and let \( p \colon A \to \{0, 1\} \) send each \( a \) to its remainder \( r \) on division by \( 2 \) (@thm-division-algorithm), an integer with \( 0 \le r < 2 \); then \( r \in \nN \) by @prp-integers-closed (b), and \( r \le 1 \) by @lem-naturals-arithmetic (e), so \( r \in \{0, 1\} \). The set \( \{0, 1\} \) has \( 2 \) elements, so by (a), \( p \) is not injective: there are \( a \ne b \) in \( A \) with the same remainder \( r \). Writing \( a = 2q + r \) and \( b = 2q' + r \),
 \[
@@ -244,7 +244,7 @@ For \( n \in \nN \) let \( P(n) \) be the statement
 
 > for every set \( A \) with \( n \) elements and every \( S \subseteq A \), the set \( S \) has \( k \) elements for some \( k \le n \), and \( k < n \) if \( S \ne A \).
 
-We prove \( P(n) \) for every \( n \) by @ax-induction.
+We prove \( P(n) \) for every \( n \) by @fd1:ax-induction.
 
 *Base case \( P(0) \).* A set \( A \) with \( 0 \) elements is empty, so \( S \subseteq \emptyset \) gives \( S = \emptyset = A \), which has \( 0 \le 0 \) elements; the second clause is vacuous.
 
@@ -258,10 +258,10 @@ The restriction of \( \varphi \) to \( \{1, \dots, n\} \), with codomain \( A' \
 
 *Case \( a \in S \).* Then \( S = (S \cap A') \cup \{a\} \), and the union is disjoint because \( a \notin A' \). By \( P(n) \), applied to \( A' \) and \( S \cap A' \subseteq A' \), the set \( S \cap A' \) has \( j \) elements for some \( j \le n \). The set \( \{a\} \) has \( 1 \) element (by \( 1 \mapsto a \)). By @prp-disjoint-union-count, \( S \) has \( j + 1 \le n + 1 \) elements. If \( S \ne A \), then \( S \cap A' \ne A' \), since otherwise \( S = A' \cup \{a\} = A \); so \( j < n \) by \( P(n) \), and \( j + 1 < n + 1 \).
 
-In both cases \( P(n + 1) \) holds. By @ax-induction, \( P(n) \) holds for every \( n \in \nN \). This proves the proposition.
+In both cases \( P(n + 1) \) holds. By @fd1:ax-induction, \( P(n) \) holds for every \( n \in \nN \). This proves the proposition.
 :::
 
-Read contrapositively, with @cor-finite-size-unique: a subset of an \( n \)-element set that itself has \( n \) elements is the whole set. (If \( S \ne A \), its number of elements is \( k < n \), and by uniqueness it is not \( n \).) That is the first school fact that @exr-models-c1 took on trust.
+Read contrapositively, with @cor-finite-size-unique: a subset of an \( n \)-element set that itself has \( n \) elements is the whole set. (If \( S \ne A \), its number of elements is \( k < n \), and by uniqueness it is not \( n \).) That is the first school fact that @fd1:exr-models-c1 took on trust.
 
 ::: {#cor-remove-point}
 [Removing a Point]
@@ -273,7 +273,7 @@ Let \( n \in \nN \), let \( A \) have \( n + 1 \) elements, and let \( a \in A \
 Since \( a \in A \), the set \( A \setminus \{a\} \) is a proper subset of \( A \), so by @prp-subset-finite it has \( k \) elements for some \( k < n + 1 \). Now \( A = (A \setminus \{a\}) \cup \{a\} \) is a disjoint union, and \( \{a\} \) has \( 1 \) element, so \( A \) has \( k + 1 \) elements by @prp-disjoint-union-count. By @cor-finite-size-unique, \( k + 1 = n + 1 \), so \( k = n \).
 :::
 
-Every later induction on the number of elements uses this corollary in the same way: its step starts from an **arbitrary** set \( A \) with \( n + 1 \) elements, picks some \( a \in A \) (there is one, since \( n + 1 \ge 1 \)), and applies the hypothesis to \( A \setminus \{a\} \), which has \( n \) elements. It never presents the set as "\( X \) with one point added" from the outset, which would prove the claim only for sets that come in that form. Here is the first such induction. Chapter 6 promised the count of subsets of a finite set.
+Every later induction on the number of elements uses this corollary in the same way: its step starts from an **arbitrary** set \( A \) with \( n + 1 \) elements, picks some \( a \in A \) (there is one, since \( n + 1 \ge 1 \)), and applies the hypothesis to \( A \setminus \{a\} \), which has \( n \) elements. It never presents the set as "\( X \) with one point added" from the outset, which would prove the claim only for sets that come in that form. Here is the first such induction. Chapter 1 promised the count of subsets of a finite set.
 
 ::: {#prp-power-set-count}
 [Counting Subsets]
@@ -286,7 +286,7 @@ Fix one element \( a \). Every subset either leaves \( a \) out or contains it, 
 :::
 
 ::: {.proof}
-We use @ax-induction on \( n \). *Base case.* A set with \( 0 \) elements is \( \emptyset \), and \( \powerset{\emptyset} = \{\emptyset\} \) has \( 1 = 2^0 \) element (@def-power).
+We use @fd1:ax-induction on \( n \). *Base case.* A set with \( 0 \) elements is \( \emptyset \), and \( \powerset{\emptyset} = \{\emptyset\} \) has \( 1 = 2^0 \) element (@def-power).
 
 *Inductive step.* Let \( n \in \nN \), and suppose every set with \( n \) elements has \( 2^n \) subsets. Let \( A \) have \( n + 1 \) elements, pick \( a \in A \), and put \( X \coloneqq A \setminus \{a\} \). By @cor-remove-point, \( X \) has \( n \) elements, so \( \powerset{X} \) has \( 2^n \) elements by the hypothesis (here \( 2^n \in \nN \) by @prp-power-laws (d), so the count makes sense; likewise \( 2^{n+1} \in \nN \)). Let
 \[
@@ -298,10 +298,10 @@ the image of \( \powerset{X} \) under \( S \mapsto S \cup \{a\} \), a function \
 
 *\( T \) has \( 2^n \) elements.* The map \( S \mapsto S \cup \{a\} \), with codomain \( T \), is surjective by the definition of \( T \). It is injective: for \( S \subseteq X \) we have \( a \notin S \), so \( (S \cup \{a\}) \setminus \{a\} = S \), and \( S \) can be read back from \( S \cup \{a\} \). So it is a bijection \( \powerset{X} \to T \), and composing a bijection \( \{1, \dots, 2^n\} \to \powerset{X} \) with it (@thm-composition-injective-surjective (c)) shows that \( T \) has \( 2^n \) elements.
 
-By @prp-disjoint-union-count, \( \powerset{A} \) has \( 2^n + 2^n = 2^n \cdot 2 = 2^{n+1} \) elements (@def-power). By @ax-induction, the claim holds for every \( n \in \nN \).
+By @prp-disjoint-union-count, \( \powerset{A} \) has \( 2^n + 2^n = 2^n \cdot 2 = 2^{n+1} \) elements (@def-power). By @fd1:ax-induction, the claim holds for every \( n \in \nN \).
 :::
 
-For any set \( Y \), the map \( S \mapsto \ind_S \), with inverse \( f \mapsto \{ y \in Y : f(y) = 1 \} \), is a bijection \( \powerset{Y} \to \{0, 1\}^Y \) onto the set of functions \( Y \to \{0, 1\} \) (the correspondence of Section 6.4 between subsets and indicator functions). Taking \( Y \) with \( n \) elements, a set with \( n \) elements also has exactly \( 2^n \) functions to \( \{0, 1\} \), and the two counting problems of Chapter 6 are one. Exercise C2 counts all functions between finite sets.
+For any set \( Y \), the map \( S \mapsto \ind_S \), with inverse \( f \mapsto \{ y \in Y : f(y) = 1 \} \), is a bijection \( \powerset{Y} \to \{0, 1\}^Y \) onto the set of functions \( Y \to \{0, 1\} \) (the correspondence of Section 1.4 between subsets and indicator functions). Taking \( Y \) with \( n \) elements, a set with \( n \) elements also has exactly \( 2^n \) functions to \( \{0, 1\} \), and the two counting problems of Chapter 1 are one. Exercise C2 counts all functions between finite sets.
 
 ## No finite set is equinumerous with a proper subset
 
@@ -337,7 +337,7 @@ The inclusion is proper because \( 1 \notin 2\nN \): if \( n = 0 \), then \( 2n 
 If \( \nN \) were finite, @thm-finite-no-proper-copy would forbid a bijection from \( \nN \) onto its proper subset \( 2\nN \). So \( \nN \) is infinite. Every guest still has a room, and the odd rooms are now free.
 :::
 
-The finite intuition "a proper part is smaller" fails for \( \nN \), and it fails exactly because \( \nN \) is infinite. Section 8.6 proves that it fails for **every** infinite set.
+The finite intuition "a proper part is smaller" fails for \( \nN \), and it fails exactly because \( \nN \) is infinite. Section 3.6 proves that it fails for **every** infinite set.
 
 ::: {.warning}
 \( A \subsetneq B \) does not make \( A \) smaller than \( B \) when \( B \) is infinite: \( 2\nN \subsetneq \nN \) and \( \card{2\nN} = \card{\nN} \). Equinumerous is not "one is a subset of the other", in either direction.
@@ -356,7 +356,7 @@ Yes. Its values lie in \( \nN \setminus \{0\} \), since \( n + 1 \ge 1 \). Its i
 :::
 
 ::: {.remark}
-By @def-finite, a non-empty finite set \( A \) with \( n \) elements is \( \{x_1, \dots, x_n\} \), with \( x_k \coloneqq \varphi(k) \). So when its elements are real numbers it has a maximum and a minimum, by @prp-finite-max. Section 7.3 announced this passage from a finite set to a list.
+By @def-finite, a non-empty finite set \( A \) with \( n \) elements is \( \{x_1, \dots, x_n\} \), with \( x_k \coloneqq \varphi(k) \). So when its elements are real numbers it has a maximum and a minimum, by @prp-finite-max. Section 2.3 announced this passage from a finite set to a list.
 :::
 
 ## Exercises
@@ -375,7 +375,7 @@ By @def-finite, a non-empty finite set \( A \) with \( n \) elements is \( \{x_1
 :::
 
 ::: {.solution}
-(a) \( A \) is finite if there are \( n \in \nN \) and a bijection \( \varphi \colon \{1, \dots, n\} \to A \) (@def-finite): \( \exists n \in \nN \ \exists \varphi \in A^{\{1, \dots, n\}} \ (\varphi \text{ injective} \wedge \varphi \text{ surjective}) \). By @prp-bounded-quantifier-negation, applied to each quantifier, and De Morgan, its negation is
+(a) \( A \) is finite if there are \( n \in \nN \) and a bijection \( \varphi \colon \{1, \dots, n\} \to A \) (@def-finite): \( \exists n \in \nN \ \exists \varphi \in A^{\{1, \dots, n\}} \ (\varphi \text{ injective} \wedge \varphi \text{ surjective}) \). By @fd1:prp-bounded-quantifier-negation, applied to each quantifier, and De Morgan, its negation is
 \[
 \forall n \in \nN \ \forall \varphi \in A^{\{1, \dots, n\}} \ (\varphi \text{ not injective} \vee \varphi \text{ not surjective}) ,
 \]
@@ -428,7 +428,7 @@ Let \( n \in \nN \), and let \( A_1, \dots, A_n \) be finite sets, that is, a fa
 :::
 
 ::: {.solution}
-For \( n \in \nN \) let \( P(n) \) be "for every family \( (A_i)_{i \in \{1, \dots, n\}} \) of finite sets, the union \( U_n \coloneqq \bigcup_{i \in \{1, \dots, n\}} A_i \) is finite". We use @ax-induction.
+For \( n \in \nN \) let \( P(n) \) be "for every family \( (A_i)_{i \in \{1, \dots, n\}} \) of finite sets, the union \( U_n \coloneqq \bigcup_{i \in \{1, \dots, n\}} A_i \) is finite". We use @fd1:ax-induction.
 
 *Base case.* For \( n = 0 \) the index set is \( \{1, \dots, 0\} = \emptyset \), and the union of the empty family is \( \emptyset \) (@def-family-union-intersection: no \( x \) lies in some \( A_i \)), which has \( 0 \) elements.
 
@@ -436,7 +436,7 @@ For \( n \in \nN \) let \( P(n) \) be "for every family \( (A_i)_{i \in \{1, \do
 \[
 U_{n+1} = U_n \cup (A_{n+1} \setminus U_n) ,
 \]
-a disjoint union. The set \( A_{n+1} \setminus U_n \) is a subset of the finite set \( A_{n+1} \), so it is finite by @prp-subset-finite; say it has \( q \) elements. By @prp-disjoint-union-count, \( U_{n+1} \) has \( p + q \) elements. By @ax-induction, \( P(n) \) holds for every \( n \).
+a disjoint union. The set \( A_{n+1} \setminus U_n \) is a subset of the finite set \( A_{n+1} \), so it is finite by @prp-subset-finite; say it has \( q \) elements. By @prp-disjoint-union-count, \( U_{n+1} \) has \( p + q \) elements. By @fd1:ax-induction, \( P(n) \) holds for every \( n \).
 
 The detour through \( A_{n+1} \setminus U_n \) is needed because @prp-disjoint-union-count is about **disjoint** sets, and \( U_n \) and \( A_{n+1} \) may overlap.
 :::
@@ -464,13 +464,13 @@ For \( (\Rightarrow) \): let \( P(n) \) be "there is an injection \( \{1, \dots,
 ::: {.solution}
 \( (\Leftarrow) \) Suppose the condition holds and, for a contradiction, that \( A \) has \( m \) elements, with a bijection \( \varphi \colon \{1, \dots, m\} \to A \). Take \( n \coloneqq m + 1 \) and an injection \( f \colon \{1, \dots, m + 1\} \to A \). By @thm-bijection-iff-inverse, \( \varphi \) has an inverse \( \varphi^{-1} \colon A \to \{1, \dots, m\} \), which is a bijection, since \( \varphi \) is a two-sided inverse of it (@def-inverse-function, @thm-bijection-iff-inverse). Then \( \varphi^{-1} \circ f \colon \{1, \dots, m + 1\} \to \{1, \dots, m\} \) is injective (@thm-composition-injective-surjective (a)), which contradicts @thm-pigeonhole. So \( A \) is infinite.
 
-\( (\Rightarrow) \) Let \( A \) be infinite. For \( n \in \nN \) let \( P(n) \) be "there is an injection \( \{1, \dots, n\} \to A \)". We use @ax-induction.
+\( (\Rightarrow) \) Let \( A \) be infinite. For \( n \in \nN \) let \( P(n) \) be "there is an injection \( \{1, \dots, n\} \to A \)". We use @fd1:ax-induction.
 
 *Base case.* \( \{1, \dots, 0\} = \emptyset \), and the empty function \( \emptyset \to A \) (@prp-empty-function (a)) is injective, vacuously.
 
-*Step.* Suppose \( P(n) \), and let \( f \colon \{1, \dots, n\} \to A \) be an injection. With its codomain shrunk to its image \( F \coloneqq f(\{1, \dots, n\}) \), it is a bijection, so \( F \) has \( n \) elements. Since \( A \) is infinite, \( F \ne A \); and \( F \subseteq A \), so there is some \( a \in A \setminus F \). Define \( g \colon \{1, \dots, n + 1\} \to A \) by \( g(k) \coloneqq f(k) \) for \( k \le n \) and \( g(n + 1) \coloneqq a \); this is a function because \( \{1, \dots, n + 1\} = \{1, \dots, n\} \cup \{n + 1\} \) and \( n + 1 \notin \{1, \dots, n\} \) (@lem-naturals-arithmetic (e)). It is injective: two inputs \( \le n \) are separated by \( f \), and \( g(n + 1) = a \notin F \) differs from every \( g(k) \) with \( k \le n \). So \( P(n + 1) \) holds. By @ax-induction, \( P(n) \) holds for every \( n \).
+*Step.* Suppose \( P(n) \), and let \( f \colon \{1, \dots, n\} \to A \) be an injection. With its codomain shrunk to its image \( F \coloneqq f(\{1, \dots, n\}) \), it is a bijection, so \( F \) has \( n \) elements. Since \( A \) is infinite, \( F \ne A \); and \( F \subseteq A \), so there is some \( a \in A \setminus F \). Define \( g \colon \{1, \dots, n + 1\} \to A \) by \( g(k) \coloneqq f(k) \) for \( k \le n \) and \( g(n + 1) \coloneqq a \); this is a function because \( \{1, \dots, n + 1\} = \{1, \dots, n\} \cup \{n + 1\} \) and \( n + 1 \notin \{1, \dots, n\} \) (@lem-naturals-arithmetic (e)). It is injective: two inputs \( \le n \) are separated by \( f \), and \( g(n + 1) = a \notin F \) differs from every \( g(k) \) with \( k \le n \). So \( P(n + 1) \) holds. By @fd1:ax-induction, \( P(n) \) holds for every \( n \).
 
-*No infinitely many choices are made.* The step uses two existence statements, \( P(n) \) and "\( A \setminus F \ne \emptyset \)", and names one witness for each: one \( \rulename{\exists E} \) each, inside the proof of the single implication \( P(n) \Rightarrow P(n + 1) \). Its conclusion, \( P(n + 1) \), is again an existence statement, so the witnesses never leave the step. Induction then gives \( P(n) \) for each \( n \) **separately**: for each \( n \) **some** injection exists, and different \( n \) may use unrelated ones. Gluing the steps into one injection \( \nN \to A \), with a new point picked at every stage, would require all the picks at once, with no rule saying which point to pick. That is a different statement; Section 8.6 proves it with the principle of choice of Section 8.3.
+*No infinitely many choices are made.* The step uses two existence statements, \( P(n) \) and "\( A \setminus F \ne \emptyset \)", and names one witness for each: one \( \rulename{\exists E} \) each, inside the proof of the single implication \( P(n) \Rightarrow P(n + 1) \). Its conclusion, \( P(n + 1) \), is again an existence statement, so the witnesses never leave the step. Induction then gives \( P(n) \) for each \( n \) **separately**: for each \( n \) **some** injection exists, and different \( n \) may use unrelated ones. Gluing the steps into one injection \( \nN \to A \), with a new point picked at every stage, would require all the picks at once, with no rule saying which point to pick. That is a different statement; Section 3.6 proves it with the principle of choice of Section 3.3.
 
 **Marking scheme.** (10 points)
 - 2: \( (\Leftarrow) \) supposes \( A \) has \( m \) elements and uses the hypothesis at \( n = m + 1 \) to contradict the pigeonhole principle (@thm-pigeonhole or @cor-pigeonhole-finite-sets (a)).
@@ -510,13 +510,13 @@ For (b), a function on \( A \) is the same as a function on \( A \setminus \{a\}
 \[
 A \times B = (A' \times B) \cup (\{a\} \times B) ,
 \]
-and the union is disjoint, since first coordinates in \( A' \) differ from \( a \) (@def-ordered-pair). The first set has \( mn \) elements by \( P(m) \). The map \( B \to \{a\} \times B \), \( b \mapsto (a, b) \), is injective by @def-ordered-pair and surjective by @def-cartesian-product, so \( \{a\} \times B \) has \( n \) elements. By @prp-disjoint-union-count, \( A \times B \) has \( mn + n = (m + 1)n \) elements. By @ax-induction, \( P(m) \) holds for every \( m \), and \( B \) was arbitrary.
+and the union is disjoint, since first coordinates in \( A' \) differ from \( a \) (@def-ordered-pair). The first set has \( mn \) elements by \( P(m) \). The map \( B \to \{a\} \times B \), \( b \mapsto (a, b) \), is injective by @def-ordered-pair and surjective by @def-cartesian-product, so \( \{a\} \times B \) has \( n \) elements. By @prp-disjoint-union-count, \( A \times B \) has \( mn + n = (m + 1)n \) elements. By @fd1:ax-induction, \( P(m) \) holds for every \( m \), and \( B \) was arbitrary.
 
 (b) Fix \( B \) with \( n \) elements, and let \( Q(m) \) be "for every set \( A \) with \( m \) elements, \( B^A \) has \( n^m \) elements" (\( n^m \in \nN \) by @prp-power-laws (d)). *Base case.* \( A = \emptyset \), and by @prp-empty-function (a), \( B^{\emptyset} \) has exactly one element, the empty function; \( n^0 = 1 \) (@def-power), also when \( n = 0 \). *Step.* Suppose \( Q(m) \), let \( A \) have \( m + 1 \) elements, pick \( a \in A \), and let \( A' \coloneqq A \setminus \{a\} \), with \( m \) elements. Define
 \[
 R \colon B^A \to B^{A'} \times B , \qquad R(f) \coloneqq (f|_{A'}, f(a)) .
 \]
-*Injective:* if \( R(f) = R(f') \), then \( f \) and \( f' \) agree on \( A' \) and at \( a \), hence on \( A = A' \cup \{a\} \), and they have the same domain and codomain, so \( f = f' \) by @prp-function-equality. *Surjective:* given \( (h, b) \in B^{A'} \times B \), let \( f \) have graph \( G \cup \{(a, b)\} \), where \( G \) is the graph of \( h \), and codomain \( B \). Each \( x \in A' \) has exactly one partner, its \( h \)-value, because \( (a, b) \) has first coordinate \( a \notin A' \); and \( a \) has exactly one, \( b \), because every pair of \( G \) has first coordinate in \( A' \). So \( f \in B^A \), and \( R(f) = (h, b) \). Hence \( R \) is a bijection. By \( Q(m) \), \( B^{A'} \) has \( n^m \) elements, so by (a), applied to the sets \( B^{A'} \) and \( B \), the product \( B^{A'} \times B \) has \( n^m \cdot n = n^{m+1} \) elements (@def-power). Since \( R \) is a bijection, \( \card{B^A} = \card{B^{A'} \times B} \) (@def-equinumerous), and \( \card{\{1, \dots, n^{m+1}\}} = \card{B^{A'} \times B} \). By @prp-equinumerous-properties (b) and (c), \( \card{\{1, \dots, n^{m+1}\}} = \card{B^A} \), that is, \( B^A \) has \( n^{m+1} \) elements. By @ax-induction, \( Q(m) \) holds for every \( m \).
+*Injective:* if \( R(f) = R(f') \), then \( f \) and \( f' \) agree on \( A' \) and at \( a \), hence on \( A = A' \cup \{a\} \), and they have the same domain and codomain, so \( f = f' \) by @prp-function-equality. *Surjective:* given \( (h, b) \in B^{A'} \times B \), let \( f \) have graph \( G \cup \{(a, b)\} \), where \( G \) is the graph of \( h \), and codomain \( B \). Each \( x \in A' \) has exactly one partner, its \( h \)-value, because \( (a, b) \) has first coordinate \( a \notin A' \); and \( a \) has exactly one, \( b \), because every pair of \( G \) has first coordinate in \( A' \). So \( f \in B^A \), and \( R(f) = (h, b) \). Hence \( R \) is a bijection. By \( Q(m) \), \( B^{A'} \) has \( n^m \) elements, so by (a), applied to the sets \( B^{A'} \) and \( B \), the product \( B^{A'} \times B \) has \( n^m \cdot n = n^{m+1} \) elements (@def-power). Since \( R \) is a bijection, \( \card{B^A} = \card{B^{A'} \times B} \) (@def-equinumerous), and \( \card{\{1, \dots, n^{m+1}\}} = \card{B^{A'} \times B} \). By @prp-equinumerous-properties (b) and (c), \( \card{\{1, \dots, n^{m+1}\}} = \card{B^A} \), that is, \( B^A \) has \( n^{m+1} \) elements. By @fd1:ax-induction, \( Q(m) \) holds for every \( m \).
 
 (c) For \( m = 0 \): \( B^{\emptyset} \) has one element by @prp-empty-function (a), and \( n^0 = 1 \), even for \( n = 0 \). For \( m \ge 1 \) and \( n = 0 \): \( A \ne \emptyset \), so there is no function \( A \to \emptyset \) by @prp-empty-function (b), and \( B^A = \emptyset \) has \( 0 \) elements; and \( 0^m = 0^{m-1} \cdot 0 = 0 \). Both agree with (b). With \( B = \{0, 1\} \), (b) recovers the count \( 2^m \) of the paragraph after @prp-power-set-count.
 
@@ -531,28 +531,28 @@ Fatal errors (0 for the step): "each of the \( m \) elements has \( n \) possibl
 :::
 
 <!-- dependency ledger
-def-equinumerous (example): f(x) = 2x maps [0, 1] onto [0, 2], y/2 in [0, 1] for y in [0, 2] | R arithmetic and order, school fact; axioms in Ch 11
-prp-equinumerous-properties (claim): (the remark after it and the paragraph after the remark) the union of a set of sets is a set | (W3) of Section 6.1 (working rule, no label)
-def-finite (claim): the notation {1, ..., n} = {k in N : 1 <= k <= n} and {0, ..., n} | Section 7.1 (notation, no label)
+def-equinumerous (example): f(x) = 2x maps [0, 1] onto [0, 2], y/2 in [0, 1] for y in [0, 2] | R arithmetic and order, school fact; axioms in AN1.1
+prp-equinumerous-properties (claim): (the remark after it and the paragraph after the remark) the union of a set of sets is a set | (W3) of F2.1 §01 (working rule, no label)
+def-finite (claim): the notation {1, ..., n} = {k in N : 1 <= k <= n} and {0, ..., n} | F2.2 §01 (notation, no label)
 def-infinite (claim): (Shrinking the codomain) a graph inside X x C with codomain C is a function X -> C with the same values | def-function (cited), stated inline
 thm-pigeonhole (proof): m > n + 1 gives m - 1 > n; k <= m - 1 < m; trichotomy | R order, school fact
-thm-pigeonhole (proof): {1, ..., m - 1} is a subset of {1, ..., m} | definition of {1, ..., n} (Section 7.1) and R order
+thm-pigeonhole (proof): {1, ..., m - 1} is a subset of {1, ..., m} | definition of {1, ..., n} (F2.2 §01) and R order
 cor-pigeonhole-finite-sets (example): (the three-integers paragraph) r in {0, 1}; q + q' + r in Z | thm-division-algorithm, prp-integers-closed (a), (b), lem-naturals-arithmetic (e) (cited)
 cor-pigeonhole-finite-sets (example): (the three-integers paragraph) a + b = 2(q + q' + r), r + r = 2r | R arithmetic, school fact
 cor-finite-size-unique (proof): trichotomy of < on N | R order, school fact
 prp-disjoint-union-count (proof): 1 <= k - m <= n for m < k <= m + n; m < m + j <= m + n | R order, school fact; lem-naturals-arithmetic (d), (e) (cited)
-prp-subset-finite (proof): {1, ..., n + 1} = {1, ..., n} u {n + 1}; restriction of an injective map is injective | lem-naturals-arithmetic (e) (cited); restriction, Section 6.4 (no label)
+prp-subset-finite (proof): {1, ..., n + 1} = {1, ..., n} u {n + 1}; restriction of an injective map is injective | lem-naturals-arithmetic (e) (cited); restriction, F2.1 §04 (no label)
 prp-power-set-count (proof): 2^n, 2^(n+1) in N | prp-power-laws (d) (cited)
-prp-power-set-count (proof): (S u {a}) \ {a} = S when a is not in S; U = (U \ {a}) u {a} when a in U | set algebra, Section 6.2; checked inline
-prp-power-set-count (claim): (the paragraph after it) S -> 1_S is a bijection P(Y) -> {0, 1}^Y with inverse f -> {y : f(y) = 1} | Section 6.4, the correspondence after exm-function-set-small (prose, no label)
+prp-power-set-count (proof): (S u {a}) \ {a} = S when a is not in S; U = (U \ {a}) u {a} when a in U | set algebra, F2.1 §02; checked inline
+prp-power-set-count (claim): (the paragraph after it) S -> 1_S is a bijection P(Y) -> {0, 1}^Y with inverse f -> {y : f(y) = 1} | F2.1 §04, the correspondence after exm-function-set-small (prose, no label)
 exm-hilbert-hotel (solution): 2n = 2n' implies n = n'; 2n >= 2 for n >= 1 | R arithmetic and order, school fact
 thm-finite-no-proper-copy (claim): (the second warning after exm-hilbert-hotel) x/(1 + x) maps 1/n to 1/(n + 1); y/(1 - y) inverts it; 1/n <= 1/2 for n >= 2 | R arithmetic, school fact; checked inline
-exr-finite-sets-a1 (solution): De Morgan for "not (P and Q)" | Chapter 2 (DM, derived rule; no label cited)
+exr-finite-sets-a1 (solution): De Morgan for "not (P and Q)" | F1.2 (DM, derived rule; no label cited)
 exr-finite-sets-b1 (solution): (m - 1)/2 = n for m = 2n + 1; 2n + 1 = 2n' + 1 gives n = n' | R arithmetic, school fact
 exr-finite-sets-b2 (solution): remainder r(a) in {0, ..., 4} | thm-division-algorithm, prp-integers-closed (b), (c) (cited)
 exr-finite-sets-b2 (solution): min{x, 9 - x} <= 4 for 1 <= x <= 8; 3 + 4 = 7 | R arithmetic, school fact
 exr-finite-sets-b3 (solution): {1, ..., n + 1} = {1, ..., n} u {n + 1}; the union over it splits accordingly | lem-naturals-arithmetic (e); def-family-union-intersection (cited)
 exr-finite-sets-c1 (solution): phi^(-1) is a bijection; {1, ..., n + 1} = {1, ..., n} u {n + 1}, n + 1 not in {1, ..., n} | thm-bijection-iff-inverse, def-inverse-function, lem-naturals-arithmetic (e) (cited)
 exr-finite-sets-c2 (solution): mn in N; n^m in N; B^A equinumerous with {1, ..., n^(m+1)} via R | lem-naturals-arithmetic (b), prp-power-laws (d), prp-equinumerous-properties (b), (c) (cited)
-exr-finite-sets-c2 (solution): restriction f|_A' is a function A' -> B | restriction, Section 6.4 (no label)
+exr-finite-sets-c2 (solution): restriction f|_A' is a function A' -> B | restriction, F2.1 §04 (no label)
 -->

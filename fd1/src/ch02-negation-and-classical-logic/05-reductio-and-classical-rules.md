@@ -20,7 +20,7 @@ Let \( x \) be a real number with \( x \ge 0 \), and suppose that \( x \le \vare
 Suppose, for a contradiction, that \( x \ne 0 \). Since \( x \ge 0 \) and \( x \ne 0 \), we have \( x > 0 \). Then \( \varepsilon \coloneqq x/2 \) is a real number with \( \varepsilon > 0 \), so the hypothesis applies to it and gives \( x \le x/2 \). Subtracting \( x/2 \) from both sides gives \( x/2 \le 0 \), and multiplying by \( 2 \) gives \( x \le 0 \). This contradicts \( x > 0 \). Hence \( x = 0 \).
 :::
 
-(The step "the hypothesis applies to it" uses a rule for "every", which Chapter 4 makes precise. The facts about \( \le \) are school algebra, which Chapter 11 derives from axioms.)
+(The step "the hypothesis applies to it" uses a rule for "every", which Chapter 4 makes precise. The facts about \( \le \) are school algebra, which *Analysis on the Real Line*, Chapter 1 derives from axioms.)
 
 Look at its shape. The box opens with the assumption \( \neg P \), where \( P \) is "\( x = 0 \)", reaches \( \bot \), and closes to give \( P \). If we tried to justify the last line by \( \rulename{\neg I} \), we would get the negation of the box's assumption, \( \neg\neg P \): "it is not the case that \( x \ne 0 \)". That is not \( P \). The two arguments put their negations in different places. \( \rulename{\neg I} \) puts a \( \neg \) **into** the conclusion; the second argument takes one **out**.
 
@@ -621,7 +621,7 @@ Return to @exm-raa-zero, and read its solution one sentence at a time, with the 
 6. "This contradicts \( x > 0 \)." [\( \rulename{\neg E} \): for real numbers \( x > 0 \) is \( \neg(x \le 0) \), the negation of the line \( x \le 0 \).]
 7. "Hence \( x = 0 \)." [\( \rulename{RAA} \) closes the box.]
 
-The words "for a contradiction" do not by themselves tell \( \rulename{\neg I} \) from \( \rulename{RAA} \). Look at what is assumed and what is concluded. Here the box assumes a negation, \( x \ne 0 \), and the conclusion is the positive statement \( x = 0 \), so the step is \( \rulename{RAA} \). The proof of @thm-sqrt2-irrational assumes the positive statement \( r^2 = 2 \) and concludes its negation, so it is \( \rulename{\neg I} \). Chapter 11 opens its proof that the natural numbers are not bounded above by supposing, for contradiction, that they are bounded above, and concludes that they are not: that is \( \rulename{\neg I} \) too, despite the phrase.
+The words "for a contradiction" do not by themselves tell \( \rulename{\neg I} \) from \( \rulename{RAA} \). Look at what is assumed and what is concluded. Here the box assumes a negation, \( x \ne 0 \), and the conclusion is the positive statement \( x = 0 \), so the step is \( \rulename{RAA} \). The proof of @thm-sqrt2-irrational assumes the positive statement \( r^2 = 2 \) and concludes its negation, so it is \( \rulename{\neg I} \). *Analysis on the Real Line*, Chapter 1 opens its proof that the natural numbers are not bounded above by supposing, for contradiction, that they are bounded above, and concludes that they are not: that is \( \rulename{\neg I} \) too, despite the phrase.
 
 ::: {.warning}
 An \( \rulename{RAA} \) box on \( \neg\varphi \) whose assumption is used **only at its last step**, against a \( \varphi \) derived without it, is legal, but it is a direct proof in disguise: the lines before the clash already derive \( \varphi \), so the box can be deleted. The degenerate derivation of \( P \vdash P \) above is the smallest case. Chapter 5 shows how to spot this costume in written proofs and take it off. (A box that reaches \( \bot \) without using its assumption at all is a different matter: the same lines, written before the box, derive \( \bot \) without it, and \( \rulename{\bot E} \) then gives the goal at once.)
@@ -997,22 +997,22 @@ The second route earns the same points, step for step: 2 for the written-out exc
 :::
 
 <!-- dependency ledger
-exm-raa-zero (example): x >= 0 and x != 0 give x > 0; x/2 > 0 for x > 0; subtracting x/2 and multiplying by 2 preserve <= | school algebra, ch11 (promised)
-exm-raa-zero (example): the hypothesis "x <= eps for every eps > 0" applies to eps = x/2 | ch04 (promised; rules for "every"), flagged in prose; the example illustrates the shape of RAA and nothing cites it
-def-rule-raa (claim): no derivation of P from not-not-P uses only the rules of ch01 and s01-s04 | ch03 (promised; thm-raa-independent, optional there), flagged in prose; the motivation for RAA, nothing proved from it
+exm-raa-zero (example): x >= 0 and x != 0 give x > 0; x/2 > 0 for x > 0; subtracting x/2 and multiplying by 2 preserve <= | school algebra, AN1.1 (promised)
+exm-raa-zero (example): the hypothesis "x <= eps for every eps > 0" applies to eps = x/2 | F1.4 (promised; rules for "every"), flagged in prose; the example illustrates the shape of RAA and nothing cites it
+def-rule-raa (claim): no derivation of P from not-not-P uses only the rules of F1.1 and s01-s04 | F1.3 (promised; thm-raa-independent, optional there), flagged in prose; the motivation for RAA, nothing proved from it
 def-rule-raa (claim): the other two stalls (exr-derived-rules-c1 (b), the converse of exm-iff-negations) cannot be completed without RAA | stated without proof and marked so; nothing depends on it
 def-rule-raa (claim): the last step of a derivation of a negation never needs RAA (replace the RAA box on not-not-psi by a not-I box on psi) | inline (argued in the paragraph, using exm-double-negation-introduction)
 prp-contrapositive-converse (claim): no derivation of the converse avoids RAA | stated without proof and marked so; nothing depends on it
-prp-excluded-middle (idea): neither P nor not-P is derivable from no premises | informal, flagged "Chapter 3 makes this exact"; motivation only
-prp-peirce (claim): every derivation of Peirce's law uses RAA or one of its equivalents | ch03 (promised; the remark after thm-raa-independent, optional there: value 1/2 at p = 1/2, q = 0), prose pointer; nothing depends on it
-prp-de-morgan (idea): no derivation reaches not-P (or not-Q) from not(P and Q) alone, because a row makes the premise true and the disjunct false | ch03 (promised; thm-soundness), flagged as proved there; motivation only, the proof does not use it
+prp-excluded-middle (idea): neither P nor not-P is derivable from no premises | informal, flagged "F1.3 makes this exact"; motivation only
+prp-peirce (claim): every derivation of Peirce's law uses RAA or one of its equivalents | F1.3 (promised; the remark after thm-raa-independent, optional there: value 1/2 at p = 1/2, q = 0), prose pointer; nothing depends on it
+prp-de-morgan (idea): no derivation reaches not-P (or not-Q) from not(P and Q) alone, because a row makes the premise true and the disjunct false | F1.3 (promised; thm-soundness), flagged as proved there; motivation only, the proof does not use it
 prp-de-morgan (claim): the LEM route to (d) is 11 lines; no derivation of (d) avoids a classical rule | the route is described inline; the necessity is stated without proof and marked so; nothing depends on it
 thm-classical-rules-interderivable (proof): replacing a line by a fragment keeps every citation available and the premises and last line unchanged | inline (argued in the proof)
 thm-classical-rules-interderivable (claim): without bot-E in the base list, LEM no longer derives not-not-E | stated without proof and marked so; nothing depends on it
-exm-raa-zero (example): in the rule-by-rule reading, x >= 0 read as (x = 0 or x > 0), and x > 0 read as not(x <= 0) | school algebra (trichotomy), ch11 (promised)
-exr-reductio-and-classical-rules-a1 (solution): squares are non-negative; 3 < 7/2 < 4; x^2 < 2x - 1 iff (x - 1)^2 < 0 | school algebra, ch11 (promised)
-exr-reductio-and-classical-rules-a1 (solution): the rules never lead from true premises to a false conclusion | ch03 (promised; thm-soundness), flagged in the solution as proved there
-exr-reductio-and-classical-rules-b4 (solution): x > 1 gives x > 0 and x^2 > x | school algebra, ch11 (promised)
-exr-reductio-and-classical-rules-c2 (solution): P or Q |- P is not derivable (the row P false, Q true) | ch03 (promised; thm-soundness), flagged in the solution; the find-the-error verdict does not depend on it
+exm-raa-zero (example): in the rule-by-rule reading, x >= 0 read as (x = 0 or x > 0), and x > 0 read as not(x <= 0) | school algebra (trichotomy), AN1.1 (promised)
+exr-reductio-and-classical-rules-a1 (solution): squares are non-negative; 3 < 7/2 < 4; x^2 < 2x - 1 iff (x - 1)^2 < 0 | school algebra, AN1.1 (promised)
+exr-reductio-and-classical-rules-a1 (solution): the rules never lead from true premises to a false conclusion | F1.3 (promised; thm-soundness), flagged in the solution as proved there
+exr-reductio-and-classical-rules-b4 (solution): x > 1 gives x > 0 and x^2 > x | school algebra, AN1.1 (promised)
+exr-reductio-and-classical-rules-c2 (solution): P or Q |- P is not derivable (the row P false, Q true) | F1.3 (promised; thm-soundness), flagged in the solution; the find-the-error verdict does not depend on it
 exr-reductio-and-classical-rules-c3 (solution): neither P nor P -> Q is derivable on its own (the search's motivation) | informal (a row each), motivation only; the derivation does not depend on it
 -->

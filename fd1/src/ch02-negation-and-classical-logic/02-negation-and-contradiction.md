@@ -222,7 +222,7 @@ The proof that no rational number has square \( 2 \) has the shape of \( \rulena
 
 **(L)** Every rational number can be written as \( p/q \) with \( p \) and \( q \) integers, \( q \ne 0 \), and \( p \) and \( q \) **not both even**.
 
-This holds because a fraction whose numerator and denominator are both even can be reduced by \( 2 \), and the reduction cannot go on for ever, since the denominator shrinks in absolute value each time. Making "cannot go on for ever" precise needs the well-ordering of the natural numbers, which comes in Chapter 7; here we take (L) as known.
+This holds because a fraction whose numerator and denominator are both even can be reduced by \( 2 \), and the reduction cannot go on for ever, since the denominator shrinks in absolute value each time. Making "cannot go on for ever" precise needs the well-ordering of the natural numbers, which comes in *Sets, Relations, and Cardinality*, Chapter 2; here we take (L) as known.
 
 ::: {#thm-sqrt2-irrational}
 [Irrationality of the Square Root of Two]
@@ -274,7 +274,7 @@ $\begin{nd}
 
 Line 13 is \( r^2 \ne 2 \). The box \( \lines{5}{12} \) is a \( \rulename{\neg I} \) box as the schema asks: opened by the unnegated statement \( r^2 = 2 \), and ending on \( \bot \) as a line of its own. Two steps of the proof lie outside the derivation: choosing \( p \), \( q \), and \( m \), and passing from the arbitrary \( r \) to every rational number. Both are quantifier rules, which come in Chapter 4.
 
-Notice also what the proof does **not** need: that \( \sqrt{2} \) exists as a real number. The theorem is a statement about rational numbers only. Chapter 11 uses it in exactly this form, as evidence that the rational numbers have a gap where \( \sqrt{2} \) should be.
+Notice also what the proof does **not** need: that \( \sqrt{2} \) exists as a real number. The theorem is a statement about rational numbers only. *Analysis on the Real Line*, Chapter 1 uses it in exactly this form, as evidence that the rational numbers have a gap where \( \sqrt{2} \) should be.
 
 And notice which rule closes it. "Suppose \( r^2 = 2 \)" opens a box whose **negation** is the goal, so the proof is \( \rulename{\neg I} \), even though it is what everyone calls a proof by contradiction. Section 2.5 meets a second kind of box, which looks the same on the page and is a different rule; the distinction starts from the warning above about \( \neg(x > 0) \).
 
@@ -490,16 +490,16 @@ Here is a "proof" that \( \sqrt{4} \) is irrational, modeled on @thm-sqrt2-irrat
 :::
 
 <!-- dependency ledger
-def-rules-negation (claim): if the lines above a box hold and the box leads from phi to bot, then phi fails (not-I never leads from true lines to a false one) | ch03 (promised; soundness, thm-soundness), a remark used in no proof
-exm-square-plus-one (example): x^2 >= 0 for real x, i.e. not(x^2 < 0); x^2 = -1 gives x^2 < 0 | school algebra (ch02 blueprint, Allowed prerequisites); ch11 (promised)
-thm-sqrt2-irrational (proof): (L) every rational is p/q with q != 0, p and q not both even | school fact stated as (L) in the text, with its informal reason; ch07 (promised; lem-lowest-terms, by well-ordering)
+def-rules-negation (claim): if the lines above a box hold and the box leads from phi to bot, then phi fails (not-I never leads from true lines to a false one) | F1.3 (promised; soundness, thm-soundness), a remark used in no proof
+exm-square-plus-one (example): x^2 >= 0 for real x, i.e. not(x^2 < 0); x^2 = -1 gives x^2 < 0 | school algebra (F1.2 blueprint, Allowed prerequisites); AN1.1 (promised)
+thm-sqrt2-irrational (proof): (L) every rational is p/q with q != 0, p and q not both even | school fact stated as (L) in the text, with its informal reason; F2.2 (promised; lem-lowest-terms, by well-ordering)
 thm-sqrt2-irrational (proof): p^2 = r^2 q^2; 4m^2 = 2q^2 gives q^2 = 2m^2; "p^2 = 2q^2, so p^2 is even" (definition of even) | school algebra, inline
-thm-sqrt2-irrational (proof): choosing p, q, m; "r arbitrary, so every rational" | quantifier steps used as school reasoning; ch04 (promised)
+thm-sqrt2-irrational (proof): choosing p, q, m; "r arbitrary, so every rational" | quantifier steps used as school reasoning; F1.4 (promised)
 exr-negation-and-contradiction-a1 (solution): 1 != 0; 2 = 4/2; p^2 = 4q^2 = 2(2q^2), p = 2k gives q^2 = k^2; 2 = 2/1 | arithmetic, inline
-exr-negation-and-contradiction-b2 (solution): x^2 - x + 1 = (x - 1/2)^2 + 3/4; a square of a real is never negative | algebra inline; school algebra, ch11 (promised)
+exr-negation-and-contradiction-b2 (solution): x^2 - x + 1 = (x - 1/2)^2 + 3/4; a square of a real is never negative | algebra inline; school algebra, AN1.1 (promised)
 exr-negation-and-contradiction-b3 (solution): every integer is 3k, 3k+1 or 3k+2 in one way only; the mod-3 form of (L) | stated in the item as usable facts
 exr-negation-and-contradiction-b3 (solution): (3k+1)^2 = 3(3k^2+2k)+1, (3k+2)^2 = 3(3k^2+4k+1)+1; 9m^2 = 3q^2 gives q^2 = 3m^2 | algebra, inline
-exr-negation-and-contradiction-c1 (solution): (E1)-(E3) and (L) | stated in the text (Section 2.1 and this section)
+exr-negation-and-contradiction-c1 (solution): (E1)-(E3) and (L) | stated in the text (F1.2 §01 and this section)
 exr-negation-and-contradiction-c1 (solution): p^2 = 6q^2 = 2(3q^2); 4m^2 = 6q^2 gives 3q^2 = 2m^2; q^2 = 2j+1 gives 3q^2 = 2(3j+1)+1 | algebra, inline
 exr-negation-and-contradiction-c2 (solution): 2^2 = 4 and 4 does not divide 2 | arithmetic
 -->

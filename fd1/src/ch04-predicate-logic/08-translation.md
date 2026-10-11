@@ -302,7 +302,7 @@ In prose, line by line:
 
 > Let \( \varepsilon > 0 \) [lines 2, 16]. Then \( \varepsilon / 2 > 0 \) [3], so, since \( a_n \to L \), there is \( N \in \nN \) with \( \abs{a_n - L} < \varepsilon/2 \) for every \( n \ge N \) [4]; choose such an \( N \) [5, 6, 15]. Let \( n \in \nN \) with \( n \ge N \) [7, 9]. Then \( \abs{a_n - L} < \varepsilon / 2 \) [8, 10], so \( \abs{2 a_n - 2 L} = 2 \abs{a_n - L} < \varepsilon \) [11]. So this \( N \) works [12–14].
 
-Written with the unbounded rules, the same derivation has 22 lines, since each of its six bounded steps (lines 4, 8, 13, 14, 15, and 16) costs one line more. The claim "\( \frac1n \to 0 \)" (for \( n \ge 1 \)) is not derived here: its proof needs a fact about \( \nN \) inside \( \nR \), the Archimedean property, which is a theorem of Chapter 11, not of logic.
+Written with the unbounded rules, the same derivation has 22 lines, since each of its six bounded steps (lines 4, 8, 13, 14, 15, and 16) costs one line more. The claim "\( \frac1n \to 0 \)" (for \( n \ge 1 \)) is not derived here: its proof needs a fact about \( \nN \) inside \( \nR \), the Archimedean property, which is a theorem of *Analysis on the Real Line*, Chapter 1, not of logic.
 
 ## The search method, extended
 
@@ -496,18 +496,18 @@ Fatal errors (0 for the step): exchanging \( \forall \) with \( \exists \); a "s
 :::
 
 <!-- dependency ledger
-exm-translate-limit (solution): p | n means n = p * k for some integer k | NOTATION.md row for d | n (definition, first used Ch 2); stated in the solution
-exm-translate-limit (solution): (d) the two forms of "no largest prime" say the same thing over N; not (q <= p) iff p < q over N | order fact (school arithmetic); the logical part is Section 4.9 (later section of this chapter; prose pointer only, nothing here rests on it)
-translation-check (solution): (0, 1) is bounded above by 1 (x < 1 for x in (0, 1)) and has no maximum (m < (m+1)/2 < 1 for m in (0, 1)) | school algebra (order); ch11 (prose pointer); checked by verify/ch04/exm-translate-limit.py
+exm-translate-limit (solution): p | n means n = p * k for some integer k | NOTATION.md row for d | n (definition, first used F1.2); stated in the solution
+exm-translate-limit (solution): (d) the two forms of "no largest prime" say the same thing over N; not (q <= p) iff p < q over N | order fact (school arithmetic); the logical part is F1.4 §09 (later section of this chapter; prose pointer only, nothing here rests on it)
+translation-check (solution): (0, 1) is bounded above by 1 (x < 1 for x in (0, 1)) and has no maximum (m < (m+1)/2 < 1 for m in (0, 1)) | school algebra (order); AN1.1 (prose pointer); checked by verify/ch04/exm-translate-limit.py
 exm-translate-limit (claim, the opening list): 1, 1/2, 1/3, ... has terms not all close to any L; only eventually-L sequences satisfy the swapped form | informal reading, illustrative only; no result rests on it
 exm-translate-limit (claim, the warning): f(x) = x is bounded by 1 on [0, 1] and not on R; a_n = n - 3 has a_0 = -3 and a_n > 0 for n >= 4 | school arithmetic; checked by verify/ch04/exm-translate-limit.py
 prp-bounded-quantifier-rules (proof): (x in A -> phi)[t/x] is t in A -> phi[t/x]; t free for x in (x in A -> phi) iff t free for x in phi; likewise with x > a when x does not occur in a | def-substitution, def-free-for (cited); argued inline
-prp-bounded-quantifier-rules (proof): moving lines into a new enclosing box keeps each citation available | def-derivation's scope rule (Ch 1, cited as def-derivation via Section 4.4's extension to flagged boxes); argued inline
+prp-bounded-quantifier-rules (proof): moving lines into a new enclosing box keeps each citation available | def-derivation's scope rule (F1.1, cited as def-derivation via F1.4 §04's extension to flagged boxes); argued inline
 prp-bounded-quantifier-rules (claim): a new rule is admissible if every use can be replaced by old steps | def-derived-rule (cited), extended; argued in the text
-prp-bounded-quantifier-rules (example, the limit derivation): eps_0 > 0 gives eps_0/2 > 0; |a - L| < eps_0/2 gives |2a - 2L| < eps_0 since |2u - 2v| = 2|u - v| | arith lines (school algebra); ch11 (prose pointer for the Archimedean remark only)
+prp-bounded-quantifier-rules (example, the limit derivation): eps_0 > 0 gives eps_0/2 > 0; |a - L| < eps_0/2 gives |2a - 2L| < eps_0 since |2u - 2v| = 2|u - v| | arith lines (school algebra); AN1.1 (prose pointer for the Archimedean remark only)
 prp-bounded-quantifier-rules (example, the limit derivation): the unbounded version has 22 lines | inline count: 16 lines + one per bounded step (six)
-prp-bounded-quantifier-rules (claim, the search method): opening a forall box loses nothing: forall-E at a fresh name recovers psi[x_0/x] | inline, as in Section 2.6's argument for ->
+prp-bounded-quantifier-rules (claim, the search method): opening a forall box loses nothing: forall-E at a fresh name recovers psi[x_0/x] | inline, as in F1.2 §06's argument for ->
 exr-translation-a1 (solution): 7 not in {0}; no natural number exceeds every natural number; 1 divides every n | school arithmetic; checked by verify/ch04/exr-translation-a1.py
 exr-translation-c2 (solution): exchange of adjacent foralls for any matrix | exm-universal-introduction-derivations (cited); its derivation uses nothing about R(x, y) but that it is a formula
-exr-translation-c2 (solution): truth values over Z of the eight sentences in the table | informal truth, Section 4.1; witnesses y = x + 1, y = z + 1 given; checked by verify/ch04/exr-translation-c2.py
+exr-translation-c2 (solution): truth values over Z of the eight sentences in the table | informal truth, F1.4 §01; witnesses y = x + 1, y = z + 1 given; checked by verify/ch04/exr-translation-c2.py
 -->

@@ -158,7 +158,7 @@ import re as _re
 import sys as _sys
 from pathlib import Path as _Path
 
-_sys.path.insert(0, str(_Path(__file__).resolve().parents[2] / "tools"))
+_sys.path.insert(0, str(_Path(__file__).resolve().parents[2] / ".." / "tools"))
 from check_fitch import check_text as _check_text  # noqa: E402
 
 

@@ -1,6 +1,6 @@
 # Countable Unions and the Axiom of Choice
 
-Section 8.2 listed \( \nN \times \nN \), \( \nZ \) and \( \nQ \), and showed that a union of two countable sets is countable (@prp-union-two-countable). The next question is a union of **countably many** countable sets. The natural proof is short, and it contains one step that none of the rules met so far can justify. This section isolates that step, adds the principle that licenses it, the axiom of choice, and then shows how to tell a proof that needs the axiom from one that only seems to.
+Section 3.2 listed \( \nN \times \nN \), \( \nZ \) and \( \nQ \), and showed that a union of two countable sets is countable (@prp-union-two-countable). The next question is a union of **countably many** countable sets. The natural proof is short, and it contains one step that none of the rules met so far can justify. This section isolates that step, adds the principle that licenses it, the axiom of choice, and then shows how to tell a proof that needs the axiom from one that only seems to.
 
 ## A union of countably many lists
 
@@ -8,22 +8,22 @@ Let \( A_0, A_1, A_2, \dots \) be countable sets, a family \( (A_n)_{n \in \nN} 
 
 Here is the proof most people write first. List each set: \( A_n = \{ a_{n,0}, a_{n,1}, a_{n,2}, \dots \} \). Put \( a_{n,m} \) in row \( n \) and column \( m \) of an infinite grid. Every element of the union stands somewhere in the grid, and the grid is indexed by \( \nN \times \nN \), which is countable (@thm-product-countable). So the union is the image of a countable set, and it is countable.
 
-Every step but the first, "list each set", is a result of Section 8.2. Where do the lists come from?
+Every step but the first, "list each set", is a result of Section 3.2. Where do the lists come from?
 
 ## The obstacle, rule by rule
 
-For a non-empty \( A_n \), "\( A_n \) is countable" says that **there exists** a surjection \( \nN \to A_n \) (@def-countable). To use it we apply \( \rulename{\exists E} \) (@def-rules-existential): we name the object and argue inside the box of that name. One \( \rulename{\exists E} \) names **one** surjection, for **one** \( n \).
+For a non-empty \( A_n \), "\( A_n \) is countable" says that **there exists** a surjection \( \nN \to A_n \) (@def-countable). To use it we apply \( \rulename{\exists E} \) (@fd1:def-rules-existential): we name the object and argue inside the box of that name. One \( \rulename{\exists E} \) names **one** surjection, for **one** \( n \).
 
 - **Finitely many sets.** The proof of @prp-union-two-countable used two \( \rulename{\exists E} \)'s; for \( A_0, \dots, A_9 \) we could nest ten boxes.
-- **All \( n \in \nN \) at once.** The grid needs a list of \( A_n \) for every \( n \), assembled into one object: a function that sends each \( n \) to a surjection \( \nN \to A_n \). A proof is a finite object. It cannot contain one \( \rulename{\exists E} \) for each of infinitely many indices, and no rule of Chapter 4 makes infinitely many choices in one step.
+- **All \( n \in \nN \) at once.** The grid needs a list of \( A_n \) for every \( n \), assembled into one object: a function that sends each \( n \) to a surjection \( \nN \to A_n \). A proof is a finite object. It cannot contain one \( \rulename{\exists E} \) for each of infinitely many indices, and no rule of *Logic and Proof*, Chapter 4 makes infinitely many choices in one step.
 
 Two escape routes fail. *Recursion* (@thm-recursion) defines a function on all of \( \nN \) at once, but from a rule \( g \) given in advance, each value determined by the previous one. The list of \( A_{n+1} \) is not determined by the list of \( A_n \), and a rule producing a list of every \( A_{n+1} \) would already be the missing object. *Induction* on \( k \), with @prp-union-two-countable at each step, proves "for every \( k \), \( A_0 \cup \dots \cup A_k \) is countable" (Exercise C3 writes it out), but that is a statement about each \( k \) separately; nothing makes the lists for different \( k \) fit together.
 
-Section 6.5 met the same wall: a right inverse of a surjection must pick a preimage of **every** point at once, and the rules could do that only for finitely many points, or when a rule names the preimage.
+Section 1.5 met the same wall: a right inverse of a surjection must pick a preimage of **every** point at once, and the rules could do that only for finitely many points, or when a rule names the preimage.
 
 ## The axiom of choice
 
-None of the working rules (W1)–(W6) of Section 6.1 forms a set out of infinitely many arbitrary picks. The principle we add is the simplest statement that does.
+None of the working rules (W1)–(W6) of Section 1.1 forms a set out of infinitely many arbitrary picks. The principle we add is the simplest statement that does.
 
 *From any family of non-empty sets, one may pick one element from each set, all at once.*
 
@@ -37,17 +37,17 @@ c \colon I \to \bigcup_{i \in I} A_i \quad \text{with} \quad c(i) \in A_i \ \tex
 Such a function \( c \) is called a **choice function** for the family.
 :::
 
-In symbols, with \( Y^X \) the set of functions of Section 6.4 and \( U \coloneqq \bigcup_{i \in I} A_i \):
+In symbols, with \( Y^X \) the set of functions of Section 1.4 and \( U \coloneqq \bigcup_{i \in I} A_i \):
 \[
 \forall i \in I \ (A_i \ne \emptyset) \ \to \ \exists c \in U^{I} \ \ \forall i \in I \ \ c(i) \in A_i .
 \]
 
 In words: the hypothesis says that each set of the family has an element; the conclusion says that **one** function picks an element of every \( A_i \) at the same time. The codomain, a set by (W3), only gives \( c \) somewhere to take its values. The axiom asserts that \( c \) exists and gives no recipe for it.
 
-**Its status.** For finitely many indices the axiom adds nothing (proved below); for infinitely many it is a genuinely new principle. It is independent of the other axioms of set theory: Gödel (1938) showed that adding it creates no contradiction that was not there already, and Cohen (1963) that it cannot be proved from them. A later chapter states its best-known equivalent, Zorn's lemma; the companion volume on set theory proves it equivalent to the axiom, together with the other equivalents such as the well-ordering theorem, and surveys the independence results. This book uses the axiom openly on the main line, among other places: here, for countable unions and right inverses; in Section 8.6, for infinite subsets that can be listed; in Chapter 11, for sup approximations (the remark below); in Chapter 43, for the Vitali set; in Chapter 67, through Zorn's lemma, for the Hahn–Banach theorem; and in Chapter 69, for Tychonoff's theorem. Each use is flagged at its line.
+**Its status.** For finitely many indices the axiom adds nothing (proved below); for infinitely many it is a genuinely new principle. It is independent of the other axioms of set theory: Gödel (1938) showed that adding it creates no contradiction that was not there already, and Cohen (1963) that it cannot be proved from them. A later chapter states its best-known equivalent, Zorn's lemma; the companion volume on set theory proves it equivalent to the axiom, together with the other equivalents such as the well-ordering theorem, and surveys the independence results. This book uses the axiom openly on the main line, among other places: here, for countable unions and right inverses; in Section 3.6, for infinite subsets that can be listed; in *Analysis on the Real Line*, Chapter 1, for sup approximations (the remark below); in *Measure and Integration*, Chapter 1, for the Vitali set; in *Functional Analysis*, Chapter 4, through Zorn's lemma, for the Hahn–Banach theorem; and in *Functional Analysis*, Chapter 6, for Tychonoff's theorem. Each use is flagged at its line.
 
 ::: {.remark}
-A corollary in Chapter 11 gives, for each \( n \ge 1 \) separately, some \( a_n \in A \) with \( a_n > \sup A - \frac1n \): one \( \rulename{\exists E} \) per \( n \), and no axiom. Forming the **sequence** \( (a_n)_{n \ge 1} \) from these is a choice function for the family \( \bigl( \{ a \in A : a > \sup A - \tfrac1n \} \bigr)_{n \in \nZ_{>0}} \), an instance of @ax-choice with the countable index set \( I = \nZ_{>0} \). Chapter 11 flags exactly this step.
+A corollary in *Analysis on the Real Line*, Chapter 1 gives, for each \( n \ge 1 \) separately, some \( a_n \in A \) with \( a_n > \sup A - \frac1n \): one \( \rulename{\exists E} \) per \( n \), and no axiom. Forming the **sequence** \( (a_n)_{n \ge 1} \) from these is a choice function for the family \( \bigl( \{ a \in A : a > \sup A - \tfrac1n \} \bigr)_{n \in \nZ_{>0}} \), an instance of @ax-choice with the countable index set \( I = \nZ_{>0} \). *Analysis on the Real Line*, Chapter 1 flags exactly this step.
 :::
 
 **Examples.**
@@ -62,7 +62,7 @@ A corollary in Chapter 11 gives, for each \( n \ge 1 \) separately, some \( a_n 
 
 Two kinds of construction look like choice and are not; telling them apart from a real use is the skill this section is for.
 
-**Finitely many sets.** *For every finite set \( I \) and every family \( (A_i)_{i \in I} \) of non-empty sets, a choice function exists, with no appeal to the axiom.* For \( I = \{1, 2, 3\} \), three applications of \( \rulename{\exists E} \) name \( a_i \in A_i \), and \( \{ (1, a_1), (2, a_2), (3, a_3) \} \) is the graph of a choice function. For a finite set of arbitrary size we induct on its number of elements (@def-finite). Let \( P(n) \) be: "for every set \( I \) with \( n \) elements and every family \( (A_i)_{i \in I} \) of non-empty sets, there is a choice function". *Base case* \( P(0) \): a set with \( 0 \) elements is the image of a bijection from \( \{1, \dots, 0\} = \emptyset \), so it is empty, and the empty function is a choice function (Example 1). *Inductive step:* assume \( P(n) \), and let \( I \) have \( n + 1 \) elements. Then \( I \ne \emptyset \), since a bijection \( \{1, \dots, n + 1\} \to I \) has a value at \( 1 \); pick \( i_0 \in I \) by \( \rulename{\exists E} \). The set \( I' \coloneqq I \setminus \{i_0\} \) has \( n \) elements (@cor-remove-point), so \( P(n) \) gives a choice function \( c' \) for \( (A_i)_{i \in I'} \). Since \( A_{i_0} \ne \emptyset \), one more \( \rulename{\exists E} \) names \( a_0 \in A_{i_0} \). The graph of \( c' \) together with the pair \( (i_0, a_0) \), with codomain \( \bigcup_{i \in I} A_i \), is a function on \( I' \cup \{i_0\} = I \), because \( i_0 \notin I' \); and it is a choice function. So \( P(n + 1) \) holds, and @ax-induction gives \( P(n) \) for every \( n \in \nN \). Each step uses two \( \rulename{\exists E} \)'s and no new principle; the induction says nothing about an infinite \( I \), which has no number of elements.
+**Finitely many sets.** *For every finite set \( I \) and every family \( (A_i)_{i \in I} \) of non-empty sets, a choice function exists, with no appeal to the axiom.* For \( I = \{1, 2, 3\} \), three applications of \( \rulename{\exists E} \) name \( a_i \in A_i \), and \( \{ (1, a_1), (2, a_2), (3, a_3) \} \) is the graph of a choice function. For a finite set of arbitrary size we induct on its number of elements (@def-finite). Let \( P(n) \) be: "for every set \( I \) with \( n \) elements and every family \( (A_i)_{i \in I} \) of non-empty sets, there is a choice function". *Base case* \( P(0) \): a set with \( 0 \) elements is the image of a bijection from \( \{1, \dots, 0\} = \emptyset \), so it is empty, and the empty function is a choice function (Example 1). *Inductive step:* assume \( P(n) \), and let \( I \) have \( n + 1 \) elements. Then \( I \ne \emptyset \), since a bijection \( \{1, \dots, n + 1\} \to I \) has a value at \( 1 \); pick \( i_0 \in I \) by \( \rulename{\exists E} \). The set \( I' \coloneqq I \setminus \{i_0\} \) has \( n \) elements (@cor-remove-point), so \( P(n) \) gives a choice function \( c' \) for \( (A_i)_{i \in I'} \). Since \( A_{i_0} \ne \emptyset \), one more \( \rulename{\exists E} \) names \( a_0 \in A_{i_0} \). The graph of \( c' \) together with the pair \( (i_0, a_0) \), with codomain \( \bigcup_{i \in I} A_i \), is a function on \( I' \cup \{i_0\} = I \), because \( i_0 \notin I' \); and it is a choice function. So \( P(n + 1) \) holds, and @fd1:ax-induction gives \( P(n) \) for every \( n \in \nN \). Each step uses two \( \rulename{\exists E} \)'s and no new principle; the induction says nothing about an infinite \( I \), which has no number of elements.
 
 **A rule that picks.** If one description names an element of each \( A_i \), the choice function is defined by specification (W1), as the set of pairs \( (i, a) \) with \( a \) the element named for \( i \). Typical rules: the **least element** of a non-empty set of natural numbers (@thm-well-ordering); the **non-negative** square root of a positive real; in a bisection, **the left half** if it has the property in question, and otherwise the right half. The first rule is how @thm-countable-characterizations passed from a surjection \( \nN \to A \) to an injection \( A \to \nN \) with no axiom: the least preimage is named, not chosen.
 
@@ -72,7 +72,7 @@ Two kinds of construction look like choice and are not; telling them apart from 
 
 ## Right inverses
 
-The first consequence settles the question Section 6.5 left open. By @prp-right-inverse-surjective, a function with a right inverse is surjective; the converse is where choice enters.
+The first consequence settles the question Section 1.5 left open. By @prp-right-inverse-surjective, a function with a right inverse is surjective; the converse is where choice enters.
 
 ::: {#thm-surjection-right-inverse}
 [Surjections Have Right Inverses]
@@ -111,7 +111,7 @@ Now the theorem the section opened with. The second form, with any countable ind
 :::
 
 ::: {.idea}
-This is the grid of the opening, with the lists supplied by the axiom. ① Throw away the empty sets: the axiom needs non-empty ones, and they add nothing to the union. ② For each remaining \( n \), the surjections \( \nN \to A_n \) form a non-empty set; choose one from each, all at once. ③ The chosen lists turn the grid \( J \times \nN \) into a surjection onto the union, and the grid is countable by Section 8.2. Part (b) is part (a) after renumbering the index set by a list.
+This is the grid of the opening, with the lists supplied by the axiom. ① Throw away the empty sets: the axiom needs non-empty ones, and they add nothing to the union. ② For each remaining \( n \), the surjections \( \nN \to A_n \) form a non-empty set; choose one from each, all at once. ③ The chosen lists turn the grid \( J \times \nN \) into a surjection onto the union, and the grid is countable by Section 3.2. Part (b) is part (a) after renumbering the index set by a list.
 
 *Before reading on: which line uses choice, and why can \( \rulename{\exists E} \) not replace it?*
 :::
@@ -125,7 +125,7 @@ Suppose \( J \ne \emptyset \). For \( n \in J \), let
 \[
 S_n \coloneqq \{ h \in A_n^{\nN} : h \text{ is surjective} \} ,
 \]
-the set of surjections \( \nN \to A_n \) (@def-set-builder, with \( A_n^{\nN} \) the set of functions of Section 6.4). Since \( A_n \) is countable and non-empty, \( S_n \ne \emptyset \) (@def-countable). **By @ax-choice**, applied to the family \( (S_n)_{n \in J} \), there is a function \( c \colon J \to \bigcup_{n \in J} S_n \) with \( c(n) \in S_n \) for every \( n \in J \). This is the only line of the proof that uses the axiom.
+the set of surjections \( \nN \to A_n \) (@def-set-builder, with \( A_n^{\nN} \) the set of functions of Section 1.4). Since \( A_n \) is countable and non-empty, \( S_n \ne \emptyset \) (@def-countable). **By @ax-choice**, applied to the family \( (S_n)_{n \in J} \), there is a function \( c \colon J \to \bigcup_{n \in J} S_n \) with \( c(n) \in S_n \) for every \( n \in J \). This is the only line of the proof that uses the axiom.
 
 Define \( F \colon J \times \nN \to U \) by \( F(n, m) \coloneqq c(n)(m) \). It takes values in \( U \): \( c(n) \) maps into \( A_n \subseteq U \). It is surjective: let \( x \in U \); then \( x \in A_n \) for some \( n \in \nN \) (@def-family-union-intersection), so \( A_n \ne \emptyset \) and \( n \in J \); since \( c(n) \) is a surjection onto \( A_n \), there is \( m \in \nN \) with \( c(n)(m) = x \), that is, \( F(n, m) = x \).
 
@@ -136,7 +136,7 @@ The set \( J \) is countable by @prp-countable-subset, as a subset of \( \nN \),
 
 The line in bold is the only use of the axiom. The surjections \( s \) of parts (a) and (b) are single objects, each named by one \( \rulename{\exists E} \). What needed the axiom was a surjection **for every** \( n \in J \) at once: \( \rulename{\exists E} \) supplies \( c(n) \) only inside the box of a fixed \( n \), and \( F \) needs all of them outside every such box. The set \( J \) is there because for \( A_n = \emptyset \) there is no function \( \nN \to A_n \) at all (@prp-empty-function (b)), so \( S_n = \emptyset \). The theorem completes the closure properties of countable sets: subsets, images, finite products, countable unions.
 
-Neither hypothesis can be dropped: Section 8.4 shows that \( \nR \) is not countable, and \( \nR \) is the union of the single set \( \nR \), and also of the countable sets \( \{x\} \), \( x \in \nR \).
+Neither hypothesis can be dropped: Section 3.4 shows that \( \nR \) is not countable, and \( \nR \) is the union of the single set \( \nR \), and also of the countable sets \( \{x\} \), \( x \in \nR \).
 
 ::: {.warning}
 **The choice is of the lists, not of preimages.** A surjection \( \nN \to A \) gives least preimages by a rule (@thm-countable-characterizations), but only once the surjection is **in hand**. In @thm-countable-union, what is missing is the surjection itself, one for each \( A_n \), and the sets \( A_n \) need not be sets of natural numbers, so no "least" is available to name one.
@@ -198,7 +198,7 @@ Let \( \mathrm{Alg} \) be the set of algebraic real numbers, and for \( d \ge 1 
 *Step 3.* By definition, \( \mathrm{Alg} = \bigcup_{d \in \nZ_{>0}} \mathrm{Alg}_d \). The index set \( \nZ_{>0} \subseteq \nN \) is countable (@prp-countable-subset). So \( \mathrm{Alg} \) is countable by @thm-countable-union (b).
 :::
 
-The proof cites @thm-countable-union twice, and so it uses @ax-choice. Here the axiom can be avoided (not proved in the text; nothing later uses it): list each finite root set in increasing order, which is a rule, and replace the two unions by one fixed enumeration of all integer coefficient tuples. Exercise C2 asks you to carry this out. The countability of \( \mathrm{Alg} \) has a striking consequence once we know that \( \nR \) is not countable: Section 8.4 deduces that some real numbers are not algebraic.
+The proof cites @thm-countable-union twice, and so it uses @ax-choice. Here the axiom can be avoided (not proved in the text; nothing later uses it): list each finite root set in increasing order, which is a rule, and replace the two unions by one fixed enumeration of all integer coefficient tuples. Exercise C2 asks you to carry this out. The countability of \( \mathrm{Alg} \) has a striking consequence once we know that \( \nR \) is not countable: Section 3.4 deduces that some real numbers are not algebraic.
 
 ## Exercises
 
@@ -276,7 +276,7 @@ g(k, s)(n) \coloneqq s\bigl(\sigma_1(n)\bigr) \frown \sigma_2(n) .
 \]
 By @thm-recursion there is a function \( k \mapsto s_k \) from \( \nN \) to \( X \) with \( s_0 = a \) and \( s_{k+1}(n) = s_k(\sigma_1(n)) \frown \sigma_2(n) \) for all \( k, n \in \nN \).
 
-*Claim: for every \( k \in \nN \), \( s_k \) maps \( \nN \) onto \( \mathrm{Seq}_k \).* By @ax-induction on \( k \). For \( k = 0 \), every value of \( s_0 \) is \( \emptyset \), and \( \mathrm{Seq}_0 = \{\emptyset\} \). Assume the claim for \( k \). Each value \( s_{k+1}(n) = s_k(\sigma_1(n)) \frown \sigma_2(n) \) has length \( k + 1 \), because \( s_k(\sigma_1(n)) \) has length \( k \). Let \( y \in \mathrm{Seq}_{k+1} \), say \( y = x \frown m \) with \( x \in \mathrm{Seq}_k \). By the hypothesis there is \( j \) with \( s_k(j) = x \), and since \( \sigma \) is onto there is \( n \) with \( \sigma(n) = (j, m) \). Then \( s_{k+1}(n) = s_k(j) \frown m = y \). This proves the claim.
+*Claim: for every \( k \in \nN \), \( s_k \) maps \( \nN \) onto \( \mathrm{Seq}_k \).* By @fd1:ax-induction on \( k \). For \( k = 0 \), every value of \( s_0 \) is \( \emptyset \), and \( \mathrm{Seq}_0 = \{\emptyset\} \). Assume the claim for \( k \). Each value \( s_{k+1}(n) = s_k(\sigma_1(n)) \frown \sigma_2(n) \) has length \( k + 1 \), because \( s_k(\sigma_1(n)) \) has length \( k \). Let \( y \in \mathrm{Seq}_{k+1} \), say \( y = x \frown m \) with \( x \in \mathrm{Seq}_k \). By the hypothesis there is \( j \) with \( s_k(j) = x \), and since \( \sigma \) is onto there is \( n \) with \( \sigma(n) = (j, m) \). Then \( s_{k+1}(n) = s_k(j) \frown m = y \). This proves the claim.
 
 Now \( n \mapsto s_{\sigma_1(n)}(\sigma_2(n)) \) maps \( \nN \) onto \( \mathrm{Seq} \): for \( y \in \mathrm{Seq}_k \), the claim gives \( j \) with \( s_k(j) = y \), and some \( n \) has \( \sigma(n) = (k, j) \). So \( \mathrm{Seq} \) is countable. One surjection was named, and the lists \( s_k \) were defined from it by recursion: no choice is used. Either route earns full credit if the use of choice is reported correctly.
 :::
@@ -364,7 +364,7 @@ Fatal errors (0 for the step): citing @thm-countable-union, which uses the axiom
 :::
 
 ::: {.solution}
-(a) We use @ax-induction on the number of elements of \( I \). Let \( P(n) \) be: "for every set \( I \) with \( n \) elements and every family \( (A_i)_{i \in I} \) of countable sets, \( \bigcup_{i \in I} A_i \) is countable".
+(a) We use @fd1:ax-induction on the number of elements of \( I \). Let \( P(n) \) be: "for every set \( I \) with \( n \) elements and every family \( (A_i)_{i \in I} \) of countable sets, \( \bigcup_{i \in I} A_i \) is countable".
 
 *Base case.* A set \( I \) with \( 0 \) elements is empty, so \( \bigcup_{i \in I} A_i = \emptyset \), which is countable.
 
@@ -372,33 +372,33 @@ Fatal errors (0 for the step): citing @thm-countable-union, which uses the axiom
 \[
 \bigcup_{i \in I} A_i = B \cup A_{i_0} ,
 \]
-which is countable by @prp-union-two-countable. So \( P(n + 1) \) holds, and @ax-induction gives \( P(n) \) for every \( n \). Each step makes finitely many \( \rulename{\exists E} \)'s, so no choice is used.
+which is countable by @prp-union-two-countable. So \( P(n + 1) \) holds, and @fd1:ax-induction gives \( P(n) \) for every \( n \). Each step makes finitely many \( \rulename{\exists E} \)'s, so no choice is used.
 
 (b) The induction proves the statement for each finite number \( n \) of sets, and \( \nN \) is not finite (@exm-hilbert-hotel), so no instance of \( P(n) \) is about the family \( (A_n)_{n \in \nN} \). Writing \( \bigcup_{n \in \nN} A_n \) as the union of the finite unions \( A_0 \cup \dots \cup A_k \) does not help, since that needs a list of every finite union at once, which is a choice of infinitely many lists again.
 :::
 
 <!-- dependency ledger
-ax-choice (claim): no rule makes infinitely many choices; a proof is finite | def-rules-existential (cited); ch06 Section 6.5
+ax-choice (claim): no rule makes infinitely many choices; a proof is finite | def-rules-existential (cited); F2.1 §05
 ax-choice (claim): independence (Goedel 1938, Cohen 1963); Zorn, well-ordering theorem | F2.4 (Zorn stated), ST.4 (equivalences proved), ST.5 (independence) (prose pointers)
-ax-choice (claim): uses in Section 8.6, Chapters 11, 43, 67, 69 | Section 8.6, ch11, ch43, ch67, ch69 (prose pointers)
-ax-choice (claim): (remark) sup approximation, one exists-E per n | ch11 (prose pointer; flagged there)
-ax-choice (example): (0, 1) has no least element | Ch 7 Section 7.1, halving as for (0, 1]
-ax-choice (claim): positive reals have non-negative square roots | school fact (Part 0 convention); proved in Ch 11
-ax-choice (example): 0 | k iff k = 0 | def-divides (Ch 7), silent
-ax-choice (claim): (finite case) 0 elements gives empty; n + 1 elements gives non-empty | def-finite (Section 8.1)
+ax-choice (claim): uses in F2.3 §06, AN1.1, MT.1, FA.3, FA.5 | F2.3 §06, AN1.1, MT.1, FA.3, FA.5 (prose pointers)
+ax-choice (claim): (remark) sup approximation, one exists-E per n | AN1.1 (prose pointer; flagged there)
+ax-choice (example): (0, 1) has no least element | F2.2 §01, halving as for (0, 1]
+ax-choice (claim): positive reals have non-negative square roots | school fact (Part 0 convention); proved in AN1.1
+ax-choice (example): 0 | k iff k = 0 | def-divides (F2.2), silent
+ax-choice (claim): (finite case) 0 elements gives empty; n + 1 elements gives non-empty | def-finite (F2.3 §01)
 thm-surjection-right-inverse (claim): equivalence with the axiom | inline sketch; ST.4 (prose pointer)
 thm-countable-union (proof): N is countable | def-countable, identity map
-thm-countable-union (claim): R is not countable | Section 8.4 (prose pointer)
-exm-choice-free-unions (solution): Q = {m/n : m in Z, n in Z_{>0}} | Ch 7 Section 7.1
+thm-countable-union (claim): R is not countable | F2.3 §04 (prose pointer)
+exm-choice-free-unions (solution): Q = {m/n : m in Z, n in Z_{>0}} | F2.2 §01
 exm-choice-free-unions (solution): injection to list by recursion from least elements | lem-subsets-of-naturals, thm-well-ordering (cited)
 thm-algebraic-countable (proof): non-zero integer polynomial of degree <= d has <= d real roots | school fact (factor theorem), stated as not proved here
 thm-algebraic-countable (claim): choice avoidable for Alg | inline sketch; C2 (pointer); unused
 thm-algebraic-countable (claim): sqrt 2 + sqrt 3 is a root of x^4 - 10x^2 + 1 | verify/ch08/thm-algebraic-countable.py
 exr-countable-unions-and-choice-a1 (solution): F(3, 2) = 4 | verify/ch08/exr-countable-unions-and-choice-a1.py
 exr-countable-unions-and-choice-b1 (solution): n < n + 1/2 < n + 1 | school fact; verify/ch08/exr-countable-unions-and-choice-b1.py
-exr-countable-unions-and-choice-b1 (solution): y > 0 has square roots sqrt y > 0 and -sqrt y | school fact (Part 0 convention); proved in Ch 11
-exr-countable-unions-and-choice-b2 (solution): Seq_k in bijection with N^k | characteristic property of tuples (Ch 6)
+exr-countable-unions-and-choice-b1 (solution): y > 0 has square roots sqrt y > 0 and -sqrt y | school fact (Part 0 convention); proved in AN1.1
+exr-countable-unions-and-choice-b2 (solution): Seq_k in bijection with N^k | characteristic property of tuples (F2.1)
 exr-countable-unions-and-choice-b3 (solution): two points lie on exactly one line | school geometry
 exr-countable-unions-and-choice-c1 (solution): N is countable | def-countable, identity map
-exr-countable-unions-and-choice-c2 (solution): inverse of the bijection z | thm-bijection-iff-inverse (Ch 6), silent
+exr-countable-unions-and-choice-c2 (solution): inverse of the bijection z | thm-bijection-iff-inverse (F2.1), silent
 -->

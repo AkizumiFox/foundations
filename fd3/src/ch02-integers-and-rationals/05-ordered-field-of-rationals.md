@@ -1,10 +1,10 @@
 # The Rationals as an Ordered Field; the Archimedean Property
 
-Section 10.4 built \( \nQ \) as a set of classes of fractions and proved that it is a field (@thm-rationals-field): we can add, subtract, multiply, and divide by anything non-zero. What it did not give us is an order. In school one "sees" that \( -3/5 < -7/12 \) by placing both on a line, but the line is the school picture this volume has set aside, so the order must be defined on the classes and its rules proved. This section does that, by the method of Section 10.3: name the positive rationals, check two closure properties, and let @prp-order-from-positives produce the rest. Then we prove the first fact about \( \nQ \) that later chapters of this volume lean on at every turn: every rational is exceeded by a natural number, and so \( 1/n \) eventually drops below any positive rational. Finally every rational gets an integer part.
+Section 2.4 built \( \nQ \) as a set of classes of fractions and proved that it is a field (@thm-rationals-field): we can add, subtract, multiply, and divide by anything non-zero. What it did not give us is an order. In school one "sees" that \( -3/5 < -7/12 \) by placing both on a line, but the line is the school picture this volume has set aside, so the order must be defined on the classes and its rules proved. This section does that, by the method of Section 2.3: name the positive rationals, check two closure properties, and let @prp-order-from-positives produce the rest. Then we prove the first fact about \( \nQ \) that later chapters of this volume lean on at every turn: every rational is exceeded by a natural number, and so \( 1/n \) eventually drops below any positive rational. Finally every rational gets an integer part.
 
 ## Which fractions are positive
 
-Throughout, a rational is written as in Section 10.4. By @prp-integers-embed-rationals (b), every \( x \in \nQ \) is \( p/q \) for some \( p \in \nZ \) and \( q \in \nZ_{>0} \), where \( p/q \) is the class \( [(p, q)] \), and \( p/q = r/s \) if and only if \( ps = rq \). The integers sit inside \( \nQ \) as \( m = m/1 \), and the natural numbers inside the integers.
+Throughout, a rational is written as in Section 2.4. By @prp-integers-embed-rationals (b), every \( x \in \nQ \) is \( p/q \) for some \( p \in \nZ \) and \( q \in \nZ_{>0} \), where \( p/q \) is the class \( [(p, q)] \), and \( p/q = r/s \) if and only if \( ps = rq \). The integers sit inside \( \nQ \) as \( m = m/1 \), and the natural numbers inside the integers.
 
 The order of \( \nZ \) came from its positive set \( P_{\nZ} \) (@def-integer-order), and @prp-order-from-positives turned closure under \( + \) and \( \cdot \), together with a trichotomy, into all of (O1)–(O4). We do the same for \( \nQ \), so the whole question is: which fractions should count as positive? A first guess from school is "numerator and denominator have the same sign". But in \( \nQ \) the denominator is always positive. That was the decision recorded with @def-rationals-as-classes, and here it pays: the sign of a fraction is the sign of its numerator.
 
@@ -163,7 +163,7 @@ Find the midpoint of \( 1/3 \) and \( 1/2 \), and confirm with the comparison fo
 
 ## The Archimedean property
 
-Here is a statement so familiar that it seems not to need proof: every rational number is smaller than some natural number. For the real numbers it is a genuine theorem. Chapter 11 obtains it from the least upper bound axiom, and there are ordered fields, built from rational functions, in which the natural numbers are bounded above. For the constructed \( \nQ \) it is true for a simpler reason: every rational is a quotient of integers, and integers are as discrete as natural numbers.
+Here is a statement so familiar that it seems not to need proof: every rational number is smaller than some natural number. For the real numbers it is a genuine theorem. *Analysis on the Real Line*, Chapter 1 obtains it from the least upper bound axiom, and there are ordered fields, built from rational functions, in which the natural numbers are bounded above. For the constructed \( \nQ \) it is true for a simpler reason: every rational is a quotient of integers, and integers are as discrete as natural numbers.
 
 ::: {#thm-rationals-archimedean}
 [The Rationals Are Archimedean]
@@ -271,7 +271,7 @@ These questions are about the proof of @thm-rationals-ordered-field and about @c
 
 (d) By @prp-order-from-positives it is enough to show that the positive set is closed under \( + \) and \( \cdot \) and satisfies the trichotomy (P2). Each of these, run on representatives with positive denominators, is a statement about integer numerators, which holds because \( \nZ \) is an ordered ring.
 
-(e) The corollary: \( \forall \varepsilon \in \nQ_{>0} \ \exists n \in \nZ_{>0} \ \ 1/n < \varepsilon \). Swapped: \( \exists n \in \nZ_{>0} \ \forall \varepsilon \in \nQ_{>0} \ \ 1/n < \varepsilon \), "one \( n \) works for every \( \varepsilon \)". By @prp-bounded-quantifier-negation (the bounded form of @prp-quantifier-negation), applied twice, its negation is
+(e) The corollary: \( \forall \varepsilon \in \nQ_{>0} \ \exists n \in \nZ_{>0} \ \ 1/n < \varepsilon \). Swapped: \( \exists n \in \nZ_{>0} \ \forall \varepsilon \in \nQ_{>0} \ \ 1/n < \varepsilon \), "one \( n \) works for every \( \varepsilon \)". By @fd1:prp-bounded-quantifier-negation (the bounded form of @fd1:prp-quantifier-negation), applied twice, its negation is
 \[
 \forall n \in \nZ_{>0} \ \ \exists \varepsilon \in \nQ_{>0} \ \ \neg (1/n < \varepsilon) .
 \]
@@ -393,7 +393,7 @@ Here is an argument for @thm-rationals-archimedean. Is the conclusion true? Is t
 ::: {.solution}
 The conclusion is **true**: it is @thm-rationals-archimedean. The argument is **not** correct.
 
-*The failing line is (3).* It cites the general "fact" that \( p/q \le p \) whenever \( q \ge 1 \). That is neither proved in this chapter nor true, so the line rests on nothing: entry (N9) of @exm-not-allowed-catalogue. What is true, and what the proof of the theorem uses, is the special case \( p \ge 0 \).
+*The failing line is (3).* It cites the general "fact" that \( p/q \le p \) whenever \( q \ge 1 \). That is neither proved in this chapter nor true, so the line rests on nothing: entry (N9) of @fd1:exm-not-allowed-catalogue. What is true, and what the proof of the theorem uses, is the special case \( p \ge 0 \).
 
 *Counterexample to the step.* \( p = -3 \), \( q = 2 \): then \( q \ge 1 \), but \( x = -3/2 > -3 = p \). Indeed the comparison formula gives \( -3/1 < -3/2 \), because \( (-3) \cdot 2 = -6 < -3 = (-3) \cdot 1 \). There is no counterexample to the conclusion.
 
@@ -423,7 +423,7 @@ cor-rationals-archimedean-epsilon (proof): inverses in a field are unique, so 1/
 prp-rational-integer-part (proof): totality of <= on Q (not x < m gives m <= x) | prp-ordered-ring-rules (i), cited
 prp-rational-integer-part (proof): the order of Q restricted to Z is that of Z, so prp-integer-least-element applies to S | thm-rationals-ordered-field (b), cited in the paragraph after the proof
 prp-rational-integer-part (claim): floor(p/q) is the quotient of division with remainder | a later chapter of this volume (F3.5, prose pointer; nothing depends on it)
-thm-rationals-archimedean (claim): for R the property needs the least upper bound axiom; ordered fields of rational functions with N bounded above | Ch 11 (prose pointer; nothing here depends on it)
+thm-rationals-archimedean (claim): for R the property needs the least upper bound axiom; ordered fields of rational functions with N bounded above | AN1.1 (prose pointer; nothing here depends on it)
 prp-reciprocal-order (claim): (the midpoint paragraph after it) a + a = (1 + 1) a; (a + b)/2 = (a + b) * 2^{-1} | def-commutative-ring-and-field (distributivity, a/b := a b^{-1})
 exr-ordered-field-of-rationals-a1 (solution): numerals and products such as (-2) * 5 = -10 in Z | omega arithmetic (def-omega-arithmetic) carried by iota (prp-naturals-embed-integers) and signs by prp-ring-algebra (c); verify/ch10/exr-ordered-field-of-rationals-a1.py
 exr-ordered-field-of-rationals-b1 (solution): integer products -36, -35, -49, -48, -21, -20 | as above; verify/ch10/exr-ordered-field-of-rationals-b1.py

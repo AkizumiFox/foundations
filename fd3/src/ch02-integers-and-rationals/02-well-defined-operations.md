@@ -1,12 +1,12 @@
 # Well-Definedness, and the Arithmetic of the Integers
 
-Section 10.1 built \( \nZ \) as the set of classes of \( \sim \) on \( \nN \times \nN \), and gave each integer a normal form (@prp-integer-normal-form). The integers cannot yet be added. Every operation on classes will be defined by a formula on representatives, and Section 7.5 showed what can go wrong: a formula that gives two answers for one class (@exm-ill-defined-class-map). This section proves, once and for all, the lemma that says when such a formula defines a function. It then uses the lemma for the sum, product and negative of integers, and finds a copy of \( \nN \) inside \( \nZ \).
+Section 2.1 built \( \nZ \) as the set of classes of \( \sim \) on \( \nN \times \nN \), and gave each integer a normal form (@prp-integer-normal-form). The integers cannot yet be added. Every operation on classes will be defined by a formula on representatives, and *Sets, Relations, and Cardinality*, Section 2.5 showed what can go wrong: a formula that gives two answers for one class (@fd2:exm-ill-defined-class-map). This section proves, once and for all, the lemma that says when such a formula defines a function. It then uses the lemma for the sum, product and negative of integers, and finds a copy of \( \nN \) inside \( \nZ \).
 
 ## Definitions through representatives
 
-In Section 7.5 the addition of \( \nZ/n \) was defined by \( [a] + [b] \coloneqq [a + b] \), and @prp-congruence-arithmetic checked that the right side depends only on the classes, not on the integers \( a \) and \( b \) used to name them. In @exm-ill-defined-class-map the same kind of formula, \( [a]_6 \mapsto [a]_4 \), gave one class two values, and so defined no function.
+In *Sets, Relations, and Cardinality*, Section 2.5 the addition of \( \nZ/n \) was defined by \( [a] + [b] \coloneqq [a + b] \), and @fd2:prp-congruence-arithmetic checked that the right side depends only on the classes, not on the integers \( a \) and \( b \) used to name them. In @fd2:exm-ill-defined-class-map the same kind of formula, \( [a]_6 \mapsto [a]_4 \), gave one class two values, and so defined no function.
 
-The same situation will recur throughout this volume: for \( \nZ \) in this section, for \( \nQ \) in Section 10.4, and for \( \nR \) later in this volume. Each time, a set is a quotient \( X/{\sim} \), and something is defined on it by a formula on elements of \( X \). Rather than repeat the argument of @prp-congruence-arithmetic for every formula, we separate it into two parts: a general lemma, proved here once, which turns a **check on representatives** into a function on classes; and the check itself, which is different for each formula and is all that remains to do each time.
+The same situation will recur throughout this volume: for \( \nZ \) in this section, for \( \nQ \) in Section 2.4, and for \( \nR \) later in this volume. Each time, a set is a quotient \( X/{\sim} \), and something is defined on it by a formula on elements of \( X \). Rather than repeat the argument of @fd2:prp-congruence-arithmetic for every formula, we separate it into two parts: a general lemma, proved here once, which turns a **check on representatives** into a function on classes; and the check itself, which is different for each formula and is all that remains to do each time.
 
 A rule "\( [x] \mapsto \) something computed from \( x \)" is called **well defined** when representatives of the same class always give the same result. The lemma below says that well defined is exactly what is needed, in three settings: a map from one quotient to another, a binary operation on a quotient, and a property of classes.
 
@@ -33,10 +33,10 @@ Then there is **exactly one** function \( G \colon (X/{\sim}) \times (X/{\sim}) 
 :::
 :::
 
-In words: (a) says that a map on elements that respects the two relations passes to a map on classes; (b) says that a binary operation that respects \( \sim \) **in each argument separately** passes to an operation on classes; (c) says that a property that respects \( \sim \) can be asked of a class, and the answer is the answer for any of its representatives. Clause (a) will give the negative of an integer, (b) its sum and product, and (c) the positive integers in Section 10.3.
+In words: (a) says that a map on elements that respects the two relations passes to a map on classes; (b) says that a binary operation that respects \( \sim \) **in each argument separately** passes to an operation on classes; (c) says that a property that respects \( \sim \) can be asked of a class, and the answer is the answer for any of its representatives. Clause (a) will give the negative of an integer, (b) its sum and product, and (c) the positive integers in Section 2.3.
 
 ::: {.idea}
-A function is a graph with **exactly one** output for each input (@def-function). The obvious graph is the set of all pairs \( ([x], [f(x)]) \). It has at least one output for each class, because every class is some \( [x] \). The only danger is two outputs for one class, coming from two representatives \( x \) and \( x' \) of it; @thm-classes-partition (b) turns "same class" into \( x \sim x' \), the hypothesis turns that into \( f(x) \approx f(x') \), and @thm-classes-partition (b) turns it back into "same output". For (b) the same plan works, once the two one-argument hypotheses are chained into one statement about both arguments by transitivity.
+A function is a graph with **exactly one** output for each input (@fd2:def-function). The obvious graph is the set of all pairs \( ([x], [f(x)]) \). It has at least one output for each class, because every class is some \( [x] \). The only danger is two outputs for one class, coming from two representatives \( x \) and \( x' \) of it; @fd2:thm-classes-partition (b) turns "same class" into \( x \sim x' \), the hypothesis turns that into \( f(x) \approx f(x') \), and @fd2:thm-classes-partition (b) turns it back into "same output". For (b) the same plan works, once the two one-argument hypotheses are chained into one statement about both arguments by transitivity.
 :::
 
 ::: {.proof}
@@ -44,19 +44,19 @@ A function is a graph with **exactly one** output for each input (@def-function)
 \[
 G_F \coloneqq \{ (C, D) \in (X/{\sim}) \times (Y/{\approx}) : C = [x] \text{ and } D = [f(x)] \text{ for some } x \in X \} ,
 \]
-a set by specification (@def-set-builder). We check the two clauses of @def-function. (Fn1): every \( C \in X/{\sim} \) is \( [x] \) for some \( x \in X \) (@def-quotient-set), and then \( (C, [f(x)]) \in G_F \). (Fn2): suppose \( (C, D) \in G_F \) and \( (C, D') \in G_F \), say \( C = [x] \), \( D = [f(x)] \), and \( C = [x'] \), \( D' = [f(x')] \). Then \( [x] = [x'] \), so \( x \sim x' \) by @thm-classes-partition (b). By the hypothesis, \( f(x) \approx f(x') \), so \( [f(x)] = [f(x')] \) by @thm-classes-partition (b), that is, \( D = D' \). So \( F \), the function with graph \( G_F \) and codomain \( Y/{\approx} \), is a function \( X/{\sim} \to Y/{\approx} \), and \( F([x]) = [f(x)] \) because \( ([x], [f(x)]) \in G_F \).
+a set by specification (@fd2:def-set-builder). We check the two clauses of @fd2:def-function. (Fn1): every \( C \in X/{\sim} \) is \( [x] \) for some \( x \in X \) (@fd2:def-quotient-set), and then \( (C, [f(x)]) \in G_F \). (Fn2): suppose \( (C, D) \in G_F \) and \( (C, D') \in G_F \), say \( C = [x] \), \( D = [f(x)] \), and \( C = [x'] \), \( D' = [f(x')] \). Then \( [x] = [x'] \), so \( x \sim x' \) by @fd2:thm-classes-partition (b). By the hypothesis, \( f(x) \approx f(x') \), so \( [f(x)] = [f(x')] \) by @fd2:thm-classes-partition (b), that is, \( D = D' \). So \( F \), the function with graph \( G_F \) and codomain \( Y/{\approx} \), is a function \( X/{\sim} \to Y/{\approx} \), and \( F([x]) = [f(x)] \) because \( ([x], [f(x)]) \in G_F \).
 
-For uniqueness, let \( F' \colon X/{\sim} \to Y/{\approx} \) also satisfy \( F'([x]) = [f(x)] \) for every \( x \). Every \( C \in X/{\sim} \) is some \( [x] \), and then \( F'(C) = [f(x)] = F(C) \). The two functions have the same domain and codomain, so \( F' = F \) by @prp-function-equality.
+For uniqueness, let \( F' \colon X/{\sim} \to Y/{\approx} \) also satisfy \( F'([x]) = [f(x)] \) for every \( x \). Every \( C \in X/{\sim} \) is some \( [x] \), and then \( F'(C) = [f(x)] = F(C) \). The two functions have the same domain and codomain, so \( F' = F \) by @fd2:prp-function-equality.
 
 *(b)* First, for all \( x, x', y, y' \in X \) with \( x \sim x' \) and \( y \sim y' \),
 \[
 g(x, y) \sim g(x', y) \quad \text{and} \quad g(x', y) \sim g(x', y') ,
 \]
-by the first hypothesis (with \( y \) fixed) and the second (with \( x' \) fixed). By transitivity, (Eq3) of @def-equivalence-relation, \( g(x, y) \sim g(x', y') \).
+by the first hypothesis (with \( y \) fixed) and the second (with \( x' \) fixed). By transitivity, (Eq3) of @fd2:def-equivalence-relation, \( g(x, y) \sim g(x', y') \).
 
-Now let \( G_G \) be the set of \( (P, E) \in \bigl((X/{\sim}) \times (X/{\sim})\bigr) \times (X/{\sim}) \) such that \( P = ([x], [y]) \) and \( E = [g(x, y)] \) for some \( x, y \in X \), a set by specification. (Fn1): an element of \( (X/{\sim}) \times (X/{\sim}) \) is a pair \( (C, D) \) of classes (@def-cartesian-product), and \( C = [x] \), \( D = [y] \) for some \( x, y \in X \) (@def-quotient-set); then \( ((C, D), [g(x, y)]) \in G_G \). (Fn2): suppose \( (P, E) \) and \( (P, E') \) lie in \( G_G \), with \( P = ([x], [y]) \), \( E = [g(x, y)] \), and \( P = ([x'], [y']) \), \( E' = [g(x', y')] \). From \( ([x], [y]) = ([x'], [y']) \) the characteristic property of pairs (@def-ordered-pair) gives \( [x] = [x'] \) and \( [y] = [y'] \), so \( x \sim x' \) and \( y \sim y' \) by @thm-classes-partition (b). By the first paragraph, \( g(x, y) \sim g(x', y') \), so \( E = E' \) by @thm-classes-partition (b). So \( G_G \), with codomain \( X/{\sim} \), defines a function \( G \) with \( G([x], [y]) = [g(x, y)] \). Uniqueness is as in (a), by @prp-function-equality.
+Now let \( G_G \) be the set of \( (P, E) \in \bigl((X/{\sim}) \times (X/{\sim})\bigr) \times (X/{\sim}) \) such that \( P = ([x], [y]) \) and \( E = [g(x, y)] \) for some \( x, y \in X \), a set by specification. (Fn1): an element of \( (X/{\sim}) \times (X/{\sim}) \) is a pair \( (C, D) \) of classes (@fd2:def-cartesian-product), and \( C = [x] \), \( D = [y] \) for some \( x, y \in X \) (@fd2:def-quotient-set); then \( ((C, D), [g(x, y)]) \in G_G \). (Fn2): suppose \( (P, E) \) and \( (P, E') \) lie in \( G_G \), with \( P = ([x], [y]) \), \( E = [g(x, y)] \), and \( P = ([x'], [y']) \), \( E' = [g(x', y')] \). From \( ([x], [y]) = ([x'], [y']) \) the characteristic property of pairs (@fd2:def-ordered-pair) gives \( [x] = [x'] \) and \( [y] = [y'] \), so \( x \sim x' \) and \( y \sim y' \) by @fd2:thm-classes-partition (b). By the first paragraph, \( g(x, y) \sim g(x', y') \), so \( E = E' \) by @fd2:thm-classes-partition (b). So \( G_G \), with codomain \( X/{\sim} \), defines a function \( G \) with \( G([x], [y]) = [g(x, y)] \). Uniqueness is as in (a), by @fd2:prp-function-equality.
 
-*(c)* \( (\Leftarrow) \) If \( x \in S \), then \( [x] \in \bar S \) by the definition of \( \bar S \). \( (\Rightarrow) \) If \( [x] \in \bar S \), then \( [x] = [x'] \) for some \( x' \in S \). By @thm-classes-partition (b), \( x \sim x' \), so \( x' \sim x \) by (Eq2). The hypothesis, applied to \( x' \sim x \) and \( x' \in S \), gives \( x \in S \).
+*(c)* \( (\Leftarrow) \) If \( x \in S \), then \( [x] \in \bar S \) by the definition of \( \bar S \). \( (\Rightarrow) \) If \( [x] \in \bar S \), then \( [x] = [x'] \) for some \( x' \in S \). By @fd2:thm-classes-partition (b), \( x \sim x' \), so \( x' \sim x \) by (Eq2). The hypothesis, applied to \( x' \sim x \) and \( x' \in S \), gives \( x \in S \).
 
 This proves the theorem.
 :::
@@ -166,7 +166,7 @@ Every check happens in the hypotheses of the lemma. Here they fail, next to a ru
 :::
 
 ::: {.solution}
-(a) No. \( (0, 2) \sim (1, 3) \), since \( 0 + 3 = 2 + 1 \), so \( [(0, 2)] = [(1, 3)] \) by @thm-classes-partition (b). Read with the representative \( (0, 2) \), the rule gives \( 0 \); read with \( (1, 3) \), it gives \( 1 \). One input gets two values, and (Fn2) of @def-function fails. The hypothesis of @thm-well-defined-on-classes (a) (with equality on \( \nN \) as \( \approx \), whose classes are single numbers) fails at \( x = (0, 2) \), \( x' = (1, 3) \).
+(a) No. \( (0, 2) \sim (1, 3) \), since \( 0 + 3 = 2 + 1 \), so \( [(0, 2)] = [(1, 3)] \) by @fd2:thm-classes-partition (b). Read with the representative \( (0, 2) \), the rule gives \( 0 \); read with \( (1, 3) \), it gives \( 1 \). One input gets two values, and (Fn2) of @fd2:def-function fails. The hypothesis of @thm-well-defined-on-classes (a) (with equality on \( \nN \) as \( \approx \), whose classes are single numbers) fails at \( x = (0, 2) \), \( x' = (1, 3) \).
 
 (b) Yes. Let \( (a, b) \sim (a', b') \), so \( a + b' = a' + b \). Then
 \[
@@ -183,7 +183,7 @@ by @thm-omega-arithmetic-laws (b), (c), which is \( (a + 1, b) \sim (a' + 1, b')
 
 ## The natural numbers inside the integers
 
-The integers were built to contain the natural numbers and more. They do not literally contain them: the natural number \( 0 \) is the empty set (@def-omega-arithmetic (c)), while every integer is a non-empty class (@thm-classes-partition (a)), so \( 0 \notin \nZ \). What \( \nZ \) contains is a **copy** of \( \nN \), the classes in normal form \( [(n, 0)] \), and the copy has the same arithmetic.
+The integers were built to contain the natural numbers and more. They do not literally contain them: the natural number \( 0 \) is the empty set (@def-omega-arithmetic (c)), while every integer is a non-empty class (@fd2:thm-classes-partition (a)), so \( 0 \notin \nZ \). What \( \nZ \) contains is a **copy** of \( \nN \), the classes in normal form \( [(n, 0)] \), and the copy has the same arithmetic.
 
 ::: {#prp-naturals-embed-integers}
 [The Natural Numbers Embed in the Integers]
@@ -205,7 +205,7 @@ Every claim is a computation with the formulas of @def-integer-operations on pai
 :::
 
 ::: {.proof}
-*(a)* If \( \iota(m) = \iota(n) \), then \( [(m, 0)] = [(n, 0)] \), so \( m = n \) by @prp-integer-normal-form (b); hence \( \iota \) is injective (@def-injective). By @def-integer-operations,
+*(a)* If \( \iota(m) = \iota(n) \), then \( [(m, 0)] = [(n, 0)] \), so \( m = n \) by @prp-integer-normal-form (b); hence \( \iota \) is injective (@fd2:def-injective). By @def-integer-operations,
 \[
 \iota(m) + \iota(n) = [(m + n, \ 0 + 0)] = [(m + n, 0)] = \iota(m + n) ,
 \]
@@ -224,13 +224,13 @@ by @thm-omega-arithmetic-laws (e) (\( 1 \cdot n = n \), \( 0 \cdot n = 0 \)) and
 *(c)* \( (\supseteq) \) Both sets on the right consist of integers. \( (\subseteq) \) Let \( x \in \nZ \). By @prp-integer-normal-form (a), \( x = [(k, 0)] \) or \( x = [(0, k)] \) for some \( k \in \nN \). In the first case \( x = \iota(k) \). In the second, \( x = [(0, k)] = -[(k, 0)] = -\iota(k) \) by @def-integer-operations. So \( x \) lies in the right side.
 :::
 
-**Identification.** From now on we write \( n \) for \( \iota(n) \) and regard \( \nN \) as a subset of \( \nZ \). This is a convenient abuse of notation, and (a) makes it honest: because \( \iota \) is injective, different natural numbers stay different; because \( \iota \) preserves \( + \) and \( \cdot \), a sum or product of natural numbers is the same whether computed in \( \nN \) or in \( \nZ \). One could rebuild \( \nZ \) so that it contains \( \nN \) literally, by putting each \( n \) in place of \( \iota(n) \), but nothing later needs it. The order of \( \nN \) is matched to an order on \( \nZ \) in Section 10.3.
+**Identification.** From now on we write \( n \) for \( \iota(n) \) and regard \( \nN \) as a subset of \( \nZ \). This is a convenient abuse of notation, and (a) makes it honest: because \( \iota \) is injective, different natural numbers stay different; because \( \iota \) preserves \( + \) and \( \cdot \), a sum or product of natural numbers is the same whether computed in \( \nN \) or in \( \nZ \). One could rebuild \( \nZ \) so that it contains \( \nN \) literally, by putting each \( n \) in place of \( \iota(n) \), but nothing later needs it. The order of \( \nN \) is matched to an order on \( \nZ \) in Section 2.3.
 
-With this convention, (b) reads \( [(a, b)] = a + (-b) \): the pair \( (a, b) \) records the difference it was meant to record. The notation \( a - b \) is defined in Section 10.3, where \( x - y \coloneqq x + (-y) \) is set up in every ring at once. Clause (c) reads
+With this convention, (b) reads \( [(a, b)] = a + (-b) \): the pair \( (a, b) \) records the difference it was meant to record. The notation \( a - b \) is defined in Section 2.3, where \( x - y \coloneqq x + (-y) \) is set up in every ring at once. Clause (c) reads
 \[
 \nZ = \nN \cup \{ -n : n \in \nN \} ,
 \]
-which is word for word the definition of the integers in Section 7.1. There it was a definition inside the familiar real numbers; here it is a theorem about a set built from \( \omega \). The positive integers keep the definition of Section 7.1,
+which is word for word the definition of the integers in *Sets, Relations, and Cardinality*, Section 2.1. There it was a definition inside the familiar real numbers; here it is a theorem about a set built from \( \omega \). The positive integers keep the definition of *Sets, Relations, and Cardinality*, Section 2.1,
 \[
 \nZ_{>0} \coloneqq \{ n \in \nN : n \ne 0 \} ,
 \]
@@ -244,7 +244,7 @@ Compute \( [(2, 5)] \cdot [(4, 1)] \) from @def-integer-operations, and write th
 \( [(2, 5)] \cdot [(4, 1)] = [(2 \cdot 4 + 5 \cdot 1, \ 2 \cdot 1 + 5 \cdot 4)] = [(13, 22)] \). By @prp-integer-normal-form (a): \( 5 = 2 + 3 \), so \( [(2, 5)] = [(0, 3)] = -3 \); \( 4 = 1 + 3 \), so \( [(4, 1)] = [(3, 0)] = 3 \); and \( 22 = 13 + 9 \), so \( [(13, 22)] = [(0, 9)] = -9 \). So the product of \( -3 \) and \( 3 \) is \( -9 \), as school predicts; here it is a computation in \( \nN \), not a rule of signs.
 :::
 
-The integers now have a sum, a product and a negative, each a function on classes, and they contain a copy of \( \nN \) with its arithmetic. Section 10.3 checks that these operations obey the usual laws, by reducing each law to a law of \( \nN \), and defines the order.
+The integers now have a sum, a product and a negative, each a function on classes, and they contain a copy of \( \nN \) with its arithmetic. Section 2.3 checks that these operations obey the usual laws, by reducing each law to a law of \( \nN \), and defines the order.
 
 ## Exercises
 
@@ -335,11 +335,11 @@ which is \( (2a, 2b) \sim (2a', 2b') \); @thm-well-defined-on-classes (a) applie
 :::
 
 ::: {.solution}
-(a) *Proof.* Let \( x \in X \). If \( x \in S \), then \( [x] \in \bar S \) by the definition of \( \bar S \). Conversely, if \( [x] \in \bar S \), there is \( x' \in S \) with \( [x] = [x'] \); then \( x \sim x' \) (@thm-classes-partition (b)), so \( x' \sim x \) by symmetry, and the hypothesis on \( S \), applied to \( x' \sim x \) and \( x' \in S \), gives \( x \in S \).
+(a) *Proof.* Let \( x \in X \). If \( x \in S \), then \( [x] \in \bar S \) by the definition of \( \bar S \). Conversely, if \( [x] \in \bar S \), there is \( x' \in S \) with \( [x] = [x'] \); then \( x \sim x' \) (@fd2:thm-classes-partition (b)), so \( x' \sim x \) by symmetry, and the hypothesis on \( S \), applied to \( x' \sim x \) and \( x' \in S \), gives \( x \in S \).
 
 *Example.* Let \( S \coloneqq \{ (a, b) \in \nN \times \nN : a = 0 \} \). Then \( (0, 0) \in S \), so \( [(0, 0)] \in \bar S \); and \( [(1, 1)] = [(0, 0)] \), so \( [(1, 1)] \in \bar S \), but \( (1, 1) \notin S \). The hypothesis fails at \( (0, 0) \sim (1, 1) \). Any example must contain a pair of \( S \) and an equivalent pair outside \( S \), since that is exactly the negation of the hypothesis.
 
-(b) *Example.* On \( \nN \), let \( x \sim y \) mean "\( x = 0 \) if and only if \( y = 0 \)". This is an equivalence relation: it says that \( x \) and \( y \) have the same value under the function sending \( 0 \) to \( 0 \) and every other number to \( 1 \), so it is an equivalence relation by @exm-fibres-of-function. Its two classes are \( \{0\} \) and \( \nN \setminus \{0\} \). Let
+(b) *Example.* On \( \nN \), let \( x \sim y \) mean "\( x = 0 \) if and only if \( y = 0 \)". This is an equivalence relation: it says that \( x \) and \( y \) have the same value under the function sending \( 0 \) to \( 0 \) and every other number to \( 1 \), so it is an equivalence relation by @fd2:exm-fibres-of-function. Its two classes are \( \{0\} \) and \( \nN \setminus \{0\} \). Let
 \[
 g(x, y) \coloneqq
 \begin{cases}
@@ -375,17 +375,17 @@ So the two forms are interchangeable. The one-at-a-time form is the one to check
 :::
 
 <!-- dependency ledger
-thm-well-defined-on-classes (proof): a function is (graph, codomain); defining F by its graph and codomain | def-function (cited), Ch 6 Section 6.4
-thm-well-defined-on-classes (proof): substitution of equals (C = [x] and C = [x'] give [x] = [x']) | def-rules-equality (Ch 4 Section 4.7), used silently
+thm-well-defined-on-classes (proof): a function is (graph, codomain); defining F by its graph and codomain | def-function (cited), F2.1 §04
+thm-well-defined-on-classes (proof): substitution of equals (C = [x] and C = [x'] give [x] = [x']) | def-rules-equality (F1.4 §07), used silently
 thm-well-defined-on-classes (claim): (remark) 0 < 1, so (1, 1) in S and (0, 0) not in S | thm-omega-order (a), (d), used silently
 def-integer-operations (claim): (heuristic) school identities for (a - b) + (c - d), (a - b)(c - d), -(a - b) | school algebra, labelled a heuristic; no proof uses it
 prp-integer-operations-well-defined (proof): rearrangements of sums of four terms, and multiplying an equation by c | thm-omega-arithmetic-laws (cited) and substitution of equals; verify/ch10/prp-integer-operations-well-defined.py
 exm-ill-defined-first-coordinate (solution): 0 + 3 = 2 + 1; 0 != 1 | numeral arithmetic by def-omega-arithmetic; distinct numerals; verify/ch10/exm-ill-defined-first-coordinate.py
 def-integer-operations (claim): (warning) 1 + 1 = 0 + 2; 1 + 2 != 0 + 2; [(0, 1)] * [(0, 1)] under the twisted rule | numeral arithmetic; verify/ch10/def-integer-operations.py
 prp-naturals-embed-integers (claim): (identification) 0 is the empty set and not an integer | def-omega-arithmetic (c), thm-classes-partition (a) (cited)
-prp-naturals-embed-integers (claim): (identification) Z>0 recalled from Section 7.1; 5 + x = 3 solved by -2 | ch07 Section 7.1 definition (recalled in prose); prp-integer-normal-form (a) (cited); verify/ch10/prp-naturals-embed-integers.py
-prp-naturals-embed-integers (claim): order on Z matches order on N | Section 10.3 (prose pointer, paid by thm-integers-ordered-ring (a); nothing here depends on it)
-prp-naturals-embed-integers (claim): a - b := a + (-b) | Section 10.3 (prose pointer, paid by def-commutative-ring-and-field; nothing here depends on it)
+prp-naturals-embed-integers (claim): (identification) Z>0 recalled from F2.2 §01; 5 + x = 3 solved by -2 | F2.2 §01 definition (recalled in prose); prp-integer-normal-form (a) (cited); verify/ch10/prp-naturals-embed-integers.py
+prp-naturals-embed-integers (claim): order on Z matches order on N | F3.2 §03 (prose pointer, paid by thm-integers-ordered-ring (a); nothing here depends on it)
+prp-naturals-embed-integers (claim): a - b := a + (-b) | F3.2 §03 (prose pointer, paid by def-commutative-ring-and-field; nothing here depends on it)
 def-integer-operations (claim): (check) [(2, 5)] * [(4, 1)] = [(13, 22)] = -9 | numeral arithmetic; verify/ch10/def-integer-operations.py
 exr-well-defined-operations-a1 (solution): numerical run of the key proof | numeral arithmetic; verify/ch10/exr-well-defined-operations-a1.py
 exr-well-defined-operations-b2 (solution): 2n = n + n; counterexample values | thm-omega-arithmetic-laws (d), (e) (cited); verify/ch10/exr-well-defined-operations-b2.py

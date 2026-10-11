@@ -1236,19 +1236,19 @@ The converse is not derivable, but a search can only stall, not show it. With \(
 
 <!-- dependency ledger
 finding-derivations-method (claim): the goal-directed steps and step 5 never turn a derivable gap into an underivable one | inline (argued in the text from def-derivable and one appended elimination step; LEM split by adding a premise)
-finding-derivations-method (claim): P or Q |- Q or P is derivable but neither disjunct follows from P or Q alone | derivability: @exm-disjunction-first-derivations; the non-derivation of the disjuncts: informal, ch03 (promised; soundness) makes it exact; nothing depends on it
+finding-derivations-method (claim): P or Q |- Q or P is derivable but neither disjunct follows from P or Q alone | derivability: @exm-disjunction-first-derivations; the non-derivation of the disjuncts: informal, F1.3 (promised; soundness) makes it exact; nothing depends on it
 def-partial-derivation (example): filling a gap adds lines only above its current goal, so an open box at the bottom cannot be repaired | inline (from the definition)
-exm-search-postpone-or (example): neither disjunct follows from the premise (two rows) | informal, ch03 (promised; thm-soundness); the example does not depend on it
+exm-search-postpone-or (example): neither disjunct follows from the premise (two rows) | informal, F1.3 (promised; thm-soundness); the example does not depend on it
 exm-search-postpone-or (example): LEM on P also succeeds, with a nested or-E, in 22 lines | inline description; not used
 exm-search-raa (example): LEM on P leaves the method stuck again in the case not-P | inline (steps 2-4 read off the resources); not used
 exm-search-raa (example): in the paragraph on prp-peirce after it, assuming not-Q at the stalled gap of Peirce's search gives no clash | inline (the resources listed); not used
-finding-derivations-failed-search (claim): no derivation of Q -> P from P -> Q exists | not claimed as proved; ch03 (promised; cor-refuting-row), the chapter's closing question
-exm-skeleton-odd-product (example): every integer is even or odd, and not both; m = 2k gives mn = 2(kn) | school algebra, ch11 (promised)
-exm-skeleton-odd-product (example): "say m = 2k" names a witness | ch04 (promised; rules for "there exists"), flagged in prose
-exr-finding-derivations-a1 (solution): (b) naming n uses a rule for "there exists" | ch04 (promised), flagged in prose
+finding-derivations-failed-search (claim): no derivation of Q -> P from P -> Q exists | not claimed as proved; F1.3 (promised; cor-refuting-row), the chapter's closing question
+exm-skeleton-odd-product (example): every integer is even or odd, and not both; m = 2k gives mn = 2(kn) | school algebra, AN1.1 (promised)
+exm-skeleton-odd-product (example): "say m = 2k" names a witness | F1.4 (promised; rules for "there exists"), flagged in prose
+exr-finding-derivations-a1 (solution): (b) naming n uses a rule for "there exists" | F1.4 (promised), flagged in prose
 exr-finding-derivations-b1 (solution): no derivation of P from not(P -> Q) avoids RAA | stated without proof and marked so; nothing depends on it
-exr-finding-derivations-c2 (solution): neither disjunct is derivable from no premises (rows) | informal, ch03 (promised; soundness); the solution says it proves only that the method needs step 5
+exr-finding-derivations-c2 (solution): neither disjunct is derivable from no premises (rows) | informal, F1.3 (promised; soundness); the solution says it proves only that the method needs step 5
 exr-finding-derivations-c3 (solution): the LEM-on-P route is 11 lines; our route by LEM on Q uses a second classical step in the case Q | inline description (the route is given in words); the second is a remark in the marking scheme about a route, not claimed as a necessity
-exr-finding-derivations-r1 (solution): a >= b or a < b for real numbers; b + a = a + b | school algebra, ch11 (promised)
-exr-finding-derivations-r3 (solution): the converse is not derivable (row P = R = false) | ch03 (promised; cor-refuting-row), flagged in the solution
+exr-finding-derivations-r1 (solution): a >= b or a < b for real numbers; b + a = a + b | school algebra, AN1.1 (promised)
+exr-finding-derivations-r3 (solution): the converse is not derivable (row P = R = false) | F1.3 (promised; cor-refuting-row), flagged in the solution
 -->

@@ -1,10 +1,10 @@
 # The Integers as Classes of Pairs
 
-Chapter 9 built the natural numbers as the set \( \omega \), with its \( 0 \), \( + \), \( \cdot \) and \( < \), and proved the laws of arithmetic, the order and well-ordering from the axioms for sets. From this chapter on, \( \nN \) **means** that set (@cor-omega-identification and the citing rule of Section 9.7). In \( \nN \) the equation \( 5 + x = 3 \) has no solution: \( 5 \le 5 + x \) for every \( x \in \nN \) by @prp-omega-order-arithmetic (a), while \( 3 < 5 \). This section builds a larger set \( \nZ \), out of \( \nN \) alone, with the one tool of Section 7.5: the quotient of a set by an equivalence relation.
+Chapter 1 built the natural numbers as the set \( \omega \), with its \( 0 \), \( + \), \( \cdot \) and \( < \), and proved the laws of arithmetic, the order and well-ordering from the axioms for sets. From this chapter on, \( \nN \) **means** that set (@cor-omega-identification and the citing rule of Section 1.7). In \( \nN \) the equation \( 5 + x = 3 \) has no solution: \( 5 \le 5 + x \) for every \( x \in \nN \) by @prp-omega-order-arithmetic (a), while \( 3 < 5 \). This section builds a larger set \( \nZ \), out of \( \nN \) alone, with the one tool of *Sets, Relations, and Cardinality*, Section 2.5: the quotient of a set by an equivalence relation.
 
 ## What we use about the natural numbers
 
-Every fact about \( \nN \) in this section and the next is one of the following results of Chapter 9, and each use cites its label.
+Every fact about \( \nN \) in this section and the next is one of the following results of Chapter 1, and each use cites its label.
 
 - **Defining equations** (@def-omega-arithmetic): \( n + 0 = n \) and \( n \cdot 0 = 0 \), and the numerals \( 0 \coloneqq \emptyset \), \( 1 \), \( 2 \), ….
 - **Laws of arithmetic** (@thm-omega-arithmetic-laws): \( + \) and \( \cdot \) are commutative and associative, \( \cdot \) distributes over \( + \), and \( 0 + n = n \), \( 1 \cdot n = n \), \( 0 \cdot n = 0 \).
@@ -44,22 +44,22 @@ The set of **integers** is the quotient set
 \[
 \nZ \coloneqq (\nN \times \nN)/{\sim}
 \]
-of @def-quotient-set, and an **integer** is an element of \( \nZ \). The class of the pair \( (a, b) \) is written \( [(a, b)] \):
+of @fd2:def-quotient-set, and an **integer** is an element of \( \nZ \). The class of the pair \( (a, b) \) is written \( [(a, b)] \):
 \[
 [(a, b)] = \{ (c, d) \in \nN \times \nN : (c, d) \sim (a, b) \} .
 \]
 :::
 
-In words: two pairs are related when their **cross sums** agree, the first coordinate of each added to the second coordinate of the other. The relation is a subset of \( (\nN \times \nN) \times (\nN \times \nN) \), described by a property (@def-relation, @def-cartesian-product). An integer is one whole class: the set of all pairs that record the same difference. The notation \( [(a, b)] \) is the class notation \( [x] \) of @def-equivalence-class with \( x = (a, b) \); no new bracket is introduced.
+In words: two pairs are related when their **cross sums** agree, the first coordinate of each added to the second coordinate of the other. The relation is a subset of \( (\nN \times \nN) \times (\nN \times \nN) \), described by a property (@fd2:def-relation, @fd2:def-cartesian-product). An integer is one whole class: the set of all pairs that record the same difference. The notation \( [(a, b)] \) is the class notation \( [x] \) of @fd2:def-equivalence-class with \( x = (a, b) \); no new bracket is introduced.
 
-**Well-definedness.** @def-quotient-set is stated for an **equivalence relation**. Until \( \sim \) is shown to be one, the definition of \( \nZ \) is a plan, not a definition. The next proposition supplies the missing check, and it is placed directly after the definition for that reason.
+**Well-definedness.** @fd2:def-quotient-set is stated for an **equivalence relation**. Until \( \sim \) is shown to be one, the definition of \( \nZ \) is a plan, not a definition. The next proposition supplies the missing check, and it is placed directly after the definition for that reason.
 
-**An integer is a set of pairs.** It is not a natural number with a sign, and it is not a pair. Chapter 6 adopted the convention that a pair is not a number (after @def-ordered-pair), and on \( \omega \) that became a theorem, @prp-pair-not-natural. The same care is needed here: \( [(0, 2)] \) is the set \( \{ (0, 2), (1, 3), (2, 4), \dots \} \), and the school \( -2 \) is what those pairs have in common. The construction takes "what they have in common" to be **the set of them**.
+**An integer is a set of pairs.** It is not a natural number with a sign, and it is not a pair. *Sets, Relations, and Cardinality*, Chapter 1 adopted the convention that a pair is not a number (after @fd2:def-ordered-pair), and on \( \omega \) that became a theorem, @prp-pair-not-natural. The same care is needed here: \( [(0, 2)] \) is the set \( \{ (0, 2), (1, 3), (2, 4), \dots \} \), and the school \( -2 \) is what those pairs have in common. The construction takes "what they have in common" to be **the set of them**.
 
 ::: {#prp-integer-pairs-equivalence}
 [The Relation Behind the Integers]
 
-The relation \( \sim \) of @def-integers-as-classes is an equivalence relation on \( \nN \times \nN \) (@def-equivalence-relation).
+The relation \( \sim \) of @def-integers-as-classes is an equivalence relation on \( \nN \times \nN \) (@fd2:def-equivalence-relation).
 :::
 
 ::: {.idea}
@@ -69,7 +69,7 @@ Reflexivity and symmetry are rearrangements of one equation, by commutativity. T
 :::
 
 ::: {.proof}
-We check (Eq1)–(Eq3) of @def-equivalence-relation. Let \( (a, b), (c, d), (e, f) \in \nN \times \nN \).
+We check (Eq1)–(Eq3) of @fd2:def-equivalence-relation. Let \( (a, b), (c, d), (e, f) \in \nN \times \nN \).
 
 (Eq1) \( a + b = b + a \) by commutativity (@thm-omega-arithmetic-laws (b)), so \( (a, b) \sim (a, b) \).
 
@@ -90,7 +90,7 @@ This proves that \( \sim \) is an equivalence relation.
 
 The answer to the prompt is the last line of (Eq3). It is tempting to "subtract \( d \) from both sides" of the first hypothesis, or to "subtract \( c + d \)" at the end. Neither is a step in \( \nN \): the difference \( n - m \) of @prp-omega-order-arithmetic (a) exists only when \( m \le n \), and nothing tells us that, say, \( d \le b + c \) in the form we would need. Cancellation is the legal replacement for subtraction, and it holds for all \( k \), with no hypothesis.
 
-So \( \nZ = (\nN \times \nN)/{\sim} \) is now defined, and by @thm-classes-partition its elements partition \( \nN \times \nN \): every pair lies in exactly one integer, and \( [(a, b)] = [(c, d)] \) if and only if \( a + d = b + c \).
+So \( \nZ = (\nN \times \nN)/{\sim} \) is now defined, and by @fd2:thm-classes-partition its elements partition \( \nN \times \nN \): every pair lies in exactly one integer, and \( [(a, b)] = [(c, d)] \) if and only if \( a + d = b + c \).
 
 ## Pictures of classes
 
@@ -141,13 +141,13 @@ Each class is the set of lattice points on one diagonal line \( y = x + k \) or 
 \end{center}
 ```
 
-The picture shows the three classes as three diagonals: \( [(3, 5)] \) solid with filled dots, \( [(0, 0)] \) dashed with open dots, \( [(4, 1)] \) dotted with squares. Every lattice point lies on exactly one diagonal of this kind, which is @thm-classes-partition read in the picture. The class \( [(0, 0)] \) is the degenerate case: it is the integer zero, and it is the only class whose line passes through the origin.
+The picture shows the three classes as three diagonals: \( [(3, 5)] \) solid with filled dots, \( [(0, 0)] \) dashed with open dots, \( [(4, 1)] \) dotted with squares. Every lattice point lies on exactly one diagonal of this kind, which is @fd2:thm-classes-partition read in the picture. The class \( [(0, 0)] \) is the degenerate case: it is the integer zero, and it is the only class whose line passes through the origin.
 
 **A non-example by minimal change.** Replace the sums in the definition by products: on \( \nN \times \nN \), let \( (a, b) \approx (c, d) \) mean \( ad = bc \). This is still reflexive (\( ab = ba \)) and symmetric (\( ad = bc \) gives \( cb = da \)), both by commutativity of \( \cdot \) (@thm-omega-arithmetic-laws (f)). It is **not** transitive:
 \[
 (1, 1) \approx (0, 0), \qquad (0, 0) \approx (2, 1), \qquad \text{but} \qquad (1, 1) \not\approx (2, 1) ,
 \]
-since \( 1 \cdot 0 = 1 \cdot 0 \), \( 0 \cdot 1 = 0 \cdot 2 \) and \( 1 \cdot 1 \ne 1 \cdot 2 \). The clause that fails is (Eq3), and the line of the proof above that has no counterpart is cancellation. Additive cancellation holds for every \( k \); multiplicative cancellation (@prp-omega-order-arithmetic (f)) needs \( k \ne 0 \), and the pair \( (0, 0) \) supplies a middle factor that is \( 0 \). When Section 10.4 builds fractions with this product relation, it excludes zero second coordinates for exactly this reason.
+since \( 1 \cdot 0 = 1 \cdot 0 \), \( 0 \cdot 1 = 0 \cdot 2 \) and \( 1 \cdot 1 \ne 1 \cdot 2 \). The clause that fails is (Eq3), and the line of the proof above that has no counterpart is cancellation. Additive cancellation holds for every \( k \); multiplicative cancellation (@prp-omega-order-arithmetic (f)) needs \( k \ne 0 \), and the pair \( (0, 0) \) supplies a middle factor that is \( 0 \). When Section 2.4 builds fractions with this product relation, it excludes zero second coordinates for exactly this reason.
 
 ## Why this definition
 
@@ -155,7 +155,7 @@ since \( 1 \cdot 0 = 1 \cdot 0 \), \( 0 \cdot 1 = 0 \cdot 2 \) and \( 1 \cdot 1 
 
 **Why whole classes.** Each class has a simplest pair, one with a coordinate \( 0 \), as the next proposition shows. One could define \( \nZ \) as the set of these simplest pairs instead. But then the sum of \( (3, 0) \) and \( (0, 5) \) would have to be brought back to a simplest pair, \( (0, 2) \), by a subtraction in \( \nN \) in the right direction: the case analysis of the naive attempt returns. With classes, any representatives may be combined, and the equivalence relation absorbs the bookkeeping. The price is the check of the next section: a definition through representatives must not depend on which ones were used.
 
-**The degenerate class and the name.** The class of \( (0, 0) \) is the diagonal; it will be the zero of \( \nZ \). The word "integer" is Latin for "whole" or "untouched", a number not broken into fractions; Section 10.4 builds those.
+**The degenerate class and the name.** The class of \( (0, 0) \) is the diagonal; it will be the zero of \( \nZ \). The word "integer" is Latin for "whole" or "untouched", a number not broken into fractions; Section 2.4 builds those.
 
 The first result about the new set says that each class has exactly one simplest name.
 
@@ -176,9 +176,9 @@ The three cases are the three cases of trichotomy for \( a \) and \( b \), and @
 :::
 
 ::: {.proof}
-*(b)* Suppose \( [(m, 0)] = [(n, 0)] \). By @thm-classes-partition (b), \( (m, 0) \sim (n, 0) \), that is, \( m + 0 = 0 + n \). Since \( m + 0 = m \) (@def-omega-arithmetic (a)) and \( 0 + n = n \) (@thm-omega-arithmetic-laws (a)), \( m = n \). Likewise \( [(0, m)] = [(0, n)] \) gives \( 0 + n = m + 0 \), so \( n = m \).
+*(b)* Suppose \( [(m, 0)] = [(n, 0)] \). By @fd2:thm-classes-partition (b), \( (m, 0) \sim (n, 0) \), that is, \( m + 0 = 0 + n \). Since \( m + 0 = m \) (@def-omega-arithmetic (a)) and \( 0 + n = n \) (@thm-omega-arithmetic-laws (a)), \( m = n \). Likewise \( [(0, m)] = [(0, n)] \) gives \( 0 + n = m + 0 \), so \( n = m \).
 
-*(a), the three cases.* Let \( (a, b) \in \nN \times \nN \). By @thm-omega-order (a), exactly one of \( b < a \), \( a = b \), \( a < b \) holds. By @prp-omega-order-arithmetic (a), \( b < a \) holds if and only if \( a = b + k \) for some \( k \ne 0 \), and \( a < b \) if and only if \( b = a + k \) for some \( k \ne 0 \). So exactly one of the three listed conditions holds. In each case the stated equality of classes follows from @thm-classes-partition (b), once the two pairs are shown to be related:
+*(a), the three cases.* Let \( (a, b) \in \nN \times \nN \). By @thm-omega-order (a), exactly one of \( b < a \), \( a = b \), \( a < b \) holds. By @prp-omega-order-arithmetic (a), \( b < a \) holds if and only if \( a = b + k \) for some \( k \ne 0 \), and \( a < b \) if and only if \( b = a + k \) for some \( k \ne 0 \). So exactly one of the three listed conditions holds. In each case the stated equality of classes follows from @fd2:thm-classes-partition (b), once the two pairs are shown to be related:
 
 - if \( a = b + k \), then \( a + 0 = a = b + k \), so \( (a, b) \sim (k, 0) \);
 - if \( a = b \), then \( a + 0 = b + 0 \), so \( (a, b) \sim (0, 0) \);
@@ -186,13 +186,13 @@ The three cases are the three cases of trichotomy for \( a \) and \( b \), and @
 
 In particular every class contains a pair of the form \( (n, 0) \) or \( (0, n) \).
 
-*(a), only one such pair.* Let \( C \) be a class containing two such pairs \( p \) and \( p' \). Since both lie in \( C \), \( [p] = C = [p'] \) by @thm-classes-partition (b). If \( p = (m, 0) \) and \( p' = (n, 0) \), then \( m = n \) by (b), so \( p = p' \); likewise if both have the form \( (0, \cdot) \). This covers every case in which one of the pairs is \( (0, 0) \), since \( (0, 0) \) has both forms. There remains \( p = (k, 0) \) and \( p' = (0, l) \) with \( k \ne 0 \) and \( l \ne 0 \). Then \( p \sim p' \) says \( k + l = 0 + 0 = 0 \). Since \( l \ne 0 \), @prp-omega-order-arithmetic (a) gives \( k < 0 \); and since \( k = 0 + k \) (@thm-omega-arithmetic-laws (a)) with \( k \ne 0 \), it also gives \( 0 < k \). By transitivity \( k < k \), which @thm-omega-order (a) rules out. So this case cannot occur, and the pair is unique.
+*(a), only one such pair.* Let \( C \) be a class containing two such pairs \( p \) and \( p' \). Since both lie in \( C \), \( [p] = C = [p'] \) by @fd2:thm-classes-partition (b). If \( p = (m, 0) \) and \( p' = (n, 0) \), then \( m = n \) by (b), so \( p = p' \); likewise if both have the form \( (0, \cdot) \). This covers every case in which one of the pairs is \( (0, 0) \), since \( (0, 0) \) has both forms. There remains \( p = (k, 0) \) and \( p' = (0, l) \) with \( k \ne 0 \) and \( l \ne 0 \). Then \( p \sim p' \) says \( k + l = 0 + 0 = 0 \). Since \( l \ne 0 \), @prp-omega-order-arithmetic (a) gives \( k < 0 \); and since \( k = 0 + k \) (@thm-omega-arithmetic-laws (a)) with \( k \ne 0 \), it also gives \( 0 < k \). By transitivity \( k < k \), which @thm-omega-order (a) rules out. So this case cannot occur, and the pair is unique.
 :::
 
-So every integer has a **normal form**: it is \( [(n, 0)] \) for a unique \( n \in \nN \), or \( [(0, n)] \) for a unique \( n \in \nN \) with \( n \ne 0 \). In the picture, the normal form is where the class's diagonal meets an axis. The next section reads \( [(n, 0)] \) as the natural number \( n \) and \( [(0, n)] \) as its negative; this is how the description of Section 7.1, "an integer is a natural number or the negative of one", becomes a theorem about the constructed \( \nZ \).
+So every integer has a **normal form**: it is \( [(n, 0)] \) for a unique \( n \in \nN \), or \( [(0, n)] \) for a unique \( n \in \nN \) with \( n \ne 0 \). In the picture, the normal form is where the class's diagonal meets an axis. The next section reads \( [(n, 0)] \) as the natural number \( n \) and \( [(0, n)] \) as its negative; this is how the description of *Sets, Relations, and Cardinality*, Section 2.1, "an integer is a natural number or the negative of one", becomes a theorem about the constructed \( \nZ \).
 
 ::: {.warning}
-A property of a class must not be read off **one** representative. "The integer \( [(a, b)] \) is small when \( a \le 3 \)" sounds like a property of integers and is not one: \( [(3, 3)] = [(5, 5)] \), the first pair has \( a = 3 \le 3 \), and the second has \( a = 5 \). The class is "small" or not according to the name we happened to use. The property "\( [(a, b)] \) is positive when \( b < a \)" looks the same and happens to be safe: if \( (a, b) \sim (a', b') \) and \( b < a \), then \( b' < a' \). That needs a proof, and Section 10.3 gives it before it calls any integer positive.
+A property of a class must not be read off **one** representative. "The integer \( [(a, b)] \) is small when \( a \le 3 \)" sounds like a property of integers and is not one: \( [(3, 3)] = [(5, 5)] \), the first pair has \( a = 3 \le 3 \), and the second has \( a = 5 \). The class is "small" or not according to the name we happened to use. The property "\( [(a, b)] \) is positive when \( b < a \)" looks the same and happens to be safe: if \( (a, b) \sim (a', b') \) and \( b < a \), then \( b' < a' \). That needs a proof, and Section 2.3 gives it before it calls any integer positive.
 :::
 
 ::: {.check}
@@ -227,7 +227,7 @@ The set \( \nZ \) exists, and each element has a simplest name. It has no arithm
 
 (c) Subtraction in \( \nN \) is defined only when the smaller number is subtracted from the larger (@prp-omega-order-arithmetic (a)), and the proof does not know the sizes involved. Cancellation (@prp-omega-order-arithmetic (b)) holds for every \( k \in \nN \), so it is always legal.
 
-(d) True. \( (1, 1) \sim (5, 5) \) because \( 1 + 5 = 1 + 5 \), so the classes are equal by @thm-classes-partition (b). Both are the zero class \( [(0, 0)] \).
+(d) True. \( (1, 1) \sim (5, 5) \) because \( 1 + 5 = 1 + 5 \), so the classes are equal by @fd2:thm-classes-partition (b). Both are the zero class \( [(0, 0)] \).
 :::
 
 ### B. Practice
@@ -324,13 +324,13 @@ A proof of (b) that changes one argument at a time (first \( (a, b) \) to \( (a'
 def-integers-as-classes (claim): 5 + x = 3 has no solution in N: 5 <= 5 + x and 3 < 5 | prp-omega-order-arithmetic (a), thm-omega-order (a) (cited in the opening); trichotomy for the contradiction, used silently
 def-integers-as-classes (claim): (heuristic) a - b = c - d iff a + d = b + c in school arithmetic | school arithmetic, labelled a heuristic in the text; no proof uses it
 def-integers-as-classes (claim): (naive attempt) the case structure of signed addition | informal motivation; no proof uses it
-prp-integer-pairs-equivalence (proof): adding two equations: x = y and u = v give x + u = y + v | substitution of equals, def-rules-equality (Ch 4 Section 4.7), used silently
+prp-integer-pairs-equivalence (proof): adding two equations: x = y and u = v give x + u = y + v | substitution of equals, def-rules-equality (F1.4 §07), used silently
 prp-integer-pairs-equivalence (proof): rearranging four terms (a + d) + (c + f) = (a + f) + (c + d) | thm-omega-arithmetic-laws (b), (c) (cited); verify/ch10/prp-integer-pairs-equivalence.py
-exm-integer-pair-classes (solution): (x + 2) + 3 = x + 5; 2 + 3 = 5 and similar numeral sums | thm-omega-arithmetic-laws (c) (cited) and numeral arithmetic by def-omega-arithmetic (as in the Ch 9 Section 9.5 Quick check); verify/ch10/exm-integer-pair-classes.py
+exm-integer-pair-classes (solution): (x + 2) + 3 = x + 5; 2 + 3 = 5 and similar numeral sums | thm-omega-arithmetic-laws (c) (cited) and numeral arithmetic by def-omega-arithmetic (as in the F3.1 §05 Quick check); verify/ch10/exm-integer-pair-classes.py
 exm-integer-pair-classes (claim): (picture) every lattice point lies on exactly one diagonal | thm-classes-partition (cited)
 def-integers-as-classes (claim): (non-example) 1*0 = 1*0, 0*1 = 0*2, 1*1 != 1*2 | numeral arithmetic by def-omega-arithmetic, thm-omega-arithmetic-laws (e); verify/ch10/def-integers-as-classes.py
 def-integers-as-classes (claim): (check) cross sums 17 = 17, 12 != 22; 7 = 2 + 5, 15 = 10 + 5 | numeral arithmetic by def-omega-arithmetic; distinct numerals are distinct (thm-omega-order (a)); verify/ch10/def-integers-as-classes.py
-prp-integer-normal-form (claim): (warning) b < a and (a, b) ~ (a', b') give b' < a' | Section 10.3 (prose pointer, paid by def-integer-order; nothing here depends on it)
+prp-integer-normal-form (claim): (warning) b < a and (a, b) ~ (a', b') give b' < a' | F3.2 §03 (prose pointer, paid by def-integer-order; nothing here depends on it)
 exr-integers-as-classes-a1 (solution): 6 < 9; 9 = 3 + 6 | numeral arithmetic and order on omega; verify/ch10/exr-integers-as-classes-a1.py
 exr-integers-as-classes-b1 (solution): 0 != 2, 1 != 2 (distinct numerals) | thm-omega-order (a) (0 < 2 gives 0 != 2), used silently; verify/ch10/exr-integers-as-classes-b1.py
 exr-integers-as-classes-b1 (solution): rearrangements in (b), (c) | thm-omega-arithmetic-laws (b), (c) (cited); verify/ch10/exr-integers-as-classes-b1.py

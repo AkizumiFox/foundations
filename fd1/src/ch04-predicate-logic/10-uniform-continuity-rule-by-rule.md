@@ -4,7 +4,7 @@ This chapter opened with a question. Continuity and uniform continuity differ on
 
 ## Two definitions that differ in one place
 
-Let \( A \) be a set of real numbers and \( f \) a function defined on \( A \). We work over the domain \( \nR \), with \( f \) a one-place function symbol, \( \in A \) a one-place predicate symbol (Section 4.2), and \( \abs{\cdot} \) the absolute value. Chapters 15 and 16 define continuity and uniform continuity properly and develop them. Here the two definitions are only **quantifier patterns**, and nothing is used about \( f \) except that \( f(x) \) is a term. (A function symbol has a value at every real number; the values outside \( A \) are never used, because \( f \) is only applied to variables bounded by \( \in A \), as with sequences in Section 4.1.)
+Let \( A \) be a set of real numbers and \( f \) a function defined on \( A \). We work over the domain \( \nR \), with \( f \) a one-place function symbol, \( \in A \) a one-place predicate symbol (Section 4.2), and \( \abs{\cdot} \) the absolute value. *Analysis on the Real Line*, Chapters 5 and 6 define continuity and uniform continuity properly and develop them. Here the two definitions are only **quantifier patterns**, and nothing is used about \( f \) except that \( f(x) \) is a term. (A function symbol has a value at every real number; the values outside \( A \) are never used, because \( f \) is only applied to variables bounded by \( \in A \), as with sequences in Section 4.1.)
 
 \( f \) is **uniformly continuous on \( A \)** (UC) when
 \[
@@ -453,22 +453,22 @@ Fatal errors (0 for the step): \( \rulename{\forall I} \) on a name that appears
 :::
 
 <!-- dependency ledger
-exm-uniform-implies-continuous (example): continuity and uniform continuity used only as quantifier patterns; Chapters 15 and 16 own the definitions | prose pointer (Ch 15, Ch 16); nothing rests on it
+exm-uniform-implies-continuous (example): continuity and uniform continuity used only as quantifier patterns; AN1.5 and AN1.6 own the definitions | prose pointer (AN1.5, AN1.6); nothing rests on it
 exm-uniform-implies-continuous (claim): 17 lines with the unbounded rules | inline count: 11 lines + one per bounded step (six), as in prp-bounded-quantifier-rules' line saving
-exm-uniform-implies-continuous (claim): a derivation opening the boxes of eps_0 and delta_0 outside the box of x_0 ends in forall eps forall x exists delta (...), and C follows by exchanging the two bounded universals (also used in exr-uniform-continuity-rule-by-rule-b2's solution) | exm-universal-introduction-derivations (c) and the remark after it (Section 4.4, cited), carried out with prp-bounded-quantifier-rules
-exm-uniform-implies-continuous (claim): the prose may rename bound variables of UC | renaming of bound variables, Section 4.2 (prose); not used in the derivation
+exm-uniform-implies-continuous (claim): a derivation opening the boxes of eps_0 and delta_0 outside the box of x_0 ends in forall eps forall x exists delta (...), and C follows by exchanging the two bounded universals (also used in exr-uniform-continuity-rule-by-rule-b2's solution) | exm-universal-introduction-derivations (c) and the remark after it (F1.4 §04, cited), carried out with prp-bounded-quantifier-rules
+exm-uniform-implies-continuous (claim): the prose may rename bound variables of UC | renaming of bound variables, F1.4 §02 (prose); not used in the derivation
 exm-uniform-implies-continuous (solution): the Quick check before it: f(x) = x is uniformly continuous with delta = eps; 0 and delta/2 have different values | arithmetic; prp-arbitrarily-close-equal (cited)
-exm-converse-fails (claim): the two attempted lines break the side conditions of forall-I and exists-E | def-rules-universal, def-rules-existential, prp-bounded-quantifier-rules (side conditions as stated in Section 4.8)
-exm-converse-fails (claim): the same two blocks stopped the converse of prp-exists-forall-swap | prp-exists-forall-swap (Section 4.6, cited)
-exm-converse-fails (claim): no derivation of UC from C exists | Section 4.11 (prose pointer: counter-model and soundness statement); nothing here rests on it
-exm-square-not-uniform (solution): |y| <= |x| + |y - x|; |x + y| <= |x| + |y|; |x^2 - y^2| = |x - y| |x + y| | exm-triangle-inequality-cases (cited); |uv| = |u||v| exm-abs-product-cases (Ch 1), school algebra
-exm-square-not-uniform (solution): delta = min(1, eps/(2|x| + 1)) > 0 works; x = 1/delta, y = 1/delta + delta/2 give |x^2 - y^2| = (y - x)(y + x) = 1 + delta^2/4, the bars dropped since y > x > 0 | school algebra; |uv| = |u||v| exm-abs-product-cases (Ch 1); checked by verify/ch04/exm-square-not-uniform.py
-exm-square-not-uniform (claim): the real structure is a counter-model; Section 4.11 shows non-derivability | Section 4.11 (prose pointer); nothing here rests on it
+exm-converse-fails (claim): the two attempted lines break the side conditions of forall-I and exists-E | def-rules-universal, def-rules-existential, prp-bounded-quantifier-rules (side conditions as stated in F1.4 §08)
+exm-converse-fails (claim): the same two blocks stopped the converse of prp-exists-forall-swap | prp-exists-forall-swap (F1.4 §06, cited)
+exm-converse-fails (claim): no derivation of UC from C exists | F1.4 §11 (prose pointer: counter-model and soundness statement); nothing here rests on it
+exm-square-not-uniform (solution): |y| <= |x| + |y - x|; |x + y| <= |x| + |y|; |x^2 - y^2| = |x - y| |x + y| | exm-triangle-inequality-cases (cited); |uv| = |u||v| exm-abs-product-cases (F1.1), school algebra
+exm-square-not-uniform (solution): delta = min(1, eps/(2|x| + 1)) > 0 works; x = 1/delta, y = 1/delta + delta/2 give |x^2 - y^2| = (y - x)(y + x) = 1 + delta^2/4, the bars dropped since y > x > 0 | school algebra; |uv| = |u||v| exm-abs-product-cases (F1.1); checked by verify/ch04/exm-square-not-uniform.py
+exm-square-not-uniform (claim): the real structure is a counter-model; F1.4 §11 shows non-derivability | F1.4 §11 (prose pointer); nothing here rests on it
 exr-uniform-continuity-rule-by-rule-a1 (solution): |(3x + 1) - (3y + 1)| = 3|x - y| | school algebra; checked by verify/ch04/exr-uniform-continuity-rule-by-rule-a1.py
 exr-uniform-continuity-rule-by-rule-b1 (solution): eps/(L + 1) > 0 for L >= 0, eps > 0; L eps/(L + 1) < eps | arith lines (school algebra); checked by verify/ch04/exr-uniform-continuity-rule-by-rule-b1.py
 exr-uniform-continuity-rule-by-rule-b2 (solution): taking every delta > 0 to work is false in general | informal; illustrative
 exr-uniform-continuity-rule-by-rule-b3 (solution): |sqrt x - sqrt y| <= sqrt |x - y| for x, y >= 0; sqrt strictly increasing on [0, infinity) | stated in the item (school inequality); school fact; checked by verify/ch04/exr-uniform-continuity-rule-by-rule-b3.py
 exr-uniform-continuity-rule-by-rule-c1 (solution): the composite x -> g(f(x)) and the hypothesis f(x) in B for x in A | defined and stated in the item
 exr-uniform-continuity-rule-by-rule-c2 (solution): eta = min(delta/4, 1/2); 1/2 <= 1 - eta < 1 < 1 + eta <= 3/2; x <= b <= y gives |x - b|, |b - y| <= |x - y|; triangle inequality | school algebra; exm-triangle-inequality-cases (cited); checked by verify/ch04/exr-uniform-continuity-rule-by-rule-c2.py
-exr-uniform-continuity-rule-by-rule-c3 (solution): the two-element reading makes the premise true and the conclusion false | informal truth (Section 4.1); checked by verify/ch04/exr-uniform-continuity-rule-by-rule-c3.py; Section 4.11 (prose pointer) makes it a structure
+exr-uniform-continuity-rule-by-rule-c3 (solution): the two-element reading makes the premise true and the conclusion false | informal truth (F1.4 §01); checked by verify/ch04/exr-uniform-continuity-rule-by-rule-c3.py; F1.4 §11 (prose pointer) makes it a structure
 -->

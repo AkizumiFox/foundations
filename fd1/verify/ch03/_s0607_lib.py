@@ -11,7 +11,7 @@ import sys
 from pathlib import Path
 
 ROOT = Path(__file__).resolve().parents[2]
-sys.path.insert(0, str(ROOT / "tools"))
+sys.path.insert(0, str(ROOT / ".." / "tools"))
 import check_fitch as cf  # noqa: E402
 
 S06 = ROOT / "src/ch03-semantics-soundness-completeness/06-completeness.md"

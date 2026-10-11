@@ -738,21 +738,21 @@ Fatal errors (0 for the step): answering (b) with "the claim is false"; a "count
 <!-- dependency ledger
 def-rules-universal (claim): extension of def-derivation to flagged boxes; scope rule and availability unchanged | def-derivation (cited), extended inline in this section
 def-rules-universal (example): over Z, 2 is even and 1 is odd; 1 > 0 and 0 > 0 fails; over N, y_0 + 1 > y_0 | school arithmetic; checked by verify/ch04/def-rules-universal.py
-def-rules-universal (claim): "appear" includes the variable after a quantifier symbol | Section 4.2 (after def-free-variable), recalled
-def-rules-universal (claim): the box rule's last line must be a line of the box itself, as for ->I | def-derivation and def-rules-implication (Section 1.5), recalled
+def-rules-universal (claim): "appear" includes the variable after a quantifier symbol | F1.4 §02 (after def-free-variable), recalled
+def-rules-universal (claim): the box rule's last line must be a line of the box itself, as for ->I | def-derivation and def-rules-implication (F1.1 §05), recalled
 exm-universal-introduction-derivations (solution): (phi[z/y])[z_0/z] = phi[z_0/y] when z, z_0 do not appear in phi | inline (both replace exactly the free occurrences of y; argued in the text)
 exm-universal-introduction-derivations (solution): (psi[x_0/x])[y_0/y] = (psi[y_0/y])[x_0/x] for different x, y and flags x_0, y_0 different from each other and from x, y and not appearing in psi | inline (stated with its reason in the text)
-exm-universal-introduction-derivations (solution): z_0 not appearing in phi is free for y in phi | Section 4.2 (special cases after def-free-for), recalled
-prp-forall-and (claim): forall/vee holds in one direction only | Section 4.9 (prose pointer only, nothing here rests on it)
-universal-introduction-empty (example): VI is a derived rule usable as one line on first-order formulas | prp-vacuous-implication (cited), def-derived-rule (cited; extended to first-order formulas inline, Section 4.4), def-rule-schema (cited)
-universal-introduction-proof (example): (x - 1)^2 = x^2 - 2x + 1 | school algebra ("arith", as in Section 4.3); checked by verify/ch04/def-rules-universal.py
+exm-universal-introduction-derivations (solution): z_0 not appearing in phi is free for y in phi | F1.4 §02 (special cases after def-free-for), recalled
+prp-forall-and (claim): forall/vee holds in one direction only | F1.4 §09 (prose pointer only, nothing here rests on it)
+universal-introduction-empty (example): VI is a derived rule usable as one line on first-order formulas | prp-vacuous-implication (cited), def-derived-rule (cited; extended to first-order formulas inline, F1.4 §04), def-rule-schema (cited)
+universal-introduction-proof (example): (x - 1)^2 = x^2 - 2x + 1 | school algebra ("arith", as in F1.4 §03); checked by verify/ch04/def-rules-universal.py
 universal-introduction-errors (example): the warning's n = 1: 1 is odd and 1^2 = 1 is odd | school arithmetic
 universal-introduction-errors (example): quick check reading over Z with R as !=, c = 0, y_0 = 1 | school arithmetic; checked by verify/ch04/def-rules-universal.py
-universal-introduction-foreshadowing (claim): the domain is not empty | Section 4.1 (domain convention), recalled
+universal-introduction-foreshadowing (claim): the domain is not empty | F1.4 §01 (domain convention), recalled
 exr-universal-introduction-a1 (solution): readings over Z with P, Q "even" and x_0 = 2 | school arithmetic
-exr-universal-introduction-b2 (solution): a stalled search proves nothing; the converse is refuted in Section 4.11 | Section 4.11 (prose pointer only, nothing here rests on it)
+exr-universal-introduction-b2 (solution): a stalled search proves nothing; the converse is refuted in F1.4 §11 | F1.4 §11 (prose pointer only, nothing here rests on it)
 exr-universal-introduction-b3 (solution): the three universal arithmetic premises are true over R | stated as premises; school facts (as in exm-abs-at-least-x)
 exr-universal-introduction-c1 (solution): renaming the box's flag gives a derivation with the same last line | inline (checked line by line in the solution)
 exr-universal-introduction-c2 (solution): p(x) = x(x - 1)(x - 2) is 0 at 0, 1, 2 and -6 at -1; x^2 - 2x + 1 = (x - 1)^2 | school arithmetic; checked by verify/ch04/exr-universal-introduction-c2.py
-exr-universal-introduction-c2 (solution): legal steps never lead from true premises to a false conclusion | Section 4.11 (stated), optional Section 4.12 (proved); prose pointer only, nothing here rests on it (the illegality of (5) is shown directly in (b))
+exr-universal-introduction-c2 (solution): legal steps never lead from true premises to a false conclusion | F1.4 §11 (stated), optional F1.4 §12 (proved); prose pointer only, nothing here rests on it (the illegality of (5) is shown directly in (b))
 -->

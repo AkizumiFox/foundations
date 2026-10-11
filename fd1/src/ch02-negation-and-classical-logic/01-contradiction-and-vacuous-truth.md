@@ -638,14 +638,14 @@ Fatal errors (0 for the step): blaming line 7 or line 6 (they are correct once l
 :::
 
 <!-- dependency ledger
-def-rules-contradiction (claim): a line bot stands only where the premises and open assumptions cannot all hold, so bot-E never leads from true lines to a false one | ch03 (promised; soundness, thm-soundness), stated as a remark, used in no proof
-def-rules-contradiction (example): for reals, a >= b says the same as not(a < b) (exactly one of a < b, a >= b holds); a != b means not(a = b); x > 1 iff not(x <= 1); x <= 1 means (x < 1) or (x = 1) | school algebra (ch02 blueprint, Allowed prerequisites); ch11 (promised) proves the order facts
-exm-vacuous-square (example): x^2 >= 0 for real x, written not(x^2 < 0) | school algebra; ch11 (promised)
-thm-square-even-implies-even (proof): (E1) every integer is even or odd; (E2) no integer is both | school facts stated in the text (ch02 blueprint, Allowed prerequisites); ch07 (promised)
+def-rules-contradiction (claim): a line bot stands only where the premises and open assumptions cannot all hold, so bot-E never leads from true lines to a false one | F1.3 (promised; soundness, thm-soundness), stated as a remark, used in no proof
+def-rules-contradiction (example): for reals, a >= b says the same as not(a < b) (exactly one of a < b, a >= b holds); a != b means not(a = b); x > 1 iff not(x <= 1); x <= 1 means (x < 1) or (x = 1) | school algebra (F1.2 blueprint, Allowed prerequisites); AN1.1 (promised) proves the order facts
+exm-vacuous-square (example): x^2 >= 0 for real x, written not(x^2 < 0) | school algebra; AN1.1 (promised)
+thm-square-even-implies-even (proof): (E1) every integer is even or odd; (E2) no integer is both | school facts stated in the text (F1.2 blueprint, Allowed prerequisites); F2.2 (promised)
 thm-square-even-implies-even (proof): (E3) the square of an odd integer is odd | computed inline: (2k+1)^2 = 2(2k^2+2k)+1
-thm-square-even-implies-even (proof): instantiating (E1)-(E3) at n and n^2; naming k with n = 2k+1 | quantifier steps, used as school reasoning; ch04 (promised)
+thm-square-even-implies-even (proof): instantiating (E1)-(E3) at n and n^2; naming k with n = 2k+1 | quantifier steps, used as school reasoning; F1.4 (promised)
 exr-contradiction-and-vacuous-truth-b2 (solution): n = 2k gives n + 1 = 2k + 1, odd by the definition of odd | inline; (E1), (E2) as in the text
-exr-contradiction-and-vacuous-truth-b3 (solution): x^2 + 1 >= 1 > 0 for real x, and x^2 + 1 > 0 says not(x^2 + 1 <= 0); no real is both > 100 and < -100 | school algebra; ch11 (promised)
+exr-contradiction-and-vacuous-truth-b3 (solution): x^2 + 1 >= 1 > 0 for real x, and x^2 + 1 > 0 says not(x^2 + 1 <= 0); no real is both > 100 and < -100 | school algebra; AN1.1 (promised)
 exr-contradiction-and-vacuous-truth-c1 (solution): x != 1 means not(x = 1) | definition of the symbol, stated in the text
 exr-contradiction-and-vacuous-truth-c2 (solution): at x = -1, not(x > 0) holds and x = 7 fails | arithmetic
 -->

@@ -65,7 +65,7 @@ Prove that \( 1/n \to 0 \), for the sequence \( (1/n)_{n \ge 1} \). Annotate eac
 :::
 
 ::: {.solution}
-The sequence starts at \( n = 1 \), so the definition of Section 4.8 is read with \( N \) and \( n \) in \( \nZ_{>0} \) instead of \( \nN \): for every \( \varepsilon > 0 \) there is \( N \in \nZ_{>0} \) such that \( \abs{1/n - 0} < \varepsilon \) for every \( n \in \nZ_{>0} \) with \( n \ge N \). We use one school fact about the real numbers: for every real number \( u \) there is an integer greater than \( u \). (Chapter 11 proves it from the axioms of \( \nR \).)
+The sequence starts at \( n = 1 \), so the definition of Section 4.8 is read with \( N \) and \( n \) in \( \nZ_{>0} \) instead of \( \nN \): for every \( \varepsilon > 0 \) there is \( N \in \nZ_{>0} \) such that \( \abs{1/n - 0} < \varepsilon \) for every \( n \in \nZ_{>0} \) with \( n \ge N \). We use one school fact about the real numbers: for every real number \( u \) there is an integer greater than \( u \). (*Analysis on the Real Line*, Chapter 1 proves it from the axioms of \( \nR \).)
 
 Let \( \varepsilon > 0 \) [\( \rulename{\forall I} \), opening]. It suffices to find \( N \in \nZ_{>0} \) with
 \[
@@ -328,19 +328,19 @@ Another correct answer, for \( f(x) = x^2 \) on \( \nR \), is "for every \( x \)
 
 <!-- dependency ledger
 exm-rhetoric-universal (solution): |c - c| = 0 < eps | arithmetic
-exm-rhetoric-existential (solution): for every real u there is an integer N > u | school fact stated in the solution; Ch 11 thm-naturals-unbounded (prose pointer)
+exm-rhetoric-existential (solution): for every real u there is an integer N > u | school fact stated in the solution; AN1.1 thm-naturals-unbounded (prose pointer)
 exm-rhetoric-existential (solution): 1/eps > 0; N > 1/eps > 0 gives 1/N < eps; n >= N gives 0 < 1/n <= 1/N; eps = 0.03, N = 34 | school algebra; verify/ch05/exm-rhetoric-existential.py
 exm-rhetoric-existential (claim): the definition read with N, n in Z_{>0} | exm-translate-limit (a), restated in the solution
 exm-rhetoric-equality (solution): |u + v| <= |u| + |v|; |-u| = |u|; max{N1, N2} >= N1, N2 | exm-triangle-inequality-cases (cited); school facts
 exm-rhetoric-equality (solution): |L - M| < eps for all eps > 0 gives L = M | prp-arbitrarily-close-equal (cited)
 exm-rhetoric-equality (claim): |x - 2| < 1 gives 3 < x + 2 < 5, |x^2 - 4| <= 5|x - 2|; 2x + 3 = 7 iff x = 2 | school algebra; exm-abs-product-cases; verify/ch05/exm-rhetoric-equality.py
-exm-rhetoric-induction (solution): a^0 = 1, a^(n+1) = a^n a | powers, school meaning; ch07 (promised): def-power
+exm-rhetoric-induction (solution): a^0 = 1, a^(n+1) = a^n a | powers, school meaning; F2.2 (promised): def-power
 exm-rhetoric-induction (solution): products of positives; a^n a <= a^n <= 1; a^0 <= a fails for a < 1; |a - b| = max - min | school algebra; trichotomy; verify/ch05/exm-rhetoric-induction.py
 exm-rhetoric-induction (claim): the warning's max{2, 1} = 2; the subsection after it: x = y + 1 or x = 0 gives x^2 > y, and y = x^2 refutes exists x forall y | arithmetic; verify/ch05/exm-rhetoric-induction.py
 exr-quantifier-rhetoric-a1 (solution): -u <= |u|; L - L/2 = L/2 > 0 | exm-triangle-inequality-cases (its lemma); verify/ch05/exr-quantifier-rhetoric-a1.py
 exr-quantifier-rhetoric-b1 (solution): the witnesses M + 1, -y, 1 - y, |x - y|; 1 + delta^2/4 | exm-square-not-uniform (cited); school algebra; verify/ch05/exr-quantifier-rhetoric-b1.py
-exr-quantifier-rhetoric-b2 (solution): 5^0 = 1, 5^(n+1) = 5 * 5^n | powers, school meaning; ch07 (promised): def-power
-exr-quantifier-rhetoric-b2 (solution): 5^(n+1) - 1 = 5(5^n - 1) + 4 = 4(5k + 1); integers closed under + and * | school algebra; ch07 (promised): prp-integers-closed; verify/ch05/exr-quantifier-rhetoric-b2.py
+exr-quantifier-rhetoric-b2 (solution): 5^0 = 1, 5^(n+1) = 5 * 5^n | powers, school meaning; F2.2 (promised): def-power
+exr-quantifier-rhetoric-b2 (solution): 5^(n+1) - 1 = 5(5^n - 1) + 4 = 4(5k + 1); integers closed under + and * | school algebra; F2.2 (promised): prp-integers-closed; verify/ch05/exr-quantifier-rhetoric-b2.py
 exr-quantifier-rhetoric-c1 (solution): max, min of two reals; x >= y, x >= 0 give x^2 >= xy; x = -1, y = -2 | school algebra; trichotomy; verify/ch05/exr-quantifier-rhetoric-c1.py
 exr-quantifier-rhetoric-c2 (solution): an integer beyond 1/x | school fact of exm-rhetoric-existential; verify/ch05/exr-quantifier-rhetoric-c2.py
 exr-quantifier-rhetoric-c2 (solution): the other answer, x^2 continuous but not uniformly continuous on R | exm-square-not-uniform (cited)

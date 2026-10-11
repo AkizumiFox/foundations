@@ -45,7 +45,7 @@ Each entry names the error, the rule it breaks and where that rule lives, and a 
 :::
 :::
 
-An entry diagnoses a step, not the conclusion: a **false** instance shows the step leading from true premises to a false conclusion, and a **true** one that a correct conclusion does not excuse it. From Chapter 6 on, a warning about one of these errors cites the entry by number, as in "(N3) of @exm-not-allowed-catalogue". Some entries name errors met before: (N1) is the first error of Section 4.4's list, and two parts of (N11) are warnings of Section 4.9.
+An entry diagnoses a step, not the conclusion: a **false** instance shows the step leading from true premises to a false conclusion, and a **true** one that a correct conclusion does not excuse it. From *Sets, Relations, and Cardinality*, Chapter 1 on, a warning about one of these errors cites the entry by number, as in "(N3) of @exm-not-allowed-catalogue". Some entries name errors met before: (N1) is the first error of Section 4.4's list, and two parts of (N11) are warnings of Section 4.9.
 
 ::: {.check}
 Which entry does the sentence "choose \( N \) larger than every \( N_\varepsilon \), one for each \( \varepsilon > 0 \)" commit, and when is the same move **not** an error?
@@ -390,24 +390,24 @@ For (4), "\( \rulename{{\to}E} \) without its antecedent \( x \ne 0 \)" is also 
 :::
 
 <!-- dependency ledger
-exm-not-allowed-catalogue (claim): (the section's opening, "Two questions") rules never lead from true lines to a false one | thm-soundness (cited); Section 4.11's statement (from-counter-models-to-non-derivability; its proof in Section 4.12, optional)
-exm-not-allowed-catalogue (claim): (the Quick check after "Two questions") for integers n(n - 1) >= 0 since no integer lies strictly between 0 and 1; at n = 1/2 the product is -1/4 | school arithmetic of Z (ch07 promised in STATUS: "nothing between n and n + 1"); checked by verify/ch05/exm-not-allowed-catalogue.py
+exm-not-allowed-catalogue (claim): (the section's opening, "Two questions") rules never lead from true lines to a false one | thm-soundness (cited); F1.4 §11's statement (from-counter-models-to-non-derivability; its proof in F1.4 §12, optional)
+exm-not-allowed-catalogue (claim): (the Quick check after "Two questions") for integers n(n - 1) >= 0 since no integer lies strictly between 0 and 1; at n = 1/2 the product is -1/4 | school arithmetic of Z (F2.2 promised in STATUS: "nothing between n and n + 1"); checked by verify/ch05/exm-not-allowed-catalogue.py
 exm-not-allowed-catalogue (example): (N1) n^2 - n + 11 prime for n = 0..10 with the listed values, 121 = 11^2 at n = 11 | arithmetic; checked by verify/ch05/exm-not-allowed-catalogue.py
 exm-not-allowed-catalogue (example): (N2) x^2 not uniformly continuous on R | exm-square-not-uniform (cited)
 exm-not-allowed-catalogue (example): (N3)-(N11) instances: A = {-1, 1}; m = 2, n = 4; x = -2 (x^2 = 4 > 1, x < 1; x < 1 and x^2 = 4); 6 even, not a multiple of 4; |0| = 0; x = 1/2, x^2 = 1/4; n = 1; x = 0 for x > 2 -> x^2 > 4 and x <= 2 -> x^2 <= 4; |a_n - 0| >= eps for eps <= 0 | arithmetic and school order facts; checked by verify/ch05/exm-not-allowed-catalogue.py
-exm-not-allowed-catalogue (example): (N4) sibling boxes may share a witness name | Section 4.6 (the remark on two exists-E boxes in the cases of or-E, after exm-existential-elimination-derivations; unlabeled), def-rules-existential (cited)
+exm-not-allowed-catalogue (example): (N4) sibling boxes may share a witness name | F1.4 §06 (the remark on two exists-E boxes in the cases of or-E, after exm-existential-elimination-derivations; unlabeled), def-rules-existential (cited)
 exm-not-allowed-catalogue (example): (N6) the denying-the-antecedent pattern P -> Q, not P |- not Q has a refuting row (P false, Q true) | inline (one row, by def-truth-value); cor-refuting-row (cited); exm-affirming-the-consequent (cited) covers affirming
-exm-not-allowed-catalogue (claim): Argument B of Section 1.1; Section 4.4's list of forall-I errors; the warnings of Section 4.9 | prose pointers to earlier sections (unlabeled passages)
-exm-not-allowed-catalogue (solution): (the Quick check on N2) a finite set of natural numbers has a maximum | ch07 (promised; STATUS row "every non-empty finite set has a maximum")
+exm-not-allowed-catalogue (claim): Argument B of F1.1 §01; F1.4 §04's list of forall-I errors; the warnings of F1.4 §09 | prose pointers to earlier sections (unlabeled passages)
+exm-not-allowed-catalogue (solution): (the Quick check on N2) a finite set of natural numbers has a maximum | F2.2 (promised; STATUS row "every non-empty finite set has a maximum")
 exm-verify-cases (solution): (x - 1)(x - 2) = x^2 - 3x + 2; a product of two reals is negative only if the factors have opposite signs; x > 2, x < 1 give 2 < 1, not(2 < 1) | school algebra; checked by verify/ch05/exm-verify-cases.py
 exm-verify-converse (solution): n = 2k gives n^2 = 2(2k^2); the row P false, Q true refutes P -> Q |- Q -> P; x = -2 for the converse of x > 1 -> x^2 > 1 | inline row (def-truth-value); cor-refuting-row (cited); checked by verify/ch05/exm-verify-converse.py
-exm-verify-negation (solution): 1 is odd; no integer is both even and odd; m^2 - k is an integer; 2 != 0 | school arithmetic (ch07 promised in STATUS: even or odd, not both); checked by verify/ch05/exm-verify-negation.py
+exm-verify-negation (solution): 1 is odd; no integer is both even and odd; m^2 - k is an integer; 2 != 0 | school arithmetic (F2.2 promised in STATUS: even or odd, not both); checked by verify/ch05/exm-verify-negation.py
 exm-verify-scope (solution): multiplying by a positive number keeps >; x^2 - x + 1 = (x - 1/2)^2 + 3/4 > 0; at x = 1/2, x^2 < x | school algebra; checked by verify/ch05/exm-verify-scope.py
 exr-checking-proofs-a1 (solution): 3^n > n^2 for n = 0..4; A = {0, 1}, f(x) = x; n = 4 even, not divisible by 6; not(x >= 0) iff x < 0; P -> Q with Q gives no P | arithmetic; trichotomy; def-derivation (cited); checked by verify/ch05/exr-checking-proofs-a1.py
 exr-checking-proofs-b1 (solution): (2k + 1) + (2l + 1) = 2(k + l + 1); x > 1 gives x^2 > x; x^2 > 1 gives not(x^2 < 1); x >= 1 gives x^2 >= x >= 1; x = 1; not(x < 1) iff x >= 1 | school algebra; trichotomy; checked by verify/ch05/exr-checking-proofs-b1.py
 exr-checking-proofs-b2 (solution): x = 1, y = -1 gives |x| + |y| = 2, |x + y| = 0; lines (3), (4) correct in their cases | arithmetic, school algebra of absolute value; exm-triangle-inequality-cases (cited) for the inequality; checked by verify/ch05/exr-checking-proofs-b2.py
 exr-checking-proofs-c1 (solution): -|u| <= u; |u| < r gives u > -r; f(a) - f(a)/2 = f(a)/2 > 0; f(x) <= 0 gives |f(x) - f(a)| >= f(a) > f(a)/2 | school algebra of absolute value; checked by verify/ch05/exr-checking-proofs-c1.py
-exr-checking-proofs-c1 (example): continuity at a used only as a quantifier pattern | exm-translate-limit (c) (Section 4.8)
+exr-checking-proofs-c1 (example): continuity at a used only as a quantifier pattern | exm-translate-limit (c) (F1.4 §08)
 exr-checking-proofs-c2 (solution): (sqrt2 + sqrt3)^2 = 5 + 2 sqrt6; sqrt6 = sqrt2 sqrt3; sqrt2 sqrt2 = 2; 3 = r^2 - 2r sqrt2 + 2 gives sqrt2 = (r^2 - 1)/(2r); r > 0; rationals closed under +, -, x, / by non-zero | school algebra of square roots (a school fact before thm-nth-root, per NOTATION) and of Q; thm-sqrt2-irrational (cited); checked by verify/ch05/exr-checking-proofs-c2.py
-exr-checking-proofs-c3 (solution): n = 4k = 2(2k), n = 6k = 2(3k); m = 2k, n = 2l give mn = 4kl; x = 1/2 for (3) and the case 0 < x < 1; x = 0 for (4); x(x - 2) = 0 | school algebra; trichotomy; Section 4.6 (sibling boxes); checked by verify/ch05/exr-checking-proofs-c3.py
+exr-checking-proofs-c3 (solution): n = 4k = 2(2k), n = 6k = 2(3k); m = 2k, n = 2l give mn = 4kl; x = 1/2 for (3) and the case 0 < x < 1; x = 0 for (4); x(x - 2) = 0 | school algebra; trichotomy; F1.4 §06 (sibling boxes); checked by verify/ch05/exr-checking-proofs-c3.py
 -->

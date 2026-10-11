@@ -109,12 +109,12 @@ $\begin{nd}
 
 Compare the two. The paragraph keeps one sentence for each box and each rule that matters: line 1 becomes "we consider two cases", with its reason; the two boxes become the two "if" sentences; line 10 becomes "in either case". It drops the line numbers and the rule names, and it merges the two \( \rulename{{\to}E} \) steps of lines 8 and 9 into one sentence joined by "so". It never skips a box: the reader still sees both cases and sees them combined.
 
-By @def-silent-steps, the closing "in either case …" could be dropped at level 3; the split of line 1, with the reason it covers every integer, could not. The paragraph leaves the premises unproved. Premises 2–4 are one line of algebra each (for instance, \( n = 2k \) gives \( n(n + 1) = 2\bigl(k(n + 1)\bigr) \)), and a careful write-up includes them; premise 1, that every integer is even or odd, is not, and Chapter 7 proves it.
+By @def-silent-steps, the closing "in either case …" could be dropped at level 3; the split of line 1, with the reason it covers every integer, could not. The paragraph leaves the premises unproved. Premises 2–4 are one line of algebra each (for instance, \( n = 2k \) gives \( n(n + 1) = 2\bigl(k(n + 1)\bigr) \)), and a careful write-up includes them; premise 1, that every integer is even or odd, is not, and *Sets, Relations, and Cardinality*, Chapter 2 proves it.
 :::
 
 ## From the goal to prose
 
-The third example runs all seven steps on a statement not seen before. Sets of reals are used here as Chapter 4 used them, with "\( a \in A \)" a one-place predicate and \( A \subseteq B \) read as "every element of \( A \) is an element of \( B \)"; Chapter 6 develops sets properly.
+The third example runs all seven steps on a statement not seen before. Sets of reals are used here as Chapter 4 used them, with "\( a \in A \)" a one-place predicate and \( A \subseteq B \) read as "every element of \( A \) is an element of \( B \)"; *Sets, Relations, and Cardinality*, Chapter 1 develops sets properly.
 
 ::: {#exm-subset-bounded-above}
 [A subset of a bounded set]
@@ -488,23 +488,23 @@ Fatal errors (0 for the step): \( M \) chosen before \( N \) or as a maximum or 
 :::
 
 <!-- dependency ledger
-exm-subset-bounded-above (claim): (the procedure, steps 3-4) the search for a derivation is goal-directed and opening the goal's box loses nothing | Section 2.6, "The goal-directed steps lose nothing" (unlabeled)
-exm-subset-bounded-above (claim): (the procedure, step 5) a constant may depend only on the names of the boxes open where it is chosen, and depends on the names in the line it comes from | Section 4.10, "Reading dependence off the boxes" (unlabeled)
-exm-subset-bounded-above (claim): (the procedure, step 1) a letter not introduced in a theorem is read with "for every" | Section 4.1, "Hidden universal quantifiers" (unlabeled)
-exm-annotate-abs (solution): every real number is >= 1 or < 1; a >= b > c gives a > c; x < 1 gives x - 1 < 0; |a| = -a for a < 0; 1 - x < 1 gives x > 0; -|u| <= u | school algebra of order and absolute value (Chapter 1's allowed facts; ch11 prose pointer, nothing rests on it); checked by verify/ch05/exm-annotate-abs.py
-exm-write-from-derivation (example): every integer is even or odd; an even factor makes a product even; odd plus one is even | entered as premises of the derivation (school arithmetic; even/odd: ch07 (promised; STATUS row 95)); checked by verify/ch05/exm-write-from-derivation.py
-exm-subset-bounded-above (solution): "bounded above" is exists M forall b in B (b <= M); A subseteq B is forall x in A (x in B) | Section 4.8 (exm-translate-limit (b) pattern) and Section 4.1's gloss of subset (prose); sets developed in Ch 6 (prose pointer)
-exm-subset-bounded-above (solution): the derivation with the bounded rules and its side conditions | prp-bounded-quantifier-rules (cited), def-rules-existential (Section 4.6); checked by tools/check_fitch.py
+exm-subset-bounded-above (claim): (the procedure, steps 3-4) the search for a derivation is goal-directed and opening the goal's box loses nothing | F1.2 §06, "The goal-directed steps lose nothing" (unlabeled)
+exm-subset-bounded-above (claim): (the procedure, step 5) a constant may depend only on the names of the boxes open where it is chosen, and depends on the names in the line it comes from | F1.4 §10, "Reading dependence off the boxes" (unlabeled)
+exm-subset-bounded-above (claim): (the procedure, step 1) a letter not introduced in a theorem is read with "for every" | F1.4 §01, "Hidden universal quantifiers" (unlabeled)
+exm-annotate-abs (solution): every real number is >= 1 or < 1; a >= b > c gives a > c; x < 1 gives x - 1 < 0; |a| = -a for a < 0; 1 - x < 1 gives x > 0; -|u| <= u | school algebra of order and absolute value (F1.1's allowed facts; AN1.1 prose pointer, nothing rests on it); checked by verify/ch05/exm-annotate-abs.py
+exm-write-from-derivation (example): every integer is even or odd; an even factor makes a product even; odd plus one is even | entered as premises of the derivation (school arithmetic; even/odd: F2.2 (promised; STATUS row 95)); checked by verify/ch05/exm-write-from-derivation.py
+exm-subset-bounded-above (solution): "bounded above" is exists M forall b in B (b <= M); A subseteq B is forall x in A (x in B) | F1.4 §08 (exm-translate-limit (b) pattern) and F1.4 §01's gloss of subset (prose); sets developed in F2.1 (prose pointer)
+exm-subset-bounded-above (solution): the derivation with the bounded rules and its side conditions | prp-bounded-quantifier-rules (cited), def-rules-existential (F1.4 §06); checked by tools/check_fitch.py
 exm-subset-bounded-above (claim): (the warning "The search is not the proof") x = -3 has x < 2 and x^2 = 9 >= 4 | arithmetic; checked by verify/ch05/exm-subset-bounded-above.py (warning values)
 exm-subset-bounded-above (claim): (the warning "A constant without its dependencies") delta = min(1, eps/(2|x| + 1)) proves only continuity; uniform continuity of x^2 on R is false | exm-square-not-uniform (cited)
-exr-writing-proofs-a1 (solution): not(a > 1) implies a <= 1; a <= 2 implies not(a > 2); a <= 1 and b <= 1 give a + b <= 2 | school order facts (trichotomy, Ch 11 axioms; prose); checked by verify/ch05/exr-writing-proofs-a1.py
-exr-writing-proofs-a1 (solution): the three faces of "by contradiction" and the costume | Section 5.1 (prose pointer)
+exr-writing-proofs-a1 (solution): not(a > 1) implies a <= 1; a <= 2 implies not(a > 2); a <= 1 and b <= 1 give a + b <= 2 | school order facts (trichotomy, AN1.1 axioms; prose); checked by verify/ch05/exr-writing-proofs-a1.py
+exr-writing-proofs-a1 (solution): the three faces of "by contradiction" and the costume | F1.5 §01 (prose pointer)
 exr-writing-proofs-b1 (solution): 3(2k + 1) + 5 = 2(3k + 4); x^2 + 1 = 2x - 1 iff (x - 1)^2 + 1 = 0; squares are non-negative; x^3 - x = (x + 1)x(x - 1); a product is zero only if a factor is zero; (-1)^3 = -1 | school algebra (exm-product-zero gives only the converse direction of the product fact; the direction used is a school fact named in the item's hint); checked by verify/ch05/exr-writing-proofs-b1.py
-exr-writing-proofs-b1 (solution): integers closed under + and * (3k + 4 is an integer) | ch07 (promised): prp-integers-closed (STATUS row 95)
+exr-writing-proofs-b1 (solution): integers closed under + and * (3k + 4 is an integer) | F2.2 (promised): prp-integers-closed (STATUS row 95)
 exr-writing-proofs-b2 (solution): triangle inequality | exm-triangle-inequality-cases (cited)
-exr-writing-proofs-b2 (solution): the maximum of two natural numbers exists, and n >= max{N1, N2} gives n >= N1 and n >= N2; eps/2 + eps/2 = eps; for a_n = 1/(n + 1) no N1 serves eps = 1/(N1 + 2) | school arithmetic; finite max: ch07 (promised; STATUS row 95); checked by verify/ch05/exr-writing-proofs-b2.py
-exr-writing-proofs-b2 (solution): the error of distractor (iii) is (N2) of Section 5.6 | prose pointer; nothing rests on it
+exr-writing-proofs-b2 (solution): the maximum of two natural numbers exists, and n >= max{N1, N2} gives n >= N1 and n >= N2; eps/2 + eps/2 = eps; for a_n = 1/(n + 1) no N1 serves eps = 1/(N1 + 2) | school arithmetic; finite max: F2.2 (promised; STATUS row 95); checked by verify/ch05/exr-writing-proofs-b2.py
+exr-writing-proofs-b2 (solution): the error of distractor (iii) is (N2) of F1.5 §06 | prose pointer; nothing rests on it
 exr-writing-proofs-b3 (example): a difference of two rational numbers is rational | school algebra, stated in the skeleton as a cited fact
-exr-writing-proofs-c1 (solution): (2x + 3) - (2a + 3) = 2(x - a); |2u| = 2|u| | school algebra; exm-abs-product-cases (Ch 1) for |2u| = |2||u|; checked by verify/ch05/exr-writing-proofs-c1.py
-exr-writing-proofs-c2 (solution): a maximum of finitely many reals exists; every natural number is < N or >= N; |a_n| <= |a_n - L| + |L| | finite max and the order on N: ch07 (promised; STATUS row 95); exm-triangle-inequality-cases (cited); checked by verify/ch05/exr-writing-proofs-c2.py
+exr-writing-proofs-c1 (solution): (2x + 3) - (2a + 3) = 2(x - a); |2u| = 2|u| | school algebra; exm-abs-product-cases (F1.1) for |2u| = |2||u|; checked by verify/ch05/exr-writing-proofs-c1.py
+exr-writing-proofs-c2 (solution): a maximum of finitely many reals exists; every natural number is < N or >= N; |a_n| <= |a_n - L| + |L| | finite max and the order on N: F2.2 (promised; STATUS row 95); exm-triangle-inequality-cases (cited); checked by verify/ch05/exr-writing-proofs-c2.py
 -->

@@ -1,6 +1,6 @@
 # Ordered Pairs Built from Sets
 
-Section 6.3 introduced the ordered pair (@def-ordered-pair) as an object with one property, the characteristic property, and said that such an object could be built from sets. Section 9.1 has only sets to build with, and its pair \( \{a, b\} \) forgets which element came first. This section repairs that with one idea: mark the first coordinate by putting it in a set of its own. It proves that the result has the characteristic property, so that every pair of Chapters 6 to 8 can be read as a set, and then recovers the product \( A \times B \) and the working rules (W1)–(W5) of Section 6.1 from the axioms, in the form proved here: (W2) for lists written out in the text, (W3) for families of subsets of a given set, and (W5) for pairs. The rest of (W2) and (W5) comes in Section 9.6; (W3) for families with no ambient set needs the axiom of Replacement.
+*Sets, Relations, and Cardinality*, Section 1.3 introduced the ordered pair (@fd2:def-ordered-pair) as an object with one property, the characteristic property, and said that such an object could be built from sets. Section 1.1 has only sets to build with, and its pair \( \{a, b\} \) forgets which element came first. This section repairs that with one idea: mark the first coordinate by putting it in a set of its own. It proves that the result has the characteristic property, so that every pair of *Sets, Relations, and Cardinality*, Chapters 1 to 3 can be read as a set, and then recovers the product \( A \times B \) and the working rules (W1)–(W5) of *Sets, Relations, and Cardinality*, Section 1.1 from the axioms, in the form proved here: (W2) for lists written out in the text, (W3) for families of subsets of a given set, and (W5) for pairs. The rest of (W2) and (W5) comes in Section 1.6; (W3) for families with no ambient set needs the axiom of Replacement.
 
 ## Order from sets
 
@@ -100,7 +100,7 @@ So \( a \ne b \) is used twice in Case 2: to exclude \( c = d \), and to exclude
 
 **Alternatively**, the coordinates can be read off a pair \( p = (a, b) \) by two set operations. The members of \( p \) are \( \{a\} \) and \( \{a, b\} \) (@prp-zf-basic-sets (b)). An object lies in both if and only if it equals \( a \), since it must lie in \( \{a\} \), and \( a \in \{a, b\} \); so \( \bigcap p = \{a\} \) (@prp-zf-basic-sets (c)). And \( \bigcup p = \{a\} \cup \{a, b\} = \{a, b\} \). So \( a \) is the unique element of \( \bigcap p \). And \( \bigcup p \setminus \bigcap p = \{a, b\} \setminus \{a\} \) is \( \{b\} \) if \( b \ne a \), and \( \emptyset \) if \( b = a \); so \( b \) is the unique element of \( \bigcup p \setminus \bigcap p \) when that set is non-empty, and \( b = a \) when it is empty. Both coordinates are thus determined by the set \( p \) alone, which is the characteristic property again. The case split has not gone away here: it is the empty and non-empty cases of \( \bigcup p \setminus \bigcap p \). Comparing the unions of two pairs directly avoids it: from \( \{a, b\} = \{c, d\} \) with \( c = a \), @prp-zf-basic-sets (d) gives \( b = d \) in both of its disjuncts.
 
-**What this pays.** Section 6.3 took the ordered pair as given, with the characteristic property, and said after @def-ordered-pair that nothing else about pairs is used in Chapter 6, apart from one working convention. From here on, the pair \( (a, b) \) of @def-ordered-pair **is** the set of @def-kuratowski-pair, and the property it was assumed to have is @thm-kuratowski-pair. Everything built on pairs becomes a set built by the axioms: a relation from \( A \) to \( B \) is a subset of \( A \times B \) (@def-relation), and a function \( X \to Y \) is the pair \( (G, Y) \) of its graph and codomain (@def-function), now a Kuratowski pair of two sets. The working convention said that **a pair is not a number**, and that a triple is not a pair. In the picture of this chapter numbers and tuples will be sets too, so both clauses become statements to be checked: Section 9.4 checks the first for the natural numbers (@prp-pair-not-natural), and Section 9.6 checks the second (@prp-tuples-as-sets (c)).
+**What this pays.** *Sets, Relations, and Cardinality*, Section 1.3 took the ordered pair as given, with the characteristic property, and said after @fd2:def-ordered-pair that nothing else about pairs is used in *Sets, Relations, and Cardinality*, Chapter 1, apart from one working convention. From here on, the pair \( (a, b) \) of @fd2:def-ordered-pair **is** the set of @def-kuratowski-pair, and the property it was assumed to have is @thm-kuratowski-pair. Everything built on pairs becomes a set built by the axioms: a relation from \( A \) to \( B \) is a subset of \( A \times B \) (@fd2:def-relation), and a function \( X \to Y \) is the pair \( (G, Y) \) of its graph and codomain (@fd2:def-function), now a Kuratowski pair of two sets. The working convention said that **a pair is not a number**, and that a triple is not a pair. In the picture of this chapter numbers and tuples will be sets too, so both clauses become statements to be checked: Section 1.4 checks the first for the natural numbers (@prp-pair-not-natural), and Section 1.6 checks the second (@prp-tuples-as-sets (c)).
 
 ## Products, and the working rules recovered
 
@@ -126,22 +126,22 @@ By (Z6) with ambient set \( W \) and parameters \( A \), \( B \), let
 \[
 A \times B \coloneqq \{ p \in W : \exists a \in A\ \exists b \in B\ \ p = (a, b) \} .
 \]
-(The property is admissible: "\( p = (a, b) \)" unwinds into \( \in \) and \( = \), as Section 9.1 explained for defined symbols.) If \( p \in A \times B \), then \( p = (a, b) \) for some \( a \in A \), \( b \in B \). Conversely, if \( p = (a, b) \) with \( a \in A \) and \( b \in B \), then \( p \in W \) by the first paragraph, so \( p \in A \times B \). This is the displayed membership condition. Any two sets with this condition are equal by (Z1).
+(The property is admissible: "\( p = (a, b) \)" unwinds into \( \in \) and \( = \), as Section 1.1 explained for defined symbols.) If \( p \in A \times B \), then \( p = (a, b) \) for some \( a \in A \), \( b \in B \). Conversely, if \( p = (a, b) \) with \( a \in A \) and \( b \in B \), then \( p \in W \) by the first paragraph, so \( p \in A \times B \). This is the displayed membership condition. Any two sets with this condition are equal by (Z1).
 :::
 
-The product of @def-cartesian-product has the same membership condition, so it is this set; and \( X^2 \coloneqq X \times X \) is a set too. The construction never needed a "set of all pairs": every pair it collects lies in the set \( W \), which depends on \( A \) and \( B \).
+The product of @fd2:def-cartesian-product has the same membership condition, so it is this set; and \( X^2 \coloneqq X \times X \) is a set too. The construction never needed a "set of all pairs": every pair it collects lies in the set \( W \), which depends on \( A \) and \( B \).
 
-The working rules of Section 6.1 can now be checked against the axioms one by one.
+The working rules of *Sets, Relations, and Cardinality*, Section 1.1 can now be checked against the axioms one by one.
 
 ::: {#prp-working-rules-from-axioms}
 [The Working Rules from the Axioms]
 
-The axioms (Z1)–(Z6) give the working rules (W1)–(W5) of Section 6.1 in the following form.
+The axioms (Z1)–(Z6) give the working rules (W1)–(W5) of *Sets, Relations, and Cardinality*, Section 1.1 in the following form.
 
 ::: {.enumerate options="label=(W\arabic*)"}
-1. For every set \( A \) and every admissible property \( P(x) \) (one whose unwinding is a formula of the language, Section 9.1), \( \{ x \in A : P(x) \} \) is a set.
+1. For every set \( A \) and every admissible property \( P(x) \) (one whose unwinding is a formula of the language, Section 1.1), \( \{ x \in A : P(x) \} \) is a set.
 2. For each list \( a_1, \dots, a_n \) written out in the text, entry by entry, there is a set \( \{a_1, \dots, a_n\} \) whose elements are exactly \( a_1, \dots, a_n \).
-3. For sets \( A \) and \( B \), \( A \cup B \) is a set. For a set \( X \) and a family \( (A_i)_{i \in I} \) of subsets of \( X \), given as a function \( I \to \powerset{X} \) (@def-indexed-family), the union \( \bigcup_{i \in I} A_i \) and the intersection \( \bigcap_{i \in I} A_i \) of @def-family-union-intersection are sets.
+3. For sets \( A \) and \( B \), \( A \cup B \) is a set. For a set \( X \) and a family \( (A_i)_{i \in I} \) of subsets of \( X \), given as a function \( I \to \powerset{X} \) (@fd2:def-indexed-family), the union \( \bigcup_{i \in I} A_i \) and the intersection \( \bigcap_{i \in I} A_i \) of @fd2:def-family-union-intersection are sets.
 4. For every set \( X \), \( \powerset{X} \) is a set.
 5. For sets \( A \) and \( B \), \( A \times B \) is a set.
 :::
@@ -164,12 +164,12 @@ a set by @prp-zf-basic-sets (c). Its elements are those of \( \{a_1, \dots, a_k\
 \[
 V \coloneqq \{ x \in X : \exists i \in I\ \, x \in f(i) \}
 \]
-is a set; "\( x \in f(i) \)" unwinds to \( \exists S\, \bigl((i, S) \in G \wedge x \in S\bigr) \). Every element of every \( A_i \) lies in \( X \), since \( A_i \subseteq X \); so \( x \in V \) if and only if \( x \in A_i \) for some \( i \in I \), the membership condition of @def-family-union-intersection (a). Hence \( V \) is the union. The intersection of @def-family-union-intersection (b) is defined there by a set-builder inside \( X \), so it exists by (Z6).
+is a set; "\( x \in f(i) \)" unwinds to \( \exists S\, \bigl((i, S) \in G \wedge x \in S\bigr) \). Every element of every \( A_i \) lies in \( X \), since \( A_i \subseteq X \); so \( x \in V \) if and only if \( x \in A_i \) for some \( i \in I \), the membership condition of @fd2:def-family-union-intersection (a). Hence \( V \) is the union. The intersection of @fd2:def-family-union-intersection (b) is defined there by a set-builder inside \( X \), so it exists by (Z6).
 :::
 
-The proof of (W2) deserves a second look, because of what it does **not** prove. It is not a proof "for every \( n \in \nN \)": we have no \( \nN \) yet, so the number of entries cannot be a variable. It is a recipe which, applied to any list actually written down, produces its set in as many steps as the list has entries. That is all (W2) is used for in Section 6.1, but Chapters 7 and 8 also write \( \{x_1, \dots, x_n\} \) for a **variable** \( n \), for a function \( x \) defined on \( \{1, \dots, n\} \) (@prp-finite-max, @def-finite). That second half of (W2) needs the natural numbers and \( \{1, \dots, n\} \) as sets; it is part (d) of a proposition in Section 9.6, which also builds \( n \)-tuples and so gives (W5) for them.
+The proof of (W2) deserves a second look, because of what it does **not** prove. It is not a proof "for every \( n \in \nN \)": we have no \( \nN \) yet, so the number of entries cannot be a variable. It is a recipe which, applied to any list actually written down, produces its set in as many steps as the list has entries. That is all (W2) is used for in *Sets, Relations, and Cardinality*, Section 1.1, but *Sets, Relations, and Cardinality*, Chapters 2 and 3 also write \( \{x_1, \dots, x_n\} \) for a **variable** \( n \), for a function \( x \) defined on \( \{1, \dots, n\} \) (@fd2:prp-finite-max, @fd2:def-finite). That second half of (W2) needs the natural numbers and \( \{1, \dots, n\} \) as sets; it is part (d) of a proposition in Section 1.6, which also builds \( n \)-tuples and so gives (W5) for them.
 
-The rest of the list is paid elsewhere. A family of sets with **no** ambient set \( X \) needs the axiom of Replacement, which belongs to the volume on set theory. And (W6), "\( \nN \), \( \nZ \), \( \nQ \), \( \nR \) are sets", becomes a series of constructions: \( \nN \) in Section 9.3, \( \nZ \) and \( \nQ \) in Chapter 10, and \( \nR \) later in this volume, from Cauchy sequences of rationals.
+The rest of the list is paid elsewhere. A family of sets with **no** ambient set \( X \) needs the axiom of Replacement, which belongs to the volume on set theory. And (W6), "\( \nN \), \( \nZ \), \( \nQ \), \( \nR \) are sets", becomes a series of constructions: \( \nN \) in Section 1.3, \( \nZ \) and \( \nQ \) in Chapter 2, and \( \nR \) later in this volume, from Cauchy sequences of rationals.
 
 ::: {.check}
 Write \( (\emptyset, \emptyset) \) and \( (\emptyset, \{\emptyset\}) \) as sets, using only braces and \( \emptyset \).
@@ -273,9 +273,9 @@ Is the conclusion true? Does the argument prove it? If not, name the first line 
 ::: {.solution}
 The conclusion is **true**: it is @thm-kuratowski-pair.
 
-The argument does not prove it. The first failing line is (2). It uses the rule "if \( \{P, Q\} = \{P', Q'\} \), then \( P = P' \) and \( Q = Q' \)", which treats a set with two members as if it were ordered. No result of Section 9.1 gives this rule: @prp-zf-basic-sets (d) allows the crossed matching \( P = Q' \) and \( Q = P' \) as well. A counterexample to the step: take \( P = Q' = \emptyset \) and \( Q = P' = \{\emptyset\} \). Then \( \{P, Q\} = \{\emptyset, \{\emptyset\}\} = \{P', Q'\} \) by (Z1), but \( P \ne P' \), since \( \emptyset \in \{\emptyset\} \) and \( \emptyset \notin \emptyset \).
+The argument does not prove it. The first failing line is (2). It uses the rule "if \( \{P, Q\} = \{P', Q'\} \), then \( P = P' \) and \( Q = Q' \)", which treats a set with two members as if it were ordered. No result of Section 1.1 gives this rule: @prp-zf-basic-sets (d) allows the crossed matching \( P = Q' \) and \( Q = P' \) as well. A counterexample to the step: take \( P = Q' = \emptyset \) and \( Q = P' = \{\emptyset\} \). Then \( \{P, Q\} = \{\emptyset, \{\emptyset\}\} = \{P', Q'\} \) by (Z1), but \( P \ne P' \), since \( \emptyset \in \{\emptyset\} \) and \( \emptyset \notin \emptyset \).
 
-For pairs the two equations of line (2) happen to be true, since they follow from the theorem. But showing that the members of \( (a, b) \) and \( (c, d) \) match in this way is the work of the proof: Case 1 handles \( a = b \), where \( (a, b) = \{\{a\}\} \) has a single member, and Case 2 rules out \( c = d \) and \( \{a, b\} = \{c\} \) before matching. So line (2) assumes what is to be proved. This is entry (N9) of @exm-not-allowed-catalogue: line (2) cites a general rule that is false, and for pairs the matching it asserts is the goal itself.
+For pairs the two equations of line (2) happen to be true, since they follow from the theorem. But showing that the members of \( (a, b) \) and \( (c, d) \) match in this way is the work of the proof: Case 1 handles \( a = b \), where \( (a, b) = \{\{a\}\} \) has a single member, and Case 2 rules out \( c = d \) and \( \{a, b\} = \{c\} \) before matching. So line (2) assumes what is to be proved. This is entry (N9) of @fd1:exm-not-allowed-catalogue: line (2) cites a general rule that is false, and for pairs the matching it asserts is the goal itself.
 
 A second, lesser point concerns line (4). "\( \{a, b\} = \{a, d\} \), so \( b = d \)" is true for all \( a, b, d \), but it needs a reason: @prp-zf-basic-sets (d) with \( c = a \). The disjunct \( a = a \wedge b = d \) gives \( b = d \) directly, and the disjunct \( a = d \wedge b = a \) gives \( b = a = d \). No hypothesis \( b \ne a \) is needed, and an answer saying so is correct.
 
@@ -323,15 +323,15 @@ Fatal errors (0 for the step): assuming the members match in the order written; 
 <!-- dependency ledger
 def-kuratowski-pair (example): {emptyset} differs from {{emptyset}}; emptyset differs from {emptyset} | inline (compare elements, Z1)
 exm-failed-pair-encodings (example): {{emptyset}} differs from {emptyset}; the two encodings in (iii) are the same set | inline (elements compared; Z1)
-thm-kuratowski-pair (proof): either a = b or a != b | excluded middle (prp-excluded-middle, Ch 2)
-thm-kuratowski-pair (claim): Chapter 6 uses nothing about pairs but the characteristic property and one working convention (a pair is not a number; a triple is not a pair) | the paragraph after def-ordered-pair (Section 6.3), which says so
-thm-kuratowski-pair (claim): Section 9.4 checks that a pair is not a natural number; Section 9.6 checks that a triple is not a pair | Sections 9.4 and 9.6 (prose pointers, this chapter; prp-pair-not-natural, prp-tuples-as-sets (c); nothing here depends on them)
+thm-kuratowski-pair (proof): either a = b or a != b | excluded middle (prp-excluded-middle, F1.2)
+thm-kuratowski-pair (claim): F2.1 uses nothing about pairs but the characteristic property and one working convention (a pair is not a number; a triple is not a pair) | the paragraph after def-ordered-pair (F2.1 §03), which says so
+thm-kuratowski-pair (claim): F3.1 §04 checks that a pair is not a natural number; F3.1 §06 checks that a triple is not a pair | F3.1 §04 and F3.1 §06 (prose pointers, this chapter; prp-pair-not-natural, prp-tuples-as-sets (c); nothing here depends on them)
 thm-kuratowski-pair (claim): bigcap p = {a} for p = (a, b); comparing unions gives b = d with no case split | inline (members of p by prp-zf-basic-sets (b), bigcap by (c)); prp-zf-basic-sets (d) with c = a (cited)
 exr-pairs-as-sets-c2 (solution): {emptyset, {emptyset}} = {{emptyset}, emptyset}; emptyset differs from {emptyset} | inline (Z1; compare elements)
-prp-cartesian-product-exists (proof): "p = (a, b)" unwinds into in and = | Section 9.1, paragraph "Properties written with defined symbols"
-prp-working-rules-from-axioms (claim): the variable-n half of (W2) and (W5) for n-tuples are paid in Section 9.6 | Section 9.6 (prose pointer, this chapter; prp-tuples-as-sets; nothing here depends on it)
+prp-cartesian-product-exists (proof): "p = (a, b)" unwinds into in and = | F3.1 §01, paragraph "Properties written with defined symbols"
+prp-working-rules-from-axioms (claim): the variable-n half of (W2) and (W5) for n-tuples are paid in F3.1 §06 | F3.1 §06 (prose pointer, this chapter; prp-tuples-as-sets; nothing here depends on it)
 prp-working-rules-from-axioms (claim): families with no ambient set need Replacement | the set-theory volume (prose pointer outside this book; nothing depends on it)
-prp-working-rules-from-axioms (claim): N in Section 9.3, Z and Q in Chapter 10, R later in this volume | prose pointers (Section 9.3; Chapter 10; the construction of R from Cauchy sequences); nothing here depends on them
+prp-working-rules-from-axioms (claim): N in F3.1 §03, Z and Q in F3.2, R later in this volume | prose pointers (F3.1 §03; F3.2; the construction of R from Cauchy sequences); nothing here depends on them
 prp-working-rules-from-axioms (proof): elements of {a_1..a_k} union {a_(k+1)} are those with x = a_1 or ... or x = a_(k+1) | prp-zf-basic-sets (c) (cited), disjunctions grouped to the right
 exr-pairs-as-sets-a1 (solution): {emptyset} differs from emptyset | inline
 -->

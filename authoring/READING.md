@@ -1,5 +1,7 @@
 # Reading the book: schedules, rhythm, gates, feedback
 
+> **Numbering.** Chapter numbers in this file are analysis-book's 78-chapter numbers (before the split into volumes). `python3 tools/series.py show` maps them (`ab ch N`) to atlas ids and volumes.
+
 This is the source for a future front-matter page, **"How to read this book"**, and for the reading paths still to be configured. It is written for the author and the coordinator; the page itself will be written from it in the book's voice (second person where it advises, per STYLE §7). It implements roadmap A6, A10, B2, B5 and B6; the evidence is in `authoring/design/research-reader.md` B1–B6.
 
 Two warnings for whoever turns this into the page:

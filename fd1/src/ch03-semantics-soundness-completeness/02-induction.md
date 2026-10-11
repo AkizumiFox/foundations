@@ -10,7 +10,7 @@ The belief already contains the shape of a proof. Every formula is reached by fi
 
 Exactly the same shape appears with numbers. To show that some property holds for every natural number, show that it holds for \( 0 \), and that it passes from each number to the next. Every natural number is reached from \( 0 \) by finitely many steps of "add one", so the property is never lost. This is **induction**. We state it for numbers first, because it is simpler there, then prove the version for formulas from it.
 
-Two words about language before we start. Statements such as "for every \( n \in \nN \), …" and "there is a \( k \) with …" are used in this section in their everyday sense, as Chapters 1 and 2 used them. Their rules of proof are the subject of Chapter 4, and nothing here needs more than the everyday reading. Likewise, a "collection" of formulas or numbers is meant in its everyday sense; Chapter 6 treats sets properly. As in the rest of the book, \( \nN = \{0, 1, 2, \dots\} \) starts at \( 0 \), and the arithmetic and order of the natural numbers are used as school facts.
+Two words about language before we start. Statements such as "for every \( n \in \nN \), …" and "there is a \( k \) with …" are used in this section in their everyday sense, as Chapters 1 and 2 used them. Their rules of proof are the subject of Chapter 4, and nothing here needs more than the everyday reading. Likewise, a "collection" of formulas or numbers is meant in its everyday sense; *Sets, Relations, and Cardinality*, Chapter 1 treats sets properly. As in the rest of the book, \( \nN = \{0, 1, 2, \dots\} \) starts at \( 0 \), and the arithmetic and order of the natural numbers are used as school facts.
 
 ## The principle of induction
 
@@ -39,7 +39,7 @@ In symbols (the quantifier symbols are Chapter 4's; here they abbreviate the wor
 
 In words: hypothesis (i) is the **base case**. Hypothesis (ii) is the **inductive step**, and inside it, the assumption "\( P(n) \) holds" is the **induction hypothesis**. The step is **one** implication, proved **once**, for a number \( n \) about which we assume nothing except that it is a natural number with \( P(n) \). The conclusion is about every natural number at once.
 
-**Its status.** We take @ax-induction as a basic property of \( \nN \), given and not proved, in the same way that Chapter 11 takes the least upper bound axiom as a basic property of \( \nR \). It is, in a precise sense, what the three dots in \( \{0, 1, 2, \dots\} \) mean: the natural numbers are what we reach from \( 0 \) by adding one, again and again, and nothing else. Chapter 7 proves that it is equivalent to the well-ordering principle (every nonempty collection of natural numbers has a least element), and the optional Chapter 9 derives it from the axioms of set theory. Nothing in this book depends on those two routes; every later use cites this principle.
+**Its status.** We take @ax-induction as a basic property of \( \nN \), given and not proved, in the same way that *Analysis on the Real Line*, Chapter 1 takes the least upper bound axiom as a basic property of \( \nR \). It is, in a precise sense, what the three dots in \( \{0, 1, 2, \dots\} \) mean: the natural numbers are what we reach from \( 0 \) by adding one, again and again, and nothing else. *Sets, Relations, and Cardinality*, Chapter 2 proves that it is equivalent to the well-ordering principle (every nonempty collection of natural numbers has a least element), and the optional *Number Systems: From \(\nN\) to \(\nR\)*, Chapter 1 derives it from the axioms of set theory. Nothing in this book depends on those two routes; every later use cites this principle.
 
 **Dominoes.** The usual picture is a row of dominoes, one for each natural number. The base case knocks over the first. The inductive step says that each domino, if it falls, knocks over the next. Then every domino falls. The picture carries the one point that matters: the step must work for **every** \( n \), the first transition from \( 0 \) to \( 1 \) included. A single domino standing too far from the next stops the whole row, however well the others are placed.
 
@@ -121,7 +121,7 @@ The estimate \( 6n + 3 \ge 2n + 3 \) throws away a great deal. That is typical: 
 :::
 
 ::: {.warning}
-The inductive step must hold for **every** \( n \), including the first transition. Try to prove "\( 2^n \ge n^2 \) for every \( n \in \nN \)": the base case \( 1 \ge 0 \) holds, and the step \( 2^{n + 1} = 2 \cdot 2^n \ge 2n^2 \ge (n + 1)^2 \) looks fine, but its last inequality holds only for \( n \ge 3 \), so the steps from \( 0 \) to \( 1 \), from \( 1 \) to \( 2 \) and from \( 2 \) to \( 3 \) are not covered. The claim survives the first two gaps (at \( n = 1 \), \( 2 \ge 1 \), and at \( n = 2 \) both sides are \( 4 \)), but it is false at \( n = 3 \), where \( 2^3 = 8 < 9 = 3^2 \); it is true again from \( n = 4 \) on. Chapter 7 shows a famous "proof" that fails in the same way at its very first step, from \( 1 \) to \( 2 \).
+The inductive step must hold for **every** \( n \), including the first transition. Try to prove "\( 2^n \ge n^2 \) for every \( n \in \nN \)": the base case \( 1 \ge 0 \) holds, and the step \( 2^{n + 1} = 2 \cdot 2^n \ge 2n^2 \ge (n + 1)^2 \) looks fine, but its last inequality holds only for \( n \ge 3 \), so the steps from \( 0 \) to \( 1 \), from \( 1 \) to \( 2 \) and from \( 2 \) to \( 3 \) are not covered. The claim survives the first two gaps (at \( n = 1 \), \( 2 \ge 1 \), and at \( n = 2 \) both sides are \( 4 \)), but it is false at \( n = 3 \), where \( 2^3 = 8 < 9 = 3^2 \); it is true again from \( n = 4 \) on. *Sets, Relations, and Cardinality*, Chapter 2 shows a famous "proof" that fails in the same way at its very first step, from \( 1 \) to \( 2 \).
 :::
 
 ## Strong induction
@@ -345,7 +345,7 @@ The theorem settles the question Section 3.1 left open about parse trees.
 
 Height, the set of atoms, the number of connectives: each is naturally defined **one clause per way of building a formula**. The height of \( \neg\varphi \) is one more than that of \( \varphi \); the atoms of \( (\varphi \circ \psi) \) are those of \( \varphi \) together with those of \( \psi \). Such a definition is called **recursive**: it defines the value at a formula through the values at its immediate parts. The question is whether it really defines something. For a string that could be split in two ways, the clauses might assign two different values, and then they would define nothing. Unique readability says this never happens.
 
-We say **function on formulas** for a rule that assigns to each formula exactly one value; the values may be numbers, truth values, formulas, or collections of atoms. (Chapter 6 makes "function" precise; nothing here needs more than the everyday sense.)
+We say **function on formulas** for a rule that assigns to each formula exactly one value; the values may be numbers, truth values, formulas, or collections of atoms. (*Sets, Relations, and Cardinality*, Chapter 1 makes "function" precise; nothing here needs more than the everyday sense.)
 
 *Give a value for each atom and for \( \bot \), and say how to get the value of a compound formula from its parts; then exactly one function on formulas obeys these clauses.*
 
@@ -665,18 +665,18 @@ Fatal errors (0 for the step): applying the hypothesis to the formula being prov
 
 <!-- dependency ledger
 ax-induction (claim): each P(n) alone has a finite derivation from P(0) and the step by ->E | informal, motivation only; not used in any proof
-exm-sum-consecutive-products (example): the sum 1*2 + ... + n(n+1) read as "the sum of the first n terms, plus the next"; algebra of fractions | school algebra (blueprint, Allowed prerequisites); recursion on N (finite sums) is ch07 (promised; STATUS row "definition by recursion", from Ch 11); checked by verify/ch03/exm-sum-consecutive-products.py
-exm-power-inequality (example): 3^(n+1) = 3 * 3^n; multiplying an inequality by a positive number; 6n >= 2n for n >= 0 | school algebra; powers by recursion are ch07 (promised; STATUS row, from Ch 11); checked by verify/ch03/exm-power-inequality.py
+exm-sum-consecutive-products (example): the sum 1*2 + ... + n(n+1) read as "the sum of the first n terms, plus the next"; algebra of fractions | school algebra (blueprint, Allowed prerequisites); recursion on N (finite sums) is F2.2 (promised; STATUS row "definition by recursion", from AN1.1); checked by verify/ch03/exm-sum-consecutive-products.py
+exm-power-inequality (example): 3^(n+1) = 3 * 3^n; multiplying an inequality by a positive number; 6n >= 2n for n >= 0 | school algebra; powers by recursion are F2.2 (promised; STATUS row, from AN1.1); checked by verify/ch03/exm-power-inequality.py
 ax-induction (example): (the warning after exm-power-inequality) 2n^2 >= (n+1)^2 exactly for n >= 3 (fails at n = 0, 1, 2); 2^3 = 8 < 9; 2^n >= n^2 for n = 0, 1, 2 and n >= 4 | school algebra; checked by verify/ch03/ax-induction.py
-thm-strong-induction (proof): no natural number is less than 0; k < n + 1 iff k <= n for natural k (nothing strictly between n and n + 1); k <= n + 1 iff k <= n or k = n + 1 | school facts about N (blueprint, Allowed prerequisites); ch07 (promised; STATUS row "nothing between n and n + 1", from Ch 11)
-thm-strong-induction (proof): "for every k < 0, P(k)" holds vacuously | prp-vacuous-implication (cited in the prose before the proof); the rule for "every" is ch04 (prose pointer)
+thm-strong-induction (proof): no natural number is less than 0; k < n + 1 iff k <= n for natural k (nothing strictly between n and n + 1); k <= n + 1 iff k <= n or k = n + 1 | school facts about N (blueprint, Allowed prerequisites); F2.2 (promised; STATUS row "nothing between n and n + 1", from AN1.1)
+thm-strong-induction (proof): "for every k < 0, P(k)" holds vacuously | prp-vacuous-implication (cited in the prose before the proof); the rule for "every" is F1.4 (prose pointer)
 exm-threes-and-fives (example): 8 = 3 + 5, 9 = 3*3, 10 = 5*2; 7 is not a sum of threes and fives | inline arithmetic; checked by verify/ch03/exm-threes-and-fives.py
-thm-structural-induction (proof): every entry of a formation sequence is a formula | Section 3.1, after def-formula (inline there)
+thm-structural-induction (proof): every entry of a formation sequence is a formula | F1.3 §01, after def-formula (inline there)
 lem-parenthesis-count (proof): excess of a concatenation is the sum of the excesses; every initial segment of (phi o psi) is of one of five kinds | inline (counting)
-thm-unique-readability (proof): every formula is an atom, bot, neg(phi) or (phi o psi) for formulas ("looking at the last step") | Section 3.1, after def-formula (inline there)
+thm-unique-readability (proof): every formula is an atom, bot, neg(phi) or (phi o psi) for formulas ("looking at the last step") | F1.3 §01, after def-formula (inline there)
 thm-unique-readability (claim): (paragraph after the proof) each formula has exactly one parse tree | inline structural induction, citing thm-unique-readability
-thm-structural-recursion (proof): the first-symbol test (formulas of length 1 are atoms and bot); immediate parts are shorter | Section 3.1 (inline there); inline
-thm-structural-recursion (proof): "function" in the everyday sense | ch06 (prose pointer); no property of functions beyond "one value per argument" is used
+thm-structural-recursion (proof): the first-symbol test (formulas of length 1 are atoms and bot); immediate parts are shorter | F1.3 §01 (inline there); inline
+thm-structural-recursion (proof): "function" in the everyday sense | F2.1 (prose pointer); no property of functions beyond "one value per argument" is used
 exm-recursive-definitions (example): height 4, atoms {p, q}, 4 connectives, length 14; recursive height = tree height; recursive subformula list = formulas at nodes | inline; checked by verify/ch03/exm-recursive-definitions.py
 exr-induction-a1 (solution): 4^(n+1) - 1 = 4(4^n - 1) + 3; 12..15 as 4a + 5b | school algebra; checked by verify/ch03/exr-induction-a1.py
 exr-induction-b2 (solution): a list of subformulas joined from lists of sizes s1, s2 plus one formula has at most 1 + s1 + s2 distinct members; len clauses | school counting; len clauses inline after exm-recursive-definitions

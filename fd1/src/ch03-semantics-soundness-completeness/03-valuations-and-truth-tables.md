@@ -562,11 +562,11 @@ Fatal errors (0 for the step): calling the claim false; locating the error in li
 <!-- dependency ledger
 def-valuation (idea): the opening subsection reads the tables of and, bot, not, -> off the rules (motivation only; nothing later rests on it, as the text says) | prp-excluded-middle, prp-vacuous-implication, the rules of Ch 1-2, cited; the derivation of Q |- P -> Q is printed inline
 def-truth-value (claim): the string p and q or r with two readings takes values T and F at p = F, q = F, r = T | inline computation; checked by verify/ch03/def-truth-table.py
-lem-coincidence (proof): atoms(phi) defined by recursion (atom, bot, not, binary clauses) | Section 3.2 (thm-structural-recursion examples), recalled in prose before the lemma
+lem-coincidence (proof): atoms(phi) defined by recursion (atom, bot, not, binary clauses) | F1.3 §02 (thm-structural-recursion examples), recalled in prose before the lemma
 lem-coincidence (claim): a formula with n atoms has 2^n rows (number of T/F assignments to n atoms) | inline, by ax-induction on n (said in the text)
 def-truth-table (claim): some valuation agrees with any row (extend by F) | inline
 def-truth-table (example): every printed truth table (the examples, A1, B3) and every F-row (exm-backwards-from-f, B1) | inline computations; checked by verify/ch03/def-truth-table.py, exm-backwards-from-f.py, exr-valuations-and-truth-tables-b1.py
-exm-table-contrapositive (solution): the derivation of prp-contrapositive-converse uses RAA | Ch 2 Section 2.5, cited by label; visible in its printed derivation
+exm-table-contrapositive (solution): the derivation of prp-contrapositive-converse uses RAA | F1.2 §05, cited by label; visible in its printed derivation
 exr-valuations-and-truth-tables-b2 (solution): the recursion for occ and bin is well defined; binary-built parts are binary-built | thm-structural-recursion (cited in the item); stated in the item
-exr-valuations-and-truth-tables-c2 (solution): Section 3.7 uses the all-T fact | prose pointer within the chapter (thm-adequate-connectives proves it in its own text)
+exr-valuations-and-truth-tables-c2 (solution): F1.3 §07 uses the all-T fact | prose pointer within the chapter (thm-adequate-connectives proves it in its own text)
 -->

@@ -1,10 +1,10 @@
 # Induction, Strong Induction and the Smallest Counterexample
 
-Chapter 3 gave the principle of induction (@ax-induction), its strong form (@thm-strong-induction), and the first worked proofs: a sum (@exm-sum-consecutive-products), an inequality (@exm-power-inequality), and a strong induction with three base cases (@exm-threes-and-fives). Chapter 5 showed how an induction is written in prose and which rule each phrase stands for (@exm-rhetoric-induction). This section is about the craft: which form of induction fits a claim, where it starts, how a smallest counterexample becomes a proof, and how an induction goes wrong, each failure located at one step. On the way it proves facts that Chapters 1, 2 and 5 took from school: every integer is even or odd and not both, a fraction can be reduced until numerator and denominator are not both even, and every integer \( n \ge 2 \) has a prime factor.
+*Logic and Proof*, Chapter 3 gave the principle of induction (@fd1:ax-induction), its strong form (@fd1:thm-strong-induction), and the first worked proofs: a sum (@fd1:exm-sum-consecutive-products), an inequality (@fd1:exm-power-inequality), and a strong induction with three base cases (@fd1:exm-threes-and-fives). *Logic and Proof*, Chapter 5 showed how an induction is written in prose and which rule each phrase stands for (@fd1:exm-rhetoric-induction). This section is about the craft: which form of induction fits a claim, where it starts, how a smallest counterexample becomes a proof, and how an induction goes wrong, each failure located at one step. On the way it proves facts that *Logic and Proof*, Chapters 1, 2 and 5 took from school: every integer is even or odd and not both, a fraction can be reduced until numerator and denominator are not both even, and every integer \( n \ge 2 \) has a prime factor.
 
 ## Induction from any integer
 
-Chapter 3 already started inductions at numbers other than \( 0 \) (Section 3.2, "Starting from another number"), for a starting point \( b \in \nN \). With \( \nZ \) and @prp-integers-closed in hand, the starting point may be any integer, negative ones included.
+*Logic and Proof*, Chapter 3 already started inductions at numbers other than \( 0 \) (*Logic and Proof*, Section 3.2, "Starting from another number"), for a starting point \( b \in \nN \). With \( \nZ \) and @prp-integers-closed in hand, the starting point may be any integer, negative ones included.
 
 *To prove a statement for every integer from \( n_0 \) on, prove it at \( n_0 \) and show that it passes from each integer to the next.*
 
@@ -22,7 +22,7 @@ Then \( P(n) \) is true for every integer \( n \ge n_0 \).
 :::
 
 ::: {.idea}
-Count from the base. The integers \( n \ge n_0 \) are exactly \( n_0 + k \) with \( k \in \nN \), and moving from \( n \) to \( n + 1 \) moves \( k \) to \( k + 1 \). So the statement "\( P(n_0 + k) \)" about \( k \in \nN \) is ready for @ax-induction, and its base case is \( P(n_0) \).
+Count from the base. The integers \( n \ge n_0 \) are exactly \( n_0 + k \) with \( k \in \nN \), and moving from \( n \) to \( n + 1 \) moves \( k \) to \( k + 1 \). So the statement "\( P(n_0 + k) \)" about \( k \in \nN \) is ready for @fd1:ax-induction, and its base case is \( P(n_0) \).
 :::
 
 ::: {.proof}
@@ -32,10 +32,10 @@ For \( k \in \nN \), let \( Q(k) \) be the statement \( P(n_0 + k) \). This make
 
 *Inductive step.* Let \( k \in \nN \), and suppose \( Q(k) \), that is, \( P(n_0 + k) \). The integer \( n \coloneqq n_0 + k \) satisfies \( n \ge n_0 \), so (ii) gives \( P(n + 1) \). Since \( n + 1 = n_0 + (k + 1) \), this is \( Q(k + 1) \).
 
-By @ax-induction, \( Q(k) \) holds for every \( k \in \nN \). Now let \( n \) be an integer with \( n \ge n_0 \). Then \( k \coloneqq n - n_0 \) is an integer by @prp-integers-closed (a), and \( k \ge 0 \), so \( k \in \nN \) by @prp-integers-closed (b). Hence \( Q(k) \) holds, and \( Q(k) \) is \( P(n_0 + k) = P(n) \). This proves the theorem.
+By @fd1:ax-induction, \( Q(k) \) holds for every \( k \in \nN \). Now let \( n \) be an integer with \( n \ge n_0 \). Then \( k \coloneqq n - n_0 \) is an integer by @prp-integers-closed (a), and \( k \ge 0 \), so \( k \in \nN \) by @prp-integers-closed (b). Hence \( Q(k) \) holds, and \( Q(k) \) is \( P(n_0 + k) = P(n) \). This proves the theorem.
 :::
 
-For \( n_0 = 0 \) the theorem is @ax-induction itself, and for \( n_0 \in \nN \) it is Chapter 3's induction started at \( n_0 \). In the inductive step, "\( P(n) \) is true" is the induction hypothesis: one implication, proved once, inside a \( \rulename{{\to}I} \) box whose assumption is \( P(n) \) for one fixed but arbitrary integer \( n \ge n_0 \).
+For \( n_0 = 0 \) the theorem is @fd1:ax-induction itself, and for \( n_0 \in \nN \) it is *Logic and Proof*, Chapter 3's induction started at \( n_0 \). In the inductive step, "\( P(n) \) is true" is the induction hypothesis: one implication, proved once, inside a \( \rulename{{\to}I} \) box whose assumption is \( P(n) \) for one fixed but arbitrary integer \( n \ge n_0 \).
 
 The strong form moves to a base in the same way.
 
@@ -46,10 +46,10 @@ Let \( n_0 \) be an integer, and for each integer \( n \ge n_0 \) let \( P(n) \)
 :::
 
 ::: {.proof}
-For \( j \in \nN \), let \( Q(j) \) be \( P(n_0 + j) \), as in the proof of @thm-induction. We check the hypothesis of @thm-strong-induction for \( Q \). Let \( j \in \nN \), and suppose \( Q(i) \) holds for every \( i \in \nN \) with \( i < j \). Put \( n \coloneqq n_0 + j \), an integer with \( n \ge n_0 \). Let \( k \) be an integer with \( n_0 \le k < n \). Then \( i \coloneqq k - n_0 \) is an integer with \( i \ge 0 \), so \( i \in \nN \) by @prp-integers-closed (b), and \( i < n - n_0 = j \); so \( Q(i) \), which is \( P(k) \), holds. The hypothesis of the theorem at \( n \) now gives \( P(n) \), that is, \( Q(j) \). By @thm-strong-induction, \( Q(j) \) holds for every \( j \in \nN \), and every integer \( n \ge n_0 \) is \( n_0 + j \) with \( j = n - n_0 \in \nN \), as in the proof of @thm-induction. This proves the theorem.
+For \( j \in \nN \), let \( Q(j) \) be \( P(n_0 + j) \), as in the proof of @thm-induction. We check the hypothesis of @fd1:thm-strong-induction for \( Q \). Let \( j \in \nN \), and suppose \( Q(i) \) holds for every \( i \in \nN \) with \( i < j \). Put \( n \coloneqq n_0 + j \), an integer with \( n \ge n_0 \). Let \( k \) be an integer with \( n_0 \le k < n \). Then \( i \coloneqq k - n_0 \) is an integer with \( i \ge 0 \), so \( i \in \nN \) by @prp-integers-closed (b), and \( i < n - n_0 = j \); so \( Q(i) \), which is \( P(k) \), holds. The hypothesis of the theorem at \( n \) now gives \( P(n) \), that is, \( Q(j) \). By @fd1:thm-strong-induction, \( Q(j) \) holds for every \( j \in \nN \), and every integer \( n \ge n_0 \) is \( n_0 + j \) with \( j = n - n_0 \in \nN \), as in the proof of @thm-induction. This proves the theorem.
 :::
 
-So @thm-strong-induction-from-base is a corollary of @thm-strong-induction, by the same shift. When \( n_0 \in \nN \), it says what @exm-threes-and-fives achieved with a guard: there the property was "if \( n \ge 8 \), then …", stated for every \( n \in \nN \) and vacuous below \( 8 \). Here the property is stated only for \( n \ge n_0 \), and the hypothesis speaks only about \( k \ge n_0 \). The two are the same argument in two notations, and the base cases sit in the same place: they are the \( n \) for which the step reaches below \( n_0 \).
+So @thm-strong-induction-from-base is a corollary of @fd1:thm-strong-induction, by the same shift. When \( n_0 \in \nN \), it says what @fd1:exm-threes-and-fives achieved with a guard: there the property was "if \( n \ge 8 \), then …", stated for every \( n \in \nN \) and vacuous below \( 8 \). Here the property is stated only for \( n \ge n_0 \), and the hypothesis speaks only about \( k \ge n_0 \). The two are the same argument in two notations, and the base cases sit in the same place: they are the \( n \) for which the step reaches below \( n_0 \).
 
 ::: {.check}
 Every integer \( n \ge 24 \) is \( 5a + 7b \) for some integers \( a, b \ge 0 \). A proof by @thm-strong-induction-from-base writes \( n = (n - 5) + 5 \) in its step. How many base cases does it need, and which? Can the base \( 24 \) be lowered?
@@ -97,11 +97,11 @@ So \( 3 \mid 12 \), with \( k = 4 \), and \( -3 \mid 12 \), with \( k = -4 \). E
 
 Change \( 12 \) to \( 14 \): \( 3 \nmid 14 \). The witness \( k \) would have to be \( 14/3 \), and \( 4 < 14/3 < 5 \), so \( 14/3 \) is not an integer, by the discreteness clause of @prp-integers-closed. The clause that fails is "\( k \in \nZ \)": the equation \( 14 = k \cdot 3 \) has a real solution, just not an integer one.
 
-Divisibility claims about powers are a staple of induction, because the step usually factors out one copy. For instance, \( 3 \mid 4^n - 1 \) for every \( n \in \nN \), with \( 4^n \) in its school meaning (\( 4^0 = 1 \), \( 4^{n+1} = 4^n \cdot 4 \); Section 7.3 makes this a definition). Base case: \( 4^0 - 1 = 0 = 3 \cdot 0 \). Step: if \( 4^n - 1 = 3k \) with \( k \in \nZ \), then
+Divisibility claims about powers are a staple of induction, because the step usually factors out one copy. For instance, \( 3 \mid 4^n - 1 \) for every \( n \in \nN \), with \( 4^n \) in its school meaning (\( 4^0 = 1 \), \( 4^{n+1} = 4^n \cdot 4 \); Section 2.3 makes this a definition). Base case: \( 4^0 - 1 = 0 = 3 \cdot 0 \). Step: if \( 4^n - 1 = 3k \) with \( k \in \nZ \), then
 \[
 4^{n+1} - 1 = 4(4^n - 1) + 3 = 3(4k + 1) ,
 \]
-and \( 4k + 1 \in \nZ \). By @ax-induction, the claim holds for every \( n \in \nN \).
+and \( 4k + 1 \in \nZ \). By @fd1:ax-induction, the claim holds for every \( n \in \nN \).
 
 ::: {#def-prime}
 [Prime Number]
@@ -151,7 +151,7 @@ The integers \( q \) and \( r \) are the **quotient** and the **remainder** of \
 - **Existence** says that every integer \( a \) is \( 2q \) or \( 2q + 1 \): every integer is **even or odd**.
 - **Uniqueness** says that no integer is both. If \( a = 2q = 2q' + 1 \), then \( a \) would have remainders \( 0 \) and \( 1 \).
 
-This is the school fact that Chapter 1 used in Argument A and Chapter 2 used in the proof of @thm-square-even-implies-even, now proved. The same uniqueness shows that no integer \( m \) has \( 2m = 1 \), since \( 1 = 2 \cdot 0 + 1 \) has remainder \( 1 \) and \( 2m = 2m + 0 \) has remainder \( 0 \); this is the fact Chapter 11 uses to show that \( \nZ \) is not a field. An integer \( 4k + 1 = 2(2k) + 1 \) or \( 4k + 3 = 2(2k + 1) + 1 \) is odd. With \( n = 3 \), every integer is \( 3k \), \( 3k + 1 \) or \( 3k + 2 \), for exactly one of the three forms.
+This is the school fact that *Logic and Proof*, Chapter 1 used in Argument A and *Logic and Proof*, Chapter 2 used in the proof of @fd1:thm-square-even-implies-even, now proved. The same uniqueness shows that no integer \( m \) has \( 2m = 1 \), since \( 1 = 2 \cdot 0 + 1 \) has remainder \( 1 \) and \( 2m = 2m + 0 \) has remainder \( 0 \); this is the fact *Analysis on the Real Line*, Chapter 1 uses to show that \( \nZ \) is not a field. An integer \( 4k + 1 = 2(2k) + 1 \) or \( 4k + 3 = 2(2k + 1) + 1 \) is odd. With \( n = 3 \), every integer is \( 3k \), \( 3k + 1 \) or \( 3k + 2 \), for exactly one of the three forms.
 
 ::: {.warning}
 "The remainder" is the \( r \) of the theorem, with \( 0 \le r < n \). The equations \( 17 = 5 \cdot 4 - 3 \) and \( 17 = 5 \cdot 2 + 7 \) are true, but \( -3 \) and \( 7 \) are not remainders, and allowing them destroys uniqueness: \( 17 \) would have the three "remainders" \( -3 \), \( 2 \) and \( 7 \). Every argument above that concludes from "remainder \( 1 \)" that a number is not a multiple of \( 2 \) uses the range \( 0 \le r < n \), through uniqueness.
@@ -159,7 +159,7 @@ This is the school fact that Chapter 1 used in Argument A and Chapter 2 used in 
 
 ## Lowest terms and prime factors
 
-Chapter 2 needed one more fact about fractions, the fact (L) in the proof of @thm-sqrt2-irrational: every rational number can be written with numerator and denominator not both even. The reason given there was that halving cannot go on for ever. Here is that reason as a proof, written in the steps of the smallest-counterexample method, each step named.
+*Logic and Proof*, Chapter 2 needed one more fact about fractions, the fact (L) in the proof of @fd1:thm-sqrt2-irrational: every rational number can be written with numerator and denominator not both even. The reason given there was that halving cannot go on for ever. Here is that reason as a proof, written in the steps of the smallest-counterexample method, each step named.
 
 ::: {#lem-lowest-terms}
 [Lowest Terms, Up to Factors of Two]
@@ -187,9 +187,9 @@ Under the supposition, every \( q \in F \) is the denominator of a failing repre
 Hence \( r \) has a representation of the required kind. As \( r \in \nQ \) was arbitrary, this proves the lemma.
 :::
 
-This is (L), with more: the denominator can be taken positive, not merely non-zero. The proof of @thm-sqrt2-irrational now rests on a proved lemma. The same argument with "not both even" replaced by "no common divisor \( d \ge 2 \)" puts every fraction in lowest terms in the full sense; that is Exercise C2. Two of the proof's steps adapt those of the smallest-counterexample method above: the failures are the denominators in \( F \), and the supposition makes every element of \( F \) one, so the third step needs only the supposition at \( m \), not the claim below \( m \), and the contradiction of the fourth step is the smaller failure \( m' \). This proof is written out in full; two later exercises use the same move with less given: Exercise B2 below leaves its last step blank, and Exercise C1 of Section 7.3 leaves the last half blank.
+This is (L), with more: the denominator can be taken positive, not merely non-zero. The proof of @fd1:thm-sqrt2-irrational now rests on a proved lemma. The same argument with "not both even" replaced by "no common divisor \( d \ge 2 \)" puts every fraction in lowest terms in the full sense; that is Exercise C2. Two of the proof's steps adapt those of the smallest-counterexample method above: the failures are the denominators in \( F \), and the supposition makes every element of \( F \) one, so the third step needs only the supposition at \( m \), not the claim below \( m \), and the contradiction of the fourth step is the smaller failure \( m' \). This proof is written out in full; two later exercises use the same move with less given: Exercise B2 below leaves its last step blank, and Exercise C1 of Section 2.3 leaves the last half blank.
 
-The next result is the prime-factor fact that Chapter 5 used. Its proof is a strong induction from base \( 2 \); the same argument inside an \( \rulename{RAA} \) box is a smallest-counterexample proof, in which the least failure \( m \) gets a prime factor from its divisor \( a \), contradicting the choice of \( m \) (compare Exercise B2).
+The next result is the prime-factor fact that *Logic and Proof*, Chapter 5 used. Its proof is a strong induction from base \( 2 \); the same argument inside an \( \rulename{RAA} \) box is a smallest-counterexample proof, in which the least failure \( m \) gets a prime factor from its divisor \( a \), contradicting the choice of \( m \) (compare Exercise B2).
 
 ::: {#thm-prime-factor}
 [Every Integer at Least Two Has a Prime Factor]
@@ -239,7 +239,7 @@ Here is a "theorem" and a "proof". Find the line that fails.
 ::: {.solution}
 *Is the conclusion true?* No: the list \( x_1 = 0 \), \( x_2 = 1 \) has unequal entries, so \( P(2) \) is false.
 
-*Does the argument prove it?* No, and the failing line is (5) at \( n = 1 \). Then the two lists of lines (3) and (4) are \( x_1 \) and \( x_2 \), one entry each, and \( x_2 \) is not in the first. They share an entry exactly when the first list, \( x_1, \dots, x_n \), contains \( x_2 \), that is, when \( n \ge 2 \). In the terms of @exm-not-allowed-catalogue, line (5) cites a "fact" that is false in the case at hand: entry (N9).
+*Does the argument prove it?* No, and the failing line is (5) at \( n = 1 \). Then the two lists of lines (3) and (4) are \( x_1 \) and \( x_2 \), one entry each, and \( x_2 \) is not in the first. They share an entry exactly when the first list, \( x_1, \dots, x_n \), contains \( x_2 \), that is, when \( n \ge 2 \). In the terms of @fd1:exm-not-allowed-catalogue, line (5) cites a "fact" that is false in the case at hand: entry (N9).
 
 Everything else is correct. The base case (1) is true. For every \( n \ge 2 \) the step (2)–(6) is valid: if all lists of \( n \) reals had equal entries, so would all lists of \( n + 1 \). So the induction fails at exactly one transition, from \( 1 \) to \( 2 \), and the valid transitions from \( 2 \) on carry nothing, because \( P(2) \) is false and every later \( P(n) \) with it. A counterexample to the illegal step, as opposed to the conclusion: \( n = 1 \), \( x_1 = 0 \), \( x_2 = 1 \), where lines (3) and (4) hold and (5) does not.
 
@@ -250,19 +250,19 @@ Everything else is correct. The base case (1) is true. For every \( n \ge 2 \) t
 | \( P(n) \Rightarrow P(n + 1) \) for \( n \ge 2 \) | yes | yes, lines (2)–(6) |
 | \( P(n) \) for every \( n \ge 1 \) | no | no |
 
-This is the failure that Chapter 3's warning about \( 2^n \ge n^2 \) foreshadowed: a step that holds only from some point on, with a gap at the first transition. A step must be proved for **every** \( n \ge n_0 \), and the place to look for a gap is the smallest \( n \), where the objects the step talks about are smallest.
+This is the failure that *Logic and Proof*, Chapter 3's warning about \( 2^n \ge n^2 \) foreshadowed: a step that holds only from some point on, with a gap at the first transition. A step must be proved for **every** \( n \ge n_0 \), and the place to look for a gap is the smallest \( n \), where the objects the step talks about are smallest.
 :::
 
 The other failures are quicker to state.
 
 **The missing base case.** "\( n = n + 1 \) for every \( n \in \nN \)." The step is valid: if \( n = n + 1 \), adding \( 1 \) to both sides gives \( n + 1 = n + 2 \). But \( P(0) \), "\( 0 = 1 \)", is false, and so is every \( P(n) \). The step is a true implication between false statements, and an induction with no true base proves nothing.
 
-**The hypothesis used out of range.** A strong induction from a base \( n_0 \) may use \( P(k) \) only for \( n_0 \le k < n \). A step that writes \( n \) in terms of \( n - 3 \) needs \( n - 3 \ge n_0 \), and for the first few \( n \) that fails. @exm-threes-and-fives handled this correctly, with three base cases; the exit check C1 below is a proof that did not.
+**The hypothesis used out of range.** A strong induction from a base \( n_0 \) may use \( P(k) \) only for \( n_0 \le k < n \). A step that writes \( n \) in terms of \( n - 3 \) needs \( n - 3 \ge n_0 \), and for the first few \( n \) that fails. @fd1:exm-threes-and-fives handled this correctly, with three base cases; the exit check C1 below is a proof that did not.
 
-**The claim too weak to carry its own step.** Sometimes the statement is true and the base case holds, but the inductive step cannot be completed, because the hypothesis gives too little. The repair is to prove **more**. Section 7.3 shows a sum bounded by \( 2 \) whose own step will not go through, and which a stronger bound carries.
+**The claim too weak to carry its own step.** Sometimes the statement is true and the base case holds, but the inductive step cannot be completed, because the hypothesis gives too little. The repair is to prove **more**. Section 2.3 shows a sum bounded by \( 2 \) whose own step will not go through, and which a stronger bound carries.
 
 ::: {.warning}
-The induction hypothesis is "\( P(n) \)" for one fixed but arbitrary \( n \): the assumption of the \( \rulename{{\to}I} \) box inside the \( \rulename{\forall I} \) box of the step (@def-rules-universal). A step that begins "assume that \( P(n) \) holds for every \( n \)" assumes the conclusion of the theorem, and whatever follows is circular: entry (N9) of @exm-not-allowed-catalogue. The witness is a "for every \( n \)" in the assumption that binds the induction variable \( n \) itself; it should not be there. A quantifier over another variable is part of the statement and may stay: "for every \( k \) with \( n_0 \le k < n \)" in strong induction, or the "for every \( n \)" inside \( P(m) \) in the proof of @lem-naturals-arithmetic (d), where the induction is on \( m \).
+The induction hypothesis is "\( P(n) \)" for one fixed but arbitrary \( n \): the assumption of the \( \rulename{{\to}I} \) box inside the \( \rulename{\forall I} \) box of the step (@fd1:def-rules-universal). A step that begins "assume that \( P(n) \) holds for every \( n \)" assumes the conclusion of the theorem, and whatever follows is circular: entry (N9) of @fd1:exm-not-allowed-catalogue. The witness is a "for every \( n \)" in the assumption that binds the induction variable \( n \) itself; it should not be there. A quantifier over another variable is part of the statement and may stay: "for every \( k \) with \( n_0 \le k < n \)" in strong induction, or the "for every \( n \)" inside \( P(m) \) in the proof of @lem-naturals-arithmetic (d), where the induction is on \( m \).
 :::
 
 ## Exercises
@@ -276,12 +276,12 @@ The induction hypothesis is "\( P(n) \)" for one fixed but arbitrary \( n \): th
 1. For each claim, name the form of proof that fits it most naturally (ordinary induction from \( 0 \), induction from another base, strong induction from a base with several base cases, or a smallest counterexample), and say in one clause why. Do not prove the claims. (i) \( 6 \mid 7^n - 1 \) for every \( n \in \nN \). (ii) \( 2^n > n^2 \) for every integer \( n \ge 5 \). (iii) Every integer \( n \ge 12 \) is \( 3a + 7b \) for some integers \( a, b \ge 0 \). (iv) There are no \( m, n \in \nZ_{>0} \) with \( n^2 = 2m^2 \).
 2. Negate "every integer \( n \ge 2 \) has a prime factor", and say what a smallest counterexample to it would be.
 3. In @exm-all-equal-induction, what is the smallest \( n \) for which the two lists \( x_1, \dots, x_n \) and \( x_2, \dots, x_{n+1} \) of lines (3) and (4) share an entry?
-4. *Find the error.* Here is a "proof" that \( a^n = 1 \) for every real \( a \ne 0 \) and every \( n \in \nN \); the powers \( a^n \), \( a^0 = 1 \) and \( a^{-1} = 1/a \) have their school meaning (Section 7.3 defines \( a^n \) for \( n \in \nN \) only, so negative exponents lie outside that definition). "Fix \( a \ne 0 \). Base: \( a^0 = 1 \). Step: let \( n \in \nN \) and suppose \( a^k = 1 \) for every \( k \in \nN \) with \( k \le n \). Then \( a^{n+1} = a^n \cdot a^n / a^{n-1} = 1 \cdot 1 / 1 = 1 \)." The conclusion is false (take \( a = 2 \), \( n = 1 \)). Which transition fails, and why?
+4. *Find the error.* Here is a "proof" that \( a^n = 1 \) for every real \( a \ne 0 \) and every \( n \in \nN \); the powers \( a^n \), \( a^0 = 1 \) and \( a^{-1} = 1/a \) have their school meaning (Section 2.3 defines \( a^n \) for \( n \in \nN \) only, so negative exponents lie outside that definition). "Fix \( a \ne 0 \). Base: \( a^0 = 1 \). Step: let \( n \in \nN \) and suppose \( a^k = 1 \) for every \( k \in \nN \) with \( k \le n \). Then \( a^{n+1} = a^n \cdot a^n / a^{n-1} = 1 \cdot 1 / 1 = 1 \)." The conclusion is false (take \( a = 2 \), \( n = 1 \)). Which transition fails, and why?
 :::
 :::
 
 ::: {.solution}
-*(a)* (i) Ordinary induction from \( 0 \): the step factors out one copy of \( 7 \), as in the example \( 3 \mid 4^n - 1 \) after @def-divides. (ii) Induction from base \( 5 \) (@thm-induction): the claim fails at \( n = 2, 3, 4 \), so it cannot start at \( 0 \), and the step \( 2^{n+1} = 2 \cdot 2^n > 2n^2 \ge (n + 1)^2 \) works for \( n \ge 5 \). (iii) Strong induction from base \( 12 \) with three base cases \( 12 = 3 \cdot 4 \), \( 13 = 3 \cdot 2 + 7 \), \( 14 = 7 \cdot 2 \): the step reaches back three, from \( n \) to \( n - 3 \). (iv) A smallest counterexample: in a solution \( (m, n) \) with least \( n \), \( n^2 \) is even, so \( n = 2n' \) is even (@thm-square-even-implies-even), and then \( m^2 = 2n'^2 \), so \( (n', m) \) is a solution whose second entry \( m \) is smaller than \( n \), since \( n^2 = 2m^2 > m^2 \). (Strong induction would also do; the forms are interchangeable, and the answers above name the natural fit.)
+*(a)* (i) Ordinary induction from \( 0 \): the step factors out one copy of \( 7 \), as in the example \( 3 \mid 4^n - 1 \) after @def-divides. (ii) Induction from base \( 5 \) (@thm-induction): the claim fails at \( n = 2, 3, 4 \), so it cannot start at \( 0 \), and the step \( 2^{n+1} = 2 \cdot 2^n > 2n^2 \ge (n + 1)^2 \) works for \( n \ge 5 \). (iii) Strong induction from base \( 12 \) with three base cases \( 12 = 3 \cdot 4 \), \( 13 = 3 \cdot 2 + 7 \), \( 14 = 7 \cdot 2 \): the step reaches back three, from \( n \) to \( n - 3 \). (iv) A smallest counterexample: in a solution \( (m, n) \) with least \( n \), \( n^2 \) is even, so \( n = 2n' \) is even (@fd1:thm-square-even-implies-even), and then \( m^2 = 2n'^2 \), so \( (n', m) \) is a solution whose second entry \( m \) is smaller than \( n \), since \( n^2 = 2m^2 > m^2 \). (Strong induction would also do; the forms are interchangeable, and the answers above name the natural fit.)
 
 *(b)* The negation is: there is an integer \( n \ge 2 \) with no prime factor. A smallest counterexample would be an integer \( m \ge 2 \) with no prime factor such that every integer \( k \) with \( 2 \le k < m \) has one.
 
@@ -295,7 +295,7 @@ The induction hypothesis is "\( P(n) \)" for one fixed but arbitrary \( n \): th
 ::: {#exr-induction-in-practice-b1}
 [B1]
 
-Prove that \( 5 \mid 6^n - 1 \) for every \( n \in \nN \), without adding up the powers of \( 6 \). Here \( 6^n \) has its school meaning: \( 6^0 = 1 \), \( 6^{n+1} = 6^n \cdot 6 \), and \( 6^n \) is an integer; Section 7.3 makes these official.
+Prove that \( 5 \mid 6^n - 1 \) for every \( n \in \nN \), without adding up the powers of \( 6 \). Here \( 6^n \) has its school meaning: \( 6^0 = 1 \), \( 6^{n+1} = 6^n \cdot 6 \), and \( 6^n \) is an integer; Section 2.3 makes these official.
 :::
 
 ::: {.solution}
@@ -303,13 +303,13 @@ For \( n \in \nN \), let \( P(n) \) be "there is \( k \in \nZ \) with \( 6^n - 1
 \[
 6^{n+1} - 1 = 6 \cdot 6^n - 1 = 6(6^n - 1) + 5 = 5(6k + 1) ,
 \]
-and \( 6k + 1 \in \nZ \) by @prp-integers-closed (a). So \( P(n + 1) \) holds. By @ax-induction, \( 5 \mid 6^n - 1 \) for every \( n \in \nN \).
+and \( 6k + 1 \in \nZ \) by @prp-integers-closed (a). So \( P(n + 1) \) holds. By @fd1:ax-induction, \( 5 \mid 6^n - 1 \) for every \( n \in \nN \).
 :::
 
 ::: {#exr-induction-in-practice-b2}
 [B2: Products of primes]
 
-An integer is a **product of primes** if it equals \( p_1 p_2 \cdots p_k \) for some \( k \ge 1 \) and primes \( p_1, \dots, p_k \) (a single prime counts, with \( k = 1 \)). Here \( p_1 p_2 \cdots p_k \) has its school meaning, and multiplying two such products gives the product of the joined list; Section 7.3 defines finite products (@def-sum-product). Here is a proof that every integer \( n \ge 2 \) is a product of primes, with its last step blank. *Name the move, then complete it.*
+An integer is a **product of primes** if it equals \( p_1 p_2 \cdots p_k \) for some \( k \ge 1 \) and primes \( p_1, \dots, p_k \) (a single prime counts, with \( k = 1 \)). Here \( p_1 p_2 \cdots p_k \) has its school meaning, and multiplying two such products gives the product of the joined list; Section 2.3 defines finite products (@def-sum-product). Here is a proof that every integer \( n \ge 2 \) is a product of primes, with its last step blank. *Name the move, then complete it.*
 
 Suppose not. Then the set \( F \) of integers \( n \ge 2 \) that are not products of primes is non-empty and has the integer lower bound \( 2 \), so it has a least element \( m \) by @cor-well-ordering-integers. Since a prime is a product of primes, \( m \) is not prime; as \( m \ge 2 \), it has a positive divisor \( a \notin \{1, m\} \), and \( m = ab \) with \( b \in \nZ \). As in the proof of @thm-prime-factor, \( b > 0 \) and \( 2 \le a < m \). Since \( a < m = ab \) and \( a > 0 \), we get \( b > 1 \), so \( b \ge 2 \) by discreteness; and since \( a \ge 2 \), \( b < 2b \le ab = m \). So \( 2 \le a < m \) and \( 2 \le b < m \), and as \( m \) is the least element of \( F \), neither \( a \) nor \( b \) lies in \( F \): both are products of primes.
 
@@ -377,7 +377,7 @@ and from these four the repaired induction in (vi) reaches every larger integer.
 
 *(iii)* Line (5) fails for \( n = 18 \), \( 19 \) and \( 20 \). There \( n - 3 \) is \( 15 \), \( 16 \), \( 17 \), all below \( 18 \), and the induction hypothesis says nothing about them. For \( n \ge 21 \), \( 18 \le n - 3 < n \), and line (5) is correct. Lines (1)–(4), (6) and (7) are correct. Line (7) needs one remark, because the step is written from \( n \) to \( n + 1 \) and not in the theorem's own form. At \( N = 18 \) the theorem's hypothesis has a vacuous "if" part, so it asks for \( P(18) \) outright, which is line (2). At an integer \( N \ge 19 \), put \( n = N - 1 \ge 18 \). By the discreteness clause of @prp-integers-closed, the integers \( k \) with \( 18 \le k < N \) are exactly those with \( 18 \le k \le n \), so lines (3)–(6), were they valid for every \( n \ge 18 \), would prove the hypothesis at \( N \).
 
-*(iv)* Line (5) applies \( \rulename{\forall E} \) to the hypothesis "for every integer \( k \) with \( 18 \le k \le n \), \( P(k) \)" at \( k = n - 3 \). That is a bounded quantifier, and its elimination needs the line "\( 18 \le n - 3 \)" (@prp-bounded-quantifier-rules); for \( n \le 20 \) that line is false. The proof checked only half of the bound, \( n - 3 < n \).
+*(iv)* Line (5) applies \( \rulename{\forall E} \) to the hypothesis "for every integer \( k \) with \( 18 \le k \le n \), \( P(k) \)" at \( k = n - 3 \). That is a bounded quantifier, and its elimination needs the line "\( 18 \le n - 3 \)" (@fd1:prp-bounded-quantifier-rules); for \( n \le 20 \) that line is false. The proof checked only half of the bound, \( n - 3 < n \).
 
 *(v)* Run the same argument with base \( 14 = 7 \cdot 2 \): it "proves" that every integer \( n \ge 14 \) is \( 4a + 7b \). That conclusion is false at \( 17 \): with \( b = 0, 1, 2 \) the remainder \( 17 - 7b \) is \( 17, 10, 3 \), none a multiple of \( 4 \), and \( b \ge 3 \) makes it negative. The step that breaks is line (5) at \( n = 16 \): it takes \( P(13) \) from the hypothesis, but \( 13 < 14 \) is outside it, and \( 13 \) is not of the form (\( 13 \) and \( 6 \) are not multiples of \( 4 \)). At \( n = 16 \) the induction hypothesis is true (\( 14 = 7 \cdot 2 \), \( 15 = 4 \cdot 2 + 7 \), \( 16 = 4 \cdot 4 \)), and the step concludes the false \( P(17) \). So line (5) is an illegal step, not merely an unlucky one.
 
@@ -445,19 +445,19 @@ A strong induction on the denominator earns the same points step for step. Fatal
 :::
 
 <!-- dependency ledger
-thm-induction (proof): n0 + k >= n0 from k >= 0; n + 1 = n0 + (k + 1) | R arithmetic and order, school fact; axioms in Chapter 11
-thm-strong-induction-from-base (proof): n0 <= k < n0 + j gives 0 <= k - n0 < j | R arithmetic and order, school fact; axioms in Chapter 11
+thm-induction (proof): n0 + k >= n0 from k >= 0; n + 1 = n0 + (k + 1) | R arithmetic and order, school fact; axioms in AN1.1
+thm-strong-induction-from-base (proof): n0 <= k < n0 + j gives 0 <= k - n0 < j | R arithmetic and order, school fact; axioms in AN1.1
 def-divides (example): 4 < 14/3 < 5; c = lb = (lk)a | R arithmetic, school fact
-def-divides (example): 4^0 = 1, 4^(n+1) = 4^n * 4, 4^n an integer (the example 3 | 4^n - 1) | powers, school meaning; def-power in Section 7.3
+def-divides (example): 4^0 = 1, 4^(n+1) = 4^n * 4, 4^n an integer (the example 3 | 4^n - 1) | powers, school meaning; def-power in F2.2 §03
 def-prime (example): k > 0 from 2 = kd and d > 0; d <= kd | R arithmetic and order, school fact
-thm-division-algorithm (proof): a(1 - n) >= 0 for a < 0, n >= 1; r - n < r for n > 0; k > 0 from kn > 0, n > 0; cancellation qn = q'n, n != 0 | R arithmetic and order, school fact; axioms in Chapter 11
-thm-division-algorithm (proof): "by symmetry" for the exchange of (q, r) and (q', r') | exm-rhetoric-induction (b) (Ch 5, the conditions for a legitimate symmetry); stated inline
-thm-division-algorithm (claim): (aftermath) even and odd defined as 2k and 2k + 1 | Ch 1 Section 1.1, Ch 2 Section 2.1 (definitions recalled there)
+thm-division-algorithm (proof): a(1 - n) >= 0 for a < 0, n >= 1; r - n < r for n > 0; k > 0 from kn > 0, n > 0; cancellation qn = q'n, n != 0 | R arithmetic and order, school fact; axioms in AN1.1
+thm-division-algorithm (proof): "by symmetry" for the exchange of (q, r) and (q', r') | exm-rhetoric-induction (b) (F1.5, the conditions for a legitimate symmetry); stated inline
+thm-division-algorithm (claim): (aftermath) even and odd defined as 2k and 2k + 1 | F1.1 §01, F1.2 §01 (definitions recalled there)
 lem-lowest-terms (proof): m' = m/2 > 0; m' < m' + m' = m; 2p'/(2m') = p'/m' | R arithmetic and order, school fact
 thm-prime-factor (proof): k > 0 from n = ka, n > 0, a > 0; a <= ka for k >= 1, a > 0 | R arithmetic and order, school fact
 exr-induction-in-practice-a1 (solution): (a)(ii) 2n^2 >= (n + 1)^2 for n >= 3; (d) a^(n+1) = a^n a^n / a^(n-1) for n >= 1, a^(-1) = 1/a | powers, school meaning (negative exponents outside def-power, said in the item); R arithmetic
-exr-induction-in-practice-b1 (solution): 6^(n+1) = 6 * 6^n, 6^n an integer | powers, school meaning; def-power and prp-power-laws (d) in Section 7.3 (said in the item)
-exr-induction-in-practice-b2 (solution): a product of two products of primes is a product of primes (concatenating the lists) | inline; products of finite lists defined in Section 7.3 (def-sum-product), used here in their school meaning (said in the item)
+exr-induction-in-practice-b1 (solution): 6^(n+1) = 6 * 6^n, 6^n an integer | powers, school meaning; def-power and prp-power-laws (d) in F2.2 §03 (said in the item)
+exr-induction-in-practice-b2 (solution): a product of two products of primes is a product of primes (concatenating the lists) | inline; products of finite lists defined in F2.2 §03 (def-sum-product), used here in their school meaning (said in the item)
 exr-induction-in-practice-b3 (solution): (b) x^2 = 4k(k + 1) + 1; (c) n = 6q + 2r | R arithmetic, school fact
 exr-induction-in-practice-c1 (solution): representability of 13, 15, 16, 17, 18-21 | arithmetic; checked in the solution. (i) every n >= 22 representable | the repaired induction in (vi) (cited inline)
 exr-induction-in-practice-c2 (solution): m' = m/d > 0; dm' >= 2m' > m' | R arithmetic and order, school fact

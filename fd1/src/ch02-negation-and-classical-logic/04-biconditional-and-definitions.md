@@ -326,7 +326,7 @@ This proves the theorem \( [\rulename{{\leftrightarrow}I}] \).
 Each hypothesis has a job. The direction \( (\Rightarrow) \) needs \( x \ge 0 \), and fails without it: \( x = -2 \), \( y = 1 \) gives \( x \le y \) but \( x^2 = 4 > 1 = y^2 \). (Its proof also multiplied by \( y \ge 0 \), but there \( y \ge 0 \) already follows from \( y \ge x \ge 0 \).) The direction \( (\Leftarrow) \) used only \( y \ge 0 \), and fails without it: \( x = 1 \), \( y = -2 \) gives \( x^2 = 1 \le 4 = y^2 \) but \( x > y \).
 :::
 
-A payoff comes at once. For \( a, b \ge 0 \), apply @thm-squares-order to \( x = \sqrt{a} \) and \( y = \sqrt{b} \): \( \sqrt{a} \le \sqrt{b} \) if and only if \( a \le b \). Taking square roots preserves order, a fact used constantly in estimates. (That square roots of nonnegative numbers exist is a school fact here; Chapter 11 proves it from the least upper bound axiom.)
+A payoff comes at once. For \( a, b \ge 0 \), apply @thm-squares-order to \( x = \sqrt{a} \) and \( y = \sqrt{b} \): \( \sqrt{a} \le \sqrt{b} \) if and only if \( a \le b \). Taking square roots preserves order, a fact used constantly in estimates. (That square roots of nonnegative numbers exist is a school fact here; *Analysis on the Real Line*, Chapter 1 proves it from the least upper bound axiom.)
 
 ::: {.check}
 Here is a proof of the statement "for a real number \( x \), \( x^2 = 1 \) if and only if \( x = 1 \) or \( x = -1 \)".
@@ -379,7 +379,7 @@ This is a convention of mathematical language, not a rule of logic. Some books w
 Part (a) uses the definition from the condition to the term; parts (b) and (c) use it from the term to the condition. A definition read only as an "if" would permit (a) and nothing else.
 
 ::: {.warning}
-The convention is for **definitions only**. In a theorem, "if" means "if", one direction. A familiar theorem of calculus, proved in Chapter 17, says: if \( f \) is differentiable at \( a \), then \( f \) is continuous at \( a \). Its converse is false. The function \( f(x) = \abs{x} \) is continuous at \( 0 \), but it is not differentiable there, since its graph has a corner: the quotient \( \abs{h}/h \) is \( 1 \) for \( h > 0 \) and \( -1 \) for \( h < 0 \). Reading a theorem's "if" as "iff" means proving its converse without a proof, which is the error of Argument B in Section 1.1.
+The convention is for **definitions only**. In a theorem, "if" means "if", one direction. A familiar theorem of calculus, proved in *Analysis on the Real Line*, Chapter 7, says: if \( f \) is differentiable at \( a \), then \( f \) is continuous at \( a \). Its converse is false. The function \( f(x) = \abs{x} \) is continuous at \( 0 \), but it is not differentiable there, since its graph has a corner: the quotient \( \abs{h}/h \) is \( 1 \) for \( h > 0 \) and \( -1 \) for \( h < 0 \). Reading a theorem's "if" as "iff" means proving its converse without a proof, which is the error of Argument B in Section 1.1.
 :::
 
 ## Chains of equivalences
@@ -615,18 +615,18 @@ Any other cycle through the three conditions earns full marks if each of its arr
 <!-- dependency ledger
 prp-provable-equivalence-basics (proof): copying a derivation into a new place (inside extra boxes, numbers shifted) keeps every citation available | inline (the "observation" in the proof), from def-derivation's scope rule and (D3)
 prp-provable-equivalence-basics (proof): a one-line derivation consisting of a premise is a derivation | exm-derivations (cited in the paragraph before the proposition); def-derivation
-def-provable-equivalence (claim): a derivation never leads from true premises to a false conclusion | ch03 (thm-soundness), prose pointer; the warning's example is motivation only
-def-provable-equivalence (claim): not-not-P |- P does not hold without RAA | ch03 (thm-raa-independent, optional there), prose pointer; nothing depends on it
-exm-iff-negations (claim): the converse needs the rule of Section 2.5 | stated without proof and marked so; nothing depends on it
-thm-odd-iff-square-odd (proof): (E1)-(E3); n = 2k gives n^2 = 2(2k^2) | school facts stated in Section 2.1 (thm-square-even-implies-even); computation inline
-thm-squares-order (proof): multiplying an inequality by a non-negative (positive) number; x <= y or y < x; transitivity of <= and < | school algebra, taken as known; ch11 (promised)
-thm-squares-order (claim): (aftermath) existence of square roots of non-negative reals | school fact, taken as known; ch11 (promised); nothing depends on it
+def-provable-equivalence (claim): a derivation never leads from true premises to a false conclusion | F1.3 (thm-soundness), prose pointer; the warning's example is motivation only
+def-provable-equivalence (claim): not-not-P |- P does not hold without RAA | F1.3 (thm-raa-independent, optional there), prose pointer; nothing depends on it
+exm-iff-negations (claim): the converse needs the rule of F1.2 §05 | stated without proof and marked so; nothing depends on it
+thm-odd-iff-square-odd (proof): (E1)-(E3); n = 2k gives n^2 = 2(2k^2) | school facts stated in F1.2 §01 (thm-square-even-implies-even); computation inline
+thm-squares-order (proof): multiplying an inequality by a non-negative (positive) number; x <= y or y < x; transitivity of <= and < | school algebra, taken as known; AN1.1 (promised)
+thm-squares-order (claim): (aftermath) existence of square roots of non-negative reals | school fact, taken as known; AN1.1 (promised); nothing depends on it
 thm-squares-order (solution): (the quick check after this theorem) a product of reals is zero only if a factor is zero | school algebra, taken as known
-exm-strictly-increasing-both-ways (example): 3 > 0; multiplying/adding inequalities; the quantifier "for all x, y" used informally | school algebra; quantifier rules in ch04 (prose pointer)
+exm-strictly-increasing-both-ways (example): 3 > 0; multiplying/adding inequalities; the quantifier "for all x, y" used informally | school algebra; quantifier rules in F1.4 (prose pointer)
 exm-unit-interval-tfae (example): x <= 0 or x > 0; x^2 >= 0; dividing an inequality by x > 0 | school algebra, taken as known
-def-rules-biconditional (claim): (warning after "What a definition says") differentiable at a implies continuous at a; |h|/h = 1 for h > 0 and -1 for h < 0 | ch17 (prose pointer); the corner computation inline; nothing depends on it
+def-rules-biconditional (claim): (warning after "What a definition says") differentiable at a implies continuous at a; |h|/h = 1 for h > 0 and -1 for h < 0 | AN1.7 (prose pointer); the corner computation inline; nothing depends on it
 exr-biconditional-and-definitions-a1 (solution): 10 = 2*5; (-2)^2 = 4 > 1 | arithmetic
 exr-biconditional-and-definitions-b3 (solution): a < b exactly when b <= a fails | stated in the item
-exr-biconditional-and-definitions-c1 (solution): every integer is odd or even, not both | (E1), (E2) of Section 2.1
+exr-biconditional-and-definitions-c1 (solution): every integer is odd or even, not both | (E1), (E2) of F1.2 §01
 exr-biconditional-and-definitions-c2 (solution): |x| >= 0; |x|^2 = x^2 | school algebra; the second shown inline
 -->

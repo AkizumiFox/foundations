@@ -448,15 +448,15 @@ Fatal errors (0 for the step): claiming that \( \rulename{\exists I} \) read bac
 :::
 
 <!-- dependency ledger
-def-rule-existential-introduction (claim): Why this rule: if phi[t/x] is true and t is free for x in phi, then exists x phi is true | informal reading of Section 4.1 (def-free-for's role, Section 4.2); made exact in Section 4.12 (lem-term-substitution; prose pointer only, nothing depends on it)
-def-rule-existential-introduction (claim): the degenerate choice: phi without free x gives phi[c/x] = phi | Section 4.2 (claim after def-substitution: x not free gives phi[t/x] = phi)
-def-rule-existential-introduction (example): the capture nonexample: over Z, every integer is <= itself, and there is no least integer | school arithmetic (x - 1 < x); informal truth, Section 4.1
-def-rule-existential-introduction (example): the table: over N with R as <= and c as 5, the readings are true | school arithmetic; informal truth, Section 4.1
-exm-existential-introduction-derivations (solution): b: over Z with R(x, y) as x * y = 1 and c as 0: 1 * 1 = 1, and no integer x has x * 0 = 1 | school arithmetic; informal truth, Section 4.1
+def-rule-existential-introduction (claim): Why this rule: if phi[t/x] is true and t is free for x in phi, then exists x phi is true | informal reading of F1.4 §01 (def-free-for's role, F1.4 §02); made exact in F1.4 §12 (lem-term-substitution; prose pointer only, nothing depends on it)
+def-rule-existential-introduction (claim): the degenerate choice: phi without free x gives phi[c/x] = phi | F1.4 §02 (claim after def-substitution: x not free gives phi[t/x] = phi)
+def-rule-existential-introduction (example): the capture nonexample: over Z, every integer is <= itself, and there is no least integer | school arithmetic (x - 1 < x); informal truth, F1.4 §01
+def-rule-existential-introduction (example): the table: over N with R as <= and c as 5, the readings are true | school arithmetic; informal truth, F1.4 §01
+exm-existential-introduction-derivations (solution): b: over Z with R(x, y) as x * y = 1 and c as 0: 1 * 1 = 1, and no integer x has x * 0 = 1 | school arithmetic; informal truth, F1.4 §01
 exm-existential-introduction-derivations (solution): d: over Z, the successor of an odd integer is even; 3 is odd; f(3) = 4; 3 is not even | school arithmetic
 exm-existential-introduction-derivations (solution): c: the side condition of forall-I as quoted (no premise, no open assumption, not in the conclusion) | def-rules-universal (cited)
-prp-forall-implies-exists (proof): phi[x/x] = phi, and x is free for x in every formula | Section 4.2 (facts after def-substitution and the special cases after def-free-for)
-prp-forall-implies-exists (claim): every domain is non-empty | convention of Section 4.1; explained in Section 4.11 (prose pointer)
+prp-forall-implies-exists (proof): phi[x/x] = phi, and x is free for x in every formula | F1.4 §02 (facts after def-substitution and the special cases after def-free-for)
+prp-forall-implies-exists (claim): every domain is non-empty | convention of F1.4 §01; explained in F1.4 §11 (prose pointer)
 prp-forall-implies-exists (claim): bounded case: forall x in A phi and exists x in A phi unfold to -> and /\ | def-bounded-quantifier (cited)
 def-rule-existential-introduction (example): How this rule looks: 6 = 2 * 3, 7 = 2 * 3 + 1, 100 in N, 1/101 < 1/100, 1/100 is not < 1/100, 2n + 1 is odd and > 2n | arith lines (school arithmetic)
 exr-existential-introduction-a1 (solution): c: over Z, y <= y * y for every y; y = x * x + 1 exceeds x * x | school arithmetic (cases y <= 0 and y >= 1)
@@ -464,12 +464,12 @@ exr-existential-introduction-a1 (solution): b: over N with R as <, f(x) = x + 1,
 exr-existential-introduction-b2 (solution): the forall-I side condition | def-rules-universal (cited)
 exr-existential-introduction-b3 (solution): 2 * 2 = 2 + 2 and (-1) * (-1) = -1 + 2 | arith line (school arithmetic)
 exr-existential-introduction-c1 (solution): over N, x <= x, and y + 1 > y | school arithmetic
-exr-existential-introduction-c2 (solution): the list of rules of Chapters 1-2 and Sections 4.3-4.4 with the main symbol of each cited line | def-rules-conjunction, def-rules-implication, def-rules-disjunction, def-rules-negation, def-rules-contradiction, def-rules-biconditional, def-rule-raa, def-derivation (R), def-rule-universal-elimination, def-rules-universal (recalled in prose, not cited by @ref)
-exr-existential-introduction-c2 (solution): the explanation is informal; non-derivability follows from the counter-model of Section 4.11 and soundness (stated in 4.11, proved in the optional 4.12) | prose pointer; nothing depends on it
-exr-existential-introduction-c2 (solution): over Z with P as even and c as 3, exists x P(x) is true (2 is even) and P(3) is false | school arithmetic; informal truth, Section 4.1
-exr-existential-introduction-a1 (solution): d: over Z with P as even and c as 3, some integer (2) is even and 3 is not | school arithmetic; informal truth, Section 4.1
-def-rule-existential-introduction (example): the one-way warning: some integer is even, 3 is not even | school arithmetic; informal truth, Section 4.1
-exm-existential-introduction-derivations (solution): c: over N with R as <=, x <= x for every x | school arithmetic; informal truth, Section 4.1
-def-rule-existential-introduction (claim): clause 3's recipe: if x does not appear in the line and phi is the line with some occurrences of t replaced by x, then phi[t/x] is the line; from R(x, c), marking c gives R(x, x), and R(x, x)[c/x] = R(c, c) | def-substitution (Section 4.2; every x of phi is a marked occurrence and none is bound), "appears in" of Section 4.2
+exr-existential-introduction-c2 (solution): the list of rules of F1.1-F1.2 and F1.4 §03-F1.4 §04 with the main symbol of each cited line | def-rules-conjunction, def-rules-implication, def-rules-disjunction, def-rules-negation, def-rules-contradiction, def-rules-biconditional, def-rule-raa, def-derivation (R), def-rule-universal-elimination, def-rules-universal (recalled in prose, not cited by @ref)
+exr-existential-introduction-c2 (solution): the explanation is informal; non-derivability follows from the counter-model of F1.4 §11 and soundness (stated in 4.11, proved in the optional 4.12) | prose pointer; nothing depends on it
+exr-existential-introduction-c2 (solution): over Z with P as even and c as 3, exists x P(x) is true (2 is even) and P(3) is false | school arithmetic; informal truth, F1.4 §01
+exr-existential-introduction-a1 (solution): d: over Z with P as even and c as 3, some integer (2) is even and 3 is not | school arithmetic; informal truth, F1.4 §01
+def-rule-existential-introduction (example): the one-way warning: some integer is even, 3 is not even | school arithmetic; informal truth, F1.4 §01
+exm-existential-introduction-derivations (solution): c: over N with R as <=, x <= x for every x | school arithmetic; informal truth, F1.4 §01
+def-rule-existential-introduction (claim): clause 3's recipe: if x does not appear in the line and phi is the line with some occurrences of t replaced by x, then phi[t/x] is the line; from R(x, c), marking c gives R(x, x), and R(x, x)[c/x] = R(c, c) | def-substitution (F1.4 §02; every x of phi is a marked occurrence and none is bound), "appears in" of F1.4 §02
 exr-existential-introduction-c1 (claim): the problem asks for a sentence as conclusion | def-sentence (cited)
 -->

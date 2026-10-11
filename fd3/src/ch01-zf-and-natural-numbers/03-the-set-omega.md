@@ -1,6 +1,6 @@
 # Successors, Inductive Sets and the Natural Numbers
 
-Chapter 3 described the natural numbers as what we reach from \( 0 \) by adding \( 1 \), again and again, and nothing else; induction (@ax-induction) was the precise form of "nothing else". In this chapter every object is a set, so we need a set to play \( 0 \) and an operation on sets to play "add \( 1 \)". This section chooses both, adds the one axiom that lets the repetition be completed into a set, and proves induction as a theorem about the set it produces.
+*Logic and Proof*, Chapter 3 described the natural numbers as what we reach from \( 0 \) by adding \( 1 \), again and again, and nothing else; induction (@fd1:ax-induction) was the precise form of "nothing else". In this chapter every object is a set, so we need a set to play \( 0 \) and an operation on sets to play "add \( 1 \)". This section chooses both, adds the one axiom that lets the repetition be completed into a set, and proves induction as a theorem about the set it produces.
 
 ## Going one step further
 
@@ -23,7 +23,7 @@ y \in \mathrm{S}(x) \iff y \in x \ \text{ or } \ y = x .
 \]
 The set \( \mathrm{S}(x) \) exists and is unique: \( \{x\} \) is the set \( \{x, x\} \) of Pairing (Z3), and \( x \cup \{x\} = \bigcup \{x, \{x\}\} \) comes from Union (Z4), both by @prp-zf-basic-sets (b), (c). Two facts are visible at once. First, \( x \in \mathrm{S}(x) \) for every \( x \). Second, \( x \subseteq \mathrm{S}(x) \): the successor keeps every old element and adds \( x \) itself, which is a new element whenever \( x \notin x \). The next section proves \( n \notin n \) for every natural number \( n \).
 
-The letter is an upright \( \mathrm{S} \). Chapter 6 used an italic \( S \) for a set in @prp-smallest-closed-set, and we are about to use that proposition with this operation as its step; the two letters never stand for the same thing.
+The letter is an upright \( \mathrm{S} \). *Sets, Relations, and Cardinality*, Chapter 1 used an italic \( S \) for a set in @fd2:prp-smallest-closed-set, and we are about to use that proposition with this operation as its step; the two letters never stand for the same thing.
 
 Start from \( \emptyset \) and apply \( \mathrm{S} \) repeatedly.
 
@@ -144,7 +144,7 @@ An inductive set contains the numerals, and perhaps more. To remove anything ext
 
 *The natural numbers are what every inductive set is forced to contain.*
 
-There is one obstacle. Separation (Z6) can only cut a set out of a set already given, so we need an ambient set for the natural numbers; and the smallest-closed-set construction of Chapter 6 (@prp-smallest-closed-set) intersects a set of subsets, but the inductive sets are not handed to us as the elements of any set. So we fix one inductive set \( I \) and look only at the inductive subsets of \( I \), which do form a set, by Power set and Separation; the theorem below shows that the choice of \( I \) does not matter.
+There is one obstacle. Separation (Z6) can only cut a set out of a set already given, so we need an ambient set for the natural numbers; and the smallest-closed-set construction of *Sets, Relations, and Cardinality*, Chapter 1 (@fd2:prp-smallest-closed-set) intersects a set of subsets, but the inductive sets are not handed to us as the elements of any set. So we fix one inductive set \( I \) and look only at the inductive subsets of \( I \), which do form a set, by Power set and Separation; the theorem below shows that the choice of \( I \) does not matter.
 
 ::: {#def-omega}
 [The set of natural numbers]
@@ -158,7 +158,7 @@ The elements of \( \omega \) are the **natural numbers**.
 
 In words: a natural number is an element of the fixed inductive set \( I \) that survives every attempt to shrink \( I \) to a smaller inductive set.
 
-The set \( \omega \) exists by Separation (Z6), with ambient set \( I \), once the condition is a property in the sense of (Z6): a formula of Chapter 4's first-order language with \( \in \) and \( = \) (@def-first-order-formula), with \( I \) as a parameter. The condition is "for every \( J \), if \( J \subseteq I \) and \( J \) is inductive, then \( x \in J \)", and, since \( J \subseteq I \) abbreviates \( \forall y \, (y \in J \to y \in I) \) as in (Z5) (@def-subset), the only part not yet written in that language is "\( J \) is inductive". Written out with no abbreviations it is
+The set \( \omega \) exists by Separation (Z6), with ambient set \( I \), once the condition is a property in the sense of (Z6): a formula of *Logic and Proof*, Chapter 4's first-order language with \( \in \) and \( = \) (@fd1:def-first-order-formula), with \( I \) as a parameter. The condition is "for every \( J \), if \( J \subseteq I \) and \( J \) is inductive, then \( x \in J \)", and, since \( J \subseteq I \) abbreviates \( \forall y \, (y \in J \to y \in I) \) as in (Z5) (@fd2:def-subset), the only part not yet written in that language is "\( J \) is inductive". Written out with no abbreviations it is
 \[
 \begin{aligned}
 &\exists e \, \bigl( e \in J \wedge \forall y \, \neg (y \in e) \bigr) \\
@@ -181,19 +181,19 @@ Here is what "least" means, and why the choice of \( I \) is harmless.
 :::
 
 ::: {.idea}
-Part (a) is Chapter 6's smallest closed set, with \( I \) as the ambient set, \( \emptyset \) as the starting element and \( \mathrm{S} \) as the step: the closed subsets of \( I \) are exactly its inductive subsets, and \( \omega \) is their intersection. For (b), an inductive \( J \) need not lie inside \( I \), so we cut it down to \( \omega \cap J \), which does; then the definition of \( \omega \) applies. Part (c) is two inclusions, each an instance of (b).
+Part (a) is *Sets, Relations, and Cardinality*, Chapter 1's smallest closed set, with \( I \) as the ambient set, \( \emptyset \) as the starting element and \( \mathrm{S} \) as the step: the closed subsets of \( I \) are exactly its inductive subsets, and \( \omega \) is their intersection. For (b), an inductive \( J \) need not lie inside \( I \), so we cut it down to \( \omega \cap J \), which does; then the definition of \( \omega \) applies. Part (c) is two inclusions, each an instance of (b).
 :::
 
 ::: {.proof}
-*(a)* Apply @prp-smallest-closed-set with \( X \coloneqq I \), the single starting element \( \emptyset \), which lies in \( I \) because \( I \) is inductive, and the single step \( x \mapsto \mathrm{S}(x) \), which turns elements of \( I \) into elements of \( I \) for the same reason. A subset \( J \subseteq I \) is closed in the sense of that proposition exactly when \( \emptyset \in J \) and \( \mathrm{S}(x) \in J \) for every \( x \in J \), that is, when \( J \) is inductive. So the set of closed subsets is
+*(a)* Apply @fd2:prp-smallest-closed-set with \( X \coloneqq I \), the single starting element \( \emptyset \), which lies in \( I \) because \( I \) is inductive, and the single step \( x \mapsto \mathrm{S}(x) \), which turns elements of \( I \) into elements of \( I \) for the same reason. A subset \( J \subseteq I \) is closed in the sense of that proposition exactly when \( \emptyset \in J \) and \( \mathrm{S}(x) \in J \) for every \( x \in J \), that is, when \( J \) is inductive. So the set of closed subsets is
 \[
 \sS \coloneqq \{ J \in \powerset{I} : J \text{ is inductive} \} ,
 \]
-a set by Power set (Z5) and Separation (Z6); it is non-empty, since \( I \in \sS \). Its intersection \( \bigcap \sS \), formed inside \( I \) as in @prp-zf-basic-sets (c), is \( \{ x \in I : x \in J \text{ for every } J \in \sS \} \), which is \( \omega \). By @prp-smallest-closed-set, \( \bigcap \sS \) is closed; that is, \( \omega \) is inductive.
+a set by Power set (Z5) and Separation (Z6); it is non-empty, since \( I \in \sS \). Its intersection \( \bigcap \sS \), formed inside \( I \) as in @prp-zf-basic-sets (c), is \( \{ x \in I : x \in J \text{ for every } J \in \sS \} \), which is \( \omega \). By @fd2:prp-smallest-closed-set, \( \bigcap \sS \) is closed; that is, \( \omega \) is inductive.
 
 *(b)* Let \( J \) be an inductive set. The set \( \omega \cap J \) exists by (Z6) (@prp-zf-basic-sets (c)), and \( \omega \cap J \subseteq \omega \subseteq I \). It is inductive: \( \emptyset \in \omega \) by (a) and \( \emptyset \in J \) because \( J \) is inductive; and if \( x \in \omega \cap J \), then \( \mathrm{S}(x) \in \omega \) by (a) and \( \mathrm{S}(x) \in J \) because \( J \) is inductive. So \( \omega \cap J \) is an inductive subset of \( I \), and by @def-omega every element of \( \omega \) lies in it. Hence \( \omega \subseteq \omega \cap J \subseteq J \).
 
-*(c)* Let \( W \) be a set that is inductive and is contained in every inductive set. Then \( W \subseteq \omega \), because \( \omega \) is inductive by (a); and \( \omega \subseteq W \) by (b), because \( W \) is inductive. So \( W = \omega \) by @prp-subset-antisymmetric. Now let \( I' \) be another inductive set, and let \( \omega' \) be the set that @def-omega produces from \( I' \). The proofs of (a) and (b) used nothing about \( I \) except that it is inductive, so they apply to \( \omega' \) as well: \( \omega' \) is inductive and is contained in every inductive set. By what we just proved, \( \omega' = \omega \). This proves the theorem.
+*(c)* Let \( W \) be a set that is inductive and is contained in every inductive set. Then \( W \subseteq \omega \), because \( \omega \) is inductive by (a); and \( \omega \subseteq W \) by (b), because \( W \) is inductive. So \( W = \omega \) by @fd2:prp-subset-antisymmetric. Now let \( I' \) be another inductive set, and let \( \omega' \) be the set that @def-omega produces from \( I' \). The proofs of (a) and (b) used nothing about \( I \) except that it is inductive, so they apply to \( \omega' \) as well: \( \omega' \) is inductive and is contained in every inductive set. By what we just proved, \( \omega' = \omega \). This proves the theorem.
 :::
 
 So \( \omega \) is **the** least inductive set: it is inductive, and it lies inside every inductive set. From now on we forget \( I \). The numerals \( 0, 1, 2, 3, 4 \) of @exm-von-neumann-numerals are natural numbers, since \( \omega \) is inductive and contains each of them by the argument given after @def-zf-inductive-set.
@@ -216,12 +216,12 @@ Leastness has an immediate consequence. To show that every natural number belong
 :::
 
 ::: {.proof}
-*(a)* The hypotheses say that \( A \) is inductive. By @thm-omega-least-inductive (b), \( \omega \subseteq A \). With \( A \subseteq \omega \), @prp-subset-antisymmetric gives \( A = \omega \).
+*(a)* The hypotheses say that \( A \) is inductive. By @thm-omega-least-inductive (b), \( \omega \subseteq A \). With \( A \subseteq \omega \), @fd2:prp-subset-antisymmetric gives \( A = \omega \).
 
 *(b)* Let \( A \coloneqq \{ n \in \omega : P(n) \} \), a set by (Z6). Then \( 0 \in A \), because \( 0 \in \omega \) by @thm-omega-least-inductive (a) and \( P(0) \) holds. Let \( n \in A \). Then \( n \in \omega \) and \( P(n) \), so \( P(\mathrm{S}(n)) \) by hypothesis, and \( \mathrm{S}(n) \in \omega \) because \( \omega \) is inductive; hence \( \mathrm{S}(n) \in A \). By (a), \( A = \omega \), which says that \( P(n) \) holds for every \( n \in \omega \).
 :::
 
-Compare part (b) with the principle of induction, @ax-induction. Read with \( \omega \) in place of \( \nN \), and with \( \mathrm{S}(n) \) in place of \( n + 1 \), the two statements are the same; and once addition is defined, later in this chapter, \( n + 1 \) will be \( \mathrm{S}(n) \). The difference lies in their status. In Chapter 3, induction was an axiom, a basic property of \( \nN \) taken on trust. Here it is a **theorem**, proved from the seven axioms (Z1)–(Z7) about sets, and the proof is three lines long because all the work went into the definition of \( \omega \): the natural numbers were defined as what every inductive set contains, and induction says exactly that.
+Compare part (b) with the principle of induction, @fd1:ax-induction. Read with \( \omega \) in place of \( \nN \), and with \( \mathrm{S}(n) \) in place of \( n + 1 \), the two statements are the same; and once addition is defined, later in this chapter, \( n + 1 \) will be \( \mathrm{S}(n) \). The difference lies in their status. In *Logic and Proof*, Chapter 3, induction was an axiom, a basic property of \( \nN \) taken on trust. Here it is a **theorem**, proved from the seven axioms (Z1)–(Z7) about sets, and the proof is three lines long because all the work went into the definition of \( \omega \): the natural numbers were defined as what every inductive set contains, and induction says exactly that.
 
 The proof of (b) is the model for the inductions in the rest of this chapter.
 
@@ -229,7 +229,7 @@ The proof of (b) is the model for the inductions in the rest of this chapter.
 
 Here is the move once, on a statement about the shape of natural numbers: **every \( n \in \omega \) is \( 0 \), or is \( 1 \), or has \( 1 \) as an element**. Let \( A \coloneqq \{ n \in \omega : n = 0 \text{ or } n = 1 \text{ or } 1 \in n \} \), a set by (Z6). Then \( 0 \in A \) by the first alternative. Let \( n \in A \); there are three cases. If \( n = 0 \), then \( \mathrm{S}(n) = 1 \), which satisfies the second alternative. If \( n = 1 \), then \( \mathrm{S}(n) = 2 = \{0, 1\} \), which has \( 1 \) as an element. If \( 1 \in n \), then \( 1 \in n \subseteq \mathrm{S}(n) \). In every case \( \mathrm{S}(n) \in A \), since also \( \mathrm{S}(n) \in \omega \) because \( \omega \) is inductive (@thm-omega-least-inductive (a)). By @thm-omega-induction (a), \( A = \omega \).
 
-Two features of this small proof recur. The property carried along is a disjunction, because "\( 1 \in n \)" alone is false at \( n = 0 \) and \( n = 1 \), and an induction can only carry a property that holds at the start. And the step is a case split along the disjunction, with one case for each alternative; dropping a case would be the error (N7) of @exm-not-allowed-catalogue.
+Two features of this small proof recur. The property carried along is a disjunction, because "\( 1 \in n \)" alone is false at \( n = 0 \) and \( n = 1 \), and an induction can only carry a property that holds at the start. And the step is a case split along the disjunction, with one case for each alternative; dropping a case would be the error (N7) of @fd1:exm-not-allowed-catalogue.
 
 ::: {.check}
 In the proof just given, which case of the step produces the first natural number that satisfies the third alternative "\( 1 \in n \)", and which number is it?
@@ -259,7 +259,7 @@ The next section uses the move five times in a row, to show that \( \omega \) sa
 ::: {.solution}
 (a) \( 3 = \{0, 1, 2\} \) and \( 4 = \{0, 1, 2, 3\} \), by @exm-von-neumann-numerals.
 
-(b) Both are true. The elements of \( 2 \) are \( 0 \) and \( 1 \), and both are elements of \( 3 = \{0, 1, 2\} \); so \( 2 \subseteq 3 \) (@def-subset). And \( 2 \) is itself one of the listed elements of \( 3 \), so \( 2 \in 3 \). A set can be both an element and a subset of another set; for numerals this will turn out to be the rule, not an accident.
+(b) Both are true. The elements of \( 2 \) are \( 0 \) and \( 1 \), and both are elements of \( 3 = \{0, 1, 2\} \); so \( 2 \subseteq 3 \) (@fd2:def-subset). And \( 2 \) is itself one of the listed elements of \( 3 \), so \( 2 \in 3 \). A set can be both an element and a subset of another set; for numerals this will turn out to be the rule, not an accident.
 
 (c) True. Let \( J \) be inductive. Then \( 0 = \emptyset \in J \) by the first clause of @def-zf-inductive-set, and the second clause applied five times gives \( 1, 2, 3, 4, 5 \in J \), each being the successor of the one before.
 
@@ -267,7 +267,7 @@ The next section uses the move five times in a row, to show that \( \omega \) sa
 \[
 \neg\bigl( \emptyset \in J \wedge \forall x \in J \ \ \mathrm{S}(x) \in J \bigr) ,
 \]
-which by De Morgan's law @prp-de-morgan (d) and (c) is equivalent to \( \neg(\emptyset \in J) \vee \neg\forall x \in J \ \ \mathrm{S}(x) \in J \), and by @prp-bounded-quantifier-negation (a), the bounded form of @prp-quantifier-negation, to
+which by De Morgan's law @fd1:prp-de-morgan (d) and (c) is equivalent to \( \neg(\emptyset \in J) \vee \neg\forall x \in J \ \ \mathrm{S}(x) \in J \), and by @fd1:prp-bounded-quantifier-negation (a), the bounded form of @fd1:prp-quantifier-negation, to
 \[
 \emptyset \notin J \ \vee \ \exists x \in J \ \ \mathrm{S}(x) \notin J .
 \]
@@ -335,7 +335,7 @@ exm-von-neumann-numerals (claim): (the paragraph on other choices) {{emptyset}} 
 def-zf-inductive-set (claim): (the paragraph of non-examples) 4 not in 4 | inline, from 3 in 4 and 3 != 0, 1, 2 (exm-von-neumann-numerals, cited)
 ax-infinity (claim): (the paragraph before it) no inductive set can be shown to exist from (Z1)-(Z6) | set theory proper (the set-theory volume, ST.1; stated without proof, nothing depends on it)
 def-omega (claim): "J is inductive" is a first-order formula with in and = | inline (displayed), with prp-zf-basic-sets (a) (cited) and Extensionality (Z1)
-thm-omega-least-inductive (proof): prp-smallest-closed-set, proved in Ch 6 under the working rules, uses only the power set, Separation and the intersection of a non-empty set of subsets of X | ax-zf-fragment (Z5), (Z6) and prp-zf-basic-sets (c) (cited at the step)
+thm-omega-least-inductive (proof): prp-smallest-closed-set, proved in F2.1 under the working rules, uses only the power set, Separation and the intersection of a non-empty set of subsets of X | ax-zf-fragment (Z5), (Z6) and prp-zf-basic-sets (c) (cited at the step)
 thm-omega-least-inductive (claim): (the warning after it) Replacement yields the inductive set omega u {omega, S(omega), ...}; omega not in omega | the set-theory volume (ST.1, prose pointer, nothing depends on it); omega not in omega is the Quick check of the next section (lem-omega-transitive (c))
 thm-omega-induction (claim): (the remark after it) n + 1 = S(n) once addition is defined | def-omega-arithmetic (a), with 1 := S(0) from (c); the paragraph "The successor is plus one" after it, later in this chapter (prose pointer; nothing in this section depends on it)
 thm-omega-induction (example): (the worked move) 2 = {0, 1}, 1 != 0 | exm-von-neumann-numerals (cited)

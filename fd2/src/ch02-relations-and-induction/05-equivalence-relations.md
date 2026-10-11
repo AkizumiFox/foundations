@@ -1,6 +1,6 @@
 # Equivalence Relations and Partitions
 
-Section 7.4 sorted relations by four properties: reflexive, symmetric, antisymmetric and transitive (@def-relation-properties). This section studies the relations that have the first, second and fourth. They are the relations that say two things are "the same" in some respect, and each of them cuts its set into disjoint pieces of mutually "same" elements. We prove that the pieces always form a partition, and that every partition arises from exactly one such relation. Then we build the integers modulo \( n \), and meet the check that every definition on pieces needs: that it does not depend on which element names the piece. Section 6.4 promised that check for functions defined on classes; here it is.
+Section 2.4 sorted relations by four properties: reflexive, symmetric, antisymmetric and transitive (@def-relation-properties). This section studies the relations that have the first, second and fourth. They are the relations that say two things are "the same" in some respect, and each of them cuts its set into disjoint pieces of mutually "same" elements. We prove that the pieces always form a partition, and that every partition arises from exactly one such relation. Then we build the integers modulo \( n \), and meet the check that every definition on pieces needs: that it does not depend on which element names the piece. Section 1.4 promised that check for functions defined on classes; here it is.
 
 ## Arithmetic on a clock
 
@@ -12,7 +12,7 @@ Two things have to be checked before this is mathematics. First, "differ by a mu
 
 ## Equivalence relations
 
-Equality has three properties that every argument with "\( = \)" uses silently: \( x = x \); if \( x = y \), then \( y = x \); and if \( x = y \) and \( y = z \), then \( x = z \) (@prp-equality-symmetric-transitive). They are exactly what lets us replace a thing by an equal thing, as often as we like, in either direction. "Same hour on the clock", "same remainder on division by \( 3 \)" and "same absolute value" all have the same three properties, although none of them is equality. They deserve a common name.
+Equality has three properties that every argument with "\( = \)" uses silently: \( x = x \); if \( x = y \), then \( y = x \); and if \( x = y \) and \( y = z \), then \( x = z \) (@fd1:prp-equality-symmetric-transitive). They are exactly what lets us replace a thing by an equal thing, as often as we like, in either direction. "Same hour on the clock", "same remainder on division by \( 3 \)" and "same absolute value" all have the same three properties, although none of them is equality. They deserve a common name.
 
 *An equivalence relation declares things the same in a way that behaves like equality.*
 
@@ -38,7 +38,7 @@ In words: (Eq1) says everything is the same as itself. (Eq2) says "the same" has
 \[
 \forall x, y, z \in X \ \, \bigl( (x \sim y \wedge y \sim z) \to x \sim z \bigr) .
 \]
-The symbol \( \sim \) is a letter for a relation, like \( R \) in Section 7.4; it is written between its arguments because it is read like \( = \). Nothing needs checking for well-definedness: the definition names a property of a set of pairs.
+The symbol \( \sim \) is a letter for a relation, like \( R \) in Section 2.4; it is written between its arguments because it is read like \( = \). Nothing needs checking for well-definedness: the definition names a property of a set of pairs.
 
 ::: {#exm-first-equivalences}
 [Four equivalence relations]
@@ -54,7 +54,7 @@ Check (Eq1)–(Eq3) for each relation.
 :::
 
 ::: {.solution}
-(a) (Eq1)–(Eq3) are the three properties of equality recalled above: \( x = x \) is \( \rulename{{=}I} \), and symmetry and transitivity are @prp-equality-symmetric-transitive.
+(a) (Eq1)–(Eq3) are the three properties of equality recalled above: \( x = x \) is \( \rulename{{=}I} \), and symmetry and transitivity are @fd1:prp-equality-symmetric-transitive.
 
 (b) Every pair \( (x, y) \) with \( x, y \in X \) lies in \( X \times X \), so each of (Eq1)–(Eq3) has a conclusion of the form \( (u, v) \in X \times X \) with \( u, v \in X \), and that conclusion is true. This is the coarsest sameness: everything is the same as everything.
 
@@ -71,7 +71,7 @@ Part (c) is an instance of a pattern that returns later in this section, with th
 
 **Why these three clauses.** Each clause has a job, and each failure has a witness.
 
-- Drop (Eq1), and an element may be the same as nothing at all. On \( \{1\} \), the empty relation is symmetric and transitive (Section 7.4's warning), and \( 1 \) is related to nothing; it would sit in no piece of the cutting.
+- Drop (Eq1), and an element may be the same as nothing at all. On \( \{1\} \), the empty relation is symmetric and transitive (Section 2.4's warning), and \( 1 \) is related to nothing; it would sit in no piece of the cutting.
 - Drop (Eq2), and the pieces overlap. The relation \( \le \) on \( \{1, 2\} \) is reflexive and transitive; the set of elements below \( 2 \) is \( \{1, 2\} \), the set below \( 1 \) is \( \{1\} \), and the two share \( 1 \) without being equal.
 - Drop (Eq3), and sameness leaks. "\( \abs{x - y} \le 1 \)" on \( \nR \) is reflexive and symmetric, and \( 0 \) is related to \( 1 \), \( 1 \) to \( 2 \), \( 2 \) to \( 3 \), and so on, while \( 0 \) is not related to \( 2 \). Every integer is linked to every other through a chain of steps of length \( 1 \), though few are related directly.
 
@@ -238,7 +238,7 @@ Back to the clock, with any number of hours. The divisibility notation \( d \mid
 Let \( n \in \nZ_{>0} \). Integers \( a \) and \( b \) are **congruent modulo \( n \)**, written \( a \equiv b \pmod{n} \), if \( n \mid a - b \), that is, if \( a - b = kn \) for some \( k \in \nZ \).
 :::
 
-So \( 14 \equiv 2 \pmod{12} \), since \( 14 - 2 = 1 \cdot 12 \); \( -10 \equiv 2 \pmod{12} \), since \( -10 - 2 = (-1) \cdot 12 \); and \( 7 \not\equiv 2 \pmod{12} \), since \( 5 \) is not a multiple of \( 12 \) (the multiples \( 12k \) are \( 0 \) for \( k = 0 \), at least \( 12 \) for \( k \ge 1 \) and at most \( -12 \) for \( k \le -1 \), by discreteness, @prp-integers-closed (c)). The symbol \( \equiv \) here always carries its modulus, so it does not clash with the semantic equivalence \( \varphi \equiv \psi \) of Chapter 3.
+So \( 14 \equiv 2 \pmod{12} \), since \( 14 - 2 = 1 \cdot 12 \); \( -10 \equiv 2 \pmod{12} \), since \( -10 - 2 = (-1) \cdot 12 \); and \( 7 \not\equiv 2 \pmod{12} \), since \( 5 \) is not a multiple of \( 12 \) (the multiples \( 12k \) are \( 0 \) for \( k = 0 \), at least \( 12 \) for \( k \ge 1 \) and at most \( -12 \) for \( k \le -1 \), by discreteness, @prp-integers-closed (c)). The symbol \( \equiv \) here always carries its modulus, so it does not clash with the semantic equivalence \( \varphi \equiv \psi \) of *Logic and Proof*, Chapter 3.
 
 ::: {.remark}
 Why \( n \ge 1 \)? The condition makes sense for \( n = 0 \), but it says nothing new: \( 0 \mid a - b \) means \( a - b = k \cdot 0 = 0 \), so "congruence modulo \( 0 \)" is equality on \( \nZ \). Its classes would be the singletons \( \{a\} \), a copy of \( \nZ \) and not \( \nZ \) itself, and the count of classes proved below would fail. Excluding \( n = 0 \) keeps that count exact.
@@ -268,7 +268,7 @@ Let \( n \in \nZ_{>0} \). For every \( a \in \nZ \) there is **exactly one** \( 
 and the \( n \) classes listed are pairwise different.
 :::
 
-Here \( n - 1 \in \nN \) by @lem-naturals-arithmetic (c), since \( n \ne 0 \), so \( \{0, \dots, n - 1\} \) is the set of Section 7.1.
+Here \( n - 1 \in \nN \) by @lem-naturals-arithmetic (c), since \( n \ne 0 \), so \( \{0, \dots, n - 1\} \) is the set of Section 2.1.
 
 ::: {.proof}
 Let \( a \in \nZ \). By @thm-division-algorithm there are \( q, r \in \nZ \) with \( a = qn + r \) and \( 0 \le r < n \). Since \( r \ge 0 \), \( r \in \nN \) (@prp-integers-closed (b)); since \( r < n \), \( r + 1 \le n \) by discreteness (@prp-integers-closed (c)), so \( r \le n - 1 \). Hence \( r \in \{0, \dots, n - 1\} \). Also \( a - r = qn \), so \( a \equiv r \pmod{n} \), and \( [a] = [r] \) by @thm-classes-partition (b).
@@ -291,7 +291,7 @@ Let \( f \colon X \to Y \) be a function, and for \( x, y \in X \) let \( x \sim
 :::
 
 ::: {.solution}
-(Eq1)–(Eq3) for \( \sim_f \) are the properties of equality applied to the values \( f(x), f(y), f(z) \), exactly as in @exm-first-equivalences (c): \( f(x) = f(x) \); \( f(x) = f(y) \) gives \( f(y) = f(x) \); and \( f(x) = f(y) \), \( f(y) = f(z) \) give \( f(x) = f(z) \) (@prp-equality-symmetric-transitive).
+(Eq1)–(Eq3) for \( \sim_f \) are the properties of equality applied to the values \( f(x), f(y), f(z) \), exactly as in @exm-first-equivalences (c): \( f(x) = f(x) \); \( f(x) = f(y) \) gives \( f(y) = f(x) \); and \( f(x) = f(y) \), \( f(y) = f(z) \) give \( f(x) = f(z) \) (@fd1:prp-equality-symmetric-transitive).
 
 The class of \( a \in X \) is
 \[
@@ -323,10 +323,10 @@ On \( \nR \), let \( x \sim y \) mean \( x - y \in \nZ \). Show that \( \sim \) 
 \]
 and in the same way \( [\sqrt 2] = \{ \sqrt 2 + k : k \in \nZ \} = \{ \dots, \sqrt 2 - 1, \sqrt 2, \sqrt 2 + 1, \dots \} \).
 
-*Three different classes.* By @thm-classes-partition (b), two classes \( [x] \) and \( [y] \) are equal exactly when \( x - y \in \nZ \). A real number \( t \) with \( 0 < t < 1 \) is not an integer: if it were, discreteness (@prp-integers-closed (c)) applied to \( 0 < t \) would give \( 1 \le t \). Now \( \tfrac12 - 0 = \tfrac12 \) lies strictly between \( 0 \) and \( 1 \), so \( [\tfrac12] \ne [0] \). Since \( \sqrt 2 \ge 0 \) and \( (\sqrt 2)^2 = 2 \), @thm-squares-order rules out \( \sqrt 2 \le 1 \) (it would give \( 2 \le 1 \)) and \( 2 \le \sqrt 2 \) (it would give \( 4 \le 2 \)), so \( 1 < \sqrt 2 < 2 \), and \( 0 < \sqrt 2 - 1 < 1 \); then \( \sqrt 2 - 1 \notin \nZ \), and therefore \( \sqrt 2 - 0 \notin \nZ \) (else \( \sqrt 2 - 1 \) would be a difference of integers), so \( [\sqrt 2] \ne [0] \). Finally, in the same way \( \sqrt 2 \le \tfrac12 \) would give \( 2 \le \tfrac14 \), and \( \tfrac32 \le \sqrt 2 \) would give \( \tfrac94 \le 2 \), so \( \tfrac12 < \sqrt 2 < \tfrac32 \), and \( 0 < \sqrt 2 - \tfrac12 < 1 \), and \( [\sqrt 2] \ne [\tfrac12] \).
+*Three different classes.* By @thm-classes-partition (b), two classes \( [x] \) and \( [y] \) are equal exactly when \( x - y \in \nZ \). A real number \( t \) with \( 0 < t < 1 \) is not an integer: if it were, discreteness (@prp-integers-closed (c)) applied to \( 0 < t \) would give \( 1 \le t \). Now \( \tfrac12 - 0 = \tfrac12 \) lies strictly between \( 0 \) and \( 1 \), so \( [\tfrac12] \ne [0] \). Since \( \sqrt 2 \ge 0 \) and \( (\sqrt 2)^2 = 2 \), @fd1:thm-squares-order rules out \( \sqrt 2 \le 1 \) (it would give \( 2 \le 1 \)) and \( 2 \le \sqrt 2 \) (it would give \( 4 \le 2 \)), so \( 1 < \sqrt 2 < 2 \), and \( 0 < \sqrt 2 - 1 < 1 \); then \( \sqrt 2 - 1 \notin \nZ \), and therefore \( \sqrt 2 - 0 \notin \nZ \) (else \( \sqrt 2 - 1 \) would be a difference of integers), so \( [\sqrt 2] \ne [0] \). Finally, in the same way \( \sqrt 2 \le \tfrac12 \) would give \( 2 \le \tfrac14 \), and \( \tfrac32 \le \sqrt 2 \) would give \( \tfrac94 \le 2 \), so \( \tfrac12 < \sqrt 2 < \tfrac32 \), and \( 0 < \sqrt 2 - \tfrac12 < 1 \), and \( [\sqrt 2] \ne [\tfrac12] \).
 :::
 
-Picture each class as one point of a circle of circumference \( 1 \): the real line is wound around it, and two numbers land on the same point when they differ by an integer. Each class has exactly one representative in \( [0, 1) \): the class of \( \sqrt 2 \) meets \( [0, 1) \) in \( \sqrt 2 - 1 \), for instance. Proving this for every class needs the integer part of a real number, which Chapter 11 constructs; we do not use it here. With \( \nQ \) in place of \( \nZ \), the relation "\( x - y \in \nQ \)" is again an equivalence relation on \( \nR \), and choosing one point from each of its classes is how Chapter 43 builds a set of real numbers that has no length.
+Picture each class as one point of a circle of circumference \( 1 \): the real line is wound around it, and two numbers land on the same point when they differ by an integer. Each class has exactly one representative in \( [0, 1) \): the class of \( \sqrt 2 \) meets \( [0, 1) \) in \( \sqrt 2 - 1 \), for instance. Proving this for every class needs the integer part of a real number, which *Analysis on the Real Line*, Chapter 1 constructs; we do not use it here. With \( \nQ \) in place of \( \nZ \), the relation "\( x - y \in \nQ \)" is again an equivalence relation on \( \nR \), and choosing one point from each of its classes is how *Measure and Integration*, Chapter 1 builds a set of real numbers that has no length.
 
 ## Operations on classes
 
@@ -334,7 +334,7 @@ Now the second check of the clock. To add hours we want to define
 \[
 [a] + [b] \coloneqq [a + b] \qquad \text{in } \nZ/n .
 \]
-The right-hand side is computed from the representatives \( a \) and \( b \). If another pair of representatives of the same two classes gave a different class, the "definition" would assign two answers to one input, and @def-function forbids that: a function gives each input **exactly one** value. So the definition is legitimate only if the answer does not depend on the representatives. That property is called **well-definedness**, and it was met in Section 6.4, where "write a rational number as \( p/q \), then send it to its numerator \( p \)" failed to be a function (@exm-not-a-function).
+The right-hand side is computed from the representatives \( a \) and \( b \). If another pair of representatives of the same two classes gave a different class, the "definition" would assign two answers to one input, and @def-function forbids that: a function gives each input **exactly one** value. So the definition is legitimate only if the answer does not depend on the representatives. That property is called **well-definedness**, and it was met in Section 1.4, where "write a rational number as \( p/q \), then send it to its numerator \( p \)" failed to be a function (@exm-not-a-function).
 
 ::: {#prp-congruence-arithmetic}
 [Congruence Respects Sums and Products]
@@ -433,7 +433,7 @@ Parts (a)–(d) are about @thm-classes-partition and its proof.
 ::: {.solution}
 (a) (Eq1) \( ab = ba \). (Eq2) If \( ad = bc \), then \( cb = da \). (Eq3) Let \( (a, b) \sim (c, d) \) and \( (c, d) \sim (e, f) \), so \( ad = bc \) and \( cf = de \). Multiply the first equation by \( f \) and use the second: \( adf = bcf = bde \). So \( d(af - be) = 0 \). Since \( d \in \nZ_{>0} \), \( d \ne 0 \), and we may cancel \( d \): \( af = be \), that is, \( (a, b) \sim (e, f) \). The hypothesis \( d \ne 0 \) on the **middle** pair is used here and nowhere else.
 
-The class of \( (1, 2) \) is \( \{ (c, d) \in \nZ \times \nZ_{>0} : d = 2c \} \). Since \( d > 0 \), \( c = d/2 > 0 \), so \( c \in \nZ_{>0} \) (@prp-integers-closed (b)), and the class is \( \{ (k, 2k) : k \in \nZ_{>0} \} = \{ (1, 2), (2, 4), (3, 6), \dots \} \): the ways of writing \( \tfrac12 \) as a fraction. Each class is "one rational number"; Chapter 10 builds \( \nQ \) as this quotient set.
+The class of \( (1, 2) \) is \( \{ (c, d) \in \nZ \times \nZ_{>0} : d = 2c \} \). Since \( d > 0 \), \( c = d/2 > 0 \), so \( c \in \nZ_{>0} \) (@prp-integers-closed (b)), and the class is \( \{ (k, 2k) : k \in \nZ_{>0} \} = \{ (1, 2), (2, 4), (3, 6), \dots \} \): the ways of writing \( \tfrac12 \) as a fraction. Each class is "one rational number"; *Number Systems: From \(\nN\) to \(\nR\)*, Chapter 2 builds \( \nQ \) as this quotient set.
 
 (b) (Eq1) and (Eq2) hold, by the same two lines as in (a), which did not use \( b, d \ne 0 \). (Eq3) fails: \( (1, 1) \mathrel{R} (0, 0) \), since \( 1 \cdot 0 = 1 \cdot 0 \), and \( (0, 0) \mathrel{R} (2, 1) \), since \( 0 \cdot 1 = 0 \cdot 2 \); but \( (1, 1) \mathrel{\not R} (2, 1) \), since \( 1 \cdot 1 \ne 1 \cdot 2 \). The pair \( (0, 0) \) is related to every pair, so it links any two; this is exactly the cancellation of (a) failing for \( d = 0 \).
 :::
@@ -447,7 +447,7 @@ In \( \nZ/7 \), compute \( [3] + [5] \) and \( [3][5] \), each written as \( [r]
 ::: {.solution}
 \( [3] + [5] = [8] = [1] \), since \( 8 - 1 = 7 \); and \( [3][5] = [15] = [1] \), since \( 15 - 1 = 2 \cdot 7 \).
 
-*Powers.* Let \( n \in \nZ_{>0} \), \( a, b \in \nZ \) with \( a \equiv b \pmod{n} \). By @prp-power-laws (d), \( a^k \) and \( b^k \) are integers. We prove \( a^k \equiv b^k \) by induction on \( k \in \nN \) (@ax-induction). Base: \( a^0 = 1 = b^0 \), and \( 1 \equiv 1 \) by (Eq1). Step: suppose \( a^k \equiv b^k \). By @def-power, \( a^{k+1} = a^k a \) and \( b^{k+1} = b^k b \); the product clause of @prp-congruence-arithmetic, applied to \( a^k \equiv b^k \) and \( a \equiv b \), gives \( a^k a \equiv b^k b \).
+*Powers.* Let \( n \in \nZ_{>0} \), \( a, b \in \nZ \) with \( a \equiv b \pmod{n} \). By @prp-power-laws (d), \( a^k \) and \( b^k \) are integers. We prove \( a^k \equiv b^k \) by induction on \( k \in \nN \) (@fd1:ax-induction). Base: \( a^0 = 1 = b^0 \), and \( 1 \equiv 1 \) by (Eq1). Step: suppose \( a^k \equiv b^k \). By @def-power, \( a^{k+1} = a^k a \) and \( b^{k+1} = b^k b \); the product clause of @prp-congruence-arithmetic, applied to \( a^k \equiv b^k \) and \( a \equiv b \), gives \( a^k a \equiv b^k b \).
 
 *The remainder.* By @prp-power-laws, \( 3^{100} = 3^{96} \cdot 3^4 = (3^6)^{16} \cdot 3^4 \). Now \( 729 = 104 \cdot 7 + 1 \), so \( 3^6 \equiv 1 \pmod 7 \), and by the power fact, \( (3^6)^{16} \equiv 1^{16} = 1 \). Also \( 3^4 = 81 = 11 \cdot 7 + 4 \), so \( 3^4 \equiv 4 \). By @prp-congruence-arithmetic, \( 3^{100} \equiv 1 \cdot 4 = 4 \pmod 7 \). Since \( 0 \le 4 < 7 \), the remainder of \( 3^{100} \) on division by \( 7 \) is \( 4 \) (@prp-integers-mod-n), and \( [3^{100}] = [4] \) in \( \nZ/7 \). Here \( 1^{16} = 1 \) is itself an induction: \( 1^0 = 1 \), and \( 1^{k+1} = 1^k \cdot 1 = 1 \).
 :::
@@ -521,7 +521,7 @@ A student proves part of @thm-partition-equivalence. Let \( \sP \) be a partitio
 ::: {.solution}
 (a) The claim is true: it is the transitivity step (Eq3) in the proof of @thm-partition-equivalence (a).
 
-(b) Line (3) fails. "\( y \) and \( z \) lie in a common block" is an existential statement, and to use it the proof must name its witness by \( \rulename{\exists E} \), with a **new** name. Line (3) gives the second witness the name \( P \), already in use for the witness of line (2): this is entry (N4) of @exm-not-allowed-catalogue, reusing one witness name for two \( \rulename{\exists E} \)'s (@def-rules-existential). The tell is that the proof never uses (P2), the disjointness of the blocks; and without (P2) the claim is false, as (c) shows.
+(b) Line (3) fails. "\( y \) and \( z \) lie in a common block" is an existential statement, and to use it the proof must name its witness by \( \rulename{\exists E} \), with a **new** name. Line (3) gives the second witness the name \( P \), already in use for the witness of line (2): this is entry (N4) of @fd1:exm-not-allowed-catalogue, reusing one witness name for two \( \rulename{\exists E} \)'s (@fd1:def-rules-existential). The tell is that the proof never uses (P2), the disjointness of the blocks; and without (P2) the claim is false, as (c) shows.
 
 (c) A counterexample to the step needs blocks that overlap, since for a partition the step's conclusion happens to be true. Take the cover \( \{ \{1, 2\}, \{2, 3\} \} \) of \( \{1, 2, 3\} \), which is not a partition, with \( x = 1 \), \( y = 2 \), \( z = 3 \). Then \( 1 \sim 2 \) with \( P = \{1, 2\} \), and \( 2 \sim 3 \) through \( \{2, 3\} \); line (3) concludes \( 3 \in \{1, 2\} \), which is false, and the argument "proves" \( 1 \sim 3 \), although no set of the cover contains \( 1 \) and \( 3 \).
 
@@ -530,27 +530,27 @@ Repair: replace (3) and (4) by "Since \( y \sim z \), there is a block \( Q \in 
 
 <!-- dependency ledger
 def-equivalence-relation (claim): (the clock) 9 + 5 = 14; 21 + (-7) = 14; hours repeat every 12 | arithmetic; everyday meaning of a clock
-def-equivalence-relation (claim): (why these clauses) |0 - 2| > 1, |x - y| <= 1 reflexive and symmetric; <= on {1, 2} reflexive and transitive | R arithmetic and order, school fact; axioms in Chapter 11
-def-equivalence-relation (claim): (why these clauses) every integer is chained to every other by steps of length 1 | ax-induction (Ch 3), not cited; nothing depends on it
+def-equivalence-relation (claim): (why these clauses) |0 - 2| > 1, |x - y| <= 1 reflexive and symmetric; <= on {1, 2} reflexive and transitive | R arithmetic and order, school fact; axioms in AN1.1
+def-equivalence-relation (claim): (why these clauses) every integer is chained to every other by steps of length 1 | ax-induction (F1.3), not cited; nothing depends on it
 thm-classes-partition (claim): (after it) q is injective only when every class is a singleton | thm-classes-partition (b), def-quotient-set (cited)
-exm-first-equivalences (solution): x = x is =I | def-rules-equality (Ch 4 Section 4.7), named in the text
-def-equivalence-relation (claim): (non-example) x - x = 0; (x - y) + (y - z) = x - z | R arithmetic, school fact; axioms in Chapter 11
+exm-first-equivalences (solution): x = x is =I | def-rules-equality (F1.4 §07), named in the text
+def-equivalence-relation (claim): (non-example) x - x = 0; (x - y) + (y - z) = x - z | R arithmetic, school fact; axioms in AN1.1
 thm-classes-partition (claim): (quick check) "same last digit" on {1, ..., 30} gives ten classes of three | everyday meaning of the last digit; verify/ch07/thm-classes-partition.py
 def-partition (claim): the evens and odds partition Z | thm-division-algorithm (cited, n = 2)
 def-partition (claim): the union of the empty set of sets is empty | def-family-union-intersection (cited)
-thm-classes-partition (proof): substituting equals (=E): a in [a] and [a] = [b] give a in [b] | def-rules-equality (Ch 4 Section 4.7), used silently
-thm-partition-equivalence (proof): substituting equals: P = Q and z in Q give z in P | def-rules-equality (Ch 4 Section 4.7), used silently
+thm-classes-partition (proof): substituting equals (=E): a in [a] and [a] = [b] give a in [b] | def-rules-equality (F1.4 §07), used silently
+thm-partition-equivalence (proof): substituting equals: P = Q and z in Q give z in P | def-rules-equality (F1.4 §07), used silently
 def-congruence (claim): 5, 2 are not multiples of 12, 4: a multiple kn is 0, >= n or <= -n | prp-integers-closed (c) (cited), with kn >= n for k >= 1 by R order
 prp-congruence-equivalence (proof): -k = 0 - k; (k + l)n = kn + ln | prp-integers-closed (a) (cited); R arithmetic
 prp-integers-mod-n (proof): r = 0 * n + r | R arithmetic
-exm-reals-mod-integers (solution): 2 <= 1, 4 <= 2, 2 <= 1/4, 9/4 <= 2 are false; sqrt(2) exists and is positive; not (s <= t) gives t < s | R arithmetic and order (trichotomy), school fact; square roots, school fact (Ch 11 thm-nth-root); thm-squares-order (cited, by contraposition); verify/ch07/exm-reals-mod-integers.py
-exm-reals-mod-integers (claim): (after it) each class meets [0, 1) exactly once; the Vitali set | Ch 11 (integer part), Ch 43 (prose pointers; nothing here depends on them)
-prp-congruence-arithmetic (proof): ab - a'b' = a(b - b') + (a - a')b' | R arithmetic, school fact; axioms in Chapter 11
+exm-reals-mod-integers (solution): 2 <= 1, 4 <= 2, 2 <= 1/4, 9/4 <= 2 are false; sqrt(2) exists and is positive; not (s <= t) gives t < s | R arithmetic and order (trichotomy), school fact; square roots, school fact (AN1.1 thm-nth-root); thm-squares-order (cited, by contraposition); verify/ch07/exm-reals-mod-integers.py
+exm-reals-mod-integers (claim): (after it) each class meets [0, 1) exactly once; the Vitali set | AN1.1 (integer part), MT.1 (prose pointers; nothing here depends on them)
+prp-congruence-arithmetic (proof): ab - a'b' = a(b - b') + (a - a')b' | R arithmetic, school fact; axioms in AN1.1
 exm-ill-defined-class-map (solution): 6 - 2 = 4; 2 is not a multiple of 4 | arithmetic; prp-integers-closed (c) (cited); verify/ch07/exm-ill-defined-class-map.py
 exm-ill-defined-class-map (solution): 2k in Z; 6k = 3(2k) | prp-integers-closed (a) (cited); R arithmetic
 exr-equivalence-relations-a1 (solution): numerical congruences mod 3; squares on {-2, ..., 2} | arithmetic; verify/ch07/exr-equivalence-relations-a1.py
 exr-equivalence-relations-b1 (solution): cancellation: d(af - be) = 0 and d != 0 give af - be = 0 | R arithmetic (a product of non-zero reals is non-zero), school fact
-exr-equivalence-relations-b1 (claim): Q built as this quotient | Ch 10 (prose pointer; paid by def-rationals-as-classes; nothing here depends on it)
+exr-equivalence-relations-b1 (claim): Q built as this quotient | F3.2 (prose pointer; paid by def-rationals-as-classes; nothing here depends on it)
 exr-equivalence-relations-b2 (solution): 729 = 104 * 7 + 1; 81 = 11 * 7 + 4; 96 = 6 * 16 | arithmetic; verify/ch07/exr-equivalence-relations-b2.py
 exr-equivalence-relations-b3 (solution): 5 is not a multiple of 10 | prp-integers-closed (c) (cited); verify/ch07/exr-equivalence-relations-b3.py
 exr-equivalence-relations-b3 (solution): 2k in Z; 10k = 5(2k) | prp-integers-closed (a) (cited); R arithmetic

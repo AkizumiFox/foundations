@@ -541,11 +541,11 @@ Any other correct derivation earns the same points step for step (its lines may 
 
 <!-- dependency ledger
 exm-wason-selection (solution): a card falsifies "even -> red" exactly when its number is even and its color is not red; odd/even and red/green are exhaustive for the hidden side | reading of the claim, stated in the solution; checked by verify/ch01/exm-wason-selection.py
-def-rule-implication-elimination (example): if a < b and b < c then a < c; sqrt(2) < 1.5 since 1.5^2 = 2.25 > 2; 1.5 < 2 | school algebra -> ch11 (promised); passing to the instance is forall-E, ch04 (named in prose, taken as given); checked by verify/ch01/def-rule-implication-elimination.py
-def-rule-implication-elimination (example): the n = 2 witness recalled from Section 1.1's Quick check (divisible by 4 implies even; 2 even, not divisible by 4) | Section 1.1 (def-sequent's Quick check), recalled in prose
-def-rule-implication-elimination (example): warning witness x = -3 (x > 2 implies x^2 > 4 for every real x; 9 > 4; -3 > 2 false) | school algebra -> ch11 (promised); checked by verify/ch01/def-rule-implication-elimination.py
-def-rule-implication-elimination (example): x > 2 implies x^2 > 4; x^2 > 4 implies x^2 + 1 > 5 (the "How this looks" example) | school algebra -> ch11 (promised), argued inline; checked by verify/ch01/def-rule-implication-elimination.py
+def-rule-implication-elimination (example): if a < b and b < c then a < c; sqrt(2) < 1.5 since 1.5^2 = 2.25 > 2; 1.5 < 2 | school algebra -> AN1.1 (promised); passing to the instance is forall-E, F1.4 (named in prose, taken as given); checked by verify/ch01/def-rule-implication-elimination.py
+def-rule-implication-elimination (example): the n = 2 witness recalled from F1.1 §01's Quick check (divisible by 4 implies even; 2 even, not divisible by 4) | F1.1 §01 (def-sequent's Quick check), recalled in prose
+def-rule-implication-elimination (example): warning witness x = -3 (x > 2 implies x^2 > 4 for every real x; 9 > 4; -3 > 2 false) | school algebra -> AN1.1 (promised); checked by verify/ch01/def-rule-implication-elimination.py
+def-rule-implication-elimination (example): x > 2 implies x^2 > 4; x^2 > 4 implies x^2 + 1 > 5 (the "How this looks" example) | school algebra -> AN1.1 (promised), argued inline; checked by verify/ch01/def-rule-implication-elimination.py
 def-rule-implication-elimination (example): f(x) = x on (0, 1) is continuous and has no maximum ((a + 1)/2 > a in (0, 1)); the extreme value theorem's hypotheses | continuity: Part I (promised, named in prose only, not used in any argument); (a + 1)/2 argued inline
-exr-using-an-implication-b2 (solution): 0 < x < 1 implies x^2 < x; x^2 < x implies x^3 < x^2 (for every real x) | school algebra -> ch11 (promised), argued inline; checked by verify/ch01/exr-using-an-implication-b2.py
+exr-using-an-implication-b2 (solution): 0 < x < 1 implies x^2 < x; x^2 < x implies x^3 < x^2 (for every real x) | school algebra -> AN1.1 (promised), argued inline; checked by verify/ch01/exr-using-an-implication-b2.py
 exr-using-an-implication-c1 (solution): every multiple of 6 is even; 10 = 2 * 5; 10 = 6 * 1 + 4 is not divisible by 6 | inline arithmetic; checked by verify/ch01/exr-using-an-implication-c1.py
 -->

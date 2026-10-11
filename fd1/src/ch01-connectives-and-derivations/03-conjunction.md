@@ -613,9 +613,9 @@ Fatal errors (0 for the step): claiming the conclusion is not derivable; offerin
 :::
 
 <!-- dependency ledger
-exm-product-in-unit-interval (solution): a product of two positive reals is positive; multiplying an inequality by a positive number keeps its direction; transitivity of < | school algebra (blueprint, Allowed prerequisites) -> ch11 (promised); checked by verify/ch01/exm-product-in-unit-interval.py
-def-rules-conjunction (example): the Common-errors warning's instance: (x > 0 and x > 1) implies x^2 > 1 for every real x, and x > 0 fails at x = -1 | school algebra -> ch11 (promised); checked by verify/ch01/exm-product-in-unit-interval.py
-exr-conjunction-b2 (solution): two inequalities in the same direction may be added | school algebra -> ch11 (promised); checked by verify/ch01/exm-product-in-unit-interval.py
-exr-conjunction-a1 (solution): the precedence convention (and binds more tightly than implies) | Section 1.1 (the four conventions, before def-main-connective), recalled in prose
-exr-conjunction-c1 (solution): a finite non-empty set of line numbers has a first element (least-number principle, "first bad line") | school fact about finite lists; induction (ch03) named in prose as the exact version, not used
+exm-product-in-unit-interval (solution): a product of two positive reals is positive; multiplying an inequality by a positive number keeps its direction; transitivity of < | school algebra (blueprint, Allowed prerequisites) -> AN1.1 (promised); checked by verify/ch01/exm-product-in-unit-interval.py
+def-rules-conjunction (example): the Common-errors warning's instance: (x > 0 and x > 1) implies x^2 > 1 for every real x, and x > 0 fails at x = -1 | school algebra -> AN1.1 (promised); checked by verify/ch01/exm-product-in-unit-interval.py
+exr-conjunction-b2 (solution): two inequalities in the same direction may be added | school algebra -> AN1.1 (promised); checked by verify/ch01/exm-product-in-unit-interval.py
+exr-conjunction-a1 (solution): the precedence convention (and binds more tightly than implies) | F1.1 §01 (the four conventions, before def-main-connective), recalled in prose
+exr-conjunction-c1 (solution): a finite non-empty set of line numbers has a first element (least-number principle, "first bad line") | school fact about finite lists; induction (F1.3) named in prose as the exact version, not used
 -->

@@ -342,7 +342,7 @@ $\begin{nd}
 
 The idea behind it is the whole method of this section at its simplest. The goal \( R \) is atomic, so the goal suggests nothing. Premise-directed, the disjunction on line 1 is split, both boxes ending in the current goal \( R \). In each box the matching lemma fires on the case's assumption. (@exm-cases-on-hypothesis did the same with the two lemmas packed into one conjunction, and inside a box.)
 
-In a proof about real numbers, the disjunction is usually a fact about the order. The facts about \( \le \) and the absolute value used below are school algebra: every real number \( a \) satisfies \( a \ge 0 \) or \( a < 0 \); the rules of signs for products; adding two inequalities of the same direction. Chapter 11 proves all of them from the axioms of an ordered field. Here we take them as known. In the language of this chapter, "every real number \( a \) satisfies \( a \ge 0 \) or \( a < 0 \)" is a supply of disjunctions: for each number we meet, it gives a line \( (a \ge 0) \vee (a < 0) \) that \( \rulename{\vee E} \) may cite.
+In a proof about real numbers, the disjunction is usually a fact about the order. The facts about \( \le \) and the absolute value used below are school algebra: every real number \( a \) satisfies \( a \ge 0 \) or \( a < 0 \); the rules of signs for products; adding two inequalities of the same direction. *Analysis on the Real Line*, Chapter 1 proves all of them from the axioms of an ordered field. Here we take them as known. In the language of this chapter, "every real number \( a \) satisfies \( a \ge 0 \) or \( a < 0 \)" is a supply of disjunctions: for each number we meet, it gives a line \( (a \ge 0) \vee (a < 0) \) that \( \rulename{\vee E} \) may cite.
 
 The first example is the smallest, and it is written twice: as a proof in which every step carries its rule in brackets, and as a derivation.
 
@@ -1014,15 +1014,15 @@ The derivation has no premises, so it shows \( \vdash (P \wedge (P \to Q)) \to (
 :::
 
 <!-- dependency ledger
-exm-abs-at-least-x (example): x >= 0 or x < 0; |x| = x for x >= 0 (definition of |x|); if x < 0 then |x| = -x > 0 > x; |x| >= x is (|x| > x) or (|x| = x) | school algebra, taken as known (blueprint, Allowed prerequisites), stated in prose before the example; ch11 (promised); the unfolding of >= is Section 1.1
-exm-abs-product-cases (example): every real a satisfies a >= 0 or a < 0; sign rules for products; |a| = -a for a <= 0 | school algebra, taken as known; stated in prose before exm-abs-at-least-x; ch11 (promised)
-exm-triangle-inequality-cases (example): adding two inequalities of the same direction; -a <= 0 <= a for a >= 0 | school algebra, taken as known; ch11 (promised)
-exm-cases-on-hypothesis (example): an integer of the form 4k + 1 or 4k + 3 is odd (a reading, not a step) | school fact; ch07 (promised)
+exm-abs-at-least-x (example): x >= 0 or x < 0; |x| = x for x >= 0 (definition of |x|); if x < 0 then |x| = -x > 0 > x; |x| >= x is (|x| > x) or (|x| = x) | school algebra, taken as known (blueprint, Allowed prerequisites), stated in prose before the example; AN1.1 (promised); the unfolding of >= is F1.1 §01
+exm-abs-product-cases (example): every real a satisfies a >= 0 or a < 0; sign rules for products; |a| = -a for a <= 0 | school algebra, taken as known; stated in prose before exm-abs-at-least-x; AN1.1 (promised)
+exm-triangle-inequality-cases (example): adding two inequalities of the same direction; -a <= 0 <= a for a >= 0 | school algebra, taken as known; AN1.1 (promised)
+exm-cases-on-hypothesis (example): an integer of the form 4k + 1 or 4k + 3 is odd (a reading, not a step) | school fact; F2.2 (promised)
 prp-distributivity (example): the reading with x != 0, x > 0, x < 0; "and" and "or" become intersection and union in the laws of sets | school algebra; the set reading is a prose pointer only, nothing depends on it
-exr-disjunction-and-cases-a1 (solution): n^2 + n = n(n + 1); every integer is even or odd; t >= 0 or t < 0; t^2 >= 0; 1^2 = 1 is odd | school facts; ch07 (promised) for even or odd; ch11 (promised)
-exr-disjunction-and-cases-a1 (solution): (d) a derivation never leads from true premises to a false conclusion | ch03 (promised), flagged in the text as proved there; the answer (line 5) does not use it
-exr-disjunction-and-cases-b2 (solution): a >= b or a < b; dividing an inequality by 2 > 0; adding inequalities | school algebra, taken as known; ch11 (promised)
-exr-disjunction-and-cases-b3 (solution): every integer is even or odd (stated in the item); n = 2k or n = 2k + 1 with k an integer (naming k is a quantifier step, Chapter 4) | stated in the item; school fact; ch07 (promised)
+exr-disjunction-and-cases-a1 (solution): n^2 + n = n(n + 1); every integer is even or odd; t >= 0 or t < 0; t^2 >= 0; 1^2 = 1 is odd | school facts; F2.2 (promised) for even or odd; AN1.1 (promised)
+exr-disjunction-and-cases-a1 (solution): (d) a derivation never leads from true premises to a false conclusion | F1.3 (promised), flagged in the text as proved there; the answer (line 5) does not use it
+exr-disjunction-and-cases-b2 (solution): a >= b or a < b; dividing an inequality by 2 > 0; adding inequalities | school algebra, taken as known; AN1.1 (promised)
+exr-disjunction-and-cases-b3 (solution): every integer is even or odd (stated in the item); n = 2k or n = 2k + 1 with k an integer (naming k is a quantifier step, F1.4) | stated in the item; school fact; F2.2 (promised)
 exr-disjunction-and-cases-c1 (solution): a >= b or a < b; |-a| = |a| | school algebra; |-a| = |a| proved inline by cases
-exr-disjunction-and-cases-c2 (solution): order facts for x, y < 0 | school algebra, taken as known; ch11 (promised)
+exr-disjunction-and-cases-c2 (solution): order facts for x, y < 0 | school algebra, taken as known; AN1.1 (promised)
 -->

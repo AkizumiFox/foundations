@@ -569,12 +569,12 @@ Taking \( Q \) at line 3 instead, and building \( P \vee Q \) by the second sche
 :::
 
 <!-- dependency ledger
-def-rule-disjunction-introduction (example): "or" is inclusive; x >= 0 is (x > 0) or (x = 0), and <= hides a disjunction | Section 1.1 (the connective table and the warning on inclusive "or", prose, no label)
-def-rule-disjunction-introduction (example): if the cited line is true, the new line of or-I is true; no rule leads from true lines to a false one | argued inline from the inclusive reading; general soundness ch03 (promised)
-def-rule-disjunction-introduction (example): the warning's witnesses x = -1 (x >= 0 or x < 0) and x = 2.5 (P: x > 2, Q: x > 1, R: x > 3) | school algebra; ch11 (promised)
-exm-or-hypothesis-split (example): if x >= 0 then x^3 >= 0 | school algebra, used only as a reading; ch11 (promised)
-exm-product-zero (example): if a = 0 or b = 0, then a * b = 0 | school algebra, taken as known in the example; ch11 (promised)
-exr-disjunction-introduction-a1 (solution): |x - 2| < 1 implies 1 < x < 3; 0 < x < 1 abbreviates (0 < x) and (x < 1) | school algebra; Section 1.1 (chained inequalities)
-exr-disjunction-introduction-b3 (solution): if x >= 1 then x^2 >= x | school algebra, taken as known in the item; ch11 (promised)
-exr-disjunction-introduction-c1 (solution): x >= 0 or x < 0 for every real x | school algebra, stated in the item; ch11 (promised)
+def-rule-disjunction-introduction (example): "or" is inclusive; x >= 0 is (x > 0) or (x = 0), and <= hides a disjunction | F1.1 §01 (the connective table and the warning on inclusive "or", prose, no label)
+def-rule-disjunction-introduction (example): if the cited line is true, the new line of or-I is true; no rule leads from true lines to a false one | argued inline from the inclusive reading; general soundness F1.3 (promised)
+def-rule-disjunction-introduction (example): the warning's witnesses x = -1 (x >= 0 or x < 0) and x = 2.5 (P: x > 2, Q: x > 1, R: x > 3) | school algebra; AN1.1 (promised)
+exm-or-hypothesis-split (example): if x >= 0 then x^3 >= 0 | school algebra, used only as a reading; AN1.1 (promised)
+exm-product-zero (example): if a = 0 or b = 0, then a * b = 0 | school algebra, taken as known in the example; AN1.1 (promised)
+exr-disjunction-introduction-a1 (solution): |x - 2| < 1 implies 1 < x < 3; 0 < x < 1 abbreviates (0 < x) and (x < 1) | school algebra; F1.1 §01 (chained inequalities)
+exr-disjunction-introduction-b3 (solution): if x >= 1 then x^2 >= x | school algebra, taken as known in the item; AN1.1 (promised)
+exr-disjunction-introduction-c1 (solution): x >= 0 or x < 0 for every real x | school algebra, stated in the item; AN1.1 (promised)
 -->

@@ -225,7 +225,7 @@ The choices of \( \varphi \), with \( z \) a variable not occurring in the terms
 
 The pattern is general. A chain \( t_1 = t_2 = \dots = t_n \) starts with \( t_1 = t_1 \) by \( \rulename{{=}I} \), keeps \( t_1 \) fixed on the left, and rewrites the right-hand side once per link, each time by \( \rulename{{=}E} \) with the equation that justifies the link. Each link is either a premise, as on lines 4 and 5, or an arithmetic fact, as on line 7. The last line is \( t_1 = t_n \). Transitivity (@prp-equality-symmetric-transitive (b)) is the same move made once; a chain makes it \( n - 1 \) times.
 
-A **mixed chain**, such as \( a^2 + 1 = 10 \le 10 + b^2 \) with \( a = 3 \), is not made of \( \rulename{{=}E} \) alone. Its \( = \) links are \( \rulename{{=}E} \) steps as above, and a \( \le \) link needs a fact about \( \le \): here that \( b^2 \ge 0 \), so that adding \( b^2 \) does not decrease a number. The \( = \) link before it then carries over by one more \( \rulename{{=}E} \), with \( \varphi = (z \le 10 + b^2) \) and the equation \( a^2 + 1 = 10 \) turned round by symmetry (@prp-equality-symmetric-transitive (a)); transitivity of \( \le \) is needed only where two \( \le \) links meet, as in \( x \le y \le z \). Those are facts about order, not about equality. Chapter 11 derives them from the axioms of an ordered field; until then they enter derivations as "arith" lines, one per link.
+A **mixed chain**, such as \( a^2 + 1 = 10 \le 10 + b^2 \) with \( a = 3 \), is not made of \( \rulename{{=}E} \) alone. Its \( = \) links are \( \rulename{{=}E} \) steps as above, and a \( \le \) link needs a fact about \( \le \): here that \( b^2 \ge 0 \), so that adding \( b^2 \) does not decrease a number. The \( = \) link before it then carries over by one more \( \rulename{{=}E} \), with \( \varphi = (z \le 10 + b^2) \) and the equation \( a^2 + 1 = 10 \) turned round by symmetry (@prp-equality-symmetric-transitive (a)); transitivity of \( \le \) is needed only where two \( \le \) links meet, as in \( x \le y \le z \). Those are facts about order, not about equality. *Analysis on the Real Line*, Chapter 1 derives them from the axioms of an ordered field; until then they enter derivations as "arith" lines, one per link.
 
 ::: {.check}
 Line 5 of the chain rewrites both \( b \)'s on the right of line 4 at once. Which \( \varphi \) would rewrite only the \( b \) inside \( 2 \cdot b \), and what line would it give? How would the chain then reach line 5?
@@ -245,7 +245,7 @@ Here is a proof from school algebra, read link by link.
 >
 > *Proof.* \( b = b + 0 = b + (a + c) = (b + a) + c = (a + b) + c = 0 + c = c \).
 
-The first link is the fact \( y + 0 = y \) for every \( y \), applied at \( y = b \) (an instance by \( \rulename{\forall E} \)) and read from right to left: the chain needs \( b = b + 0 \), which is the instance \( b + 0 = b \) turned round by symmetry. The second link rewrites the \( 0 \) by the premise \( a + c = 0 \), again turned round, since the chain needs \( 0 \) to become \( a + c \). The third and fourth are instances of associativity and commutativity. The fifth rewrites \( a + b \) by the premise \( a + b = 0 \) in the direction written. The last is the instance \( 0 + c = c \). So the claim says that a number has **at most one** additive inverse; the facts it uses are the field axioms, which Chapter 11 states as axioms and which here are school algebra.
+The first link is the fact \( y + 0 = y \) for every \( y \), applied at \( y = b \) (an instance by \( \rulename{\forall E} \)) and read from right to left: the chain needs \( b = b + 0 \), which is the instance \( b + 0 = b \) turned round by symmetry. The second link rewrites the \( 0 \) by the premise \( a + c = 0 \), again turned round, since the chain needs \( 0 \) to become \( a + c \). The third and fourth are instances of associativity and commutativity. The fifth rewrites \( a + b \) by the premise \( a + b = 0 \) in the direction written. The last is the instance \( 0 + c = c \). So the claim says that a number has **at most one** additive inverse; the facts it uses are the field axioms, which *Analysis on the Real Line*, Chapter 1 states as axioms and which here are school algebra.
 
 ## Unique existence
 
@@ -676,28 +676,28 @@ Fatal errors (0 for the step): an \( \rulename{\exists E} \) box closing on a li
 
 <!-- dependency ledger
 def-rules-equality (claim): the eight readings of a + a = 2 * a: each of three occurrences marked or not | inline (2^3 = 8)
-def-rules-equality (claim): over Z with R read as < and P(x) as x < 1, a = 0, b = 5, the premises R(a, b), P(a) are true and P(b) is false | informal truth over a domain, Section 4.1 (reading only; no derivability claim rests on it)
-def-rules-equality (claim): over Z with a and y naming 0, "some integer is less than 0" is true and "some integer is less than itself" is false | informal truth over a domain, Section 4.1 (reading only; no derivability claim rests on it)
-def-rules-equality (claim): exists z (z < a) is the same sentence as exists y (y < a) up to renaming | Section 4.2 (renaming bound variables)
+def-rules-equality (claim): over Z with R read as < and P(x) as x < 1, a = 0, b = 5, the premises R(a, b), P(a) are true and P(b) is false | informal truth over a domain, F1.4 §01 (reading only; no derivability claim rests on it)
+def-rules-equality (claim): over Z with a and y naming 0, "some integer is less than 0" is true and "some integer is less than itself" is false | informal truth over a domain, F1.4 §01 (reading only; no derivability claim rests on it)
+def-rules-equality (claim): exists z (z < a) is the same sentence as exists y (y < a) up to renaming | F1.4 §02 (renaming bound variables)
 prp-equality-symmetric-transitive (proof): (x = s)[s/x] is s = s and (x = s)[t/x] is t = s for x not in s, t | def-substitution (cited)
 prp-equality-symmetric-transitive (proof): (s = x)[t/x] is s = t and (s = x)[u/x] is s = u for x not in s | def-substitution (cited)
 prp-equality-symmetric-transitive (claim): symmetry and transitivity may be used as one line with terms in place of s, t, u | def-derived-rule (cited), extended in the text to terms; the derivations use nothing about s, t, u but that they are terms
 def-rules-equality (example, the chain a + b = 9): 2 * 3 + 3 = 9 | arith line (school arithmetic)
-def-rules-equality (example, mixed chains): b^2 >= 0, so adding b^2 does not decrease a number; the = link carries over by =E | school algebra; ch11 (prose pointer); def-rules-equality and prp-equality-symmetric-transitive (cited)
-prp-equality-symmetric-transitive (example, additive inverse): y + 0 = y, 0 + c = c, associativity and commutativity of + | school algebra (field axioms); ch11 (prose pointer)
-def-unique-existence (well-definedness): two admissible choices of y differ by renaming a bound variable | Section 4.2 (renaming bound variables)
-def-unique-existence (well-definedness): (phi[y/x])[t/y] = phi[t/x] for y not in phi | def-substitution (cited); structural induction proved in the text, using the Section 4.2 claim that x not free gives phi[t/x] = phi
+def-rules-equality (example, mixed chains): b^2 >= 0, so adding b^2 does not decrease a number; the = link carries over by =E | school algebra; AN1.1 (prose pointer); def-rules-equality and prp-equality-symmetric-transitive (cited)
+prp-equality-symmetric-transitive (example, additive inverse): y + 0 = y, 0 + c = c, associativity and commutativity of + | school algebra (field axioms); AN1.1 (prose pointer)
+def-unique-existence (well-definedness): two admissible choices of y differ by renaming a bound variable | F1.4 §02 (renaming bound variables)
+def-unique-existence (well-definedness): (phi[y/x])[t/y] = phi[t/x] for y not in phi | def-substitution (cited); structural induction proved in the text, using the F1.4 §02 claim that x not free gives phi[t/x] = phi
 def-unique-existence (examples): 3 + 2 = 5 and y + 2 = 5 gives y = 3; y <= 1 gives y*y <= 1, y >= 3 gives y*y >= 9; 0 + y = y; z + 0 = z | school arithmetic
 def-unique-existence (example 3): the uniqueness step z + 0 = 0 and z + 0 = z give z = 0 | prp-equality-symmetric-transitive (cited in the text by name "symmetry and transitivity")
 prp-unique-existence-use (proof): (phi[y/x])[t/y] = phi[t/x] for y not in phi; phi[y/x] has no free x; phi[t/x] has no y for t without y | first fact: def-unique-existence (well-definedness paragraph, cited); def-substitution (cited); second and third read off def-substitution
 prp-unique-existence-use (proof): lines 13-14 and 10-11 are symmetry written out | prp-equality-symmetric-transitive (cited)
-prp-unique-existence-use (example, the maximum): a <= b and b <= a give a = b; (0, 1) has no maximum | school algebra (order); ch11 (prose pointer)
+prp-unique-existence-use (example, the maximum): a <= b and b <= a give a = b; (0, 1) has no maximum | school algebra (order); AN1.1 (prose pointer)
 exr-equality-and-uniqueness-a1 (solution): y <= 2 gives y*y <= 4, y >= 4 gives y*y >= 16; (2+1)(2+1) = 9 | school arithmetic
-exr-equality-and-uniqueness-b2 (solution): a product of two non-zero reals is non-zero; for reals y = 0 or y != 0 | school algebra (stated in the hint); ch11 (prose pointer)
+exr-equality-and-uniqueness-b2 (solution): a product of two non-zero reals is non-zero; for reals y = 0 or y != 0 | school algebra (stated in the hint); AN1.1 (prose pointer)
 exr-equality-and-uniqueness-b3 (solution): x*x = x iff x in {0, 1}; x + 1 = x has no solution; 2x = x iff x = 0 | school algebra
-exr-equality-and-uniqueness-b3 (solution): not exactly one x has phi iff no x has phi or two different x have phi, read informally | informal truth over a domain, Section 4.1 (the mirror-image remark on the two quantifiers), argued both ways in the solution; Section 4.9 pointed at only, nothing depends on it
+exr-equality-and-uniqueness-b3 (solution): not exactly one x has phi iff no x has phi or two different x have phi, read informally | informal truth over a domain, F1.4 §01 (the mirror-image remark on the two quantifiers), argued both ways in the solution; F1.4 §09 pointed at only, nothing depends on it
 exr-equality-and-uniqueness-c1 (solution): no separating relation on 1 or 2 elements (18 relations) | case argument in the solution (rows and columns of a 2-element table)
-exr-equality-and-uniqueness-c2 (solution): no rule of Ch 1 or Sections 2.1-2.4 removes a double negation | Section 2.5's discussion (thm-raa-independent, Ch 3, optional; pointed at only, nothing depends on it)
-exr-equality-and-uniqueness-c2 (solution): a longer conjunction groups to the right by default, so the brackets are written | Section 3.4 (grouping convention)
-exr-equality-and-uniqueness-c2 (solution): the alternative routes by the derived rules not-not-E and LEM | Section 2.5 (derived rules)
+exr-equality-and-uniqueness-c2 (solution): no rule of F1.1 or F1.2 §01-F1.2 §04 removes a double negation | F1.2 §05's discussion (thm-raa-independent, F1.3, optional; pointed at only, nothing depends on it)
+exr-equality-and-uniqueness-c2 (solution): a longer conjunction groups to the right by default, so the brackets are written | F1.3 §04 (grouping convention)
+exr-equality-and-uniqueness-c2 (solution): the alternative routes by the derived rules not-not-E and LEM | F1.2 §05 (derived rules)
 -->

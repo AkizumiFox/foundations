@@ -860,16 +860,16 @@ Fatal errors (0 for the step): splitting on an atom using the Claim for a single
 <!-- dependency ledger
 lem-weakening-cut (proof): renumbering lines and moving boxes as blocks preserves nesting, availability and rule instances | inline (checked clause by clause against def-derivation)
 lem-weakening-cut (proof): a one-line derivation whose only line is a premise is a derivation | def-derivation, def-derivable (a premise line; the last line lies in no box)
-lem-connective-rows (proof): De Morgan (b) and (c) are derived without RAA | ch02 prp-de-morgan (the sentence after its derivations says so; cited in the proof)
-lem-connective-rows (proof): prp-vacuous-implication and exm-double-negation-introduction come before RAA (Sections 2.1, 2.2) | ch02 section order
-lem-truth-table-line (proof): every atom of an immediate part is an atom of the whole formula | the recursive definition of the set of atoms, Section 3.2 (after thm-structural-recursion)
+lem-connective-rows (proof): De Morgan (b) and (c) are derived without RAA | F1.2 prp-de-morgan (the sentence after its derivations says so; cited in the proof)
+lem-connective-rows (proof): prp-vacuous-implication and exm-double-negation-introduction come before RAA (F1.2 §01, F1.2 §02) | F1.2 section order
+lem-truth-table-line (proof): every atom of an immediate part is an atom of the whole formula | the recursive definition of the set of atoms, F1.3 §02 (after thm-structural-recursion)
 lem-truth-table-line (proof): v(phi^v) = T; the value clauses of each connective | def-truth-value (cited)
 lem-atom-splitting (proof): pasted lines keep availability inside a new box | inline, as in lem-weakening-cut
 thm-completeness (proof): a finite list of formulas contains only finitely many atoms | inline (each formula has finitely many symbols)
 thm-completeness (proof): integer arithmetic 1 <= n - m <= n from 0 <= m <= n - 1 | school arithmetic
 thm-completeness (proof): a valuation may be changed at one atom and stays a valuation; at least one valuation exists | def-valuation (cited)
-cor-derivable-iff-valid (proof): 2^n rows for n atoms | def-truth-table, lem-coincidence (Section 3.3)
-exm-completeness-run (example): the search derivation of Chapter 2 has 13 lines | exr-finding-derivations-c2 solution (cited)
+cor-derivable-iff-valid (proof): 2^n rows for n atoms | def-truth-table, lem-coincidence (F1.3 §03)
+exm-completeness-run (example): the search derivation of F1.2 has 13 lines | exr-finding-derivations-c2 solution (cited)
 exr-completeness-b3 (solution): no derivation of the sequent avoids RAA | stated without proof and marked so; nothing depends on it
 exr-completeness-b3 (solution): pasting the two cited rows gives 22 lines in primitive rules | inline count: the non-premise lines of the (<->2) and (<->1) derivations, 7 and 5, replace lines 4 and 9, so 12 + 6 + 4 = 22
 cor-derivable-iff-valid (claim): the remark after it, compactness for infinite premise sets | stated without proof and marked so; nothing depends on it

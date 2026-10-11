@@ -4,7 +4,7 @@ Every infinite set met so far has turned out to be countable: \( \nN \), \( \nZ 
 
 ## A sequence that is not on the list
 
-Recall from Section 6.4 that \( \{0, 1\}^{\nN} \) is the set of all functions \( \nN \to \{0, 1\} \): the sequences of zeros and ones, indexed from \( 0 \). It is infinite, and it looks no bigger than \( \nN \times \nN \), which is countable. To show that it is **not** countable we must show, by @def-countable, that it is non-empty and that **no** function \( f \colon \nN \to \{0, 1\}^{\nN} \) is onto. So we take an arbitrary list \( f(0), f(1), f(2), \dots \) of sequences and look for a sequence that is not on it.
+Recall from Section 1.4 that \( \{0, 1\}^{\nN} \) is the set of all functions \( \nN \to \{0, 1\} \): the sequences of zeros and ones, indexed from \( 0 \). It is infinite, and it looks no bigger than \( \nN \times \nN \), which is countable. To show that it is **not** countable we must show, by @def-countable, that it is non-empty and that **no** function \( f \colon \nN \to \{0, 1\}^{\nN} \) is onto. So we take an arbitrary list \( f(0), f(1), f(2), \dots \) of sequences and look for a sequence that is not on it.
 
 Write the list as a table: row \( n \) is the sequence \( f(n) \), and the entry in row \( n \) and column \( k \) is the number \( f(n)(k) \). Here is the start of one such table, with the entries in places \( (0, 0), (1, 1), (2, 2), (3, 3) \) boxed:
 
@@ -57,7 +57,7 @@ Here \( f(n)(n) = \ind_{\{n\}}(n) = 1 \) for every \( n \), so \( g(n) = 1 - 1 =
 :::
 
 ::: {.warning}
-**The diagonal object depends on the list.** "The diagonal sequence" is not one sequence: each list has its own, and a different list may well contain the \( g \) built from this one (the list \( g, f(0), f(1), \dots \) does). And the conclusion "uncountable" needs the list to be **arbitrary**. Running the construction on one list, or on a few, shows only that those lists miss something; concluding "so no list works" from them is the error (N1) of @exm-not-allowed-catalogue. The proof above starts from "let \( f \) be **any** function", and that is what makes its conclusion universal.
+**The diagonal object depends on the list.** "The diagonal sequence" is not one sequence: each list has its own, and a different list may well contain the \( g \) built from this one (the list \( g, f(0), f(1), \dots \) does). And the conclusion "uncountable" needs the list to be **arbitrary**. Running the construction on one list, or on a few, shows only that those lists miss something; concluding "so no list works" from them is the error (N1) of @fd1:exm-not-allowed-catalogue. The proof above starts from "let \( f \) be **any** function", and that is what makes its conclusion universal.
 :::
 
 ## Cantor's theorem
@@ -90,7 +90,7 @@ Surjectivity was used once, to obtain \( d \); everything else holds for every f
 
 (i) *Russell's theorem is the same argument.* In @thm-russell, the set \( R_A = \{ x \in A : x \notin x \} \) is the set \( D \) built from the rule \( f(x) \coloneqq x \): each \( x \in A \) is tested against itself. The proof that \( D \) differs from every \( f(x) \) becomes the proof that \( R_A \) differs from every element of \( A \), that is, \( R_A \notin A \). (The rule \( x \mapsto x \) need not map into \( \powerset{A} \), but the argument never used that \( f(x) \subseteq X \), only the test "\( x \in f(x) \)".)
 
-(ii) *The power set is strictly bigger.* The map \( x \mapsto \{x\} \) is an injection \( X \to \powerset{X} \), since \( \{x\} = \{y\} \) gives \( x = y \). So \( \powerset{X} \) has at least as many elements as \( X \), in the sense that \( X \) is in bijection with a subset of it, and by the theorem it is not equinumerous with \( X \), since a bijection would be a surjection. Section 8.5 names this relation: \( X \) is strictly smaller than \( \powerset{X} \).
+(ii) *The power set is strictly bigger.* The map \( x \mapsto \{x\} \) is an injection \( X \to \powerset{X} \), since \( \{x\} = \{y\} \) gives \( x = y \). So \( \powerset{X} \) has at least as many elements as \( X \), in the sense that \( X \) is in bijection with a subset of it, and by the theorem it is not equinumerous with \( X \), since a bijection would be a surjection. Section 3.5 names this relation: \( X \) is strictly smaller than \( \powerset{X} \).
 
 (iii) *There is no largest size.* \( \nN \), \( \powerset{\nN} \), \( \powerset{\powerset{\nN}} \), …: each set in this sequence is strictly bigger than the one before.
 
@@ -104,7 +104,7 @@ The power set \( \powerset{\nN} \) is uncountable.
 The set \( \powerset{\nN} \) is non-empty, since \( \emptyset \in \powerset{\nN} \), and by @thm-cantor with \( X = \nN \) there is no surjection \( \nN \to \powerset{\nN} \). By @def-countable, \( \powerset{\nN} \) is not countable.
 :::
 
-The two diagonal proofs are one. By the correspondence of Section 6.4, \( S \mapsto \ind_S \) is a bijection \( \powerset{\nN} \to \{0, 1\}^{\nN} \), with inverse \( b \mapsto \{ n \in \nN : b(n) = 1 \} \) (@thm-bijection-iff-inverse). Given \( f \colon \nN \to \powerset{\nN} \), the sequence \( g(n) = 1 - \ind_{f(n)}(n) \) of @thm-binary-sequences-uncountable is \( 1 \) exactly when \( n \notin f(n) \), so \( g = \ind_D \) for the set \( D \) of Cantor's proof.
+The two diagonal proofs are one. By the correspondence of Section 1.4, \( S \mapsto \ind_S \) is a bijection \( \powerset{\nN} \to \{0, 1\}^{\nN} \), with inverse \( b \mapsto \{ n \in \nN : b(n) = 1 \} \) (@thm-bijection-iff-inverse). Given \( f \colon \nN \to \powerset{\nN} \), the sequence \( g(n) = 1 - \ind_{f(n)}(n) \) of @thm-binary-sequences-uncountable is \( 1 \) exactly when \( n \notin f(n) \), so \( g = \ind_D \) for the set \( D \) of Cantor's proof.
 
 ## Decimal expansions
 
@@ -137,7 +137,7 @@ In words: \( t_n \) is the number written with the first \( n \) digits, \( 0.d_
 
 **A non-example by minimal change.** Keep the sequence \( 5, 0, 0, \dots \) and move \( x \) from \( \frac12 \) to \( 0.51 \). The inequalities still hold for \( n = 1 \) (\( 0.5 \le 0.51 \le 0.6 \)) and for \( n = 2 \) (\( 0.50 \le 0.51 \le 0.51 \)), and they fail at \( n = 3 \): \( 0.51 > 0.500 + 0.001 \). So \( 5, 0, 0, \dots \) is not an expansion of \( 0.51 \); the clause "for every \( n \ge 1 \)" is what fails.
 
-**Why this definition.** Both inequalities are non-strict. With a strict right inequality, \( x < t_n + 10^{-n} \), the all-nine sequence would be an expansion of no number at all: it would need \( x < 1 \) together with \( 1 - 10^{-n} \le x \) for every \( n \), and no real number satisfies both, by the Archimedean property (a school fact; Chapter 11 proves it). The non-strict form is what makes \( 0.999\ldots = 1 \) true, and true **by the definition**: the inequalities for \( x = 1 \) are checked in Example 3, and no other number satisfies them, since \( 1 - 10^{-n} \le x \le 1 \) for every \( n \) forces \( x = 1 \), again by the Archimedean property (this is the uniqueness half of (D2) below). Example 2 shows that the price is two expansions for some numbers.
+**Why this definition.** Both inequalities are non-strict. With a strict right inequality, \( x < t_n + 10^{-n} \), the all-nine sequence would be an expansion of no number at all: it would need \( x < 1 \) together with \( 1 - 10^{-n} \le x \) for every \( n \), and no real number satisfies both, by the Archimedean property (a school fact; *Analysis on the Real Line*, Chapter 1 proves it). The non-strict form is what makes \( 0.999\ldots = 1 \) true, and true **by the definition**: the inequalities for \( x = 1 \) are checked in Example 3, and no other number satisfies them, since \( 1 - 10^{-n} \le x \le 1 \) for every \( n \) forces \( x = 1 \), again by the Archimedean property (this is the uniqueness half of (D2) below). Example 2 shows that the price is two expansions for some numbers.
 
 What this book does not prove are the facts that make expansions behave as school says. We state them once and use them in this section and the next, always by name.
 
@@ -149,7 +149,7 @@ What this book does not prove are the facts that make expansions behave as schoo
 
 Here a digit sequence **ends in all \( 9 \)s** if there is \( N \ge 1 \) with \( d_k = 9 \) for every \( k \ge N \), and likewise for \( 0 \)s. By the uniqueness in (D2), we may write \( x = 0.d_1 d_2 d_3 \ldots \) for "\( x \) is the number of which \( d_1, d_2, d_3, \dots \) is an expansion". So \( 0.4999\ldots = 0.5000\ldots = \frac12 \), as in (D3).
 
-Neither (D1) nor (D2) follows from what Part 0 has. (D3) does, by a finite computation at the first place where the two sequences differ (@thm-well-ordering, @prp-geometric-sum); we state it with the others to quote it by name. The **existence** half of (D2), that some \( x \) satisfies all the inequalities at once, is where the completeness of \( \nR \) hides, and Chapter 11 takes completeness as an axiom. The **uniqueness** half of (D2) and the "not ending in all \( 9 \)s" of (D1) rest on the Archimedean property: two numbers \( x, x' \) with \( \abs{x - x'} \le 10^{-n} \) for every \( n \) must be equal, which Chapter 11 also proves. Until then we use them as school facts, and each use names the fact it uses.
+Neither (D1) nor (D2) follows from what Part 0 has. (D3) does, by a finite computation at the first place where the two sequences differ (@thm-well-ordering, @prp-geometric-sum); we state it with the others to quote it by name. The **existence** half of (D2), that some \( x \) satisfies all the inequalities at once, is where the completeness of \( \nR \) hides, and *Analysis on the Real Line*, Chapter 1 takes completeness as an axiom. The **uniqueness** half of (D2) and the "not ending in all \( 9 \)s" of (D1) rest on the Archimedean property: two numbers \( x, x' \) with \( \abs{x - x'} \le 10^{-n} \) for every \( n \) must be equal, which *Analysis on the Real Line*, Chapter 1 also proves. Until then we use them as school facts, and each use names the fact it uses.
 
 One consequence is used below. *A digit sequence with no digit \( 0 \) and no digit \( 9 \) is the **only** expansion of its number.* Indeed, by (D3) a second expansion of the same number would force one of the two to end in all \( 9 \)s and the other in all \( 0 \)s; the given sequence ends in neither, since it has no \( 9 \)s and no \( 0 \)s at all.
 
@@ -188,11 +188,11 @@ Finally, if \( \nR \) were countable, its subset \( [0, 1) \) would be countable
 
 **Why the digits \( 4 \) and \( 5 \).** The first rule that comes to mind is \( e_n \coloneqq 9 - d_{n,n} \), which also changes every diagonal digit. Run it on the list \( x_1 = \frac12 \), \( x_n = 0 \) for \( n \ge 2 \) (that is, \( f(0) = \frac12 \) and \( f(n) = 0 \) for \( n \ge 1 \)). The expansions are \( 0.5000\ldots \) and \( 0.000\ldots \), so \( d_{1,1} = 5 \) and \( d_{n,n} = 0 \) for \( n \ge 2 \). The naive rule produces \( e_1 = 4 \) and \( e_n = 9 \) for \( n \ge 2 \): the sequence \( 0.4999\ldots \), which is an expansion of \( \frac12 = x_1 \) by Example 2. The new digit sequence differs from every row, and its number is on the list. The rule with \( 4 \) and \( 5 \), on the same list, gives \( 0.4555\ldots = \frac{41}{90} \), which is on no row. Avoiding \( 0 \) and \( 9 \) is exactly what the last paragraph of the proof uses.
 
-Chapter 11 proves that \( \nR \) is uncountable again, with no decimals at all, directly from its least upper bound axiom; that proof needs none of (D1)–(D3).
+*Analysis on the Real Line*, Chapter 1 proves that \( \nR \) is uncountable again, with no decimals at all, directly from its least upper bound axiom; that proof needs none of (D1)–(D3).
 
 ## Transcendental numbers
 
-A real number that is not algebraic is called **transcendental**. Section 8.3 showed that the set \( \mathrm{Alg} \) of algebraic numbers is countable (@thm-algebraic-countable).
+A real number that is not algebraic is called **transcendental**. Section 3.3 showed that the set \( \mathrm{Alg} \) of algebraic numbers is countable (@thm-algebraic-countable).
 
 ::: {#cor-transcendental-exist}
 [Transcendental Numbers Exist]
@@ -201,11 +201,11 @@ The set \( \nR \setminus \mathrm{Alg} \) of transcendental numbers is uncountabl
 :::
 
 ::: {.proof}
-By excluded middle (@prp-excluded-middle), every real number is in \( \mathrm{Alg} \) or not, so \( \nR = \mathrm{Alg} \cup (\nR \setminus \mathrm{Alg}) \). Suppose \( \nR \setminus \mathrm{Alg} \) is countable. Since \( \mathrm{Alg} \) is countable by @thm-algebraic-countable, \( \nR \) is countable by @prp-union-two-countable, contradicting @thm-reals-uncountable-decimal. So \( \nR \setminus \mathrm{Alg} \) is uncountable. In particular \( \nR \setminus \mathrm{Alg} \ne \emptyset \), since \( \emptyset \) is countable (@def-countable). So not every \( x \) satisfies \( x \notin \nR \setminus \mathrm{Alg} \): otherwise \( \nR \setminus \mathrm{Alg} \) would be an empty set (@def-empty-set), hence equal to \( \emptyset \) (@prp-empty-set-unique). By the classical law @prp-quantifier-negation (a) and \( \rulename{\neg\neg E} \), some \( x \) lies in \( \nR \setminus \mathrm{Alg} \); this \( x \) is a real number that is not algebraic. This last passage, from "not empty" to "has an element", is a classical step (Section 5.7).
+By excluded middle (@fd1:prp-excluded-middle), every real number is in \( \mathrm{Alg} \) or not, so \( \nR = \mathrm{Alg} \cup (\nR \setminus \mathrm{Alg}) \). Suppose \( \nR \setminus \mathrm{Alg} \) is countable. Since \( \mathrm{Alg} \) is countable by @thm-algebraic-countable, \( \nR \) is countable by @prp-union-two-countable, contradicting @thm-reals-uncountable-decimal. So \( \nR \setminus \mathrm{Alg} \) is uncountable. In particular \( \nR \setminus \mathrm{Alg} \ne \emptyset \), since \( \emptyset \) is countable (@def-countable). So not every \( x \) satisfies \( x \notin \nR \setminus \mathrm{Alg} \): otherwise \( \nR \setminus \mathrm{Alg} \) would be an empty set (@def-empty-set), hence equal to \( \emptyset \) (@prp-empty-set-unique). By the classical law @fd1:prp-quantifier-negation (a) and \( \rulename{\neg\neg E} \), some \( x \) lies in \( \nR \setminus \mathrm{Alg} \); this \( x \) is a real number that is not algebraic. This last passage, from "not empty" to "has an element", is a classical step (*Logic and Proof*, Section 5.7).
 :::
 
 ::: {.remark}
-The proof names no transcendental number: it shows that the set of them is too large to be countable, hence not empty. Its classical steps are the split of \( \nR \) into \( \mathrm{Alg} \) and its complement (excluded middle) and the last one, from "not empty" to "has an element". Compare the classical proof of @thm-irrational-power-rational in Section 5.7, which also names no witness (unlike @prp-log2-9-irrational, which does). Proving that a particular number, such as \( \pi \), is transcendental is a different and much harder matter.
+The proof names no transcendental number: it shows that the set of them is too large to be countable, hence not empty. Its classical steps are the split of \( \nR \) into \( \mathrm{Alg} \) and its complement (excluded middle) and the last one, from "not empty" to "has an element". Compare the classical proof of @fd1:thm-irrational-power-rational in *Logic and Proof*, Section 5.7, which also names no witness (unlike @fd1:prp-log2-9-irrational, which does). Proving that a particular number, such as \( \pi \), is transcendental is a different and much harder matter.
 :::
 
 ## Exercises
@@ -256,7 +256,7 @@ Prove that the set of **infinite** subsets of \( \nN \) is uncountable.
 :::
 
 ::: {.solution}
-Let \( \sF \) be the set of finite subsets of \( \nN \) and \( \sI \) the set of infinite ones, both subsets of \( \powerset{\nN} \) defined by specification. By excluded middle (@prp-excluded-middle), every subset of \( \nN \) is finite or not finite, that is, finite or infinite (@def-infinite), so \( \powerset{\nN} = \sF \cup \sI \). The set \( \sF \) is countable by @exr-countable-sets-c1. If \( \sI \) were countable, \( \powerset{\nN} \) would be countable by @prp-union-two-countable, contradicting @cor-powerset-naturals-uncountable. So \( \sI \) is uncountable.
+Let \( \sF \) be the set of finite subsets of \( \nN \) and \( \sI \) the set of infinite ones, both subsets of \( \powerset{\nN} \) defined by specification. By excluded middle (@fd1:prp-excluded-middle), every subset of \( \nN \) is finite or not finite, that is, finite or infinite (@def-infinite), so \( \powerset{\nN} = \sF \cup \sI \). The set \( \sF \) is countable by @exr-countable-sets-c1. If \( \sI \) were countable, \( \powerset{\nN} \) would be countable by @prp-union-two-countable, contradicting @cor-powerset-naturals-uncountable. So \( \sI \) is uncountable.
 :::
 
 ::: {#exr-diagonal-arguments-b3}
@@ -295,7 +295,7 @@ For \( X = \nN \): by @def-countable, \( \powerset{\nN} \) is countable only if 
 - 2: refutes both cases, \( d \in D \) and \( d \notin D \) (or shows that \( D \) and \( f(x) \) disagree about \( x \)).
 - 1: the deduction for \( \powerset{\nN} \), handling both clauses of "countable": non-empty, and no surjection from \( \nN \).
 The direct form ("\( D \ne f(x) \) for every \( x \), since they disagree about \( x \)") earns the same points: 2 for the arbitrary \( f \), 3 for \( D \), 4 for the disagreement at every \( x \), 1 for the deduction.
-Fatal errors (0 for the step): \( D = \{ x \in X : x \in f(x) \} \) (it may well be a value of \( f \)); checking the claim for one particular \( f \) and concluding for all, as in (N1) of @exm-not-allowed-catalogue (0 for the first step).
+Fatal errors (0 for the step): \( D = \{ x \in X : x \in f(x) \} \) (it may well be a value of \( f \)); checking the claim for one particular \( f \) and concluding for all, as in (N1) of @fd1:exm-not-allowed-catalogue (0 for the first step).
 :::
 
 ::: {#exr-diagonal-arguments-c2}
@@ -341,33 +341,33 @@ Fatal errors (0 for the step): the plain diagonal \( g(n) \coloneqq f_n(n) + 1 \
 <!-- dependency ledger
 thm-binary-sequences-uncountable (proof): 1 - b is in {0, 1} and differs from b, for b in {0, 1} | arithmetic (two cases)
 thm-binary-sequences-uncountable (example): the table entries and the flipped diagonal 1, 0, 1, 0 | verify/ch08/thm-binary-sequences-uncountable.py
-thm-cantor (claim): (ii) {x} = {y} gives x = y | def-set-equality (Ch 6 Section 6.1), used silently
-thm-cantor (claim): (ii), (iii) "strictly bigger" as a relation | Section 8.5 (prose pointer within the chapter; nothing here depends on it)
-cor-powerset-naturals-uncountable (claim): (after it) S -> ind_S is a bijection P(N) -> {0, 1}^N with inverse b -> {n : b(n) = 1} | Ch 6 Section 6.4 (the correspondence after exm-function-set-small); thm-bijection-iff-inverse (cited)
+thm-cantor (claim): (ii) {x} = {y} gives x = y | def-set-equality (F2.1 §01), used silently
+thm-cantor (claim): (ii), (iii) "strictly bigger" as a relation | F2.3 §05 (prose pointer within the chapter; nothing here depends on it)
+cor-powerset-naturals-uncountable (claim): (after it) S -> ind_S is a bijection P(N) -> {0, 1}^N with inverse b -> {n : b(n) = 1} | F2.1 §04 (the correspondence after exm-function-set-small); thm-bijection-iff-inverse (cited)
 def-decimal-expansion (example): t_n = 1/2 - 10^(-n) for 0.4999..., t_n = 1 - 10^(-n) for 0.999...; the non-example 0.51 fails first at n = 3 | prp-geometric-sum (cited); verify/ch08/def-decimal-expansion.py
-def-decimal-expansion (claim): (why this definition) no x has 1 - 10^(-n) <= x < 1 for every n | Archimedean property, school fact; Ch 11
-def-decimal-expansion (claim): (why this definition) 1 is the only x with 1 - 10^(-n) <= x <= 1 for every n | Archimedean property, school fact; Ch 11 (the uniqueness half of (D2))
+def-decimal-expansion (claim): (why this definition) no x has 1 - 10^(-n) <= x < 1 for every n | Archimedean property, school fact; AN1.1
+def-decimal-expansion (claim): (why this definition) 1 is the only x with 1 - 10^(-n) <= x <= 1 for every n | Archimedean property, school fact; AN1.1 (the uniqueness half of (D2))
 def-decimal-expansion (claim): 10^(-k) := (1/10)^k | def-power (cited)
-def-decimal-expansion (example): (Examples 2, 3) a constant factor comes out of a finite sum; splitting off the first term | induction on n via def-sum-product (Ch 7); R arithmetic
-exr-diagonal-arguments-b3 (solution): a constant factor comes out of a finite sum | induction on n via def-sum-product (Ch 7); R arithmetic
-def-decimal-expansion (claim): (D1)-(D3) | school facts (D1)-(D3), stated in this section and not proved; Ch 11 (prose pointer: completeness and the Archimedean property, for (D1)-(D2))
+def-decimal-expansion (example): (Examples 2, 3) a constant factor comes out of a finite sum; splitting off the first term | induction on n via def-sum-product (F2.2); R arithmetic
+exr-diagonal-arguments-b3 (solution): a constant factor comes out of a finite sum | induction on n via def-sum-product (F2.2); R arithmetic
+def-decimal-expansion (claim): (D1)-(D3) | school facts (D1)-(D3), stated in this section and not proved; AN1.1 (prose pointer: completeness and the Archimedean property, for (D1)-(D2))
 def-decimal-expansion (claim): (D3) follows from Part 0 | thm-well-ordering, prp-geometric-sum (cited), def-sum-product (inline; the proof is not written out, (D3) is used as stated)
 def-decimal-expansion (claim): a digit sequence with no 0 and no 9 is the only expansion of its number | school fact (D3), stated in this section
 thm-reals-uncountable-decimal (proof): the expansion of x_n not ending in 9s exists and is unique | school facts (D1), (D3), stated in this section
 thm-reals-uncountable-decimal (proof): some y has expansion (e_k), and y lies in [0.4, 0.6] | school fact (D2), stated in this section; the definition at n = 1
 thm-reals-uncountable-decimal (proof): y = x_n is impossible | the consequence of (D3) stated in this section (a digit sequence with no 0 and no 9 is the only expansion of its number)
 thm-reals-uncountable-decimal (claim): the naive rule gives 0.4999... = 1/2; the 4/5 rule gives 0.4555... = 41/90 | def-decimal-expansion Example 2; school fact (D2); verify/ch08/thm-reals-uncountable-decimal.py
-thm-reals-uncountable-decimal (claim): Chapter 11 reproves it without decimals | ch11 (prose pointer; thm-reals-uncountable exists)
+thm-reals-uncountable-decimal (claim): AN1.1 reproves it without decimals | AN1.1 (prose pointer; thm-reals-uncountable exists)
 cor-transcendental-exist (proof): R = Alg u (R \ Alg), every real is algebraic or not | prp-excluded-middle (cited; classical step, flagged in the remark)
-cor-transcendental-exist (proof): the empty set is countable | def-countable (Section 8.2)
-cor-transcendental-exist (proof): a set that is not empty has an element | def-empty-set, prp-empty-set-unique (Ch 6); prp-quantifier-negation (a) and not-not-E (classical step, flagged)
-cor-transcendental-exist (claim): (remark) Section 5.7 comparison | thm-irrational-power-rational, prp-log2-9-irrational (optional; pointer in a remark only)
+cor-transcendental-exist (proof): the empty set is countable | def-countable (F2.3 §02)
+cor-transcendental-exist (proof): a set that is not empty has an element | def-empty-set, prp-empty-set-unique (F2.1); prp-quantifier-negation (a) and not-not-E (classical step, flagged)
+cor-transcendental-exist (claim): (remark) F1.5 §07 comparison | thm-irrational-power-rational, prp-log2-9-irrational (optional; pointer in a remark only)
 cor-transcendental-exist (claim): (remark) pi is transcendental | not proved and not used (a remark only)
 exr-diagonal-arguments-a1 (solution): D = {2} | verify/ch08/exr-diagonal-arguments-a1.py
 exr-diagonal-arguments-b2 (solution): the finite subsets of N form a countable set | exr-countable-sets-c1 (cited; an exercise may cite an earlier one)
 exr-diagonal-arguments-b2 (solution): every subset of N is finite or infinite | prp-excluded-middle (cited), def-infinite
 exr-diagonal-arguments-b3 (solution): t_n for 0.333...; the bound t_m <= 1 - 2 * 10^(-m) | prp-geometric-sum (cited); school facts (D1)-(D3); verify/ch08/exr-diagonal-arguments-b3.py
-exr-diagonal-arguments-b3 (solution): termwise comparison of finite sums (d_k <= 9 for k < m, d_m <= 9 - 1) | induction on n via def-sum-product (Ch 7) and the order axioms for +
+exr-diagonal-arguments-b3 (solution): termwise comparison of finite sums (d_k <= 9 for k < m, d_m <= 9 - 1) | induction on n via def-sum-product (F2.2) and the order axioms for +
 exr-diagonal-arguments-b3 (solution): no sequence ends in both all 0s and all 9s | 0 != 9, at a place beyond both thresholds
 exr-diagonal-arguments-c2 (solution): m = 2q + r uniquely with q in N, r in {0, 1} | thm-division-algorithm (cited), quotient in N as in prp-union-two-countable
 exr-diagonal-arguments-c2 (solution): pi_b o pi_b = id; pi(2n) differs from f_n(2n) | inline; verify/ch08/exr-diagonal-arguments-c2.py

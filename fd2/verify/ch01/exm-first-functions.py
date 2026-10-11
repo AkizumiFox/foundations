@@ -1,7 +1,7 @@
 """exm-first-functions and the quick check after exm-not-a-function (Ch 6 Section 6.4):
 the listed graphs satisfy (Fn1)/(Fn2) or fail the named clause; indicator ranges."""
 import sys
-sys.path.insert(0, "verify/ch06")
+sys.path.insert(0, "verify/ch01")
 from _sets import is_function, subsets
 
 QUOTED = {"clauses checked": True}

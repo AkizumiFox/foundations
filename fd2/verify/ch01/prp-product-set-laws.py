@@ -1,7 +1,7 @@
 """prp-product-set-laws: all eight laws, checked on every triple of subsets of a
 three-element universe (Ch 6 Section 6.3). No numeric values are quoted."""
 import sys
-sys.path.insert(0, "verify/ch06")
+sys.path.insert(0, "verify/ch01")
 from _sets import subsets, prod
 
 QUOTED = {"laws checked": True}

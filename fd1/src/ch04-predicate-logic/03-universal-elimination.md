@@ -474,25 +474,25 @@ Fatal errors (0 for the step): claiming the flag \( x \) is fine because \( x \)
 :::
 
 <!-- dependency ledger
-def-rule-universal-elimination (claim): the domain is never empty, so every term names an element | Section 4.1 (domain convention, stated there); made exact in Section 4.11, prose pointer only
-def-rule-universal-elimination (claim): the rule never leads from true premises to a false line | NOT proved here: stated in Section 4.11, proved in optional Section 4.12; prose pointer only, nothing here rests on it
-def-rule-universal-elimination (claim): x not free in phi gives phi[t/x] = phi | Section 4.2 (claim after def-substitution), recalled in prose
-def-rule-universal-elimination (example): Section 1.4's instance of "a < b and b < c give a < c" and exm-raa-zero's epsilon = x/2 are forall-E steps | Section 1.4 (def-rule-implication-elimination's example), exm-raa-zero (cited)
+def-rule-universal-elimination (claim): the domain is never empty, so every term names an element | F1.4 §01 (domain convention, stated there); made exact in F1.4 §11, prose pointer only
+def-rule-universal-elimination (claim): the rule never leads from true premises to a false line | NOT proved here: stated in F1.4 §11, proved in optional F1.4 §12; prose pointer only, nothing here rests on it
+def-rule-universal-elimination (claim): x not free in phi gives phi[t/x] = phi | F1.4 §02 (claim after def-substitution), recalled in prose
+def-rule-universal-elimination (example): F1.1 §04's instance of "a < b and b < c give a < c" and exm-raa-zero's epsilon = x/2 are forall-E steps | F1.1 §04 (def-rule-implication-elimination's example), exm-raa-zero (cited)
 exm-universal-elimination-derivations (example): over N, f(n) = n + 2, 0 even, f(f(0)) = 4 | school arithmetic; checked by verify/ch04/exm-universal-elimination-derivations.py
 def-rule-universal-elimination (example): in "How this rule looks", (a - 1)^2 = a^2 - 2a + 1; y^2 >= 0 for real y | school algebra, stated as such ("arith"); checked by verify/ch04/def-rule-universal-elimination.py
-def-rule-universal-elimination (claim): the arith convention: an arith line abbreviates a universally quantified arithmetic premise, forall-E at the line's terms and ->E | inline convention, stated in the text; the same convention is recalled in Section 4.12
+def-rule-universal-elimination (claim): the arith convention: an arith line abbreviates a universally quantified arithmetic premise, forall-E at the line's terms and ->E | inline convention, stated in the text; the same convention is recalled in F1.4 §12
 def-rule-universal-elimination (example): in "Common errors", over N, x + 1 != x; not every n >= 1 (0); 1 >= 1 and 1 != 0; over R, x <= x^2 for x >= 1, so x <= x^2 or x < 1 for all x; at x = 1, 2 <= 1 and 1 < 1 fail | school arithmetic; checked by verify/ch04/def-rule-universal-elimination.py
-def-rule-universal-elimination (claim): in "A stall", apart from bot-E and RAA a line beginning with forall comes out of a line or box containing it; no finite list of instances derives forall x P(x) with the rules so far | informal remark, not a theorem (bot-E and RAA by @def-rules-contradiction, @def-rule-raa); the stall is resolved in Section 4.4 (prose pointer)
-def-rule-universal-elimination (claim): renaming a bound variable to a letter that appears nowhere gives the same statement, so one can rename before substituting (Quick check, "Common errors", search step) | Section 4.2 (renaming convention, after def-free-for; no label), recalled in prose
-exm-universal-elimination-derivations (example): a term with no variables (c, f(c)) is free for every variable | Section 4.2 (special cases after def-free-for), recalled
-exr-universal-elimination-a1 (solution): f(c) has no variables, so it is free for x | Section 4.2 (special cases after def-free-for), recalled
+def-rule-universal-elimination (claim): in "A stall", apart from bot-E and RAA a line beginning with forall comes out of a line or box containing it; no finite list of instances derives forall x P(x) with the rules so far | informal remark, not a theorem (bot-E and RAA by @def-rules-contradiction, @def-rule-raa); the stall is resolved in F1.4 §04 (prose pointer)
+def-rule-universal-elimination (claim): renaming a bound variable to a letter that appears nowhere gives the same statement, so one can rename before substituting (Quick check, "Common errors", search step) | F1.4 §02 (renaming convention, after def-free-for; no label), recalled in prose
+exm-universal-elimination-derivations (example): a term with no variables (c, f(c)) is free for every variable | F1.4 §02 (special cases after def-free-for), recalled
+exr-universal-elimination-a1 (solution): f(c) has no variables, so it is free for x | F1.4 §02 (special cases after def-free-for), recalled
 exr-universal-elimination-b3 (solution): every term is free for x in a formula with no quantifier | def-free-for (recursive description: atomic formulas and connectives), recalled
-exr-universal-elimination-c1 (solution): constants are free for every variable | Section 4.2 (special cases after def-free-for), recalled
+exr-universal-elimination-c1 (solution): constants are free for every variable | F1.4 §02 (special cases after def-free-for), recalled
 exr-universal-elimination-a1 (solution): over Z, exists y (y > x) true for all x, exists y (y > y) false; over R, 3 * (-1) < 0; over N, 0 >= 1 false, 1 >= 1 true | school arithmetic; checked by verify/ch04/exr-universal-elimination-a1.py
 exr-universal-elimination-b3 (solution): (a - b)^2 = a^2 - 2ab + b^2; (a + b)^2 >= 0 gives a^2 + b^2 >= -2ab | school algebra ("arith"); checked by verify/ch04/exr-universal-elimination-b3.py
 exr-universal-elimination-c1 (solution): on {0, 1}, the relation {(0, 0)} is symmetric and transitive, and (1, 1) is not in it | inline (finite check); checked by verify/ch04/exr-universal-elimination-c1.py
 exr-universal-elimination-c2 (solution): over Z, 2 is even and 1 is odd | school arithmetic
-exr-universal-elimination-c2 (solution): x is free for x in every formula; "appear" includes the variable after a quantifier | Section 4.2 (special cases after def-free-for; the definition of "appear" after def-free-variable), recalled
-exr-universal-elimination-c2 (solution): the forall-I side condition, quoted in the item | stated in the item itself; Section 4.4 (prose pointer), not used as a step
-exr-universal-elimination-c2 (solution): P(x) does not derive forall x P(x); the search explanation is informal | NOT proved here: Section 4.11 gives the counter-model for P(x0) |- forall x P(x) (Z, evens, x0 names 2) and the soundness statement, proved in optional Section 4.12; the same structure with x naming 2 is the counter-model here (adaptation stated in the solution); prose pointer only, nothing depends on it
+exr-universal-elimination-c2 (solution): x is free for x in every formula; "appear" includes the variable after a quantifier | F1.4 §02 (special cases after def-free-for; the definition of "appear" after def-free-variable), recalled
+exr-universal-elimination-c2 (solution): the forall-I side condition, quoted in the item | stated in the item itself; F1.4 §04 (prose pointer), not used as a step
+exr-universal-elimination-c2 (solution): P(x) does not derive forall x P(x); the search explanation is informal | NOT proved here: F1.4 §11 gives the counter-model for P(x0) |- forall x P(x) (Z, evens, x0 names 2) and the soundness statement, proved in optional F1.4 §12; the same structure with x naming 2 is the counter-model here (adaptation stated in the solution); prose pointer only, nothing depends on it
 -->

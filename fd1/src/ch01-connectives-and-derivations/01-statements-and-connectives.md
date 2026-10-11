@@ -412,11 +412,11 @@ Let \( x \) be a real number.
 <!-- dependency ledger
 exm-statements (example): 2^11 - 1 = 2047 = 23 * 89, and 0.999 < 1 | inline arithmetic (checked by verify/ch01/exm-statements.py)
 exm-statements (example): the twin prime conjecture is open | status of an open problem at the time of writing; not used in any argument
-def-statement (example): the opening's Argument A uses that every integer is even or odd, and that no integer is both | school algebra, allowed as a fact in examples by the Chapter 1 blueprint (Allowed prerequisites); ch07 (promised); the hook is an illustration, and no proof here uses it
-def-main-connective (example): the connective table before it: every real number is positive or less than 1; 0 < 1/2 < 1; 2 > 1 | school algebra (Allowed prerequisites); ch11 (promised)
+def-statement (example): the opening's Argument A uses that every integer is even or odd, and that no integer is both | school algebra, allowed as a fact in examples by the F1.1 blueprint (Allowed prerequisites); F2.2 (promised); the hook is an illustration, and no proof here uses it
+def-main-connective (example): the connective table before it: every real number is positive or less than 1; 0 < 1/2 < 1; 2 > 1 | school algebra (Allowed prerequisites); AN1.1 (promised)
 def-sequent (example): the Quick check's witness n = 2 (2 is even and not divisible by 4; a multiple of 4 is even) | inline arithmetic (checked by verify/ch01/def-sequent.py)
-exr-statements-and-connectives-a1 (solution): x^2 - 1 = 0 exactly when x = 1 or x = -1; 0^2 - 1 = -1 | school algebra (Allowed prerequisites); ch11 (promised)
-exr-statements-and-connectives-b2 (solution): a product of two positive reals is positive | school algebra (Allowed prerequisites); ch11 (promised)
-exr-statements-and-connectives-c1 (solution): the square of a non-zero real is positive; (-2)^2 = 4 | school algebra (Allowed prerequisites); ch11 (promised); checked by verify/ch01/exr-statements-and-connectives-c1.py
-exr-statements-and-connectives-c2 (solution): multiplying an inequality by a positive number keeps it; x^2 > 1 iff |x| > 1 (given in the item) | school algebra (Allowed prerequisites); ch11 (promised); checked by verify/ch01/exr-statements-and-connectives-c2.py
+exr-statements-and-connectives-a1 (solution): x^2 - 1 = 0 exactly when x = 1 or x = -1; 0^2 - 1 = -1 | school algebra (Allowed prerequisites); AN1.1 (promised)
+exr-statements-and-connectives-b2 (solution): a product of two positive reals is positive | school algebra (Allowed prerequisites); AN1.1 (promised)
+exr-statements-and-connectives-c1 (solution): the square of a non-zero real is positive; (-2)^2 = 4 | school algebra (Allowed prerequisites); AN1.1 (promised); checked by verify/ch01/exr-statements-and-connectives-c1.py
+exr-statements-and-connectives-c2 (solution): multiplying an inequality by a positive number keeps it; x^2 > 1 iff |x| > 1 (given in the item) | school algebra (Allowed prerequisites); AN1.1 (promised); checked by verify/ch01/exr-statements-and-connectives-c2.py
 -->

@@ -1,5 +1,5 @@
-chapter: 9
-dir: ch09-zf-and-natural-numbers
+chapter: 1
+dir: ch01-zf-and-natural-numbers
 items:
 - key: ax-zf-fragment
   kind: ax

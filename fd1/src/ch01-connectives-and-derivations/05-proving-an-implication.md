@@ -898,15 +898,15 @@ Fatal errors (0 for the step): a box opened with the conclusion \( S \) (the con
 :::
 
 <!-- dependency ledger
-def-rules-implication (example): x > 2 gives x > 0, x^2 > 2x, 2x > 4 and x^2 > 4; all three fail at x = 0 | school algebra, ch11 (promised)
+def-rules-implication (example): x > 2 gives x > 0, x^2 > 2x, 2x > 4 and x^2 > 4; all three fail at x = 0 | school algebra, AN1.1 (promised)
 def-rules-implication (example): each of and-I, and-E, ->E writes a conjunction or a piece of an earlier line, so without ->I an implication stands on a line only as a premise or as a piece of an earlier line | inline (read off the schemas of def-rules-conjunction and def-rule-implication-elimination; not used in a proof)
-def-rules-implication (example): no rule leads from true premises to a false conclusion ("why the rule is right") | ch03 (promised; soundness)
-prp-implication-transitive (example): x > 3 implies x^2 > 9 (x > 0, x^2 > 3x > 9); x^2 > 9 implies x^2 > 4 since 4 < 9 | school algebra, ch11 (promised)
-exm-illegal-citation (solution): x > 3 implies x > 2 and x > 2 implies x > 1 for every real x; 0 > 1 is false | school algebra, ch11 (promised)
-exm-illegal-citation (example): the warning's slip: x > 1 implies x^2 > 1; x^3 > 1 fails at x = 0 | school algebra, ch11 (promised)
-exm-first-boxes (solution): if a > 0 and x > 1 then ax > a (the reading of (c), not used in a derivation) | school algebra, ch11 (promised)
-prp-curry (example): if x > 0 and y > 0 then xy > 0 (the reading, not used in a derivation) | school algebra, ch11 (promised)
-exr-proving-an-implication-b2 (solution): x^2 >= 0 for every real x | school algebra, ch11 (promised)
-exr-proving-an-implication-c1 (solution): (x > 2 and x > 3) implies x > 1 for every real x; 0 > 1 is false | school algebra, ch11 (promised)
-exr-proving-an-implication-c3 (solution): x > 5 implies x > 4; x > 4 implies x^2 > 16 (x > 0, x^2 > 4x > 16); x^2 > 16 implies x^2 > 9 | school algebra, ch11 (promised)
+def-rules-implication (example): no rule leads from true premises to a false conclusion ("why the rule is right") | F1.3 (promised; soundness)
+prp-implication-transitive (example): x > 3 implies x^2 > 9 (x > 0, x^2 > 3x > 9); x^2 > 9 implies x^2 > 4 since 4 < 9 | school algebra, AN1.1 (promised)
+exm-illegal-citation (solution): x > 3 implies x > 2 and x > 2 implies x > 1 for every real x; 0 > 1 is false | school algebra, AN1.1 (promised)
+exm-illegal-citation (example): the warning's slip: x > 1 implies x^2 > 1; x^3 > 1 fails at x = 0 | school algebra, AN1.1 (promised)
+exm-first-boxes (solution): if a > 0 and x > 1 then ax > a (the reading of (c), not used in a derivation) | school algebra, AN1.1 (promised)
+prp-curry (example): if x > 0 and y > 0 then xy > 0 (the reading, not used in a derivation) | school algebra, AN1.1 (promised)
+exr-proving-an-implication-b2 (solution): x^2 >= 0 for every real x | school algebra, AN1.1 (promised)
+exr-proving-an-implication-c1 (solution): (x > 2 and x > 3) implies x > 1 for every real x; 0 > 1 is false | school algebra, AN1.1 (promised)
+exr-proving-an-implication-c3 (solution): x > 5 implies x > 4; x > 4 implies x^2 > 16 (x > 0, x^2 > 4x > 16); x^2 > 16 implies x^2 > 9 | school algebra, AN1.1 (promised)
 -->

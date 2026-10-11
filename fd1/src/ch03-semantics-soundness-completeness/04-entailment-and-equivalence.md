@@ -578,17 +578,17 @@ Fatal errors (0 for the step): answering "no" by a pair that is not equivalent b
 :::
 
 <!-- dependency ledger
-def-tautology (claim): a formula with no atoms has the same value under every valuation | lem-coincidence with atoms(phi) empty; def-truth-table (one-row table), Section 3.3
+def-tautology (claim): a formula with no atoms has the same value under every valuation | lem-coincidence with atoms(phi) empty; def-truth-table (one-row table), F1.3 §03
 def-satisfiable (claim): p -> q, q -> r, r -> not-p is satisfiable at p = F, q = r = T, and p is F in every satisfying row | inline; checked by verify/ch03/exr-entailment-and-equivalence-a1.py
 def-valid-argument (claim): psi tautology iff not-psi unsatisfiable; Gamma |= psi iff Gamma, not-psi unsatisfiable; adding premises keeps |=; order and repetition irrelevant | inline, from V2 and the definitions
 def-semantic-equivalence (claim): phi == psi iff same value under every v iff |= phi <-> psi; == is reflexive, symmetric, transitive | inline, from V6
 prp-standard-equivalences (proof): the value of a compound built from phi, psi, chi depends only on (v(phi), v(psi), v(chi)) through the clauses | def-truth-value (V2)-(V6), stated in the proof; all tables checked by verify/ch03/prp-standard-equivalences.py
 prp-standard-equivalences (claim): v of a right-grouped n-term conjunction is T iff every term is T (disjunction: some term); De Morgan for n terms | inline, by ax-induction on n
-lem-replacement (proof): a node below the root of a parse tree lies in the subtree of exactly one immediate part, and those subtrees are the parse trees of the immediate parts | def-parse-tree (Section 3.1), with thm-unique-readability for "the" parse tree
+lem-replacement (proof): a node below the root of a parse tree lies in the subtree of exactly one immediate part, and those subtrees are the parse trees of the immediate parts | def-parse-tree (F1.3 §01), with thm-unique-readability for "the" parse tree
 lem-substitution (proof): the recursion defining sigma is well defined | thm-structural-recursion (values are formulas), cited in the text
-exm-affirming-the-consequent (solution): n = 2 witness (divisible by 4 implies even; 2 even, not divisible by 4); Argument A proves n^2 even implies n even | Section 1.1 (def-sequent's Quick check and Argument A), recalled in prose
+exm-affirming-the-consequent (solution): n = 2 witness (divisible by 4 implies even; 2 even, not divisible by 4); Argument A proves n^2 even implies n even | F1.1 §01 (def-sequent's Quick check and Argument A), recalled in prose
 exm-three-premise-entailment (solution): this and every other entailment verdict and refuting row of the section (exm-grouping-of-implications, the Quick checks, A1, B1, B2) | inline; checked by verify/ch03/exm-three-premise-entailment.py, exm-grouping-of-implications.py, exr-entailment-and-equivalence-a1.py, exr-entailment-and-equivalence-b1.py
-exr-entailment-and-equivalence-b1 (solution): the derivations of (a), (b), (d) | checked with the Fitch checker on a capital-letter copy; MT and DS are prp-modus-tollens and prp-disjunctive-syllogism (Ch 2)
-exr-entailment-and-equivalence-b2 (solution): completeness (Section 3.6) | forward pointer in an exercise solution, used as a pointer only (no argument rests on it)
+exr-entailment-and-equivalence-b1 (solution): the derivations of (a), (b), (d) | checked with the Fitch checker on a capital-letter copy; MT and DS are prp-modus-tollens and prp-disjunctive-syllogism (F1.2)
+exr-entailment-and-equivalence-b2 (solution): completeness (F1.3 §06) | forward pointer in an exercise solution, used as a pointer only (no argument rests on it)
 exr-entailment-and-equivalence-c1 (solution): structural induction and recursion for the extended language | assumed in the item's statement
 -->

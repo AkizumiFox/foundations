@@ -715,20 +715,20 @@ No \( \rulename{RAA} \) is used: the boxes close by \( \rulename{\vee E} \) and 
 :::
 
 <!-- dependency ledger
-prp-cnf-validity (claim): the duality remark: psi is a tautology iff not-psi is unsatisfiable | Section 3.4, the display after def-satisfiable (unlabeled), recalled in prose
-eq-many-term-values (claim): values of right-grouped long conjunctions and disjunctions | recalled from Section 3.4 (paragraph after prp-standard-equivalences, proved there by ax-induction); not re-proved
-thm-dnf (proof): phi equiv psi iff v(phi) = v(psi) for every v | the paraphrase after def-semantic-equivalence (Section 3.4)
-thm-dnf (proof): 2^n rows for n atoms; a valuation with prescribed values at p_1..p_n exists | def-valuation, def-truth-table (Section 3.3)
-thm-dnf (proof): the atoms of not-phi are those of phi | the recursive definition of the set of atoms (Section 3.2)
+prp-cnf-validity (claim): the duality remark: psi is a tautology iff not-psi is unsatisfiable | F1.3 §04, the display after def-satisfiable (unlabeled), recalled in prose
+eq-many-term-values (claim): values of right-grouped long conjunctions and disjunctions | recalled from F1.3 §04 (paragraph after prp-standard-equivalences, proved there by ax-induction); not re-proved
+thm-dnf (proof): phi equiv psi iff v(phi) = v(psi) for every v | the paraphrase after def-semantic-equivalence (F1.3 §04)
+thm-dnf (proof): 2^n rows for n atoms; a valuation with prescribed values at p_1..p_n exists | def-valuation, def-truth-table (F1.3 §03)
+thm-dnf (proof): the atoms of not-phi are those of phi | the recursive definition of the set of atoms (F1.3 §02)
 thm-cnf (proof): a literal and its opposite take opposite values | def-truth-value (argued inline after def-literal)
-thm-cnf (claim): the rewriting route; the equivalences used, applied inside a formula, chained | prp-standard-equivalences, lem-replacement (cited); transitivity of equivalence, Section 3.4 (paraphrase of def-semantic-equivalence)
+thm-cnf (claim): the rewriting route; the equivalences used, applied inside a formula, chained | prp-standard-equivalences, lem-replacement (cited); transitivity of equivalence, F1.3 §04 (paraphrase of def-semantic-equivalence)
 exm-normal-forms-two-routes (example): a conjunction with a part true in every row is equivalent to its other part | inline (eq-many-term-values)
 thm-adequate-connectives (proof): chi -> bot is true exactly when chi is false | def-truth-value (argued inline)
 thm-adequate-connectives (proof): the immediate parts of a formula in a set S of connectives are in S | inline (their symbols occur in the formula)
-thm-adequate-connectives (claim): exr-valuations-and-truth-tables-c2 is Section 3.3's find-the-error item on the all-T valuation | prose pointer only; the proof is written in full here
+thm-adequate-connectives (claim): exr-valuations-and-truth-tables-c2 is F1.3 §03's find-the-error item on the all-T valuation | prose pointer only; the proof is written in full here
 def-truth-function (example): there are 2^(2^n) truth functions with n inputs | inline count
 exr-normal-forms-b3 (solution): no DNF with fewer conjuncts works | inline (a conjunct missing an atom is true on two rows of different parity)
 exr-normal-forms-c1 (solution): structural recursion and induction for the language extended by new connectives | the proofs of thm-structural-recursion and thm-structural-induction with one more clause; flagged in the solution
 exr-normal-forms-c2 (solution): same extension for the majority connective | as above, flagged in the solution
-exr-normal-forms-r2 (solution): an integer is odd exactly when it is not even | school fact about integers (ch07, promised; STATUS row from Ch 1: every integer is even or odd, and not both)
+exr-normal-forms-r2 (solution): an integer is odd exactly when it is not even | school fact about integers (F2.2, promised; STATUS row from F1.1: every integer is even or odd, and not both)
 -->

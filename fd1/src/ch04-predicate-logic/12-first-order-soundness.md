@@ -449,29 +449,29 @@ Fatal errors (0 for the step): a "counter-model" in which the premise is false; 
 :::
 
 <!-- dependency ledger
-thm-first-order-soundness (claim): the thirteen primitive rules of Chapters 1-2 and the box rules among them | Section 3.5 list (recalled in thm-soundness's section), recalled in prose
-thm-first-order-soundness (proof): a derived-rule line abbreviates a pasted primitive derivation; Chapter 2's derived rules have no flagged boxes | def-derived-rule; Step 1 of thm-soundness (cited)
+thm-first-order-soundness (claim): the thirteen primitive rules of F1.1-F1.2 and the box rules among them | F1.3 §05 list (recalled in thm-soundness's section), recalled in prose
+thm-first-order-soundness (proof): a derived-rule line abbreviates a pasted primitive derivation; F1.2's derived rules have no flagged boxes | def-derived-rule; Step 1 of thm-soundness (cited)
 thm-first-order-soundness (proof): bounded rules expand into unbounded steps whose side conditions hold | prp-bounded-quantifier-rules (cited)
 thm-first-order-soundness (proof): (sym) and (trans) lines abbreviate pasted three-line =I/=E derivations with quantifier-free phi | prp-equality-symmetric-transitive (cited), def-rules-equality
-thm-first-order-soundness (proof): an "arith" line stands for a universally quantified arithmetic premise, forall-E at its terms and ->E | inline convention; Section 4.4 (B3 pattern) recalled in prose, not used as a step
+thm-first-order-soundness (proof): an "arith" line stands for a universally quantified arithmetic premise, forall-E at its terms and ->E | inline convention; F1.4 §04 (B3 pattern) recalled in prose, not used as a step
 thm-first-order-soundness (proof): the arith premise's bound variables appear nowhere else, so fresh-name conditions and free-for hold; with arith lines the result is Gamma, A |= psi | inline convention
-thm-first-order-soundness (proof): lines in renamed form (Section 4.2 convention) are satisfied by the same structures and assignments | cor-renaming-bound-variables (cited)
+thm-first-order-soundness (proof): lines in renamed form (F1.4 §02 convention) are satisfied by the same structures and assignments | cor-renaming-bound-variables (cited)
 thm-first-order-soundness (proof): induction over structures interpreting every symbol of the derivation; expansion of a structure for Gamma, psi by arbitrary meanings, using a nonempty domain; extra meanings change nothing | def-structure (M1); remark after def-first-order-entailment (cited in prose)
-cor-renaming-bound-variables (proof): front renaming; renaming inside a formula by structural induction for all assignments | lem-term-substitution, lem-free-coincidence, def-free-for, def-satisfaction (S4)-(S7); thm-structural-induction (pattern); renaming as defined in Section 4.2 (no label)
-thm-first-order-soundness (proof): scope rule, availability, boxes disjoint or nested, unchanged for flagged boxes | def-derivation as extended in Section 4.4 (def-rules-universal)
+cor-renaming-bound-variables (proof): front renaming; renaming inside a formula by structural induction for all assignments | lem-term-substitution, lem-free-coincidence, def-free-for, def-satisfaction (S4)-(S7); thm-structural-induction (pattern); renaming as defined in F1.4 §02 (no label)
+thm-first-order-soundness (proof): scope rule, availability, boxes disjoint or nested, unchanged for flagged boxes | def-derivation as extended in F1.4 §04 (def-rules-universal)
 thm-first-order-soundness (proof): lem-context-inclusion (b) extended to flagged boxes without an assumption | inline (subsection "Contexts, once more"), re-running the proof of lem-context-inclusion (b)
 thm-first-order-soundness (proof): the forall-I box's last line is a line of the box itself; the exists-E box's last line likewise; the side conditions as quoted | def-rules-universal, def-rules-existential
 thm-first-order-soundness (proof): the propositional cases carry over from thm-soundness with (S3)-(S5) for (V1)-(V6) | thm-soundness (cited), def-satisfaction
 thm-first-order-soundness (proof): a variable not appearing in phi (not even after a quantifier) is free for x in phi | def-free-for, inline
 thm-first-order-soundness (proof): l[x0 -> d][x -> d] and l[x -> d] differ at most at x0 when x0 is not x | def-assignment, inline
-lem-term-substitution (proof): structural induction on terms and formulas | thm-structural-induction (pattern), def-term, def-first-order-formula; Section 4.2 remark
+lem-term-substitution (proof): structural induction on terms and formulas | thm-structural-induction (pattern), def-term, def-first-order-formula; F1.4 §02 remark
 lem-term-substitution (proof): substitution passes through connectives and atomic formulas, and (forall y phi)[t/x] is forall y (phi[t/x]) for y not x | def-substitution
-lem-term-substitution (proof): psi[t/x] = psi when x is not free in psi | Section 4.2, proved in its text (no label), cited as "Section 4.2 proved"
+lem-term-substitution (proof): psi[t/x] = psi when x is not free in psi | F1.4 §02, proved in its text (no label), cited as "F1.4 §02 proved"
 lem-term-substitution (proof): free-for is inherited by immediate parts; for x free in forall y phi, t free for x forces y not in t | def-free-for, inline
 lem-term-substitution (proof): terms with the same values of their variables have the same value | the claim for terms in the proof of lem-free-coincidence (cited)
-lem-term-substitution (proof): l[y -> d][x -> a] = l[x -> a][y -> d] for different x, y | def-assignment and the remark after it (Section 4.11)
+lem-term-substitution (proof): l[y -> d][x -> a] = l[x -> a][y -> d] for different x, y | def-assignment and the remark after it (F1.4 §11)
 lem-term-substitution (example): the capture example in Z with >, + and 1 and the Quick check values (a = 6; z = 4) | inline; verify/ch04/lem-term-substitution.py
-cor-counter-model (example): the non-derivability list, each from a Section 4.11 counter-model | exm-counter-model-swap, exr-models-b1 (cited in prose, not in a proof); verify/ch04/exm-counter-model-swap.py
+cor-counter-model (example): the non-derivability list, each from a F1.4 §11 counter-model | exm-counter-model-swap, exr-models-b1 (cited in prose, not in a proof); verify/ch04/exm-counter-model-swap.py
 cor-counter-model (claim): with arith lines a counter-model must also satisfy the arithmetic sentences | thm-first-order-soundness Step 1 (cited)
 thm-first-order-soundness (claim): completeness (Goedel 1929) and undecidability (Church, Turing 1936) | stated without proof in a remark; nothing depends on them
 exr-first-order-soundness-a1 (solution): the two-element structure for line 3; R(x0, y0) in (Z, <) under the two assignments | inline; verify/ch04/exr-first-order-soundness-a1.py

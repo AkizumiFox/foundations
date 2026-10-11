@@ -1,6 +1,6 @@
 # Order and Well-Ordering of the Natural Numbers
 
-Chapter 7 compared natural numbers with the order of the real line, and proved that every non-empty set of natural numbers has a least element (@thm-well-ordering) from that order and induction. In \( \omega \) there is no real line to borrow from. But the von Neumann numerals carry their order inside them: \( 3 = \{0, 1, 2\} \) is the set of the numbers before it. This section takes "is an element of" as the order, proves that it is a strict total order and a well-ordering, ties it to the arithmetic of the previous section, and then collects three groups of facts about \( \omega \): powers and parity, \( n \)-tuples, and lists of variable length.
+*Sets, Relations, and Cardinality*, Chapter 2 compared natural numbers with the order of the real line, and proved that every non-empty set of natural numbers has a least element (@fd2:thm-well-ordering) from that order and induction. In \( \omega \) there is no real line to borrow from. But the von Neumann numerals carry their order inside them: \( 3 = \{0, 1, 2\} \) is the set of the numbers before it. This section takes "is an element of" as the order, proves that it is a strict total order and a well-ordering, ties it to the arithmetic of the previous section, and then collects three groups of facts about \( \omega \): powers and parity, \( n \)-tuples, and lists of variable length.
 
 ## Less than is "element of"
 
@@ -62,7 +62,7 @@ We use @thm-omega-induction (b) on \( n \), for the property "for every \( m \in
 (e) Let \( k \in \mathrm{S}(n) \setminus \{0\} \). Then \( k \in \omega \) (as in (c)), \( k \le n \) by (b), and \( 1 \le k \) by (d), since \( k \ne 0 \). Conversely, let \( k \in \omega \) with \( 1 \le k \le n \). Then \( k \in \mathrm{S}(n) \) by (b). And \( k \ne 0 \): otherwise \( 1 \le 0 \), but \( 1 \ne 0 \) by (P3) of @thm-omega-peano and \( 1 \notin 0 = \emptyset \). This proves the theorem.
 :::
 
-So the notation of Chapter 7, \( \{0, \dots, n\} \) and \( \{1, \dots, n\} \), keeps its meaning on \( \omega \), and the two sets are \( \mathrm{S}(n) \) and \( \mathrm{S}(n) \setminus \{0\} \); in particular \( \{1, \dots, 0\} = \emptyset \). In the "plus one" notation of @def-omega-arithmetic, (b) says that \( n + 1 \) is the next number after \( n \), and (d) with @cor-omega-successor-cancellation gives \( 1 \le k + 1 \) for every \( k \in \omega \), since \( k + 1 \ne 0 \).
+So the notation of *Sets, Relations, and Cardinality*, Chapter 2, \( \{0, \dots, n\} \) and \( \{1, \dots, n\} \), keeps its meaning on \( \omega \), and the two sets are \( \mathrm{S}(n) \) and \( \mathrm{S}(n) \setminus \{0\} \); in particular \( \{1, \dots, 0\} = \emptyset \). In the "plus one" notation of @def-omega-arithmetic, (b) says that \( n + 1 \) is the next number after \( n \), and (d) with @cor-omega-successor-cancellation gives \( 1 \le k + 1 \) for every \( k \in \omega \), since \( k + 1 \ne 0 \).
 
 ::: {.warning}
 **On arbitrary sets, \( \in \) is not transitive.** \( \emptyset \in \{\emptyset\} \) and \( \{\emptyset\} \in \{\{\emptyset\}\} \), but \( \emptyset \notin \{\{\emptyset\}\} \), whose only element is \( \{\emptyset\} \ne \emptyset \). The conclusion "\( k \in m \) and \( m \in n \) give \( k \in n \)" is false in general; on \( \omega \) it holds by a theorem, @lem-omega-transitive (a): the elements of \( \omega \) are transitive sets. Membership by itself does not give it.
@@ -70,7 +70,7 @@ So the notation of Chapter 7, \( \{0, \dots, n\} \) and \( \{1, \dots, n\} \), k
 
 ## Well-ordering
 
-In Chapter 7, @thm-well-ordering was derived from @ax-induction, which there was an axiom. On \( \omega \), induction is a theorem (@thm-omega-induction), so well-ordering becomes one too. The proof here takes a different route from Chapter 7's strong induction, and the order of \( \omega \) as membership makes it short.
+In *Sets, Relations, and Cardinality*, Chapter 2, @fd2:thm-well-ordering was derived from @fd1:ax-induction, which there was an axiom. On \( \omega \), induction is a theorem (@thm-omega-induction), so well-ordering becomes one too. The proof here takes a different route from *Sets, Relations, and Cardinality*, Chapter 2's strong induction, and the order of \( \omega \) as membership makes it short.
 
 ::: {#thm-omega-well-ordering}
 [Well-Ordering of \( \omega \)]
@@ -93,14 +93,14 @@ a set by (Z6) of @ax-zf-fragment. We show that \( B \) is inductive in the sense
 \]
 Suppose \( n \in A \). Let \( x \in A \). Then \( x \notin n \), because \( n \cap A = \emptyset \); that is, \( x < n \) fails, so \( x = n \) or \( n < x \) by trichotomy (@thm-omega-order (a)), and \( n \le x \). Hence \( n \) is a least element of \( A \), contrary to our supposition. So \( n \notin A \), \( \mathrm{S}(n) \cap A = \emptyset \), and \( \mathrm{S}(n) \in B \). By @thm-omega-induction (a), \( B = \omega \).
 
-Since \( A \) is non-empty, there is some \( a \in A \). Then \( \mathrm{S}(a) \in \omega = B \), so \( \mathrm{S}(a) \cap A = \emptyset \); but \( a \in \mathrm{S}(a) \cap A \). This contradiction shows, by RAA (@def-rule-raa), that \( A \) has a least element.
+Since \( A \) is non-empty, there is some \( a \in A \). Then \( \mathrm{S}(a) \in \omega = B \), so \( \mathrm{S}(a) \cap A = \emptyset \); but \( a \in \mathrm{S}(a) \cap A \). This contradiction shows, by RAA (@fd1:def-rule-raa), that \( A \) has a least element.
 
 *Uniqueness.* If \( a \) and \( a' \) are least elements, then \( a \le a' \) and \( a' \le a \). If \( a \ne a' \), these give \( a < a' \) and \( a' < a \), so \( a < a \) by transitivity, contradicting irreflexivity (@thm-omega-order (a)). So \( a = a' \).
 :::
 
-The proof concludes an existence statement from a contradiction, so its last step is RAA, not \( \rulename{\neg I} \): what is refuted is "\( A \) has no least element", and the double negation is removed classically. The statement is that of @thm-well-ordering, read on \( \omega \); there the proof went through strong induction on \( \nN \subseteq \nR \), here through the inductive set \( B \).
+The proof concludes an existence statement from a contradiction, so its last step is RAA, not \( \rulename{\neg I} \): what is refuted is "\( A \) has no least element", and the double negation is removed classically. The statement is that of @fd2:thm-well-ordering, read on \( \omega \); there the proof went through strong induction on \( \nN \subseteq \nR \), here through the inductive set \( B \).
 
-Both hypotheses are needed. The empty set is a subset of \( \omega \) with no least element, since a least element must be an element of the set. The hypothesis \( A \subseteq \omega \) is needed too. Read with the order of @def-omega-order, "\( \in \) or \( = \)", the non-empty set \( \{0, \{1\}\} = \{\emptyset, \{\{\emptyset\}\}\} \) has no least element: neither \( \emptyset \in \{\{\emptyset\}\} \) (the only element of \( \{\{\emptyset\}\} \) is \( \{\emptyset\} \ne \emptyset \)) nor \( \{\{\emptyset\}\} \in \emptyset \) holds, and the two elements are different, so neither is \( \le \) the other. Outside \( \omega \), membership need not even compare two sets (compare the warning above). For sets of numbers, the warning after @thm-well-ordering gives \( \nZ \) and the positive rationals.
+Both hypotheses are needed. The empty set is a subset of \( \omega \) with no least element, since a least element must be an element of the set. The hypothesis \( A \subseteq \omega \) is needed too. Read with the order of @def-omega-order, "\( \in \) or \( = \)", the non-empty set \( \{0, \{1\}\} = \{\emptyset, \{\{\emptyset\}\}\} \) has no least element: neither \( \emptyset \in \{\{\emptyset\}\} \) (the only element of \( \{\{\emptyset\}\} \) is \( \{\emptyset\} \ne \emptyset \)) nor \( \{\{\emptyset\}\} \in \emptyset \) holds, and the two elements are different, so neither is \( \le \) the other. Outside \( \omega \), membership need not even compare two sets (compare the warning above). For sets of numbers, the warning after @fd2:thm-well-ordering gives \( \nZ \) and the positive rationals.
 
 ::: {.check}
 Is \( 3 < 5 \)? What is the \( j \in \omega \) with \( 5 = 2 + j \)?
@@ -170,17 +170,17 @@ by @def-omega-arithmetic (a), which contradicts @cor-omega-successor-cancellatio
 (g) Let \( Q(i) \) be "\( P(b + i) \)", for \( i \in \omega \). \( Q(0) \) is \( P(b + 0) = P(b) \). If \( Q(i) \) holds, then \( b + i \ge b \) by (a), so the hypothesis gives \( P((b + i) + 1) \); and \( (b + i) + 1 = b + (i + 1) \) by @def-omega-arithmetic (a), so \( Q(i + 1) \) holds. By @thm-omega-induction (b), \( Q(i) \) holds for every \( i \in \omega \). Finally, if \( n \ge b \), then \( n = b + i \) for some \( i \) by (a), and \( P(n) \) is \( Q(i) \).
 :::
 
-Clause (a) is how subtraction appears on \( \omega \): \( n - m \) is defined only when \( m \le n \), as the unique \( j \) with \( m + j = n \). For example \( 5 - 2 = 3 \), by the Quick check above, and \( n - 0 = n \). Clause (g) is the "induction from a base" that Chapter 7 used as @thm-induction, now proved on \( \omega \).
+Clause (a) is how subtraction appears on \( \omega \): \( n - m \) is defined only when \( m \le n \), as the unique \( j \) with \( m + j = n \). For example \( 5 - 2 = 3 \), by the Quick check above, and \( n - 0 = n \). Clause (g) is the "induction from a base" that *Sets, Relations, and Cardinality*, Chapter 2 used as @fd2:thm-induction, now proved on \( \omega \).
 
 ## Powers and parity
 
-Chapter 8 counted with powers \( 2^m 3^n \) and with even and odd numbers, and took both from the real numbers and the integers. Here are the facts it used, proved on \( \omega \). They are recorded for the citing rule at the end of this chapter, which says how Chapter 8's counting arguments read on \( \omega \).
+*Sets, Relations, and Cardinality*, Chapter 3 counted with powers \( 2^m 3^n \) and with even and odd numbers, and took both from the real numbers and the integers. Here are the facts it used, proved on \( \omega \). They are recorded for the citing rule at the end of this chapter, which says how *Sets, Relations, and Cardinality*, Chapter 3's counting arguments read on \( \omega \).
 
 For \( b \in \omega \), the powers \( b^n \) (\( n \in \omega \)) are defined by @thm-omega-recursion with \( X = \omega \), \( a = 1 \) and \( g(n, x) = x \cdot b \):
 \[
 b^0 \coloneqq 1, \qquad b^{n+1} \coloneqq b^n \cdot b .
 \]
-These are the two equations of @def-power, now on \( \omega \); so \( b^1 = 1 \cdot b = b \) by @thm-omega-arithmetic-laws (e).
+These are the two equations of @fd2:def-power, now on \( \omega \); so \( b^1 = 1 \cdot b = b \) by @thm-omega-arithmetic-laws (e).
 
 ::: {#prp-omega-powers-parity}
 [Powers and Parity on \( \omega \)]
@@ -238,7 +238,7 @@ Any other definition of powers on \( \omega \) by the same two equations, \( c(0
 
 ## Tuples and lists as sets
 
-Chapter 6 used \( n \)-tuples \( (x_1, \dots, x_n) \) with \( n \) a variable, as working rule (W5), and stated working rule (W2) for lists (Section 6.1); Chapters 7 and 8 write \( \{x_1, \dots, x_n\} \) with \( n \) a variable. With pairs built from sets (@thm-kuratowski-pair) and with \( \{1, \dots, n\} = \mathrm{S}(n) \setminus \{0\} \) (@thm-omega-order (e)), we can now say what they are. An \( n \)-tuple, for \( n \ge 3 \), is a list of entries labeled by \( 1, \dots, n \), and a function on \( \{1, \dots, n\} \) is exactly that.
+*Sets, Relations, and Cardinality*, Chapter 1 used \( n \)-tuples \( (x_1, \dots, x_n) \) with \( n \) a variable, as working rule (W5), and stated working rule (W2) for lists (*Sets, Relations, and Cardinality*, Section 1.1); *Sets, Relations, and Cardinality*, Chapters 2 and 3 write \( \{x_1, \dots, x_n\} \) with \( n \) a variable. With pairs built from sets (@thm-kuratowski-pair) and with \( \{1, \dots, n\} = \mathrm{S}(n) \setminus \{0\} \) (@thm-omega-order (e)), we can now say what they are. An \( n \)-tuple, for \( n \ge 3 \), is a list of entries labeled by \( 1, \dots, n \), and a function on \( \{1, \dots, n\} \) is exactly that.
 
 ::: {#prp-tuples-as-sets}
 [Tuples and Lists as Sets]
@@ -256,14 +256,14 @@ Let \( X \) be a set. For \( n = 2 \), an **\( n \)-tuple in \( X \)** is a pair
 \[
 \{x_1, \dots, x_n\} \coloneqq \bigl\{ y \in X : y = x_k \text{ for some } k \in \{1, \dots, n\} \bigr\}
 \]
-is a set: the image \( x(\{1, \dots, n\}) \) of @def-image.
+is a set: the image \( x(\{1, \dots, n\}) \) of @fd2:def-image.
 5. For \( n \ge 3 \), no \( n \)-tuple is an element of \( \omega \).
 :::
 :::
 
 The tuple is the graph alone, without the codomain \( X \), so the same list of entries is the same tuple in every set that contains them.
 
-Since a natural number is also a set, an exponent \( n \in \omega \) could be read in more than one way. In \( X^n \) the exponent is always read as a number: \( X^n \) is the set of \( n \)-tuples of (a), not Chapter 6's set \( Y^X \) (Section 6.4) taken with \( Y = X \) and with the set \( n \) as exponent, whose elements are pairs (graph, codomain) with graphs on \( n = \{0, \dots, n - 1\} \). And \( X^n \) is written only for a declared set of entries \( X \), never for \( X \in \omega \); for \( b \in \omega \), \( b^n \) is always the power defined above. For example, the power \( 2^2 \) is \( 4 = \{0, 1, 2, 3\} \), while \( 2 \times 2 \) is a set of four pairs.
+Since a natural number is also a set, an exponent \( n \in \omega \) could be read in more than one way. In \( X^n \) the exponent is always read as a number: \( X^n \) is the set of \( n \)-tuples of (a), not *Sets, Relations, and Cardinality*, Chapter 1's set \( Y^X \) (*Sets, Relations, and Cardinality*, Section 1.4) taken with \( Y = X \) and with the set \( n \) as exponent, whose elements are pairs (graph, codomain) with graphs on \( n = \{0, \dots, n - 1\} \). And \( X^n \) is written only for a declared set of entries \( X \), never for \( X \in \omega \); for \( b \in \omega \), \( b^n \) is always the power defined above. For example, the power \( 2^2 \) is \( 4 = \{0, 1, 2, 3\} \), while \( 2 \times 2 \) is a set of four pairs.
 
 ::: {.idea}
 Each clause unwinds a definition. Sets come from (Z5) and (Z6); equality of tuples is equality of graphs, which is agreement of values. For (c) and (e), look at the elements: an \( n \)-tuple with \( n \ge 3 \) has at least three elements, all of them pairs, while a pair has at most two elements and every non-zero natural number has the element \( \emptyset \), which is not a pair.
@@ -278,18 +278,18 @@ In (a)–(c) and (e), \( n \ge 3 \) unless \( n = 2 \) is named. First, \( \{1, 
 \]
 exists by @prp-cartesian-product-exists and (Z5), (Z6) of @ax-zf-fragment, and its elements are exactly the \( n \)-tuples in \( X \). This is \( X^n \).
 
-(b) For \( n = 2 \) this is @thm-kuratowski-pair. For \( n \ge 3 \), let \( G \) and \( G' \) be the graphs of \( x \) and \( y \). If \( x_k = y_k \) for every \( k \), then each element \( (k, x_k) \) of \( G \) is \( (k, y_k) \in G' \), and vice versa, so \( G = G' \) by (Z1). Conversely, if \( G = G' \), then \( (k, x_k) \in G' \) for each \( k \), so \( x_k = y_k \) by (Fn2) of @def-function for \( y \).
+(b) For \( n = 2 \) this is @thm-kuratowski-pair. For \( n \ge 3 \), let \( G \) and \( G' \) be the graphs of \( x \) and \( y \). If \( x_k = y_k \) for every \( k \), then each element \( (k, x_k) \) of \( G \) is \( (k, y_k) \in G' \), and vice versa, so \( G = G' \) by (Z1). Conversely, if \( G = G' \), then \( (k, x_k) \in G' \) for each \( k \), so \( x_k = y_k \) by (Fn2) of @fd2:def-function for \( y \).
 
 (c) An \( n \)-tuple contains the three pairs \( (1, x_1) \), \( (2, x_2) \), \( (3, x_3) \), which are distinct by @thm-kuratowski-pair, since their first coordinates are. Every element of a pair \( (a, b) = \{\{a\}, \{a, b\}\} \) is \( \{a\} \) or \( \{a, b\} \). If a pair contained three distinct elements \( u, v, w \), then \( u \) and \( v \), being different, would be \( \{a\} \) and \( \{a, b\} \) in some order, and \( w \), being one of these two, would equal \( u \) or \( v \). So a pair has no three distinct elements, and an \( n \)-tuple is not a pair.
 
 Let \( 3 \le n < n' \). The \( n' \)-tuple contains a pair with first coordinate \( n' \), since \( 1 \le n' \le n' \) (@thm-omega-order (d), with \( n' \ne 0 \)). Every element of the \( n \)-tuple is a pair \( (k, x_k) \) with \( k \le n \), and \( k = n' \) would give \( n' \le n \), which trichotomy rules out since \( n < n' \). By @thm-kuratowski-pair, no element of the \( n \)-tuple has first coordinate \( n' \), so the two sets differ. The case \( n' < n \) is the same with the roles exchanged.
 
-(d) Let \( n \in \omega \) and \( x \colon \{1, \dots, n\} \to X \). The set \( \{x_1, \dots, x_n\} \) is cut out of \( X \) by a condition, so it is a set by (Z6) of @ax-zf-fragment; by @def-image it is \( x(\{1, \dots, n\}) \). For \( n = 0 \) it is \( \emptyset \), since \( \{1, \dots, 0\} = \emptyset \).
+(d) Let \( n \in \omega \) and \( x \colon \{1, \dots, n\} \to X \). The set \( \{x_1, \dots, x_n\} \) is cut out of \( X \) by a condition, so it is a set by (Z6) of @ax-zf-fragment; by @fd2:def-image it is \( x(\{1, \dots, n\}) \). For \( n = 0 \) it is \( \emptyset \), since \( \{1, \dots, 0\} = \emptyset \).
 
 (e) An \( n \)-tuple \( t \) contains \( (1, x_1) \), so \( t \ne \emptyset = 0 \). Each element of \( t \) is a pair \( (k, x_k) = \{\{k\}, \{k, x_k\}\} \), which has the element \( \{k\} \), so no element of \( t \) is \( \emptyset \). Every \( m \in \omega \) with \( m \ne 0 \) has \( 0 = \emptyset \) as an element (@lem-omega-transitive (e)). So \( t \) is neither \( 0 \) nor any other element of \( \omega \).
 :::
 
-Clause (d) is the second half of working rule (W2): Chapter 7's @prp-finite-max and Chapter 8's @def-finite speak of \( \{x_1, \dots, x_n\} \) for a variable \( n \), and this is the set they mean. Clauses (a) and (b) are working rule (W5) for \( n \)-tuples. Clause (c) bears out Chapter 6's convention that a triple is not a pair, and (e), with @prp-pair-not-natural for \( n = 2 \), that no pair or \( n \)-tuple is a natural number.
+Clause (d) is the second half of working rule (W2): *Sets, Relations, and Cardinality*, Chapter 2's @fd2:prp-finite-max and *Sets, Relations, and Cardinality*, Chapter 3's @fd2:def-finite speak of \( \{x_1, \dots, x_n\} \) for a variable \( n \), and this is the set they mean. Clauses (a) and (b) are working rule (W5) for \( n \)-tuples. Clause (c) bears out *Sets, Relations, and Cardinality*, Chapter 1's convention that a triple is not a pair, and (e), with @prp-pair-not-natural for \( n = 2 \), that no pair or \( n \)-tuple is a natural number.
 
 ## Exercises
 
@@ -302,7 +302,7 @@ Clause (d) is the second half of working rule (W2): Chapter 7's @prp-finite-max 
 1. List the elements of \( \{ k \in \omega : k \le 3 \} \). Which natural number is this set?
 2. True or false: for \( m, n \in \omega \), \( m < n \) implies \( m \subseteq n \). Justify your answer.
 3. Find the least element of \( \{ n \in \omega : n \cdot n > 10 \} \), and say why it is least.
-4. Which clause of @thm-omega-order says that the notation \( \{0, \dots, n\} \) of Chapter 7 still means what it meant there, and what set is it on \( \omega \)?
+4. Which clause of @thm-omega-order says that the notation \( \{0, \dots, n\} \) of *Sets, Relations, and Cardinality*, Chapter 2 still means what it meant there, and what set is it on \( \omega \)?
 :::
 :::
 
@@ -371,14 +371,14 @@ If that set is non-empty, @thm-omega-well-ordering gives it a least element \( a
 ::: {.solution}
 Let \( A \coloneqq \{ n \in \omega : P(n) \text{ fails} \} \), a set by (Z6) of @ax-zf-fragment, and suppose, for a contradiction, that \( A \ne \emptyset \). By @thm-omega-well-ordering, \( A \) has a least element \( a \). Let \( k \in \omega \) with \( k < a \). If \( k \in A \), then \( a \le k \), and with \( k < a \) this gives \( k < k \) (by transitivity, or directly if \( a = k \)), contradicting irreflexivity (@thm-omega-order (a)). So \( k \notin A \), that is, \( P(k) \) holds. This holds for every \( k < a \), so the hypothesis gives \( P(a) \), contradicting \( a \in A \). Hence \( A = \emptyset \), and \( P(n) \) holds for every \( n \in \omega \).
 
-This is the statement of @thm-strong-induction, read on \( \omega \). There it was derived from @ax-induction directly; here the route goes through well-ordering, which was itself proved from @thm-omega-induction. As there, the hypothesis at \( n = 0 \) is vacuous (no \( k < 0 \)), so it hands us \( P(0) \) outright.
+This is the statement of @fd1:thm-strong-induction, read on \( \omega \). There it was derived from @fd1:ax-induction directly; here the route goes through well-ordering, which was itself proved from @thm-omega-induction. As there, the hypothesis at \( n = 0 \) is vacuous (no \( k < 0 \)), so it hands us \( P(0) \) outright.
 
 **Marking scheme.** (10 points)
 - 2: considers the set of failures (or argues by contradiction from a failure) and makes it a set.
 - 3: applies @thm-omega-well-ordering, with the set non-empty, to obtain a least failure \( a \).
 - 3: shows \( P(k) \) for every \( k < a \), using that \( a \) is least and the order facts.
 - 2: applies the hypothesis at \( a \) and reaches the contradiction.
-Fatal errors (0 for the step): citing @thm-strong-induction (a statement about Chapter 3's \( \nN \), not proved on \( \omega \)) instead of proving the result; taking a least element of a set not shown to be non-empty. A route by @thm-omega-induction (b) on "\( P(k) \) for every \( k < n \)" earns the same points: 2 for the property, 3 for the base (vacuous) and the use of @thm-omega-order (b) in the step, 3 for the step, 2 for deducing \( P(n) \) from the property at \( n + 1 \).
+Fatal errors (0 for the step): citing @fd1:thm-strong-induction (a statement about *Logic and Proof*, Chapter 3's \( \nN \), not proved on \( \omega \)) instead of proving the result; taking a least element of a set not shown to be non-empty. A route by @thm-omega-induction (b) on "\( P(k) \) for every \( k < n \)" earns the same points: 2 for the property, 3 for the base (vacuous) and the use of @thm-omega-order (b) in the step, 3 for the step, 2 for deducing \( P(n) \) from the property at \( n + 1 \).
 :::
 
 ::: {#exr-order-on-omega-c2}
@@ -394,7 +394,7 @@ Here is an attempted proof that any two natural numbers are comparable. Is the c
 ::: {.solution}
 The conclusion is **true**: it is trichotomy, @thm-omega-order (a). The proof is **not** correct.
 
-*The failing line is (5).* Its reason, "nothing lies strictly between \( n \) and \( \mathrm{S}(n) \)", is true (it follows from irreflexivity and transitivity, as in @thm-omega-order (b)), but it does not give \( \mathrm{S}(n) \le m \). To pass from "\( m \) is not strictly between \( n \) and \( \mathrm{S}(n) \)" to "\( \mathrm{S}(n) \in m \) or \( \mathrm{S}(n) = m \)", one must know that if neither holds, then \( m \in \mathrm{S}(n) \). That is trichotomy for \( \mathrm{S}(n) \) and \( m \): an instance of the claim being proved, at a number the induction has not reached. So the stated reason gives (5) only by assuming the goal (circular). Without that, (5) asserts the general fact "\( n \in m \Rightarrow \mathrm{S}(n) \le m \)", which is true but not yet proved. Either way, line (5) rests on an unavailable fact: entry (N9) of @exm-not-allowed-catalogue.
+*The failing line is (5).* Its reason, "nothing lies strictly between \( n \) and \( \mathrm{S}(n) \)", is true (it follows from irreflexivity and transitivity, as in @thm-omega-order (b)), but it does not give \( \mathrm{S}(n) \le m \). To pass from "\( m \) is not strictly between \( n \) and \( \mathrm{S}(n) \)" to "\( \mathrm{S}(n) \in m \) or \( \mathrm{S}(n) = m \)", one must know that if neither holds, then \( m \in \mathrm{S}(n) \). That is trichotomy for \( \mathrm{S}(n) \) and \( m \): an instance of the claim being proved, at a number the induction has not reached. So the stated reason gives (5) only by assuming the goal (circular). Without that, (5) asserts the general fact "\( n \in m \Rightarrow \mathrm{S}(n) \le m \)", which is true but not yet proved. Either way, line (5) rests on an unavailable fact: entry (N9) of @fd1:exm-not-allowed-catalogue.
 
 *Counterexample to the step.* The inference "\( x \in y \) and nothing lies strictly between \( x \) and \( x \cup \{x\} \), so \( x \cup \{x\} \in y \) or \( x \cup \{x\} = y \)" fails for sets in general. Take \( x = \emptyset \) and \( y = \{\emptyset, \{\{\emptyset\}\}\} \). Then \( x \in y \), and nothing lies strictly between \( x \) and \( x \cup \{x\} = \{\emptyset\} \) (the only element of \( \{\emptyset\} \) is \( \emptyset \), and \( \emptyset \notin \emptyset \)). But \( \{\emptyset\} \notin y \), since \( \{\emptyset\} \ne \emptyset \) and \( \{\emptyset\} \ne \{\{\emptyset\}\} \); and \( \{\emptyset\} \ne y \), since \( \{\{\emptyset\}\} \in y \) is not an element of \( \{\emptyset\} \). So the step needs something about \( \omega \) beyond "nothing in between".
 
@@ -412,9 +412,9 @@ Fatal errors (0 for the step): declaring the conclusion false; blaming line (2) 
 <!-- dependency ledger
 thm-omega-order (proof): S(n) subset of S(S(n)); m in n u {n} iff m in n or m = n | def-set-successor (cited), prp-zf-basic-sets (c)
 thm-omega-order (proof): 1 notin 0 since 0 = emptyset has no elements | def-omega / exm-von-neumann-numerals (0 := emptyset)
-thm-omega-well-ordering (proof): S(n) cap A = (n cap A) u ({n} cap A) | set algebra, Ch 6 Section 6.2 (distributive law, no label used); inline
+thm-omega-well-ordering (proof): S(n) cap A = (n cap A) u ({n} cap A) | set algebra, F2.1 §02 (distributive law, no label used); inline
 thm-omega-well-ordering (proof): RAA on an existential goal | def-rule-raa (cited)
-prp-omega-order-arithmetic (proof): substitution of equals inside sums and products | equality rules of Ch 4 (=E)
+prp-omega-order-arithmetic (proof): substitution of equals inside sums and products | equality rules of F1.4 (=E)
 prp-omega-order-arithmetic (proof): n + 1 = S(n) | def-omega-arithmetic (the paragraph after it; cited)
 prp-omega-powers-parity (claim): powers b^n on omega defined by recursion before the statement | thm-omega-recursion (cited)
 prp-omega-powers-parity (proof): 1 + 1 = 2, 2 = S(1) | def-omega-arithmetic (the paragraph after it; cited)
@@ -423,5 +423,5 @@ prp-tuples-as-sets (proof): 1 < 2 < 3 and 3 <= n for n >= 3 | thm-omega-order (a
 prp-tuples-as-sets (proof): first coordinates of a set of pairs; a pair (k, y) has the element {k} | def-kuratowski-pair (cited)
 exr-order-on-omega-a1 (solution): 0*0 = 0, 1*1 = 1, 2*2 = 4, 3*3 = 9, 4*4 = 16; numerals up to 16 | def-omega-arithmetic (computed from the equations; the Quick check of Section 05 for 2*2)
 exr-order-on-omega-a1 (solution): 0, 1, 4, 9 < 10 and 16 > 10 | thm-omega-order (b), (c) (successive numerals)
-exr-order-on-omega-c1 (solution): comparison with thm-strong-induction | Ch 3 (prose comparison only)
+exr-order-on-omega-c1 (solution): comparison with thm-strong-induction | F1.3 (prose comparison only)
 -->

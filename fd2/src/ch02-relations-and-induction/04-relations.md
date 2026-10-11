@@ -1,6 +1,6 @@
 # Properties of Relations
 
-Chapter 6 made relations into sets: a relation on a set \( X \) is a subset \( R \subseteq X \times X \), and \( x \mathrel{R} y \) means \( (x, y) \in R \) (@def-relation). It named the properties that make a relation an order or an equivalence and left them to this chapter. Equality, \( \le \), inclusion \( \subseteq \), divisibility \( \mid \), and "leaves the same remainder on division by \( 3 \)" are all relations, and they behave alike in some ways and differently in others. This section names four properties that sort them, proves the ones that divisibility has, and collects witnesses for every failure. Sections 7.5 and 7.6 then study the two combinations that matter most.
+Chapter 1 made relations into sets: a relation on a set \( X \) is a subset \( R \subseteq X \times X \), and \( x \mathrel{R} y \) means \( (x, y) \in R \) (@def-relation). It named the properties that make a relation an order or an equivalence and left them to this chapter. Equality, \( \le \), inclusion \( \subseteq \), divisibility \( \mid \), and "leaves the same remainder on division by \( 3 \)" are all relations, and they behave alike in some ways and differently in others. This section names four properties that sort them, proves the ones that divisibility has, and collects witnesses for every failure. Sections 2.5 and 2.6 then study the two combinations that matter most.
 
 ## Four properties
 
@@ -33,7 +33,7 @@ Let \( X \) be a set and \( R \) a relation on \( X \). Then \( R \) is
 
 In words: reflexive says every element is related to itself. Symmetric says the relation can be read backwards: whenever it relates \( x \) to \( y \), it also relates \( y \) to \( x \). Antisymmetric says it can be read both ways only between an element and itself. Transitive says two steps can always be replaced by one.
 
-Three of the four are implications, so a relation has them unless some related pair (or triple) makes the conclusion false: for symmetry and transitivity a pair is missing from \( R \), and for antisymmetry two different elements are related both ways. Negating with @prp-bounded-quantifier-negation and @prp-negated-implication turns each failure into a **witness**:
+Three of the four are implications, so a relation has them unless some related pair (or triple) makes the conclusion false: for symmetry and transitivity a pair is missing from \( R \), and for antisymmetry two different elements are related both ways. Negating with @fd1:prp-bounded-quantifier-negation and @fd1:prp-negated-implication turns each failure into a **witness**:
 \[
 \begin{aligned}
 \text{not reflexive:} \quad & \exists x \in X \ \ \neg (x \mathrel{R} x) , \\
@@ -94,7 +94,7 @@ These two arguments work for all integers, so on \( \nN \) and on \( \nZ \).
 *Not antisymmetric on \( \nZ \).* \( -2 = (-1) \cdot 2 \) and \( 2 = (-1) \cdot (-2) \), so \( 2 \mid -2 \) and \( -2 \mid 2 \), but \( 2 \ne -2 \).
 :::
 
-The failure on \( \nZ \) is a non-example by minimal change: enlarging the set from \( \nN \) to \( \nZ \) keeps reflexivity and transitivity, and antisymmetry fails exactly because an integer and its negative divide each other. Two facts about \( (\nN, \mid) \) will matter in Section 7.6: every \( a \in \nN \) divides \( 0 \), since \( 0 = 0 \cdot a \), and \( 1 \) divides every \( a \), since \( a = a \cdot 1 \). In the divisibility relation, \( 0 \) sits above everything and \( 1 \) below everything.
+The failure on \( \nZ \) is a non-example by minimal change: enlarging the set from \( \nN \) to \( \nZ \) keeps reflexivity and transitivity, and antisymmetry fails exactly because an integer and its negative divide each other. Two facts about \( (\nN, \mid) \) will matter in Section 2.6: every \( a \in \nN \) divides \( 0 \), since \( 0 = 0 \cdot a \), and \( 1 \) divides every \( a \), since \( a = a \cdot 1 \). In the divisibility relation, \( 0 \) sits above everything and \( 1 \) below everything.
 
 ## A table of examples
 
@@ -118,9 +118,9 @@ Decide which of the four properties each relation has: \( = \), \( \le \) and \(
 | \( x - y \in \nZ \) on \( \nR \) | yes | yes | no: \( 0, 1 \) | yes |
 | \( \emptyset \) on \( X \) | no: any \( x \) | yes | yes | yes |
 
-The witnesses. \( 0 \le 1 \) and not \( 1 \le 0 \); \( 0 < 1 \) and not \( 1 < 0 \); not \( 0 < 0 \). \( \emptyset \subseteq X \), since the empty set is a subset of every set (Section 6.1, after @prp-empty-set-unique), and \( X \not\subseteq \emptyset \), since \( X \) has an element and \( \emptyset \) has none. \( 1 \mid 2 \), and \( 2 \nmid 1 \): \( 1 = 2k \) would give \( 0 < k < 1 \), and no integer lies there (@prp-integers-closed (c)). The pair \( 2, -2 \) is from @prp-divides-partial-order. For \( x - y \in \nZ \): \( 0 - 1 = -1 \) and \( 1 - 0 = 1 \) are integers, and \( 0 \ne 1 \). For \( \emptyset \): no \( x \) has \( (x, x) \in \emptyset \).
+The witnesses. \( 0 \le 1 \) and not \( 1 \le 0 \); \( 0 < 1 \) and not \( 1 < 0 \); not \( 0 < 0 \). \( \emptyset \subseteq X \), since the empty set is a subset of every set (Section 1.1, after @prp-empty-set-unique), and \( X \not\subseteq \emptyset \), since \( X \) has an element and \( \emptyset \) has none. \( 1 \mid 2 \), and \( 2 \nmid 1 \): \( 1 = 2k \) would give \( 0 < k < 1 \), and no integer lies there (@prp-integers-closed (c)). The pair \( 2, -2 \) is from @prp-divides-partial-order. For \( x - y \in \nZ \): \( 0 - 1 = -1 \) and \( 1 - 0 = 1 \) are integers, and \( 0 \ne 1 \). For \( \emptyset \): no \( x \) has \( (x, x) \in \emptyset \).
 
-The "yes" entries. Equality is reflexive by \( \rulename{{=}I} \) (@def-rules-equality), symmetric and transitive by @prp-equality-symmetric-transitive, and antisymmetric because its conclusion \( x = y \) is one of its hypotheses. For \( \le \) and \( < \), antisymmetry and transitivity are order facts about \( \nR \), and \( \le \) is reflexive because \( x = x \) gives \( x \le x \); for \( < \), antisymmetry holds **vacuously**, since \( x < y \) and \( y < x \) never hold together. For \( \subseteq \), reflexivity is immediate from @def-subset, transitivity is @prp-subset-transitive, and antisymmetry is @prp-subset-antisymmetric. For \( \mid \), see @prp-divides-partial-order. For \( x - y \in \nZ \): \( x - x = 0 \in \nZ \); \( y - x = -(x - y) \); and \( x - z = (x - y) + (y - z) \); these are integers by @prp-integers-closed (a). The empty relation is symmetric, antisymmetric and transitive vacuously: each property is an implication whose hypothesis requires a pair in \( \emptyset \).
+The "yes" entries. Equality is reflexive by \( \rulename{{=}I} \) (@fd1:def-rules-equality), symmetric and transitive by @fd1:prp-equality-symmetric-transitive, and antisymmetric because its conclusion \( x = y \) is one of its hypotheses. For \( \le \) and \( < \), antisymmetry and transitivity are order facts about \( \nR \), and \( \le \) is reflexive because \( x = x \) gives \( x \le x \); for \( < \), antisymmetry holds **vacuously**, since \( x < y \) and \( y < x \) never hold together. For \( \subseteq \), reflexivity is immediate from @def-subset, transitivity is @prp-subset-transitive, and antisymmetry is @prp-subset-antisymmetric. For \( \mid \), see @prp-divides-partial-order. For \( x - y \in \nZ \): \( x - x = 0 \in \nZ \); \( y - x = -(x - y) \); and \( x - z = (x - y) + (y - z) \); these are integers by @prp-integers-closed (a). The empty relation is symmetric, antisymmetric and transitive vacuously: each property is an implication whose hypothesis requires a pair in \( \emptyset \).
 :::
 
 Three degenerate cases are worth a sentence each, because each shows a property holding for a reason other than the one we expect.
@@ -138,14 +138,14 @@ Reflexive: every integer \( x \ge 2 \) has a prime factor \( p \) (@thm-prime-fa
 :::
 
 ::: {.warning}
-**A false theorem: "symmetric and transitive imply reflexive."** The "proof": let \( x \in X \), and take \( y \) with \( x \mathrel{R} y \); by symmetry \( y \mathrel{R} x \), and by transitivity \( x \mathrel{R} x \). The conclusion is false: the empty relation on \( \{1\} \) is symmetric and transitive (vacuously) and not reflexive, with witness \( 1 \). The illegal step, "take \( y \) with \( x \mathrel{R} y \)", is an \( \rulename{\exists E} \) (@def-rules-existential) on \( \exists y \in X \ x \mathrel{R} y \), which was never derived and need not be true: (N9) of @exm-not-allowed-catalogue (Exercise C2 gives the correct version).
+**A false theorem: "symmetric and transitive imply reflexive."** The "proof": let \( x \in X \), and take \( y \) with \( x \mathrel{R} y \); by symmetry \( y \mathrel{R} x \), and by transitivity \( x \mathrel{R} x \). The conclusion is false: the empty relation on \( \{1\} \) is symmetric and transitive (vacuously) and not reflexive, with witness \( 1 \). The illegal step, "take \( y \) with \( x \mathrel{R} y \)", is an \( \rulename{\exists E} \) (@fd1:def-rules-existential) on \( \exists y \in X \ x \mathrel{R} y \), which was never derived and need not be true: (N9) of @fd1:exm-not-allowed-catalogue (Exercise C2 gives the correct version).
 :::
 
 ::: {.remark}
 "Antisymmetric" is not "not symmetric". Equality is both symmetric and antisymmetric. And \( \{ (1, 2), (2, 1), (2, 3) \} \) on \( \{1, 2, 3\} \) is neither: it is not symmetric, since \( 2 \mathrel{R} 3 \) and not \( 3 \mathrel{R} 2 \); and it is not antisymmetric, since \( 1 \mathrel{R} 2 \), \( 2 \mathrel{R} 1 \) and \( 1 \ne 2 \).
 :::
 
-Two combinations of the properties organize the rest of the chapter. A relation that is reflexive, symmetric and transitive behaves like equality; Section 7.5 calls it an **equivalence relation** and shows that it cuts \( X \) into classes. A relation that is reflexive, antisymmetric and transitive behaves like \( \le \); Section 7.6 calls it a **partial order**; inclusion on \( \powerset{X} \) and divisibility on \( \nN \) are examples that are not comparisons of sizes.
+Two combinations of the properties organize the rest of the chapter. A relation that is reflexive, symmetric and transitive behaves like equality; Section 2.5 calls it an **equivalence relation** and shows that it cuts \( X \) into classes. A relation that is reflexive, antisymmetric and transitive behaves like \( \le \); Section 2.6 calls it a **partial order**; inclusion on \( \powerset{X} \) and divisibility on \( \nN \) are examples that are not comparisons of sizes.
 
 ## Exercises
 
@@ -163,7 +163,7 @@ Two combinations of the properties organize the rest of the chapter. A relation 
 :::
 
 ::: {.solution}
-(a) \( \forall x \in X \ \forall y \in X \ ((x \mathrel{R} y \wedge y \mathrel{R} x) \to x = y) \). Its negation, by @prp-bounded-quantifier-negation and @prp-negated-implication: \( \exists x \in X \ \exists y \in X \ ((x \mathrel{R} y \wedge y \mathrel{R} x) \wedge x \ne y) \).
+(a) \( \forall x \in X \ \forall y \in X \ ((x \mathrel{R} y \wedge y \mathrel{R} x) \to x = y) \). Its negation, by @fd1:prp-bounded-quantifier-negation and @fd1:prp-negated-implication: \( \exists x \in X \ \exists y \in X \ ((x \mathrel{R} y \wedge y \mathrel{R} x) \wedge x \ne y) \).
 
 (b) False. Equality on any set is antisymmetric and symmetric. So is the empty relation (vacuously).
 
@@ -189,7 +189,7 @@ For each relation, determine which of the four properties it has. Justify your a
 :::
 
 ::: {.solution}
-(a) Reflexive: \( a + b = b + a \). Symmetric: \( a + d = b + c \) gives \( c + b = d + a \). Transitive: from \( a + d = b + c \) and \( c + f = d + e \), adding gives \( a + d + c + f = b + c + d + e \), and canceling \( c + d \) gives \( a + f = b + e \). Not antisymmetric: \( (0, 0) \mathrel{E} (1, 1) \) both ways, and \( (0, 0) \ne (1, 1) \). (The pairs \( (a, b) \) and \( (c, d) \) are related exactly when \( a - b = c - d \); Chapter 10 builds \( \nZ \) from the classes of this relation.)
+(a) Reflexive: \( a + b = b + a \). Symmetric: \( a + d = b + c \) gives \( c + b = d + a \). Transitive: from \( a + d = b + c \) and \( c + f = d + e \), adding gives \( a + d + c + f = b + c + d + e \), and canceling \( c + d \) gives \( a + f = b + e \). Not antisymmetric: \( (0, 0) \mathrel{E} (1, 1) \) both ways, and \( (0, 0) \ne (1, 1) \). (The pairs \( (a, b) \) and \( (c, d) \) are related exactly when \( a - b = c - d \); *Number Systems: From \(\nN\) to \(\nR\)*, Chapter 2 builds \( \nZ \) from the classes of this relation.)
 
 (b) Reflexive, symmetric and transitive, because "\( x^2 = y^2 \)" is equality of the values \( x^2 \) and \( y^2 \), and equality has those three properties. Not antisymmetric: \( 1^2 = (-1)^2 \) and \( 1 \ne -1 \).
 
@@ -270,7 +270,7 @@ Let \( R \) be a symmetric and transitive relation on \( X \), and let \( D \col
 
 *Symmetric and transitive on \( D \).* These are implications about related elements, and every related pair lies in \( D \times D \); so they hold on \( D \) because they hold on \( X \).
 
-This is the correct version of the false theorem in the warning: its argument proves reflexivity exactly on the set of elements for which "take \( y \) with \( x \mathrel{R} y \)" is available. Elements outside \( D \) are related to nothing, and there reflexivity fails. In the language of Section 7.5, \( R \) is an equivalence relation on \( D \).
+This is the correct version of the false theorem in the warning: its argument proves reflexivity exactly on the set of elements for which "take \( y \) with \( x \mathrel{R} y \)" is available. Elements outside \( D \) are related to nothing, and there reflexivity fails. In the language of Section 2.5, \( R \) is an equivalence relation on \( D \).
 
 **Marking scheme.** (10 points)
 - 2: shows \( R \subseteq D \times D \), using symmetry to put the second coordinate in \( D \).
@@ -282,10 +282,10 @@ Fatal errors (0 for the step): taking \( y \) with \( x \mathrel{R} y \) for an 
 
 <!-- dependency ledger
 def-relation-properties (claim): (the paragraph "Why reflexive on X") symmetric, antisymmetric, transitive depend only on the set R, since x R y forces x, y in X | def-relation (cited)
-prp-divides-partial-order (proof): if k <= 0 and a > 0 then ka <= 0; multiplying k > 1 by l > 0 | R order, school fact; axioms in Ch 11
+prp-divides-partial-order (proof): if k <= 0 and a > 0 then ka <= 0; multiplying k > 1 by l > 0 | R order, school fact; axioms in AN1.1
 prp-divides-partial-order (proof): cancelling a != 0 from a = lka | R arithmetic, school fact
-exm-relation-table (solution): reflexivity of <= (x = x); antisymmetry and transitivity of <= and < on R; not 0 < 0; not 1 <= 0 | R order, school fact; axioms in Ch 11
-exm-relation-table (solution): reflexivity and transitivity of subset | def-subset (cited); transitivity of inclusion, Ch 6 Section 6.1
+exm-relation-table (solution): reflexivity of <= (x = x); antisymmetry and transitivity of <= and < on R; not 0 < 0; not 1 <= 0 | R order, school fact; axioms in AN1.1
+exm-relation-table (solution): reflexivity and transitivity of subset | def-subset (cited); transitivity of inclusion, F2.1 §01
 exm-relation-table (solution): 2 does not divide 1 (no integer strictly between 0 and 1) | prp-integers-closed (c) (cited)
 exm-relation-table (claim): (the degenerate cases) the full relation X x X is antisymmetric only if X has at most one element | inline (two different elements are related both ways)
 exr-relations-b1 (solution): cancellation in R; y^2 > 0 for y != 0; product of positives is positive | R arithmetic and order, school fact

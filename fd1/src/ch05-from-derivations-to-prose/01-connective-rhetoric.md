@@ -78,7 +78,7 @@ Each group of rows is followed by a worked example, a short proof annotated phra
 | \( \rulename{\wedge I} \) | "…, and …"; "we show (a) … and (b) …"; "both … hold" | often, when both conjuncts are displayed |
 | \( \rulename{\wedge E} \) | "in particular"; "so \( a > 0 \)"; using one clause of a hypothesis without comment | yes |
 
-In analysis, \( \rulename{\wedge I} \) is the shape of every definition with two clauses. "\( s \) is a least upper bound of \( A \)" will mean that \( s \) is an upper bound of \( A \) **and** no smaller number is an upper bound of \( A \); a proof of it has two parts, labeled (a) and (b), and ends by putting them together. (Chapter 11 states the second clause as "\( s \le M \) for every upper bound \( M \) of \( A \)", which says the same: by trichotomy, \( s \le M \) holds exactly when \( M < s \) fails, and an upper bound \( M \) with \( M < s \) would be a smaller one.) \( \rulename{\wedge E} \) is the step from a chain to one of its links: "since \( x \in (0, 1) \), in particular \( x > 0 \)" takes the left conjunct of \( 0 < x \wedge x < 1 \).
+In analysis, \( \rulename{\wedge I} \) is the shape of every definition with two clauses. "\( s \) is a least upper bound of \( A \)" will mean that \( s \) is an upper bound of \( A \) **and** no smaller number is an upper bound of \( A \); a proof of it has two parts, labeled (a) and (b), and ends by putting them together. (*Analysis on the Real Line*, Chapter 1 states the second clause as "\( s \le M \) for every upper bound \( M \) of \( A \)", which says the same: by trichotomy, \( s \le M \) holds exactly when \( M < s \) fails, and an upper bound \( M \) with \( M < s \) would be a smaller one.) \( \rulename{\wedge E} \) is the step from a chain to one of its links: "since \( x \in (0, 1) \), in particular \( x > 0 \)" takes the left conjunct of \( 0 < x \wedge x < 1 \).
 
 ::: {#exm-rhetoric-conjunction}
 [Two clauses of a least upper bound]
@@ -105,7 +105,7 @@ The \( \rulename{\wedge E} \) of (a) could have been silent ("then \( a < 2 \), 
 | \( \rulename{R} \) | "recall that"; "as noted above" | yes |
 | \( \rulename{MT} \), \( \rulename{CP} \) | "…; so \( P \) cannot hold"; "we prove the contrapositive"; "equivalently, if not \( Q \) then not \( P \)" | the announcement "we prove the contrapositive", never |
 
-In analysis, \( \rulename{{\to}I} \) is a proof that begins "Suppose \( \abs{x - 1} < 1 \)" and ends "so \( x > 0 \)"; the example below writes it out. \( \rulename{{\to}E} \) is every citation of a theorem: "since \( f \) is continuous at \( a \) and \( a_n \to a \), we have \( f(a_n) \to f(a) \)" applies an implication proved in Chapter 15 to two facts in hand, and the word "since" introduces those facts. For \( \rulename{CP} \), Section 2.3's @exm-square-even-via-contrapositive is the model, as the opening of this section showed. (@thm-square-even-implies-even itself is proved by cases, with no contraposition.)
+In analysis, \( \rulename{{\to}I} \) is a proof that begins "Suppose \( \abs{x - 1} < 1 \)" and ends "so \( x > 0 \)"; the example below writes it out. \( \rulename{{\to}E} \) is every citation of a theorem: "since \( f \) is continuous at \( a \) and \( a_n \to a \), we have \( f(a_n) \to f(a) \)" applies an implication proved in *Analysis on the Real Line*, Chapter 5 to two facts in hand, and the word "since" introduces those facts. For \( \rulename{CP} \), Section 2.3's @exm-square-even-via-contrapositive is the model, as the opening of this section showed. (@thm-square-even-implies-even itself is proved by cases, with no contraposition.)
 
 ::: {#exm-rhetoric-implication}
 [A hypothesis assumed, a lemma cited, a contrapositive announced]
@@ -171,7 +171,7 @@ In (a), the split was announced with the disjunction that makes it exhaust; \( \
 
 In analysis, \( \rulename{\neg I} \) is the proof of @thm-sqrt2-irrational: "suppose some rational \( r \) has \( r^2 = 2 \); …; this is a contradiction; hence no rational number has square \( 2 \)". \( \rulename{\neg E} \) is a sentence such as "then \( n \le 1/\varepsilon < n \), a contradiction": the chain gives \( n < n \), which clashes with the fact that no number is less than itself. One strict link is essential, since \( n \le 1/\varepsilon \le n \) gives only \( n \le n \), which clashes with nothing. \( \rulename{\bot E} \) is "if \( A = \emptyset \), there is nothing to prove", said of a claim about every element of \( A \): with no element to check, the claim is vacuously true (Section 4.4).
 
-The last row needs more room. To negate "\( s \) is an upper bound of \( A \)", that is, \( \forall a \in A\; (a \le s) \), a proof writes the negated form: **some** \( a \in A \) has \( a > s \). The passage uses @prp-bounded-quantifier-negation (a), derived with \( \rulename{RAA} \), and the order fact that \( \neg(a \le s) \) says \( a > s \). Chapter 11's proof that \( \nN \) is not bounded above is the instructive case. It opens "suppose, for contradiction, that \( \nN \) is bounded above" and closes with "therefore \( \nN \) is not bounded above"; that is \( \rulename{\neg I} \), despite the phrase. Its one classical step comes after the box: from "not every \( n \in \nN \) has \( n \le x \)" it passes to "some \( n \in \nN \) has \( n > x \)", by @prp-bounded-quantifier-negation (a), which Section 4.9 derives with \( \rulename{RAA} \) through @prp-quantifier-negation (a) and @prp-negated-implication, and then by trichotomy for \( \neg(n \le x) \), giving \( n > x \). That step produces an \( n \) without naming it, and the proof needs no name.
+The last row needs more room. To negate "\( s \) is an upper bound of \( A \)", that is, \( \forall a \in A\; (a \le s) \), a proof writes the negated form: **some** \( a \in A \) has \( a > s \). The passage uses @prp-bounded-quantifier-negation (a), derived with \( \rulename{RAA} \), and the order fact that \( \neg(a \le s) \) says \( a > s \). *Analysis on the Real Line*, Chapter 1's proof that \( \nN \) is not bounded above is the instructive case. It opens "suppose, for contradiction, that \( \nN \) is bounded above" and closes with "therefore \( \nN \) is not bounded above"; that is \( \rulename{\neg I} \), despite the phrase. Its one classical step comes after the box: from "not every \( n \in \nN \) has \( n \le x \)" it passes to "some \( n \in \nN \) has \( n > x \)", by @prp-bounded-quantifier-negation (a), which Section 4.9 derives with \( \rulename{RAA} \) through @prp-quantifier-negation (a) and @prp-negated-implication, and then by trichotomy for \( \neg(n \le x) \), giving \( n > x \). That step produces an \( n \) without naming it, and the proof needs no name.
 
 ::: {#exm-rhetoric-negation}
 [A negative claim, its positive form, and an empty case]
@@ -196,7 +196,7 @@ Claim (a) is \( \forall s\, \neg\forall x\; (x \le s) \), and its proof writes t
 | \( \rulename{RAA} \) | "suppose, for contradiction, that \( \neg P \)"; "suppose not"; "assume the contrary" | never |
 | \( \rulename{\neg\neg E} \), \( \rulename{LEM} \) | "either \( P \) or not"; "\( P \) must hold, since …"; "otherwise" | never: written as an explicit case split or an explicit removal of a double negation ("\( P \) must hold, since …") |
 
-In analysis, \( \rulename{RAA} \) is the proof of @prp-arbitrarily-close-equal: "suppose, for a contradiction, that \( a \ne b \); then \( \abs{a - b} > 0 \), so the hypothesis gives \( \abs{a - b} < \abs{a - b} \), a contradiction; hence \( a = b \)". The box assumes \( \neg(a = b) \) and concludes \( a = b \), so it is genuine \( \rulename{RAA} \); \( \rulename{\neg I} \) would give only \( \neg\neg(a = b) \). \( \rulename{LEM} \) is a split such as "either the sequence has infinitely many terms in the left half of the interval, or it does not", the step of the bisection proof of the Bolzano–Weierstrass theorem (Chapter 12 proves the theorem). That split is genuinely non-constructive: nobody can decide in general which case holds. Section 5.7 explains why that matters, and a proof that makes such a step says so in one clause. A split such as "\( x \ge 0 \) or \( x < 0 \)" is also excluded middle in logical form, but it is an instance of the trichotomy of the order of \( \nR \), which Chapter 11 takes as an axiom, and it is never flagged.
+In analysis, \( \rulename{RAA} \) is the proof of @prp-arbitrarily-close-equal: "suppose, for a contradiction, that \( a \ne b \); then \( \abs{a - b} > 0 \), so the hypothesis gives \( \abs{a - b} < \abs{a - b} \), a contradiction; hence \( a = b \)". The box assumes \( \neg(a = b) \) and concludes \( a = b \), so it is genuine \( \rulename{RAA} \); \( \rulename{\neg I} \) would give only \( \neg\neg(a = b) \). \( \rulename{LEM} \) is a split such as "either the sequence has infinitely many terms in the left half of the interval, or it does not", the step of the bisection proof of the Bolzano–Weierstrass theorem (*Analysis on the Real Line*, Chapter 2 proves the theorem). That split is genuinely non-constructive: nobody can decide in general which case holds. Section 5.7 explains why that matters, and a proof that makes such a step says so in one clause. A split such as "\( x \ge 0 \) or \( x < 0 \)" is also excluded middle in logical form, but it is an instance of the trichotomy of the order of \( \nR \), which *Analysis on the Real Line*, Chapter 1 takes as an axiom, and it is never flagged.
 
 ::: {#exm-rhetoric-contradiction}
 [One proof by contradiction, read three ways]
@@ -257,7 +257,7 @@ The labels \( (\Rightarrow) \) and \( (\Leftarrow) \) are the two boxes of \( \r
 
 **(iii) Genuine reductio.** The claim \( P \) is positive, and \( \neg P \) is used throughout the box, typically because it hands over an object: \( a \ne b \) makes \( \abs{a - b} \) a positive number to feed to a hypothesis about every \( \varepsilon > 0 \).
 
-*To tell them apart, read the first sentence of the box and the sentence after it:* what does it assume, and what does the proof write after it closes? The words "for contradiction" do not decide it; Chapter 11 uses them for a face (i) proof.
+*To tell them apart, read the first sentence of the box and the sentence after it:* what does it assume, and what does the proof write after it closes? The words "for contradiction" do not decide it; *Analysis on the Real Line*, Chapter 1 uses them for a face (i) proof.
 
 *The style rule: use the weakest form that works, and say which one you use.* A direct proof, when one exists, beats all three. A negative claim is proved by face (i). Face (ii) is announced as "we prove the contrapositive", which tells the reader the goal \( \neg Q \to \neg P \) at once. Face (iii) is for a positive claim that resists the other routes, with its classical step made visible as in @exm-rhetoric-contradiction.
 
@@ -329,7 +329,7 @@ The two tests share one smell: *the clash at the end is with a statement the pro
 
 *(c)* Face (i), refuting: the box assumes the positive statement "\( 7 \) is even", that is, \( 7 = 2k \) for some integer \( k \), and the proof concludes its negation, by \( \rulename{\neg I} \). (The value \( 7/2 \) is not an integer because \( 3 < 7/2 < 4 \).)
 
-*(d)* False. The phrase also opens \( \rulename{\neg I} \) boxes. Chapter 11's proof that \( \nN \) is not bounded above begins "suppose, for contradiction, that \( \nN \) is bounded above" and concludes the negation, by \( \rulename{\neg I} \). What decides is what the box assumes and what the proof concludes.
+*(d)* False. The phrase also opens \( \rulename{\neg I} \) boxes. *Analysis on the Real Line*, Chapter 1's proof that \( \nN \) is not bounded above begins "suppose, for contradiction, that \( \nN \) is bounded above" and concludes the negation, by \( \rulename{\neg I} \). What decides is what the box assumes and what the proof concludes.
 :::
 
 ### B. Practice
@@ -380,7 +380,7 @@ Here is a proof that if \( x \) is a real number with \( \abs{x} \le \abs{y} \) 
 ::: {#exr-connective-rhetoric-c1}
 [C1: Euclid without the contradiction]
 
-Here is a common proof that there are infinitely many primes. It uses two facts about integers that we take as known here: every integer \( m \ge 2 \) has a prime divisor (Chapter 7 proves it); and if an integer \( d \) divides two integers, it divides their difference (if \( u = dk \) and \( v = dl \), then \( u - v = d(k - l) \)).
+Here is a common proof that there are infinitely many primes. It uses two facts about integers that we take as known here: every integer \( m \ge 2 \) has a prime divisor (*Sets, Relations, and Cardinality*, Chapter 2 proves it); and if an integer \( d \) divides two integers, it divides their difference (if \( u = dk \) and \( v = dl \), then \( u - v = d(k - l) \)).
 
 > Suppose, for a contradiction, that there are only finitely many primes, say \( p_1, \dots, p_k \). Let \( N \coloneqq p_1 p_2 \cdots p_k + 1 \). Then \( N \ge 2 \), so \( N \) has a prime divisor \( p \). Since \( p_1, \dots, p_k \) are all the primes, \( p = p_i \) for some \( i \). Then \( p_i \) divides both \( N \) and \( p_1 p_2 \cdots p_k \), so it divides their difference \( 1 \), which is impossible for a prime. This is a contradiction. Hence there are infinitely many primes.
 
@@ -445,7 +445,7 @@ Start: "Since \( x^2 \ge 0 \), either \( x^2 > 0 \) or \( x^2 = 0 \)."
 
 In either case \( x = 0 \) [\( \rulename{\vee E} \)].
 
-The logical steps are \( \rulename{{\to}I} \), \( \rulename{\vee E} \), \( \rulename{\forall E} \), \( \rulename{\neg E} \), \( \rulename{{\to}E} \) (citing the second school fact, that a product is \( 0 \) only if a factor is) and \( \rulename{\bot E} \); no classical rule is used. The classical content has moved into the school fact "\( x^2 > 0 \) or \( x^2 = 0 \)", which rests on the trichotomy of the order, an axiom of Chapter 11; Section 5.7 explains why that axiom is where the book makes its classical commitment.
+The logical steps are \( \rulename{{\to}I} \), \( \rulename{\vee E} \), \( \rulename{\forall E} \), \( \rulename{\neg E} \), \( \rulename{{\to}E} \) (citing the second school fact, that a product is \( 0 \) only if a factor is) and \( \rulename{\bot E} \); no classical rule is used. The classical content has moved into the school fact "\( x^2 > 0 \) or \( x^2 = 0 \)", which rests on the trichotomy of the order, an axiom of *Analysis on the Real Line*, Chapter 1; Section 5.7 explains why that axiom is where the book makes its classical commitment.
 
 **Marking scheme.** (10 points)
 - 3: (a) identifies \( \rulename{RAA} \) (face (iii)), with the reason: the assumption is a negation and the conclusion is positive.
@@ -457,27 +457,27 @@ Fatal errors (0 for the step): calling (a) face (i) because the word "contradict
 :::
 
 <!-- dependency ledger
-exm-square-even-via-contrapositive (example): the derivation reprinted in the hook; (E1)-(E3) | exm-square-even-via-contrapositive (cited); school facts of Section 2.1
-exm-square-even-via-contrapositive (claim): line 11 (or commutes) has no words; the Disjunction table's row: exchanging the members of a disjunction or conjunction may be silent | exm-disjunction-first-derivations, prp-and-commutes (cited); def-silent-steps (Section 5.3, prose pointer)
-exm-rhetoric-conjunction (solution): t >= 0 or t < 0; max{t, 0} = t if t >= 0 and 0 if t < 0, so max{t, 0} >= t, >= 0 and < 2 for t < 2, in each case; a = (m + 2)/2 in [1, 2), a - m = (2 - m)/2 > 0 | trichotomy; max of two numbers, a school notion (max{a, b} is a if a >= b and b otherwise, as Ch 3 05 (the three-valued table before thm-raa-independent) and Ch 11 exr-ordered-fields-a1 (3) treat it; Ch 1 exr-disjunction-and-cases-b2 is a pointer only, nothing rests on it); school algebra; verify/ch05/exm-rhetoric-conjunction.py
-exm-rhetoric-conjunction (claim): Ch 11's (S2) says the same as "no t < s is an upper bound" | trichotomy; prose remark, nothing rests on it
-exm-rhetoric-implication (solution): |u| < r iff -r < u < r; a >= b iff not(a < b) | school fact stated in the solution; order fact of Section 2.1
-exm-rhetoric-implication (claim): the continuity sentence is a theorem of Ch 15 | prose pointer (ch15 blueprint, sequential criterion); sample sentence only
+exm-square-even-via-contrapositive (example): the derivation reprinted in the hook; (E1)-(E3) | exm-square-even-via-contrapositive (cited); school facts of F1.2 §01
+exm-square-even-via-contrapositive (claim): line 11 (or commutes) has no words; the Disjunction table's row: exchanging the members of a disjunction or conjunction may be silent | exm-disjunction-first-derivations, prp-and-commutes (cited); def-silent-steps (F1.5 §03, prose pointer)
+exm-rhetoric-conjunction (solution): t >= 0 or t < 0; max{t, 0} = t if t >= 0 and 0 if t < 0, so max{t, 0} >= t, >= 0 and < 2 for t < 2, in each case; a = (m + 2)/2 in [1, 2), a - m = (2 - m)/2 > 0 | trichotomy; max of two numbers, a school notion (max{a, b} is a if a >= b and b otherwise, as F1.3 05 (the three-valued table before thm-raa-independent) and AN1.1 exr-ordered-fields-a1 (3) treat it; F1.1 exr-disjunction-and-cases-b2 is a pointer only, nothing rests on it); school algebra; verify/ch05/exm-rhetoric-conjunction.py
+exm-rhetoric-conjunction (claim): AN1.1's (S2) says the same as "no t < s is an upper bound" | trichotomy; prose remark, nothing rests on it
+exm-rhetoric-implication (solution): |u| < r iff -r < u < r; a >= b iff not(a < b) | school fact stated in the solution; order fact of F1.2 §01
+exm-rhetoric-implication (claim): the continuity sentence is a theorem of AN1.5 | prose pointer (AN1.5 blueprint, sequential criterion); sample sentence only
 exm-rhetoric-cases (solution): x >= 0 or x < 0; |x| by cases; ab = 0 implies a = 0 or b = 0; max{a, b} >= (a + b)/2 | school facts; verify/ch05/exm-rhetoric-cases.py
-exm-rhetoric-negation (solution): s + 1 <= s gives 1 <= 0; 0 < 1; claims about every element of the empty set; (c) is the prose form of Section 4.4's upper-bound derivation | school algebra; Section 4.4 (prose)
-exm-rhetoric-negation (claim): Ch 11's unboundedness proof is neg-I, then one classical step | prose pointer (Ch 11 thm-naturals-unbounded and its remark)
+exm-rhetoric-negation (solution): s + 1 <= s gives 1 <= 0; 0 < 1; claims about every element of the empty set; (c) is the prose form of F1.4 §04's upper-bound derivation | school algebra; F1.4 §04 (prose)
+exm-rhetoric-negation (claim): AN1.1's unboundedness proof is neg-I, then one classical step | prose pointer (AN1.1 thm-naturals-unbounded and its remark)
 exm-rhetoric-negation (claim): the general passage from the shape of (a) to the shape of (b), with no witness, goes through prp-quantifier-negation (a) and trichotomy | prp-quantifier-negation (cited); trichotomy school fact
 exm-rhetoric-contradiction (solution): (a - b)/2 > 0 for a > b; a <= b + (a - b)/2 iff a <= b; a <= b or a > b | school algebra; trichotomy; verify/ch05/exm-rhetoric-contradiction.py
-exm-rhetoric-contradiction (claim): Bolzano-Weierstrass proved in Ch 12; its bisection split is non-constructive | prose pointers (ch12 blueprint; Section 5.7)
+exm-rhetoric-contradiction (claim): Bolzano-Weierstrass proved in AN1.2; its bisection split is non-constructive | prose pointers (AN1.2 blueprint; F1.5 §07)
 exm-rhetoric-biconditional (solution): multiply by x >= 0; divide by x > 0; x = -1 | school algebra; verify/ch05/exm-rhetoric-biconditional.py
 exm-rhetoric-biconditional (claim): x < 0 gives x^2 >= 0 > x, so (<=) needs no hypothesis | school algebra; prose remark, nothing rests on it; verify/ch05/exm-rhetoric-biconditional.py
 exm-costume-direct (solution): (x - 3)(x + 1) = x^2 - 2x - 3 > 0 for x > 3 | school algebra; verify/ch05/exm-costume-direct.py
-exm-costume-contrapositive (solution): not even implies odd; odd implies not even; (2k + 1)^2 = 2(2k^2 + 2k) + 1 | (E1), (E2) of Section 2.1 (ch07 promised, STATUS parity row); inline
-exr-connective-rhetoric-a1 (solution): 3 < 7/2 < 4, and no integer lies strictly between 3 and 4 | school arithmetic of Z (ch07 promised in STATUS: "nothing between n and n + 1"); verify/ch05/exr-connective-rhetoric-a1.py
-exr-connective-rhetoric-b1 (solution): sqrt a sqrt b = sqrt(ab); (sqrt a - sqrt b)^2 expanded | school facts (Ch 11 thm-nth-root, prose); verify/ch05/exr-connective-rhetoric-b1.py
+exm-costume-contrapositive (solution): not even implies odd; odd implies not even; (2k + 1)^2 = 2(2k^2 + 2k) + 1 | (E1), (E2) of F1.2 §01 (F2.2 promised, STATUS parity row); inline
+exr-connective-rhetoric-a1 (solution): 3 < 7/2 < 4, and no integer lies strictly between 3 and 4 | school arithmetic of Z (F2.2 promised in STATUS: "nothing between n and n + 1"); verify/ch05/exr-connective-rhetoric-a1.py
+exr-connective-rhetoric-b1 (solution): sqrt a sqrt b = sqrt(ab); (sqrt a - sqrt b)^2 expanded | school facts (AN1.1 thm-nth-root, prose); verify/ch05/exr-connective-rhetoric-b1.py
 exr-connective-rhetoric-b2 (solution): x != 0 gives x/2 != 0 and |x| > 0; |x/2| = |x|/2; |x| <= |x|/2 gives |x| <= 0 | school algebra; verify/ch05/exr-connective-rhetoric-b2.py
-exr-connective-rhetoric-c1 (solution): every integer m >= 2 has a prime divisor | ch07 (promised): thm-prime-factor; stated in the item
-exr-connective-rhetoric-c1 (solution): d | u, d | v give d | u - v; a positive divisor of 1 is at most 1 | proved in the item, using m > 0 gives m >= 1, i.e. no integer strictly between 0 and 1: school arithmetic of Z (ch07 promised in STATUS: "nothing between n and n + 1")
+exr-connective-rhetoric-c1 (solution): every integer m >= 2 has a prime divisor | F2.2 (promised): thm-prime-factor; stated in the item
+exr-connective-rhetoric-c1 (solution): d | u, d | v give d | u - v; a positive divisor of 1 is at most 1 | proved in the item, using m > 0 gives m >= 1, i.e. no integer strictly between 0 and 1: school arithmetic of Z (F2.2 promised in STATUS: "nothing between n and n + 1")
 exr-connective-rhetoric-c1 (solution): 2 is prime, so a list of all the primes has k >= 1 | arithmetic (its only positive divisors are 1 and 2); inline
-exr-connective-rhetoric-c2 (solution): x^2 >= 0 gives x^2 > 0 or x^2 = 0; xx = 0 gives x = 0; no number is less than itself | school facts; trichotomy (Ch 11 axiom); verify/ch05/exr-connective-rhetoric-c2.py
+exr-connective-rhetoric-c2 (solution): x^2 >= 0 gives x^2 > 0 or x^2 = 0; xx = 0 gives x = 0; no number is less than itself | school facts; trichotomy (AN1.1 axiom); verify/ch05/exr-connective-rhetoric-c2.py
 -->

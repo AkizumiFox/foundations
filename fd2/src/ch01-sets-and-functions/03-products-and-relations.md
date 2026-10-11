@@ -1,6 +1,6 @@
 # Ordered Pairs, Products and Relations
 
-Sections 6.1 and 6.2 built sets and combined them: a set is fixed by its elements, and \( \cup \), \( \cap \), \( \setminus \) are \( \vee \), \( \wedge \), \( \wedge\neg \) read through membership. None of this can yet say "the point \( (1, 2) \) of the plane", "\( 3 \) is less than \( 5 \)", or "\( y \) is the square of \( x \)". Each of these is about two objects **in a given order**, and a set forgets order. This section adds one new kind of object, the ordered pair (with its longer versions, the \( n \)-tuples), and then uses it twice: to build the product \( A \times B \) of two sets, and to say what a relation between two sets is. The next section needs exactly this much: a function will be given by a relation of a special kind, its graph, together with a declared target set.
+Sections 1.1 and 1.2 built sets and combined them: a set is fixed by its elements, and \( \cup \), \( \cap \), \( \setminus \) are \( \vee \), \( \wedge \), \( \wedge\neg \) read through membership. None of this can yet say "the point \( (1, 2) \) of the plane", "\( 3 \) is less than \( 5 \)", or "\( y \) is the square of \( x \)". Each of these is about two objects **in a given order**, and a set forgets order. This section adds one new kind of object, the ordered pair (with its longer versions, the \( n \)-tuples), and then uses it twice: to build the product \( A \times B \) of two sets, and to say what a relation between two sets is. The next section needs exactly this much: a function will be given by a relation of a special kind, its graph, together with a declared target set.
 
 ## Order matters: ordered pairs
 
@@ -19,9 +19,9 @@ For any objects \( a \) and \( b \) there is an object \( (a, b) \), the **order
 \]
 :::
 
-In words: to decide whether two pairs are equal, compare first coordinates with first coordinates and second with second; nothing else matters, and both comparisons must succeed. The direction \( (\Leftarrow) \) is nothing new: equal inputs give equal pairs, as for any construction (\( \rulename{=E} \), @def-rules-equality). The direction \( (\Rightarrow) \) is the content. It says that from the pair we can read off its coordinates, each in its place.
+In words: to decide whether two pairs are equal, compare first coordinates with first coordinates and second with second; nothing else matters, and both comparisons must succeed. The direction \( (\Leftarrow) \) is nothing new: equal inputs give equal pairs, as for any construction (\( \rulename{=E} \), @fd1:def-rules-equality). The direction \( (\Rightarrow) \) is the content. It says that from the pair we can read off its coordinates, each in its place.
 
-We do not say here **what** the object \( (a, b) \) is. Besides the characteristic property, we use one working convention: pairs and \( n \)-tuples are a different kind of object from numbers, just as sets are (Section 6.1), so **a pair is not a number**; and tuples of different lengths are different kinds of object, so a triple is not a pair. Nothing else about pairs is used in this chapter. The optional Chapter 9 shows that a pair with this property can be built from sets alone, so that nothing new has to be assumed. Until then, the existence of pairs with this property is taken as given, alongside the working rules (W1)–(W6) of Section 6.1.
+We do not say here **what** the object \( (a, b) \) is. Besides the characteristic property, we use one working convention: pairs and \( n \)-tuples are a different kind of object from numbers, just as sets are (Section 1.1), so **a pair is not a number**; and tuples of different lengths are different kinds of object, so a triple is not a pair. Nothing else about pairs is used in this chapter. The optional *Number Systems: From \(\nN\) to \(\nR\)*, Chapter 1 shows that a pair with this property can be built from sets alone, so that nothing new has to be assumed. Until then, the existence of pairs with this property is taken as given, alongside the working rules (W1)–(W6) of Section 1.1.
 
 **A convention about parentheses.** The symbol \( (a, b) \) now has two meanings. For real numbers \( a < b \) it is also the open interval \( \{ x \in \nR : a < x < b \} \). The book keeps both, and context decides, as it does in every analysis text. In "\( (0, 1) \) contains \( \tfrac{1}{2} \)" it is an interval. In "the point \( (0, 1) \) lies on the unit circle" it is a pair. Where both readings are near each other, the text says which is meant. This convention is stated once, here.
 
@@ -47,7 +47,7 @@ The first part is typical. One equation between pairs is **two** equations betwe
 
 **Why this definition.** Only \( (\Rightarrow) \) carries content. Without it, the pair could forget its coordinates, as \( \{1, 2\} \) forgets which number came first. The direction \( (\Leftarrow) \) could be dropped from the definition without loss: \( \rulename{=E} \) already gives it for \( (a, b) \), as for any construction. It is stated so that the property reads as a single test for equality of pairs.
 
-**Longer lists.** The same idea gives ordered triples \( (a, b, c) \), and more generally ordered **\( n \)-tuples** \( (x_1, \dots, x_n) \) for \( n \in \nN \), \( n \ge 2 \). Like pairs, \( n \)-tuples are taken as given, and the \( n \)-tuples with all coordinates in a set form a set, by the working rule (W5) of Section 6.1. Two \( n \)-tuples are equal if and only if they agree in every place: \( (x_1, \dots, x_n) = (y_1, \dots, y_n) \) means \( x_k = y_k \) for every \( k \in \{1, \dots, n\} \). A triple is a new kind of object, not a pair whose first coordinate is a pair (by the convention stated after @def-ordered-pair). The pairs \( ((1, 2), 3) \) and \( (1, (2, 3)) \) carry the same three numbers in the same order, and it is tempting to call both "the triple \( (1, 2, 3) \)"; that is an identification made by convention, and exercise A1 asks whether the two pairs are equal.
+**Longer lists.** The same idea gives ordered triples \( (a, b, c) \), and more generally ordered **\( n \)-tuples** \( (x_1, \dots, x_n) \) for \( n \in \nN \), \( n \ge 2 \). Like pairs, \( n \)-tuples are taken as given, and the \( n \)-tuples with all coordinates in a set form a set, by the working rule (W5) of Section 1.1. Two \( n \)-tuples are equal if and only if they agree in every place: \( (x_1, \dots, x_n) = (y_1, \dots, y_n) \) means \( x_k = y_k \) for every \( k \in \{1, \dots, n\} \). A triple is a new kind of object, not a pair whose first coordinate is a pair (by the convention stated after @def-ordered-pair). The pairs \( ((1, 2), 3) \) and \( (1, (2, 3)) \) carry the same three numbers in the same order, and it is tempting to call both "the triple \( (1, 2, 3) \)"; that is an identification made by convention, and exercise A1 asks whether the two pairs are equal.
 
 ::: {.check}
 For which real numbers \( t \) is \( (t^2, t) = (1, -1) \)? For which is \( \{t^2, t\} = \{1, -1\} \)?
@@ -59,7 +59,7 @@ The pair equation holds if and only if \( t^2 = 1 \) and \( t = -1 \), so exactl
 
 ## Cartesian products
 
-With pairs in hand, the plane is the set of all pairs of real numbers. More generally, from any two sets we can collect all pairs whose first coordinate comes from the first set and whose second comes from the second. Taking such a collection is the working rule (W5) of Section 6.1: it is a set.
+With pairs in hand, the plane is the set of all pairs of real numbers. More generally, from any two sets we can collect all pairs whose first coordinate comes from the first set and whose second comes from the second. Taking such a collection is the working rule (W5) of Section 1.1: it is a set.
 
 ::: {#def-cartesian-product}
 [Cartesian product]
@@ -75,7 +75,7 @@ of all ordered pairs with first coordinate in \( A \) and second coordinate in \
 For a set \( X \) we write \( X^2 \coloneqq X \times X \), and, for \( n \in \nN \) with \( n \ge 2 \), \( X^n \) is the set of all \( n \)-tuples \( (x_1, \dots, x_n) \) with every \( x_k \in X \).
 :::
 
-In words: an element of \( A \times B \) is **a pair**, and **there exist** coordinates, one in \( A \) and one in \( B \), from which it is made. The membership condition hides two existential quantifiers, so using it means naming the coordinates, by \( \rulename{\exists E} \) (@prp-bounded-quantifier-rules), and then matching them against any other naming by the characteristic property of pairs. That two-step move is the one move of this section; \( (\ast) \) below packages it.
+In words: an element of \( A \times B \) is **a pair**, and **there exist** coordinates, one in \( A \) and one in \( B \), from which it is made. The membership condition hides two existential quantifiers, so using it means naming the coordinates, by \( \rulename{\exists E} \) (@fd1:prp-bounded-quantifier-rules), and then matching them against any other naming by the characteristic property of pairs. That two-step move is the one move of this section; \( (\ast) \) below packages it.
 
 For a pair the condition simplifies, and we use the simpler form constantly:
 \[
@@ -125,7 +125,7 @@ The product is not commutative: \( A \times B \) and \( B \times A \) are in gen
 
 ## Products and the set operations
 
-Section 6.2 showed that \( \cup \), \( \cap \), and \( \setminus \) obey the laws of \( \vee \), \( \wedge \), and \( \wedge \neg \). The product interacts with them just as simply, one factor at a time. We use these laws for regions of the plane (exercise B1) and for functions out of the empty set (Section 6.4), so we state them all.
+Section 1.2 showed that \( \cup \), \( \cap \), and \( \setminus \) obey the laws of \( \vee \), \( \wedge \), and \( \wedge \neg \). The product interacts with them just as simply, one factor at a time. We use these laws for regions of the plane (exercise B1) and for functions out of the empty set (Section 1.4), so we state them all.
 
 ::: {#prp-product-set-laws}
 [Products and Set Operations]
@@ -151,13 +151,13 @@ and the mirror-image laws, with the varying factor on the left:
 :::
 
 ::: {.idea}
-Every element of each side is a pair, so we name its coordinates by \( \rulename{\exists E} \) and then test membership one coordinate at a time, by \( (\ast) \). The first coordinate lies in \( A \) on both sides; the second lies in \( B \cup C \) on one side and in "\( B \) or \( C \)" on the other, which is the same condition by @def-set-operations. Each law is a law of Section 6.2 in the second coordinate, with the first coordinate carried along unchanged.
+Every element of each side is a pair, so we name its coordinates by \( \rulename{\exists E} \) and then test membership one coordinate at a time, by \( (\ast) \). The first coordinate lies in \( A \) on both sides; the second lies in \( B \cup C \) on one side and in "\( B \) or \( C \)" on the other, which is the same condition by @def-set-operations. Each law is a law of Section 1.2 in the second coordinate, with the first coordinate carried along unchanged.
 :::
 
 ::: {.proof}
 *The \( \cup \) law.* We prove two inclusions and conclude by @prp-subset-antisymmetric.
 
-\( (\subseteq) \) Let \( p \in A \times (B \cup C) \). By @def-cartesian-product there are \( a \in A \) and \( d \in B \cup C \) with \( p = (a, d) \) [\( \rulename{\exists E} \) (@prp-bounded-quantifier-rules), with fresh names \( a \), \( d \)]. By @def-set-operations, \( d \in B \) or \( d \in C \), and we argue by cases. If \( d \in B \), then \( p = (a, d) \in A \times B \) by \( (\ast) \), so \( p \in (A \times B) \cup (A \times C) \). If \( d \in C \), then likewise \( p \in A \times C \subseteq (A \times B) \cup (A \times C) \). In either case \( p \in (A \times B) \cup (A \times C) \).
+\( (\subseteq) \) Let \( p \in A \times (B \cup C) \). By @def-cartesian-product there are \( a \in A \) and \( d \in B \cup C \) with \( p = (a, d) \) [\( \rulename{\exists E} \) (@fd1:prp-bounded-quantifier-rules), with fresh names \( a \), \( d \)]. By @def-set-operations, \( d \in B \) or \( d \in C \), and we argue by cases. If \( d \in B \), then \( p = (a, d) \in A \times B \) by \( (\ast) \), so \( p \in (A \times B) \cup (A \times C) \). If \( d \in C \), then likewise \( p \in A \times C \subseteq (A \times B) \cup (A \times C) \). In either case \( p \in (A \times B) \cup (A \times C) \).
 
 \( (\supseteq) \) Let \( p \in (A \times B) \cup (A \times C) \). Then \( p \in A \times B \) or \( p \in A \times C \). If \( p \in A \times B \), there are \( a \in A \) and \( b \in B \) with \( p = (a, b) \) [\( \rulename{\exists E} \)]; since \( b \in B \subseteq B \cup C \), \( (\ast) \) gives \( p \in A \times (B \cup C) \). If \( p \in A \times C \), the same argument with \( C \) in place of \( B \) gives \( p \in A \times (B \cup C) \).
 
@@ -193,11 +193,11 @@ By @prp-subset-antisymmetric, the two sets are equal. The picture found the answ
 The degenerate law of the proposition deserves a second look, because it is easy to misuse.
 
 ::: {.remark}
-Combining the two \( \emptyset \) laws with one more step gives the full description of an empty product: \( A \times B = \emptyset \) **if and only if** \( A = \emptyset \) or \( B = \emptyset \). The direction \( (\Leftarrow) \) is the pair of \( \emptyset \) laws. For \( (\Rightarrow) \), suppose \( A \times B = \emptyset \). If \( A \) has an element \( a \) and \( B \) has an element \( b \), then \( (a, b) \in A \times B = \emptyset \), which is impossible. So it is not the case that both sets have an element; by excluded middle (@prp-excluded-middle) applied to "\( A \) has an element", either \( A \) has none, and then \( A = \emptyset \) by @prp-empty-set-unique, or \( A \) has one, and then \( B \) has none, so \( B = \emptyset \).
+Combining the two \( \emptyset \) laws with one more step gives the full description of an empty product: \( A \times B = \emptyset \) **if and only if** \( A = \emptyset \) or \( B = \emptyset \). The direction \( (\Leftarrow) \) is the pair of \( \emptyset \) laws. For \( (\Rightarrow) \), suppose \( A \times B = \emptyset \). If \( A \) has an element \( a \) and \( B \) has an element \( b \), then \( (a, b) \in A \times B = \emptyset \), which is impossible. So it is not the case that both sets have an element; by excluded middle (@fd1:prp-excluded-middle) applied to "\( A \) has an element", either \( A \) has none, and then \( A = \emptyset \) by @prp-empty-set-unique, or \( A \) has one, and then \( B \) has none, so \( B = \emptyset \).
 :::
 
 ::: {.warning}
-"\( A \times B = \emptyset \), so \( A = \emptyset \)" misses a case. The product \( \{1, 2\} \times \emptyset \) is empty, and \( \{1, 2\} \) is not. The correct conclusion is the disjunction "\( A = \emptyset \) or \( B = \emptyset \)" of the remark, and an argument that continues from it must treat both cases. Dropping one is the missing case of the catalogue in Chapter 5, entry (N7): a \( \rulename{\vee E} \) with one of its boxes left out.
+"\( A \times B = \emptyset \), so \( A = \emptyset \)" misses a case. The product \( \{1, 2\} \times \emptyset \) is empty, and \( \{1, 2\} \) is not. The correct conclusion is the disjunction "\( A = \emptyset \) or \( B = \emptyset \)" of the remark, and an argument that continues from it must treat both cases. Dropping one is the missing case of the catalogue in *Logic and Proof*, Chapter 5, entry (N7): a \( \rulename{\vee E} \) with one of its boxes left out.
 :::
 
 ## Relations
@@ -285,10 +285,10 @@ Turning each pair of \( L \) around gives \( L^{-1} = \{ (2, 1), (3, 1), (3, 2) 
 **Why this definition.** A relation could be defined as a rule, a sentence, or a formula. Each of those raises the question of when two rules are "the same", and that question has no good answer: "\( x < y \)" and "\( y - x > 0 \)" are different sentences. The definition as a set answers it by extensionality. The price is small: a relation may be any set of pairs whatever, such as \( \{ (1, 3), (2, 2) \} \) on \( \{1, 2, 3\} \), and the definition never asks for a rule that produces it. That is a gain, not a loss: in analysis we meet relations and functions that no formula describes.
 
 ::: {.warning}
-A relation "from \( A \) to \( B \)" has its direction built in: \( R \subseteq A \times B \), and the first coordinate comes from \( A \). The relation \( L \) of part (a) contains \( (1, 2) \) and not \( (2, 1) \). Reading a relation backwards, "since \( 1 \mathrel{L} 2 \), also \( 2 \mathrel{L} 1 \)", treats it as a symmetric relation; relations with that property, and other properties such as transitivity, are studied in Chapter 7. Relating \( b \) to \( a \) is the job of the inverse relation \( R^{-1} \), a different set.
+A relation "from \( A \) to \( B \)" has its direction built in: \( R \subseteq A \times B \), and the first coordinate comes from \( A \). The relation \( L \) of part (a) contains \( (1, 2) \) and not \( (2, 1) \). Reading a relation backwards, "since \( 1 \mathrel{L} 2 \), also \( 2 \mathrel{L} 1 \)", treats it as a symmetric relation; relations with that property, and other properties such as transitivity, are studied in Chapter 2. Relating \( b \) to \( a \) is the job of the inverse relation \( R^{-1} \), a different set.
 :::
 
-This definition is all the next section needs. The graph of a function from \( X \) to \( Y \) will be a relation from \( X \) to \( Y \) in which every element of \( X \) is related to exactly one element of \( Y \); the function is that graph together with the declared codomain \( Y \). The graph \( Q \) qualifies and the circle \( S \) does not. The properties that make a relation an order or an equivalence (reflexive, symmetric, antisymmetric, transitive) are the subject of Chapter 7.
+This definition is all the next section needs. The graph of a function from \( X \) to \( Y \) will be a relation from \( X \) to \( Y \) in which every element of \( X \) is related to exactly one element of \( Y \); the function is that graph together with the declared codomain \( Y \). The graph \( Q \) qualifies and the circle \( S \) does not. The properties that make a relation an order or an equivalence (reflexive, symmetric, antisymmetric, transitive) are the subject of Chapter 2.
 
 ## Exercises
 
@@ -308,11 +308,11 @@ This definition is all the next section needs. The graph of a function from \( X
 ::: {.solution}
 (a) \( A \times B = \{ (a, b) : a \in A, \ b \in B \} \); that is, \( p \in A \times B \) if and only if \( \exists a \in A \ \exists b \in B \ \ p = (a, b) \) (@def-cartesian-product).
 
-(b) No. Both are ordered pairs, so by the characteristic property (@def-ordered-pair) they are equal if and only if their first coordinates are equal and their second coordinates are equal. The first coordinates are the pair \( (1, 2) \) and the number \( 1 \). A pair is not a number, by the working convention stated after @def-ordered-pair (the optional Chapter 9, which builds both from sets, bears it out). So the first coordinates differ, and the pairs are not equal. Calling both "the triple \( (1, 2, 3) \)" is an identification made by convention, not an equality.
+(b) No. Both are ordered pairs, so by the characteristic property (@def-ordered-pair) they are equal if and only if their first coordinates are equal and their second coordinates are equal. The first coordinates are the pair \( (1, 2) \) and the number \( 1 \). A pair is not a number, by the working convention stated after @def-ordered-pair (the optional *Number Systems: From \(\nN\) to \(\nR\)*, Chapter 1, which builds both from sets, bears it out). So the first coordinates differ, and the pairs are not equal. Calling both "the triple \( (1, 2, 3) \)" is an identification made by convention, not an equality.
 
 (c) \( \{ (2, 1), (3, 1), (3, 2) \} \), which is the relation \( > \) on \( \{1, 2, 3\} \).
 
-(d) Yes. A relation on \( A \) is a subset of \( A \times A \), and \( \emptyset \subseteq A \times A \): the condition "\( x \in \emptyset \to x \in A \times A \)" holds for every \( x \), because its hypothesis is false (@prp-vacuous-implication, @def-subset).
+(d) Yes. A relation on \( A \) is a subset of \( A \times A \), and \( \emptyset \subseteq A \times A \): the condition "\( x \in \emptyset \to x \in A \times A \)" holds for every \( x \), because its hypothesis is false (@fd1:prp-vacuous-implication, @def-subset).
 :::
 
 ### B. Practice
@@ -426,7 +426,7 @@ Fix \( b_0 \in B \). For \( a \in A \), the pair \( (a, b_0) \) lies in \( A \ti
 ::: {.solution}
 \( (\Leftarrow) \) If \( A = B \), then \( A \times B = B \times A \), and in particular \( A \times B \subseteq B \times A \). If \( A = \emptyset \), then \( A \times B = \emptyset \) by @prp-product-set-laws, and \( \emptyset \) is a subset of every set. If \( B = \emptyset \), likewise \( A \times B = A \times \emptyset = \emptyset \).
 
-\( (\Rightarrow) \) Suppose \( A \times B \subseteq B \times A \). By excluded middle (@prp-excluded-middle), each of \( A \) and \( B \) either has an element or has none, and a set with no elements is \( \emptyset \) (@prp-empty-set-unique). If \( A = \emptyset \) or \( B = \emptyset \), we are done. In the remaining case both have elements: fix \( a_0 \in A \) and \( b_0 \in B \) (\( \rulename{\exists E} \) twice, with fresh names).
+\( (\Rightarrow) \) Suppose \( A \times B \subseteq B \times A \). By excluded middle (@fd1:prp-excluded-middle), each of \( A \) and \( B \) either has an element or has none, and a set with no elements is \( \emptyset \) (@prp-empty-set-unique). If \( A = \emptyset \) or \( B = \emptyset \), we are done. In the remaining case both have elements: fix \( a_0 \in A \) and \( b_0 \in B \) (\( \rulename{\exists E} \) twice, with fresh names).
 
 *\( A \subseteq B \).* Let \( a \in A \). Then \( (a, b_0) \in A \times B \) by \( (\ast) \), so \( (a, b_0) \in B \times A \) by the hypothesis. By \( (\ast) \) again, \( a \in B \) (and \( b_0 \in A \)).
 
@@ -443,35 +443,35 @@ Both witnesses are needed. With \( B = \emptyset \) there is no \( b_0 \), and i
 - 2: \( B \subseteq A \), through a pair \( (a_0, b) \) with an arbitrary \( b \in B \).
 - 2: uses the characteristic property (directly or through \( (\ast) \)) to read the coordinates off a pair of \( B \times A \), and concludes \( A = B \) by two inclusions.
 
-Fatal errors (0 for the step): testing inclusion on particular elements only (entry (N1) of Chapter 5's catalogue); using \( b_0 \) without having shown that \( B \) has an element; concluding \( A = B \) from \( A \times B = B \times A \) "by canceling" without an element argument.
+Fatal errors (0 for the step): testing inclusion on particular elements only (entry (N1) of *Logic and Proof*, Chapter 5's catalogue); using \( b_0 \) without having shown that \( B \) has an element; concluding \( A = B \) from \( A \times B = B \times A \) "by canceling" without an element argument.
 A proof of \( (\Rightarrow) \) by contraposition (assume \( A \ne B \) and both nonempty, and exhibit a pair of \( A \times B \) outside \( B \times A \)) earns full marks if it finds the pair: 2 points for the witnesses and 4 for the pair and the check that it is outside \( B \times A \), in place of the two inclusions.
 :::
 
 <!-- dependency ledger
-def-ordered-pair (claim): pairs can be built from sets (Kuratowski) | optional Ch 9 (prose pointer); nothing depends on it
+def-ordered-pair (claim): pairs can be built from sets (Kuratowski) | optional F3.1 (prose pointer); nothing depends on it
 def-ordered-pair (claim): (<=) of the characteristic property is =E (substitution of equals) | def-rules-equality (cited)
-def-ordered-pair (claim): (the paragraph after it) working convention: a pair is not a number, and a triple is not a pair | working convention stated in the text after def-ordered-pair, parallel to Section 6.1's "numbers are not sets"; optional Ch 9 (prose pointer)
-def-cartesian-product (claim): A x B is a set; X^n is a set | working rule (W5) of Section 6.1 (cited in prose; it covers pairs and n-tuples)
+def-ordered-pair (claim): (the paragraph after it) working convention: a pair is not a number, and a triple is not a pair | working convention stated in the text after def-ordered-pair, parallel to F2.1 §01's "numbers are not sets"; optional F3.1 (prose pointer)
+def-cartesian-product (claim): A x B is a set; X^n is a set | working rule (W5) of F2.1 §01 (cited in prose; it covers pairs and n-tuples)
 def-cartesian-product (claim): (*) uses exists-I and exists-E on "exists a in A exists b in B p = (a, b)" | prp-bounded-quantifier-rules (cited)
 def-cartesian-product (claim): (*) uses =E to pass from x = a, a in A to x in A (and likewise y) | def-rules-equality (cited after def-ordered-pair)
 def-cartesian-product (claim): (the pair-pattern set-builder paragraph) membership in {(x, y) in A x B : P(x, y)}, via (*), the characteristic property and =E | def-set-builder (cited); def-rules-equality (cited after def-ordered-pair)
 exm-pair-equations (example): solving x + y = 3, x - y = 1 by adding and subtracting | school algebra
-exm-pair-equations (solution): (the quick check after it) t^2 >= 0 for real t | school fact (Part 0 convention); proved in Ch 11
+exm-pair-equations (solution): (the quick check after it) t^2 >= 0 for real t | school fact (Part 0 convention); proved in AN1.1
 exm-small-products (example): an element of the empty set does not exist | def-empty-set
 exm-small-products (example): (a) a, b, c are pairwise different and none of them is 1 or 2 | hypothesis stated in part (a) ("three different objects, none of them a number"); the six pairs are distinct and the two lists disjoint by def-ordered-pair (characteristic property)
-prp-product-set-laws (proof): exists-E with fresh names; case split on d in B or d in C | prp-bounded-quantifier-rules (cited) for exists-E; Ch 1 or-E (def-set-operations unwinds the union)
+prp-product-set-laws (proof): exists-E with fresh names; case split on d in B or d in C | prp-bounded-quantifier-rules (cited) for exists-E; F1.1 or-E (def-set-operations unwinds the union)
 prp-product-set-laws (proof): substituting equals (=E): from p = (a, d) and (a, d) in A x B infer p in A x B, and likewise in the intersection and set-difference cases | def-rules-equality (cited after def-ordered-pair)
-prp-product-set-laws (claim): (the warning after the remark) catalogue entry (N7), missing case | ch05 (promised; prose pointer "the catalogue in Chapter 5, entry (N7)")
-prp-product-set-laws (proof): the not-in conclusions by not-I | Ch 2 (def-rules-negation), named in the prose after the proof
-exm-product-of-intervals (example): order facts 0 <= x <= 2 and 1 <= x <= 3 give 1 <= x <= 2, etc. | school fact (Part 0 convention); proved in Ch 11
+prp-product-set-laws (claim): (the warning after the remark) catalogue entry (N7), missing case | F1.5 (promised; prose pointer "the catalogue in F1.5, entry (N7)")
+prp-product-set-laws (proof): the not-in conclusions by not-I | F1.2 (def-rules-negation), named in the prose after the proof
+exm-product-of-intervals (example): order facts 0 <= x <= 2 and 1 <= x <= 3 give 1 <= x <= 2, etc. | school fact (Part 0 convention); proved in AN1.1
 prp-product-set-laws (claim): (the remark after exm-product-of-intervals) "not both sets have an element" plus excluded middle gives A empty or B empty | prp-excluded-middle (cited); prp-empty-set-unique (cited)
 exm-relations-as-sets (example): 1 <= a <= 6 divisors, the count 14 | arithmetic, by listing
-exm-relations-as-sets (example): x^2 = 1 - y^2 <= 1 gives -1 <= x <= 1; square roots of non-negative reals exist; squares are non-negative | school fact (Part 0 convention); proved in Ch 11
-exr-products-and-relations-a1 (solution): a pair is not a number | working convention stated in the text after def-ordered-pair (cited); optional Ch 9 (prose pointer)
+exm-relations-as-sets (example): x^2 = 1 - y^2 <= 1 gives -1 <= x <= 1; square roots of non-negative reals exist; squares are non-negative | school fact (Part 0 convention); proved in AN1.1
+exr-products-and-relations-a1 (solution): a pair is not a number | working convention stated in the text after def-ordered-pair (cited); optional F3.1 (prose pointer)
 def-relation (claim): (the nonexample after exm-relations-as-sets) the number 3 is not a pair | working convention stated in the text after def-ordered-pair (cited)
-def-relation (claim): (the warning and the paragraph before the exercises) symmetric, transitive, reflexive, antisymmetric relations; orders and equivalences | ch07 (promised; prose pointer "studied in Chapter 7", "the subject of Chapter 7"); nothing here depends on it
-exr-products-and-relations-b1 (solution): [0, 2] = [0, 1] u [1, 2] | school order fact (Part 0 convention); proved in Ch 11
+def-relation (claim): (the warning and the paragraph before the exercises) symmetric, transitive, reflexive, antisymmetric relations; orders and equivalences | F2.2 (promised; prose pointer "studied in F2.2", "the subject of F2.2"); nothing here depends on it
+exr-products-and-relations-b1 (solution): [0, 2] = [0, 1] u [1, 2] | school order fact (Part 0 convention); proved in AN1.1
 exr-products-and-relations-c1 (solution): (1, 2) is neither (1, 1) nor (2, 2) | def-ordered-pair (characteristic property), as stated
 exr-products-and-relations-c2 (solution): a set either has an element or has none | prp-excluded-middle (cited); a set with no element is the empty set by prp-empty-set-unique (cited)
-exr-products-and-relations-c2 (solution): (the marking scheme) catalogue entry (N1) | ch05 (promised; prose pointer "Chapter 5's catalogue")
+exr-products-and-relations-c2 (solution): (the marking scheme) catalogue entry (N1) | F1.5 (promised; prose pointer "F1.5's catalogue")
 -->

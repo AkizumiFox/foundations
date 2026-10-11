@@ -1,10 +1,10 @@
 # Partial Orders, Maximal and Greatest Elements
 
-Section 7.5 studied the relations that behave like equality. This section studies the ones that behave like \( \le \): reflexive and transitive like an equivalence relation, but antisymmetric instead of symmetric, so that they have a direction. For numbers, "the largest element of a set" is clear. For sets under \( \subseteq \), or for natural numbers under divisibility, two elements can be **incomparable**, neither below the other, and "largest" splits into two different notions. We separate them, prove what links them, and then take a first look at least upper bounds. That is the vocabulary Chapter 11 needs for the supremum.
+Section 2.5 studied the relations that behave like equality. This section studies the ones that behave like \( \le \): reflexive and transitive like an equivalence relation, but antisymmetric instead of symmetric, so that they have a direction. For numbers, "the largest element of a set" is clear. For sets under \( \subseteq \), or for natural numbers under divisibility, two elements can be **incomparable**, neither below the other, and "largest" splits into two different notions. We separate them, prove what links them, and then take a first look at least upper bounds. That is the vocabulary *Analysis on the Real Line*, Chapter 1 needs for the supremum.
 
 ## Partial orders
 
-Section 7.4 found three relations with the same three properties: \( \le \) on \( \nR \), \( \subseteq \) on \( \powerset{X} \) (@exm-relation-table), and \( \mid \) on \( \nN \) (@prp-divides-partial-order). Each is reflexive, antisymmetric and transitive. Each says "below" in its own sense: smaller, contained in, a divisor of. What they share is what "being below" needs, and it deserves a name, so that a fact proved once holds for all three.
+Section 2.4 found three relations with the same three properties: \( \le \) on \( \nR \), \( \subseteq \) on \( \powerset{X} \) (@exm-relation-table), and \( \mid \) on \( \nN \) (@prp-divides-partial-order). Each is reflexive, antisymmetric and transitive. Each says "below" in its own sense: smaller, contained in, a divisor of. What they share is what "being below" needs, and it deserves a name, so that a fact proved once holds for all three.
 
 *A partial order says which elements lie below which, without requiring every two to be comparable.*
 
@@ -52,7 +52,7 @@ Let \( X \) be a set. Show that \( \subseteq \) is a partial order on \( \powers
 
 *Total exactly when \( X \) has at most one element.* Suppose \( X \) has two different elements \( a \ne b \). Then \( \{a\}, \{b\} \in \powerset{X} \), and \( \{a\} \not\subseteq \{b\} \), since \( a \in \{a\} \) and \( a \notin \{b\} \); likewise \( \{b\} \not\subseteq \{a\} \). So \( \{a\} \) and \( \{b\} \) are incomparable, and \( \subseteq \) is not total. For \( X = \{1, 2\} \), the incomparable pair is \( \{1\} \), \( \{2\} \).
 
-Conversely, suppose any two elements of \( X \) are equal. Let \( A \subseteq X \). If \( A \ne \emptyset \), take \( a \in A \); then every \( x \in X \) equals \( a \), so \( x \in A \), and \( A = X \). So every subset of \( X \) is \( \emptyset \) or \( X \). Any two of these are comparable, since \( \emptyset \subseteq X \) (Section 6.1, after @prp-empty-set-unique) and each is a subset of itself. So \( \subseteq \) is total on \( \powerset{X} \).
+Conversely, suppose any two elements of \( X \) are equal. Let \( A \subseteq X \). If \( A \ne \emptyset \), take \( a \in A \); then every \( x \in X \) equals \( a \), so \( x \in A \), and \( A = X \). So every subset of \( X \) is \( \emptyset \) or \( X \). Any two of these are comparable, since \( \emptyset \subseteq X \) (Section 1.1, after @prp-empty-set-unique) and each is a subset of itself. So \( \subseteq \) is total on \( \powerset{X} \).
 :::
 
 ::: {.warning}
@@ -92,7 +92,7 @@ g \text{ greatest:} &\quad g \in A \wedge \forall a \in A \ \, a \preceq g , \\
 m \text{ maximal:} &\quad m \in A \wedge \neg \exists a \in A \ \, m \prec a .
 \end{aligned}
 \]
-By @prp-bounded-quantifier-negation (b), \( \neg \exists a \in A \ \, m \prec a \) is \( \forall a \in A \ \, \neg (m \prec a) \), and \( \neg (m \prec a) \) says that \( m \preceq a \) implies \( m = a \). So "maximal" reads: everything in \( A \) that is above \( m \) **is** \( m \). "Greatest" reads: everything in \( A \) is below \( g \). The first only forbids elements above; the second demands that every element be compared.
+By @fd1:prp-bounded-quantifier-negation (b), \( \neg \exists a \in A \ \, m \prec a \) is \( \forall a \in A \ \, \neg (m \prec a) \), and \( \neg (m \prec a) \) says that \( m \preceq a \) implies \( m = a \). So "maximal" reads: everything in \( A \) that is above \( m \) **is** \( m \). "Greatest" reads: everything in \( A \) is below \( g \). The first only forbids elements above; the second demands that every element be compared.
 
 For numbers the two coincide. In \( (\nR, \le) \), the set \( \{1, 4, 9\} \) has greatest element \( 9 \), its only maximal element, and least element \( 1 \). The interval \( [0, 1) \) has least element \( 0 \) and neither a greatest nor a maximal element: for each \( a \in [0, 1) \), the number \( (a + 1)/2 \) lies in \( [0, 1) \) and is strictly above \( a \). A one-point set \( \{x\} \) has \( x \) as greatest, least, maximal and minimal element, and \( \emptyset \) has none of the four, since each definition requires an element of \( A \).
 
@@ -108,7 +108,7 @@ A subset \( A \) of a partially ordered set has at most one greatest element and
 Let \( g \) and \( g' \) be greatest elements of \( A \). Since \( g' \in A \) and \( g \) is greatest, \( g' \preceq g \); since \( g \in A \) and \( g' \) is greatest, \( g \preceq g' \). By (PO2), \( g = g' \). For least elements the same argument applies with the inequalities reversed.
 :::
 
-So we may speak of **the** greatest element and **the** least element of \( A \) when they exist. In \( (\nR, \le) \), the greatest element of a set is its maximum, \( \max A \), and the least element its minimum, \( \min A \). This settles a point left open in Section 6.4: the least \( q_0 \in \nZ_{>0} \) with \( r q_0 \in \nZ \) in @exm-not-a-function exists by @thm-well-ordering: the set of such \( q \) lies in \( \nZ_{>0} \subseteq \nN \), and it is non-empty, since writing \( r = p/q \) with \( q \in \nZ_{>0} \) (as the solution of (b) there notes) gives \( rq = p \in \nZ \). It is unique by the least-element half of the proposition, so the rule there names one value.
+So we may speak of **the** greatest element and **the** least element of \( A \) when they exist. In \( (\nR, \le) \), the greatest element of a set is its maximum, \( \max A \), and the least element its minimum, \( \min A \). This settles a point left open in Section 1.4: the least \( q_0 \in \nZ_{>0} \) with \( r q_0 \in \nZ \) in @exm-not-a-function exists by @thm-well-ordering: the set of such \( q \) lies in \( \nZ_{>0} \subseteq \nN \), and it is non-empty, since writing \( r = p/q \) with \( q \in \nZ_{>0} \) (as the solution of (b) there notes) gives \( rq = p \in \nZ \). It is unique by the least-element half of the proposition, so the rule there names one value.
 
 The second result compares the two notions.
 
@@ -137,7 +137,7 @@ For (a), anything strictly above the greatest element would also be below it, an
 For least and minimal elements, apply (a) and (b) to the partial order \( \succeq \): its greatest and maximal elements are the least and minimal elements for \( \preceq \), and it is total when \( \preceq \) is. (That \( \succeq \) satisfies (PO1)–(PO3), and is total when \( \preceq \) is, comes from reading those clauses with the two variables exchanged. Its strict part is \( x \succ y \iff y \prec x \), since \( x \ne y \) is symmetric in \( x \) and \( y \). So "no \( a \in A \) with \( m \succ a \)" is "no \( a \in A \) with \( a \prec m \)", and "\( a \succeq l \) for every \( a \in A \)" is "\( l \preceq a \) for every \( a \in A \)".)
 :::
 
-Part (b) uses totality once, in the case split of its second sentence, and the case split is where it fails without it. The proof of @prp-finite-max in Section 7.3 compares two elements at a time and keeps the larger. Its maximum half uses nothing about \( \le \) on \( \nR \) beyond reflexivity, transitivity and the comparability of any two elements, so it works word for word in any totally ordered set. The minimum half passes to \( -x_1, \dots, -x_n \), which needs an ordered field; in a totally ordered set, apply the maximum half to the reverse order \( \succeq \) instead, which is total by the last paragraph of the proof above. In particular the whole proposition holds in any ordered field, which is how Chapter 11 reads it.
+Part (b) uses totality once, in the case split of its second sentence, and the case split is where it fails without it. The proof of @prp-finite-max in Section 2.3 compares two elements at a time and keeps the larger. Its maximum half uses nothing about \( \le \) on \( \nR \) beyond reflexivity, transitivity and the comparability of any two elements, so it works word for word in any totally ordered set. The minimum half passes to \( -x_1, \dots, -x_n \), which needs an ordered field; in a totally ordered set, apply the maximum half to the reverse order \( \succeq \) instead, which is total by the last paragraph of the proof above. In particular the whole proposition holds in any ordered field, which is how *Analysis on the Real Line*, Chapter 1 reads it.
 
 Without totality, (b) fails, and maximal elements need not be greatest.
 
@@ -214,13 +214,13 @@ Now \( L = \sup \{a, b\} \). (S1): \( a \mid L \) and \( b \mid L \), since \( L
 *The instance.* For \( a = 2 \), \( b = 3 \): \( 6 \in M \), and none of \( 1, 2, 3, 4, 5 \) is a multiple of both \( 2 \) and \( 3 \) (\( 1, 3, 5 \) are odd, and \( 2, 4 \) lie strictly between consecutive multiples of \( 3 \)). So \( L = 6 \), and every integer \( n \) with \( 2 \mid n \) and \( 3 \mid n \) has \( 6 \mid n \), by the second paragraph with \( c = n \).
 :::
 
-The instance proves the fact that Section 6.2 used as a school fact: an integer divisible by \( 2 \) and by \( 3 \) is divisible by \( 6 \). It also shows the two orders on \( \nN \) disagreeing: \( \sup \{4, 6\} \) is \( 12 \) under divisibility and \( 6 \) under \( \le \).
+The instance proves the fact that Section 1.2 used as a school fact: an integer divisible by \( 2 \) and by \( 3 \) is divisible by \( 6 \). It also shows the two orders on \( \nN \) disagreeing: \( \sup \{4, 6\} \) is \( 12 \) under divisibility and \( 6 \) under \( \le \).
 
-**A supremum that does not exist.** In \( (\nQ, \le) \), the set \( \{ x \in \nQ : x > 0, \ x^2 < 2 \} \) is non-empty and bounded above (by \( 2 \), for instance: a rational \( x > 2 \) has \( x^2 > 4 \)). It has **no** least upper bound in \( \nQ \). We do not prove this here. Chapter 11 proves it, and then takes the existence of suprema in \( \nR \) as its axiom: the supremum of Chapter 11, defined in an ordered field, is @def-order-supremum for the order \( \le \) of that field; Chapter 11 uses it in \( \nQ \) and in \( \nR \). The ambient set decides: the same set has a supremum in \( (\nR, \le) \), namely \( \sqrt 2 \).
+**A supremum that does not exist.** In \( (\nQ, \le) \), the set \( \{ x \in \nQ : x > 0, \ x^2 < 2 \} \) is non-empty and bounded above (by \( 2 \), for instance: a rational \( x > 2 \) has \( x^2 > 4 \)). It has **no** least upper bound in \( \nQ \). We do not prove this here. *Analysis on the Real Line*, Chapter 1 proves it, and then takes the existence of suprema in \( \nR \) as its axiom: the supremum of *Analysis on the Real Line*, Chapter 1, defined in an ordered field, is @def-order-supremum for the order \( \le \) of that field; *Analysis on the Real Line*, Chapter 1 uses it in \( \nQ \) and in \( \nR \). The ambient set decides: the same set has a supremum in \( (\nR, \le) \), namely \( \sqrt 2 \).
 
 ## Well-ordered sets
 
-Section 7.1 proved that every non-empty subset of \( \nN \) has a least element (@thm-well-ordering). In the language of this section, that is a property of the partially ordered set \( (\nN, \le) \), and it has a name.
+Section 2.1 proved that every non-empty subset of \( \nN \) has a least element (@thm-well-ordering). In the language of this section, that is a property of the partially ordered set \( (\nN, \le) \), and it has a name.
 
 ::: {#def-well-ordered-set}
 [Well-Ordered Set]
@@ -231,7 +231,7 @@ A partially ordered set \( (X, \preceq) \) is **well-ordered**, and \( \preceq \
 \( (\nN, \le) \) is well-ordered: \( \le \) is total, and @thm-well-ordering supplies the least elements. \( (\nZ, \le) \) is not: \( \nZ \) itself has no least element, since for every \( n \in \nZ \) also \( n - 1 \in \nZ \) (@prp-integers-closed (a)) and \( n - 1 < n \). Nor is the set of positive rationals, which has no least element (\( q/2 < q \)). The word "non-empty" is needed because \( \emptyset \) has no least element in any order. Totality is in fact automatic: any two elements \( x, y \) form a non-empty set \( \{x, y\} \), whose least element is below the other one. Upper bounds work too: in \( (\nN, \le) \) a non-empty set bounded above has a greatest element (@cor-well-ordering-integers). Exercise C1 gives a well-ordered set that does not look like \( \nN \).
 
 ::: {.remark}
-In a general partially ordered set, one may ask: if every **chain** (a subset on which \( \preceq \) is total) has an upper bound, must there be a maximal element? For a non-empty partially ordered set the answer "yes" is Zorn's lemma, and it cannot be proved from what we have: it is equivalent to the axiom of choice, which Chapter 8 states. Chapter 67 proves Zorn's lemma from the axiom of choice, and Chapter 9 lists the other statements equivalent to choice, among them the claim that every set has a well-order.
+In a general partially ordered set, one may ask: if every **chain** (a subset on which \( \preceq \) is total) has an upper bound, must there be a maximal element? For a non-empty partially ordered set the answer "yes" is Zorn's lemma, and it cannot be proved from what we have: it is equivalent to the axiom of choice, which Chapter 3 states. *Functional Analysis*, Chapter 4 proves Zorn's lemma from the axiom of choice, and *Number Systems: From \(\nN\) to \(\nR\)*, Chapter 1 lists the other statements equivalent to choice, among them the claim that every set has a well-order.
 :::
 
 ## Exercises
@@ -250,11 +250,11 @@ In a general partially ordered set, one may ask: if every **chain** (a subset on
 :::
 
 ::: {.solution}
-(a) \( g \) greatest: \( g \in A \wedge \forall a \in A \ \, a \preceq g \). Its negation, by @prp-de-morgan and @prp-bounded-quantifier-negation (a): \( g \notin A \vee \exists a \in A \ \, \neg (a \preceq g) \).
+(a) \( g \) greatest: \( g \in A \wedge \forall a \in A \ \, a \preceq g \). Its negation, by @fd1:prp-de-morgan and @fd1:prp-bounded-quantifier-negation (a): \( g \notin A \vee \exists a \in A \ \, \neg (a \preceq g) \).
 
-\( m \) maximal: \( m \in A \wedge \neg \exists a \in A \ \, m \prec a \). Its negation: \( m \notin A \vee \exists a \in A \ \, m \prec a \), by @prp-de-morgan and @prp-double-negation. In words: \( g \) fails to be greatest if some element of \( A \) is **not below** it; \( m \) fails to be maximal if some element of \( A \) is **strictly above** it. The first failure can happen through incomparability; the second cannot.
+\( m \) maximal: \( m \in A \wedge \neg \exists a \in A \ \, m \prec a \). Its negation: \( m \notin A \vee \exists a \in A \ \, m \prec a \), by @fd1:prp-de-morgan and @fd1:prp-double-negation. In words: \( g \) fails to be greatest if some element of \( A \) is **not below** it; \( m \) fails to be maximal if some element of \( A \) is **strictly above** it. The first failure can happen through incomparability; the second cannot.
 
-(b) False. In \( (\powerset{\{1, 2\}}, \subseteq) \), the set \( \{ \{1\}, \{2\} \} \) is finite and non-empty and has no greatest element (@exm-maximal-not-greatest (b)). What is true is that it has a **maximal** element: listed as \( \{x_1, \dots, x_n\} \), which is what "finite" will mean in Chapter 8, it has one by Exercise R4.
+(b) False. In \( (\powerset{\{1, 2\}}, \subseteq) \), the set \( \{ \{1\}, \{2\} \} \) is finite and non-empty and has no greatest element (@exm-maximal-not-greatest (b)). What is true is that it has a **maximal** element: listed as \( \{x_1, \dots, x_n\} \), which is what "finite" will mean in Chapter 3, it has one by Exercise R4.
 
 (c) Under divisibility, \( \sup \{4, 6\} = 12 \), the least common multiple (@exm-divisibility-lcm): \( 12 \) is a common multiple, and none of \( 1, \dots, 11 \) is (the multiples of \( 6 \) below \( 12 \) are \( 6 \), and \( 4 \nmid 6 \)). Under \( \le \), \( \sup \{4, 6\} = 6 \), the greatest element.
 
@@ -286,7 +286,7 @@ Give an example of a partially ordered set that has exactly two maximal elements
 :::
 
 ::: {.solution}
-*An example.* \( X = \{ \emptyset, \{1\}, \{2\} \} \) ordered by \( \subseteq \). It is a partial order, as a subset of \( (\powerset{\{1, 2\}}, \subseteq) \). The least element is \( \emptyset \), since \( \emptyset \subseteq A \) for every \( A \in X \) (Section 6.1, after @prp-empty-set-unique). The maximal elements are \( \{1\} \) and \( \{2\} \): neither is strictly contained in an element of \( X \). And \( \emptyset \) is not maximal, since \( \emptyset \subsetneq \{1\} \). So there are exactly two. Another answer: \( \{1, 2, 3\} \) under divisibility, with least element \( 1 \) and maximal elements \( 2 \), \( 3 \).
+*An example.* \( X = \{ \emptyset, \{1\}, \{2\} \} \) ordered by \( \subseteq \). It is a partial order, as a subset of \( (\powerset{\{1, 2\}}, \subseteq) \). The least element is \( \emptyset \), since \( \emptyset \subseteq A \) for every \( A \in X \) (Section 1.1, after @prp-empty-set-unique). The maximal elements are \( \{1\} \) and \( \{2\} \): neither is strictly contained in an element of \( X \). And \( \emptyset \) is not maximal, since \( \emptyset \subsetneq \{1\} \). So there are exactly two. Another answer: \( \{1, 2, 3\} \) under divisibility, with least element \( 1 \) and maximal elements \( 2 \), \( 3 \).
 
 *What every answer must have.* Let \( l \) be the least element and \( m_1 \ne m_2 \) the maximal elements.
 
@@ -400,7 +400,7 @@ Let \( f \colon \nR \to \nR \), \( f(x) = x^2 + 4x \). Compute \( f([-3, 1]) \) 
 :::
 
 ::: {.solution}
-Complete the square: \( f(x) = (x + 2)^2 - 4 \). We use, as school facts, that squares are non-negative and that every \( y \ge 0 \) has a square root \( \sqrt y \ge 0 \), and, by @thm-squares-order, that for \( s, t \ge 0 \), \( s \le t \) exactly when \( s^2 \le t^2 \).
+Complete the square: \( f(x) = (x + 2)^2 - 4 \). We use, as school facts, that squares are non-negative and that every \( y \ge 0 \) has a square root \( \sqrt y \ge 0 \), and, by @fd1:thm-squares-order, that for \( s, t \ge 0 \), \( s \le t \) exactly when \( s^2 \le t^2 \).
 
 *\( f([-3, 1]) = [-4, 5] \).* \( (\subseteq) \) If \( -3 \le x \le 1 \), then \( -1 \le x + 2 \le 3 \), so \( \abs{x + 2} \le 3 \), \( 0 \le (x + 2)^2 \le 9 \), and \( -4 \le f(x) \le 5 \). \( (\supseteq) \) For \( -4 \le y \le 5 \), take \( x \coloneqq -2 + \sqrt{y + 4} \). Then \( 0 \le \sqrt{y + 4} \le 3 \), so \( x \in [-2, 1] \subseteq [-3, 1] \), and \( f(x) = (y + 4) - 4 = y \).
 
@@ -418,11 +418,11 @@ Write in symbols, with bounded quantifiers, the statement "every element of \( A
 :::
 
 ::: {.solution}
-The statement is \( \forall a \in A \ \exists b \in A \ \, a < b \). By @prp-bounded-quantifier-negation (a) and then (b), its negation is
+The statement is \( \forall a \in A \ \exists b \in A \ \, a < b \). By @fd1:prp-bounded-quantifier-negation (a) and then (b), its negation is
 \[
 \exists a \in A \ \forall b \in A \ \, \neg (a < b) ,
 \]
-and since \( \le \) is total on \( \nR \), \( \neg (a < b) \) is \( b \le a \): the negation is \( \exists a \in A \ \forall b \in A \ \, b \le a \), "\( A \) has a greatest element". Passing the \( \neg \) through the quantifiers turns each \( \forall \) into \( \exists \) and each \( \exists \) into \( \forall \), and leaves the bounds \( a \in A \), \( b \in A \) untouched; negating the bound instead is entry (N11) of @exm-not-allowed-catalogue.
+and since \( \le \) is total on \( \nR \), \( \neg (a < b) \) is \( b \le a \): the negation is \( \exists a \in A \ \forall b \in A \ \, b \le a \), "\( A \) has a greatest element". Passing the \( \neg \) through the quantifiers turns each \( \forall \) into \( \exists \) and each \( \exists \) into \( \forall \), and leaves the bounds \( a \in A \), \( b \in A \) untouched; negating the bound instead is entry (N11) of @fd1:exm-not-allowed-catalogue.
 
 For \( A = \nN \) the statement holds: for \( a \in \nN \), \( b \coloneqq a + 1 \in \nN \) by (\( \nN \)S), and \( a < a + 1 \). For \( A = \{1, \dots, 5\} \) the negation holds, with \( a = 5 \): every \( b \in A \) has \( b \le 5 \).
 :::
@@ -434,7 +434,7 @@ Call a formula **biconditional** if it is built from atoms using \( \leftrightar
 :::
 
 ::: {.solution}
-Let \( v_{\mathrm{T}} \) be the all-T valuation. We use @thm-structural-induction with the property
+Let \( v_{\mathrm{T}} \) be the all-T valuation. We use @fd1:thm-structural-induction with the property
 \[
 P(\varphi): \ \text{if } \varphi \text{ is biconditional, then } v_{\mathrm{T}}(\varphi) = \mathrm{T} .
 \]
@@ -442,7 +442,7 @@ The formulas \( \bot \), \( \neg\varphi \) and \( (\varphi \circ \psi) \) with \
 
 (i) For an atom \( p \), \( v_{\mathrm{T}}(p) = \mathrm{T} \) by the choice of \( v_{\mathrm{T}} \).
 
-(iii) for \( \circ = \leftrightarrow \): suppose \( P(\varphi) \) and \( P(\psi) \), and that \( (\varphi \leftrightarrow \psi) \) is biconditional. Then \( \varphi \) and \( \psi \) are biconditional: by unique readability (@thm-unique-readability), they are the only immediate parts, and a biconditional formula that is not an atom is built by the second clause from biconditional parts. So \( v_{\mathrm{T}}(\varphi) = \mathrm{T} = v_{\mathrm{T}}(\psi) \), and by (V6) of @def-truth-value, \( v_{\mathrm{T}}(\varphi \leftrightarrow \psi) = \mathrm{T} \), since the two parts have the same value.
+(iii) for \( \circ = \leftrightarrow \): suppose \( P(\varphi) \) and \( P(\psi) \), and that \( (\varphi \leftrightarrow \psi) \) is biconditional. Then \( \varphi \) and \( \psi \) are biconditional: by unique readability (@fd1:thm-unique-readability), they are the only immediate parts, and a biconditional formula that is not an atom is built by the second clause from biconditional parts. So \( v_{\mathrm{T}}(\varphi) = \mathrm{T} = v_{\mathrm{T}}(\psi) \), and by (V6) of @fd1:def-truth-value, \( v_{\mathrm{T}}(\varphi \leftrightarrow \psi) = \mathrm{T} \), since the two parts have the same value.
 
 This covers every clause, and proves the claim. In particular no biconditional formula is equivalent to \( \neg p \), which is false under \( v_{\mathrm{T}} \): negation cannot be expressed with \( \leftrightarrow \) alone.
 :::
@@ -458,7 +458,7 @@ Let \( (X, \preceq) \) be a partially ordered set, let \( n \ge 1 \) be an integ
 
 *Base.* \( \{x_1\} \): no element \( a \) of it has \( x_1 \prec a \), since the only candidate is \( x_1 \) and \( x_1 \prec x_1 \) never holds. So \( x_1 \) is maximal.
 
-*Step.* Let \( n \ge 1 \), assume \( P(n) \), and let \( x_1, \dots, x_{n+1} \in X \). Put \( A \coloneqq \{x_1, \dots, x_n\} \) and \( A' \coloneqq \{x_1, \dots, x_{n+1}\} \), where, as in Section 7.3, \( \{x_1, \dots, x_n\} \coloneqq \{ x_k : k \in \{1, \dots, n\} \} \), now for elements of \( X \). Since \( \{1, \dots, n + 1\} = \{1, \dots, n\} \cup \{n + 1\} \) (@lem-naturals-arithmetic (e), as in the proof of @prp-finite-max), \( A' = A \cup \{x_{n+1}\} \). By \( P(n) \), \( A \) has a maximal element \( m \).
+*Step.* Let \( n \ge 1 \), assume \( P(n) \), and let \( x_1, \dots, x_{n+1} \in X \). Put \( A \coloneqq \{x_1, \dots, x_n\} \) and \( A' \coloneqq \{x_1, \dots, x_{n+1}\} \), where, as in Section 2.3, \( \{x_1, \dots, x_n\} \coloneqq \{ x_k : k \in \{1, \dots, n\} \} \), now for elements of \( X \). Since \( \{1, \dots, n + 1\} = \{1, \dots, n\} \cup \{n + 1\} \) (@lem-naturals-arithmetic (e), as in the proof of @prp-finite-max), \( A' = A \cup \{x_{n+1}\} \). By \( P(n) \), \( A \) has a maximal element \( m \).
 
 *Case 1:* \( m \prec x_{n+1} \) fails. Then \( m \) is maximal in \( A' \): \( m \in A' \); no \( a \in A \) has \( m \prec a \), by maximality in \( A \); and \( a = x_{n+1} \) is excluded by the case.
 
@@ -471,31 +471,31 @@ In either case \( A' \) has a maximal element, so \( P(n + 1) \) holds, and @thm
 
 <!-- dependency ledger
 def-partial-order (claim): strict part irreflexive and transitive | inline (the paragraph after the definition)
-def-partial-order (claim): (examples) <= on R is a total order; restricting to N, Z keeps the properties | R order, school fact; axioms in Chapter 11
+def-partial-order (claim): (examples) <= on R is a total order; restricting to N, Z keeps the properties | R order, school fact; axioms in AN1.1
 def-partial-order (claim): (examples) 2 does not divide 3 and 3 does not divide 2 | arithmetic (division algorithm remainders 1 and 2); thm-division-algorithm uniqueness
-exm-subset-order-not-total (solution): A subset of A | def-subset (Ch 6 Section 6.1), used silently
+exm-subset-order-not-total (solution): A subset of A | def-subset (F2.1 §01), used silently
 def-greatest-element (claim): (a + 1)/2 in [0, 1) and above a | R arithmetic and order, school fact
 prp-greatest-maximal (proof): the reverse order is a partial order, total when the order is; its strict part is the reverse of the strict part; maximal/greatest for the reverse order = minimal/least for the order | inline in the proof; written out in full in exr-orders-b3
-prp-greatest-maximal (claim): (after it) the maximum half of the proof of prp-finite-max uses only reflexivity, transitivity and comparability; the minimum half via the reverse order (negation needs an ordered field) | prp-finite-max (Section 7.3; meta-claim about its proof, checked against the blueprint's route "base {x1}, step max{M, x_(n+1)}"); the reverse order as in the proof of prp-greatest-maximal
-prp-greatest-unique (claim): (after it) some q in Z_{>0} has rq in Z | exm-not-a-function (Ch 6 Section 6.4, solution of (b), clause (Fn1))
-prp-greatest-maximal (claim): Chapter 11 reads prp-finite-max in an ordered field | Ch 11 (prose pointer)
-exm-maximal-not-greatest (solution): kn > 0 and n > 0 give k > 0; k >= 2 gives kn >= 2n; 5 does not divide 4 etc. | R order, school fact; axioms in Chapter 11; prp-integers-closed (c) (cited); arithmetic; verify/ch07/exm-maximal-not-greatest.py
-exm-maximal-not-greatest (claim): (warning after it) n + 1 in N and n < n + 1 | (NS) (Section 7.1, cited); R arithmetic
+prp-greatest-maximal (claim): (after it) the maximum half of the proof of prp-finite-max uses only reflexivity, transitivity and comparability; the minimum half via the reverse order (negation needs an ordered field) | prp-finite-max (F2.2 §03; meta-claim about its proof, checked against the blueprint's route "base {x1}, step max{M, x_(n+1)}"); the reverse order as in the proof of prp-greatest-maximal
+prp-greatest-unique (claim): (after it) some q in Z_{>0} has rq in Z | exm-not-a-function (F2.1 §04, solution of (b), clause (Fn1))
+prp-greatest-maximal (claim): AN1.1 reads prp-finite-max in an ordered field | AN1.1 (prose pointer)
+exm-maximal-not-greatest (solution): kn > 0 and n > 0 give k > 0; k >= 2 gives kn >= 2n; 5 does not divide 4 etc. | R order, school fact; axioms in AN1.1; prp-integers-closed (c) (cited); arithmetic; verify/ch07/exm-maximal-not-greatest.py
+exm-maximal-not-greatest (claim): (warning after it) n + 1 in N and n < n + 1 | (NS) (F2.2 §01, cited); R arithmetic
 exm-divisibility-lcm (solution): a(s - qt) = as - qat | R arithmetic
-exm-divisibility-lcm (solution): product of positive reals is positive; ab = ba | R arithmetic and order, school fact; axioms in Chapter 11
+exm-divisibility-lcm (solution): product of positive reals is positive; ab = ba | R arithmetic and order, school fact; axioms in AN1.1
 exm-divisibility-lcm (solution): 1..5 contain no common multiple of 2 and 3 | arithmetic; verify/ch07/exm-divisibility-lcm.py
-exm-divisibility-lcm (claim): {x in Q : x > 0, x^2 < 2} non-empty (1) and bounded above by 2; no rational supremum; sqrt 2 its supremum in R | R order (school fact) for the bound; Ch 11 (prose pointer; nothing here depends on it)
+exm-divisibility-lcm (claim): {x in Q : x > 0, x^2 < 2} non-empty (1) and bounded above by 2; no rational supremum; sqrt 2 its supremum in R | R order (school fact) for the bound; AN1.1 (prose pointer; nothing here depends on it)
 def-well-ordered-set (claim): positive rationals: q/2 < q | R arithmetic
-def-well-ordered-set (claim): (remark) Zorn's lemma, axiom of choice, well-ordering theorem | Ch 8, Ch 67, Ch 9 (prose pointers; nothing depends on them)
+def-well-ordered-set (claim): (remark) Zorn's lemma, axiom of choice, well-ordering theorem | F2.3, FA.3, F3.1 (prose pointers; nothing depends on them)
 def-well-ordered-set (claim): N bounded above has a greatest element | cor-well-ordering-integers (cited; N subset of Z)
 exr-orders-a1 (solution): multiples of 6 below 12; 4 does not divide 6 | arithmetic; verify/ch07/exr-orders-a1.py
-exr-orders-a1 (solution): finite set -> list x_1, ..., x_n | Ch 8 (prose pointer; Chapter 8's definition of finite)
-exr-orders-a1 (solution): trichotomy and totality of <= on N | R order, school fact; axioms in Chapter 11
-exr-orders-c1 (solution): trichotomy; a < c <= e gives a < e; characteristic property of pairs | R order; def-ordered-pair (Ch 6 Section 6.3)
-exr-orders-c2 (solution): k <= 0 and c + 1 > 0 give k(c + 1) <= 0; k >= 1 and c + 1 > 0 give k(c + 1) >= c + 1 | R order, school fact; axioms in Chapter 11
+exr-orders-a1 (solution): finite set -> list x_1, ..., x_n | F2.3 (prose pointer; F2.3's definition of finite)
+exr-orders-a1 (solution): trichotomy and totality of <= on N | R order, school fact; axioms in AN1.1
+exr-orders-c1 (solution): trichotomy; a < c <= e gives a < e; characteristic property of pairs | R order; def-ordered-pair (F2.1 §03)
+exr-orders-c2 (solution): k <= 0 and c + 1 > 0 give k(c + 1) <= 0; k >= 1 and c + 1 > 0 give k(c + 1) >= c + 1 | R order, school fact; axioms in AN1.1
 exr-orders-c2 (solution): 0 | c means c = k * 0 = 0 | R arithmetic
-exr-orders-r2 (solution): a + 1 in N | (NS) (Section 7.1, cited); R arithmetic for a < a + 1
-exr-orders-r1 (solution): square roots; completing the square; sign cases of |x + 2| | school facts (Part 0 convention); square roots proved in Chapter 11; thm-squares-order (cited); verify/ch07/exr-orders-r1.py
+exr-orders-r2 (solution): a + 1 in N | (NS) (F2.2 §01, cited); R arithmetic for a < a + 1
+exr-orders-r1 (solution): square roots; completing the square; sign cases of |x + 2| | school facts (Part 0 convention); square roots proved in AN1.1; thm-squares-order (cited); verify/ch07/exr-orders-r1.py
 exr-orders-r4 (solution): strict part transitive | inline in the text after def-partial-order
-exr-orders-r4 (solution): {x_1, ..., x_n} for elements of any set; {x_1..x_(n+1)} = {x_1..x_n} u {x_(n+1)} | notation of Section 7.3 (before prp-finite-max), extended; lem-naturals-arithmetic (e) (cited), as in prp-finite-max
+exr-orders-r4 (solution): {x_1, ..., x_n} for elements of any set; {x_1..x_(n+1)} = {x_1..x_n} u {x_(n+1)} | notation of F2.2 §03 (before prp-finite-max), extended; lem-naturals-arithmetic (e) (cited), as in prp-finite-max
 -->

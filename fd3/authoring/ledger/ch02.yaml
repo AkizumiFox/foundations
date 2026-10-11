@@ -1,5 +1,5 @@
-chapter: 10
-dir: ch10-integers-and-rationals
+chapter: 2
+dir: ch02-integers-and-rationals
 items:
 - key: def-integers-as-classes
   kind: def

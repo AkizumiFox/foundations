@@ -1,7 +1,7 @@
 """exr-products-and-relations-b3 and c1, c2: brute force over subsets of {0, 1, 2}
 (Ch 6 Section 6.3)."""
 import sys
-sys.path.insert(0, "verify/ch06")
+sys.path.insert(0, "verify/ch01")
 from _sets import subsets, prod
 
 QUOTED = {"identities checked": True}

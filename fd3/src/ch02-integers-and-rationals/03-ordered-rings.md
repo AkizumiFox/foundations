@@ -1,6 +1,6 @@
 # The Integers as an Ordered Ring
 
-Sections 10.1 and 10.2 built \( \nZ \) as a set of classes with well-defined operations \( + \), \( \cdot \) and \( - \), but we do not yet know which laws they obey. This section collects the laws of school algebra into one definition, a **commutative ring**, and checks them for \( \nZ \) by reducing each to a law of \( \nN \). Then it orders \( \nZ \) and derives the rules for inequalities from axioms alone: from here on, an inequality about integers is proved, never read off a picture.
+Sections 2.1 and 2.2 built \( \nZ \) as a set of classes with well-defined operations \( + \), \( \cdot \) and \( - \), but we do not yet know which laws they obey. This section collects the laws of school algebra into one definition, a **commutative ring**, and checks them for \( \nZ \) by reducing each to a law of \( \nN \). Then it orders \( \nZ \) and derives the rules for inequalities from axioms alone: from here on, an inequality about integers is proved, never read off a picture.
 
 ## The laws of a ring
 
@@ -35,17 +35,17 @@ In words: (F1)–(F4) say that addition is commutative and associative, with a n
 - \( \nZ \), with the operations of @def-integer-operations: the next theorem.
 - **The zero ring** \( R \coloneqq \{0\} \), with \( 0 + 0 \coloneqq 0 \), \( 0 \cdot 0 \coloneqq 0 \) and \( 1 \coloneqq 0 \). Every axiom other than (F8) is an equation in \( R \), and every such equation reads \( 0 = 0 \). So \( R \) is a commutative ring, with \( 1 = 0 \), and not a field. This degenerate ring is why several results below assume \( 1 \ne 0 \).
 
-**A non-example by minimal change.** The set \( \nN \), with its addition and multiplication from Chapter 9, satisfies (F1)–(F3), (F5)–(F7) and (F9), by @thm-omega-arithmetic-laws and @def-omega-arithmetic (a). Only (F4) fails, at \( a = 1 \): \( 1 + x = x + 1 \ne 0 \) for every \( x \in \nN \), by @thm-omega-arithmetic-laws (b) and @cor-omega-successor-cancellation. That one missing clause is why \( \nZ \) had to be built.
+**A non-example by minimal change.** The set \( \nN \), with its addition and multiplication from Chapter 1, satisfies (F1)–(F3), (F5)–(F7) and (F9), by @thm-omega-arithmetic-laws and @def-omega-arithmetic (a). Only (F4) fails, at \( a = 1 \): \( 1 + x = x + 1 \ne 0 \) for every \( x \in \nN \), by @thm-omega-arithmetic-laws (b) and @cor-omega-successor-cancellation. That one missing clause is why \( \nZ \) had to be built.
 
 **Why these clauses.** No axiom says that \( ab = 0 \) forces \( a = 0 \) or \( b = 0 \): that is true in \( \nZ \) but fails in other commutative rings (the warning below), so it must be proved where it holds. The condition \( 1 \ne 0 \) is kept out of the ring axioms, so that the zero ring is a ring, and put into the field axioms, so that \( \{0\} \), where (F8) holds vacuously, is not a field.
 
 ::: {.warning}
-A commutative ring may have **zero divisors**: non-zero \( a, b \) with \( ab = 0 \). The integers modulo \( 6 \) of Section 7.5 (built there from the school integers, @prp-congruence-arithmetic) form a commutative ring, and in it \( [2] \ne [0] \) and \( [3] \ne [0] \), yet \( [2][3] = [6] = [0] \). So "\( ab = 0 \), hence \( a = 0 \) or \( b = 0 \)" is not a consequence of (F1)–(F9). In an **ordered** ring it is a theorem, proved later in this section from the order axioms.
+A commutative ring may have **zero divisors**: non-zero \( a, b \) with \( ab = 0 \). The integers modulo \( 6 \) of *Sets, Relations, and Cardinality*, Section 2.5 (built there from the school integers, @fd2:prp-congruence-arithmetic) form a commutative ring, and in it \( [2] \ne [0] \) and \( [3] \ne [0] \), yet \( [2][3] = [6] = [0] \). So "\( ab = 0 \), hence \( a = 0 \) or \( b = 0 \)" is not a consequence of (F1)–(F9). In an **ordered** ring it is a theorem, proved later in this section from the order axioms.
 :::
 
 ## The integers form a commutative ring
 
-To prove a law for classes, write each side through representatives (@def-integer-operations) and compare the two pairs of natural numbers: if they are equal, or related by \( \sim \) (@thm-classes-partition (b)), the classes are equal. We call this move **reduce to the level below**: a statement about classes becomes an identity in \( \nN \), which Chapter 9 has proved.
+To prove a law for classes, write each side through representatives (@def-integer-operations) and compare the two pairs of natural numbers: if they are equal, or related by \( \sim \) (@fd2:thm-classes-partition (b)), the classes are equal. We call this move **reduce to the level below**: a statement about classes becomes an identity in \( \nN \), which Chapter 1 has proved.
 
 ::: {#thm-integers-commutative-ring}
 [The Integers Form a Commutative Ring]
@@ -58,7 +58,7 @@ The operations are functions by @prp-integer-operations-well-defined, so only th
 :::
 
 ::: {.proof}
-By @prp-integer-operations-well-defined, \( + \) and \( \cdot \) are functions \( \nZ \times \nZ \to \nZ \). Let \( x, y, z \in \nZ \); by @def-quotient-set, \( x = [(a, b)] \), \( y = [(c, d)] \), \( z = [(e, f)] \) with \( a, \dots, f \in \nN \). By @def-integer-operations, each side of each axiom is the class of the pair shown in the table. "Equal" means the same pair of natural numbers, by @thm-omega-arithmetic-laws and @def-omega-arithmetic (a), (b). "Related" means related by \( \sim \) (@def-integers-as-classes: \( (p, q) \sim (r, s) \) means \( p + s = q + r \)), so the classes agree by @thm-classes-partition (b).
+By @prp-integer-operations-well-defined, \( + \) and \( \cdot \) are functions \( \nZ \times \nZ \to \nZ \). Let \( x, y, z \in \nZ \); by @fd2:def-quotient-set, \( x = [(a, b)] \), \( y = [(c, d)] \), \( z = [(e, f)] \) with \( a, \dots, f \in \nN \). By @def-integer-operations, each side of each axiom is the class of the pair shown in the table. "Equal" means the same pair of natural numbers, by @thm-omega-arithmetic-laws and @def-omega-arithmetic (a), (b). "Related" means related by \( \sim \) (@def-integers-as-classes: \( (p, q) \sim (r, s) \) means \( p + s = q + r \)), so the classes agree by @fd2:thm-classes-partition (b).
 
 | Axiom | left side, as a pair | right side, as a pair | why the classes agree |
 |---|---|---|---|
@@ -93,7 +93,7 @@ Finally, \( 1 \ne 0 \): if \( [(1, 0)] = [(0, 0)] \), then \( 1 = 0 \) by @prp-i
 Seven of the eight rows end in "equal". Only (F4) needs \( \sim \): the pair \( (a + b, b + a) \) records "\( (a + b) - (b + a) \)", which is zero, without performing the subtraction, and that is the whole point of passing to classes.
 
 ::: {.remark}
-The zero and one of this ring are \( [(0, 0)] = \iota(0) \) and \( [(1, 0)] = \iota(1) \) (@prp-naturals-embed-integers), so after the identification of Section 10.2 they are the natural numbers \( 0 \) and \( 1 \). With \( a - b \coloneqq a + (-b) \), the formula \( [(a, b)] = \iota(a) + (-\iota(b)) \) of @prp-naturals-embed-integers reads \( [(a, b)] = a - b \) for \( a, b \in \nN \): the subtraction the pair recorded is now performed in \( \nZ \).
+The zero and one of this ring are \( [(0, 0)] = \iota(0) \) and \( [(1, 0)] = \iota(1) \) (@prp-naturals-embed-integers), so after the identification of Section 2.2 they are the natural numbers \( 0 \) and \( 1 \). With \( a - b \coloneqq a + (-b) \), the formula \( [(a, b)] = \iota(a) + (-\iota(b)) \) of @prp-naturals-embed-integers reads \( [(a, b)] = a - b \) for \( a, b \in \nN \): the subtraction the pair recorded is now performed in \( \nZ \).
 :::
 
 What the definition does not list must be derived, and the derivations work in every commutative ring at once.
@@ -180,7 +180,7 @@ Define \( a < b \) to mean \( b - a \in P \). Then \( (R, <) \) is an ordered co
 Conversely, if \( (R, <) \) is an ordered commutative ring, then \( P \coloneqq \{ a \in R : a > 0 \} \) satisfies (P1) and (P2), and for all \( a, b \in R \), \( a < b \) holds if and only if \( b - a \in P \).
 :::
 
-The labels (P1), (P2) are local; they are not the clauses of a partition (Section 7.5) or Peano's axioms (Chapter 9).
+The labels (P1), (P2) are local; they are not the clauses of a partition (*Sets, Relations, and Cardinality*, Section 2.5) or Peano's axioms (Chapter 1).
 
 ::: {.idea}
 Each order axiom is a statement about one difference. (O1) is (P2) applied to \( b - a \), since \( -(b - a) = a - b \). (O2) is closure under sums, since \( (c - b) + (b - a) = c - a \). (O3) holds since \( (b + c) - (a + c) = b - a \). (O4) is closure under products. The algebra is uniqueness of negatives.
@@ -209,7 +209,7 @@ Now let \( P \) satisfy (P1), (P2), and let \( a < b \) mean \( b - a \in P \).
 Conversely, let \( (R, <) \) be an ordered commutative ring and \( P \coloneqq \{ a : a > 0 \} \). If \( a < b \), then \( a + (-a) < b + (-a) \) by (O3), that is, \( 0 < b - a \). If \( 0 < b - a \), then \( 0 + a < (b - a) + a = b \) by (O3), that is, \( a < b \). This is the last claim. For (P1), let \( a, b > 0 \). Then \( 0 + b < a + b \) by (O3), so \( 0 < b < a + b \) and \( a + b > 0 \) by (O2); and \( ab > 0 \) by (O4). For (P2), let \( a \in R \). By (O1) exactly one of \( 0 < a \), \( a = 0 \), \( a < 0 \) holds, and by the last claim \( a < 0 \) holds exactly when \( 0 - a = -a \) is in \( P \). This proves the proposition.
 :::
 
-So an order on a commutative ring is the same thing as a positive set. For \( \nZ \), the natural one is the classes \( [(a, b)] \) with \( b < a \). Section 10.1 warned that "\( b < a \)" is a statement about **one** representative; we now check that it is a statement about the class.
+So an order on a commutative ring is the same thing as a positive set. For \( \nZ \), the natural one is the classes \( [(a, b)] \) with \( b < a \). Section 2.1 warned that "\( b < a \)" is a statement about **one** representative; we now check that it is a statement about the class.
 
 ## The order of the integers
 
@@ -227,7 +227,7 @@ For \( x, y \in \nZ \), define \( x < y \) to mean \( y - x \in P_{\nZ} \).
 \[
 [(a, b)] \in P_{\nZ} \iff b < a .
 \]
-So "positive" may be tested on any representative, as Section 10.1's warning required.
+So "positive" may be tested on any representative, as Section 2.1's warning required.
 
 **Examples.** \( [(5, 2)] \in P_{\nZ} \), since \( 2 < 5 \); this is the integer \( 3 \). \( [(2, 5)] \notin P_{\nZ} \) and \( [(4, 4)] \notin P_{\nZ} \), since neither \( 5 < 2 \) nor \( 4 < 4 \). To compare \( x = [(3, 5)] \) and \( y = [(4, 1)] \): \( y - x = [(4, 1)] + [(5, 3)] = [(9, 4)] \), and \( 4 < 9 \), so \( x < y \), as "\( -2 < 3 \)" leads us to expect. The degenerate pair \( (0, 0) \) is not in \( S \), so \( 0 \notin P_{\nZ} \): zero is not positive.
 
@@ -239,7 +239,7 @@ Is \( [(7, 10)] < [(2, 4)] \)?
 Compute \( [(2, 4)] - [(7, 10)] = [(2, 4)] + [(10, 7)] = [(12, 11)] \) by @def-integer-operations. Since \( 11 < 12 \), the difference lies in \( P_{\nZ} \), so yes: \( [(7, 10)] < [(2, 4)] \), which is \( -3 < -2 \).
 :::
 
-Recall from Section 10.2 that \( \nZ_{>0} \coloneqq \{ n \in \nN : n \ne 0 \} \), a set of natural numbers, inside \( \nZ \) through the identification \( n = \iota(n) \). The next theorem shows that it is exactly the set of positive integers.
+Recall from Section 2.2 that \( \nZ_{>0} \coloneqq \{ n \in \nN : n \ne 0 \} \), a set of natural numbers, inside \( \nZ \) through the identification \( n = \iota(n) \). The next theorem shows that it is exactly the set of positive integers.
 
 ::: {#thm-integers-ordered-ring}
 [The Integers Form an Ordered Ring]
@@ -275,7 +275,7 @@ ad + bc &= (b + k)d + b(d + l) = bd + kd + bd + bl .
 \]
 So \( ac + bd = (ad + bc) + kl \). Since \( k \ne 0 \) and \( l \ne 0 \), \( kl \ne 0 \) by @prp-omega-order-arithmetic (d), and therefore \( ad + bc < ac + bd \) by @prp-omega-order-arithmetic (a). Hence \( xy \in P_{\nZ} \).
 
-(P2). Let \( x = [(a, b)] \). Then \( x \in P_{\nZ} \) if and only if \( b < a \). Next, \( x = [(0, 0)] \) if and only if \( (a, b) \sim (0, 0) \) (@thm-classes-partition (b)), that is, \( a + 0 = b + 0 \), that is, \( a = b \). Finally, \( -x = [(b, a)] \in P_{\nZ} \) if and only if \( a < b \). By trichotomy in \( \nN \) (@thm-omega-order (a)), exactly one of \( b < a \), \( a = b \), \( a < b \) holds. So exactly one of \( x \in P_{\nZ} \), \( x = 0 \), \( -x \in P_{\nZ} \) holds.
+(P2). Let \( x = [(a, b)] \). Then \( x \in P_{\nZ} \) if and only if \( b < a \). Next, \( x = [(0, 0)] \) if and only if \( (a, b) \sim (0, 0) \) (@fd2:thm-classes-partition (b)), that is, \( a + 0 = b + 0 \), that is, \( a = b \). Finally, \( -x = [(b, a)] \in P_{\nZ} \) if and only if \( a < b \). By trichotomy in \( \nN \) (@thm-omega-order (a)), exactly one of \( b < a \), \( a = b \), \( a < b \) holds. So exactly one of \( x \in P_{\nZ} \), \( x = 0 \), \( -x \in P_{\nZ} \) holds.
 
 By @prp-order-from-positives, \( (\nZ, <) \) is an ordered commutative ring with positive set \( P_{\nZ} \).
 
@@ -286,7 +286,7 @@ By @prp-order-from-positives, \( (\nZ, <) \) is an ordered commutative ring with
 (c) If \( 0 < k \), then \( k = \iota(m) \) with \( m \ne 0 \) by (b), so \( 1 \le m \) (@thm-omega-order (d)) and \( 1 \le k \) by (a); then \( k < 1 \) would give \( 1 < 1 \) by (O2), or contradict (O1) directly. Now let \( m < n \). Then \( n - m > 0 \) (@prp-order-from-positives), so \( n - m \ge 1 \), and adding \( m \) by (O3) gives \( n \ge 1 + m \). This proves the theorem.
 :::
 
-With the identification of Section 10.2, (a) says that the order of \( \nZ \) **extends** the order of \( \nN \).
+With the identification of Section 2.2, (a) says that the order of \( \nZ \) **extends** the order of \( \nN \).
 
 **Two non-examples by minimal change**, each breaking exactly one order axiom:
 
@@ -295,13 +295,13 @@ With the identification of Section 10.2, (a) says that the order of \( \nZ \) **
 
 ## Rules for inequalities
 
-The rules below hold in every ordered commutative ring: in \( \nZ \) now, and in \( \nQ \) once Section 10.5 orders it. One of them needs multiples first.
+The rules below hold in every ordered commutative ring: in \( \nZ \) now, and in \( \nQ \) once Section 2.5 orders it. One of them needs multiples first.
 
-**Multiples.** Let \( R \) be a commutative ring and \( a \in R \). By @thm-recursion, read on \( \nN = \omega \) through @cor-omega-identification (b), with \( X = R \), starting value \( 0 \) and step \( (n, y) \mapsto y + a \), there is exactly one function \( \nN \to R \), written \( n \mapsto n \cdot a \), with
+**Multiples.** Let \( R \) be a commutative ring and \( a \in R \). By @fd2:thm-recursion, read on \( \nN = \omega \) through @cor-omega-identification (b), with \( X = R \), starting value \( 0 \) and step \( (n, y) \mapsto y + a \), there is exactly one function \( \nN \to R \), written \( n \mapsto n \cdot a \), with
 \[
 0 \cdot a = 0 , \qquad (n + 1) \cdot a = n \cdot a + a \quad \text{for every } n \in \nN .
 \]
-So \( 1 \cdot a = a \) and \( 2 \cdot a = a + a \). The dot is not the multiplication of \( R \). When \( R = \nZ \), the two readings agree, by @ax-induction (through @cor-omega-identification (b)): \( 0 \cdot a = 0 = 0a \) by @prp-ring-algebra (b), and \( n \cdot a = na \) gives \( (n + 1) \cdot a = na + a = (n + 1)a \) by (F7), (F9).
+So \( 1 \cdot a = a \) and \( 2 \cdot a = a + a \). The dot is not the multiplication of \( R \). When \( R = \nZ \), the two readings agree, by @fd1:ax-induction (through @cor-omega-identification (b)): \( 0 \cdot a = 0 = 0a \) by @prp-ring-algebra (b), and \( n \cdot a = na \) gives \( (n + 1) \cdot a = na + a = (n + 1)a \) by (F7), (F9).
 
 ::: {#prp-ordered-ring-rules}
 [Rules for Inequalities in an Ordered Ring]
@@ -317,7 +317,7 @@ Let \( R \) be an ordered commutative ring, and let \( a, b, c, d \in R \).
 6. If \( ab = 0 \), then \( a = 0 \) or \( b = 0 \).
 7. If \( a \ge 0 \) and \( b \ge 0 \), then \( a < b \) if and only if \( a^2 < b^2 \).
 8. For every \( m, k \in \nN \), \( (m + k) \cdot a = m \cdot a + k \cdot a \). If \( 1 \ne 0 \), then \( n \cdot 1 > 0 \) for every \( n \in \nN \) with \( n \ge 1 \), and \( m \cdot 1 < n \cdot 1 \) whenever \( m, n \in \nN \) and \( m < n \).
-9. \( \le \) is a total order on \( R \) (@def-partial-order), and its strict part is \( < \).
+9. \( \le \) is a total order on \( R \) (@fd2:def-partial-order), and its strict part is \( < \).
 :::
 :::
 
@@ -342,7 +342,7 @@ The method is **turn the comparison into one positive element**: by @prp-order-f
 
 (g) Let \( a, b \ge 0 \). (\( \Rightarrow \)) If \( a < b \), then \( b > 0 \) by (i), and (c) gives \( ab < b^2 \). Also \( a^2 \le ab \): by (c) if \( a > 0 \), and by @prp-ring-algebra (b) if \( a = 0 \). So \( a^2 < b^2 \) by (i). (\( \Leftarrow \)) If \( a^2 < b^2 \) but not \( a < b \), then \( b = a \) or \( b < a \) by (O1), giving \( a^2 = b^2 \) or, by (\( \Rightarrow \)), \( b^2 < a^2 \); both contradict (O1).
 
-(h) Fix \( m \in \nN \). We prove the sum law by @ax-induction on \( k \) (through @cor-omega-identification (b)), for \( P(k) \): "\( (m + k) \cdot a = m \cdot a + k \cdot a \)". *Base case:* \( (m + 0) \cdot a = m \cdot a = m \cdot a + 0 = m \cdot a + 0 \cdot a \), by @def-omega-arithmetic (a), (F3) and the definition of multiples. *Inductive step:* assume \( P(k) \). Then
+(h) Fix \( m \in \nN \). We prove the sum law by @fd1:ax-induction on \( k \) (through @cor-omega-identification (b)), for \( P(k) \): "\( (m + k) \cdot a = m \cdot a + k \cdot a \)". *Base case:* \( (m + 0) \cdot a = m \cdot a = m \cdot a + 0 = m \cdot a + 0 \cdot a \), by @def-omega-arithmetic (a), (F3) and the definition of multiples. *Inductive step:* assume \( P(k) \). Then
 \[
 \begin{aligned}
 (m + (k + 1)) \cdot a &= ((m + k) + 1) \cdot a = (m + k) \cdot a + a \\
@@ -351,7 +351,7 @@ The method is **turn the comparison into one positive element**: by @prp-order-f
 \]
 by associativity in \( \nN \) (@thm-omega-arithmetic-laws (c)), the definition of multiples, \( P(k) \), and (F2) with the definition of multiples again.
 
-Now let \( 1 \ne 0 \). By @ax-induction on \( n \), for \( Q(n) \): "\( (n + 1) \cdot 1 > 0 \)": the base is \( 1 \cdot 1 = 0 + 1 = 1 > 0 \) by (e), and the step is \( (n + 2) \cdot 1 = (n + 1) \cdot 1 + 1 > 0 \) by (b) and (e). Every \( n \ge 1 \) in \( \nN \) is \( j + 1 \) for some \( j \) (@prp-omega-order-arithmetic (a)), so \( n \cdot 1 > 0 \). Finally, if \( m < n \), then \( n = m + k \) with \( k \ne 0 \) (@prp-omega-order-arithmetic (a)), so \( k \ge 1 \) (@thm-omega-order (d)), and by the sum law and (b),
+Now let \( 1 \ne 0 \). By @fd1:ax-induction on \( n \), for \( Q(n) \): "\( (n + 1) \cdot 1 > 0 \)": the base is \( 1 \cdot 1 = 0 + 1 = 1 > 0 \) by (e), and the step is \( (n + 2) \cdot 1 = (n + 1) \cdot 1 + 1 > 0 \) by (b) and (e). Every \( n \ge 1 \) in \( \nN \) is \( j + 1 \) for some \( j \) (@prp-omega-order-arithmetic (a)), so \( n \cdot 1 > 0 \). Finally, if \( m < n \), then \( n = m + k \) with \( k \ne 0 \) (@prp-omega-order-arithmetic (a)), so \( k \ge 1 \) (@thm-omega-order (d)), and by the sum law and (b),
 \[
 n \cdot 1 = m \cdot 1 + k \cdot 1 > m \cdot 1 + 0 = m \cdot 1 .
 \]
@@ -418,7 +418,7 @@ The three laws with three variables can be checked over the eight triples \( (a,
 *No order.* If \( < \) made \( R \) an ordered commutative ring, then, as \( 1 \ne 0 \), @prp-ordered-ring-rules (h) would give \( 2 \cdot 1 > 0 \). But \( 2 \cdot 1 = 1 \cdot 1 + 1 = (0 + 1) + 1 = 0 \) by the definition of multiples, and \( 0 > 0 \) is forbidden by (O1).
 :::
 
-The argument uses only \( 1 \ne 0 \) and \( n \cdot 1 = 0 \) for some \( n \ge 1 \). So **no commutative ring with \( 1 \ne 0 \) in which \( n \cdot 1 = 0 \) for some \( n \in \nN \), \( n \ge 1 \), can be ordered**. The integers modulo \( n \ge 2 \) of Section 7.5 are such rings, since \( n \cdot [1] = [n] = [0] \); a later chapter of this volume rebuilds them on the constructed \( \nZ \).
+The argument uses only \( 1 \ne 0 \) and \( n \cdot 1 = 0 \) for some \( n \ge 1 \). So **no commutative ring with \( 1 \ne 0 \) in which \( n \cdot 1 = 0 \) for some \( n \in \nN \), \( n \ge 1 \), can be ordered**. The integers modulo \( n \ge 2 \) of *Sets, Relations, and Cardinality*, Section 2.5 are such rings, since \( n \cdot [1] = [n] = [0] \); a later chapter of this volume rebuilds them on the constructed \( \nZ \).
 
 ## Exercises
 
@@ -460,7 +460,7 @@ All operations are those of @def-integer-operations, and "Law" refers to @thm-om
 
 (F9). Since \( y + z = [(c + e, d + f)] \), \( x(y + z) = [(a(c + e) + b(d + f), \ a(d + f) + b(c + e))] \), whose coordinates are \( ac + ae + bd + bf \) and \( ad + af + bc + be \) by Law (d). And \( xy + xz = [((ac + bd) + (ae + bf), \ (ad + bc) + (af + be))] \), whose coordinates are the same sums by Laws (b), (c). So both sides are the class of one pair.
 
-(F4). \( x + (-x) = [(a + b, b + a)] \), and \( (a + b, b + a) \sim (0, 0) \) means \( (a + b) + 0 = (b + a) + 0 \) (@def-integers-as-classes), true by @def-omega-arithmetic (a) and Law (b). So \( x + (-x) = [(0, 0)] \) by @thm-classes-partition (b).
+(F4). \( x + (-x) = [(a + b, b + a)] \), and \( (a + b, b + a) \sim (0, 0) \) means \( (a + b) + 0 = (b + a) + 0 \) (@def-integers-as-classes), true by @def-omega-arithmetic (a) and Law (b). So \( x + (-x) = [(0, 0)] \) by @fd2:thm-classes-partition (b).
 
 (F6). \( yx = [(ca + db, cb + da)] \). By Law (f), \( ca = ac \), \( db = bd \), \( cb = bc \), \( da = ad \), and by Law (b), \( bc + ad = ad + bc \); so the pair is \( (ac + bd, ad + bc) \), the pair of \( xy \).
 :::
@@ -490,7 +490,7 @@ and \( [(1, 0)] \notin P' \), since \( 1 < 0 \) is false. The sum half of (P1) h
 
 ::: {.enumerate options="label=(\alph*)"}
 1. Prove the sum law of @prp-ordered-ring-rules (h) in full: for every ordered commutative ring \( R \), every \( a \in R \) and all \( m, k \in \nN \), \( (m + k) \cdot a = m \cdot a + k \cdot a \). State the property you induct on and justify every equality.
-2. Deduce that every ordered commutative ring with \( 1 \ne 0 \) is infinite (@def-infinite).
+2. Deduce that every ordered commutative ring with \( 1 \ne 0 \) is infinite (@fd2:def-infinite).
 3. The set \( \{0, 1, 2\} \) with addition and multiplication "modulo \( 3 \)", given by the tables below, is a commutative ring with \( 1 \ne 0 \) (you may take this for granted). Show that it cannot be ordered.
 :::
 
@@ -524,7 +524,7 @@ Suppose \( R \) has \( m \) elements; consider \( k \mapsto k \cdot 1 \) on \( \
 :::
 
 ::: {.solution}
-(a) Fix \( R \), \( a \in R \), \( m \in \nN \), and use @ax-induction (through @cor-omega-identification (b)) on \( k \), for \( P(k) \): "\( (m + k) \cdot a = m \cdot a + k \cdot a \)". *Base:* \( (m + 0) \cdot a = m \cdot a = m \cdot a + 0 = m \cdot a + 0 \cdot a \), by @def-omega-arithmetic (a), (F3) and \( 0 \cdot a = 0 \). *Step:* assume \( P(k) \). Then
+(a) Fix \( R \), \( a \in R \), \( m \in \nN \), and use @fd1:ax-induction (through @cor-omega-identification (b)) on \( k \), for \( P(k) \): "\( (m + k) \cdot a = m \cdot a + k \cdot a \)". *Base:* \( (m + 0) \cdot a = m \cdot a = m \cdot a + 0 = m \cdot a + 0 \cdot a \), by @def-omega-arithmetic (a), (F3) and \( 0 \cdot a = 0 \). *Step:* assume \( P(k) \). Then
 \[
 \begin{aligned}
 (m + (k + 1)) \cdot a &= ((m + k) + 1) \cdot a = (m + k) \cdot a + a \\
@@ -534,7 +534,7 @@ Suppose \( R \) has \( m \) elements; consider \( k \mapsto k \cdot 1 \) on \( \
 \]
 by associativity in \( \nN \) (@thm-omega-arithmetic-laws (c)), the recursion for multiples, \( P(k) \), (F2), and the recursion again. So \( P(k + 1) \) holds, and \( P(k) \) holds for every \( k \).
 
-(b) Let \( 1 \ne 0 \) in \( R \), and suppose \( R \) has \( m \) elements for some \( m \in \nN \) (@def-finite). Let \( f \colon \{1, \dots, m + 1\} \to R \), \( f(k) \coloneqq k \cdot 1 \). If \( k < l \), then \( k \cdot 1 < l \cdot 1 \) by @prp-ordered-ring-rules (h), so \( k \cdot 1 \ne l \cdot 1 \) by (O1): \( f \) is injective. But \( \{1, \dots, m + 1\} \) has \( m + 1 > m \) elements (by its identity map), so @cor-pigeonhole-finite-sets (a) forbids an injection into \( R \). This contradiction shows that \( R \) is infinite (@def-infinite).
+(b) Let \( 1 \ne 0 \) in \( R \), and suppose \( R \) has \( m \) elements for some \( m \in \nN \) (@fd2:def-finite). Let \( f \colon \{1, \dots, m + 1\} \to R \), \( f(k) \coloneqq k \cdot 1 \). If \( k < l \), then \( k \cdot 1 < l \cdot 1 \) by @prp-ordered-ring-rules (h), so \( k \cdot 1 \ne l \cdot 1 \) by (O1): \( f \) is injective. But \( \{1, \dots, m + 1\} \) has \( m + 1 > m \) elements (by its identity map), so @fd2:cor-pigeonhole-finite-sets (a) forbids an injection into \( R \). This contradiction shows that \( R \) is infinite (@fd2:def-infinite).
 
 (c) By the definition of multiples and the tables, \( 1 \cdot 1 = 0 + 1 = 1 \), \( 2 \cdot 1 = 1 + 1 = 2 \) and \( 3 \cdot 1 = 2 + 1 = 0 \). An order would give \( 3 \cdot 1 > 0 \) by @prp-ordered-ring-rules (h), since \( 1 \ne 0 \), that is, \( 0 > 0 \), against (O1). (Alternatively, (b) applies to this finite ring.)
 
@@ -543,20 +543,20 @@ by associativity in \( \nN \) (@thm-omega-arithmetic-laws (c)), the recursion fo
 - 2: (a) base case, citing \( m + 0 = m \), \( 0 \cdot a = 0 \) and (F3).
 - 2: (a) inductive step, with associativity in \( \nN \), the recursion, the hypothesis and (F2) each named.
 - 2: (b) shows that \( k \mapsto k \cdot 1 \) is injective, citing (h) and (O1).
-- 2: (b) derives the contradiction from @cor-pigeonhole-finite-sets (a) with \( m + 1 > m \) elements (or any correct count).
+- 2: (b) derives the contradiction from @fd2:cor-pigeonhole-finite-sets (a) with \( m + 1 > m \) elements (or any correct count).
 - 1: (c) computes \( 3 \cdot 1 = 0 \) and concludes.
 Fatal errors (0 for the step): inducting on \( m \) and \( k \) at once without fixing one; using \( 1 > 0 \) without \( 1 \ne 0 \); in (b), "the multiples are all different, so there are infinitely many" with no pigeonhole step. A route for (b) composing the inverse of a bijection \( \{1, \dots, m\} \to R \) with \( f \) earns the same 4 points.
 :::
 
 <!-- dependency ledger
-def-commutative-ring-and-field (example): the integers modulo 6 form a commutative ring, and [2][3] = [0] (the warning after the definition) | Ch 7 Section 7.5 (prp-congruence-arithmetic, school integers); illustration only, nothing depends on it
+def-commutative-ring-and-field (example): the integers modulo 6 form a commutative ring, and [2][3] = [0] (the warning after the definition) | F2.2 §05 (prp-congruence-arithmetic, school integers); illustration only, nothing depends on it
 def-commutative-ring-and-field (example): the zero ring satisfies (F1)-(F7), (F9) | inline (every equation reads 0 = 0)
-thm-integers-commutative-ring (proof): substituting equal natural numbers inside sums and products | equality rules of Ch 4 (=E)
+thm-integers-commutative-ring (proof): substituting equal natural numbers inside sums and products | equality rules of F1.4 (=E)
 prp-order-from-positives (proof): -(b - a) = a - b, (c - b) + (b - a) = c - a, -(a + c) = (-a) + (-c), -0 = 0 | inline (from prp-ring-algebra (a))
 thm-integers-ordered-ring (proof): (a, b) ~ (0, 0) iff a = b | def-integers-as-classes with def-omega-arithmetic (a) (cited)
 prp-ordered-ring-rules (proof): the multiples n.a exist and are unique | thm-recursion via cor-omega-identification (b) (cited before the statement)
 prp-ordered-ring-rules (proof): a natural number n >= 1 is j + 1 for some j | prp-omega-order-arithmetic (a) (cited), with 1 + j = j + 1 by thm-omega-arithmetic-laws (b)
-prp-integer-least-element (proof): T = {s - b : s in S} is a set | image of S under s |-> s - b (Ch 6, def-image); not cited by label
+prp-integer-least-element (proof): T = {s - b : s in S} is a set | image of S under s |-> s - b (F2.1, def-image); not cited by label
 exm-finite-ring-not-orderable (solution): (F2), (F5), (F9) for the two-element tables | inline case check (all eight triples)
 exr-ordered-rings-c1 (solution): {1, ..., m + 1} has m + 1 elements | def-finite (identity bijection; inline)
 -->

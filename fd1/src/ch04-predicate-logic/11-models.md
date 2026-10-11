@@ -39,7 +39,7 @@ Fix a collection of constants, function symbols and predicate symbols, each func
 The symbol \( = \) is not interpreted by \( \fM \): in every structure it means **identity**, "is the same element of \( D \) as".
 :::
 
-In words. (M1) says what the variables range over, and insists that there is at least one object. (M2) says which object each name names; two constants may name the same object. (M3) makes each function symbol an operation that can be applied to **any** objects of the domain and always returns an object of the domain. (M4) makes each predicate symbol a relation: \( R^{\fM} \) is the set of tuples for which \( R \) "holds". A one-place predicate symbol \( P \) becomes a subset \( P^{\fM} \subseteq D \), a two-place one a set of ordered pairs, and so on. Here \( D^n \) is the set of \( n \)-tuples \( (d_1, \dots, d_n) \) of elements of \( D \); Chapter 6 develops sets, pairs and functions properly, and this section uses only their everyday meaning.
+In words. (M1) says what the variables range over, and insists that there is at least one object. (M2) says which object each name names; two constants may name the same object. (M3) makes each function symbol an operation that can be applied to **any** objects of the domain and always returns an object of the domain. (M4) makes each predicate symbol a relation: \( R^{\fM} \) is the set of tuples for which \( R \) "holds". A one-place predicate symbol \( P \) becomes a subset \( P^{\fM} \subseteq D \), a two-place one a set of ordered pairs, and so on. Here \( D^n \) is the set of \( n \)-tuples \( (d_1, \dots, d_n) \) of elements of \( D \); *Sets, Relations, and Cardinality*, Chapter 1 develops sets, pairs and functions properly, and this section uses only their everyday meaning.
 
 We usually describe a structure in one line, naming the domain and the meaning of each symbol, and write "\( \fM = (\nZ, <) \)" for the structure with domain \( \nZ \) in which the symbol \( < \) means the usual order. When a symbol has its usual meaning on a familiar set, we say so and do not write \( <^{\fM} \).
 
@@ -438,7 +438,7 @@ For (b), look for an operation on \( \nN \) that never repeats a value but misse
 :::
 
 ::: {.solution}
-*(a)* Let \( \fM \) have a finite domain \( D \) with \( n \ge 1 \) elements. If the hypothesis of \( \sigma \) is false in \( \fM \), then \( \sigma \) is true by (S5). So suppose it is true: by (S6), (S5) and (S2), for all \( d, e \in D \), \( f^{\fM}(d) = f^{\fM}(e) \) implies \( d = e \); that is, \( f^{\fM} \) takes different values at different elements. Then the \( n \) elements of \( D \) have \( n \) different values, so the set of values \( \{ f^{\fM}(d) : d \in D \} \) is a subset of \( D \) with \( n \) elements. A subset of an \( n \)-element set with \( n \) elements is the whole set (a counting fact from school, proved in Chapter 8). So every \( e \in D \) is \( f^{\fM}(d) \) for some \( d \), which is the conclusion of \( \sigma \) by (S6), (S7) and (S2). Hence \( \sigma \) is true in \( \fM \).
+*(a)* Let \( \fM \) have a finite domain \( D \) with \( n \ge 1 \) elements. If the hypothesis of \( \sigma \) is false in \( \fM \), then \( \sigma \) is true by (S5). So suppose it is true: by (S6), (S5) and (S2), for all \( d, e \in D \), \( f^{\fM}(d) = f^{\fM}(e) \) implies \( d = e \); that is, \( f^{\fM} \) takes different values at different elements. Then the \( n \) elements of \( D \) have \( n \) different values, so the set of values \( \{ f^{\fM}(d) : d \in D \} \) is a subset of \( D \) with \( n \) elements. A subset of an \( n \)-element set with \( n \) elements is the whole set (a counting fact from school, proved in *Sets, Relations, and Cardinality*, Chapter 3). So every \( e \in D \) is \( f^{\fM}(d) \) for some \( d \), which is the conclusion of \( \sigma \) by (S6), (S7) and (S2). Hence \( \sigma \) is true in \( \fM \).
 
 *(b)* Take \( D = \nN \) and \( f^{\fM}(d) = d + 1 \). The hypothesis holds: \( d + 1 = e + 1 \) gives \( d = e \). The conclusion fails at \( y = 0 \): there is no \( d \in \nN \) with \( d + 1 = 0 \), since \( d \ge 0 \) gives \( d + 1 \ge 1 \). So \( \sigma \) is false in \( \fM \).
 
@@ -686,17 +686,17 @@ Is the sentence \( \forall x\, \exists y\, (x < y) \to \exists y\, \forall x\, (
 :::
 
 <!-- dependency ledger
-def-structure (claim): D^n, subsets, ordered pairs and functions used in their everyday meaning | ch06 (promised), prose pointer "Chapter 6 develops sets, pairs and functions properly"
+def-structure (claim): D^n, subsets, ordered pairs and functions used in their everyday meaning | F2.1 (promised), prose pointer "F2.1 develops sets, pairs and functions properly"
 def-structure (example): with = read as same parity on Z, -2 = 2 and P(2) hold and P(-2) fails | inline
-def-structure (example): a sentence false in some structure is not derivable | the soundness statement of this section (not proved here; Section 4.12)
+def-structure (example): a sentence false in some structure is not derivable | the soundness statement of this section (not proved here; F1.4 §12)
 def-assignment (claim): an assignment exists because D is non-empty (a constant assignment) | inline, from def-structure (M1)
-def-assignment (claim): the value of a term is well defined by recursion on terms | thm-structural-recursion (pattern), def-term; Section 4.2 says Chapter 3's induction and recursion carry over to terms and first-order formulas
+def-assignment (claim): the value of a term is well defined by recursion on terms | thm-structural-recursion (pattern), def-term; F1.4 §02 says F1.3's induction and recursion carry over to terms and first-order formulas
 def-assignment (example): values 2*2 + (-3) = 1, 2*2 + 1 = 5, -3, and 1 + 1 = 2 | inline; verify/ch04/def-satisfaction.py
-def-satisfaction (claim): satisfaction is well defined by recursion on formulas, for all assignments at once | thm-structural-recursion applied to def-first-order-formula (Section 4.2 remark)
+def-satisfaction (claim): satisfaction is well defined by recursion on formulas, for all assignments at once | thm-structural-recursion applied to def-first-order-formula (F1.4 §02 remark)
 def-satisfaction (example): traces of forall x exists y (x < y) in N and in {1,2,3}; forall y (x <= y) in N under l(x) = 0 and l(x) = 1; one-element domain | inline; verify/ch04/def-satisfaction.py
-def-satisfaction (solution): every real square is >= 0; sqrt(d) exists for d >= 0; a product of non-negative reals is non-negative | school algebra; ch11 (thm-nth-root) proves the roots, prose only
+def-satisfaction (solution): every real square is >= 0; sqrt(d) exists for d >= 0; a product of non-negative reals is non-negative | school algebra; AN1.1 (thm-nth-root) proves the roots, prose only
 def-satisfaction (solution): every complex number has a complex square root (polar form) | school algebra of complex numbers, stated in the solution; not proved in the book before Part V
-lem-free-coincidence (proof): structural induction on terms and on first-order formulas | thm-structural-induction (pattern) with the clauses of def-term and def-first-order-formula; Section 4.2 remark
+lem-free-coincidence (proof): structural induction on terms and on first-order formulas | thm-structural-induction (pattern) with the clauses of def-term and def-first-order-formula; F1.4 §02 remark
 lem-free-coincidence (proof): every variable of an atomic formula is free in it; the free variables of forall x phi are those of phi other than x | def-free-variable
 lem-free-coincidence (proof): the cases not, or, ->, <-> repeat the conjunction argument with the other clauses | inline, as in lem-coincidence
 def-first-order-entailment (claim): symbols a structure interprets but a formula does not contain never matter | inline, read off the clauses of def-satisfaction
@@ -705,23 +705,23 @@ def-first-order-entailment (claim): forall x P(x) |= exists x P(x) in non-empty 
 def-first-order-entailment (claim): bounded quantifiers over the empty set, true and false | def-bounded-quantifier; inline
 exm-counter-model-swap (solution): Z with >, the two-element identity; no one-element counter-model | inline; verify/ch04/exm-counter-model-swap.py
 exm-counter-model-swap (example): converses of prp-exists-and and of the forall/or law; exists x P(x) |/= P(c); P(x_0) |/= forall x P(x); strict-order models Z, Q and the one-element non-model; the second Quick check | inline; verify/ch04/exm-counter-model-swap.py
-exm-counter-model-swap (example): every integer is even or odd, and not both (the Z illustrations of the two converses) | ch07 (promised); STATUS Ch 1 row, as in Ch 1 §01, §07
-def-first-order-entailment (claim): Gamma |- phi implies Gamma |= phi (soundness for predicate logic) | stated without proof in this section and marked so; proved in Section 4.12 (optional; thm-first-order-soundness, never cited here)
-def-first-order-entailment (claim): x^2 on R is continuous and not uniformly continuous | exm-square-not-uniform (Section 4.10), cited in prose
+exm-counter-model-swap (example): every integer is even or odd, and not both (the Z illustrations of the two converses) | F2.2 (promised); STATUS F1.1 row, as in F1.1 §01, §07
+def-first-order-entailment (claim): Gamma |- phi implies Gamma |= phi (soundness for predicate logic) | stated without proof in this section and marked so; proved in F1.4 §12 (optional; thm-first-order-soundness, never cited here)
+def-first-order-entailment (claim): x^2 on R is continuous and not uniformly continuous | exm-square-not-uniform (F1.4 §10), cited in prose
 exr-models-a1 (solution): witnesses and failing elements in N, Z, Q; z = (d + e)/2 is rational and strictly between | inline; verify/ch04/exr-models-a1.py
 exr-models-b1 (solution): the three finite counter-models | verify/ch04/exr-models-b1.py
 exr-models-b2 (solution): the three-element model and the alternatives | verify/ch04/exr-models-b2.py
 exr-models-b3 (solution): the two-element counter-model | verify/ch04/exr-models-b3.py
-exr-models-c1 (solution): a subset of an n-element set with n elements is the whole set | school counting fact, named in the solution; ch08 (promised) proves it
+exr-models-c1 (solution): a subset of an n-element set with n elements is the whole set | school counting fact, named in the solution; F2.3 (promised) proves it
 exr-models-c1 (solution): successor on N is injective and misses 0 | inline
-exr-models-c2 (solution): a finite set with n elements does not contain n + 1 different elements | school counting fact, named in the solution; ch08 (promised)
-exr-models-c3 (solution): for every real there is a larger natural number | given in the problem; thm-naturals-unbounded (Ch 11), not cited
-exr-models-c3 (solution): n > 1/eps > 0 implies 1/n < eps | school algebra of < (Ch 11 ordered-field rules)
-exr-models-a1 (solution): (e) non-derivability from the three-element counter-model | the soundness statement of this section (not proved here; Section 4.12)
-exr-models-b1 (solution): (iii) non-derivability from the counter-model with l(x) = b; forall x (P(x) -> P(x)) is satisfied everywhere by (S5), (S6) | the soundness statement of this section (not proved here; Section 4.12); inline
-exr-models-b3 (solution): non-derivability from a counter-model | the soundness statement of this section (not proved here; Section 4.12)
-exr-models-c1 (solution): non-derivability from a counter-model | the soundness statement of this section (not proved here; Section 4.12)
-exr-models-r4 (solution): non-derivability from a false instance | the soundness statement of this section (not proved here; Section 4.12)
+exr-models-c2 (solution): a finite set with n elements does not contain n + 1 different elements | school counting fact, named in the solution; F2.3 (promised)
+exr-models-c3 (solution): for every real there is a larger natural number | given in the problem; thm-naturals-unbounded (AN1.1), not cited
+exr-models-c3 (solution): n > 1/eps > 0 implies 1/n < eps | school algebra of < (AN1.1 ordered-field rules)
+exr-models-a1 (solution): (e) non-derivability from the three-element counter-model | the soundness statement of this section (not proved here; F1.4 §12)
+exr-models-b1 (solution): (iii) non-derivability from the counter-model with l(x) = b; forall x (P(x) -> P(x)) is satisfied everywhere by (S5), (S6) | the soundness statement of this section (not proved here; F1.4 §12); inline
+exr-models-b3 (solution): non-derivability from a counter-model | the soundness statement of this section (not proved here; F1.4 §12)
+exr-models-c1 (solution): non-derivability from a counter-model | the soundness statement of this section (not proved here; F1.4 §12)
+exr-models-r4 (solution): non-derivability from a false instance | the soundness statement of this section (not proved here; F1.4 §12)
 exr-models-r1 (solution): refuting row and derivation | cor-refuting-row; verify/ch04/exr-models-r1.py
 exr-models-r2 (solution): neg-neg-E is derived with RAA | prp-double-negation (cited)
 exr-models-r2 (solution): no RAA-free derivation of P or P and Q from not(P -> not Q) | stated without proof and marked so; nothing depends on it

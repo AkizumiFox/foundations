@@ -1,6 +1,6 @@
 # Images and Preimages
 
-A function \( f \colon X \to Y \) sends points to points. Much of analysis asks what it does to **sets** of points. Where does \( f \) send an interval? Which inputs land in a given set of outputs? The first question is answered by the image \( f(A) \), the second by the preimage \( f^{-1}(B) \), and the two are the subject of this section. They look like mirror images of each other, and they are not: preimages respect every set operation of Section 6.2, while images respect only unions. The reason is one quantifier, and by the end of the section we will be able to point at it.
+A function \( f \colon X \to Y \) sends points to points. Much of analysis asks what it does to **sets** of points. Where does \( f \) send an interval? Which inputs land in a given set of outputs? The first question is answered by the image \( f(A) \), the second by the preimage \( f^{-1}(B) \), and the two are the subject of this section. They look like mirror images of each other, and they are not: preimages respect every set operation of Section 1.2, while images respect only unions. The reason is one quantifier, and by the end of the section we will be able to point at it.
 
 Throughout, \( f \colon X \to Y \) is a function (@def-function), and the unions and intersections of families are those of @def-family-union-intersection. An intersection of a family of subsets of \( Y \) is taken inside \( Y \); of subsets of \( X \), inside \( X \).
 
@@ -16,7 +16,7 @@ Is that an accident of these intervals? No. Pulling back will turn out to respec
 
 ## Images and preimages
 
-The two sets in the question above keep recurring: "all the values \( f(a) \) for \( a \) in \( A \)" and "all the inputs \( x \) with \( f(x) \) in \( B \)". The first was already used in Section 6.4 for \( A = X \), where it is the range of \( f \).
+The two sets in the question above keep recurring: "all the values \( f(a) \) for \( a \) in \( A \)" and "all the inputs \( x \) with \( f(x) \) in \( B \)". The first was already used in Section 1.4 for \( A = X \), where it is the range of \( f \).
 
 *An image hides a "there exists"; a preimage hides nothing.*
 
@@ -43,16 +43,16 @@ Let \( f \colon X \to Y \) be a function and \( B \subseteq Y \). The **preimage
 In symbols, for every \( x \), \( x \in f^{-1}(B) \iff x \in X \wedge f(x) \in B \). The preimage is defined for **every** function \( f \), whether or not \( f \) has an inverse.
 :::
 
-In Section 6.4 a point \( x \) with \( f(x) = y \) was called a preimage of \( y \); that is, \( x \in f^{-1}(\{y\}) \). So the preimages of a point \( y \) are the elements of the preimage of the set \( \{y\} \).
+In Section 1.4 a point \( x \) with \( f(x) = y \) was called a preimage of \( y \); that is, \( x \in f^{-1}(\{y\}) \). So the preimages of a point \( y \) are the elements of the preimage of the set \( \{y\} \).
 
 Read the two definitions clause by clause.
 
 - **The ambient sets.** Both are sets by specification (@def-set-builder): \( f(A) \) is carved out of the codomain \( Y \), and \( f^{-1}(B) \) out of the domain \( X \). So \( f(A) \subseteq Y \) and \( f^{-1}(B) \subseteq X \) always. The shorthand \( \{ f(a) : a \in A \} \) names the same subset of \( Y \); it is a way of writing, not a new rule of set formation.
-- **The image.** "\( y \in f(A) \)" says that \( y \) is **hit** by some point of \( A \). The words "there exists" are part of the definition. To **use** a line \( y \in f(A) \), we must name a witness: "let \( a \in A \) with \( f(a) = y \)". That is the rule \( \exists \)E of Chapter 4 (Section 4.6), and the name must be fresh. To **prove** \( y \in f(A) \), we exhibit a witness, by \( \exists \)I (Chapter 4, Section 4.5).
+- **The image.** "\( y \in f(A) \)" says that \( y \) is **hit** by some point of \( A \). The words "there exists" are part of the definition. To **use** a line \( y \in f(A) \), we must name a witness: "let \( a \in A \) with \( f(a) = y \)". That is the rule \( \exists \)E of *Logic and Proof*, Chapter 4 (*Logic and Proof*, Section 4.6), and the name must be fresh. To **prove** \( y \in f(A) \), we exhibit a witness, by \( \exists \)I (*Logic and Proof*, Chapter 4, *Logic and Proof*, Section 4.5).
 - **The preimage.** "\( x \in f^{-1}(B) \)" says that \( x \) is sent **into** \( B \). There is no quantifier. For \( x \in X \), a line \( x \in f^{-1}(B) \) is used and proved by one substitution: it is exchanged for \( f(x) \in B \), and back.
-- **The symbol \( f^{-1} \).** In \( f^{-1}(B) \), the symbol \( f^{-1} \) is not a function that is applied to \( B \). The whole expression \( f^{-1}(B) \) is the name of a set built from \( f \) and \( B \). Section 6.5 used \( f^{-1} \) for the inverse function of a bijection; the remark at the end of this section reconciles the two readings.
+- **The symbol \( f^{-1} \).** In \( f^{-1}(B) \), the symbol \( f^{-1} \) is not a function that is applied to \( B \). The whole expression \( f^{-1}(B) \) is the name of a set built from \( f \) and \( B \). Section 1.5 used \( f^{-1} \) for the inverse function of a bijection; the remark at the end of this section reconciles the two readings.
 
-The notation \( f(A) \) puts a set where \( f(x) \) puts a point. When the letter in the brackets has been declared a subset of \( X \), the expression is an image; when it has been declared a point, it is a value. As with the pair and the interval of Section 6.3, the declaration decides.
+The notation \( f(A) \) puts a set where \( f(x) \) puts a point. When the letter in the brackets has been declared a subset of \( X \), the expression is an image; when it has been declared a point, it is a value. As with the pair and the interval of Section 1.3, the declaration decides.
 
 Start with the smallest possible example, where everything can be listed.
 
@@ -76,7 +76,7 @@ The two computations differ in shape. For the image we ran through the points of
 
 The example also contains a non-example by minimal change. The sets \( \{1\} \) and \( \{5\} \) are both one-point subsets of \( Y \). The first has a two-point preimage; change \( 1 \) to \( 5 \) and the preimage becomes empty, because \( 5 \) lies outside the range. The preimage of a non-empty set can be empty. What fails is the existence of a point of \( X \) sent into the set.
 
-Why is the preimage defined for **every** function, when \( f^{-1} \) as a function exists only for bijections? Because the question "which inputs land in \( B \)?" makes sense for any \( f \): its answer may be empty, or contain many points, and neither is a problem for a set. The function \( f^{-1} \) of Section 6.5 asks for more: exactly one input for each output. This is why analysis states its definitions with preimages. "The preimage of every open set is open" makes sense for every function; Chapter 24 uses it to characterize continuity.
+Why is the preimage defined for **every** function, when \( f^{-1} \) as a function exists only for bijections? Because the question "which inputs land in \( B \)?" makes sense for any \( f \): its answer may be empty, or contain many points, and neither is a problem for a set. The function \( f^{-1} \) of Section 1.5 asks for more: exactly one input for each output. This is why analysis states its definitions with preimages. "The preimage of every open set is open" makes sense for every function; *Metric and Topological Spaces*, Chapter 1 uses it to characterize continuity.
 
 ::: {.warning}
 The preimage \( f^{-1}(B) \) does not presuppose that \( f \) is invertible. For the squaring map on \( \nR \), which has no inverse function, \( f^{-1}(\{4\}) = \{-2, 2\} \) is a perfectly good set. What the symbol does **not** give is a value "\( f^{-1}(4) \)": that would be a point, and there are two candidates.
@@ -100,7 +100,7 @@ Let \( f \colon \nR \to \nR \), \( f(x) = x^2 \). Prove that
 :::
 
 ::: {.solution}
-We use school facts about real numbers, \( x^2 \ge 0 \) and every \( y \ge 0 \) has a square root \( \sqrt y \ge 0 \), and, by @thm-squares-order, for \( s, t \ge 0 \), \( s \le t \) holds exactly when \( s^2 \le t^2 \).
+We use school facts about real numbers, \( x^2 \ge 0 \) and every \( y \ge 0 \) has a square root \( \sqrt y \ge 0 \), and, by @fd1:thm-squares-order, for \( s, t \ge 0 \), \( s \le t \) holds exactly when \( s^2 \le t^2 \).
 
 (a) *Idea.* An image is proved equal to a set by two inclusions. The inclusion \( \subseteq \) uses \( y \in f([-1, 2]) \), so it names a witness. The inclusion \( \supseteq \) proves \( y \in f([-1, 2]) \), so it exhibits one.
 
@@ -121,7 +121,7 @@ For every \( x \in \nR \),
     &\iff x \in [-2, -1] \cup [1, 2] .
 \end{aligned}
 \]
-The first step is @def-preimage. The second uses \( x^2 = \abs{x}^2 \) and @thm-squares-order with \( s, t \) among \( 1 \), \( \abs{x} \), \( 2 \). The third splits by the sign of \( x \): for \( x \ge 0 \), \( \abs{x} = x \), and for \( x < 0 \), \( \abs{x} = -x \). So the two sets have the same elements.
+The first step is @def-preimage. The second uses \( x^2 = \abs{x}^2 \) and @fd1:thm-squares-order with \( s, t \) among \( 1 \), \( \abs{x} \), \( 2 \). The third splits by the sign of \( x \): for \( x \ge 0 \), \( \abs{x} = x \), and for \( x < 0 \), \( \abs{x} = -x \). So the two sets have the same elements.
 
 (c) For every \( x \in \nR \), \( f(x) = x^2 \ge 0 > -1 \), so \( f(x) \in \{-1\} \) never holds. The preimage is empty, although \( \{-1\} \) is not.
 
@@ -140,7 +140,7 @@ For \( f(x) = x^2 \) on \( \nR \), find \( f^{-1}(\{4\}) \), \( f^{-1}([-4, -1])
 
 ## Sets of numbers as images
 
-Chapter 11 works with three ways of making new sets of real numbers from old ones: for \( A, B \subseteq \nR \) and \( c \in \nR \),
+*Analysis on the Real Line*, Chapter 1 works with three ways of making new sets of real numbers from old ones: for \( A, B \subseteq \nR \) and \( c \in \nR \),
 \[
     -A \coloneqq \{ -a : a \in A \}, \quad cA \coloneqq \{ ca : a \in A \}, \quad A + B \coloneqq \{ a + b : a \in A,\ b \in B \}.
 \]
@@ -165,7 +165,7 @@ Let \( A, B \subseteq \nR \) and \( c \in \nR \).
 ::: {.solution}
 (a) By the shorthand of @def-image, \( n(A) = \{ n(a) : a \in A \} = \{ -a : a \in A \} \), which is \( -A \) as written above. In the same way, \( m_c(A) = \{ ca : a \in A \} = cA \). Nothing more is needed: the set-builder \( \{ -a : a \in A \} \) **is** the image, written in the form of @def-image.
 
-(b) Here the domain is the product \( \nR \times \nR \) of Section 6.3, and \( A \times B \subseteq \nR \times \nR \). An element \( p \) of \( A \times B \) is a pair \( (a, b) \) with \( a \in A \) and \( b \in B \) (@def-cartesian-product).
+(b) Here the domain is the product \( \nR \times \nR \) of Section 1.3, and \( A \times B \subseteq \nR \times \nR \). An element \( p \) of \( A \times B \) is a pair \( (a, b) \) with \( a \in A \) and \( b \in B \) (@def-cartesian-product).
 
 \( (\subseteq) \) Let \( y \in A + B \). Then \( y = a + b \) for some \( a \in A \) and \( b \in B \); name them. The pair \( p \coloneqq (a, b) \) lies in \( A \times B \), and \( s(p) = a + b = y \). So \( y \in s(A \times B) \), with witness \( p \).
 
@@ -176,7 +176,7 @@ Unwinding \( y \in s(A \times B) \) took **two** layers of witnesses: first the 
 (c) \( -[0, 1] = [-1, 0] \): if \( y = -a \) with \( 0 \le a \le 1 \), then \( -1 \le y \le 0 \); and if \( -1 \le y \le 0 \), then \( a \coloneqq -y \in [0, 1] \) and \( y = -a \). Next, \( \{1, 2\} + \{10, 20\} \) is the image of the four pairs \( (1, 10) \), \( (1, 20) \), \( (2, 10) \), \( (2, 20) \), so it is \( \{11, 21, 12, 22\} \), with 4 elements. Finally, \( \{1, 2\} + \{1, 2\} \) is the image of \( (1, 1) \), \( (1, 2) \), \( (2, 1) \), \( (2, 2) \), which is \( \{2, 3, 4\} \), with only 3 elements: the pairs \( (1, 2) \) and \( (2, 1) \) have the same image \( 3 \), because \( s \) is not injective.
 :::
 
-This pays a debt. Chapter 11 introduces these sets by set-builder, and part (b) shows that even the two-variable form is an image, of \( A \times B \) under \( s \), so @def-image is what all three rest on: an element of \( A + B \) is used by naming two witnesses, as in part (b).
+This pays a debt. *Analysis on the Real Line*, Chapter 1 introduces these sets by set-builder, and part (b) shows that even the two-variable form is an image, of \( A \times B \) under \( s \), so @def-image is what all three rest on: an element of \( A + B \) is used by naming two witnesses, as in part (b).
 
 ## Preimages respect every operation
 
@@ -239,7 +239,7 @@ In the second step, the intersection in \( Y \) is \( \{ y \in Y : \forall i \in
     &\iff x \in X \setminus f^{-1}(B) && (x \in X).
 \end{aligned}
 \]
-The second and fourth steps are @def-set-operations for \( \setminus \), with the clause that is known to hold dropped. The third negates both sides of the equivalence \( x \in f^{-1}(B) \iff f(x) \in B \), as @exm-iff-negations allows.
+The second and fourth steps are @def-set-operations for \( \setminus \), with the clause that is known to hold dropped. The third negates both sides of the equivalence \( x \in f^{-1}(B) \iff f(x) \in B \), as @fd1:exm-iff-negations allows.
 
 (d)
 \[
@@ -250,16 +250,16 @@ The second and fourth steps are @def-set-operations for \( \setminus \), with th
     &\iff x \in f^{-1}(B) \setminus f^{-1}(C),
 \end{aligned}
 \]
-by (P) and @def-set-operations in the first step, (P) and @exm-iff-negations in the second, and @def-set-operations in the third.
+by (P) and @def-set-operations in the first step, (P) and @fd1:exm-iff-negations in the second, and @def-set-operations in the third.
 
 In each chain the equivalences link up, so the first statement is equivalent to the last, for every \( x \in X \). This proves the theorem.
 :::
 
-The proof never named a witness for an image (the index \( i \) in (a) is taken by \( \exists \)E and passed unchanged to \( \exists \)I) and never used a property of \( f \) beyond its being a function. That is the whole content of the slogan: a preimage hides nothing. Each law of sets was carried across by the corresponding law of logic, applied to the one point \( f(x) \), exactly as in Section 6.2.
+The proof never named a witness for an image (the index \( i \) in (a) is taken by \( \exists \)E and passed unchanged to \( \exists \)I) and never used a property of \( f \) beyond its being a function. That is the whole content of the slogan: a preimage hides nothing. Each law of sets was carried across by the corresponding law of logic, applied to the one point \( f(x) \), exactly as in Section 1.2.
 
 The empty family is covered. When \( I = \emptyset \), the intersection of the empty family in \( Y \) is \( Y \) and in \( X \) is \( X \) (@def-family-union-intersection), and (b) says \( f^{-1}(Y) = X \), which is true. The union of the empty family is \( \emptyset \), and (a) says \( f^{-1}(\emptyset) = \emptyset \), also true. This is the payoff of taking intersections inside a named ambient set: the theorem holds with no exception for \( I = \emptyset \).
 
-Preimages also behave well under composition, with the order reversed. We will need this in Chapter 24, to show that composites of continuous maps are continuous.
+Preimages also behave well under composition, with the order reversed. We will need this in *Metric and Topological Spaces*, Chapter 1, to show that composites of continuous maps are continuous.
 
 ::: {#prp-preimage-composition}
 [Preimage under a Composite]
@@ -283,7 +283,7 @@ Both sides are subsets of \( X \) by @def-preimage, so, as in the proof of @thm-
 The first step is @def-preimage for \( g \circ f \) with @def-composition; the second is @def-preimage for \( g \), which applies because \( f(x) \in Y \); the third is @def-preimage for \( f \). This proves the proposition.
 :::
 
-To pull a set back through "first \( f \), then \( g \)", pull it back through \( g \) first. This is the same reversal as for the inverse of a composite (Exercise B2 of Section 6.5), and here no function needs an inverse.
+To pull a set back through "first \( f \), then \( g \)", pull it back through \( g \) first. This is the same reversal as for the inverse of a composite (Exercise B2 of Section 1.5), and here no function needs an inverse.
 
 ## Images respect unions
 
@@ -312,7 +312,7 @@ We prove two inclusions. The union \( \bigcup_{i \in I} A_i \) is a subset of \(
 This proves the theorem.
 :::
 
-Look at the order of the tags in \( (\subseteq) \): \( \exists \)E for \( a \), \( \exists \)E for \( j \), \( \exists \)I for \( a \), \( \exists \)I for \( j \). The witnesses are reintroduced in the same order they were named. Because \( \exists \)I builds the formula from the inside out, \( a \), which was the outer witness, ends up as the inner one. To rebuild the quantifiers in their old order, the \( \exists \)I steps would have run in reverse, \( \exists \)I for \( j \) before \( \exists \)I for \( a \). That the order is not reversed is the exchange of the two "there exists". The two \( \exists \)E boxes may close at the end because the conclusion \( y \in \bigcup_i f(A_i) \) mentions neither \( a \) nor \( j \): the side condition of \( \exists \)E (Chapter 4, Section 4.6) holds. The case \( I = \emptyset \) needs no separate treatment: both sides are \( f(\emptyset) = \emptyset \) and \( \emptyset \).
+Look at the order of the tags in \( (\subseteq) \): \( \exists \)E for \( a \), \( \exists \)E for \( j \), \( \exists \)I for \( a \), \( \exists \)I for \( j \). The witnesses are reintroduced in the same order they were named. Because \( \exists \)I builds the formula from the inside out, \( a \), which was the outer witness, ends up as the inner one. To rebuild the quantifiers in their old order, the \( \exists \)I steps would have run in reverse, \( \exists \)I for \( j \) before \( \exists \)I for \( a \). That the order is not reversed is the exchange of the two "there exists". The two \( \exists \)E boxes may close at the end because the conclusion \( y \in \bigcup_i f(A_i) \) mentions neither \( a \) nor \( j \): the side condition of \( \exists \)E (*Logic and Proof*, Chapter 4, *Logic and Proof*, Section 4.6) holds. The case \( I = \emptyset \) needs no separate treatment: both sides are \( f(\emptyset) = \emptyset \) and \( \emptyset \).
 
 ## Images and intersections
 
@@ -331,7 +331,7 @@ Show that the conclusion is false, and find the line that fails.
 ::: {.solution}
 *The conclusion is false.* Take \( f(x) = x^2 \) on \( \nR \), \( A = \{-1\} \), and \( B = \{1\} \). Then \( f(A) = f(B) = \{1\} \), so \( f(A) \cap f(B) = \{1\} \); but \( A \cap B = \emptyset \), so \( f(A \cap B) = \emptyset \), and \( 1 \notin \emptyset \).
 
-*The failing line is (3).* Line (2) is a correct \( \exists \)E: it names a witness \( x \in A \) with \( f(x) = y \). Line (3) performs a second \( \exists \)E, on \( y \in f(B) \), and gives its witness the **same** name \( x \). The rule requires a fresh name (Chapter 4, Section 4.6). The statement "\( y = f(b) \) for some \( b \in B \)" promises some point of \( B \), not the point already named. Reusing the name silently asserts that the two witnesses are equal, and nothing says they are. This is the error "one name for two witnesses", entry (N4) of the catalogue of what is not allowed (Chapter 5, Section 5.6).
+*The failing line is (3).* Line (2) is a correct \( \exists \)E: it names a witness \( x \in A \) with \( f(x) = y \). Line (3) performs a second \( \exists \)E, on \( y \in f(B) \), and gives its witness the **same** name \( x \). The rule requires a fresh name (*Logic and Proof*, Chapter 4, *Logic and Proof*, Section 4.6). The statement "\( y = f(b) \) for some \( b \in B \)" promises some point of \( B \), not the point already named. Reusing the name silently asserts that the two witnesses are equal, and nothing says they are. This is the error "one name for two witnesses", entry (N4) of the catalogue of what is not allowed (*Logic and Proof*, Chapter 5, *Logic and Proof*, Section 5.6).
 
 *A counterexample to the step.* With the data above and \( y = 1 \): line (2) names \( x = -1 \), the only point of \( A \). The only point of \( B \) with square \( 1 \) is \( 1 \ne -1 \), so line (3), with the name \( x \) meaning the \( x \) of line (2), asserts \( -1 \in B \), which is false. Lines (4) and (5) are correct inferences from what (3) wrongly asserts.
 :::
@@ -406,7 +406,7 @@ For (a), a point \( a \in A \) is sent into \( f(A) \), with itself as witness, 
 For the last statement: if \( f \) is surjective (@def-surjective), every \( y \in Y \) lies in \( f(X) \); since \( f(X) \subseteq Y \) by @def-image, \( f(X) = Y \) by @prp-subset-antisymmetric, and \( B \cap f(X) = B \cap Y = B \) for every \( B \subseteq Y \), because \( B \subseteq Y \). Conversely, if \( f(f^{-1}(B)) = B \) for every \( B \subseteq Y \), take \( B = Y \): since \( f^{-1}(Y) = X \), this says \( f(X) = Y \), so every \( y \in Y \) is \( f(x) \) for some \( x \in X \) (@def-image), and \( f \) is surjective (@def-surjective). This proves the proposition.
 :::
 
-So the two round trips measure the two failures of Section 6.4. Pushing forwards and pulling back adds to \( A \) the points that share a value with a point of \( A \): nothing is added, for every \( A \), exactly when \( f \) is injective. Pulling back and pushing forwards removes from \( B \) the points that are never hit: nothing is removed, for every \( B \), exactly when \( f \) is surjective.
+So the two round trips measure the two failures of Section 1.4. Pushing forwards and pulling back adds to \( A \) the points that share a value with a point of \( A \): nothing is added, for every \( A \), exactly when \( f \) is injective. Pulling back and pushing forwards removes from \( B \) the points that are never hit: nothing is removed, for every \( B \), exactly when \( f \) is surjective.
 
 ## Two readings of the inverse symbol
 
@@ -414,7 +414,7 @@ So the two round trips measure the two failures of Section 6.4. Pushing forwards
 The symbol \( f^{-1} \) now has two uses. For **every** function \( f \colon X \to Y \) and every \( B \subseteq Y \), \( f^{-1}(B) \) is the preimage of @def-preimage. For a **bijection** \( f \), \( f^{-1} \colon Y \to X \) is also the inverse function of @def-inverse-function, and then \( f^{-1}(B) \) could also be read as the image of \( B \) under that function. The two readings give the same set. Write \( g \) for the inverse function; both sets are subsets of \( X \). If \( x = g(b) \) with \( b \in B \), then \( f(x) = f(g(b)) = b \in B \), since \( f \circ g = \id_Y \), so \( x \) lies in the preimage. If \( x \in X \) and \( f(x) \in B \), then \( x = g(f(x)) \in g(B) \), since \( g \circ f = \id_X \). So the two readings name the same set, and the notation is never ambiguous. When \( f \) is not a bijection only the first reading exists.
 :::
 
-For example, \( a(x) = 3x - 2 \) on \( \nR \) is a bijection with inverse \( a^{-1}(y) = (y + 2)/3 \) (Section 6.5). The preimage \( a^{-1}([1, 4]) \) is \( \{ x \in \nR : 1 \le 3x - 2 \le 4 \} = [1, 2] \), and the image of \( [1, 4] \) under the inverse function is \( \{ (y + 2)/3 : y \in [1, 4] \} = [1, 2] \) as well.
+For example, \( a(x) = 3x - 2 \) on \( \nR \) is a bijection with inverse \( a^{-1}(y) = (y + 2)/3 \) (Section 1.5). The preimage \( a^{-1}([1, 4]) \) is \( \{ x \in \nR : 1 \le 3x - 2 \le 4 \} = [1, 2] \), and the image of \( [1, 4] \) under the inverse function is \( \{ (y + 2)/3 : y \in [1, 4] \} = [1, 2] \) as well.
 
 ## Exercises
 
@@ -463,9 +463,9 @@ Compute each set, and prove each equality by two inclusions or by a chain of equ
 ::: {.solution}
 (a) The image is \( \nZ_{>0} \). \( (\subseteq) \) If \( y = m - n \) with \( m > n \), then \( y \) is an integer and \( y > 0 \), so \( y \in \nZ_{>0} \). \( (\supseteq) \) Let \( k \in \nZ_{>0} \). The pair \( (k, 0) \) lies in \( \nN \times \nN \), has \( k > 0 \), and \( d(k, 0) = k \); so \( k \) is in the image. The preimage is \( d^{-1}(\{0\}) = \{ (m, n) \in \nN \times \nN : m = n \} = \{ (n, n) : n \in \nN \} \), since \( m - n = 0 \) exactly when \( m = n \).
 
-(b) By the definition of the indicator (Section 6.4), \( \ind_{[0, 1]}(x) = 1 \) for \( x \in [0, 1] \) and \( 0 \) otherwise. So \( \ind_{[0, 1]}^{-1}(\{1\}) = [0, 1] \) and \( \ind_{[0, 1]}^{-1}(\{0\}) = \nR \setminus [0, 1] \), each a chain of one equivalence. The image \( \ind_{[0, 1]}([2, 3]) = \{0\} \): every point of \( [2, 3] \) lies outside \( [0, 1] \) and is sent to \( 0 \), and \( 0 \) is hit, for instance by \( 2 \).
+(b) By the definition of the indicator (Section 1.4), \( \ind_{[0, 1]}(x) = 1 \) for \( x \in [0, 1] \) and \( 0 \) otherwise. So \( \ind_{[0, 1]}^{-1}(\{1\}) = [0, 1] \) and \( \ind_{[0, 1]}^{-1}(\{0\}) = \nR \setminus [0, 1] \), each a chain of one equivalence. The image \( \ind_{[0, 1]}([2, 3]) = \{0\} \): every point of \( [2, 3] \) lies outside \( [0, 1] \) and is sent to \( 0 \), and \( 0 \) is hit, for instance by \( 2 \).
 
-(c) Write \( g(x) = (x - 1)^2 - 1 \). The image is \( g([0, 3]) = [-1, 3] \). \( (\subseteq) \) If \( 0 \le a \le 3 \), then \( -1 \le a - 1 \le 2 \), so \( \abs{a - 1} \le 2 \), and hence \( 0 \le (a - 1)^2 = \abs{a - 1}^2 \le 4 \) by @thm-squares-order applied to \( \abs{a - 1} \) and \( 2 \), and \( -1 \le g(a) \le 3 \). \( (\supseteq) \) Let \( -1 \le y \le 3 \), and take \( a \coloneqq 1 + \sqrt{y + 1} \). Then \( 0 \le \sqrt{y + 1} \le 2 \), so \( a \in [1, 3] \subseteq [0, 3] \), and \( g(a) = (y + 1) - 1 = y \). For the preimages: \( g(x) = 0 \iff x(x - 2) = 0 \iff x \in \{0, 2\} \), so \( g^{-1}(\{0\}) = \{0, 2\} \); and \( -1 \le g(x) \le 0 \iff 0 \le (x - 1)^2 \le 1 \iff \abs{x - 1} \le 1 \iff x \in [0, 2] \), so \( g^{-1}([-1, 0]) = [0, 2] \).
+(c) Write \( g(x) = (x - 1)^2 - 1 \). The image is \( g([0, 3]) = [-1, 3] \). \( (\subseteq) \) If \( 0 \le a \le 3 \), then \( -1 \le a - 1 \le 2 \), so \( \abs{a - 1} \le 2 \), and hence \( 0 \le (a - 1)^2 = \abs{a - 1}^2 \le 4 \) by @fd1:thm-squares-order applied to \( \abs{a - 1} \) and \( 2 \), and \( -1 \le g(a) \le 3 \). \( (\supseteq) \) Let \( -1 \le y \le 3 \), and take \( a \coloneqq 1 + \sqrt{y + 1} \). Then \( 0 \le \sqrt{y + 1} \le 2 \), so \( a \in [1, 3] \subseteq [0, 3] \), and \( g(a) = (y + 1) - 1 = y \). For the preimages: \( g(x) = 0 \iff x(x - 2) = 0 \iff x \in \{0, 2\} \), so \( g^{-1}(\{0\}) = \{0, 2\} \); and \( -1 \le g(x) \le 0 \iff 0 \le (x - 1)^2 \le 1 \iff \abs{x - 1} \le 1 \iff x \in [0, 2] \), so \( g^{-1}([-1, 0]) = [0, 2] \).
 :::
 
 ::: {#exr-images-and-preimages-b2}
@@ -482,7 +482,7 @@ Let \( f \colon X \to Y \) be a function. Prove each law directly, by two inclus
 ::: {.solution}
 (a) \( (\subseteq) \) Let \( y \in f(A \cup B) \). There is \( c \in A \cup B \) with \( f(c) = y \); name it \( c \) \( [\rulename{\exists E}] \). By @def-set-operations, \( c \in A \) or \( c \in B \). *Case 1:* \( c \in A \). Then \( y \in f(A) \), with witness \( c \) \( [\rulename{\exists I}] \), so \( y \in f(A) \cup f(B) \). *Case 2:* \( c \in B \). Then \( y \in f(B) \), with witness \( c \) \( [\rulename{\exists I}] \), so \( y \in f(A) \cup f(B) \). \( (\supseteq) \) Let \( y \in f(A) \cup f(B) \). *Case 1:* \( y \in f(A) \). There is \( a \in A \) with \( f(a) = y \); name it \( a \) \( [\rulename{\exists E}] \). Then \( a \in A \cup B \), so \( y \in f(A \cup B) \), with witness \( a \) \( [\rulename{\exists I}] \). *Case 2:* \( y \in f(B) \) is the same with \( B \) in place of \( A \). In either case \( y \in f(A \cup B) \).
 
-(b) Both sides are subsets of \( X \). For \( x \in X \): \( x \in f^{-1}(C \setminus D) \) if and only if \( f(x) \in C \setminus D \) (@def-preimage) if and only if \( f(x) \in C \) and \( f(x) \notin D \) (@def-set-operations) if and only if \( x \in f^{-1}(C) \) and \( x \notin f^{-1}(D) \) (@def-preimage, and @exm-iff-negations for the second clause) if and only if \( x \in f^{-1}(C) \setminus f^{-1}(D) \). No step names or exhibits a witness, so no step carries a tag: this is the difference between (a) and (b).
+(b) Both sides are subsets of \( X \). For \( x \in X \): \( x \in f^{-1}(C \setminus D) \) if and only if \( f(x) \in C \setminus D \) (@def-preimage) if and only if \( f(x) \in C \) and \( f(x) \notin D \) (@def-set-operations) if and only if \( x \in f^{-1}(C) \) and \( x \notin f^{-1}(D) \) (@def-preimage, and @fd1:exm-iff-negations for the second clause) if and only if \( x \in f^{-1}(C) \setminus f^{-1}(D) \). No step names or exhibits a witness, so no step carries a tag: this is the difference between (a) and (b).
 :::
 
 ::: {#exr-images-and-preimages-b3}
@@ -524,7 +524,7 @@ Suppose \( a \in B \). Then \( y = f(a) \in f(B) \), with witness \( a \) \( [\r
 
 (c) \( (\Leftarrow) \) Suppose \( f \) is injective. By (a) it suffices to show \( f(A \setminus B) \subseteq f(A) \setminus f(B) \). Let \( y \in f(A \setminus B) \), and name \( a \in A \setminus B \) with \( f(a) = y \). Then \( y \in f(A) \), with witness \( a \). Suppose \( y \in f(B) \), and name \( b \in B \) with \( f(b) = y \). Then \( f(a) = f(b) \), so \( a = b \) by injectivity, and \( a \in B \), contradicting \( a \in A \setminus B \). Hence \( y \notin f(B) \), and \( y \in f(A) \setminus f(B) \).
 
-\( (\Rightarrow) \) Suppose equality holds for all \( A, B \subseteq X \). Let \( x_1, x_2 \in X \) with \( f(x_1) = f(x_2) \), and take \( A \coloneqq \{x_1\} \), \( B \coloneqq \{x_2\} \). Then \( f(A) = \{f(x_1)\} = f(B) \), so \( f(A \setminus B) = f(A) \setminus f(B) = \emptyset \). Suppose \( x_1 \ne x_2 \). Then \( x_1 \in A \setminus B \), so \( f(x_1) \in f(A \setminus B) = \emptyset \), which is impossible. Hence \( x_1 = x_2 \), by \( \rulename{RAA} \) (@def-rule-raa), and \( f \) is injective.
+\( (\Rightarrow) \) Suppose equality holds for all \( A, B \subseteq X \). Let \( x_1, x_2 \in X \) with \( f(x_1) = f(x_2) \), and take \( A \coloneqq \{x_1\} \), \( B \coloneqq \{x_2\} \). Then \( f(A) = \{f(x_1)\} = f(B) \), so \( f(A \setminus B) = f(A) \setminus f(B) = \emptyset \). Suppose \( x_1 \ne x_2 \). Then \( x_1 \in A \setminus B \), so \( f(x_1) \in f(A \setminus B) = \emptyset \), which is impossible. Hence \( x_1 = x_2 \), by \( \rulename{RAA} \) (@fd1:def-rule-raa), and \( f \) is injective.
 
 **Marking scheme.** (10 points)
 
@@ -533,7 +533,7 @@ Suppose \( a \in B \). Then \( y = f(a) \in f(B) \), with witness \( a \) \( [\r
 - 3: (c) \( (\Leftarrow) \) names two witnesses, \( a \in A \setminus B \) and \( b \in B \), and uses injectivity to identify them.
 - 2: (c) \( (\Rightarrow) \) applies the hypothesis to one-point sets (or any sets that separate \( x_1 \) from \( x_2 \)) and concludes \( x_1 = x_2 \).
 
-Fatal errors (0 for the step): using one name for the witnesses of \( y \in f(A \setminus B) \) and \( y \in f(B) \) (entry (N4) of Chapter 5's catalogue); in \( (\Rightarrow) \), assuming injectivity to compute \( f(A \setminus B) \).
+Fatal errors (0 for the step): using one name for the witnesses of \( y \in f(A \setminus B) \) and \( y \in f(B) \) (entry (N4) of *Logic and Proof*, Chapter 5's catalogue); in \( (\Rightarrow) \), assuming injectivity to compute \( f(A \setminus B) \).
 :::
 
 ::: {#exr-images-and-preimages-c2}
@@ -553,7 +553,7 @@ A student proves the following claim: *if \( f \colon X \to Y \) is injective an
 ::: {.solution}
 (a) The claim is true: it is the \( (\Leftarrow) \) half of @prp-image-preimage (a).
 
-(b) Line (3) fails. The statement \( f(x) \in f(A) \) says only that \( f(a) = f(x) \) for **some** \( a \in A \) (@def-image). To use it, the proof must name that witness by \( \exists \)E, with a fresh name. Line (3) skips the \( \exists \)E and silently takes the witness to be \( x \) itself. The name \( x \) is already in use (line (1) introduced it), so the step breaks the fresh-name condition of \( \exists \)E (Chapter 4, Section 4.6), the condition behind entry (N4) of the catalogue of Chapter 5. The tell is that injectivity, a hypothesis, is never used: an argument that ignores a necessary hypothesis cannot be right.
+(b) Line (3) fails. The statement \( f(x) \in f(A) \) says only that \( f(a) = f(x) \) for **some** \( a \in A \) (@def-image). To use it, the proof must name that witness by \( \exists \)E, with a fresh name. Line (3) skips the \( \exists \)E and silently takes the witness to be \( x \) itself. The name \( x \) is already in use (line (1) introduced it), so the step breaks the fresh-name condition of \( \exists \)E (*Logic and Proof*, Chapter 4, *Logic and Proof*, Section 4.6), the condition behind entry (N4) of the catalogue of *Logic and Proof*, Chapter 5. The tell is that injectivity, a hypothesis, is never used: an argument that ignores a necessary hypothesis cannot be right.
 
 (c) A counterexample to the step "\( f(x) \in f(A) \), so \( x \in A \)" needs a non-injective function, since for injective ones the conclusion of the step is true. Take \( f(x) = x^2 \) on \( \nR \), \( A = \{1\} \), and \( x = -1 \). Then \( f(x) = 1 \in f(A) \), but \( x \notin A \).
 
@@ -588,7 +588,7 @@ If \( I = \emptyset \), both sides are \( X \), and the argument above covers th
 - 1: the ambient sets are named (\( x \in X \), \( f(x) \in Y \)) or the case \( I = \emptyset \) is handled.
 - 2: a correct example, with both sides computed.
 
-A single chain of equivalences, each step justified, earns the first seven points. Fatal errors (0 for the step): fixing one \( i \) and concluding for all \( i \) (entry (N1) of Chapter 5's catalogue); stating the example's two sides without checking an element that lies in one and not the other.
+A single chain of equivalences, each step justified, earns the first seven points. Fatal errors (0 for the step): fixing one \( i \) and concluding for all \( i \) (entry (N1) of *Logic and Proof*, Chapter 5's catalogue); stating the example's two sides without checking an element that lies in one and not the other.
 :::
 
 ### R. Review
@@ -641,7 +641,7 @@ Write the proof as plain prose, the way a mathematician would. Then say which se
 
 *The boxes.* "Suppose \( A \subseteq B \)" opens the \( \rulename{{\to}I} \) box \( \lines{1}{17} \); its closing line 18 is the silent frame of the whole proof. "Let \( S \in \powerset{A} \)" opens two boxes at once: the \( \rulename{\forall I} \) box for \( S_0 \) and the \( \rulename{{\to}I} \) box \( \lines{3}{14} \) inside it. "Let \( x \in S \)" likewise opens the \( \rulename{\forall I} \) box for \( x_0 \) and the \( \rulename{{\to}I} \) box \( \lines{6}{10} \). "Hence \( S \subseteq B \)" closes the two inner boxes (lines 11 and 12) and rewinds the definition (line 13). "This proves \( \powerset{A} \subseteq \powerset{B} \)" closes the \( S \) boxes (lines 15, 16) and rewinds (line 17).
 
-This is the passage from level 0 to level 3 of Chapter 5 (Section 5.3): each "let" carries a \( \rulename{\forall I} \) box together with the \( \rulename{{\to}I} \) box of a subset statement, the \( \rulename{\forall E} \) and \( \rulename{{\to}E} \) lines 7–10 become the two "since" clauses, and the unwinding lines 2, 4, 5 and 13, 14, 17 go silent or become a "that is".
+This is the passage from level 0 to level 3 of *Logic and Proof*, Chapter 5 (*Logic and Proof*, Section 5.3): each "let" carries a \( \rulename{\forall I} \) box together with the \( \rulename{{\to}I} \) box of a subset statement, the \( \rulename{\forall E} \) and \( \rulename{{\to}E} \) lines 7–10 become the two "since" clauses, and the unwinding lines 2, 4, 5 and 13, 14, 17 go silent or become a "that is".
 :::
 
 ::: {#exr-images-and-preimages-r2}
@@ -668,7 +668,7 @@ P & Q & R & P \wedge \neg (Q \wedge \neg R) & (P \wedge \neg Q) \wedge \neg R \\
 \]
 The columns differ in the first and third rows. Take the first row: put the point \( 1 \) in exactly the sets whose statement is true, all three, so \( A = B = C = \{1\} \). Then \( B \setminus C = \emptyset \), so \( A \setminus (B \setminus C) = \{1\} \); and \( A \setminus B = \emptyset \), so \( (A \setminus B) \setminus C = \emptyset \). The two sides differ, so the identity is false. (The third row gives \( A = C = \{1\} \), \( B = \emptyset \), with the same two answers.)
 
-Why a table suffices: each side's membership condition is a formula in \( P \), \( Q \), \( R \), and a row with the two columns different gives sets directly, which are then checked by computing both sides, as above. The truth tables of Chapter 3 add one more thing: by @cor-refuting-row, the first row shows that the sequent \( P \wedge \neg(Q \wedge \neg R) \vdash (P \wedge \neg Q) \wedge \neg R \) is not derivable, so the propositional rules cannot carry a point of the left side into the right side.
+Why a table suffices: each side's membership condition is a formula in \( P \), \( Q \), \( R \), and a row with the two columns different gives sets directly, which are then checked by computing both sides, as above. The truth tables of *Logic and Proof*, Chapter 3 add one more thing: by @fd1:cor-refuting-row, the first row shows that the sequent \( P \wedge \neg(Q \wedge \neg R) \vdash (P \wedge \neg Q) \wedge \neg R \) is not derivable, so the propositional rules cannot carry a point of the left side into the right side.
 :::
 
 ::: {#exr-images-and-preimages-r3}
@@ -678,7 +678,7 @@ Derive \( (P \wedge \neg Q) \to R \vdash P \to (Q \vee R) \). Then read the deri
 :::
 
 ::: {.solution}
-The goal is an implication, so open a box on \( P \) with goal \( Q \vee R \). The premise can fire only on \( P \wedge \neg Q \), which needs \( \neg Q \), and nothing gives \( \neg Q \) outright. So split on \( Q \vee \neg Q \), by excluded middle (@prp-excluded-middle): in the case \( Q \) the goal is immediate, and in the case \( \neg Q \) the premise gives \( R \).
+The goal is an implication, so open a box on \( P \) with goal \( Q \vee R \). The premise can fire only on \( P \wedge \neg Q \), which needs \( \neg Q \), and nothing gives \( \neg Q \) outright. So split on \( Q \vee \neg Q \), by excluded middle (@fd1:prp-excluded-middle): in the case \( Q \) the goal is immediate, and in the case \( \neg Q \) the premise gives \( R \).
 
 ```{=latex}
 \begin{center}
@@ -704,9 +704,9 @@ $\begin{nd}
 \end{center}
 ```
 
-*As sets.* Suppose \( A \setminus B \subseteq C \), and let \( x \in A \). Take \( P \), \( Q \), \( R \) to be \( x \in A \), \( x \in B \), \( x \in C \). By @def-subset and @def-set-operations, the hypothesis at this \( x \) is \( (P \wedge \neg Q) \to R \), and the goal \( x \in B \cup C \) is \( Q \vee R \). The derivation, used as a derived rule (@def-derived-rule), gives \( P \to (Q \vee R) \), and with \( P \) it gives \( x \in B \cup C \). In prose: either \( x \in B \), and then \( x \in B \cup C \); or \( x \notin B \), and then \( x \in A \setminus B \subseteq C \), so \( x \in C \subseteq B \cup C \). Since \( x \) was arbitrary, \( A \subseteq B \cup C \).
+*As sets.* Suppose \( A \setminus B \subseteq C \), and let \( x \in A \). Take \( P \), \( Q \), \( R \) to be \( x \in A \), \( x \in B \), \( x \in C \). By @def-subset and @def-set-operations, the hypothesis at this \( x \) is \( (P \wedge \neg Q) \to R \), and the goal \( x \in B \cup C \) is \( Q \vee R \). The derivation, used as a derived rule (@fd1:def-derived-rule), gives \( P \to (Q \vee R) \), and with \( P \) it gives \( x \in B \cup C \). In prose: either \( x \in B \), and then \( x \in B \cup C \); or \( x \notin B \), and then \( x \in A \setminus B \subseteq C \), so \( x \in C \subseteq B \cup C \). Since \( x \) was arbitrary, \( A \subseteq B \cup C \).
 
-The classical step is line 3, the case split "\( x \in B \) or \( x \notin B \)" by excluded middle, which is derived with \( \rulename{RAA} \) (@def-rule-raa).
+The classical step is line 3, the case split "\( x \in B \) or \( x \notin B \)" by excluded middle, which is derived with \( \rulename{RAA} \) (@fd1:def-rule-raa).
 :::
 
 ::: {#exr-images-and-preimages-r4}
@@ -722,40 +722,40 @@ Suppose \( S \) were such a set. Let \( T \coloneqq \{ s \in S : s \text{ is a s
 :::
 
 <!-- dependency ledger
-def-image (claim): (opening question) squares of points of [-1, 0] and [0, 1] fill [0, 1]; preimages of [0, 1] and [1, 4] under squaring | school facts (Part 0 convention; square roots proved in Chapter 11); worked in exm-images-of-square
-def-image (claim): exists-E with a fresh name; exists-I | ch04 (promised): def-rules-existential, def-rule-existential-introduction (prose pointers, Sections 4.5-4.6)
-def-image (claim): f(X) is the range of Section 6.4 | def-function (Section 6.4, prose)
-exm-images-finite (example): a set lists a repeated element once | def-set-equality (Section 6.1, prose)
-def-preimage (claim): open sets and continuity | ch24 (prose pointer; nothing depends on it)
-exm-images-of-square (example): x^2 >= 0; square roots of non-negative reals; x^2 = |x|^2; sign cases for |x| | school facts (Part 0 convention); square roots proved in Chapter 11
-exm-images-of-square (example): for s, t >= 0, s <= t iff s^2 <= t^2 (also in exr-images-and-preimages-b1 (c)) | thm-squares-order (ch02, cited)
-exm-sets-of-numbers-as-images (example): -A, cA, A + B as Chapter 11 writes them | Chapter 11 (Sections 11.3, 11.4; later chapter, prose pointer)
+def-image (claim): (opening question) squares of points of [-1, 0] and [0, 1] fill [0, 1]; preimages of [0, 1] and [1, 4] under squaring | school facts (Part 0 convention; square roots proved in AN1.1); worked in exm-images-of-square
+def-image (claim): exists-E with a fresh name; exists-I | F1.4 (promised): def-rules-existential, def-rule-existential-introduction (prose pointers, F1.4 §05-F1.4 §06)
+def-image (claim): f(X) is the range of F2.1 §04 | def-function (F2.1 §04, prose)
+exm-images-finite (example): a set lists a repeated element once | def-set-equality (F2.1 §01, prose)
+def-preimage (claim): open sets and continuity | AN2.1 (prose pointer; nothing depends on it)
+exm-images-of-square (example): x^2 >= 0; square roots of non-negative reals; x^2 = |x|^2; sign cases for |x| | school facts (Part 0 convention); square roots proved in AN1.1
+exm-images-of-square (example): for s, t >= 0, s <= t iff s^2 <= t^2 (also in exr-images-and-preimages-b1 (c)) | thm-squares-order (F1.2, cited)
+exm-sets-of-numbers-as-images (example): -A, cA, A + B as AN1.1 writes them | AN1.1 (AN1.1 §03, AN1.1 §04; later chapter, prose pointer)
 exm-sets-of-numbers-as-images (example): p in A x B iff p = (a, b) with a in A, b in B | def-cartesian-product (cited)
 thm-preimage-operations (proof): two subsets of X are equal iff they have the same elements among points of X | inline, from def-set-equality (cited)
-thm-preimage-operations (proof): chaining equivalences (transitivity of iff) | prp-provable-equivalence-basics (ch02), used silently
-thm-preimage-operations (proof): replacing equivalent statements under "for some i" / "for every i" | inline sentence in the proof (exists-E then exists-I; forall-E then forall-I); ch04 (promised) for the rules
+thm-preimage-operations (proof): chaining equivalences (transitivity of iff) | prp-provable-equivalence-basics (F1.2), used silently
+thm-preimage-operations (proof): replacing equivalent statements under "for some i" / "for every i" | inline sentence in the proof (exists-E then exists-I; forall-E then forall-I); F1.4 (promised) for the rules
 thm-preimage-operations (proof): negating both sides of an iff | exm-iff-negations (cited)
-prp-preimage-composition (claim): composites of continuous maps | ch24 (prose pointer)
+prp-preimage-composition (claim): composites of continuous maps | AN2.1 (prose pointer)
 prp-preimage-composition (claim): (closing remark) (g o f)^{-1} = f^{-1} o g^{-1} for bijections, as a comparison | exr-inverses-b2 (proved in its solution); no proof, idea or claim of the text rests on it
-thm-image-union (proof): exists-E side condition (conclusion free of the witness) | ch04 (promised): def-rules-existential (prose pointer, Section 4.6)
-exm-image-two-witnesses (solution): fresh-name condition; catalogue entry (N4) | ch04 (promised) Section 4.6; ch05 (promised): exm-not-allowed-catalogue (prose pointer, Section 5.6)
-thm-image-intersection (proof): c in {x_1} gives c = x_1 | def-set-builder / listing (Section 6.1)
+thm-image-union (proof): exists-E side condition (conclusion free of the witness) | F1.4 (promised): def-rules-existential (prose pointer, F1.4 §06)
+exm-image-two-witnesses (solution): fresh-name condition; catalogue entry (N4) | F1.4 (promised) F1.4 §06; F1.5 (promised): exm-not-allowed-catalogue (prose pointer, F1.5 §06)
+thm-image-intersection (proof): c in {x_1} gives c = x_1 | def-set-builder / listing (F2.1 §01)
 prp-image-preimage (proof): A = f^{-1}(f(A)) from two inclusions | prp-subset-antisymmetric (cited)
-prp-image-preimage (proof): x_2 in {x_1} gives x_2 = x_1; {x_1} is a subset of X when x_1 in X | def-set-builder / listing (Section 6.1); def-subset (Section 6.1)
+prp-image-preimage (proof): x_2 in {x_1} gives x_2 = x_1; {x_1} is a subset of X when x_1 in X | def-set-builder / listing (F2.1 §01); def-subset (F2.1 §01)
 prp-image-preimage (proof): f^{-1}(Y) = X | def-preimage (cited), as in exm-images-finite
-prp-image-preimage (proof): B cap Y = B for B subset of Y | inline, from def-subset and the definition of intersection (Section 6.2)
-thm-image-intersection (proof): substituting equals (=E): a = b and b in B give a in B; c = x_1 and c = x_2 give x_1 = x_2 | def-rules-equality (Section 4.7), used silently
-prp-image-preimage (proof): substituting equals (=E): a = x and a in A give x in A | def-rules-equality (Section 4.7), used silently
-exr-images-and-preimages-c1 (solution): substituting equals (=E): a = b and b in B give a in B | def-rules-equality (Section 4.7), used silently
-prp-image-preimage (claim): (two readings remark and example) a(x) = 3x - 2 and its inverse; interval arithmetic | exm-two-sided-inverses (Section 6.5); school facts
+prp-image-preimage (proof): B cap Y = B for B subset of Y | inline, from def-subset and the definition of intersection (F2.1 §02)
+thm-image-intersection (proof): substituting equals (=E): a = b and b in B give a in B; c = x_1 and c = x_2 give x_1 = x_2 | def-rules-equality (F1.4 §07), used silently
+prp-image-preimage (proof): substituting equals (=E): a = x and a in A give x in A | def-rules-equality (F1.4 §07), used silently
+exr-images-and-preimages-c1 (solution): substituting equals (=E): a = b and b in B give a in B | def-rules-equality (F1.4 §07), used silently
+prp-image-preimage (claim): (two readings remark and example) a(x) = 3x - 2 and its inverse; interval arithmetic | exm-two-sided-inverses (F2.1 §05); school facts
 prp-image-preimage (claim): (two readings remark) for a bijection the preimage f^{-1}(B) equals the image of B under the inverse function | inline two-inclusion argument in the remark, from def-inverse-function (cited: g o f = id_X, f o g = id_Y); exr-images-and-preimages-b3 writes it out with tags
 exr-images-and-preimages-a1 (solution): numeric preimages under squaring | school facts; exm-images-of-square
 exr-images-and-preimages-b1 (solution): m > n in N gives m - n in Z_{>0}; a positive integer is in N; m - n = 0 iff m = n; (x - 1)^2 algebra; -1 <= t <= 2 gives |t| <= 2, and t^2 = |t|^2; sqrt monotone | school facts (Part 0 convention)
-exr-images-and-preimages-b1 (solution): the indicator function | Section 6.4 (ind_A defined there)
+exr-images-and-preimages-b1 (solution): the indicator function | F2.1 §04 (ind_A defined there)
 exr-images-and-preimages-c1 (solution): RAA for x_1 = x_2 | def-rule-raa (cited)
-exr-images-and-preimages-c2 (solution): fresh-name condition; catalogue (N4) | ch04 (promised) Section 4.6; ch05 (promised): exm-not-allowed-catalogue (prose pointer)
-exr-images-and-preimages-c3 (solution): marking-scheme reference to catalogue (N1) | ch05 (promised): exm-not-allowed-catalogue (prose pointer)
-exr-images-and-preimages-r1 (solution): levels of proof | ch05 (promised): def-levels-of-proof (prose pointer, Section 5.3)
-exr-images-and-preimages-r1 (solution): forall-I / forall-E rules and flagged boxes | ch04 (promised): def-rules-universal (prose pointer)
-exr-images-and-preimages-r4 (solution): every set x is an element of {x}; "is a singleton" is a property usable in specification | def-set-builder (Section 6.1, listing)
+exr-images-and-preimages-c2 (solution): fresh-name condition; catalogue (N4) | F1.4 (promised) F1.4 §06; F1.5 (promised): exm-not-allowed-catalogue (prose pointer)
+exr-images-and-preimages-c3 (solution): marking-scheme reference to catalogue (N1) | F1.5 (promised): exm-not-allowed-catalogue (prose pointer)
+exr-images-and-preimages-r1 (solution): levels of proof | F1.5 (promised): def-levels-of-proof (prose pointer, F1.5 §03)
+exr-images-and-preimages-r1 (solution): forall-I / forall-E rules and flagged boxes | F1.4 (promised): def-rules-universal (prose pointer)
+exr-images-and-preimages-r4 (solution): every set x is an element of {x}; "is a singleton" is a property usable in specification | def-set-builder (F2.1 §01, listing)
 -->

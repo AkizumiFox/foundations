@@ -662,14 +662,14 @@ Fatal errors (0 for the step): naming anything but \( \rulename{\neg I} \) for t
 :::
 
 <!-- dependency ledger
-prp-modus-tollens (claim): the motivating arguments: n even gives n^2 even; x >= 1 gives x^2 >= x >= 1; x^2 < 1 and x < 1 are the exact negations of x^2 >= 1 and x >= 1 | school algebra, shown inline; ch11 (promised)
+prp-modus-tollens (claim): the motivating arguments: n even gives n^2 even; x >= 1 gives x^2 >= x >= 1; x^2 < 1 and x < 1 are the exact negations of x^2 >= 1 and x >= 1 | school algebra, shown inline; AN1.1 (promised)
 prp-contrapositive (claim): no derivation of the converse with the rules so far exists | stated without proof and marked so; nothing depends on it
 def-derived-rule (claim): pasting a derivation (repetitions, shifted line numbers) keeps every citation available; iterated expansion terminates | argued inline in the paragraph after the definition, from def-derivation's scope rule and (D3)
-def-derived-rule (claim): letters of a derived sequent may be replaced uniformly by any statements | def-derivable and def-rule-schema (cited); made exact in ch03 (substitution, prose pointer)
+def-derived-rule (claim): letters of a derived sequent may be replaced uniformly by any statements | def-derivable and def-rule-schema (cited); made exact in F1.3 (substitution, prose pointer)
 exm-modus-tollens-instance (example): x > 2 implies x^2 > 4; x^2 <= 4 is the negation of x^2 > 4; x <= 2 is the negation of x > 2 | school algebra, shown inline
 exm-modus-tollens-instance (example): (the green card) a card's color side has one color, so green is not red | stated in the paragraph; exm-wason-selection (cited)
-exm-modus-tollens-instance (example): the passage from the contrapositive back to the claim | ch02 s05 prp-contrapositive-converse (prose pointer, later section of this chapter; nothing here depends on it)
-exm-square-even-via-contrapositive (example): (E1)-(E3) and the parity computation | school facts stated in Section 2.1 (thm-square-even-implies-even)
+exm-modus-tollens-instance (example): the passage from the contrapositive back to the claim | F1.2 s05 prp-contrapositive-converse (prose pointer, later section of this chapter; nothing here depends on it)
+exm-square-even-via-contrapositive (example): (E1)-(E3) and the parity computation | school facts stated in F1.2 §01 (thm-square-even-implies-even)
 exr-derived-rules-b1 (solution): -1 < 0; x^2 = 1 gives x = 1 or x = -1 | school algebra; the second is supplied by the item
-exr-derived-rules-c3 (solution): (2k)^2 = 2(2k^2); (E1), (E2) | computation inline; facts of Section 2.1
+exr-derived-rules-c3 (solution): (2k)^2 = 2(2k^2); (E1), (E2) | computation inline; facts of F1.2 §01
 -->

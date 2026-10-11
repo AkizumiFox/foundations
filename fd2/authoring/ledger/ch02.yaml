@@ -1,5 +1,5 @@
-chapter: 7
-dir: ch07-relations-and-induction
+chapter: 2
+dir: ch02-relations-and-induction
 items:
 - key: lem-naturals-arithmetic
   kind: lem

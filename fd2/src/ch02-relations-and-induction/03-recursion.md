@@ -1,10 +1,10 @@
 # Definition by Recursion
 
-Since school we have defined powers by two clauses: \( u^0 = 1 \), and \( u^{n+1} = u^n u \). Sums \( a_1 + \dots + a_n \), factorials and many sequences are defined the same way: a starting value, and a rule that produces the next value from the last. Chapter 3 used induction to prove facts about such objects, such as \( 3^n \ge 2n + 1 \) in @exm-power-inequality. But induction proves facts about a function that **already exists**, and here the function is what we want to obtain. This section proves that two such clauses always define exactly one function on \( \nN \), and then uses the theorem to define sums, products and powers properly and to prove their first laws.
+Since school we have defined powers by two clauses: \( u^0 = 1 \), and \( u^{n+1} = u^n u \). Sums \( a_1 + \dots + a_n \), factorials and many sequences are defined the same way: a starting value, and a rule that produces the next value from the last. *Logic and Proof*, Chapter 3 used induction to prove facts about such objects, such as \( 3^n \ge 2n + 1 \) in @fd1:exm-power-inequality. But induction proves facts about a function that **already exists**, and here the function is what we want to obtain. This section proves that two such clauses always define exactly one function on \( \nN \), and then uses the theorem to define sums, products and powers properly and to prove their first laws.
 
 ## Definitions that define something
 
-Chapter 3 met the same question for formulas. A recursive definition on formulas gives a value for each atom and a rule for each way of building a compound formula, and @thm-structural-recursion showed that such clauses define exactly one function, because unique readability leaves no choice of clause. On \( \nN \) the clauses are simpler: one starting value at \( 0 \), and one rule for passing from \( n \) to \( n + 1 \). What we want to prove is this.
+*Logic and Proof*, Chapter 3 met the same question for formulas. A recursive definition on formulas gives a value for each atom and a rule for each way of building a compound formula, and @fd1:thm-structural-recursion showed that such clauses define exactly one function, because unique readability leaves no choice of clause. On \( \nN \) the clauses are simpler: one starting value at \( 0 \), and one rule for passing from \( n \) to \( n + 1 \). What we want to prove is this.
 
 *A starting value and a rule for the next value determine exactly one sequence.*
 
@@ -32,13 +32,13 @@ Uniqueness is an ordinary induction: two solutions agree at \( 0 \), and if they
 :::
 
 ::: {.proof}
-For \( n \in \nN \), the set \( \{0, \dots, n\} = \{ k \in \nN : k \le n \} \) of Section 7.1 contains \( 0 \), since \( 0 \le n \) by @lem-naturals-arithmetic (a). Call a function \( h \colon \{0, \dots, n\} \to X \) a **partial solution up to \( n \)** if \( h(0) = a \) and \( h(k + 1) = g(k, h(k)) \) for every \( k \in \nN \) with \( k + 1 \le n \). (For such \( k \), both \( k \) and \( k + 1 \) lie in \( \{0, \dots, n\} \), so the equation makes sense.)
+For \( n \in \nN \), the set \( \{0, \dots, n\} = \{ k \in \nN : k \le n \} \) of Section 2.1 contains \( 0 \), since \( 0 \le n \) by @lem-naturals-arithmetic (a). Call a function \( h \colon \{0, \dots, n\} \to X \) a **partial solution up to \( n \)** if \( h(0) = a \) and \( h(k + 1) = g(k, h(k)) \) for every \( k \in \nN \) with \( k + 1 \le n \). (For such \( k \), both \( k \) and \( k + 1 \) lie in \( \{0, \dots, n\} \), so the equation makes sense.)
 
 **Step 1 (uniqueness).** Let \( f, f' \colon \nN \to X \) both satisfy the two equations, and let \( P(n) \) be "\( f(n) = f'(n) \)". \( P(0) \) holds, since \( f(0) = a = f'(0) \). If \( P(n) \) holds, then
 \[
 f(n + 1) = g\bigl(n, f(n)\bigr) = g\bigl(n, f'(n)\bigr) = f'(n + 1) ,
 \]
-so \( P(n + 1) \) holds. By @ax-induction, \( f(n) = f'(n) \) for every \( n \in \nN \). The two functions have the same domain and the same codomain, so \( f = f' \) by @prp-function-equality.
+so \( P(n + 1) \) holds. By @fd1:ax-induction, \( f(n) = f'(n) \) for every \( n \in \nN \). The two functions have the same domain and the same codomain, so \( f = f' \) by @prp-function-equality.
 
 **Step 2.**
 
@@ -47,7 +47,7 @@ For every \( n \in \nN \) there is exactly one partial solution up to \( n \).
 :::
 
 ::: {.proofofclaim}
-We use @ax-induction on \( n \).
+We use @fd1:ax-induction on \( n \).
 
 *Base case.* By @lem-naturals-arithmetic (a), every \( k \in \nN \) has \( k \ge 0 \), so \( k \le 0 \) holds only for \( k = 0 \), and \( \{0, \dots, 0\} = \{0\} \). The graph \( \{(0, a)\} \) with codomain \( X \) is a function on \( \{0\} \), since \( a \in X \): the input \( 0 \) has the one output \( a \). It is a partial solution up to \( 0 \): its value at \( 0 \) is \( a \), and the second condition is vacuous, because \( k + 1 \ge 1 > 0 \) for every \( k \in \nN \). Any partial solution up to \( 0 \) has value \( a \) at \( 0 \), so it equals this one by @prp-function-equality.
 
@@ -61,7 +61,7 @@ We check the clauses of @def-function for \( G_{n+1} \) on \( \{0, \dots, n + 1\
 
 It is a partial solution up to \( n + 1 \). Its value at \( 0 \) is \( f_n(0) = a \). Let \( k \in \nN \) with \( k + 1 \le n + 1 \), so \( k \le n \). If \( k < n \), then \( k + 1 \le n \) by @lem-naturals-arithmetic (e), and \( f_{n+1}(k + 1) = f_n(k + 1) = g(k, f_n(k)) = g(k, f_{n+1}(k)) \), because \( f_n \) is a partial solution. If \( k = n \), then \( f_{n+1}(n + 1) = g(n, f_n(n)) = g(n, f_{n+1}(n)) \) by the choice of the added pair.
 
-It is the only one. Let \( h \) be a partial solution up to \( n + 1 \). Its restriction \( h|_{\{0, \dots, n\}} \) (Section 6.4) is a partial solution up to \( n \), because the conditions on it are among the conditions on \( h \). By the induction hypothesis it is \( f_n \). So \( h(k) = f_n(k) = f_{n+1}(k) \) for \( k \le n \), and
+It is the only one. Let \( h \) be a partial solution up to \( n + 1 \). Its restriction \( h|_{\{0, \dots, n\}} \) (Section 1.4) is a partial solution up to \( n \), because the conditions on it are among the conditions on \( h \). By the induction hypothesis it is \( f_n \). So \( h(k) = f_n(k) = f_{n+1}(k) \) for \( k \le n \), and
 \[
 h(n + 1) = g\bigl(n, h(n)\bigr) = g\bigl(n, f_n(n)\bigr) = f_{n+1}(n + 1) .
 \]
@@ -93,12 +93,12 @@ where the middle equation holds because \( f_{n+1} \) is a partial solution. Thi
 The starting value was used in both halves: Step 1 needs \( f(0) = f'(0) \) as its base case, and Step 2 needs it to fix the first partial solution. The set \( \sS \) is cut out of a power set by a condition, so no family \( n \mapsto f_n \) had to be formed before the union was taken. No choice is made anywhere: at every stage the claim leaves exactly one candidate. From now on, a definition of the form "\( f(0) \coloneqq a \), \( f(n + 1) \coloneqq g(n, f(n)) \)" is legitimate whenever \( a \in X \) and \( g \) is a function \( \nN \times X \to X \), and we say that \( f \) is **defined by recursion**.
 
 ::: {.remark}
-Because the rule may depend on \( n \), the theorem also covers constructions in which the step uses outside data indexed by \( n \). Chapter 11 builds closed intervals \( I_{n+1} \) from \( I_n \) and the \( (n{+}1) \)-st number of a given list in exactly this way, with no choice principle involved. The values may be sets as well as numbers. With \( X = \powerset{\nN} \), \( A_0 \coloneqq \nN \) and \( A_{n+1} \coloneqq A_n \setminus \{n\} \) define a sequence of sets of the kind Section 6.2 promised, and an induction that follows the same two clauses shows \( A_n = \{ k \in \nN : k \ge n \} \): the base is @lem-naturals-arithmetic (a), and the step removes \( n \) from \( \{ k : k \ge n \} \), leaving \( \{ k : k > n \} = \{ k : k \ge n + 1 \} \) by @lem-naturals-arithmetic (e).
+Because the rule may depend on \( n \), the theorem also covers constructions in which the step uses outside data indexed by \( n \). *Analysis on the Real Line*, Chapter 1 builds closed intervals \( I_{n+1} \) from \( I_n \) and the \( (n{+}1) \)-st number of a given list in exactly this way, with no choice principle involved. The values may be sets as well as numbers. With \( X = \powerset{\nN} \), \( A_0 \coloneqq \nN \) and \( A_{n+1} \coloneqq A_n \setminus \{n\} \) define a sequence of sets of the kind Section 1.2 promised, and an induction that follows the same two clauses shows \( A_n = \{ k \in \nN : k \ge n \} \): the base is @lem-naturals-arithmetic (a), and the step removes \( n \) from \( \{ k : k \ge n \} \), leaving \( \{ k : k > n \} = \{ k : k \ge n + 1 \} \) by @lem-naturals-arithmetic (e).
 :::
 
 ## Starting elsewhere, looking two steps back
 
-Two variants come up constantly. Sequences are often indexed from \( 1 \), as in Section 6.4, and some recursions use the two previous values. Both reduce to the theorem.
+Two variants come up constantly. Sequences are often indexed from \( 1 \), as in Section 1.4, and some recursions use the two previous values. Both reduce to the theorem.
 
 ::: {#cor-recursion-from-base}
 [Recursion from a Base]
@@ -121,7 +121,7 @@ f(n + 1) = f'(k + 1) = g\bigl(n_0 + k, f'(k)\bigr) = g\bigl(n, f(n)\bigr) .
 *Uniqueness.* If \( \tilde f \colon D \to X \) also satisfies both equations, then \( k \mapsto \tilde f(n_0 + k) \) satisfies the equations that define \( f' \), so it is \( f' \) by the uniqueness in @thm-recursion. Hence \( \tilde f(n) = f'(n - n_0) = f(n) \) for every \( n \in D \), and \( \tilde f = f \) by @prp-function-equality.
 :::
 
-The renaming is the move that gave induction from a base (@thm-induction). The corollary covers every sequence \( (a_n)_{n \ge 1} \) given by a first term and a rule, and Chapter 11's intervals, which are listed from \( 1 \).
+The renaming is the move that gave induction from a base (@thm-induction). The corollary covers every sequence \( (a_n)_{n \ge 1} \) given by a first term and a rule, and *Analysis on the Real Line*, Chapter 1's intervals, which are listed from \( 1 \).
 
 ::: {#cor-two-step-recursion}
 [Two-Step Recursion]
@@ -179,7 +179,7 @@ The edge cases are the point of the definition. The **empty sum** is \( 0 \) and
 Three consequences are used constantly, and each is a short check from the definition.
 
 - **Finite lists.** \( \sum_{k=1}^{n} a_k \) depends only on \( a_1, \dots, a_n \). Precisely: if two sequences agree at \( 1, \dots, N \), their sums up to \( n \) agree for every \( n \le N \). Induct on \( n \) with the property "if \( n \le N \), the two sums up to \( n \) are equal". The base is \( 0 = 0 \). In the step, \( n + 1 \le N \) gives \( n \le N \), so the sums up to \( n \) agree, and the added terms \( a_{n+1} \) agree because \( 1 \le n + 1 \le N \). So a finite list \( a_1, \dots, a_N \) is summed by extending it in any way, say by \( a_k \coloneqq 0 \) for \( k > N \), and the result does not depend on the extension. The same holds for products, and for the general bounds with \( a_m, \dots, a_n \).
-- **Shifting the index.** For every integer \( p \), \( \sum_{k=m}^{n} a_k = \sum_{k=m+p}^{n+p} a_{k-p} \), because both sides unfold to \( \sum_{i=1}^{n-m+1} a_{m-1+i} \). Chapter 11's estimate of \( y^k - x^k \) uses the shift \( p = 1 \).
+- **Shifting the index.** For every integer \( p \), \( \sum_{k=m}^{n} a_k = \sum_{k=m+p}^{n+p} a_{k-p} \), because both sides unfold to \( \sum_{i=1}^{n-m+1} a_{m-1+i} \). *Analysis on the Real Line*, Chapter 1's estimate of \( y^k - x^k \) uses the shift \( p = 1 \).
 - **Splitting off the last term.** For \( m \le n + 1 \), \( \sum_{k=m}^{n+1} a_k = \sum_{k=m}^{n} a_k + a_{n+1} \). Unfold the left side to \( \sum_{i=1}^{n-m+2} a_{m-1+i} \) and apply the recursive clause; its last term is \( a_{m-1+(n-m+2)} = a_{n+1} \).
 
 ::: {#def-power}
@@ -191,19 +191,19 @@ u^0 \coloneqq 1, \qquad u^{n+1} \coloneqq u^n u .
 \]
 :::
 
-This is @thm-recursion with \( X = \nR \), \( a = 1 \) and \( g(n, x) = xu \). So \( u^1 = u^0 u = u \), and \( u^2 = uu \). The definition gives \( 0^0 = 1 \), in line with the empty product: \( u^n = \prod_{k=1}^{n} u \), since both sides obey the same two clauses and so agree by the uniqueness in @thm-recursion. Only exponents in \( \nN \) are defined here; roots \( a^{1/n} \) come in Chapter 11.
+This is @thm-recursion with \( X = \nR \), \( a = 1 \) and \( g(n, x) = xu \). So \( u^1 = u^0 u = u \), and \( u^2 = uu \). The definition gives \( 0^0 = 1 \), in line with the empty product: \( u^n = \prod_{k=1}^{n} u \), since both sides obey the same two clauses and so agree by the uniqueness in @thm-recursion. Only exponents in \( \nN \) are defined here; roots \( a^{1/n} \) come in *Analysis on the Real Line*, Chapter 1.
 
 **A sequence that approaches \( \sqrt 2 \).** Let \( X \coloneqq (0, \infty) \) and \( g(n, x) \coloneqq \tfrac12 (x + 2/x) \). Before writing a recursion, check that \( g \) maps \( X \) into \( X \): for \( x > 0 \), \( 2/x \) is defined and positive, so \( x + 2/x > 0 \), and half of it is positive. By @thm-recursion, \( a_0 \coloneqq 2 \) and \( a_{n+1} \coloneqq \tfrac12 (a_n + 2/a_n) \) define a sequence in \( (0, \infty) \). Because the check was made on \( g \), no separate induction is needed to show \( a_n > 0 \) before dividing by it. The first values are
 \[
 a_0 = 2, \qquad a_1 = \tfrac12 (2 + 1) = \tfrac32, \qquad a_2 = \tfrac12 \Bigl(\tfrac32 + \tfrac43\Bigr) = \tfrac{17}{12} ,
 \]
-and \( (17/12)^2 = 289/144 \), which exceeds \( 2 \) by \( 1/144 \). That the sequence converges to \( \sqrt 2 \) is a question for Chapter 12, where recursively defined sequences become objects of study.
+and \( (17/12)^2 = 289/144 \), which exceeds \( 2 \) by \( 1/144 \). That the sequence converges to \( \sqrt 2 \) is a question for *Analysis on the Real Line*, Chapter 2, where recursively defined sequences become objects of study.
 
 **A two-step example.** By @cor-two-step-recursion, \( a_0 = 2 \), \( a_1 = 3 \) and \( a_{n+2} = 3a_{n+1} - 2a_n \) define a unique sequence of reals (\( X = \nR \), \( h(n, x, y) = 3y - 2x \)), and its first values are \( 2, 3, 5, 9, 17 \). These are \( 2^n + 1 \). To prove it, induct on the **pair** statement \( Q(n) \): "\( a_n = 2^n + 1 \) and \( a_{n+1} = 2^{n+1} + 1 \)". \( Q(0) \) is \( 2 = 1 + 1 \) and \( 3 = 2 + 1 \). If \( Q(n) \) holds, its second half is the first half of \( Q(n + 1) \), and
 \[
 a_{n+2} = 3\bigl(2^{n+1} + 1\bigr) - 2\bigl(2^n + 1\bigr) = 2 \cdot 2^{n+1} + 1 = 2^{n+2} + 1 ,
 \]
-where \( 2 \cdot 2^n = 2^n \cdot 2 = 2^{n+1} \) and \( 2 \cdot 2^{n+1} = 2^{n+1} \cdot 2 = 2^{n+2} \) by @def-power (and commutativity). So @ax-induction gives \( Q(n) \) for every \( n \), and in particular \( a_n = 2^n + 1 \). The induction carries a pair because the recursion does: the proof follows the clauses of the definition.
+where \( 2 \cdot 2^n = 2^n \cdot 2 = 2^{n+1} \) and \( 2 \cdot 2^{n+1} = 2^{n+1} \cdot 2 = 2^{n+2} \) by @def-power (and commutativity). So @fd1:ax-induction gives \( Q(n) \) for every \( n \), and in particular \( a_n = 2^n + 1 \). The induction carries a pair because the recursion does: the proof follows the clauses of the definition.
 
 ::: {.warning}
 A recursion needs its starting values, and its rule must stay inside \( X \). "\( a_{n+2} = a_{n+1} + a_n \)" alone defines nothing: \( 0, 1, 1, 2, \dots \) and \( 2, 1, 3, 4, \dots \) both obey it, and @cor-two-step-recursion asks for \( a_0 \) and \( a_1 \). And "\( a_0 = 2 \), \( a_{n+1} = 1/(a_n - 1) \)" is not a definition by recursion: \( a_1 = 1 \), and then \( a_2 \) would be \( 1/0 \). The rule \( x \mapsto 1/(x - 1) \) is not a function from any set \( X \) containing \( 2 \) into \( X \), since \( X \) would have to contain its value \( 1 \), where the rule is undefined.
@@ -248,7 +248,7 @@ Each part is an induction on \( n \) from \( 0 \), with \( m \) fixed. The base 
 \[
 u^{m+(n+1)} = u^{(m+n)+1} = u^{m+n} u = u^m u^n u = u^m u^{n+1} ,
 \]
-where the third equation is the induction hypothesis and the last is @def-power. By @ax-induction, (a) holds for every \( n \).
+where the third equation is the induction hypothesis and the last is @def-power. By @fd1:ax-induction, (a) holds for every \( n \).
 
 (b) Fix \( m \). For \( n = 0 \): \( (u^m)^0 = 1 = u^0 = u^{m \cdot 0} \). If \( (u^m)^n = u^{mn} \), then \( (u^m)^{n+1} = (u^m)^n u^m = u^{mn} u^m = u^{mn + m} = u^{m(n+1)} \), using (a) with the exponents \( mn, m \in \nN \) (@lem-naturals-arithmetic (b)).
 
@@ -274,7 +274,7 @@ For \( n = 0 \), both sides are \( 0 \): the left by the empty sum, the right si
 \[
 \sum_{k=1}^{n+1} k = \frac{n(n + 1)}{2} + (n + 1) = \frac{(n + 1)(n + 2)}{2} ,
 \]
-which is the formula for \( n + 1 \). By @ax-induction it holds for every \( n \in \nN \).
+which is the formula for \( n + 1 \). By @fd1:ax-induction it holds for every \( n \in \nN \).
 :::
 
 ::: {#prp-geometric-sum}
@@ -295,7 +295,7 @@ The terms are defined: for \( k \ge 1 \), \( k - 1 \in \nN \) by @lem-naturals-a
 &= \frac{1 - r^{n+1}}{1 - r} ,
 \end{aligned}
 \]
-where \( r^n (1 - r) = r^n - r^{n+1} \) by @def-power. By @ax-induction the formula holds for every \( n \in \nN \).
+where \( r^n (1 - r) = r^n - r^{n+1} \) by @def-power. By @fd1:ax-induction the formula holds for every \( n \in \nN \).
 :::
 
 For \( r = 1 \) the sum is \( n \), since every term is \( 1 \); that is the case the hypothesis excludes, where the right side would divide by \( 0 \).
@@ -320,12 +320,12 @@ For \( n = 0 \): \( (1 + x)^0 = 1 \ge 1 = 1 + 0 \cdot x \). Suppose \( (1 + x)^n
 &= 1 + (n + 1)x + nx^2 \ge 1 + (n + 1)x ,
 \end{aligned}
 \]
-where the first equation is @def-power and the last step uses \( nx^2 \ge 0 \), true because \( n \ge 0 \) (@lem-naturals-arithmetic (a)) and \( x^2 \ge 0 \). By @ax-induction the inequality holds for every \( n \in \nN \).
+where the first equation is @def-power and the last step uses \( nx^2 \ge 0 \), true because \( n \ge 0 \) (@lem-naturals-arithmetic (a)) and \( x^2 \ge 0 \). By @fd1:ax-induction the inequality holds for every \( n \in \nN \).
 :::
 
 The hypothesis \( x \ge -1 \) appears in the proof once, in the sentence "since \( x \ge -1 \), we have \( 1 + x \ge 0 \)", and it cannot simply be dropped: for \( x = -4 \) and \( n = 3 \), \( (1 + x)^3 = (-3)^3 = -27 \), while \( 1 + 3x = -11 \), and \( -27 < -11 \). Exercise C2 below shows that the statement can survive at some \( x < -1 \) even though the proof does not.
 
-The last result of this subsection is not about a recursive definition, but its induction runs over lists, and it is the fact Chapter 11 needs about finite sets. A **maximum** of a set \( A \subseteq \nR \) is an element \( M \in A \) with \( a \le M \) for every \( a \in A \); a **minimum** is an element \( m \in A \) with \( m \le a \) for every \( a \in A \). For reals \( x_1, \dots, x_n \), we write \( \{x_1, \dots, x_n\} \coloneqq \{ x_k : k \in \{1, \dots, n\} \} \).
+The last result of this subsection is not about a recursive definition, but its induction runs over lists, and it is the fact *Analysis on the Real Line*, Chapter 1 needs about finite sets. A **maximum** of a set \( A \subseteq \nR \) is an element \( M \in A \) with \( a \le M \) for every \( a \in A \); a **minimum** is an element \( m \in A \) with \( m \le a \) for every \( a \in A \). For reals \( x_1, \dots, x_n \), we write \( \{x_1, \dots, x_n\} \coloneqq \{ x_k : k \in \{1, \dots, n\} \} \).
 
 ::: {#prp-finite-max}
 [Finite Sets Have a Maximum]
@@ -353,7 +353,7 @@ In both cases \( P(n + 1) \) holds. By @thm-induction, \( P(n) \) holds for ever
 For the minimum, apply the result to \( -x_1, \dots, -x_n \): if \( -x_j \) is a maximum of \( \{-x_1, \dots, -x_n\} \), then \( -x_k \le -x_j \), that is \( x_j \le x_k \), for every \( k \), so \( x_j \) is a minimum of \( \{x_1, \dots, x_n\} \).
 :::
 
-The base is \( 1 \), not \( 0 \): for \( n = 0 \) the set is \( \emptyset \), which has neither a maximum nor a minimum, since both must be elements. The proof used only order properties of \( \le \): any two elements are comparable (trichotomy), \( \le \) is reflexive and transitive, and \( x \mapsto -x \) reverses \( \le \). All of these hold in any ordered field, so the proof works word for word there; that is the setting in which Chapter 11 uses it. Passing from a finite **set** to a list \( x_1, \dots, x_n \) that enumerates it is what "finite" will mean in Chapter 8.
+The base is \( 1 \), not \( 0 \): for \( n = 0 \) the set is \( \emptyset \), which has neither a maximum nor a minimum, since both must be elements. The proof used only order properties of \( \le \): any two elements are comparable (trichotomy), \( \le \) is reflexive and transitive, and \( x \mapsto -x \) reverses \( \le \). All of these hold in any ordered field, so the proof works word for word there; that is the setting in which *Analysis on the Real Line*, Chapter 1 uses it. Passing from a finite **set** to a list \( x_1, \dots, x_n \) that enumerates it is what "finite" will mean in Chapter 3.
 
 ## When the claim is too weak to carry its step
 
@@ -430,13 +430,13 @@ For \( n = 0 \), both sides are \( 0 \) (the empty sum, and \( 0^2 = 0 \)). Supp
 &= \frac{(n + 1)^2 (n + 2)^2}{4} = \Bigl(\frac{(n + 1)(n + 2)}{2}\Bigr)^2 ,
 \end{aligned}
 \]
-which is the formula for \( n + 1 \). By @ax-induction the formula holds for every \( n \in \nN \). (Compare @prp-sum-first-n: the sum of the first \( n \) cubes is the square of the sum of the first \( n \) numbers.)
+which is the formula for \( n + 1 \). By @fd1:ax-induction the formula holds for every \( n \in \nN \). (Compare @prp-sum-first-n: the sum of the first \( n \) cubes is the square of the sum of the first \( n \) numbers.)
 :::
 
 ::: {#exr-recursion-b2}
 [B2: Starting at the right place]
 
-Chapter 3 observed, in the warning after @exm-power-inequality, that "\( 2^n \ge n^2 \)" fails at \( n = 3 \) and holds again from \( n = 4 \) on. Prove that \( 2^n \ge n^2 \) for every integer \( n \ge 4 \), using @thm-induction. Say why the base must be \( 4 \) and not \( 3 \).
+*Logic and Proof*, Chapter 3 observed, in the warning after @fd1:exm-power-inequality, that "\( 2^n \ge n^2 \)" fails at \( n = 3 \) and holds again from \( n = 4 \) on. Prove that \( 2^n \ge n^2 \) for every integer \( n \ge 4 \), using @thm-induction. Say why the base must be \( 4 \) and not \( 3 \).
 :::
 
 ::: {.solution}
@@ -462,7 +462,7 @@ The values are \( 0, 1, 3, 7, 15 \): one less than \( 1, 2, 4, 8, 16 \). We prov
 \[
 a_{n+1} = 2(2^n - 1) + 1 = 2^{n+1} - 1 ,
 \]
-using \( 2 \cdot 2^n = 2^{n+1} \) (@def-power). By @ax-induction, \( a_n = 2^n - 1 \) for every \( n \in \nN \). The induction follows the two clauses of the definition: the base case is the starting value, the step is the rule.
+using \( 2 \cdot 2^n = 2^{n+1} \) (@def-power). By @fd1:ax-induction, \( a_n = 2^n - 1 \) for every \( n \in \nN \). The induction follows the two clauses of the definition: the base case is the starting value, the step is the rule.
 :::
 
 ### C. Going deeper
@@ -478,7 +478,7 @@ Why is the statement made for \( n \ge 1 \) only?
 :::
 
 ::: {.solution}
-The move is the **smallest counterexample** of Section 7.2: suppose the claim fails, take the least failure by well-ordering (@thm-well-ordering), and produce a smaller failure.
+The move is the **smallest counterexample** of Section 2.2: suppose the claim fails, take the least failure by well-ordering (@thm-well-ordering), and produce a smaller failure.
 
 *Completion.* By @thm-division-algorithm with divisor \( 2 \), every integer is even or odd; \( m \) is not odd, so \( m = 2m' \) for an integer \( m' \). Since \( m > 0 \), \( m' = m/2 > 0 \), so \( m' \in \nZ_{>0} \) (@prp-integers-closed (b)), and \( m' < 2m' = m \). As \( m \) is the least element of \( F \), \( m' \notin F \), so \( m' = 2^k q \) with \( k \in \nN \) and \( q \) odd. Then
 \[
@@ -542,7 +542,7 @@ In the step, start with \( F_{2n+3} = F_{2n+2} + F_{2n+1} \) and substitute both
 
 *Small cases.* \( P(0) \): \( F_1 = 1 = 0^2 + 1^2 \) and \( F_2 = 1 = 1 \cdot (0 + 1) \). \( P(1) \): \( F_3 = 2 = 1^2 + 1^2 \) and \( F_4 = 3 = 1 \cdot (1 + 2) \). \( P(2) \): \( F_5 = 5 = 1^2 + 2^2 \) and \( F_6 = 8 = 2 \cdot (1 + 3) \).
 
-*Proof.* We use @ax-induction. \( P(0) \) was checked. Suppose \( P(n) \). Using the recursion and then both halves of \( P(n) \),
+*Proof.* We use @fd1:ax-induction. \( P(0) \) was checked. Suppose \( P(n) \). Using the recursion and then both halves of \( P(n) \),
 \[
 \begin{aligned}
 F_{2n+3} &= F_{2n+2} + F_{2n+1} \\
@@ -560,7 +560,7 @@ F_{2n+4} &= F_{2n+3} + F_{2n+2} \\
 &= F_{n+2} \bigl(2F_{n+1} + F_{n+2}\bigr) = F_{n+2} \bigl(F_{n+1} + F_{n+3}\bigr) ,
 \end{aligned}
 \]
-using the first half of \( P(n + 1) \) just proved, the second half of \( P(n) \), \( F_{n+1} + F_n = F_{n+2} \), and finally \( F_{n+1} + F_{n+2} = F_{n+3} \). So \( P(n + 1) \) holds, and by @ax-induction \( P(n) \) holds for every \( n \in \nN \).
+using the first half of \( P(n + 1) \) just proved, the second half of \( P(n) \), \( F_{n+1} + F_n = F_{n+2} \), and finally \( F_{n+1} + F_{n+2} = F_{n+3} \). So \( P(n + 1) \) holds, and by @fd1:ax-induction \( P(n) \) holds for every \( n \in \nN \).
 
 The second identity is written with \( F_{n+2} \) rather than in the form \( F_{2n} = F_n (F_{n-1} + F_{n+1}) \), so that both identities make sense on all of \( \nN \) and no \( F_{-1} \) is needed. The two identities hold together, and together they carry a one-step induction that neither carries alone: this is "prove more" (@exm-strengthen-hypothesis) in the form of a pair, as in the two-step example after @def-power. (A two-step induction can prove the first identity alone; see the marking scheme.)
 
@@ -575,10 +575,10 @@ Fatal errors (0 for the step): inducting on one identity alone while using the o
 :::
 
 <!-- dependency ledger
-thm-recursion (proof): N and X are sets, so N x X and its power set are sets; a subset of N x X with a codomain is a function when (Fn1), (Fn2) hold | def-cartesian-product, def-power-set, def-function (cited); working rules of Section 6.1
-thm-recursion (proof): restriction of a function to a subset of its domain is a function with graph G cap (A x X) | Ch 6 Section 6.4, restriction (no label; prose pointer)
-thm-recursion (proof): the notation {0, ..., n} = {k in N : k <= n} | Section 7.1 (notation, no label; prose pointer)
-thm-recursion (proof): n + 1 > n; k + 1 >= 1 > 0; trichotomy of < on N subset R | R arithmetic and order, school fact; axioms in Ch 11
+thm-recursion (proof): N and X are sets, so N x X and its power set are sets; a subset of N x X with a codomain is a function when (Fn1), (Fn2) hold | def-cartesian-product, def-power-set, def-function (cited); working rules of F2.1 §01
+thm-recursion (proof): restriction of a function to a subset of its domain is a function with graph G cap (A x X) | F2.1 §04, restriction (no label; prose pointer)
+thm-recursion (proof): the notation {0, ..., n} = {k in N : k <= n} | F2.2 §01 (notation, no label; prose pointer)
+thm-recursion (proof): n + 1 > n; k + 1 >= 1 > 0; trichotomy of < on N subset R | R arithmetic and order, school fact; axioms in AN1.1
 thm-recursion (claim): (the remark after it) A_n = {k in N : k >= n}; {k : k >= n} minus {n} = {k : k > n} | inline, with lem-naturals-arithmetic (a), (e) (cited)
 cor-recursion-from-base (proof): n_0 + k >= n_0 for k >= 0 | R order, school fact; with lem-naturals-arithmetic (a) (cited)
 cor-two-step-recursion (proof): domain N x (X x X) of h, and X x X as the recursion set | def-cartesian-product (cited); h(n, x, y) abbreviates h(n, (x, y))
@@ -586,13 +586,13 @@ def-power (example): (the two-step example, placed after def-power) 3(2^(n+1) + 
 def-sum-product (claim): n + 1 >= 1, so a_(n+1) is defined | lem-naturals-arithmetic (a) and (NS) (cited)
 def-sum-product (claim): finite lists, index shift, splitting off the last term | inline (induction and unfolding the definition)
 def-power (example): (17/12)^2 = 289/144 = 2 + 1/144; values 2, 3/2, 17/12 | arithmetic, checked by hand in the text
-prp-power-laws (proof): R arithmetic (associativity, commutativity of multiplication; product of positives is positive; multiplying an inequality by a positive number) | R arithmetic and order, school fact; axioms in Ch 11
+prp-power-laws (proof): R arithmetic (associativity, commutativity of multiplication; product of positives is positive; multiplying an inequality by a positive number) | R arithmetic and order, school fact; axioms in AN1.1
 prp-power-laws (claim): (the paragraph after it) 1^k = 1 | inline one-line induction
 prp-sum-first-n (proof): algebra n(n+1)/2 + (n+1) = (n+1)(n+2)/2 | R arithmetic, school fact
 prp-geometric-sum (proof): algebra of fractions with 1 - r != 0; (n+1) - 1 = n | R arithmetic, school fact
-thm-bernoulli (proof): x^2 >= 0; multiplying by a non-negative number keeps <= | R order, school fact; axioms in Ch 11
+thm-bernoulli (proof): x^2 >= 0; multiplying by a non-negative number keeps <= | R order, school fact; axioms in AN1.1
 prp-finite-max (proof): trichotomy (totality), reflexivity and transitivity of <= on R; -x_k <= -x_j iff x_j <= x_k; {1, ..., n+1} = {1, ..., n} u {n+1} | R order, school fact; lem-naturals-arithmetic (e) (cited)
-prp-finite-max (claim): finite set -> list x_1, ..., x_n is Chapter 8's definition of finite | ch08 (prose pointer; nothing depends on it)
+prp-finite-max (claim): finite set -> list x_1, ..., x_n is F2.3's definition of finite | F2.3 (prose pointer; nothing depends on it)
 exm-strengthen-hypothesis (solution): n(n+1) <= (n+1)^2 and reciprocals reverse <= for positives | R order, school fact
 exr-recursion-b2 (solution): (n-1)^2 >= 9 for n >= 4 | R order, school fact
 exr-recursion-c1 (solution): m' = m/2 > 0; 2^k > 0 | R order; prp-power-laws (e) (cited)

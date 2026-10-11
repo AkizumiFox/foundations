@@ -1,6 +1,6 @@
 # Infinite Sets
 
-Section 8.5 compared sizes with injections. Here we ask where \( \nN \) sits in that comparison. Every infinite set we have met contains a copy of \( \nN \), and it is tempting to say that this must always happen by picking new elements one at a time; this section makes that picking exact. It turns out to need @ax-choice again, this time applied to a family with one set for each non-empty subset of the given set, and it gives two results: \( \nN \) is the smallest infinite size, and a set is infinite exactly when it is the same size as a proper part of itself.
+Section 3.5 compared sizes with injections. Here we ask where \( \nN \) sits in that comparison. Every infinite set we have met contains a copy of \( \nN \), and it is tempting to say that this must always happen by picking new elements one at a time; this section makes that picking exact. It turns out to need @ax-choice again, this time applied to a family with one set for each non-empty subset of the given set, and it gives two results: \( \nN \) is the smallest infinite size, and a set is infinite exactly when it is the same size as a proper part of itself.
 
 ## Every infinite set contains a copy of the natural numbers
 
@@ -25,7 +25,7 @@ This is the one line of the proof that uses the axiom.
 
 Define \( g \colon \nN \times \powerset{X} \to \powerset{X} \) by \( g(n, F) \coloneqq F \cup \{ c(X \setminus F) \} \) if \( F \ne X \), and \( g(n, F) \coloneqq F \) if \( F = X \). In the first case \( X \setminus F \) is non-empty, so \( c(X \setminus F) \) is defined; so \( g \) is a function. By @thm-recursion, applied with the set \( \powerset{X} \), the starting value \( \emptyset \) and this \( g \), there are sets \( F_n \subseteq X \), for \( n \in \nN \), with \( F_0 = \emptyset \) and \( F_{n+1} = g(n, F_n) \).
 
-We show by induction (@ax-induction) that **\( F_n \) has exactly \( n \) elements, for every \( n \in \nN \)**. For \( n = 0 \), \( F_0 = \emptyset \) has \( 0 \) elements (@def-finite). Suppose \( F_n \) has \( n \) elements. Then \( F_n \) is finite and \( X \) is not, so \( F_n \ne X \), and \( F_{n+1} = F_n \cup \{ c(X \setminus F_n) \} \) with \( c(X \setminus F_n) \in X \setminus F_n \). This is a union of disjoint sets with \( n \) elements and \( 1 \) element, so \( F_{n+1} \) has \( n + 1 \) elements by @prp-disjoint-union-count.
+We show by induction (@fd1:ax-induction) that **\( F_n \) has exactly \( n \) elements, for every \( n \in \nN \)**. For \( n = 0 \), \( F_0 = \emptyset \) has \( 0 \) elements (@def-finite). Suppose \( F_n \) has \( n \) elements. Then \( F_n \) is finite and \( X \) is not, so \( F_n \ne X \), and \( F_{n+1} = F_n \cup \{ c(X \setminus F_n) \} \) with \( c(X \setminus F_n) \in X \setminus F_n \). This is a union of disjoint sets with \( n \) elements and \( 1 \) element, so \( F_{n+1} \) has \( n + 1 \) elements by @prp-disjoint-union-count.
 
 In particular \( F_n \ne X \) for every \( n \in \nN \), so we may define
 \[
@@ -41,7 +41,7 @@ The proof shows where the axiom enters and why one \( \rulename{\exists E} \) pe
 **A non-example by a minimal change.** Run the same construction on the finite set \( X = \{a, b\} \), with \( a \ne b \). The choice function \( c \) and the recursion still make sense, since \( g \) is defined on every \( F \subseteq X \). But \( F_1 = \{ c(X) \} \) has one element, \( F_2 \) adds the other, so \( F_2 = X \), and from then on \( g \) leaves \( F_n \) unchanged. So \( x_2 = c(X \setminus F_2) = c(\emptyset) \) is not defined. The step that fails is "\( F_n \) is finite and \( X \) is not, so \( F_n \ne X \)", exactly where the hypothesis that \( X \) is infinite is used.
 
 ::: {.remark}
-Compare Chapter 11's proof that the real numbers cannot be listed. There, a given list is used to build nested closed intervals, and each interval is obtained from the previous one by an explicit rule (keep an outer third that misses the next point of the list), so no choice principle is involved. Here \( X \) is an arbitrary infinite set, and there is no rule available for picking an element of an arbitrary non-empty subset of it; the choice function **is** the rule.
+Compare *Analysis on the Real Line*, Chapter 1's proof that the real numbers cannot be listed. There, a given list is used to build nested closed intervals, and each interval is obtained from the previous one by an explicit rule (keep an outer third that misses the next point of the list), so no choice principle is involved. Here \( X \) is an arbitrary infinite set, and there is no rule available for picking an element of an arbitrary non-empty subset of it; the choice function **is** the rule.
 :::
 
 For a particular \( X \) a rule may exist: for \( X \subseteq \nN \), "the least element" is one (@thm-well-ordering), and then the proof needs no axiom. That the theorem cannot be proved in general from the other rules of set formation alone is a result of set theory; we state it without proof, and nothing depends on it.
@@ -68,7 +68,7 @@ Let \( X \) be uncountable. Is \( X \setminus \{x\} \) uncountable for every \( 
 
 ## Infinite sets are the same size as a proper part
 
-Section 8.1 proved that a finite set is never equinumerous with a proper subset (@thm-finite-no-proper-copy), and @exm-hilbert-hotel showed \( \nN \) doing exactly that. With @thm-infinite-countable-subset, the hotel can be built inside any infinite set: run it on the copy of \( \nN \), and leave everything else alone.
+Section 3.1 proved that a finite set is never equinumerous with a proper subset (@thm-finite-no-proper-copy), and @exm-hilbert-hotel showed \( \nN \) doing exactly that. With @thm-infinite-countable-subset, the hotel can be built inside any infinite set: run it on the copy of \( \nN \), and leave everything else alone.
 
 ::: {#thm-infinite-iff-proper-subset}
 [Infinite Sets and Proper Subsets]
@@ -77,7 +77,7 @@ A set \( X \) is infinite if and only if \( \card{X} = \card{Y} \) for some prop
 :::
 
 ::: {.idea}
-One direction is already done: Section 8.1 showed that finite sets have no proper subset of their own size. For the other, take the copy \( x_0, x_1, x_2, \dots \) of \( \nN \) inside \( X \) and move every guest one room up, \( x_n \mapsto x_{n+1} \), as \( n \mapsto n + 1 \) does in the Quick check after @exm-hilbert-hotel. Room \( x_0 \) is vacated, and every point outside the copy stays where it is.
+One direction is already done: Section 3.1 showed that finite sets have no proper subset of their own size. For the other, take the copy \( x_0, x_1, x_2, \dots \) of \( \nN \) inside \( X \) and move every guest one room up, \( x_n \mapsto x_{n+1} \), as \( n \mapsto n + 1 \) does in the Quick check after @exm-hilbert-hotel. Room \( x_0 \) is vacated, and every point outside the copy stays where it is.
 :::
 
 ::: {.proof}
@@ -100,7 +100,7 @@ This is a function into \( X \setminus \{x_0\} \): \( x_{n+1} \ne x_0 \) because
 So \( h \) is a bijection, and \( Y \coloneqq X \setminus \{x_0\} \) is a proper subset of \( X \), as \( x_0 \in X \setminus Y \), with \( \card{X} = \card{Y} \). This proves the theorem.
 :::
 
-Together with Section 8.1, this gives a characterization of "infinite" that never mentions \( \nN \) or counting: a set is infinite precisely when some proper part of it is as big as the whole. The finite intuition "a part is smaller than the whole" is exactly the property that separates finite sets from infinite ones. The direction \( (\Rightarrow) \) used @ax-choice, through @thm-infinite-countable-subset; the direction \( (\Leftarrow) \) did not.
+Together with Section 3.1, this gives a characterization of "infinite" that never mentions \( \nN \) or counting: a set is infinite precisely when some proper part of it is as big as the whole. The finite intuition "a part is smaller than the whole" is exactly the property that separates finite sets from infinite ones. The direction \( (\Rightarrow) \) used @ax-choice, through @thm-infinite-countable-subset; the direction \( (\Leftarrow) \) did not.
 
 ::: {.check}
 Name a proper subset of \( \nR \) that is equinumerous with \( \nR \), and give a bijection.
@@ -278,9 +278,9 @@ Let \( \fM \) have domain \( \nN \) and \( R^{\fM} \coloneqq \{ (d, e) \in \nN \
 
 *The conclusion is false.* \( \exists y\, \forall x\, (x < y) \) says "some natural number is larger than every natural number". For any \( e \in \nN \), the choice \( d \coloneqq e \) gives \( d < e \) false, so no \( e \) works.
 
-So \( \fM \) is a counter-model, and \( \forall x\, \exists y\, R(x, y) \not\models \exists y\, \forall x\, R(x, y) \). By the soundness statement of Section 4.11 (the subsection "From counter-models to non-derivability"), a counter-model shows non-derivability: \( \forall x\, \exists y\, R(x, y) \nvdash \exists y\, \forall x\, R(x, y) \).
+So \( \fM \) is a counter-model, and \( \forall x\, \exists y\, R(x, y) \not\models \exists y\, \forall x\, R(x, y) \). By the soundness statement of *Logic and Proof*, Section 4.11 (the subsection "From counter-models to non-derivability"), a counter-model shows non-derivability: \( \forall x\, \exists y\, R(x, y) \nvdash \exists y\, \forall x\, R(x, y) \).
 
-This is the converse of @prp-exists-forall-swap with the variables renamed and the two places of \( R \) exchanged (read \( R(x, y) \) as \( R(y, x) \)), and the counter-model is the one of @exm-counter-model-swap: there the domain was \( \nZ \) and \( R \) was read as \( > \); with the roles of the variables exchanged, \( R \) read as \( < \) and the domain cut down to \( \nN \), the same witnesses work, as checked above. In the premise the larger number \( y \) is chosen after \( x \) and depends on it; the conclusion asks for one \( y \) in advance.
+This is the converse of @fd1:prp-exists-forall-swap with the variables renamed and the two places of \( R \) exchanged (read \( R(x, y) \) as \( R(y, x) \)), and the counter-model is the one of @fd1:exm-counter-model-swap: there the domain was \( \nZ \) and \( R \) was read as \( > \); with the roles of the variables exchanged, \( R \) read as \( < \) and the domain cut down to \( \nN \), the same witnesses work, as checked above. In the premise the larger number \( y \) is chosen after \( x \) and depends on it; the conclusion asks for one \( y \) in advance.
 :::
 
 ::: {#exr-infinite-sets-r3}
@@ -290,7 +290,7 @@ For an integer \( n \ge 1 \), how many truth functions with \( n \) inputs are t
 :::
 
 ::: {.solution}
-There are \( 2^{2^n} \). A truth function with \( n \) inputs (@def-truth-function) assigns a truth value to each row \( (a_1, \dots, a_n) \); read a row as the function \( i \mapsto a_i \) on \( \{1, \dots, n\} \), and let \( L \) be the set of rows.
+There are \( 2^{2^n} \). A truth function with \( n \) inputs (@fd1:def-truth-function) assigns a truth value to each row \( (a_1, \dots, a_n) \); read a row as the function \( i \mapsto a_i \) on \( \{1, \dots, n\} \), and let \( L \) be the set of rows.
 
 *There are \( 2^n \) rows.* The map sending a row to \( \{ i \in \{1, \dots, n\} : a_i = \mathrm{T} \} \) is a bijection \( L \to \powerset{\{1, \dots, n\}} \): a row is determined by the places where it is \( \mathrm{T} \), and every set of places arises. Since \( \{1, \dots, n\} \) has \( n \) elements, @prp-power-set-count gives \( 2^n \) subsets, so \( L \) has \( 2^n \) elements (compose the bijections).
 
@@ -316,10 +316,10 @@ By @thm-countable-union, \( Z \) is countable. (That theorem uses @ax-choice; he
 :::
 
 <!-- dependency ledger
-thm-infinite-countable-subset (proof): the family (S) indexed by P(X) \ {empty}, union equal to X | def-indexed-family, def-family-union-intersection (Ch 6 Section 6.2), used silently; ax-choice (cited)
+thm-infinite-countable-subset (proof): the family (S) indexed by P(X) \ {empty}, union equal to X | def-indexed-family, def-family-union-intersection (F2.1 §02), used silently; ax-choice (cited)
 thm-infinite-countable-subset (proof): a singleton {x} has 1 element | def-finite (cited): the bijection 1 -> x from {1}
 thm-infinite-countable-subset (proof): F_m subset of F_(m+k), induction on k | inline (ax-induction, cited)
-thm-infinite-countable-subset (claim): (remark) Chapter 11's nested-interval proof uses an explicit rule | Ch 11 Section 11.7 (prose pointer; nothing depends on it)
+thm-infinite-countable-subset (claim): (remark) AN1.1's nested-interval proof uses an explicit rule | AN1.1 §07 (prose pointer; nothing depends on it)
 thm-infinite-countable-subset (claim): (prose after the remark) the theorem is not provable without choice | set theory, stated without proof; nothing depends on it
 thm-infinite-iff-proper-subset (proof): m + 1 = n + 1 gives m = n; n + 1 != 0 | arithmetic of N (lem-naturals-arithmetic), used silently
 exr-infinite-sets-a1 (solution): the Quick check after the warning (X \ {x} uncountable) | inline in the section (Quick check solution), not an exercise
@@ -327,10 +327,10 @@ exr-infinite-sets-b1 (solution): disjoint pieces, piecewise bijection is a bijec
 exr-infinite-sets-b2 (solution): disjoint pieces, piecewise bijection is a bijection | inline (as in B1)
 exr-infinite-sets-b3 (solution): a set equinumerous with a finite set is finite | inline (compose the bijections, thm-composition-injective-surjective, cited)
 exr-infinite-sets-b3 (solution): (0, infinity) is an interval with more than one point; n -> -n a bijection N -> {-n : n in N}, so it is infinite; a superset of it is infinite | exm-reals-open-interval (cited); inline, as in the first answer; prp-subset-finite (cited)
-exr-infinite-sets-c1 (solution): max{a, b} of two naturals exists and is >= each | prp-finite-max (Ch 7 Section 7.3), used silently in the given half
+exr-infinite-sets-c1 (solution): max{a, b} of two naturals exists and is >= each | prp-finite-max (F2.2 §03), used silently in the given half
 exr-infinite-sets-c1 (solution): counterexample to the plain diagonal: f_0(n) = 5 + n, f_1(n) = n give g(0) = 6, g(1) = 2 | verify/ch08/exr-infinite-sets-c1.py
 exr-infinite-sets-r1 (solution): 2^(K+1) - 2^K = 2^K; 2^K >= 1 (a positive natural number) | def-power, prp-power-laws (d), (e), lem-naturals-arithmetic (a), used silently; verify/ch08/exr-infinite-sets-r1.py
-exr-infinite-sets-r2 (solution): soundness for predicate logic (counter-model gives non-derivability) | Section 4.11, subsection #from-counter-models-to-non-derivability (statement; proof in optional Section 4.12); prose pointer, unlabelled statement
+exr-infinite-sets-r2 (solution): soundness for predicate logic (counter-model gives non-derivability) | F1.4 §11, subsection #from-counter-models-to-non-derivability (statement; proof in optional F1.4 §12); prose pointer, unlabelled statement
 exr-infinite-sets-r3 (solution): row <-> set of T-places and truth function <-> set of T-rows are bijections; equinumerous with an n-element set has n elements | inline; prp-equinumerous-properties via composition; verify/ch08/exr-infinite-sets-r3.py
-exr-infinite-sets-r4 (solution): Z_N -> N^N bijection | characteristic property of tuples (Ch 6 Section 6.3)
+exr-infinite-sets-r4 (solution): Z_N -> N^N bijection | characteristic property of tuples (F2.1 §03)
 -->

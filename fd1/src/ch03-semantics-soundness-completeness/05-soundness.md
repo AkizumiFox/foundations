@@ -553,17 +553,17 @@ A proof that inducts on the length of the derivation instead, and handles open b
 :::
 
 <!-- dependency ledger
-thm-soundness (proof): every derived-rule line expands into primitive rules, and chains of derived rules end in primitive rules (Step 1) | def-derived-rule and Section 2.3 ("Convenience, not power"), recalled in prose
-thm-soundness (claim): rules stated as schemas apply to formulas; derivations with letters read as atoms are derivations | def-rule-schema; Section 3.1 schema remark
-thm-soundness (claim): the list of primitive rules | Section 2.6 reference sheet ("The rules in one place"), recalled in prose
+thm-soundness (proof): every derived-rule line expands into primitive rules, and chains of derived rules end in primitive rules (Step 1) | def-derived-rule and F1.2 §03 ("Convenience, not power"), recalled in prose
+thm-soundness (claim): rules stated as schemas apply to formulas; derivations with letters read as atoms are derivations | def-rule-schema; F1.3 §01 schema remark
+thm-soundness (claim): the list of primitive rules | F1.2 §06 reference sheet ("The rules in one place"), recalled in prose
 lem-context-inclusion (proof): boxes are disjoint or nested; availability of lines and boxes; the box rules require their box's last line to be a line of that box itself | def-derivation (scope rule), def-rules-implication, def-rules-negation, def-rule-raa, def-rules-disjunction, def-rules-biconditional (the sentence is inside each drafted block)
-lem-context-inclusion (example): a box may end on the same line as a box inside it (the warning after the lemma) | def-derivation; exm-disjunction-regroup discussion (Ch 1 §07)
-thm-soundness (proof): a context entails any of its own members; an unsatisfiable context entails everything; adding premises keeps |= | def-valid-argument and its paraphrase (Section 3.4)
+lem-context-inclusion (example): a box may end on the same line as a box inside it (the warning after the lemma) | def-derivation; exm-disjunction-regroup discussion (F1.1 §07)
+thm-soundness (proof): a context entails any of its own members; an unsatisfiable context entails everything; adding premises keeps |= | def-valid-argument and its paraphrase (F1.3 §04)
 thm-soundness (proof): every cited line and box lies before line k | def-derivation (available means earlier)
 thm-soundness (claim): the lines above the last line need not form a derivation (lines 1-6 of the printed derivation of prp-contrapositive end inside box 2-6) | inline, checkable on the printed derivation
 cor-refuting-row (example): the rows for p -> q |/- q -> p; p -> q, q |/- p; not(p and q) |/- not p, and |/- not q; the Quick check row; B1 rows | inline; checked by verify/ch03/cor-refuting-row.py and verify/ch03/exr-soundness-b1.py
-cor-refuting-row (claim): a derivation of the pattern with letters, read with atoms, is a derivation of the atom sequent | def-rule-schema; Section 3.1 schema remark
-exr-soundness-b1 (solution): (d) is derivable | exm-search-postpone-or (Ch 2 §06), cited
+cor-refuting-row (claim): a derivation of the pattern with letters, read with atoms, is a derivation of the atom sequent | def-rule-schema; F1.3 §01 schema remark
+exr-soundness-b1 (solution): (d) is derivable | exm-search-postpone-or (F1.2 §06), cited
 thm-raa-independent (proof): the three-valued recursion is well defined; min over a longer list is at most min over a shorter; every rule except RAA preserves |=_3 | thm-structural-recursion (cited); inline; every case checked exhaustively over all value combinations by verify/ch03/thm-raa-independent.py
 thm-raa-independent (claim): Peirce at (1/2, 0) has value 1/2; De Morgan (d) and (p -> q) or (q -> p) are not refuted by these values, and neither is derivable without RAA (remark) | values checked by verify/ch03/thm-raa-independent.py; the non-derivability is stated without proof and marked so; nothing depends on it
 exr-soundness-c1 (solution): derivation with Y; row p = T, q = F | checked by verify/ch03/exr-soundness-c1.py

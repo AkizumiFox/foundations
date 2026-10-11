@@ -36,9 +36,9 @@ A **predicate** is an open sentence with one or more marked holes. The number of
 
 In words: a predicate says something **about** objects without saying which objects. The variables are placeholders, not objects. "\( x \) is positive" is about whatever will be put in for \( x \), and until something is, it is neither true nor false.
 
-Many predicates of mathematics are written with a symbol between their two holes rather than a letter in front: \( x < y \), \( x \le y \), \( x = y \), \( x \mid y \). These are two-place predicates like any other; only the way of writing them differs. Membership \( x \in A \), for a fixed set \( A \), is a one-place predicate of \( x \): "\( x \) is an element of \( A \)". Chapter 6 develops sets and membership properly. Until then a set is understood informally, as a collection of objects (usually numbers), and nothing in this section uses more about a set \( A \) than whether a given object is an element of it. For sets \( A \) and \( B \), \( A \subseteq B \) means that every element of \( A \) is an element of \( B \); so \( A \subseteq \nR \) says that \( A \) is a set of real numbers.
+Many predicates of mathematics are written with a symbol between their two holes rather than a letter in front: \( x < y \), \( x \le y \), \( x = y \), \( x \mid y \). These are two-place predicates like any other; only the way of writing them differs. Membership \( x \in A \), for a fixed set \( A \), is a one-place predicate of \( x \): "\( x \) is an element of \( A \)". *Sets, Relations, and Cardinality*, Chapter 1 develops sets and membership properly. Until then a set is understood informally, as a collection of objects (usually numbers), and nothing in this section uses more about a set \( A \) than whether a given object is an element of it. For sets \( A \) and \( B \), \( A \subseteq B \) means that every element of \( A \) is an element of \( B \); so \( A \subseteq \nR \) says that \( A \) is a set of real numbers.
 
-Objects can also be built from other objects: \( x + 1 \), \( x^2 \), \( \abs{x} \), \( 2 \cdot y \). The symbols that build them (\( + \), squaring, \( \abs{\cdot} \), \( \cdot \)) are **function symbols**, and an expression such as \( x^2 + 1 \) names an object as soon as \( x \) does. A function symbol may also be a letter, \( f(x) \). Chapter 6 defines functions as sets of pairs; here a function symbol is simply a way of naming one object in terms of others. Section 4.2 makes all of this exact, under the name **term**. For now, a term is any expression that names an object: a variable, a constant, or a function symbol applied to terms.
+Objects can also be built from other objects: \( x + 1 \), \( x^2 \), \( \abs{x} \), \( 2 \cdot y \). The symbols that build them (\( + \), squaring, \( \abs{\cdot} \), \( \cdot \)) are **function symbols**, and an expression such as \( x^2 + 1 \) names an object as soon as \( x \) does. A function symbol may also be a letter, \( f(x) \). *Sets, Relations, and Cardinality*, Chapter 1 defines functions as sets of pairs; here a function symbol is simply a way of naming one object in terms of others. Section 4.2 makes all of this exact, under the name **term**. For now, a term is any expression that names an object: a variable, a constant, or a function symbol applied to terms.
 
 Filling holes is the first way to turn a predicate into a statement.
 
@@ -98,7 +98,7 @@ One element of the domain that makes \( \varphi \) false is enough to make \( \f
 
 Take \( \exists x\, (x^2 = 2) \), "some \( x \) has square \( 2 \)".
 
-- Over \( \nR \) it is **true**: the real number \( \sqrt{2} \) has square \( 2 \). (Its existence is a school fact here; Chapter 11 proves it from the axioms of the real numbers.)
+- Over \( \nR \) it is **true**: the real number \( \sqrt{2} \) has square \( 2 \). (Its existence is a school fact here; *Analysis on the Real Line*, Chapter 1 proves it from the axioms of the real numbers.)
 - Over \( \nQ \) it is **false**: that no rational number has square \( 2 \) is exactly @thm-sqrt2-irrational.
 
 One element that makes \( \varphi \) true is enough to make \( \exists x\, \varphi \) true. Such an element is a **witness**. To show that the sentence is false over \( \nQ \), on the other hand, a theorem about every rational number was needed, and Chapter 2 proved it by contradiction.
@@ -181,7 +181,7 @@ An existential quantifier with an implication directly inside, \( \exists x\, (\
 \]
 and \( n \) ranges over real numbers that happen to be required, by the bound, to be natural numbers. A sequence \( (a_n) \) becomes a function symbol \( a \), with \( a(n) \), written \( a_n \), the \( n \)-th term. Its values at real numbers that are not natural numbers are never used, because \( a \) is only ever applied to variables bounded by \( n \in \nN \). We state this convention once, here; every translation in this chapter follows it.
 
-**The empty set.** Bounded quantifiers make sense even when the bound is never satisfied. Let \( \emptyset \) be the **empty set**, the set with no elements (Chapter 6 introduces it properly), so that \( x \in \emptyset \) is false for every \( x \).
+**The empty set.** Bounded quantifiers make sense even when the bound is never satisfied. Let \( \emptyset \) be the **empty set**, the set with no elements (*Sets, Relations, and Cardinality*, Chapter 1 introduces it properly), so that \( x \in \emptyset \) is false for every \( x \).
 
 - \( \forall x \in \emptyset \; \varphi \) stands for \( \forall x\, (x \in \emptyset \to \varphi) \). For every \( x \), the hypothesis \( x \in \emptyset \) is false, so the implication is true. The sentence is **true**, whatever \( \varphi \) says. For example, "every element of \( \emptyset \) is greater than \( 5 \)" and "every element of \( \emptyset \) is less than \( 5 \)" are both true.
 - \( \exists x \in \emptyset \; \varphi \) stands for \( \exists x\, (x \in \emptyset \wedge \varphi) \). No \( x \) makes the first conjunct true, so the sentence is **false**, whatever \( \varphi \) says.
@@ -349,7 +349,7 @@ The sentence says that the domain has a **least element**: one \( x \) that is a
 
 *Over \( (0, 1] \): false.* Let \( x \in (0, 1] \), so \( 0 < x \le 1 \). The number \( y = \frac{x}{2} \) satisfies \( 0 < \frac{x}{2} < x \le 1 \), so \( y \in (0, 1] \) and \( y < x \); hence \( x \le y \) fails. The defeating \( y \) depends on the proposed \( x \), which is allowed, because in the game the challenger chooses \( y \) after seeing \( x \).
 
-The last two domains differ by a single point, \( 0 \), and that point is exactly the least element of \( [0, 1] \). Removing it leaves a set with no least element, although every element of \( (0, 1] \) is still at least \( 0 \). Chapter 11 returns to this distinction between a least element and a greatest lower bound.
+The last two domains differ by a single point, \( 0 \), and that point is exactly the least element of \( [0, 1] \). Removing it leaves a set with no least element, although every element of \( (0, 1] \) is still at least \( 0 \). *Analysis on the Real Line*, Chapter 1 returns to this distinction between a least element and a greatest lower bound.
 :::
 
 ::: {#exr-predicates-and-quantifiers-c2}
@@ -383,15 +383,15 @@ Fatal errors (0 for the step): a witness or counterexample that depends on \( A 
 :::
 
 <!-- dependency ledger
-exm-reading-quantified-sentences (claim): in the subsection "The same sentence over different domains" before it, sqrt 2 exists in R, so exists x (x^2 = 2) is true over R | school fact here, stated as such; Chapter 11 (thm-nth-root) proves it; prose pointer
+exm-reading-quantified-sentences (claim): in the subsection "The same sentence over different domains" before it, sqrt 2 exists in R, so exists x (x^2 = 2) is true over R | school fact here, stated as such; AN1.1 (thm-nth-root) proves it; prose pointer
 exm-reading-quantified-sentences (claim): in the subsection "The same sentence over different domains" before it, every natural number is at least 0, so forall x (x >= 0) holds over N | convention N = {0, 1, 2, ...} (NOTATION); school fact
 exm-reading-quantified-sentences (solution): the check "exists x (x + x = x)" before it: x + x = x iff x = 0; 0 is in Z, R and N, not in Z_{>0}; n + n > n for n in Z_{>0} | school arithmetic
 exm-reading-quantified-sentences (example): x^2 >= 0 for every real x | school fact (signs), stated as such
 exm-reading-quantified-sentences (example): there is no largest prime | school fact (infinitude of primes), stated in the text as not used; nothing depends on it
-def-bounded-quantifier (claim): an implication with a false hypothesis is true (vacuous truth), used to read the wrong bounded forms and the empty-set cases | informal reading of Chapter 2 (prp-vacuous-implication cited); made exact in Section 4.11; the universal empty-set case is derived in Section 4.4
+def-bounded-quantifier (claim): an implication with a false hypothesis is true (vacuous truth), used to read the wrong bounded forms and the empty-set cases | informal reading of F1.2 (prp-vacuous-implication cited); made exact in F1.4 §11; the universal empty-set case is derived in F1.4 §04
 exm-quantifier-order-sum (example): x + (-x) = 0 and (1 - y) + y = 1 in R | school arithmetic
-exm-quantifier-order-sum (claim): the game reading after it; a quantifier under a negation changes sides, not-forall x read as exists x not | informal reading only, stated as such; Section 4.9 (later section of this chapter; prose pointer only, nothing here rests on it)
-exm-quantifier-order-sum (claim): "When swapping is harmless" after it: swapping two quantifiers of the same kind is harmless; exists y forall x implies forall x exists y | informal reading only, stated as such; derived in Sections 4.4 and 4.6; the failure of the converse is exm-quantifier-order-sum
+exm-quantifier-order-sum (claim): the game reading after it; a quantifier under a negation changes sides, not-forall x read as exists x not | informal reading only, stated as such; F1.4 §09 (later section of this chapter; prose pointer only, nothing here rests on it)
+exm-quantifier-order-sum (claim): "When swapping is harmless" after it: swapping two quantifiers of the same kind is harmless; exists y forall x implies forall x exists y | informal reading only, stated as such; derived in F1.4 §04 and F1.4 §06; the failure of the converse is exm-quantifier-order-sum
 exm-quantifier-order-sum (solution): the check on the swapped prime sentence after it: n = p gives p > p, which is false | school arithmetic (irreflexivity of <)
 exr-predicates-and-quantifiers-a1 (solution): (a)(i)-(iv): x + 1 > x; x + 1 = 0 only at -1; y = x - 1 < x; 2x = 1 only at 1/2; (v): x * x >= x for all integers; (1/2)^2 = 1/4 < 1/2 | school arithmetic; checked by verify/ch04/exr-predicates-and-quantifiers-a1.py
 exr-predicates-and-quantifiers-b1 (solution): y * y >= 0 for real y; 2 + y >= 2 for y in N; x = 0, 1 have witnesses y = 1, 0 | school arithmetic; checked by verify/ch04/exr-predicates-and-quantifiers-b1.py

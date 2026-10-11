@@ -1,6 +1,6 @@
 """exm-function-set-small (Ch 6 Section 6.4): {0,1}^{1,2} has four elements, each an indicator."""
 import sys
-sys.path.insert(0, "verify/ch06")
+sys.path.insert(0, "verify/ch01")
 from _sets import functions, subsets
 
 QUOTED = {"number of functions": 4}

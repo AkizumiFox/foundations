@@ -281,7 +281,7 @@ Two things are written for the reviewers rather than the reader: the sidecar scr
 
 ### Sidecar scripts
 
-Every non-trivial computation and every chosen constant (N, δ, r, a bound, a numeric answer in an example or solution) is checked by a script `verify/chNN/<label>.py`, keyed by the label of the block that quotes the values (`verify/ch09/exm-geometric-tail.py`). The script **asserts** the values the text quotes, so that a changed number fails it. It is not a private CAS session that nobody can rerun. The book text never mentions it (hard rules, above): the page gives a by-hand check the reader can follow.
+Every non-trivial computation and every chosen constant (N, δ, r, a bound, a numeric answer in an example or solution) is checked by a script `verify/chNN/<label>.py`, keyed by the label of the block that quotes the values (`fd3/verify/ch01/exm-geometric-tail.py`). The script **asserts** the values the text quotes, so that a changed number fails it. It is not a private CAS session that nobody can rerun. The book text never mentions it (hard rules, above): the page gives a by-hand check the reader can follow.
 
 ### The dependency ledger
 

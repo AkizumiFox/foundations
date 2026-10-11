@@ -1,12 +1,12 @@
 # Functions, Composition, Injections and Surjections
 
-Section 6.3 made "the pairs a description picks out" into a set: a relation from \( A \) to \( B \) is a subset of \( A \times B \). Among its examples, the graph of squaring relates each real number to exactly one number, and the unit circle relates \( 0 \) to two numbers and \( 2 \) to none. This section gives the first kind its name, **function**, and builds the rest on it: we restrict functions, use them to make families, sequences and the set \( Y^X \) precise, compose them, and ask the two questions that the rest of the chapter turns on: does a function send different inputs to different outputs, and does it reach every point of its target?
+Section 1.3 made "the pairs a description picks out" into a set: a relation from \( A \) to \( B \) is a subset of \( A \times B \). Among its examples, the graph of squaring relates each real number to exactly one number, and the unit circle relates \( 0 \) to two numbers and \( 2 \) to none. This section gives the first kind its name, **function**, and builds the rest on it: we restrict functions, use them to make families, sequences and the set \( Y^X \) precise, compose them, and ask the two questions that the rest of the chapter turns on: does a function send different inputs to different outputs, and does it reach every point of its target?
 
 ## What is a function?
 
 Everyone has used functions since school, and the everyday definition is "a rule that assigns to each input one output". Look at the word "rule". The rules \( x \mapsto x^2 \) and \( x \mapsto (x + 1)^2 - 2x - 1 \) are different: one squares, the other adds, squares, subtracts, and subtracts again. Yet on every real number they give the same answer, and nobody would call them different functions. Other functions have no rule at all that one could write down. A table of measured temperatures, one per day, assigns to each day one number, and no formula produces it.
 
-So the rule is not what matters. What matters is **which output goes with which input**: the set of input–output pairs. That set is a relation, and Section 6.3 said exactly when two relations are the same, namely when they contain the same pairs. So we forget the rule and keep the pairs. One more piece of data is needed, the set in which the outputs are **declared** to lie; the reason is given after the definition.
+So the rule is not what matters. What matters is **which output goes with which input**: the set of input–output pairs. That set is a relation, and Section 1.3 said exactly when two relations are the same, namely when they contain the same pairs. So we forget the rule and keep the pairs. One more piece of data is needed, the set in which the outputs are **declared** to lie; the reason is given after the definition.
 
 *A function is its graph, with a declared target.*
 
@@ -23,10 +23,10 @@ In symbols, the condition on the graph is
 \[
 \forall x \in X \ \ \exists! \, y \in Y \ \ (x, y) \in G ,
 \]
-where, as with the bounded quantifiers of @def-bounded-quantifier, \( \exists! \, y \in Y \ \psi \) abbreviates \( \exists! \, y \, (y \in Y \wedge \psi) \).
+where, as with the bounded quantifiers of @fd1:def-bounded-quantifier, \( \exists! \, y \in Y \ \psi \) abbreviates \( \exists! \, y \, (y \in Y \wedge \psi) \).
 :::
 
-The whole definition is the quantifier pattern \( \forall \exists! \). By @def-unique-existence, "\( \exists! \, y \)" is an existence claim and a uniqueness claim, and by @prp-unique-existence-use the uniqueness claim may be stated without reference to the witness; so the condition on the graph is two clauses:
+The whole definition is the quantifier pattern \( \forall \exists! \). By @fd1:def-unique-existence, "\( \exists! \, y \)" is an existence claim and a uniqueness claim, and by @fd1:prp-unique-existence-use the uniqueness claim may be stated without reference to the witness; so the condition on the graph is two clauses:
 
 - **(Fn1)** (existence) for every \( x \in X \) there is **at least one** \( y \in Y \) with \( (x, y) \in G \): every input has an output;
 - **(Fn2)** (uniqueness) for every \( x \in X \) and all \( y, y' \in Y \), if \( (x, y) \in G \) and \( (x, y') \in G \), then \( y = y' \): no input has two outputs.
@@ -35,13 +35,13 @@ In words: the graph is a set of input–output pairs, with inputs from \( X \) a
 \[
 \{ y \in Y : \exists x \in X \ \ f(x) = y \} ,
 \]
-which Section 6.6 will call the image of \( X \) and write \( f(X) \). The domain needs no slot of its own in the pair \( (G, Y) \): by (Fn1) every \( x \in X \) occurs as a first coordinate in \( G \), and since \( G \subseteq X \times Y \), nothing else does. So the graph determines the domain.
+which Section 1.6 will call the image of \( X \) and write \( f(X) \). The domain needs no slot of its own in the pair \( (G, Y) \): by (Fn1) every \( x \in X \) occurs as a first coordinate in \( G \), and since \( G \subseteq X \times Y \), nothing else does. So the graph determines the domain.
 
 **The notation \( f(x) \) is well defined.** Writing "**the** \( y \) with \( (x, y) \in f \)" is legitimate only if there is one, and only one. Clause (Fn1) supplies one, and clause (Fn2) says that any two are equal; together they license the article "the". This gives the equivalence that every argument with functions uses:
 \[
 (x, y) \in f \iff y = f(x) \qquad (x \in X, \ y \in Y). \tag{$\ast\ast$}
 \]
-For \( (\Leftarrow) \): \( (x, f(x)) \in f \) by the choice of \( f(x) \), and if \( y = f(x) \) then \( (x, y) \in f \) by substituting equals (\( \rulename{=E} \), @def-rules-equality). For \( (\Rightarrow) \): both \( (x, y) \) and \( (x, f(x)) \) lie in \( f \), so \( y = f(x) \) by (Fn2). Two consequences follow at once. Equal inputs give equal outputs: if \( x_1 = x_2 \), then \( f(x_1) = f(x_2) \). And every value lies in the codomain: \( f(x) \in Y \) for every \( x \in X \).
+For \( (\Leftarrow) \): \( (x, f(x)) \in f \) by the choice of \( f(x) \), and if \( y = f(x) \) then \( (x, y) \in f \) by substituting equals (\( \rulename{=E} \), @fd1:def-rules-equality). For \( (\Rightarrow) \): both \( (x, y) \) and \( (x, f(x)) \) lie in \( f \), so \( y = f(x) \) by (Fn2). Two consequences follow at once. Equal inputs give equal outputs: if \( x_1 = x_2 \), then \( f(x_1) = f(x_2) \). And every value lies in the codomain: \( f(x) \in Y \) for every \( x \in X \).
 
 **Functions given by formulas.** Most functions in this book are introduced by a formula: "let \( f \colon \nR \to \nR \), \( f(x) = x^2 \)". This means the function whose graph is \( \{ (x, y) \in \nR^2 : y = x^2 \} \). Clause (Fn2) holds for any such graph: if \( y = x^2 \) and \( y' = x^2 \), then \( y = y' \). So for a formula only (Fn1) needs checking, and it says: for each \( x \) in the domain, the formula **makes sense** and its value **lies in the codomain**. For \( x^2 \) on \( \nR \) both are clear. For "\( f \colon \nR \to \nR \), \( f(x) = 1/x \)" the formula makes no sense at \( x = 0 \), and (Fn1) fails there; for "\( f \colon \nR \to [0, \infty) \), \( f(x) = x^2 \)" the value must be checked to lie in \( [0, \infty) \), which it does, since squares are nonnegative.
 
@@ -71,7 +71,7 @@ Check (Fn1) and (Fn2), and find the range, for each of the following.
 
 (c) The graph is \( X \times \{c\} \). For each \( x \in X \), \( (x, c) \) is in it (Fn1); if \( (x, y) \) is in it, then \( y \in \{c\} \) by the membership test \( (\ast) \) for pairs in a product (@def-cartesian-product), so \( y = c \) (Fn2). If \( X \) has an element, the range is \( \{c\} \). If \( X = \emptyset \), the range is \( \emptyset \).
 
-(d) The graph is \( \bigl(A \times \{1\}\bigr) \cup \bigl((X \setminus A) \times \{0\}\bigr) \). For (Fn1), let \( x \in X \). By excluded middle (@prp-excluded-middle), \( x \in A \) or \( x \notin A \); in the first case \( (x, 1) \) is in the graph, in the second \( x \in X \setminus A \) and \( (x, 0) \) is. For (Fn2), the two cases cannot both hold, so \( x \) never receives both \( 0 \) and \( 1 \), and each case gives only one pair with first coordinate \( x \). The range is \( \{0, 1\} \) if \( A \) has an element and \( X \setminus A \) has an element; it is \( \{0\} \) if \( A = \emptyset \) and \( X \) has an element, \( \{1\} \) if \( A = X \) and \( X \) has an element, and \( \emptyset \) if \( X = \emptyset \). This is the first function of the chapter whose existence clause needs excluded middle: the definition by cases is a function only because every \( x \) falls into one of the cases.
+(d) The graph is \( \bigl(A \times \{1\}\bigr) \cup \bigl((X \setminus A) \times \{0\}\bigr) \). For (Fn1), let \( x \in X \). By excluded middle (@fd1:prp-excluded-middle), \( x \in A \) or \( x \notin A \); in the first case \( (x, 1) \) is in the graph, in the second \( x \in X \setminus A \) and \( (x, 0) \) is. For (Fn2), the two cases cannot both hold, so \( x \) never receives both \( 0 \) and \( 1 \), and each case gives only one pair with first coordinate \( x \). The range is \( \{0, 1\} \) if \( A \) has an element and \( X \setminus A \) has an element; it is \( \{0\} \) if \( A = \emptyset \) and \( X \) has an element, \( \{1\} \) if \( A = X \) and \( X \) has an element, and \( \emptyset \) if \( X = \emptyset \). This is the first function of the chapter whose existence clause needs excluded middle: the definition by cases is a function only because every \( x \) falls into one of the cases.
 :::
 
 The next example collects relations that fail to be functions. Each failure is one clause, and it pays to say which.
@@ -90,7 +90,7 @@ N \coloneqq \{ (r, p) \in \nQ \times \nZ : \exists q \in \nZ_{>0} \ \ r = p/q \}
 ::: {.solution}
 (a) No, and both clauses fail, at different points. Clause (Fn2) fails at \( x = 0 \): both \( (0, 1) \) and \( (0, -1) \) lie in \( S \), and \( 1 \ne -1 \). Clause (Fn1) fails at \( x = 2 \): a pair \( (2, y) \in S \) would need \( y^2 = 1 - 4 = -3 \), and no real square is negative. Restricting the inputs to \( [-1, 1] \) repairs (Fn1) but not (Fn2); keeping only the upper half, \( y \ge 0 \), repairs (Fn2) as well, and gives the function \( [-1, 1] \to \nR \), \( x \mapsto \sqrt{1 - x^2} \).
 
-(b) No. Clause (Fn1) holds: every rational number is \( p/q \) for some \( p \in \nZ \) and \( q \in \nZ_{>0} \). But (Fn2) fails, because a rational number has many ways of being written as a fraction. Since \( \tfrac{1}{2} = \tfrac{2}{4} \), both \( (\tfrac12, 1) \) and \( (\tfrac12, 2) \) lie in \( N \), and \( 1 \ne 2 \). The "rule" gives an output that depends on **how the input is written**, not on the input. A function may not do that, since its value is attached to the input itself. This is why definitions of the form "write \( x \) as …, then send it to …" must be checked for **well-definedness**, a check that returns in Chapter 7 for functions defined on classes. Here the repair is to fix the way of writing: let \( q_0 \) be the least \( q \in \nZ_{>0} \) with \( rq \in \nZ \) (such \( q \) exist, by the first sentence, so there is a least one by well-ordering, proved in Chapter 7; a least element is unique), and send \( r \) to \( r q_0 \). This is a function.
+(b) No. Clause (Fn1) holds: every rational number is \( p/q \) for some \( p \in \nZ \) and \( q \in \nZ_{>0} \). But (Fn2) fails, because a rational number has many ways of being written as a fraction. Since \( \tfrac{1}{2} = \tfrac{2}{4} \), both \( (\tfrac12, 1) \) and \( (\tfrac12, 2) \) lie in \( N \), and \( 1 \ne 2 \). The "rule" gives an output that depends on **how the input is written**, not on the input. A function may not do that, since its value is attached to the input itself. This is why definitions of the form "write \( x \) as …, then send it to …" must be checked for **well-definedness**, a check that returns in Chapter 2 for functions defined on classes. Here the repair is to fix the way of writing: let \( q_0 \) be the least \( q \in \nZ_{>0} \) with \( rq \in \nZ \) (such \( q \) exist, by the first sentence, so there is a least one by well-ordering, proved in Chapter 2; a least element is unique), and send \( r \) to \( r q_0 \). This is a function.
 :::
 
 **Why this definition.** Each clause has a job, and dropping one lets in the failures of @exm-not-a-function. Without (Fn1), a "function" could be undefined at some inputs, like \( 1/x \) at \( 0 \); then \( f(x) \) would not name anything, and statements "for every \( x \in X \)" about \( f(x) \) would lose their meaning. Without (Fn2), \( f(x) \) would not name **one** thing, and \( f(\tfrac12) \) in part (b) would be both \( 1 \) and \( 2 \). The graph replaces the rule because two rules can describe one function, and sets are compared by their elements.
@@ -148,7 +148,7 @@ Decide which of these functions are equal.
 ::: {.solution}
 (a) Equal. The domains are both \( \nR \) and the codomains both \( \nR \). For every real \( x \), \( (x + 1)^2 - 2x - 1 = x^2 + 2x + 1 - 2x - 1 = x^2 \). By @prp-function-equality, \( f = g \): two rules, one function.
 
-(b) Equal. Same domain and codomain, and for every real \( x \), \( \sqrt{x^2} = \abs{x} \): the number \( \abs{x} \) is nonnegative and its square is \( x^2 \), and \( \sqrt{x^2} \) is by definition the nonnegative number with square \( x^2 \), which is unique by @thm-squares-order.
+(b) Equal. Same domain and codomain, and for every real \( x \), \( \sqrt{x^2} = \abs{x} \): the number \( \abs{x} \) is nonnegative and its square is \( x^2 \), and \( \sqrt{x^2} \) is by definition the nonnegative number with square \( x^2 \), which is unique by @fd1:thm-squares-order.
 
 (c) Not equal. They have the same domain, the same values, and even the same graph; but their codomains \( \nR \) and \( [0, \infty) \) are different sets (\( -1 \) is in one and not the other), so by @prp-function-equality \( s_1 \ne s_2 \).
 :::
@@ -161,7 +161,7 @@ whose graph is \( G \cap (A \times Y) \): the pairs of \( f \) whose input lies 
 
 ## Families, sequences, and the set of all functions
 
-Section 6.2 used families of sets \( (A_i)_{i \in I} \) and described them informally, as "a set \( A_i \) for each index \( i \in I \)". We can now say exactly what a family is, once its members are known to lie in some set. A **family of subsets of \( X \) indexed by \( I \)** is a function \( I \to \powerset{X} \), \( i \mapsto A_i \), with the power set \( \powerset{X} \) as the codomain the definition asks for. More generally, if \( S \) is a set whose elements are sets, a family of members of \( S \) indexed by \( I \) is a function \( I \to S \). A codomain must be named, because there is no set of all sets (@thm-russell). The value of a family at \( i \) is written \( A_i \) rather than \( A(i) \), and the family is written \( (A_i)_{i \in I} \), in parentheses because it is indexed. A family is not the same thing as its set of values \( \{ A_i : i \in I \} \): the family \( (A_i)_{i \in \{1, 2\}} \) with \( A_1 = A_2 = \{0\} \) has two indices and one value.
+Section 1.2 used families of sets \( (A_i)_{i \in I} \) and described them informally, as "a set \( A_i \) for each index \( i \in I \)". We can now say exactly what a family is, once its members are known to lie in some set. A **family of subsets of \( X \) indexed by \( I \)** is a function \( I \to \powerset{X} \), \( i \mapsto A_i \), with the power set \( \powerset{X} \) as the codomain the definition asks for. More generally, if \( S \) is a set whose elements are sets, a family of members of \( S \) indexed by \( I \) is a function \( I \to S \). A codomain must be named, because there is no set of all sets (@thm-russell). The value of a family at \( i \) is written \( A_i \) rather than \( A(i) \), and the family is written \( (A_i)_{i \in I} \), in parentheses because it is indexed. A family is not the same thing as its set of values \( \{ A_i : i \in I \} \): the family \( (A_i)_{i \in \{1, 2\}} \) with \( A_1 = A_2 = \{0\} \) has two indices and one value.
 
 In the same way, a **sequence** of real numbers \( (a_n)_{n \ge 1} \) is a function \( \nZ_{>0} \to \nR \), \( n \mapsto a_n \), with the value at \( n \) written \( a_n \). The sequence \( (1/n) \) is the function \( n \mapsto 1/n \), and its set of values is \( \{ 1/n : n \ge 1 \} \). Sequences are the main object of Part I.
 
@@ -169,7 +169,7 @@ Finally, all functions from \( X \) to \( Y \) form a set, written
 \[
 Y^X \coloneqq \{ f \in \powerset{X \times Y} \times \{Y\} : f \text{ is a function from } X \text{ to } Y \} .
 \]
-It is a set by the working rules of Section 6.1: every function \( X \to Y \) is a pair \( (G, Y) \) with \( G \in \powerset{X \times Y} \), so \( Y^X \) is the subset of \( \powerset{X \times Y} \times \{Y\} \) cut out by the condition of @def-function, and this product is a set by (W2), (W4), and (W5), so \( Y^X \) is a set by specification (W1). The letters are in this order because, for finite sets, \( Y^X \) has \( m^n \) elements when \( Y \) has \( m \) and \( X \) has \( n \), as the next example suggests; counting is Chapter 8's business. The set \( \{0, 1\}^{\nN} \) of all sequences of zeros and ones, indexed from \( 0 \), plays a leading role in Chapter 8.
+It is a set by the working rules of Section 1.1: every function \( X \to Y \) is a pair \( (G, Y) \) with \( G \in \powerset{X \times Y} \), so \( Y^X \) is the subset of \( \powerset{X \times Y} \times \{Y\} \) cut out by the condition of @def-function, and this product is a set by (W2), (W4), and (W5), so \( Y^X \) is a set by specification (W1). The letters are in this order because, for finite sets, \( Y^X \) has \( m^n \) elements when \( Y \) has \( m \) and \( X \) has \( n \), as the next example suggests; counting is Chapter 3's business. The set \( \{0, 1\}^{\nN} \) of all sequences of zeros and ones, indexed from \( 0 \), plays a leading role in Chapter 3.
 
 ::: {#exm-function-set-small}
 [All functions between two small sets]
@@ -190,7 +190,7 @@ A function \( f \colon \{1, 2\} \to \{0, 1\} \) is determined by its two values 
 Every one of them is an indicator function: \( f = \ind_A \) for \( A = \{ x \in \{1, 2\} : f(x) = 1 \} \). The four subsets of \( \{1, 2\} \) and the four functions correspond one to one.
 :::
 
-The correspondence at the end of the example, between subsets of \( X \) and functions \( X \to \{0, 1\} \), holds for every set \( X \): send \( f \) to \( \{ x \in X : f(x) = 1 \} \) and \( A \) to \( \ind_A \). So counting the subsets of a finite set and counting the functions from it to \( \{0, 1\} \) are one problem, which Chapter 8 solves.
+The correspondence at the end of the example, between subsets of \( X \) and functions \( X \to \{0, 1\} \), holds for every set \( X \): send \( f \) to \( \{ x \in X : f(x) = 1 \} \) and \( A \) to \( \ind_A \). So counting the subsets of a finite set and counting the functions from it to \( \{0, 1\} \) are one problem, which Chapter 3 solves.
 
 The empty set gives the degenerate cases, and they are worth settling now, since they are the test cases of many later statements.
 
@@ -203,14 +203,14 @@ The empty set gives the degenerate cases, and they are worth settling now, since
 :::
 
 ::: {.proof}
-(a) *Existence.* The empty relation satisfies \( \emptyset \subseteq \emptyset \times Y \), since \( \emptyset \) is a subset of every set (Section 6.1). The condition of @def-function reads "for every \( x \), if \( x \in \emptyset \), then there is exactly one \( y \in Y \) with \( (x, y) \in \emptyset \)". For each \( x \) the hypothesis \( x \in \emptyset \) is false, so the implication holds (@prp-vacuous-implication). So \( (\emptyset, Y) \) is a function from \( \emptyset \) to \( Y \).
+(a) *Existence.* The empty relation satisfies \( \emptyset \subseteq \emptyset \times Y \), since \( \emptyset \) is a subset of every set (Section 1.1). The condition of @def-function reads "for every \( x \), if \( x \in \emptyset \), then there is exactly one \( y \in Y \) with \( (x, y) \in \emptyset \)". For each \( x \) the hypothesis \( x \in \emptyset \) is false, so the implication holds (@fd1:prp-vacuous-implication). So \( (\emptyset, Y) \) is a function from \( \emptyset \) to \( Y \).
 
 *Uniqueness.* Let \( (G, Y) \) be any function from \( \emptyset \) to \( Y \). Its graph satisfies \( G \subseteq \emptyset \times Y = \emptyset \), by the mirror-image \( \emptyset \) law of @prp-product-set-laws. So an element of \( G \) would be an element of \( \emptyset \); \( G \) has no elements, and \( G = \emptyset \) by @prp-empty-set-unique. Hence \( (G, Y) = (\emptyset, Y) \).
 
 (b) Let \( x_0 \in X \), and suppose \( f \colon X \to \emptyset \) were a function. By (Fn1) there would be \( y \in \emptyset \) with \( (x_0, y) \in f \); but \( \emptyset \) has no elements. So there is no such function \( [\rulename{\neg I}] \).
 :::
 
-In the notation \( Y^X \): the set \( Y^{\emptyset} \) has exactly one element for every \( Y \), including \( Y = \emptyset \); and \( \emptyset^X = \emptyset \) whenever \( X \) is nonempty. The empty function \( \emptyset \to Y \) returns in Section 6.5 as the witness that a hypothesis there cannot be dropped.
+In the notation \( Y^X \): the set \( Y^{\emptyset} \) has exactly one element for every \( Y \), including \( Y = \emptyset \); and \( \emptyset^X = \emptyset \) whenever \( X \) is nonempty. The empty function \( \emptyset \to Y \) returns in Section 1.5 as the witness that a hypothesis there cannot be dropped.
 
 ## Composition
 
@@ -287,13 +287,13 @@ A function \( f \colon X \to Y \) is **injective** (an **injection**, or **one-t
 \]
 :::
 
-In words: if two inputs give the same output, they were the same input. By @prp-contrapositive, the definition gives the **contrapositive form**
+In words: if two inputs give the same output, they were the same input. By @fd1:prp-contrapositive, the definition gives the **contrapositive form**
 \[
 \forall x_1 \in X \ \ \forall x_2 \in X \ \ \bigl( x_1 \ne x_2 \to f(x_1) \ne f(x_2) \bigr) :
 \]
-different inputs give different outputs. The two forms are equivalent; the way back, from the contrapositive form to the definition, is @prp-contrapositive-converse, which uses \( \rulename{RAA} \). A proof of injectivity usually uses the form of the definition, because an equation \( f(x_1) = f(x_2) \) is something to compute with, while an inequation \( x_1 \ne x_2 \) is not.
+different inputs give different outputs. The two forms are equivalent; the way back, from the contrapositive form to the definition, is @fd1:prp-contrapositive-converse, which uses \( \rulename{RAA} \). A proof of injectivity usually uses the form of the definition, because an equation \( f(x_1) = f(x_2) \) is something to compute with, while an inequation \( x_1 \ne x_2 \) is not.
 
-The negation is found by the laws of Chapter 4 for negating bounded quantifiers and implications: "\( f \) is **not** injective" is
+The negation is found by the laws of *Logic and Proof*, Chapter 4 for negating bounded quantifiers and implications: "\( f \) is **not** injective" is
 \[
 \exists x_1 \in X \ \ \exists x_2 \in X \ \ \bigl( f(x_1) = f(x_2) \wedge x_1 \ne x_2 \bigr) .
 \]
@@ -321,7 +321,7 @@ so a failure of surjectivity is shown by **one witness**: a point of the codomai
 Surjectivity depends on the codomain, which is why @def-function records it: \( s_1 \) and \( s_2 \) of @exm-equal-functions have the same graph, and we shall see that \( s_2 \) is surjective and \( s_1 \) is not.
 
 ::: {.warning}
-Surjectivity cannot be checked by trying some \( y \). The function \( f \colon \nR \to \nR \), \( f(x) = x^2 + x \), reaches \( 0 = f(0) \), \( 2 = f(1) \), \( 6 = f(2) \), and \( 12 = f(3) \), and a reader who tries these may believe it reaches everything. It does not reach \( -1 \): \( x^2 + x = -1 \) would mean \( x^2 + x + 1 = 0 \), but \( x^2 + x + 1 = (x + \tfrac12)^2 + \tfrac34 > 0 \) for every real \( x \). Concluding "for every \( y \)" from a few instances is entry (N1) of the catalogue in Chapter 5.
+Surjectivity cannot be checked by trying some \( y \). The function \( f \colon \nR \to \nR \), \( f(x) = x^2 + x \), reaches \( 0 = f(0) \), \( 2 = f(1) \), \( 6 = f(2) \), and \( 12 = f(3) \), and a reader who tries these may believe it reaches everything. It does not reach \( -1 \): \( x^2 + x = -1 \) would mean \( x^2 + x + 1 = 0 \), but \( x^2 + x + 1 = (x + \tfrac12)^2 + \tfrac34 > 0 \) for every real \( x \). Concluding "for every \( y \)" from a few instances is entry (N1) of the catalogue in *Logic and Proof*, Chapter 5.
 :::
 
 ### Bijective functions
@@ -370,7 +370,7 @@ For each function below, decide with proof whether it is injective and whether i
 (d) *Injective:* the two inputs have the different outputs \( a \ne c \), and there are no other pairs of different inputs to check. *Not surjective:* \( b \) is not an output, since the only outputs are \( k(1) = a \) and \( k(2) = c \).
 :::
 
-Parts (c) and (d) show two more things. A function from a three-element set to a two-element set cannot be injective, and one from a two-element set to a three-element set cannot be surjective: there are too many inputs in the first case and too few in the second. Chapter 8 proves facts of this kind in general, starting from the pigeonhole principle. And the finite pictures are worth drawing: two columns of dots, with an arrow from each input to its output. Injective means no dot on the right receives two arrows; surjective means every dot on the right receives at least one.
+Parts (c) and (d) show two more things. A function from a three-element set to a two-element set cannot be injective, and one from a two-element set to a three-element set cannot be surjective: there are too many inputs in the first case and too few in the second. Chapter 3 proves facts of this kind in general, starting from the pigeonhole principle. And the finite pictures are worth drawing: two columns of dots, with an arrow from each input to its output. Injective means no dot on the right receives two arrows; surjective means every dot on the right receives at least one.
 
 The key example of the section is one formula read as three different functions.
 
@@ -389,7 +389,7 @@ For each of the three functions, settle both questions: injective or not, surjec
 ::: {.solution}
 (a) *Not injective:* \( q_1(1) = 1 = q_1(-1) \) and \( 1 \ne -1 \). *Not surjective:* the witness is \( -1 \in \nR \), since \( x^2 \ge 0 > -1 \) for every real \( x \). So \( q_1 \) is neither.
 
-(b) *Injective.* Let \( x_1, x_2 \ge 0 \) with \( x_1^2 = x_2^2 \). Then \( x_1^2 \le x_2^2 \), so \( x_1 \le x_2 \) by @thm-squares-order, which applies since both numbers are nonnegative; and likewise \( x_2 \le x_1 \). Hence \( x_1 = x_2 \). *Not surjective:* the witness \( -1 \) still works, for the same reason.
+(b) *Injective.* Let \( x_1, x_2 \ge 0 \) with \( x_1^2 = x_2^2 \). Then \( x_1^2 \le x_2^2 \), so \( x_1 \le x_2 \) by @fd1:thm-squares-order, which applies since both numbers are nonnegative; and likewise \( x_2 \le x_1 \). Hence \( x_1 = x_2 \). *Not surjective:* the witness \( -1 \) still works, for the same reason.
 
 (c) *Injective*, by the same proof as in (b): injectivity concerns only the domain and the values, and these are the same as for \( q_2 \). *Surjective.* Let \( y \in [0, \infty) \). A nonnegative real number has a nonnegative square root, so put \( x \coloneqq \sqrt{y} \). Then \( x \in [0, \infty) \) and \( q_3(x) = (\sqrt{y})^2 = y \). So \( q_3 \) is bijective.
 
@@ -397,7 +397,7 @@ The same rule gives three different functions. Shrinking the domain from \( \nR 
 :::
 
 ::: {.warning}
-Injectivity is not the defining property of a function read backwards. Every function satisfies "if \( x_1 = x_2 \), then \( f(x_1) = f(x_2) \)": equal inputs give equal outputs, which is part of \( f(x) \) being well defined. Injectivity is the **converse**, "if \( f(x_1) = f(x_2) \), then \( x_1 = x_2 \)". A "proof" of injectivity that starts from \( x_1 = x_2 \) and reaches \( f(x_1) = f(x_2) \) has proved the wrong implication, entry (N5) of Chapter 5's catalogue, and it "proves" \( q_1 \) injective, which is false.
+Injectivity is not the defining property of a function read backwards. Every function satisfies "if \( x_1 = x_2 \), then \( f(x_1) = f(x_2) \)": equal inputs give equal outputs, which is part of \( f(x) \) being well defined. Injectivity is the **converse**, "if \( f(x_1) = f(x_2) \), then \( x_1 = x_2 \)". A "proof" of injectivity that starts from \( x_1 = x_2 \) and reaches \( f(x_1) = f(x_2) \) has proved the wrong implication, entry (N5) of *Logic and Proof*, Chapter 5's catalogue, and it "proves" \( q_1 \) injective, which is false.
 :::
 
 ::: {.check}
@@ -440,7 +440,7 @@ so \( z \) has the preimage \( x \) under \( g \circ f \) [\( \rulename{\exists 
 (c) If \( f \) and \( g \) are bijective, they are injective and surjective, so \( g \circ f \) is injective by (a) and surjective by (b), that is, bijective.
 :::
 
-Part (a) is short enough to see whole at level 0 of Chapter 5 (Section 5.3), a full derivation. Here is its derivation, with the quantifiers bounded and handled by the bounded rules (@prp-bounded-quantifier-rules), and \( (g \circ f)(u) \) already unwound to \( g(f(u)) \) by @def-composition. Premises 1 and 2 are the injectivity of \( f \) and of \( g \); premise 3 says that \( f \) maps \( X \) into \( Y \), which the prose used in the clause "the points \( f(x_1) \) and \( f(x_2) \) lie in \( Y \)".
+Part (a) is short enough to see whole at level 0 of *Logic and Proof*, Chapter 5 (*Logic and Proof*, Section 5.3), a full derivation. Here is its derivation, with the quantifiers bounded and handled by the bounded rules (@fd1:prp-bounded-quantifier-rules), and \( (g \circ f)(u) \) already unwound to \( g(f(u)) \) by @def-composition. Premises 1 and 2 are the injectivity of \( f \) and of \( g \); premise 3 says that \( f \) maps \( X \) into \( Y \), which the prose used in the clause "the points \( f(x_1) \) and \( f(x_2) \) lie in \( Y \)".
 
 ```{=latex}
 \begin{center}
@@ -472,11 +472,11 @@ $\begin{nd}
 \end{center}
 ```
 
-Compare it with the prose of (a). "Let \( x_1, x_2 \in X \)" opens the two flagged boxes of lines 4 and 5, and "with \( g(f(x_1)) = g(f(x_2)) \)" is the assumption of line 6. The first tagged sentence is lines 7–11, and the second is lines 12–14. The closing "so \( g \circ f \) is injective" stands for lines 15–17, the closing lines of \( \rulename{{\to}I} \) and of the two \( \rulename{\forall I} \)'s; by the convention of Chapter 5 on silent steps, the prose may state their result without naming them. The two tags in the prose mark the only steps where a hypothesis is used, and that is what the proof is about.
+Compare it with the prose of (a). "Let \( x_1, x_2 \in X \)" opens the two flagged boxes of lines 4 and 5, and "with \( g(f(x_1)) = g(f(x_2)) \)" is the assumption of line 6. The first tagged sentence is lines 7–11, and the second is lines 12–14. The closing "so \( g \circ f \) is injective" stands for lines 15–17, the closing lines of \( \rulename{{\to}I} \) and of the two \( \rulename{\forall I} \)'s; by the convention of *Logic and Proof*, Chapter 5 on silent steps, the prose may state their result without naming them. The two tags in the prose mark the only steps where a hypothesis is used, and that is what the proof is about.
 
 **Each hypothesis is needed.** In (a), dropping the injectivity of \( g \) breaks the conclusion: with \( f = \id_{\nR} \) and \( g = q_1 \), squaring on \( \nR \), the composite \( g \circ f = q_1 \) is not injective, although \( f \) is. Dropping the injectivity of \( f \) instead, with \( f = q_1 \) and \( g = \id_{\nR} \), gives the same composite. In (b), with \( f = \id_{\nR} \) and \( g = q_1 \), the composite \( q_1 \) is not surjective, although \( f \) is; with \( f = q_1 \) and \( g = \id_{\nR} \), again \( g \circ f = q_1 \) is not surjective, although \( g \) is.
 
-The converses are more interesting, and they are the exercises of this section. An injective composite \( g \circ f \) forces \( f \) to be injective and says nothing of the kind about \( g \) (exit check C1). A surjective composite forces \( g \) to be surjective, and \( f \) may miss points (B2). Section 6.5 builds on these facts: a function \( f \) with a function \( g \) such that \( g \circ f = \id_X \) is forced to be injective.
+The converses are more interesting, and they are the exercises of this section. An injective composite \( g \circ f \) forces \( f \) to be injective and says nothing of the kind about \( g \) (exit check C1). A surjective composite forces \( g \) to be surjective, and \( f \) may miss points (B2). Section 1.5 builds on these facts: a function \( f \) with a function \( g \) such that \( g \circ f = \id_X \) is forced to be injective.
 
 ## Exercises
 
@@ -495,9 +495,9 @@ The converses are more interesting, and they are the exercises of this section. 
 :::
 
 ::: {.solution}
-(a) \( f \) is injective: \( \forall x_1 \in X \ \forall x_2 \in X \ \bigl( f(x_1) = f(x_2) \to x_1 = x_2 \bigr) \) (@def-injective). Its negation: \( \exists x_1 \in X \ \exists x_2 \in X \ \bigl( f(x_1) = f(x_2) \wedge x_1 \ne x_2 \bigr) \). The bounds stay as they are, and the negated implication becomes "hypothesis and not conclusion", by the negation laws of Chapter 4.
+(a) \( f \) is injective: \( \forall x_1 \in X \ \forall x_2 \in X \ \bigl( f(x_1) = f(x_2) \to x_1 = x_2 \bigr) \) (@def-injective). Its negation: \( \exists x_1 \in X \ \exists x_2 \in X \ \bigl( f(x_1) = f(x_2) \wedge x_1 \ne x_2 \bigr) \). The bounds stay as they are, and the negated implication becomes "hypothesis and not conclusion", by the negation laws of *Logic and Proof*, Chapter 4.
 
-(b) Injective: yes. The condition "for all \( x_1, x_2 \in \emptyset \), …" holds vacuously, since there are no \( x_1 \in \emptyset \) (@prp-vacuous-implication). Surjective: no. The witness is \( 1 \): there is no \( x \in \emptyset \) at all, so none with value \( 1 \).
+(b) Injective: yes. The condition "for all \( x_1, x_2 \in \emptyset \), …" holds vacuously, since there are no \( x_1 \in \emptyset \) (@fd1:prp-vacuous-implication). Surjective: no. The witness is \( 1 \): there is no \( x \in \emptyset \) at all, so none with value \( 1 \).
 
 (c) \( R_1 \) is a function (\( 1 \mapsto 2 \), \( 2 \mapsto 2 \), \( 3 \mapsto 1 \)). \( R_2 \) is not: clause (Fn1) fails at \( 3 \), which has no output. \( R_3 \) is not: clause (Fn2) fails at \( 1 \), which has the two outputs \( 1 \) and \( 2 \).
 
@@ -624,7 +624,7 @@ Let \( f \colon X \to Y \) and \( g \colon Y \to Z \) be functions.
 - 3: rewrites the result as an equation of values of \( g \circ f \) and invokes the injectivity of \( g \circ f \).
 - 3: an example with explicit sets and functions, and both claims checked: \( g \circ f \) injective, and two different points with the same value under \( g \).
 
-Fatal errors (0 for the step): assuming \( g \) is injective; starting from \( x_1 = x_2 \) and deriving \( f(x_1) = f(x_2) \) (the converse, entry (N5) of Chapter 5's catalogue); an example in which \( g \circ f \) is not defined because the codomain of \( f \) is not the domain of \( g \).
+Fatal errors (0 for the step): assuming \( g \) is injective; starting from \( x_1 = x_2 \) and deriving \( f(x_1) = f(x_2) \) (the converse, entry (N5) of *Logic and Proof*, Chapter 5's catalogue); an example in which \( g \circ f \) is not defined because the codomain of \( f \) is not the domain of \( g \).
 A proof by contrapositive (from \( x_1 \ne x_2 \), \( g \circ f \) injective gives \( g(f(x_1)) \ne g(f(x_2)) \), hence \( f(x_1) \ne f(x_2) \), since equal values of \( f \) would give equal values of \( g \)) earns full marks: 2 points for fixing \( x_1 \ne x_2 \) and the goal, 3 for the use of the injectivity of \( g \circ f \), and 2 for the step from \( g(f(x_1)) \ne g(f(x_2)) \) to \( f(x_1) \ne f(x_2) \).
 :::
 
@@ -649,33 +649,33 @@ Let \( f \colon X \to Y \) and \( g \colon Y \to Z \) be functions.
 def-function (claim): bounded exists-unique, exists! y in Y psi, abbreviates exists! y (y in Y and psi) | notation, by analogy with def-bounded-quantifier (cited); NOTATION bounded-quantifier row
 def-function (claim): exists-unique splits into existence (Fn1) and uniqueness (Fn2) | def-unique-existence, prp-unique-existence-use (cited)
 def-function (claim): (**) uses substituting equals (=E) | def-rules-equality (cited)
-def-function (claim): squares of reals are non-negative; 1/x undefined at 0 | school fact (Part 0 convention); proved in Ch 11
-exm-first-functions (example): (x, y) in X x {c} gives y = c | def-cartesian-product ((*) of Section 6.3), cited by section
+def-function (claim): squares of reals are non-negative; 1/x undefined at 0 | school fact (Part 0 convention); proved in AN1.1
+exm-first-functions (example): (x, y) in X x {c} gives y = c | def-cartesian-product ((*) of F2.1 §03), cited by section
 exm-first-functions (example): x in A or x not in A | prp-excluded-middle (cited)
-exm-not-a-function (example): no real square is negative; square roots of non-negative reals exist | school fact (Part 0 convention); proved in Ch 11
+exm-not-a-function (example): no real square is negative; square roots of non-negative reals exist | school fact (Part 0 convention); proved in AN1.1
 exm-not-a-function (example): every rational is p/q with p in Z, q in Z_{>0}; 1/2 = 2/4 | school facts (Part 0 convention)
-exm-not-a-function (example): a non-empty set of positive integers has a least element (the q0 of the repair); a least element is unique | well-ordering, ch07 (promised; prose pointer; STATUS row "Ch 6 §01, §02, §03, §04 → Ch 7"); uniqueness: two least elements are each <= the other, so equal (order facts, Part 0 convention; proved in Ch 11)
+exm-not-a-function (example): a non-empty set of positive integers has a least element (the q0 of the repair); a least element is unique | well-ordering, F2.2 (promised; prose pointer; STATUS row "F2.1 §01, §02, §03, §04 → F2.2"); uniqueness: two least elements are each <= the other, so equal (order facts, Part 0 convention; proved in AN1.1)
 exm-equal-functions (example): (x + 1)^2 - 2x - 1 = x^2; |x| >= 0 and |x|^2 = x^2; sqrt(x^2) is the non-negative square root | school algebra (Part 0 convention); uniqueness by thm-squares-order (cited)
 prp-function-equality (proof): domain = set of first coordinates of the graph | inline, in the paraphrase of def-function
 def-composition (claim): f(x) in Y, so g(f(x)) is defined and in Z | inline, from (**) in def-function's paraphrase
 exm-composition-order (example): 2x + 2 != 2x + 1 | arithmetic
-prp-empty-function (proof): empty set is a subset of every set | Section 6.1, prose after prp-empty-set-unique (vacuous implication, cited there)
+prp-empty-function (proof): empty set is a subset of every set | F2.1 §01, prose after prp-empty-set-unique (vacuous implication, cited there)
 def-surjective (claim): (the warning after it) x^2 + x + 1 = (x + 1/2)^2 + 3/4 > 0; values 0, 2, 6, 12 | school algebra (Part 0 convention); computation inline
-def-injective (claim): negation of bounded quantifiers and of an implication | ch04 (promised): prp-bounded-quantifier-negation, prp-negated-implication, prose pointer
-exm-injective-surjective-first (example): dividing by 3; n >= 1 gives 3n >= 3, n <= 0 gives 3n <= 0 | school algebra and order facts (Part 0 convention); proved in Ch 11 (order) and Ch 7 (integers)
-exm-injective-surjective-first (claim): a function from a 3-element set to a 2-element set is not injective, etc. | ch08 (prose pointer, pigeonhole); only the two specific cases (c), (d) are proved, by listing; nothing depends on the general claim
-exm-function-set-small (claim): Y^X has m^n elements for finite sets; subsets of X correspond to functions X -> {0, 1} | ch08 (prose pointer; the count is Ch 8's exercise on B^A); the correspondence is stated with its two maps, and nothing depends on either
-exm-square-three-ways (example): x^2 >= 0 > -1; existence of sqrt(y) for y >= 0 | school fact (Part 0 convention); proved in Ch 11
+def-injective (claim): negation of bounded quantifiers and of an implication | F1.4 (promised): prp-bounded-quantifier-negation, prp-negated-implication, prose pointer
+exm-injective-surjective-first (example): dividing by 3; n >= 1 gives 3n >= 3, n <= 0 gives 3n <= 0 | school algebra and order facts (Part 0 convention); proved in AN1.1 (order) and F2.2 (integers)
+exm-injective-surjective-first (claim): a function from a 3-element set to a 2-element set is not injective, etc. | F2.3 (prose pointer, pigeonhole); only the two specific cases (c), (d) are proved, by listing; nothing depends on the general claim
+exm-function-set-small (claim): Y^X has m^n elements for finite sets; subsets of X correspond to functions X -> {0, 1} | F2.3 (prose pointer; the count is F2.3's exercise on B^A); the correspondence is stated with its two maps, and nothing depends on either
+exm-square-three-ways (example): x^2 >= 0 > -1; existence of sqrt(y) for y >= 0 | school fact (Part 0 convention); proved in AN1.1
 thm-composition-injective-surjective (proof): f(x1), f(x2) in Y | (**) in def-function's paraphrase (every value lies in the codomain)
-thm-composition-injective-surjective (proof): forall-E, exists-E, exists-I, forall-I in the prose tags | ch04 (promised): quantifier rules (Sections 4.3-4.6), prose pointer; the bounded forms in the derivation are prp-bounded-quantifier-rules (cited)
-thm-composition-injective-surjective (claim): level 0 = full derivation | ch05 (promised): def-levels-of-proof (prose pointer, Section 5.3)
-thm-composition-injective-surjective (claim): closing lines of ->I and forall-I may be silent | ch05 (promised): def-silent-steps, prose pointer
-exr-functions-b1 (solution): parity (1 is odd, 2n even, not both) | school fact as in Ch 1-2; ch07 (promised; STATUS row "every integer is even or odd, and not both")
-exr-functions-b1 (solution): x1^3 - x2^3 factorization; real cube roots exist; |x| algebra for x/(1+|x|) | school algebra (Part 0 convention); cube roots proved in Ch 11 (thm-nth-root with a sign change)
-exr-functions-b1 (solution): 0 in N and 0 + k = k | school arithmetic of N; ch07 (promised; STATUS row "ℕ closed under + and ·", Ch 11)
-def-function (claim): m + n in N for m, n in N (addition N x N -> N, the example after the definition; also exr-functions-b1 (b)) | ch07 (promised; STATUS row "ℕ closed under + and ·", Ch 11)
-exr-functions-b1 (solution): in (e), (-1)^n is defined, and is 1 for even n and -1 for odd n | ch07 (promised; STATUS rows "definition by recursion (powers)", Ch 11, and "every integer is even or odd, and not both", Ch 1)
-def-surjective (example): the Quick check on n -> n + 1 uses n + 1 in N and n + 1 >= 1 for n in N; m - 1 in Z for m in Z | ch07 (promised; STATUS rows "ℕ closed under + and ·" and "nothing between n and n + 1", Ch 11, and "ℤ closed under +, − and ·", Ch 11)
-exr-functions-b3 (solution): n >= 1 gives n - 1 in N; n + 1 >= 1 for n in N | ch07 (promised; STATUS row "n >= 1 => n - 1 in N")
-exr-functions-a1 (solution): negation laws | ch04 (promised): prp-bounded-quantifier-negation, prp-negated-implication, prose pointer
+thm-composition-injective-surjective (proof): forall-E, exists-E, exists-I, forall-I in the prose tags | F1.4 (promised): quantifier rules (F1.4 §03-F1.4 §06), prose pointer; the bounded forms in the derivation are prp-bounded-quantifier-rules (cited)
+thm-composition-injective-surjective (claim): level 0 = full derivation | F1.5 (promised): def-levels-of-proof (prose pointer, F1.5 §03)
+thm-composition-injective-surjective (claim): closing lines of ->I and forall-I may be silent | F1.5 (promised): def-silent-steps, prose pointer
+exr-functions-b1 (solution): parity (1 is odd, 2n even, not both) | school fact as in Ch 1-2; F2.2 (promised; STATUS row "every integer is even or odd, and not both")
+exr-functions-b1 (solution): x1^3 - x2^3 factorization; real cube roots exist; |x| algebra for x/(1+|x|) | school algebra (Part 0 convention); cube roots proved in AN1.1 (thm-nth-root with a sign change)
+exr-functions-b1 (solution): 0 in N and 0 + k = k | school arithmetic of N; F2.2 (promised; STATUS row "ℕ closed under + and ·", AN1.1)
+def-function (claim): m + n in N for m, n in N (addition N x N -> N, the example after the definition; also exr-functions-b1 (b)) | F2.2 (promised; STATUS row "ℕ closed under + and ·", AN1.1)
+exr-functions-b1 (solution): in (e), (-1)^n is defined, and is 1 for even n and -1 for odd n | F2.2 (promised; STATUS rows "definition by recursion (powers)", AN1.1, and "every integer is even or odd, and not both", F1.1)
+def-surjective (example): the Quick check on n -> n + 1 uses n + 1 in N and n + 1 >= 1 for n in N; m - 1 in Z for m in Z | F2.2 (promised; STATUS rows "ℕ closed under + and ·" and "nothing between n and n + 1", AN1.1, and "ℤ closed under +, − and ·", AN1.1)
+exr-functions-b3 (solution): n >= 1 gives n - 1 in N; n + 1 >= 1 for n in N | F2.2 (promised; STATUS row "n >= 1 => n - 1 in N")
+exr-functions-a1 (solution): negation laws | F1.4 (promised): prp-bounded-quantifier-negation, prp-negated-implication, prose pointer
 -->

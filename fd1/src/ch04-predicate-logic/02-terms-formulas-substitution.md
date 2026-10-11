@@ -107,7 +107,7 @@ Structural induction and structural recursion (@thm-structural-induction, @thm-s
 
 **Shorthand.** The conventions of Section 3.1 for dropping parentheses stay, with three additions.
 
-1. Two-place predicate symbols such as \( <, \le \) are written between their terms: \( x < y \) is shorthand for \( <(x, y) \). The one-place symbol \( \in A \) is written after its term: \( t \in A \) is shorthand for \( (\in A)(t) \). (When sets are themselves objects of the domain, as in Chapter 6, \( \in \) is a two-place predicate symbol and \( x \in A \) is \( \in(x, A) \); in this chapter \( A \) is always a fixed set, so we treat \( \in A \) as one-place.) We write \( t_1 \ne t_2 \) for \( \neg(t_1 = t_2) \).
+1. Two-place predicate symbols such as \( <, \le \) are written between their terms: \( x < y \) is shorthand for \( <(x, y) \). The one-place symbol \( \in A \) is written after its term: \( t \in A \) is shorthand for \( (\in A)(t) \). (When sets are themselves objects of the domain, as in *Sets, Relations, and Cardinality*, Chapter 1, \( \in \) is a two-place predicate symbol and \( x \in A \) is \( \in(x, A) \); in this chapter \( A \) is always a fixed set, so we treat \( \in A \) as one-place.) We write \( t_1 \ne t_2 \) for \( \neg(t_1 = t_2) \).
 2. **A quantifier binds as tightly as \( \neg \)**: it applies to the smallest formula that follows it. So \( \forall x\, P(x) \to Q(c) \) stands for \( (\forall x\, P(x) \to Q(c)) \), an implication whose hypothesis is \( \forall x\, P(x) \). For the quantifier to govern the whole implication, write \( \forall x\, (P(x) \to Q(x)) \), where the parentheses are the official ones around the implication.
 3. The bounded quantifiers of @def-bounded-quantifier, \( \forall x \in A \; \varphi \) and the rest, stand for the formulas given there.
 
@@ -621,15 +621,15 @@ The two sentences also say different things: over \( \nN \), the first is true (
 :::
 
 <!-- dependency ledger
-def-term (claim): unique readability for terms | pattern of thm-unique-readability (Section 3.2); proof carries over, not repeated, stated as such in the text
-def-first-order-formula (claim): structural induction, structural recursion and unique readability for first-order formulas and for terms, with atomic formulas as base case and the quantifier clauses as one-part building steps | pattern of thm-structural-induction, thm-structural-recursion, thm-unique-readability (Section 3.2); proofs carry over word for word, not repeated, stated as such in the text
+def-term (claim): unique readability for terms | pattern of thm-unique-readability (F1.3 §02); proof carries over, not repeated, stated as such in the text
+def-first-order-formula (claim): structural induction, structural recursion and unique readability for first-order formulas and for terms, with atomic formulas as base case and the quantifier clauses as one-part building steps | pattern of thm-structural-induction, thm-structural-recursion, thm-unique-readability (F1.3 §02); proofs carry over word for word, not repeated, stated as such in the text
 def-free-variable (claim): the recursive description of "x is free in phi" | inline (read off the parse tree, argued in the text)
 def-substitution (claim): the recursion clauses define exactly one formula phi[t/x], and it is a formula | structural recursion carried over (see above); inline
 def-substitution (claim): phi[x/x] = phi | inline (clause by clause; one sentence in the text)
 def-substitution (proof): the claim "x not free in phi implies phi[t/x] = phi", including its term version | inline (structural induction, proved in the text)
 def-free-for (claim): the four special cases and the recursive description of "free for" | inline (from the definition, argued in the text)
-terms-formulas-substitution-renaming (claim): renaming a bound variable keeps meaning | NOT proved here: front renaming derived in Section 4.4 (forall) and 4.6 (exists); inside a formula a stated convention, semantic justification from lem-term-substitution with lem-free-coincidence and an induction on the context, not carried out (optional Section 4.12; nothing outside 4.12 depends on the lemma); nothing in this section depends on it except the recipe, which is stated as a convention
-exm-free-and-bound-limit (example): a sequence is a function symbol a; membership in N a one-place predicate | conventions of Section 4.1 (def-bounded-quantifier and the one-domain convention), recalled
+terms-formulas-substitution-renaming (claim): renaming a bound variable keeps meaning | NOT proved here: front renaming derived in F1.4 §04 (forall) and 4.6 (exists); inside a formula a stated convention, semantic justification from lem-term-substitution with lem-free-coincidence and an induction on the context, not carried out (optional F1.4 §12; nothing outside 4.12 depends on the lemma); nothing in this section depends on it except the recipe, which is stated as a convention
+exm-free-and-bound-limit (example): a sequence is a function symbol a; membership in N a one-place predicate | conventions of F1.4 §01 (def-bounded-quantifier and the one-domain convention), recalled
 terms-formulas-substitution-proofs (example): epsilon > 0 gives epsilon/2 > 0 | school arithmetic
 terms-formulas-substitution-proofs (example): the induction display for a formula phi | restates ax-induction (cited); "free for" checked inline
 exr-terms-formulas-substitution-b2 (solution): structural recursion defines Var and FV | carried over (see above)

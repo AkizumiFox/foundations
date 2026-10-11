@@ -25,7 +25,7 @@ We borrow two facts about real numbers and use them as rules. Every reader knows
 - **Tr** (for "transitivity", or chaining): from \( a < b \) and \( b < c \), write \( a < c \).
 - **Sh** (for "shift"): from \( a < b \), write \( a + c < b + c \), for any number \( c \).
 
-These are facts about numbers, not rules of logic. They are used as rules in this section and its exercises only. When a later proof adds \( 1 \) to both sides of an inequality, that is a step of school algebra, and Chapter 11 proves the facts behind such steps from the axioms for the real numbers.
+These are facts about numbers, not rules of logic. They are used as rules in this section and its exercises only. When a later proof adds \( 1 \) to both sides of an inequality, that is a step of school algebra, and *Analysis on the Real Line*, Chapter 1 proves the facts behind such steps from the axioms for the real numbers.
 
 ## Rule schemas
 
@@ -528,14 +528,14 @@ Fatal errors (0 for the step): calling the list a derivation because its conclus
 :::
 
 <!-- dependency ledger
-def-rule-schema (example): Tr and Sh are true facts about < on the real numbers (transitivity; adding a number to both sides) | school algebra, used as toy rules by the blueprint's design; ch11 (promised)
+def-rule-schema (example): Tr and Sh are true facts about < on the real numbers (transitivity; adding a number to both sides) | school algebra, used as toy rules by the blueprint's design; AN1.1 (promised)
 def-rule-schema (example): 2/4 = 1/2 | inline arithmetic
 exm-chaining-derivation (example): none beyond the toy rule Tr | inline; checked by verify/ch01/exm-chaining-derivation.py
 exm-derivations (solution): every rule met before boxes cites at least one line (and-I, and-E, ->E) | the third and fourth sections of this chapter (later sections, stated as a meta-claim, not used in a proof; blueprint ch01.md, Rule system)
 exm-not-a-derivation (solution): the instance and earlier-line claims for both changes | inline; checked by verify/ch01/exm-not-a-derivation.py
-exm-not-a-derivation (example): the "How this looks" chain after it: 0 < 1/(n+1) < 1/n <= 1 for integers n >= 1; from a < b and b <= c infer a < c | school algebra; ch11 (promised)
-exr-derivations-a1 (solution): Tr and Sh lead from true lines to true lines; going down the derivation line by line is an induction | school algebra, ch11 (promised); the induction is ch03 (promised)
-exr-derivations-b3 (solution): 0 < 1/4 < 1/3 < 1/2; m - 1 joins; the lower bound m - 1 is stated, not proved or used | inline arithmetic, checked by verify/ch01/exr-derivations-b3.py (which also confirms the lower bound for m <= 5); proof by induction ch03 (promised)
+exm-not-a-derivation (example): the "How this looks" chain after it: 0 < 1/(n+1) < 1/n <= 1 for integers n >= 1; from a < b and b <= c infer a < c | school algebra; AN1.1 (promised)
+exr-derivations-a1 (solution): Tr and Sh lead from true lines to true lines; going down the derivation line by line is an induction | school algebra, AN1.1 (promised); the induction is F1.3 (promised)
+exr-derivations-b3 (solution): 0 < 1/4 < 1/3 < 1/2; m - 1 joins; the lower bound m - 1 is stated, not proved or used | inline arithmetic, checked by verify/ch01/exr-derivations-b3.py (which also confirms the lower bound for m <= 5); proof by induction F1.3 (promised)
 exr-derivations-c1 (solution): 0 < 1 is true and 1 < 0 is false | inline arithmetic
 exr-derivations-c2 (solution): following citations backwards the line numbers strictly decrease, so the chain of citations ends | inline: the numbers lie among 1, ..., n, so a strictly decreasing chain of them has at most n terms
 -->
