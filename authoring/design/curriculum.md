@@ -450,10 +450,10 @@ About half the exercises annotate or build real proofs from analysis.
 | Concept | ℝ | ℝⁿ | metric / C(K) | normed / Banach | Hilbert | Lᵖ / weak* |
 |---|---|---|---|---|---|---|
 | compact | Heine–Borel, BW | closed and bounded | complete + totally bounded; Arzelà–Ascoli | unit ball compact iff finite-dimensional; compact operators | bounded ⇒ weakly convergent subsequence | Alaoglu; Kolmogorov–Riesz; Rellich |
-| complete | forms of LUB | coordinatewise | C(K); Baire; contraction | ℓᵖ; quotients; completion | Riesz–Fischer | Lᵖ complete; Riemann space incomplete |
+| complete | forms of LUB; ℝ built from Cauchy sequences of rationals, Cauchy-complete + Archimedean ⇒ LUB (F3.10) | coordinatewise | C(K); Baire; contraction; completion of a metric space, ℝ as the completion of ℚ (AN2.2, returning to F3.10) | ℓᵖ; quotients; completion | Riesz–Fischer | Lᵖ complete; Riemann space incomplete |
 | convergence | ε-N; pointwise vs uniform | norm equivalence | uniform = sup metric | norm vs weak | orthogonal expansions | a.e., in measure, Lᵖ, weak*, distributional |
 | continuity | ε-δ, uniform | Fréchet | equicontinuity, Lipschitz | bounded = continuous; closed graph | adjoint | weak lower semicontinuity of the norm; translation |
-| density | ℚ dense | polynomials | Stone–Weierstrass | Hahn–Banach criterion | orthonormal basis | C_c and mollifiers |
+| density | ℚ dense (in any Archimedean field, F3.9; in the constructed ℝ, F3.10) | polynomials | Stone–Weierstrass | Hahn–Banach criterion | orthonormal basis | C_c and mollifiers |
 
 ## Evidence from mathematics education (for STYLE and exercise design)
 - **Concept image vs concept definition** (Tall & Vinner 1981). Every definition gets a counterexample that challenges the image it tends to create.
