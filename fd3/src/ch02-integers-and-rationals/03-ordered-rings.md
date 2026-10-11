@@ -554,6 +554,6 @@ prp-ordered-ring-rules (proof): the multiples n.a exist and are unique | thm-rec
 prp-ordered-ring-rules (proof): a natural number n >= 1 is j + 1 for some j | prp-omega-order-arithmetic (a) (cited), with 1 + j = j + 1 by thm-omega-arithmetic-laws (b)
 prp-integer-least-element (proof): T = {s - b : s in S} is a set | image of S under s |-> s - b (F2.1, def-image); not cited by label
 prp-integer-least-element (proof): -S = {-s : s in S} is a set | image of S under s |-> -s (F2.1, def-image); not cited by label
-exm-finite-ring-not-orderable (solution): (F2), (F5), (F9) for the two-element tables | inline case check (all eight triples)
+exm-finite-ring-not-orderable (solution): (F2), (F5), (F9) for the two-element tables | inline case argument from the tables (0x = 0, 1x = x, x + y = 1 iff exactly one of x, y is 1)
 exr-ordered-rings-c1 (solution): {1, ..., m + 1} has m + 1 elements | def-finite (identity bijection; inline)
 -->

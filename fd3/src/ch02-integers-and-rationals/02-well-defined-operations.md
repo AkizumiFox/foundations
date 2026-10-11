@@ -116,7 +116,7 @@ Let \( (a, b), (a', b'), (c, d) \in \nN \times \nN \) with \( (a, b) \sim (a', b
 \[
 a + b' = b + a' .
 \]{#eq-integer-rep-change}
-All rearrangements below use @thm-omega-arithmetic-laws: commutativity and associativity of \( + \) and \( \cdot \), and distributivity.
+All rearrangements below use @thm-omega-arithmetic-laws: commutativity and associativity of \( + \), commutativity of \( \cdot \), and distributivity.
 
 *Sum, first argument.* We need \( (a + c, b + d) \sim (a' + c, b' + d) \), that is, \( (a + c) + (b' + d) = (b + d) + (a' + c) \). The left side is \( (a + b') + (c + d) \), which by @eq-integer-rep-change equals \( (b + a') + (c + d) \), and that is the right side rearranged.
 
