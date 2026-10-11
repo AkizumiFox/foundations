@@ -24,6 +24,17 @@ items:
     evidence: '01:19-34 is correct, and the pair/ordered-pair citations check against fd2 def-ordered-pair.
       The meta-claim right after the definition at 01:42, ''almost every proof in this section uses it'',
       is overstated: see the finding with key "".'
+  - stage: S7r
+    verdict: correct
+    by: rereferee
+    hash: 6443a3502f21
+    date: '2026-10-12'
+    model: claude-opus-5-5
+    evidence: '01:19-34: the definition is well formed (fd2:def-cartesian-product, fd2:def-ordered-pair
+      at 01:38). Line 3, the opening x^2+1 >= 0+1 = 1 > 0: x^2 >= 0 comes from fd3:prp-ordered-ring-rules
+      (e) when x != 0 and from 0^2 = 0 (fd3:prp-ring-algebra (b)) when x = 0. Adding is (b) and 1 > 0
+      is (e); I checked both clauses at fd3 03-ordered-rings.md:306-319. Line 42 now names exactly which
+      proofs compare p'
 - key: prp-reals-embed-complex
   kind: prp
   file: 01-pairs-of-reals.md
@@ -48,6 +59,17 @@ items:
       is neutral for addition and that a product with 0 is 0' is false of the proof that follows. The
       proof also uses b*1=b (F7) at 01:79 and -0=0 (in ac-0*0=ac and b*0-0*1=0). Ledger line 468 itself
       lists (F7).
+  - stage: S7r
+    verdict: correct
+    by: rereferee
+    hash: ce6d00fe9867
+    date: '2026-10-12'
+    model: claude-opus-5-5
+    evidence: '01:57-82. Injectivity comes from fd2:def-ordered-pair. Sums: (a+c, 0+0) = (a+c, 0) by (F3).
+      Products: (ac - 0*0, a*0 + 0*c) = (ac, 0) by fd3:prp-ring-algebra (b), with 0*c = c*0 by (F6) as
+      a routine step. iota(b)i = (b*0 - 0*1, b*1 + 0*0) = (0, b) uses (F7), a product with 0, and 0 -
+      0 = 0. i*i = iota(-1) follows from the computation at 01:46. All three earlier findings are resolved.
+      (1) and (2): '
 - key: proof:prp-reals-embed-complex
   kind: proof
   file: 01-pairs-of-reals.md
@@ -92,6 +114,17 @@ items:
     model: claude-opus-5-5
     evidence: '01:107-123: (2+3i)(1-i)=5+i; (-1,0)(0,1)=(0,-1); (0,-1)(0,1)=(1,0); (a+bi)(a-bi)=a^2+b^2.
       All verified by hand. The pointer to Section 1.2 is paid at 02:7.'
+  - stage: S7r
+    verdict: correct
+    by: rereferee
+    hash: cffe20f10d3e
+    date: '2026-10-12'
+    model: claude-opus-5-5
+    evidence: '01:106-124, rechecked line by line. (2+3i)(1-i) = (2+3) + (-2+3)i = 5+i. (-1,0)(0,1) =
+      (0-0, -1+0) = (0,-1). (0,-1)(0,1) = (0-(-1), 0+0) = (1,0). (a+bi)(a-bi) has real part a^2 - b(-b)
+      = a^2+b^2 and imaginary part a(-b)+ba = 0. The earlier S5a finding is resolved: line 123 now splits
+      the cases, using fd3:prp-ordered-ring-rules (e) for a non-zero real and 0^2 = 0 by fd3:prp-ring-algebra
+      (b). The su'
 - key: check:01-pairs-of-reals:1
   kind: check
   file: 01-pairs-of-reals.md
@@ -188,6 +221,17 @@ items:
     evidence: 01-pairs-of-reals.md:258 A result is credited to the wrong place. The text says that parts
       (a)-(c) 'for R = N' are the laws of @fd3:prp-omega-powers-parity (a). That label covers only (a),
       and N is not a commutative ring, so it is not an instance of the proposition.
+  - stage: S7r
+    verdict: correct
+    by: rereferee
+    hash: e47085cd0348
+    date: '2026-10-12'
+    model: claude-opus-5-5
+    evidence: '01:221-258. I rechecked the proof''s steps: (a) uses (F7) for the base and (F5) for the
+      step; (b) uses (a); (c) uses (F5) and (F6); (d) cites fd3:lem-field-fraction-rules (d), which is
+      the no-zero-divisors clause for all x, y (fd3 ch04/01:29), and gets 1 != 0 from the field definition.
+      The S5b Idea finding is resolved: the Idea (01:235) now names (F5) and (F6) for (c), and it calls
+      the field proper'
 - key: proof:prp-power-laws-commutative-ring
   kind: proof
   file: 01-pairs-of-reals.md
@@ -400,6 +444,17 @@ items:
       the witnesses (1,-1) and (1,1); a != 0 because (a,b) is non-zero. (=>): the eliminations give (a^2-b^2)c=0
       and (b^2-a^2)d=0 (checked by hand and by sympy solve). (2,1)*(2/3,-1/3)=(1,0) checked. Worked example:
       the non-example (1,1) in the section.'
+  - stage: S7r
+    verdict: correct
+    by: rereferee
+    hash: 934bee453ebd
+    date: '2026-10-12'
+    model: claude-opus-5-5
+    evidence: '01:390-408. I solved it independently. (a,b)*(ta,-tb) = (t(a^2-b^2), 0). The (<=) direction:
+      a^2 = b^2 gives (a-b)(a+b) = 0, so b = +-a (fd3:lem-field-fraction-rules (d)); then (a,a)*(1,-1)
+      = (0,0) and (a,-a)*(1,1) = (0,0). The new ''no inverse'' clause: (a,a)*(c,d) = (a(c+d), a(c+d))
+      and (a,-a)*(c,d) = (a(c-d), -a(c-d)), while (1,0) has neither equal nor opposite coordinates, since
+      1 != 0 = -0. Thi'
 - key: exr-pairs-of-reals-c1
   kind: exr
   file: 01-pairs-of-reals.md
@@ -433,6 +488,17 @@ items:
     model: claude-opus-5-5
     evidence: '01-pairs-of-reals.md:431 Hint 2 executes the key idea of part (b) instead of giving only
       the first line (STYLE §11.7: neither rung executes the key idea).'
+  - stage: S7r
+    verdict: correct
+    by: rereferee
+    hash: 3c9211de8188
+    date: '2026-10-12'
+    model: claude-opus-5-5
+    evidence: '01:412-464. I solved it first and compared. (a): 0_R+0_R = 0_R in K, then cancel with -0_R;
+      1_R*1_R = 1_R with 1_R != 0_K, then cancel with 1_R^{-1}; negatives and inverses by fd3:prp-ring-algebra
+      (a) and fd3:lem-field-fraction-rules (a). All correct. (b): (d-b)j = a-c makes j real by (a). The
+      S5a finding is resolved: j != 0 because 0^2 = 0 != -1 (fd3:prp-ring-algebra (b)), so j^2 > 0 by
+      fd3:prp-o'
 - key: def-conjugate-modulus
   kind: def
   file: 02-conjugate-and-modulus.md
@@ -502,6 +568,17 @@ items:
     model: claude-opus-5-5
     evidence: 02-conjugate-and-modulus.md:46 The cited clause gives i·0 = 0, not 0·i = 0, and the step
       a - 0 = a (that is, -0 = 0) has no reason and no ledger line.
+  - stage: S7r
+    verdict: correct
+    by: rereferee
+    hash: 5fa59e9a9638
+    date: '2026-10-12'
+    model: claude-opus-5-5
+    evidence: 02:46. The line now reads 0·i = i·0 = 0 by (F6) and fd3:prp-ring-algebra (b), which says
+      a·0 = 0, so the commuted form is justified. It also gives -0 = 0 from 0+0 = 0 and uniqueness of
+      negatives, fd3:prp-ring-algebra (a). Both earlier S5b points are resolved, and the ledger line was
+      updated to match. The modulus step uses fd3:prp-absolute-value-ordered-field (a) (|x| >= 0) and
+      (b) (|x|^2 = x^2), t
 - key: check:02-conjugate-and-modulus:1
   kind: check
   file: 02-conjugate-and-modulus.md
@@ -566,6 +643,16 @@ items:
     model: claude-opus-5-5
     evidence: 02-conjugate-and-modulus.md:90 Part (a) uses -(b+d) = (-b)+(-d) in R without citing it,
       and the ledger does not list it.
+  - stage: S7r
+    verdict: correct
+    by: rereferee
+    hash: 715b7fcbeee9
+    date: '2026-10-12'
+    model: claude-opus-5-5
+    evidence: '02:90. -(b+d) = (-b)+(-d) is now justified: (b+d)+((-b)+(-d)) = 0 plus uniqueness of negatives
+      (fd3:prp-ring-algebra (a)), and the ledger lists it. At 02:108, (O4) is now cited as ''(O4) of @fd3:def-ordered-ring-and-field''.
+      That clause says a product of positives is positive, and this is the use. In (d), prp-power-laws-commutative-ring
+      (c) gives (zw)^n = z^n w^n, which is what the step needs. (b), '
 - key: prp-complex-inverse
   kind: prp
   file: 02-conjugate-and-modulus.md
@@ -678,6 +765,16 @@ items:
     model: claude-opus-5-5
     evidence: 02-conjugate-and-modulus.md:163 The reading 'z/w multiplied by conj w/conj w = 1' uses conj
       w ≠ 0, and nothing justifies it.
+  - stage: S7r
+    verdict: correct
+    by: rereferee
+    hash: be1cac301c45
+    date: '2026-10-12'
+    model: claude-opus-5-5
+    evidence: '02:163 now proves conj w != 0 from |conj w| = |w| != 0, by thm-conjugate-properties (d)
+      and (e). This is sound: if conj w = 0 then |conj w| = 0. At 02:182 the bad citation of fd3:lem-field-fraction-rules
+      (a) for uniqueness of the quotient is gone. It is replaced by u = u·1 = u((1-i)(1-i)^{-1}) = (u(1-i))(1-i)^{-1},
+      justified by (F7), (F8) and (F5) in the field C, which is correct. I solved both qu'
 - key: check:02-conjugate-and-modulus:2
   kind: check
   file: 02-conjugate-and-modulus.md
@@ -729,6 +826,16 @@ items:
     model: claude-opus-5-5
     evidence: 02:209-217. (a) cites fd3:prp-cof-square-roots, as I expected. (b) z conj z = |z|^2 >= 0.
       (c) the hypothesis is used only to get |z|^2 != 0. (d) 1/(1+2i)=1/5-(2/5)i (checked with sympy).
+  - stage: S7r
+    verdict: correct
+    by: rereferee
+    hash: 9f784dc2c25e
+    date: '2026-10-12'
+    model: claude-opus-5-5
+    evidence: '02:211. The text now covers the zero case separately: fd3:prp-ordered-ring-rules (e) (a
+      != 0 gives a^2 > 0) when |z| != 0, and 0^2 = 0 by fd3:prp-ring-algebra (b) when |z| = 0. The ledger
+      line was added. Parts (a), (c) and (d) are right; I re-solved (d) and got 1/(1+2i) = 1/5 - (2/5)i.
+      Both earlier findings are resolved.'
 - key: exr-conjugate-and-modulus-b1
   kind: exr
   file: 02-conjugate-and-modulus.md
@@ -787,6 +894,16 @@ items:
     model: claude-opus-5-5
     evidence: 02:259-267. (a) divides by 2 and by 2i, both non-zero, and cites uniqueness of quotients.
       (b) and (c) compare parts with 2 != 0. Complete, and matches my proof.
+  - stage: S7r
+    verdict: correct
+    by: rereferee
+    hash: ba8481c9fe9a
+    date: '2026-10-12'
+    model: claude-opus-5-5
+    evidence: 02:262. The citation of fd3:lem-field-fraction-rules (a) is replaced by (b(2i))(2i)^{-1}
+      = b((2i)(2i)^{-1}) = b, using (F5), (F8) and (F7) in C, which is valid. At 02:266, part (c) now
+      has the steps a = -a, then 2a = 0, then a = 0, with 2 != 0 'as in (b)'. Part (b) uses 2 != 0 in
+      R, which the ledger sources to fd3:prp-ordered-ring-rules (h). Both earlier findings are resolved.
 - key: exr-conjugate-and-modulus-b3
   kind: exr
   file: 02-conjugate-and-modulus.md
@@ -847,6 +964,17 @@ items:
     model: claude-opus-5-5
     evidence: 02-conjugate-and-modulus.md:298 In the exit-check solution, |z||w| >= 0 is asserted without
       a reason, although the step it feeds (uniqueness of the non-negative square root) is a scored step.
+  - stage: S7r
+    verdict: correct
+    by: rereferee
+    hash: cb4548a571b0
+    date: '2026-10-12'
+    model: claude-opus-5-5
+    evidence: '02:288. The exercise statement now lists prp-reals-embed-complex as allowed, and the solution
+      at 02:300 cites it for the product r|z|^2 computed in R. At 02:298, |z||w| >= 0 now has a reason:
+      fd3:prp-ring-algebra (b) if a factor is 0, otherwise (O4) of fd3:def-ordered-ring-and-field. At
+      02:309 the marking scheme writes w = (1/|z|^2) conj z instead of the undefined |z|^{-2}. Points
+      total 2+3+1+2+2 '
 - key: exr-conjugate-and-modulus-c2
   kind: exr
   file: 02-conjugate-and-modulus.md
@@ -879,6 +1007,16 @@ items:
     evidence: '02-conjugate-and-modulus.md:320 The closure argument for Q in R cites a theorem that does
       not state kappa(0) = 0 or kappa(1) = 1. The argument needs both: kappa(-q) and kappa(q^{-1}) can
       satisfy the defining equations of the negative and the inverse of kappa(q) only if they do.'
+  - stage: S7r
+    verdict: correct
+    by: rereferee
+    hash: 47af157119fc
+    date: '2026-10-12'
+    model: claude-opus-5-5
+    evidence: 02:320 now cites fd3:thm-rational-embedding (a) and (c). Together they cover sums, products,
+      0, 1, negatives and inverses under kappa, so closure of Q in R no longer depends on kappa(0) and
+      kappa(1) going unstated. This matches the Q-in-R example of fd4 def-subfield at fd4/src/ch02-fields/03-subfields.md:30.
+      At 02:328 the subfield sentence now includes 0 and 1, matching def-subfield at 03-subfield
 - key: lem-real-part-at-most-modulus
   kind: lem
   file: 03-triangle-inequality.md
@@ -996,6 +1134,17 @@ items:
     model: claude-opus-5-5
     evidence: 03-triangle-inequality.md:97 The proof cites the strict-only rule fd3 prp-ordered-ring-rules
       (c) for multiplying a weak inequality by 2, and leaves 2 > 0 unledgered for this proof.
+  - stage: S7r
+    verdict: correct
+    by: rereferee
+    hash: be15fb6131e8
+    date: '2026-10-12'
+    model: claude-opus-5-5
+    evidence: '03-triangle-inequality.md:86-101. Line 86: the four-term expansion of (z+w)(z̄+w̄) now
+      cites prp-complex-arithmetic-laws (c) with (a), (b). That covers left distributivity, commutativity
+      (needed for right distributivity and for w z̄ = z̄ w) and associativity of +, so the S5a finding
+      is resolved. Line 93: conj(z w̄) = z̄ w by thm-conjugate-properties (b) and (a); u + ū = 2 Re u
+      by (c). Checked. Lin'
 - key: check:03-triangle-inequality:2
   kind: check
   file: 03-triangle-inequality.md
@@ -1066,6 +1215,16 @@ items:
     model: claude-opus-5-5
     evidence: 03-triangle-inequality.md:147 The proof cites prp-ordered-ring-rules (a), which is stated
       for strict inequalities only, to negate a weak inequality.
+  - stage: S7r
+    verdict: correct
+    by: rereferee
+    hash: 2635f1744272
+    date: '2026-10-12'
+    model: claude-opus-5-5
+    evidence: '03-triangle-inequality.md:147-158. (a) The step from -t ≤ |z-w| to -|z-w| ≤ t is now split
+      into cases. In the strict case, prp-ordered-ring-rules (a) (a<b iff -b<-a) with prp-ring-algebra
+      (a) (-(-t)=t) gives -|z-w| < t. In the equal case it negates both sides. This resolves the S5b finding
+      that a strict-only rule was used on a weak inequality. |w-z| = |-1||z-w| comes from thm-conjugate-properties '
 - key: check:03-triangle-inequality:3
   kind: check
   file: 03-triangle-inequality.md
@@ -1183,6 +1342,17 @@ items:
     model: claude-opus-5-5
     evidence: 03:240-245. The move is named (square the modulus), |z|^2=1 is substituted, and equal non-negative
       squares give the result. I verified both given expansions symbolically with a=Re z etc.
+  - stage: S7r
+    verdict: correct
+    by: rereferee
+    hash: afbaebb3c49e
+    date: '2026-10-12'
+    model: claude-opus-5-5
+    evidence: '03-triangle-inequality.md:239-245. I solved it independently: with |z|^2 = 1 both expansions
+      reduce to 1 - z w̄ - z̄ w + |w|^2, and taking non-negative roots gives the result. This matches
+      the text. The S5b finding is resolved at line 244: conj(-v) = conj((-1)v) = conj(-1) conj(v) = -v̄
+      by thm-conjugate-properties (b), prp-modulus-of-real (conj(a) = a for real a, so conj(-1) = -1)
+      and fd3:prp-ring'
 - key: exr-triangle-inequality-b3
   kind: exr
   file: 03-triangle-inequality.md
@@ -1213,6 +1383,17 @@ items:
     model: claude-opus-5-5
     evidence: 03:255-266. 2(x^2+y^2)-(|x|+|y|)^2=(|x|-|y|)^2 >= 0, checked with sympy. Comparing squares
       needs sqrt2|z| >= 0, which is given. Equality cases z=1 and z=1+i both check.
+  - stage: S7r
+    verdict: correct
+    by: rereferee
+    hash: 76fab5b6a80c
+    date: '2026-10-12'
+    model: claude-opus-5-5
+    evidence: '03-triangle-inequality.md:250-264. Line 250 now asks ''for each of the two inequalities,
+      find a non-zero z for which it is an equality'', so the reading that one z must make both inequalities
+      equalities is removed and the S5b finding is resolved. I solved it independently. The first inequality
+      is the third clause of lem-real-part-at-most-modulus (line 27). For the second, 2(x^2+y^2) - (|x|+|y|)^2
+      = '
 - key: exr-triangle-inequality-c1
   kind: exr
   file: 03-triangle-inequality.md
@@ -1326,6 +1507,17 @@ items:
     model: claude-opus-5-5
     evidence: 04-square-roots-and-order.md:50 The proof uses '1/2 > 0' with no reason, though the ledger
       records an inline justification. It also cites the strict rule (c) for a non-strict conclusion.
+  - stage: S7r
+    verdict: correct
+    by: rereferee
+    hash: 27b903c4fe82
+    date: '2026-10-12'
+    model: claude-opus-5-5
+    evidence: fd4/src/ch01-complex-numbers/04-square-roots-and-order.md:50. Both earlier findings are
+      resolved. The strict rule fd3:prp-ordered-ring-rules (c) is no longer cited for a non-strict conclusion,
+      and the bare '1/2 > 0' is gone. The step from p >= 0 to p/2 >= 0 now splits into two cases. When
+      p > 0 it cites fd3:prp-ordered-field-halves (b) with ε = p, which gives 0 < ε/2 for ε in F_{>0}.
+      When p = 0 it
 - key: exm-complex-square-root
   kind: exm
   file: 04-square-roots-and-order.md
@@ -1570,6 +1762,17 @@ items:
     model: claude-opus-5-5
     evidence: 04-square-roots-and-order.md:245 The solution says '(iii) comes first' and 'No other changes
       are possible', but line (viii) uses nothing from (iii) and can stand before it.
+  - stage: S7r
+    verdict: correct
+    by: rereferee
+    hash: 6afaf123e7a0
+    date: '2026-10-12'
+    model: claude-opus-5-5
+    evidence: 'Solution at line 245. I worked out the dependencies myself. (iii) is the supposition. (viii)
+      uses no order. (v) needs (iii) and (viii). (i) needs (v). (vi) needs (iii). (ix) needs (i) and (vi).
+      (iv) needs (ix). The revised solution states exactly these constraints: (viii) may stand anywhere
+      before (v), even before (iii), and (vi) anywhere after (iii) and before (ix). Both sample orders
+      it gives ar'
 - key: exr-square-roots-and-order-b3
   kind: exr
   file: 04-square-roots-and-order.md
@@ -1633,6 +1836,17 @@ items:
     evidence: 04-square-roots-and-order.md:289 The find-the-error argument is flawed in two lines, not
       one. The solution excuses the 'sign is lost' line as a valid weakening, and the marking scheme makes
       naming it a fatal error.
+  - stage: S7r
+    verdict: correct
+    by: rereferee
+    hash: 43ad8572505b
+    date: '2026-10-12'
+    model: claude-opus-5-5
+    evidence: Lines 279-298. The argument's line 'Since the sign is lost…' now reads 'In particular, u
+      = 1 or u = -1', which really is a valid weakening of u = 1. That leaves 'u = √(u²) = √1 = 1' as
+      the only failing line, so the argument and its solution now agree. The solution's own paragraph
+      (line 289), the repair (which replaces the two middle lines), and the fatal-error clause in the
+      marking scheme (line 29
 - key: exr-square-roots-and-order-c2
   kind: exr
   file: 04-square-roots-and-order.md
@@ -1707,6 +1921,16 @@ items:
     model: claude-opus-5-5
     evidence: 05-polar-form.md:36 The proof uses the fact that the inverse of a positive real is positive
       without an @ref, and the ledger does not record it.
+  - stage: S7r
+    verdict: correct
+    by: rereferee
+    hash: d8521fae0361
+    date: '2026-10-12'
+    model: claude-opus-5-5
+    evidence: '05-polar-form.md:33-41. Earlier S5a and S5b findings are resolved. Line 36 now cites @fd3:prp-reciprocal-order
+      (a) for r^{-1} > 0 (that label says: ordered field, a > 0 gives a^{-1} > 0). |r^{-1}| = r^{-1} follows
+      from @prp-modulus-of-real and @fd3:def-absolute-value-ordered-field (first clause). Ledger line
+      481 records the step. (a): uniqueness of inverses comes from lem-field-fraction-rules (a),'
 - key: check:05-polar-form:1
   kind: check
   file: 05-polar-form.md
@@ -1759,6 +1983,17 @@ items:
     evidence: '05-polar-form.md:476 The index promises that every result resting on (T1)-(T5) says so
       in its dependency ledger. The §05 ledger records the borrow only as ''ax-cosine-sine (claim): (T1)-(T5)
       assumed'' and names none of its users.'
+  - stage: S7r
+    verdict: minor
+    by: rereferee
+    hash: a017cac18f73
+    date: '2026-10-12'
+    model: claude-opus-5-5
+    evidence: 'ne 499 should read ''thm-polar-multiplication (T2; (b) also T1, T3 via e^{i0} = 1 and def-polar-form)''
+      and ''prp-polar-form (T1, T3, T4; T2 through thm-polar-multiplication)''. The box itself (lines
+      61-79), the two consequences (85-86, which use T3, T1 and ordered-ring-rules (e)) and the volume
+      titles in line 83 (Logic and Proof; Number Systems: From \(\nN\) to \(\nR\), Chapter 1 = F3.1) are
+      correct.'
 - key: def-polar-form
   kind: def
   file: 05-polar-form.md
@@ -1782,6 +2017,17 @@ items:
     model: claude-opus-5-5
     evidence: 05-polar-form.md:105 The definition introduces only the symbol e^{i theta}, but the section
       uses variants that are never introduced.
+  - stage: S7r
+    verdict: correct
+    by: rereferee
+    hash: 197dec99a428
+    date: '2026-10-12'
+    model: claude-opus-5-5
+    evidence: 'Lines 98-110. Earlier S5a and S5b findings are resolved. Line 108 now says that an exponent
+      written in any form equal to i theta, with theta real, means e^{i theta}, and gives the examples
+      e^{-i theta}, e^{2 pi i}, e^{in theta} and e^{-2 pi i}. It justifies this: theta is the imaginary
+      part of i theta. That covers e^{-6i pi/3} (B1, line 339), e^{i*6pi/6} and e^{i*8pi/4}. Line 110
+      gets |e^{i theta}'
 - key: thm-polar-multiplication
   kind: thm
   file: 05-polar-form.md
@@ -1869,6 +2115,17 @@ items:
     model: claude-opus-5-5
     evidence: '05:189-193: (T4) for existence; for uniqueness, (T1) gives sin=0 from cos=1 via @fd3:prp-ordered-ring-rules
       (e), then (T3)'
+  - stage: S7r
+    verdict: correct
+    by: rereferee
+    hash: 6bc66dab3a2a
+    date: '2026-10-12'
+    model: claude-opus-5-5
+    evidence: 'Lines 188-194. The S5a finding is resolved. Line 191 now shows r e^{i theta} != 0: r >
+      0, e^{i theta} != 0 by prp-unit-circle (a), and fd3:lem-field-fraction-rules (d) says a field has
+      no zero divisors (verified), so (a) applies. Line 193 also checked: multiplying by e^{-i phi} is
+      reversible, the step uses thm-polar-multiplication (a) and (b), sin = 0 follows from cos = 1 via
+      (T1) and ordered-ring'
 - key: thm-de-moivre
   kind: thm
   file: 05-polar-form.md
@@ -1921,6 +2178,16 @@ items:
     evidence: 05-polar-form.md:227 An earlier section's result is re-proved. The proof sketches again
       that r^n is the same computed in ℝ or in ℂ, which Section 1.1 already proved, instead of pointing
       back to it.
+  - stage: S7r
+    verdict: correct
+    by: rereferee
+    hash: 0633e4a7ccc8
+    date: '2026-10-12'
+    model: claude-opus-5-5
+    evidence: 'Lines 220-228. The S8 finding is resolved. Line 227 now cites ''the remark after @prp-power-laws-commutative-ring
+      in Section 1.1''; that remark exists at 01-pairs-of-reals.md:260 and proves iota(a^n) = iota(a)^n.
+      The induction step (n+1)theta = n theta + theta uses fd3:def-naturals-in-ordered-field (a) (verified:
+      (n+1)*1_F = n*1_F + 1_F) with distributivity. r^n > 0 follows from ordered-ring-rules ('
 - key: exm-special-angles
   kind: exm
   file: 05-polar-form.md
@@ -1943,6 +2210,17 @@ items:
     date: '2026-10-12'
     model: claude-opus-5-5
     evidence: 05-polar-form.md:253 The text says 'Expanding the right side' where it means the left side.
+  - stage: S7r
+    verdict: correct
+    by: rereferee
+    hash: 52480c10ee32
+    date: '2026-10-12'
+    model: claude-opus-5-5
+    evidence: 'Lines 246-275. Both earlier findings are resolved. (1) Line 249 now cites @fd3:prp-integers-embed-rationals
+      (verified: j is injective and preserves + and *) and kappa in @fd3:thm-reals-complete-ordered-field
+      (verified: injective, preserves + and *). It then uses fd3:cor-integers-even-odd (a) (verified:
+      an odd integer is not of the form 2k). (2) ''Expanding the right side'' now reads ''Multiplying
+      out'
 - key: exm-polar-power
   kind: exm
   file: 05-polar-form.md
@@ -2014,6 +2292,17 @@ items:
     model: claude-opus-5-5
     evidence: 05-polar-form.md:325 The answer to (d) is incomplete for the question as asked ('Which results
       of this chapter use none of the borrowed facts?'), because Section 1.6 has results that use none.
+  - stage: S7r
+    verdict: minor
+    by: rereferee
+    hash: 1f7c6b6065d4
+    date: '2026-10-12'
+    model: claude-opus-5-5
+    evidence: ' field''. The proof at lines 34-40 also uses order facts about R from fd3: prp-reciprocal-order
+      (a), def-absolute-value-ordered-field and prp-ordered-ring-rules (g). Fix: ''...uses only the modulus
+      rules of Section 1.2, the field properties of C, and order facts about R from *Number Systems: From
+      \(\nN\) to \(\nR\)*''. Parts (a)-(c) were re-solved and are correct; (c) now also names the role
+      of (T2).'
 - key: exr-polar-form-b1
   kind: exr
   file: 05-polar-form.md
@@ -2100,6 +2389,17 @@ items:
     model: claude-opus-5-5
     evidence: 05:366-380. |u-1|^2 = 2-2Re u is right (sympy gives 2-2cosθ). The chain u=1 ⇔ |u-1|=0 ⇔
       |u-1|^2=0 ⇔ cosθ=1 is valid, and fd3:prp-ordered-ring-rules (e) suffices.
+  - stage: S7r
+    verdict: correct
+    by: rereferee
+    hash: f3660030b3a8
+    date: '2026-10-12'
+    model: claude-opus-5-5
+    evidence: 'Lines 372-380. Re-solved: |u-1|^2 = (u-1)(conj u - 1) = u conj u - (u + conj u) + 1 = 2
+      - 2 Re u, and Re u = cos theta. The equivalence chain is u = 1 iff |u-1| = 0 (thm-conjugate-properties
+      (e)) iff |u-1|^2 = 0. The ''real is 0 iff its square is 0'' step now cites fd3:prp-ring-algebra
+      (b) for 0^2 = 0 (verified: a*0 = 0) and fd3:prp-ordered-ring-rules (e) (verified: a != 0 gives a^2
+      > 0). Ledger lin'
 - key: exr-polar-form-c1
   kind: exr
   file: 05-polar-form.md
@@ -2129,6 +2429,17 @@ items:
     model: claude-opus-5-5
     evidence: 05:384-406. The expansion of (c+is)^3 is right, and sympy confirms both triple-angle identities.
       (b) follows from De Moivre at -θ.
+  - stage: S7r
+    verdict: correct
+    by: rereferee
+    hash: 4b38cdd90944
+    date: '2026-10-12'
+    model: claude-opus-5-5
+    evidence: 'Lines 393-406. Re-solved: (c+is)^3 = (c^3 - 3cs^2) + (3c^2 s - s^3)i, and (T1) then gives
+      4c^3 - 3c and 3s - 4s^3. (b): (e^{i theta})^{-1} = e^{i(-theta)} by thm-polar-multiplication (b),
+      then de Moivre at -theta gives e^{in(-theta)} = e^{-in theta}. The S5b finding is resolved: line
+      405 now says ''Nothing in this chapter uses negative powers of complex numbers''. A grep of ch01
+      shows only ^{-1} inv'
 - key: exr-polar-form-c2
   kind: exr
   file: 05-polar-form.md
@@ -2160,6 +2471,17 @@ items:
     evidence: 05-polar-form.md:466 The 3-point line of the marking scheme requires the book's route ('by
       multiplying by conj(u+1) and using u·conj(u)=1'), so a different correct proof of (b) cannot earn
       it. This breaks STYLE §11.6.
+  - stage: S7r
+    verdict: correct
+    by: rereferee
+    hash: d14522208cc4
+    date: '2026-10-12'
+    model: claude-opus-5-5
+    evidence: Lines 408-470. All four earlier findings are resolved. (1) Line 448 attributes u - conj
+      u = 2i Im u to def-conjugate-modulus, with the computation (a+bi)-(a-bi) = 2bi; |u+1|^2 = 2 + 2
+      Re u is cited to thm-conjugate-properties (a), (c). (2) Line 460 now derives u_t = ((1-t^2) + 2ti)/(1+t^2),
+      so rational t gives rational coordinates. (3) The marking scheme no longer requires the book's route
+      (line 4
 - key: lem-reals-nth-root
   kind: lem
   file: 06-roots-of-unity.md
@@ -2206,6 +2528,17 @@ items:
     model: claude-opus-5-5
     evidence: 06-roots-of-unity.md:53 Both bounds use the monotonicity of products of non-negative reals,
       but the text neither cites it nor records it in the ledger.
+  - stage: S7r
+    verdict: correct
+    by: rereferee
+    hash: 9893f4024f41
+    date: '2026-10-12'
+    model: claude-opus-5-5
+    evidence: '06-roots-of-unity.md:29 adds a third fact: 0<=x<=x'', 0<=y<=y'' gives xy<=x''y<=x''y''.
+      I checked it against @fd3:prp-ordered-ring-rules (c) (if a<b and c>0 then ac<bc) and it follows
+      by applying (c) twice, with equality covering y=0, x=x'' or y=y''. Line 53 now cites it for (s+h)^k
+      s^{n-1-k} <= (s+1)^{n-1}, where (a) or equality covers k=0 and h=1. Line 63 (''the same bound'')
+      applies the same facts to s^'
 - key: thm-complex-nth-roots
   kind: thm
   file: 06-roots-of-unity.md
@@ -2277,6 +2610,17 @@ items:
     model: claude-opus-5-5
     evidence: 06-roots-of-unity.md:152 omega^n = 1 and omega^3 = e^{i pi} (for n=6) are used without a
       reason.
+  - stage: S7r
+    verdict: correct
+    by: rereferee
+    hash: 16e9e910917a
+    date: '2026-10-12'
+    model: claude-opus-5-5
+    evidence: 'l.152 now justifies omega^n = z_n = z_0 = 1 by @thm-complex-nth-roots (b) (n | n-0). Line
+      148 gives z_k = omega^k for k in N (De Moivre). For n=6, omega^3 = z_3 = e^{2*pi*i*3/6} = e^{i pi}
+      is a direct substitution into the formula at l.146/148. @exm-special-angles (i) then gives -1, and
+      omega^4 = -omega and omega^5 = -omega^2 follow from omega^3 = -1 and the power laws. I verified
+      omega^2 = 1/4 - '
 - key: prp-roots-of-unity-sum
   kind: prp
   file: 06-roots-of-unity.md
@@ -2538,6 +2882,17 @@ items:
     model: claude-opus-5-5
     evidence: 06-roots-of-unity.md:353 The exit check's solution is an outline that points back to the
       theorem's proof, and it skips one step needed for the 'if and only if'.
+  - stage: S7r
+    verdict: correct
+    by: rereferee
+    hash: 89bf82a06c08
+    date: '2026-10-12'
+    model: claude-opus-5-5
+    evidence: 'l.353 is now a complete solution and no longer points back to the theorem''s proof. rho
+      = |c| > 0 comes from @prp-polar-form (a). The case z = 0 is ruled out both as a solution and as
+      some z_k. The equivalence via @thm-de-moivre (which states r^n e^{in theta} is a polar form) and
+      @prp-polar-form (b) checks out, and @lem-reals-nth-root (b) handles the modulus. The step that was
+      missing is now there:'
 - key: exr-roots-of-unity-c2
   kind: exr
   file: 06-roots-of-unity.md
@@ -2570,6 +2925,17 @@ items:
     evidence: 06:364-382. Lines (1)-(3) and (5) are correct; (4) is the only flaw. The counterexample
       ω=1 defeats the step 'ω^n=1 ⇒ ω≠1'. The repair through prp-polar-form (b) and fd3:prp-divisibility-rules-integers
       (e) is valid. The conclusion is true, as STYLE §11.3 wants.
+  - stage: S7r
+    verdict: correct
+    by: rereferee
+    hash: 281c573f9096
+    date: '2026-10-12'
+    model: claude-opus-5-5
+    evidence: 'The repair at l.381 now reads ''(T1)-(T3) of @ax-cosine-sine, through @prp-polar-form (b)''.
+      I checked 05-polar-form.md: the proof of prp-polar-form (b) uses T2 through thm-polar-multiplication
+      (a) and (b), T1 for sin = 0 and the modulus, and T3 for cos = 1 iff the angle is in 2piZ. Its r
+      = s step uses only the uniqueness clause of (a), which does not need T4. So the stated set is accurate.
+      e^{i0} ='
 - key: exr-roots-of-unity-r1
   kind: exr
   file: 06-roots-of-unity.md
@@ -2681,6 +3047,17 @@ items:
       the chapter is a written-out spiral return: absolute value of an ordered field → modulus, the triangle
       inequality by trapping → by squaring, and square roots → n-th roots by ''construct a point as a
       supremum''. R3 is called the spiral item but comes from no table row.'
+  - stage: S7r
+    verdict: correct
+    by: rereferee
+    hash: 1ff10d8c82f5
+    date: '2026-10-12'
+    model: claude-opus-5-5
+    evidence: 'The S8 finding is resolved. authoring/design/curriculum.md:454 now has a spiral row ''absolute
+      value / triangle inequality'': trapping in an ordered field (F3.9), then the modulus and the triangle
+      inequality by comparing squares (F4.1). The ℝ cell of ''complete'' at l.453 names n-th roots as
+      suprema (F4.1, lem-reals-nth-root). The blueprint''s S7 deviation (e) records this. I re-solved
+      the exercise. (a'
 - key: exr-roots-of-unity-r4
   kind: exr
   file: 06-roots-of-unity.md
