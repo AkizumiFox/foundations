@@ -36,6 +36,17 @@ items:
       polynomial is the zero function, so the function picture does no harm there. The index says ''every
       finite ring with 1 != 0''. Fix: ''Over a finite ring with 1 != 0 it cannot.'' The rest checked correct:
       F_2 arithmetic, the admissible-N monotonicity, the zero-ring count, and equality by @fd2:prp-function-equality.'
+  - stage: S7r
+    verdict: correct
+    by: rereferee
+    hash: 5c907723e6ed
+    date: '2026-10-12'
+    model: claude-opus-5-5
+    evidence: 'l-function-map (d), whose P = ∏(x - c_j) is monic and so non-zero because 1 ≠ 0, and the
+      zero ring is correctly excluded. Line 83''s list of hypotheses now matches index.md:5,7. The admissible-N
+      argument (M ≥ N, so k > M implies k > N) is right. The zero-ring count is right: there is one function
+      ℕ → {0}, so x = 0. The R and C pointers resolve (fd3 Ch5, fd4 Ch1). Every hook claim has a ledger
+      line.'
 - key: exm-elements-of-rx
   kind: exm
   file: 01-polynomials-as-sequences.md
@@ -168,6 +179,16 @@ items:
       step are used'', and the first law''s base case names (F7). But the third law''s base case at 01:156,
       ''(st)^0 = 1 = 1 * 1 = s^0 t^0'', uses 1 * 1 = 1, which is (F7), without naming it. Fix: add ''(F7)''
       after ''1 * 1''.'
+  - stage: S7r
+    verdict: correct
+    by: rereferee
+    hash: 1d7387c8c6c4
+    date: '2026-10-12'
+    model: claude-opus-5-5
+    evidence: '-laws (c), the recursion, the hypothesis and (F5). Second law: the base case uses def-omega-arithmetic
+      (b), m·0 = 0. The step uses the first law and m(n+1) = mn+m from laws (d), (e). Third law: the base
+      case is 1 = 1·1 by (F7), now named. The step regroups (s^n t^n)(st) = (s^n s)(t^n t) using (F5)
+      and (F6), which is valid because R is commutative. Every law used is named, as the idea box promises.'
 - key: exr-polynomials-as-sequences-a1
   kind: exr
   file: 01-polynomials-as-sequences.md
@@ -329,6 +350,17 @@ items:
       would not get the 2 points. Fix: reword the step to ''shows A'' has n elements (by restricting the
       bijection, or by @fd2:cor-remove-point)''. The inline argument in the solution could also simply
       cite the corollary.'
+  - stage: S7r
+    verdict: correct
+    by: rereferee
+    hash: 933544deca97
+    date: '2026-10-12'
+    model: claude-opus-5-5
+    evidence: 'n matches this. The marking scheme adds up to 3+2+2+1+2 = 10. The removal step now accepts
+      either the restricted bijection or fd2:cor-remove-point, whose statement (01-finite-sets.md:266)
+      fits exactly. The fatal errors are well chosen: using a greatest element without justification,
+      and missing S = ∅. The closing remark about the greatest element via fd3:prp-integer-least-element
+      is in the ledger.'
 - key: def-polynomial-ring
   kind: def
   file: 02-polynomial-ring.md
@@ -841,6 +873,17 @@ items:
       0 + u = u, which takes (F1) and (F3), not (F3) alone (cf. 01-polynomials-as-sequences.md: ''0 +
       u = u holds, in R by (F1) and (F3)''). Fix: change ''(by (F3))'' to ''(by (F1) and (F3))'' and add
       (F1) to ledger line 403.'
+  - stage: S7r
+    verdict: correct
+    by: rereferee
+    hash: a596d858c81d
+    date: '2026-10-12'
+    model: claude-opus-5-5
+    evidence: '. That equals 1 + (-1) by (F7) and 0 by (F4), and the k = 1 case also works since j <=
+      k. (d) The text correctly locates the step that fails: the induction covers only sequences with
+      an admissible N, and s has none. The closing remark that 1 - x is not a unit of Z[x] is a correct
+      pointer to Section 4.3. The ledger line matches the citations. Sidecar verify/ch04/exr-polynomial-ring-c2.py
+      prints ok.'
 - key: def-degree
   kind: def
   file: 03-degree.md
@@ -996,6 +1039,17 @@ items:
       Fix: change '':134 … and the conventions of @def-degree'' to ''… the two facts after @def-degree
       and its conventions'', and update ledger :457 to match. The conclusion ''all valid in every commutative
       ring'' remains true.'
+  - stage: S7r
+    verdict: correct
+    by: rereferee
+    hash: bc76988b02d6
+    date: '2026-10-12'
+    model: claude-opus-5-5
+    evidence: ' by (F6), (F7), (F5) and prp-ring-algebra (b). A monic p has lc(p) = 1, a unit. The meta-claim
+      at :134 now names the two facts after def-degree as well as its conventions, which closes the earlier
+      omission. It leaves out the index arithmetic in N/Z and def-polynomial-ring, but those are not ring
+      facts and do not depend on R, so ''valid in every commutative ring'' holds. Ledger :457 matches
+      the text.'
 - key: check:03-degree:1
   kind: check
   file: 03-degree.md
@@ -1998,6 +2052,17 @@ items:
       s with no citation. Only the 0·s^k step (l.172) and the additivity steps (l.184, l.186) cite (F6).
       Fix: change ''cites (F6) in S for ... and for 1·s = s'' to ''also uses (F6) in S ...'', or add ''(F7)
       with (F6)'' to l.196.'
+  - stage: S7r
+    verdict: correct
+    by: rereferee
+    hash: 4379d7061b73
+    date: '2026-10-12'
+    model: claude-opus-5-5
+    evidence: '[4]=[12]=[2]; both correct, and the appeal to thm-polynomial-ring-laws (c) is valid. (d)
+      This is a fair two-sentence summary of the idea block. (e) (x+2)(x^2+x+1)=x^3+3x^2+3x+2=x^3+2 in
+      F_3[x]. The values are 0→2, 1→3·3=0, 2→4·7=1·1=1, so the only root is 1, which agrees with x^3+2
+      (2, 0, 10=1). The cited labels thm-evaluation-respects-operations and thm-polynomial-ring-laws are
+      the right results.'
 - key: exr-evaluation-and-substitution-b1
   kind: exr
   file: 04-evaluation-and-substitution.md
@@ -2779,6 +2844,17 @@ items:
       Problem, line 484: the paragraph shows only that every f≠0 lies outside ker E, then concludes ''So
       ker E = {0}''. It never shows 0 ∈ ker E, which the equality needs before prp-homomorphism-injective-iff-kernel-trivial
       applies. Fix: add ''and E(0)=0+0''=0 by (M) (or by thm-homomorphism-basic-properties (a))''.'
+  - stage: S7r
+    verdict: correct
+    by: rereferee
+    hash: 41b148cf6be5
+    date: '2026-10-12'
+    model: claude-opus-5-5
+    evidence: ' and injectivity follows from prp-homomorphism-injective-iff-kernel-trivial. Not multiplicative:
+      x'' = 1 by exm-formal-derivatives (ii), so E(x)^2 = (x+1)^2 = x^2+2x+1 by fd3:prp-ring-algebra (d).
+      By (M), (x^2)'' = (2·1)x, so E(x^2) = x^2+2x. The constant terms are 1 and 0, and 1 ≠ 0 is assumed,
+      so E(x·x) ≠ E(x)E(x). The ledger lines (589-590) record every step and its source, including the
+      new one.'
 - key: exr-formal-derivative-r2
   kind: exr
   file: 05-formal-derivative.md

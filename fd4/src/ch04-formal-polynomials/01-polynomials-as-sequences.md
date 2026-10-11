@@ -12,7 +12,7 @@ Take the field \( \nF_2 = \{0, 1\} \) of @def-field-fp, in which \( 1 + 1 = 0 \)
 \]
 So the rule \( c \mapsto cc + c \) and the rule \( c \mapsto 0 \) give the same output at both elements of \( \nF_2 \). As functions \( \nF_2 \to \nF_2 \) they are equal, by @fd2:prp-function-equality: same domain, same codomain, same values.
 
-If a polynomial were the function it defines, then \( x^2 + x \) would be the zero polynomial over \( \nF_2 \). So would \( x^3 + x \) and \( x^4 + x^2 \), which also give \( 0 \) at \( 0 \) and \( 1 + 1 = 0 \) at \( 1 \). None of them would have a highest power of \( x \), and the rule "the degree of a product is the sum of the degrees", which we want over every field, would fail for \( x \cdot (x + 1) = x^2 + x \): degrees \( 1 \) and \( 1 \), product "zero". Over \( \nQ \) the problem never shows (Section 5.4 proves that over an infinite field a non-zero polynomial never gives the zero function), which is why school algebra can afford the picture. Over a finite ring it cannot.
+If a polynomial were the function it defines, then \( x^2 + x \) would be the zero polynomial over \( \nF_2 \). So would \( x^3 + x \) and \( x^4 + x^2 \), which also give \( 0 \) at \( 0 \) and \( 1 + 1 = 0 \) at \( 1 \). None of them would have a highest power of \( x \), and the rule "the degree of a product is the sum of the degrees", which we want over every field, would fail for \( x \cdot (x + 1) = x^2 + x \): degrees \( 1 \) and \( 1 \), product "zero". Over \( \nQ \) the problem never shows (Section 5.4 proves that over an infinite field a non-zero polynomial never gives the zero function), which is why school algebra can afford the picture. Over a finite ring with \( 1 \ne 0 \) it cannot.
 
 So we decide the other way. Two polynomials are the same when their coefficients are the same, and the letter \( x \) is not a number at all.
 
@@ -80,7 +80,7 @@ Now a non-example, by a minimal change. Start from \( 1 + x + x^2 \in \nQ[x] \),
 
 \( \nR \) and \( \nC \) are commutative rings too (for \( \nR \), *Number Systems: From \( \nN \) to \( \nR \)*, Chapter 5; for \( \nC \), Chapter 1), so \( \nR[x] \) and \( \nC[x] \) are defined, and they are the main examples of the linear-algebra companion. No proof in this chapter needs them; our examples come from \( \nZ \), \( \nQ \), \( \nZ/n\nZ \) and \( \nF_p \), the rings this series has built.
 
-**Where \( R \) matters.** Nothing in @def-polynomial mentions inverses, an order, or size. It makes sense word for word over \( \nZ/6\nZ \), where \( [2][3] = [0] \) (@fd3:exm-integers-mod-six), and over the zero ring. The price is that school rules about polynomials cannot be assumed: each one that survives is proved, here or (division with remainder, counting roots) in Chapter 5, and each result says what it needs from \( R \) (nothing at all, no zero divisors, a unit leading coefficient, or, for the derivative, the characteristic of a field).
+**Where \( R \) matters.** Nothing in @def-polynomial mentions inverses, an order, or size. It makes sense word for word over \( \nZ/6\nZ \), where \( [2][3] = [0] \) (@fd3:exm-integers-mod-six), and over the zero ring. The price is that school rules about polynomials cannot be assumed: each one that survives is proved, here or (division with remainder, counting roots) in Chapter 5, and each result says what it needs from \( R \) (nothing at all, no zero divisors, a unit leading coefficient, finiteness with \( 1 \ne 0 \), or, for the derivative, the characteristic of a field).
 
 ::: {.warning}
 **\( p_2 \) is a coefficient; \( p(2) \) will be a value.** Section 4.4 writes \( p(c) \) for the result of putting \( c \in R \) in place of \( x \). For \( p = x^2 + 1 \in \nZ[x] \), the coefficient \( p_2 \) is \( 1 \), while the value at \( 2 \) will be \( 2 \cdot 2 + 1 = 5 \). Both are integers, so a reader who writes \( p(k) \) for "the \( k \)-th coefficient" gets \( 1 = 5 \). This book never writes \( p(k) \) for a coefficient: the coefficient of \( x^k \) is \( p_k \), always with a subscript.
@@ -153,7 +153,7 @@ For the dependence on \( u_0, \dots, u_k \), let \( (v_i) \) be a second sequenc
 \[
 s^{m+(n+1)} = s^{(m+n)+1} = s^{m+n} s = (s^m s^n) s = s^m (s^n s) = s^m s^{n+1} ,
 \]
-using \( m + (n + 1) = (m + n) + 1 \) (@fd3:thm-omega-arithmetic-laws (c)), the recursion, the hypothesis and (F5). For the second law fix \( m \): \( (s^m)^0 = 1 = s^0 = s^{m \cdot 0} \) (@fd3:def-omega-arithmetic (b)), and if \( (s^m)^n = s^{mn} \), then \( (s^m)^{n+1} = (s^m)^n s^m = s^{mn} s^m = s^{mn + m} = s^{m(n+1)} \), by the first law and \( m(n + 1) = mn + m \) (@fd3:thm-omega-arithmetic-laws (d), (e)). For the third: \( (st)^0 = 1 = 1 \cdot 1 = s^0 t^0 \), and if \( (st)^n = s^n t^n \), then \( (st)^{n+1} = (st)^n (st) = (s^n t^n)(st) = (s^n s)(t^n t) = s^{n+1} t^{n+1} \), regrouping by (F5) and (F6). This proves (a) and (c).
+using \( m + (n + 1) = (m + n) + 1 \) (@fd3:thm-omega-arithmetic-laws (c)), the recursion, the hypothesis and (F5). For the second law fix \( m \): \( (s^m)^0 = 1 = s^0 = s^{m \cdot 0} \) (@fd3:def-omega-arithmetic (b)), and if \( (s^m)^n = s^{mn} \), then \( (s^m)^{n+1} = (s^m)^n s^m = s^{mn} s^m = s^{mn + m} = s^{m(n+1)} \), by the first law and \( m(n + 1) = mn + m \) (@fd3:thm-omega-arithmetic-laws (d), (e)). For the third: \( (st)^0 = 1 = 1 \cdot 1 = s^0 t^0 \), by (F7), and if \( (st)^n = s^n t^n \), then \( (st)^{n+1} = (st)^n (st) = (s^n t^n)(st) = (s^n s)(t^n t) = s^{n+1} t^{n+1} \), regrouping by (F5) and (F6). This proves (a) and (c).
 :::
 :::
 
@@ -255,7 +255,7 @@ The proof of \( (\Leftarrow) \) never needed a greatest element of \( S \), only
 **Marking scheme.** (10 points)
 - 3: \( (\Rightarrow) \) shows \( S \subseteq \{0, \dots, N\} \) and concludes that \( S \) is finite, citing that \( \{0, \dots, N\} \) is finite and that a subset of a finite set is finite (@fd2:prp-subset-finite).
 - 2: \( (\Leftarrow) \) sets up an induction on the number of elements of a finite \( A \subseteq \nN \), with the claim that \( A \) has an upper bound, and handles \( A = \emptyset \).
-- 2: in the step, removes one element \( z \) and shows that the rest \( A' \) has \( n \) elements: the restricted bijection is well defined, injective and onto.
+- 2: in the step, removes one element \( z \) and shows that the rest \( A' \) has \( n \) elements (by restricting the bijection, or by @fd2:cor-remove-point).
 - 1: takes the larger of \( b' \) and \( z \), by trichotomy, as a bound for \( A = A' \cup \{z\} \).
 - 2: concludes that an upper bound \( N \) of \( S \) is admissible: \( k > N \) implies \( k \notin S \), so \( p_k = 0 \).
 
@@ -267,6 +267,7 @@ def-polynomial (claim): (opening) F_p from Chapter 2; Z/6Z has [2][3] = [0] | de
 def-polynomial (claim): (hook) 0*0 + 0 = 0 and 1*1 + 1 = 0 in F_2; also x^3 + x and x^4 + x^2 vanish at 0 and 1 | exm-finite-fields (cited, tables of F_2); verify/ch04/def-polynomial.py
 def-polynomial (claim): (hook) the two rules are equal functions | fd2:prp-function-equality (cited)
 def-polynomial (claim): (hook) over Q a non-zero polynomial is not the zero function | F4.5 (forward prose pointer, Section 5.4; thm-polynomial-identity-from-values (b)); motivation only, nothing depends on it
+def-polynomial (claim): (hook) over a finite ring with 1 != 0 the function picture fails | prp-polynomial-function-map (d), Section 4.4 (within the chapter); motivation only, nothing depends on it
 def-polynomial (claim): (hook) deg(pq) = deg p + deg q wanted over every field; x(x + 1) = x^2 + x | motivation only; the product is computed in Section 4.2 (exm-polynomial-product method), degree in Section 4.3; nothing depends on it
 def-polynomial (claim): equality of polynomials is equality of coefficients | fd2:prp-function-equality (cited)
 def-polynomial (claim): "reduce to the level below" is Number Systems Chapter 2's move | fd3 F3.2 §03 paragraph before thm-integers-commutative-ring (named move, by position)
@@ -290,7 +291,7 @@ exr-polynomials-as-sequences-b1 (solution): the eight triples over F_2 | listing
 exr-polynomials-as-sequences-b2 (solution): 2^k = 4 * 2^(k - 2) for k >= 2; k^2 = 4(j^2 + j) + 1; 2k = 4j + 2 | lem-finite-sums-and-powers (c) in Z; ring algebra in Z; verify/ch04/exr-polynomials-as-sequences-b2.py
 exr-polynomials-as-sequences-b2 (solution): one of k, k - 1, k - 2, k - 3 equals 4q | fd3:thm-integers-division-remainder (a) (cited); r <= 3 from 0 <= r < 4 by discreteness (fd3:thm-integers-ordered-ring (c)), used silently
 exr-polynomials-as-sequences-c1 (solution): {0, ..., N} has N + 1 elements; empty set has 0 elements | fd2 examples after def-finite (cited by position); fd2:prp-subset-finite (cited)
-exr-polynomials-as-sequences-c1 (solution): restriction of a bijection; max of two naturals | inline; fd3:thm-omega-order (a) (cited)
+exr-polynomials-as-sequences-c1 (solution): restriction of a bijection; max of two naturals | inline (marking scheme also accepts fd2:cor-remove-point, cited); fd3:thm-omega-order (a) (cited)
 exr-polynomials-as-sequences-b1 (claim): R^(N+1) as (N+1)-tuples indexed from 0; R^1 read as R | fd2:def-cartesian-product (cited, n >= 2); N = 0 by stated convention
 exr-polynomials-as-sequences-c1 (solution): greatest element; Section 4.3's degree | fd3:prp-integer-least-element (cited) with fd3:prp-naturals-embed-integers, used silently; prose pointer within the chapter
 -->

@@ -348,7 +348,7 @@ These questions are about @thm-polynomial-substitution and its proof, except the
 ::: {.solution}
 (a) Twice: for \( \Phi(1) = \varphi(1) s^0 = 1 \), and for \( \Phi(x) = \varphi(1) s^1 = s \).
 
-(b) Essentially once: in the monomial computation, to rewrite \( \varphi(a)\varphi(b) s^m s^n \) as \( \bigl(\varphi(a) s^m\bigr)\bigl(\varphi(b) s^n\bigr) \), which moves \( \varphi(b) \) past \( s^m \) by (F6) in \( S \). The proof also cites (F6) in \( S \) for \( 0 \cdot s^k = 0 \), for the right distributive law in the additivity steps, and for \( 1 \cdot s = s \); these uses only give the mirror forms of \( a \cdot 0 = 0 \), (F9) and (F7). An answer that lists them too, with this distinction, is correct.
+(b) Essentially once: in the monomial computation, to rewrite \( \varphi(a)\varphi(b) s^m s^n \) as \( \bigl(\varphi(a) s^m\bigr)\bigl(\varphi(b) s^n\bigr) \), which moves \( \varphi(b) \) past \( s^m \) by (F6) in \( S \). The proof also uses (F6) in \( S \) for \( 0 \cdot s^k = 0 \), for the right distributive law in the additivity steps, and for \( 1 \cdot s = s \); these uses only give the mirror forms of \( a \cdot 0 = 0 \), (F9) and (F7). An answer that lists them too, with this distinction, is correct.
 
 (c) The coefficients of \( p \) are \( 1, 3, 1 \), so \( \Phi(p) = [1] + [3][2] + [1][2]^2 = [1 + 6 + 4] = [11] = [1] \). For the uniqueness half: \( 3x^2 \) is the product of the constant \( 3 \) and \( x^2 \) (@thm-polynomial-ring-laws (c)), so \( \Psi(3x^2) = \Psi(3)\Psi(x)^2 = [3][2]^2 = [12] = [2] \). No other value is possible, because \( \Psi \) respects products.
 

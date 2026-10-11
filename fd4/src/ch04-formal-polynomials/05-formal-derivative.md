@@ -481,7 +481,7 @@ E(f + g) = (f + g) + (f' + g') = (f + f') + (g + g') = E(f) + E(g) ,
 \]
 which is the homomorphism condition in additive notation.
 
-*The kernel is \( \{0\} \).* Let \( f \ne 0 \), with \( n \coloneqq \deg f \), so \( f_n \ne 0 \) and \( f_{n+1} = 0 \) (@def-degree). By @def-formal-derivative, \( (f')_n = (n + 1) \cdot f_{n+1} = (n + 1) \cdot 0 = 0 \), as in the well-definedness paragraph after it. Addition is coefficientwise (@def-polynomial-ring), so \( E(f)_n = f_n + 0 = f_n \ne 0 \), and \( E(f) \ne 0 \). So \( \ker E = \{0\} \), and \( E \) is injective by @prp-homomorphism-injective-iff-kernel-trivial.
+*The kernel is \( \{0\} \).* Let \( f \ne 0 \), with \( n \coloneqq \deg f \), so \( f_n \ne 0 \) and \( f_{n+1} = 0 \) (@def-degree). By @def-formal-derivative, \( (f')_n = (n + 1) \cdot f_{n+1} = (n + 1) \cdot 0 = 0 \), as in the well-definedness paragraph after it. Addition is coefficientwise (@def-polynomial-ring), so \( E(f)_n = f_n + 0 = f_n \ne 0 \), and \( E(f) \ne 0 \). Also \( 0 = 0 x^0 \), so \( 0' = 0 \) by (M), and \( E(0) = 0 + 0 = 0 \) by (F3) of \( R[x] \). So \( \ker E = \{0\} \), and \( E \) is injective by @prp-homomorphism-injective-iff-kernel-trivial.
 
 *Not multiplicative.* Take \( f = g = x \). By @exm-formal-derivatives (ii), \( x' = 1 \), so \( E(x) = x + 1 \), and \( E(x) E(x) = (x + 1)^2 = x^2 + 2x + 1 \) by @fd3:prp-ring-algebra (d). On the other side, (M) gives \( (x^2)' = (2 \cdot 1) x = 2x \), so \( E(x^2) = x^2 + 2x \). The two differ in position \( 0 \), where they have \( 1 \) and \( 0 \); since \( 1 \ne 0 \), \( E(x \cdot x) \ne E(x) E(x) \). So only the group structure of \( R[x] \) is respected, and \( E \) is not a ring homomorphism.
 :::
@@ -586,7 +586,7 @@ exr-formal-derivative-b2 (solution): P(n, k + 1) = P(n, k)(n - k); the added fac
 exr-formal-derivative-b2 (solution): one of p consecutive integers is divisible by p; a product with such a factor is divisible by p | fd3:thm-integers-division-remainder, fd3:prp-divisibility-rules-integers (c), cited; induction on the number of factors, inline
 exr-formal-derivative-c1 (solution): induction for delta(x^n) | fd1:ax-induction read on omega; inline
 exr-formal-derivative-c2 (solution): k * 1 = k in Q | as in exm-formal-derivatives (i): fd3:prp-naturals-embed-integers, fd3:prp-integers-embed-rationals, cited
-exr-formal-derivative-r1 (solution): (f')_n = 0 at n = deg f; E(x)E(x) = x^2 + 2x + 1 and E(x^2) = x^2 + 2x differ in position 0 when 1 != 0 | def-formal-derivative, def-degree, fd3:prp-ring-algebra (d), cited; verify/ch04/exr-formal-derivative-r1.py
+exr-formal-derivative-r1 (solution): (f')_n = 0 at n = deg f; E(0) = 0 + 0' = 0; E(x)E(x) = x^2 + 2x + 1 and E(x^2) = x^2 + 2x differ in position 0 when 1 != 0 | def-formal-derivative ((M) for 0' = 0), def-degree, fd3:prp-ring-algebra (d), cited; verify/ch04/exr-formal-derivative-r1.py
 exr-formal-derivative-r1 (solution): R1 reaches back to F4.3 (group homomorphisms and kernels) | def-group-homomorphism, prp-homomorphism-injective-iff-kernel-trivial, cited; R review item
 exr-formal-derivative-r2 (solution): conj 1 = 1, conj a = a for real a, conj 0 = 0 | def-conjugate-modulus, cited (a + 0i notation of prp-reals-embed-complex)
 exr-formal-derivative-r2 (solution): R is an ordered field (2 != 0, no zero divisors) | R of F3.10, through def-complex-numbers (C := R^2); fd3:prp-ordered-ring-rules (f), (h), cited; R review item under the see edge to F4.1

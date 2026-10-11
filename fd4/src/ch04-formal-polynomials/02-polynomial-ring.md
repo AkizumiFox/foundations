@@ -370,7 +370,7 @@ Let \( R^{\nN} \) be the set of **all** sequences \( \nN \to R \), with sum and 
 
 (b) This is the closure paragraph after @def-polynomial-ring: if \( m \) and \( n \) are admissible for \( p \) and \( q \), then \( \max(m, n) \) is admissible for \( p + q \) and \( m + n \) for \( pq \).
 
-(c) \( 1 - x = (1, -1, 0, 0, \dots) \). In position \( 0 \), \( \bigl( (1 - x)s \bigr)_0 = 1 \cdot 1 = 1 \). In position \( k \ge 1 \), write the \( i \)-th term as \( v_i + w_i \) (by (F3)), with \( v_0 = 1 \cdot 1 \), \( w_1 = (-1) \cdot 1 \) and every other \( v_i \), \( w_i \) equal to \( 0 \), since for \( i \ge 2 \) the term is \( 0 \cdot 1 = 0 \) (@fd3:prp-ring-algebra (b) with (F6)). By (Σ1) and (Σ3), the sum is \( 1 \cdot 1 + (-1) \cdot 1 = 1 + (-1) = 0 \). So \( (1 - x)s = (1, 0, 0, \dots) = 1 \).
+(c) \( 1 - x = (1, -1, 0, 0, \dots) \). In position \( 0 \), \( \bigl( (1 - x)s \bigr)_0 = 1 \cdot 1 = 1 \). In position \( k \ge 1 \), write the \( i \)-th term as \( v_i + w_i \) (by (F1) and (F3)), with \( v_0 = 1 \cdot 1 \), \( w_1 = (-1) \cdot 1 \) and every other \( v_i \), \( w_i \) equal to \( 0 \), since for \( i \ge 2 \) the term is \( 0 \cdot 1 = 0 \) (@fd3:prp-ring-algebra (b) with (F6)). By (Σ1) and (Σ3), the sum is \( 1 \cdot 1 + (-1) \cdot 1 = 1 + (-1) = 0 \), by (F7) and (F4). So \( (1 - x)s = (1, 0, 0, \dots) = 1 \).
 
 (d) The induction proves \( \Phi(p) = \Psi(p) \) only for sequences \( p \) that have an admissible \( N \); the step from it to \( \Phi = \Psi \) uses that every polynomial has one. The sequence \( s \) has none, and it is not a finite sum of monomials either, since by (b) such a sum is a polynomial. So @lem-check-on-monomials says nothing about \( s \), and the proof of @thm-polynomial-ring-laws does not apply to \( R^{\nN} \). The ring laws do hold in \( R^{\nN} \), the ring of **formal power series**, though we do not prove this here; nothing in this book depends on it.
 
@@ -400,7 +400,7 @@ exr-polynomial-ring-b1 (solution): coefficients 12, -3, 4, -3, 2, 2, -4; reducti
 exr-polynomial-ring-b2 (solution): sigma(a x^m) = ((-1)^m a) x^m; (-1)^m (-1)^n = (-1)^(m+n) | lem-finite-sums-and-powers (c) (cited); verify/ch04/exr-polynomial-ring-b2.py (sigma multiplicative on random pairs over Z/nZ)
 exr-polynomial-ring-b2 (claim): Section 4.4 writes sigma(p) as p(-x) | ch04 blueprint def-polynomial-composition (prose pointer within the chapter)
 exr-polynomial-ring-c1 (solution): reduction to monomials: coefficients of s_N by induction on N, then the one-argument case by induction on N, then one argument at a time | fd1:ax-induction, lem-finite-sums-and-powers (a), fd2:prp-function-equality (cited); the proofs of prp-polynomial-sum-of-monomials and lem-check-on-monomials, rewritten inside the solution (the exercise forbids every result of the section after def-polynomial-ring)
-exr-polynomial-ring-c2 (solution): (1 - x)s = 1 | (Sigma1), (Sigma3), (F3), fd3:prp-ring-algebra (b) (cited); arithmetic; verify/ch04/exr-polynomial-ring-c2.py
+exr-polynomial-ring-c2 (solution): (1 - x)s = 1 | (Sigma1), (Sigma3), (F1), (F3), (F7), (F4), fd3:prp-ring-algebra (b) (cited); verify/ch04/exr-polynomial-ring-c2.py
 exr-polynomial-ring-c2 (claim): the ring laws hold for formal power series | not proved here; stated as such; nothing depends on it
 exr-polynomial-ring-c2 (claim): Section 4.3 shows 1 - x is not a unit of Z[x] | ch04 blueprint prp-polynomial-units (prose pointer within the chapter)
 -->
