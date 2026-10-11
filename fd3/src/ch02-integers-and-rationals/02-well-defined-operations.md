@@ -8,7 +8,7 @@ In *Sets, Relations, and Cardinality*, Section 2.5 the addition of \( \nZ/n \) w
 
 The same situation will recur throughout this volume: for \( \nZ \) in this section, for \( \nQ \) in Section 2.4, and for \( \nR \) later in this volume. Each time, a set is a quotient \( X/{\sim} \), and something is defined on it by a formula on elements of \( X \). Rather than repeat the argument of @fd2:prp-congruence-arithmetic for every formula, we separate it into two parts: a general lemma, proved here once, which turns a **check on representatives** into a function on classes; and the check itself, which is different for each formula and is all that remains to do each time.
 
-A rule "\( [x] \mapsto \) something computed from \( x \)" is called **well defined** when representatives of the same class always give the same result. The lemma below says that well defined is exactly what is needed, in three settings: a map from one quotient to another, a binary operation on a quotient, and a property of classes.
+A rule "\( [x] \mapsto \) something computed from \( x \)" is called **well defined** when representatives of the same class always give the same result. The lemma below says that being well defined is enough, in three settings: a map from one quotient to another, a binary operation on a quotient, and a property of classes.
 
 ## The lemma
 
@@ -90,7 +90,7 @@ For all \( (a, b), (c, d) \in \nN \times \nN \), let
 -[(a, b)] &\coloneqq [(b, a)] .
 \end{aligned}
 \]
-The **sum** \( + \colon \nZ \times \nZ \to \nZ \) and **product** \( \cdot \colon \nZ \times \nZ \to \nZ \) are the functions that @thm-well-defined-on-classes (b) induces from the maps \( g_+ \), \( g_\cdot \colon (\nN \times \nN) \times (\nN \times \nN) \to \nN \times \nN \) given by the pairs on the right; the **negative** \( - \colon \nZ \to \nZ \) is the function that @thm-well-defined-on-classes (a) induces from \( (a, b) \mapsto (b, a) \). We also write \( xy \) for \( x \cdot y \).
+The **sum** \( + \colon \nZ \times \nZ \to \nZ \) and **product** \( \cdot \colon \nZ \times \nZ \to \nZ \) are the functions that @thm-well-defined-on-classes (b), with \( X = \nN \times \nN \) and the equivalence relation \( \sim \) of @prp-integer-pairs-equivalence, induces from the maps \( g_+ \), \( g_\cdot \colon (\nN \times \nN) \times (\nN \times \nN) \to \nN \times \nN \) given by the pairs on the right; the **negative** \( - \colon \nZ \to \nZ \) is the function that @thm-well-defined-on-classes (a) induces from \( (a, b) \mapsto (b, a) \). We also write \( xy \) for \( x \cdot y \).
 :::
 
 In words: to add integers, add representatives coordinatewise; to multiply, use the cross formula; to negate, swap the coordinates. All the arithmetic on the right happens in \( \nN \), where it is always possible. The definition is legitimate only if the hypotheses of @thm-well-defined-on-classes hold for the three maps on pairs; the next proposition checks them, and until then the three formulas are rules, not yet functions.
@@ -114,11 +114,11 @@ Each hypothesis is an equation in \( \nN \) to be derived from another. The give
 ::: {.proof}
 Let \( (a, b), (a', b'), (c, d) \in \nN \times \nN \) with \( (a, b) \sim (a', b') \), that is,
 \[
-a + b' = a' + b .
+a + b' = b + a' .
 \]{#eq-integer-rep-change}
 All rearrangements below use @thm-omega-arithmetic-laws: commutativity and associativity of \( + \) and \( \cdot \), and distributivity.
 
-*Sum, first argument.* We need \( (a + c, b + d) \sim (a' + c, b' + d) \), that is, \( (a + c) + (b' + d) = (b + d) + (a' + c) \). The left side is \( (a + b') + (c + d) \), which by @eq-integer-rep-change equals \( (a' + b) + (c + d) \), and that is the right side rearranged.
+*Sum, first argument.* We need \( (a + c, b + d) \sim (a' + c, b' + d) \), that is, \( (a + c) + (b' + d) = (b + d) + (a' + c) \). The left side is \( (a + b') + (c + d) \), which by @eq-integer-rep-change equals \( (b + a') + (c + d) \), and that is the right side rearranged.
 
 *Product, first argument.* We need
 \[
@@ -128,9 +128,9 @@ that is, the cross-sum equation
 \[
 (ac + bd) + (a'd + b'c) = (ad + bc) + (a'c + b'd) .
 \]{#eq-integer-product-target}
-Multiply both sides of @eq-integer-rep-change by \( c \) and use distributivity: \( ac + b'c = a'c + bc \). Multiply both sides of @eq-integer-rep-change, read from right to left, by \( d \): \( a'd + bd = ad + b'd \). Adding these two equations,
+Multiply both sides of @eq-integer-rep-change by \( c \) and use distributivity: \( ac + b'c = bc + a'c \). Multiply both sides of @eq-integer-rep-change, read from right to left, by \( d \): \( bd + a'd = ad + b'd \). Adding these two equations,
 \[
-(ac + b'c) + (a'd + bd) = (a'c + bc) + (ad + b'd) .
+(ac + b'c) + (bd + a'd) = (bc + a'c) + (ad + b'd) .
 \]
 The left side rearranges to the left side of @eq-integer-product-target, and the right side to its right side. This proves @eq-integer-product-target.
 
@@ -166,11 +166,11 @@ Every check happens in the hypotheses of the lemma. Here they fail, next to a ru
 :::
 
 ::: {.solution}
-(a) No. \( (0, 2) \sim (1, 3) \), since \( 0 + 3 = 2 + 1 \), so \( [(0, 2)] = [(1, 3)] \) by @fd2:thm-classes-partition (b). Read with the representative \( (0, 2) \), the rule gives \( 0 \); read with \( (1, 3) \), it gives \( 1 \). One input gets two values, and (Fn2) of @fd2:def-function fails. The hypothesis of @thm-well-defined-on-classes (a) (with equality on \( \nN \) as \( \approx \), whose classes are single numbers) fails at \( x = (0, 2) \), \( x' = (1, 3) \).
+(a) No. \( (0, 2) \sim (1, 3) \), since \( 0 + 3 = 2 + 1 \), so \( [(0, 2)] = [(1, 3)] \) by @fd2:thm-classes-partition (b). Read with the representative \( (0, 2) \), the rule gives \( 0 \); read with \( (1, 3) \), it gives \( 1 \). One input gets two values, and (Fn2) of @fd2:def-function fails. The hypothesis of @thm-well-defined-on-classes (a), with \( f(a, b) \coloneqq a \) and equality on \( \nN \) as \( \approx \) (so that \( f(x) \approx f(x') \) means \( f(x) = f(x') \)), fails at \( x = (0, 2) \), \( x' = (1, 3) \).
 
-(b) Yes. Let \( (a, b) \sim (a', b') \), so \( a + b' = a' + b \). Then
+(b) Yes. Let \( (a, b) \sim (a', b') \), so \( a + b' = b + a' \). Then
 \[
-(a + 1) + b' = (a + b') + 1 = (a' + b) + 1 = b + (a' + 1)
+(a + 1) + b' = (a + b') + 1 = (b + a') + 1 = b + (a' + 1)
 \]
 by @thm-omega-arithmetic-laws (b), (c), which is \( (a + 1, b) \sim (a' + 1, b') \). By @thm-well-defined-on-classes (a), the rule is a function. In fact it is \( x \mapsto x + [(1, 0)] \), since \( [(a, b)] + [(1, 0)] = [(a + 1, b + 0)] = [(a + 1, b)] \).
 
@@ -201,7 +201,7 @@ Let \( \iota \colon \nN \to \nZ \), \( \iota(n) \coloneqq [(n, 0)] \).
 :::
 
 ::: {.idea}
-Every claim is a computation with the formulas of @def-integer-operations on pairs with a second coordinate \( 0 \), where the zeros make most terms vanish. Injectivity and (c) are the two halves of @prp-integer-normal-form: (b) of it says that different natural numbers give different classes, and (a) says that every class is in normal form.
+The identities in (a) and (b) are computations with the formulas of @def-integer-operations in which at least one operand is some \( \iota(n) = [(n, 0)] \), and its zero second coordinate makes most terms vanish. Injectivity and (c) are the two halves of @prp-integer-normal-form: (b) of it says that different natural numbers give different classes, and (a) says that every class is in normal form.
 :::
 
 ::: {.proof}
@@ -273,7 +273,7 @@ These questions are about the proof of @prp-integer-operations-well-defined.
 (a'c + b'd, \ a'd + b'c) &= (8 + 0, \ 0 + 12) = (8, 12) ,
 \end{aligned}
 \]
-and \( 2 + 12 = 14 = 6 + 8 \), so they are equivalent. The two intermediate equations are \( ac + b'c = a'c + bc \), here \( 2 + 12 = 8 + 6 \), and \( a'd + bd = ad + b'd \), here \( 0 = 0 \), since \( d = 0 \). Both outputs are representatives of \( -4 \), and indeed \( (-2) \cdot 2 = -4 \).
+and \( 2 + 12 = 14 = 6 + 8 \), so they are equivalent. The two intermediate equations are \( ac + b'c = bc + a'c \), here \( 2 + 12 = 6 + 8 \), and \( bd + a'd = ad + b'd \), here \( 0 = 0 \), since \( d = 0 \). Both outputs are representatives of \( -4 \), and indeed \( (-2) \cdot 2 = -4 \).
 
 (c) In every rearrangement: commutativity and associativity of \( + \) (to regroup the four-term sums), distributivity (to multiply @eq-integer-rep-change by \( c \) and by \( d \)), and commutativity of \( \cdot \) and \( + \) (in the second-argument step, to see that both formulas are symmetric in the two input pairs).
 
@@ -296,7 +296,7 @@ Prove that each rule defines a function \( \nZ \to \nZ \), and identify it in te
 ::: {.solution}
 (a) Let \( (a, b) \sim (a', b') \), that is, \( a + b' = b + a' \). The target \( (b, a) \sim (b', a') \) is \( b + a' = a + b' \), the same equation read from right to left. By @thm-well-defined-on-classes (a), the rule is a function. It is the negative \( x \mapsto -x \) of @def-integer-operations.
 
-(b) Every output is the zero class: \( (a + b, a + b) \sim (0, 0) \), since \( (a + b) + 0 = (a + b) + 0 \). So for \( (a, b) \sim (a', b') \) the outputs \( (a + b, a + b) \) and \( (a' + b', a' + b') \) are both related to \( (0, 0) \), hence to each other by (Eq2) and (Eq3), and @thm-well-defined-on-classes (a) applies. The function is the constant map \( x \mapsto 0 \), where \( 0 = \iota(0) = [(0, 0)] \).
+(b) Every output is the zero class: \( (a + b, a + b) \sim (0, 0) \), since \( (a + b) + 0 = (a + b) + 0 \). So for \( (a, b) \sim (a', b') \) the outputs \( (a + b, a + b) \) and \( (a' + b', a' + b') \) are both related to \( (0, 0) \), hence to each other by (Eq2) and (Eq3) of @prp-integer-pairs-equivalence, and @thm-well-defined-on-classes (a) applies. The function is the constant map \( x \mapsto 0 \), where \( 0 = \iota(0) = [(0, 0)] \). In terms of @def-integer-operations it is \( x \mapsto x + (-x) \), since \( [(a, b)] + [(b, a)] = [(a + b, \ b + a)] = [(a + b, \ a + b)] \) by @thm-omega-arithmetic-laws (b).
 :::
 
 ::: {#exr-well-defined-operations-b2}
@@ -314,11 +314,11 @@ Determine which of the following rules define a function. Justify your answer.
 ::: {.solution}
 (a) No. \( [(0, 0)] = [(1, 1)] \), since \( 0 + 1 = 0 + 1 \), but the rule gives \( 0 + 0 = 0 \) for the first representative and \( 1 + 1 = 2 \) for the second.
 
-(b) Yes. If \( a + b' = a' + b \), then by distributivity (@thm-omega-arithmetic-laws (d))
+(b) Yes. If \( a + b' = b + a' \), then by distributivity (@thm-omega-arithmetic-laws (d))
 \[
-2a + 2b' = 2(a + b') = 2(a' + b) = 2a' + 2b ,
+2a + 2b' = 2(a + b') = 2(b + a') = 2b + 2a' ,
 \]
-which is \( (2a, 2b) \sim (2a', 2b') \); @thm-well-defined-on-classes (a) applies. The function is \( x \mapsto x + x \): \( [(a, b)] + [(a, b)] = [(a + a, b + b)] \), and \( 2n = (1 + 1)n = n + n \) by @thm-omega-arithmetic-laws (d), (e).
+which is \( (2a, 2b) \sim (2a', 2b') \); @thm-well-defined-on-classes (a) applies. The function is \( x \mapsto x + x \): \( [(a, b)] + [(a, b)] = [(a + a, b + b)] \), and \( 2n = (1 + 1)n = n + n \) by \( 1 + 1 = 2 \) (@def-omega-arithmetic (c)) and @thm-omega-arithmetic-laws (d), (e).
 
 (c) No. \( [(0, 1)] = [(1, 2)] \), since \( 0 + 2 = 1 + 1 \). The rule gives \( [(0, 1)] \) for the first representative and \( [(1, 4)] \) for the second, and \( (0, 1) \not\sim (1, 4) \), since \( 0 + 4 = 4 \ne 2 = 1 + 1 \).
 :::
@@ -379,15 +379,15 @@ thm-well-defined-on-classes (proof): a function is (graph, codomain); defining F
 thm-well-defined-on-classes (proof): substitution of equals (C = [x] and C = [x'] give [x] = [x']) | def-rules-equality (F1.4 §07), used silently
 thm-well-defined-on-classes (claim): (remark) 0 < 1, so (1, 1) in S and (0, 0) not in S | thm-omega-order (a), (d), used silently
 def-integer-operations (claim): (heuristic) school identities for (a - b) + (c - d), (a - b)(c - d), -(a - b) | school algebra, labelled a heuristic; no proof uses it
-prp-integer-operations-well-defined (proof): rearrangements of sums of four terms, and multiplying an equation by c | thm-omega-arithmetic-laws (cited) and substitution of equals; verify/ch10/prp-integer-operations-well-defined.py
-exm-ill-defined-first-coordinate (solution): 0 + 3 = 2 + 1; 0 != 1 | numeral arithmetic by def-omega-arithmetic; distinct numerals; verify/ch10/exm-ill-defined-first-coordinate.py
-def-integer-operations (claim): (warning) 1 + 1 = 0 + 2; 1 + 2 != 0 + 2; [(0, 1)] * [(0, 1)] under the twisted rule | numeral arithmetic; verify/ch10/def-integer-operations.py
+prp-integer-operations-well-defined (proof): rearrangements of sums of four terms, and multiplying an equation by c | thm-omega-arithmetic-laws (cited) and substitution of equals; verify/ch02/prp-integer-operations-well-defined.py
+exm-ill-defined-first-coordinate (solution): 0 + 3 = 2 + 1; 0 != 1 | numeral arithmetic by def-omega-arithmetic; distinct numerals; verify/ch02/exm-ill-defined-first-coordinate.py
+def-integer-operations (claim): (warning) 1 + 1 = 0 + 2; 1 + 2 != 0 + 2; [(0, 1)] * [(0, 1)] under the twisted rule | numeral arithmetic; verify/ch02/def-integer-operations.py
 prp-naturals-embed-integers (claim): (identification) 0 is the empty set and not an integer | def-omega-arithmetic (c), thm-classes-partition (a) (cited)
-prp-naturals-embed-integers (claim): (identification) Z>0 recalled from F2.2 §01; 5 + x = 3 solved by -2 | F2.2 §01 definition (recalled in prose); prp-integer-normal-form (a) (cited); verify/ch10/prp-naturals-embed-integers.py
+prp-naturals-embed-integers (claim): (identification) Z>0 recalled from F2.2 §01; 5 + x = 3 solved by -2 | F2.2 §01 definition (recalled in prose); prp-integer-normal-form (a) (cited); verify/ch02/prp-naturals-embed-integers.py
 prp-naturals-embed-integers (claim): order on Z matches order on N | F3.2 §03 (prose pointer, paid by thm-integers-ordered-ring (a); nothing here depends on it)
 prp-naturals-embed-integers (claim): a - b := a + (-b) | F3.2 §03 (prose pointer, paid by def-commutative-ring-and-field; nothing here depends on it)
-def-integer-operations (claim): (check) [(2, 5)] * [(4, 1)] = [(13, 22)] = -9 | numeral arithmetic; verify/ch10/def-integer-operations.py
-exr-well-defined-operations-a1 (solution): numerical run of the key proof | numeral arithmetic; verify/ch10/exr-well-defined-operations-a1.py
-exr-well-defined-operations-b2 (solution): 2n = n + n; counterexample values | thm-omega-arithmetic-laws (d), (e) (cited); verify/ch10/exr-well-defined-operations-b2.py
-exr-well-defined-operations-c1 (solution): 1 ~ 2, 5 not ~ 0 | definition of the example relation; verify/ch10/exr-well-defined-operations-c1.py
+def-integer-operations (claim): (check) [(2, 5)] * [(4, 1)] = [(13, 22)] = -9 | numeral arithmetic; verify/ch02/def-integer-operations.py
+exr-well-defined-operations-a1 (solution): numerical run of the key proof | numeral arithmetic; verify/ch02/exr-well-defined-operations-a1.py
+exr-well-defined-operations-b2 (solution): 2n = n + n; counterexample values | def-omega-arithmetic (c), thm-omega-arithmetic-laws (d), (e) (cited); verify/ch02/exr-well-defined-operations-b2.py
+exr-well-defined-operations-c1 (solution): 1 ~ 2, 5 not ~ 0 | definition of the example relation; verify/ch02/exr-well-defined-operations-c1.py
 -->

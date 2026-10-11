@@ -1,5 +1,5 @@
 """thm-rationals-ordered-field (with def-rational-order, prp-reciprocal-order and the midpoint
-check of Section 10.5): the positive test is independent of representatives (positive
+check of Section 2.5): the positive test is independent of representatives (positive
 denominators), the comparison formula, the failure with negative denominators, the warning
 1/2 > 2/5, the midpoint 5/12 of 1/3 and 1/2. Exact arithmetic on pairs of integers."""
 from fractions import Fraction as F

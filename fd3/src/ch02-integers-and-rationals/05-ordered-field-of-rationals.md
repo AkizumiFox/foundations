@@ -31,7 +31,7 @@ Suppose \( pq' = p'q \) with \( q, q' \in \nZ_{>0} \) and \( p > 0 \). Since \( 
 
 **Examples.** The class \( 3/4 \) lies in \( P_{\nQ} \), and so does \( 6/8 \), the same class: both numerators are positive, as @eq-positive-test says they must be. The class \( -6/8 \) does not, since \( -6 > 0 \) fails. The degenerate case is zero: \( 0 = 0/1 = 0/7 \), and \( 0 > 0 \) fails, so \( 0 \notin P_{\nQ} \). That matters, because (P2) of @prp-order-from-positives will ask for exactly one of \( x \in P_{\nQ} \), \( x = 0 \), \( -x \in P_{\nQ} \).
 
-**Non-example by minimal change.** Allow negative denominators, as in @exm-fractions-nonzero-denominators, and keep the test "the numerator is positive". The relation is the same and still an equivalence relation, but now \( (1, 1) \sim (-1, -1) \): the class of \( (1, 1) \) passes the test with one representative and fails it with another. The clause that fails is the hypothesis of @thm-well-defined-on-classes (c), and the step of the check above that breaks is "\( q > 0 \)".
+**Non-example by minimal change.** Allow negative denominators, as in @exm-fractions-nonzero-denominators, and keep the test "the numerator is positive". The relation is the same and still an equivalence relation, but now \( (1, 1) \approx (-1, -1) \): the class of \( (1, 1) \) passes the test with one representative and fails it with another. The clause that fails is the hypothesis of @thm-well-defined-on-classes (c), and the step of the check above that breaks is "\( q > 0 \)".
 
 **Why this definition.** With non-zero denominators of either sign one could test "\( pq > 0 \)" instead, which is well defined; the price is a product in every sign test and two sign cases in every proof. Positive denominators put all the sign information in one integer. The order is defined through the positive set rather than through a formula for \( x < y \), so that @prp-order-from-positives does the work of (O1)–(O4) once and for all.
 
@@ -94,7 +94,7 @@ So \( p/q < r/s \) holds if and only if this class lies in \( P_{\nQ} \), that i
 This proves the theorem.
 :::
 
-The answer to the prompt: \( q > 0 \) is used three times. In the well-definedness check before @eq-positive-test, the positive \( q \) and \( q' \) carry the sign from \( p \) to \( p' \). In (P1), \( ps \) and \( rq \) are positive because \( s \) and \( q \) are. In (a), the difference has denominator \( qs \), a positive integer, so that @eq-positive-test can read its sign off the numerator. Without positive denominators the first of these fails outright (the non-example above), and so does the comparison formula: see @exm-fractions-nonzero-denominators.
+The answer to the prompt: \( q > 0 \) is used three times. In the well-definedness check before @eq-positive-test, the positive \( q \) and \( q' \) carry the sign from \( p \) to \( p' \). In (P1), \( ps \) and \( rq \) are positive because \( s \) and \( q \) are. In (a), the difference has denominator \( qs \), a positive integer, so that @eq-positive-test can read its sign off the numerator. Without positive denominators the first of these fails outright (the non-example above), and so does the comparison formula: see the warning after @exm-fractions-nonzero-denominators.
 
 Since \( p/q = r/s \) exactly when \( ps = rq \) (@prp-integers-embed-rationals (b)), the comparison formula has a version with \( \le \): for \( q, s \in \nZ_{>0} \),
 \[
@@ -187,7 +187,7 @@ Let \( x \in \nQ \). By @prp-integers-embed-rationals (b), \( x = p/q \) with \(
 In both cases \( x < n \) for some \( n \in \nN \), as claimed.
 :::
 
-The \( n \) found depends on \( x \), through the numerator of the representative used; a different representative may give a different \( n \), and any one will do. The proof cites the representation \( x = p/q \), the comparison formula, discreteness of \( \nZ \), and the order axioms, and nothing else: no supremum is mentioned in it. That is the contrast with the real numbers, where the same conclusion needs the completeness axiom.
+The \( n \) found depends on \( x \), through the numerator of the representative used; a different representative may give a different \( n \), and any one will do. The proof uses only the representation \( x = p/q \), the comparison formula, and elementary facts about the ordered ring \( \nZ \) (discreteness, \( \nN = \{ x \in \nZ : x \ge 0 \} \), the rules for inequalities) and about \( \nN \). No supremum is mentioned in it. That is the contrast with the real numbers, where the same conclusion needs the completeness axiom.
 
 The form in which later chapters of this volume use the property is about reciprocals: \( 1/n \) eventually falls below any positive rational.
 
@@ -208,7 +208,7 @@ Let \( \varepsilon \in \nQ_{>0} \). By @prp-reciprocal-order (a), \( 1/\varepsil
 where \( 1/(1/\varepsilon) = \varepsilon \) because \( \varepsilon \) is a multiplicative inverse of \( \varepsilon^{-1} \), and inverses are unique (if \( bc = 1 = bc' \), then \( c = c(bc') = (cb)c' = c' \)). If \( m \ge n \), then either \( m = n \), or \( 0 < n < m \) and \( 1/m < 1/n \) by @prp-reciprocal-order (b); in both cases \( 1/m \le 1/n < \varepsilon \).
 :::
 
-The order of the quantifiers is the point: \( \varepsilon \) is given first, and \( n \) is chosen after it and **depends on \( \varepsilon \)**. Exercise A1 asks what happens if the order is swapped. In this volume \( \varepsilon \) is always a **rational** number; the real numbers are not yet available, and the corollary is the form in which a later chapter of this volume uses the Archimedean property, with \( \varepsilon \in \nQ_{>0} \).
+The order of the quantifiers is the point: \( \varepsilon \) is given first, and \( n \) is chosen after it and **depends on \( \varepsilon \)**. Exercise A1 asks what happens if the order is swapped. Here \( \varepsilon \) is a **rational** number, because the real numbers have not yet been constructed, and the corollary is the form in which a later chapter of this volume uses the Archimedean property, with \( \varepsilon \in \nQ_{>0} \).
 
 ## The integer part
 
@@ -239,7 +239,7 @@ Compute \( \floor{-7/3} \). Then find the least \( n \in \nZ_{>0} \) with \( 1/n
 :::
 
 ::: {.solution}
-\( \floor{-7/3} = -3 \): by @eq-comparison-le, \( -3 = -3/1 \le -7/3 \) because \( (-3) \cdot 3 = -9 \le -7 \), and \( -7/3 < -2 \) because \( -7 < -6 = (-2) \cdot 3 \) (@thm-rationals-ordered-field (a)). Not \( -2 \): the rule "drop the fraction" works only for \( x \ge 0 \).
+\( \floor{-7/3} = -3 \): by @eq-comparison-le, \( -3 = -3/1 \le -7/3 \) because \( (-3) \cdot 3 = -9 \le -7 \), and \( -7/3 < -2 \) because \( -7 < -6 = (-2) \cdot 3 \) (@thm-rationals-ordered-field (a)). Not \( -2 \): the rule "drop the fraction" gives \( \floor{x} \) for \( x \ge 0 \), but not for negative non-integers such as \( -7/3 \).
 
 For \( n \in \nZ_{>0} \), the comparison formula gives \( 1/n < 3/1000 \) if and only if \( 1 \cdot 1000 < 3n \). Since \( 3 \cdot 333 = 999 < 1000 \) and \( 3 \cdot 334 = 1002 > 1000 \), the least such \( n \) is \( 334 \) (for \( n \le 333 \), \( 3n \le 999 \)).
 :::
@@ -263,7 +263,7 @@ These questions are about the proof of @thm-rationals-ordered-field and about @c
 :::
 
 ::: {.solution}
-(a) Three times: in the well-definedness check, \( q, q' > 0 \) turn \( p > 0 \) into \( p' > 0 \); in (P1), \( ps > 0 \) and \( rq > 0 \) need \( s > 0 \) and \( q > 0 \); in (a), the difference \( r/s - p/q \) has denominator \( qs > 0 \), so its sign is the sign of its numerator. Without it, the test "numerator positive" is not well defined: in @exm-fractions-nonzero-denominators, \( (1, 1) \sim (-1, -1) \) gives two verdicts for one class, and "\( ps < rq \)" gives \( 0 < 1 \) for \( (0, 1), (1, 1) \) but \( 0 < -1 \) for \( (0, 1), (-1, -1) \).
+(a) Three times: in the well-definedness check, \( q, q' > 0 \) turn \( p > 0 \) into \( p' > 0 \); in (P1), \( ps > 0 \) and \( rq > 0 \) need \( s > 0 \) and \( q > 0 \); in (a), the difference \( r/s - p/q \) has denominator \( qs > 0 \), so its sign is the sign of its numerator. Without it, the test "numerator positive" is not well defined: in the non-example after @def-rational-order, \( (1, 1) \approx (-1, -1) \) gives two verdicts for one class, and, as the warning after @exm-fractions-nonzero-denominators shows, "\( ps < rq \)" gives \( 0 < 1 \) for \( (0, 1), (1, 1) \) but \( 0 < -1 \) for \( (0, 1), (-1, -1) \).
 
 (b) "At least one" would allow a non-zero \( x \) with both \( x \) and \( -x \) positive, and then \( x < 0 \) and \( 0 < x \) at once, against (O1). The "at most one" half is what makes the order antisymmetric; @prp-order-from-positives uses it to get trichotomy (O1).
 
@@ -325,7 +325,7 @@ We use @eq-comparison-le and the comparison formula with denominators \( 1 \) fo
 - \( \floor{0} = 0 \): \( 0 \le 0 < 1 \).
 - \( \floor{-1/100} = -1 \): \( -1 \le -1/100 \) since \( -100 \le -1 \), and \( -1/100 < 0 \) since \( -1 < 0 \).
 
-The second and fourth show that \( \floor{-x} \ne -\floor{x} \) in general: \( \floor{-22/7} = -4 \), not \( -3 \).
+The first two show that \( \floor{-x} \ne -\floor{x} \) in general: \( \floor{22/7} = 3 \), but \( \floor{-22/7} = -4 \), not \( -3 \).
 :::
 
 ### C. Going deeper
@@ -333,7 +333,7 @@ The second and fourth show that \( \floor{-x} \ne -\floor{x} \) in general: \( \
 ::: {#exr-ordered-field-of-rationals-c1}
 [C1: Exit check: \( \nQ \) is Archimedean]
 
-Prove, from the construction of \( \nQ \) and the results of this chapter (and not from any fact about the real numbers), that for every \( x \in \nQ \) there is \( n \in \nN \) with \( x < n \); and deduce that for every \( \varepsilon \in \nQ_{>0} \) there is \( n \in \nZ_{>0} \) with \( 1/n < \varepsilon \).
+Prove, from the construction of \( \nQ \) and the results of this chapter before @thm-rationals-archimedean (and not from any fact about the real numbers), that for every \( x \in \nQ \) there is \( n \in \nN \) with \( x < n \); and deduce that for every \( \varepsilon \in \nQ_{>0} \) there is \( n \in \nZ_{>0} \) with \( 1/n < \varepsilon \).
 :::
 
 ::: {.solution}
@@ -341,7 +341,7 @@ Prove, from the construction of \( \nQ \) and the results of this chapter (and n
 
 If \( p \le 0 \), then \( p \cdot 1 \le 0 \cdot q \), so \( x = p/q \le 0/1 = 0 \) by the comparison formula (@thm-rationals-ordered-field (a), with equality by @prp-integers-embed-rationals (b)). Hence \( x \le 0 < 1 \), and \( n = 1 \) works.
 
-If \( p > 0 \), then \( p \in \nN \) (@thm-integers-ordered-ring (b)), and \( q \ge 1 \) by discreteness (@thm-integers-ordered-ring (c)), since \( q > 0 \). Multiplying \( 1 \le q \) by \( p > 0 \) gives \( p \le pq \) (@prp-ordered-ring-rules (c)), which by the comparison formula says \( p/q \le p/1 \). So \( x \le p < p + 1 \), and \( n \coloneqq p + 1 \in \nN \) works.
+If \( p > 0 \), then \( p \in \nN \) (@thm-integers-ordered-ring (b)), and \( q \ge 1 \) by discreteness (@thm-integers-ordered-ring (c)), since \( q > 0 \). Multiplying \( 1 \le q \) by \( p > 0 \) (@prp-ordered-ring-rules (c), or equality if \( q = 1 \)) gives \( p \le pq \), which by the comparison formula says \( p/q \le p/1 \). So \( x \le p < p + 1 \), and \( n \coloneqq p + 1 \in \nN \) works.
 
 *The corollary.* Let \( \varepsilon \in \nQ_{>0} \) be given. Then \( 1/\varepsilon > 0 \) (@prp-reciprocal-order (a)), and the theorem gives \( n \in \nN \) with \( 1/\varepsilon < n \); in particular \( n > 0 \), so \( n \in \nZ_{>0} \). By @prp-reciprocal-order (b), \( 1/n < 1/(1/\varepsilon) = \varepsilon \). The \( n \) depends on \( \varepsilon \), which was fixed first.
 
@@ -351,7 +351,7 @@ If \( p > 0 \), then \( p \in \nN \) (@thm-integers-ordered-ring (b)), and \( q 
 - 3: the case \( p > 0 \): \( q \ge 1 \) by discreteness of \( \nZ \), and \( p/q \le p \) by the comparison formula (or an equivalent inequality argument from the ordered-field rules).
 - 1: exhibits \( n \in \nN \) (for instance \( p + 1 \)) and checks \( x < n \).
 - 3: the corollary: \( \varepsilon \) fixed first, \( n > 1/\varepsilon \) from the theorem, reciprocals reverse order.
-Fatal errors (0 for the step): no separate treatment of \( p < 0 \) (there "\( p/q \le p \)" fails once \( q \ge 2 \), as \( -3/2 > -3 \) shows, and \( p + 1 \notin \nN \) once \( p \le -2 \)); using a supremum, the real numbers, or "the decimal expansion of \( x \)". A route through @prp-rational-integer-part is circular here (its proof uses the theorem) and earns nothing for the first five points.
+Fatal errors (0 for the step): no separate treatment of \( p < 0 \) (there "\( p/q \le p \)" fails once \( q \ge 2 \), as \( -3/2 > -3 \) shows, and \( p + 1 \notin \nN \) once \( p \le -2 \)); using a supremum, the real numbers, or "the decimal expansion of \( x \)". A route through @prp-rational-integer-part is circular here (its proof uses the theorem) and earns nothing for the theorem's 7 points; the corollary's 3 points, deduced from the theorem as stated, can still be earned.
 :::
 
 ::: {#exr-ordered-field-of-rationals-c2}
@@ -380,6 +380,13 @@ The move is **check on representatives, one argument at a time**: change the fir
 ps < rq \iff p's < rq' \iff p's' < r'q' .
 \]
 This proves the claim. By @thm-rationals-ordered-field (a) both sides also mean \( p/q < r/s \); the point of the exercise is that the integer relation alone is already independent of the representatives, and positivity of \( q, q', s, s' \) is used at every multiplication and cancellation.
+
+**Marking scheme.** (10 points)
+- 2: names the move (check on representatives, one argument at a time, joined by transitivity of \( \iff \)).
+- 3: first argument: multiplies \( ps < rq \) by \( q' > 0 \), uses \( pq' = p'q \) to reach \( (p's)q < (rq')q \), cancels \( q > 0 \) (by contradiction via trichotomy), and gets the converse from symmetry of \( \sim \).
+- 3: second argument: the same with \( s' > 0 \), \( rs' = r's \) and cancellation of \( s > 0 \), with the converse by symmetry.
+- 2: chains \( ps < rq \iff p's < rq' \iff p's' < r'q' \) and says where positivity of \( q, q', s, s' \) is used.
+Fatal errors (0 for the step): multiplying or canceling by a denominator without using its sign; proving only one direction of an equivalence without invoking symmetry; using \( p/q < r/s \) (the comparison formula of @thm-rationals-ordered-field (a)) instead of working on the integer relation.
 :::
 
 ::: {#exr-ordered-field-of-rationals-c3}
@@ -425,9 +432,9 @@ prp-rational-integer-part (proof): the order of Q restricted to Z is that of Z, 
 prp-rational-integer-part (claim): floor(p/q) is the quotient of division with remainder | a later chapter of this volume (F3.5, prose pointer; nothing depends on it)
 thm-rationals-archimedean (claim): for R the property needs the least upper bound axiom; ordered fields of rational functions with N bounded above | AN1.1 (prose pointer; nothing here depends on it)
 prp-reciprocal-order (claim): (the midpoint paragraph after it) a + a = (1 + 1) a; (a + b)/2 = (a + b) * 2^{-1} | def-commutative-ring-and-field (distributivity, a/b := a b^{-1})
-exr-ordered-field-of-rationals-a1 (solution): numerals and products such as (-2) * 5 = -10 in Z | omega arithmetic (def-omega-arithmetic) carried by iota (prp-naturals-embed-integers) and signs by prp-ring-algebra (c); verify/ch10/exr-ordered-field-of-rationals-a1.py
-exr-ordered-field-of-rationals-b1 (solution): integer products -36, -35, -49, -48, -21, -20 | as above; verify/ch10/exr-ordered-field-of-rationals-b1.py
-exr-ordered-field-of-rationals-b2 (solution): 1/2 - 1/3 = 1/6 and 1/3 + 1/7 = 10/21 | def-rational-operations; verify/ch10/exr-ordered-field-of-rationals-b2.py
-exr-ordered-field-of-rationals-b3 (solution): the eight integer comparisons | thm-rationals-ordered-field (a); verify/ch10/exr-ordered-field-of-rationals-b3.py
-exr-ordered-field-of-rationals-c2 (solution): symmetry of ~ on Z x Z_{>0} | prp-rational-pairs-equivalence (cited in section 10.4)
+exr-ordered-field-of-rationals-a1 (solution): numerals and products such as (-2) * 5 = -10 in Z | omega arithmetic (def-omega-arithmetic) carried by iota (prp-naturals-embed-integers) and signs by prp-ring-algebra (c); verify/ch02/exr-ordered-field-of-rationals-a1.py
+exr-ordered-field-of-rationals-b1 (solution): integer products -36, -35, -49, -48, -21, -20 | as above; verify/ch02/exr-ordered-field-of-rationals-b1.py
+exr-ordered-field-of-rationals-b2 (solution): 1/2 - 1/3 = 1/6 and 1/3 + 1/7 = 10/21 | def-rational-operations; verify/ch02/exr-ordered-field-of-rationals-b2.py
+exr-ordered-field-of-rationals-b3 (solution): the eight integer comparisons | thm-rationals-ordered-field (a); verify/ch02/exr-ordered-field-of-rationals-b3.py
+exr-ordered-field-of-rationals-c2 (solution): symmetry of ~ on Z x Z_{>0} | prp-rational-pairs-equivalence (cited in F3.2 §04)
 -->
