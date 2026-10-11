@@ -230,7 +230,7 @@ A proof of "if \( x^3 > 8 \), then \( x > 2 \)" begins "Suppose \( x > 2 \)." an
 :::
 
 ::: {.solution}
-Its box opens with \( x > 2 \) and closes on \( x^3 > 8 \), so it earns \( (x > 2) \to (x^3 > 8) \), the converse of the claim. The claim itself is true, since a larger real number has a larger cube, but this box does not prove it.
+Its box opens with \( x > 2 \) and closes on \( x^3 > 8 \), so it earns \( (x > 2) \to (x^3 > 8) \), the converse of the claim. The claim itself is true: if \( x \le 2 \), then \( x^3 \le 2^3 = 8 \), since a larger real number has a larger cube, so \( x^3 > 8 \) forces \( x > 2 \). But this box does not prove it.
 :::
 
 ## A box must end on a line of its own
@@ -495,7 +495,7 @@ Find a derivation of each sequent.
 :::
 
 ::: {.solution}
-(a) *Idea.* The goal is an implication, so open a box with its hypothesis \( P \); the box must end with \( P \). The assumption is already \( P \), so the box can end at once: this is the degenerate case of \( \rulename{{\to}I} \).
+(a) *Idea.* The goal is an implication, so open a box with its hypothesis \( P \); the box must end with \( P \). The assumption is already \( P \), so the box can end at once: a box of one line, whose assumption is also its last line. Nothing in \( \rulename{{\to}I} \) asks a box to contain more than its assumption.
 
 ```{=latex}
 \begin{center}
@@ -711,7 +711,7 @@ $\begin{nd}
 \end{center}
 ```
 
-Every line cites line 1, which lies in no box, or lines of the box \( \lines{2}{6} \) from inside it. By @def-derivable, the two derivations prove the two claims.
+Lines 3–6 cite line 1, which lies in no box, or earlier lines of the box \( \lines{2}{6} \), from inside that box. Line 7 cites the box \( \lines{2}{6} \), which has ended, and neither that box nor line 7 lies in any other box. By @def-derivable, the two derivations prove the two claims.
 :::
 
 In the first derivation the boxes are nested, and the inner one closes first: an assumption made later is discharged earlier. That is the general pattern, forced by @def-derivation, since two boxes are either disjoint or one inside the other.
@@ -757,7 +757,7 @@ The card grows by two rows. In *Shape*, "box \( \varphi \) … \( \psi \)" is a 
 | \( \rulename{\wedge E} \) | \( \varphi \wedge \psi \) \( \Longrightarrow \) \( \varphi \) (or \( \psi \)) | "In particular, \( P \)." | `h.1` (and `h.2`) |
 | \( \rulename{{\to}E} \) | \( \varphi \to \psi \), \( \varphi \) \( \Longrightarrow \) \( \psi \) | "Since \( P \) implies \( Q \), and \( P \) holds, \( Q \)." | `exact h hp` |
 | \( \rulename{{\to}I} \) | box \( \varphi \) … \( \psi \) \( \Longrightarrow \) \( \varphi \to \psi \) | "Assume \( P \). … Hence \( Q \)." | `intro hp` |
-| \( \rulename{R} \) | \( \varphi \), available \( \Longrightarrow \) \( \varphi \) | "As shown above, \( P \)." | `exact hp` |
+| \( \rulename{R} \) | \( \varphi \) (available) \( \Longrightarrow \) \( \varphi \), copied | "As shown above, \( P \)." | `exact hp` |
 
 In the Lean column, `intro hp` opens the box and names its assumption `hp`.
 
@@ -891,7 +891,7 @@ $\begin{nd}
 \end{center}
 ```
 
-In prose: *Assume \( P \) and \( Q \). In particular \( P \) holds, and in particular \( Q \) holds. Hence \( Q \) and \( P \) both hold. This proves that if \( P \) and \( Q \), then \( Q \) and \( P \).* Compared with @prp-and-commutes, the premise \( P \wedge Q \) has become an assumption, and the conclusion has become an implication that depends on nothing.
+In prose: *Assume \( P \) and \( Q \). In particular, \( P \) holds. In particular, \( Q \) holds. Hence \( Q \) and \( P \) both hold. This proves that if \( P \) and \( Q \), then \( Q \) and \( P \).* Compared with @prp-and-commutes, the premise \( P \wedge Q \) has become an assumption, and the conclusion has become an implication that depends on nothing.
 
 (f) 2 \( P \wedge R \), assumption; 3 \( P \), \( \rulename{\wedge E} \) 2; 4 \( Q \), \( \rulename{{\to}E} \) 1, 3; 5 \( (P \wedge R) \to Q \), \( \rulename{{\to}I} \) \( \lines{2}{4} \).
 
@@ -912,7 +912,7 @@ In prose: *Assume \( P \) and \( Q \). In particular \( P \) holds, and in parti
 A search for \( (P \wedge Q) \to R, \ S \to Q \vdash S \to (P \to R) \) has reached the stage below. *Name the move, then complete it.*
 
 ```{=latex}
-% schema (partial derivation: the gap is unnumbered, lines carry their final numbers)
+% schema (partial derivation: the gaps are unnumbered, lines carry their final numbers)
 \begin{center}
 $\begin{nd}
   \hypo {1} {(P \wedge Q) \to R}
@@ -923,6 +923,7 @@ $\begin{nd}
   \hypo {4} {P}
   \have[\ ][0] {} {\vdots}
   \close
+  \have[\ ][0] {} {\vdots}
   \close
   \have[][9] {9} {S \to (P \to R)} \by{?}{}
 \end{nd}$
@@ -1190,7 +1191,7 @@ Read the boxes off the goal. The premise's hypothesis is \( P \to Q \): what wou
 ::: {.solution}
 [Hint 2]
 
-Which rule proves an implication, and what does that rule need?
+Start: line 2 assumes \( P \) and line 3 assumes \( Q \), read off the goal. The last line of the box of \( Q \) must be \( R \), and line 1 gives \( P \to R \) only once \( P \to Q \) is on an available line.
 :::
 
 ::: {.solution}
@@ -1221,7 +1222,7 @@ $\begin{nd}
 
 Line 5 is a legal repetition: both boxes containing line 3 contain line 5. Line 8 may cite line 2 because the box \( \lines{2}{9} \), the only box containing line 2, contains line 8.
 
-The premise's hypothesis is the implication \( P \to Q \), which \( \rulename{{\to}E} \) needs on an available line, and an implication is derived by \( \rulename{{\to}I} \), which needs a box of its own. (That box assumes \( P \) again although line 2 already did: \( \rulename{{\to}I} \) needs the box, not new information.)
+The premise's hypothesis is the implication \( P \to Q \), which \( \rulename{{\to}E} \) needs on an available line. No available line has \( P \to Q \) as a conjunct or as the conclusion of an implication, so neither \( \rulename{\wedge E} \) nor \( \rulename{{\to}E} \) can produce it (\( \rulename{{\to}E} \) on line 1 would need \( P \to Q \) already). It must therefore come from \( \rulename{{\to}I} \), which needs a box of its own. (That box assumes \( P \) again although line 2 already did: \( \rulename{{\to}I} \) needs the box, not new information.)
 
 **Marking scheme.** (10 points)
 
@@ -1229,7 +1230,7 @@ The premise's hypothesis is the implication \( P \to Q \), which \( \rulename{{\
 - 3: derives \( P \to Q \) inside the box of \( Q \) by a box whose last line is \( Q \).
 - 2: obtains \( P \to R \), then \( R \), by \( \rulename{{\to}E} \) on available lines.
 - 2: closes the boxes inner first, each \( \rulename{{\to}I} \) citing an available box.
-- 1: the sentence says \( P \to Q \) must be a line, hence needs a box.
+- 1: the sentence says \( P \to Q \) must be a line that no elimination rule can supply, hence needs a box.
 
 Fatal errors (0 for the step): citing a line outside the box that contains it; writing \( P \to Q \) with no box.
 :::
@@ -1268,15 +1269,17 @@ Lines 1–4 lie in no box, so they are available inside the box \( \lines{5}{8} 
 
 (b) The premise \( P \to Q \) holds because \( 5 > 4 \): if \( x > 5 \), then \( x > 4 \). For \( Q \to R \): if \( x > 4 \), then \( x > 0 \), so \( x^2 = x \cdot x > 4x > 16 \). For \( R \to S \): if \( x^2 > 16 \), then \( x^2 > 9 \), since \( 16 > 9 \). So both premises (the second a conjunction of two true implications) hold for every real \( x \).
 
-In prose: *We know that \( x > 5 \) implies \( x > 4 \), that \( x > 4 \) implies \( x^2 > 16 \), and that \( x^2 > 16 \) implies \( x^2 > 9 \). Suppose \( x > 5 \). Then \( x > 4 \). Hence \( x^2 > 16 \), and so \( x^2 > 9 \). This proves that if \( x > 5 \), then \( x^2 > 9 \).*
+In prose: *We know that \( x > 5 \) implies \( x > 4 \), that \( x > 4 \) implies \( x^2 > 16 \), and that \( x^2 > 16 \) implies \( x^2 > 9 \). Suppose \( x > 5 \). Then \( x > 4 \). Hence \( x^2 > 16 \). So \( x^2 > 9 \). This proves that if \( x > 5 \), then \( x^2 > 9 \).*
 
 **Marking scheme.** (10 points)
 
 - 2: takes the conjunctive premise apart by two \( \rulename{\wedge E} \) lines (inside or outside the box).
 - 2: opens a box with \( P \) (not \( S \)) and closes it on \( S \), a line of that box.
-- 2: three \( \rulename{{\to}E} \) steps, each citing an implication and exactly its hypothesis, every cited line available.
-- 1: the closing \( \rulename{{\to}I} \) cites the box as a range.
+- 2: reaches \( S \) inside the box of \( P \) by \( \rulename{{\to}E} \) steps, each citing an implication and exactly its hypothesis, every cited line available.
+- 1: each closing \( \rulename{{\to}I} \) cites its box as a range.
 - 3: prose with one sentence per step, "suppose" for the assumption, and a closing sentence stating the implication.
+
+A route that first derives \( Q \to S \) in a box of \( Q \) (as in @prp-implication-transitive) and then uses it in the box of \( P \) earns the same points: its \( \rulename{{\to}E} \) steps in both boxes count for the third line, and its two \( \rulename{{\to}I} \) steps for the fourth.
 
 Fatal errors (0 for the step): a box opened with the conclusion \( S \) (the converse error); citing a line of the box after it has closed.
 :::
@@ -1287,7 +1290,7 @@ def-rules-implication (example): each of and-I, and-E, ->E writes a conjunction 
 prp-implication-transitive (example): x > 3 implies x^2 > 9 (x > 0, x^2 > 3x > 9); x^2 > 9 implies x^2 > 4 since 4 < 9 | school algebra, AN1.1 (promised); checked by verify/ch01/prp-implication-transitive.py
 prp-implication-transitive (claim): "Argument B, diagnosed": n = 2k gives n^2 = 4k^2 = 2(2k^2) with 2k^2 an integer (line 2, "algebra") | inline school algebra (F1.1 §01's Argument B; the step from "n is even" to a k is used as school algebra, as F1.1 §01 says); checked by verify/ch01/prp-implication-transitive.py
 prp-implication-transitive (claim): "Argument B, diagnosed": affirming the consequent ("from P -> Q and Q, conclude P") is a bad form | F1.1 §01 ("Try to break it", prose, no label) and F1.1 §04 ("Why nothing more", prose, no label), recalled in prose; broken again inline at x = -3 (x > 2 implies x^2 > 4 for every real x; 9 > 4; -3 > 2 false); checked by verify/ch01/prp-implication-transitive.py
-prp-implication-transitive (claim): Quick check after "Argument B, diagnosed": x > 2 implies x^3 > 8, and x^3 > 8 implies x > 2 (a larger real number has a larger cube) | school algebra, AN1.1 (promised); checked by verify/ch01/prp-implication-transitive.py
+prp-implication-transitive (claim): Quick check after "Argument B, diagnosed": x > 2 implies x^3 > 8 (a larger real number has a larger cube), and x^3 > 8 implies x > 2 (if x <= 2 then x^3 <= 2^3 = 8, by the same fact) | school algebra, AN1.1 (promised); checked by verify/ch01/prp-implication-transitive.py
 def-derivation (example): the scope figure: each arrow and bracket legal or illegal as marked, and line 10 may cite lines 1, 5, 6, 9 and the box 7-8 | inline (read off def-derivation's scope rule); checked by verify/ch01/exr-proving-an-implication-a2.py
 exm-illegal-citation (solution): x > 3 implies x > 2 and x > 2 implies x > 1 for every real x; 0 > 1 is false | school algebra, AN1.1 (promised); checked by verify/ch01/exm-illegal-citation.py
 exm-illegal-citation (example): the warning's slip: x > 1 implies x^2 > 1; x^3 > 1 fails at x = 0 | school algebra, AN1.1 (promised); checked by verify/ch01/exm-illegal-citation.py

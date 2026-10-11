@@ -4,7 +4,7 @@ Section 1.1 opens with two arguments that every integer with an even square is e
 
 This chapter builds the calculus that answers it: a proof is a chain in which every line is a premise, an assumption, or one application of a rule. It gives the rules for "and", "implies" and "or", one at a time; Chapter 2 adds "not", "iff" and proof by contradiction.
 
-**What you need.** School algebra only: the rules of signs, adding and multiplying inequalities, and the facts that every integer is even or odd and every real number is nonnegative or negative. They are used as facts in examples; *Analysis on the Real Line*, Chapter 1 proves the order facts from the axioms for the real numbers. No earlier chapter is needed.
+**What you need.** School algebra only: the rules of signs, adding and multiplying inequalities, and the facts that every integer is even or odd and every real number is non-negative or negative. They are used as facts in examples; *Analysis on the Real Line*, Chapter 1 proves the order facts from the axioms for the real numbers. No earlier chapter is needed.
 
 **Time.** About 35 hours on the core track (all of A, one B and one C per section, the exit checks); about 50 hours for everything.
 

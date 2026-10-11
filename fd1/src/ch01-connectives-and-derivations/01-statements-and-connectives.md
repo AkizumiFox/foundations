@@ -72,7 +72,7 @@ Let \( x \) be a real number. Is "\( x > 2 \) or \( x \le 2 \)" a statement? Is 
 :::
 
 ::: {.solution}
-Yes: by the convention it is a claim about one fixed number \( x \). And it is true whatever \( x \) is, since one of the two sides holds for every number.
+Yes: by the convention it is a claim about one fixed number \( x \). And it is true whatever \( x \) is, since every real number is either greater than \( 2 \) or at most \( 2 \).
 :::
 
 ::: {.second-reading title="Statements or propositions?"}
@@ -103,7 +103,7 @@ Several English words become \( \wedge \): "but", "although", and "while" all as
 
 Chained inequalities are conjunctions in disguise too. \( 0 < x < 1 \) abbreviates \( (0 < x) \wedge (x < 1) \), and \( a \le b \le c \) abbreviates \( (a \le b) \wedge (b \le c) \). The symbol \( \le \) itself hides a disjunction: \( a \le b \) means \( (a < b) \vee (a = b) \). And \( a \ne b \) is the negation \( \neg(a = b) \). All three facts are used often in the sections that follow.
 
-In theorem statements the book writes \( \Rightarrow \) and \( \iff \), as mathematicians usually do, and in running prose it says "implies" and "if and only if". The arrows \( \to \) and \( \leftrightarrow \) are kept for the formal derivations that start in the next section. Nothing but typography separates the two pairs.
+In theorem statements the book writes \( \Rightarrow \) and \( \iff \), as mathematicians usually do, and in running prose it says "implies" and "if and only if". The arrows \( \to \) and \( \leftrightarrow \) are kept for statements written in logical symbols, as in this section, whether built from letters like \( P \to Q \) or from formulas like \( (x > 1) \to (x^2 > 1) \), and for the formal derivations that start in the next. Nothing but typography separates the two pairs.
 
 ::: {.warning}
 In everyday English, "or" is often exclusive: "soup or salad" on a menu means one but not both. In mathematics, \( P \vee Q \) is **inclusive**: it is true when \( P \) is true, when \( Q \) is true, and when both are. For a real number \( x \), "\( x \ge 0 \) or \( x \le 0 \)" is true whatever \( x \) is; at \( x = 0 \) both parts are true, and that does not spoil it. An exclusive "or" must be said in full: "\( P \) or \( Q \), but not both", which is \( (P \vee Q) \wedge \neg (P \wedge Q) \).
@@ -163,7 +163,7 @@ Translating into symbols is a skill of its own, best learned slowly, in three st
 
 Take "if \( 12 \) is divisible by \( 3 \) and by \( 4 \), then \( 12 \) is divisible by \( 6 \)". The atomic statements are \( P \): "\( 12 \) is divisible by \( 3 \)", \( Q \): "\( 12 \) is divisible by \( 4 \)" and \( R \): "\( 12 \) is divisible by \( 6 \)". English lets "\( 12 \) is divisible by" be said once and shared; logic writes each piece in full. The words "if … then" carry \( \to \), and "and" carries \( \wedge \). The hypothesis is everything between "if" and "then", so the statement is \( (P \wedge Q) \to R \), not \( P \wedge (Q \to R) \). The second reading would claim \( P \) outright, and the English sentence claims nothing outright: it only says what follows from what.
 
-A second example shows a connective hidden inside a word. Let \( x \) be a real number, and read "\( x \) is nonzero, and if \( x \) is positive, then so is \( x^3 \)". With \( Z \): "\( x = 0 \)", \( P \): "\( x > 0 \)" and \( C \): "\( x^3 > 0 \)", "nonzero" is \( \neg Z \), and the whole sentence is \( \neg Z \wedge (P \to C) \). Letters that recall their statements, as here, often help; a letter is only a name.
+A second example shows a connective hidden inside a word. Let \( x \) be a real number, and read "\( x \) is non-zero, and if \( x \) is positive, then so is \( x^3 \)". With \( Z \): "\( x = 0 \)", \( P \): "\( x > 0 \)" and \( C \): "\( x^3 > 0 \)", "non-zero" is \( \neg Z \), and the whole sentence is \( \neg Z \wedge (P \to C) \). Letters that recall their statements, as here, often help; a letter is only a name.
 
 In both examples the English word order is a poor guide to the grouping. When in doubt, ask of each connective: which two statements does it join?
 
@@ -198,7 +198,7 @@ The main connective is found by undoing the construction from the outside. Take
 \[
 \neg(P \wedge Q) \to R .
 \]
-By convention (1), the \( \neg \) applies only to the parenthesized \( P \wedge Q \); by convention (2), the \( \to \) takes everything to its left as its hypothesis. So the last step joined \( \neg(P \wedge Q) \) and \( R \) with \( \to \), and \( \to \) is the main connective. Its hypothesis \( \neg(P \wedge Q) \) has main connective \( \neg \), applied to \( P \wedge Q \), whose main connective is \( \wedge \). The construction can be drawn as a tree, with the main connective at the root and the letters at the leaves.
+By convention (1), the \( \neg \) applies only to the parenthesized \( P \wedge Q \). That leaves a single connective outside the parentheses, the \( \to \), joining \( \neg(P \wedge Q) \) on its left and \( R \) on its right. So the last step joined \( \neg(P \wedge Q) \) and \( R \) with \( \to \), and \( \to \) is the main connective. Its hypothesis \( \neg(P \wedge Q) \) has main connective \( \neg \), applied to \( P \wedge Q \), whose main connective is \( \wedge \). The construction can be drawn as a tree, with the main connective at the root and the letters at the leaves.
 
 \begin{center}
 \begin{tikzpicture}[level distance=11mm, sibling distance=26mm, every node/.style={font=\normalsize}]
@@ -300,7 +300,7 @@ Its form, "from \( P \to Q \) and \( P \), conclude \( Q \)", is good (Quick che
 | form good | "If \( 3 \) is odd, then \( 9 \) is odd. \( 3 \) is odd. So \( 9 \) is odd." | the argument about \( 6 \) above |
 | form bad | Argument B, by its last step "from \( P \to Q \), conclude \( Q \to P \)" | "If \( 2 \) is divisible by \( 4 \), then \( 2 \) is even. \( 2 \) is even. So \( 2 \) is divisible by \( 4 \)." |
 
-The top left is the odd-square argument at \( n = 3 \); the bottom right is the Quick check's (i) at \( n = 2 \). Argument A is not placed: its steps use "not", cases and "some", whose forms we cannot test yet.
+The top left is the odd-square argument at \( n = 3 \); the bottom right is the Quick check's (i) at \( n = 2 \). Argument A is not placed: it argues from a supposition ("Suppose \( n \) is odd ...") and uses "some" (an integer \( k \) with \( n = 2k + 1 \)), and a form written as premises above a line cannot yet express either.
 
 *A good form guarantees only that true premises give a true conclusion.*
 
@@ -328,7 +328,7 @@ Every connective works the same way. Each comes with introduction rules, saying 
 
 The second slogan is what makes a proof possible to check. Finding a proof may need an idea. Checking one needs none: go through it line by line and ask of each line which rule produced it and whether that rule was applied to lines that really are there. A reader who has lost the thread of a long argument can always fall back on that question, and it is the question to ask of Argument B.
 
-Section 1.4 names exactly what B did wrong; the move above already shows that B's tempting repair, "from \( P \to Q \) and \( Q \), conclude \( P \)", is a bad form.
+Section 1.4 names exactly what B did wrong; the test *try to break it* has already shown, at \( n = 2 \) in its Quick check (i), that B's tempting repair, "from \( P \to Q \) and \( Q \), conclude \( P \)", is a bad form.
 
 ## What comes next
 
@@ -532,7 +532,7 @@ Let \( x \) be a real number.
 ::: {#exr-statements-and-connectives-b4}
 [B4: Break it or explain why not]
 
-For each form, either find statements about a real number \( x \) that make every premise true and the conclusion false, or explain with the table of "When is an implication broken?" why no choice of statements can.
+For each form, either find statements about a real number \( x \) that make every premise true and the conclusion false, or explain, by checking every case, why no choice of statements can (use the meaning of each connective; for \( \to \), the table of "When is an implication broken?").
 
 ::: {.enumerate options="label=(\alph*)"}
 1. From \( P \to Q \) and \( \neg P \), conclude \( \neg Q \).
@@ -580,7 +580,7 @@ Let \( P \) and \( Q \) be statements.
 
 The second is \( (x^2 = 4) \to (x = 2) \), the same two parts in the opposite direction. It is false for \( x = -2 \), where \( x^2 = 4 \) but \( x \ne 2 \).
 
-The third is \( \neg(x = 0) \to (x^2 > 0) \), by (b). It is true for every \( x \): a nonzero real number is positive or negative, and in both cases its square is positive.
+The third is \( \neg(x = 0) \to (x^2 > 0) \), by (b). It is true for every \( x \): a non-zero real number is positive or negative, and in both cases its square is positive.
 
 The first two sentences differ by one word, and they are implications in opposite directions. Confusing them is exactly the mistake of Argument B at the start of this section.
 :::
@@ -596,6 +596,9 @@ def-main-connective (example): the promise Quick check: of 3, -3, 1 only -3 brea
 def-main-connective (example): "only if" passage: x > 2 implies x^2 > 2x > 4 | school algebra (Allowed prerequisites); AN1.1 (promised); checked by verify/ch01/def-main-connective.py
 def-main-connective (example): "try to break it" Quick check (i): a multiple of 4 is even; 2 is even and not divisible by 4 | inline arithmetic (checked by verify/ch01/def-main-connective.py)
 def-main-connective (example): "Argument B, tried": every integer with an even square is even | the fact stated in the section's opening (Argument A); F1.2 (promised) for the derivation; used only to say that B's content gives no counterexample, not as a step of any proof
+def-main-connective (example): the inclusive-or warning: x >= 0 or x <= 0 for every real x | school algebra (Allowed prerequisites); AN1.1 (promised)
+def-main-connective (example): the precedence passage: n = -4 is even and not positive | inline arithmetic
+exm-statements (example): "for every real x, x > 2" false (x = 0), "for some real x, x > 2" true (x = 3) | inline arithmetic; witnesses from items (e) and (f)
 def-main-connective (example): the 6-argument (6 even, not prime), the n = 3 instance (3 and 9 odd), the n = 2 instance (2 even, not divisible by 4) | inline arithmetic (checked by verify/ch01/def-main-connective.py)
 def-main-connective (example): fold "Valid, or only convincing?": n^2 + n + 41 prime for 0 <= n <= 39; 40^2 + 40 + 41 = 1681 = 41^2 | inline arithmetic (checked by verify/ch01/def-main-connective.py)
 exr-statements-and-connectives-a1 (solution): x^2 - 1 = 0 exactly when x = 1 or x = -1; 0^2 - 1 = -1 | school algebra (Allowed prerequisites); AN1.1 (promised)

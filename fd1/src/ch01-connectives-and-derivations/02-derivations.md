@@ -134,7 +134,7 @@ $\begin{nd}
 \end{center}
 ```
 
-The search could have started instead from \( w < z \), the premise ending in \( z \): with \( m = w \) it needs \( u < w \), which is \( \mathrm{Tr} \ 1, 3 \), and then \( u < z \) is \( \mathrm{Tr} \ 4, 2 \). That is a different correct derivation. A sequent usually has many, and any one of them establishes it.
+The search could have started instead from \( w < z \), the premise ending in \( z \): with \( m = w \) it needs \( u < w \), which is \( \mathrm{Tr} \ 1, 3 \), and then \( u < z \) is \( \mathrm{Tr} \ 4, 2 \). That is a different correct derivation. The same premises and conclusion usually have many derivations, and any one of them shows that the conclusion follows from the premises.
 :::
 
 Part (b) was found backwards, from the goal; part (a) forwards. The rest of this section names the two directions.
@@ -176,7 +176,7 @@ A line can fail one question and pass the others. The next example breaks a corr
 Each list below is the derivation of part (a) of @exm-chaining-derivation with one change. Say which of the three questions of "Reading a derivation" fails, and at which line.
 
 ::: {.enumerate options="label=(\alph*)"}
-1. The statements of lines 4 and 5 are swapped, and each keeps its justification.
+1. The statements of lines 4 and 5 are swapped, each taking its justification with it, so that line 4 is now "\( 0 < 1 \), \( \mathrm{Tr} \ 5, 3 \)" and line 5 is "\( 0 < y \), \( \mathrm{Tr} \ 1, 2 \)".
 2. Line 5 is justified "\( \mathrm{Tr} \ 3, 4 \)" instead of "\( \mathrm{Tr} \ 4, 3 \)".
 :::
 :::
@@ -410,7 +410,7 @@ $\begin{nd}
 Line 2 is the second form of \( \rulename{\wedge E} \), with \( \varphi \coloneqq P \) and \( \psi \coloneqq Q \).
 :::
 
-The two derivations are box-free derivations in the sense of @def-box-free-derivation, with \( \rulename{\wedge I} \) and \( \rulename{\wedge E} \) as the list of rules: premises first, and every later line an instance of a schema whose given lines are earlier. By @def-derivable they show the two sequents. When the goal is a letter, as in (b), only the premises can suggest a step; when every subgoal is a premise, as in (a), the premises need no taking apart. The next derivation needs both ends.
+The two derivations are box-free derivations in the sense of @def-box-free-derivation, with \( \rulename{\wedge I} \) and \( \rulename{\wedge E} \) as the list of rules: premises first, and every later line an instance of a schema whose given lines are earlier. By @def-derivable they show the two sequents. When the goal is a letter, as in (b), only the premises can suggest a step; when every subgoal is a premise, as in (a), the premises need no taking apart. The first proposition below needs both ends.
 
 ::: {.second-reading title="Edge cases for and-introduction"}
 **One line cited twice.** Nothing in the schema of \( \rulename{\wedge I} \) says that \( i \) and \( j \) are different lines. With \( i = j \), the letters \( \varphi \) and \( \psi \) are replaced by the same statement, and the rule writes \( \varphi \wedge \varphi \). It is a silly line, and a legal one. For instance, \( P \vdash P \wedge P \): the goal is a conjunction, so \( \rulename{\wedge I} \), with the subgoals \( P \) and \( P \), and the one premise meets both.
@@ -473,7 +473,7 @@ $\begin{nd}
 Lines 2 and 3 are the two forms of \( \rulename{\wedge E} \) applied to line 1, and line 4 is \( \rulename{\wedge I} \) applied to lines 3 and 2, and the line shows \( Q \) on the left. By @def-derivable, \( P \wedge Q \vdash Q \wedge P \).
 :::
 
-Read back in words, the derivation is a short paragraph: *We are given that \( P \) and \( Q \). In particular \( P \) holds, and in particular \( Q \) holds. So \( Q \) and \( P \) both hold.* Each sentence is one line, and each "in particular" is one application of \( \rulename{\wedge E} \).
+Read back in words, the derivation is a short paragraph: *We are given that \( P \) and \( Q \). In particular \( P \) holds. In particular \( Q \) holds. So \( Q \) and \( P \) both hold.* Each sentence is one line, and each "in particular" is one application of \( \rulename{\wedge E} \).
 
 Nothing in the derivation looks at what \( P \) and \( Q \) say: with \( P \): "\( 0 < x \)" and \( Q \): "\( x < 1 \)" it turns "\( 0 < x \) and \( x < 1 \)" into "\( x < 1 \) and \( 0 < x \)", and it does the same for any two statements. Because the letters stand for arbitrary statements, one derivation written with letters proves every such instance at once.
 
@@ -587,7 +587,7 @@ $\begin{nd}
 Line 2 is cited by lines 5 and 6, and line 1 by lines 3 and 4. In a written proof this is the everyday "we use the hypothesis \( x > 0 \) again".
 
 ::: {.second-reading title="Any rearrangement of a conjunction"}
-**Take everything apart, rebuild in the new order.** The last derivation of the section rearranges four letters: \( (P \wedge Q) \wedge (R \wedge S) \vdash (S \wedge Q) \wedge (P \wedge R) \).
+**Take everything apart, rebuild in the new order.** One more derivation rearranges four letters: \( (P \wedge Q) \wedge (R \wedge S) \vdash (S \wedge Q) \wedge (P \wedge R) \).
 
 ::: {.idea}
 From the premise: two layers of \( \wedge \), so \( \rulename{\wedge E} \) twice on line 1 and then twice on each of the two new lines, which leaves the four letters on lines 4 to 7. From the goal: two layers of \( \wedge \), so \( \rulename{\wedge I} \) builds \( S \wedge Q \) and \( P \wedge R \) from the letters and then joins them. There is nothing to choose; the only care needed is the order of each citation.
@@ -690,7 +690,7 @@ The card gives each rule so far, its shape, the sentence that uses it in a writt
 | Rule | Shape | You write | Lean |
 |------|------------------|--------------------------------------|------------------------|
 | \( \rulename{\wedge I} \) | \( \varphi \), \( \psi \) \( \Longrightarrow \) \( \varphi \wedge \psi \) | "We show \( P \), and we show \( Q \)." | `constructor` |
-| \( \rulename{\wedge E} \) | \( \varphi \wedge \psi \) \( \Longrightarrow \) \( \varphi \); also \( \psi \) | "In particular, \( P \)." | `h.1` (and `h.2`) |
+| \( \rulename{\wedge E} \) | \( \varphi \wedge \psi \) \( \Longrightarrow \) \( \varphi \) (or \( \psi \)) | "In particular, \( P \)." | `h.1` (and `h.2`) |
 
 ::: {.remark}
 [Looking ahead]
@@ -729,7 +729,7 @@ Chapter 3 checks, for every rule of Chapters 1 and 2 at once, that no rule leads
 :::
 
 ::: {.solution}
-(a) A box-free derivation, relative to a list of rules, is a finite list of numbered lines, at least one, each with a statement and a justification, in which the first lines are premises, justified by nothing, and every later line is justified by one rule of the list, citing earlier lines, so that it and the cited lines form an instance of a schema of that rule (@def-box-free-derivation). And \( \Gamma \vdash \psi \) means that there is a derivation whose premises all belong to \( \Gamma \) and whose last line is \( \psi \) (@def-derivable). For the schemas see @def-rules-conjunction: \( \rulename{\wedge I} \) has given lines \( i \): \( \varphi \) and \( j \): \( \psi \) and new line \( k \): \( \varphi \wedge \psi \), cited "\( \rulename{\wedge I} \) \( i, j \)" (or \( j, i \)); the two forms of \( \rulename{\wedge E} \) each have the given line \( i \): \( \varphi \wedge \psi \) and the new line \( k \): \( \varphi \), respectively \( \psi \), cited "\( \rulename{\wedge E} \) \( i \)".
+(a) A box-free derivation, relative to a list of rules, is a finite list of numbered lines, at least one, each with a statement and a justification, in which the first lines, possibly none and possibly all, are premises, justified by nothing, and every later line is justified by one rule of the list, citing earlier lines, so that it and the cited lines form an instance of a schema of that rule (@def-box-free-derivation). And \( \Gamma \vdash \psi \) means that there is a derivation whose premises all belong to \( \Gamma \) and whose last line is \( \psi \) (@def-derivable). For the schemas see @def-rules-conjunction: \( \rulename{\wedge I} \) has given lines \( i \): \( \varphi \) and \( j \): \( \psi \) and new line \( k \): \( \varphi \wedge \psi \), cited "\( \rulename{\wedge I} \) \( i, j \)" (or \( j, i \)); the two forms of \( \rulename{\wedge E} \) each have the given line \( i \): \( \varphi \wedge \psi \) and the new line \( k \): \( \varphi \), respectively \( \psi \), cited "\( \rulename{\wedge E} \) \( i \)".
 
 (b) \( P \), or \( Q \wedge R \). The main connective is the first \( \wedge \), so \( \varphi \) is \( P \) and \( \psi \) is \( Q \wedge R \).
 
@@ -1095,5 +1095,6 @@ exr-derivations-a2 (solution): 0 < 1/4 < 1/3 < 1/2; 3 < 4; the precedence conven
 exr-derivations-b2 (solution): two inequalities in the same direction may be added | school algebra -> AN1.1 (promised); checked by verify/ch01/exm-product-in-unit-interval.py
 exr-derivations-c1 (solution): 0 < 1 is true and 1 < 0 is false | inline arithmetic
 exr-derivations-c2 (solution): following citations backwards the line numbers strictly decrease, so the chain of citations ends | inline: the numbers lie among 1, ..., n, so a strictly decreasing chain of them has at most n terms
+exr-derivations-c3 (solution): if P and (Q and R) is true then Q and R is true, and then Q is true, so the and-E-through-two-layers step never leads from truth to falsehood | the reading of "and" in Section 1.1 (the safety sentence, as for def-rules-conjunction (claim)), applied twice; stated, not used as a reason in a proof
 exr-derivations-c4 (solution): a finite non-empty set of line numbers has a first element (least-number principle, "first bad line") | school fact about finite lists; induction (F1.3) named in prose as the exact version, not used
 -->

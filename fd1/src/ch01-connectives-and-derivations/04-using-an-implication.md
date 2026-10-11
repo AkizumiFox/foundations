@@ -30,7 +30,7 @@ For each card, try to break the claim: can its hidden side make a card that is e
 So the answer is the \( 6 \) and the green card. Many people choose the \( 6 \) and the **red** card. The red card is the tell: choosing it means reading the claim as if it also said "if a card is red, then its number is even", which is the **converse**. An implication and its converse are different claims, and the claim here is only the first.
 :::
 
-The two cards that matter are the two ways an implication meets a case. The \( 6 \) shows the **hypothesis**, and an implication together with its hypothesis gives its conclusion: that is the rule of this section. The red card shows the **conclusion**, and an implication together with its conclusion gives nothing: that is the most important thing the rule does *not* allow. The green card shows that the conclusion fails; saying exactly what follows from that needs the rules for "not".
+Two of the cards show the two ways an implication meets a case: the \( 6 \) and the red card (not the pair that must be turned). The \( 6 \) shows the **hypothesis**, and an implication together with its hypothesis gives its conclusion: that is the rule of this section. The red card shows the **conclusion**, and an implication together with its conclusion gives nothing: that is the most important thing the rule does *not* allow. The green card shows that the conclusion fails; saying exactly what follows from that needs the rules for "not".
 
 ## The rule
 
@@ -87,7 +87,7 @@ $\begin{nd}
 Every application of a theorem has this shape: check the theorem's hypotheses, assemble them into exactly the theorem's hypothesis, and fire.
 
 ::: {.check}
-To get "\( 36 \) divides \( 72 \)" from the theorem "if \( 4 \) and \( 9 \) divide \( n \), then \( 36 \) divides \( n \)" at \( n = 72 \), which line must stand on the page before \( \rulename{{\to}E} \) fires?
+To get "\( 36 \) divides \( 72 \)" from the theorem "if \( 4 \) and \( 9 \) divide \( n \), then \( 36 \) divides \( n \)" at \( n = 72 \), which line, besides the theorem's instance itself, must stand on the page before \( \rulename{{\to}E} \) fires?
 :::
 
 ::: {.solution}
@@ -122,7 +122,7 @@ At this point an implication can be **used** but not **proved**. A derivation ca
 
 With \( \rulename{{\to}E} \), a derivation can pass along a chain: from \( P \) and \( P \to Q \) to \( Q \), from \( Q \) and \( Q \to R \) to \( R \), and so on. Such a chain can be found from either end.
 
-*Forwards, from the premises.* An available implication whose hypothesis is also available can **fire**: \( \rulename{{\to}E} \) writes its conclusion, which becomes available in turn and may be the hypothesis of another implication. Keep firing until the goal appears. This is premise-directed reasoning, as in Section 1.2.
+*Forwards, from the premises.* An available implication (for now, one on an earlier line) whose hypothesis is also available can **fire**: \( \rulename{{\to}E} \) writes its conclusion, which becomes available in turn and may be the hypothesis of another implication. Keep firing until the goal appears. This is premise-directed reasoning, as in Section 1.2.
 
 *Backwards, from the goal.* Suppose the goal is \( \psi \). Look among the available lines for an implication whose **conclusion** is \( \psi \), say \( \varphi \to \psi \). If there is one, it is enough to reach \( \varphi \): then \( \rulename{{\to}E} \) writes \( \psi \). So \( \varphi \) becomes the new goal, and we repeat. This is goal-directed reasoning of a new kind: in Section 1.2 the goal's main connective chose an introduction rule, but here the goal may be a letter, and it still tells us which implication to look for.
 
@@ -165,7 +165,7 @@ $\begin{nd}
 \end{center}
 ```
 
-This is the form of the two arguments of Section 1.1, now shown as a sequent: a derivation with these premises and this last line exists.
+This is the form of the two short arguments at the start of "The form of an argument" in Section 1.1 (\( n \) odd, so \( n^2 \) odd; \( x > 2 \), so \( x^2 > 4 \)), now shown as a sequent: a derivation with these premises and this last line exists.
 
 (b) *Idea, forwards.* The premise \( P \to Q \) has its hypothesis \( P \) available, so it fires and gives \( Q \). Now \( Q \to R \) has its hypothesis available, so it fires and gives \( R \), the goal.
 
@@ -207,7 +207,7 @@ $\begin{nd}
 
 Both searches write the same five lines, the forward one from the top and the backward one from the last line up. Exercise B3 has a case where the backward search is much shorter.
 
-(c) *Idea.* The goal \( R \) is a letter. From the goal: the only line that mentions \( R \) is \( P \to (Q \to R) \), but its conclusion is \( Q \to R \), not \( R \); the \( R \) sits one implication deeper. From the premises: \( P \wedge Q \) is a conjunction, so take it apart by \( \rulename{\wedge E} \), giving \( P \) and \( Q \). Now \( P \) is exactly the hypothesis of \( P \to (Q \to R) \), which fires and gives \( Q \to R \). This new line is an implication whose hypothesis \( Q \) is available, so it fires too. In the pictures, the goal stands alone at first; then \( \rulename{\wedge E} \) writes lines 3 and 4, and only line 5 is missing.
+(c) *Idea.* The goal \( R \) is a letter. From the goal: the only line that mentions \( R \) is \( P \to (Q \to R) \), but its conclusion is \( Q \to R \), not \( R \); the \( R \) sits one implication deeper. From the premises: \( P \wedge Q \) is a conjunction, so take it apart by \( \rulename{\wedge E} \), giving \( P \) and \( Q \). Now \( P \) is exactly the hypothesis of \( P \to (Q \to R) \), which fires and gives \( Q \to R \). This new line is an implication whose hypothesis \( Q \) is available, so it fires too. In the pictures, the goal stands alone at first; then \( \rulename{\wedge E} \) writes lines 3 and 4, and only line 5 is missing; line 6 stays unjustified until line 5 is there for \( \rulename{{\to}E} \) to cite.
 
 ```{=latex}
 % schema (partial derivations: the gap is unnumbered, lines carry their final numbers)
@@ -656,7 +656,7 @@ $\begin{nd}
 ::: {.solution}
 (a) Line 3. The schema needs, besides the implication \( \varphi \to \psi \), a line that is its hypothesis \( \varphi \). Matching line 1 gives \( \varphi \coloneqq D \) and \( \psi \coloneqq E \), so the second cited line would have to be \( D \); line 2 is \( E \), which is \( \psi \). The line affirms the consequent.
 
-(b) Try to break the step: this instance already does. The first premise is true, because every multiple of \( 6 \) is even (\( 6k = 2(3k) \)); the second is true, since \( 10 = 2 \cdot 5 \); and the conclusion is false, since \( 10 = 6 \cdot 1 + 4 \) leaves remainder \( 4 \) on division by \( 6 \). So the step at line 3 leads from two true premises to a false line, and no safe rule can allow it.
+(b) Try to break the step: this instance already does. The first premise is true, because every multiple of \( 6 \) is even (\( 6k = 2(3k) \)); the second is true, since \( 10 = 2 \cdot 5 \); and the conclusion is false: \( 6k \) is at most \( 6 \) when \( k \le 1 \) and at least \( 12 \) when \( k \ge 2 \), so \( 10 = 6k \) for no integer \( k \). So the step at line 3 leads from two true premises to a false line, and no safe rule can allow it.
 
 (c) None. \( \rulename{{\to}E} \) cannot fire, since no line is the hypothesis \( D \); \( \rulename{\wedge E} \) has no conjunction to take apart; and \( \rulename{\wedge I} \) only joins the premises into conjunctions such as \( (D \to E) \wedge E \), which say nothing the premises did not. The premises tell us nothing about whether \( 10 \) is divisible by \( 6 \), which is why the conclusion had to be smuggled in.
 :::
@@ -722,16 +722,16 @@ Any other correct derivation earns the same points step for step (its lines may 
 :::
 
 <!-- dependency ledger
-exm-wason-selection (solution): a card breaks "even -> red" exactly when its number is even and its color is not red (the promise reading); odd/even and red/green are exhaustive for the hidden side | F1.1 §01 ("When is an implication broken?", prose, no label); checked by verify/ch01/exm-wason-selection.py
-def-rule-implication-elimination (example): d | n means n = dk for an integer k (defined in the text at first use); if an integer is divisible by 2 and by 3 then by 6; 42 = 2 * 21 = 3 * 14 = 6 * 7 | the theorem is school arithmetic, taken as known in the example (divisibility formally F2.2, def-divides, promised); the step from "every integer" to n = 42 is forall-E, F1.4, taken as given; checked by verify/ch01/def-rule-implication-elimination.py
+exm-wason-selection (solution): a card breaks "even -> red" exactly when its number is even and its color is not red (the promise reading); 7 is odd and not even (7 = 2 * 3 + 1); the red card cannot break the claim whatever its number, so no exhaustiveness for hidden numbers is needed | F1.1 §01 ("When is an implication broken?", prose, no label); parity (every integer is even or odd, not both) is school algebra, F2.2 (promised, paid: thm-division-algorithm), as in §01's ledger; checked by verify/ch01/exm-wason-selection.py
+def-rule-implication-elimination (example): d | n means n = dk for an integer k (defined in the text at first use); if an integer is divisible by 2 and by 3 then by 6; 42 = 2 * 21 = 3 * 14 = 6 * 7 | the theorem is school arithmetic, taken as known in the example (defined inline at first use; formal definition F2.2 def-divides, later, not relied on); the step from "every integer" to n = 42 is forall-E, F1.4, taken as given; checked by verify/ch01/def-rule-implication-elimination.py
 def-rule-implication-elimination (example): Quick check: if 4 | n and 9 | n then 36 | n; 72 = 4 * 18 = 9 * 8 = 36 * 2 | school arithmetic (gcd(4, 9) = 1), taken as known; checked by verify/ch01/def-rule-implication-elimination.py
 def-rule-implication-elimination (example): "why it is safe": if phi -> psi and phi are true then psi is true | F1.1 §01 (the promise reading, prose, no label)
 def-rule-implication-elimination (example): affirming the consequent is a bad form, broken at n = 2 (divisible by 4 implies even; 2 even, not divisible by 4) | F1.1 §01 ("Try to break it", prose, no label), recalled in prose
 def-rule-implication-elimination (example): warning witness x = -3 (x > 2 implies x^2 > 4 for every real x; 9 > 4; -3 > 2 false) | school algebra -> AN1.1 (promised); checked by verify/ch01/def-rule-implication-elimination.py
 def-rule-implication-elimination (example): x > 2 implies x^2 > 4; x^2 > 4 implies x^2 + 1 > 5 (the "How this looks" example) | school algebra -> AN1.1 (promised), argued inline; checked by verify/ch01/def-rule-implication-elimination.py
 def-rule-implication-elimination (example): whole-hypothesis warning: if x > 0 and y > 0 then xy > 0 (true); at x = 1, y = -1 the theorem and x > 0 hold and xy > 0 fails | school algebra (sign rule) -> AN1.1 (promised); checked by verify/ch01/def-rule-implication-elimination.py
-def-rule-implication-elimination (example): fold "The same slip in analysis": f(x) = x on (0, 1) is continuous and has no maximum ((a + 1)/2 > a in (0, 1)); the extreme value theorem's hypotheses | continuity: AN1.5, AN1.6 (promised, named in prose only, not used in any argument); (a + 1)/2 argued inline
+def-rule-implication-elimination (example): fold "The same slip in analysis": f(x) = x on (0, 1) is continuous and has no maximum ((a + 1)/2 > a in (0, 1)); the extreme value theorem's hypotheses | continuity: AN1.5; the extreme value theorem: AN1.6 (promised, named in prose only, not used in any argument); (a + 1)/2 argued inline
 exr-using-an-implication-a2 (solution): (j) every multiple of 6 is a multiple of 3; 3 is not divisible by 6 | inline arithmetic; checked by verify/ch01/exr-using-an-implication-a2.py
 exr-using-an-implication-b2 (solution): 0 < x < 1 implies x^2 < x; x^2 < x implies x^3 < x^2 (for every real x) | school algebra -> AN1.1 (promised), argued inline; checked by verify/ch01/exr-using-an-implication-b2.py
-exr-using-an-implication-c1 (solution): every multiple of 6 is even; 10 = 2 * 5; 10 = 6 * 1 + 4 is not divisible by 6 | inline arithmetic; checked by verify/ch01/exr-using-an-implication-c1.py
+exr-using-an-implication-c1 (solution): every multiple of 6 is even; 10 = 2 * 5; 10 is not divisible by 6 (6k <= 6 for k <= 1, 6k >= 12 for k >= 2) | inline arithmetic; checked by verify/ch01/exr-using-an-implication-c1.py
 -->

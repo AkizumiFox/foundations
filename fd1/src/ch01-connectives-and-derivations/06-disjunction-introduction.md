@@ -61,7 +61,7 @@ The degenerate case is \( \psi \) equal to \( \varphi \). From \( P \) the rule 
 Now three nonexamples, each a small change of an instance. Take line 1 to be the statement named in each, and line 2 the line shown.
 
 - From \( P \), the line "\( P \wedge Q \) — \( \rulename{\vee I} \) 1" is not an instance. The new line of \( \rulename{\vee I} \) is a disjunction, and the main connective of \( P \wedge Q \) is \( \wedge \).
-- From \( Q \vee P \), the line "\( P \vee Q \) — \( \rulename{\vee I} \) 1" is not an instance. With \( \varphi \) replaced by \( Q \vee P \), the two schemas give \( (Q \vee P) \vee \psi \) and \( \psi \vee (Q \vee P) \). In both, the cited statement is one whole side of the new line, and \( Q \vee P \) is not a side of \( P \vee Q \). Whether \( P \vee Q \) follows from \( Q \vee P \) at all is the question at the end of this section.
+- From \( P \vee Q \), the line "\( Q \vee P \) — \( \rulename{\vee I} \) 1" is not an instance. With \( \varphi \) replaced by \( P \vee Q \), the two schemas give \( (P \vee Q) \vee \psi \) and \( \psi \vee (P \vee Q) \). In both, the cited statement is one whole side of the new line, and \( P \vee Q \) is not a side of \( Q \vee P \). Whether \( Q \vee P \) follows from \( P \vee Q \) at all is the question at the end of this section.
 - From \( P \vee Q \), the line "\( P \) — \( \rulename{\vee I} \) 1" is not an instance. It runs the rule backwards, from a disjunction to one of its sides.
 
 ::: {.warning}
@@ -100,7 +100,7 @@ So the goal-directed step for \( \vee \) comes with a caution:
 
 *Postpone a disjunction: choose a side of a goal \( \varphi \vee \psi \) only when that side is in hand.*
 
-"In hand" means that the side stands on an available line, or is plainly one step away. Until then, work from the premises: take conjunctions apart, fire implications, open the boxes the goal asks for, and look at what appears. When one side of the goal turns up, the choice has been made for us.
+"In hand" means that the side stands on an available line. Until then, work from the premises: take conjunctions apart, fire implications, open the boxes the goal asks for, and look at what appears. When one side of the goal turns up, the choice has been made for us.
 
 ::: {.check}
 Let \( x \) be a real number. The premise is \( 0 < x < 1 \) and the goal is \( (x < 0) \vee (x < 2) \). Which side should \( \rulename{\vee I} \) take, and why not the other?
@@ -142,7 +142,7 @@ $\begin{nd}
 \end{center}
 ```
 
-In the first, line 2 is the first schema with \( \varphi \) replaced by \( P \) and \( \psi \) by \( Q \); in the second, it is the second schema with the same replacement. The letter \( Q \) appears in no premise. That is the clause "any other side" at work.
+In the first, line 2 is the first schema with \( \varphi \) replaced by \( P \) and \( \psi \) by \( Q \); in the second, it is the second schema with the same replacement. The letter \( Q \) appears in no premise. That is the Reading's "**any** statement" at work.
 
 (b) *Idea.* The goal \( P \vee Q \) is a disjunction, and neither side stands on a line yet, so we postpone it. Premise-directed: the premise's main connective is \( \wedge \), so \( \rulename{\wedge E} \) takes it apart. After that, **both** sides of the goal are in hand, and either choice finishes.
 
@@ -266,7 +266,7 @@ This derivation uses every rule of the chapter so far except \( \rulename{\wedge
 :::
 
 ::: {.warning}
-Choosing a side of a disjunctive goal too early turns a reachable goal into an unreachable one. Derivation (c) is where postponing pays. Had we committed at once, inside the box, to the goal's right side, planning to reach \( Q \vee R \) from \( R \), the box would need \( R \) itself, from the premise \( P \to Q \) and the assumption \( P \) alone. With \( x \) a real number, \( P \): "\( x > 2 \)", \( Q \): "\( x > 1 \)" and \( R \): "\( x > 3 \)", the premise and the assumption hold at \( x = 2.5 \), and \( R \) fails there. Keep the goal as the whole disjunction until one side appears on a line.
+Choosing the wrong side of a disjunctive goal too early can leave a goal that does not follow. Derivation (c) is where postponing pays. Had we committed at once, inside the box, to the goal's right side, planning to reach \( Q \vee R \) from \( R \), the box would need \( R \) itself, from the premise \( P \to Q \) and the assumption \( P \) alone. With \( x \) a real number, \( P \): "\( x > 2 \)", \( Q \): "\( x > 1 \)" and \( R \): "\( x > 3 \)", the premise and the assumption hold at \( x = 2.5 \), and \( R \) fails there, so \( R \) does not follow. Keep the goal as the whole disjunction until one side appears on a line.
 :::
 
 ## Manufacturing a hypothesis
@@ -446,7 +446,7 @@ The card grows by one row. *Shape* shows the given lines (or box), then the new 
 | \( \rulename{\wedge E} \) | \( \varphi \wedge \psi \) \( \Longrightarrow \) \( \varphi \) (or \( \psi \)) | "In particular, \( P \)." | `h.1` (and `h.2`) |
 | \( \rulename{{\to}E} \) | \( \varphi \to \psi \), \( \varphi \) \( \Longrightarrow \) \( \psi \) | "Since \( P \) implies \( Q \), and \( P \) holds, \( Q \)." | `exact h hp` |
 | \( \rulename{{\to}I} \) | box \( \varphi \) … \( \psi \) \( \Longrightarrow \) \( \varphi \to \psi \) | "Assume \( P \). … Hence \( Q \)." | `intro hp` |
-| \( \rulename{R} \) | \( \varphi \) \( \Longrightarrow \) \( \varphi \), copied | "As shown above, \( P \)." | `exact hp` |
+| \( \rulename{R} \) | \( \varphi \) (available) \( \Longrightarrow \) \( \varphi \), copied | "As shown above, \( P \)." | `exact hp` |
 | \( \rulename{\vee I} \) | \( \varphi \) \( \Longrightarrow \) \( \varphi \vee \psi \) (or \( \psi \vee \varphi \)) | "So \( P \) or \( Q \) holds." | `left` (or `Or.inl hp`); `right` |
 
 The phrase is different from the "in particular" of \( \rulename{\wedge E} \) on purpose. "In particular" announces that a part is being taken out of something bigger; "so \( P \) or \( Q \)" announces that something bigger, and weaker, is being built.
@@ -500,7 +500,7 @@ Each part takes a line or two. Let \( x \) be a real number and \( n \) an integ
 :::
 
 ::: {.solution}
-(a) (i) Yes, by the first schema. (ii) Yes, by the second schema: \( x = 5 \) is the right side. (iii) Only once \( x \ge 5 \) is written out as \( (x > 5) \vee (x = 5) \), as the convention on inequalities asks. (iv) No: the new line is not a disjunction.
+(a) (i) Yes, by the first schema. (ii) Yes, by the second schema: \( x = 5 \) is the right side. (iii) No: as written, \( x \ge 5 \) is one statement. Written out as \( (x > 5) \vee (x = 5) \), it is the second schema. (iv) No: the new line is not a disjunction.
 
 (b) No: \( P \wedge Q \) is not a side of \( P \vee Q \). From line 1, \( \rulename{\vee I} \) could write \( (P \wedge Q) \vee R \).
 
@@ -561,7 +561,7 @@ $\begin{nd}
 \end{center}
 ```
 
-Line 2 uses the second schema (\( P \) on the right) and line 3 the first, with \( \varphi \) replaced by \( Q \vee P \). We committed twice, at lines 2 and 3, and both times the side was in hand: at line 2 the side \( P \) was the premise, and at line 3 the side \( Q \vee P \) was line 2. Choosing the side \( R \) at the outer level would have left the subgoal \( R \), which the premise \( P \) cannot give.
+Line 2 uses the second schema (\( P \) on the right) and line 3 the first, with \( \varphi \) replaced by \( Q \vee P \). We committed twice, at lines 2 and 3, and both times the side was in hand: at line 2 the side \( P \) was the premise, and at line 3 the side \( Q \vee P \) was line 2. Choosing the side \( R \) at the outer level would have left the subgoal \( R \), which does not follow from \( P \): take \( P \) true and \( R \) false.
 :::
 
 ::: {#exr-disjunction-introduction-b2}

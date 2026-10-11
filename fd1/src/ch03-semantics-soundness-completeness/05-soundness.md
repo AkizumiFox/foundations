@@ -28,7 +28,7 @@ $\begin{nd}
 
 Line 3 is \( p \), and the row \( p = \mathrm{F} \), \( q = \mathrm{F} \) makes the premise \( p \to q \) true and line 3 false. Line 5 is \( \bot \), which is false in **every** row. So the lines inside a box are not true in the rows where the premises are true, and the first attempt collapses. Yet the derivation is correct, and its last line \( \neg q \to \neg p \) is true in every row making \( p \to q \) true (@exm-table-contrapositive).
 
-What goes wrong is that a line inside a box is not claimed on the strength of the premises alone. Line 4 says: *if* \( p \to q \), \( \neg q \) and \( p \) all hold, then \( q \) holds. That is a true claim about rows. Every line depends on the premises **and** on the assumptions of the boxes around it, and a correct statement about each line must mention both. Chapter 1 gave this list a name.
+What goes wrong is that a line inside a box is not claimed on the strength of the premises alone. Line 4 says: *if* \( p \to q \), \( \neg q \) and \( p \) all hold, then \( q \) holds. That is a true claim about rows. Every line depends on the premises **and** on the assumptions of the boxes around it, and a correct statement about each line must mention both. Below we give this list a name: the context of the line.
 
 ## Derivations of formulas
 

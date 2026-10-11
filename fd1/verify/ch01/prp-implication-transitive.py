@@ -30,5 +30,7 @@ assert x0**2 == 9 and x0**2 > 4 and not x0 > 2
 # "suppose x > 2 ... x^3 > 8" earns the converse, which is also true.
 assert implies(lambda x: x**3 > 8, lambda x: x > 2, (2,))
 assert implies(lambda x: x > 2, lambda x: x**3 > 8, (2,))
+# the solution's route for the claim: x <= 2 gives x^3 <= 2^3 = 8
+assert implies(lambda x: x <= 2, lambda x: x**3 <= 8, (2,))
 assert all((a < b) <= (a**3 < b**3) for a in grid((2,))[::40] for b in grid((2,))[::40])
 print("prp-implication-transitive: checks")
