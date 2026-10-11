@@ -101,7 +101,8 @@
     "src/ch02-integers-and-rationals",
     "src/ch03-divisibility-and-congruences",
     "src/ch04-ordered-field-sequences",
-    "src/ch05-reals-from-cauchy"
+    "src/ch05-reals-from-cauchy",
+    "src/ch06-complete-ordered-field"
   ],
   "macros": "../latex/macros.tex",
   "deploy-dir": "site",

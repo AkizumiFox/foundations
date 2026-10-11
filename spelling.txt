@@ -280,3 +280,11 @@ unboundedness
 invariants
 Georg
 Méray
+automorphism
+automorphisms
+Automorphism
+Automorphisms
+additivity
+multiplicativity
+pointwise
+subfield
