@@ -396,7 +396,7 @@ Both hypotheses are needed: \( \nZ \) has no least element, and neither has \( \
 Let \( R \coloneqq \{0, 1\} \), two distinct elements, with addition and multiplication given by the tables
 \[
 \begin{array}{c|cc}
-+ & 0 & 1 \\ \hline
+{+} & 0 & 1 \\ \hline
 0 & 0 & 1 \\
 1 & 1 & 0
 \end{array}
@@ -496,7 +496,7 @@ and \( [(1, 0)] \notin P' \), since \( 1 < 0 \) is false. The sum half of (P1) h
 
 \[
 \begin{array}{c|ccc}
-+ & 0 & 1 & 2 \\ \hline
+{+} & 0 & 1 & 2 \\ \hline
 0 & 0 & 1 & 2 \\
 1 & 1 & 2 & 0 \\
 2 & 2 & 0 & 1
