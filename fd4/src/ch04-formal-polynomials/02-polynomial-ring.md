@@ -1,6 +1,6 @@
 # The Polynomial Ring
 
-Section 4.1 made a polynomial a coefficient sequence, and the display \( \sum_k p_k x^k \) only a way of writing it down. This section gives the sequences their sum and product, read off from what school algebra does with expressions, and proves that the result obeys every law of @fd3:def-commutative-ring-and-field. The obvious proof of associativity needs a theorem about reordering double sums that we have not proved. We avoid it with one device, **check on monomials, extend by additivity**, which returns in Sections 4.4 and 4.5.
+Section 4.1 made a polynomial a coefficient sequence, and the display \( \sum_k p_k x^k \) only a way of writing it down. This section gives the sequences their sum and product, read off from what school algebra does with expressions, and proves that the result obeys every law of a commutative ring (@fd3:def-commutative-ring-and-field). The obvious proof of associativity needs a theorem about reordering double sums that we have not proved. We avoid it with one device, **check on monomials, extend by additivity**, which returns in Sections 4.4 and 4.5.
 
 Throughout, \( R \) is a commutative ring and \( R[x] \) is the set of polynomials over \( R \) (@def-polynomial).
 
@@ -96,7 +96,7 @@ Let \( a, b \in R \), \( m, n \in \nN \) and \( q \in R[x] \).
 ::: {.proof}
 (a) By @def-polynomial-ring, \( \bigl( (a x^m) q \bigr)_k = \sum_{i=0}^{k} (a x^m)_i \, q_{k-i} \). For \( i \ne m \), \( (a x^m)_i = 0 \), so the \( i \)-th term is \( 0 \cdot q_{k-i} = 0 \) (@fd3:prp-ring-algebra (b) with (F6)). By (Σ3) of @lem-finite-sums-and-powers (b) with \( j = m \), the sum is the term with \( i = m \), namely \( a \, q_{k-m} \), when \( m \le k \), and \( 0 \) when \( m > k \).
 
-(b) Apply (a) with \( q = b x^n \). For \( k < m \) the coefficient is \( 0 \). For \( k \ge m \) it is \( a \, (b x^n)_{k-m} \), which is \( ab \) when \( k - m = n \), that is, when \( k = m + n \), and \( a \cdot 0 = 0 \) otherwise. Since \( k < m \) implies \( k \ne m + n \), the product has \( ab \) in position \( m + n \) and \( 0 \) elsewhere: it is the monomial \( (ab) x^{m+n} \).
+(b) Apply (a) with \( q = b x^n \). For \( k < m \) the coefficient is \( 0 \). For \( k \ge m \) it is \( a \, (b x^n)_{k-m} \), which is \( ab \) when \( k - m = n \), that is, when \( k = m + n \), and \( a \cdot 0 = 0 \) otherwise (@fd3:prp-ring-algebra (b)). Since \( k < m \) implies \( k \ne m + n \), the product has \( ab \) in position \( m + n \) and \( 0 \) elsewhere: it is the monomial \( (ab) x^{m+n} \).
 :::
 
 Part (b) is the school rule \( a x^m \cdot b x^n = ab \, x^{m+n} \), now a theorem about sequences. It contains everything multiplication does: the next lemma shows that a law which holds on monomials, and which survives sums in each argument, holds everywhere.
@@ -119,14 +119,14 @@ A map of several polynomial arguments is **additive in each argument** if, whene
 ::: {#lem-check-on-monomials}
 [Check on Monomials]
 
-Let \( R \) be a commutative ring, let \( T \) be a set with a function \( + \colon T \times T \to T \), and let \( m \in \{1, 2, 3\} \). Let \( \Phi, \Psi \colon R[x]^m \to T \) be maps that are **additive in each argument**: for each position \( j \le m \) and **all** fixed values of the other arguments,
+Let \( R \) be a commutative ring, and let \( T \) be a set with a function \( + \colon T \times T \to T \). Let \( \Phi, \Psi \) be maps of one, two or three polynomial arguments to \( T \), that is, both maps \( R[x] \to T \), both \( R[x]^2 \to T \) or both \( R[x]^3 \to T \), that are **additive in each argument**: for each argument position and **all** fixed values of the other arguments,
 \[
 \Phi(\dots, u + u', \dots) = \Phi(\dots, u, \dots) + \Phi(\dots, u', \dots)
 \]
-with \( u, u' \) in position \( j \), and the same for \( \Psi \). If \( \Phi(u_1, \dots, u_m) = \Psi(u_1, \dots, u_m) \) whenever **every** \( u_j \) is a monomial, then \( \Phi = \Psi \).
+with \( u, u' \) in that position, and the same for \( \Psi \). If \( \Phi \) and \( \Psi \) take the same value whenever **every** argument is a monomial, then \( \Phi = \Psi \).
 :::
 
-Here \( R[x]^1 = R[x] \), and \( R[x]^2 \), \( R[x]^3 \) are the sets of pairs and triples. The proof uses no law of \( T \) at all, not even associativity of its addition, and no product on \( T \). That is why it may be applied with \( T = R[x] \) inside the proof that \( R[x] \) is a ring.
+Here \( R[x]^2 \) and \( R[x]^3 \) are the sets of pairs and triples. The proof uses no law of \( T \) at all, not even associativity of its addition, and no product on \( T \). That is why it may be applied with \( T = R[x] \) inside the proof that \( R[x] \) is a ring.
 
 ::: {.idea}
 Every polynomial is a finite sum of monomials (@prp-polynomial-sum-of-monomials), so a map that is additive is fixed by what it does to monomials: peel off the top monomial and induct. With several arguments, unlock them one at a time: first let the last argument be arbitrary while the others stay monomials, then the one before, and so on.
@@ -135,7 +135,7 @@ Every polynomial is a finite sum of monomials (@prp-polynomial-sum-of-monomials)
 :::
 
 ::: {.proof}
-*The case \( m = 1 \).* We prove by @fd1:ax-induction on \( N \): *for every \( p \in R[x] \) for which \( N \) is admissible, \( \Phi(p) = \Psi(p) \).* Every polynomial has an admissible \( N \) (@def-polynomial), so this gives \( \Phi = \Psi \) (@fd2:prp-function-equality). For \( N = 0 \), \( p \) agrees in every position with the monomial \( p_0 x^0 \), so \( p = p_0 x^0 \) and \( \Phi(p) = \Psi(p) \) by hypothesis. Suppose the statement holds for \( N \), and let \( N + 1 \) be admissible for \( p \). Put \( p' \coloneqq \sum_{k=0}^{N} p_k x^k \). By @prp-polynomial-sum-of-monomials, \( N \) is admissible for \( p' \), and by the recursion of @lem-finite-sums-and-powers (a) and the same proposition,
+*One argument.* We prove by @fd1:ax-induction on \( N \): *for every \( p \in R[x] \) for which \( N \) is admissible, \( \Phi(p) = \Psi(p) \).* Every polynomial has an admissible \( N \) (@def-polynomial), so this gives \( \Phi = \Psi \) (@fd2:prp-function-equality). For \( N = 0 \), \( p \) agrees in every position with the monomial \( p_0 x^0 \), so \( p = p_0 x^0 \) and \( \Phi(p) = \Psi(p) \) by hypothesis. Suppose the statement holds for \( N \), and let \( N + 1 \) be admissible for \( p \). Put \( p' \coloneqq \sum_{k=0}^{N} p_k x^k \). By @prp-polynomial-sum-of-monomials, \( N \) is admissible for \( p' \), and by the recursion of @lem-finite-sums-and-powers (a) and the same proposition,
 \[
 p = \sum_{k=0}^{N+1} p_k x^k = p' + p_{N+1} x^{N+1} .
 \]
@@ -145,9 +145,9 @@ Hence
 \]
 by additivity of \( \Phi \), the induction hypothesis for \( p' \) together with the hypothesis on monomials, and additivity of \( \Psi \).
 
-*The case \( m = 2 \).* Fix a monomial \( u \). The maps \( v \mapsto \Phi(u, v) \) and \( v \mapsto \Psi(u, v) \) are additive and agree on monomials, so by the case \( m = 1 \) they agree everywhere: \( \Phi(u, q) = \Psi(u, q) \) for every monomial \( u \) and **every** \( q \in R[x] \). Now fix any \( q \). The maps \( u \mapsto \Phi(u, q) \) and \( u \mapsto \Psi(u, q) \) are additive and, by what was just shown, agree on monomials; so they agree everywhere.
+*Two arguments.* Fix a monomial \( u \). The maps \( v \mapsto \Phi(u, v) \) and \( v \mapsto \Psi(u, v) \) are additive and agree on monomials, so by the case of one argument they agree everywhere: \( \Phi(u, q) = \Psi(u, q) \) for every monomial \( u \) and **every** \( q \in R[x] \). Now fix any \( q \). The maps \( u \mapsto \Phi(u, q) \) and \( u \mapsto \Psi(u, q) \) are additive and, by what was just shown, agree on monomials; so they agree everywhere.
 
-*The case \( m = 3 \).* The same, one argument at a time. For monomials \( u_1, u_2 \), the case \( m = 1 \) in the third argument gives \( \Phi(u_1, u_2, r) = \Psi(u_1, u_2, r) \) for every \( r \). For a monomial \( u_1 \) and any \( r \), the case \( m = 1 \) in the second argument then gives agreement for every \( q \) in the middle. Finally, for any \( q, r \), the case \( m = 1 \) in the first argument gives \( \Phi(p, q, r) = \Psi(p, q, r) \) for every \( p \). This proves the lemma.
+*Three arguments.* The same, one argument at a time. For monomials \( u_1, u_2 \), the case of one argument, applied to the third argument, gives \( \Phi(u_1, u_2, r) = \Psi(u_1, u_2, r) \) for every \( r \). For a monomial \( u_1 \) and any \( r \), the same case, applied to the second argument, then gives agreement for every \( q \) in the middle. Finally, for any \( q, r \), the same case, applied to the first argument, gives \( \Phi(p, q, r) = \Psi(p, q, r) \) for every \( p \). This proves the lemma.
 :::
 
 The answer to the prompt. Each step of the proof changes **one** argument from "a monomial" to "arbitrary" while the other arguments are held fixed, and it only ever splits that one argument into a sum. Additivity in each argument separately is exactly that. "Additive in the pair" is a different condition, and the product does not satisfy it: with \( p = q' = 1 \) and \( p' = q = 0 \), \( (p + p')(q + q') = 1 \cdot 1 = 1 \), while \( pq + p'q' = 0 + 0 = 0 \) whenever \( 1 \ne 0 \) in \( R \). A proof that split both arguments at once would lose the cross terms \( pq' \) and \( p'q \).
@@ -156,7 +156,7 @@ We call this move **check on monomials, extend by additivity**. To prove that tw
 
 ## The ring laws
 
-Now the payoff: every law of a commutative ring holds in \( R[x] \). The theorem also records how \( R \) sits inside \( R[x] \) and why the school notation \( a x^n \) means what it seems to mean. The five rules in (a) are listed in the order in which the linear algebra companion numbers them, so that its references to the parts "1" to "5" read correctly.
+Now the payoff: every law of a commutative ring holds in \( R[x] \). The theorem also records how \( R \) sits inside \( R[x] \) and why the school notation \( a x^n \) means what it seems to mean.
 
 ::: {#thm-polynomial-ring-laws}
 [The Polynomial Ring Is a Commutative Ring]
@@ -194,7 +194,7 @@ Monomials avoid that theorem. When each of \( p \), \( q \), \( r \) has a singl
 \[
 (a x^m)(b x^n) = (ab) \, x^{m+n} = (ba) \, x^{n+m} = (b x^n)(a x^m) ,
 \]
-by @lem-monomial-product (b), (F6) in \( R \) with \( m + n = n + m \) in \( \nN \) (@fd3:thm-omega-arithmetic-laws (b)), and @lem-monomial-product (b) again. By @lem-check-on-monomials with \( m = 2 \) and \( T = R[x] \), whose addition is a function by the closure paragraph, \( pq = qp \) for all \( p, q \).
+by @lem-monomial-product (b), (F6) in \( R \) with \( m + n = n + m \) in \( \nN \) (@fd3:thm-omega-arithmetic-laws (b)), and @lem-monomial-product (b) again. By @lem-check-on-monomials with two arguments and \( T = R[x] \), whose addition is a function by the closure paragraph, \( pq = qp \) for all \( p, q \).
 
 *(F7).* By @lem-monomial-product (a) with \( a = 1 \) and \( m = 0 \), \( (1 \cdot p)_k = 1 \, p_k = p_k \) for every \( k \), by (F7) and (F6) in \( R \). So \( 1 \cdot p = p \), and \( p \cdot 1 = 1 \cdot p = p \) by (F6) in \( R[x] \).
 
@@ -206,7 +206,7 @@ and in the first and third arguments in the same way. On monomials \( a x^m \), 
 \[
 \bigl( (a x^m)(b x^n) \bigr)(c x^l) = \bigl( (ab) c \bigr) x^{(m+n)+l} = \bigl( a (bc) \bigr) x^{m+(n+l)} = (a x^m)\bigl( (b x^n)(c x^l) \bigr) ,
 \]
-where the middle equality is (F5) in \( R \) and \( (m + n) + l = m + (n + l) \) in \( \nN \) (@fd3:thm-omega-arithmetic-laws (c)). By @lem-check-on-monomials with \( m = 3 \) and \( T = R[x] \), \( (pq)r = p(qr) \) for all \( p, q, r \). This proves (a); the rules (1)–(5) are (F1) with (F2), (F3) with (F4), (F6) with (F5), (F7) in the form \( 1 \cdot p = p \), and (F9).
+where the middle equality is (F5) in \( R \) and \( (m + n) + l = m + (n + l) \) in \( \nN \) (@fd3:thm-omega-arithmetic-laws (c)). By @lem-check-on-monomials with three arguments and \( T = R[x] \), \( (pq)r = p(qr) \) for all \( p, q, r \). This proves (a); the rules (1)–(5) are (F1) with (F2), (F3) with (F4), (F6) with (F5), (F7) in the form \( 1 \cdot p = p \), and (F9).
 
 *(b)* If \( a x^0 = b x^0 \), the entries in position \( 0 \) give \( a = b \). The sum \( a x^0 + b x^0 \) has \( a + b \) in position \( 0 \) and \( 0 + 0 = 0 \) elsewhere, so it is \( (a + b) x^0 \). The product is \( (ab) x^{0+0} = (ab) x^0 \) by @lem-monomial-product (b), and \( 1 x^0 = 1 \) by the definition of \( 1 \) in (a). If \( 1 \ne 0 \) in \( R \), then by injectivity \( 1 x^0 \ne 0 x^0 \), and \( 0 x^0 \) is the zero polynomial.
 
@@ -215,9 +215,9 @@ where the middle equality is (F5) in \( R \) and \( (m + n) + l = m + (n + l) \)
 *(d)* @lem-monomial-product (a) with \( m = 0 \): \( (a x^0 \, p)_k = a \, p_{k-0} = a \, p_k \). This proves the theorem.
 :::
 
-The answer to the prompt. The monomial line for (F5) uses associativity of multiplication in \( R \), \( (ab)c = a(bc) \), for the coefficient, and associativity of addition in \( \nN \), \( (m + n) + l = m + (n + l) \), for the exponent. Nothing else: the regrouping that the direct route needed has been absorbed into @lem-check-on-monomials, whose proof only peels off one monomial at a time.
+The answer to the prompt. The monomial line for (F5) uses associativity of multiplication in \( R \), \( (ab)c = a(bc) \), for the coefficient, and associativity of addition in \( \nN \), \( (m + n) + l = m + (n + l) \), for the exponent. Apart from @lem-monomial-product, which it cites, nothing else: the regrouping that the direct route needed has been absorbed into @lem-check-on-monomials, whose proof only peels off one monomial at a time.
 
-The proof never reordered a double sum. Its only sums are the single-index sums of @def-polynomial-ring, used in the closure paragraph, in (\( \ast \)) and (\( \ast\ast \)), and in @lem-monomial-product.
+The proof never reordered a double sum. Each of its sums has a single index: a coefficient sum of @def-polynomial-ring (in the closure paragraph, (\( \ast \)), (\( \ast\ast \)) and @lem-monomial-product), or a sum of monomials of @prp-polynomial-sum-of-monomials (inside @lem-check-on-monomials and in part (c)).
 
 ::: {.remark}
 Part (a) makes the name "polynomial ring" honest, and everything proved for commutative rings now applies to \( R[x] \). In particular, ideals and quotient rings (@fd3:def-ideal-commutative-ring, @fd3:thm-quotient-ring-by-ideal) are available in \( R[x] \); Chapter 5 builds quotients of \( F[x] \) for a field \( F \) this way. Also, \( (R[x], +) \) is an abelian group in the sense of Chapter 3, by (F1)–(F4).
@@ -230,7 +230,7 @@ In \( \nQ[x] \) and in \( \nF_2[x] \): is \( (x + 1)^2 \) equal to \( x^2 + 2x +
 :::
 
 ::: {.solution}
-By @def-polynomial-ring, \( (x + 1)^2 = (x + 1)(x + 1) \) has coefficients \( 1 \cdot 1 = 1 \), \( 1 \cdot 1 + 1 \cdot 1 = 2 \) and \( 1 \cdot 1 = 1 \) in positions \( 0, 1, 2 \), and \( 0 \) beyond, where \( 2 = 1 + 1 \). Over \( \nQ \), \( (x + 1)^2 = x^2 + 2x + 1 \), and it is **not** \( x^2 + 1 \), since \( 2 \ne 0 \) in position \( 1 \). Over \( \nF_2 \), \( 2 = 1 + 1 = 0 \), so the sequence is \( (1, 0, 1, 0, \dots) \): \( (x + 1)^2 = x^2 + 1 \), and also \( (x + 1)^2 = x^2 + 2x + 1 \), because over \( \nF_2 \) the display \( x^2 + 2x + 1 \) names the same sequence. The same three-term display means different things over different rings.
+By @lem-finite-sums-and-powers (c) and @thm-polynomial-ring-laws (a), rule (4), \( (x + 1)^2 = \bigl( 1 \cdot (x + 1) \bigr)(x + 1) = (x + 1)(x + 1) \), and by @def-polynomial-ring this product has coefficients \( 1 \cdot 1 = 1 \), \( 1 \cdot 1 + 1 \cdot 1 = 2 \) and \( 1 \cdot 1 = 1 \) in positions \( 0, 1, 2 \), and \( 0 \) beyond, where \( 2 = 1 + 1 \). Over \( \nQ \), \( (x + 1)^2 = x^2 + 2x + 1 \), and it is **not** \( x^2 + 1 \), since \( 2 \ne 0 \) in position \( 1 \). Over \( \nF_2 \), \( 2 = 1 + 1 = 0 \), so the sequence is \( (1, 0, 1, 0, \dots) \): \( (x + 1)^2 = x^2 + 1 \), and also \( (x + 1)^2 = x^2 + 2x + 1 \), because over \( \nF_2 \) the display \( x^2 + 2x + 1 \) names the same sequence. The same three-term display means different things over different rings.
 :::
 
 ## Exercises
@@ -251,7 +251,7 @@ These questions are about the proof of @thm-polynomial-ring-laws.
 :::
 
 ::: {.solution}
-(a) In the monomial line of (F6), where \( ab = ba \) in \( R \) gives \( (ab) x^{m+n} = (ba) x^{n+m} \). In the additivity law (\( \ast \)), where \( (p_i + p'_i) q_{k-i} = p_i q_{k-i} + p'_i q_{k-i} \) is (F9) only after (F6) has moved \( q_{k-i} \) to the left. And in small ways, wherever \( 0 \cdot b = 0 \) is obtained from \( b \cdot 0 = 0 \) (@fd3:prp-ring-algebra (b)), as in @lem-monomial-product (a), and in (F7), where \( 1 \, p_k = p_k \cdot 1 \). The monomial line of (F5) does **not** use it.
+(a) In the monomial line of (F6), where \( ab = ba \) in \( R \) gives \( (ab) x^{m+n} = (ba) x^{n+m} \). In the additivity law (\( \ast \)), where \( (p_i + p'_i) q_{k-i} = p_i q_{k-i} + p'_i q_{k-i} \) is (F9) only after (F6) has moved \( q_{k-i} \) to the left. And in small ways, wherever \( 0 \cdot b = 0 \) is obtained from \( b \cdot 0 = 0 \) (@fd3:prp-ring-algebra (b)), as in @lem-monomial-product (a), and in (F7), where \( 1 \, p_k = p_k \cdot 1 \). The monomial line of (F5) uses it only through @lem-monomial-product (a); its own coefficient step \( (ab)c = a(bc) \) does **not**.
 
 (b) With \( a = 2, m = 1 \), \( b = 3, n = 2 \), \( c = 1, l = 1 \): \( \bigl( (2x)(3x^2) \bigr) x = (6 x^3) x = 6x^4 \), using \( 2 \cdot 3 = 6 \), \( 1 + 2 = 3 \), then \( 6 \cdot 1 = 6 \), \( 3 + 1 = 4 \); and \( (2x)\bigl( (3x^2) x \bigr) = (2x)(3x^3) = 6x^4 \), using \( 3 \cdot 1 = 3 \), \( 2 + 1 = 3 \), then \( 2 \cdot 3 = 6 \), \( 1 + 3 = 4 \). Both are \( 6x^4 \).
 
@@ -308,7 +308,7 @@ Let \( a, b \in R \) and \( m, n \in \nN \). The monomial \( a x^m \) has only p
 \[
 \Psi(a x^m, b x^n) = \bigl( (-1)^m a \bigr) x^m \cdot \bigl( (-1)^n b \bigr) x^n = \bigl( (-1)^m a \, (-1)^n b \bigr) x^{m+n} .
 \]
-The two coefficients agree: \( (-1)^m a \, (-1)^n b = \bigl( (-1)^m (-1)^n \bigr) (ab) = (-1)^{m+n} ab \), by (F5) and (F6) in \( R \) and the first power law of @lem-finite-sums-and-powers (c). So \( \Phi \) and \( \Psi \) agree on monomials, and by @lem-check-on-monomials with \( m = 2 \) and \( T = R[x] \), \( \sigma(pq) = \sigma(p) \sigma(q) \) for all \( p, q \).
+The two coefficients agree: \( (-1)^m a \, (-1)^n b = \bigl( (-1)^m (-1)^n \bigr) (ab) = (-1)^{m+n} ab \), by (F5) and (F6) in \( R \) and the first power law of @lem-finite-sums-and-powers (c). So \( \Phi \) and \( \Psi \) agree on monomials, and by @lem-check-on-monomials with two arguments and \( T = R[x] \), \( \sigma(pq) = \sigma(p) \sigma(q) \) for all \( p, q \).
 
 Also \( \sigma(1) = 1 \), since \( (-1)^0 = 1 \). Section 4.4 writes \( \sigma(p) \) as \( p(-x) \).
 :::
@@ -318,7 +318,7 @@ Also \( \sigma(1) = 1 \), since \( (-1)^0 = 1 \). Section 4.4 writes \( \sigma(p
 ::: {#exr-polynomial-ring-c1}
 [C1: Exit check: the ring laws]
 
-Let \( R \) be a commutative ring. Prove, from @def-polynomial-ring, that the multiplication of \( R[x] \) is commutative and associative. You may use @lem-finite-sums-and-powers and @fd2:prp-function-equality, but not @thm-polynomial-ring-laws.
+Let \( R \) be a commutative ring. Prove, from @def-polynomial-ring, that the multiplication of \( R[x] \) is commutative and associative. You may use the laws of \( R \), @lem-finite-sums-and-powers, @fd1:ax-induction and @fd2:prp-function-equality, but no result of this section after @def-polynomial-ring.
 :::
 
 ::: {.solution}
@@ -326,7 +326,15 @@ Let \( R \) be a commutative ring. Prove, from @def-polynomial-ring, that the mu
 
 *Monomials.* For \( a, b \in R \) and \( m, n \in \nN \), the \( k \)-th coefficient of \( (a x^m)(b x^n) \) is \( \sum_{i=0}^{k} (a x^m)_i (b x^n)_{k-i} \). Every term with \( i \ne m \) is \( 0 \), and the term with \( i = m \) (present when \( m \le k \)) is \( a \, (b x^n)_{k-m} \), which is \( ab \) if \( k = m + n \) and \( 0 \) otherwise. By (Σ3), \( (a x^m)(b x^n) = (ab) x^{m+n} \).
 
-*Reduction.* Every polynomial is a finite sum of monomials, \( p = \sum_{k=0}^{N} p_k x^k \) for admissible \( N \), checked position by position. So a map additive in each argument is determined by its values on monomials: by induction on \( N \), peeling off the top monomial \( p_{N+1} x^{N+1} \), two such maps of one argument that agree on monomials agree everywhere; with two or three arguments, apply this to one argument at a time, holding the others fixed (first as monomials, then as arbitrary polynomials).
+*Reduction.* (i) For \( p \in R[x] \), the sum \( s_N \coloneqq \sum_{k=0}^{N} p_k x^k \) in \( (R[x], +) \) (@lem-finite-sums-and-powers (a)) has \( p_j \) in position \( j \le N \) and \( 0 \) beyond, by @fd1:ax-induction on \( N \): \( s_0 = p_0 x^0 \), and \( s_{N+1} = s_N + p_{N+1} x^{N+1} \) has coefficients \( p_j + 0 \), \( 0 + p_{N+1} \) and \( 0 + 0 \) for \( j \le N \), \( j = N + 1 \) and \( j > N + 1 \), by (F1) and (F3). So \( p = s_N \) for admissible \( N \) (@fd2:prp-function-equality).
+
+(ii) Let \( \Phi, \Psi \colon R[x] \to R[x] \) be additive and agree on monomials. By @fd1:ax-induction on \( N \), \( \Phi(p) = \Psi(p) \) for every \( p \) for which \( N \) is admissible: for \( N = 0 \), \( p = p_0 x^0 \) by (i); if \( N + 1 \) is admissible for \( p \), then \( p = s_N + p_{N+1} x^{N+1} \) with \( N \) admissible for \( s_N \), by (i), and
+\[
+\Phi(p) = \Phi(s_N) + \Phi(p_{N+1} x^{N+1}) = \Psi(s_N) + \Psi(p_{N+1} x^{N+1}) = \Psi(p)
+\]
+by additivity, the induction hypothesis with the monomial case, and additivity. Every polynomial has an admissible \( N \), so \( \Phi = \Psi \).
+
+(iii) With two arguments, fix a monomial \( u \) and apply (ii) to \( v \mapsto \Phi(u, v) \) and \( v \mapsto \Psi(u, v) \); then fix any \( q \) and apply (ii) to the first argument. With three, treat the third, the second and the first argument in turn.
 
 *Commutativity.* \( (a x^m)(b x^n) = (ab) x^{m+n} = (ba) x^{n+m} = (b x^n)(a x^m) \), by (F6) in \( R \) and \( m + n = n + m \) in \( \nN \); the reduction gives \( pq = qp \).
 
@@ -335,13 +343,13 @@ Let \( R \) be a commutative ring. Prove, from @def-polynomial-ring, that the mu
 **Marking scheme.** (10 points)
 - 2: both distributive laws from the coefficient formula, naming the rule for a single-index sum ((Σ1)) and the law of \( R \) used inside each term.
 - 2: the product of two monomials, \( (a x^m)(b x^n) = (ab) x^{m+n} \), with the vanishing of the other terms shown.
-- 3: the reduction to monomials, with additivity in each argument stated and used one argument at a time (an induction on the number of monomials, or a citation of the checking principle once proved).
+- 3: the reduction to monomials, with additivity in each argument stated and used one argument at a time (both inductions proved in the answer; citing @lem-check-on-monomials earns none of these points).
 - 1: commutativity on monomials, naming (F6) in \( R \).
 - 2: associativity on monomials, naming (F5) in \( R \) and the law of \( \nN \) used for the exponents.
 
 Fatal errors (0 for the step): treating polynomials as functions on \( R \) and citing the laws of \( R \) "pointwise"; checking only on \( x^m \) and \( x^n \), with no account of the coefficients (the coefficients are where (F5) and (F6) of \( R \) are needed).
 
-A second route rewrites both triple products as one sum over all \( (i, j, l) \) with \( i + j + l = k \), after proving a reindexing lemma for finite double sums by induction. It maps to the same points, with the reindexing lemma, proved, taking the 3 points of the reduction step.
+A direct route works with coefficients throughout: commutativity by (F6) and the reversal \( i \mapsto k - i \) of a finite sum, associativity by rewriting both triple products as one sum over all \( (i, j, l) \) with \( i + j + l = k \). Each needs a lemma that (Σ1)–(Σ4) do not contain, proved by induction. Commutativity with the reversal proved earns 3 points (the monomial product and commutativity on monomials); associativity with the reindexing proved earns the other 7. An unproved reversal or reindexing earns 0 for that step.
 :::
 
 ::: {#exr-polynomial-ring-c2}
@@ -353,7 +361,7 @@ Let \( R^{\nN} \) be the set of **all** sequences \( \nN \to R \), with sum and 
 1. Show that the formulas define functions \( R^{\nN} \times R^{\nN} \to R^{\nN} \).
 2. Show that \( R[x] \subseteq R^{\nN} \) is closed under the sum and the product.
 3. Let \( s \coloneqq (1, 1, 1, \dots) \). Show that \( (1 - x) s = 1 \).
-4. Which step of the proof of @lem-check-on-monomials (with \( m = 1 \)) does not reach the elements of \( R^{\nN} \)?
+4. Which step of the proof of @lem-check-on-monomials (with one argument) does not reach the elements of \( R^{\nN} \)?
 :::
 :::
 
@@ -362,11 +370,11 @@ Let \( R^{\nN} \) be the set of **all** sequences \( \nN \to R \), with sum and 
 
 (b) This is the closure paragraph after @def-polynomial-ring: if \( m \) and \( n \) are admissible for \( p \) and \( q \), then \( \max(m, n) \) is admissible for \( p + q \) and \( m + n \) for \( pq \).
 
-(c) \( 1 - x = (1, -1, 0, 0, \dots) \). In position \( 0 \), \( \bigl( (1 - x)s \bigr)_0 = 1 \cdot 1 = 1 \). In position \( k \ge 1 \), the terms with \( i \ge 2 \) are \( 0 \cdot 1 = 0 \), and the terms with \( i = 0 \) and \( i = 1 \) give \( 1 \cdot 1 + (-1) \cdot 1 = 0 \). So \( (1 - x)s = (1, 0, 0, \dots) = 1 \).
+(c) \( 1 - x = (1, -1, 0, 0, \dots) \). In position \( 0 \), \( \bigl( (1 - x)s \bigr)_0 = 1 \cdot 1 = 1 \). In position \( k \ge 1 \), write the \( i \)-th term as \( v_i + w_i \) (by (F3)), with \( v_0 = 1 \cdot 1 \), \( w_1 = (-1) \cdot 1 \) and every other \( v_i \), \( w_i \) equal to \( 0 \), since for \( i \ge 2 \) the term is \( 0 \cdot 1 = 0 \) (@fd3:prp-ring-algebra (b) with (F6)). By (Σ1) and (Σ3), the sum is \( 1 \cdot 1 + (-1) \cdot 1 = 1 + (-1) = 0 \). So \( (1 - x)s = (1, 0, 0, \dots) = 1 \).
 
-(d) The induction proves \( \Phi(p) = \Psi(p) \) only for sequences \( p \) that have an admissible \( N \); its last line uses that every polynomial has one. The sequence \( s \) has none, and it is not a finite sum of monomials either, since by (b) such a sum is a polynomial. So @lem-check-on-monomials says nothing about \( s \), and the proof of @thm-polynomial-ring-laws does not apply to \( R^{\nN} \). The ring laws do hold in \( R^{\nN} \), the ring of **formal power series**, but a proof needs the route through reordered double sums, which we do not take; nothing in this book depends on it.
+(d) The induction proves \( \Phi(p) = \Psi(p) \) only for sequences \( p \) that have an admissible \( N \); the step from it to \( \Phi = \Psi \) uses that every polynomial has one. The sequence \( s \) has none, and it is not a finite sum of monomials either, since by (b) such a sum is a polynomial. So @lem-check-on-monomials says nothing about \( s \), and the proof of @thm-polynomial-ring-laws does not apply to \( R^{\nN} \). The ring laws do hold in \( R^{\nN} \), the ring of **formal power series**, though we do not prove this here; nothing in this book depends on it.
 
-So \( 1 - x \) has an inverse among all sequences. Section 4.3 shows that over \( \nZ \) it has none in \( \nZ[x] \) itself.
+So \( (1 - x)s = 1 \) among all sequences, while Section 4.3 shows that over \( \nZ \), \( 1 - x \) is not a unit of \( \nZ[x] \).
 :::
 
 <!-- dependency ledger
@@ -378,20 +386,21 @@ exm-polynomial-product (solution): coefficients 2, 1, 2, 3 over Q; 2, 1, 2 over 
 def-polynomial-ring (claim): (warning) coefficientwise product would give x * x = x | arithmetic; verify/ch04/def-polynomial-ring.py
 prp-polynomial-sum-of-monomials (proof): induction on N | fd1:ax-induction read on omega through fd3:cor-omega-identification (b), as in Section 4.1
 lem-monomial-product (proof): k - m = n iff k = m + n; k < m implies k != m + n | index arithmetic in N (fd3:thm-omega-arithmetic-laws, fd3:thm-omega-order), used silently
+lem-monomial-product (proof): a * 0 = 0 in (b) | fd3:prp-ring-algebra (b) (cited)
 lem-check-on-monomials (proof): induction on N; every polynomial has an admissible N | fd1:ax-induction; def-polynomial (cited)
 lem-check-on-monomials (claim): (answer) (p + p')(q + q') = 1 and pq + p'q' = 0 for p = q' = 1, p' = q = 0 | products of constants by lem-monomial-product (b) with m = n = 0, (F7) and fd3:prp-ring-algebra (b) in R; 1 != 0 in R[x] from 1 != 0 in R (positions 0), used silently
-thm-polynomial-ring-laws (claim): the five rules (1)-(5) follow the linear algebra companion's numbering | la:thm-polynomial-ring-laws items 1-5 (companion ch 0, Section 0.8), checked against its text; prose only
 thm-polynomial-ring-laws (idea): Try-it-first coefficients of x^2 | verify/ch04/thm-polynomial-ring-laws.py (identity checked on random integers)
 thm-polynomial-ring-laws (proof): m + n = n + m; (m + n) + l = m + (n + l) in N | fd3:thm-omega-arithmetic-laws (b), (c) (cited)
-thm-polynomial-ring-laws (claim): (meta) the proof never reorders a double sum; its sums are the single-index sums of def-polynomial-ring | meta-claim about this section: closure paragraph, (*), (**), lem-monomial-product, prp-polynomial-sum-of-monomials (sums of monomials, single index)
+thm-polynomial-ring-laws (proof): 0 + 0 = 0 and 0 + n = n in N, in (b) and (c) | fd3:thm-omega-arithmetic-laws (a), used silently
+thm-polynomial-ring-laws (claim): (meta) the proof never reorders a double sum; its sums are the single-index sums of def-polynomial-ring and of prp-polynomial-sum-of-monomials | meta-claim about this section: closure paragraph, (*), (**), lem-monomial-product, prp-polynomial-sum-of-monomials (sums of monomials, single index)
 thm-polynomial-ring-laws (claim): (remark) ideals and quotient rings apply to R[x]; Chapter 5 builds F[x]/<f>; (R[x], +) is an abelian group in the sense of Chapter 3 | fd3:def-ideal-commutative-ring, fd3:thm-quotient-ring-by-ideal (cited); F4.5 (prose pointer, ch05 blueprint thm-polynomial-quotient-ring); F4.3 def-group (prose, not cited); nothing depends on them
-thm-polynomial-ring-laws (claim): (check) (x + 1)^2 over Q and F_2; 2 = 1 + 1 = 0 in F_2 | exm-finite-fields (tables of F_2), used silently; verify/ch04/thm-polynomial-ring-laws.py
+thm-polynomial-ring-laws (claim): (check) (x + 1)^2 over Q and F_2; 2 = 1 + 1 = 0 in F_2 | (x + 1)^2 = (x + 1)(x + 1) by lem-finite-sums-and-powers (c) and thm-polynomial-ring-laws (a) (4) (cited); exm-finite-fields (tables of F_2), used silently; verify/ch04/thm-polynomial-ring-laws.py
 exr-polynomial-ring-a1 (solution): 2*3 = 6, exponents 1 + 2 + 1 = 4 | numerals; verify/ch04/exr-polynomial-ring-a1.py
 exr-polynomial-ring-b1 (solution): coefficients 12, -3, 4, -3, 2, 2, -4; reduction mod 2 | arithmetic in Z and F_2; verify/ch04/exr-polynomial-ring-b1.py
 exr-polynomial-ring-b2 (solution): sigma(a x^m) = ((-1)^m a) x^m; (-1)^m (-1)^n = (-1)^(m+n) | lem-finite-sums-and-powers (c) (cited); verify/ch04/exr-polynomial-ring-b2.py (sigma multiplicative on random pairs over Z/nZ)
 exr-polynomial-ring-b2 (claim): Section 4.4 writes sigma(p) as p(-x) | ch04 blueprint def-polynomial-composition (prose pointer within the chapter)
-exr-polynomial-ring-c1 (solution): reduction to monomials by induction on N | the proof of lem-check-on-monomials, rewritten inside the solution (the exercise forbids thm-polynomial-ring-laws, not the lemma)
-exr-polynomial-ring-c2 (solution): (1 - x)s = 1 | arithmetic; verify/ch04/exr-polynomial-ring-c2.py
+exr-polynomial-ring-c1 (solution): reduction to monomials: coefficients of s_N by induction on N, then the one-argument case by induction on N, then one argument at a time | fd1:ax-induction, lem-finite-sums-and-powers (a), fd2:prp-function-equality (cited); the proofs of prp-polynomial-sum-of-monomials and lem-check-on-monomials, rewritten inside the solution (the exercise forbids every result of the section after def-polynomial-ring)
+exr-polynomial-ring-c2 (solution): (1 - x)s = 1 | (Sigma1), (Sigma3), (F3), fd3:prp-ring-algebra (b) (cited); arithmetic; verify/ch04/exr-polynomial-ring-c2.py
 exr-polynomial-ring-c2 (claim): the ring laws hold for formal power series | not proved here; stated as such; nothing depends on it
 exr-polynomial-ring-c2 (claim): Section 4.3 shows 1 - x is not a unit of Z[x] | ch04 blueprint prp-polynomial-units (prose pointer within the chapter)
 -->

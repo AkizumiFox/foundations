@@ -44,7 +44,7 @@ The case \( n = 0 \) is separate because \( x^{n-1} \) has no meaning there: \( 
 
 **The element \( n \cdot 1 \).** By @lem-finite-sums-and-powers (d), \( n \cdot a = (n \cdot 1) a \). So the exponent enters the derivative only through one element of \( R \), the multiple \( n \cdot 1 \), and **that element can be \( 0 \)**. In \( \nF_2 \), \( 2 \cdot 1 = 1 + 1 = 0 \), so \( (x^2)' = (2 \cdot 1) x = 0 \). This is the whole difference between the derivative here and the derivative of calculus, and the rest of the section keeps track of it.
 
-**Why this definition.** The formula is the school formula with the limit removed, and nothing else would do: Exercise C1 shows that the formal derivative is the only additive map \( R[x] \to R[x] \) that sends constants to \( 0 \), sends \( x \) to \( 1 \) and obeys the product rule. A definition by limits is not available, since \( \nF_p \) and \( \nZ/6\nZ \) have no distances.
+**Why this definition.** The formula is the school formula with the limit removed. Exercise C1 asks you to show that it is the only additive map \( R[x] \to R[x] \) that sends constants to \( 0 \), sends \( x \) to \( 1 \) and obeys the product rule. A definition by limits is not available, since \( \nF_p \) and \( \nZ/6\nZ \) have no distances.
 
 ::: {.warning}
 The coefficient of \( x^k \) in \( f' \) is \( (k + 1) \cdot f_{k+1} \), not \( k \cdot f_k \): the derivative shifts before it multiplies. For \( f = x^2 \) over \( \nQ \), the coefficient of \( x^1 \) in \( f' = 2x \) is \( 2 \cdot f_2 = 2 \), while \( 1 \cdot f_1 = 0 \). Reading the formula without the shift gives \( \sum_k (k \cdot f_k) x^k \), which is \( x f' \), not \( f' \).
@@ -64,6 +64,8 @@ Compute the following derivatives.
 (iv) \( ([2]x^3 + x)' \) over \( \nZ/6\nZ \).
 
 (v) \( (x^n)' \) over \( \nZ \), for \( n \ge 1 \).
+
+(vi) The higher derivatives \( (x^4)' \), \( (x^4)'' \) and \( (x^4)''' \) over \( \nQ \) and over \( \nF_3 \).
 :::
 
 ::: {.solution}
@@ -82,6 +84,12 @@ as at school.
 (iv) \( ([2]x^3 + x)' = (3 \cdot [2]) x^2 + 1 = [6] x^2 + 1 = 1 \), since \( 3 \cdot [2] = (3 \cdot [1])[2] = [3][2] = [6] = [0] \), by @lem-finite-sums-and-powers (d), @fd3:thm-integers-mod-n-ring (d), and the product of classes computed on representatives (@fd3:thm-quotient-ring-by-ideal (b)). The polynomial has degree \( 3 \) and its derivative has degree \( 0 \): the degree dropped by \( 3 \), not by \( 1 \).
 
 (v) \( (x^n)' = (n \cdot 1) x^{n-1} = n x^{n-1} \), since in \( \nZ \) the multiple \( n \cdot 1 \) is the integer \( n \) (the "Multiples" paragraph cited above).
+
+(vi) Apply (M) three times, with the rule \( m \cdot (j \cdot 1) = (mj) \cdot 1 \) of @lem-finite-sums-and-powers (d). Over any commutative ring,
+\[
+(x^4)' = (4 \cdot 1) x^3 , \qquad (x^4)'' = \bigl( 3 \cdot (4 \cdot 1) \bigr) x^2 = (12 \cdot 1) x^2 , \qquad (x^4)''' = \bigl( 2 \cdot (12 \cdot 1) \bigr) x = (24 \cdot 1) x .
+\]
+Over \( \nQ \), as in (i), these are \( 4x^3 \), \( 12x^2 \) and \( 24x \). Over \( \nF_3 \), \( 3 \cdot 1 = 0 \), so \( 4 \cdot 1 = 3 \cdot 1 + 1 \cdot 1 = 1 \) and \( 12 \cdot 1 = 4 \cdot (3 \cdot 1) = 4 \cdot 0 = 0 \), by @lem-finite-sums-and-powers (d) and \( m \cdot 0 = 0 \). So \( (x^4)' = x^3 \), but already \( (x^4)'' = 0 \), and then \( (x^4)''' = 0' = 0 \) by (M).
 :::
 
 Examples (iii) and (iv) are the new phenomena. Over \( \nF_2 \) a non-constant polynomial has derivative \( 0 \); over \( \nZ/6\nZ \) the coefficient of \( x^2 \) in the derivative, \( 3 \cdot [2] \), is \( [0] \) although neither \( 3 \cdot [1] = [3] \) nor \( [2] \) is. Both come from the element \( n \cdot 1 \) above.
@@ -137,7 +145,7 @@ using (F6) of \( R \) in the first and third equalities, the rule \( (n \cdot b)
 \[
 \Phi(f, g) \coloneqq (fg)' , \qquad \Psi(f, g) \coloneqq f'g + fg' .
 \]
-By @thm-polynomial-ring-laws (a), \( R[x] \) is a commutative ring, so (F1)–(F9) and @fd3:prp-ring-algebra hold in it.
+By @thm-polynomial-ring-laws (a), \( R[x] \) is a commutative ring, so (F1)–(F7), (F9) and @fd3:prp-ring-algebra hold in it.
 
 *Additivity.* Let \( f, h, g \in R[x] \). By the distributive law (F9) of \( R[x] \) and (a),
 \[
@@ -232,15 +240,11 @@ Now let \( n \coloneqq \deg f \ge 1 \), so that \( f_n \ne 0 \) and \( f_k = 0 \
 
 (b) Let \( \operatorname{char} F = p > 0 \). Then \( p \) is prime by @thm-characteristic-prime.
 
-*A claim: for \( k \in \nN \), \( k \cdot 1 = 0 \) if and only if \( p \mid k \).* By @fd3:thm-integers-division-remainder (a), \( k = qp + r \) with unique \( q, r \in \nZ \) and \( 0 \le r < p \). By @lem-integer-multiples (d), which allows integer multiples,
-\[
-k \cdot 1 = (qp) \cdot 1 + r \cdot 1 = q \cdot (p \cdot 1) + r \cdot 1 = q \cdot 0 + r \cdot 1 = r \cdot 1 ,
-\]
-where \( q \cdot 0 = (q \cdot 1) 0 = 0 \) by @lem-integer-multiples (d) and @fd3:prp-ring-algebra (b). If \( r = 0 \), then \( k = qp \), so \( p \mid k \) and \( k \cdot 1 = 0 \). If \( 0 < r < p \), then \( r \cdot 1 \ne 0 \), because \( p \) is the **least** positive integer with \( p \cdot 1 = 0 \) (@def-characteristic); so \( k \cdot 1 \ne 0 \). In this case also \( p \nmid k \): if \( k = sp \) with \( s \in \nZ \), then \( k = sp + 0 \) is a second division with remainder, and uniqueness gives \( r = 0 \). So \( k \cdot 1 = 0 \) exactly when \( r = 0 \), that is, exactly when \( p \mid k \). This proves the claim.
+By @prp-characteristic-divides (a), with \( c = p \): for \( k \in \nN \), \( k \cdot 1 = 0 \) **if and only if** \( p \mid k \).
 
-\( \text{(i)} \Rightarrow \text{(ii)} \). Let \( f' = 0 \) and let \( k \in \nN \) with \( p \nmid k \). Then \( k \ne 0 \), since \( p \mid 0 \); so \( k \ge 1 \), and \( (k \cdot 1) f_k = 0 \) by \( (\ast) \). By the claim, \( k \cdot 1 \ne 0 \), so \( f_k = 0 \) by @thm-field-basic-properties (f).
+\( \text{(i)} \Rightarrow \text{(ii)} \). Let \( f' = 0 \) and let \( k \in \nN \) with \( p \nmid k \). Then \( k \ne 0 \), since \( p \mid 0 \); so \( k \ge 1 \), and \( (k \cdot 1) f_k = 0 \) by \( (\ast) \). By @prp-characteristic-divides (a), \( k \cdot 1 \ne 0 \), so \( f_k = 0 \) by @thm-field-basic-properties (f).
 
-\( \text{(ii)} \Rightarrow \text{(i)} \). Let \( k \ge 1 \). If \( p \nmid k \), then \( f_k = 0 \) by (ii); if \( p \mid k \), then \( k \cdot 1 = 0 \) by the claim. Either way \( (k \cdot 1) f_k = 0 \) (@fd3:prp-ring-algebra (b)), so \( f' = 0 \) by \( (\ast) \).
+\( \text{(ii)} \Rightarrow \text{(i)} \). Let \( k \ge 1 \). If \( p \nmid k \), then \( f_k = 0 \) by (ii); if \( p \mid k \), then \( k \cdot 1 = 0 \) by @prp-characteristic-divides (a). Either way \( (k \cdot 1) f_k = 0 \) (@fd3:prp-ring-algebra (b)), so \( f' = 0 \) by \( (\ast) \).
 
 \( \text{(ii)} \Rightarrow \text{(iii)} \). Choose \( N \in \nN \) with \( f_k = 0 \) for every \( k > N \), and define \( g \colon \nN \to F \) by \( g_j \coloneqq f_{pj} \). For \( j > N \) we have \( pj \ge j > N \), so \( g_j = 0 \), and \( g \in F[x] \). By @def-polynomial-composition, then the power law \( (x^p)^j = x^{pj} \) in the commutative ring \( F[x] \) (@lem-finite-sums-and-powers (c)) and @thm-polynomial-ring-laws (c),
 \[
@@ -249,7 +253,7 @@ g \circ x^p = \sum_{j=0}^{N} g_j \, (x^p)^j = \sum_{j=0}^{N} f_{pj} \, x^{pj} .
 We compare the coefficients of both sides with those of \( f \) at an index \( k \in \nN \). Addition in \( F[x] \) is coefficientwise (@def-polynomial-ring), so the \( k \)-th coefficient of a finite sum of polynomials is the finite sum of their \( k \)-th coefficients (induction on the number of terms, through the sum recursion of @lem-finite-sums-and-powers (a)). The monomial \( f_{pj} x^{pj} \) has \( k \)-th coefficient \( f_k \) if \( pj = k \), and \( 0 \) otherwise.
 
 - If \( p \nmid k \), no \( j \) has \( pj = k \), so every term is \( 0 \) at \( k \), and \( f_k = 0 \) by (ii).
-- If \( p \mid k \), then \( k = pj_0 \) for exactly one \( j_0 \in \nN \) (if \( pj = pj' \), then \( j = j' \) by @fd3:prp-ordered-ring-rules (f), since \( p \ne 0 \)). If \( j_0 \le N \), the sum of the \( k \)-th coefficients has the single possibly non-zero term \( f_{pj_0} = f_k \), so it equals \( f_k \) by (Σ3) of @lem-finite-sums-and-powers (b). If \( j_0 > N \), every term is \( 0 \) at \( k \), and \( f_k = 0 \) because \( k = pj_0 \ge j_0 > N \).
+- If \( p \mid k \), then \( k = pj_0 \) for some \( j_0 \in \nZ \), and \( j_0 \ge 0 \): if \( j_0 < 0 \), then \( pj_0 < 0 \cdot p = 0 \) by @fd3:prp-ordered-ring-rules (c), since \( p > 0 \), against \( k \ge 0 \). This \( j_0 \) is unique (if \( pj = pj' \), then \( j = j' \) by @fd3:prp-ordered-ring-rules (f), since \( p \ne 0 \)). If \( j_0 \le N \), the sum of the \( k \)-th coefficients has the single possibly non-zero term \( f_{pj_0} = f_k \), so it equals \( f_k \) by (Σ3) of @lem-finite-sums-and-powers (b). If \( j_0 > N \), every term is \( 0 \) at \( k \), and \( f_k = 0 \) because \( k = pj_0 \ge j_0 > N \).
 
 In every case the \( k \)-th coefficients agree, so \( g \circ x^p = f \).
 
@@ -288,7 +292,7 @@ Compute \( (x^5 + x)' \) over \( \nF_5 \).
 ::: {.solution}
 (a) Over \( \nQ \): \( (x^5 - x)' = 5x^4 - 1 \), by (M), with \( 5 \cdot 1 = 5 \). Over \( \nF_5 \): \( (x^5 - x)' = (5 \cdot 1) x^4 - 1 = -1 \), since \( 5 \cdot 1 = 0 \) in \( \nF_5 \); in the elements \( 0, \dots, 4 \) of \( \nF_5 \), \( -1 = 4 \).
 
-(b) Over \( \nQ \): **true**. \( \nQ \) is a field (@fd3:thm-rationals-field) of characteristic \( 0 \), since \( k \cdot 1 = k \ne 0 \) for \( k \ge 1 \); so @prp-formal-derivative-zero (a) applies. Over \( \nF_2 \): **false**. The witness is \( x^2 \), which is not constant, with \( (x^2)' = (2 \cdot 1) x = 0 \) (@exm-formal-derivatives (iii)).
+(b) Over \( \nQ \): **true**. \( \nQ \) is a field (@fd3:thm-rationals-field) of characteristic \( 0 \) (@exm-characteristics); so @prp-formal-derivative-zero (a) applies. Over \( \nF_2 \): **false**. The witness is \( x^2 \), which is not constant, with \( (x^2)' = (2 \cdot 1) x = 0 \) (@exm-formal-derivatives (iii)).
 
 (c) \( \deg f' \in \{ 1, 0, -\infty \} \), and each occurs. Write \( f = [2] x^3 + f_2 x^2 + f_1 x + f_0 \). Then
 \[
@@ -376,11 +380,11 @@ For \( k = 0 \) both sides are \( f_j \). If it holds for \( k \), then by @def-
 \]
 since the factor added by the recursion is \( (j + k + 1) - k = j + 1 \).
 
-*The case \( k = p \) over \( \nF_p \).* The number \( P(j + p, p) = (j + p)(j + p - 1) \cdots (j + 1) \) is a product of the \( p \) consecutive integers \( j + 1, \dots, j + p \). Divide \( j = qp + r \) with \( 0 \le r < p \) (@fd3:thm-integers-division-remainder); then \( j + (p - r) = (q + 1)p \), and \( 1 \le p - r \le p \), so one of the factors is divisible by \( p \). A product with a factor divisible by \( p \) is divisible by \( p \) (@fd3:prp-divisibility-rules-integers (c), one factor at a time). So \( P(j + p, p) = Mp \) with \( M \in \nN \), and
+*The case \( k = p \) over \( \nF_p \).* The number \( P(j + p, p) = (j + p)(j + p - 1) \cdots (j + 1) \) is a product of the \( p \) consecutive integers \( j + 1, \dots, j + p \). Divide \( j = qp + r \) with \( 0 \le r < p \) (@fd3:thm-integers-division-remainder); then \( j + (p - r) = (q + 1)p \), and \( 1 \le p - r \le p \), so one of the factors is divisible by \( p \). A product with a factor divisible by \( p \) is divisible by \( p \) (@fd3:prp-divisibility-rules-integers (c), one factor at a time). So \( P(j + p, p) = Mp \) with \( M \in \nZ \), and
 \[
 P(j + p, p) \cdot f_{j+p} = M \cdot \bigl( p \cdot f_{j+p} \bigr) = M \cdot \bigl( (p \cdot 1) f_{j+p} \bigr) = M \cdot 0 = 0 ,
 \]
-by @lem-finite-sums-and-powers (d), \( p \cdot 1 = 0 \) in \( \nF_p \) (@fd3:thm-integers-mod-n-ring (d)), @fd3:prp-ring-algebra (b) and \( M \cdot 0 = 0 \). So every coefficient of \( f^{(p)} \) is \( 0 \). For instance, over \( \nF_3 \), \( (x^4)''' = (P(4, 3) \cdot 1) x = (24 \cdot 1) x = 0 \).
+by @lem-finite-sums-and-powers (d), which allows integer multiples, \( p \cdot 1 = 0 \) in \( \nF_p \) (@fd3:thm-integers-mod-n-ring (d)), @fd3:prp-ring-algebra (b) and \( M \cdot 0 = 0 \). So every coefficient of \( f^{(p)} \) is \( 0 \). For instance, over \( \nF_3 \), \( (x^4)''' = (P(4, 3) \cdot 1) x = (24 \cdot 1) x = 0 \).
 :::
 
 ### C. Going deeper
@@ -423,6 +427,9 @@ If \( n = 0 \), this is \( 0 = (a x^0)' \delta(x) \), by (M). If \( n \ge 1 \), 
 - 3: \( \delta(x^n) = (n \cdot 1) x^{n-1} \delta(x) \) by induction, with the case \( n = 0 \) handled separately.
 - 2: comparison with \( (a x^n)' \), using \( a (n \cdot 1) = n \cdot a \).
 - 1: conclusion by extending from monomials, and the uniqueness statement.
+
+A solution that shows instead that \( K \coloneqq \{ f \in R[x] : \delta(f) = f' \delta(x) \} \) is all of \( R[x] \) is marked on the same points: closure of \( K \) under \( + \) earns the first 2; the constants and \( x \) in \( K \) earn the next 2; closure of \( K \) under products, by @thm-formal-derivative-rules (b), earns the 3; \( K = R[x] \) earns the 2; the uniqueness statement earns the last 1.
+
 Fatal errors (0 for the step): checking only on \( x^n \), with no account of the coefficient \( a \) (that is where \( \delta(a) = 0 \) is needed); writing \( x^{-1} \) in the case \( n = 0 \).
 :::
 
@@ -451,7 +458,7 @@ Lines (1), (2) and (4) are correct: (1) is @def-formal-derivative with @lem-fini
 - 2: says the claim is true and that the argument, as written, does not prove it.
 - 3: names the first half of line (3) and the reason: \( k \ne 0 \) does not give \( k \cdot 1 \ne 0 \) in a general ring, (N9), or an equivalent statement.
 - 2: a counterexample to the step, such as \( 2 \cdot 1 = 0 \) in \( \nF_2 \), or the "proof" that \( x^2 \) is constant over \( \nF_2 \).
-- 3: repairs the step by the characteristic of \( \nQ \), with a reason why \( k \cdot 1 = k \) in \( \nQ \).
+- 3: repairs the step by proving \( k \cdot 1 \ne 0 \) in \( \nQ \) for every \( k \ge 1 \), that is, \( \operatorname{char} \nQ = 0 \). Two routes earn full marks: \( k \cdot 1 = k \) via the embeddings, as in the solution; or \( k \cdot 1 > 0 \) by @fd3:prp-ordered-ring-rules (h), since \( \nQ \) is an ordered field (@fd3:thm-rationals-ordered-field) with \( 1 \ne 0 \).
 Fatal errors (0 for the step): a counterexample to the conclusion (there is none); blaming the no-zero-divisors half of line (3), which is correct.
 :::
 
@@ -460,25 +467,23 @@ Fatal errors (0 for the step): a counterexample to the conclusion (there is none
 ::: {#exr-formal-derivative-r1}
 [R1]
 
-Let \( R \) be a commutative ring and \( T \colon R[x] \to R[x] \), \( T(f) \coloneqq f \circ (x + 1) \). Show that \( T \) is an isomorphism of the group \( (R[x], +) \) onto itself. Over \( \nF_2 \), show that \( T \circ T \) is the identity map.
+Let \( R \) be a commutative ring and \( E \colon R[x] \to R[x] \), \( E(f) \coloneqq f + f' \). Show that \( E \) is an injective homomorphism of the group \( (R[x], +) \) to itself. If \( 1 \ne 0 \) in \( R \), show that \( E(fg) = E(f) E(g) \) fails for some \( f, g \).
 :::
 
 ::: {.solution}
-The tool is the notion of a group homomorphism, @def-group-homomorphism, written additively (@def-group).
+The tools are the notion of a group homomorphism and its kernel, @def-group-homomorphism, written additively (@def-group), and @prp-homomorphism-injective-iff-kernel-trivial.
 
 *The group.* By @thm-polynomial-ring-laws (a), \( R[x] \) satisfies (F1)–(F4), so \( (R[x], +) \) is an abelian group, with identity the zero polynomial and inverse \( -f \).
 
-*A homomorphism.* By @def-polynomial-composition and @thm-polynomial-substitution (a), \( T \) is a ring homomorphism that fixes the constants and sends \( x \) to \( x + 1 \). In particular \( T(f + g) = T(f) + T(g) \), which is the homomorphism condition in additive notation.
-
-*Bijective.* Let \( S(f) \coloneqq f \circ (x - 1) \), a ring homomorphism fixing the constants with \( S(x) = x - 1 \). The composite \( S \circ T \) is a ring homomorphism (@def-ring-homomorphism) that fixes the constants, and
+*A homomorphism.* By @thm-formal-derivative-rules (a) and (F1), (F2) of \( R[x] \),
 \[
-(S \circ T)(x) = S(x + 1) = S(x) + S(1) = (x - 1) + 1 = x .
+E(f + g) = (f + g) + (f' + g') = (f + f') + (g + g') = E(f) + E(g) ,
 \]
-The identity map of \( R[x] \) is also a ring homomorphism fixing the constants and sending \( x \) to \( x \). By the uniqueness in @thm-polynomial-substitution (b), applied with \( \varphi \) the constants \( R \to R[x] \) and \( s = x \), \( S \circ T = \id \). In the same way \( (T \circ S)(x) = (x + 1) - 1 = x \) gives \( T \circ S = \id \). So \( S \) is a two-sided inverse of \( T \) (@fd2:def-inverse-function), \( T \) is bijective, and \( T \) is an isomorphism.
+which is the homomorphism condition in additive notation.
 
-*Over \( \nF_2 \).* \( T \circ T \) is a ring homomorphism fixing the constants, and \( (T \circ T)(x) = T(x + 1) = (x + 1) + 1 = x \), since \( 1 + 1 = 0 \) in \( \nF_2 \). By the same uniqueness, \( T \circ T = \id \).
+*The kernel is \( \{0\} \).* Let \( f \ne 0 \), with \( n \coloneqq \deg f \), so \( f_n \ne 0 \) and \( f_{n+1} = 0 \) (@def-degree). By @def-formal-derivative, \( (f')_n = (n + 1) \cdot f_{n+1} = (n + 1) \cdot 0 = 0 \), as in the well-definedness paragraph after it. Addition is coefficientwise (@def-polynomial-ring), so \( E(f)_n = f_n + 0 = f_n \ne 0 \), and \( E(f) \ne 0 \). So \( \ker E = \{0\} \), and \( E \) is injective by @prp-homomorphism-injective-iff-kernel-trivial.
 
-Exercise B3 of Section 4.4 (@exr-evaluation-and-substitution-b3) proved more about the same map: \( T \) is a bijective **ring** homomorphism, with inverse \( f \mapsto f \circ (x - 1) \). The group statement here forgets the products.
+*Not multiplicative.* Take \( f = g = x \). By @exm-formal-derivatives (ii), \( x' = 1 \), so \( E(x) = x + 1 \), and \( E(x) E(x) = (x + 1)^2 = x^2 + 2x + 1 \) by @fd3:prp-ring-algebra (d). On the other side, (M) gives \( (x^2)' = (2 \cdot 1) x = 2x \), so \( E(x^2) = x^2 + 2x \). The two differ in position \( 0 \), where they have \( 1 \) and \( 0 \); since \( 1 \ne 0 \), \( E(x \cdot x) \ne E(x) E(x) \). So only the group structure of \( R[x] \) is respected, and \( E \) is not a ring homomorphism.
 :::
 
 ::: {#exr-formal-derivative-r2}
@@ -498,7 +503,7 @@ The tool is the uniqueness in @thm-polynomial-substitution (b), applied to the f
 
 *Roots.* If \( f(z_0) = 0 \), then \( f(\conj{z_0}) = \conj{0} = 0 \). If \( z_0 = a + bi \) is not real, then \( b \ne 0 \), so \( \conj{z_0} = a - bi \ne a + bi \): equality would give \( -b = b \) by comparing imaginary parts (@def-complex-numbers), so \( 2b = 0 \), and \( b = 0 \) because \( 2 = 2 \cdot 1 \ne 0 \) in the ordered field \( \nR \) (@fd3:prp-ordered-ring-rules (h)) and \( \nR \) has no zero divisors (@fd3:prp-ordered-ring-rules (f)). So the non-real roots of a real polynomial come in pairs \( z_0 \ne \conj{z_0} \).
 
-This is the statement of @prp-real-coefficients-conjugate-roots, which Chapter 1 proved by a direct computation with the sum \( \sum_k a_k z^k \). Here the computation is replaced by the uniqueness of a substitution homomorphism. Polynomials with rational coefficients are a special case, since \( \nQ \) sits inside \( \nR \).
+The identity and the first deduction are the statement of @prp-real-coefficients-conjugate-roots, and the distinctness of \( \conj{z_0} \) is the paragraph after it; Chapter 1 proved both by a direct computation with the sum \( \sum_k a_k z^k \). Here the computation is replaced by the uniqueness of a substitution homomorphism. Polynomials with rational coefficients are a special case, since \( \nQ \) sits inside \( \nR \).
 :::
 
 ::: {#exr-formal-derivative-r3}
@@ -540,14 +545,14 @@ f^2 = x^{2n} + 2 x^n r + r^2 .
 \]
 Its coefficient at \( n + k \) is \( 2 r_k \): \( x^{2n} \) contributes \( 0 \), since \( n + k < 2n \); \( 2 x^n r \) contributes \( 2 r_k \), since multiplying by \( x^n \) shifts by \( n \) (@lem-monomial-product (a)); and \( r^2 \) contributes \( 0 \), since \( \deg r^2 \le 2k < n + k \) (@thm-degree-of-product (a)). On the other side, the coefficient of \( f \circ x^2 \) at \( n + k \) is \( 0 \): if \( n + k \) is odd, it is an odd position; if \( n + k = 2j \), then \( k < j < n \), so \( f_j = r_j = 0 \), because \( j < n \) and \( j > \deg r \). Hence \( 2 r_k = 0 \) in \( \nQ \), and \( r_k = 0 \) since \( 2 \ne 0 \): a contradiction with \( r_k = \operatorname{lc}(r) \ne 0 \). So \( r = 0 \) and \( f = x^n \).
 
-*Why the look-alikes fail.* Evaluating at points gives \( f(c^2) = f(c)^2 \) for every \( c \in \nQ \), a statement about polynomial functions; turning it back into a statement about coefficients needs the fact that a polynomial over an infinite field is determined by its values, which this chapter does not prove (@prp-polynomial-function-map (d) shows that over a finite ring it is false). Differentiating with the chain rule of Exercise B1 gives \( 2x \, (f' \circ x^2) = 2 f f' \), an equation of the same kind and no easier.
+*Why the look-alikes fail.* Evaluating at points gives \( f(c^2) = f(c)^2 \) for every \( c \in \nQ \), a statement about polynomial functions; turning it back into a statement about coefficients needs the fact that a polynomial over an infinite field is determined by its values, which this chapter does not prove (@prp-polynomial-function-map (d) shows that over a finite ring with \( 1 \ne 0 \) it is false). Differentiating with the chain rule of Exercise B1 gives \( 2x \, (f' \circ x^2) = 2 f f' \), an equation of the same kind and no easier.
 
 *Over \( \nF_2 \) every \( f \) works.* There \( (u + v)^2 = u^2 + v^2 \), since \( 2uv = 0 \), and \( c^2 = c \) for \( c \in \nF_2 \); so \( f^2 = \sum_k f_k^2 x^{2k} = \sum_k f_k x^{2k} = f \circ x^2 \). The step that fails is "\( 2 r_k = 0 \) implies \( r_k = 0 \)": in \( \nF_2 \), \( 2 = 0 \).
 :::
 
 <!-- dependency ledger
 def-formal-derivative (claim): (hook) a double root of (x - 1)^2 has slope 0; the school derivative of a x^n is n a x^(n-1) | school calculus, motivation only; nothing in fd4 rests on it
-def-formal-derivative (claim): higher derivatives exist and are unique | fd2:thm-recursion read on N = omega through fd3:cor-omega-identification (b), cited; the step u -> u' is a function R[x] -> R[x] by the well-definedness bullet
+def-formal-derivative (claim): higher derivatives exist and are unique | fd2:thm-recursion, cited; read on N = omega through fd3:cor-omega-identification (b) as set up in Section 4.1, not repeated; the step u -> u' is a function R[x] -> R[x] by the well-definedness bullet
 def-formal-derivative (claim): k >= N gives k + 1 > N; (f')_k = 0 for k > N - 1 | index arithmetic in N, fd3:thm-omega-order with fd3:prp-naturals-embed-integers; inline
 def-formal-derivative (claim): formula (M) for (a x^n)' | def-polynomial (the monomial), def-formal-derivative, m * 0 = 0 (proved in the first bullet); inline
 def-formal-derivative (claim): 1 + 1 = 0 in F_2, so (x^2)' = 0 | exm-finite-fields, cited where repeated in exm-formal-derivatives (iii)
@@ -555,7 +560,7 @@ def-formal-derivative (claim): (why this definition) uniqueness of the derivatio
 def-formal-derivative (claim): (warning) sum_k (k * f_k) x^k = x f' | coefficient comparison with lem-monomial-product (a), m = 1; inline, not used
 exm-formal-derivatives (example): 1 * 1 = 1, n * 1 = n in Z | the recursion of multiples, "Multiples" paragraph of F3.2 Section 2.3 (cited by position, as fd3 F3.5 does)
 exm-formal-derivatives (example): n * 1 = n in Q by induction | fd3:prp-naturals-embed-integers, fd3:prp-integers-embed-rationals, cited; fd1:ax-induction read on omega; inline
-exm-formal-derivatives (example): all quoted coefficients (2, 0, -6, 4; 1; 0; [6] = [0]) | verify/ch04/exm-formal-derivatives.py
+exm-formal-derivatives (example): all quoted coefficients (2, 0, -6, 4; 1; 0; [6] = [0]); (vi) (x^4)', (x^4)'', (x^4)''' = 4x^3, 12x^2, 24x over Q and x^3, 0, 0 over F_3 | verify/ch04/exm-formal-derivatives.py
 def-formal-derivative (claim): (quick check) (x^3 + x^2 + x + 1)' = x^2 + 1 over F_2 | verify/ch04/def-formal-derivative.py
 thm-formal-derivative-rules (proof): regrouping four terms in R[x]; f'g + fg' = g'f + gf' | (F1), (F2), (F6) of R[x] via thm-polynomial-ring-laws (a); inline
 thm-formal-derivative-rules (proof): (i - 1) + j = i + (j - 1) = i + j - 1 in N for i, j >= 1 | fd3:thm-omega-arithmetic-laws, fd3:prp-naturals-embed-integers; inline
@@ -567,22 +572,22 @@ thm-formal-derivative-rules (claim): (remark) over Q and over the reals f' agree
 thm-formal-derivative-rules (claim): (quick check) ((x + 1)^3)' = 0 over F_3; (x + 1)^3 = x^3 + 1 | verify/ch04/thm-formal-derivative-rules.py
 prp-formal-derivative-zero (claim): (opening) a function with derivative 0 on an interval is constant | school calculus, motivation only; nothing rests on it
 prp-formal-derivative-zero (proof): as k runs through k >= 1, k - 1 runs through N | index arithmetic, fd3:prp-naturals-embed-integers; inline
-prp-formal-derivative-zero (proof): k * 1 = 0 iff p | k (the claim) | fd3:thm-integers-division-remainder (a) (existence and uniqueness), lem-integer-multiples (d), def-characteristic (minimality), cited; inline
+prp-formal-derivative-zero (proof): k * 1 = 0 iff p | k | prp-characteristic-divides (a) with c = p, cited
 prp-formal-derivative-zero (proof): p | 0, so p does not divide k forces k != 0 | fd3:prp-divisibility-rules-integers (a); inline
-prp-formal-derivative-zero (proof): pj >= j > N for p >= 1, j > N; pj = pj' implies j = j' | fd3:thm-integers-ordered-ring with fd3:prp-ordered-ring-rules (c), (f); inline
+prp-formal-derivative-zero (proof): pj >= j > N for p >= 1, j > N; k = pj_0, k >= 0, p > 0 implies j_0 >= 0; pj = pj' implies j = j' | fd3:thm-integers-ordered-ring with fd3:prp-ordered-ring-rules (c), (f); inline
 prp-formal-derivative-zero (proof): the k-th coefficient of a finite sum in F[x] is the sum of the k-th coefficients | def-polynomial-ring (coefficientwise +) and the sum recursion of lem-finite-sums-and-powers (a), induction on the number of terms; inline
 prp-formal-derivative-zero (claim): (aftermath) x^2 + 1 = (x + 1) o x^2 over F_2; x^6 + 2x^3 + 1 = (x^2 + 2x + 1) o x^3 over F_3 with derivative 0 | verify/ch04/prp-formal-derivative-zero.py
 prp-formal-derivative-zero (claim): (warning) (x^p)' = 0 and (x^p - x)' = -1 over F_p; Chapter 5 shows x^p - x has no repeated roots | (M) and fd3:thm-integers-mod-n-ring (d), inline; Chapter 5 = F4.5 (promised; prose pointer, nothing here depends on it)
 prp-formal-derivative-zero (claim): (quick check) (x^5 + x)' = 1 over F_5 | verify/ch04/prp-formal-derivative-zero.py
 exr-formal-derivative-a1 (solution): (x^5 - x)' = 5x^4 - 1 over Q and -1 = 4 over F_5; deg f' in {1, 0, -infinity} with witnesses | verify/ch04/exr-formal-derivative-a1.py
-exr-formal-derivative-a1 (solution): Q has characteristic 0 (k * 1 = k != 0) | the computation of exm-formal-derivatives (i), cited by position
 exr-formal-derivative-b1 (solution): a ring homomorphism sends 0 to 0 and preserves powers | def-ring-homomorphism (its consequences paragraph), cited
 exr-formal-derivative-b1 (solution): check (x^2 + 1)^2 = x^4 + 2x^2 + 1, derivative 4x^3 + 4x | verify/ch04/exr-formal-derivative-b1.py
 exr-formal-derivative-b2 (solution): P(n, k + 1) = P(n, k)(n - k); the added factor is j + 1; P(4, 3) = 24 | arithmetic in N, fd3:thm-omega-arithmetic-laws; verify/ch04/exr-formal-derivative-b2.py
 exr-formal-derivative-b2 (solution): one of p consecutive integers is divisible by p; a product with such a factor is divisible by p | fd3:thm-integers-division-remainder, fd3:prp-divisibility-rules-integers (c), cited; induction on the number of factors, inline
 exr-formal-derivative-c1 (solution): induction for delta(x^n) | fd1:ax-induction read on omega; inline
 exr-formal-derivative-c2 (solution): k * 1 = k in Q | as in exm-formal-derivatives (i): fd3:prp-naturals-embed-integers, fd3:prp-integers-embed-rationals, cited
-exr-formal-derivative-r1 (solution): the identity of R[x] is a ring homomorphism fixing constants; a two-sided inverse makes T bijective | def-ring-homomorphism (direct check); fd2:def-inverse-function, cited
+exr-formal-derivative-r1 (solution): (f')_n = 0 at n = deg f; E(x)E(x) = x^2 + 2x + 1 and E(x^2) = x^2 + 2x differ in position 0 when 1 != 0 | def-formal-derivative, def-degree, fd3:prp-ring-algebra (d), cited; verify/ch04/exr-formal-derivative-r1.py
+exr-formal-derivative-r1 (solution): R1 reaches back to F4.3 (group homomorphisms and kernels) | def-group-homomorphism, prp-homomorphism-injective-iff-kernel-trivial, cited; R review item
 exr-formal-derivative-r2 (solution): conj 1 = 1, conj a = a for real a, conj 0 = 0 | def-conjugate-modulus, cited (a + 0i notation of prp-reals-embed-complex)
 exr-formal-derivative-r2 (solution): R is an ordered field (2 != 0, no zero divisors) | R of F3.10, through def-complex-numbers (C := R^2); fd3:prp-ordered-ring-rules (f), (h), cited; R review item under the see edge to F4.1
 exr-formal-derivative-r3 (solution): {0, 1} -> F_2 is a bijection ([0] != [1]) | fd3:thm-integers-mod-n-ring (b), (c); inline

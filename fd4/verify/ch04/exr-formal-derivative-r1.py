@@ -1,6 +1,6 @@
-"""exr-formal-derivative-r1: T(f) = f o (x + 1) and S(f) = f o (x - 1) are inverse on random
-integer polynomials and on (Z/nZ)[x] of degree <= 3, n <= 4; T is additive; over F_2,
-T o T = id on all polynomials of degree <= 6."""
+"""exr-formal-derivative-r1: E(f) = f + f' is additive on random integer polynomials and on
+(Z/nZ)[x]; E(f) != 0 for every non-zero f of degree <= 3 over Z/nZ, n <= 6, with E(f)_n = f_n at
+n = deg f; E(x)E(x) = x^2 + 2x + 1 and E(x^2) = x^2 + 2x differ in position 0 over Z/nZ, n >= 2."""
 QUOTED = {}
 from fractions import Fraction as Fr
 import itertools, random
@@ -80,14 +80,20 @@ def allpolys(n, d):
 def rnd(d, lo=-5, hi=5):
     return trim([random.randint(lo, hi) for _ in range(d + 1)])
 
-T = lambda f, n=0: comp(f, red([1, 1], n), n)
-S = lambda f, n=0: comp(f, red([-1, 1], n), n)
+E = lambda f, n=0: add(f, deriv(f, n), n)
 for _ in range(200):
     f, g = rnd(random.randint(0, 6)), rnd(random.randint(0, 6))
-    assert S(T(f)) == f and T(S(f)) == f and T(add(f, g)) == add(T(f), T(g))
-for n in range(2, 5):
+    assert E(add(f, g)) == add(E(f), E(g))
+    if f:
+        assert E(f) and E(f)[deg(f)] == f[deg(f)]
+for n in range(2, 7):
     for f in allpolys(n, 3):
-        assert S(T(f, n), n) == f == T(S(f, n), n)
-for f in allpolys(2, 6):
-    assert T(T(f, 2), 2) == f
+        if f:
+            assert E(f, n) and E(f, n)[deg(f)] == f[deg(f)]
+        for h in [[1], [0, 1], [1, 1, 1]]:
+            assert E(add(f, red(h, n), n), n) == add(E(f, n), E(red(h, n), n), n)
+    Ex = E([0, 1], n)
+    assert Ex == [1, 1]
+    assert mul(Ex, Ex, n) == red([1, 2, 1], n) and E([0, 0, 1], n) == red([0, 2, 1], n)
+    assert mul(Ex, Ex, n)[0] == 1 and E([0, 0, 1], n)[0] == 0
 print("ok")

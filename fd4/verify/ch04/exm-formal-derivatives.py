@@ -1,7 +1,8 @@
 """exm-formal-derivatives: (x^4 - 2x^3 + 2x - 1)' = 4x^3 - 6x^2 + 2 over Q (coefficients 2, 0,
 -6, 4); a' = 0, x' = 1, (x - c)' = 1; (x^3 + x)' = 1 over F_3; (x^2)' = 0 over F_2;
 ([2]x^3 + x)' = 1 over Z/6Z (degree 3 -> 0, 3 * [2] = [6] = [0]); (x^n)' = n x^(n-1) over Z;
-the hook: 2(x - 1) vanishes at 1."""
+the hook: 2(x - 1) vanishes at 1; (vi) (x^4)', (x^4)'', (x^4)''' = 4x^3, 12x^2, 24x
+over Q and x^3, 0, 0 over F_3."""
 QUOTED = {"(i)": "4x^3 - 6x^2 + 2", "(i) coeffs": [2, 0, -6, 4], "(iv)": "[6] x^2 + 1 = 1"}
 from fractions import Fraction as Fr
 import itertools, random
@@ -97,4 +98,9 @@ for n in range(1, 12):
 # hook: ((x-1)^2)' = 2(x - 1), value 0 at 1
 d = deriv(power([-1, 1], 2))
 assert d == [-2, 2] and sum(c * 1 ** k for k, c in enumerate(d)) == 0
+# (vi) higher derivatives of x^4
+x4 = [0, 0, 0, 0, 1]
+assert deriv(x4) == [0, 0, 0, 4] and deriv(deriv(x4)) == [0, 0, 12] and deriv(deriv(deriv(x4))) == [0, 24]
+assert deriv(x4, 3) == [0, 0, 0, 1] and deriv(deriv(x4, 3), 3) == [] and deriv(deriv(deriv(x4, 3), 3), 3) == []
+assert 3 * 4 == 12 and 2 * 12 == 24 and 4 % 3 == 1 and 12 % 3 == 0
 print("ok")

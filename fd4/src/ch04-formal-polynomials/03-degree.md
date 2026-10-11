@@ -52,7 +52,7 @@ The second says that \( \deg p \) is itself admissible for \( p \), and the leas
 **Non-example by minimal change.** The sequence \( (1, 1, 1, \dots) \) has no degree: the set \( S \) of its non-zero positions is all of \( \nN \), which has no greatest element. It fails exactly the clause "only finitely many" of @def-polynomial, which is what made \( S \) bounded above.
 
 ::: {.second-reading title="Why the degree of the zero polynomial is minus infinity"}
-Any value given to \( \deg 0 \) is a convention, and the choice is made so that the rule "degrees add under products" survives the zero polynomial. For every \( q \), \( 0 \cdot q = 0 \), so the rule asks for \( \deg 0 = \deg 0 + \deg q \). If \( \deg 0 \) were an integer \( d \), then in any ring with \( 1 \ne 0 \) the case \( q = x \), of degree \( 1 \), would give \( d = d + 1 \). The symbol \( -\infty \), with \( -\infty + n = -\infty \), is the one value that makes this true for every \( q \). The order \( -\infty < n \) then lets "\( \deg p \le n \)" include the zero polynomial, which is what the sets \( R[x]_{\le n} \) at the end of this section need.
+Any value given to \( \deg 0 \) is a convention, and the choice is made so that the rule "degrees add under products" survives the zero polynomial. For every \( q \), \( 0 \cdot q = 0 \), so the rule asks for \( \deg 0 = \deg 0 + \deg q \). If \( \deg 0 \) were an integer \( d \), then in any ring with \( 1 \ne 0 \) the case \( q = x \), of degree \( 1 \), would give \( d = d + 1 \). No integer works; a symbol \( -\infty \) with \( -\infty + n = -\infty \) does. The order \( -\infty < n \) then lets "\( \deg p \le n \)" include the zero polynomial, which is what the sets \( R[x]_{\le n} \) at the end of this section need.
 :::
 
 ::: {.warning}
@@ -101,9 +101,9 @@ The opening computation suggests how a product behaves at the top. In \( (pq)_k 
 Let \( R \) be a commutative ring, let \( p, q \in R[x] \) be non-zero, and let \( m \coloneqq \deg p \), \( n \coloneqq \deg q \).
 
 ::: {.enumerate options="label=(\alph*)"}
-1. \( (pq)_k = 0 \) for every \( k > m + n \), and \( (pq)_{m+n} = \operatorname{lc}(p) \operatorname{lc}(q) \). Hence \( \deg(pq) \le \deg p + \deg q \) for **all** \( p, q \in R[x] \), zero or not.
+1. \( (pq)_k = 0 \) for every \( k > m + n \), and \( (pq)_{m+n} = \operatorname{lc}(p) \operatorname{lc}(q) \). Hence \( \deg(pq) \le \deg p + \deg q \) for **all** \( p, q \in R[x] \), zero or not; and if \( p = 0 \) or \( q = 0 \), then \( pq = 0 \) and \( \deg(pq) = -\infty = \deg p + \deg q \).
 2. \( \deg(pq) = m + n \) **if and only if** \( \operatorname{lc}(p) \operatorname{lc}(q) \ne 0 \), and then \( \operatorname{lc}(pq) = \operatorname{lc}(p) \operatorname{lc}(q) \). This holds in particular
-    - when \( R \) has **no zero divisors** (\( ab = 0 \) implies \( a = 0 \) or \( b = 0 \)), for example when \( R \) is a field (@thm-field-basic-properties (f));
+    - when \( R \) has **no zero divisors** (\( ab = 0 \) implies \( a = 0 \) or \( b = 0 \)), for example when \( R \) is a field (@thm-field-basic-properties (f)); together with the last clause of (a), \( \deg(pq) = \deg p + \deg q \) then holds for **all** \( p, q \in R[x] \), zero or not;
     - when \( \operatorname{lc}(p) \) is a unit of \( R \) (@fd3:def-ring-unit), in particular when \( p \) is monic.
 :::
 :::
@@ -117,21 +117,21 @@ The top of a product comes from the tops of the factors alone. Above \( m + n \)
 :::
 
 ::: {.proof}
-*(a)* Let \( k \ge m + n \) and \( 0 \le i \le k \), and consider the term \( p_i q_{k-i} \) of \( (pq)_k \) (@def-polynomial-ring). If \( i > m \), then \( p_i = 0 \). If \( i \le m \), then \( k - i \ge k - m \ge n \), with \( k - i > n \) unless \( k = m + n \) and \( i = m \); in that case \( q_{k-i} = 0 \). So every term with \( i \ne m \), or with \( k > m + n \), has a factor \( 0 \), and is \( 0 \) by @fd3:prp-ring-algebra (b) with (F6).
+*(a)* Let \( k \ge m + n \) and \( 0 \le i \le k \), and consider the term \( p_i q_{k-i} \) of \( (pq)_k \) (@def-polynomial-ring). If \( i > m \), then \( p_i = 0 \). If \( i \le m \), then \( k - i \ge k - m \ge n \), and \( k - i > n \) (so \( q_{k-i} = 0 \)) unless \( k = m + n \) and \( i = m \). So every term with \( i \ne m \), or with \( k > m + n \), has a factor \( 0 \), and is \( 0 \) by @fd3:prp-ring-algebra (b) with (F6).
 
 For \( k > m + n \), all terms of \( (pq)_k \) are \( 0 \), so \( (pq)_k = 0 \) by (Σ3) of @lem-finite-sums-and-powers (b) (with \( j = 0 \)). For \( k = m + n \), every term with \( i \ne m \) is \( 0 \), and \( m \le m + n \), so (Σ3) with \( j = m \) leaves
 \[
 (pq)_{m+n} = p_m q_n = \operatorname{lc}(p) \operatorname{lc}(q) .
 \]
 
-For the inequality, let \( p, q \in R[x] \) be arbitrary. If \( p = 0 \), every coefficient of \( pq \) is a sum of terms \( 0 \cdot q_{k-i} = 0 \) (@fd3:prp-ring-algebra (b), (F6)), so \( pq = 0 \), and both sides of the inequality are \( -\infty \) by the conventions of @def-degree; likewise if \( q = 0 \). If \( p, q \ne 0 \) and \( pq = 0 \), the left side is \( -\infty < m + n \). Otherwise \( pq \ne 0 \), and since \( (pq)_k = 0 \) for every \( k > m + n \), its last non-zero coefficient is at a position \( \le m + n \): \( \deg(pq) \le m + n \).
+For the inequality, let \( p, q \in R[x] \) be arbitrary. If \( p = 0 \), every coefficient of \( pq \) is a sum of terms \( 0 \cdot q_{k-i} = 0 \) (@fd3:prp-ring-algebra (b), (F6)), so \( pq = 0 \), and both sides of the inequality are \( -\infty \) by the conventions of @def-degree, which is also the last clause of (a); likewise if \( q = 0 \). If \( p, q \ne 0 \) and \( pq = 0 \), the left side is \( -\infty < m + n \). Otherwise \( pq \ne 0 \), and since \( (pq)_k = 0 \) for every \( k > m + n \), its last non-zero coefficient is at a position \( \le m + n \): \( \deg(pq) \le m + n \).
 
 *(b)* By (a), \( m + n \) is admissible for \( pq \), and \( (pq)_{m+n} = \operatorname{lc}(p) \operatorname{lc}(q) \). If this element is non-zero, then \( pq \ne 0 \), its last non-zero coefficient is at \( m + n \), and so \( \deg(pq) = m + n \) and \( \operatorname{lc}(pq) = (pq)_{m+n} = \operatorname{lc}(p) \operatorname{lc}(q) \). If it is \( 0 \), then \( (pq)_k = 0 \) for every \( k \ge m + n \), so \( \deg(pq) < m + n \).
 
 For the two situations: \( p_m \ne 0 \) and \( q_n \ne 0 \) by @def-degree, so if \( R \) has no zero divisors, \( p_m q_n \ne 0 \). If \( u \coloneqq p_m \) is a unit and \( u q_n = 0 \), then \( q_n = (u^{-1} u) q_n = u^{-1}(u q_n) = u^{-1} \cdot 0 = 0 \), by (F6), (F7), (F5) and @fd3:prp-ring-algebra (b), against \( q_n \ne 0 \); so \( p_m q_n \ne 0 \). A monic \( p \) has \( p_m = 1 \), a unit since \( 1 \cdot 1 = 1 \). This proves the theorem.
 :::
 
-The answer to the prompt. Part (a), including the inequality, uses only (F1)–(F7), (F9) and @fd3:prp-ring-algebra (b): it holds over \( \nZ/6\nZ \) as over \( \nQ \). Part (b) as an equivalence also holds in every ring. "No zero divisors" enters in one line, the first sentence of the last paragraph, and only to decide that \( p_m q_n \ne 0 \); the unit hypothesis is a second, different way to decide the same thing.
+The answer to the prompt. Part (a), including the inequality, uses only (F1)–(F7), (F9), @fd3:prp-ring-algebra (b), (Σ3) of @lem-finite-sums-and-powers (b) and the conventions of @def-degree, all valid in every commutative ring: it holds over \( \nZ/6\nZ \) as over \( \nQ \). Part (b) as an equivalence also holds in every ring. "No zero divisors" enters in one line, the first sentence of the last paragraph, and only to decide that \( p_m q_n \ne 0 \); the unit hypothesis is a second, different way to decide the same thing.
 
 ::: {.warning}
 **The degree formula is not automatic.** In \( (\nZ/6\nZ)[x] \), the opening computation gives
@@ -166,7 +166,7 @@ In words: the zero ring is excluded, and the rule "a product vanishes only if a 
 ::: {#exm-integral-domains}
 [Which Rings Are Integral Domains]
 
-Decide which of the following are integral domains: \( \nZ \); a field, and in particular \( \nQ \) and \( \nZ/p\nZ \) for a prime \( p \); \( \nZ/n\nZ \) for a composite \( n \ge 2 \); \( \nZ/1\nZ \); and \( \nZ \times \nZ \) with componentwise operations, \( (a, b) + (c, d) \coloneqq (a + c, b + d) \) and \( (a, b)(c, d) \coloneqq (ac, bd) \).
+Decide which of the following are integral domains: \( \nZ \); a field, and in particular \( \nQ \) and \( \nZ/p\nZ \) for a prime \( p \); \( \nZ/n\nZ \) for \( n \ge 2 \) not prime (@fd2:def-prime); \( \nZ/1\nZ \); and \( \nZ \times \nZ \) with componentwise operations, \( (a, b) + (c, d) \coloneqq (a + c, b + d) \) and \( (a, b)(c, d) \coloneqq (ac, bd) \).
 :::
 
 ::: {.solution}
@@ -174,13 +174,13 @@ Decide which of the following are integral domains: \( \nZ \); a field, and in p
 
 *A field: yes.* A field has \( 1 \ne 0 \) (@def-field) and no zero divisors (@thm-field-basic-properties (f)). So \( \nQ \) (@fd3:thm-rationals-field) and \( \nZ/p\nZ \) for \( p \) prime (@fd3:thm-integers-mod-prime-field) are integral domains.
 
-*\( \nZ/n\nZ \) for composite \( n \ge 2 \): no.* Write \( n = rs \) with \( 1 < r < n \) and \( 1 < s < n \). Then \( [r] \ne [0] \): otherwise \( n \mid r \) with \( n, r > 0 \), and @fd3:prp-divisibility-rules-integers (e) would give \( n \le r \), against \( r < n \). Likewise \( [s] \ne [0] \). But \( [r][s] = [rs] = [n] = [0] \).
+*\( \nZ/n\nZ \) for \( n \ge 2 \) not prime: no.* By @fd2:def-prime, \( n \) has a positive divisor \( r \notin \{1, n\} \); write \( n = rs \). As in the proof of @fd3:thm-integers-mod-prime-field (\( \Rightarrow \)), \( 1 < r < n \) and \( 0 < s < n \). Then \( [r] \ne [0] \): otherwise \( n \mid r \) with \( n, r > 0 \), and @fd3:prp-divisibility-rules-integers (e) would give \( n \le r \), against \( r < n \). Likewise \( [s] \ne [0] \). But \( [r][s] = [rs] = [n] = [0] \), by the multiplication of @fd3:def-integers-mod-n-ring (@fd3:thm-quotient-ring-by-ideal (b)).
 
 *\( \nZ/1\nZ \): no.* It has \( [1] = [0] \) (@fd3:thm-integers-mod-n-ring (c)); it is the zero ring.
 
 *\( \nZ \times \nZ \): no.* Each ring axiom holds componentwise, because it holds in each coordinate in \( \nZ \), with zero \( (0, 0) \) and one \( (1, 1) \ne (0, 0) \). But \( (1, 0)(0, 1) = (1 \cdot 0, 0 \cdot 1) = (0, 0) \), with both factors non-zero.
 
-Putting the first and third answers together with @fd3:thm-integers-mod-prime-field: for \( n \ge 2 \), \( \nZ/n\nZ \) is an integral domain if and only if it is a field, if and only if \( n \) is prime.
+Putting the second and third answers together with @fd3:thm-integers-mod-prime-field: for \( n \ge 2 \), \( \nZ/n\nZ \) is an integral domain if and only if it is a field, if and only if \( n \) is prime.
 :::
 
 Now the payoff. Over an integral domain the degree formula holds without exception, and the polynomial ring inherits the property it was built from.
@@ -220,12 +220,12 @@ Let \( R \) be an integral domain. Then the units of \( R[x] \) are exactly the 
 :::
 
 ::: {.proof}
-Let \( p \) be a unit of \( R[x] \), with \( pq = 1 \). Since \( 1 \ne 0 \) in \( R[x] \) (@cor-polynomial-no-zero-divisors (a)) and \( 0 \cdot q = 0 \), we have \( p \ne 0 \), and likewise \( q \ne 0 \). By @thm-degree-of-product (b), \( \deg p + \deg q = \deg 1 = 0 \). Two natural numbers with sum \( 0 \) are both \( 0 \), so \( \deg p = \deg q = 0 \): \( p = a x^0 \) and \( q = b x^0 \) with \( a, b \in R \). Then \( (ab) x^0 = (a x^0)(b x^0) = 1 x^0 \) (@thm-polynomial-ring-laws (b)), so \( ab = 1 \) by injectivity of \( a \mapsto a x^0 \), and \( a \in R^{\times} \).
+Let \( p \) be a unit of \( R[x] \), with \( pq = 1 \). Since \( 1 \ne 0 \) in \( R[x] \) (@cor-polynomial-no-zero-divisors (a)) and \( 0 \cdot q = 0 \) (@fd3:prp-ring-algebra (b) in the commutative ring \( R[x] \), @thm-polynomial-ring-laws (a)), we have \( p \ne 0 \), and likewise \( q \ne 0 \). By @thm-degree-of-product (b), \( \deg p + \deg q = \deg 1 = 0 \). Two natural numbers with sum \( 0 \) are both \( 0 \), so \( \deg p = \deg q = 0 \): \( p = a x^0 \) and \( q = b x^0 \) with \( a = p_0 \), \( b = q_0 \in R \) (\( 0 \) is admissible for \( p \) and \( q \) by the facts after @def-degree, so @prp-polynomial-sum-of-monomials with \( N = 0 \) applies). Then \( (ab) x^0 = (a x^0)(b x^0) = 1 x^0 \) (@thm-polynomial-ring-laws (b)), so \( ab = 1 \) by injectivity of \( a \mapsto a x^0 \), and \( a \in R^{\times} \).
 
 Conversely, if \( a \in R^{\times} \) with \( ab = 1 \), then \( (a x^0)(b x^0) = (ab) x^0 = 1 x^0 \), so the constant \( a \) is a unit of \( R[x] \).
 :::
 
-For a field \( F \), \( F^{\times} \) consists of the non-zero elements (by (F8), and \( 0 \) is not a unit since \( 0 \cdot b = 0 \ne 1 \)). So the units of \( F[x] \) are the non-zero constants. Over \( \nZ \) the units of \( \nZ[x] \) are the constants \( 1 \) and \( -1 \) (@fd3:prp-divisibility-rules-integers (g)): \( 2 \) is a unit of \( \nQ[x] \) and not of \( \nZ[x] \).
+For a field \( F \), \( F^{\times} \) consists of the non-zero elements (by (F8), and \( 0 \) is not a unit since \( 0 \cdot b = 0 \ne 1 \) by @fd3:prp-ring-algebra (b) and (F6)). So the units of \( F[x] \) are the non-zero constants. Over \( \nZ \), an integral domain (@exm-integral-domains), the units of \( \nZ[x] \) are the constants \( 1 \) and \( -1 \), since \( \nZ^{\times} = \{1, -1\} \) (the examples after @fd3:def-ring-unit): \( 2 \) is a unit of \( \nQ[x] \) and not of \( \nZ[x] \).
 
 ::: {.warning}
 **Without "integral domain", non-constant units exist.** In \( (\nZ/4\nZ)[x] \),
@@ -272,6 +272,8 @@ The degrees are \( 2 \), \( 1 \), \( 0 \), \( -\infty \) and \( 1 \): the last e
 Let \( R \) be a commutative ring and \( n \in \nN \). The set of **polynomials of degree exactly \( n \)** is \( R[x]_{= n} \coloneqq \{ p \in R[x] : \deg p = n \} \).
 :::
 
+The second description also counts these sets over a finite ring. Over \( \nF_3 = \nZ/3\nZ \), whose elements are \( 0, 1, 2 \) (@fd3:thm-integers-mod-n-ring (b)), \( \nF_3[x]_{\le 1} \) consists of the polynomials \( a_0 + a_1 x \), and distinct pairs \( (a_0, a_1) \) give distinct polynomials, since \( a_0 \) and \( a_1 \) are the coefficients (@prp-polynomial-sum-of-monomials). So it has \( 3 \cdot 3 = 9 \) elements, one for each pair. Those in \( \nF_3[x]_{= 1} \) are the ones with \( a_1 \ne 0 \): \( x, x + 1, x + 2, 2x, 2x + 1, 2x + 2 \), that is \( 3 \cdot 2 = 6 \) of them. The remaining \( 3 \) are the constants \( 0, 1, 2 \).
+
 ::: {#exm-comparing-notations}
 [Comparing the Two Sets]
 
@@ -314,7 +316,7 @@ R[x]_{\le n} = R[x]_{= n} \cup R[x]_{\le n-1} , \qquad R[x]_{= n} \cap R[x]_{\le
 
 (d) In the \( k \)-th coefficient of \( pq \) with \( k \ge m + n \), every term but \( p_m q_n \) has a factor beyond the top of \( p \) or of \( q \), hence vanishes. So the product's top is the product of the tops, and the degree formula holds exactly when that one product in \( R \) is non-zero.
 
-(e) Exactly for \( n \) prime. If \( n \) is prime, \( \nZ/n\nZ \) is an integral domain (@exm-integral-domains), so \( (\nZ/n\nZ)[x] \) is one by @cor-polynomial-no-zero-divisors (a). If \( n \) is composite, \( \nZ/n\nZ \) is not an integral domain (@exm-integral-domains), so \( (\nZ/n\nZ)[x] \) is not one by @cor-polynomial-no-zero-divisors (c).
+(e) Exactly for \( n \) prime. If \( n \) is prime, \( \nZ/n\nZ \) is an integral domain (@exm-integral-domains), so \( (\nZ/n\nZ)[x] \) is one by @cor-polynomial-no-zero-divisors (a). If \( n \) is not prime, \( \nZ/n\nZ \) is not an integral domain (@exm-integral-domains), so \( (\nZ/n\nZ)[x] \) is not one by @cor-polynomial-no-zero-divisors (c).
 :::
 
 ### B. Practice
@@ -357,7 +359,7 @@ Line (iv) fails twice: the terms \( p_i q_{m+n-i} \) with \( i \ne m \) are \( 0
 3. Show that \( 1 + [2]x + [2]x^2 \) is a unit of \( (\nZ/4\nZ)[x] \).
 :::
 
-*Hint: in (b), think of \( (1 + y)(1 - y) \).*
+*Hint: in (b), what is \( [3]^2 \) in \( \nZ/9\nZ \)?*
 :::
 
 ::: {.solution}
@@ -386,9 +388,9 @@ Let \( p \) be a prime and \( n \in \nN \). How many elements do \( \nF_p[x]_{\l
 ::: {.solution}
 Since \( \nF_p = \nZ/p\nZ \) has the \( p \) elements \( 0, 1, \dots, p - 1 \) (@fd3:thm-integers-mod-n-ring (b)), the non-zero elements \( 1, \dots, p - 1 \) form a set with \( p - 1 \) elements.
 
-*At most \( n \).* By the description after @def-polynomials-bounded-degree, \( \nF_p[x]_{\le n} \) is the set of polynomials with \( p_k = 0 \) for \( k > n \). By @exr-polynomials-as-sequences-b1 with \( N = n \), \( q \mapsto (q_0, \dots, q_n) \) is a bijection from this set onto \( \nF_p^{\,n+1} \). A tuple \( (a_0, \dots, a_n) \) is the same as the function \( \{1, \dots, n + 1\} \to \nF_p \), \( i \mapsto a_{i-1} \), so by @fd2:exr-finite-sets-c2 (b) there are \( p^{n+1} \) of them. So \( \nF_p[x]_{\le n} \) has \( p^{n+1} \) elements.
+*At most \( n \).* By the description after @def-polynomials-bounded-degree, \( \nF_p[x]_{\le n} \) is the set of polynomials \( q \) with \( q_k = 0 \) for every \( k > n \). By @exr-polynomials-as-sequences-b1 with \( N = n \), \( q \mapsto (q_0, \dots, q_n) \) is a bijection from this set onto \( \nF_p^{\,n+1} \) (for \( n = 0 \), with \( \nF_p^{\,1} \) read as \( \nF_p \), as there). A tuple \( (a_0, \dots, a_n) \) is the same as the function \( \{1, \dots, n + 1\} \to \nF_p \), \( i \mapsto a_{i-1} \), so by @fd2:exr-finite-sets-c2 (b) there are \( p^{n+1} \) of them. So \( \nF_p[x]_{\le n} \) has \( p^{n+1} \) elements.
 
-*Exactly \( n \).* The same bijection maps \( \nF_p[x]_{= n} \) onto the tuples \( (a_0, \dots, a_n) \) with \( a_n \ne 0 \): such a tuple is a pair of an arbitrary \( (a_0, \dots, a_{n-1}) \), \( p^n \) choices as before, and a non-zero \( a_n \), \( p - 1 \) choices. By @fd2:exr-finite-sets-c2 (a), there are \( (p - 1)p^n \) of them. For example, over \( \nF_2 \) there are \( 2^3 = 8 \) polynomials of degree at most \( 2 \) and \( 1 \cdot 2^2 = 4 \) of degree exactly \( 2 \).
+*Exactly \( n \).* The same bijection maps \( \nF_p[x]_{= n} \) onto the tuples \( (a_0, \dots, a_n) \) with \( a_n \ne 0 \): such a tuple is a pair of an arbitrary \( (a_0, \dots, a_{n-1}) \), \( p^n \) choices as before, and a non-zero \( a_n \), \( p - 1 \) choices. By @fd2:exr-finite-sets-c2 (a), there are \( (p - 1)p^n \) of them. (For \( n = 0 \) these are the \( p - 1 \) non-zero constants, and \( (p - 1)p^0 = p - 1 \).) For example, over \( \nF_2 \) there are \( 2^3 = 8 \) polynomials of degree at most \( 2 \) and \( 1 \cdot 2^2 = 4 \) of degree exactly \( 2 \).
 :::
 
 ### C. Going deeper
@@ -400,7 +402,7 @@ Let \( R \) be a commutative ring. Prove @thm-degree-of-product (a) and (b) (for
 :::
 
 ::: {.solution}
-*Degree of a product.* Let \( p, q \ne 0 \), \( m = \deg p \), \( n = \deg q \), so \( p_m \ne 0 \), \( q_n \ne 0 \), and \( p_i = 0 \) for \( i > m \), \( q_j = 0 \) for \( j > n \). Let \( k \ge m + n \) and \( 0 \le i \le k \). If \( i > m \), then \( p_i = 0 \). If \( i \le m \), then \( k - i \ge n \), with equality only when \( k = m + n \) and \( i = m \); otherwise \( q_{k-i} = 0 \). So for \( k > m + n \) every term \( p_i q_{k-i} \) of \( (pq)_k \) is \( 0 \) (@fd3:prp-ring-algebra (b)), and \( (pq)_k = 0 \); for \( k = m + n \), every term with \( i \ne m \) is \( 0 \), and the sum is \( p_m q_n \) by (Σ3) of @lem-finite-sums-and-powers. Hence \( \deg(pq) \le m + n \) when \( pq \ne 0 \), and trivially when \( pq = 0 \); if \( p = 0 \) or \( q = 0 \), then \( pq = 0 \) and both sides are \( -\infty \).
+*Degree of a product.* Let \( p, q \ne 0 \), \( m = \deg p \), \( n = \deg q \), so \( p_m \ne 0 \), \( q_n \ne 0 \), and \( p_i = 0 \) for \( i > m \), \( q_j = 0 \) for \( j > n \). Let \( k \ge m + n \) and \( 0 \le i \le k \). If \( i > m \), then \( p_i = 0 \). If \( i \le m \), then \( k - i \ge n \), with equality only when \( k = m + n \) and \( i = m \); otherwise \( q_{k-i} = 0 \). So for \( k > m + n \) every term \( p_i q_{k-i} \) of \( (pq)_k \) is \( 0 \) (@fd3:prp-ring-algebra (b) with (F6)), and \( (pq)_k = 0 \); for \( k = m + n \), every term with \( i \ne m \) is \( 0 \), and the sum is \( p_m q_n \) by (Σ3) of @lem-finite-sums-and-powers. Hence \( \deg(pq) \le m + n \) when \( pq \ne 0 \), and trivially when \( pq = 0 \); if \( p = 0 \) or \( q = 0 \), then \( pq = 0 \) and both sides are \( -\infty \).
 
 If \( p_m q_n \ne 0 \), then \( pq \) has a non-zero coefficient at \( m + n \) and none beyond, so \( \deg(pq) = m + n \) and \( \operatorname{lc}(pq) = p_m q_n \). If \( p_m q_n = 0 \), all coefficients from \( m + n \) on vanish, and \( \deg(pq) < m + n \).
 
@@ -410,9 +412,10 @@ If \( p_m q_n \ne 0 \), then \( pq \) has a non-zero coefficient at \( m + n \) 
 
 **Marking scheme.** (10 points)
 
-- 3: shows that every coefficient of \( pq \) above \( m + n \) vanishes, treating both cases \( i > m \) and \( i \le m \) of the index argument.
+- 3: shows that every coefficient of \( pq \) above \( m + n \) vanishes, treating both cases \( i > m \) and \( i \le m \) of the index argument, and the case \( p = 0 \) or \( q = 0 \) of the inequality.
 - 2: shows that \( (pq)_{m+n} = \operatorname{lc}(p)\operatorname{lc}(q) \), with the other terms of that coefficient shown to be \( 0 \).
-- 2: derives \( \deg(pq) = \deg p + \deg q \) and \( \operatorname{lc}(pq) = \operatorname{lc}(p)\operatorname{lc}(q) \) from \( \operatorname{lc}(p)\operatorname{lc}(q) \ne 0 \), and that this holds when \( R \) has no zero divisors.
+- 1: derives \( \deg(pq) = \deg p + \deg q \) and \( \operatorname{lc}(pq) = \operatorname{lc}(p)\operatorname{lc}(q) \) from \( \operatorname{lc}(p)\operatorname{lc}(q) \ne 0 \), and that this holds when \( R \) has no zero divisors.
+- 1: shows the converse direction of the equivalence: \( \operatorname{lc}(p)\operatorname{lc}(q) = 0 \) gives \( \deg(pq) < m + n \).
 - 2: concludes that \( R[x] \) has no zero divisors and \( 1 \ne 0 \) in \( R[x] \).
 - 1: proves the converse through the constants.
 
@@ -444,27 +447,29 @@ The argument can also be repaired at the **bottom**. Let \( i_0 \) and \( j_0 \)
 <!-- dependency ledger
 def-degree (claim): (opening, warning) ([2]x + [1])([3]x^2 + x) = [5]x^2 + x; 6x^3 + 5x^2 + x over Z; coefficients 0, 1, 5, 6 | def-polynomial-ring (cited), arithmetic in Z and Z/6Z (fd3:exm-integers-mod-six cited); verify/ch04/def-degree.py
 def-degree (claim): degree exists: S non-empty, bounded above by an admissible N, greatest element | fd3:prp-naturals-embed-integers, fd3:prp-integer-least-element (cited)
-def-degree (example): 6x^3 + 5x^2 + x read in Z/5Z is x^3 + x | [6] = [1], [5] = [0] in Z/5Z (fd3:def-integers-mod-n-ring, numerals); verify/ch04/def-degree.py
+def-degree (example): 6x^3 + 5x^2 + x read in Z/5Z is x^3 + x | [6] = [1], [5] = [0] in Z/5Z (fd3:def-integers-mod-n-ring, numerals; numeral convention of exm-elements-of-rx, cited); verify/ch04/def-degree.py
 def-degree (example): if 1 = 0 then R = {0} | fd3:prp-ring-algebra (b) (cited), (F7)
 def-degree (claim): (why -infty) 0 . q = 0 for every q | fd3:prp-ring-algebra (b) applied coefficientwise, as in the proof of thm-degree-of-product (a)
 thm-degree-of-sum (proof): k > M implies k > deg p and k > deg q; max on N u {-infty} | order of N (fd3:thm-omega-order) with the conventions of def-degree
 thm-degree-of-product (proof): index arithmetic: k >= m + n, i <= m gives k - i >= n, with equality only if k = m + n and i = m; k - i in N for i <= k | N in Z (fd3:prp-naturals-embed-integers), fd3:thm-omega-arithmetic-laws, fd3:thm-omega-order, ordered-ring rules fd3:prp-ordered-ring-rules (b) in Z
 thm-degree-of-product (proof): a sum all of whose terms are 0 is 0 | (Sigma3) of lem-finite-sums-and-powers (b) with j = 0 (cited)
 thm-degree-of-product (proof): unit times non-zero is non-zero | fd3:def-ring-unit (cited) with (F5)-(F7), fd3:prp-ring-algebra (b), written out in the proof
-thm-degree-of-product (claim): (answer to prompt) part (a) uses only (F1)-(F7), (F9), prp-ring-algebra (b); "no zero divisors" only in the first sentence of the last paragraph of (b) | meta-claim about the proof on the page; checkable line by line
+thm-degree-of-product (claim): (answer to prompt) part (a) uses only (F1)-(F7), (F9), prp-ring-algebra (b), (Sigma3) of lem-finite-sums-and-powers (b), the conventions of def-degree; "no zero divisors" only in the first sentence of the last paragraph of (b) | meta-claim about the proof on the page; checkable line by line
 exm-integral-domains (solution): Z x Z componentwise is a commutative ring | each axiom componentwise from fd3:thm-integers-commutative-ring; stated, one line, as the blueprint allows
-exm-integral-domains (solution): composite n = rs with 1 < r, s < n | n >= 2 not prime (prime as in fd3 F3.5 §01, fd2:def-prime) has a positive divisor r with 1 < r < n, and then 1 < s < n by fd3:prp-divisibility-rules-integers (e) and the order rules; used silently; [r][s] = [rs] by fd3:thm-quotient-ring-by-ideal (b) through fd3:def-integers-mod-n-ring
+exm-integral-domains (solution): n >= 2 not prime gives n = rs with 1 < r < n, 0 < s < n | fd2:def-prime (cited), then as in the proof of fd3:thm-integers-mod-prime-field (=>) (cited); [r][s] = [rs] by fd3:thm-quotient-ring-by-ideal (b) through fd3:def-integers-mod-n-ring (cited)
 cor-polynomial-no-zero-divisors (proof): q - r = 0 gives q = r; p(q - r) = pq - pr | (F1)-(F4), (F9), fd3:prp-ring-algebra (c) (cited)
 cor-polynomial-no-zero-divisors (claim): R = Q is the polynomial algebra behind fd3:exm-rational-function-field | pays STATUS row F3.9 §02 (polynomial half); prose
 cor-polynomial-no-zero-divisors (claim): [2] . [3]x = [0] in (Z/6Z)[x] | def-polynomial-ring with thm-polynomial-ring-laws (d); [6] = [0]; verify/ch04/def-degree.py
 prp-polynomial-units (proof): two natural numbers with sum 0 are both 0 | fd3:thm-omega-arithmetic-laws / fd3:thm-omega-order (m <= m + n), used silently
-prp-polynomial-units (claim): units of Z[x] are 1, -1 | fd3:prp-divisibility-rules-integers (g) (cited): ab = 1 gives a | 1
+prp-polynomial-units (proof): deg p = 0 gives p = p_0 x^0; 0 . q = 0 in R[x] | prp-polynomial-sum-of-monomials with N = 0 and the facts after def-degree (cited); fd3:prp-ring-algebra (b) in R[x] via thm-polynomial-ring-laws (a) (cited)
+prp-polynomial-units (claim): units of Z[x] are 1, -1; 0 is not a unit of a field | Z an integral domain (exm-integral-domains, cited), Z^x = {1, -1} (examples after fd3:def-ring-unit, cited); 0 . b = 0 by fd3:prp-ring-algebra (b), (F6) (cited)
 prp-polynomial-units (claim): (warning) (1 + [2]x)^2 = 1 + [4]x + [4]x^2 = 1 in (Z/4Z)[x] | product formula; verify/ch04/prp-polynomial-units.py
 def-polynomials-bounded-degree (claim): -0 = 0 | fd3:prp-ring-algebra (a) (uniqueness of negatives, 0 + 0 = 0), used silently
+def-polynomials-exact-degree (example): F_3[x]_{<=1} has 3 . 3 = 9 elements, F_3[x]_{=1} has 3 . 2 = 6, 3 constants | fd3:thm-integers-mod-n-ring (b), prp-polynomial-sum-of-monomials (cited); counted by listing; verify/ch04/exr-degree-b3.py
 def-polynomials-bounded-degree (claim): interpolation through n + 1 points; the linear-algebra companion treats R[x]_{<=n} as a vector space | prose motivation; interpolation is F4.5's (blueprint ch05.md), no chapter named; nothing depends on it
 exm-comparing-notations (claim): in the linear-algebra companion one set is a subspace, the other not | companion (LA1.1), prose pointer; nothing depends on it
 exr-degree-a1 (solution): (b) (pq)_3 = 6 resp. [0] | verify/ch04/def-degree.py
 exr-degree-b2 (solution): (1 + [3]x)(1 - [3]x) = 1 in Z/9Z; -[3] = [6]; (1 + [2]x + [2]x^2)^2 coefficients 1, [4], [8], [8], [4] | product formula; verify/ch04/exr-degree-b2.py
-exr-degree-b3 (solution): n-tuples are functions {1, ..., n+1} -> F_p; counts p^(n+1), (p - 1)p^n; {1, ..., p - 1} has p - 1 elements | fd2:exr-finite-sets-c2 (a), (b) (cited; an exercise citing an earlier exercise), exr-polynomials-as-sequences-b1 (cited), fd3:thm-integers-mod-n-ring (b) restricted to {1, ..., p - 1} (used silently); verify/ch04/exr-degree-b3.py
+exr-degree-b3 (solution): n-tuples are functions {1, ..., n+1} -> F_p; counts p^(n+1), (p - 1)p^n; {1, ..., p - 1} has p - 1 elements; n = 0 reads F_p^1 as F_p (convention of exr-polynomials-as-sequences-b1) | fd2:exr-finite-sets-c2 (a), (b) (cited; an exercise citing an earlier exercise), exr-polynomials-as-sequences-b1 (cited), fd3:thm-integers-mod-n-ring (b) restricted to {1, ..., p - 1} (used silently); verify/ch04/exr-degree-b3.py
 exr-degree-c2 (solution): least non-zero positions exist | fd3:prp-integer-least-element (cited)
 -->

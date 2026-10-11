@@ -1,5 +1,5 @@
 """exr-degree-b3: |F_p[x]_{<=n}| = p^(n+1), |F_p[x]_{=n}| = (p-1)p^n; the F_2 example 8 and 4."""
-QUOTED = {"F2 at most 2": 8, "F2 exactly 2": 4, "2^3": (2, 3), "1*2^2": (1, 2, 2)}
+QUOTED = {"F2 at most 2": 8, "F2 exactly 2": 4, "2^3": (2, 3), "1*2^2": (1, 2, 2), "F3 at most 1 (text after def-polynomials-exact-degree)": 9, "F3 exactly 1": 6}
 
 # Polynomials as coefficient lists (index k = coefficient of x^k), over Z or Z/nZ (n given).
 from fractions import Fraction
@@ -56,4 +56,8 @@ for p in (2, 3, 5):
         assert len([t for t in allp if deg(t) is not None and deg(t) <= n]) + 1 == p ** (n + 1)
         assert len([t for t in allp if deg(t) == n]) == (p - 1) * p ** n
 assert 2 ** 3 == QUOTED["F2 at most 2"] and 1 * 2 ** 2 == QUOTED["F2 exactly 2"]
+f3 = [red(t) for t in itertools.product(range(3), repeat=2)]
+assert len(set(map(tuple, f3))) == QUOTED["F3 at most 1 (text after def-polynomials-exact-degree)"] == 3 * 3
+assert len([t for t in f3 if deg(t) == 1]) == QUOTED["F3 exactly 1"] == 3 * 2
+assert len([t for t in f3 if deg(t) is None or deg(t) == 0]) == 3
 print("exr-degree-b3: ok")

@@ -40,7 +40,7 @@ since \( p_{N+j+1} = 0 \) and \( 0 \cdot c^{N+j+1} = 0 \) (@fd3:prp-ring-algebra
 - **A monomial.** For \( a x^m \), take \( N = m \): every term with \( k \ne m \) is \( 0 \cdot c^k = 0 \), so (Σ3) of @lem-finite-sums-and-powers gives \( (a x^m)(c) = a c^m \). In particular a constant \( a = a x^0 \) has value \( a c^0 = a \cdot 1 = a \) at every \( c \), and \( x = 1 x^1 \) has value \( 1 \cdot c^1 = c \).
 
 ::: {.warning}
-**\( p(2) \) is a value; \( p_2 \) is a coefficient.** For \( p = x^2 - 3x + 2 \in \nZ[x] \), \( p_2 = 1 \) but \( p(2) = 0 \), and \( p_0 = 2 \) but \( p(0) = 2 \) as well, which is a coincidence of position \( 0 \), not a rule. Over \( \nZ \) both are integers, which is why this book never writes \( p(k) \) for a coefficient.
+**\( p(2) \) is a value; \( p_2 \) is a coefficient.** For \( p = x^2 - 3x + 2 \in \nZ[x] \), \( p_2 = 1 \) but \( p(2) = 0 \). At \( 0 \) the two always agree, \( p(0) = p_0 \), because \( 0^k = 0 \) for \( k \ge 1 \); at any other position they differ in general. Over \( \nZ \) both are integers, which is why this book never writes \( p(k) \) for a coefficient.
 :::
 
 ## Evaluation respects the operations
@@ -83,14 +83,14 @@ On monomials \( a x^m \) and \( b x^n \), @lem-monomial-product (b) gives \( (a 
 \[
 \Phi(a x^m, b x^n) = (ab) c^{m+n} = (ab)(c^m c^n) = (a c^m)(b c^n) = \Psi(a x^m, b x^n) ,
 \]
-by the value of a monomial, the power law \( c^{m+n} = c^m c^n \) (@lem-finite-sums-and-powers (c)), and (F5) and (F6) to move \( b \) past \( c^m \). By @lem-check-on-monomials with \( m = 2 \) and \( T = R \), \( \Phi = \Psi \). This proves the theorem.
+by the value of a monomial, the power law \( c^{m+n} = c^m c^n \) (@lem-finite-sums-and-powers (c)), and (F5) and (F6) to move \( b \) past \( c^m \). By @lem-check-on-monomials with two arguments and \( T = R \), \( \Phi = \Psi \). This proves the theorem.
 :::
 
 ::: {.remark}
-The monomial line moves the coefficient \( b \) past the power \( c^m \); that is the one place where the commutativity of \( R \) is used. The same proof works for substituting a square matrix into a polynomial with coefficients in a field, as in the linear-algebra companion, Chapter 0, because there \( b \) is a scalar, and scalars commute with every matrix; two matrices need not commute, and nothing in the proof asks them to.
+The monomial line moves the coefficient \( b \) past the power \( c^m \); that is the one step that needs two elements of \( R \) to commute. Elsewhere (F6) is used only to get the mirror forms of (F7), (F9) and @fd3:prp-ring-algebra (b), namely \( 1 \cdot c = c \), \( (a + b)c = ac + bc \) and \( 0 \cdot c = 0 \). The same proof works for substituting a square matrix into a polynomial with coefficients in a field, as in the linear-algebra companion, Chapter 0, because there the mirror laws hold for matrices too, \( b \) is a scalar, and scalars commute with every matrix; two matrices need not commute, and nothing in the proof asks them to.
 :::
 
-Two consequences are used constantly. First, a root of a factor is a root of the product: if \( q(c) = 0 \), then \( (pq)(c) = p(c) \cdot 0 = 0 \). Second, if \( R \) has no zero divisors, the converse holds: \( (pq)(c) = p(c) q(c) = 0 \) forces \( p(c) = 0 \) or \( q(c) = 0 \). This is the school method for solving \( (x - 1)(x - 2) = 0 \). In \( \nQ[x] \), \( (x - 1)(x - 2) = x^2 - 3x + 2 \) by the product formula, so the roots of \( x^2 - 3x + 2 \) in \( \nQ \) are exactly the \( c \) with \( c - 1 = 0 \) or \( c - 2 = 0 \): the numbers \( 1 \) and \( 2 \) found above, and no others.
+Two consequences are used constantly. First, a root of a factor is a root of the product: if \( q(c) = 0 \), then \( (pq)(c) = p(c) \cdot 0 = 0 \). Second, if \( R \) has no zero divisors, the converse holds: \( (pq)(c) = p(c) q(c) = 0 \) forces \( p(c) = 0 \) or \( q(c) = 0 \). This is the school method for solving \( (x - 1)(x - 2) = 0 \). In \( \nQ[x] \), \( (x - 1)(x - 2) = x^2 - 3x + 2 \) by the product formula, so, since \( \nQ \) is an integral domain (@exm-integral-domains) and \( (x - a)(c) = c - a \) by the sum rule and the value of a constant, the roots of \( x^2 - 3x + 2 \) in \( \nQ \) are exactly the \( c \) with \( c - 1 = 0 \) or \( c - 2 = 0 \): the numbers \( 1 \) and \( 2 \) found above, and no others.
 
 ## Ring homomorphisms
 
@@ -110,6 +110,8 @@ and \( \varphi(1) = 1 \).
 
 In words: computing in \( R \) and then applying \( \varphi \) gives the same result as applying \( \varphi \) and then computing in \( S \). The sum and product on the left are those of \( R \), on the right those of \( S \). The condition on \( 1 \) is not a consequence of the other two, as the zero map below shows.
 
+Between two fields this is exactly a homomorphism of fields (@def-field-homomorphism). The consequences below are the ring versions of @prp-field-homomorphism-properties (a), the composites in (e) and the powers in (f), with the same proofs. Parts (b)–(d) of that proposition do not carry over: the quotient map \( \nZ \to \nZ/n\nZ \) of @exm-ring-homomorphisms (i) is not injective.
+
 *Consequences.* Let \( \varphi \colon R \to S \) be a ring homomorphism.
 
 - \( \varphi(0) = 0 \). Let \( z \coloneqq \varphi(0) \). Then \( z + z = \varphi(0 + 0) = z \), by (F3) in \( R \). Adding \( -z \) to both sides and using (F2), (F4) and (F3) in \( S \) gives \( z = 0 \). (This is cancellation, not the uniqueness of \( 0 \) in @fd3:prp-ring-algebra (a): uniqueness concerns an element that is neutral for **every** element, and we only know \( z + z = z \).)
@@ -120,7 +122,7 @@ In words: computing in \( R \) and then applying \( \varphi \) gives the same re
 ::: {#exm-ring-homomorphisms}
 [Ring Homomorphisms and Two Impostors]
 
-Which of the following are ring homomorphisms? (i) The quotient map \( \nZ \to \nZ/n\nZ \), \( a \mapsto [a] \), for \( n \in \nZ_{>0} \). (ii) The constants \( R \to R[x] \), \( a \mapsto a x^0 \). (iii) The map \( \nZ/mn\nZ \to \nZ/m\nZ \times \nZ/n\nZ \), \( [x]_{mn} \mapsto ([x]_m, [x]_n) \), for coprime \( m, n \in \nZ_{>0} \). (iv) \( \nZ \to \nZ \), \( a \mapsto 2a \). (v) The zero map \( \nZ \to \nZ \), \( a \mapsto 0 \).
+Which of the following are ring homomorphisms? (i) The quotient map \( \nZ \to \nZ/n\nZ \), \( a \mapsto [a] \), for \( n \in \nZ_{>0} \). (ii) The constants \( R \to R[x] \), \( a \mapsto a x^0 \). (iii) The map \( \nZ/mn\nZ \to \nZ/m\nZ \times \nZ/n\nZ \), \( [a]_{mn} \mapsto ([a]_m, [a]_n) \), for coprime \( m, n \in \nZ_{>0} \). (iv) \( \nZ \to \nZ \), \( a \mapsto 2a \). (v) The zero map \( \nZ \to \nZ \), \( a \mapsto 0 \).
 :::
 
 ::: {.solution}
@@ -167,7 +169,7 @@ The attempt finds the value at once: \( 3x^2 + 1 \) is the constant \( 3 \) time
 :::
 
 ::: {.proof}
-*(a) Well defined.* If \( N \) is admissible, then so is \( N + j \), and each added term is \( \varphi(0) s^k = 0 \cdot s^k = 0 \), by \( \varphi(0) = 0 \) (after @def-ring-homomorphism) and @fd3:prp-ring-algebra (b); as for @def-polynomial-evaluation, the value does not depend on \( N \). Taking \( N = m \) for a monomial, (Σ3) of @lem-finite-sums-and-powers gives
+*(a) Well defined.* If \( N \) is admissible, then so is \( N + j \), and each added term is \( \varphi(0) s^k = 0 \cdot s^k = 0 \), by \( \varphi(0) = 0 \) (after @def-ring-homomorphism) and @fd3:prp-ring-algebra (b) with (F6); as for @def-polynomial-evaluation, the value does not depend on \( N \). Taking \( N = m \) for a monomial, (Σ3) of @lem-finite-sums-and-powers gives
 \[
 \Phi(a x^m) = \varphi(a) \, s^m .
 \]
@@ -189,7 +191,7 @@ by additivity of \( \varphi \), (F6) and (F9) in \( S \), and (Σ1).
 &= \Phi(a x^m) \, \Phi(b x^n) .
 \end{aligned}
 \]
-By @lem-check-on-monomials with \( m = 2 \) and \( T = S \), \( \Phi(pq) = \Phi(p)\Phi(q) \) for all \( p, q \).
+By @lem-check-on-monomials with two arguments and \( T = S \), \( \Phi(pq) = \Phi(p)\Phi(q) \) for all \( p, q \).
 
 *The one, the constants, \( x \).* \( \Phi(1) = \Phi(1 x^0) = \varphi(1) s^0 = 1 \cdot 1 = 1 \). For a constant, \( \Phi(a x^0) = \varphi(a) s^0 = \varphi(a) \). And \( \Phi(x) = \Phi(1 x^1) = \varphi(1) s^1 = s \). So \( \Phi \) is a ring homomorphism with the two properties.
 
@@ -197,10 +199,10 @@ By @lem-check-on-monomials with \( m = 2 \) and \( T = S \), \( \Phi(pq) = \Phi(
 \[
 \Psi(a x^n) = \Psi(a x^0) \, \Psi(x)^n = \varphi(a) \, s^n = \Phi(a x^n) ,
 \]
-by multiplicativity and the power property of ring homomorphisms (after @def-ring-homomorphism). Both \( \Psi \) and \( \Phi \) are additive maps \( R[x] \to S \) that agree on monomials, so \( \Psi = \Phi \) by @lem-check-on-monomials with \( m = 1 \). This proves the theorem.
+by multiplicativity and the power property of ring homomorphisms (after @def-ring-homomorphism). Both \( \Psi \) and \( \Phi \) are additive maps \( R[x] \to S \) that agree on monomials, so \( \Psi = \Phi \) by @lem-check-on-monomials with one argument. This proves the theorem.
 :::
 
-The answer to the prompt. Commutativity of \( S \) is used in one place, the middle line of the monomial computation, to move \( \varphi(b) \) past \( s^m \). The condition \( \varphi(1) = 1 \) is used twice, for \( \Phi(1) = 1 \) and for \( \Phi(x) = s \). If \( S \) is not commutative, the same proof goes through provided \( s \) commutes with every \( \varphi(b) \), since that is all the monomial line asks; this is the case of a square matrix and scalar coefficients, from the remark after @thm-evaluation-respects-operations.
+The answer to the prompt. Commutativity of \( S \) does real work in one place, the middle line of the monomial computation, where it moves \( \varphi(b) \) past \( s^m \). Its other uses (\( 0 \cdot s^k = 0 \), the right distributive law \( (u + v)w = uw + vw \) in the additivity steps, and \( 1 \cdot s = s \)) only supply the mirror forms of @fd3:prp-ring-algebra (b), (F9) and (F7), which a two-sided list of ring axioms gives directly. The condition \( \varphi(1) = 1 \) is used twice, for \( \Phi(1) = 1 \) and for \( \Phi(x) = s \). If \( S \) is not commutative but satisfies those two-sided laws, the same proof goes through provided \( s \) commutes with every \( \varphi(b) \), since that is all the monomial line asks; this is the case of a square matrix and scalar coefficients, from the remark after @thm-evaluation-respects-operations.
 
 ::: {.remark}
 With \( S = R \), \( \varphi = \id_R \) and \( s = c \), the map \( \Phi \) is \( p \mapsto p(c) \), and part (a) contains @thm-evaluation-respects-operations. We proved evaluation first because it is the case used most, and its proof is the substitution proof with \( \varphi \) invisible.
@@ -210,7 +212,7 @@ We call the move of (b) **a homomorphism out of \( R[x] \) is fixed by the const
 
 ## Changing coefficients and composing
 
-Two special cases of the substitution principle get names, because later chapters use them by name.
+Two special cases of the substitution principle get names: the change of coefficients, which the algebra volumes of the series use for reduction modulo a prime, and composition, which Section 4.5 uses.
 
 The first moves the coefficients and keeps \( x \): take the target \( S[x] \), the homomorphism "\( \varphi \), then a constant of \( S[x] \)", and \( s = x \).
 
@@ -322,7 +324,7 @@ This is @prp-polynomial-function-map (d) with \( R = \nF_2 \), \( c_1 = 0 \), \(
 :::
 
 ::: {.warning}
-**A polynomial is not its function.** "\( p(c) = 0 \) for every \( c \in R \)" does not give \( p = 0 \): over every finite ring with \( 1 \ne 0 \) the polynomial \( P \) of @prp-polynomial-function-map (d) is a counterexample, and over \( \nF_2 \) it is \( x^2 + x \). Over \( \nQ \) the implication does hold: Chapter 5 proves it for every infinite field, by bounding the number of roots of a non-zero polynomial, and it reaches \( \nZ[x] \) through \( \nZ \subseteq \nQ \) and a change of coefficients. In this chapter, two polynomials are equal only when their coefficients are equal.
+**A polynomial is not its function.** "\( p(c) = 0 \) for every \( c \in R \)" does not give \( p = 0 \): over every finite ring with \( 1 \ne 0 \) the polynomial \( P \) of @prp-polynomial-function-map (d) is a counterexample, and over \( \nF_2 \) it is \( x^2 + x \). Over \( \nQ \) the implication does hold: Chapter 5 proves it for every infinite field, by bounding the number of roots of a non-zero polynomial. Over \( \nZ \) it follows, though we do not prove it here: read \( p \in \nZ[x] \) as a polynomial with the same coefficients in \( \nQ[x] \), where it vanishes at infinitely many points. In this chapter, two polynomials are equal only when their coefficients are equal.
 :::
 
 ## Exercises
@@ -346,7 +348,7 @@ These questions are about @thm-polynomial-substitution and its proof, except the
 ::: {.solution}
 (a) Twice: for \( \Phi(1) = \varphi(1) s^0 = 1 \), and for \( \Phi(x) = \varphi(1) s^1 = s \).
 
-(b) Once: in the monomial computation, to rewrite \( \varphi(a)\varphi(b) s^m s^n \) as \( \bigl(\varphi(a) s^m\bigr)\bigl(\varphi(b) s^n\bigr) \), which moves \( \varphi(b) \) past \( s^m \) by (F6) in \( S \).
+(b) Essentially once: in the monomial computation, to rewrite \( \varphi(a)\varphi(b) s^m s^n \) as \( \bigl(\varphi(a) s^m\bigr)\bigl(\varphi(b) s^n\bigr) \), which moves \( \varphi(b) \) past \( s^m \) by (F6) in \( S \). The proof also cites (F6) in \( S \) for \( 0 \cdot s^k = 0 \), for the right distributive law in the additivity steps, and for \( 1 \cdot s = s \); these uses only give the mirror forms of \( a \cdot 0 = 0 \), (F9) and (F7). An answer that lists them too, with this distinction, is correct.
 
 (c) The coefficients of \( p \) are \( 1, 3, 1 \), so \( \Phi(p) = [1] + [3][2] + [1][2]^2 = [1 + 6 + 4] = [11] = [1] \). For the uniqueness half: \( 3x^2 \) is the product of the constant \( 3 \) and \( x^2 \) (@thm-polynomial-ring-laws (c)), so \( \Psi(3x^2) = \Psi(3)\Psi(x)^2 = [3][2]^2 = [12] = [2] \). No other value is possible, because \( \Psi \) respects products.
 
@@ -380,7 +382,7 @@ List the elements of \( \nF_2[x]_{\le 2} \) with their degrees and their functio
 :::
 
 ::: {.solution}
-By @def-polynomials-bounded-degree, the elements are \( a_0 + a_1 x + a_2 x^2 \) with \( a_i \in \{0, 1\} \); there are eight (@exr-degree-b3 with \( p = 2 \), \( n = 2 \)). The value at \( 0 \) is \( a_0 \), and the value at \( 1 \) is \( a_0 + a_1 + a_2 \) in \( \nF_2 \).
+By @def-polynomials-bounded-degree, the elements are \( a_0 + a_1 x + a_2 x^2 \) with \( a_i \in \{0, 1\} \); there are eight (@exr-degree-b3 for \( \nF_2 \), \( n = 2 \)). The value at \( 0 \) is \( a_0 \), and the value at \( 1 \) is \( a_0 + a_1 + a_2 \) in \( \nF_2 \).
 \[
 \begin{array}{l|c|c|c}
 p & \deg p & p(0) & p(1) \\ \hline
@@ -440,8 +442,8 @@ by multiplicativity of \( \varphi \), \( s^{m+n} = s^m s^n \), and (F5), (F6) in
 
 - 1: gives the formula for \( \Phi \) and proves it does not depend on \( N \), from \( \varphi(0) = 0 \).
 - 1: proves \( \Phi \) additive.
-- 3: reduces multiplicativity to monomials, naming additivity of both sides in each argument separately.
-- 2: computes the monomial case, naming the use of commutativity in \( S \).
+- 3: reduces multiplicativity to monomials (in one argument or in both), justifying the additivity it uses.
+- 2: computes the monomial case correctly, justifying the reordering of factors in \( S \) (commutativity).
 - 1: shows \( \Phi(1) = 1 \) and \( \Phi(x) = s \) (and \( \Phi(a) = \varphi(a) \)).
 - 2: proves uniqueness: the values on monomials are forced, then additivity.
 
@@ -461,7 +463,7 @@ The second half is blank. *Name the move, then complete it.*
 :::
 
 ::: {.solution}
-The move is **check on monomials, extend by additivity**.
+One move is **check on monomials, extend by additivity**.
 
 Let \( p = a x^n \). Since \( u \mapsto u \circ q \) is a ring homomorphism fixing the constant \( a \) and sending \( x \) to \( q \), and \( a x^n \) is the product of \( a \) and \( x^n \) (@thm-polynomial-ring-laws (c)),
 \[
@@ -471,7 +473,9 @@ by the power property of ring homomorphisms (after @def-ring-homomorphism). Appl
 \[
 (a q^n) \circ r = (a \circ r)(q \circ r)^n = a \, (q \circ r)^n .
 \]
-On the other side, the same computation with \( q \circ r \) in place of \( q \) gives \( (a x^n) \circ (q \circ r) = a \, (q \circ r)^n \). So the two sides agree on every monomial. Both are additive in \( p \), so by @lem-check-on-monomials (with \( m = 1 \) and \( T = R[x] \)) they agree for every \( p \).
+On the other side, the same computation with \( q \circ r \) in place of \( q \) gives \( (a x^n) \circ (q \circ r) = a \, (q \circ r)^n \). So the two sides agree on every monomial. Both are additive in \( p \), so by @lem-check-on-monomials (with one argument and \( T = R[x] \)) they agree for every \( p \).
+
+Also correct: the move **a homomorphism out of \( R[x] \) is fixed by the constants and \( x \)**. Both sides are ring homomorphisms \( R[x] \to R[x] \) (composites of ring homomorphisms, after @def-ring-homomorphism), both fix every constant (\( (a \circ q) \circ r = a \circ r = a \) and \( a \circ (q \circ r) = a \)), and both send \( x \) to \( q \circ r \): \( (x \circ q) \circ r = q \circ r \) and \( x \circ (q \circ r) = q \circ r \). So they are equal by the uniqueness in @thm-polynomial-substitution (b), with \( S = R[x] \), \( \varphi \colon a \mapsto a x^0 \) and \( s = q \circ r \).
 :::
 
 ::: {#exr-evaluation-and-substitution-c3}
@@ -492,13 +496,13 @@ x^n - c^n = (x - c) \sum_{j=0}^{n-1} c^{\,n-1-j} x^j .
 ::: {.solution}
 [Hint 1]
 
-For (b), write \( p - p(c) \) as \( \sum_k p_k (x^k - c^k) \), with \( p(c) \) read as a constant.
+For (a), compare coefficients: multiplying a polynomial by \( x \) shifts its coefficients up by one place (@lem-monomial-product (a)). For (b) \( (\Rightarrow) \), reduce to (a).
 :::
 
 ::: {.solution}
 [Hint 2]
 
-For (a), compare coefficients: multiplying a polynomial by \( x \) shifts its coefficients up by one place (@lem-monomial-product (a)).
+For (b), let \( N \) be admissible for \( p \) and start from \( p - p(c) = \sum_{k=0}^{N} p_k x^k - \sum_{k=0}^{N} p_k c^k \), with \( p(c) \) read as a constant.
 :::
 
 ::: {.solution}
@@ -509,7 +513,7 @@ For (a), compare coefficients: multiplying a polynomial by \( x \) shifts its co
 - at \( k = n \): \( u_{n-1} - c u_n = c^0 - 0 = 1 \);
 - at \( k > n \): \( 0 - 0 = 0 \).
 
-These are the coefficients of \( x^n - c^n \).
+These are the coefficients of \( x^n - c^n \). This is Chapter 1's difference-of-powers identity (@lem-difference-of-powers), read in the commutative ring \( R[x] \) with \( z = x \) and \( w = c \); the proof above does not use it.
 
 (b) \( (\Leftarrow) \) By @thm-evaluation-respects-operations, \( p(c) = (c - c)\, q(c) = 0 \cdot q(c) = 0 \).
 
@@ -540,9 +544,9 @@ Let \( p \) be a prime. Give another proof that \( a^{p-1} = 1 \) for every non-
 :::
 
 ::: {.solution}
-Write \( F \coloneqq \nF_p \), a field (@def-field-fp), and \( F^* \coloneqq F \setminus \{0\} \), with the \( p - 1 \) elements \( 1, \dots, p - 1 \) (@fd3:thm-integers-mod-n-ring (b)).
+Write \( F \coloneqq \nF_p \), a field (@def-field-fp); then \( F \setminus \{0\} \) has the \( p - 1 \) elements \( 1, \dots, p - 1 \) (@fd3:thm-integers-mod-n-ring (b)).
 
-(a) For \( b \in F^* \), \( ab \ne 0 \), since \( F \) has no zero divisors (@thm-field-basic-properties (f)); so \( b \mapsto ab \) maps \( F^* \) to \( F^* \). It is injective: \( ab = ab' \) gives \( a(b - b') = 0 \), so \( b = b' \). Its image is a subset of the finite set \( F^* \) in bijection with \( F^* \); if the image were a proper subset, this would contradict @fd2:thm-finite-no-proper-copy. So the map is surjective, hence a bijection.
+(a) For \( b \in F \setminus \{0\} \), \( ab \ne 0 \), since \( F \) has no zero divisors (@thm-field-basic-properties (f)); so \( b \mapsto ab \) maps \( F \setminus \{0\} \) to \( F \setminus \{0\} \). It is injective: \( ab = ab' \) gives \( a(b - b') = 0 \), so \( b = b' \). Its image is a subset of the finite set \( F \setminus \{0\} \) in bijection with \( F \setminus \{0\} \); if the image were a proper subset, this would contradict @fd2:thm-finite-no-proper-copy. So the map is surjective, hence a bijection.
 
 (b) *A rearranged product is the same product.* For a list \( t_1, \dots, t_r \) in a commutative ring and a bijection \( \sigma \) of \( \{1, \dots, r\} \), we show \( \prod_{j=1}^{r} t_{\sigma(j)} = \prod_{j=1}^{r} t_j \), by @fd1:ax-induction on \( r \). For \( r = 0 \) both sides are the empty product \( 1 \). For the step, first a deletion rule: for a list \( u_1, \dots, u_{r+1} \) and a position \( k \), the product equals \( u_k \) times the product of the list with position \( k \) deleted. For \( k = r + 1 \) this is the product recursion; for \( k \le r \), it follows from the rule for the first \( r \) entries (induction on the length) and (F5), (F6):
 \[
@@ -551,11 +555,11 @@ Write \( F \coloneqq \nF_p \), a field (@def-field-fp), and \( F^* \coloneqq F \
 &= \Bigl(\bigl(\textstyle\prod_{j \le r,\, j \ne k} u_j\bigr) u_{r+1}\Bigr) u_k ,
 \end{aligned}
 \]
-and the bracket in the last line is the product of the list with position \( k \) deleted, by the product recursion, since that list ends with \( u_{r+1} \). Now let \( u_j \coloneqq t_{\sigma(j)} \) and \( k \coloneqq \sigma^{-1}(r + 1) \). Deleting position \( k \) leaves the list \( t_{\sigma'(1)}, \dots, t_{\sigma'(r)} \), where \( \sigma'(i) \coloneqq \sigma(i) \) for \( i < k \) and \( \sigma'(i) \coloneqq \sigma(i + 1) \) for \( i \ge k \), a bijection of \( \{1, \dots, r\} \). By the deletion rule and the hypothesis for \( r \), \( \prod_{j=1}^{r+1} t_{\sigma(j)} = \bigl(\prod_{i=1}^{r} t_i\bigr) t_{r+1} = \prod_{j=1}^{r+1} t_j \).
+and the bracket in the last line is the product of the list with position \( k \) deleted, by the product recursion, since that list ends with \( u_{r+1} \). Now let \( u_j \coloneqq t_{\sigma(j)} \) and \( k \coloneqq \sigma^{-1}(r + 1) \). Deleting position \( k \) leaves the list \( t_{\sigma'(1)}, \dots, t_{\sigma'(r)} \), where \( \sigma'(i) \coloneqq \sigma(i) \) for \( i < k \) and \( \sigma'(i) \coloneqq \sigma(i + 1) \) for \( i \ge k \), a bijection of \( \{1, \dots, r\} \): its values lie in \( \{1, \dots, r\} \), since \( \sigma(m) = r + 1 \) only for \( m = k \) and the index used (\( i \) for \( i < k \), \( i + 1 \) for \( i \ge k \)) is never \( k \); it is injective because \( \sigma \) and this index map are; and every \( j \le r \) is \( \sigma(m) \) for some \( m \ne k \), so \( j = \sigma'(m) \) if \( m < k \) and \( j = \sigma'(m - 1) \) if \( m > k \). By the deletion rule and the hypothesis for \( r \), \( \prod_{j=1}^{r+1} t_{\sigma(j)} = \bigl(\prod_{i=1}^{r} t_i\bigr) t_{r+1} = \prod_{j=1}^{r+1} t_j \).
 
-*The two computations.* List \( F^* \) as \( b_1, \dots, b_{p-1} \), and let \( Q \coloneqq \prod_{j=1}^{p-1} b_j \). By (a), \( a b_j = b_{\sigma(j)} \) for a bijection \( \sigma \) of \( \{1, \dots, p - 1\} \), so the list \( a b_1, \dots, a b_{p-1} \) is a rearrangement of \( b_1, \dots, b_{p-1} \), and its product is \( Q \). By (F5), (F6) and induction on the length, the same product is \( a^{p-1} Q \). So \( a^{p-1} Q = Q = 1 \cdot Q \). Since \( Q \) is a product of non-zero elements of a field, \( Q \ne 0 \) (@thm-field-basic-properties (f), by induction), and canceling \( Q \) (@thm-field-basic-properties (b)) gives \( a^{p-1} = 1 \).
+*The two computations.* List \( F \setminus \{0\} \) as \( b_1, \dots, b_{p-1} \), and let \( Q \coloneqq \prod_{j=1}^{p-1} b_j \). By (a), \( a b_j = b_{\sigma(j)} \) for a bijection \( \sigma \) of \( \{1, \dots, p - 1\} \), so the list \( a b_1, \dots, a b_{p-1} \) is a rearrangement of \( b_1, \dots, b_{p-1} \), and its product is \( Q \). By (F5), (F6) and induction on the length, the same product is \( a^{p-1} Q \). So \( a^{p-1} Q = Q = 1 \cdot Q \). Since \( Q \) is a product of non-zero elements of a field, \( Q \ne 0 \) (@thm-field-basic-properties (f), by induction), and canceling \( Q \) (@thm-field-basic-properties (b)) gives \( a^{p-1} = 1 \).
 
-(c) The polynomial \( x^p - x \) has coefficient \( 1 \) at position \( p \) (since \( p \ge 2 \), the positions \( p \) and \( 1 \) differ), and \( 1 \ne 0 \) in \( F \); so it is not the zero polynomial. For every \( c \in F \), \( c^p - c = 0 \): if \( c \ne 0 \), \( c^p = c^{p-1} c = c \) by (b); and \( 0^p = 0 \) since \( p \ge 1 \). So \( \varepsilon(x^p - x) \) is the zero function. This is a second witness, beside the \( P \) of @prp-polynomial-function-map (d) with \( R = \nF_p \), that \( \varepsilon \) is not injective over \( \nF_p \).
+(c) The polynomial \( x^p - x \) has coefficient \( 1 \) at position \( p \) (since \( p \ge 2 \), the positions \( p \) and \( 1 \) differ), and \( 1 \ne 0 \) in \( F \); so it is not the zero polynomial. For every \( c \in F \), \( c^p - c = 0 \): if \( c \ne 0 \), \( c^p = c^{p-1} c = c \) by (b); and \( 0^p = 0 \) since \( p \ge 1 \). So \( \varepsilon(x^p - x) \) is the zero function. This gives a second proof, by Fermat rather than by the factors \( x - c \), that \( \varepsilon \) is not injective over \( \nF_p \). The two witnesses are in fact the same polynomial: Chapter 5 shows that \( x^p - x = \prod_{c \in \nF_p} (x - c) \), the \( P \) of @prp-polynomial-function-map (d) with \( R = \nF_p \) (@exm-polynomial-function-finite-field (b)).
 
 This is the second proof of @thm-fermat-little (b); the first, in Chapter 2, went through the Frobenius map. Part (c) also follows directly from @thm-fermat-little (a).
 :::
@@ -568,14 +572,17 @@ def-polynomial-evaluation (claim): (warning) p_2 = 1, p(2) = 0, p_0 = p(0) = 2 |
 thm-evaluation-respects-operations (proof): common admissible N | max of two admissible N is admissible; order of N (fd3:thm-omega-order), used silently
 thm-evaluation-respects-operations (claim): (remark) polynomials of a square matrix, linear-algebra companion (its Chapter 0) | companion (LA1.0), prose pointer; nothing depends on it
 thm-evaluation-respects-operations (claim): (x - 1)(x - 2) = x^2 - 3x + 2 in Q[x] | product formula; verify/ch04/def-polynomial-evaluation.py
+thm-evaluation-respects-operations (claim): roots of (x - 1)(x - 2) in Q are exactly 1, 2 | exm-integral-domains (cited); sum rule and value of a constant (cited)
 def-ring-homomorphism (claim): phi(s^n) = phi(s)^n | induction on n, written out; power recursion of lem-finite-sums-and-powers (c)
+def-ring-homomorphism (claim): between fields it is def-field-homomorphism; the consequences are the ring versions of prp-field-homomorphism-properties (a), (e) (composites), (f) (powers); (b)-(d) fail since Z -> Z/nZ is not injective | def-field-homomorphism, prp-field-homomorphism-properties (prose comparison; the consequences are proved here); exm-ring-homomorphisms (i)
 exm-ring-homomorphisms (solution): Z/mZ x Z/nZ is a commutative ring componentwise | each axiom componentwise (fd3:thm-chinese-remainder-two (b) takes the componentwise operations); stated, one line
 exm-ring-homomorphisms (claim): complex conjugation, rules proved in F4.1; used in a review exercise of the next section | F4.1 (def-conjugate-modulus, thm-conjugate-properties; blueprint ch01.md), backward prose pointer; the review exercise R2 of the chapter's last section (within the chapter); nothing here depends on it
 thm-polynomial-substitution (claim): (try it first / idea) 3x^2 + 1 -> [3][2][2] + [1] = [13] = [3] in Z/5Z | verify/ch04/thm-polynomial-substitution.py
-thm-polynomial-substitution (claim): (answer to prompt) commutativity of S used once (monomial line), phi(1) = 1 used twice (Phi(1), Phi(x)) | meta-claim about the proof on the page; checkable line by line; well-definedness uses phi(0) = 0, which follows from additivity alone
-thm-polynomial-substitution (claim): (answer to prompt) noncommutative S: proof goes through if s commutes with every phi(b) | the monomial line is the only use of (F6) in S; (F5) and the power law hold without commutativity; prose
+thm-polynomial-substitution (claim): (answer to prompt) commutativity of S used essentially once (monomial line); other (F6) uses only mirror (F7), (F9), a . 0 = 0; phi(1) = 1 used twice (Phi(1), Phi(x)) | meta-claim about the proof on the page; checkable line by line; well-definedness uses phi(0) = 0, which follows from additivity alone
+thm-polynomial-substitution (claim): (answer to prompt) noncommutative S: proof goes through if s commutes with every phi(b) | the monomial line is the only use of (F6) in S beyond the mirror forms of (F7), (F9) and a . 0 = 0, which two-sided ring axioms give directly; (F5) and the power law hold without commutativity; prose
 cor-polynomial-coefficient-change (claim): 2x^2 + 3x - 1 -> x + 1 over F_2; 6x^3 + 5x^2 + x -> [5]x^2 + x mod 6 | arithmetic mod 2 and mod 6; verify/ch04/cor-polynomial-coefficient-change.py
 cor-polynomial-coefficient-change (claim): the algebra volumes reduce integer polynomials modulo a prime to test factorization | AL2.6 (prose pointer, no chapter number); nothing depends on it
+cor-polynomial-coefficient-change (claim): composition is used in Section 4.5 | ch04 §05 cites def-polynomial-composition; forward pointer within the chapter; nothing here depends on it
 def-polynomial-composition (claim): (x^2 + 1) o (x + 1) = x^2 + 2x + 2; (x + 1)^2 = x^2 + 2x + 1; (-x)^k = (-1)^k x^k | product formula; (-x)^k by the power law (st)^n = s^n t^n of lem-finite-sums-and-powers (c) with -x = (-1)x (fd3:prp-ring-algebra (c)); verify/ch04/def-polynomial-composition.py
 def-polynomial-composition (claim): p(-x) is the map sigma of exr-polynomial-ring-b2 | prose comparison with an earlier exercise; no proof rests on it
 prp-polynomial-function-map (proof): (a) pointwise axioms | fd2:prp-function-equality (cited) and (F1)-(F7), (F9) of R
@@ -583,14 +590,17 @@ prp-polynomial-function-map (proof): (d) r >= 1 since R contains 0; x - c has co
 prp-polynomial-function-map (proof): (d) induction on j for P_j monic of degree j, and P_j(c) = 0 for j >= l | fd1:ax-induction (through fd3:cor-omega-identification (b)), product recursion of lem-finite-sums-and-powers (a)
 prp-polynomial-function-map (proof): (d) (-a)(c) = -a for a constant | value of a constant (example after def-polynomial-evaluation)
 exm-polynomial-vs-function-f2 (solution): 1 + 1 = 0 and -1 = 1 in F_2 | exm-finite-fields (cited)
-exm-polynomial-vs-function-f2 (claim): (warning) F4.5 proves p(c) = 0 for all c implies p = 0 over infinite fields; reaches Z[x] through Z in Q | F4.5 (forward prose pointer; blueprint ch05.md thm-polynomial-identity-from-values); nothing here depends on it
+exm-polynomial-vs-function-f2 (claim): (warning) F4.5 proves p(c) = 0 for all c implies p = 0 over infinite fields | F4.5 (forward prose pointer; blueprint ch05.md thm-polynomial-identity-from-values); nothing here depends on it
+exm-polynomial-vs-function-f2 (claim): (warning) the same over Z, via Q[x] | not proved here (marked in the text); nothing depends on it
 exr-evaluation-and-substitution-a1 (solution): [1 + 6 + 4] = [11] = [1]; [3][2]^2 = [12] = [2]; values 2, 0, 1 in F_3; (x + 2)(x^2 + x + 1) = x^3 + 3x^2 + 3x + 2 = x^3 + 2 | verify/ch04/exr-evaluation-and-substitution-a1.py
 exr-evaluation-and-substitution-b1 (solution): deg q^k = k deg q by induction; ke < de for k < d, e >= 1 | fd1:ax-induction; order of N (fd3:thm-omega-order, fd3:prp-ordered-ring-rules (c) in Z), used silently
 exr-evaluation-and-substitution-b2 (solution): table of F_2[x]_{<=2}; 4 functions, two polynomials each | verify/ch04/exr-evaluation-and-substitution-b2.py; count 2 . 2 = 4 by fd2:exr-finite-sets-c2 (b), used silently
 exr-evaluation-and-substitution-c3 (solution): coefficients of (x - c)u; squares mod 8; [2][4] = [8] = [0] | verify/ch04/exr-evaluation-and-substitution-c3.py
 exr-evaluation-and-substitution-c3 (solution): sum_k p_k x^k - sum_k p_k c^k = sum_k p_k (x^k - c^k) | (Sigma1), (Sigma4) of lem-finite-sums-and-powers (b), thm-polynomial-ring-laws (b) (constants respect sums), used silently
 exr-evaluation-and-substitution-c3 (claim): F4.5 proves the factor theorem by division | F4.5 (forward prose pointer; blueprint ch05.md); nothing depends on it
+exr-evaluation-and-substitution-c3 (claim): (a) is Chapter 1's difference-of-powers identity in R[x] | lem-difference-of-powers (F4.1, see edge; prose comparison, no step rests on it)
 exr-evaluation-and-substitution-c4 (solution): order-independence of a finite product in a commutative ring | proved inline by induction on the length (blueprint open question 4)
 exr-evaluation-and-substitution-c4 (solution): Q != 0 for a product of non-zero elements; cancellation | thm-field-basic-properties (b), (f) (cited), induction on the length
 exr-evaluation-and-substitution-c4 (solution): the first proof of Fermat in F4.2 via Frobenius | thm-fermat-little (cited), F4.2 §06 (backward pointer)
+exr-evaluation-and-substitution-c4 (claim): x^p - x is the P of prp-polynomial-function-map (d) over F_p | F4.5 exm-polynomial-function-finite-field (b) (cited), forward pointer; nothing here depends on it
 -->
