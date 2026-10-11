@@ -1,6 +1,8 @@
 <!-- hand-written -->
 # Revision blueprint: F1.3 Truth, Soundness and Completeness (fd1 Chapter 3), R3
 
+**S2 passed 2026-10-12 (2 rounds); frozen.** Two S2a referees, revise/recheck rounds with skeptics; the round-2 recheck left no finding open.
+
 **What this is.** A **delta** blueprint (stage S1) for revising the released Chapter 3 of *Logic and Proof* so that a first-year reader gets in more easily. It is complete on its own: a drafter executes it with this file, the current `fd1/src/ch03-semantics-soundness-completeness/`, the original blueprint `fd1/authoring/blueprints/ch03.md` (for anything this file does not change), `authoring/STYLE.md` (§11, §12), `DRAFTING.md` and `NOTATION.md`. The approved pilot `ch01-revision.md` is the model of format and register; where this file is silent on a convention, do what that file did. All line numbers below are of the **current** files (commit `03155f6`), written `02:249` for `02-induction.md` line 249, and so on; `ix` is `index.md`.
 
 **Inputs.** The novice-reader report on Chapter 3 (workflow journal, `novice:ch03`), the corpus and classic-texts comparisons as digested in the fd1 revision plan (§2 Chapter 3 rows, §3 Chapter 3 items, §4–§6), and the pilot. Reference books were used for teaching technique only (a picture before a formal clause, a worked run before a general proof, a table of rows before a list of sequents). **Every new example, figure, drill and exercise below is the book's own.** The S2 rule of `ch03.md` (the text must not call the completeness route new; no Horn clauses, no SAT solvers) still binds.
