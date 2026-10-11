@@ -4,7 +4,7 @@ Section 6.3 showed that two complete ordered fields are always linked, and by ex
 
 ## Two ways to begin analysis
 
-**(A) Assume the axioms.** Declare that \( \nR \) is a set with an addition, a multiplication and a relation \( < \) satisfying the field axioms (F1)–(F9) of @def-commutative-ring-and-field, the order axioms (O1)–(O4) of @def-ordered-ring-and-field, and completeness, @def-complete-ordered-field: every non-empty subset that is bounded above has a supremum. Then prove theorems from these axioms and nothing else. *Analysis on the Real Line*, Chapter 1 begins this way. It assumes an ordered field containing \( \nQ \) in which the least upper bound axiom holds, and every theorem of that volume about real numbers is proved from this assumption, with the logic and set theory of the earlier volumes.
+**(A) Assume the axioms.** Declare that \( \nR \) is a set with an addition, a multiplication and a relation \( < \) satisfying the field axioms (F1)–(F9) and \( 1 \ne 0 \) of @def-commutative-ring-and-field, the order axioms (O1)–(O4) of @def-ordered-ring-and-field, and completeness, @def-complete-ordered-field: every non-empty subset that is bounded above has a supremum. Then prove theorems from these axioms and nothing else. *Analysis on the Real Line*, Chapter 1 begins this way. It assumes an ordered field containing \( \nQ \) in which the least upper bound axiom holds, and every theorem of that volume about real numbers is proved from this assumption, with the logic and set theory of the earlier volumes.
 
 **(B) Build a model.** Start from the axioms of set theory and construct the objects one by one. This volume did that: the natural numbers as the set \( \omega \) in Chapter 1, the integers and rationals as classes of pairs in Chapter 2, and the real numbers as classes of Cauchy sequences of rationals in Chapter 5. The result is a complete ordered field (@thm-reals-complete-ordered-field), and no property of it was assumed.
 
@@ -21,7 +21,7 @@ Route (B) alone does not answer (Q2). A second builder who uses Dedekind cuts, a
 
 ## What uniqueness adds
 
-Throughout this part, \( F \) and \( L \) are complete ordered fields and \( \varphi \colon F \to L \) is the order-preserving field isomorphism of @thm-cof-uniqueness. By definition (@def-cof-order-preserving-map), \( \varphi \) is a bijection that respects \( + \), \( \cdot \), \( 1 \) and \( < \). Everything else we need follows in a line or two.
+Throughout this part, \( F \) and \( L \) are complete ordered fields and \( \varphi \colon F \to L \) is the order-preserving field isomorphism of @thm-cof-uniqueness. By definition (@def-cof-order-preserving-map), \( \varphi \) is a bijection that respects \( + \), \( \cdot \), \( 1 \) and \( < \). Everything else we need follows in a line or two. Within this section, (P1)–(P6) name the six facts below; they are not the positive-set clauses (P1)–(P2) of @prp-order-from-positives used in Section 6.4.
 
 ::: {.enumerate options="label=(P\arabic*)"}
 1. \( \varphi(0) = 0 \), \( \varphi(-x) = -\varphi(x) \) and \( \varphi(x - y) = \varphi(x) - \varphi(y) \). Indeed \( \varphi(0) = \varphi(0 + 0) = \varphi(0) + \varphi(0) \), and adding \( -\varphi(0) \) gives \( \varphi(0) = 0 \); then \( \varphi(x) + \varphi(-x) = \varphi(0) = 0 \).
@@ -46,9 +46,9 @@ For (\( \Rightarrow \)), let \( \varepsilon \in L_{>0} \), and put \( \varepsilo
 \]
 So \( \varphi(a_n) \to \varphi(a) \). For (\( \Leftarrow \)), apply (\( \Rightarrow \)) to \( \varphi^{-1} \), which is allowed by (P6).
 
-The step that needs \( \varphi \) to be **onto** is the first one: the tolerance \( \varepsilon \) is an element of \( L \), and the hypothesis speaks only about tolerances in \( F \). An order-preserving field map that is not onto does not carry "converges" back. The map \( \kappa = \iota_{\nR} \colon \nQ \to \nR \) (@thm-rational-embedding (d)) is one: the Newton sequence \( (x_n) \) has no limit in \( \nQ \) (@thm-sqrt2-cauchy-no-rational-limit), while \( (\kappa(x_n)) \) converges in \( \nR \) (@thm-terms-converge-to-class).
+The step that needs \( \varphi \) to be **onto** is the first one: the tolerance \( \varepsilon \) is an element of \( L \), and the hypothesis speaks only about tolerances in \( F \). Onto is also what carries "converges to some limit" back, since that limit must have a preimage. The map \( \kappa = \iota_{\nR} \colon \nQ \to \nR \) (@thm-rational-embedding (d)) is an order-preserving field map that is not onto, and it fails here: the Newton sequence \( (x_n) \) has no limit in \( \nQ \) (@thm-sqrt2-cauchy-no-rational-limit), while \( (\kappa(x_n)) \) converges in \( \nR \) (@thm-terms-converge-to-class) to \( r = [(x_n)] \), which is not \( \kappa \) of any rational (@exm-sqrt2-class).
 
-The example shows the general pattern. Take a statement about a complete ordered field that is phrased with \( + \), \( \cdot \), \( < \), elements, and subsets, sequences and functions built from elements, with quantifiers ranging over these. Rename every object by \( \varphi \). Each basic piece (an equation, an inequality, a membership) keeps its truth value by (P1)–(P5), and "for every element of \( F \)" matches "for every element of \( L \)" because \( \varphi \) is onto; the same holds for subsets, sequences and functions. So the statement is true in \( F \) exactly when it is true in \( L \). We do not state this as a theorem. Making "statement" precise is the business of formal languages, which *Logic and Proof*, Chapter 4 begins with its first-order formulas, and the proof would be an induction on how statements are built. A particular instance is checked as the example was: one renaming for each object, and one preservation fact for each basic piece.
+The example shows the general pattern. Take a statement about a complete ordered field that is phrased with \( + \), \( \cdot \), \( < \), elements, and subsets, sequences and functions built from elements, with quantifiers ranging over these. Rename every object by \( \varphi \). Each basic piece keeps its truth value: an equation because \( \varphi \) respects \( + \) and \( \cdot \) and is injective, with (P1), (P2), (P4) and (P5) for terms that contain \( - \), \( {}^{-1} \), \( \abs{\cdot} \) or rationals; an inequality by (P3) as well; and a membership because \( \varphi \) is a bijection, as noted above. Quantifiers match as well: "for every element of \( F \)" matches "for every element of \( L \)" because \( \varphi \) is onto; the same holds for subsets, sequences and functions. So the statement is true in \( F \) exactly when it is true in \( L \). We do not state this as a theorem. Making "statement" precise is the business of formal languages, which *Logic and Proof*, Chapter 4 begins with its first-order formulas, and the proof would be an induction on how statements are built. A particular instance is checked as the example was: one renaming for each object, and one preservation fact for each basic piece.
 
 ::: {.check}
 Let \( F \), \( L \) and \( \varphi \) be as above, and suppose some \( x \in F \) satisfies \( x^3 = x + 1 \). Show that some \( y \in L \) satisfies \( y^3 = y + 1 \).
@@ -61,7 +61,7 @@ Take \( y \coloneqq \varphi(x) \). By @def-naturals-in-ordered-field (b), \( x^3
 **Theorems need no uniqueness; truth does.** One consequence of route (A) holds for any list of axioms, with no uniqueness theorem: a statement **proved** from the axioms is true in every structure satisfying them, since the proof can be run in each. The ordered-field axioms alone have the models \( \nQ \), \( \nQ(\sqrt 2) \) (@def-cof-sqrt2-field) and \( \nR(x) \) (@def-cof-rational-functions), and every result proved from those axioms, such as the rules of @prp-ordered-ring-rules, holds in all three. Yet the three disagree about statements the axioms do not settle:
 
 - "some \( x \) has \( x \cdot x = 1 + 1 \)" is true in \( \nQ(\sqrt 2) \) and false in \( \nQ \) (@thm-no-rational-square-two);
-- "some \( x \) lies above \( n \cdot 1 \) for every \( n \in \nN \)" is true in \( \nR(x) \) (@prp-cof-rational-functions-not-archimedean) and false in \( \nQ \) (@thm-rationals-archimedean).
+- "some \( y \) lies above \( n \cdot 1 \) for every \( n \in \nN \)" is true in \( \nR(x) \) (witness \( y = x \), @prp-cof-rational-functions-not-archimedean) and false in \( \nQ \) (@thm-rationals-archimedean).
 
 For complete ordered fields no such disagreement can occur. Every statement of the kind described above has the same truth value in all complete ordered fields, **whether or not** anybody has a proof of it from the axioms. That is what uniqueness adds to route (A): its axioms describe one structure, not a family of structures that agree only on what the axioms prove.
 
@@ -77,7 +77,7 @@ u \odot v \coloneqq \beta\bigl(\beta^{-1}(u) \, \beta^{-1}(v)\bigr) , \\
 u \prec v \ &\text{if and only if} \ \beta^{-1}(u) < \beta^{-1}(v) .
 \end{aligned}
 \]
-Then \( X \), with \( \oplus \), \( \odot \) and \( \prec \), is a complete ordered field, and \( \beta \) is an order-preserving field isomorphism. Indeed, with \( u = \beta(a) \) and \( v = \beta(b) \), the definitions read \( \beta(a + b) = \beta(a) \oplus \beta(b) \), \( \beta(ab) = \beta(a) \odot \beta(b) \), and \( a < b \) if and only if \( \beta(a) \prec \beta(b) \). Each axiom for \( X \), rewritten in this way, becomes the same axiom for \( F \): for (F1), \( u \oplus v = \beta(a + b) = \beta(b + a) = v \oplus u \); the zero and one of \( X \) are \( \beta(0) \) and \( \beta(1) \); (F2)–(F9) and (O1)–(O4) go the same way. For completeness, let \( B \subseteq X \) be non-empty and bounded above by \( w \). Then \( \beta^{-1}(B) \) is non-empty and bounded above by \( \beta^{-1}(w) \), so it has a supremum \( s \) in \( F \), and \( \beta(s) \) is a supremum of \( B \), because \( \beta \) and \( \beta^{-1} \) both preserve the order by the definition of \( \prec \).
+Then \( X \), with \( \oplus \), \( \odot \) and \( \prec \), is a complete ordered field, and \( \beta \) is an order-preserving field isomorphism. Indeed, with \( u = \beta(a) \) and \( v = \beta(b) \), the definitions read \( \beta(a + b) = \beta(a) \oplus \beta(b) \), \( \beta(ab) = \beta(a) \odot \beta(b) \), and \( a < b \) if and only if \( \beta(a) \prec \beta(b) \). Each axiom for \( X \), rewritten in this way, becomes the same axiom for \( F \): for (F1), \( u \oplus v = \beta(a + b) = \beta(b + a) = v \oplus u \); the zero and one of \( X \) are \( \beta(0) \) and \( \beta(1) \), and \( \beta(1) \ne \beta(0) \) because \( \beta \) is injective and \( 1 \ne 0 \) in \( F \); (F2)–(F9) and (O1)–(O4) go the same way. For completeness, let \( B \subseteq X \) be non-empty and bounded above by \( w \). Then \( \beta^{-1}(B) \) is non-empty and bounded above by \( \beta^{-1}(w) \), so it has a supremum \( s \) in \( F \), and \( \beta(s) \) is a supremum of \( B \), because \( \beta \) and \( \beta^{-1} \) both preserve the order by the definition of \( \prec \).
 
 Apply this to the Cauchy model with \( X \coloneqq (\nR \setminus \{0_{\nR}\}) \cup \{\emptyset\} \), \( \beta(0_{\nR}) \coloneqq \emptyset \) and \( \beta(x) \coloneqq x \) otherwise. Every element of \( \nR \) is a class \( [a] \), which contains \( a \) and so is not empty; hence \( \emptyset \notin \nR \), and \( \beta \) is a bijection. The zero of \( X \) is \( \beta(0_{\nR}) = \emptyset \). So the statement "the zero element is the empty set" is false in \( \nR \) and true in \( X \), although the two are isomorphic. The statement is about what an element is made of, and no renaming can be expected to keep that.
 
@@ -93,7 +93,7 @@ The analysis volume uses route (A). The table matches each of its assumptions wi
 
 | Assumed in *Analysis on the Real Line*, Chapter 1 | Supplied or justified here |
 |---|---|
-| \( \nR \) is an ordered field, axioms (F1)–(F9), (O1)–(O4) | the axioms: @def-commutative-ring-and-field, @def-ordered-ring-and-field, in the same numbering; a model: @thm-reals-ordered-field |
+| \( \nR \) is an ordered field, axioms (F1)–(F9), (O1)–(O4) | the axioms: @def-commutative-ring-and-field, @def-ordered-ring-and-field, in the same numbering (in *Analysis on the Real Line*, (F7) includes \( 1 \ne 0 \); here it is a separate clause of the field definition); a model: @thm-reals-ordered-field |
 | \( \nR \) contains \( \nQ \) | every ordered field contains exactly one copy of \( \nQ \): @thm-rationals-embed-ordered-field; isomorphisms respect it: @prp-cof-map-fixes-rationals |
 | the least upper bound axiom | the property: @def-complete-ordered-field; a model: @thm-reals-complete-ordered-field |
 | "the" real numbers | any two models are isomorphic, by exactly one isomorphism: @thm-cof-uniqueness, @cor-cof-isomorphic-to-cauchy-reals |
@@ -127,11 +127,13 @@ Throughout, \( F \) and \( L \) are complete ordered fields and \( \varphi \colo
 ::: {.solution}
 (a) (i) No. Write \( b \) and \( c \) for the non-negative square roots of \( 2 \) and \( 3 \) in \( F \), which exist and are unique by @prp-cof-square-roots. Then \( \varphi(b) \ge 0 \) by (P3) and \( \varphi(b)^2 = \varphi(b^2) = \varphi(2) = 2 \) by (P5), so \( \varphi(b) \) is the non-negative square root of \( 2 \) in \( L \), by the uniqueness in @prp-cof-square-roots; likewise for \( c \). By (P3) and (P5), \( b + c > 3 \) if and only if \( \varphi(b) + \varphi(c) > 3 \). (The statement is in fact true: both sides are positive, \( (b + c)^2 = 5 + 2bc \), and \( bc \) is the non-negative square root of \( 6 \), so \( 5 + 2bc > 9 \) if and only if \( bc > 2 \), if and only if \( 6 > 4 \), by @prp-ordered-ring-rules (g).)
 
-(ii) Yes. In the Cauchy model, \( \sqrt 2 = r \) is a class of sequences (@exm-sqrt2-class), and each of its elements is a function with domain \( \nN \). The rational \( 0 \) is the class \( \{ (0, q) : q \in \nZ_{>0} \} \) of @def-rationals-as-classes, a set of pairs whose first coordinates are all the integer \( 0 \); it is not a function with domain \( \nN \), since \( \nN \) has two different elements \( 0 \) and \( 1 \). So \( 0 \notin r \). In the cut model of Chapter 7, \( \sqrt 2 \) is the set of rationals below it, which contains \( 0 \).
+(ii) Yes. In the Cauchy model, \( \sqrt 2 = r \) is a class of sequences \( \nN \to \nQ \) (@exm-sqrt2-class). By @fd2:def-function each such sequence is the pair \( (G, \nQ) \) of its graph and its codomain, that is, the set \( \{\{G\}, \{G, \nQ\}\} \) of @def-kuratowski-pair, with at most two elements. The rational \( 0 \) is the class \( 0_{\nQ} = \{ (0, s) : s \in \nZ_{>0} \} \) of @def-rationals-as-classes; its elements \( (0, 1) \), \( (0, 2) \), \( (0, 3) \) are pairwise different by @thm-kuratowski-pair, so it has more than two elements. So \( 0_{\nQ} \) is not a sequence, and \( 0_{\nQ} \notin r \).
+
+Now apply the construction above with \( F \coloneqq \nR \), \( X \coloneqq (\nR \setminus \{r\}) \cup \{\{0_{\nQ}\}\} \), \( \beta(r) \coloneqq \{0_{\nQ}\} \) and \( \beta(x) \coloneqq x \) otherwise. Every element of \( \nR \) is a class \( [a] \), which contains the sequence \( a \); the only element of \( \{0_{\nQ}\} \) is \( 0_{\nQ} \), which is not a sequence. So \( \{0_{\nQ}\} \notin \nR \), and \( \beta \) is a bijection. By the argument of (i) with \( \varphi \coloneqq \beta \), the non-negative square root of \( 2 \) in the complete ordered field \( X \) is \( \beta(r) = \{0_{\nQ}\} \), which contains the rational \( 0 \). (In the cut model of the optional Chapter 7, \( \sqrt 2 \) contains \( 0_{\nQ} \) as well.)
 
 (iii) No. A set is countable exactly when it injects into \( \nN \) (@fd2:thm-countable-characterizations). If \( L \) were countable, an injection \( g \colon L \to \nN \) composed with the bijection \( \varphi \) would give an injection \( g \circ \varphi \colon F \to \nN \); and symmetrically with \( \varphi^{-1} \). So \( F \) is countable exactly when \( L \) is.
 
-(b) False. "No \( x \) has \( x \cdot x = 1 + 1 \)" is true in \( \nQ \) (@thm-no-rational-square-two) and false in the ordered field \( \nQ(\sqrt 2) \) (@prp-cof-sqrt2-field-archimedean). A statement proved from the ordered-field axioms is true in every ordered field, so this one is not provable from them.
+(b) False. "No \( x \) has \( x \cdot x = 1 + 1 \)" is true in \( \nQ \) (@thm-no-rational-square-two) and false in the ordered field \( \nQ(\sqrt 2) \) (@prp-cof-sqrt2-field-archimedean), which contains \( \sqrt 2 = 0 + 1\sqrt 2 \) (@def-cof-sqrt2-field) with \( \sqrt 2 \cdot \sqrt 2 = 2 = 1 + 1 \) by the choice of \( \sqrt 2 \) (@prp-cof-square-roots). A statement proved from the ordered-field axioms is true in every ordered field (for these first-order statements this is @fd1:thm-first-order-soundness), so this one is not provable from them.
 
 (c) The first: the tolerance \( \varepsilon \) is given in \( L \), and the hypothesis \( a_n \to a \) speaks only about tolerances in \( F \). Surjectivity provides \( \varepsilon' = \varphi^{-1}(\varepsilon) \in F \).
 
@@ -203,15 +205,15 @@ so the rational \( \sigma(\sqrt 2) \) squares to \( 2 \), against @thm-no-ration
 
 (c) *\( \nQ \) and \( \nQ(\sqrt 2) \).* Both are Archimedean ordered fields (@thm-rationals-archimedean, @prp-cof-sqrt2-field-archimedean), and **neither is complete**: \( \nQ(\sqrt 2) \) by @prp-cof-sqrt2-field-incomplete, and \( \nQ \) because a complete field would contain a square root of \( 2 \) (@prp-cof-square-roots), against @thm-no-rational-square-two. The hypothesis that fails is completeness, for both fields. Separating statement: "some \( x \) has \( x \cdot x = 1 + 1 \)", true in \( \nQ(\sqrt 2) \), false in \( \nQ \).
 
-*\( \nR \) and \( \nR(x) \).* \( \nR \) is complete, and \( \nR(x) \) is not (@prp-cof-rational-functions-not-archimedean): completeness fails for one field of the pair. Separating statement: "some \( x \) satisfies \( n \cdot 1 < x \) for every \( n \in \nN \)", true in \( \nR(x) \), false in \( \nR \).
+*\( \nR \) and \( \nR(x) \).* \( \nR \) is complete, and \( \nR(x) \) is not (@prp-cof-rational-functions-not-archimedean): completeness fails for one field of the pair. Separating statement: "some \( y \) satisfies \( n \cdot 1 < y \) for every \( n \in \nN \)", true in \( \nR(x) \), false in \( \nR \).
 
 In both pairs the fields are ordered fields; Archimedes alone, as in the first pair, does not rescue the conclusion of @thm-cof-uniqueness.
 
 **Marking scheme.** (10 points)
 - 3: (a), \( \sigma(2) = 2 \) from additivity and \( \sigma(1) = 1 \), then \( \sigma(\sqrt 2)^2 = 2 \) and @thm-no-rational-square-two.
-- 4: (b), a map \( \nR(x) \to \nR \) obtained from the inverse, shown to fix every \( n \cdot 1 \), and the contradiction with Archimedes in \( \nR \), with the reason \( \nR \) is Archimedean.
+- 4: (b), Archimedes or completeness carried across the supposed isomorphism, either through \( \chi^{-1} \) (an order-preserving field map that fixes every \( n \cdot 1 \)) or through \( \chi \) and its surjectivity, with the reason \( \nR \) is complete and Archimedean, and the contradiction with @prp-cof-rational-functions-not-archimedean.
 - 3: (c), the failing hypothesis named for each pair with its source, and a correct separating statement for each.
-Fatal errors (0 for the step): in (a), assuming \( \sigma \) preserves order or is onto; in (b), using Archimedes in \( \nR(x) \), or asserting "\( \nR(x) \) is not complete, so not isomorphic" without showing that completeness or Archimedes is carried by the isomorphism.
+Fatal errors (0 for the step): in (a), assuming \( \sigma \) preserves order or is onto; in (b), assuming (rather than deriving from the supposed isomorphism) that \( \nR(x) \) is Archimedean, or asserting "\( \nR(x) \) is not complete, so not isomorphic" without showing that completeness or Archimedes is carried by the isomorphism.
 :::
 
 ### R. Review
@@ -272,28 +274,23 @@ The general statement first. Suppose \( < \) makes \( F \) an ordered field (@de
 ::: {#exr-axioms-or-model-r3}
 [R3]
 
-Let \( \mathcal S \) be a set of ordered fields, and for \( F, L \in \mathcal S \) write \( F \cong L \) if there is an order-preserving field isomorphism \( F \to L \). Prove in full that \( \cong \) is an equivalence relation on \( \mathcal S \). In particular, write out line by line why the inverse of an order-preserving field isomorphism, and the composite of two, are again additive, multiplicative, strictly increasing and bijective, and send \( 1 \) to \( 1 \).
+Let \( X \) be the complete ordered field of this section whose zero is \( \emptyset \), and let \( \mathcal S \coloneqq \{ \nQ, \nQ(\sqrt 2), \nR(x), \nR, X \} \), with \( \nR \) the Cauchy model. By the remark after @cor-cof-isomorphic-to-cauchy-reals, \( \cong \) is an equivalence relation on \( \mathcal S \) (@fd2:def-equivalence-relation). Find its equivalence classes (@fd2:def-equivalence-class), and the number of elements of the quotient set \( \mathcal S/{\cong} \) (@fd2:def-quotient-set). For each two fields in different classes, name a property that one has and the other lacks, and prove that an order-preserving field isomorphism carries it across.
 :::
 
 ::: {.solution}
-We check the three clauses of @fd2:def-equivalence-relation. (The relation lives on a **set** \( \mathcal S \) because a relation is a subset of \( \mathcal S \times \mathcal S \).)
+*Two transfer facts.* Let \( \chi \colon F \to L \) be an order-preserving field isomorphism. By the remark after @cor-cof-isomorphic-to-cauchy-reals, \( \chi^{-1} \colon L \to F \) is one too, so each fact below also holds with \( F \) and \( L \) exchanged. Recall \( \chi(n \cdot 1_F) = \chi(\iota_F(n)) = \iota_L(n) = n \cdot 1_L \) for \( n \in \nN \) (@prp-cof-map-fixes-rationals).
 
-*Reflexive.* \( \id_F \) is a bijection, sends \( 1 \) to \( 1 \), respects \( + \) and \( \cdot \), and is strictly increasing. So \( F \cong F \).
+(i) *Square roots of \( n \cdot 1 \).* If \( b \in F \) has \( b^2 = n \cdot 1_F \), then \( \chi(b)^2 = \chi(b^2) = \chi(n \cdot 1_F) = n \cdot 1_L \), since \( \chi \) respects products. So if \( n \cdot 1 \) is a square in \( F \), it is a square in \( L \), and conversely.
 
-*Symmetric.* Let \( \chi \colon F \to L \) be an order-preserving field isomorphism. By @fd2:thm-bijection-iff-inverse, \( \chi \) has a two-sided inverse \( \chi^{-1} \colon L \to F \), which is bijective by the same theorem, since \( \chi \) is a two-sided inverse of it. Let \( u, v \in L \), and put \( a \coloneqq \chi^{-1}(u) \), \( b \coloneqq \chi^{-1}(v) \), so \( \chi(a) = u \) and \( \chi(b) = v \). Then \( \chi(a + b) = \chi(a) + \chi(b) = u + v \); applying \( \chi^{-1} \) gives
-\[
-\chi^{-1}(u + v) = a + b = \chi^{-1}(u) + \chi^{-1}(v) .
-\]
-In the same way \( \chi(ab) = uv \) gives \( \chi^{-1}(uv) = \chi^{-1}(u) \chi^{-1}(v) \), and \( \chi(1) = 1 \) gives \( \chi^{-1}(1) = 1 \). *Strictly increasing:* let \( u < v \). If \( a = b \), then \( u = v \); if \( b < a \), then \( v = \chi(b) < \chi(a) = u \); both contradict \( u < v \) by (O1). So \( a < b \) by trichotomy, that is, \( \chi^{-1}(u) < \chi^{-1}(v) \). Hence \( L \cong F \).
+(ii) *Archimedes.* Let \( F \) be Archimedean (@def-archimedean-ordered-field), and let \( y \in L \). Take \( n \in \nN \) with \( \chi^{-1}(y) < n \cdot 1_F \). Since \( \chi \) is strictly increasing, \( y = \chi(\chi^{-1}(y)) < \chi(n \cdot 1_F) = n \cdot 1_L \). So \( L \) is Archimedean, and conversely.
 
-*Transitive.* Let \( \chi \colon F \to L \) and \( \psi \colon L \to M \) be order-preserving field isomorphisms. For \( a, b \in F \),
-\[
-\begin{aligned}
-(\psi \circ \chi)(a + b) &= \psi\bigl(\chi(a) + \chi(b)\bigr) = (\psi \circ \chi)(a) + (\psi \circ \chi)(b) , \\
-(\psi \circ \chi)(ab) &= \psi\bigl(\chi(a)\chi(b)\bigr) = (\psi \circ \chi)(a) \, (\psi \circ \chi)(b) ,
-\end{aligned}
-\]
-and \( (\psi \circ \chi)(1) = \psi(1) = 1 \). If \( a < b \), then \( \chi(a) < \chi(b) \), so \( \psi(\chi(a)) < \psi(\chi(b)) \). Finally \( \chi^{-1} \circ \psi^{-1} \) is a two-sided inverse of \( \psi \circ \chi \), so \( \psi \circ \chi \) is bijective (@fd2:thm-bijection-iff-inverse). Hence \( F \cong M \).
+*The classes.* The map \( \beta \colon \nR \to X \) of this section is an order-preserving field isomorphism, so \( \nR \cong X \). The other pairs are not isomorphic:
+
+- \( \nR(x) \) is not Archimedean (@prp-cof-rational-functions-not-archimedean), while \( \nQ \) (@thm-rationals-archimedean), \( \nQ(\sqrt 2) \) (@prp-cof-sqrt2-field-archimedean), \( \nR \) and \( X \) (complete, by @thm-reals-complete-ordered-field and by the construction of \( X \), hence Archimedean by @thm-cof-complete-archimedean) are. By (ii), \( \nR(x) \) is isomorphic to none of the four.
+- \( 2 \) is not a square in \( \nQ \) (@thm-no-rational-square-two), while it is one in \( \nQ(\sqrt 2) \) (\( \sqrt 2 \in \nQ(\sqrt 2) \), @def-cof-sqrt2-field) and in the complete fields \( \nR \) and \( X \) (@prp-cof-square-roots). By (i) with \( n = 2 \), \( \nQ \) is isomorphic to none of these three.
+- \( 3 \) is not a square in \( \nQ(\sqrt 2) \) (@prp-cof-sqrt2-field-incomplete), while it is one in \( \nR \) and \( X \) (@prp-cof-square-roots). By (i) with \( n = 3 \), \( \nQ(\sqrt 2) \not\cong \nR \) and \( \nQ(\sqrt 2) \not\cong X \).
+
+So the equivalence classes, \( [K] = \{ K' \in \mathcal S : K' \cong K \} \), are \( \{ \nQ \} \), \( \{ \nQ(\sqrt 2) \} \), \( \{ \nR(x) \} \) and \( \{ \nR, X \} \), and \( \mathcal S/{\cong} \) has four elements. The two complete fields share a class, as @thm-cof-uniqueness requires; the other three fall into three classes.
 :::
 
 ::: {#exr-axioms-or-model-r4}
@@ -327,7 +324,7 @@ using \( 10 + 9n \le 10 + 90n \) in \( \nN \). In particular \( (10 \cdot 1_F)^n
 <!-- dependency ledger
 sec-axioms-or-model (claim): an1 Chapter 1 assumes an ordered field containing Q with the least upper bound axiom, and proves N unbounded, Q dense, square roots; an1 does not cite fd3 | an1 Chapter 1 (prose pointer, read in an1/src/ch01-least-upper-bound/03, 05, 06); nothing depends on it
 sec-axioms-or-model (claim): consistency of the complete-ordered-field axioms relative to the set theory of Chapter 1 | thm-reals-complete-ordered-field (cited); informal meta-argument in prose, nothing depends on it
-sec-axioms-or-model (claim): in the cut model of Chapter 7 a real number is a set of rationals, and sqrt 2 is the set of rationals below it (contains 0) | F3.3 (optional chapter, prose pointer; blueprint ch07 def-dedekind-cut); illustration only, nothing depends on it
+sec-axioms-or-model (claim): in the cut model of Chapter 7 a real number is a set of rationals, and sqrt 2 is the set of rationals below it | F3.3 (optional chapter, prose pointer; blueprint ch07 def-dedekind-cut); illustration only, nothing depends on it
 sec-axioms-or-model (claim): (P1)-(P6) for the isomorphism phi | inline, from def-cof-order-preserving-map, prp-cof-map-fixes-rationals, cor-cof-isomorphic-to-cauchy-reals remark (cited)
 sec-axioms-or-model (claim): every statement in +, *, < (elements, subsets, sequences, functions) has the same truth value in F and L | not stated as a theorem; explained by pattern, instance proved (limits); nothing depends on it
 sec-axioms-or-model (claim): transport of structure along a bijection beta gives a complete ordered field and beta is an isomorphism | inline
@@ -335,7 +332,13 @@ sec-axioms-or-model (claim): empty set is not an element of the Cauchy R (every 
 sec-axioms-or-model (claim): non-Archimedean ordered fields in which every positive element is a square and every odd-degree polynomial function has a zero exist (real closed fields) | not proved here; marked so in the text; nothing depends on it
 exr-axioms-or-model-a1 (solution): (b + c)^2 = 5 + 2bc, bc = sqrt 6, 5 + 2 sqrt 6 > 9 iff 6 > 4 | inline; verify/ch06/exr-axioms-or-model-a1.py
 exr-axioms-or-model-a1 (solution): composite of an injection and a bijection is an injection | fd2:thm-composition-injective-surjective (a); inline
-exr-axioms-or-model-a1 (solution): the rational 0 is {(0, q) : q in Z_{>0}}; a sequence is a function with domain N | def-rationals-as-classes (cited), fd2:def-function
+exr-axioms-or-model-a1 (solution): the rational 0 is {(0, s) : s in Z_{>0}}, with more than two elements; a sequence N -> Q is the pair (G, Q), a set with at most two elements | def-rationals-as-classes, fd2:def-function, def-kuratowski-pair, thm-kuratowski-pair (cited)
+exr-axioms-or-model-a1 (solution): a complete ordered field whose sqrt 2 contains the rational 0 | inline (transport construction of this section, with the argument of (a)(i)); the cut model of F3.3 mentioned in a parenthesis only
+exr-axioms-or-model-a1 (solution): provable from the ordered-field axioms implies true in every ordered field | fd1:thm-first-order-soundness (cited; the axioms and the statement are first-order); inline
+sec-axioms-or-model (claim): a statement proved from a list of axioms is true in every structure satisfying them | inline (a proof from the axioms is a proof about an arbitrary model; for first-order statements the formal version is fd1:thm-first-order-soundness); nothing depends on it
 exr-axioms-or-model-r1 (solution): q_0..q_5 values; 2 - q^2 < (1/2^n)(2q + 1/2^n) <= 5/2^n; 4 k^2 <= 8 (2^n)^2 = 2 (2^{n+1})^2 | inline; verify/ch06/exr-axioms-or-model-r1.py
+exr-axioms-or-model-r3 (solution): the inverse of an order-preserving field isomorphism is one | remark after cor-cof-isomorphic-to-cauchy-reals (cited; proved in the second-reading fold there)
+exr-axioms-or-model-r3 (solution): chi(n 1_F) = n 1_L; a square equal to n 1 and the Archimedean property carry across an isomorphism | prp-cof-map-fixes-rationals (iota_F(n) = n 1_F); inline; verify/ch06/exr-axioms-or-model-r3.py
+exr-axioms-or-model-r3 (solution): R = X up to isomorphism; R(x), Q, Q(sqrt 2) pairwise non-isomorphic and not isomorphic to R | transport construction of this section; prp-cof-rational-functions-not-archimedean, thm-rationals-archimedean, prp-cof-sqrt2-field-archimedean, thm-reals-complete-ordered-field, thm-cof-complete-archimedean, thm-no-rational-square-two, def-cof-sqrt2-field, prp-cof-square-roots, prp-cof-sqrt2-field-incomplete (cited)
 exr-axioms-or-model-r4 (solution): (1 + 9n) * 10 = 10 + 90n, 1 + 9(n + 1) = 10 + 9n <= 10 + 90n in N | omega arithmetic (thm-omega-arithmetic-laws); verify/ch06/exr-axioms-or-model-r4.py
 -->

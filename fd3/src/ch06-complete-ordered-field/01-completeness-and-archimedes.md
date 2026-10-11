@@ -28,14 +28,14 @@ Two consequences come free. A strictly increasing map is injective: if \( a \ne 
 
 **Examples.**
 
-*The identity.* \( \mathrm{id}_F \) satisfies all four clauses trivially; it is an order-preserving field automorphism of \( F \).
+*The identity.* \( \id_F \) satisfies all four clauses trivially; it is an order-preserving field automorphism of \( F \).
 
 *The copy of the rationals.* For every ordered field \( F \), \( \iota_F \colon \nQ \to F \) is an order-preserving field map, by @thm-rationals-embed-ordered-field. It is injective and usually not surjective: \( \iota_{\nR} = \kappa \) misses the class \( r \) of the Newton sequence, which is not \( \kappa(q) \) for any rational \( q \) (@exm-sqrt2-class).
 
 *Doubling.* On \( \nQ \), \( \chi(x) \coloneqq 2x \) preserves sums and is strictly increasing, but \( \chi(1) = 2 \ne 1 \), and \( \chi(1 \cdot 1) = 2 \ne 4 = \chi(1)\chi(1) \). It is not a field map: the clauses about multiplication and the unit fail, the additive ones survive.
 
 ::: {.second-reading title="A degenerate case"}
-The zero map \( \chi(a) \coloneqq 0_L \) preserves sums and products, since \( 0 + 0 = 0 \) and \( 0 \cdot 0 = 0 \). It fails only the clause \( \chi(1_F) = 1_L \), because \( 1_L \ne 0_L \) in a field, and with it strict increase. That is why the unit clause is in the definition: without it the zero map would be a "field map" from every field to every field, and the uniqueness theorems of this chapter would be false.
+The zero map \( \chi(a) \coloneqq 0_L \) preserves sums and products, since \( 0 + 0 = 0 \) and \( 0 \cdot 0 = 0 \). It fails the unit clause, because \( 1_L \ne 0_L \) in a field, and it fails strict increase. In @def-cof-order-preserving-map the unit clause in fact follows from the other three: additivity gives \( \chi(0) = \chi(0) + \chi(0) \), so \( \chi(0) = 0 \); strict increase then gives \( \chi(1) > \chi(0) = 0 \); and \( \chi(1) = \chi(1)^2 \) with \( \chi(1) \ne 0 \) forces \( \chi(1) = 1 \). It is stated anyway because @prp-cof-map-fixes-rationals, @thm-cof-field-automorphism-identity and the remark after its proof assume sums, products and the unit but no order. Without the unit hypothesis, the zero map would be a counterexample to each of them.
 :::
 
 **Why this definition.** Preserving sums, products and the unit is what makes \( \chi \) a dictionary for the field operations; strict increase makes it a dictionary for the order. Section 6.4 shows a map of \( \nQ(\sqrt 2) \) to itself that respects sums, products and the unit but sends a positive element to a negative one, so the order clause does not follow from the others in general. Section 6.3 shows that for complete ordered fields it does.
@@ -84,13 +84,15 @@ If some element bounded \( \iota_F(\nN) \) above, completeness would give a **le
 :::
 
 ::: {.proof}
-Suppose, for \( \rulename{\neg I} \), that \( F \) is not Archimedean. By @fd1:prp-quantifier-negation and totality, there is \( b \in F \) with \( n \cdot 1_F \le b \) for every \( n \in \nN \). So \( \iota_F(\nN) \) is bounded above by \( b \), and it is non-empty, since \( 0 \cdot 1_F \in \iota_F(\nN) \). Since \( F \) is complete, \( \iota_F(\nN) \) has a supremum; fix \( s \coloneqq \sup \iota_F(\nN) \) [\( \rulename{\exists E} \)].
+Suppose, for \( \rulename{\neg I} \), that \( \iota_F(\nN) \) is bounded above, and fix an upper bound \( b \in F \) [\( \rulename{\exists E} \)], so that \( n \cdot 1_F \le b \) for every \( n \in \nN \). The set \( \iota_F(\nN) \) is non-empty, since \( 0 \cdot 1_F \in \iota_F(\nN) \). Since \( F \) is complete, \( \iota_F(\nN) \) has a supremum; fix \( s \coloneqq \sup \iota_F(\nN) \) [\( \rulename{\exists E} \)].
 
-Since \( s - 1_F < s \) and \( s \) is the least upper bound, \( s - 1_F \) is not an upper bound of \( \iota_F(\nN) \). So there is \( n \in \nN \) with \( n \cdot 1_F > s - 1_F \), by totality. Then, by @def-naturals-in-ordered-field (a) and (O3),
+Since \( s - 1_F < s \) and \( s \) is the least upper bound, \( s - 1_F \) is not an upper bound of \( \iota_F(\nN) \). So some \( n \in \nN \) has \( n \cdot 1_F \not\le s - 1_F \) (@fd1:prp-bounded-quantifier-negation (a)), that is, \( n \cdot 1_F > s - 1_F \) by totality (@prp-ordered-field-halves (a)). Then, by @def-naturals-in-ordered-field (a) and (O3),
 \[
 (n + 1) \cdot 1_F = n \cdot 1_F + 1_F > (s - 1_F) + 1_F = s ,
 \]
-and \( (n + 1) \cdot 1_F \in \iota_F(\nN) \). This contradicts that \( s \) is an upper bound of \( \iota_F(\nN) \). Hence \( F \) is Archimedean [\( \rulename{\neg I} \)].
+and \( (n + 1) \cdot 1_F \in \iota_F(\nN) \). This contradicts that \( s \) is an upper bound of \( \iota_F(\nN) \). Hence \( \iota_F(\nN) \) is not bounded above [\( \rulename{\neg I} \)].
+
+So no \( x \in F \) is an upper bound of \( \iota_F(\nN) \) (@fd1:prp-quantifier-negation). For \( x \in F \), as above, some \( n \in \nN \) has \( n \cdot 1_F \not\le x \) (@fd1:prp-bounded-quantifier-negation (a)), that is, \( x < n \cdot 1_F \) by totality. Hence \( F \) is Archimedean (@def-archimedean-ordered-field).
 :::
 
 Both hypotheses of completeness were used: "non-empty" through \( 0 \cdot 1_F \), "bounded above" through \( b \). The converse fails: \( \nQ \) is Archimedean (@thm-rationals-archimedean) and not complete (@thm-rationals-gap-sqrt2). And dropping completeness can lose the conclusion: \( \nQ(t) \) is an ordered field that is not Archimedean.
@@ -173,7 +175,7 @@ Consequently \( x = y \iff \nQ_F(x) = \nQ_F(y) \).
 For the consequence: \( x = y \) holds if and only if \( x \le y \) and \( y \le x \), by antisymmetry of the total order \( \le \); by the equivalence just proved, that is \( \nQ_F(x) \subseteq \nQ_F(y) \) and \( \nQ_F(y) \subseteq \nQ_F(x) \), that is, \( \nQ_F(x) = \nQ_F(y) \).
 :::
 
-This is the first named move of the chapter, **rationals separate**: to prove two elements of an Archimedean field equal, show that the same rationals lie below each. A rational strictly between them would otherwise exist. Section 6.2 uses it in every step.
+This is the first named move of the chapter, **rationals separate**: to prove two elements of an Archimedean field equal, show that the same rationals lie below each. A rational strictly between them would otherwise exist. Section 6.2 uses it in four of the seven steps of its main proof (Steps 3, 5, 6 and 7), each time to prove that two elements of the complete field are equal.
 
 ::: {.second-reading title="Without Archimedes the sets cannot tell elements apart"}
 The direction \( (\Rightarrow) \) and the remark that equal elements have equal sets hold in every ordered field. The direction \( (\Leftarrow) \) needs density, and density needs Archimedes. In the non-Archimedean field \( \nQ(t) \) of @exm-rational-function-field (school polynomial algebra, as flagged there; nothing below depends on it), every rational \( q \) satisfies \( q < n \) for some \( n \in \nN \) (@thm-rationals-archimedean), and \( n \cdot 1 < t \), so \( \iota_{\nQ(t)}(q) < t < t + 1 \). Hence \( \nQ_{\nQ(t)}(t) = \nQ = \nQ_{\nQ(t)}(t + 1) \), although \( t \ne t + 1 \). Both elements lie above all of the rationals, and the rationals cannot see the difference.
@@ -217,7 +219,7 @@ Then \( 0 \in S \), since \( 0^2 = 0 < a \). And \( a + 1 \) is an upper bound o
 \]
 where the second inequality uses \( h \le (a - s^2)/(2(2s + 1)) \) and \( 2s + 1 > 0 \), and the last uses \( (a - s^2)/2 < a - s^2 \) (@prp-ordered-field-halves (b)). So \( s + h \ge 0 \) lies in \( S \), and \( s + h > s \), against \( s \) being an upper bound of \( S \).
 
-*Case \( s^2 > a \).* Then \( s \ne 0 \), since \( 0^2 = 0 < a \); so \( s > 0 \). Let \( h \coloneqq (s^2 - a)/(2s) \), which is positive. Then \( s - h = (s^2 + a)/(2s) > 0 \), and
+*Case \( s^2 > a \).* Then \( s \ne 0 \), since \( 0^2 = 0 < a \); so \( s > 0 \). Let \( h \coloneqq (s^2 - a)/(2s) \). It is positive, since \( s^2 - a > 0 \) and \( 2s > 0 \) (@prp-reciprocal-order (a), (O4)). Then \( s - h = (s^2 + a)/(2s) > 0 \) by the same reasons, since \( s^2 + a > 0 \); and
 \[
 (s - h)^2 = s^2 - 2sh + h^2 = s^2 - (s^2 - a) + h^2 = a + h^2 > a .
 \]
@@ -262,9 +264,9 @@ The constants follow the Idea: each \( h \) depends on \( s \) and \( a \) only,
 
 (b) \( \forall x \in F \ \exists n \in \nN \ \ x < n \cdot 1_F \). Negation: \( \exists x \in F \ \forall n \in \nN \ \ n \cdot 1_F \le x \), using \( \neg(x < y) \iff y \le x \) (totality and (O1)). In words: some element lies above or at every \( n \cdot 1_F \).
 
-(c) (v), (iii), (viii), (vi), (i), (iv). No other order is admissible: each line uses the one before it ((iii) needs the bound of (v) for the supremum to exist, (viii) needs \( s \), (vi) unpacks (viii), (i) uses the \( n \) of (vi), and (iv) is the contradiction with (i)).
+(c) (v), (iii), (viii), (vi), (i), (iv). No other order is admissible: each line uses the one before it ((iii) needs the bound of (v) for the supremum to exist, (viii) needs \( s \), (vi) unpacks (viii), (i) uses the \( n \) of (vi), and (iv) is the contradiction with (i)). The contradiction in (iv) refutes (v), so \( \iota_F(\nN) \) is not bounded above; unpacked with the negation laws, as at the end of the proof of @thm-cof-complete-archimedean, that is the statement of (b).
 
-Line (vii) is wrong: a supremum need not belong to the set (in every ordered field, the set of negative elements has supremum \( 0 \), which is not negative, @def-complete-ordered-field). Line (ii) has the wrong quantifier: "\( s - 1 \) is not an upper bound" gives **some** \( n \) with \( \iota_F(n) > s - 1 \), by @fd1:prp-bounded-quantifier-negation, not every \( n \) (and for \( n = 0 \) it may be false).
+Line (vii) is wrong: a supremum need not belong to the set (in every ordered field, the set of negative elements has supremum \( 0 \), which is not negative: the first example after @def-complete-ordered-field). Line (ii) has the wrong quantifier: "\( s - 1 \) is not an upper bound" gives **some** \( n \) with \( \iota_F(n) > s - 1 \), by @fd1:prp-bounded-quantifier-negation, not every \( n \) (and for \( n = 0 \) it may be false).
 :::
 
 ### B. Practice
@@ -278,7 +280,7 @@ Let \( F \) be a complete ordered field. Prove that \( \inf\{ \iota_F(1/n) : n \
 ::: {.solution}
 Let \( T \coloneqq \{ \iota_F(1/n) : n \in \nZ_{>0} \} \). For \( n \in \nZ_{>0} \), \( 1/n > 0 \) in \( \nQ \), so \( \iota_F(1/n) > 0 \): \( 0 \) is a lower bound of \( T \).
 
-Let \( c \) be a lower bound of \( T \), and suppose, for contradiction, that \( c > 0 \). By @thm-cof-complete-archimedean, \( F \) is Archimedean, so there is \( n \in \nN \) with \( 1/c < n \cdot 1_F \). Then \( n \ne 0 \), since \( 0 \cdot 1_F = 0 < 1/c \) (@prp-reciprocal-order (a)); so \( n \in \nZ_{>0} \). By @prp-reciprocal-order (b), \( 1/(n \cdot 1_F) < c \), and \( 1/(n \cdot 1_F) = \iota_F(1/n) \) since \( \iota_F \) preserves products and \( \iota_F(n) = n \cdot 1_F \). So an element of \( T \) lies below \( c \), against \( c \) being a lower bound. Hence every lower bound \( c \) satisfies \( c \le 0 \), and \( 0 \) is the greatest lower bound (@fd2:def-order-supremum).
+Let \( c \) be a lower bound of \( T \), and suppose, for contradiction, that \( c > 0 \). By @thm-cof-complete-archimedean, \( F \) is Archimedean, so @prp-archimedean-reciprocal (with \( \varepsilon \coloneqq c \), applied at \( n = N \)) gives \( N \in \nZ_{>0} \) with \( 1/(N \cdot 1_F) < c \). Since \( \iota_F \) preserves products and \( \iota_F(N) = N \cdot 1_F \), we have \( \iota_F(1/N) \cdot (N \cdot 1_F) = \iota_F(1) = 1_F \), so \( \iota_F(1/N) = 1/(N \cdot 1_F) \) by uniqueness of inverses (@lem-field-fraction-rules (a)). So the element \( \iota_F(1/N) \) of \( T \) lies below \( c \), against \( c \) being a lower bound. Hence every lower bound \( c \) satisfies \( c \le 0 \), and \( 0 \) is the greatest lower bound (@fd2:def-order-supremum).
 :::
 
 ::: {#exr-completeness-and-archimedes-b2}
@@ -330,7 +332,7 @@ Repair: replace the second and third sentences by the argument of the proof of @
 - 3: says the conclusion is true, with the reason (the theorem).
 - 3: names the line "the supremum is the largest element" and says which property of suprema it wrongly assumes.
 - 2: a counterexample **to that step**: a set whose supremum is not an element of it, with the supremum verified.
-- 2: a correct repair through "\( s - 1 \) is not an upper bound".
+- 2: a correct repair that uses that \( s \) is **least**, without assuming \( s \) lies in the set: for example, \( s - 1 \) is not an upper bound, so some \( \iota_F(n) > s - 1 \) and then \( \iota_F(n + 1) > s \); or, equivalently, if \( \iota_F(n + 1) \le s \) for all \( n \) then \( s - 1 \) is a smaller upper bound (the case \( n = 0 \) uses \( 1 \le s \)).
 Fatal errors (0 for the step): declaring the conclusion false; a counterexample to the theorem rather than to the step.
 :::
 
@@ -338,8 +340,9 @@ Fatal errors (0 for the step): declaring the conclusion false; a counterexample 
 def-cof-order-preserving-map (claim): strictly increasing implies injective and order-reflecting | (O1) of def-ordered-ring-and-field; inline
 def-cof-order-preserving-map (example): x -> 2x and x -> -x on Q fail the unit and product clauses | arithmetic in Q; inline
 def-cof-order-preserving-map (claim): the zero map preserves + and . but not 1; 1_L != 0_L in a field | def-commutative-ring-and-field (1 != 0); inline
+def-cof-order-preserving-map (claim): the unit clause follows from additivity, multiplicativity and strict increase (chi(0) = 0, chi(1) > 0, chi(1) = chi(1)^2) | field cancellation (lem-field-fraction-rules (d)); inline, fold only
 def-cof-order-preserving-map (claim): pointers to Section 6.4 (conjugation of Q(sqrt 2)), Section 6.3, and the optional Chapter 7 (cuts) | prose pointers; nothing depends on them
-thm-cof-complete-archimedean (proof): not (n * 1_F <= b) iff b < n * 1_F; "not an upper bound" gives n with n * 1_F > s - 1 | totality (prp-ordered-field-halves (a)) and fd1:prp-bounded-quantifier-negation; inline
+thm-cof-complete-archimedean (proof): "not an upper bound" gives n with n * 1_F > s - 1, and n * 1_F > x for each x once iota_F(N) is not bounded above | totality (prp-ordered-field-halves (a)), fd1:prp-quantifier-negation, fd1:prp-bounded-quantifier-negation (a); inline
 thm-cof-complete-archimedean (proof): s - 1 < s; (s - 1) + 1 = s | (O3), field arithmetic; inline
 thm-cof-complete-archimedean (claim): Q(t) is not Archimedean | exm-rational-function-field (school polynomial algebra, flagged there); counterexample only
 thm-cof-complete-archimedean (claim): Cauchy-complete need not imply Archimedean | stated without proof in Chapter 5 (remark after thm-cauchy-archimedean-lub); nothing depends on it
@@ -349,9 +352,12 @@ lem-cof-rationals-separate (proof): antisymmetry of <= | prp-ordered-field-halve
 lem-cof-rationals-separate (claim): Q_{Q(t)}(t) = Q = Q_{Q(t)}(t + 1) | exm-rational-function-field (school polynomial algebra, flagged; fold, counterexample only), thm-rationals-archimedean
 prp-cof-square-roots (proof): (s + h)^2 <= s^2 + h(2s + 1) for 0 < h <= 1, s >= 0; (s - h)^2 = a + h^2 for h = (s^2 - a)/(2s); s - h = (s^2 + a)/(2s); a + 1 bounds S | field arithmetic, prp-ordered-ring-rules (b), (c); inline; verify/ch06/prp-cof-square-roots.py
 prp-cof-square-roots (proof): h <= 1 and h > 0 give h^2 <= h; y > 1 gives y^2 > y | prp-ordered-ring-rules (c); inline
+prp-cof-square-roots (proof): h = (s^2 - a)/(2s) > 0 and s - h = (s^2 + a)/(2s) > 0 | prp-reciprocal-order (a), (O4); inline
 prp-cof-square-roots (proof): b = -c <= 0 <= b forces b = 0 | prp-ordered-ring-rules (a), antisymmetry; inline
 exr-completeness-and-archimedes-a1 (solution): admissible order (v)(iii)(viii)(vi)(i)(iv) | inline
+exr-completeness-and-archimedes-a1 (solution): sup of the negative elements is 0 | first example after def-complete-ordered-field
 exr-completeness-and-archimedes-b1 (solution): iota_F(1/n) = 1/(n * 1_F) | thm-rationals-embed-ordered-field (products, iota_F(n) = n * 1_F), lem-field-fraction-rules (a); inline
+exr-completeness-and-archimedes-b1 (solution): some 1/(N * 1_F) < c for c > 0 | thm-cof-complete-archimedean, prp-archimedean-reciprocal
 exr-completeness-and-archimedes-c1 (solution): an injection F -> P(Q) means |F| <= |P(Q)| | fd2 Chapter 3 (prose only, no proof uses it)
 exr-completeness-and-archimedes-c2 (solution): sup{1 - 1/n : n >= 1} = 1 in R, not attained | thm-constructed-reals-archimedean, prp-archimedean-reciprocal; inline
 -->

@@ -1,6 +1,7 @@
 """lem-cof-polynomial-closure: the product list has length d + e + 1 and last entry a_d b_e
 (for arbitrary lists, via the induction r = b_0 + t r'); the shifted list of t p(t);
-and exm-cof-shift-automorphism: p(t + 1) has a list with the same top degree and top coefficient.
+and exm-cof-shift-automorphism: p(t + 1) is a polynomial function (the check that its list keeps
+the same top degree and top coefficient goes beyond what the text claims).
 Also exm-cof-x-not-square / B3: t q^2 and (t^3 + 1) q^2 have odd top degree 2e + 1, 2e + 3."""
 from fractions import Fraction as F
 import random

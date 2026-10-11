@@ -100,7 +100,7 @@ the supremum taken in \( L \), and it satisfies
 *Try it first (ten minutes): if \( \varphi \) exists and fixes \( \nQ \), which element of \( L \) must \( \varphi(x) \) be?*
 
 ::: {.idea}
-The natural first attempt defines \( \varphi \) on the copy of \( \nQ \), by \( \varphi(\iota_F(q)) \coloneqq \iota_L(q) \), and then tries to "extend". It stalls at once: an element \( x \in F \) that is not a rational has no formula, and nothing in \( F \) names it. What we do know, from the previous subsection, is its record: \( \varphi(x) \) must have exactly the rationals \( \nQ_F(x) \) below it. So we **construct a point as a supremum**: \( \varphi(x) \) is the least upper bound in \( L \) of the copies of those rationals, and \( (\star) \) says the construction has the right record. After that, every property of \( \varphi \) is checked the same way: compute the record of both sides, using the two lemmas, and let rationals separate in \( L \).
+The natural first attempt defines \( \varphi \) on the copy of \( \nQ \), by \( \varphi(\iota_F(q)) \coloneqq \iota_L(q) \), and then tries to "extend". It stalls at once: an element \( x \in F \) that is not a rational has no formula, and nothing in \( F \) names it. What we do know, from the previous subsection, is its record: \( \varphi(x) \) must have exactly the rationals \( \nQ_F(x) \) below it. So we **construct a point as a supremum**: \( \varphi(x) \) is the least upper bound in \( L \) of the copies of those rationals, and \( (\star) \) says the construction has the right record. After that, sums, products and uniqueness are checked the same way: compute the record of both sides (for sums and products by the two lemmas) and let rationals separate in \( L \). Monotonicity needs only one rational between \( x \) and \( y \).
 
 Step roadmap: ① \( \varphi(x) \) exists; ② \( (\star) \); ③ \( \varphi \) fixes the rationals; ④ \( \varphi \) is strictly increasing; ⑤ sums; ⑥ products and the unit; ⑦ uniqueness. *Before reading on: where is completeness of \( L \) used, and where the Archimedean property of \( F \)?*
 :::
@@ -148,7 +148,7 @@ q \in \nQ_L\bigl(\varphi(xy)\bigr)
 \]
 by \( (\star) \), @lem-cof-below-product in \( F \), \( (\star) \) twice, and @lem-cof-below-product in \( L \) (with \( \varphi(x), \varphi(y) > 0 \)). By @lem-cof-rationals-separate in \( L \), \( \varphi(xy) = \varphi(x)\varphi(y) \) for \( x, y > 0 \).
 
-Now the signs. By Steps 5 and 3, \( \varphi(x) + \varphi(-x) = \varphi(0_F) = 0_L \), so \( \varphi(-x) = -\varphi(x) \). If \( x = 0 \) or \( y = 0 \), both sides of \( \varphi(xy) = \varphi(x)\varphi(y) \) are \( 0_L \). If \( x < 0 < y \), then \( -x > 0 \) and \( xy = -\bigl((-x)y\bigr) \) (@prp-ring-algebra (c)), so
+Now the signs. By Steps 5 and 3, \( \varphi(x) + \varphi(-x) = \varphi(0_F) = 0_L \), so \( \varphi(-x) = -\varphi(x) \) (@prp-ring-algebra (a)). If \( x = 0 \) or \( y = 0 \), both sides of \( \varphi(xy) = \varphi(x)\varphi(y) \) are \( 0_L \) (Step 3 and @prp-ring-algebra (b)). If \( x < 0 < y \), then \( -x > 0 \) (@prp-ordered-ring-rules (a)) and \( xy = -\bigl((-x)y\bigr) \) (@prp-ring-algebra (c)), so
 \[
 \varphi(xy) = -\varphi\bigl((-x)y\bigr) = -\bigl(\varphi(-x)\varphi(y)\bigr) = -\bigl(-\varphi(x)\bigr)\varphi(y) = \varphi(x)\varphi(y) .
 \]
@@ -164,11 +164,15 @@ the second equality by \( (\star) \). By @lem-cof-rationals-separate in \( L \),
 The answer to the prompt. Completeness of \( L \) is used in Step 1, where the supremum must exist, and in Step 2 \( (\supseteq) \), where its leastness turns "below \( \varphi(x) \)" into "below some \( \iota_L(r) \)". The Archimedean property of \( F \) is used in Step 1 for the bounds \( -n \) and \( m \), in Steps 2 and 4 through density in \( F \), and in Steps 5 and 6 through the two lemmas applied in \( F \). Completeness of \( L \) is used a third time, indirectly: it makes \( L \) Archimedean (@thm-cof-complete-archimedean), which Steps 3, 5, 6 and 7 need for rationals to separate in \( L \) and for the lemmas in \( L \).
 
 ::: {.remark}
-Step 7 is the whole of "uniqueness", and it uses only that \( L \) is Archimedean, not that it is complete. Section 6.3 uses it twice: once to show that two maps between complete fields are inverse to each other, and once to show that a complete ordered field has no order-preserving field automorphism other than the identity.
+Step 7 is the whole of "uniqueness". Its idea, comparing the rationals below two candidate values, needs only that \( L \) is Archimedean, not that it is complete: Exercise C1 runs it for any two order-preserving field maps \( F \to L \), with no appeal to \( (\star) \). Section 6.3 leans on the uniqueness clause throughout: to show that the maps between two complete fields are inverse to each other, that the isomorphism they give is the only one, and that a complete ordered field has no order-preserving field automorphism other than the identity.
+:::
+
+::: {.remark}
+Neither hypothesis can be dropped from the existence half. *Without completeness of \( L \):* take \( F = \nR \), which is Archimedean (@thm-constructed-reals-archimedean), and \( L = \nQ \). An order-preserving field map \( \varphi \colon \nR \to \nQ \) would fix \( 2 \) (@prp-cof-map-fixes-rationals), so for \( \sqrt 2 \in \nR \) (the element of @exm-sqrt2-class, as in Section 6.1), \( \varphi(\sqrt 2)^2 = \varphi((\sqrt 2)^2) = \varphi(2) = 2 \) in \( \nQ \), against @thm-no-rational-square-two. *Without the Archimedean property of \( F \):* take \( F = \nQ(t) \) of @exm-rational-function-field and any complete \( L \). An order-preserving field map \( \varphi \) would fix each \( n \cdot 1 \) and be strictly increasing, so \( n \cdot 1_L = \varphi(n \cdot 1) < \varphi(t) \) for every \( n \in \nN \), against the Archimedean property of \( L \) (@thm-cof-complete-archimedean).
 :::
 
 ::: {.warning}
-The supremum in the definition of \( \varphi \) is taken **in \( L \)**, of the copies \( \iota_L(q) \). It cannot be taken in \( \nQ \), or in \( F \). In \( \nQ \): for the class \( r = \sqrt 2 \) of @exm-cof-rationals-below-sqrt2, the set \( \nQ_{\nR}(r) \) has no supremum in \( \nQ \). It contains the set \( A = \{ x \in \nQ : x^2 < 2 \} \) of @thm-rationals-gap-sqrt2, and its other elements are negative, so below \( 0 \in A \); hence the two sets have the same upper bounds in \( \nQ \), and \( A \) has no least one. In \( F \): the supremum of \( \iota_F(\nQ_F(x)) \), when it exists, is \( x \) itself, an element of the wrong field.
+The supremum in the definition of \( \varphi \) is taken **in \( L \)**, of the copies \( \iota_L(q) \). It cannot be taken in \( \nQ \), or in \( F \). In \( \nQ \): the set \( \nQ_{\nR}(\sqrt 2) \) of @exm-cof-rationals-below-sqrt2 (with \( \sqrt 2 \) as in Section 6.1) has no supremum in \( \nQ \). It contains the set \( A = \{ p \in \nQ : p^2 < 2 \} \) of @thm-rationals-gap-sqrt2, and its other elements are negative, so below \( 0 \in A \); hence the two sets have the same upper bounds in \( \nQ \), and \( A \) has no least one. In \( F \): the supremum of \( \iota_F(\nQ_F(x)) \) always exists and is \( x \) itself, since \( x \) is an upper bound and, by density in \( F \) (@thm-rationals-dense-ordered-field), every \( u < x \) lies below some \( \iota_F(q) < x \). So it is an element of the wrong field.
 :::
 
 ::: {.check}
@@ -176,7 +180,7 @@ Take \( L \coloneqq F \), a complete ordered field. Which map \( F \to F \) does
 :::
 
 ::: {.solution}
-The identity. The theorem says there is exactly one order-preserving field map \( F \to F \) (\( F \) is Archimedean by @thm-cof-complete-archimedean), and \( \mathrm{id}_F \) is one (the first example after @def-cof-order-preserving-map). So \( \varphi = \mathrm{id}_F \). This is the argument Section 6.3 builds on.
+The identity. The theorem says there is exactly one order-preserving field map \( F \to F \) (\( F \) is Archimedean by @thm-cof-complete-archimedean), and \( \id_F \) is one (the first example after @def-cof-order-preserving-map). So \( \varphi = \id_F \). This is the argument Section 6.3 builds on.
 :::
 
 ## Exercises
@@ -203,7 +207,7 @@ These questions are about the proof of @thm-cof-embedding-into-complete.
 
 (c) An order-preserving map that fixes the rationals must send \( x \) to an element with the same rationals below it, and in a complete \( L \) the supremum of their copies is such an element. Every field identity for \( \varphi \) is then checked by comparing the rationals below the two sides, which the sum and product lemmas compute, and rationals separate in \( L \).
 
-(d) \( F \) need not be complete: \( F = \nQ \) is allowed, and there the set \( \nQ_{\nR}(\sqrt 2) \) of the warning has no supremum. Even when the supremum in \( F \) exists, it is \( x \) itself (Exercise B2 of Section 6.1), an element of \( F \), not of \( L \).
+(d) In \( F \) the supremum of \( \iota_F(\nQ_F(x)) \) always exists, since \( F \) is Archimedean, and it is \( x \) itself (Exercise B2 of Section 6.1): an element of \( F \), not of \( L \). So it does not give a map into \( L \). The supremum must be of the copies \( \iota_L(q) \), taken in \( L \).
 :::
 
 ### B. Practice
@@ -213,7 +217,7 @@ These questions are about the proof of @thm-cof-embedding-into-complete.
 
 Prove @lem-cof-below-product: let \( F \) be an Archimedean ordered field, \( a, b \in F \) with \( a, b > 0 \), and \( q \in \nQ \) with \( q > 0 \); show that \( \iota_F(q) < ab \) if and only if some rational \( r > 0 \) has \( \iota_F(r) < a \) and \( \iota_F(q/r) < b \). Show also that \( \iota_F(q) < ab \) for every rational \( q \le 0 \).
 
-*Hint: for \( (\Rightarrow) \), look for \( r \) between \( q/b \) and \( a \).*
+*Hint: imitate the proof of @lem-cof-below-sum, with division in place of subtraction.*
 :::
 
 ::: {.solution}
@@ -233,7 +237,7 @@ Let \( F \) be a complete ordered field and \( a \in F \) with \( a > 0 \). Let 
 
 ::: {.enumerate options="label=(\arabic*)"}
 1. \( S \) is non-empty (\( 0 \in S \)) and bounded above by \( 1 + a \): if \( y > 1 + a \), then \( y > 1 \), so \( y^3 > y > a \). Let \( s \coloneqq \sup S \). Then \( s > 0 \), since \( m \coloneqq \min\{1, a/2\} \) has \( 0 < m \le 1 \), so \( m^3 \le m \le a/2 < a \), and \( m \in S \).
-2. For \( y, z \in F \), \( z^3 - y^3 = (z - y)(z^2 + zy + y^2) \) and \( z^2 + zy + y^2 = (z + y/2)^2 + (3/4)y^2 \), which is \( > 0 \) unless \( y = z = 0 \). Hence \( y < z \iff y^3 < z^3 \), for all \( y, z \in F \).
+2. For \( y, z \in F \), \( z^3 - y^3 = (z - y)(z^2 + zy + y^2) \) and \( z^2 + zy + y^2 = (z + y/2)^2 + (3/4)y^2 \), which is \( > 0 \) unless \( y = z = 0 \) (if \( y \ne 0 \), then \( (3/4)y^2 > 0 \) by @prp-ordered-ring-rules (e), (c) and the square is \( \ge 0 \), so the sum is positive by (b); if \( y = 0 \) and \( z \ne 0 \), the expression is \( z^2 > 0 \) by (e)). Hence \( y < z \iff y^3 < z^3 \), for all \( y, z \in F \).
 3. The case \( s^3 < a \) is impossible. Let \( h \coloneqq \min\{1, (a - s^3)/(2(3s^2 + 3s + 1))\} > 0 \). Since \( 0 < h \le 1 \) and \( s \ge 0 \), \( (s + h)^3 = s^3 + 3s^2h + 3sh^2 + h^3 \le s^3 + h(3s^2 + 3s + 1) \le s^3 + (a - s^3)/2 < a \), so \( s + h \in S \), against \( s \) being an upper bound.
 4. The case \( s^3 > a \) is impossible. *Name the move, then complete it.*
 5. Hence \( s^3 = a \).
@@ -283,11 +287,11 @@ Let \( x \in F \) and \( i \in \{1, 2\} \). By @prp-cof-map-fixes-rationals (whi
 \]
 So \( \nQ_L(\chi_1(x)) = \nQ_F(x) = \nQ_L(\chi_2(x)) \). Since \( L \) is Archimedean, @lem-cof-rationals-separate gives \( \chi_1(x) = \chi_2(x) \). As \( x \) was arbitrary, \( \chi_1 = \chi_2 \). (This is Step 7 of @thm-cof-embedding-into-complete with \( \chi_2 \) in place of \( \varphi \); completeness of \( L \) is not needed, and neither is the Archimedean property of \( F \).)
 
-*Why \( L \) must be Archimedean (remark, not proved here).* The last step separates \( \chi_1(x) \) from \( \chi_2(x) \) by a rational strictly between them, which is density of \( \iota_L(\nQ) \) in \( L \), and density needs Archimedes (@thm-rationals-dense-ordered-field). In the non-Archimedean field \( \nQ(t) \) of @exm-rational-function-field, the elements \( 1/t \) and \( 2/t \) are different and have the same rationals below them, namely all \( q \le 0 \): a positive rational \( q \) exceeds \( 1/(n \cdot 1) \) for some \( n \in \nZ_{>0} \), and \( 1/(n \cdot 1) > 2/t \) because \( t > 2n \cdot 1 \). So the separating step fails in such a field. Without the hypothesis the statement itself can fail, but an example needs more algebra than this volume has, and we give none.
+*Why \( L \) must be Archimedean (remark, not proved here).* The last step separates \( \chi_1(x) \) from \( \chi_2(x) \) by a rational strictly between them, which is density of \( \iota_L(\nQ) \) in \( L \), and density needs Archimedes (@thm-rationals-dense-ordered-field). In the non-Archimedean field \( \nQ(t) \) of @exm-rational-function-field, the elements \( 1/t \) and \( 2/t \) are different and have the same rationals below them, namely all \( q \le 0 \): a positive rational \( q \) has \( q > 1/n \) in \( \nQ \) for some \( n \in \nZ_{>0} \) (@thm-rationals-archimedean), so \( \iota_{\nQ(t)}(q) > \iota_{\nQ(t)}(1/n) = 1/(n \cdot 1) > 2/t \), because \( t > 2n \cdot 1 \) (@exm-rational-function-field). So the separating step fails in such a field. For the stronger statement proved above, with \( F \) arbitrary, the hypothesis on \( L \) cannot be dropped: on \( \nQ(t) \), the substitution \( t \mapsto t + 1 \) keeps degrees and leading coefficients, so it is an order-preserving field map \( \nQ(t) \to \nQ(t) \) different from the identity (school polynomial algebra, as flagged in @exm-rational-function-field). An example with \( F \) Archimedean needs more algebra than this volume has, and we give none.
 
 **Marking scheme.** (10 points)
 - 2: each \( \chi_i \) fixes \( \nQ \), with the reason (@prp-cof-map-fixes-rationals, or directly: induction for \( \nN \), then negatives and quotients).
-- 3: \( \iota_F(q) < x \iff \iota_L(q) < \chi_i(x) \), both directions, the second using that \( \chi_i \) reflects order.
+- 3: links the rationals below \( x \) to those below \( \chi_i(x) \), using that \( \chi_i \) fixes \( \nQ \) and reflects order. Either gives the full equivalence \( \iota_F(q) < x \iff \iota_L(q) < \chi_i(x) \), or, for the squeeze route of the next item, applies reflection by \( \chi_1 \) and \( \chi_2 \) to a rational strictly between \( \chi_1(x) \) and \( \chi_2(x) \).
 - 3: concludes \( \chi_1(x) = \chi_2(x) \) by rationals separating, or by a rational strictly between the two, invoking the Archimedean property **of \( L \)**.
 - 2: states the conclusion for every \( x \in F \).
 Fatal errors (0 for the step): using density in \( L \) without a hypothesis that gives it; assuming \( \chi_i \) surjective.
@@ -331,6 +335,14 @@ By \( (\star) \), \( \nQ_L(\varphi(x)) = \nQ_F(x) = S = \nQ_L(y) \), so \( \varp
 (c) Let \( \varphi \) be surjective. It is injective (strictly increasing), so bijective, with an inverse \( \varphi^{-1} \colon L \to F \) (@fd2:thm-bijection-iff-inverse). Let \( A \subseteq F \) be non-empty with an upper bound \( b \). Then \( \varphi(A) \) is non-empty and bounded above by \( \varphi(b) \), since \( a \le b \) gives \( \varphi(a) \le \varphi(b) \). As \( L \) is complete, \( s \coloneqq \sup \varphi(A) \) exists; let \( c \coloneqq \varphi^{-1}(s) \). *Upper bound:* for \( a \in A \), \( \varphi(a) \le s = \varphi(c) \), so \( a \le c \), because \( \varphi \) reflects order (and is injective, for the case of equality). *Least:* if \( u \) is an upper bound of \( A \), then \( \varphi(u) \) is an upper bound of \( \varphi(A) \), so \( \varphi(c) = s \le \varphi(u) \), and \( c \le u \) as before. So \( c = \sup A \) (@fd2:def-order-supremum), and \( F \) is complete.
 
 So \( \varphi \) is an order-preserving field isomorphism exactly when \( F \) is complete. Section 6.3 reaches the "if" direction by a different route, which computes no supremum at all.
+
+**Marking scheme.** (10 points)
+- 2: (a) \( L \) is Archimedean (@thm-cof-complete-archimedean), so some \( \iota_L(q) \) lies strictly between \( u \) and \( v \), and \( \iota_L(q) = \varphi(\iota_F(q)) \) (Step 3).
+- 2: (b) \( \iota_F(S) \) is non-empty and bounded above in \( F \) (Archimedes in \( L \), transferred through \( \iota_F \)), so \( x = \sup_F \iota_F(S) \) exists by completeness of \( F \).
+- 2: (b) \( \nQ_F(x) = S \), both inclusions; \( (\supseteq) \) uses density in \( L \).
+- 1: (b) \( \nQ_L(\varphi(x)) = \nQ_F(x) = \nQ_L(y) \) by \( (\star) \), hence \( \varphi(x) = y \) by @lem-cof-rationals-separate in \( L \).
+- 3: (c) for non-empty \( A \subseteq F \) bounded above by \( b \), \( \varphi(A) \) is bounded above by \( \varphi(b) \), and \( \varphi^{-1}(\sup \varphi(A)) \) is an upper bound of \( A \) and the least one, both using that \( \varphi \) reflects order and is bijective.
+Fatal errors (0 for the step): using density of \( \iota_L(\nQ) \) in \( L \) without the Archimedean property of \( L \); in (b), taking a supremum in \( F \) before checking that the set is non-empty and bounded above; in (c), assuming \( \varphi^{-1} \) preserves order without justification.
 :::
 
 <!-- dependency ledger
@@ -340,15 +352,23 @@ lem-cof-below-sum (solution): quick check, 1/2 < r < 3/4, r = 2/3 | verify/ch06/
 thm-cof-embedding-into-complete (proof): a set has at most one supremum | def-complete-ordered-field (well-definedness paragraph)
 thm-cof-embedding-into-complete (proof): "not an upper bound" gives an element above; neg(a < b) iff b <= a | fd1:prp-bounded-quantifier-negation, totality (prp-ordered-field-halves (a)); inline
 thm-cof-embedding-into-complete (proof): Q_F(iota_F(r)) = {q < r} | the first example after def-cof-rationals-below (Section 6.1)
+thm-cof-embedding-into-complete (proof): Step 1, iota_F(-n) = -(n*1_F); -(-x) = x | thm-rationals-embed-ordered-field (sums, iota_F(n) = n*1_F), prp-ring-algebra (a) (uniqueness of negatives, -(-a) = a); inline
+thm-cof-embedding-into-complete (proof): phi(-x) = -phi(x) | prp-ring-algebra (a)
+thm-cof-embedding-into-complete (proof): x = 0 or y = 0 gives both sides 0_L | Step 3 (phi(0_F) = 0_L), prp-ring-algebra (b), (F6)
+thm-cof-embedding-into-complete (proof): x < 0 gives -x > 0 | prp-ordered-ring-rules (a), -0 = 0 (prp-ring-algebra (a))
 thm-cof-embedding-into-complete (proof): x < 0 < y gives xy = -((-x)y); (-a)(-b) = ab | prp-ring-algebra (c)
 thm-cof-embedding-into-complete (proof): chi reflects order | the remark after def-cof-order-preserving-map (Section 6.1)
 thm-cof-embedding-into-complete (proof): maps with equal values at every point are equal | fd2:def-function (equality of functions); inline
-thm-cof-embedding-into-complete (claim): warning, Q_R(r) and A = {x in Q : x^2 < 2} have the same upper bounds in Q | exm-cof-rationals-below-sqrt2, thm-rationals-gap-sqrt2 (a); inline
+thm-cof-embedding-into-complete (claim): remark, existence fails for F = R, L = Q and for F = Q(t), L complete | thm-constructed-reals-archimedean, prp-cof-map-fixes-rationals, exm-sqrt2-class, thm-no-rational-square-two, exm-rational-function-field, thm-rationals-embed-ordered-field (iota_L(n) = n*1_L), thm-cof-complete-archimedean; remark only, nothing depends on it
+thm-cof-embedding-into-complete (claim): warning, Q_R(sqrt 2) and A = {p in Q : p^2 < 2} have the same upper bounds in Q | exm-cof-rationals-below-sqrt2, thm-rationals-gap-sqrt2 (a); inline
+thm-cof-embedding-into-complete (claim): warning, sup in F of iota_F(Q_F(x)) exists and is x | thm-rationals-dense-ordered-field, totality (prp-ordered-field-halves (a)); inline
 thm-cof-embedding-into-complete (solution): quick check, L = F gives the identity | thm-cof-complete-archimedean and the uniqueness clause; inline
 exr-measuring-by-rationals-a1 (solution): iota_Q is the identity | Chapter 4, paragraph after thm-rationals-embed-ordered-field
 exr-measuring-by-rationals-a1 (solution): sup of Q_F(x)'s copies in F is x | exr-completeness-and-archimedes-b2 (an exercise, cited only in this solution)
+exr-measuring-by-rationals-b2 (claim): (z + y/2)^2 + (3/4)y^2 > 0 unless y = z = 0 | prp-ordered-ring-rules (e), (c), (b); inline
 exr-measuring-by-rationals-b2 (solution): z^3 - y^3 factorization; (z + y/2)^2 + (3/4)y^2; (s + h)^3 bound; (s - h)^3 - a = h^2(3s - h) for h = (s^3 - a)/(3s^2); h < s; m = min{1, a/2} in S | inline; verify/ch06/exr-measuring-by-rationals-b2.py
 exr-measuring-by-rationals-c1 (solution): in Q(t), 1/t and 2/t have the same rationals below them (q <= 0) | exm-rational-function-field (school polynomial algebra, flagged there), thm-rationals-archimedean, prp-reciprocal-order (b); remark only, nothing depends on it
-exr-measuring-by-rationals-c1 (solution): a non-Archimedean L with two distinct maps exists | not proved, not exemplified; stated as such
+exr-measuring-by-rationals-c1 (solution): t -> t + 1 is an order-preserving field map Q(t) -> Q(t) other than the identity | exm-rational-function-field (school polynomial algebra, flagged there); remark only, nothing depends on it
+exr-measuring-by-rationals-c1 (solution): a non-Archimedean L with two distinct maps from an Archimedean F exists | not proved, not exemplified; stated as such
 exr-measuring-by-rationals-c2 (solution): Step 3 of the proof of thm-cof-embedding-into-complete | cited by name (a step of an earlier proof in this section)
 -->

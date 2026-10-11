@@ -174,7 +174,7 @@ By @prp-order-from-positives, \( \nR(x) \) with \( f < g \Leftrightarrow g - f \
 | (F9) \( f(g + h) = fg + fh \) | \( u(t)\bigl(v(t) + w(t)\bigr) \) | \( u(t)v(t) + u(t)w(t) \) | (F9) in \( \nR \) |
 | (F2) \( (f + g) + h = f + (g + h) \) | \( \bigl(u(t) + v(t)\bigr) + w(t) \) | \( u(t) + \bigl(v(t) + w(t)\bigr) \) | (F2) in \( \nR \) |
 
-Here \( u(t) \), \( v(t) \), \( w(t) \) are the values of chosen representatives of \( f \), \( g \), \( h \), and "large" means beyond the maximum of the finitely many thresholds \( T_q \) involved. Each value column is computed with the pointwise rule for sums and products; the representatives produced by the formulas of @def-cof-rational-functions (b) for the two sides are different fractions, but their values agree, and that is equivalence. Exercise B1 writes out two more.
+Here \( u(t) \), \( v(t) \), \( w(t) \) are the values of chosen representatives of \( f \), \( g \), \( h \), and "large" means beyond the maximum of the finitely many thresholds \( T_q \) involved. Each value column is computed with the pointwise rule for sums and products; the representatives produced by the formulas of @def-cof-rational-functions (b) for the two sides are different fractions, but their values agree, and that is equivalence. Exercise B1 writes out one more identity, (F5), and the closure of \( P \) under sums.
 :::
 
 From now on we write \( c \) for the class \( [c/1] \) of a real number \( c \), as (b) permits. Then for \( q \in \nQ \), \( \iota_{\nR(x)}(q) = q \): the composite \( q \mapsto [\iota_{\nR}(q)/1] \) is \( \iota_{\nR(x)} \) by @prp-cof-map-fixes-rationals, applied to the map of (b). Also, by induction on \( i \), \( x^i \) is the class of \( t \mapsto t^i \) (the product is pointwise), so the polynomial function \( p(t) = \sum a_i t^i \) has class \( \sum a_i x^i \), and \( [p/q] = p(x)/q(x) \), a quotient in the field \( \nR(x) \). The notation for rational functions is now the familiar one.
@@ -197,7 +197,7 @@ Let \( n \in \nN \). By @thm-rationals-embed-ordered-field, \( n \cdot 1 = \iota
 So the element \( x \) has no \( n \in \nN \) with \( x < n \cdot 1 \), which is the negation of the Archimedean property (@fd1:prp-quantifier-negation). If \( \nR(x) \) were complete, it would be Archimedean by @thm-cof-complete-archimedean. So it is not complete.
 :::
 
-The set \( \{ n \cdot 1 : n \in \nN \} \) is non-empty and bounded above by \( x \), and the proposition says it has no supremum. Exercise C1 asks for a direct proof, with no appeal to @thm-cof-complete-archimedean.
+The set \( \{ n \cdot 1 : n \in \nN \} \) is non-empty and bounded above by \( x \); in fact it has no supremum, and Exercise C1 asks for a direct proof of that, with no appeal to @thm-cof-complete-archimedean.
 
 Above every natural number sits \( x \); below every \( 1/n \) sits its reciprocal.
 
@@ -298,18 +298,18 @@ The element \( 3 \) of \( \nQ(\sqrt 2) \) is positive and has no square root in 
 :::
 
 ::: {.idea}
-A square root \( a + b\sqrt 2 \) of \( 3 \) would, by unique representation, have \( 2ab = 0 \) and \( a^2 + 2b^2 = 3 \). So either \( a^2 = 3 \) or \( (2b)^2 = 6 \), with \( a \), \( 2b \) rational. Neither \( 3 \) nor \( 6 \) is a rational square, by the descent that showed \( 2 \) is not (@thm-no-rational-square-two). The descent there used \( 1 < x < 2 \); for \( 3 \) we use \( 1 < x < 2 \) again, and for \( 6 \), \( 2 < x < 3 \).
+A square root \( a + b\sqrt 2 \) of \( 3 \) would, by unique representation, have \( 2ab = 0 \) and \( a^2 + 2b^2 = 3 \). So either \( a^2 = 3 \) or \( (2b)^2 = 6 \), with \( a \), \( 2b \) rational. Neither \( 3 \) nor \( 6 \) is a rational square, by the descent that showed \( 2 \) is not (@thm-no-rational-square-two). The descent there used \( 1 < y < 2 \) for the would-be root \( y \); for \( 3 \) we use \( 1 < y < 2 \) again, and for \( 6 \), \( 2 < y < 3 \).
 :::
 
 We isolate the descent as a claim; its proof is that of @thm-no-rational-square-two with \( 2 \) replaced by \( n \), and it sits in the fold.
 
 ::: {.claim}
-Let \( n, k \in \nN \) with \( k^2 < n < (k + 1)^2 \). Then no \( x \in \nQ \) has \( x^2 = n \).
+Let \( n, k \in \nN \) with \( k^2 < n < (k + 1)^2 \). Then no \( y \in \nQ \) has \( y^2 = n \).
 :::
 
 ::: {.second-reading title="Proof of the claim: the descent"}
 ::: {.proof}
-Suppose \( x \in \nQ \) and \( x^2 = n \). Then \( x \ne 0 \), since \( n > k^2 \ge 0 \). Replacing \( x \) by \( -x \) if necessary, as in @thm-no-rational-square-two, we may take \( x > 0 \). By @prp-integers-embed-rationals (b), \( x = a/b \) with \( a \in \nZ \) and \( b \in \nZ_{>0} \); then \( a > 0 \) by @thm-rationals-ordered-field (a), and \( x^2 = n \) says \( a^2 = n b^2 \), as in @thm-no-rational-square-two. So the set
+Suppose \( y \in \nQ \) and \( y^2 = n \). Then \( y \ne 0 \), since \( n > k^2 \ge 0 \). Replacing \( y \) by \( -y \) if necessary, as in @thm-no-rational-square-two, we may take \( y > 0 \). By @prp-integers-embed-rationals (b), \( y = a/b \) with \( a \in \nZ \) and \( b \in \nZ_{>0} \); then \( a > 0 \) by @thm-rationals-ordered-field (a), and \( y^2 = n \) says \( a^2 = n b^2 \), as in @thm-no-rational-square-two. So the set
 \[
 D \coloneqq \{ v \in \nZ_{>0} : u^2 = n v^2 \text{ for some } u \in \nZ_{>0} \}
 \]
@@ -342,14 +342,18 @@ so by unique representation, \( 2ab = 0 \) and \( a^2 + 2b^2 = 3 \). Hence \( a 
 If \( \nQ(\sqrt 2) \) were complete, @prp-cof-square-roots would give a square root of \( 3 \) in it. So \( \nQ(\sqrt 2) \) is not complete.
 :::
 
-The proof found no explicit set without a supremum; it found a missing square root and let @prp-cof-square-roots supply the set. The set is easy to name: \( \{ y \in \nQ(\sqrt 2) : y \ge 0, \ y^2 < 3 \} \) is non-empty and bounded above by \( 2 \), and in \( \nR \) its supremum is the square root of \( 3 \), which is not in \( \nQ(\sqrt 2) \).
+The proof found no explicit set without a supremum; it found a missing square root and let @prp-cof-square-roots supply the set. The set is easy to name: \( \{ y \in \nQ(\sqrt 2) : y \ge 0, \ y^2 < 3 \} \) is non-empty and bounded above by \( 2 \), and in \( \nR \) its supremum is the square root \( \sqrt 3 \) of \( 3 \) given by @prp-cof-square-roots, which is not in \( \nQ(\sqrt 2) \).
+
+::: {.second-reading title="Why the supremum is the square root of three"}
+The element \( \sqrt 3 \) bounds the set above: \( y \ge 0 \) and \( y^2 < 3 = (\sqrt 3)^2 \) give \( y < \sqrt 3 \) (@prp-ordered-ring-rules (g)). If \( s < \sqrt 3 \), then, \( \nR \) being Archimedean (@thm-cof-complete-archimedean), @thm-rationals-dense-ordered-field gives a rational \( q \) with \( \max\{s, 0\} < q < \sqrt 3 \); then \( q \ge 0 \) and \( q^2 < 3 \), so \( q \) lies in the set and \( s \) is not an upper bound. Hence \( \sqrt 3 \) is the least upper bound.
+:::
 
 ::: {.check}
 Why does the descent claim not show that \( 4 \) is not a rational square? Which hypothesis fails?
 :::
 
 ::: {.solution}
-There is no \( k \in \nN \) with \( k^2 < 4 < (k + 1)^2 \): for \( k = 1 \), \( 4 < 4 \) fails, and for \( k = 2 \), \( 4 < 4 \) fails on the other side. The descent needs \( x \) to lie strictly between consecutive integers, so that \( 0 < v' < v \); for \( x = 2 \), \( v' = u - 2v = 0 \). And indeed \( 4 = 2^2 \).
+There is no \( k \in \nN \) with \( k^2 < 4 < (k + 1)^2 \): \( k^2 < 4 \) forces \( k \le 1 \) (for \( k \ge 2 \), \( k^2 \ge 4 \)), and then \( (k + 1)^2 \le 4 \). The descent needs the root \( y = u/v \) to lie strictly between \( k \) and \( k + 1 \), so that \( 0 < v' < v \); the natural choice \( k = 2 \) (for which \( k^2 < n \) fails) gives \( v' = u - 2v = 0 \) when \( y = 2 \), and the descent stops. And indeed \( 4 = 2^2 \).
 :::
 
 The field \( \nQ(\sqrt 2) \) has a symmetry that the uniqueness theorem forbids in \( \nR \).
@@ -373,7 +377,7 @@ And \( \sigma(1) = \sigma(1 + 0\sqrt 2) = 1 \).
 
 *Not the identity, not order-preserving.* \( \sqrt 2 > 0 \), since it is a non-zero element with \( \sqrt 2 \ge 0 \). But \( \sigma(\sqrt 2) = -\sqrt 2 < 0 = \sigma(0) \). So \( \sigma(\sqrt 2) \ne \sqrt 2 \), and \( 0 < \sqrt 2 \) while \( \sigma(0) > \sigma(\sqrt 2) \).
 
-*The failing line.* Step 1 of the proof of @thm-cof-field-automorphism-identity begins: "there is \( b \) with \( b \ge 0 \) and \( b^2 = a \)". For \( a = \sqrt 2 \) there is no such \( b \) in \( \nQ(\sqrt 2) \). Indeed, if \( c \in \nQ(\sqrt 2) \) had \( c^2 = \sqrt 2 \), then \( \sigma(c)^2 = \sigma(c^2) = \sigma(\sqrt 2) = -\sqrt 2 < 0 \); but \( \sigma(c)^2 \ge 0 \), as every square in the ordered field \( \nR \) is (@prp-ordered-ring-rules (e)). So the step "\( \sigma(a) = \sigma(b)^2 > 0 \)" cannot start, and \( \sigma \) indeed sends the positive element \( \sqrt 2 \) to a negative one. Every other line of that proof is valid in \( \nQ(\sqrt 2) \), which is Archimedean.
+*The failing line.* Step 1 of the proof of @thm-cof-field-automorphism-identity begins: "there is \( b \in F \) with \( b \ge 0 \) and \( b^2 = a \)". For \( a = \sqrt 2 \) there is no such \( b \) in \( \nQ(\sqrt 2) \). Indeed, if \( c \in \nQ(\sqrt 2) \) had \( c^2 = \sqrt 2 \), then \( \sigma(c)^2 = \sigma(c^2) = \sigma(\sqrt 2) = -\sqrt 2 < 0 \); but \( \sigma(c)^2 \ge 0 \), as every square in the ordered field \( \nR \) is (@prp-ordered-ring-rules (e)). So the step "\( \sigma(a) = \sigma(b)^2 > 0 \)" cannot start, and \( \sigma \) indeed sends the positive element \( \sqrt 2 \) to a negative one. Step 2 works in any ordered field. Step 3 as written cites completeness of \( F \), for the Archimedean property and for the target of @thm-cof-embedding-into-complete, but its conclusion still holds in \( \nQ(\sqrt 2) \): if \( \sigma \) were order-preserving, then \( \sigma \) followed by the inclusion would be an order-preserving field map \( \nQ(\sqrt 2) \to \nR \), hence the inclusion by the uniqueness clause of @thm-cof-embedding-into-complete (source \( \nQ(\sqrt 2) \), Archimedean by @prp-cof-sqrt2-field-archimedean; target \( \nR \)), and \( \sigma \) would be the identity. Only Step 1 genuinely fails.
 
 *Two maps into \( \nR \).* Since \( \nQ(\sqrt 2) \) is Archimedean and \( \nR \) complete, @thm-cof-embedding-into-complete gives exactly one order-preserving field map \( \nQ(\sqrt 2) \to \nR \); it is the inclusion. The composite of \( \sigma \) with the inclusion is a second map \( \nQ(\sqrt 2) \to \nR \) that respects sums, products and \( 1 \). The uniqueness clause is not contradicted, because this second map is not order-preserving.
 :::
@@ -409,7 +413,7 @@ By the induction hypothesis \( p'^{+} \) is a polynomial function, \( t \mapsto 
 :::
 
 ::: {.remark}
-So @cor-cof-order-automorphism-identity needs its hypothesis. Its proof went through @thm-cof-embedding-into-complete, whose uniqueness clause rests on @lem-cof-rationals-separate, which needs the Archimedean property. In \( \nR(x) \) that lemma fails exactly here: every rational lies below \( x \) and below \( x + 1 \), so \( x \) and \( x + 1 \) have the same rationals below them, all of \( \nQ \), and nothing can tell them apart. An order-preserving map that fixes the rationals is free to send one to the other. Nothing later uses this example.
+So @cor-cof-order-automorphism-identity needs its hypothesis. Its proof went through @thm-cof-embedding-into-complete, whose uniqueness clause rests on @lem-cof-rationals-separate, which needs the Archimedean property. In \( \nR(x) \) that lemma fails exactly here: every rational lies below \( x \) and below \( x + 1 \), so \( x \) and \( x + 1 \) have the same rationals below them, all of \( \nQ \), and nothing can tell them apart. An order-preserving map that fixes the rationals is free to send one to the other. No proof uses this example; only the table below cites it.
 :::
 
 ## What each hypothesis buys
@@ -425,7 +429,7 @@ The table collects the four fields of this chapter. Each entry names where it is
 
 Two entries need a line. \( \nQ \) is not complete: if it were, @prp-cof-square-roots would give a rational square root of \( 2 \), against @thm-no-rational-square-two. And a map \( \sigma \colon \nQ \to \nQ \) that respects sums and products and fixes \( 1 \) is the identity, with no order hypothesis: by @prp-cof-map-fixes-rationals with \( F = L = \nQ \), \( \sigma = \sigma \circ \iota_{\nQ} = \iota_{\nQ} = \id_{\nQ} \), the last equality by the uniqueness clause of @thm-rationals-embed-ordered-field, since \( \id_{\nQ} \) is such a map.
 
-Read across, the table shows what the uniqueness theorem used. \( \nQ(\sqrt 2) \) has the Archimedean property and lacks square roots, and its symmetry breaks the order. \( \nR(x) \) lacks the Archimedean property, and its symmetry keeps the order. Only \( \nR \), which has both, has no symmetry at all. Read down, the column of \( \nQ \) shows that the last row does not characterize \( \nR \): a field can be rigid for a cheaper reason, having nothing besides rationals to move.
+Read across, the table shows what the uniqueness theorem used. \( \nQ(\sqrt 2) \) has the Archimedean property and lacks square roots, and its symmetry breaks the order. \( \nR(x) \) lacks the Archimedean property, and its symmetry keeps the order. Of these three, only \( \nR \), which has both, has no symmetry at all. Read down, the column of \( \nQ \) shows that the last row does not characterize \( \nR \): a field can be rigid for a cheaper reason, having nothing besides rationals to move.
 
 ## Exercises
 
@@ -444,7 +448,7 @@ Read across, the table shows what the uniqueness theorem used. \( \nQ(\sqrt 2) \
 ::: {.solution}
 (a) Yes. Its value \( t^2 - 100t = t(t - 100) \) is positive for every \( t > 100 \). (Or: the list \( (0, -100, 1) \) has top coefficient \( 1 > 0 \), and @lem-cof-leading-term-sign applies with \( T = 101 \).)
 
-(b) The conclusion is false (@prp-cof-sqrt2-field-incomplete). The illegal step is the last: completeness of the target says nothing about suprema in the source. A set \( A \subseteq \nQ(\sqrt 2) \) that is bounded above has a supremum in \( \nR \), but it may lie outside \( \nQ(\sqrt 2) \): for \( A = \{ y \ge 0 : y^2 < 3 \} \) it is the square root of \( 3 \), which is not in \( \nQ(\sqrt 2) \).
+(b) The conclusion is false (@prp-cof-sqrt2-field-incomplete). The illegal step is the last: completeness of the target says nothing about suprema in the source. A set \( A \subseteq \nQ(\sqrt 2) \) that is bounded above has a supremum in \( \nR \), but it may lie outside \( \nQ(\sqrt 2) \): for \( A = \{ y \in \nQ(\sqrt 2) : y \ge 0, \ y^2 < 3 \} \) it is \( \sqrt 3 \), which is not in \( \nQ(\sqrt 2) \) (the remark after @prp-cof-sqrt2-field-incomplete).
 
 (c) \( 0 < 1/x^2 < 1/x < 1/10^6 \). The value of \( 1/x - 1/x^2 \) is \( (t - 1)/t^2 > 0 \) for \( t > 1 \), and that of \( 1/10^6 - 1/x \) is \( 1/10^6 - 1/t > 0 \) for \( t > 10^6 \).
 :::
@@ -454,7 +458,7 @@ Read across, the table shows what the uniqueness theorem used. \( \nQ(\sqrt 2) \
 ::: {#exr-two-non-examples-b1}
 [B1]
 
-Write out, in the style of the table in @prp-cof-rational-functions-ordered, the proofs that multiplication in \( \nR(x) \) is associative and that the positive set \( P \) is closed under sums. Name the threshold you use in each.
+Prove that multiplication in \( \nR(x) \) is associative and that the positive set \( P \) is closed under sums. In each, choose representatives, name a threshold \( T \) beyond which every denominator involved is non-zero (and, for \( P \), every value involved is positive), compute the values of both sides at \( t > T \) with the pointwise rule, and say which fact about \( \nR \) makes them equal or positive.
 :::
 
 ::: {.solution}
@@ -505,8 +509,8 @@ Suppose \( s \in \nR(x) \) is a supremum of \( A \). For every \( n \in \nN \), 
 **Marking scheme.** (10 points)
 - 2: exhibits a non-empty set bounded above, with the bound verified (here \( x \), by a threshold for the value of \( x - n \), or by @lem-cof-leading-term-sign).
 - 3: supposes a supremum \( s \), and uses (S1) on \( (n + 1) \cdot 1 \).
-- 3: shows that \( s - 1 \) is an upper bound, from \( (n + 1) \cdot 1 \le s \Rightarrow n \cdot 1 \le s - 1 \) for every \( n \).
-- 2: contradiction with (S2), concluding that no supremum exists.
+- 3: plays leastness against \( s - 1 \): either shows that \( s - 1 \) is an upper bound, from \( (n + 1) \cdot 1 \le s \Rightarrow n \cdot 1 \le s - 1 \) for every \( n \), or notes \( s - 1 < s \) so that (S2) gives \( n \) with \( n \cdot 1 > s - 1 \).
+- 2: reaches the contradiction (with (S2), or with (S1) via \( (n + 1) \cdot 1 > s \)), concluding that no supremum exists.
 Fatal errors (0 for the step): proving only "not Archimedean" and stopping; treating \( x \) as a real number (for instance, "take \( n > x \)").
 :::
 
@@ -534,7 +538,7 @@ Think of ternary expansions that use only the digits \( 0 \) and \( 2 \). For (a
 ::: {.solution}
 [Hint 2]
 
-For (b), let \( j \) be the first index where \( s \) and \( s' \) differ, with \( s_j = 1 \). Show that everything \( s' \) adds after index \( j \) totals less than \( 1/3^{j+1} \), while \( s \) has already added \( 2/3^{j+1} \) at index \( j \).
+For (b), let \( j \) be the least index where \( s \) and \( s' \) differ (it exists by least elements), with \( s_j = 1 \) and \( s'_j = 0 \), and put \( c \coloneqq S_{j-1}(s) = S_{j-1}(s') \) (with \( c \coloneqq 0 \) if \( j = 0 \)).
 :::
 
 ::: {.solution}
@@ -556,7 +560,7 @@ since passing from \( m \) to \( m + 1 \) adds \( 2 s_{m+1}/3^{m+2} \in [0, 2/3^
 - 2: (a), a common upper bound for the partial sums, and completeness invoked for the supremum.
 - 2: the tail bound, by induction, in \( F \).
 - 4: (b), the first differing index \( j \) by least elements, the lower bound \( c + 2/3^{j+1} \) for \( \Phi(s) \) by (S1), and the upper bound \( c + 1/3^{j+1} \) for \( \Phi(s') \) by (S2).
-- 2: (c), the composite injection and the uncountability of \( \{0, 1\}^{\nN} \).
+- 2: (c), the composite injection and the uncountability of \( \{0, 1\}^{\nN} \). The second route, by @cor-cof-isomorphic-to-cauchy-reals and the uncountability of \( \nR \), also earns these 2 points; (a) and (b) are still marked as above.
 Fatal errors (0 for the step): treating \( \Phi(s) \) as an infinite sum computed term by term; using decimal or ternary expansions of real numbers as known facts.
 :::
 
@@ -593,7 +597,8 @@ prp-cof-sqrt2-field-archimedean (proof): product formula and inverse formula in 
 prp-cof-sqrt2-field-archimedean (proof): a subset closed under the operations inherits (F1)-(F9), (O1)-(O4) | inline (universal statements)
 prp-cof-sqrt2-field-incomplete (proof): u'^2 - n v'^2 = (k^2 - n)(u^2 - n v^2); 1 < 3 < 4, 4 < 6 < 9 | inline; verify/ch06/prp-cof-sqrt2-field-incomplete.py
 prp-cof-sqrt2-field-incomplete (proof): a positive rational is a/b with a, b in Z_{>0} | prp-integers-embed-rationals (b), thm-rationals-ordered-field (a), as in thm-no-rational-square-two
-prp-cof-sqrt2-field-incomplete (claim): sup of {y >= 0 : y^2 < 3} in R is the square root of 3 | remark only; nothing depends on it
+prp-cof-sqrt2-field-incomplete (claim): sup in R of {y in Q(sqrt 2) : y >= 0, y^2 < 3} is sqrt 3 | inline; prp-cof-square-roots, prp-ordered-ring-rules (g), thm-cof-complete-archimedean, thm-rationals-dense-ordered-field, cited
+exr-two-non-examples-a1 (solution): sup in R of {y in Q(sqrt 2) : y >= 0, y^2 < 3} is sqrt 3, not in Q(sqrt 2) | the remark after prp-cof-sqrt2-field-incomplete; inline
 exm-cof-sqrt2-conjugation (solution): sigma respects products | inline; verify/ch06/prp-cof-sqrt2-field-archimedean.py (product formula)
 exm-cof-shift-automorphism (solution): p(t) = a_0 + t p'(t) by re-indexing | finite sums as above
 exr-two-non-examples-a1 (solution): values (t - 1)/t^2 and 1/10^6 - 1/t | verify/ch06/exr-two-non-examples-a1.py
@@ -603,6 +608,6 @@ exr-two-non-examples-c2 (solution): {0,1}^N indexed by omega | cor-omega-identif
 exr-two-non-examples-c3 (solution): a_N <= a_n for n >= N | inline induction
 prp-cof-rational-functions-ordered (proof): identities (F1)-(F9) hold pointwise in R; sums and products of positive reals are positive | thm-reals-field, (O3), (O4) in R, cited inline
 exm-cof-x-not-square (solution): top degrees 2e + 1 (t q^2) and 2e + 3 ((t^3 + 1) q^2) | lem-cof-polynomial-closure (b); verify/ch06/lem-cof-polynomial-closure.py
-exm-cof-shift-automorphism (solution): p(t + 1) is a polynomial function with the same top coefficient | inline induction; verify/ch06/lem-cof-polynomial-closure.py
+exm-cof-shift-automorphism (solution): p(t + 1) is a polynomial function | inline induction (fd1:ax-induction), lem-cof-polynomial-closure (b), (a); verify/ch06/lem-cof-polynomial-closure.py
 exr-two-non-examples-c2 (solution): uncountability via F = R | cor-cof-isomorphic-to-cauchy-reals and exr-the-least-upper-bound-property-r3 (an exercise cited by an exercise solution only)
 -->
