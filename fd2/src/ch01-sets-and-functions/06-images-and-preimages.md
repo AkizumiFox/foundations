@@ -641,7 +641,7 @@ Write the proof as plain prose, the way a mathematician would. Then say which se
 
 *The boxes.* "Suppose \( A \subseteq B \)" opens the \( \rulename{{\to}I} \) box \( \lines{1}{17} \); its closing line 18 is the silent frame of the whole proof. "Let \( S \in \powerset{A} \)" opens two boxes at once: the \( \rulename{\forall I} \) box for \( S_0 \) and the \( \rulename{{\to}I} \) box \( \lines{3}{14} \) inside it. "Let \( x \in S \)" likewise opens the \( \rulename{\forall I} \) box for \( x_0 \) and the \( \rulename{{\to}I} \) box \( \lines{6}{10} \). "Hence \( S \subseteq B \)" closes the two inner boxes (lines 11 and 12) and rewinds the definition (line 13). "This proves \( \powerset{A} \subseteq \powerset{B} \)" closes the \( S \) boxes (lines 15, 16) and rewinds (line 17).
 
-This is the passage from level 0 to level 3 of *Logic and Proof*, Section 5.3: each "let" carries a \( \rulename{\forall I} \) box together with the \( \rulename{{\to}I} \) box of a subset statement, the \( \rulename{\forall E} \) and \( \rulename{{\to}E} \) lines 7–10 become the two "since" clauses, and the unwinding lines 2, 4, 5 and 13, 14, 17 go silent or become a "that is".
+This is the passage from level 0 to level 3 of *Logic and Proof*, Section 5.3: each "let" carries a \( \rulename{\forall I} \) box together with the \( \rulename{{\to}I} \) box of a subset statement, the \( \rulename{\forall E} \) and \( \rulename{{\to}E} \) lines 7–10 become the two "since" clauses, the unwinding lines 2 and 5 go silent, line 4 becomes a "so" and line 14 a "that is", and the rewinding lines 13 and 17 are the two conclusions the prose states.
 :::
 
 ::: {#exr-images-and-preimages-r2}
