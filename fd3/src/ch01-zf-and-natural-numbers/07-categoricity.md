@@ -408,7 +408,7 @@ For \( n \in \omega \), compute \( \bigcup \mathrm{S}(n) \) and \( \bigcup n \).
 
 <!-- dependency ledger
 thm-peano-categoricity (claim): (opening subsection) (omega \ {0}, 1, S) is a Peano system | inline (three lines; exr-peano-properties-c1 asks the same, not relied on)
-thm-peano-categoricity (proof): every m in omega is 0 or not 0 (case split before lem-omega-transitive (d)) | classical case split (excluded middle), standing in Part 0
+thm-peano-categoricity (proof): every m in omega is 0 or not 0 (case split before lem-omega-transitive (d)) | classical case split (excluded middle), standing in F1-F2
 thm-peano-categoricity (proof): phi(0) = e gives phi^{-1}(e) = 0, and x = phi(phi^{-1}(x)) | def-inverse-function, through thm-bijection-iff-inverse (cited)
 thm-peano-categoricity (proof): phi^{-1} is a bijection (phi is an inverse of it) | def-inverse-function, thm-bijection-iff-inverse (cited)
 thm-peano-categoricity (claim): (list after the proof) phi(1) = phi(0) in {0}; phi(1) = phi(2) in {0, 1} | inline (two steps of the recursion each); verify/ch09/thm-peano-categoricity.py
