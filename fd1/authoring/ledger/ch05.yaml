@@ -2882,6 +2882,17 @@ items:
       F there. The RAA derivation checks. The non-derivability claim is stated without proof and does
       not @ref thm-raa-independent, as the blueprint requires. The source is hidden in the problem and
       @refs are in the solution.'
+  - stage: S7r
+    verdict: correct
+    by: rereferee
+    hash: e15a7ee997fb
+    date: '2026-10-12'
+    model: claude-opus-5-5
+    evidence: 'fd1/src/ch05-from-derivations-to-prose/07-excluded-middle.md:511-559. The only change since
+      aac227c is line 518: ''reaches back within this volume, since there is no earlier one''. That is
+      accurate, since fd1 is the first volume of the series, and it matches STYLE.md:385 (early chapters
+      reach back as far as the book allows). I solved the exercise myself before comparing. The backward-from-F
+      argument'
 - key: exr-excluded-middle-r4
   kind: exr
   file: 07-excluded-middle.md
