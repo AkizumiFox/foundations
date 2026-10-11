@@ -30,7 +30,7 @@ for "\( x \) is an element of \( A \)", or "\( x \) belongs to \( A \)", or "\( 
 
 In the language of *Logic and Proof*, Chapter 4, "\( \in \)" is a two-place predicate: \( x \in A \) is a statement about the two objects \( x \) and \( A \), true or false like \( x < y \). So everything *Logic and Proof*, Chapter 4 says about predicates, quantifiers, and their rules applies to it unchanged. A statement such as "every element of \( A \) is positive" is \( \forall x\, (x \in A \to x > 0) \), which the bounded notation of @fd1:def-bounded-quantifier shortens to \( \forall x \in A\ (x > 0) \).
 
-Two conventions fix what kind of objects we deal with. First, the number sets \( \nN \), \( \nZ \), \( \nQ \), and \( \nR \) are **given**: we use them as familiar sets, with their school arithmetic and order, as the earlier chapters did. (*Analysis on the Real Line*, Chapter 1 turns the facts we use about \( \nR \) into consequences of axioms.) Second, **numbers are not sets**: a number has no elements, and no number is equal to a set. So \( 1 \ne \{1\} \), and \( z \in 5 \) is false for every \( z \). The optional *Number Systems: From \(\nN\) to \(\nR\)*, Chapters 1, 2 and 7 explain how numbers can be built out of sets; nothing in the main line depends on how that is done, and nothing here uses it.
+Two conventions fix what kind of objects we deal with. First, the number sets \( \nN \), \( \nZ \), \( \nQ \), and \( \nR \) are **given**: we use them as familiar sets, with their school arithmetic and order, as the earlier chapters did. (*Analysis on the Real Line*, Chapter 1 turns the facts we use about \( \nR \) into consequences of axioms.) Second, **numbers are not sets**: a number has no elements, and no number is equal to a set. So \( 1 \ne \{1\} \), and \( z \in 5 \) is false for every \( z \). *Number Systems: From \(\nN\) to \(\nR\)*, Chapters 1, 2 and 5 explain how numbers can be built out of sets; nothing in this volume depends on how that is done.
 
 The single most important fact about sets is that **a set is determined by its elements**. It has no other features: no order in which the elements come, no count of how often each is listed, no color. Two sets with the same elements are the same set.
 
@@ -242,7 +242,7 @@ Specification is one of a short list of **working rules** that say which sets ex
 6. **Numbers.** \( \nN \), \( \nZ \), \( \nQ \), and \( \nR \) are sets.
 :::
 
-These rules are enough for everything the book does with sets until Chapter 3, which adds one more: a principle for making infinitely many choices at once (Section 1.5 shows where it is first needed). They are not axioms in the formal sense, and we do not try to derive them from fewer principles; the optional *Number Systems: From \(\nN\) to \(\nR\)*, Chapter 1 states the axioms of set theory behind them and shows how (W1)–(W5) and the set \( \nN \) follow from them, and the optional *Number Systems: From \(\nN\) to \(\nR\)*, Chapters 2 and 7 build \( \nZ \), \( \nQ \) and \( \nR \), which completes (W6). What matters here is what is **missing** from the list: there is no rule that collects all objects with a property, without an ambient set. The end of this section shows that such a rule would be contradictory.
+These rules are enough for everything the book does with sets until Chapter 3, which adds one more: a principle for making infinitely many choices at once (Section 1.5 shows where it is first needed). They are not axioms in the formal sense, and we do not try to derive them from fewer principles; *Number Systems: From \(\nN\) to \(\nR\)*, Chapter 1 states the axioms of set theory behind them and shows how (W1)–(W5) and the set \( \nN \) follow from them, (W3) only for families of subsets of one given set (a family with no such ambient set needs a further axiom, which *Axiomatic Set Theory* adds), and *Number Systems: From \(\nN\) to \(\nR\)*, Chapters 2 and 5 build \( \nZ \), \( \nQ \) and \( \nR \), which completes (W6). What matters here is what is **missing** from the list: there is no rule that collects all objects with a property, without an ambient set. The end of this section shows that such a rule would be contradictory.
 
 ## The empty set
 
@@ -520,28 +520,28 @@ The point of the question is a habit: an element-chasing proof treats its elemen
 <!-- dependency ledger
 def-set-equality (claim): {1, 1, 2} = {1, 2} uses "x = 1 or x = 1" iff "x = 1" | proved inline in words (vee-E / vee-I); disjunction rules def-rules-disjunction (F1.1)
 def-set-equality (claim): membership is a two-place predicate | F1.4 (promised; prose pointer "F1.4")
-def-set-equality (claim): numbers are not sets; no number equals a set | convention stated in this section (Part 0 working convention)
+def-set-equality (claim): numbers are not sets; no number equals a set | convention stated in this section (F2.1 working convention)
 def-subset (claim): forall-I, forall-E and the flagged box | F1.4 (promised; prose pointer "F1.4")
-def-subset (claim): 6k = 3(2k); 3 is not a multiple of 6; 4 is not a multiple of 6; 4 is not a multiple of 3 | school fact (Part 0 convention); proved in F2.2 (integers)
-exm-subset-first-examples (example): 0 <= 1, 2 <= 3 and transitivity of <= on R | school fact (Part 0 convention); proved in AN1.1
+def-subset (claim): 6k = 3(2k); 3 is not a multiple of 6; 4 is not a multiple of 6; 4 is not a multiple of 3 | school fact (F1-F2 convention); proved in F2.2 (integers)
+exm-subset-first-examples (example): 0 <= 1, 2 <= 3 and transitivity of <= on R | school fact (F1-F2 convention); proved in AN1.1
 exm-subset-first-examples (example): exists-E and exists-I on "6 | x" | F1.4 (promised; prose pointer "F1.4")
-exm-subset-first-examples (example): 2k is an integer when k is (Z closed under multiplication) | school fact (Part 0 convention); proved in F2.2 (integers)
+exm-subset-first-examples (example): 2k is an integer when k is (Z closed under multiplication) | school fact (F1-F2 convention); proved in F2.2 (integers)
 def-subset (claim): negation of A subset B is "exists x (x in A and x notin B)" via quantifier negation and negated implication | F1.4 (promised; prose pointer "F1.4")
 def-subset (claim): the warning's catalogue entry (N1) | F1.5 (promised; prose pointer "the catalogue of F1.5")
 prp-subset-transitive (proof): forall-I with a flagged box, forall-E | F1.4 (promised; prose pointer "F1.4"; the derivation is checked with F1.4's rules)
 prp-subset-transitive (claim): levels 0, 2, 3 and the silent-step convention | F1.5 (promised; prose pointer "F1.5")
 prp-subset-transitive (claim): F2.1 §02 tags one more proof rule by rule | F2.1 §02 (prose pointer; nothing depends on it)
 prp-subset-antisymmetric (proof): "let x be arbitrary ... since x was arbitrary" is forall-I | F1.4 (promised; prose pointer)
-exm-set-builder-small (example): an integer with |x| >= 3 has x^2 >= 9; the integers with |x| <= 2 are -2..2; x^2 >= 0 for real x | school fact (Part 0 convention); proved in AN1.1 (order) and F2.2 (integers)
+exm-set-builder-small (example): an integer with |x| >= 3 has x^2 >= 9; the integers with |x| <= 2 are -2..2; x^2 >= 0 for real x | school fact (F1-F2 convention); proved in AN1.1 (order) and F2.2 (integers)
 thm-russell (proof): forall-E on the specification premise | F1.4 (promised; prose pointer); the derivation is checked with F1.4's rules
 thm-russell (claim): F2.3's "no map X -> P(X) is onto" has the same shape | F2.3 (prose pointer; nothing depends on it)
-def-set-builder (claim): the working rules (W1)-(W5) and N follow from axioms; Z, Q, R are built from sets | optional F3.1, F3.2, F3.3 (prose pointers; nothing depends on them)
+def-set-builder (claim): the working rules (W1)-(W5) and N follow from axioms; Z, Q, R are built from sets | F3.1 ((W3) for families of subsets of a set only; general (W3) -> ST.1, Replacement), F3.2, F3.10 (prose pointers; nothing depends on them)
 def-set-builder (claim): F2.3 adds a principle of choice beyond (W1)-(W6); F2.1 §05 shows where it is needed | F2.3, F2.1 §05 (prose pointers; nothing in this section depends on them)
 def-set-builder (claim): a set written {f(a) : a in A} is an image | F2.1 §06 (prose pointer; nothing in this section depends on it)
 exr-sets-and-subsets-a1 (solution): quantifier negation and negated implication | F1.4 (promised; prose pointer)
-exr-sets-and-subsets-a1 (solution): integers with |n| >= 4 have n^2 >= 16 | school fact (Part 0 convention)
-exr-sets-and-subsets-b1 (solution): x^2 - 3x + 2 = (x - 1)(x - 2); a product of reals is zero only if a factor is | school algebra (Part 0 convention); proved in AN1.1
-exr-sets-and-subsets-b3 (solution): 1/2 is not an integer; integers with |x| >= 2 have x^2 >= 4; -1 is not in N; x = 4k gives x = 2(2k) with 2k an integer | school facts (Part 0 convention); N = {0, 1, 2, ...} (NOTATION)
-exr-sets-and-subsets-b3 (solution): x^2 - 4 = (x - 2)(x + 2); a product of reals is zero only if a factor is | school algebra (Part 0 convention); proved in AN1.1
+exr-sets-and-subsets-a1 (solution): integers with |n| >= 4 have n^2 >= 16 | school fact (F1-F2 convention)
+exr-sets-and-subsets-b1 (solution): x^2 - 3x + 2 = (x - 1)(x - 2); a product of reals is zero only if a factor is | school algebra (F1-F2 convention); proved in AN1.1
+exr-sets-and-subsets-b3 (solution): 1/2 is not an integer; integers with |x| >= 2 have x^2 >= 4; -1 is not in N; x = 4k gives x = 2(2k) with 2k an integer | school facts (F1-F2 convention); N = {0, 1, 2, ...} (NOTATION)
+exr-sets-and-subsets-b3 (solution): x^2 - 4 = (x - 2)(x + 2); a product of reals is zero only if a factor is | school algebra (F1-F2 convention); proved in AN1.1
 exr-sets-and-subsets-c1 (solution): A+ exists by (W2) and (W3) | working rules stated in this section
 -->

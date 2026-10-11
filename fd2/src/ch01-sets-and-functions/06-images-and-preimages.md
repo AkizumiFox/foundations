@@ -48,7 +48,7 @@ In Section 1.4 a point \( x \) with \( f(x) = y \) was called a preimage of \( y
 Read the two definitions clause by clause.
 
 - **The ambient sets.** Both are sets by specification (@def-set-builder): \( f(A) \) is carved out of the codomain \( Y \), and \( f^{-1}(B) \) out of the domain \( X \). So \( f(A) \subseteq Y \) and \( f^{-1}(B) \subseteq X \) always. The shorthand \( \{ f(a) : a \in A \} \) names the same subset of \( Y \); it is a way of writing, not a new rule of set formation.
-- **The image.** "\( y \in f(A) \)" says that \( y \) is **hit** by some point of \( A \). The words "there exists" are part of the definition. To **use** a line \( y \in f(A) \), we must name a witness: "let \( a \in A \) with \( f(a) = y \)". That is the rule \( \exists \)E of *Logic and Proof*, Chapter 4 (*Logic and Proof*, Section 4.6), and the name must be fresh. To **prove** \( y \in f(A) \), we exhibit a witness, by \( \exists \)I (*Logic and Proof*, Chapter 4, *Logic and Proof*, Section 4.5).
+- **The image.** "\( y \in f(A) \)" says that \( y \) is **hit** by some point of \( A \). The words "there exists" are part of the definition. To **use** a line \( y \in f(A) \), we must name a witness: "let \( a \in A \) with \( f(a) = y \)". That is the rule \( \exists \)E of *Logic and Proof*, Section 4.6, and the name must be fresh. To **prove** \( y \in f(A) \), we exhibit a witness, by \( \exists \)I (*Logic and Proof*, Section 4.5).
 - **The preimage.** "\( x \in f^{-1}(B) \)" says that \( x \) is sent **into** \( B \). There is no quantifier. For \( x \in X \), a line \( x \in f^{-1}(B) \) is used and proved by one substitution: it is exchanged for \( f(x) \in B \), and back.
 - **The symbol \( f^{-1} \).** In \( f^{-1}(B) \), the symbol \( f^{-1} \) is not a function that is applied to \( B \). The whole expression \( f^{-1}(B) \) is the name of a set built from \( f \) and \( B \). Section 1.5 used \( f^{-1} \) for the inverse function of a bijection; the remark at the end of this section reconciles the two readings.
 
@@ -312,7 +312,7 @@ We prove two inclusions. The union \( \bigcup_{i \in I} A_i \) is a subset of \(
 This proves the theorem.
 :::
 
-Look at the order of the tags in \( (\subseteq) \): \( \exists \)E for \( a \), \( \exists \)E for \( j \), \( \exists \)I for \( a \), \( \exists \)I for \( j \). The witnesses are reintroduced in the same order they were named. Because \( \exists \)I builds the formula from the inside out, \( a \), which was the outer witness, ends up as the inner one. To rebuild the quantifiers in their old order, the \( \exists \)I steps would have run in reverse, \( \exists \)I for \( j \) before \( \exists \)I for \( a \). That the order is not reversed is the exchange of the two "there exists". The two \( \exists \)E boxes may close at the end because the conclusion \( y \in \bigcup_i f(A_i) \) mentions neither \( a \) nor \( j \): the side condition of \( \exists \)E (*Logic and Proof*, Chapter 4, *Logic and Proof*, Section 4.6) holds. The case \( I = \emptyset \) needs no separate treatment: both sides are \( f(\emptyset) = \emptyset \) and \( \emptyset \).
+Look at the order of the tags in \( (\subseteq) \): \( \exists \)E for \( a \), \( \exists \)E for \( j \), \( \exists \)I for \( a \), \( \exists \)I for \( j \). The witnesses are reintroduced in the same order they were named. Because \( \exists \)I builds the formula from the inside out, \( a \), which was the outer witness, ends up as the inner one. To rebuild the quantifiers in their old order, the \( \exists \)I steps would have run in reverse, \( \exists \)I for \( j \) before \( \exists \)I for \( a \). That the order is not reversed is the exchange of the two "there exists". The two \( \exists \)E boxes may close at the end because the conclusion \( y \in \bigcup_i f(A_i) \) mentions neither \( a \) nor \( j \): the side condition of \( \exists \)E (*Logic and Proof*, Section 4.6) holds. The case \( I = \emptyset \) needs no separate treatment: both sides are \( f(\emptyset) = \emptyset \) and \( \emptyset \).
 
 ## Images and intersections
 
@@ -331,7 +331,7 @@ Show that the conclusion is false, and find the line that fails.
 ::: {.solution}
 *The conclusion is false.* Take \( f(x) = x^2 \) on \( \nR \), \( A = \{-1\} \), and \( B = \{1\} \). Then \( f(A) = f(B) = \{1\} \), so \( f(A) \cap f(B) = \{1\} \); but \( A \cap B = \emptyset \), so \( f(A \cap B) = \emptyset \), and \( 1 \notin \emptyset \).
 
-*The failing line is (3).* Line (2) is a correct \( \exists \)E: it names a witness \( x \in A \) with \( f(x) = y \). Line (3) performs a second \( \exists \)E, on \( y \in f(B) \), and gives its witness the **same** name \( x \). The rule requires a fresh name (*Logic and Proof*, Chapter 4, *Logic and Proof*, Section 4.6). The statement "\( y = f(b) \) for some \( b \in B \)" promises some point of \( B \), not the point already named. Reusing the name silently asserts that the two witnesses are equal, and nothing says they are. This is the error "one name for two witnesses", entry (N4) of the catalogue of what is not allowed (*Logic and Proof*, Chapter 5, *Logic and Proof*, Section 5.6).
+*The failing line is (3).* Line (2) is a correct \( \exists \)E: it names a witness \( x \in A \) with \( f(x) = y \). Line (3) performs a second \( \exists \)E, on \( y \in f(B) \), and gives its witness the **same** name \( x \). The rule requires a fresh name (*Logic and Proof*, Section 4.6). The statement "\( y = f(b) \) for some \( b \in B \)" promises some point of \( B \), not the point already named. Reusing the name silently asserts that the two witnesses are equal, and nothing says they are. This is the error "one name for two witnesses", entry (N4) of the catalogue of what is not allowed (*Logic and Proof*, Section 5.6).
 
 *A counterexample to the step.* With the data above and \( y = 1 \): line (2) names \( x = -1 \), the only point of \( A \). The only point of \( B \) with square \( 1 \) is \( 1 \ne -1 \), so line (3), with the name \( x \) meaning the \( x \) of line (2), asserts \( -1 \in B \), which is false. Lines (4) and (5) are correct inferences from what (3) wrongly asserts.
 :::
@@ -553,7 +553,7 @@ A student proves the following claim: *if \( f \colon X \to Y \) is injective an
 ::: {.solution}
 (a) The claim is true: it is the \( (\Leftarrow) \) half of @prp-image-preimage (a).
 
-(b) Line (3) fails. The statement \( f(x) \in f(A) \) says only that \( f(a) = f(x) \) for **some** \( a \in A \) (@def-image). To use it, the proof must name that witness by \( \exists \)E, with a fresh name. Line (3) skips the \( \exists \)E and silently takes the witness to be \( x \) itself. The name \( x \) is already in use (line (1) introduced it), so the step breaks the fresh-name condition of \( \exists \)E (*Logic and Proof*, Chapter 4, *Logic and Proof*, Section 4.6), the condition behind entry (N4) of the catalogue of *Logic and Proof*, Chapter 5. The tell is that injectivity, a hypothesis, is never used: an argument that ignores a necessary hypothesis cannot be right.
+(b) Line (3) fails. The statement \( f(x) \in f(A) \) says only that \( f(a) = f(x) \) for **some** \( a \in A \) (@def-image). To use it, the proof must name that witness by \( \exists \)E, with a fresh name. Line (3) skips the \( \exists \)E and silently takes the witness to be \( x \) itself. The name \( x \) is already in use (line (1) introduced it), so the step breaks the fresh-name condition of \( \exists \)E (*Logic and Proof*, Section 4.6), the condition behind entry (N4) of the catalogue of *Logic and Proof*, Chapter 5. The tell is that injectivity, a hypothesis, is never used: an argument that ignores a necessary hypothesis cannot be right.
 
 (c) A counterexample to the step "\( f(x) \in f(A) \), so \( x \in A \)" needs a non-injective function, since for injective ones the conclusion of the step is true. Take \( f(x) = x^2 \) on \( \nR \), \( A = \{1\} \), and \( x = -1 \). Then \( f(x) = 1 \in f(A) \), but \( x \notin A \).
 
@@ -641,7 +641,7 @@ Write the proof as plain prose, the way a mathematician would. Then say which se
 
 *The boxes.* "Suppose \( A \subseteq B \)" opens the \( \rulename{{\to}I} \) box \( \lines{1}{17} \); its closing line 18 is the silent frame of the whole proof. "Let \( S \in \powerset{A} \)" opens two boxes at once: the \( \rulename{\forall I} \) box for \( S_0 \) and the \( \rulename{{\to}I} \) box \( \lines{3}{14} \) inside it. "Let \( x \in S \)" likewise opens the \( \rulename{\forall I} \) box for \( x_0 \) and the \( \rulename{{\to}I} \) box \( \lines{6}{10} \). "Hence \( S \subseteq B \)" closes the two inner boxes (lines 11 and 12) and rewinds the definition (line 13). "This proves \( \powerset{A} \subseteq \powerset{B} \)" closes the \( S \) boxes (lines 15, 16) and rewinds (line 17).
 
-This is the passage from level 0 to level 3 of *Logic and Proof*, Chapter 5 (*Logic and Proof*, Section 5.3): each "let" carries a \( \rulename{\forall I} \) box together with the \( \rulename{{\to}I} \) box of a subset statement, the \( \rulename{\forall E} \) and \( \rulename{{\to}E} \) lines 7–10 become the two "since" clauses, and the unwinding lines 2, 4, 5 and 13, 14, 17 go silent or become a "that is".
+This is the passage from level 0 to level 3 of *Logic and Proof*, Section 5.3: each "let" carries a \( \rulename{\forall I} \) box together with the \( \rulename{{\to}I} \) box of a subset statement, the \( \rulename{\forall E} \) and \( \rulename{{\to}E} \) lines 7–10 become the two "since" clauses, and the unwinding lines 2, 4, 5 and 13, 14, 17 go silent or become a "that is".
 :::
 
 ::: {#exr-images-and-preimages-r2}
@@ -722,12 +722,12 @@ Suppose \( S \) were such a set. Let \( T \coloneqq \{ s \in S : s \text{ is a s
 :::
 
 <!-- dependency ledger
-def-image (claim): (opening question) squares of points of [-1, 0] and [0, 1] fill [0, 1]; preimages of [0, 1] and [1, 4] under squaring | school facts (Part 0 convention; square roots proved in AN1.1); worked in exm-images-of-square
+def-image (claim): (opening question) squares of points of [-1, 0] and [0, 1] fill [0, 1]; preimages of [0, 1] and [1, 4] under squaring | school facts (F1-F2 convention; square roots proved in AN1.1); worked in exm-images-of-square
 def-image (claim): exists-E with a fresh name; exists-I | F1.4 (promised): def-rules-existential, def-rule-existential-introduction (prose pointers, F1.4 §05-F1.4 §06)
 def-image (claim): f(X) is the range of F2.1 §04 | def-function (F2.1 §04, prose)
 exm-images-finite (example): a set lists a repeated element once | def-set-equality (F2.1 §01, prose)
 def-preimage (claim): open sets and continuity | AN2.1 (prose pointer; nothing depends on it)
-exm-images-of-square (example): x^2 >= 0; square roots of non-negative reals; x^2 = |x|^2; sign cases for |x| | school facts (Part 0 convention); square roots proved in AN1.1
+exm-images-of-square (example): x^2 >= 0; square roots of non-negative reals; x^2 = |x|^2; sign cases for |x| | school facts (F1-F2 convention); square roots proved in AN1.1
 exm-images-of-square (example): for s, t >= 0, s <= t iff s^2 <= t^2 (also in exr-images-and-preimages-b1 (c)) | thm-squares-order (F1.2, cited)
 exm-sets-of-numbers-as-images (example): -A, cA, A + B as AN1.1 writes them | AN1.1 (AN1.1 §03, AN1.1 §04; later chapter, prose pointer)
 exm-sets-of-numbers-as-images (example): p in A x B iff p = (a, b) with a in A, b in B | def-cartesian-product (cited)
@@ -750,7 +750,7 @@ exr-images-and-preimages-c1 (solution): substituting equals (=E): a = b and b in
 prp-image-preimage (claim): (two readings remark and example) a(x) = 3x - 2 and its inverse; interval arithmetic | exm-two-sided-inverses (F2.1 §05); school facts
 prp-image-preimage (claim): (two readings remark) for a bijection the preimage f^{-1}(B) equals the image of B under the inverse function | inline two-inclusion argument in the remark, from def-inverse-function (cited: g o f = id_X, f o g = id_Y); exr-images-and-preimages-b3 writes it out with tags
 exr-images-and-preimages-a1 (solution): numeric preimages under squaring | school facts; exm-images-of-square
-exr-images-and-preimages-b1 (solution): m > n in N gives m - n in Z_{>0}; a positive integer is in N; m - n = 0 iff m = n; (x - 1)^2 algebra; -1 <= t <= 2 gives |t| <= 2, and t^2 = |t|^2; sqrt monotone | school facts (Part 0 convention)
+exr-images-and-preimages-b1 (solution): m > n in N gives m - n in Z_{>0}; a positive integer is in N; m - n = 0 iff m = n; (x - 1)^2 algebra; -1 <= t <= 2 gives |t| <= 2, and t^2 = |t|^2; sqrt monotone | school facts (F1-F2 convention)
 exr-images-and-preimages-b1 (solution): the indicator function | F2.1 §04 (ind_A defined there)
 exr-images-and-preimages-c1 (solution): RAA for x_1 = x_2 | def-rule-raa (cited)
 exr-images-and-preimages-c2 (solution): fresh-name condition; catalogue (N4) | F1.4 (promised) F1.4 §06; F1.5 (promised): exm-not-allowed-catalogue (prose pointer)

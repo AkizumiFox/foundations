@@ -209,7 +209,7 @@ Read what a right inverse must do. For **every** \( y \in Y \), \( g(y) \) must 
 
 Now look at what our rules can do.
 
-- **One \( y \).** For a single \( y \), the statement "there is \( x \in X \) with \( f(x) = y \)" lets us name a preimage by \( \exists \)E (*Logic and Proof*, Chapter 4, *Logic and Proof*, Section 4.6). That is one choice, made inside one proof.
+- **One \( y \).** For a single \( y \), the statement "there is \( x \in X \) with \( f(x) = y \)" lets us name a preimage by \( \exists \)E (*Logic and Proof*, Section 4.6). That is one choice, made inside one proof.
 - **Finitely many \( y \).** For a particular finite \( Y = \{y_1, \dots, y_n\} \), with \( n \) a fixed number, we can apply \( \exists \)E \( n \) times, once for each point, and write down the \( n \) pairs. (To get this for every finite \( Y \) at once, with \( n \) arbitrary, one inducts on \( n \), @fd1:ax-induction.) @exm-right-inverses-finite picked one preimage per point in the same spirit, by listing the preimage sets and choosing from them.
 - **Infinitely many \( y \).** A proof is a finite object. It cannot contain one \( \exists \)E for each of infinitely many points, and no rule of *Logic and Proof*, Chapter 4 makes infinitely many choices in one step.
 
@@ -541,8 +541,8 @@ Fatal errors (0 for the step): in (a), writing \( f^{-1} \) before showing \( f 
 :::
 
 <!-- dependency ledger
-def-left-right-inverse (claim): (first subsection) h and h' are functions N -> N: every natural number is even or odd and not both; an even m in N is 2k for exactly one k in N | school fact (Part 0 convention; F2.2 proves the division algorithm)
-def-left-right-inverse (claim): (first subsection) 1 is odd, so 2k(1) = 1 has no solution in N | school fact (Part 0 convention)
+def-left-right-inverse (claim): (first subsection) h and h' are functions N -> N: every natural number is even or odd and not both; an even m in N is 2k for exactly one k in N | school fact (F1-F2 convention; F2.2 proves the division algorithm)
+def-left-right-inverse (claim): (first subsection) 1 is odd, so 2k(1) = 1 has no solution in N | school fact (F1-F2 convention)
 def-left-right-inverse (claim): g o f = id_X iff g(f(x)) = x for all x | prp-function-equality (cited), def-composition (cited)
 exm-left-inverses-small-sets (example): a function has one value at each point | def-function (cited in the section opening)
 exm-left-inverses-small-sets (claim): (quick check after it) successor s(n) = n + 1: m >= 1 gives m - 1 in N; n + 1 >= 1 for n in N; -1 is not in N | F2.2 (promised; STATUS row "n >= 1 => n - 1 in N")
@@ -554,13 +554,13 @@ thm-left-inverse-iff-injective (proof): the mixed case is contradictory (y in f(
 thm-left-inverse-iff-injective (proof): equal inputs give equal outputs for a function g | def-function (cited): exists! gives uniqueness of the value
 thm-left-inverse-iff-injective (claim): the empty function is injective vacuously | prp-vacuous-implication (F1.2), used in words
 prp-right-inverse-surjective (proof): exists-I with witness g(y) | F1.4 (promised): def-rules-existential (prose pointer, F1.4 §06)
-prp-right-inverse-surjective (claim): (open-question subsection) sqrt(y) >= 0 and (sqrt y)^2 = y for y >= 0 | school fact (Part 0 convention); proved in AN1.1 (thm-nth-root)
+prp-right-inverse-surjective (claim): (open-question subsection) sqrt(y) >= 0 and (sqrt y)^2 = y for y >= 0 | school fact (F1-F2 convention); proved in AN1.1 (thm-nth-root)
 prp-right-inverse-surjective (claim): (open-question subsection) a proof is finite, so it contains finitely many exists-E | informal remark about derivations (def-derivation, F1.1), no result depends on it
 prp-inverse-unique (proof): g o id_Y = g and id_X o h = h | prp-composition-associative (identity laws, cited)
 def-inverse-function (claim): (f^{-1})^{-1} = f | inline: the two defining equations are symmetric, then uniqueness (prp-inverse-unique)
-exm-two-sided-inverses (example): arithmetic of R; 1/x > 0 for x > 0; sqrt(x^2) = |x|; sign cases | school facts (Part 0 convention); proved in AN1.1
+exm-two-sided-inverses (example): arithmetic of R; 1/x > 0 for x > 0; sqrt(x^2) = |x|; sign cases | school facts (F1-F2 convention); proved in AN1.1
 thm-bijection-iff-inverse (proof): exactly one = existence (Fn1) plus uniqueness (Fn2) | def-function and the split (Fn1)/(Fn2) in F2.1 §04; prp-unique-existence-use (cited)
 thm-bijection-iff-inverse (claim): the empty function empty -> empty is id_empty | def-function, prp-empty-function (cited), prp-function-equality
-thm-bijection-iff-inverse (claim): (quick check) the real cube root exists and is unique | school fact (Part 0 convention); AN1.1 (thm-nth-root) for odd roots of positives, sign by symmetry
-exr-inverses-b3 (solution): |x| < 1 gives 1 - |x| > 0; fraction arithmetic | school facts (Part 0 convention)
+thm-bijection-iff-inverse (claim): (quick check) the real cube root exists and is unique | school fact (F1-F2 convention); AN1.1 (thm-nth-root) for odd roots of positives, sign by symmetry
+exr-inverses-b3 (solution): |x| < 1 gives 1 - |x| > 0; fraction arithmetic | school facts (F1-F2 convention)
 -->

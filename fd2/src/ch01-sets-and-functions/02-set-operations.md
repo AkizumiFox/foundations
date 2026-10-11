@@ -500,9 +500,9 @@ Here is a "proof" that \( (A \cup B) \cap (A \cup C) \subseteq A \cup (B \cap C)
 :::
 
 <!-- dependency ledger
-def-set-operations (claim): an integer divisible by 2 and by 3 is divisible by 6; Z minus the evens is the odd integers | school fact (Part 0 convention); F2.2 proves the arithmetic of Z
+def-set-operations (claim): an integer divisible by 2 and by 3 is divisible by 6; Z minus the evens is the odd integers | school fact (F1-F2 convention); F2.2 proves the arithmetic of Z
 def-set-operations (claim): no complement without an ambient set (the set of everything outside A joined with A would contain every set) | thm-russell, one-line argument inline
-def-set-operations (example): interval computations [0,2] union [1,3] = [0,3] etc. | school order facts (Part 0 convention); proved in AN1.1
+def-set-operations (example): interval computations [0,2] union [1,3] = [0,3] etc. | school order facts (F1-F2 convention); proved in AN1.1
 thm-set-algebra (proof): letters of a derived sequent replaced by membership statements x in A (first-order atomic statements) | def-derived-rule; statements with variables are F1.4's (prose pointer)
 thm-set-algebra (proof): "let x be arbitrary ... since x was arbitrary" is forall-I | F1.4 (promised; prose pointer)
 thm-set-algebra (claim): prp-de-morgan (a)-(c) derived without RAA, (d) with it | F1.2 section 2.5 (checked on the page there)
@@ -518,16 +518,16 @@ def-family-union-intersection (claim): AN1.1 defines N as the intersection of al
 prp-smallest-closed-set (proof): bigcap S is defined for non-empty S subset P(X); elements of bigcap S lie in every member | def-family-union-intersection (cited)
 prp-smallest-closed-set (claim): (applications after it) the set of all strings of symbols is a set | taken as given, as in F1.3 section 3.1
 prp-smallest-closed-set (claim): the smallest closed set equals the set of strings with a formation sequence | stated without proof, marked so (strong induction, thm-strong-induction); nothing depends on it
-exm-families-real-parameter (example): order facts on R (0 < x/2 <= 1/2 < 1 and x/2 < x for 0 < x <= 1; trichotomy x < 0 or x = 0 or x > 0; |x| > 0 for x != 0 and x is |x| or -|x|; x < x is false) | school fact (Part 0 convention); proved in AN1.1
-exm-families-real-parameter (claim): nonexample: intersection over t > 0 of [0,t) is {0} (0 <= 0 < t; x < 0 is excluded by [0,1), x > 0 by [0,x)) | school order facts (Part 0 convention); proved in AN1.1
-exm-families-real-parameter (solution): (the quick check after it) [0,t] subset [0,2] for t <= 2; [0,1] subset [0,t] for t >= 1 | school order facts (Part 0 convention); proved in AN1.1
+exm-families-real-parameter (example): order facts on R (0 < x/2 <= 1/2 < 1 and x/2 < x for 0 < x <= 1; trichotomy x < 0 or x = 0 or x > 0; |x| > 0 for x != 0 and x is |x| or -|x|; x < x is false) | school fact (F1-F2 convention); proved in AN1.1
+exm-families-real-parameter (claim): nonexample: intersection over t > 0 of [0,t) is {0} (0 <= 0 < t; x < 0 is excluded by [0,1), x > 0 by [0,x)) | school order facts (F1-F2 convention); proved in AN1.1
+exm-families-real-parameter (solution): (the quick check after it) [0,t] subset [0,2] for t <= 2; [0,1] subset [0,t] for t >= 1 | school order facts (F1-F2 convention); proved in AN1.1
 exm-families-real-parameter (claim): AN1.1's nested interval theorem needs closed intervals | AN1.1 (prose pointer)
 thm-de-morgan-families (proof): bounded forall-I, forall-E, exists-I, exists-E over I | prp-bounded-quantifier-rules (cited)
 thm-de-morgan-families (proof): unbounded forall-I/->-I for the element x | F1.4 (promised; prose pointer)
 thm-de-morgan-families (proof): bounded quantifier negation, not-forall to exists-not, classical via quantifier negation (a) | F1.4 (promised; prose pointer; blueprint labels prp-bounded-quantifier-negation, prp-quantifier-negation)
 exr-set-operations-a1 (solution): 1, 5, -1, 7 divisible by neither 2 nor 3; 3, 4, 6 by one of them | arithmetic
 exr-set-operations-a1 (solution): bounded quantifier negation (not-forall over I to exists-not over I, bound kept), used in (a) and (d); its classical direction rests on not-forall x phi |- exists x not-phi, which needs RAA | F1.4 (promised; prose pointer; blueprint labels prp-bounded-quantifier-negation, prp-quantifier-negation)
-exr-set-operations-b2 (solution): order facts on R (|x| + 1 > x, 1/(2x) > 0, 4x/3 > x for x > 0) | school fact (Part 0 convention); proved in AN1.1
+exr-set-operations-b2 (solution): order facts on R (|x| + 1 > x, 1/(2x) > 0, 4x/3 > x for x > 0) | school fact (F1-F2 convention); proved in AN1.1
 exr-set-operations-b3 (solution): from B != C to an odd one out, by the classical direction of quantifier negation (not-forall to exists-not) and not(P<->Q) giving exactly one of P, Q; the forward half of the A-cup characterization by contrapositive; the converse splits on x in C | F1.4 (promised; prose pointer); prp-contrapositive-converse; prp-excluded-middle (cited)
 exr-set-operations-c1 (solution): classical quantifier negation and the law for negated implications to obtain witnesses a, b | F1.4 (promised; prose pointer)
 exr-set-operations-c1 (solution): the empty set is a subset of every set | F2.1 §01 (prose after prp-empty-set-unique: def-subset with prp-vacuous-implication)

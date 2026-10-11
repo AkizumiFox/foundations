@@ -515,7 +515,7 @@ Decide with a truth table whether \( (P \to Q) \to Q \models P \vee Q \), readin
 :::
 
 ::: {.solution}
-This item reaches back within Part 0, since there is no earlier Part: it uses the tables of Chapter 3 and the derivations of Chapter 2.
+This item reaches back within this volume, since there is no earlier one: it uses the tables of Chapter 3 and the derivations of Chapter 2.
 
 *The table.* Work backwards from F, as in @exm-backwards-from-f and the entailments of @def-valid-argument. A refuting row needs \( P \vee Q \) false, so \( P \) and \( Q \) are both false. In that row \( P \to Q \) is true, so the premise \( (P \to Q) \to Q \) is "T \( \to \) F", which is false. So no row makes the premise true and the conclusion false, and the entailment holds. The full table agrees:
 \[

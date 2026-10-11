@@ -16,7 +16,7 @@ From \( 0 < \tfrac13 \) and \( \tfrac13 < \tfrac12 \) it gives \( 0 < \tfrac12 \
 
 What must a reader know to check those two steps? Nothing about fractions, and nothing about what \( < \) means. It is enough to see that the two inequalities used in each step have the **same** expression in the middle, and that the new inequality joins the outer two. A clerk who had never seen a number could do it, provided the clerk can compare symbols. That is the sense in which a proof can be checked without being understood: a proof is correct when every step matches its pattern, and matching is mechanical.
 
-The rest of this section writes such chains in the format that the whole of Part 0 uses, with every reason on the page. Everything here is about the format. The logic starts in Section 1.3.
+The rest of this section writes such chains in the format that the whole of this volume uses, with every reason on the page. Everything here is about the format. The logic starts in Section 1.3.
 
 ## Two rules about numbers, for practice
 

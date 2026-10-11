@@ -295,7 +295,7 @@ The sentence never mentions lines 1 and 2. That is normal: when an implication i
 The warning above was about the wrong given line: the conclusion in place of the hypothesis. The other common error is a hypothesis that is only partly there.
 
 ::: {.warning}
-\( \rulename{{\to}E} \) needs the **whole** hypothesis. From \( (P \wedge Q) \to R \) and \( P \) alone, it gives nothing. This is the commonest slip in analysis: "\( f \) is continuous, so by the theorem \( f \) attains a maximum". The theorem meant (proved in Part I) has a second hypothesis, that \( f \) is defined on a closed bounded interval, and without it the conclusion fails: \( f(x) = x \) on the open interval \( (0, 1) \) is continuous and has no largest value, since \( \frac{a + 1}{2} \) is a larger value than \( a \) for every \( a \) in \( (0, 1) \).
+\( \rulename{{\to}E} \) needs the **whole** hypothesis. From \( (P \wedge Q) \to R \) and \( P \) alone, it gives nothing. This is the commonest slip in analysis: "\( f \) is continuous, so by the theorem \( f \) attains a maximum". The theorem meant (proved in *Analysis on the Real Line*) has a second hypothesis, that \( f \) is defined on a closed bounded interval, and without it the conclusion fails: \( f(x) = x \) on the open interval \( (0, 1) \) is continuous and has no largest value, since \( \frac{a + 1}{2} \) is a larger value than \( a \) for every \( a \) in \( (0, 1) \).
 :::
 
 A near relative is a hypothesis in the wrong order, as in the clause-by-clause reading: \( Q \wedge P \) is not the hypothesis of \( (P \wedge Q) \to R \). The repair is two \( \rulename{\wedge E} \) lines and one \( \rulename{\wedge I} \) line, and Exercise B1 asks for it.
@@ -545,7 +545,7 @@ def-rule-implication-elimination (example): if a < b and b < c then a < c; sqrt(
 def-rule-implication-elimination (example): the n = 2 witness recalled from F1.1 §01's Quick check (divisible by 4 implies even; 2 even, not divisible by 4) | F1.1 §01 (def-sequent's Quick check), recalled in prose
 def-rule-implication-elimination (example): warning witness x = -3 (x > 2 implies x^2 > 4 for every real x; 9 > 4; -3 > 2 false) | school algebra -> AN1.1 (promised); checked by verify/ch01/def-rule-implication-elimination.py
 def-rule-implication-elimination (example): x > 2 implies x^2 > 4; x^2 > 4 implies x^2 + 1 > 5 (the "How this looks" example) | school algebra -> AN1.1 (promised), argued inline; checked by verify/ch01/def-rule-implication-elimination.py
-def-rule-implication-elimination (example): f(x) = x on (0, 1) is continuous and has no maximum ((a + 1)/2 > a in (0, 1)); the extreme value theorem's hypotheses | continuity: Part I (promised, named in prose only, not used in any argument); (a + 1)/2 argued inline
+def-rule-implication-elimination (example): f(x) = x on (0, 1) is continuous and has no maximum ((a + 1)/2 > a in (0, 1)); the extreme value theorem's hypotheses | continuity: AN1.5, AN1.6 (promised, named in prose only, not used in any argument); (a + 1)/2 argued inline
 exr-using-an-implication-b2 (solution): 0 < x < 1 implies x^2 < x; x^2 < x implies x^3 < x^2 (for every real x) | school algebra -> AN1.1 (promised), argued inline; checked by verify/ch01/exr-using-an-implication-b2.py
 exr-using-an-implication-c1 (solution): every multiple of 6 is even; 10 = 2 * 5; 10 = 6 * 1 + 4 is not divisible by 6 | inline arithmetic; checked by verify/ch01/exr-using-an-implication-c1.py
 -->

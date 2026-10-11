@@ -1,6 +1,6 @@
-# Gate 0: Part 0 Examination
+# Gate 0: Logic and Sets Examination
 
-Part 0 ends here. Its eight main-line chapters taught one skill in many forms: reading a mathematical statement exactly, and proving it in sentences that a reader can check line by line. This section is an examination on all of it, and the test of whether Part I will be readable: from *Analysis on the Real Line*, Chapter 1 on, every proof assumes that negating a quantified statement, naming a witness, running an induction and chasing an element through a preimage are routine. A reader who comes to the book by a reading path that begins at Part I, such as a first course in real analysis, takes this Gate first, as an entry test, and goes back only to the sections that the remediation map at the end names. Grading your own work is a skill too; the front matter's page on getting feedback without a teacher describes the loop of attempting, writing, grading against the scheme and only then reading the solution.
+The five chapters of *Logic and Proof* and the first three chapters of this volume taught one skill in many forms: reading a mathematical statement exactly, and proving it in sentences that a reader can check line by line. This section is an examination on all of it, and the test of whether *Analysis on the Real Line* will be readable: from its Chapter 1 on, every proof assumes that negating a quantified statement, naming a witness, running an induction and chasing an element through a preimage are routine. A reader who comes to the book by a reading path that begins with *Analysis on the Real Line*, such as a first course in real analysis, takes this Gate first, as an entry test, and goes back only to the sections that the remediation map at the end names. Grading your own work is a skill too; the front matter's page on getting feedback without a teacher describes the loop of attempting, writing, grading against the scheme and only then reading the solution.
 
 ## Instructions
 
@@ -9,10 +9,10 @@ Part 0 ends here. Its eight main-line chapters taught one skill in many forms: r
 - Write complete proofs in plain prose, at level 3 of @fd1:def-levels-of-proof. Rule tags are allowed where a problem asks for them.
 - Each problem is worth 10 points, 60 in all. Its solution is folded. Open a solution only after the two hours, and **grade before you read it**: apply the marking scheme at the end of the solution to your own script, point by point, and only then read the book's proof.
 - **Pass line: 70% overall (42 of 60 points), and no core problem at 0.** The core problems are marked `core`: P1, P2, P4 and P5. They test what *Analysis on the Real Line*, Chapter 1 uses from its first page: quantifiers and their negation, turning a derivation into prose, induction and recursion, sets and functions. P3 and P6 are not core.
-- If you fail, follow the remediation map, then wait a week and retake the whole Gate (the same problems) before starting Part I.
+- If you fail, follow the remediation map, then wait a week and retake the whole Gate (the same problems) before starting *Analysis on the Real Line*.
 :::
 
-The definition drill comes first and is not scored. It is the one retrieval list of Part 0: every major definition of the Part, to be written from memory before the clock starts.
+The definition drill comes first and is not scored. It is the one retrieval list for those eight chapters: every major definition in them, to be written from memory before the clock starts.
 
 ::: {.warning}
 A proof that reads well is not thereby correct, and grading your own script is where a reader working alone is most easily fooled. Grade the step, not the impression: a marking-scheme line such as "\( y \) given as a function of \( \delta \)" is either on your page or it is not. A script that says "choose \( y \) close to \( 1 \)" in Problem P1 has not given \( y \) as a function of \( \delta \), however clear the idea, and loses those points.
@@ -368,9 +368,9 @@ Add up your points. A pass is 42 of 60 with no core problem (P1, P2, P4, P5) at 
 | P6 | countable sets and the diagonal argument | Section 3.2 (@def-countable); Section 3.3 (@thm-countable-union); Section 3.4 (@thm-binary-sequences-uncountable, @thm-cantor) |
 
 <!-- dependency ledger
-exr-gate-0-p1 (solution): of two reals exactly one of a < b, a >= b holds; min{d, 1} > 0 and <= d for d > 0; 0 < y < 1 implies y^2 < y < 1; |y - x| < x implies y > 0 | school facts about the order of R (Part 0 convention; AN1.1 states them as axioms)
+exr-gate-0-p1 (solution): of two reals exactly one of a < b, a >= b holds; min{d, 1} > 0 and <= d for d > 0; 0 < y < 1 implies y^2 < y < 1; |y - x| < x implies y > 0 | school facts about the order of R (F1-F2 convention; AN1.1 states them as axioms)
 exr-gate-0-p1 (solution): a law may be applied to a part of a formula under quantifiers, in the chain of (b) | F1.4 §09, the paragraph after the procedure "Negating a formula" (unlabelled; recalled in prose by the subsection name)
-exr-gate-0-p3 (solution): N is not bounded above in R (for every real M some natural number exceeds M) | school fact (Part 0 convention); AN1.1 proves it, prose pointer only
+exr-gate-0-p3 (solution): N is not bounded above in R (for every real M some natural number exceeds M) | school fact (F1-F2 convention); AN1.1 proves it, prose pointer only
 exr-gate-0-p3 (solution): (n + 1)^2 + (n + 1) = (n^2 + n) + 2(n + 1); a sum of two even integers is even | school algebra; def-divides with prp-integers-closed, inline
 exr-gate-0-p4 (solution): integer arithmetic 3 * 2^(n+1) - 2^(n+1) = 2 * 2^(n+1) (distributivity) | school algebra; prp-power-laws
 exr-gate-0-p6 (solution): each E_N has (N + 1)! elements (an aside, not used by the proof) | exr-finite-sets-c2 iterated by induction on the number of factors (a solution may cite an earlier exercise)

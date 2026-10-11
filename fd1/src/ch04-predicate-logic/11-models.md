@@ -695,7 +695,7 @@ def-assignment (example): values 2*2 + (-3) = 1, 2*2 + 1 = 5, -3, and 1 + 1 = 2 
 def-satisfaction (claim): satisfaction is well defined by recursion on formulas, for all assignments at once | thm-structural-recursion applied to def-first-order-formula (F1.4 §02 remark)
 def-satisfaction (example): traces of forall x exists y (x < y) in N and in {1,2,3}; forall y (x <= y) in N under l(x) = 0 and l(x) = 1; one-element domain | inline; verify/ch04/def-satisfaction.py
 def-satisfaction (solution): every real square is >= 0; sqrt(d) exists for d >= 0; a product of non-negative reals is non-negative | school algebra; AN1.1 (thm-nth-root) proves the roots, prose only
-def-satisfaction (solution): every complex number has a complex square root (polar form) | school algebra of complex numbers, stated in the solution; not proved in the book before Part V
+def-satisfaction (solution): every complex number has a complex square root (polar form) | school algebra of complex numbers, stated in the solution; not proved before F4.1 (complex numbers)
 lem-free-coincidence (proof): structural induction on terms and on first-order formulas | thm-structural-induction (pattern) with the clauses of def-term and def-first-order-formula; F1.4 §02 remark
 lem-free-coincidence (proof): every variable of an atomic formula is free in it; the free variables of forall x phi are those of phi other than x | def-free-variable
 lem-free-coincidence (proof): the cases not, or, ->, <-> repeat the conjunction argument with the other clauses | inline, as in lem-coincidence

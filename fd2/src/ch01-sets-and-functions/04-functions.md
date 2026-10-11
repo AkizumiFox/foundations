@@ -163,7 +163,7 @@ whose graph is \( G \cap (A \times Y) \): the pairs of \( f \) whose input lies 
 
 Section 1.2 used families of sets \( (A_i)_{i \in I} \) and described them informally, as "a set \( A_i \) for each index \( i \in I \)". We can now say exactly what a family is, once its members are known to lie in some set. A **family of subsets of \( X \) indexed by \( I \)** is a function \( I \to \powerset{X} \), \( i \mapsto A_i \), with the power set \( \powerset{X} \) as the codomain the definition asks for. More generally, if \( S \) is a set whose elements are sets, a family of members of \( S \) indexed by \( I \) is a function \( I \to S \). A codomain must be named, because there is no set of all sets (@thm-russell). The value of a family at \( i \) is written \( A_i \) rather than \( A(i) \), and the family is written \( (A_i)_{i \in I} \), in parentheses because it is indexed. A family is not the same thing as its set of values \( \{ A_i : i \in I \} \): the family \( (A_i)_{i \in \{1, 2\}} \) with \( A_1 = A_2 = \{0\} \) has two indices and one value.
 
-In the same way, a **sequence** of real numbers \( (a_n)_{n \ge 1} \) is a function \( \nZ_{>0} \to \nR \), \( n \mapsto a_n \), with the value at \( n \) written \( a_n \). The sequence \( (1/n) \) is the function \( n \mapsto 1/n \), and its set of values is \( \{ 1/n : n \ge 1 \} \). Sequences are the main object of Part I.
+In the same way, a **sequence** of real numbers \( (a_n)_{n \ge 1} \) is a function \( \nZ_{>0} \to \nR \), \( n \mapsto a_n \), with the value at \( n \) written \( a_n \). The sequence \( (1/n) \) is the function \( n \mapsto 1/n \), and its set of values is \( \{ 1/n : n \ge 1 \} \). Sequences are the main object of *Analysis on the Real Line*.
 
 Finally, all functions from \( X \) to \( Y \) form a set, written
 \[
@@ -440,7 +440,7 @@ so \( z \) has the preimage \( x \) under \( g \circ f \) [\( \rulename{\exists 
 (c) If \( f \) and \( g \) are bijective, they are injective and surjective, so \( g \circ f \) is injective by (a) and surjective by (b), that is, bijective.
 :::
 
-Part (a) is short enough to see whole at level 0 of *Logic and Proof*, Chapter 5 (*Logic and Proof*, Section 5.3), a full derivation. Here is its derivation, with the quantifiers bounded and handled by the bounded rules (@fd1:prp-bounded-quantifier-rules), and \( (g \circ f)(u) \) already unwound to \( g(f(u)) \) by @def-composition. Premises 1 and 2 are the injectivity of \( f \) and of \( g \); premise 3 says that \( f \) maps \( X \) into \( Y \), which the prose used in the clause "the points \( f(x_1) \) and \( f(x_2) \) lie in \( Y \)".
+Part (a) is short enough to see whole at level 0 of *Logic and Proof*, Section 5.3, a full derivation. Here is its derivation, with the quantifiers bounded and handled by the bounded rules (@fd1:prp-bounded-quantifier-rules), and \( (g \circ f)(u) \) already unwound to \( g(f(u)) \) by @def-composition. Premises 1 and 2 are the injectivity of \( f \) and of \( g \); premise 3 says that \( f \) maps \( X \) into \( Y \), which the prose used in the clause "the points \( f(x_1) \) and \( f(x_2) \) lie in \( Y \)".
 
 ```{=latex}
 \begin{center}
@@ -649,29 +649,29 @@ Let \( f \colon X \to Y \) and \( g \colon Y \to Z \) be functions.
 def-function (claim): bounded exists-unique, exists! y in Y psi, abbreviates exists! y (y in Y and psi) | notation, by analogy with def-bounded-quantifier (cited); NOTATION bounded-quantifier row
 def-function (claim): exists-unique splits into existence (Fn1) and uniqueness (Fn2) | def-unique-existence, prp-unique-existence-use (cited)
 def-function (claim): (**) uses substituting equals (=E) | def-rules-equality (cited)
-def-function (claim): squares of reals are non-negative; 1/x undefined at 0 | school fact (Part 0 convention); proved in AN1.1
+def-function (claim): squares of reals are non-negative; 1/x undefined at 0 | school fact (F1-F2 convention); proved in AN1.1
 exm-first-functions (example): (x, y) in X x {c} gives y = c | def-cartesian-product ((*) of F2.1 §03), cited by section
 exm-first-functions (example): x in A or x not in A | prp-excluded-middle (cited)
-exm-not-a-function (example): no real square is negative; square roots of non-negative reals exist | school fact (Part 0 convention); proved in AN1.1
-exm-not-a-function (example): every rational is p/q with p in Z, q in Z_{>0}; 1/2 = 2/4 | school facts (Part 0 convention)
-exm-not-a-function (example): a non-empty set of positive integers has a least element (the q0 of the repair); a least element is unique | well-ordering, F2.2 (promised; prose pointer; STATUS row "F2.1 §01, §02, §03, §04 → F2.2"); uniqueness: two least elements are each <= the other, so equal (order facts, Part 0 convention; proved in AN1.1)
-exm-equal-functions (example): (x + 1)^2 - 2x - 1 = x^2; |x| >= 0 and |x|^2 = x^2; sqrt(x^2) is the non-negative square root | school algebra (Part 0 convention); uniqueness by thm-squares-order (cited)
+exm-not-a-function (example): no real square is negative; square roots of non-negative reals exist | school fact (F1-F2 convention); proved in AN1.1
+exm-not-a-function (example): every rational is p/q with p in Z, q in Z_{>0}; 1/2 = 2/4 | school facts (F1-F2 convention)
+exm-not-a-function (example): a non-empty set of positive integers has a least element (the q0 of the repair); a least element is unique | well-ordering, F2.2 (promised; prose pointer; STATUS row "F2.1 §01, §02, §03, §04 → F2.2"); uniqueness: two least elements are each <= the other, so equal (order facts, F1-F2 convention; proved in AN1.1)
+exm-equal-functions (example): (x + 1)^2 - 2x - 1 = x^2; |x| >= 0 and |x|^2 = x^2; sqrt(x^2) is the non-negative square root | school algebra (F1-F2 convention); uniqueness by thm-squares-order (cited)
 prp-function-equality (proof): domain = set of first coordinates of the graph | inline, in the paraphrase of def-function
 def-composition (claim): f(x) in Y, so g(f(x)) is defined and in Z | inline, from (**) in def-function's paraphrase
 exm-composition-order (example): 2x + 2 != 2x + 1 | arithmetic
 prp-empty-function (proof): empty set is a subset of every set | F2.1 §01, prose after prp-empty-set-unique (vacuous implication, cited there)
-def-surjective (claim): (the warning after it) x^2 + x + 1 = (x + 1/2)^2 + 3/4 > 0; values 0, 2, 6, 12 | school algebra (Part 0 convention); computation inline
+def-surjective (claim): (the warning after it) x^2 + x + 1 = (x + 1/2)^2 + 3/4 > 0; values 0, 2, 6, 12 | school algebra (F1-F2 convention); computation inline
 def-injective (claim): negation of bounded quantifiers and of an implication | F1.4 (promised): prp-bounded-quantifier-negation, prp-negated-implication, prose pointer
-exm-injective-surjective-first (example): dividing by 3; n >= 1 gives 3n >= 3, n <= 0 gives 3n <= 0 | school algebra and order facts (Part 0 convention); proved in AN1.1 (order) and F2.2 (integers)
+exm-injective-surjective-first (example): dividing by 3; n >= 1 gives 3n >= 3, n <= 0 gives 3n <= 0 | school algebra and order facts (F1-F2 convention); proved in AN1.1 (order) and F2.2 (integers)
 exm-injective-surjective-first (claim): a function from a 3-element set to a 2-element set is not injective, etc. | F2.3 (prose pointer, pigeonhole); only the two specific cases (c), (d) are proved, by listing; nothing depends on the general claim
 exm-function-set-small (claim): Y^X has m^n elements for finite sets; subsets of X correspond to functions X -> {0, 1} | F2.3 (prose pointer; the count is F2.3's exercise on B^A); the correspondence is stated with its two maps, and nothing depends on either
-exm-square-three-ways (example): x^2 >= 0 > -1; existence of sqrt(y) for y >= 0 | school fact (Part 0 convention); proved in AN1.1
+exm-square-three-ways (example): x^2 >= 0 > -1; existence of sqrt(y) for y >= 0 | school fact (F1-F2 convention); proved in AN1.1
 thm-composition-injective-surjective (proof): f(x1), f(x2) in Y | (**) in def-function's paraphrase (every value lies in the codomain)
 thm-composition-injective-surjective (proof): forall-E, exists-E, exists-I, forall-I in the prose tags | F1.4 (promised): quantifier rules (F1.4 §03-F1.4 §06), prose pointer; the bounded forms in the derivation are prp-bounded-quantifier-rules (cited)
 thm-composition-injective-surjective (claim): level 0 = full derivation | F1.5 (promised): def-levels-of-proof (prose pointer, F1.5 §03)
 thm-composition-injective-surjective (claim): closing lines of ->I and forall-I may be silent | F1.5 (promised): def-silent-steps, prose pointer
 exr-functions-b1 (solution): parity (1 is odd, 2n even, not both) | school fact as in Ch 1-2; F2.2 (promised; STATUS row "every integer is even or odd, and not both")
-exr-functions-b1 (solution): x1^3 - x2^3 factorization; real cube roots exist; |x| algebra for x/(1+|x|) | school algebra (Part 0 convention); cube roots proved in AN1.1 (thm-nth-root with a sign change)
+exr-functions-b1 (solution): x1^3 - x2^3 factorization; real cube roots exist; |x| algebra for x/(1+|x|) | school algebra (F1-F2 convention); cube roots proved in AN1.1 (thm-nth-root with a sign change)
 exr-functions-b1 (solution): 0 in N and 0 + k = k | school arithmetic of N; F2.2 (promised; STATUS row "ℕ closed under + and ·", AN1.1)
 def-function (claim): m + n in N for m, n in N (addition N x N -> N, the example after the definition; also exr-functions-b1 (b)) | F2.2 (promised; STATUS row "ℕ closed under + and ·", AN1.1)
 exr-functions-b1 (solution): in (e), (-1)^n is defined, and is 1 for even n and -1 for odd n | F2.2 (promised; STATUS rows "definition by recursion (powers)", AN1.1, and "every integer is even or odd, and not both", F1.1)

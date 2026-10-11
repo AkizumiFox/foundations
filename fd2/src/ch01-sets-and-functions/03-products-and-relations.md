@@ -21,7 +21,7 @@ For any objects \( a \) and \( b \) there is an object \( (a, b) \), the **order
 
 In words: to decide whether two pairs are equal, compare first coordinates with first coordinates and second with second; nothing else matters, and both comparisons must succeed. The direction \( (\Leftarrow) \) is nothing new: equal inputs give equal pairs, as for any construction (\( \rulename{=E} \), @fd1:def-rules-equality). The direction \( (\Rightarrow) \) is the content. It says that from the pair we can read off its coordinates, each in its place.
 
-We do not say here **what** the object \( (a, b) \) is. Besides the characteristic property, we use one working convention: pairs and \( n \)-tuples are a different kind of object from numbers, just as sets are (Section 1.1), so **a pair is not a number**; and tuples of different lengths are different kinds of object, so a triple is not a pair. Nothing else about pairs is used in this chapter. The optional *Number Systems: From \(\nN\) to \(\nR\)*, Chapter 1 shows that a pair with this property can be built from sets alone, so that nothing new has to be assumed. Until then, the existence of pairs with this property is taken as given, alongside the working rules (W1)–(W6) of Section 1.1.
+We do not say here **what** the object \( (a, b) \) is. Besides the characteristic property, we use one working convention: pairs and \( n \)-tuples are a different kind of object from numbers, just as sets are (Section 1.1), so **a pair is not a number**; and tuples of different lengths are different kinds of object, so a triple is not a pair. Nothing else about pairs is used in this chapter. *Number Systems: From \(\nN\) to \(\nR\)*, Chapter 1 shows that a pair with this property can be built from sets alone, so that nothing new has to be assumed. Until then, the existence of pairs with this property is taken as given, alongside the working rules (W1)–(W6) of Section 1.1.
 
 **A convention about parentheses.** The symbol \( (a, b) \) now has two meanings. For real numbers \( a < b \) it is also the open interval \( \{ x \in \nR : a < x < b \} \). The book keeps both, and context decides, as it does in every analysis text. In "\( (0, 1) \) contains \( \tfrac{1}{2} \)" it is an interval. In "the point \( (0, 1) \) lies on the unit circle" it is a pair. Where both readings are near each other, the text says which is meant. This convention is stated once, here.
 
@@ -308,7 +308,7 @@ This definition is all the next section needs. The graph of a function from \( X
 ::: {.solution}
 (a) \( A \times B = \{ (a, b) : a \in A, \ b \in B \} \); that is, \( p \in A \times B \) if and only if \( \exists a \in A \ \exists b \in B \ \ p = (a, b) \) (@def-cartesian-product).
 
-(b) No. Both are ordered pairs, so by the characteristic property (@def-ordered-pair) they are equal if and only if their first coordinates are equal and their second coordinates are equal. The first coordinates are the pair \( (1, 2) \) and the number \( 1 \). A pair is not a number, by the working convention stated after @def-ordered-pair (the optional *Number Systems: From \(\nN\) to \(\nR\)*, Chapter 1, which builds both from sets, bears it out). So the first coordinates differ, and the pairs are not equal. Calling both "the triple \( (1, 2, 3) \)" is an identification made by convention, not an equality.
+(b) No. Both are ordered pairs, so by the characteristic property (@def-ordered-pair) they are equal if and only if their first coordinates are equal and their second coordinates are equal. The first coordinates are the pair \( (1, 2) \) and the number \( 1 \). A pair is not a number, by the working convention stated after @def-ordered-pair (*Number Systems: From \(\nN\) to \(\nR\)*, Chapter 1, which builds both from sets, bears it out). So the first coordinates differ, and the pairs are not equal. Calling both "the triple \( (1, 2, 3) \)" is an identification made by convention, not an equality.
 
 (c) \( \{ (2, 1), (3, 1), (3, 2) \} \), which is the relation \( > \) on \( \{1, 2, 3\} \).
 
@@ -448,29 +448,29 @@ A proof of \( (\Rightarrow) \) by contraposition (assume \( A \ne B \) and both 
 :::
 
 <!-- dependency ledger
-def-ordered-pair (claim): pairs can be built from sets (Kuratowski) | optional F3.1 (prose pointer); nothing depends on it
+def-ordered-pair (claim): pairs can be built from sets (Kuratowski) | F3.1 (prose pointer); nothing depends on it
 def-ordered-pair (claim): (<=) of the characteristic property is =E (substitution of equals) | def-rules-equality (cited)
-def-ordered-pair (claim): (the paragraph after it) working convention: a pair is not a number, and a triple is not a pair | working convention stated in the text after def-ordered-pair, parallel to F2.1 §01's "numbers are not sets"; optional F3.1 (prose pointer)
+def-ordered-pair (claim): (the paragraph after it) working convention: a pair is not a number, and a triple is not a pair | working convention stated in the text after def-ordered-pair, parallel to F2.1 §01's "numbers are not sets"; F3.1 (prose pointer)
 def-cartesian-product (claim): A x B is a set; X^n is a set | working rule (W5) of F2.1 §01 (cited in prose; it covers pairs and n-tuples)
 def-cartesian-product (claim): (*) uses exists-I and exists-E on "exists a in A exists b in B p = (a, b)" | prp-bounded-quantifier-rules (cited)
 def-cartesian-product (claim): (*) uses =E to pass from x = a, a in A to x in A (and likewise y) | def-rules-equality (cited after def-ordered-pair)
 def-cartesian-product (claim): (the pair-pattern set-builder paragraph) membership in {(x, y) in A x B : P(x, y)}, via (*), the characteristic property and =E | def-set-builder (cited); def-rules-equality (cited after def-ordered-pair)
 exm-pair-equations (example): solving x + y = 3, x - y = 1 by adding and subtracting | school algebra
-exm-pair-equations (solution): (the quick check after it) t^2 >= 0 for real t | school fact (Part 0 convention); proved in AN1.1
+exm-pair-equations (solution): (the quick check after it) t^2 >= 0 for real t | school fact (F1-F2 convention); proved in AN1.1
 exm-small-products (example): an element of the empty set does not exist | def-empty-set
 exm-small-products (example): (a) a, b, c are pairwise different and none of them is 1 or 2 | hypothesis stated in part (a) ("three different objects, none of them a number"); the six pairs are distinct and the two lists disjoint by def-ordered-pair (characteristic property)
 prp-product-set-laws (proof): exists-E with fresh names; case split on d in B or d in C | prp-bounded-quantifier-rules (cited) for exists-E; F1.1 or-E (def-set-operations unwinds the union)
 prp-product-set-laws (proof): substituting equals (=E): from p = (a, d) and (a, d) in A x B infer p in A x B, and likewise in the intersection and set-difference cases | def-rules-equality (cited after def-ordered-pair)
 prp-product-set-laws (claim): (the warning after the remark) catalogue entry (N7), missing case | F1.5 (promised; prose pointer "the catalogue in F1.5, entry (N7)")
 prp-product-set-laws (proof): the not-in conclusions by not-I | F1.2 (def-rules-negation), named in the prose after the proof
-exm-product-of-intervals (example): order facts 0 <= x <= 2 and 1 <= x <= 3 give 1 <= x <= 2, etc. | school fact (Part 0 convention); proved in AN1.1
+exm-product-of-intervals (example): order facts 0 <= x <= 2 and 1 <= x <= 3 give 1 <= x <= 2, etc. | school fact (F1-F2 convention); proved in AN1.1
 prp-product-set-laws (claim): (the remark after exm-product-of-intervals) "not both sets have an element" plus excluded middle gives A empty or B empty | prp-excluded-middle (cited); prp-empty-set-unique (cited)
 exm-relations-as-sets (example): 1 <= a <= 6 divisors, the count 14 | arithmetic, by listing
-exm-relations-as-sets (example): x^2 = 1 - y^2 <= 1 gives -1 <= x <= 1; square roots of non-negative reals exist; squares are non-negative | school fact (Part 0 convention); proved in AN1.1
-exr-products-and-relations-a1 (solution): a pair is not a number | working convention stated in the text after def-ordered-pair (cited); optional F3.1 (prose pointer)
+exm-relations-as-sets (example): x^2 = 1 - y^2 <= 1 gives -1 <= x <= 1; square roots of non-negative reals exist; squares are non-negative | school fact (F1-F2 convention); proved in AN1.1
+exr-products-and-relations-a1 (solution): a pair is not a number | working convention stated in the text after def-ordered-pair (cited); F3.1 (prose pointer)
 def-relation (claim): (the nonexample after exm-relations-as-sets) the number 3 is not a pair | working convention stated in the text after def-ordered-pair (cited)
 def-relation (claim): (the warning and the paragraph before the exercises) symmetric, transitive, reflexive, antisymmetric relations; orders and equivalences | F2.2 (promised; prose pointer "studied in F2.2", "the subject of F2.2"); nothing here depends on it
-exr-products-and-relations-b1 (solution): [0, 2] = [0, 1] u [1, 2] | school order fact (Part 0 convention); proved in AN1.1
+exr-products-and-relations-b1 (solution): [0, 2] = [0, 1] u [1, 2] | school order fact (F1-F2 convention); proved in AN1.1
 exr-products-and-relations-c1 (solution): (1, 2) is neither (1, 1) nor (2, 2) | def-ordered-pair (characteristic property), as stated
 exr-products-and-relations-c2 (solution): a set either has an element or has none | prp-excluded-middle (cited); a set with no element is the empty set by prp-empty-set-unique (cited)
 exr-products-and-relations-c2 (solution): (the marking scheme) catalogue entry (N1) | F1.5 (promised; prose pointer "F1.5's catalogue")

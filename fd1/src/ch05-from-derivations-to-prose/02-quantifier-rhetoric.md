@@ -4,7 +4,7 @@ Section 5.1 read the connective rules in the sentences of written proofs. The st
 
 ## Three sentences, three rules
 
-Section 4.8 derived "if \( a_n \to L \), then \( 2a_n \to 2L \)" in sixteen lines. In a proof in Part I the same argument takes three sentences:
+Section 4.8 derived "if \( a_n \to L \), then \( 2a_n \to 2L \)" in sixteen lines. In a proof in *Analysis on the Real Line* the same argument takes three sentences:
 
 > Let \( \varepsilon > 0 \). Since \( a_n \to L \) and \( \varepsilon/2 > 0 \), we may choose \( N \in \nN \) (depending on \( \varepsilon \)) such that \( \abs{a_n - L} < \varepsilon/2 \) for every \( n \ge N \). Then for every \( n \ge N \), \( \abs{2a_n - 2L} = 2\abs{a_n - L} < \varepsilon \).
 

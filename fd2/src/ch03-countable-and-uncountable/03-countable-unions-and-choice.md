@@ -383,7 +383,7 @@ ax-choice (claim): independence (Goedel 1938, Cohen 1963); Zorn, well-ordering t
 ax-choice (claim): uses in F2.3 §06, AN1.1, MT.1, FA.3, FA.5 | F2.3 §06, AN1.1, MT.1, FA.3, FA.5 (prose pointers)
 ax-choice (claim): (remark) sup approximation, one exists-E per n | AN1.1 (prose pointer; flagged there)
 ax-choice (example): (0, 1) has no least element | F2.2 §01, halving as for (0, 1]
-ax-choice (claim): positive reals have non-negative square roots | school fact (Part 0 convention); proved in AN1.1
+ax-choice (claim): positive reals have non-negative square roots | school fact (F1-F2 convention); proved in AN1.1
 ax-choice (example): 0 | k iff k = 0 | def-divides (F2.2), silent
 ax-choice (claim): (finite case) 0 elements gives empty; n + 1 elements gives non-empty | def-finite (F2.3 §01)
 thm-surjection-right-inverse (claim): equivalence with the axiom | inline sketch; ST.4 (prose pointer)
@@ -396,7 +396,7 @@ thm-algebraic-countable (claim): choice avoidable for Alg | inline sketch; C2 (p
 thm-algebraic-countable (claim): sqrt 2 + sqrt 3 is a root of x^4 - 10x^2 + 1 | verify/ch08/thm-algebraic-countable.py
 exr-countable-unions-and-choice-a1 (solution): F(3, 2) = 4 | verify/ch08/exr-countable-unions-and-choice-a1.py
 exr-countable-unions-and-choice-b1 (solution): n < n + 1/2 < n + 1 | school fact; verify/ch08/exr-countable-unions-and-choice-b1.py
-exr-countable-unions-and-choice-b1 (solution): y > 0 has square roots sqrt y > 0 and -sqrt y | school fact (Part 0 convention); proved in AN1.1
+exr-countable-unions-and-choice-b1 (solution): y > 0 has square roots sqrt y > 0 and -sqrt y | school fact (F1-F2 convention); proved in AN1.1
 exr-countable-unions-and-choice-b2 (solution): Seq_k in bijection with N^k | characteristic property of tuples (F2.1)
 exr-countable-unions-and-choice-b3 (solution): two points lie on exactly one line | school geometry
 exr-countable-unions-and-choice-c1 (solution): N is countable | def-countable, identity map

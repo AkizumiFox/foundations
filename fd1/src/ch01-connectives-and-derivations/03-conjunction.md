@@ -1,6 +1,6 @@
 # Conjunction: the Rules for And
 
-Section 1.2 set up the format of a derivation and practiced it on two toy rules about numbers, which the book now puts away. This section introduces the first two rules of logic, one for proving a statement of the form "\( P \) and \( Q \)" and one for using it. Both are defined by their schemas, in the sense of @def-rule-schema, and every derivation below is checked against those schemas and nothing else. The rules are so simple that we can spend the section on something harder: how to *find* a derivation. Two questions will organize every search in Part 0, and they appear here for the first time: what does the goal ask for, and what do the lines we already have allow?
+Section 1.2 set up the format of a derivation and practiced it on two toy rules about numbers, which the book now puts away. This section introduces the first two rules of logic, one for proving a statement of the form "\( P \) and \( Q \)" and one for using it. Both are defined by their schemas, in the sense of @def-rule-schema, and every derivation below is checked against those schemas and nothing else. The rules are so simple that we can spend the section on something harder: how to *find* a derivation. Two questions will organize every search in this volume, and they appear here for the first time: what does the goal ask for, and what do the lines we already have allow?
 
 ## A conjunction in disguise
 

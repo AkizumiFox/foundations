@@ -1,6 +1,6 @@
 # The Connective Rules in Prose
 
-Chapters 1–4 built a calculus in which every step of a proof is one rule applied to lines that are available. Mathematicians do not write Fitch boxes, and from Part I on neither does this book; yet every proof in it is a derivation underneath, written in sentences. This section and the next compile the dictionary between the two: for each rule, the phrases that carry it in written mathematics, a sentence of analysis in which it does its work, and whether a writer may leave it unsaid. This section covers the connectives and the classical rules; Section 5.2 covers the quantifiers, equality and induction.
+Chapters 1–4 built a calculus in which every step of a proof is one rule applied to lines that are available. Mathematicians do not write Fitch boxes, and from *Analysis on the Real Line* on neither does this series; yet every proof in it is a derivation underneath, written in sentences. This section and the next compile the dictionary between the two: for each rule, the phrases that carry it in written mathematics, a sentence of analysis in which it does its work, and whether a writer may leave it unsaid. This section covers the connectives and the classical rules; Section 5.2 covers the quantifiers, equality and induction.
 
 ## The same proof, twice
 
@@ -64,12 +64,12 @@ The dictionary is a set of rows, one per rule, grouped by connective. Each row h
 
 - **The rule**, as Chapters 1, 2 and 4 named it, primitive or derived.
 - **Phrases**, in the order a writer should prefer them; the later ones are variants a reader must recognize. They are not a fixed vocabulary: any wording that does the same job is correct.
-- **An analysis sentence**, from a proof the reader has met or will meet in Part I, with the premises of the rule visible.
-- **Whether the rule may be silent in plain prose.** Section 5.3 names four levels of writing, from the full derivation down to the plain prose of Part I onward, and turns this column into a convention. "Never" means that a proof which leaves the step out is incomplete, however obvious the step looks.
+- **An analysis sentence**, from a proof the reader has met or will meet in *Analysis on the Real Line*, with the premises of the rule visible.
+- **Whether the rule may be silent in plain prose.** Section 5.3 names four levels of writing, from the full derivation down to the plain prose of *Analysis on the Real Line* onward, and turns this column into a convention. "Never" means that a proof which leaves the step out is incomplete, however obvious the step looks.
 
 Readers who use the Lean proof assistant will find the Lean command for each primitive rule in the rule, phrase and Lean table that ends Section 4.7; nothing in this chapter depends on it.
 
-Each group of rows is followed by a worked example, a short proof annotated phrase by phrase. A rule tag such as [\( \rulename{\wedge E} \)] after a phrase says which rule the phrase carries; proofs in Part 0 may carry such tags, and from Part I on they are dropped.
+Each group of rows is followed by a worked example, a short proof annotated phrase by phrase. A rule tag such as [\( \rulename{\wedge E} \)] after a phrase says which rule the phrase carries; proofs in this volume and in *Sets, Relations, and Cardinality* may carry such tags, and from *Analysis on the Real Line* on they are dropped.
 
 ## Conjunction
 
