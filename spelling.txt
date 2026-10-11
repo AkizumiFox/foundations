@@ -263,3 +263,11 @@ cofactor
 primality
 componentwise
 monoid
+# fd3 Chapter 4 (F3.9, ordered-field sequences), S3 2026-10-12
+summand
+summands
+approximant
+embeddings
+boundedness
+termwise
+subsequence
