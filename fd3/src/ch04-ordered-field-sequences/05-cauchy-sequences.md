@@ -137,19 +137,20 @@ Let \( (a_n) \) and \( (b_n) \) be Cauchy sequences in \( F \), and let \( c \in
 ::: {.proof}
 (a) A constant sequence \( (c) \) converges to \( c \), and a null sequence converges to \( 0 \) (@exm-first-sequences-ordered-field, @def-null-sequence-ordered-field). Both are Cauchy by @prp-convergent-cauchy-ordered-field.
 
-(b) *Sums.* Let \( \varepsilon \in F_{>0} \), so \( \varepsilon/2 \in F_{>0} \) (@prp-ordered-field-halves (b)). Since \( (a_n) \) is Cauchy, there is \( N_1 \) with \( \abs{a_m - a_n} < \varepsilon/2 \) for all \( m, n \ge N_1 \); since \( (b_n) \) is Cauchy, there is \( N_2 \) with \( \abs{b_m - b_n} < \varepsilon/2 \) for all \( m, n \ge N_2 \). Let \( N \coloneqq \max\{N_1, N_2\} \), which depends only on \( \varepsilon \). For \( m, n \ge N \), the triangle inequality (@prp-absolute-value-ordered-field (e)) gives
+(b) *Sums.* Let \( \varepsilon \in F_{>0} \), so \( \varepsilon/2 \in F_{>0} \) (@prp-ordered-field-halves (b)). Since \( (a_n) \) is Cauchy, there is \( N_1 \) with \( \abs{a_m - a_n} < \varepsilon/2 \) for all \( m, n \ge N_1 \); since \( (b_n) \) is Cauchy, there is \( N_2 \) with \( \abs{b_m - b_n} < \varepsilon/2 \) for all \( m, n \ge N_2 \). Let \( N \coloneqq \max\{N_1, N_2\} \), which depends only on \( \varepsilon \). For \( m, n \ge N \), we have \( (a_m + b_m) - (a_n + b_n) = (a_m - a_n) + (b_m - b_n) \) (@prp-ring-algebra), so the triangle inequality (@prp-absolute-value-ordered-field (e)) gives
 \[
 \begin{aligned}
 \abs{(a_m + b_m) - (a_n + b_n)} &\le \abs{a_m - a_n} + \abs{b_m - b_n} \\
-&< \frac{\varepsilon}{2} + \frac{\varepsilon}{2} = \varepsilon .
+&< \frac{\varepsilon}{2} + \frac{\varepsilon}{2} = \varepsilon ,
 \end{aligned}
 \]
+where the strict step adds two strict inequalities (@prp-ordered-ring-rules (b)) and the equality is @prp-ordered-field-halves (b).
 
 *Multiples.* If \( c = 0 \), then \( (c \, a_n) \) is the constant sequence \( 0 \) (@prp-ring-algebra (b)), Cauchy by (a). If \( c \ne 0 \), then \( \abs{c} > 0 \) (@prp-absolute-value-ordered-field (a)), so \( \varepsilon/\abs{c} \in F_{>0} \) (@prp-reciprocal-order, (O4)); choose \( N \) (depending on \( \varepsilon \) and \( c \)) with \( \abs{a_m - a_n} < \varepsilon/\abs{c} \) for all \( m, n \ge N \). For such \( m, n \),
 \[
 \abs{c \, a_m - c \, a_n} = \abs{c (a_m - a_n)} = \abs{c} \, \abs{a_m - a_n} < \abs{c} \cdot \frac{\varepsilon}{\abs{c}} = \varepsilon ,
 \]
-by distributivity (F9) and @prp-ring-algebra (c), then @prp-absolute-value-ordered-field (b) and @prp-ordered-ring-rules (c).
+by distributivity (F9) and @prp-ring-algebra (c), then @prp-absolute-value-ordered-field (b) and @prp-ordered-ring-rules (c); the last equality \( \abs{c} \cdot \varepsilon \abs{c}^{-1} = \varepsilon \) is (F5)–(F8).
 
 *Negatives and differences.* Since \( -a_n = (-1) a_n \) (@prp-ring-algebra (c)), \( (-a_n) \) is the multiple with \( c = -1 \). Then \( a_n - b_n = a_n + (-b_n) \) is the sum of two Cauchy sequences.
 
@@ -304,7 +305,7 @@ In \( \nQ \), let \( H_0 \coloneqq 0 \) and \( H_{n+1} \coloneqq H_n + 1/(n + 1)
 \[
 H_{n+k} - H_n \ge \frac{k}{n + k} \quad \text{for every } k \in \nN .
 \]
-Base \( P(0) \): both sides are \( 0 \). Step: assume it for \( k \). Since \( n + k \ge 1 \), we have \( 0 < n + k < n + k + 1 \), so \( 1/(n + k + 1) < 1/(n + k) \) (@prp-reciprocal-order (b)), and multiplying by \( k \ge 0 \) gives \( k/(n + k) \ge k/(n + k + 1) \). Hence
+Base \( P(0) \): both sides are \( 0 \). Step: assume it for \( k \). Since \( n + k \ge 1 \), we have \( 0 < n + k < n + k + 1 \), so \( 0 < 1/(n + k + 1) < 1/(n + k) \) (@prp-reciprocal-order (b)). With \( 0 \le k \le k \), @prp-ordered-field-halves (d) gives \( k/(n + k + 1) \le k/(n + k) \). Hence, by the induction hypothesis, transitivity (@prp-ordered-ring-rules (i)) and adding \( 1/(n + k + 1) \) to both sides (@prp-ordered-ring-rules (b)),
 \[
 \begin{aligned}
 H_{n+k+1} - H_n &= (H_{n+k} - H_n) + \frac{1}{n + k + 1} \\
@@ -493,7 +494,8 @@ prp-cauchy-bounded-ordered-field (proof): finite maximum of elements of F | fd2:
 prp-cauchy-bounded-ordered-field (proof): 1 > 0 in F | prp-ordered-ring-rules (e), cited
 thm-cauchy-algebra-ordered-field (proof): identity a_n b_n - a_m b_m = a_n (b_n - b_m) + b_m (a_n - a_m) | prp-ring-algebra (field axioms); verify/ch04/thm-cauchy-algebra-ordered-field.py
 thm-cauchy-algebra-ordered-field (proof): -a = (-1) a | prp-ring-algebra (c), cited
-thm-cauchy-algebra-ordered-field (proof): c(x - y) = cx - cy; e/(2A) > 0; A * e/(2A) = e/2 | (F5)-(F9), prp-ring-algebra (c), lem-field-fraction-rules (a), prp-reciprocal-order (a), cited
+thm-cauchy-algebra-ordered-field (proof): c(x - y) = cx - cy; e/(2A) > 0; A * e/(2A) = e/2; |c| * (e/|c|) = e | (F5)-(F9), prp-ring-algebra (c), lem-field-fraction-rules (a), prp-reciprocal-order (a), cited
+thm-cauchy-algebra-ordered-field (proof): (a_m + b_m) - (a_n + b_n) = (a_m - a_n) + (b_m - b_n); adding strict inequalities; e/2 + e/2 = e | prp-ring-algebra, prp-ordered-ring-rules (b), prp-ordered-field-halves (b), cited
 thm-cauchy-algebra-ordered-field (proof): a constant sequence converges to its value | exm-first-sequences-ordered-field, cited
 thm-cauchy-not-null-sign (proof): |a_n - 0| = |a_n| (a - 0 = a) | (F3), (F4) with -0 = 0; inline
 thm-cauchy-not-null-sign (proof): e - e/2 = e/2 | prp-ordered-field-halves (b), cited
@@ -504,6 +506,7 @@ prp-cauchy-reciprocal-ordered-field (proof): non-strict product bound | prp-orde
 prp-cauchy-reciprocal-ordered-field (claim): n + 1 is unbounded in Q | thm-rationals-archimedean, cited
 exm-consecutive-differences-not-cauchy (example): H defined by recursion | fd2:thm-recursion read on omega (thm-omega-recursion, cor-omega-identification (b)), cited
 exm-consecutive-differences-not-cauchy (example): H_{n+k} - H_n >= k/(n + k) by induction on k; first terms 0, 1, 3/2, 11/6, 25/12 | fd1:ax-induction via cor-omega-identification (b), cited; verify/ch04/exm-consecutive-differences-not-cauchy.py
+exm-consecutive-differences-not-cauchy (example): k/(n + k + 1) <= k/(n + k) and adding 1/(n + k + 1) | prp-reciprocal-order (b), prp-ordered-field-halves (d), prp-ordered-ring-rules (i), (b), cited
 exm-consecutive-differences-not-cauchy (example): sum of m - n terms each below e is below (m - n) e | prp-absolute-value-ordered-field (e) applied repeatedly; inline
 exr-cauchy-sequences-a1 (solution): least N_0 = 3 for tolerance 1/4; a_3 = -3/4; pair (2, 11) gives exactly 1/4 | verify/ch04/exr-cauchy-sequences-a1.py
 exr-cauchy-sequences-b1 (solution): (k + 1)/(k + 2) = 1 - 1/(k + 2) | field arithmetic; verify/ch04/exr-cauchy-sequences-b1.py

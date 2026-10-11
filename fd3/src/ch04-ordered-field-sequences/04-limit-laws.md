@@ -81,11 +81,11 @@ where the strict inequality is @prp-ordered-ring-rules (b) and the last equality
 \]
 multiplying by \( \abs{c} > 0 \) (@prp-ordered-ring-rules (c)). With \( c = -1 \), and \( (-1) x = -x \) (@prp-ring-algebra (c)), this gives \( -a_n \to -a \). Then (a), applied to \( (a_n) \) and \( (-b_n) \), gives \( a_n - b_n = a_n + (-b_n) \to a + (-b) = a - b \).
 
-(c) By @prp-convergent-bounded-ordered-field there is \( M \in F_{>0} \) with \( \abs{a_n} \le M \) for every \( n \in \nN \). We fix this \( M \) now; it depends on the sequence \( (a_n) \) only. Now let \( \varepsilon \in F_{>0} \). Since \( \abs{b} \ge 0 \), the element \( \abs{b} + 1 \) is \( \ge 1 > 0 \). Since \( 2 > 0 \) (@prp-ordered-field-halves (b)), \( 2M > 0 \) and \( 2(\abs{b} + 1) > 0 \) by (O4), so @prp-reciprocal-order (a) and (O4) give
+(c) By @prp-convergent-bounded-ordered-field there is \( M \in F_{>0} \) with \( \abs{a_n} \le M \) for every \( n \in \nN \). We fix this \( M \) now; it depends on the sequence \( (a_n) \) only. Now let \( \varepsilon \in F_{>0} \). Since \( \abs{b} \ge 0 \), the element \( \abs{b} + 1 \) is \( \ge 1 > 0 \) (@prp-ordered-ring-rules (b), (e)). Since \( 2 > 0 \) (@prp-ordered-field-halves (b)), \( 2M > 0 \) and \( 2(\abs{b} + 1) > 0 \) by (O4), so @prp-reciprocal-order (a) and (O4) give
 \[
 \frac{\varepsilon}{2M} \in F_{>0} \qquad \text{and} \qquad \frac{\varepsilon}{2(\abs{b} + 1)} \in F_{>0} .
 \]
-Since \( b_n \to b \), choose \( N_1 \) with \( \abs{b_n - b} < \varepsilon/(2M) \) for every \( n \ge N_1 \). Since \( a_n \to a \), choose \( N_2 \) with \( \abs{a_n - a} < \varepsilon/(2(\abs{b} + 1)) \) for every \( n \ge N_2 \). Both depend only on \( \varepsilon \), \( M \) and \( b \). Let \( N \coloneqq \max\{N_1, N_2\} \), and let \( n \ge N \). Using the identity of the Idea and the triangle inequality,
+Since \( b_n \to b \), choose \( N_1 \) with \( \abs{b_n - b} < \varepsilon/(2M) \) for every \( n \ge N_1 \). Since \( a_n \to a \), choose \( N_2 \) with \( \abs{a_n - a} < \varepsilon/(2(\abs{b} + 1)) \) for every \( n \ge N_2 \). Both depend only on \( \varepsilon \), \( M \) and \( b \). Let \( N \coloneqq \max\{N_1, N_2\} \), and let \( n \ge N \). Using the identity of the Idea, the triangle inequality and the product rule (@prp-absolute-value-ordered-field (e), (b)),
 \[
 \begin{aligned}
 \abs{a_n b_n - ab} &\le \abs{a_n} \abs{b_n - b} + \abs{b} \abs{a_n - a} \\
@@ -93,7 +93,7 @@ Since \( b_n \to b \), choose \( N_1 \) with \( \abs{b_n - b} < \varepsilon/(2M)
 &< M \, \frac{\varepsilon}{2M} + (\abs{b} + 1) \, \frac{\varepsilon}{2(\abs{b} + 1)} = \frac{\varepsilon}{2} + \frac{\varepsilon}{2} = \varepsilon .
 \end{aligned}
 \]
-The second line uses @prp-ordered-field-halves (d) twice, with \( 0 \le \abs{a_n} \le M \) and \( 0 \le \abs{b} \le \abs{b} + 1 \). The third multiplies the two estimates by the positive elements \( M \) and \( \abs{b} + 1 \) (@prp-ordered-ring-rules (c)) and adds them (@prp-ordered-ring-rules (b)); the last equality is @prp-ordered-field-halves (b). So \( a_n b_n \to ab \).
+The second line uses @prp-ordered-field-halves (d) twice, with \( 0 \le \abs{a_n} \le M \) and \( 0 \le \abs{b} \le \abs{b} + 1 \), and adds the two estimates (@prp-ordered-ring-rules (b)). The third multiplies the two estimates by the positive elements \( M \) and \( \abs{b} + 1 \) (@prp-ordered-ring-rules (c)) and adds them (@prp-ordered-ring-rules (b)); the last equality is @prp-ordered-field-halves (b). So \( a_n b_n \to ab \).
 
 (d) First we show \( 1/b_n \to 1/b \). By @lem-limit-bounded-away-ordered-field there is \( N_0 \) (depending on \( (b_n) \) and \( b \)) with \( \abs{b_n} > \abs{b}/2 \) for every \( n \ge N_0 \). For such \( n \), @lem-field-fraction-rules (c) and @prp-absolute-value-ordered-field (b) give
 \[
