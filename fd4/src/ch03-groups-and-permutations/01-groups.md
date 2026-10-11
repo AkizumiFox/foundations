@@ -2,7 +2,7 @@
 
 Several structures met so far behave alike: the integers under addition, the non-zero rationals under multiplication, the units of \( \nZ/n\nZ \) (*Number Systems: From \(\nN\) to \(\nR\)*, Section 3.5), and the bijections of a set under composition (*Sets, Relations, and Cardinality*, Chapter 1). This section names their common structure, a group, and proves its basic laws once, from three axioms, so that they hold in all of these at once. It then makes two habits honest: dropping brackets from a product of many factors, and writing powers \( g^n \) with \( n \in \nZ \).
 
-Throughout the chapter \( \nN \) is \( \omega \), and \( \nZ \), \( \nQ \) are the integers and rationals built in *Number Systems: From \(\nN\) to \(\nR\)*, Chapter 2. Induction, strong induction and recursion on \( \nN \) are @fd1:ax-induction, @fd1:thm-strong-induction and @fd2:thm-recursion, read on \( \omega \) through @fd3:cor-omega-identification (b), exactly as in that volume.
+Throughout the chapter \( \nN \) is \( \omega \), and \( \nZ \), \( \nQ \) are the integers and rationals built in *Number Systems: From \(\nN\) to \(\nR\)*, Chapter 2. Induction and recursion on \( \nN \) are @fd1:ax-induction and @fd2:thm-recursion, read on \( \omega \) through @fd3:cor-omega-identification (b). Strong induction, @fd1:thm-strong-induction, holds on \( \omega \) too, since its proof uses only @fd1:ax-induction and the order facts @fd3:thm-omega-order (a), (b), (d).
 
 ## Four situations side by side
 
@@ -52,11 +52,7 @@ Check that each of (a)–(d) is a group, and decide which are abelian.
 ::: {.solution}
 *(a)* Recall the clauses (F1)–(F4) of @fd3:def-commutative-ring-and-field: addition is commutative (F1) and associative (F2), \( a + 0 = a \) (F3), and \( a + (-a) = 0 \) (F4). Addition is a function \( R \times R \to R \) by the definition, so it is a binary operation. (G1) is (F2). For (G2), \( a + 0 = a \) is (F3), and \( 0 + a = a + 0 = a \) by (F1). For (G3), \( a + (-a) = 0 \) is (F4), and \( (-a) + a = 0 \) by (F1). The group is abelian by (F1). The instances: \( \nZ \) is a commutative ring by @fd3:thm-integers-commutative-ring, \( \nQ \) by @fd3:thm-rationals-field, \( \nR \) by @fd3:thm-reals-ordered-field, and \( \nZ/n\nZ \) by @fd3:thm-integers-mod-n-ring (a).
 
-*(b)* Let \( F \) be a field (in the form of @fd3:def-commutative-ring-and-field; Chapter 2 restates the definition as @def-field), for instance \( F = \nQ \) (@fd3:thm-rationals-field). The first thing to check is that multiplication lands in \( F \setminus \{0\} \). Let \( x, y \in F \) with \( x \ne 0 \), and suppose \( xy = 0 \). By (F8) there is \( x^{-1} \) with \( xx^{-1} = 1 \), and then
-\[
-y = 1 \cdot y = (x^{-1}x)y = x^{-1}(xy) = x^{-1} \cdot 0 = 0 ,
-\]
-by (F7) with (F6), then (F6), (F5), and @fd3:prp-ring-algebra (b). So a product of two non-zero elements is non-zero, and multiplication restricts to a binary operation on \( F \setminus \{0\} \). (G1) is (F5). For (G2), \( 1 \ne 0 \) in a field, so \( 1 \in F \setminus \{0\} \), and \( a \cdot 1 = 1 \cdot a = a \) by (F7) and (F6). For (G3), let \( a \ne 0 \); then \( aa^{-1} = a^{-1}a = 1 \) by (F8) and (F6), and \( a^{-1} \ne 0 \), since \( a^{-1} = 0 \) would give \( 1 = a \cdot 0 = 0 \). The group is abelian by (F6). For a prime \( p \), \( \nZ/p\nZ \) is a field by @fd3:thm-integers-mod-prime-field, so \( \nZ/p\nZ \setminus \{[0]\} \) is a group under multiplication.
+*(b)* Let \( F \) be a field (in the form of @fd3:def-commutative-ring-and-field; Chapter 2 restates the definition as @def-field), for instance \( F = \nQ \) (@fd3:thm-rationals-field). The first thing to check is that multiplication lands in \( F \setminus \{0\} \). If \( x \ne 0 \) and \( y \ne 0 \), then \( x \) is a unit by (F8), and a unit is not a zero divisor (the paragraph after @fd3:def-ring-unit), so \( xy \ne 0 \). So a product of two non-zero elements is non-zero, and multiplication restricts to a binary operation on \( F \setminus \{0\} \). (G1) is (F5). For (G2), \( 1 \ne 0 \) in a field, so \( 1 \in F \setminus \{0\} \), and \( a \cdot 1 = 1 \cdot a = a \) by (F7) and (F6). For (G3), let \( a \ne 0 \); then \( aa^{-1} = a^{-1}a = 1 \) by (F8) and (F6), and \( a^{-1} \ne 0 \), since \( a^{-1} = 0 \) would give \( 1 = a \cdot 0 = 0 \). The group is abelian by (F6). For a prime \( p \), \( \nZ/p\nZ \) is a field by @fd3:thm-integers-mod-prime-field, so \( \nZ/p\nZ \setminus \{[0]\} \) is a group under multiplication.
 
 *(c)* Composition of two bijections \( X \to X \) is a bijection \( X \to X \) by @fd2:thm-composition-injective-surjective (c), so \( \circ \) is a binary operation on the set of bijections. (G1) holds by @fd2:prp-composition-associative, and the same result gives \( f \circ \id_X = f = \id_X \circ f \), so \( \id_X \), a bijection, satisfies (G2). For (G3), a bijection \( f \) has a two-sided inverse \( f^{-1} \) by @fd2:thm-bijection-iff-inverse, with \( f^{-1} \circ f = \id_X \) and \( f \circ f^{-1} = \id_X \) (@fd2:def-inverse-function). These two equations also say that \( f \) is a two-sided inverse of \( f^{-1} \), so \( f^{-1} \) is a bijection, again by @fd2:thm-bijection-iff-inverse.
 
@@ -86,7 +82,7 @@ For each of the following, say which of (G1)–(G3), or the binary operation its
 ::: {.solution}
 *\( (\nZ, \cdot) \).* Replace addition by multiplication in (a). Multiplication is a binary operation on \( \nZ \), it is associative by (F5), and \( 1 \) is an identity by (F7) and (F6) (@fd3:thm-integers-commutative-ring). But (G3) fails at \( a = 2 \): if \( 2b = 1 \) for some \( b \in \nZ \), then \( 2 \mid 1 \), and @fd3:prp-divisibility-rules-integers (g) gives \( 2 = 1 \) or \( 2 = -1 \), which is false.
 
-*\( (\nN, +) \).* Keep addition but shrink \( \nZ \) to \( \nN \). Addition still lands in \( \nN \) (@fd3:prp-naturals-embed-integers (a)), it is associative, and \( 0 \) is an identity. But (G3) fails at \( a = 1 \): in \( \nZ \) the only \( b \) with \( 1 + b = 0 \) is \( -1 \) (uniqueness of negatives, @fd3:prp-ring-algebra (a)), and \( -1 < 0 \), so \( -1 \notin \nN \) by @fd3:thm-integers-ordered-ring (b).
+*\( (\nN, +) \).* Keep addition but shrink \( \nZ \) to \( \nN \). Addition still lands in \( \nN \) (@fd3:prp-naturals-embed-integers (a)), it is associative, and \( 0 \) is an identity, by (F1)–(F3) in \( \nZ \). But (G3) fails at \( a = 1 \): in \( \nZ \) the only \( b \) with \( 1 + b = 0 \) is \( -1 \) (uniqueness of negatives, @fd3:prp-ring-algebra (a)), and \( -1 < 0 \), so \( -1 \notin \nN \) by @fd3:thm-integers-ordered-ring (b).
 
 *\( a \ast b \coloneqq a - b \) on \( \nZ \).* It is a binary operation, but (G1) fails: \( (1 \ast 1) \ast 1 = 0 - 1 = -1 \), while \( 1 \ast (1 \ast 1) = 1 - 0 = 1 \).
 
@@ -128,11 +124,11 @@ b = be = b(ab') = (ba)b' = eb' = b' ,
 \]
 where the first and last equalities are (G2), and \( ba = e \) is used in the fourth.
 
-For (3), the equations \( aa^{-1} = a^{-1}a = e \) say that \( a \) is an inverse of \( a^{-1} \), so \( (a^{-1})^{-1} = a \) by (2). Next, by (G1),
+For (3), the equations \( aa^{-1} = a^{-1}a = e \) say that \( a \) is an inverse of \( a^{-1} \), so \( (a^{-1})^{-1} = a \) by (2). Next, by (G1) twice, then (G3), (G2) and (G3),
 \[
-(ab)(b^{-1}a^{-1}) = a(bb^{-1})a^{-1} = aea^{-1} = aa^{-1} = e ,
+(ab)(b^{-1}a^{-1}) = \bigl((ab)b^{-1}\bigr)a^{-1} = \bigl(a(bb^{-1})\bigr)a^{-1} = (ae)a^{-1} = aa^{-1} = e ,
 \]
-and in the same way \( (b^{-1}a^{-1})(ab) = b^{-1}(a^{-1}a)b = b^{-1}eb = b^{-1}b = e \). By (2), \( (ab)^{-1} = b^{-1}a^{-1} \).
+and in the same way \( (b^{-1}a^{-1})(ab) = \bigl((b^{-1}a^{-1})a\bigr)b = \bigl(b^{-1}(a^{-1}a)\bigr)b = (b^{-1}e)b = b^{-1}b = e \). By (2), \( (ab)^{-1} = b^{-1}a^{-1} \).
 
 For (4), suppose \( ab = ac \). Multiplying on the left by \( a^{-1} \) and using (G1),
 \[
@@ -145,11 +141,11 @@ For (5), \( x = a^{-1}b \) is a solution, since \( a(a^{-1}b) = (aa^{-1})b = eb 
 
 Parts (2) and (4) use one move, and we give it a name: **multiply by the inverse**. To remove a factor from one side of an equation in a group, multiply both sides **on the same side** by its inverse, then regroup with (G1). The side matters, since a group need not be abelian; there is no "dividing by \( a \)".
 
-Parts (1) and (2) are the argument of @fd2:prp-inverse-unique, that a left inverse and a right inverse of a function agree, with functions erased; the uniqueness of the inverse of a unit in @fd3:def-ring-unit is the same argument once more. That is the point of the definition: a proof that uses only (G1)–(G3) holds in every group at once.
+Part (2) is the argument of @fd2:prp-inverse-unique, that a left inverse and a right inverse of a function agree, with functions erased; the uniqueness of the inverse of a unit in @fd3:def-ring-unit is the same argument once more. Part (1) is the argument for the uniqueness of \( 0 \) and \( 1 \) in @fd3:prp-ring-algebra (a). That is the point of the definition: a proof that uses only (G1)–(G3) holds in every group at once.
 
 ## Products of many factors
 
-Part (3) already wrote \( a(bb^{-1})a^{-1} \) for a product of four factors, with the brackets chosen to suit the argument. To write \( g_1 g_2 \cdots g_r \) with no brackets at all, we must say which product it means, and then check that the brackets do not matter. The definition uses the recursion that defined finite sums and products of reals.
+Part (3) had to write every bracket out. To write \( g_1 g_2 \cdots g_r \) with no brackets at all, we must say which product it means, and then check that the brackets do not matter. The definition uses the recursion that defined finite sums and products of reals.
 
 ::: {#def-group-list-product}
 [Product of a List]
@@ -211,7 +207,7 @@ by the recursion, @thm-group-basic-properties (3), the induction hypothesis, and
 :::
 :::
 
-Part (b) licenses the phrase "regroup by (G1)" used in @thm-group-basic-properties: **from now on we drop brackets** from products in a group, regrouping in any way that keeps the order of the factors. The order itself may not change, unless the group is abelian (Exercise C3).
+By part (b), **from now on we drop brackets** from products in a group, regrouping in any way that keeps the order of the factors. The order itself may not change, unless the group is abelian (Exercise C3).
 
 ## Integer powers
 
@@ -270,7 +266,7 @@ g^m g^{-k} = g^{m-k} . \tag{$\ast\ast$}
 \]
 By (b), \( g^{-k} = (g^{-1})^k \), and \( g^k (g^{-1})^k = e \) (shown in (b)). If \( m \ge k \), then \( m - k \in \nN \) and \( g^m = g^{m-k} g^k \) by (a) on \( \nN \), so \( g^m (g^{-1})^k = g^{m-k} g^k (g^{-1})^k = g^{m-k} \). If \( m < k \), then \( k - m \in \nN \), and \( (g^{-1})^k = (g^{-1})^m (g^{-1})^{k-m} \) by (a) on \( \nN \) for the element \( g^{-1} \); since \( g^m (g^{-1})^m = e \), we get \( g^m (g^{-1})^k = (g^{-1})^{k-m} = g^{-(k-m)} = g^{m-k} \), by (\( \ast \)).
 
-Now let \( m, n \in \nZ \), and write \( h \coloneqq g^{-1} \), so that \( g^p = h^{-p} \) for every \( p \in \nZ \) by (\( \ast \)) and \( (g^{-1})^{-1} = g \). There are four cases. If \( m, n \ge 0 \), this is (a) on \( \nN \). If \( m \ge 0 > n \), write \( n = -k \); this is (\( \ast\ast \)). If \( m < 0 \le n \), write \( m = -j \); then \( g^m g^n = h^j h^{-n} = h^{j-n} = g^{n-j} = g^{m+n} \), by (\( \ast\ast \)) for \( h \) and then (\( \ast \)). If \( m, n < 0 \), write \( m = -j \), \( n = -k \); then \( g^m g^n = h^j h^k = h^{j+k} = g^{-(j+k)} = g^{m+n} \), by (a) on \( \nN \) for \( h \) and (\( \ast \)). The identities between exponents used here, such as \( n - j = m + n \), are ring arithmetic in \( \nZ \) (@fd3:thm-integers-commutative-ring).
+Now let \( m, n \in \nZ \), and write \( u \coloneqq g^{-1} \), so that \( g^p = u^{-p} \) for every \( p \in \nZ \) by (\( \ast \)) and \( (g^{-1})^{-1} = g \). There are four cases. If \( m, n \ge 0 \), this is (a) on \( \nN \). If \( m \ge 0 > n \), write \( n = -k \); this is (\( \ast\ast \)). If \( m < 0 \le n \), write \( m = -j \); then \( g^m g^n = u^j u^{-n} = u^{j-n} = g^{n-j} = g^{m+n} \), by (\( \ast\ast \)) for \( u \) and then (\( \ast \)). If \( m, n < 0 \), write \( m = -j \), \( n = -k \); then \( g^m g^n = u^j u^k = u^{j+k} = g^{-(j+k)} = g^{m+n} \), by (a) on \( \nN \) for \( u \) and (\( \ast \)). The identities between exponents used here, such as \( n - j = m + n \), are ring arithmetic in \( \nZ \) (@fd3:thm-integers-commutative-ring).
 
 *(c).* For \( n \in \nN \), by @fd1:ax-induction on \( n \): \( (g^m)^0 = e = g^0 \), and \( (g^m)^{n+1} = (g^m)^n g^m = g^{mn} g^m = g^{mn + m} = g^{m(n+1)} \), by the definition, the hypothesis, (a), and (F9) in \( \nZ \). For \( n < 0 \), write \( n = -k \); then
 \[
@@ -296,7 +292,7 @@ Part (d) needs \( gh = hg \): without it the law fails, and Section 3.4 exhibits
 
 ::: {.second-reading title="Multiples in Chapters 2 and 3 agree"}
 ::: {.remark}
-For \( n = -m < 0 \), part (b) in additive notation reads \( m \cdot (-a) = -(m \cdot a) \), so the multiple \( (-m) \cdot a = m \cdot (-a) \) of @def-group-integer-power equals \( -(m \cdot a) \). That is how Section 2.5 defines \( n \cdot a \) for \( n < 0 \) in a commutative ring. So "\( n \cdot a \)" means the same thing in Chapters 2 and 3 for every \( n \in \nZ \), and the identities of @lem-integer-multiples apply to the multiples of the group \( (R, +) \). No proof in this chapter rests on this comparison.
+For \( n = -m < 0 \), part (b) in additive notation reads \( m \cdot (-a) = -(m \cdot a) \), so the multiple \( (-m) \cdot a = m \cdot (-a) \) of @def-group-integer-power equals \( -(m \cdot a) \). That is how Section 2.5 defines \( n \cdot a \) for \( n < 0 \) in a commutative ring. So "\( n \cdot a \)" means the same thing in Chapters 2 and 3 for every \( n \in \nZ \), and the identities of @lem-integer-multiples apply to the multiples of the group \( (R, +) \). No proof in this chapter rests on this comparison; Exercise R1 of Section 3.5 needs only part (e).
 :::
 :::
 
@@ -370,7 +366,7 @@ Determine which of the following are groups. Justify your answer.
 
 ::: {.solution}
 ::: {.enumerate options="label=(\alph*)"}
-1. A group. \( \nQ \) is an ordered field (@fd3:thm-rationals-ordered-field), so a product of positive rationals is positive by (O4), and multiplication is a binary operation on \( \nQ_{>0} \). Associativity is (F5), and \( 1 > 0 \) (@fd3:prp-ordered-ring-rules (e)) is an identity. For \( x > 0 \), \( x^{-1} \) exists since \( x \ne 0 \), and \( x^{-1} > 0 \): it is non-zero, and if \( x^{-1} < 0 \), then \( 0 = 0 \cdot x^{-1} > x x^{-1} = 1 \) by @fd3:prp-ordered-ring-rules (d) (with \( 0 < x \)), against \( 1 > 0 \). So the inverse stays in \( \nQ_{>0} \).
+1. A group. \( \nQ \) is an ordered field (@fd3:thm-rationals-ordered-field), so a product of positive rationals is positive by (O4), and multiplication is a binary operation on \( \nQ_{>0} \). Associativity is (F5), and \( 1 > 0 \) (@fd3:prp-ordered-ring-rules (e)) is an identity. For \( x > 0 \), \( x^{-1} \) exists since \( x \ne 0 \), and \( x^{-1} > 0 \) by @fd3:prp-reciprocal-order (a). So the inverse stays in \( \nQ_{>0} \).
 2. A group: it is \( \nZ^{\times} \), a group by @prp-units-form-group.
 3. Not a group: addition is not a binary operation on the odd integers, since \( 1 + 1 = 2 \) is even and so not odd (@fd3:cor-integers-even-odd (a)).
 4. A group: it is \( (\nZ/8\nZ)^{\times} \) (the examples after @prp-units-form-group), and every element is its own inverse.
@@ -431,11 +427,11 @@ For uniqueness, take two candidates and compute one expression in two ways.
 ::: {.solution}
 [Hint 2]
 
-For inverses, start from \( b = be \) and replace \( e \) by \( ab' \).
+For inverses, let \( b \) and \( b' \) both be inverses of \( a \), and start from \( b = be \).
 :::
 
 ::: {.solution}
-The proof of (1)–(3) in @thm-group-basic-properties is a complete answer. In outline: two identities \( e, e' \) give \( e = ee' = e' \); two inverses \( b, b' \) of \( a \) give \( b = be = b(ab') = (ba)b' = eb' = b' \); \( a \) is an inverse of \( a^{-1} \), so \( (a^{-1})^{-1} = a \) by uniqueness; and \( (ab)(b^{-1}a^{-1}) = a(bb^{-1})a^{-1} = e \) and \( (b^{-1}a^{-1})(ab) = b^{-1}(a^{-1}a)b = e \), so \( (ab)^{-1} = b^{-1}a^{-1} \) by uniqueness.
+The proof of (1)–(3) in @thm-group-basic-properties is a complete answer. In outline: two identities \( e, e' \) give \( e = ee' = e' \); two inverses \( b, b' \) of \( a \) give \( b = be = b(ab') = (ba)b' = eb' = b' \); \( a \) is an inverse of \( a^{-1} \), so \( (a^{-1})^{-1} = a \) by uniqueness; and \( (ab)(b^{-1}a^{-1}) = \bigl((ab)b^{-1}\bigr)a^{-1} = \bigl(a(bb^{-1})\bigr)a^{-1} = e \) and \( (b^{-1}a^{-1})(ab) = \bigl((b^{-1}a^{-1})a\bigr)b = \bigl(b^{-1}(a^{-1}a)\bigr)b = e \), so \( (ab)^{-1} = b^{-1}a^{-1} \) by uniqueness.
 
 **Marking scheme.** (10 points)
 - 2: uniqueness of the identity, with each of the two identity properties named where it is used.
@@ -443,7 +439,7 @@ The proof of (1)–(3) in @thm-group-basic-properties is a complete answer. In o
 - 1: \( (a^{-1})^{-1} = a \), by reading \( aa^{-1} = a^{-1}a = e \) as "\( a \) is an inverse of \( a^{-1} \)" and citing uniqueness.
 - 3: \( (ab)(b^{-1}a^{-1}) = e \), with (G1) named, **and** \( (b^{-1}a^{-1})(ab) = e \).
 - 1: the conclusion \( (ab)^{-1} = b^{-1}a^{-1} \), citing uniqueness of inverses.
-Fatal errors (0 for the step): using commutativity; "dividing" by an element. Checking only one of the two products for \( (ab)^{-1} \) loses those 2 points and is not fatal. A proof of uniqueness of inverses through cancellation earns the 3 points only if cancellation is itself proved from (G1)–(G3).
+Fatal errors (0 for the step): using commutativity; "dividing" by an element. Checking only one product earns 1 of those 3 points (not fatal), or all 4 points for \( (ab)^{-1} \) with a proof from (G1)–(G3) that a one-sided inverse is the inverse (\( xy = e \) or \( yx = e \) implies \( y = x^{-1} \)). A proof of uniqueness of inverses through cancellation earns the 3 points only if cancellation is itself proved from (G1)–(G3).
 :::
 
 ::: {#exr-groups-c2}
@@ -488,20 +484,29 @@ where an empty product is \( e \). The list with \( g_i \) and \( g_{i+1} \) swa
 :::
 
 Section 3.5 proves that every permutation of \( \{1, \dots, r\} \) is a product of adjacent transpositions; read for lists, every rearrangement is obtained by adjacent swaps, and so the product of a list in an abelian group does not depend on the order of the factors.
+
+**Marking scheme.** (10 points)
+- 3: (a) brackets both products as \( (g_1 \cdots g_{i-1})(\,\cdot\,)(g_{i+2} \cdots g_r) \), citing @prp-group-list-product-laws, with the empty product read as \( e \) when \( i = 1 \) or \( i + 1 = r \).
+- 2: (a) uses \( g_i g_{i+1} = g_{i+1} g_i \) (abelian) to conclude that the products agree.
+- 1: (b) names the induction and its variable, the number of swaps.
+- 2: (b) base case: zero swaps leave the list unchanged.
+- 2: (b) step: writes a rearrangement by \( k + 1 \) swaps as one swap after \( k \) swaps and applies (a) to the intermediate list.
+Fatal errors (0 for the step): (a) swaps the two entries inside a product written without brackets, with no appeal to the list-product laws; (b) "and so on" in place of an induction.
 :::
 
 <!-- dependency ledger
 def-group (claim): (hook) the units of Z/12Z are [1], [5], [7], [11]; 25 = 2*12 + 1, 49 = 4*12 + 1, 121 = 10*12 + 1 | fd3:thm-units-mod-n (cited); gcd(a, 12) = 1 exactly for a in {1, 5, 7, 11} among 0..11 computed; verify/ch03/exm-groups.py
-def-group (claim): (opening) N is omega, Z and Q are fd3's; induction, strong induction and recursion read on omega | fd3:cor-omega-identification (b) (cited); fd1:thm-strong-induction is proved from fd1:ax-induction, so it reads on omega with it (blueprint ledger line "N, Z in fd4")
+def-group (claim): (opening) N is omega, Z and Q are fd3's; induction, strong induction and recursion read on omega | fd3:cor-omega-identification (b) (cited); strong induction: its fd1 proof uses only fd1:ax-induction and fd3:thm-omega-order (a), (b), (d) (cited)
 exm-groups (solution): (a) 0 + a = a and (-a) + a = 0 from (F3), (F4) with (F1) | fd3:def-commutative-ring-and-field, named in the solution
-exm-groups (solution): (b) 1 . y = y; 1 != 0 in a field | (F7) with (F6); the field clause 1 != 0 of fd3:def-commutative-ring-and-field
+exm-groups (solution): (b) a product of non-zero elements is non-zero; 1 != 0 in a field | (F8) makes x a unit (fd3:def-ring-unit), and a unit is not a zero divisor (the paragraph after fd3:def-ring-unit, cited); the field clause 1 != 0 of fd3:def-commutative-ring-and-field
 exm-groups (solution): (c) a swap of two points is its own inverse, hence a bijection; at most two bijections of a set with at most two elements | direct from the definitions (fd2:def-composition, fd2:thm-bijection-iff-inverse); the count of bijections of a set with at most two elements is by listing, used silently
 exm-groups (solution): (e) rotations of a square, and Section 3.4 B3 matching them with Z/4Z | F4.3 §04 (prose pointer within the chapter, blueprint 04 B3); nothing here depends on it
 exm-groups (claim): (remark) GL_n(F) is a group | Spaces and Maps, the chapter "Matrices" (LA1.0, prose pointer); nothing here depends on it
 exm-group-nonexamples (solution): 2 != 1 and 2 != -1 | order of Z (fd3:thm-integers-ordered-ring), used silently
 exm-group-nonexamples (solution): -1 < 0 | fd3:prp-ordered-ring-rules (a), (e) with 1 != 0 (fd3:thm-integers-commutative-ring), used silently
+exm-group-nonexamples (solution): (N, +) associative with identity 0 | (F1)-(F3) in Z (fd3:thm-integers-commutative-ring)
 exm-group-nonexamples (solution): (1 - 1) - 1 = -1, 1 - (1 - 1) = 1 | ring arithmetic in Z; verify/ch03/exm-group-nonexamples.py
-thm-group-basic-properties (claim): (remark) (1), (2) are the argument of fd2:prp-inverse-unique and of the uniqueness paragraph after fd3:def-ring-unit | meta-claim about those proofs (both insert the identity and regroup), checked against F2.1 §05 and F3.5 §05
+thm-group-basic-properties (claim): (remark) (2) is the argument of fd2:prp-inverse-unique and of the uniqueness paragraph after fd3:def-ring-unit; (1) that of fd3:prp-ring-algebra (a) | meta-claim, checked against F2.1 §05, F3.5 §05, F3.2 §03
 def-group-list-product (claim): recursion on N for a list extended by e; independence of the extension; the remark never reorders factors | fd2:def-sum-product and its "Finite lists" remark used as a template (F3.1 §07 citing rule, group (iii)), fd2:thm-recursion read on omega; checked: the remark's induction only compares the added terms a_{n+1}
 prp-group-list-product-laws (proof): (b) concatenating (g_1..g_k) with the re-indexed rest (g_{k+1}..g_r) gives (g_1..g_r) | definition of the concatenated list (entry r + i is h_i), inline
 prp-group-list-product-laws (proof): strong induction with the property "r >= 1 implies ..." | fd1:thm-strong-induction read on omega (opening line above)
@@ -512,7 +517,7 @@ prp-group-power-laws (claim): (remark) F4.2 Section 2.5 defines n . a := -((-n) 
 prp-units-form-group (claim): Z^x = {1, -1}; [3]^2 = [5]^2 = [7]^2 = [1] in Z/8Z; F^x = F \ {0} | fd3:def-ring-unit examples (cited), fd3:thm-units-mod-n (cited); verify/ch03/prp-units-form-group.py; (F8) and fd3:prp-ring-algebra (b) (cited)
 prp-units-form-group (claim): (check) 15 = 2*7 + 1, 25 = 3*7 + 4, 36 = 5*7 + 1 | numerals; verify/ch03/prp-units-form-group.py
 exr-groups-a1 (solution): (b) identity -1, inverse -a - 2, both bracketings a + b + c + 2; (c) values of f o g; (d) 15 = 2*7 + 1, -5 = 2 mod 7 | ring arithmetic; verify/ch03/exr-groups-a1.py
-exr-groups-b1 (solution): (a) 0 . x^{-1} = 0 | fd3:prp-ring-algebra (b), used silently
+exr-groups-b1 (solution): (a) x > 0 gives x^{-1} > 0 | fd3:prp-reciprocal-order (a) (cited)
 exr-groups-b1 (solution): (c) 2 = 2*1 is even, hence not odd | fd3:cor-integers-even-odd (a) (cited)
 exr-groups-c3 (solution): every rearrangement is a product of adjacent swaps (Section 3.5) | F4.3 §05 cor-adjacent-transpositions-generate (prose pointer in a solution); nothing in (a), (b) depends on it
 -->

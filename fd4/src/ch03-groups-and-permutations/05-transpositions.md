@@ -60,7 +60,7 @@ By @prp-cycle-product-of-transpositions with \( i_1 = 2 \), \( i_2 = 5 \), \( i_
 
 ## Every permutation is a product of transpositions
 
-We say that \( \sigma \in S_n \) is a **product of transpositions** if \( \sigma = \tau_1 \tau_2 \cdots \tau_r \) for some \( r \ge 1 \) and transpositions \( \tau_1, \dots, \tau_r \in S_n \). The words "\( r \ge 1 \)" matter for one permutation only: the identity is always the empty product (@def-group-list-product), but it is a product of **at least one** transposition only when a transposition exists, that is, when \( n \ge 2 \). Then \( \id = (1\ 2)(1\ 2) \).
+We say that \( \sigma \in S_n \) is a **product of transpositions** if \( \sigma = \tau_1 \tau_2 \cdots \tau_r \) for some \( r \ge 1 \) and transpositions \( \tau_1, \dots, \tau_r \in S_n \). The words "\( r \ge 1 \)" matter for one permutation only: the identity is always the empty product (@def-group-list-product), but it is a product of **at least one** transposition only when a transposition exists, that is, when \( n \ge 2 \). Then \( \id = (1\ 2)(1\ 2) \). More generally, for a set \( T \subseteq S_n \), \( \sigma \) is a **product of elements of \( T \)** if \( \sigma = t_1 t_2 \cdots t_r \) for some \( r \ge 1 \) and \( t_1, \dots, t_r \in T \), and \( T \) **generates** \( S_n \) if every \( \sigma \in S_n \) is a product of elements of \( T \). The theorem below says that the transpositions generate \( S_n \) for \( n \ge 2 \), and its corollary says the same for the adjacent transpositions.
 
 ::: {#thm-transpositions-generate}
 [Transpositions Generate \( S_n \)]
@@ -102,7 +102,7 @@ a product of \( r \) transpositions of \( S_{n+1} \).
 \[
 (\tau\sigma)(n + 1) = \tau(\sigma(n + 1)) = \tau(k) = n + 1 ,
 \]
-so Case 1 applies to \( \tau\sigma \): \( \tau\sigma = \tau_1 \cdots \tau_r \) with \( r \ge 1 \) and transpositions \( \tau_j \in S_{n+1} \). Multiply on the left by \( \tau \), using \( \tau\tau = \id \), (G1) and the concatenation law @prp-group-list-product-laws (a):
+so Case 1 applies to \( \tau\sigma \): \( \tau\sigma = \tau_1 \cdots \tau_r \) with \( r \ge 1 \) and transpositions \( \tau_j \in S_{n+1} \). Multiply on the left by \( \tau \), using \( \tau\tau = \id \), (G1), (G2) and the concatenation law @prp-group-list-product-laws (a):
 \[
 \sigma = (\tau\tau)\sigma = \tau(\tau\sigma) = \tau(\tau_1 \cdots \tau_r) = \tau\tau_1 \cdots \tau_r ,
 \]
@@ -198,7 +198,7 @@ Shrink the gap from the other end: \( (1\ 4) = (3\ 4)(1\ 3)(3\ 4) \) and \( (1\ 
 ::: {.enumerate options="label=(\alph*)"}
 1. Where in @thm-transpositions-generate is the hypothesis \( n \ge 2 \) used? What goes wrong for \( n = 1 \)?
 2. Run the proof of @thm-transpositions-generate on \( \sigma \coloneqq (1\ 3\ 4\ 2) \in S_4 \): at each stage name the case, the transposition \( \tau \) chosen, and the permutation passed down to the smaller symmetric group. Write down the word for \( \sigma \) the run produces, and check it.
-3. Which line of the proof uses @lem-permutations-fixing-last-point, and for what?
+3. Where does the proof use @lem-permutations-fixing-last-point, and for what?
 4. State the idea of the proof in two sentences.
 :::
 :::
@@ -216,7 +216,7 @@ Shrink the gap from the other end: \( (1\ 4) = (3\ 4)(1\ 3)(3\ 4) \) and \( (1\ 
 
 The second route of the remark after the theorem gives another word: by @prp-cycle-product-of-transpositions, \( (1\ 3\ 4\ 2) = (1\ 2)(1\ 4)(1\ 3) \) (check: \( 1 \mapsto 3 \mapsto 3 \mapsto 3 \), \( 3 \mapsto 1 \mapsto 4 \mapsto 4 \), \( 4 \mapsto 4 \mapsto 1 \mapsto 2 \), \( 2 \mapsto 2 \mapsto 2 \mapsto 1 \)). That is a correct word, but it is not the run asked for. Neither is \( (2\ 4)(1\ 2)(1\ 3) \), which applies one Case-2 step and then the cycle formula to \( \tau\sigma = (1\ 3\ 2) \); it is a third valid word.
 
-(c) Case 1. The lemma says that a permutation of \( \{1, \dots, n + 1\} \) fixing \( n + 1 \) restricts to a permutation \( \sigma' \) of \( \{1, \dots, n\} \), to which the induction hypothesis applies, and that extending \( \sigma' \) back gives \( \sigma \).
+(c) In two places. In the paragraph opening the Step, part (b) of the lemma says that \( \rho \mapsto \overline{\rho} \) is the inverse of the isomorphism \( \sigma \mapsto \sigma' \) from \( S' \) onto \( S_n \); so, by @prp-homomorphism-composition-inverse (b), the extension is a homomorphism, the product of extensions being taken in \( S_{n+1} \). Fact 1 rests on this. In Case 1, part (a) says that a permutation \( \sigma \) of \( \{1, \dots, n + 1\} \) fixing \( n + 1 \) restricts to a permutation \( \sigma' \) of \( \{1, \dots, n\} \), to which the induction hypothesis applies, and part (b) says that extending \( \sigma' \) back gives \( \sigma \), so that the extension carries the word for \( \sigma' \) to a word for \( \sigma \).
 
 (d) Induct on \( n \): a permutation that fixes the last point is a permutation of one point fewer, so the induction hypothesis writes it as transpositions. A permutation that moves the last point is brought to that case by one transposition, which is then undone.
 :::
@@ -283,7 +283,7 @@ Let \( n \ge 2 \). State and prove that every \( \sigma \in S_n \) is a product 
 
 Suppose the statement for \( n \ge 2 \), and let \( \sigma \in S_{n+1} \).
 
-If \( \sigma(n + 1) = n + 1 \), then \( \sigma(i) \ne n + 1 \) for \( i \le n \) by injectivity, so \( \sigma \) restricts to an injective map \( \sigma' \colon \{1, \dots, n\} \to \{1, \dots, n\} \). It is onto: for \( j \le n \), \( j = \sigma(i) \) for some \( i \), and \( i \ne n + 1 \) because \( \sigma(n + 1) = n + 1 \ne j \). So \( \sigma' \in S_n \) (@lem-permutations-fixing-last-point), and \( \sigma' = \tau_1 \cdots \tau_r \) by the hypothesis. Extending each permutation of \( \{1, \dots, n\} \) by \( n + 1 \mapsto n + 1 \) respects products (@lem-permutations-fixing-last-point), so it carries this word to a word \( \overline{\tau_1} \cdots \overline{\tau_r} \) in \( S_{n+1} \), each \( \overline{\tau_j} \) the transposition of the same two points; and it carries \( \sigma' \) to \( \sigma \). Hence \( \sigma = \overline{\tau_1} \cdots \overline{\tau_r} \).
+If \( \sigma(n + 1) = n + 1 \), then \( \sigma(i) \ne n + 1 \) for \( i \le n \) by injectivity, so \( \sigma \) restricts to an injective map \( \sigma' \colon \{1, \dots, n\} \to \{1, \dots, n\} \). It is onto: for \( j \le n \), \( j = \sigma(i) \) for some \( i \), and \( i \ne n + 1 \) because \( \sigma(n + 1) = n + 1 \ne j \). So \( \sigma' \in S_n \) (@lem-permutations-fixing-last-point), and \( \sigma' = \tau_1 \cdots \tau_r \) by the hypothesis. Extending each permutation of \( \{1, \dots, n\} \) by \( n + 1 \mapsto n + 1 \) is the inverse of the restriction isomorphism of @lem-permutations-fixing-last-point (b), so it is a homomorphism (@prp-homomorphism-composition-inverse (b)). By induction on \( r \), using the recursion of @def-group-list-product (fact 1 in the proof of @thm-transpositions-generate), it carries this word to the word \( \overline{\tau_1} \cdots \overline{\tau_r} \) in \( S_{n+1} \), each \( \overline{\tau_j} \) the transposition of the same two points; and it carries \( \sigma' \) to \( \sigma \). Hence \( \sigma = \overline{\tau_1} \cdots \overline{\tau_r} \).
 
 If \( \sigma(n + 1) = k \ne n + 1 \), let \( \tau \coloneqq (k\ \ n{+}1) \). Then \( (\tau\sigma)(n + 1) = \tau(k) = n + 1 \), so by the first case \( \tau\sigma = \tau_1 \cdots \tau_r \) with transpositions in \( S_{n+1} \). Since \( \tau\tau = \id \), \( \sigma = \tau(\tau\sigma) = \tau\tau_1 \cdots \tau_r \). This completes the induction.
 
@@ -303,6 +303,14 @@ Fatal errors (0 for the step): using "\( \sigma \) is a product of transposition
 - 3: writes each cycle as transpositions by @prp-cycle-product-of-transpositions, cited or proved, with the factors in the right (right-to-left) order.
 - 2: handles \( \sigma = \id \) as \( (1\ 2)(1\ 2) \), using \( n \ge 2 \).
 - 2: joins the words into one product of transpositions (@prp-group-list-product-laws (a)).
+
+**Third route (accepted, 10 points): strong induction on \( \card{\supp \sigma} \)** (finite, as a subset of \( \{1, \dots, n\} \)).
+
+- 2: sets up the induction and handles the base \( \supp \sigma = \emptyset \), that is, \( \sigma = \id = (1\ 2)(1\ 2) \), using \( n \ge 2 \).
+- 3: for \( \sigma \ne \id \), picks \( i \) with \( j \coloneqq \sigma(i) \ne i \) and \( \tau \coloneqq (i\ j) \), and shows that \( \tau\sigma \) fixes \( i \) and every point that \( \sigma \) fixes (such a point is neither \( i \) nor \( j \), by injectivity).
+- 3: concludes \( \supp(\tau\sigma) \subseteq \supp \sigma \setminus \{i\} \), so the hypothesis applies to \( \tau\sigma \) (or \( \tau\sigma = \id \), and \( \sigma = \tau \)).
+- 1: undoes \( \tau \), using \( \tau^{-1} = \tau \).
+- 1: joins the words (@prp-group-list-product-laws (a)).
 :::
 
 ::: {#exr-transpositions-c2}
@@ -333,9 +341,9 @@ In fact the product in line (4) is \( \gamma^{-1} \): by @prp-group-list-product
 - 2: says the claim is true and the argument does not prove it.
 - 3: names line (4) (or lines (3)–(4) together) and the reason: the factors are written in the order they should act, but products act right to left.
 - 2: a counterexample to the step, such as \( (1\ 2)(1\ 3) = (1\ 3\ 2) \ne (1\ 2\ 3) \).
-- 3: repairs the formula by reversing the factors, and justifies the repaired formula (by the induction or by citing the proposition).
+- 3: gives a correct formula for \( \gamma \) as a product of transpositions and justifies it. For the reversed product \( (i_1\ i_k) \cdots (i_1\ i_2) \), the induction or a citation of @prp-cycle-product-of-transpositions is enough. For another word, such as \( (i_1\ i_2)(i_2\ i_3) \cdots (i_{k-1}\ i_k) \), the reader must prove it, by induction on \( k \) or by a point-by-point check for general \( k \).
 
-Fatal errors (0 for the step): a counterexample to the conclusion (there is none); a "repair" that keeps the left-to-right order and changes the cycle instead without saying so.
+Fatal errors (0 for the step): a counterexample to the conclusion (there is none); a "repair" that keeps line (4)'s product and silently replaces \( \gamma \) by another cycle (such as \( \gamma^{-1} \)).
 :::
 
 ::: {#exr-transpositions-c3}
@@ -355,6 +363,16 @@ Fatal errors (0 for the step): a counterexample to the conclusion (there is none
 \tau' = \pi'\pi^{-1}\tau\pi\pi'^{-1} = (\pi'\pi^{-1})\tau(\pi'\pi^{-1})^{-1} ,
 \]
 by @prp-group-list-product-laws (c) and @thm-group-basic-properties (3). Conjugacy in \( S_n \) is studied in the chapter "Symmetric Groups and the Sign of a Permutation" of *Groups*.
+
+**Marking scheme.** (10 points)
+
+- 2: notes that the \( \sigma(i_j) \) are distinct (\( \sigma \) injective), so the right side of (a) is a \( k \)-cycle.
+- 2: checks \( \sigma\gamma\sigma^{-1}(\sigma(i_j)) = \sigma(i_{j+1}) \), including the wrap-around \( j = k \).
+- 2: checks that every \( x \) outside \( \{\sigma(i_1), \dots, \sigma(i_k)\} \) is fixed.
+- 3: for transpositions \( (a\ b) \), \( (c\ d) \), exhibits a permutation \( \pi \) with \( \{\pi(a), \pi(b)\} = \{c, d\} \), covering every case of overlap between \( \{a, b\} \) and \( \{c, d\} \); directly or through \( (1\ 2) \).
+- 1: applies (a) with \( k = 2 \) to conclude \( \tau' = \pi\tau\pi^{-1} \), or composes the two conjugations by \( (1\ 2) \) using \( (\pi'\pi^{-1})^{-1} = \pi\pi'^{-1} \).
+
+Fatal errors (0 for the step): (b) uses the conjugation formula without (a) having been proved; \( \pi \) is not a bijection, or is built only for disjoint (or only for overlapping) pairs.
 :::
 
 ### R. Review
@@ -366,11 +384,11 @@ Let \( F \) be a field. Show that \( \varphi(k) \coloneqq k \cdot 1_F \) defines
 :::
 
 ::: {.solution}
-*Homomorphism.* In additive notation, @prp-group-power-laws (a) says \( (k + l) \cdot 1_F = k \cdot 1_F + l \cdot 1_F \) for all \( k, l \in \nZ \), the multiples being those of the group \( (F, +) \) (@def-group-integer-power). That is \( \varphi(k + l) = \varphi(k) + \varphi(l) \). By @prp-group-power-laws (e) and the remark after it, these group multiples are F3.2's multiples for \( k \in \nN \), and Chapter 2's multiples for all \( k \in \nZ \).
+*Homomorphism.* In additive notation, @prp-group-power-laws (a) says \( (k + l) \cdot 1_F = k \cdot 1_F + l \cdot 1_F \) for all \( k, l \in \nZ \), the multiples being those of the group \( (F, +) \) (@def-group-integer-power). That is \( \varphi(k + l) = \varphi(k) + \varphi(l) \). By @prp-group-power-laws (e), for \( k \in \nN \) these group multiples are the multiples of *Number Systems: From \(\nN\) to \(\nR\)*, Section 2.3, which are the multiples of @lem-integer-multiples; that lemma is applied below only to natural numbers.
 
 *Kernel.* \( \ker \varphi \) is a subgroup of \( \nZ \) (@thm-homomorphism-basic-properties (c)), so \( \ker \varphi = m\nZ \) for exactly one \( m \in \nN \) (@thm-subgroups-of-integers): \( m = 0 \) if the kernel is \( \{0\} \), and otherwise \( m \) is its least positive element.
 
-*\( m \) is \( 0 \) or prime.* \( m \ne 1 \): \( 1 \cdot 1_F = 1_F \) (@def-group-integer-power), and \( 1_F \ne 0_F \) in a field (@fd3:def-commutative-ring-and-field), so \( 1 \notin \ker \varphi \). Suppose \( m \ge 2 \) were not prime. Then \( m = ab \) with \( 1 < a, b < m \), as in the proof of @fd3:thm-integers-mod-prime-field (\( \Rightarrow \)). By @lem-integer-multiples (b),
+*\( m \) is \( 0 \) or prime.* \( m \ne 1 \): \( 1 \cdot 1_F = 1_F \) (@def-group-integer-power), and \( 1_F \ne 0_F \) in a field (@fd3:def-commutative-ring-and-field), so \( 1 \notin \ker \varphi \). Suppose \( m \ge 2 \) were not prime. By @fd2:def-prime it has a positive divisor \( a \notin \{1, m\} \); write \( m = ab \) with \( b \in \nZ \). Then \( b > 0 \), as \( a, m > 0 \); \( a \le m \) and \( b \le m \) by @fd3:prp-divisibility-rules-integers (e); and \( b \ne m \), since \( b = m \) would give \( a = 1 \) (cancel \( m \ne 0 \) in \( \nZ \)). So \( 0 < a < m \) and \( 0 < b < m \). By @lem-integer-multiples (b),
 \[
 (a \cdot 1_F)(b \cdot 1_F) = (ab) \cdot 1_F = m \cdot 1_F = 0_F .
 \]
@@ -432,7 +450,7 @@ The tool is to pair each element with its inverse. Define \( g \sim h \) on \( G
 
 A class has one element exactly when \( g = g^{-1} \), that is, when \( g^2 = e \): if \( g = g^{-1} \), then \( g^2 = gg^{-1} = e \); if \( g^2 = e \), then \( g \) is an inverse of \( g \), so \( g = g^{-1} \) by uniqueness of inverses (@thm-group-basic-properties (2)). Let \( T \coloneqq \{ g \in G : g^2 = e \} \), the union of the one-element classes, and \( U \coloneqq G \setminus T \), the union of the two-element classes; both are finite, as subsets of \( G \) (@fd2:prp-subset-finite).
 
-*\( \card{U} \) is even.* We show, by @fd1:thm-strong-induction on \( j \), that every subset \( V \subseteq U \) with \( j \) elements that contains \( g^{-1} \) whenever it contains \( g \) has an even number of elements. If \( j = 0 \), this holds. If \( j \ge 1 \), pick \( g \in V \); then \( g^{-1} \in V \) and \( g^{-1} \ne g \) (as \( g \notin T \)), so \( \{g, g^{-1}\} \) has \( 2 \) elements, and \( V' \coloneqq V \setminus \{g, g^{-1}\} \) again contains the inverse of each of its elements. It has \( j - 2 \) elements (@fd2:prp-disjoint-union-count with @fd2:cor-finite-size-unique), even by the hypothesis, so \( j \) is even. Apply this to \( V = U \).
+*\( \card{U} \) is even.* We show, by @fd1:thm-strong-induction on \( j \), that every subset \( V \subseteq U \) with \( j \) elements that contains \( g^{-1} \) whenever it contains \( g \) has an even number of elements. If \( j = 0 \), this holds. If \( j \ge 1 \), pick \( g \in V \); then \( g^{-1} \in V \) and \( g^{-1} \ne g \) (as \( g \notin T \)), so \( \{g, g^{-1}\} \) has \( 2 \) elements, and \( V' \coloneqq V \setminus \{g, g^{-1}\} \) again contains the inverse of each of its elements: if \( h \in V' \), then \( h^{-1} \in V \), and \( h^{-1} \notin \{g, g^{-1}\} \), since otherwise \( h = (h^{-1})^{-1} \in \{g^{-1}, g\} \) by @thm-group-basic-properties (3). As \( V \) is the disjoint union of \( V' \) and \( \{g, g^{-1}\} \), \( j = \card{V'} + 2 \) (@fd2:prp-disjoint-union-count with @fd2:cor-finite-size-unique), so \( V' \) has \( j - 2 < j \) elements; that number is even by the hypothesis, so \( j \) is even. Apply this to \( V = U \).
 
 *Conclusion.* \( G = T \cup U \) is a disjoint union, so \( \card{G} = \card{T} + \card{U} \) (@fd2:prp-disjoint-union-count). With \( \card{G} \) and \( \card{U} \) even, \( \card{T} = \card{G} - \card{U} \) is even. Since \( e \in T \), \( \card{T} \ge 1 \), so \( \card{T} \ge 2 \): an even number cannot be \( 1 \), as \( 2 \nmid 1 \) (@fd3:prp-divisibility-rules-integers (g)). So \( T \) contains some \( g \ne e \), and \( g^2 = e \).
 
@@ -448,7 +466,7 @@ thm-transpositions-generate (proof): base S_2 = {id, (1 2)} by cases on sigma(1)
 thm-transpositions-generate (proof): k = sigma(n+1) != n+1 lies in {1..n} | codomain {1..n+1}; inline
 thm-transpositions-generate (proof): extension map is a homomorphism | lem-permutations-fixing-last-point (inverse of the restriction isomorphism), prp-homomorphism-composition-inverse (b), cited
 thm-transpositions-generate (proof): extension carries list products to list products | inline induction from base 1 (fd2:thm-induction) with def-group-list-product
-thm-transpositions-generate (proof): tau tau = id, then sigma = tau(tau sigma) | (G1) of def-group; the fact stated before prp-cycle-product-of-transpositions; prp-group-list-product-laws (a)
+thm-transpositions-generate (proof): tau tau = id, then sigma = tau(tau sigma) | (G1), (G2) of def-group; the fact stated before prp-cycle-product-of-transpositions; prp-group-list-product-laws (a)
 thm-transpositions-generate (claim): (remark) sigma = (1 3)(2 5 4) gives (1 3)(2 4)(2 5) | verify/ch03/thm-transpositions-generate.py
 thm-transpositions-generate (claim): (1 2 3) = (1 3)(1 2) = (1 2)(2 3) = (1 3)(1 2)(1 2)(1 2); lengths 2, 2, 4; reversal (1 2)(1 3) = (1 3 2) | exm-cycle-notation; verify/ch03/thm-transpositions-generate.py
 thm-transpositions-generate (claim): parity of word lengths is an invariant | NOT proved here; prose pointer to LA2.7 and AL1.3; nothing depends on it
@@ -456,17 +474,19 @@ thm-transpositions-generate (claim): (non-example) the two 3-cycles of S_3 and t
 cor-adjacent-transpositions-generate (proof): s t s = (i j) pointwise | inline; verify/ch03/cor-adjacent-transpositions-generate.py (n <= 5)
 cor-adjacent-transpositions-generate (proof): induction from base 1 on the gap d | fd2:thm-induction read on omega, cited
 cor-adjacent-transpositions-generate (claim): (1 4) = (1 2)(2 3)(3 4)(2 3)(1 2); quick check (3 4)(2 3)(1 2)(2 3)(3 4) and the mirror formula | verify/ch03/cor-adjacent-transpositions-generate.py
+exr-transpositions-a1 (solution): (c) the lemma makes the extension a homomorphism and supplies restriction/extension in Case 1 | lem-permutations-fixing-last-point (a), (b), prp-homomorphism-composition-inverse (b), cited
 exr-transpositions-a1 (solution): the run on (1 3 4 2): tau sigma = (1 3 2), tau' sigma' = (1 2), word (2 4)(2 3)(1 2); second-route word (1 2)(1 4)(1 3); third word (2 4)(1 2)(1 3) | verify/ch03/exr-transpositions-a1.py
 exr-transpositions-b1 (solution): (1 2 3 4 5) = (1 5)(1 4)(1 3)(1 2) = (1 2)(2 3)(3 4)(4 5); ten-factor word for (1 5)(2 4) | verify/ch03/exr-transpositions-b1.py
 exr-transpositions-b2 (solution): rho^m(j) = j + m for j + m <= n | inline induction (def-group-integer-power); verify/ch03/exr-transpositions-b2.py (n <= 6)
-exr-transpositions-c1 (solution): restriction is onto; extension respects products and transpositions | inline (as in the proof of thm-transpositions-generate); lem-permutations-fixing-last-point, cited
+exr-transpositions-c1 (solution): restriction is onto; extension respects products and transpositions | inline (as in the proof of thm-transpositions-generate); lem-permutations-fixing-last-point (b), prp-homomorphism-composition-inverse (b), cited; induction on r with def-group-list-product (fact 1 of the proof of thm-transpositions-generate)
 exr-transpositions-c2 (solution): (1 2)(1 3) = (1 3 2); the left-to-right product is the inverse cycle | exm-cycle-notation, prp-group-list-product-laws (c); verify/ch03/exr-transpositions-c2.py (k <= 7)
 exr-transpositions-c3 (solution): the conjugating permutations id, (2 b), (1 a)(2 b) | inline; verify/ch03/exr-transpositions-c3.py (exhaustive in S_5)
-exr-transpositions-r1 (solution): non-prime m >= 2 is ab with 1 < a, b < m | the argument of the proof of fd3:thm-integers-mod-prime-field (=>), cited by position
-exr-transpositions-r1 (solution): F3.2 / Chapter 2 multiples agree with group multiples | prp-group-power-laws (e) and the remark after it, cited; lem-integer-multiples (b) used for a, b in N
+exr-transpositions-r1 (solution): non-prime m >= 2 is ab with 0 < a, b < m | inline from fd2:def-prime, fd3:prp-divisibility-rules-integers (e), cancellation in Z (as in the proof of thm-characteristic-prime)
+exr-transpositions-r1 (solution): F3.2 / Chapter 2 multiples agree with group multiples for k in N | prp-group-power-laws (e), cited; lem-integer-multiples (b) used for a, b in N only
 exr-transpositions-r2 (solution): powers of [3] mod 7: 1, 3, 2, 6, 4, 5, [3]^6 = [1]; powers of the identity are the identity | inline arithmetic and induction; verify/ch03/exr-transpositions-r2.py
 exr-transpositions-r3 (solution): Z is not finite via x -> 2x onto 2Z | fd2:thm-finite-no-proper-copy (group (i) of F3.1's citing rule), fd3:prp-ordered-ring-rules (f), fd3:prp-divisibility-rules-integers (g), cited
 exr-transpositions-r3 (solution): fd2 finite-set results read on omega | group (i) of F3.1's citing rule after fd3:cor-omega-identification, cited by label
+exr-transpositions-r4 (solution): V' = V minus {g, g^{-1}} is closed under inverses | thm-group-basic-properties (3), inline
 exr-transpositions-r4 (solution): j - 2 elements after removing a 2-element set; even minus even is even; card T >= 1 even gives >= 2 | fd2:prp-disjoint-union-count, fd2:cor-finite-size-unique (group (i)); integer arithmetic in fd3:thm-integers-commutative-ring; fd3:prp-divisibility-rules-integers (g); verify/ch03/exr-transpositions-r4.py (small groups)
 exr-transpositions-r4 (solution): Lagrange, Cauchy named as unavailable | prose pointers to AL1.4, AL1.6; nothing depends on them
 -->

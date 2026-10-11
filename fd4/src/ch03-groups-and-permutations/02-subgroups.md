@@ -16,7 +16,7 @@ Let \( G \) be a group. A subset \( H \subseteq G \) is a **subgroup** of \( G \
 
 In words: the identity of \( G \) is in \( H \); multiplying two elements of \( H \) never leaves \( H \); and the inverse in \( G \) of an element of \( H \) lies in \( H \). We say "\( H \) is a subgroup of \( G \)" in words and use no symbol for it; in this chapter \( \le \) always means the order of \( \nZ \).
 
-Then the operation of \( G \) restricts to a binary operation \( H \times H \to H \), and \( H \) is a group with it: (G1) holds in \( H \) because it holds in \( G \), and (G2), (G3) hold because \( e \) and the inverses lie in \( H \). The identity of the group \( H \) is the identity \( e \) of \( G \), and the inverse of \( a \) in \( H \) is its inverse in \( G \), by the uniqueness in @thm-group-basic-properties (1) and (2). Three conditions are a lot to check; in practice one checks a single one.
+Then the operation of \( G \) restricts to a binary operation \( H \times H \to H \), and \( H \) is a group with it: (G1) holds in \( H \) because it holds in \( G \), and (G2), (G3) hold because \( e \) and the inverses lie in \( H \). The identity of the group \( H \) is the identity \( e \) of \( G \), and the inverse of \( a \) in \( H \) is its inverse in \( G \), by the uniqueness in @thm-group-basic-properties (1) and (2). Three conditions are a lot to check; in practice one checks that \( H \) is non-empty and a single combined condition.
 
 ::: {#thm-subgroup-test}
 [Subgroup Test]
@@ -58,13 +58,13 @@ kn - ln = kn + (-l)n = (k - l)n \in n\nZ ,
 \]
 by @fd3:prp-ring-algebra (c), then (F9) with (F6). In the same way \( 0 = a0 + b0 \in a\nZ + b\nZ \), and \( (ax + by) - (ax' + by') = a(x - x') + b(y - y') \). So both are subgroups, by the additive form of the test. For instance \( 2\nZ \) is the set of even integers, and \( 0\nZ = \{0\} \).
 
-*(c)* For \( \{1, -1\} \): \( (-1)(-1) = 1 \) (@fd3:prp-ring-algebra (c)), so each of \( 1, -1 \) is its own inverse, and the products \( 1 \cdot 1 = 1 \), \( 1 \cdot (-1) = -1 \), \( (-1)(-1) = 1 \) lie in the set; so it is a subgroup by the definition. For \( \nQ_{>0} \): it contains \( 1 \), which is positive (@fd3:prp-ordered-ring-rules (e)). Let \( a, b > 0 \). Then \( b^{-1} > 0 \): it is non-zero, and \( b^{-1} < 0 \) would give \( 0 = 0 \cdot b^{-1} > b b^{-1} = 1 \) by @fd3:prp-ordered-ring-rules (d), as \( 0 < b \). So \( ab^{-1} > 0 \) by (O4), \( \nQ \) being an ordered field (@fd3:thm-rationals-ordered-field).
+*(c)* For \( \{1, -1\} \): \( (-1)(-1) = 1 \) (@fd3:prp-ring-algebra (c)), so each of \( 1, -1 \) is its own inverse, and the products \( 1 \cdot 1 = 1 \), \( 1 \cdot (-1) = -1 \), \( (-1)(-1) = 1 \) lie in the set; so it is a subgroup by the definition. For \( \nQ_{>0} \): it contains \( 1 \), which is positive (@fd3:prp-ordered-ring-rules (e)). Let \( a, b > 0 \). Then \( b^{-1} > 0 \) by @fd3:prp-reciprocal-order (a). So \( ab^{-1} > 0 \) by (O4), \( \nQ \) being an ordered field (@fd3:thm-rationals-ordered-field).
 
 *(d)* For classes, \( [a] - [b] = [a - b] \) (@fd3:thm-quotient-ring-by-ideal (b)). For \( a, b \in \{0, 2, 4\} \), the difference \( a - b \) is one of \( 0, \pm 2, \pm 4 \), and \( [-2] = [4] \), \( [-4] = [2] \) in \( \nZ/6\nZ \) (since \( 6 \mid -2 - 4 \) and \( 6 \mid -4 - 2 \)). So every difference lies in \( \{[0], [2], [4]\} \). For \( \{[1], [3]\} \): \( [3]^{-1} = [3] \), since \( [3][3] = [9] = [1] \), so the four quotients \( [1][1]^{-1} = [1] \), \( [1][3]^{-1} = [3] \), \( [3][1]^{-1} = [3] \), \( [3][3]^{-1} = [1] \) lie in the set.
 
 *(e)* The identity map fixes \( x_0 \), so the set is non-empty. Let \( \sigma \) and \( \tau \) fix \( x_0 \). Applying \( \tau^{-1} \) to \( \tau(x_0) = x_0 \) gives \( x_0 = \tau^{-1}(x_0) \), so \( (\sigma \circ \tau^{-1})(x_0) = \sigma(x_0) = x_0 \). Section 3.4 uses this subgroup for \( X = \{1, \dots, n + 1\} \) and \( x_0 = n + 1 \).
 
-*(f)* \( \nC \) is a field (@thm-complex-numbers-field), so \( (\nC \setminus \{0\}, \cdot) \) is a group by @exm-groups (b). Recall that \( i^2 = -1 \) (@def-complex-numbers).
+*(f)* \( \nC \) is a field (@thm-complex-numbers-field), so \( (\nC \setminus \{0\}, \cdot) \) is a group by @exm-groups (b). Recall that \( i^2 = -1 \) (@prp-reals-embed-complex, with the identification of \( \nR \) inside \( \nC \) made after it).
 
 For \( \{1, i, -1, -i\} \): products of two of \( \pm 1 \) are \( \pm 1 \), products of \( \pm 1 \) with \( \pm i \) are \( \pm i \), and products of two of \( \pm i \) are \( \pm i^2 = \mp 1 \) (signs by @fd3:prp-ring-algebra (c)). So the set is closed under products, and it contains \( 1 \). Each of \( 1 \), \( -1 \) is its own inverse, and \( i(-i) = -i^2 = 1 \), so \( i^{-1} = -i \) and \( (-i)^{-1} = i \). It is a subgroup by the definition.
 
@@ -84,14 +84,14 @@ Subgroups can be combined. If two subgroups are given, the elements they share f
 ::: {#prp-subgroup-intersection}
 [Intersections of Subgroups]
 
-Let \( G \) be a group and \( (H_i)_{i \in I} \) a non-empty family of subgroups of \( G \). Then \( \bigcap_{i \in I} H_i \) (@fd2:def-family-union-intersection (b)) is a subgroup of \( G \).
+Let \( G \) be a group and \( (H_i)_{i \in I} \) a family of subgroups of \( G \). Then \( \bigcap_{i \in I} H_i \), taken inside \( G \) (@fd2:def-family-union-intersection (b)), is a subgroup of \( G \).
 :::
 
 ::: {.proof}
-Write \( H \coloneqq \bigcap_{i \in I} H_i \). Since \( e \in H_i \) for every \( i \in I \), \( e \in H \), so \( H \ne \emptyset \). Let \( a, b \in H \). For each \( i \in I \), \( a, b \in H_i \), so \( ab^{-1} \in H_i \) by @thm-subgroup-test applied to the subgroup \( H_i \). Hence \( ab^{-1} \in H \), and \( H \) is a subgroup by @thm-subgroup-test. This proves the proposition.
+Write \( H \coloneqq \bigcap_{i \in I} H_i \). Since \( e \in G \) and \( e \in H_i \) for every \( i \in I \), \( e \in H \), so \( H \ne \emptyset \). Let \( a, b \in H \). Then \( ab^{-1} \in G \), and for each \( i \in I \), \( a, b \in H_i \), so \( ab^{-1} \in H_i \) by @thm-subgroup-test applied to the subgroup \( H_i \). Hence \( ab^{-1} \in H \), and \( H \) is a subgroup by @thm-subgroup-test. This proves the proposition.
 :::
 
-The proof does not use \( I \ne \emptyset \). For the empty family, @fd2:def-family-union-intersection (b), taken inside \( G \), gives \( \bigcap_{i \in \emptyset} H_i = G \), which is a subgroup too; the hypothesis only keeps that vacuous case out of sight.
+For the empty family the intersection is \( G \) itself, which is a subgroup.
 
 ::: {.warning}
 A union of two subgroups need not be a subgroup. \( 2\nZ \cup 3\nZ \) contains \( 3 \) and \( 2 \), but not \( 3 - 2 = 1 \): \( 1 \notin 2\nZ \) and \( 1 \notin 3\nZ \), since neither \( 2 \) nor \( 3 \) divides \( 1 \) (@fd3:prp-divisibility-rules-integers (g)). Intersections are safe; unions are not.
@@ -133,7 +133,7 @@ by @prp-group-power-laws (b) and (a); so \( \langle g \rangle \) is a subgroup b
 Now let \( H \) be a subgroup of \( G \) with \( g \in H \). By @fd1:ax-induction, \( g^n \in H \) for every \( n \in \nN \): \( g^0 = e \in H \), and if \( g^n \in H \), then \( g^{n+1} = g^n g \in H \), since \( H \) is closed under products. For \( n \in \nN \), also \( g^{-n} = (g^n)^{-1} \in H \) (@prp-group-power-laws (b)), since \( H \) is closed under inverses. Every integer is \( n \) or \( -n \) for some \( n \in \nN \) (@fd3:prp-naturals-embed-integers (c)), so \( \langle g \rangle \subseteq H \). This proves the proposition.
 :::
 
-So \( \langle g \rangle \) is the smallest subgroup containing \( g \). A group that equals \( \langle g \rangle \) for one of its elements \( g \) is called **cyclic**; *Groups*, Chapter "Cyclic Groups" studies these groups and the least \( m \ge 1 \) with \( g^m = e \).
+So \( \langle g \rangle \) is the smallest subgroup containing \( g \). A group that equals \( \langle g \rangle \) for one of its elements \( g \) is called cyclic; *Groups*, the chapter "Cyclic Groups", studies these groups and the least \( m \ge 1 \) with \( g^m = e \).
 
 **Examples.** If \( g^m = e \) for some \( m \ge 1 \), the subgroup \( \langle g \rangle \) is finite and easy to list. Indeed, divide any \( n \in \nZ \) by \( m \): \( n = qm + r \) with \( 0 \le r < m \) (@fd3:thm-integers-division-remainder (a)). Then
 \[
@@ -141,9 +141,9 @@ g^n = g^{mq} g^r = (g^m)^q g^r = e^q g^r = g^r ,
 \]
 by @prp-group-power-laws (a) and (c), and \( e^q = (g^0)^q = g^0 = e \) by (c) again. So \( \langle g \rangle = \{ g^0, g^1, \dots, g^{m-1} \} \).
 
-- In \( (\nZ/6\nZ, +) \), \( k \cdot [2] = [2k] \) for \( k \in \nN \), by @prp-group-power-laws (c) and @fd3:thm-integers-mod-n-ring (d): \( k \cdot (2 \cdot [1]) = (2k) \cdot [1] = [2k] \). So the multiples are \( [0], [2], [4] \), and \( 3 \cdot [2] = [6] = [0] \). By the paragraph above (with \( m = 3 \)), \( \langle [2] \rangle = \{[0], [2], [4]\} \), the subgroup of @exm-subgroups (d).
+- In \( (\nZ/6\nZ, +) \), \( k \cdot [2] = [2k] \) for \( k \in \nN \), by @prp-group-power-laws (c) and (e) and @fd3:thm-integers-mod-n-ring (d), where (e) identifies the group multiples with the ring multiples to which (d) applies: \( k \cdot (2 \cdot [1]) = (2k) \cdot [1] = [2k] \). So the multiples are \( [0], [2], [4] \), and \( 3 \cdot [2] = [6] = [0] \). By the paragraph above (with \( m = 3 \)), \( \langle [2] \rangle = \{[0], [2], [4]\} \), the subgroup of @exm-subgroups (d).
 - In \( (\nZ/7\nZ)^{\times} \), the powers of \( [2] \) are \( [1], [2], [4] \), and \( [2]^3 = [8] = [1] \). So \( \langle [2] \rangle = \{[1], [2], [4]\} \).
-- In \( (\nZ/7\nZ)^{\times} \), the powers \( [3]^1, \dots, [3]^6 \) are \( [3], [2], [6], [4], [5], [1] \), each obtained from the one before by multiplying by \( [3] \) (for instance \( [6][3] = [18] = [4] \)). Every non-zero class of \( \nZ/7\nZ \) is a unit, since \( \nZ/7\nZ \) is a field (@fd3:thm-integers-mod-prime-field), so \( (\nZ/7\nZ)^{\times} \) has the six elements \( [1], \dots, [6] \) (@fd3:thm-integers-mod-n-ring (b)), and all of them are powers of \( [3] \): \( \langle [3] \rangle = (\nZ/7\nZ)^{\times} \). This group is cyclic.
+- In \( (\nZ/7\nZ)^{\times} \), the powers \( [3]^1, \dots, [3]^6 \) are \( [3], [2], [6], [4], [5], [1] \), each obtained from the one before by multiplying by \( [3] \) (for instance \( [6][3] = [18] = [4] \)). Since \( \nZ/7\nZ \) is a field (@fd3:thm-integers-mod-prime-field), \( (\nZ/7\nZ)^{\times} = (\nZ/7\nZ) \setminus \{[0]\} \), as in any field (the paragraph after @fd3:def-ring-unit), so it has the six elements \( [1], \dots, [6] \) (@fd3:thm-integers-mod-n-ring (b)), and all of them are powers of \( [3] \): \( \langle [3] \rangle = (\nZ/7\nZ)^{\times} \).
 
 ## The subgroups of the integers
 
@@ -210,7 +210,7 @@ These parts are about the proof of @thm-subgroups-of-integers.
 ::: {.enumerate options="label=(\alph*)"}
 1. In the step \( (\subseteq) \): the remainder \( r \) lies in \( H \) and \( 0 \le r < n \), and minimality forbids \( r > 0 \), so \( r = 0 \).
 2. \( H \) is a subgroup (@exm-subgroups (b)). Its least positive element is \( n = 2 \): \( 2 = 6 - 4 \in H \), and \( 1 \notin H \), since every element \( 4x + 6y = 2(2x + 3y) \) is even and \( 1 \) is odd (@fd3:cor-integers-even-odd (a)). Dividing \( 6 \) by \( 2 \) gives \( 6 = 3 \cdot 2 + 0 \), with remainder \( 0 \), as the proof predicts. So \( H = 2\nZ \).
-3. \( \nN \) lacks inverses: \( 1 \in \nN \), but \( -1 \notin \nN \). The step \( (\supseteq) \) breaks: there \( n = 1 \), and \( n\nZ \subseteq H \) went through \( n\nZ = \langle n \rangle \) and @prp-subgroup-generated-by-element, which needs a subgroup; indeed \( -1 = (-1) \cdot 1 \notin \nN \). The other inclusion still holds for \( \nN \): each \( a \in \nN \) is \( a = a \cdot 1 + 0 \), so \( \nN \subseteq 1\nZ = \nZ \).
+3. \( \nN \) lacks inverses: \( 1 \in \nN \), but \( -1 \notin \nN \). The step \( (\supseteq) \) breaks: there \( n = 1 \), and \( n\nZ \subseteq H \) went through \( n\nZ = \langle n \rangle \) and @prp-subgroup-generated-by-element, which needs a subgroup; indeed \( -1 = (-1) \cdot 1 \notin \nN \). The first paragraph's step \( -a \in H \) also fails for \( \nN \) (take \( a = 1 \)), but harmlessly: a non-zero \( a \in \nN \) is already positive, so \( n = 1 \) still exists. The step whose failure breaks the conclusion is \( (\supseteq) \). The other inclusion still holds for \( \nN \): each \( a \in \nN \) is \( a = a \cdot 1 + 0 \), so \( \nN \subseteq 1\nZ = \nZ \).
 4. The least positive element \( n \) of \( H \) is the only candidate. Division by \( n \) leaves a remainder in \( H \) smaller than \( n \), so the remainder is \( 0 \) and every element is a multiple of \( n \).
 :::
 :::
@@ -274,7 +274,7 @@ We use the additive form of @thm-subgroup-test, with \( [a] - [b] = [a - b] \) (
 4. A subgroup: \( [6] - [6] = [0] \), \( [0] - [6] = [-6] = [6] \), and the other differences are \( [0] \) and \( [6] \).
 :::
 
-Now let \( H \) be a subgroup with \( [5] \in H \). By @prp-subgroup-generated-by-element, \( \langle [5] \rangle \subseteq H \), so \( 5 \cdot [5] \in H \). By @prp-group-power-laws (c) and @fd3:thm-integers-mod-n-ring (d), \( 5 \cdot [5] = 5 \cdot (5 \cdot [1]) = 25 \cdot [1] = [25] = [1] \), since \( 25 = 2 \cdot 12 + 1 \). So \( [1] \in H \), and then \( k \cdot [1] = [k] \in H \) for every \( k \in \nN \) (@prp-subgroup-generated-by-element and @fd3:thm-integers-mod-n-ring (d) again). Taking \( k = 0, 1, \dots, 11 \) gives every class of \( \nZ/12\nZ \) (@fd3:thm-integers-mod-n-ring (b)). Hence \( H = \nZ/12\nZ \).
+Now let \( H \) be a subgroup with \( [5] \in H \). By @prp-subgroup-generated-by-element, \( \langle [5] \rangle \subseteq H \), so \( 5 \cdot [5] \in H \). By @prp-group-power-laws (c) and (e) and @fd3:thm-integers-mod-n-ring (d), \( 5 \cdot [5] = 5 \cdot (5 \cdot [1]) = 25 \cdot [1] = [25] = [1] \), since \( 25 = 2 \cdot 12 + 1 \). So \( [1] \in H \), and then \( k \cdot [1] = [k] \in H \) for every \( k \in \nN \) (@prp-subgroup-generated-by-element, @prp-group-power-laws (e) and @fd3:thm-integers-mod-n-ring (d) again). Taking \( k = 0, 1, \dots, 11 \) gives every class of \( \nZ/12\nZ \) (@fd3:thm-integers-mod-n-ring (b)). Hence \( H = \nZ/12\nZ \).
 :::
 
 ::: {#exr-subgroups-b3}
@@ -313,6 +313,15 @@ e = h^{-i} h^i = h^{-i} h^j = h^{j-i}
 (@prp-group-power-laws (b), (a)). Since \( 1 \le j - i \le k \), \( h^{j-i} \) is one of the listed powers, so \( e \in H \). Next, if \( j - i \ge 2 \), then \( h\, h^{j-i-1} = h^{j-i-1} h = h^{j-i} = e \) (@prp-group-power-laws (a)), so \( h^{-1} = h^{j-i-1} \) by @thm-group-basic-properties (2), and \( h^{j-i-1} \in H \) since \( 1 \le j - i - 1 \le k \). If \( j - i = 1 \), then \( h = h^1 = e \), and \( h^{-1} = e \in H \). As \( h \in H \) was arbitrary, \( H \) is closed under inverses; it contains \( e \) and is closed under products, so it is a subgroup by @def-subgroup.
 
 The set \( \nN \) is not finite, so the result does not apply to it. Read backwards, the result even proves this: if \( \nN \) were finite, it would be a subgroup of \( \nZ \), and it is not, since \( -1 \notin \nN \).
+
+**Marking scheme.** (10 points)
+- 1: names the move (multiply by the inverse, or cancel \( h^i \)).
+- 2: gets \( h^i = h^j \) with \( 1 \le i < j \le k + 1 \) from the pigeonhole principle, cited.
+- 2: derives \( h^{j-i} = e \) with the power laws named, and concludes \( e \in H \) from \( 1 \le j - i \le k \).
+- 3: shows \( h^{-1} \in H \): \( h^{-1} = h^{j-i-1} \) when \( j - i \ge 2 \), and \( h = e \) when \( j - i = 1 \).
+- 1: concludes that \( H \) is a subgroup, by @def-subgroup or @thm-subgroup-test.
+- 1: explains that \( \nN \) is infinite, so the result does not apply.
+Fatal errors (0 for the step): \( h^0 = e \) taken as one of the listed powers (the list starts at \( h^1 \)); \( h^{-1} \in H \) asserted without exhibiting it as a positive power; the case \( j - i = 1 \) mishandled so that \( h^0 \) is claimed to lie in the list.
 :::
 
 ::: {#exr-subgroups-c2}
@@ -343,7 +352,7 @@ The statement and proof of @thm-subgroups-of-integers are a complete answer. In 
 - 2: division of \( a \in H \) by \( n \), with the remainder shown to lie in \( H \).
 - 1: minimality of \( n \) forces \( r = 0 \).
 - 1: uniqueness of \( n \in \nN \).
-Fatal errors (0 for the step): assuming that \( H \) is an ideal, or citing @fd3:thm-integer-ideals-principal for \( H \) (closure under multiplication by integers is not given; that it comes free is a consequence of the theorem); "the least element of \( H \)" without positivity. A proof by induction showing \( kn \in H \) for \( k \in \nN \), followed by inverses for \( k < 0 \), earns the 2 points for \( n\nZ \subseteq H \).
+Fatal errors (0 for the step): assuming that \( H \) is an ideal, or citing @fd3:thm-integer-ideals-principal for \( H \) (closure under multiplication by integers is not given; that it comes free is a consequence of the theorem); "the least element of \( H \)" without positivity. A proof by induction showing \( kn \in H \) for \( k \in \nN \), followed by inverses for \( k < 0 \), earns the 2 points for \( n\nZ \subseteq H \). A descent proof (for \( a \in H \) with \( a \ge 0 \), strong induction on \( a \): if \( a \ge n \), then \( a - n \in H \) and \( 0 \le a - n < a \); negative \( a \) handled through \( -a \in H \)) earns the 2 points for division when it shows \( a - n \in H \) and treats negative \( a \), and the 1 point for minimality when it rules out \( 0 < a < n \).
 :::
 
 ::: {#exr-subgroups-c3}
@@ -376,6 +385,15 @@ For (b): \( m\nZ \cap n\nZ \) is a subgroup of \( \nZ \) by @prp-subgroup-inters
 :::
 
 This is @fd3:exr-unique-factorization-b2, there proved by dividing \( c \) by \( L \) directly; here the division is done once and for all inside @thm-subgroups-of-integers.
+
+**Marking scheme.** (10 points)
+- 2: (a) \( (\Rightarrow) \) uses \( m \in m\nZ \) to get \( m = kn \).
+- 1: (a) \( (\Leftarrow) \) shows \( jm = (jk)n \in n\nZ \).
+- 2: (b) the intersection is a subgroup of \( (\nZ, +) \), by @prp-subgroup-intersection.
+- 2: (b) it is not \( \{0\} \) (\( mn \) is a positive element), so @thm-subgroups-of-integers gives \( L\nZ \) with \( L \) its least positive element.
+- 2: (b) identifies the intersection with the set of common multiples, so \( L \) is the least positive common multiple.
+- 1: (b) deduces \( L \mid c \) for every common multiple \( c \).
+Fatal errors (0 for the step): (b) applies @thm-subgroups-of-integers without checking that the intersection is a subgroup; (b) assumes \( L = mn \) or \( L = mn/\gcd(m, n) \) without proof.
 :::
 
 <!-- dependency ledger
@@ -383,16 +401,21 @@ def-subgroup (claim): (opening) F3.5 answered the question for ideals | fd3:thm-
 def-subgroup (claim): H is a group with the restricted operation; its identity and inverses are those of G | inline (G1)-(G3) restricted; thm-group-basic-properties (1), (2) (cited)
 exm-subgroups (solution): (a) G is non-empty and closed under a b^{-1} | def-group (cited implicitly through "binary operation"), used silently
 exm-subgroups (solution): (d) 6 | -2 - 4, 6 | -4 - 2; [3][3] = [9] = [1] in Z/8Z | numerals; verify/ch03/exm-subgroups.py; class test of F3.5 §05 (thm-quotient-ring-by-ideal (a), (d)), used silently
-exm-subgroups (solution): (f) i^2 = -1; signs of products of +-1, +-i | def-complex-numbers (F4.1, cited; example only); fd3:prp-ring-algebra (c) in the field C; verify/ch03/exm-subgroups.py
+exm-subgroups (solution): (f) i^2 = -1; signs of products of +-1, +-i | def-complex-numbers, prp-reals-embed-complex (F4.1, cited; example only); fd3:prp-ring-algebra (c) in the field C; verify/ch03/exm-subgroups.py
 exm-subgroups (solution): (f) z^n in C (Chapter 1's ring power) is the group power of def-group-integer-power on C \ {0} | same recursion z^0 = 1, z^{k+1} = z^k z; uniqueness in fd2:thm-recursion, used silently; 0^n = 0 for n >= 1 by the recursion and fd3:prp-ring-algebra (b)
 exm-subgroups (claim): (f) mu_n subset of T; Section 1.6 Exercise R2 is an isomorphism | F4.1 blueprint ch01.md (F4.1 §06 B3, R2; prose, no claim rests on them)
 exm-subgroups (claim): (e) reused in Section 3.4 | F4.3 §04 lem-permutations-fixing-last-point (prose pointer within the chapter)
 exm-subgroups (claim): (non-examples) 0 - 1 = -1 not in N; 1/2 not in Z | fd3:thm-integers-ordered-ring (b) (N = {x >= 0}) and -1 < 0, used silently; 2m = 1 in Q gives 2m = 1 in Z by the identification of F3.2 §04 (fd3:prp-integers-embed-rationals), used silently; fd3:cor-integers-even-odd (a) (cited)
+exm-subgroups (solution): (c) b > 0 gives b^{-1} > 0 | fd3:prp-reciprocal-order (a) (cited), Q an ordered field by fd3:thm-rationals-ordered-field
+exm-subgroups (claim): (non-examples) Z_{>0} non-empty and closed under multiplication | (O4) of fd3:thm-integers-ordered-ring, used silently; 1 > 0 by fd3:prp-ordered-ring-rules (e)
 exm-subgroups (claim): (non-examples) finite non-empty subsets closed under products are subgroups | exr-subgroups-c1 (pointer to an exercise; nothing rests on it)
 prp-subgroup-intersection (claim): the intersection over the empty family, taken inside G, is G | fd2:def-family-union-intersection (b) (cited), vacuous quantifier
+prp-subgroup-intersection (proof): e in G, ab^{-1} in G for membership in the intersection taken inside G | def-group (binary operation, (G2)), used silently
 def-subgroup-generated-by-element (claim): <n> = nZ in Z | prp-group-power-laws (e) (cited) with fd3:def-integer-linear-combinations
-prp-subgroup-generated-by-element (claim): (remark) cyclic groups in Groups, Chapter "Cyclic Groups" | AL1.2 (prose pointer); nothing depends on it
+prp-subgroup-generated-by-element (claim): (remark) cyclic groups in Groups, the chapter "Cyclic Groups" | AL1.2 (prose pointer); nothing depends on it
 prp-subgroup-generated-by-element (claim): (examples) powers of [2] in Z/6Z and of [2], [3] in (Z/7Z)^x; 18 = 2*7 + 4 | numerals; verify/ch03/prp-subgroup-generated-by-element.py
+prp-subgroup-generated-by-element (claim): (examples) k . [2] = [2k] and 5 . [5] = [1]: group multiples equal ring multiples | prp-group-power-laws (e) (cited) with fd3:thm-integers-mod-n-ring (d) (cited); also in exr-subgroups-b2
+prp-subgroup-generated-by-element (claim): (examples) (Z/7Z)^x = (Z/7Z) \ {[0]} | fd3:thm-integers-mod-prime-field (cited); fd3:def-ring-unit and the paragraph after it (cited; 0 is never a unit when 1 != 0, fd3:prp-ring-algebra (b))
 prp-subgroup-generated-by-element (claim): (examples) n = qm + r gives mq + r and g^{mq} = (g^m)^q | prp-group-power-laws (a), (c) (cited); ring arithmetic in Z
 thm-subgroups-of-integers (proof): -a in H; r = a - qn in H; 1 . n = n; n Z = m Z gives n | m | subgroup axioms in additive notation; fd2:def-divides read on the constructed Z (as in fd3 Ch 3), used silently
 thm-subgroups-of-integers (claim): (try it first, idea) 15 - 6 = 9, 9 - 6 = 3; the smallest subgroup containing 6 and 15 is 3Z | numerals; verify/ch03/thm-subgroups-of-integers.py
@@ -400,6 +423,7 @@ thm-subgroups-of-integers (claim): (answer to prompt) m - n < m for n > 0 | fd3:
 thm-subgroups-of-integers (claim): (remark) statement of fd3:exr-quotient-rings-c2; additive half of fd3:thm-integer-ideals-principal (b); every subgroup of Z is an ideal | meta-claim checked against F3.5 §04 C2 (same statement) and the theorem's (b); k(jn) = (kj)n by (F5)
 thm-subgroups-of-integers (claim): (check) 30 = 5*6 = 2*15, 15 = 2*6 + 3; only 15 is a positive multiple of 15 below 30 | numerals; discreteness fd3:thm-integers-ordered-ring (c), used silently; verify/ch03/thm-subgroups-of-integers.py
 exr-subgroups-a1 (solution): 4x + 6y = 2(2x + 3y); 6 = 3*2 + 0 | ring arithmetic; verify/ch03/exr-subgroups-a1.py
+exr-subgroups-a1 (solution): (c) a non-zero a in N is positive | fd3:thm-integers-ordered-ring (b) (N = {x >= 0}), used silently
 exr-subgroups-b1 (solution): the dependency chain of the seven lines | the solution's own analysis
 exr-subgroups-b2 (solution): differences mod 12; 25 = 2*12 + 1 | numerals; verify/ch03/exr-subgroups-b2.py
 exr-subgroups-b3 (solution): comparison with the proof of fd3:thm-integers-bezout | meta-claim checked against F3.5 §02 (proof of (b) divides a and b by d; (e) from (b))

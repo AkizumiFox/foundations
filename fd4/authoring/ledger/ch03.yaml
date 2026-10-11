@@ -37,7 +37,7 @@ items:
   kind: exm
   file: 01-groups.md
   line: 38
-  hash: 02e4d81accd9
+  hash: 4176a2de459a
   verdicts:
   - stage: S5a
     verdict: correct
@@ -70,8 +70,8 @@ items:
 - key: exm-group-nonexamples
   kind: exm
   file: 01-groups.md
-  line: 80
-  hash: fdda9c85309c
+  line: 76
+  hash: 5afdfe910018
   verdicts:
   - stage: S5a
     verdict: correct
@@ -93,7 +93,7 @@ items:
 - key: thm-group-basic-properties
   kind: thm
   file: 01-groups.md
-  line: 104
+  line: 100
   hash: 94d019ae6157
   verdicts:
   - stage: S5a
@@ -122,8 +122,8 @@ items:
 - key: proof:thm-group-basic-properties
   kind: proof
   file: 01-groups.md
-  line: 122
-  hash: f3a8ab3082a9
+  line: 118
+  hash: d16f8a2bbf47
   verdicts:
   - stage: S5a
     verdict: minor
@@ -146,7 +146,7 @@ items:
 - key: def-group-list-product
   kind: def
   file: 01-groups.md
-  line: 154
+  line: 150
   hash: eac12da66155
   verdicts:
   - stage: S5a
@@ -170,7 +170,7 @@ items:
 - key: prp-group-list-product-laws
   kind: prp
   file: 01-groups.md
-  line: 168
+  line: 164
   hash: 993fc9413c81
   verdicts:
   - stage: S5a
@@ -190,7 +190,7 @@ items:
 - key: proof:prp-group-list-product-laws
   kind: proof
   file: 01-groups.md
-  line: 186
+  line: 182
   hash: d97420aab05b
   verdicts:
   - stage: S5a
@@ -214,7 +214,7 @@ items:
 - key: proof:prp-group-list-product-laws#2
   kind: proof
   file: 01-groups.md
-  line: 200
+  line: 196
   hash: d3fa6e7fc252
   verdicts:
   - stage: S5a
@@ -239,7 +239,7 @@ items:
 - key: def-group-integer-power
   kind: def
   file: 01-groups.md
-  line: 220
+  line: 216
   hash: 1846e35db783
   verdicts:
   - stage: S5a
@@ -261,7 +261,7 @@ items:
 - key: prp-group-power-laws
   kind: prp
   file: 01-groups.md
-  line: 234
+  line: 230
   hash: 831347ce8a6b
   verdicts:
   - stage: S5a
@@ -283,8 +283,8 @@ items:
 - key: proof:prp-group-power-laws
   kind: proof
   file: 01-groups.md
-  line: 253
-  hash: 293dc2bc28cf
+  line: 249
+  hash: 8793ae03c148
   verdicts:
   - stage: S5a
     verdict: minor
@@ -305,7 +305,7 @@ items:
 - key: prp-units-form-group
   kind: prp
   file: 01-groups.md
-  line: 307
+  line: 303
   hash: 8f6eee56b8e2
   verdicts:
   - stage: S5a
@@ -328,7 +328,7 @@ items:
 - key: proof:prp-units-form-group
   kind: proof
   file: 01-groups.md
-  line: 313
+  line: 309
   hash: 7590e5cf8706
   verdicts:
   - stage: S5a
@@ -350,7 +350,7 @@ items:
 - key: check:01-groups:1
   kind: check
   file: 01-groups.md
-  line: 323
+  line: 319
   hash: 27af5f1e2bf2
   verdicts:
   - stage: S5a
@@ -372,7 +372,7 @@ items:
 - key: exr-groups-a1
   kind: exr
   file: 01-groups.md
-  line: 335
+  line: 331
   hash: 00603abf2038
   verdicts:
   - stage: S5a
@@ -404,8 +404,8 @@ items:
 - key: exr-groups-b1
   kind: exr
   file: 01-groups.md
-  line: 357
-  hash: e2f0986691e9
+  line: 353
+  hash: 0e16f95a4737
   verdicts:
   - stage: S5a
     verdict: correct
@@ -437,7 +437,7 @@ items:
 - key: exr-groups-b2
   kind: exr
   file: 01-groups.md
-  line: 381
+  line: 377
   hash: 79d6ea95ec7c
   verdicts:
   - stage: S5a
@@ -467,7 +467,7 @@ items:
 - key: exr-groups-b3
   kind: exr
   file: 01-groups.md
-  line: 397
+  line: 393
   hash: d629e2d36b22
   verdicts:
   - stage: S5a
@@ -499,7 +499,7 @@ items:
 - key: exr-groups-c1
   kind: exr
   file: 01-groups.md
-  line: 419
+  line: 415
   hash: af487f8b7544
   verdicts:
   - stage: S5a
@@ -528,7 +528,7 @@ items:
 - key: exr-groups-c2
   kind: exr
   file: 01-groups.md
-  line: 449
+  line: 445
   hash: 2a52149184f6
   verdicts:
   - stage: S5a
@@ -560,8 +560,8 @@ items:
 - key: exr-groups-c3
   kind: exr
   file: 01-groups.md
-  line: 469
-  hash: fe5f842276a0
+  line: 465
+  hash: c9aecf05cbed
   verdicts:
   - stage: S5a
     verdict: correct
@@ -658,7 +658,7 @@ items:
   kind: exm
   file: 02-subgroups.md
   line: 35
-  hash: 4705cad9ca33
+  hash: 6e4a32cec8e3
   verdicts:
   - stage: S5a
     verdict: correct
@@ -690,7 +690,7 @@ items:
   kind: prp
   file: 02-subgroups.md
   line: 84
-  hash: 12196dae49c9
+  hash: a0a1f0a37c29
   verdicts:
   - stage: S5a
     verdict: minor
@@ -711,7 +711,7 @@ items:
   kind: proof
   file: 02-subgroups.md
   line: 90
-  hash: 6e8d42476310
+  hash: 84bfe80b101e
   verdicts:
   - stage: S5a
     verdict: correct
@@ -874,7 +874,7 @@ items:
   kind: exr
   file: 02-subgroups.md
   line: 196
-  hash: 1ac046a65d47
+  hash: 4ccc6daac45d
   verdicts:
   - stage: S5a
     verdict: minor
@@ -938,7 +938,7 @@ items:
   kind: exr
   file: 02-subgroups.md
   line: 252
-  hash: e326ae44d1b1
+  hash: f9f8fcb9555d
   verdicts:
   - stage: S5a
     verdict: minor
@@ -999,7 +999,7 @@ items:
   kind: exr
   file: 02-subgroups.md
   line: 294
-  hash: ffb7aeee0275
+  hash: 345c46a6230d
   verdicts:
   - stage: S5a
     verdict: correct
@@ -1029,7 +1029,7 @@ items:
 - key: exr-subgroups-c2
   kind: exr
   file: 02-subgroups.md
-  line: 318
+  line: 327
   hash: fb4749385e8f
   verdicts:
   - stage: S5a
@@ -1057,7 +1057,7 @@ items:
 - key: exr-subgroups-c3
   kind: exr
   file: 02-subgroups.md
-  line: 349
+  line: 358
   hash: 26e3c3b88ebf
   verdicts:
   - stage: S5a
@@ -1113,7 +1113,7 @@ items:
   kind: exm
   file: 03-homomorphisms.md
   line: 56
-  hash: fb1f00e6796c
+  hash: c727f5b79411
   verdicts:
   - stage: S5a
     verdict: minor
@@ -1234,7 +1234,7 @@ items:
   kind: proof
   file: 03-homomorphisms.md
   line: 184
-  hash: 0e82463e229a
+  hash: 938b8384b6dc
   verdicts:
   - stage: S5a
     verdict: correct
@@ -1320,7 +1320,7 @@ items:
   kind: exm
   file: 03-homomorphisms.md
   line: 235
-  hash: 868e51495eb0
+  hash: 4185b519524d
   verdicts:
   - stage: S5a
     verdict: correct
@@ -1343,8 +1343,8 @@ items:
 - key: exr-homomorphisms-a1
   kind: exr
   file: 03-homomorphisms.md
-  line: 297
-  hash: 598e34b1480f
+  line: 301
+  hash: 829868a4cfe9
   verdicts:
   - stage: S5a
     verdict: correct
@@ -1374,8 +1374,8 @@ items:
 - key: exr-homomorphisms-b1
   kind: exr
   file: 03-homomorphisms.md
-  line: 320
-  hash: fc55ba86fdb6
+  line: 324
+  hash: c26fa5f8ce52
   verdicts:
   - stage: S5a
     verdict: correct
@@ -1405,7 +1405,7 @@ items:
 - key: exr-homomorphisms-b2
   kind: exr
   file: 03-homomorphisms.md
-  line: 345
+  line: 349
   hash: 6a578b8accef
   verdicts:
   - stage: S5a
@@ -1435,7 +1435,7 @@ items:
 - key: exr-homomorphisms-b3
   kind: exr
   file: 03-homomorphisms.md
-  line: 364
+  line: 368
   hash: 9e91c6f3e483
   verdicts:
   - stage: S5a
@@ -1467,8 +1467,8 @@ items:
 - key: exr-homomorphisms-c1
   kind: exr
   file: 03-homomorphisms.md
-  line: 380
-  hash: cb9e0ee94ee5
+  line: 384
+  hash: 9deb70944775
   verdicts:
   - stage: S5a
     verdict: correct
@@ -1499,8 +1499,8 @@ items:
 - key: exr-homomorphisms-c2
   kind: exr
   file: 03-homomorphisms.md
-  line: 399
-  hash: 522c7d24451f
+  line: 411
+  hash: 8d223ddb243c
   verdicts:
   - stage: S5a
     verdict: correct
@@ -1718,7 +1718,7 @@ items:
   kind: proof
   file: 04-permutations-and-cycles.md
   line: 163
-  hash: 7fe6fd41dd62
+  hash: 7c071870616a
   verdicts:
   - stage: S5a
     verdict: minor
@@ -1859,7 +1859,7 @@ items:
   kind: exr
   file: 04-permutations-and-cycles.md
   line: 284
-  hash: 9e653d67897b
+  hash: 581e27815b30
   verdicts:
   - stage: S5a
     verdict: correct
@@ -1922,7 +1922,7 @@ items:
   kind: exr
   file: 04-permutations-and-cycles.md
   line: 334
-  hash: 7e03862f5f78
+  hash: 237aee9ae0c5
   verdicts:
   - stage: S5a
     verdict: minor
@@ -1963,7 +1963,7 @@ items:
   kind: exr
   file: 04-permutations-and-cycles.md
   line: 358
-  hash: 3961fcee39f4
+  hash: e17b2bf5b71f
   verdicts:
   - stage: S5a
     verdict: minor
@@ -2028,7 +2028,7 @@ items:
   kind: exr
   file: 04-permutations-and-cycles.md
   line: 404
-  hash: 0c9578d312db
+  hash: 3283d4370dfb
   verdicts:
   - stage: S5a
     verdict: minor
@@ -2152,7 +2152,7 @@ items:
   kind: proof
   file: 05-transpositions.md
   line: 79
-  hash: 632b09a43468
+  hash: 7f5664f2c5f7
   verdicts:
   - stage: S5a
     verdict: minor
@@ -2238,7 +2238,7 @@ items:
   kind: exr
   file: 05-transpositions.md
   line: 195
-  hash: ba3dcb0231bc
+  hash: 4750d025a020
   verdicts:
   - stage: S5a
     verdict: correct
@@ -2331,7 +2331,7 @@ items:
   kind: exr
   file: 05-transpositions.md
   line: 273
-  hash: 0c72faf1b98e
+  hash: 715d5216deb9
   verdicts:
   - stage: S5a
     verdict: correct
@@ -2362,8 +2362,8 @@ items:
 - key: exr-transpositions-c2
   kind: exr
   file: 05-transpositions.md
-  line: 308
-  hash: c172102263f3
+  line: 316
+  hash: 5fc499d0b40e
   verdicts:
   - stage: S5a
     verdict: correct
@@ -2397,8 +2397,8 @@ items:
 - key: exr-transpositions-c3
   kind: exr
   file: 05-transpositions.md
-  line: 341
-  hash: 3c7ee1870220
+  line: 349
+  hash: 85f59b1a5519
   verdicts:
   - stage: S5a
     verdict: correct
@@ -2429,8 +2429,8 @@ items:
 - key: exr-transpositions-r1
   kind: exr
   file: 05-transpositions.md
-  line: 362
-  hash: 252d826039fb
+  line: 380
+  hash: 98874ef62dba
   verdicts:
   - stage: S5a
     verdict: minor
@@ -2460,7 +2460,7 @@ items:
 - key: exr-transpositions-r2
   kind: exr
   file: 05-transpositions.md
-  line: 382
+  line: 400
   hash: 0076df7d4594
   verdicts:
   - stage: S5a
@@ -2492,7 +2492,7 @@ items:
 - key: exr-transpositions-r3
   kind: exr
   file: 05-transpositions.md
-  line: 406
+  line: 424
   hash: 91f06a6ce94a
   verdicts:
   - stage: S5a
@@ -2524,8 +2524,8 @@ items:
 - key: exr-transpositions-r4
   kind: exr
   file: 05-transpositions.md
-  line: 424
-  hash: e53991961e87
+  line: 442
+  hash: c3bed41eee77
   verdicts:
   - stage: S5a
     verdict: gap

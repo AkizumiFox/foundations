@@ -73,7 +73,7 @@ Then show that \( x \mapsto x + 1 \) is **not** a homomorphism \( (\nZ, +) \to (
 ::: {.solution}
 (a) \( (\nZ/n\nZ, +) \) is a group by @exm-groups (a). By @fd3:thm-quotient-ring-by-ideal (c), applied to the ideal \( n\nZ \) of \( \nZ \) (@fd3:def-integers-mod-n-ring), \( [a + b] = [a] + [b] \): a homomorphism. By @fd3:thm-quotient-ring-by-ideal (d), \( [a] = [0] \) exactly when \( a \in n\nZ \), so the kernel is \( n\nZ \). Every element of \( \nZ/n\nZ \) is a class \( [a] \), so the map is surjective.
 
-(b) By @prp-group-power-laws (a), \( g^{k + l} = g^k g^l \) for all \( k, l \in \nZ \), which is the homomorphism property with \( + \) in the source and the product of \( G \) in the target. The kernel is \( \{ k \in \nZ : g^k = e \} \). The image is \( \{ g^k : k \in \nZ \} = \langle g \rangle \), by @def-subgroup-generated-by-element. For instance, for the group \( G = (\nZ/7\nZ)^{\times} \) (@prp-units-form-group) and \( g = [3] \), the image is all of \( (\nZ/7\nZ)^{\times} \): the powers \( [3]^0, \dots, [3]^5 \) are \( [1], [3], [2], [6], [4], [5] \), and \( [3]^6 = [1] \), so \( 6 \) lies in the kernel.
+(b) By @prp-group-power-laws (a), \( g^{k + l} = g^k g^l \) for all \( k, l \in \nZ \), which is the homomorphism property with \( + \) in the source and the product of \( G \) in the target. The kernel is \( \{ k \in \nZ : g^k = e_G \} \). The image is \( \{ g^k : k \in \nZ \} = \langle g \rangle \), by @def-subgroup-generated-by-element. For instance, for the group \( G = (\nZ/7\nZ)^{\times} \) (@prp-units-form-group) and \( g = [3] \), the image is all of \( (\nZ/7\nZ)^{\times} \): the powers \( [3]^0, \dots, [3]^5 \) are \( [1], [3], [2], [6], [4], [5] \), and \( [3]^6 = [1] \), so \( 6 \) lies in the kernel.
 
 (c) For \( x, y \in G \), inserting \( e = g^{-1}g \) between \( x \) and \( y \) and dropping brackets (@prp-group-list-product-laws (b)),
 \[
@@ -87,14 +87,14 @@ and in the same way \( c_g(c_{g^{-1}}(x)) = gg^{-1}xgg^{-1} = x \). So \( c_{g^{
 
 (d) Since \( G \) is abelian, \( xy = yx \), and @prp-group-power-laws (d) gives \( (xy)^2 = x^2y^2 \). The kernel is \( \{ x \in G : x^2 = e \} \). In \( (\nZ/7\nZ)^{\times} \) the squares of \( [1], \dots, [6] \) are \( [1], [4], [2], [2], [4], [1] \), so the kernel is \( \{[1], [6]\} \). In \( (\nZ/8\nZ)^{\times} = \{[1], [3], [5], [7]\} \) the squares are \( [1], [9], [25], [49] \), all equal to \( [1] \), so the kernel is the whole group.
 
-(e) The target is the product of the groups \( (\nZ/m\nZ, +) \) and \( (\nZ/n\nZ, +) \), written additively. By @fd3:thm-chinese-remainder-two (b), the rule is a well-defined bijection, and it satisfies \( \Phi([x]_{mn} + [y]_{mn}) = \Phi([x]_{mn}) + \Phi([y]_{mn}) \) with the componentwise sum, which is the product operation above. So it is an isomorphism of additive groups, and its kernel is \( \{[0]_{mn}\} \). For example, \( \nZ/12\nZ \cong \nZ/3\nZ \times \nZ/4\nZ \), since \( 1 = 4 - 3 \) shows \( \gcd(3, 4) = 1 \) (@fd3:cor-coprime-iff-combination).
+(e) The target is the product of the groups \( (\nZ/m\nZ, +) \) and \( (\nZ/n\nZ, +) \), written additively. The rule is the map \( \Phi \) of @fd3:thm-chinese-remainder-two (b), a well-defined bijection, and it satisfies \( \Phi([x]_{mn} + [y]_{mn}) = \Phi([x]_{mn}) + \Phi([y]_{mn}) \) with the componentwise sum, which is the product operation above. So it is an isomorphism of additive groups, and its kernel is \( \{[0]_{mn}\} \). For example, \( \nZ/12\nZ \cong \nZ/3\nZ \times \nZ/4\nZ \), since \( 1 = 4 - 3 \) shows \( \gcd(3, 4) = 1 \) (@fd3:cor-coprime-iff-combination).
 
-(f) \( \nC \) is a field (@thm-complex-numbers-field), so \( (\nC \setminus \{0\}, \cdot) \) is a group by @exm-groups (b). \( (\nR_{>0}, \cdot) \) is a group by the rules of the ordered field \( \nR \) (@fd3:thm-reals-ordered-field): a product of positive reals is positive, \( 1 > 0 \) (@fd3:prp-ordered-ring-rules (e)), and for \( x > 0 \) the inverse \( x^{-1} \) is positive, since \( x^{-1} < 0 \) would give \( 1 = x^{-1}x < 0 \cdot x = 0 \) (@fd3:prp-ordered-ring-rules (c)). For \( z \ne 0 \), \( \abs{z} \ge 0 \) by its definition as a non-negative square root (@def-conjugate-modulus) and \( \abs{z} \ne 0 \) by @thm-conjugate-properties (e), so \( \abs{z} \in \nR_{>0} \). The homomorphism property is \( \abs{zw} = \abs{z}\abs{w} \), @thm-conjugate-properties (d). The kernel is \( \{ z \in \nC : \abs{z} = 1 \} = \nT \), the unit circle of @prp-unit-circle.
+(f) \( \nC \) is a field (@thm-complex-numbers-field), so \( (\nC \setminus \{0\}, \cdot) \) is a group by @exm-groups (b). \( (\nR_{>0}, \cdot) \) is a group by the rules of the ordered field \( \nR \) (@fd3:thm-reals-ordered-field): a product of positive reals is positive by (O4), associativity and the identity law are (F5)–(F7), and \( 1 > 0 \) (@fd3:prp-ordered-ring-rules (e)). For \( x > 0 \) we have \( x \ne 0 \) by (O1), so \( x^{-1} \) exists by (F8), and it is positive by @fd3:prp-reciprocal-order (a). For \( z \ne 0 \), \( \abs{z} \ge 0 \) by its definition as a non-negative square root (@def-conjugate-modulus) and \( \abs{z} \ne 0 \) by @thm-conjugate-properties (e), so \( \abs{z} \in \nR_{>0} \). The homomorphism property is \( \abs{zw} = \abs{z}\abs{w} \), @thm-conjugate-properties (d). The kernel is \( \{ z \in \nC : \abs{z} = 1 \} = \nT \), the unit circle of @prp-unit-circle.
 
 *The non-example.* Let \( \varphi(x) \coloneqq x + 1 \). Then \( \varphi(0 + 0) = 1 \), while \( \varphi(0) + \varphi(0) = 2 \). So \( \varphi(0 + 0) \ne \varphi(0) + \varphi(0) \), and \( \varphi \) is not a homomorphism. It is a minimal change of the identity map \( x \mapsto x \), which is one: the shift keeps the map bijective and destroys only the equation.
 :::
 
-Part (b) says that every element \( g \) of every group is the image of \( 1 \) under a homomorphism out of \( \nZ \). Part (c) is the first isomorphism of a group with itself other than the identity, and part (f) shows a kernel that is not a set of integers.
+Part (b) says that every element \( g \) of every group is the image of \( 1 \) under a homomorphism out of \( \nZ \). Part (c) gives the first isomorphisms of a group with itself that can differ from the identity: \( c_g \ne \id_G \) exactly when \( g \) fails to commute with some element of \( G \), as for the two swaps of the fold after @exm-groups (c), there called \( f, g \): writing \( h \) for the second, \( c_f(h) = f \circ h \circ f^{-1} \ne h \) because \( f \circ h \ne h \circ f \). Part (f) shows a kernel that is not a set of integers.
 
 ## Basic properties of homomorphisms
 
@@ -153,7 +153,7 @@ Now let \( n < 0 \), and write \( n = -m \) with \( m \in \nN \). By @def-group-
 So \( \varphi(G) \) is a subgroup by @thm-subgroup-test. This proves the theorem.
 :::
 
-So a homomorphism carries the whole structure of Section 3.1, identity, inverses and powers, and not just the products it was defined by. In additive notation, (a), (b) and (d) read \( \varphi(0) = 0 \), \( \varphi(-a) = -\varphi(a) \) and \( \varphi(n \cdot a) = n \cdot \varphi(a) \). Part (c) gives a supply of subgroups: the unit circle \( \nT \) is a subgroup of \( \nC \setminus \{0\} \) because it is the kernel of the modulus (@exm-group-homomorphisms (f)), and \( n\nZ \) is a subgroup of \( \nZ \) because it is the kernel of \( a \mapsto [a] \).
+So a homomorphism carries the whole structure of Section 3.1, identity, inverses and powers, and not just the products it was defined by. In additive notation, (a), (b) and (d) read \( \varphi(0) = 0 \), \( \varphi(-a) = -\varphi(a) \) and \( \varphi(n \cdot a) = n \cdot \varphi(a) \). Conversely to @exm-group-homomorphisms (b), every homomorphism \( \varphi \colon (\nZ, +) \to G \) is \( k \mapsto \varphi(1)^k \): \( k = k \cdot 1 \) (@prp-group-power-laws (e)), so \( \varphi(k) = \varphi(1)^k \) by (d). Part (c) gives a supply of subgroups: the unit circle \( \nT \) is a subgroup of \( \nC \setminus \{0\} \) because it is the kernel of the modulus (@exm-group-homomorphisms (f)), and \( n\nZ \) is a subgroup of \( \nZ \) because it is the kernel of \( a \mapsto [a] \).
 
 ::: {.check}
 Is \( a \mapsto 3a \) a homomorphism \( (\nZ, +) \to (\nZ, +) \)? What is its kernel? Is it an isomorphism?
@@ -193,7 +193,7 @@ Part (a) is the homomorphism property applied twice. For (b), we cannot compute 
 \]
 Since \( \varphi \) is injective, \( \varphi^{-1}(x)\varphi^{-1}(y) = \varphi^{-1}(xy) \). So \( \varphi^{-1} \) is a homomorphism, and being bijective, an isomorphism.
 
-(c) \( \id_G \) is an isomorphism (the paragraph after @def-group-homomorphism), so \( G \cong G \). If \( \varphi \colon G \to H \) is an isomorphism, so is \( \varphi^{-1} \colon H \to G \) by (b). If \( \varphi \colon G \to H \) and \( \psi \colon H \to K \) are isomorphisms, then \( \psi \circ \varphi \) is a homomorphism by (a) and bijective by @fd2:thm-composition-injective-surjective (c). This proves the proposition.
+(c) \( \id_G \) is an isomorphism (the second of the two homomorphisms listed after @def-group-homomorphism), so \( G \cong G \). If \( \varphi \colon G \to H \) is an isomorphism, so is \( \varphi^{-1} \colon H \to G \) by (b). If \( \varphi \colon G \to H \) and \( \psi \colon H \to K \) are isomorphisms, then \( \psi \circ \varphi \) is a homomorphism by (a) and bijective by @fd2:thm-composition-injective-surjective (c). This proves the proposition.
 :::
 
 The kernel was introduced to measure what a homomorphism forgets. At the end where it forgets nothing, the measurement is exact:
@@ -230,7 +230,7 @@ It is a homomorphism by @exm-group-homomorphisms (b). Its kernel contains \( 6 \
 
 ## Isomorphic and non-isomorphic groups
 
-An isomorphism is a renaming, so two isomorphic groups share every property that is stated with the operation alone: being abelian, the number of elements, the number of solutions of \( x^2 = e \). This gives a method in both directions. To show \( G \cong H \), write down a bijection and check the homomorphism property. To show \( G \not\cong H \), find such a property that one group has and the other lacks.
+An isomorphism is a renaming, so we expect two isomorphic groups to agree on every property that is stated with the operation alone. For the three properties used here this is a one-line check; let \( \varphi \colon G \to H \) be an isomorphism. A bijection preserves the number of elements. If \( G \) is abelian, then any two elements of \( H \) are \( \varphi(a), \varphi(b) \), and \( \varphi(a)\varphi(b) = \varphi(ab) = \varphi(ba) = \varphi(b)\varphi(a) \). And \( x^2 = e_G \) exactly when \( \varphi(x)^2 = e_H \), by the homomorphism property, @thm-homomorphism-basic-properties (a) and injectivity, so \( \varphi \) maps the solutions of \( x^2 = e \) in \( G \) bijectively onto those in \( H \). This gives a method in both directions. To show \( G \cong H \), write down a bijection and check the homomorphism property. To show \( G \not\cong H \), find such a property that one group has and the other lacks.
 
 ::: {#exm-isomorphic-small-groups}
 [Isomorphic and Non-Isomorphic Small Groups]
@@ -255,9 +255,9 @@ An isomorphism is a renaming, so two isomorphic groups share every property that
 \]
 using \( [1] + [1] = [2] = [0] \) and \( (-1)(-1) = 1 \) (@fd3:prp-ring-algebra (c)).
 
-(b) The target is a group by @prp-units-form-group. Its elements are the four non-zero classes \( [1], [2], [3], [4] \): each is a unit, since \( [1][1] = [1] \), \( [2][3] = [6] = [1] \) and \( [4][4] = [16] = [1] \), while \( [0] \) is not, since \( [0][v] = [0] \ne [1] \).
+(b) The target is a group by @prp-units-form-group. Its elements are the four non-zero classes \( [1], [2], [3], [4] \) (@fd3:thm-integers-mod-n-ring (b), (c)): each is a unit, since \( [1][1] = [1] \), \( [2][3] = [6] = [1] \) and \( [4][4] = [16] = [1] \), while \( [0] \) is not, since \( [0][v] = [0] \ne [1] \).
 
-*Well defined.* The rule must not depend on the representative \( k \). The powers \( [2]^0, [2]^1, [2]^2, [2]^3, [2]^4 \) are \( [1], [2], [4], [8] = [3], [16] = [1] \). If \( [k] = [k'] \) in \( \nZ/4\nZ \), then \( k' = k + 4q \) for some \( q \in \nZ \), and by @prp-group-power-laws (a) and (c),
+*Well defined.* The rule must not depend on the representative \( k \). The powers \( [2]^0, [2]^1, [2]^2, [2]^3, [2]^4 \) are \( [1], [2], [4], [8] = [3], [16] = [1] \). If \( [k] = [k'] \) in \( \nZ/4\nZ \), then \( k' - k \in 4\nZ \) (@fd3:thm-quotient-ring-by-ideal (a)), so \( k' = k + 4q \) for some \( q \in \nZ \), and by @prp-group-power-laws (a) and (c),
 \[
 [2]^{k'} = [2]^k \bigl([2]^4\bigr)^q = [2]^k [1]^q = [2]^k ,
 \]
@@ -265,9 +265,9 @@ where \( [1]^q = \bigl([2]^0\bigr)^q = [2]^{0 \cdot q} = [1] \), again by (c).
 
 *Homomorphism.* \( [k] + [l] = [k + l] \mapsto [2]^{k + l} = [2]^k [2]^l \), by @prp-group-power-laws (a).
 
-*Bijective.* The four elements \( [0], [1], [2], [3] \) of \( \nZ/4\nZ \) go to \( [1], [2], [4], [3] \): four different elements, which are all of \( (\nZ/5\nZ)^{\times} \). So the map is injective and surjective.
+*Bijective.* The four distinct classes \( [0], [1], [2], [3] \), which are all of \( \nZ/4\nZ \) (@fd3:thm-integers-mod-n-ring (b)), go to \( [1], [2], [4], [3] \): four different elements, which are all of \( (\nZ/5\nZ)^{\times} \). So the map is injective and surjective.
 
-(c) Both groups have four elements. In \( (\nZ/8\nZ)^{\times} = \{[1], [3], [5], [7]\} \) (the even classes are not units: \( [0] \), and \( [2][4] = [4][2] = [6][4] = [0] \) with \( [4], [2] \ne [0] \), and a unit is not a zero divisor, the paragraph after @fd3:def-ring-unit), every element \( y \) has \( y^2 = [1] \): the squares are \( [1] \), \( [9] = [1] \), \( [25] = [1] \), \( [49] = [1] \). Suppose \( \varphi \colon \nZ/4\nZ \to (\nZ/8\nZ)^{\times} \) were an isomorphism. Then, by the homomorphism property and @thm-homomorphism-basic-properties (a),
+(c) Both groups have four elements (@fd3:thm-integers-mod-n-ring (b)). In \( (\nZ/8\nZ)^{\times} = \{[1], [3], [5], [7]\} \) (the even classes are not units: \( [0] \), and \( [2][4] = [4][2] = [6][4] = [0] \) with \( [4], [2] \ne [0] \), and a unit is not a zero divisor, the paragraph after @fd3:def-ring-unit), every element \( y \) has \( y^2 = [1] \): the squares are \( [1] \), \( [9] = [1] \), \( [25] = [1] \), \( [49] = [1] \). Suppose \( \varphi \colon \nZ/4\nZ \to (\nZ/8\nZ)^{\times} \) were an isomorphism. Then, by the homomorphism property and @thm-homomorphism-basic-properties (a),
 \[
 \varphi([2]) = \varphi([1] + [1]) = \varphi([1])^2 = [1] = \varphi([0]) .
 \]
@@ -276,18 +276,22 @@ Since \( [2] \ne [0] \) in \( \nZ/4\nZ \), this contradicts injectivity. So no i
 (d) \( 2\nZ \) is a subgroup of \( \nZ \) (@exm-subgroups (b)), so a group. The map \( x \mapsto 2x \) is a homomorphism by distributivity, \( 2(x + y) = 2x + 2y \) (@fd3:thm-integers-commutative-ring). It is surjective onto \( 2\nZ \) by the definition of \( 2\nZ \), and injective because its kernel is \( \{0\} \): \( 2x = 0 \) forces \( x = 0 \) (@fd3:prp-ordered-ring-rules (f)), and @prp-homomorphism-injective-iff-kernel-trivial applies. So \( \nZ \cong 2\nZ \): a group can be isomorphic to a subgroup of itself other than itself.
 :::
 
-The square of Section 3.1, turned by quarter turns, gives a third group with four elements; once its rotations are written as permutations, Exercise B3 of Section 3.4 matches them with \( \nZ/4\nZ \).
+The square of Section 3.1, turned by quarter turns, gives another group with four elements; once its rotations are written as permutations, Exercise B3 of Section 3.4 matches them with \( \nZ/4\nZ \).
 
 ::: {.warning}
-Two groups with the same number of elements need not be isomorphic. \( \nZ/4\nZ \) and \( (\nZ/8\nZ)^{\times} \) both have four elements, yet part (c) shows that no isomorphism exists between them. Counting elements decides nothing by itself. To prove \( G \not\cong H \), find a property that an isomorphism would carry over and that one group has and the other lacks; in (c) it was "some element \( x \) has \( x^2 \ne e \)", which holds in \( \nZ/4\nZ \) (in additive form, \( [1] + [1] \ne [0] \)) and fails in \( (\nZ/8\nZ)^{\times} \).
+Two groups with the same number of elements need not be isomorphic. \( \nZ/4\nZ \) and \( (\nZ/8\nZ)^{\times} \) both have four elements, yet part (c) shows that no isomorphism exists between them. Equal counts decide nothing by themselves: different counts prove \( G \not\cong H \), but equal counts never prove \( G \cong H \). To prove \( G \not\cong H \), find a property that an isomorphism would carry over and that one group has and the other lacks; in (c) it was "some element \( x \) has \( x^2 \ne e \)", which holds in \( \nZ/4\nZ \) (in additive form, \( [1] + [1] \ne [0] \)) and fails in \( (\nZ/8\nZ)^{\times} \).
 :::
 
 ::: {.remark}
 [Where homomorphisms go next]
 
 In linear algebra, a linear map is in particular a homomorphism of the additive groups, and its kernel is the kernel of this section (*Spaces and Maps*, the chapter "Linear Maps"). The determinant will be a homomorphism from the invertible matrices to \( F^{\times} \) (*Determinants and the Structure of Operators*, the chapter "Determinants"). Quotient groups and the isomorphism theorems are in *Groups*, the chapter "Normal Subgroups, Quotient Groups, and the Isomorphism Theorems".
+:::
 
-In the terms of Chapter 2 (no proof in this chapter rests on this paragraph): a field homomorphism \( \varphi \colon F \to L \) (@def-field-homomorphism) is a homomorphism of the additive groups \( (F, +) \to (L, +) \); it sends \( F^{\times} \) into \( L^{\times} \), and is a homomorphism of these multiplicative groups (@prp-field-homomorphism-properties (a)–(c)). The automorphisms of \( F \) form a group under composition (@prp-field-homomorphism-properties (e)), a subgroup of the group of bijections of \( F \) (@exm-groups (c)). And the multiplicative group \( \nF_p^{\times} \) of the field with \( p \) elements is the group \( (\nZ/p\nZ)^{\times} \) of @prp-units-form-group.
+::: {.remark}
+[Field homomorphisms as group homomorphisms]
+
+In the terms of Chapter 2 (no proof in this chapter rests on this remark): a field homomorphism \( \varphi \colon F \to L \) (@def-field-homomorphism) is a homomorphism of the additive groups \( (F, +) \to (L, +) \); it sends \( F^{\times} \) into \( L^{\times} \), and is a homomorphism of these multiplicative groups (@prp-field-homomorphism-properties (a)–(c)). The automorphisms of \( F \) form a group under composition (@prp-field-homomorphism-properties (e)), a subgroup of the group of bijections of \( F \) (@exm-groups (c)). And the multiplicative group \( \nF_p^{\times} \) of the field with \( p \) elements is the group \( (\nZ/p\nZ)^{\times} \) of @prp-units-form-group.
 :::
 
 ## Exercises
@@ -301,7 +305,7 @@ In the terms of Chapter 2 (no proof in this chapter rests on this paragraph): a 
 1. In the proof of \( (\Leftarrow) \) of @prp-homomorphism-injective-iff-kernel-trivial, where is it used that \( \varphi \) is a homomorphism?
 2. The map \( \nZ \to \nZ/6\nZ \times \nZ/4\nZ \), \( a \mapsto ([a], [a]) \), is a homomorphism of additive groups. Find its kernel.
 3. True or false: a homomorphism \( \varphi \colon G \to H \) sends every subgroup \( K \) of \( G \) onto a subgroup \( \varphi(K) \) of \( H \). Justify your answer.
-4. The map \( x \mapsto x + 1 \) on \( (\nZ, +) \) sends \( 0 \) to \( 1 \). Could it become a homomorphism if \( 1 \) were declared the identity of the target? Explain.
+4. The map \( x \mapsto x + 1 \) on \( (\nZ, +) \) sends \( 0 \) to \( 1 \). Could it become a homomorphism \( (\nZ,+) \to (\nZ,+) \) if \( 1 \) were declared the identity of the target, keeping its operation \( + \)? Explain.
 :::
 :::
 
@@ -312,7 +316,7 @@ In the terms of Chapter 2 (no proof in this chapter rests on this paragraph): a 
 
 (c) True. A subgroup \( K \) is a group with the operation of \( G \) (the paragraph after @def-subgroup), and the restriction of \( \varphi \) to \( K \) is a homomorphism \( K \to H \), since the homomorphism property for \( a, b \in K \) is a special case of that for \( a, b \in G \). Its image is \( \varphi(K) \), a subgroup of \( H \) by @thm-homomorphism-basic-properties (e).
 
-(d) No. The identity of a group is not chosen; it is the element with (G2), and it is unique (@thm-group-basic-properties (1)). In \( (\nZ, +) \) it is \( 0 \), since \( 1 + 1 \ne 1 \). Every homomorphism into \( (\nZ, +) \) must send \( 0 \) to \( 0 \) (@thm-homomorphism-basic-properties (a)), and \( x \mapsto x + 1 \) does not.
+(d) No. The identity of a group is not chosen; it is the element with (G2), and it is unique (@thm-group-basic-properties (1)). In \( (\nZ, +) \) it is \( 0 \), since \( 1 + 1 \ne 1 \). Every homomorphism into \( (\nZ, +) \) must send \( 0 \) to \( 0 \) (@thm-homomorphism-basic-properties (a)), and \( x \mapsto x + 1 \) does not. Changing the operation does change the identity: with \( a \ast b \coloneqq a + b - 1 \), whose identity is \( 1 \), the map is an isomorphism \( (\nZ,+) \to (\nZ,\ast) \); compare @exr-groups-a1 (b). But that is a different group.
 :::
 
 ### B. Practice
@@ -322,7 +326,7 @@ In the terms of Chapter 2 (no proof in this chapter rests on this paragraph): a 
 
 Find all homomorphisms \( (\nZ, +) \to (\nZ/6\nZ, +) \), and the kernel of each.
 
-*Hint: a homomorphism out of \( \nZ \) is determined by one value.*
+*Hint: @thm-homomorphism-basic-properties (d), applied to \( k = k \cdot 1 \).*
 :::
 
 ::: {.solution}
@@ -332,7 +336,7 @@ Let \( \varphi \) be a homomorphism and write \( \varphi(1) = [c] \) with \( c \
 \]
 So \( \varphi \) is determined by \( c \). Conversely, for each \( c \), the map \( k \mapsto k \cdot [c] \) is a homomorphism by @exm-group-homomorphisms (b) with \( g = [c] \). So there are exactly six homomorphisms, one for each class \( [c] \).
 
-*Kernels.* The quotient map \( a \mapsto [a] \) is a homomorphism (@exm-group-homomorphisms (a)), so @thm-homomorphism-basic-properties (d) and @prp-group-power-laws (e) give \( k \cdot [c] = [k \cdot c] = [kc] \). Hence the kernel is \( \{ k \in \nZ : 6 \mid kc \} \), a subgroup of \( \nZ \), so it is \( d\nZ \) with \( d \) the least positive \( k \) with \( 6 \mid kc \) (@thm-subgroups-of-integers). Running through \( k = 1, 2, \dots \):
+*Kernels.* The quotient map \( a \mapsto [a] \) is a homomorphism (@exm-group-homomorphisms (a)), so @thm-homomorphism-basic-properties (d) and @prp-group-power-laws (e) give \( k \cdot [c] = [k \cdot c] = [kc] \). Hence, since \( [kc] = [0] \) exactly when \( kc \in 6\nZ \) (@fd3:thm-quotient-ring-by-ideal (d)), the kernel is \( \{ k \in \nZ : 6 \mid kc \} \), a subgroup of \( \nZ \), so it is \( d\nZ \) with \( d \) the least positive \( k \) with \( 6 \mid kc \) (@thm-subgroups-of-integers). Running through \( k = 1, 2, \dots \):
 
 | \( c \) | \( 0 \) | \( 1 \) | \( 2 \) | \( 3 \) | \( 4 \) | \( 5 \) |
 |---|---|---|---|---|---|---|
@@ -393,7 +397,15 @@ uv = \varphi(a)\varphi(b) = \varphi(ab) = \varphi(ba) = \varphi(b)\varphi(a) = v
 \]
 using that \( G \) is abelian in the middle step.
 
-(b) \( \nZ/6\nZ \) is abelian (@exm-groups (a)). If \( \varphi \) were a homomorphism from it onto the group of bijections of \( \{1, 2, 3\} \), then that group would be \( \varphi(\nZ/6\nZ) \), abelian by (a). It is not: the bijections \( f \) swapping \( 1, 2 \) and \( g \) swapping \( 2, 3 \) satisfy \( (f \circ g)(1) = 2 \) and \( (g \circ f)(1) = g(2) = 3 \), as computed in @exr-groups-a1 (c). So no such homomorphism exists. (The size alone does not decide this: both groups have six elements.)
+(b) \( \nZ/6\nZ \) is abelian (@exm-groups (a)). If \( \varphi \) were a homomorphism from it onto the group of bijections of \( \{1, 2, 3\} \), then that group would be \( \varphi(\nZ/6\nZ) \), abelian by (a). It is not: the bijections \( f \) swapping \( 1, 2 \) and \( g \) swapping \( 2, 3 \) satisfy \( (f \circ g)(1) = f(1) = 2 \) and \( (g \circ f)(1) = g(2) = 3 \), as in the fold after @exm-groups (c). So no such homomorphism exists. (Size alone could not decide this: Section 3.4 shows that both groups have six elements.)
+
+**Marking scheme.** (10 points)
+- 2: (a) writes arbitrary \( u, v \in \varphi(G) \) as \( \varphi(a), \varphi(b) \).
+- 3: (a) the chain \( uv = \varphi(ab) = \varphi(ba) = vu \), with the homomorphism property and commutativity of \( G \) named.
+- 1: (b) notes that \( \nZ/6\nZ \) is abelian.
+- 1: (b) "onto" makes the target equal to \( \varphi(\nZ/6\nZ) \), so (a) applies.
+- 3: (b) exhibits two bijections of \( \{1, 2, 3\} \) that do not commute, with a point where the two composites differ.
+Fatal errors (0 for the step): (a) takes \( u, v \) in all of \( H \) rather than in the image; (b) argues from the number of elements alone.
 :::
 
 ::: {#exr-homomorphisms-c2}
@@ -418,6 +430,14 @@ Let \( \varphi \colon G \to H \) be a homomorphism and \( a, b \in G \).
 (b) \( (\subseteq) \) Let \( b \) lie in the fiber, so \( \varphi(b) = \varphi(a) \). By (a), \( k \coloneqq a^{-1}b \in \ker \varphi \), and \( b = a(a^{-1}b) = ak \). \( (\supseteq) \) If \( k \in \ker \varphi \), then \( \varphi(ak) = \varphi(a)e_H = \varphi(a) \).
 
 (c) The kernel is \( 5\nZ \) (@exm-group-homomorphisms (a)), so by (b) the fiber of \( 7 \) is \( \{ 7 + 5j : j \in \nZ \} = \{ \dots, -3, 2, 7, 12, \dots \} \), the class \( [7] = [2] \) itself. The sets \( \{ ak : k \in \ker \varphi \} \) are the **cosets** of the kernel, which *Groups*, the chapter "Cosets and Lagrange's Theorem", studies for every subgroup.
+
+**Marking scheme.** (10 points)
+- 2: (a) (i) \( \Rightarrow \) (ii), using \( \varphi(b^{-1}) = \varphi(b)^{-1} \), cited.
+- 2: (a) (ii) \( \Rightarrow \) (i), multiplying by \( \varphi(b) \) on the right.
+- 2: (a) (i) \( \Leftrightarrow \) (iii), both directions, by the mirror argument.
+- 2: (b) both inclusions, with \( k \coloneqq a^{-1}b \) for \( (\subseteq) \).
+- 2: (c) kernel \( 5\nZ \), and the fiber \( \{ 7 + 5j : j \in \nZ \} \).
+Fatal errors (0 for the step): (a) "divides" by \( \varphi(b) \), or uses commutativity of \( H \); (b) proves one inclusion and calls it equality.
 :::
 
 <!-- dependency ledger
@@ -429,7 +449,9 @@ exm-group-homomorphisms (example): (b) powers of [3] in (Z/7Z)^x: [1],[3],[2],[6
 exm-group-homomorphisms (example): (c) c_g(x)c_g(y) = c_g(xy); inverse c_{g^-1} | prp-group-list-product-laws (b), thm-group-basic-properties (3), fd2:def-inverse-function, fd2:thm-bijection-iff-inverse, fd2:prp-function-equality, cited
 exm-group-homomorphisms (example): (d) squares in (Z/7Z)^x and (Z/8Z)^x | inline arithmetic; verify/ch03/exm-group-homomorphisms.py
 exm-group-homomorphisms (example): (e) gcd(3, 4) = 1 from 1 = 4 - 3 | fd3:cor-coprime-iff-combination, cited; fd3:thm-chinese-remainder-two (b), cited
-exm-group-homomorphisms (example): (f) (R_{>0}, .) a group: positives closed under ., 1 > 0, x^{-1} > 0 | fd3:thm-reals-ordered-field (ordered field axioms), fd3:prp-ordered-ring-rules (c), (e) (1 > 0); F3.10 used in an example only
+exm-group-homomorphisms (example): (f) (R_{>0}, .) a group: positives closed under . (O4), (F5)-(F7), 1 > 0, x^{-1} exists (O1), (F8), x^{-1} > 0 | fd3:thm-reals-ordered-field (ordered field axioms), fd3:def-ordered-ring-and-field (O1), (O4), fd3:def-commutative-ring-and-field (F5)-(F8), fd3:prp-ordered-ring-rules (e) (1 > 0), fd3:prp-reciprocal-order (a); F3.10 used in an example only
+exm-group-homomorphisms (claim): (paragraph after it) c_g != id_G when g fails to commute, e.g. the swaps f, g | exm-groups (c) and its fold, cited
+thm-homomorphism-basic-properties (claim): (paragraph after it) every homomorphism Z -> G is k -> phi(1)^k, the converse of exm-group-homomorphisms (b) | prp-group-power-laws (e), thm-homomorphism-basic-properties (d), exm-group-homomorphisms (b), cited
 exm-group-homomorphisms (example): (f) C a field, |z| >= 0, |z| != 0 for z != 0, |zw| = |z||w|, kernel the unit circle | F4.1: thm-complex-numbers-field, def-conjugate-modulus, thm-conjugate-properties (d), (e), prp-unit-circle (labels from the frozen blueprint ch01.md); example only, no proof rests on it
 thm-homomorphism-basic-properties (proof): (d) induction on n in N | fd1:ax-induction read on omega (fd3 cor-omega-identification, F3.1 citing rule)
 thm-homomorphism-basic-properties (proof): e_H^{-1} = e_H | thm-group-basic-properties (2), inline
@@ -437,17 +459,19 @@ thm-homomorphism-basic-properties (claim): (check after it) 3(a + b) = 3a + 3b; 
 prp-homomorphism-injective-iff-kernel-trivial (claim): (check after it) [3]^6 = [729] = [1], 729 = 104 * 7 + 1 | inline arithmetic; verify/ch03/prp-homomorphism-injective-iff-kernel-trivial.py
 prp-homomorphism-injective-iff-kernel-trivial (claim): (aftermath) linear maps: injective iff kernel {0} | Spaces and Maps (LA1.2), prose pointer, nothing depends on it
 exm-isomorphic-small-groups (example): (a) four sums in Z/2Z, (-1)(-1) = 1 | fd3:thm-integers-mod-n-ring (b), fd3:prp-ring-algebra (c), cited; verify/ch03/exm-isomorphic-small-groups.py
-exm-isomorphic-small-groups (example): (b) (Z/5Z)^x = {[1],[2],[3],[4]}; [2]^k for k = 0..4; well defined via [2]^4 = [1]; images [1],[2],[4],[3] | prp-units-form-group, prp-group-power-laws (a), (c), cited; inline arithmetic; verify/ch03/exm-isomorphic-small-groups.py
-exm-isomorphic-small-groups (example): (c) (Z/8Z)^x = {[1],[3],[5],[7]}, even classes zero divisors, squares all [1] | fd3:def-ring-unit and the paragraph after it (a unit is not a zero divisor), cited; inline arithmetic; verify/ch03/exm-isomorphic-small-groups.py
+exm-isomorphic-small-groups (example): (b) (Z/5Z)^x = {[1],[2],[3],[4]}; [2]^k for k = 0..4; well defined via [2]^4 = [1]; images [1],[2],[4],[3] | prp-units-form-group, prp-group-power-laws (a), (c), fd3:thm-integers-mod-n-ring (b), (c), fd3:thm-quotient-ring-by-ideal (a), cited; inline arithmetic; verify/ch03/exm-isomorphic-small-groups.py
+exm-isomorphic-small-groups (example): (c) (Z/8Z)^x = {[1],[3],[5],[7]}, even classes zero divisors, squares all [1] | fd3:thm-integers-mod-n-ring (b) (four elements each), fd3:def-ring-unit and the paragraph after it (a unit is not a zero divisor), cited; inline arithmetic; verify/ch03/exm-isomorphic-small-groups.py
 exm-isomorphic-small-groups (example): (d) 2(x + y) = 2x + 2y; 2x = 0 => x = 0 | fd3:thm-integers-commutative-ring, fd3:prp-ordered-ring-rules (f), exm-subgroups (b), cited
 exm-isomorphic-small-groups (claim): (paragraph after it) the rotations of the square are matched with Z/4Z in Section 3.4, Exercise B3 | forward pointer within the chapter (F4.3 §04 B3), nothing depends on it
+exm-isomorphic-small-groups (claim): (paragraph before it) isomorphisms carry over the number of elements, being abelian, and the solutions of x^2 = e | bijectivity, homomorphism property, thm-homomorphism-basic-properties (a), injectivity; inline
 exm-isomorphic-small-groups (claim): (warning) isomorphisms carry "some x has x^2 != e" | thm-homomorphism-basic-properties (a) and the homomorphism property, as in (c); inline
 def-group-homomorphism (claim): (remark) linear maps, determinant, quotient groups; field homomorphisms as group homomorphisms, automorphisms a group, F_p^x = (Z/pZ)^x | Spaces and Maps, Determinants and the Structure of Operators, Groups (prose pointers); F4.2 def-field-homomorphism, prp-field-homomorphism-properties (a)-(c), (e) (labels from the frozen blueprint ch02.md), prp-units-form-group; remark only, nothing depends on it
 exr-homomorphisms-a1 (solution): (b) 6Z cap 4Z = 12Z, 4 does not divide 6, 4 | 12 | prp-subgroup-intersection, thm-subgroups-of-integers, fd3:thm-quotient-ring-by-ideal (d), cited; verify/ch03/exr-homomorphisms-a1.py
 exr-homomorphisms-a1 (solution): (c) restriction of a homomorphism to a subgroup is a homomorphism | def-subgroup and the paragraph after it; inline
-exr-homomorphisms-b1 (solution): the six kernels; k . [c] = [kc] | thm-homomorphism-basic-properties (d), prp-group-power-laws (e), thm-subgroups-of-integers, fd3:thm-integers-mod-n-ring (b), cited; verify/ch03/exr-homomorphisms-b1.py
+exr-homomorphisms-b1 (solution): the six kernels; k . [c] = [kc] | thm-homomorphism-basic-properties (d), prp-group-power-laws (e), thm-subgroups-of-integers, fd3:thm-integers-mod-n-ring (b), fd3:thm-quotient-ring-by-ideal (d), exm-group-homomorphisms (a), (b), cited; verify/ch03/exr-homomorphisms-b1.py
 exr-homomorphisms-b2 (solution): ([a],[b]) + ([a],[b]) = ([0],[0]) in Z/2Z x Z/2Z | inline arithmetic; verify/ch03/exr-homomorphisms-b2.py
 exr-homomorphisms-b3 (solution): sign rules for products in Q; total order | fd3:thm-rationals-ordered-field, fd3:prp-ordered-ring-rules (c), (d), (i), cited; the 2-adic alternative stated, not proved, not used
-exr-homomorphisms-c1 (solution): the bijections of {1, 2, 3} do not commute | exr-groups-a1 (c), an exercise cited from an exercise solution (STYLE, section 6); recomputed inline
+exr-homomorphisms-c1 (solution): the bijections of {1, 2, 3} do not commute; both groups have six elements (aside) | exm-groups (c) and its fold, cited, recomputed inline; the six-element aside is a prose pointer to Section 3.4 (F4.3 §04), no @ref, the argument does not use it
+exr-homomorphisms-a1 (solution): (d) a * b := a + b - 1 has identity 1 and x -> x + 1 is an isomorphism (Z,+) -> (Z,*) | inline; exr-groups-a1 (b) for comparison, an exercise cited from an exercise solution (STYLE, section 6); nothing depends on it
 exr-homomorphisms-c2 (solution): fiber of 7 under Z -> Z/5Z | exm-group-homomorphisms (a), inline; cosets: Groups (AL1.4), prose pointer
 -->
