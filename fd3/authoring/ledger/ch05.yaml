@@ -1495,6 +1495,17 @@ items:
       It never shows (|a_n - a''_n|) null and never squeezes, so as written it would lose the step. Fix:
       make the step ''shows (|a_n| - |a''_n|)_n is null'' and add one line mapping the direct epsilon
       route to those 3 points.'
+  - stage: S7r
+    verdict: correct
+    by: rereferee
+    hash: 2c6cfb15ed3c
+    date: '2026-10-12'
+    model: claude-opus-5-5
+    evidence: d-field (c) (ch04/04:145) applies with a = b = 0 and N_0 = 0, so |e_n| is null and hence
+      e_n is null. So (|a_n|) ~ (|a'_n|), and fd2:thm-classes-partition (b) gives equal classes. All cited
+      labels exist and say what is used. The marking scheme (2+3+3+2 = 10) no longer forces the squeeze,
+      and the second-route line correctly gives the direct epsilon-N argument its 3 points. The fatal
+      errors are apt.
 - key: exr-ordering-the-reals-c2
   kind: exr
   file: 03-ordering-the-reals.md

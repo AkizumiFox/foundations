@@ -360,9 +360,10 @@ So the output depends only on the class \( [a] \), and the rule defines a functi
 **Marking scheme.** (10 points)
 - 2: names the move (representatives, then independence) and states the goal \( (\abs{a_n}) \sim (\abs{a'_n}) \).
 - 3: proves \( \bigl| \abs{a_n} - \abs{a'_n} \bigr| \le \abs{a_n - a'_n} \) for every \( n \), citing the reverse triangle inequality in \( \nQ \).
-- 3: from \( a \sim a' \), shows that \( (\abs{a_n - a'_n}) \) is null, and squeezes to get \( (\abs{a_n} - \abs{a'_n})_n \) null.
+- 3: from \( a \sim a' \) and the inequality of the previous step, shows that \( (\abs{a_n} - \abs{a'_n})_n \) is null.
 - 2: concludes \( [(\abs{a_n})_n] = [(\abs{a'_n})_n] \), so each class has one output and the rule is a function \( \nR \to \nR \).
-Fatal errors (0 for the step): using \( \abs{x} \) on \( \nR \), or citing @prp-reals-absolute-value-termwise; proving only that the two output sequences are Cauchy, without proving them equivalent.
+
+A direct \( \varepsilon \)–\( N \) proof of the third step, with no squeeze, earns its 3 points: given \( \varepsilon \in \nQ_{>0} \), take \( N \) for the null sequence \( (a_n - a'_n) \); then \( \bigl| \abs{a_n} - \abs{a'_n} \bigr| \le \abs{a_n - a'_n} < \varepsilon \) for every \( n \ge N \). Fatal errors (0 for the step): using \( \abs{x} \) on \( \nR \), or citing @prp-reals-absolute-value-termwise; proving only that the two output sequences are Cauchy, without proving them equivalent.
 :::
 
 ::: {#exr-ordering-the-reals-c2}
