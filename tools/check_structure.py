@@ -48,6 +48,10 @@ Exits 1 if any fatal problem is found. Importable:
 
     from tools.check_structure import find_violations, report
     fatal, advisory = find_violations(Path("src"))
+
+As a `./build.py check` plugin (config `checks`), `run(book, labels)` reports the fatal
+rules as errors and the advisories as one summary warning. In a series, run it in a
+volume directory or pass `--book fd2`.
 """
 import argparse
 import re
@@ -56,6 +60,7 @@ from pathlib import Path
 
 sys.path.insert(0, str(Path(__file__).resolve().parent))
 import mdblocks  # noqa: E402
+import series  # noqa: E402
 
 WORDS_MIN, WORDS_MAX = 2500, 5000
 IDEA_LINES = 3
@@ -265,8 +270,10 @@ def report(items) -> str:
 
 
 def main(argv=None) -> int:
+    argv = series.enter_book(argv)
     ap = argparse.ArgumentParser(
         description="Check section files against the STYLE.md section contract.")
+    series.add_book_arg(ap)
     ap.add_argument("paths", nargs="*", default=["src"], help="files or directories (default: src)")
     ap.add_argument("--fatal-only", action="store_true", help="do not print advisories")
     ap.add_argument("--idea-lines", type=int, default=IDEA_LINES,
@@ -287,6 +294,17 @@ def main(argv=None) -> int:
     print(f"\n{len(fatal)} fatal, {len(advisory)} advisory.")
     return 1 if fatal else 0
 
+
+def run(book, labels):
+    """The engine's check plugin protocol (build/plugins.py): (errors, warnings)."""
+    fatal, advisory = find_violations(book.src_dir)
+    root = Path(book.root)
+    errors = report([(Path(p).resolve().relative_to(root.resolve()), n, m)
+                     for p, n, m in fatal]).splitlines()
+    warnings = ([f"{len(advisory)} section-structure advisory note(s); run "
+                 f"`python3 tools/check_structure.py --book {root.name}` to list them"]
+                if advisory else [])
+    return errors, warnings
 
 if __name__ == "__main__":
     sys.exit(main())

@@ -56,6 +56,7 @@ from pathlib import Path
 
 sys.path.insert(0, str(Path(__file__).resolve().parent))
 import mdblocks  # noqa: E402
+import series  # noqa: E402
 
 SRC = Path("src")
 RESULT_KINDS = ("thm", "lem", "prp", "cor")
@@ -454,8 +455,10 @@ def chapter_dir(arg: str, src: Path = SRC) -> Path:
 
 
 def main(argv=None) -> int:
+    argv = series.enter_book(argv)   # --book DIR: a volume of the series (chapter numbers are its own)
     ap = argparse.ArgumentParser(description="Plant known errors in a copy of a chapter; "
                                              "score a referee's recall on them.")
+    series.add_book_arg(ap)
     sub = ap.add_subparsers(dest="cmd", required=True)
     p = sub.add_parser("plant", help="copy a chapter and plant errors; write the answer key")
     p.add_argument("chapter", help="chapter number or directory")

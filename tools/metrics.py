@@ -35,6 +35,13 @@ leaves its columns blank and is named in the row's `notes` column:
 * **cost** (agents, tokens, hours) cannot be read from anywhere: give it with
   `--set agents=21 --set tokens=7.2M --set hours=8`.
 
+In a series split into volumes (tools/series.py) the tool works on one volume: run it in
+the volume directory or pass `--book fd2`; chapter numbers are the volume's own, the
+ledger and reviews are the volume's (`fd2/authoring/`), STATUS.md, NOTATION.md and
+metrics.csv the repository's (`authoring/`), and the `chapter` column reads
+`fd2/ch01-sets-and-functions`.
+
+    python3 tools/metrics.py --book fd2 1          # append a row for fd2's Chapter 1 (F2.1)
     python3 tools/metrics.py 10                    # append a row for Chapter 10
     .venv/bin/python tools/metrics.py              # every chapter, with ledger columns
     python3 tools/metrics.py 10 --dry-run          # print the row, write nothing
@@ -57,6 +64,7 @@ from pathlib import Path
 
 sys.path.insert(0, str(Path(__file__).resolve().parent))
 import mdblocks  # noqa: E402
+import series  # noqa: E402
 
 TOOLS = Path(__file__).resolve().parent
 SRC = Path("src")
@@ -93,7 +101,13 @@ COLUMNS = [
 
 
 def _tool(name):
-    spec = importlib.util.spec_from_file_location(name, TOOLS / f"{name}.py")
+    """A book tool (tools/), else an engine tool ($BOOK_ENGINE/tools or the submodule's)."""
+    path = TOOLS / f"{name}.py"
+    if not path.exists():
+        import os
+        engine = Path(os.environ.get("BOOK_ENGINE") or TOOLS.parent / "engine").expanduser()
+        path = engine / "tools" / f"{name}.py"
+    spec = importlib.util.spec_from_file_location(name, path)
     module = importlib.util.module_from_spec(spec)
     spec.loader.exec_module(module)
     return module
@@ -248,13 +262,18 @@ def labels_metrics(crossref: Path, chdir: Path) -> dict:
     return {"forward_citations": len(fwd), "results_citing_exercises": rce}
 
 
-def promise_metrics(src: Path, status: Path, ch: int) -> dict:
+def promise_metrics(src: Path, status: Path, ch: int, root: Path = Path(".")) -> dict:
+    """Promises opened by chapter `ch` of the book at `root`, owed to it (by this volume's
+    prose), and STATUS rows paid to it. Chapters are compared by atlas id in a series."""
     pr = _tool("promises")
-    ps = pr.find_promises(src)
+    ctx = pr.Context()
+    vol = ctx.series.volume_at(Path(root)) if ctx.series else None
+    cid = ctx.chapter_id(vol, ch)
+    ps = pr.find_promises(src, ctx, vol)
     rows = pr.parse_status(status) if Path(status).exists() else []
-    return {"promises_opened": sum(1 for p in ps if p.chapter == ch and p.target != ch),
-            "promises_owed": sum(1 for p in ps if p.target == ch and p.chapter != ch),
-            "promises_paid": sum(1 for r in rows if ch in r.targets and r.paid)}
+    return {"promises_opened": sum(1 for p in ps if p.chapter == cid and p.target != cid),
+            "promises_owed": sum(1 for p in ps if p.target == cid and p.chapter != cid),
+            "promises_paid": sum(1 for r in rows if cid in r.targets and r.paid)}
 
 
 def gate_metrics(chdir: Path, src: Path, root: Path, run_sidecars: bool) -> tuple:
@@ -284,8 +303,9 @@ def gate_metrics(chdir: Path, src: Path, root: Path, run_sidecars: bool) -> tupl
         notes.append(f"check_numbers: {e}")
     try:
         cn = _tool("check_notation")
-        items = cn.find_violations(src, root / "authoring/NOTATION.md", root / "latex/macros.tex",
-                                   cn.parts_from_config(root / "config/config.json"))
+        config = root / "config/config.json"
+        items = cn.find_violations(src, series.shared("authoring/NOTATION.md", root),
+                                   cn.macros_from_config(config), cn.parts_from_config(config))
         row["notation_advisories"] = sum(1 for p, _, _ in items if Path(p).parent.name == chdir.name)
     except Exception as e:  # noqa: BLE001
         notes.append(f"check_notation: {e}")
@@ -347,7 +367,10 @@ def chapter_metrics(chdir: Path, root: Path = Path("."), src: Path = SRC, check_
     ch = chapter_number(chdir)
     row = {c: "" for c in COLUMNS}
     notes = []
-    row.update(date=datetime.date.today().isoformat(), commit=head_commit(root), chapter=chdir.name)
+    s = series.Series.load()
+    vol = s.volume_at(root) if s else None
+    row.update(date=datetime.date.today().isoformat(), commit=head_commit(root),
+               chapter=f"{vol.prefix}/{chdir.name}" if vol else chdir.name)
     row.update(size_metrics(chdir))
 
     counts = Counter()
@@ -380,7 +403,7 @@ def chapter_metrics(chdir: Path, root: Path = Path("."), src: Path = SRC, check_
     except Exception as e:  # noqa: BLE001
         notes.append(f"crossref: {e.__class__.__name__}")
     try:
-        row.update(promise_metrics(src, root / "authoring" / "STATUS.md", ch))
+        row.update(promise_metrics(src, series.shared("authoring/STATUS.md", root), ch, root))
     except Exception as e:  # noqa: BLE001
         notes.append(f"promises: {e}")
     g, n = gate_metrics(chdir, src, root, run_sidecars)
@@ -424,11 +447,14 @@ def append_rows(path: Path, rows: list):
 
 
 def main(argv=None) -> int:
+    argv = series.enter_book(argv)
     ap = argparse.ArgumentParser(description="Compute per-chapter process metrics and append them "
                                              "to authoring/metrics.csv.")
+    series.add_book_arg(ap)
     ap.add_argument("chapters", nargs="*", type=int, help="chapter numbers (default: every chapter in src)")
     ap.add_argument("--src", default=str(SRC), help="source directory (default: src)")
-    ap.add_argument("--csv", default=str(CSV), help="output CSV (default: authoring/metrics.csv)")
+    ap.add_argument("--csv", default=None,
+                    help="output CSV (default: authoring/metrics.csv, the book's or the repository's)")
     ap.add_argument("--dry-run", action="store_true", help="print the rows; write nothing")
     ap.add_argument("--check-log", help="saved output of ./build.py check")
     ap.add_argument("--run-check", action="store_true",
@@ -439,6 +465,7 @@ def main(argv=None) -> int:
     args = ap.parse_args(argv)
     root = Path(".")
     src = Path(args.src)
+    args.csv = args.csv or str(series.shared(str(CSV), root))
     manual = {}
     for kv in args.set:
         k, _, v = kv.partition("=")

@@ -13,6 +13,13 @@ from pathlib import Path
 ROOT = Path(__file__).resolve().parent.parent
 TOOL = ROOT / "tools" / "ledger.py"
 VENV = ROOT / ".venv" / "bin" / "python"
+if not VENV.exists():               # any interpreter with PyYAML will do
+    try:
+        import sys
+        import yaml  # noqa: F401
+        VENV = Path(sys.executable)
+    except ImportError:
+        pass
 spec = importlib.util.spec_from_file_location("ledger", TOOL)
 ledger = importlib.util.module_from_spec(spec)
 spec.loader.exec_module(ledger)
@@ -286,6 +293,32 @@ class CliTests(unittest.TestCase):
             (Path(tmp) / "led" / "ch07.yaml").write_text("chapter: 7\nitems: []\n")
             r = self.run_cli("rehash", "7", cwd=tmp)          # ledger without a chapter dir
             self.assertIn("not found, skipped", r.stdout)
+
+
+class PointerMaskTests(unittest.TestCase):
+    """Renumbering pointers or prefixing a reference with its book does not stale a verdict."""
+
+    def test_pointer_edits_keep_the_hash(self):
+        old = ("::: {#thm-x}\n[X]\nBy @thm-a, as Chapter 6 and Section 6.4 show (§02).\n:::\n")
+        new = ("::: {#thm-x}\n[X]\nBy @fd1:thm-a, as Chapter 1 and *Logic and Proof*, "
+               "Section 4.4 show (§02).\n:::\n")
+        self.assertEqual(ledger.content_hash(old), ledger.content_hash(new))
+        self.assertNotEqual(ledger.content_hash(old), ledger.content_hash(old.replace("By", "Not by")))
+
+    def test_rehash_carries_unmasked_verdicts(self):
+        with tempfile.TemporaryDirectory() as tmp:
+            ch = Path(tmp) / "ch06-x"
+            ch.mkdir()
+            (ch / "01-s.md").write_text("# S\n\n::: {#thm-x}\n[X]\nAs Chapter 4 shows.\n:::\n")
+            items = ledger.extract_items(ch)
+            it = items[0]
+            self.assertNotEqual(it["usage_hash"], it["hash"])
+            led, _, _ = ledger.refresh({}, items)
+            led["items"][0]["verdicts"] = [{"stage": "S5a", "verdict": "correct", "by": "r",
+                                            "hash": it["usage_hash"]}]
+            self.assertEqual(len(ledger.stale_items(led, items)), 1)
+            self.assertEqual(ledger.rehash(led, items), 1)
+            self.assertEqual(ledger.stale_items(led, items), [])
 
 
 if __name__ == "__main__":

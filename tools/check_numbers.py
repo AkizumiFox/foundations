@@ -42,6 +42,10 @@ Exits 1 if any fatal problem is found. Importable:
 
     from tools.check_numbers import find_violations, report
     fatal, advisory = find_violations(Path("verify"), Path("src"))
+
+In a series, run it in a volume directory or pass `--book fd2` (chapter numbers are the
+volume's own; sidecars run from the volume directory). As a `./build.py check` plugin
+(config `checks`, with `"requires": "verify"`), `run(book, labels)` runs every sidecar.
 """
 import argparse
 import ast
@@ -54,6 +58,7 @@ from pathlib import Path
 
 sys.path.insert(0, str(Path(__file__).resolve().parent))
 import mdblocks  # noqa: E402
+import series  # noqa: E402
 
 VERIFY = Path("verify")
 SRC = Path("src")
@@ -83,8 +88,12 @@ def sidecars(verify: Path, chapters=None) -> list:
 
 
 def default_python(root: Path) -> str:
-    venv = Path(root) / ".venv" / "bin" / "python"
-    return str(venv) if venv.exists() else sys.executable
+    """The book's virtualenv, or the repository's (a volume's parent), or this interpreter."""
+    for base in (Path(root), Path(root).resolve().parent):
+        venv = base / ".venv" / "bin" / "python"
+        if venv.exists():
+            return str(venv)
+    return sys.executable
 
 
 def run_sidecar(path: Path, python: str, root: Path, timeout: int = TIMEOUT):
@@ -381,8 +390,10 @@ def report(items) -> str:
 
 
 def main(argv=None) -> int:
+    argv = series.enter_book(argv)
     ap = argparse.ArgumentParser(
         description="Run the verify/chNN sidecars and check their QUOTED values appear in the source.")
+    series.add_book_arg(ap)
     ap.add_argument("chapters", nargs="*", type=int, help="chapter numbers (default: all)")
     ap.add_argument("--verify", default=str(VERIFY), help="sidecar directory (default: verify)")
     ap.add_argument("--src", default=str(SRC), help="source directory (default: src)")
@@ -406,6 +417,18 @@ def main(argv=None) -> int:
           f"{len(advisory)} advisory{'' if args.advisory else ' (--advisory to list)'}.")
     return 1 if fatal else 0
 
+
+def run(book, labels):
+    """The engine's check plugin protocol (build/plugins.py): (errors, warnings)."""
+    root = Path(book.root)
+    fatal, advisory = find_violations(root / "verify", book.src_dir, root=root,
+                                      crossref=book.build_dir / "crossref_labels.json")
+    errors = report([(Path(p).resolve().relative_to(root.resolve()), n, m)
+                     for p, n, m in fatal]).splitlines()
+    warnings = ([f"{len(advisory)} numeric-sidecar advisory note(s); run "
+                 f"`python3 tools/check_numbers.py --book {root.name} --advisory` to list them"]
+                if advisory else [])
+    return errors, warnings
 
 if __name__ == "__main__":
     sys.exit(main())

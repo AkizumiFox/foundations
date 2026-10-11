@@ -18,8 +18,13 @@ one section at a time and hard to see from inside a section, so this tool
   right after "we write" or "denote(d)". The symbol is that math with spaces
   removed; its **meaning** is the definition's label (or `file:line` for prose). A
   symbol introduced with two different meanings in the chapters of one Part is
-  reported. Parts come from `config/config.json` (`chapters[].part`); a chapter
-  with no part forms a Part of its own.
+  reported. Parts come from `config/config.json` (`chapters[].part`, which starts a
+  Part that the following chapters belong to); chapters before the first part, or in a
+  book without parts (a volume of the series), form one Part named by the book's title.
+
+In a series split into volumes (tools/series.py), run it in a volume directory or with
+`--book fd2`: NOTATION.md is the repository's (`authoring/NOTATION.md`) and the macro
+file is the one the volume's config names (`"macros": "../latex/macros.tex"`).
 
 Everything here is **advisory**: the tool prints what it finds and exits 0, unless
 `--strict` is given.
@@ -43,6 +48,7 @@ from pathlib import Path
 
 sys.path.insert(0, str(Path(__file__).resolve().parent))
 import mdblocks  # noqa: E402
+import series  # noqa: E402
 
 SRC = Path("src")
 NOTATION = Path("authoring/NOTATION.md")
@@ -88,8 +94,24 @@ def parts_from_config(config: Path = CONFIG) -> dict:
         data = json.loads(Path(config).read_text(encoding="utf-8"))
     except (OSError, ValueError):
         return {}
-    return {Path(c["dir"]).name: c.get("part", "") for c in data.get("chapters", [])
-            if isinstance(c, dict) and c.get("dir")}
+    part = data.get("title", "")
+    out = {}
+    for c in data.get("chapters", []):
+        d = c.get("dir") if isinstance(c, dict) else c
+        if isinstance(c, dict) and c.get("part"):
+            part = c["part"]            # a chapter with a part starts it; the next ones follow
+        if d:
+            out[Path(d).name] = part
+    return out
+
+
+def macros_from_config(config: Path = CONFIG) -> Path:
+    """The macro file the config names (`macros`, relative to the book), else latex/macros.tex."""
+    try:
+        data = json.loads(Path(config).read_text(encoding="utf-8"))
+    except (OSError, ValueError):
+        return MACROS
+    return Path(config).resolve().parent.parent / data.get("macros", str(MACROS))
 
 
 def norm(sym: str) -> str:
@@ -210,16 +232,22 @@ def report(items) -> str:
 
 
 def main(argv=None) -> int:
+    argv = series.enter_book(argv)
     ap = argparse.ArgumentParser(
         description="Notation advisories: book macros missing from NOTATION.md, and symbols "
                     "introduced with two meanings within one Part.")
+    series.add_book_arg(ap)
     ap.add_argument("--src", default=str(SRC), help="source directory (default: src)")
-    ap.add_argument("--notation", default=str(NOTATION), help="NOTATION.md path")
-    ap.add_argument("--macros", default=str(MACROS), help="macro file (default: latex/macros.tex)")
+    ap.add_argument("--notation", default=None,
+                    help="NOTATION.md path (default: authoring/NOTATION.md, the book's or the repository's)")
+    ap.add_argument("--macros", default=None,
+                    help="macro file (default: the config's `macros`, else latex/macros.tex)")
     ap.add_argument("--config", default=str(CONFIG), help="config with chapters[].part")
     ap.add_argument("--list", action="store_true", help="also list every symbol and macro per chapter")
     ap.add_argument("--strict", action="store_true", help="exit 1 if anything is reported")
     args = ap.parse_args(argv)
+    args.notation = args.notation or str(series.shared(str(NOTATION)))
+    args.macros = args.macros or str(macros_from_config(Path(args.config)))
     if args.list:
         data = collect(Path(args.src), book_macros(Path(args.macros)))
         for chname, d in data.items():

@@ -95,6 +95,9 @@ import sys
 from dataclasses import dataclass, field
 from pathlib import Path
 
+sys.path.insert(0, str(Path(__file__).resolve().parent))
+import series  # noqa: E402
+
 # ---------------------------------------------------------------------------
 # Formulas
 # ---------------------------------------------------------------------------
@@ -1544,12 +1547,14 @@ def report(items) -> str:
 
 
 def main(argv=None) -> int:
+    argv = series.enter_book(argv)
     ap = argparse.ArgumentParser(
         description="Check Fitch derivations (nd blocks) and truth tables in the book's source.",
         epilog="Mark a deliberately flawed derivation with '% expect-invalid' before \\begin{nd}, "
                "a rule schema or partial derivation with '% schema'.")
     ap.add_argument("paths", nargs="*", default=["src"], help="files or directories (default: src)")
     ap.add_argument("--notes", action="store_true", help="also list what was skipped and why")
+    series.add_book_arg(ap)
     args = ap.parse_args(argv)
     errors, notes, total = [], [], {"derivations": 0, "expected_invalid": 0, "schema": 0, "tables": 0}
     for p in args.paths:
@@ -1568,6 +1573,13 @@ def main(argv=None) -> int:
           f"{len(notes)} note(s){'' if args.notes else ' (--notes to list)'}.")
     return 1 if errors else 0
 
+
+def run(book, labels):
+    """The engine's check plugin protocol (build/plugins.py): (errors, warnings). Every invalid
+    derivation or truth table is an error, as `./build.py check` had it before the plugin hook."""
+    errors, _, _ = find_violations(book.src_dir)
+    root = Path(book.root).resolve()
+    return report([(Path(p).resolve().relative_to(root), n, m) for p, n, m in errors]).splitlines(), []
 
 if __name__ == "__main__":
     sys.exit(main())
