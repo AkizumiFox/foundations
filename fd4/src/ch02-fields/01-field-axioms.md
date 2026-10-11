@@ -266,12 +266,12 @@ Show that \( \nQ \), with the usual addition and the new multiplication \( a \od
 :::
 
 ::: {.solution}
-Addition is that of \( \nQ \), so (F1)–(F4) hold with the usual \( 0 \) and negatives. The new product is a function \( \nQ \times \nQ \to \nQ \). Each identity below is computed in the field \( \nQ \) (@exm-fields), the signs by @fd3:prp-ring-algebra (c). For all \( a, b, c \in \nQ \):
+Addition is that of \( \nQ \), so (F1)–(F4) hold with the usual \( 0 \) and negatives. The new product is a function \( \nQ \times \nQ \to \nQ \). Each identity below is computed in the field \( \nQ \) (@exm-fields), the signs by @fd3:prp-ring-algebra (a) and (c). For all \( a, b, c \in \nQ \):
 
 - (F5): \( (a \odot b) \odot c = -\big((-(ab))c\big) = abc = -\big(a(-(bc))\big) = a \odot (b \odot c) \).
 - (F6): \( -(ab) = -(ba) \).
 - (F9): \( a \odot (b + c) = -(ab + ac) = -(ab) + (-(ac)) = a \odot b + a \odot c \), since \( -(u + v) = (-1)(u + v) = -u + (-v) \) by @thm-field-basic-properties (e).
-- (F7): the one is \( -1 \), since \( a \odot (-1) = -(a(-1)) = -(-a) = a \), and \( -1 \ne 0 \) (otherwise \( 1 = -(-1) = -0 = 0 \)).
+- (F7): the one is \( -1 \), since \( a \odot (-1) = -(a(-1)) = -(-a) = a \), and \( -1 \ne 0 \) (otherwise \( 1 = -(-1) = -0 = 0 \), where \( -0 = 0 \) by @thm-field-basic-properties (c), since \( 0 + 0 = 0 \)).
 - (F8): a non-zero \( a \) has the inverse \( a^{-1} \), the usual one, since \( a \odot a^{-1} = -(aa^{-1}) = -1 \), the one of this field.
 
 The one of a field need not be the number \( 1 \).
@@ -494,7 +494,7 @@ prp-field-linear-equation (proof): expanding d(ax + by) - b(cx + dy) and the exi
 prp-field-linear-equation (claim): (aftermath) x + y = 1, x + y = 0 inconsistent; (t, -t) solutions, t = 0, 1 distinct | inline, (F7)
 exm-fields (solution): Q, R, C are fields | fd3:thm-rationals-field, fd3:thm-reals-field (F3.10 soft citation, example), thm-complex-numbers-field, prp-complex-arithmetic-laws, prp-complex-inverse (F4.1 see edge, example only), cited
 exm-fields (claim): (after it) Q, R, C infinite | fd3:prp-naturals-embed-integers (a), fd3:prp-integers-embed-rationals, fd3:thm-rational-embedding (b) (F3.10 soft; reported), prp-reals-embed-complex, fd2:exm-hilbert-hotel, fd2:prp-subset-finite, cited
-exm-field-negated-product (solution): (F1)-(F9) for a o b = -(ab) | in Q (exm-fields), fd3:prp-ring-algebra (a), (c), thm-field-basic-properties (e); verify/ch02/exm-field-negated-product.py
+exm-field-negated-product (solution): (F1)-(F9) for a o b = -(ab) | in Q (exm-fields), fd3:prp-ring-algebra (a), (c), thm-field-basic-properties (c), (e); verify/ch02/exm-field-negated-product.py
 exm-field-nonexamples (solution): N inside Z | fd3:prp-naturals-embed-integers (a), cited (blueprint names (c); reported)
 exm-field-nonexamples (solution): N satisfies (F1)-(F3), (F5)-(F7), (F9), fails (F4) at 1 | the non-example paragraph after fd3:def-commutative-ring-and-field (F3.2), quoted, not reproved
 exm-field-nonexamples (solution): Z is a commutative ring with 1 != 0 | fd3:thm-integers-commutative-ring (F3.2; not in the blueprint's allowed list, which names F3.2's def-commutative-ring-and-field and prp-ring-algebra; reported)

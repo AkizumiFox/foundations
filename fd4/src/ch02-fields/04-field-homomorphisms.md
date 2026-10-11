@@ -122,7 +122,7 @@ No. It sends \( 1 \) to \( -1 \), and \( -1 \ne 1 \) in \( \nQ \): if \( -1 = 1 
 ::: {.solution}
 (i) By @thm-conjugate-properties (a), (b), \( \conj{z + w} = \conj{z} + \conj{w} \) and \( \conj{zw} = \conj{z}\,\conj{w} \); and \( \conj{1} = \conj{1 + 0i} = 1 - 0i = 1 \) (@def-conjugate-modulus). So conjugation is a homomorphism. By @thm-conjugate-properties (a), \( \conj{\conj{z}} = z \), so conjugation is its own inverse, hence bijective (@fd2:thm-bijection-iff-inverse): an automorphism. It is not the identity: \( \conj{i} = -i \), and \( -i \ne i \), since \( i - (-i) = 2i = (0, 2) \ne (0, 0) \).
 
-For the fixed elements, let \( z = a + bi \) with \( a, b \in \nR \). Then \( \conj{z} = a - bi \) (@def-conjugate-modulus), and comparing parts (@def-complex-numbers), \( \conj{z} = z \) if and only if \( -b = b \), that is \( 2b = 0 \), that is \( b = 0 \) (as \( 2 = 2 \cdot 1 > 0 \) in the ordered field \( \nR \), @fd3:prp-ordered-ring-rules (h), so \( 2 \ne 0 \), and by @thm-field-basic-properties (f)). And \( b = 0 \) says \( z = a + 0i = a \in \nR \) (@prp-reals-embed-complex). This fact is not among the parts of @thm-conjugate-properties; the two lines above prove it.
+For the fixed elements, let \( z = a + bi \) with \( a, b \in \nR \). Then \( \conj{z} = a - bi \) (@def-conjugate-modulus), and comparing parts (@def-complex-numbers), \( \conj{z} = z \) if and only if \( -b = b \), that is \( 2b = 0 \), that is \( b = 0 \) (as \( 2 = 2 \cdot 1 > 0 \) in the ordered field \( \nR \), @fd3:thm-reals-ordered-field, @fd3:prp-ordered-ring-rules (h), so \( 2 \ne 0 \), and by @thm-field-basic-properties (f)). And \( b = 0 \) says \( z = a + 0i = a \in \nR \) (@prp-reals-embed-complex). This fact is not among the parts of @thm-conjugate-properties; the two lines above prove it.
 
 (ii) The operations of \( K \) are those of \( L \), and \( 1_K = 1_L \) (@prp-subfield-test (a)). So \( x \mapsto x \) satisfies the three clauses. If \( K \ne L \), some element of \( L \) is not in \( K \), and it is not a value of the inclusion.
 
@@ -245,7 +245,7 @@ Write \( K \) for the fixed set, and use @prp-subfield-test (c). \( \sigma(1) = 
 
 For conjugation on \( \nC \), \( K = \nR \), by @exm-complex-conjugation-automorphism (i).
 
-For conjugation on \( \nQ(\sqrt 2) \), \( a - b\sqrt 2 = a + b\sqrt 2 \) holds if and only if \( 2b\sqrt 2 = 0 \), that is, \( b = 0 \): in the ordered field \( \nR \), \( 2 = 2 \cdot 1 > 0 \) (@fd3:prp-ordered-ring-rules (h)), so \( 2 \ne 0 \), and \( \sqrt 2 \ne 0 \) (since \( 0^2 = 0 \ne 2 \)), and a product of non-zero elements is non-zero (@thm-field-basic-properties (f)). So \( K = \{ a + 0\sqrt 2 : a \in \nQ \} = \nQ \).
+For conjugation on \( \nQ(\sqrt 2) \), \( a - b\sqrt 2 = a + b\sqrt 2 \) holds if and only if \( 2b\sqrt 2 = 0 \), that is, \( b = 0 \): in the ordered field \( \nR \), \( 2 = 2 \cdot 1 > 0 \) (@fd3:prp-ordered-ring-rules (h), @fd3:thm-reals-ordered-field), so \( 2 \ne 0 \), and \( \sqrt 2 \ne 0 \) (since \( 0^2 = 0 \ne 2 \)), and a product of non-zero elements is non-zero (@thm-field-basic-properties (f)). So \( K = \{ a + 0\sqrt 2 : a \in \nQ \} = \nQ \).
 :::
 
 ### C. Going deeper
@@ -304,13 +304,13 @@ prp-field-homomorphism-properties (claim): x.0 = 0 in L (a map sending 1 to 0 is
 def-field-homomorphism (claim): (check) -1 != 1 in Q | fd3:prp-ordered-ring-rules (h), fd3:thm-rationals-ordered-field, cited
 prp-field-homomorphism-properties (proof): the image of phi is the set of values | fd2:def-image, cited
 def-field-homomorphism (claim): conjugation of Q(sqrt 2) is not order-preserving, sqrt 2 > 0 | fd3:exm-cof-sqrt2-conjugation (soft citation of F3.4, remark only)
-exm-complex-conjugation-automorphism (solution): i - (-i) = 2i = (0, 2) != (0, 0); 2 != 0 in R; 2b = 0 implies b = 0 | def-complex-numbers (F4.1, see edge; example only); 2 = 2.1 > 0, fd3:prp-ordered-ring-rules (h); thm-field-basic-properties (f)
+exm-complex-conjugation-automorphism (solution): i - (-i) = 2i = (0, 2) != (0, 0); 2 != 0 in R; 2b = 0 implies b = 0 | def-complex-numbers (F4.1, see edge; example only); 2 = 2.1 > 0, fd3:prp-ordered-ring-rules (h), fd3:thm-reals-ordered-field; thm-field-basic-properties (f)
 exm-complex-conjugation-automorphism (solution): R is a complete ordered field (hypothesis of fd3:thm-cof-field-automorphism-identity) | fd3:thm-reals-complete-ordered-field, cited
 exm-complex-conjugation-automorphism (solution): the product formula of Q(sqrt 2) with -b, -d gives sigma(xy) = sigma(x) sigma(y) | exm-q-sqrt2-field; recalled from fd3:exm-cof-sqrt2-conjugation
 exm-field-homomorphism-obstructions (solution): 1 + 1 = 2.1 > 0 and p.1 > 0 in Q | fd3:prp-ordered-ring-rules (h), fd3:thm-rationals-ordered-field, cited
 exr-field-homomorphisms-b2 (solution): n.1 = n in Q(i) for n in N (rationals inside C) | n.1 = n in Q (F3.2: j and the identifications preserve +), and Q a subfield of C (exm-subfields-gaussian (iii)); the given first half of the exercise uses it
 exr-field-homomorphisms-c2 (solution): n.1 = n in Q for n in N | F3.2 Section 2.3 "Multiples" remark (n.a = na in Z) with fd3:prp-integers-embed-rationals (j preserves sums), by induction
-exr-field-homomorphisms-b4 (solution): 2 != 0 and sqrt 2 != 0 in R | 2 = 2.1 > 0, fd3:prp-ordered-ring-rules (h); sqrt 2 != 0 inline (0^2 = 0 != 2)
+exr-field-homomorphisms-b4 (solution): 2 != 0 and sqrt 2 != 0 in R | 2 = 2.1 > 0, fd3:prp-ordered-ring-rules (h), fd3:thm-reals-ordered-field; sqrt 2 != 0 inline (0^2 = 0 != 2)
 exr-field-homomorphisms-b3 (solution): (Q, +, odot) is a field with one 1/2 | exr-field-axioms-b3 (a), an exercise cited by an exercise solution only
 exr-field-homomorphisms-a1 (solution): conj(2i) = -2i; conj(1 + i) = 1 - i | def-conjugate-modulus (F4.1, see edge; exercise only); verify/ch02/exr-field-homomorphisms-a1.py
 prp-field-homomorphism-properties (claim): the warning's f(1.1) = 2 != 4 = f(1)f(1); B3's f(a odot b) = f(a)f(b), f(1/2) = 1 | inline; verify/ch02/exr-field-homomorphisms-a1.py, verify/ch02/exr-field-homomorphisms-b3.py

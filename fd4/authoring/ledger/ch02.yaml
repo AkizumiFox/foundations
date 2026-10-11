@@ -307,6 +307,17 @@ items:
       (a) and (c)'', and add ''-0 = 0, since 0 + 0 = 0'' (or cite thm-field-basic-properties (c)). This
       example also resolves the S6 gap on B3: it is a worked check of every clause for a new multiplication
       on Q.'
+  - stage: S7r
+    verdict: correct
+    by: rereferee
+    hash: 3f48f771a4f2
+    date: '2026-10-12'
+    model: claude-opus-5-5
+    evidence: 'e 1 = -(-1) = -0 = 0, with -0 = 0 by uniqueness of negatives (thm (c)) since 0 + 0 = 0;
+      that contradicts 1 != 0 in Q. (F8): a ⊙ a^{-1} = -(1) = -1, which is the new one. Every cited label
+      exists and says what is used: fd3/src/ch02-integers-and-rationals/03-ordered-rings.md:100-111 for
+      (a)-(c), and fd4 01-field-axioms.md:78-92 for thm (c) and (e). verify/ch02/exm-field-negated-product.py
+      prints ok.'
 - key: exm-field-nonexamples
   kind: exm
   file: 01-field-axioms.md
@@ -1724,6 +1735,17 @@ items:
       ledger line at 04:307 also omits it. Fix: write ''(in the ordered field ℝ, @fd3:thm-reals-ordered-field,
       2 = 2·1 > 0 by @fd3:prp-ordered-ring-rules (h), ...)'' and add fd3:thm-reals-ordered-field to the
       ledger line.'
+  - stage: S7r
+    verdict: correct
+    by: rereferee
+    hash: caa96d7cf851
+    date: '2026-10-12'
+    model: claude-opus-5-5
+    evidence: 'd from fd3:exm-cof-sqrt2-conjugation. (iv): fd3:thm-cof-field-automorphism-identity (fd3
+      03-the-uniqueness-theorem.md:141) assumes only additivity, multiplicativity and σ(1)=1 on a complete
+      ordered field, and fd3:thm-reals-complete-ordered-field (06-the-least-upper-bound-property.md:166)
+      supplies completeness. All cited labels exist and say what is used. The ledger line at 04:307 matches
+      the text.'
 - key: exm-field-homomorphism-obstructions
   kind: exm
   file: 04-field-homomorphisms.md
@@ -1928,6 +1950,16 @@ items:
       @fd3:thm-reals-ordered-field, which this section cites at 04:147 and 04:268. Fix: add @fd3:thm-reals-ordered-field
       at 04:248 and in the b4 ledger line. The rest is correct: the fixed set passes @prp-subfield-test
       (c) via (a) and (b), and 2b√2=0 gives b=0 by @thm-field-basic-properties (f), since 2≠0 and √2≠0.'
+  - stage: S7r
+    verdict: correct
+    by: rereferee
+    hash: 9026a62d0c73
+    date: '2026-10-12'
+    model: claude-opus-5-5
+    evidence: 'losure under ab⁻¹ for b≠0 from (b). For ℂ, K=ℝ by exm-complex-conjugation-automorphism
+      (i). For ℚ(√2): (a+b√2)−(a−b√2)=2b√2, so σ(x)=x ⟺ 2b√2=0. In ℝ, an ordered field by fd3:thm-reals-ordered-field,
+      rule (h) gives 2=2·1>0, so 2≠0. Also √2≠0 because 0²=0≠2. thm-field-basic-properties (f), used twice,
+      gives b=0, so K={a+0√2}=ℚ. Labels verified. The ledger line now lists fd3:thm-reals-ordered-field.'
 - key: exr-field-homomorphisms-c1
   kind: exr
   file: 04-field-homomorphisms.md
