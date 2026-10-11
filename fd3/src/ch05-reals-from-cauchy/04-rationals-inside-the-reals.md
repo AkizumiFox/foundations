@@ -2,7 +2,7 @@
 
 Section 5.3 made \( \nR \) an ordered field. We built it to enlarge \( \nQ \), but so far \( \nQ \) is not inside it: a rational number is a class of pairs of integers, and a real number is a class of Cauchy sequences. This section places a copy of \( \nQ \) in \( \nR \) and shows how the copy sits there. It is preserved by all the operations and the order; it is spread through \( \nR \) without gaps, so that between any two real numbers there is a rational one; and every real number is the limit of rationals. Along the way we prove that \( \nR \) is Archimedean and that rational tolerances suffice for limits in \( \nR \). At the end we meet the number that Chapter 4 promised: a positive real whose square is \( 2 \).
 
-Notation is as in Section 5.3: \( \sC \) is the set of Cauchy sequences of rationals, \( [a] \) is the class of \( a \in \sC \), \( (q)_n \) is the constant sequence with value \( q \), \( P = \nR_{>0} \) is the set of positive reals, and \( x < y \) means \( y - x \in P \) (@def-reals-order). By @thm-reals-ordered-field, the results of Chapters 2 and 4 for an arbitrary ordered field apply with \( F = \nR \); we say "in \( \nR \)" whenever we use one so.
+Notation is as in Section 5.3: \( \sC \) is the set of Cauchy sequences of rationals, \( [a] \) is the class of \( a \in \sC \), \( (q)_n \) is the constant sequence with value \( q \), \( P = \nR_{>0} \) is the set of positive reals, and \( x < y \) means \( y - x \in P \) (@def-reals-order). By @thm-reals-ordered-field, the results of Chapters 2 and 4 for an arbitrary ordered field apply with \( F = \nR \); we say "in \( \nR \)" where the context does not make the field clear.
 
 ## A copy of the rationals
 
@@ -59,6 +59,8 @@ In the field \( \nR \) (@thm-reals-field), the inverse of \( \kappa(q) \) is the
 (d) By @thm-reals-ordered-field, \( \nR \) is an ordered field, so @thm-rationals-embed-ordered-field gives **exactly one** map \( \iota_{\nR} \colon \nQ \to \nR \) with \( \iota_{\nR}(1) = 1_{\nR} \) that preserves sums and products. By (a), \( \kappa \) is such a map, so \( \kappa = \iota_{\nR} \). The same theorem states that \( \iota_{\nR}(n) = n \cdot 1_{\nR} \) for every \( n \in \nN \).
 :::
 
+By (d), part (b) and the injectivity of \( \kappa \) are also part of @thm-rationals-embed-ordered-field with \( F = \nR \), and (d) needs only (a). The direct proof of (b) is kept because it shows how a constant sequence is positive, with its own value as margin.
+
 Two more identities follow from (a) and (c):
 \[
 \begin{aligned}
@@ -87,7 +89,7 @@ Let \( x \in \nR \), and write \( x = [a] \) with \( a \in \sC \). By @prp-cauch
 \[
 (n + 1) - a_k \ge (n + 1) - M = (n - M) + 1 > 1 ,
 \]
-since \( a_k \le \abs{a_k} \le M \) (@prp-absolute-value-ordered-field (c)) and \( n - M > 0 \). So the sequence \( ((n + 1) - a_k)_k \) is positive, with margin \( 1 \) and threshold \( 0 \). It represents \( \kappa(n + 1) - x \), by @def-reals-operations. Hence \( x < \kappa(n + 1) \), and \( \kappa(n + 1) = (n + 1) \cdot 1_{\nR} \) by @thm-rational-embedding (d). Since \( n + 1 \in \nN \), this proves the theorem.
+since \( a_k \le \abs{a_k} \le M \) (@prp-absolute-value-ordered-field (c)), so \( -M \le -a_k \) and then \( (n + 1) - a_k \ge (n + 1) - M \) (@prp-ordered-ring-rules (a), (b)), and \( n - M > 0 \). So the sequence \( ((n + 1) - a_k)_k \) is positive, with margin \( 1 \) and threshold \( 0 \). It represents \( \kappa(n + 1) - x \), by @def-reals-operations. Hence \( x < \kappa(n + 1) \), and \( \kappa(n + 1) = (n + 1) \cdot 1_{\nR} \) by @thm-rational-embedding (d). Since \( n + 1 \in \nN \), this proves the theorem.
 :::
 
 Every result of Chapter 4 about Archimedean ordered fields now applies with \( F = \nR \). Two of them are used at once.
@@ -132,7 +134,7 @@ q - a_n &= (a_N - a_n) + \frac{b_N - a_N}{2} , \\
 b_n - q &= (b_n - b_N) + \frac{b_N - a_N}{2} .
 \end{aligned}
 \]
-Since \( n, N \ge N_2 \), \( a_N - a_n > -\delta/4 \) (@prp-absolute-value-ordered-field (d)); since \( N \ge N_1 \), \( b_N - a_N \ge \delta \), and multiplying by \( 1/2 > 0 \) gives \( (b_N - a_N)/2 \ge \delta/2 \) (@prp-ordered-ring-rules (c)). Adding (@prp-ordered-ring-rules (b)),
+Since \( n, N \ge N_2 \), \( a_N - a_n > -\delta/4 \) (@prp-absolute-value-ordered-field (d)); since \( N \ge N_1 \), \( b_N - a_N \ge \delta \), and multiplying by \( 1/2 > 0 \) (@prp-ordered-field-halves (b) with \( \varepsilon = 1 \)) gives \( (b_N - a_N)/2 \ge \delta/2 \) (@prp-ordered-ring-rules (c), with equality allowed). Adding (@prp-ordered-ring-rules (b)),
 \[
 q - a_n > -\frac{\delta}{4} + \frac{\delta}{2} = \frac{\delta}{4} .
 \]
@@ -181,7 +183,7 @@ For a fixed \( k \), the difference \( [a] - \kappa(a_k) \) is represented by \(
 :::
 
 ::: {.proof}
-Let \( n \in \nZ_{>0} \). By @cor-rational-epsilon-suffices (b), it suffices to find \( K \in \nN \) with \( \abs{[a] - \kappa(a_k)} < \kappa(1/n) \) for every \( k \ge K \).
+Let \( n \in \nZ_{>0} \). By @cor-rational-epsilon-suffices (b), it suffices to find \( K \in \nN \) with \( \abs{\kappa(a_k) - [a]} < \kappa(1/n) \) for every \( k \ge K \). Since \( \kappa(a_k) - [a] = -([a] - \kappa(a_k)) \), @prp-absolute-value-ordered-field (b) in \( \nR \) gives \( \abs{\kappa(a_k) - [a]} = \abs{[a] - \kappa(a_k)} \), so we bound the latter.
 
 Since \( a \in \sC \) and \( 1/(2n) \in \nQ_{>0} \), fix \( N \in \nN \) with \( \abs{a_m - a_k} < 1/(2n) \) for all \( m, k \ge N \). Let \( k \ge N \).
 
@@ -213,7 +215,7 @@ Let \( (x_n) \) be the Newton sequence of @exm-newton-rationals-sqrt2, and let \
 :::
 
 ::: {.solution}
-The sequence \( (x_n) \) is in \( \sC \) by @thm-sqrt2-cauchy-no-rational-limit, so \( r \in \nR \). We use, for every \( n \in \nN \), the facts \( x_n > 1 \) and \( e_n \le 1/(4n) \) for \( n \ge 1 \), where \( e_n \coloneqq x_n^2 - 2 \), stated in @thm-sqrt2-cauchy-no-rational-limit, and \( e_n > 0 \), proved in @exm-newton-rationals-sqrt2. The first values are
+The sequence \( (x_n) \) is in \( \sC \) by @thm-sqrt2-cauchy-no-rational-limit, so \( r \in \nR \). We use the facts \( x_n > 1 \) for every \( n \in \nN \) and \( e_n \le 1/(4n) \) for every \( n \ge 1 \), where \( e_n \coloneqq x_n^2 - 2 \), stated in @thm-sqrt2-cauchy-no-rational-limit, and \( e_n > 0 \) for every \( n \in \nN \), proved in @exm-newton-rationals-sqrt2. The first values are
 \[
 e_0 = 2 , \quad e_1 = \frac{1}{4} , \quad e_2 = \frac{1}{144} , \quad e_3 = \frac{1}{166464} , \quad e_4 = \frac{1}{221682772224} .
 \]
@@ -238,7 +240,7 @@ Section 4.6 noted that the rationals \( 2/x_n \) approach the gap from below whi
 \[
 x_n - \frac{2}{x_n} = \frac{x_n^2 - 2}{x_n} = \frac{e_n}{x_n} , \qquad 0 < \frac{e_n}{x_n} \le e_n ,
 \]
-using \( 0 < 1/x_n \le 1 \) (@prp-ordered-field-halves (c)). Since \( (e_n) \) is null, the squeeze makes \( (e_n/x_n) \) null, so \( (2/x_n) \sim (x_n) \) and \( [(2/x_n)] = r \).
+using \( 0 < 1/x_n \) (@prp-reciprocal-order (a)) and \( 1/x_n \le 1 \) (@prp-ordered-field-halves (c) with \( a = 1 \), \( b = x_n \)): then \( e_n/x_n > 0 \) as a product of positives (O4), and \( e_n/x_n \le 1 \cdot e_n = e_n \) (@prp-ordered-field-halves (d)). Since \( (e_n) \) is null, the squeeze makes \( (e_n/x_n) \) null, so \( (2/x_n) \sim (x_n) \) and \( [(2/x_n)] = r \).
 :::
 
 ::: {.warning}
@@ -279,9 +281,9 @@ by the defining equation of powers, @thm-rational-embedding (a), and the inducti
 \[
 \frac{7}{5} = d_1 \le d_j < d_2 + \frac{1}{100} = \frac{142}{100} = \frac{71}{50} .
 \]
-By @lem-termwise-order with \( N_0 = 2 \), and \( r = [(d_k)] \) (@exm-sqrt2-class), \( 7/5 \le r \le 71/50 \). Since \( 1 \le 7/5 \) and \( 71/50 < 2 \), \( 1 \le r < 2 \), so the integer part of \( r \) is \( 1 \). Multiplying by \( 10 > 0 \) (@prp-ordered-ring-rules (c)), \( 14 \le 10r \le 71/5 < 15 \), so the integer part of \( 10r \) is \( 14 \).
+By @lem-termwise-order with \( N_0 = 2 \), and \( r = [(d_k)] \) (@exm-sqrt2-class), \( 7/5 \le r \le 71/50 \). Since \( 1 \le 7/5 \) and \( 71/50 < 2 \), \( 1 \le r < 2 \), so the integer part of \( r \) is \( 1 \). Multiplying by \( 10 > 0 \) in \( \nR \) (@prp-ordered-ring-rules (c), with equality allowed), \( 14 \le 10r \le 71/5 < 15 \), so the integer part of \( 10r \) is \( 14 \).
 
-(c) False. Take \( a_n \coloneqq q - 1/(n + 1) \). Then \( a_n < q \) for every \( n \), and \( a - (q)_n = (-1/(n + 1)) \) is null, so \( [a] = \kappa(q) \), and \( [a] < \kappa(q) \) fails. The correct conclusion is \( [a] \le q \) (@lem-termwise-order); see the warning after it.
+(c) False. Take \( a_n \coloneqq q - 1/(n + 1) \). Here \( a \in \sC \): \( (q)_n \) is constant and \( (1/(n + 1)) \) is null (@exm-first-sequences-ordered-field (b)), so both are Cauchy (@thm-cauchy-algebra-ordered-field (a)), and so is their difference (@thm-cauchy-algebra-ordered-field (b)). Then \( a_n < q \) for every \( n \), and \( a - (q)_n = (-1/(n + 1)) \) is null (@thm-limit-laws-ordered-field (b)), so \( [a] = \kappa(q) \), and \( [a] < \kappa(q) \) fails. The correct conclusion is \( [a] \le q \) (@lem-termwise-order); see the warning after it.
 
 (d) No. By @exm-sqrt2-class, \( r \in \nR \) is not \( \kappa(q) \) for any \( q \in \nQ \).
 :::
@@ -307,7 +309,7 @@ Let \( x \in \nR \). For \( k \in \nN \), let \( m_k \) be the integer part of \
 :::
 
 ::: {.solution}
-Fix \( k \in \nN \). By the definition of the integer part (after @thm-constructed-reals-archimedean), \( m_k \le (k + 1)x < m_k + 1 \). Since \( k + 1 > 0 \), also \( 1/(k + 1) > 0 \) (@prp-reciprocal-order (a)), and multiplying by it preserves both inequalities (@prp-ordered-ring-rules (c)):
+Fix \( k \in \nN \). By the definition of the integer part (after @thm-constructed-reals-archimedean), \( m_k \le (k + 1)x < m_k + 1 \). Since \( k + 1 > 0 \), also \( 1/(k + 1) > 0 \) (@prp-reciprocal-order (a)), and multiplying by it in \( \nR \) preserves both inequalities (@prp-ordered-ring-rules (c), with equality allowed on the left):
 \[
 q_k = \frac{m_k}{k + 1} \le x < \frac{m_k + 1}{k + 1} = q_k + \frac{1}{k + 1} .
 \]
@@ -321,13 +323,13 @@ Each \( q_k \) is given by a rule: the integer part of \( (k + 1)x \) is the **o
 
 The lines below, after the identification paragraph (so \( q \) stands for \( \kappa(q) \)), contain the proof of @thm-terms-converge-to-class for \( a \in \sC \), shuffled, together with two lines that do not belong. Put the correct lines in order, and say what is wrong with each of the other two.
 
-::: {.enumerate options="label=(\arabic*)"}
+::: {.enumerate options="label=(\roman*)"}
 1. so \( \abs{[a] - a_k} = [(\abs{a_m - a_k})_m] \), by @prp-reals-absolute-value-termwise;
 2. since \( a \in \sC \), fix \( N \) with \( \abs{a_m - a_k} < 1/(2n) \) for all \( m, k \ge N \);
 3. its terms are \( < 1/(2n) \) for \( m \ge N \), so \( \abs{[a] - a_k} < 1/(2n) \);
 4. \( 1/(2n) < 1/n \); take \( K = N \);
 5. let \( k \ge N \);
-6. let \( n \in \nZ_{>0} \); by @cor-rational-epsilon-suffices (b), it suffices to find \( K \) with \( \abs{[a] - a_k} < 1/n \) for every \( k \ge K \);
+6. let \( n \in \nZ_{>0} \); by @cor-rational-epsilon-suffices (b), it suffices to find \( K \) with \( \abs{[a] - a_k} < 1/n \) for every \( k \ge K \), since \( \abs{a_k - [a]} = \abs{[a] - a_k} \) (@prp-absolute-value-ordered-field (b));
 7. \( [a] - a_k \) is represented by \( (a_m - a_k)_m \);
 8. for each \( k \), fix \( N_k \) with \( \abs{a_m - a_k} < 1/(2n) \) for every \( m \ge N_k \);
 9. its terms are \( \le 1/(2n) \) for \( m \ge N \), so \( \abs{[a] - a_k} \le 1/(2n) \), by @lem-termwise-order.
@@ -335,11 +337,11 @@ The lines below, after the identification paragraph (so \( q \) stands for \( \k
 :::
 
 ::: {.solution}
-*Order:* 6, 2, 5, 7, 1, 9, 4. No other order is admissible: line 2 introduces \( N \), which line 5 needs; line 5 fixes the \( k \) that lines 7, 1 and 9 are about; line 1 rewrites the class that line 7 names; line 9 bounds that class; and line 4 concludes from line 9, so it comes last.
+*Order:* (vi), (ii), (v), (vii), (i), (ix), (iv). No other order is admissible: line (ii) introduces \( N \), which line (v) needs; line (v) fixes the \( k \) that lines (vii), (i) and (ix) are about; line (i) rewrites the class that line (vii) names; line (ix) bounds that class; and line (iv) concludes from line (ix), so it comes last.
 
-*Line 3* uses the strict version of @lem-termwise-order, which is false: termwise \( < \) passes to classes only as \( \le \) (@exm-strict-termwise-order-fails). That is why the proof aims at \( 1/(2n) \) and then uses \( 1/(2n) < 1/n \).
+*Line (iii)* uses the strict version of @lem-termwise-order, which is false: termwise \( < \) passes to classes only as \( \le \) (@exm-strict-termwise-order-fails). That is why the proof aims at \( 1/(2n) \) and then uses \( 1/(2n) < 1/n \).
 
-*Line 8* takes a threshold \( N_k \) that depends on \( k \). The goal needs one \( K \) for all \( k \ge K \), and a family of thresholds, one for each \( k \), yields no such \( K \): the Cauchy property is what supplies one \( N \) serving all pairs \( m, k \ge N \) at once.
+*Line (viii)* claims a threshold \( N_k \) for every \( k \), and the Cauchy property does not supply one for an early \( k \): \( a_k \) can be far from all later terms. For \( a = (5, 0, 0, \dots) \in \sC \), \( n = 1 \) and \( k = 0 \), \( \abs{a_m - a_0} = 5 \) for every \( m \ge 1 \), so no \( N_0 \) exists. The Cauchy property gives \( \abs{a_m - a_k} < 1/(2n) \) only when both \( m \) and \( k \) are at least one \( N \), which is why line (v) takes \( k \ge N \). (If line (viii) did hold for every \( k \), the remaining lines would give the bound for every \( k \), so it is the claim that is unjustified, not the dependence on \( k \).)
 :::
 
 ### C. Going deeper
@@ -368,7 +370,7 @@ Let \( r \) be as in @exm-sqrt2-class. Prove that the set \( \{ x \in \nR : x \n
 ::: {.solution}
 [Hint 1]
 
-Start from a rational strictly between \( x \) and \( y \), and move it up by a small positive multiple of \( r \).
+Use @thm-constructed-rationals-dense, and the irrational number \( r \).
 :::
 
 ::: {.solution}
@@ -392,8 +394,9 @@ def-rational-embedding (claim): kappa is a function | constant sequences in C (t
 thm-rational-embedding (proof): termwise sum/product/negative of constant sequences is constant | def-reals-operations (termwise), inline
 thm-rational-embedding (proof): s - q > 0 from q < s | prp-ordered-ring-rules (a), cited
 thm-rational-embedding (proof): |q| = q for q > 0, -q for q < 0, in Q and in R | def-absolute-value-ordered-field, cited
+thm-rational-embedding (claim): (b) and injectivity of kappa also follow from (d) | thm-rationals-embed-ordered-field with F = R, cited (remark after the proof)
 thm-rational-embedding (claim): kappa(q - s) = kappa(q) - kappa(s), kappa(q/s) = kappa(q)/kappa(s) | thm-rational-embedding (a), (c); proved inline after the theorem
-thm-constructed-reals-archimedean (proof): (n + 1) - M = (n - M) + 1 > 1 from n > M | field arithmetic in Q, prp-ordered-ring-rules (a), (b); inline
+thm-constructed-reals-archimedean (proof): (n + 1) - a_k >= (n + 1) - M from a_k <= M, and (n + 1) - M = (n - M) + 1 > 1 from n > M | field arithmetic in Q, prp-ordered-ring-rules (a), (b); cited inline
 thm-constructed-reals-archimedean (claim): Q(t) is a non-Archimedean ordered field | exm-rational-function-field, cited (stated there, not verified)
 thm-constructed-reals-archimedean (claim): integer part of kappa(q) is floor(q) | prp-rational-integer-part and thm-rational-embedding (b), cited; uniqueness of prp-integer-part-ordered-field
 thm-constructed-rationals-dense (proof): q - a_n = (a_N - a_n) + (b_N - a_N)/2 and b_n - q = (b_n - b_N) + (b_N - a_N)/2 | field arithmetic in Q; verify/ch05/thm-constructed-rationals-dense.py
@@ -408,9 +411,11 @@ exm-sqrt2-class (solution): e_n > 0 | exm-newton-rationals-sqrt2, cited
 exm-sqrt2-class (solution): e_0..e_4 = 2, 1/4, 1/144, 1/166464, 1/221682772224 | verify/ch05/exm-sqrt2-class.py
 exm-sqrt2-class (solution): 4n - (n + 1) = 3n - 1 > 0 for n >= 1 | integer arithmetic; inline
 exm-sqrt2-class (solution): r * r = [(x_n^2)], 2 = [(2)_n] | def-reals-operations, def-rational-embedding (identification), cited
-exm-sqrt2-class (claim): (fold) x_n - 2/x_n = e_n/x_n; 0 < 1/x_n <= 1 | field arithmetic; prp-ordered-field-halves (c); verify/ch05/exm-sqrt2-class.py
+exm-sqrt2-class (claim): (fold) x_n - 2/x_n = e_n/x_n; 0 < 1/x_n <= 1; 0 < e_n/x_n <= e_n | field arithmetic; prp-reciprocal-order (a); prp-ordered-field-halves (c), (d); (O4); verify/ch05/exm-sqrt2-class.py
 exr-rationals-inside-the-reals-a1 (solution): d_1 = 7/5, d_2 = 141/100, 71/50 < 2, 14 <= 10r <= 71/5 < 15 | exm-truncations-equivalent (non-decreasing; d_j < d_k + 1/10^k for j >= k), cited; verify/ch05/exr-rationals-inside-the-reals-a1.py
+exr-rationals-inside-the-reals-a1 (solution): (c) a = (q - 1/(n + 1)) in C, and (-1/(n + 1)) null in Q | exm-first-sequences-ordered-field (b), thm-cauchy-algebra-ordered-field (a), (b), thm-limit-laws-ordered-field (b), cited
 exr-rationals-inside-the-reals-b2 (solution): (1/(k + 1)) null in R | prp-reciprocals-null-iff-archimedean, thm-constructed-reals-archimedean, cited
+exr-rationals-inside-the-reals-b3 (solution): a = (5, 0, 0, ...) in C (eventually constant), |a_m - a_0| = 5 for m >= 1 | verify/ch05/exr-rationals-inside-the-reals-b3.py
 exr-rationals-inside-the-reals-c1 (solution): 0 < 1/t < 1/(n * 1) in Q(t) | exm-rational-function-field, cited
 exr-rationals-inside-the-reals-c2 (solution): kappa preserves differences and products | identities after thm-rational-embedding (inline there), thm-rational-embedding (a)
 exr-rationals-inside-the-reals-a1 (solution): induction on k | fd1:ax-induction read on omega through cor-omega-identification (b), as in Chapter 4

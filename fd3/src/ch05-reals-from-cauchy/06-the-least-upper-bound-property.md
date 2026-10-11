@@ -1,6 +1,6 @@
 # The Real Numbers Form a Complete Ordered Field
 
-Section 5.5 proved one form of completeness: in \( \nR \) every Cauchy sequence converges (@thm-constructed-reals-cauchy-complete). The analysis volume starts from another form, about sets rather than sequences: every non-empty set of real numbers that is bounded above has a least upper bound. In \( \nQ \) both fail, the first by @thm-sqrt2-cauchy-no-rational-limit and the second by @thm-rationals-gap-sqrt2. This section names the second property for an arbitrary ordered field, proves that an ordered field that is Archimedean and Cauchy-complete has it, and concludes that the constructed \( \nR \) is a complete ordered field. The proof bisects intervals, and one line of it, which we shall point at, cannot do without Archimedes.
+Section 5.5 proved one form of completeness: in \( \nR \) every Cauchy sequence converges (@thm-constructed-reals-cauchy-complete). *Analysis on the Real Line*, Chapter 1 starts from another form, about sets rather than sequences: every non-empty set of real numbers that is bounded above has a least upper bound. In \( \nQ \) both fail, the first by @thm-sqrt2-cauchy-no-rational-limit and the second by @thm-rationals-gap-sqrt2. This section names the second property for an arbitrary ordered field, proves that an ordered field that is Archimedean and Cauchy-complete has it, and concludes that the constructed \( \nR \) is a complete ordered field. The proof bisects intervals, and one line of it, which we shall point at, cannot do without Archimedes.
 
 Throughout, \( F \) is an ordered field (@def-ordered-ring-and-field). Its order \( \le \) is a total order (@prp-ordered-field-halves (a)), so the words "upper bound", "bounded above" and "supremum" of *Sets, Relations, and Cardinality*, Section 2.6 apply to subsets of \( F \) (@fd2:def-order-bounds, @fd2:def-order-supremum). When \( F = \nR \), we keep the identification of Section 5.4, writing \( q \) for \( \kappa(q) \).
 
@@ -41,7 +41,7 @@ In words: the hypothesis asks for a set with at least one element and at least o
 Drop "non-empty": the empty set is bounded above by every element of \( F \), so its upper bounds are all of \( F \), and \( F \) has no least element (\( x - 1 < x \)). Drop "bounded above": \( F \) itself has no upper bound (\( x < x + 1 \)), so no supremum. With either clause removed, no ordered field at all would be complete.
 :::
 
-**Why this definition.** It asks about suprema, not maxima: the set of negative elements has no greatest element in any ordered field, since \( x < x/2 < 0 \) for \( x < 0 \), and asking for maxima would make no field complete. It asks about sets, not sequences, the form *Analysis on the Real Line* takes as its axiom. "Complete" alone always means this property; the sequence property of Section 5.5 is "Cauchy-complete".
+**Why this definition.** It asks about suprema, not maxima: the set of negative elements has no greatest element in any ordered field, since \( x < x/2 < 0 \) for \( x < 0 \), and asking for maxima would make no field complete. It asks about sets, not sequences, the form *Analysis on the Real Line*, Chapter 1 takes as its axiom. "Complete" alone always means this property; the sequence property of Section 5.5 is "Cauchy-complete".
 
 ::: {.warning}
 The supremum of a set is an upper bound **not necessarily in the set**, and "complete" is not "every non-empty bounded set has a **largest** element": the set of negative elements above has supremum \( 0 \) and no largest element. A proof that ends "so \( \sup A \in A \)" needs a reason, such as \( A \) being finite.
@@ -78,7 +78,7 @@ We use @fd1:ax-induction, read on \( \nN = \omega \) through @cor-omega-identifi
 \]
 the last step by distributivity (F9) and (F7). Since \( k + 1 \ge 1 \) (@thm-omega-order (d)), @prp-naturals-in-ordered-field (b) gives \( y \ge 1_F \), so \( y + y \ge y + 1_F \) (@prp-ordered-ring-rules (b)). Finally \( y + 1_F = ((k + 1) + 1) \cdot 1_F \) by @def-naturals-in-ordered-field (a). Hence \( (2 \cdot 1_F)^{k+1} \ge ((k + 1) + 1) \cdot 1_F \), which is \( P(k + 1) \).
 
-The last sentence of the lemma follows from \( (k + 1) \cdot 1_F \ge 1_F \) and \( 1_F > 0 \) (@prp-ordered-ring-rules (e)).
+The last sentence of the lemma follows, since \( (k + 1) \cdot 1_F \ge 1_F > 0 \) (@prp-naturals-in-ordered-field (b), as \( k + 1 \ge 1 \)).
 :::
 
 From here on, \( 2^k \) means \( (2 \cdot 1_F)^k \). By @prp-naturals-in-ordered-field (c) it equals \( (2^k) \cdot 1_F \), the multiple of \( 1_F \) by the natural number \( 2^k \), so the two readings agree; the proofs below use only the power in \( F \) and the lemma. Since \( 2^k > 0 \), the quotient \( D/2^k \) is defined for every \( D \in F \).
@@ -134,9 +134,9 @@ By (I3), \( u_k - l_k = D/2^k > 0 \), so \( l_k < c < u_k \) (@prp-ordered-field
 \[
 \frac{D}{\varepsilon} < n \cdot 1_F .
 \]{#eq-bisection-archimedes}
-Let \( k \ge n \). By @lem-power-two-bound and @prp-naturals-in-ordered-field (b), \( 2^k \ge (k + 1) \cdot 1_F > k \cdot 1_F \ge n \cdot 1_F > D/\varepsilon > 0 \). By @prp-reciprocal-order (b), \( 1/2^k < \varepsilon/D \), and multiplying by \( D > 0 \) (@prp-ordered-ring-rules (c)) gives \( D/2^k < \varepsilon \). So \( \abs{D/2^k - 0} < \varepsilon \) for every \( k \ge n \): the sequence \( (D/2^k)_k \) is null.
+Let \( k \ge n \). By @lem-power-two-bound and @prp-naturals-in-ordered-field (b), \( 2^k \ge (k + 1) \cdot 1_F > k \cdot 1_F \ge n \cdot 1_F > D/\varepsilon > 0 \). By @prp-reciprocal-order (b), \( 1/2^k < (D/\varepsilon)^{-1} = \varepsilon/D \) (@lem-field-fraction-rules (a)), and multiplying by \( D > 0 \) (@prp-ordered-ring-rules (c)) gives \( D/2^k < \varepsilon \). So \( \abs{D/2^k - 0} < \varepsilon \) for every \( k \ge n \): the sequence \( (D/2^k)_k \) is null.
 
-Consequently \( (u_k) \) is Cauchy in \( F \): for \( \varepsilon \) and \( n \) as above and \( j, k \ge n \), say \( j \ge k \) (the other case is symmetric), @eq-bisection-tail gives \( \abs{u_j - u_k} = u_k - u_j \le D/2^k < \varepsilon \).
+Consequently \( (u_k) \) is Cauchy in \( F \): for \( \varepsilon \) and \( n \) as above and \( j, k \ge n \), say \( j \ge k \) (the other case is symmetric), @eq-bisection-tail gives \( \abs{u_j - u_k} = \abs{u_k - u_j} = u_k - u_j \le D/2^k < \varepsilon \) (@prp-absolute-value-ordered-field (b), @def-absolute-value-ordered-field).
 
 Steps 1–3 use only that \( F \) is an Archimedean ordered field. Step 4 is the only one that uses Cauchy-completeness.
 
@@ -144,7 +144,7 @@ Steps 1–3 use only that \( F \) is an Archimedean ordered field. Step 4 is the
 
 **Step 5: \( s \) is the supremum.** (S1): let \( a \in A \). By (I1), \( a \le u_k \) for every \( k \), so \( a \le s \) by @prp-limit-preserves-order-ordered-field (b). So \( s \) is an upper bound of \( A \).
 
-(S2): let \( b \) be an upper bound of \( A \), and suppose, for \( \rulename{\neg I} \), that \( b < s \). Then \( \varepsilon \coloneqq s - b > 0 \), and since \( l_k \to s \) there is \( K \) with \( \abs{l_k - s} < \varepsilon \) for \( k \ge K \); in particular \( l_K > s - \varepsilon = b \) (@prp-absolute-value-ordered-field (d)). By (I2), \( l_K \) is not an upper bound: some \( a \in A \) has \( a \not\le l_K \), that is, \( a > l_K \) by totality (@prp-ordered-field-halves (a)). Then \( a > l_K > b \), against \( b \) being an upper bound. So \( b < s \) is false, and \( s \le b \) by (O1).
+(S2): let \( b \) be an upper bound of \( A \), and suppose, for \( \rulename{\neg I} \), that \( b < s \). Then \( \varepsilon \coloneqq s - b > 0 \), and since \( l_k \to s \) there is \( K \) with \( \abs{l_k - s} < \varepsilon \) for \( k \ge K \); in particular \( l_K > s - \varepsilon = b \) (@prp-absolute-value-ordered-field (d)). By (I2), \( l_K \) is not an upper bound: some \( a \in A \) has \( a \not\le l_K \) (@fd1:prp-bounded-quantifier-negation (a)), that is, \( a > l_K \) by totality (@prp-ordered-field-halves (a)). Then \( a > l_K > b \), against \( b \) being an upper bound. So \( b < s \) is false, and \( s \le b \) by (O1).
 
 By (S1) and (S2), \( s = \sup A \) (@fd2:def-order-supremum). Since \( A \) was an arbitrary non-empty subset bounded above, \( F \) is complete.
 :::
@@ -154,7 +154,7 @@ The answer to the prompt: Step 3, and only the line @eq-bisection-archimedes. Th
 Each hypothesis has one job. Archimedes makes \( (u_k) \) Cauchy (Step 3); Cauchy-completeness supplies the limit (Step 4); "non-empty" supplies a left end that is not an upper bound, and "bounded above" a right end that is one. The invariants (I1) and (I2) are spent in Step 5, one on each clause of the supremum.
 
 ::: {.warning}
-**A false conclusion: "every Cauchy-complete ordered field is complete".** Run the bisection without Archimedes. Steps 1, 2, 4 and 5 never mention it; the unjustified line is @eq-bisection-archimedes, "\( D/\varepsilon < n \cdot 1_F \) for some \( n \)". In the non-Archimedean field \( \nQ(t) \) of @exm-rational-function-field it fails for \( D = 1 \) and \( \varepsilon = 1/t \): every \( 2^k = (2^k) \cdot 1 \) lies below \( t \), so \( 1/2^k > 1/t \) for every \( k \) (@prp-reciprocal-order (b)), and the bisection lengths never get below the tolerance \( 1/t \). (\( \nQ(t) \) is not Cauchy-complete either, so it shows only that the line fails, not that the conclusion does.)
+**A false conclusion: "every Cauchy-complete ordered field is complete".** Run the bisection without Archimedes. Steps 1, 2, 4 and 5 never mention it; the unjustified line is @eq-bisection-archimedes, "\( D/\varepsilon < n \cdot 1_F \) for some \( n \)". In the non-Archimedean field \( \nQ(t) \) of @exm-rational-function-field it fails for \( D = 1 \) and \( \varepsilon = 1/t \): every \( 2^k = (2^k) \cdot 1 \) lies below \( t \), so \( 1/2^k > 1/t \) for every \( k \) (@prp-reciprocal-order (b)), and the bisection lengths never get below the tolerance \( 1/t \). (It shows only that the line fails, not that the conclusion does.)
 :::
 
 ::: {.remark}
@@ -233,7 +233,7 @@ These questions are about the proof of @thm-cauchy-archimedean-lub and the defin
 
 (c) Halve an interval repeatedly by a rule that keeps its right end an upper bound of \( A \) and its left end not one; Archimedes makes the lengths tend to \( 0 \), so the right ends are Cauchy and converge. Their limit is an upper bound because the right ends are, and it is the least one because the left ends, which are not upper bounds, converge to it too.
 
-(d) With \( \mathrm{ub}(u) \) for \( \forall a \in A \ a \le u \), "complete" is the display in @def-complete-ordered-field. Its negation (@fd1:prp-quantifier-negation, @fd1:prp-bounded-quantifier-negation, @fd1:prp-negated-implication, and \( \neg(x \le y) \) as \( y < x \) by (O1)):
+(d) With \( \mathrm{ub}(u) \) for \( \forall a \in A \ a \le u \), "complete" is the display in @def-complete-ordered-field. Its negation (@fd1:prp-quantifier-negation, @fd1:prp-bounded-quantifier-negation, @fd1:prp-negated-implication, @fd1:prp-de-morgan (d), and \( \neg(x \le y) \) as \( y < x \) by (O1)):
 \[
 \begin{aligned}
 &\exists A \subseteq F \ \bigl( A \ne \emptyset \wedge \exists u \in F \ \mathrm{ub}(u) \wedge \forall s \in F \\
@@ -282,7 +282,7 @@ Let \( F \) be an ordered field that is Archimedean and Cauchy-complete. Prove t
 ::: {.solution}
 Let \( A \ne \emptyset \) be bounded above; fix \( a_0 \in A \) and an upper bound \( M \). Put \( l_0 \coloneqq a_0 - 1 \) (not an upper bound, since \( a_0 > l_0 \)), \( u_0 \coloneqq M \) (an upper bound), \( D \coloneqq u_0 - l_0 > 0 \).
 
-*Bisection.* By the recursion theorem, with the step "replace \( u \) by \( c = (l + u)/2 \) if \( c \) is an upper bound, else replace \( l \) by \( c \)", define \( (l_k, u_k) \). By induction: \( u_k \) is an upper bound, \( l_k \) is not, and \( u_k - l_k = D/2^k \). Hence \( l_k \) is non-decreasing, \( u_k \) is non-increasing, and \( 0 \le u_k - u_j \le D/2^k \) for \( j \ge k \).
+*Bisection.* By the recursion theorem, with the step "replace \( u \) by \( c = (l + u)/2 \) if \( c \) is an upper bound, else replace \( l \) by \( c \)", define \( (l_k, u_k) \). By induction: \( u_k \) is an upper bound, \( l_k \) is not, and \( u_k - l_k = D/2^k \). (Each case keeps both invariants and halves the length, as in Step 2 of the proof.) Hence \( l_k \) is non-decreasing, \( u_k \) is non-increasing, and \( 0 \le u_k - u_j \le D/2^k \) for \( j \ge k \).
 
 *Cauchy.* Let \( \varepsilon \in F_{>0} \). **Archimedes** gives \( n \in \nN \) with \( D/\varepsilon < n \cdot 1_F \) (this is the line). For \( k \ge n \), \( 2^k \ge (k + 1) \cdot 1_F > n \cdot 1_F > D/\varepsilon \) by @lem-power-two-bound, so \( D/2^k < \varepsilon \), and \( \abs{u_j - u_k} < \varepsilon \) for \( j, k \ge n \).
 
@@ -296,7 +296,7 @@ Let \( A \ne \emptyset \) be bounded above; fix \( a_0 \in A \) and an upper bou
 - 2: \( (u_k) \) Cauchy, with the Archimedean property named at the step where \( D/2^k \) is made smaller than \( \varepsilon \).
 - 2: the limit \( s \) is an upper bound, by the order-preservation of limits.
 - 2: \( s \) is the least upper bound, through \( l_k \to s \) and "\( l_k \) is not an upper bound".
-Fatal errors (0 for the step): claiming \( s \in A \); "\( 1/2^k \to 0 \)" asserted in a general \( F \) without Archimedes; midpoints or points of \( A \) "chosen" at each step with no rule. A route through monotone convergence earns the Cauchy and limit points only if monotone convergence is first proved from Cauchy-completeness and Archimedes in \( F \).
+Fatal errors (0 for the step): claiming \( s \in A \); "\( 1/2^k \to 0 \)" asserted in a general \( F \) without Archimedes; midpoints or points of \( A \) "chosen" at each step with no rule. A route through monotone convergence earns the Cauchy and limit points only if monotone convergence is first proved from Cauchy-completeness and Archimedes in \( F \). A dyadic-grid route (\( u_k \coloneqq m_k/2^k \), \( m_k \) the least integer making it an upper bound) maps point for point, with \( u_k - 1/2^k \) for \( l_k \) and Archimedes also for the existence of \( m_k \).
 :::
 
 ::: {#exr-the-least-upper-bound-property-c2}
@@ -316,17 +316,17 @@ Run the bisection of the proof of @thm-cauchy-archimedean-lub inside \( F = \nQ 
 ::: {.solution}
 [Hint 1]
 
-For (b), squeeze \( u_k - s \) between \( 0 \) and the length \( u_k - l_k \). For (c), the left ends are below some element of \( A \).
+For (b), compare \( s \) with \( u_k \) and with \( l_k \), using (I1), (I2) and (S2). For (c), the left ends are below some element of \( A \).
 :::
 
 ::: {.solution}
 [Hint 2]
 
-For \( u_k^2 \ge 2 \) in (c): if \( u_k^2 < 2 \), find a rational \( h > 0 \) with \( (u_k + h)^2 < 2 \); try \( h \coloneqq \min\{1, (2 - u_k^2)/(2(2u_k + 1))\} \).
+For \( u_k^2 \ge 2 \) in (c): suppose \( u_k^2 < 2 \), and look for a rational \( h \) with \( 0 < h \le 1 \) and \( (u_k + h)^2 < 2 \).
 :::
 
 ::: {.solution}
-(a) The proof states that Steps 1–3 use only that the field is an Archimedean ordered field, and \( \nQ \) is one (@thm-rationals-ordered-field, @thm-rationals-archimedean). @lem-power-two-bound holds in \( \nQ \) too. So the invariants (I1)–(I3) hold, \( (D/2^k) \) is null in \( \nQ \), and \( (u_k) \) is Cauchy in \( \nQ \). Step 4 is where the proof would need Cauchy-completeness, which \( \nQ \) lacks.
+(a) The proof states that Steps 1–3 use only that the field is an Archimedean ordered field, and \( \nQ \) is one (@thm-rationals-ordered-field, @thm-rationals-archimedean). @lem-power-two-bound holds in \( \nQ \) too. Step 1 applies: \( 1 \in A \) as \( 1^2 < 2 \), and \( 2 \) bounds \( A \), as \( q > 2 \ge 0 \) gives \( q^2 > 4 \) (@prp-ordered-ring-rules (g)). So the invariants (I1)–(I3) hold, \( (D/2^k) \) is null in \( \nQ \), and \( (u_k) \) is Cauchy in \( \nQ \). Step 4 is where the proof would need Cauchy-completeness, which \( \nQ \) lacks.
 
 (b) Suppose \( s = \sup A \) in \( \nQ \). Each \( u_k \) is an upper bound (I1), so \( s \le u_k \) by (S2). Each \( l_k \) is not an upper bound (I2), so some \( a \in A \) has \( l_k < a \le s \). Hence \( 0 \le u_k - s < u_k - l_k = D/2^k \) for every \( k \). By the squeeze, @prp-limit-preserves-order-ordered-field (c), with lower sequence \( 0 \) and the null upper sequence \( (D/2^k) \), \( u_k - s \to 0 \), so \( u_k \to s \) (@prp-limit-null-shift-ordered-field).
 
@@ -380,7 +380,7 @@ These are the classes of @def-rationals-as-classes, and the move is **representa
 
 Let \( pq' = p'q \) with \( q, q' > 0 \), and suppose \( p \ge q \). Multiplying by \( q' > 0 \) (@prp-ordered-ring-rules (c), or equality), \( pq' \ge qq' \), that is, \( p'q \ge q'q \). If \( p' < q' \), then \( p'q < q'q \) by @prp-ordered-ring-rules (c), since \( q > 0 \), a contradiction by (O1). So \( p' \ge q' \). In \( \nQ \), the property says \( [(p, q)] \ge 1 \), by the comparison formula of @thm-rationals-ordered-field (a).
 
-"\( p \ge 2 \)" is not well defined: \( (1, 2) \sim (2, 4) \), since \( 1 \cdot 4 = 2 \cdot 2 \), but \( 1 \not\ge 2 \) while \( 2 \ge 2 \). One class, two verdicts: the hypothesis of @thm-well-defined-on-classes (c) fails. (The test "\( p \ge 1 \)" would pass, but only because for an integer it says \( p > 0 \), the positivity test of @def-rational-order.)
+"\( p \ge 2 \)" is not well defined: \( (1, 2) \sim (2, 4) \), since \( 1 \cdot 4 = 2 \cdot 2 \), but \( 1 \not\ge 2 \) while \( 2 \ge 2 \). One class, two verdicts: the hypothesis of @thm-well-defined-on-classes (c) fails. (The test "\( p \ge 1 \)" would pass, but only because for an integer it says \( p > 0 \) (@thm-integers-ordered-ring (c)), the positivity test of @def-rational-order.)
 :::
 
 ::: {#exr-the-least-upper-bound-property-r3}
@@ -425,7 +425,7 @@ Let \( x \in \nR \). Prove that there is a **strictly increasing** sequence \( (
 :::
 
 ::: {.solution}
-*The tool* is @fd2:thm-recursion with a step given by a rule, on the set \( X \coloneqq \{ q \in \nQ : q < x \} \). Integer parts (@prp-integer-part-ordered-field with \( F = \nR \), unique) supply the rule.
+*The tool* is @fd2:thm-recursion with a step given by a rule, on the set \( X \coloneqq \{ q \in \nQ : q < x \} \). Integer parts (@prp-integer-part-ordered-field with \( F = \nR \), Archimedean by @thm-constructed-reals-archimedean; unique) supply the rule.
 
 *Start.* Let \( p \) be the integer part of \( x \), and \( q_0 \coloneqq p - 1 \). Then \( q_0 < p \le x \), so \( q_0 \in X \).
 
@@ -435,7 +435,7 @@ L < x - \frac{2}{n} < \frac{m - 1}{n} \le x - \frac{1}{n} < x .
 \]
 So \( g(k, q) \in X \), and \( g \colon \nN \times X \to X \) is a function: each step is a formula, made unambiguous by the uniqueness of integer parts. By @fd2:thm-recursion there is exactly one sequence with \( q_{k+1} = g(k, q_k) \).
 
-*Properties.* By the display, \( q_{k+1} > L \ge q_k \), so the sequence is strictly increasing; and \( x - 1/(k + 1) \le L < q_{k+1} < x \), so \( \abs{q_{k+1} - x} < 1/(k + 1) \). Given \( \varepsilon \in \nR_{>0} \), @cor-rational-epsilon-suffices (a) gives \( N \) with \( 1/n < \varepsilon \) for \( n \ge N \); for \( k \ge N \), \( \abs{q_{k+1} - x} < 1/(k + 1) < \varepsilon \). So \( q_k \to x \).
+*Properties.* By the display, \( q_{k+1} > L \ge q_k \), so the sequence is strictly increasing; and \( x - 1/(k + 1) \le L < q_{k+1} < x \), so \( \abs{q_{k+1} - x} < 1/(k + 1) \). Given \( \varepsilon \in \nR_{>0} \), @cor-rational-epsilon-suffices (a) gives \( N \) with \( 1/j < \varepsilon \) for \( j \ge N \); for \( k \ge N + 1 \), \( \abs{q_k - x} < 1/k < \varepsilon \). So \( q_k \to x \).
 
 *Why the look-alikes fail.* The terms of a representative of \( x \) converge to \( x \) (@thm-terms-converge-to-class) but need not increase. The approximants \( m_k/(k + 1) \) of Section 5.5 are \( \le x \) but not always strictly increasing (for \( x = 0 \) they are all \( 0 \)). The rational between two reals from the proof of @thm-constructed-rationals-dense is a midpoint of terms of representatives at thresholds fixed by \( \exists \)E: it is not given by a rule in the data \( (k, q) \), so it cannot serve as a recursion step. And "at each step take some rational between \( L \) and \( x \)" makes one pick for each \( k \) with no rule, an unflagged use of @fd2:ax-choice (compare @exm-representatives-need-choice).
 :::
@@ -445,10 +445,10 @@ def-complete-ordered-field (example): sup of {x < 0} is 0 in every ordered field
 def-complete-ordered-field (claim): a set has at most one supremum | antisymmetry of <= (fd2:def-partial-order (PO2), prp-ordered-field-halves (a)); inline
 lem-power-two-bound (proof): 0 + 1 = 1 and 1 + 1 = 2 in N; k + 1 >= 1 | def-omega-arithmetic (c), thm-omega-order (d), cited (the blueprint's "F3.1 (promised)" source: F3.1 is now approved)
 lem-power-two-bound (proof): y(1 + 1) = y + y | (F9), (F7) of def-commutative-ring-and-field
-thm-cauchy-archimedean-lub (proof): c - l = u - c = (u - l)/2; (D/2^k)/2 = D/2^{k+1} | lem-field-fraction-rules (b), def-naturals-in-ordered-field (b); inline
+thm-cauchy-archimedean-lub (proof): c - l = u - c = (u - l)/2; (D/2^k)/2 = D/2^{k+1}; D/2^k > 0; D(eps/D) = eps | lem-field-fraction-rules (b), def-naturals-in-ordered-field (b), prp-reciprocal-order (a), (O4), (F5), (F6); inline
 thm-cauchy-archimedean-lub (proof): induction for the invariants and for monotonicity; every j >= k is k + i | fd1:ax-induction via cor-omega-identification (b); prp-omega-order-arithmetic (a), cited
 thm-cauchy-archimedean-lub (proof): k >= n implies k * 1_F >= n * 1_F | prp-naturals-in-ordered-field (b), cited
-thm-cauchy-archimedean-lub (proof): "not an upper bound" gives a in A with a > l_K | fd1:prp-bounded-quantifier-negation and totality (prp-ordered-field-halves (a)); inline
+thm-cauchy-archimedean-lub (proof): "not an upper bound" gives a in A with a > l_K | fd1:prp-bounded-quantifier-negation (a) and totality (prp-ordered-field-halves (a)); cited
 thm-cauchy-archimedean-lub (claim): Q(t) has 2^k < t for every k | exm-rational-function-field (school polynomial algebra; warning only, nothing depends on it)
 thm-cauchy-archimedean-lub (claim): Cauchy-complete non-Archimedean fields exist (Laurent series) | not proved here; marked so in the text; nothing depends on it; an1 Ch 11 (prose pointer)
 thm-reals-complete-ordered-field (claim): forward pointers to F3.4, F3.3, AN1.1, AN1.11, F4.1, AN2.2 | prose pointers only; nothing depends on them

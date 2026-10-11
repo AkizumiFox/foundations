@@ -23,9 +23,9 @@ The second sequence approaches the hole from below, by decimal truncation. To de
 **Powers of ten.** For \( k \in \nN \), \( 10^k \) is the power in the ordered field \( \nQ \) of @def-naturals-in-ordered-field (b): \( 10^0 = 1 \) and \( 10^{k+1} = 10^k \cdot 10 \). (Here \( 10 = 10 \cdot 1_{\nQ} \), by the identification \( \nN \subseteq \nZ \subseteq \nQ \) of Chapter 2 and @prp-naturals-in-ordered-field (d).) Two facts about it are used below, both by induction (@fd1:ax-induction, read on \( \nN = \omega \) through @cor-omega-identification (b)) with base \( P(0) \).
 
 - \( 10^k \in \nZ \). Base: \( 10^0 = 1 \in \nZ \). Step: if \( 10^k \in \nZ \), then \( 10^{k+1} = 10^k \cdot 10 \) is a product of two integers, and products of integers computed in \( \nQ \) are integers (@prp-integers-embed-rationals: \( j(m) j(n) = j(mn) \)).
-- \( 10^k \ge k + 1 \). Base: \( 10^0 = 1 = 0 + 1 \). Step: suppose \( 10^k \ge y \), where \( y \coloneqq k + 1 \). Then \( y \ge 1 \) (@prp-naturals-in-ordered-field (b)), and multiplying by \( 10 > 0 \) gives \( 10^{k+1} = 10^k \cdot 10 \ge 10y \) (@prp-ordered-ring-rules (c)). Moreover \( 10y - (y + 1) = 9y - 1 \ge 9 - 1 > 0 \). So \( 10^{k+1} > y + 1 = k + 2 \), where \( (k + 1) + 1 = k + 2 \) is arithmetic in \( \nN \) (@thm-omega-arithmetic-laws), carried into \( \nQ \) by the sum law of @prp-naturals-in-ordered-field (a).
+- \( 10^k \ge k + 1 \). Base: \( 10^0 = 1 = 0 + 1 \). Step: suppose \( 10^k \ge y \), where \( y \coloneqq k + 1 \). Then \( y \ge 1 \) (@prp-naturals-in-ordered-field (b)), and multiplying by \( 10 > 0 \) gives \( 10^{k+1} = 10^k \cdot 10 \ge 10y \) (by @prp-ordered-ring-rules (c) if \( 10^k > y \); trivially if \( 10^k = y \)). Moreover \( 10y - (y + 1) = 9y - 1 \ge 9 - 1 > 0 \). So \( 10^{k+1} > y + 1 = k + 2 \), where \( (k + 1) + 1 = k + 2 \) is arithmetic in \( \nN \) (@thm-omega-arithmetic-laws), carried into \( \nQ \) by the sum law of @prp-naturals-in-ordered-field (a).
 
-In particular \( 10^k \ge 1 > 0 \), and @prp-ordered-field-halves (c), applied to \( 0 < k + 1 \le 10^k \), gives
+In particular \( 10^k \ge 1 > 0 \), so \( 1/10^k > 0 \) (@prp-reciprocal-order (a)), and @prp-ordered-field-halves (c), applied to \( 0 < k + 1 \le 10^k \), gives \( 1/10^k \le 1/(k + 1) \). Together,
 \[
 0 < \frac{1}{10^k} \le \frac{1}{k + 1} \qquad (k \in \nN) .
 \]{#eq-ten-power-reciprocal}
@@ -41,7 +41,7 @@ That such a largest \( m \) exists, and is unique, is a fact about sets of integ
 \[
 S_k \coloneqq \{ m \in \nZ : m \ge 0 \text{ and } m^2 > 2 \cdot (10^k)^2 \} .
 \]
-It is bounded below by \( 0 \), and it is non-empty: \( 2 \cdot 10^k \) is a non-negative integer, and \( (2 \cdot 10^k)^2 = 4 (10^k)^2 > 2 (10^k)^2 \) because \( (10^k)^2 > 0 \). By @prp-integer-least-element, \( S_k \) has a least element \( m^\ast \). Since \( 0^2 = 0 \le 2 (10^k)^2 \), \( 0 \notin S_k \), so \( m^\ast \ge 1 \) by discreteness (@thm-integers-ordered-ring (c)), and \( m_k \coloneqq m^\ast - 1 \) is a natural number. It is not in \( S_k \), being smaller than the least element, so \( m_k^2 \le 2 (10^k)^2 \). Every natural number \( m > m_k \) satisfies \( m \ge m^\ast \) (discreteness again), so \( m^2 \ge (m^\ast)^2 > 2 (10^k)^2 \) (@prp-ordered-ring-rules (g)). So \( m_k \) is the largest natural number with \( m^2 \le 2 (10^k)^2 \), and there is exactly one. Because the description singles out one number for each \( k \), the rule \( k \mapsto d_k \) is a function \( \nN \to \nQ \) (@fd2:def-function), with no choices made.
+It is bounded below by \( 0 \), and it is non-empty: \( 2 \cdot 10^k \) is a non-negative integer, and \( (2 \cdot 10^k)^2 = 4 (10^k)^2 > 2 (10^k)^2 \) because \( (10^k)^2 > 0 \). By @prp-integer-least-element, \( S_k \) has a least element \( m^\ast \). Since \( 0^2 = 0 \le 2 (10^k)^2 \), \( 0 \notin S_k \), so \( m^\ast \ge 1 \) by discreteness (@thm-integers-ordered-ring (c)), hence \( m_k \coloneqq m^\ast - 1 \ge 0 \) is a natural number (@thm-integers-ordered-ring (b)). It is not in \( S_k \), being smaller than the least element, so \( m_k^2 \le 2 (10^k)^2 \). Every natural number \( m > m_k \) satisfies \( m \ge m^\ast \) (discreteness again), so \( m^2 \ge (m^\ast)^2 > 2 (10^k)^2 \) (by @prp-ordered-ring-rules (g) if \( m > m^\ast \); trivially if \( m = m^\ast \)). So \( m_k \) is the largest natural number with \( m^2 \le 2 (10^k)^2 \), and there is exactly one. Because the description singles out one number for each \( k \), the rule \( k \mapsto d_k \) is a function \( \nN \to \nQ \) (@fd2:def-function), with no choices made.
 
 The first values are:
 \[
@@ -109,11 +109,11 @@ In words: whatever rational tolerance is named, **from some index on**, the two 
 - *A null sequence and zero.* \( (1/(n + 1))_n \sim (0)_n \): the difference is \( (1/(n + 1))_n \), null by @exm-first-sequences-ordered-field (b). No term of the first sequence is \( 0 \).
 - *The truncations and the Newton sequence.* \( (d_k) \sim (x_k) \); this is @exm-truncations-equivalent below.
 
-**Non-example by a minimal change.** Shift the null sequence of the second example up by one: \( b_n \coloneqq 1 + 1/(n + 1) \). It is still in \( \sC \), and \( b - (1)_n \) is still null, so \( b \sim (1)_n \). But \( b \not\sim (0)_n \): the clause that fails is "for every \( \varepsilon \)". With \( \varepsilon = 1 \), every \( n \) has \( \abs{b_n - 0} = 1 + 1/(n + 1) \ge 1 \), so no threshold exists.
+**Non-example by a minimal change.** Shift the null sequence of the second example up by one: \( b_n \coloneqq 1 + 1/(n + 1) \). It is still in \( \sC \) (a constant plus a null sequence, @thm-cauchy-algebra-ordered-field (a), (b)), and \( b - (1)_n = (1/(n + 1))_n \) is still null, so \( b \sim (1)_n \). But \( b \not\sim (0)_n \): the clause that fails is "for every \( \varepsilon \)". With \( \varepsilon = 1 \), every \( n \) has \( \abs{b_n - 0} = 1 + 1/(n + 1) \ge 1 \), so no threshold exists.
 
 **Why this definition.**
 
-- *Why "null", and not "same limit".* Two sequences with a common limit in \( \nQ \) have null difference (@thm-limit-laws-ordered-field (b)), so for convergent sequences the new relation says "same limit". But it is stated without mentioning any limit, so it applies equally to \( (x_k) \) and \( (d_k) \), which have none in \( \nQ \).
+- *Why "null", and not "same limit".* Two sequences with a common limit in \( \nQ \) have null difference (@thm-limit-laws-ordered-field (b)). Conversely, if \( a \to L \) and \( b \to L' \) with \( a - b \) null, then \( a - b \) tends to both \( L - L' \) and \( 0 \), so \( L = L' \) (@thm-limit-unique-ordered-field). So for convergent sequences the new relation says exactly "same limit". But it is stated without mentioning any limit, so it applies equally to \( (x_k) \) and \( (d_k) \), which have none in \( \nQ \).
 - *Why not "eventually equal".* Then \( (x_k) \) and \( (d_k) \) would name different numbers, and so would \( (1/(n + 1))_n \) and \( (0)_n \). Sequences that agree ever more closely, without ever agreeing exactly, would never be identified.
 - *Why only on \( \sC \).* On all sequences of rationals the same relation would not respect products, and Section 5.2 needs it to. For instance \( (1/(n + 1))_n \) and \( (0)_n \) have null difference, but multiplying both termwise by \( (n + 1)_n \), which is not Cauchy, gives \( (1)_n \) and \( (0)_n \), whose difference is not null. Inside \( \sC \) every multiplier is bounded, and that is what saves the product.
 
@@ -134,7 +134,7 @@ Let \( a, b, c \in \sC \).
 
 (Eq1) \( a - a = (0)_n \), which is null (@exm-first-sequences-ordered-field (a)). So \( a \sim a \).
 
-(Eq2) Suppose \( a \sim b \). For every \( n \), \( b_n - a_n = -(a_n - b_n) \) (@prp-ring-algebra (c)), so \( b - a = -(a - b) \), which is null by @thm-limit-laws-ordered-field (b) (\( -0 = 0 \)). So \( b \sim a \).
+(Eq2) Suppose \( a \sim b \). For every \( n \), \( b_n - a_n = -(a_n - b_n) \) (since \( (a_n - b_n) + (b_n - a_n) = 0 \) by (F1)–(F4), and negatives are unique, @prp-ring-algebra (a)), so \( b - a = -(a - b) \), which is null by @thm-limit-laws-ordered-field (b) (\( -0 = 0 \)). So \( b \sim a \).
 
 (Eq3) Suppose \( a \sim b \) and \( b \sim c \). For every \( n \),
 \[
@@ -164,7 +164,7 @@ Show that \( (d_k) \) is non-decreasing, that \( (d_k) \in \sC \), and that \( (
 \[
 (10 m_k)^2 = 100 \, m_k^2 \le 200 \, (10^k)^2 = 2 \, (10^k \cdot 10)^2 = 2 \, (10^{k+1})^2 .
 \]
-So \( 10 m_k \) is a natural number whose square is at most \( 2 (10^{k+1})^2 \), and \( m_{k+1} \) is the largest such: \( 10 m_k \le m_{k+1} \). Dividing by \( 10^{k+1} > 0 \) (@prp-reciprocal-order (a), @prp-ordered-ring-rules (c)),
+So \( 10 m_k \) is a natural number whose square is at most \( 2 (10^{k+1})^2 \), and \( m_{k+1} \) is the largest such: \( 10 m_k \le m_{k+1} \). Dividing by \( 10^{k+1} > 0 \) (@prp-reciprocal-order (a), and @prp-ordered-ring-rules (c) if \( 10 m_k < m_{k+1} \); trivially if they are equal),
 \[
 d_{k+1} = \frac{m_{k+1}}{10^{k+1}} \ge \frac{10 m_k}{10^k \cdot 10} = \frac{m_k}{10^k} = d_k .
 \]
@@ -184,7 +184,7 @@ Now let \( \varepsilon \in \nQ_{>0} \). By @cor-rationals-archimedean-epsilon th
 \[
 2 < d_k^2 + \frac{2 d_k}{10^k} + \frac{1}{10^k} \cdot \frac{1}{10^k} .
 \]
-Here \( d_k < 2 \), since \( 0 \le d_k \) and \( d_k^2 \le 2 < 4 = 2^2 \) (@prp-ordered-ring-rules (g)); and \( (1/10^k)(1/10^k) \le 1/10^k \), since \( 0 < 1/10^k \le 1 \) by @eq-ten-power-reciprocal. So \( 2 - d_k^2 < 4/10^k + 1/10^k = 5/10^k \).
+Here \( d_k < 2 \), since \( 0 \le d_k \) and \( d_k^2 \le 2 < 4 = 2^2 \) (@prp-ordered-ring-rules (g)); and \( (1/10^k)(1/10^k) \le 1/10^k \), since \( 0 < 1/10^k \le 1 \) by @eq-ten-power-reciprocal. Multiplying \( d_k < 2 \) by \( 2/10^k > 0 \) (@prp-ordered-ring-rules (c)) and adding the two bounds (@prp-ordered-ring-rules (b)), \( 2 - d_k^2 < 4/10^k + 1/10^k = 5/10^k \).
 
 *Step 4: \( (d_k) \sim (x_k) \).* Let \( k \ge 1 \). By (NS2), \( x_k > 1 \), and \( d_k \ge 1 \) by Step 1, so \( x_k + d_k \ge 1 \). Since \( \abs{x_k - d_k} \ge 0 \), @prp-ordered-field-halves (d) gives
 \[
@@ -212,13 +212,13 @@ A class will contain far more than the two sequences of the hook. The next examp
 [Finite Changes and Shifts]
 
 ::: {.enumerate options="label=(\alph*)"}
-1. Let \( a, b \in \sC \), and suppose there is \( N_0 \in \nN \) with \( a_n = b_n \) for every \( n \ge N_0 \). Show that \( a \sim b \).
+1. Let \( a \in \sC \), let \( b \colon \nN \to \nQ \), and suppose there is \( N_0 \in \nN \) with \( a_n = b_n \) for every \( n \ge N_0 \). Show that \( b \in \sC \) and \( a \sim b \).
 2. Let \( a \in \sC \), and let \( s \coloneqq (a_{n+1})_{n \in \nN} \) be the shifted sequence. Show that \( s \in \sC \) and \( s \sim a \).
 :::
 :::
 
 ::: {.solution}
-(a) For \( n \ge N_0 \), \( a_n - b_n = 0 \). So \( a - b \) agrees with the null sequence \( (0)_n \) from \( N_0 \) on, and is null by @prp-tail-change-ordered-field (a). Hence \( a \sim b \).
+(a) \( b \in \sC \) by the tail-change remark after @def-cauchy-sequence-ordered-field (Section 4.5). For \( n \ge N_0 \), \( a_n - b_n = 0 \). So \( a - b \) agrees with the null sequence \( (0)_n \) from \( N_0 \) on, and is null by @prp-tail-change-ordered-field (a). Hence \( a \sim b \).
 
 (b) Let \( \varepsilon \in \nQ_{>0} \), and let \( N \) be a threshold for \( a \) with tolerance \( \varepsilon \) (@def-rational-cauchy-sequences). For \( m, n \ge N \), also \( m + 1, n + 1 \ge N \), so \( \abs{s_m - s_n} = \abs{a_{m+1} - a_{n+1}} < \varepsilon \): \( s \in \sC \), with the same thresholds. For \( n \ge N \), apply the Cauchy condition to the pair \( (n + 1, n) \), both indices \( \ge N \):
 \[
@@ -230,7 +230,7 @@ So \( s - a \) is null, and \( s \sim a \).
 By (a), a representative of a class may begin with **any** finite list of rationals: \( (5, -3, 7, 1/4, 1/5, 1/6, \dots) \), which is \( 1/(n + 1) \) from \( n = 3 \) on, is equivalent to \( (1/(n + 1))_n \), and so to \( (0)_n \). Part (b) uses the Cauchy condition with the two indices \( n + 1 \) and \( n \); a sequence of rationals that is not Cauchy can fail it (for \( ((-1)^n)_n \), every \( \abs{a_{n+1} - a_n} \) is \( 2 \)).
 
 ::: {.warning}
-**Equivalent is not "eventually equal", and not "close at the start".** \( (1/(n + 1))_n \sim (0)_n \), though no term of the first sequence is \( 0 \). And \( (0)_n \) and \( (1 - 1/(n + 1))_n \) have the same first term, \( 0 \), but are **not** equivalent: their difference converges to \( 1 \) (@thm-limit-laws-ordered-field), so it is not null, by uniqueness of limits. Only the behavior far out counts, and it counts at every tolerance.
+**Equivalent is not "eventually equal", and not "close at the start".** \( (1/(n + 1))_n \sim (0)_n \), though no term of the first sequence is \( 0 \). And \( (0)_n \) and \( (1 - 1/(n + 1))_n \) have the same first term, \( 0 \), but are **not** equivalent: their difference \( (0)_n - (1 - 1/(n + 1))_n \) converges to \( -1 \) (@thm-limit-laws-ordered-field (a), (b) with @exm-first-sequences-ordered-field (a), (b)), so it is not null, by uniqueness of limits (@thm-limit-unique-ordered-field). Only the behavior far out counts, and it counts at every tolerance.
 :::
 
 ::: {.check}
@@ -242,9 +242,9 @@ Let \( a \coloneqq (1, 0, 1, 0, \dots) \), with \( a_n = 1 \) for even \( n \) a
 \[
 \exists \varepsilon \in \nQ_{>0} \ \ \forall N \in \nN \ \ \exists m, n \ge N \ \ \abs{a_m - a_n} \ge \varepsilon ,
 \]
-and it holds with \( \varepsilon = 1/2 \): for any \( N \), the indices \( m = N \) and \( n = N + 1 \) have one even and one odd, so \( \abs{a_m - a_n} = 1 \ge 1/2 \).
+and it holds with \( \varepsilon = 1/2 \): for any \( N \), the indices \( m = N \) and \( n = N + 1 \) have one even and one odd (@prp-omega-powers-parity (d)), so \( \abs{a_m - a_n} = 1 \ge 1/2 \).
 
-\( b \in \sC \), and \( b \sim (0)_n \). Indeed \( b \) is null: given \( \varepsilon \in \nQ_{>0} \), @cor-rationals-archimedean-epsilon gives \( K \in \nZ_{>0} \) with \( 1/m < \varepsilon \) for every integer \( m \ge K \). For \( n \ge 2K \), either \( n \) is odd and \( b_n = 0 < \varepsilon \), or \( n = 2k \) with \( k \ge K \) and \( b_n = 1/(k + 1) < \varepsilon \). So \( b \) is null, hence in \( \sC \) (@thm-cauchy-algebra-ordered-field (a)), and \( b - (0)_n = b \) is null. The pattern "a non-zero term every other index" is the same in \( a \) and \( b \); what differs is whether those terms die out.
+\( b \in \sC \), and \( b \sim (0)_n \). Indeed \( b \) is null: given \( \varepsilon \in \nQ_{>0} \), @cor-rationals-archimedean-epsilon gives \( K \in \nZ_{>0} \) with \( 1/m < \varepsilon \) for every integer \( m \ge K \). For \( n \ge 2K \), \( n \) is odd or of the form \( 2k \) (@prp-omega-powers-parity (d)), and in the second case \( k \ge K \). So either \( n \) is odd and \( b_n = 0 < \varepsilon \), or \( n = 2k \) with \( k \ge K \) and \( b_n = 1/(k + 1) < \varepsilon \). So \( b \) is null, hence in \( \sC \) (@thm-cauchy-algebra-ordered-field (a)), and \( b - (0)_n = b \) is null. The pattern "a non-zero term every other index" is the same in \( a \) and \( b \); what differs is whether those terms die out.
 :::
 
 The relation is in place, and it is an equivalence relation. The next section takes its classes as the real numbers and gives them an arithmetic.
@@ -369,7 +369,7 @@ The hypothesis of (b) is that the sequences agree at **infinitely many** indices
 
 **Marking scheme.** (10 points)
 
-- 2: proves \( n_k \ge k \) by induction, with the step justified.
+- 2: proves \( n_k \ge k \) for every \( k \), justifying the passage from \( n_{k+1} > n_k \ge k \) (or, by a least counterexample, from \( n_k > n_{k-1} \ge k - 1 \)) to the next whole number.
 - 3: shows \( (a_{n_k}) \in \sC \), with one threshold that serves all \( j, k \ge N \) and with \( n_j, n_k \ge N \) justified from \( n_k \ge k \).
 - 3: shows \( (a_{n_k} - a_k)_k \) is null by applying the Cauchy condition to the pair \( (n_k, k) \).
 - 2: deduces (b) by symmetry and transitivity of \( \sim \).
@@ -381,25 +381,31 @@ Fatal errors (0 for the step): using a limit of \( a \) in \( \nQ \); a threshol
 exm-truncations-equivalent (claim): N = omega and the identification N in Z in Q, so that 10 = 10 * 1_Q and k + 1 is rational | cor-omega-identification (b), prp-naturals-in-ordered-field (d), F3.2 identification remarks (cited)
 exm-truncations-equivalent (claim): (k + 1) + 1 = k + 2 and 1 <= k + 1 in N | thm-omega-arithmetic-laws (cited), thm-omega-order (d); carried into Q by prp-naturals-in-ordered-field (a), (b)
 exm-truncations-equivalent (claim): 10^k in Z and 10^k >= k + 1, by induction | inline, fd1:ax-induction (cited); 9y - 1 >= 8 > 0 for y >= 1 by prp-ordered-ring-rules (b), (c)
-exm-truncations-equivalent (claim): existence and uniqueness of m_k, the largest natural number with m^2 <= 2 (10^k)^2 | inline, prp-integer-least-element and thm-integers-ordered-ring (c) (cited); (10^k)^2 > 0 from 10^k >= 1
+exm-truncations-equivalent (claim): existence and uniqueness of m_k, the largest natural number with m^2 <= 2 (10^k)^2 | inline, prp-integer-least-element and thm-integers-ordered-ring (b), (c) (cited); (10^k)^2 > 0 from 10^k >= 1; m >= m* gives m^2 >= (m*)^2 by prp-ordered-ring-rules (g) (cited) with the case m = m*
 exm-truncations-equivalent (claim): table of m_k for k <= 6 and the differences x_k - d_k for k = 1, 2, 3 | verify/ch05/exm-truncations-equivalent.py
 exm-truncations-equivalent (claim): x_k^2 > 2 >= d_k^2, so x_k != d_k | exm-newton-rationals-sqrt2 (i) (cited) and the definition of m_k
 def-cauchy-equivalent (claim): a convergent pair with a common limit has null difference | thm-limit-laws-ordered-field (b) (cited)
-prp-cauchy-equivalent-relation (proof): b_n - a_n = -(a_n - b_n); -0 = 0, 0 + 0 = 0 | prp-ring-algebra (c) (cited); field axioms of Q
+def-cauchy-equivalent (claim): conversely, a -> L, b -> L' and a - b null give L = L' | thm-limit-laws-ordered-field (b), thm-limit-unique-ordered-field (cited)
+def-cauchy-equivalent (claim): (non-example) 1 + 1/(n + 1) is in C | thm-cauchy-algebra-ordered-field (a), (b) (cited)
+prp-cauchy-equivalent-relation (proof): b_n - a_n = -(a_n - b_n); -0 = 0, 0 + 0 = 0 | (F1)-(F4) and uniqueness of negatives, prp-ring-algebra (a) (cited); field axioms of Q
 exm-truncations-equivalent (solution): (10 m)^2 = 100 m^2 and 100 * 2 (10^k)^2 = 2 (10^k * 10)^2; m_{k+1}/(10^k 10) rearranged | field arithmetic in Q (thm-rationals-ordered-field, prp-ring-algebra); defining equation of 10^{k+1}; no exponent law
 exm-truncations-equivalent (solution): every j >= k is k + i | prp-omega-order-arithmetic (a) (cited)
 exm-truncations-equivalent (solution): m_0 = 1, d_0 = 1 | 1 <= 2 < 4; verify/ch05/exm-truncations-equivalent.py
 exm-truncations-equivalent (solution): a <= b with a, b >= 0 gives a^2 <= b^2 | prp-ordered-ring-rules (g) (cited) with the case a = b
+exm-truncations-equivalent (claim): 10^k >= y gives 10^{k+1} >= 10y; 1/10^k > 0 | prp-ordered-ring-rules (c) (cited) with the case 10^k = y; prp-reciprocal-order (a) (cited)
+exm-truncations-equivalent (solution): 10 m_k <= m_{k+1} divided by 10^{k+1} | prp-reciprocal-order (a), prp-ordered-ring-rules (c) (cited) with the equal case
+exm-truncations-equivalent (solution): d < 2 and h > 0 give 2dh < 4h; adding h * h <= h | prp-ordered-ring-rules (c), (b) (cited)
 exm-truncations-equivalent (solution): (d + h)^2 = d^2 + 2dh + h^2 | prp-ring-algebra (d) (cited)
 exm-truncations-equivalent (solution): 0 <= x <= 1 gives x * x <= x | prp-ordered-field-halves (d) (cited) with (x, 1)
 exm-truncations-equivalent (solution): 4k >= k + 1 for k >= 1 | inline, 3k - 1 > 0
 exm-truncations-equivalent (solution): |x - d| (x + d) = |x^2 - d^2| | prp-absolute-value-ordered-field (b) (cited), |x + d| = x + d as x + d > 0
 exm-truncations-equivalent (solution): numerical check at k = 1 (3/4 and 1/10) | verify/ch05/exm-truncations-equivalent.py
 exm-truncations-equivalent (claim): (d_k) has no limit in Q | thm-limit-laws-ordered-field (a), thm-sqrt2-cauchy-no-rational-limit (cited)
+exm-finite-change-equivalent (solution): (a) b agrees with a in C from N_0 on, so b in C | the tail-change remark after def-cauchy-sequence-ordered-field (F3.9 §05, cited)
 exm-finite-change-equivalent (claim): the example list (5, -3, 7, 1/4, ...) is 1/(n + 1) from n = 3 on | inline
 exm-finite-change-equivalent (claim): |(-1)^{n+1} - (-1)^n| = 2 | inline, as in F3.9's ledger for thm-cauchy-not-null-sign
-exm-finite-change-equivalent (claim): (warning) 1 - 1/(n + 1) -> 1 | thm-limit-laws-ordered-field (a), (b) and exm-first-sequences-ordered-field (cited)
-exm-finite-change-equivalent (claim): (check) b is null, n >= 2K splits into odd n and n = 2k with k >= K | inline parity of natural numbers (prp-omega-powers-parity, F3.1 §06)
+exm-finite-change-equivalent (claim): (warning) (0)_n - (1 - 1/(n + 1))_n -> -1, not null | thm-limit-laws-ordered-field (a), (b), exm-first-sequences-ordered-field (a), (b), thm-limit-unique-ordered-field (cited)
+exm-finite-change-equivalent (claim): (check) a: N and N + 1 have one even and one odd; b: n >= 2K splits into odd n and n = 2k with k >= K | prp-omega-powers-parity (d) (F3.1 §06, cited), with order cancellation on N (prp-omega-order-arithmetic)
 exr-cauchy-sequences-of-rationals-a1 (solution): |(-1)^n| = 1 | prp-absolute-value-ordered-field (b), induction; inline
 exr-cauchy-sequences-of-rationals-a1 (solution): negation of a ~ b | fd1:prp-bounded-quantifier-negation, fd1:prp-negated-implication (cited)
 exr-cauchy-sequences-of-rationals-b2 (solution): x - 2/x = (x^2 - 2)/x; 4/x^2 < 2 from x^2 > 2 | field arithmetic (lem-field-fraction-rules (b)), prp-reciprocal-order; verify/ch05/exr-cauchy-sequences-of-rationals-b2.py

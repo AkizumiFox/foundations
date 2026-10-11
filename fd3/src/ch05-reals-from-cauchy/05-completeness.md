@@ -34,13 +34,13 @@ One device removes both: replace \( x_k \) by a single rational \( q_k \) within
 
 ③ **The candidate is the limit.** \( x_k \) is near \( q_k \), which is near \( x \): give each half of the tolerance.
 
-The tolerance in ① must be **rational**, since membership of \( \sC \) is tested with \( \varepsilon \in \nQ_{>0} \) (@def-rational-cauchy-sequences); the triangle inequality, however, is used in \( \nR \), where the \( x_k \) live. The last line of ① carries the inequality back to \( \nQ \). The formula: \( q_k \coloneqq m_k/(k + 1) \), where \( m_k \) is the integer part of \( (k + 1) x_k \) in the Archimedean field \( \nR \). *Before reading on: why must \( m_k \) be **the** integer part, and not just some integer with \( m_k \le (k + 1) x_k < m_k + 1 \)?*
+The tolerance in ① must be **rational**, since membership of \( \sC \) is tested with \( \varepsilon \in \nQ_{>0} \) (@def-rational-cauchy-sequences); the triangle inequality, however, is used in \( \nR \), where the \( x_k \) live. Step 1 of the proof ends by carrying the inequality back to \( \nQ \) through \( \kappa \) (@thm-rational-embedding). The formula: \( q_k \coloneqq m_k/(k + 1) \), where \( m_k \) is the integer part of \( (k + 1) x_k \) in the Archimedean field \( \nR \). *Before reading on: why must \( m_k \) be **the** integer part, and not just some integer with \( m_k \le (k + 1) x_k < m_k + 1 \)?*
 :::
 
 ::: {.proof}
 Let \( (x_k) \) be a Cauchy sequence in \( \nR \).
 
-**Step 0: the approximants.** For \( k \in \nN \), let \( m_k \in \nZ \) be the integer part of \( (k + 1) x_k \) in \( \nR \) (@prp-integer-part-ordered-field with \( F = \nR \), which is Archimedean by @thm-constructed-reals-archimedean), and let \( q_k \coloneqq m_k/(k + 1) \in \nQ \). Since the integer part is unique, \( k \mapsto q_k \) is a function \( \nN \to \nQ \) (@fd2:def-function); no use of @fd2:ax-choice is made. Multiplying \( m_k \le (k + 1) x_k < m_k + 1 \) by the positive element \( 1/(k + 1) \) (@prp-reciprocal-order (a), @prp-ordered-ring-rules (c)), and using \( \kappa(m_k)\kappa(k + 1)^{-1} = \kappa(q_k) \) (@thm-rational-embedding (a), (c)), we get
+**Step 0: the approximants.** For \( k \in \nN \), let \( m_k \in \nZ \) be the integer part of \( (k + 1) x_k \) in \( \nR \) (@prp-integer-part-ordered-field with \( F = \nR \), which is Archimedean by @thm-constructed-reals-archimedean; there \( \iota_{\nR} = \kappa \) by @thm-rational-embedding (d)), and let \( q_k \coloneqq m_k/(k + 1) \in \nQ \). Since the integer part is unique, \( k \mapsto q_k \) is a function \( \nN \to \nQ \) (@fd2:def-function); no use of @fd2:ax-choice is made. Multiplying \( m_k \le (k + 1) x_k < m_k + 1 \) by the positive element \( 1/(k + 1) \) (@prp-reciprocal-order (a), @prp-ordered-ring-rules (c)), and using \( \kappa(m_k)\kappa(k + 1)^{-1} = \kappa(q_k) \) (@thm-rational-embedding (a), (c)), we get
 \[
 0 \le x_k - \kappa(q_k) < \kappa\Bigl(\frac{1}{k + 1}\Bigr) \qquad \text{for every } k \in \nN .
 \]{#eq-approximant-bound}
@@ -71,9 +71,9 @@ by @prp-absolute-value-ordered-field (e) and @thm-rational-embedding (a). So \( 
 
 The answer to the prompt about \( m_k \): existence alone would give, for each \( k \), a non-empty set of admissible integers, and taking one from each of these infinitely many sets, with no rule, is again a use of choice. Uniqueness makes each of these sets a singleton, so "the integer part of \( (k + 1) x_k \)" names one integer for each \( k \), and Step 0 defines a function outright. Existence of an integer part would not be enough; the proof needs the uniqueness half of @prp-integer-part-ordered-field.
 
-Where is each hypothesis used? The Cauchy property of \( (x_k) \) is used once, for \( K_2 \) in Step 1; Step 3 uses only the approximants and Step 2. The Archimedean property of \( \nR \) is used in Step 0, through the integer part, and the Archimedean property of \( \nQ \) in Step 1, for \( K_1 \). Without the Cauchy hypothesis the conclusion fails: the sequence \( x_k = k \) has approximants \( q_k = k \), which do not form a member of \( \sC \), and it converges to nothing in \( \nR \), being unbounded (@prp-convergent-bounded-ordered-field, with @thm-constructed-reals-archimedean for the unboundedness).
+Where is each hypothesis used? The Cauchy property of \( (x_k) \) is used once, for \( K_2 \) in Step 1; Step 3 uses only the approximants and Step 2. The Archimedean property of \( \nR \) is used in Step 0, through the integer part, and in Steps 2 and 3, through @cor-rational-epsilon-suffices (b) (cited in Step 3 and in the proof of @thm-terms-converge-to-class); the Archimedean property of \( \nQ \) is used in Step 1, for \( K_1 \). Without the Cauchy hypothesis the conclusion fails: the sequence \( x_k = k \) has approximants \( q_k = k \), which do not form a member of \( \sC \), and it converges to nothing in \( \nR \), being unbounded (@prp-convergent-bounded-ordered-field, with @thm-constructed-reals-archimedean for the unboundedness).
 
-*Real numbers have no holes of their own.* Together with @prp-convergent-cauchy-ordered-field (with \( F = \nR \)), the theorem says that a sequence in \( \nR \) converges in \( \nR \) **if and only if** it is Cauchy in \( \nR \). In \( \nQ \) only the "only if" half holds, by @thm-sqrt2-cauchy-no-rational-limit. A second round of the construction, starting from Cauchy sequences of reals, would find every such sequence already convergent: there is no hole left for it to fill.
+*Real numbers have no holes of their own.* Together with @prp-convergent-cauchy-ordered-field (with \( F = \nR \)), the theorem says that a sequence in \( \nR \) converges in \( \nR \) **if and only if** it is Cauchy in \( \nR \). In \( \nQ \) the "only if" half holds (@prp-convergent-cauchy-ordered-field, \( F = \nQ \)), and the "if" half fails (@thm-sqrt2-cauchy-no-rational-limit). A second round of the construction, starting from Cauchy sequences of reals, would find every such sequence already convergent: there is no hole left for it to fill.
 
 ## The approximant, by a rule
 
@@ -114,7 +114,7 @@ Let \( (x_k) \) be a sequence in \( \nR \). A proof that says "for each \( k \),
 ::: {.solution}
 Each \( x_k \) is a class, a non-empty subset of \( \sC \) (@fd2:def-equivalence-class). The family \( (x_k)_{k \in \nN} \) is a family of non-empty sets indexed by \( \nN \), and "pick \( a^{(k)} \in x_k \) for each \( k \)" asks for a function \( c \colon \nN \to \sC \) with \( c(k) \in x_k \) for every \( k \): a choice function for the family. Its existence, with no rule given, is what @fd2:ax-choice provides. A single \( \exists \)E would give one representative of one \( x_k \); it cannot give infinitely many in one step.
 
-The proof of @thm-constructed-reals-cauchy-complete never picks a representative of any \( x_k \). It uses the classes only through their order relations with rationals, in Step 0, and through the Cauchy condition on \( (x_k) \) in Step 1. The only sequence it builds, \( (q_k) \), is given by a rule. So @fd2:ax-choice is not used.
+The proof of @thm-constructed-reals-cauchy-complete never picks a representative of any \( x_k \). It uses each \( x_k \) only as an element of the ordered field \( \nR \) (its arithmetic and order, in Steps 0, 1 and 3), never through a representative; the Cauchy condition on \( (x_k) \) enters only in Step 1. The only sequence it builds, \( (q_k) \), is given by a rule. So @fd2:ax-choice is not used.
 
 In fact the theorem produces a rule for representatives as a by-product. Run its construction on the constant sequence \( x_k = y \) for a fixed \( y \in \nR \), which is Cauchy in \( \nR \) (@thm-cauchy-algebra-ordered-field (a)). Step 1 shows that the approximants \( q_k = m_k/(k + 1) \), with \( m_k \) the integer part of \( (k + 1) y \), form a member of \( \sC \), and Step 3 that the constant sequence \( y \) converges to \( [(q_k)] \). It also converges to \( y \) (@exm-first-sequences-ordered-field (a)), so \( [(q_k)] = y \) by @thm-limit-unique-ordered-field. Thus \( (q_k) \) is a representative of \( y \), named by a formula in \( y \). Choice is not needed for representatives at all; what goes wrong is picking them **without saying how**.
 :::
@@ -148,9 +148,9 @@ These questions are about the proof of @thm-constructed-reals-cauchy-complete.
 
 (c) Only in Step 1, for the threshold \( K_2 \). Step 3 uses the approximant bound and Step 2, not the Cauchy property directly: by then it has been spent on making \( (q_k) \) a member of \( \sC \).
 
-(d) The approximants are \( q_k = m_k/(k + 1) \), with \( m_k \) the integer part of \( (k + 1) r \), and \( x \coloneqq [(q_k)] \). By the theorem's proof, \( x_k \to x \); the constant sequence \( r \) also tends to \( r \), so \( x = r \) by @thm-limit-unique-ordered-field. Concretely, \( q_0 = 1 \), \( q_1 = 1 \) (since \( 2 \le 2r < 3 \)), \( q_2 = 4/3 \) (since \( 4 \le 3r < 5 \)): a third sequence of rationals, besides \( (x_n) \) and \( (d_k) \), in the class \( r \).
+(d) The approximants are \( q_k = m_k/(k + 1) \), with \( m_k \) the integer part of \( (k + 1) r \), and \( x \coloneqq [(q_k)] \). By the theorem's proof, \( x_k \to x \); the constant sequence \( r \) also tends to \( r \), so \( x = r \) by @thm-limit-unique-ordered-field. Concretely, \( q_0 = 1 \), \( q_1 = 1 \) (since \( 2 \le 2r < 3 \)), \( q_2 = 4/3 \) (since \( 4 \le 3r < 5 \)): a third sequence of rationals, besides the Newton sequence of @exm-newton-rationals-sqrt2 and the truncations \( (d_k) \), both in the class \( r \) by @exm-sqrt2-class.
 
-(e) Converges: \( \exists x \in \nR \ \forall \varepsilon \in \nR_{>0} \ \exists K \in \nN \ \forall k \in \nN \ (k \ge K \Rightarrow \abs{x_k - x} < \varepsilon) \). Negation (@fd1:prp-quantifier-negation, @fd1:prp-bounded-quantifier-negation, and \( \neg(y < \varepsilon) \) read as \( y \ge \varepsilon \) by (O1)):
+(e) Converges: \( \exists x \in \nR \ \forall \varepsilon \in \nR_{>0} \ \exists K \in \nN \ \forall k \in \nN \ (k \ge K \Rightarrow \abs{x_k - x} < \varepsilon) \). Negation (@fd1:prp-quantifier-negation, @fd1:prp-bounded-quantifier-negation, @fd1:prp-negated-implication, and \( \neg(y < \varepsilon) \) read as \( y \ge \varepsilon \) by (O1)):
 \[
 \forall x \in \nR \ \ \exists \varepsilon \in \nR_{>0} \ \ \forall K \in \nN \ \ \exists k \in \nN \ \ \bigl( k \ge K \wedge \abs{x_k - x} \ge \varepsilon \bigr) .
 \]
@@ -208,7 +208,7 @@ Let \( (x_k) \) be Cauchy in \( \nR \).
 - 2: an approximant \( q_k \in \nQ \) defined by a rule (unique integer part, or another explicit formula), with an explicit bound on \( \abs{x_k - q_k} \) tending to \( 0 \).
 - 3: \( (q_k) \in \sC \) by an \( \varepsilon/3 \) (or equivalent) estimate, with **rational** \( \varepsilon \) and the passage from \( \nR \) back to \( \nQ \) through \( \kappa \) justified.
 - 1: the candidate \( x = [(q_k)] \) named.
-- 2: \( q_k \to x \) in \( \nR \), justified by the theorem that the terms of a representative converge to its class.
+- 2: \( q_k \to x \) in \( \nR \), by @thm-terms-converge-to-class, or directly as in its proof: \( \abs{x - \kappa(q_k)} = [(\abs{q_m - q_k})_m] \) (@prp-reals-absolute-value-termwise), bounded through @lem-termwise-order, which gives only \( \le \). Either route earns both points.
 - 2: \( x_k \to x \), with the threshold chosen after the tolerance and depending on it only.
 Fatal errors (0 for the step): approximants or representatives "chosen" with no rule and no mention of choice; a real \( \varepsilon \) used to test membership of \( \sC \); "\( q_k \to x \) because \( x \) is the limit of \( (q_k) \)" (circular: that is what @thm-terms-converge-to-class proves). A proof that uses choice openly (representatives, with a threshold for each) and says so proves the theorem, but earns at most 1 of the 2 points of the first step, since the question asks for a construction that avoids it.
 :::
@@ -221,7 +221,7 @@ Here is an argument for @thm-constructed-reals-cauchy-complete. Is its conclusio
 > (1) Let \( (x_k) \) be a Cauchy sequence in \( \nR \).
 > (2) For each \( k \in \nN \), pick a representative \( a^{(k)} \in \sC \) of \( x_k \).
 > (3) Let \( q_k \coloneqq a^{(k)}_k \), the \( k \)-th term of the \( k \)-th representative.
-> (4) The sequence \( (q_k) \) is Cauchy in \( \nQ \), since each \( a^{(k)} \) is Cauchy and \( (x_k) \) is Cauchy.
+> (4) The sequence \( (q_k) \) is Cauchy in \( \nQ \), and \( \abs{x_k - \kappa(q_k)} \to 0 \) in \( \nR \), since each \( a^{(k)} \) is Cauchy and \( (x_k) \) is Cauchy.
 > (5) Let \( x \coloneqq [(q_k)] \). Then \( x_k \to x \), by an \( \varepsilon/2 \) argument through the terms \( q_k \).
 :::
 
@@ -242,22 +242,22 @@ Try the constant sequence \( x_k = 0 \) for every \( k \), and representatives t
 
 *The failing line is (4).* Each \( a^{(k)} \) being Cauchy says that the terms of one representative settle down eventually, past a threshold that depends on \( k \); nothing ties the \( k \)-th term of \( a^{(k)} \) to \( x_k \), and nothing ties different representatives to each other at index \( k \). The Cauchy property of \( (x_k) \) is about the classes, and the line uses it as if it were about the diagonal terms.
 
-*Counterexample to the step.* Let \( x_k = 0 \) for every \( k \), a Cauchy sequence in \( \nR \). For each \( k \), let \( a^{(k)}_n \coloneqq k \) for \( n \le k \) and \( a^{(k)}_n \coloneqq 0 \) for \( n > k \). Each \( a^{(k)} \) is eventually equal to the zero sequence, so it is in \( \sC \) and represents \( 0 \) (@exm-finite-change-equivalent). Then \( q_k = a^{(k)}_k = k \), and \( (k) \) is not Cauchy in \( \nQ \) (it is not bounded, @prp-cauchy-bounded-ordered-field). The premises of (4) hold and its conclusion fails.
+*Counterexample to the step.* Let \( x_k = 0 \) for every \( k \), a Cauchy sequence in \( \nR \). For each \( k \), let \( a^{(k)}_n \coloneqq k \) for \( n \le k \) and \( a^{(k)}_n \coloneqq 0 \) for \( n > k \). Each \( a^{(k)} \) is eventually equal to the zero sequence, so it is in \( \sC \) and represents \( 0 \) (@exm-finite-change-equivalent). Then \( q_k = a^{(k)}_k = k \), and \( (k) \) is not Cauchy in \( \nQ \): consecutive terms satisfy \( \abs{q_{k+1} - q_k} = 1 \), so the Cauchy condition fails for \( \varepsilon = 1 \). Nor does \( \abs{x_k - \kappa(q_k)} = \kappa(k) \) tend to \( 0 \): it is \( \ge 1 \) for every \( k \ge 1 \). The premises of (4) hold and both parts of its conclusion fail.
 
-*A second, separate defect: line (2).* "For each \( k \), pick" makes one pick from each of infinitely many classes with no rule: an unflagged use of @fd2:ax-choice (@exm-representatives-need-choice). Even if (4) were repaired, the argument would use choice without saying so. Line (5) is not reached; it would be correct once (4) is.
+*A second, separate defect: line (2).* "For each \( k \), pick" makes one pick from each of infinitely many classes with no rule: an unflagged use of @fd2:ax-choice (@exm-representatives-need-choice). Even if (4) were repaired, the argument would use choice without saying so. Line (5) is correct given (4): \( \kappa(q_k) \to x \) in \( \nR \) by @thm-terms-converge-to-class, and \( \abs{x_k - x} \le \abs{x_k - \kappa(q_k)} + \abs{\kappa(q_k) - x} \). The bound on \( \abs{x_k - \kappa(q_k)} \) is needed: knowing only that \( (q_k) \) is Cauchy would not do (with \( a^{(k)}_n = 1 \) for \( n \le k \) and \( 0 \) after, \( q_k = 1 \) for every \( k \), yet \( x_k = 0 \) does not tend to \( [(1)] = 1 \)).
 
 *Repair.* Either keep representatives and control the diagonal (for each \( k \), go far enough out in \( a^{(k)} \) that its terms are within \( 1/(k + 1) \) of \( x_k \), which @thm-terms-converge-to-class makes possible, and use that term in place of \( a^{(k)}_k \)), at the price of a choice of representatives and of thresholds, flagged; or, better, drop representatives and use the integer-part approximant \( q_k = m_k/(k + 1) \) of the text, which needs no choice at all.
 
 **Marking scheme.** (10 points)
 - 2: says the conclusion is true, and cites the theorem.
-- 3: identifies line (4) as the failing line, and says why: no bound links \( a^{(k)}_k \) to \( x_k \).
+- 3: identifies line (4) as the failing line, and says why: nothing ties \( a^{(k)}_k \) to \( a^{(j)}_j \) for \( j \ne k \), or to \( x_k \).
 - 3: a counterexample to the step, with every representative checked to lie in its class.
-- 2: names the use of choice in line (2), and a repair of (4).
+- 2: names the use of choice in line (2), and a repair that replaces \( q_k \) by a rational with a bound on \( \abs{x_k - \kappa(q_k)} \) tending to \( 0 \) (a later term of \( a^{(k)} \), or the integer-part approximant).
 Fatal errors (0 for the step): calling the conclusion false; a "counterexample" in which the sequence \( (x_k) \) is not Cauchy.
 :::
 
 <!-- dependency ledger
-thm-constructed-reals-cauchy-complete (proof): kappa(m/(k+1)) = kappa(m) kappa(k+1)^{-1}, kappa(n) = n * 1_R | thm-rational-embedding (a), (c), (d), cited in the paragraph before the theorem
+thm-constructed-reals-cauchy-complete (proof): kappa(m/(k+1)) = kappa(m) kappa(k+1)^{-1}, kappa(n) = n * 1_R | thm-rational-embedding (a), (c), (d), cited in Step 0
 thm-constructed-reals-cauchy-complete (proof): dividing an inequality by k + 1 > 0 in R | prp-ordered-ring-rules (c), prp-reciprocal-order (a) (in R, F3.9 results with F = R via thm-reals-ordered-field)
 thm-constructed-reals-cauchy-complete (proof): k >= K_1 implies the integer k + 1 >= K_1; k >= 2n implies k + 1 > 2n | thm-omega-order, prp-omega-order-arithmetic (c); inline
 thm-constructed-reals-cauchy-complete (proof): epsilon/3 + epsilon/3 + epsilon/3 = epsilon and 1/(2n) + 1/(2n) = 1/n in Q | field arithmetic in Q (thm-rationals-ordered-field); inline
@@ -268,4 +268,6 @@ exm-representatives-need-choice (example): constant sequence y tends to y in R |
 thm-constructed-reals-cauchy-complete (solution): quick check, 7/5 <= r < 3/2 from (7/5)^2 < 2 < (3/2)^2; integer parts 2, 3, 5 | exm-sqrt2-class (r > 0, r^2 = 2), prp-ordered-ring-rules (g); verify/ch05/thm-constructed-reals-cauchy-complete.py
 exr-completeness-a1 (solution): q_0 = 1, q_1 = 1, q_2 = 4/3 for x_k = r | verify/ch05/exr-completeness-a1.py
 exr-completeness-c2 (solution): an eventually zero sequence represents 0 | exm-finite-change-equivalent, cited
+exr-completeness-c2 (solution): (k) is not Cauchy in Q, since |(k+1) - k| = 1 | inline
+exr-completeness-c2 (solution): kappa(k) >= 1 for k >= 1 | thm-rational-embedding (b), inline
 -->

@@ -63,7 +63,7 @@ Here each late term \( a_n \) is above \( 0 \) by its own amount, namely \( a_n 
 
 *The Newton sequence.* Let \( (x_n) \) be the sequence of @exm-newton-rationals-sqrt2, which is in \( \sC \) by @thm-sqrt2-cauchy-no-rational-limit. The same theorem states that \( x_n > 1 \) for every \( n \in \nN \). So \( (x_n) \) is positive, with \( \delta = 1 \) and \( N = 0 \).
 
-*Late positivity.* Let \( a_n \coloneqq 1 - 2/(n + 1) \). It is in \( \sC \), as the difference of a constant sequence and a constant multiple of the null sequence \( (1/(n + 1)) \) (@thm-cauchy-algebra-ordered-field (a), (b)). Its first terms are \( -1, 0, 1/3, 1/2 \), so it is not positive "from the start". For \( n \ge 3 \), \( n + 1 \ge 4 \), so \( 2/(n + 1) \le 2/4 = 1/2 \) (@prp-ordered-field-halves (c)), and \( a_n \ge 1/2 \). So \( a \) is positive, with \( \delta = 1/2 \) and \( N = 3 \). No smaller \( N \) works with this \( \delta \), since \( a_2 = 1/3 < 1/2 \); the definition allows any finite stretch of bad terms.
+*Late positivity.* Let \( a_n \coloneqq 1 - 2/(n + 1) \). It is in \( \sC \), as the difference of a constant sequence and a constant multiple of the null sequence \( (1/(n + 1)) \) (@thm-cauchy-algebra-ordered-field (a), (b)). Its first terms are \( -1, 0, 1/3, 1/2 \), so it is not positive "from the start". For \( n \ge 3 \), \( n + 1 \ge 4 \), so \( 1/(n + 1) \le 1/4 \) (@prp-ordered-field-halves (c)), hence \( 2/(n + 1) \le 2/4 = 1/2 \) (@prp-ordered-field-halves (d), with \( 0 \le 2 \le 2 \)), and \( a_n \ge 1/2 \). So \( a \) is positive, with \( \delta = 1/2 \) and \( N = 3 \). No smaller \( N \) works with this \( \delta \), since \( a_2 = 1/3 < 1/2 \); the definition allows any finite stretch of bad terms.
 
 **Non-example by a minimal change.** Keep every term positive, but let the margin shrink: \( a_n \coloneqq 1/(n + 1) \). Every term is \( > 0 \), so the weaker condition above holds with \( N = 0 \). What fails is the order of the quantifiers. The negation of the definition, by @fd1:prp-bounded-quantifier-negation and @fd1:prp-negated-implication, reads
 \[
@@ -106,13 +106,13 @@ Let \( a, a' \in \sC \) with \( a' \sim a \). If \( a \) is positive, then \( a'
 Since \( a \) is positive, there are \( \delta \in \nQ_{>0} \) and \( N \in \nN \) with \( a_n \ge \delta \) for every \( n \ge N \); fix them \( [\rulename{\exists E}] \) (@fd1:def-rules-existential). Since \( \sim \) is symmetric (@prp-cauchy-equivalent-relation), \( a \sim a' \), that is, \( (a_n - a'_n) \) is null in \( \nQ \). @prp-sign-stable-ordered-field, with \( F = \nQ \), the sequences \( a \) and \( a' \), and \( c = \delta \), gives \( N' \in \nN \) with \( a'_n \ge \delta/2 \) for every \( n \ge N' \). Since \( \delta/2 \in \nQ_{>0} \) (@prp-ordered-field-halves (b)), \( a' \) is positive, with margin \( \delta/2 \) and threshold \( N' \).
 :::
 
-The margin halves, and that is harmless: the definition asks only for **some** margin. Exercise C2 shows a tempting proof of this proposition that keeps a margin of \( 0 \) and so proves nothing.
+The margin halves, and that is harmless: the definition asks only for **some** margin. Exercise C2 shows a tempting proof of this proposition that keeps a margin of \( 0 \), and so does not prove it.
 
 We can now name the set of positive real numbers. Let
 \[
 P \coloneqq \{ [a] : a \in \sC \text{ and } a \text{ is positive} \} \subseteq \nR .
 \]
-This is the third positive set of the volume, after \( P_{\nZ} \) and \( P_{\nQ} \) of Chapter 2. For \( x \in \nR \):
+Chapter 2 built the positive sets \( P_{\nZ} \) and \( P_{\nQ} \); \( P \) is the same step for \( \nR \). For \( x \in \nR \):
 \[
 x \in P \iff \text{some representative of } x \text{ is positive} \iff \text{every representative of } x \text{ is positive} .
 \]
@@ -220,7 +220,7 @@ Let \( a_n \coloneqq 1/(n + 1) - 1/(n + 1)^2 \). Every term satisfies \( a_n \ge
 :::
 
 ::: {.solution}
-No. Here \( a_n = n/(n + 1)^2 \), so \( 0 \le a_n \le 1/(n + 1) \) for every \( n \) (as \( n \le n + 1 \)). The lower sequence \( (0)_n \) and the upper sequence \( (1/(n + 1)) \) are null, so \( a \) is null by the squeeze, @prp-limit-preserves-order-ordered-field (c) with \( F = \nQ \). Then \( [a] = 0_{\nR} \), as in the proof of @thm-reals-positive-cone (i), and \( 0_{\nR} \notin P \) by the same part. So \( a \) is not positive, although no term is negative. @lem-termwise-order gives only \( [a] \ge 0_{\nR} \), which is true.
+No. Here \( a_n = n/(n + 1)^2 \), so \( 0 \le a_n \le 1/(n + 1) \) for every \( n \) (as \( n \le n + 1 \)). The lower sequence \( (0)_n \) and the upper sequence \( (1/(n + 1)) \) are null, so \( a \) is null by the squeeze, @prp-limit-preserves-order-ordered-field (c) with \( F = \nQ \); being null, \( a \in \sC \) (@thm-cauchy-algebra-ordered-field (a)). Then \( [a] = 0_{\nR} \), as in the proof of @thm-reals-positive-cone (i), and \( 0_{\nR} \notin P \) by the same part. So \( a \) is not positive, although no term is negative. @lem-termwise-order gives only \( [a] \ge 0_{\nR} \), which is true.
 :::
 
 ## The absolute value through representatives
@@ -246,7 +246,7 @@ The reverse triangle inequality makes \( (\abs{a_n}) \) Cauchy with the same thr
 
 *Equality.* We use three facts. A class \( [b] \) with \( b \) eventually equal to \( b' \) equals \( [b'] \) (@exm-finite-change-equivalent). A null sequence represents \( 0_{\nR} \) (proof of @thm-reals-positive-cone (i)). And, in the ordered field \( \nR \), \( \abs{x} = x \) for \( x > 0_{\nR} \), \( \abs{x} = -x \) for \( x < 0_{\nR} \), and \( \abs{0_{\nR}} = 0_{\nR} \) (@def-absolute-value-ordered-field).
 
-*Case 1: \( a \) is null.* Then \( [a] = 0_{\nR} \), so \( \abs{[a]} = 0_{\nR} \). The sequence \( (\abs{a_n}) \) is null too, since \( \bigl| \abs{a_n} - 0 \bigr| = \abs{a_n} = \abs{a_n - 0} \) (@prp-absolute-value-ordered-field (a)), so the two sequences pass the same tests of @def-null-sequence-ordered-field. Hence \( [(\abs{a_n})_n] = 0_{\nR} = \abs{[a]} \).
+*Case 1: \( a \) is null.* Then \( [a] = 0_{\nR} \), so \( \abs{[a]} = 0_{\nR} \). The sequence \( (\abs{a_n}) \) is null too, since \( \bigl| \abs{a_n} - 0 \bigr| = \abs{a_n} = \abs{a_n - 0} \) (@prp-absolute-value-ordered-field (a) and @def-absolute-value-ordered-field), so the two sequences pass the same tests of @def-null-sequence-ordered-field. Hence \( [(\abs{a_n})_n] = 0_{\nR} = \abs{[a]} \).
 
 *Case 2: \( a \) is not null.* By @thm-cauchy-not-null-sign with \( F = \nQ \), fix \( c \in \nQ_{>0} \) and \( N \in \nN \) with \( a_n \ge c \) for every \( n \ge N \), or with \( a_n \le -c \) for every \( n \ge N \) \( [\rulename{\exists E}] \).
 
@@ -264,7 +264,7 @@ The proposition does **not** say that \( \abs{a_n} = a_n \) or \( -a_n \) for al
 ::: {#exr-ordering-the-reals-a1}
 [A1]
 
-For each sequence, decide whether it is in \( \sC \) and whether it is positive. When it is positive, give a margin \( \delta \) and a threshold \( N \).
+In parts (a)–(d), decide for each sequence whether it is in \( \sC \) and whether it is positive; when it is positive, give a margin \( \delta \) and a threshold \( N \).
 
 ::: {.enumerate options="label=(\alph*)"}
 1. \( a_n = 1 - 1/(n + 1) \).
@@ -331,7 +331,7 @@ By @def-reals-order, \( [a] < [b] \) means \( [b] - [a] \in P \). By @def-reals-
 ::: {.solution}
 (a) The constant sequences \( (0)_n \) and \( (1)_n \) are in \( \sC \) (@thm-cauchy-algebra-ordered-field (a)). By @lem-termwise-order with \( N_0 = 0 \), \( (0)_n \le a \) termwise gives \( 0_{\nR} = [(0)_n] \le [a] \), and \( a \le (1)_n \) termwise gives \( [a] \le [(1)_n] = 1_{\nR} \).
 
-(b) Let \( a_n \coloneqq 1 - 1/(n + 2) \). For every \( n \), \( n + 2 \ge 2 > 1 \), so \( 0 < 1/(n + 2) < 1 \) (@prp-reciprocal-order (b)), and \( 0 < a_n < 1 \). The sequence \( a - (1)_n = (-1/(n + 2)) \) is null: \( (1/(n + 2)) \) is the shift by one of the null sequence \( (1/(n + 1)) \) (@prp-tail-change-ordered-field (b)), and the negative of a null sequence is null (@thm-limit-laws-ordered-field (b)). So \( a \sim (1)_n \) and \( [a] = 1_{\nR} \); in particular \( a \in \sC \), as the sum of a constant and a null sequence. The example shows that part (a) cannot be sharpened to strict inequalities: \( a_n < 1 \) for every \( n \), and still \( [a] = 1_{\nR} \). This is the warning after @lem-termwise-order once more. (Any \( a \) with \( 0 < a_n < 1 \) for all \( n \) and \( 1 - a_n \) null is a correct answer.)
+(b) Let \( a_n \coloneqq 1 - 1/(n + 2) \). For every \( n \), \( n + 2 \ge 2 > 1 \), so \( 0 < 1/(n + 2) < 1 \) (@prp-reciprocal-order (b)), and \( 0 < a_n < 1 \). The sequence \( a - (1)_n = (-1/(n + 2)) \) is null: \( (1/(n + 2)) \) is the shift by one of the null sequence \( (1/(n + 1)) \) (@prp-tail-change-ordered-field (b)), and the negative of a null sequence is null (@thm-limit-laws-ordered-field (b)). So \( a = (1)_n + (-1/(n + 2))_n \) is in \( \sC \), as the sum of a constant and a null sequence (@thm-cauchy-algebra-ordered-field (a), (b)). Since \( a - (1)_n \) is null, \( a \sim (1)_n \) and \( [a] = 1_{\nR} \). The example shows that part (a) cannot be sharpened to strict inequalities: \( a_n < 1 \) for every \( n \), and still \( [a] = 1_{\nR} \). This is the warning after @lem-termwise-order once more. (Any \( a \) with \( 0 < a_n < 1 \) for all \( n \) and \( 1 - a_n \) null is a correct answer.)
 :::
 
 ### C. Going deeper
@@ -349,13 +349,20 @@ Here is the beginning of a proof. *Name the move, then complete it.*
 ::: {.solution}
 *The move* is **representatives, then independence**: the rule is defined on a representative, so we must show that replacing \( a \) by an equivalent \( a' \) gives the same output class. Then each class has exactly one output, and the rule is a function (@fd2:def-function).
 
-*Completion.* Let \( d_n \coloneqq \abs{a_n} - \abs{a'_n} \). By the reverse triangle inequality in \( \nQ \) (@prp-absolute-value-ordered-field (f)),
+*Completion.* Let \( e_n \coloneqq \abs{a_n} - \abs{a'_n} \). By the reverse triangle inequality in \( \nQ \) (@prp-absolute-value-ordered-field (f)),
 \[
-0 \le \abs{d_n} \le \abs{a_n - a'_n} \quad \text{for every } n \in \nN .
+0 \le \abs{e_n} \le \abs{a_n - a'_n} \quad \text{for every } n \in \nN .
 \]
-The sequence \( (a_n - a'_n) \) is null, since \( a \sim a' \) (@def-cauchy-equivalent); so is \( (\abs{a_n - a'_n}) \), because \( \bigl| \abs{a_n - a'_n} - 0 \bigr| = \abs{a_n - a'_n - 0} \) and the two sequences pass the same tests of @def-null-sequence-ordered-field. The squeeze @prp-limit-preserves-order-ordered-field (c) in \( \nQ \), with lower sequence \( (0)_n \) and upper sequence \( (\abs{a_n - a'_n}) \), shows that \( (\abs{d_n}) \) is null. Then \( (d_n) \) is null, for the same reason as before: \( \abs{d_n - 0} = \bigl| \abs{d_n} - 0 \bigr| \). So \( (\abs{a_n}) \sim (\abs{a'_n}) \), and \( [(\abs{a_n})_n] = [(\abs{a'_n})_n] \) (@fd2:thm-classes-partition (b)).
+The sequence \( (a_n - a'_n) \) is null, since \( a \sim a' \) (@def-cauchy-equivalent); so is \( (\abs{a_n - a'_n}) \), because \( \bigl| \abs{a_n - a'_n} - 0 \bigr| = \abs{a_n - a'_n - 0} \) and the two sequences pass the same tests of @def-null-sequence-ordered-field. The squeeze @prp-limit-preserves-order-ordered-field (c) in \( \nQ \), with lower sequence \( (0)_n \) and upper sequence \( (\abs{a_n - a'_n}) \), shows that \( (\abs{e_n}) \) is null. Then \( (e_n) \) is null, for the same reason as before: \( \abs{e_n - 0} = \bigl| \abs{e_n} - 0 \bigr| \). So \( (\abs{a_n}) \sim (\abs{a'_n}) \), and \( [(\abs{a_n})_n] = [(\abs{a'_n})_n] \) (@fd2:thm-classes-partition (b)).
 
 So the output depends only on the class \( [a] \), and the rule defines a function \( \nR \to \nR \). (By @prp-reals-absolute-value-termwise, this function is \( x \mapsto \abs{x} \); the direct proof above does not need that.)
+
+**Marking scheme.** (10 points)
+- 2: names the move (representatives, then independence) and states the goal \( (\abs{a_n}) \sim (\abs{a'_n}) \).
+- 3: proves \( \bigl| \abs{a_n} - \abs{a'_n} \bigr| \le \abs{a_n - a'_n} \) for every \( n \), citing the reverse triangle inequality in \( \nQ \).
+- 3: from \( a \sim a' \), shows that \( (\abs{a_n - a'_n}) \) is null, and squeezes to get \( (\abs{a_n} - \abs{a'_n})_n \) null.
+- 2: concludes \( [(\abs{a_n})_n] = [(\abs{a'_n})_n] \), so each class has one output and the rule is a function \( \nR \to \nR \).
+Fatal errors (0 for the step): using \( \abs{x} \) on \( \nR \), or citing @prp-reals-absolute-value-termwise; proving only that the two output sequences are Cauchy, without proving them equivalent.
 :::
 
 ::: {#exr-ordering-the-reals-c2}
@@ -377,7 +384,7 @@ Write out in symbols what "\( a' \) is positive" requires, and compare it with w
 ::: {.solution}
 [Hint 2]
 
-Test the passage from the second-to-last line to the last on the sequence \( (1/(n + 1)) \).
+"Positive" asks for one margin \( \delta' \in \nQ_{>0} \), chosen before \( n \), with \( a'_n \ge \delta' \) for all large \( n \). Find the line where the argument should produce such a \( \delta' \), and ask what it produces instead.
 :::
 
 ::: {.solution}
@@ -403,26 +410,32 @@ a'_n > a_n - \frac{\delta}{2} \ge \delta - \frac{\delta}{2} = \frac{\delta}{2} .
 \]
 So \( a'_n \ge \delta/2 \) for every \( n \ge \max\{N, N''\} \): one margin, \( \delta/2 \), fixed before \( n \), and \( a' \) is positive. This is the proof of @prp-sign-stable-ordered-field.
 
-**Marking note.** Calling a middle line "imprecise" earns nothing on its own: those lines are valid. Full credit needs the last line identified, the quantifier swap named, a counterexample to the step, and the \( \delta/2 \) repair.
+**Marking scheme.** (10 points)
+- 2: says the conclusion is true, citing @prp-positivity-well-defined.
+- 3: identifies the last line as the failing one and names the quantifier swap (a margin depending on \( n \) treated as one margin for all \( n \)).
+- 2: a counterexample to the step: a sequence whose terms are eventually \( > 0 \) and which is not positive, such as \( (1/(n + 1)) \).
+- 3: a repair that produces one margin in \( \nQ_{>0} \) fixed before \( n \) (for instance the tolerance \( \delta/2 \) above; any tolerance strictly between \( 0 \) and \( \delta \) works equally well).
+Fatal errors (0 for the step): blaming one of the valid middle lines; a "counterexample" to the conclusion; a repair whose margin still depends on \( n \).
 :::
 
 <!-- dependency ledger
 lem-termwise-order (proof): [a] - [b] = [a - b], since a + (-b) = a - b termwise | def-reals-operations, cited; termwise field arithmetic in Q
 exm-strict-termwise-order-fails (solution): (1/(n + 1)) is null in Q | exm-first-sequences-ordered-field (b), cited
 exm-strict-termwise-order-fails (solution): trichotomy excludes 0 < 0 in an ordered field | def-ordered-ring-and-field (O1), cited by name
-def-positive-cauchy-sequence (example): 1 - 2/(n + 1) >= 1/2 for n >= 3; first terms -1, 0, 1/3, 1/2 | prp-ordered-field-halves (c), cited; verify/ch05/def-positive-cauchy-sequence.py
+def-positive-cauchy-sequence (example): 1 - 2/(n + 1) >= 1/2 for n >= 3; first terms -1, 0, 1/3, 1/2 | prp-ordered-field-halves (c), (d), cited; verify/ch05/def-positive-cauchy-sequence.py
 def-positive-cauchy-sequence (example): x_n > 1 for every n | thm-sqrt2-cauchy-no-rational-limit (statement), cited
 def-positive-cauchy-sequence (claim): negation of the definition | fd1:prp-bounded-quantifier-negation, fd1:prp-negated-implication, cited; not(a_n >= delta) iff a_n < delta by (O1)
 def-positive-cauchy-sequence (claim): a_n >= delta gives a_n > delta/2 | prp-ordered-field-halves (b); inline
 prp-positivity-well-defined (claim): x in P iff every representative of x is positive | fd2:thm-classes-partition (a), fd2:def-equivalence-class, cited; inline
 thm-reals-positive-cone (proof): a null sequence a satisfies a ~ (0)_n, so [a] = 0_R | def-cauchy-equivalent, a_n - 0 = a_n; inline
 thm-reals-positive-cone (proof): -(0)_n = (0)_n | -0 = 0 in Q; inline
-thm-reals-positive-cone (proof): max{N, N'} >= N and >= N' in N | order of omega (thm-omega-order), cited by F3.9 in the same way
+thm-reals-positive-cone (proof): max{N, N'} exists in N and is >= N and >= N' | thm-omega-order (a)
 def-reals-order (claim): x > 0_R iff x in P; x < 0_R iff -x in P | 0 - x = -x, x - 0 = x in the ring R; inline
 thm-reals-ordered-field (idea): -(y - x) = x - y, (z - y) + (y - x) = z - x, (y + z) - (x + z) = y - x | prp-order-from-positives (its proof records them), cited
 thm-reals-ordered-field (claim): x <= y iff not y < x | (O1); inline
+lem-termwise-order (claim): check after the lemma: 1/(n + 1) - 1/(n + 1)^2 = n/(n + 1)^2 and 0 <= n/(n + 1)^2 <= 1/(n + 1) (multiply 0 <= n <= n + 1 by 1/(n + 1)^2 > 0) | field arithmetic in Q; prp-ordered-field-halves (d), prp-reciprocal-order; inline
 lem-termwise-order (claim): if a_n <= q eventually then [a] <= [(q)_n] | lem-termwise-order with b constant; constants in C by thm-cauchy-algebra-ordered-field (a)
-prp-reals-absolute-value-termwise (proof): ||a_n| - 0| = |a_n| = |a_n - 0| | prp-absolute-value-ordered-field (a) (|y| = y for y >= 0); inline
+prp-reals-absolute-value-termwise (proof): ||a_n| - 0| = |a_n| = |a_n - 0| | prp-absolute-value-ordered-field (a) (|y| >= 0) and def-absolute-value-ordered-field (|y| = y for y >= 0); inline
 prp-reals-absolute-value-termwise (proof): a_n >= c > 0 gives |a_n| = a_n; a_n <= -c < 0 gives |a_n| = -a_n | def-absolute-value-ordered-field, cited
 exr-ordering-the-reals-a1 (solution): d_0 = 1, d_1 = 7/5 (14^2 = 196 <= 200 < 225); (d_k) non-decreasing | exm-truncations-equivalent, cited; verify/ch05/exr-ordering-the-reals-a1.py
 exr-ordering-the-reals-a1 (solution): ((-1)^n) not Cauchy: indices N, N + 1 give terms differing by 2 | inline

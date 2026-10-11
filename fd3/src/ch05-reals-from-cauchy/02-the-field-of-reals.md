@@ -27,8 +27,8 @@ This is the only tool we have, so far, for deciding when two real numbers are eq
 **Examples.**
 
 - *The Newton class.* By @exm-truncations-equivalent, \( [(x_n)_n] = [(d_k)_k] \): one real number, with two quite different representatives. By @exm-finite-change-equivalent (b), \( (x_{n+1})_n \) is a third.
-- *The class of a constant.* For \( q \in \nQ \), the class \( [(q)_n] \) contains \( (q)_n \), and also \( (q + 1/(n + 1))_n \), since the difference is null. Different constants give different classes, because constant sequences are equivalent only when they are equal (the degenerate example after @def-cauchy-equivalent). Section 5.4 uses these classes to place a copy of \( \nQ \) inside \( \nR \).
-- *Zero.* \( [(0)_n] \) is the set of all null sequences in \( \sC \): \( b \sim (0)_n \) means that \( b - (0)_n = b \) is null. So \( (1/(n + 1))_n \), \( ((-1)^n/(n + 1))_n \) and every sequence that is eventually \( 0 \) are representatives of it.
+- *The class of a constant.* For \( q \in \nQ \), the class \( [(q)_n] \) contains \( (q)_n \), and also \( (q + 1/(n + 1))_n \), which lies in \( \sC \) by @thm-cauchy-algebra-ordered-field (a), (b) and is equivalent to \( (q)_n \), since the difference \( (1/(n + 1))_n \) is null (@exm-first-sequences-ordered-field (b)). Different constants give different classes, because constant sequences are equivalent only when they are equal (the degenerate example after @def-cauchy-equivalent). Section 5.4 uses these classes to place a copy of \( \nQ \) inside \( \nR \).
+- *Zero.* \( [(0)_n] \) is the set of all null sequences in \( \sC \): \( b \sim (0)_n \) means that \( b - (0)_n = b \) is null. Every null sequence lies in \( \sC \) (@thm-cauchy-algebra-ordered-field (a)). So \( (1/(n + 1))_n \) (@exm-first-sequences-ordered-field (b)), \( ((-1)^n/(n + 1))_n \) (null times bounded, as \( \abs{(-1)^n} = 1 \); @prp-null-times-bounded-ordered-field) and every sequence that is eventually \( 0 \) (null by @prp-tail-change-ordered-field (a)) are representatives of it.
 
 **What has been done, and what has not.** The symbol \( \nR \) now names one definite set, built from \( \nQ \) by the set-building tools of *Sets, Relations, and Cardinality*. In earlier volumes, the "familiar real numbers" were used informally; from here on in this volume \( \nR \) means this set and nothing else, and every fact about it must be proved from the definition. At this moment \( \nR \) has no addition, no multiplication, no order, and it does not contain \( \nQ \): the rational number \( 2 \) is not a class of sequences. All of these must be built. This section builds the arithmetic.
 
@@ -52,7 +52,7 @@ This danger is real, and it has been met before. In *Sets, Relations, and Cardin
 
 **Representatives, then independence.** To define an operation on classes, define it on representatives; then show that the output class survives replacing each input by an equivalent one.
 
-For sums this is a one-line computation. For products it is not, and the next theorem is the reason Chapter 4 proved that Cauchy sequences are bounded.
+For sums this is a one-line computation. For products it is not, and the next theorem leans on Chapter 4's result that Cauchy sequences are bounded (@prp-cauchy-bounded-ordered-field).
 
 ::: {#thm-reals-operations-well-defined}
 [The Operations on Real Numbers Are Well Defined]
@@ -100,7 +100,7 @@ Let \( \sN \subseteq \sC \) be the set of null sequences of rationals; it lies i
 \[
 a \sim b \iff a - b \in \sN \qquad (a, b \in \sC) ,
 \]
-which is the relation \( \sim_{\sN} \) of @thm-quotient-ring-by-ideal (a). So \( \nR = \sC/{\sim} \) is \( \sC/\sN \) in the notation of Chapter 3, and the rules of @def-reals-operations are the rules of @thm-quotient-ring-by-ideal (b). What must be checked is that \( \sC \) is a commutative ring and \( \sN \) an ideal of it. The proof of the product clause in @thm-reals-operations-well-defined is then the general proof of Chapter 3 in this instance, with (I3) supplied by "null times bounded is null".
+which is the relation \( \sim_{\sN} \) of @thm-quotient-ring-by-ideal (a). So \( \nR = \sC/{\sim} \) is \( \sC/\sN \) in the notation of Chapter 3, and the rules of @def-reals-operations are the rules of @thm-quotient-ring-by-ideal (b). What must be checked is that \( \sC \) is a commutative ring and \( \sN \) an ideal of it. Once this is checked, @thm-quotient-ring-by-ideal (b) gives the well-definedness in @thm-reals-operations-well-defined a second time. Its proof changes one argument at a time, so the multipliers are \( b \) and \( a' \) rather than \( a \) and \( b' \), and (I3) is supplied by "null times bounded is null".
 
 ::: {#thm-reals-commutative-ring}
 [The Real Numbers Form a Commutative Ring]
@@ -134,7 +134,7 @@ As noted before the theorem, \( \sim \) is the relation \( \sim_{\sN} \), so \( 
 Finally, by @thm-quotient-ring-by-ideal (d), \( 1_{\nR} = 0_{\nR} \) if and only if \( \sN = \sC \). But \( (1)_n \in \sC \) is not null: for \( \varepsilon = 1/2 \), every \( n \) has \( \abs{1 - 0} = 1 \ge 1/2 \). So \( \sN \ne \sC \), and \( 0_{\nR} \ne 1_{\nR} \). This proves the theorem.
 :::
 
-To see what the quotient theorem did, here is distributivity unfolded. For \( a, b, c \in \sC \), using @def-reals-operations three times and (F9) in \( \sC \),
+To see what the quotient theorem did, here is distributivity unfolded. For \( a, b, c \in \sC \), using @def-reals-operations at every step but the middle one, and (F9) in \( \sC \) there,
 \[
 \begin{aligned}
 [a] \bigl( [b] + [c] \bigr) &= [a] \, [b + c] = [a (b + c)] \\
@@ -169,7 +169,7 @@ x \, [b] = [a] \, [b] = [ab] = [(1)_n] = 1_{\nR} .
 So \( y \coloneqq [b] \) is an inverse of \( x \), and (F8) holds. Together with @thm-reals-commutative-ring, which gives (F1)–(F7), (F9) and \( 0_{\nR} \ne 1_{\nR} \), this shows that \( \nR \) is a field.
 :::
 
-The answer to the prompt: **inverses in a commutative ring are unique.** If \( xy = 1_{\nR} \) and \( xy' = 1_{\nR} \), then \( y = y \cdot 1_{\nR} = y (x y') = (y x) y' = 1_{\nR} \, y' = y' \), by (F7), (F5) and (F6). So starting from another representative \( a' \) of \( x \), with its own \( c' \), \( N' \) and \( b' \), gives \( [b'] = [b] \); we write \( x^{-1} \) for it.
+The answer to the prompt: **inverses are unique.** By the theorem, \( \nR \) is a field, so \( x \) has only one inverse (@lem-field-fraction-rules (a) with \( F = \nR \)); the reason is the one-line computation \( y = y (x y') = (y x) y' = y' \) for two inverses \( y \), \( y' \). So starting from another representative \( a' \) of \( x \), with its own \( c' \), \( N' \) and \( b' \), gives \( [b'] = [b] \); we write \( x^{-1} \) for it.
 
 ::: {#exm-termwise-reciprocal-ill-defined}
 [Termwise Reciprocals Are Not a Definition]
@@ -178,9 +178,9 @@ A shorter route to inverses would be: for \( x = [a] \ne 0_{\nR} \), let \( x^{-
 :::
 
 ::: {.solution}
-*It need not make sense.* The sequences \( a \coloneqq (0, 1, 1, 1, \dots) \) and \( (1)_n \) agree from \( n = 1 \) on, so they are equivalent (@exm-finite-change-equivalent (a)) and represent the same real number \( 1_{\nR} \ne 0_{\nR} \). With the representative \( a \), the rule asks for \( 1/a_0 = 1/0 \), which does not exist. A rule that cannot be applied to some representatives does not define a function on classes; it would need a statement of which representatives are allowed, and a proof that the answer does not depend on the allowed one. The proof of @thm-reals-field supplies both at once: it inverts only from an index \( N \) on, and the uniqueness of inverses makes the class independent of all the choices.
+*It need not make sense.* The sequences \( a \coloneqq (0, 1, 1, 1, \dots) \) and \( (1)_n \) agree from \( n = 1 \) on; \( a \) is in \( \sC \), since \( \abs{a_m - a_n} = 0 \) for all \( m, n \ge 1 \) (threshold \( N = 1 \) for every tolerance), so the two sequences are equivalent (@exm-finite-change-equivalent (a)) and represent the same real number \( 1_{\nR} \ne 0_{\nR} \). With the representative \( a \), the rule asks for \( 1/a_0 = 1/0 \), which does not exist. A rule that cannot be applied to some representatives does not define a function on classes; it would need a statement of which representatives are allowed, and a proof that the answer does not depend on the allowed one. The proof of @thm-reals-field supplies both at once: it inverts only from an index \( N \) on, and the uniqueness of inverses makes the class independent of all the choices.
 
-*Why \( 0_{\nR} \) is excluded.* The null sequence \( (1/(n + 1))_n \) represents \( 0_{\nR} \) and has no zero term, so the termwise reciprocal \( (n + 1)_n \) exists. But it is not bounded (@thm-rationals-archimedean), so it is not in \( \sC \) (@prp-cauchy-bounded-ordered-field), and it represents no real number. No inverse of \( 0_{\nR} \) is possible in any case, since \( 0_{\nR} \cdot y = 0_{\nR} \ne 1_{\nR} \) for every \( y \) (@prp-ring-algebra (b), @thm-reals-commutative-ring).
+*Why \( 0_{\nR} \) is excluded.* The null sequence \( (1/(n + 1))_n \) represents \( 0_{\nR} \) and has no zero term, so the termwise reciprocal \( (n + 1)_n \) exists. But it is not bounded (@thm-rationals-archimedean), so it is not in \( \sC \) (@prp-cauchy-bounded-ordered-field), and it represents no real number. No inverse of \( 0_{\nR} \) is possible in any case, since \( 0_{\nR} \cdot y = y \cdot 0_{\nR} = 0_{\nR} \ne 1_{\nR} \) for every \( y \) ((F6), @prp-ring-algebra (b), @thm-reals-commutative-ring).
 :::
 
 ::: {.warning}
@@ -192,7 +192,7 @@ Find a representative of \( [(1 + 1/(n + 1))_n] \cdot [(2)_n] - [(2)_n] \), and 
 :::
 
 ::: {.solution}
-By @def-reals-operations, with \( x - y \coloneqq x + (-y) \) in the ring \( \nR \), the real number is \( [(1 + 1/(n + 1)) \cdot 2] + [(-2)_n] = [(2 + 2/(n + 1) - 2)_n] \), so \( (2/(n + 1))_n \) represents it. This sequence is null (@thm-limit-laws-ordered-field (b) with \( c = 2 \), applied to \( (1/(n + 1)) \)), so the class is \( 0_{\nR} \). In other words, \( [(1 + 1/(n + 1))_n] \cdot [(2)_n] = [(2)_n] \): the first factor is \( 1_{\nR} \), represented by a sequence none of whose terms is \( 1 \).
+By @def-reals-operations, with \( x - y \coloneqq x + (-y) \) in the ring \( \nR \), the real number is \( [(1 + 1/(n + 1)) \cdot 2] + [(-2)_n] = [(2 + 2/(n + 1) - 2)_n] \), so \( (2/(n + 1))_n \) represents it. This sequence is null (@thm-limit-laws-ordered-field (b) with \( c = 2 \), applied to \( (1/(n + 1)) \), which is null by @exm-first-sequences-ordered-field (b)), so the class is \( 0_{\nR} \). In other words, \( [(1 + 1/(n + 1))_n] \cdot [(2)_n] = [(2)_n] \). The first factor is \( 1_{\nR} \), since \( (1 + 1/(n + 1))_n - (1)_n = (1/(n + 1))_n \) is null, so \( (1 + 1/(n + 1))_n \sim (1)_n \); it is \( 1_{\nR} \) represented by a sequence none of whose terms is \( 1 \).
 :::
 
 \( \nR \) is now a field. It has no order yet: "positive" for a class of sequences needs care, and Section 5.3 defines it.
@@ -217,7 +217,7 @@ By @def-reals-operations, with \( x - y \coloneqq x + (-y) \) in the ring \( \nR
 
 (b) \( a \) and \( b' \). In @eq-reals-product-split, \( a_n \) multiplies the null \( b_n - b'_n \), and \( b'_n \) multiplies the null \( a_n - a'_n \); @prp-null-times-bounded-ordered-field needs the multiplier bounded. The sequence \( b \) appears in @eq-reals-product-split only inside the null factor \( b_n - b'_n \), so its bound is never used.
 
-(c) \( a - a' = (1/(n + 1))_n \) is null, so \( a \sim a' \); \( b \sim b' \) is @exm-truncations-equivalent. The split is
+(c) \( a - a' = (1/(n + 1))_n \) is null (@exm-first-sequences-ordered-field (b)), so \( a \sim a' \) (both are in \( \sC \) by @thm-cauchy-algebra-ordered-field (a), (b)); \( b \sim b' \) is @exm-truncations-equivalent. The split is
 \[
 \Bigl( 2 + \frac{1}{n + 1} \Bigr) x_n - 2 d_n = \Bigl( 2 + \frac{1}{n + 1} \Bigr) (x_n - d_n) + \frac{1}{n + 1} \, d_n .
 \]
@@ -247,17 +247,17 @@ Without using @thm-quotient-ring-by-ideal, prove that the rule \( -[a] \coloneqq
 
 For \( x, y \in \nQ \) let \( \max(x, y) \coloneqq x \) if \( x \ge y \), and \( \max(x, y) \coloneqq y \) otherwise. For \( a, b \in \sC \) consider the rule
 \[
-[a] \vee [b] \coloneqq [(\max(a_n, b_n))_n] .
+g([a], [b]) \coloneqq [(\max(a_n, b_n))_n] .
 \]
 
 ::: {.enumerate options="label=(\alph*)"}
-1. Prove that \( \abs{\max(x, y) - \max(x', y')} \le \abs{x - x'} + \abs{y - y'} \) for all \( x, y, x', y' \in \nQ \). *Hint: suppose \( \max(x, y) \ge \max(x', y') \), and split into the cases \( \max(x, y) = x \) and \( \max(x, y) = y \).*
+1. Prove that \( \abs{\max(x, y) - \max(x', y')} \le \abs{x - x'} + \abs{y - y'} \) for all \( x, y, x', y' \in \nQ \). *Hint: \( \max(x, y) \) is one of \( x \), \( y \), and is \( \ge \) both.*
 2. Deduce from (a) that \( (\max(a_n, b_n))_n \in \sC \) whenever \( a, b \in \sC \).
-3. Here is the start of a proof that \( \vee \) is well defined. *Name the move, then complete it.*
+3. Here is the start of a proof that the rule \( g \) is well defined. *Name the move, then complete it.*
 
-   "Let \( a, a', b, b' \in \sC \) with \( a \sim a' \) and \( b \sim b' \). By (b), the sequences \( (\max(a_n, b_n))_n \) and \( (\max(a'_n, b'_n))_n \) are in \( \sC \). Let \( d_n \coloneqq \max(a_n, b_n) - \max(a'_n, b'_n) \). By (a), for every \( n \),
+   "Let \( a, a', b, b' \in \sC \) with \( a \sim a' \) and \( b \sim b' \). By (b), the sequences \( (\max(a_n, b_n))_n \) and \( (\max(a'_n, b'_n))_n \) are in \( \sC \). Let \( e_n \coloneqq \max(a_n, b_n) - \max(a'_n, b'_n) \). By (a), for every \( n \),
    \[
-   0 \le \abs{d_n} \le \abs{a_n - a'_n} + \abs{b_n - b'_n} .
+   0 \le \abs{e_n} \le \abs{a_n - a'_n} + \abs{b_n - b'_n} .
    \]
    ⟨ blank ⟩"
 :::
@@ -268,7 +268,7 @@ For \( x, y \in \nQ \) let \( \max(x, y) \coloneqq x \) if \( x \ge y \), and \(
 
 (b) Let \( \varepsilon \in \nQ_{>0} \), and let \( N \) be a threshold with tolerance \( \varepsilon/2 \) for both \( a \) and \( b \) (the larger of the two thresholds). For \( m, n \ge N \), (a) with \( (x, y, x', y') = (a_m, b_m, a_n, b_n) \) gives \( \abs{\max(a_m, b_m) - \max(a_n, b_n)} \le \abs{a_m - a_n} + \abs{b_m - b_n} < \varepsilon/2 + \varepsilon/2 = \varepsilon \).
 
-(c) *The move:* representatives, then independence; here its last step, "a sequence squeezed between \( 0 \) and a null sequence is null, so the outputs are equivalent and the classes agree". *Completion:* The sequences \( (\abs{a_n - a'_n})_n \) and \( (\abs{b_n - b'_n})_n \) are null, since \( \bigl| \abs{t} - 0 \bigr| = \abs{t - 0} \) for every \( t \in \nQ \) (@def-null-sequence-ordered-field). So their sum is null (@thm-limit-laws-ordered-field (a)). By the squeeze @prp-limit-preserves-order-ordered-field (c), with lower sequence \( (0)_n \) and this upper sequence, \( (\abs{d_n})_n \) is null; hence \( (d_n)_n \) is null, by the same remark on \( \abs{d_n - 0} \). So \( (\max(a_n, b_n))_n \sim (\max(a'_n, b'_n))_n \). Taking \( b' = b \), and then \( a' = a \), gives the two hypotheses of @thm-well-defined-on-classes (b), so \( \vee \) is a function \( \nR \times \nR \to \nR \).
+(c) *The move:* representatives, then independence; here its last step, "a sequence squeezed between \( 0 \) and a null sequence is null, so the outputs are equivalent and the classes agree". *Completion:* The sequences \( (\abs{a_n - a'_n})_n \) and \( (\abs{b_n - b'_n})_n \) are null, since \( \bigl| \abs{t} - 0 \bigr| = \abs{t - 0} \) for every \( t \in \nQ \) (@def-null-sequence-ordered-field). So their sum is null (@thm-limit-laws-ordered-field (a)). By the squeeze @prp-limit-preserves-order-ordered-field (c), with lower sequence \( (0)_n \) and this upper sequence, \( (\abs{e_n})_n \) is null; hence \( (e_n)_n \) is null, by the same remark on \( \abs{e_n - 0} \). So \( (\max(a_n, b_n))_n \sim (\max(a'_n, b'_n))_n \). Taking \( b' = b \), and then \( a' = a \), gives the two hypotheses of @thm-well-defined-on-classes (b), so \( g \) is a function \( \nR \times \nR \to \nR \).
 :::
 
 ::: {#exr-the-field-of-reals-b3}
@@ -278,7 +278,7 @@ Let \( (x_n) \) be the Newton sequence. Show that \( [(x_n)] \cdot [(x_n)] = [(2
 :::
 
 ::: {.solution}
-By @def-reals-operations, \( [(x_n)] \cdot [(x_n)] = [(x_n^2)_n] \), so we must show that \( (x_n^2 - 2)_n \) is null. By the bound \( 0 < x_n^2 - 2 \le 1/(4n) \) for \( n \ge 1 \) (Section 5.1, (NS1)–(NS2)), and \( 1/(4n) \le 1/(n + 1) \) for \( n \ge 1 \),
+By @def-reals-operations, \( [(x_n)] \cdot [(x_n)] = [(x_n^2)_n] \), so we must show that \( (x_n^2 - 2)_n \) is null. By the bound \( 0 < x_n^2 - 2 \le 1/(4n) \) for \( n \ge 1 \) (Section 5.1, (NS1)–(NS2)), and \( 1/(4n) \le 1/(n + 1) \) for \( n \ge 1 \) (since \( 4n - (n + 1) = 3n - 1 > 0 \); @prp-ordered-field-halves (c)),
 \[
 0 \le x_n^2 - 2 \le \frac{1}{n + 1} \qquad (n \ge 1) .
 \]
@@ -319,7 +319,7 @@ The multipliers \( a \) and \( b' \) are in \( \sC \), hence bounded (@prp-cauch
 - 2: boundedness of the two multipliers, justified by "Cauchy implies bounded".
 - 2: concludes with null \( \times \) bounded is null and null \( + \) null is null.
 
-A proof that changes one factor at a time (first \( ab \sim a'b \), then \( a'b \sim a'b' \)) earns the same points; the multipliers are then \( b \) and \( a' \). Fatal errors (0 for the step): "both differences are small, so the product difference is small" with no bound on the multipliers; a bound for \( b \) used where \( b' \) is the multiplier.
+A proof that changes one factor at a time (first \( ab \sim a'b \), then \( a'b \sim a'b' \)) earns the same points; the multipliers are then \( b \) and \( a' \). A proof through the quotient ring is also valid: show that \( \sN \) is an ideal of the commutative ring \( \sC \), and cite @thm-quotient-ring-by-ideal (b). It earns the first two items as above; the decomposition item for identifying \( \sim \) with \( \sim_{\sN} \) and proving (I1) and (I2); the multiplier item for "a Cauchy multiplier is bounded" (@prp-cauchy-bounded-ordered-field); and the last item for (I3), null \( \times \) Cauchy is null, together with a correct citation of the quotient theorem. The ideal clauses must be proved, not cited from @thm-reals-commutative-ring. Fatal errors (0 for the step): "both differences are small, so the product difference is small" with no bound on the multipliers; a bound for \( b \) used where \( b' \) is the multiplier.
 :::
 
 ::: {#exr-the-field-of-reals-c2}
@@ -340,20 +340,25 @@ In a field this also follows from inverses: if \( x \ne 0_{\nR} \), then \( x = 
 :::
 
 <!-- dependency ledger
-def-reals-cauchy-classes (claim): (q + 1/(n + 1)) ~ (q) and eventually-zero sequences represent 0_R | exm-first-sequences-ordered-field (b), exm-finite-change-equivalent (a) (cited in prose)
+def-reals-cauchy-classes (claim): (q + 1/(n + 1)) in C and ~ (q); null sequences lie in C | exm-first-sequences-ordered-field (b), thm-cauchy-algebra-ordered-field (a), (b) (cited)
+def-reals-cauchy-classes (claim): ((-1)^n/(n + 1)) is null; eventually-zero sequences are null, so represent 0_R | prp-null-times-bounded-ordered-field, prp-tail-change-ordered-field (a) (cited)
 def-reals-cauchy-classes (claim): x_{n+1} represents the Newton class | exm-finite-change-equivalent (b) (cited)
 thm-reals-operations-well-defined (proof): (a_n + b_n) - (a'_n + b'_n) = (a_n - a'_n) + (b_n - b'_n); the split a_n b_n - a'_n b'_n = a_n (b_n - b'_n) + (a_n - a'_n) b'_n | field axioms of Q (thm-rationals-ordered-field), prp-ring-algebra; verify/ch05/thm-reals-operations-well-defined.py
 thm-reals-operations-well-defined (proof): both-at-once compatibility gives each one-argument hypothesis by reflexivity | prp-cauchy-equivalent-relation (Eq1) (cited in words)
 thm-reals-commutative-ring (proof): an equality of sequences holds iff it holds at every index | fd2:prp-function-equality (cited)
 thm-reals-commutative-ring (proof): the relation ~ equals ~_N, so C/~ = C/N | def-cauchy-equivalent and thm-quotient-ring-by-ideal (a) (cited)
 thm-reals-field (proof): |a_n| >= c from a_n >= c > 0 or a_n <= -c | def-absolute-value-ordered-field, prp-ordered-ring-rules (a) (cited)
-thm-reals-field (claim): inverses in a commutative ring are unique | inline, (F5)-(F7)
-exm-termwise-reciprocal-ill-defined (solution): 0 * y = 0 in a commutative ring | prp-ring-algebra (b) (cited)
+thm-reals-field (claim): inverses in a field are unique | lem-field-fraction-rules (a) with F = R
+exm-termwise-reciprocal-ill-defined (solution): (0, 1, 1, 1, ...) is in C (threshold 1) | def-rational-cauchy-sequences; inline
+exm-termwise-reciprocal-ill-defined (solution): 0 * y = y * 0 = 0 in a commutative ring | (F6), prp-ring-algebra (b) (cited)
+def-reals-operations (claim): (check) (1 + 1/(n + 1)) - 1 = 1/(n + 1) is null, so the first factor is 1_R | exm-first-sequences-ordered-field (b) (cited)
 def-reals-operations (claim): (check) (1 + 1/(n + 1)) * 2 - 2 = 2/(n + 1) | field arithmetic; verify/ch05/exm-termwise-reciprocal-ill-defined.py
 exr-the-field-of-reals-a1 (solution): bounds 3 and 2 for the multipliers; the split in the run | exm-truncations-equivalent Steps 1 and 3 (cited); verify/ch05/exr-the-field-of-reals-a1.py
 exr-the-field-of-reals-b2 (solution): case analysis for |max(x, y) - max(x', y')| | inline; verify/ch05/exr-the-field-of-reals-b2.py
 exr-the-field-of-reals-b2 (solution): ||t| - 0| = |t - 0| | prp-absolute-value-ordered-field (a), (b); inline
 exr-the-field-of-reals-b3 (solution): 0 < x_n^2 - 2 <= 1/(4n) for n >= 1 | exm-newton-rationals-sqrt2 (i) and thm-sqrt2-cauchy-no-rational-limit (statement), as recalled in Section 5.1
+exr-the-field-of-reals-b3 (solution): 1/(4n) <= 1/(n + 1) for n >= 1 | prp-ordered-field-halves (c) (cited)
+exr-the-field-of-reals-a1 (solution): (1/(n + 1)) is null in Q; a, a' in C | exm-first-sequences-ordered-field (b), thm-cauchy-algebra-ordered-field (a), (b) (cited)
 exr-the-field-of-reals-c1 (solution): M * e/(2M) + M * e/(2M) = e | field arithmetic, prp-ordered-field-halves (b)
 exr-the-field-of-reals-c2 (solution): [2]^2 = [0] in Z/4Z | def-integers-mod-n-ring (cited); remark only
 -->
