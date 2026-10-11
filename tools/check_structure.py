@@ -19,8 +19,11 @@ Section files (`src/chNN-slug/MM-slug.md`):
 * advisory -- a proof longer than `--idea-lines` lines (default 3; a derivation or
   display counts as one line) has a `::: {.idea}` as the block before it (STYLE §4
   step 3); proofs nested in a claim are exempt;
-* advisory -- prose word count in 2,500-5,000 (STYLE §2); math, code, raw LaTeX and
-  markup are not counted;
+* advisory -- **main-line** prose word count in 2,500-5,000 (STYLE §2); math, code,
+  raw LaTeX and markup are not counted, nor is prose inside a second-reading fold
+  (`::: {.second-reading}`, STYLE §12), which is reported beside it;
+* fatal  -- a second-reading fold inside another, or a heading inside a fold (the
+  engine refuses both too);
 * advisory -- a `###` heading under Exercises other than A/B/C/R, and an
   `### R. Review` group outside the chapter's last section (STYLE §6, §11.5);
 * advisory -- the file ends with a **dependency ledger**, an HTML comment whose
@@ -49,6 +52,15 @@ Exits 1 if any fatal problem is found. Importable:
     from tools.check_structure import find_violations, report
     fatal, advisory = find_violations(Path("src"))
 
+Word counts for the **Time** line (STYLE §2, §11.9, §12): `--words` prints, per section
+and per chapter, the main-line prose words (the core track reads these), the folded
+prose words (the full track reads these too) and the reading hours each gives at the
+B1 rate of 15 minutes per 400 words:
+
+    python3 tools/check_structure.py --book fd1 --words src/ch01-propositional-natural-deduction
+
+Importable: `prose_split(text) -> (main_line, folded)`, `reading_hours(words)`.
+
 As a `./build.py check` plugin (config `checks`), `run(book, labels)` reports the fatal
 rules as errors and the advisories as one summary warning. In a series, run it in a
 volume directory or pass `--book fd2`.
@@ -63,6 +75,8 @@ import mdblocks  # noqa: E402
 import series  # noqa: E402
 
 WORDS_MIN, WORDS_MAX = 2500, 5000
+FOLD = "second-reading"             # the second-reading fold (STYLE §12)
+WORDS_PER_QUARTER_HOUR = 400        # research-reader.md B1: 15 minutes per 400 words
 IDEA_LINES = 3
 GROUPS = ("A", "B", "C")
 INDEX_PARTS = ("What you need", "Roadmap", "Named moves")
@@ -111,6 +125,50 @@ def prose_words(text: str) -> int:
     t = re.sub(r"@[\w-]+", " X ", t)
     t = re.sub(r"[#*_>\[\]{}|]", " ", t)
     return len(re.findall(r"[A-Za-z0-9][\w'’-]*", t))
+
+
+def folds(doc):
+    """The outermost second-reading folds of a parsed document."""
+    return [d for d in doc.divs if d.has(FOLD)
+            and not any(a.has(FOLD) for a in _ancestors(d))]
+
+
+def _ancestors(div):
+    a = div.parent
+    while a is not None:
+        yield a
+        a = a.parent
+
+
+def in_fold(div) -> bool:
+    """Whether a div sits inside a second-reading fold (the fold itself is not)."""
+    return any(a.has(FOLD) for a in _ancestors(div))
+
+
+def prose_split(text: str) -> tuple:
+    """(main-line words, folded words): prose_words of the whole text, split at the
+    second-reading folds. The core track reads the first; the full track both."""
+    doc = mdblocks.parse(text)
+    folded = sum(prose_words(mdblocks.body(doc, d)) for d in folds(doc))
+    return prose_words(text) - folded, folded
+
+
+def reading_hours(words: int) -> float:
+    """Reading time at the B1 rate (15 minutes per 400 words of proof-dense prose)."""
+    return words / WORDS_PER_QUARTER_HOUR / 4
+
+
+def check_folds(doc):
+    """Fatal problems with second-reading folds: nesting, and headings inside."""
+    out = []
+    for d in doc.divs:
+        if d.has(FOLD) and in_fold(d):
+            out.append((d.start + 1, "a second-reading fold inside another: folds do not nest"))
+    for d in folds(doc):
+        for i in range(d.start + 1, d.end):
+            if not doc.in_code[i] and mdblocks.HEADING.match(doc.lines[i]):
+                out.append((i + 1, "a heading inside a second-reading fold: use a bold lead-in"))
+    return out
 
 
 def proof_length(doc, div) -> int:
@@ -168,8 +226,9 @@ def check_section(text: str, idea_lines: int = IDEA_LINES, last: bool = True):
 
     # checks and their solutions
     checks = [d for d in doc.divs if d.has("check")]
-    if not checks:
-        soft.append((1, "no Quick check (::: {.check})"))
+    # A first reading skips the folds, so the required check and warning are main-line ones
+    if not any(not in_fold(d) for d in checks):
+        soft.append((1, "no Quick check (::: {.check})" + (" outside the second-reading folds" if checks else "")))
     for d in checks:
         if any(c.has("solution") for c in d.children):
             fatal.append((d.start + 1, "a .solution is nested inside the .check; put it after the check closes"))
@@ -177,8 +236,11 @@ def check_section(text: str, idea_lines: int = IDEA_LINES, last: bool = True):
         if nxt is None or not nxt.has("solution") or nxt.parent is not d.parent:
             fatal.append((d.start + 1, "Quick check not followed by a sibling ::: {.solution}"))
 
-    if not any(d.has("warning") for d in doc.divs):
-        soft.append((1, "no ::: {.warning}"))
+    warnings = [d for d in doc.divs if d.has("warning")]
+    if not any(not in_fold(d) for d in warnings):
+        soft.append((1, "no ::: {.warning}" + (" outside the second-reading folds" if warnings else "")))
+
+    fatal += check_folds(doc)
 
     # exercises
     ex = next((i for i, lvl, t in doc.headings if lvl == 2 and t.strip() == "Exercises"), None)
@@ -225,9 +287,11 @@ def check_section(text: str, idea_lines: int = IDEA_LINES, last: bool = True):
 
     advisory += check_ledger(text)
 
-    words = prose_words(text)
+    words, folded = prose_split(text)
     if not WORDS_MIN <= words <= WORDS_MAX:
-        advisory.append((1, f"{words} words of prose (aim for {WORDS_MIN:,}-{WORDS_MAX:,})"))
+        extra = f"; {folded:,} more in second-reading folds" if folded else ""
+        advisory.append((1, f"{words} words of prose on the main line (aim for "
+                            f"{WORDS_MIN:,}-{WORDS_MAX:,}){extra}"))
     return fatal, advisory
 
 
@@ -265,6 +329,22 @@ def find_violations(root: Path, idea_lines: int = IDEA_LINES):
     return fatal, advisory
 
 
+def word_table(root: Path) -> str:
+    """Main-line and folded prose words, and reading hours, per section and in total."""
+    root = Path(root)
+    files = [root] if root.is_file() else sorted(root.rglob("[0-9]*.md"))
+    rows, core_total, folded_total = [], 0, 0
+    for f in files:
+        core, folded = prose_split(f.read_text(encoding="utf-8"))
+        core_total += core
+        folded_total += folded
+        rows.append(f"{f}: {core:,} main line + {folded:,} folded")
+    rows.append(f"total: {core_total:,} main line + {folded_total:,} folded; reading about "
+                f"{reading_hours(core_total):.1f} h on the core track, "
+                f"{reading_hours(core_total + folded_total):.1f} h on the full track")
+    return "\n".join(rows)
+
+
 def report(items) -> str:
     return "\n".join(f"{p}:{ln}: {m}" for p, ln, m in items)
 
@@ -278,7 +358,13 @@ def main(argv=None) -> int:
     ap.add_argument("--fatal-only", action="store_true", help="do not print advisories")
     ap.add_argument("--idea-lines", type=int, default=IDEA_LINES,
                     help=f"proofs longer than this need an Idea (default {IDEA_LINES})")
+    ap.add_argument("--words", action="store_true",
+                    help="print main-line and folded prose words and reading hours, then exit")
     args = ap.parse_args(argv)
+    if args.words:
+        for p in args.paths:
+            print(word_table(Path(p)))
+        return 0
     fatal, advisory = [], []
     for p in args.paths:
         fa, ad = find_violations(Path(p), args.idea_lines)

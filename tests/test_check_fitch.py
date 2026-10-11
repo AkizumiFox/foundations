@@ -93,6 +93,20 @@ class DerivationTests(unittest.TestCase):
         self.assertEqual(errors(ex_falso), [])
         self.assertTrue(errors(ex_falso.replace(r"\be{3}", r"\be{1}")))
 
+    def test_and_intro_cites_its_lines_in_either_order(self):
+        """STYLE §12 / NOTATION: the written line decides which conjunct is which."""
+        base = "\\hypo {1} {P} \\hypo {2} {Q} "
+        for cite in ("1,2", "2,1"):
+            for line in ("P \\wedge Q", "Q \\wedge P"):
+                self.assertEqual(errors(base + f"\\have {{3}} {{{line}}} \\ai{{{cite}}}"), [], (cite, line))
+        self.assertTrue(errors(base + "\\have {3} {P \\wedge P} \\ai{1,2}"))      # not those lines
+        self.assertTrue(errors(base + "\\have {3} {P \\vee Q} \\ai{2,1}"))        # not a conjunction
+        # ->E is read the same whichever line is cited first (the implication-first order is
+        # a writing convention, not a rule the checker enforces)
+        imp = "\\hypo {1} {P \\to Q} \\hypo {2} {P} "
+        self.assertEqual(errors(imp + "\\have {3} {Q} \\ie{1,2}"), [])
+        self.assertEqual(errors(imp + "\\have {3} {Q} \\ie{2,1}"), [])
+
     def test_citing_inside_a_closed_box(self):
         body = TRANSITIVE + r"  \have {7} {R} \r{5}" + "\n"
         self.assertEqual(errors(body), ["line 7 cites line 5, inside a box that has closed"])

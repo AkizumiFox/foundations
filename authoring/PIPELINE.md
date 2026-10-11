@@ -101,6 +101,7 @@ Each gets: the section, the frozen blueprint, the text of every label it cites, 
 - "Check every table, and every claim of the form 'all/none/only', against the prose and the earlier sections."
 - "Read each proof and list every fact it uses without an `@ref`. Diff your list against the dependency ledger; each fact missing from the ledger is a finding, and each `chNN (promised)` source must be in STATUS's promise table."
 - "Check notation against NOTATION.md: every symbol introduced before use, none with a second meaning."
+- "Check the forward-reference budget (STYLE §12.1): no `@ref` to a result the reader has not met used as a reason, in a proof or in prose; in an introductory volume, at most one 'Looking ahead' box per section. Check effort is proportional to difficulty (§12.2): a trivial rule or notion read clause by clause, or a hard one rushed, is a finding. Close every second-reading fold and check the main line still teaches the section (§12.0)."
 - "Check the worked examples obey the advice the section gives the reader, and the section obeys STYLE §9's checklist and §11's counts."
 - "Look at the rendered page for anything check_rendered.py cannot see (a sentence that reads wrongly after rendering)."
 

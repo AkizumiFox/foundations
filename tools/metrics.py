@@ -8,8 +8,10 @@ whatever exists, and appends one row per chapter to `authoring/metrics.csv`
 (created, with its header, on first use). Every source is optional; a missing one
 leaves its columns blank and is named in the row's `notes` column:
 
-* **the source** (`src/chNN-*/`): prose words per section against the 2,500-5,000
-  budget (`tools/check_structure.py`'s count), results, proofs, examples,
+* **the source** (`src/chNN-*/`): prose words (`prose_words`: all of it; the
+  `prose_words_folded` part of it inside second-reading folds, STYLE §12), main-line
+  prose words per section against the 2,500-5,000 budget (`tools/check_structure.py`'s
+  count; `words_per_section` reads `01:4100+900` when 900 more are folded), results, proofs, examples,
   exercises, % of exercises followed by a solution, exit checks
   (`[C…: Exit check: …]`), Quick checks, dependency-ledger lines and those whose
   source is `(promised)`;
@@ -80,7 +82,7 @@ PROMISED = re.compile(r"\(promised\)")
 COLUMNS = [
     "date", "commit", "chapter",
     # size
-    "sections", "prose_words", "words_per_section", "sections_outside_budget",
+    "sections", "prose_words", "prose_words_folded", "words_per_section", "sections_outside_budget",
     "results", "proofs", "examples", "exercises", "exercise_solution_pct", "exit_checks",
     "quick_checks",
     # findings
@@ -124,17 +126,18 @@ def chapter_number(chdir: Path):
 
 def size_metrics(chdir: Path) -> dict:
     cs = _tool("check_structure")
-    words, outside, per = 0, 0, []
+    words, folded_words, outside, per = 0, 0, 0, []
     counts = Counter()
     ex_with_solution = 0
     ledger_lines = promised = 0
     sections = sorted(Path(chdir).glob("[0-9]*.md"))
     for f in sections:
         text = f.read_text(encoding="utf-8")
-        w = cs.prose_words(text)
-        words += w
-        per.append(f"{f.name[:2]}:{w}")
-        outside += not (WORDS_MIN <= w <= WORDS_MAX)
+        w, folded = cs.prose_split(text)
+        words += w + folded
+        folded_words += folded
+        per.append(f"{f.name[:2]}:{w}" + (f"+{folded}" if folded else ""))
+        outside += not (WORDS_MIN <= w <= WORDS_MAX)     # the budget is the main line's
         doc = mdblocks.parse(text)
         for d in doc.divs:
             kind = d.id.split("-", 1)[0] if d.id and "-" in d.id else ""
@@ -158,7 +161,8 @@ def size_metrics(chdir: Path) -> dict:
             ledger_lines += sum(1 for ln in lines if not ln.strip().startswith("none:"))
             promised += sum(1 for ln in lines if PROMISED.search(ln))
     ex = counts["exercises"]
-    return {"sections": len(sections), "prose_words": words, "words_per_section": " ".join(per),
+    return {"sections": len(sections), "prose_words": words, "prose_words_folded": folded_words,
+            "words_per_section": " ".join(per),
             "sections_outside_budget": outside, "results": counts["results"],
             "proofs": counts["proofs"], "examples": counts["examples"], "exercises": ex,
             "exercise_solution_pct": round(100 * ex_with_solution / ex, 1) if ex else "",

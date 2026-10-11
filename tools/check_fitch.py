@@ -25,7 +25,12 @@ A derivation is mechanical, so it is checked mechanically. For each `nd` block:
 * **rule shapes** for the propositional rules (and-I/E, ->I/E, or-I/E, not-I/E,
   bot-E, RAA, iff-I/E, R), at the level of formulas, with a small parser for
   letters (any capital), `\\neg \\wedge \\vee \\to \\leftrightarrow \\bot` and
-  parentheses;
+  parentheses. and-I may cite its two lines in either order: the written line
+  decides which conjunct is which, so `\\ai{3,2}` and `\\ai{2,3}` both justify
+  P and Q (or Q and P) from lines P and Q (NOTATION.md, "Derivations"). ->E is
+  checked as the conjunction of an implication and its antecedent whichever is
+  cited first; citing the implication first is the book's writing convention, not
+  a rule of the calculus;
 * **quantifier and equality rules** (`\\Ae \\Ai \\Ei \\Ee \\eqi \\eqe`), shape and side
   conditions, with a small first-order parser (predicates P(x, y), function symbols
   f(x), + - \\cdot ^, names x, x_0, c, 0, \\varepsilon_0, relations = < \\le \\in ...,
@@ -1104,6 +1109,7 @@ def check_shape(rule, f, resolved, lines):
     B = [(lines[b.lines[0]].formula, lines[b.lines[-1]].formula) for s, b in resolved if s == "B"]
     s = show
     if rule == "ai":
+        # Either order of citation: the line written decides which conjunct is which
         if f[0] == "and" and {(f[1], f[2]), (f[2], f[1])} & {(L[0], L[1])}:
             return ""
         return f"needs {s(f)} to be the conjunction of the cited lines {s(L[0])}, {s(L[1])}"

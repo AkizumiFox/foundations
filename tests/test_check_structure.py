@@ -104,7 +104,7 @@ class SectionTests(unittest.TestCase):
         self.assertEqual(fatal, [])
         # only the word count is off in this tiny fixture
         self.assertEqual(len(advisory), 1)
-        self.assertIn("words of prose", advisory[0])
+        self.assertIn("words of prose on the main line", advisory[0])
 
     def test_missing_frame(self):
         text = GOOD.replace("We are here, a question is open, and this section answers it.\n", "")
@@ -171,6 +171,69 @@ class SectionTests(unittest.TestCase):
 
     def test_word_count(self):
         self.assertEqual(cs.prose_words("# T\n\nOne two \\( x^2 \\) three.\n\n\\[ a = b \\]\n"), 5)
+
+
+FOLD = """
+::: {.second-reading title="Why it works"}
+Four folded words here.
+
+::: {.proof}
+Five more folded words here.
+:::
+:::
+"""
+
+
+class SecondReadingTests(unittest.TestCase):
+    """STYLE §12: folded prose is counted apart (core vs full track), folds do not nest
+    and hold no heading, and the required check and warning stay on the main line."""
+
+    def test_prose_split(self):
+        text = "# T\n\nOne two three.\n" + FOLD
+        self.assertEqual(cs.prose_split(text), (4, 9))        # "T" of the title counts
+        self.assertEqual(cs.prose_words(text), 13)
+        self.assertEqual(cs.prose_split("# T\n\nOne two.\n"), (3, 0))
+
+    def test_budget_counts_the_main_line_only(self):
+        text = GOOD.replace("## Exercises", FOLD + "\n## Exercises")
+        fatal, advisory = run(text)
+        self.assertEqual(fatal, [])
+        words = [m for m in advisory if "words of prose" in m]
+        self.assertEqual(len(words), 1)
+        self.assertIn("on the main line", words[0])
+        self.assertIn("9 more in second-reading folds", words[0])
+
+    def test_reading_hours(self):
+        self.assertEqual(cs.reading_hours(1600), 1.0)
+
+    def test_nested_fold_and_heading_are_fatal(self):
+        nested = FOLD.replace("Four folded words here.",
+                              "::: {.second-reading}\nInner.\n:::")
+        fatal = run(GOOD.replace("## Exercises", nested + "\n## Exercises"))[0]
+        self.assertTrue(any("folds do not nest" in m for m in fatal))
+        heading = FOLD.replace("Four folded words here.", "### A heading")
+        fatal = run(GOOD.replace("## Exercises", heading + "\n## Exercises"))[0]
+        self.assertTrue(any("heading inside a second-reading fold" in m for m in fatal))
+        self.assertEqual(run(GOOD.replace("## Exercises", FOLD + "\n## Exercises"))[0], [])
+
+    def test_check_and_warning_must_be_on_the_main_line(self):
+        block = "::: {.warning}\nA trap.\n:::\n\n::: {.check}\nIs it so?\n:::\n\n::: {.solution}\nYes.\n:::\n"
+        moved = GOOD.replace(block, "").replace(
+            "## Exercises", "::: {.second-reading}\n" + block + ":::\n\n## Exercises")
+        fatal = run(moved)[0]
+        self.assertIn("no ::: {.warning} outside the second-reading folds", fatal)
+        self.assertIn("no Quick check (::: {.check}) outside the second-reading folds", fatal)
+
+    def test_words_cli(self):
+        with tempfile.TemporaryDirectory() as tmp:
+            ch = Path(tmp) / "src" / "ch01-x"
+            ch.mkdir(parents=True)
+            (ch / "01-a.md").write_text("# T\n\nOne two three.\n" + FOLD)
+            out = io.StringIO()
+            with redirect_stdout(out):
+                self.assertEqual(cs.main([str(ch), "--words"]), 0)
+            self.assertIn("4 main line + 9 folded", out.getvalue())
+            self.assertIn("core track", out.getvalue())
 
 
 class IndexAndFilesTests(unittest.TestCase):

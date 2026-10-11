@@ -57,13 +57,13 @@ does. Plain prose, no heading.
 -->
 ```
 
-Section titles (the `#` line) contain no math, since they appear in navigation links and page titles. Use `##` for subsections (they appear in the page's table of contents) and `###` only inside Exercises or for a long worked computation. Aim for **2,500–5,000 words**. Split a longer section at a natural seam. The `### R. Review` group appears only in the chapter's last section (§6), and the dependency ledger closes every section file (§9).
+Section titles (the `#` line) contain no math, since they appear in navigation links and page titles. Use `##` for subsections (they appear in the page's table of contents) and `###` only inside Exercises or for a long worked computation. Aim for **2,500–5,000 words of main-line prose**; prose inside second-reading folds (§12) is counted apart and does not use up the budget, though it is not free either (it is on the full track). Split a longer section at a natural seam. The `### R. Review` group appears only in the chapter's last section (§6), and the dependency ledger closes every section file (§9).
 
 A chapter's `index.md` contains, in this order:
 1. `# Chapter Title`.
 2. A 1–2 paragraph story of the chapter: the question it answers and why the reader should care.
 3. **What you need:** the earlier chapters or sections used, with links.
-4. **Time:** one line, `**Time.** About N hours on the core track (all of A, one B and one C per section, the exit checks); about M hours for everything.` Until there are reader logs, N and M come from the formula in `authoring/design/research-reader.md` B1: about 15 minutes per 400 words of prose for reading, plus 20–45 minutes per exercise. Round to the nearest 5 hours. Replace them with the median of logged hours when there is one.
+4. **Time:** one line, `**Time.** About N hours on the core track (all of A, one B and one C per section, the exit checks); about M hours for everything.` Until there are reader logs, N and M come from the formula in `authoring/design/research-reader.md` B1: about 15 minutes per 400 words of prose for reading, plus 20–45 minutes per exercise. **N counts main-line prose only; M adds the prose inside second-reading folds** (§12). `python3 tools/check_structure.py --words src/chNN-…` prints both word counts and their reading hours. Round to the nearest 5 hours. Replace them with the median of logged hours when there is one.
 5. **Roadmap:** a bullet per section, with one sentence each.
 6. **Named moves:** a short list of the proof techniques this chapter introduces, so the reader can transfer them.
 
@@ -89,8 +89,8 @@ For each new definition, in order:
 7. **Examples**, 2–4 of them, simplest first.
    - Check each against the definition clause by clause.
    - Spread them across the families: sequences in ℝ, functions on intervals, ℝⁿ, sequence spaces (ℓᵖ), function spaces (C[a,b], Lᵖ), the discrete metric.
-   - Include one degenerate case (the empty set, a singleton, a constant sequence, the zero function) and say why it matters.
-8. **Non-example by minimal change.** Change one example slightly, say what still works, and name the exact clause that fails.
+   - Include one degenerate case (the empty set, a singleton, a constant sequence, the zero function) and say why it matters. In an introductory volume the degenerate case may go into the second-reading fold instead (§12.3).
+8. **Non-example by minimal change.** Change one example slightly, say what still works, and name the exact clause that fails. (fd1 and introductory volumes: into the fold, or into the section's one "Is this legal? Is it useful?" A item, §12.3.)
 9. **Why this definition.** What breaks if a clause is dropped or a convention changed. Where the name comes from, if it helps.
 10. **Warning** (`::: {.warning}`). The misconception, with a concrete failing case.
 11. **Payoff.** The first small result, a link to an earlier concept, and one sentence on where this is going.
@@ -176,7 +176,7 @@ Run `python3 tools/check_optional.py --list` to see everything currently marked.
 ## 5. Examples, checks, warnings, remarks
 
 - **Examples** `::: {#exm-slug}` with a `[Title]` first line. State the question inside the example. Put the worked answer in a following `::: {.solution}`; it starts folded on the web. Choose data so the computation is clean: explicit ε-thresholds that come out as integers, sums that telescope, functions whose integrals are elementary.
-- **Quick check** `::: {.check}`: one short question. Its answer is a `::: {.solution}` placed **right after** the check block closes, never nested inside it. Put at least one per section, placed right after the idea it tests. Good checks:
+- **Quick check** `::: {.check}`: one short question. Its answer is a `::: {.solution}` placed **right after** the check block closes, never nested inside it. Put at least one per section **on the main line** (a check inside a second-reading fold does not count), placed right after the idea it tests; in fd1 and introductory volumes, about one per 800–1,000 words of main-line prose (§12.7). Good checks:
   - a non-example failing only clause k;
   - "why must this be strict?";
   - "is this look-alike an example?";
@@ -191,7 +191,7 @@ Run `python3 tools/check_optional.py --list` to see everything currently marked.
 
 Each section ends with `## Exercises` and three groups, A, B and C. The **last section of a chapter** has a fourth group, R. The exercise formats of §11 (comprehension parts, find-the-error, proof ordering, faded proofs, example generation) live inside these groups; they are not groups of their own.
 
-**A. Check your understanding.** Exactly one exercise with 2–6 lettered parts: define, state, decide true/false with a reason, negate a definition, name the method. Readers should be able to answer before moving on.
+**A. Check your understanding.** Exactly one exercise with 2–6 lettered parts: define, state, decide true/false with a reason, negate a definition, name the method. Readers should be able to answer before moving on. (fd1 and introductory volumes: a rule section adds the drill bank of §12.8, and may add §12.3's "Is this legal? Is it useful?" item, as further A items.)
 - In the section holding one of the chapter's two or three **key proofs**, at least one part is a **proof-comprehension** question about it (§11.2).
 - A proof-ordering item (§11.4) may be the A exercise's last part or a B item.
 
@@ -241,7 +241,7 @@ The chapter's **exit checks** are C items titled `[C1: Exit check: …]`, and th
 - **Voice.** "We" for the author and reader together; "you" sparingly, for direct advice. Median sentence 12–18 words. Paragraphs of 1–4 sentences. Vary rhythm; no walls of text.
 - **Emphasis.** Bold is for defined terms and load-bearing small words, italics for slogans and light emphasis. No exclamation marks, and no "Note that" at the start of every other sentence.
 - **Names.** Name results by content ("the Bolzano–Weierstrass Theorem"), with `@label`. Titles of named theorems match exactly so the dependency graph picks up mentions.
-- **Promises.** Every forward promise ("we will see in @sec…" or "in Chapter 10") must be paid off. A drafter reports each promise it opens and each it pays (with the paying label); the coordinator enters them in `authoring/STATUS.md`, and `tools/promises.py` reconciles the table with the text. Never promise what you have not checked the target chapter's blueprint will deliver.
+- **Promises.** Every forward promise ("we will see in @sec…" or "in Chapter 10") must be paid off. Forward pointers are budgeted (§12.1): no `@ref` to a result the reader has not met may serve as a reason, and an introductory volume allows one "Looking ahead" box per section. A drafter reports each promise it opens and each it pays (with the paying label); the coordinator enters them in `authoring/STATUS.md`, and `tools/promises.py` reconciles the table with the text. Never promise what you have not checked the target chapter's blueprint will deliver.
 - **Spelling.** American spelling: "normalize", "color", "behavior", "center". Mathematical names keep their accents (Gershgorin, Schur, Cauchy–Schwarz with an en dash).
 - **Math delimiters.** `\( … \)` inline and `\[ … \]` display, never `$` (except inside TikZ and inside `\tag{$\ast$}`). Numbered equations take `{#eq-slug}` **on the same line as the closing `\]`, with no space** (`\]{#eq-normal-equations}`), and are cited with `@eq-slug`; on its own line, or after a blank line, the label is just text.
 - **Relation symbols are typeset, never plain characters.** Write `\( \Rightarrow \)`, `\( \subseteq \)`, `\( \in \)`, `\( \le \)`, not the unicode characters — including proof-direction tags `\( (\Rightarrow) \)` and chains such as `(a) \( \Rightarrow \) (b)`. (An arrow used rhetorically, as in "abstract space → write down a matrix", is ordinary prose and stays plain, as does an environment title such as `[The 2 × 2 puzzle]`.)
@@ -272,6 +272,7 @@ Let ...  This proves the theorem.
 - **References:** `@thm-bolzano-weierstrass` renders as "Theorem 3.12" with a hover preview; `@eq-slug` works for equations.
 - **References to the linear-algebra companion:** `@la:thm-spectral-real` renders as "Linear Algebra, Theorem 12.4", linked, with the preview; `[@la:thm-spectral-real]` renders as "[LA, Theorem 12.4]". See §10.
 - **Optional results:** `::: {#thm-foo .optional}` marks a result nothing later depends on (§4). Nothing may be proved from one; `./build.py check` enforces it.
+- **Second-reading fold:** `::: {.second-reading title="Why the order is loss-free"}` … `:::` folds material a first reading may skip (§12). Not `.optional`: what it proves may be cited. Math in the title is `$…$` (in an attribute a backslash is an escape). Folds do not nest and hold no heading.
 - **Labeled lists:** `::: {.enumerate options="label=(O\arabic*)"}` wraps an ordered list.
 - **Web-only content:** `::: {.content-visible when-format="html"}`.
 
@@ -317,6 +318,8 @@ A **meta-claim** is a sentence about the book's own content: "the classical step
 - [ ] Every forward pointer in prose ("in Chapter N") is reported for STATUS's promise table, and every promise this section pays names the label that pays it.
 - [ ] Notation matches `NOTATION.md`. No symbol is used before it is introduced, and none is reused with a new meaning.
 - [ ] Labels are unique (grep `src/`), and every `@ref` target exists or is created in this chapter.
+- [ ] Second-reading folds hold only what §12.0 allows; every folded proof's statement and one-sentence meaning are on the main line; the main line still teaches the section with every fold closed.
+- [ ] Forward pointers within budget (§12.1): no `@ref` to an unseen result used as a reason; at most one "Looking ahead" box (introductory volumes).
 - [ ] Anything marked `.optional` is genuinely skippable: no proof, idea, claim or solution anywhere cites it (`python3 tools/check_optional.py`).
 - [ ] Every theorem's hypotheses are each used, and each major theorem has a remark or exercise showing what fails when one is dropped.
 - [ ] Every chosen constant says what it depends on.
@@ -415,7 +418,7 @@ Neither gives the execution of the key idea. The failure the ladder prevents is 
 
 The Idea that follows **starts from the obstacles such an attempt meets** ("the obvious candidate is …; it fails because …"). Choose theorems where a reader can get somewhere in ten minutes; an unanswerable prompt costs a lone reader more than a student in class.
 
-**11.9 The chapter's time line.** Every chapter `index.md` has the **Time** line of §2, after **What you need**. The core track is all of A, one B and one C per section, and the exit checks; the full track is everything. The estimate is a promise to the reader about their week, so round honestly and do not shade it down.
+**11.9 The chapter's time line.** Every chapter `index.md` has the **Time** line of §2, after **What you need**. The core track is all of A, one B and one C per section, the exit checks, and the main-line prose; the full track is everything, including the prose inside second-reading folds (§12). The estimate is a promise to the reader about their week, so round honestly and do not shade it down.
 
 **11.10 Gates.** The last main-line chapter of each Part ends with a **Gate** section: in the 78-chapter numbering, Chapters 8, 21 (its §06 review becomes the Gate), 33, 42, 54, 62 and 78 (§08, the mixed qualifying exam). Renumbering may move these; the Gate follows the Part's last main-line chapter. A Gate section contains, in order:
 1. **Instructions:** time allowed (2 hours for Gate 0, 3 hours after), closed book, and the pass line: 70% overall, with no *core* problem at 0.
@@ -434,3 +437,123 @@ Gate problems are original. They may take the style and level of a qualifying ex
 - **Parts IV–VI** expect the reader to supply routine ε-management, measurability checks and "take a subsequence" without comment; prompts are for the genuinely new step.
 
 Do not carry Part 0's density of prompts into Part IV. A reader who is told everything twice learns to skim.
+
+## 12. The main line, the second reading, and the entry volumes
+
+A section has two readers: the one meeting the material for the first time, who needs the shortest path through it, and the one coming back to see why it all holds. This section says how to serve both on the same page. Rules marked **(fd1 and introductory volumes)** apply to *Logic and Proof* and to any volume a reader may open first; the others apply everywhere. They come from the fd1 revision plan (novice-reader reports, and a comparison with the standard logic texts for technique only: no text, example or exercise is taken from any of them).
+
+### 12.0 The second-reading fold
+
+```markdown
+::: {.second-reading title="Why the order of the premises is loss-free"}
+Material a first reading may skip.
+:::
+```
+
+On the website the fold is closed, with a marker and its title ("Second reading" if it has none); in the PDF it is printed in place between two light rules under the same head. Everything inside behaves as it would outside: theorems, proofs and derivations are numbered, labelled, cited and searchable, and a link to a label inside a closed fold opens it.
+
+**What goes in.**
+- A **meta-proof** whose statement stays on the main line (§12.12).
+- **Edge cases**: the degenerate case, the non-example by minimal change, the "silly but legal" step (§12.3).
+- **Long justifications**: "why the order is loss-free", "convenience, not power", "why a step may act on a part buried inside".
+- **Instructor notes**: comparisons with other calculi, remarks on conventions, history.
+
+**What never goes in.** A statement a later proof cites; the definition of anything used on the main line; the only Quick check or the only warning of the section (`tools/check_structure.py` counts main-line ones only); a heading (a fold sits inside a section: use a bold lead-in); another fold (folds do not nest). The build and `check_structure.py` both refuse the last two.
+
+**It is not `.optional`.** An optional result (§4) promises that *nothing* depends on it; a fold promises only that a *first reading* may skip it. A result proved in a fold may be cited by any later proof, and `check_optional.py` and `check_forward_deps.py` read fold content as main line. Use `.optional` for what nobody needs, a fold for what everybody needs proved but not everybody needs to read now. The two may combine: an optional result inside a fold.
+
+**The test.** Read the section with every fold closed. It must still teach the section: every rule usable, every main-line statement understood, every A and B exercise doable. If a fold must be open for that, its content belongs on the main line.
+
+**How Time counts it.** The core track's reading time counts main-line prose only; the full track adds the folded prose (§2, §11.9). The section budget of 2,500–5,000 words is the main line's; folded prose is reported beside it, and the blueprint gives it a budget too, so that folding is not a way to grow the section.
+
+### 12.1 The forward-reference budget
+
+- A result the reader has not met is never a **reason**. No `@ref` to an unseen theorem in a proof, an idea, a claim or a justification; a heuristic is justified by a plain counterexample on the page, not by a theorem proved later. (This sharpens the hard rule on forward references: prose that *argues* from a later result is a forward dependency even outside a proof.)
+- **(fd1 and introductory volumes)** At most **one** forward pointer per section, in a small box at the end of the main line, before the Exercises:
+
+  ```markdown
+  ::: {.remark}
+  [Looking ahead]
+
+  Chapter 3 checks that no rule leads from truth to falsehood.
+  :::
+  ```
+
+  It names the chapter in words, never with `@ref`, and is reported to STATUS's promise table like any other promise. In fd1, soundness is promised once, in Section 1.2, and is not used as a reason anywhere before Chapter 3; one global note in Chapter 2's `index.md` ("steps about every and some are used as ordinary reasoning until Chapter 4") replaces per-proof caveats.
+
+### 12.2 Effort in proportion to difficulty
+
+A rule or definition with nothing hidden in it gets a short treatment; one with conditions that bite gets the full one. **(fd1 and introductory volumes)** The trivial rules (∧I, ∧E, ∨I, ∀E, ∃I, =I) get three bullets each: the schema, one line of reading, one example. The full clause-by-clause reading is kept for →I, ∨E, ¬I, RAA, ∀I and ∃E, and each of those opens with "This rule has conditions that matter; read each one." Elsewhere the same principle is §3's: a minor notion uses steps 4, 7 and 8, a major one all eleven.
+
+### 12.3 Edge cases
+
+Degenerate cases, minimal-change non-examples and "legal but useless" steps go into the second-reading fold, or into **one** A item per section titled `[A2: Is this legal? Is it useful?]` (fd1 and introductory volumes). Two exceptions stay on the main line in fd1 because later work uses them: the one-line box deriving ⊢ P → P, and P ∨ P ⊢ P. In other volumes, §3 step 7's degenerate case stays on the main line when it is the first place the reader meets it, and may be folded on its later returns.
+
+### 12.4 Partial derivations (fd1 and introductory volumes)
+
+Every worked derivation in a volume's rule sections (fd1: Chapters 1–2 and Sections 4.4–4.6) is shown growing, in two or three snapshots before the finished one: the goal at the bottom, the gap marked with a `\vdots` row, the available lines at the top, and **line numbers as they will be at the end**. Snapshots use the ordinary `nd` environment: a gap row is `\have[\ ][0]{}{\vdots}`, and the next row jumps the count to its final number with `\have[][7]{7}{…}` (`tools/check_fitch.py` accepts a forward jump only across a gap row). The finished derivation follows the last snapshot.
+
+### 12.5 The Givens / Goal table (fd1 and introductory volumes)
+
+Scratch work is drawn as a two-column table, introduced where the two directions of reasoning are (fd1: Section 1.2) and reused wherever a proof is planned (fd1: 2.6, 4.4–4.6, and step 1 of 5.5's procedure):
+
+```markdown
+| Givens | Goal |
+|---|---|
+| \( P \to Q \), \( Q \to R \) | \( P \to R \) |
+| \( P \to Q \), \( Q \to R \), \( P \) | \( R \) |
+```
+
+Each row is one move, and each rule is a change to the table: →I moves the hypothesis into the Givens, ∀I adds a fresh name, ∃E adds a witness. A rule section says, in one line, what its rule does to the table.
+
+### 12.6 The rule card (fd1 and introductory volumes)
+
+Every rule section ends its main line with a **rule card**: a small table of the rules so far, each with a one-line picture (premises ⟹ conclusion) and its everyday phrase ("so", "suppose … then", "in either case"). The card grows section by section; the cumulative card is a one-page reference at the end of a run of rule sections (fd1: after 1.6, 2.6 and 4.6), and the goal/premise decision chart grows with it.
+
+### 12.7 Quick-check density (fd1 and introductory volumes)
+
+About one Quick check per 800–1,000 words of main-line prose, most of them cheap: "Is this line legal? Which rule? Which lines does it cite?". The rule of §5 (at least one per section, its solution a sibling after it) still holds everywhere.
+
+### 12.8 Drills and scaffolded items (fd1 and introductory volumes)
+
+- **Drill bank.** Each rule section has, under A, a second item `[A2: Drill]` (or A3 when A2 is §12.3's item) of 8–12 short parts in order of difficulty: justify each line of a given derivation, find the illegal line, and 2–6-line derivations. Every part has its answer in the folded solution. For Time, the bank counts by B1's formula as one exercise per four parts, since each part is a one-line task.
+- **Scaffolded B items.** At least one B item per rule section gives the premises and the last line, with the gaps marked `\vdots`, and asks "*Name the move, then complete it.*" (fd1's 1.5 B2 and 1.6 C4 are the model).
+- **Challenge items.** A C item that is a meta-proof or needs mathematics beyond the section is titled `[C3: Challenge: …]` and is not on the core track; the core track's "one C per section" is a non-challenge C.
+
+### 12.9 School-level examples first (fd1 and introductory volumes)
+
+A logical point is first carried by an example from school mathematics (parity, divisibility, inequalities between numbers, a small finite set); the analysis example (the extreme value theorem, differentiability, ε–δ, uniform continuity) follows as the payoff, never as the first or only example.
+
+### 12.10 Notation (fd1 and introductory volumes)
+
+- ⊢ is introduced once, right after the reader has seen a derivation (fd1: Section 1.2). Γ is read "gamma" and explained as a list of statements.
+- Schema letters are separated from statements once, with one sentence and an analogy: φ, ψ are holes in a pattern, like *a* and *b* in (a + b)² = a² + 2ab + b²; P, Q are statements. Each Greek letter is introduced once.
+- In fd1 Chapter 1 nested → is always written with its parentheses; the right-association convention is a one-line remark (NOTATION.md keeps it).
+- A substitution of a compound term parenthesizes the term, \( \varphi[(y+1)/x] \), rather than switching notation; no notation is swept across volumes.
+- "≤ and ≥ are written out as disjunctions in derivations" is stated once, in a box (fd1: Section 1.5), and reused after.
+
+### 12.11 Citation order of ∧I
+
+∧I cites its two lines in **either order**; the written line decides which conjunct is which (NOTATION.md, "Citing lines"; `tools/check_fitch.py` checks it so). The text never teaches a fixed order for ∧I or makes an exercise of it. →E keeps its convention, implication first and antecedent second, because every →E line then reads the same way; that is a writing convention, not a rule the reader can break.
+
+### 12.12 Meta-proofs
+
+A meta-proof (soundness of a rule, closure under substitution, copying a derivation, unique readability, structural recursion) goes into the second-reading fold. The **statement and a one-sentence meaning** stay on the main line, so the result can be cited and understood without the proof:
+
+```markdown
+::: {#lem-more-premises}
+[More Premises]
+
+If \( \Gamma \vdash \varphi \) and every formula of \( \Gamma \) is in \( \Delta \), then \( \Delta \vdash \varphi \).
+:::
+
+*In words: more premises never hurt.*
+
+::: {.second-reading title="The proof: copy the derivation"}
+::: {.proof}
+…
+:::
+:::
+```
+
+A fold moves a proof; it never changes it. A proof that later volumes cite keeps its content verbatim when it is folded, and a changed proof goes back through S2a.

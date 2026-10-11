@@ -98,6 +98,15 @@ class MetricsTests(unittest.TestCase):
         self.assertEqual((s["exit_checks"], s["quick_checks"]), (1, 1))
         self.assertEqual((s["ledger_lines"], s["ledger_promised"]), (2, 1))
         self.assertEqual(s["sections_outside_budget"], 1)
+        self.assertEqual(s["prose_words_folded"], 0)
+
+    def test_folded_words(self):
+        text = (self.ch / "01-one.md").read_text().replace(
+            "\n## ", "\n::: {.second-reading}\nThree folded words.\n:::\n\n## ", 1)
+        (self.ch / "01-one.md").write_text(text)
+        s = mt.size_metrics(self.ch)
+        self.assertEqual(s["prose_words_folded"], 3)
+        self.assertTrue(s["words_per_section"].endswith("+3"))
 
     def test_review_findings_and_rates(self):
         reviews = self.root / "authoring" / "reviews"
