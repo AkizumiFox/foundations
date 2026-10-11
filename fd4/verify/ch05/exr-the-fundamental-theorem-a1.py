@@ -1,5 +1,5 @@
 """exr-the-fundamental-theorem-a1: (c) for p = x^2 + 1: rho = 2, S_0 = S(-2, -2, 4), m = 0,
--i in S_1 = S(-2, -2, 2) and in S_2 = S(-1, -2, 1); |p| >= |2xy| >= 2 on S(-2, -2, 1) (exact on a rational grid)."""
+-i in S_1 = S(-2, -2, 2) and in S_2 = S(-1, -2, 1); |p| >= |2ab| >= 2 on S(-2, -2, 1) (exact on a rational grid)."""
 from fractions import Fraction as F
 
 QUOTED = {"rho": 2, "S_0": (-2, -2, 4), "S_1": (-2, -2, 2), "S_2": (-1, -2, 1), "bound": 2}

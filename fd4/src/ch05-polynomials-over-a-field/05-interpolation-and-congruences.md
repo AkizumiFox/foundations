@@ -278,13 +278,13 @@ For (a), write \( 1 \) as a combination of \( p \) and each factor, and multiply
 :::
 
 ::: {.proof}
-(a) Induction on \( s \) (@fd1:ax-induction, from \( s = 1 \)). For \( s = 1 \) there is nothing to prove. Suppose the claim holds for \( s \), and let \( p \) be coprime to each of \( q_1, \dots, q_{s+1} \). Write \( Q \coloneqq q_1 \cdots q_s \), so that \( q_1 \cdots q_{s+1} = Q q_{s+1} \) by the product recursion (@fd2:def-sum-product, read in \( F[x] \)). By the induction hypothesis and @cor-polynomial-coprime-iff-combination, \( ap + bQ = 1 \) and \( a'p + b'q_{s+1} = 1 \) for some \( a, b, a', b' \in F[x] \). Multiplying the two identities and expanding,
+(a) We apply @fd1:ax-induction (on \( \nN = \omega \), @fd3:cor-omega-identification (b)) to \( P(n) \): "the claim holds for \( s = n + 1 \)". \( P(0) \), the case \( s = 1 \), has nothing to prove. Suppose \( P(n) \), that is, the claim for \( s = n + 1 \), and let \( p \) be coprime to each of \( q_1, \dots, q_{s+1} \). Write \( Q \coloneqq q_1 \cdots q_s \), so that \( q_1 \cdots q_{s+1} = Q q_{s+1} \) by the product recursion (@fd2:def-sum-product, read in \( F[x] \)). By the induction hypothesis and @cor-polynomial-coprime-iff-combination, \( ap + bQ = 1 \) and \( a'p + b'q_{s+1} = 1 \) for some \( a, b, a', b' \in F[x] \). Multiplying the two identities and expanding,
 \[
 p \, (aa'p + ab'q_{s+1} + a'bQ) + (bb') \, Q q_{s+1} = 1 .
 \]
 So \( \gcd(p, Qq_{s+1}) = 1 \) by @cor-polynomial-coprime-iff-combination.
 
-(b) Induction on \( k \) (@fd1:ax-induction, from \( k = 1 \)). For \( k = 1 \) there is nothing to prove. Suppose the claim holds for \( k \), and let \( m_1, \dots, m_{k+1} \) be pairwise coprime, each dividing \( h \). With \( M \coloneqq m_1 \cdots m_k \), the induction hypothesis gives \( M \mid h \). The modulus \( m_{k+1} \) is coprime to each of \( m_1, \dots, m_k \), so \( \gcd(m_{k+1}, M) = 1 \) by (a), and \( \gcd(M, m_{k+1}) = 1 \) since the gcd is symmetric (@def-polynomial-gcd). By @prp-polynomial-coprime-divisors-product, \( M m_{k+1} = m_1 \cdots m_{k+1} \) divides \( h \).
+(b) We apply @fd1:ax-induction (on \( \nN = \omega \), @fd3:cor-omega-identification (b)) to \( P(n) \): "the claim holds for \( k = n + 1 \)". \( P(0) \), the case \( k = 1 \), has nothing to prove. Suppose \( P(n) \), that is, the claim for \( k = n + 1 \), and let \( m_1, \dots, m_{k+1} \) be pairwise coprime, each dividing \( h \). With \( M \coloneqq m_1 \cdots m_k \), the induction hypothesis gives \( M \mid h \). The modulus \( m_{k+1} \) is coprime to each of \( m_1, \dots, m_k \), so \( \gcd(m_{k+1}, M) = 1 \) by (a), and \( \gcd(M, m_{k+1}) = 1 \) since the gcd is symmetric (@def-polynomial-gcd). By @prp-polynomial-coprime-divisors-product, \( M m_{k+1} = m_1 \cdots m_{k+1} \) divides \( h \).
 :::
 :::
 
@@ -627,6 +627,7 @@ thm-polynomial-quotient-field (claim): (warning) c^2 + 1 != 0 (exm-polynomial-qu
 thm-polynomial-quotient-field (claim): (quick check) x^2 - 2 = (x - s)(x + s) in R[x], s = sqrt 2 | fd3:prp-cof-square-roots, cited; inline expansion
 lem-polynomial-coprime-to-product (proof): (ap + bQ)(a'p + b'q) = p(aa'p + ab'q + a'bQ) + bb'Qq | thm-polynomial-ring-laws (a) (commutative ring laws); inline; verify/ch05/lem-polynomial-coprime-to-product.py
 lem-polynomial-coprime-to-product (proof): gcd is symmetric | def-polynomial-gcd, cited
+lem-polynomial-coprime-to-product (proof): induction from s = 1 (resp. k = 1) | fd1:ax-induction applied to P(n) := the claim for n + 1, read on omega via fd3:cor-omega-identification (b), cited
 thm-polynomial-chinese-remainder (proof): m = M_i m_i, so m_i | m; m_j | M_i for j != i; m = m_1...m_k is non-zero | (L2) and (L1) of Section 5.3 (03-irreducible-factorization, "Two facts about products of lists"), cited by name
 thm-polynomial-chinese-remainder (proof): f - r_j = sum_{i != j} r_i e_i + r_j(e_j - 1); a sum of multiples of m_j is a multiple | lem-finite-sums-and-powers (b) (Sigma1), (Sigma3); prp-polynomial-divisibility-rules (c) with induction on the number of terms; inline
 thm-polynomial-chinese-remainder (proof): the k-fold product of the quotient sets with componentwise operations | NOTATION row A_1 x ... x A_k (F2.3 §02); componentwise operations defined in the statement

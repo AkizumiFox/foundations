@@ -477,7 +477,7 @@ Lines (1) and (2) are correct. The failing line is (3). @prp-irreducible-low-deg
 \[
 (x^2 + ax + b)(x^2 + cx + d) = x^4 + (a + c)x^3 + (b + d + ac)x^2 + (ad + bc)x + bd
 \]
-with \( x^4 + 1 \) gives \( c = -a \), \( b + d - a^2 = 0 \), \( a(d - b) = 0 \) and \( bd = 1 \).
+with \( x^4 + 1 \) gives \( c = -a \), \( b + d - a^2 = 0 \), \( a(d - b) = 0 \) and \( bd = 1 \). Since \( \nQ \) has no zero divisors (@thm-field-basic-properties (f)), \( a = 0 \) or \( d = b \).
 
 - If \( a = 0 \): \( d = -b \) and \( -b^2 = 1 \), impossible since \( b^2 \ge 0 > -1 \) (@fd3:prp-ordered-ring-rules (e)).
 - If \( d = b \): \( b^2 = 1 \), so \( b = \pm 1 \) (@cor-field-squares-equal), and \( a^2 = 2b = \pm 2 \). Now \( a^2 = 2 \) is impossible by @fd3:thm-no-rational-square-two, and \( a^2 = -2 < 0 \) is impossible since squares are non-negative.
@@ -572,7 +572,7 @@ exr-irreducible-factorization-b1 (solution): values over F_2, F_3; x^3 + x + 1 =
 exr-irreducible-factorization-b2 (claim): (problem text) s = sqrt 2 in R; Q[x] inside R[x]; evaluation in R | fd3:prp-cof-square-roots (cited), R complete ordered field fd3:thm-reals-complete-ordered-field; blueprint ledger line (Q in R in C)
 exr-irreducible-factorization-b2 (solution): J is an ideal of Q[x] (absorbs multiples, closed under differences) | fd3:def-ideal-commutative-ring with thm-evaluation-respects-operations, given in the problem; nothing in the text rests on this exercise
 exr-irreducible-factorization-b3 (solution): 14 polynomials; f(1) = sum of coefficients; the list | thm-evaluation-respects-operations; counting by inspection; verify/ch05/exr-irreducible-factorization-b3.py
-exr-irreducible-factorization-c2 (solution): coefficients of (x^2 + ax + b)(x^2 + cx + d); case analysis | expansion; cor-field-squares-equal, fd3:thm-no-rational-square-two, fd3:prp-ordered-ring-rules (e) (cited); verify/ch05/exr-irreducible-factorization-c2.py
+exr-irreducible-factorization-c2 (solution): coefficients of (x^2 + ax + b)(x^2 + cx + d); case analysis | expansion; a(d - b) = 0 gives a = 0 or d = b by thm-field-basic-properties (f); cor-field-squares-equal, fd3:thm-no-rational-square-two, fd3:prp-ordered-ring-rules (e) (cited); verify/ch05/exr-irreducible-factorization-c2.py
 exr-irreducible-factorization-c3 (solution): F_p has p elements; tuples of length n + 1 split by last entry; finite union of finite sets is finite; subset of a finite set is finite | def-field-fp, fd2:prp-disjoint-union-count, fd2:prp-subset-finite, fd2:def-finite (cited); verify/ch05/exr-irreducible-factorization-c3.py
 exr-irreducible-factorization-c4 (solution): lc(f) = lc(d) lc(f_1) gives f_1 monic | thm-degree-of-product (b) (cited)
 exr-irreducible-factorization-c4 (solution): (c) gcd(2x, 2x) = x; x is the monic common multiple dividing every common multiple; d L = lc(f)^{-1} lc(g)^{-1} fg via monic associates | def-polynomial-gcd, prp-polynomial-divisibility-rules (b), (f) (cited)

@@ -1980,6 +1980,16 @@ items:
       of zero divisors in Q without a reason, and ledger line 575 records only ''case analysis | expansion''.
       Fix: add ''(Q has no zero divisors, thm-field-basic-properties (f))'' after ''a(d - b) = 0'', or
       add a ledger line.'
+  - stage: S7r
+    verdict: correct
+    by: rereferee
+    hash: 5fcd52f08cbe
+    date: '2026-10-12'
+    model: claude-opus-5-5
+    evidence: = 0 or d = b. If a = 0, then d = -b and -b^2 = 1, which contradicts b^2 >= 0 (fd3:prp-ordered-ring-rules
+      (e)). If d = b, then b^2 = 1, so b = +-1 by cor-field-squares-equal's 'in particular' clause, and
+      a^2 = 2b = +-2. That is impossible by fd3:thm-no-rational-square-two and by non-negativity of squares.
+      Ledger line 575 lists every citation. verify/ch05/exr-irreducible-factorization-c2.py runs ok.
 - key: exr-irreducible-factorization-c3
   kind: exr
   file: 03-irreducible-factorization.md
@@ -3272,6 +3282,15 @@ items:
     date: '2026-10-12'
     model: claude-opus-5-5
     evidence: 05:260-261. The non-example at 05:283 (m1=m2=h=x) checks.
+  - stage: S7r
+    verdict: correct
+    by: rereferee
+    hash: a22b57311bc2
+    date: '2026-10-12'
+    model: claude-opus-5-5
+    evidence: 'The statement (05:264-272) is unchanged by the diff. Both (a) and (b) are true as stated,
+      with s, k ≥ 1. The counterexample after the proof is right: m1=m2=x and h=x give x² ∤ x, so coprimality
+      is needed in (b).'
 - key: proof:lem-polynomial-coprime-to-product
   kind: proof
   file: 05-interpolation-and-congruences.md
@@ -3306,6 +3325,16 @@ items:
       The expansion (ap+bQ)(a'p+b'q)=p(aa'p+ab'q+a'bQ)+bb'Qq is correct. In (b), (a) is applied with s=k≥1,
       gcd symmetry is cited via @def-polynomial-gcd, and @prp-polynomial-coprime-divisors-product is used
       for the step.
+  - stage: S7r
+    verdict: correct
+    by: rereferee
+    hash: 6b63e4cb8b4c
+    date: '2026-10-12'
+    model: claude-opus-5-5
+    evidence: ' gcd=1. (b) For pairwise coprime m_1..m_{k+1}, all dividing h, the hypothesis gives M |
+      h. (a) applies with p = m_{k+1} and s = k ≥ 1, giving gcd(m_{k+1},M)=1. Symmetry comes from def-polynomial-gcd,
+      and prp-polynomial-coprime-divisors-product (03:128) gives M m_{k+1} | h. The base case k=1 holds
+      trivially. The ledger lines at 05:628-630 cover the expansion, gcd symmetry and the shifted induction.'
 - key: thm-polynomial-chinese-remainder
   kind: thm
   file: 05-interpolation-and-congruences.md
@@ -4144,6 +4173,17 @@ items:
       y in [-2, -1] ... |2xy| >= 2'' while p = x^2 + 1 is in play. This uses the indeterminate x as a
       real number, against NOTATION row 260. Fix: rename to z = a + bi with a, b in [-2, -1] and |2ab|
       >= 2, or use sigma/tau.'
+  - stage: S7r
+    verdict: correct
+    by: rereferee
+    hash: 7cd32bba4592
+    date: '2026-10-12'
+    model: claude-opus-5-5
+    evidence: '|w_1|^2 = 1/2 + 1/2 = 1 (thm-conjugate-properties (c)). The direct check (x^2+1)^2 - 2x^2
+      = x^4 + 1 is correct. For irreducibility the real variable is c: c^2 +- sqrt2 c + 1 = (c +- sqrt2/2)^2
+      + 1/2 > 0, so neither quadratic has a real root, and prp-irreducible-low-degree (b) applies. The
+      NOTATION concern about x used as a real is now resolved everywhere in §06, since A1 (c) at 06:457
+      uses a + bi.'
 - key: check:06-the-fundamental-theorem:4
   kind: check
   file: 06-the-fundamental-theorem.md
@@ -4443,6 +4483,17 @@ items:
     evidence: '06:431-452. (c) Recomputed by hand: A=1, R=2, ρ=2, S_0=S(-2,-2,4), m=0 (attained at -i).
       The first quarter S(-2,-2,2) contains -i, so S_1=S(-2,-2,2). On S(-2,-2,1), |2xy|≥2, so S_2 is the
       second quarter S(-1,-2,1), which contains -i. (a), (b) and (d) match Steps 2, 3 and 5.'
+  - stage: S7r
+    verdict: correct
+    by: rereferee
+    hash: 447ad80bd135
+    date: '2026-10-12'
+    model: claude-opus-5-5
+    evidence: 'string of verify/ch05/exr-the-fundamental-theorem-a1.py: |2xy| becomes |2ab|. This is a
+      sidecar for 06-the-fundamental-theorem.md, outside this packet''s file, most likely from concurrent
+      work. The new docstring matches the solution text (06:457, ''z = a + bi ... |2ab| >= 2'') and its
+      ledger line 707. The script''s code is unchanged and runs ok. Only a doc comment changed; no mathematical
+      content did.'
 - key: exr-the-fundamental-theorem-b1
   kind: exr
   file: 06-the-fundamental-theorem.md
