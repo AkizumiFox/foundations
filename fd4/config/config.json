@@ -96,7 +96,13 @@
     ]
   },
   "reading-paths": [],
-  "chapters": [],
+  "chapters": [
+    "src/ch01-complex-numbers",
+    "src/ch02-fields",
+    "src/ch03-groups-and-permutations",
+    "src/ch04-formal-polynomials",
+    "src/ch05-polynomials-over-a-field"
+  ],
   "macros": "../latex/macros.tex",
   "deploy-dir": "site",
   "deploy-repo": "",
@@ -124,7 +130,9 @@
       "prefix": "numbers"
     }
   ],
-  "mention-exempt-titles": [],
+  "mention-exempt-titles": [
+    "Equal Squares"
+  ],
   "external-books": {
     "fd1": {
       "title": "Logic and Proof",
