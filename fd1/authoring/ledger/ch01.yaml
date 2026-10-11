@@ -145,6 +145,17 @@ items:
     model: claude-opus-5-5
     evidence: '01-statements-and-connectives.md:75 The solution''s reason has the quantifier scope backwards:
       ''one of the two sides holds for every number'' reads as one fixed side holding for all numbers.'
+  - stage: S7r
+    verdict: correct
+    by: rereferee
+    hash: 314ac6c226e4
+    date: '2026-10-12'
+    model: claude-opus-5-5
+    evidence: fd1/src/ch01-connectives-and-derivations/01-statements-and-connectives.md:70-76. The answer
+      "Yes" rests on the fixed-but-arbitrary convention box (lines 66-68), which says exactly that. The
+      reason now reads "every real number is either greater than 2 or at most 2". That puts "every" outside
+      the disjunction, so the S5b scope finding is resolved. The fact is school algebra and is ledgered
+      at line 59
 - key: check:01-statements-and-connectives:2
   kind: check
   file: 01-statements-and-connectives.md
@@ -613,6 +624,17 @@ items:
     evidence: 01-statements-and-connectives.md:535 The stem tells the reader to justify 'cannot be broken'
       with the table of 'When is an implication broken?', but part (d) has no implication, so that table
       cannot be used there.
+  - stage: S7r
+    verdict: correct
+    by: rereferee
+    hash: 56b771d38aa1
+    date: '2026-10-12'
+    model: claude-opus-5-5
+    evidence: 'Lines 532-555. The stem now says to explain "by checking every case ... (use the meaning
+      of each connective; for \to, the table of ''When is an implication broken?'')", so (d) can be done
+      from the meanings of ∧ and ∨ (table at lines 92-93; inclusive-or warning at line 109). This resolves
+      the S5a and S6 findings. I solved each part myself first and compared. (a) Bad: x=-3 with P: x>2,
+      Q: x^2>4. P→Q h'
 - key: exr-statements-and-connectives-c1
   kind: exr
   file: 01-statements-and-connectives.md
@@ -807,6 +829,17 @@ items:
     evidence: 02-derivations.md:137 The word 'sequent' is used before it is defined. When def-sequent
       moved from Section 1.1 to 02:226, this sentence (written when 1.1 defined the word) was left before
       the definition.
+  - stage: S7r
+    verdict: correct
+    by: rereferee
+    hash: e3a296d36204
+    date: '2026-10-12'
+    model: claude-opus-5-5
+    evidence: 'fd1/src/ch01-connectives-and-derivations/02-derivations.md:95-138. Both earlier S5a/S5b
+      findings are resolved. Line 137 now reads ''The same premises and conclusion usually have many derivations'',
+      and grep shows no use of ''sequent'' before def-sequent at :226. (a): Tr 1,2 gives a=0,b=x,c=y,
+      so 0<y; Tr 4,3 gives a=0,b=y,c=1, so 0<1. (b): Tr 3,2 (v<w, w<z) gives v<z; Tr 1,4 gives u<z. The
+      alternative '
 - key: check:02-derivations:1
   kind: check
   file: 02-derivations.md
@@ -903,6 +936,17 @@ items:
     evidence: '02:173-205: (a) lines 5,3,4 form an instance with a,b,c=0,y,1 and fail only ''earlier'';
       (b) b clashes (1 vs 0). The pointer at 02:207 to Exercise C2(c) is true. Verified by verify/ch01/exm-not-a-derivation.py
       (passes).'
+  - stage: S7r
+    verdict: correct
+    by: rereferee
+    hash: 568b2725766b
+    date: '2026-10-12'
+    model: claude-opus-5-5
+    evidence: '02-derivations.md:173-208. The S5a finding is resolved. Change (a) at :179 now spells out
+      the swapped lines: line 4 is ''0<1, Tr 5,3'' and line 5 is ''0<y, Tr 1,2''. So the citation going
+      with 0<y is renumbered explicitly and the question has one reading. Solution (a): line 5 passes
+      all three questions. For line 4, lines 5, 3, 4 are an instance with a=0,b=y,c=1, but line 4 cites
+      line 5, which is later'
 - key: def-derivable
   kind: def
   file: 02-derivations.md
@@ -1555,6 +1599,17 @@ items:
     model: claude-opus-5-5
     evidence: '02-derivations.md:732 Part (a) asks the reader to state a definition, but the model answer
       drops a clause of def-box-free-derivation: that the premise lines may be none (or all).'
+  - stage: S7r
+    verdict: minor
+    by: rereferee
+    hash: 3454ba366d0d
+    date: '2026-10-12'
+    model: claude-opus-5-5
+    evidence: 'xes the rules, ''using the rules of logic'', and remark 3 at :238 says ⊢ is always relative
+      to a list of rules. This is the same kind of dropped clause as the finding just fixed, and part
+      (e) of the same exercise relies on ''⊢ with Tr''. Suggested fix: ''there is a derivation, using
+      the rules of logic (or a named list of rules, as in "with Tr"), whose premises all belong to Γ and
+      whose last line is ψ''.'
 - key: exr-derivations-a2
   kind: exr
   file: 02-derivations.md
@@ -2068,6 +2123,17 @@ items:
     model: claude-opus-5-5
     evidence: 04-using-an-implication.md:33 'The two cards that matter' names the 6 and the red card,
       contradicting the solution, which says the cards that matter are the 6 and the green card.
+  - stage: S7r
+    verdict: correct
+    by: rereferee
+    hash: 13ee4fe9d28e
+    date: '2026-10-12'
+    model: claude-opus-5-5
+    evidence: '04:9-33. I worked the puzzle myself and got the same answer as the solution: the 6 and
+      the green card. Each card''s case is argued correctly from the promise reading of Section 1.1. Both
+      S5a/S5b findings about ''the two cards that matter'' are fixed: l.33 now reads ''Two of the cards
+      show the two ways an implication meets a case: the 6 and the red card (not the pair that must be
+      turned)'', so it no lon'
 - key: def-rule-implication-elimination
   kind: def
   file: 04-using-an-implication.md
@@ -2115,6 +2181,16 @@ items:
     model: claude-opus-5-5
     evidence: 04-using-an-implication.md:726 The ledger marks divisibility as 'F2.2, def-divides, promised',
       but STATUS's promise table has no row for it.
+  - stage: S7r
+    verdict: correct
+    by: rereferee
+    hash: 259a4bc78771
+    date: '2026-10-12'
+    model: claude-opus-5-5
+    evidence: '04:39-63 and the examples that depend on it, through l.392. The schema and the four bullets
+      are correct. The cited labels exist and say what the text claims: @def-main-connective 01:191, @def-rule-schema
+      02:33, and @prp-and-commutes 02:430 (P∧Q ⊢ Q∧P, which with the letters swapped gives each direction).
+      The 42 arithmetic is right (42 = 2·21 = 3·14 = 6·7), and the derivation at l.75-85 checks. Ear'
 - key: check:04-using-an-implication:1
   kind: check
   file: 04-using-an-implication.md
@@ -2167,6 +2243,16 @@ items:
     evidence: '04-using-an-implication.md:90 The Quick check asks for ''which line'' must stand before
       →E fires, but two lines must: the theorem''s instance and its hypothesis. The answer covers only
       one.'
+  - stage: S7r
+    verdict: correct
+    by: rereferee
+    hash: 68bfb6024ad2
+    date: '2026-10-12'
+    model: claude-opus-5-5
+    evidence: '04:89-95. The question now reads ''which line, besides the theorem''s instance itself,
+      must stand on the page'', which removes the two-lines ambiguity raised at S5b. The answer, the conjunction
+      (4|72)∧(9|72) built by ∧I, is the unique remaining line, and the arithmetic is right: 72 = 4·18
+      = 9·8 = 36·2.'
 - key: check:04-using-an-implication:2
   kind: check
   file: 04-using-an-implication.md
@@ -2307,6 +2393,17 @@ items:
     evidence: 04-using-an-implication.md:168 New R2 wording says the derivation P -> Q, P |- Q has "the
       form of the two arguments of Section 1.1". Section 1.1's headline pair is Arguments A and B, and
       neither has this form.
+  - stage: S7r
+    verdict: correct
+    by: rereferee
+    hash: 4429bbaf7618
+    date: '2026-10-12'
+    model: claude-opus-5-5
+    evidence: '04:141-330. I checked all five derivations line by line: (a) 3 lines, (b) 5 lines, (c)
+      6 lines, (d) 5 lines, (e) 9 lines. Every citation and line number is right, and check_fitch reports
+      0 errors. Finding on (c) is fixed: l.210 now adds ''line 6 stays unjustified until line 5 is there
+      for →E to cite'', which matches the second snapshot (l.227-228). Finding on ''the two arguments
+      of Section 1.1'' (S5b/'
 - key: exr-using-an-implication-a1
   kind: exr
   file: 04-using-an-implication.md
@@ -2714,6 +2811,17 @@ items:
       to a false line (10 mod 6 = 4). The flaw is at line 3 only. (b) carries the ''Try to break the step:''
       prefix. (c)''s answer ''None'' conflicts with its own example (see findings). [finding refuted by
       skeptics]'
+  - stage: S7r
+    verdict: correct
+    by: rereferee
+    hash: b5b164f421eb
+    date: '2026-10-12'
+    model: claude-opus-5-5
+    evidence: '04:629-664. I solved it myself first and my answers match the solution. (a) Line 3 cites
+      E where the schema needs φ = D. (b) Every multiple of 6 is even (6k = 2(3k)), and 10 = 2·5. The
+      S5b finding (it relied on unique remainders) is fixed: the solution now argues directly that 6k
+      ≤ 6 for k ≤ 1 and 6k ≥ 12 for k ≥ 2, so 10 ≠ 6k, which is genuinely inline arithmetic and matches
+      the updated ledger. ('
 - key: exr-using-an-implication-c2
   kind: exr
   file: 04-using-an-implication.md
@@ -2977,6 +3085,17 @@ items:
     model: claude-opus-5-5
     evidence: 05-proving-an-implication.md:233 The reason given for the truth of 'if x^3 > 8, then x >
       2' is the converse direction, in a Quick check about not confusing an implication with its converse.
+  - stage: S7r
+    verdict: correct
+    by: rereferee
+    hash: 10bd5c39b287
+    date: '2026-10-12'
+    model: claude-opus-5-5
+    evidence: '05-proving-an-implication.md:228-234. The box opens with x>2 and closes on x^3>8, so it
+      earns (x>2)->(x^3>8), the converse of the claim; that is right. The claim''s direction is now argued
+      the right way: x<=2 gives x^3<=2^3=8 because cubes increase, so x^3>8 forces x>2. The S5a/S5b finding
+      (the reason supported the converse) is resolved. The ledger line (now ''x <= 2 then x^3 <= 8'')
+      matches the text'
 - key: check:05-proving-an-implication:2
   kind: check
   file: 05-proving-an-implication.md
@@ -3206,6 +3325,17 @@ items:
     evidence: 05-proving-an-implication.md:498 The main line uses the term 'the degenerate case of ->I',
       which is defined only in the fold 'A box of one line'. This breaks STYLE §12.0's test that the main
       line teaches the section with every fold closed.
+  - stage: S7r
+    verdict: correct
+    by: rereferee
+    hash: 3d5eaf85ea9b
+    date: '2026-10-12'
+    model: claude-opus-5-5
+    evidence: '05-proving-an-implication.md:497-531. (a) The main line now says ''a box of one line, whose
+      assumption is also its last line. Nothing in ->I asks a box to contain more than its assumption'',
+      so it no longer leans on the term ''degenerate case'', which is defined only in the fold at :67.
+      The S5b finding is resolved. Derivations (a) through (c) checked line by line. Box [1,1] is available
+      at line 2. In '
 - key: prp-curry
   kind: prp
   file: 05-proving-an-implication.md
@@ -3297,6 +3427,17 @@ items:
     model: claude-opus-5-5
     evidence: 05-proving-an-implication.md:714 'Every line cites line 1, which lies in no box, or lines
       of the box [2,6] from inside it' is false of lines 2 and 7.
+  - stage: S7r
+    verdict: correct
+    by: rereferee
+    hash: 5a7a3cf09bca
+    date: '2026-10-12'
+    model: claude-opus-5-5
+    evidence: '05-proving-an-implication.md:711. Second derivation: line 3 is wedge-E 2, line 4 is wedge-E
+      2, line 5 is ->E 1,3 and line 6 is ->E 5,4, so lines 3-6 do cite only line 1 or earlier lines of
+      box [2,6]. Line 7 cites box [2,6], which has ended, and neither the box nor line 7 lies in any other
+      box, so the box-availability clause at :340 holds. Line 2 is an assumption and is no longer claimed
+      to cite an'
 - key: check:05-proving-an-implication:4
   kind: check
   file: 05-proving-an-implication.md
@@ -3443,6 +3584,17 @@ items:
     model: claude-opus-5-5
     evidence: 05-proving-an-implication.md:894 Part (e) asks for prose 'one sentence per line', but the
       model answer puts lines 2 and 3 in one sentence.
+  - stage: S7r
+    verdict: correct
+    by: rereferee
+    hash: c3d6ea189cdf
+    date: '2026-10-12'
+    model: claude-opus-5-5
+    evidence: '05-proving-an-implication.md:894. The (e) prose now has five sentences for the five lines:
+      Assume (line 1); In particular, P (line 2); In particular, Q (line 3); Hence Q and P (line 4); This
+      proves (line 5). The S5a/S5b/S6 finding is resolved. I solved parts (a)-(d) and (f)-(j) myself and
+      they agree with the book, e.g. (f) wedge-E 2, ->E 1,3, ->I 2-4 and (i) nested boxes [1,4] and [2,3]
+      with R->P '
 - key: exr-proving-an-implication-b1
   kind: exr
   file: 05-proving-an-implication.md
@@ -3474,6 +3626,17 @@ items:
     evidence: '05:909-958. Matches my solution and blueprint line 382 (5 Q ->E 2,3; 6 ∧I 4,5; 7 ->E 1,6;
       8 ->I 4-7; 9 ->I 3-8). The availability prose is correct. Worked example: exm-first-boxes (c) and
       prp-curry (nested boxes). The prompt ''Name the move'' is present.'
+  - stage: S7r
+    verdict: correct
+    by: rereferee
+    hash: 23546fbad761
+    date: '2026-10-12'
+    model: claude-opus-5-5
+    evidence: '05-proving-an-implication.md:914-929. The scaffold now has a second gap row inside the
+      outer box after the inner box closes, and the comment says ''gaps''. It can be completed as drawn:
+      lines 5-7 go in the inner gap and line 8 (P->R, ->I 4-7) in the outer gap. The S5b finding is resolved.
+      I checked the solution''s derivation: Q by ->E 2,3; PwedgeQ by wedge-I 4,5; R by ->E 1,6; ->I 4-7;
+      ->I 3-8. The a'
 - key: exr-proving-an-implication-b2
   kind: exr
   file: 05-proving-an-implication.md
@@ -3779,6 +3942,17 @@ items:
     model: claude-opus-5-5
     evidence: 05-proving-an-implication.md:1193 Hint 2 does not give the first line of the proof, as STYLE
       §6/§11.7 asks of rung 2. It is weaker than rung 1, which already points at deriving P -> Q.
+  - stage: S7r
+    verdict: minor
+    by: rereferee
+    hash: 38a1015c4ed2
+    date: '2026-10-12'
+    model: claude-opus-5-5
+    evidence: 'he earlier A2/C3 ''one sentence per line'' ones. Fix: merge them into one sentence, e.g.
+      ''The premise fires only on a line P -> Q, and no available line is P -> Q or has it as a conjunct
+      or as the conclusion of an implication, so it can come only from ->I, which needs a box of its own.''
+      The parenthetical about assuming P again can stay as a separate remark that is not part of the requested
+      sentence.'
 - key: exr-proving-an-implication-c3
   kind: exr
   file: 05-proving-an-implication.md
@@ -3839,6 +4013,17 @@ items:
     evidence: 05-proving-an-implication.md:1271 The model prose breaks the item's and the scheme's own
       'one sentence per step' rule, so a grader applying the 3-point line literally would mark the book's
       solution down.
+  - stage: S7r
+    verdict: minor
+    by: rereferee
+    hash: b4038ac8f16d
+    date: '2026-10-12'
+    model: claude-opus-5-5
+    evidence: ' premise 2 at once. The book''s card gives wedge-E its own ''In particular'' sentence (:757),
+      and A2(e) follows that. Fix: either give the halves their own sentences (''We know that x>5 implies
+      x>4, and that x>4 implies x^2>16 and x^2>16 implies x^2>9. In particular, x>4 implies x^2>16. In
+      particular, x^2>16 implies x^2>9.''), or change the task and scheme wording to ''one sentence per
+      line of the box''.'
 - key: def-rule-disjunction-introduction
   kind: def
   file: 06-disjunction-introduction.md
@@ -3892,6 +4077,17 @@ items:
     model: claude-opus-5-5
     evidence: 06-disjunction-introduction.md:64 The fold names the wrong direction for 'the question at
       the end of this section'.
+  - stage: S7r
+    verdict: correct
+    by: rereferee
+    hash: 404f13f135fd
+    date: '2026-10-12'
+    model: claude-opus-5-5
+    evidence: '06:29-70. The two schemas and the Reading at 06:51 match @def-rule-schema (02:33). The
+      S5b finding is resolved: the second nonexample at 06:64 now goes from P ∨ Q to Q ∨ P, and its pointer
+      names that direction. That is the sequent at 06:362, P ∨ Q ⊢ Q ∨ P, so ''the question at the end
+      of this section'' is correct. The other two nonexamples (06:63, 06:65), the degenerate case P ∨
+      P (06:59) and the in'
 - key: check:06-disjunction-introduction:1
   kind: check
   file: 06-disjunction-introduction.md
@@ -4051,6 +4247,17 @@ items:
     evidence: '06-disjunction-introduction.md:269 The warning''s lead overgeneralizes and makes an underivability
       claim that the section avoids elsewhere: committing early does not always hurt, and ''unreachable''
       asserts that no derivation exists.'
+  - stage: S7r
+    verdict: correct
+    by: rereferee
+    hash: c2f61a22a32b
+    date: '2026-10-12'
+    model: claude-opus-5-5
+    evidence: 06:115-270. I checked every derivation line by line. (a) Both lines are ∨I 1, first and
+      second schema. (b) ∧E then ∨I, both variants. (c) 3 →E 1,2; 4 ∨I 3; 5 →I 2-4. (d) 4 ∧I 2,3; 5 →E
+      1,4; 6 ∨I 5; 7 →I 3-6; 8 →I 2-7. All scope remarks are correct, and so is 'every rule except ∧E
+      and R'. @prp-curry (05:599) is the nested-box result the text cites. All three S5b findings are
+      resolved. (1) The warni
 - key: exm-or-hypothesis-split
   kind: exm
   file: 06-disjunction-introduction.md
@@ -4336,6 +4543,17 @@ items:
     model: claude-opus-5-5
     evidence: 06-disjunction-introduction.md:503 Item (a)(iii) asks explicitly about 'x ≥ 5, as written',
       and the answer never says No to that question.
+  - stage: S7r
+    verdict: correct
+    by: rereferee
+    hash: eaa74a6a4083
+    date: '2026-10-12'
+    model: claude-opus-5-5
+    evidence: '06:483-522. I solved every item first and compared. (a) (i) first schema. (ii) second schema,
+      with x=5 on the right. (iii) The S6 finding is resolved: the answer now says ''No: as written, x
+      ≥ 5 is one statement'', then names the second schema for the written-out (x>5)∨(x=5), as the convention
+      at 06:16 requires. (iv) not a disjunction. (b) and (c) No, correctly argued. (d) Yes once written
+      out, firs'
 - key: exr-disjunction-introduction-b1
   kind: exr
   file: 06-disjunction-introduction.md
@@ -4396,6 +4614,17 @@ items:
     model: claude-opus-5-5
     evidence: '06:526-565. Both derivations check, and the commitment lines and the reasons they are safe
       are given. Worked example: exm-disjunction-introduction-derivations (c), (d).'
+  - stage: S7r
+    verdict: correct
+    by: rereferee
+    hash: 54386e2e64d7
+    date: '2026-10-12'
+    model: claude-opus-5-5
+    evidence: '06:526-565. First derivation: 3 ∧E 1; 4 →E 3,2; 5 ∨I 4; 6 →I 2-5. It commits at line 5,
+      after R is on line 4, and the solution says why that was safe. Second derivation: 2 ∨I 1 (second
+      schema); 3 ∨I 2 (first schema, φ:=Q∨P). Both commitments are on sides that are in hand. The S5a
+      and S5b findings are resolved: the bare non-derivability claim (''which the premise P cannot give'')
+      is gone. The solutio'
 - key: exr-disjunction-introduction-b2
   kind: exr
   file: 06-disjunction-introduction.md
@@ -4730,6 +4959,16 @@ items:
     model: claude-opus-5-5
     evidence: 07-disjunction-and-cases.md:154 'its two boxes are these two boxes, and line 6 is the step
       it could not take' is misleading for a reader who compares the two derivations line by line.
+  - stage: S7r
+    verdict: correct
+    by: rereferee
+    hash: 9626b9d2b522
+    date: '2026-10-12'
+    model: claude-opus-5-5
+    evidence: '07:95-174. Checked both derivations line by line. Line 3 is the second vee-I schema (phi=P
+      gives Q vee P) and line 5 the first. Line 6 is vee-E 1,2-3,4-5. In the second derivation the one-line
+      boxes 2-2 and 3-3 are legal, as the second-reading fold at 69-71 says. The S5b finding is resolved:
+      line 154 now names the stalled attempt''s boxes as 2-3 and 5-6 there, which matches 06-disjunction-introduct'
 - key: check:07-disjunction-and-cases:1
   kind: check
   file: 07-disjunction-and-cases.md
@@ -4826,6 +5065,17 @@ items:
     model: claude-opus-5-5
     evidence: 07-disjunction-and-cases.md:299 The meta-claim that exm-or-hypothesis-split derived the
       converse 'using only ∨I' is false.
+  - stage: S7r
+    verdict: correct
+    by: rereferee
+    hash: 7487ccaf00db
+    date: '2026-10-12'
+    model: claude-opus-5-5
+    evidence: '07:213-299. The derivation is correct: 4 is and-E 1; 5 is ->E 4,3; 7 and 8 are the same
+      for Q; 9 is vee-E 2,3-5,6-8 directly in box 2-9; 10 is ->I 2-9. The meta-claim at 299 now reads
+      ''using vee-I and no vee-E''. That is true of exm-or-hypothesis-split (06:276-320, which uses ->E,
+      ->I, and-I and vee-I and no vee-E), so the S5a and S5b findings are resolved. The check at 291-297
+      is also correct.'
 - key: check:07-disjunction-and-cases:2
   kind: check
   file: 07-disjunction-and-cases.md
@@ -5207,6 +5457,17 @@ items:
     model: claude-opus-5-5
     evidence: 07-disjunction-and-cases.md:660 Order facts that the claims and the check solution use are
       missing from the dependency ledger.
+  - stage: S7r
+    verdict: correct
+    by: rereferee
+    hash: a57f989ea58f
+    date: '2026-10-12'
+    model: claude-opus-5-5
+    evidence: 'The fifth check (07:662-674, the x^2 >= 0 splits) is correct: (i) is exhaustive, (ii) fails
+      at 0, (iii) overlaps at 0, where 0^2=0>=0. The order facts it uses are now in the ledger: 07 ledger
+      line ''def-rules-disjunction (solution): (the quick check on x^2 >= 0) ...'', and the claims of
+      the exhaust warning are under ''def-rules-disjunction (claim)''. Both cite school algebra, AN1.1
+      (promised). The S5b'
 - key: exr-disjunction-and-cases-a1
   kind: exr
   file: 07-disjunction-and-cases.md
@@ -5294,6 +5555,17 @@ items:
     evidence: '07:805-846. (c): n=1 refutes. (d): line 5 is the illegal line, and the instance P: x>1,
       Q: x<1, R: x>0 at x=-1 breaks the sequent (script; the truth table is also invalid). (e) and (f)
       are correct.'
+  - stage: S7r
+    verdict: correct
+    by: rereferee
+    hash: 3ee7e9c79349
+    date: '2026-10-12'
+    model: claude-opus-5-5
+    evidence: '07:804-845. I solved (a)-(f) myself and they agree. In (d), line 5 cites only box 3-4,
+      so the ''two boxes'' clause fails. The countermodel holds: at x=-1, P vee Q is true (x<1), P->R
+      is true (P is false), and R (x>0) is false. The S5a/S5b gap is resolved. The text no longer asserts
+      that the sequent is underivable. It now says the form is bad ''so no correct argument should be
+      expected to reach R''. Th'
 - key: exr-disjunction-and-cases-a2
   kind: exr
   file: 07-disjunction-and-cases.md
@@ -5325,6 +5597,17 @@ items:
     model: claude-opus-5-5
     evidence: 07:848-908. (d) Six boxes, which is 2+2·2, correct. (e) x=0 checked. (g) line 7 is illegal
       and the fix is ->E 3,6. (h)-(j) derivations check and match the blueprint.
+  - stage: S7r
+    verdict: correct
+    by: rereferee
+    hash: 7fbc8a9f2c19
+    date: '2026-10-12'
+    model: claude-opus-5-5
+    evidence: '07:847-905. I solved all ten drills myself. In (g), line 7 cites line 4 from the closed
+      box 4-5. The derivations (h), (i) and (j) check line by line, and their citations are right. The
+      S5b finding on (d) is resolved: the answer still counts six boxes (two outer, four inner, which
+      matches 07:615 and 07:628). It now adds that counting the opening remark''s split on a<0 or a=0
+      (a<=0 unfolded) gives ei'
 - key: exr-disjunction-and-cases-b1
   kind: exr
   file: 07-disjunction-and-cases.md
@@ -5667,6 +5950,17 @@ items:
     evidence: 07:1094-1129. The only flaw is the sentence in Case 2b; I re-checked Cases 1a, 1b and 2a
       and they are valid. The (c) witness x=-3, y=-1 gives x-y=-2, not >0, which defeats the illegal step.
       The (d) repair is valid for all x,y<0 (script). The conclusion is true, as the solution says.
+  - stage: S7r
+    verdict: correct
+    by: rereferee
+    hash: 4b9bbce1e4c9
+    date: '2026-10-12'
+    model: claude-opus-5-5
+    evidence: '07:1094-1129. I rechecked every case of the faulty proof. Cases 1a, 1b and 2a are valid;
+      only Case 2b cites x>=0. The S5b finding is resolved: (b) now says each box may cite only lines
+      available at it by the scope rule of def-derivation. Those are its own assumption, what has been
+      derived inside it, and what was available before it opened, so nothing from the closed first box.
+      That is accurate. (c'
 - key: exr-disjunction-and-cases-c3
   kind: exr
   file: 07-disjunction-and-cases.md
@@ -5804,6 +6098,17 @@ items:
     model: claude-opus-5-5
     evidence: 07-disjunction-and-cases.md:1210 Hint 2 restates Hint 1's question and gives no first line,
       contrary to the STYLE rung-2 rule.
+  - stage: S7r
+    verdict: correct
+    by: rereferee
+    hash: 91ffd9295e0c
+    date: '2026-10-12'
+    model: claude-opus-5-5
+    evidence: '07:1180-1238. The 11-line derivation checks. Lines 6 and 7 are ->E 2,5 and ->E 6,4, with
+      line 4 available inside box 4-10. Line 9 is ->E 3,8. Line 10 is vee-E 1,5-7,8-9, sitting directly
+      in box 4-10. Line 11 is ->I 4-10. The S6 finding is resolved. Hint 2 now gives the first line (line
+      5 is Q, opening the first case box inside the box of P, ending in S) and no longer restates Hint
+      1. That is what '
 - key: exr-disjunction-and-cases-r1
   kind: exr
   file: 07-disjunction-and-cases.md
@@ -5981,3 +6286,14 @@ items:
     evidence: 07:1298-1323. The derivation is correct (tautology confirmed by truth table). The source
       is hidden in the problem and named in the solution as @def-rules-implication and @def-rule-disjunction-introduction.
       The look-alike failure is explained.
+  - stage: S7r
+    verdict: correct
+    by: rereferee
+    hash: f6e3d007706e
+    date: '2026-10-12'
+    model: claude-opus-5-5
+    evidence: '07:1298-1323. The derivation is correct: and-E 1 twice, ->E 3,2, vee-I 4, then ->I 1-5
+      with no premises. The S5a/S5b findings are resolved. The look-alike paragraph now says that only
+      choosing the side R leaves an unsupplied subgoal, and that the side Q is supplied by lines 2-4.
+      That is true. The cited labels def-rules-implication and def-rule-disjunction-introduction exist
+      in fd1 Chapter 1 and sa'
