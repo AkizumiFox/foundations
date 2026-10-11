@@ -288,3 +288,15 @@ additivity
 multiplicativity
 pointwise
 subfield
+downset
+downsets
+abelian
+Abelian
+multiplicatively
+Multiplicatively
+MacNeille
+Eduard
+Stetigkeit
+Zahlen
+irrationale
+und

@@ -102,7 +102,8 @@
     "src/ch03-divisibility-and-congruences",
     "src/ch04-ordered-field-sequences",
     "src/ch05-reals-from-cauchy",
-    "src/ch06-complete-ordered-field"
+    "src/ch06-complete-ordered-field",
+    "src/ch07-reals-dedekind-cuts"
   ],
   "macros": "../latex/macros.tex",
   "deploy-dir": "site",
