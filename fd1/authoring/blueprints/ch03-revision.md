@@ -8,7 +8,7 @@
 **Binding rules for this revision.**
 1. **No label is lost.** Every label now in the chapter survives, in this chapter, with its content. Only uncited `exr-` labels change, each named in §3. Every label cited anywhere (fd1 Ch2, Ch4, Ch5, fd2, fd3, fd4, an1) keeps its name and its section.
 2. **Reviewed content of cited results does not change.** A statement or proof of a cited result is either kept on the main line or moved **verbatim** into a second-reading fold. The three places where this file rewords a cited proof (the table in `lem-coincidence`, the descent sentence in `thm-completeness`, the roadmap references in `exm-completeness-run`) keep the verbatim original in a fold beside the new wording and are S2a items (§8, items 1–3). Besides these, the vocabulary sweep of §4.7 item 2 ("conjunct" → "conjunctive clause"/"minterm") changes words in 3.7 results that are cited only inside the chapter (the statement of `prp-cnf-validity` (b); the proofs of `thm-dnf`, `thm-cnf`, `prp-cnf-validity`; one word of the proof of `thm-adequate-connectives`), without a verbatim fold (S2a item 7); and the spelling sweep "nonempty" → "non-empty" (§1 item 9) touches verbatim text everywhere.
-3. **Forward pointers.** No `@ref` to an unseen result is a reason. Each section's main line and folds carry **at most one** pointer to a later chapter or volume, in its Looking-ahead box (STYLE §12.1); the cross-volume pointers now spread over §01 and §02 are gathered into one "Where this goes" note in `index.md` (§4.0), which is not a section and has no budget of its own. Pointers to later sections **of this chapter** stay where they help, but never as reasons. After drafting, grep each section's main line and folds for `Chapter [4-9]`, `Section [4-9]\.`, `Sets, Relations`, `Analysis on the Real`, `Number Systems`; every hit other than the box is cut.
+3. **Forward pointers.** No `@ref` to an unseen result is a reason. Each section's main line and folds carry **at most one** pointer to a later chapter or volume, in its Looking-ahead box (STYLE §12.1); the cross-volume pointers now spread over §01 and §02 are gathered into one "Where this goes" note in `index.md` (§4.0). The index is not a section; its budget (≤ 1,100 words, §5) covers the note. Pointers to later sections **of this chapter** stay where they help, but never as reasons. After drafting, grep each section's main line and folds for `Chapter [4-9]`, `Section [4-9]\.`, `Sets, Relations`, `Analysis on the Real`, `Number Systems`; every hit other than the box is cut.
 4. **Depends on R1 only.** The fold, Looking-ahead and drill-bank markup follow STYLE as amended by step R1 (already in STYLE §12). Nothing here needs the ∧I change of R0. The derivation renderer of R0 changes nothing in this file.
 
 ---
@@ -218,7 +218,7 @@ Budgets: **main line** = prose words by `tools/check_structure.py`'s `prose_word
 - **B2**: kept.
 - **C1**: kept, except that its solution 01:523 is reworded without height, which is now defined only in 3.2: "Their parse trees have the root \( \to \) in each case: in the first two, the leaf \( p \) on the left and a chain of two arrows on the right (leaning right, or leaning left); in the third, two one-arrow trees side by side; in the last two, a chain of two arrows on the left and the leaf \( s \) on the right." (S2a item 4.)
 
-**Dependency ledger (in-file).** 01's line for `def-height` (01:539) moves to 02's in-file ledger, reworded "the parse tree, hence the height, is well defined | thm-unique-readability (this section), proved just before". 01:539's last clause goes with it.
+**Dependency ledger (in-file).** 01's line for `def-height` (01:539) moves to 02's in-file ledger, reworded "the parse tree, hence the height, is well defined | thm-unique-readability (this section), proved just before". 01:539's last clause ("nothing here uses the height before then except examples of drawing") is dropped: 01 no longer uses height, and 02's F3.2-b remark mentions height before `def-height`, so the clause would be false in 02. 02's full replacement line: `def-height (claim): "the" parse tree, hence the height, is well defined | thm-unique-readability (this section), proved just before`. 01 keeps no `def-height` line.
 
 **Sidecars:** the build-up figure's sequence and the new `exm-formation-sequences` string (in `_s0102_formulas.py`); drill (b), (c); drill (h) (`check_fitch` on the substituted derivation).
 
@@ -467,7 +467,7 @@ Budgets: **main line** = prose words by `tools/check_structure.py`'s `prose_word
 
 **Changes, in the file's order.**
 1. 07:3 kept; one italic sentence added after it: "*On a first reading this section may wait: nothing in Chapters 4 and 5 uses it.*"
-2. **"Conjunct" → "conjunctive clause" (and "minterm" for \( C_v \)).** 07:33 → "A **conjunctive clause** joins one or more literals by \( \wedge \), such as \( p \wedge \neg q \wedge r \), or \( \neg q \) alone. (We do not shorten it to 'conjunct', which keeps its ordinary meaning, one side of a conjunction.)" Every later "conjunct(s)" that means a conjunctive clause becomes "conjunctive clause(s)", and every one that means a \( C_v \) becomes "minterm(s)", in prose, proofs, examples and exercise solutions: 07:53, 07:55, 07:56, 07:71, 07:93, 07:97, 07:109 (Idea of `thm-dnf`: "disjoin their minterms \( C_v \)"), 07:119, 07:121, 07:124 ("The minterms \( C_v \)"), 07:139, 07:143, 07:150-152 (inside the display), 07:158, 07:184 (minterm), 07:198, 07:201, 07:203, 07:207, 07:219 (`prp-cnf-validity` (b)), 07:236-243, 07:261, 07:305 (proof of `thm-adequate-connectives`: "the minterms \( C_{v} \)"; the one allowed change inside that otherwise verbatim proof, item 5), 07:359 (A1(b) prompt), 07:369, 07:373, 07:375, 07:395 ("three one-literal conjunctive clauses"), 07:397 ("This single conjunctive clause"), 07:430 (minterm), 07:436, 07:620 (minterms). The drafter greps `conjunct` after the sweep: every remaining hit is the ordinary sense, and the `eq-row-conjunct` label. At 07:76-84: "form the **minterm** of the row of \( v \), the conjunctive clause of its signed atoms," then \( C_v \coloneqq \dots \). Labels (`eq-row-conjunct`) do not change. "Term" is not introduced, so 07:7, 04:251 and `eq-many-term-values` keep their ordinary "terms".
+2. **"Conjunct" → "conjunctive clause" (and "minterm" for \( C_v \)).** 07:33 → "A **conjunctive clause** joins one or more literals by \( \wedge \), such as \( p \wedge \neg q \wedge r \), or \( \neg q \) alone. (We do not shorten it to 'conjunct', which keeps its ordinary meaning, one side of a conjunction.)" Every later "conjunct(s)" that means a conjunctive clause becomes "conjunctive clause(s)", and every one that means a \( C_v \) becomes "minterm(s)", in prose, proofs, examples and exercise solutions: 07:53, 07:55, 07:56, 07:71, 07:93, 07:97, 07:109 (Idea of `thm-dnf`: "disjoin their minterms \( C_v \)"), 07:119, 07:121, 07:124 ("The minterms \( C_v \)"), 07:139, 07:143, 07:150-152 (inside the display), 07:158, 07:184 (minterm), 07:198, 07:201, 07:203, 07:207, 07:219 (`prp-cnf-validity` (b)), 07:236-243, 07:261, 07:305 (proof of `thm-adequate-connectives`: "the minterms \( C_{v} \)"; the one allowed change inside that otherwise verbatim proof, item 5), 07:359 (A1(b) prompt), 07:369, 07:373, 07:375, 07:395 ("three one-literal conjunctive clauses"), 07:397 ("This single conjunctive clause"), 07:430 (minterm), 07:434 ("each minterm is T in its own row only"), 07:436, 07:620 (minterms), and the in-file dependency ledger, 07:730 ("no DNF with fewer conjunctive clauses works | inline (a conjunctive clause missing an atom is true on two rows of different parity)"). Ledger comments are swept with the prose. The drafter greps `conjunct` after the sweep: every remaining hit is the ordinary sense, and the `eq-row-conjunct` label. At 07:76-84: "form the **minterm** of the row of \( v \), the conjunctive clause of its signed atoms," then \( C_v \coloneqq \dots \). Labels (`eq-row-conjunct`) do not change. "Term" is not introduced, so 07:7, 04:251 and `eq-many-term-values` keep their ordinary "terms".
 3. 07:58 (nonexample by minimal change) kept: it is the section's one edge case of the definitions, and short. 07:126 (why not \( \bot \)) → fold F3.7-a.
 4. 07:243 (the duality paragraph, "two faces of one fact") → fold F3.7-b.
 5. **Before `thm-adequate-connectives`: "Rewriting 'or' with 'not' and 'and'"** (new, ~230 words, bold lead-in, placed after 07:289):
@@ -480,7 +480,7 @@ Budgets: **main line** = prose words by `tools/check_structure.py`'s `prose_word
 
 **Quick checks:** 07:66, the \( t_3 \) check (moved): two, in a second-pass section. Add none.
 
-**Exercises.** A1, B1–B3, C1 (frozen), C2, R1–R3 kept, with "conjunctive clause" for "conjunct" in A1(b) (07:359, "a clause, a conjunctive clause, both, or neither") and its solutions 07:369, 07:373, 07:375, in B1's solutions 07:395, 07:397, and in B3's solution 07:430, 07:436. Old C3 → 3.6 (`exr-completeness-c3`). Old C4 → **C3** (`exr-normal-forms-c3`), `[C3: Exit check: normal forms]`, content unchanged except "conjuncts" → "minterms" at 07:620. The R group stays in this, the chapter's last section (STYLE §11.5), although the section is second pass. The index's reading path says nothing about R items, which review Chapters 1–2 and are on the full track.
+**Exercises.** A1, B1–B3, C1 (frozen), C2, R1–R3 kept, with "conjunctive clause" for "conjunct" in A1(b) (07:359, "a clause, a conjunctive clause, both, or neither") and its solutions 07:369, 07:373, 07:375, in B1's solutions 07:395, 07:397, and in B3's solution 07:430, 07:434 ("each minterm is T in its own row only"), 07:436; the in-file ledger line 07:730 likewise ("conjunctive clause(s)"). Old C3 → 3.6 (`exr-completeness-c3`). Old C4 → **C3** (`exr-normal-forms-c3`), `[C3: Exit check: normal forms]`, content unchanged except "conjuncts" → "minterms" at 07:620. The R group stays in this, the chapter's last section (STYLE §11.5), although the section is second pass. The index's reading path says nothing about R items, which review Chapters 1–2 and are on the full track.
 
 **Sidecars:** the \( t_1 \) example row (extend `thm-adequate-connectives.py`).
 
@@ -490,7 +490,7 @@ Budgets: **main line** = prose words by `tools/check_structure.py`'s `prose_word
 
 | Section | Main line now (before Exercises) | Main-line budget | Folds | After the exercises |
 |---|---|---|---|---|
-| index | 665 | ≤ 1,000 | — | — |
+| index | 665 | ≤ 1,100 | — | — |
 | 3.1 | 4,821 | ≤ 4,400 | ≤ 650 | — |
 | 3.2 | 6,187 | ≤ 4,900 | ≤ 2,300 | — |
 | 3.3 | 3,555 | ≤ 3,400 | ≤ 300 | — |
@@ -500,7 +500,7 @@ Budgets: **main line** = prose words by `tools/check_structure.py`'s `prose_word
 | 3.7 | 4,288 | ≤ 4,450 | ≤ 300 | — |
 | total (3.1–3.7) | 33,437 | ≤ 30,150 | ≤ 5,900 | ≤ 1,000 |
 
-The budgets are the S2 round-1 estimates: each moved, folded or cut block measured with `prose_words`, plus this file's own estimate of the new text (index: 665 + ~150 opening + ~140 "Where this goes" + ~120 reading path + ~95 chapter map + ~15 roadmap − ~80 trimmed ≈ 1,000).
+The budgets are the S2 round-1 estimates: each moved, folded or cut block measured with `prose_words`, plus this file's own estimate of the new text (index: 665 + ~150 opening + ~140 "Where this goes" + ~120 reading path + ~95 chapter map + ~15 roadmap − ~80 trimmed ≈ 1,105, so the budget is ≤ 1,100; S2 round 2 raised it from ≤ 1,000, whose own estimate did not add up).
 
 Every section stays under 5,000 main-line words. The whole-file advisory count of `check_structure.py` includes the exercises and will exceed 5,000 in 3.2, 3.5, 3.6 and 3.7. That count is advisory; the binding budget is the main line.
 
@@ -508,11 +508,11 @@ Every section stays under 5,000 main-line words. The whole-file advisory count o
 
 **Time (B1 formula: 15 min per 400 main-line words; 20–45 min per exercise; a drill bank counts as one exercise per four parts).**
 - **Core track** = the main lines of 3.1–3.6 (3.7 is second pass, §4.0 item 6), all of A, one B and one C per section of 3.1–3.6, and the exit checks of 3.1–3.6.
-  - Reading: about 26,700 words (the index and the main lines of 3.1–3.6, at their budgets) ≈ 16.7 h.
+  - Reading: about 26,800 words (the index and the main lines of 3.1–3.6, at their budgets) ≈ 16.75 h.
   - Exercises: 6 A1 × 25 min; about 12 drill-bank exercises × 30 min; 6 B × 30 min; 6 C × 40 min, the C being the exit check where there is one; 3.6's second exit check, 40 min. That is ≈ 16.2 h.
-  - Total ≈ 32.9 h, so "**About 33 hours on the core track** (Sections 3.1–3.6: all of A, one B and one C per section, the exit checks)". At the 20-minute floor for drills it would be about 30.9 h, so 33 is not shaded down.
+  - Total ≈ 33.0 h, so "**About 33 hours on the core track** (Sections 3.1–3.6: all of A, one B and one C per section, the exit checks)". At the 20-minute floor for drills it would be about 31.0 h, so 33 is not shaded down.
 - **Full track** = every main line, every fold and the excursion.
-  - Reading: about 38,050 words (index 1,000, main lines 30,150, folds 5,900, excursion 1,000) ≈ 23.8 h.
+  - Reading: about 38,150 words (index 1,100, main lines 30,150, folds 5,900, excursion 1,000) ≈ 23.8 h.
   - Exercises: 7 A1 × 25 min; 12 × 30; 19 B × 30; 18 C × 40; 3 R × 40. That is ≈ 32.4 h.
   - Total ≈ 56.2 h, so "**about 56 hours for everything**".
 - The plan's target of 25 core hours is not reached. The drafter recomputes from the delivered text by the same rule and does not shade the number down (STYLE §11.9). §4.0 fixes no figure in advance.
@@ -583,7 +583,7 @@ Section numbers do not change, so no "Section 3.x" sweep is needed. Every hand-w
 4. `def-height` moved verbatim to 3.2 after the one-parse-tree argument; 01:264 with it; 01:266 cut; F3.2-d's copy of 02:342 loses "and the height of @def-height is a well-defined number". Check every use of height now comes after it: 3.2 drill (f), (g), `exm-recursive-definitions`, 02:418 (reworded opening), B3, the remark in F3.2-b (reworded, with a one-line gloss of height and no `@def-height`), and in 3.1 nothing: A1 (b), (c), B1, the Quick check 01:268 and the C1 solution 01:523 (reworded with "a chain of two arrows", "one-arrow trees") no longer mention height. Check that the ledger line for `def-height` moved from 01:539 to 02, and 03:564 to 02 (§4.2).
 5. The F3.2-b remark (02:231-233) reworded: "the height is read off the parse tree, and that a formula has only one parse tree is proved below from unique readability, whose proof uses structural induction". Is it still true and non-circular as stated?
 6. `exm-formation-sequences`: fourth string \( (\neg p \vee (q \to \bot)) \) and its six-entry sequence; the adjusted opening of 01:94 in fold F3.1-a (listing \( q \) before \( p \) in that sequence still gives a formation sequence).
-7. 3.7: "conjunct" → "conjunctive clause", \( C_v \) the "minterm", in the statement of `prp-cnf-validity` (b), the proofs of `thm-dnf`, `thm-cnf`, `prp-cnf-validity` and `thm-adequate-connectives` (07:305 only, one word, in an otherwise verbatim proof), the Idea of `thm-dnf` (07:109), the exercise solutions (07:369-375, 07:395, 07:397, 07:430, 07:436, 07:620) and the prose. Is the sweep complete, and is every remaining "conjunct" the ordinary sense?
+7. 3.7: "conjunct" → "conjunctive clause", \( C_v \) the "minterm", in the statement of `prp-cnf-validity` (b), the proofs of `thm-dnf`, `thm-cnf`, `prp-cnf-validity` and `thm-adequate-connectives` (07:305 only, one word, in an otherwise verbatim proof), the Idea of `thm-dnf` (07:109), the exercise solutions (07:369-375, 07:395, 07:397, 07:430, 07:434, 07:436, 07:620), the in-file ledger line 07:730, and the prose. Is the sweep complete, and is every remaining "conjunct" the ordinary sense?
 8. `exr-entailment-and-equivalence-c3`: (I) restated as "if \( \Gamma, \varphi \models \psi \), then \( \Gamma \models \varphi \to \psi \), with ⊨ read with the table \( t \)". Is it equivalent to old (I)? Is the solution, with the two reworded sentences, still correct and non-circular?
 
 **New claims and examples in the main text:**
@@ -615,3 +615,10 @@ All findings applied. Three notes on how:
 - **"Term".** Of the two fixes offered, the free word was chosen: "conjunctive clause" (the existing gloss of 07:33) and "minterm" for \( C_v \), recorded as a deviation from the plan in §1 item 8. Keeping "term" would have left a clash with Chapter 4's `def-term` and with the verbatim "terms" of 02:80-96 that fd2 quotes.
 - **fd4 citations.** Recorded as a note above the §3.1 table rather than a new column, since only two rows would carry an entry; rule 1 and §6 now name fd4.
 - **Duplicates.** The two findings on 3.1 C1's height (01:523), the two on the `thm-adequate-connectives` proof and 07:109/395/397, and the two on F3.1-a's placement were each applied once.
+
+## 10. S2 replies (round 2)
+
+All three findings applied.
+- **Index budget.** The estimate sums to ≈ 1,105, so the index budget is raised to ≤ 1,100 (§5 table and note; §1 item 3 now names it) rather than trimming the story or the "Where this goes" note, both already at their minimum for the content they carry. Core reading ≈ 26,800 words ≈ 16.75 h, core total ≈ 33.0 h (still "about 33"); full reading ≈ 38,150 words, full total still ≈ 56 h.
+- **"Conjunct" sweep.** 07:434 ("each minterm is T in its own row only") added to §4.7 item 2, the Exercises paragraph and S2a item 7; ledger comments are swept, with 07:730 named.
+- **`def-height` ledger line.** The last clause of 01:539 is dropped, and 02's full replacement line is given (§4.1).
