@@ -105,6 +105,27 @@ Completeness here is about **subsets**, not sequences. Chapter 5 proved that the
 
 Every complete ordered field therefore has the consequences of the Archimedean property that Chapter 4 proved. The one we use most is density (@thm-rationals-dense-ordered-field): in an Archimedean ordered field \( F \), for all \( x < y \) there is \( q \in \nQ \) with \( x < \iota_F(q) < y \). We cite it, not reprove it; Section 6.2 uses it in two fields at once.
 
+Here is the Archimedean property at work on a specific supremum. The pattern has two halves: check the candidate is an upper bound, then show that anything smaller is not one.
+
+::: {#exm-cof-sup-one-minus-reciprocals}
+[A Supremum Computed by Archimedes]
+
+Let \( F \) be a complete ordered field. Show that \( \sup\{ \iota_F(1 - 1/n) : n \in \nZ_{>0} \} = 1_F \).
+:::
+
+::: {.solution}
+Let \( A \coloneqq \{ \iota_F(1 - 1/n) : n \in \nZ_{>0} \} \).
+
+*Upper bound.* For \( n \in \nZ_{>0} \), \( 1/n > 0 \) in \( \nQ \), so \( 1 - 1/n < 1 \), and \( \iota_F(1 - 1/n) < \iota_F(1) = 1_F \) because \( \iota_F \) is strictly increasing (@thm-rationals-embed-ordered-field). So \( 1_F \) is an upper bound of \( A \).
+
+*Least.* Let \( b \) be an upper bound of \( A \), and suppose, for contradiction, that \( b < 1_F \), so \( 1_F - b > 0 \). By @thm-cof-complete-archimedean, \( F \) is Archimedean, so @prp-archimedean-reciprocal (with \( \varepsilon \coloneqq 1_F - b \), applied at \( n = N \)) gives \( N \in \nZ_{>0} \) with \( 1/(N \cdot 1_F) < 1_F - b \). Since \( \iota_F \) preserves products and \( \iota_F(N) = N \cdot 1_F \), we have \( \iota_F(1/N) \cdot (N \cdot 1_F) = \iota_F(1) = 1_F \), so \( \iota_F(1/N) = 1/(N \cdot 1_F) \) by uniqueness of inverses (@lem-field-fraction-rules (a)). Since \( \iota_F \) preserves sums, it preserves negatives, and adding \( b - 1/(N \cdot 1_F) \) to both sides of \( 1/(N \cdot 1_F) < 1_F - b \) (O3) gives
+\[
+\iota_F(1 - 1/N) = 1_F - \frac{1}{N \cdot 1_F} > b .
+\] This element of \( A \) lies above \( b \), against \( b \) being an upper bound. So \( 1_F \le b \) by totality, for every upper bound \( b \), and \( 1_F = \sup A \) (@fd2:def-order-supremum).
+:::
+
+The supremum \( 1_F \) is not an element of \( A \): every element is strictly below it. Completeness entered only through the Archimedean property; in an ordered field that is Archimedean but not complete, such as \( \nQ \) (@thm-rationals-archimedean), the same two halves give the same answer. Exercises B1 and B2 follow this pattern.
+
 ## The rationals below an element
 
 How can we tell two elements of a field apart? In an Archimedean field, by a rational between them. That suggests recording, for each element, which rationals lie below it.
@@ -344,6 +365,9 @@ def-cof-order-preserving-map (claim): the unit clause follows from additivity, m
 def-cof-order-preserving-map (claim): pointers to Section 6.4 (conjugation of Q(sqrt 2)), Section 6.3, and the optional Chapter 7 (cuts) | prose pointers; nothing depends on them
 thm-cof-complete-archimedean (proof): "not an upper bound" gives n with n * 1_F > s - 1, and n * 1_F > x for each x once iota_F(N) is not bounded above | totality (prp-ordered-field-halves (a)), fd1:prp-quantifier-negation, fd1:prp-bounded-quantifier-negation (a); inline
 thm-cof-complete-archimedean (proof): s - 1 < s; (s - 1) + 1 = s | (O3), field arithmetic; inline
+exm-cof-sup-one-minus-reciprocals (solution): iota_F(1 - 1/n) < 1_F; iota_F(1/N) = 1/(N * 1_F); iota_F(1 - 1/N) = 1_F - 1/(N * 1_F) | thm-rationals-embed-ordered-field (sums, products, strictly increasing, iota_F(n) = n * 1_F), lem-field-fraction-rules (a); inline
+exm-cof-sup-one-minus-reciprocals (solution): some 1/(N * 1_F) < 1_F - b for b < 1_F; then 1_F - 1/(N * 1_F) > b | thm-cof-complete-archimedean, prp-archimedean-reciprocal, (O3), totality (prp-ordered-field-halves (a)), fd2:def-order-supremum
+exm-cof-sup-one-minus-reciprocals (claim): the same answer holds in any Archimedean field such as Q | the solution uses completeness only through thm-cof-complete-archimedean; thm-rationals-archimedean; remark, nothing depends on it
 thm-cof-complete-archimedean (claim): Q(t) is not Archimedean | exm-rational-function-field (school polynomial algebra, flagged there); counterexample only
 thm-cof-complete-archimedean (claim): Cauchy-complete need not imply Archimedean | stated without proof in Chapter 5 (remark after thm-cauchy-archimedean-lub); nothing depends on it
 def-cof-rationals-below (claim): closed downward; x <= y gives inclusion | iota_F strictly increasing (thm-rationals-embed-ordered-field), transitivity (O2); inline

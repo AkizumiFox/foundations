@@ -1,0 +1,36 @@
+note: retired at S7 2026-10-12 (merged into exr-the-uniqueness-theorem-a1 (d)-(f))
+items:
+- key: exr-the-uniqueness-theorem-a2
+  kind: exr
+  file: 03-the-uniqueness-theorem.md
+  line: 223
+  hash: 369b6afdaef2
+  verdicts:
+  - stage: S5a
+    verdict: minor
+    by: refereeA
+    hash: 369b6afdaef2
+    date: '2026-10-12'
+    model: claude-opus-5-5
+    evidence: 03-the-uniqueness-theorem.md:236 The solution says the uniqueness clause
+      needs the Archimedean property 'of its source' because 'the clause separates
+      elements by rationals'. But Step 7 separates by rationals in the target.
+  - stage: S5b
+    verdict: minor
+    by: refereeB
+    hash: 369b6afdaef2
+    date: '2026-10-12'
+    model: claude-opus-5-5
+    evidence: 03-the-uniqueness-theorem.md:223 The section has two A exercises (A1,
+      A2). STYLE §6 says 'Exactly one exercise with 2–6 lettered parts', and the S3
+      deviation for §02 merged its A2 into A1 for exactly this reason.
+  - stage: S6
+    verdict: correct
+    by: verifier
+    hash: 369b6afdaef2
+    date: '2026-10-12'
+    model: claude-opus-5-5
+    evidence: 03:235-241. Gives both uses (square roots in Step 1, Archimedes in Step
+      3), the 0 != 1 argument, and prp-cof-map-fixes-rationals needing no order. The
+      non-Archimedean claim is marked unproved and is true (real closures).
+  removed: true

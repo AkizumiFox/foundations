@@ -274,10 +274,12 @@ The general statement first. Suppose \( < \) makes \( F \) an ordered field (@de
 ::: {#exr-axioms-or-model-r3}
 [R3]
 
-Let \( X \) be the complete ordered field of this section whose zero is \( \emptyset \), and let \( \mathcal S \coloneqq \{ \nQ, \nQ(\sqrt 2), \nR(x), \nR, X \} \), with \( \nR \) the Cauchy model. By the remark after @cor-cof-isomorphic-to-cauchy-reals, \( \cong \) is an equivalence relation on \( \mathcal S \) (@fd2:def-equivalence-relation). Find its equivalence classes (@fd2:def-equivalence-class), and the number of elements of the quotient set \( \mathcal S/{\cong} \) (@fd2:def-quotient-set). For each two fields in different classes, name a property that one has and the other lacks, and prove that an order-preserving field isomorphism carries it across.
+Let \( X \) be the complete ordered field of this section whose zero is \( \emptyset \), and let \( \mathcal S \coloneqq \{ \nQ, \nQ(\sqrt 2), \nR(x), \nR, X \} \), with \( \nR \) the Cauchy model. Isomorphism of ordered fields, \( \cong \), is an equivalence relation on \( \mathcal S \). Find its equivalence classes, and the number of elements of the quotient set \( \mathcal S/{\cong} \). For each two fields in different classes, name a property that one has and the other lacks, and prove that an order-preserving field isomorphism carries it across.
 :::
 
 ::: {.solution}
+By the remark after @cor-cof-isomorphic-to-cauchy-reals, \( \cong \) is an equivalence relation on \( \mathcal S \) (@fd2:def-equivalence-relation).
+
 *Two transfer facts.* Let \( \chi \colon F \to L \) be an order-preserving field isomorphism. By the remark after @cor-cof-isomorphic-to-cauchy-reals, \( \chi^{-1} \colon L \to F \) is one too, so each fact below also holds with \( F \) and \( L \) exchanged. Recall \( \chi(n \cdot 1_F) = \chi(\iota_F(n)) = \iota_L(n) = n \cdot 1_L \) for \( n \in \nN \) (@prp-cof-map-fixes-rationals).
 
 (i) *Square roots of \( n \cdot 1 \).* If \( b \in F \) has \( b^2 = n \cdot 1_F \), then \( \chi(b)^2 = \chi(b^2) = \chi(n \cdot 1_F) = n \cdot 1_L \), since \( \chi \) respects products. So if \( n \cdot 1 \) is a square in \( F \), it is a square in \( L \), and conversely.
@@ -290,7 +292,7 @@ Let \( X \) be the complete ordered field of this section whose zero is \( \empt
 - \( 2 \) is not a square in \( \nQ \) (@thm-no-rational-square-two), while it is one in \( \nQ(\sqrt 2) \) (\( \sqrt 2 \in \nQ(\sqrt 2) \), @def-cof-sqrt2-field) and in the complete fields \( \nR \) and \( X \) (@prp-cof-square-roots). By (i) with \( n = 2 \), \( \nQ \) is isomorphic to none of these three.
 - \( 3 \) is not a square in \( \nQ(\sqrt 2) \) (@prp-cof-sqrt2-field-incomplete), while it is one in \( \nR \) and \( X \) (@prp-cof-square-roots). By (i) with \( n = 3 \), \( \nQ(\sqrt 2) \not\cong \nR \) and \( \nQ(\sqrt 2) \not\cong X \).
 
-So the equivalence classes, \( [K] = \{ K' \in \mathcal S : K' \cong K \} \), are \( \{ \nQ \} \), \( \{ \nQ(\sqrt 2) \} \), \( \{ \nR(x) \} \) and \( \{ \nR, X \} \), and \( \mathcal S/{\cong} \) has four elements. The two complete fields share a class, as @thm-cof-uniqueness requires; the other three fall into three classes.
+So the equivalence classes (@fd2:def-equivalence-class), \( [K] = \{ K' \in \mathcal S : K' \cong K \} \), are \( \{ \nQ \} \), \( \{ \nQ(\sqrt 2) \} \), \( \{ \nR(x) \} \) and \( \{ \nR, X \} \), and the quotient set \( \mathcal S/{\cong} \) (@fd2:def-quotient-set) has four elements. The two complete fields share a class, as @thm-cof-uniqueness requires; the other three fall into three classes.
 :::
 
 ::: {#exr-axioms-or-model-r4}
