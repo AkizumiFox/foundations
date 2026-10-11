@@ -6,700 +6,3050 @@ items:
   file: 01-field-axioms.md
   line: 26
   hash: bb187e1024da
-  verdicts: []
+  verdicts:
+  - stage: S5a
+    verdict: correct
+    by: refereeA
+    hash: bb187e1024da
+    date: '2026-10-12'
+    model: claude-opus-5-5
+    evidence: 01:26-44 clauses checked against fd3/src/ch02-integers-and-rationals/03-ordered-rings.md:11;
+      the remark at 01:59 iff-claim holds (1≠0 refers to the unique 1 and 0 of prp-ring-algebra (a));
+      quantifier order paragraph at 01:52 is right
+  - stage: S5b
+    verdict: minor
+    by: refereeB
+    hash: bb187e1024da
+    date: '2026-10-12'
+    model: claude-opus-5-5
+    evidence: 01-field-axioms.md:50 "multiplying out brackets rests on it alone" contradicts the section's
+      own proofs, which expand with (F9) and (F6).
 - key: check:01-field-axioms:1
   kind: check
   file: 01-field-axioms.md
   line: 62
   hash: 362d0d0e2732
-  verdicts: []
+  verdicts:
+  - stage: S5a
+    verdict: correct
+    by: refereeA
+    hash: 362d0d0e2732
+    date: '2026-10-12'
+    model: claude-opus-5-5
+    evidence: '01:67 closure true; a z with 1+z=1 forces z=0 in Q, so no (F3) element; (F4) unstated:
+      fine'
+  - stage: S5b
+    verdict: minor
+    by: refereeB
+    hash: 362d0d0e2732
+    date: '2026-10-12'
+    model: claude-opus-5-5
+    evidence: 01-field-axioms.md:67 Closure of Q_{>0} under + and · is asserted with no @ref and no ledger
+      line. Ledger line 470 sources "z = 0" to thm-field-basic-properties (b), which appears later, at
+      01:74.
 - key: thm-field-basic-properties
   kind: thm
   file: 01-field-axioms.md
   line: 74
   hash: ff18518ea77f
-  verdicts: []
+  verdicts:
+  - stage: S5a
+    verdict: correct
+    by: refereeA
+    hash: ff18518ea77f
+    date: '2026-10-12'
+    model: claude-opus-5-5
+    evidence: 01:77-90; every part is true in a field; hypotheses b,d≠0 in (g) are needed ([2],[3] in
+      Z/6Z) and a≠0 in (b) is needed (0·1=0·2)
+  - stage: S5b
+    verdict: correct
+    by: refereeB
+    hash: ff18518ea77f
+    date: '2026-10-12'
+    model: claude-opus-5-5
+    evidence: 01:74-91. Parts (a)-(f) match the blueprint's migrated statement and (g) is appended. Every
+      part is true in any field.
+  - stage: S8
+    verdict: minor
+    by: seam
+    hash: ff18518ea77f
+    date: '2026-10-12'
+    model: claude-opus-5-5
+    evidence: 01-field-axioms.md:118 Re-proves results that an allowed earlier chapter (F3.5, an s edge)
+      already proved. The index also says the opposite of what the section does.
 - key: proof:thm-field-basic-properties
   kind: proof
   file: 01-field-axioms.md
   line: 97
   hash: a274828e142d
-  verdicts: []
+  verdicts:
+  - stage: S5a
+    verdict: correct
+    by: refereeA
+    hash: a274828e142d
+    date: '2026-10-12'
+    model: claude-opus-5-5
+    evidence: '01:98-138: (a) = fd3:prp-ring-algebra (a); (b) by (F1)-(F4), (F5)-(F8); (c) by prp-ring-algebra
+      (a) and the well-definedness paragraph after fd3:def-ring-unit (05-units-and-crt.md:24); (d) by
+      prp-ring-algebra (b)+(F6); (e) by (c) with a=1; (f) by (F8); (g) bd≠0 via (f), b^{-1}≠0 shown before
+      uniqueness is applied, sum/product identities re-expanded and correct. Every cited label is in the
+      blueprin'
+  - stage: S5b
+    verdict: correct
+    by: refereeB
+    hash: a274828e142d
+    date: '2026-10-12'
+    model: claude-opus-5-5
+    evidence: '01:97-139. Checked the cited statements: fd3:prp-ring-algebra (a)-(c), and fd3:def-ring-unit
+      with its well-definedness paragraph. Parts (b), (f) and (g) are argued from the clauses, and each
+      step names its clause.'
 - key: check:01-field-axioms:2
   kind: check
   file: 01-field-axioms.md
   line: 147
   hash: 2d7412c8c150
-  verdicts: []
+  verdicts:
+  - stage: S5a
+    verdict: correct
+    by: refereeA
+    hash: 2d7412c8c150
+    date: '2026-10-12'
+    model: claude-opus-5-5
+    evidence: 01:152 (f) with b=a
+  - stage: S5b
+    verdict: correct
+    by: refereeB
+    hash: 2d7412c8c150
+    date: '2026-10-12'
+    model: claude-opus-5-5
+    evidence: '01:147-153. Correct: it is (f) with b = a.'
 - key: cor-field-squares-equal
   kind: cor
   file: 01-field-axioms.md
   line: 161
   hash: 33cd81f0b948
-  verdicts: []
+  verdicts:
+  - stage: S5a
+    verdict: correct
+    by: refereeA
+    hash: 33cd81f0b948
+    date: '2026-10-12'
+    model: claude-opus-5-5
+    evidence: 01:164; true in any field; the Z/8Z remark at 01:182 ([3]^2=[1], [3]≠±[1]) checked, and
+      the sidecar passes
+  - stage: S5b
+    verdict: correct
+    by: refereeB
+    hash: 33cd81f0b948
+    date: '2026-10-12'
+    model: claude-opus-5-5
+    evidence: '01:161-165. The statement is true. In the remark at 01:182, Z/8Z: [3]^2=[1], and 8 divides
+      neither 2 nor -4; the sidecar passes. prp-complex-square-roots (b) does state u^2=z iff u=±w.'
 - key: proof:cor-field-squares-equal
   kind: proof
   file: 01-field-axioms.md
   line: 171
   hash: b56e7e783860
-  verdicts: []
+  verdicts:
+  - stage: S5a
+    verdict: correct
+    by: refereeA
+    hash: b56e7e783860
+    date: '2026-10-12'
+    model: claude-opus-5-5
+    evidence: '01:172-178: factorization via (F9),(F6), prp-ring-algebra (c) ((-y)x=-(yx)), (F4); (⇒)
+      via thm (f) and (c), -(-x)=x by prp-ring-algebra (a); (⇐) via prp-ring-algebra (c); y=1 case uses
+      1·1=1 by (F7)'
+  - stage: S5b
+    verdict: correct
+    by: refereeB
+    hash: b56e7e783860
+    date: '2026-10-12'
+    model: claude-opus-5-5
+    evidence: 01:171-179. The factorization uses (F9), (F6), (F4) and prp-ring-algebra (c). The case x+y=0
+      gives y=-x, and then x=-(-x)=-y. The converse uses prp-ring-algebra (c). All steps check.
 - key: prp-field-linear-equation
   kind: prp
   file: 01-field-axioms.md
   line: 189
   hash: cf5764e406ed
-  verdicts: []
+  verdicts:
+  - stage: S5a
+    verdict: correct
+    by: refereeA
+    hash: cf5764e406ed
+    date: '2026-10-12'
+    model: claude-opus-5-5
+    evidence: '01:192-207; Cramer formulas x=(ed-bf)/D, y=(af-ce)/D checked; dropping a≠0 or D≠0 gives
+      the counterexamples at 01:250 (they also hold in F_2: (0,0) and (1,1) are distinct)'
+  - stage: S5b
+    verdict: correct
+    by: refereeB
+    hash: cf5764e406ed
+    date: '2026-10-12'
+    model: claude-opus-5-5
+    evidence: '01:189-208. Formulas verified: x=(ed-bf)/D, y=(af-ce)/D with D=ad-bc. The sidecar passes.'
 - key: proof:prp-field-linear-equation
   kind: proof
   file: 01-field-axioms.md
   line: 214
   hash: 2a4ff1557264
-  verdicts: []
+  verdicts:
+  - stage: S5a
+    verdict: correct
+    by: refereeA
+    hash: 2a4ff1557264
+    date: '2026-10-12'
+    model: claude-opus-5-5
+    evidence: '01:215-247: d(ax+by)-b(cx+dy)=(ad-bc)x and a(cx+dy)-c(ax+by)=(ad-bc)y recomputed; existence
+      identities a(ed-bf)+b(af-ce)=e(ad-bc), c(ed-bf)+d(af-ce)=f(ad-bc) recomputed; uniqueness uses (a)
+      with D≠0, the only use of the hypothesis'
+  - stage: S5b
+    verdict: minor
+    by: refereeB
+    hash: 2a4ff1557264
+    date: '2026-10-12'
+    model: claude-opus-5-5
+    evidence: 01-field-axioms.md:229 The existence step names only (F5) and (F9). It also uses (F6), to
+      factor D^{-1} out on the right, and fd3:prp-ring-algebra (c), for the signs in ade - abf + abf -
+      bce.
 - key: exm-fields
   kind: exm
   file: 01-field-axioms.md
   line: 256
   hash: 5ea005057906
-  verdicts: []
+  verdicts:
+  - stage: S5a
+    verdict: correct
+    by: refereeA
+    hash: 5ea005057906
+    date: '2026-10-12'
+    model: claude-opus-5-5
+    evidence: 01:263 cites fd3:thm-rationals-field, fd3:thm-reals-field (soft, F3.10, allowed in examples),
+      thm-complex-numbers-field (F4.1, see edge, examples allowed); each of these states 'field in the
+      sense of fd3:def-commutative-ring-and-field'
+  - stage: S5b
+    verdict: correct
+    by: refereeB
+    hash: 5ea005057906
+    date: '2026-10-12'
+    model: claude-opus-5-5
+    evidence: 01:256-264. Checked fd3:thm-rationals-field, fd3:thm-reals-field (with 1≠0 coming from thm-reals-commutative-ring)
+      and thm-complex-numbers-field (stated in fd3's form). All are soft citations in an example, which
+      the blueprint allows.
 - key: exm-field-nonexamples
   kind: exm
   file: 01-field-axioms.md
   line: 272
   hash: 59a28d5c8072
-  verdicts: []
+  verdicts:
+  - stage: S5a
+    verdict: correct
+    by: refereeA
+    hash: 59a28d5c8072
+    date: '2026-10-12'
+    model: claude-opus-5-5
+    evidence: 01:279-285 the math is right (N via the identification at fd3 02-well-defined-operations.md:227;
+      Z/6Z inverse argument correct). But 01:279,281 cite fd3:thm-integers-commutative-ring, which is
+      not in the blueprint's F3.2 allowed list (the drafter's ledger 01:483 already reports this) [finding
+      refuted by skeptics]
+  - stage: S5b
+    verdict: minor
+    by: refereeB
+    hash: 59a28d5c8072
+    date: '2026-10-12'
+    model: claude-opus-5-5
+    evidence: 01-field-axioms.md:279 The step from N to Z uses fd3's identification N ⊆ Z, which is neither
+      cited nor ledgered.
 - key: exr-field-axioms-a1
   kind: exr
   file: 01-field-axioms.md
   line: 308
   hash: 2d2b402fd5d5
-  verdicts: []
+  verdicts:
+  - stage: S5a
+    verdict: minor
+    by: refereeA
+    hash: 2d2b402fd5d5
+    date: '2026-10-12'
+    model: claude-opus-5-5
+    evidence: 01-field-axioms.md:327 Additive cancellation is credited to @fd3:prp-ring-algebra, but that
+      proposition does not state it.
+  - stage: S5b
+    verdict: minor
+    by: refereeB
+    hash: 2d2b402fd5d5
+    date: '2026-10-12'
+    model: claude-opus-5-5
+    evidence: 01-field-axioms.md:313 (b) asks for one clause per system, but N fails two. In (d), additive
+      cancellation is credited to fd3:prp-ring-algebra, whose statement has no cancellation part.
+  - stage: S6
+    verdict: correct
+    by: verifier
+    hash: 2d2b402fd5d5
+    date: '2026-10-12'
+    model: claude-opus-5-5
+    evidence: '01:308-336. (b) agrees with exm-field-nonexamples; (c) counterexample a=0 is right; (d)
+      [2][1]=[2][4] and [2][3]=[0] in Z/6 checked by script; (e) solved independently: (x,y)=(1,-1), and
+      D=-5 matches.'
 - key: exr-field-axioms-b1
   kind: exr
   file: 01-field-axioms.md
   line: 338
   hash: e850d985db32
-  verdicts: []
+  verdicts:
+  - stage: S5a
+    verdict: minor
+    by: refereeA
+    hash: e850d985db32
+    date: '2026-10-12'
+    model: claude-opus-5-5
+    evidence: 01-field-axioms.md:356 In the solution of B1(c), 'by (d)' points at B1's own part (d), not
+      at the theorem's part (d) (0·a = 0) that is meant. B1(d) also uses thm (f) without naming it.
+  - stage: S5b
+    verdict: minor
+    by: refereeB
+    hash: e850d985db32
+    date: '2026-10-12'
+    model: claude-opus-5-5
+    evidence: '01-field-axioms.md:356 Two citation problems: an ambiguous "(d)" and an uncited use of
+      part (f).'
+  - stage: S6
+    verdict: correct
+    by: verifier
+    hash: e850d985db32
+    date: '2026-10-12'
+    model: claude-opus-5-5
+    evidence: 01:338-359. Proved (a)-(d) myself and they match the book. The steps x(x-1)=x^2-x and (-1)^2=1
+      rest on fd3:prp-ring-algebra (c) and are justified. Worked models are thm-field-basic-properties
+      and cor-field-squares-equal.
 - key: exr-field-axioms-b2
   kind: exr
   file: 01-field-axioms.md
   line: 361
   hash: 3b81b8c24b7a
-  verdicts: []
+  verdicts:
+  - stage: S5a
+    verdict: correct
+    by: refereeA
+    hash: 3b81b8c24b7a
+    date: '2026-10-12'
+    model: claude-opus-5-5
+    evidence: 01:368-370 both directions recomputed; b,d≠0 used through b^{-1}, d^{-1}
+  - stage: S5b
+    verdict: correct
+    by: refereeB
+    hash: 3b81b8c24b7a
+    date: '2026-10-12'
+    model: claude-opus-5-5
+    evidence: 01:361-371. Both directions check.
+  - stage: S6
+    verdict: correct
+    by: verifier
+    hash: 3b81b8c24b7a
+    date: '2026-10-12'
+    model: claude-opus-5-5
+    evidence: 01:361-371. Both directions are correct and agree with my proof by multiplying through by
+      bd. The worked model is the proof of thm (g).
 - key: exr-field-axioms-b3
   kind: exr
   file: 01-field-axioms.md
   line: 373
   hash: 5448d0c5019d
-  verdicts: []
+  verdicts:
+  - stage: S5a
+    verdict: correct
+    by: refereeA
+    hash: 5448d0c5019d
+    date: '2026-10-12'
+    model: claude-opus-5-5
+    evidence: '01:386-390: one 1/2, inverse 1/(4a) checked; for ab+1 the two sides of (F9) differ by 1
+      for every triple; 1+1=2∉{0,1}; the forward pointer is to exr-field-homomorphisms-b3 (04-field-homomorphisms.md:225),
+      which exists and nothing rests on it'
+  - stage: S5b
+    verdict: correct
+    by: refereeB
+    hash: 5448d0c5019d
+    date: '2026-10-12'
+    model: claude-opus-5-5
+    evidence: '01:373-391. (a): the one is 1/2 and the inverse of a is 1/(4a); verified. (b): ab+ac+1
+      vs ab+ac+2. (c): 1+1=2 is not in {0,1}. The pointer "Exercise B3 of Section 2.4" matches exr-field-homomorphisms-b3.'
+  - stage: S6
+    verdict: minor
+    by: verifier
+    hash: 5448d0c5019d
+    date: '2026-10-12'
+    model: claude-opus-5-5
+    evidence: 01-field-axioms.md:373 B3 (a) asks the reader to verify every clause of def-field for a
+      new operation on Q. §01 has no worked example of that task. exm-fields and exm-field-nonexamples
+      only cite fd3 results or find a single failing clause.
 - key: exr-field-axioms-c1
   kind: exr
   file: 01-field-axioms.md
   line: 395
   hash: 80455d56431d
-  verdicts: []
+  verdicts:
+  - stage: S5a
+    verdict: correct
+    by: refereeA
+    hash: 80455d56431d
+    date: '2026-10-12'
+    model: claude-opus-5-5
+    evidence: 01:398 allows thm part (e), and the marking scheme (01:439) wants (-y)(-y)=yy derived from
+      (e). But (e) is proved at 01:116 from @fd3:prp-ring-algebra (c), whose proof (03-ordered-rings.md:136)
+      uses a·0=0, which is C1(a). So an 'exit check from the axioms' rests on a Number Systems result
+      that C1 forbids, and the blueprint's 'from (F1)-(F9) only' is not met. Also 01:416, ((-1)(-1))(yy)=yy
+      needs 1·
+  - stage: S5b
+    verdict: correct
+    by: refereeB
+    hash: 80455d56431d
+    date: '2026-10-12'
+    model: claude-opus-5-5
+    evidence: '01:395-442. The solution stays within the stated allowance: parts (c) and (e) of the theorem,
+      plus the silent 0+a=a and 1·a=a from 01:141. The marking scheme sums to 2+2+1+2+1+1+1=10.'
+  - stage: S6
+    verdict: correct
+    by: verifier
+    hash: 80455d56431d
+    date: '2026-10-12'
+    model: claude-opus-5-5
+    evidence: '01:395-442. I wrote my own proofs: (a) by 0*a=(0+0)a, (b) by the case b!=0, (c) by the
+      factorization with the sign rules from (e). The book''s solution and mine both score 10/10 under
+      the scheme. The points total 10 and nothing in the scheme rewards wording.'
 - key: exr-field-axioms-c2
   kind: exr
   file: 01-field-axioms.md
   line: 444
   hash: c1b4106d1559
-  verdicts: []
+  verdicts:
+  - stage: S5a
+    verdict: correct
+    by: refereeA
+    hash: c1b4106d1559
+    date: '2026-10-12'
+    model: claude-opus-5-5
+    evidence: 01:457-463; (N7) is 'A missing case' at fd1 catalogue line 40; the counterexample x=0 to
+      the step is right
+  - stage: S5b
+    verdict: correct
+    by: refereeB
+    hash: c1b4106d1559
+    date: '2026-10-12'
+    model: claude-opus-5-5
+    evidence: 01:444-464. The claim is B1 (c). Line (2) is the failing line. (N7) of fd1:exm-not-allowed-catalogue
+      is "A missing case" (checked). The solution gives a counterexample to the step itself, which STYLE
+      §11.3 requires.
+  - stage: S6
+    verdict: minor
+    by: verifier
+    hash: c1b4106d1559
+    date: '2026-10-12'
+    model: claude-opus-5-5
+    evidence: '01-field-axioms.md:459 The solution classifies the division by x as (N7) ''a missing case''.
+      The flawed proof has no case split, so the vee-E rule that (N7) breaks is not in play. The series''
+      own precedent files exactly this move (canceling x without x!=0) as (N9), an unproved and false
+      general ''fact''. The solution also says line (3) ''states x=0 as an option that no line produced'',
+      which suggests a '
 - key: exm-finite-fields
   kind: exm
   file: 02-finite-fields-from-modular-arithmetic.md
   line: 13
   hash: 5b97f767bb04
-  verdicts: []
+  verdicts:
+  - stage: S5a
+    verdict: correct
+    by: refereeA
+    hash: 5b97f767bb04
+    date: '2026-10-12'
+    model: claude-opus-5-5
+    evidence: '02:19-44: well-definedness via fd3:thm-quotient-ring-by-ideal (b) (checked 04-quotient-rings.md:55),
+      ring clauses via fd3:thm-integers-mod-n-ring (a), [1]!=[0] iff n>=2 via (c), size via (b); F_2 tables
+      and (F8) check correct; sidecar ok'
+  - stage: S5b
+    verdict: correct
+    by: refereeB
+    hash: 5b97f767bb04
+    date: '2026-10-12'
+    model: claude-opus-5-5
+    evidence: 02:13-45 checked against fd3 thm-quotient-ring-by-ideal (b), def-integers-mod-n-ring, thm-integers-mod-n-ring
+      (a)-(c); the Z/2Z tables are right; the comparison at 02:47 with fd3:exm-finite-ring-not-orderable
+      holds (same tables); the 'warning on order' pointer matches 01:301
 - key: lem-bezout-integers
   kind: lem
   file: 02-finite-fields-from-modular-arithmetic.md
   line: 53
   hash: 82a0d0b4c50e
-  verdicts: []
+  verdicts:
+  - stage: S5a
+    verdict: correct
+    by: refereeA
+    hash: 82a0d0b4c50e
+    date: '2026-10-12'
+    model: claude-opus-5-5
+    evidence: 02:56 statement; the hypothesis n>=1 is used only to get (a,n)!=(0,0). Dropping it gives
+      no counterexample, since n=0 forces a=+-1 under the coprimality hypothesis
+  - stage: S5b
+    verdict: correct
+    by: refereeB
+    hash: 82a0d0b4c50e
+    date: '2026-10-12'
+    model: claude-opus-5-5
+    evidence: 02:56 matches the blueprint statement; the hypothesis is used
 - key: proof:lem-bezout-integers
   kind: proof
   file: 02-finite-fields-from-modular-arithmetic.md
   line: 62
   hash: 4f07d5821ea7
-  verdicts: []
+  verdicts:
+  - stage: S5a
+    verdict: correct
+    by: refereeA
+    hash: 4f07d5821ea7
+    date: '2026-10-12'
+    model: claude-opus-5-5
+    evidence: '02:63: gcd>=1 is the bolded conclusion of the well-definedness paragraph after fd3:def-integer-gcd
+      (02-gcd-and-bezout.md:51); g=1 by hypothesis; fd3:cor-coprime-iff-combination (=>) gives x,y'
+  - stage: S5b
+    verdict: correct
+    by: refereeB
+    hash: 4f07d5821ea7
+    date: '2026-10-12'
+    model: claude-opus-5-5
+    evidence: '02:63: gcd >= 1 follows from the well-definedness paragraph at fd3 02-gcd-and-bezout.md:51;
+      ''coprime'' (fd3 def-coprime-integers) is in the ledger at 02:393; cor-coprime-iff-combination applies'
 - key: thm-zp-field-iff-prime
   kind: thm
   file: 02-finite-fields-from-modular-arithmetic.md
   line: 68
   hash: 2268a3660fbc
-  verdicts: []
+  verdicts:
+  - stage: S5a
+    verdict: correct
+    by: refereeA
+    hash: 2268a3660fbc
+    date: '2026-10-12'
+    model: claude-opus-5-5
+    evidence: 02:71; with n>=2 dropped, n=1 is excluded as the zero ring, consistent with exm-finite-fields
+  - stage: S5b
+    verdict: correct
+    by: refereeB
+    hash: 2268a3660fbc
+    date: '2026-10-12'
+    model: claude-opus-5-5
+    evidence: 02:71 has the same content as fd3:thm-integers-mod-prime-field (n >= 2)
 - key: proof:thm-zp-field-iff-prime
   kind: proof
   file: 02-finite-fields-from-modular-arithmetic.md
   line: 78
   hash: 3a59132cf5db
-  verdicts: []
+  verdicts:
+  - stage: S5a
+    verdict: correct
+    by: refereeA
+    hash: 3a59132cf5db
+    date: '2026-10-12'
+    model: claude-opus-5-5
+    evidence: 02:79 cites fd3:thm-integers-mod-prime-field (05-units-and-crt.md:120, hypothesis n>=2 matches)
+      and the remark after def-field (01:56) for the translation between the two definitions; the idea
+      at 02:75 is sound
+  - stage: S5b
+    verdict: correct
+    by: refereeB
+    hash: 3a59132cf5db
+    date: '2026-10-12'
+    model: claude-opus-5-5
+    evidence: 02:79 cites fd3:thm-integers-mod-prime-field and the remark after def-field (01:59), which
+      proves the two definitions equivalent; the Idea's unreferenced facts are in the ledger at 02:395
 - key: def-field-fp
   kind: def
   file: 02-finite-fields-from-modular-arithmetic.md
   line: 86
   hash: b9f3b8bb5248
-  verdicts: []
+  verdicts:
+  - stage: S5a
+    verdict: correct
+    by: refereeA
+    hash: b9f3b8bb5248
+    date: '2026-10-12'
+    model: claude-opus-5-5
+    evidence: 02:89 comes after thm-zp-field-iff-prime, so 'field' is justified; p elements by fd3:thm-integers-mod-n-ring
+      (b); 02:92 trial-division criterion matches the remark after fd3:lem-least-divisor-prime (03-unique-factorization.md,
+      needs p>=2)
+  - stage: S5b
+    verdict: correct
+    by: refereeB
+    hash: b9f3b8bb5248
+    date: '2026-10-12'
+    model: claude-opus-5-5
+    evidence: 02:89 matches the NOTATION row for \nF_p (NOTATION:247); the size comes from fd3 thm-integers-mod-n-ring
+      (b); the trial-divisor remark cited at 02:92 exists at fd3 03-unique-factorization.md:142 (the out-of-list
+      citation is reported in the blueprint deviation)
 - key: check:02-finite-fields-from-modular-arithmetic:1
   kind: check
   file: 02-finite-fields-from-modular-arithmetic.md
   line: 96
   hash: 9e02ac193eda
-  verdicts: []
+  verdicts:
+  - stage: S5a
+    verdict: correct
+    by: refereeA
+    hash: 9e02ac193eda
+    date: '2026-10-12'
+    model: claude-opus-5-5
+    evidence: '02:101: 3x mod 7 for x=1..5 gives 3,6,2,5,1, so 3^{-1}=5; uniqueness from thm-field-basic-properties
+      (c)'
+  - stage: S5b
+    verdict: correct
+    by: refereeB
+    hash: 9e02ac193eda
+    date: '2026-10-12'
+    model: claude-opus-5-5
+    evidence: '02:101: the remainders 3,6,2,5,1 of 3x mod 7 are right; 3^{-1} = 5; uniqueness by thm-field-basic-properties
+      (c)'
 - key: exm-inverses-in-fp
   kind: exm
   file: 02-finite-fields-from-modular-arithmetic.md
   line: 106
   hash: 56293c9ce2ee
-  verdicts: []
+  verdicts:
+  - stage: S5a
+    verdict: minor
+    by: refereeA
+    hash: 56293c9ce2ee
+    date: '2026-10-12'
+    model: claude-opus-5-5
+    evidence: 02-finite-fields-from-modular-arithmetic.md:127 fd3:thm-units-mod-n is applied to read off
+      [a]^{-1}=[x] from ax+py=1 without establishing its precondition gcd(a,n)=1. The same happens in
+      the paragraph at line 104 ('if ax + py = 1, then [a]^{-1} = [x]').
+  - stage: S5b
+    verdict: minor
+    by: refereeB
+    hash: 56293c9ce2ee
+    date: '2026-10-12'
+    model: claude-opus-5-5
+    evidence: 02-finite-fields-from-modular-arithmetic.md:119 The primality of 101 uses the trial-divisor
+      criterion (check only d with d*d <= p) without citing it, and the ledger misattributes the source.
 - key: exm-elimination-f5
   kind: exm
   file: 02-finite-fields-from-modular-arithmetic.md
   line: 132
   hash: 72b341d1d6d3
-  verdicts: []
+  verdicts:
+  - stage: S5a
+    verdict: correct
+    by: refereeA
+    hash: 72b341d1d6d3
+    date: '2026-10-12'
+    model: claude-opus-5-5
+    evidence: '02:139-151: scaling gives x+3y=4; (2-9)y=4-12 gives 3y=2, so y=4 and x=2; the formula of
+      prp-field-linear-equation (b) (01:204, x=(ed-bf)/D, y=(af-ce)/D) gives 2 and -1=4; check is correct'
+  - stage: S5b
+    verdict: minor
+    by: refereeB
+    hash: 72b341d1d6d3
+    date: '2026-10-12'
+    model: claude-opus-5-5
+    evidence: '02-finite-fields-from-modular-arithmetic.md:130 Meta-claim ''The opening elimination, done
+      over F_5, looks like this'' is false: the example solves a different system from Section 2.1''s
+      opening one. Line 3 (''the elimination of Section 2.1, now run modulo 5'') reads the same way.'
 - key: check:02-finite-fields-from-modular-arithmetic:2
   kind: check
   file: 02-finite-fields-from-modular-arithmetic.md
   line: 154
   hash: cbd1d42a7f7e
-  verdicts: []
+  verdicts:
+  - stage: S5a
+    verdict: correct
+    by: refereeA
+    hash: cbd1d42a7f7e
+    date: '2026-10-12'
+    model: claude-opus-5-5
+    evidence: 02:159 cor-field-squares-equal applies because F_11 is a field; -1=10; 100=9*11+1
+  - stage: S5b
+    verdict: correct
+    by: refereeB
+    hash: cbd1d42a7f7e
+    date: '2026-10-12'
+    model: claude-opus-5-5
+    evidence: '02:159: cor-field-squares-equal; -1 = 10 in F_11; 100 = 9*11 + 1'
 - key: exr-finite-fields-from-modular-arithmetic-a1
   kind: exr
   file: 02-finite-fields-from-modular-arithmetic.md
   line: 176
   hash: 9ce4760b5818
-  verdicts: []
+  verdicts:
+  - stage: S5a
+    verdict: correct
+    by: refereeA
+    hash: 9ce4760b5818
+    date: '2026-10-12'
+    model: claude-opus-5-5
+    evidence: '02:189-197: all five parts verified; for 13 prime, d=2,3 suffice since 4*4>13; 4*4+3=19=4
+      in F_5'
+  - stage: S5b
+    verdict: correct
+    by: refereeB
+    hash: 9ce4760b5818
+    date: '2026-10-12'
+    model: claude-opus-5-5
+    evidence: '02:189-197: all five parts checked; 5 parts fits the 2-6 rule of STYLE §6; primality of
+      13 is ledgered at 02:403'
+  - stage: S6
+    verdict: correct
+    by: verifier
+    hash: 9ce4760b5818
+    date: '2026-10-12'
+    model: claude-opus-5-5
+    evidence: '02:176-198. Script: Z/8 has [2][4]=0; inverses in F5 are 1,3,2,4; 4*4+3=4 in F5; x^2=x
+      holds on F2; 13 is prime.'
 - key: exr-finite-fields-from-modular-arithmetic-b1
   kind: exr
   file: 02-finite-fields-from-modular-arithmetic.md
   line: 202
   hash: 94df0fe5780e
-  verdicts: []
+  verdicts:
+  - stage: S5a
+    verdict: correct
+    by: refereeA
+    hash: 94df0fe5780e
+    date: '2026-10-12'
+    model: claude-opus-5-5
+    evidence: '02:212-218: x=6; D=2, D^{-1}=4, x=(ed-bf)D^{-1}=4, y=(af-ce)D^{-1}=-32=3; checks correct'
+  - stage: S5b
+    verdict: correct
+    by: refereeB
+    hash: 94df0fe5780e
+    date: '2026-10-12'
+    model: claude-opus-5-5
+    evidence: '02:212-218: x = 6; D = 2, 2^{-1} = 4, (x,y) = (4,3), checked against both equations'
+  - stage: S6
+    verdict: correct
+    by: verifier
+    hash: 94df0fe5780e
+    date: '2026-10-12'
+    model: claude-opus-5-5
+    evidence: 02:202-219. Brute force over F7 gives (a) x=6 and (b) (4,3) as the unique solution, matching
+      D=2 and 2^{-1}=4. The worked model is exm-elimination-f5.
 - key: exr-finite-fields-from-modular-arithmetic-b2
   kind: exr
   file: 02-finite-fields-from-modular-arithmetic.md
   line: 221
   hash: 9a27886feac6
-  verdicts: []
+  verdicts:
+  - stage: S5a
+    verdict: correct
+    by: refereeA
+    hash: 9a27886feac6
+    date: '2026-10-12'
+    model: claude-opus-5-5
+    evidence: '02:228: zero divisors in Z/9Z and Z/91Z (91=7*13); Z/1Z has [1]=[0]'
+  - stage: S5b
+    verdict: correct
+    by: refereeB
+    hash: 9a27886feac6
+    date: '2026-10-12'
+    model: claude-opus-5-5
+    evidence: '02:228: Z/1Z is handled separately from the theorem''s n >= 2; 91 = 7*13; [3]^2 = [0] mod
+      9'
+  - stage: S6
+    verdict: correct
+    by: verifier
+    hash: 9a27886feac6
+    date: '2026-10-12'
+    model: claude-opus-5-5
+    evidence: '02:221-229. Z/9: [3]^2=0. F5 is a field. Z/1 is the zero ring. 91=7*13. All agree with
+      the script. The models are exm-finite-fields and thm-zp-field-iff-prime.'
 - key: exr-finite-fields-from-modular-arithmetic-b3
   kind: exr
   file: 02-finite-fields-from-modular-arithmetic.md
   line: 231
   hash: e404695ca7b0
-  verdicts: []
+  verdicts:
+  - stage: S5a
+    verdict: correct
+    by: refereeA
+    hash: e404695ca7b0
+    date: '2026-10-12'
+    model: claude-opus-5-5
+    evidence: '02:238-240: 3^2=4^2=2 in F_7 and cor-field-squares-equal gives completeness; squares in
+      F_5 are 0,1,4,4,1'
+  - stage: S5b
+    verdict: correct
+    by: refereeB
+    hash: e404695ca7b0
+    date: '2026-10-12'
+    model: claude-opus-5-5
+    evidence: '02:238-240: in F_7, 3^2 = 2 and the roots are {3,4}; in F_5 the squares are 0,1,4,4,1,
+      so there is no root'
+  - stage: S6
+    verdict: correct
+    by: verifier
+    hash: e404695ca7b0
+    date: '2026-10-12'
+    model: claude-opus-5-5
+    evidence: '02:231-241. Script: x^2=2 has solutions {3,4} in F7 and none in F5. The model is the x^2=1
+      check in F11 together with cor-field-squares-equal.'
 - key: exr-finite-fields-from-modular-arithmetic-c1
   kind: exr
   file: 02-finite-fields-from-modular-arithmetic.md
   line: 245
   hash: 53e2a9068ba6
-  verdicts: []
+  verdicts:
+  - stage: S5a
+    verdict: correct
+    by: refereeA
+    hash: 53e2a9068ba6
+    date: '2026-10-12'
+    model: claude-opus-5-5
+    evidence: '02:277-331: product formula = expansion with alpha^2=1+alpha; tables recomputed; (F5) coefficient
+      expansions recomputed by hand and match, including the bdg+bdg cancellation; (F9), (F7) with 1!=0,
+      (F8) correct; (c) uses additive cancellation from (F1)-(F4) only, then surjectivity, then injectivity,
+      then thm-field-basic-properties (f); every hypothesis on phi is used; sidecar ok'
+  - stage: S5b
+    verdict: correct
+    by: refereeB
+    hash: 53e2a9068ba6
+    date: '2026-10-12'
+    model: claude-opus-5-5
+    evidence: The product formula equals the expansion with alpha^2 = 1+alpha. Both tables were checked.
+      I checked the (F5) coefficient identities by hand (2bdg cancels). (c) uses the first half of the
+      proof of thm-field-basic-properties (b) (01:102), which uses only (F1)-(F4), as claimed. The marking
+      scheme sums to 10, and 64 = 4^3. The Chapter 5 pointer is in STATUS row 155 and paid by exm-polynomial-quotient
+  - stage: S6
+    verdict: minor
+    by: verifier
+    hash: 53e2a9068ba6
+    date: '2026-10-12'
+    model: claude-opus-5-5
+    evidence: 02-finite-fields-from-modular-arithmetic.md:341 The marking scheme for (c) gives its 2 main
+      points only to the zero-divisor route. A correct proof that uses only additivity would lose them.
 - key: exr-finite-fields-from-modular-arithmetic-c2
   kind: exr
   file: 02-finite-fields-from-modular-arithmetic.md
   line: 348
   hash: 27b3c5404f7f
-  verdicts: []
+  verdicts:
+  - stage: S5a
+    verdict: correct
+    by: refereeA
+    hash: 27b3c5404f7f
+    date: '2026-10-12'
+    model: claude-opus-5-5
+    evidence: '02:361-367: claim true; line (3) is correctly identified as failing; counterexample p=5,
+      a=2; the N9 citation matches fd1 usage; the repair via lem-bezout-integers is valid ([a]!=[0] gives
+      p does not divide a by the class test)'
+  - stage: S5b
+    verdict: minor
+    by: refereeB
+    hash: 27b3c5404f7f
+    date: '2026-10-12'
+    model: claude-opus-5-5
+    evidence: 02-finite-fields-from-modular-arithmetic.md:367 The C2 solution uses facts with no @ref
+      that are missing from its ledger line.
+  - stage: S6
+    verdict: correct
+    by: verifier
+    hash: 27b3c5404f7f
+    date: '2026-10-12'
+    model: claude-opus-5-5
+    evidence: 02:348-368. Line (2) is valid ([a]!=[0] implies a!=0). Line (3) is the only flaw, and (4)
+      inherits it. The counterexample p=5, a=2 kills the step. (N9) fits, since the line uses an object
+      that is not available. The repair through lem-bezout-integers is correct.
 - key: exr-finite-fields-from-modular-arithmetic-c3
   kind: exr
   file: 02-finite-fields-from-modular-arithmetic.md
   line: 370
   hash: 855fca234c6c
-  verdicts: []
+  verdicts:
+  - stage: S5a
+    verdict: correct
+    by: refereeA
+    hash: 855fca234c6c
+    date: '2026-10-12'
+    model: claude-opus-5-5
+    evidence: '02:379-383: values mod 2, 3, 7 recomputed: F_2 none, F_3 x=1, F_7 x=2,4'
+  - stage: S5b
+    verdict: correct
+    by: refereeB
+    hash: 855fca234c6c
+    date: '2026-10-12'
+    model: claude-opus-5-5
+    evidence: '02:379-385: the values mod 2, 3, 7 are right; the Section 2.5 pointer matches 05:458 B2
+      ((c) F_7, (d) F_2); 2 is invertible in F_3 and F_7'
+  - stage: S6
+    verdict: correct
+    by: verifier
+    hash: 855fca234c6c
+    date: '2026-10-12'
+    model: claude-opus-5-5
+    evidence: '02:370-386. Script: no root in F2; {1} in F3; {2,4} in F7. The listed values 1,3,0,6,0,3,1
+      are right. The pointer to §05 B2(c) exists.'
 - key: def-subfield
   kind: def
   file: 03-subfields.md
   line: 13
   hash: a08d0f9d1918
-  verdicts: []
+  verdicts:
+  - stage: S5a
+    verdict: minor
+    by: refereeA
+    hash: a08d0f9d1918
+    date: '2026-10-12'
+    model: claude-opus-5-5
+    evidence: 03-subfields.md:34 'Non-examples, each failing one clause' is false for N in Q, which fails
+      two clauses (negatives and inverses).
+  - stage: S5b
+    verdict: minor
+    by: refereeB
+    hash: a08d0f9d1918
+    date: '2026-10-12'
+    model: claude-opus-5-5
+    evidence: '03-subfields.md:34 The heading ''Non-examples, each failing one clause'' is false. N ⊆
+      Q fails two clauses: negatives and inverses. Line 40 says ''These three are the non-examples of
+      @exm-field-nonexamples'', but that example lists four.'
+  - stage: S8
+    verdict: correct
+    by: seam
+    hash: a08d0f9d1918
+    date: '2026-10-12'
+    model: claude-opus-5-5
+    evidence: 03-subfields.md:32 says 'Chapter 1 checked the four clauses'. @thm-complex-numbers-field
+      only checks closure under +, ·, negatives and inverses. 0, 1 ∈ ℝ ⊆ ℂ comes from ι(0), ι(1) (@prp-reals-embed-complex),
+      which the sentence does not credit. [finding refuted by skeptics]
 - key: prp-subfield-test
   kind: prp
   file: 03-subfields.md
   line: 46
   hash: d9773b18d203
-  verdicts: []
+  verdicts:
+  - stage: S5a
+    verdict: correct
+    by: refereeA
+    hash: d9773b18d203
+    date: '2026-10-12'
+    model: claude-opus-5-5
+    evidence: 'Statement (a)-(c) at :52-54 is true. Every hypothesis is needed: drop ''L a field'' in
+      (b) and the warning''s {[0],[3]} in Z/6Z breaks it; drop closure in (b) and {0,1} with the F_2 tables
+      breaks it.'
+  - stage: S5b
+    verdict: correct
+    by: refereeB
+    hash: d9773b18d203
+    date: '2026-10-12'
+    model: claude-opus-5-5
+    evidence: 'Lines 46-56: (a), (b) and (c) are true, and (c) matches the blueprint.'
 - key: proof:prp-subfield-test
   kind: proof
   file: 03-subfields.md
   line: 68
   hash: afef934665df
-  verdicts: []
+  verdicts:
+  - stage: S5a
+    verdict: correct
+    by: refereeA
+    hash: afef934665df
+    date: '2026-10-12'
+    model: claude-opus-5-5
+    evidence: ':69-75. The cited letters match thm-field-basic-properties: (a),(c) uniqueness, (b) cancellation
+      (the 1_K step uses 1_K != 0_K = 0_L), (d) 0a=0, (f), (g) (b^{-1})^{-1}=b. fd3:prp-ring-algebra (a)
+      does contain -(-a)=a. The (<=) direction builds 0, then -b, b^{-1}, sums and products in a valid
+      order. The proof uses no later material.'
+  - stage: S5b
+    verdict: correct
+    by: refereeB
+    hash: afef934665df
+    date: '2026-10-12'
+    model: claude-opus-5-5
+    evidence: 'Lines 68-76: (a) inherits the identities and uses uniqueness in K; (b) uses left cancellation
+      in L (thm-field-basic-properties (b)) with 1_K≠0_L; (c)⇐ cites -(-b)=b (fd3:prp-ring-algebra (a)),
+      (d) with (F6), and (g). Every step checked.'
 - key: exm-q-sqrt2-field
   kind: exm
   file: 03-subfields.md
   line: 90
   hash: 2155be3e57b7
-  verdicts: []
+  verdicts:
+  - stage: S5a
+    verdict: correct
+    by: refereeA
+    hash: 2155be3e57b7
+    date: '2026-10-12'
+    model: claude-opus-5-5
+    evidence: :105-117. The conjugate is non-zero by cases on d; N != 0 by (f) in R; yy'=1 and uniqueness
+      (c) give the inverse. N=-7 and (1+2√2)(-1+2√2)=7 are checked, and the sidecar prints ok. The step
+      'c/d in Q' and the rational coefficients both rest on the declared identification Q ⊆ R.
+  - stage: S5b
+    verdict: correct
+    by: refereeB
+    hash: 2155be3e57b7
+    date: '2026-10-12'
+    model: claude-opus-5-5
+    evidence: 'Line 105: ''(c/d)^2 = 2, against @fd3:thm-no-rational-square-two''. The equation holds
+      in R, and bringing it back to Q needs κ to be injective (fd3:thm-rational-embedding (b)). fd3''s
+      own proof cites this step (''s^2 = 2 since ι_R is injective''). Ledger line 367 cites only (a),
+      (c). The arithmetic is correct and the sidecar passes. [finding refuted by skeptics]'
 - key: check:03-subfields:1
   kind: check
   file: 03-subfields.md
   line: 122
   hash: ca29b5e70964
-  verdicts: []
+  verdicts:
+  - stage: S5a
+    verdict: correct
+    by: refereeA
+    hash: ca29b5e70964
+    date: '2026-10-12'
+    model: claude-opus-5-5
+    evidence: :127. a+b√2=1/2 with b!=0 makes √2 rational; b=0 gives a=1/2 not in Z. The other three clauses
+      hold, since ac+2bd and ad+bc are integers.
+  - stage: S5b
+    verdict: minor
+    by: refereeB
+    hash: ca29b5e70964
+    date: '2026-10-12'
+    model: claude-opus-5-5
+    evidence: Line 127 makes the same R-to-Q pull-back without citing κ's injectivity, as in exm-q-sqrt2-field.
+      Otherwise correct.
 - key: exm-subfields-gaussian
   kind: exm
   file: 03-subfields.md
   line: 132
   hash: 489bfbdbda50
-  verdicts: []
+  verdicts:
+  - stage: S5a
+    verdict: minor
+    by: refereeA
+    hash: 489bfbdbda50
+    date: '2026-10-12'
+    model: claude-opus-5-5
+    evidence: '03-subfields.md:155 The ''second way'' rests on an unproved general fact: an injective
+      image of a field under a map preserving + and · is a field.'
+  - stage: S5b
+    verdict: minor
+    by: refereeB
+    hash: 489bfbdbda50
+    date: '2026-10-12'
+    model: claude-opus-5-5
+    evidence: 03-subfields.md:147 'every square is non-negative (@fd3:prp-ordered-ring-rules (e))' cites
+      a part that does not state this.
 - key: prp-subfield-intersection
   kind: prp
   file: 03-subfields.md
   line: 162
   hash: 83606e173d55
-  verdicts: []
+  verdicts:
+  - stage: S5a
+    verdict: minor
+    by: refereeA
+    hash: 83606e173d55
+    date: '2026-10-12'
+    model: claude-opus-5-5
+    evidence: ':168 The hypothesis ''non-empty'' is not needed under the book''s own definition: fd2:def-family-union-intersection
+      (b) intersects inside an ambient X, so for X=L the empty family gives L, which is a subfield. Dropping
+      the hypothesis gives no counterexample. The statement is still true.'
+  - stage: S5b
+    verdict: correct
+    by: refereeB
+    hash: 83606e173d55
+    date: '2026-10-12'
+    model: claude-opus-5-5
+    evidence: 'Lines 162-171: the statement is true and matches the blueprint.'
+  - stage: S8
+    verdict: minor
+    by: seam
+    hash: 83606e173d55
+    date: '2026-10-12'
+    model: claude-opus-5-5
+    evidence: 03-subfields.md:176 A step in the proof of a labeled result names set axioms without citing
+      the label that states them.
 - key: proof:prp-subfield-intersection
   kind: proof
   file: 03-subfields.md
   line: 173
   hash: 9661f627865b
-  verdicts: []
+  verdicts:
+  - stage: S5a
+    verdict: correct
+    by: refereeA
+    hash: 9661f627865b
+    date: '2026-10-12'
+    model: claude-opus-5-5
+    evidence: :174 says ⋂𝒦 'is defined because 𝒦 is a non-empty set of subsets of L (@fd2:def-family-union-intersection)'.
+      That definition (fd2 02-set-operations.md:207-209) takes ⋂ relative to X and needs no non-emptiness,
+      so the stated reason misreads the cited label. It also treats a set 𝒦 as a family without saying
+      so (indexed by itself). The math is fine. [finding refuted by skeptics]
+  - stage: S5b
+    verdict: correct
+    by: refereeB
+    hash: 9661f627865b
+    date: '2026-10-12'
+    model: claude-opus-5-5
+    evidence: 'Lines 173-177: (a) applies the test elementwise, with ⋂ defined by fd2:def-family-union-intersection
+      for a non-empty set; (b) uses separation (ledgered as inline) and L ∈ 𝒦_S; the uniqueness remark
+      is correct.'
 - key: def-prime-subfield
   kind: def
   file: 03-subfields.md
   line: 181
   hash: 1483d5bc50d0
-  verdicts: []
+  verdicts:
+  - stage: S5a
+    verdict: correct
+    by: refereeA
+    hash: 1483d5bc50d0
+    date: '2026-10-12'
+    model: claude-opus-5-5
+    evidence: ':184 K_∅ is the intersection of all subfields. The F_p argument at :187 is right: k·1 lies
+      in K by induction on the recursion 0·x=0, (k+1)·x=k·x+x, and fd3:thm-integers-mod-n-ring (d) and
+      (b) say what is cited.'
+  - stage: S5b
+    verdict: correct
+    by: refereeB
+    hash: 1483d5bc50d0
+    date: '2026-10-12'
+    model: claude-opus-5-5
+    evidence: Line 184 matches K_∅. In the paragraph at line 187, the F_p argument cites fd3:thm-integers-mod-n-ring
+      (b), (d) correctly; 'Section 2.5' is right (thm-prime-subfield in §05); 'Number Systems, Section
+      2.3 ("Multiples")' matches fd3 ch02/03:300.
 - key: exr-subfields-a1
   kind: exr
   file: 03-subfields.md
   line: 195
   hash: db265398f149
-  verdicts: []
+  verdicts:
+  - stage: S5a
+    verdict: correct
+    by: refereeA
+    hash: db265398f149
+    date: '2026-10-12'
+    model: claude-opus-5-5
+    evidence: :209-215. [3][x] lies in {[0],[3]} (the sidecar prints ok). The zero and negative steps
+      go through and the one step fails. (c) cites fd3:thm-reals-field, which is on the soft F3.10 list.
+  - stage: S5b
+    verdict: correct
+    by: refereeB
+    hash: db265398f149
+    date: '2026-10-12'
+    model: claude-opus-5-5
+    evidence: 'Lines 195-216: the parts are well posed. (b): [3][x] ∈ {[0],[3]} (sidecar passes). (c)
+      cites fd3:thm-reals-field. The answers match the proof steps.'
+  - stage: S6
+    verdict: correct
+    by: verifier
+    hash: db265398f149
+    date: '2026-10-12'
+    model: claude-opus-5-5
+    evidence: 03:195-216. (a) names the multiplicative cancellation step. (b) [3]Z/6={[0],[3]} (checked),
+      so the step for the one fails. (c) (F6) is inherited via prp-subfield-test (a). (d) is accurate.
 - key: exr-subfields-b1
   kind: exr
   file: 03-subfields.md
   line: 220
   hash: a2366886609c
-  verdicts: []
+  verdicts:
+  - stage: S5a
+    verdict: correct
+    by: refereeA
+    hash: a2366886609c
+    date: '2026-10-12'
+    model: claude-opus-5-5
+    evidence: :239 The dependency constraints match the proof at :75. The alternative order respects them.
+      (ii′) is false and (vi′) is circular; (N9) covers 'citing the goal' (fd1 06-checking-proofs.md entry
+      9).
+  - stage: S5b
+    verdict: correct
+    by: refereeB
+    hash: a2366886609c
+    date: '2026-10-12'
+    model: claude-opus-5-5
+    evidence: 'Lines 220-244: the dependency constraints are right ((ii)<(iii),(vi); (iii)<(v); (iv)<(vi));
+      the alternative order respects them; both distractors are diagnosed correctly; (N9) is the catalogue
+      entry for citing the goal.'
+  - stage: S6
+    verdict: minor
+    by: verifier
+    hash: a2366886609c
+    date: '2026-10-12'
+    model: claude-opus-5-5
+    evidence: 03-subfields.md:239 Line (vi), case b!=0, applies the hypothesis 'ab^{-1} in K for b!=0'
+      with b^{-1} in place of b. That needs b^{-1}!=0, and no line of the shuffled proof establishes it.
+      The solution says (iv) supplies '(and b^{-1}!=0)', but line (iv) proves only b^{-1} in K. So the
+      'correct' proof the reader assembles has an unjustified step, and the stated dependency is wrong.
 - key: exr-subfields-b2
   kind: exr
   file: 03-subfields.md
   line: 246
   hash: d5b221aa9f17
-  verdicts: []
+  verdicts:
+  - stage: S5a
+    verdict: correct
+    by: refereeA
+    hash: d5b221aa9f17
+    date: '2026-10-12'
+    model: claude-opus-5-5
+    evidence: :253 Every n·1 lies in K by induction, and n·1=n by fd3:thm-rational-embedding (d). Negatives
+      come from fd3:prp-naturals-embed-integers (c) and m/n from fd3:prp-integers-embed-rationals (b),
+      followed by closure. The reverse direction is exm-q-sqrt2-field.
+  - stage: S5b
+    verdict: correct
+    by: refereeB
+    hash: d5b221aa9f17
+    date: '2026-10-12'
+    model: claude-opus-5-5
+    evidence: 'Lines 246-256: integers via fd3:prp-naturals-embed-integers (c), rationals via fd3:prp-integers-embed-rationals
+      (b), n·1=n via fd3:thm-rational-embedding (d) (ledgered); the converse uses exm-q-sqrt2-field.'
+  - stage: S6
+    verdict: correct
+    by: verifier
+    hash: d5b221aa9f17
+    date: '2026-10-12'
+    model: claude-opus-5-5
+    evidence: '03:246-256. Checked against fd3:thm-rational-embedding (d) (kappa(n)=n*1), fd3:prp-naturals-embed-integers
+      (c) and fd3:prp-integers-embed-rationals (b): the chain N, Z, Q, Q(sqrt2) inside K is sound. The
+      model is the F_p prime-subfield paragraph.'
 - key: exr-subfields-b3
   kind: exr
   file: 03-subfields.md
   line: 258
   hash: 3f505ac24c1d
-  verdicts: []
+  verdicts:
+  - stage: S5a
+    verdict: correct
+    by: refereeA
+    hash: 3f505ac24c1d
+    date: '2026-10-12'
+    model: claude-opus-5-5
+    evidence: :265-269. The imaginary parts give d=0, and b!=0 would make √2 rational. The closing remark
+      uses prp-subfield-intersection (a) together with 'a subfield of a subfield'.
+  - stage: S5b
+    verdict: minor
+    by: refereeB
+    hash: 3f505ac24c1d
+    date: '2026-10-12'
+    model: claude-opus-5-5
+    evidence: 'Line 267: the √2=(c-a)/b ∈ Q step has the same R-to-Q pull-back without citing κ''s injectivity.
+      The argument is otherwise correct.'
+  - stage: S6
+    verdict: correct
+    by: verifier
+    hash: 3f505ac24c1d
+    date: '2026-10-12'
+    model: claude-opus-5-5
+    evidence: '03:258-270. Matches my proof: compare imaginary parts to get d=0, then b!=0 would make
+      sqrt2 rational.'
 - key: exr-subfields-b4
   kind: exr
   file: 03-subfields.md
   line: 272
   hash: 7048c4c67040
-  verdicts: []
+  verdicts:
+  - stage: S5a
+    verdict: correct
+    by: refereeA
+    hash: 7048c4c67040
+    date: '2026-10-12'
+    model: claude-opus-5-5
+    evidence: ':281-293. The claim after fd3:prp-cof-sqrt2-field-incomplete (fd3 04-two-non-examples)
+      is quoted correctly and applied with (3,1) and (6,2): 1<3<4 and 4<6<9. 3b²=2 gives (3b)²=6. The
+      case d=0 for the ℚ(√3) conjugate is covered by ''exactly as''. The sidecar prints ok.'
+  - stage: S5b
+    verdict: minor
+    by: refereeB
+    hash: 7048c4c67040
+    date: '2026-10-12'
+    model: claude-opus-5-5
+    evidence: 'Lines 283 and 291 rely on the same uncited pull-back. Otherwise all checked: the claim
+      applies with (3,1) and (6,2); 3b^2=2 ⇒ (3b)^2=6; the sidecar passes.'
+  - stage: S6
+    verdict: correct
+    by: verifier
+    hash: 7048c4c67040
+    date: '2026-10-12'
+    model: claude-opus-5-5
+    evidence: 03:272-294. The fd3 claim (k^2<n<(k+1)^2 rules out a rational square) is verified at fd3
+      ch06/04, and the cases (3,1) and (6,2) are valid. The expansion (a+b sqrt3)^2 was checked with sympy,
+      and the 3b^2=2 to (3b)^2=6 step is right.
 - key: exr-subfields-c1
   kind: exr
   file: 03-subfields.md
   line: 298
   hash: ae1ea5c35ff9
-  verdicts: []
+  verdicts:
+  - stage: S5a
+    verdict: correct
+    by: refereeA
+    hash: ae1ea5c35ff9
+    date: '2026-10-12'
+    model: claude-opus-5-5
+    evidence: :317-327. 'Injective implies surjective' is derived correctly from fd2:thm-finite-no-proper-copy,
+      which states that a finite A has no bijection onto a proper B. The proof gets 0 from the translation
+      by 1 before it uses 0. Injectivity of x ↦ bx uses b!=0. N ⊆ Q witnesses that finiteness is needed.
+  - stage: S5b
+    verdict: minor
+    by: refereeB
+    hash: ae1ea5c35ff9
+    date: '2026-10-12'
+    model: claude-opus-5-5
+    evidence: 03-subfields.md:319 The step cancels on the right ('x+1 = x'+1 gives x = x''; 'x + 1 = 1
+      = 0 + 1; canceling, x = 0'), but @thm-field-basic-properties (b) states only left cancellation.
+      The step also needs (F1), and 1 = 0 + 1 needs (F1) and (F3).
+  - stage: S6
+    verdict: minor
+    by: verifier
+    hash: ae1ea5c35ff9
+    date: '2026-10-12'
+    model: claude-opus-5-5
+    evidence: 03-subfields.md:331 Three 2-point lines of the scheme are tied to the translation and multiplication
+      maps. The standard pigeonhole proof by multiples and powers is correct but would lose up to 6 of
+      those 6 points.
 - key: exr-subfields-c2
   kind: exr
   file: 03-subfields.md
   line: 338
   hash: eaa5854f48f9
-  verdicts: []
+  verdicts:
+  - stage: S5a
+    verdict: correct
+    by: refereeA
+    hash: eaa5854f48f9
+    date: '2026-10-12'
+    model: claude-opus-5-5
+    evidence: :351-357. (1+√2)(1+√2/2)=2+3√2/2 and (1+√2)(-1+√2)=1 are checked (the sidecar prints ok).
+      The equality 1/(b√2)=√2/(2b) is right for b!=0. (N9) covers 'an unproved general fact'.
+  - stage: S5b
+    verdict: correct
+    by: refereeB
+    hash: eaa5854f48f9
+    date: '2026-10-12'
+    model: claude-opus-5-5
+    evidence: 'Lines 338-358: (1+√2)(1+½√2)=2+(3/2)√2 and (1+√2)^{-1}=-1+√2 (sidecar passes); 1/(b√2)=√2/(2b)
+      for b≠0; (N9) is cited correctly; the repair formula is correct.'
+  - stage: S6
+    verdict: correct
+    by: verifier
+    hash: eaa5854f48f9
+    date: '2026-10-12'
+    model: claude-opus-5-5
+    evidence: 03:338-358. Line (2) is the only flawed line, and (N9) fits. Sympy confirms (1+sqrt2)(1+sqrt2/2)=2+3sqrt2/2
+      and that the inverse of 1+sqrt2 is sqrt2-1.
 - key: def-field-homomorphism
   kind: def
   file: 04-field-homomorphisms.md
   line: 11
   hash: adc123d0bf9d
-  verdicts: []
+  verdicts:
+  - stage: S5a
+    verdict: correct
+    by: refereeA
+    hash: adc123d0bf9d
+    date: '2026-10-12'
+    model: claude-opus-5-5
+    evidence: 04:11-19 matches blueprint ch02.md:170; the examples at 25-27 and the remark at 32 match
+      thm-conjugate-properties (a),(b), fd3:exm-cof-sqrt2-conjugation and fd3:def-cof-order-preserving-map
+      as written
+  - stage: S5b
+    verdict: minor
+    by: refereeB
+    hash: adc123d0bf9d
+    date: '2026-10-12'
+    model: claude-opus-5-5
+    evidence: NOTATION.md:251 The NOTATION row for F ≅ L between fields does not say it amends F3.4's
+      row, where ≅ means order-preserving isomorphism. The row also gives the source as 'F4.2 §06', but
+      φ and ≅ are introduced in §04 (def-field-homomorphism). So ≅ now has two book-wide meanings, and
+      NOTATION does not record the reconciliation that the section's remark (04:32) and the blueprint
+      (ch02.md:35, '(amends
 - key: prp-field-homomorphism-properties
   kind: prp
   file: 04-field-homomorphisms.md
   line: 39
   hash: d68f59c5fb85
-  verdicts: []
+  verdicts:
+  - stage: S5a
+    verdict: correct
+    by: refereeA
+    hash: d68f59c5fb85
+    date: '2026-10-12'
+    model: claude-opus-5-5
+    evidence: 04:39-52; every part is true; dropping phi(1)=1 makes (b)-(d) fail (the zero map), which
+      the text itself notes at 93
+  - stage: S5b
+    verdict: correct
+    by: refereeB
+    hash: d68f59c5fb85
+    date: '2026-10-12'
+    model: claude-opus-5-5
+    evidence: '04:39-52: all six parts are true for field homomorphisms. (b) is the contrapositive used
+      in (c); (e) and (f) match the proof.'
 - key: proof:prp-field-homomorphism-properties
   kind: proof
   file: 04-field-homomorphisms.md
   line: 60
   hash: 89599b7cb117
-  verdicts: []
+  verdicts:
+  - stage: S5a
+    verdict: correct
+    by: refereeA
+    hash: 89599b7cb117
+    date: '2026-10-12'
+    model: claude-opus-5-5
+    evidence: 04:60-91. (a) uses thm-field-basic-properties (b),(c) (01:80-81). (b) uses (d) and (F7)
+      in L. (c) uses (a) and (b) read contrapositively. (d) uses prp-subfield-test (c) and (a) (03:46-55)
+      and fd2:def-image. (e) uses fd2:def-composition and fd2:thm-bijection-iff-inverse. (f) is induction
+      along the recursion. Every citation says what is claimed, and no step depends on a later choice.
+  - stage: S5b
+    verdict: minor
+    by: refereeB
+    hash: 89599b7cb117
+    date: '2026-10-12'
+    model: claude-opus-5-5
+    evidence: 04-field-homomorphisms.md:73 The step 'a - b = 0, so a = b' cites (F2), (F4) and (F3) but
+      also needs (F1).
 - key: check:04-field-homomorphisms:1
   kind: check
   file: 04-field-homomorphisms.md
   line: 101
   hash: cba1bee9e548
-  verdicts: []
+  verdicts:
+  - stage: S5a
+    verdict: minor
+    by: refereeA
+    hash: cba1bee9e548
+    date: '2026-10-12'
+    model: claude-opus-5-5
+    evidence: '04-field-homomorphisms.md:106 The check''s solution relies on -1 != 1 in Q without a reason.
+      The fact is not automatic: in F_2, -1 = 1 and a -> -a is id, a homomorphism.'
+  - stage: S5b
+    verdict: correct
+    by: refereeB
+    hash: cba1bee9e548
+    date: '2026-10-12'
+    model: claude-opus-5-5
+    evidence: '04:101-107: (-1)(-1) = 1 and (-1)b = -b both follow from fd3:prp-ring-algebra (c) (fd3
+      ch02/03:110) with (F7). The answer is right.'
 - key: exm-complex-conjugation-automorphism
   kind: exm
   file: 04-field-homomorphisms.md
   line: 111
   hash: 93a3873af735
-  verdicts: []
+  verdicts:
+  - stage: S5a
+    verdict: correct
+    by: refereeA
+    hash: 93a3873af735
+    date: '2026-10-12'
+    model: claude-opus-5-5
+    evidence: 04:123-131. Homomorphism and involution come from thm-conjugate-properties (a),(b) (ch01/02:69-79).
+      i != -i is shown via (0,2) != (0,0). The fixed set is found by comparing parts. (ii) uses prp-subfield-test
+      (a). (iv) uses fd3:thm-cof-field-automorphism-identity, whose hypotheses ('complete ordered field',
+      no bijectivity assumed) are met by R
+  - stage: S5b
+    verdict: minor
+    by: refereeB
+    hash: 93a3873af735
+    date: '2026-10-12'
+    model: claude-opus-5-5
+    evidence: 04-field-homomorphisms.md:125 The steps from '-b = b' to '2b = 0' to 'b = 0' use 2 ≠ 0 and
+      the absence of zero divisors (thm-field-basic-properties (f)). Neither is cited, and the ledger
+      records only '2 ≠ 0'.
+  - stage: S8
+    verdict: correct
+    by: seam
+    hash: 93a3873af735
+    date: '2026-10-12'
+    model: claude-opus-5-5
+    evidence: 04-field-homomorphisms.md:125 proves 'conj z = z iff z in R' and says 'the two lines above
+      prove it'. These are the same two lines as F4.1's @exr-conjugate-and-modulus-b2 (b) (ch01 02:264),
+      which goes uncredited. [finding refuted by skeptics]
 - key: exm-field-homomorphism-obstructions
   kind: exm
   file: 04-field-homomorphisms.md
   line: 136
   hash: b1129377e493
-  verdicts: []
+  verdicts:
+  - stage: S5a
+    verdict: correct
+    by: refereeA
+    hash: b1129377e493
+    date: '2026-10-12'
+    model: claude-opus-5-5
+    evidence: 04:143-155. (i) uses (f) with n=2 and (a); fd3:prp-ordered-ring-rules (e),(a) in R. (ii)
+      uses (h) for 2.1>0. (iii) uses fd3:thm-integers-mod-n-ring (d) 'n.[1]=[0]', F_p = Z/pZ (def-field-fp)
+      and injectivity (c). All cited parts say what is claimed
+  - stage: S5b
+    verdict: correct
+    by: refereeB
+    hash: b1129377e493
+    date: '2026-10-12'
+    model: claude-opus-5-5
+    evidence: '04:143-155: fd3:prp-ordered-ring-rules (e), (a), (h) say what the solution needs (fd3 ch02/03:306-317),
+      and fd3:thm-integers-mod-n-ring (d) gives n·[1] = [0]. The ''Section 2.5 explains (ii) and (iii)''
+      pointer is paid at 05:234 (prp-characteristic-invariant (c)).'
 - key: exr-field-homomorphisms-a1
   kind: exr
   file: 04-field-homomorphisms.md
   line: 162
   hash: a8c5463ffa57
-  verdicts: []
+  verdicts:
+  - stage: S5a
+    verdict: correct
+    by: refereeA
+    hash: a8c5463ffa57
+    date: '2026-10-12'
+    model: claude-opus-5-5
+    evidence: 04:176-182 checked against the zeta-map claims, and the sidecar verify/ch02/exr-field-homomorphisms-a1.py
+      passes
+  - stage: S5b
+    verdict: correct
+    by: refereeB
+    hash: a8c5463ffa57
+    date: '2026-10-12'
+    model: claude-opus-5-5
+    evidence: '04:162-183: there is a comprehension part on the key proof (c), as STYLE §11.2 requires.
+      The zero-map analysis is right, including (f) failing at n = 0 because 0^0 = 1. The values match
+      the sidecar verify/ch02/exr-field-homomorphisms-a1.py.'
+  - stage: S6
+    verdict: minor
+    by: verifier
+    hash: a8c5463ffa57
+    date: '2026-10-12'
+    model: claude-opus-5-5
+    evidence: 04-field-homomorphisms.md:178 Part (b) asks which conclusions (a)-(f) fail for ζ, and the
+      solution dodges (e).
 - key: exr-field-homomorphisms-b1
   kind: exr
   file: 04-field-homomorphisms.md
   line: 187
   hash: 4c0cdc084b30
-  verdicts: []
+  verdicts:
+  - stage: S5a
+    verdict: correct
+    by: refereeA
+    hash: 4c0cdc084b30
+    date: '2026-10-12'
+    model: claude-opus-5-5
+    evidence: '04:196-202: (ab^{-1})b=a by (F5),(F6),(F8),(F7); phi(b)!=0 by (b); multiply by phi(b)^{-1}'
+  - stage: S5b
+    verdict: correct
+    by: refereeB
+    hash: 4c0cdc084b30
+    date: '2026-10-12'
+    model: claude-opus-5-5
+    evidence: '04:187-203: the faded step is completed correctly with (b), (F5), (F8) and (F7).'
+  - stage: S6
+    verdict: correct
+    by: verifier
+    hash: 4c0cdc084b30
+    date: '2026-10-12'
+    model: claude-opus-5-5
+    evidence: '04:195-202. Same as my proof: φ(b)≠0 by (b), then multiply by φ(b)^{-1}. The move is named,
+      and exm-field-homomorphism-obstructions (i) works the same move in full.'
 - key: exr-field-homomorphisms-b2
   kind: exr
   file: 04-field-homomorphisms.md
   line: 205
   hash: c56e7eb0c88e
-  verdicts: []
+  verdicts:
+  - stage: S5a
+    verdict: minor
+    by: refereeA
+    hash: c56e7eb0c88e
+    date: '2026-10-12'
+    model: claude-opus-5-5
+    evidence: 04-field-homomorphisms.md:222 The exercise asks for 'exactly two' automorphisms. The solution
+      shows 'at most these two' and that both occur, but never that they are distinct.
+  - stage: S5b
+    verdict: minor
+    by: refereeB
+    hash: c56e7eb0c88e
+    date: '2026-10-12'
+    model: claude-opus-5-5
+    evidence: 04-field-homomorphisms.md:222 The exercise asks to show that Q(i) has 'exactly two' automorphisms.
+      The solution proves 'at most these two' and 'both occur', but never says the two are different.
+  - stage: S6
+    verdict: minor
+    by: verifier
+    hash: c56e7eb0c88e
+    date: '2026-10-12'
+    model: claude-opus-5-5
+    evidence: 04-field-homomorphisms.md:222 'Exactly two automorphisms' is concluded without showing that
+      the identity and conjugation are different maps.
 - key: exr-field-homomorphisms-b3
   kind: exr
   file: 04-field-homomorphisms.md
   line: 225
   hash: 51804edfd67e
-  verdicts: []
+  verdicts:
+  - stage: S5a
+    verdict: correct
+    by: refereeA
+    hash: 51804edfd67e
+    date: '2026-10-12'
+    model: claude-opus-5-5
+    evidence: '04:232: the one of F is 1/2 (exr-field-axioms-b3 (a), 01:388); f(a odot b)=4ab=f(a)f(b);
+      f(1/2)=1; bijective; the sidecar passes'
+  - stage: S5b
+    verdict: correct
+    by: refereeB
+    hash: 51804edfd67e
+    date: '2026-10-12'
+    model: claude-opus-5-5
+    evidence: '04:225-235: the one of F is 1/2 by exr-field-axioms-b3 (a) (01:387); all three clauses
+      and bijectivity are checked. This matches the sidecar exr-field-homomorphisms-b3.py.'
+  - stage: S6
+    verdict: correct
+    by: verifier
+    hash: 51804edfd67e
+    date: '2026-10-12'
+    model: claude-opus-5-5
+    evidence: '04:232. One of F is 1/2; f(a⊙b)=4ab=f(a)f(b); f(1/2)=1; inverse x/2. Matches exr-field-axioms-b3
+      (a) (01:383). Worked-example type: exm-complex-conjugation-automorphism (i).'
 - key: exr-field-homomorphisms-b4
   kind: exr
   file: 04-field-homomorphisms.md
   line: 237
   hash: 93afc63cbf63
-  verdicts: []
+  verdicts:
+  - stage: S5a
+    verdict: correct
+    by: refereeA
+    hash: 93afc63cbf63
+    date: '2026-10-12'
+    model: claude-opus-5-5
+    evidence: '04:244-248: prp-subfield-test (c) with prp (a),(b); sqrt2 != 0 and 2 != 0 with thm-field-basic-properties
+      (f)'
+  - stage: S5b
+    verdict: minor
+    by: refereeB
+    hash: 93afc63cbf63
+    date: '2026-10-12'
+    model: claude-opus-5-5
+    evidence: 04-field-homomorphisms.md:248 '2 ≠ 0 in R' is used without a reference, and the b4 ledger
+      line records only √2 ≠ 0.
+  - stage: S6
+    verdict: correct
+    by: verifier
+    hash: 93afc63cbf63
+    date: '2026-10-12'
+    model: claude-opus-5-5
+    evidence: 04:244-248. Subfield test (c) as in my proof. Fixed sets are R (from exm (i)) and Q, via
+      2b√2=0 ⇒ b=0.
 - key: exr-field-homomorphisms-c1
   kind: exr
   file: 04-field-homomorphisms.md
   line: 253
   hash: 1214dfc51edd
-  verdicts: []
+  verdicts:
+  - stage: S5a
+    verdict: correct
+    by: refereeA
+    hash: 1214dfc51edd
+    date: '2026-10-12'
+    model: claude-opus-5-5
+    evidence: '04:262-277: phi(x)^2 = phi(x^2) = phi(-1) = -1 by (f),(a); the converse goes through phi^{-1},
+      an isomorphism by (e); squares in R are >= 0 by fd3:prp-ordered-ring-rules (e)'
+  - stage: S5b
+    verdict: correct
+    by: refereeB
+    hash: 1214dfc51edd
+    date: '2026-10-12'
+    model: claude-opus-5-5
+    evidence: '04:253-278: (a) uses (f), (a) and (e) of the proposition, and (b) uses the order of R.
+      The marking scheme sums to 3+3+2+2 = 10 and names fatal errors.'
+  - stage: S6
+    verdict: minor
+    by: verifier
+    hash: 1214dfc51edd
+    date: '2026-10-12'
+    model: claude-opus-5-5
+    evidence: 04-field-homomorphisms.md:274 The marking scheme requires the converse to go through φ^{-1},
+      so it does not grade a different correct proof fairly (STYLE 11.6).
 - key: exr-field-homomorphisms-c2
   kind: exr
   file: 04-field-homomorphisms.md
   line: 280
   hash: b21d9df14d9d
-  verdicts: []
+  verdicts:
+  - stage: S5a
+    verdict: correct
+    by: refereeA
+    hash: b21d9df14d9d
+    date: '2026-10-12'
+    model: claude-opus-5-5
+    evidence: 04:289-295. The diagnosis (line 2, N9) and the conjugation counterexample are correct. The
+      repair uses (f), (a), fd3:prp-naturals-embed-integers (c), fd3:prp-integers-embed-rationals (b)
+      and B1, with n>0 so phi(n)!=0. The fact n.1=n is ledgered (04:308)
+  - stage: S5b
+    verdict: correct
+    by: refereeB
+    hash: b21d9df14d9d
+    date: '2026-10-12'
+    model: claude-opus-5-5
+    evidence: '04:280-296: the conclusion is true and the failing line is named. (N9) is the right catalogue
+      entry, as fd1 ch05/06 uses it. The counterexample is to the step. The repair cites fd3:prp-naturals-embed-integers
+      (c) and prp-integers-embed-rationals (b), and both say what is used. ''Section 2.5 proves it again''
+      is paid by 05:362.'
+  - stage: S6
+    verdict: correct
+    by: verifier
+    hash: b21d9df14d9d
+    date: '2026-10-12'
+    model: claude-opus-5-5
+    evidence: 04:289-295. The flaw is only at line (2), second equality, (N9) (checked at fd1 06-checking-proofs.md:28ff).
+      Lines (1) and (3) are sound. The counterexample conj(i·1)=-i≠i=i·conj(1) defeats the general step.
+      The conclusion is true and the repair is valid.
 - key: lem-integer-multiples
   kind: lem
   file: 05-characteristic-and-prime-subfield.md
   line: 23
   hash: 9968f1e03a01
-  verdicts: []
+  verdicts:
+  - stage: S5a
+    verdict: correct
+    by: refereeA
+    hash: 9968f1e03a01
+    date: '2026-10-12'
+    model: claude-opus-5-5
+    evidence: 05:23-41. The statement matches the proofs. The commutative-ring hypothesis is enough because
+      only (F1)-(F7) without 1!=0, and (F9), are used.
+  - stage: S5b
+    verdict: correct
+    by: refereeB
+    hash: 9968f1e03a01
+    date: '2026-10-12'
+    model: claude-opus-5-5
+    evidence: 05:23-41 statement matches blueprint; (a)-(d) all proved in 05:49-107; every fd3 citation
+      checked (prp-ring-algebra (a)-(c), prp-naturals-embed-integers (c), prp-ordered-ring-rules (h) sum
+      law)
 - key: proof:lem-integer-multiples
   kind: proof
   file: 05-characteristic-and-prime-subfield.md
   line: 49
   hash: 0c4f236dcbb0
-  verdicts: []
+  verdicts:
+  - stage: S5a
+    verdict: correct
+    by: refereeA
+    hash: 0c4f236dcbb0
+    date: '2026-10-12'
+    model: claude-opus-5-5
+    evidence: 05:49-72. Rules (i)-(iv) are each a correct induction on the recursion of F3.2 Section 2.3
+      (checked against fd3 03-ordered-rings.md:300). The axiom citations (F1)-(F9) match def-field. (a)-(c)
+      follow correctly from (i), (iii) and (iv).
+  - stage: S5b
+    verdict: minor
+    by: refereeB
+    hash: 0c4f236dcbb0
+    date: '2026-10-12'
+    model: claude-opus-5-5
+    evidence: 05-characteristic-and-prime-subfield.md:46 The Idea mislabels rule (iii) as a distributive
+      law.
 - key: proof:lem-integer-multiples#2
   kind: proof
   file: 05-characteristic-and-prime-subfield.md
   line: 79
   hash: 4597b1315b11
-  verdicts: []
+  verdicts:
+  - stage: S5a
+    verdict: correct
+    by: refereeA
+    hash: 4597b1315b11
+    date: '2026-10-12'
+    model: claude-opus-5-5
+    evidence: 05:79-107. Step 1 checks the sign cases. Step 2 covers m>=k and m<k. Step 3 gives the difference
+      representation via fd3:prp-naturals-embed-integers (c). x.0=0 comes from the product rule with a=1,
+      b=0. I checked every row of the Step 4 sign table, and Step 5 is correct.
+  - stage: S5b
+    verdict: correct
+    by: refereeB
+    hash: 4597b1315b11
+    date: '2026-10-12'
+    model: claude-opus-5-5
+    evidence: 05:80-106 Steps 1-5 checked. The sign table rows reduce to rule (iv) through Step 1 and
+      x.(-c) = -(x.c) as stated; the facts used without a ref are in ledger 05:592-594
 - key: check:05-characteristic-and-prime-subfield:1
   kind: check
   file: 05-characteristic-and-prime-subfield.md
   line: 114
   hash: 76f00f38b192
-  verdicts: []
+  verdicts:
+  - stage: S5a
+    verdict: minor
+    by: refereeA
+    hash: 76f00f38b192
+    date: '2026-10-12'
+    model: claude-opus-5-5
+    evidence: 05-characteristic-and-prime-subfield.md:115 The quick check and its solution apply part
+      (c) of lem-integer-multiples to the negative multiplier -3. Part (c) is stated for m in N; the integer
+      case is part (d).
+  - stage: S5b
+    verdict: correct
+    by: refereeB
+    hash: 76f00f38b192
+    date: '2026-10-12'
+    model: claude-opus-5-5
+    evidence: 05:119 (-3).[2] = -[6] = [-6] = [4] in Z/5Z both ways; verify/ch02/lem-integer-multiples.py
+      passes
 - key: def-characteristic
   kind: def
   file: 05-characteristic-and-prime-subfield.md
   line: 128
   hash: d149ca4c8148
-  verdicts: []
+  verdicts:
+  - stage: S5a
+    verdict: correct
+    by: refereeA
+    hash: d149ca4c8148
+    date: '2026-10-12'
+    model: claude-opus-5-5
+    evidence: 05:131. Well-definedness at 05:136 uses fd3:prp-integer-least-element on a non-empty set
+      bounded below by 1. The examples for F2, F3, Z/6Z and the zero ring are correct (zero-ring argument
+      via fd3:prp-ring-algebra (b)).
+  - stage: S5b
+    verdict: correct
+    by: refereeB
+    hash: d149ca4c8148
+    date: '2026-10-12'
+    model: claude-opus-5-5
+    evidence: 05:131 least positive n; well-definedness by @fd3:prp-integer-least-element (05:136). Examples
+      F2, F3, Z/6Z and zero ring (05:140-145) are right; zero ring at fd3 03-ordered-rings.md:36
 - key: prp-characteristic-divides
   kind: prp
   file: 05-characteristic-and-prime-subfield.md
   line: 151
   hash: ec24e8d8c117
-  verdicts: []
+  verdicts:
+  - stage: S5a
+    verdict: correct
+    by: refereeA
+    hash: ec24e8d8c117
+    date: '2026-10-12'
+    model: claude-opus-5-5
+    evidence: 05:151-160. Both parts are true. The field hypothesis is needed only for (b); (a) holds
+      in any commutative ring, which is harmless.
+  - stage: S5b
+    verdict: correct
+    by: refereeB
+    hash: ec24e8d8c117
+    date: '2026-10-12'
+    model: claude-opus-5-5
+    evidence: 05:154-159; (b) follows from (a) because in a field non-zero means invertible
 - key: proof:prp-characteristic-divides
   kind: proof
   file: 05-characteristic-and-prime-subfield.md
   line: 166
   hash: d684cf0bb98a
-  verdicts: []
+  verdicts:
+  - stage: S5a
+    verdict: correct
+    by: refereeA
+    hash: d684cf0bb98a
+    date: '2026-10-12'
+    model: claude-opus-5-5
+    evidence: '05:166-182. Case c=0: ''0|n iff n=0'' follows from fd3:prp-divisibility-rules-integers
+      (a), using a|0 and 0|a => a=0. Case c>0: division by fd3:thm-integers-division-remainder, then minimality.
+      (b): invertible iff non-zero; c|2 iff c=2, using c!=1, 0 does not divide 2, and the positive divisors
+      of 2.'
+  - stage: S5b
+    verdict: correct
+    by: refereeB
+    hash: d684cf0bb98a
+    date: '2026-10-12'
+    model: claude-opus-5-5
+    evidence: 05:167-181. @fd3:prp-divisibility-rules-integers (a) gives 'if 0|a then a=0' and a|0; thm-integers-division-remainder
+      (a); thm-field-basic-properties (d) is 0.a=0, used with (F6); the n=2 case checks c != 1
 - key: thm-characteristic-prime
   kind: thm
   file: 05-characteristic-and-prime-subfield.md
   line: 192
   hash: 594e183267a7
-  verdicts: []
+  verdicts:
+  - stage: S5a
+    verdict: correct
+    by: refereeA
+    hash: 594e183267a7
+    date: '2026-10-12'
+    model: claude-opus-5-5
+    evidence: '05:195. Both field hypotheses are used (1!=0 and no zero divisors). Without them it fails:
+      Z/6Z has characteristic 6 and the zero ring has characteristic 1.'
+  - stage: S5b
+    verdict: correct
+    by: refereeB
+    hash: 594e183267a7
+    date: '2026-10-12'
+    model: claude-opus-5-5
+    evidence: 05:195; ZZ/6ZZ shows the no-zero-divisor hypothesis is needed (05:210)
 - key: proof:thm-characteristic-prime
   kind: proof
   file: 05-characteristic-and-prime-subfield.md
   line: 202
   hash: 997673232a50
-  verdicts: []
+  verdicts:
+  - stage: S5a
+    verdict: correct
+    by: refereeA
+    hash: 997673232a50
+    date: '2026-10-12'
+    model: claude-opus-5-5
+    evidence: 05:203-207. The negation of fd2:def-prime with c>=2 gives a positive divisor r not in {1,c}.
+      r<=c and s<=c follow from fd3 divisibility (e); s!=1 and s!=c by cancellation; 1<r uses discreteness
+      (ledgered). Then (r.1)(s.1)=0 and thm-field-basic-properties (f) contradict minimality.
+  - stage: S5b
+    verdict: minor
+    by: refereeB
+    hash: 997673232a50
+    date: '2026-10-12'
+    model: claude-opus-5-5
+    evidence: 05-characteristic-and-prime-subfield.md:203 Two integer facts are used with no @ref and
+      no ledger line.
 - key: prp-characteristic-invariant
   kind: prp
   file: 05-characteristic-and-prime-subfield.md
   line: 216
   hash: 69055be44bb4
-  verdicts: []
+  verdicts:
+  - stage: S5a
+    verdict: correct
+    by: refereeA
+    hash: 69055be44bb4
+    date: '2026-10-12'
+    model: claude-opus-5-5
+    evidence: 05:216-224. True as stated; L is a field by the section's 'Throughout' line.
+  - stage: S5b
+    verdict: correct
+    by: refereeB
+    hash: 69055be44bb4
+    date: '2026-10-12'
+    model: claude-opus-5-5
+    evidence: 05:216-224; F, L fields by 05:5
 - key: proof:prp-characteristic-invariant
   kind: proof
   file: 05-characteristic-and-prime-subfield.md
   line: 226
   hash: 6afbbc76aeef
-  verdicts: []
+  verdicts:
+  - stage: S5a
+    verdict: correct
+    by: refereeA
+    hash: 6afbbc76aeef
+    date: '2026-10-12'
+    model: claude-opus-5-5
+    evidence: '05:227-231. (a): prp-subfield-test (a) gives the same 0, 1 and +, so n.1_K = n.1_L by induction.
+      (b): prp-field-homomorphism-properties (f), (a) and (c), with injectivity giving the iff. Only n
+      in N is needed, since the characteristic concerns positive n.'
+  - stage: S5b
+    verdict: correct
+    by: refereeB
+    hash: 6afbbc76aeef
+    date: '2026-10-12'
+    model: claude-opus-5-5
+    evidence: 05:227-231 prp-subfield-test (a) (03:53) gives 0_L, 1_L and the restricted +; prp-field-homomorphism-properties
+      (a), (c), (f) (04:44-50) match
 - key: exm-characteristics
   kind: exm
   file: 05-characteristic-and-prime-subfield.md
   line: 236
   hash: 8e84ab15b87f
-  verdicts: []
+  verdicts:
+  - stage: S5a
+    verdict: correct
+    by: refereeA
+    hash: 8e84ab15b87f
+    date: '2026-10-12'
+    model: claude-opus-5-5
+    evidence: '05:242-254. Ordered fields: fd3:prp-ordered-ring-rules (h). Q is ordered by F3.2, and R
+      (via F3.10) is a soft citation in an example only, which the blueprint allows. C follows from R
+      being a subfield (exm-subfields-gaussian (iii)). F_p: [n]=[0] iff p|n, and p<=n. Q(sqrt2) and Q(i)
+      are subfields of R and C.'
+  - stage: S5b
+    verdict: correct
+    by: refereeB
+    hash: 8e84ab15b87f
+    date: '2026-10-12'
+    model: claude-opus-5-5
+    evidence: 05:243-253 ordered fields via fd3 prp-ordered-ring-rules (h) (n.1 > 0 if 1 != 0); exm-subfields-gaussian
+      (iii) lists Q in R in C (03:156); F_p via thm-quotient-ring-by-ideal (d) and divisibility (e); the
+      four-element field is only named; sidecar passes
 - key: check:05-characteristic-and-prime-subfield:2
   kind: check
   file: 05-characteristic-and-prime-subfield.md
   line: 256
   hash: e852655ee12f
-  verdicts: []
+  verdicts:
+  - stage: S5a
+    verdict: correct
+    by: refereeA
+    hash: e852655ee12f
+    date: '2026-10-12'
+    model: claude-opus-5-5
+    evidence: 05:257-262. 7.[3] = [21] = [1] in F5; the sidecar exm-characteristics.py passes.
+  - stage: S5b
+    verdict: correct
+    by: refereeB
+    hash: e852655ee12f
+    date: '2026-10-12'
+    model: claude-opus-5-5
+    evidence: 05:261 [21] = [1] in F5, 7.[3] = 2.[3] = [6] = [1]; verify/ch02/exm-characteristics.py passes
 - key: thm-prime-subfield
   kind: thm
   file: 05-characteristic-and-prime-subfield.md
   line: 270
   hash: 6872fbf97387
-  verdicts: []
+  verdicts:
+  - stage: S5a
+    verdict: correct
+    by: refereeA
+    hash: 6872fbf97387
+    date: '2026-10-12'
+    model: claude-opus-5-5
+    evidence: 05:270-279. p is prime by thm-characteristic-prime, so F_p is a field and 'homomorphism
+      F_p -> F' makes sense (05:281). In (b) the definition uses denominators n>0, which matches fd3:def-rationals-as-classes.
+  - stage: S5b
+    verdict: minor
+    by: refereeB
+    hash: 6872fbf97387
+    date: '2026-10-12'
+    model: claude-opus-5-5
+    evidence: 05-characteristic-and-prime-subfield.md:288 The Idea's description of how well-definedness
+      is checked does not match the proof.
 - key: proof:thm-prime-subfield
   kind: proof
   file: 05-characteristic-and-prime-subfield.md
   line: 293
   hash: afaee2ccb64d
-  verdicts: []
+  verdicts:
+  - stage: S5a
+    verdict: minor
+    by: refereeA
+    hash: afaee2ccb64d
+    date: '2026-10-12'
+    model: claude-opus-5-5
+    evidence: 05-characteristic-and-prime-subfield.md:296 The parenthetical says the well-definedness
+      argument is fd3:thm-well-defined-on-classes (a) 'with equality as the relation on F'. That theorem
+      gives a function into F/(=), the set of singletons, not into F, so the reading needs one more identification.
+  - stage: S5b
+    verdict: correct
+    by: refereeB
+    hash: afaee2ccb64d
+    date: '2026-10-12'
+    model: claude-opus-5-5
+    evidence: 05:294-342 checked against fd3 def-rationals-as-classes (Z x Z_{>0}), def-rational-operations
+      ((ps+rq)/(qs)), prp-integers-embed-rationals (a), (b) and j(-m) = -j(m), and thm-quotient-ring-by-ideal
+      (a), (b); prp-field-homomorphism-properties (d) gives the isomorphism onto the image. The meta-claim
+      at 05:319 holds
 - key: cor-homomorphisms-fix-prime-subfield
   kind: cor
   file: 05-characteristic-and-prime-subfield.md
   line: 357
   hash: e0ef859023d0
-  verdicts: []
+  verdicts:
+  - stage: S5a
+    verdict: correct
+    by: refereeA
+    hash: e0ef859023d0
+    date: '2026-10-12'
+    model: claude-opus-5-5
+    evidence: 05:357-365. True; (b) is the stronger 'every homomorphism' form recorded in the S3 deviations.
+  - stage: S5b
+    verdict: correct
+    by: refereeB
+    hash: e0ef859023d0
+    date: '2026-10-12'
+    model: claude-opus-5-5
+    evidence: 05:360-364; the stronger (b) is a recorded deviation, and Section 06 uses it at 06:267
 - key: proof:cor-homomorphisms-fix-prime-subfield
   kind: proof
   file: 05-characteristic-and-prime-subfield.md
   line: 367
   hash: '986010621131'
-  verdicts: []
+  verdicts:
+  - stage: S5a
+    verdict: correct
+    by: refereeA
+    hash: '986010621131'
+    date: '2026-10-12'
+    model: claude-opus-5-5
+    evidence: '05:367-373. (a): equal characteristic gives the same domain D; prp-field-homomorphism-properties
+      (e) and uniqueness then give phi.iota_F = iota_L, so the images (the prime subfields) correspond.
+      (b): uniqueness with id. (c): (a) with L=F.'
+  - stage: S5b
+    verdict: correct
+    by: refereeB
+    hash: '986010621131'
+    date: '2026-10-12'
+    model: claude-opus-5-5
+    evidence: 05:368-372 composite and identity by prp-field-homomorphism-properties (e) (04:49); uniqueness
+      clause of thm-prime-subfield
 - key: cor-finite-field-prime-characteristic
   kind: cor
   file: 05-characteristic-and-prime-subfield.md
   line: 379
   hash: 4b1aca853793
-  verdicts: []
+  verdicts:
+  - stage: S5a
+    verdict: correct
+    by: refereeA
+    hash: 4b1aca853793
+    date: '2026-10-12'
+    model: claude-opus-5-5
+    evidence: '05:379-389. True. Finiteness is necessary: Q is a counterexample without it.'
+  - stage: S5b
+    verdict: correct
+    by: refereeB
+    hash: 4b1aca853793
+    date: '2026-10-12'
+    model: claude-opus-5-5
+    evidence: 05:382-388
 - key: proof:cor-finite-field-prime-characteristic
   kind: proof
   file: 05-characteristic-and-prime-subfield.md
   line: 391
   hash: 247ca654734c
-  verdicts: []
+  verdicts:
+  - stage: S5a
+    verdict: correct
+    by: refereeA
+    hash: 247ca654734c
+    date: '2026-10-12'
+    model: claude-opus-5-5
+    evidence: 05:391-397. In characteristic 0 the map {1..N+1} -> F, k -> k.1, is injective (via (k-k').1=0
+      and 0|k-k'), which contradicts fd2:cor-pigeonhole-finite-sets (a); {1..N+1} has N+1 elements by
+      the identity bijection. (b) is thm-prime-subfield (a). (c) uses lem (c) with p in N.
+  - stage: S5b
+    verdict: minor
+    by: refereeB
+    hash: 247ca654734c
+    date: '2026-10-12'
+    model: claude-opus-5-5
+    evidence: 05-characteristic-and-prime-subfield.md:392 The step from 0 | k - k' to k = k' has no citation.
 - key: check:05-characteristic-and-prime-subfield:3
   kind: check
   file: 05-characteristic-and-prime-subfield.md
   line: 401
   hash: 72f93fffe710
-  verdicts: []
+  verdicts:
+  - stage: S5a
+    verdict: correct
+    by: refereeA
+    hash: 72f93fffe710
+    date: '2026-10-12'
+    model: claude-opus-5-5
+    evidence: 05:401-407. Isomorphic subfields have equal characteristic (prp-characteristic-invariant
+      (b)), and both equal char F by (a). The p^n fact is marked as not proved and is not used.
+  - stage: S5b
+    verdict: correct
+    by: refereeB
+    hash: 72f93fffe710
+    date: '2026-10-12'
+    model: claude-opus-5-5
+    evidence: 05:406 both characteristics would equal char F by prp-characteristic-invariant (a); the
+      p^n fact is marked as not proved
 - key: exr-characteristic-and-prime-subfield-a1
   kind: exr
   file: 05-characteristic-and-prime-subfield.md
   line: 413
   hash: bdfe595e98ae
-  verdicts: []
+  verdicts:
+  - stage: S5a
+    verdict: correct
+    by: refereeA
+    hash: bdfe595e98ae
+    date: '2026-10-12'
+    model: claude-opus-5-5
+    evidence: '05:413-434. (b): the representative (5,5) of 1 has no image. (c): inclusions plus uniqueness,
+      under the identification Q subset R subset C (exm-subfields-gaussian (iii)).'
+  - stage: S5b
+    verdict: correct
+    by: refereeB
+    hash: bdfe595e98ae
+    date: '2026-10-12'
+    model: claude-opus-5-5
+    evidence: '05:416-433 proof-comprehension parts present (STYLE 11.2); (b): 5/5 is a representative
+      with no value; (c) cites exm-complex-conjugation-automorphism (ii) (04:116)'
+  - stage: S6
+    verdict: correct
+    by: verifier
+    hash: bdfe595e98ae
+    date: '2026-10-12'
+    model: claude-opus-5-5
+    evidence: 05:427-433. char 0 is used only for n·1≠0. 1/5 has no image, and the (5,5) representative
+      gives no value. ι_R and ι_C are the inclusions, by uniqueness.
 - key: exr-characteristic-and-prime-subfield-b1
   kind: exr
   file: 05-characteristic-and-prime-subfield.md
   line: 438
   hash: 48fcaf5aa747
-  verdicts: []
+  verdicts:
+  - stage: S5a
+    verdict: correct
+    by: refereeA
+    hash: 48fcaf5aa747
+    date: '2026-10-12'
+    model: claude-opus-5-5
+    evidence: '05:438-456. (a) and (b) use lem (d) and the composition law (kp).a = k.(p.a). (c): 300
+      = 42*7+6 and 100 = 14*7+2; the sidecar passes.'
+  - stage: S5b
+    verdict: correct
+    by: refereeB
+    hash: 48fcaf5aa747
+    date: '2026-10-12'
+    model: claude-opus-5-5
+    evidence: 05:451-455 300 = 42*7+6 and 100 = 14*7+2; sidecar passes
+  - stage: S6
+    verdict: correct
+    by: verifier
+    hash: 48fcaf5aa747
+    date: '2026-10-12'
+    model: claude-opus-5-5
+    evidence: '05:451-455. Script: 300=42·7+6, 100=14·7+2, both give [6]. (a) and (b) are proved as I
+      proved them. Worked-example type: the quick checks at 05:119 and 05:261.'
 - key: exr-characteristic-and-prime-subfield-b2
   kind: exr
   file: 05-characteristic-and-prime-subfield.md
   line: 458
   hash: e9f3877604e0
-  verdicts: []
+  verdicts:
+  - stage: S5a
+    verdict: correct
+    by: refereeA
+    hash: e9f3877604e0
+    date: '2026-10-12'
+    model: claude-opus-5-5
+    evidence: 05:458-485. 4 = (2.1)(2.1) != 0, and 4(x^2+bx+c) = (2x+b)^2 - D. Both directions are correct
+      via cor-field-squares-equal and prp-field-linear-equation (a). In F7 the roots are 4 and 2 (checked).
+      In F2, D=1 is a square but there is no root. The sidecar passes.
+  - stage: S5b
+    verdict: correct
+    by: refereeB
+    hash: e9f3877604e0
+    date: '2026-10-12'
+    model: claude-opus-5-5
+    evidence: 05:472-484 identity 4(x^2+bx+c) = (2x+b)^2 - D checked; roots 4, 2 in F7 match 02 C3 (02:385);
+      F2 counterexample D = 1 = 1^2 with no root is right; sidecar passes
+  - stage: S6
+    verdict: minor
+    by: verifier
+    hash: e9f3877604e0
+    date: '2026-10-12'
+    model: claude-opus-5-5
+    evidence: 05-characteristic-and-prime-subfield.md:458 B2 (completing the square in characteristic
+      ≠ 2) has no worked example of its type in Section 2.5 (STYLE 6 B, checklist line 314).
 - key: exr-characteristic-and-prime-subfield-b3
   kind: exr
   file: 05-characteristic-and-prime-subfield.md
   line: 487
   hash: 3bd2c6747e44
-  verdicts: []
+  verdicts:
+  - stage: S5a
+    verdict: correct
+    by: refereeA
+    hash: 3bd2c6747e44
+    date: '2026-10-12'
+    model: claude-opus-5-5
+    evidence: '05:487-502. (a) is lem (d) plus prp-characteristic-divides (a). (b): p.1 = 0.1 with p !=
+      0.'
+  - stage: S5b
+    verdict: correct
+    by: refereeB
+    hash: 3bd2c6747e44
+    date: '2026-10-12'
+    model: claude-opus-5-5
+    evidence: 05:499-501
+  - stage: S6
+    verdict: correct
+    by: verifier
+    hash: 3bd2c6747e44
+    date: '2026-10-12'
+    model: claude-opus-5-5
+    evidence: '05:499-501. Same as my proof: lem (d) and prp-characteristic-divides (a); p·1=0=0·1 gives
+      non-injectivity.'
 - key: exr-characteristic-and-prime-subfield-c1
   kind: exr
   file: 05-characteristic-and-prime-subfield.md
   line: 506
   hash: 916b435a79b0
-  verdicts: []
+  verdicts:
+  - stage: S5a
+    verdict: minor
+    by: refereeA
+    hash: 916b435a79b0
+    date: '2026-10-12'
+    model: claude-opus-5-5
+    evidence: 05-characteristic-and-prime-subfield.md:509 The 'Using only ...' list leaves out the definition
+      of prime and the divisibility bound. Part (b) and its model solution need both to get c = rs with
+      1<r,s<c.
+  - stage: S5b
+    verdict: minor
+    by: refereeB
+    hash: 916b435a79b0
+    date: '2026-10-12'
+    model: claude-opus-5-5
+    evidence: 05-characteristic-and-prime-subfield.md:509 The 'using only' list in C1 leaves out tools
+      the solution needs, and part (b) asserts the factorization without proof.
+  - stage: S6
+    verdict: minor
+    by: verifier
+    hash: 916b435a79b0
+    date: '2026-10-12'
+    model: claude-opus-5-5
+    evidence: 05-characteristic-and-prime-subfield.md:524 The exit-check solution asserts the factorization
+      c=rs with 1<r,s<c without justification; the main proof justifies it.
 - key: exr-characteristic-and-prime-subfield-c2
   kind: exr
   file: 05-characteristic-and-prime-subfield.md
   line: 537
   hash: 74a7ea893b59
-  verdicts: []
+  verdicts:
+  - stage: S5a
+    verdict: correct
+    by: refereeA
+    hash: 74a7ea893b59
+    date: '2026-10-12'
+    model: claude-opus-5-5
+    evidence: 05:537-565. Both failing steps are identified correctly, with valid counterexamples in F3
+      (4.1 = 1.1 = 1 != 0; m-k = 6 is not the least). (N9) of fd1:exm-not-allowed-catalogue covers 'a
+      general fact neither proved nor true'. The sidecar passes.
+  - stage: S5b
+    verdict: correct
+    by: refereeB
+    hash: 74a7ea893b59
+    date: '2026-10-12'
+    model: claude-opus-5-5
+    evidence: 05:550-564 both failing steps named, with counterexamples in F3 (4.1 = 1.1 = 1; 7.1 = 1.1
+      gives 6, not 3); (N9) fits fd1's usage (fd1 06-checking-proofs.md:336); marks total 10
+  - stage: S6
+    verdict: minor
+    by: verifier
+    hash: 74a7ea893b59
+    date: '2026-10-12'
+    model: claude-opus-5-5
+    evidence: 05-characteristic-and-prime-subfield.md:544 The flawed argument has two independent failing
+      lines, against STYLE 11.3 ('the error sits in one line, and the rest is correct').
 - key: exr-characteristic-and-prime-subfield-c3
   kind: exr
   file: 05-characteristic-and-prime-subfield.md
   line: 567
   hash: 5292021ab9f3
-  verdicts: []
+  verdicts:
+  - stage: S5a
+    verdict: minor
+    by: refereeA
+    hash: 5292021ab9f3
+    date: '2026-10-12'
+    model: claude-opus-5-5
+    evidence: '05-characteristic-and-prime-subfield.md:584 In the citation for 2xy = 0, ''(a)'' reads
+      as lem-integer-multiples (a), but what makes it vanish is part (a) of this exercise (2.1 = 0). Lem
+      (c) is not needed either: 2 := 1+1 = 2.1, so (2.1)(xy) = 0.(xy) = 0.'
+  - stage: S5b
+    verdict: minor
+    by: refereeB
+    hash: 5292021ab9f3
+    date: '2026-10-12'
+    model: claude-opus-5-5
+    evidence: 05-characteristic-and-prime-subfield.md:584 The citation for 2xy = 0 points at the wrong
+      rule and is ambiguous.
+  - stage: S6
+    verdict: minor
+    by: verifier
+    hash: 5292021ab9f3
+    date: '2026-10-12'
+    model: claude-opus-5-5
+    evidence: '05-characteristic-and-prime-subfield.md:584 Ambiguous reference: ''by @lem-integer-multiples
+      (c) and (a)'' reads as lemma part (a), but the fact used (2·1=0) is the exercise''s part (a).'
 - key: lem-ring-finite-sums
   kind: lem
   file: 06-frobenius-and-fermat.md
   line: 21
   hash: 2574f15b1d58
-  verdicts: []
+  verdicts:
+  - stage: S5a
+    verdict: correct
+    by: refereeA
+    hash: 2574f15b1d58
+    date: '2026-10-12'
+    model: claude-opus-5-5
+    evidence: 06:21-33; statement is what the proofs and later uses (thm-binomial, Frobenius) need; m
+      ∈ ℤ in (c) is covered by lem-integer-multiples (d)
+  - stage: S5b
+    verdict: correct
+    by: refereeB
+    hash: 2574f15b1d58
+    date: '2026-10-12'
+    model: claude-opus-5-5
+    evidence: 06:21-33. Parts (a)-(f) are well-posed for sequences on N. The opening paragraph (06:9-17)
+      covers sums of reals read in R, matching fd2:def-sum-product 159-183 (general bounds, empty sum,
+      the three remarks).
 - key: proof:lem-ring-finite-sums
   kind: proof
   file: 06-frobenius-and-fermat.md
   line: 42
   hash: babf80d56119
-  verdicts: []
+  verdicts:
+  - stage: S5a
+    verdict: correct
+    by: refereeA
+    hash: babf80d56119
+    date: '2026-10-12'
+    model: claude-opus-5-5
+    evidence: 06:42-64; (a),(b),(d),(f) inductions checked step by step against fd2 splitting-off remark;
+      (c) via lem-integer-multiples (c)+(d) (m·a=(m·1)a for m∈ℤ) then (b); (e) via (-1)·x=-(1·x)=-x, (d)
+      there
+  - stage: S5b
+    verdict: correct
+    by: refereeB
+    hash: babf80d56119
+    date: '2026-10-12'
+    model: claude-opus-5-5
+    evidence: '06:42-64. Checked each base case and step: (a) uses (F1),(F2); (b) uses (F9); (c) uses
+      lem-integer-multiples (c) via (d), which holds for m in Z (05:31-37); (e) uses (-m)·a=-(m·a); in
+      (f) the n=0 case a_0+a_1 and the re-indexed step are right. Sum_{0}^{0}=a_0 is in the ledger (06:511).'
 - key: def-binomial-coefficients
   kind: def
   file: 06-frobenius-and-fermat.md
   line: 70
   hash: 294012de380b
-  verdicts: []
+  verdicts:
+  - stage: S5a
+    verdict: correct
+    by: refereeA
+    hash: 294012de380b
+    date: '2026-10-12'
+    model: claude-opus-5-5
+    evidence: 06:70-80; recursion on n into ℕ^ℕ is well-formed; the three facts at 86-88 checked (fact
+      1 uses j>n and j+1>n); table rows match, sidecar def-binomial-coefficients.py ok
+  - stage: S5b
+    verdict: correct
+    by: refereeB
+    hash: 294012de380b
+    date: '2026-10-12'
+    model: claude-opus-5-5
+    evidence: '06:70-100. The recursion through fd2:thm-recursion with X = N^N is valid. The three inline
+      facts are right (C(n,1): C(n+1,1)=C(n,0)+C(n,1)=1+n). Table rows 0-6 are correct and the sidecar
+      def-binomial-coefficients.py passes. The remark 06:103 (''neither prove nor use'' the factorial
+      formula) holds on the page.'
 - key: prp-binomial-absorption
   kind: prp
   file: 06-frobenius-and-fermat.md
   line: 108
   hash: 11abdb064ae9
-  verdicts: []
+  verdicts:
+  - stage: S5a
+    verdict: correct
+    by: refereeA
+    hash: 11abdb064ae9
+    date: '2026-10-12'
+    model: claude-opus-5-5
+    evidence: 06:108-115; identity true for all n,k (sidecar ok); k>n cases both sides 0
+  - stage: S5b
+    verdict: correct
+    by: refereeB
+    hash: 11abdb064ae9
+    date: '2026-10-12'
+    model: claude-opus-5-5
+    evidence: '06:108-119. Idea examples: n=2,k=0 gives 1·3=3·1; n=3,k=1 gives 2·6=12=4·3. The sidecar
+      passes.'
 - key: proof:prp-binomial-absorption
   kind: proof
   file: 06-frobenius-and-fermat.md
   line: 121
   hash: 9532358a19e1
-  verdicts: []
+  verdicts:
+  - stage: S5a
+    verdict: correct
+    by: refereeA
+    hash: 9532358a19e1
+    date: '2026-10-12'
+    model: claude-opus-5-5
+    evidence: 06:121-136; induction on n over all k; base k=0 and k≥1 via fact 1; step k=0 via C(n,1)=n,
+      C(n,0)=1; k=j+1 uses IH at j and j+1 then Pascal; each line checked
+  - stage: S5b
+    verdict: correct
+    by: refereeB
+    hash: 9532358a19e1
+    date: '2026-10-12'
+    model: claude-opus-5-5
+    evidence: 06:121-136. Base n=0 checked for k=0 and k>=1. Step k=0 gives n+2=n+2. In the k=j+1 step,
+      the hypothesis is used at k=j ((j+1)C(n+1,j+1)=(n+1)C(n,j)) and at k=j+1, then Pascal. All verified.
+      The N arithmetic is in the ledger (06:514).
 - key: thm-binomial-commutative-ring
   kind: thm
   file: 06-frobenius-and-fermat.md
   line: 142
   hash: f39530cc74b3
-  verdicts: []
+  verdicts:
+  - stage: S5a
+    verdict: correct
+    by: refereeA
+    hash: f39530cc74b3
+    date: '2026-10-12'
+    model: claude-opus-5-5
+    evidence: 06:142-149; commutativity hypothesis used (F6) at regroupings; n-k∈ℕ noted
+  - stage: S5b
+    verdict: correct
+    by: refereeB
+    hash: f39530cc74b3
+    date: '2026-10-12'
+    model: claude-opus-5-5
+    evidence: 06:142-151 statement is correct. The prose after it (06:183), 'the linear-algebra volumes
+      meet matrices', is a forward pointer to later volumes. STATUS row 161 lists only F4.2 §05 (05:187,
+      05:399) for this kind of pointer, not 06:183. [finding refuted by skeptics]
 - key: proof:thm-binomial-commutative-ring
   kind: proof
   file: 06-frobenius-and-fermat.md
   line: 157
   hash: 35f7940dfc28
-  verdicts: []
+  verdicts:
+  - stage: S5a
+    verdict: correct
+    by: refereeA
+    hash: 35f7940dfc28
+    date: '2026-10-12'
+    model: claude-opus-5-5
+    evidence: 06:157-181; t_k x=u_{k+1} (z_{k+1}=x^{k+1}y^{n-k}), t_k y=w_k (needs k≤n), lem (f) with
+      u_0=0, w_{n+1}=0·z=0 by C(n,n+1)=0, sum rule (m+k)·a of lem-integer-multiples (d) and Pascal; base
+      1·(1·1)=1
+  - stage: S5b
+    verdict: correct
+    by: refereeB
+    hash: 35f7940dfc28
+    date: '2026-10-12'
+    model: claude-opus-5-5
+    evidence: '06:157-181. Checked: t_k x = u_{k+1} with z_{k+1}=x^{k+1}y^{n-k}; t_k y = w_k; w_{n+1}=0
+      since C(n,n+1)=0; lem (f) with u_0=0 lines up the shifted sum; u_k+w_k=C(n+1,k)·z_k by the sum rule
+      in lem-integer-multiples (d) and Pascal, including j=n.'
 - key: lem-prime-divides-binomial
   kind: lem
   file: 06-frobenius-and-fermat.md
   line: 187
   hash: d708fc4764e4
-  verdicts: []
+  verdicts:
+  - stage: S5a
+    verdict: correct
+    by: refereeA
+    hash: d708fc4764e4
+    date: '2026-10-12'
+    model: claude-opus-5-5
+    evidence: 06:187-191; dropping 'prime' fails at C(4,2)=6, as the text notes
+  - stage: S5b
+    verdict: correct
+    by: refereeB
+    hash: d708fc4764e4
+    date: '2026-10-12'
+    model: claude-opus-5-5
+    evidence: 06:187-191, well-posed for 0<k<p.
 - key: proof:lem-prime-divides-binomial
   kind: proof
   file: 06-frobenius-and-fermat.md
   line: 193
   hash: 4a10433e6106
-  verdicts: []
+  verdicts:
+  - stage: S5a
+    verdict: correct
+    by: refereeA
+    hash: 4a10433e6106
+    date: '2026-10-12'
+    model: claude-opus-5-5
+    evidence: 06:193-199; absorption at n=p-1, k-1 (p≥2, k≥1 so both in ℕ); p∤k by fd3:prp-divisibility-rules-integers
+      (e); gcd=1 by fd3:cor-prime-divides-product (a); fd3:thm-euclid-lemma-integers with a=p,b=k,c=C(p,k)
+  - stage: S5b
+    verdict: correct
+    by: refereeB
+    hash: 4a10433e6106
+    date: '2026-10-12'
+    model: claude-opus-5-5
+    evidence: '06:193-199. Absorption at n=p-1, k-1 gives k·C(p,k)=p·C(p-1,k-1). p does not divide k by
+      fd3:prp-divisibility-rules-integers (e) (03:35 ''a|b, a>0, b>0 => a<=b''). Then fd3:cor-prime-divides-product
+      (a) and fd3:thm-euclid-lemma-integers (a|bc, gcd(a,b)=1 => a|c) give the claim, and these match
+      the fd3 statements. The non-example 06:201 (4·...: 2·6=12) is correct.'
 - key: check:06-frobenius-and-fermat:1
   kind: check
   file: 06-frobenius-and-fermat.md
   line: 203
   hash: 2055989483cc
-  verdicts: []
+  verdicts:
+  - stage: S5a
+    verdict: correct
+    by: refereeA
+    hash: 2055989483cc
+    date: '2026-10-12'
+    model: claude-opus-5-5
+    evidence: 06:203-209; 3·C(7,3)=105, C(7,3)=35=5·7; Pascal 15+20 agrees
+  - stage: S5b
+    verdict: correct
+    by: refereeB
+    hash: 2055989483cc
+    date: '2026-10-12'
+    model: claude-opus-5-5
+    evidence: '06:203-209: 3·C(7,3)=7·15=105, so C(7,3)=35=5·7; Pascal gives 15+20. The sidecar lem-prime-divides-binomial.py
+      passes.'
 - key: thm-frobenius-homomorphism
   kind: thm
   file: 06-frobenius-and-fermat.md
   line: 215
   hash: 5bcbad832861
-  verdicts: []
+  verdicts:
+  - stage: S5a
+    verdict: correct
+    by: refereeA
+    hash: 5bcbad832861
+    date: '2026-10-12'
+    model: claude-opus-5-5
+    evidence: 06:215-229; field used for injectivity, char p>0 gives prime via thm-characteristic-prime;
+      finiteness used in (c) only
+  - stage: S5b
+    verdict: correct
+    by: refereeB
+    hash: 5bcbad832861
+    date: '2026-10-12'
+    model: claude-opus-5-5
+    evidence: 06:215-229. The statement is correct. Fr is defined before its first use. NOTATION row 251
+      matches. The text's 'p is prime' is justified by thm-characteristic-prime (06:231). The problem
+      in the warning that follows is reported separately (key '').
 - key: proof:thm-frobenius-homomorphism
   kind: proof
   file: 06-frobenius-and-fermat.md
   line: 241
   hash: 1a0aa6ef23c9
-  verdicts: []
+  verdicts:
+  - stage: S5a
+    verdict: correct
+    by: refereeA
+    hash: 1a0aa6ef23c9
+    date: '2026-10-12'
+    model: claude-opus-5-5
+    evidence: 06:241-255; middle terms killed by prp-characteristic-divides (a), lem-integer-multiples
+      (c), thm-field-basic-properties (d); b_k,c_k decomposition needs p≠0 (stated); lem-ring-finite-sums
+      (a),(d); injectivity prp-field-homomorphism-properties (c); (c) via fd2:thm-finite-no-proper-copy
+      on F→Fr(F)
+  - stage: S5b
+    verdict: correct
+    by: refereeB
+    hash: 1a0aa6ef23c9
+    date: '2026-10-12'
+    model: claude-opus-5-5
+    evidence: 06:241-255. Middle terms vanish by lem-prime-divides-binomial, prp-characteristic-divides
+      (a), lem-integer-multiples (c) and thm-field-basic-properties (d). The decomposition t_k=b_k+c_k
+      uses p≠0, and lem (a),(d) then apply. (b) follows from prp-field-homomorphism-properties (a). (c)
+      follows from fd2:thm-finite-no-proper-copy (no bijection A→B for B a proper subset of A) and def-field-homomorphism
 - key: thm-fermat-little
   kind: thm
   file: 06-frobenius-and-fermat.md
   line: 269
   hash: 621234352abb
-  verdicts: []
+  verdicts:
+  - stage: S5a
+    verdict: correct
+    by: refereeA
+    hash: 621234352abb
+    date: '2026-10-12'
+    model: claude-opus-5-5
+    evidence: 06:269-279; statements true
+  - stage: S5b
+    verdict: minor
+    by: refereeB
+    hash: 621234352abb
+    date: '2026-10-12'
+    model: claude-opus-5-5
+    evidence: 06-frobenius-and-fermat.md:277 Nothing shows what fails in Fermat's little theorem (c) when
+      p is replaced by a composite modulus.
 - key: proof:thm-fermat-little
   kind: proof
   file: 06-frobenius-and-fermat.md
   line: 281
   hash: 16e2cb39e6ca
-  verdicts: []
+  verdicts:
+  - stage: S5a
+    verdict: correct
+    by: refereeA
+    hash: 16e2cb39e6ca
+    date: '2026-10-12'
+    model: claude-opus-5-5
+    evidence: 06:281-287; (a) cor-homomorphisms-fix-prime-subfield (b) (proof does not use Fermat); (b)
+      cancellation thm-field-basic-properties (b), inverse uniqueness (c); (c) [a]^n=[a^n] by induction,
+      fd3:thm-quotient-ring-by-ideal (a),(b),(d)
+  - stage: S5b
+    verdict: correct
+    by: refereeB
+    hash: 16e2cb39e6ca
+    date: '2026-10-12'
+    model: claude-opus-5-5
+    evidence: 06:281-287. (a) follows from cor-homomorphisms-fix-prime-subfield (b) (05:362, every homomorphism
+      F_p→F_p is the identity). (b) cancels by thm-field-basic-properties (b) and uses uniqueness of inverses
+      (c); p-2 in N is in the ledger. (c) uses [a]^n=[a^n] by induction from fd3:thm-quotient-ring-by-ideal
+      (b), and (a)/(d) for class equality and [a]≠[0].
 - key: exm-frobenius-computations
   kind: exm
   file: 06-frobenius-and-fermat.md
   line: 291
   hash: 5a19fcde2615
-  verdicts: []
+  verdicts:
+  - stage: S5a
+    verdict: correct
+    by: refereeA
+    hash: 5a19fcde2615
+    date: '2026-10-12'
+    model: claude-opus-5-5
+    evidence: 06:291-318; 3^100=4 in F7, remainders of 101 by 2..10 = 1,2,1,1,5,3,5,2,1, 7^{-1}=9 in F31
+      by both routes recomputed; sidecar ok
+  - stage: S5b
+    verdict: minor
+    by: refereeB
+    hash: 5a19fcde2615
+    date: '2026-10-12'
+    model: claude-opus-5-5
+    evidence: 06-frobenius-and-fermat.md:307 In part (iii), Fermat (b) is applied without stating its
+      non-zero hypothesis.
 - key: check:06-frobenius-and-fermat:2
   kind: check
   file: 06-frobenius-and-fermat.md
   line: 320
   hash: d2bec6b4591e
-  verdicts: []
+  verdicts:
+  - stage: S5a
+    verdict: correct
+    by: refereeA
+    hash: d2bec6b4591e
+    date: '2026-10-12'
+    model: claude-opus-5-5
+    evidence: 06:320-326; 64=9·7+1, 243=22·11+1
+  - stage: S5b
+    verdict: correct
+    by: refereeB
+    hash: d2bec6b4591e
+    date: '2026-10-12'
+    model: claude-opus-5-5
+    evidence: '06:320-326: 64=9·7+1 and 243=22·11+1; the hypotheses of (b) are stated. The sidecar thm-fermat-little.py
+      passes.'
 - key: exr-frobenius-and-fermat-a1
   kind: exr
   file: 06-frobenius-and-fermat.md
   line: 332
   hash: 7ee3a6348f86
-  verdicts: []
+  verdicts:
+  - stage: S5a
+    verdict: correct
+    by: refereeA
+    hash: 7ee3a6348f86
+    date: '2026-10-12'
+    model: claude-opus-5-5
+    evidence: 06:332-353; rows and divisibility right; ℤ/6ℤ fails at x=y=1 (64≡4≠2)
+  - stage: S5b
+    verdict: correct
+    by: refereeB
+    hash: 7ee3a6348f86
+    date: '2026-10-12'
+    model: claude-opus-5-5
+    evidence: 06:332-353. The answers match the proof (primality only through Euclid's lemma; injectivity
+      from prp-field-homomorphism-properties (c); finiteness only in (c)). Rows 5 and 6 are correct. In
+      Z/6Z, 15·1=[3]≠0 and 20·1=[2]≠0, and (1+1)^6=[4]≠[2].
+  - stage: S6
+    verdict: correct
+    by: verifier
+    hash: 7ee3a6348f86
+    date: '2026-10-12'
+    model: claude-opus-5-5
+    evidence: '06:346-352. Script: rows 5 and 6 and their divisibility are right. Injectivity comes from
+      prp (c), and finiteness is not used.'
 - key: exr-frobenius-and-fermat-b1
   kind: exr
   file: 06-frobenius-and-fermat.md
   line: 357
   hash: 7d11f3788449
-  verdicts: []
+  verdicts:
+  - stage: S5a
+    verdict: correct
+    by: refereeA
+    hash: 7d11f3788449
+    date: '2026-10-12'
+    model: claude-opus-5-5
+    evidence: 06:357-365; 5^38=12, 5^{-1}=8 in F13 recomputed
+  - stage: S5b
+    verdict: correct
+    by: refereeB
+    hash: 7d11f3788449
+    date: '2026-10-12'
+    model: claude-opus-5-5
+    evidence: '06:357-365: 5^38=5^2=25=12 and 5^11=-5=8 in F13; 5·8=40=3·13+1. 13 is shown prime by the
+      d·d<=13 remark (fd3 03:142). The sidecar passes.'
+  - stage: S6
+    verdict: correct
+    by: verifier
+    hash: 7d11f3788449
+    date: '2026-10-12'
+    model: claude-opus-5-5
+    evidence: '06:364. Script: 5^38≡12 and 5^{-1}≡5^{11}≡8 (mod 13). The primality test of 13 is right.
+      Worked example: exm-frobenius-computations.'
 - key: exr-frobenius-and-fermat-b2
   kind: exr
   file: 06-frobenius-and-fermat.md
   line: 367
   hash: d2f335554925
-  verdicts: []
+  verdicts:
+  - stage: S5a
+    verdict: correct
+    by: refereeA
+    hash: d2f335554925
+    date: '2026-10-12'
+    model: claude-opus-5-5
+    evidence: 06:367-385; composite homomorphism (prp-field-homomorphism-properties (e)), power law (b);
+      induction with empty sum and 0^p=0
+  - stage: S5b
+    verdict: correct
+    by: refereeB
+    hash: d2f335554925
+    date: '2026-10-12'
+    model: claude-opus-5-5
+    evidence: 06:367-385. (a) uses prp-field-homomorphism-properties (e) (composite) and the power law
+      (b). (b) is an induction on m with the empty sum, 0^p=0 and splitting off the last term. Well-posed
+      for m=0.
+  - stage: S6
+    verdict: correct
+    by: verifier
+    hash: d2f335554925
+    date: '2026-10-12'
+    model: claude-opus-5-5
+    evidence: 06:379-384. Fr∘Fr is a composite of homomorphisms, with (x^p)^p=x^{p²}. Induction on m,
+      with base 0^p=0.
 - key: exr-frobenius-and-fermat-b3
   kind: exr
   file: 06-frobenius-and-fermat.md
   line: 387
   hash: 2cb1c3bd140a
-  verdicts: []
+  verdicts:
+  - stage: S5a
+    verdict: correct
+    by: refereeA
+    hash: 2cb1c3bd140a
+    date: '2026-10-12'
+    model: claude-opus-5-5
+    evidence: 06:387-395; 0^{p-1}=0≠1 for p≥2
+  - stage: S5b
+    verdict: correct
+    by: refereeB
+    hash: 2cb1c3bd140a
+    date: '2026-10-12'
+    model: claude-opus-5-5
+    evidence: 06:387-395. 0^{p-1}=0 because p-1>=1, and the rest follows from thm-fermat-little (a),(b).
+  - stage: S6
+    verdict: correct
+    by: verifier
+    hash: 2cb1c3bd140a
+    date: '2026-10-12'
+    model: claude-opus-5-5
+    evidence: 06:394. Uses Fermat (a) and (b) and 0^{p-1}=0≠1. Same as my proof.
 - key: exr-frobenius-and-fermat-c1
   kind: exr
   file: 06-frobenius-and-fermat.md
   line: 399
   hash: 7c5662b2806f
-  verdicts: []
+  verdicts:
+  - stage: S5a
+    verdict: correct
+    by: refereeA
+    hash: 7c5662b2806f
+    date: '2026-10-12'
+    model: claude-opus-5-5
+    evidence: 06:399-422; same route as the theorem's proof, citations match
+  - stage: S5b
+    verdict: minor
+    by: refereeB
+    hash: 7c5662b2806f
+    date: '2026-10-12'
+    model: claude-opus-5-5
+    evidence: 06-frobenius-and-fermat.md:419 The exit-check marking scheme requires the book's route for
+      injectivity and penalizes a correct alternative.
+  - stage: S6
+    verdict: minor
+    by: verifier
+    hash: 7c5662b2806f
+    date: '2026-10-12'
+    model: claude-opus-5-5
+    evidence: 06-frobenius-and-fermat.md:415 The marking scheme requires the book's route in two items,
+      so a different correct proof loses points (STYLE 11.6).
 - key: exr-frobenius-and-fermat-c2
   kind: exr
   file: 06-frobenius-and-fermat.md
   line: 424
   hash: b194a89c1fc6
-  verdicts: []
+  verdicts:
+  - stage: S5a
+    verdict: minor
+    by: refereeA
+    hash: b194a89c1fc6
+    date: '2026-10-12'
+    model: claude-opus-5-5
+    evidence: 06-frobenius-and-fermat.md:427 The exercise says 'using only' two results, but its solution
+      uses more.
+  - stage: S5b
+    verdict: minor
+    by: refereeB
+    hash: b194a89c1fc6
+    date: '2026-10-12'
+    model: claude-opus-5-5
+    evidence: 06-frobenius-and-fermat.md:427 The 'using only' restriction in the problem text does not
+      cover what part 2's solution uses.
+  - stage: S6
+    verdict: minor
+    by: verifier
+    hash: b194a89c1fc6
+    date: '2026-10-12'
+    model: claude-opus-5-5
+    evidence: 06-frobenius-and-fermat.md:431 Part (b)'s case split into a≥0 and a<0 (with the p=2 aside)
+      is unnecessary, and it suggests negative a needs extra work.
 - key: exr-frobenius-and-fermat-c3
   kind: exr
   file: 06-frobenius-and-fermat.md
   line: 445
   hash: ecb03b02a789
-  verdicts: []
+  verdicts:
+  - stage: S5a
+    verdict: correct
+    by: refereeA
+    hash: ecb03b02a789
+    date: '2026-10-12'
+    model: claude-opus-5-5
+    evidence: 06:445-453; cor-finite-field-prime-characteristic (a), thm-frobenius (c); F_p case via Fermat
+      (a)
+  - stage: S5b
+    verdict: minor
+    by: refereeB
+    hash: ecb03b02a789
+    date: '2026-10-12'
+    model: claude-opus-5-5
+    evidence: '06-frobenius-and-fermat.md:452 A meta-claim that cannot be checked: ''Over an infinite
+      field of characteristic p the existence half may fail''.'
+  - stage: S6
+    verdict: minor
+    by: verifier
+    hash: ecb03b02a789
+    date: '2026-10-12'
+    model: claude-opus-5-5
+    evidence: 06-frobenius-and-fermat.md:452 Unsupported claim that the existence half 'may fail' over
+      an infinite field of characteristic p.
 - key: exr-frobenius-and-fermat-r1
   kind: exr
   file: 06-frobenius-and-fermat.md
   line: 457
   hash: cd9c33c40b0a
-  verdicts: []
+  verdicts:
+  - stage: S5a
+    verdict: correct
+    by: refereeA
+    hash: cd9c33c40b0a
+    date: '2026-10-12'
+    model: claude-opus-5-5
+    evidence: 06:457-465; prp-complex-square-roots gives x=1, y=2; cor-field-squares-equal; 2≠0 in ℂ
+  - stage: S5b
+    verdict: correct
+    by: refereeB
+    hash: cd9c33c40b0a
+    date: '2026-10-12'
+    model: claude-opus-5-5
+    evidence: 06:457-465. The prp-complex-square-roots formula with a=-3, b=4 gives r=5, x=1, y=2, so
+      w=1+2i, and (1+2i)^2=-3+4i. Then cor-field-squares-equal applies, and w≠-w because 2 is invertible
+      (prp-characteristic-divides (b)). The problem text does not name its source. The sidecar passes.
+  - stage: S6
+    verdict: correct
+    by: verifier
+    hash: cd9c33c40b0a
+    date: '2026-10-12'
+    model: claude-opus-5-5
+    evidence: '06:464. Script: (1+2i)²=-3+4i. Formula values r=5, (r+a)/2=1, (r-a)/2=4 match prp-complex-square-roots
+      (fd4 ch01/04:13). The source is named with @ref and hidden in the problem.'
 - key: exr-frobenius-and-fermat-r2
   kind: exr
   file: 06-frobenius-and-fermat.md
   line: 467
   hash: 61aac510b9df
-  verdicts: []
+  verdicts:
+  - stage: S5a
+    verdict: correct
+    by: refereeA
+    hash: 61aac510b9df
+    date: '2026-10-12'
+    model: claude-opus-5-5
+    evidence: 06:467-475; unique representation, then the claim with fd3:prp-cof-sqrt2-field-incomplete
+      (stated at fd3 ch06/04:307) with (7,2), (14,3)
+  - stage: S5b
+    verdict: minor
+    by: refereeB
+    hash: 61aac510b9df
+    date: '2026-10-12'
+    model: claude-opus-5-5
+    evidence: 06-frobenius-and-fermat.md:474 The step from 2ab = 0 to b = 0 or a = 0 is neither justified
+      nor in the ledger.
+  - stage: S6
+    verdict: minor
+    by: verifier
+    hash: 61aac510b9df
+    date: '2026-10-12'
+    model: claude-opus-5-5
+    evidence: 06-frobenius-and-fermat.md:474 The step from 2ab=0 to 'b=0 or a=0' is not justified.
 - key: exr-frobenius-and-fermat-r3
   kind: exr
   file: 06-frobenius-and-fermat.md
   line: 477
   hash: 5e20393eb49f
-  verdicts: []
+  verdicts:
+  - stage: S5a
+    verdict: correct
+    by: refereeA
+    hash: 5e20393eb49f
+    date: '2026-10-12'
+    model: claude-opus-5-5
+    evidence: 06:477-487; fd3:prp-ordered-ring-rules (a),(e),(h) say what is used; i·i=ι(-1) from prp-reals-embed-complex
+  - stage: S5b
+    verdict: correct
+    by: refereeB
+    hash: 5e20393eb49f
+    date: '2026-10-12'
+    model: claude-opus-5-5
+    evidence: '06:477-487. The citations match the statements: fd3:prp-ordered-ring-rules (e) (a≠0 ⇒ a^2>0;
+      1>0), (a) (-b<-a), (h); prp-reals-embed-complex (i·i=ι(-1)); exm-characteristics (ordered ⇒ char
+      0).'
+  - stage: S6
+    verdict: minor
+    by: verifier
+    hash: 5e20393eb49f
+    date: '2026-10-12'
+    model: claude-opus-5-5
+    evidence: 06-frobenius-and-fermat.md:480 R3 asks for two theorems already proved, and the C half's
+      solution re-proves its source without naming it with @ref (STYLE 6 R / 11.5).
+  - stage: S8
+    verdict: correct
+    by: seam
+    hash: 5e20393eb49f
+    date: '2026-10-12'
+    model: claude-opus-5-5
+    evidence: STYLE §11.5 says R3 is 'taken from the spiral table in curriculum.md'. The spiral table
+      (curriculum.md:448-457) has no row for fields, order or characteristic, and nothing names F4.2 or
+      fd4. [finding refuted by skeptics]
 - key: exr-frobenius-and-fermat-r4
   kind: exr
   file: 06-frobenius-and-fermat.md
   line: 489
   hash: 61ab59690a5d
-  verdicts: []
+  verdicts:
+  - stage: S5a
+    verdict: minor
+    by: refereeA
+    hash: 61ab59690a5d
+    date: '2026-10-12'
+    model: claude-opus-5-5
+    evidence: 06-frobenius-and-fermat.md:498 The solution applies the uniqueness clause of thm-prime-subfield
+      (b) without citing the characteristic-0 hypothesis that clause requires.
+  - stage: S5b
+    verdict: minor
+    by: refereeB
+    hash: 61ab59690a5d
+    date: '2026-10-12'
+    model: claude-opus-5-5
+    evidence: 06-frobenius-and-fermat.md:498 A hypothesis of thm-prime-subfield (b) is not checked.
+  - stage: S6
+    verdict: correct
+    by: verifier
+    hash: 61ab59690a5d
+    date: '2026-10-12'
+    model: claude-opus-5-5
+    evidence: 06:496-506. Matches my proof (rigidity on Q, then σ(√2)=±√2; the two maps differ at √2).
+      The tool and the look-alikes are named, as R4 requires.
