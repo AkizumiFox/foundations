@@ -74,7 +74,7 @@ items:
   kind: exm
   file: 01-pairs-of-reals.md
   line: 100
-  hash: c0fc8b06fb59
+  hash: cffe20f10d3e
   verdicts:
   - stage: S5a
     verdict: minor
@@ -371,7 +371,7 @@ items:
   kind: exr
   file: 01-pairs-of-reals.md
   line: 390
-  hash: f30b327e151d
+  hash: 934bee453ebd
   verdicts:
   - stage: S5a
     verdict: correct
@@ -404,7 +404,7 @@ items:
   kind: exr
   file: 01-pairs-of-reals.md
   line: 412
-  hash: dc174b2bad55
+  hash: 3c9211de8188
   verdicts:
   - stage: S5a
     verdict: minor
@@ -483,7 +483,7 @@ items:
   kind: proof
   file: 02-conjugate-and-modulus.md
   line: 45
-  hash: b5fc3ddfb2fb
+  hash: 5fa59e9a9638
   verdicts:
   - stage: S5a
     verdict: correct
@@ -548,7 +548,7 @@ items:
   kind: proof
   file: 02-conjugate-and-modulus.md
   line: 87
-  hash: bcd4920d4cfe
+  hash: 715b7fcbeee9
   verdicts:
   - stage: S5a
     verdict: minor
@@ -660,7 +660,7 @@ items:
   kind: exm
   file: 02-conjugate-and-modulus.md
   line: 165
-  hash: 59169a5aadb3
+  hash: be1cac301c45
   verdicts:
   - stage: S5a
     verdict: minor
@@ -703,7 +703,7 @@ items:
   kind: exr
   file: 02-conjugate-and-modulus.md
   line: 197
-  hash: 9edf19933d30
+  hash: 9f784dc2c25e
   verdicts:
   - stage: S5a
     verdict: minor
@@ -761,7 +761,7 @@ items:
   kind: exr
   file: 02-conjugate-and-modulus.md
   line: 247
-  hash: 73086a11d14b
+  hash: ba8481c9fe9a
   verdicts:
   - stage: S5a
     verdict: minor
@@ -820,7 +820,7 @@ items:
   kind: exr
   file: 02-conjugate-and-modulus.md
   line: 285
-  hash: 2886f97727bb
+  hash: cb4548a571b0
   verdicts:
   - stage: S5a
     verdict: minor
@@ -851,7 +851,7 @@ items:
   kind: exr
   file: 02-conjugate-and-modulus.md
   line: 313
-  hash: 946e5f34d7bc
+  hash: 47af157119fc
   verdicts:
   - stage: S5a
     verdict: correct
@@ -978,7 +978,7 @@ items:
   kind: proof
   file: 03-triangle-inequality.md
   line: 85
-  hash: 8178ac5e89fa
+  hash: be15fb6131e8
   verdicts:
   - stage: S5a
     verdict: minor
@@ -1045,7 +1045,7 @@ items:
   kind: proof
   file: 03-triangle-inequality.md
   line: 146
-  hash: cc634d0a50c3
+  hash: 2635f1744272
   verdicts:
   - stage: S5a
     verdict: correct
@@ -1157,7 +1157,7 @@ items:
   kind: exr
   file: 03-triangle-inequality.md
   line: 226
-  hash: 8c2ccc842b97
+  hash: afbaebb3c49e
   verdicts:
   - stage: S5a
     verdict: correct
@@ -1187,7 +1187,7 @@ items:
   kind: exr
   file: 03-triangle-inequality.md
   line: 247
-  hash: 44dfde41434a
+  hash: 76fab5b6a80c
   verdicts:
   - stage: S5a
     verdict: correct
@@ -1307,7 +1307,7 @@ items:
   kind: proof
   file: 04-square-roots-and-order.md
   line: 49
-  hash: 553398c65401
+  hash: 27b903c4fe82
   verdicts:
   - stage: S5a
     verdict: minor
@@ -1543,7 +1543,7 @@ items:
   kind: exr
   file: 04-square-roots-and-order.md
   line: 226
-  hash: bca1be44da2c
+  hash: 6afaf123e7a0
   verdicts:
   - stage: S5a
     verdict: error
@@ -1605,7 +1605,7 @@ items:
   kind: exr
   file: 04-square-roots-and-order.md
   line: 272
-  hash: eb7b55ec77e8
+  hash: 43ad8572505b
   verdicts:
   - stage: S5a
     verdict: correct
@@ -1689,7 +1689,7 @@ items:
   kind: proof
   file: 05-polar-form.md
   line: 33
-  hash: 77d94b474625
+  hash: d8521fae0361
   verdicts:
   - stage: S5a
     verdict: minor
@@ -1850,7 +1850,7 @@ items:
   kind: proof
   file: 05-polar-form.md
   line: 188
-  hash: ad74e7eb329a
+  hash: 6bc66dab3a2a
   verdicts:
   - stage: S5a
     verdict: minor
@@ -1893,7 +1893,7 @@ items:
   kind: proof
   file: 05-polar-form.md
   line: 220
-  hash: b35bc334c302
+  hash: 0633e4a7ccc8
   verdicts:
   - stage: S5a
     verdict: correct
@@ -1925,7 +1925,7 @@ items:
   kind: exm
   file: 05-polar-form.md
   line: 234
-  hash: 9cc8ccb96045
+  hash: 52480c10ee32
   verdicts:
   - stage: S5a
     verdict: minor
@@ -1987,7 +1987,7 @@ items:
   kind: exr
   file: 05-polar-form.md
   line: 307
-  hash: bf23068008ed
+  hash: 1f7c6b6065d4
   verdicts:
   - stage: S5a
     verdict: minor
@@ -2075,7 +2075,7 @@ items:
   kind: exr
   file: 05-polar-form.md
   line: 366
-  hash: 4eae489ad8e1
+  hash: f3660030b3a8
   verdicts:
   - stage: S5a
     verdict: correct
@@ -2104,7 +2104,7 @@ items:
   kind: exr
   file: 05-polar-form.md
   line: 384
-  hash: a19d2074080b
+  hash: 4b38cdd90944
   verdicts:
   - stage: S5a
     verdict: correct
@@ -2133,7 +2133,7 @@ items:
   kind: exr
   file: 05-polar-form.md
   line: 408
-  hash: 9be080674cfa
+  hash: d14522208cc4
   verdicts:
   - stage: S5a
     verdict: minor
@@ -2186,7 +2186,7 @@ items:
   kind: proof
   file: 06-roots-of-unity.md
   line: 28
-  hash: e7f1d1c7ed94
+  hash: 9893f4024f41
   verdicts:
   - stage: S5a
     verdict: correct
@@ -2258,7 +2258,7 @@ items:
   kind: exm
   file: 06-roots-of-unity.md
   line: 137
-  hash: c0cfe7439a7f
+  hash: 16e9e910917a
   verdicts:
   - stage: S5a
     verdict: correct
@@ -2513,7 +2513,7 @@ items:
   kind: exr
   file: 06-roots-of-unity.md
   line: 346
-  hash: d805c8d835ab
+  hash: 89bf82a06c08
   verdicts:
   - stage: S5a
     verdict: correct
@@ -2542,7 +2542,7 @@ items:
   kind: exr
   file: 06-roots-of-unity.md
   line: 364
-  hash: 5267d3575a86
+  hash: 281c573f9096
   verdicts:
   - stage: S5a
     verdict: correct

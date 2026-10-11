@@ -4,7 +4,7 @@ Section 1.4 solved \( z^2 = c \) with real square roots alone. Polar form turns 
 
 ## Real n-th roots
 
-For \( n = 2 \), *Number Systems*, Chapter 6 built the square root by the move **construct a point as a supremum** (@fd3:prp-cof-square-roots), and an exercise there ran the same move for cube roots (@fd3:exr-measuring-by-rationals-b2). For a general exponent the move is the same; only the estimate for \( (s + h)^n \) needs a new tool, and @lem-difference-of-powers supplies it. Here \( n \cdot 1_{\nR} \) is written \( n \), and powers in \( \nR \) are those of @prp-power-laws-commutative-ring with \( R = \nR \), the same recursion as @fd3:def-naturals-in-ordered-field (b).
+For \( n = 2 \), *Number Systems: From \(\nN\) to \(\nR\)*, Chapter 6 built the square root by the move **construct a point as a supremum** (@fd3:prp-cof-square-roots), and an exercise there ran the same move for cube roots (@fd3:exr-measuring-by-rationals-b2). For a general exponent the move is the same; only the estimate for \( (s + h)^n \) needs a new tool, and @lem-difference-of-powers supplies it. Here \( n \cdot 1_{\nR} \) is written \( n \), and powers in \( \nR \) are those of @prp-power-laws-commutative-ring with \( R = \nR \), the same recursion as @fd3:def-naturals-in-ordered-field (b).
 
 ::: {#lem-reals-nth-root}
 [Real n-th Roots]
@@ -26,7 +26,7 @@ If \( s^n > a \), we want \( h > 0 \) with \( (s - h)^n \ge a \) still, which ma
 :::
 
 ::: {.proof}
-Two facts are used throughout: a power of a non-negative real number is non-negative and a power of a positive one is positive (induction on the exponent with @fd3:prp-ordered-ring-rules (c)); and if \( 0 \le y \le 1 \) then \( y^k \le y \) for every \( k \ge 1 \), while if \( y \ge 1 \) then \( y^k \ge y \) (induction: \( y^{k+1} = y^k y \), and @fd3:prp-ordered-ring-rules (c) or equality).
+Three facts are used throughout: a power of a non-negative real number is non-negative and a power of a positive one is positive (induction on the exponent with @fd3:prp-ordered-ring-rules (c)); if \( 0 \le y \le 1 \) then \( y^k \le y \) for every \( k \ge 1 \), while if \( y \ge 1 \) then \( y^k \ge y \) (induction: \( y^{k+1} = y^k y \), and @fd3:prp-ordered-ring-rules (c) or equality); and if \( 0 \le x \le x' \) and \( 0 \le y \le y' \), then \( xy \le x'y \le x'y' \) (@fd3:prp-ordered-ring-rules (c) twice, or equality).
 
 (a) By @lem-difference-of-powers in the commutative ring \( \nR \),
 \[
@@ -50,7 +50,7 @@ It depends only on \( a \), \( n \) and \( s \), and \( h > 0 \), since \( a - s
 \[
 (s + h)^n - s^n = h \sum_{k=0}^{n-1} (s + h)^k s^{n-1-k} .
 \]
-Since \( 0 \le s < s + h \le s + 1 \), each term satisfies \( (s + h)^k s^{n-1-k} \le (s + 1)^k (s + 1)^{n-1-k} = (s + 1)^{n-1} \), by (a) (or equality) and @prp-power-laws-commutative-ring (a). A sum of \( n \) terms, each at most \( (s + 1)^{n-1} \), is at most \( n (s + 1)^{n-1} \). Hence
+Since \( 0 \le s < s + h \le s + 1 \), each term satisfies \( (s + h)^k s^{n-1-k} \le (s + 1)^k (s + 1)^{n-1-k} = (s + 1)^{n-1} \), by (a) (or equality), the third fact, and @prp-power-laws-commutative-ring (a). A sum of \( n \) terms, each at most \( (s + 1)^{n-1} \), is at most \( n (s + 1)^{n-1} \). Hence
 \[
 (s + h)^n \le s^n + h \cdot n(s + 1)^{n-1} \le s^n + \frac{a - s^n}{2} < a .
 \]
@@ -149,7 +149,7 @@ Put \( \omega \coloneqq e^{2\pi i/n} \). By @thm-de-moivre, \( z_k = (e^{2\pi i/
 \[
 1, \; \omega, \; \omega^2, \; \dots, \; \omega^{n-1} ,
 \]
-the **\( n \)-th roots of unity**. They lie on \( \nT \), at the arguments \( 2\pi k/n \), equally spaced around the circle: multiplying by \( \omega \) turns each one into the next (@thm-polar-multiplication (a)), and \( \omega^{n-1} \) back into \( 1 \). For \( n \ge 3 \) they are the corners of a regular polygon with \( n \) corners, one of them at \( 1 \); for \( n = 2 \) they are \( 1 \) and \( \omega = e^{i\pi} = -1 \) (@exm-special-angles (i)); for \( n = 1 \) only \( 1 \).
+the **\( n \)-th roots of unity**. They lie on \( \nT \), at the arguments \( 2\pi k/n \), equally spaced around the circle: multiplying by \( \omega \) turns each one into the next (@thm-polar-multiplication (a)), and \( \omega^{n-1} \) back into \( \omega^n = z_n = z_0 = 1 \) (@thm-complex-nth-roots (b)). For \( n \ge 3 \) they are the corners of a regular polygon with \( n \) corners, one of them at \( 1 \); for \( n = 2 \) they are \( 1 \) and \( \omega = e^{i\pi} = -1 \) (@exm-special-angles (i)); for \( n = 1 \) only \( 1 \).
 
 For \( n = 6 \), \( \omega = e^{i\pi/3} = \tfrac12 + \tfrac{\sqrt 3}{2} i \) (@exm-special-angles (iii)), and \( \omega^3 = e^{i\pi} = -1 \). Hence \( \omega^2 = \bigl(\tfrac12 + \tfrac{\sqrt 3}{2} i\bigr)^2 = \tfrac14 - \tfrac34 + \tfrac{\sqrt 3}{2} i = -\tfrac12 + \tfrac{\sqrt 3}{2} i \), \( \omega^4 = -\omega \) and \( \omega^5 = -\omega^2 \). The six roots are
 \[
@@ -177,11 +177,11 @@ For \( n = 6 \), \( \omega = e^{i\pi/3} = \tfrac12 + \tfrac{\sqrt 3}{2} i \) (@e
 The six roots sum to \( 0 \): since \( \omega^3 = -1 \), we have \( \omega^{k+3} = -\omega^k \), so the roots cancel in the opposite pairs \( \{1, \omega^3\} \), \( \{\omega, \omega^4\} \), \( \{\omega^2, \omega^5\} \). In the picture, the hexagon is symmetric about its center \( 0 \). In general the sum is @prp-roots-of-unity-sum below.
 :::
 
-We write \( \mu_n \coloneqq \{ z \in \nC : z^n = 1 \} = \{ 1, \omega, \dots, \omega^{n-1} \} \) for the set of \( n \)-th roots of unity. It is a subset of \( \nT \), by the last sentence of @thm-complex-nth-roots with \( c = 1 \). It contains \( 1 \), and it is closed under products, since \( (\zeta\eta)^n = \zeta^n \eta^n = 1 \) for \( \zeta, \eta \in \mu_n \) (@prp-power-laws-commutative-ring (c)). It is closed under inverses, since \( \zeta \cdot \zeta^{n-1} = \zeta^n = 1 \) gives \( \zeta^{-1} = \zeta^{n-1} \), a product of elements of \( \mu_n \) (for \( n = 1 \), \( \zeta^{0} = 1 \)). Chapter 3 treats \( \mu_n \), like \( \nT \), as an example of a group.
+We write \( \mu_n \coloneqq \{ z \in \nC : z^n = 1 \} = \{ 1, \omega, \dots, \omega^{n-1} \} \) for the set of \( n \)-th roots of unity. It is a subset of \( \nT \), since each element is some \( z_k = e^{2\pi i k/n} \) (@thm-complex-nth-roots (a)). It contains \( 1 \), and it is closed under products, since \( (\zeta\eta)^n = \zeta^n \eta^n = 1 \) for \( \zeta, \eta \in \mu_n \) (@prp-power-laws-commutative-ring (c)). It is closed under inverses, since \( \zeta \cdot \zeta^{n-1} = \zeta^n = 1 \) gives \( \zeta^{-1} = \zeta^{n-1} \), a product of elements of \( \mu_n \) (for \( n = 1 \), \( \zeta^{0} = 1 \)). Chapter 3 treats \( \mu_n \), like \( \nT \), as an example of a group.
 
-The roots of unity also describe the roots of any \( c \ne 0 \): if \( z_0 \) is one \( n \)-th root of \( c \), then \( z_k = z_0 \, \omega^k \), by @thm-polar-multiplication (a), since \( (\alpha + 2\pi k)/n = \alpha/n + 2\pi k/n \). So the \( n \)-th roots of \( c \) are one of them times the \( n \)-th roots of unity.
+The roots of unity also describe the roots of any \( c \ne 0 \): the root \( z_0 = \sqrt[n]{\rho}\, e^{i\alpha/n} \) of @thm-complex-nth-roots satisfies \( z_k = z_0 \, \omega^k \) for \( k \in \nN \), by @thm-polar-multiplication (a) and @thm-de-moivre, since \( (\alpha + 2\pi k)/n = \alpha/n + 2\pi k/n \). So by @thm-complex-nth-roots (c) the \( n \)-th roots of \( c \) are \( z_0, z_0\omega, \dots, z_0\omega^{n-1} \): one of them times the \( n \)-th roots of unity.
 
-The six roots canceled in pairs. The same pairing works for every even \( n \), but for odd \( n \) there are no opposite pairs: if \( \zeta \) and \( -\zeta \) were both \( n \)-th roots of unity, then \( 1 = (-\zeta)^n = (-1)^n \zeta^n = -1 \). A different argument is needed. It is @lem-difference-of-powers once more.
+The six roots canceled in pairs. The same pairing works for every even \( n \), since \( \omega^{n/2} = e^{i\pi} = -1 \) (@thm-de-moivre, @exm-special-angles (i)) gives \( \omega^{k + n/2} = -\omega^k \); but for odd \( n \) there are no opposite pairs: if \( \zeta \) and \( -\zeta \) were both \( n \)-th roots of unity, then \( 1 = (-\zeta)^n = (-1)^n \zeta^n = -1 \). A different argument is needed. It is @lem-difference-of-powers once more.
 
 ::: {#prp-roots-of-unity-sum}
 [Sums of Roots of Unity]
@@ -350,7 +350,7 @@ Let \( n \ge 1 \) and \( c \in \nC \) with \( c \ne 0 \), and let \( c = \rho e^
 :::
 
 ::: {.solution}
-See the proof of @thm-complex-nth-roots (a) and (b). In outline: \( z = 0 \) is not a solution, since \( 0^n = 0 \ne c \) for \( n \ge 1 \). For \( z \ne 0 \), write \( z = r e^{i\theta} \) with \( r > 0 \) (@prp-polar-form (a)); then \( z^n = r^n e^{in\theta} \) (@thm-de-moivre), and by the uniqueness of polar form (@prp-polar-form (b)), \( z^n = \rho e^{i\alpha} \) if and only if \( r^n = \rho \) and \( n\theta - \alpha \in 2\pi\nZ \). The first condition is \( r = \sqrt[n]{\rho} \), by existence and uniqueness of the real \( n \)-th root (@lem-reals-nth-root (b)); the second is \( \theta = (\alpha + 2\pi k)/n \) for some \( k \in \nZ \). So \( z^n = c \) if and only if \( z = z_k \) for some \( k \). For (b), the same uniqueness gives \( z_k = z_l \) if and only if \( 2\pi(k - l)/n \in 2\pi\nZ \), if and only if \( k - l = mn \) for some \( m \in \nZ \), that is, \( n \mid k - l \).
+Here \( \rho = \abs{c} > 0 \) (@prp-polar-form (a)). The number \( 0 \) is not a solution, since \( 0^n = 0 \ne c \), and is no \( z_k \), since \( \abs{z_k} = \sqrt[n]{\rho} > 0 \) (@lem-reals-nth-root (b)). For \( z \ne 0 \), fix a polar form \( z = r e^{i\theta} \) with \( r > 0 \) (@prp-polar-form (a)); then \( z^n = r^n e^{in\theta} \) (@thm-de-moivre), a polar form with \( r^n > 0 \), and by the uniqueness of polar form (@prp-polar-form (b)), \( z^n = \rho e^{i\alpha} \) if and only if \( r^n = \rho \) and \( n\theta - \alpha \in 2\pi\nZ \). The first condition is \( r = \sqrt[n]{\rho} \), by existence and uniqueness of the real \( n \)-th root (@lem-reals-nth-root (b)); the second is \( \theta = (\alpha + 2\pi k)/n \) for some \( k \in \nZ \). So \( z^n = c \) implies \( z = z_k \); conversely, applied to the polar form \( r \coloneqq \sqrt[n]{\rho} \), \( \theta \coloneqq (\alpha + 2\pi k)/n \) of \( z = z_k \), the equivalence gives \( z^n = c \). For (b), \( z_k \) and \( z_l \) are given in polar form with the same modulus, so the same uniqueness gives \( z_k = z_l \) if and only if \( 2\pi(k - l)/n \in 2\pi\nZ \), if and only if \( k - l = mn \) for some \( m \in \nZ \), that is, \( n \mid k - l \).
 
 **Marking scheme.** (10 points)
 - 1: rules out \( z = 0 \), with the reason \( 0^n = 0 \ne c \).
@@ -378,7 +378,7 @@ The claim is true: it is @prp-roots-of-unity-sum (b).
 
 The argument does not prove it. Lines (1)–(3) are correct: \( \omega^n = 1 \) by @exm-roots-of-unity, and (3) is (2) rearranged. Line (5) is correct **given** (4), since \( \nC \) has no zero divisors. Line (4) fails. "\( \omega^n = 1 \), so \( \omega \ne 1 \)" cites a general "fact", that an \( n \)-th root of unity is not \( 1 \), which is false: this is the error (N9) of @fd1:exm-not-allowed-catalogue. *Counterexample to the step:* \( 1 \) itself satisfies \( 1^n = 1 \), and \( 1 = 1 \). Being an \( n \)-th root of unity gives no information that separates \( \omega \) from \( 1 \); the information is in the particular choice \( \omega = e^{2\pi i/n} \) with \( n \ge 2 \).
 
-*Repair.* If \( \omega = e^{2\pi i/n} = 1 = e^{i0} \), then \( 2\pi/n \in 2\pi\nZ \) by @prp-polar-form (b), so \( 1/n = m \) for some \( m \in \nZ \), that is, \( 1 = mn \) and \( n \mid 1 \). Since \( n \ge 2 > 0 \), @fd3:prp-divisibility-rules-integers (e) gives \( n \le 1 \), a contradiction. So \( \omega \ne 1 \), and lines (5) and the conclusion stand. (This repair uses (T3) of @ax-cosine-sine through @prp-polar-form, and no value of the cosine.)
+*Repair.* If \( \omega = e^{2\pi i/n} = 1 = e^{i0} \), then \( 2\pi/n \in 2\pi\nZ \) by @prp-polar-form (b), so \( 1/n = m \) for some \( m \in \nZ \), that is, \( 1 = mn \) and \( n \mid 1 \). Since \( n \ge 2 > 0 \), @fd3:prp-divisibility-rules-integers (e) gives \( n \le 1 \), a contradiction. So \( \omega \ne 1 \), and lines (5) and the conclusion stand. (This repair uses (T1)–(T3) of @ax-cosine-sine, through @prp-polar-form (b), and no value of the cosine.)
 :::
 
 ### R. Review
@@ -407,7 +407,7 @@ If \( \sigma(i) = i \), then \( \sigma(z) = z \) for every \( z \); if \( \sigma
 
 (b) Conjugation preserves sums and products by @thm-conjugate-properties (a), (b), and \( \conj{a} = a \) for every real \( a \) (@prp-modulus-of-real), so in particular \( \conj{1} = 1 \) and real numbers go to real numbers.
 
-The comparison with *Number Systems*, Chapter 6 (@fd3:thm-cof-field-automorphism-identity) is the point: \( \nR \) has only the identity, while \( \nC \) has exactly two such maps. In \( \nR \) the order can be read off from the field operations (the non-negative numbers are exactly the squares, @fd3:prp-cof-square-roots), and a map preserving \( + \) and \( \cdot \) must preserve it. In \( \nC \) there is no order (@prp-complex-not-orderable), and nothing written with \( + \), \( \cdot \) and real numbers alone tells \( i \) from \( -i \).
+The comparison with *Number Systems: From \(\nN\) to \(\nR\)*, Chapter 6 (@fd3:thm-cof-field-automorphism-identity) is the point: \( \nR \) has only the identity, while \( \nC \) has exactly two such maps. In \( \nR \) the order can be read off from the field operations (the non-negative numbers are exactly the squares, @fd3:prp-cof-square-roots), and a map preserving \( + \) and \( \cdot \) must preserve it. In \( \nC \) there is no order (@prp-complex-not-orderable), and nothing written with \( + \), \( \cdot \) and real numbers alone tells \( i \) from \( -i \).
 :::
 
 ::: {#exr-roots-of-unity-r2}
@@ -464,7 +464,7 @@ The solutions are \( 0 \), \( 1 \), \( -\tfrac12 + \tfrac{\sqrt 3}{2} i \) and \
 :::
 
 <!-- dependency ledger
-lem-reals-nth-root (proof): powers of non-negative (positive) reals are non-negative (positive); 0 <= y <= 1 gives y^k <= y, y >= 1 gives y^k >= y, for k >= 1 | inline (induction, fd1:ax-induction via fd3:cor-omega-identification (b), with fd3:prp-ordered-ring-rules (c))
+lem-reals-nth-root (proof): powers of non-negative (positive) reals are non-negative (positive); 0 <= y <= 1 gives y^k <= y, y >= 1 gives y^k >= y, for k >= 1; 0 <= x <= x', 0 <= y <= y' gives xy <= x'y' | inline (induction, fd1:ax-induction via fd3:cor-omega-identification (b), with fd3:prp-ordered-ring-rules (c))
 lem-reals-nth-root (proof): finite sums in R; a sum of non-negative terms is >= any one term; a sum of n terms each <= M is <= nM | template: fd2:def-sum-product recursion used as a pattern in R; inline induction on n (fd1:ax-induction)
 lem-reals-nth-root (proof): 0^n = 0 for n >= 1; min{1, a}, max{1, a} exist (two-element sets in a total order) | fd3:prp-ring-algebra (b); fd3:prp-ordered-ring-rules (i)
 lem-reals-nth-root (proof): h < s from s^n - a < s^n <= n s^n and s/n <= s | arithmetic in the ordered field R (n >= 1: fd3:prp-naturals-in-ordered-field (b)); verify/ch01/lem-reals-nth-root.py
@@ -475,7 +475,8 @@ thm-complex-nth-roots (proof): {1..n} -> {0..n-1}, j -> j - 1, is a bijection; c
 thm-complex-nth-roots (proof): sqrt[n]{1} = 1 | inline (1^n = 1, lem-reals-nth-root (b) uniqueness)
 exm-roots-of-unity (solution): regular polygon picture | prose (picture); nothing depends on it
 exm-roots-of-unity (solution): omega^2 for n = 6; omega^4 = -omega, omega^5 = -omega^2 | inline; verify/ch01/exm-roots-of-unity.py
-sec-roots-of-unity (claim): z_k = z_0 omega^k | thm-polar-multiplication (a), thm-de-moivre (cited)
+sec-roots-of-unity (claim): z_k = z_0 omega^k for k in N, z_0 the theorem's root | thm-polar-multiplication (a), thm-de-moivre, thm-complex-nth-roots (c) (cited)
+sec-roots-of-unity (claim): even-n pairing, omega^{n/2} = -1 and omega^{k+n/2} = -omega^k (prp-power-laws-commutative-ring (a)) | thm-de-moivre, exm-special-angles (i) (cited); inline; nothing depends on it
 sec-roots-of-unity (claim): for odd n, (-1)^n = -1 | inline (induction); nothing depends on it
 prp-roots-of-unity-sum (proof): sum_{k=0}^{n-1} 1 = n (as n * 1 in C); omega^{mn} = (omega^n)^m with mn = nm; 1^m = 1 | template: fd2:def-sum-product; prp-power-laws-commutative-ring (b); inline induction
 prp-roots-of-unity-sum (claim): sum of cos(2 pi k/n) = sum of sin(2 pi k/n) = 0: real part of a finite sum is the sum of real parts | inline (addition in C is coordinatewise, def-complex-numbers; induction on the number of terms); verify/ch01/prp-roots-of-unity-sum.py
@@ -493,5 +494,5 @@ exr-roots-of-unity-r1 (solution): the non-negative reals are exactly the squares
 exr-roots-of-unity-r2 (claim): "isomorphism" in the language of Chapter 3 | F4.3 (prose pointer); nothing depends on it
 exr-roots-of-unity-r3 (solution): (|x| + |y|)^2 - |x + y|^2 = 2(|xy| - xy) | inline (fd3:prp-ring-algebra (d), fd3:prp-absolute-value-ordered-field (b))
 exr-roots-of-unity-r4 (solution): solutions 0, 1, -1/2 +- (sqrt 3/2) i | verify/ch01/exr-roots-of-unity-r4.py
-sec-roots-of-unity (claim): ax-cosine-sine (T1)-(T5) through def-polar-form, thm-polar-multiplication, prp-polar-form, thm-de-moivre, exm-special-angles: used by thm-complex-nth-roots, exm-roots-of-unity, prp-roots-of-unity-sum, the Check (first route), A1, B1, B2, C1, C2, R2, R4 (through the Check's angle-free route only cor-complex-quadratic-formula; B3's mu_n subset T step uses none); lem-reals-nth-root, prp-real-coefficients-conjugate-roots, R1, R3 use none | AN1.10 (borrow)
+sec-roots-of-unity (claim): ax-cosine-sine (T1)-(T5) through def-polar-form, thm-polar-multiplication, prp-polar-form, thm-de-moivre, exm-special-angles: used by thm-complex-nth-roots, exm-roots-of-unity, prp-roots-of-unity-sum, the prose claims on mu_n = {1, omega, ..., omega^(n-1)} and mu_n subset T (after exm-roots-of-unity), z_k = z_0 omega^k, the even-n pairing and the cos/sin sums, the Check (first route), A1, B1, B2, B3 (the inverse clause, through prp-roots-of-unity-sum (a); its 1 in mu_n, closure and mu_n subset T steps use none), C1, C2, R2; lem-reals-nth-root, prp-real-coefficients-conjugate-roots, R1, R3, R4 (via the Check's angle-free route, cor-complex-quadratic-formula, and B3's angle-free mu_n subset T step) use none | AN1.10 (borrow)
 -->

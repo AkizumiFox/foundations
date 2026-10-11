@@ -33,7 +33,7 @@ Every part is a statement about moduli, so each follows from the rules of Sectio
 ::: {.proof}
 (a) By @prp-modulus-of-real, the modulus of the real number \( 1 \) is its absolute value, which is \( 1 \); so \( 1 \in \nT \). If \( \abs{u} = \abs{v} = 1 \), then \( \abs{uv} = \abs{u}\abs{v} = 1 \) by @thm-conjugate-properties (d). Let \( u \in \nT \). Then \( u \ne 0 \), since \( \abs{0} = 0 \ne 1 \) (@thm-conjugate-properties (e)). By @thm-conjugate-properties (c), \( u \conj{u} = \abs{u}^2 = 1 \), so \( \conj{u} \) satisfies the defining equation of \( u^{-1} \). Since \( \nC \) is a field (@thm-complex-numbers-field), inverses are unique (@fd3:lem-field-fraction-rules (a)), and \( u^{-1} = \conj{u} \). Finally \( \abs{\conj{u}} = \abs{u} = 1 \) by @thm-conjugate-properties (d).
 
-(b) *Existence.* Let \( r \coloneqq \abs{z} \). Then \( r \ge 0 \), and \( r \ne 0 \) because \( z \ne 0 \) (@thm-conjugate-properties (e)); so \( r > 0 \), and its inverse \( r^{-1} \) is a positive real number. By @thm-complex-numbers-field the inverse of \( r \) in \( \nC \) is this real number, so \( u \coloneqq z / \abs{z} = r^{-1} z \) is defined, and \( z = r u \). By @thm-conjugate-properties (d) and @prp-modulus-of-real, \( \abs{u} = \abs{r^{-1}} \abs{z} = r^{-1} r = 1 \), where \( \abs{r^{-1}} = r^{-1} \) because the absolute value of a positive real number is the number itself (@fd3:def-absolute-value-ordered-field). So \( u \in \nT \).
+(b) *Existence.* Let \( r \coloneqq \abs{z} \). Then \( r \ge 0 \), and \( r \ne 0 \) because \( z \ne 0 \) (@thm-conjugate-properties (e)); so \( r > 0 \), and its inverse \( r^{-1} \) is a positive real number (@fd3:prp-reciprocal-order (a)). By @thm-complex-numbers-field the inverse of \( r \) in \( \nC \) is this real number, so \( u \coloneqq z / \abs{z} = r^{-1} z \) is defined, and \( z = r u \). By @thm-conjugate-properties (d) and @prp-modulus-of-real, \( \abs{u} = \abs{r^{-1}} \abs{z} = r^{-1} r = 1 \), where \( \abs{r^{-1}} = r^{-1} \) because the absolute value of a positive real number is the number itself (@fd3:def-absolute-value-ordered-field). So \( u \in \nT \).
 
 *Uniqueness.* Let \( z = r u \) with \( r > 0 \) and \( u \in \nT \). Taking moduli, \( \abs{z} = \abs{r} \abs{u} = r \cdot 1 = r \), again by @thm-conjugate-properties (d) and @prp-modulus-of-real. Then \( u = r^{-1} z = z / \abs{z} \). So the pair is the one named in the statement.
 
@@ -80,7 +80,7 @@ There are functions \( \cos, \sin \colon \nR \to \nR \) and a real number \( \pi
 
 In words: (T1) puts the point \( (\cos\theta, \sin\theta) \) on the unit circle; (T2) is the pair of addition formulas; (T3) says that the cosine reaches \( 1 \) exactly at the multiples of a full turn; (T4) says that every point of the circle is reached; (T5) says that during the first half turn the point stays in the upper half plane.
 
-This box is where the chapter borrows. Like @fd1:ax-induction, which *Logic and Proof* assumed and *Number Systems*, Chapter 1 proved, it is a statement assumed in one volume and proved in another. Nothing in Sections 1.1–1.4, and nothing in this section above the box, uses it. From here on we use these five facts about \( \cos \), \( \sin \) and \( \pi \) and **no others**: no value such as \( \cos(\pi/3) = \tfrac12 \), no periodicity, no picture of a graph. Whatever else we need, we derive, and each proof that uses one of the facts names it by its number. Two consequences come at once.
+This box is where the chapter borrows. Like @fd1:ax-induction, which *Logic and Proof* assumed and *Number Systems: From \(\nN\) to \(\nR\)*, Chapter 1 proved, it is a statement assumed in one volume and proved in another. Nothing in Sections 1.1–1.4, and nothing in this section above the box, uses it. From here on we use these five facts about \( \cos \), \( \sin \) and \( \pi \) and **no others**: no value such as \( \cos(\pi/3) = \tfrac12 \), no periodicity, no picture of a graph. Whatever else we need, we derive, and each proof that uses one of the facts names it by its number. Two consequences come at once.
 
 - \( \cos 0 = 1 \), by (T3), since \( 0 = 2\pi \cdot 0 \in 2\pi\nZ \). Then (T1) gives \( \sin^2 0 = 1 - 1 = 0 \), so \( \sin 0 = 0 \), because a non-zero real number has a positive square (@fd3:prp-ordered-ring-rules (e)).
 - \( \cos(2\pi k) = 1 \) and \( \sin(2\pi k) = 0 \) for every \( k \in \nZ \), by (T3) and then (T1) in the same way.
@@ -105,7 +105,7 @@ e^{i\theta} \coloneqq \cos\theta + i \sin\theta .
 Let \( z \in \nC \) with \( z \ne 0 \). A **polar form** of \( z \) is an expression \( z = r e^{i\theta} \) with \( r \in \nR \), \( r > 0 \), and \( \theta \in \nR \). Then \( \theta \) is **an** argument of \( z \).
 :::
 
-In words: the first line is an abbreviation, not an exponential. This volume has no exponential function, the letter \( e \) on its own means nothing here, and the only rule of exponents we will use for \( e^{i\theta} \) is the one proved below (@thm-polar-multiplication (a)). *Analysis on the Real Line*, Chapter 10 shows that \( e^{i\theta} \) is indeed the value of the complex exponential function at \( i\theta \); the notation anticipates that, and the linear algebra volumes write their roots of unity with it. The second part asks for a **positive** real \( r \) and allows **any** real \( \theta \).
+In words: the first line is an abbreviation, not an exponential. This volume has no exponential function, the letter \( e \) on its own means nothing here, and the only rule of exponents we will use for \( e^{i\theta} \) is the one proved below (@thm-polar-multiplication (a)). *Analysis on the Real Line*, Chapter 10 shows that \( e^{i\theta} \) is indeed the value of the complex exponential function at \( i\theta \); the notation anticipates that, and the linear algebra volumes write their roots of unity with it. The exponent may be written in any form equal to \( i\theta \) with \( \theta \) real, and the symbol then means \( e^{i\theta} \): for example \( e^{-i\theta} = e^{i(-\theta)} \), \( e^{2\pi i} = e^{i \cdot 2\pi} \), \( e^{in\theta} = e^{i(n\theta)} \) and \( e^{-2\pi i} = e^{i(-2\pi)} \). This is unambiguous, because the real number \( \theta \) is determined by \( i\theta \) (it is its imaginary part). The second part asks for a **positive** real \( r \) and allows **any** real \( \theta \).
 
 The point \( e^{i\theta} \) lies on \( \nT \). Indeed \( \abs{e^{i\theta}} = \sqrt{\cos^2\theta + \sin^2\theta} = \sqrt 1 = 1 \), by @def-conjugate-modulus and (T1). So \( r e^{i\theta} \) is a length \( r \) times a direction, as in @prp-unit-circle (b), and that proposition gives \( r = \abs{z} \) for every polar form of \( z \).
 
@@ -188,12 +188,12 @@ r e^{i\theta} = s e^{i\varphi} \iff r = s \text{ and } \theta - \varphi \in 2\pi
 ::: {.proof}
 (a) By @prp-unit-circle (b), \( z = \abs{z} \cdot u \) with \( u = x + yi \in \nT \), so \( x^2 + y^2 = 1 \). By (T4) there is \( \theta \in \nR \) with \( \cos\theta = x \) and \( \sin\theta = y \), that is, \( u = e^{i\theta} \). Hence \( z = \abs{z} e^{i\theta} \), with \( \abs{z} > 0 \). Conversely, if \( z = r e^{i\theta} \) is a polar form, then \( e^{i\theta} \in \nT \), and the uniqueness in @prp-unit-circle (b) gives \( r = \abs{z} \).
 
-(b) Suppose first that \( r e^{i\theta} = s e^{i\varphi} \). Both sides are polar forms of the same number, so \( r = s \) by (a). Multiplying by \( r^{-1} \) gives \( e^{i\theta} = e^{i\varphi} \). In the other direction, if \( r = s \), the two sides are equal exactly when \( e^{i\theta} = e^{i\varphi} \). So it remains to show that \( e^{i\theta} = e^{i\varphi} \) if and only if \( \theta - \varphi \in 2\pi\nZ \).
+(b) Suppose first that \( r e^{i\theta} = s e^{i\varphi} \). The number \( r e^{i\theta} \) is non-zero: \( r \ne 0 \), \( e^{i\theta} \in \nT \) is non-zero (@prp-unit-circle (a)), and a product of non-zero elements of the field \( \nC \) is non-zero (@thm-complex-numbers-field, @fd3:lem-field-fraction-rules (d)). So both sides are polar forms of the same non-zero number, and \( r = s \) by (a). Multiplying by \( r^{-1} \) gives \( e^{i\theta} = e^{i\varphi} \). In the other direction, if \( r = s \), the two sides are equal exactly when \( e^{i\theta} = e^{i\varphi} \). So it remains to show that \( e^{i\theta} = e^{i\varphi} \) if and only if \( \theta - \varphi \in 2\pi\nZ \).
 
 Multiplying by \( e^{-i\varphi} \), and back by \( e^{i\varphi} \), shows that \( e^{i\theta} = e^{i\varphi} \) holds if and only if \( e^{i\theta} e^{-i\varphi} = e^{i\varphi} e^{-i\varphi} \), that is, by @thm-polar-multiplication (a) and (b), if and only if \( e^{i(\theta - \varphi)} = 1 \). Comparing real and imaginary parts, this says \( \cos(\theta - \varphi) = 1 \) and \( \sin(\theta - \varphi) = 0 \). The second condition follows from the first: by (T1), \( \cos(\theta - \varphi) = 1 \) gives \( \sin^2(\theta - \varphi) = 0 \), hence \( \sin(\theta - \varphi) = 0 \) (@fd3:prp-ordered-ring-rules (e)). So \( e^{i\theta} = e^{i\varphi} \) if and only if \( \cos(\theta - \varphi) = 1 \), and by (T3) that holds if and only if \( \theta - \varphi \in 2\pi\nZ \).
 :::
 
-Existence came from (T4), and uniqueness from (T3), with (T1) helping. "Comparing arguments" therefore always means comparing them up to a multiple of \( 2\pi \), and the next warning is the trap this sets.
+Existence came from (T4), and uniqueness from (T3), with (T1) helping and (T2) entering through @thm-polar-multiplication. "Comparing arguments" therefore always means comparing them up to a multiple of \( 2\pi \), and the next warning is the trap this sets.
 
 ::: {.warning}
 From \( e^{i\theta} = e^{i\varphi} \) one may **not** conclude \( \theta = \varphi \): \( e^{i0} = e^{2\pi i} = 1 \), and \( 0 \ne 2\pi \). Only \( \theta - \varphi \in 2\pi\nZ \) follows (@prp-polar-form (b)). Forgetting this loses solutions as soon as an equation is solved for an angle; Section 1.6 meets an equation where it would lose all but one of them.
@@ -224,7 +224,7 @@ We use @fd1:ax-induction on \( n \), read on \( \nN = \omega \) through @fd3:cor
 \]
 by the recursion, the induction hypothesis, @thm-polar-multiplication (a), and \( (n + 1) \cdot 1_{\nR} = n \cdot 1_{\nR} + 1_{\nR} \) (@fd3:def-naturals-in-ordered-field (a)) with distributivity in \( \nR \). This proves the formula for every \( n \in \nN \).
 
-For the consequence, @prp-power-laws-commutative-ring (c) gives \( (r e^{i\theta})^n = r^n (e^{i\theta})^n = r^n e^{in\theta} \). The power \( r^n \) is the same whether it is computed in \( \nR \) or in \( \nC \), because the embedding of @prp-reals-embed-complex preserves products and \( 1 \) (induction along the recursion), and \( r^n > 0 \) because a product of positive reals is positive (@fd3:prp-ordered-ring-rules (c); induction on \( n \), with \( r^0 = 1 > 0 \)).
+For the consequence, @prp-power-laws-commutative-ring (c) gives \( (r e^{i\theta})^n = r^n (e^{i\theta})^n = r^n e^{in\theta} \). The power \( r^n \) is the same whether it is computed in \( \nR \) or in \( \nC \), by the remark after @prp-power-laws-commutative-ring in Section 1.1, and \( r^n > 0 \) because a product of positive reals is positive (@fd3:prp-ordered-ring-rules (c); induction on \( n \), with \( r^0 = 1 > 0 \)).
 :::
 
 For a negative exponent, Exercise C1 below defines \( z^{-n} \) locally and proves the matching formula; nothing in the text uses it.
@@ -246,11 +246,11 @@ Show, using only (T1)–(T5) and the results proved so far, that
 ::: {.solution}
 Each value is found the same way: a power of the unknown point is a point we already know, and (T5) chooses between the candidates. Since \( \pi > 0 \), each of \( \pi/2 \), \( \pi/3 \), \( \pi/4 \), \( \pi/6 \) lies strictly between \( 0 \) and \( \pi \), so (T5) gives \( \operatorname{Im} e^{i\theta} = \sin\theta > 0 \) for each of them.
 
-(i) *\( e^{i\pi} = -1 \).* Let \( u \coloneqq e^{i\pi} \). By @thm-de-moivre, \( u^2 = e^{2\pi i} = 1 \), so \( (u - 1)(u + 1) = u^2 - 1 = 0 \), and since \( \nC \) has no zero divisors (@thm-complex-numbers-field, @fd3:lem-field-fraction-rules (d)), \( u = 1 \) or \( u = -1 \). Suppose \( u = 1 \). Then \( \cos\pi = 1 \), so \( \pi = 2\pi k \) for some \( k \in \nZ \) by (T3); dividing by \( \pi \ne 0 \) gives \( 1 = 2k \), an equation between integers, since the integers sit inside \( \nR \) with their own sum and product. But \( 1 = 2 \cdot 0 + 1 \) is odd, and an odd integer is not of the form \( 2k \) (@fd3:cor-integers-even-odd (a)). So \( u \ne 1 \), and \( e^{i\pi} = -1 \).
+(i) *\( e^{i\pi} = -1 \).* Let \( u \coloneqq e^{i\pi} \). By @thm-de-moivre, \( u^2 = e^{2\pi i} = 1 \), so \( (u - 1)(u + 1) = u^2 - 1 = 0 \), and since \( \nC \) has no zero divisors (@thm-complex-numbers-field, @fd3:lem-field-fraction-rules (d)), \( u = 1 \) or \( u = -1 \). Suppose \( u = 1 \). Then \( \cos\pi = 1 \), so \( \pi = 2\pi k \) for some \( k \in \nZ \) by (T3); dividing by \( \pi \ne 0 \) gives \( 1 = 2k \) in \( \nR \), an equation between images of integers. The embedding of \( \nZ \) into \( \nR \), through \( \nQ \) (@fd3:prp-integers-embed-rationals) and \( \kappa \) (@fd3:thm-reals-complete-ordered-field), is injective and preserves \( + \) and \( \cdot \), so \( 1 = 2k \) holds in \( \nZ \). But \( 1 = 2 \cdot 0 + 1 \) is odd, and an odd integer is not of the form \( 2k \) (@fd3:cor-integers-even-odd (a)). So \( u \ne 1 \), and \( e^{i\pi} = -1 \).
 
 (ii) *\( e^{i\pi/2} = i \).* Let \( u \coloneqq e^{i\pi/2} \). By @thm-polar-multiplication (a), \( u^2 = e^{i\pi} = -1 = i^2 \), so \( (u - i)(u + i) = 0 \) and \( u = \pm i \). Since \( \operatorname{Im} u > 0 \) and \( \operatorname{Im}(-i) = -1 < 0 \), \( u = i \).
 
-(iii) *\( e^{i\pi/3} = \tfrac12 + \tfrac{\sqrt 3}{2} i \).* Let \( u \coloneqq e^{i\pi/3} \). By @thm-de-moivre, \( u^3 = e^{i\pi} = -1 \). Expanding the right side shows \( (u + 1)(u^2 - u + 1) = u^3 + 1 = 0 \). Now \( u \ne -1 \), since \( \operatorname{Im} u > 0 \); so \( u^2 - u + 1 = 0 \). By @cor-complex-quadratic-formula with \( a = 1 \), \( b = -1 \), \( c = 1 \), and \( d \coloneqq \sqrt 3\, i \), a square root of \( b^2 - 4ac = -3 \) (indeed \( (\sqrt 3\, i)^2 = 3 i^2 = -3 \)),
+(iii) *\( e^{i\pi/3} = \tfrac12 + \tfrac{\sqrt 3}{2} i \).* Let \( u \coloneqq e^{i\pi/3} \). By @thm-de-moivre, \( u^3 = e^{i\pi} = -1 \). Multiplying out shows \( (u + 1)(u^2 - u + 1) = u^3 + 1 = 0 \). Now \( u \ne -1 \), since \( \operatorname{Im} u > 0 \); so \( u^2 - u + 1 = 0 \). By @cor-complex-quadratic-formula with \( a = 1 \), \( b = -1 \), \( c = 1 \), and \( d \coloneqq \sqrt 3\, i \), a square root of \( b^2 - 4ac = -3 \) (indeed \( (\sqrt 3\, i)^2 = 3 i^2 = -3 \)),
 \[
 u = \frac{1 + \sqrt 3\, i}{2} \quad \text{or} \quad u = \frac{1 - \sqrt 3\, i}{2} .
 \]
@@ -311,7 +311,7 @@ By @exm-special-angles (v), \( 1 + i = \sqrt 2 \bigl( \tfrac{1}{\sqrt 2} + \tfra
 1. Give a polar form of \( -2 \) and of \( 3i \).
 2. True or false: if \( e^{i\theta} = e^{i\varphi} \), then \( \theta = \varphi \). Justify your answer.
 3. In @prp-polar-form, which of the borrowed facts (T1)–(T5) gives the existence of a polar form, and which gives the uniqueness of the argument up to \( 2\pi\nZ \)?
-4. Which results of this chapter use none of the borrowed facts? Is @prp-unit-circle among them?
+4. Which results of Sections 1.1–1.5 use none of the borrowed facts? Is @prp-unit-circle among them?
 :::
 :::
 
@@ -320,9 +320,9 @@ By @exm-special-angles (v), \( 1 + i = \sqrt 2 \bigl( \tfrac{1}{\sqrt 2} + \tfra
 
 (b) False. \( e^{i0} = 1 = e^{2\pi i} \), but \( 0 \ne 2\pi \) since \( \pi > 0 \). What is true is \( \theta - \varphi \in 2\pi\nZ \) (@prp-polar-form (b)).
 
-(c) Existence: (T4), which provides an angle for the point \( z/\abs{z} \) of \( \nT \). Uniqueness: (T3), which turns \( \cos(\theta - \varphi) = 1 \) into \( \theta - \varphi \in 2\pi\nZ \); (T1) is used alongside it, to see that \( \sin(\theta - \varphi) = 0 \) follows from \( \cos(\theta - \varphi) = 1 \).
+(c) Existence: (T4), which provides an angle for the point \( z/\abs{z} \) of \( \nT \). Uniqueness: (T3), which turns \( \cos(\theta - \varphi) = 1 \) into \( \theta - \varphi \in 2\pi\nZ \); (T1) is used alongside it, to see that \( \sin(\theta - \varphi) = 0 \) follows from \( \cos(\theta - \varphi) = 1 \), and (T2) enters through @thm-polar-multiplication, which turns \( e^{i\theta} = e^{i\varphi} \) into \( e^{i(\theta - \varphi)} = 1 \).
 
-(d) Everything in Sections 1.1–1.4, and the part of this section before @ax-cosine-sine. In particular @prp-unit-circle uses none of them: its proof uses only the modulus rules of Section 1.2 and the fact that \( \nC \) is a field.
+(d) Everything in Sections 1.1–1.4, and the part of this section before @ax-cosine-sine; after the box, only Exercise C2, which is set up to avoid them. In particular @prp-unit-circle uses none of them: its proof uses only the modulus rules of Section 1.2 and the fact that \( \nC \) is a field.
 :::
 
 ### B. Practice
@@ -376,7 +376,7 @@ Let \( u \coloneqq e^{i\theta} \), so \( u \conj{u} = \abs{u}^2 = 1 \). Squaring
 \]
 and \( \operatorname{Re} u = \cos\theta \). Hence \( \abs{u - 1}^2 = 2 - 2\cos\theta \).
 
-Now \( u = 1 \) if and only if \( \abs{u - 1} = 0 \) (@thm-conjugate-properties (e)), if and only if \( \abs{u - 1}^2 = 0 \) (a non-negative real number is \( 0 \) exactly when its square is, @fd3:prp-ordered-ring-rules (e)), if and only if \( 2 - 2\cos\theta = 0 \), that is, \( \cos\theta = 1 \).
+Now \( u = 1 \) if and only if \( \abs{u - 1} = 0 \) (@thm-conjugate-properties (e)), if and only if \( \abs{u - 1}^2 = 0 \) (a real number is \( 0 \) exactly when its square is: \( 0^2 = 0 \) by @fd3:prp-ring-algebra (b), and a non-zero square is positive by @fd3:prp-ordered-ring-rules (e)), if and only if \( 2 - 2\cos\theta = 0 \), that is, \( \cos\theta = 1 \).
 :::
 
 ### C. Going deeper
@@ -402,7 +402,7 @@ Comparing real parts and using \( s^2 = 1 - c^2 \) (T1), \( \cos 3\theta = c^3 -
 
 (b) By @thm-polar-multiplication (b), \( (e^{i\theta})^{-1} = e^{-i\theta} = e^{i(-\theta)} \). By @thm-de-moivre applied to \( -\theta \), \( (e^{i\theta})^{-n} = (e^{i(-\theta)})^n = e^{in(-\theta)} = e^{-in\theta} \).
 
-Nothing in this volume uses negative powers; the definition in (b) is for practice only.
+Nothing in this chapter uses negative powers of complex numbers; the definition in (b) is for practice only.
 :::
 
 ::: {#exr-polar-form-c2}
@@ -425,13 +425,13 @@ Use none of the borrowed facts (T1)–(T5).
 ::: {.solution}
 [Hint 1]
 
-For (b), solve the equation \( u(1 - it) = 1 + it \) for \( t \), and then show that the answer is real by squaring the modulus of \( u + 1 \).
+For (b), on the unit circle the conjugate is the inverse: \( \conj{u} = 1/u \).
 :::
 
 ::: {.solution}
 [Hint 2]
 
-The equation is \( u - 1 = it(u + 1) \). Multiply \( u - 1 \) by \( \conj{u} + 1 \) and use \( u \conj{u} = 1 \).
+Clearing the denominator, \( u = u_t \) is equivalent to \( u - 1 = it(u + 1) \), and \( u + 1 \ne 0 \), so \( t \) is determined; it remains to show that \( (u - 1)/\bigl(i(u + 1)\bigr) \) is real.
 :::
 
 ::: {.solution}
@@ -441,11 +441,11 @@ The equation is \( u - 1 = it(u + 1) \). Multiply \( u - 1 \) by \( \conj{u} + 1
 \[
 u - 1 = it(u + 1) .
 \]
-Since \( i(u + 1) \ne 0 \), this holds if and only if \( t = t_0 \), where \( t_0 \coloneqq (u - 1)/\bigl(i(u + 1)\bigr) \in \nC \). So at most one real \( t \) has \( u_t = u \), and one does exactly when \( t_0 \) is real. Using \( u\conj{u} = 1 \) and @thm-conjugate-properties (a)–(c),
+Since \( i(u + 1) \ne 0 \), this holds if and only if \( t = t_0 \), where \( t_0 \coloneqq (u - 1)/\bigl(i(u + 1)\bigr) \in \nC \). So at most one real \( t \) has \( u_t = u \), and one does exactly when \( t_0 \) is real. Using \( u\conj{u} = 1 \),
 \[
 (u - 1)(\conj{u} + 1) = u\conj{u} + u - \conj{u} - 1 = u - \conj{u} = 2i \operatorname{Im} u ,
 \]
-and \( (u + 1)(\conj{u} + 1) = \abs{u + 1}^2 = 2 + 2\operatorname{Re} u \). This is a positive real number, since \( u + 1 \ne 0 \). Multiplying numerator and denominator of \( (u - 1)/(u + 1) \) by \( \conj{u} + 1 = \conj{u + 1} \ne 0 \),
+where \( u - \conj{u} = 2i \operatorname{Im} u \) by @def-conjugate-modulus (with \( u = a + bi \), \( (a + bi) - (a - bi) = 2bi \)); and \( (u + 1)(\conj{u} + 1) = \abs{u + 1}^2 = 2 + 2\operatorname{Re} u \), by @thm-conjugate-properties (a), (c). This is a positive real number, since \( u + 1 \ne 0 \). Multiplying numerator and denominator of \( (u - 1)/(u + 1) \) by \( \conj{u} + 1 = \conj{u + 1} \ne 0 \),
 \[
 t_0 = \frac{1}{i} \cdot \frac{2i \operatorname{Im} u}{2 + 2\operatorname{Re} u} = \frac{\operatorname{Im} u}{1 + \operatorname{Re} u} ,
 \]
@@ -457,13 +457,14 @@ u_{1/2} = \frac{(1 + \tfrac12 i)^2}{1 + \tfrac14} = \frac{\tfrac34 + i}{\tfrac54
 \]
 Check against (b): \( \operatorname{Im} u / (1 + \operatorname{Re} u) = \tfrac45 / \tfrac85 = \tfrac12 \).
 
-So the map \( t \mapsto u_t \) is a bijection from \( \nR \) onto \( \nT \setminus \{-1\} \), and it was found with no angle. For rational \( t \), the point \( u_t \) has rational coordinates: \( t = 1/2 \) gives the point \( (3/5, 4/5) \) behind the right triangle with sides \( 3 \), \( 4 \), \( 5 \).
+So the map \( t \mapsto u_t \) is a bijection from \( \nR \) onto \( \nT \setminus \{-1\} \), and it was found with no angle. For rational \( t \), the point \( u_t \) has rational coordinates: the computation in (c) with \( t \) in place of \( \tfrac12 \) gives \( u_t = \bigl((1 - t^2) + 2t\, i\bigr)/(1 + t^2) \), and \( t = 1/2 \) gives the point \( (3/5, 4/5) \) behind the right triangle with sides \( 3 \), \( 4 \), \( 5 \).
 
 **Marking scheme.** (10 points)
 - 2: \( 1 - it \ne 0 \) with a reason, and \( \abs{u_t} = 1 \) from the equal moduli of conjugates.
 - 1: \( u_t \ne -1 \).
 - 2: \( u = u_t \) rewritten as a linear equation in \( t \), with \( u + 1 \ne 0 \) used to solve it uniquely.
-- 3: the solution shown to be real, by multiplying by \( \conj{u + 1} \) and using \( u\conj{u} = 1 \), with \( 2 + 2 \operatorname{Re} u > 0 \).
+- 3: shows that the unique solution is real and equals \( \operatorname{Im} u / (1 + \operatorname{Re} u) \), with \( 1 + \operatorname{Re} u \ne 0 \) justified (for example by multiplying by \( \conj{u + 1} \) and using \( u\conj{u} = 1 \), with \( 2 + 2 \operatorname{Re} u > 0 \)).
+- Second route (coordinates \( u = x + yi \), \( x^2 + y^2 = 1 \)): the two lines above (5 points) become 2 for splitting \( u - 1 = it(u + 1) \) into \( x - 1 = -ty \) and \( y = t(1 + x) \), showing \( x \ne -1 \) (otherwise \( u = -1 \)) and so \( t = y/(1 + x) \) is forced; and 3 for checking that this \( t \) satisfies \( x - 1 = -ty \), using \( x^2 + y^2 = 1 \).
 - 2: (c) computed and checked.
 Fatal errors (0 for the step): writing \( u = e^{i\theta} \) and using a half-angle formula (borrowed facts, and values not derived here); dividing by \( 1 + \operatorname{Re} u \) without showing it is non-zero.
 :::
@@ -473,22 +474,27 @@ sec-polar-form (claim): the analysis volume (AN1.10) defines cos, sin by power s
 sec-polar-form (claim): AN1.10's R is a complete ordered field, so cos, sin, pi transfer to F3.10's R along the unique order-preserving field isomorphism | fd3:thm-cof-uniqueness (cited); an1's axioms (prose)
 sec-polar-form (claim): fd1's ax-induction is proved in Number Systems Chapter 1 | fd3:cor-omega-identification (b), fd3 thm-omega-induction (prose comparison; nothing depends on it)
 sec-polar-form (claim): periodicity of cos and sin is derivable from (T2), (T3) | not proved here; marked so in the warning; nothing depends on it
-ax-cosine-sine (claim): (T1)-(T5) assumed | AN1.10 (borrowed; proved there)
+ax-cosine-sine (claim): (T1)-(T5) assumed | AN1.10 (borrowed; proved there); users listed in the sec-polar-form borrow line at the end of this ledger
 ax-cosine-sine (claim): cos 0 = 1, sin 0 = 0, cos(2 pi k) = 1, sin(2 pi k) = 0 | inline from (T3), (T1), fd3:prp-ordered-ring-rules (e)
 prp-unit-circle (proof): the inverse of a positive real r in C is the real r^{-1} | thm-complex-numbers-field (cited: R closed under inverses)
 prp-unit-circle (proof): |a| = a for a real a > 0 | fd3:def-absolute-value-ordered-field (cited)
+prp-unit-circle (proof): r > 0 in R gives r^{-1} > 0 | fd3:prp-reciprocal-order (a) (cited)
 def-polar-form (claim): e^{i theta} in T, via sqrt(cos^2 + sin^2) = sqrt 1 = 1 | (T1), def-conjugate-modulus (cited); sqrt 1 = 1 by uniqueness in fd3:prp-cof-square-roots
+prp-polar-form (proof): r e^{i theta} is non-zero | prp-unit-circle (a), thm-complex-numbers-field, fd3:lem-field-fraction-rules (d) (cited)
+exr-polar-form-c2 (solution): u - conj(u) = 2i Im u | def-conjugate-modulus (cited)
 thm-polar-multiplication (proof): reordering sin theta cos phi + cos theta sin phi | commutativity of + and * in R (field axioms, fd3:thm-reals-complete-ordered-field)
-thm-de-moivre (proof): r^n computed in R equals r^n computed in C; r^n > 0 for r > 0 | inline (induction along the power recursion with prp-reals-embed-complex; fd3:prp-ordered-ring-rules (c))
+thm-de-moivre (proof): r^n computed in R equals r^n computed in C | Section 1.1 remark after prp-power-laws-commutative-ring (cited)
+thm-de-moivre (proof): r^n > 0 for r > 0 | inline (induction on n; fd3:prp-ordered-ring-rules (c))
 thm-de-moivre (proof): n theta + theta = (n + 1) theta | fd3:def-naturals-in-ordered-field (a) and distributivity in R
 exm-special-angles (solution): pi/2, pi/3, pi/4, pi/6 lie in (0, pi) since pi > 0; pi/6 = pi/2 - pi/3 | arithmetic in the ordered field R; verify/ch01/exm-special-angles.py
-exm-special-angles (solution): pi = 2 pi k gives 1 = 2k in R, hence in Z | Z inside R via F3.10's kappa (fd3:thm-reals-complete-ordered-field: injective, preserves + and *)
+exm-special-angles (solution): pi = 2 pi k gives 1 = 2k in R, hence in Z | Z inside R via fd3:prp-integers-embed-rationals and F3.10's kappa (fd3:thm-reals-complete-ordered-field: injective, preserves + and *) (both cited)
 exm-special-angles (solution): (u + 1)(u^2 - u + 1) = u^3 + 1; sqrt(1/2) = 1/sqrt 2; (sqrt 3 i)^2 = -3 | inline (ring algebra; uniqueness in fd3:prp-cof-square-roots); verify/ch01/exm-special-angles.py
 exm-polar-power (solution): (sqrt 3 + i)^6 = -64 both ways | verify/ch01/exm-polar-power.py
 sec-polar-form (solution): Check, (1 + i)^8 = 16, (sqrt 2)^8 = 16 | verify/ch01/exm-polar-power.py
 exr-polar-form-a1 (solution): values | exm-special-angles (cited)
 exr-polar-form-b1 (solution): (1 - sqrt 3 i)^6 = 64 | verify/ch01/exr-polar-form-b1.py
-exr-polar-form-b3 (solution): a non-negative real is 0 iff its square is 0 | fd3:prp-ordered-ring-rules (e)
+exr-polar-form-b3 (solution): a real is 0 iff its square is 0 | fd3:prp-ring-algebra (b) for 0^2 = 0, fd3:prp-ordered-ring-rules (e) for x != 0 (both cited)
 exr-polar-form-c1 (solution): (c + is)^3 expansion, triple-angle formulas | inline; verify/ch01/exr-polar-form-c1.py
 exr-polar-form-c2 (solution): u_t in T, t = Im u/(1 + Re u), u_{1/2} = 3/5 + 4/5 i | inline; verify/ch01/exr-polar-form-c2.py
+sec-polar-form (claim): ax-cosine-sine (T1)-(T5) used by def-polar-form (T1), thm-polar-multiplication (T2), prp-polar-form (T1, T3, T4), thm-de-moivre (through thm-polar-multiplication), exm-special-angles (T3, T5, T1), exm-polar-power, exr-polar-form-a1, -b1 (T1, T3), -b2, -b3 (through def-polar-form), -c1 (T1); prp-unit-circle and exr-polar-form-c2 use none | AN1.10 (borrow)
 -->

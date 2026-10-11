@@ -1,6 +1,7 @@
 """exr-pairs-of-reals-b3: (a,b)*(ta,-tb) = (t(a^2 - b^2), 0); (a,a)*(1,-1) = (0,0), (a,-a)*(1,1) = (0,0);
 the eliminations a(ac+bd) - b(ad+bc) = (a^2-b^2)c and b(ac+bd) - a(ad+bc) = (b^2-a^2)d;
-(2,1)*(2/3,-1/3) = (1,0)."""
+(2,1)*(2/3,-1/3) = (1,0);
+(a,a)*(c,d) = (a(c+d), a(c+d)) and (a,-a)*(c,d) = (a(c-d), -a(c-d)), never (1,0)."""
 
 from fractions import Fraction as Fr
 
@@ -93,5 +94,9 @@ for _ in range(2000):
     if a * a != b * b:
         t = 1 / (a * a - b * b)
         assert star((a, b), (t * a, -t * b)) == (1, 0)
+    # (a, +-a) has no inverse: (a,a)*(c,d) = (a(c+d), a(c+d)), (a,-a)*(c,d) = (a(c-d), -a(c-d))
+    assert star((a, a), (c, d)) == (a * (c + d), a * (c + d))
+    assert star((a, -a), (c, d)) == (a * (c - d), -a * (c - d))
+    assert star((a, a), (c, d)) != (1, 0) and star((a, -a), (c, d)) != (1, 0)
 assert star((2, 1), (Fr(2, 3), Fr(-1, 3))) == QUOTED["(2,1)*(2/3,-1/3)"]
 print("exr-pairs-of-reals-b3: ok")

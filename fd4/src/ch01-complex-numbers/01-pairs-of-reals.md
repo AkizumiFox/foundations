@@ -1,6 +1,6 @@
 # The Complex Numbers as Pairs of Reals
 
-The equation \( x^2 + 1 = 0 \) has no real solution. In an ordered field every square is non-negative (@fd3:prp-ordered-ring-rules (e)), so \( x^2 + 1 \ge 1 > 0 \) for every real \( x \). For most of school mathematics this gap is harmless. Later volumes cannot live with it: the linear-algebra volumes meet real matrices, such as a rotation of the plane, whose most useful data are not real numbers. This section builds the complex numbers, the number system that closes the gap, and proves that they obey the familiar laws of arithmetic.
+The equation \( x^2 + 1 = 0 \) has no real solution. In an ordered field every square is non-negative (@fd3:prp-ordered-ring-rules (e) for a non-zero element, and \( 0^2 = 0 \) by @fd3:prp-ring-algebra (b)), so \( x^2 + 1 \ge 0 + 1 = 1 > 0 \) for every real \( x \) (@fd3:prp-ordered-ring-rules (b), (e)). For most of school mathematics this gap is harmless. Later volumes cannot live with it: the linear-algebra volumes meet real matrices, such as a rotation of the plane, whose most useful data are not real numbers. This section builds the complex numbers, the number system that closes the gap, and proves that they obey the familiar laws of arithmetic.
 
 **Standing setting.** Throughout the chapter, \( \nR \) is the complete ordered field built in *Number Systems: From \(\nN\) to \(\nR\)*, Chapter 5 (@fd3:thm-reals-complete-ordered-field). In particular \( \nR \) is a field in the sense of @fd3:def-commutative-ring-and-field, and every rule that book proved for ordered fields holds in it. No proof below looks inside a real number. Letters \( a, b, c, d, e, f, x, y \) stand for real numbers, and \( z, w, u, v \) for complex numbers, unless we say otherwise.
 
@@ -39,7 +39,7 @@ There is nothing to check for well-definedness: a pair determines its coordinate
 \[
 (a, b) = (c, d) \iff a = c \text{ and } b = d .
 \]
-In the language of the definition: two complex numbers \( z \) and \( w \) are equal **if and only if** \( \operatorname{Re} z = \operatorname{Re} w \) **and** \( \operatorname{Im} z = \operatorname{Im} w \). So one equation between complex numbers is two equations between real numbers. This is the first named move of the chapter, **compare real and imaginary parts**, and almost every proof in this section uses it.
+In the language of the definition: two complex numbers \( z \) and \( w \) are equal **if and only if** \( \operatorname{Re} z = \operatorname{Re} w \) **and** \( \operatorname{Im} z = \operatorname{Im} w \). So one equation between complex numbers is two equations between real numbers. This is the first named move of the chapter, **compare real and imaginary parts**, and the proofs of @prp-reals-embed-complex and @prp-complex-arithmetic-laws below rest on it.
 
 The equation that motivated everything is now a computation:
 \[
@@ -62,7 +62,7 @@ Moreover \( (a, b) = \iota(a) + \iota(b)\, i \) for all \( a, b \in \nR \), and 
 :::
 
 ::: {.idea}
-Each claim is one application of the definitions: write both sides as pairs and compare coordinates. The only facts about \( \nR \) needed are that \( 0 \) is neutral for addition and that a product with \( 0 \) is \( 0 \), which kills the extra terms of the multiplication formula.
+Each claim is one application of the definitions: write both sides as pairs and compare coordinates. The facts about \( \nR \) needed are that \( 0 \) is neutral for addition (so subtracting \( 0 \) changes nothing), that \( 1 \) is neutral for multiplication, and that a product with \( 0 \) is \( 0 \), which kills the extra terms of the multiplication formula.
 :::
 
 ::: {.proof}
@@ -120,7 +120,7 @@ Finally, with \( a - bi = a + (-b)i \),
 \[
 (a + bi)(a - bi) = \bigl(a^2 - b(-b)\bigr) + \bigl(a(-b) + ba\bigr) i = a^2 + b^2 ,
 \]
-where \( a^2 = aa \) and \( b^2 = bb \) are computed in \( \nR \). This product is a real number, and it is **non-negative**, since \( a^2 \ge 0 \) and \( b^2 \ge 0 \) (@fd3:prp-ordered-ring-rules (e), (b)). We meet it again in Section 1.2, as the square of the length of \( a + bi \).
+where \( a^2 = aa \) and \( b^2 = bb \) are computed in \( \nR \). This product is a real number, and it is **non-negative**, since \( a^2 \ge 0 \) and \( b^2 \ge 0 \) (@fd3:prp-ordered-ring-rules (e) for a non-zero real, and \( 0^2 = 0 \) by @fd3:prp-ring-algebra (b)), so \( a^2 + b^2 \ge 0 \) by @fd3:prp-ordered-ring-rules (b). We meet it again in Section 1.2, as the square of the length of \( a + bi \).
 :::
 
 The last product is the first hint of how division will work: multiplying \( a + bi \) by \( a - bi \) lands in the real numbers, where division is familiar.
@@ -137,13 +137,13 @@ By the multiplication rule, \( (1 + i)(1 + i) = (1 \cdot 1 - 1 \cdot 1) + (1 \cd
 \[
 (a, b) * (c, d) \coloneqq (ac + bd, \; ad + bc) ,
 \]
-which is what expanding gives if we pretend \( j^2 = +1 \) instead. Addition is unchanged. This product is still commutative, by commutativity in \( \nR \), and \( (1, 0) \) is still a unit: \( (a, b) * (1, 0) = (a + 0, \; 0 + b) = (a, b) \). But
+which is what expanding gives if we pretend \( j^2 = +1 \) instead. Addition is unchanged. This product is still commutative, by commutativity in \( \nR \), and \( (1, 0) \) is still an identity element: \( (a, b) * (1, 0) = (a + 0, \; 0 + b) = (a, b) \). But
 \[
 (1, 1) * (1, -1) = \bigl(1 - 1, \; -1 + 1\bigr) = (0, 0) ,
 \]
-so two non-zero elements multiply to zero. Division breaks down too: \( (1, 1) * (c, d) = (c + d, \; d + c) \) can never equal the unit \( (1, 0) \), because that would need \( c + d = 1 \) and \( d + c = 0 \) at once. So the non-zero element \( (1, 1) \) has no inverse. *The single sign in \( ac - bd \) is what makes division possible*, as Section 1.2 will show. Exercise B3 finds every element that goes wrong in this way.
+so two non-zero elements multiply to zero. Division breaks down too: \( (1, 1) * (c, d) = (c + d, \; d + c) \) can never equal the identity element \( (1, 0) \), because that would need \( c + d = 1 \) and \( d + c = 0 \) at once. So the non-zero element \( (1, 1) \) has no inverse. *The single sign in \( ac - bd \) is what makes division possible*, as Section 1.2 will show. Exercise B3 finds every element that goes wrong in this way.
 
-**Why this definition.** We could have tried to postulate a number \( i \) with \( i^2 = -1 \), but a postulate is only as safe as the consistency of what it asserts. Pairs of reals are sets we already have, so \( \nC \) exists as soon as \( \nR \) does, and every law we want must now be **proved**. The multiplication formula is not a free choice either: Exercise C1 shows that in any field containing \( \nR \) and a square root of \( -1 \), the product of \( a + bj \) and \( c + dj \) is forced to be \( (ac - bd) + (ad + bc)j \). The minimal change above shows that a different formula really does give a different, and worse, system.
+**Why this definition.** We could have tried to postulate a number \( i \) with \( i^2 = -1 \), but a postulate is only as safe as the consistency of what it asserts. Pairs of reals are sets we already have, so \( \nC \) exists as soon as \( \nR \) does, and every law we want must now be **proved**. The multiplication formula is not a free choice either: Exercise C1 shows that in any field \( K \) containing \( \nR \), whose sum and product agree with those of \( \nR \) on real numbers, and containing a square root \( j \) of \( -1 \), the product of \( a + bj \) and \( c + dj \) is forced to be \( (ac - bd) + (ad + bc)j \). The minimal change above shows that a different formula really does give a different, and worse, system.
 
 ## The laws of arithmetic
 
@@ -232,7 +232,7 @@ Let \( R \) be a commutative ring (@fd3:def-commutative-ring-and-field), let \( 
 :::
 
 ::: {.idea}
-The definition of \( z^n \) is a recursion on \( n \), so every law is proved by induction on \( n \), peeling off the last factor with \( z^{n+1} = z^n z \). Each step needs exactly one ring axiom: associativity for (a), the law (a) itself for (b), commutativity for (c), and the absence of zero divisors in a field for (d).
+The definition of \( z^n \) is a recursion on \( n \), so every law is proved by induction on \( n \), peeling off the last factor with \( z^{n+1} = z^n z \). Each inductive step rests on one ingredient: associativity (F5) for (a), the law (a) for (b), associativity and commutativity (F5), (F6) for (c), and the absence of zero divisors in a field for (d).
 :::
 
 ::: {.proof}
@@ -255,7 +255,7 @@ where the third equality regroups and reorders the four factors by (F5) and (F6)
 (d) Let \( R \) be a field and \( z \ne 0 \). For \( n = 0 \): \( z^0 = 1 \ne 0 \), by the definition of a field. If \( z^n \ne 0 \), then \( z^{n+1} = z^n z \) is a product of two non-zero elements, so it is non-zero, since a field has no zero divisors (@fd3:lem-field-fraction-rules (d)).
 :::
 
-Parts (a)–(c) are the laws of *Sets, Relations, and Cardinality*, Section 2.3 (@fd2:prp-power-laws (a)–(c)), proved there for real numbers, and for \( R = \nN \) they are the laws of @fd3:prp-omega-powers-parity (a). The proofs above are the same inductions, and they use only the ring axioms.
+Parts (a)–(c) are the laws of *Sets, Relations, and Cardinality*, Section 2.3 (@fd2:prp-power-laws (a)–(c)), proved there for real numbers; on \( \nN = \omega \), which is not a ring, law (a) is @fd3:prp-omega-powers-parity (a), proved by the same induction. The proofs above are the same inductions, and they use only the ring axioms.
 
 For a real number \( a \), the power \( a^n \) is the same whether computed in \( \nR \) or in \( \nC \). Indeed \( \iota(a^0) = \iota(1) = 1 \), and if \( \iota(a^n) = \iota(a)^n \), then \( \iota(a^{n+1}) = \iota(a^n a) = \iota(a^n)\,\iota(a) = \iota(a)^{n+1} \), by @prp-reals-embed-complex; induction (@fd1:ax-induction) does the rest. So the identification of \( \nR \) with a subset of \( \nC \) is safe for powers too.
 
@@ -390,7 +390,7 @@ Since \( w^4 = -4 \), the left side is \( z^4 + 4 \), and substituting \( w \), 
 ::: {#exr-pairs-of-reals-b3}
 [B3: The zero divisors of the minimal change]
 
-Let \( * \) be the product \( (a, b) * (c, d) \coloneqq (ac + bd, \; ad + bc) \) on \( \nR^2 \) of the non-example in this section. Call a non-zero \( p \in \nR^2 \) a **zero divisor** if \( p * q = (0, 0) \) for some non-zero \( q \in \nR^2 \). Prove that a non-zero \( (a, b) \) is a zero divisor if and only if \( a^2 = b^2 \), and that if \( a^2 \ne b^2 \), then \( (a, b) * (ta, -tb) = (1, 0) \) for \( t \coloneqq (a^2 - b^2)^{-1} \).
+Let \( * \) be the product \( (a, b) * (c, d) \coloneqq (ac + bd, \; ad + bc) \) on \( \nR^2 \) of the non-example in this section. Call a non-zero \( p \in \nR^2 \) a **zero divisor** if \( p * q = (0, 0) \) for some non-zero \( q \in \nR^2 \). Prove that a non-zero \( (a, b) \) is a zero divisor if and only if \( a^2 = b^2 \), that such an \( (a, b) \) has no inverse (no \( q \) gives \( (a, b) * q = (1, 0) \)), and that if \( a^2 \ne b^2 \), then \( (a, b) * (ta, -tb) = (1, 0) \) for \( t \coloneqq (a^2 - b^2)^{-1} \).
 :::
 
 ::: {.solution}
@@ -400,7 +400,7 @@ First, for any real \( t \),
 \]
 If \( a^2 \ne b^2 \), then \( a^2 - b^2 \ne 0 \) has an inverse in \( \nR \), and \( t \coloneqq (a^2 - b^2)^{-1} \) gives \( (1, 0) \).
 
-\( (\Leftarrow) \) Let \( (a, b) \ne (0, 0) \) with \( a^2 = b^2 \). Then \( (a - b)(a + b) = a^2 - b^2 = 0 \), so \( b = a \) or \( b = -a \) (@fd3:lem-field-fraction-rules (d) in \( \nR \)). If \( b = a \), then \( (a, a) * (1, -1) = (a - a, \; -a + a) = (0, 0) \); if \( b = -a \), then \( (a, -a) * (1, 1) = (a - a, \; a - a) = (0, 0) \). In both cases the second factor is non-zero, so \( (a, b) \) is a zero divisor.
+\( (\Leftarrow) \) Let \( (a, b) \ne (0, 0) \) with \( a^2 = b^2 \). Then \( (a - b)(a + b) = a^2 - b^2 = 0 \), so \( b = a \) or \( b = -a \) (@fd3:lem-field-fraction-rules (d) in \( \nR \)). If \( b = a \), then \( (a, a) * (1, -1) = (a - a, \; -a + a) = (0, 0) \); if \( b = -a \), then \( (a, -a) * (1, 1) = (a - a, \; a - a) = (0, 0) \). In both cases the second factor is non-zero, so \( (a, b) \) is a zero divisor. Such an element also has no inverse: \( (a, a) * (c, d) = \bigl(a(c + d), \; a(c + d)\bigr) \) has equal coordinates and \( (a, -a) * (c, d) = \bigl(a(c - d), \; -a(c - d)\bigr) \) has opposite coordinates, while \( (1, 0) \) has neither, since \( 1 \ne 0 \) and \( 1 \ne -0 = 0 \).
 
 \( (\Rightarrow) \) We prove the contrapositive (@fd1:prp-contrapositive). Let \( a^2 \ne b^2 \), and suppose \( (a, b) * (c, d) = (0, 0) \), that is, \( ac + bd = 0 \) and \( ad + bc = 0 \). Multiply the first equation by \( a \) and the second by \( b \), and subtract: \( a^2 c + abd - abd - b^2 c = 0 \), that is, \( (a^2 - b^2) c = 0 \). Multiply the first by \( b \) and the second by \( a \), and subtract: \( (b^2 - a^2) d = 0 \). Since \( a^2 - b^2 \ne 0 \) and \( \nR \) has no zero divisors, \( c = 0 \) and \( d = 0 \). So the only \( q \) with \( (a, b) * q = (0, 0) \) is \( q = (0, 0) \), and \( (a, b) \) is not a zero divisor. No associativity of \( * \) was needed.
 
@@ -424,19 +424,19 @@ Let \( K \) be a field (@fd3:def-commutative-ring-and-field) with \( \nR \subset
 ::: {.solution}
 [Hint 1]
 
-For (a), use that \( 0 \), \( 1 \), \( -a \) and \( a^{-1} \) are each the **only** element with their property (@fd3:prp-ring-algebra (a), @fd3:lem-field-fraction-rules (a)). For (b), ask what happens if \( b \ne d \).
+For (a), start from \( 0 + 0 = 0 \) and \( 1 \cdot 1 = 1 \) in \( \nR \) and cancel in \( K \): add the negative of \( 0_{\nR} \); for \( 1 \), multiply by the inverse of \( 1_{\nR} \), which exists because \( 1_{\nR} \ne 0_{\nR} = 0_K \). For \( -a \) and \( a^{-1} \), use that each is the **only** element with its property (@fd3:prp-ring-algebra (a), @fd3:lem-field-fraction-rules (a)). For (b), ask what happens if \( b \ne d \).
 :::
 
 ::: {.solution}
 [Hint 2]
 
-For (b): if \( b \ne d \), then \( (d - b) j = a - c \), so \( j = (a - c)(d - b)^{-1} \) is a real number. What do you know about squares of real numbers?
+For (b): suppose \( b \ne d \). Then \( (d - b) j = a - c \), and \( d - b \) is a non-zero real number.
 :::
 
 ::: {.solution}
 (a) In \( \nR \), \( 0_{\nR} + 0_{\nR} = 0_{\nR} \); the same equation holds in \( K \), since the sum of \( K \) on reals is that of \( \nR \). Adding \( -0_{\nR} \) (the negative in \( K \)) to both sides gives \( 0_{\nR} = 0_K \). Next, \( 1_{\nR} \cdot 1_{\nR} = 1_{\nR} \) in \( K \), and \( 1_{\nR} \ne 0_{\nR} = 0_K \); multiplying by the inverse of \( 1_{\nR} \) in \( K \) gives \( 1_{\nR} = 1_K \). For \( a \in \nR \), the real negative \( -a \) satisfies \( a + (-a) = 0_{\nR} = 0_K \) in \( K \), so it is the negative of \( a \) in \( K \), by uniqueness of negatives (@fd3:prp-ring-algebra (a)). Likewise, for real \( a \ne 0 \), the real inverse satisfies \( a a^{-1} = 1_{\nR} = 1_K \) in \( K \), so it is the inverse of \( a \) in \( K \) (@fd3:lem-field-fraction-rules (a)). So sums, products, differences and quotients of real numbers computed in \( K \) are real numbers.
 
-(b) Suppose \( a + bj = c + dj \), and suppose, for contradiction, that \( b \ne d \). Then \( (d - b) j = a - c \), with \( d - b \) a non-zero real number, so \( j = (a - c)(d - b)^{-1} \), which is real by (a). Then \( j^2 \) is the square of a real number, computed in \( \nR \), so \( j^2 \ge 0 \) in \( \nR \) (@fd3:prp-ordered-ring-rules (e)). But \( j^2 = -1 < 0 \) in \( \nR \) (@fd3:prp-ordered-ring-rules (e), (a)), and \( 0 \le j^2 < 0 \) contradicts (O1). Hence \( b = d \), and then \( a = c \) by adding \( -bj \) to both sides.
+(b) Suppose \( a + bj = c + dj \), and suppose, for contradiction, that \( b \ne d \). Then \( (d - b) j = a - c \), with \( d - b \) a non-zero real number, so \( j = (a - c)(d - b)^{-1} \), which is real by (a). Then \( j^2 \) is the square of a real number, computed in \( \nR \). Here \( j \ne 0 \), since \( 0^2 = 0 \ne -1 \) (@fd3:prp-ring-algebra (b)), so \( j^2 > 0 \) in \( \nR \) (@fd3:prp-ordered-ring-rules (e)). But \( j^2 = -1 < 0 \) in \( \nR \) (@fd3:prp-ordered-ring-rules (e), (a)), and \( 0 < j^2 < 0 \) contradicts (O1). Hence \( b = d \), and then \( a = c \) by adding \( -bj \) to both sides.
 
 (c) The map is a function, since \( a + bi \) determines \( a \) and \( b \) (@prp-reals-embed-complex). It is injective by (b): \( a + bj = c + dj \) gives \( a = c \) and \( b = d \), so \( a + bi = c + di \). Also \( \varphi(1) = \varphi(1 + 0i) = 1 + 0j = 1 \). For \( z = a + bi \) and \( w = c + di \), the field laws of \( K \) give
 \[
@@ -454,22 +454,24 @@ by @def-complex-numbers. This proves (c).
 So any field that contains \( \nR \) and a square root \( j \) of \( -1 \) contains an exact copy of \( \nC \), namely \( \{ a + bj : a, b \in \nR \} \), and its arithmetic is forced to be the arithmetic of @def-complex-numbers. Chapter 2 meets more fields of this shape, built from a smaller field and one new element, such as \( \{ a + bi : a, b \in \nQ \} \).
 
 **Marking scheme.** (10 points)
-- 2: (a) identifies \( 0 \), \( 1 \), negatives and inverses of reals in \( K \), each through a uniqueness statement.
+- 2: (a) identifies \( 0 \) and \( 1 \) of \( \nR \) in \( K \) by cancellation, and negatives and inverses of reals by uniqueness.
 - 3: (b) shows that \( b \ne d \) would make \( j \) real, with the division justified by \( d - b \ne 0 \).
-- 2: (b) derives the contradiction from \( j^2 \ge 0 \) in \( \nR \) and \( -1 < 0 \), naming the ordered-field rule.
+- 2: (b) derives the contradiction from \( j^2 > 0 \) in \( \nR \) (with \( j \ne 0 \)) and \( -1 < 0 \), naming the ordered-field rule.
+- Second route for (b): squaring \( (b - d)j = c - a \) with \( j^2 = -1 \), and noting by (a) that the result is an equation between real numbers, earns the 3 points; concluding from \( (c - a)^2 + (b - d)^2 = 0 \) that \( a = c \) and \( b = d \), from squares \( \ge 0 \) in \( \nR \), naming the ordered-field rule, earns the 2 points.
 - 1: (c) injectivity, from (b).
 - 2: (c) the sum and the product, expanding with \( j^2 = -1 \) and comparing with @def-complex-numbers.
 Fatal errors (0 for the step): treating \( j \) as \( i \) (the point is that \( K \) is any field); claiming \( j^2 \ge 0 \) in \( K \) (there is no order on \( K \)).
 :::
 
 <!-- dependency ledger
+def-complex-numbers (claim): section opening, x^2 + 1 >= 1 > 0 for real x | fd3:prp-ordered-ring-rules (e), (b), fd3:prp-ring-algebra (b) for 0^2 = 0 (cited)
 def-complex-numbers (claim): the operations are functions C x C -> C (right-hand sides are pairs of reals) | fd2:def-cartesian-product, field operations of R (fd3:thm-reals-complete-ordered-field); inline
 def-complex-numbers (claim): i * i = (-1, 0); 0*0 = 0, 1*1 = 1 in R | fd3:prp-ring-algebra (b), arithmetic in the field R; inline
 prp-reals-embed-complex (proof): a*0 = 0*c = 0*0 = 0, 0 + 0 = 0, b*1 = b in R | fd3:prp-ring-algebra (b), (F3), (F7) of R (fd3:thm-reals-complete-ordered-field)
 prp-reals-embed-complex (claim): the identification a = (a, 0) is safe ("convenient abuse"), pointed back to F3.2 §02 | prose pointer; the proposition is the reason
-exm-complex-arithmetic (solution): a^2 >= 0, b^2 >= 0, sum >= 0 | fd3:prp-ordered-ring-rules (e), (b) (cited)
+exm-complex-arithmetic (solution): a^2 >= 0, b^2 >= 0, sum >= 0 | fd3:prp-ordered-ring-rules (e) for non-zero, fd3:prp-ring-algebra (b) for 0^2 = 0, fd3:prp-ordered-ring-rules (b) (cited)
 exm-complex-arithmetic (solution): (-1)(-b) and similar sign rules in R | fd3:prp-ring-algebra (c)
-def-complex-numbers (example): non-example by minimal change: * is commutative with unit (1,0); (1,1)*(1,-1) = (0,0); (1,1)*(c,d) = (c+d, d+c) | arithmetic in R; inline
+def-complex-numbers (example): non-example by minimal change: * is commutative with identity element (1,0); (1,1)*(1,-1) = (0,0); (1,1)*(c,d) = (c+d, d+c) | arithmetic in R; inline
 prp-complex-arithmetic-laws (proof): the four-term expansions of (zw)u and z(wu) agree | distributivity, commutativity, associativity in R and fd3:prp-ring-algebra (c); inline; verify/ch01/prp-complex-arithmetic-laws.py
 prp-complex-arithmetic-laws (claim): 1 != 0 in C | fd2:def-ordered-pair, 1 != 0 in R (field); inline
 prp-power-laws-commutative-ring (claim): the definition of powers: recursion z^0 = 1, z^{n+1} = z^n z in a commutative ring | fd2:thm-recursion on omega via fd3:cor-omega-identification (b) (cited); fd2:def-power and fd3:def-naturals-in-ordered-field (b) as the pattern (cited)
@@ -484,7 +486,8 @@ exr-pairs-of-reals-a1 (solution): 2 != 0 in R | fd3:prp-ordered-ring-rules (h) o
 exr-pairs-of-reals-b1 (solution): q >= 0 from n >= 0 and r < 4; q, r in N | order of Z (F3.2, fd3:thm-integers-ordered-ring) and N subset of Z (fd3:prp-naturals-embed-integers); inline
 exr-pairs-of-reals-b1 (solution): 2026 = 4 * 506 + 2 | arithmetic; verify/ch01/exr-pairs-of-reals-b1.py
 exr-pairs-of-reals-b2 (solution): (1+i)^2 = 2i, (1+i)^3 = -2 + 2i, (1+i)^4 = -4, the factorization of z^4 + 4; 2^2 = 4 in C by the identification | verify/ch01/exr-pairs-of-reals-b2.py
-exr-pairs-of-reals-b3 (solution): (2,1)*(2/3,-1/3) = (1,0); the eliminations a*(first) - b*(second) | arithmetic in R; verify/ch01/exr-pairs-of-reals-b3.py
+exr-pairs-of-reals-b3 (solution): (2,1)*(2/3,-1/3) = (1,0); the eliminations a*(first) - b*(second); (a,+-a)*(c,d) = (a(c+-d), +-a(c+-d)) is never (1,0) | arithmetic in R, 1 != 0 in R; verify/ch01/exr-pairs-of-reals-b3.py
 exr-pairs-of-reals-c1 (solution): -1 < 0 in R | fd3:prp-ordered-ring-rules (e), (a) (cited)
+exr-pairs-of-reals-c1 (solution): j != 0 since 0^2 = 0 != -1, so j^2 > 0 | fd3:prp-ring-algebra (b), fd3:prp-ordered-ring-rules (e) (cited)
 exr-pairs-of-reals-c1 (solution): pointer to Chapter 2 (subfields such as Q(i), F4.2 exm-subfields-gaussian) | prose pointer; nothing depends on it
 -->

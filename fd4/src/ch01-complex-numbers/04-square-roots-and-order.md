@@ -1,6 +1,6 @@
 # Square Roots, Quadratic Equations, and the Missing Order
 
-*Logic and Proof*, Section 4.11 needed, in one of its checks, the fact that every complex number has a complex square root, and took it there as a school fact about polar form. This section proves it, with no angles at all: a square root of a complex number is built from two square roots of non-negative reals, which *Number Systems*, Chapter 6 provides (@fd3:prp-cof-square-roots). The quadratic formula follows, for complex coefficients. Then we see what \( \nC \) has lost on the way from \( \nR \): it has no order compatible with its arithmetic, and the rule \( \sqrt{x}\sqrt{y} = \sqrt{xy} \) has no complex version.
+*Logic and Proof*, Section 4.11 needed, in one of its checks, the fact that every complex number has a complex square root, and took it there as a school fact about polar form. This section proves it, with no angles at all: a square root of a complex number is built from two square roots of non-negative reals, which *Number Systems: From \(\nN\) to \(\nR\)*, Chapter 6 provides (@fd3:prp-cof-square-roots). The quadratic formula follows, for complex coefficients. Then we see what \( \nC \) has lost on the way from \( \nR \): it has no order compatible with its arithmetic, and the rule \( \sqrt{x}\sqrt{y} = \sqrt{xy} \) has no complex version.
 
 ## Square roots from real square roots
 
@@ -47,7 +47,7 @@ The proof uses one small rule about real square roots: for \( p, q \in \nR \) wi
 Both sides are non-negative (a product of non-negative reals is non-negative), and the square of the left side is \( (\sqrt p)^2 (\sqrt q)^2 = pq \), by commutativity; so the left side is the non-negative number whose square is \( pq \), which is the right side by the uniqueness in @fd3:prp-cof-square-roots. The rule is about non-negative **reals** only; the last part of this section shows that it has no complex version.
 
 ::: {.proof}
-*The roots exist.* By @lem-real-part-at-most-modulus, \( \abs{a} = \abs{\operatorname{Re} z} \le r \), so \( -r \le a \le r \) (@fd3:prp-absolute-value-ordered-field (d)). Hence \( r + a \ge 0 \) and \( r - a \ge 0 \) (@fd3:prp-ordered-ring-rules (a), (b)), and since \( 1/2 > 0 \), also \( (r + a)/2 \ge 0 \) and \( (r - a)/2 \ge 0 \) (@fd3:prp-ordered-ring-rules (c)). So the two square roots in the definition of \( x \) and \( y \) exist (@fd3:prp-cof-square-roots).
+*The roots exist.* By @lem-real-part-at-most-modulus, \( \abs{a} = \abs{\operatorname{Re} z} \le r \), so \( -r \le a \le r \) (@fd3:prp-absolute-value-ordered-field (d)). Hence \( r + a \ge 0 \) and \( r - a \ge 0 \) (@fd3:prp-ordered-ring-rules (a), (b)). Halving keeps this: for \( p \ge 0 \), either \( p > 0 \) and then \( p/2 > 0 \) (@fd3:prp-ordered-field-halves (b), with \( \varepsilon = p \)), or \( p = 0 \) and then \( p/2 = 0 \cdot (1/2) = 0 \) (@fd3:prp-ring-algebra (b)). So \( (r + a)/2 \ge 0 \) and \( (r - a)/2 \ge 0 \). So the two square roots in the definition of \( x \) and \( y \) exist (@fd3:prp-cof-square-roots).
 
 (a) Since \( s^2 = 1 \),
 \[
@@ -154,11 +154,11 @@ Suppose \( < \) is a relation on \( \nC \) with which \( \nC \) is an ordered fi
 The proof never asks whether \( i > 0 \) or \( i < 0 \): part (e) covers both at once. It also never assumes that the hypothetical order agrees with the order of \( \nR \) on real numbers. It concludes \( 1 > 0 \) and \( -1 > 0 \) in whatever order is supposed, and that is the contradiction.
 
 ::: {.remark}
-*Number Systems*, Chapter 4 showed, in an exercise (@fd3:exr-rules-and-absolute-value-c1), that a field containing a square root of \( -1 \) cannot be ordered, and named the complex numbers as such a field; the proposition proves that fact for \( \nC \) on its own. Compare @fd3:exm-finite-ring-not-orderable and @fd3:thm-integers-mod-n-ring (e): there the obstacle to an order is \( n \cdot 1 = 0 \) for some \( n \ge 1 \). That obstacle is absent here, since \( n \cdot 1 \) in \( \nC \) is the real number \( n \cdot 1 > 0 \) of \( \nR \) (@fd3:prp-ordered-ring-rules (h)), which is non-zero; the obstacle in \( \nC \) is \( i^2 = -1 \) instead.
+*Number Systems: From \(\nN\) to \(\nR\)*, Chapter 4 showed, in an exercise (@fd3:exr-rules-and-absolute-value-c1), that a field containing a square root of \( -1 \) cannot be ordered, and named the complex numbers as such a field; the proposition proves that fact for \( \nC \) on its own. Compare @fd3:exm-finite-ring-not-orderable and @fd3:thm-integers-mod-n-ring (e): there the obstacle to an order is \( n \cdot 1 = 0 \) for some \( n \ge 1 \). That obstacle is absent here, since \( n \cdot 1 \) in \( \nC \) is \( \iota(n \cdot 1) \), the image of the real number \( n \cdot 1 > 0 \) of \( \nR \) (@fd3:prp-ordered-ring-rules (h)), which is non-zero as \( \iota \) is injective. (The identity \( n \cdot 1 = \iota(n \cdot 1) \) is proved by @fd1:ax-induction on \( n \), as for powers in Section 1.1: \( 0 \cdot 1 = 0 = \iota(0) \), and if \( n \cdot 1 = \iota(n \cdot 1) \), then \( (n + 1) \cdot 1 = \iota(n \cdot 1) + \iota(1) = \iota((n + 1) \cdot 1) \) by @prp-reals-embed-complex.) The obstacle in \( \nC \) is \( i^2 = -1 \) instead.
 :::
 
 ::: {.warning}
-An inequality \( z < w \) between complex numbers means nothing: by @prp-complex-not-orderable no order on \( \nC \) is compatible with its arithmetic. Every inequality in this chapter compares **real** numbers: moduli, real parts, imaginary parts, or quantities proved to be real, as \( 2\operatorname{Re}(z\conj{w}) \) was in Section 1.3. Writing \( i > 0 \) leads, by the proof above, to \( 0 > 0 \); so does writing \( i < 0 \).
+An inequality \( z < w \) between complex numbers means nothing: by @prp-complex-not-orderable no order on \( \nC \) is compatible with its arithmetic. Apart from arguments that suppose an order on \( \nC \) in order to reach a contradiction (the proof above and Exercises B2 and C2), every inequality in this chapter compares **real** numbers in the order of \( \nR \): moduli, real parts, imaginary parts, or quantities proved to be real, as \( 2\operatorname{Re}(z\conj{w}) \) was in Section 1.3. Writing \( i > 0 \) leads, by the proof above, to \( 0 > 0 \); so does writing \( i < 0 \).
 :::
 
 ::: {.check}
@@ -174,7 +174,7 @@ No. The argument proves nothing about orders on \( \nC \). "\( -1 < 0 \)" is a s
 In \( \nR \), \( \sqrt{x}\sqrt{y} = \sqrt{xy} \) for \( x, y \ge 0 \): that is the rule for real square roots used above. A non-zero complex number has two square roots and no preferred one, and no way of preferring one keeps the rule alive.
 
 ::: {.warning}
-No choice of "the" square root \( \sqrt{z} \) of each complex \( z \) can satisfy \( \sqrt{z}\sqrt{w} = \sqrt{zw} \) for all \( z, w \in \nC \). Whatever is chosen for \( \sqrt{-1} \), it is \( i \) or \( -i \) (@prp-complex-square-roots (b)), and in both cases \( \sqrt{-1} \cdot \sqrt{-1} = (\pm i)^2 = -1 \). But \( \sqrt{(-1)(-1)} = \sqrt{1} \), which must be \( 1 \) if the rule is to extend the real square root. So in this volume the symbol \( \sqrt{\phantom{x}} \) is applied only to non-negative reals; for any other \( z \), say "a square root of \( z \)" and solve \( w^2 = z \).
+No choice of "the" square root \( \sqrt{z} \) of each complex \( z \) can satisfy \( \sqrt{z}\sqrt{w} = \sqrt{zw} \) for all \( z, w \in \nC \). Whatever is chosen for \( \sqrt{-1} \), it is \( i \) or \( -i \) (@prp-complex-square-roots (b)), and in both cases \( \sqrt{-1} \cdot \sqrt{-1} = (\pm i)^2 = -1 \). But \( \sqrt{(-1)(-1)} = \sqrt{1} \), and the rule itself forces \( \sqrt{1} = 1 \): since \( \sqrt{1} \) is a square root of \( 1 \), \( 1 = \sqrt{1} \cdot \sqrt{1} = \sqrt{1 \cdot 1} = \sqrt{1} \). So the rule would give \( -1 = 1 \), which is false in \( \nC \) (the real parts \( -1 < 1 \) differ). So in this volume the symbol \( \sqrt{\phantom{x}} \) is applied only to non-negative reals; for any other \( z \), say "a square root of \( z \)" and solve \( w^2 = z \).
 :::
 
 ## Exercises
@@ -242,7 +242,7 @@ The nine lines below include the seven lines of a proof of @prp-complex-not-orde
 :::
 
 ::: {.solution}
-An admissible order is (iii), (viii), (v), (i), (vi), (ix), (iv). The constraints are what each line uses: (iii) comes first, since every later line works in the supposed order; (v) uses (viii); (i) uses (v); (ix) uses (i) and (vi); (iv) uses (ix). Line (vi) uses only (iii), so it may stand anywhere after (iii) and before (ix): for instance (iii), (vi), (viii), (v), (i), (ix), (iv) is also admissible. No other changes are possible.
+An admissible order is (iii), (viii), (v), (i), (vi), (ix), (iv). The constraints are what each line uses: (v), (vi), (i), (ix) and (iv) work in the supposed order, so they come after (iii); (v) also uses (viii); (i) uses (v); (ix) uses (i) and (vi); (iv) uses (ix). Line (viii) is a fact about \( \nC \) and uses no order, so it may stand anywhere before (v), even before (iii); line (vi) may stand anywhere after (iii) and before (ix). For instance (iii), (vi), (viii), (v), (i), (ix), (iv) and (viii), (iii), (v), (i), (vi), (ix), (iv) are also admissible. The admissible orders are exactly those that respect these constraints.
 
 Line (ii) drops a case: from \( i \ne 0 \), trichotomy (O1) gives \( i > 0 \) **or** \( i < 0 \), and the line keeps only the first. That is (N7) of @fd1:exm-not-allowed-catalogue, a missing case. Line (v) needs neither case, which is why the proof does not split.
 
@@ -276,7 +276,7 @@ Here is an argument.
 
 > **Claim.** For \( z, w \in \nC \), if \( z^2 = w^2 \), then \( z = w \) or \( z = -w \).
 >
-> **Proof.** If \( w = 0 \), then \( z^2 = 0 \), so \( z = 0 = w \), since \( \nC \) has no zero divisors. If \( w \ne 0 \), put \( u \coloneqq z/w \), which exists because \( \nC \) is a field; then \( u^2 = z^2/w^2 = 1 \). Taking square roots, \( u = \sqrt{u^2} = \sqrt{1} = 1 \). Since the sign is lost when taking square roots, \( u = 1 \) or \( u = -1 \). Multiplying by \( w \), \( z = w \) or \( z = -w \).
+> **Proof.** If \( w = 0 \), then \( z^2 = 0 \), so \( z = 0 = w \), since \( \nC \) has no zero divisors. If \( w \ne 0 \), put \( u \coloneqq z/w \), which exists because \( \nC \) is a field; then \( u^2 = z^2/w^2 = 1 \). Taking square roots, \( u = \sqrt{u^2} = \sqrt{1} = 1 \). In particular, \( u = 1 \) or \( u = -1 \). Multiplying by \( w \), \( z = w \) or \( z = -w \).
 
 Is the claim true? Does the argument prove it? If not, name the line that fails and the reason, give a counterexample to that line, and repair the argument.
 :::
@@ -295,7 +295,7 @@ Repair: replace the two middle lines by "Then \( (u - 1)(u + 1) = u^2 - 1 = 0 \)
 - 3: names the line \( u = \sqrt{u^2} = \sqrt{1} = 1 \) as the failing one, and its illegal rule \( u = \sqrt{u^2} \).
 - 2: a counterexample **to that step** (\( u = -1 \), or any \( u \) with \( u^2 = 1 \), \( u \ne 1 \)).
 - 3: a correct repair, by factoring \( u^2 - 1 \) and using no zero divisors (or by @prp-complex-square-roots (b) applied to \( z = 1 \)).
-Fatal errors (0 for the step): declaring the claim false; naming the "sign is lost" line as the error, since it is a valid weakening.
+Fatal errors (0 for the step): declaring the claim false; naming the "In particular" line instead of the \( \sqrt{\phantom{x}} \) line as the failing one, since it is a valid weakening.
 :::
 
 ::: {#exr-square-roots-and-order-c2}
@@ -315,7 +315,7 @@ In an ordered field, which elements can be squares? For (c), list the squares of
 :::
 
 ::: {.solution}
-(a) Suppose \( < \) makes \( \nC \) an ordered field. Every square is then \( \ge 0 \): a non-zero square is positive by @fd3:prp-ordered-ring-rules (e), and \( 0^2 = 0 \). By @prp-complex-square-roots (a), applied to the non-zero number \( -1 \), some \( d \in \nC \) has \( d^2 = -1 \). So \( -1 = d^2 \ge 0 \). Also \( -1 \ne 0 \), since otherwise \( 1 = -(-1) = -0 = 0 \) (@fd3:prp-ring-algebra (a)), against \( 1 \ne 0 \) in the field \( \nC \) (@thm-complex-numbers-field). Hence \( -1 > 0 \). By part (e) again, \( 1 > 0 \). Adding (@fd3:prp-ordered-ring-rules (b)), \( 0 = 1 + (-1) > 0 \), which (O1) forbids. This is the argument of @fd3:exr-rules-and-absolute-value-c1, with the square root of \( -1 \) supplied by a formula.
+(a) Suppose \( < \) makes \( \nC \) an ordered field. Every square is then \( \ge 0 \): a non-zero square is positive by @fd3:prp-ordered-ring-rules (e), and \( 0^2 = 0 \). First, \( -1 \ne 0 \), since otherwise \( 1 = -(-1) = -0 = 0 \) (@fd3:prp-ring-algebra (a)), against \( 1 \ne 0 \) in the field \( \nC \) (@thm-complex-numbers-field). By @prp-complex-square-roots (a), applied to the non-zero number \( -1 \), some \( d \in \nC \) has \( d^2 = -1 \). So \( -1 = d^2 \ge 0 \), and as \( -1 \ne 0 \), \( -1 > 0 \). By part (e) again, \( 1 > 0 \). Adding (@fd3:prp-ordered-ring-rules (b)), \( 0 = 1 + (-1) > 0 \), which (O1) forbids. This is the argument of @fd3:exr-rules-and-absolute-value-c1, with the square root of \( -1 \) supplied by a formula.
 
 (b) The argument uses only that \( -1 \) is a square in \( \nC \), and that is a property of the field, not of any named element. It does not matter that the formula of @prp-complex-square-roots, applied to \( -1 \), happens to produce \( i \) (\( a = -1 \), \( b = 0 \), \( r = 1 \): \( x = 0 \), \( y = 1 \)). The same argument shows that no field in which \( -1 \) is a square can be ordered; in particular no field in which **every** element is a square.
 
@@ -325,7 +325,7 @@ In an ordered field, which elements can be squares? For (c), list the squares of
 <!-- dependency ledger
 prp-complex-square-roots (claim): Logic and Proof, Section 4.11 took "every complex number has a complex square root" as a school fact | backward pointer; prp-complex-square-roots pays it (fd1 11-models.md ledger line 698)
 prp-complex-square-roots (proof): sqrt(p) sqrt(q) = sqrt(pq) for p, q >= 0; sqrt 4 = 2 | inline from fd3:prp-cof-square-roots (uniqueness) and (O4) / fd3:prp-ring-algebra (b)
-prp-complex-square-roots (proof): s^2 = 1; s|b| = b by cases on the sign of b; 1/2 > 0 in R; (r + a)/2 - (r - a)/2 = a | inline; fd3:def-absolute-value-ordered-field; 1/2 > 0 since 2 > 0 and 2 * (1/2) = 1 > 0 (fd3:prp-ordered-ring-rules (c), (d), (e))
+prp-complex-square-roots (proof): s^2 = 1; s|b| = b by cases on the sign of b; p >= 0 implies p/2 >= 0 in R; (r + a)/2 - (r - a)/2 = a | inline; fd3:def-absolute-value-ordered-field; p/2 > 0 for p > 0 by fd3:prp-ordered-field-halves (b), and 0/2 = 0 by fd3:prp-ring-algebra (b), cited
 prp-complex-square-roots (proof): (u - w)(u + w) = u^2 - w^2 in a commutative ring | prp-complex-arithmetic-laws with fd3:prp-ring-algebra (c); inline
 prp-complex-square-roots (proof): 2 = 1 + 1 is non-zero in C | fd3:prp-ordered-ring-rules (h) in R, prp-reals-embed-complex (injective, preserves sums), cited
 prp-complex-square-roots (claim): Chapter 5 proves the FTA from square roots in this form | prose pointer (F4.5, lem-complex-direction-negative-real-part); nothing depends on it
@@ -334,7 +334,7 @@ prp-complex-square-roots (example): quick check, square roots of -4 and 2i | inl
 cor-complex-quadratic-formula (proof): 4a(az^2 + bz + c) = (2az + b)^2 - (b^2 - 4ac); 4 != 0 in C | prp-complex-arithmetic-laws, fd3:prp-ring-algebra (d); 4 = 4 * 1 > 0 in R by fd3:prp-ordered-ring-rules (h) and prp-reals-embed-complex
 cor-complex-quadratic-formula (example): z^2 - (3 + i)z + (2 + 2i) = 0 has the solutions 2 and 1 + i; discriminant -2i; (1 - i)^2 = -2i | inline; verify/ch01/cor-complex-quadratic-formula.py
 prp-complex-not-orderable (proof): i * i = -1 | prp-reals-embed-complex, cited
-prp-complex-not-orderable (claim): n * 1 in C is the real n * 1 > 0 | prp-reals-embed-complex (iota preserves sums, so iota(n * 1) = n * 1), fd3:prp-ordered-ring-rules (h); inline
+prp-complex-not-orderable (claim): n * 1 in C is the real n * 1 > 0 | fd1:ax-induction on n with prp-reals-embed-complex (iota preserves sums, iota(1) = 1, injective), so n * 1 = iota(n * 1) != 0; fd3:prp-ordered-ring-rules (h); inline
 prp-complex-not-orderable (claim): pays fd3 F3.9 Section 4.1 Exercise C1's prose pointer | backward pointer
 prp-complex-not-orderable (solution): quick check, i = ((1 + i)/sqrt 2)^2 | prp-complex-square-roots; verify/ch01/prp-complex-square-roots.py
 exr-square-roots-and-order-a1 (solution): run of the formula on -4 | verify/ch01/exr-square-roots-and-order-a1.py

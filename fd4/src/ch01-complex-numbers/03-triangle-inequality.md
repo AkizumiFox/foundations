@@ -4,9 +4,9 @@ The modulus of Section 1.2 measures a complex number by a real one. Picture \( z
 
 ## Why the old proof does not transfer
 
-For an ordered field, *Number Systems*, Chapter 4 proved \( \abs{x + y} \le \abs{x} + \abs{y} \) by trapping (@fd3:prp-absolute-value-ordered-field (e)). Each of \( x \) and \( y \) lies between \( \pm \) its absolute value, \( -\abs{x} \le x \le \abs{x} \) (part (c) there); adding the two traps traps \( x + y \) between \( \pm(\abs{x} + \abs{y}) \), and part (d) reads that as the inequality.
+For an ordered field, *Number Systems: From \(\nN\) to \(\nR\)*, Chapter 4 proved \( \abs{x + y} \le \abs{x} + \abs{y} \) by trapping (@fd3:prp-absolute-value-ordered-field (e)). Each of \( x \) and \( y \) lies between \( \pm \) its absolute value, \( -\abs{x} \le x \le \abs{x} \) (part (c) there); adding the two traps traps \( x + y \) between \( \pm(\abs{x} + \abs{y}) \), and part (d) reads that as the inequality.
 
-That route needs \( x \le \abs{x} \): a comparison between \( x \) itself and a number. For a complex \( z \), "\( z \le \abs{z} \)" compares a complex number with a real one, and \( \nC \) has been given no order in which to make the comparison. Section 1.4 shows that none can be given. So the proof must compare **real** numbers only.
+That route needs \( x \le \abs{x} \): a comparison between \( x \) itself and a number. For a complex \( z \), "\( z \le \abs{z} \)" compares a complex number with a real one, and \( \nC \) has been given no order in which to make the comparison. Section 1.4 shows that no order compatible with the arithmetic of \( \nC \) exists (@prp-complex-not-orderable). So the proof must compare **real** numbers only.
 
 Two kinds of real number are at hand. Moduli are real, and so are real parts. The device that connects them to the arithmetic of \( \nC \) is the identity \( \abs{u}^2 = u\conj{u} \) of @thm-conjugate-properties (c). A modulus is a square root, and square roots do not add well; its square is a product, and products expand. So we will compare squares and then come back.
 
@@ -30,7 +30,7 @@ For every \( u \in \nC \),
 In particular \( \operatorname{Re} u \le \abs{u} \).
 :::
 
-Here \( \abs{\operatorname{Re} u} \) is the absolute value of a real number. By @prp-modulus-of-real it is the same whether it is read as *Number Systems*' absolute value in the ordered field \( \nR \) (@fd3:def-absolute-value-ordered-field) or as the modulus of a complex number that happens to be real, so the lemma has only one reading.
+Here \( \abs{\operatorname{Re} u} \) is the absolute value of a real number. By @prp-modulus-of-real it is the same whether it is read as the absolute value of the ordered field \( \nR \) from *Number Systems: From \(\nN\) to \(\nR\)*, Chapter 4 (@fd3:def-absolute-value-ordered-field) or as the modulus of a complex number that happens to be real, so the lemma has only one reading.
 
 ::: {.idea}
 Every quantity in the lemma is a non-negative real, so compare squares. The square of \( \abs{u} \) is \( x^2 + y^2 \), and the squares of \( \abs{x} \) and \( \abs{y} \) are \( x^2 \) and \( y^2 \), each at most the sum; the square of \( \abs{x} + \abs{y} \) is the sum plus the non-negative cross term \( 2\abs{x}\abs{y} \).
@@ -83,7 +83,7 @@ Expanding the left side with \( \abs{u}^2 = u\conj{u} \) and conjugation of sums
 :::
 
 ::: {.proof}
-Let \( z, w \in \nC \). By @thm-conjugate-properties (c), then (a), then the distributive law of @prp-complex-arithmetic-laws,
+Let \( z, w \in \nC \). By @thm-conjugate-properties (c), then (a), then @prp-complex-arithmetic-laws (c) together with (a) and (b) (distributivity, commutativity, associativity),
 \[
 \begin{aligned}
 \abs{z + w}^2 &= (z + w)\,\conj{(z + w)} = (z + w)(\conj{z} + \conj{w}) \\
@@ -94,7 +94,7 @@ By @thm-conjugate-properties (b) and (a), \( \conj{z\conj{w}} = \conj{z}\,\conj{
 \[
 \abs{z + w}^2 = \abs{z}^2 + 2 \operatorname{Re}(z\conj{w}) + \abs{w}^2 .
 \]
-Every term here is real. By @lem-real-part-at-most-modulus, \( \operatorname{Re}(z\conj{w}) \le \abs{z\conj{w}} \), and by @thm-conjugate-properties (d), \( \abs{z\conj{w}} = \abs{z}\,\abs{\conj{w}} = \abs{z}\,\abs{w} \). Multiplying by \( 2 > 0 \) and adding \( \abs{z}^2 + \abs{w}^2 \) (@fd3:prp-ordered-ring-rules (c), (b)), and expanding the square with @fd3:prp-ring-algebra (d),
+Every term here is real, and sums and products of real numbers are the same in \( \nC \) as in \( \nR \) (@prp-reals-embed-complex), so the inequalities below take place in the ordered field \( \nR \). By @lem-real-part-at-most-modulus, \( \operatorname{Re}(z\conj{w}) \le \abs{z\conj{w}} \), and by @thm-conjugate-properties (d), \( \abs{z\conj{w}} = \abs{z}\,\abs{\conj{w}} = \abs{z}\,\abs{w} \). Adding this inequality to itself (\( 2a = (1 + 1)a = a + a \) by distributivity) and then adding \( \abs{z}^2 + \abs{w}^2 \) (@fd3:prp-ordered-ring-rules (b) twice), and expanding the square with @fd3:prp-ring-algebra (d),
 \[
 \abs{z + w}^2 \le \abs{z}^2 + 2\abs{z}\abs{w} + \abs{w}^2 = \bigl( \abs{z} + \abs{w} \bigr)^2 .
 \]
@@ -110,7 +110,7 @@ The square of the modulus is \( u\conj{u} \), not \( u^2 \). Expanding \( \abs{z
 :::
 
 ::: {.remark}
-The inequality can be strict: for \( z = 1 \) and \( w = -1 \), the left side is \( \abs{0} = 0 \) and the right side is \( 2 \). For real \( z, w \), every modulus in the statement is *Number Systems*' absolute value (@prp-modulus-of-real), and the theorem is @fd3:prp-absolute-value-ordered-field (e), reached by a different route.
+The inequality can be strict: for \( z = 1 \) and \( w = -1 \), the left side is \( \abs{0} = 0 \) and the right side is \( 2 \). For real \( z, w \), every modulus in the statement is the absolute value of *Number Systems: From \(\nN\) to \(\nR\)*, Chapter 4 (@prp-modulus-of-real), and the theorem is @fd3:prp-absolute-value-ordered-field (e), reached by a different route.
 :::
 
 ::: {.check}
@@ -144,9 +144,9 @@ For (a), split \( z \) as \( (z - w) + w \) and apply the theorem; that bounds \
 :::
 
 ::: {.proof}
-(a) Since \( z = (z - w) + w \), @thm-complex-triangle-inequality gives \( \abs{z} \le \abs{z - w} + \abs{w} \), so \( \abs{z} - \abs{w} \le \abs{z - w} \). Exchanging \( z \) and \( w \) gives \( \abs{w} - \abs{z} \le \abs{w - z} \). Moreover \( w - z = (-1)(z - w) \), so by @thm-conjugate-properties (d), \( \abs{w - z} = \abs{-1}\,\abs{z - w} = \abs{z - w} \), where \( \abs{-1} = 1 \) by @prp-modulus-of-real. Let \( t \coloneqq \abs{z} - \abs{w} \in \nR \). We have shown \( t \le \abs{z - w} \) and \( -t \le \abs{z - w} \), that is, \( -\abs{z - w} \le t \le \abs{z - w} \) (@fd3:prp-ordered-ring-rules (a)). By @fd3:prp-absolute-value-ordered-field (d), \( \abs{t} \le \abs{z - w} \).
+(a) Since \( z = (z - w) + w \), @thm-complex-triangle-inequality gives \( \abs{z} \le \abs{z - w} + \abs{w} \), so \( \abs{z} - \abs{w} \le \abs{z - w} \). Exchanging \( z \) and \( w \) gives \( \abs{w} - \abs{z} \le \abs{w - z} \). Moreover \( w - z = (-1)(z - w) \), so by @thm-conjugate-properties (d), \( \abs{w - z} = \abs{-1}\,\abs{z - w} = \abs{z - w} \), where \( \abs{-1} = 1 \) by @prp-modulus-of-real. Let \( t \coloneqq \abs{z} - \abs{w} \in \nR \). We have shown \( t \le \abs{z - w} \) and \( -t \le \abs{z - w} \), that is, \( -\abs{z - w} \le t \le \abs{z - w} \): if \( -t < \abs{z - w} \), then \( -\abs{z - w} < -(-t) = t \) by @fd3:prp-ordered-ring-rules (a) and @fd3:prp-ring-algebra (a), and if \( -t = \abs{z - w} \), then \( -\abs{z - w} = -(-t) = t \). By @fd3:prp-absolute-value-ordered-field (d), \( \abs{t} \le \abs{z - w} \).
 
-(b) By induction on \( n \ge 1 \) (@fd1:ax-induction, applied to the statement for \( n = m + 1 \), \( m \in \nN \)), with the sums defined by appending the last term, as for real sums (@fd2:def-sum-product). For \( n = 1 \), both sides are \( \abs{z_1} \). Suppose the inequality holds for \( n \), and let \( z_1, \dots, z_{n+1} \in \nC \). Then
+(b) By induction on \( n \ge 1 \) (@fd1:ax-induction, through @fd3:cor-omega-identification (b), applied to the statement for \( n = m + 1 \), \( m \in \nN \)), with the sums defined by appending the last term, as for real sums (@fd2:def-sum-product). For \( n = 1 \), both sides are \( \abs{z_1} \). Suppose the inequality holds for \( n \), and let \( z_1, \dots, z_{n+1} \in \nC \). Then
 \[
 \begin{aligned}
 \Bigl| \sum_{k=1}^{n+1} z_k \Bigr| &= \Bigl| \sum_{k=1}^{n} z_k + z_{n+1} \Bigr| \le \Bigl| \sum_{k=1}^{n} z_k \Bigr| + \abs{z_{n+1}} \\
@@ -241,13 +241,13 @@ The move is **square the modulus**: compare the squares, which are algebra, and 
 
 Substitute \( \abs{z}^2 = 1 \) into both lines. The first becomes \( 1 - z\conj{w} - \conj{z}w + \abs{w}^2 \), and so does the second, since \( \abs{z}^2\abs{w}^2 = \abs{w}^2 \). So \( \abs{z - w}^2 = \abs{1 - \conj{z}w}^2 \). Both \( \abs{z - w} \) and \( \abs{1 - \conj{z}w} \) are non-negative, and non-negative reals with equal squares are equal (comparing squares). Hence \( \abs{z - w} = \abs{1 - \conj{z}w} \).
 
-(For the record, the given lines: \( (z - w)(\conj{z} - \conj{w}) = z\conj{z} - z\conj{w} - w\conj{z} + w\conj{w} \), and \( \conj{1 - \conj{z}w} = 1 - z\conj{w} \), so \( (1 - \conj{z}w)(1 - z\conj{w}) = 1 - z\conj{w} - \conj{z}w + (z\conj{z})(w\conj{w}) \).)
+(For the record, the given lines. Conjugation respects differences: \( \conj{-v} = \conj{(-1)v} = \conj{-1}\,\conj{v} = -\conj{v} \) by @thm-conjugate-properties (b), @prp-modulus-of-real and @fd3:prp-ring-algebra (c), so with (a), \( \conj{u - v} = \conj{u} - \conj{v} \); and \( \conj{1} = 1 \) by @prp-modulus-of-real. Then \( (z - w)(\conj{z} - \conj{w}) = z\conj{z} - z\conj{w} - w\conj{z} + w\conj{w} \), and \( \conj{1 - \conj{z}w} = 1 - z\conj{w} \), so \( (1 - \conj{z}w)(1 - z\conj{w}) = 1 - z\conj{w} - \conj{z}w + (z\conj{z})(w\conj{w}) \).)
 :::
 
 ::: {#exr-triangle-inequality-b3}
 [B3]
 
-Prove that \( \abs{z} \le \abs{\operatorname{Re} z} + \abs{\operatorname{Im} z} \le \sqrt 2 \, \abs{z} \) for every \( z \in \nC \), and find a non-zero \( z \) for which each inequality is an equality.
+Prove that \( \abs{z} \le \abs{\operatorname{Re} z} + \abs{\operatorname{Im} z} \le \sqrt 2 \, \abs{z} \) for every \( z \in \nC \), and, for each of the two inequalities, find a non-zero \( z \) for which it is an equality.
 :::
 
 ::: {.solution}
@@ -333,11 +333,13 @@ thm-complex-triangle-inequality (claim): |z - w| is the distance between the poi
 lem-real-part-at-most-modulus (claim): comparing squares, for p, q >= 0 in R, p <= q iff p^2 <= q^2, and p = q iff p^2 = q^2 | fd3:prp-ordered-ring-rules (g) with (O1) of fd3:def-ordered-ring-and-field; inline
 lem-real-part-at-most-modulus (proof): |u|^2 = x^2 + y^2 and |u| >= 0 for u = x + yi | def-conjugate-modulus with fd3:prp-cof-square-roots (the root squares back)
 lem-real-part-at-most-modulus (proof): a product of non-negative reals is non-negative; 2 > 0 in R | (O4) of fd3:def-ordered-ring-and-field, fd3:prp-ring-algebra (b) for a zero factor; fd3:prp-ordered-ring-rules (b), (e); inline
-thm-complex-triangle-inequality (proof): Re of a complex number and |z|, |w| are reals, so the displayed inequalities are in the ordered field R | fd3:thm-reals-complete-ordered-field (R is an ordered field)
-thm-complex-triangle-inequality (proof): (z + w)(conj z + conj w) expands into four terms | prp-complex-arithmetic-laws (distributivity, commutativity), cited
+thm-complex-triangle-inequality (proof): Re of a complex number and |z|, |w| are reals, and sums and products of reals agree in C and R, so the displayed inequalities are in the ordered field R | fd3:thm-reals-complete-ordered-field (R is an ordered field); prp-reals-embed-complex, cited
+thm-complex-triangle-inequality (proof): doubling Re(z conj w) <= |z||w| as a + a, 2a = (1 + 1)a = a + a | fd3:prp-ordered-ring-rules (b); distributivity (F9) in R; inline
+thm-complex-triangle-inequality (proof): (z + w)(conj z + conj w) expands into four terms | prp-complex-arithmetic-laws (a)-(c) (distributivity, commutativity, associativity), cited
 thm-complex-triangle-inequality (claim): pointer to the linear algebra volumes (inner product spaces, same route) | prose comparison; nothing depends on it
 cor-complex-triangle-variants (proof): w - z = (-1)(z - w); z - (-w) = z + w | fd3:prp-ring-algebra (a), (c) in the commutative ring C (prp-complex-arithmetic-laws)
-cor-complex-triangle-variants (proof): finite sums in C by appending the last term; induction from n = 1 | fd2:def-sum-product used as a template (its recursion uses only fd2:thm-recursion and the operations of C); fd1:ax-induction on n - 1
+cor-complex-triangle-variants (proof): from -t <= |z - w| to -|z - w| <= t, both cases | fd3:prp-ordered-ring-rules (a) with -(-t) = t, fd3:prp-ring-algebra (a), cited
+cor-complex-triangle-variants (proof): finite sums in C by appending the last term; induction from n = 1 | fd2:def-sum-product used as a template (its recursion uses only fd2:thm-recursion and the operations of C); fd1:ax-induction through fd3:cor-omega-identification (b), on m = n - 1
 cor-complex-triangle-variants (claim): Chapter 5 uses (b) and (c) for polynomial growth | prose pointer (F4.5, lem-complex-polynomial-growth); nothing depends on it
 cor-complex-triangle-variants (example): quick check values |5 - 3i| = |5 + 3i| = sqrt 34, 2 <= sqrt 34 | inline; verify/ch01/cor-complex-triangle-variants.py
 thm-complex-triangle-inequality (example): quick check |3 + 4i| + |-3 + 4i| = 10, |8i| = 8; warning (2i)^2 = -4, |2i|^2 = 4 | inline; verify/ch01/thm-complex-triangle-inequality.py
@@ -345,7 +347,7 @@ lem-real-part-at-most-modulus (example): values for 3 - 4i, 2, -1, 2i | inline; 
 exr-triangle-inequality-a1 (solution): cross term 0, 25 <= 49 for z = 3, w = 4i | verify/ch01/exr-triangle-inequality-a1.py
 exr-triangle-inequality-b1 (solution): x = |u| iff y = 0 and x >= 0; (1 + i)(2 - 2i) = 4, |3 + 3i| = 3 sqrt 2 | fd3:prp-ordered-ring-rules (e), fd3:prp-cof-square-roots, cited; verify/ch01/exr-triangle-inequality-b1.py
 exr-triangle-inequality-b1 (solution): pointer to the n-term equality case in the linear algebra volumes | prose comparison; nothing depends on it
-exr-triangle-inequality-b2 (solution): the two expansions; conj(1 - conj(z) w) = 1 - z conj(w) | thm-conjugate-properties (a)-(c), cited; verify/ch01/exr-triangle-inequality-b2.py
+exr-triangle-inequality-b2 (solution): the two expansions; conj(u - v) = conj u - conj v; conj(1) = 1; conj(1 - conj(z) w) = 1 - z conj(w) | thm-conjugate-properties (a)-(c), prp-modulus-of-real, fd3:prp-ring-algebra (c) in C, cited; verify/ch01/exr-triangle-inequality-b2.py
 exr-triangle-inequality-b3 (solution): (sqrt 2)^2 = 2, sqrt 2 >= 0; 2(x^2 + y^2) - (|x| + |y|)^2 = (|x| - |y|)^2 | fd3:prp-cof-square-roots; inline; verify/ch01/exr-triangle-inequality-b3.py
 exr-triangle-inequality-c2 (solution): 1 - |z|^2 - |w|^2 + |z|^2|w|^2 = (1 - |z|^2)(1 - |w|^2) | inline; verify/ch01/exr-triangle-inequality-c2.py
 exr-triangle-inequality-c2 (solution): the disc map remark | prose only; nothing depends on it
