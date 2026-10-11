@@ -47,7 +47,7 @@ Read the clauses in three groups.
 
 - **(F1)–(F4)** speak only of addition. The order and the grouping of a sum do not matter, \( 0 \) changes nothing when added, and each element can be undone by its negative. Subtraction is built from these.
 - **(F5)–(F8)** repeat those four statements for multiplication, with one change: an inverse is demanded only of a **non-zero** element. So division is defined only by non-zero elements, and no clause ever calls for division by \( 0 \). Clause (F7) also demands that the two neutral elements differ.
-- **(F9)**, the distributive law, is the single bridge between the two operations; multiplying out brackets rests on it alone.
+- **(F9)**, the distributive law, is the single bridge between the two operations: it alone mentions both, and multiplying out brackets rests on it, with (F6) for a bracket on the left.
 
 Mind the order of the quantifiers in (F3): there is **one** element \( 0 \) that works **for every** \( a \). The weaker reading, "each \( a \) has its own \( z \) with \( a + z = a \)", would let \( z \) change with \( a \), and it is not what (F3) says. In (F4) the order is the other way round, as it has to be: the negative \( -a \) depends on \( a \).
 
@@ -64,7 +64,7 @@ Is \( \nQ_{>0} \), the set of positive rationals with the usual \( + \) and \( \
 :::
 
 ::: {.solution}
-No. Addition and multiplication do map \( \nQ_{>0} \times \nQ_{>0} \) into \( \nQ_{>0} \), but (F3) fails. An element \( z \in \nQ_{>0} \) with \( 1 + z = 1 \) would satisfy \( z = 0 \), by subtracting \( 1 \) in \( \nQ \), and \( 0 \notin \nQ_{>0} \). (Once (F3) fails, (F4) cannot even be stated.)
+No. Addition and multiplication do map \( \nQ_{>0} \times \nQ_{>0} \) into \( \nQ_{>0} \) (@fd3:thm-rationals-ordered-field, with (P1) of @fd3:prp-order-from-positives). But (F3) fails. An element \( z \in \nQ_{>0} \) with \( 1 + z = 1 \) would satisfy \( z = 0 + z = ((-1) + 1) + z = (-1) + (1 + z) = (-1) + 1 = 0 \) in the field \( \nQ \), by (F1), (F3), (F4) and (F2), and \( 0 \notin \nQ_{>0} \). (Once (F3) fails, (F4) cannot even be stated.)
 :::
 
 ## Rules that hold in every field
@@ -115,17 +115,9 @@ b &= b \cdot 1 = b(a a^{-1}) = (ba) a^{-1} = (ab) a^{-1} \\
 
 (e) By @fd3:prp-ring-algebra (c) with \( a = 1 \), \( (-1)b = -(1 \cdot b) \) for every \( b \in F \); and \( 1 \cdot b = b \cdot 1 = b \) by (F6) and (F7). Applied to \( b = a \), this gives \( (-1)a = -a \).
 
-(f) Suppose \( ab = 0 \). If \( a = 0 \) there is nothing to prove, so suppose \( a \ne 0 \). By (F8), \( a^{-1} \) exists. Then, by (F7), (F8), (F6) and (F5),
-\[
-b = b \cdot 1 = b(a a^{-1}) = (ab) a^{-1} = 0 \cdot a^{-1} = 0,
-\]
-where the third equality uses \( ba = ab \) and the last is (d). So \( a = 0 \) or \( b = 0 \).
+(f) Suppose \( ab = 0 \). If \( a = 0 \) there is nothing to prove, so suppose \( a \ne 0 \). By (F8), \( a \) is a unit of \( F \) (@fd3:def-ring-unit), and a unit is not a zero divisor (the paragraph after @fd3:def-ring-unit): from \( ab = 0 \) it follows that \( b = 0 \). So \( a = 0 \) or \( b = 0 \).
 
-(g) Let \( b \ne 0 \) and \( d \ne 0 \). If \( bd = 0 \), then (f) would give \( b = 0 \) or \( d = 0 \); so \( bd \ne 0 \). Reordering the four factors by (F5) and (F6), and using (F8) and (F7),
-\[
-(bd)(b^{-1} d^{-1}) = (b b^{-1})(d d^{-1}) = 1 \cdot 1 = 1,
-\]
-so \( b^{-1} d^{-1} \) satisfies the defining equation of \( (bd)^{-1} \), and \( (bd)^{-1} = b^{-1} d^{-1} \) by (c). Next, \( b^{-1} \ne 0 \): otherwise \( 1 = b b^{-1} = b \cdot 0 = 0 \) by (d) and (F6), against (F7). Since \( b^{-1} b = b b^{-1} = 1 \) by (F6), the element \( b \) satisfies the defining equation of \( (b^{-1})^{-1} \), and \( (b^{-1})^{-1} = b \) by (c).
+(g) Let \( b \ne 0 \) and \( d \ne 0 \). If \( bd = 0 \), then (f) would give \( b = 0 \) or \( d = 0 \); so \( bd \ne 0 \). By (F8), \( b \) and \( d \) are units of \( F \). A product of units is a unit, with \( (bd)^{-1} = b^{-1} d^{-1} \), and the inverse of a unit is a unit, with \( (b^{-1})^{-1} = b \) (the closure paragraph after @fd3:def-ring-unit). Here \( b^{-1} \ne 0 \), since \( 1 \ne 0 \) by (F7) and so \( 0 \) is not a unit (the paragraph "Why this definition" after @fd3:def-ring-unit); thus \( (b^{-1})^{-1} \) is also the inverse that (F8) supplies, by (c).
 
 For the sum, multiply out with (F9) and reorder with (F5) and (F6):
 \[
@@ -141,7 +133,7 @@ by (F8) and (F7) and then (F6). Multiplying both ends by \( (bd)^{-1} \), and us
 From now on we use \( 0 + a = a \) and \( 1 \cdot a = a \) silently; they follow from (F1), (F3), (F6) and (F7). The larger gain is that any school identity whose proof uses only (F1)–(F9) is true in every field: for instance \( (a + b)^2 = a^2 + 2ab + b^2 \), where \( a^2 \coloneqq aa \) and \( 2 \coloneqq 1 + 1 \) (@fd3:prp-ring-algebra (d)), and \( (-a)(-b) = ab \) (@fd3:prp-ring-algebra (c)). Part (f) is the rule we will lean on most: a product of non-zero elements is non-zero.
 
 ::: {.remark}
-Part (g), with the uniqueness of inverses in (c), is the content of @fd3:lem-field-fraction-rules (a) and (b), which *Number Systems* proved for every field when it studied ordered fields. We have proved it here rather than cite it, so that nothing in this section depends on that chapter.
+Part (g), with the uniqueness of inverses in (c), is the content of @fd3:lem-field-fraction-rules (a) and (b), which *Number Systems* proved for every field when it studied ordered fields. Part (f) and the inverse identities of (g) come from the paragraphs on units after @fd3:def-ring-unit; the two fraction formulas are proved here rather than cited from @fd3:lem-field-fraction-rules, so that no theorem of this section rests on that chapter; only the examples \( \nR \) and \( \nC \) below lean on it.
 :::
 
 ::: {.check}
@@ -226,7 +218,7 @@ d(ax + by) - b(cx + dy)
 \]
 while the right-hand sides give \( de - bf = ed - bf \). So \( Dx = ed - bf \). In the same way, \( a(cx + dy) - c(ax + by) = (ad - bc)y = Dy \) and the right-hand sides give \( af - ce \), so \( Dy = af - ce \). By (a), applied twice with the non-zero coefficient \( D \), \( x = D^{-1}(ed - bf) \) and \( y = D^{-1}(af - ce) \). These are the displayed values, since \( D^{-1} u = u D^{-1} = u / D \) by (F6).
 
-*Existence.* Put \( x_0 \coloneqq (ed - bf) D^{-1} \) and \( y_0 \coloneqq (af - ce) D^{-1} \). By (F5) and (F9), and then multiplying out,
+*Existence.* Put \( x_0 \coloneqq (ed - bf) D^{-1} \) and \( y_0 \coloneqq (af - ce) D^{-1} \). By (F5), (F6) and (F9), multiplying out and reordering with (F5) and (F6), and using @fd3:prp-ring-algebra (c) for the signs,
 \[
 \begin{aligned}
 a x_0 + b y_0
@@ -263,7 +255,27 @@ Explain why \( \nQ \), \( \nR \) and \( \nC \), with their usual addition and mu
 For \( \nQ \), built as classes of pairs of integers, @fd3:thm-rationals-field proves that it is a field in the sense of @fd3:def-commutative-ring-and-field. For \( \nR \), built as classes of Cauchy sequences of rationals, @fd3:thm-reals-field does the same; there \( 1 \ne 0 \) is part of the field clause. For \( \nC \coloneqq \nR \times \nR \), @thm-complex-numbers-field proves it, resting on the arithmetic laws @prp-complex-arithmetic-laws and the inverse @prp-complex-inverse. In each case the remark after @def-field turns "field in the sense of *Number Systems*" into "field in the sense of @def-field", with the same zero, one, negatives and inverses.
 :::
 
-These three are infinite. The next section produces finite fields, and Section 2.3 produces fields strictly between \( \nQ \) and \( \nR \).
+These three are infinite: each contains an injective image of the infinite set \( \nN \) (@fd2:exm-hilbert-hotel), through @fd3:prp-naturals-embed-integers (a), @fd3:prp-integers-embed-rationals, @fd3:thm-rational-embedding (b) and @prp-reals-embed-complex. A finite set has only finite subsets (@fd2:prp-subset-finite). The next section produces finite fields, and Section 2.3 produces fields strictly between \( \nQ \) and \( \nR \).
+
+Changing an operation on a familiar set can give a new field; deciding means checking every clause.
+
+::: {#exm-field-negated-product}
+[A New Multiplication on \( \nQ \)]
+
+Show that \( \nQ \), with the usual addition and the new multiplication \( a \odot b \coloneqq -(ab) \), is a field, and find its one.
+:::
+
+::: {.solution}
+Addition is that of \( \nQ \), so (F1)–(F4) hold with the usual \( 0 \) and negatives. The new product is a function \( \nQ \times \nQ \to \nQ \). Each identity below is computed in the field \( \nQ \) (@exm-fields), the signs by @fd3:prp-ring-algebra (c). For all \( a, b, c \in \nQ \):
+
+- (F5): \( (a \odot b) \odot c = -\big((-(ab))c\big) = abc = -\big(a(-(bc))\big) = a \odot (b \odot c) \).
+- (F6): \( -(ab) = -(ba) \).
+- (F9): \( a \odot (b + c) = -(ab + ac) = -(ab) + (-(ac)) = a \odot b + a \odot c \), since \( -(u + v) = (-1)(u + v) = -u + (-v) \) by @thm-field-basic-properties (e).
+- (F7): the one is \( -1 \), since \( a \odot (-1) = -(a(-1)) = -(-a) = a \), and \( -1 \ne 0 \) (otherwise \( 1 = -(-1) = -0 = 0 \)).
+- (F8): a non-zero \( a \) has the inverse \( a^{-1} \), the usual one, since \( a \odot a^{-1} = -(aa^{-1}) = -1 \), the one of this field.
+
+The one of a field need not be the number \( 1 \).
+:::
 
 ## Non-examples {#non-examples}
 
@@ -276,7 +288,7 @@ For each of the following, with its usual operations, name the clauses of @def-f
 :::
 
 ::: {.solution}
-(i) *Number Systems* checked the minimal change from \( \nN \) to \( \nZ \): \( \nN \) satisfies (F1)–(F3), (F5)–(F7) and (F9), and (F4) fails at \( a = 1 \), since \( 1 + x \ne 0 \) for every \( x \in \nN \) (the non-example after @fd3:def-commutative-ring-and-field). The condition \( 1 \ne 0 \) holds, since it holds in \( \nZ \supseteq \nN \) (@fd3:thm-integers-commutative-ring). Clause (F8) fails too, at \( a = 2 \): a natural number \( x \) with \( 2x = 1 \) would be an integer with \( 2x = 1 \), and there is none (@fd3:cor-integers-even-odd (a)).
+(i) *Number Systems* checked the minimal change from \( \nN \) to \( \nZ \): \( \nN \) satisfies (F1)–(F3), (F5)–(F7) and (F9), and (F4) fails at \( a = 1 \), since \( 1 + x \ne 0 \) for every \( x \in \nN \) (the non-example after @fd3:def-commutative-ring-and-field). The condition \( 1 \ne 0 \) holds, since it holds in \( \nZ \) (@fd3:thm-integers-commutative-ring), and \( \nN \subseteq \nZ \) with \( \iota \) injective (@fd3:prp-naturals-embed-integers (a)). Clause (F8) fails too, at \( a = 2 \): a natural number \( x \) with \( 2x = 1 \) would be an integer with \( 2x = 1 \) (\( \iota \) preserves products, @fd3:prp-naturals-embed-integers (a)), and there is none (@fd3:cor-integers-even-odd (a)).
 
 (ii) \( \nZ \) is a commutative ring with \( 1 \ne 0 \) (@fd3:thm-integers-commutative-ring), so (F1)–(F7) and (F9) hold. Only (F8) fails, at \( a = 2 \), by the same parity argument.
 
@@ -310,7 +322,7 @@ Order is not part of a field. Clauses (F1)–(F9) say nothing about \( < \), so 
 
 ::: {.enumerate options="label=(\alph*)"}
 1. State the definition of a field.
-2. Which clause of @def-field does each of \( \nN \), \( \nZ \) and the zero ring \( \{0\} \) fail?
+2. Which clauses of @def-field does each of \( \nN \), \( \nZ \) and the zero ring \( \{0\} \) fail?
 3. True or false: in every field, \( ab = ac \) implies \( b = c \). Justify your answer.
 4. Which parts of @thm-field-basic-properties fail in the commutative ring \( \nZ/6\nZ \)? Give a witness for each.
 5. Use @prp-field-linear-equation to solve \( 3x + 2y = 1 \), \( x - y = 2 \) in \( \nQ \).
@@ -324,7 +336,7 @@ Order is not part of a field. Clauses (F1)–(F9) say nothing about \( < \), so 
 
 (c) False. With \( a = 0 \), \( b = 1 \), \( c = 2 \) in \( \nQ \): \( 0 \cdot 1 = 0 = 0 \cdot 2 \), but \( 1 \ne 2 \). Cancellation needs \( a \ne 0 \) (@thm-field-basic-properties (b)).
 
-(d) Multiplicative cancellation in (b) fails: \( [2][1] = [2] \) and \( [2][4] = [8] = [2] \), but \( [1] \ne [4] \), since \( 6 \) does not divide \( 4 - 1 = 3 \). Part (f) fails: \( [2][3] = [0] \) with \( [2], [3] \ne [0] \). The first clause of (g) fails for the same pair: \( [2] \ne [0] \), \( [3] \ne [0] \), but \( [2][3] = [0] \). The uniqueness of inverses in (c) is not violated, but for \( [2] \) it says nothing, since \( [2] \) has no inverse (@exm-field-nonexamples (iv)). Parts (a), (d), (e) and additive cancellation hold, since they hold in every commutative ring (@fd3:prp-ring-algebra).
+(d) Multiplicative cancellation in (b) fails: \( [2][1] = [2] \) and \( [2][4] = [8] = [2] \), but \( [1] \ne [4] \), since \( 6 \) does not divide \( 4 - 1 = 3 \). Part (f) fails: \( [2][3] = [0] \) with \( [2], [3] \ne [0] \). The first clause of (g) fails for the same pair: \( [2] \ne [0] \), \( [3] \ne [0] \), but \( [2][3] = [0] \). The uniqueness of inverses in (c) is not violated, but for \( [2] \) it says nothing, since \( [2] \) has no inverse (@exm-field-nonexamples (iv)). Parts (a), (d) and (e) hold in every commutative ring (@fd3:prp-ring-algebra (a)–(c), with (F6), (F7)), and so does additive cancellation, whose proof in (b) uses only (F1)–(F4).
 
 (e) Here \( a = 3 \), \( b = 2 \), \( c = 1 \), \( d = -1 \), \( e = 1 \), \( f = 2 \), and \( ad - bc = -3 - 2 = -5 \ne 0 \). So
 \[
@@ -353,9 +365,9 @@ Let \( F \) be a field and \( a, b, x \in F \). Prove:
 
 (b) If \( -a = 0 \), then \( a = -(-a) = -0 = 0 \), by @fd3:prp-ring-algebra (a) and \( 0 + 0 = 0 \); so \( -a \ne 0 \). By @fd3:prp-ring-algebra (c) and (F8), \( (-a)\big(-(a^{-1})\big) = a a^{-1} = 1 \). So \( -(a^{-1}) \) satisfies the defining equation of \( (-a)^{-1} \), and the two are equal by @thm-field-basic-properties (c).
 
-(c) By (F7), (F9) and @fd3:prp-ring-algebra (c), \( x(x - 1) = xx + x(-1) = x^2 - x \). So \( x^2 = x \) if and only if \( x(x - 1) = 0 \), adding \( -x \) or \( x \) to both sides. By @thm-field-basic-properties (f), \( x(x - 1) = 0 \) gives \( x = 0 \) or \( x - 1 = 0 \), that is, \( x = 1 \). Conversely, \( 0^2 = 0 \) by (d), and \( 1^2 = 1 \) by (F7).
+(c) By (F7), (F9) and @fd3:prp-ring-algebra (c), \( x(x - 1) = xx + x(-1) = x^2 - x \). So \( x^2 = x \) if and only if \( x(x - 1) = 0 \), adding \( -x \) or \( x \) to both sides. By @thm-field-basic-properties (f), \( x(x - 1) = 0 \) gives \( x = 0 \) or \( x - 1 = 0 \), that is, \( x = 1 \). Conversely, \( 0^2 = 0 \) by @thm-field-basic-properties (d), and \( 1^2 = 1 \) by (F7).
 
-(d) By (F7) and (F9), \( x(x + 1) = x^2 + x \). So \( x^2 + x = 0 \) gives \( x = 0 \) or \( x + 1 = 0 \), and the latter means \( x = -1 \) by the uniqueness of negatives. Conversely, \( 0^2 + 0 = 0 \), and \( (-1)^2 + (-1) = 1 + (-1) = 0 \), since \( (-1)(-1) = 1 \cdot 1 = 1 \) by @fd3:prp-ring-algebra (c).
+(d) By (F7) and (F9), \( x(x + 1) = x^2 + x \). So \( x^2 + x = 0 \) means \( x(x + 1) = 0 \), which by @thm-field-basic-properties (f) gives \( x = 0 \) or \( x + 1 = 0 \), and the latter means \( x = -1 \) by the uniqueness of negatives (@thm-field-basic-properties (c)). Conversely, \( 0^2 + 0 = 0 \) by @thm-field-basic-properties (d) and (F3), and \( (-1)^2 + (-1) = 1 + (-1) = 0 \), since \( (-1)(-1) = 1 \cdot 1 = 1 \) by @fd3:prp-ring-algebra (c).
 :::
 
 ::: {#exr-field-axioms-b2}
@@ -456,7 +468,7 @@ Is the claim true? Does the proof prove it? If not, name the line that fails, th
 ::: {.solution}
 The **claim is true**: it is @exr-field-axioms-b1 (c).
 
-The **proof is wrong**, at line (2). Dividing by \( x \) means multiplying by \( x^{-1} \), which (F8) supplies only when \( x \ne 0 \). The proof never treats the case \( x = 0 \): this is a missing case, entry (N7) of @fd1:exm-not-allowed-catalogue. Line (3) then states "\( x = 0 \)" as an option that no line produced.
+The **proof is wrong**, at line (2). Dividing by \( x \) means multiplying by \( x^{-1} \), which (F8) supplies only when \( x \ne 0 \). No line provides \( x \ne 0 \), so the step cites an unavailable "fact", cancellation of \( x \) without \( x \ne 0 \): entry (N9) of @fd1:exm-not-allowed-catalogue. Line (3) is a correct weakening of (2) by \( \rulename{\vee I} \); the proof fails only at (2).
 
 A counterexample to the step: \( x = 0 \) satisfies \( x^2 = x \), and "\( x = 1 \)" is false for it, in every field. The step's conclusion fails, although the claim's does not.
 
@@ -467,9 +479,11 @@ A repair: \( x^2 = x \) gives \( x(x - 1) = 0 \), and @thm-field-basic-propertie
 def-field (claim): (hook before it) 2 = 1 + 1 and 5y = 5 arithmetic in Q | inline school arithmetic, an illustration before any definition
 def-field (claim): (hook before it) 2x = 1 has no integer solution | fd3:cor-integers-even-odd (a), with 1 = 2 * 0 + 1, cited
 def-field (claim): (remark after it) the clauses of def-field and fd3:def-commutative-ring-and-field correspond one to one, 1 != 0 filed in (F7) here | inline comparison of the two clause lists (restatement; atlas label-triage records def-field as same as fd3:def-commutative-ring-and-field)
-def-field (claim): (quick check after it) z in Q_{>0} with 1 + z = 1 forces z = 0 | cancellation in the field Q (fd3:thm-rationals-field with thm-field-basic-properties (b)), inline
+def-field (claim): (quick check after it) Q_{>0} closed under +, * | fd3:thm-rationals-ordered-field, (P1) of fd3:prp-order-from-positives, cited
+def-field (claim): (quick check after it) 1 + z = 1 forces z = 0 | (F1)-(F4) in Q (fd3:thm-rationals-field), inline
 thm-field-basic-properties (proof): parts (a), (c) negatives, (d), (e) from the commutative-ring algebra | fd3:prp-ring-algebra (a)-(c), cited, via the remark after def-field
 thm-field-basic-properties (proof): uniqueness of inverses of units | fd3:def-ring-unit and its well-definedness paragraph, cited
+thm-field-basic-properties (proof): (f) a unit is not a zero divisor; (g) bd != 0, (bd)^{-1} = b^{-1}d^{-1}, (b^{-1})^{-1} = b, b^{-1} != 0 | (f) of this theorem; fd3:def-ring-unit, its closure paragraph, the paragraph 'A unit is not a zero divisor' and 'Why this definition' (0 is not a unit when 1 != 0), cited
 thm-field-basic-properties (claim): (aftermath) 0 + a = a, 1 * a = a; (a + b)^2, (-a)(-b) = ab | (F1), (F3), (F6), (F7); fd3:prp-ring-algebra (c), (d), cited
 thm-field-basic-properties (claim): (remark after it) (g) is fd3:lem-field-fraction-rules (a), (b) | comparison only (F3.9 soft citation); nothing rests on it
 cor-field-squares-equal (proof): (x - y)(x + y) = x^2 - y^2 | (F9), (F6), (F4), fd3:prp-ring-algebra (c), inline
@@ -479,6 +493,9 @@ cor-field-squares-equal (claim): (remark after it) the case of C | prp-complex-s
 prp-field-linear-equation (proof): expanding d(ax + by) - b(cx + dy) and the existence identities | (F5), (F6), (F9), fd3:prp-ring-algebra (c), inline; verify/ch02/prp-field-linear-equation.py (identity checked on a grid of rationals)
 prp-field-linear-equation (claim): (aftermath) x + y = 1, x + y = 0 inconsistent; (t, -t) solutions, t = 0, 1 distinct | inline, (F7)
 exm-fields (solution): Q, R, C are fields | fd3:thm-rationals-field, fd3:thm-reals-field (F3.10 soft citation, example), thm-complex-numbers-field, prp-complex-arithmetic-laws, prp-complex-inverse (F4.1 see edge, example only), cited
+exm-fields (claim): (after it) Q, R, C infinite | fd3:prp-naturals-embed-integers (a), fd3:prp-integers-embed-rationals, fd3:thm-rational-embedding (b) (F3.10 soft; reported), prp-reals-embed-complex, fd2:exm-hilbert-hotel, fd2:prp-subset-finite, cited
+exm-field-negated-product (solution): (F1)-(F9) for a o b = -(ab) | in Q (exm-fields), fd3:prp-ring-algebra (a), (c), thm-field-basic-properties (e); verify/ch02/exm-field-negated-product.py
+exm-field-nonexamples (solution): N inside Z | fd3:prp-naturals-embed-integers (a), cited (blueprint names (c); reported)
 exm-field-nonexamples (solution): N satisfies (F1)-(F3), (F5)-(F7), (F9), fails (F4) at 1 | the non-example paragraph after fd3:def-commutative-ring-and-field (F3.2), quoted, not reproved
 exm-field-nonexamples (solution): Z is a commutative ring with 1 != 0 | fd3:thm-integers-commutative-ring (F3.2; not in the blueprint's allowed list, which names F3.2's def-commutative-ring-and-field and prp-ring-algebra; reported)
 exm-field-nonexamples (solution): Z/6Z commutative ring, [1] != [0], [2][3] = [0], 6 does not divide 2, 3 | fd3:thm-integers-mod-n-ring (a), (c), fd3:exm-integers-mod-six, cited; fd3:prp-divisibility-rules-integers (e); verify/ch02/exm-field-nonexamples.py
@@ -488,5 +505,5 @@ exr-field-axioms-a1 (solution): witnesses in Z/6Z; the system 3x + 2y = 1, x - y
 exr-field-axioms-b1 (solution): -0 = 0 | (F3) with uniqueness of negatives, inline
 exr-field-axioms-b3 (solution): the axioms for (Q, +, odot), inverse 1/(4a); (F9) failing for ab + 1 | computed in the field Q (exm-fields); verify/ch02/exr-field-axioms-b3.py
 exr-field-axioms-b3 (solution): Section 2.4 B3 shows (Q, +, odot) is isomorphic to Q | prose pointer within the chapter (exr-field-homomorphisms-b3); nothing rests on it
-exr-field-axioms-c2 (solution): (N7) | fd1:exm-not-allowed-catalogue, cited
+exr-field-axioms-c2 (solution): (N9) | fd1:exm-not-allowed-catalogue, cited
 -->

@@ -28,7 +28,7 @@ items:
   kind: check
   file: 01-field-axioms.md
   line: 62
-  hash: 362d0d0e2732
+  hash: 4bf338127ce9
   verdicts:
   - stage: S5a
     verdict: correct
@@ -81,7 +81,7 @@ items:
   kind: proof
   file: 01-field-axioms.md
   line: 97
-  hash: a274828e142d
+  hash: e4381a29175f
   verdicts:
   - stage: S5a
     verdict: correct
@@ -106,7 +106,7 @@ items:
 - key: check:01-field-axioms:2
   kind: check
   file: 01-field-axioms.md
-  line: 147
+  line: 139
   hash: 2d7412c8c150
   verdicts:
   - stage: S5a
@@ -126,7 +126,7 @@ items:
 - key: cor-field-squares-equal
   kind: cor
   file: 01-field-axioms.md
-  line: 161
+  line: 153
   hash: 33cd81f0b948
   verdicts:
   - stage: S5a
@@ -148,7 +148,7 @@ items:
 - key: proof:cor-field-squares-equal
   kind: proof
   file: 01-field-axioms.md
-  line: 171
+  line: 163
   hash: b56e7e783860
   verdicts:
   - stage: S5a
@@ -171,7 +171,7 @@ items:
 - key: prp-field-linear-equation
   kind: prp
   file: 01-field-axioms.md
-  line: 189
+  line: 181
   hash: cf5764e406ed
   verdicts:
   - stage: S5a
@@ -192,8 +192,8 @@ items:
 - key: proof:prp-field-linear-equation
   kind: proof
   file: 01-field-axioms.md
-  line: 214
-  hash: 2a4ff1557264
+  line: 206
+  hash: 328e3aca32c1
   verdicts:
   - stage: S5a
     verdict: correct
@@ -216,7 +216,7 @@ items:
 - key: exm-fields
   kind: exm
   file: 01-field-axioms.md
-  line: 256
+  line: 248
   hash: 5ea005057906
   verdicts:
   - stage: S5a
@@ -237,11 +237,17 @@ items:
     evidence: 01:256-264. Checked fd3:thm-rationals-field, fd3:thm-reals-field (with 1≠0 coming from thm-reals-commutative-ring)
       and thm-complex-numbers-field (stated in fd3's form). All are soft citations in an example, which
       the blueprint allows.
+- key: exm-field-negated-product
+  kind: exm
+  file: 01-field-axioms.md
+  line: 262
+  hash: 8580d4016920
+  verdicts: []
 - key: exm-field-nonexamples
   kind: exm
   file: 01-field-axioms.md
-  line: 272
-  hash: 59a28d5c8072
+  line: 284
+  hash: 9ae02296e660
   verdicts:
   - stage: S5a
     verdict: correct
@@ -264,8 +270,8 @@ items:
 - key: exr-field-axioms-a1
   kind: exr
   file: 01-field-axioms.md
-  line: 308
-  hash: 2d2b402fd5d5
+  line: 320
+  hash: 1d054f023754
   verdicts:
   - stage: S5a
     verdict: minor
@@ -295,8 +301,8 @@ items:
 - key: exr-field-axioms-b1
   kind: exr
   file: 01-field-axioms.md
-  line: 338
-  hash: e850d985db32
+  line: 350
+  hash: bf10b6f05ef7
   verdicts:
   - stage: S5a
     verdict: minor
@@ -326,7 +332,7 @@ items:
 - key: exr-field-axioms-b2
   kind: exr
   file: 01-field-axioms.md
-  line: 361
+  line: 373
   hash: 3b81b8c24b7a
   verdicts:
   - stage: S5a
@@ -354,7 +360,7 @@ items:
 - key: exr-field-axioms-b3
   kind: exr
   file: 01-field-axioms.md
-  line: 373
+  line: 385
   hash: 5448d0c5019d
   verdicts:
   - stage: S5a
@@ -386,7 +392,7 @@ items:
 - key: exr-field-axioms-c1
   kind: exr
   file: 01-field-axioms.md
-  line: 395
+  line: 407
   hash: 80455d56431d
   verdicts:
   - stage: S5a
@@ -420,8 +426,8 @@ items:
 - key: exr-field-axioms-c2
   kind: exr
   file: 01-field-axioms.md
-  line: 444
-  hash: c1b4106d1559
+  line: 456
+  hash: bc894d303a34
   verdicts:
   - stage: S5a
     verdict: correct
@@ -611,7 +617,7 @@ items:
   kind: exm
   file: 02-finite-fields-from-modular-arithmetic.md
   line: 106
-  hash: 56293c9ce2ee
+  hash: b152810e6109
   verdicts:
   - stage: S5a
     verdict: minor
@@ -967,7 +973,7 @@ items:
 - key: exm-q-sqrt2-field
   kind: exm
   file: 03-subfields.md
-  line: 90
+  line: 92
   hash: 2155be3e57b7
   verdicts:
   - stage: S5a
@@ -992,7 +998,7 @@ items:
 - key: check:03-subfields:1
   kind: check
   file: 03-subfields.md
-  line: 122
+  line: 124
   hash: ca29b5e70964
   verdicts:
   - stage: S5a
@@ -1014,8 +1020,8 @@ items:
 - key: exm-subfields-gaussian
   kind: exm
   file: 03-subfields.md
-  line: 132
-  hash: 489bfbdbda50
+  line: 134
+  hash: dc68f8e879b5
   verdicts:
   - stage: S5a
     verdict: minor
@@ -1036,7 +1042,7 @@ items:
 - key: prp-subfield-intersection
   kind: prp
   file: 03-subfields.md
-  line: 162
+  line: 164
   hash: 83606e173d55
   verdicts:
   - stage: S5a
@@ -1066,8 +1072,8 @@ items:
 - key: proof:prp-subfield-intersection
   kind: proof
   file: 03-subfields.md
-  line: 173
-  hash: 9661f627865b
+  line: 175
+  hash: 112fb2cd7561
   verdicts:
   - stage: S5a
     verdict: correct
@@ -1091,7 +1097,7 @@ items:
 - key: def-prime-subfield
   kind: def
   file: 03-subfields.md
-  line: 181
+  line: 183
   hash: 1483d5bc50d0
   verdicts:
   - stage: S5a
@@ -1115,7 +1121,7 @@ items:
 - key: exr-subfields-a1
   kind: exr
   file: 03-subfields.md
-  line: 195
+  line: 197
   hash: db265398f149
   verdicts:
   - stage: S5a
@@ -1145,8 +1151,8 @@ items:
 - key: exr-subfields-b1
   kind: exr
   file: 03-subfields.md
-  line: 220
-  hash: a2366886609c
+  line: 222
+  hash: 4e30cd13b2c8
   verdicts:
   - stage: S5a
     verdict: correct
@@ -1179,7 +1185,7 @@ items:
 - key: exr-subfields-b2
   kind: exr
   file: 03-subfields.md
-  line: 246
+  line: 248
   hash: d5b221aa9f17
   verdicts:
   - stage: S5a
@@ -1211,7 +1217,7 @@ items:
 - key: exr-subfields-b3
   kind: exr
   file: 03-subfields.md
-  line: 258
+  line: 260
   hash: 3f505ac24c1d
   verdicts:
   - stage: S5a
@@ -1241,7 +1247,7 @@ items:
 - key: exr-subfields-b4
   kind: exr
   file: 03-subfields.md
-  line: 272
+  line: 274
   hash: 7048c4c67040
   verdicts:
   - stage: S5a
@@ -1273,7 +1279,7 @@ items:
 - key: exr-subfields-c1
   kind: exr
   file: 03-subfields.md
-  line: 298
+  line: 300
   hash: ae1ea5c35ff9
   verdicts:
   - stage: S5a
@@ -1306,7 +1312,7 @@ items:
 - key: exr-subfields-c2
   kind: exr
   file: 03-subfields.md
-  line: 338
+  line: 340
   hash: eaa5854f48f9
   verdicts:
   - stage: S5a
@@ -1385,7 +1391,7 @@ items:
   kind: proof
   file: 04-field-homomorphisms.md
   line: 60
-  hash: 89599b7cb117
+  hash: 95cfe21225c5
   verdicts:
   - stage: S5a
     verdict: correct
@@ -1409,7 +1415,7 @@ items:
   kind: check
   file: 04-field-homomorphisms.md
   line: 101
-  hash: cba1bee9e548
+  hash: 15c2694044a3
   verdicts:
   - stage: S5a
     verdict: minor
@@ -1431,7 +1437,7 @@ items:
   kind: exm
   file: 04-field-homomorphisms.md
   line: 111
-  hash: 93a3873af735
+  hash: eb3d899a40f3
   verdicts:
   - stage: S5a
     verdict: correct
@@ -1489,7 +1495,7 @@ items:
   kind: exr
   file: 04-field-homomorphisms.md
   line: 162
-  hash: a8c5463ffa57
+  hash: 5afdc0da5538
   verdicts:
   - stage: S5a
     verdict: correct
@@ -1548,7 +1554,7 @@ items:
   kind: exr
   file: 04-field-homomorphisms.md
   line: 205
-  hash: c56e7eb0c88e
+  hash: 44a9a93bfe94
   verdicts:
   - stage: S5a
     verdict: minor
@@ -1608,7 +1614,7 @@ items:
   kind: exr
   file: 04-field-homomorphisms.md
   line: 237
-  hash: 93afc63cbf63
+  hash: 0b9a285d3b1a
   verdicts:
   - stage: S5a
     verdict: correct
@@ -1638,7 +1644,7 @@ items:
   kind: exr
   file: 04-field-homomorphisms.md
   line: 253
-  hash: 1214dfc51edd
+  hash: f94969228b32
   verdicts:
   - stage: S5a
     verdict: correct
@@ -1771,7 +1777,7 @@ items:
   kind: check
   file: 05-characteristic-and-prime-subfield.md
   line: 114
-  hash: 76f00f38b192
+  hash: a75dbc6e45ca
   verdicts:
   - stage: S5a
     verdict: minor
@@ -1858,10 +1864,16 @@ items:
     model: claude-opus-5-5
     evidence: 05:167-181. @fd3:prp-divisibility-rules-integers (a) gives 'if 0|a then a=0' and a|0; thm-integers-division-remainder
       (a); thm-field-basic-properties (d) is 0.a=0, used with (F6); the n=2 case checks c != 1
+- key: exm-completing-square-f3
+  kind: exm
+  file: 05-characteristic-and-prime-subfield.md
+  line: 190
+  hash: efc9f5feb273
+  verdicts: []
 - key: thm-characteristic-prime
   kind: thm
   file: 05-characteristic-and-prime-subfield.md
-  line: 192
+  line: 206
   hash: 594e183267a7
   verdicts:
   - stage: S5a
@@ -1882,7 +1894,7 @@ items:
 - key: proof:thm-characteristic-prime
   kind: proof
   file: 05-characteristic-and-prime-subfield.md
-  line: 202
+  line: 216
   hash: 997673232a50
   verdicts:
   - stage: S5a
@@ -1905,7 +1917,7 @@ items:
 - key: prp-characteristic-invariant
   kind: prp
   file: 05-characteristic-and-prime-subfield.md
-  line: 216
+  line: 230
   hash: 69055be44bb4
   verdicts:
   - stage: S5a
@@ -1925,7 +1937,7 @@ items:
 - key: proof:prp-characteristic-invariant
   kind: proof
   file: 05-characteristic-and-prime-subfield.md
-  line: 226
+  line: 240
   hash: 6afbbc76aeef
   verdicts:
   - stage: S5a
@@ -1948,8 +1960,8 @@ items:
 - key: exm-characteristics
   kind: exm
   file: 05-characteristic-and-prime-subfield.md
-  line: 236
-  hash: 8e84ab15b87f
+  line: 250
+  hash: c29189d2c17b
   verdicts:
   - stage: S5a
     verdict: correct
@@ -1973,7 +1985,7 @@ items:
 - key: check:05-characteristic-and-prime-subfield:2
   kind: check
   file: 05-characteristic-and-prime-subfield.md
-  line: 256
+  line: 270
   hash: e852655ee12f
   verdicts:
   - stage: S5a
@@ -1993,7 +2005,7 @@ items:
 - key: thm-prime-subfield
   kind: thm
   file: 05-characteristic-and-prime-subfield.md
-  line: 270
+  line: 284
   hash: 6872fbf97387
   verdicts:
   - stage: S5a
@@ -2015,8 +2027,8 @@ items:
 - key: proof:thm-prime-subfield
   kind: proof
   file: 05-characteristic-and-prime-subfield.md
-  line: 293
-  hash: afaee2ccb64d
+  line: 307
+  hash: 15a6e02921ea
   verdicts:
   - stage: S5a
     verdict: minor
@@ -2040,7 +2052,7 @@ items:
 - key: cor-homomorphisms-fix-prime-subfield
   kind: cor
   file: 05-characteristic-and-prime-subfield.md
-  line: 357
+  line: 371
   hash: e0ef859023d0
   verdicts:
   - stage: S5a
@@ -2060,7 +2072,7 @@ items:
 - key: proof:cor-homomorphisms-fix-prime-subfield
   kind: proof
   file: 05-characteristic-and-prime-subfield.md
-  line: 367
+  line: 381
   hash: '986010621131'
   verdicts:
   - stage: S5a
@@ -2083,7 +2095,7 @@ items:
 - key: cor-finite-field-prime-characteristic
   kind: cor
   file: 05-characteristic-and-prime-subfield.md
-  line: 379
+  line: 393
   hash: 4b1aca853793
   verdicts:
   - stage: S5a
@@ -2103,8 +2115,8 @@ items:
 - key: proof:cor-finite-field-prime-characteristic
   kind: proof
   file: 05-characteristic-and-prime-subfield.md
-  line: 391
-  hash: 247ca654734c
+  line: 405
+  hash: fa9336c83898
   verdicts:
   - stage: S5a
     verdict: correct
@@ -2125,7 +2137,7 @@ items:
 - key: check:05-characteristic-and-prime-subfield:3
   kind: check
   file: 05-characteristic-and-prime-subfield.md
-  line: 401
+  line: 415
   hash: 72f93fffe710
   verdicts:
   - stage: S5a
@@ -2147,7 +2159,7 @@ items:
 - key: exr-characteristic-and-prime-subfield-a1
   kind: exr
   file: 05-characteristic-and-prime-subfield.md
-  line: 413
+  line: 427
   hash: bdfe595e98ae
   verdicts:
   - stage: S5a
@@ -2177,8 +2189,8 @@ items:
 - key: exr-characteristic-and-prime-subfield-b1
   kind: exr
   file: 05-characteristic-and-prime-subfield.md
-  line: 438
-  hash: 48fcaf5aa747
+  line: 452
+  hash: d45107dd9f49
   verdicts:
   - stage: S5a
     verdict: correct
@@ -2206,8 +2218,8 @@ items:
 - key: exr-characteristic-and-prime-subfield-b2
   kind: exr
   file: 05-characteristic-and-prime-subfield.md
-  line: 458
-  hash: e9f3877604e0
+  line: 472
+  hash: a2fcc4990e1a
   verdicts:
   - stage: S5a
     verdict: correct
@@ -2237,7 +2249,7 @@ items:
 - key: exr-characteristic-and-prime-subfield-b3
   kind: exr
   file: 05-characteristic-and-prime-subfield.md
-  line: 487
+  line: 501
   hash: 3bd2c6747e44
   verdicts:
   - stage: S5a
@@ -2266,8 +2278,8 @@ items:
 - key: exr-characteristic-and-prime-subfield-c1
   kind: exr
   file: 05-characteristic-and-prime-subfield.md
-  line: 506
-  hash: 916b435a79b0
+  line: 520
+  hash: 1fe2f4b348a6
   verdicts:
   - stage: S5a
     verdict: minor
@@ -2297,8 +2309,8 @@ items:
 - key: exr-characteristic-and-prime-subfield-c2
   kind: exr
   file: 05-characteristic-and-prime-subfield.md
-  line: 537
-  hash: 74a7ea893b59
+  line: 551
+  hash: 17851d6196ef
   verdicts:
   - stage: S5a
     verdict: correct
@@ -2328,8 +2340,8 @@ items:
 - key: exr-characteristic-and-prime-subfield-c3
   kind: exr
   file: 05-characteristic-and-prime-subfield.md
-  line: 567
-  hash: 5292021ab9f3
+  line: 577
+  hash: 845aca1ec842
   verdicts:
   - stage: S5a
     verdict: minor
@@ -2680,8 +2692,8 @@ items:
 - key: exm-frobenius-computations
   kind: exm
   file: 06-frobenius-and-fermat.md
-  line: 291
-  hash: 5a19fcde2615
+  line: 293
+  hash: acdc1dc67d99
   verdicts:
   - stage: S5a
     verdict: correct
@@ -2702,7 +2714,7 @@ items:
 - key: check:06-frobenius-and-fermat:2
   kind: check
   file: 06-frobenius-and-fermat.md
-  line: 320
+  line: 322
   hash: d2bec6b4591e
   verdicts:
   - stage: S5a
@@ -2723,7 +2735,7 @@ items:
 - key: exr-frobenius-and-fermat-a1
   kind: exr
   file: 06-frobenius-and-fermat.md
-  line: 332
+  line: 334
   hash: 7ee3a6348f86
   verdicts:
   - stage: S5a
@@ -2753,7 +2765,7 @@ items:
 - key: exr-frobenius-and-fermat-b1
   kind: exr
   file: 06-frobenius-and-fermat.md
-  line: 357
+  line: 359
   hash: 7d11f3788449
   verdicts:
   - stage: S5a
@@ -2782,7 +2794,7 @@ items:
 - key: exr-frobenius-and-fermat-b2
   kind: exr
   file: 06-frobenius-and-fermat.md
-  line: 367
+  line: 369
   hash: d2f335554925
   verdicts:
   - stage: S5a
@@ -2813,7 +2825,7 @@ items:
 - key: exr-frobenius-and-fermat-b3
   kind: exr
   file: 06-frobenius-and-fermat.md
-  line: 387
+  line: 389
   hash: 2cb1c3bd140a
   verdicts:
   - stage: S5a
@@ -2840,8 +2852,8 @@ items:
 - key: exr-frobenius-and-fermat-c1
   kind: exr
   file: 06-frobenius-and-fermat.md
-  line: 399
-  hash: 7c5662b2806f
+  line: 401
+  hash: a2ab2e270b28
   verdicts:
   - stage: S5a
     verdict: correct
@@ -2869,8 +2881,8 @@ items:
 - key: exr-frobenius-and-fermat-c2
   kind: exr
   file: 06-frobenius-and-fermat.md
-  line: 424
-  hash: b194a89c1fc6
+  line: 428
+  hash: 79ebe7944082
   verdicts:
   - stage: S5a
     verdict: minor
@@ -2899,8 +2911,8 @@ items:
 - key: exr-frobenius-and-fermat-c3
   kind: exr
   file: 06-frobenius-and-fermat.md
-  line: 445
-  hash: ecb03b02a789
+  line: 449
+  hash: 74c5be04dad2
   verdicts:
   - stage: S5a
     verdict: correct
@@ -2929,7 +2941,7 @@ items:
 - key: exr-frobenius-and-fermat-r1
   kind: exr
   file: 06-frobenius-and-fermat.md
-  line: 457
+  line: 461
   hash: cd9c33c40b0a
   verdicts:
   - stage: S5a
@@ -2959,8 +2971,8 @@ items:
 - key: exr-frobenius-and-fermat-r2
   kind: exr
   file: 06-frobenius-and-fermat.md
-  line: 467
-  hash: 61aac510b9df
+  line: 471
+  hash: 5350c8b74c8c
   verdicts:
   - stage: S5a
     verdict: correct
@@ -2988,8 +3000,8 @@ items:
 - key: exr-frobenius-and-fermat-r3
   kind: exr
   file: 06-frobenius-and-fermat.md
-  line: 477
-  hash: 5e20393eb49f
+  line: 481
+  hash: 89926b9ce40d
   verdicts:
   - stage: S5a
     verdict: correct
@@ -3027,8 +3039,8 @@ items:
 - key: exr-frobenius-and-fermat-r4
   kind: exr
   file: 06-frobenius-and-fermat.md
-  line: 489
-  hash: 61ab59690a5d
+  line: 493
+  hash: b64f423a82e8
   verdicts:
   - stage: S5a
     verdict: minor

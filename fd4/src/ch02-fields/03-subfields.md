@@ -29,15 +29,15 @@ In words: the first clause asks for the two special elements of \( L \); the sec
 
 - **\( L \) itself** is a subfield of \( L \). It is the largest one, and the degenerate case: every clause holds because \( K = L \).
 - **\( \nQ \) in \( \nR \).** Under the identification of a rational \( q \) with \( \kappa(q) \in \nR \), the embedding \( \kappa \) sends \( 0 \), \( 1 \), sums, products, negatives and inverses of rationals to the same things in \( \nR \) (@fd3:thm-rational-embedding (a), (c)). So all four clauses hold, and \( \nQ \) is a subfield of \( \nR \).
-- **\( \nR \) in \( \nC \).** Chapter 1 checked the four clauses for the copy of \( \nR \) in \( \nC \) (@thm-complex-numbers-field, with \( a \) written for \( (a, 0) \) as @prp-reals-embed-complex allows). So \( \nR \) is a subfield of \( \nC \), and so is \( \nQ \), since a subfield of a subfield is a subfield: each clause of the inner one is a statement about the operations of the outer field.
+- **\( \nR \) in \( \nC \).** Chapter 1 checked the four clauses for the copy of \( \nR \) in \( \nC \). The zero \( 0 = (0, 0) \) and the one \( 1 = (1, 0) \) of \( \nC \) (@prp-complex-arithmetic-laws (d)) are the real numbers \( 0 \) and \( 1 \) under the identification \( a = (a, 0) \) that follows @prp-reals-embed-complex, and @thm-complex-numbers-field gives closure under sums, products, negatives and inverses. So \( \nR \) is a subfield of \( \nC \), and so is \( \nQ \), since a subfield of a subfield is a subfield: each clause of the inner one is a statement about the operations of the outer field.
 
-**Non-examples, each failing one clause.**
+**Non-examples.**
 
 - \( \{0\} \subseteq \nQ \) is closed under sums, products, negatives and inverses (the last vacuously), and does not contain \( 1 \), since \( 1 \ne 0 \) in a field.
-- \( \nN \subseteq \nQ \) contains \( 0 \) and \( 1 \) and is closed under sums and products, but not under negatives: \( -1 \notin \nN \).
+- \( \nN \subseteq \nQ \) contains \( 0 \) and \( 1 \) and is closed under sums and products, but not under negatives, since \( -1 \notin \nN \), nor under inverses, since \( 2^{-1} = 1/2 \notin \nN \) (as for \( \nZ \) below).
 - \( \nZ \subseteq \nQ \) satisfies every clause except closure under inverses: \( 2^{-1} = 1/2 \notin \nZ \), since \( 2x = 1 \) has no solution \( x \in \nZ \) (@fd3:cor-integers-even-odd (a)).
 
-These three are the non-examples of @exm-field-nonexamples, now seen from inside \( \nQ \): each fails as a subfield exactly where it failed as a field.
+These are the non-examples (i)–(iii) of @exm-field-nonexamples, now seen from inside \( \nQ \) (the fourth, \( \nZ/6\nZ \), is not a subset of \( \nQ \)): each fails as a subfield exactly where it failed as a field.
 
 ## The subfield test
 
@@ -80,8 +80,10 @@ The answer to the prompt. Part (b) uses that \( L \) is a field in the step \( 1
 So to show that a subset is a field, we rarely check nine axioms: we check (c), three closure statements, and (a) does the rest.
 
 ::: {.warning}
-A subset of a ring can be a field with **another** one. In the ring \( \nZ/6\nZ \), the subset \( \{[0], [3]\} \) is closed under \( + \) and \( \cdot \): \( [3] + [3] = [6] = [0] \) and \( [3][3] = [9] = [3] \). With these operations it is a field with two elements, a copy of \( \nF_2 \), but its one is \( [3] \), not \( [1] \). Part (b) has no counterpart here: \( [3][3] = [3][1] \), and \( [3] \) cannot be canceled, since \( \nZ/6\nZ \) is not a field. Likewise, a field structure with **other operations** does not make a subset a subfield: the set \( \{0, 1\} \subseteq \nQ \) with the tables of \( \nF_2 \) is a field, but it is not a subfield of \( \nQ \), because the sum of \( \nQ \) gives \( 1 + 1 = 2 \notin \{0, 1\} \).
+A subset of a ring can be a field with **another** one. In the ring \( \nZ/6\nZ \), the subset \( \{[0], [3]\} \) is closed under \( + \) and \( \cdot \): \( [3] + [3] = [6] = [0] \) and \( [3][3] = [9] = [3] \). With these operations it is a field with two elements, a copy of \( \nF_2 \), but its one is \( [3] \), not \( [1] \). Part (b) has no counterpart here: \( [3][3] = [3][1] \), and \( [3] \) cannot be canceled, since \( \nZ/6\nZ \) is not a field.
 :::
+
+Likewise, a field structure with **other operations** does not make a subset a subfield: the set \( \{0, 1\} \subseteq \nQ \) with the tables of \( \nF_2 \) is a field, but it is not a subfield of \( \nQ \), because the sum of \( \nQ \) gives \( 1 + 1 = 2 \notin \{0, 1\} \).
 
 ## Square roots of two and of minus one
 
@@ -144,15 +146,15 @@ Let \( \nQ(i) \coloneqq \{ a + bi : a, b \in \nQ \} \) and \( \nZ[i] \coloneqq \
 ::: {.solution}
 Real and imaginary parts are compared as in @def-complex-numbers: \( a + bi = c + di \) with \( a, b, c, d \in \nR \) holds exactly when \( a = c \) and \( b = d \).
 
-(i) We use @prp-subfield-test (c). \( 1 = 1 + 0i \in \nQ(i) \). Differences: \( (a + bi) - (c + di) = (a - c) + (b - d)i \). Products: \( (a + bi)(c + di) = (ac - bd) + (ad + bc)i \), from \( i^2 = -1 \). Inverses: let \( y = c + di \ne 0 \) with \( c, d \in \nQ \); then \( (c, d) \ne (0, 0) \). The rational number \( M \coloneqq c^2 + d^2 \) is positive: \( \nQ \) is an ordered field (@fd3:thm-rationals-ordered-field), a non-zero square is positive and every square is non-negative (@fd3:prp-ordered-ring-rules (e)), and a sum of a positive and a non-negative element is positive (@fd3:prp-ordered-ring-rules (b)). So \( M \ne 0 \). Since \( (c + di)(c - di) = c^2 + d^2 = M \), the element \( y' \coloneqq c/M - (d/M)i \in \nQ(i) \) satisfies \( yy' = MM^{-1} = 1 \), so \( y^{-1} = y' \in \nQ(i) \) (@thm-field-basic-properties (c)), and then \( xy^{-1} \in \nQ(i) \) for \( x \in \nQ(i) \) by the product formula. So \( \nQ(i) \) is a subfield of \( \nC \).
+(i) We use @prp-subfield-test (c). \( 1 = 1 + 0i \in \nQ(i) \). Differences: \( (a + bi) - (c + di) = (a - c) + (b - d)i \). Products: \( (a + bi)(c + di) = (ac - bd) + (ad + bc)i \), from \( i^2 = -1 \). Inverses: let \( y = c + di \ne 0 \) with \( c, d \in \nQ \); then \( (c, d) \ne (0, 0) \). The rational number \( M \coloneqq c^2 + d^2 \) is positive: \( \nQ \) is an ordered field (@fd3:thm-rationals-ordered-field), a non-zero square is positive (@fd3:prp-ordered-ring-rules (e)) and \( 0^2 = 0 \cdot 0 = 0 \) (@fd3:prp-ring-algebra (b)), so every square is non-negative, and a sum of a positive and a non-negative element is positive (@fd3:prp-ordered-ring-rules (b)). So \( M \ne 0 \). Since \( (c + di)(c - di) = c^2 + d^2 = M \), the element \( y' \coloneqq c/M - (d/M)i \in \nQ(i) \) satisfies \( yy' = MM^{-1} = 1 \), so \( y^{-1} = y' \in \nQ(i) \) (@thm-field-basic-properties (c)), and then \( xy^{-1} \in \nQ(i) \) for \( x \in \nQ(i) \) by the product formula. So \( \nQ(i) \) is a subfield of \( \nC \).
 
-(ii) \( 0 = 0 + 0i \) and \( 1 = 1 + 0i \) lie in \( \nZ[i] \), and the difference and product formulas of (i), with integer \( a, b, c, d \), give integer parts. But \( 2 \in \nZ[i] \) has no inverse in \( \nZ[i] \). Suppose \( u = a + bi \in \nZ[i] \) had \( 2u = 1 \). Then \( u = 2^{-1} = 1/2 \) in \( \nC \), by the uniqueness of inverses (@thm-field-basic-properties (c)), so \( a + bi = 1/2 + 0i \), and comparing real parts gives \( a = 1/2 \notin \nZ \). So \( \nZ[i] \) is not closed under inverses.
+(ii) \( 0 = 0 + 0i \) and \( 1 = 1 + 0i \) lie in \( \nZ[i] \), and the difference and product formulas of (i), with integer \( a, b, c, d \), give integer parts. But \( 2 \in \nZ[i] \) has no inverse in \( \nZ[i] \). Suppose \( u = a + bi \in \nZ[i] \) had \( 2u = 1 \). Then \( u = 2^{-1} = 1/2 \) in \( \nC \), by the uniqueness of inverses (@thm-field-basic-properties (c)) and because the inverse of \( 2 \) in \( \nC \) is the real number \( 1/2 \) (@thm-complex-numbers-field), so \( a + bi = 1/2 + 0i \), and comparing real parts gives \( a = 1/2 \notin \nZ \). So \( \nZ[i] \) is not closed under inverses.
 
 (iii) \( \nQ \), \( \nQ(i) \), \( \nR \) and \( \nC \) are subfields of \( \nC \), and \( \nQ(\sqrt 2) \) is a subfield of \( \nR \), hence of \( \nC \):
 \[
 \nQ \subseteq \nQ(\sqrt 2) \subseteq \nR \subseteq \nC , \qquad \nQ \subseteq \nQ(i) \subseteq \nC .
 \]
-For \( \nR \) in \( \nC \) there is a second way to see it: by @prp-reals-embed-complex the copy of \( \nR \) in \( \nC \) is closed under \( + \) and \( \cdot \), and is a field with these operations because it is an image of the field \( \nR \) under an injective map that respects both; @prp-subfield-test (b) then says that it is a subfield, with the zero and one of \( \nC \).
+For \( \nR \) in \( \nC \) there is a second way to see it: by @prp-reals-embed-complex the copy \( \iota(\nR) \) of \( \nR \) in \( \nC \) is closed under \( + \) and \( \cdot \), since \( \iota(a) + \iota(c) = \iota(a + c) \) and \( \iota(a)\iota(c) = \iota(ac) \). It is a field with these operations. Every element of \( \iota(\nR) \) is \( \iota(a) \) for some \( a \in \nR \), so each identity among the axioms carries over from \( \nR \) through these two equations; for instance \( \iota(a)(\iota(c) + \iota(e)) = \iota(a(c + e)) = \iota(ac + ae) = \iota(a)\iota(c) + \iota(a)\iota(e) \). In the same way \( \iota(0) \), \( \iota(-a) \), \( \iota(1) \) and, for \( a \ne 0 \), \( \iota(a^{-1}) \) serve as the zero, the negatives, the one and the inverses; and \( \iota(1) \ne \iota(0) \), and \( \iota(a) \ne \iota(0) \) exactly when \( a \ne 0 \), because \( \iota \) is injective. @prp-subfield-test (b) then says that it is a subfield, with the zero and one of \( \nC \).
 :::
 
 ## The smallest subfield
@@ -173,7 +175,7 @@ Let \( L \) be a field.
 ::: {.proof}
 (a) The intersection \( \bigcap \sK = \{ x \in L : x \in K \text{ for every } K \in \sK \} \) is defined because \( \sK \) is a non-empty set of subsets of \( L \) (@fd2:def-family-union-intersection). We check @prp-subfield-test (c). Every \( K \in \sK \) contains \( 1 \), so \( 1 \in \bigcap \sK \). If \( a, b \in \bigcap \sK \), then \( a, b \in K \) for every \( K \in \sK \), so \( a - b \in K \) for every \( K \in \sK \), by (c) applied to \( K \); hence \( a - b \in \bigcap \sK \). In the same way, \( ab^{-1} \in \bigcap \sK \) when \( b \ne 0 \).
 
-(b) \( \sK_S \) is a set, by separation from the power set of \( L \), and it is non-empty, since \( L \in \sK_S \). By (a), \( K_S \coloneqq \bigcap \sK_S \) is a subfield of \( L \). Every \( K \in \sK_S \) contains \( S \), so \( S \subseteq K_S \). And if \( K \) is a subfield containing \( S \), then \( K \in \sK_S \), so \( K_S \subseteq K \). Two smallest subfields containing \( S \) would each contain the other, so \( K_S \) is the only one.
+(b) \( \sK_S \) is a set, by Separation (Z6) from the power set of \( L \), which exists by (Z5) (@fd3:ax-zf-fragment). It is non-empty, since \( L \in \sK_S \). By (a), \( K_S \coloneqq \bigcap \sK_S \) is a subfield of \( L \). Every \( K \in \sK_S \) contains \( S \), so \( S \subseteq K_S \). And if \( K \) is a subfield containing \( S \), then \( K \in \sK_S \), so \( K_S \subseteq K \). Two smallest subfields containing \( S \) would each contain the other, so \( K_S \) is the only one.
 :::
 
 The case \( S = \emptyset \) asks for no element at all, and gives a subfield contained in every subfield. It has a name.
@@ -228,7 +230,7 @@ Here are the lines of the proof of @prp-subfield-test (c) \( (\Leftarrow) \), sh
 3. For \( b \in K \), \( -b = 0 - b \in K \).
 4. For non-zero \( b \in K \), \( b^{-1} = 1 \cdot b^{-1} \in K \).
 5. For \( a, b \in K \), \( a + b = a - (-b) \in K \).
-6. For \( a, b \in K \): if \( b \ne 0 \), \( ab = a(b^{-1})^{-1} \in K \); if \( b = 0 \), \( ab = 0 \in K \).
+6. For \( a, b \in K \): if \( b \ne 0 \), then \( b^{-1} \in K \) and \( b^{-1} \ne 0 \) (as \( bb^{-1} = 1 \ne 0 = b \cdot 0 \)), so \( ab = a(b^{-1})^{-1} \in K \); if \( b = 0 \), \( ab = 0 \in K \).
 7. So \( K \) is a subfield of \( L \).
 :::
 
@@ -236,7 +238,7 @@ The two extra lines: "(ii′) \( 0 \in K \), since \( 0 = bb^{-1} \) for any \( 
 :::
 
 ::: {.solution}
-An admissible order is (i), (ii), (iii), (iv), (v), (vi), (vii). The constraints are what each line uses: (i) comes first and (vii) last; (ii) comes before (iii), which uses \( 0 \in K \), and before (vi), whose case \( b = 0 \) uses \( 0 \in K \); (iii) comes before (v), which uses \( -b \in K \); (iv) comes before (vi), which uses \( b^{-1} \in K \) (and \( b^{-1} \ne 0 \)). Any order respecting these is admissible; for instance (i), (ii), (iv), (iii), (vi), (v), (vii).
+An admissible order is (i), (ii), (iii), (iv), (v), (vi), (vii). The constraints are what each line uses: (i) comes first and (vii) last; (ii) comes before (iii), which uses \( 0 \in K \), and before (vi), whose case \( b = 0 \) uses \( 0 \in K \); (iii) comes before (v), which uses \( -b \in K \); (iv) comes before (vi), which uses \( b^{-1} \in K \) (line (vi) itself checks \( b^{-1} \ne 0 \) before applying (i) to it). Any order respecting these is admissible; for instance (i), (ii), (iv), (iii), (vi), (v), (vii).
 
 (ii′) is false: \( bb^{-1} = 1 \), not \( 0 \), and \( b^{-1} \) exists only for \( b \ne 0 \).
 
@@ -316,7 +318,7 @@ The maps \( x \mapsto x + b \) and \( x \mapsto bx \) go from \( K \) to \( K \)
 ::: {.solution}
 *A finite set has no injection onto a proper part.* Let \( f \colon K \to K \) be injective. If \( f \) were not surjective, its image \( f(K) \) (@fd2:def-image) would be a proper subset of \( K \), and \( f \), with codomain \( f(K) \), would be a bijection \( K \to f(K) \), against @fd2:thm-finite-no-proper-copy. So every injective map \( K \to K \) is surjective.
 
-*Zero.* Let \( t \colon K \to K \), \( t(x) \coloneqq x + 1 \), a map into \( K \) because \( K \) is closed under \( + \) and \( 1 \in K \). It is injective: \( x + 1 = x' + 1 \) gives \( x = x' \) by additive cancellation in \( L \) (@thm-field-basic-properties (b)). So it is surjective, and some \( x \in K \) has \( x + 1 = 1 = 0 + 1 \); canceling, \( x = 0 \). So \( 0 \in K \).
+*Zero.* Let \( t \colon K \to K \), \( t(x) \coloneqq x + 1 \), a map into \( K \) because \( K \) is closed under \( + \) and \( 1 \in K \). It is injective: \( x + 1 = x' + 1 \) gives \( 1 + x = 1 + x' \) by (F1), so \( x = x' \) by additive cancellation in \( L \) (@thm-field-basic-properties (b)). So it is surjective, and some \( x \in K \) has \( x + 1 = 1 = 0 + 1 \), so \( 1 + x = 1 + 0 \) by (F1); canceling, \( x = 0 \). So \( 0 \in K \).
 
 *Negatives.* Let \( b \in K \). The map \( x \mapsto x + b \) is injective in the same way, hence surjective, and \( 0 \in K \) is a value: \( x + b = 0 \) for some \( x \in K \). By the uniqueness of negatives in \( L \), \( x = -b \).
 
@@ -327,12 +329,12 @@ So \( K \) is a subfield. Note that \( K \ne \emptyset \) need not be assumed: \
 *Finiteness is needed.* \( \nN \subseteq \nQ \) contains \( 1 \) and is closed under \( + \) and \( \cdot \), and \( -1 \notin \nN \). The argument breaks at "injective, hence surjective": \( x \mapsto x + 1 \) is injective on \( \nN \), and \( 0 \) is not a value.
 
 **Marking scheme.** (10 points)
-- 2: the fact that an injective map from a finite set to itself is surjective, with its reason (@fd2:thm-finite-no-proper-copy, or a count).
-- 2: \( 0 \in K \), from a translation map and cancellation, **before** \( 0 \) is used.
-- 2: negatives, from surjectivity of \( x \mapsto x + b \) and uniqueness of negatives in \( L \).
-- 2: inverses, with injectivity of \( x \mapsto bx \) justified by \( b \ne 0 \).
+- 2: a finiteness argument with its reason: an injective map from a finite set to itself is surjective (@fd2:thm-finite-no-proper-copy, or a count), or pigeonhole on a sequence in \( K \) (@fd2:thm-pigeonhole).
+- 2: \( 0 \in K \), from a translation map and cancellation, or from a repetition \( m \cdot 1 = n \cdot 1 \) with \( m < n \) and cancellation in \( L \), **before** \( 0 \) is used.
+- 2: negatives, from surjectivity of \( x \mapsto x + b \) and uniqueness of negatives in \( L \), or from a repetition \( i \cdot b = j \cdot b \) with \( i < j \), giving \( -b = (j - i - 1) \cdot b \).
+- 2: inverses, with the cancellation by \( b \) justified by \( b \ne 0 \) (injectivity of \( x \mapsto bx \), or \( b^i = b^j \) with \( i < j \) giving \( b^{j - i} = 1 \) and \( b^{-1} = b^{j - i - 1} \)).
 - 2: a witness that finiteness is needed (\( \nN \subseteq \nQ \), or \( \nZ \subseteq \nQ \) for inverses).
-Fatal errors (0 for the step): using \( 0 \in K \) or \( -b \in K \) to build the translation before proving it; "injective, hence surjective" without finiteness.
+Fatal errors (0 for the step): using \( 0 \in K \) or \( -b \in K \) to build the translation before proving it; "injective, hence surjective" (or pigeonhole) without finiteness.
 :::
 
 ::: {#exr-subfields-c2}
@@ -365,9 +367,11 @@ prp-subfield-test (proof): 1 + (-1) = 0, 0 + (-b) = -b, 1 * b^{-1} = b^{-1} | (F
 exm-q-sqrt2-field (solution): sqrt 2 exists in R; R complete | fd3:thm-reals-complete-ordered-field, fd3:prp-cof-square-roots, cited (soft citation of F3.4/F3.10, example only)
 exm-q-sqrt2-field (solution): product formula, (c + d sqrt 2)(c - d sqrt 2) = c^2 - 2d^2, N = -7, inverse (-1 + 2 sqrt 2)/7 | inline expansion with fd3:prp-ring-algebra (c); verify/ch02/exm-q-sqrt2-field.py
 exm-q-sqrt2-field (solution): rational arithmetic computed in Q agrees with that in R | fd3:thm-rational-embedding (a), (c) (identification), as recalled in the def-subfield examples
+exm-subfields-gaussian (solution): every square in Q is non-negative | fd3:prp-ordered-ring-rules (e), fd3:prp-ring-algebra (b), cited
+exm-subfields-gaussian (solution): the inverse of 2 in C is the real 1/2; zero and one of C are the real 0, 1 | thm-complex-numbers-field, prp-complex-arithmetic-laws (d), prp-reals-embed-complex (identification), cited
 exm-subfields-gaussian (solution): product formula in C from i^2 = -1; (c + di)(c - di) = c^2 + d^2 | def-complex-numbers, prp-reals-embed-complex (F4.1, see edge; example only); verify/ch02/exm-subfields-gaussian.py
-exm-subfields-gaussian (solution): the copy of R in C is a field because it is the image of R under an injective map preserving + and . | prp-reals-embed-complex; inline transport of the axioms (also thm-complex-numbers-field, cited)
-prp-subfield-intersection (proof): the set of subfields containing S exists | separation from the power set of L (fd3 Chapter 1's ZF axioms); inline
+exm-subfields-gaussian (solution): the copy of R in C is a field because it is the image of R under an injective map preserving + and . | prp-reals-embed-complex; inline transport of the axioms, written out
+prp-subfield-intersection (proof): the set of subfields containing S exists | fd3:ax-zf-fragment (Z5), (Z6), cited
 def-prime-subfield (claim): every subfield of F_p contains k.1 for k in N | fd1:ax-induction read on omega (fd3:cor-omega-identification); multiples of F3.2 Section 2.3 "Multiples", recalled in prose
 exr-subfields-b2 (solution): n.1 = n in R for n in N | fd3:thm-rational-embedding (d) with the identification of N inside Q inside R
 exr-subfields-b4 (solution): 1 < 3 < 4, 4 < 6 < 9; (a + b sqrt 3)^2 = a^2 + 3b^2 + 2ab sqrt 3 | inline; verify/ch02/exr-subfields-b4.py

@@ -12,11 +12,11 @@ The question "can \( 1 + 1 + \dots + 1 \) be \( 0 \)?" is about the elements \( 
 \]
 So \( 1 \cdot a = a \), \( 2 \cdot a = a + a \), and \( n \cdot a \) is the sum of \( n \) copies of \( a \). We need negative multiples too, because the divisibility arguments below write \( n = qc + r \) with \( q \) possibly negative.
 
-**Negative multiples.** Every integer is \( m \) or \( -m \) for some \( m \in \nN \) (@fd3:prp-naturals-embed-integers (c)). For \( n \in \nZ \) with \( n < 0 \) we have \( -n \in \nN \), and we define
+**Negative multiples.** Every integer is \( m \) or \( -m \) for some \( m \in \nN \) (@fd3:prp-naturals-embed-integers (c)). For \( n \in \nZ \) with \( n < 0 \) we have \( -n > 0 \), so \( -n \in \nN \) by @fd3:thm-integers-ordered-ring (b), and we define
 \[
 n \cdot a \coloneqq -\bigl( (-n) \cdot a \bigr) .
 \]
-So \( (-3) \cdot a = -(a + a + a) \). As in fd3, a dot with an integer on its left always means this multiple, and the product of two ring elements is written by juxtaposition, \( ab \). When \( R = \nZ \) the two readings agree: for \( n \in \nN \) this is the remark after the definition of multiples in *Number Systems: From \(\nN\) to \(\nR\)*, Section 2.3, and for \( n < 0 \), \( n \cdot a = -((-n)a) = -(-(na)) = na \) by @fd3:prp-ring-algebra (c) and (a).
+So \( (-3) \cdot a = -(a + a + a) \). Extending the convention of *Number Systems: From \(\nN\) to \(\nR\)*, Section 2.3 (there for natural numbers), a dot with an integer on its left always means this multiple, and the product of two ring elements is written by juxtaposition, \( ab \). When \( R = \nZ \) the two readings agree: for \( n \in \nN \) this is the remark after the definition of multiples in that section, and for \( n < 0 \), \( n \cdot a = -((-n)a) = -(-(na)) = na \) by @fd3:prp-ring-algebra (c) and (a).
 
 The lemma below collects the rules for multiples. Parts (a)–(c) are the three identities that the linear-algebra volumes cite; part (d) extends everything to integer multiples.
 
@@ -43,7 +43,7 @@ m \cdot (a + b) &= m \cdot a + m \cdot b , & (m \cdot a)\, b &= m \cdot (ab) , \
 In words: integer multiples obey the rules one expects of "\( m \) copies of \( a \)", with signs behaving as in \( \nZ \). Since every field is a commutative ring (the remark after @def-field), the lemma holds in every field.
 
 ::: {.idea}
-For natural numbers everything is one induction each, on the recursion that defines \( m \cdot a \): four rules for natural multiples (a sum law, two distributive laws and a composition law) and then (a)–(c) as special cases with \( a = 1 \). Negative multiples are reduced to natural ones by writing an integer as a difference \( m_1 - m_2 \) of natural numbers; that bookkeeping is (d), and its proof is in the fold below.
+For natural numbers everything is one induction each, on the recursion that defines \( m \cdot a \): four rules for natural multiples (a sum law, a distributive law, a product law and a composition law) and then (a)–(c) as special cases with \( a = 1 \). Negative multiples are reduced to natural ones by writing an integer as a difference \( m_1 - m_2 \) of natural numbers; that bookkeeping is (d), and its proof is in the fold below.
 :::
 
 ::: {.proof}
@@ -107,16 +107,16 @@ using \( -(u + v) = (-u) + (-v) \) (both are negatives of \( u + v \)) and (F1),
 :::
 :::
 
-Two readings of the lemma are used constantly. First, by (a) and (b), the map \( \nZ \to R \), \( n \mapsto n \cdot 1 \), turns sums of integers into sums in \( R \) and products into products, and sends \( 1 \) to \( 1 \cdot 1 = 1 \). Second, by (c), every multiple \( n \cdot a \) is a product in \( R \), namely \( (n \cdot 1) a \): to know how multiples behave, it is enough to know the elements \( n \cdot 1 \).
+Two readings of the lemma are used constantly. First, by (a) and (b) with (d), the map \( \nZ \to R \), \( n \mapsto n \cdot 1 \), turns sums of integers into sums in \( R \) and products into products, and sends \( 1 \) to \( 1 \cdot 1 = 1 \). Second, by (c) with (d), every multiple \( n \cdot a \) is a product in \( R \), namely \( (n \cdot 1) a \): to know how multiples behave, it is enough to know the elements \( n \cdot 1 \).
 
 In \( \nZ/n\nZ \) these elements are the classes themselves: \( k \cdot [1] = [k] \) for \( k \in \nN \) (@fd3:thm-integers-mod-n-ring (d)), and for \( k < 0 \), \( k \cdot [1] = -((-k) \cdot [1]) = -[-k] = [k] \), since \( -[u] = [-u] \) in a quotient ring (@fd3:thm-quotient-ring-by-ideal (b)).
 
 ::: {.check}
-In \( \nZ/5\nZ \), compute \( (-3) \cdot [2] \) in two ways: by the definition of a negative multiple, and by (c) of @lem-integer-multiples.
+In \( \nZ/5\nZ \), compute \( (-3) \cdot [2] \) in two ways: by the definition of a negative multiple, and by (c) of @lem-integer-multiples, extended to integers by (d).
 :::
 
 ::: {.solution}
-By the definition, \( (-3) \cdot [2] = -(3 \cdot [2]) = -([2] + [2] + [2]) = -[6] = [-6] = [4] \), since \( -6 - 4 = -10 \) is divisible by \( 5 \). By (c), \( (-3) \cdot [2] = ((-3) \cdot [1])[2] = [-3][2] = [-6] = [4] \), using \( k \cdot [1] = [k] \) for \( k = -3 \).
+By the definition, \( (-3) \cdot [2] = -(3 \cdot [2]) = -([2] + [2] + [2]) = -[6] = [-6] = [4] \), since \( -6 - 4 = -10 \) is divisible by \( 5 \). By (c) and (d), \( (-3) \cdot [2] = ((-3) \cdot [1])[2] = [-3][2] = [-6] = [4] \), using \( k \cdot [1] = [k] \) for \( k = -3 \).
 :::
 
 ## The characteristic
@@ -187,6 +187,20 @@ This is the form the linear-algebra volumes use, in sentences such as "\( \opera
 In characteristic \( 2 \), \( 1 + 1 = 0 \), so \( -1 = 1 \) and \( x = -x \) for every \( x \). The familiar step "\( x = -x \), so \( 2x = 0 \), so \( x = 0 \)" divides by \( 2 = 1 + 1 \), which is \( 0 \) there. In \( \nF_2 \), the element \( 1 \) satisfies \( 1 = -1 \) and \( 1 \ne 0 \). This is why many later results, for instance about symmetric and alternating bilinear forms in the linear-algebra volumes, assume \( \operatorname{char} F \ne 2 \): by @prp-characteristic-divides (b), that is exactly the hypothesis that makes the step valid.
 :::
 
+::: {#exm-completing-square-f3}
+[Completing the square in \( \nF_3 \)]
+
+Solve \( x^2 + x + 1 = 0 \) in \( \nF_3 \) by completing the square.
+:::
+
+::: {.solution}
+Since \( \operatorname{char} \nF_3 = 3 \ne 2 \) (the first examples above), \( 2 = 1 + 1 \) is invertible by @prp-characteristic-divides (b); indeed \( 2 \cdot 2 = 4 = 1 \), so \( 2^{-1} = 2 \). Also \( 4 = 1 \ne 0 \), so \( x^2 + x + 1 = 0 \) holds if and only if \( 4(x^2 + x + 1) = 0 \) (one direction by @thm-field-basic-properties (d) and (F6), the other by (f)). By @fd3:prp-ring-algebra (d), with the multiples regrouped by @lem-integer-multiples (b), (F5) and (F6), \( (2x + 1)^2 = 4x^2 + 4x + 1 \), so
+\[
+4(x^2 + x + 1) = (2x + 1)^2 + 3 = (2x + 1)^2 ,
+\]
+as \( 3 = 0 \) in \( \nF_3 \). So the equation says \( (2x + 1)^2 = 0 \), that is, \( 2x + 1 = 0 \) by @thm-field-basic-properties (f), and \( x = 2^{-1}(-1) = 2 \cdot 2 = 1 \) by @prp-field-linear-equation (a), using \( -1 = 2 \). Testing all three elements agrees: \( x = 0, 1, 2 \) give \( 1 \), \( 3 = 0 \) and \( 7 = 1 \). In \( \nF_2 \) the method stops at the first step: there \( 2 = 0 \) and \( 4 = 0 \), so multiplying by \( 4 \) cannot be undone and \( 2 \) has no inverse.
+:::
+
 The characteristics found so far are \( 0 \), \( 2 \) and \( 3 \), and the ring \( \nZ/6\nZ \) has characteristic \( 6 \). A field cannot.
 
 ::: {#thm-characteristic-prime}
@@ -246,7 +260,7 @@ Find the characteristic of every ordered field, of \( \nQ \) and \( \nR \), of \
 
 *\( \nC \).* The field \( \nR \) is a subfield of \( \nC \) (@exm-subfields-gaussian (iii)), so \( \operatorname{char} \nC = \operatorname{char} \nR = 0 \) by @prp-characteristic-invariant (a). This argument uses no order on \( \nC \).
 
-*\( \nF_p \).* For \( n \in \nN \), \( n \cdot [1] = [n] \) (@fd3:thm-integers-mod-n-ring (d)), and \( [n] = [0] \) if and only if \( n \in p\nZ \), that is, \( p \mid n \) (@fd3:thm-quotient-ring-by-ideal (d)). A positive \( n \) with \( p \mid n \) has \( p \le n \) (@fd3:prp-divisibility-rules-integers (e)), and \( p \mid p \). So the least positive \( n \) with \( n \cdot [1] = [0] \) is \( p \), and \( \operatorname{char} \nF_p = p \).
+*\( \nF_p \).* (In this section we keep the brackets on classes of \( \nF_p = \nZ/p\nZ \) wherever integers and their classes appear side by side, as in \( n \cdot [1] = [n] \); elsewhere elements of \( \nF_p \) are written without brackets, as in Section 2.2.) For \( n \in \nN \), \( n \cdot [1] = [n] \) (@fd3:thm-integers-mod-n-ring (d)), and \( [n] = [0] \) if and only if \( n \in p\nZ \), that is, \( p \mid n \) (@fd3:thm-quotient-ring-by-ideal (d)). A positive \( n \) with \( p \mid n \) has \( p \le n \) (@fd3:prp-divisibility-rules-integers (e)), and \( p \mid p \). So the least positive \( n \) with \( n \cdot [1] = [0] \) is \( p \), and \( \operatorname{char} \nF_p = p \).
 
 *\( \nQ(\sqrt 2) \) and \( \nQ(i) \).* They are subfields of \( \nR \) and of \( \nC \) (@exm-q-sqrt2-field, @exm-subfields-gaussian (i)), so both have characteristic \( 0 \) by @prp-characteristic-invariant (a).
 
@@ -265,7 +279,7 @@ What are \( \operatorname{char} \nF_7 \) and \( \operatorname{char} \nQ(\sqrt 2)
 
 Section 2.3 defined the prime subfield of a field \( F \) as the smallest subfield, the intersection of all subfields of \( F \) (@def-prime-subfield), and promised to identify it. Every subfield contains \( 1 \), hence every \( n \cdot 1 \), hence every quotient \( (m \cdot 1)(n \cdot 1)^{-1} \) with \( n \cdot 1 \ne 0 \). The characteristic decides which of these quotients exist, and so which number system the prime subfield copies.
 
-The identification goes through a homomorphism into \( F \), and the main point is that there is exactly one. For ordered fields this is *Number Systems: From \(\nN\) to \(\nR\)*, Chapter 4's embedding \( \iota_F \colon \nQ \to F \) (@fd3:thm-rationals-embed-ordered-field). We keep the name \( \iota_F \), and we keep the brackets on the classes of \( \nF_p = \nZ/p\nZ \) in this subsection, since integers and their classes appear side by side.
+The identification goes through a homomorphism into \( F \), and the main point is that there is exactly one. For ordered fields this is *Number Systems: From \(\nN\) to \(\nR\)*, Chapter 4's embedding \( \iota_F \colon \nQ \to F \) (@fd3:thm-rationals-embed-ordered-field). We keep the name \( \iota_F \), and, as before, the brackets on the classes of \( \nF_p \).
 
 ::: {#thm-prime-subfield}
 [The Prime Subfield]
@@ -285,7 +299,7 @@ In (a), \( p \) is prime by @thm-characteristic-prime, so \( \nF_p \) is a field
 ::: {.idea}
 An attempt runs as follows. \( \psi(3) = \psi(1 + 1 + 1) = 1 + 1 + 1 = 3 \cdot 1 \), then \( \psi(-3) = -\psi(3) = (-3) \cdot 1 \), and \( \psi(1/3) \) must be the inverse of \( \psi(3) \), so \( \psi(1/3) = (3 \cdot 1)^{-1} \). The homomorphism has no freedom at all: it is determined by \( \psi(1) = 1 \), through sums, negatives and inverses. That gives **uniqueness**, and it also dictates the only possible formula, \( m/n \mapsto (m \cdot 1)(n \cdot 1)^{-1} \).
 
-What can go wrong is \( 1/3 \): if \( 3 \cdot 1 = 0 \) in \( F \), it has no inverse, and no homomorphism exists. The characteristic says exactly when this happens. In characteristic \( 0 \) the formula makes sense, and what remains is to check that it does not depend on how a rational is written, and that it respects \( + \) and \( \cdot \): the fraction rules of @thm-field-basic-properties (g) do that. In characteristic \( p \), the classes \( [n] \) play the role of the rationals, and \( p \cdot 1 = 0 \) is exactly what makes \( [n] \mapsto n \cdot 1 \) well defined. The image is then a subfield (Section 2.4) built from \( 1 \) alone, so it lies inside every subfield: it is the prime subfield.
+What can go wrong is \( 1/3 \): if \( 3 \cdot 1 = 0 \) in \( F \), it has no inverse, and no homomorphism exists. The characteristic says exactly when this happens. In characteristic \( 0 \) the formula makes sense, and what remains is to check that it does not depend on how a rational is written, which follows from @lem-integer-multiples (b) and a regrouping by (F5)–(F8), and that it respects \( + \) and \( \cdot \), which the fraction rules of @thm-field-basic-properties (g) give. In characteristic \( p \), the classes \( [n] \) play the role of the rationals, and \( p \cdot 1 = 0 \) is exactly what makes \( [n] \mapsto n \cdot 1 \) well defined. The image is then a subfield (Section 2.4) built from \( 1 \) alone, so it lies inside every subfield: it is the prime subfield.
 
 *Before reading on: where is \( \operatorname{char} F = 0 \) used in (b), and why does the same formula fail for \( F = \nF_5 \)?*
 :::
@@ -293,7 +307,7 @@ What can go wrong is \( 1/3 \): if \( 3 \cdot 1 = 0 \) in \( F \), it has no inv
 ::: {.proof}
 **Part (a).** Let \( \operatorname{char} F = p > 0 \).
 
-*Well defined.* Every element of \( \nF_p \) is a class \( [n] \) with \( n \in \nZ \) (@fd2:def-quotient-set). If \( [n] = [n'] \), then \( p \mid n - n' \) (@fd3:thm-quotient-ring-by-ideal (a), for the ideal \( p\nZ \)), so \( (n - n') \cdot 1 = 0 \) by @prp-characteristic-divides (a), and \( n \cdot 1 - n' \cdot 1 = (n - n') \cdot 1 = 0 \) by @lem-integer-multiples (d). So \( n \cdot 1 = n' \cdot 1 \): the value does not depend on the representative. (This is @fd3:thm-well-defined-on-classes (a) with equality as the relation on \( F \), whose classes are single elements.)
+*Well defined.* Every element of \( \nF_p \) is a class \( [n] \) with \( n \in \nZ \) (@fd2:def-quotient-set). If \( [n] = [n'] \), then \( p \mid n - n' \) (@fd3:thm-quotient-ring-by-ideal (a), for the ideal \( p\nZ \)), so \( (n - n') \cdot 1 = 0 \) by @prp-characteristic-divides (a), and \( n \cdot 1 - n' \cdot 1 = (n - n') \cdot 1 = 0 \) by @lem-integer-multiples (d). So \( n \cdot 1 = n' \cdot 1 \): the value does not depend on the representative. (This is @fd3:thm-well-defined-on-classes (a) with equality as the relation on \( F \), whose classes are the singletons \( \{y\} \), followed by \( \{y\} \mapsto y \).)
 
 *Homomorphism.* For \( m, n \in \nZ \), by the operations of \( \nZ/p\nZ \) (@fd3:thm-quotient-ring-by-ideal (b)) and @lem-integer-multiples (d), parts (a) and (b) there,
 \[
@@ -310,7 +324,7 @@ and \( \iota_F([1]) = 1 \cdot 1 = 1 \). So \( \iota_F \) is a homomorphism (@def
 \[
 \psi(n \cdot [1]) = \psi\bigl( -((-n) \cdot [1]) \bigr) = -\bigl( (-n) \cdot 1 \bigr) = n \cdot 1 ,
 \]
-by @prp-field-homomorphism-properties (a). So \( \psi([n]) = n \cdot 1 = \iota_F([n]) \) for every \( n \), and \( \psi = \iota_F \).
+by the definition of negative multiples at both ends, and in the middle by @prp-field-homomorphism-properties (a) followed by the case \( -n \in \nN \) just done. So \( \psi([n]) = n \cdot 1 = \iota_F([n]) \) for every \( n \), and \( \psi = \iota_F \).
 
 Finally, \( \iota_F \) is an isomorphism from \( \nF_p \) onto its image \( P \) by @prp-field-homomorphism-properties (d), so \( P \cong \nF_p \).
 
@@ -389,7 +403,7 @@ Let \( F \) be a finite field.
 :::
 
 ::: {.proof}
-(a) Say \( F \) has \( N \) elements (@fd2:def-finite). Suppose \( \operatorname{char} F = 0 \), and consider \( f \colon \{1, \dots, N + 1\} \to F \), \( f(k) \coloneqq k \cdot 1 \). If \( k \cdot 1 = k' \cdot 1 \), then \( (k - k') \cdot 1 = 0 \) (@lem-integer-multiples (d)), so \( 0 \mid k - k' \) by @prp-characteristic-divides (a), and \( k = k' \). So \( f \) is an injection from a set with \( N + 1 \) elements into a set with \( N \) elements, which @fd2:cor-pigeonhole-finite-sets (a) forbids. Hence \( \operatorname{char} F \ne 0 \), and \( \operatorname{char} F \) is a prime by @thm-characteristic-prime.
+(a) Say \( F \) has \( N \) elements (@fd2:def-finite). Suppose \( \operatorname{char} F = 0 \), and consider \( f \colon \{1, \dots, N + 1\} \to F \), \( f(k) \coloneqq k \cdot 1 \). If \( k \cdot 1 = k' \cdot 1 \), then \( (k - k') \cdot 1 = 0 \) (@lem-integer-multiples (d)), so \( 0 \mid k - k' \) by @prp-characteristic-divides (a), hence \( k - k' = 0 \) (@fd3:prp-divisibility-rules-integers (a)) and \( k = k' \). So \( f \) is an injection from a set with \( N + 1 \) elements into a set with \( N \) elements, which @fd2:cor-pigeonhole-finite-sets (a) forbids. Hence \( \operatorname{char} F \ne 0 \), and \( \operatorname{char} F \) is a prime by @thm-characteristic-prime.
 
 (b) is @thm-prime-subfield (a).
 
@@ -450,7 +464,7 @@ Let \( F \) be a field of characteristic \( p > 0 \) and \( a \in F \).
 ::: {.solution}
 (a) By @lem-integer-multiples (d) and (c), \( (p - 1) \cdot a + a = (p - 1) \cdot a + 1 \cdot a = p \cdot a = (p \cdot 1) a = 0 \cdot a = 0 \), using @thm-field-basic-properties (d). By uniqueness of negatives (@thm-field-basic-properties (c)), \( (p - 1) \cdot a = -a \).
 
-(b) By @lem-integer-multiples (d), \( (kp + r) \cdot a = (kp) \cdot a + r \cdot a = k \cdot (p \cdot a) + r \cdot a \). Now \( p \cdot a = 0 \) as in (a), and \( k \cdot 0 = (k \cdot 1) 0 = 0 \) by @lem-integer-multiples (c) and @thm-field-basic-properties (d). So \( (kp + r) \cdot a = 0 + r \cdot a = r \cdot a \).
+(b) By @lem-integer-multiples (d), \( (kp + r) \cdot a = (kp) \cdot a + r \cdot a = k \cdot (p \cdot a) + r \cdot a \). Now \( p \cdot a = 0 \) as in (a), and \( k \cdot 0 = (k \cdot 1) 0 = 0 \) by @lem-integer-multiples (c) with (d) and @thm-field-basic-properties (d). So \( (kp + r) \cdot a = 0 + r \cdot a = r \cdot a \).
 
 (c) Directly: \( 100 \cdot [3] = (100 \cdot [1])[3] = [100][3] = [300] \) (@lem-integer-multiples (c), @fd3:thm-integers-mod-n-ring (d)), and \( 300 = 42 \cdot 7 + 6 \), so \( 100 \cdot [3] = [6] \). By (b): \( 100 = 14 \cdot 7 + 2 \), so \( 100 \cdot [3] = 2 \cdot [3] = [6] \). The two agree.
 :::
@@ -473,7 +487,7 @@ By @prp-characteristic-divides (b), \( 2 \ne 0 \), so \( 2 \) is invertible; and
 
 (a) If \( x = -x \), then \( 2x = x + x = x + (-x) = 0 \). Since \( 2 \ne 0 \), \( x = 0 \) by @thm-field-basic-properties (f).
 
-(b) Since \( 4 \ne 0 \), \( x^2 + bx + c = 0 \) if and only if \( 4(x^2 + bx + c) = 0 \) (one direction by @thm-field-basic-properties (d), the other by (f)). By @fd3:prp-ring-algebra (d), \( (2x + b)^2 = (2x)^2 + 2(2x)b + b^2 = 4x^2 + 4bx + b^2 \), the products of the multiples regrouped by @lem-integer-multiples (b), (F5) and (F6). Hence, with \( D \coloneqq b^2 - 4c \),
+(b) Since \( 4 \ne 0 \), \( x^2 + bx + c = 0 \) if and only if \( 4(x^2 + bx + c) = 0 \) (one direction by @thm-field-basic-properties (d) and (F6), the other by (f)). By @fd3:prp-ring-algebra (d), \( (2x + b)^2 = (2x)^2 + 2(2x)b + b^2 = 4x^2 + 4bx + b^2 \), the products of the multiples regrouped by @lem-integer-multiples (b), (F5) and (F6). Hence, with \( D \coloneqq b^2 - 4c \),
 \[
 4(x^2 + bx + c) = (2x + b)^2 - D ,
 \]
@@ -506,7 +520,7 @@ Let \( F \) be a field.
 ::: {#exr-characteristic-and-prime-subfield-c1}
 [C1: Exit check: the characteristic]
 
-Using only @def-characteristic, @lem-integer-multiples, division with remainder in \( \nZ \) and the field axioms with @thm-field-basic-properties, prove:
+Using only @def-characteristic, @lem-integer-multiples, division with remainder in \( \nZ \), @fd2:def-prime and the rules for divisibility in \( \nZ \) (@fd3:prp-divisibility-rules-integers), and the field axioms with @thm-field-basic-properties, prove:
 
 ::: {.enumerate options="label=(\alph*)"}
 1. for a field \( F \) and \( n \in \nZ \), \( n \cdot 1 = 0 \) if and only if \( \operatorname{char} F \mid n \);
@@ -517,11 +531,11 @@ Using only @def-characteristic, @lem-integer-multiples, division with remainder 
 ::: {.solution}
 (a) Let \( c \coloneqq \operatorname{char} F \).
 
-*Case \( c = 0 \).* No positive \( n \) has \( n \cdot 1 = 0 \), by @def-characteristic. For \( n < 0 \), \( n \cdot 1 = -((-n) \cdot 1) \), and \( (-n) \cdot 1 \ne 0 \); since \( -x = 0 \) implies \( x = -(-x) = 0 \), also \( n \cdot 1 \ne 0 \). And \( 0 \cdot 1 = 0 \). So \( n \cdot 1 = 0 \) iff \( n = 0 \), iff \( 0 \mid n \).
+*Case \( c = 0 \).* No positive \( n \) has \( n \cdot 1 = 0 \), by @def-characteristic. For \( n < 0 \), \( n \cdot 1 = -((-n) \cdot 1) \), and \( (-n) \cdot 1 \ne 0 \); since \( -x = 0 \) implies \( x = -(-x) = 0 \), also \( n \cdot 1 \ne 0 \). And \( 0 \cdot 1 = 0 \). So \( n \cdot 1 = 0 \) iff \( n = 0 \), iff \( 0 \mid n \) (@fd3:prp-divisibility-rules-integers (a)).
 
 *Case \( c > 0 \).* Divide: \( n = qc + r \) with \( q, r \in \nZ \), \( 0 \le r < c \) (@fd3:thm-integers-division-remainder). By @lem-integer-multiples (d), \( (qc) \cdot 1 = (q \cdot 1)(c \cdot 1) = (q \cdot 1) 0 = 0 \) and \( n \cdot 1 = (qc) \cdot 1 + r \cdot 1 = r \cdot 1 \). If \( c \mid n \), then \( r = 0 \) by uniqueness of the remainder, so \( n \cdot 1 = 0 \cdot 1 = 0 \). If \( n \cdot 1 = 0 \), then \( r \cdot 1 = 0 \) with \( 0 \le r < c \); \( r > 0 \) would contradict the minimality of \( c \), so \( r = 0 \) and \( c \mid n \).
 
-(b) Let \( c > 0 \). As \( 1 \cdot 1 = 1 \ne 0 \), \( c \ge 2 \). If \( c \) were not prime, \( c = rs \) with \( 1 < r, s < c \), and \( (r \cdot 1)(s \cdot 1) = (rs) \cdot 1 = 0 \) by @lem-integer-multiples (b), so \( r \cdot 1 = 0 \) or \( s \cdot 1 = 0 \) (@thm-field-basic-properties (f)), contradicting the minimality of \( c \). So \( c \) is prime.
+(b) Let \( c > 0 \). As \( 1 \cdot 1 = 1 \ne 0 \), \( c \ge 2 \). If \( c \) were not prime, by @fd2:def-prime it would have a positive divisor \( r \notin \{1, c\} \); write \( c = rs \). Then \( s > 0 \), \( r, s \le c \) by @fd3:prp-divisibility-rules-integers (e), and \( s \notin \{1, c\} \), since \( s = 1 \) gives \( r = c \) and \( s = c \) gives \( r = 1 \) (cancel \( c \ne 0 \)). So \( 1 < r, s < c \), and \( (r \cdot 1)(s \cdot 1) = (rs) \cdot 1 = 0 \) by @lem-integer-multiples (b), so \( r \cdot 1 = 0 \) or \( s \cdot 1 = 0 \) (@thm-field-basic-properties (f)), contradicting the minimality of \( c \). So \( c \) is prime.
 
 **Marking scheme.** (10 points)
 
@@ -529,7 +543,7 @@ Using only @def-characteristic, @lem-integer-multiples, division with remainder 
 - 3: division of \( n \) by \( c \) with remainder, and \( n \cdot 1 = r \cdot 1 \) justified by the rules for multiples and \( c \cdot 1 = 0 \).
 - 2: minimality of \( c \) forces \( r = 0 \); the converse \( c \mid n \Rightarrow n \cdot 1 = 0 \).
 - 1: \( c \ne 1 \) from \( 1 \ne 0 \).
-- 2: a factorization \( c = rs \) with \( 1 < r, s < c \) gives \( (r \cdot 1)(s \cdot 1) = 0 \), and the absence of zero divisors contradicts minimality.
+- 2: a factorization \( c = rs \) with \( 1 < r, s < c \), bounds justified, gives \( (r \cdot 1)(s \cdot 1) = 0 \), and the absence of zero divisors contradicts minimality.
 
 Fatal errors (0 for the step): "\( c \cdot 1 = 0 \), so \( c \mid n \)" for every \( n \) with \( n \cdot 1 = 0 \), without the division step; treating \( n \cdot 1 \) as the integer \( n \) (for instance "\( n \cdot 1 = 0 \), so \( n = 0 \)" in \( \nF_p \)).
 :::
@@ -541,27 +555,23 @@ Here is an argument.
 
 > *Claim.* A finite field \( F \) has prime characteristic.
 >
-> *Proof.* (1) The elements \( 1 \cdot 1, 2 \cdot 1, 3 \cdot 1, \dots \) of \( F \) cannot all be different, since \( F \) is finite. (2) So \( m \cdot 1 = k \cdot 1 \) for some positive integers \( k < m \). (3) Hence \( m \cdot 1 = 0 \). (4) So \( m \) is the characteristic of \( F \), and it is prime by @thm-characteristic-prime.
+> *Proof.* (1) The elements \( 1 \cdot 1, 2 \cdot 1, 3 \cdot 1, \dots \) of \( F \) cannot all be different, since \( F \) is finite. (2) So \( m \cdot 1 = k \cdot 1 \) for some positive integers \( k < m \). (3) Hence \( (m - k) \cdot 1 = m \cdot 1 - k \cdot 1 = 0 \). (4) So \( m - k \) is the characteristic of \( F \), and it is prime by @thm-characteristic-prime.
 
-Is the conclusion true? Does the argument prove it? Name each failing step, say what is wrong with it, and give a counterexample to the step.
+Is the conclusion true? Does the argument prove it? Name the failing step, say what is wrong with it, and give a counterexample to the step.
 :::
 
 ::: {.solution}
-*The conclusion is true:* it is @cor-finite-field-prime-characteristic (a). Steps (1) and (2) are correct (they are the pigeonhole argument of that proof, @fd2:cor-pigeonhole-finite-sets). The argument fails twice.
+*The conclusion is true:* it is @cor-finite-field-prime-characteristic (a). Steps (1) and (2) are correct (they are the pigeonhole argument of that proof, @fd2:cor-pigeonhole-finite-sets), and so is step (3), by @lem-integer-multiples (d). Step (4) fails.
 
-*Step (3).* From \( m \cdot 1 = k \cdot 1 \) the rules for multiples give \( (m - k) \cdot 1 = m \cdot 1 - k \cdot 1 = 0 \) (@lem-integer-multiples (d)), not \( m \cdot 1 = 0 \). The step cancels \( k \cdot 1 \) as if it were \( 0 \): it uses a "fact" that is neither proved nor true, which is (N9) of @fd1:exm-not-allowed-catalogue. Counterexample to the step: in \( \nF_3 \), \( 4 \cdot 1 = 1 = 1 \cdot 1 \), but \( 4 \cdot 1 = 1 \ne 0 \).
-
-*Step (4).* Even with \( m - k \) in place of \( m \), the argument only produces **some** positive integer with a vanishing multiple. The characteristic is the **least** one (@def-characteristic), and \( m - k \) need not be least: in \( \nF_3 \), \( 7 \cdot 1 = 1 = 1 \cdot 1 \) gives \( m - k = 6 \), while \( \operatorname{char} \nF_3 = 3 \). This step also cites a property, "is the characteristic", that no line supplies: (N9) again.
+*Step (4).* The argument only produces **some** positive integer with a vanishing multiple. The characteristic is the **least** one (@def-characteristic), and \( m - k \) need not be least: in \( \nF_3 \), \( 7 \cdot 1 = 1 = 1 \cdot 1 \) gives \( m - k = 6 \), while \( \operatorname{char} \nF_3 = 3 \). The step cites a property, "is the characteristic", that no line supplies, which is (N9) of @fd1:exm-not-allowed-catalogue.
 
 *Repair.* By (2) and @lem-integer-multiples (d), \( (m - k) \cdot 1 = 0 \) with \( m - k > 0 \), so the set of positive integers with a vanishing multiple is non-empty and \( \operatorname{char} F > 0 \) (@def-characteristic); then @thm-characteristic-prime makes it prime.
 
 **Marking scheme.** (10 points)
 
 - 2: the conclusion is true, with the reference.
-- 4: step (3) named, with the correct consequence \( (m - k) \cdot 1 = 0 \) and a counterexample to the step.
-- 4: step (4) named: only some positive multiple vanishes, the characteristic is the least one; a counterexample or a clear reason.
-
-A marker credits either slip on its own; full credit needs both.
+- 2: steps (1)–(3) are correct (including \( (m - k) \cdot 1 = 0 \) via @lem-integer-multiples (d)).
+- 6: step (4) named: only some positive multiple vanishes, the characteristic is the least one (@def-characteristic), with a counterexample to the step.
 :::
 
 ::: {#exr-characteristic-and-prime-subfield-c3}
@@ -581,7 +591,7 @@ Let \( F = \{0, 1, \alpha, \beta\} \) be the four-element field of @exr-finite-f
 
 (b) By @thm-prime-subfield (a), the prime subfield is the image of \( \iota_F \colon \nF_2 \to F \), which is \( \{0 \cdot 1, 1 \cdot 1\} = \{0, 1\} \), and \( \iota_F \) is an isomorphism from \( \nF_2 \) onto it.
 
-(c) Let \( s(x) \coloneqq x^2 \). For \( x, y \in F \), \( (x + y)^2 = x^2 + 2xy + y^2 \) by @fd3:prp-ring-algebra (d), where \( 2xy = (2 \cdot 1)(xy) = 0 \) by @lem-integer-multiples (c) and (a); so \( s(x + y) = s(x) + s(y) \). Next \( (xy)^2 = (xy)(xy) = (xx)(yy) = x^2 y^2 \) by (F5) and (F6), and \( 1^2 = 1 \). So \( s \) is a homomorphism (@def-field-homomorphism). Its values are
+(c) Let \( s(x) \coloneqq x^2 \). For \( x, y \in F \), \( (x + y)^2 = x^2 + 2xy + y^2 \) by @fd3:prp-ring-algebra (d), where \( 2xy = (1 + 1)(xy) = 0\,(xy) = 0 \), since \( 1 + 1 = 2 \cdot 1 = 0 \) by part (a) and \( 0\,(xy) = 0 \) by @thm-field-basic-properties (d); so \( s(x + y) = s(x) + s(y) \). Next \( (xy)^2 = (xy)(xy) = (xx)(yy) = x^2 y^2 \) by (F5) and (F6), and \( 1^2 = 1 \). So \( s \) is a homomorphism (@def-field-homomorphism). Its values are
 \[
 s(0) = 0 , \quad s(1) = 1 , \quad s(\alpha) = \alpha^2 = \beta , \quad s(\beta) = (1 + \alpha)^2 = 1 + \alpha^2 = 1 + \beta = \alpha ,
 \]
@@ -591,13 +601,15 @@ using the additivity just proved and \( 1 + \beta = 1 + 1 + \alpha = \alpha \). 
 <!-- dependency ledger
 lem-integer-multiples (proof): (m + 1)k = mk + k, m - k in N for m >= k with (m - k) + k = m, the sum n + 1 in N and Z agree | arithmetic of omega, fd3:cor-omega-identification (c) with fd3:prp-naturals-embed-integers (a); fd2:lem-naturals-arithmetic read on omega
 lem-integer-multiples (proof): -0 = 0; -(u + v) = (-u) + (-v); -(x - y) = y - x | uniqueness of negatives, fd3:prp-ring-algebra (a); inline
-lem-integer-multiples (proof): in Z, (-m)k = m(-k) = -(mk), (-m)(-k) = mk; m < 0 implies -m in N | fd3:prp-ring-algebra (c); fd3:prp-naturals-embed-integers (c), cited
+lem-integer-multiples (proof): in Z, (-m)k = m(-k) = -(mk), (-m)(-k) = mk; m < 0 implies -m in N | fd3:prp-ring-algebra (c); fd3:thm-integers-ordered-ring (b), cited (paragraph before the lemma)
 lem-integer-multiples (claim): (paragraph before it) n . a = na in Z for n < 0 | fd3:prp-ring-algebra (c), (a); F3.2 Section 2.3 remark for n in N (cited by position)
 lem-integer-multiples (claim): (quick check) (-3).[2] = [4] in Z/5Z | inline; verify/ch02/lem-integer-multiples.py
 def-characteristic (example): char F2 = 2, char F3 = 3, Z/6Z has characteristic 6, zero ring characteristic 1 | exm-finite-fields table; fd3:thm-integers-mod-n-ring (d); verify/ch02/def-characteristic.py
 def-characteristic (claim): first examples, char Q = 0 | forward pointer to exm-characteristics in the same section, not used as a reason before it
 prp-characteristic-divides (proof): positive divisors of 2 are 1 and 2 | 2 prime, fd2:def-prime (the example after it)
 thm-characteristic-prime (proof): r != 1, r <= c, r != c gives 1 < r < c | discreteness of Z, fd3:thm-integers-ordered-ring (c) (via fd3:prp-integer-least-element's setting); fd3:prp-divisibility-rules-integers (e), cited
+thm-characteristic-prime (proof): s > 0 from r, c > 0 (s = 0 gives c = 0; s < 0 gives rs < 0); rc = c with c != 0 gives r = 1 | fd3:prp-ordered-ring-rules (c), (f) on Z (fd3:thm-integers-ordered-ring)
+exm-completing-square-f3 (solution): 2.2 = 4 = 1, 3 = 0 in F3; 4(x^2 + x + 1) = (2x + 1)^2; root 1; values 1, 3, 7 | verify/ch02/exm-completing-square-f3.py
 prp-characteristic-invariant (proof): induction on n | fd1:ax-induction read on omega (fd3:cor-omega-identification (b))
 exm-characteristics (example): R is an ordered field; Q subfield of R; R subfield of C | fd3:thm-reals-ordered-field (F3.10, soft); exm-subfields-gaussian (iii); F4.1 labels through it (soft, example only)
 exm-characteristics (example): four-element field has characteristic 2 | exr-finite-fields-from-modular-arithmetic-c1 and exr-characteristic-and-prime-subfield-c3; named only, nothing rests on it
@@ -615,6 +627,7 @@ exr-characteristic-and-prime-subfield-b1 (solution): 300 = 42 * 7 + 6, 100 = 14 
 exr-characteristic-and-prime-subfield-b2 (solution): roots 4, 2 of x^2 + x + 1 in F7; 2^{-1} = 4; no root in F2 | verify/ch02/exr-characteristic-and-prime-subfield-b2.py
 exr-characteristic-and-prime-subfield-b2 (solution): (2x)^2 = 4x^2 | power and product regrouping (F5), (F6) with lem-integer-multiples (b); inline
 exr-characteristic-and-prime-subfield-c1 (solution): r = 0 when c | n, by uniqueness of the remainder | fd3:thm-integers-division-remainder (a), cited
-exr-characteristic-and-prime-subfield-c2 (solution): 4.1 = 1.1 = 1 and 7.1 = 1 in F3 | verify/ch02/exr-characteristic-and-prime-subfield-c2.py
+exr-characteristic-and-prime-subfield-c1 (solution): s > 0, s != 1, s != c in c = rs; 1 < r, s < c | as in the proof of thm-characteristic-prime: fd3:prp-ordered-ring-rules (c), (f) on Z, discreteness fd3:thm-integers-ordered-ring (c)
+exr-characteristic-and-prime-subfield-c2 (solution): 7.1 = 1.1 = 1 in F3, 7 - 1 = 6 | verify/ch02/exr-characteristic-and-prime-subfield-c2.py
 exr-characteristic-and-prime-subfield-c3 (solution): the field of exr-finite-fields-from-modular-arithmetic-c1, its tables | an exercise cited from an exercise solution (STYLE 9); verify/ch02/exr-characteristic-and-prime-subfield-c3.py
 -->

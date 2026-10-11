@@ -1,6 +1,6 @@
 # Finite Fields from Modular Arithmetic
 
-Every field of Section 2.1 is infinite. *Number Systems: From \( \nN \) to \( \nR \)* has already met finite ones: it proved that the integers modulo a prime \( p \) form a field (@fd3:thm-integers-mod-prime-field). This section restates that result in the language of @def-field, gives these fields a name of their own, \( \nF_p \), and computes in them: inverses, linear equations, and the elimination of Section 2.1, now run modulo \( 5 \). Finite fields are not a curiosity; coding theory and computer algebra do linear algebra over them every day.
+Every field of Section 2.1 is infinite. *Number Systems: From \( \nN \) to \( \nR \)* has already met finite ones: it proved that the integers modulo a prime \( p \) form a field (@fd3:thm-integers-mod-prime-field). This section restates that result in the language of @def-field, gives these fields a name of their own, \( \nF_p \), and computes in them: inverses, linear equations, and the elimination method of Section 2.1, now run modulo \( 5 \). Finite fields are not a curiosity; coding theory and computer algebra do linear algebra over them every day.
 
 ## Arithmetic modulo n, recalled
 
@@ -101,7 +101,7 @@ Find the inverse of \( 3 \) in \( \nF_7 \).
 The inverse is the \( x \in \{1, \dots, 6\} \) with \( 7 \mid 3x - 1 \). Testing the candidates in turn, the products \( 3, 6, 9, 12, 15 \) leave remainders \( 3, 6, 2, 5, 1 \), and \( 3 \cdot 5 = 15 = 2 \cdot 7 + 1 \). So \( 3^{-1} = 5 \) in \( \nF_7 \), and by @thm-field-basic-properties (c) it is the only inverse.
 :::
 
-For small \( p \), trial is fast. For larger \( p \) the Euclidean algorithm of *Number Systems* finds the inverse directly, through @fd3:thm-units-mod-n: if \( ax + py = 1 \), then \( [a]^{-1} = [x] \).
+For small \( p \), trial is fast. For larger \( p \) the Euclidean algorithm of *Number Systems* finds the inverse directly: if \( ax + py = 1 \), then \( \gcd(a, p) = 1 \) by @fd3:cor-coprime-iff-combination, and @fd3:thm-units-mod-n gives \( [a]^{-1} = [x] \).
 
 ::: {#exm-inverses-in-fp}
 [Inverses in \( \nF_7 \) and in \( \nF_{101} \)]
@@ -116,7 +116,7 @@ For small \( p \), trial is fast. For larger \( p \) the Euclidean algorithm of 
 \]
 since \( 8 - 1 = 7 \), \( 15 - 1 = 2 \cdot 7 \) and \( 36 - 1 = 5 \cdot 7 \). So \( 1^{-1} = 1 \), \( 2^{-1} = 4 \), \( 4^{-1} = 2 \), \( 3^{-1} = 5 \), \( 5^{-1} = 3 \), \( 6^{-1} = 6 \), using (F6) for the reversed pairs. Each element of \( \nF_7^{\times} \coloneqq \nF_7 \setminus \{0\} \) appears exactly once as an inverse, as it must: the inverse of \( a^{-1} \) is \( a \) (@thm-field-basic-properties (g)), so two elements with the same inverse are equal. The elements \( 1 \) and \( 6 = -1 \) are their own inverses, and by @cor-field-squares-equal no others are.
 
-(ii) First, \( 101 \) is prime: no \( d \) with \( 2 \le d \le 10 \) divides it (the remainders of \( 101 \) on division by \( 2, 3, \dots, 10 \) are \( 1, 2, 1, 1, 5, 3, 5, 2, 1 \)), and \( 11 \cdot 11 = 121 > 101 \). Run the Euclidean algorithm on \( (101, 17) \):
+(ii) First, \( 101 \) is prime, by the criterion recalled after @def-field-fp: no \( d \) with \( 2 \le d \le 10 \) divides it (the remainders of \( 101 \) on division by \( 2, 3, \dots, 10 \) are \( 1, 2, 1, 1, 5, 3, 5, 2, 1 \)), and \( 11 \cdot 11 = 121 > 101 \). Run the Euclidean algorithm on \( (101, 17) \):
 \[
 101 = 5 \cdot 17 + 16, \qquad 17 = 1 \cdot 16 + 1 .
 \]
@@ -124,10 +124,10 @@ Back-substitute from the last line:
 \[
 1 = 17 - 16 = 17 - (101 - 5 \cdot 17) = 6 \cdot 17 - 101 .
 \]
-So \( 17 \cdot 6 + 101 \cdot (-1) = 1 \), and @fd3:thm-units-mod-n gives \( 17^{-1} = 6 \) in \( \nF_{101} \). Check: \( 17 \cdot 6 = 102 = 101 + 1 \).
+So \( 17 \cdot 6 + 101 \cdot (-1) = 1 \), hence \( \gcd(17, 101) = 1 \) (@fd3:cor-coprime-iff-combination), and @fd3:thm-units-mod-n gives \( 17^{-1} = 6 \) in \( \nF_{101} \). Check: \( 17 \cdot 6 = 102 = 101 + 1 \).
 :::
 
-Since \( \nF_p \) is a field, each result of Section 2.1 about equations holds there word for word; what changes is how the numbers are computed. The opening elimination, done over \( \nF_5 \), looks like this.
+Since \( \nF_p \) is a field, each result of Section 2.1 about equations holds there word for word; what changes is how the numbers are computed. An elimination of the same kind as Section 2.1's opening one, done over \( \nF_5 \), looks like this.
 
 ::: {#exm-elimination-f5}
 [Elimination over \( \nF_5 \)]
@@ -160,7 +160,7 @@ Exactly \( 1 \) and \( 10 \). By @cor-field-squares-equal, \( x^2 = 1 \) if and 
 :::
 
 ::: {.warning}
-A non-zero class of \( \nZ/n\nZ \) need not have an inverse. In \( \nZ/6\nZ \) the equation \( [2]x = [1] \) has **no** solution, since \( [2]x \) is always one of \( [0], [2], [4] \); and \( [2]x = [4] \) has **two** solutions, \( x = [2] \) and \( x = [5] \) (as \( 10 - 4 = 6 \)). So division by \( [a] \) modulo \( n \) is allowed when \( n \) is prime, or more generally when \( \gcd(a, n) = 1 \) (@fd3:thm-units-mod-n), and not otherwise.
+A non-zero class of \( \nZ/n\nZ \) need not have an inverse. In \( \nZ/6\nZ \) the equation \( [2]x = [1] \) has **no** solution, since \( [2]x \) is always one of \( [0], [2], [4] \); and \( [2]x = [4] \) has **two** solutions, \( x = [2] \) and \( x = [5] \) (as \( 10 - 4 = 6 \)). So division by \( [a] \) modulo \( n \) is allowed when \( n \) is prime and \( [a] \ne [0] \), or more generally when \( \gcd(a, n) = 1 \) (@fd3:thm-units-mod-n), and not otherwise.
 :::
 
 ::: {.remark}
@@ -338,7 +338,7 @@ and injectivity turns this into \( x x = 0 \). By (b), \( F \) is a field, so @t
 - 2: (b) (F5) and (F9) by expanding coefficients, with \( u + u = 0 \) in \( \nF_2 \) used and named.
 - 1: (b) (F8) from the table.
 - 1: (c) \( \varphi(0) = [0] \), with the cancellation justified in \( \nZ/4\nZ \).
-- 2: (c) an \( x \ne 0 \) with \( \varphi(x) = [2] \) by surjectivity, then \( x x = 0 \) by injectivity, contradicting the absence of zero divisors in \( F \).
+- 2: (c) an \( x \ne 0 \) with \( \varphi(x) = [2] \) by surjectivity, then \( x x = 0 \) by injectivity, contradicting the absence of zero divisors in \( F \). A solution that instead takes \( x \) with \( \varphi(x) = [1] \) by surjectivity and uses \( x + x = 0 \) in \( F \) (from the addition table) to get \( [0] = \varphi(0) = \varphi(x + x) = [1] + [1] = [2] \) earns these 2 points; \( \varphi(0) = [0] \) still earns the line above.
 
 Fatal errors (0 for the step): "\( F \) is \( \nZ/4\nZ \) because both have four elements"; using in (c) that \( \nZ/4\nZ \) is a field. A solution of (b) that checks (F5) and (F9) by listing all \( 64 \) triples from the tables earns the same points.
 :::
@@ -396,6 +396,8 @@ thm-zp-field-iff-prime (idea): p does not divide a gives gcd(a, p) = 1; n = rs w
 def-field-fp (claim): primality by trial divisors d with d * d <= p | the remark after fd3:lem-least-divisor-prime (F3.5 §03; not in the blueprint's allowed list; reported)
 def-field-fp (claim): 3 * 5 = 1 in F_7; squares equal to 1 in F_p; (quick check after it) remainders of 3x mod 7; (remark on order) 1 + (p - 1) = 0 | inline; cor-field-squares-equal; verify/ch02/def-field-fp.py
 exm-inverses-in-fp (solution): inverses in F_7; 101 prime (remainders on division by 2..10); Euclid on (101, 17); 17 * 6 = 102 | inline arithmetic; fd3:thm-units-mod-n, cited; verify/ch02/exm-inverses-in-fp.py
+exm-inverses-in-fp (solution): 101 prime, stopping at d = 10 | the remark after fd3:lem-least-divisor-prime (as in def-field-fp), pointed to inline
+exm-inverses-in-fp (solution): ax + py = 1 gives gcd(a, p) = 1, the precondition of fd3:thm-units-mod-n | fd3:cor-coprime-iff-combination (<=), cited
 exm-elimination-f5 (solution): inverses in F_5, elimination, formula values | prp-field-linear-equation (b); verify/ch02/exm-elimination-f5.py
 exm-elimination-f5 (claim): (quick check after it) x^2 = 1 in F_11 iff x in {1, 10}; 100 = 9 * 11 + 1 | cor-field-squares-equal; verify/ch02/exm-elimination-f5.py
 exm-elimination-f5 (claim): (warning after it) [2]x in {[0], [2], [4]} in Z/6Z; [2]x = [4] iff x in {[2], [5]} | inline, all six classes; verify/ch02/exm-elimination-f5.py
@@ -408,6 +410,7 @@ exr-finite-fields-from-modular-arithmetic-c1 (solution): tables; (F5), (F9) coef
 exr-finite-fields-from-modular-arithmetic-c1 (solution): additive cancellation in the ring Z/4Z | first half of the proof of thm-field-basic-properties (b), which uses (F1)-(F4) only; fd3:thm-integers-mod-n-ring (a)
 exr-finite-fields-from-modular-arithmetic-c1 (claim): (after the solution) Chapter 5 builds the field from polynomials over F_2 | F4.5 prose pointer (exm-polynomial-quotient-four-elements); nothing rests on it
 exr-finite-fields-from-modular-arithmetic-c2 (solution): (N9) | fd1:exm-not-allowed-catalogue, cited
+exr-finite-fields-from-modular-arithmetic-c2 (solution): 1/a in Z iff a = +-1; [a] != [0] gives p does not divide a; gcd(a, p) = 1 for a prime p not dividing a; p | ax - 1 gives [ax] = [1] | fd3:prp-divisibility-rules-integers (g), fd3:thm-quotient-ring-by-ideal (d), fd3:cor-prime-divides-product (a), fd3:thm-quotient-ring-by-ideal (a) with fd3:def-integers-mod-n-ring
 exr-finite-fields-from-modular-arithmetic-c3 (solution): values of x^2 + x + 1 in F_2, F_3, F_7 | verify/ch02/exr-finite-fields-from-modular-arithmetic-c3.py
 exr-finite-fields-from-modular-arithmetic-c3 (solution): Section 2.5 explains completing the square | prose pointer within the chapter (exr-characteristic-and-prime-subfield-b2); nothing rests on it
 -->
