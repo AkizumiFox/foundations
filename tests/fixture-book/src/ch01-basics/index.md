@@ -1,3 +1,0 @@
-# Basics
-
-The first chapter.

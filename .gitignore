@@ -21,3 +21,6 @@ templates/latex/*.pdf
 *.toc
 .venv/
 .vscode/
+# per-volume build output and deploy clones
+*/_build/
+*/site/
