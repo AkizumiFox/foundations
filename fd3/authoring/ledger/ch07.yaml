@@ -6,610 +6,2705 @@ items:
   file: 01-cuts.md
   line: 25
   hash: a6f384d85fbd
-  verdicts: []
+  verdicts:
+  - stage: S5a
+    verdict: correct
+    by: refereeA
+    hash: a6f384d85fbd
+    date: '2026-10-12'
+    model: claude-opus-5-5
+    evidence: '01-cuts.md:25-62: (C1)-(C3) and the symbolic forms agree; the negations are correct (fd1
+      bounded-quantifier negation, negated implication, totality (i)); (Z5)/(Z6) of ax-zf-fragment (fd3
+      ch01:21) do license R_D as a set. Lines 9-15 (sigma has the same upper bounds as A) are correct:
+      1 in A gives u >= 1 > 0. Quick-check items are reviewed separately.'
+  - stage: S5b
+    verdict: minor
+    by: refereeB
+    hash: a6f384d85fbd
+    date: '2026-10-12'
+    model: claude-opus-5-5
+    evidence: 01-cuts.md:52 Meta-claim 'a Greek letter always names a set of rationals and a Latin letter
+      a rational' is false on this page.
+  - stage: S8
+    verdict: minor
+    by: seam
+    hash: a6f384d85fbd
+    date: '2026-10-12'
+    model: claude-opus-5-5
+    evidence: '01-cuts.md:52 says the letters α, β, γ, δ are reserved for cuts and that a Greek letter
+      always names a set of rationals. The text breaks this: δ is a rational at 03:83, 03:166 and 05:38
+      but a cut at 02:57 and 02:88; λ is a cut in 02:219 (C1) but a rational in 04:424 and 05:52; ε and
+      μ are rationals throughout.'
 - key: def-rational-cut
   kind: def
   file: 01-cuts.md
   line: 66
   hash: 42d62c4aeb56
-  verdicts: []
+  verdicts:
+  - stage: S5a
+    verdict: minor
+    by: refereeA
+    hash: 42d62c4aeb56
+    date: '2026-10-12'
+    model: claude-opus-5-5
+    evidence: 01-cuts.md:76 The fact -1 < 0 is used without justification.
+  - stage: S5b
+    verdict: correct
+    by: refereeB
+    hash: 42d62c4aeb56
+    date: '2026-10-12'
+    model: claude-opus-5-5
+    evidence: :66-76. (C1) via q-1<q (O3) and q∉D_q (O1); (C2) via (O2); (C3) via the midpoint of Section
+      2.5 'Between two rationals' (05-ordered-field-of-rationals.md:140, local pointer correct). Ledger
+      line :358 covers it.
 - key: exm-cut-sqrt2
   kind: exm
   file: 01-cuts.md
   line: 80
   hash: 0cf3baa1c94c
-  verdicts: []
+  verdicts:
+  - stage: S5a
+    verdict: correct
+    by: refereeA
+    hash: 0cf3baa1c94c
+    date: '2026-10-12'
+    model: claude-opus-5-5
+    evidence: '01-cuts.md:87-102: (C1) holds via 0 and 2. (C2) uses (g) with q >= 0 and p > 0. (C3): d
+      < 2 < 2p+2 gives 0<h<1; h^2<h by (c); (p+h)^2 < p^2+2ph+h < p^2+h(2p+2) = 2. Each step checked;
+      the sidecar runs ok.'
+  - stage: S5b
+    verdict: correct
+    by: refereeB
+    hash: 0cf3baa1c94c
+    date: '2026-10-12'
+    model: claude-opus-5-5
+    evidence: ':80-103. Checked by hand: d<2<2p+2 gives 0<h<1, h^2<h by (c), and (p+h)^2 < p^2+2ph+h <
+      p^2+h(2p+2) = 2. (g) is applied with 0≤q<p. The sidecar exm-cut-sqrt2.py passes. The follow-up claim
+      at :105 ''Section 7.5 proves σ is not rational'' is true (05:158 prp-cut-sqrt2-square).'
 - key: check:01-cuts:1
   kind: check
   file: 01-cuts.md
   line: 107
   hash: 16d4e57b6fc3
-  verdicts: []
+  verdicts:
+  - stage: S5a
+    verdict: correct
+    by: refereeA
+    hash: 16d4e57b6fc3
+    date: '2026-10-12'
+    model: claude-opus-5-5
+    evidence: '01-cuts.md:119-132: (a) = D_2 is shown in both directions via (g). (b) fails (C2) at -2.
+      (c): cube monotonicity via the factorization, with p^2+pq+q^2 >= p^2 > 0. In (C3), h^3<h^2<h, so
+      3ph^2<3ph and h^3<h, giving (p+h)^3 < p^3+h(3p^2+3p+1) < p^3+h(3p^2+3p+5) = 5. (d) fails (C1). The
+      sidecar def-dedekind-cut.py runs ok.'
+  - stage: S5b
+    verdict: correct
+    by: refereeB
+    hash: 16d4e57b6fc3
+    date: '2026-10-12'
+    model: claude-opus-5-5
+    evidence: :107-133. (a) equals D_2 via (g). (b) (C2) fails at -2 and nothing else fails. (c) Monotone
+      cubes, q^3≤0 for q≤0, and h=d/(3p^2+3p+5) give (p+h)^3 < p^3+h(3p^2+3p+1) < 5; the strictness needs
+      p>0, which holds. (d) (C1) fails. def-dedekind-cut.py passes, and ledger :361 covers it.
 - key: exm-cut-with-largest-element
   kind: exm
   file: 01-cuts.md
   line: 141
   hash: c720eba808bd
-  verdicts: []
+  verdicts:
+  - stage: S5a
+    verdict: correct
+    by: refereeA
+    hash: c720eba808bd
+    date: '2026-10-12'
+    model: claude-opus-5-5
+    evidence: '01-cuts.md:141-156: E_1 satisfies (C1) and (C2) and fails (C3). E_1+D_1=D_2 holds via (b)
+      strict and s=1+(s-1). D_1+D_1=D_2 holds via s/2<1. It is .optional, it is terminal (grep finds no
+      citation of it in ch07 or elsewhere), and it is one of the five blocks named in the blueprint.'
+  - stage: S5b
+    verdict: minor
+    by: refereeB
+    hash: c720eba808bd
+    date: '2026-10-12'
+    model: claude-opus-5-5
+    evidence: 01-cuts.md:158 A main-line paragraph depends on the .optional block exm-cut-with-largest-element,
+      so the optional block is not genuinely skippable (STYLE §9 checklist).
 - key: lem-cut-separation
   kind: lem
   file: 01-cuts.md
   line: 168
   hash: e0a1e303a7f3
-  verdicts: []
+  verdicts:
+  - stage: S5a
+    verdict: correct
+    by: refereeA
+    hash: e0a1e303a7f3
+    date: '2026-10-12'
+    model: claude-opus-5-5
+    evidence: '01-cuts.md:171: Statement is true. Dropping ''cut'' gives a counterexample: alpha = {0}
+      with p = 0 and q = -1 not in alpha. (C2) is the hypothesis used.'
+  - stage: S5b
+    verdict: minor
+    by: refereeB
+    hash: e0a1e303a7f3
+    date: '2026-10-12'
+    model: claude-opus-5-5
+    evidence: 01-cuts.md:180 The page calls the downset slogan 'the chapter's second named move' before
+      any first named move has appeared; the 'first named move' comes later, at :238.
 - key: proof:lem-cut-separation
   kind: proof
   file: 01-cuts.md
   line: 174
   hash: d7483b1d1e44
-  verdicts: []
+  verdicts:
+  - stage: S5a
+    verdict: correct
+    by: refereeA
+    hash: d7483b1d1e44
+    date: '2026-10-12'
+    model: claude-opus-5-5
+    evidence: '01-cuts.md:175-177: the proof uses totality (i) for q <= p, then (C2) or equality. For
+      the consequence, q'' in alpha and q not in alpha give q'' < q, which together with q < q'' contradicts
+      (O1) directly. Quantifiers are all universal, with no dependency issue.'
+  - stage: S5b
+    verdict: correct
+    by: refereeB
+    hash: d7483b1d1e44
+    date: '2026-10-12'
+    model: claude-opus-5-5
+    evidence: :175-177. Each step names its reason. The facts it uses (prp-ordered-ring-rules (i), (C2),
+      (O1)) are cited inline, and ledger :364 has the line.
 - key: prp-rational-in-cut
   kind: prp
   file: 01-cuts.md
   line: 188
   hash: caedc0e3053f
-  verdicts: []
+  verdicts:
+  - stage: S5a
+    verdict: correct
+    by: refereeA
+    hash: caedc0e3053f
+    date: '2026-10-12'
+    model: claude-opus-5-5
+    evidence: '01-cuts.md:191-196: (a) and (b) are true. The cut hypothesis is needed. Counterexample
+      to (a) without (C2): alpha = {1} with q = 1 gives q in alpha but D_1 not a subset of alpha.'
+  - stage: S5b
+    verdict: correct
+    by: refereeB
+    hash: caedc0e3053f
+    date: '2026-10-12'
+    model: claude-opus-5-5
+    evidence: ':188-197. (a) and (b) are correct. The claim at :209 is checked: 02-order-and-completeness.md:25
+      does rewrite (a) as q∈α ⇔ D_q<α.'
 - key: proof:prp-rational-in-cut
   kind: proof
   file: 01-cuts.md
   line: 203
   hash: ecc47df94444
-  verdicts: []
+  verdicts:
+  - stage: S5a
+    verdict: correct
+    by: refereeA
+    hash: ecc47df94444
+    date: '2026-10-12'
+    model: claude-opus-5-5
+    evidence: '01-cuts.md:204-206: (a=>) uses (C2) and (O1). (a<=): proper inclusion yields r in alpha
+      minus D_q, so q <= r, then (C2). (b=>) uses lem-cut-separation; (b<=) is immediate. Each direction
+      is justified.'
+  - stage: S5b
+    verdict: correct
+    by: refereeB
+    hash: ecc47df94444
+    date: '2026-10-12'
+    model: claude-opus-5-5
+    evidence: :204-206. (a)⇐ picks r∈α∖D_q, so q≤r and q∈α by (C2). (b)⇒ uses lem-cut-separation. Ledger
+      :365 (O1).
 - key: lem-cut-step
   kind: lem
   file: 01-cuts.md
   line: 215
   hash: c9f8a5c7f800
-  verdicts: []
+  verdicts:
+  - stage: S5a
+    verdict: correct
+    by: refereeA
+    hash: c9f8a5c7f800
+    date: '2026-10-12'
+    model: claude-opus-5-5
+    evidence: '01-cuts.md:218-221: true as stated. All three hypotheses are needed: with eps = 0 no n
+      exists, with a not in alpha n = 0 fails, and with alpha = Q (no outside point) there is no n.'
+  - stage: S5b
+    verdict: minor
+    by: refereeB
+    hash: c9f8a5c7f800
+    date: '2026-10-12'
+    model: claude-opus-5-5
+    evidence: '01-cuts.md:242 Meta-claim ''Note what it needs from Q: the Archimedean property ... and
+      least elements of sets of integers'' leaves out discreteness, which the proof uses.'
 - key: proof:lem-cut-step
   kind: proof
   file: 01-cuts.md
   line: 228
   hash: 1e9c5ecef52e
-  verdicts: []
+  verdicts:
+  - stage: S5a
+    verdict: correct
+    by: refereeA
+    hash: 1e9c5ecef52e
+    date: '2026-10-12'
+    model: claude-opus-5-5
+    evidence: '01-cuts.md:229-235: b is chosen from (C1). m depends on a, b, eps via thm-rationals-archimedean
+      (05-ordered-field-of-rationals.md:168). Multiplying by eps>0 uses (c) and (O3); separation gives
+      a+m*eps not in alpha. K is a subset of N with lower bound 0 (thm-integers-ordered-ring (b)), so
+      prp-integer-least-element gives k_0. k_0 != 0 because a is in alpha, so k_0 >= 1 by discreteness
+      (c), and n = k'
+  - stage: S5b
+    verdict: correct
+    by: refereeB
+    hash: 1e9c5ecef52e
+    date: '2026-10-12'
+    model: claude-opus-5-5
+    evidence: :229-235. Archimedes is applied to (b-a)/ε, then (c) and (O3). Separation gives a+mε∉α.
+      K⊆N⊆Z is bounded below by 0, so prp-integer-least-element applies. Then k_0≠0, discreteness (c),
+      n=k_0-1∈N by (b), and minimality. Ledger :366-368 covers every unreferenced fact.
 - key: check:01-cuts:2
   kind: check
   file: 01-cuts.md
   line: 246
   hash: 7c45ae5e1de2
-  verdicts: []
+  verdicts:
+  - stage: S5a
+    verdict: correct
+    by: refereeA
+    hash: 7c45ae5e1de2
+    date: '2026-10-12'
+    model: claude-opus-5-5
+    evidence: '01-cuts.md:251: 141^2=19881<20000 and 142^2=20164>20000, so k_0=2, n=1, and the pair is
+      141/100 and 71/50. The worked walk at line 244 (196<200, 225>200, k_0=5, pair 7/5 and 3/2) is also
+      correct. Sidecar lem-cut-step.py runs ok.'
+  - stage: S5b
+    verdict: correct
+    by: refereeB
+    hash: 7c45ae5e1de2
+    date: '2026-10-12'
+    model: claude-opus-5-5
+    evidence: :246-252. 141^2=19881<20000 and 142^2=20164>20000, so k_0=2, n=1 and p=141/100. lem-cut-step.py
+      asserts these values and passes.
 - key: exr-cuts-a1
   kind: exr
   file: 01-cuts.md
   line: 260
   hash: 98c74654bbf0
-  verdicts: []
+  verdicts:
+  - stage: S5a
+    verdict: correct
+    by: refereeA
+    hash: 98c74654bbf0
+    date: '2026-10-12'
+    model: claude-opus-5-5
+    evidence: '01-cuts.md:271-275: (a) states (C1)-(C3) and the negation correctly. (b): (i) fails only
+      (C3); (ii) fails only (C2); (iii) is {0} and fails (C2) and (C3); (iv) is Q and fails only (C1).
+      All verified. (c): union = D_max and intersection = D_min, correct.'
+  - stage: S5b
+    verdict: correct
+    by: refereeB
+    hash: 98c74654bbf0
+    date: '2026-10-12'
+    model: claude-opus-5-5
+    evidence: ':260-276. (b) is right in every case: (i) only C3 fails; (ii) only C2; (iii) {0} fails
+      C2 and C3; (iv) Q fails C1. (c) gives D_max and D_min, and \max/\min are in NOTATION row 83.'
+  - stage: S6
+    verdict: correct
+    by: verifier
+    hash: 98c74654bbf0
+    date: '2026-10-12'
+    model: claude-opus-5-5
+    evidence: '01-cuts.md:270-276. Solved first. (b): (i) only (C3) fails; (ii) only (C2) fails, since
+      1 ∈ the set and 0 ∉; (iii) the set is {0}, so (C2) and (C3) fail; (iv) the set is ℚ, so only (C1)
+      fails. (c): the union is D_max and the intersection is D_min. All agree with the solution.'
 - key: exr-cuts-b1
   kind: exr
   file: 01-cuts.md
   line: 280
   hash: e2d96015df45
-  verdicts: []
+  verdicts:
+  - stage: S5a
+    verdict: correct
+    by: refereeA
+    hash: e2d96015df45
+    date: '2026-10-12'
+    model: claude-opus-5-5
+    evidence: '01-cuts.md:287: 3p<2 iff p<2/3, by multiplying by 1/3>0 (prp-reciprocal-order (a), (c))
+      and by 3>0. The set equals D_{2/3}, which is a cut by the check after def-rational-cut.'
+  - stage: S5b
+    verdict: correct
+    by: refereeB
+    hash: e2d96015df45
+    date: '2026-10-12'
+    model: claude-opus-5-5
+    evidence: :283-287. Multiplying by 1/3>0 and by 3>0 gives the set equality with D_{2/3}, and def-rational-cut
+      gives the cut. The worked analogue is the Quick check (a).
+  - stage: S6
+    verdict: correct
+    by: verifier
+    hash: e2d96015df45
+    date: '2026-10-12'
+    model: claude-opus-5-5
+    evidence: 01-cuts.md:286-288. 3p<2 ⇔ p<2/3, by multiplying by 1/3 and by 3, with prp-reciprocal-order
+      (a) and prp-ordered-ring-rules (c). The set is D_{2/3}, a cut. The worked example is the Quick check
+      (a), set = D_2, at line 119.
 - key: exr-cuts-b2
   kind: exr
   file: 01-cuts.md
   line: 290
   hash: 995b7ac725ed
-  verdicts: []
+  verdicts:
+  - stage: S5a
+    verdict: minor
+    by: refereeA
+    hash: 995b7ac725ed
+    date: '2026-10-12'
+    model: claude-opus-5-5
+    evidence: 01-cuts.md:373 A dependency-ledger row describes a remark that is not in the solution.
+  - stage: S5b
+    verdict: minor
+    by: refereeB
+    hash: 995b7ac725ed
+    date: '2026-10-12'
+    model: claude-opus-5-5
+    evidence: 01-cuts.md:373 The dependency ledger line for exr-cuts-b2 lists a fact, 'the remark on 2p
+      + 2 at p = 0', that does not appear anywhere in the solution.
+  - stage: S6
+    verdict: correct
+    by: verifier
+    hash: 995b7ac725ed
+    date: '2026-10-12'
+    model: claude-opus-5-5
+    evidence: '01-cuts.md:296-313. Script: h = (3-p²)/(2p+4) gives 0<h<1 and (p+h)²<3 for 20k rational
+      p ≥ 0 with p² < 3. The remark that any denominator D > d with D ≥ 2p+1 works was checked by script
+      and by algebra. (C1) and (C2) are complete. The worked example is exm-cut-sqrt2.'
+  - stage: S8
+    verdict: minor
+    by: seam
+    hash: 995b7ac725ed
+    date: '2026-10-12'
+    model: claude-opus-5-5
+    evidence: The ledger at 01:373 cites 'the remark on 2p + 2 at p = 0', but the delivered solution (01:301-312)
+      uses the denominator 2p + 4 and makes no such remark. The ledger line is stale.
 - key: exr-cuts-c1
   kind: exr
   file: 01-cuts.md
   line: 317
   hash: ec5abfd677b3
-  verdicts: []
+  verdicts:
+  - stage: S5a
+    verdict: correct
+    by: refereeA
+    hash: ec5abfd677b3
+    date: '2026-10-12'
+    model: claude-opus-5-5
+    evidence: '01-cuts.md:336-344: q not in D_q = sigma gives q>0 and q^2>=2. The case q^2=2 is excluded
+      by thm-no-rational-square-two. For q^2>2, q''=t(q)>0, and by eq-newton-identities (06-gaps...md:97)
+      q-q''>0 and q''^2-2>0. So q'' is in D_q but not in sigma. The marking scheme is consistent with
+      this. Sidecar runs ok.'
+  - stage: S5b
+    verdict: correct
+    by: refereeB
+    hash: ec5abfd677b3
+    date: '2026-10-12'
+    model: claude-opus-5-5
+    evidence: :317-352. q∉D_q=σ gives q>0 and q^2≥2. q^2=2 is excluded by thm-no-rational-square-two.
+      For q^2>2, q'=t(q) and eq-newton-identities give 0<q'<q and q'^2>2, a contradiction. The marking
+      scheme sums to 10 (3+2+3+2) and names fatal errors. The hint ladder has two rungs. exr-cuts-c1.py
+      passes.
+  - stage: S6
+    verdict: correct
+    by: verifier
+    hash: ec5abfd677b3
+    date: '2026-10-12'
+    model: claude-opus-5-5
+    evidence: 01-cuts.md:323-352. My proof (q ∉ D_q = σ ⇒ q>0 and q²≥2; q²≠2; q' = t(q)) matches the solution.
+      The identities were checked by exact Fraction arithmetic and agree with @eq-newton-identities (fd3
+      ch02 06:91-97). My alternative q' = q - 1/n, with n from the Archimedean property, scores 10/10
+      under the 'any such q' clause. The hints name a first line or a tool.
 - key: def-cut-order
   kind: def
   file: 02-order-and-completeness.md
   line: 11
   hash: 2c67cdff13d1
-  verdicts: []
+  verdicts:
+  - stage: S5a
+    verdict: correct
+    by: refereeA
+    hash: 2c67cdff13d1
+    date: '2026-10-12'
+    model: claude-opus-5-5
+    evidence: 02:11-27. Definition is well-formed. The partial-order facts cite fd2:prp-subset-antisymmetric
+      and prp-subset-transitive, which say what is claimed. The first translation (02:23) applies prp-rational-in-cut
+      (a) with α=D_q and the rational p, and the second equivalence follows by trichotomy. The second
+      translation is prp-rational-in-cut (a),(b) (01:194-195). The hook at 02:7 is valid in both direct
+  - stage: S5b
+    verdict: minor
+    by: refereeB
+    hash: 2c67cdff13d1
+    date: '2026-10-12'
+    model: claude-opus-5-5
+    evidence: 02-order-and-completeness.md:9 Slogan 'One cut is below another when it holds fewer rationals'
+      is false as a statement about how many rationals a cut holds.
 - key: check:02-order-and-completeness:1
   kind: check
   file: 02-order-and-completeness.md
   line: 29
   hash: 82f400b22a92
-  verdicts: []
+  verdicts:
+  - stage: S5a
+    verdict: correct
+    by: refereeA
+    hash: 82f400b22a92
+    date: '2026-10-12'
+    model: claude-opus-5-5
+    evidence: 02:29-35. 1∈σ, 3/2∉σ (9/4>2), 29/20<3/2 (58<60) and (29/20)^2=841/400>2 (841>800) are all
+      correct. The sidecar verify/ch07/def-cut-order.py asserts each figure.
+  - stage: S5b
+    verdict: correct
+    by: refereeB
+    hash: 82f400b22a92
+    date: '2026-10-12'
+    model: claude-opus-5-5
+    evidence: 02:30-35. 1 is in sigma; 3/2 is not in sigma (9/4 > 2); 29/20 < 3/2 (58 < 60); (29/20)^2
+      = 841/400 > 2. All four are asserted by verify/ch07/def-cut-order.py, and the comparison formula
+      is ledgered at 02:293.
 - key: thm-cut-order-total
   kind: thm
   file: 02-order-and-completeness.md
   line: 39
   hash: 13f92ea5d7d1
-  verdicts: []
+  verdicts:
+  - stage: S5a
+    verdict: correct
+    by: refereeA
+    hash: 13f92ea5d7d1
+    date: '2026-10-12'
+    model: claude-opus-5-5
+    evidence: '02:39-43. The statement is true. Without the cut hypotheses it fails: {0} and {1} are incomparable
+      (02:37,55).'
+  - stage: S5b
+    verdict: correct
+    by: refereeB
+    hash: 13f92ea5d7d1
+    date: '2026-10-12'
+    model: claude-opus-5-5
+    evidence: '02:42. The statement matches the blueprint. The meta-claim at 02:55 holds: lem-cut-separation''s
+      first half (01:175) uses only trichotomy and (C2), and the theorem''s proof never touches (C1) or
+      (C3).'
 - key: proof:thm-cut-order-total
   kind: proof
   file: 02-order-and-completeness.md
   line: 49
   hash: c95388f20722
-  verdicts: []
+  verdicts:
+  - stage: S5a
+    verdict: correct
+    by: refereeA
+    hash: c95388f20722
+    date: '2026-10-12'
+    model: claude-opus-5-5
+    evidence: '02:49-53. Order of choices: p comes from α⊄β, and q∈β is arbitrary after p, so no dependency
+      problem. lem-cut-separation (01:171), used with β, p∉β and q∈β, gives q<p. (C2) of α then gives
+      q∈α. In the trichotomy part, ''otherwise'' uses totality to get β≤α, and β≠α because α≤β failed.
+      Exclusivity uses antisymmetry. The meta-claim at 02:55 holds: the proof of lem-cut-separation (01:175)
+      uses only (C2'
+  - stage: S5b
+    verdict: correct
+    by: refereeB
+    hash: c95388f20722
+    date: '2026-10-12'
+    model: claude-opus-5-5
+    evidence: 02:50-52 uses lem-cut-separation, (C2) and antisymmetry. The three-way split is ledgered
+      at 02:294. Nothing unledgered.
 - key: thm-dedekind-lub
   kind: thm
   file: 02-order-and-completeness.md
   line: 63
   hash: 7c47d86a35e6
-  verdicts: []
+  verdicts:
+  - stage: S5a
+    verdict: correct
+    by: refereeA
+    hash: 7c47d86a35e6
+    date: '2026-10-12'
+    model: claude-opus-5-5
+    evidence: '02:63-71. fd2:def-family-union-intersection (a) covers a union indexed by A. Supremum is
+      meant in the sense of fd2:def-order-supremum. Both hypotheses are needed: the warning at 02:96 gives
+      a counterexample for each (⋃D_n=ℚ via thm-rationals-archimedean, which states ''x<n for some n∈ℕ'';
+      and ⋃∅=∅).'
+  - stage: S5b
+    verdict: minor
+    by: refereeB
+    hash: 7c47d86a35e6
+    date: '2026-10-12'
+    model: claude-opus-5-5
+    evidence: 02-order-and-completeness.md:76 The Idea supports 'In P(Q) the union is the supremum' by
+      citing *Sets, Relations, and Cardinality*, Section 2.6, Exercise B1, and the ledger (line 297) gives
+      an exercise as the source.
 - key: proof:thm-dedekind-lub
   kind: proof
   file: 02-order-and-completeness.md
   line: 79
   hash: 5bef4f63efdb
-  verdicts: []
+  verdicts:
+  - stage: S5a
+    verdict: correct
+    by: refereeA
+    hash: 5bef4f63efdb
+    date: '2026-10-12'
+    model: claude-opus-5-5
+    evidence: 02:79-89. (C1) uses non-emptiness and (C1) of α0; γ⊆β uses the upper bound, and (C1) of
+      β gives b∉γ. (C2) and (C3) each take a witness α by ∃E and apply that cut's own condition; the conclusion
+      p'∈γ (or q∈γ) does not mention α, so ∃E is legal. (S1) and (S2) follow by inclusion. Each hypothesis
+      is used, as 02:91 states. fd2:prp-greatest-unique is correctly applied to the least element of the
+      set of
+  - stage: S5b
+    verdict: correct
+    by: refereeB
+    hash: 5bef4f63efdb
+    date: '2026-10-12'
+    model: claude-opus-5-5
+    evidence: '02:80-88 uses only the definitions. The meta-claims at 02:91 hold on the page: ''non-empty''
+      is used only in the first half of (C1) and ''bounded above'' only in the second half; (C2), (C3),
+      (S1) and (S2) never use either hypothesis. No arithmetic of Q appears.'
 - key: check:02-order-and-completeness:2
   kind: check
   file: 02-order-and-completeness.md
   line: 107
   hash: 8a53c036e4e5
-  verdicts: []
+  verdicts:
+  - stage: S5a
+    verdict: correct
+    by: refereeA
+    hash: 8a53c036e4e5
+    date: '2026-10-12'
+    model: claude-opus-5-5
+    evidence: '02:107-113. D_1 is an upper bound because 1-1/n<1. For ⊇, cor-rationals-archimedean-epsilon
+      (fd3 ch02/05:197) with ε=1-r>0 gives 1/n<1-r. The supremum is not a member: the first translation
+      gives 1-1/n=1, which is impossible.'
+  - stage: S5b
+    verdict: minor
+    by: refereeB
+    hash: 8a53c036e4e5
+    date: '2026-10-12'
+    model: claude-opus-5-5
+    evidence: 02-order-and-completeness.md:112 Neither the bound 1 - 1/n < 1 (used to bound the set by
+      D_1) nor the (⊆) step 'r < 1 - 1/n gives r < 1' cites 1/n > 0, and the ledger has no line for it.
 - key: exr-order-and-completeness-a1
   kind: exr
   file: 02-order-and-completeness.md
   line: 121
   hash: 1b5d5a96b390
-  verdicts: []
+  verdicts:
+  - stage: S5a
+    verdict: correct
+    by: refereeA
+    hash: 1b5d5a96b390
+    date: '2026-10-12'
+    model: claude-opus-5-5
+    evidence: '02:121-142. (a): D_0∈A since 0∈σ. The bound D_q<σ is prp-rational-in-cut (a). ⊆ uses (C2)
+      of σ and ⊇ uses (C3) of σ, as the exercise asks. (c) correctly names the first line of (C1) and
+      gives ⋃∅=∅. (d) is correct.'
+  - stage: S5b
+    verdict: correct
+    by: refereeB
+    hash: 1b5d5a96b390
+    date: '2026-10-12'
+    model: claude-opus-5-5
+    evidence: 02:127-141. The hypotheses check uses prp-rational-in-cut (a), which is ledgered. γ = σ
+      by (C2)/(C3) of σ, as the blueprint asks (no prp-cut-union-of-rationals). (b) is two sentences;
+      (c) and (d) match the proof's lines.
+  - stage: S6
+    verdict: correct
+    by: verifier
+    hash: 1b5d5a96b390
+    date: '2026-10-12'
+    model: claude-opus-5-5
+    evidence: '02-order-and-completeness.md:134-142. (a): γ = ⋃_{q∈σ} D_q = σ, with ⊆ by (C2) and ⊇ by
+      (C3). The bound D_q<σ uses prp-rational-in-cut (a), which is valid. (c) gives the first line of
+      (C1), with γ = ∅. (d): (C3) of the member containing p. All agree with the solution.'
 - key: exr-order-and-completeness-b1
   kind: exr
   file: 02-order-and-completeness.md
   line: 146
   hash: fa151a6f6d07
-  verdicts: []
+  verdicts:
+  - stage: S5a
+    verdict: correct
+    by: refereeA
+    hash: fa151a6f6d07
+    date: '2026-10-12'
+    model: claude-opus-5-5
+    evidence: 02:146-154. D_q⊆D_m and D_r⊆D_m by (O2). The set is non-empty and bounded, so thm-dedekind-lub
+      applies. The union equals D_m because D_m is one of the two sets.
+  - stage: S5b
+    verdict: correct
+    by: refereeB
+    hash: fa151a6f6d07
+    date: '2026-10-12'
+    model: claude-opus-5-5
+    evidence: 02:149-154. The inclusions come from (O2), which is ledgered at 02:305; the union equals
+      D_m.
+  - stage: S6
+    verdict: correct
+    by: verifier
+    hash: fa151a6f6d07
+    date: '2026-10-12'
+    model: claude-opus-5-5
+    evidence: 02-order-and-completeness.md:152-154. D_q and D_r are both contained in D_m, and D_m is
+      one of them, so the union is D_m. This is a valid use of thm-dedekind-lub. The worked example is
+      the Quick check sup{D_{1-1/n}} at lines 107-113.
 - key: exr-order-and-completeness-b2
   kind: exr
   file: 02-order-and-completeness.md
   line: 156
   hash: ff8297b16241
-  verdicts: []
+  verdicts:
+  - stage: S5a
+    verdict: correct
+    by: refereeA
+    hash: ff8297b16241
+    date: '2026-10-12'
+    model: claude-opus-5-5
+    evidence: '02:156-188. The order (iv),(vii),(i),(viii),(v),(iii) is a valid proof, and (i) may move
+      before (vii). The diagnosis of (vi) as reversed separation is right: (O1) is trichotomy in fd3 (ch02/05:82),
+      so q<p together with p<q contradicts it. The diagnosis of (ii) as closure applied to the wrong cut
+      is right.'
+  - stage: S5b
+    verdict: correct
+    by: refereeB
+    hash: ff8297b16241
+    date: '2026-10-12'
+    model: claude-opus-5-5
+    evidence: 02:159-188. Six correct lines and two distractors, as in the blueprint. Order (iv)(vii)(i)(viii)(v)(iii)
+      is valid, and (i) can move before (vii) but not before (iv). The distractor reasons are right; (O1)
+      is trichotomy (fd3 03-ordered-rings.md:153), so q<p together with p<q contradicts it.
+  - stage: S6
+    verdict: correct
+    by: verifier
+    hash: ff8297b16241
+    date: '2026-10-12'
+    model: claude-opus-5-5
+    evidence: 02-order-and-completeness.md:178-188. The order (iv),(vii),(i),(viii),(v),(iii) is admissible,
+      and (i) may also come before (vii); no other freedom exists. Distractor (vi) reverses separation.
+      Distractor (ii) concludes q∈β from closure of α, a non-sequitur, and does not supply the q∈α that
+      (iii) needs. Both are correctly diagnosed.
 - key: exr-order-and-completeness-c1
   kind: exr
   file: 02-order-and-completeness.md
   line: 192
   hash: a7137befea9e
-  verdicts: []
+  verdicts:
+  - stage: S5a
+    verdict: correct
+    by: refereeA
+    hash: a7137befea9e
+    date: '2026-10-12'
+    model: claude-opus-5-5
+    evidence: '02:192-234. (a): ⋂A={r≤0} uses prp-reciprocal-order (a) and cor-rationals-archimedean-epsilon.
+      It has the largest element 0, so (C3) fails. (b): L is non-empty because A is bounded below, and
+      bounded above by α0∈A. Each α∈A is an upper bound of L, so (S2) gives λ0≤α, and (S1) gives maximality,
+      matching the infimum definition of fd2:def-order-supremum. (c): λ⊆⋂A, and 0∉λ by (C3), so λ⊆D_0.
+      All step'
+  - stage: S5b
+    verdict: minor
+    by: refereeB
+    hash: a7137befea9e
+    date: '2026-10-12'
+    model: claude-opus-5-5
+    evidence: 02-order-and-completeness.md:198 The stem fixes an arbitrary non-empty, bounded-below A;
+      part (a) redefines A := {D_{1/n}}; part (b) is about the general A; part (c) refers back to 'the
+      set A of (a)'. One symbol has two meanings within the exercise.
+  - stage: S6
+    verdict: minor
+    by: verifier
+    hash: a7137befea9e
+    date: '2026-10-12'
+    model: claude-opus-5-5
+    evidence: '02-order-and-completeness.md:213 Hint 2 does not just name a tool: it carries out the key
+      step of (b). It names λ_0 = sup L and tells the reader to apply (S2) with each α ∈ A as the upper
+      bound. That is the whole of the 2-point scheme item ''supremum is a lower bound of A, through (S2)''.
+      With Hint 1, which carries out the ''bounded above by a member of A'' item, the hints execute two
+      of the three (b)'
 - key: exr-order-and-completeness-c2
   kind: exr
   file: 02-order-and-completeness.md
   line: 236
   hash: 52a622c70d8c
-  verdicts: []
+  verdicts:
+  - stage: S5a
+    verdict: correct
+    by: refereeA
+    hash: 52a622c70d8c
+    date: '2026-10-12'
+    model: claude-opus-5-5
+    evidence: 02:236-258. Line (2) is correctly identified as the ∀α∃b ⇒ ∃b∀α swap, which matches (N2)
+      of fd1:exm-not-allowed-catalogue (fd1 ch05/06:35, a witness treated as uniform). The counterexample
+      {D_n} refutes that step and not the claim, as the solution says. The repair is correct.
+  - stage: S5b
+    verdict: correct
+    by: refereeB
+    hash: 52a622c70d8c
+    date: '2026-10-12'
+    model: claude-opus-5-5
+    evidence: 02:239-258. The conclusion is true; line (2) swaps ∀α∃b into ∃b∀α, which is (N2) of fd1:exm-not-allowed-catalogue
+      (fd1 06-checking-proofs.md:35). The counterexample {D_n} has union Q by thm-rationals-archimedean
+      ('every x has n ∈ ℕ with x < n'); the tell and the repair are correct.
+  - stage: S6
+    verdict: correct
+    by: verifier
+    hash: 52a622c70d8c
+    date: '2026-10-12'
+    model: claude-opus-5-5
+    evidence: 02-order-and-completeness.md:248-258. Line (2) is the only flawed line; lines (1), (3),
+      (4) and (5) are valid. The witness-uniformity error is (N2) (fd1 ch05 06:55). In the counterexample
+      A' = {D_n}, each D_n ≠ ℚ but the union is ℚ, so the step goes from a true premise to a false conclusion.
+      The repair uses β.
 - key: exr-order-and-completeness-c3
   kind: exr
   file: 02-order-and-completeness.md
   line: 260
   hash: 54dbb7def678
-  verdicts: []
+  verdicts:
+  - stage: S5a
+    verdict: correct
+    by: refereeA
+    hash: 54dbb7def678
+    date: '2026-10-12'
+    model: claude-opus-5-5
+    evidence: '02:260-288. The model solution is a complete proof of the theorem: (C1) uses both hypotheses,
+      (C2) and (C3) go through the members, and the upper-bound and least-upper-bound parts follow by
+      inclusion. The marking scheme matches the solution.'
+  - stage: S5b
+    verdict: correct
+    by: refereeB
+    hash: 54dbb7def678
+    date: '2026-10-12'
+    model: claude-opus-5-5
+    evidence: '02:263-288. A complete proof. The marking scheme has 5 x 2 = 10 points and the fatal errors
+      from the blueprint; the title follows the [Cn: Exit check: …] form.'
+  - stage: S6
+    verdict: correct
+    by: verifier
+    hash: 54dbb7def678
+    date: '2026-10-12'
+    model: claude-opus-5-5
+    evidence: 02-order-and-completeness.md:266-288. The proof is complete. The scheme's five 2-point items
+      match any correct union proof, and my alternative (C1 via β ≠ ℚ and separation) scores 10/10.
 - key: def-cut-sum
   kind: def
   file: 03-addition.md
   line: 11
   hash: db65c6cfc03b
-  verdicts: []
+  verdicts:
+  - stage: S5a
+    verdict: correct
+    by: refereeA
+    hash: db65c6cfc03b
+    date: '2026-10-12'
+    model: claude-opus-5-5
+    evidence: 03-addition.md:11-20; set sum matches fd2:exm-sets-of-numbers-as-images (stated there for
+      subsets of R, used here for subsets of Q, as flagged in replies.md); D_1+D_2 ⊆ D_3 by prp-ordered-ring-rules
+      (b)
+  - stage: S5b
+    verdict: correct
+    by: refereeB
+    hash: db65c6cfc03b
+    date: '2026-10-12'
+    model: claude-opus-5-5
+    evidence: 03-addition.md:11-20; agrees with NOTATION row A + B (fd2 exm-sets-of-numbers-as-images,
+      F2.1 = *Sets, Relations, and Cardinality*, Section 1.6). The Quick-check pointer at 20 is correct
+      (159-166).
 - key: thm-cut-sum
   kind: thm
   file: 03-addition.md
   line: 24
   hash: 14d9d9b5c7a4
-  verdicts: []
+  verdicts:
+  - stage: S5a
+    verdict: correct
+    by: refereeA
+    hash: 14d9d9b5c7a4
+    date: '2026-10-12'
+    model: claude-opus-5-5
+    evidence: '03-addition.md:24-31; every hypothesis (alpha, beta cuts) is used: (C1) for both, (C2)
+      for alpha, (C3) for alpha. Counterexample with (C3) dropped (E_1+D_1) is consistent with exm-cut-with-largest-element'
+  - stage: S5b
+    verdict: correct
+    by: refereeB
+    hash: 14d9d9b5c7a4
+    date: '2026-10-12'
+    model: claude-opus-5-5
+    evidence: 03-addition.md:24-31; the statement matches the proof and the blueprint.
 - key: proof:thm-cut-sum
   kind: proof
   file: 03-addition.md
   line: 37
   hash: 62a6f8329367
-  verdicts: []
+  verdicts:
+  - stage: S5a
+    verdict: correct
+    by: refereeA
+    hash: 62a6f8329367
+    date: '2026-10-12'
+    model: claude-opus-5-5
+    evidence: 03-addition.md:38-50. (C1) uses lem-cut-separation (01-cuts.md:171) and prp-ordered-ring-rules
+      (b), then (O1) for p+q≠a+b. (C2) is (O3) plus (C2) for alpha. (C3) is (O3). Comm/assoc use (F1)/(F2)
+      element by element. Witnesses are fixed in the right order
+  - stage: S5b
+    verdict: correct
+    by: refereeB
+    hash: 62a6f8329367
+    date: '2026-10-12'
+    model: claude-opus-5-5
+    evidence: '03-addition.md:37-51: (C1) uses lem-cut-separation and prp-ordered-ring-rules (b), which
+      is addition of inequalities (checked at ch02 03:306); (C2) and (C3) use (O3); the two laws use (F1)
+      and (F2), whose numbering matches def-commutative-ring-and-field. The meta-claim at 53 (''Only (C3)
+      for α was needed'') is true. The B2 pointer at 53 is a separate finding.'
 - key: prp-cut-sum-zero
   kind: prp
   file: 03-addition.md
   line: 59
   hash: 7becbdd05a79
-  verdicts: []
+  verdicts:
+  - stage: S5a
+    verdict: correct
+    by: refereeA
+    hash: 7becbdd05a79
+    date: '2026-10-12'
+    model: claude-opus-5-5
+    evidence: 03-addition.md:59-63; with (C3) dropped, A={r<=1} gives A+D_0=D_1≠A (line 77), so (C3) is
+      needed
+  - stage: S5b
+    verdict: correct
+    by: refereeB
+    hash: 7becbdd05a79
+    date: '2026-10-12'
+    model: claude-opus-5-5
+    evidence: 03-addition.md:59-63.
 - key: proof:prp-cut-sum-zero
   kind: proof
   file: 03-addition.md
   line: 65
   hash: c6e95e804079
-  verdicts: []
+  verdicts:
+  - stage: S5a
+    verdict: correct
+    by: refereeA
+    hash: c6e95e804079
+    date: '2026-10-12'
+    model: claude-opus-5-5
+    evidence: '03-addition.md:66-74. ⊆: (O3), then (C2). ⊇: (C3) gives p''>p, p-p''<0 by prp-ordered-ring-rules
+      (a) (with (O3)), ∃E/∀I labels exist (fd1 04-universal-introduction.md:25, 06-existential-elimination.md:26)'
+  - stage: S5b
+    verdict: correct
+    by: refereeB
+    hash: c6e95e804079
+    date: '2026-10-12'
+    model: claude-opus-5-5
+    evidence: '03-addition.md:65-75: (O3) and prp-ordered-ring-rules (a) are cited correctly, and the
+      fd1 rule labels exist. The remark at 77 checks out: if A has a largest element m, then m ∉ A + D_0,
+      and {r ≤ 1} + D_0 = D_1.'
 - key: exm-naive-negative
   kind: exm
   file: 03-addition.md
   line: 85
   hash: f1555c3f10dd
-  verdicts: []
+  verdicts:
+  - stage: S5a
+    verdict: gap
+    by: refereeA
+    hash: f1555c3f10dd
+    date: '2026-10-12'
+    model: claude-opus-5-5
+    evidence: '03-addition.md:110 The general answer to ''Is {-p : p in alpha} a cut?'' is asserted without
+      proof: ''In general this set is closed upward ... and is never a cut.'''
+  - stage: S5b
+    verdict: minor
+    by: refereeB
+    hash: f1555c3f10dd
+    date: '2026-10-12'
+    model: claude-opus-5-5
+    evidence: '03-addition.md:110 The text says {-p : p ∈ α} ''is never a cut'', with no justification
+      and no ledger line.'
+  - stage: S8
+    verdict: minor
+    by: seam
+    hash: f1555c3f10dd
+    date: '2026-10-12'
+    model: claude-opus-5-5
+    evidence: 03:97-103 and the fold at 03:150 re-state the identities for q' = (q^2+2)/(2q) without citing
+      @eq-newton-identities (F3.2 §06). 01:340 (C1) does cite it, and the ledger at 03:391 and 03:395
+      says 'inline ... re-proved in the fold'.
 - key: def-cut-negative
   kind: def
   file: 03-addition.md
   line: 119
   hash: 6a3c88c62cfe
-  verdicts: []
+  verdicts:
+  - stage: S5a
+    verdict: minor
+    by: refereeA
+    hash: 6a3c88c62cfe
+    date: '2026-10-12'
+    model: claude-opus-5-5
+    evidence: 03-addition.md:143 The general claim that the margin 'changes nothing when the outside has
+      none' is supported only by the sigma computation in the fold.
+  - stage: S5b
+    verdict: minor
+    by: refereeB
+    hash: 6a3c88c62cfe
+    date: '2026-10-12'
+    model: claude-opus-5-5
+    evidence: 03-addition.md:143 The general claim that the margin 'changes nothing when the outside has
+      none' is asserted but checked only for σ, and it is not in the ledger.
 - key: check:03-addition:1
   kind: check
   file: 03-addition.md
   line: 159
   hash: f8e4cad4ef89
-  verdicts: []
+  verdicts:
+  - stage: S5a
+    verdict: correct
+    by: refereeA
+    hash: f8e4cad4ef89
+    date: '2026-10-12'
+    model: claude-opus-5-5
+    evidence: 03-addition.md:159-167. -D_3=D_{-3}, and D_{1/2}+D_{1/3}=D_{5/6} with delta=(5/6-x)/2 gives
+      (1/2-delta)+(1/3-delta)=x. The Section 7.5 claim exists at 05-rationals-inside.md:16. Sidecar def-cut-negative.py
+      ok
+  - stage: S5b
+    verdict: correct
+    by: refereeB
+    hash: f8e4cad4ef89
+    date: '2026-10-12'
+    model: claude-opus-5-5
+    evidence: '03-addition.md:159-167: -D_3 = D_{-3}, and the split δ = (5/6 - x)/2 gives (1/2-δ)+(1/3-δ)
+      = x. The def-cut-negative sidecar passes. Section 7.5 does prove D_p+D_q = D_{p+q} by halving the
+      gap (05-rationals-inside.md:16,26).'
 - key: thm-cut-additive-inverse
   kind: thm
   file: 03-addition.md
   line: 173
   hash: 6727d568ae34
-  verdicts: []
+  verdicts:
+  - stage: S5a
+    verdict: correct
+    by: refereeA
+    hash: 6727d568ae34
+    date: '2026-10-12'
+    model: claude-opus-5-5
+    evidence: 03-addition.md:173-177; the only hypothesis (alpha a cut) is used through (C1), lem-cut-step
+      and lem-cut-separation
+  - stage: S5b
+    verdict: correct
+    by: refereeB
+    hash: 6727d568ae34
+    date: '2026-10-12'
+    model: claude-opus-5-5
+    evidence: 03-addition.md:173-177. The blueprint names it a key proof (ch07.md:67), so the meta-claim
+      at 171 is true.
 - key: proof:thm-cut-additive-inverse
   kind: proof
   file: 03-addition.md
   line: 187
   hash: b992a32a1040
-  verdicts: []
+  verdicts:
+  - stage: S5a
+    verdict: minor
+    by: refereeA
+    hash: b992a32a1040
+    date: '2026-10-12'
+    model: claude-opus-5-5
+    evidence: 03-addition.md:188 The proof cites @def-cut-negative for '-alpha is a cut', but the definition
+      does not say that. The fact is proved in the unlabeled paragraph '**-alpha is a cut.**' (lines 131-137).
+  - stage: S5b
+    verdict: minor
+    by: refereeB
+    hash: b992a32a1040
+    date: '2026-10-12'
+    model: claude-opus-5-5
+    evidence: '03-addition.md:215 The meta-claim says that without the margin ''the set it lands in would
+      not be a cut''. Stated for every α, it is false: it fails only for rational α.'
 - key: thm-cut-ordered-group
   kind: thm
   file: 03-addition.md
   line: 221
   hash: cd6a4b76c675
-  verdicts: []
+  verdicts:
+  - stage: S5a
+    verdict: correct
+    by: refereeA
+    hash: cd6a4b76c675
+    date: '2026-10-12'
+    model: claude-opus-5-5
+    evidence: 03-addition.md:221-236; the clauses match the blueprint deviation note at ch07.md:167
+  - stage: S5b
+    verdict: minor
+    by: refereeB
+    hash: cd6a4b76c675
+    date: '2026-10-12'
+    model: claude-opus-5-5
+    evidence: '03-addition.md:256 δ has two meanings in this section: a positive rational at 83 and 166,
+      and a cut at 256. The chapter reserves α, β, γ, δ for cuts (01-cuts.md:52; NOTATION row ℝ_D: ''Cuts
+      are lower-case Greek α, β, γ, δ'').'
 - key: proof:thm-cut-ordered-group
   kind: proof
   file: 03-addition.md
   line: 238
   hash: 637a91a2e8ca
-  verdicts: []
+  verdicts:
+  - stage: S5a
+    verdict: correct
+    by: refereeA
+    hash: 637a91a2e8ca
+    date: '2026-10-12'
+    model: claude-opus-5-5
+    evidence: '03-addition.md:239-257. (d)''s strict form uses (e), and (e) uses only (a)-(c), so there
+      is no circularity. Unique inverses, -(-alpha)=alpha, -D_0=D_0 and -(alpha+beta) all follow by cancellation.
+      (f): with delta=(-alpha)+(-beta), alpha+delta=-beta and beta+delta=-alpha; the converse uses (e).
+      The non-strict case and the last sentence check'
+  - stage: S5b
+    verdict: correct
+    by: refereeB
+    hash: 637a91a2e8ca
+    date: '2026-10-12'
+    model: claude-opus-5-5
+    evidence: '03-addition.md:238-257. (d)''s strict form uses (e), whose proof uses only (a)-(c), so
+      the argument is not circular. In (e), uniqueness of negatives, -(-α) = α, -D_0 = D_0 and -(α+β)
+      = (-α)+(-β) are all correctly derived. In (f), α+δ = -β and β+δ = -α are correct. The pointer at
+      259 is true: Section 7.4 uses (e) and (f) (04-multiplication.md:130,193,244).'
 - key: exr-addition-a1
   kind: exr
   file: 03-addition.md
   line: 265
   hash: f4acd070b8b7
-  verdicts: []
+  verdicts:
+  - stage: S5a
+    verdict: correct
+    by: refereeA
+    hash: f4acd070b8b7
+    date: '2026-10-12'
+    model: claude-opus-5-5
+    evidence: '03-addition.md:279-285. eps=1/4, n=3, p=3/4, t=-5/4, margin 1/4 (sidecar exr-addition-a1.py
+      ok). (b) matches lem-cut-step''s proof (01-cuts.md:229-235: thm-rationals-archimedean, prp-integer-least-element).
+      (c) is correct'
+  - stage: S5b
+    verdict: minor
+    by: refereeB
+    hash: f4acd070b8b7
+    date: '2026-10-12'
+    model: claude-opus-5-5
+    evidence: 03-addition.md:265-286. Part (a) is correct (ε=1/4, n=3, p=3/4, t=-5/4; the sidecar passes).
+      Part (b) matches lem-cut-step's proof (01-cuts.md:229-235). Part (c) asks 'which condition uses
+      r > 0?', but the (C1) check at 133 also uses r > 0 ('for every rational r > 0, a - r < a'), although
+      not essentially; the intended answer is the condition that *needs* it. Part (d) is two sentences.
+  - stage: S6
+    verdict: minor
+    by: verifier
+    hash: f4acd070b8b7
+    date: '2026-10-12'
+    model: claude-opus-5-5
+    evidence: 03-addition.md:279 The parenthetical says 'Another starting point a gives another pair',
+      which is false for many starting points.
 - key: exr-addition-b1
   kind: exr
   file: 03-addition.md
   line: 290
   hash: 13dc2e811c24
-  verdicts: []
+  verdicts:
+  - stage: S5a
+    verdict: correct
+    by: refereeA
+    hash: 13dc2e811c24
+    date: '2026-10-12'
+    model: claude-opus-5-5
+    evidence: 03-addition.md:297-303; both inclusions check via (O3) and prp-ordered-ring-rules (a)
+  - stage: S5b
+    verdict: correct
+    by: refereeB
+    hash: 13dc2e811c24
+    date: '2026-10-12'
+    model: claude-opus-5-5
+    evidence: '03-addition.md:290-304: both inclusions are correct, with margin r = -q - p.'
+  - stage: S6
+    verdict: correct
+    by: verifier
+    hash: 13dc2e811c24
+    date: '2026-10-12'
+    model: claude-opus-5-5
+    evidence: 03-addition.md:296-304. p ∈ -D_q ⇔ ∃r>0 with -p-r ≥ q. ⊆ gives -p>q; ⊇ uses r=-q-p. The
+      worked examples are -D_1=D_{-1} (line 139) and the Quick check -D_3 (line 164).
 - key: exr-addition-b2
   kind: exr
   file: 03-addition.md
   line: 306
   hash: dd167f8af1a2
-  verdicts: []
+  verdicts:
+  - stage: S5a
+    verdict: correct
+    by: refereeA
+    hash: dd167f8af1a2
+    date: '2026-10-12'
+    model: claude-opus-5-5
+    evidence: 03-addition.md:313-317; only (F2) and fd2:prp-subset-antisymmetric are used
+  - stage: S5b
+    verdict: correct
+    by: refereeB
+    hash: dd167f8af1a2
+    date: '2026-10-12'
+    model: claude-opus-5-5
+    evidence: '03-addition.md:306-318: (F2) is used both ways, and none of (C1)-(C3) is used. The statement
+      is well posed.'
+  - stage: S6
+    verdict: correct
+    by: verifier
+    hash: dd167f8af1a2
+    date: '2026-10-12'
+    model: claude-opus-5-5
+    evidence: 03-addition.md:312-318. Both inclusions are done element by element with (F2), and no cut
+      condition is used. The worked example is the associativity in thm-cut-sum, line 50.
 - key: exr-addition-c1
   kind: exr
   file: 03-addition.md
   line: 322
   hash: 0c02f97d5972
-  verdicts: []
+  verdicts:
+  - stage: S5a
+    verdict: minor
+    by: refereeA
+    hash: 0c02f97d5972
+    date: '2026-10-12'
+    model: claude-opus-5-5
+    evidence: '03-addition.md:341: ''-alpha is a cut by @def-cut-negative'', the same mis-citation as
+      line 188. The rest is correct, and the marking scheme sums to 10'
+  - stage: S5b
+    verdict: minor
+    by: refereeB
+    hash: 0c02f97d5972
+    date: '2026-10-12'
+    model: claude-opus-5-5
+    evidence: 03-addition.md:322-356. The solution is correct, and the marking scheme sums to 10 with
+      fatal errors named (2+1+3+2+2). The hint ladder has two rungs. Line 341 repeats the miscitation
+      '-α is a cut by @def-cut-negative'.
+  - stage: S6
+    verdict: correct
+    by: verifier
+    hash: 0c02f97d5972
+    date: '2026-10-12'
+    model: claude-opus-5-5
+    evidence: 03-addition.md:340-356. The proof is complete and matches thm-cut-additive-inverse. My alternative,
+      ε=-s/3 with margin 2ε, scores 10/10 under 'ε chosen from s alone'. The D_1 comparison is correct.
+      Hint 2 gives the key choice ε=-s/2 (see findings). [finding refuted by skeptics]
 - key: exr-addition-c2
   kind: exr
   file: 03-addition.md
   line: 358
   hash: acd8e655aa38
-  verdicts: []
+  verdicts:
+  - stage: S5a
+    verdict: correct
+    by: refereeA
+    hash: acd8e655aa38
+    date: '2026-10-12'
+    model: claude-opus-5-5
+    evidence: 03-addition.md:375-384. 0∉D_0 by (O1). (N9) is used for an unproved 'fact', as in fd1 06-checking-proofs.md:336.
+      1/2=3/4+(-1/4) holds; {r<=1}+D_0=D_1 (sidecar exr-addition-c2.py ok)
+  - stage: S5b
+    verdict: minor
+    by: refereeB
+    hash: acd8e655aa38
+    date: '2026-10-12'
+    model: claude-opus-5-5
+    evidence: 03-addition.md:370 Part (e) presupposes that exactly one of (C1)-(C3) goes unused, but two
+      do.
+  - stage: S6
+    verdict: correct
+    by: verifier
+    hash: acd8e655aa38
+    date: '2026-10-12'
+    model: claude-opus-5-5
+    evidence: 03-addition.md:374-384. Line (5) is the only flawed line (0 ∉ D_0, N9), and the repair is
+      correct. (e) A+D_0=D_1 is verified. Part (c)'s 'counterexample' does not give a case where the step's
+      premise holds and its conclusion is false (see findings). [finding refuted by skeptics]
 - key: def-cut-product-positive
   kind: def
   file: 04-multiplication.md
   line: 27
   hash: 3a744763ab69
-  verdicts: []
+  verdicts:
+  - stage: S5a
+    verdict: correct
+    by: refereeA
+    hash: 3a744763ab69
+    date: '2026-10-12'
+    model: claude-opus-5-5
+    evidence: 04:27-36; the remark at 39 (p<=0 in alpha beta, D_2D_3 ⊆ D_6) checked; the lead-in at 15-17
+      checked (p=-(1+x)/2<-1 and q=-2x/(1+x)<-1 iff x>1, pq=x); sidecar passes
+  - stage: S5b
+    verdict: correct
+    by: refereeB
+    hash: 3a744763ab69
+    date: '2026-10-12'
+    model: claude-opus-5-5
+    evidence: '04:27-39: the definition matches the later use; ''equivalently 0 in alpha'' follows from
+      prp-rational-in-cut (a) with q=0; the remark that every p<=0 is in alpha*beta is justified on line
+      19 (C2, C3). D_2D_3 ⊆ D_6 is checked. The lead-in computations at lines 15 and 17 are correct (with
+      p=-(1+x)/2 and q=-2x/(1+x), pq=x and p,q<-1 when x>1); they are ledgered and the sidecar passes.'
 - key: check:04-multiplication:1
   kind: check
   file: 04-multiplication.md
   line: 41
   hash: d0cb82d2a742
-  verdicts: []
+  verdicts:
+  - stage: S5a
+    verdict: correct
+    by: refereeA
+    hash: d0cb82d2a742
+    date: '2026-10-12'
+    model: claude-opus-5-5
+    evidence: '04:41-47: the set {rs : r, s > 0} is non-empty, contains a positive rs but not 0<rs, so
+      (C2) fails'
+  - stage: S5b
+    verdict: correct
+    by: refereeB
+    hash: d0cb82d2a742
+    date: '2026-10-12'
+    model: claude-opus-5-5
+    evidence: '04:41-47: the set of products rs is non-empty and contains only positive numbers, so (C2)
+      fails because 0<rs is missing. The question is well-posed and the answer matches.'
 - key: prp-cut-product-positive
   kind: prp
   file: 04-multiplication.md
   line: 49
   hash: 1d249ef2f86f
-  verdicts: []
+  verdicts:
+  - stage: S5a
+    verdict: correct
+    by: refereeA
+    hash: 1d249ef2f86f
+    date: '2026-10-12'
+    model: claude-opus-5-5
+    evidence: 04:49-60; gamma>D_0 is used only in (c), which is correct for a list statement; alpha D_1
+      is defined because 0 in D_1
+  - stage: S5b
+    verdict: correct
+    by: refereeB
+    hash: 1d249ef2f86f
+    date: '2026-10-12'
+    model: claude-opus-5-5
+    evidence: '04:49-60: well-posed. Clauses (a)-(d) are exactly what the (O4) row and lem-cut-sign-rules
+      (b), (e)-(g) later cite.'
 - key: proof:prp-cut-product-positive
   kind: proof
   file: 04-multiplication.md
   line: 66
   hash: 9cd24d6d9f2f
-  verdicts: []
+  verdicts:
+  - stage: S5a
+    verdict: correct
+    by: refereeA
+    hash: 9cd24d6d9f2f
+    date: '2026-10-12'
+    model: claude-opus-5-5
+    evidence: '04:66-76. (C1): rs<as<ab uses s>0 and a>0 (prp-ordered-ring-rules (c)). (C3): r''s>rs uses
+      s>0. (c): u<=rs and t>0 give ut<=rst, and u:=rs is in alpha beta. (d): 0<s<1 gives rs<r, and p/p''
+      is in (0,1). The quantifier order is fine: r'', p'' are chosen after r and p and depend on them'
+  - stage: S5b
+    verdict: correct
+    by: refereeB
+    hash: 9cd24d6d9f2f
+    date: '2026-10-12'
+    model: claude-opus-5-5
+    evidence: '04:66-76: in (a), rs<as<ab uses prp-ordered-ring-rules (c) correctly; (C3) uses r''>r.
+      (c) handles both groupings with the auxiliary set T and cites F5. In (d), the ⊆ direction uses rs<r
+      and the ⊇ direction uses p=p''(p/p'') with 0<p/p''<1. Rational arithmetic is covered by ledger line
+      521.'
 - key: lem-cut-multiplicative-step
   kind: lem
   file: 04-multiplication.md
   line: 82
   hash: 29a2d92f7baf
-  verdicts: []
+  verdicts:
+  - stage: S5a
+    verdict: correct
+    by: refereeA
+    hash: 29a2d92f7baf
+    date: '2026-10-12'
+    model: claude-opus-5-5
+    evidence: '04:82-86. Both hypotheses are needed: dropping alpha>D_0 (alpha=D_{-1}) leaves no positive
+      r; mu>1 is needed for eps>0'
+  - stage: S5b
+    verdict: correct
+    by: refereeB
+    hash: 29a2d92f7baf
+    date: '2026-10-12'
+    model: claude-opus-5-5
+    evidence: '04:82-86: the hypotheses alpha>D_0 and mu>1 are both used (positive a, and eps>0).'
 - key: proof:lem-cut-multiplicative-step
   kind: proof
   file: 04-multiplication.md
   line: 92
   hash: fab3706363ee
-  verdicts: []
+  verdicts:
+  - stage: S5a
+    verdict: correct
+    by: refereeA
+    hash: fab3706363ee
+    date: '2026-10-12'
+    model: claude-opus-5-5
+    evidence: 04:92-98. eps=(mu-1)a>0; lem-cut-step (01:215) gives n with a+n eps in alpha and a+(n+1)eps
+      not in alpha; r>=a>0; mu r-(r+eps)=(mu-1)(r-a)>=0; the outside is closed upward (01:168) and equality
+      is trivial. Sidecar passes
+  - stage: S5b
+    verdict: correct
+    by: refereeB
+    hash: fab3706363ee
+    date: '2026-10-12'
+    model: claude-opus-5-5
+    evidence: '04:92-98: lem-cut-step applies with a in alpha and eps=(mu-1)a>0. The identity mu r-(r+eps)=(mu-1)(r-a)>=0
+      holds (ledger line 525, and the sidecar passes). The closed-upward property comes from lem-cut-separation.'
 - key: lem-cut-distributive-positive
   kind: lem
   file: 04-multiplication.md
   line: 102
   hash: f7f9308fde20
-  verdicts: []
+  verdicts:
+  - stage: S5a
+    verdict: correct
+    by: refereeA
+    hash: f7f9308fde20
+    date: '2026-10-12'
+    model: claude-opus-5-5
+    evidence: 04:102-106; line 100 shows beta+gamma>D_0 because 0=0+0, so the left side is defined
+  - stage: S5b
+    verdict: correct
+    by: refereeB
+    hash: f7f9308fde20
+    date: '2026-10-12'
+    model: claude-opus-5-5
+    evidence: '04:102-106: well-posed once beta+gamma>D_0, which line 100 states (see the finding on its
+      missing citation).'
 - key: proof:lem-cut-distributive-positive
   kind: proof
   file: 04-multiplication.md
   line: 112
   hash: d4640ff73870
-  verdicts: []
+  verdicts:
+  - stage: S5a
+    verdict: correct
+    by: refereeA
+    hash: d4640ff73870
+    date: '2026-10-12'
+    model: claude-opus-5-5
+    evidence: '04:112-126. (⊆): s~>=s and t~>=t are positive elements, r>0 gives r(s+t)<=r s~+r t~, and
+      (C2) holds in the cut alpha beta+alpha gamma (thm-cut-sum). (⊇): r=max(r1,r2)>=r_i and s,t>0 give
+      r1 s+r2 t<=r(s+t), and s+t is a positive element of beta+gamma'
+  - stage: S5b
+    verdict: correct
+    by: refereeB
+    hash: d4640ff73870
+    date: '2026-10-12'
+    model: claude-opus-5-5
+    evidence: '04:112-126: in ⊆, raising s and t to positive elements only raises r(s+t), and (C2) closes
+      the set downward. In ⊇, r=max{r1,r2} (ledger line 526) and s,t>0 give r1 s+r2 t<=r(s+t).'
 - key: def-cut-product
   kind: def
   file: 04-multiplication.md
   line: 132
   hash: 7bdf2073395d
-  verdicts: []
+  verdicts:
+  - stage: S5a
+    verdict: minor
+    by: refereeA
+    hash: 7bdf2073395d
+    date: '2026-10-12'
+    model: claude-opus-5-5
+    evidence: 04:132-162. The cases are disjoint and exhaustive by thm-cut-order-total; |alpha|>D_0 for
+      alpha≠D_0 by thm-cut-ordered-group (f); it agrees with def-cut-product-positive. |D_{-1}|=-D_{-1}=D_1
+      checked. The text never states that the product of two cuts is a cut (see finding)
+  - stage: S5b
+    verdict: minor
+    by: refereeB
+    hash: 7bdf2073395d
+    date: '2026-10-12'
+    model: claude-opus-5-5
+    evidence: 04-multiplication.md:162 The example |D_{-1}| = -D_{-1} uses D_{-1} < D_0 without justification,
+      and the ledger line for the example (04:527) records only the computation of -D_{-1}.
 - key: lem-cut-sign-rules
   kind: lem
   file: 04-multiplication.md
   line: 170
   hash: 4280219d9b59
-  verdicts: []
+  verdicts:
+  - stage: S5a
+    verdict: correct
+    by: refereeA
+    hash: 4280219d9b59
+    date: '2026-10-12'
+    model: claude-opus-5-5
+    evidence: 04:170-184; every clause holds for all cuts, and the D_0 cases are handled through def-cut-product
+      case 1
+  - stage: S5b
+    verdict: minor
+    by: refereeB
+    hash: 4280219d9b59
+    date: '2026-10-12'
+    model: claude-opus-5-5
+    evidence: 04-multiplication.md:189 The Idea's 'No axiom is checked case by case' does not match proofs
+      (e)-(g).
 - key: proof:lem-cut-sign-rules
   kind: proof
   file: 04-multiplication.md
   line: 192
   hash: 1c609183399e
-  verdicts: []
+  verdicts:
+  - stage: S5a
+    verdict: correct
+    by: refereeA
+    hash: 1c609183399e
+    date: '2026-10-12'
+    model: claude-opus-5-5
+    evidence: 04:192-208. (a)-(g) checked case by case. (b) uses prp-cut-product-positive (a) and (f)
+      for -pi<D_0 with |-pi|=-(-pi)=pi. (d) uses (b),(c) and then (a). (f) handles the D_0 factor separately.
+      (g) uses 0 in D_1. Sign arithmetic is done in {-1,0,1} ⊂ Z
+  - stage: S5b
+    verdict: correct
+    by: refereeB
+    hash: 1c609183399e
+    date: '2026-10-12'
+    model: claude-opus-5-5
+    evidence: '04:192-208: (a)-(c) are checked case by case. (d)-(g) reduce to (a) through sign arithmetic
+      in {-1,0,1} (ledger line 529, thm-integers-ordered-ring) and prp-cut-product-positive (a)-(d). The
+      D_0 cases are handled by def-cut-product case 1.'
 - key: check:04-multiplication:2
   kind: check
   file: 04-multiplication.md
   line: 210
   hash: 314ce5e1afe9
-  verdicts: []
+  verdicts:
+  - stage: S5a
+    verdict: correct
+    by: refereeA
+    hash: 314ce5e1afe9
+    date: '2026-10-12'
+    model: claude-opus-5-5
+    evidence: 04:210-216. -1 is in D_0 but not in D_{-2}; p in -D_{-2} iff p<2; the third case applies;
+      -D_6=D_{-6}. It uses Exercise B1 only inside a solution (ledger 528)
+  - stage: S5b
+    verdict: correct
+    by: refereeB
+    hash: 314ce5e1afe9
+    date: '2026-10-12'
+    model: claude-opus-5-5
+    evidence: '04:210-216: D_{-2}<D_0 is fully argued (0 not in D_{-2}, and -1 in D_0\D_{-2}). |D_{-2}|=D_2
+      holds because -p-r>=-2 iff p<2. The pointer to Section 7.5 is correct: 05:18 thm-rationals-embed-cuts
+      (d) gives D_pD_q=D_pq. The citation of B1 is ledgered (line 528) and recorded as a blueprint deviation.'
 - key: lem-cut-distributive
   kind: lem
   file: 04-multiplication.md
   line: 220
   hash: 685bc093fbdf
-  verdicts: []
+  verdicts:
+  - stage: S5a
+    verdict: correct
+    by: refereeA
+    hash: 685bc093fbdf
+    date: '2026-10-12'
+    model: claude-opus-5-5
+    evidence: 04:220-224, for all cuts
+  - stage: S5b
+    verdict: minor
+    by: refereeB
+    hash: 685bc093fbdf
+    date: '2026-10-12'
+    model: claude-opus-5-5
+    evidence: 04-multiplication.md:227 The Idea attributes additivity 'on cuts ≥ D_0' to lem-cut-distributive-positive,
+      which covers only cuts > D_0.
 - key: proof:lem-cut-distributive
   kind: proof
   file: 04-multiplication.md
   line: 232
   hash: ebb57217cc69
-  verdicts: []
+  verdicts:
+  - stage: S5a
+    verdict: correct
+    by: refereeA
+    hash: ebb57217cc69
+    date: '2026-10-12'
+    model: claude-opus-5-5
+    evidence: '04:232-267. (A) covers the D_0 summands. Cases 1-5 are exhaustive by totality. Case 3:
+      (beta+gamma)+(-gamma)=beta. Case 4: -(beta+gamma)>D_0 by (f), and the algebra checks. alpha<D_0
+      is reduced through sign rule (d) with -(-alpha)=alpha. The prompt answer at 269 is consistent'
+  - stage: S5b
+    verdict: correct
+    by: refereeB
+    hash: ebb57217cc69
+    date: '2026-10-12'
+    model: claude-opus-5-5
+    evidence: '04:232-267: Cases 1-5 cover every sign pattern by totality. In Case 4, -(beta+gamma)+beta=-gamma,
+      and adding f(beta+gamma)+f(gamma) gives the result. The case alpha<D_0 follows from sign-rules (d)
+      and thm-cut-ordered-group (e). The answer to the prompt at line 269 matches the cases.'
 - key: def-cut-reciprocal
   kind: def
   file: 04-multiplication.md
   line: 277
   hash: a868c20e4690
-  verdicts: []
+  verdicts:
+  - stage: S5a
+    verdict: correct
+    by: refereeA
+    hash: a868c20e4690
+    date: '2026-10-12'
+    model: claude-opus-5-5
+    evidence: 04:277-288; the remark at 290 (q not in alpha gives q>0) and the example D_2^{-1}=D_{1/2}
+      at 292 are checked; the non-strict variant {p<=1/2} is checked
+  - stage: S5b
+    verdict: minor
+    by: refereeB
+    hash: a868c20e4690
+    date: '2026-10-12'
+    model: claude-opus-5-5
+    evidence: 04-multiplication.md:287 'The quantifier in the first line is some' points at the wrong
+      line of the display.
 - key: thm-cut-reciprocal
   kind: thm
   file: 04-multiplication.md
   line: 296
   hash: 7bf2c33cc0cd
-  verdicts: []
+  verdicts:
+  - stage: S5a
+    verdict: correct
+    by: refereeA
+    hash: 7bf2c33cc0cd
+    date: '2026-10-12'
+    model: claude-opus-5-5
+    evidence: 04:296-303. Dropping alpha≠D_0 leaves no reciprocal, and alpha alpha^{-1}=D_0 there by def-cut-product
+  - stage: S5b
+    verdict: correct
+    by: refereeB
+    hash: 7bf2c33cc0cd
+    date: '2026-10-12'
+    model: claude-opus-5-5
+    evidence: '04:296-303: the statement, including the signs of alpha^{-1}, is all proved in the fold.
+      The hypothesis alpha≠D_0 is used, and line 287 notes that D_0 has no reciprocal.'
 - key: proof:thm-cut-reciprocal
   kind: proof
   file: 04-multiplication.md
   line: 314
   hash: 9186f1f0d473
-  verdicts: []
+  verdicts:
+  - stage: S5a
+    verdict: correct
+    by: refereeA
+    hash: 9186f1f0d473
+    date: '2026-10-12'
+    model: claude-opus-5-5
+    evidence: '04:314-342. (C1): q>a gives (1/a)q>1. (C2) uses the same q. (C3): 1/(2q), and the midpoint
+      (p+1/q)/2<1/q gives p''''q<1. (⊆): r<q gives rs<qs<1. (⊇): mu depends only on p; r comes from lem-cut-multiplicative-step
+      after mu; s=p/r comes after r; s·mu r=p mu<1. alpha<D_0: alpha(-beta)=-(alpha beta)=(-alpha)beta
+      by sign rule (d), used twice. Sidecar passes'
+  - stage: S5b
+    verdict: correct
+    by: refereeB
+    hash: 9186f1f0d473
+    date: '2026-10-12'
+    model: claude-opus-5-5
+    evidence: '04:314-341: (C1) uses 1/a with q>a. (C2) and (C3) use the midpoint (p+1/q)/2 (prp-ordered-field-halves
+      (b)). The ⊆ direction uses r<q, so rs<qs<1. The ⊇ direction uses mu in (1,1/p) (prp-reciprocal-order
+      (b)) and s=p/r with s*mu r=p mu<1. The case alpha<D_0 uses sign-rules (d) twice. The fd1 rule labels
+      exist (def-rules-existential, def-rule-existential-introduction, def-rules-universal).'
 - key: thm-cuts-ordered-field
   kind: thm
   file: 04-multiplication.md
   line: 348
   hash: b9ec430c810e
-  verdicts: []
+  verdicts:
+  - stage: S5a
+    verdict: correct
+    by: refereeA
+    hash: b9ec430c810e
+    date: '2026-10-12'
+    model: claude-opus-5-5
+    evidence: 04:348-352; matches def-ordered-ring-and-field (ch02/03:147) and def-commutative-ring-and-field
+      (ch02/03:11)
+  - stage: S5b
+    verdict: correct
+    by: refereeB
+    hash: b9ec430c810e
+    date: '2026-10-12'
+    model: claude-opus-5-5
+    evidence: '04:348-352: the statement matches def-ordered-ring-and-field (fd3 ch02 03:147). No label
+      from this section is cited outside ch07, as a grep of */src and analysis-series confirmed.'
 - key: proof:thm-cuts-ordered-field
   kind: proof
   file: 04-multiplication.md
   line: 354
   hash: 356b0bf959cb
-  verdicts: []
+  verdicts:
+  - stage: S5a
+    verdict: minor
+    by: refereeA
+    hash: 356b0bf959cb
+    date: '2026-10-12'
+    model: claude-opus-5-5
+    evidence: 04-multiplication.md:355 Nowhere in the section is it stated that the product of def-cut-product
+      is a function R_D × R_D → R_D, that is, that alpha beta is always a cut. def-commutative-ring-and-field
+      (ch02/03-ordered-rings.md:17) requires multiplication to be a map R×R→R, and the axiom table has
+      no row for it. Addition's closure is covered by citing thm-cut-sum, but the product has nothing
+      equiva
+  - stage: S5b
+    verdict: minor
+    by: refereeB
+    hash: 356b0bf959cb
+    date: '2026-10-12'
+    model: claude-opus-5-5
+    evidence: 04-multiplication.md:355 The table claims to name a proof for every clause of def-commutative-ring-and-field,
+      but it does not cover the requirement that multiplication maps R_D × R_D into R_D. Nowhere in the
+      section is it stated that the general product is a cut.
 - key: exr-multiplication-a1
   kind: exr
   file: 04-multiplication.md
   line: 382
   hash: 9bec570d8005
-  verdicts: []
+  verdicts:
+  - stage: S5a
+    verdict: correct
+    by: refereeA
+    hash: 9bec570d8005
+    date: '2026-10-12'
+    model: claude-opus-5-5
+    evidence: '04:382-405. (a): x<0 is (1/2)(2x) with 2x<0<1. (b) matches the dependency structure. (c):
+      D_{-1}D_{1/2}=-(D_1D_{1/2})=-(D_{1/2})=D_{-1/2}, via prp (b),(d) and exr-addition-b1 (solution only).
+      (d) is true'
+  - stage: S5b
+    verdict: correct
+    by: refereeB
+    hash: 9bec570d8005
+    date: '2026-10-12'
+    model: claude-opus-5-5
+    evidence: '04:382-405: (a): (-1)(-x), 0*0 and (1/2)(2x) all use factors in D_1. (b) agrees with line
+      376 and with the citation chain (thm-cut-ordered-group (d) and (e) depend on (c)). (c): D_{-1}D_{1/2}=-(D_{1/2}D_1)=-D_{1/2}=D_{-1/2}.
+      (d) is true by definition.'
+  - stage: S6
+    verdict: correct
+    by: verifier
+    hash: 9bec570d8005
+    date: '2026-10-12'
+    model: claude-opus-5-5
+    evidence: '04:382-405. (a) 0=0·0, x>0 is (-1)(-x), x<0 is (1/2)(2x), with every factor in D_1: correct.
+      (b) Checked against 03:241-254: (O3) strict form uses cancellation, (e) rests on thm-cut-additive-inverse,
+      and sign-rules (a) uses -(-α)=α, so the dependency list is right. (c) D_{-1}D_{1/2}=-(D_1D_{1/2})=-D_{1/2}=D_{-1/2}:
+      correct; script confirms (-1)(1/2)=-1/2. (d) True by the definition.'
 - key: exr-multiplication-b1
   kind: exr
   file: 04-multiplication.md
   line: 409
   hash: 24b24f008e45
-  verdicts: []
+  verdicts:
+  - stage: S5a
+    verdict: correct
+    by: refereeA
+    hash: 24b24f008e45
+    date: '2026-10-12'
+    model: claude-opus-5-5
+    evidence: 04:409-427. x/6<lambda<1, r=2 lambda in (0,2), s=x/(2 lambda) in (0,3) since x<6 lambda,
+      rs=x. Sidecar passes
+  - stage: S5b
+    verdict: correct
+    by: refereeB
+    hash: 24b24f008e45
+    date: '2026-10-12'
+    model: claude-opus-5-5
+    evidence: '04:409-427: lambda=(1+x/6)/2 gives x/6<lambda<1, r=2lambda<2, s=x/(2lambda)<3 and rs=x.
+      The case x<=0 uses 1*1. The sidecar passes.'
+  - stage: S6
+    verdict: correct
+    by: verifier
+    hash: 24b24f008e45
+    date: '2026-10-12'
+    model: claude-opus-5-5
+    evidence: '04:409-427. My own solution matches. A Fraction script (2000 random x in (0,6)) confirms
+      0<r<2, 0<s<3 and rs=x for λ=(1+x/6)/2. The hint names the tool. Closest worked examples: prp-cut-product-positive
+      (d) and the reciprocal ⊇ midpoint.'
 - key: exr-multiplication-b2
   kind: exr
   file: 04-multiplication.md
   line: 429
   hash: c04640510b18
-  verdicts: []
+  verdicts:
+  - stage: S5a
+    verdict: correct
+    by: refereeA
+    hash: c04640510b18
+    date: '2026-10-12'
+    model: claude-opus-5-5
+    evidence: 04:429-453. Step (3) matches the folded proof; the remark that mu=1/p fails is correct (r/p
+      may be the least outside point)
+  - stage: S5b
+    verdict: correct
+    by: refereeB
+    hash: c04640510b18
+    date: '2026-10-12'
+    model: claude-opus-5-5
+    evidence: '04:429-453: the faded item matches blueprint line 71 and carries the ''Name the move, then
+      complete it'' prompt. In step (3), s=p/r and s*(mu r)=p mu<1. The remark on mu=1/p is correct.'
+  - stage: S6
+    verdict: correct
+    by: verifier
+    hash: c04640510b18
+    date: '2026-10-12'
+    model: claude-opus-5-5
+    evidence: '04:429-453. Step (3) is complete: s=p/r, s·μr=pμ<1, witness q=μr, p=rs. The script confirms
+      1<μ<1/p and pμ<1. The ''why not 1/p'' remark is correct (e.g. α=D_1, p=1/2, r=1/2 gives r/p=1, the
+      least outside point). The full proof is in the fold, so it is the worked example.'
 - key: exr-multiplication-b3
   kind: exr
   file: 04-multiplication.md
   line: 455
   hash: e8f980f7957c
-  verdicts: []
+  verdicts:
+  - stage: S5a
+    verdict: correct
+    by: refereeA
+    hash: e8f980f7957c
+    date: '2026-10-12'
+    model: claude-opus-5-5
+    evidence: '04:455-467: sign rule (d) twice, then -(-xi)=xi'
+  - stage: S5b
+    verdict: correct
+    by: refereeB
+    hash: e8f980f7957c
+    date: '2026-10-12'
+    model: claude-opus-5-5
+    evidence: '04:455-467: (d) with -beta in place of beta, then (d) again, then -(-xi)=xi.'
+  - stage: S6
+    verdict: correct
+    by: verifier
+    hash: e8f980f7957c
+    date: '2026-10-12'
+    model: claude-opus-5-5
+    evidence: 04:455-467. (-α)(-β)=-(α(-β))=-(-(αβ))=αβ, using lem-cut-sign-rules (d) twice and thm-cut-ordered-group
+      (e). This matches my solution.
 - key: exr-multiplication-c1
   kind: exr
   file: 04-multiplication.md
   line: 471
   hash: d999e04a4c24
-  verdicts: []
+  verdicts:
+  - stage: S5a
+    verdict: correct
+    by: refereeA
+    hash: d999e04a4c24
+    date: '2026-10-12'
+    model: claude-opus-5-5
+    evidence: 04:471-518. rho(D_a)={p<=1/a} has largest element 1/a>0. If alpha is not rational, the outside
+      has no least element, and (C3) goes through via q'<q. rho=alpha^{-1} there. Sidecar passes
+  - stage: S5b
+    verdict: minor
+    by: refereeB
+    hash: d999e04a4c24
+    date: '2026-10-12'
+    model: claude-opus-5-5
+    evidence: 04-multiplication.md:509 'the non-strict recipe works for the cut of √2' uses a name the
+      chapter avoids for sigma and relies, without a reference or ledger line, on sigma not being rational.
+  - stage: S6
+    verdict: minor
+    by: verifier
+    hash: d999e04a4c24
+    date: '2026-10-12'
+    model: claude-opus-5-5
+    evidence: 04-multiplication.md:511 The marking scheme requires the book's route for the irrational
+      direction and has no line for the natural second route (STYLE §11.6). It also over-requires on the
+      rational direction.
 - key: thm-rationals-embed-cuts
   kind: thm
   file: 05-rationals-inside.md
   line: 9
   hash: 5c7e4a0e85ce
-  verdicts: []
+  verdicts:
+  - stage: S5a
+    verdict: correct
+    by: refereeA
+    hash: 5c7e4a0e85ce
+    date: '2026-10-12'
+    model: claude-opus-5-5
+    evidence: 05:9-23. Every clause is proved in the proof. The consequence matches the uniqueness clause
+      of thm-rationals-embed-ordered-field (ch04/02:82).
+  - stage: S5b
+    verdict: minor
+    by: refereeB
+    hash: 5c7e4a0e85ce
+    date: '2026-10-12'
+    model: claude-opus-5-5
+    evidence: 05-rationals-inside.md:7 Two meta-claims overstate the method. Line 7 says 'The theorem
+      below checks the rest by computing with sets', and the Idea (line 26) says 'Each identity is an
+      equality of sets of rationals, so each has two halves.' But (c), the sign cases of (d) and (e) are
+      proved algebraically or by citation, not by two set inclusions.
 - key: proof:thm-rationals-embed-cuts
   kind: proof
   file: 05-rationals-inside.md
   line: 29
   hash: d70868adfbda
-  verdicts: []
+  verdicts:
+  - stage: S5a
+    verdict: correct
+    by: refereeA
+    hash: d70868adfbda
+    date: '2026-10-12'
+    model: claude-opus-5-5
+    evidence: '05:29-68. (a) uses prp-rational-in-cut (a) correctly in both directions. In (b), δ>0 follows
+      from x<p+q, and the split sums to x. (c) uses (b), thm-cut-additive-inverse and uniqueness from
+      prp-ring-algebra (a). (d), positive case: rs<ps<pq by (c) twice; λ lies strictly between x/(pq)
+      and 1, s<q ⟺ x<λpq, and rs=x. Sign cases use prp-ring-algebra (c) in the field from thm-cuts-ordered-field,
+      which i'
+  - stage: S5b
+    verdict: correct
+    by: refereeB
+    hash: d70868adfbda
+    date: '2026-10-12'
+    model: claude-opus-5-5
+    evidence: 'Lines 29-68. (a) is prp-rational-in-cut (a) with alpha = D_q. In (b), delta = (p+q-x)/2
+      gives x. (c) uses prp-ring-algebra (a) uniqueness of negatives. In (d) for positive p, q: x/(pq)
+      < lambda < 1, r = lambda p < p, and s < q iff x < lambda pq. The sign cases check out: (-D_{-p})D_q
+      = -D_{-pq} = D_{pq}, and the case p, q < 0. The uniqueness clause of thm-rationals-embed-ordered-field
+      gives the co'
 - key: check:05-rationals-inside:1
   kind: check
   file: 05-rationals-inside.md
   line: 72
   hash: 4ef7dea4e884
-  verdicts: []
+  verdicts:
+  - stage: S5a
+    verdict: correct
+    by: refereeA
+    hash: 4ef7dea4e884
+    date: '2026-10-12'
+    model: claude-opus-5-5
+    evidence: '05:72-78. p∉D_p is correct. The cross-reference holds: exr-addition-c2 line (5) of 03-addition.md:363
+      writes p=p+0 with 0∈D_0.'
+  - stage: S5b
+    verdict: correct
+    by: refereeB
+    hash: 4ef7dea4e884
+    date: '2026-10-12'
+    model: claude-opus-5-5
+    evidence: 'Lines 72-78: p is not in D_p. Exercise C2 of Section 7.3 is the flawed proof using p =
+      p + 0 with 0 in D_0 (03-addition.md:358-366), as claimed.'
 - key: prp-cut-union-of-rationals
   kind: prp
   file: 05-rationals-inside.md
   line: 82
   hash: a2c104261e06
-  verdicts: []
+  verdicts:
+  - stage: S5a
+    verdict: correct
+    by: refereeA
+    hash: a2c104261e06
+    date: '2026-10-12'
+    model: claude-opus-5-5
+    evidence: 05:82-89. Marked .optional, and nothing cites it in any proof or solution. A1(b) argues
+      directly, and line 95 is a prose pointer only.
+  - stage: S5b
+    verdict: correct
+    by: refereeB
+    hash: a2c104261e06
+    date: '2026-10-12'
+    model: claude-opus-5-5
+    evidence: 'Lines 82-89. Marked .optional and terminal: grep finds no @-citation anywhere. A1(b) at
+      line 237 argues directly and names it in prose only. The meta-claim ''Nothing later in the chapter
+      uses it'' (line 95) is true; 06-two-roads.md does not cite it.'
 - key: proof:prp-cut-union-of-rationals
   kind: proof
   file: 05-rationals-inside.md
   line: 91
   hash: 969213ef266c
-  verdicts: []
+  verdicts:
+  - stage: S5a
+    verdict: correct
+    by: refereeA
+    hash: 969213ef266c
+    date: '2026-10-12'
+    model: claude-opus-5-5
+    evidence: 05:91-93. ⊇ uses (C2) and ⊆ uses (C3). The set is non-empty by (C1) and bounded by α, so
+      thm-dedekind-lub (02:63) gives sup = union.
+  - stage: S5b
+    verdict: correct
+    by: refereeB
+    hash: 969213ef266c
+    date: '2026-10-12'
+    model: claude-opus-5-5
+    evidence: 'Line 92: the inclusion D_q ⊆ alpha comes from (C2), the reverse from (C3). The family is
+      non-empty and bounded above by alpha, so thm-dedekind-lub (02:63) gives sup = union.'
 - key: thm-cut-rationals-dense
   kind: thm
   file: 05-rationals-inside.md
   line: 101
   hash: 20730bd68be3
-  verdicts: []
+  verdicts:
+  - stage: S5a
+    verdict: correct
+    by: refereeA
+    hash: 20730bd68be3
+    date: '2026-10-12'
+    model: claude-opus-5-5
+    evidence: 05:101-105. With α=β the statement fails, and the remark at line 123 gives a valid non-cut
+      counterexample when (C3) is dropped.
+  - stage: S5b
+    verdict: correct
+    by: refereeB
+    hash: 20730bd68be3
+    date: '2026-10-12'
+    model: claude-opus-5-5
+    evidence: 'Lines 101-105. The lead-in claim ''We do not yet know that R_D is Archimedean'' is true:
+      prp-cuts-archimedean comes at line 141. Try it first: two in the chapter (§02, §05), within the
+      §11.8 limit.'
 - key: proof:thm-cut-rationals-dense
   kind: proof
   file: 05-rationals-inside.md
   line: 113
   hash: 6500995c20a1
-  verdicts: []
+  verdicts:
+  - stage: S5a
+    verdict: correct
+    by: refereeA
+    hash: 6500995c20a1
+    date: '2026-10-12'
+    model: claude-opus-5-5
+    evidence: '05:113-121. p comes from α⊊β, and p'' from (C3) for β. α⊆D_p uses prp-rational-in-cut (b),
+      D_p⊊D_p'' uses (a) of the theorem, and D_p''⊊β uses prp-rational-in-cut (a). Mixed transitivity
+      then gives a strict chain. The quantifier order is fine: p depends on α,β, and p'' on p.'
+  - stage: S5b
+    verdict: correct
+    by: refereeB
+    hash: 6500995c20a1
+    date: '2026-10-12'
+    model: claude-opus-5-5
+    evidence: 'Lines 113-121: alpha ⊆ D_p by prp-rational-in-cut (b), D_p ⊊ D_{p''} by thm (a), D_{p''}
+      ⊊ beta by prp-rational-in-cut (a). The dropped-hypothesis remark at line 123 ({r <= 1} versus D_1)
+      is correct: D_1 ⊊ D_q forces q > 1, and (1+q)/2 is in D_q but not in {r <= 1}.'
 - key: check:05-rationals-inside:2
   kind: check
   file: 05-rationals-inside.md
   line: 129
   hash: fc02a291ac14
-  verdicts: []
+  verdicts:
+  - stage: S5a
+    verdict: minor
+    by: refereeA
+    hash: fc02a291ac14
+    date: '2026-10-12'
+    model: claude-opus-5-5
+    evidence: 05-rationals-inside.md:134 The quick-check solution relies on a later result. It concludes
+      σ<D_q from σ≠D_q, which is proved only later, in prp-cut-sqrt2-square (line 188). STYLE §12.1 says
+      a result the reader has not met may never be a reason, in a solution included.
+  - stage: S5b
+    verdict: minor
+    by: refereeB
+    hash: fc02a291ac14
+    date: '2026-10-12'
+    model: claude-opus-5-5
+    evidence: 05-rationals-inside.md:134 The quick check's solution proves sigma < D_q strictly by appeal
+      to sigma != D_q, a result proved only later at line 188. STYLE §9/§12.1 forbids using an unseen
+      result as a reason, and the forward step is easily avoided.
 - key: prp-cuts-archimedean
   kind: prp
   file: 05-rationals-inside.md
   line: 141
   hash: 209f83213acd
-  verdicts: []
+  verdicts:
+  - stage: S5a
+    verdict: correct
+    by: refereeA
+    hash: 209f83213acd
+    date: '2026-10-12'
+    model: claude-opus-5-5
+    evidence: 05:141-145. Marked .optional and terminal. Line 217 points to it in prose only.
+  - stage: S5b
+    verdict: correct
+    by: refereeB
+    hash: 209f83213acd
+    date: '2026-10-12'
+    model: claude-opus-5-5
+    evidence: Lines 141-145. Marked .optional with no citing site; line 217 points at it in prose only.
+      Matches def-archimedean-ordered-field (ch04/02:172).
 - key: proof:prp-cuts-archimedean
   kind: proof
   file: 05-rationals-inside.md
   line: 147
   hash: 4f1dd8075eed
-  verdicts: []
+  verdicts:
+  - stage: S5a
+    verdict: correct
+    by: refereeA
+    hash: 4f1dd8075eed
+    date: '2026-10-12'
+    model: claude-opus-5-5
+    evidence: 05:147-149. b comes from (C1), α⊆D_b from prp-rational-in-cut (b), b<n from thm-rationals-archimedean,
+      and D_b<D_n from (a). n·1=D_n by the lead-in (ι_F(n)=n·1_F with thm-rationals-embed-cuts).
+  - stage: S5b
+    verdict: correct
+    by: refereeB
+    hash: 4f1dd8075eed
+    date: '2026-10-12'
+    model: claude-opus-5-5
+    evidence: 'Line 148: b is not in alpha (C1), so alpha ⊆ D_b (prp-rational-in-cut (b)); thm-rationals-archimedean
+      gives b < n; then D_b < D_n by thm (a). That n·1 = D_n is in the ledger (line 384) and stated in
+      the lead-in at line 139.'
 - key: prp-cut-sqrt2-square
   kind: prp
   file: 05-rationals-inside.md
   line: 155
   hash: 71258e1f17f5
-  verdicts: []
+  verdicts:
+  - stage: S5a
+    verdict: correct
+    by: refereeA
+    hash: 71258e1f17f5
+    date: '2026-10-12'
+    model: claude-opus-5-5
+    evidence: 05:155-159. Each part of the statement is proved in the proof.
+  - stage: S5b
+    verdict: correct
+    by: refereeB
+    hash: 71258e1f17f5
+    date: '2026-10-12'
+    model: claude-opus-5-5
+    evidence: 'Lines 155-159 match the blueprint. The meta-claims at line 191 hold: mu depends on x only,
+      and Exercise C1 of Section 7.1 (01-cuts.md:317-340) uses the Newton step q'' below q with q^2 >
+      2, which this proof avoids.'
 - key: proof:prp-cut-sqrt2-square
   kind: proof
   file: 05-rationals-inside.md
   line: 165
   hash: 26b1d9f3be3e
-  verdicts: []
+  verdicts:
+  - stage: S5a
+    verdict: correct
+    by: refereeA
+    hash: 26b1d9f3be3e
+    date: '2026-10-12'
+    model: claude-opus-5-5
+    evidence: '05:165-189. σ>D_0 holds. The ⊆ half: (rs)^2<2s^2<4 by (c), then (g). The ⊇ half: for x≥1
+      it uses 1<2/x≤2, so 0<t≤1 and μ^2<1+t=2/x. μ is fixed before lem-cut-multiplicative-step produces
+      r. From (μr)^2≥2 we get r^2≥2/μ^2>x, then s=x/r<r and (C2). The consequence: D_{q^2}=D_2 and injectivity
+      give q^2=2, which contradicts thm-no-rational-square-two. Sidecar ok.'
+  - stage: S5b
+    verdict: correct
+    by: refereeB
+    hash: 26b1d9f3be3e
+    date: '2026-10-12'
+    model: claude-opus-5-5
+    evidence: Lines 165-189. For one inclusion, (rs)^2 = r^2 s^2 < 2s^2 < 4, and prp-ordered-ring-rules
+      (g) is an iff for non-negative elements (03-ordered-rings.md:316), so rs < 2. For the reverse, 1
+      <= x < 2 gives t in (0,1] and mu^2 < 1+t = 2/x; the lemma gives r with (mu r)^2 >= 2, so r^2 >=
+      2/mu^2 > x and s = x/r < r. For the consequence, D_{q^2} = D_2 with injectivity contradicts thm-no-rational-square-tw
 - key: check:05-rationals-inside:3
   kind: check
   file: 05-rationals-inside.md
   line: 193
   hash: 42db8084f979
-  verdicts: []
+  verdicts:
+  - stage: S5a
+    verdict: correct
+    by: refereeA
+    hash: 42db8084f979
+    date: '2026-10-12'
+    model: claude-opus-5-5
+    evidence: '05:193-199. The answer is accurate: x<2 gives t>0, hence μ>1.'
+  - stage: S5b
+    verdict: correct
+    by: refereeB
+    hash: 42db8084f979
+    date: '2026-10-12'
+    model: claude-opus-5-5
+    evidence: 'Lines 193-199: for a fixed pair r, s, rs < 2 leaves the x in (rs, 2) uncovered. The hypothesis
+      x < 2 is used only to get 2/x > 1.'
 - key: thm-cuts-complete-field
   kind: thm
   file: 05-rationals-inside.md
   line: 205
   hash: 55179dd77670
-  verdicts: []
+  verdicts:
+  - stage: S5a
+    verdict: correct
+    by: refereeA
+    hash: 55179dd77670
+    date: '2026-10-12'
+    model: claude-opus-5-5
+    evidence: 05:205-209. The statement matches def-complete-ordered-field (ch05/06:13).
+  - stage: S5b
+    verdict: correct
+    by: refereeB
+    hash: 55179dd77670
+    date: '2026-10-12'
+    model: claude-opus-5-5
+    evidence: 'Lines 205-209: matches def-complete-ordered-field (ch05/06:13). Meta-claims at line 215
+      checked: Section 5.5 is thm-constructed-reals-cauchy-complete, and Section 5.6 is bisection plus
+      Archimedes in thm-cauchy-archimedean-lub. At line 217, thm-cof-complete-archimedean and thm-cof-uniqueness
+      state what is claimed. The completeness of Chapter 5''s R is in the ledger (line 388).'
 - key: proof:thm-cuts-complete-field
   kind: proof
   file: 05-rationals-inside.md
   line: 211
   hash: ba2b594779bd
-  verdicts: []
+  verdicts:
+  - stage: S5a
+    verdict: correct
+    by: refereeA
+    hash: ba2b594779bd
+    date: '2026-10-12'
+    model: claude-opus-5-5
+    evidence: 05:211-213. The field ≤ ('< or =') is ⊆. 'Bounded above' in def-complete-ordered-field matches
+      the hypothesis of thm-dedekind-lub, which gives the supremum.
+  - stage: S5b
+    verdict: correct
+    by: refereeB
+    hash: ba2b594779bd
+    date: '2026-10-12'
+    model: claude-opus-5-5
+    evidence: 'Line 212: <= in def-ordered-ring-and-field is ''< or ='', which is ⊊ or =, which is ⊆ (def-cut-order,
+      02:11). thm-dedekind-lub gives the supremum.'
 - key: exr-rationals-inside-a1
   kind: exr
   file: 05-rationals-inside.md
   line: 223
   hash: d0677231ecba
-  verdicts: []
+  verdicts:
+  - stage: S5a
+    verdict: correct
+    by: refereeA
+    hash: d0677231ecba
+    date: '2026-10-12'
+    model: claude-opus-5-5
+    evidence: 05:223-242. (a) names the uniqueness clause. (b) argues directly from (C2) and (C3) and
+      does not cite the optional result. (c) D_1, D_2, p=1 is right. (d) σσ=D_2 is a counterexample.
+  - stage: S5b
+    verdict: correct
+    by: refereeB
+    hash: d0677231ecba
+    date: '2026-10-12'
+    model: claude-opus-5-5
+    evidence: 'Lines 223-242. All four parts are well-posed and the answers are correct: (a) uniqueness;
+      (b) (C2)/(C3) argued directly, with the optional prop mentioned in prose only; (c) D_1, D_2, p =
+      1; (d) sigma sigma = D_2. Part (c) is a proof-comprehension part, although §05 holds no key proof
+      (key proofs: blueprint line 67).'
+  - stage: S6
+    verdict: correct
+    by: verifier
+    hash: d0677231ecba
+    date: '2026-10-12'
+    model: claude-opus-5-5
+    evidence: '05:223-242. (a) Uniqueness clause of thm-rationals-embed-ordered-field: correct. (b) Union
+      via (C2)/(C3): correct. (c) α=D_1, β=D_2, p=1: correct. (d) False, by σσ=D_2: correct.'
 - key: exr-rationals-inside-b1
   kind: exr
   file: 05-rationals-inside.md
   line: 246
   hash: ceb42491e210
-  verdicts: []
+  verdicts:
+  - stage: S5a
+    verdict: correct
+    by: refereeA
+    hash: ceb42491e210
+    date: '2026-10-12'
+    model: claude-opus-5-5
+    evidence: 05:246-258. Uses the def-cut-product case with signs differing, then |D_q|=D_q, |D_p|=-D_p=D_{-p}
+      by (c), the positive case, and (c) again. It avoids the sign rules, as the problem requires.
+  - stage: S5b
+    verdict: correct
+    by: refereeB
+    hash: ceb42491e210
+    date: '2026-10-12'
+    model: claude-opus-5-5
+    evidence: 'Lines 246-258: D_p < D_0 < D_q by (a); the third case of def-cut-product (04:132) gives
+      -(|D_p||D_q|); |D_p| = -D_p = D_{-p} by (c); then the positive case of (d), and (c) again. No sign
+      rules are used, as the problem demands.'
+  - stage: S6
+    verdict: correct
+    by: verifier
+    hash: ceb42491e210
+    date: '2026-10-12'
+    model: claude-opus-5-5
+    evidence: 05:246-258. Uses only the definition's third case, |D_p|=-D_p=D_{-p} by (c), the positive
+      case of (d), and -D_{-pq}=D_{pq} by (c). It never uses the sign rules, as required. The worked example
+      is the other-signs case in the proof of thm-rationals-embed-cuts (d).
 - key: exr-rationals-inside-b2
   kind: exr
   file: 05-rationals-inside.md
   line: 260
   hash: dce9ce83cb43
-  verdicts: []
+  verdicts:
+  - stage: S5a
+    verdict: correct
+    by: refereeA
+    hash: dce9ce83cb43
+    date: '2026-10-12'
+    model: claude-opus-5-5
+    evidence: 05:260-282. The equality of ρ with exr-cuts-b2's set (p<0 version, 01-cuts.md:293) is correctly
+      justified by 0^2<3. 0<t≤2 and t<3 give μ^2<3/x. Sidecar ok.
+  - stage: S5b
+    verdict: correct
+    by: refereeB
+    hash: dce9ce83cb43
+    date: '2026-10-12'
+    model: claude-opus-5-5
+    evidence: 'Lines 260-282: the cross-reference to Exercise B2 of Section 7.1 (01-cuts.md:290, written
+      with p < 0) is accurate. t in (0,2], t^2/9 < t/3 since t < 3, mu^2 < 3/x. The other inclusion uses
+      (g). The sidecar passes.'
+  - stage: S6
+    verdict: correct
+    by: verifier
+    hash: dce9ce83cb43
+    date: '2026-10-12'
+    model: claude-opus-5-5
+    evidence: '05:260-282. The ⊆ and ⊇ steps match my solution. The script checks 5000 x in [1,3): t in
+      (0,2], μ>1 and μ²<3/x. The statement correctly reconciles ''p<0'' in exr-cuts-b2 (01:290) with ''p≤0''.
+      The worked example is prp-cut-sqrt2-square.'
 - key: exr-rationals-inside-c1
   kind: exr
   file: 05-rationals-inside.md
   line: 286
   hash: ed7504dc8516
-  verdicts: []
+  verdicts:
+  - stage: S5a
+    verdict: correct
+    by: refereeA
+    hash: ed7504dc8516
+    date: '2026-10-12'
+    model: claude-opus-5-5
+    evidence: 05:286-327. q<q' comes from using density twice. D_1<σ<D_2 uses 1∈σ and 3/2∉σ. The affine
+      image lies strictly between D_q and D_q' because D_{q'-q}>D_0. The irrationality solve is correct
+      by (b), (c), (d) and the inverse D_{1/(q'-q)}. Sidecar ok.
+  - stage: S5b
+    verdict: minor
+    by: refereeB
+    hash: ed7504dc8516
+    date: '2026-10-12'
+    model: claude-opus-5-5
+    evidence: '05-rationals-inside.md:307 Two steps in the solution have no named reason (STYLE §4/§9:
+      every step names its reason): ''so sigma ⊆ D_{3/2} < D_2'', and, at line 309, D_{q''-q} > D_0.'
+  - stage: S6
+    verdict: correct
+    by: verifier
+    hash: ed7504dc8516
+    date: '2026-10-12'
+    model: claude-opus-5-5
+    evidence: '05:286-327. The proof is correct. D_1<σ<D_2 via 3/2∉σ (9/4>2 checked). The positive-factor
+      order step is right, and the script confirms the affine solve σ=D_{1+(r-q)/(q''-q)}. The scheme
+      also fits my alternative γ=D_q+D_{(q''-q)/2}σ (through the ''any two rational cuts'' clause). Problem:
+      Hint 1 (05:295) gives the whole strategy, and Hint 2 is the first line, so the ladder is inverted
+      relative to STYL'
 - key: exr-rationals-inside-c2
   kind: exr
   file: 05-rationals-inside.md
   line: 329
   hash: 4230b3af56c4
-  verdicts: []
+  verdicts:
+  - stage: S5a
+    verdict: minor
+    by: refereeA
+    hash: 4230b3af56c4
+    date: '2026-10-12'
+    model: claude-opus-5-5
+    evidence: 05-rationals-inside.md:350 The cited result does not state the description of τττ it is
+      used for. That description is the set T built inside the proof of prp-cut-product-positive (c).
+      The problem says 'proved in full', so it should cite where the fact is proved or give the two-line
+      argument.
+  - stage: S5b
+    verdict: minor
+    by: refereeB
+    hash: 4230b3af56c4
+    date: '2026-10-12'
+    model: claude-opus-5-5
+    evidence: 05-rationals-inside.md:350 'By @prp-cut-product-positive, tau tau tau is the set of x in
+      Q with x <= rst for some positive r, s, t in tau' cites a result whose statement does not contain
+      this description. The easy cases at line 352 and the solution at line 372 both rest on it.
+  - stage: S6
+    verdict: minor
+    by: verifier
+    hash: 4230b3af56c4
+    date: '2026-10-12'
+    model: claude-opus-5-5
+    evidence: 05-rationals-inside.md:350 The given part cites prp-cut-product-positive for a description
+      of τττ that is not in that proposition's statement.
 - key: thm-dedekind-same-reals
   kind: thm
   file: 06-two-roads.md
   line: 23
   hash: 58529e3a4265
-  verdicts: []
+  verdicts:
+  - stage: S5a
+    verdict: correct
+    by: refereeA
+    hash: 58529e3a4265
+    date: '2026-10-12'
+    model: claude-opus-5-5
+    evidence: '06:23-36. All three parts follow from cited labels: thm-cof-uniqueness (03:11) needs both
+      fields complete, and thm-reals-complete-ordered-field and thm-cuts-complete-field (05:205) supply
+      that. The theorem has no extra hypotheses to drop.'
+  - stage: S5b
+    verdict: correct
+    by: refereeB
+    hash: 58529e3a4265
+    date: '2026-10-12'
+    model: claude-opus-5-5
+    evidence: 06:23-36. (a) matches thm-cof-uniqueness (ch06/03:11), whose hypotheses come from thm-reals-complete-ordered-field
+      and thm-cuts-complete-field. (b) matches prp-cof-map-fixes-rationals plus thm-rationals-embed-cuts
+      ('Consequently D_q = iota_{R_D}(q)'). (c) follows from prp-rational-in-cut (a) read through def-cut-order.
+      All the @refs resolve to earlier labels.
 - key: proof:thm-dedekind-same-reals
   kind: proof
   file: 06-two-roads.md
   line: 44
   hash: 27b834ca2a34
-  verdicts: []
+  verdicts:
+  - stage: S5a
+    verdict: correct
+    by: refereeA
+    hash: 27b834ca2a34
+    date: '2026-10-12'
+    model: claude-opus-5-5
+    evidence: '06:44-56. (a) is thm-cof-uniqueness with F=R_C, L=R_D. (b): prp-cof-map-fixes-rationals
+      (01:53) needs only sums, products and the unit, which def-cof-order-preserving-map gives; thm-rationals-embed-cuts
+      gives iota_{R_D}(q)=D_q. (c): reflection of order is proved inline from (O1) in both fields. prp-rational-in-cut
+      (a) (01-cuts:188) with def-cut-order gives q in alpha iff D_q < alpha. Equal sets fo'
+  - stage: S5b
+    verdict: minor
+    by: refereeB
+    hash: 27b834ca2a34
+    date: '2026-10-12'
+    model: claude-opus-5-5
+    evidence: '06-two-roads.md:69 The meta-claim ''Exercise C2 below proves the same correspondence directly,
+      in any Archimedean ordered field'' overstates C2. The correspondence alpha -> sup{iota_F(q) : q
+      in alpha} is proved only when F is complete.'
 - key: check:06-two-roads:1
   kind: check
   file: 06-two-roads.md
   line: 71
   hash: 139f9ccf0e5d
-  verdicts: []
+  verdicts:
+  - stage: S5a
+    verdict: correct
+    by: refereeA
+    hash: 139f9ccf0e5d
+    date: '2026-10-12'
+    model: claude-opus-5-5
+    evidence: 06:71-77. D_{-3/4} follows by (b). The consistency with (c) uses that iota preserves and
+      reflects order (thm-rationals-embed-ordered-field). The 'determined' answer follows from (c).
+  - stage: S5b
+    verdict: correct
+    by: refereeB
+    hash: 139f9ccf0e5d
+    date: '2026-10-12'
+    model: claude-opus-5-5
+    evidence: 06:71-77. Psi(iota(-3/4)) = D_{-3/4} by (b), and this agrees with (c) because iota preserves
+      and reflects order. 'Determined by its values on iota(q)' follows from (c).
 - key: exm-two-roads-sqrt2
   kind: exm
   file: 06-two-roads.md
   line: 87
   hash: a0439bf8e6a0
-  verdicts: []
+  verdicts:
+  - stage: S5a
+    verdict: correct
+    by: refereeA
+    hash: a0439bf8e6a0
+    date: '2026-10-12'
+    model: claude-opus-5-5
+    evidence: 06:87-99. Psi(x)^2=D_2 follows from multiplicativity and (b). sigma sigma=D_2 and sigma>D_0
+      come from prp-cut-sqrt2-square. Uniqueness of positive roots uses prp-ordered-ring-rules (g) with
+      trichotomy. In the second route, exm-cof-rationals-below-sqrt2's set {q<0} U {q>=0, q^2<2} equals
+      sigma={p<=0 or p^2<2} (q=0 is covered by 0^2<2).
+  - stage: S5b
+    verdict: correct
+    by: refereeB
+    hash: a0439bf8e6a0
+    date: '2026-10-12'
+    model: claude-opus-5-5
+    evidence: 06:87-99. Psi(x)^2 = D_2 = sigma sigma. Both are > D_0 (sigma by prp-cut-sqrt2-square).
+      Uniqueness follows from prp-ordered-ring-rules (g), whose a,b >= 0 hypothesis holds. The second
+      route via exm-cof-rationals-below-sqrt2 matches sigma's definition in NOTATION. The example is .optional
+      and nothing cites it (the :101 prose does not).
+  - stage: S8
+    verdict: minor
+    by: seam
+    hash: a0439bf8e6a0
+    date: '2026-10-12'
+    model: claude-opus-5-5
+    evidence: 06:96 proves inline that positive square roots are unique in an ordered field. The uniqueness
+      clause of @prp-cof-square-roots (F3.4 §01) already covers this, since R_D is complete by @thm-cuts-complete-field,
+      and F3.4's exm-cof-two-models cites that label for the same step.
 - key: exr-two-roads-a1
   kind: exr
   file: 06-two-roads.md
   line: 129
   hash: 9bd2ac3c2194
-  verdicts: []
+  verdicts:
+  - stage: S5a
+    verdict: correct
+    by: refereeA
+    hash: 9bd2ac3c2194
+    date: '2026-10-12'
+    model: claude-opus-5-5
+    evidence: 06:129-150. The listed citations match the proof. (b) is checked against D_{1/2}. (d) correctly
+      separates reflection from strict increase.
+  - stage: S5b
+    verdict: correct
+    by: refereeB
+    hash: 9bd2ac3c2194
+    date: '2026-10-12'
+    model: claude-opus-5-5
+    evidence: '06:129-150. All four parts are well-posed and match the proof: the results used per part,
+      the run on iota(1/2) (= D_{1/2}, consistent with (b)), a two-sentence idea, and which step uses
+      reflection and which uses cut-ness. This meets STYLE 11.2 for the key proof.'
+  - stage: S6
+    verdict: correct
+    by: verifier
+    hash: 9bd2ac3c2194
+    date: '2026-10-12'
+    model: claude-opus-5-5
+    evidence: 06:129-150. (b), (c) and (d) are correct. For (a), the answer to 'name the earlier results'
+      leaves out def-cof-order-preserving-map, which supplies Ψ's additivity, multiplicativity and strict
+      increase in (b) and (c). It also leaves out def-cut-order and def-cof-rationals-below, which (c)
+      uses. [finding refuted by skeptics]
 - key: exr-two-roads-b1
   kind: exr
   file: 06-two-roads.md
   line: 154
   hash: 0b16e67a0bda
-  verdicts: []
+  verdicts:
+  - stage: S5a
+    verdict: correct
+    by: refereeA
+    hash: 0b16e67a0bda
+    date: '2026-10-12'
+    model: claude-opus-5-5
+    evidence: 06:154-183. (supseteq) uses prp-ordered-ring-rules (b). (subseteq) uses density in the Archimedean
+      R_C (thm-constructed-reals-archimedean, thm-rationals-dense-ordered-field), and iota(b) < y - d/2
+      is checked by the sidecar. def-cut-sum says the set sum makes sense for any sets of rationals, so
+      (a) does not need Psi.
+  - stage: S5b
+    verdict: correct
+    by: refereeB
+    hash: 0b16e67a0bda
+    date: '2026-10-12'
+    model: claude-opus-5-5
+    evidence: '06:154-183. (supseteq) uses prp-ordered-ring-rules (b). (subseteq): with a from density,
+      iota(b) = iota(q) - iota(a) < (x+y-d) - (x-d/2) = y - d/2 < y, which checks. The identification
+      with lem-cof-below-sum (ch06/02:23) is accurate.'
+  - stage: S6
+    verdict: minor
+    by: verifier
+    hash: 0b16e67a0bda
+    date: '2026-10-12'
+    model: claude-opus-5-5
+    evidence: '06-two-roads.md:160 B1(a) is word for word an approved lemma, so it can be answered by
+      citation. Its density-split technique also has no worked example in Section 7.6 (STYLE §6 B: ''each
+      with a worked example type in the section'').'
 - key: exr-two-roads-c1
   kind: exr
   file: 06-two-roads.md
   line: 187
   hash: 6afd7e788b51
-  verdicts: []
+  verdicts:
+  - stage: S5a
+    verdict: error
+    by: refereeA
+    hash: 6afd7e788b51
+    date: '2026-10-12'
+    model: claude-opus-5-5
+    evidence: '06-two-roads.md:220 The displayed chain -eps < -eps_n < a_m - a_n < eps_m < eps is false
+      in general: the separation inequalities give -eps_m < a_m - a_n < eps_n, with the indices the other
+      way round.'
+  - stage: S5b
+    verdict: error
+    by: refereeB
+    hash: 6afd7e788b51
+    date: '2026-10-12'
+    model: claude-opus-5-5
+    evidence: 06-two-roads.md:220 The displayed chain -eps < -eps_n < a_m - a_n < eps_m < eps has its
+      indices swapped and is false. The facts proved on line 218 are a_n < a_m + eps_m and a_m < a_n +
+      eps_n, which give -eps_m < a_m - a_n < eps_n.
+  - stage: S6
+    verdict: minor
+    by: verifier
+    hash: 6afd7e788b51
+    date: '2026-10-12'
+    model: claude-opus-5-5
+    evidence: 06-two-roads.md:239 The scheme line for 'q ∈ α' requires the book's route (termwise comparison
+      giving only ≤). A natural second route gets no mapping line (STYLE §11.6).
 - key: exr-two-roads-c2
   kind: exr
   file: 06-two-roads.md
   line: 244
   hash: '143823569663'
-  verdicts: []
+  verdicts:
+  - stage: S5a
+    verdict: correct
+    by: refereeA
+    hash: '143823569663'
+    date: '2026-10-12'
+    model: claude-opus-5-5
+    evidence: '06:244-286. (a): (C1) uses the Archimedean property on both sides, (C2) is transitivity,
+      and (C3) uses thm-rationals-dense-ordered-field. (b, <=): S is bounded by iota_F(b) by lem-cut-separation,
+      and both inclusions are right, with (C3) giving strictness. (b, =>): the union supremum from thm-dedekind-lub
+      is pulled back through the bijection and lem-cof-rationals-separate. Non-emptiness is carried '
+  - stage: S5b
+    verdict: correct
+    by: refereeB
+    hash: '143823569663'
+    date: '2026-10-12'
+    model: claude-opus-5-5
+    evidence: '06:244-286. (a): (C1) uses the Archimedean property both ways, (C2) uses transitivity,
+      (C3) uses thm-rationals-dense-ordered-field. (b)(<=): sup S exists, and both inclusions use (C3)
+      and lem-cut-separation correctly. (b)(=>): the order isomorphism to (R_D, subseteq) uses lem-cof-rationals-separate
+      (F is Archimedean) together with thm-dedekind-lub. The marking scheme sums to 2+1+1+2+2+2 = 10.'
+  - stage: S6
+    verdict: correct
+    by: verifier
+    hash: '143823569663'
+    date: '2026-10-12'
+    model: claude-opus-5-5
+    evidence: 06:244-286. My solution matches. (C1) uses def-archimedean-ordered-field (∀x ∃n x<n·1) for
+      both halves; (C3) uses thm-rationals-dense-ordered-field. (⇐) via sup S and (⇒) via thm-dedekind-lub
+      with lem-cof-rationals-separate (Archimedean hypothesis satisfied) are both correct. The scheme
+      grades a union-based alternative fairly.
 - key: exr-two-roads-r1
   kind: exr
   file: 06-two-roads.md
   line: 290
   hash: 13b80b62a0e9
-  verdicts: []
+  verdicts:
+  - stage: S5a
+    verdict: correct
+    by: refereeA
+    hash: 13b80b62a0e9
+    date: '2026-10-12'
+    model: claude-opus-5-5
+    evidence: 06:290-302. Both cases use thm-cut-order-total and thm-cut-rationals-dense (05:101), and
+      monotonicity is applied in the right direction. All hypotheses are used.
+  - stage: S5b
+    verdict: correct
+    by: refereeB
+    hash: 13b80b62a0e9
+    date: '2026-10-12'
+    model: claude-opus-5-5
+    evidence: 06:290-302. Both cases are correct via thm-cut-order-total and thm-cut-rationals-dense.
+      Only monotonicity is used, so 'Neither sums nor products were needed' is true. The method is from
+      the previous chapter, cited by @ref (STYLE 11.5 R1).
+  - stage: S6
+    verdict: correct
+    by: verifier
+    hash: 13b80b62a0e9
+    date: '2026-10-12'
+    model: claude-opus-5-5
+    evidence: 06:290-302. Density of rational cuts plus monotonicity gives a contradiction in both cases,
+      which is correct. The problem hides its source; the solution names Chapter 6's method with @lem-cof-rationals-separate
+      (one chapter back).
 - key: exr-two-roads-r2
   kind: exr
   file: 06-two-roads.md
   line: 304
   hash: d014e1076e73
-  verdicts: []
+  verdicts:
+  - stage: S5a
+    verdict: correct
+    by: refereeA
+    hash: d014e1076e73
+    date: '2026-10-12'
+    model: claude-opus-5-5
+    evidence: 06:304-320. prp-convergent-cauchy-ordered-field and def-cauchy-sequence-ordered-field with
+      tolerance iota_F(eps) are correct for any ordered field F, and reflection by iota_F gives the rational
+      inequality. The second part uses delta = x - iota_F(q) correctly. No Archimedean hypothesis is needed,
+      as the text claims.
+  - stage: S5b
+    verdict: minor
+    by: refereeB
+    hash: d014e1076e73
+    date: '2026-10-12'
+    model: claude-opus-5-5
+    evidence: 06-two-roads.md:319 The solution calls Q_F(x) 'the cut Q_F(x) of Exercise C2' for an arbitrary
+      ordered field F, and the next sentence stresses 'No Archimedean hypothesis was needed'. C2(a) proves
+      Q_F(x) is a cut only for Archimedean F.
+  - stage: S6
+    verdict: correct
+    by: verifier
+    hash: d014e1076e73
+    date: '2026-10-12'
+    model: claude-opus-5-5
+    evidence: '06:304-320. Uses prp-convergent-cauchy-ordered-field, the tolerance ι_F(ε)>0 and reflection
+      of order (thm-rationals-embed-ordered-field states ''reflects order''). The eventual bound with
+      δ=x-ι_F(q) is correct. Source: Chapter 4, cited by @ref.'
 - key: exr-two-roads-r3
   kind: exr
   file: 06-two-roads.md
   line: 322
   hash: a56f9b6d6dc0
-  verdicts: []
+  verdicts:
+  - stage: S5a
+    verdict: correct
+    by: refereeA
+    hash: a56f9b6d6dc0
+    date: '2026-10-12'
+    model: claude-opus-5-5
+    evidence: 06:322-336. Citing an earlier exercise from an exercise solution is allowed (STYLE.md:237).
+      The injection alpha -> i(alpha) is shown injective. The rational cuts are countable by fd2:prp-countable-image.
+      sigma is not rational by prp-cut-sqrt2-square.
+  - stage: S5b
+    verdict: correct
+    by: refereeB
+    hash: a56f9b6d6dc0
+    date: '2026-10-12'
+    model: claude-opus-5-5
+    evidence: 06:322-336. Countability of Q is rerun inline with the fd2 labels (fd2:thm-countable-characterizations
+      (i)=>(ii) gives the injection Q -> N). The induced map R_D -> P(N) is shown injective. The rational
+      cuts are an image of Q, and sigma is not rational by prp-cut-sqrt2-square. The uncountability remark
+      is ledgered at :366.
+  - stage: S6
+    verdict: correct
+    by: verifier
+    hash: a56f9b6d6dc0
+    date: '2026-10-12'
+    model: claude-opus-5-5
+    evidence: 06:322-336. The injection Q→N comes from fd2:thm-countable-characterizations (i)⇒(ii), and
+      the induced α↦i[α] is injective (argument checked). The image of Q is countable by fd2:prp-countable-image,
+      and σ is not rational. All cited labels exist.
 - key: exr-two-roads-r4
   kind: exr
   file: 06-two-roads.md
   line: 338
   hash: 251ab32e6f00
-  verdicts: []
+  verdicts:
+  - stage: S5a
+    verdict: correct
+    by: refereeA
+    hash: 251ab32e6f00
+    date: '2026-10-12'
+    model: claude-opus-5-5
+    evidence: 06:338-350. -sigma is irrational via -D_q = D_{-q} (thm-rationals-embed-cuts (c)). sigma
+      + (-sigma) = D_0. For sigma+sigma = D_2 sigma, D_{1/2} D_r = D_{r/2} follows by (d) and D_{1/2}
+      D_2 = D_1.
+  - stage: S5b
+    verdict: correct
+    by: refereeB
+    hash: 251ab32e6f00
+    date: '2026-10-12'
+    model: claude-opus-5-5
+    evidence: 06:338-350. -sigma is irrational by prp-ring-algebra (a) and thm-rationals-embed-cuts (c).
+      sigma + (-sigma) = D_0 by thm-cut-additive-inverse. sigma + sigma = D_2 sigma is irrational by (d).
+      The tool is named, as STYLE 11.5 R4 asks.
+  - stage: S6
+    verdict: correct
+    by: verifier
+    hash: 251ab32e6f00
+    date: '2026-10-12'
+    model: claude-opus-5-5
+    evidence: 06:338-350. σ and -σ are irrational and σ+(-σ)=D_0. The aside σ+σ=D_2σ, irrational via D_{1/2},
+      is also correct. The solution names the tool.
