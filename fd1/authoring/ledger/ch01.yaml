@@ -1610,6 +1610,17 @@ items:
       (e) of the same exercise relies on ''⊢ with Tr''. Suggested fix: ''there is a derivation, using
       the rules of logic (or a named list of rules, as in "with Tr"), whose premises all belong to Γ and
       whose last line is ψ''.'
+  - stage: S7r
+    verdict: correct
+    by: rereferee
+    hash: c555768b6f4a
+    date: '2026-10-12'
+    model: claude-opus-5-5
+    evidence: 'by ∧E 2 (:519-520). Line 1''s conjuncts are P∧Q and R, so line 2 must come first. Correct.
+      (d) My answers: ∧E 1 gives P; ∧E 1 gives Q∧R; ∧E 3 gives R; ∧I 4,2 gives R∧P, and 2,4 is also allowed
+      by :55. These match. (e) True: Tr preserves truth, so induction down the lines works. The Looking-ahead
+      box exists at :696. (f) P∧(Q∧R) ⊢ R∧P, with one premise and last line R∧P. Correct. No remaining
+      issues.'
 - key: exr-derivations-a2
   kind: exr
   file: 02-derivations.md
@@ -3953,6 +3964,17 @@ items:
       or as the conclusion of an implication, so it can come only from ->I, which needs a box of its own.''
       The parenthetical about assuming P again can stay as a separate remark that is not part of the requested
       sentence.'
+  - stage: S7r
+    verdict: correct
+    by: rereferee
+    hash: 38a1015c4ed2
+    date: '2026-10-12'
+    model: claude-opus-5-5
+    evidence: ' boxes as the box does). Line 7 is ->E 1,6, line 8 is ->E 7,2 (line 2''s only box, 2-9,
+      contains line 8), line 9 is ->I 3-8 and line 10 is ->I 2-9, the goal. Both hints are sound and give
+      nothing away. The requested reason is now a single correct sentence (:1225) that matches the scheme''s
+      1-point line. The scheme totals 2+3+2+2+1=10. The fatal errors listed are apt. check_structure reports
+      0 fatal.'
 - key: exr-proving-an-implication-c3
   kind: exr
   file: 05-proving-an-implication.md
@@ -4024,6 +4046,17 @@ items:
       x>4, and that x>4 implies x^2>16 and x^2>16 implies x^2>9. In particular, x>4 implies x^2>16. In
       particular, x^2>16 implies x^2>9.''), or change the task and scheme wording to ''one sentence per
       line of the box''.'
+  - stage: S7r
+    verdict: correct
+    by: rereferee
+    hash: 75fcf62d0fb3
+    date: '2026-10-12'
+    model: claude-opus-5-5
+    evidence: s one sentence for the premises, one 'In particular' sentence for each wedge-E (lines 3,
+      4), and Suppose/Then/Hence/So for lines 5-8. The closing sentence states the implication (line 9).
+      That meets 'one sentence per step' and the 3-point scheme line. The scheme totals 2+2+2+1+3=10.
+      The alternative route via Q->S (@prp-implication-transitive) is given equal credit. check_structure
+      reports 0 fatal.
 - key: def-rule-disjunction-introduction
   kind: def
   file: 06-disjunction-introduction.md

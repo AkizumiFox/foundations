@@ -1222,7 +1222,9 @@ $\begin{nd}
 
 Line 5 is a legal repetition: both boxes containing line 3 contain line 5. Line 8 may cite line 2 because the box \( \lines{2}{9} \), the only box containing line 2, contains line 8.
 
-The premise's hypothesis is the implication \( P \to Q \), which \( \rulename{{\to}E} \) needs on an available line. No available line has \( P \to Q \) as a conjunct or as the conclusion of an implication, so neither \( \rulename{\wedge E} \) nor \( \rulename{{\to}E} \) can produce it (\( \rulename{{\to}E} \) on line 1 would need \( P \to Q \) already). It must therefore come from \( \rulename{{\to}I} \), which needs a box of its own. (That box assumes \( P \) again although line 2 already did: \( \rulename{{\to}I} \) needs the box, not new information.)
+The sentence: the premise fires only on an available line \( P \to Q \), and no available line is \( P \to Q \) or has it as a conjunct or as the conclusion of an implication, so it can come only from \( \rulename{{\to}I} \), which needs a box of its own.
+
+Line 1 does not help, since \( \rulename{{\to}E} \) on it would need \( P \to Q \) already. The third box assumes \( P \) again although line 2 already did: \( \rulename{{\to}I} \) needs the box, not new information.
 
 **Marking scheme.** (10 points)
 
@@ -1269,7 +1271,7 @@ Lines 1–4 lie in no box, so they are available inside the box \( \lines{5}{8} 
 
 (b) The premise \( P \to Q \) holds because \( 5 > 4 \): if \( x > 5 \), then \( x > 4 \). For \( Q \to R \): if \( x > 4 \), then \( x > 0 \), so \( x^2 = x \cdot x > 4x > 16 \). For \( R \to S \): if \( x^2 > 16 \), then \( x^2 > 9 \), since \( 16 > 9 \). So both premises (the second a conjunction of two true implications) hold for every real \( x \).
 
-In prose: *We know that \( x > 5 \) implies \( x > 4 \), that \( x > 4 \) implies \( x^2 > 16 \), and that \( x^2 > 16 \) implies \( x^2 > 9 \). Suppose \( x > 5 \). Then \( x > 4 \). Hence \( x^2 > 16 \). So \( x^2 > 9 \). This proves that if \( x > 5 \), then \( x^2 > 9 \).*
+In prose: *We know that \( x > 5 \) implies \( x > 4 \), and that \( x > 4 \) implies \( x^2 > 16 \) and \( x^2 > 16 \) implies \( x^2 > 9 \). In particular, \( x > 4 \) implies \( x^2 > 16 \). In particular, \( x^2 > 16 \) implies \( x^2 > 9 \). Suppose \( x > 5 \). Then \( x > 4 \). Hence \( x^2 > 16 \). So \( x^2 > 9 \). This proves that if \( x > 5 \), then \( x^2 > 9 \).*
 
 **Marking scheme.** (10 points)
 
