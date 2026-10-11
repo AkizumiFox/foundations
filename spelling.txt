@@ -271,3 +271,12 @@ embeddings
 boundedness
 termwise
 subsequence
+# fd3 Chapter 5 (F3.10, the reals from Cauchy sequences), S3 2026-10-12
+subsequences
+Subsequences
+approximants
+Approximants
+unboundedness
+invariants
+Georg
+Méray

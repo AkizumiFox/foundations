@@ -100,7 +100,8 @@
     "src/ch01-zf-and-natural-numbers",
     "src/ch02-integers-and-rationals",
     "src/ch03-divisibility-and-congruences",
-    "src/ch04-ordered-field-sequences"
+    "src/ch04-ordered-field-sequences",
+    "src/ch05-reals-from-cauchy"
   ],
   "macros": "../latex/macros.tex",
   "deploy-dir": "site",
