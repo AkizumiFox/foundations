@@ -97,7 +97,7 @@ By @prp-rational-in-cut, \( 0 \in \alpha \), and by (C3) there is \( a \in \alph
 so \( \mu r \ge r + \varepsilon \). As \( r + \varepsilon \notin \alpha \) and the outside of a cut is closed upward (@lem-cut-separation), \( \mu r \notin \alpha \).
 :::
 
-The last law for positive cuts is distributivity. The sum \( \beta + \gamma \) of two positive cuts contains \( 0 = 0 + 0 \), so it is positive, and \( \alpha(\beta + \gamma) \) is defined.
+The last law for positive cuts is distributivity. The sum \( \beta + \gamma \) of two positive cuts contains \( 0 = 0 + 0 \), since \( 0 \in \beta \) and \( 0 \in \gamma \), so it is positive (both steps by @prp-rational-in-cut (a)), and \( \alpha(\beta + \gamma) \) is defined.
 
 ::: {#lem-cut-distributive-positive}
 [Distributivity for Positive Cuts]
@@ -159,13 +159,17 @@ D_0 & \text{if } \alpha = D_0 \text{ or } \beta = D_0 , \\
 where \( \abs{\alpha}\abs{\beta} \) is the product of positive cuts of @def-cut-product-positive.
 :::
 
-The cases do not overlap and cover every cut and every pair, by @thm-cut-order-total. For \( \alpha \ne D_0 \), \( \abs{\alpha} > D_0 \) (@thm-cut-ordered-group (f)), so in the last two cases \( \abs{\alpha}\abs{\beta} \) is defined. The new product agrees with the old one where both are defined: for \( \alpha, \beta > D_0 \) the signs agree, \( \abs{\alpha} = \alpha \), \( \abs{\beta} = \beta \), and the second case returns \( \alpha\beta \) of @def-cut-product-positive. So writing \( \alpha\beta \) for both is safe. The degenerate cases: \( \abs{D_0} = D_0 \), \( \sgn D_0 = 0 \), and \( \alpha D_0 = D_0 \alpha = D_0 \) for every cut \( \alpha \). Two small examples: \( \abs{D_{-1}} = -D_{-1} = D_1 \), because \( p \in -D_{-1} \) exactly when \( -p - r \ge -1 \) for some \( r > 0 \), that is, when \( p < 1 \); and so \( D_{-1}D_{-1} = D_1 D_1 = D_1 \), by @prp-cut-product-positive (d).
+The cases do not overlap and cover every cut and every pair, by @thm-cut-order-total. For \( \alpha \ne D_0 \), \( \abs{\alpha} > D_0 \) (@thm-cut-ordered-group (f)), so in the last two cases \( \abs{\alpha}\abs{\beta} \) is defined, and it is a cut (@prp-cut-product-positive (a)). So \( \alpha\beta \) is a cut in every case: \( D_0 \), a product of positive cuts, or the negative of one (@def-cut-negative, with the check after it). The product is a function \( \nR_{\mathrm D} \times \nR_{\mathrm D} \to \nR_{\mathrm D} \). The new product agrees with the old one where both are defined: for \( \alpha, \beta > D_0 \) the signs agree, \( \abs{\alpha} = \alpha \), \( \abs{\beta} = \beta \), and the second case returns \( \alpha\beta \) of @def-cut-product-positive. So writing \( \alpha\beta \) for both is safe. The degenerate cases: \( \abs{D_0} = D_0 \), \( \sgn D_0 = 0 \), and \( \alpha D_0 = D_0 \alpha = D_0 \) for every cut \( \alpha \). Two small examples. Since \( -1 < 0 \), \( D_{-1} < D_0 \) (Section 7.2, "Two translations"), so \( \sgn D_{-1} = -1 \) and \( \abs{D_{-1}} = -D_{-1} = D_1 \), because \( p \in -D_{-1} \) exactly when \( -p - r \ge -1 \) for some \( r > 0 \), that is, when \( p < 1 \); and so \( D_{-1}D_{-1} = D_1 D_1 = D_1 \), by @prp-cut-product-positive (d).
 
 ::: {.warning}
 The absolute value \( \abs{\alpha} \) is defined here before we know that \( \nR_{\mathrm D} \) is an ordered field. Once @thm-cuts-ordered-field below has shown that it is, \( \abs{\alpha} \) is the absolute value of that ordered field in the sense of @def-absolute-value-ordered-field, by the same formula, so the two readings never disagree. Before that theorem, no rule of @prp-absolute-value-ordered-field may be used for cuts; the rules we need are proved in the next lemma.
 :::
 
-The next lemma is where the reduction to positive cuts pays off. It is proved once, by the definition's cases, and every later sign argument cites it.
+The next lemma is where the reduction to positive cuts pays off. That reduction is the last of the chapter's named moves.
+
+*Reduce to the positive case: define and prove for positive cuts, then extend to all cuts by signs once, through one lemma, never axiom by axiom.*
+
+The lemma is proved once, by the definition's cases, and the later sign laws (distributivity, the reciprocal of a negative cut, the field axioms in @thm-cuts-ordered-field) cite it instead of repeating the case analysis.
 
 ::: {#lem-cut-sign-rules}
 [Sign Rules for Cuts]
@@ -186,7 +190,7 @@ For all cuts \( \alpha \), \( \beta \), \( \gamma \):
 *In words: a cut is its sign times its size; sizes multiply as positive cuts do, and signs multiply as the integers \( -1, 0, 1 \) do.*
 
 ::: {.idea}
-Clause (a) says a cut is determined by two pieces of data, its sign and its absolute value. Clauses (b) and (c) compute both pieces for a product and a negative. After that, each of (d)–(g) is an equation between two cuts whose signs and absolute values are visibly equal: the signs by arithmetic in \( \{ -1, 0, 1 \} \), the absolute values by @prp-cut-product-positive. No axiom is checked case by case.
+Clause (a) says a cut is determined by two pieces of data, its sign and its absolute value. Clauses (b) and (c) compute both pieces for a product and a negative. After that, each of (d)–(g) is an equation between two cuts whose signs and absolute values are visibly equal: the signs by arithmetic in \( \{ -1, 0, 1 \} \), the absolute values by @prp-cut-product-positive once a factor \( D_0 \) is set aside. No axiom is checked over the sign combinations.
 :::
 
 ::: {.proof}
@@ -224,7 +228,7 @@ For all cuts \( \alpha \), \( \beta \), \( \gamma \), \( \alpha(\beta + \gamma) 
 :::
 
 ::: {.idea}
-Fix \( \alpha > D_0 \) and write \( f(\xi) \coloneqq \alpha\xi \). We know two things about \( f \): it is additive on cuts \( \ge D_0 \) (@lem-cut-distributive-positive), and it commutes with negation (@lem-cut-sign-rules (d)). If \( \beta \) and \( \gamma \) have the same sign, negate both if necessary. If \( \beta \ge D_0 \ge \gamma \), one of \( \beta \) and \( -\gamma \) is a sum of two cuts \( \ge D_0 \): \( \beta = (\beta + \gamma) + (-\gamma) \) when \( \beta + \gamma \ge D_0 \), and \( -\gamma = \bigl( -(\beta + \gamma) \bigr) + \beta \) otherwise. Apply additivity to that sum and solve for \( f(\beta + \gamma) \). For \( \alpha < D_0 \), pull the sign out of \( \alpha \).
+Fix \( \alpha > D_0 \) and write \( f(\xi) \coloneqq \alpha\xi \). We know two things about \( f \): it is additive on cuts \( > D_0 \) (@lem-cut-distributive-positive), and trivially when one summand is \( D_0 \), and it commutes with negation (@lem-cut-sign-rules (d)). If \( \beta \) and \( \gamma \) have the same sign, negate both if necessary. If \( \beta \ge D_0 \ge \gamma \), one of \( \beta \) and \( -\gamma \) is a sum of two cuts \( \ge D_0 \): \( \beta = (\beta + \gamma) + (-\gamma) \) when \( \beta + \gamma \ge D_0 \), and \( -\gamma = \bigl( -(\beta + \gamma) \bigr) + \beta \) otherwise. Apply additivity to that sum and solve for \( f(\beta + \gamma) \). For \( \alpha < D_0 \), pull the sign out of \( \alpha \).
 
 *Before reading on: which case uses that \( -\gamma \ge D_0 \)?*
 :::
@@ -270,7 +274,7 @@ The answer to the prompt. Case 3 uses \( -\gamma \ge D_0 \) to apply (A) to \( (
 
 ## Reciprocals
 
-For the reciprocal we repeat the idea of the negative, with division in place of subtraction. For \( \alpha > D_0 \), the reciprocal should consist of the rationals \( p \le 0 \) together with the positive rationals below \( 1/q \) for the rationals \( q \) outside \( \alpha \). The analogue of the margin is a **strict** inequality.
+For the reciprocal we repeat the idea of the negative, with division in place of subtraction. For \( \alpha > D_0 \), the reciprocal should consist of the rationals \( p \le 0 \) together with the positive rationals below \( 1/q \) for some rational \( q \) outside \( \alpha \). The analogue of the margin is a **strict** inequality.
 
 *The reciprocal of a positive cut: the non-positive rationals, and the positive rationals strictly below the reciprocal of some point outside.*
 
@@ -284,10 +288,10 @@ Let \( \alpha \) be a cut. If \( \alpha > D_0 \), its **reciprocal** is the set
 {}\cup{}& \{ p \in \nQ : p > 0 \text{ and } pq < 1 \text{ for some } q \in \nQ \setminus \alpha \} .
 \end{aligned}
 \]
-If \( \alpha < D_0 \), its reciprocal is \( \alpha^{-1} \coloneqq -\bigl( (-\alpha)^{-1} \bigr) \). The cut \( D_0 \) has no reciprocal. The quantifier in the first line is **some**: one point \( q \) outside \( \alpha \) suffices, and it may depend on \( p \).
+If \( \alpha < D_0 \), its reciprocal is \( \alpha^{-1} \coloneqq -\bigl( (-\alpha)^{-1} \bigr) \). The cut \( D_0 \) has no reciprocal. The quantifier in the set for \( \alpha > D_0 \) is **some**: one point \( q \) outside \( \alpha \) suffices, and it may depend on \( p \).
 :::
 
-Every \( q \notin \alpha \) is positive when \( \alpha > D_0 \) (@lem-cut-separation against \( 0 \in \alpha \)), so for \( p > 0 \) the condition \( pq < 1 \) says \( p < 1/q \). For \( \alpha < D_0 \), the cut \( -\alpha \) is positive (@thm-cut-ordered-group (f)), so the second line refers to the first.
+Every \( q \notin \alpha \) is positive when \( \alpha > D_0 \) (@lem-cut-separation against \( 0 \in \alpha \)), so for \( p > 0 \) the condition \( pq < 1 \) says \( p < 1/q \). For \( \alpha < D_0 \), the cut \( -\alpha \) is positive (@thm-cut-ordered-group (f)), so the definition for \( \alpha < D_0 \) refers to the one for \( \alpha > D_0 \).
 
 **Example.** \( D_2^{-1} = D_{1/2} \). The outside of \( D_2 \) is \( \{ q : q \ge 2 \} \). A positive \( p < 1/2 \) is in \( D_2^{-1} \), with \( q = 2 \): \( 2p < 1 \). A positive \( p \ge 1/2 \) is not, since every \( q \ge 2 \) gives \( pq \ge 1 \). With the non-positive rationals, \( D_2^{-1} = \{ p : p < 1/2 \} \).
 
@@ -352,7 +356,7 @@ With the addition of @def-cut-sum, the multiplication of @def-cut-product and th
 :::
 
 ::: {.proof}
-Let \( \alpha, \beta, \gamma \) be cuts. The table names, for each clause of @def-commutative-ring-and-field and @def-ordered-ring-and-field, the line that proves it.
+Let \( \alpha, \beta, \gamma \) be cuts. Both operations map \( \nR_{\mathrm D} \times \nR_{\mathrm D} \) into \( \nR_{\mathrm D} \): sums by @thm-cut-sum, products as noted after @def-cut-product. The table names, for each clause of @def-commutative-ring-and-field and @def-ordered-ring-and-field, the line that proves it.
 
 | Clause | Statement for cuts | Proved by |
 |---|---|---|
@@ -506,14 +510,15 @@ Let \( \alpha > D_0 \). Then \( 0 \in \alpha \), every \( q \notin \alpha \) is 
 
 (C3) If \( p \le 0 \), then for any \( q \notin \alpha \), \( 1/(2q) \) is in \( \rho(\alpha) \) and larger. Let \( p > 0 \) with \( pq \le 1 \), \( q \notin \alpha \). Since \( q \) is not least in the outside, there is \( q' \notin \alpha \) with \( q' < q \); then \( q' > 0 \) and \( pq' < pq \le 1 \), so \( p < 1/q' \). The midpoint \( p'' \coloneqq (p + 1/q')/2 \) has \( p < p'' < 1/q' \), so \( p'' q' < 1 \), and \( p'' \in \rho(\alpha) \) is larger than \( p \).
 
-So \( \rho(\alpha) \) is a cut exactly when \( \alpha \) is not rational. For such \( \alpha \), \( \rho(\alpha) = \alpha^{-1} \): the argument for (C3) shows that \( pq \le 1 \) with \( q \notin \alpha \) gives \( pq' < 1 \) with \( q' \notin \alpha \), and the converse is immediate. As with the negatives of the outside in Section 7.3, the non-strict recipe works for the cut of \( \sqrt 2 \) and fails on the simplest cuts; the strict inequality in @def-cut-reciprocal is the multiplicative margin.
+So \( \rho(\alpha) \) is a cut exactly when \( \alpha \) is not rational. For such \( \alpha \), \( \rho(\alpha) = \alpha^{-1} \): the argument for (C3) shows that \( pq \le 1 \) with \( q \notin \alpha \) gives \( pq' < 1 \) with \( q' \notin \alpha \), and the converse is immediate. As with the negatives of the outside in Section 7.3, the non-strict recipe works for the cut \( \sigma \) of \( \sqrt 2 \) (@exm-cut-sqrt2), which is not a rational cut (Exercise C1 of Section 7.1), and fails on the simplest cuts; the strict inequality in @def-cut-reciprocal is the multiplicative margin.
 
 **Marking scheme.** (10 points)
-- 3: computes \( \rho(D_a) = \{ p : p \le 1/a \} \), with both inclusions, and names (C3) as the failing condition.
+- 3: shows that \( \rho(D_a) \) has the largest element \( 1/a \) (\( 1/a \in \rho(D_a) \) and every element is \( \le 1/a \); the full equality \( \rho(D_a) = \{ p : p \le 1/a \} \) also earns this), and names (C3) as the failing condition.
 - 2: proves that the outside of a non-rational cut has no least element.
 - 1: (C1) and (C2) for \( \rho(\alpha) \).
 - 3: (C3) for \( \rho(\alpha) \), using a smaller outside point \( q' \) to make the inequality strict.
 - 1: states the equivalence with both directions.
+Second route: showing \( \rho(\alpha) = \alpha^{-1} \) for non-rational \( \alpha \) (\( \subseteq \) by a smaller outside point \( q' \) making \( pq' < 1 \), \( \supseteq \) since \( < \) implies \( \le \)) and citing @thm-cut-reciprocal earns the 1 point for (C1) and (C2) and the 3 points for (C3). The 2 points for the no-least-element step still require that step.
 Fatal errors (0 for the step): assuming \( q > 0 \) without separation against \( 0 \in \alpha \); "a smaller outside point exists" asserted for every cut.
 :::
 
@@ -524,15 +529,19 @@ def-cut-product-positive (claim): lead-in, for D_{-1} the set of products is {x 
 def-cut-product-positive (claim): a cut alpha > D_0 contains all p <= 0 and a positive element | prp-rational-in-cut, (C2), (C3); inline
 lem-cut-multiplicative-step (proof): mu r - (r + eps) = (mu - 1)(r - a) | inline; verify/ch07/lem-cut-multiplicative-step.py
 lem-cut-distributive-positive (proof): max{r1, r2} is one of r1, r2 | totality of the order of Q (prp-ordered-ring-rules (i)); inline
-def-cut-product (claim): |D_{-1}| = -D_{-1} = D_1 | inline (one line, from def-cut-negative)
+def-cut-product (claim): alpha beta is a cut in every case (product a function R_D x R_D -> R_D) | prp-cut-product-positive (a), def-cut-negative (the check that -alpha is a cut), def-rational-cut (D_0)
+def-cut-product (claim): D_{-1} < D_0 from -1 < 0; |D_{-1}| = -D_{-1} = D_1 | §02 two translations (p < q iff D_p < D_q); inline (one line, from def-cut-negative)
+lem-cut-distributive-positive (claim): beta + gamma > D_0 for beta, gamma > D_0 | prp-rational-in-cut (a), twice
 def-cut-product (solution): quick check, D_{-2} D_3 = -(D_2 D_3) = D_{-6} | inline; D_2 D_3 = D_6 is exr-multiplication-b1 (cited only in this solution); |D_{-2}| = D_2 and -D_6 = D_{-6} inline from def-cut-negative
 lem-cut-sign-rules (proof): integer arithmetic in {-1, 0, 1} (commutativity, associativity, -(ab) = (-a)b) | Z ordered ring, F3.2 (thm-integers-ordered-ring); inline
 lem-cut-distributive (proof): -(beta + gamma) + beta = -gamma; adding a cut to both sides of an equation | thm-cut-ordered-group (a), (c), (e); inline
 def-cut-reciprocal (example): D_2^{-1} = D_{1/2} | inline; verify/ch07/thm-cut-reciprocal.py
 thm-cut-reciprocal (proof): 1 < mu < 1/p for mu = (1 + 1/p)/2; p mu < 1; (p + 1/q)/2 in (p, 1/q) | prp-ordered-field-halves (b), prp-reciprocal-order (b); verify/ch07/thm-cut-reciprocal.py
 thm-cuts-ordered-field (proof): the product of def-cut-product agrees with def-cut-product-positive on positive cuts | the paragraph after def-cut-product
+thm-cuts-ordered-field (proof): + and . map R_D x R_D into R_D | thm-cut-sum; the paragraph after def-cut-product
 exr-multiplication-a1 (solution): |D_{-1}| = D_1, -D_{1/2} = D_{-1/2} | exr-addition-b1 (an exercise, cited only in this solution)
 exr-multiplication-b1 (solution): lambda = (1 + x/6)/2, r = 2 lambda, s = x/(2 lambda) | inline; verify/ch07/exr-multiplication-b1.py
 exr-multiplication-b2 (solution): s mu r = p mu < 1 | inline; verify/ch07/thm-cut-reciprocal.py
 exr-multiplication-c1 (solution): rho(D_a) = {p <= 1/a}; outside of a non-rational cut has no least element | inline; verify/ch07/exr-multiplication-c1.py
+exr-multiplication-c1 (solution): sigma is not rational, so rho(sigma) = sigma^{-1} | exr-cuts-c1 (an exercise, cited only in this solution)
 -->

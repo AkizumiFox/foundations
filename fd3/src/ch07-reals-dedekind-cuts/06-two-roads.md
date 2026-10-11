@@ -8,7 +8,7 @@ With both models in view, one letter \( \nR \) is not enough. In this section on
 \[
 \iota \coloneqq \iota_{\nR_{\mathrm C}} \colon \nQ \to \nR_{\mathrm C} ,
 \]
-which is the map \( \kappa(q) = [(q)_n] \) of @def-rational-embedding, by @thm-rational-embedding (d). Chapter 5 wrote \( q \) for \( \kappa(q) \) after Section 5.4. Here we keep \( \iota \) visible, since a bare \( q \) could now mean an element of either field.
+which is the map \( \kappa(q) = [(q)_n] \) of @def-rational-embedding, by @thm-rational-embedding (d). From the identification in Section 5.4 on, Chapter 5 wrote \( q \) for \( \kappa(q) \). Here we keep \( \iota \) visible, since a bare \( q \) could now mean an element of either field.
 
 Recall from Section 6.1 the rationals below an element \( x \) of an ordered field \( F \) (@def-cof-rationals-below):
 \[
@@ -55,7 +55,7 @@ q \in \Psi(x) \iff D_q < \Psi(x) \iff \Psi(\iota(q)) < \Psi(x) \iff \iota(q) < x
 The first equivalence is @prp-rational-in-cut (a), \( q \in \alpha \iff D_q \subsetneq \alpha \), read with \( \subsetneq \) as \( < \) (@def-cut-order). The second is (b). The third holds because \( \Psi \) preserves and reflects \( < \). The last condition says \( q \in \nQ_{\nR_{\mathrm C}}(x) \) (@def-cof-rationals-below). Since \( \Psi(x) \) and \( \nQ_{\nR_{\mathrm C}}(x) \) are subsets of \( \nQ \) with the same elements, they are equal. This proves the theorem.
 :::
 
-The answer to the prompt: uniqueness is used only for the words "exactly one" in (a). Parts (b) and (c) use nothing about \( \Psi \) except that it respects sums, products and \( 1 \), and is strictly increasing. So any order-preserving field map \( \nR_{\mathrm C} \to \nR_{\mathrm D} \) would satisfy (c), and (c) determines the map. That gives a second proof of the uniqueness in (a), by computation. The existence in (a) is what we could not easily get by computation: it would require showing directly that \( x \mapsto \nQ_{\nR_{\mathrm C}}(x) \) is onto and respects products, and Chapter 6 did that work once for all complete ordered fields.
+The answer to the prompt: uniqueness is used only for the words "exactly one" in (a). Parts (b) and (c) use nothing about \( \Psi \) except that it respects sums, products and \( 1 \), and is strictly increasing. So any order-preserving field map \( \nR_{\mathrm C} \to \nR_{\mathrm D} \) would satisfy (c), and (c) determines the map. That gives a second proof of the uniqueness in (a), by computation. The existence in (a) is the part that computation does not give cheaply. A direct proof would show that \( x \mapsto \nQ_{\nR_{\mathrm C}}(x) \) lands in the cuts, is onto, and respects sums and products. The first two are Exercises C2(a) and C2(b), each a few lines, and sums are @lem-cof-below-sum read in \( \nR_{\mathrm C} \) (Exercise B1). The product, with its sign cases, is the work Chapter 6 did once for all complete ordered fields.
 
 Part (c) can also be read off Chapter 6's construction. By property \( (\star) \) of @thm-cof-embedding-into-complete, \( \nQ_{\nR_{\mathrm D}}(\Psi(x)) = \nQ_{\nR_{\mathrm C}}(x) \), and \( \nQ_{\nR_{\mathrm D}}(\alpha) = \alpha \) for every cut, as we saw above. The proof given here avoids \( (\star) \) and uses only that \( \Psi \) fixes the rationals.
 
@@ -66,7 +66,7 @@ So part (c) says: *the cut attached to a Cauchy real is the set of rationals bel
 &= \sup\nolimits_{\nR_{\mathrm C}} \{ \iota(q) : q \in \alpha \} .
 \end{aligned}
 \]
-A cut is sent to the least upper bound, in the Cauchy model, of its own rationals. Exercise C2 below proves the same correspondence directly, in any Archimedean ordered field.
+A cut is sent to the least upper bound, in the Cauchy model, of its own rationals. Exercise C2 below proves the same correspondence directly in any complete ordered field \( F \): there \( x \mapsto \nQ_F(x) \) is onto the cuts, with inverse \( \alpha \mapsto \sup\nolimits_F \{ \iota_F(q) : q \in \alpha \} \). For an Archimedean \( F \), C2 also shows that this map is onto exactly when \( F \) is complete.
 
 ::: {.check}
 What is \( \Psi(\iota(-3/4)) \)? Is \( \Psi \) determined by its values on the elements \( \iota(q) \), \( q \in \nQ \)?
@@ -77,7 +77,7 @@ By (b), \( \Psi(\iota(-3/4)) = D_{-3/4} = \{ r \in \nQ : r < -3/4 \} \); by (c) 
 :::
 
 ::: {.warning}
-"The same real numbers" means **isomorphic as ordered fields, by a unique isomorphism**. It does not mean that the two sets have the same elements. The cut \( \sigma \) contains the rational \( 0 \); the element of \( \nR_{\mathrm C} \) that corresponds to it is a class of sequences, and its elements are functions \( \nN \to \nQ \), not rationals. What the theorem guarantees is that no statement made with \( + \), \( \cdot \) and \( < \) can tell the two fields apart.
+"The same real numbers" means **isomorphic as ordered fields, by a unique isomorphism**. It does not mean that the two sets have the same elements. The cut \( \sigma \) contains the rational \( 0 \); the element of \( \nR_{\mathrm C} \) that corresponds to it is a class of sequences, and its elements are functions \( \nN \to \nQ \), not rationals. Informally, the isomorphism carries every statement about sums, products and order in one field to the same statement in the other, so no such statement can tell the two fields apart; Section 6.5 explains this pattern and why it is not stated as a theorem.
 :::
 
 ## The square root of two, twice
@@ -116,7 +116,7 @@ Both constructions start from \( \nQ \) and end at a complete ordered field, and
 
 Read down the columns. The Cauchy road gets its arithmetic cheaply, termwise, and pays at both ends: every definition must be checked against a change of representative, the order needs a margin, and completeness takes two sections. The Dedekind road gets order and completeness almost free, because a cut is a set and inclusion is already an order, and pays in the middle: negatives need a margin, and multiplication needs a detour through positive cuts and signs.
 
-The last row looks beyond this volume. The Cauchy construction works for any metric space, with sequences whose terms get close: *Metric and Topological Spaces*, Chapter 2 builds the completion of a metric space that way. The Dedekind construction works for any ordered set, with sets closed downward; the result is called the Dedekind–MacNeille completion, and no volume of this series develops it. Each road leads somewhere the other does not.
+The last row looks beyond this volume. The Cauchy construction works for any metric space, with sequences whose terms get close: *Metric and Topological Spaces*, Chapter 2 builds the completion of a metric space that way. The Dedekind construction has an analogue for any ordered set, in which a cut is a set of elements that equals the set of lower bounds of its upper bounds; the result is called the Dedekind–MacNeille completion, and no volume of this series develops it. Each road leads somewhere the other does not.
 
 ::: {.second-reading title="History"}
 Richard Dedekind published the construction by cuts in 1872, in *Stetigkeit und irrationale Zahlen*; he says there that the idea came to him in 1858, while preparing lectures on the differential calculus. Charles Méray had built the irrational numbers from convergent sequences of rationals in 1869, and Georg Cantor and Eduard Heine gave constructions from fundamental sequences, our Cauchy sequences, in 1872. Karl Weierstrass had presented his own construction of the real numbers in his Berlin lectures of the 1860s. The two roads of this volume were thus laid out within a few years of each other.
@@ -157,29 +157,23 @@ These questions are about the proof of @thm-dedekind-same-reals.
 Let \( x, y \in \nR_{\mathrm C} \).
 
 ::: {.enumerate options="label=(\alph*)"}
-1. Prove directly, without using \( \Psi \), that \( \nQ_{\nR_{\mathrm C}}(x + y) = \nQ_{\nR_{\mathrm C}}(x) + \nQ_{\nR_{\mathrm C}}(y) \), where the right side is the set sum of @def-cut-sum.
+1. Deduce from @lem-cof-below-sum, without using \( \Psi \), that \( \nQ_{\nR_{\mathrm C}}(x + y) = \nQ_{\nR_{\mathrm C}}(x) + \nQ_{\nR_{\mathrm C}}(y) \), where the right side is the set sum of @def-cut-sum. Say why the lemma applies to \( \nR_{\mathrm C} \).
 2. Explain how (a), read through @thm-dedekind-same-reals (c), is the statement \( \Psi(x + y) = \Psi(x) + \Psi(y) \).
 :::
-
-*Hint: for the harder inclusion, use density of the rationals in \( \nR_{\mathrm C} \).*
 :::
 
 ::: {.solution}
 Write \( \nQ(z) \) for \( \nQ_{\nR_{\mathrm C}}(z) \).
 
-(a) \( (\supseteq) \) If \( a \in \nQ(x) \) and \( b \in \nQ(y) \), then \( \iota(a + b) = \iota(a) + \iota(b) < x + y \), by additivity of \( \iota \) and @prp-ordered-ring-rules (b). So \( a + b \in \nQ(x + y) \).
-
-\( (\subseteq) \) Let \( q \in \nQ(x + y) \), and put \( d \coloneqq x + y - \iota(q) \), so \( d > 0 \). The field \( \nR_{\mathrm C} \) is Archimedean (@thm-constructed-reals-archimedean), so @thm-rationals-dense-ordered-field, applied to \( x - d/2 < x \), gives \( a \in \nQ \) with
+(a) The field \( \nR_{\mathrm C} \) is Archimedean (@thm-constructed-reals-archimedean), so @lem-cof-below-sum applies with \( F = \nR_{\mathrm C} \), \( a = x \) and \( b = y \): for every \( q \in \nQ \),
 \[
-x - \frac{d}{2} < \iota(a) < x .
+q \in \nQ(x + y) \iff \exists r \in \nQ \ \bigl( r \in \nQ(x) \wedge q - r \in \nQ(y) \bigr) .
 \]
-Put \( b \coloneqq q - a \). Then \( \iota(b) = \iota(q) - \iota(a) \), and since \( \iota(q) = x + y - d \),
-\[
-\iota(b) < (x + y - d) - \Bigl( x - \frac{d}{2} \Bigr) = y - \frac{d}{2} < y .
-\]
-So \( a \in \nQ(x) \), \( b \in \nQ(y) \), and \( q = a + b \).
+\( (\subseteq) \) If \( q \in \nQ(x + y) \), take \( r \) as on the right; then \( q = r + (q - r) \) with \( r \in \nQ(x) \) and \( q - r \in \nQ(y) \), so \( q \in \nQ(x) + \nQ(y) \).
 
-(b) By @thm-dedekind-same-reals (c), \( \nQ(x + y) = \Psi(x + y) \), \( \nQ(x) = \Psi(x) \) and \( \nQ(y) = \Psi(y) \), and the set sum of two cuts is their sum in \( \nR_{\mathrm D} \) (@def-cut-sum). So (a) says \( \Psi(x + y) = \Psi(x) + \Psi(y) \). We knew this already, since \( \Psi \) is additive; (a) proves it again by computation, without Chapter 6. It is @lem-cof-below-sum for the Archimedean field \( \nR_{\mathrm C} \), read as a statement about cuts.
+\( (\supseteq) \) If \( q = r + s \) with \( r \in \nQ(x) \) and \( s \in \nQ(y) \), then \( q - r = s \in \nQ(y) \), so the right side holds with this \( r \), and \( q \in \nQ(x + y) \).
+
+(b) By @thm-dedekind-same-reals (c), \( \nQ(x + y) = \Psi(x + y) \), \( \nQ(x) = \Psi(x) \) and \( \nQ(y) = \Psi(y) \), and the set sum of two cuts is their sum in \( \nR_{\mathrm D} \) (@def-cut-sum). So (a) says \( \Psi(x + y) = \Psi(x) + \Psi(y) \). We knew this already, since \( \Psi \) is additive; (a) is @lem-cof-below-sum read in \( \nR_{\mathrm C} \) as a statement about cuts.
 :::
 
 ### C. Going deeper
@@ -213,11 +207,11 @@ Write \( \varepsilon_n \coloneqq 2^{-n} \). By @lem-power-two-bound with \( F = 
 
 *A threshold for \( \varepsilon_n \).* Let \( \varepsilon \in \nQ \), \( \varepsilon > 0 \). By @thm-rationals-archimedean there is \( N \in \nN \) with \( N > 1/\varepsilon \), that is, \( N \varepsilon > 1 \). For \( n \ge N \), @lem-power-two-bound gives \( (2 \cdot 1_{\nQ})^n \varepsilon \ge (n + 1)\varepsilon > N \varepsilon > 1 \), so \( \varepsilon_n < \varepsilon \). Call this \( (\dagger) \): for every rational \( \varepsilon > 0 \) there is \( N \) with \( \varepsilon_n < \varepsilon \) for all \( n \ge N \).
 
-(a) The set \( S_n \coloneqq \{ k \in \nN : a + k \varepsilon_n \notin \alpha \} \) is non-empty. Indeed, take \( b \notin \alpha \) (C1); by @thm-rationals-archimedean there is \( m \in \nN \) with \( m > (b - a)/\varepsilon_n \), so \( a + m \varepsilon_n > b \), and \( a + m \varepsilon_n \notin \alpha \) because the complement of a cut is closed upward (@lem-cut-separation). This is the first step of the proof of @lem-cut-step. So \( S_n \) has a least element \( k_n \) (@prp-integer-least-element). Since \( a + 0 \cdot \varepsilon_n = a \in \alpha \), \( k_n \ne 0 \), so \( k_n \ge 1 \) (@thm-integers-ordered-ring (c)) and \( k_n - 1 \in \nN \). By minimality \( k_n - 1 \notin S_n \), so \( a_n \in \alpha \); and \( a_n + \varepsilon_n = a + k_n \varepsilon_n \notin \alpha \). Each \( a_n \) is defined by a rule from the fixed \( a \), so no choice principle is involved.
+(a) The set \( S_n \coloneqq \{ k \in \nN : a + k \varepsilon_n \notin \alpha \} \) is non-empty. Indeed, take \( b \notin \alpha \) (C1); by @thm-rationals-archimedean there is \( m \in \nN \) with \( m > (b - a)/\varepsilon_n \), so \( a + m \varepsilon_n > b \), and \( a + m \varepsilon_n \notin \alpha \) because the complement of a cut is closed upward (@lem-cut-separation). This is the first step of the proof of @lem-cut-step. So \( S_n \) is a non-empty set of integers (\( \nN \subseteq \nZ \), @thm-integers-ordered-ring (b)), and \( 0 \) is a lower bound of it; by @prp-integer-least-element it has a least element \( k_n \). Since \( a + 0 \cdot \varepsilon_n = a \in \alpha \), \( k_n \ne 0 \), so \( k_n \ge 1 \) (@thm-integers-ordered-ring (c)) and \( k_n - 1 \in \nN \). By minimality \( k_n - 1 \notin S_n \), so \( a_n \in \alpha \); and \( a_n + \varepsilon_n = a + k_n \varepsilon_n \notin \alpha \). Each \( a_n \) is defined by a rule from the fixed \( a \), so no choice principle is involved.
 
 (b) For any \( m, n \in \nN \): \( a_n \in \alpha \) and \( a_m + \varepsilon_m \notin \alpha \), so \( a_n < a_m + \varepsilon_m \) by @lem-cut-separation; symmetrically, \( a_m < a_n + \varepsilon_n \). Given a rational \( \varepsilon > 0 \), take \( N \) from \( (\dagger) \). For \( m, n \ge N \),
 \[
--\varepsilon < -\varepsilon_n < a_m - a_n < \varepsilon_m < \varepsilon ,
+-\varepsilon < -\varepsilon_m < a_m - a_n < \varepsilon_n < \varepsilon ,
 \]
 so \( \abs{a_m - a_n} < \varepsilon \) (@prp-absolute-value-ordered-field (d)). Hence \( (a_n) \in \sC \).
 
@@ -236,7 +230,7 @@ Hence \( \Psi(x) = \alpha \). The argument used neither monotonicity of \( (a_n)
 **Marking scheme.** (10 points)
 - 2: (a), with the least-element principle and the reason \( k_n \ge 1 \).
 - 3: (b), from the two separation inequalities and a threshold \( N \) for \( 2^{-n} \) with a stated reason.
-- 3: (c) for \( q \in \alpha \), with the strict gap \( q' > q \) from (C3) and termwise comparison giving only \( \le \).
+- 3: (c) for \( q \in \alpha \): the strict gap \( q' > q \) from (C3), then a correct passage to \( \kappa(q) < x \), either by @lem-termwise-order (which gives only \( \le \)) against the midpoint \( (q + q')/2 \) followed by @thm-rational-embedding (b), or directly by showing that \( (a_n - q)_n \), a representative of \( x - \kappa(q) \), is eventually \( \ge \) the fixed margin \( (q' - q)/2 \) (@def-positive-cauchy-sequence). Either route earns all 3 points.
 - 2: (c) for \( q \notin \alpha \).
 Fatal errors (0 for the step): concluding \( \kappa(q) < x \) from \( q < a_n \) for all \( n \) (termwise \( < \) gives only \( \le \) between classes); choosing \( N \) after \( m, n \).
 :::
@@ -316,7 +310,7 @@ and since \( \iota_F \) reflects order (@thm-rationals-embed-ordered-field), \( 
 
 *Eventually above \( q \).* Let \( \iota_F(q) < x \), and put \( \delta \coloneqq x - \iota_F(q) > 0 \). By @def-sequence-limit-ordered-field there is \( N \) with \( \abs{\iota_F(q_n) - x} < \delta \) for \( n \ge N \), so \( \iota_F(q_n) > x - \delta = \iota_F(q) \), and \( q_n > q \) because \( \iota_F \) reflects order.
 
-Both parts are from Chapter 4. The second says that every rational in the cut \( \nQ_F(x) \) of Exercise C2 lies below all but finitely many \( q_n \). No Archimedean hypothesis was needed.
+Both parts are from Chapter 4. The second says that every rational \( q \) with \( \iota_F(q) < x \), that is, every element of the set \( \nQ_F(x) \) of Exercise C2, lies below all but finitely many \( q_n \). No Archimedean hypothesis was needed.
 :::
 
 ::: {#exr-two-roads-r3}
@@ -350,16 +344,16 @@ The school slogan "irrational plus irrational is irrational" is false, and its o
 :::
 
 <!-- dependency ledger
-sec-two-roads (claim): Chapter 5 writes q for kappa(q) after Section 5.4 | identification remark of F3.10 §04 (NOTATION, kappa row); recalled in prose
+sec-two-roads (claim): Chapter 5 writes q for kappa(q) from the identification in Section 5.4 on | identification remark of F3.10 §04 (NOTATION, kappa row); recalled in prose
 sec-two-roads (claim): Q_F(x) is closed downward | stated in Section 6.1 after def-cof-rationals-below; recalled in prose
 thm-dedekind-same-reals (proof): an order-preserving field map reflects order | inline, from trichotomy (O1) of def-ordered-ring-and-field (as in the opening of Section 6.3)
 thm-dedekind-same-reals (claim): the inverse of an order-preserving field isomorphism is one | the second-reading fold after cor-cof-isomorphic-to-cauchy-reals (Section 6.3), pointed to in prose
 thm-dedekind-same-reals (claim): Q_{R_D}(alpha) = alpha for every cut | prp-rational-in-cut with def-cut-order, inline in "Two models on one page"
+sec-two-roads (claim): a statement in +, *, < has the same truth value in R_C and R_D | Section 6.5, explained by pattern, not stated as a theorem; nothing depends on it
 exm-two-roads-sqrt2 (solution): Psi(iota(0)) = D_0 | thm-dedekind-same-reals (b) with q = 0
 sec-two-roads (claim): comparison table cells (where each road pays) | the labels cited in each cell; Section 5.5 is thm-constructed-reals-cauchy-complete
 sec-two-roads (claim): the Dedekind-MacNeille completion of an ordered set | not proved here; named only, no volume of the series develops it; nothing depends on it
 sec-two-roads (claim): history (Dedekind 1872 and 1858, Meray 1869, Cantor and Heine 1872, Weierstrass's Berlin lectures of the 1860s) | historical remark in a second-reading fold; dates as in F3.10 §06's history fold, checked against Bloch §1.8 at S2
-exr-two-roads-b1 (solution): iota(b) < y - d/2 from iota(q) = x + y - d and iota(a) > x - d/2 | inline; verify/ch07/exr-two-roads-b1.py
 exr-two-roads-c1 (solution): N epsilon > 1 and (2 . 1_Q)^n >= n + 1 give 2^{-n} < epsilon; the constant sequence of a rational is in the set C | lem-power-two-bound, thm-rationals-archimedean (cited); constant sequences Cauchy as in def-rational-embedding; verify/ch07/exr-two-roads-c1.py
 exr-two-roads-c1 (solution): S_n is non-empty | inline, by thm-rationals-archimedean and lem-cut-separation (the first step of lem-cut-step's proof)
 exr-two-roads-c2 (solution): iota_F(-m) = -iota_F(m) | additivity of iota_F (thm-rationals-embed-ordered-field)

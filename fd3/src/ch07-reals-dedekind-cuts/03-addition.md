@@ -2,7 +2,7 @@
 
 Like every section of this chapter, this one is optional: nothing outside Chapter 7 depends on it. Sections 7.1 and 7.2 made cuts and ordered them, and the least upper bound property came almost for free, as a union (@thm-dedekind-lub). Now the arithmetic. Adding two cuts is the obvious thing, and it works; the zero cut works too, once (C3) is used. Negatives are where the obvious recipe fails, on the simplest cuts of all, and the repair is a small positive margin. The proof that the repaired negative is right is the **walk up by ε** (@lem-cut-step) worked in full. The section ends with cuts forming an ordered group under addition.
 
-Throughout, \( \nQ \) is the ordered field of @thm-rationals-ordered-field, and every letter \( p, q, r, s, t, x \) stands for a rational. We use the rules of an ordered field for rationals without comment: (F1)–(F9) of @def-commutative-ring-and-field, (O1)–(O4) of @def-ordered-ring-and-field, and @prp-ordered-ring-rules.
+Throughout, \( \nQ \) is the ordered field of @thm-rationals-ordered-field, and every letter \( p, q, r, s, t, x \) stands for a rational. We use the rules of an ordered field for rationals without comment: (F1)–(F9) of @def-commutative-ring-and-field, (O1)–(O4) of @def-ordered-ring-and-field, @prp-ordered-ring-rules, and the halves of @prp-ordered-field-halves (b).
 
 ## Adding two cuts
 
@@ -50,7 +50,7 @@ So \( \alpha + \beta \) is a cut.
 *Associativity.* Let \( \gamma \) be a cut. \( (\subseteq) \) If \( x \in (\alpha + \beta) + \gamma \), then \( x = y + s \) with \( y \in \alpha + \beta \) and \( s \in \gamma \), and \( y = p + q \) with \( p \in \alpha \), \( q \in \beta \). By (F2) in \( \nQ \), \( x = p + (q + s) \), and \( q + s \in \beta + \gamma \), so \( x \in \alpha + (\beta + \gamma) \). \( (\supseteq) \) If \( x = p + z \) with \( p \in \alpha \) and \( z = q + s \in \beta + \gamma \), then \( x = (p + q) + s \in (\alpha + \beta) + \gamma \), by (F2) again. This proves the theorem.
 :::
 
-Only (C3) for \( \alpha \) was needed in the third step; (C3) for \( \beta \) would serve equally. The two laws used nothing about cuts at all: they hold for the set sum of any three sets of rationals, and Exercise B2 asks you to check this.
+Only (C3) for \( \alpha \) was needed in the third step; (C3) for \( \beta \) would serve equally. The two laws used nothing about cuts at all: they hold for the set sum of arbitrary sets of rationals (commutativity for any two, associativity for any three), and Exercise B2 asks you to check associativity in this generality.
 
 ## The zero cut
 
@@ -80,7 +80,7 @@ The second half used (C3), and it cannot do without it. The tempting shortcut "\
 
 *Before reading on.* Find a cut \( \beta \) with \( D_1 + \beta = D_0 \). Then try to write down a recipe that produces such a \( \beta \) from any cut \( \alpha \), so that \( \alpha + \beta = D_0 \).
 
-For \( D_1 \) the answer is \( \beta = D_{-1} \). Indeed, \( p < 1 \) and \( q < -1 \) give \( p + q < 0 \); and for \( s < 0 \), put \( \delta \coloneqq -s/2 > 0 \), so that \( s = (1 - \delta) + (-1 - \delta) \) with \( 1 - \delta < 1 \) and \( -1 - \delta < -1 \). For a general \( \alpha \), a natural recipe reads the picture of a cut as a downset: the negative of "the rationals below \( x \)" should be "the rationals below \( -x \)", and those are the negatives of the rationals **above** \( x \), that is, of the rationals outside \( \alpha \). The example below tests that recipe.
+For \( D_1 \) the answer is \( \beta = D_{-1} \). Indeed, \( p < 1 \) and \( q < -1 \) give \( p + q < 0 \); and for \( s < 0 \), put \( h \coloneqq -s/2 > 0 \), so that \( s = (1 - h) + (-1 - h) \) with \( 1 - h < 1 \) and \( -1 - h < -1 \). For a general \( \alpha \), a natural recipe reads the picture of a cut as a downset: the negative of "the rationals below \( x \)" should be "the rationals below \( -x \)", and those are the negatives of the rationals **above** \( x \), that is, of the rationals outside \( \alpha \). The example below tests that recipe.
 
 ::: {#exm-naive-negative .optional}
 [The Negatives of the Outside]
@@ -107,7 +107,7 @@ Then \( q' > 0 \), and \( x' \coloneqq -q' \) has \( x < x' < 0 \) and \( x'^2 >
 
 *In general.* The set always satisfies (C1) and (C2). (C1): for \( b \notin \alpha \), \( -b \) is in it; for \( a \in \alpha \), \( -a \) is not, since \( -a = -q \) forces \( q = a \in \alpha \). (C2): if \( y < -q \) with \( q \notin \alpha \), then \( -y > q \), so \( -y \notin \alpha \) by @lem-cut-separation, and \( y = -(-y) \) is in the set. (C3) fails exactly when the set has a largest element \( -m \), that is, when \( \nQ \setminus \alpha \) has a least element \( m \). That happens exactly when \( \alpha \) is a rational cut. If \( \alpha = D_m \), the outside \( \{ q : q \ge m \} \) has least element \( m \). Conversely, if \( m \) is least in \( \nQ \setminus \alpha \), then every \( r < m \) is in \( \alpha \) (else it would be a smaller element of the outside), and every \( r \in \alpha \) has \( r < m \) (@lem-cut-separation), so \( \alpha = D_m \). So the recipe gives a cut **unless** \( \alpha \) is rational.
 
-*The negatives of the inside.* For \( \alpha = D_1 \), \( \{ -p : p \in D_1 \} = \{ x : x > -1 \} \). It contains \( 0 \) but not \( -2 < 0 \), so (C2) fails. In general this set is closed **upward**, the mirror image of a cut, and is never a cut.
+*The negatives of the inside.* For \( \alpha = D_1 \), \( \{ -p : p \in D_1 \} = \{ x : x > -1 \} \). It contains \( 0 \) but not \( -2 < 0 \), so (C2) fails. In general this set is closed **upward**, the mirror image of a cut: if \( p \in \alpha \) and \( y > -p \), then \( -y < p \), so \( -y \in \alpha \) by (C2), and \( y = -(-y) \) is in the set. And it is never a cut, because (C2) fails as it did for \( D_1 \). Take \( a \in \alpha \) and \( b \notin \alpha \) (C1). Then \( a < b \) by @lem-cut-separation, so \( -b < -a \). The set contains \( -a \) but not \( -b \), since \( -b = -p \) forces \( p = b \notin \alpha \).
 
 The recipe passes the test on \( \sigma \), the first cut one tries, and fails on the rational cuts, the simplest cuts there are.
 :::
@@ -123,7 +123,7 @@ For a cut \( \alpha \), its **negative** is the set
 \[
 -\alpha \coloneqq \{ p \in \nQ : -p - r \notin \alpha \text{ for some rational } r > 0 \} .
 \]
-In symbols, \( p \in -\alpha \iff \exists r \in \nQ_{>0} \ \ {-p - r} \notin \alpha \). A rational \( r \) with this property is a **margin** for \( p \).
+In symbols, \( p \in -\alpha \iff \exists r \in \nQ_{>0} \ \ {-p - r} \notin \alpha \). It is a cut (checked below). A rational \( r \) with this property is a **margin** for \( p \).
 :::
 
 In words: \( p \) belongs to \( -\alpha \) when \( -p \) is not merely outside \( \alpha \) but outside with room to spare, since even \( -p - r \), a positive distance below \( -p \), is still outside. The quantifier is "some": one margin suffices, and it may depend on \( p \). Equivalently, \( p \in -\alpha \) exactly when \( p < -q \) for some \( q \notin \alpha \) (take \( q \coloneqq -p - r \), and conversely \( r \coloneqq -q - p \)).
@@ -140,7 +140,7 @@ So \( -\alpha \in \nR_{\mathrm D} \), and \( \alpha \mapsto -\alpha \) is a func
 
 **A non-example by minimal change.** Allow the margin \( r = 0 \). The condition becomes \( -p \notin \alpha \), and the set is the recipe of @exm-naive-negative: for \( D_1 \) it contains \( -1 \) and has a largest element. Exactly (C3) breaks, and the proof of (C3) above shows why: it moves up from \( p \) by half the margin, which needs \( r > 0 \).
 
-**Why the margin.** The margin is what makes \( -\alpha \) satisfy (C3) when the outside of \( \alpha \) has a least element, and it changes nothing when the outside has none (the fold below checks this for \( \sigma \)).
+**Why the margin.** The margin is what makes \( -\alpha \) satisfy (C3) when the outside of \( \alpha \) has a least element, and it changes nothing when the outside has none: then \( -\alpha \) is exactly the recipe \( \{ -q : q \in \nQ \setminus \alpha \} \) of @exm-naive-negative. For every cut, if \( p \in -\alpha \), then \( p < -q \) for some \( q \notin \alpha \) by the equivalence above, so \( -p > q \) is outside \( \alpha \) (@lem-cut-separation), and \( p = -(-p) \) is in the recipe. Conversely, if the outside has no least element and \( q \notin \alpha \), there is \( q' \notin \alpha \) with \( q' < q \); then \( -q < -q' \), so \( -q \in -\alpha \) by the equivalence above. The fold below works this out for \( \sigma \).
 
 ::: {.second-reading title="Edge case: for the cut of the square root of two, the margin changes nothing"}
 For \( \sigma \), the definition gives \( -\sigma = \{ x \in \nQ : x < 0 \text{ and } x^2 > 2 \} \).
@@ -163,7 +163,7 @@ Compute \( -D_3 \) from @def-cut-negative, and \( D_{1/2} + D_{1/3} \) from @def
 ::: {.solution}
 \( -D_3 = D_{-3} \). A rational \( p \) is in \( -D_3 \) when \( -p - r \ge 3 \) for some \( r > 0 \), that is, \( p \le -3 - r \). Every \( p < -3 \) qualifies, with margin \( r \coloneqq -3 - p > 0 \); no \( p \ge -3 \) does, since then \( -p - r \le 3 - r < 3 \).
 
-\( D_{1/2} + D_{1/3} = D_{5/6} \). \( (\subseteq) \) \( p < 1/2 \) and \( q < 1/3 \) give \( p + q < 5/6 \). \( (\supseteq) \) For \( x < 5/6 \), put \( \delta \coloneqq (5/6 - x)/2 > 0 \). Then \( x = (1/2 - \delta) + (1/3 - \delta) \), with \( 1/2 - \delta < 1/2 \) and \( 1/3 - \delta < 1/3 \). Section 7.5 proves \( D_p + D_q = D_{p+q} \) for all rationals by the same split.
+\( D_{1/2} + D_{1/3} = D_{5/6} \). \( (\subseteq) \) \( p < 1/2 \) and \( q < 1/3 \) give \( p + q < 5/6 \). \( (\supseteq) \) For \( x < 5/6 \), put \( h \coloneqq (5/6 - x)/2 > 0 \). Then \( x = (1/2 - h) + (1/3 - h) \), with \( 1/2 - h < 1/2 \) and \( 1/3 - h < 1/3 \). Section 7.5 proves \( D_p + D_q = D_{p+q} \) for all rationals by the same split.
 :::
 
 ## A cut plus its negative
@@ -212,7 +212,7 @@ The two inclusions give \( \alpha + (-\alpha) = D_0 \) (@fd2:prp-subset-antisymm
 
 The answer to the prompt. With \( \varepsilon = -s \), the walk gives \( p \in \alpha \) with \( p - s \notin \alpha \), and \( t = s - p \) would need a margin \( r > 0 \) with \( p - s - r \notin \alpha \). Nothing guarantees one: \( p - s - r \) lies below the first outside point of the walk, and may be inside. For \( \alpha = D_1 \), \( s = -1 \) and \( a = 0 \), the walk stops at \( p = 0 \), and \( p - s - r = 1 - r \in D_1 \) for every \( r > 0 \). The margin must be strictly smaller than the gap, and halving \( -s \) leaves room for both.
 
-The proof treats rational and irrational cuts alike: it never asks whether the outside of \( \alpha \) has a least element. The margin in @def-cut-negative is exactly what absorbs the rational case; without it the \( \supseteq \) half would still go through, but the set it lands in would not be a cut.
+The proof treats rational and irrational cuts alike: it never asks whether the outside of \( \alpha \) has a least element. The margin in @def-cut-negative is exactly what absorbs the rational case; without it the \( \supseteq \) half would still go through, but for a rational cut \( \alpha \) the set it lands in would not be a cut (@exm-naive-negative).
 
 ## An ordered group
 
@@ -276,7 +276,7 @@ These questions are about the proof of @thm-cut-additive-inverse and the definit
 :::
 
 ::: {.solution}
-(a) \( \varepsilon = -s/2 = 1/4 \). The points \( a + k\varepsilon = k/4 \) are in \( D_1 \) exactly for \( k < 4 \), so \( n = 3 \), \( p = 3/4 \in D_1 \) and \( p + \varepsilon = 1 \notin D_1 \). Then \( t = s - p = -1/2 - 3/4 = -5/4 \), with margin \( \varepsilon = 1/4 \): \( -t - 1/4 = 5/4 - 1/4 = 1 \notin D_1 \), so \( t \in -D_1 \). And \( p + t = 3/4 - 5/4 = -1/2 = s \). (Another starting point \( a \) gives another pair; any \( p \in D_1 \) with \( p + 1/4 \ge 1 \), that is \( 3/4 \le p < 1 \), works with \( t = -1/2 - p \).)
+(a) \( \varepsilon = -s/2 = 1/4 \). The points \( a + k\varepsilon = k/4 \) are in \( D_1 \) exactly for \( k < 4 \), so \( n = 3 \), \( p = 3/4 \in D_1 \) and \( p + \varepsilon = 1 \notin D_1 \). Then \( t = s - p = -1/2 - 3/4 = -5/4 \), with margin \( \varepsilon = 1/4 \): \( -t - 1/4 = 5/4 - 1/4 = 1 \notin D_1 \), so \( t \in -D_1 \). And \( p + t = 3/4 - 5/4 = -1/2 = s \). (Another starting point \( a \) may give another pair, for example \( a = 1/8 \) gives \( p = 7/8 \); any \( p \in D_1 \) with \( p + 1/4 \ge 1 \), that is \( 3/4 \le p < 1 \), works with \( t = -1/2 - p \).)
 
 (b) Once, in the \( \supseteq \) half, to produce \( p \in \alpha \) with \( p + \varepsilon \notin \alpha \). Its proof in Section 7.1 needs the Archimedean property of \( \nQ \) (@thm-rationals-archimedean), to get some multiple of \( \varepsilon \) that leaves \( \alpha \), and the least element of a non-empty set of natural numbers (@prp-integer-least-element), to get the first one.
 
@@ -367,7 +367,7 @@ Here is a proof that \( \alpha + D_0 = \alpha \) for every cut \( \alpha \).
 2. Which line fails, and why?
 3. Give a counterexample to the step itself.
 4. Repair the proof.
-5. One of (C1)–(C3) is never used in the flawed proof. Which one? Show that without it the conclusion can fail: compute \( A + D_0 \) for \( A \coloneqq \{ r \in \nQ : r \le 1 \} \).
+5. The flawed proof never uses (C3). Show that without it the conclusion can fail: compute \( A + D_0 \) for \( A \coloneqq \{ r \in \nQ : r \le 1 \} \).
 :::
 :::
 
@@ -380,24 +380,26 @@ Here is a proof that \( \alpha + D_0 = \alpha \) for every cut \( \alpha \).
 
 (d) Replace line (5) by: "By (C3) there is \( p' \in \alpha \) with \( p' > p \). Then \( p - p' < 0 \), so \( p - p' \in D_0 \), and \( p = p' + (p - p') \in \alpha + D_0 \)." This is the proof of @prp-cut-sum-zero.
 
-(e) (C3) is never used, and the conclusion needs it. The set \( A = \{ r : r \le 1 \} \) satisfies (C1) and (C2) but not (C3), and \( A + D_0 = D_1 \ne A \). Indeed, if \( a \le 1 \) and \( q < 0 \), then \( a + q < 1 \); and every \( x < 1 \) is \( 1 + (x - 1) \) with \( 1 \in A \) and \( x - 1 < 0 \). So \( A + D_0 = D_1 \), which does not contain \( 1 \in A \). An argument that never uses (C3) would prove the same equation for \( A \), where it is false; that is the tell that some line is wrong.
+(e) Without (C3) the conclusion fails. The set \( A = \{ r : r \le 1 \} \) satisfies (C1) and (C2) but not (C3), and \( A + D_0 = D_1 \ne A \). Indeed, if \( a \le 1 \) and \( q < 0 \), then \( a + q < 1 \); and every \( x < 1 \) is \( 1 + (x - 1) \) with \( 1 \in A \) and \( x - 1 < 0 \). So \( A + D_0 = D_1 \), which does not contain \( 1 \in A \). An argument that never uses (C3) would prove the same equation for \( A \), where it is false; that is the tell that some line is wrong.
 :::
 
 <!-- dependency ledger
 thm-cut-sum (proof): rational arithmetic and order, (F1)-(F9), (O1)-(O4), and the rules of prp-ordered-ring-rules for rationals | Q ordered field, F3.2 (thm-rationals-ordered-field, recalled in the opening frame)
 thm-cut-sum (proof): a + b notin alpha + beta because every element is < a + b; (O1) | inline, from lem-cut-separation and prp-ordered-ring-rules (b)
 prp-cut-sum-zero (proof): D_0 is a cut | def-rational-cut (Section 7.1)
-def-cut-negative (claim): before-reading-on answer, D_1 + D_{-1} = D_0, by s = (1 - delta) + (-1 - delta) | inline; verify/ch07/def-cut-negative.py
+def-cut-negative (claim): before-reading-on answer, D_1 + D_{-1} = D_0, by s = (1 - h) + (-1 - h) | inline, with prp-ordered-field-halves (b); verify/ch07/def-cut-negative.py
 exm-naive-negative (example): q' = (q^2 + 2)/(2q) has 0 < q' < q and q'^2 > 2 when q > 0, q^2 > 2 | inline (two displayed identities); verify/ch07/exm-naive-negative.py
 exm-naive-negative (example): (-q)^2 = q^2 | prp-ring-algebra (c), cited
 exm-naive-negative (example): alpha = D_m when m is least outside alpha | inline, from lem-cut-separation
-def-cut-negative (claim): -alpha is a cut; -D_0 = D_0; -D_1 = D_{-1} | inline (the paragraph and examples after def-cut-negative)
+exm-naive-negative (example): {-p : p in alpha} is closed upward and fails (C2) (-a in it, -b not, -b < -a) | inline, from (C1), (C2) and lem-cut-separation
+def-cut-negative (claim): -alpha is a cut; -D_0 = D_0; -D_1 = D_{-1} | inline (the paragraph and examples after def-cut-negative); r/2 > 0, r/2 + r/2 = r by prp-ordered-field-halves (b)
+def-cut-negative (claim): -alpha equals {-q : q notin alpha} when the outside of alpha has no least element | inline, from the equivalence after def-cut-negative and lem-cut-separation
 def-cut-negative (claim): fold, -sigma = {x < 0 : x^2 > 2} | inline, same identities as exm-naive-negative, re-proved in the fold; verify/ch07/exm-naive-negative.py
-def-cut-negative (solution): quick check, -D_3 = D_{-3}, D_{1/2} + D_{1/3} = D_{5/6} with delta = (5/6 - x)/2 | inline; verify/ch07/def-cut-negative.py
+def-cut-negative (solution): quick check, -D_3 = D_{-3}, D_{1/2} + D_{1/3} = D_{5/6} with h = (5/6 - x)/2 | inline, with prp-ordered-field-halves (b); verify/ch07/def-cut-negative.py
 thm-cut-additive-inverse (proof): s = -2 epsilon, -t - epsilon = p + epsilon | inline; verify/ch07/thm-cut-additive-inverse.py
 thm-cut-additive-inverse (claim): with epsilon = -s the margin can fail (D_1, s = -1, a = 0, p = 0) | inline; verify/ch07/thm-cut-additive-inverse.py
 thm-cut-ordered-group (proof): rearranging (a + b) + ((-a) + (-b)) | (a) of the same theorem, applied repeatedly; inline
-exr-addition-a1 (solution): epsilon = 1/4, n = 3, p = 3/4, t = -5/4 | verify/ch07/exr-addition-a1.py
+exr-addition-a1 (solution): epsilon = 1/4, n = 3, p = 3/4, t = -5/4; a = 1/8 gives p = 7/8 | verify/ch07/exr-addition-a1.py
 exr-addition-a1 (solution): lem-cut-step's proof uses thm-rationals-archimedean and prp-integer-least-element | Section 7.1's proof of lem-cut-step (blueprint ch07)
 exr-addition-c2 (solution): {r <= 1} + D_0 = D_1; 1/2 = 3/4 + (-1/4) | inline; verify/ch07/exr-addition-c2.py
 -->

@@ -4,7 +4,7 @@ This section is part of the optional Chapter 7, and nothing outside the chapter 
 
 ## A copy of the rationals
 
-Every ordered field \( F \) contains a copy of \( \nQ \): by @thm-rationals-embed-ordered-field there is exactly one map \( \iota_F \colon \nQ \to F \) that sends \( 1 \) to \( 1_F \) and respects sums and products, and it is strictly increasing. For \( F = \nR_{\mathrm D} \) we have a candidate in hand, the map \( q \mapsto D_q \) of @def-rational-cut. It sends \( 1 \) to \( D_1 \), the one of the field. The theorem below checks the rest by computing with sets, and the uniqueness clause then says the candidate is \( \iota_{\nR_{\mathrm D}} \).
+Every ordered field \( F \) contains a copy of \( \nQ \): by @thm-rationals-embed-ordered-field there is exactly one map \( \iota_F \colon \nQ \to F \) that sends \( 1 \) to \( 1_F \) and respects sums and products, and it is strictly increasing. For \( F = \nR_{\mathrm D} \) we have a candidate in hand, the map \( q \mapsto D_q \) of @def-rational-cut. It sends \( 1 \) to \( D_1 \), the one of the field. The theorem below checks the rest: sums and positive products by computing with sets, negatives and the other signs by the field rules; and the uniqueness clause then says the candidate is \( \iota_{\nR_{\mathrm D}} \).
 
 ::: {#thm-rationals-embed-cuts}
 [The Rationals Inside the Cuts]
@@ -23,7 +23,7 @@ Consequently \( D_q = \iota_{\nR_{\mathrm D}}(q) \) for every \( q \in \nQ \), w
 :::
 
 ::: {.idea}
-Each identity is an equality of sets of rationals, so each has two halves. The \( \subseteq \) halves are closure: if \( r < p \) and \( s < q \), then \( r + s < p + q \). The \( \supseteq \) halves must **split** a given rational \( x < p + q \) as a sum of something below \( p \) and something below \( q \), and the obvious split \( x = p + (x - p) \) fails, because \( p \notin D_p \). So we take a little off both summands: half the gap \( p + q - x \) from each. For products we do the same with a factor instead of a summand. Signs other than "both positive" are reduced to that case, the chapter's third named move; since \( \nR_{\mathrm D} \) is already known to be a field, the ring rules for signs do the reduction.
+The identity (b), and (d) for positive \( p, q \), are equalities of sets of rationals, so each has two halves. The \( \subseteq \) halves are closure: if \( r < p \) and \( s < q \), then \( r + s < p + q \). The \( \supseteq \) halves must **split** a given rational \( x < p + q \) as a sum of something below \( p \) and something below \( q \), and the obvious split \( x = p + (x - p) \) fails, because \( p \notin D_p \). So we take a little off both summands: half the gap \( p + q - x \) from each. For products we do the same with a factor instead of a summand. Signs other than "both positive" are reduced to that case, the chapter's named move of reducing to the positive case (Section 7.4); since \( \nR_{\mathrm D} \) is already known to be a field, the ring rules for signs do the reduction.
 :::
 
 ::: {.proof}
@@ -127,11 +127,11 @@ Each hypothesis has a job. "\( \alpha < \beta \)" supplies \( p \), and the stri
 :::
 
 ::: {.check}
-Name a rational \( q \) with \( \sigma < D_q < D_{3/2} \), and check both inequalities. (You may use that \( \sigma \ne D_q \) for every \( q \in \nQ \), proved below.)
+Name a rational \( q \) with \( \sigma < D_q < D_{3/2} \), and check both inequalities.
 :::
 
 ::: {.solution}
-Take \( q = 29/20 \). Then \( q > 0 \) and \( q^2 = 841/400 > 800/400 = 2 \), so \( q \notin \sigma \), and @prp-rational-in-cut (b) gives \( \sigma \subseteq D_q \); since \( \sigma \ne D_q \), \( \sigma < D_q \). And \( 29/20 < 30/20 = 3/2 \), so \( D_q < D_{3/2} \) by @thm-rationals-embed-cuts (a). Any \( q \) with \( q > 0 \), \( q^2 > 2 \) and \( q < 3/2 \) works, for instance \( 10/7 \).
+Take \( q = 29/20 \). Then \( q > 0 \) and \( q^2 = 841/400 > 800/400 = 2 \), so \( q \notin \sigma \), and @prp-rational-in-cut (b) gives \( \sigma \subseteq D_q \). The inclusion is strict: \( 10/7 > 0 \) and \( (10/7)^2 = 100/49 > 98/49 = 2 \), so \( 10/7 \notin \sigma \), while \( 10/7 < 29/20 \) (\( 200/140 < 203/140 \)), so \( 10/7 \in D_q \). Hence \( \sigma < D_q \). And \( 29/20 < 30/20 = 3/2 \), so \( D_q < D_{3/2} \) by @thm-rationals-embed-cuts (a). The rational \( q = 10/7 \) works the same way, with \( 17/12 \) as the witness of strictness: \( (17/12)^2 = 289/144 > 2 \) and \( 17/12 < 10/7 \) (\( 119/84 < 120/84 \)).
 :::
 
 ## Archimedes in the cuts
@@ -304,9 +304,9 @@ By @thm-cut-rationals-dense, used twice, there are rationals \( q, q' \) with \(
 ::: {.solution}
 *Two rationals.* By @thm-cut-rationals-dense there is \( q \in \nQ \) with \( \alpha < D_q < \beta \); applied again to \( D_q < \beta \), it gives \( q' \) with \( D_q < D_{q'} < \beta \). By @thm-rationals-embed-cuts (a), \( q < q' \).
 
-*An irrational cut between \( D_0 \) and \( D_1 \).* Since \( 1^2 < 2 \), \( 1 \in \sigma \), so \( D_1 < \sigma \) (@prp-rational-in-cut (a)). Since \( 3/2 > 0 \) and \( (3/2)^2 = 9/4 > 2 \), \( 3/2 \notin \sigma \), so \( \sigma \subseteq D_{3/2} < D_2 \). Hence \( D_1 < \sigma < D_2 \). Adding \( -D_1 = D_{-1} \) (translation in the ordered field \( \nR_{\mathrm D} \), @thm-cuts-ordered-field, and @thm-rationals-embed-cuts (b), (c)) gives \( D_0 < \sigma - D_1 < D_1 \).
+*An irrational cut between \( D_0 \) and \( D_1 \).* Since \( 1^2 < 2 \), \( 1 \in \sigma \), so \( D_1 < \sigma \) (@prp-rational-in-cut (a)). Since \( 3/2 > 0 \) and \( (3/2)^2 = 9/4 > 2 \), \( 3/2 \notin \sigma \), so \( \sigma \subseteq D_{3/2} \) (@prp-rational-in-cut (b)), and \( D_{3/2} < D_2 \) (@thm-rationals-embed-cuts (a)). Hence \( D_1 < \sigma < D_2 \). Adding \( -D_1 = D_{-1} \) (translation in the ordered field \( \nR_{\mathrm D} \), @thm-cuts-ordered-field, and @thm-rationals-embed-cuts (b), (c)) gives \( D_0 < \sigma - D_1 < D_1 \).
 
-*The cut.* Put \( \gamma \coloneqq D_q + D_{q' - q} (\sigma - D_1) \). Since \( D_{q' - q} > D_0 \), multiplying by it preserves strict inequalities (@prp-ordered-ring-rules (c) in \( \nR_{\mathrm D} \)), so
+*The cut.* Put \( \gamma \coloneqq D_q + D_{q' - q} (\sigma - D_1) \). Since \( q' > q \), \( D_{q' - q} > D_0 \) by @thm-rationals-embed-cuts (a), and multiplying by it preserves strict inequalities (@prp-ordered-ring-rules (c) in \( \nR_{\mathrm D} \)), so
 \[
 D_0 < D_{q' - q} (\sigma - D_1) < D_{q' - q} D_1 = D_{q' - q} .
 \]
@@ -329,7 +329,7 @@ Fatal errors (0 for the step): treating \( \sigma \) as a number "\( \sqrt 2 \)"
 ::: {#exr-rationals-inside-c2}
 [C2: A cube root of two]
 
-Let \( \tau \coloneqq \{ p \in \nQ : p \le 0 \text{ or } p^3 < 2 \} \). The first part below is proved in full; the last case is left to you.
+Let \( \tau \coloneqq \{ p \in \nQ : p \le 0 \text{ or } p^3 < 2 \} \). We show that \( \tau \) is a cut with \( \tau > D_0 \) and that \( \tau\tau\tau = D_2 \). Everything below is proved in full except the last case, which is left to you.
 
 *Monotone cubing.* For rationals \( 0 \le a < b \), \( b^3 - a^3 = (b - a)(b^2 + ab + a^2) > 0 \), since \( b - a > 0 \), \( b^2 > 0 \) (@prp-ordered-ring-rules (e)), \( ab \ge 0 \), \( a^2 \ge 0 \), and a product of positives is positive (@prp-ordered-ring-rules (c)). Only non-negative \( a, b \) are needed, because of the clause "\( p \le 0 \) or".
 
@@ -347,7 +347,7 @@ Then \( 0 < h < 1 \), because \( d \le 2 < 3p^2 + 3p + 2 \). So \( h^2 < h \) an
 \]
 so \( p + h \in \tau \) and \( p + h > p \). Finally \( D_0 \subseteq \tau \) and \( 1 \in \tau \setminus D_0 \), so \( \tau > D_0 \).
 
-*The \( \subseteq \) half of \( \tau\tau\tau = D_2 \).* By @prp-cut-product-positive, \( \tau\tau\tau \) is the set of \( x \in \nQ \) with \( x \le rst \) for some positive \( r, s, t \in \tau \). For such \( r, s, t \), let \( m \) be the largest. Then \( rst \le m^3 < 2 \), by @prp-ordered-ring-rules (c) and monotone cubing. So \( \tau\tau\tau \subseteq D_2 \).
+*The \( \subseteq \) half of \( \tau\tau\tau = D_2 \).* Since \( \tau > D_0 \), the proof of @prp-cut-product-positive (c), with \( \alpha = \beta = \gamma = \tau \), shows that \( (\tau\tau)\tau = \tau(\tau\tau) \) (so we write \( \tau\tau\tau \)) is the set of \( x \in \nQ \) with \( x \le rst \) for some positive \( r, s, t \in \tau \). For such \( r, s, t \), let \( m \) be the largest. Then \( rst \le m^3 < 2 \), by @prp-ordered-ring-rules (c) and monotone cubing. So \( \tau\tau\tau \subseteq D_2 \).
 
 *The \( \supseteq \) half, easy cases.* Let \( x < 1 \). Then \( 1 \in \tau \) (\( 1^3 < 2 \)) and \( x \le 1 \cdot 1 \cdot 1 \), so \( x \in \tau\tau\tau \). This covers \( x \le 0 \) and \( 0 < x < 1 \) together.
 
@@ -380,7 +380,7 @@ thm-rationals-embed-cuts (proof): uniqueness of negatives, -(-a) = a, and the si
 thm-rationals-embed-cuts (proof): x/(pq) < lambda < 1 for the midpoint lambda of x/(pq) and 1 | inline; verify/ch07/thm-rationals-embed-cuts.py
 thm-rationals-embed-cuts (example): D_2^{-1} = D_{1/2} from D_2 D_{1/2} = D_1 | lem-field-fraction-rules (a) with thm-cuts-ordered-field, cited
 thm-cut-rationals-dense (claim): {r : r <= 1} and D_1 have no D_q strictly between them | inline (every q with D_1 < D_q has q > 1); illustration only
-thm-cut-rationals-dense (solution): 29/20 squared is 841/400 > 2; 10/7 also works | verify/ch07/thm-cut-rationals-dense.py
+thm-cut-rationals-dense (solution): 29/20 squared is 841/400 > 2; 10/7 in D_{29/20} but not in sigma; 10/7 also works, with witness 17/12 | verify/ch07/thm-cut-rationals-dense.py
 prp-cuts-archimedean (proof): n · 1 in R_D equals D_n | thm-rationals-embed-ordered-field (iota_F(n) = n · 1_F) with thm-rationals-embed-cuts, cited in the lead-in
 prp-cut-sqrt2-square (proof): mu^2 < 2/x for t = 2/x - 1 in (0, 1], mu = 1 + t/3; the example x = 3/2 | inline; verify/ch07/prp-cut-sqrt2-square.py
 prp-cut-sqrt2-square (proof): r^2 >= 2/mu^2 from (mu r)^2 >= 2 | ℚ ordered field, F3.2 (prp-ordered-ring-rules (c), dividing by mu^2 > 0)
@@ -391,5 +391,6 @@ exr-rationals-inside-b2 (solution): mu^2 < 3/x for t in (0, 2] | verify/ch07/exr
 exr-rationals-inside-c1 (solution): order rules (translation, multiplying by a positive) in the ordered field R_D | thm-cuts-ordered-field with prp-ordered-ring-rules, cited
 exr-rationals-inside-c1 (solution): (3/2)^2 = 9/4 > 2; the affine solve for sigma | verify/ch07/exr-rationals-inside-c1.py
 exr-rationals-inside-c2 (solution): the (C3) estimate for tau and mu^3 < 2/x with mu = 1 + t/7, coefficient 169/343 | verify/ch07/exr-rationals-inside-c2.py
+exr-rationals-inside-c2 (claim): tau tau tau = {x : x <= rst, r, s, t in tau positive} | prp-cut-product-positive (c), the set T in its proof, cited
 exr-rationals-inside-c2 (solution): rst <= m^3 for positive r, s, t with largest m | prp-ordered-ring-rules (c), cited in the problem
 -->

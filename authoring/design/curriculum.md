@@ -117,7 +117,7 @@ About half the exercises annotate or build real proofs from analysis.
 - **Set theory.** List the ZF axioms and use them to build ℕ, either as von Neumann ordinals or by assuming Peano. No metamathematics.
 - **Choice.** Stated here and flagged where it is used later: countable unions, the Vitali set, Hahn–Banach, Tychonoff.
 - **ℤ and ℚ.** Built as equivalence classes. Prove a few representative cases in full and leave the rest to exercises.
-- **ℝ.** Built by Dedekind cuts, which give the least upper bound property directly.
+- **ℝ.** Built from Cauchy sequences of rationals (F3.10); Dedekind cuts are an optional second construction (F3.3), which gives the least upper bound property directly and is identified with F3.10's ℝ through the uniqueness theorem (F3.4).
 - **Closing theorem.** A complete ordered field is unique up to isomorphism.
 
 ---
@@ -450,7 +450,7 @@ About half the exercises annotate or build real proofs from analysis.
 | Concept | ℝ | ℝⁿ | metric / C(K) | normed / Banach | Hilbert | Lᵖ / weak* |
 |---|---|---|---|---|---|---|
 | compact | Heine–Borel, BW | closed and bounded | complete + totally bounded; Arzelà–Ascoli | unit ball compact iff finite-dimensional; compact operators | bounded ⇒ weakly convergent subsequence | Alaoglu; Kolmogorov–Riesz; Rellich |
-| complete | forms of LUB; ℝ built from Cauchy sequences of rationals, Cauchy-complete + Archimedean ⇒ LUB (F3.10) | coordinatewise | C(K); Baire; contraction; completion of a metric space, ℝ as the completion of ℚ (AN2.2, returning to F3.10) | ℓᵖ; quotients; completion | Riesz–Fischer | Lᵖ complete; Riemann space incomplete |
+| complete | forms of LUB; ℝ built from Cauchy sequences of rationals, Cauchy-complete + Archimedean ⇒ LUB (F3.10); LUB as a union of cuts (F3.3, optional) | coordinatewise | C(K); Baire; contraction; completion of a metric space, ℝ as the completion of ℚ (AN2.2, returning to F3.10) | ℓᵖ; quotients; completion | Riesz–Fischer | Lᵖ complete; Riemann space incomplete |
 | convergence | ε-N; pointwise vs uniform | norm equivalence | uniform = sup metric | norm vs weak | orthogonal expansions | a.e., in measure, Lᵖ, weak*, distributional |
 | continuity | ε-δ, uniform | Fréchet | equicontinuity, Lipschitz | bounded = continuous; closed graph | adjoint | weak lower semicontinuity of the norm; translation |
 | density | ℚ dense (in any Archimedean field, F3.9; in the constructed ℝ, F3.10) | polynomials | Stone–Weierstrass | Hahn–Banach criterion | orthonormal basis | C_c and mollifiers |

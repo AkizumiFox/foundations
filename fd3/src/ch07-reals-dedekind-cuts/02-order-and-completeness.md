@@ -6,7 +6,7 @@ This section belongs to the optional Chapter 7; nothing outside the chapter depe
 
 For two rationals \( p \) and \( q \), "\( p \) is at most \( q \)" says the same as "every rational below \( p \) is below \( q \)". In the language of Section 7.1, \( p \le q \) holds exactly when \( D_p \subseteq D_q \): if \( p \le q \) and \( r < p \), then \( r < q \); and if \( q < p \), then \( q \in D_p \setminus D_q \). So on rational cuts, inclusion is the order of \( \nQ \) in disguise. We take it as the order of all cuts.
 
-*One cut is below another when it holds fewer rationals.*
+*One cut is below another when every rational in the first is also in the second.*
 
 ::: {#def-cut-order}
 [Order of Cuts]
@@ -73,7 +73,7 @@ Let \( A \subseteq \nR_{\mathrm D} \) be **non-empty** and **bounded above**: so
 *Try it first (ten minutes): which cut would you propose as the supremum of a set of cuts? Check your proposal against (C1)–(C3), and then against (S1) and (S2).*
 
 ::: {.idea}
-The word "bounds" invites a first guess: the intersection \( \bigcap A \), the rationals common to all members. It sits on the wrong side. The intersection lies **inside** every member, so it is a candidate for a lower bound, the infimum's job, and Exercise C1 shows that it can even fail to be a cut. An upper bound must **contain** every member, and the smallest set that does is the union. In \( \powerset{\nQ} \) the union is the supremum (*Sets, Relations, and Cardinality*, Section 2.6, Exercise B1). So everything comes down to one question: is the union a cut? Conditions (C2) and (C3) pass from the members to the union one element at a time, and (C1) needs both hypotheses, one for each half. *Before reading on: which of the three conditions will use "bounded above"?*
+The word "bounds" invites a first guess: the intersection \( \bigcap A \), the rationals common to all members. It sits on the wrong side. The intersection lies **inside** every member, so it is a candidate for a lower bound, the infimum's job, and it can even fail to be a cut (try it in Exercise C1). An upper bound must **contain** every member, and the smallest set that does is the union. In \( \powerset{\nQ} \) the union is the supremum: it contains every member, and any set that contains every member contains the union ((S1) and (S2) in the proof below check this for cuts). So everything comes down to one question: is the union a cut? Conditions (C2) and (C3) pass from the members to the union one element at a time, and (C1) needs both hypotheses, one for each half. *Before reading on: which of the three conditions will use "bounded above"?*
 :::
 
 ::: {.proof}
@@ -90,7 +90,7 @@ So \( \gamma \) is a cut. *(S1).* For each \( \alpha \in A \), every element of 
 
 The answer to the prompt: "bounded above" is used once, in the second half of (C1), to show \( \gamma \ne \nQ \). "Non-empty" is used once too, in the first half of (C1). Conditions (C2) and (C3) of \( \gamma \), and the clauses (S1) and (S2), hold for **every** set of cuts; it is only being a cut at all that needs the hypotheses.
 
-Compare the Cauchy road. There, completeness took two sections: Section 5.5 proved that every Cauchy sequence of real numbers converges, by building rational approximants, and Section 5.6 bisected intervals, with one line that needed the Archimedean property, to reach least upper bounds. Here it took one union and three short checks. The proof above uses no arithmetic of \( \nQ \) at all, only its order, through (C2) and (C3) of the members; in particular it does not use the Archimedean property. The price is paid elsewhere: cuts have no sum or product yet, and Sections 7.3 and 7.4 build them, multiplication with some effort.
+Compare the Cauchy road. There, completeness took two sections: Section 5.5 proved that every Cauchy sequence of real numbers converges, by building rational approximants, and Section 5.6 bisected intervals, with one line that needed the Archimedean property, to reach least upper bounds. Here it took one union and five short checks, (C1)–(C3) and (S1)–(S2). The proof above uses no arithmetic of \( \nQ \) at all, only its order, through (C2) and (C3) of the members; in particular it does not use the Archimedean property. The price is paid elsewhere: cuts have no sum or product yet, and Sections 7.3 and 7.4 build them, multiplication with some effort.
 
 ::: {.warning}
 Both hypotheses of @thm-dedekind-lub are needed for the union to be a cut. Drop "bounded above": the rational cuts \( D_n \), \( n \in \nN \), have union \( \nQ \), since every rational \( r \) lies below some \( n \in \nN \) (@thm-rationals-archimedean) and so in \( D_n \); and \( \nQ \) fails (C1). Drop "non-empty": \( \bigcup \emptyset = \emptyset \), which fails (C1) too.
@@ -109,7 +109,7 @@ Find \( \sup \{ D_{1 - 1/n} : n \in \nZ_{>0} \} \) in \( (\nR_{\mathrm D}, \le) 
 :::
 
 ::: {.solution}
-The set is non-empty and bounded above by \( D_1 \), since \( 1 - 1/n < 1 \) gives \( D_{1 - 1/n} \subseteq D_1 \). By @thm-dedekind-lub its supremum is the union \( U \coloneqq \bigcup_{n \ge 1} D_{1 - 1/n} \). We show \( U = D_1 \). \( (\subseteq) \): if \( r < 1 - 1/n \) for some \( n \), then \( r < 1 \). \( (\supseteq) \): let \( r < 1 \). Then \( 1 - r > 0 \), and @cor-rationals-archimedean-epsilon gives \( n \in \nZ_{>0} \) with \( 1/n < 1 - r \), that is, \( r < 1 - 1/n \), so \( r \in U \). Hence the supremum is \( D_1 \). It is not in the set: \( D_{1 - 1/n} = D_1 \) would force \( 1 - 1/n = 1 \) by the first translation, and \( 1/n \ne 0 \).
+The set is non-empty and bounded above by \( D_1 \), since \( 1/n > 0 \) (@prp-reciprocal-order (a)), so \( 1 - 1/n < 1 \) and \( D_{1 - 1/n} \subseteq D_1 \). By @thm-dedekind-lub its supremum is the union \( U \coloneqq \bigcup_{n \ge 1} D_{1 - 1/n} \). We show \( U = D_1 \). \( (\subseteq) \): if \( r < 1 - 1/n \) for some \( n \), then \( r < 1 \). \( (\supseteq) \): let \( r < 1 \). Then \( 1 - r > 0 \), and @cor-rationals-archimedean-epsilon gives \( n \in \nZ_{>0} \) with \( 1/n < 1 - r \), that is, \( r < 1 - 1/n \), so \( r \in U \). Hence the supremum is \( D_1 \). It is not in the set: \( D_{1 - 1/n} = D_1 \) would force \( 1 - 1/n = 1 \) by the first translation, and \( 1/n \ne 0 \).
 :::
 
 So \( (\nR_{\mathrm D}, \le) \) is a totally ordered set in which every non-empty subset that is bounded above has a supremum. Once Sections 7.3 and 7.4 have made \( \nR_{\mathrm D} \) an ordered field with this order, Section 7.5 reads @thm-dedekind-lub as the statement that it is a **complete** ordered field (@def-complete-ordered-field).
@@ -195,9 +195,9 @@ Line (i) may also come before (vii), since it only introduces a name for an arbi
 Let \( A \subseteq \nR_{\mathrm D} \) be non-empty and bounded below.
 
 ::: {.enumerate options="label=(\alph*)"}
-1. Show that \( \bigcap A \) need not be a cut, by computing it for \( A \coloneqq \{ D_{1/n} : n \in \nZ_{>0} \} \).
+1. Show that \( \bigcap A \) need not be a cut, by computing \( \bigcap A_0 \) for \( A_0 \coloneqq \{ D_{1/n} : n \in \nZ_{>0} \} \).
 2. Prove that \( A \) nevertheless has an infimum in \( (\nR_{\mathrm D}, \le) \): it is the supremum of the set of lower bounds of \( A \).
-3. Find \( \inf A \) for the set \( A \) of (a).
+3. Find \( \inf A_0 \).
 :::
 :::
 
@@ -210,11 +210,11 @@ For (b), the set \( L \) of lower bounds of \( A \) is non-empty by hypothesis. 
 ::: {.solution}
 [Hint 2]
 
-Let \( \lambda_0 \coloneqq \sup L \), which exists by @thm-dedekind-lub. To show that \( \lambda_0 \) is a lower bound of \( A \), use (S2) with each \( \alpha \in A \) as the upper bound of \( L \).
+Let \( \lambda_0 \coloneqq \sup L \), which exists by @thm-dedekind-lub; the claim is that \( \lambda_0 = \inf A \).
 :::
 
 ::: {.solution}
-(a) Here \( \bigcap A = \{ r \in \nQ : r < 1/n \text{ for every } n \in \nZ_{>0} \} \), the intersection taken in \( \nQ \). We claim it is \( \{ r \in \nQ : r \le 0 \} \). If \( r \le 0 \), then \( r \le 0 < 1/n \) for every \( n \) (@prp-reciprocal-order (a)). If \( r > 0 \), @cor-rationals-archimedean-epsilon gives \( n \) with \( 1/n < r \), so \( r \notin D_{1/n} \) and \( r \notin \bigcap A \). The set \( \{ r : r \le 0 \} \) has the largest element \( 0 \), so it fails (C3) and is not a cut. (The set \( A \) is non-empty and bounded below, by \( D_0 \), for instance.)
+(a) Here \( \bigcap A_0 = \{ r \in \nQ : r < 1/n \text{ for every } n \in \nZ_{>0} \} \), the intersection taken in \( \nQ \). We claim it is \( \{ r \in \nQ : r \le 0 \} \). If \( r \le 0 \), then \( r \le 0 < 1/n \) for every \( n \) (@prp-reciprocal-order (a)). If \( r > 0 \), @cor-rationals-archimedean-epsilon gives \( n \) with \( 1/n < r \), so \( r \notin D_{1/n} \) and \( r \notin \bigcap A_0 \). The set \( \{ r : r \le 0 \} \) has the largest element \( 0 \), so it fails (C3) and is not a cut. (The set \( A_0 \) is non-empty and bounded below, by \( D_0 \), for instance.)
 
 (b) Let \( L \coloneqq \{ \lambda \in \nR_{\mathrm D} : \lambda \le \alpha \text{ for every } \alpha \in A \} \), the set of lower bounds of \( A \). It is non-empty, since \( A \) is bounded below. It is bounded above: fix \( \alpha_0 \in A \) (\( A \ne \emptyset \)); every \( \lambda \in L \) has \( \lambda \le \alpha_0 \). By @thm-dedekind-lub, \( L \) has a supremum \( \lambda_0 \).
 
@@ -222,10 +222,10 @@ Let \( \lambda_0 \coloneqq \sup L \), which exists by @thm-dedekind-lub. To show
 
 *\( \lambda_0 \) is the greatest lower bound.* We just showed \( \lambda_0 \in L \). If \( \lambda \) is any lower bound of \( A \), then \( \lambda \in L \), so \( \lambda \le \lambda_0 \) by (S1) for \( \lambda_0 \). Hence \( \lambda_0 = \inf A \).
 
-(c) \( \inf A = D_0 \). It is a lower bound: \( D_0 \subseteq D_{1/n} \) since \( 0 < 1/n \). Let \( \lambda \) be any lower bound. Then \( \lambda \subseteq \bigcap A = \{ r : r \le 0 \} \) by (a). And \( 0 \notin \lambda \): otherwise (C3) for \( \lambda \) gives \( p' \in \lambda \) with \( p' > 0 \), but \( \lambda \) contains no positive rational. So every element of \( \lambda \) is negative, \( \lambda \subseteq D_0 \), and \( \lambda \le D_0 \). So the infimum is the intersection with its largest element removed.
+(c) \( \inf A_0 = D_0 \). It is a lower bound: \( D_0 \subseteq D_{1/n} \) since \( 0 < 1/n \). Let \( \lambda \) be any lower bound. Then \( \lambda \subseteq \bigcap A_0 = \{ r : r \le 0 \} \) by (a). And \( 0 \notin \lambda \): otherwise (C3) for \( \lambda \) gives \( p' \in \lambda \) with \( p' > 0 \), but \( \lambda \) contains no positive rational. So every element of \( \lambda \) is negative, \( \lambda \subseteq D_0 \), and \( \lambda \le D_0 \). So the infimum is the intersection with its largest element removed.
 
 **Marking scheme.** (10 points)
-- 2: (a) computes \( \bigcap A = \{ r : r \le 0 \} \), using the Archimedean property for the positive rationals, and names (C3) as the failing condition.
+- 2: (a) computes \( \bigcap A_0 = \{ r : r \le 0 \} \), using the Archimedean property for the positive rationals, and names (C3) as the failing condition.
 - 2: (b) shows that the set of lower bounds is non-empty and bounded above by a member of \( A \).
 - 2: (b) shows that its supremum is a lower bound of \( A \), through (S2).
 - 2: (b) shows that it is the greatest lower bound, through (S1).
@@ -294,11 +294,12 @@ def-cut-order (claim): Quick check: 9/4 > 2, 58 < 60, 841 > 800 | Q ordered fiel
 thm-cut-order-total (proof): the three-way split from totality and antisymmetry | def-cut-order, fd2:prp-subset-antisymmetric; inline
 thm-cut-order-total (claim): the proof uses only (C2) and trichotomy in Q | meta-claim about the proof above and lem-cut-separation's proof; checkable on the page
 def-cut-order (claim): {0}, {1} incomparable in P(Q) | fd2:exm-subset-order-not-total, cited
-thm-dedekind-lub (idea): in P(Q) the union is the supremum | fd2 exr-orders-b1 (exercise, idea only; the proof does not use it)
+thm-dedekind-lub (idea): in P(Q) the union is the supremum | inline; (S1)/(S2) of the proof
 thm-dedekind-lub (claim): supremum unique | fd2:prp-greatest-unique, cited
 thm-dedekind-lub (claim): Cauchy road comparison: Sections 5.5 and 5.6, the Archimedean line | thm-constructed-reals-cauchy-complete, thm-cauchy-archimedean-lub (prose only; nothing here depends on them)
 thm-dedekind-lub (claim): "the proof uses no arithmetic of Q, only its order" | meta-claim about the proof above; checkable on the page
 thm-dedekind-lub (claim): warning: every rational lies below some n in N | thm-rationals-archimedean, cited
+thm-dedekind-lub (claim): Quick check: 1/n > 0, so 1 - 1/n < 1 and 1/n != 0; r < 1 - 1/n < 1 gives r < 1 | prp-reciprocal-order (a), cited; (O3), (O2); inline
 thm-dedekind-lub (claim): Quick check: r < 1 gives n with 1/n < 1 - r | cor-rationals-archimedean-epsilon, cited; (O3)
 thm-dedekind-lub (claim): closing paragraph: Section 7.5 reads the theorem as completeness | def-complete-ordered-field (prose pointer to Section 7.5)
 exr-order-and-completeness-a1 (solution): D_q < sigma for q in sigma | prp-rational-in-cut (a), cited

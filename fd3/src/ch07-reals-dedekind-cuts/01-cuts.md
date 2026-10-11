@@ -1,8 +1,8 @@
 # Cuts
 
-This section opens Chapter 7, which is optional: nothing outside the chapter depends on it, and the volume's main line ended with Chapter 6. Chapter 5 built a real number as a class of Cauchy sequences of rationals, and Chapter 6 proved that any two complete ordered fields are linked by exactly one order-preserving field isomorphism. Here we begin a second construction, Dedekind's, in which a real number is a single set of rationals: the set of all rationals **below** it. This section defines these sets, called cuts, tests the definition on the rationals and on the gap that Section 2.6 found, and proves two lemmas that every later section of the chapter uses. The inside and the outside of a cut are separated, and one can walk up through a cut in steps of any fixed size until one steps out.
+This section opens Chapter 7, which is optional: nothing outside the chapter depends on it, and the volume's main line ended with Chapter 6. Chapter 5 built a real number as a class of Cauchy sequences of rationals, and Chapter 6 proved that any two complete ordered fields are linked by exactly one order-preserving field isomorphism. Here we begin a second construction, Dedekind's, in which a real number is a single set of rationals: the set of all rationals **below** it. This section defines these sets, called cuts, tests the definition on the rationals and on the gap that Section 2.6 found, and proves two lemmas on which the rest of the chapter rests. The inside and the outside of a cut are separated, and one can walk up through a cut in steps of any fixed size until one steps out.
 
-Throughout the chapter, every number is a rational until Section 7.5 says otherwise. Nothing about real numbers is assumed: they are what is being built.
+Throughout the chapter, lower-case Latin letters such as \( p, q, r, s \) stand for rationals and \( m, n, k \) for natural numbers; Section 7.6, which brings back the field of Chapter 5, says where that changes. Nothing about real numbers is assumed: they are what is being built.
 
 ## The set below the gap
 
@@ -49,7 +49,7 @@ In symbols, with bounded quantifiers,
 \end{aligned}
 \]
 
-In words, clause by clause. (C1) says that the cut is a proper, non-empty part of \( \nQ \): some rational is in it and some rational is not. (C2) says that the cut is **closed downward**: whatever rational it contains, it contains every smaller one too. (C3) says that it has **no top**: above each of its elements it has another. The letters \( \alpha, \beta, \gamma, \delta \) are reserved for cuts in this chapter, so that a Greek letter always names a set of rationals and a Latin letter a rational.
+In words, clause by clause. (C1) says that the cut is a proper, non-empty part of \( \nQ \): some rational is in it and some rational is not. (C2) says that the cut is **closed downward**: whatever rational it contains, it contains every smaller one too. (C3) says that it has **no top**: above each of its elements it has another. The letters \( \alpha, \beta, \gamma, \delta \) are reserved for cuts in this chapter.
 
 **Well-definedness.** The collection \( \nR_{\mathrm D} \) is a set: it is carved out of the set \( \powerset{\nQ} \) by a condition, which (Z6) of @ax-zf-fragment allows, and \( \powerset{\nQ} \) exists by (Z5). A real number in the sense of this chapter is therefore literally an element of \( \powerset{\nQ} \), a subset of \( \nQ \).
 
@@ -73,7 +73,7 @@ D_q \coloneqq \{ r \in \nQ : r < q \} .
 It is a cut (checked below), the **rational cut** of \( q \). A cut \( \alpha \) is **rational** if \( \alpha = D_q \) for some \( q \in \nQ \).
 :::
 
-**\( D_q \) is a cut.** (C1): \( q - 1 \in D_q \), since \( -1 < 0 \) gives \( q - 1 < q \) by (O3); and \( q \notin D_q \), since \( q < q \) fails by (O1). (C2): if \( p \in D_q \) and \( r < p \), then \( r < p < q \), so \( r < q \) by (O2), and \( r \in D_q \). (C3): if \( r \in D_q \), the midpoint \( (r + q)/2 \) satisfies \( r < (r + q)/2 < q \) (Section 2.5, "Between two rationals"), so it lies in \( D_q \) and is larger than \( r \).
+**\( D_q \) is a cut.** (C1): \( q - 1 \in D_q \), since \( q - (q - 1) = 1 > 0 \) (@prp-ordered-ring-rules (e), as \( 1 \ne 0 \) in the field \( \nQ \), @thm-rationals-ordered-field), so \( q - 1 < q \) by @prp-ordered-ring-rules (a); and \( q \notin D_q \), since \( q < q \) fails by (O1). (C2): if \( p \in D_q \) and \( r < p \), then \( r < p < q \), so \( r < q \) by (O2), and \( r \in D_q \). (C3): if \( r \in D_q \), the midpoint \( (r + q)/2 \) satisfies \( r < (r + q)/2 < q \) (Section 2.5, "Between two rationals"), so it lies in \( D_q \) and is larger than \( r \).
 
 The letter \( D \) is for Dedekind.
 
@@ -153,9 +153,11 @@ E_1 + D_1 = D_2 = D_1 + D_1 , \qquad \text{although } E_1 \ne D_1 .
 *\( E_1 + D_1 = D_2 \).* \( (\subseteq) \): if \( a \le 1 \) and \( b < 1 \), then \( a + b < 2 \) by @prp-ordered-ring-rules (b). \( (\supseteq) \): if \( s < 2 \), then \( s = 1 + (s - 1) \) with \( 1 \in E_1 \) and \( s - 1 < 1 \), so \( s - 1 \in D_1 \).
 
 *\( D_1 + D_1 = D_2 \).* \( (\subseteq) \): \( a < 1 \) and \( b < 1 \) give \( a + b < 2 \), by (b) again. \( (\supseteq) \): if \( s < 2 \), then \( s = s/2 + s/2 \), and multiplying \( s < 2 \) by \( 1/2 > 0 \) (@prp-ordered-ring-rules (c)) gives \( s/2 < 1 \), so \( s/2 \in D_1 \).
+
+So if \( E_1 \) were admitted as a number, the equation \( \xi + D_1 = D_2 \) would have two solutions, \( E_1 \) and \( D_1 \), and addition could not be canceled, so the numbers could not form a group under addition.
 :::
 
-If \( E_1 \) were admitted as a number, the equation \( \xi + D_1 = D_2 \) would have two solutions, \( E_1 \) and \( D_1 \), and addition could not be canceled, so the numbers could not form a group under addition. Condition (C3) chooses \( D_1 \) and discards \( E_1 \): of the two sets that describe "the rationals up to \( 1 \)", it keeps the one that leaves \( 1 \) out.
+Condition (C3) chooses between the two sets \( \{ r \in \nQ : r < 1 \} \) and \( \{ r \in \nQ : r \le 1 \} \) that describe "the rationals up to \( 1 \)": it keeps the one that leaves \( 1 \) out.
 
 ::: {.warning}
 A cut is a set of rationals, not a rational. "\( \sigma < 2 \)" compares a set with a number and means nothing yet. Section 7.2 orders cuts, so that \( \sigma < D_2 \) acquires a meaning, and Section 7.5 shows that \( D_2 \) plays the part of the rational \( 2 \) among the cuts. Until then, every comparison in this chapter is between rationals, or between sets by inclusion.
@@ -177,7 +179,7 @@ Suppose \( p < q \) fails. By trichotomy (@prp-ordered-ring-rules (i)), \( q \le
 For the consequence, let \( q \notin \alpha \) and \( q' > q \), and suppose \( q' \in \alpha \). The first part, with \( q' \) in the role of \( p \), gives \( q' < q \), which together with \( q < q' \) contradicts (O1). So \( q' \notin \alpha \).
 :::
 
-So a cut and its complement split \( \nQ \) into a lower piece and an upper piece, every element of the lower below every element of the upper. In particular every rational outside a cut is an upper bound of it. Together with (C3), this gives the picture to keep in mind, and the chapter's second named move:
+So a cut and its complement split \( \nQ \) into a lower piece and an upper piece, every element of the lower below every element of the upper. In particular every rational outside a cut is an upper bound of it. Together with (C3), this gives the picture to keep in mind, and one of the chapter's named moves:
 
 *A cut is a downset with an open top.*
 
@@ -235,11 +237,11 @@ K \coloneqq \{ k \in \nN : a + k\varepsilon \notin \alpha \} .
 Then \( m \in K \), so \( K \) is a non-empty set of integers, and \( 0 \) is a lower bound of it. By @prp-integer-least-element, \( K \) has a least element \( k_0 \). Since \( a + 0 \cdot \varepsilon = a \in \alpha \), \( 0 \notin K \), so \( k_0 \ne 0 \) and \( k_0 > 0 \). By discreteness (@thm-integers-ordered-ring (c)), \( k_0 \ge 1 \). Put \( n \coloneqq k_0 - 1 \). Then \( n \ge 0 \) by (O3), so \( n \in \nN \) (@thm-integers-ordered-ring (b)). Since \( n < k_0 \) and \( k_0 \) is least in \( K \), \( n \notin K \), that is, \( a + n\varepsilon \in \alpha \). And \( a + (n + 1)\varepsilon = a + k_0 \varepsilon \notin \alpha \), since \( k_0 \in K \). This proves the lemma.
 :::
 
-Since \( n \ge 0 \) and \( \varepsilon > 0 \), the point \( p \coloneqq a + n\varepsilon \) found by the lemma satisfies \( p \ge a \). So the lemma hands over a pair \( p \in \alpha \), \( p + \varepsilon \notin \alpha \): a point inside and a point outside, exactly \( \varepsilon \) apart, with the inside point as high as we like above a given element. This is the chapter's first named move.
+Since \( n \ge 0 \) and \( \varepsilon > 0 \), the point \( p \coloneqq a + n\varepsilon \) found by the lemma satisfies \( p \ge a \). So the lemma hands over a pair \( p \in \alpha \), \( p + \varepsilon \notin \alpha \): a point inside and a point outside, exactly \( \varepsilon \) apart, with the inside point as high as we like above a given element. This is another of the chapter's named moves.
 
 *Walk up by \( \varepsilon \): from a point inside a cut, add \( \varepsilon \) until you leave; the last step inside and the first step outside are \( \varepsilon \) apart.*
 
-It drives the hardest "\( \supseteq \)" halves to come: the additive inverse in Section 7.3, the multiplicative inverse in Section 7.4, and the square of \( \sigma \) in Section 7.5. Note what it needs from \( \nQ \): the Archimedean property, to know that the walk leaves the cut at all, and least elements of sets of integers, to find the first step out.
+It drives the hardest "\( \supseteq \)" halves to come: the additive inverse in Section 7.3 and, in its multiplicative form of Section 7.4, the multiplicative inverse in Section 7.4 and the square of \( \sigma \) in Section 7.5. Note what it needs from \( \nQ \): the Archimedean property, to know that the walk leaves the cut at all, and least elements and discreteness of the integers, to find the first step out and the step before it.
 
 Here is one walk, through \( \sigma \) from \( a = 1 \) in steps of \( \varepsilon = 1/10 \). The rungs \( 1, 11/10, 12/10, \dots \) are positive, so a rung \( r \) lies in \( \sigma \) exactly when \( r^2 < 2 \). Now \( (14/10)^2 = 196/100 < 2 \), because \( 196 < 200 \), and the lower positive rungs have smaller squares (@prp-ordered-ring-rules (g)), so the rungs for \( k = 0, \dots, 4 \) are inside. But \( (15/10)^2 = 225/100 > 2 \). So the least \( k \) with \( 1 + k/10 \notin \sigma \) is \( k_0 = 5 \), the \( n \) of the lemma is \( 4 \), and the pair is \( 7/5 \in \sigma \), \( 3/2 \notin \sigma \).
 
@@ -355,7 +357,7 @@ Fatal errors (0 for the step): "\( q = \sqrt 2 \)" or any use of a square root o
 def-dedekind-cut (claim): sigma has the same upper bounds as A; 1 in A | inline (as in thm-rationals-gap-sqrt2 (b))
 def-dedekind-cut (claim): R_D is a set, carved out of P(Q) | ax-zf-fragment (Z5), (Z6), cited
 def-dedekind-cut (claim): negations of (C1)-(C3); not (p' > p) iff p' <= p | fd1:prp-bounded-quantifier-negation, fd1:prp-negated-implication, prp-ordered-ring-rules (i), cited
-def-rational-cut (claim): D_q is a cut: q - 1 < q; midpoint (r + q)/2 strictly between | Q ordered field, F3.2 (thm-rationals-ordered-field); midpoint paragraph of F3.2 §05 ("Between two rationals")
+def-rational-cut (claim): D_q is a cut: q - (q - 1) = 1 > 0 as 1 != 0 in Q, so q - 1 < q; midpoint (r + q)/2 strictly between | Q ordered field, F3.2 (thm-rationals-ordered-field); prp-ordered-ring-rules (a), (e), cited; midpoint paragraph of F3.2 §05 ("Between two rationals")
 exm-cut-sqrt2 (solution): 2^2 = 4 > 2, 1^2 < 2; p > 0 gives p^2 > 0, 2p + 2 > 2 | Q ordered field, F3.2; prp-ordered-ring-rules (e), cited
 exm-cut-sqrt2 (solution): 0 < h < 1 gives h^2 < h; (p + h)^2 < 2 | prp-ordered-ring-rules (c), (O3); inline; verify/ch07/exm-cut-sqrt2.py
 def-dedekind-cut (claim): Quick check: (a) equals D_2; (c) cubes monotone on non-negatives, p^3 - q^3 = (p - q)(p^2 + pq + q^2); q^3 <= 0 for q <= 0; the step h = d/(3p^2 + 3p + 5) | prp-ordered-ring-rules (c), (e), (g), (O4); inline; verify/ch07/def-dedekind-cut.py
@@ -370,6 +372,6 @@ lem-cut-step (example): the walk through sigma from 1 by 1/10: 196 < 200, 225 > 
 lem-cut-step (claim): Quick check after it: 141^2 = 19881, 142^2 = 20164 | inline arithmetic; verify/ch07/lem-cut-step.py
 exr-cuts-a1 (solution): D_q subset D_r for q <= r; p^2 > 0 for p != 0; p < p + 1 | (O2), (O3), prp-ordered-ring-rules (e); inline
 exr-cuts-b1 (solution): 3p < 2 iff p < 2/3 | prp-reciprocal-order (a), prp-ordered-ring-rules (c), cited
-exr-cuts-b2 (solution): 0 < h < 1, (p + h)^2 < 3; the remark on 2p + 2 at p = 0 | prp-ordered-ring-rules (c), (g); inline; verify/ch07/exr-cuts-b2.py
+exr-cuts-b2 (solution): 0 < d <= 3 < 4 <= 2p + 4 gives 0 < h < 1; (p + h)^2 < 3; the closing remark (any denominator > d and >= 2p + 1 works) | prp-ordered-ring-rules (c), (g); inline; verify/ch07/exr-cuts-b2.py
 exr-cuts-c1 (solution): q' = (q^2 + 2)/(2q) and its two identities | eq-newton-identities (thm-rationals-gap-sqrt2), cited; verify/ch07/exr-cuts-c1.py
 -->

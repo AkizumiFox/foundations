@@ -1,6 +1,7 @@
 """exr-two-roads-c1 (Section 7.6): the threshold (N eps > 1 and 2^n >= n + 1 give 2^{-n} < eps), and the
 rule a_n = a + (k_n - 1) 2^{-n} run on alpha = sigma from a = 1: a_n in alpha, a_n + 2^{-n} not in alpha,
-a_n < a_m + 2^{-m}, so |a_m - a_n| < 2^{-min(m, n)}."""
+a_n < a_m + 2^{-m}, so -2^{-m} < a_m - a_n < 2^{-n} and |a_m - a_n| < 2^{-min(m, n)}. Also run on
+alpha = {q < 1} from a = 0 (a_n = 1 - 2^{-n}), where the chain with m and n swapped fails."""
 from fractions import Fraction as F
 import math
 
@@ -29,5 +30,25 @@ for n in range(0, 16):
 for m in range(16):
     for n in range(16):
         assert seq[n] < seq[m] + F(1, 2 ** m)
+        assert -F(1, 2 ** m) < seq[m] - seq[n] < F(1, 2 ** n)
         assert abs(seq[m] - seq[n]) < F(1, 2 ** min(m, n))
+
+def run(member, a, count=16):
+    out = []
+    for n in range(count):
+        e = F(1, 2 ** n)
+        k = 0
+        while member(a + k * e):
+            k += 1
+        assert k >= 1
+        out.append(a + (k - 1) * e)
+    return out
+
+seq1 = run(lambda p: p < 1, F(0))
+assert all(seq1[n] == 1 - F(1, 2 ** n) for n in range(16))
+for m in range(16):
+    for n in range(16):
+        assert -F(1, 2 ** m) < seq1[m] - seq1[n] < F(1, 2 ** n)
+# the swapped chain -2^{-n} < a_m - a_n < 2^{-m} fails, e.g. at m = 5, n = 1
+assert not (seq1[5] - seq1[1] < F(1, 2 ** 5))
 print("ok")

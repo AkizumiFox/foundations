@@ -110,7 +110,7 @@ items:
   kind: exm
   file: 01-cuts.md
   line: 141
-  hash: c720eba808bd
+  hash: c99bd28ab384
   verdicts:
   - stage: S5a
     verdict: correct
@@ -132,7 +132,7 @@ items:
 - key: lem-cut-separation
   kind: lem
   file: 01-cuts.md
-  line: 168
+  line: 170
   hash: e0a1e303a7f3
   verdicts:
   - stage: S5a
@@ -154,7 +154,7 @@ items:
 - key: proof:lem-cut-separation
   kind: proof
   file: 01-cuts.md
-  line: 174
+  line: 176
   hash: d7483b1d1e44
   verdicts:
   - stage: S5a
@@ -177,7 +177,7 @@ items:
 - key: prp-rational-in-cut
   kind: prp
   file: 01-cuts.md
-  line: 188
+  line: 190
   hash: caedc0e3053f
   verdicts:
   - stage: S5a
@@ -199,7 +199,7 @@ items:
 - key: proof:prp-rational-in-cut
   kind: proof
   file: 01-cuts.md
-  line: 203
+  line: 205
   hash: ecc47df94444
   verdicts:
   - stage: S5a
@@ -222,7 +222,7 @@ items:
 - key: lem-cut-step
   kind: lem
   file: 01-cuts.md
-  line: 215
+  line: 217
   hash: c9f8a5c7f800
   verdicts:
   - stage: S5a
@@ -244,7 +244,7 @@ items:
 - key: proof:lem-cut-step
   kind: proof
   file: 01-cuts.md
-  line: 228
+  line: 230
   hash: 1e9c5ecef52e
   verdicts:
   - stage: S5a
@@ -270,7 +270,7 @@ items:
 - key: check:01-cuts:2
   kind: check
   file: 01-cuts.md
-  line: 246
+  line: 248
   hash: 7c45ae5e1de2
   verdicts:
   - stage: S5a
@@ -293,7 +293,7 @@ items:
 - key: exr-cuts-a1
   kind: exr
   file: 01-cuts.md
-  line: 260
+  line: 262
   hash: 98c74654bbf0
   verdicts:
   - stage: S5a
@@ -325,7 +325,7 @@ items:
 - key: exr-cuts-b1
   kind: exr
   file: 01-cuts.md
-  line: 280
+  line: 282
   hash: e2d96015df45
   verdicts:
   - stage: S5a
@@ -356,7 +356,7 @@ items:
 - key: exr-cuts-b2
   kind: exr
   file: 01-cuts.md
-  line: 290
+  line: 292
   hash: 995b7ac725ed
   verdicts:
   - stage: S5a
@@ -394,7 +394,7 @@ items:
 - key: exr-cuts-c1
   kind: exr
   file: 01-cuts.md
-  line: 317
+  line: 319
   hash: ec5abfd677b3
   verdicts:
   - stage: S5a
@@ -577,7 +577,7 @@ items:
   kind: check
   file: 02-order-and-completeness.md
   line: 107
-  hash: 8a53c036e4e5
+  hash: c3cb2e3253fa
   verdicts:
   - stage: S5a
     verdict: correct
@@ -699,7 +699,7 @@ items:
   kind: exr
   file: 02-order-and-completeness.md
   line: 192
-  hash: a7137befea9e
+  hash: 2d7e930551e0
   verdicts:
   - stage: S5a
     verdict: correct
@@ -915,7 +915,7 @@ items:
   kind: exm
   file: 03-addition.md
   line: 85
-  hash: f1555c3f10dd
+  hash: d97a52da72bb
   verdicts:
   - stage: S5a
     verdict: gap
@@ -946,7 +946,7 @@ items:
   kind: def
   file: 03-addition.md
   line: 119
-  hash: 6a3c88c62cfe
+  hash: 47366f957fde
   verdicts:
   - stage: S5a
     verdict: minor
@@ -968,7 +968,7 @@ items:
   kind: check
   file: 03-addition.md
   line: 159
-  hash: f8e4cad4ef89
+  hash: 144055a560b3
   verdicts:
   - stage: S5a
     verdict: correct
@@ -1084,7 +1084,7 @@ items:
   kind: exr
   file: 03-addition.md
   line: 265
-  hash: f4acd070b8b7
+  hash: 2d26508da74d
   verdicts:
   - stage: S5a
     verdict: correct
@@ -1206,7 +1206,7 @@ items:
   kind: exr
   file: 03-addition.md
   line: 358
-  hash: acd8e655aa38
+  hash: f1de24d3388b
   verdicts:
   - stage: S5a
     verdict: correct
@@ -1440,7 +1440,7 @@ items:
 - key: lem-cut-sign-rules
   kind: lem
   file: 04-multiplication.md
-  line: 170
+  line: 174
   hash: 4280219d9b59
   verdicts:
   - stage: S5a
@@ -1462,7 +1462,7 @@ items:
 - key: proof:lem-cut-sign-rules
   kind: proof
   file: 04-multiplication.md
-  line: 192
+  line: 196
   hash: 1c609183399e
   verdicts:
   - stage: S5a
@@ -1486,7 +1486,7 @@ items:
 - key: check:04-multiplication:2
   kind: check
   file: 04-multiplication.md
-  line: 210
+  line: 214
   hash: 314ce5e1afe9
   verdicts:
   - stage: S5a
@@ -1509,7 +1509,7 @@ items:
 - key: lem-cut-distributive
   kind: lem
   file: 04-multiplication.md
-  line: 220
+  line: 224
   hash: 685bc093fbdf
   verdicts:
   - stage: S5a
@@ -1530,7 +1530,7 @@ items:
 - key: proof:lem-cut-distributive
   kind: proof
   file: 04-multiplication.md
-  line: 232
+  line: 236
   hash: ebb57217cc69
   verdicts:
   - stage: S5a
@@ -1554,8 +1554,8 @@ items:
 - key: def-cut-reciprocal
   kind: def
   file: 04-multiplication.md
-  line: 277
-  hash: a868c20e4690
+  line: 281
+  hash: 9876bcb942bb
   verdicts:
   - stage: S5a
     verdict: correct
@@ -1576,7 +1576,7 @@ items:
 - key: thm-cut-reciprocal
   kind: thm
   file: 04-multiplication.md
-  line: 296
+  line: 300
   hash: 7bf2c33cc0cd
   verdicts:
   - stage: S5a
@@ -1597,7 +1597,7 @@ items:
 - key: proof:thm-cut-reciprocal
   kind: proof
   file: 04-multiplication.md
-  line: 314
+  line: 318
   hash: 9186f1f0d473
   verdicts:
   - stage: S5a
@@ -1623,7 +1623,7 @@ items:
 - key: thm-cuts-ordered-field
   kind: thm
   file: 04-multiplication.md
-  line: 348
+  line: 352
   hash: b9ec430c810e
   verdicts:
   - stage: S5a
@@ -1645,8 +1645,8 @@ items:
 - key: proof:thm-cuts-ordered-field
   kind: proof
   file: 04-multiplication.md
-  line: 354
-  hash: 356b0bf959cb
+  line: 358
+  hash: 10a9c4e47647
   verdicts:
   - stage: S5a
     verdict: minor
@@ -1671,7 +1671,7 @@ items:
 - key: exr-multiplication-a1
   kind: exr
   file: 04-multiplication.md
-  line: 382
+  line: 386
   hash: 9bec570d8005
   verdicts:
   - stage: S5a
@@ -1705,7 +1705,7 @@ items:
 - key: exr-multiplication-b1
   kind: exr
   file: 04-multiplication.md
-  line: 409
+  line: 413
   hash: 24b24f008e45
   verdicts:
   - stage: S5a
@@ -1736,7 +1736,7 @@ items:
 - key: exr-multiplication-b2
   kind: exr
   file: 04-multiplication.md
-  line: 429
+  line: 433
   hash: c04640510b18
   verdicts:
   - stage: S5a
@@ -1767,7 +1767,7 @@ items:
 - key: exr-multiplication-b3
   kind: exr
   file: 04-multiplication.md
-  line: 455
+  line: 459
   hash: e8f980f7957c
   verdicts:
   - stage: S5a
@@ -1795,7 +1795,7 @@ items:
 - key: exr-multiplication-c1
   kind: exr
   file: 04-multiplication.md
-  line: 471
+  line: 475
   hash: d999e04a4c24
   verdicts:
   - stage: S5a
@@ -1993,7 +1993,7 @@ items:
   kind: check
   file: 05-rationals-inside.md
   line: 129
-  hash: fc02a291ac14
+  hash: f168ef37fc38
   verdicts:
   - stage: S5a
     verdict: minor
@@ -2305,7 +2305,7 @@ items:
   kind: exr
   file: 05-rationals-inside.md
   line: 329
-  hash: 4230b3af56c4
+  hash: a46f75f7e40c
   verdicts:
   - stage: S5a
     verdict: minor
@@ -2478,7 +2478,7 @@ items:
   kind: exr
   file: 06-two-roads.md
   line: 154
-  hash: 0b16e67a0bda
+  hash: 67a0705bc321
   verdicts:
   - stage: S5a
     verdict: correct
@@ -2511,7 +2511,7 @@ items:
 - key: exr-two-roads-c1
   kind: exr
   file: 06-two-roads.md
-  line: 187
+  line: 181
   hash: 6afd7e788b51
   verdicts:
   - stage: S5a
@@ -2543,7 +2543,7 @@ items:
 - key: exr-two-roads-c2
   kind: exr
   file: 06-two-roads.md
-  line: 244
+  line: 238
   hash: '143823569663'
   verdicts:
   - stage: S5a
@@ -2579,7 +2579,7 @@ items:
 - key: exr-two-roads-r1
   kind: exr
   file: 06-two-roads.md
-  line: 290
+  line: 284
   hash: 13b80b62a0e9
   verdicts:
   - stage: S5a
@@ -2611,8 +2611,8 @@ items:
 - key: exr-two-roads-r2
   kind: exr
   file: 06-two-roads.md
-  line: 304
-  hash: d014e1076e73
+  line: 298
+  hash: 89addf9953bc
   verdicts:
   - stage: S5a
     verdict: correct
@@ -2645,7 +2645,7 @@ items:
 - key: exr-two-roads-r3
   kind: exr
   file: 06-two-roads.md
-  line: 322
+  line: 316
   hash: a56f9b6d6dc0
   verdicts:
   - stage: S5a
@@ -2679,7 +2679,7 @@ items:
 - key: exr-two-roads-r4
   kind: exr
   file: 06-two-roads.md
-  line: 338
+  line: 332
   hash: 251ab32e6f00
   verdicts:
   - stage: S5a
