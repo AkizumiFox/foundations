@@ -1,8 +1,9 @@
 % fitch-book.sty -- Fitch-style natural deduction for this book, on Selinger and Zach's fitch.sty.
 %
-% Loaded by latex/preamble.tex (the PDF) and by build/tikz.py's standalone template (the
-% website, where each derivation is compiled to an SVG like a TikZ picture; see
-% filters/tikz.lua). A derivation is a raw LaTeX block:
+% Loaded by latex/preamble.tex (the PDF). On the website the engine's filters/fitch.lua
+% reads the same block and draws it in HTML (its rule macros come from this file); a block
+% it cannot read falls back to build/tikz.py's standalone template, which loads this file
+% and compiles the derivation to an SVG. A derivation is a raw LaTeX block:
 %
 %   ```{=latex}
 %   \begin{center}
