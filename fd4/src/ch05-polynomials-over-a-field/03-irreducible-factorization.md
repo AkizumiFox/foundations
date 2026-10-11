@@ -23,7 +23,7 @@ In words: the first clause rules out \( 0 \) and the non-zero constants; the sec
 - Every polynomial of degree \( 1 \) is irreducible. If \( p = gh \) with \( \deg p = 1 \), the degrees of \( g \) and \( h \) are natural numbers adding up to \( 1 \), so one of them is \( 0 \).
 - \( x^2 + x = x(x + 1) \) and \( x^3 = x \cdot x^2 \) are reducible over every field: each is a product of two factors of degree at least \( 1 \).
 - \( x^2 + 1 \) is reducible over \( \nF_2 \), where \( (x + 1)^2 = x^2 + 2x + 1 = x^2 + 1 \) because \( 2 = 0 \). Over \( \nQ \) it is irreducible, as the next proposition shows. The polynomial is the same; the field changed, and with it the answer. This is why the definition says "over \( F \)".
-- If \( p \) is irreducible and \( a \in F \) is non-zero, then \( ap \) is irreducible. A factorization \( ap = gh \) gives \( p = (a^{-1}g)h \), so \( a^{-1}g \) or \( h \) is a constant, and then so is \( g \) or \( h \). Associates of irreducibles are irreducible.
+- If \( p \) is irreducible and \( a \in F \) is non-zero, then \( ap \) is irreducible. First, \( \deg(ap) = \deg p \ge 1 \) (@thm-degree-of-product (b)), and a factorization \( ap = gh \) gives \( p = (a^{-1}g)h \), so \( a^{-1}g \) or \( h \) is a constant, and then so is \( g \) or \( h \). Associates of irreducibles are irreducible.
 
 ::: {.second-reading title="The degenerate cases: constants"}
 The constants are kept out by the first clause, and each for a reason. Without it, the polynomial \( 0 \) would pass the second clause, since every factorization \( 0 = gh \) has \( g = 0 \) or \( h = 0 \) (@cor-polynomial-no-zero-divisors), a constant. But every polynomial divides \( 0 \) (@prp-polynomial-divisibility-rules (a)), so \( 0 \) behaves like the integer \( 0 \), not like a prime. A non-zero constant \( a \) is a unit: it divides everything, and every factorization \( a = gh \) has two constant factors, since the degrees add up to \( 0 \). If units counted as irreducible, every factorization could be padded with as many of them as we like, just as \( (1, 2, 2, 3, 5) \) would pad the factorization of \( 60 \) if \( 1 \) were prime. The clause \( \deg p \ge 1 \) plays the part of the integer condition \( p \ge 2 \).
@@ -51,11 +51,11 @@ Let \( F \) be a field and \( p \in F[x] \).
 For \( x^2 + 1 \) over \( \nQ \): for every \( c \in \nQ \), \( c^2 \ge 0 \) (@fd3:prp-ordered-ring-rules (e), with \( 0^2 = 0 \)), so \( c^2 + 1 \ge 1 > 0 \) by (b) and (e) of the same proposition. There is no rational root, and (b) makes \( x^2 + 1 \) irreducible over \( \nQ \). The same lines work in every ordered field, so \( x^2 + 1 \) is irreducible over \( \nR \) as well.
 
 ::: {.warning}
-**"No root" does not mean "irreducible" in degree \( 4 \) and above.** For \( c \in \nQ \), \( c^4 = (c^2)^2 \ge 0 \), so \( c^4 + 4 \ge 4 > 0 \): the polynomial \( x^4 + 4 \) has no rational root. Yet
+**"No root" does not mean "irreducible" in degree \( 4 \) and above.** For \( c \in \nQ \), \( c^4 = (c^2)^2 \ge 0 \), so \( c^4 + 4 \ge 4 > 0 \) (@fd3:prp-ordered-ring-rules (h)): the polynomial \( x^4 + 4 \) has no rational root. Yet
 \[
 x^4 + 4 = (x^2 + 2x + 2)(x^2 - 2x + 2) ,
 \]
-as expanding the right side shows: the terms in \( x^3 \), \( x^2 \) and \( x \) cancel. Proposition @prp-irreducible-low-degree (b) is about degrees \( 2 \) and \( 3 \) only, where every splitting must contain a factor of degree \( 1 \). In degree \( 4 \) a splitting may be \( 2 + 2 \), with no factor of degree \( 1 \) and so no root.
+as expanding the right side shows: the terms in \( x^3 \), \( x^2 \) and \( x \) cancel. Proposition @prp-irreducible-low-degree (b) is about degrees \( 2 \) and \( 3 \) only, where every splitting must contain a factor of degree \( 1 \); in degree \( 4 \) a splitting may be \( 2 + 2 \), with no factor of degree \( 1 \) and so no root.
 :::
 
 ::: {.check}
@@ -63,7 +63,7 @@ Is \( 2x^2 + 4 \) irreducible over \( \nQ \)? Is \( x^2 + 2 \) irreducible over 
 :::
 
 ::: {.solution}
-Over \( \nQ \), yes: \( 2x^2 + 4 = 2(x^2 + 2) \), and \( x^2 + 2 \) has no rational root (\( c^2 + 2 \ge 2 > 0 \)), so it is irreducible by @prp-irreducible-low-degree (b), and so is its associate \( 2x^2 + 4 \). The factor \( 2 \) is a constant, so \( 2 \cdot (x^2 + 2) \) is not a splitting into non-constants. Over \( \nF_3 \), no: \( 1^2 + 2 = 3 = 0 \), so \( 1 \) is a root, and indeed \( x^2 + 2 = x^2 - 1 = (x - 1)(x + 1) \) in \( \nF_3 \).
+Over \( \nQ \), yes: \( 2x^2 + 4 = 2(x^2 + 2) \), and \( x^2 + 2 \) has no rational root (\( c^2 + 2 \ge 2 > 0 \), @fd3:prp-ordered-ring-rules (e), (h)), so it is irreducible by @prp-irreducible-low-degree (b), and so is its associate \( 2x^2 + 4 \). The factor \( 2 \) is a constant, so \( 2 \cdot (x^2 + 2) \) is not a splitting into non-constants. Over \( \nF_3 \), no: \( 1^2 + 2 = 3 = 0 \), so \( 1 \) is a root, and indeed \( x^2 + 2 = x^2 - 1 = (x - 1)(x + 1) \) in \( \nF_3 \).
 :::
 
 ## Euclid's lemma for polynomials
@@ -164,7 +164,7 @@ Let \( c \) be the leading coefficient of \( f \), and let
 \[
 D \coloneqq \{ \deg d : d \in F[x] \text{ monic}, \ \deg d \ge 1, \ d \mid f \} \subseteq \nN .
 \]
-The monic associate \( c^{-1}f \) has degree \( \deg f \ge 1 \) and divides \( f = c \cdot (c^{-1}f) \), so \( D \) is non-empty. By @fd2:thm-well-ordering (on \( \nN = \omega \), @fd3:cor-omega-identification), \( D \) has a least element \( n_0 \); let \( p \) be a monic divisor of \( f \) of degree \( n_0 \). Then \( \deg p = n_0 \ge 1 \).
+The monic associate \( c^{-1}f \) has degree \( \deg f \ge 1 \) and divides \( f = c \cdot (c^{-1}f) \), so \( D \) is non-empty. By @fd2:thm-well-ordering (on \( \nN = \omega \) it is @fd3:thm-omega-well-ordering), \( D \) has a least element \( n_0 \); let \( p \) be a monic divisor of \( f \) of degree \( n_0 \). Then \( \deg p = n_0 \ge 1 \).
 
 Suppose \( p = gh \) with \( \deg g \ge 1 \) and \( \deg h \ge 1 \). Then \( \deg g = n_0 - \deg h < n_0 \) (@thm-degree-of-product (b)). Let \( g_1 \) be the monic associate of \( g \), so \( g = \operatorname{lc}(g)\, g_1 \) and \( \deg g_1 = \deg g \). Then \( g_1 \mid g \), \( g \mid p \) and \( p \mid f \), so \( g_1 \mid f \) (@prp-polynomial-divisibility-rules (b)), and \( \deg g_1 \in D \) is smaller than \( n_0 \), against the choice of \( n_0 \). So every factorization \( p = gh \) has a constant factor, and \( p \) is irreducible.
 :::
@@ -180,7 +180,7 @@ This is @fd3:lem-least-divisor-prime with degree in place of size; the twin is c
 2. If \( l \ge 1 \) and \( j \in \{1, \dots, l\} \), let \( (q'_1, \dots, q'_{l-1}) \) be the list with the entry \( j \) removed: \( q'_t \coloneqq q_t \) for \( t < j \) and \( q'_t \coloneqq q_{t+1} \) for \( j \le t \le l - 1 \). Then \( \prod_{t=1}^{l} q_t = \bigl(\prod_{t=1}^{l-1} q'_t\bigr) q_j \). In particular every entry of a list divides its product.
 :::
 
-The names (L1), (L2) are used in this section and the next only.
+The names (L1), (L2) are used throughout this chapter.
 
 ::: {.second-reading title="Proofs of (L1) and (L2)"}
 *(L1).* Induction on \( l \). For \( l = 0 \) the product is \( 1 \), which is monic of degree \( 0 \), the empty sum. If the claim holds for \( l \), then \( \prod_{j=1}^{l+1} q_j = \bigl(\prod_{j=1}^{l} q_j\bigr) q_{l+1} \) is a product of two non-zero polynomials, so it is non-zero with degree \( \sum_{j=1}^{l} \deg q_j + \deg q_{l+1} \) and leading coefficient the product of the two leading coefficients (@thm-degree-of-product (b)); that is \( 1 \cdot 1 = 1 \) when both factors are monic.
@@ -219,7 +219,7 @@ In words: every polynomial of positive degree is its leading coefficient times a
 :::
 
 ::: {.proof}
-*Existence.* We prove, by @fd1:thm-strong-induction on \( n \in \nN \) (read on \( \omega \), @fd3:cor-omega-identification), the statement \( E(n) \): "every **monic** \( g \in F[x] \) of degree \( n \ge 1 \) is a product \( p_1 \cdots p_k \) of a list of monic irreducibles, \( k \ge 1 \)". For \( n = 0 \) there is nothing to prove. Let \( n \ge 1 \), assume \( E(m) \) for every \( m < n \), and let \( g \) be monic of degree \( n \). By @lem-polynomial-irreducible-factor, \( g = pu \) with \( p \) monic and irreducible, and \( u \in F[x] \). Comparing leading coefficients (@thm-degree-of-product (b)), \( 1 = 1 \cdot \operatorname{lc}(u) \), so \( u \) is monic, and \( \deg u = n - \deg p < n \). If \( \deg u = 0 \), then \( u = 1 \) and \( g = p \) is a list of length \( 1 \). Otherwise \( E(\deg u) \) gives \( u = p_1 \cdots p_r \) with monic irreducibles \( p_i \), and the list \( (p_1, \dots, p_r, p) \) has, by the recursion, the product \( \bigl(\prod_{i=1}^{r} p_i\bigr) p = up = g \). This proves \( E(n) \).
+*Existence.* We prove, by @fd1:thm-strong-induction on \( n \in \nN \) (read on \( \omega \): its proof uses only @fd1:ax-induction and @fd3:thm-omega-order (a), (b), (d), as in Section 3.1), the statement \( E(n) \): "every **monic** \( g \in F[x] \) of degree \( n \ge 1 \) is a product \( p_1 \cdots p_k \) of a list of monic irreducibles, \( k \ge 1 \)". For \( n = 0 \) there is nothing to prove. Let \( n \ge 1 \), assume \( E(m) \) for every \( m < n \), and let \( g \) be monic of degree \( n \). By @lem-polynomial-irreducible-factor, \( g = pu \) with \( p \) monic and irreducible, and \( u \in F[x] \). Comparing leading coefficients (@thm-degree-of-product (b)), \( 1 = 1 \cdot \operatorname{lc}(u) \), so \( u \) is monic, and \( \deg u = n - \deg p < n \). If \( \deg u = 0 \), then \( u = 1 \) and \( g = p \) is a list of length \( 1 \). Otherwise \( E(\deg u) \) gives \( u = p_1 \cdots p_r \) with monic irreducibles \( p_i \), and the list \( (p_1, \dots, p_r, p) \) has, by the recursion, the product \( \bigl(\prod_{i=1}^{r} p_i\bigr) p = up = g \). This proves \( E(n) \).
 
 Now let \( f \) be as in the theorem. Its monic associate \( c^{-1}f \) has degree \( \deg f \ge 1 \), so \( c^{-1}f = p_1 \cdots p_k \) by \( E(\deg f) \), and \( f = c \, p_1 \cdots p_k \).
 
@@ -277,7 +277,7 @@ Over \( \nF_2 \), its values at \( 0 \) and \( 1 \) are \( 1 \) and \( 3 = 1 \):
 
 ## Rational roots
 
-Over \( \nQ \), the low-degree test of @prp-irreducible-low-degree asks for rational roots, and there are infinitely many rationals to try. For a polynomial with integer coefficients the candidates can be listed. The proof is about integers, not polynomials: here, unlike elsewhere in this chapter, the integer results of *Number Systems: From \(\nN\) to \(\nR\)*, Chapter 3 are needed in the proof and not only compared with.
+Over \( \nQ \), the low-degree test of @prp-irreducible-low-degree asks for rational roots, and there are infinitely many rationals to try. For a polynomial with integer coefficients and non-zero constant term the candidates can be listed (a zero constant term is dealt with by factoring out a power of \( x \), below). The proof is about integers, not polynomials: here, unlike in the rest of this section, integer results of *Number Systems: From \(\nN\) to \(\nR\)*, Chapter 3 (Euclid's lemma, lowest terms) are steps of the proof and not only compared with.
 
 ::: {#thm-rational-root-test}
 [Rational Root Test]
@@ -303,7 +303,7 @@ and \( u \mid a_0 v^n \), \( v \mid a_n u^n \) in \( \nZ \).
 We show \( u \mid a_0 v^{n-j} \) for every \( j \le n \), by @fd1:ax-induction on \( j \). The case \( j = 0 \) is the line above. If \( u \mid a_0 v^{n-j} \) with \( j < n \), then \( a_0 v^{n-j} = v \cdot (a_0 v^{n-j-1}) \), and \( \gcd(u, v) = 1 \), so @fd3:thm-euclid-lemma-integers gives \( u \mid a_0 v^{n-(j+1)} \). At \( j = n \): \( u \mid a_0 \). The same induction with the roles of \( u \) and \( v \) exchanged (and \( \gcd(v, u) = \gcd(u, v) = 1 \)) turns \( v \mid a_n u^n \) into \( v \mid a_n \).
 :::
 
-Every rational root has such a form: by @fd3:prp-rationals-lowest-terms, each \( r \in \nQ \) is \( u/v \) with \( u \in \nZ \), \( v \in \nZ_{>0} \) and \( \gcd(u, v) = 1 \). So the rational roots of \( f \) are among the finitely many fractions \( u/v \) with \( u \mid a_0 \) and \( v \) a positive divisor of \( a_n \). The test lists candidates; it does not say which of them are roots.
+Every rational root has such a form: by @fd3:prp-rationals-lowest-terms, each \( r \in \nQ \) is \( u/v \) with \( u \in \nZ \), \( v \in \nZ_{>0} \) and \( \gcd(u, v) = 1 \). So, when \( a_0 \ne 0 \), the rational roots of \( f \) are among the finitely many fractions \( u/v \) with \( u \mid a_0 \) and \( v \) a positive divisor of \( a_n \): a divisor \( u \) of \( a_0 \ne 0 \) has \( -|a_0| \le u \le |a_0| \), by @fd3:prp-divisibility-rules-integers (d), (e), and likewise \( 1 \le v \le |a_n| \). If \( a_0 = 0 \), then \( 0 \) is a root; let \( k \) be the least index with \( a_k \ne 0 \) (so \( k \le n \)). Then \( f = x^k g \) with \( g \coloneqq \sum_{i=0}^{n-k} a_{i+k} x^i \), which has integer coefficients and constant term \( a_k \ne 0 \), and the non-zero rational roots of \( f \) are those of \( g \), since \( f(r) = r^k g(r) \) (@thm-evaluation-respects-operations) and \( \nQ \) has no zero divisors; apply the test to \( g \) when \( \deg g \ge 1 \), and when \( \deg g = 0 \), \( g \) has no root. The test lists candidates; it does not say which of them are roots.
 
 ::: {#exm-cubic-no-rational-root}
 [A Cubic with No Rational Root]
@@ -381,7 +381,7 @@ Determine whether each polynomial is irreducible over the given field. Justify y
 :::
 
 ::: {.solution}
-(a) Over \( \nQ \): irreducible, since \( c^2 + 2 \ge 2 > 0 \) for \( c \in \nQ \), so there is no root, and the degree is \( 2 \) (@prp-irreducible-low-degree (b)). Over \( \nF_2 \): \( 2 = 0 \), so the polynomial is \( x^2 = x \cdot x \), reducible. Over \( \nF_3 \): \( 2 = -1 \), so it is \( x^2 - 1 = (x - 1)(x + 1) \), reducible.
+(a) Over \( \nQ \): irreducible, since \( c^2 + 2 \ge 2 > 0 \) for \( c \in \nQ \) (@fd3:prp-ordered-ring-rules (e), (h)), so there is no root, and the degree is \( 2 \) (@prp-irreducible-low-degree (b)). Over \( \nF_2 \): \( 2 = 0 \), so the polynomial is \( x^2 = x \cdot x \), reducible. Over \( \nF_3 \): \( 2 = -1 \), so it is \( x^2 - 1 = (x - 1)(x + 1) \), reducible.
 
 (b) Over \( \nF_2 \): the values at \( 0 \) and \( 1 \) are \( 1 \) and \( 3 = 1 \); no root, degree \( 3 \), irreducible. Over \( \nF_3 \): the value at \( 1 \) is \( 3 = 0 \), so it is reducible (@prp-irreducible-low-degree (a)); indeed \( x^3 + x + 1 = (x - 1)(x^2 + x + 2) \) in \( \nF_3 \).
 
@@ -415,7 +415,7 @@ The move is **least degree, then divide**: in a set closed under the right opera
 
 Completion of the blank: \( r = f - qd \), and \( f, d \in J \), so \( r \in J \) because \( J \) is an ideal (it absorbs the multiple \( qd \) and is closed under differences). A non-zero \( r \) would be a non-zero element of \( J \) of degree less than \( \deg d \); its monic associate would lie in \( J \) too and have the same degree, against the choice of \( d \). So \( r = 0 \), and \( f = qd \in \langle d \rangle \). Conversely every multiple of \( d \) lies in \( J \). This is the argument of @thm-polynomial-ideals-principal, run on \( J \).
 
-For the end: \( d \mid x^2 - 2 \) because \( x^2 - 2 \in J = \langle d \rangle \). So \( \deg d \le 2 \) (@prp-polynomial-divisibility-rules (d)), and with \( \deg d \ge 2 \), \( x^2 - 2 = d u \) with \( u \) a constant; both being monic, \( u = 1 \). In the language of this section, \( x^2 - 2 \) is irreducible over \( \nQ \), and every rational polynomial vanishing at \( s \) is a multiple of it.
+For the end: \( d \mid x^2 - 2 \) because \( x^2 - 2 \in J = \langle d \rangle \). So \( \deg d \le 2 \) (@prp-polynomial-divisibility-rules (d)), and with \( \deg d \ge 2 \), \( x^2 - 2 = d u \) with \( u \) a constant; both being monic, \( u = 1 \). In the language of this section, \( x^2 - 2 \) is irreducible over \( \nQ \): it has degree \( 2 \) and no rational root, since a root \( c \) would satisfy \( c^2 = 2 \), against @fd3:thm-no-rational-square-two (@prp-irreducible-low-degree (b)). Every rational polynomial vanishing at \( s \) is a multiple of it.
 :::
 
 ::: {#exr-irreducible-factorization-b3}
@@ -480,7 +480,7 @@ Lines (1) and (2) are correct. The failing line is (3). @prp-irreducible-low-deg
 with \( x^4 + 1 \) gives \( c = -a \), \( b + d - a^2 = 0 \), \( a(d - b) = 0 \) and \( bd = 1 \).
 
 - If \( a = 0 \): \( d = -b \) and \( -b^2 = 1 \), impossible since \( b^2 \ge 0 > -1 \) (@fd3:prp-ordered-ring-rules (e)).
-- If \( d = b \): \( b^2 = 1 \), so \( b = \pm 1 \), and \( a^2 = 2b = \pm 2 \). Now \( a^2 = 2 \) is impossible by @fd3:thm-no-rational-square-two, and \( a^2 = -2 < 0 \) is impossible since squares are non-negative.
+- If \( d = b \): \( b^2 = 1 \), so \( b = \pm 1 \) (@cor-field-squares-equal), and \( a^2 = 2b = \pm 2 \). Now \( a^2 = 2 \) is impossible by @fd3:thm-no-rational-square-two, and \( a^2 = -2 < 0 \) is impossible since squares are non-negative.
 
 So no splitting exists, and \( x^4 + 1 \) is irreducible over \( \nQ \).
 :::
@@ -511,10 +511,10 @@ For (a): by (L1) the product has degree at least \( 1 \) when \( k \ge 1 \), so 
 
 *(b)* A monic polynomial of degree \( n \) has \( n \) lower coefficients \( a_0, \dots, a_{n-1} \in \nF_p \), and by @def-polynomial (equality coefficientwise) the map sending it to \( (a_0, \dots, a_{n-1}) \) is a bijection onto the set \( T_n \) of such tuples; its inverse puts \( 1 \) in position \( n \) and zeros above. We show \( \card{T_n} = p^n \) by @fd1:ax-induction on \( n \). \( T_0 \) has one element, the empty tuple, and \( p^0 = 1 \). The tuples of length \( n + 1 \) split by their last entry into \( p \) pairwise disjoint sets, one for each element of \( \nF_p \), which has \( p \) elements (@def-field-fp); each is in bijection with \( T_n \) (drop the last entry). Applying @fd2:prp-disjoint-union-count \( p - 1 \) times (an induction on the number of pieces), \( \card{T_{n+1}} = p \cdot p^n = p^{n+1} \).
 
-So for each \( N \in \nN \), the monic polynomials of degree at most \( N \) form a finite set: a union of the finitely many finite sets for \( n = 0, \dots, N \), pairwise disjoint, again by @fd2:prp-disjoint-union-count. Suppose every monic irreducible of \( \nF_p[x] \) had degree at most \( N \). Then they would form a subset of a finite set, hence a finite set (@fd2:prp-subset-finite), and a bijection \( \{1, \dots, k\} \to \) that set (@fd2:def-finite) would be a list containing every monic irreducible, against (a). So for every \( N \) there is a monic irreducible of degree greater than \( N \).
+So for each \( M \in \nN \), the monic polynomials of degree at most \( M \) form a finite set: a union of the finitely many finite sets for \( n = 0, \dots, M \), pairwise disjoint, again by @fd2:prp-disjoint-union-count. Suppose every monic irreducible of \( \nF_p[x] \) had degree at most \( M \). Then they would form a subset of a finite set, hence a finite set (@fd2:prp-subset-finite), and a bijection \( \{1, \dots, k\} \to \) that set (@fd2:def-finite) would be a list containing every monic irreducible, against (a). So for every \( M \) there is a monic irreducible of degree greater than \( M \).
 
 **Marking scheme.** (10 points)
-- 2: (a) defines \( N = p_1 \cdots p_k + 1 \) and shows \( \deg N \ge 1 \), with the case \( k = 0 \) handled.
+- 2: (a) builds a polynomial \( N \) of degree \( \ge 1 \) that is \( 1 \) more than a multiple of \( p_1 \cdots p_k \) (e.g. \( p_1 \cdots p_k + 1 \), or \( x \, p_1 \cdots p_k + 1 \)), and shows \( \deg N \ge 1 \) for every \( k \), \( k = 0 \) included (or treats \( k = 0 \) separately).
 - 3: (a) takes a monic irreducible factor \( q \) of \( N \) and shows \( q \) is no \( p_i \), since it would divide \( 1 \).
 - 3: (b) counts the monic polynomials of degree \( n \) through their coefficient tuples, with an induction or a cited counting result.
 - 2: (b) concludes by contradiction with (a): a bound on the degrees would make the irreducibles a finite set, hence a list.
@@ -538,7 +538,7 @@ Let \( f, g \in F[x] \) be monic, \( d \coloneqq \gcd(f, g) \), and write \( f =
 
 *(b)* Comparing leading coefficients in \( f = d f_1 \) (@thm-degree-of-product (b)) gives \( \operatorname{lc}(f_1) = 1 \); likewise \( g_1 \) is monic, so \( L \) is monic (L1). It is a common multiple: \( L = f g_1 = g f_1 \). Let \( h \) be a common multiple, \( h = fk = g m \) with \( k, m \in F[x] \). Then \( d f_1 k = d g_1 m \), and canceling \( d \), \( f_1 k = g_1 m \). So \( g_1 \mid f_1 k \), and \( \gcd(g_1, f_1) = 1 \) by (a), hence \( g_1 \mid k \) by @thm-polynomial-euclid-lemma; say \( k = g_1 t \). Then \( h = d f_1 g_1 t = L t \), and \( L \mid h \). Finally \( d \cdot L = (d f_1)(d g_1) = fg \).
 
-*(c)* \( \gcd(2x, 2x) = x \), the monic associate (@thm-polynomial-bezout (e)), and \( x \) is monic, divides \( 2x \), and divides every multiple of \( 2x \) (@prp-polynomial-divisibility-rules (b)); and it is the only monic polynomial with these properties, by mutual divisibility (@prp-polynomial-divisibility-rules (f)). But \( x \cdot x = x^2 \ne 4x^2 = fg \), since \( 1 \ne 4 \) in \( \nQ \). The identity of (b) needs \( f \) and \( g \) monic: in general \( d \cdot L \) equals \( fg \) divided by the product of the leading coefficients.
+*(c)* \( \gcd(2x, 2x) = x \) by @def-polynomial-gcd: \( x \) is monic and divides \( 2x \), and every common divisor \( h \) of \( 2x \) and \( 2x \) divides \( 2^{-1}(2x) = x \) (@prp-polynomial-divisibility-rules (b)). Next, \( x \) is monic and a common multiple of \( f = g = 2x \), since \( 2^{-1}(2x) = x \). It divides every common multiple \( h \): \( x \mid 2x \) and \( 2x \mid h \), so \( x \mid h \) by @prp-polynomial-divisibility-rules (b). Any other monic \( L' \) with these two properties satisfies \( x \mid L' \) and \( L' \mid x \), so \( L' = x \) by @prp-polynomial-divisibility-rules (f). But \( x \cdot x = x^2 \ne 4x^2 = fg \), since \( 1 \ne 4 \) in \( \nQ \). The identity of (b) needs \( f \) and \( g \) monic. For non-zero \( f \), \( g \), the monic associates \( \operatorname{lc}(f)^{-1} f \) and \( \operatorname{lc}(g)^{-1} g \) have the same common divisors and the same common multiples as \( f \) and \( g \), since each divides the other; so (b) applied to them gives \( d \cdot L = \operatorname{lc}(f)^{-1} \operatorname{lc}(g)^{-1} fg \).
 :::
 
 <!-- dependency ledger
@@ -546,9 +546,9 @@ def-irreducible-over-field (claim): reducible iff p = gh with both degrees >= 1,
 def-irreducible-over-field (example): (x + 1)^2 = x^2 + 2x + 1 = x^2 + 1 in F_2 | ring arithmetic, 2 = 0 in F_2 (def-field-fp); verify/ch05/exm-factor-x4-minus-one-fields.py
 def-irreducible-over-field (claim): (fold) padding factorizations with units; (1, 2, 2, 3, 5) for 60 | comparison with fd3 F3.5 Section 3.3 (prose only), nothing depends on it
 prp-irreducible-low-degree (proof): two natural numbers >= 1 with sum 2 or 3, one of them is 1 | arithmetic of N (fd3 cor-omega-identification), used silently
-prp-irreducible-low-degree (claim): c^2 + 1 >= 1 > 0 in an ordered field; Q and R are ordered fields | fd3:prp-ordered-ring-rules (b), (e) (cited); Q ordered field fd3:thm-rationals-ordered-field, R by fd3:thm-reals-complete-ordered-field, named in prose only
-prp-irreducible-low-degree (claim): (warning) c^4 + 4 >= 4 > 0; (x^2 + 2x + 2)(x^2 - 2x + 2) = x^4 + 4 | fd3:prp-ordered-ring-rules (e) (c^4 = (c^2)^2), expansion; verify/ch05/prp-irreducible-low-degree.py
-prp-irreducible-low-degree (claim): (check) 2x^2 + 4 = 2(x^2 + 2); 1 is a root of x^2 + 2 in F_3; x^2 - 1 = (x - 1)(x + 1) | ring arithmetic in F_3 (def-field-fp); verify/ch05/prp-irreducible-low-degree.py
+prp-irreducible-low-degree (claim): c^2 + 1 >= 1 > 0 in an ordered field; Q and R are ordered fields | fd3:prp-ordered-ring-rules (b), (e) (cited); Q ordered field fd3:thm-rationals-ordered-field, R by fd3:thm-reals-complete-ordered-field; used without @ref in prose
+prp-irreducible-low-degree (claim): (warning) c^4 + 4 >= 4 > 0; (x^2 + 2x + 2)(x^2 - 2x + 2) = x^4 + 4 | fd3:prp-ordered-ring-rules (e) (c^4 = (c^2)^2), (h) (4 * 1 > 0) (cited), expansion; verify/ch05/prp-irreducible-low-degree.py
+prp-irreducible-low-degree (claim): (check) 2x^2 + 4 = 2(x^2 + 2); c^2 + 2 >= 2 > 0; 1 is a root of x^2 + 2 in F_3; x^2 - 1 = (x - 1)(x + 1) | fd3:prp-ordered-ring-rules (e), (h) (cited); ring arithmetic in F_3 (def-field-fp); verify/ch05/prp-irreducible-low-degree.py
 thm-polynomial-euclid-lemma (claim): (aftermath) gcd(x^2, x) = x | def-polynomial-gcd: x is a monic common divisor, every common divisor divides x; one line, inline
 cor-irreducible-divides-product (claim): products of lists in F[x] | fd2:def-sum-product used as a pattern through lem-finite-sums-and-powers (a) with R = F[x] (cited); blueprint ledger line (sums, products, powers)
 cor-irreducible-divides-product (proof): a monic constant is 1 | def-degree (monic: lc = 1), used silently
@@ -568,11 +568,15 @@ thm-rational-root-test (proof): gcd(v, u) = gcd(u, v) | fd3:def-integer-gcd (sym
 exm-cubic-no-rational-root (example): divisors of -2 are +-1, +-2; positive divisors of 3 are 1, 3; the eight values | fd3:prp-divisibility-rules-integers (e) (cited); arithmetic in Q; verify/ch05/exm-cubic-no-rational-root.py
 exm-cubic-no-rational-root (claim): (check) candidates and roots of 2x^2 + 3x - 2; (2x - 1)(x + 2) | arithmetic in Q; verify/ch05/exm-cubic-no-rational-root.py
 exr-irreducible-factorization-a1 (solution): the run on (x - 1, ..., x - 4) in F_5; sigma(i) = 5 - i | the proof of thm-polynomial-unique-factorization; x - i divides x - j in F_5 only for i = j (cor-irreducible-divides-product (d)); verify/ch05/exr-irreducible-factorization-a1.py
-exr-irreducible-factorization-b1 (solution): values over F_2, F_3; x^3 + x + 1 = (x - 1)(x^2 + x + 2) in F_3; c^2 + 2 >= 2 | arithmetic mod p; fd3:prp-ordered-ring-rules (e); verify/ch05/exr-irreducible-factorization-b1.py
+exr-irreducible-factorization-b1 (solution): values over F_2, F_3; x^3 + x + 1 = (x - 1)(x^2 + x + 2) in F_3; c^2 + 2 >= 2 > 0 | arithmetic mod p; fd3:prp-ordered-ring-rules (e), (h) (cited); verify/ch05/exr-irreducible-factorization-b1.py
 exr-irreducible-factorization-b2 (claim): (problem text) s = sqrt 2 in R; Q[x] inside R[x]; evaluation in R | fd3:prp-cof-square-roots (cited), R complete ordered field fd3:thm-reals-complete-ordered-field; blueprint ledger line (Q in R in C)
 exr-irreducible-factorization-b2 (solution): J is an ideal of Q[x] (absorbs multiples, closed under differences) | fd3:def-ideal-commutative-ring with thm-evaluation-respects-operations, given in the problem; nothing in the text rests on this exercise
 exr-irreducible-factorization-b3 (solution): 14 polynomials; f(1) = sum of coefficients; the list | thm-evaluation-respects-operations; counting by inspection; verify/ch05/exr-irreducible-factorization-b3.py
-exr-irreducible-factorization-c2 (solution): coefficients of (x^2 + ax + b)(x^2 + cx + d); case analysis | expansion; fd3:thm-no-rational-square-two, fd3:prp-ordered-ring-rules (e) (cited); verify/ch05/exr-irreducible-factorization-c2.py
+exr-irreducible-factorization-c2 (solution): coefficients of (x^2 + ax + b)(x^2 + cx + d); case analysis | expansion; cor-field-squares-equal, fd3:thm-no-rational-square-two, fd3:prp-ordered-ring-rules (e) (cited); verify/ch05/exr-irreducible-factorization-c2.py
 exr-irreducible-factorization-c3 (solution): F_p has p elements; tuples of length n + 1 split by last entry; finite union of finite sets is finite; subset of a finite set is finite | def-field-fp, fd2:prp-disjoint-union-count, fd2:prp-subset-finite, fd2:def-finite (cited); verify/ch05/exr-irreducible-factorization-c3.py
 exr-irreducible-factorization-c4 (solution): lc(f) = lc(d) lc(f_1) gives f_1 monic | thm-degree-of-product (b) (cited)
+exr-irreducible-factorization-c4 (solution): (c) gcd(2x, 2x) = x; x is the monic common multiple dividing every common multiple; d L = lc(f)^{-1} lc(g)^{-1} fg via monic associates | def-polynomial-gcd, prp-polynomial-divisibility-rules (b), (f) (cited)
+def-irreducible-over-field (example): deg(ap) = deg p for a != 0 | thm-degree-of-product (b) (cited)
+thm-rational-root-test (claim): (aftermath) finitely many candidates when a_0 != 0; f = x^k g when a_0 = 0 | fd3:prp-divisibility-rules-integers (d), (e), thm-evaluation-respects-operations (cited); f = x^k g by comparing coefficients (def-polynomial), Q has no zero divisors (thm-field-basic-properties (f)), used silently; |u| <= |a_0| from (d), (e) via absolute value, used silently
+exr-irreducible-factorization-b2 (solution): x^2 - 2 has no rational root | fd3:thm-no-rational-square-two, prp-irreducible-low-degree (b) (cited)
 -->

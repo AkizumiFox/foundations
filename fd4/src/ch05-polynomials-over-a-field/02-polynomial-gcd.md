@@ -73,7 +73,7 @@ Take a non-zero element of \( I \) of least degree, and scale it to be monic; ca
 ::: {.proof}
 (a) If \( I = \{0\} \), then \( I = \{0\} = \langle 0 \rangle \).
 
-(b) *Existence.* Let \( I \ne \{0\} \). The set \( D \coloneqq \{ \deg e : e \in I, \ e \ne 0 \} \) is a non-empty subset of \( \nN \), so it has a least element \( n \) (@fd2:thm-well-ordering; on \( \nN = \omega \) it is @fd3:thm-omega-well-ordering). Choose a non-zero \( e \in I \) with \( \deg e = n \), let \( a \coloneqq \operatorname{lc}(e) \ne 0 \), and let \( d \coloneqq a^{-1} e \). Then \( d \in I \) by (I3), and \( d \) is monic of degree \( n \) (@prp-polynomial-divisibility-rules (f)).
+(b) *Existence.* Let \( I \ne \{0\} \). The set \( D \coloneqq \{ \deg e : e \in I, \ e \ne 0 \} \) is a non-empty subset of \( \nN \), so it has a least element \( n \) (@fd2:thm-well-ordering; on \( \nN = \omega \) it is @fd3:thm-omega-well-ordering). Choose a non-zero \( e \in I \) with \( \deg e = n \), let \( a \coloneqq \operatorname{lc}(e) \ne 0 \), and let \( d \coloneqq a^{-1} e \). Then \( d \in I \) by (I3), and \( d \) is monic of degree \( n \) (@prp-polynomial-divisibility-rules (f), @thm-degree-of-product (b)).
 
 \( (\supseteq) \) For \( h \in F[x] \), \( hd \in I \) by (I3). So \( \langle d \rangle \subseteq I \).
 
@@ -86,10 +86,10 @@ Take a non-zero element of \( I \) of least degree, and scale it to be monic; ca
 
 The answer to the prompt. "Least degree" is used once, in \( (\subseteq) \): the remainder \( r \) lies in \( I \) and has degree below \( n \), so minimality forces \( r = 0 \). The minimality is about **non-zero** elements, which is why \( r = 0 \) is the conclusion and not a contradiction. Making \( d \) monic plays no part in the existence of a generator: \( e \) itself generates \( I \), and so does \( 2e \) when \( 2 \ne 0 \) in \( F \). It is what makes the generator **unique**, because among the associates of \( e \), all of which generate \( I \), exactly one is monic.
 
-An ideal of the form \( \langle d \rangle \) is called **principal**, hence the name of the theorem. The proof's move is the one this chapter is built on, and we name it: **least degree, then divide**. In a set of polynomials closed under the right operations, take a non-zero element \( d \) of least degree; divide any element of the set by \( d \); the remainder lies in the set and has smaller degree, so it is \( 0 \). It already appeared, without a name, in the existence half of @thm-polynomial-division-remainder, and it is the polynomial form of "least positive element, then divide" from *Number Systems: From \( \nN \) to \( \nR \)*, Section 3.2.
+An ideal of the form \( \langle d \rangle \) is called **principal**, hence the name of the theorem. The proof's move is the one this chapter is built on, and we name it: **least degree, then divide**. In a set of polynomials closed under the right operations, take a non-zero element \( d \) of least degree; divide any element of the set by \( d \); the remainder lies in the set and has smaller degree, so it is \( 0 \). It is the polynomial form of "least positive element, then divide" from *Number Systems: From \( \nN \) to \( \nR \)*, Section 3.2.
 
 ::: {.second-reading title="Comparison with the integers, and two indeterminates"}
-The integer twin is @fd3:thm-integer-ideals-principal: every ideal of \( \nZ \) is \( n\nZ \) for exactly one \( n \in \nN \). There "\( n \ge 0 \)" picked the generator; here "monic" does. In polynomials in **two** indeterminates the theorem fails (the polynomials with zero constant term are an example; Exercise A1 asks which step of the proof breaks there, without proving the failure).
+The integer twin is @fd3:thm-integer-ideals-principal: every ideal of \( \nZ \) is \( n\nZ \) for exactly one \( n \in \nN \). There "\( n \ge 0 \)" picked the generator; here "monic" does. In polynomials in **two** indeterminates the theorem fails (the polynomials with zero constant term are an example, which we state without proof; Exercise A1 asks which step of the proof breaks there, without proving the failure).
 :::
 
 ## The greatest common divisor
@@ -109,7 +109,7 @@ In words: \( d \) is a common divisor, it is "on top" of all common divisors for
 *At most one.* If \( d \) and \( d' \) are both greatest common divisors of \( f \) and \( g \), each is a common divisor, so each divides the other; both are monic, so \( d = d' \) (@prp-polynomial-divisibility-rules (f)). We write \( \gcd(f, g) \) for it once it is known to exist, and the next theorem shows it always does. The condition is symmetric in \( f \) and \( g \), so \( \gcd(f, g) = \gcd(g, f) \).
 
 ::: {.second-reading title="Why $\gcd(0, 0)$ is $0$"}
-Every polynomial divides \( 0 \), so the common divisors of \( 0 \) and \( 0 \) are all polynomials, and the only polynomial that every polynomial divides is \( 0 \) (@prp-polynomial-divisibility-rules (a) and (d)); but \( 0 \) is not monic. The value \( 0 \) keeps "every common divisor divides the gcd" true, and it keeps \( \langle f, g \rangle = \langle \gcd(f, g) \rangle \) true, since \( \langle 0, 0 \rangle = \{0\} = \langle 0 \rangle \). The Euclidean algorithm below needs the second.
+Every polynomial divides \( 0 \), so the common divisors of \( 0 \) and \( 0 \) are all polynomials, and the only polynomial that every polynomial divides is \( 0 \) (@prp-polynomial-divisibility-rules (a) and (d)); but \( 0 \) is not monic. The value \( 0 \) keeps "every common divisor divides the gcd" true, and it keeps \( \langle f, g \rangle = \langle \gcd(f, g) \rangle \) true, since \( \langle 0, 0 \rangle = \{0\} = \langle 0 \rangle \). The gcd clause of @lem-polynomial-gcd-remainder-step uses the value \( \gcd(0, 0) = 0 \) in the case \( f = g = 0 \).
 :::
 
 ::: {#thm-polynomial-bezout}
@@ -177,7 +177,7 @@ Find \( \gcd(2x - 2, \, 4x^2 - 4) \) in \( \nQ[x] \).
 :::
 
 ::: {.solution}
-\( 4x^2 - 4 = (2x - 2)(2x + 2) \), so \( 2x - 2 \) divides both, and every common divisor divides \( 2x - 2 \). But \( 2x - 2 \) is not monic. Its monic associate \( x - 1 \) has the same divisors and multiples (@prp-polynomial-divisibility-rules (a), (b)), so \( \gcd(2x - 2, 4x^2 - 4) = x - 1 \), not \( 2x - 2 \).
+\( 4x^2 - 4 = (2x - 2)(2x + 2) \), so \( 2x - 2 \) divides both, and every common divisor divides \( 2x - 2 \). But \( 2x - 2 \) is not monic. Its monic associate \( x - 1 \) has the same divisors and multiples (@prp-polynomial-divisibility-rules (f), (b)), so \( \gcd(2x - 2, 4x^2 - 4) = x - 1 \), not \( 2x - 2 \).
 :::
 
 ## The Euclidean algorithm
@@ -331,14 +331,14 @@ Let \( L \) be a field, \( K \subseteq L \) a subfield, and \( f, g \in K[x] \).
 :::
 :::
 
-For example, \( x^2 + 1 \) and \( x - 1 \) are coprime over \( \nQ \) (divide: \( x^2 + 1 = (x + 1)(x - 1) + 2 \), and \( \gcd(x - 1, 2) = 1 \)), so they are coprime over \( \nC \) as well, although \( x^2 + 1 = (x - i)(x + i) \) has factors of degree \( 1 \) only over \( \nC \).
+For example, \( x^2 + 1 \) and \( x - 1 \) are coprime over \( \nQ \) (\( x^2 + 1 = (x + 1)(x - 1) + 2 \) and \( 0 \cdot (x - 1) + \tfrac12 \cdot 2 = 1 \); apply @lem-polynomial-gcd-remainder-step and @cor-polynomial-coprime-iff-combination), so they are coprime over \( \nC \) as well, although \( x^2 + 1 = (x - i)(x + i) \) has factors of degree \( 1 \) only over \( \nC \).
 
 ::: {.check}
 Compute \( \gcd(x^2 - 2, \, x^3 - 2x) \) in \( \nQ[x] \). Over \( \nR \), \( x - \sqrt 2 \) divides both. Why is the gcd over \( \nR \) still not \( x - \sqrt2 \)?
 :::
 
 ::: {.solution}
-\( x^3 - 2x = x \cdot (x^2 - 2) + 0 \), so the algorithm stops after one division with \( u_1 = x^2 - 2 \), which is monic: \( \gcd = x^2 - 2 \) in \( \nQ[x] \). By @prp-polynomial-gcd-field-extension (c) it is \( x^2 - 2 \) in \( \nR[x] \) too. The common divisor \( x - \sqrt2 \) is not the gcd because the gcd must be divisible by **every** common divisor, and \( x + \sqrt2 \) is another one; both divide \( x^2 - 2 = (x - \sqrt2)(x + \sqrt2) \).
+The divisions are \( x^2 - 2 = 0 \cdot (x^3 - 2x) + (x^2 - 2) \) and \( x^3 - 2x = x \cdot (x^2 - 2) + 0 \), so \( K = 2 \) and \( u_2 = x^2 - 2 \), which is monic: \( \gcd = x^2 - 2 \) in \( \nQ[x] \). By @prp-polynomial-gcd-field-extension (c) it is \( x^2 - 2 \) in \( \nR[x] \) too. The common divisor \( x - \sqrt2 \) is not the gcd because the gcd must be divisible by **every** common divisor, and \( x + \sqrt2 \) is another one; both divide \( x^2 - 2 = (x - \sqrt2)(x + \sqrt2) \).
 :::
 
 ::: {.remark}
@@ -421,38 +421,6 @@ f - x g = -x^2 + 1 = x^2 + 1 ,
 that is, \( f = x \cdot g + (x^2 + 1) \), a division with remainder. Next, \( (x + 1)(x^2 + 1) = x^3 + x^2 + x + 1 = g \), so \( g = (x + 1)(x^2 + 1) + 0 \). The algorithm stops with \( u_2 = x^2 + 1 \), which is monic, so \( \gcd(f, g) = x^2 + 1 \). Finally \( x^2 + 1 = f - xg = 1 \cdot f + x \cdot g \), since \( -x = x \) in \( \nF_2[x] \).
 :::
 
-::: {#exr-polynomial-gcd-b3}
-[B3: The gcd of two binomials]
-
-Let \( F \) be a field. For \( m, n \in \nN \), not both \( 0 \), prove that
-\[
-\gcd(x^m - 1, \, x^n - 1) = x^{\gcd(m, n)} - 1
-\]
-in \( F[x] \) (here \( x^0 - 1 = 0 \), and \( \gcd(m, n) \) is the integer gcd). Compute \( \gcd(x^{12} - 1, x^{18} - 1) \).
-:::
-
-::: {.solution}
-*Two remarks.* For \( m \ge 1 \), \( x^m - 1 \) is monic of degree \( m \). And for \( m \ge n \ge 1 \), by the power laws (@lem-finite-sums-and-powers (c)),
-\[
-x^m - 1 = x^{m-n}(x^n - 1) + (x^{m-n} - 1) ,
-\]
-since \( x^{m-n} x^n - x^{m-n} + x^{m-n} - 1 = x^m - 1 \).
-
-We prove, by @fd1:ax-induction (through @fd3:cor-omega-identification (b)) on \( s \), the statement \( P(s) \): "for all \( m, n \in \nN \), not both \( 0 \), with \( m + n \le s \), the displayed formula holds". \( P(0) \) holds vacuously: \( m + n \le 0 \) forces \( m = n = 0 \). Suppose \( P(s) \), and let \( m + n \le s + 1 \), not both \( 0 \). If \( m + n \le s \), use \( P(s) \). Otherwise \( m + n = s + 1 \).
-
-*Case \( n = 0 \).* Then \( m \ge 1 \). The gcd of \( x^m - 1 \) and \( 0 \) is the monic generator of \( \langle x^m - 1, 0 \rangle = \langle x^m - 1 \rangle \) (@thm-polynomial-bezout (c)), which is \( x^m - 1 \). On the integer side, the common divisors of \( m \) and \( 0 \) are the divisors of \( m \), and the greatest is \( m \) (@fd3:prp-divisibility-rules-integers (a), (e)), so \( \gcd(m, 0) = m \). Both sides are \( x^m - 1 \). *Case \( m = 0 \)* is the same, since both gcds are symmetric.
-
-*Case \( m, n \ge 1 \).* Both gcds are symmetric, so we may suppose \( m \ge n \). By the identity above and @lem-polynomial-gcd-remainder-step,
-\[
-\gcd(x^m - 1, x^n - 1) = \gcd(x^n - 1, x^{m-n} - 1) .
-\]
-The pair \( (n, m - n) \) is not \( (0, 0) \), since \( n \ge 1 \), and \( n + (m - n) = m < m + n = s + 1 \), so \( P(s) \) applies to it: the right side is \( x^{\gcd(n, m - n)} - 1 \). Finally \( m = 1 \cdot n + (m - n) \), so @fd3:lem-gcd-remainder-step gives \( \gcd(m, n) = \gcd(n, m - n) \). This proves \( P(s + 1) \).
-
-Since every pair \( (m, n) \) has \( m + n \le s \) for \( s = m + n \), the formula holds for all \( m, n \). For \( m = 12 \), \( n = 18 \): \( \gcd(12, 18) = 6 \), so \( \gcd(x^{12} - 1, x^{18} - 1) = x^6 - 1 \).
-
-Each polynomial step is one step \( (m, n) \mapsto (n, m - n) \) of the subtractive Euclidean algorithm on the exponents.
-:::
-
 ### C. Going deeper
 
 ::: {#exr-polynomial-gcd-c1}
@@ -478,10 +446,10 @@ Let \( F \) be a field.
 - 1: it is made monic, and the monic element is shown to lie in \( I \) (absorption).
 - 3: an arbitrary element of \( I \) is divided by \( d \), and the remainder is shown to lie in \( I \).
 - 2: minimality of the degree forces the remainder to be \( 0 \).
-- 1: uniqueness of the monic generator, by mutual divisibility of two monic generators.
+- 1: uniqueness of the monic generator (by any route: mutual divisibility, or minimality of the degree applied to the difference).
 - 2: \( d \mid f \), \( d \mid g \), \( d = af + bg \), and "every common divisor divides \( d \)" are read off from \( \langle f, g \rangle = \langle d \rangle \), and \( d = \gcd(f, g) \) is concluded from the definition.
 
-Fatal errors (0 for the step): assuming that the gcd is a combination of \( f \) and \( g \) (circular); "\( d \) divides \( f \) because \( d \) has least degree", with no division step; citing @thm-euclidean-algorithm-polynomials (c) or the gcd clause of @lem-polynomial-gcd-remainder-step for (b) (both are proved from Bézout's theorem). A second route for (b), the Euclidean algorithm with back-substitution by induction on the number of steps, may use the ideal equality of @lem-polynomial-gcd-remainder-step; it earns the 2 points of (b) when it shows that the monic associate of the last non-zero remainder divides \( f \) and \( g \), is a combination of them, and is divisible by every common divisor. Part (a) has no second route here.
+Fatal errors (0 for the step): assuming that the gcd is a combination of \( f \) and \( g \) (circular); "\( d \) divides \( f \) because \( d \) has least degree", with no division step; citing @thm-euclidean-algorithm-polynomials (c) or the gcd clause of @lem-polynomial-gcd-remainder-step for (b) (both are proved from Bézout's theorem). A second route for (b), the Euclidean algorithm with back-substitution by induction on the number of steps, may use the ideal equality of @lem-polynomial-gcd-remainder-step; it earns the 2 points of (b) when it shows that the monic associate of the last non-zero remainder divides \( f \) and \( g \), is a combination of them, and is divisible by every common divisor. Existence in (a) has no second route here.
 :::
 
 ::: {#exr-polynomial-gcd-c2}
@@ -525,6 +493,38 @@ This is the polynomial twin of @fd3:exr-gcd-and-bezout-c2 (\( \gcd(ka, kb) = k \
 Fatal errors (0 for the step): asserting that every common divisor of \( hf \) and \( hg \) is \( h \) times a common divisor of \( f \) and \( g \) (false: \( 1 \) divides \( x \cdot x \) and \( x \cdot (x + 1) \), and \( 1 \) is not \( x \) times a polynomial); using factorizations into irreducibles, which this section does not have. A second route (\( hd = (hf)a + (hg)b \) is a monic common divisor and a combination, so every common divisor divides it) scores 2 for the zero case, 3 for "monic common divisor and combination", 3 for "every common divisor divides \( hd \)", 2 for the conclusion by @def-polynomial-gcd.
 :::
 
+::: {#exr-polynomial-gcd-c3}
+[C3: The gcd of two binomials]
+
+Let \( F \) be a field. For \( m, n \in \nN \), not both \( 0 \), prove that
+\[
+\gcd(x^m - 1, \, x^n - 1) = x^{\gcd(m, n)} - 1
+\]
+in \( F[x] \) (here \( x^0 - 1 = 0 \), and \( \gcd(m, n) \) is the integer gcd). Compute \( \gcd(x^{12} - 1, x^{18} - 1) \).
+:::
+
+::: {.solution}
+*Two remarks.* For \( m \ge 1 \), \( x^m - 1 \) is monic of degree \( m \). And for \( m \ge n \ge 1 \), by the power laws (@lem-finite-sums-and-powers (c)),
+\[
+x^m - 1 = x^{m-n}(x^n - 1) + (x^{m-n} - 1) ,
+\]
+since \( x^{m-n} x^n - x^{m-n} + x^{m-n} - 1 = x^m - 1 \).
+
+We prove, by @fd1:ax-induction (through @fd3:cor-omega-identification (b)) on \( s \), the statement \( P(s) \): "for all \( m, n \in \nN \), not both \( 0 \), with \( m + n \le s \), the displayed formula holds". \( P(0) \) holds vacuously: \( m + n \le 0 \) forces \( m = n = 0 \). Suppose \( P(s) \), and let \( m + n \le s + 1 \), not both \( 0 \). If \( m + n \le s \), use \( P(s) \). Otherwise \( m + n = s + 1 \).
+
+*Case \( n = 0 \).* Then \( m \ge 1 \). The gcd of \( x^m - 1 \) and \( 0 \) is the monic generator of \( \langle x^m - 1, 0 \rangle = \langle x^m - 1 \rangle \) (@thm-polynomial-bezout (c)), which is \( x^m - 1 \). On the integer side, the common divisors of \( m \) and \( 0 \) are the divisors of \( m \), and the greatest is \( m \) (@fd3:prp-divisibility-rules-integers (a), (e)), so \( \gcd(m, 0) = m \). Both sides are \( x^m - 1 \). *Case \( m = 0 \)* is the same, since both gcds are symmetric.
+
+*Case \( m, n \ge 1 \).* Both gcds are symmetric, so we may suppose \( m \ge n \). By the identity above and @lem-polynomial-gcd-remainder-step,
+\[
+\gcd(x^m - 1, x^n - 1) = \gcd(x^n - 1, x^{m-n} - 1) .
+\]
+The pair \( (n, m - n) \) is not \( (0, 0) \), since \( n \ge 1 \), and \( n + (m - n) = m < m + n = s + 1 \), so \( P(s) \) applies to it: the right side is \( x^{\gcd(n, m - n)} - 1 \). Finally \( m = 1 \cdot n + (m - n) \), so @fd3:lem-gcd-remainder-step gives \( \gcd(m, n) = \gcd(n, m - n) \). This proves \( P(s + 1) \).
+
+Since every pair \( (m, n) \) has \( m + n \le s \) for \( s = m + n \), the formula holds for all \( m, n \). For \( m = 12 \), \( n = 18 \): \( \gcd(12, 18) = 6 \), so \( \gcd(x^{12} - 1, x^{18} - 1) = x^6 - 1 \).
+
+Each polynomial step is one step \( (m, n) \mapsto (n, m - n) \) of the subtractive Euclidean algorithm on the exponents.
+:::
+
 <!-- dependency ledger
 def-polynomial-combinations (claim): (opening frame) x^2 - 1 = (x - 1)(x + 1), x^2 + x - 2 = (x - 1)(x + 2), (x^2 + x - 2) - (x^2 - 1) = x - 1 | computed in Q[x]; verify/ch05/def-polynomial-combinations.py
 def-polynomial-combinations (claim): (I2) applied k - 1 times puts a finite sum of elements of J in J | induction on the number of terms, fd1:ax-induction via fd3:cor-omega-identification (b), with the finite-sum recursion of lem-finite-sums-and-powers (a)
@@ -538,14 +538,15 @@ exm-polynomial-euclid-run (claim): (the warning after it) (-x + g) f + (x^2 - x 
 exm-polynomial-euclid-run (claim): (the Quick check after the warning) the run on x^3 and x^2 + 1 and the combination | verify/ch05/exm-polynomial-euclid-run.py
 prp-polynomial-gcd-field-extension (proof): K[x] subset of L[x] with the same sums, products, degrees and leading coefficients | coefficientwise formulas of def-polynomial-ring, with K closed under +, * (def-subfield); ledger line of the blueprint ("Q in R in C")
 prp-polynomial-gcd-field-extension (claim): Q is a subfield of R | the embedding of Q in F3.10's R (fd3:thm-reals-complete-ordered-field, Q inside R by fd3:thm-rationals-embed-ordered-field / iota_R), closed under the operations of R
-prp-polynomial-gcd-field-extension (example): x^2 + 1 = (x + 1)(x - 1) + 2 and x^2 + 1 = (x - i)(x + i) | computed; i^2 = -1 (def-complex-numbers, prp-reals-embed-complex); verify/ch05/prp-polynomial-gcd-field-extension.py
+prp-polynomial-gcd-field-extension (example): x^2 + 1 = (x + 1)(x - 1) + 2, 0 * (x - 1) + (1/2) * 2 = 1 and x^2 + 1 = (x - i)(x + i) | computed; i^2 = -1 (def-complex-numbers, prp-reals-embed-complex); verify/ch05/prp-polynomial-gcd-field-extension.py
 prp-polynomial-gcd-field-extension (claim): (the Quick check after it) x^2 - 2 = (x - sqrt 2)(x + sqrt 2) over R | sqrt 2 exists in R by fd3:prp-cof-square-roots (prose illustration; nothing rests on it)
+thm-polynomial-ideals-principal (claim): (fold after the proof) the zero-constant-term ideal of Q[x, y] is not principal | not proved here (marked so); nothing depends on it
 exr-polynomial-gcd-a1 (solution): (c) 2b = 0 gives b = 0 in Q | thm-field-basic-properties (f), 2 != 0 in Q
 exr-polynomial-gcd-a1 (solution): (d) the behavior of polynomials in two indeterminates | not proved here (stated as such in the solution); nothing depends on it
 exr-polynomial-gcd-b1 (solution): the divisions, back-substitution, check, f(-1) = g(-1) = 0 | verify/ch05/exr-polynomial-gcd-b1.py
 exr-polynomial-gcd-b2 (solution): the computations in F_2[x] | verify/ch05/exr-polynomial-gcd-b2.py
-exr-polynomial-gcd-b3 (solution): x^m - 1 monic of degree m for m >= 1; m - n in N and n + (m - n) = m | def-degree; fd3:cor-omega-identification (c)
-exr-polynomial-gcd-b3 (solution): gcd(12, 18) = 6 and the polynomial gcd for m, n <= 12 | verify/ch05/exr-polynomial-gcd-b3.py
-exr-polynomial-gcd-b3 (solution): the integer gcd is symmetric | fd3:def-integer-gcd (the well-definedness paragraph after it)
+exr-polynomial-gcd-c3 (solution): x^m - 1 monic of degree m for m >= 1; m - n in N and n + (m - n) = m | def-degree; fd3:cor-omega-identification (c)
+exr-polynomial-gcd-c3 (solution): gcd(12, 18) = 6 and the polynomial gcd for m, n <= 12 | verify/ch05/exr-polynomial-gcd-c3.py
+exr-polynomial-gcd-c3 (solution): the integer gcd is symmetric | fd3:def-integer-gcd (the well-definedness paragraph after it)
 exr-polynomial-gcd-c2 (solution): gcd(2x, 2) = 1 and the counterexample 1 | x * x, x * (x + 1) | computed; verify/ch05/exr-polynomial-gcd-c2.py
 -->

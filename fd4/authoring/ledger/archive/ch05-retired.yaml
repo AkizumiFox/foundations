@@ -1,0 +1,36 @@
+note: retired at S7 2026-10-12 (exr-polynomial-gcd-b3 moved to Exercise C3 as exr-polynomial-gcd-c3, finding
+  F072)
+items:
+- key: exr-polynomial-gcd-b3
+  kind: exr
+  file: 02-polynomial-gcd.md
+  line: 424
+  hash: dc88457da5e7
+  verdicts:
+  - stage: S5a
+    verdict: correct
+    by: refereeA
+    hash: dc88457da5e7
+    date: '2026-10-12'
+    model: claude-opus-5-5
+    evidence: 02:424-454. The induction on s covers all pairs with m+n≤s. The identity x^m-1 = x^{m-n}(x^n-1)
+      + (x^{m-n}-1) is right. P(s) applies to (n, m-n) because m≤s when n≥1. fd3:lem-gcd-remainder-step
+      needs b=n>0, which holds and does not require r to be a remainder. gcd(m,0)=m by fd3 divisibility
+      rules (a), (e).
+  - stage: S5b
+    verdict: correct
+    by: refereeB
+    hash: dc88457da5e7
+    date: '2026-10-12'
+    model: claude-opus-5-5
+    evidence: '02:424-454: the identity x^m-1 = x^{m-n}(x^n-1) + (x^{m-n}-1) holds; the induction on s
+      with m+n <= s is sound; fd3:lem-gcd-remainder-step applies with b = n > 0; gcd(m,0) = m; the answer
+      is x^6-1.'
+  - stage: S6
+    verdict: minor
+    by: verifier
+    hash: dc88457da5e7
+    date: '2026-10-12'
+    model: claude-opus-5-5
+    evidence: 02-polynomial-gcd.md:424 B3's proof part has no worked example of its type in the section.
+  removed: true

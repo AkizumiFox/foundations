@@ -275,8 +275,9 @@ Rows proposed by the fd4 S1 blueprints (`fd4/authoring/blueprints/ch01.md`–`ch
 | `\sK`; `K_S` | local to F4.2 §03 (`prp-subfield-intersection`): a set of subfields of L, and the intersection of all subfields containing S. The subfield clauses are not named (S1)–(S4), since (S1)–(S2) are F2.2's supremum clauses |
 | `P` (prime subfield) | local to F4.2 §05, `thm-prime-subfield` and its proof: the prime subfield of the field F (`def-prime-subfield`), defined in the theorem statement. Not F3.2's positive set P (row `P`, `P_{\nZ}`, `P_{\nQ}`) or F3.10's P ⊆ ℝ; the theorem uses no order, and nothing outside it uses the letter. |
 | `G \times H` (group) | the product group, componentwise operations (F4.3 §03, unlabelled paragraph before `exm-group-homomorphisms`) |
-| (L1), (L2) | clause names local to F4.5 §03–§04: (L1) a product of a list of non-zero polynomials is non-zero, of degree the sum of the degrees, monic if the entries are; (L2) removing entry j from a list gives ∏q = (∏q′)·q_j (F4.5 §03, proved in a fold; §04 cites (L1) by name) |
+| (L1), (L2) | clause names local to F4.5 (§03–§06): (L1) a product of a list of non-zero polynomials is non-zero, of degree the sum of the degrees, monic if the entries are; (L2) removing entry j from a list gives ∏q = (∏q′)·q_j (F4.5 §03, proved in a fold; §04–§06 cite them by name) |
 | `A_1 \times \dots \times A_k` (amends that row) | F4.5 §05's Chinese remainder theorem (d) uses it for k ≥ 1, the case k = 1 being A₁ itself |
+| `p`, `p_1, \dots, p_k` (irreducible polynomials) | in F4.5 §03–§06, irreducible polynomials (F4.5 §03, `def-irreducible-polynomial`); f, g, h are other polynomials. In F4.5 §04, p is also a prime (the warning after `thm-polynomial-identity-from-values`, `exm-polynomial-function-finite-field` (b), `exr-multiple-roots-b3`): the two uses never share a block |
 
 ## Retired notation
 

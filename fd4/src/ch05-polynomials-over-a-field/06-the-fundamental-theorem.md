@@ -2,16 +2,16 @@
 
 Over \( \nQ \) the polynomial \( x^2 - 2 \) has no root, and over \( \nR \) the polynomial \( x^2 + 1 \) has none. Chapter 1 announced that over \( \nC \) this stops: every non-constant complex polynomial has a root. This section proves it, and then reads off what it says about factoring complex and real polynomials.
 
-No argument from the field axioms alone can prove the theorem. The field \( \nQ(i) = \{ a + bi : a, b \in \nQ \} \) of @exm-subfields-gaussian satisfies every field axiom, and it contains an element \( i \) with \( i^2 = -1 \), just as \( \nC \) does. Yet \( x^2 - 2 \) has no root in it. If \( (a + bi)^2 = 2 \) with \( a, b \in \nQ \), then comparing real and imaginary parts, \( a^2 - b^2 = 2 \) and \( 2ab = 0 \), so \( a = 0 \) or \( b = 0 \) (\( \nQ \) has no zero divisors, and \( 2 \ne 0 \)). If \( b = 0 \), then \( a^2 = 2 \), which no rational satisfies (@fd3:thm-no-rational-square-two). If \( a = 0 \), then \( -b^2 = 2 \), impossible since \( -b^2 \le 0 \) (@fd3:prp-ordered-ring-rules (e)). So the proof must use a property of \( \nR \) that \( \nQ \) lacks. It is the supremum property of *Number Systems*, Chapter 5 (@fd3:thm-reals-complete-ordered-field).
+No argument from the field axioms alone can prove the theorem. The field \( \nQ(i) = \{ a + bi : a, b \in \nQ \} \) of @exm-subfields-gaussian satisfies every field axiom, and it contains an element \( i \) with \( i^2 = -1 \), just as \( \nC \) does. Yet \( x^2 - 2 \) has no root in it. If \( (a + bi)^2 = 2 \) with \( a, b \in \nQ \), then comparing real and imaginary parts (@def-complex-numbers), \( a^2 - b^2 = 2 \) and \( 2ab = 0 \), so \( a = 0 \) or \( b = 0 \) (\( \nQ \) has no zero divisors, @thm-field-basic-properties (f), and \( 2 \ne 0 \)). If \( b = 0 \), then \( a^2 = 2 \), which no rational satisfies (@fd3:thm-no-rational-square-two). If \( a = 0 \), then \( -b^2 = 2 \), impossible since \( -b^2 \le 0 \) (@fd3:prp-ordered-ring-rules (e)). So the proof must use a property of \( \nR \) that \( \nQ \) lacks. It is the supremum property of *Number Systems: From \( \nN \) to \( \nR \)*, Chapter 5 (@fd3:thm-reals-complete-ordered-field).
 
-The plan has two halves. First, \( \abs{p} \) attains a smallest value on \( \nC \) (@thm-complex-polynomial-minimum). Second, at any point where \( p \) is not \( 0 \), some nearby point gives \( \abs{p} \) a smaller value (@lem-complex-polynomial-descent). So at a point where the smallest value is attained, \( p \) must be \( 0 \). The first half is where completeness enters; the second is algebra and inequalities.
+The plan has two halves. First, \( \abs{p} \) attains a smallest value on \( \nC \) (@thm-complex-polynomial-minimum). Second, at any point where \( p \) is not \( 0 \), some nearby point gives \( \abs{p} \) a smaller value (@lem-complex-polynomial-descent). So at a point where the smallest value is attained, \( p \) must be \( 0 \). The first half is where completeness is invoked directly (Steps 2 and 5); the second half uses it only indirectly, through square roots (see the remark after the minimum theorem).
 
 Throughout, \( p \) is a polynomial in \( \nC[x] \), and \( p(z) \) is its value at \( z \in \nC \) (@def-polynomial-evaluation). Inequalities are between real numbers; the modulus \( \abs{z} \) is a non-negative real (@def-conjugate-modulus).
 
 ## Two estimates
 
 ::: {.second-reading title="The facts about the modulus used in this section"}
-All of them are from Chapter 1. For \( z, w \in \nC \): \( \abs{z}^2 = (\operatorname{Re} z)^2 + (\operatorname{Im} z)^2 \) (@def-conjugate-modulus); \( \abs{\operatorname{Re} z} \le \abs{z} \), \( \abs{\operatorname{Im} z} \le \abs{z} \) and \( \abs{z} \le \abs{\operatorname{Re} z} + \abs{\operatorname{Im} z} \) (@lem-real-part-at-most-modulus); \( \abs{zw} = \abs{z} \abs{w} \), so \( \abs{z^j} = \abs{z}^j \) by induction on \( j \), and \( \abs{z} = 0 \) only for \( z = 0 \) (@thm-conjugate-properties (d), (e)); \( \abs{z_1 + \dots + z_m} \le \abs{z_1} + \dots + \abs{z_m} \) and \( \abs{z} - \abs{w} \le \abs{z + w} \) (@cor-complex-triangle-variants (b), (c)). For a real number the modulus is the absolute value of *Number Systems*, Chapter 4 (@prp-modulus-of-real), so the rules of @fd3:prp-absolute-value-ordered-field apply to it.
+All of them are from Chapter 1. For \( z, w \in \nC \): \( \abs{z}^2 = (\operatorname{Re} z)^2 + (\operatorname{Im} z)^2 \) (@def-conjugate-modulus); \( \abs{\operatorname{Re} z} \le \abs{z} \), \( \abs{\operatorname{Im} z} \le \abs{z} \) and \( \abs{z} \le \abs{\operatorname{Re} z} + \abs{\operatorname{Im} z} \) (@lem-real-part-at-most-modulus); \( \abs{zw} = \abs{z} \abs{w} \), so \( \abs{z^j} = \abs{z}^j \) by induction on \( j \), and \( \abs{z} = 0 \) only for \( z = 0 \) (@thm-conjugate-properties (d), (e)); \( \abs{z_1 + \dots + z_m} \le \abs{z_1} + \dots + \abs{z_m} \) and \( \abs{z} - \abs{w} \le \abs{z + w} \) (@cor-complex-triangle-variants (b), (c)). For a real number the modulus is the absolute value of *Number Systems: From \( \nN \) to \( \nR \)*, Chapter 4 (@prp-modulus-of-real), so the rules of @fd3:prp-absolute-value-ordered-field apply to it.
 
 Three facts about powers of non-negative reals are used as well, each by induction on the exponent with @fd3:prp-ordered-ring-rules (c): if \( 0 \le a \le b \), then \( a^j \le b^j \); if \( a \ge 1 \) and \( i \le j \), then \( a^i \le a^j \); if \( 0 < t \le 1 \) and \( i \le j \), then \( t^j \le t^i \).
 :::
@@ -101,7 +101,7 @@ For every \( p \in \nC[x] \) there is \( z^* \in \nC \) with \( \abs{p(z^*)} \le
 :::
 
 ::: {.idea}
-Confine the search to one big square \( S_0 \) by the growth lemma. The infimum \( m \) of \( \abs{p} \) over \( S_0 \) exists. Cut \( S_0 \) into four quarters: the infimum over \( S_0 \) is the least of the four infima, so some quarter has the **same** infimum \( m \); keep the first such quarter, and repeat. The squares shrink to a single point \( z^* \), which completeness supplies as a supremum of corners. Near \( z^* \) every square still has points where \( \abs{p} \) is almost \( m \), and the Lipschitz bound says \( \abs{p(z^*)} \) is almost the same; so \( \abs{p(z^*)} = m \). This is the bisection of *Number Systems*, Chapter 5, now in the plane. *Before reading on: why keep a quarter whose **infimum** equals the square's, rather than a quarter containing a point where \( \abs{p} \) is smallest?*
+Confine the search to one big square \( S_0 \) by the growth lemma. The infimum \( m \) of \( \abs{p} \) over \( S_0 \) exists. Cut \( S_0 \) into four quarters: the infimum over \( S_0 \) is the least of the four infima, so some quarter has the **same** infimum \( m \); keep the first such quarter, and repeat. We call this move **keep the quarter that keeps the infimum**. The squares shrink to a single point \( z^* \), which completeness supplies as a supremum of corners. Near \( z^* \) every square still has points where \( \abs{p} \) is almost \( m \), and the Lipschitz bound says \( \abs{p(z^*)} \) is almost the same; so \( \abs{p(z^*)} = m \). This is the bisection of *Number Systems: From \( \nN \) to \( \nR \)*, Chapter 5, now in the plane. *Before reading on: why keep a quarter whose **infimum** equals the square's, rather than a quarter containing a point where \( \abs{p} \) is smallest?*
 :::
 
 ::: {.proof}
@@ -163,7 +163,7 @@ The proof takes \( \mu \), the least of the numbers \( m(Q_1), \dots, m(Q_4) \).
 
 ## A direction in which the modulus decreases
 
-The second half of the plan is algebra. Near a point \( z_0 \), write \( p(z_0 + h) = b_0 + b_k h^k + (\text{higher powers of } h) \), with \( b_0 = p(z_0) \). If we can choose the direction of \( h \) so that \( b_k h^k \) points back toward \( 0 \) from \( b_0 \), and \( h \) so small that the higher terms do not undo the gain, then \( \abs{p} \) decreases. Dividing by \( b_0 \), the first need is a \( \zeta \) for which \( c\zeta^k \) has negative real part.
+The second half of the plan is algebra, together with complex square roots (@prp-complex-square-roots). Near a point \( z_0 \), write \( p(z_0 + h) = b_0 + b_k h^k + (\text{higher powers of } h) \), with \( b_0 = p(z_0) \). If we can choose the direction of \( h \) so that \( b_k h^k \) points back toward \( 0 \) from \( b_0 \), and \( h \) so small that the higher terms do not undo the gain, then \( \abs{p} \) decreases. Dividing by \( b_0 \), the first need is a \( \zeta \) for which \( c\zeta^k \) has negative real part.
 
 ::: {#lem-complex-direction-negative-real-part}
 [A Direction with Negative Real Part]
@@ -179,7 +179,7 @@ For \( k = 3 \), the four "axis" directions \( \zeta \in \{1, -1, i, -i\} \) alr
 
 ::: {.second-reading title="The proof: the axes for odd k, a square root for even k"}
 ::: {.proof}
-We prove, by strong induction on \( k \) (@fd1:thm-strong-induction, on \( \nN = \omega \)), the statement: if \( k \ge 1 \), then for every non-zero \( c \in \nC \) there is \( \zeta \) with \( \operatorname{Re}(c\zeta^k) < 0 \). For \( k = 0 \) there is nothing to prove. Let \( k \ge 1 \), assume the statement for every smaller exponent, and let \( c \ne 0 \).
+We prove, by strong induction on \( k \) (@fd1:thm-strong-induction, on \( \nN = \omega \)), the statement: if \( k \ge 1 \), then for every non-zero \( c \in \nC \) there is \( \zeta \) with \( \operatorname{Re}(c\zeta^k) < 0 \). For \( k = 0 \) there is nothing to prove. Let \( k \ge 1 \), assume the statement for every smaller exponent, and let \( c \ne 0 \). By @fd3:prp-omega-powers-parity (d), \( k = 2j + 1 \) or \( k = 2j \) for some \( j \in \nN \).
 
 *Case 1: \( k \) odd*, \( k = 2j + 1 \). Since \( i^2 = -1 \), the power laws (@prp-power-laws-commutative-ring (a)–(c)) give \( i^k = (i^2)^j i = (-1)^j i \in \{ i, -i \} \), \( (-1)^k = -1 \) and \( (-i)^k = (-1)^k i^k = -i^k \). So as \( \zeta \) runs through \( 1, -1, i, -i \), the products \( c\zeta^k \) run through \( c, -c \) and \( ic, -ic \) (in some order). If \( \operatorname{Re} c \ne 0 \), one of \( \operatorname{Re} c \) and \( \operatorname{Re}(-c) = -\operatorname{Re} c \) is negative. If \( \operatorname{Re} c = 0 \), then \( c = bi \) with \( b \coloneqq \operatorname{Im} c \ne 0 \), and \( ic = -b \), \( -ic = b \): one of them has negative real part.
 
@@ -187,7 +187,7 @@ We prove, by strong induction on \( k \) (@fd1:thm-strong-induction, on \( \nN =
 :::
 :::
 
-With polar form one would take \( \zeta \) to be a \( k \)-th root of \( -\conj{c}/\abs{c} \). This volume's \( k \)-th roots of complex numbers rest on the cosine and sine, which it borrows from analysis; the proof above uses only square roots, which *Number Systems* supplies.
+With polar form one would take \( \zeta \) to be a \( k \)-th root of \( -\conj{c}/\abs{c} \). This volume's \( k \)-th roots of complex numbers (@thm-complex-nth-roots) rest on the cosine and sine of @ax-cosine-sine, which it borrows from analysis. The proof above uses only the complex square roots of @prp-complex-square-roots, which Section 1.4 builds from the real square roots of *Number Systems: From \( \nN \) to \( \nR \)* (@fd3:prp-cof-square-roots).
 
 ::: {.check}
 For \( c = i \) and \( k = 1 \), which \( \zeta \in \{1, -1, i, -i\} \) gives \( \operatorname{Re}(c\zeta) < 0 \)?
@@ -307,7 +307,7 @@ Factor \( x^4 + 1 \) into linear factors over \( \nC \), and into irreducible fa
 :::
 
 ::: {.solution}
-*Over \( \nC \).* Since \( i^2 = -1 \), \( x^4 + 1 = x^4 - i^2 = (x^2 - i)(x^2 + i) \). The formula of @prp-complex-square-roots gives the square roots: for \( i \) (\( a = 0 \), \( b = 1 \), \( r = 1 \)), \( w_1 \coloneqq \tfrac{\sqrt2}{2}(1 + i) \); for \( -i \) (\( b = -1 \)), \( w_2 \coloneqq \tfrac{\sqrt2}{2}(1 - i) \). Here \( \sqrt{1/2} = \sqrt2/2 \), since \( \sqrt2/2 \ge 0 \) and \( (\sqrt2/2)^2 = 1/2 \) (@fd3:prp-cof-square-roots). By @prp-complex-square-roots (b), \( x^2 - i = (x - w_1)(x + w_1) \) and \( x^2 + i = (x - w_2)(x + w_2) \), so
+*Over \( \nC \).* Since \( i^2 = -1 \), \( x^4 + 1 = x^4 - i^2 = (x^2 - i)(x^2 + i) \). The formula of @prp-complex-square-roots gives the square roots: for \( i \) (\( a = 0 \), \( b = 1 \), \( r = 1 \)), \( w_1 \coloneqq \tfrac{\sqrt2}{2}(1 + i) \); for \( -i \) (\( b = -1 \)), \( w_2 \coloneqq \tfrac{\sqrt2}{2}(1 - i) \). Here \( \sqrt{1/2} = \sqrt2/2 \), since \( \sqrt2/2 \ge 0 \) and \( (\sqrt2/2)^2 = 1/2 \) (@fd3:prp-cof-square-roots). Since \( w_1^2 = i \) and \( w_2^2 = -i \) (@prp-complex-square-roots (a)), expanding gives \( x^2 - i = x^2 - w_1^2 = (x - w_1)(x + w_1) \) and \( x^2 + i = x^2 - w_2^2 = (x - w_2)(x + w_2) \), so
 \[
 x^4 + 1 = (x - w_1)(x + w_1)(x - w_2)(x + w_2) .
 \]
@@ -320,7 +320,7 @@ since \( w_1 + \conj{w_1} = 2\operatorname{Re} w_1 = \sqrt2 \) and \( w_1 \conj{
 \[
 x^4 + 1 = (x^2 + \sqrt2 \, x + 1)(x^2 - \sqrt2 \, x + 1) ,
 \]
-which can be checked directly: the right side is \( (x^2 + 1)^2 - 2x^2 = x^4 + 1 \). Neither quadratic has a real root, since \( x^2 \pm \sqrt2 \, x + 1 = (x \pm \tfrac{\sqrt2}{2})^2 + \tfrac12 > 0 \) for real \( x \); so both are irreducible over \( \nR \) (@prp-irreducible-low-degree (b)). No polar form was used: only the square roots of \( \pm i \).
+which can be checked directly: the right side is \( (x^2 + 1)^2 - 2x^2 = x^4 + 1 \). Neither quadratic has a real root, since for every \( c \in \nR \), \( c^2 \pm \sqrt2 \, c + 1 = (c \pm \tfrac{\sqrt2}{2})^2 + \tfrac12 > 0 \); so both are irreducible over \( \nR \) (@prp-irreducible-low-degree (b)). No polar form was used: only the square roots of \( \pm i \).
 :::
 
 ::: {.check}
@@ -328,7 +328,7 @@ Factor \( x^3 - 1 \) over \( \nR \) and over \( \nC \).
 :::
 
 ::: {.solution}
-\( x^3 - 1 = (x - 1)(x^2 + x + 1) \) (@lem-difference-of-powers, or expand). The quadratic has no real root, since \( x^2 + x + 1 = (x + \tfrac12)^2 + \tfrac34 > 0 \), so this is the factorization over \( \nR \) (@prp-irreducible-low-degree (b)). Over \( \nC \): a square root of \( -3 \) is \( i\sqrt3 \), and \( z_{\pm} \coloneqq (-1 \pm i\sqrt3)/2 \) satisfy \( z^2 + z + 1 = 0 \) (expand: \( z_\pm^2 = (-1 \mp i\sqrt3)/2 \), and \( z_\pm^2 + z_\pm + 1 = -1 + 1 = 0 \)). They are distinct roots, so \( (x - z_+)(x - z_-) \mid x^2 + x + 1 \) (@thm-polynomial-root-count); both are monic of degree \( 2 \), so they are equal, and \( x^3 - 1 = (x - 1)(x - z_+)(x - z_-) \).
+\( x^3 - 1 = (x - 1)(x^2 + x + 1) \) (@lem-difference-of-powers, or expand). The quadratic has no real root, since for every \( c \in \nR \), \( c^2 + c + 1 = (c + \tfrac12)^2 + \tfrac34 > 0 \), so this is the factorization over \( \nR \) (@prp-irreducible-low-degree (b)). Over \( \nC \): a square root of \( -3 \) is \( i\sqrt3 \), and \( z_{\pm} \coloneqq (-1 \pm i\sqrt3)/2 \) satisfy \( z^2 + z + 1 = 0 \) (expand: \( z_\pm^2 = (-1 \mp i\sqrt3)/2 \), and \( z_\pm^2 + z_\pm + 1 = -1 + 1 = 0 \)). They are distinct roots, so \( (x - z_+)(x - z_-) \mid x^2 + x + 1 \) (@thm-polynomial-root-count); both are monic of degree \( 2 \), so they are equal, and \( x^3 - 1 = (x - 1)(x - z_+)(x - z_-) \).
 :::
 
 ## Real polynomials
@@ -357,7 +357,7 @@ Conjugating every coefficient is a substitution homomorphism, so it respects sum
 \]
 For real coefficients this is the computation of @prp-real-coefficients-conjugate-roots.
 
-(b) The coefficients of \( f \) are real, so \( \bar f = f \) (@prp-modulus-of-real: \( \conj{a} = a \) for \( a \in \nR \)). By (a), \( f(\conj{z}) = \bar f(\conj{z}) = \conj{f(z)} \), and \( \conj{w} = 0 \) if and only if \( w = 0 \); so \( z \) is a root exactly when \( \conj{z} \) is. Let \( m \coloneqq \operatorname{mult}_z(f) \). By @lem-polynomial-multiplicity-cofactor (a), \( f = (x - z)^m g \) with \( g(z) \ne 0 \). Apply the homomorphism of (a): \( f = \bar f = (x - \conj{z})^m \bar g \), and \( \bar g(\conj{z}) = \conj{g(z)} \ne 0 \). By @lem-polynomial-multiplicity-cofactor (a) again, \( \operatorname{mult}_{\conj{z}}(f) = m \).
+(b) The coefficients of \( f \) are real, so \( \bar f = f \) (@prp-modulus-of-real: \( \conj{a} = a \) for \( a \in \nR \)). By (a), \( f(\conj{z}) = \bar f(\conj{z}) = \conj{f(z)} \), and \( \conj{w} = 0 \) if and only if \( w = 0 \) (\( \conj{0} = 0 \) by @def-conjugate-modulus, and conversely \( w = \conj{\conj{w}} \) by @thm-conjugate-properties (a)); so \( z \) is a root exactly when \( \conj{z} \) is. Let \( m \coloneqq \operatorname{mult}_z(f) \). By @lem-polynomial-multiplicity-cofactor (a), \( f = (x - z)^m g \) with \( g(z) \ne 0 \). Apply the homomorphism of (a): \( f = \bar f = (x - \conj{z})^m \bar g \), and \( \bar g(\conj{z}) = \conj{g(z)} \ne 0 \). By @lem-polynomial-multiplicity-cofactor (a) again, \( \operatorname{mult}_{\conj{z}}(f) = m \).
 :::
 
 ::: {.check}
@@ -411,11 +411,19 @@ Every \( f \in \nR[x] \) of odd degree has a root in \( \nR \).
 :::
 
 ::: {.proof}
-Factor \( f = a \, p_1 \cdots p_k \) as in @thm-real-polynomial-factorization, with \( r + 2s = \deg f \). If \( r = 0 \), then \( \deg f = 2s \) is even, which an odd number is not (@fd3:cor-integers-even-odd (a)). So \( r \ge 1 \): some \( p_i = x - c \) with \( c \in \nR \). An entry of a list divides the product, so \( x - c \mid f \), and \( f(c) = 0 \) by @thm-polynomial-remainder-factor (b).
+Factor \( f = a \, p_1 \cdots p_k \) as in @thm-real-polynomial-factorization, with \( r + 2s = \deg f \). If \( r = 0 \), then \( \deg f = 2s \) is even, which an odd number is not (@fd3:cor-integers-even-odd (a)). So \( r \ge 1 \): some \( p_i = x - c \) with \( c \in \nR \). By (L2) of Section 5.3, \( x - c \) divides \( p_1 \cdots p_k \), hence divides \( f = a \, p_1 \cdots p_k \) (@prp-polynomial-divisibility-rules (b)), so \( f(c) = 0 \) by @thm-polynomial-remainder-factor (b).
+:::
+
+::: {.check}
+A real cubic \( f \) has exactly one real root \( c \). What are \( r \), \( s \) and \( \operatorname{mult}_c(f) \)?
+:::
+
+::: {.solution}
+Every linear entry \( x - c' \) divides \( f \), so \( c' \) is a real root (@thm-polynomial-remainder-factor (b)); hence each linear entry is \( x - c \). Then \( r + 2s = 3 \) is odd, so \( r \ge 1 \) (@fd3:cor-integers-even-odd (a), as in the proof of @cor-real-odd-degree-root), and \( (r, s) = (1, 1) \) or \( (3, 0) \). Multiplicities add over the list (@prp-polynomial-multiplicity-product): a quadratic entry \( q \) has \( q(c) \ne 0 \), so \( \operatorname{mult}_c(q) = 0 \), and \( \operatorname{mult}_c(f) = r \), which is \( 1 \) or \( 3 \). Examples: \( x(x^2 + 1) \) and \( x^3 \).
 :::
 
 ::: {.warning}
-Beyond degree \( 2 \), "no real root" does not make a real polynomial irreducible. The polynomial \( x^4 + 1 \) has no real root, since \( x^4 + 1 = (x^2)^2 + 1 \ge 1 \) for real \( x \), yet it is the product of two real quadratics (@exm-factor-x4-plus-one-reals). @cor-real-irreducible-polynomials says that every irreducible real polynomial has degree at most \( 2 \); so a real polynomial of degree \( 4 \) or more is always reducible, root or no root.
+Beyond degree \( 2 \), "no real root" does not make a real polynomial irreducible. The polynomial \( x^4 + 1 \) has no real root, since \( c^4 + 1 = (c^2)^2 + 1 \ge 1 \) for every \( c \in \nR \), yet it is the product of two real quadratics (@exm-factor-x4-plus-one-reals). @cor-real-irreducible-polynomials says that every irreducible real polynomial has degree at most \( 2 \); so a real polynomial of degree \( 4 \) or more is always reducible, root or no root.
 :::
 
 ::: {.remark}
@@ -462,7 +470,7 @@ Factor \( x^4 - x^2 - 2 \) into irreducible factors over \( \nQ \), over \( \nR 
 ::: {.solution}
 *\( x^4 - x^2 - 2 \).* Expanding shows \( x^4 - x^2 - 2 = (x^2 - 2)(x^2 + 1) \). Over \( \nQ \): \( x^2 - 2 \) has no rational root (@fd3:thm-no-rational-square-two) and \( x^2 + 1 \) has none (\( c^2 + 1 > 0 \), @fd3:prp-ordered-ring-rules (e)), so both are irreducible (@prp-irreducible-low-degree (b)), and the factorization is \( (x^2 - 2)(x^2 + 1) \). Over \( \nR \): \( x^2 - 2 = (x - \sqrt2)(x + \sqrt2) \) (@fd3:prp-cof-square-roots), while \( x^2 + 1 \) still has no real root: \( (x - \sqrt2)(x + \sqrt2)(x^2 + 1) \). Over \( \nC \): \( x^2 + 1 = (x - i)(x + i) \), so \( (x - \sqrt2)(x + \sqrt2)(x - i)(x + i) \).
 
-*\( x^4 + 4 \).* By the warning of Section 5.3, \( x^4 + 4 = (x^2 + 2x + 2)(x^2 - 2x + 2) \), and \( x^2 \pm 2x + 2 = (x \pm 1)^2 + 1 > 0 \) on \( \nR \); so this is the factorization over \( \nR \) (@cor-real-irreducible-polynomials). Over \( \nC \): \( -1 \pm i \) are the roots of \( x^2 + 2x + 2 \) (\( (-1 + i)^2 = -2i \), and \( -2i + 2(-1 + i) + 2 = 0 \); then its conjugate, by @prp-real-polynomial-conjugate-roots (b)), and \( 1 \pm i \) those of \( x^2 - 2x + 2 \) likewise. So \( x^4 + 4 = (x + 1 - i)(x + 1 + i)(x - 1 - i)(x - 1 + i) \), each quadratic being the product of its two distinct linear factors (@thm-polynomial-root-count, monic and of the same degree).
+*\( x^4 + 4 \).* By the warning of Section 5.3, \( x^4 + 4 = (x^2 + 2x + 2)(x^2 - 2x + 2) \), and \( c^2 \pm 2c + 2 = (c \pm 1)^2 + 1 > 0 \) for every \( c \in \nR \); so this is the factorization over \( \nR \) (@cor-real-irreducible-polynomials). Over \( \nC \): \( -1 \pm i \) are the roots of \( x^2 + 2x + 2 \) (\( (-1 + i)^2 = -2i \), and \( -2i + 2(-1 + i) + 2 = 0 \); then its conjugate, by @prp-real-polynomial-conjugate-roots (b)), and \( 1 \pm i \) those of \( x^2 - 2x + 2 \) likewise. So \( x^4 + 4 = (x + 1 - i)(x + 1 + i)(x - 1 - i)(x - 1 + i) \), each quadratic being the product of its two distinct linear factors (@thm-polynomial-root-count, monic and of the same degree).
 :::
 
 ::: {#exr-the-fundamental-theorem-b2}
@@ -495,7 +503,7 @@ Let \( f \in \nR[x] \) have degree \( 5 \) and exactly one real root \( c \). Wh
 :::
 
 ::: {.solution}
-Factor \( f = a \, p_1 \cdots p_k \) as in @thm-real-polynomial-factorization, with \( r \) linear and \( s \) quadratic entries, \( r + 2s = 5 \). Each linear entry \( x - c' \) divides \( f \), so \( c' \) is a real root (@thm-polynomial-remainder-factor (b)); hence every linear entry is \( x - c \). Multiplicities add over products (@prp-polynomial-multiplicity-product, with induction on \( k \)); \( \operatorname{mult}_c(x - c) = 1 \), a quadratic entry \( q \) has \( q(c) \ne 0 \) and so \( \operatorname{mult}_c(q) = 0 \), and the constant \( a \ne 0 \) has multiplicity \( 0 \). So \( \operatorname{mult}_c(f) = r \). Since \( r + 2s = 5 \) and \( r \ge 1 \) (@cor-real-odd-degree-root), the possibilities are \( (r, s) = (1, 2) \), \( (3, 1) \), \( (5, 0) \): the multiplicity of \( c \) is \( 1 \), \( 3 \) or \( 5 \), with \( 2 \), \( 1 \) or \( 0 \) quadratic factors. Examples with \( c = 0 \): \( x(x^2 + 1)^2 \), \( x^3(x^2 + 1) \), \( x^5 \). Each has only the real root \( 0 \), since \( x^2 + 1 > 0 \) on \( \nR \).
+Factor \( f = a \, p_1 \cdots p_k \) as in @thm-real-polynomial-factorization, with \( r \) linear and \( s \) quadratic entries, \( r + 2s = 5 \). Each linear entry \( x - c' \) divides \( f \), so \( c' \) is a real root (@thm-polynomial-remainder-factor (b)); hence every linear entry is \( x - c \). Multiplicities add over products (@prp-polynomial-multiplicity-product, with induction on \( k \)); \( \operatorname{mult}_c(x - c) = 1 \), a quadratic entry \( q \) has \( q(c) \ne 0 \) and so \( \operatorname{mult}_c(q) = 0 \), and the constant \( a \ne 0 \) has multiplicity \( 0 \). So \( \operatorname{mult}_c(f) = r \). Since \( r + 2s = 5 \) is odd, \( r \ge 1 \) (@fd3:cor-integers-even-odd (a), as in the proof of @cor-real-odd-degree-root), so the possibilities are \( (r, s) = (1, 2) \), \( (3, 1) \), \( (5, 0) \): the multiplicity of \( c \) is \( 1 \), \( 3 \) or \( 5 \), with \( 2 \), \( 1 \) or \( 0 \) quadratic factors. Examples with \( c = 0 \): \( x(x^2 + 1)^2 \), \( x^3(x^2 + 1) \), \( x^5 \). Each has only the real root \( 0 \), since \( t^2 + 1 > 0 \) for every \( t \in \nR \).
 :::
 
 ### C. Going deeper
@@ -531,7 +539,7 @@ t \coloneqq \min\{ 1, \alpha/\abs{u}^2, \alpha/(4B) \}
 \[
 \abs{1 + su}^2 = 1 - 2s\alpha + s^2\abs{u}^2 \le 1 - s\alpha \le \bigl( 1 - s\alpha/2 \bigr)^2 ,
 \]
-and \( 1 - s\alpha/2 > 0 \), so \( \abs{1 + su} \le 1 - s\alpha/2 \). Using \( tB \le \alpha/4 \),
+and \( 1 - s\alpha/2 > 0 \) because \( s\alpha \le \alpha^2/\abs{u}^2 \le 1 \) (as \( \alpha \le \abs{u} \)); two non-negative reals are ordered as their squares (@fd3:prp-ordered-ring-rules (g)), so \( \abs{1 + su} \le 1 - s\alpha/2 \). Using \( tB \le \alpha/4 \),
 \[
 \abs{p(z_0 + t\zeta)} \le \abs{b_0}\bigl( 1 - t^k\alpha/2 + t^{k+1}B \bigr) \le \abs{b_0}\bigl( 1 - t^k\alpha/4 \bigr) < \abs{b_0} .
 \]
@@ -543,12 +551,13 @@ and \( 1 - s\alpha/2 > 0 \), so \( \abs{1 + su} \le 1 - s\alpha/2 \). Using \( t
 **Marking scheme.** (10 points)
 
 - 2: re-centers at \( z_0 \) with \( b_0 = p(z_0) \ne 0 \), and takes \( k \) to be the first index \( j \ge 1 \) with \( b_j \ne 0 \), with a reason that it exists.
-- 3: obtains a direction \( \zeta \) with \( \operatorname{Re}(c\zeta^k) < 0 \) from the direction lemma, and proves \( \abs{1 + su} \le 1 - s\alpha/2 \) for all real \( s \) with \( 0 < s \le \alpha/\abs{u}^2 \), the constant stated.
+- 1: obtains a direction \( \zeta \) with \( \operatorname{Re}(c\zeta^k) < 0 \) from @lem-complex-direction-negative-real-part.
+- 2: proves that the leading term decreases by a definite amount: \( \abs{1 + su} \le 1 - \kappa s \) or \( \abs{1 + su}^2 \le 1 - \kappa s \) (or the same kind of bound for \( \abs{1 + su + E}^2 \) directly), with an explicit \( \kappa > 0 \) (for example \( \kappa = \alpha/2 \), resp. \( \alpha \)), for all \( s \) in an explicit range such as \( 0 < s \le \alpha/\abs{u}^2 \).
 - 2: bounds the tail by \( t^{k+1}B \) and fixes \( t \) explicitly before the estimate that uses it.
 - 2: concludes \( \abs{p(z_0 + t\zeta)} < \abs{p(z_0)} \), and derives the theorem by contradiction with the minimum.
 - 1: (c) names both uses of completeness (the infimum of Step 2, with the supremum of Step 5; the real square roots behind the modulus and behind the complex square roots of the direction lemma), and says why \( x^2 - 2 \) forces a failure.
 
-Fatal errors (0 for the step): choosing \( t \) after the inequality that needs it, or letting it depend on the point being estimated; assuming the minimum exists without citing @thm-complex-polynomial-minimum; using polar form or \( k \)-th roots of complex numbers, which this chapter does not have (a \( k \)-th root is accepted only with a proof). A proof that obtains the direction by polar form, if the reader has it from elsewhere, earns the 3 points of the direction step only together with a proof of the \( k \)-th root it uses.
+Fatal errors (0 for the step): choosing \( t \) after the inequality that needs it, or letting it depend on the point being estimated; assuming the minimum exists without citing @thm-complex-polynomial-minimum; using polar form or \( k \)-th roots of complex numbers, which this chapter does not have (a \( k \)-th root is accepted only with a proof). A proof that obtains the direction by polar form, if the reader has it from elsewhere, earns the 1 point of the direction step only together with a proof of the \( k \)-th root it uses.
 :::
 
 ::: {#exr-the-fundamental-theorem-c2}
@@ -572,9 +581,9 @@ Let \( \alpha \in \nC \) with \( \alpha \notin \nR \), and let \( J \coloneqq \{
 
 Here is an argument.
 
-> **Claim.** For every \( p \in \nC[x] \), \( \abs{p} \) attains a minimum on \( \nC \).
+> **Claim.** For every non-constant \( p \in \nC[x] \), \( \abs{p} \) attains a minimum on \( \nC \).
 >
-> **Proof.** (1) Let \( m \coloneqq \inf \{ \abs{p(z)} : z \in \nC \} \), which exists since the set is non-empty and bounded below by \( 0 \). (2) For each \( k \ge 1 \), pick \( z_k \in \nC \) with \( \abs{p(z_k)} < m + 1/k \). (3) By @lem-complex-polynomial-growth, the \( z_k \) lie in a bounded set. (4) So they converge to some \( z^* \in \nC \). (5) Then \( \abs{p(z^*)} = \lim \abs{p(z_k)} = m \).
+> **Proof.** (1) Let \( m \coloneqq \inf \{ \abs{p(z)} : z \in \nC \} \), which exists since the set is non-empty and bounded below by \( 0 \). (2) For each \( k \ge 1 \), pick \( z_k \in \nC \) with \( \abs{p(z_k)} < m + 1/k \). (3) Since \( \abs{p(z_k)} < m + 1 \le \abs{p(0)} + 1 \), @lem-complex-polynomial-growth puts the \( z_k \) in a bounded set. (4) So they converge to some \( z^* \in \nC \). (5) Then \( \abs{p(z^*)} = \lim \abs{p(z_k)} = m \).
 
 Is the claim true? Does the argument prove it? Name the line that fails and the reason, give a counterexample to the illegal step, and say how the proof in the text avoids it.
 :::
@@ -582,7 +591,7 @@ Is the claim true? Does the argument prove it? Name the line that fails and the 
 ::: {.solution}
 [Hint 1]
 
-For each line, ask which result of this volume or of *Number Systems* justifies it.
+For each line, ask which result of this volume or of *Number Systems: From \( \nN \) to \( \nR \)* justifies it.
 :::
 
 ::: {.solution}
@@ -642,7 +651,7 @@ Let \( m, n \in \nZ_{>0} \). Prove that \( \gcd(2^m - 1, 2^n - 1) = 2^{\gcd(m, n
 :::
 
 ::: {.solution}
-The method is the integer Euclidean step of *Number Systems*, Chapter 3 (@fd3:lem-gcd-remainder-step), used on the exponents and on the numbers at once. We prove the claim for all \( m, n \ge 1 \) by strong induction on \( m + n \) (@fd1:thm-strong-induction).
+The method is the integer Euclidean step of *Number Systems: From \( \nN \) to \( \nR \)*, Chapter 3 (@fd3:lem-gcd-remainder-step), used on the exponents and on the numbers at once. We prove the claim for all \( m, n \ge 1 \) by strong induction on \( m + n \) (@fd1:thm-strong-induction).
 
 If \( m = n \), both sides are \( 2^m - 1 \): the gcd of a positive integer with itself is that integer (it divides both, and every common divisor is at most it, @fd3:def-integer-gcd), and \( \gcd(m, m) = m \). If \( m > n \), then
 \[
@@ -650,7 +659,7 @@ If \( m = n \), both sides are \( 2^m - 1 \): the gcd of a positive integer with
 \]
 and \( 2^n - 1 > 0 \), so @fd3:lem-gcd-remainder-step gives \( \gcd(2^m - 1, 2^n - 1) = \gcd(2^n - 1, 2^{m-n} - 1) \). Likewise \( m = 1 \cdot n + (m - n) \) gives \( \gcd(m, n) = \gcd(n, m - n) \). Since \( n + (m - n) = m < m + n \) and \( m - n \ge 1 \), the induction hypothesis gives \( \gcd(2^n - 1, 2^{m-n} - 1) = 2^{\gcd(n, m-n)} - 1 = 2^{\gcd(m, n)} - 1 \). If \( m < n \), exchange the roles (the gcd is symmetric). For example, \( \gcd(2^{12} - 1, 2^{18} - 1) = \gcd(4095, 262143) = 63 = 2^6 - 1 \).
 
-This is the integer twin of Exercise B3 of Section 5.2 (@exr-polynomial-gcd-b3), where \( x^m - 1 \) and \( x^n - 1 \) play the parts of \( 2^m - 1 \) and \( 2^n - 1 \).
+This is the integer twin of Exercise C3 of Section 5.2 (@exr-polynomial-gcd-c3), where \( x^m - 1 \) and \( x^n - 1 \) play the parts of \( 2^m - 1 \) and \( 2^n - 1 \).
 :::
 
 ::: {#exr-the-fundamental-theorem-r4}
@@ -681,25 +690,28 @@ thm-complex-polynomial-minimum (proof): |Re(z - w)| <= s_k when both real parts 
 thm-complex-polynomial-minimum (proof): supremum property of R, directly in Steps 2 and 5 only | fd3:thm-reals-complete-ordered-field, fd3:def-complete-ordered-field, cited (chapter ledger line "analysis, isolated")
 thm-complex-polynomial-minimum (claim): (Step 3 quick check) a finite list of reals has a least element attained by one entry | inline (as above)
 lem-complex-direction-negative-real-part (proof): i^(2j+1) = (-1)^j i, (-1)^(2j+1) = -1, (-i)^k = -i^k | prp-power-laws-commutative-ring (a)-(c), cited; inline
-lem-complex-direction-negative-real-part (claim): (remark) F4.1's k-th roots of complex numbers rest on its borrowed cosine and sine | F4.1 blueprint (ax-cosine-sine, borrowed from AN1.10); prose comparison only, nothing rests on it
+lem-complex-direction-negative-real-part (proof): k in N is 2j + 1 or 2j with j in N | fd3:prp-omega-powers-parity (d), cited
+lem-complex-direction-negative-real-part (claim): (remark) F4.1's k-th roots of complex numbers rest on its borrowed cosine and sine | thm-complex-nth-roots, ax-cosine-sine (borrowed from AN1.10), cited; prose comparison only, nothing rests on it
 lem-complex-polynomial-descent (proof): |1 + su|^2 = 1 - 2 s alpha + s^2 |u|^2; (1 - s alpha / 2)^2 >= 1 - s alpha; t^j <= t^(k+1) for j >= k + 1 and 0 < t <= 1 | def-conjugate-modulus, def-complex-numbers; power facts of the first fold; fd3:prp-ordered-ring-rules (g) (contrapositive form for <=); inline
 exm-complex-polynomial-descent-step (example): b = (1, 0, 1, 1), k = 2, zeta = i, t = 1/4, p(i/4) = 15/16 - i/64, |p|^2 = 3601/4096, bound 63/64, (63/64)^2 = 3969/4096, p(1/4) = 69/64 | verify/ch05/exm-complex-polynomial-descent-step.py
 cor-complex-polynomials-linear-factors (proof): a product of monic polynomials is monic; (x - c)^m is the product of m factors x - c | thm-degree-of-product (b) with induction; the power recursion (lem-finite-sums-and-powers (c)); inline
-exm-factor-x4-plus-one-reals (example): x^4 + 1 = (x^2 - i)(x^2 + i); square roots of i and -i; the two real quadratics and their product; (x +- sqrt2/2)^2 + 1/2 | prp-complex-square-roots (formula and (b)), fd3:prp-cof-square-roots, thm-conjugate-properties (c), cited; verify/ch05/exm-factor-x4-plus-one-reals.py (sqrt 2 handled symbolically as a^2 = 2)
+exm-factor-x4-plus-one-reals (example): x^4 + 1 = (x^2 - i)(x^2 + i); square roots of i and -i; the two real quadratics and their product; (x +- sqrt2/2)^2 + 1/2 | prp-complex-square-roots (formula and (a)), fd3:prp-cof-square-roots, thm-conjugate-properties (c), cited; verify/ch05/exm-factor-x4-plus-one-reals.py (sqrt 2 handled symbolically as a^2 = 2)
 exm-factor-x4-plus-one-reals (claim): (quick check) x^3 - 1 = (x - 1)(x^2 + x + 1); z_+-^2 + z_+- + 1 = 0 | lem-difference-of-powers, cited; verify/ch05/exm-factor-x4-plus-one-reals.py
 prp-real-polynomial-conjugate-roots (proof): conj(z^k) = conj(z)^k; conj of a finite sum is the sum of the conjugates | thm-conjugate-properties (a), (b), induction with the sum recursion (fd2:def-sum-product template); inline
 prp-real-polynomial-conjugate-roots (proof): the composite of two ring homomorphisms is one; conj(1) = 1 | def-ring-homomorphism (consequences paragraph), def-conjugate-modulus; inline
 prp-real-polynomial-conjugate-roots (claim): (quick check) (x - 2 - i)(x - 2 + i) = (x - 2)^2 + 1 = x^2 - 4x + 5 | verify/ch05/prp-real-polynomial-conjugate-roots.py
 cor-real-irreducible-polynomials (proof): R[x] inside C[x] coefficientwise; z not real implies conj(z) != z | ledger line of the chapter (Q in R in C); exm-complex-conjugation-automorphism (z-bar = z iff z in R), cited
 thm-real-polynomial-factorization (proof): deg of a product of a list is the sum of the degrees, so deg f = r + 2s | thm-degree-of-product (b), induction on k; inline
-cor-real-odd-degree-root (proof): an entry of a list divides the product of the list | induction on the length with the product recursion; inline (as in thm-polynomial-chinese-remainder of Section 5.5)
+cor-real-odd-degree-root (proof): x - c divides p_1...p_k, hence f = a p_1...p_k | (L2) of Section 5.3, cited by name; prp-polynomial-divisibility-rules (b)
 cor-real-odd-degree-root (claim): (Looking ahead) the intermediate value theorem in AN1.6 | an1 (AN1.6 blueprint, item 5); prose pointer, nothing here depends on it
 exr-the-fundamental-theorem-a1 (solution): rho = 2, S_0, S_1, S_2 for x^2 + 1; |Im(z^2 + 1)| = |2xy| >= 2 on S(-2, -2, 1) | verify/ch05/exr-the-fundamental-theorem-a1.py
 exr-the-fundamental-theorem-b1 (solution): (x^2 - 2)(x^2 + 1); x^4 + 4 = (x^2 + 2x + 2)(x^2 - 2x + 2); roots -1 +- i, 1 +- i | verify/ch05/exr-the-fundamental-theorem-b1.py
 exr-the-fundamental-theorem-b2 (solution): b = (-1, 3, 3, 1), t = 3/16, p(19/16) = -1333/4096, 6859/4096, bound 55/64 | verify/ch05/exr-the-fundamental-theorem-b2.py
-exr-the-fundamental-theorem-b3 (solution): (r, s) in {(1, 2), (3, 1), (5, 0)}; mult_c of a product of a list is the sum | prp-polynomial-multiplicity-product with induction on the length, inline; verify/ch05/exr-the-fundamental-theorem-b3.py
+exr-the-fundamental-theorem-b3 (solution): (r, s) in {(1, 2), (3, 1), (5, 0)}; mult_c of a product of a list is the sum | prp-polynomial-multiplicity-product with induction on the length, inline; fd3:cor-integers-even-odd (a) (r + 2s = 5 odd gives r >= 1), cited; verify/ch05/exr-the-fundamental-theorem-b3.py
+cor-real-odd-degree-root (claim): (quick check) a real cubic with one real root c: (r, s) in {(1, 1), (3, 0)}, mult_c(f) = r | thm-polynomial-remainder-factor (b), fd3:cor-integers-even-odd (a) (r + 2s = 3 odd gives r >= 1), prp-polynomial-multiplicity-product (with induction on the length), cited; inline
 thm-real-polynomial-factorization (claim): (after it) reordering a list does not change its product | general commutativity of finite products in a commutative ring, not proved in fd1-fd4 in this form; a parenthetical remark, nothing rests on it
 exr-the-fundamental-theorem-c1 (solution): (c) the positive rationals q with q^2 < 2 have no rational supremum; |1 + i| = sqrt 2 not rational | fd3:thm-rationals-gap-sqrt2, fd3:thm-no-rational-square-two, cited; inline
+exr-the-fundamental-theorem-c1 (solution): (a) 1 - s alpha / 2 > 0 since s alpha <= alpha^2/|u|^2 <= 1; |1 + su| <= 1 - s alpha / 2 from the squares | fd3:prp-ordered-ring-rules (g), cited; inline
 exr-the-fundamental-theorem-c3 (solution): z_k = (-1)^k is bounded and does not converge | inline (its terms alternate between 1 and -1); the notion of convergence of a sequence is F3.9's def-sequence-limit-ordered-field (for C only in prose)
 exr-the-fundamental-theorem-r1 (solution): degrees are natural numbers, inside Z | fd3:cor-integers-even-odd (a), cited
 exr-the-fundamental-theorem-r2 (solution): (a + bx)(a - bx) = (a^2 - 2b^2) - b^2(x^2 - 2); [1 + x]^{-1} = [x - 1] | verify/ch05/exr-the-fundamental-theorem-r2.py

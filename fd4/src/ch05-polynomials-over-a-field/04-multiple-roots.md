@@ -2,7 +2,7 @@
 
 Over \( \nQ \), the polynomial \( x^4 - 2x^3 + 2x - 1 \) vanishes at \( 1 \) and at \( -1 \), and nowhere else. Yet it has degree \( 4 \), and \( 1 \) behaves like three roots at once: \( x^4 - 2x^3 + 2x - 1 = (x - 1)^3(x + 1) \). This section counts roots properly. It proves that a non-zero polynomial of degree \( n \) has at most \( n \) roots, that a polynomial over an infinite field is determined by its values, and what it means for a root to be repeated; then it shows how to see a repeated root without factoring, through the formal derivative of Section 4.5.
 
-Here the integers have no twin. Section 5.3 followed *Number Systems: From \(\nN\) to \(\nR\)*, Section 3.3 step by step, but an integer cannot be evaluated at a point. Everything below rests on one fact from Section 5.1, the factor theorem (@thm-polynomial-remainder-factor): \( c \) is a root of \( f \) if and only if \( x - c \mid f \). Throughout, \( F \) is a field.
+Here the integers have no twin. Section 5.3 followed *Number Systems: From \(\nN\) to \(\nR\)*, Section 3.3 step by step, but an integer cannot be evaluated at a point. The main new tool is one fact from Section 5.1, the factor theorem (@thm-polynomial-remainder-factor): \( c \) is a root of \( f \) if and only if \( x - c \mid f \). Throughout, \( F \) is a field.
 
 ## Counting roots
 
@@ -61,11 +61,11 @@ Section 4.4 insisted that a polynomial is not a function: over \( \nF_2 \), \( x
 ::: {#thm-polynomial-identity-from-values}
 [Polynomials Determined by Values]
 
-Let \( F \) be a field and \( p, q \in F[x] \).
+Let \( F \) be a field and \( f, g \in F[x] \).
 
 ::: {.enumerate options="label=(\alph*)"}
-1. Let \( n \in \nN \). If \( \deg p \le n \), \( \deg q \le n \), and \( p(c_i) = q(c_i) \) for \( n + 1 \) distinct elements \( c_0, \dots, c_n \in F \), then \( p = q \).
-2. If \( F \) is infinite and \( p(c) = q(c) \) for **every** \( c \in F \), then \( p = q \).
+1. Let \( n \in \nN \). If \( \deg f \le n \), \( \deg g \le n \), and \( f(c_i) = g(c_i) \) for \( n + 1 \) distinct elements \( c_0, \dots, c_n \in F \), then \( f = g \).
+2. If \( F \) is infinite and \( f(c) = g(c) \) for **every** \( c \in F \), then \( f = g \).
 :::
 :::
 
@@ -74,7 +74,7 @@ Two polynomials that agree at a point differ by a polynomial with a root there. 
 :::
 
 ::: {.proof}
-*(a)* By @thm-degree-of-sum, \( \deg(p - q) \le \max(\deg p, \deg q) \le n \) (the degree of \( -q \) is that of \( q \)). By @thm-evaluation-respects-operations, \( (p - q)(c_i) = p(c_i) - q(c_i) = 0 \), so \( c_0, \dots, c_n \) are \( n + 1 \) distinct roots of \( p - q \). If \( p - q \ne 0 \), @thm-polynomial-root-count gives \( n + 1 \le \deg(p - q) \le n \), which is false. So \( p - q = 0 \).
+*(a)* By @thm-degree-of-sum, \( \deg(f - g) \le \max(\deg f, \deg g) \le n \) (the degree of \( -g \) is that of \( g \)). By @thm-evaluation-respects-operations, \( (f - g)(c_i) = f(c_i) - g(c_i) = 0 \), so \( c_0, \dots, c_n \) are \( n + 1 \) distinct roots of \( f - g \). If \( f - g \ne 0 \), @thm-polynomial-root-count gives \( n + 1 \le \deg(f - g) \le n \), which is false. So \( f - g = 0 \).
 
 *(b)* We first find enough distinct elements.
 
@@ -86,7 +86,7 @@ By @fd1:ax-induction on \( m \). For \( m = 0 \) the empty function works. Suppo
 :::
 :::
 
-The claim is proved by induction on a statement of the form "there exists a list", and each step takes one element from a non-empty set, once; no sequence of choices is made, so no axiom of choice is used. Now let \( n \coloneqq \max(\deg p, \deg q, 0) \in \nN \). The claim with \( S = F \) and \( m = n + 1 \) gives \( n + 1 \) distinct elements of \( F \), at which \( p \) and \( q \) agree, and (a) gives \( p = q \).
+The claim is proved by induction on a statement of the form "there exists a list", and each step takes one element from a non-empty set, once; no sequence of choices is made, so no axiom of choice is used. Now let \( n \coloneqq \max(\deg f, \deg g, 0) \in \nN \). The claim with \( S = F \) and \( m = n + 1 \) gives \( n + 1 \) distinct elements of \( F \), at which \( f \) and \( g \) agree, and (a) gives \( f = g \).
 :::
 
 Over \( \nQ \), \( \nR \) and \( \nC \), which are infinite, equality of polynomials and equality of polynomial functions are therefore the same thing. Two polynomials with integer coefficients that agree at every integer are equal too: read them in \( \nQ[x] \), and apply (a) at \( n + 1 \) distinct integers. Part (a) says more, and it says it over every field: \( n + 1 \) values fix a polynomial of degree at most \( n \). A line is fixed by two points, a parabola by three.
@@ -135,7 +135,7 @@ f = \sum_{j=0}^{n} b_j (x - c)^j .
 :::
 :::
 
-By @thm-degree-of-product (b) and induction on \( j \), each \( (x - c)^j \) is monic of degree \( j \); so a sum \( \sum_{j=0}^{J} d_j (x - c)^j \) with \( d_J \ne 0 \) has degree **exactly** \( J \): the term \( d_J (x - c)^J \) has degree \( J \), every other non-zero term has smaller degree, and @thm-degree-of-sum (with equality when the degrees differ, applied one term at a time) does the rest. We use this fact twice.
+By @thm-degree-of-product (b) and induction on \( j \), each \( (x - c)^j \) is monic of degree \( j \); so a sum \( \sum_{j=0}^{J} d_j (x - c)^j \) with \( d_J \ne 0 \) has degree **exactly** \( J \): the term \( d_J (x - c)^J \) has degree \( J \), every other non-zero term has smaller degree, and @thm-degree-of-sum (with equality when the degrees differ, applied one term at a time) does the rest. The uniqueness half of (a) below uses this fact; part (b) uses its first clause, that \( (x - c)^n \) is monic of degree \( n \).
 
 ::: {.idea}
 Divide \( f \) by \( x - c \): the remainder is the constant \( f(c) \), and the quotient has degree one less. Expand the quotient the same way, by induction, and multiply back by \( x - c \). For uniqueness, compare degrees: a non-trivial combination of the powers \( (x - c)^j \) has the degree of its highest term, so it is not \( 0 \).
@@ -186,9 +186,9 @@ In words: keep dividing \( f \) by \( x - c \) while the division comes out exac
 \[
 \operatorname{mult}_c(f) = 0 \iff f(c) \ne 0 .
 \]
-A multiplicity \( 0 \) means "not a root". The zero polynomial is excluded because every power of \( x - c \) divides it, and \( M \) would have no greatest element.
+For the direction from right to left: if \( f(c) \ne 0 \), no \( m \ge 1 \) lies in \( M \) either, since \( (x - c)^m = (x - c)^{m-1} (x - c) \) (@lem-finite-sums-and-powers (c)), so \( (x - c)^m \mid f \) would give \( x - c \mid f \) (@prp-polynomial-divisibility-rules (b)), that is, \( 1 \in M \). Hence \( M = \{0\} \). A multiplicity \( 0 \) means "not a root". The zero polynomial is excluded because every power of \( x - c \) divides it, and \( M \) would have no greatest element.
 
-**Examples.** In \( \nQ[x] \), \( \operatorname{mult}_1((x - 1)^2) = 2 \): \( (x - 1)^2 \) divides itself, and \( (x - 1)^3 \) does not, by degrees. \( \operatorname{mult}_0(x^2 + x) = 1 \), and \( \operatorname{mult}_2(x^2 + x) = 0 \), since the value at \( 2 \) is \( 6 \ne 0 \).
+**Examples.** In \( \nQ[x] \), \( \operatorname{mult}_1((x - 1)^2) = 2 \): \( (x - 1)^2 \) divides itself, and \( (x - 1)^3 \) does not, by degrees. \( \operatorname{mult}_0(x^2 + x) = 1 \): the value at \( 0 \) is \( 0 \), and \( x^2 \) does not divide \( x^2 + x \), since division with remainder gives \( x^2 + x = x^2 \cdot 1 + x \) with remainder \( x \ne 0 \). And \( \operatorname{mult}_2(x^2 + x) = 0 \), since the value at \( 2 \) is \( 6 \ne 0 \).
 
 The definition asks for a largest exponent, which is awkward to check directly. The next lemma replaces it by a single evaluation.
 
@@ -231,7 +231,7 @@ Let \( F \) be a field, \( f, g \in F[x] \) non-zero and \( c \in F \). Then \( 
 :::
 
 ::: {.proof}
-Let \( m \coloneqq \operatorname{mult}_c(f) \) and \( n \coloneqq \operatorname{mult}_c(g) \). By @lem-polynomial-multiplicity-cofactor (a), \( f = (x - c)^m u \) and \( g = (x - c)^n v \) with \( u(c) \ne 0 \) and \( v(c) \ne 0 \). Then \( fg = (x - c)^{m+n} uv \), \( fg \ne 0 \), and \( (uv)(c) = u(c) v(c) \ne 0 \) (@thm-evaluation-respects-operations, @thm-field-basic-properties (f)). By @lem-polynomial-multiplicity-cofactor (a) again, \( \operatorname{mult}_c(fg) = m + n \).
+Let \( m \coloneqq \operatorname{mult}_c(f) \) and \( n \coloneqq \operatorname{mult}_c(g) \). By @lem-polynomial-multiplicity-cofactor (a), \( f = (x - c)^m u \) and \( g = (x - c)^n v \) with \( u(c) \ne 0 \) and \( v(c) \ne 0 \). Then \( fg = (x - c)^{m+n} uv \) (@lem-finite-sums-and-powers (c), commutativity of \( F[x] \)), \( fg \ne 0 \) (@cor-polynomial-no-zero-divisors (a); a field is an integral domain), and \( (uv)(c) = u(c) v(c) \ne 0 \) (@thm-evaluation-respects-operations, @thm-field-basic-properties (f)). By @lem-polynomial-multiplicity-cofactor (a) again, \( \operatorname{mult}_c(fg) = m + n \).
 :::
 
 ::: {.check}
@@ -291,10 +291,10 @@ for some \( a, a_1, \dots, a_n \in F \), repetitions among the \( a_i \) allowed
 If \( f \) splits, the multiplicities of its roots add up to **exactly** \( n \): the rootless factor \( g \) of @thm-polynomial-roots-with-multiplicity is then a constant.
 
 ::: {.second-reading title="Why nothing is left over"}
-In the factorization of @thm-polynomial-roots-with-multiplicity, suppose the rootless \( g \) had degree at least \( 1 \); it would have a monic irreducible factor \( q \) (@lem-polynomial-irreducible-factor), and \( q \) would appear in the factorization of \( f \) into monic irreducibles. The splitting shows that this factorization is \( (x - a_1, \dots, x - a_n) \), and by uniqueness (@thm-polynomial-unique-factorization (b)) \( q = x - a_i \) for some \( i \), so \( a_i \) would be a root of \( g \). Hence \( g \) is a constant, and \( \deg f = \sum_i m_i \).
+In the factorization of @thm-polynomial-roots-with-multiplicity, suppose the rootless \( g \) had degree at least \( 1 \); it would have a monic irreducible factor \( q \) (@lem-polynomial-irreducible-factor), say \( g = q h \). Since \( g \mid f \), also \( q \mid f \) (@prp-polynomial-divisibility-rules (b)). As \( f \ne 0 \), \( a \ne 0 \), and \( q \) divides \( a^{-1} f = (x - a_1)(x - a_2) \cdots (x - a_n) \) (@prp-polynomial-divisibility-rules (c)). By @cor-irreducible-divides-product (c), \( n \ge 1 \) and \( q \mid x - a_i \) for some \( i \). Each \( x - a_i \) is monic and, having degree \( 1 \), irreducible (Section 5.3), so @cor-irreducible-divides-product (d) gives \( q = x - a_i \). Then \( g(a_i) = q(a_i) h(a_i) = 0 \) (@thm-evaluation-respects-operations), against \( g \) rootless. Hence \( g \) is a constant, non-zero as \( f \ne 0 \), and \( \deg f = \sum_i m_i \) (@thm-degree-of-product (b)).
 :::
 
-For example, \( x^2 - 2 \) does not split over \( \nQ \): a splitting \( (x - a_1)(x - a_2) \) would make \( a_1 \) a rational root, and \( a_1^2 = 2 \) is impossible (@fd3:thm-no-rational-square-two). Over \( \nR \) it splits, as \( (x - s)(x + s) \) with \( s \) the non-negative square root of \( 2 \) (@fd3:prp-cof-square-roots).
+For example, \( x^2 - 2 \) does not split over \( \nQ \): a splitting \( a(x - a_1)(x - a_2) \) would make \( a_1 \) a rational root, and \( a_1^2 = 2 \) is impossible (@fd3:thm-no-rational-square-two). Over \( \nR \) it splits, as \( (x - s)(x + s) \) with \( s \) the non-negative square root of \( 2 \) (@fd3:prp-cof-square-roots).
 
 ::: {#exm-polynomial-multiplicity-run}
 [Multiplicities by Repeated Division]
@@ -364,7 +364,7 @@ At \( c \), \( B(c) = (m \cdot 1) g(c) \) (@thm-evaluation-respects-operations).
 The hypothesis \( m \cdot 1 \ne 0 \) in (b) is needed. Over \( \nF_3 \), \( f = x^3 \) has \( \operatorname{mult}_0(f) = 3 \), but \( f' = (3 \cdot 1) x^2 = 0 \), whose multiplicity is not even defined. Part (a) holds over every field.
 
 ::: {.remark}
-**The polynomial \( x^p - x \) has only simple roots.** Over \( \nF_p \), \( (x^p - x)' = (p \cdot 1) x^{p-1} - 1 = -1 \), since \( p \cdot 1 = 0 \) in \( \nF_p \) (@thm-formal-derivative-rules). The derivative \( -1 \) vanishes nowhere, so by (a) no root of \( x^p - x \) is multiple. By @exm-polynomial-function-finite-field (b), every \( c \in \nF_p \) is a root, and each is simple: \( x^p - x \) is the product of the \( p \) distinct factors \( x - c \). This is the fact that Section 4.5's warning set aside.
+**The polynomial \( x^p - x \) has only simple roots.** Over \( \nF_p \), \( (x^p - x)' = (p \cdot 1) x^{p-1} - 1 \) by @thm-formal-derivative-rules, and this is \( -1 \), since \( p \cdot 1 = 0 \) in \( \nF_p \) (@exm-characteristics: \( \operatorname{char} \nF_p = p \)). The derivative \( -1 \) vanishes nowhere, so by (a) no root of \( x^p - x \) is multiple. By @exm-polynomial-function-finite-field (b), every \( c \in \nF_p \) is a root, and each is simple: \( x^p - x \) is the product of the \( p \) distinct factors \( x - c \). This is the fact that Section 4.5's warning set aside.
 :::
 
 The same computation, with an irreducible factor in place of \( x - c \), detects repeated factors through a gcd, which the Euclidean algorithm of Section 5.2 computes without factoring anything.
@@ -426,7 +426,7 @@ Yes. \( f(1) = 1 - 3 + 2 = 0 \), \( f' = 3x^2 - 3 \) and \( f'(1) = 0 \), so @th
 
 (b) Yes: \( f(0) = 0 \) and \( f' = (3 \cdot 1) x^2 = 0 \), so \( f'(0) = 0 \), and \( 0 \) is a multiple root (its multiplicity is \( 3 \)). Part (b) does not apply: \( m = 3 \) and \( 3 \cdot 1 = 0 \) in \( \nF_3 \); indeed \( f' = 0 \), and its multiplicity is not \( 2 \), it is not defined.
 
-(c) True: a non-zero polynomial of degree at most \( 2 \) has at most \( 2 \) distinct roots (@thm-polynomial-root-count), or @thm-polynomial-identity-from-values (a) with \( n = 2 \) and \( q = 0 \).
+(c) True: a non-zero polynomial of degree at most \( 2 \) has at most \( 2 \) distinct roots (@thm-polynomial-root-count), or @thm-polynomial-identity-from-values (a) with \( n = 2 \) and \( g = 0 \).
 
 (d) False: \( x^2 + x \ne 0 \) vanishes at \( 0 \) and \( 1 \) (@exm-polynomial-vs-function-f2). Part (b) of @thm-polynomial-identity-from-values needs an infinite field.
 :::
@@ -571,8 +571,10 @@ thm-polynomial-root-count (proof): products of lists in F[x] by the recursion; P
 thm-polynomial-root-count (proof): evaluation of a product of a list is the product of the values | thm-evaluation-respects-operations, induction on the length along the recursion, stated in the proof
 thm-polynomial-root-count (proof): a product of a list of non-zero field elements is non-zero | thm-field-basic-properties (g), induction on the number of factors, stated in the proof
 thm-polynomial-root-count (claim): (aftermath) x^2 - 1 has the roots 1, 3, 5, 7 in Z/8Z; (3 - 1)(3 + 1) = 8 | arithmetic mod 8 (fd3 thm-integers-mod-n-ring); verify/ch05/thm-polynomial-root-count.py
-thm-polynomial-identity-from-values (proof): deg(-q) = deg q | def-degree (coefficients of -q are -q_k, nonzero iff q_k nonzero), used silently
-thm-polynomial-identity-from-values (proof): max(deg p, deg q, 0) in N | def-degree conventions (-infinity < n), used silently
+thm-polynomial-identity-from-values (proof): deg(-g) = deg g | def-degree (coefficients of -g are -g_k, nonzero iff g_k nonzero), used silently
+thm-polynomial-identity-from-values (proof): max(deg f, deg g, 0) in N | def-degree conventions (-infinity < n), used silently
+thm-polynomial-identity-from-values (claim): (aftermath) Q, R, C are infinite | N infinite (fd2:exm-hilbert-hotel), N inside Q inside R inside C through the embeddings (fd3:prp-naturals-embed-integers, fd3:prp-integers-embed-rationals, fd3:thm-rational-embedding, prp-reals-embed-complex), a set with an infinite subset is infinite (fd2:prp-subset-finite, contrapositive), used silently
+thm-polynomial-identity-from-values (claim): (aftermath) integer polynomials read in Q[x] | Z inside Q (fd3:prp-integers-embed-rationals) coefficientwise: equality in Q[x] gives equality in Z[x], and values at integers are unchanged; the integers 0, ..., n are n + 1 distinct points, used silently
 thm-polynomial-identity-from-values (claim): no choice used in the inner induction | one existential instantiation per step of an induction on an existential statement (fd1 F1.4 rules, prose only)
 thm-polynomial-identity-from-values (claim): (warning) values of x^3 - x on F_3; 0^2 - 0, 1^2 - 1 in F_2 | arithmetic mod p; verify/ch05/exm-polynomial-function-finite-field.py
 exm-polynomial-function-finite-field (example): (a) values and factorization over F_3; (b) x^p - x = prod (x - c) for p <= 7 | arithmetic mod p; verify/ch05/exm-polynomial-function-finite-field.py
@@ -583,19 +585,22 @@ thm-polynomial-taylor-shift (proof): 0^j = 0 for j >= 1 | lem-finite-sums-and-po
 thm-polynomial-taylor-shift (claim): (check) expansion of x^3 at 1: 1, 3, 3, 1 | division; verify/ch05/thm-polynomial-taylor-shift.py
 def-polynomial-root-multiplicity (claim): N inside Z; a bounded non-empty set has a greatest element | fd3:prp-integer-least-element (cited), fd3 prp-naturals-embed-integers, used silently
 def-polynomial-root-multiplicity (claim): deg (x - c)^m = m | thm-degree-of-product (b), as in thm-polynomial-taylor-shift's lead-in
+def-polynomial-root-multiplicity (claim): f(c) != 0 gives M = {0}: (x - c)^m = (x - c)^{m-1}(x - c) | lem-finite-sums-and-powers (c), prp-polynomial-divisibility-rules (b) (cited)
+def-polynomial-root-multiplicity (example): mult_0(x^2 + x) = 1 via x^2 + x = x^2 * 1 + x, remainder x != 0 | thm-polynomial-division-remainder (uniqueness of the remainder), used silently; verify/ch05/lem-polynomial-multiplicity-cofactor.py
 def-polynomial-root-multiplicity (example): mult_1((x - 1)^2) = 2; mult_0(x^2 + x) = 1; value 6 at 2 | arithmetic in Q; verify/ch05/lem-polynomial-multiplicity-cofactor.py
 lem-polynomial-multiplicity-cofactor (proof): (x - c)^{m+1} divides (x - c)^{m'} for m' > m | power law lem-finite-sums-and-powers (c), used silently
 lem-polynomial-multiplicity-cofactor (proof): (c) taking (x - c)^J out of sum_{j >= J} b_j (x - c)^j, index shift | lem-finite-sums-and-powers (b), (c); index shift as in thm-polynomial-taylor-shift, used silently
+prp-polynomial-multiplicity-product (proof): fg = (x - c)^m (x - c)^n uv = (x - c)^{m+n} uv; fg != 0 | lem-finite-sums-and-powers (c), commutativity of F[x], cor-polynomial-no-zero-divisors (a) (cited); a field is an integral domain (fd3 field definition), used silently
 lem-polynomial-multiplicity-cofactor (claim): (check) x^5 + x^3 = x^3(x^2 + 1), x^3 - 4x = (x - 2) x (x + 2), cofactor value 8 | arithmetic in Q; verify/ch05/lem-polynomial-multiplicity-cofactor.py
 thm-polynomial-roots-with-multiplicity (claim): the roots of f != 0 form a finite set, listable without repetition | the claim inside thm-polynomial-identity-from-values (b) with thm-polynomial-root-count, stated in the lead-in; fd2:def-finite
 thm-polynomial-roots-with-multiplicity (proof): the product of the list ((x - c_i)^{m_i}) is monic of degree sum m_i | (L1) of Section 5.3 with deg (x - c)^m = m; cited by name
 thm-polynomial-roots-with-multiplicity (proof): mult_{c_i}(g_1) = m_i - 0 | prp-polynomial-multiplicity-product (cited); subtraction in N, used silently
-def-splits-over-field (claim): multiplicities of a split polynomial add up to n | inline paragraph after the definition: lem-polynomial-irreducible-factor and thm-polynomial-unique-factorization (b) (cited); a factor of g is a factor of f (prp-polynomial-divisibility-rules (b)) and the factorization of f is extended by that of g (thm-polynomial-unique-factorization (a) applied to g), used silently
+def-splits-over-field (claim): multiplicities of a split polynomial add up to n | second-reading fold after the definition: lem-polynomial-irreducible-factor, prp-polynomial-divisibility-rules (b), (c), cor-irreducible-divides-product (c), (d), thm-evaluation-respects-operations, thm-degree-of-product (b) (cited); x - a_i irreducible (degree 1, example after def-irreducible-over-field, Section 5.3), cited by section; a^{-1} a (x - a_1)...(x - a_n) = (x - a_1)...(x - a_n) by associativity, used silently
 def-splits-over-field (example): x^2 - 2 splits over R as (x - s)(x + s) | fd3:prp-cof-square-roots in R (complete ordered field, fd3:thm-reals-complete-ordered-field), (x - s)(x + s) = x^2 - s^2; Q in R ledger line of the blueprint
 exm-polynomial-multiplicity-run (example): the four divisions; (-2)^3 = -8; f = 2(x - 1)^3 + (x - 1)^4 | arithmetic in Q; verify/ch05/exm-polynomial-multiplicity-run.py
 thm-polynomial-repeated-root-test (proof): (1 * 1) g(c) = g(c); 0^{m-1} = 0 for m >= 2 | lem-integer-multiples (c) (1 * a = a), lem-finite-sums-and-powers (c); used silently
 thm-polynomial-repeated-root-test (claim): (aftermath) x^3 in F_3, f' = (3 * 1) x^2 = 0 | def-formal-derivative, arithmetic mod 3; verify/ch05/thm-polynomial-repeated-root-test.py
-thm-polynomial-repeated-root-test (claim): (remark) (x^p - x)' = (p * 1) x^{p-1} - 1 = -1; p * 1 = 0 in F_p | thm-formal-derivative-rules (cited); x' = 1 (def-formal-derivative); p * 1 = [p] = [0] in Z/pZ (def-field-fp); verify/ch05/thm-polynomial-repeated-root-test.py
+thm-polynomial-repeated-root-test (claim): (remark) (x^p - x)' = (p * 1) x^{p-1} - 1 = -1; p * 1 = 0 in F_p | thm-formal-derivative-rules (cited); x' = 1 (def-formal-derivative); p * 1 = 0 in F_p (exm-characteristics, char F_p = p; F4.2); verify/ch05/thm-polynomial-repeated-root-test.py
 cor-polynomial-squarefree-gcd (proof): the set {m : p^m | f} has a greatest element; m <= m deg p = deg p^m | as for def-polynomial-root-multiplicity: fd3:prp-integer-least-element; thm-degree-of-product (b) by induction on m; prp-polynomial-divisibility-rules (d)
 cor-polynomial-squarefree-gcd (proof): x - c is irreducible (degree 1) | example after def-irreducible-over-field (Section 5.3), used silently
 cor-polynomial-squarefree-gcd (claim): (check) f(1) = 0, f'(1) = 0, (x - 1)^2 (x + 2) = x^3 - 3x + 2 | arithmetic in Q; verify/ch05/cor-polynomial-squarefree-gcd.py

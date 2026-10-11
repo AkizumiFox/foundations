@@ -36,7 +36,7 @@ Four instances, chosen so that the same symbols give different answers:
 
 *Non-example by minimal change.* The last two lines use the same symbols, \( x + 1 \) and \( x^2 + 1 \). Only the field changed, from \( \nF_2 \) to \( \nQ \), and with it the value of \( 2 \): the evaluation argument gives \( 2 = 0 \), which is true in \( \nF_2 \) and false in \( \nQ \). So "\( g \mid f \)" is a statement about \( g \), \( f \) **and** \( F \), which is why the definition says "over \( F \)".
 
-*Degenerate cases.* Every \( g \) divides \( 0 \), since \( 0 = g \cdot 0 \). The zero polynomial divides only \( 0 \). And a non-zero constant \( c \) divides every \( f \), since \( f = c(c^{-1}f) \); this is where the field enters for the first time, and it means that non-zero constants are as invisible to divisibility as \( \pm 1 \) were in \( \nZ \).
+*Degenerate cases.* Every \( g \) divides \( 0 \), since \( 0 = g \cdot 0 \). The zero polynomial divides only \( 0 \). And a non-zero constant \( c \) divides every \( f \), since \( f = c(c^{-1}f) \); this is (F8), inverses of non-zero elements, at work in general (the cofactor of \( 2x - 2 \) above was one instance), and it means that non-zero constants are as invisible to divisibility as \( \pm 1 \) were in \( \nZ \).
 
 ::: {.check}
 In \( \nF_3[x] \), does \( x + 1 \) divide \( x^2 + 1 \)? Evaluate at \( -1 = 2 \).
@@ -46,7 +46,7 @@ In \( \nF_3[x] \), does \( x + 1 \) divide \( x^2 + 1 \)? Evaluate at \( -1 = 2 
 No. If \( x^2 + 1 = (x + 1)h \), evaluating at \( 2 \) (@thm-evaluation-respects-operations) gives \( 2^2 + 1 = (2 + 1)h(2) \), that is, \( 5 = 0 \cdot h(2) = 0 \). In \( \nF_3 \), \( 5 = 2 \ne 0 \). So \( x + 1 \nmid x^2 + 1 \) in \( \nF_3[x] \).
 :::
 
-The rules below are the ones the chapter uses. Parts (a)–(d) are identities in the commutative ring \( F[x] \) and one degree count; parts (e) and (f) say exactly what "invisible" means.
+The rules below are the ones the chapter uses. Parts (a)–(d) are identities in the commutative ring \( F[x] \), plus the inverse of a non-zero constant (F8) for the last clause of (a) and one degree count; parts (e) and (f) say exactly what "invisible" means.
 
 ::: {#prp-polynomial-divisibility-rules}
 [Rules for Divisibility of Polynomials]
@@ -64,7 +64,7 @@ Let \( F \) be a field and \( f, g, h \in F[x] \).
 :::
 
 ::: {.idea}
-Parts (a)–(c) are rearrangements of equations \( f = gh \) by the ring laws. Part (d) is the degree of a product: a non-zero multiple of \( g \) has degree \( \deg g \) plus something in \( \nN \). Part (e) is Chapter 4's description of the units of \( R[x] \), read with \( R = F \). For (f), mutual divisibility gives \( f = f \cdot uv \), and canceling \( f \) makes \( u \) a unit, which (e) identifies as a non-zero constant.
+Parts (a)–(c) are rearrangements of equations \( f = gh \) by the ring laws, except that the last clause of (a) also uses \( c^{-1} \), from (F8). Part (d) is the degree of a product: a non-zero multiple of \( g \) has degree \( \deg g \) plus something in \( \nN \). Part (e) is Chapter 4's description of the units of \( R[x] \), read with \( R = F \). For (f), mutual divisibility gives \( f = f \cdot uv \), and canceling \( f \) makes \( u \) a unit, which (e) identifies as a non-zero constant.
 :::
 
 ::: {.proof}
@@ -84,7 +84,7 @@ We use the ring laws of \( F[x] \) (@thm-polynomial-ring-laws (a)) and @fd3:prp-
 
 \( (\Rightarrow) \) Let \( f \mid g \) and \( g \mid f \). If \( f = 0 \), then \( 0 \mid g \), so \( g = 0 \) by (a), and \( f = 1 \cdot g \). Otherwise write \( g = fu \) and \( f = gv \). Then \( f = fuv \), so \( f(1 - uv) = 0 \). Since \( f \ne 0 \), @cor-polynomial-no-zero-divisors (a) gives \( 1 - uv = 0 \), that is, \( uv = 1 \). So \( v \) is a unit of \( F[x] \), hence a non-zero constant by (e), and \( f = vg \): \( f \) and \( g \) are associates.
 
-*The monic associate.* Let \( f \ne 0 \) and \( a \coloneqq \operatorname{lc}(f) \ne 0 \). The polynomial \( a^{-1} f \) has the coefficients \( a^{-1} f_k \) (@thm-polynomial-ring-laws (d)). These vanish exactly where the \( f_k \) do, since \( a^{-1} \ne 0 \) and \( F \) has no zero divisors, so \( \deg(a^{-1} f) = \deg f \) and \( \operatorname{lc}(a^{-1} f) = a^{-1} a = 1 \). If also \( cf \) is monic for a constant \( c \ne 0 \), the same computation gives \( \operatorname{lc}(cf) = ca = 1 \), so \( c = a^{-1} \) (uniqueness of inverses, @thm-field-basic-properties (c)). So \( a^{-1} f \) is the only monic associate of \( f \).
+*The monic associate.* Let \( f \ne 0 \) and \( a \coloneqq \operatorname{lc}(f) \ne 0 \). The polynomial \( a^{-1} f \) has the coefficients \( a^{-1} f_k \) (@thm-polynomial-ring-laws (d)). These vanish exactly where the \( f_k \) do, since \( a^{-1} \ne 0 \) (as \( a \cdot 0 = 0 \ne 1 = a a^{-1} \), by @thm-field-basic-properties (d), (F7), (F8)) and \( F \) has no zero divisors, so \( \deg(a^{-1} f) = \deg f \) and \( \operatorname{lc}(a^{-1} f) = a^{-1} a = 1 \). If also \( cf \) is monic for a constant \( c \ne 0 \), the same computation gives \( \operatorname{lc}(cf) = ca = 1 \), so \( c = a^{-1} \) (uniqueness of inverses, @thm-field-basic-properties (c)). So \( a^{-1} f \) is the only monic associate of \( f \).
 
 *Monic and mutually dividing.* Let \( f, g \) be monic with \( f \mid g \) and \( g \mid f \). By what we proved, \( f = cg \) with a non-zero constant \( c \), and comparing leading coefficients, \( 1 = \operatorname{lc}(f) = c \operatorname{lc}(g) = c \). So \( f = g \). This proves the proposition.
 :::
@@ -124,7 +124,7 @@ The polynomials \( q \) and \( r \) are the **quotient** and the **remainder** o
 Since \( \deg 0 = -\infty < \deg g \), the remainder \( r = 0 \) is allowed.
 
 ::: {.idea}
-Look at all polynomials \( f - hg \), \( h \in F[x] \). If \( 0 \) is among them, \( f \) is a multiple of \( g \) and we are done. Otherwise their degrees are natural numbers, and well-ordering gives one, \( r \), of least degree \( n \). If \( n \ge \deg g \), we can kill the leading term of \( r \) by subtracting a constant times a power of \( x \) times \( g \): the constant is \( \operatorname{lc}(r) \operatorname{lc}(g)^{-1} \), and that inverse is where the field is needed. The result is again of the form \( f - hg \) and has smaller degree, against the choice of \( r \). Uniqueness: two answers give \( (q - q')g = r' - r \), and a non-zero multiple of \( g \) cannot have degree below \( \deg g \).
+Look at all polynomials \( f - hg \), \( h \in F[x] \). If \( 0 \) is among them, \( f \) is a multiple of \( g \) and we are done. Otherwise their degrees are natural numbers, and well-ordering gives one, \( r \), of least degree \( n \). If \( n \ge \deg g \), we can kill the leading term of \( r \) by subtracting a constant times a power of \( x \) times \( g \): the constant is \( \operatorname{lc}(r) \operatorname{lc}(g)^{-1} \), and that inverse is where the field is needed. The result is again of the form \( f - hg \) and has smaller degree, against the choice of \( r \). Uniqueness: two answers give \( (q - q')g = r' - r \), and a non-zero multiple of \( g \) cannot have degree below \( \deg g \). We call this move **compare degrees**.
 :::
 
 ::: {.proof}
@@ -136,17 +136,17 @@ If \( 0 \in S \), say \( 0 = f - qg \), then \( r \coloneqq 0 \) and this \( q \
 
 Suppose \( 0 \notin S \). Then every element of \( S \) has a degree in \( \nN \), and \( D \coloneqq \{ \deg s : s \in S \} \subseteq \nN \) is non-empty, since \( f = f - 0 \cdot g \in S \). By the well-ordering of \( \nN \) (@fd2:thm-well-ordering; on \( \nN = \omega \) it is @fd3:thm-omega-well-ordering), \( D \) has a least element \( n \). Choose \( q \in F[x] \) with \( r \coloneqq f - qg \) of degree \( n \), and let \( a \coloneqq \operatorname{lc}(r) \ne 0 \).
 
-Suppose \( n \ge m \). Let \( t \coloneqq (ab^{-1}) x^{n-m} \), a monomial with \( n - m \in \nN \) and non-zero coefficient \( ab^{-1} \) (@thm-field-basic-properties (f)). Then \( \deg t = n - m \) and \( \operatorname{lc}(t) = ab^{-1} \), so by @thm-degree-of-product (b), \( tg \) has degree \( (n - m) + m = n \) and leading coefficient \( ab^{-1} b = a \). Let
+Suppose \( n \ge m \). Let \( t \coloneqq (ab^{-1}) x^{n-m} \), a monomial with \( n - m \in \nN \) and non-zero coefficient \( ab^{-1} \): \( b^{-1} \ne 0 \), since \( b \cdot 0 = 0 \ne 1 = b b^{-1} \) (@thm-field-basic-properties (d), (F7), (F8)), so \( ab^{-1} \ne 0 \) by @thm-field-basic-properties (f). Then \( \deg t = n - m \) and \( \operatorname{lc}(t) = ab^{-1} \), so by @thm-degree-of-product (b), \( tg \) has degree \( (n - m) + m = n \) and leading coefficient \( ab^{-1} b = a \). Let
 \[
 r_1 \coloneqq r - tg = f - (q + t) g ,
 \]
-an element of \( S \). By @thm-degree-of-sum, \( \deg r_1 \le \max(\deg r, \deg tg) = n \), and the coefficient of \( x^n \) in \( r_1 \) is \( a - a = 0 \). So \( \deg r_1 < n \) (or \( r_1 = 0 \)). But \( r_1 \ne 0 \), since \( 0 \notin S \), and then \( \deg r_1 \in D \) is smaller than the least element \( n \) of \( D \). This contradiction shows \( n < m \). So \( f = qg + r \) with \( \deg r < \deg g \).
+an element of \( S \). By @thm-degree-of-sum (with \( \deg(-p) = \deg p \) for every \( p \), since \( (-p)_k = -p_k \)), \( \deg r_1 \le \max(\deg r, \deg tg) = n \), and the coefficient of \( x^n \) in \( r_1 \) is \( a - a = 0 \). So \( \deg r_1 < n \) (or \( r_1 = 0 \)). But \( r_1 \ne 0 \), since \( 0 \notin S \), and then \( \deg r_1 \in D \) is smaller than the least element \( n \) of \( D \). This contradiction shows \( n < m \). So \( f = qg + r \) with \( \deg r < \deg g \).
 
 *Uniqueness.* Let \( f = qg + r = q'g + r' \) with \( \deg r < m \) and \( \deg r' < m \). Then
 \[
 (q - q')g = r' - r ,
 \]
-and \( \deg(r' - r) \le \max(\deg r', \deg r) < m \) by @thm-degree-of-sum (with \( \deg(-r) = \deg r \), since \( (-r)_k = -r_k \)). If \( q \ne q' \), then @thm-degree-of-product (b) gives \( \deg\bigl((q - q')g\bigr) = \deg(q - q') + m \ge m \), a contradiction. So \( q = q' \), hence \( r' - r = 0 \cdot g = 0 \) and \( r = r' \).
+and \( \deg(r' - r) \le \max(\deg r', \deg r) < m \) by @thm-degree-of-sum (using \( \deg(-r) = \deg r \) as above). If \( q \ne q' \), then @thm-degree-of-product (b) gives \( \deg\bigl((q - q')g\bigr) = \deg(q - q') + m \ge m \), a contradiction. So \( q = q' \), hence \( r' - r = 0 \cdot g = 0 \) and \( r = r' \).
 
 (b) \( (\Leftarrow) \) If \( r = 0 \), then \( f = qg \), so \( g \mid f \). \( (\Rightarrow) \) If \( f = hg \), then \( f = hg + 0 \) with \( \deg 0 < \deg g \) is a division with remainder; by the uniqueness in (a), \( r = 0 \). This proves the theorem.
 :::
@@ -189,11 +189,11 @@ So \( x^4 + x + 2 = (2x^2 + 2)(2x^2 + 1) + x \) in \( \nF_3[x] \). Check: \( (2x
 :::
 
 ::: {.check}
-Find two different pairs \( (q, r) \) with \( x^2 = q(x^2 + 1) + r \) in \( \nQ[x] \) and \( \deg r \le 2 \). Which hypothesis of the theorem does the second one violate?
+Find two different pairs \( (q, r) \) with \( x^2 = q(x^2 + 1) + r \) in \( \nQ[x] \) and \( \deg r \le 2 \). Which condition in part (a) of the theorem does the second one fail?
 :::
 
 ::: {.solution}
-\( (q, r) = (1, -1) \): \( 1 \cdot (x^2 + 1) - 1 = x^2 \), with \( \deg(-1) = 0 < 2 \). And \( (q, r) = (0, x^2) \): \( 0 \cdot (x^2 + 1) + x^2 = x^2 \), with \( \deg r = 2 \). The second violates \( \deg r < \deg g = 2 \). Uniqueness holds only among remainders of degree **strictly** below that of the divisor; \( (1, -1) \) is the quotient and remainder.
+\( (q, r) = (1, -1) \): \( 1 \cdot (x^2 + 1) - 1 = x^2 \), with \( \deg(-1) = 0 < 2 \). And \( (q, r) = (0, x^2) \): \( 0 \cdot (x^2 + 1) + x^2 = x^2 \), with \( \deg r = 2 \). The second fails \( \deg r < \deg g = 2 \). Uniqueness holds only among remainders of degree **strictly** below that of the divisor; \( (1, -1) \) is the quotient and remainder.
 :::
 
 ::: {.warning}
@@ -278,7 +278,7 @@ Section 5.5 builds, for any finite list of distinct points of \( F \), the polyn
 ::: {.enumerate options="label=(\alph*)"}
 1. State @thm-polynomial-division-remainder with every hypothesis.
 2. Name the two places in its proof where "\( F \) is a field" is used.
-3. Let \( c \in F \) be a non-zero constant. What are the quotient and the remainder of \( f \) on division by \( c \)?
+3. Let \( f \in F[x] \), and let \( c \in F \) be a non-zero constant. What are the quotient and the remainder of \( f \) on division by \( c \)?
 4. True or false, with a reason: for \( f, g \in \nQ[x] \), if \( f \mid g \) and \( g \mid f \), then \( f = g \). The same question in \( \nF_2[x] \).
 :::
 :::
@@ -329,25 +329,21 @@ using \( -4 = 1 \) and \( -3 = 2 \) in \( \nF_5 \). So the quotient is \( 3x^2 +
 ::: {#exr-polynomial-division-b2}
 [B2: A factor of a difference of powers]
 
-Let \( F \) be a field, \( c \in F \) and \( n \in \nZ_{>0} \). Prove that
+Let \( F \) be a field, \( c \in F \) and \( n \in \nZ_{>0} \). Deduce from @lem-difference-of-powers that
 \[
 x^n - c^n = (x - c) \sum_{j=0}^{n-1} c^j x^{n-1-j} ,
 \]
-and deduce that \( x - c \mid x^n - c^n \). Then give a second proof of the divisibility with @thm-polynomial-remainder-factor.
+and hence that \( x - c \mid x^n - c^n \). Then give a second proof of the divisibility with @thm-polynomial-remainder-factor.
 :::
 
 ::: {.solution}
-Multiply out with the ring laws of \( F[x] \) (@thm-polynomial-ring-laws (a)) and the power laws of @lem-finite-sums-and-powers (c):
+\( F[x] \) is a commutative ring (@thm-polynomial-ring-laws (a)), so @lem-difference-of-powers applies in it. Take \( z = c \) and \( w = x \):
 \[
-\begin{aligned}
-(x - c) \sum_{j=0}^{n-1} c^j x^{n-1-j}
-&= \sum_{j=0}^{n-1} c^j x^{n-j} - \sum_{j=0}^{n-1} c^{j+1} x^{n-1-j} \\
-&= \sum_{j=0}^{n-1} c^j x^{n-j} - \sum_{j=1}^{n} c^{j} x^{n-j} = x^n - c^n .
-\end{aligned}
+c^n - x^n = (c - x) \sum_{j=0}^{n-1} c^j x^{n-1-j} .
 \]
-In the second sum we wrote \( j + 1 \) as the new index \( j \); then the two sums share the terms \( j = 1, \dots, n - 1 \), which cancel, and what is left is the term \( j = 0 \) of the first, \( x^n \), and the term \( j = n \) of the second, \( c^n x^0 = c^n \). The display shows \( x - c \mid x^n - c^n \).
+Negate both sides: \( -(c^n - x^n) = x^n - c^n \) and \( -\bigl((c - x) s\bigr) = (x - c) s \) for every \( s \in F[x] \) (@fd3:prp-ring-algebra (a), (c)). This is the displayed identity, and it shows \( x - c \mid x^n - c^n \). Taking \( z = c \), \( w = x \) rather than \( z = x \), \( w = c \) gives the sum in the stated order, with no re-indexing.
 
-*Second proof.* The value of \( x^n - c^n \) at \( c \) is \( c^n - c^n = 0 \) (@thm-evaluation-respects-operations), so \( c \) is a root and \( x - c \mid x^n - c^n \) by @thm-polynomial-remainder-factor (b). This proof gives the divisibility at once but not the quotient.
+*Second proof.* By @thm-polynomial-ring-laws (c), \( x^n \) is the monomial \( 1 x^n \), whose value at \( c \) is \( 1 \cdot c^n = c^n \) (@def-polynomial-evaluation, the monomial example after it). So the value of \( x^n - c^n \) at \( c \) is \( c^n - c^n = 0 \) (@thm-evaluation-respects-operations, for the sum and the constant \( -c^n \)), so \( c \) is a root and \( x - c \mid x^n - c^n \) by @thm-polynomial-remainder-factor (b). This proof gives the divisibility at once but not the quotient.
 :::
 
 ::: {#exr-polynomial-division-b3}
@@ -357,7 +353,7 @@ Let \( F \) be any field. Show that the remainder of \( x^{100} \) on division b
 :::
 
 ::: {.solution}
-By @exr-polynomial-division-b2 with \( x^2 \) in the role of \( x \) (the same computation, with the powers \( x^{2j} \)), or by multiplying out directly,
+By @lem-difference-of-powers in \( F[x] \) with \( z = x^2 \), \( w = 1 \) and \( n = 50 \), since \( (x^2)^k = x^{2k} \) and \( 1^k = 1 \) (@lem-finite-sums-and-powers (c)),
 \[
 (x^2 - 1) \sum_{j=0}^{49} x^{2j} = x^{100} - 1 .
 \]
@@ -391,7 +387,7 @@ Rerun the existence proof of @thm-polynomial-division-remainder, but only with i
 ::: {.solution}
 [Hint 2]
 
-With \( b = \operatorname{lc}(g) = 1 \), the monomial \( t \) of the proof is \( a x^{n-m} \), where \( a \) is a coefficient of \( r \).
+Let \( S_\nZ \coloneqq \{ f - hg : h \text{ an integer polynomial} \} \). If \( 0 \notin S_\nZ \), take \( r = f - qg \in S_\nZ \) of least degree \( n \) (@fd2:thm-well-ordering) and suppose \( n \ge \deg g \).
 :::
 
 ::: {.solution}
@@ -414,7 +410,7 @@ Let \( F \) be a field, \( f \in F[x] \) and \( a, b \in F \).
 ::: {.enumerate options="label=(\alph*)"}
 1. If \( a \ne b \), prove that the remainder of \( f \) on division by \( (x - a)(x - b) \) is
 \[
-f(a) \frac{x - b}{a - b} + f(b) \frac{x - a}{b - a} .
+f(a) (a - b)^{-1} (x - b) + f(b) (b - a)^{-1} (x - a) .
 \]
 2. If \( a = b \), write \( f = (x - a)h + f(a) \) (@thm-polynomial-remainder-factor (a)) and prove that the remainder of \( f \) on division by \( (x - a)^2 \) is \( h(a)(x - a) + f(a) \).
 3. Hence find the remainder of \( x^{100} \) on division by \( x^2 - 3x + 2 \) in \( \nQ[x] \).
@@ -430,7 +426,7 @@ The remainder has degree at most \( 1 \). Which values does it take at \( a \) a
 ::: {.solution}
 [Hint 2]
 
-Two polynomials of degree at most \( 1 \) with the same values at two distinct points differ by a polynomial of degree at most \( 1 \) with two roots.
+Write \( f = q(x - a)(x - b) + r \) with \( \deg r \le 1 \), and let \( s \) be the displayed polynomial.
 :::
 
 ::: {.solution}
@@ -444,7 +440,7 @@ and \( h(a)(x - a) + f(a) \) has degree at most \( 1 < 2 \). By uniqueness, it i
 
 (c) \( x^2 - 3x + 2 = (x - 1)(x - 2) \). By (a) with \( a = 1 \), \( b = 2 \), \( f(1) = 1 \) and \( f(2) = 2^{100} \), the remainder is
 \[
-1 \cdot \frac{x - 2}{-1} + 2^{100} \cdot \frac{x - 1}{1} = (2^{100} - 1)x + (2 - 2^{100}) .
+1 \cdot (-1)^{-1} (x - 2) + 2^{100} \cdot 1^{-1} (x - 1) = (2^{100} - 1)x + (2 - 2^{100}) .
 \]
 :::
 
@@ -454,6 +450,7 @@ def-polynomial-divides (example): (x - 1)(x + 1) = x^2 - 1, (2x - 2)(x/2 + 1/2) 
 def-polynomial-divides (example): 2 != 0 in Q | thm-rationals-field (fd3), 1 + 1 > 0 in the ordered field Q
 def-polynomial-divides (claim): (degenerate cases) 0 = g * 0, f = c (c^{-1} f) | fd3:prp-ring-algebra (b), (F8) of def-field; written out again in prp-polynomial-divisibility-rules (a)
 prp-polynomial-divisibility-rules (proof): (f) coefficients of a^{-1} f vanish exactly where those of f do | thm-field-basic-properties (f) (no zero divisors), with thm-polynomial-ring-laws (d)
+prp-polynomial-divisibility-rules (proof): (f) a^{-1} != 0 for a != 0 | a * 0 = 0 != 1 = a a^{-1}: thm-field-basic-properties (d), (F7), (F8); same argument for b^{-1} in thm-polynomial-division-remainder (proof)
 prp-polynomial-divisibility-rules (proof): (d) deg u in N for u != 0, so deg g <= deg g + deg u | def-degree; order of N
 prp-polynomial-divisibility-rules (proof): (f) comparing leading coefficients of f = c g | thm-polynomial-ring-laws (d) (coefficients of a constant multiple)
 thm-polynomial-division-remainder (proof): n - m in N for m <= n, and (n - m) + m = n | fd3:cor-omega-identification (c) (fd2 lem-naturals-arithmetic on omega)
@@ -469,8 +466,9 @@ thm-polynomial-remainder-factor (proof): (c) ax + b = a(x - (-a^{-1} b)) | ring 
 exm-polynomial-remainders-without-dividing (example): f(2) = 19; x^5 - x = (x^2 - x)(x^3 + x^2 + x + 1) | verify/ch05/exm-polynomial-remainders-without-dividing.py
 exm-polynomial-remainders-without-dividing (claim): (the Quick check after it) (-1)^7 + 1 = 0, 1^7 + 1 = 2 | computed in Q and F_2
 exr-polynomial-division-b1 (solution): the passes over Q and F_5 | verify/ch05/exr-polynomial-division-b1.py
-exr-polynomial-division-b2 (solution): reindexing j + 1 -> j and canceling the shared terms of two finite sums | lem-finite-sums-and-powers (a), (b) (Sigma1)-(Sigma4), used as in fd2:def-sum-product
-exr-polynomial-division-b3 (solution): (x^2 - 1) sum_{j=0}^{49} x^{2j} = x^{100} - 1 | exr-polynomial-division-b2 with x^2 for x (earlier exercise, allowed in a solution); verify/ch05/exr-polynomial-division-b3.py
+exr-polynomial-division-b2 (solution): c^n - x^n = (c - x) sum_{j=0}^{n-1} c^j x^{n-1-j}, then negated | lem-difference-of-powers (F4.1) with z = c, w = x in the commutative ring F[x] (thm-polynomial-ring-laws (a)); fd3:prp-ring-algebra (a), (c)
+exr-polynomial-division-b2 (solution): (second proof) value of x^n at c is c^n | thm-polynomial-ring-laws (c) (x^n = 1 x^n); def-polynomial-evaluation (monomial example)
+exr-polynomial-division-b3 (solution): (x^2 - 1) sum_{j=0}^{49} x^{2j} = x^{100} - 1 | lem-difference-of-powers (F4.1) with z = x^2, w = 1, n = 50; lem-finite-sums-and-powers (c) ((x^2)^k = x^{2k}, 1^k = 1); verify/ch05/exr-polynomial-division-b3.py
 exr-polynomial-division-c1 (solution): Z closed under +, -, *; coefficients of sums and products are sums of products | fd3:thm-integers-commutative-ring; def-polynomial-ring
 exr-polynomial-division-c2 (solution): x^2 - 3x + 2 = (x - 1)(x - 2); the remainder (2^100 - 1)x + (2 - 2^100) | verify/ch05/exr-polynomial-division-c2.py
 -->

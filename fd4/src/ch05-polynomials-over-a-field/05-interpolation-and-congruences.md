@@ -4,13 +4,13 @@ Section 5.4 proved a uniqueness statement: two polynomials of degree at most \( 
 \[
 f \equiv 1 \pmod{x} , \qquad f \equiv 3 \pmod{x - 1} , \qquad f \equiv 7 \pmod{x - 2} .
 \]
-Three congruences to coprime moduli: that is the Chinese remainder theorem of *Number Systems*, Chapter 3 (@fd3:thm-chinese-remainder-two), with polynomials in place of integers. On the way we meet the classes modulo a polynomial \( m \). They form a ring \( F[x]/\langle m \rangle \), and it is a field exactly when \( m \) is irreducible, as \( \nZ/p\nZ \) is a field exactly when \( p \) is prime.
+Three congruences to coprime moduli: that is the Chinese remainder theorem of *Number Systems: From \( \nN \) to \( \nR \)*, Chapter 3 (@fd3:thm-chinese-remainder-two), with polynomials in place of integers. On the way we meet the classes modulo a polynomial \( m \). They form a ring \( F[x]/\langle m \rangle \), and it is a field exactly when \( m \) is irreducible, as \( \nZ/p\nZ \) is a field exactly when \( p \) is prime.
 
 Throughout, \( F \) is a field. "Polynomial" means an element of \( F[x] \) unless another field is named.
 
 ## Polynomials through given points
 
-The points at which values are prescribed are called **nodes**. Suppose the nodes are \( c_0, \dots, c_n \in F \) and the values \( y_0, \dots, y_n \in F \). Fitting all the values at once is hard. Fitting one value while ignoring the others would be easy if we had, for each node \( c_i \), a polynomial that is \( 1 \) at \( c_i \) and \( 0 \) at every other node: then \( y_0 \) times the first, plus \( y_1 \) times the second, and so on, has every value right. A polynomial that vanishes at the nodes \( c_j \) with \( j \ne i \) is the product of the factors \( x - c_j \) (@thm-polynomial-remainder-factor (b)). Its value at \( c_i \) is the product of the numbers \( c_i - c_j \), and dividing by that product makes the value \( 1 \).
+The points at which values are prescribed are called **nodes**. Suppose the nodes are \( c_0, \dots, c_n \in F \) and the values \( y_0, \dots, y_n \in F \). Fitting all the values at once is hard. Fitting one value while ignoring the others would be easy if we had, for each node \( c_i \), a polynomial that is \( 1 \) at \( c_i \) and \( 0 \) at every other node: then \( y_0 \) times the first, plus \( y_1 \) times the second, and so on, has every value right. A polynomial that vanishes at the nodes \( c_j \) with \( j \ne i \) is a multiple of the product of the factors \( x - c_j \) (@thm-polynomial-root-count); the simplest is that product itself. Its value at \( c_i \) is the product of the numbers \( c_i - c_j \), and dividing by that product makes the value \( 1 \).
 
 *Each Lagrange polynomial is \( 1 \) at its own node and \( 0 \) at all the others.*
 
@@ -24,7 +24,7 @@ Let \( n \in \nN \) and let \( c_0, \dots, c_n \in F \) be **distinct**. For \( 
 the product, in increasing order of \( j \), of the \( n \) polynomials \( (c_i - c_j)^{-1}(x - c_j) \) with \( j \ne i \).
 :::
 
-The inverse \( (c_i - c_j)^{-1} \) exists because \( c_i \ne c_j \) for \( j \ne i \), and \( F \) is a field. The product of a list of polynomials is given by the recursion of @fd2:def-sum-product, read in the commutative ring \( F[x] \) (@thm-polynomial-ring-laws (a)); the pattern *Number Systems* used for lists of integers.
+The inverse \( (c_i - c_j)^{-1} \) exists because \( c_i \ne c_j \) for \( j \ne i \), and \( F \) is a field. The product of a list of polynomials is given by the recursion of @fd2:def-sum-product, read in the commutative ring \( F[x] \) (@thm-polynomial-ring-laws (a)); the pattern *Number Systems: From \( \nN \) to \( \nR \)* used for lists of integers.
 
 **Examples.**
 
@@ -70,7 +70,7 @@ The direct attempt writes \( p = a_0 + a_1 x + a_2 x^2 \) and solves the three e
 \]
 If \( k \ne i \), the factor with \( j = k \) is \( (c_i - c_k)^{-1} \cdot 0 = 0 \), so the product is \( 0 \). If \( k = i \), every factor is \( (c_i - c_j)^{-1}(c_i - c_j) = 1 \), so the product is \( 1 \). For the degree, each factor \( (c_i - c_j)^{-1} x - (c_i - c_j)^{-1} c_j \) has degree \( 1 \), since its coefficient of \( x \) is non-zero. A field has no zero divisors, so by @thm-degree-of-product (b) the degree of a product is the sum of the degrees; with \( n \) factors, \( \deg \ell_i = n \).
 
-(b) Each term \( y_i \ell_i \) has degree at most \( n \) (@thm-degree-of-product (a)), so \( \deg p \le n \) by @thm-degree-of-sum. Evaluating at \( c_k \) and using (a),
+(b) Each term \( y_i \ell_i \) has degree at most \( n \) (@thm-degree-of-product (a)), so \( \deg p \le n \) by @thm-degree-of-sum, applied one term at a time. Evaluating at \( c_k \) and using (a),
 \[
 p(c_k) = \sum_{i=0}^{n} y_i \ell_i(c_k) = y_k ,
 \]
@@ -81,7 +81,7 @@ since every term with \( i \ne k \) is \( y_i \cdot 0 = 0 \), and the term \( i 
 (d) Let \( \deg q \le n \), and apply (b) and (c) with \( y_i \coloneqq q(c_i) \). The polynomial \( \sum_i q(c_i) \ell_i \) and \( q \) itself both have degree at most \( n \) and the values \( q(c_0), \dots, q(c_n) \) at the nodes, so they are equal by (c). This proves the theorem.
 :::
 
-So for distinct nodes and any values, there is exactly one polynomial of degree at most \( n \) through the points, and (b) writes it down. Part (d) says that a polynomial of degree at most \( n \) is determined by its values at \( n + 1 \) nodes, and rebuilt from them by the same formula. Where the linear algebra companion speaks of "the Lagrange basis", this book has only the formula (d); no basis is defined here.
+So for distinct nodes and any values, there is exactly one polynomial of degree at most \( n \) through the points, and (b) writes it down. Part (d) says that a polynomial of degree at most \( n \) is determined by its values at \( n + 1 \) nodes, and rebuilt from them by the same formula. Where the linear-algebra companion, Chapter 6, speaks of "the Lagrange basis", this book has only the formula (d); no basis is defined here.
 
 ::: {.warning}
 The bound "degree at most \( n \)" in (c) is what makes the interpolant unique. Without it, uniqueness fails: \( p \) and \( p + (x - c_0)(x - c_1) \cdots (x - c_n) \) have the same values at every node, and the second has degree \( n + 1 \). For the nodes \( 0, 1 \) and the values \( 5, 8 \), both \( 5 + 3x \) and \( 5 + 3x + x(x - 1) = 5 + 2x + x^2 \) pass through \( (0, 5) \) and \( (1, 8) \).
@@ -107,10 +107,10 @@ Find the polynomial \( p \in \nQ[x] \) of degree at most \( 3 \) with \( p(-1) =
 The nodes \( c_0 = -1 \), \( c_1 = 0 \), \( c_2 = 1 \), \( c_3 = 2 \) are distinct. From @def-lagrange-polynomials-for-nodes, with the denominators computed first,
 \[
 \begin{aligned}
-\ell_0 &= \frac{x(x - 1)(x - 2)}{(-1)(-2)(-3)} = -\frac{x^3 - 3x^2 + 2x}{6} , \\
-\ell_1 &= \frac{(x + 1)(x - 1)(x - 2)}{(1)(-1)(-2)} = \frac{x^3 - 2x^2 - x + 2}{2} , \\
-\ell_2 &= \frac{(x + 1)x(x - 2)}{(2)(1)(-1)} = -\frac{x^3 - x^2 - 2x}{2} , \\
-\ell_3 &= \frac{(x + 1)x(x - 1)}{(3)(2)(1)} = \frac{x^3 - x}{6} .
+\ell_0 &= \bigl( (-1)(-2)(-3) \bigr)^{-1} x(x - 1)(x - 2) = (-6)^{-1} (x^3 - 3x^2 + 2x) , \\
+\ell_1 &= \bigl( (1)(-1)(-2) \bigr)^{-1} (x + 1)(x - 1)(x - 2) = 2^{-1} (x^3 - 2x^2 - x + 2) , \\
+\ell_2 &= \bigl( (2)(1)(-1) \bigr)^{-1} (x + 1)x(x - 2) = (-2)^{-1} (x^3 - x^2 - 2x) , \\
+\ell_3 &= \bigl( (3)(2)(1) \bigr)^{-1} (x + 1)x(x - 1) = 6^{-1} (x^3 - x) .
 \end{aligned}
 \]
 By @thm-polynomial-interpolation (b), \( p = 2\ell_0 + \ell_1 + 2\ell_2 + 11\ell_3 \). Collect each power of \( x \):
@@ -125,7 +125,7 @@ So \( p = x^3 + x^2 - x + 1 \). Check the four values: \( p(-1) = -1 + 1 + 1 + 1
 
 ## Congruence modulo a polynomial
 
-The opening question turned values into remainders. To compute with remainders as *Number Systems*, Chapter 3 did with integers, we need the relation "same remainder" and the classes it makes.
+The opening question turned values into remainders. To compute with remainders as *Number Systems: From \( \nN \) to \( \nR \)*, Chapter 3 did with integers, we need the relation "same remainder" and the classes it makes.
 
 ::: {#def-polynomial-congruence}
 [Congruence Modulo a Polynomial]
@@ -155,7 +155,7 @@ Divide: \( x^3 = x(x^2 + 1) - x \), so \( x^3 \equiv -x \), and \( x^3 - x = x(x
 
 ## The ring of classes modulo a polynomial
 
-*Number Systems*, Chapter 3 built \( \nZ/n\nZ \) as the quotient of \( \nZ \) by the ideal \( n\nZ \), and found in each class exactly one remainder in \( \{0, \dots, n - 1\} \). The same construction works for \( F[x] \) and an ideal \( \langle m \rangle \), and division with remainder again picks one representative per class, now "of degree less than \( \deg m \)".
+*Number Systems: From \( \nN \) to \( \nR \)*, Chapter 3 built \( \nZ/n\nZ \) as the quotient of \( \nZ \) by the ideal \( n\nZ \), and found in each class exactly one remainder in \( \{0, \dots, n - 1\} \). The same construction works for \( F[x] \) and an ideal \( \langle m \rangle \), and division with remainder again picks one representative per class, now "of degree less than \( \deg m \)".
 
 ::: {#thm-polynomial-quotient-ring}
 [The Ring of Polynomials Modulo m]
@@ -171,7 +171,7 @@ Let \( m \in F[x] \) with \( d \coloneqq \deg m \ge 1 \), and write \( [f] = f +
 :::
 
 ::: {.idea}
-Part (a) is the quotient theorem of *Number Systems* applied to the ideal \( \langle m \rangle \); only \( [1] \ne [0] \) needs the degree. Part (b) is division with remainder read twice: existence of the remainder puts one polynomial of small degree into each class, and "compare degrees" shows a class cannot hold two, since their difference would be a non-zero multiple of \( m \) of smaller degree than \( m \). Part (d) translates \( [a][f] = [1] \) into a Bézout identity, exactly as for \( \nZ/n\nZ \).
+Part (a) is the quotient theorem of *Number Systems: From \( \nN \) to \( \nR \)* applied to the ideal \( \langle m \rangle \); only \( [1] \ne [0] \) needs the degree. Part (b) is division with remainder read twice: existence of the remainder puts one polynomial of small degree into each class, and "compare degrees" shows a class cannot hold two, since their difference would be a non-zero multiple of \( m \) of smaller degree than \( m \). Part (d) translates \( [a][f] = [1] \) into a Bézout identity, exactly as for \( \nZ/n\nZ \).
 :::
 
 ::: {.proof}
@@ -189,6 +189,14 @@ Hence two polynomials are congruent exactly when their classes are equal (@fd2:t
 :::
 
 So \( F[x]/\langle m \rangle \) is a ring whose elements may be named by the polynomials of degree less than \( \deg m \), and by (c) its constants form a copy of \( F \). From now on we write \( c \) for the class \( [c] \) of a constant when no confusion can arise. A computation in the quotient is: compute with representatives, then replace the result by its remainder. The integer twins are @fd3:thm-integers-mod-n-ring (b) (one remainder per class) and @fd3:thm-units-mod-n (units).
+
+::: {.check}
+In \( \nQ[x]/\langle x^2 - 2 \rangle \), show that \( [x + 1] \) is a unit, and find its inverse with (d).
+:::
+
+::: {.solution}
+Divide: \( x^2 - 2 = (x - 1)(x + 1) - 1 \). Hence \( (x - 1)(x + 1) + (-1)(x^2 - 2) = 1 \), so \( \gcd(x + 1, x^2 - 2) = 1 \) (@cor-polynomial-coprime-iff-combination), and by @thm-polynomial-quotient-ring (d) with \( a = x - 1 \), \( [x + 1] \) is a unit with \( [x + 1]^{-1} = [x - 1] \). Check: \( (x + 1)(x - 1) = x^2 - 1 \equiv 2 - 1 = 1 \pmod{x^2 - 2} \).
+:::
 
 When is every non-zero class a unit? By (d), when every \( f \) with \( m \nmid f \) is coprime to \( m \). For an irreducible \( m \), @cor-irreducible-divides-product (a) says exactly this. For a reducible \( m \), a factor of \( m \) of smaller positive degree is neither a multiple of \( m \) nor coprime to it.
 
@@ -238,7 +246,7 @@ and every non-zero element has an inverse in it, as the theorem promised. Also \
 The theorem needs "irreducible", and having no root is not a substitute: Section 5.3 showed that the two differ from degree \( 4 \) on.
 
 ::: {.warning}
-"\( m \) has no root, so \( F[x]/\langle m \rangle \) is a field" is false. The polynomial \( m = (x^2 + 1)^2 \in \nR[x] \) has no real root, since \( m(c) = (c^2 + 1)^2 \ge 1 \). But \( [x^2 + 1] \ne [0] \), since \( x^2 + 1 \) has degree \( 2 < 4 = \deg m \), while \( [x^2 + 1]^2 = [(x^2 + 1)^2] = [0] \). A non-zero element with square zero cannot be a unit, so \( \nR[x]/\langle (x^2 + 1)^2 \rangle \) is not a field. The hypothesis of @thm-polynomial-quotient-field is irreducibility, as in the warning of Section 5.3.
+"\( m \) has no root, so \( F[x]/\langle m \rangle \) is a field" is false. The polynomial \( m = (x^2 + 1)^2 \in \nR[x] \) has no real root: for every \( c \in \nR \), \( c^2 + 1 > 0 \) (@exm-polynomial-quotient-four-elements (ii)), so \( m(c) = (c^2 + 1)^2 > 0 \) by @fd3:prp-ordered-ring-rules (e). But \( [x^2 + 1] \ne [0] \), since \( x^2 + 1 \) has degree \( 2 < 4 = \deg m \), while \( [x^2 + 1]^2 = [(x^2 + 1)^2] = [0] \). A non-zero element with square zero cannot be a unit, so \( \nR[x]/\langle (x^2 + 1)^2 \rangle \) is not a field.
 :::
 
 ::: {.check}
@@ -251,7 +259,7 @@ Is \( \nQ[x]/\langle x^2 - 2 \rangle \) a field? Is \( \nR[x]/\langle x^2 - 2 \r
 
 ## The Chinese remainder theorem for polynomials
 
-Now several congruences at once. *Number Systems*, Chapter 3 solved two congruences to coprime integer moduli by writing \( 1 \) as a combination of the moduli and multiplying (@fd3:thm-chinese-remainder-two). With polynomials the move is the same, and we take \( k \) moduli at once. The one new ingredient is that coprimality survives products.
+Now several congruences at once. *Number Systems: From \( \nN \) to \( \nR \)*, Chapter 3 solved two congruences to coprime integer moduli by writing \( 1 \) as a combination of the moduli and multiplying (@fd3:thm-chinese-remainder-two). With polynomials the move is the same, and we take \( k \) moduli at once. The one new ingredient is that coprimality survives products.
 
 ::: {#lem-polynomial-coprime-to-product}
 [Coprime to Each Factor, Coprime to the Product]
@@ -270,13 +278,13 @@ For (a), write \( 1 \) as a combination of \( p \) and each factor, and multiply
 :::
 
 ::: {.proof}
-(a) Induction on \( s \) (@fd1:ax-induction, from \( s = 1 \)). For \( s = 1 \) there is nothing to prove. Suppose the claim holds for \( s \), and let \( p \) be coprime to each of \( q_1, \dots, q_{s+1} \). Write \( Q \coloneqq q_1 \cdots q_s \), so that \( q_1 \cdots q_{s+1} = Q q_{s+1} \) by the product recursion. By the induction hypothesis and @cor-polynomial-coprime-iff-combination, \( ap + bQ = 1 \) and \( a'p + b'q_{s+1} = 1 \) for some \( a, b, a', b' \in F[x] \). Multiplying the two identities and expanding,
+(a) Induction on \( s \) (@fd1:ax-induction, from \( s = 1 \)). For \( s = 1 \) there is nothing to prove. Suppose the claim holds for \( s \), and let \( p \) be coprime to each of \( q_1, \dots, q_{s+1} \). Write \( Q \coloneqq q_1 \cdots q_s \), so that \( q_1 \cdots q_{s+1} = Q q_{s+1} \) by the product recursion (@fd2:def-sum-product, read in \( F[x] \)). By the induction hypothesis and @cor-polynomial-coprime-iff-combination, \( ap + bQ = 1 \) and \( a'p + b'q_{s+1} = 1 \) for some \( a, b, a', b' \in F[x] \). Multiplying the two identities and expanding,
 \[
 p \, (aa'p + ab'q_{s+1} + a'bQ) + (bb') \, Q q_{s+1} = 1 .
 \]
 So \( \gcd(p, Qq_{s+1}) = 1 \) by @cor-polynomial-coprime-iff-combination.
 
-(b) Induction on \( k \). For \( k = 1 \) there is nothing to prove. Suppose the claim holds for \( k \), and let \( m_1, \dots, m_{k+1} \) be pairwise coprime, each dividing \( h \). With \( M \coloneqq m_1 \cdots m_k \), the induction hypothesis gives \( M \mid h \). The modulus \( m_{k+1} \) is coprime to each of \( m_1, \dots, m_k \), so \( \gcd(m_{k+1}, M) = 1 \) by (a), and \( \gcd(M, m_{k+1}) = 1 \) since the gcd is symmetric (@def-polynomial-gcd). By @prp-polynomial-coprime-divisors-product, \( M m_{k+1} = m_1 \cdots m_{k+1} \) divides \( h \).
+(b) Induction on \( k \) (@fd1:ax-induction, from \( k = 1 \)). For \( k = 1 \) there is nothing to prove. Suppose the claim holds for \( k \), and let \( m_1, \dots, m_{k+1} \) be pairwise coprime, each dividing \( h \). With \( M \coloneqq m_1 \cdots m_k \), the induction hypothesis gives \( M \mid h \). The modulus \( m_{k+1} \) is coprime to each of \( m_1, \dots, m_k \), so \( \gcd(m_{k+1}, M) = 1 \) by (a), and \( \gcd(M, m_{k+1}) = 1 \) since the gcd is symmetric (@def-polynomial-gcd). By @prp-polynomial-coprime-divisors-product, \( M m_{k+1} = m_1 \cdots m_{k+1} \) divides \( h \).
 :::
 :::
 
@@ -307,7 +315,7 @@ This is the integer proof of @fd3:thm-chinese-remainder-two with \( k \) moduli.
 :::
 
 ::: {.proof}
-Two facts about a product of a list are used throughout. First, each \( m_j \) divides the product of any list in which it occurs as an entry: induction on the length with the product recursion, since a multiple of a multiple of \( m_j \) is a multiple of \( m_j \) (@def-polynomial-divides). In particular \( m_i \mid m \), and \( m_j \mid M_i \) for \( j \ne i \). Second, \( m \ne 0 \), since \( F[x] \) has no zero divisors (@cor-polynomial-no-zero-divisors (a), and induction on \( k \)).
+By (L2) of Section 5.3, applied to the list \( (m_1, \dots, m_k) \) with the entry \( i \) removed, \( m = M_i m_i \), so \( m_i \mid m \); and \( m_j \mid M_i \) for \( j \ne i \), by the last clause of (L2), since \( m_j \) is an entry of the list whose product is \( M_i \). By (L1) of Section 5.3, \( m \ne 0 \), since every \( m_i \) is non-zero.
 
 (a) If \( k = 1 \), then \( M_1 = 1 \) (the empty product), and \( a_1 \coloneqq 1 \), \( b_1 \coloneqq 0 \) will do. If \( k \ge 2 \), then \( m_i \) is coprime to each \( m_j \) with \( j \ne i \), so @lem-polynomial-coprime-to-product (a) gives \( \gcd(m_i, M_i) = 1 \); by the symmetry of the gcd and @cor-polynomial-coprime-iff-combination, \( a_i M_i + b_i m_i = 1 \) for some \( a_i, b_i \). In either case \( e_i - 1 = -b_i m_i \), so \( e_i \equiv 1 \pmod{m_i} \); and for \( j \ne i \), \( m_j \mid M_i \mid e_i \), so \( e_i \equiv 0 \pmod{m_j} \).
 
@@ -377,7 +385,7 @@ so \( \gcd(x - c_i, x - c_j) = 1 \) by @cor-polynomial-coprime-iff-combination. 
 :::
 :::
 
-So two routes lead to the same polynomial. The Lagrange route needs only evaluation and the root count; the Chinese remainder route needs Bézout identities, and in exchange it works for moduli of any degree. The next two examples use moduli that are not linear.
+So two routes lead to the same polynomial. The Lagrange route needs only evaluation and the root count; the Chinese remainder route needs Bézout identities, and in exchange it works for moduli of any degree. The next two examples use moduli that are not all linear.
 
 ::: {#exm-polynomial-chinese-remainder-run}
 [A linear and a quadratic modulus]
@@ -553,11 +561,11 @@ Check: \( (x^2 + 1)(-x^2 + 2x + 1) = -x^4 + 2x^3 + 2x + 1 \), and with \( x^3 \e
 \]
 The products come from \( \alpha^2 = \alpha + 1 \), \( \alpha(\alpha + 1) = 1 \), \( (\alpha + 1)^2 = \alpha \) (@exm-polynomial-quotient-four-elements). Each non-zero row of the multiplication table contains \( 1 \): \( 1^{-1} = 1 \), \( \alpha^{-1} = \alpha + 1 \), \( (\alpha + 1)^{-1} = \alpha \).
 
-(b) Every complex number is \( a + bi \) for exactly one pair \( (a, b) \in \nR^2 \) (@def-complex-numbers), and every element of \( \nR[x]/\langle x^2 + 1 \rangle \) is \( [a + bx] \) for exactly one such pair, by @thm-polynomial-quotient-ring (b) (the polynomials of degree less than \( 2 \) are the \( a + bx \), distinct for distinct pairs). So \( \varphi \) is a bijection. Sums: \( \varphi \) of \( (a + bi) + (c + di) = (a + c) + (b + d)i \) is \( [(a + c) + (b + d)x] = [a + bx] + [c + dx] \). Products: in \( \nR[x] \),
+(b) Every complex number is \( a + bi \) for exactly one pair \( (a, b) \in \nR^2 \) (@prp-reals-embed-complex and the comparison of real and imaginary parts after it), and every element of \( \nR[x]/\langle x^2 + 1 \rangle \) is \( [a + bx] \) for exactly one such pair, by @thm-polynomial-quotient-ring (b) (the polynomials of degree less than \( 2 \) are the \( a + bx \), distinct for distinct pairs). So \( \varphi \) is a bijection. Sums: \( \varphi \) of \( (a + bi) + (c + di) = (a + c) + (b + d)i \) is \( [(a + c) + (b + d)x] = [a + bx] + [c + dx] \). Products: in \( \nR[x] \),
 \[
 (a + bx)(c + dx) = (ac - bd) + (ad + bc)x + bd(x^2 + 1) ,
 \]
-so \( [a + bx][c + dx] = [(ac - bd) + (ad + bc)x] \), which is \( \varphi \) of \( (a + bi)(c + di) = (ac - bd) + (ad + bc)i \) (@def-complex-numbers). Finally \( \varphi(1) = [1] \). So the field of Chapter 1 could have been built as this quotient: the multiplication rule of @def-complex-numbers is "multiply, then replace \( x^2 \) by \( -1 \)".
+so \( [a + bx][c + dx] = [(ac - bd) + (ad + bc)x] \), which is \( \varphi \) of \( (a + bi)(c + di) = (ac - bd) + (ad + bc)i \) (@def-complex-numbers, @prp-reals-embed-complex). Finally \( \varphi(1) = [1] \). So the field of Chapter 1 could have been built as this quotient: the multiplication rule of @def-complex-numbers is "multiply, then replace \( x^2 \) by \( -1 \)".
 :::
 
 ### C. Going deeper
@@ -569,17 +577,17 @@ Let \( c_0, \dots, c_n \in F \) be distinct and \( m \coloneqq (x - c_0) \cdots 
 
 ::: {.enumerate options="label=(\alph*)"}
 1. Prove, using @thm-polynomial-interpolation and the root count but no Bézout identity, that for all \( r_0, \dots, r_n \in F[x] \) some \( f \) satisfies \( f \equiv r_i \pmod{x - c_i} \) for every \( i \), and that \( g \) satisfies the same congruences if and only if \( g \equiv f \pmod{m} \).
-2. Conversely, derive @thm-polynomial-interpolation (b) and (c) from @thm-polynomial-chinese-remainder.
+2. Conversely, derive from @thm-polynomial-chinese-remainder that for all \( y_0, \dots, y_n \in F \) exactly one polynomial of degree at most \( n \) satisfies \( p(c_k) = y_k \) for every \( k \) (the content of @thm-polynomial-interpolation (b) and (c), without the formula \( \sum_i y_i \ell_i \)).
 3. Which derivation is shorter, and why?
 :::
 :::
 
 ::: {.solution}
-(a) By the second example after @def-polynomial-congruence, \( r_i \equiv r_i(c_i) \pmod{x - c_i} \). Let \( f \coloneqq \sum_i r_i(c_i) \ell_i \). By @thm-polynomial-interpolation (b), \( f(c_i) = r_i(c_i) \), so \( f \equiv r_i(c_i) \equiv r_i \pmod{x - c_i} \), by @prp-interpolation-as-chinese-remainder (b) and transitivity. If \( g \) also satisfies the congruences, then \( g - f \equiv 0 \pmod{x - c_i} \) for every \( i \), so each \( c_i \) is a root of \( g - f \) (@thm-polynomial-remainder-factor (b)). The \( c_i \) are distinct roots, so \( m \mid g - f \) by @thm-polynomial-root-count. Conversely, if \( m \mid g - f \), then each \( x - c_i \), a factor of \( m \), divides \( g - f \), and \( g \equiv f \equiv r_i \pmod{x - c_i} \).
+(a) By the second example after @def-polynomial-congruence, \( r_i \equiv r_i(c_i) \pmod{x - c_i} \). Let \( f \coloneqq \sum_i r_i(c_i) \ell_i \). By @thm-polynomial-interpolation (b), \( f(c_i) = r_i(c_i) \), so \( f \equiv r_i(c_i) \equiv r_i \pmod{x - c_i} \), by @prp-interpolation-as-chinese-remainder (b) and transitivity. If \( g \) also satisfies the congruences, then \( g - f \equiv 0 \pmod{x - c_i} \) for every \( i \), so each \( c_i \) is a root of \( g - f \) (@thm-polynomial-remainder-factor (b)). The \( c_i \) are distinct roots, so \( m \mid g - f \) by @thm-polynomial-root-count. Conversely, if \( m \mid g - f \), then each \( x - c_i \) divides \( m \) (it is an entry of the list whose product is \( m \), (L2) of Section 5.3) and so divides \( g - f \) (@prp-polynomial-divisibility-rules (b)), and \( g \equiv f \equiv r_i \pmod{x - c_i} \).
 
-(b) By @prp-interpolation-as-chinese-remainder (a), (b), the moduli \( x - c_i \) are pairwise coprime, \( \deg m = n + 1 \), and "\( f(c_i) = y_i \) for every \( i \)" is the system \( f \equiv y_i \pmod{x - c_i} \). By @thm-polynomial-chinese-remainder (c), exactly one polynomial of degree less than \( n + 1 \), that is, of degree at most \( n \), solves it. That is existence (b) and uniqueness (c) at once, without the formula for \( \ell_i \).
+(b) By @prp-interpolation-as-chinese-remainder (a), (b), the moduli \( x - c_i \) are pairwise coprime, \( \deg m = n + 1 \), and "\( f(c_i) = y_i \) for every \( i \)" is the system \( f \equiv y_i \pmod{x - c_i} \). By @thm-polynomial-chinese-remainder (c), exactly one polynomial of degree less than \( n + 1 \), that is, of degree at most \( n \), solves it. That is the existence of an interpolating polynomial and its uniqueness at once, without the formula for \( \ell_i \); identifying it with \( \sum_i y_i \ell_i \) still needs @thm-polynomial-interpolation (a).
 
-(c) The route in (a) is shorter in what it needs: evaluation and the root count. The route in (b) passes through @lem-polynomial-coprime-to-product and Bézout identities for the moduli. The Lagrange route is shorter because linear moduli are special: "divisible by \( x - c \)" can be tested by evaluating at \( c \), which turns every congruence into an equation in \( F \). For moduli of higher degree, such as \( (x - c)^2 \) in @exm-hermite-by-chinese-remainder, there is no such test, and only the Chinese remainder route applies.
+(c) The route in (a) is shorter in what it needs: evaluation and the root count. The route in (b) passes through @lem-polynomial-coprime-to-product and Bézout identities for the moduli. The Lagrange route is shorter because linear moduli are special: "divisible by \( x - c \)" can be tested by evaluating at \( c \), which turns every congruence into an equation in \( F \). For moduli of higher degree, evaluation at a single point is no longer enough. For \( (x - c)^2 \), @exm-hermite-by-chinese-remainder (a) needs the derivative as well as the value. For \( x^2 + 1 \) over \( \nQ \) in @exm-polynomial-chinese-remainder-run, the modulus has no root in \( \nQ \), so no evaluation in \( \nQ \) detects divisibility at all. The Chinese remainder route handles every modulus in the same way.
 :::
 
 ::: {#exr-interpolation-and-congruences-c2}
@@ -603,20 +611,23 @@ def-lagrange-polynomials-for-nodes (claim): product of a list of polynomials by 
 def-lagrange-polynomials-for-nodes (example): l_0 = 1 - x, l_1 = x; l_0 = (1/2)(x - 1)(x - 2); 2 * 2 = 1 in F_3 | inline arithmetic; verify/ch05/def-lagrange-polynomials-for-nodes.py
 thm-polynomial-interpolation (proof): the value of a product of a finite list is the product of the values; a product of a list with a zero entry is 0; the degree of a product of n factors of degree 1 is n | thm-evaluation-respects-operations, fd3:prp-ring-algebra (b), thm-degree-of-product (b), each extended to lists by induction on the length (fd1:ax-induction read on omega via fd3:cor-omega-identification); inline
 thm-polynomial-interpolation (proof): the value of a sum of n + 1 terms is the sum of the values | thm-evaluation-respects-operations, induction on the number of terms; inline
+thm-polynomial-interpolation (proof): the degree of a sum of n + 1 terms is at most the largest of their degrees | thm-degree-of-sum, extended to n + 1 terms by induction on the number of terms (fd1:ax-induction); inline
+thm-polynomial-interpolation (claim): the companion's Lagrange basis (its Chapter 6) | companion (LA2.6), prose pointer; nothing depends on it
 thm-polynomial-interpolation (claim): (warning) 5 + 3x and 5 + 2x + x^2 agree at 0, 1 | inline arithmetic; verify/ch05/thm-polynomial-interpolation.py
 exm-polynomial-interpolation-cubic (example): the four l_i, the collected coefficients 1, 1, -1, 1, and the four values | inline arithmetic; verify/ch05/exm-polynomial-interpolation-cubic.py
 def-polynomial-congruence (claim): congruence modulo m is an equivalence relation | fd3:thm-quotient-ring-by-ideal (a) with I = <m>, an ideal by def-polynomial-combinations, cited
 def-polynomial-congruence (claim): (quick check) x^3 = x(x^2 + 1) - x; -2x = 0 in F_2[x] | inline arithmetic; verify/ch05/def-polynomial-congruence.py
 thm-polynomial-quotient-ring (proof): two members of one class are congruent to each other | fd3:thm-quotient-ring-by-ideal (a) (sim_I is an equivalence relation), cited
+thm-polynomial-quotient-ring (claim): (quick check) x^2 - 2 = (x - 1)(x + 1) - 1; [x + 1]^{-1} = [x - 1] in Q[x]/<x^2 - 2> | inline arithmetic; verify/ch05/thm-polynomial-quotient-ring.py
 thm-polynomial-quotient-field (proof): gcd(m, f) = gcd(f, m) | def-polynomial-gcd (the defining conditions are symmetric in f and g), cited
 exm-polynomial-quotient-four-elements (example): m(0) = m(1) = 1 in F_2; alpha^2 = alpha + 1, alpha(alpha + 1) = 1, (alpha + 1)^2 = alpha, alpha^3 = 1; the table | inline arithmetic in F_2; verify/ch05/exm-polynomial-quotient-four-elements.py
 exm-polynomial-quotient-four-elements (example): comparison with the four-element field of exr-finite-fields-from-modular-arithmetic-c1 (F4.2) | prose comparison only; nothing rests on the exercise
 exm-polynomial-quotient-four-elements (example): c^2 + 1 >= 1 > 0 in R | fd3:prp-ordered-ring-rules (e), with (b) and 1 > 0, cited
-thm-polynomial-quotient-field (claim): (warning) (c^2 + 1)^2 >= 1; a non-zero element with square 0 is not a unit | fd3:prp-ordered-ring-rules (e); thm-field-basic-properties (f) (or the paragraph after fd3:def-ring-unit); inline
+thm-polynomial-quotient-field (claim): (warning) c^2 + 1 != 0 (exm-polynomial-quotient-four-elements (ii)), so (c^2 + 1)^2 > 0; a non-zero element with square 0 is not a unit | fd3:prp-ordered-ring-rules (e), cited; thm-field-basic-properties (f) (or the paragraph after fd3:def-ring-unit); inline
 thm-polynomial-quotient-field (claim): (quick check) x^2 - 2 = (x - s)(x + s) in R[x], s = sqrt 2 | fd3:prp-cof-square-roots, cited; inline expansion
 lem-polynomial-coprime-to-product (proof): (ap + bQ)(a'p + b'q) = p(aa'p + ab'q + a'bQ) + bb'Qq | thm-polynomial-ring-laws (a) (commutative ring laws); inline; verify/ch05/lem-polynomial-coprime-to-product.py
 lem-polynomial-coprime-to-product (proof): gcd is symmetric | def-polynomial-gcd, cited
-thm-polynomial-chinese-remainder (proof): an entry of a list divides the product of the list; m = m_1...m_k is non-zero | induction on the length with the product recursion and def-polynomial-divides; cor-polynomial-no-zero-divisors (a) with induction; inline
+thm-polynomial-chinese-remainder (proof): m = M_i m_i, so m_i | m; m_j | M_i for j != i; m = m_1...m_k is non-zero | (L2) and (L1) of Section 5.3 (03-irreducible-factorization, "Two facts about products of lists"), cited by name
 thm-polynomial-chinese-remainder (proof): f - r_j = sum_{i != j} r_i e_i + r_j(e_j - 1); a sum of multiples of m_j is a multiple | lem-finite-sums-and-powers (b) (Sigma1), (Sigma3); prp-polynomial-divisibility-rules (c) with induction on the number of terms; inline
 thm-polynomial-chinese-remainder (proof): the k-fold product of the quotient sets with componentwise operations | NOTATION row A_1 x ... x A_k (F2.3 §02); componentwise operations defined in the statement
 thm-polynomial-chinese-remainder (claim): (quick check) e_1 = 1 - x, e_2 = x, f = 3 + 2x | inline arithmetic; verify/ch05/thm-polynomial-chinese-remainder.py
@@ -627,7 +638,8 @@ exm-hermite-by-chinese-remainder (example): the Bezout identity, e_1, e_2, the p
 exr-interpolation-and-congruences-a1 (solution): l_0, l_1, l_2 for the nodes 0, 1, 2 and p = x^2 + x + 1 | verify/ch05/exr-interpolation-and-congruences-a1.py
 exr-interpolation-and-congruences-b1 (solution): f = 1 + 2x^2 | verify/ch05/exr-interpolation-and-congruences-b1.py
 exr-interpolation-and-congruences-b2 (solution): the Euclidean run, back-substitution and the check | verify/ch05/exr-interpolation-and-congruences-b2.py
-exr-interpolation-and-congruences-b3 (solution): the two tables of F_2[x]/<x^2 + x + 1>; the product identity (a + bx)(c + dx) | verify/ch05/exr-interpolation-and-congruences-b3.py; def-complex-numbers, cited
+exr-interpolation-and-congruences-b3 (solution): the two tables of F_2[x]/<x^2 + x + 1>; the product identity (a + bx)(c + dx) | verify/ch05/exr-interpolation-and-congruences-b3.py; def-complex-numbers, prp-reals-embed-complex and the comparison of real and imaginary parts after it, cited
 exr-interpolation-and-congruences-c1 (solution): congruence modulo x - c_i is transitive | fd3:thm-quotient-ring-by-ideal (a), cited through def-polynomial-congruence
+exr-interpolation-and-congruences-c1 (solution): an entry of a list divides the product of the list | (L2) of Section 5.3, cited by name
 exr-interpolation-and-congruences-c2 (solution): 0, 1, ..., p - 1 are all the elements of F_p and are distinct; the count p^p | def-field-fp (fd3:thm-integers-mod-n-ring (b)); the count is a remark, nothing rests on it; verify/ch05/exr-interpolation-and-congruences-c2.py (p <= 5)
 -->

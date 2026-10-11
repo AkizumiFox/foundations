@@ -1,4 +1,4 @@
-"""exr-polynomial-gcd-b3: gcd(x^m - 1, x^n - 1) = x^gcd(m,n) - 1, checked for small m, n."""
+"""exr-polynomial-gcd-c3: gcd(x^m - 1, x^n - 1) = x^gcd(m,n) - 1, checked for small m, n."""
 import math
 from _s0102_poly import gcd_run, xpow, sub, P
 
