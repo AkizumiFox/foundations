@@ -322,7 +322,7 @@ By @exm-special-angles (v), \( 1 + i = \sqrt 2 \bigl( \tfrac{1}{\sqrt 2} + \tfra
 
 (c) Existence: (T4), which provides an angle for the point \( z/\abs{z} \) of \( \nT \). Uniqueness: (T3), which turns \( \cos(\theta - \varphi) = 1 \) into \( \theta - \varphi \in 2\pi\nZ \); (T1) is used alongside it, to see that \( \sin(\theta - \varphi) = 0 \) follows from \( \cos(\theta - \varphi) = 1 \), and (T2) enters through @thm-polar-multiplication, which turns \( e^{i\theta} = e^{i\varphi} \) into \( e^{i(\theta - \varphi)} = 1 \).
 
-(d) Everything in Sections 1.1–1.4, and the part of this section before @ax-cosine-sine; after the box, only Exercise C2, which is set up to avoid them. In particular @prp-unit-circle uses none of them: its proof uses only the modulus rules of Section 1.2 and the fact that \( \nC \) is a field.
+(d) Everything in Sections 1.1–1.4, and the part of this section before @ax-cosine-sine; after the box, only Exercise C2, which is set up to avoid them. In particular @prp-unit-circle uses none of them: its proof uses only the modulus rules of Section 1.2, the field properties of \( \nC \), and order facts about \( \nR \) from *Number Systems: From \(\nN\) to \(\nR\)*.
 :::
 
 ### B. Practice
@@ -496,5 +496,5 @@ exr-polar-form-b1 (solution): (1 - sqrt 3 i)^6 = 64 | verify/ch01/exr-polar-form
 exr-polar-form-b3 (solution): a real is 0 iff its square is 0 | fd3:prp-ring-algebra (b) for 0^2 = 0, fd3:prp-ordered-ring-rules (e) for x != 0 (both cited)
 exr-polar-form-c1 (solution): (c + is)^3 expansion, triple-angle formulas | inline; verify/ch01/exr-polar-form-c1.py
 exr-polar-form-c2 (solution): u_t in T, t = Im u/(1 + Re u), u_{1/2} = 3/5 + 4/5 i | inline; verify/ch01/exr-polar-form-c2.py
-sec-polar-form (claim): ax-cosine-sine (T1)-(T5) used by def-polar-form (T1), thm-polar-multiplication (T2), prp-polar-form (T1, T3, T4), thm-de-moivre (through thm-polar-multiplication), exm-special-angles (T3, T5, T1), exm-polar-power, exr-polar-form-a1, -b1 (T1, T3), -b2, -b3 (through def-polar-form), -c1 (T1); prp-unit-circle and exr-polar-form-c2 use none | AN1.10 (borrow)
+sec-polar-form (claim): ax-cosine-sine (T1)-(T5) used by def-polar-form (T1), thm-polar-multiplication (T2; (b) also T1, T3 via e^{i0} = 1 and def-polar-form), prp-polar-form (T1, T3, T4; T2 through thm-polar-multiplication), thm-de-moivre (through thm-polar-multiplication), exm-special-angles (T3, T5, T1), exm-polar-power, exr-polar-form-a1, -b1 (T1, T3), -b2, -b3 (through def-polar-form), -c1 (T1); prp-unit-circle and exr-polar-form-c2 use none | AN1.10 (borrow)
 -->

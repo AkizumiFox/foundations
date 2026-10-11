@@ -1994,6 +1994,16 @@ items:
       61-79), the two consequences (85-86, which use T3, T1 and ordered-ring-rules (e)) and the volume
       titles in line 83 (Logic and Proof; Number Systems: From \(\nN\) to \(\nR\), Chapter 1 = F3.1) are
       correct.'
+  - stage: S7r
+    verdict: correct
+    by: rereferee
+    hash: a017cac18f73
+    date: '2026-10-12'
+    model: claude-opus-5-5
+    evidence: 'lete. Checked each user against the text: def-polar-form uses T1 (line 110); thm-polar-multiplication
+      uses T2 in (a), and T1, T3 in (b) through e^{i0} = 1 and e^{i theta} in T; prp-polar-form uses T4
+      in (a), and T1, T3 in (b), plus T2 through thm-polar-multiplication; thm-de-moivre uses them through
+      thm-polar-multiplication. prp-unit-circle (lines 19-41) comes before the box and uses none of them.'
 - key: def-polar-form
   kind: def
   file: 05-polar-form.md
@@ -2303,6 +2313,16 @@ items:
       rules of Section 1.2, the field properties of C, and order facts about R from *Number Systems: From
       \(\nN\) to \(\nR\)*''. Parts (a)-(c) were re-solved and are correct; (c) now also names the role
       of (T2).'
+  - stage: S7r
+    verdict: correct
+    by: rereferee
+    hash: 77b703944b70
+    date: '2026-10-12'
+    model: claude-opus-5-5
+    evidence: erties, both in 02-conjugate-and-modulus.md), on the field facts thm-complex-numbers-field
+      and fd3:lem-field-fraction-rules (a), and on the fd3 order facts prp-reciprocal-order (a), def-absolute-value-ordered-field
+      and prp-ordered-ring-rules (g). Line 325 now names all three, and the title spelling matches line
+      83. Ledger line 494 cites exm-special-angles for the values. The checks report 0 fatal.
 - key: exr-polar-form-b1
   kind: exr
   file: 05-polar-form.md
