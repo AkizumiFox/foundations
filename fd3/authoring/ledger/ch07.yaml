@@ -1277,6 +1277,17 @@ items:
       So this claim about the book''s own text is incomplete. Fix: add ''and discreteness of the integers
       (thm-integers-ordered-ring (c)), to step back from the first one to the one before it'', and the
       same to ledger line 402.'
+  - stage: S7r
+    verdict: correct
+    by: rereferee
+    hash: 9c3508e4cda8
+    date: '2026-10-12'
+    model: claude-opus-5-5
+    evidence: 'himedean, least element and discreteness (c), and the text now names all three, each with
+      its role. (c) (C3) needs r > 0 for p + r/2 > p. With r = 0 the set is {x : -x >= 1} = {x <= -1},
+      which has a largest element, -1, so it is not a cut. Correct. (d) The two-sentence idea matches
+      the proof: walk up by eps = -s/2, split s = p + t, and the first point outside certifies t in -alpha
+      with margin eps.'
 - key: exr-addition-b1
   kind: exr
   file: 03-addition.md
@@ -2063,6 +2074,17 @@ items:
       of @exm-cut-sqrt2'' (02:30, 05:3), and exr-cuts-c1''s marking scheme treats using sqrt 2 as a number
       as a fatal error. Fix: write ''the cut sigma of the gap (@exm-cut-sqrt2)'' or ''the cut sigma of
       @exm-cut-sqrt2''.'
+  - stage: S7r
+    verdict: correct
+    by: rereferee
+    hash: d999e04a4c24
+    date: '2026-10-12'
+    model: claude-opus-5-5
+    evidence: y matches exm-naive-negative (03:92-108). The marking scheme totals 10 (3+2+1+3+1). The
+      second route awards (C1)-(C3) via \( \rho = \alpha^{-1} \) plus thm-cut-reciprocal, and still requires
+      the no-least-element step. The fatal errors listed are appropriate. Ledger lines 545-546 cover the
+      inline computations and the exr-cuts-c1 citation. I ran verify/ch07/exr-multiplication-c1.py and
+      it prints ok.
 - key: thm-rationals-embed-cuts
   kind: thm
   file: 05-rationals-inside.md
@@ -2668,6 +2690,17 @@ items:
       add up to an order-preserving field isomorphism. Fix: add ''is strictly increasing, hence injective
       (lem-cof-rationals-separate, as in C2)'' and ''sends 1 to D_1'' to the list, or soften it to ''among
       other things''.'
+  - stage: S7r
+    verdict: correct
+    by: rereferee
+    hash: 27b834ca2a34
+    date: '2026-10-12'
+    model: claude-opus-5-5
+    evidence: ' iff Q_F(x) = Q_F(y)'' clause, valid because R_C is Archimedean by thm-cof-complete-archimedean.
+      Q(iota(1)) = D_1 is ch06''s ''A rational element'' example. C2(a) and C2(b) do give ''lands in the
+      cuts'' and ''onto'' for an Archimedean F that is complete, as stated at 06-two-roads.md:239-246.
+      Sums come from lem-cof-below-sum via B1. The new ledger entry at verify line ~351 is accurate. No
+      remaining issues.'
 - key: check:06-two-roads:1
   kind: check
   file: 06-two-roads.md

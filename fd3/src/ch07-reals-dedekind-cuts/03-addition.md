@@ -278,7 +278,7 @@ These questions are about the proof of @thm-cut-additive-inverse and the definit
 ::: {.solution}
 (a) \( \varepsilon = -s/2 = 1/4 \). The points \( a + k\varepsilon = k/4 \) are in \( D_1 \) exactly for \( k < 4 \), so \( n = 3 \), \( p = 3/4 \in D_1 \) and \( p + \varepsilon = 1 \notin D_1 \). Then \( t = s - p = -1/2 - 3/4 = -5/4 \), with margin \( \varepsilon = 1/4 \): \( -t - 1/4 = 5/4 - 1/4 = 1 \notin D_1 \), so \( t \in -D_1 \). And \( p + t = 3/4 - 5/4 = -1/2 = s \). (Another starting point \( a \) may give another pair, for example \( a = 1/8 \) gives \( p = 7/8 \); any \( p \in D_1 \) with \( p + 1/4 \ge 1 \), that is \( 3/4 \le p < 1 \), works with \( t = -1/2 - p \).)
 
-(b) Once, in the \( \supseteq \) half, to produce \( p \in \alpha \) with \( p + \varepsilon \notin \alpha \). Its proof in Section 7.1 needs the Archimedean property of \( \nQ \) (@thm-rationals-archimedean), to get some multiple of \( \varepsilon \) that leaves \( \alpha \), and the least element of a non-empty set of natural numbers (@prp-integer-least-element), to get the first one.
+(b) Once, in the \( \supseteq \) half, to produce \( p \in \alpha \) with \( p + \varepsilon \notin \alpha \). Its proof in Section 7.1 needs the Archimedean property of \( \nQ \) (@thm-rationals-archimedean), to get some multiple of \( \varepsilon \) that leaves \( \alpha \), and the least element of a non-empty set of natural numbers (@prp-integer-least-element), to get the first one, and discreteness of the integers (@thm-integers-ordered-ring (c)), to step back from the first one to the one before it.
 
 (c) (C3): from \( p \in -\alpha \) with margin \( r \) we moved up to \( p + r/2 \), which is larger than \( p \) only when \( r > 0 \). With \( r = 0 \) allowed, the set for \( D_1 \) is \( \{ x : -x \notin D_1 \} = \{ x : x \le -1 \} \), which has the largest element \( -1 \), so it is not a cut.
 
@@ -400,6 +400,6 @@ thm-cut-additive-inverse (proof): s = -2 epsilon, -t - epsilon = p + epsilon | i
 thm-cut-additive-inverse (claim): with epsilon = -s the margin can fail (D_1, s = -1, a = 0, p = 0) | inline; verify/ch07/thm-cut-additive-inverse.py
 thm-cut-ordered-group (proof): rearranging (a + b) + ((-a) + (-b)) | (a) of the same theorem, applied repeatedly; inline
 exr-addition-a1 (solution): epsilon = 1/4, n = 3, p = 3/4, t = -5/4; a = 1/8 gives p = 7/8 | verify/ch07/exr-addition-a1.py
-exr-addition-a1 (solution): lem-cut-step's proof uses thm-rationals-archimedean and prp-integer-least-element | Section 7.1's proof of lem-cut-step (blueprint ch07)
+exr-addition-a1 (solution): lem-cut-step's proof uses thm-rationals-archimedean, prp-integer-least-element and thm-integers-ordered-ring (c) | Section 7.1's proof of lem-cut-step (blueprint ch07)
 exr-addition-c2 (solution): {r <= 1} + D_0 = D_1; 1/2 = 3/4 + (-1/4) | inline; verify/ch07/exr-addition-c2.py
 -->
