@@ -78,6 +78,17 @@ items:
       the ledger line for exm-groups (b) does not cover it either. Fix: write ''1 = a . 0 = 0 (@fd3:prp-ring-algebra
       (b))'' and add the step to the ledger line. Parts (a), (c), (d) and (e) are unchanged and check
       out.'
+  - stage: S7r
+    verdict: correct
+    by: rereferee
+    hash: 009628a5fb08
+    date: '2026-10-12'
+    model: claude-opus-5-5
+    evidence: 'ty come from prp-composition-associative. Inverses come from thm-bijection-iff-inverse
+      and def-inverse-function, and f^{-1} is a bijection by the same symmetric argument. The second-reading
+      fold is correct: (f∘g)(x)=y and (g∘f)(x)=z. With at most two elements there are at most two bijections.
+      (d) is trivially correct. (e) is a forward pointer only. The touched ledger line for (b) matches
+      the text.'
 - key: exm-group-nonexamples
   kind: exm
   file: 01-groups.md
@@ -928,6 +939,17 @@ items:
       Fix: write ''(the paragraph "Why this definition" after @fd3:def-ring-unit)'', or argue directly:
       [0]v = [0] ≠ [1] by fd3:prp-ring-algebra (b) and fd3:thm-integers-mod-n-ring (c). Fix the matching
       ledger row (line 418) too.'
+  - stage: S7r
+    verdict: correct
+    by: rereferee
+    hash: 0d582d831567
+    date: '2026-10-12'
+    model: claude-opus-5-5
+    evidence: 'ltiples of [2] in Z/6Z: 0, 2, 4, 6=0. In the reduction g^n = (g^m)^q g^r = g^r, the cited
+      division with remainder and power laws (a) and (c) are right. The step (Z/7Z)^x = Z/7Z \ {[0]} now
+      cites the right fd3 paragraph (05-units-and-crt.md:52), and the six elements come from thm-integers-mod-n-ring
+      (b). The ''cyclic'' pointer is prose only. verify/ch03/prp-subgroup-generated-by-element.py prints
+      ok.'
 - key: proof:prp-subgroup-generated-by-element
   kind: proof
   file: 02-subgroups.md
@@ -951,6 +973,17 @@ items:
     model: claude-opus-5-5
     evidence: '02:127-133: power laws (a), (b), F1, fd1:ax-induction and fd3:prp-naturals-embed-integers
       (c) all match their statements.'
+  - stage: S7r
+    verdict: correct
+    by: rereferee
+    hash: 36ce861ffa7d
+    date: '2026-10-12'
+    model: claude-opus-5-5
+    evidence: 'ed again line by line. Nonempty: g = g^1. Subgroup test: g^m (g^n)^{-1} = g^m g^{-n} =
+      g^{m-n}, by power laws (b) and (a). Abelian: g^{m+n} = g^{n+m}, by (a) and (F1) in Z. Minimality:
+      g^n in H for n in N by induction (g^0 = e, g^{n+1} = g^n g), negative powers by (b) and closure
+      under inverses, and every integer is n or -n by fd3:prp-naturals-embed-integers (c). The diff does
+      not touch the proof.'
 - key: thm-subgroups-of-integers
   kind: thm
   file: 02-subgroups.md
@@ -1605,6 +1638,17 @@ items:
       clause, e.g. ''(a group by the check of @exr-groups-a1 (b) with −1 for +1: identity 1, inverse 2−a)''.
       Or note that the isomorphism transports the group structure, since ∗ is the image of + under the
       bijection x ↦ x+1.'
+  - stage: S7r
+    verdict: correct
+    by: rereferee
+    hash: a8d36ef1ac5c
+    date: '2026-10-12'
+    model: claude-opus-5-5
+    evidence: ) with a∗b = a+b−1 has both bracketings equal to a+b+c−2, identity 1 and inverse 2−a. The
+      map x↦x+1 is a bijection with inverse x↦x−1, and (a+1)∗(b+1) = a+b+1, so the isomorphism (Z,+)→(Z,∗)
+      holds. The comparison with exr-groups-a1 (b) (identity −1, inverse −a−2, bracketings a+b+c+2) is
+      accurate. The ledger row is marked STALE only because the text changed; the diff touches no verify/ch03
+      sidecar.
 - key: exr-homomorphisms-b1
   kind: exr
   file: 03-homomorphisms.md
@@ -2841,6 +2885,16 @@ items:
       literally, the clause also zeroes a correct deduction in (b) when (a) is missing or wrong, which
       double-penalizes. Fix: reword it, e.g. ''asserting the formula of (a) without proof (0 for the (a)
       items); (b) may use (a)''.'
+  - stage: S7r
+    verdict: correct
+    by: rereferee
+    hash: 63c387d68734
+    date: '2026-10-12'
+    model: claude-opus-5-5
+    evidence: -group-list-product-laws (c) (01-groups.md:164) and thm-group-basic-properties (3) at 01-groups.md:108,
+      which gives (a^{-1})^{-1}=a and (ab)^{-1}=b^{-1}a^{-1}. Both labels exist and say what is claimed.
+      The marking scheme totals 10 and fits the solution. The revised fatal clauses are consistent with
+      the 'Deduce' wording. verify/ch03/exr-transpositions-c3.py prints 'ok', an exhaustive check in S_5.
 - key: exr-transpositions-r1
   kind: exr
   file: 05-transpositions.md

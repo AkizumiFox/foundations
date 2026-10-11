@@ -372,7 +372,7 @@ by @prp-group-list-product-laws (c) and @thm-group-basic-properties (3). Conjuga
 - 3: for transpositions \( (a\ b) \), \( (c\ d) \), exhibits a permutation \( \pi \) with \( \{\pi(a), \pi(b)\} = \{c, d\} \), covering every case of overlap between \( \{a, b\} \) and \( \{c, d\} \); directly or through \( (1\ 2) \).
 - 1: applies (a) with \( k = 2 \) to conclude \( \tau' = \pi\tau\pi^{-1} \), or composes the two conjugations by \( (1\ 2) \) using \( (\pi'\pi^{-1})^{-1} = \pi\pi'^{-1} \).
 
-Fatal errors (0 for the step): (b) uses the conjugation formula without (a) having been proved; \( \pi \) is not a bijection, or is built only for disjoint (or only for overlapping) pairs.
+Fatal errors (0 for the step): a proof of (a) that only asserts the formula (0 for the three (a) items); \( \pi \) is not a bijection, or is built only for disjoint (or only for overlapping) pairs. Part (b) may use (a) even where (a) was not proved.
 :::
 
 ### R. Review
