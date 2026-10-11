@@ -6,526 +6,2368 @@ items:
   file: 01-division-with-remainder.md
   line: 25
   hash: ef812e6d0d8f
-  verdicts: []
+  verdicts:
+  - stage: S5a
+    verdict: correct
+    by: refereeA
+    hash: ef812e6d0d8f
+    date: '2026-10-12'
+    model: claude-opus-5-5
+    evidence: 01:25-40. Each part has the hypotheses it needs. Dropping a>0 or b>0 from (e) fails (3|-3;
+      3|0, as the check shows). Dropping a,b in N from (f) fails (2|-2|2). All hypotheses are used.
+  - stage: S5b
+    verdict: minor
+    by: refereeB
+    hash: ef812e6d0d8f
+    date: '2026-10-12'
+    model: claude-opus-5-5
+    evidence: '01-division-with-remainder.md:70 The sentence ''... and why (e) needs both a > 0 and b
+      > 0: 3 | -3, but 3 > -3'' is false for a > 0. Without a > 0, (e) still holds; the example given
+      only shows that b > 0 is needed.'
+  - stage: S8
+    verdict: minor
+    by: seam
+    hash: ef812e6d0d8f
+    date: '2026-10-12'
+    model: claude-opus-5-5
+    evidence: 01-division-with-remainder.md:86 Part (h) ("if a != 0, exactly one of a, -a lies in Z_{>0}")
+      proves an earlier result again. It is clause (P2) of @prp-order-from-positives, and its converse
+      half holds for every ordered commutative ring. For Z it is already available through @thm-integers-ordered-ring
+      (positives = P_Z, and (b) Z_{>0} = {x > 0}). Part (h) is also not a rule about divisibility.
 - key: proof:prp-divisibility-rules-integers
   kind: proof
   file: 01-division-with-remainder.md
   line: 46
   hash: 3ffec8e858ee
-  verdicts: []
+  verdicts:
+  - stage: S5a
+    verdict: correct
+    by: refereeA
+    hash: 3ffec8e858ee
+    date: '2026-10-12'
+    model: claude-opus-5-5
+    evidence: '01:46-68. Checked (a)-(d) against prp-ring-algebra (b),(c) and the ring laws. (h) uses
+      (O1) and prp-ordered-ring-rules (a) with -0=0. (e): k=0 is excluded by prp-ring-algebra (b), k<0
+      by prp-ordered-ring-rules (c), then thm-integers-ordered-ring (c) applies with m=0. (f) uses (a),
+      thm-integers-ordered-ring (b) and (i). (g) uses (h), (d), (e) and discreteness. (h) is proved before
+      its use in (g), s'
+  - stage: S5b
+    verdict: minor
+    by: refereeB
+    hash: 3ffec8e858ee
+    date: '2026-10-12'
+    model: claude-opus-5-5
+    evidence: 01-division-with-remainder.md:47 The proof cites 'the ring laws (F1)–(F9) of Z', but (F8)
+      (inverses) fails in Z. Z satisfies only (F1)–(F7) and (F9).
 - key: check:01-division-with-remainder:1
   kind: check
   file: 01-division-with-remainder.md
   line: 72
   hash: 409faac203d3
-  verdicts: []
+  verdicts:
+  - stage: S5a
+    verdict: correct
+    by: refereeA
+    hash: 409faac203d3
+    date: '2026-10-12'
+    model: claude-opus-5-5
+    evidence: 01:72-78. 3|0 by (a), b=0 is not positive, and 3<=0 is false. Correct.
+  - stage: S5b
+    verdict: correct
+    by: refereeB
+    hash: 409faac203d3
+    date: '2026-10-12'
+    model: claude-opus-5-5
+    evidence: '01:73-78: 3 | 0 by (a), b = 0 is not positive, and 3 ≤ 0 is false. Correct.'
 - key: thm-integers-division-remainder
   kind: thm
   file: 01-division-with-remainder.md
   line: 84
   hash: 0ecd7030013e
-  verdicts: []
+  verdicts:
+  - stage: S5a
+    verdict: correct
+    by: refereeA
+    hash: 0ecd7030013e
+    date: '2026-10-12'
+    model: claude-opus-5-5
+    evidence: 01:84-98. The statement matches fd2:thm-division-algorithm. With n=0 there is no r. For
+      n<0 the bound 0<=r<n is impossible. (b) is consistent with prp-rational-integer-part (F3.2 05:217).
+  - stage: S5b
+    verdict: minor
+    by: refereeB
+    hash: 0ecd7030013e
+    date: '2026-10-12'
+    model: claude-opus-5-5
+    evidence: 01-division-with-remainder.md:132 The meta-claim 'The hypothesis n > 0 is used three times
+      in (a)' undercounts the uses.
 - key: proof:thm-integers-division-remainder
   kind: proof
   file: 01-division-with-remainder.md
   line: 104
   hash: d614e708adbd
-  verdicts: []
+  verdicts:
+  - stage: S5a
+    verdict: minor
+    by: refereeA
+    hash: d614e708adbd
+    date: '2026-10-12'
+    model: claude-opus-5-5
+    evidence: 01-division-with-remainder.md:109 The identity a - an = a(1 - n) is justified by '(F7) and
+      (F9)' alone. It also needs a(-n) = -(an), which is @prp-ring-algebra (c).
+  - stage: S5b
+    verdict: minor
+    by: refereeB
+    hash: d614e708adbd
+    date: '2026-10-12'
+    model: claude-opus-5-5
+    evidence: 01-division-with-remainder.md:109 The step 'a - an = a(1 - n) by (F7) and (F9)' also uses
+      -(an) = a(-n) from @prp-ring-algebra (c), which is neither cited nor ledgered. Ledger 01:281 lists
+      only (F7), (F9) and prp-ring-algebra (b).
 - key: check:01-division-with-remainder:2
   kind: check
   file: 01-division-with-remainder.md
   line: 142
   hash: ae8259795dcb
-  verdicts: []
+  verdicts:
+  - stage: S5a
+    verdict: correct
+    by: refereeA
+    hash: ae8259795dcb
+    date: '2026-10-12'
+    model: claude-opus-5-5
+    evidence: 01:142-148. (-4)*5+3=-17. The comparison formula gives -20<=-17 and -17<-15, so floor(-17/5)=-4.
+  - stage: S5b
+    verdict: correct
+    by: refereeB
+    hash: ae8259795dcb
+    date: '2026-10-12'
+    model: claude-opus-5-5
+    evidence: '01:147: (-4)·5 + 3 = -17. The comparison formula (thm-rationals-ordered-field (a), q =
+      1, s = 5) gives -4 < -17/5 < -3. The sidecar passes.'
 - key: cor-integers-even-odd
   kind: cor
   file: 01-division-with-remainder.md
   line: 158
   hash: 17740010e5c4
-  verdicts: []
+  verdicts:
+  - stage: S5a
+    verdict: correct
+    by: refereeA
+    hash: 17740010e5c4
+    date: '2026-10-12'
+    model: claude-opus-5-5
+    evidence: 01:158-165. The statement is true. The 'exactly one q' clause follows from uniqueness in
+      the theorem.
+  - stage: S5b
+    verdict: correct
+    by: refereeB
+    hash: 17740010e5c4
+    date: '2026-10-12'
+    model: claude-opus-5-5
+    evidence: 01:162-163 is well-posed and matches the blueprint; (b) is the fd1 Argument A fact.
+  - stage: S8
+    verdict: minor
+    by: seam
+    hash: 17740010e5c4
+    date: '2026-10-12'
+    model: claude-opus-5-5
+    evidence: 01-division-with-remainder.md:181 Both parts of the corollary have earlier-volume twins
+      that the text does not name. This breaks index.md:7's promise that each such result "has a twin
+      here, named in the section that proves it". Part (b) is @fd1:thm-square-even-implies-even (*Logic
+      and Proof*, Chapter 2) for the school integers. Part (a) is the n = 2 case that fd2 proved right
+      after @fd2:thm-divisi
 - key: proof:cor-integers-even-odd
   kind: proof
   file: 01-division-with-remainder.md
   line: 171
   hash: 4ae0dd203a81
-  verdicts: []
+  verdicts:
+  - stage: S5a
+    verdict: correct
+    by: refereeA
+    hash: 4ae0dd203a81
+    date: '2026-10-12'
+    model: claude-opus-5-5
+    evidence: '01:171-179. r is in {0,1} by discreteness applied twice. The ''not both'' argument applies
+      uniqueness to (k,0) and (k'',1); the validity of (k'',1) relies on the implicit 1<2. (b): (2q+1)^2=2(2q^2+2q)+1
+      by prp-ring-algebra (d), then contraposition. The sidecar cor-integers-even-odd.py prints ok.'
+  - stage: S5b
+    verdict: correct
+    by: refereeB
+    hash: 4ae0dd203a81
+    date: '2026-10-12'
+    model: claude-opus-5-5
+    evidence: '01:172: r ∈ {0,1} by discreteness twice. Uniqueness excludes both forms and gives q unique.
+      01:176''s identity is ledgered (01:289) and checked by its sidecar.'
 - key: exr-division-with-remainder-a1
   kind: exr
   file: 01-division-with-remainder.md
   line: 204
   hash: 81039af7383d
-  verdicts: []
+  verdicts:
+  - stage: S5a
+    verdict: correct
+    by: refereeA
+    hash: 81039af7383d
+    date: '2026-10-12'
+    model: claude-opus-5-5
+    evidence: 01:204-223. 47=7*6+5, -47=(-8)*6+1 and 0=0*6+0 are correct; the sidecar prints ok. The answer
+      'Twice' to (b) matches the existence proof. (c) and (d) are correct; the counterexample 2|-2|2 is
+      valid.
+  - stage: S5b
+    verdict: correct
+    by: refereeB
+    hash: 81039af7383d
+    date: '2026-10-12'
+    model: claude-opus-5-5
+    evidence: 47 = 7·6 + 5, -47 = (-8)·6 + 1 and 0 = 0·6 + 0 are right, and the sidecar passes. (b) 'Twice'
+      agrees with the existence proof. (c) and (d) are right; (d) cites (d) and (f).
+  - stage: S6
+    verdict: correct
+    by: verifier
+    hash: 81039af7383d
+    date: '2026-10-12'
+    model: claude-opus-5-5
+    evidence: '01:215-223. Solved first: (7,5), (-8,1), (0,0); n>0 via 1<=n (discreteness) and -n<0; 0|0
+      true; antisymmetry false on Z (2,-2). All match. Script: 47//6, -47//6 confirm.'
 - key: exr-division-with-remainder-b1
   kind: exr
   file: 01-division-with-remainder.md
   line: 227
   hash: 08d74a5e2e4d
-  verdicts: []
+  verdicts:
+  - stage: S5a
+    verdict: correct
+    by: refereeA
+    hash: 08d74a5e2e4d
+    date: '2026-10-12'
+    model: claude-opus-5-5
+    evidence: 01:227-239. Existence applies the theorem to -n>0 with q=-q0, using prp-ring-algebra (c).
+      Uniqueness rewrites qn as (-q)(-n) and applies the theorem's uniqueness, then -(-q)=q. Both steps
+      are sound.
+  - stage: S5b
+    verdict: correct
+    by: refereeB
+    hash: 08d74a5e2e4d
+    date: '2026-10-12'
+    model: claude-opus-5-5
+    evidence: '01:230-239: applying the theorem to -n > 0 and setting q = -q_0 (prp-ring-algebra (c))
+      gives existence; uniqueness follows by the same transfer.'
+  - stage: S6
+    verdict: correct
+    by: verifier
+    hash: 08d74a5e2e4d
+    date: '2026-10-12'
+    model: claude-opus-5-5
+    evidence: 01:233-239. Reduction to -n>0 with q=-q0; uniqueness by rewriting both as divisions by -n.
+      Matches my proof; brute-force existence and uniqueness check for a in [-30,30), n in [-7,-1] passes.
 - key: exr-division-with-remainder-b2
   kind: exr
   file: 01-division-with-remainder.md
   line: 241
   hash: d28f5616e776
-  verdicts: []
+  verdicts:
+  - stage: S5a
+    verdict: correct
+    by: refereeA
+    hash: d28f5616e776
+    date: '2026-10-12'
+    model: claude-opus-5-5
+    evidence: '01:241-253. At least one: the three cases r=0,1,2 give 3|a, 3|a+2 and 3|a+1 respectively.
+      At most one: rule (c) with x=1, y=-1 gives 3|j-i, and j-i is 1 or 2, so (e) would give 3<=j-i<=2,
+      which is false. The sidecar exr-division-with-remainder-b2.py exists.'
+  - stage: S5b
+    verdict: correct
+    by: refereeB
+    hash: d28f5616e776
+    date: '2026-10-12'
+    model: claude-opus-5-5
+    evidence: '01:250: with b = a + i, c = a + j, prp-divisibility-rules-integers (c) with x = 1, y =
+      -1 gives (a+i) - (a+j) = i - j, not the j - i the text writes. The argument is otherwise correct.
+      [finding refuted by skeptics]'
+  - stage: S6
+    verdict: correct
+    by: verifier
+    hash: d28f5616e776
+    date: '2026-10-12'
+    model: claude-opus-5-5
+    evidence: '01:247-253. At least one by remainder cases; at most one via 3 | j-i in {1,2} and rule
+      (e). Matches my proof; brute force for a in [-100,100) passes. Worked pattern: cor-integers-even-odd.'
 - key: exr-division-with-remainder-c1
   kind: exr
   file: 01-division-with-remainder.md
   line: 257
   hash: f2b0357d8836
-  verdicts: []
+  verdicts:
+  - stage: S5a
+    verdict: correct
+    by: refereeA
+    hash: f2b0357d8836
+    date: '2026-10-12'
+    model: claude-opus-5-5
+    evidence: '01:257-275. q<=a/n<q+1 multiplied by n>0 gives qn<=a<qn+n. Subtracting qn and transferring
+      back to Z by thm-rationals-ordered-field (b) is sound. The n<0 remark is correct: qn>=a>qn+n gives
+      n<r<=0.'
+  - stage: S5b
+    verdict: correct
+    by: refereeB
+    hash: f2b0357d8836
+    date: '2026-10-12'
+    model: claude-opus-5-5
+    evidence: '01:264-274: multiplying q ≤ a/n < q+1 by n > 0, then subtracting qn, and the n < 0 reversal
+      n < r ≤ 0 are all correct; the statement is well-posed.'
+  - stage: S6
+    verdict: correct
+    by: verifier
+    hash: f2b0357d8836
+    date: '2026-10-12'
+    model: claude-opus-5-5
+    evidence: 01:263-275. q<=a/n<q+1 multiplied by n>0, transferred back to Z by thm-rationals-ordered-field
+      (b). The use of n>0 is named; the n<0 aside (n<r<=0) is correct.
 - key: def-integer-linear-combinations
   kind: def
   file: 02-gcd-and-bezout.md
   line: 9
   hash: e3f08a32585a
-  verdicts: []
+  verdicts:
+  - stage: S5a
+    verdict: correct
+    by: refereeA
+    hash: e3f08a32585a
+    date: '2026-10-12'
+    model: claude-opus-5-5
+    evidence: 02:9-35. The closure identities follow from F-laws and prp-ring-algebra (c). nZ+0Z=nZ by
+      (b) and F6. The 'only degenerate case' claim follows from prp-divisibility-rules-integers (h). The
+      non-example's bound ≥12 holds. Sidecar ok.
+  - stage: S5b
+    verdict: minor
+    by: refereeB
+    hash: e3f08a32585a
+    date: '2026-10-12'
+    model: claude-opus-5-5
+    evidence: 02-gcd-and-bezout.md:33 '0Z + 0Z = {0}' (used again in A1(c), 02:291, and in the remark,
+      02:112) needs 0·x + 0·y = 0, but it is neither cited nor ledgered. The neighbouring nZ+0Z=nZ (02:27)
+      cites prp-ring-algebra (b) and (F6).
 - key: def-integer-gcd
   kind: def
   file: 02-gcd-and-bezout.md
   line: 43
   hash: ef6926233218
-  verdicts: []
+  verdicts:
+  - stage: S5a
+    verdict: correct
+    by: refereeA
+    hash: ef6926233218
+    date: '2026-10-12'
+    model: claude-opus-5-5
+    evidence: '02:43-59. Well-definedness: d|c by rule (d), d≤c by (e), greatest element by prp-integer-least-element,
+      gcd≥1. Examples gcd(4,6), gcd(-5,5), gcd(1,b) check out. The 0 convention is the unique value making
+      Bézout (c) hold, since 0|d forces d=0. fd2:exm-divisibility-lcm is in fd2 Section 2.6 (06-orders.md:199).'
+  - stage: S5b
+    verdict: minor
+    by: refereeB
+    hash: ef6926233218
+    date: '2026-10-12'
+    model: claude-opus-5-5
+    evidence: 02-gcd-and-bezout.md:56 'a and -a have the same divisors' is credited to prp-divisibility-rules-integers
+      (d) alone at 02:56, 02:112 and 02:264. (d) gives only c|a => c|-a; the converse needs -(-a)=a (prp-ring-algebra
+      (a)). B2's solution (02:331) adds exactly that citation.
 - key: thm-integers-bezout
   kind: thm
   file: 02-gcd-and-bezout.md
   line: 67
   hash: 6eb62c7e39c1
-  verdicts: []
+  verdicts:
+  - stage: S5a
+    verdict: correct
+    by: refereeA
+    hash: 6eb62c7e39c1
+    date: '2026-10-12'
+    model: claude-opus-5-5
+    evidence: 02:67-79. The statement is true. Dropping 'not both 0' gives S=∅, as A1(c) notes.
+  - stage: S5b
+    verdict: correct
+    by: refereeB
+    hash: 6eb62c7e39c1
+    date: '2026-10-12'
+    model: claude-opus-5-5
+    evidence: '02:67-79: the hypotheses are used. A1(c) shows what fails for (0,0), and the remark at
+      02:112 handles the (0,0) convention.'
 - key: proof:thm-integers-bezout
   kind: proof
   file: 02-gcd-and-bezout.md
   line: 89
   hash: 0bc61c5f366c
-  verdicts: []
+  verdicts:
+  - stage: S5a
+    verdict: minor
+    by: refereeA
+    hash: 0bc61c5f366c
+    date: '2026-10-12'
+    model: claude-opus-5-5
+    evidence: 02-gcd-and-bezout.md:105 The answer to the prompt 'where is ... its positivity [of d] used'
+      lists three uses, but the second, 'to conclude r in S from r > 0', uses the positivity of r, not
+      of d.
+  - stage: S5b
+    verdict: minor
+    by: refereeB
+    hash: 0bc61c5f366c
+    date: '2026-10-12'
+    model: claude-opus-5-5
+    evidence: '02-gcd-and-bezout.md:105 The answer to ''where is ... its positivity [of d] used'' counts
+      three uses of d''s positivity, but the second, ''to conclude r in S from r > 0'', uses the positivity
+      of r, not of d. d''s positivity is used twice: to divide by d, and in (d).'
 - key: def-coprime-integers
   kind: def
   file: 02-gcd-and-bezout.md
   line: 117
   hash: 26409ccadd4d
-  verdicts: []
+  verdicts:
+  - stage: S5a
+    verdict: correct
+    by: refereeA
+    hash: 26409ccadd4d
+    date: '2026-10-12'
+    model: claude-opus-5-5
+    evidence: 02:117-123. The examples are consistent with gcd(0,0)=0.
+  - stage: S5b
+    verdict: correct
+    by: refereeB
+    hash: 26409ccadd4d
+    date: '2026-10-12'
+    model: claude-opus-5-5
+    evidence: '02:117-123: the examples check, including gcd(0,0)=0, which makes 0 and 0 not coprime.'
 - key: cor-coprime-iff-combination
   kind: cor
   file: 02-gcd-and-bezout.md
   line: 125
   hash: 087aaa743d6f
-  verdicts: []
+  verdicts:
+  - stage: S5a
+    verdict: correct
+    by: refereeA
+    hash: 087aaa743d6f
+    date: '2026-10-12'
+    model: claude-opus-5-5
+    evidence: 02:125-129. True for all a, b, including (0,0).
+  - stage: S5b
+    verdict: correct
+    by: refereeB
+    hash: 087aaa743d6f
+    date: '2026-10-12'
+    model: claude-opus-5-5
+    evidence: '02:125-129: the statement covers all a, b; (0,0) is excluded in both directions of the
+      proof.'
 - key: proof:cor-coprime-iff-combination
   kind: proof
   file: 02-gcd-and-bezout.md
   line: 131
   hash: 9a709cc2632a
-  verdicts: []
+  verdicts:
+  - stage: S5a
+    verdict: correct
+    by: refereeA
+    hash: 9a709cc2632a
+    date: '2026-10-12'
+    model: claude-opus-5-5
+    evidence: 02:132-134. (⇒) excludes (0,0) and uses Bézout (d). (⇐) uses rules (c) and (g) with g≥1.
+  - stage: S5b
+    verdict: correct
+    by: refereeB
+    hash: 9a709cc2632a
+    date: '2026-10-12'
+    model: claude-opus-5-5
+    evidence: '02:132-134: uses Bezout (d), prp (c), (g), and g>=1 from the bolded claim at 02:51. Ledger
+      line 426 covers ruling out -1.'
 - key: lem-gcd-remainder-step
   kind: lem
   file: 02-gcd-and-bezout.md
   line: 143
   hash: 70e1b2fe4c64
-  verdicts: []
+  verdicts:
+  - stage: S5a
+    verdict: correct
+    by: refereeA
+    hash: 70e1b2fe4c64
+    date: '2026-10-12'
+    model: claude-opus-5-5
+    evidence: 02:143-147. True. The hypothesis b>0 is used only for b≠0 (the lemma also holds for b=0
+      by symmetry), so nothing is false.
+  - stage: S5b
+    verdict: correct
+    by: refereeB
+    hash: 70e1b2fe4c64
+    date: '2026-10-12'
+    model: claude-opus-5-5
+    evidence: '02:146: b>0 guarantees that (a,b) and (b,r) are both not (0,0), as the proof notes.'
 - key: proof:lem-gcd-remainder-step
   kind: proof
   file: 02-gcd-and-bezout.md
   line: 149
   hash: 952bb625cfab
-  verdicts: []
+  verdicts:
+  - stage: S5a
+    verdict: correct
+    by: refereeA
+    hash: 952bb625cfab
+    date: '2026-10-12'
+    model: claude-opus-5-5
+    evidence: 02:150. Both ring identities check. Neither pair is (0,0) because b≠0, and the gcds are
+      equal as least elements of the same set by Bézout (a), (d).
+  - stage: S5b
+    verdict: correct
+    by: refereeB
+    hash: 952bb625cfab
+    date: '2026-10-12'
+    model: claude-opus-5-5
+    evidence: '02:150: both inclusion identities are verified, and the gcds agree as the least elements
+      of the same set, via Bezout (a),(d). Ledger line 427 covers the identities.'
 - key: thm-euclidean-algorithm-integers
   kind: thm
   file: 02-gcd-and-bezout.md
   line: 155
   hash: 3ce6c6b13232
-  verdicts: []
+  verdicts:
+  - stage: S5a
+    verdict: correct
+    by: refereeA
+    hash: 3ce6c6b13232
+    date: '2026-10-12'
+    model: claude-opus-5-5
+    evidence: '02:155-175. G: Z×N→Z×N is a function by division (a) and r≥0. Recursion via fd2:thm-recursion,
+      read on ω through cor-omega-identification (b) and thm-omega-recursion, with step (k,(x,y))↦G(x,y),
+      matches g: N×X→X.'
+  - stage: S5b
+    verdict: correct
+    by: refereeB
+    hash: 3ce6c6b13232
+    date: '2026-10-12'
+    model: claude-opus-5-5
+    evidence: '02:155-175: the recursion is justified through thm-omega-recursion/cor-omega-identification
+      (b). The step G maps into ZxN by thm-integers-ordered-ring (b). The paragraph at 02:197 (r_{K-2}
+      for K>=2; b|a for K=1) checks.'
 - key: proof:thm-euclidean-algorithm-integers
   kind: proof
   file: 02-gcd-and-bezout.md
   line: 181
   hash: 80a3559bc553
-  verdicts: []
+  verdicts:
+  - stage: S5a
+    verdict: minor
+    by: refereeA
+    hash: 80a3559bc553
+    date: '2026-10-12'
+    model: claude-opus-5-5
+    evidence: 02-gcd-and-bezout.md:194 Proof (c) applies @thm-integers-bezout (a) and (d) to (a, b) without
+      noting that the hypothesis (a, b) ≠ (0, 0) holds.
+  - stage: S5b
+    verdict: correct
+    by: refereeB
+    hash: 80a3559bc553
+    date: '2026-10-12'
+    model: claude-opus-5-5
+    evidence: '02:182-194: (a) is an induction using the lemma; in (b), least elements come from prp-integer-least-element,
+      and r_m<y_m from thm (a); in (c), x_K=y_{K-1}>0 and x_KZ+0Z=x_KZ (02:27), and x_K is the least positive
+      element by prp (e). K-1 in N is ledgered at line 430.'
 - key: exm-euclidean-algorithm-run
   kind: exm
   file: 02-gcd-and-bezout.md
   line: 211
   hash: ba629f24e834
-  verdicts: []
+  verdicts:
+  - stage: S5a
+    verdict: correct
+    by: refereeA
+    hash: ba629f24e834
+    date: '2026-10-12'
+    model: claude-opus-5-5
+    evidence: '02:211-257. All divisions and back-substitutions recomputed: 18=4·252−5·198, 5=(−1)(−35)+(−2)·15,
+      11·252=14·198=2772, 18=(−7)·252+9·198. Sidecar ok.'
+  - stage: S5b
+    verdict: correct
+    by: refereeB
+    hash: ba629f24e834
+    date: '2026-10-12'
+    model: claude-opus-5-5
+    evidence: '02:218-248: every division and back-substitution recomputed by hand: 252=198+54, 198=3*54+36,
+      54=36+18, 36=2*18; 4*252-5*198=18; -35=(-3)15+10, 15=10+5, 10=2*5; (-1)(-35)+(-2)15=5. Warning 02:252:
+      11*252=2772=14*198, and -7*252+9*198=18. The sidecar passes.'
 - key: check:02-gcd-and-bezout:1
   kind: check
   file: 02-gcd-and-bezout.md
   line: 259
   hash: a6d59d2921d2
-  verdicts: []
+  verdicts:
+  - stage: S5a
+    verdict: correct
+    by: refereeA
+    hash: a6d59d2921d2
+    date: '2026-10-12'
+    model: claude-opus-5-5
+    evidence: 02:259-267. gcd(0,−6)=6 by rules (a), (d), (e). The (0,6) run has K=1. The chain 84=2·35+14,
+      35=2·14+7, 14=2·7 gives 7.
+  - stage: S5b
+    verdict: minor
+    by: refereeB
+    hash: a6d59d2921d2
+    date: '2026-10-12'
+    model: claude-opus-5-5
+    evidence: 02:264 says the divisors of -6 'are those of 6 (@prp-divisibility-rules-integers (d))'.
+      (d) gives only one direction; the other needs -(-6)=6 (prp-ring-algebra (a)). This is the same omission
+      as at 02:56 and 02:112. The arithmetic for gcd(84,35)=7 is correct.
 - key: exr-gcd-and-bezout-a1
   kind: exr
   file: 02-gcd-and-bezout.md
   line: 273
   hash: 1a2830090e4b
-  verdicts: []
+  verdicts:
+  - stage: S5a
+    verdict: correct
+    by: refereeA
+    hash: 1a2830090e4b
+    date: '2026-10-12'
+    model: claude-opus-5-5
+    evidence: 02:286-293. d=6 is justified by 6 dividing every combination and rule (e). S=∅ for (0,0).
+      Sidecar ok.
+  - stage: S5b
+    verdict: correct
+    by: refereeB
+    hash: 1a2830090e4b
+    date: '2026-10-12'
+    model: claude-opus-5-5
+    evidence: '02:273-294: the parts match the comprehension types of STYLE §11.2; d=6 with x0=-3, y0=1;
+      12=2*6 and 42=7*6; (c) S is empty; (d) is two sentences.'
+  - stage: S6
+    verdict: correct
+    by: verifier
+    hash: 1a2830090e4b
+    date: '2026-10-12'
+    model: claude-opus-5-5
+    evidence: '02:286-294. Minimality used once in (b); d=6, x0=-3, y0=1; 12=2*6, 42=7*6; (0,0) fails
+      at step (a) since S is empty; the idea is given in two sentences. Script: least positive 12x+42y
+      = 6.'
 - key: exr-gcd-and-bezout-b1
   kind: exr
   file: 02-gcd-and-bezout.md
   line: 298
   hash: 6869957544a6
-  verdicts: []
+  verdicts:
+  - stage: S5a
+    verdict: correct
+    by: refereeA
+    hash: 6869957544a6
+    date: '2026-10-12'
+    model: claude-opus-5-5
+    evidence: 02:305-321. The chain 1001=2·357+287, 357=287+70, 287=4·70+7, 70=10·7 gives 7=5·1001−14·357
+      (5005−4998). Sidecar ok.
+  - stage: S5b
+    verdict: correct
+    by: refereeB
+    hash: 6869957544a6
+    date: '2026-10-12'
+    model: claude-opus-5-5
+    evidence: '02:305-321: 1001=2*357+287, 357=287+70, 287=4*70+7, 70=10*7; 5*1001-14*357=5005-4998=7.
+      The sidecar passes.'
+  - stage: S6
+    verdict: correct
+    by: verifier
+    hash: 6869957544a6
+    date: '2026-10-12'
+    model: claude-opus-5-5
+    evidence: '02:304-322. The chain 1001=2*357+287, 357=1*287+70, 287=4*70+7, 70=10*7 and 7=5*1001-14*357
+      match my own run and script (5005-4998=7). Worked example: exm-euclidean-algorithm-run.'
 - key: exr-gcd-and-bezout-b2
   kind: exr
   file: 02-gcd-and-bezout.md
   line: 324
   hash: 4cd6bcfbb910
-  verdicts: []
+  verdicts:
+  - stage: S5a
+    verdict: correct
+    by: refereeA
+    hash: 4cd6bcfbb910
+    date: '2026-10-12'
+    model: claude-opus-5-5
+    evidence: 02:331-333. Both claims are proved from rules (a), (d), (e), prp-ring-algebra (a), and the
+      (0,0) convention.
+  - stage: S5b
+    verdict: minor
+    by: refereeB
+    hash: 4cd6bcfbb910
+    date: '2026-10-12'
+    model: claude-opus-5-5
+    evidence: 02-gcd-and-bezout.md:331 'Otherwise (-a, b) != (0, 0) as well' is asserted without a reason;
+      it needs a != 0 => -a != 0.
+  - stage: S6
+    verdict: correct
+    by: verifier
+    hash: 4cd6bcfbb910
+    date: '2026-10-12'
+    model: claude-opus-5-5
+    evidence: '02:330-334. Handles (0,0); a and -a have the same divisors; gcd(a,0)=a by rule (e) plus
+      the non-positive case. Matches mine. Worked examples: gcd(-5,5) and the Quick check gcd(0,-6).'
 - key: exr-gcd-and-bezout-b3
   kind: exr
   file: 02-gcd-and-bezout.md
   line: 336
   hash: '644552013642'
-  verdicts: []
+  verdicts:
+  - stage: S5a
+    verdict: correct
+    by: refereeA
+    hash: '644552013642'
+    date: '2026-10-12'
+    model: claude-opus-5-5
+    evidence: '02:343-345. The induction on P(k): ''k≤K ⇒ y_k≤b−k'' uses Euclid (b) for k<K and discreteness.
+      Then 0=y_K≤b−K.'
+  - stage: S5b
+    verdict: correct
+    by: refereeB
+    hash: '644552013642'
+    date: '2026-10-12'
+    model: claude-opus-5-5
+    evidence: '02:343-345: the induction on P(k) is well posed; y_{k+1}<y_k comes from thm (b), then discreteness;
+      K<=b. This matches the pointer at 02:197.'
+  - stage: S6
+    verdict: correct
+    by: verifier
+    hash: '644552013642'
+    date: '2026-10-12'
+    model: claude-opus-5-5
+    evidence: '02:342-346. Induction on P(k): k<=K implies y_k<=b-k, with discreteness for y_{k+1}<=y_k-1;
+      k=K gives K<=b. Script confirms the number of divisions is <=b for a in [-50,50), b in [1,40).'
 - key: exr-gcd-and-bezout-c1
   kind: exr
   file: 02-gcd-and-bezout.md
   line: 350
   hash: 5bf3b52d7390
-  verdicts: []
+  verdicts:
+  - stage: S5a
+    verdict: minor
+    by: refereeA
+    hash: 5bf3b52d7390
+    date: '2026-10-12'
+    model: claude-opus-5-5
+    evidence: 02-gcd-and-bezout.md:371 The marking scheme accepts a second route 'through the Euclidean
+      algorithm', with the invariant that 'the set of combinations (or the gcd)' is unchanged, and full
+      termination credit. It does not warn that citing this section's @thm-euclidean-algorithm-integers
+      (c), or the 'hence gcd(a, b) = gcd(b, r)' clause of @lem-gcd-remainder-step, is circular, since
+      both are proved fr
+  - stage: S5b
+    verdict: correct
+    by: refereeB
+    hash: 5bf3b52d7390
+    date: '2026-10-12'
+    model: claude-opus-5-5
+    evidence: '02:353-371: the statement is the theorem''s (a)-(d), and the solution matches the proof.
+      The marking scheme gives 2+1+3+2+2=10, with fatal errors and a second route.'
+  - stage: S6
+    verdict: correct
+    by: verifier
+    hash: 5bf3b52d7390
+    date: '2026-10-12'
+    model: claude-opus-5-5
+    evidence: 02:356-372. Complete proof, the same as mine. Scheme sums to 10 (2+1+3+2+2) and grades my
+      variant (common divisors divide d first, then the division) 10/10. The second route (Euclid plus
+      back-substitution) is mapped.
 - key: exr-gcd-and-bezout-c2
   kind: exr
   file: 02-gcd-and-bezout.md
   line: 374
   hash: 827a36dd1620
-  verdicts: []
+  verdicts:
+  - stage: S5a
+    verdict: correct
+    by: refereeA
+    hash: 827a36dd1620
+    date: '2026-10-12'
+    model: claude-opus-5-5
+    evidence: 02:393-411. The (0,0) case is handled. ka≠0 by prp-ordered-ring-rules (f). (ka)Z+(kb)Z=(kd)Z
+      by Bézout (e). kd is least positive by O4 and rule (e). The fatal-error counterexample (1 divides
+      6 and 9) is valid. Sidecar ok.
+  - stage: S5b
+    verdict: minor
+    by: refereeB
+    hash: 827a36dd1620
+    date: '2026-10-12'
+    model: claude-opus-5-5
+    evidence: 02-gcd-and-bezout.md:395 'Say a != 0' omits the symmetric case. The solution never says
+      that if a = 0 then b != 0 and kb != 0 by the same argument.
+  - stage: S6
+    verdict: minor
+    by: verifier
+    hash: 827a36dd1620
+    date: '2026-10-12'
+    model: claude-opus-5-5
+    evidence: 02-gcd-and-bezout.md:411 The second-route mapping of the C2 marking scheme gives 4+4+2 points
+      but never asks for the (a,b)=(0,0) case or for (ka,kb)!=(0,0). Route 1 gives these 2 points.
 - key: thm-euclid-lemma-integers
   kind: thm
   file: 03-unique-factorization.md
   line: 11
   hash: 8f36cc0f62b0
-  verdicts: []
+  verdicts:
+  - stage: S5a
+    verdict: correct
+    by: refereeA
+    hash: 8f36cc0f62b0
+    date: '2026-10-12'
+    model: claude-opus-5-5
+    evidence: 03:14. Both hypotheses are used (gcd via cor-coprime-iff-combination, a|bc via k). The a=0
+      edge case is fine. The counterexample at 03:31 with gcd dropped (4|12, 4∤6) checks out.
+  - stage: S5b
+    verdict: correct
+    by: refereeB
+    hash: 8f36cc0f62b0
+    date: '2026-10-12'
+    model: claude-opus-5-5
+    evidence: 03:14 statement holds, including the edge case a=0 (then b=±1, c=0); the aftermath at 03:31
+      (4|12, 4∤6, gcd(4,2)=2) checked; sidecar passes
 - key: proof:thm-euclid-lemma-integers
   kind: proof
   file: 03-unique-factorization.md
   line: 21
   hash: e2e9fda214b8
-  verdicts: []
+  verdicts:
+  - stage: S5a
+    verdict: correct
+    by: refereeA
+    hash: e2e9fda214b8
+    date: '2026-10-12'
+    model: claude-opus-5-5
+    evidence: 03:22-26. cor-coprime-iff-combination (02:128) gives x,y. fd2:def-divides gives k. The chain
+      c=c(ax+by)=a(cx)+(bc)y=a(cx+ky) is valid ring algebra.
+  - stage: S5b
+    verdict: correct
+    by: refereeB
+    hash: e2e9fda214b8
+    date: '2026-10-12'
+    model: claude-opus-5-5
+    evidence: 03:22-26 cites cor-coprime-iff-combination (02:125) and fd2:def-divides; the ring laws are
+      named; the display is valid
 - key: def-prime-factorization
   kind: def
   file: 03-unique-factorization.md
   line: 39
   hash: b96cae27324b
-  verdicts: []
+  verdicts:
+  - stage: S5a
+    verdict: minor
+    by: refereeA
+    hash: b96cae27324b
+    date: '2026-10-12'
+    model: claude-opus-5-5
+    evidence: 03-unique-factorization.md:37 Line 37 says the citing rule's group (iii) permits using fd2:def-sum-product
+      as a pattern here. That group only covers the template read in an ordered field F, and the target
+      here is Z, which is a ring.
+  - stage: S5b
+    verdict: minor
+    by: refereeB
+    hash: b96cae27324b
+    date: '2026-10-12'
+    model: claude-opus-5-5
+    evidence: 03-unique-factorization.md:37 The text says the pattern use of fd2:def-sum-product with
+      target Z is something 'group (iii) of the citing rule of Section 1.7 allows'. Group (iii) only licenses
+      replacing the school R by an ordered field F.
+  - stage: S8
+    verdict: minor
+    by: seam
+    hash: b96cae27324b
+    date: '2026-10-12'
+    model: claude-opus-5-5
+    evidence: '03-unique-factorization.md:37 The text uses @fd2:def-sum-product as a template over Z "as
+      group (iii) of the citing rule of Section 1.7 allows". Group (iii) only allows templates with the
+      school R replaced by an ordered field F, and Z is not a field. The math is fine: products in Z are
+      products in Q, and line 53 checks the recursion directly. Only the cited permission is misstated.'
 - key: check:03-unique-factorization:1
   kind: check
   file: 03-unique-factorization.md
   line: 65
   hash: 7f97cff430e3
-  verdicts: []
+  verdicts:
+  - stage: S5a
+    verdict: correct
+    by: refereeA
+    hash: 7f97cff430e3
+    date: '2026-10-12'
+    model: claude-opus-5-5
+    evidence: 03:66-71. 360=2^3·3^2·5, partial products 1,2,4,8,24,72,360, primes from the small-primes
+      remark (01:188 covers 2,3,5,7).
+  - stage: S5b
+    verdict: correct
+    by: refereeB
+    hash: 7f97cff430e3
+    date: '2026-10-12'
+    model: claude-opus-5-5
+    evidence: '03:66-71: 360=(2,2,2,3,3,5), products 1,2,4,8,24,72,360; 2, 3 and 5 are covered by the
+      small-primes remark (01:188)'
 - key: cor-prime-divides-product
   kind: cor
   file: 03-unique-factorization.md
   line: 77
   hash: bed296bbe4d8
-  verdicts: []
+  verdicts:
+  - stage: S5a
+    verdict: correct
+    by: refereeA
+    hash: bed296bbe4d8
+    date: '2026-10-12'
+    model: claude-opus-5-5
+    evidence: 03:80-86. The statements are true. 'p prime' is used in all three parts. The aftermath example
+      6|2·3 shows that (b) fails without it.
+  - stage: S5b
+    verdict: minor
+    by: refereeB
+    hash: bed296bbe4d8
+    date: '2026-10-12'
+    model: claude-opus-5-5
+    evidence: 03-unique-factorization.md:90 The idea calls the coprime case 'the first case of (a)', but
+      the proof of (b) at 03:96 calls the same case 'the second case', which matches the disjunct order
+      of (a) as stated.
 - key: proof:cor-prime-divides-product
   kind: proof
   file: 03-unique-factorization.md
   line: 93
   hash: 752e89c2da43
-  verdicts: []
+  verdicts:
+  - stage: S5a
+    verdict: correct
+    by: refereeA
+    hash: 752e89c2da43
+    date: '2026-10-12'
+    model: claude-opus-5-5
+    evidence: '03:94-106. (a): g≥1 is proved in the well-definedness paragraph right after def-integer-gcd
+      (02:51). g|p with g>0 gives g∈{1,p}. (b): Euclid''s lemma with a=p. (c): induction on l, with the
+      statement quantified over all lists. The base case p|1 contradicts p≥2 by (g). The step uses the
+      recursion and (b), and ''p | q_{l+1}'' gives p=q_{l+1}.'
+  - stage: S5b
+    verdict: correct
+    by: refereeB
+    hash: 752e89c2da43
+    date: '2026-10-12'
+    model: claude-opus-5-5
+    evidence: '03:94-106: (a) uses def-integer-gcd plus its well-definedness (gcd>=1); (c) is an induction
+      through cor-omega-identification (b); the base case uses prp-divisibility-rules-integers (g); the
+      step uses the recursion and (b). All labels exist with the cited parts'
 - key: prp-coprime-divisors-product
   kind: prp
   file: 03-unique-factorization.md
   line: 113
   hash: 891d5099a2ea
-  verdicts: []
+  verdicts:
+  - stage: S5a
+    verdict: correct
+    by: refereeA
+    hash: 891d5099a2ea
+    date: '2026-10-12'
+    model: claude-opus-5-5
+    evidence: 03:116. All three hypotheses are used. The counterexample with gcd≠1 at 03:123 (4,6,12)
+      is valid.
+  - stage: S5b
+    verdict: correct
+    by: refereeB
+    hash: 891d5099a2ea
+    date: '2026-10-12'
+    model: claude-opus-5-5
+    evidence: 03:116 is true (the m=0 edge case forces c=0); the 24∤12 counterexample at 03:123 is valid
 - key: proof:prp-coprime-divisors-product
   kind: proof
   file: 03-unique-factorization.md
   line: 119
   hash: 25a34529678c
-  verdicts: []
+  verdicts:
+  - stage: S5a
+    verdict: correct
+    by: refereeA
+    hash: 25a34529678c
+    date: '2026-10-12'
+    model: claude-opus-5-5
+    evidence: 03:120. c=km, n|km, gcd(n,m)=1 by symmetry (02:51), Euclid's lemma gives n|k, so c=l(mn).
+      Rewriting km as mk for the Euclid hypothesis is silent commutativity, which is fine.
+  - stage: S5b
+    verdict: correct
+    by: refereeB
+    hash: 25a34529678c
+    date: '2026-10-12'
+    model: claude-opus-5-5
+    evidence: '03:120: gcd symmetry is stated in the def-integer-gcd well-definedness paragraph (02:50);
+      Euclid applied correctly'
 - key: lem-least-divisor-prime
   kind: lem
   file: 03-unique-factorization.md
   line: 129
   hash: 4f46c37fe069
-  verdicts: []
+  verdicts:
+  - stage: S5a
+    verdict: correct
+    by: refereeA
+    hash: 4f46c37fe069
+    date: '2026-10-12'
+    model: claude-opus-5-5
+    evidence: 03:132. The statement is true. n≥2 is needed for D to be non-empty.
+  - stage: S5b
+    verdict: correct
+    by: refereeB
+    hash: 4f46c37fe069
+    date: '2026-10-12'
+    model: claude-opus-5-5
+    evidence: 03:132 is true; the remark at 03:142 is correct (f>=2, e<=f, e*e<=p), and its check for
+      11 is right
 - key: proof:lem-least-divisor-prime
   kind: proof
   file: 03-unique-factorization.md
   line: 135
   hash: dd07d03bc9b4
-  verdicts: []
+  verdicts:
+  - stage: S5a
+    verdict: minor
+    by: refereeA
+    hash: dd07d03bc9b4
+    date: '2026-10-12'
+    model: claude-opus-5-5
+    evidence: 03-unique-factorization.md:142 In the remark, 'Multiplying by e > 0 gives e·e ≤ ef (@prp-ordered-ring-rules
+      (c))' derives a non-strict inequality from a rule that is strict-only, and the hypothesis e ≤ f
+      allows equality.
+  - stage: S5b
+    verdict: correct
+    by: refereeB
+    hash: dd07d03bc9b4
+    date: '2026-10-12'
+    model: claude-opus-5-5
+    evidence: 03:136-138 cites prp-integer-least-element (lower bound 2), discreteness (thm-integers-ordered-ring
+      (c)) and prp-divisibility-rules-integers (a),(b),(e). Valid
 - key: thm-fundamental-arithmetic
   kind: thm
   file: 03-unique-factorization.md
   line: 149
   hash: e29de47cb228
-  verdicts: []
+  verdicts:
+  - stage: S5a
+    verdict: correct
+    by: refereeA
+    hash: e29de47cb228
+    date: '2026-10-12'
+    model: claude-opus-5-5
+    evidence: 03:152. Exactly one factorization for every n∈Z_{>0}, with n=1 handled by the empty list.
+  - stage: S5b
+    verdict: correct
+    by: refereeB
+    hash: e29de47cb228
+    date: '2026-10-12'
+    model: claude-opus-5-5
+    evidence: '03:152. The meta-claims at 03:187 (first entries would also match; the recursion peels
+      the last factor) are true. The H warning at 03:194-198 checked: 9, 21, 49 are H-prime, 441=9*49=21*21,
+      H is not closed under +'
 - key: proof:thm-fundamental-arithmetic
   kind: proof
   file: 03-unique-factorization.md
   line: 163
   hash: 09de9256650d
-  verdicts: []
+  verdicts:
+  - stage: S5a
+    verdict: correct
+    by: refereeA
+    hash: 09de9256650d
+    date: '2026-10-12'
+    model: claude-opus-5-5
+    evidence: '03:164-184. Existence: least counterexample n≥2. F is bounded by n and so has a greatest
+      p. m>0 and m<n by (c),(F9),(O3). m''s factorization has last entry q_l with q_l|n, so q_l≤p and
+      appending p keeps the list ordered. Uniqueness: P(k) is quantified over l. The base case uses ''a
+      non-empty prime list has product ≠1''. The step gets p_{k+1}=q_l by cor (c) both ways plus antisymmetry
+      from (i). It can'
+  - stage: S5b
+    verdict: correct
+    by: refereeB
+    hash: 09de9256650d
+    date: '2026-10-12'
+    model: claude-opus-5-5
+    evidence: '03:164-184: the greatest element of F comes from the second half of prp-integer-least-element
+      (02-03:372); the sign and size of m are argued; the appended list is non-decreasing; the uniqueness
+      induction is quantified over l; cancellation uses prp-ordered-ring-rules (f); l-1 in N is ledgered'
 - key: prp-rationals-lowest-terms
   kind: prp
   file: 03-unique-factorization.md
   line: 205
   hash: 3180c63a0c3e
-  verdicts: []
+  verdicts:
+  - stage: S5a
+    verdict: correct
+    by: refereeA
+    hash: 3180c63a0c3e
+    date: '2026-10-12'
+    model: claude-opus-5-5
+    evidence: 03:208-213. The statement is true. (b) uses only the existence half of (a), so the logic
+      is not circular.
+  - stage: S5b
+    verdict: correct
+    by: refereeB
+    hash: 3180c63a0c3e
+    date: '2026-10-12'
+    model: claude-opus-5-5
+    evidence: 03:211-212 is true. The 252/198 -> 14/11 example (03:232) matches exm-euclidean-algorithm-run
+      gcd 18. The N(x) pointer matches exr-rationals-as-classes-c1 and the STATUS row 115 payment
 - key: proof:prp-rationals-lowest-terms
   kind: proof
   file: 03-unique-factorization.md
   line: 220
   hash: d146112bc299
-  verdicts: []
+  verdicts:
+  - stage: S5a
+    verdict: correct
+    by: refereeA
+    hash: d146112bc299
+    date: '2026-10-12'
+    model: claude-opus-5-5
+    evidence: '03:221-229. Existence: d=gcd(r,s)≥1 and Bézout (d). The sign argument gives q>0. Cancellation
+      by (f) gives px0+qy0=1, and the cross-product check is right. (b): ps=rq, Euclid''s lemma with a=q
+      gives q|s, t>0 by the sign argument, and r=tp. Uniqueness: t|gcd(r,s)=1 by Bézout (c),(d), so t=1
+      by (g).'
+  - stage: S5b
+    verdict: correct
+    by: refereeB
+    hash: d146112bc299
+    date: '2026-10-12'
+    model: claude-opus-5-5
+    evidence: '03:221-229: prp-integers-embed-rationals (b) gives the cross-multiplication criterion;
+      the sign arguments are referenced; t|gcd(r,s) comes from thm-integers-bezout (c),(d); t=1 comes
+      from (g) with t>0'
 - key: exr-unique-factorization-a1
   kind: exr
   file: 03-unique-factorization.md
   line: 242
   hash: 611ddfb44c70
-  verdicts: []
+  verdicts:
+  - stage: S5a
+    verdict: correct
+    by: refereeA
+    hash: 611ddfb44c70
+    date: '2026-10-12'
+    model: claude-opus-5-5
+    evidence: 03:257-265. The answers match the proof. (b) correctly derives q_l=5 and applies P(3) to
+      (2,2,3) and (q_1..q_{l-1}).
+  - stage: S5b
+    verdict: minor
+    by: refereeB
+    hash: 611ddfb44c70
+    date: '2026-10-12'
+    model: claude-opus-5-5
+    evidence: 03-unique-factorization.md:257 Solution (a) says that without the empty list 'the base case
+      P(0) would be about nothing'. The base case P(0) is about lists of length 0 and does not depend
+      on the empty list being a prime factorization.
+  - stage: S6
+    verdict: correct
+    by: verifier
+    hash: 611ddfb44c70
+    date: '2026-10-12'
+    model: claude-opus-5-5
+    evidence: '03:256-266. The run on (2,2,3,5): l>=1, 5=q_j<=q_l, q_l=p_i<=5, cancel to 12, P(3) on (2,2,3)
+      and (q1..q_{l-1}); Euclid enters through cor-prime-divides-product (c)->(b); non-decreasing is used
+      in q_j<=q_l and p_i<=p_{k+1}. Matches mine.'
 - key: exr-unique-factorization-b1
   kind: exr
   file: 03-unique-factorization.md
   line: 270
   hash: 906231ebf818
-  verdicts: []
+  verdicts:
+  - stage: S5a
+    verdict: correct
+    by: refereeA
+    hash: 906231ebf818
+    date: '2026-10-12'
+    model: claude-opus-5-5
+    evidence: 03:295-303. The order and the admissible permutations are right ((iv) needs x and (v) needs
+      y, both from (ii), and (v) needs (i)). The distractor analysis is sound.
+  - stage: S5b
+    verdict: error
+    by: refereeB
+    hash: 906231ebf818
+    date: '2026-10-12'
+    model: claude-opus-5-5
+    evidence: '03-unique-factorization.md:299 The solution says that, apart from swapping (iv) and (v)
+      and placing either before (iii), ''Everything else is forced''. This is false: line (iii) may also
+      come after (vi).'
+  - stage: S6
+    verdict: minor
+    by: verifier
+    hash: 906231ebf818
+    date: '2026-10-12'
+    model: claude-opus-5-5
+    evidence: 03-unique-factorization.md:299 The solution says the only freedom is in placing (iv) and
+      (v), and that 'Everything else is forced'. In fact (iii) may also come after (vi).
 - key: exr-unique-factorization-b2
   kind: exr
   file: 03-unique-factorization.md
   line: 306
   hash: 7d3a1e9ab750
-  verdicts: []
+  verdicts:
+  - stage: S5a
+    verdict: correct
+    by: refereeA
+    hash: 7d3a1e9ab750
+    date: '2026-10-12'
+    model: claude-opus-5-5
+    evidence: 03:313-323. (O4) gives ab>0. The remainder r lies in M if r>0 and r<L, which is a contradiction.
+      This matches fd2:exm-divisibility-lcm (fd2 06-orders.md:199).
+  - stage: S5b
+    verdict: correct
+    by: refereeB
+    hash: 7d3a1e9ab750
+    date: '2026-10-12'
+    model: claude-opus-5-5
+    evidence: '03:309-323: the statement is well-posed; the given part and its completion are valid; the
+      twin fd2:exm-divisibility-lcm and the pointer to the Bezout (b) move are accurate'
+  - stage: S6
+    verdict: correct
+    by: verifier
+    hash: 7d3a1e9ab750
+    date: '2026-10-12'
+    model: claude-opus-5-5
+    evidence: '03:318-324. The move is named ''least positive element, then divide''; if r>0 then r is
+      in M with r<L, so r=0 and L|c. This is the one reasonable completion, the same as mine. Worked full
+      instance: thm-integers-bezout (b).'
 - key: exr-unique-factorization-b3
   kind: exr
   file: 03-unique-factorization.md
   line: 326
   hash: ab98386ae99e
-  verdicts: []
+  verdicts:
+  - stage: S5a
+    verdict: correct
+    by: refereeA
+    hash: ab98386ae99e
+    date: '2026-10-12'
+    model: claude-opus-5-5
+    evidence: '03:335-348. Computed: 1001=7·11·13 and 1023=3·11·31. 91·46-93·45=1 and 1001·46-1023·45=11.
+      The divisions are correct and the Euclidean run is correct. The primality checks use the d·d≤p remark
+      properly.'
+  - stage: S5b
+    verdict: correct
+    by: refereeB
+    hash: ab98386ae99e
+    date: '2026-10-12'
+    model: claude-opus-5-5
+    evidence: '03:335-348: 1001=7*11*13 and 1023=3*11*31; the divisions by 2..5 are correct; 91*46-93*45=1
+      and 1001*46-1023*45=11; the Euclidean run is correct; sidecar passes'
+  - stage: S6
+    verdict: minor
+    by: verifier
+    hash: ab98386ae99e
+    date: '2026-10-12'
+    model: claude-opus-5-5
+    evidence: 03-unique-factorization.md:329 Part 'show gcd(1001,1023)=11 from the factorizations' is
+      a B task with no worked example and no tool in the section. The solution concedes the chapter lacks
+      the rule and argues through 91 and 93 instead.
 - key: exr-unique-factorization-c1
   kind: exr
   file: 03-unique-factorization.md
   line: 353
   hash: e1b8360f2def
-  verdicts: []
+  verdicts:
+  - stage: S5a
+    verdict: correct
+    by: refereeA
+    hash: e1b8360f2def
+    date: '2026-10-12'
+    model: claude-opus-5-5
+    evidence: 03:360-368. The solution points to the uniqueness proof, which is correct. The marking scheme
+      is consistent with it.
+  - stage: S5b
+    verdict: correct
+    by: refereeB
+    hash: e1b8360f2def
+    date: '2026-10-12'
+    model: claude-opus-5-5
+    evidence: 03:356 says 'You may cite @thm-euclid-lemma-integers', but the solution (03:360) and the
+      marking scheme (03:364, 'Euclid's lemma for products of several factors, proved or cited') rely
+      on cor-prime-divides-product (c), which the statement does not say may be cited [finding refuted
+      by skeptics]
+  - stage: S6
+    verdict: minor
+    by: verifier
+    hash: e1b8360f2def
+    date: '2026-10-12'
+    model: claude-opus-5-5
+    evidence: 03-unique-factorization.md:360 The exit-check solution is a pointer to the text plus a one-paragraph
+      outline. It is not the complete solution STYLE requires.
 - key: exr-unique-factorization-c2
   kind: exr
   file: 03-unique-factorization.md
   line: 371
   hash: 80fbba319814
-  verdicts: []
+  verdicts:
+  - stage: S5a
+    verdict: correct
+    by: refereeA
+    hash: 80fbba319814
+    date: '2026-10-12'
+    model: claude-opus-5-5
+    evidence: '03:384-388. The claim is true (prp-coprime-divisors-product). Line (4) fails: the counterexample
+      4|2², 4∤2 is valid, and the unused gcd hypothesis is noted.'
+  - stage: S5b
+    verdict: correct
+    by: refereeB
+    hash: 80fbba319814
+    date: '2026-10-12'
+    model: claude-opus-5-5
+    evidence: '03:376-388: the claim is true (prp-coprime-divisors-product); the failing line is (4);
+      (N9) is the right catalogue entry (fd1 06-checking-proofs); the counterexample 4|4, 4∤2 is valid'
+  - stage: S6
+    verdict: correct
+    by: verifier
+    hash: 80fbba319814
+    date: '2026-10-12'
+    model: claude-opus-5-5
+    evidence: '03:383-389. The claim is true (prp-coprime-divisors-product). Lines (1)-(3) are right (c*c=(mk)(nl)=mn*kl)
+      and the error is only in (4). Counterexample to the step: 4|4=2^2, 4 does not divide 2. Cites (N9)
+      of fd1:exm-not-allowed-catalogue (exists at fd1 ch05 06:28). Matches my analysis.'
 - key: exr-unique-factorization-c3
   kind: exr
   file: 03-unique-factorization.md
   line: 391
   hash: 8ebfdaa8532a
-  verdicts: []
+  verdicts:
+  - stage: S5a
+    verdict: correct
+    by: refereeA
+    hash: 8ebfdaa8532a
+    date: '2026-10-12'
+    model: claude-opus-5-5
+    evidence: '03:410-414. The product lemma by induction is valid (P_{j+1}>0 by (c)). N≥2, the least
+      divisor q is prime, and q=p_i would force q|1. Computed: 30031''s least prime factor is 59, and
+      211 is prime.'
+  - stage: S5b
+    verdict: correct
+    by: refereeB
+    hash: 8ebfdaa8532a
+    date: '2026-10-12'
+    model: claude-opus-5-5
+    evidence: '03:410-414: the induction lemma and the new-prime argument are valid; 211 is prime; 30031=59*509
+      and its least divisor is 59; the marking scheme sums to 10'
+  - stage: S6
+    verdict: correct
+    by: verifier
+    hash: 8ebfdaa8532a
+    date: '2026-10-12'
+    model: claude-opus-5-5
+    evidence: '03:397-415. Lemma (P_j>=1, p_i|P_j) by induction; N=P_k+1>=2; least divisor prime; q=p_i
+      forces q|1. Matches mine. Script: 211 is prime, 30031=59*509. Hints: object, then a preliminary
+      lemma; neither executes the key step. Scheme sums to 10 and grades my FTA-based variant fairly.'
+  - stage: S8
+    verdict: minor
+    by: seam
+    hash: 8ebfdaa8532a
+    date: '2026-10-12'
+    model: claude-opus-5-5
+    evidence: 03-unique-factorization.md:397 C3 (no finite list contains every prime) is the constructed-Z
+      version of *Logic and Proof*'s Exercise C1 (c) after Section 5.1. That exercise has the same statement
+      and the same N = product + 1 argument, for the school integers. The solution does not name it, though
+      the chapter names twins elsewhere (e.g. R3 names @fd1:thm-sqrt2-irrational).
 - key: def-ideal-commutative-ring
   kind: def
   file: 04-quotient-rings.md
   line: 25
   hash: 6504e65fa0e6
-  verdicts: []
+  verdicts:
+  - stage: S5a
+    verdict: correct
+    by: refereeA
+    hash: 6504e65fa0e6
+    date: '2026-10-12'
+    model: claude-opus-5-5
+    evidence: '04:25-35. Checked the consequences at 04:39: (-1)a = -(1a) = -a by prp-ring-algebra (c)
+      with a:=1, plus (F6), (F7); then 1 in I gives I = R. Examples 04:43-45 match def-integer-linear-combinations
+      (02:9 and the closure display after it). Non-examples 04:47: -1 not in N by thm-integers-ordered-ring
+      (b); 1/2 not in Z by cor-integers-even-odd (a). The ''why these clauses'' claim at 04:49 holds:
+      without'
+  - stage: S5b
+    verdict: minor
+    by: refereeB
+    hash: 6504e65fa0e6
+    date: '2026-10-12'
+    model: claude-opus-5-5
+    evidence: 04-quotient-rings.md:47 The fact -1 < 0 is justified by a citation that does not prove it.
+      The same problem recurs in B2(a), line 313.
+  - stage: S8
+    verdict: minor
+    by: seam
+    hash: 6504e65fa0e6
+    date: '2026-10-12'
+    model: claude-opus-5-5
+    evidence: index.md:5 The forward pointer "The quotient by an ideal is the pattern that Chapter 5 follows
+      to build R" (also 04:3, "Chapter 5 builds R by the same pattern") is not what F3.10's blueprint
+      delivers. F3.10 checks + and · on Cauchy classes directly (thm-reals-operations-well-defined). It
+      never forms the ideal of null sequences or cites thm-quotient-ring-by-ideal, and STATUS.md:117 itself
+      records "
 - key: thm-quotient-ring-by-ideal
   kind: thm
   file: 04-quotient-rings.md
   line: 55
   hash: 0233d4fd07ea
-  verdicts: []
+  verdicts:
+  - stage: S5a
+    verdict: correct
+    by: refereeA
+    hash: 0233d4fd07ea
+    date: '2026-10-12'
+    model: claude-opus-5-5
+    evidence: '04:55-66. Every hypothesis is used: ''ideal'' through (I1), (I2), (I3) and closure under
+      negatives. With (I3) dropped, Z ⊆ Q is a counterexample (the warning at 04:101-107).'
+  - stage: S5b
+    verdict: minor
+    by: refereeB
+    hash: 0233d4fd07ea
+    date: '2026-10-12'
+    model: claude-opus-5-5
+    evidence: 04-quotient-rings.md:97 Meta-claim "Absorption, (I3), is used exactly once in the proof
+      of (a) and (b)" is not true of the page as written.
 - key: proof:thm-quotient-ring-by-ideal
   kind: proof
   file: 04-quotient-rings.md
   line: 76
   hash: da813cb8aa28
-  verdicts: []
+  verdicts:
+  - stage: S5a
+    verdict: minor
+    by: refereeA
+    hash: da813cb8aa28
+    date: '2026-10-12'
+    model: claude-opus-5-5
+    evidence: 04-quotient-rings.md:97 The answer to the prompt says (I3) is used 'exactly once' in the
+      proof of (a) and (b). In fact the proof also uses closure under negatives (Eq2 in (a), and the negative
+      in (b)), and the text derives that property from (I3) (04:39). The A1 solution (04:259) says so,
+      so the two passages contradict each other.
+  - stage: S5b
+    verdict: correct
+    by: refereeB
+    hash: da813cb8aa28
+    date: '2026-10-12'
+    model: claude-opus-5-5
+    evidence: '77-94: Eq1-Eq3 are correct, and the class is a+I. For (b), both hypotheses of thm-well-defined-on-classes
+      (b) hold, and (a) holds for the negative. In (c), (F3), (F4), (F7) and (F9) are shown explicitly
+      and the rest go the same way. (d) is correct, including -0 = 0 and 1 in I <=> I = R.'
 - key: thm-integer-ideals-principal
   kind: thm
   file: 04-quotient-rings.md
   line: 113
   hash: aab08d27b6cd
-  verdicts: []
+  verdicts:
+  - stage: S5a
+    verdict: correct
+    by: refereeA
+    hash: aab08d27b6cd
+    date: '2026-10-12'
+    model: claude-opus-5-5
+    evidence: 04:113-120. Statement is accurate; n lies in N because Z_{>0} ⊆ N by definition.
+  - stage: S5b
+    verdict: minor
+    by: refereeB
+    hash: aab08d27b6cd
+    date: '2026-10-12'
+    model: claude-opus-5-5
+    evidence: 04-quotient-rings.md:135 The remark identifies n with gcd(a, b) but cites only Bézout (a)
+      and (e).
 - key: proof:thm-integer-ideals-principal
   kind: proof
   file: 04-quotient-rings.md
   line: 126
   hash: 70422deba48b
-  verdicts: []
+  verdicts:
+  - stage: S5a
+    verdict: correct
+    by: refereeA
+    hash: 70422deba48b
+    date: '2026-10-12'
+    model: claude-opus-5-5
+    evidence: '04:126-132. (a) relies on the closure display after def-integer-linear-combinations, and
+      nZ = nZ + 0Z is stated there. (b) existence: I ∩ Z_{>0} is non-empty by closure under negatives
+      and prp-divisibility-rules-integers (h), has lower bound 0, and so has a least element by prp-integer-least-element.
+      Then r = a + (-q)n is in I by (I3) and (I2), and minimality forces r = 0. Uniqueness uses prp-divi'
+  - stage: S5b
+    verdict: correct
+    by: refereeB
+    hash: 70422deba48b
+    date: '2026-10-12'
+    model: claude-opus-5-5
+    evidence: '127-131: (a) follows from the closure lines of def-integer-linear-combinations (02:22-30,
+      which also give nZ = nZ + 0Z). (b): least positive element, then divide, gives r = 0; uniqueness
+      via prp-divisibility-rules-integers (f) needs n, m in N, which the statement gives. The ledger covers
+      r = a + (-q)n.'
 - key: def-integers-mod-n-ring
   kind: def
   file: 04-quotient-rings.md
   line: 142
   hash: 1bb3529e2d60
-  verdicts: []
+  verdicts:
+  - stage: S5a
+    verdict: correct
+    by: refereeA
+    hash: 1bb3529e2d60
+    date: '2026-10-12'
+    model: claude-opus-5-5
+    evidence: 04:142-146. Cites thm-quotient-ring-by-ideal and thm-integer-ideals-principal (a). The remark
+      at 04:148 matches fd2:def-congruence read on the constructed Z.
+  - stage: S5b
+    verdict: correct
+    by: refereeB
+    hash: 1bb3529e2d60
+    date: '2026-10-12'
+    model: claude-opus-5-5
+    evidence: '145-148: matches NOTATION row 207. The congruence reading via fd2:def-congruence is correct.
+      fd2:prp-congruence-arithmetic is cited only for comparison, as the blueprint allows.'
 - key: thm-integers-mod-n-ring
   kind: thm
   file: 04-quotient-rings.md
   line: 150
   hash: 805908340f82
-  verdicts: []
+  verdicts:
+  - stage: S5a
+    verdict: correct
+    by: refereeA
+    hash: 805908340f82
+    date: '2026-10-12'
+    model: claude-opus-5-5
+    evidence: 04:150-162. All parts are true. (e) needs n >= 2 (Z/1Z is the zero ring, which (h) excludes),
+      and (c) uses n > 0.
+  - stage: S5b
+    verdict: correct
+    by: refereeB
+    hash: 805908340f82
+    date: '2026-10-12'
+    model: claude-opus-5-5
+    evidence: '150-162: (a)-(e) are true. (e) for n >= 2 matches the general clause after exm-finite-ring-not-orderable
+      (03:414). The multiples recall at line 164 matches F3.2 03:296 ("Multiples" paragraph).'
 - key: proof:thm-integers-mod-n-ring
   kind: proof
   file: 04-quotient-rings.md
   line: 170
   hash: 7c8ad294e8cf
-  verdicts: []
+  verdicts:
+  - stage: S5a
+    verdict: minor
+    by: refereeA
+    hash: 7c8ad294e8cf
+    date: '2026-10-12'
+    model: claude-opus-5-5
+    evidence: 04-quotient-rings.md:177 The text says 'The composite φ∘ψ is a bijection (@fd2:prp-equinumerous-properties
+      (c))', but the statement of that label only says that |A|=|B| and |B|=|C| give |A|=|C|. It is the
+      label's proof that composes the bijections, and that proof cites fd2:thm-composition-injective-surjective
+      (c). The conclusion that Z/nZ has n elements still follows from the statement.
+  - stage: S5b
+    verdict: minor
+    by: refereeB
+    hash: 7c8ad294e8cf
+    date: '2026-10-12'
+    model: claude-opus-5-5
+    evidence: 04-quotient-rings.md:177 "Since n >= 1, n - 1 in N" gives no reason, and the ledger wrongly
+      records it as cited.
 - key: exm-integers-mod-six
   kind: exm
   file: 04-quotient-rings.md
   line: 192
   hash: 8483a3f5add4
-  verdicts: []
+  verdicts:
+  - stage: S5a
+    verdict: correct
+    by: refereeA
+    hash: 8483a3f5add4
+    date: '2026-10-12'
+    model: claude-opus-5-5
+    evidence: 04:192-225. Both tables recomputed, and verify/ch03/exm-integers-mod-six.py passes. The
+      zero-divisor pairs (2,3), (3,4), the units {1,5} in Z/6Z, and the partners 1·1, 2·3, 4·4 in Z/5Z
+      are all correct. The claim that 5·[1] = [0] makes the ring non-orderable follows from (d) and (e).
+  - stage: S5b
+    verdict: correct
+    by: refereeB
+    hash: 8483a3f5add4
+    date: '2026-10-12'
+    model: claude-opus-5-5
+    evidence: 'I recomputed the Z/6Z and Z/5Z tables (199-224): all correct. Zero divisors (2,3), (3,4)
+      and mirrors; units [1], [5]; [4]^2 = [4]. The pointers at line 227 (Section 3.5 thm-units-mod-n
+      and thm-integers-mod-prime-field; Chapter 6 = F3.4, ch06.md R2) match STATUS row 119. The sidecar
+      passes.'
 - key: check:04-quotient-rings:1
   kind: check
   file: 04-quotient-rings.md
   line: 229
   hash: daaff2d83c83
-  verdicts: []
+  verdicts:
+  - stage: S5a
+    verdict: correct
+    by: refereeA
+    hash: daaff2d83c83
+    date: '2026-10-12'
+    model: claude-opus-5-5
+    evidence: 04:229-235. 15 = 1·12 + 3 and 56 = 4·12 + 8, and Z/1Z has one element by (b) with n = 1.
+      The sidecar passes.
+  - stage: S5b
+    verdict: correct
+    by: refereeB
+    hash: daaff2d83c83
+    date: '2026-10-12'
+    model: claude-opus-5-5
+    evidence: '234: 15 = 12 + 3 and 56 = 4*12 + 8, both correct. Z/1Z has one element by (b), and is a
+      zero ring like F3.2''s zero-ring example. The sidecar passes.'
 - key: exr-quotient-rings-a1
   kind: exr
   file: 04-quotient-rings.md
   line: 245
   hash: d44a309e270d
-  verdicts: []
+  verdicts:
+  - stage: S5a
+    verdict: minor
+    by: refereeA
+    hash: d44a309e270d
+    date: '2026-10-12'
+    model: claude-opus-5-5
+    evidence: '04:245-266. The arithmetic in (b) is correct: -6 = (-1)·6 and -30 = (-5)·6. In (c), (3/2
+      - 1/2)·(1/2) = 1/2, which is not in Z. The solution to (a) correctly says (I3) also gives closure
+      under negatives, but this contradicts the text''s own answer to the prompt at 04:97, which says
+      ''exactly once'' (finding below).'
+  - stage: S5b
+    verdict: minor
+    by: refereeB
+    hash: d44a309e270d
+    date: '2026-10-12'
+    model: claude-opus-5-5
+    evidence: 'Well posed, and the 4 parts meet STYLE section 6 A. (b): 2-8 = -6 and 10-40 = -30 = (-5)*6,
+      correct. (c): (3/2-1/2)(1/2) = 1/2, correct. The (a) solution (line 259) says (I3) also supplies
+      the closure under negatives used in (a) and (b), which contradicts line 97''s "exactly once"; see
+      the thm-quotient-ring-by-ideal item.'
+  - stage: S6
+    verdict: correct
+    by: verifier
+    hash: d44a309e270d
+    date: '2026-10-12'
+    model: claude-opus-5-5
+    evidence: '04:245-266. I answered all four parts before reading the solution and got the same answers.
+      (b): 2-8=-6 is in 6Z, and 10-40=-30=(-5)*6 (script). (c): (3/2-1/2)*(1/2)=1/2 is not in Z (script).
+      The parenthetical in (a), that (I3) also supplies negatives and is used in (d), agrees with the
+      meta-claim at 04:97-ish.'
 - key: exr-quotient-rings-b1
   kind: exr
   file: 04-quotient-rings.md
   line: 270
   hash: 01730ea93fb5
-  verdicts: []
+  verdicts:
+  - stage: S5a
+    verdict: correct
+    by: refereeA
+    hash: 01730ea93fb5
+    date: '2026-10-12'
+    model: claude-opus-5-5
+    evidence: '04:270-296. Tables for Z/4Z recomputed: the only zero divisor is [2], and the units are
+      [1] and [3]. The sidecar passes.'
+  - stage: S5b
+    verdict: correct
+    by: refereeB
+    hash: 01730ea93fb5
+    date: '2026-10-12'
+    model: claude-opus-5-5
+    evidence: '277-295: I recomputed both Z/4Z tables: correct. The only zero divisor is [2]; the units
+      are [1] and [3]. The sidecar passes.'
+  - stage: S6
+    verdict: correct
+    by: verifier
+    hash: 01730ea93fb5
+    date: '2026-10-12'
+    model: claude-opus-5-5
+    evidence: 04:270-296. My script reproduced both tables of Z/4Z exactly. The script finds zero divisors
+      {[2]} and units {[1],[3]}, which match the solution. The worked example type is exm-integers-mod-six.
 - key: exr-quotient-rings-b2
   kind: exr
   file: 04-quotient-rings.md
   line: 298
   hash: 39a549d6d9cc
-  verdicts: []
+  verdicts:
+  - stage: S5a
+    verdict: correct
+    by: refereeA
+    hash: 39a549d6d9cc
+    date: '2026-10-12'
+    model: claude-opus-5-5
+    evidence: '04:298-322. (a) uses (I3) with r = -1. (b) uses 5 = 2·2+1 = 1·3+2 and the uniqueness of
+      the remainder. (c) 2k = 4(-k) + 6k. (e): 2 and 3 are prime by the small-primes remark (01:188);
+      then cor-prime-divides-product (b) with b = c = n, cor-coprime-iff-combination, and prp-coprime-divisors-product
+      with c = n. All hypotheses are met.'
+  - stage: S5b
+    verdict: minor
+    by: refereeB
+    hash: 39a549d6d9cc
+    date: '2026-10-12'
+    model: claude-opus-5-5
+    evidence: '313-321: all five verdicts are correct, including 4Z+6Z = 2Z via 2k = 4(-k)+6k, and {n
+      : 6 | n^2} = 6Z via cor-prime-divides-product (b), cor-coprime-iff-combination and prp-coprime-divisors-product.
+      The only problem is in (a): -1 < 0 is again justified by thm-integers-ordered-ring (b), which does
+      not give it.'
+  - stage: S6
+    verdict: correct
+    by: verifier
+    hash: 39a549d6d9cc
+    date: '2026-10-12'
+    model: claude-opus-5-5
+    evidence: '04:298-324. (a)-(e) match my answers. Checked by script on [-200,200]: 4Z+6Z=2Z, and {n
+      : 6 | n^2}=6Z. The citations hold: cor-prime-divides-product (b) gives p|n from p|nn, and prp-coprime-divisors-product
+      gives 6|n. The planted failures (a) and (b) mirror the non-examples after def-ideal.'
 - key: exr-quotient-rings-c1
   kind: exr
   file: 04-quotient-rings.md
   line: 326
   hash: 117cd58d20f1
-  verdicts: []
+  verdicts:
+  - stage: S5a
+    verdict: correct
+    by: refereeA
+    hash: 117cd58d20f1
+    date: '2026-10-12'
+    model: claude-opus-5-5
+    evidence: 04:326-344. (⇐) applies thm-well-defined-on-classes (a) with f = id, and nZ ⊆ mZ. (⇒) [n]_n
+      = [0]_n gives n - 0 in mZ by thm-quotient-ring-by-ideal (d) / fd2:thm-classes-partition (b), so
+      m | n. The operations follow from the definitions. This agrees with fd2:exm-ill-defined-class-map.
+  - stage: S5b
+    verdict: minor
+    by: refereeB
+    hash: 117cd58d20f1
+    date: '2026-10-12'
+    model: claude-opus-5-5
+    evidence: 04-quotient-rings.md:339 The step from [n]_m = [0]_m to n - 0 in mZ cites nothing and has
+      no ledger line.
+  - stage: S6
+    verdict: minor
+    by: verifier
+    hash: 117cd58d20f1
+    date: '2026-10-12'
+    model: claude-opus-5-5
+    evidence: 04-quotient-rings.md:327 C1 is a full write-up proof but its solution has no Marking scheme.
+      DRAFTING.md:32 asks for 'a **Marking scheme.** ending every exit check's and write-up C item's solution',
+      and STYLE §11.6 says 'any C item a reader is likely to write up in full'.
 - key: exr-quotient-rings-c2
   kind: exr
   file: 04-quotient-rings.md
   line: 346
   hash: 33ae58f8463c
-  verdicts: []
+  verdicts:
+  - stage: S5a
+    verdict: correct
+    by: refereeA
+    hash: 33ae58f8463c
+    date: '2026-10-12'
+    model: claude-opus-5-5
+    evidence: '04:346-366. The given first half is correct: S ∩ Z_{>0} is non-empty and bounded below
+      by 0. Induction on k in N: (k+1)n = kn - (-n), using -(-n) = n. Negative k comes from prp-naturals-embed-integers
+      (c) and (-j)n = 0 - jn. The division step uses thm-integers-division-remainder (a) and the minimality
+      of n. No step uses absorption.'
+  - stage: S5b
+    verdict: correct
+    by: refereeB
+    hash: 33ae58f8463c
+    date: '2026-10-12'
+    model: claude-opus-5-5
+    evidence: '349-365: the given half and the solution are correct. Induction for k in N, then prp-naturals-embed-integers
+      (c) for negative k, then divide. The subgroup pointer to Algebraic Preliminaries Ch 3 matches STATUS
+      row 120. The faded-triple format matches blueprint line 42.'
+  - stage: S6
+    verdict: correct
+    by: verifier
+    hash: 33ae58f8463c
+    date: '2026-10-12'
+    model: claude-opus-5-5
+    evidence: '04:346-374. My completion matches the solution: induction for kn with k in N, the j/-j
+      split for negative k, then division with remainder. The identities (k+1)n=kn-(-n) and (-j)n=0-jn
+      are right. The given half is correct, and the blank has one natural completion. The move is named
+      correctly.'
 - key: def-ring-unit
   kind: def
   file: 05-units-and-crt.md
   line: 17
   hash: 9927bf366b8c
-  verdicts: []
+  verdicts:
+  - stage: S5a
+    verdict: minor
+    by: refereeA
+    hash: 9927bf366b8c
+    date: '2026-10-12'
+    model: claude-opus-5-5
+    evidence: 05-units-and-crt.md:41 The 'a unit is not a zero divisor' computation cites only (F5) and
+      prp-ring-algebra (b). Two of its steps use axioms that are not cited.
+  - stage: S5b
+    verdict: correct
+    by: refereeB
+    hash: 9927bf366b8c
+    date: '2026-10-12'
+    model: claude-opus-5-5
+    evidence: 05:20-52. Uniqueness, closure and 'unit is not a zero divisor' are checked from (F5)-(F7)
+      and prp-ring-algebra (b). Z^x, Q^x, Z/6Z, the zero ring (ch02 03:36) and the [2] non-example are
+      all right. The F4.3 pointer at 05:58 is in STATUS (row 120) and has the right volume form.
 - key: thm-units-mod-n
   kind: thm
   file: 05-units-and-crt.md
   line: 64
   hash: 43a3b1397f75
-  verdicts: []
+  verdicts:
+  - stage: S5a
+    verdict: correct
+    by: refereeA
+    hash: 43a3b1397f75
+    date: '2026-10-12'
+    model: claude-opus-5-5
+    evidence: '05:67. Statement checked. n>0 is needed for Z/nZ (thm-integers-mod-n-ring). n=1 is consistent:
+      every class is a unit of the zero ring and gcd(a,1)=1.'
+  - stage: S5b
+    verdict: correct
+    by: refereeB
+    hash: 43a3b1397f75
+    date: '2026-10-12'
+    model: claude-opus-5-5
+    evidence: 05:67. Matches the blueprint and NOTATION.md:186 (R^x, u^{-1}).
 - key: proof:thm-units-mod-n
   kind: proof
   file: 05-units-and-crt.md
   line: 74
   hash: 396b1b2a3dad
-  verdicts: []
+  verdicts:
+  - stage: S5a
+    verdict: correct
+    by: refereeA
+    hash: 396b1b2a3dad
+    date: '2026-10-12'
+    model: claude-opus-5-5
+    evidence: '05:75-77. Both directions translate through the class test (05:9: fd2:thm-classes-partition
+      (b) with thm-quotient-ring-by-ideal (a)) and cor-coprime-iff-combination, with coprime meaning gcd=1
+      (def-coprime-integers). The inverse is unique by def-ring-unit. In (⇒) every element is a class
+      [x] (fd2:def-quotient-set). The quantifier order is fine: x is chosen after the unit hypothesis.'
+  - stage: S5b
+    verdict: correct
+    by: refereeB
+    hash: 396b1b2a3dad
+    date: '2026-10-12'
+    model: claude-opus-5-5
+    evidence: 05:75-77. Both directions use cor-coprime-iff-combination (02, the 'coprime' definition
+      is gcd=1), the class test (05:9) and fd2:def-quotient-set. Every step is cited or in the ledger
+      (05:496,500).
 - key: exm-unit-inverse-mod-n
   kind: exm
   file: 05-units-and-crt.md
   line: 82
   hash: 7c73a1822403
-  verdicts: []
+  verdicts:
+  - stage: S5a
+    verdict: correct
+    by: refereeA
+    hash: 7c73a1822403
+    date: '2026-10-12'
+    model: claude-opus-5-5
+    evidence: 05:89-105. Euclidean run 60=3·17+9, 17=9+8, 9=8+1, 8=8·1. Back-substitution gives 2·60−7·17=1,
+      and 17·53=901=15·60+1. gcd(12,60)=12 via (e). [12][5]=[60]=[0]. The sidecar runs ok.
+  - stage: S5b
+    verdict: correct
+    by: refereeB
+    hash: 7c73a1822403
+    date: '2026-10-12'
+    model: claude-opus-5-5
+    evidence: 05:89-105. Euclid run 60=3*17+9, 17=9+8, 9=8+1, 8=8*1 gives x_4=1 (thm-euclidean-algorithm-integers
+      (c)). Back-substitution 1=2*60-7*17; 17*53=901=15*60+1. gcd(12,60)=12 and [12][5]=[0]. Sidecar passes.
 - key: check:05-units-and-crt:1
   kind: check
   file: 05-units-and-crt.md
   line: 108
   hash: 172b567457b8
-  verdicts: []
+  verdicts:
+  - stage: S5a
+    verdict: correct
+    by: refereeA
+    hash: 172b567457b8
+    date: '2026-10-12'
+    model: claude-opus-5-5
+    evidence: '05:113: 3·5+7·(−2)=1.'
+  - stage: S5b
+    verdict: correct
+    by: refereeB
+    hash: 172b567457b8
+    date: '2026-10-12'
+    model: claude-opus-5-5
+    evidence: '05:109-113: 3*5=15=2*7+1, so [3]^{-1}=[5] in Z/7Z.'
 - key: thm-integers-mod-prime-field
   kind: thm
   file: 05-units-and-crt.md
   line: 120
   hash: c4d3ae94b9d4
-  verdicts: []
+  verdicts:
+  - stage: S5a
+    verdict: correct
+    by: refereeA
+    hash: c4d3ae94b9d4
+    date: '2026-10-12'
+    model: claude-opus-5-5
+    evidence: 05:123. Statement matches def-commutative-ring-and-field (a field needs 1≠0 and F8; ch02/03:28).
+      If n≥2 is dropped, n=1 gives the zero ring, which is not a field, and 1 is not prime, so the equivalence
+      still holds there. The hypothesis is used through thm-integers-mod-n-ring (c).
+  - stage: S5b
+    verdict: correct
+    by: refereeB
+    hash: c4d3ae94b9d4
+    date: '2026-10-12'
+    model: claude-opus-5-5
+    evidence: '05:123 matches the blueprint and def-commutative-ring-and-field (ch02 03:28: field = ring
+      with 1 != 0 and (F8)).'
 - key: proof:thm-integers-mod-prime-field
   kind: proof
   file: 05-units-and-crt.md
   line: 130
   hash: 65a9b5c9cbc4
-  verdicts: []
+  verdicts:
+  - stage: S5a
+    verdict: correct
+    by: refereeA
+    hash: 65a9b5c9cbc4
+    date: '2026-10-12'
+    model: claude-opus-5-5
+    evidence: 05:131-137. (⇐) uses thm-quotient-ring-by-ideal (d), then cor-prime-divides-product (a),
+      then gcd symmetry. (⇒) uses fd2:def-prime to get a positive divisor r∉{1,n}. Then 1≤r by discreteness
+      and r≤n by (e). s>0 follows by prp-ordered-ring-rules (c) with c=r>0. s≠n follows by (f). [r],[s]≠[0]
+      by (e). The final step uses the unit/zero-divisor paragraph. Every step checked.
+  - stage: S5b
+    verdict: correct
+    by: refereeB
+    hash: 65a9b5c9cbc4
+    date: '2026-10-12'
+    model: claude-opus-5-5
+    evidence: '05:131-137. (<=) uses thm-quotient-ring-by-ideal (d) and cor-prime-divides-product (a).
+      (=>): 1<r<n by thm-integers-ordered-ring (c) and prp-divisibility-rules-integers (e); s>0 via prp-ordered-ring-rules
+      (c); s != n via (f); [r][s]=[0]; zero-divisor argument from 05:37-41. Every step is cited.'
 - key: thm-chinese-remainder-two
   kind: thm
   file: 05-units-and-crt.md
   line: 154
   hash: 2f03c037906f
-  verdicts: []
+  verdicts:
+  - stage: S5a
+    verdict: correct
+    by: refereeA
+    hash: 2f03c037906f
+    date: '2026-10-12'
+    model: claude-opus-5-5
+    evidence: 05:157-172. If coprimality is dropped, m=2, n=4 breaks both existence and uniqueness, as
+      exm (ii) shows. u and v are chosen before x is defined, so the dependency order is fine.
+  - stage: S5b
+    verdict: minor
+    by: refereeB
+    hash: 2f03c037906f
+    date: '2026-10-12'
+    model: claude-opus-5-5
+    evidence: 05-units-and-crt.md:168 Unsubscripted classes in (b) and its proof break the section's stated
+      convention that an unsubscripted class is taken mod n.
 - key: proof:thm-chinese-remainder-two
   kind: proof
   file: 05-units-and-crt.md
   line: 186
   hash: 4c424ba62c6e
-  verdicts: []
+  verdicts:
+  - stage: S5a
+    verdict: correct
+    by: refereeA
+    hash: 4c424ba62c6e
+    date: '2026-10-12'
+    model: claude-opus-5-5
+    evidence: 05:187-211. The identities x−a=m(bu−au) and x−b=n(av−bv) were checked by expansion. Uniqueness
+      uses prp-coprime-divisors-product (m|c, n|c, gcd=1 imply mn|c). Well-definedness uses thm-well-defined-on-classes
+      (a) with identity f, which is valid because the relation of Z/kZ is congruence mod k (ch03/04:148).
+      Surjectivity, injectivity and the operations via thm-quotient-ring-by-ideal (b) all check.
+  - stage: S5b
+    verdict: correct
+    by: refereeB
+    hash: 4c424ba62c6e
+    date: '2026-10-12'
+    model: claude-opus-5-5
+    evidence: 05:187-211. x-a=m(bu-au) and x-b=n(av-bv) check out. Uniqueness and injectivity via prp-coprime-divisors-product.
+      Well-definedness via thm-well-defined-on-classes (a). Surjectivity from (a). The operations are
+      computed on representatives.
 - key: exm-chinese-remainder-instances
   kind: exm
   file: 05-units-and-crt.md
   line: 216
   hash: f5070a1d25a5
-  verdicts: []
+  verdicts:
+  - stage: S5a
+    verdict: correct
+    by: refereeA
+    hash: f5070a1d25a5
+    date: '2026-10-12'
+    model: claude-opus-5-5
+    evidence: '05:225-237. x=−10+18=8. For gcd(2,4)=2: no solution via cor-integers-even-odd (a). 2+4Z
+      splits into [2]_8 and [6]_8. Φ([0]_8)=Φ([4]_8), and ([0]_2,[1]_4) is not hit. All correct. The sidecar
+      runs ok.'
+  - stage: S5b
+    verdict: correct
+    by: refereeB
+    hash: f5070a1d25a5
+    date: '2026-10-12'
+    model: claude-opus-5-5
+    evidence: 05:225-237. x=-10+18=8, giving 8+15Z. gcd(2,4)=2. No solution for (0,1) by cor-integers-even-odd
+      (a); 2 and 6 are distinct mod 8. Phi([0]_8)=Phi([4]_8), and ([0]_2,[1]_4) is not hit. The claim
+      that well-definedness used only k | mn is true of 05:198.
 - key: exr-units-and-crt-a1
   kind: exr
   file: 05-units-and-crt.md
   line: 254
   hash: f63a6feb62ea
-  verdicts: []
+  verdicts:
+  - stage: S5a
+    verdict: correct
+    by: refereeA
+    hash: f63a6feb62ea
+    date: '2026-10-12'
+    model: claude-opus-5-5
+    evidence: '05:267-279. 25=2·12+1. Units are 1,5,7,11, each self-inverse (49=48+1, 121=120+1). Z/1Z
+      has [1]=[0] by thm-integers-mod-n-ring (c). For (d): 4·(−2)+9·1=1 gives x=9−16=−7≡29 (mod 36), and
+      29≡1 (mod 4), 29≡2 (mod 9). (e) is correct.'
+  - stage: S5b
+    verdict: correct
+    by: refereeB
+    hash: f63a6feb62ea
+    date: '2026-10-12'
+    model: claude-opus-5-5
+    evidence: 05:267-279. [5]^2=[25]=[1] mod 12. Units of Z/12Z are 1, 5, 7, 11. Z/1Z has [1]=[0] (thm-integers-mod-n-ring
+      (c)). 4*(-2)+9=1 gives x=9-16=-7, i.e. 29+36Z (29=7*4+1=3*9+2). Part (e) points at 05:137 correctly.
+  - stage: S6
+    verdict: correct
+    by: verifier
+    hash: f63a6feb62ea
+    date: '2026-10-12'
+    model: claude-opus-5-5
+    evidence: '05:254-282. Checked by script: 25 = 1 mod 12; units of Z/12Z are {1,5,7,11}, both by gcd
+      and by search; x=-7 and the only solution mod 36 is 29; (c) false (zero ring); (e) points to the
+      right place, 05:~170.'
 - key: exr-units-and-crt-b1
   kind: exr
   file: 05-units-and-crt.md
   line: 284
   hash: da9682b2f377
-  verdicts: []
+  verdicts:
+  - stage: S5a
+    verdict: correct
+    by: refereeA
+    hash: da9682b2f377
+    date: '2026-10-12'
+    model: claude-opus-5-5
+    evidence: 05:291-293. a²−1=(a−1)(a+1), then cor-prime-divides-product (b). In Z/8Z, 3²=9≡1 while 3≢±1
+      (mod 8). 5² and 7² are ≡1 (mod 8).
+  - stage: S5b
+    verdict: correct
+    by: refereeB
+    hash: da9682b2f377
+    date: '2026-10-12'
+    model: claude-opus-5-5
+    evidence: 05:291-293. p | (a-1)(a+1), then cor-prime-divides-product (b). In Z/8Z, [3]^2=[1] with
+      [3] != [1] and [3] != [-1], and 25 and 49 are both 1 mod 8.
+  - stage: S6
+    verdict: correct
+    by: verifier
+    hash: da9682b2f377
+    date: '2026-10-12'
+    model: claude-opus-5-5
+    evidence: '05:284-294. Same proof as mine: the class test, (a-1)(a+1), then cor-prime-divides-product
+      (b). A script confirms that a^2=1 forces a=+-1 mod p for p<=13, and that 1, 3, 5 and 7 all square
+      to 1 in Z/8Z.'
 - key: exr-units-and-crt-b2
   kind: exr
   file: 05-units-and-crt.md
   line: 296
   hash: 092ba9e33f56
-  verdicts: []
+  verdicts:
+  - stage: S5a
+    verdict: correct
+    by: refereeA
+    hash: 092ba9e33f56
+    date: '2026-10-12'
+    model: claude-opus-5-5
+    evidence: 05:307-317. Expanded (xs+mt)(xs'+nt') = x(xss'+snt'+s'mt)+mn·tt' and checked it. The restriction-bijection
+      argument is fine. (c) is correct that only (b) uses coprimality, and the m=n=2 non-injectivity on
+      units checks.
+  - stage: S5b
+    verdict: correct
+    by: refereeB
+    hash: 092ba9e33f56
+    date: '2026-10-12'
+    model: claude-opus-5-5
+    evidence: '05:307-317. The identity (xs+mt)(xs''+nt'') = x(xss''+snt''+s''mt)+mn*tt'' expands correctly.
+      (b): restricting the bijection Phi is correct. (c): the m=n=2 illustration holds ([1]_4 and [3]_4
+      both map to ([1],[1])).'
+  - stage: S6
+    verdict: correct
+    by: verifier
+    hash: 092ba9e33f56
+    date: '2026-10-12'
+    model: claude-opus-5-5
+    evidence: '05:296-318. The product identity was checked on random integers. Script check over m,n<=12:
+      gcd(x,mn)=1 iff gcd(x,m)=gcd(x,n)=1, which confirms that (a) needs no coprimality. (b) is the restriction
+      argument and is sound. (c): with m=n=2, units of Z/4Z are {1,3}, and both map to ([1],[1]).'
 - key: exr-units-and-crt-b3
   kind: exr
   file: 05-units-and-crt.md
   line: 320
   hash: 81bce4dca8ac
-  verdicts: []
+  verdicts:
+  - stage: S5a
+    verdict: correct
+    by: refereeA
+    hash: 81bce4dca8ac
+    date: '2026-10-12'
+    model: claude-opus-5-5
+    evidence: '05:327-329. The cited fd2 statements match: fd2:def-finite uses {1..n}, plus prp-equinumerous-properties
+      (c), prp-subset-finite and cor-finite-size-unique. exr-finite-sets-c2 (a) is cited from an exercise
+      solution, which STYLE.md:237 allows, and it is in group (i) of the ch01/07:229 citing rule.'
+  - stage: S5b
+    verdict: correct
+    by: refereeB
+    hash: 81bce4dca8ac
+    date: '2026-10-12'
+    model: claude-opus-5-5
+    evidence: 05:327-329. fd2:def-finite uses {1..n}, matching thm-integers-mod-n-ring (b). fd2:prp-equinumerous-properties
+      (c), prp-subset-finite (k<n for a proper subset), cor-finite-size-unique and thm-finite-no-proper-copy
+      are stated as used. Citing fd2:exr-finite-sets-c2 (a) from a solution is allowed (STYLE) and is
+      ledgered.
+  - stage: S6
+    verdict: minor
+    by: verifier
+    hash: 81bce4dca8ac
+    date: '2026-10-12'
+    model: claude-opus-5-5
+    evidence: '05-units-and-crt.md:323 B3 is a B item, but its task type has no worked example in the
+      section. STYLE §6 (B: each with a worked example type in the section) and the §9 checklist require
+      one.'
 - key: exr-units-and-crt-c1
   kind: exr
   file: 05-units-and-crt.md
   line: 334
   hash: aee6a8660866
-  verdicts: []
+  verdicts:
+  - stage: S5a
+    verdict: correct
+    by: refereeA
+    hash: aee6a8660866
+    date: '2026-10-12'
+    model: claude-opus-5-5
+    evidence: 05:341-345. gcd(p,a) is a common divisor and ≥1, so it lies in {1,p} by fd2:def-prime. Showing
+      [1]≠[0] via (e) is fine.
+  - stage: S5b
+    verdict: correct
+    by: refereeB
+    hash: aee6a8660866
+    date: '2026-10-12'
+    model: claude-opus-5-5
+    evidence: 05:341-353. The proof is complete. g=gcd(p,a) is in {1,p} by fd2:def-prime. The marking
+      scheme sums to 3+3+2+1+1=10 and names its fatal errors and the alternative route.
+  - stage: S6
+    verdict: correct
+    by: verifier
+    hash: aee6a8660866
+    date: '2026-10-12'
+    model: claude-opus-5-5
+    evidence: '05:334-354. The solution matches my proof. The field part''s [1]!=[0] uses prp-divisibility-rules-integers
+      (e) correctly: p|1 with p,1>0 gives p<=1. Scheme points sum to 3+3+2+1+1=10, and the book''s solution
+      earns all 10. My alternative, citing cor-prime-divides-product (a) and closing (=>) by ''a common
+      divisor divides ax+ny=1'', also earns 10. The scheme allows that route explicitly.'
 - key: exr-units-and-crt-c2
   kind: exr
   file: 05-units-and-crt.md
   line: 356
   hash: 219235696a69
-  verdicts: []
+  verdicts:
+  - stage: S5a
+    verdict: correct
+    by: refereeA
+    hash: 219235696a69
+    date: '2026-10-12'
+    model: claude-opus-5-5
+    evidence: '05:381-387. N9 matches fd1 usage (an unproved, false general ''fact''). In Z/6Z, [2][1]=[2][4].
+      The repair via cor-prime-divides-product (b) works. The critique of line (4) is accurate: fd2:cor-pigeonhole-finite-sets
+      covers only m>n and m<n. fd2:thm-finite-no-proper-copy fits.'
+  - stage: S5b
+    verdict: correct
+    by: refereeB
+    hash: 219235696a69
+    date: '2026-10-12'
+    model: claude-opus-5-5
+    evidence: '05:381-395. The claim is true, and line (2) is the illegal step: entry (N9) at fd1 06-checking-proofs:336
+      is the ''unproved general fact'' entry. Counterexample [2][1]=[2][4] in Z/6Z. The repair is valid.
+      The line (4) slip is real: fd2:cor-pigeonhole-finite-sets covers only m>n and m<n. Marks 2+3+2+2+1=10.'
+  - stage: S6
+    verdict: minor
+    by: verifier
+    hash: 219235696a69
+    date: '2026-10-12'
+    model: claude-opus-5-5
+    evidence: 05-units-and-crt.md:363 The quoted argument for this find-the-error item is flawed in more
+      than one line, but the problem asks for 'the line that fails', and STYLE §11.3 says 'the error sits
+      in one line, and the rest is correct'.
 - key: exr-units-and-crt-c3
   kind: exr
   file: 05-units-and-crt.md
   line: 398
   hash: 461bf1893f79
-  verdicts: []
+  verdicts:
+  - stage: S5a
+    verdict: correct
+    by: refereeA
+    hash: 461bf1893f79
+    date: '2026-10-12'
+    model: claude-opus-5-5
+    evidence: 05:409-421. x1=−5+12=7. 15−14=1. x2=−98+45=−53≡52 (mod 105). 52≡1,2,3 mod 3,5,7. The iff
+      in step 1 is correctly identified as necessary.
+  - stage: S5b
+    verdict: correct
+    by: refereeB
+    hash: 461bf1893f79
+    date: '2026-10-12'
+    model: claude-opus-5-5
+    evidence: 05:409-421. x1=-5+12=7. 15*1+7*(-2)=1. x2=-98+45=-53, i.e. 52+105Z, and 52=17*3+1=10*5+2=7*7+3.
+      The remark that the iff is needed is true.
+  - stage: S6
+    verdict: correct
+    by: verifier
+    hash: 461bf1893f79
+    date: '2026-10-12'
+    model: claude-opus-5-5
+    evidence: '05:398-424. Checked by script: x1=7, x2=-53, 52 mod 105, and 52 is the only solution in
+      [0,105). 1=2*3-5 and 1=15-2*7 are correct. Using the iff to replace two congruences by one is justified.'
 - key: exr-units-and-crt-r1
   kind: exr
   file: 05-units-and-crt.md
   line: 426
   hash: e7afb433fed5
-  verdicts: []
+  verdicts:
+  - stage: S5a
+    verdict: correct
+    by: refereeA
+    hash: e7afb433fed5
+    date: '2026-10-12'
+    model: claude-opus-5-5
+    evidence: 05:433-442. (a+b')−(a'+b)+2b−2b' = (a+b)−(a'+b') was checked. The identification uses [(a,b)]=a−b
+      (ch02/03:96).
+  - stage: S5b
+    verdict: correct
+    by: refereeB
+    hash: e7afb433fed5
+    date: '2026-10-12'
+    model: claude-opus-5-5
+    evidence: 05:433-442. (a+b)-(a'+b') = (a+b'-a'-b)+2b-2b' expands correctly. thm-well-defined-on-classes
+      (a) applies. The remark after thm-integers-commutative-ring (ch02 03:96) gives [(a,b)]=a-b.
+  - stage: S6
+    verdict: minor
+    by: verifier
+    hash: e7afb433fed5
+    date: '2026-10-12'
+    model: claude-opus-5-5
+    evidence: 05-units-and-crt.md:433 The solution applies thm-well-defined-on-classes (a) with 'Y = Z
+      with congruence modulo 2' but never cites that this relation is an equivalence relation, which the
+      theorem assumes. It also never cites that Y/≈ is Z/2Z.
 - key: exr-units-and-crt-r2
   kind: exr
   file: 05-units-and-crt.md
   line: 445
   hash: 086ff2661b73
-  verdicts: []
+  verdicts:
+  - stage: S5a
+    verdict: correct
+    by: refereeA
+    hash: 086ff2661b73
+    date: '2026-10-12'
+    model: claude-opus-5-5
+    evidence: 05:452-458. L_{m,n} is a non-decreasing prime list with product 2^m3^n by the def-prime-factorization
+      recursion, and it is unique by thm-fundamental-arithmetic, which covers every n∈Z_{>0}, including
+      the empty list. The index argument m<m'≤m+n is valid. fd2:exr-countable-sets-b2 line (vii) is indeed
+      the unique-factorization line.
+  - stage: S5b
+    verdict: correct
+    by: refereeB
+    hash: 086ff2661b73
+    date: '2026-10-12'
+    model: claude-opus-5-5
+    evidence: '05:452-458. L_{m,n} is a prime factorization in the sense of def-prime-factorization; the
+      empty list covers m=n=0. The index argument at m'' is valid. The meta-claim about fd2:exr-countable-sets-b2
+      line (vii) checks out: fd2''s solution says unique factorization was unavailable, and thm-product-countable
+      uses parity.'
+  - stage: S6
+    verdict: correct
+    by: verifier
+    hash: 086ff2661b73
+    date: '2026-10-12'
+    model: claude-opus-5-5
+    evidence: 05:445-459. The list L_{m,n} is a non-decreasing prime factorization; def-prime-factorization
+      allows the empty list for m=n=0. Comparing the entry of index m' is valid because m < m' <= m+n.
+      Uniqueness comes from thm-fundamental-arithmetic. A script confirms injectivity on [0,20)^2. The
+      source is hidden, and @fd2:exr-countable-sets-b2 line (vii) is the unique-factorization line, as
+      claimed.
 - key: exr-units-and-crt-r3
   kind: exr
   file: 05-units-and-crt.md
   line: 461
   hash: 454276a4abd3
-  verdicts: []
+  verdicts:
+  - stage: S5a
+    verdict: minor
+    by: refereeA
+    hash: 454276a4abd3
+    date: '2026-10-12'
+    model: claude-opus-5-5
+    evidence: 05-units-and-crt.md:470 Dividing gcd(a,b) is cited to thm-integers-bezout (c) alone. Clause
+      (c) concerns the least positive combination d; that d = gcd(a,b) is clause (d).
+  - stage: S5b
+    verdict: minor
+    by: refereeB
+    hash: 454276a4abd3
+    date: '2026-10-12'
+    model: claude-opus-5-5
+    evidence: 05-units-and-crt.md:470 The citation for 'a common divisor divides gcd(a,b)' gives only
+      thm-integers-bezout (c). That part speaks of the least positive combination d, not of gcd(a,b).
+  - stage: S6
+    verdict: correct
+    by: verifier
+    hash: 454276a4abd3
+    date: '2026-10-12'
+    model: claude-opus-5-5
+    evidence: 05:461-475. Same route as mine. prp-integers-embed-rationals (b) gives a^2*1=2*b^2. cor-integers-even-odd
+      (b) and thm-integers-bezout (c) are cited correctly. The prime case is right. prp-rationals-lowest-terms
+      (ch03 §03) does use cor-coprime-iff-combination, so the comparison claim holds. The source fd1:thm-sqrt2-irrational
+      is hidden in the problem and named in the solution.
+  - stage: S8
+    verdict: correct
+    by: seam
+    hash: 454276a4abd3
+    date: '2026-10-12'
+    model: claude-opus-5-5
+    evidence: '05-units-and-crt.md:461; curriculum.md:448-457: the spiral table has no row that R3 could
+      come from [finding refuted by skeptics]'
 - key: exr-units-and-crt-r4
   kind: exr
   file: 05-units-and-crt.md
   line: 477
   hash: cc10feaa7e84
-  verdicts: []
+  verdicts:
+  - stage: S5a
+    verdict: correct
+    by: refereeA
+    hash: cc10feaa7e84
+    date: '2026-10-12'
+    model: claude-opus-5-5
+    evidence: 05:484-492. 10|6x−4 iff 5|3x−2, by cancelling 2 via (f). [3]^{-1}=[2] in Z/5Z gives x≡4
+      (mod 5), which is [4]_10 ∪ [9]_10. 20 and 50 check.
+  - stage: S5b
+    verdict: error
+    by: refereeB
+    hash: cc10feaa7e84
+    date: '2026-10-12'
+    model: claude-opus-5-5
+    evidence: 05-units-and-crt.md:492 The R4 look-alike paragraph says that the Chinese remainder theorem
+      'gives no reduction by itself', because the modulus 10 shares the factor 2 with the coefficient
+      6. That is false, and the stated reason has nothing to do with CRT's hypothesis.
+  - stage: S6
+    verdict: correct
+    by: verifier
+    hash: cc10feaa7e84
+    date: '2026-10-12'
+    model: claude-opus-5-5
+    evidence: 05:477-end. A script finds the solutions in [0,10) are {4,9}, which is the class 4+5Z. The
+      equivalence 10|6x-4 <=> 5|3x-2 is justified, [3]^{-1}=[2] mod 5 is right, and the look-alike tools
+      are discussed as STYLE §11.5 R4 requires.
