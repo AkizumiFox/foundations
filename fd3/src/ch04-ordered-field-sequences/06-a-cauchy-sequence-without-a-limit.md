@@ -54,13 +54,13 @@ We prove six facts, then the two claims. Induction is @fd1:ax-induction, read on
 
 *(iv) \( x_m \le x_n \) for \( m \ge n \).* Fix \( n \). By induction on \( k \), \( x_{n+k} \le x_n \) for every \( k \in \nN \): the base \( P(0) \) is \( x_n \le x_n \), and if \( x_{n+k} \le x_n \), then \( x_{n+k+1} < x_{n+k} \le x_n \). Every \( m \ge n \) in \( \nN \) is \( n + k \) for some \( k \in \nN \) (@prp-omega-order-arithmetic (a)), so \( x_m \le x_n \).
 
-*(v) \( e_n \le 1/(4n) \) for \( n \ge 1 \).* By induction on \( k \), for \( P(k) \): \( e_{k+1} \le 1/(4(k + 1)) \). Base \( P(0) \): \( e_1 = 1/4 \). Step: assume \( P(k) \), and let \( n \coloneqq k + 1 \ge 1 \), so \( 0 < e_n \le 1/(4n) \le 1/4 \) (by (i), \( P(k) \), and @prp-ordered-field-halves (c) with \( 4 \le 4n \)). Then, by (ii) and @prp-ordered-ring-rules (c),
+*(v) \( e_n \le 1/(4n) \) for \( n \ge 1 \).* By induction on \( k \), for \( P(k) \): \( e_{k+1} \le 1/(4(k + 1)) \). Base \( P(0) \): \( e_1 = 1/4 \). Step: assume \( P(k) \), and let \( n \coloneqq k + 1 \ge 1 \), so \( 0 < e_n \le 1/(4n) \le 1/4 \) (by (i), \( P(k) \), and @prp-ordered-field-halves (c) with \( 4 \le 4n \)). Then, by (ii) and @prp-ordered-field-halves (d) (with the factors \( 0 \le e_n/8 \le e_n/8 \) and \( 0 \le e_n \le 1/4 \), then \( 0 \le 1/32 \le 1/32 \) and \( 0 \le e_n \le 1/(4n) \)),
 \[
 e_{n+1} \le \frac{e_n \cdot e_n}{8} \le \frac{e_n}{8} \cdot \frac{1}{4} = \frac{e_n}{32} \le \frac{1}{128 n} \le \frac{1}{4(n + 1)} ,
 \]
 where the last step is @prp-ordered-field-halves (c), since \( 0 < 4(n + 1) = 4n + 4 \le 128 n \) for \( n \ge 1 \) (as \( 4 \le 124 n \)). This is \( P(k + 1) \).
 
-*(vi) For \( m \ge n \ge 1 \): \( 0 \le x_n - x_m \le 1/(4n) \).* By (iv), \( x_m \le x_n \), so \( x_n - x_m \ge 0 \). By (i), \( x_m^2 > 2 \); multiplying by \( 1/x_m > 0 \) (@prp-reciprocal-order (a), @prp-ordered-ring-rules (c)) gives \( x_m > 2/x_m \). From \( 0 < x_m \le x_n \), @prp-ordered-field-halves (c) gives \( 1/x_n \le 1/x_m \), so \( 2/x_n \le 2/x_m < x_m \). Hence
+*(vi) For \( m \ge n \ge 1 \): \( 0 \le x_n - x_m \le 1/(4n) \).* By (iv), \( x_m \le x_n \), so \( x_n - x_m \ge 0 \). By (i), \( x_m^2 > 2 \); multiplying by \( 1/x_m > 0 \) (@prp-reciprocal-order (a), @prp-ordered-ring-rules (c)) gives \( x_m > 2/x_m \). From \( 0 < x_m \le x_n \), @prp-ordered-field-halves (c) gives \( 1/x_n \le 1/x_m \), so \( 2/x_n \le 2/x_m < x_m \) (@prp-ordered-field-halves (d), with \( 0 \le 2 \le 2 \)). Hence
 \[
 x_n - x_m \le x_n - \frac{2}{x_n} = \frac{x_n^2 - 2}{x_n} = \frac{e_n}{x_n} \le e_n \le \frac{1}{4n} .
 \]
@@ -158,7 +158,7 @@ With \( (x_n) \) as in @thm-sqrt2-cauchy-no-rational-limit, prove that the seque
 :::
 
 ::: {.solution}
-*Null.* For every \( n \), \( x_n - 2/x_n = (x_n^2 - 2)/x_n = e_n/x_n \), and as in step (vi) of the proof, \( 0 < e_n/x_n \le e_n \le 1/(4n) \le 1/(n + 1) \) for \( n \ge 1 \) (using \( x_n > 1 \), \( e_n > 0 \) and \( e_n \le 1/(4n) \) from the theorem). By the squeeze (@prp-limit-preserves-order-ordered-field (c)) with \( N_0 = 1 \), lower sequence \( 0 \) and upper sequence \( (1/(n + 1)) \), null in \( \nQ \) (@exm-first-sequences-ordered-field), \( x_n - 2/x_n \to 0 \).
+*Null.* For every \( n \), \( x_n - 2/x_n = (x_n^2 - 2)/x_n = e_n/x_n \), and as in step (vi) of the proof, \( 0 < e_n/x_n \le e_n \le 1/(4n) \le 1/(n + 1) \) for \( n \ge 1 \) (using \( x_n > 1 \) and \( e_n \le 1/(4n) \) from the theorem, and \( e_n > 0 \) from @exm-newton-rationals-sqrt2 (i)). By the squeeze (@prp-limit-preserves-order-ordered-field (c)) with \( N_0 = 1 \), lower sequence \( 0 \) and upper sequence \( (1/(n + 1)) \), null in \( \nQ \) (@exm-first-sequences-ordered-field), \( x_n - 2/x_n \to 0 \).
 
 *Cauchy.* \( 2/x_n = x_n - (x_n - 2/x_n) \) is the difference of a Cauchy sequence (@thm-sqrt2-cauchy-no-rational-limit) and a null one, which is Cauchy by @thm-cauchy-algebra-ordered-field (a); so it is Cauchy by @thm-cauchy-algebra-ordered-field (b).
 
@@ -174,7 +174,7 @@ Let \( (H_n) \) be the sequence of @exm-consecutive-differences-not-cauchy: \( H
 :::
 
 ::: {.solution}
-The powers \( 2^k \) of the natural number \( 2 \) are those of @def-naturals-in-ordered-field, with \( 2^0 = 1 \) and \( 2^{k+1} = 2^k \cdot 2 = 2^k + 2^k \).
+The powers \( 2^k \) of the natural number \( 2 \) are those of Section 1.6 (defined just before @prp-omega-powers-parity by @thm-omega-recursion), with \( 2^0 = 1 \) and \( 2^{k+1} = 2^k \cdot 2 = 2^k + 2^k \).
 
 We use @fd1:ax-induction on \( k \). Base \( P(0) \): \( H_{2^0} = H_1 = H_0 + 1/1 = 1 \ge 1 + 0/2 \). Step: assume \( H_{2^k} \ge 1 + k/2 \). The example shows \( H_{2n} - H_n \ge 1/2 \) for every \( n \ge 1 \); with \( n = 2^k \ge 1 \) (by induction, \( 2^k \ge 1 \)) it gives \( H_{2^{k+1}} \ge H_{2^k} + 1/2 \ge 1 + (k + 1)/2 \).
 
@@ -247,11 +247,11 @@ using \( y_n > 1 \).
 **Marking scheme.** (10 points)
 - 2: (a), a descent with a least denominator (@prp-integer-least-element), with the inequalities \( q < p < 2q \) and the positivity of \( p' \), \( q' \) justified (another correct route, such as divisibility by \( 3 \) with a least denominator, earns the same).
 - 1: positivity of \( y_n \) and \( d_n \), and the recursion identity for \( d_{n+1} \).
-- 2: monotonicity, and \( y_m \ge 3/y_n \) for \( m \ge n \).
+- 2: a comparison of \( y_n \) and \( y_m \) for \( m \ge n \): monotonicity together with \( y_m \ge 3/y_n \), or (factorization route, as in R4) \( \abs{y_n - y_m} = \abs{d_n - d_m}/(y_n + y_m) \) with \( y_n + y_m > 2 \), since \( y_n > 1 \) follows from \( y_n^2 > 3 \).
 - 2: an explicit bound on \( d_n \) (or on \( y_n - y_m \)) tending to \( 0 \), with Archimedes giving \( N \) for each rational \( \varepsilon \).
 - 1: Cauchy concluded with the quantifiers in order.
 - 2: no rational limit, by the product law, uniqueness of limits and (a).
-Fatal errors (0 for the step): assuming that \( \sqrt 3 \) exists in \( \nQ \) or in a larger field and comparing with it; invoking a monotone convergence theorem. A route through the steps \( y_n - y_{n+1} \) and a geometric bound earns the middle 2 + 1 only if the sum of the steps from \( n \) to \( m \) is bounded explicitly, independently of \( m \) (the example at the end of Section 4.5 shows why).
+Fatal errors (0 for the step): assuming that \( \sqrt 3 \) exists in \( \nQ \) or in a larger field and comparing with it; invoking a monotone convergence theorem. A route by factorization as in R4 earns the next 2 for showing \( d_n \to 0 \) (by an explicit bound with Archimedes, or by the squeeze), and the 1 for concluding that \( (d_n) \) is Cauchy by @prp-convergent-cauchy-ordered-field and transferring this to \( (y_n) \) with the quantifiers in order. A route through the steps \( y_n - y_{n+1} \) and a geometric bound earns the middle 2 + 1 only if the sum of the steps from \( n \) to \( m \) is bounded explicitly, independently of \( m \) (the example at the end of Section 4.5 shows why).
 :::
 
 ::: {#exr-a-cauchy-sequence-without-a-limit-c2}
@@ -277,73 +277,72 @@ The terms are the same in both fields; what changed is the set of tolerances. \(
 ::: {#exr-a-cauchy-sequence-without-a-limit-r1}
 [R1]
 
-Let \( \mathcal{C} \) be the set of Cauchy sequences in \( \nQ \), and for \( (a_n), (b_n) \in \mathcal{C} \) write \( (a_n) \sim (b_n) \) if \( (a_n - b_n) \) is null. Prove that \( \sim \) is an equivalence relation on \( \mathcal{C} \), and that
+Let \( \sC \) be the set of Cauchy sequences in \( \nQ \), and for \( (a_n), (b_n) \in \sC \) write \( (a_n) \sim (b_n) \) if \( (a_n - b_n) \) is null. Prove that \( \sim \) is an equivalence relation on \( \sC \), and that
 \[
 [(a_n)] + [(b_n)] \coloneqq [(a_n + b_n)]
 \]
-is a well-defined operation on the quotient set \( \mathcal{C}/{\sim} \).
+is a well-defined operation on the quotient set \( \sC/{\sim} \).
 :::
 
 ::: {.solution}
-*Equivalence relation* (@fd2:def-equivalence-relation). (Eq1): \( (a_n - a_n) \) is the constant sequence \( 0 \), which is null. (Eq2): if \( (a_n - b_n) \) is null, then \( b_n - a_n = -(a_n - b_n) \to -0 = 0 \) by @thm-limit-laws-ordered-field (b). (Eq3): if \( (a_n - b_n) \) and \( (b_n - c_n) \) are null, then \( a_n - c_n = (a_n - b_n) + (b_n - c_n) \to 0 + 0 = 0 \) by @thm-limit-laws-ordered-field (a).
+The tool is Chapter 3's quotient of a commutative ring by an ideal (@thm-quotient-ring-by-ideal). Let \( \sN \) be the set of null sequences in \( \nQ \). We show that \( \sC \) is a commutative ring, that \( \sN \) is an ideal of it, and that \( \sim \) is the relation \( \sim_{\sN} \).
 
-*Well-defined sum.* By @thm-cauchy-algebra-ordered-field (b), \( g\bigl((a_n), (b_n)\bigr) \coloneqq (a_n + b_n) \) is a function \( \mathcal{C} \times \mathcal{C} \to \mathcal{C} \). We check the two conditions of @thm-well-defined-on-classes (b). If \( (a_n) \sim (a'_n) \), then
-\[
-(a_n + b_n) - (a'_n + b_n) = a_n - a'_n
-\]
-for every \( n \), so the difference is null and \( g\bigl((a_n), (b_n)\bigr) \sim g\bigl((a'_n), (b_n)\bigr) \). Likewise, if \( (b_n) \sim (b'_n) \), then \( (a_n + b_n) - (a_n + b'_n) = b_n - b'_n \) is null. By @thm-well-defined-on-classes (b) there is exactly one function \( G \) on \( (\mathcal{C}/{\sim}) \times (\mathcal{C}/{\sim}) \) with \( G([(a_n)], [(b_n)]) = [(a_n + b_n)] \): the sum is well defined.
+*\( \sC \) is a commutative ring* (@def-commutative-ring-and-field), with termwise \( + \) and \( \cdot \). By @thm-cauchy-algebra-ordered-field, \( \sC \) contains the constant sequences \( 0 \) and \( 1 \) by (a), and it is closed under termwise sums and negatives by (b) and under termwise products by (c); so termwise \( + \) and \( \cdot \) are functions \( \sC \times \sC \to \sC \). Each of (F1)–(F7) and (F9), with the constant \( 0 \) as zero, the constant \( 1 \) as one and \( (-a_n) \) as the negative of \( (a_n) \), is an equation between sequences, and it holds at every index \( n \) because it holds in \( \nQ \) (@thm-rationals-ordered-field). Two sequences that agree at every index are equal, so each clause holds in \( \sC \).
 
-This is Chapter 2's method of operations on classes, the one by which \( \nZ \) and \( \nQ \) were built, now applied to sequences. It is also the pattern of Chapter 3's quotient of a ring by an ideal: the null sequences in \( \mathcal{C} \) play the part of the ideal. Chapter 5 carries this out for the product too, and nothing here is used there.
+*\( \sN \) is an ideal of \( \sC \)* (@def-ideal-commutative-ring). First, \( \sN \subseteq \sC \) by @thm-cauchy-algebra-ordered-field (a). (I1): the constant sequence \( 0 \) tends to \( 0 \) (@exm-first-sequences-ordered-field (a)). (I2): if \( (y_n), (z_n) \in \sN \), then \( y_n + z_n \to 0 + 0 = 0 \) by @thm-limit-laws-ordered-field (a). (I3): let \( (z_n) \in \sN \) and \( (r_n) \in \sC \). By @prp-cauchy-bounded-ordered-field there is \( M \in \nQ_{>0} \) with \( \abs{r_n} \le M \) for every \( n \), so \( (z_n r_n) \) is null by @prp-null-times-bounded-ordered-field, and \( r_n z_n = z_n r_n \) by (F6) in \( \nQ \). So \( (r_n z_n) \in \sN \).
+
+*The relation is \( \sim_{\sN} \).* The difference \( (a_n) - (b_n) \) in \( \sC \) is the sequence \( (a_n - b_n) \), so \( (a_n) \sim (b_n) \) holds exactly when \( (a_n) - (b_n) \in \sN \). Thus \( \sim \) is \( \sim_{\sN} \) and \( \sC/{\sim} \) is \( \sC/\sN \). By @thm-quotient-ring-by-ideal (a), \( \sim \) is an equivalence relation, and by (b), \( [(a_n)] + [(b_n)] \coloneqq [(a_n + b_n)] \) is well defined; so is the product \( [(a_n)] \cdot [(b_n)] \coloneqq [(a_n b_n)] \), and by (c) \( \sC/\sN \) is a commutative ring.
+
+Chapter 3 proved (b) by Chapter 2's lemma on operations on classes (@thm-well-defined-on-classes), the method by which \( \nZ \) and \( \nQ \) were built; here it runs on sequences. Chapter 5 builds \( \nR \) as this quotient, and nothing in this exercise is used there.
 :::
 
 ::: {#exr-a-cauchy-sequence-without-a-limit-r2}
 [R2]
 
-Let \( F \) be an ordered field. Prove that \( (2^n) \cdot 1_F \ge (n + 1) \cdot 1_F \) for every \( n \in \nN \).
+Let \( F \) be an ordered field. Define \( r_0 \coloneqq 1 \) and \( r_{n+1} \coloneqq r_n/2 + 1 \) for \( n \in \nN \). Prove that \( 1 \le r_n < 2 \) and \( r_n < r_{n+1} \) for every \( n \in \nN \).
 :::
 
 ::: {.solution}
-Here \( 2^n \) is the power in \( \nN \), defined by the recursion theorem (@fd2:thm-recursion) as in @def-naturals-in-ordered-field: \( 2^0 = 1 \), \( 2^{n+1} = 2^n \cdot 2 \). We use @fd1:ax-induction (through @cor-omega-identification (b)) on \( n \).
+The tools are definition by recursion and proof by induction (@fd2:thm-recursion, @fd1:ax-induction), both read on \( \nN = \omega \) through @cor-omega-identification (b). Here \( 2 \coloneqq 1 + 1 > 0 \) (@prp-ordered-field-halves (b)), so \( 2 \ne 0 \) and \( x/2 \) is defined for every \( x \in F \). The recursion theorem with \( X = F \), starting value \( 1 \) and rule \( g(n, x) \coloneqq x/2 + 1 \) gives exactly one sequence \( (r_n) \) in \( F \) satisfying the two equations. Its first terms are \( r_1 = 3/2 \) and \( r_2 = 7/4 \).
 
-*Base \( P(0) \):* \( (2^0) \cdot 1_F = 1 \cdot 1_F = 1_F = (0 + 1) \cdot 1_F \), so \( \ge \) holds with equality.
+*The bounds.* We prove \( P(n) \): "\( 1 \le r_n < 2 \)" by induction on \( n \). *Base \( P(0) \):* \( r_0 = 1 \), and \( 1 = 2/2 < 2 \) by @prp-ordered-field-halves (b) with \( \varepsilon = 2 \). *Step:* assume \( 1 \le r_n < 2 \). Then \( r_n > 0 \), so \( r_n/2 > 0 \) (@prp-reciprocal-order (a), (O4)). Multiplying \( r_n < 2 \) by \( 1/2 > 0 \) gives \( r_n/2 < 2/2 = 1 \) (@prp-ordered-ring-rules (c)). Adding \( 1 \) (@prp-ordered-ring-rules (b)),
+\[
+1 = 0 + 1 < \frac{r_n}{2} + 1 = r_{n+1} < 1 + 1 = 2 .
+\]
+So \( 1 \le r_{n+1} < 2 \), which is \( P(n + 1) \).
 
-*Step:* assume \( (2^n) \cdot 1_F \ge (n + 1) \cdot 1_F \). By the product law of @prp-naturals-in-ordered-field (a),
+*The increase.* Let \( n \in \nN \). By \( P(n) \), \( r_n > 0 \), so \( r_n = r_n/2 + r_n/2 \) (@prp-ordered-field-halves (b) with \( \varepsilon = r_n \)), and \( r_n/2 < 1 \) as in the step. Hence
 \[
-(2^{n+1}) \cdot 1_F = (2^n \cdot 2) \cdot 1_F = \bigl((2^n) \cdot 1_F\bigr)\bigl(2 \cdot 1_F\bigr) .
+r_{n+1} - r_n = \Bigl(\frac{r_n}{2} + 1\Bigr) - \Bigl(\frac{r_n}{2} + \frac{r_n}{2}\Bigr) = 1 - \frac{r_n}{2} > 0 ,
 \]
-By @prp-naturals-in-ordered-field (b), \( (n + 1) \cdot 1_F \ge 1 > 0 \) and \( 2 \cdot 1_F > 0 \). So @prp-ordered-field-halves (d), applied to \( 0 \le (n + 1) \cdot 1_F \le (2^n) \cdot 1_F \) and \( 0 \le 2 \cdot 1_F \le 2 \cdot 1_F \), gives
-\[
-(2^{n+1}) \cdot 1_F \ge \bigl((n + 1) \cdot 1_F\bigr)\bigl(2 \cdot 1_F\bigr) = (2n + 2) \cdot 1_F \ge (n + 2) \cdot 1_F ,
-\]
-where the equality is @prp-naturals-in-ordered-field (a) again, and the last step is @prp-naturals-in-ordered-field (b) if \( n + 2 < 2n + 2 \) (that is, \( n \ge 1 \)) and an equality if \( n = 0 \). This is \( P(n + 1) \).
+and \( r_n < r_{n+1} \) by @prp-ordered-ring-rules (a).
 :::
 
 ::: {#exr-a-cauchy-sequence-without-a-limit-r3}
 [R3]
 
-Write "\( (a_n) \) is a Cauchy sequence in \( F \)" in symbols, and form its negation by moving \( \neg \) inward one law at a time, naming each law. Then prove that \( ((-1)^n)_{n \in \nN} \) is not a Cauchy sequence in any ordered field \( F \).
+Say that a sequence \( (a_n) \) in an ordered field \( F \) **eventually keeps one sign** if there are \( c \in F_{>0} \) and \( N \in \nN \) such that either \( a_n \ge c \) for every \( n \ge N \), or \( a_n \le -c \) for every \( n \ge N \). Write this in symbols, and form its negation by moving \( \neg \) inward one law at a time, naming each law. Then use the negation to show that \( a_n \coloneqq (-1)^n/(n + 1) \) in \( \nQ \) does not eventually keep one sign, and explain why this does not contradict the theorem that a Cauchy sequence that is not null eventually keeps one sign.
 :::
 
 ::: {.solution}
-"Cauchy" is
+"\( (a_n) \) eventually keeps one sign" is
 \[
-\forall \varepsilon \in F_{>0} \ \exists N \in \nN \ \forall m \in \nN \ \forall n \in \nN \ \bigl( (m \ge N \wedge n \ge N) \to \abs{a_m - a_n} < \varepsilon \bigr) .
+\exists c \in F_{>0} \ \exists N \in \nN \ \Bigl( \forall n \in \nN \ (n \ge N \to a_n \ge c) \ \vee \ \forall n \in \nN \ (n \ge N \to a_n \le -c) \Bigr) .
 \]
-Negating, with the laws for bounded quantifiers (@fd1:prp-bounded-quantifier-negation) and negated implication (@fd1:prp-negated-implication):
+Negating, with the laws for bounded quantifiers (@fd1:prp-bounded-quantifier-negation), De Morgan's laws (@fd1:prp-de-morgan) and negated implication (@fd1:prp-negated-implication):
 
-1. \( \exists \varepsilon \in F_{>0} \ \neg \exists N \in \nN \ \forall m \ \forall n \ (\dots) \), by (a) of the bounded law;
-2. \( \exists \varepsilon \in F_{>0} \ \forall N \in \nN \ \neg \forall m \ \forall n \ (\dots) \), by (b);
-3. \( \exists \varepsilon \in F_{>0} \ \forall N \in \nN \ \exists m \in \nN \ \exists n \in \nN \ \neg (\dots) \), by (a) twice;
-4. \( \exists \varepsilon \in F_{>0} \ \forall N \in \nN \ \exists m \in \nN \ \exists n \in \nN \ \bigl( (m \ge N \wedge n \ge N) \wedge \neg (\abs{a_m - a_n} < \varepsilon) \bigr) \), by @fd1:prp-negated-implication;
-5. and \( \neg (\abs{a_m - a_n} < \varepsilon) \) is \( \abs{a_m - a_n} \ge \varepsilon \), by (O1).
+1. \( \forall c \in F_{>0} \ \neg \exists N \in \nN \ (\dots) \), by (b) of the bounded law;
+2. \( \forall c \in F_{>0} \ \forall N \in \nN \ \neg \bigl( \forall n \, (\dots) \vee \forall n \, (\dots) \bigr) \), by (b) again;
+3. \( \forall c \in F_{>0} \ \forall N \in \nN \ \bigl( \neg \forall n \, (\dots) \wedge \neg \forall n \, (\dots) \bigr) \), by De Morgan (a) (and (b) for the converse);
+4. \( \forall c \in F_{>0} \ \forall N \in \nN \ \bigl( \exists n \in \nN \ \neg (n \ge N \to a_n \ge c) \wedge \exists n \in \nN \ \neg (n \ge N \to a_n \le -c) \bigr) \), by (a) of the bounded law, twice;
+5. \( \forall c \in F_{>0} \ \forall N \in \nN \ \bigl( \exists n \in \nN \ (n \ge N \wedge \neg (a_n \ge c)) \wedge \exists n \in \nN \ (n \ge N \wedge \neg (a_n \le -c)) \bigr) \), by @fd1:prp-negated-implication, twice;
+6. and \( \neg (a_n \ge c) \) is \( a_n < c \), \( \neg (a_n \le -c) \) is \( a_n > -c \), by totality (@prp-ordered-field-halves (a)).
 
-(The \( \vdash \) directions of steps 1, 3 and 4 use \( \rulename{RAA} \), as @fd1:prp-bounded-quantifier-negation and @fd1:prp-negated-implication record.)
+(The \( \vdash \) directions of steps 4 and 5 use \( \rulename{RAA} \), as @fd1:prp-bounded-quantifier-negation and @fd1:prp-negated-implication record.) So the negation says: **for every** \( c \in F_{>0} \) and **every** \( N \in \nN \), some \( n \ge N \) has \( a_n < c \), and some \( n \ge N \) has \( a_n > -c \).
 
-*\( ((-1)^n) \) is not Cauchy.* Here \( (-1)^n \) is the power in \( F \) (@def-naturals-in-ordered-field), so \( (-1)^{n+1} = -(-1)^n \) (@prp-ring-algebra (c)), and by induction \( \abs{(-1)^n} = 1 \) (@prp-absolute-value-ordered-field (b)). Take \( \varepsilon \coloneqq 1 \). For any \( N \in \nN \), let \( m \coloneqq N \) and \( n \coloneqq N + 1 \). Then
-\[
-\abs{a_m - a_n} = \abs{(-1)^N + (-1)^N} = \abs{2 \cdot (-1)^N} = 2 \ge 1 ,
-\]
-since \( 2 = 1 + 1 > 1 \). This establishes the formula of steps 4 and 5 with \( \varepsilon = 1 \), \( m = N \), \( n = N + 1 \), so the sequence is not Cauchy, in every ordered field.
+*The example.* Here \( (-1)^n \) is the power in \( \nQ \) (@def-naturals-in-ordered-field), so \( (-1)^{n+1} = -(-1)^n \) (@prp-ring-algebra (c)), and by induction \( (-1)^n \) is \( 1 \) or \( -1 \) for every \( n \). Let \( c \in \nQ_{>0} \) and \( N \in \nN \). Of \( (-1)^N \) and \( (-1)^{N+1} = -(-1)^N \), one is \( 1 \) and the other \( -1 \); call \( p \) the index among \( N, N + 1 \) with \( (-1)^p = 1 \), and \( q \) the other. Both are \( \ge N \), and \( 1/(p + 1) > 0 \), \( 1/(q + 1) > 0 \) (@prp-reciprocal-order (a)). So \( a_q = -1/(q + 1) < 0 < c \) and \( a_p = 1/(p + 1) > 0 > -c \) (@prp-ordered-ring-rules (a)). This is the negation, so \( (a_n) \) does not eventually keep one sign.
+
+*No contradiction.* \( \abs{a_n} = \abs{(-1)^n} \cdot \abs{1/(n + 1)} = 1/(n + 1) \) (@prp-absolute-value-ordered-field (b)), and \( (1/(n + 1)) \) is null in \( \nQ \) (@exm-first-sequences-ordered-field (b)). So for each \( \varepsilon \in \nQ_{>0} \) the threshold that serves \( (1/(n + 1)) \) gives \( \abs{a_n - 0} < \varepsilon \): the sequence \( (a_n) \) is null. It is Cauchy (@thm-cauchy-algebra-ordered-field (a)), but the theorem (@thm-cauchy-not-null-sign) assumes "not null", so it says nothing about \( (a_n) \). The example shows that this hypothesis cannot be dropped.
 :::
 
 ::: {#exr-a-cauchy-sequence-without-a-limit-r4}
@@ -378,14 +377,15 @@ thm-sqrt2-cauchy-no-rational-limit (claim): Section 2.6: {x in Q : x^2 < 2} has 
 thm-sqrt2-cauchy-no-rational-limit (claim): subsequence n_k >= k by induction; e_{n_k} <= 1/(4k) <= 1/(k + 1) | inline (discreteness of N, thm-omega-order); argument of the proof rerun
 thm-sqrt2-cauchy-no-rational-limit (claim): closing paragraph, the complete ordered field, its uniqueness, the analysis volume | F3.10, F3.4, AN1.1 and AN1.2 (prose pointers; nothing depends on them)
 exr-a-cauchy-sequence-without-a-limit-a1 (solution): x_2 - x_3 = 1/408, e_2/x_2 = 1/204 | verify/ch04/exr-a-cauchy-sequence-without-a-limit-a1.py
-exr-a-cauchy-sequence-without-a-limit-b2 (solution): 2^{k+1} = 2^k + 2^k and 2^k >= 1 | def-naturals-in-ordered-field (powers in N); omega arithmetic; inline; verify/ch04/exr-a-cauchy-sequence-without-a-limit-b2.py
+exr-a-cauchy-sequence-without-a-limit-b2 (solution): 2^{k+1} = 2^k + 2^k and 2^k >= 1 | prp-omega-powers-parity (powers in N, Section 1.6, defined by thm-omega-recursion); omega arithmetic; inline; verify/ch04/exr-a-cauchy-sequence-without-a-limit-b2.py
 exr-a-cauchy-sequence-without-a-limit-b2 (solution): H_{2n} - H_n >= 1/2 | exm-consecutive-differences-not-cauchy, cited
 exr-a-cauchy-sequence-without-a-limit-c1 (solution): identities for u(s) = (s^2 + 3)/(2s); descent identity (3q - p)^2 - 3(p - q)^2 = 2(3q^2 - p^2); values y_1, y_2, d_0..d_2; d_n <= 1/(16n) | verify/ch04/exr-a-cauchy-sequence-without-a-limit-c1.py
 exr-a-cauchy-sequence-without-a-limit-c1 (solution): (a) follows the route of thm-no-rational-square-two | prp-integer-least-element, prp-ordered-ring-rules (e), (g), cited
 exr-a-cauchy-sequence-without-a-limit-c2 (solution): Q(t) ordered by leading coefficients; t > k * 1 for every k in N | exm-rational-function-field (school fact; formal polynomials in F4.4); exercise only, nothing depends on it
 exr-a-cauchy-sequence-without-a-limit-c2 (solution): 1/(N + 1) - 1/(N + 2) = 1/((N + 1)(N + 2)) | lem-field-fraction-rules (c); verify/ch04/exr-a-cauchy-sequence-without-a-limit-c2.py
-exr-a-cauchy-sequence-without-a-limit-r1 (solution): Chapter 3's quotient by an ideal (comparison) | F3.5 (prose pointer only; the solution uses thm-well-defined-on-classes)
-exr-a-cauchy-sequence-without-a-limit-r2 (solution): 2(n + 1) = 2n + 2 and n + 2 <= 2n + 2 in N | omega arithmetic (thm-omega-arithmetic-laws, thm-omega-order); inline; verify/ch04/exr-a-cauchy-sequence-without-a-limit-r2.py
-exr-a-cauchy-sequence-without-a-limit-r3 (solution): |(-1)^n| = 1 and (-1)^{n+1} = -(-1)^n | prp-ring-algebra (c), prp-absolute-value-ordered-field (b); inline induction
+exr-a-cauchy-sequence-without-a-limit-r1 (solution): the Cauchy sequences form a commutative ring, the null sequences an ideal of it, and ~ is ~_N | F3.5 def-ideal-commutative-ring, thm-quotient-ring-by-ideal (a)-(c), cited; def-commutative-ring-and-field, thm-rationals-ordered-field (laws termwise); thm-cauchy-algebra-ordered-field (a)-(c), exm-first-sequences-ordered-field (a), thm-limit-laws-ordered-field (a), prp-cauchy-bounded-ordered-field, prp-null-times-bounded-ordered-field, cited
+exr-a-cauchy-sequence-without-a-limit-r2 (solution): r_1 = 3/2, r_2 = 7/4; 1 <= r_n < 2 and r_n < r_{n+1}; r_{n+1} - r_n = 1 - r_n/2 | fd2:thm-recursion and fd1:ax-induction via cor-omega-identification (b), cited; verify/ch04/exr-a-cauchy-sequence-without-a-limit-r2.py
+exr-a-cauchy-sequence-without-a-limit-r3 (solution): (-1)^n in {1, -1}, (-1)^{n+1} = -(-1)^n and |a_n| = 1/(n + 1) | prp-ring-algebra (c), prp-absolute-value-ordered-field (b); inline induction
+exr-a-cauchy-sequence-without-a-limit-r3 (solution): negation of "eventually keeps one sign" | fd1:prp-bounded-quantifier-negation, fd1:prp-de-morgan (a), (b), fd1:prp-negated-implication, prp-ordered-field-halves (a), cited
 exr-a-cauchy-sequence-without-a-limit-r4 (solution): a_n^2 - a_m^2 = (a_n - a_m)(a_n + a_m) | prp-ring-algebra; verify/ch04/exr-a-cauchy-sequence-without-a-limit-r4.py
 -->

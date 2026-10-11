@@ -4,7 +4,7 @@ Section 2.3 proved the rules for inequalities from the order axioms, and Section
 
 ## The standing setup
 
-Throughout this chapter, \( F \) is an **ordered field** (@def-ordered-ring-and-field): a field with a relation \( < \) satisfying (O1)–(O4). The rationals are one, by @thm-rationals-ordered-field, and for most of the chapter they are the one that matters: the next chapter applies every result here with \( F = \nQ \). We state results for a general \( F \) because the proofs never use anything about \( \nQ \) beyond (F1)–(F9) and (O1)–(O4), and saying so on the page makes it checkable.
+Throughout this chapter, \( F \) is an **ordered field** (@def-ordered-ring-and-field): a field with a relation \( < \) satisfying (O1)–(O4). The rationals are one, by @thm-rationals-ordered-field, and for most of the chapter they are the one that matters: the next chapter applies these results first with \( F = \nQ \), to build the real numbers from Cauchy sequences of rationals, and then again with \( F = \nR \), once \( \nR \) is shown to be an ordered field. We state results for a general \( F \) because the proofs never use anything about \( \nQ \) beyond (F1)–(F9) and (O1)–(O4), and saying so on the page makes it checkable.
 
 We use the results of Sections 2.3 and 2.5 by their letters, without restating them: the algebra of a commutative ring (@prp-ring-algebra), the rules for inequalities (@prp-ordered-ring-rules (a)–(i)), and the reversal of order by reciprocals (@prp-reciprocal-order). In a field \( 1 \ne 0 \), so @prp-ordered-ring-rules (e) gives \( 1 > 0 \) in every ordered field. We write
 \[
@@ -88,7 +88,7 @@ For all \( a, b \in F \) with \( a < b \), \( a < \dfrac{a + b}{2} < b \).
 :::
 
 ::: {.idea}
-Nothing new happens: each part is one or two of the rules of Section 2.3 in sequence. The only care needed is with \( \le \), which hides an "or": each non-strict hypothesis splits into an equality case and a strict case, and the strict rules apply only to the second.
+Nothing new happens: each part is one or two of the rules of Sections 2.3 and 2.5 in sequence. The only care needed is with \( \le \), which hides an "or": each non-strict hypothesis splits into an equality case and a strict case, and the strict rules apply only to the second.
 :::
 
 ::: {.proof}
@@ -105,7 +105,7 @@ the third equality by (F5) and (F6). Adding \( \varepsilon/2 \) to \( 0 < \varep
 
 (c) If \( a = b \), then \( 1/b = 1/a \). Otherwise \( 0 < a < b \), and \( 1/b < 1/a \) by @prp-reciprocal-order (b). In both cases \( 1/b \le 1/a \).
 
-(d) First, \( ac \le bc \): if \( a = b \) or \( c = 0 \), the two sides are equal (for \( c = 0 \) both are \( 0 \) by @prp-ring-algebra (b)); otherwise \( a < b \) and \( c > 0 \), and \( ac < bc \) by @prp-ordered-ring-rules (c). Next, \( bc \le bd \), by the same argument with the roles of the factors exchanged by (F6): \( c \le d \) and \( b \ge 0 \). By transitivity of \( \le \) (part (a)), \( ac \le bd \).
+(d) First, \( ac \le bc \): if \( a = b \) or \( c = 0 \), the two sides are equal (for \( c = 0 \) both are \( 0 \) by @prp-ring-algebra (b)); otherwise \( a < b \) and \( c > 0 \), and \( ac < bc \) by @prp-ordered-ring-rules (c). Next, \( bc \le bd \), by the same argument with the roles of the factors exchanged by (F6): \( c \le d \), and \( b \ge 0 \) since \( 0 \le a \le b \) (transitivity, part (a)). By transitivity of \( \le \) (part (a)), \( ac \le bd \).
 :::
 
 Part (b) is used whenever a proof splits a tolerance: the sum of two quantities, each below \( \varepsilon/2 \), is below \( \varepsilon \), by @prp-ordered-ring-rules (b). The midpoint is the same fact read for two points: between any two elements of \( F \) lies a third. Part (d) is how a product of two small, or two bounded, quantities is estimated.
@@ -136,7 +136,7 @@ For \( x, y \in F \), the element \( \abs{x - y} \) is the **distance** from \( 
 
 The two cases do not overlap and cover \( F \), by trichotomy (O1), so \( \abs{x} \) is a well-defined element of \( F \). The map \( x \mapsto \abs{x} \) is a function \( F \to F \).
 
-**Examples.** In \( \nQ \), \( \abs{3/4} = 3/4 \) and \( \abs{-3/4} = 3/4 \), the second because \( -3/4 < 0 \) and \( -(-3/4) = 3/4 \) (@prp-ring-algebra (a)). The distance from \( 1/3 \) to \( 1/2 \) is \( \abs{1/3 - 1/2} = \abs{-1/6} = 1/6 \). The degenerate case is \( \abs{0} = 0 \), from the first clause. Part (a) below shows that \( 0 \) is the only element with absolute value \( 0 \), so the distance from \( x \) to \( y \) is \( 0 \) exactly when \( x = y \).
+**Examples.** In \( \nQ \), \( \abs{3/4} = 3/4 \) and \( \abs{-3/4} = 3/4 \), the second because \( -3/4 < 0 \) (@thm-rationals-ordered-field (a): \( (-3) \cdot 1 < 0 \cdot 4 \)) and \( -(-3/4) = 3/4 \) (@prp-ring-algebra (a)). The distance from \( 1/3 \) to \( 1/2 \) is \( \abs{1/3 - 1/2} = \abs{-1/6} = 1/6 \). The degenerate case is \( \abs{0} = 0 \), from the first clause. Part (a) below shows that \( 0 \) is the only element with absolute value \( 0 \), so the distance from \( x \) to \( y \) is \( 0 \) exactly when \( x = y \).
 
 **A non-example by minimal change.** Replace the definition by \( x \mapsto x^2 \). This map is also non-negative, zero only at \( 0 \), and multiplicative, so it passes (a) and the product rule of (b) below. It fails the triangle inequality (e): in \( \nQ \), with \( x = y = 1 \), the "size" of \( x + y \) would be \( 2^2 = 4 \), while the sizes of \( x \) and \( y \) add up to \( 1 + 1 = 2 \). A measure of size must not grow faster than its argument, and that is the clause the square breaks.
 
@@ -180,16 +180,16 @@ Parts (a)–(d) are case checks on the sign of \( x \) (and of \( y \)). The tri
 \]
 where \( (-\abs{x}) + (-\abs{y}) = -(\abs{x} + \abs{y}) \) by uniqueness of negatives (@prp-ring-algebra (a)). By (d) with \( r \coloneqq \abs{x} + \abs{y} \), \( \abs{x + y} \le \abs{x} + \abs{y} \). For the second form, apply the first to \( x - z = (x - y) + (y - z) \).
 
-(f) By (e), \( \abs{x} = \abs{(x - y) + y} \le \abs{x - y} + \abs{y} \), so \( \abs{x} - \abs{y} \le \abs{x - y} \) by (O3). Exchanging \( x \) and \( y \), and using \( \abs{y - x} = \abs{-(x - y)} = \abs{x - y} \) from (b), gives \( \abs{y} - \abs{x} \le \abs{x - y} \), that is, \( -\abs{x - y} \le \abs{x} - \abs{y} \) by @prp-ordered-ring-rules (a). By (d), \( \bigl| \abs{x} - \abs{y} \bigr| \le \abs{x - y} \). This proves the proposition.
+(f) By (e), \( \abs{x} = \abs{(x - y) + y} \le \abs{x - y} + \abs{y} \), so \( \abs{x} - \abs{y} \le \abs{x - y} \) by (O3). Exchanging \( x \) and \( y \), and using \( \abs{y - x} = \abs{-(x - y)} = \abs{x - y} \) from (b), gives \( \abs{y} - \abs{x} \le \abs{x - y} \). So \( -\abs{x - y} \le -(\abs{y} - \abs{x}) \) by @prp-ordered-ring-rules (a) (or equality), and \( -(\abs{y} - \abs{x}) = \abs{x} - \abs{y} \) by uniqueness of negatives (@prp-ring-algebra (a)), since \( (\abs{y} - \abs{x}) + (\abs{x} - \abs{y}) = 0 \); that is, \( -\abs{x - y} \le \abs{x} - \abs{y} \). By (d), \( \bigl| \abs{x} - \abs{y} \bigr| \le \abs{x - y} \). This proves the proposition.
 :::
 
-The form of (d) that the rest of the chapter uses is about a distance. Apply the strict half of (d) to \( x - a \) with \( r = \varepsilon \), and add \( a \) throughout by (O3):
+The form of (d) that the rest of the chapter uses is about a distance. Apply the strict half of (d) to \( x - a \) with \( r = \varepsilon \), and add \( a \) throughout by (O3); the step is reversible, since adding \( -a \) (by (O3) again) goes back, and \( (x - a) + a = x \):
 \[
 \abs{x - a} < \varepsilon \iff a - \varepsilon < x < a + \varepsilon .
 \]
 In words: \( x \) lies within \( \varepsilon \) of \( a \) exactly when it lies strictly between \( a - \varepsilon \) and \( a + \varepsilon \). In Section 4.3 the role of \( x \) is played by the terms \( a_n \) of a sequence and \( a \) is a candidate limit.
 
-**Example.** In \( \nQ \), which \( x \) satisfy \( \abs{x - 1/2} < 1/4 \)? By the display above, exactly those with \( 1/2 - 1/4 < x < 1/2 + 1/4 \), that is, \( 1/4 < x < 3/4 \). So \( 2/3 \) qualifies (\( 2 \cdot 4 = 8 < 9 = 3 \cdot 3 \), by the comparison formula of @thm-rationals-ordered-field (a)) and \( 3/4 \) does not: the inequality is strict, and \( \abs{3/4 - 1/2} = 1/4 \).
+**Example.** In \( \nQ \), which \( x \) satisfy \( \abs{x - 1/2} < 1/4 \)? By the display above, exactly those with \( 1/2 - 1/4 < x < 1/2 + 1/4 \), that is, \( 1/4 < x < 3/4 \). So \( 2/3 \) qualifies (\( 1 \cdot 3 = 3 < 8 = 2 \cdot 4 \) and \( 2 \cdot 4 = 8 < 9 = 3 \cdot 3 \), by the comparison formula of @thm-rationals-ordered-field (a)) and \( 3/4 \) does not: the inequality is strict, and \( \abs{3/4 - 1/2} = 1/4 \).
 
 ::: {.check}
 Is \( \abs{a} - \abs{b} \le \abs{a - b} \) for all \( a, b \in F \)? Is \( \abs{a - b} \le \abs{a} - \abs{b} \) for all \( a, b \in F \)?
@@ -202,7 +202,7 @@ The first: yes. By (f) and (c), \( \abs{a} - \abs{b} \le \bigl| \abs{a} - \abs{b
 The triangle inequality is the tool of the whole chapter. In its second form it says that a detour through a third point \( y \) cannot shorten the way from \( x \) to \( z \). Run backwards, it turns two small distances, from \( x \) to \( y \) and from \( y \) to \( z \), into one small distance from \( x \) to \( z \). That is the move of almost every proof in Sections 4.3–4.5.
 
 ::: {.remark}
-The same two-case formula appears in *Logic and Proof*, Chapter 1, for the school numbers, and in *Analysis on the Real Line*, Chapter 1, for \( \nR \). Here it is defined, and its rules are proved, for an arbitrary ordered field, from (O1)–(O4) alone.
+The same two-case formula appears in *Logic and Proof*, Chapter 1, for the school numbers, and in *Analysis on the Real Line*, Chapter 1, for \( \nR \). Here it is defined, and its rules are proved, for an arbitrary ordered field, from (F1)–(F9) and (O1)–(O4) alone.
 :::
 
 ## Exercises
@@ -323,11 +323,11 @@ Show first that \( x^2 \ge 0 \) for every \( x \), splitting on whether \( x = 0
 The complex numbers of *Algebraic Preliminaries*, Chapter 1 contain such an \( i \), so they form a field that cannot be ordered. Compare @exm-finite-ring-not-orderable, where the obstacle was \( 1 + 1 = 0 \); here it is that \( -1 \) is a square.
 
 **Marking scheme.** (10 points)
-- 4: shows \( x^2 \ge 0 \) for every \( x \), with the cases \( x = 0 \) and \( x \ne 0 \) and the rule for each.
-- 2: shows \( -1 < 0 \), from \( 1 > 0 \) (citing \( 1 \ne 0 \)) and negation reversing order.
+- 4: shows \( x^2 \ge 0 \) for every \( x \) (cases \( x = 0 \), \( x \ne 0 \)), or rules out \( x = 0 \) for the \( x \) with \( x^2 = -1 \) and then shows \( x^2 > 0 \), giving the rule for each step.
+- 2: shows \( -1 < 0 \) from \( 1 > 0 \) (justified by \( 1 \ne 0 \) and @prp-ordered-ring-rules (e), or by citing the standing remark of Section 4.1) and from negation reversing order.
 - 2: derives the contradiction with trichotomy (O1) or irreflexivity.
 - 2: (b) states that any order would make (a) apply, so none exists.
-Fatal errors (0 for the step): asserting \( x^2 > 0 \) for all \( x \) (false at \( 0 \)) and then using strictness; using \( 1 > 0 \) without noting \( 1 \ne 0 \); using properties of \( \nR \) or of \( \sqrt{\ } \).
+Fatal errors (0 for the step): asserting \( x^2 > 0 \) for all \( x \) (false at \( 0 \)) and then using strictness; asserting \( 1 > 0 \) with no justification (accept \( 1 \ne 0 \) with @prp-ordered-ring-rules (e), or the standing remark of Section 4.1); using properties of \( \nR \) or of \( \sqrt{\ } \).
 :::
 
 ::: {#exr-rules-and-absolute-value-c2}
@@ -363,6 +363,8 @@ prp-ordered-field-halves (proof): (2a) 2^{-1} = a(2 2^{-1}) = a | def-commutativ
 prp-ordered-field-halves (claim): the strict version of the warning is F3.2's warning after prp-ordered-ring-rules | F3.2 §03 (pointer, not used)
 prp-absolute-value-ordered-field (proof): -0 = 0 | F3.2 proof of prp-order-from-positives (one line there: 0 + 0 = 0); inline
 prp-absolute-value-ordered-field (proof): (-a) + (-b) = -(a + b) | prp-ring-algebra (a) (cited; uniqueness of negatives)
+prp-absolute-value-ordered-field (proof): -(b - a) = a - b (used in (f) for |y - x| = |-(x - y)|), (c - b) + (b - a) = c - a (used in (e) for x - z = (x - y) + (y - z)), and (x - y) + y = x (used in (f) and in the display after the proof) | F3.2 proof of prp-order-from-positives (first display and the line after it, by (F1)-(F4) and prp-ring-algebra (a)); inline
+def-absolute-value-ordered-field (example): x - y = 0 iff x = y | F3.2 proof of prp-order-from-positives (one line there: (F4) and (b - a) + a = b); inline
 prp-absolute-value-ordered-field (proof): 1 is its own inverse, |1| = 1 | (F7) and def-absolute-value-ordered-field with 1 > 0; inline
 prp-absolute-value-ordered-field (claim): the display |x - a| < eps iff a - eps < x < a + eps: adding a throughout an equivalence is reversible | def-ordered-ring-and-field (O3), applied with a and with -a
 def-absolute-value-ordered-field (example): 1/3 - 1/2 = -1/6, 1/2 - 1/4 = 1/4, 1/2 + 1/4 = 3/4 in Q | def-rational-operations; verify/ch04/def-absolute-value-ordered-field.py

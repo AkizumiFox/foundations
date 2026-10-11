@@ -21,7 +21,7 @@ A property \( P(n) \) of natural numbers holds **eventually** if **there is** \(
 - In \( \nQ \): \( a_n \coloneqq 1/(n + 1) \), with terms \( 1, 1/2, 1/3, \dots \).
 - In any \( F \): \( a_n \coloneqq n \), that is, \( n \cdot 1_F \), with terms \( 0, 1, 2, \dots \); and \( a_n \coloneqq (-1)^n \), with the powers of @def-naturals-in-ordered-field, with terms \( 1, -1, 1, \dots \). The second sequence has infinitely many terms but only two values: its set of values is \( \{ 1, -1 \} \). A sequence is ordered and may repeat; its set of values forgets both.
 - The degenerate case: a **constant sequence** \( a_n \coloneqq c \) for a fixed \( c \in F \). It matters because every definition below must give the expected answer on it.
-- A sequence may be defined by recursion (@fd2:thm-recursion). The Newton sequence of @exm-newton-rationals-sqrt2, \( x_0 = 2 \) and \( x_{n+1} = (x_n^2 + 2)/(2x_n) \), is a sequence in \( \nQ \); Section 4.6 studies it.
+- A sequence may be defined by recursion (@fd2:thm-recursion, read on \( \nN = \omega \) as @thm-omega-recursion through @cor-omega-identification (b)). The Newton sequence of @exm-newton-rationals-sqrt2, \( x_0 = 2 \) and \( x_{n+1} = (x_n^2 + 2)/(2x_n) \), is a sequence in \( \nQ \); Section 4.6 studies it.
 
 **Non-example by minimal change.** The formula \( n \mapsto 1/n \) defines no sequence: at \( n = 0 \) it asks for \( 1/0 \), and \( 0 \) has no inverse. Everything else about the first example survives the change, and only "a function on all of \( \nN \)" fails. This is why the book's sequences start at \( n = 0 \) and why we write \( 1/(n + 1) \).
 
@@ -114,7 +114,7 @@ Exactly the \( N \ge 100 \). By the comparison formula (@thm-rationals-ordered-f
 \( a_n \to a \) does **not** say that some term equals \( a \): \( 1/(n + 1) \to 0 \) in \( \nQ \) (@exm-first-sequences-ordered-field (b)), and no term is \( 0 \). Nor does it say that \( \abs{a_n - a} \) decreases: \( a_n \coloneqq (1 + (-1)^n)/(n + 1) \) in \( \nQ \) has \( 0 \le a_n \le 2/(n + 1) \), so \( \abs{a_n} < \varepsilon \) as soon as \( 1/(n + 1) < \varepsilon/2 \), and it tends to \( 0 \); yet its terms run \( 2, 0, 2/3, 0, 2/5, \dots \), up and down, hitting \( 0 \) at \( n = 1, 3, 5, \dots \).
 :::
 
-Two kinds of sequence get their own names, because they recur in every later proof.
+Two kinds of sequence get their own names, because they recur throughout the rest of the chapter.
 
 ::: {#def-null-sequence-ordered-field}
 [Null Sequence]
@@ -128,7 +128,7 @@ A sequence \( (a_n) \) in \( F \) is **null** if \( a_n \to 0 \).
 A sequence \( (a_n) \) in \( F \) is **bounded** if **there exists** \( M \in F_{>0} \) with \( \abs{a_n} \le M \) **for every** \( n \in \nN \). Such an \( M \) is a **bound** for \( (a_n) \).
 :::
 
-**Examples.** In \( \nQ \), \( (1/(n + 1)) \) is null and bounded by \( 1 \); in every \( F \), \( ((-1)^n) \) is bounded by \( 1 \) and not null (@exm-first-sequences-ordered-field (d)); a constant sequence \( c \) is bounded by \( \abs{c} + 1 \), which is positive even when \( c = 0 \). **Non-example.** In \( \nQ \) the sequence \( (n) \) is not bounded: for any \( M \in \nQ_{>0} \), Archimedes gives \( n \in \nN \) with \( M < n = \abs{n} \). The bound is required to be positive only for convenience, so that we may divide by it; any \( M \ge 0 \) that works can be replaced by \( M + 1 \).
+**Examples.** In \( \nQ \), \( (1/(n + 1)) \) is null and bounded by \( 1 \); in every \( F \), \( ((-1)^n) \) is bounded by \( 1 \) and not null (@exm-first-sequences-ordered-field (d)); a constant sequence \( c \) is bounded by \( \abs{c} + 1 \), which is positive even when \( c = 0 \). **Non-example.** In \( \nQ \) the sequence \( (n) \) is not bounded: for any \( M \in \nQ_{>0} \), Archimedes (@thm-rationals-archimedean) gives \( n \in \nN \) with \( M < n = \abs{n} \). The bound is required to be positive only for convenience, so that we may divide by it; any \( M \ge 0 \) that works can be replaced by \( M + 1 \).
 
 ## Archimedes and the sequence 1/(n + 1)
 
@@ -151,17 +151,17 @@ One direction is @prp-archimedean-reciprocal read as a limit. For the other, a f
 \]
 where the absolute value drops because the term is positive. So the sequence is null.
 
-\( (\Rightarrow) \) We prove the contrapositive. Suppose \( F \) is not Archimedean. Negating @def-archimedean-ordered-field (@fd1:prp-bounded-quantifier-negation), there is \( x \in F \) with \( x \ge n \cdot 1_F \) for every \( n \in \nN \). In particular \( x \ge 1 \cdot 1_F = 1 > 0 \), so \( \varepsilon \coloneqq 1/x \in F_{>0} \) (@prp-reciprocal-order (a)). For every \( n \in \nN \), \( 0 < (n + 1) \cdot 1_F \le x \) (@prp-naturals-in-ordered-field (b)), so @prp-ordered-field-halves (c) gives
+\( (\Rightarrow) \) We prove the contrapositive. Suppose \( F \) is not Archimedean. Negating @def-archimedean-ordered-field (@fd1:prp-bounded-quantifier-negation, and @prp-ordered-field-halves (a) for \( \neg(x < n \cdot 1_F) \iff x \ge n \cdot 1_F \)), there is \( x \in F \) with \( x \ge n \cdot 1_F \) for every \( n \in \nN \). In particular \( x \ge 1 \cdot 1_F = 1 > 0 \), so \( \varepsilon \coloneqq 1/x \in F_{>0} \) (@prp-reciprocal-order (a)). For every \( n \in \nN \), \( 0 < (n + 1) \cdot 1_F \le x \) (@prp-naturals-in-ordered-field (b)), so @prp-ordered-field-halves (c) gives
 \[
 \Bigl\lvert \frac{1}{(n + 1) \cdot 1_F} - 0 \Bigr\rvert = \frac{1}{(n + 1) \cdot 1_F} \ge \frac{1}{x} = \varepsilon .
 \]
 So for this \( \varepsilon \) no \( N \) works, even with \( n = N \), and the sequence is not null.
 :::
 
-So in \( \nQ(t) \), the field of @exm-rational-function-field, which is not Archimedean, \( 1/(n + 1) \) does not tend to \( 0 \): the tolerance \( 1/t \) is never met. From here on, every use of "\( 1/(n + 1) \to 0 \)" names the Archimedean property, and every result proved without it holds in \( \nQ(t) \) as well.
+So in \( \nQ(t) \), the field of @exm-rational-function-field, which is not Archimedean, \( 1/(n + 1) \) does not tend to \( 0 \): the tolerance \( 1/t \) is never met. In \( \nQ \), \( 1/(n + 1) \to 0 \) is @exm-first-sequences-ordered-field (b), which rests on the Archimedean property; every result proved without the Archimedean property holds in \( \nQ(t) \) as well.
 
 ::: {.remark}
-The same example shows why tolerances must come from \( F \). In \( \nQ(t) \), every **rational** tolerance is eventually met by \( 1/(n + 1) \): the comparison \( 1/(n + 1) < q \) for \( q \in \nQ_{>0} \) takes place inside the copy \( \iota_F(\nQ) \) of \( \nQ \), and @thm-rationals-embed-ordered-field says that \( \iota_F \) carries the order of \( \nQ \) faithfully. Yet the sequence is not null in \( \nQ(t) \). For \( F = \nQ \) the two readings coincide, because there every tolerance is rational.
+The same example shows why tolerances must come from \( F \). In \( \nQ(t) \), every **rational** tolerance is eventually met by \( 1/(n + 1) \). Write \( \iota \) for the embedding \( \iota_F \) of @thm-rationals-embed-ordered-field. Since \( \iota \) respects products, \( \iota(1) = 1 \) and \( \iota(n + 1) = (n + 1) \cdot 1 \), we have \( ((n + 1) \cdot 1) \cdot \iota(1/(n + 1)) = \iota(1) = 1 \), so the term \( 1/((n + 1) \cdot 1) \) is \( \iota(1/(n + 1)) \). Given \( q \in \nQ_{>0} \), @exm-first-sequences-ordered-field (b) gives \( N \) with \( 1/(n + 1) < q \) in \( \nQ \) for every \( n \ge N \), and \( \iota \), being strictly increasing, carries this to \( \iota(1/(n + 1)) < \iota(q) \). Yet the sequence is not null in \( \nQ(t) \). For \( F = \nQ \) the two readings coincide, because there every tolerance is rational.
 :::
 
 ## Changing finitely many terms
@@ -268,7 +268,7 @@ If \( N = 0 \), let \( M \coloneqq \abs{a} + 1 \). Otherwise let
 \[
 M \coloneqq \max\{ \abs{a_0}, \dots, \abs{a_{N-1}}, \abs{a} + 1 \} ,
 \]
-which exists by @fd2:prp-finite-max in the totally ordered \( F \). In both cases \( M \ge \abs{a} + 1 \ge 1 > 0 \), by @prp-absolute-value-ordered-field (a), so \( M \in F_{>0} \). For \( n < N \), \( \abs{a_n} \le M \) because \( \abs{a_n} \) is one of the listed elements; for \( n \ge N \), \( \abs{a_n} < \abs{a} + 1 \le M \). So \( M \) bounds \( (a_n) \).
+which exists by @fd2:prp-finite-max in the totally ordered \( F \) (as in the proof of @prp-tail-change-ordered-field). In both cases \( M \ge \abs{a} + 1 \ge 1 > 0 \), by @prp-absolute-value-ordered-field (a), so \( M \in F_{>0} \). For \( n < N \), \( \abs{a_n} \le M \) because \( \abs{a_n} \) is one of the listed elements; for \( n \ge N \), \( \abs{a_n} < \abs{a} + 1 \le M \). So \( M \) bounds \( (a_n) \).
 :::
 
 The bound \( M \) depends on the whole sequence, through \( a \), \( N \) and the first \( N \) terms, but on no tolerance: it is one element of \( F \), fixed once. Section 4.4 uses exactly that, in the product of two limits. The converse fails: \( ((-1)^n) \) is bounded by \( 1 \) and divergent (@exm-first-sequences-ordered-field (d)).
@@ -293,9 +293,9 @@ The bound \( M \) depends on the whole sequence, through \( a \), \( N \) and th
 \exists \varepsilon \in F_{>0} \ \ \forall N \in \nN \ \ \exists n \in \nN \ \ \bigl( n \ge N \wedge \abs{a_n - a} \ge \varepsilon \bigr) .
 \]
 
-(b) It says that \( a_n = a \) for every \( n \ge N \): the sequence is eventually constant, equal to \( a \). Indeed, fix \( n \ge N \). Then \( \abs{a_n - a} < \varepsilon \) for every \( \varepsilon \in F_{>0} \). If \( a_n \ne a \), then \( \varepsilon \coloneqq \abs{a_n - a} \) is in \( F_{>0} \) (@prp-absolute-value-ordered-field (a)) and gives \( \abs{a_n - a} < \abs{a_n - a} \), against (O1); so \( a_n = a \). This is the collision argument of @thm-limit-unique-ordered-field, run for one \( n \) at a time. Conversely, an eventually constant sequence satisfies the formula, since \( \abs{0} = 0 < \varepsilon \). The sequence \( (1/(n + 1)) \) does not satisfy it: no term equals \( 0 \). It converges to \( 0 \), but its \( N \) must depend on \( \varepsilon \). The quantifier order is the whole difference.
+(b) It says that \( a_n = a \) for every \( n \ge N \): the sequence is eventually constant, equal to \( a \). Indeed, fix \( n \ge N \). Then \( \abs{a_n - a} < \varepsilon \) for every \( \varepsilon \in F_{>0} \). If \( a_n \ne a \), then \( \varepsilon \coloneqq \abs{a_n - a} \) is in \( F_{>0} \) (@prp-absolute-value-ordered-field (a)) and gives \( \abs{a_n - a} < \abs{a_n - a} \), against (O1); so \( a_n = a \). This is the argument of @fd1:prp-arbitrarily-close-equal, rerun in \( F \) for one \( n \) at a time (no halving is needed: only one tolerance is in play). Conversely, an eventually constant sequence satisfies the formula, since \( \abs{0} = 0 < \varepsilon \). The sequence \( (1/(n + 1)) \) does not satisfy it: no term equals \( 0 \). It converges to \( 0 \), but its \( N \) must depend on \( \varepsilon \). The quantifier order is the whole difference.
 
-(c) \( a_n - 2 = \bigl( 2n + 1 - 2(n + 1) \bigr)/(n + 1) = -1/(n + 1) \), so \( \abs{a_n - 2} = 1/(n + 1) \). By the comparison formula, \( 1/(n + 1) < 1/50 \) if and only if \( n + 1 > 50 \), that is, \( n \ge 50 \). So \( N = 50 \) works, and \( N = 49 \) fails at \( n = 49 \), where \( \abs{a_{49} - 2} = 1/50 \). The least \( N \) is \( 50 \).
+(c) \( a_n - 2 = \bigl( 2n + 1 - 2(n + 1) \bigr)/(n + 1) = -1/(n + 1) \), so \( \abs{a_n - 2} = 1/(n + 1) \). By the comparison formula, \( 1/(n + 1) < 1/50 \) if and only if \( n + 1 > 50 \), that is, \( n \ge 50 \). So \( N = 50 \) works, and every \( N \le 49 \) fails at \( n = 49 \) (which is \( \ge N \)), where \( \abs{a_{49} - 2} = 1/50 \). The least \( N \) is \( 50 \).
 :::
 
 ### B. Practice
@@ -317,13 +317,13 @@ Say exactly where the Archimedean property is used.
 \[
 \frac{n^2 + 1}{2n^2 + 3} - \frac{1}{2} = \frac{2(n^2 + 1) - (2n^2 + 3)}{2(2n^2 + 3)} = \frac{-1}{2(2n^2 + 3)} ,
 \]
-so the distance is \( 1/(2(2n^2 + 3)) \). We bound it by \( 1/(n + 1) \). For \( n \ge 1 \), \( n^2 = n \cdot n \ge n \cdot 1 = n \) (@prp-ordered-ring-rules (c), multiplying \( 1 \le n \) by \( n > 0 \)), so
+so the distance is \( 1/(2(2n^2 + 3)) \). We bound it by \( 1/(n + 1) \). For \( n \ge 1 \), \( n^2 = n \cdot n \ge n \cdot 1 = n \) (@prp-ordered-field-halves (d), applied to \( 0 \le 1 \le n \) and \( 0 \le n \le n \)), so
 \[
 2(2n^2 + 3) - (n + 1) = 4n^2 - n + 5 \ge 3n + 5 > 0 ;
 \]
 for \( n = 0 \) the left side is \( 5 > 0 \). So \( 0 < n + 1 < 2(2n^2 + 3) \), and @prp-ordered-field-halves (c) gives \( 1/(2(2n^2 + 3)) \le 1/(n + 1) \). With the \( N \) of the first part, every \( n \ge N \) has distance \( \le 1/(n + 1) < \varepsilon \).
 
-*Where Archimedes is used.* Only in obtaining \( N \) from \( \varepsilon \), through @prp-archimedean-reciprocal. The algebra of the distances holds in any ordered field. In \( \nQ(t) \) the same algebra gives the same distances, and the proofs fail exactly there: by @prp-reciprocals-null-iff-archimedean, no \( N \) serves \( \varepsilon = 1/t \).
+*Where Archimedes is used.* Only in obtaining \( N \) from \( \varepsilon \), through @prp-archimedean-reciprocal. The algebra of the distances holds in any ordered field. In \( \nQ(t) \) the same algebra gives the same distances, and the proofs fail exactly there: both take \( N \) from \( 1/(n + 1) < \varepsilon \), and by @prp-reciprocals-null-iff-archimedean no \( N \) makes \( 1/(n + 1) < 1/t \) for all \( n \ge N \).
 :::
 
 ::: {#exr-limits-b2}
@@ -353,7 +353,7 @@ In the field \( \nQ(t) \) of @exm-rational-function-field, show that the sequenc
 ::: {.solution}
 *Bounded.* By @exm-rational-function-field, \( t > n \cdot 1 \) for every \( n \in \nN \). Also \( n \cdot 1 \ge 0 \) (@prp-naturals-in-ordered-field (b), and \( 0 \cdot 1 = 0 \)), so \( \abs{n \cdot 1} = n \cdot 1 < t \). And \( t > 1 \cdot 1 = 1 > 0 \), so \( M \coloneqq t \in \nQ(t)_{>0} \) is a bound.
 
-*Not convergent.* Suppose \( n \cdot 1 \to a \) for some \( a \in \nQ(t) \). Take \( \varepsilon \coloneqq 1/2 \), which is positive (@prp-ordered-field-halves (b)), and its \( N \). With \( n \coloneqq N \), both \( n \) and \( n + 1 \) are \( \ge N \), and \( (n + 1) \cdot 1 - n \cdot 1 = 1 \) by the definition of multiples. The three-point triangle inequality gives
+*Not convergent.* Suppose \( n \cdot 1 \to a \) for some \( a \in \nQ(t) \). Take \( \varepsilon \coloneqq 1/2 \), which is positive (@prp-ordered-field-halves (b)), and its \( N \). With \( n \coloneqq N \), both \( n \) and \( n + 1 \) are \( \ge N \), and \( (n + 1) \cdot 1 - n \cdot 1 = 1 \) by @def-naturals-in-ordered-field (a). The three-point triangle inequality gives
 \[
 1 = \abs{(n + 1) \cdot 1 - n \cdot 1} \le \abs{(n + 1) \cdot 1 - a} + \abs{a - n \cdot 1} < \tfrac12 + \tfrac12 = 1 ,
 \]
@@ -386,7 +386,7 @@ where \( a - a/2 = a/2 \) because \( a/2 + a/2 = a \) (@prp-ordered-field-halves
 ::: {#exr-limits-c2}
 [C2: Find the error]
 
-Here is an argument for @prp-convergent-bounded-ordered-field. Is the conclusion true? Is the argument correct? If not, name the line that fails, say what makes it illegal, and give a counterexample to the step.
+Here is an argument for @prp-convergent-bounded-ordered-field. Is the conclusion true? Is the argument correct? If not, name the line that fails, say what makes it illegal, and give a counterexample to the step. Then repair the argument.
 
 > (1) Let \( a_n \to a \). (2) Take \( \varepsilon \coloneqq 1 \) in the definition of the limit, and let \( N \) be the index it provides. (3) Then for every \( n \in \nN \), \( \abs{a_n} \le \abs{a_n - a} + \abs{a} < 1 + \abs{a} \). (4) So \( M \coloneqq 1 + \abs{a} \) is a bound for \( (a_n) \).
 :::
@@ -414,22 +414,24 @@ def-sequence-ordered-field (example): (-1)^n fails "= 1" at every odd n | (-1)^{
 def-sequence-limit-ordered-field (claim): 1 - (n+1)/(n+2) = 1/(n+2), 2 - (n+1)/(n+2) = 1 + 1/(n+2) | lem-field-fraction-rules (b), (c); verify/ch04/def-sequence-limit-ordered-field.py
 def-sequence-limit-ordered-field (claim): not(x < eps) iff x >= eps | prp-ordered-field-halves (a) (cited)
 def-sequence-limit-ordered-field (claim): (1 + (-1)^n)/(n + 1) lies in [0, 2/(n+1)], is 0 at odd n and is null | (-1)^n in {1, -1} as in exm-first-sequences-ordered-field (d); null via the bound 2/(n+1) and prp-archimedean-reciprocal (the squeeze itself is §04, so the claim is checked directly from the definition); verify/ch04/def-sequence-limit-ordered-field.py
-exm-first-sequences-ordered-field (solution): |(-1)^n| = 1 for every n, by induction | fd1:ax-induction with prp-absolute-value-ordered-field (b); inline
+exm-first-sequences-ordered-field (solution): |(-1)^n| = 1 for every n, by induction | fd1:ax-induction via cor-omega-identification (b) with prp-absolute-value-ordered-field (b); inline
 exm-first-sequences-ordered-field (solution): -2 a_n = a_{n+1} - a_n and |-2 a_n| = 2|a_n| | prp-ring-algebra (c), prp-absolute-value-ordered-field (b), |2| = 2 since 2 > 0 (prp-ordered-field-halves (b))
-exm-first-sequences-ordered-field (solution): n + 2 > n + 1 >= N in N, and 1/(n+2) < 1/(n+1) | prp-ordered-ring-rules (h), prp-reciprocal-order (b)
+exm-first-sequences-ordered-field (solution): n + 2 > n + 1 >= N in N, so (b)'s bound 1/m < eps applies at m = n + 2 | prp-omega-order-arithmetic (c), thm-omega-order (a)
 exm-first-sequences-ordered-field (solution): Q is Archimedean in the sense of def-archimedean-ordered-field | thm-rationals-archimedean with prp-naturals-in-ordered-field (d), as §02 records after def-archimedean-ordered-field
+def-bounded-sequence-ordered-field (example): Q is Archimedean, so (n) is unbounded in Q | thm-rationals-archimedean (cited)
 def-bounded-sequence-ordered-field (example): |c| + 1 > 0 | prp-absolute-value-ordered-field (a), prp-ordered-ring-rules (b), (e)
 prp-reciprocals-null-iff-archimedean (proof): negation of def-archimedean-ordered-field; not(x < n 1_F) iff x >= n 1_F | fd1:prp-bounded-quantifier-negation (cited), prp-ordered-field-halves (a)
 prp-reciprocals-null-iff-archimedean (claim): Q(t) is not Archimedean (t > n 1 for every n) | exm-rational-function-field: school fact; formal polynomials in F4.4 (flagged; nothing in fd3 depends on it, and no proof here cites it)
-prp-reciprocals-null-iff-archimedean (claim): (the remark after it) 1/(n+1) in Q(t) is iota(1/(n+1)), and iota preserves order | thm-rationals-embed-ordered-field (cited); Q(t) as above, school fact; formal polynomials in F4.4
+prp-reciprocals-null-iff-archimedean (claim): (the remark after it) 1/(n+1) in Q(t) is iota(1/(n+1)) (iota respects products, iota(1) = 1), and 1/(n+1) < q eventually in Q, carried over by iota | thm-rationals-embed-ordered-field, exm-first-sequences-ordered-field (b) (cited); Q(t) as above, school fact; formal polynomials in F4.4
 prp-tail-change-ordered-field (proof): finite maximum of elements of F | fd2:prp-finite-max (stated for reals; its proof works in any ordered field, fd2 Section 2.6, prose remark after prp-greatest-maximal)
+prp-convergent-bounded-ordered-field (proof): finite maximum of elements of F | fd2:prp-finite-max (stated for reals; its proof works in any ordered field, fd2 Section 2.6, prose remark after prp-greatest-maximal), as in prp-tail-change-ordered-field (proof)
 prp-tail-change-ordered-field (proof): n >= N gives n + k >= N; n >= N + k gives n = m + k with m >= N | prp-omega-order-arithmetic (a), (c) (cited)
 thm-limit-unique-ordered-field (proof): a != b gives a - b != 0 | (F4), prp-ring-algebra (a)
 thm-limit-unique-ordered-field (proof): max{N1, N2} exists in N | thm-omega-order (a); the same in prp-tail-change-ordered-field (proof)
 exr-limits-a1 (solution): (2n + 1)/(n + 1) - 2 = -1/(n + 1); the least N is 50 | verify/ch04/exr-limits-a1.py
 exr-limits-b1 (solution): the distance 1/(2(2n^2 + 3)) and 4n^2 - n + 5 >= 3n + 5 for n >= 1 | verify/ch04/exr-limits-b1.py
 exr-limits-b3 (solution): t > n 1 for every n in Q(t) | exm-rational-function-field: school fact; formal polynomials in F4.4 (flagged)
-exr-limits-b3 (solution): (n + 1) 1 - n 1 = 1 | the defining equation (n + 1) a = n a + a of F3.2's multiples (def. in F3.2 §03)
+exr-limits-b3 (solution): (n + 1) 1 - n 1 = 1 | def-naturals-in-ordered-field (a) (cited)
 exr-limits-c1 (solution): the weak inequality a >= 0 survives limits | prp-limit-preserves-order-ordered-field (b), Section 4.4 (prose pointer; the solution does not use it)
 exr-limits-c2 (solution): the counterexample a_0 = 5, a_n = 0 | verify/ch04/exr-limits-c2.py
 -->

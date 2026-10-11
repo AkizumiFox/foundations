@@ -33,14 +33,14 @@ Let \( b_n \to b \) in \( F \) with \( b \ne 0 \). Then there is \( N_0 \in \nN 
 :::
 
 ::: {.proof}
-Since \( b \ne 0 \), \( \abs{b} > 0 \) (@prp-absolute-value-ordered-field (a)), so \( \varepsilon \coloneqq \abs{b}/2 \in F_{>0} \) (@prp-ordered-field-halves (b)). Choose \( N_0 \) with \( \abs{b_n - b} < \abs{b}/2 \) for every \( n \ge N_0 \). For such \( n \), the reverse triangle inequality (@prp-absolute-value-ordered-field (f)), together with \( x \le \abs{x} \) and \( \abs{-x} = \abs{x} \) (parts (c), (b)), gives
+Since \( b \ne 0 \), \( \abs{b} > 0 \) (@prp-absolute-value-ordered-field (a)), so \( \varepsilon \coloneqq \abs{b}/2 \in F_{>0} \) (@prp-ordered-field-halves (b)). Choose \( N_0 \) (depending on \( (b_n) \) and \( b \)) with \( \abs{b_n - b} < \abs{b}/2 \) for every \( n \ge N_0 \). For such \( n \), the reverse triangle inequality (@prp-absolute-value-ordered-field (f)), together with \( x \le \abs{x} \) and \( \abs{-x} = \abs{x} \) (parts (c), (b)), gives
 \[
 \abs{b} - \abs{b_n} \le \bigl\lvert \abs{b} - \abs{b_n} \bigr\rvert \le \abs{b - b_n} = \abs{b_n - b} < \frac{\abs{b}}{2} ,
 \]
-so \( \abs{b_n} > \abs{b} - \abs{b}/2 = \abs{b}/2 \). If \( b > 0 \), then \( \abs{b} = b \), and @prp-absolute-value-ordered-field (d) turns \( \abs{b_n - b} < b/2 \) into \( b - b/2 < b_n \), that is, \( b_n > b/2 \).
+so \( \abs{b_n} > \abs{b} - \abs{b}/2 = \abs{b}/2 \), adding \( \abs{b_n} - \abs{b}/2 \) to both sides (@prp-ordered-ring-rules (b)). If \( b > 0 \), then \( \abs{b} = b \), and @prp-absolute-value-ordered-field (d) turns \( \abs{b_n - b} < b/2 \) into \( b - b/2 < b_n \), that is, \( b_n > b/2 \).
 :::
 
-In particular \( b_n \ne 0 \) for every \( n \ge N_0 \), since \( \abs{b_n} > \abs{b}/2 > 0 \). The lemma needs \( b \ne 0 \): \( 1/(n + 1) \to 0 \) in \( \nQ \), and no positive margin bounds the terms away from \( 0 \).
+In particular \( b_n \ne 0 \) for every \( n \ge N_0 \), since \( \abs{b_n} > \abs{b}/2 > 0 \). The lemma needs \( b \ne 0 \). In \( \nQ \), \( b_n \coloneqq (1 + (-1)^n)/(n + 1) \) tends to \( 0 \) (the warning after @exm-first-sequences-ordered-field in Section 4.3: \( 0 \le b_n \le 2/(n + 1) \), and \( 1/(n + 1) \to 0 \) by @exm-first-sequences-ordered-field (b), which uses Archimedes), yet \( b_n = 0 \) at every odd \( n \), so for \( b = 0 \) no \( N_0 \) has \( \abs{b_n} > \abs{b}/2 = 0 \) for every \( n \ge N_0 \). Even \( 1/(n + 1) \), which tends to \( 0 \) (@exm-first-sequences-ordered-field (b)) and is never \( 0 \), is bounded away from \( 0 \) by no positive margin.
 
 ## The limit laws
 
@@ -75,13 +75,13 @@ The factors \( b_n - b \) and \( a_n - a \) can be made small, but \( a_n \) can
 \]
 where the strict inequality is @prp-ordered-ring-rules (b) and the last equality @prp-ordered-field-halves (b).
 
-(b) If \( c = 0 \), then \( c a_n = 0 = c a \) for every \( n \) (@prp-ring-algebra (b)), a constant sequence, which converges to \( 0 \) (@exm-first-sequences-ordered-field (a)). Let \( c \ne 0 \), so \( \abs{c} > 0 \), and let \( \varepsilon \in F_{>0} \). Then \( \varepsilon/\abs{c} \in F_{>0} \). Choose \( N \) with \( \abs{a_n - a} < \varepsilon/\abs{c} \) for every \( n \ge N \). For such \( n \), by distributivity and @prp-absolute-value-ordered-field (b),
+(b) If \( c = 0 \), then \( c a_n = 0 = c a \) for every \( n \) (@prp-ring-algebra (b)), a constant sequence, which converges to \( 0 \) (@exm-first-sequences-ordered-field (a)). Let \( c \ne 0 \), so \( \abs{c} > 0 \) (@prp-absolute-value-ordered-field (a)), and let \( \varepsilon \in F_{>0} \). Then \( \varepsilon/\abs{c} \in F_{>0} \) (@prp-reciprocal-order (a) and (O4)). Choose \( N \) (depending on \( \varepsilon \) and \( c \)) with \( \abs{a_n - a} < \varepsilon/\abs{c} \) for every \( n \ge N \). For such \( n \), by distributivity and @prp-absolute-value-ordered-field (b),
 \[
 \abs{c a_n - c a} = \abs{c (a_n - a)} = \abs{c} \abs{a_n - a} < \abs{c} \, \frac{\varepsilon}{\abs{c}} = \varepsilon ,
 \]
 multiplying by \( \abs{c} > 0 \) (@prp-ordered-ring-rules (c)). With \( c = -1 \), and \( (-1) x = -x \) (@prp-ring-algebra (c)), this gives \( -a_n \to -a \). Then (a), applied to \( (a_n) \) and \( (-b_n) \), gives \( a_n - b_n = a_n + (-b_n) \to a + (-b) = a - b \).
 
-(c) By @prp-convergent-bounded-ordered-field there is \( M \in F_{>0} \) with \( \abs{a_n} \le M \) for every \( n \in \nN \). We fix this \( M \) now; it depends on the sequence \( (a_n) \) only. Now let \( \varepsilon \in F_{>0} \). Since \( \abs{b} \ge 0 \), the element \( \abs{b} + 1 \) is \( \ge 1 > 0 \), so
+(c) By @prp-convergent-bounded-ordered-field there is \( M \in F_{>0} \) with \( \abs{a_n} \le M \) for every \( n \in \nN \). We fix this \( M \) now; it depends on the sequence \( (a_n) \) only. Now let \( \varepsilon \in F_{>0} \). Since \( \abs{b} \ge 0 \), the element \( \abs{b} + 1 \) is \( \ge 1 > 0 \). Since \( 2 > 0 \) (@prp-ordered-field-halves (b)), \( 2M > 0 \) and \( 2(\abs{b} + 1) > 0 \) by (O4), so @prp-reciprocal-order (a) and (O4) give
 \[
 \frac{\varepsilon}{2M} \in F_{>0} \qquad \text{and} \qquad \frac{\varepsilon}{2(\abs{b} + 1)} \in F_{>0} .
 \]
@@ -90,12 +90,12 @@ Since \( b_n \to b \), choose \( N_1 \) with \( \abs{b_n - b} < \varepsilon/(2M)
 \begin{aligned}
 \abs{a_n b_n - ab} &\le \abs{a_n} \abs{b_n - b} + \abs{b} \abs{a_n - a} \\
 &\le M \abs{b_n - b} + (\abs{b} + 1) \abs{a_n - a} \\
-&< M \, \frac{\varepsilon}{2M} + (\abs{b} + 1) \, \frac{\varepsilon}{2(\abs{b} + 1)} = \varepsilon .
+&< M \, \frac{\varepsilon}{2M} + (\abs{b} + 1) \, \frac{\varepsilon}{2(\abs{b} + 1)} = \frac{\varepsilon}{2} + \frac{\varepsilon}{2} = \varepsilon .
 \end{aligned}
 \]
-The second line uses @prp-ordered-field-halves (d) twice, with \( 0 \le \abs{a_n} \le M \) and \( 0 \le \abs{b} \le \abs{b} + 1 \). The third multiplies the two estimates by the positive elements \( M \) and \( \abs{b} + 1 \) (@prp-ordered-ring-rules (c)) and adds them (@prp-ordered-ring-rules (b)). So \( a_n b_n \to ab \).
+The second line uses @prp-ordered-field-halves (d) twice, with \( 0 \le \abs{a_n} \le M \) and \( 0 \le \abs{b} \le \abs{b} + 1 \). The third multiplies the two estimates by the positive elements \( M \) and \( \abs{b} + 1 \) (@prp-ordered-ring-rules (c)) and adds them (@prp-ordered-ring-rules (b)); the last equality is @prp-ordered-field-halves (b). So \( a_n b_n \to ab \).
 
-(d) First we show \( 1/b_n \to 1/b \). By @lem-limit-bounded-away-ordered-field there is \( N_0 \) with \( \abs{b_n} > \abs{b}/2 \) for every \( n \ge N_0 \). For such \( n \), @lem-field-fraction-rules (c) and @prp-absolute-value-ordered-field (b) give
+(d) First we show \( 1/b_n \to 1/b \). By @lem-limit-bounded-away-ordered-field there is \( N_0 \) (depending on \( (b_n) \) and \( b \)) with \( \abs{b_n} > \abs{b}/2 \) for every \( n \ge N_0 \). For such \( n \), @lem-field-fraction-rules (c) and @prp-absolute-value-ordered-field (b) give
 \[
 \Bigl\lvert \frac{1}{b_n} - \frac{1}{b} \Bigr\rvert = \Bigl\lvert \frac{b - b_n}{b_n b} \Bigr\rvert = \frac{\abs{b_n - b}}{\abs{b_n} \abs{b}} .
 \]
@@ -103,7 +103,7 @@ Multiplying \( \abs{b_n} > \abs{b}/2 \) by \( \abs{b} > 0 \) gives \( \abs{b_n}\
 \[
 \Bigl\lvert \frac{1}{b_n} - \frac{1}{b} \Bigr\rvert \le \frac{2}{\abs{b}^2} \, \abs{b_n - b} \qquad (n \ge N_0) .
 \]
-Now let \( \varepsilon \in F_{>0} \). Then \( \varepsilon \abs{b}^2/2 \in F_{>0} \); choose \( N_1 \) with \( \abs{b_n - b} < \varepsilon \abs{b}^2/2 \) for every \( n \ge N_1 \), and let \( N \coloneqq \max\{N_0, N_1\} \). For \( n \ge N \), the last display gives \( \abs{1/b_n - 1/b} < (2/\abs{b}^2)(\varepsilon \abs{b}^2/2) = \varepsilon \). So \( 1/b_n \to 1/b \). Finally \( a_n/b_n = a_n \cdot (1/b_n) \), and (c) gives \( a_n/b_n \to a \cdot (1/b) = a/b \). This proves the theorem.
+Now let \( \varepsilon \in F_{>0} \). Then \( \varepsilon \abs{b}^2/2 \in F_{>0} \) ((O4), @prp-ordered-field-halves (b)); choose \( N_1 \) (depending on \( \varepsilon \) and \( b \)) with \( \abs{b_n - b} < \varepsilon \abs{b}^2/2 \) for every \( n \ge N_1 \), and let \( N \coloneqq \max\{N_0, N_1\} \). For \( n \ge N \), the last display and multiplication of \( \abs{b_n - b} < \varepsilon \abs{b}^2/2 \) by \( 2/\abs{b}^2 > 0 \) (@prp-reciprocal-order (a), (O4); @prp-ordered-ring-rules (c)) give \( \abs{1/b_n - 1/b} < (2/\abs{b}^2)(\varepsilon \abs{b}^2/2) = \varepsilon \). So \( 1/b_n \to 1/b \). Finally \( a_n/b_n = a_n \cdot (1/b_n) \), and (c) gives \( a_n/b_n \to a \cdot (1/b) = a/b \). This proves the theorem.
 :::
 
 The answer to the prompt: the tolerance \( \varepsilon/(2M) \) contains \( M \), so \( M \) must exist before that tolerance is written down. And \( M \) must not depend on \( n \): it has to bound \( \abs{a_n} \) for **every** \( n \ge N \) at once, including indices not yet chosen. That is why it comes from @prp-convergent-bounded-ordered-field, a single bound for the whole sequence, and not from "\( \abs{a_n} \) is some element of \( F \)". The \( + 1 \) in \( \abs{b} + 1 \) is there because \( b \) may be \( 0 \), and \( \varepsilon/(2\abs{b}) \) would then mean nothing.
@@ -115,7 +115,7 @@ Alternatively, (c) follows from the earlier tools without new estimates. By @prp
 In (d), the hypothesis "\( b_n \ne 0 \) for every \( n \)" is there only so that \( a_n / b_n \) is defined for every \( n \). By @lem-limit-bounded-away-ordered-field, \( b_n \ne 0 \) holds eventually anyway once \( b \ne 0 \). If some early \( b_n \) vanish, the quotient is a sequence from some \( N_0 \) on, and @prp-tail-change-ordered-field (b) applies the law to the shifted sequences \( (a_{n+N_0}) \) and \( (b_{n+N_0}) \).
 
 ::: {.warning}
-Part (d) needs \( b \ne 0 \), even when every \( b_n \ne 0 \). In \( \nQ \), \( a_n = 1/(n + 1) \) and \( b_n = 1/(n + 1)^2 \) are both null, with every \( b_n \ne 0 \), and \( a_n / b_n = n + 1 \), which is not bounded and so has no limit (@prp-convergent-bounded-ordered-field, and the non-example after @def-bounded-sequence-ordered-field). The "law" \( \lim (a_n/b_n) = 0/0 \) names nothing.
+Part (d) needs \( b \ne 0 \), even when every \( b_n \ne 0 \). In \( \nQ \), \( a_n = 1/(n + 1) \) and \( b_n = 1/(n + 1)^2 \) are both null (the first by @exm-first-sequences-ordered-field (b), the second by (c), since \( b_n = a_n a_n \)), with every \( b_n \ne 0 \), and \( a_n / b_n = n + 1 \). Since \( n + 1 > n \), the sequence \( (n + 1) \) is not bounded (the non-example after @def-bounded-sequence-ordered-field), and so has no limit (@prp-convergent-bounded-ordered-field). The "law" \( \lim (a_n/b_n) = 0/0 \) names nothing.
 :::
 
 ::: {.check}
@@ -123,7 +123,7 @@ Find \( \lim (3n^2 - n)/(n^2 + 5) \) in \( \nQ \), citing a law, or another resu
 :::
 
 ::: {.solution}
-The limit is \( 3 \). Let \( u_0 \coloneqq 0 \) and \( u_n \coloneqq 1/n \) for \( n \ge 1 \). The shifted sequence \( (u_{n+1})_n = (1/(n + 1))_n \) is null (@exm-first-sequences-ordered-field (b); this is where Archimedes enters), so \( (u_n) \) is null by @prp-tail-change-ordered-field (b). By @thm-limit-laws-ordered-field: \( 3 - u_n \to 3 - 0 = 3 \) (constants, (b) and (a)); \( u_n^2 \to 0 \) ((c)); \( 1 + 5u_n^2 \to 1 \) ((b), (a)). Every \( 1 + 5u_n^2 \ge 1 > 0 \), and the limit \( 1 \ne 0 \), so (d) gives
+The limit is \( 3 \). Let \( u_0 \coloneqq 0 \) and \( u_n \coloneqq 1/n \) for \( n \ge 1 \). The shifted sequence \( (u_{n+1})_n = (1/(n + 1))_n \) is null (@exm-first-sequences-ordered-field (b); this is where Archimedes enters), so \( (u_n) \) is null by @prp-tail-change-ordered-field (b). By @thm-limit-laws-ordered-field: \( 3 - u_n \to 3 - 0 = 3 \) (the constant \( 3 \) converges to \( 3 \) by @exm-first-sequences-ordered-field (a); then (b) and (a)); \( u_n^2 \to 0 \) ((c)); \( 1 + 5u_n^2 \to 1 \) ((b), (a)). Every \( 1 + 5u_n^2 \ge 1 > 0 \): \( u_n^2 \ge 0 \) (@prp-ordered-ring-rules (e) if \( u_n \ne 0 \), and \( u_0^2 = 0 \)), so \( 5u_n^2 \ge 0 \) (@prp-ordered-field-halves (d)), and \( 1 + 5u_n^2 \ge 1 \) by @prp-ordered-ring-rules (b). Also the limit \( 1 \ne 0 \), so (d) gives
 \[
 c_n \coloneqq \frac{3 - u_n}{1 + 5u_n^2} \to \frac{3}{1} = 3 .
 \]
@@ -155,7 +155,7 @@ For (a), suppose instead that \( b < a \). The midpoint \( (a + b)/2 \) separate
 \[
 \varepsilon \coloneqq \frac{a - b}{2} ,
 \]
-which lies in \( F_{>0} \) by @prp-ordered-ring-rules (a) and @prp-ordered-field-halves (b). Choose \( N_1 \) with \( \abs{a_n - a} < \varepsilon \) for every \( n \ge N_1 \), and \( N_2 \) with \( \abs{b_n - b} < \varepsilon \) for every \( n \ge N_2 \). Let \( n \coloneqq \max\{N_0, N_1, N_2\} \). By @prp-absolute-value-ordered-field (d), at this \( n \),
+which lies in \( F_{>0} \) by @prp-ordered-ring-rules (a) and @prp-ordered-field-halves (b). Choose \( N_1 \) (depending on \( \varepsilon \)) with \( \abs{a_n - a} < \varepsilon \) for every \( n \ge N_1 \), and \( N_2 \) (depending on \( \varepsilon \)) with \( \abs{b_n - b} < \varepsilon \) for every \( n \ge N_2 \). Let \( n \coloneqq \max\{N_0, N_1, N_2\} \). By @prp-absolute-value-ordered-field (d), at this \( n \),
 \[
 a_n > a - \varepsilon = \frac{a + b}{2} = b + \varepsilon > b_n .
 \]
@@ -163,14 +163,14 @@ This contradicts \( a_n \le b_n \), which holds because \( n \ge N_0 \). So \( b
 
 (b) A constant sequence \( c \) converges to \( c \) (@exm-first-sequences-ordered-field (a)). Apply (a) to \( (a_n) \) and the constant sequence \( c \) for the first claim, and to the constant sequence \( c \) and \( (a_n) \) for the second.
 
-(c) Let \( \varepsilon \in F_{>0} \). Choose \( N_1 \) with \( \abs{a_n - a} < \varepsilon \) for \( n \ge N_1 \) and \( N_2 \) with \( \abs{b_n - a} < \varepsilon \) for \( n \ge N_2 \) (recall \( b = a \)), and let \( N \coloneqq \max\{N_0, N_1, N_2\} \). For \( n \ge N \), @prp-absolute-value-ordered-field (d) gives
+(c) Let \( \varepsilon \in F_{>0} \). Choose \( N_1 \) (depending on \( \varepsilon \)) with \( \abs{a_n - a} < \varepsilon \) for \( n \ge N_1 \) and \( N_2 \) (depending on \( \varepsilon \)) with \( \abs{b_n - a} < \varepsilon \) for \( n \ge N_2 \) (recall \( b = a \)), and let \( N \coloneqq \max\{N_0, N_1, N_2\} \). For \( n \ge N \), @prp-absolute-value-ordered-field (d) gives
 \[
 a - \varepsilon < a_n \le c_n \le b_n < a + \varepsilon ,
 \]
 so \( \abs{c_n - a} < \varepsilon \) by the same part (d). Hence \( c_n \to a \).
 :::
 
-The two midpoint equalities in (a) are field algebra: \( a - (a - b)/2 = (2a - a + b)/2 = (a + b)/2 \), and likewise \( b + (a - b)/2 = (a + b)/2 \). Part (b) is the form in which Chapter 5 uses the proposition, with \( F = \nQ \). In the squeeze (c), the middle sequence is not assumed to converge: its convergence is the conclusion.
+The two midpoint equalities in (a) are field algebra: \( a - (a - b)/2 = (2a - a + b)/2 = (a + b)/2 \), and likewise \( b + (a - b)/2 = (a + b)/2 \). Chapter 5 uses the squeeze (c) repeatedly, mostly with \( F = \nQ \) to show that a sequence is null. In the squeeze (c), the middle sequence is not assumed to converge: its convergence is the conclusion.
 
 ::: {.warning}
 Strict inequalities do not pass to the limit. In \( \nQ \), \( 1/(n + 1) > 0 \) for every \( n \), and the limit is \( 0 \), not positive (@exm-first-sequences-ordered-field (b)). From \( a_n < b_n \) for every \( n \), (a) gives only \( a \le b \).
@@ -229,7 +229,7 @@ Let \( u_n \coloneqq 1/(n + 1) \), so \( u_n \to 0 \) (@exm-first-sequences-orde
 
 (b) With \( m = n + 1 \): \( (n^2 + 1)/(n + 1)^2 = ((m - 1)^2 + 1)/m^2 = 1 - 2u_n + 2u_n^2 \). By (c), \( u_n^2 \to 0 \); by (b) and (a), \( 1 - 2u_n + 2u_n^2 \to 1 - 0 + 0 = 1 \). No quotient law is needed.
 
-(c) \( u_n - 2 \to -2 \) by (b) and (a). The sequence \( (-1)^n u_n \) is null by @prp-null-times-bounded-ordered-field, since \( u_n \) is null and \( \abs{(-1)^n} = 1 \); so \( 3 + (-1)^n u_n \to 3 \) by (a). By (c), the product tends to \( (-2) \cdot 3 = -6 \).
+(c) \( u_n - 2 \to -2 \) by (b) and (a). The sequence \( (-1)^n u_n \) is null by @prp-null-times-bounded-ordered-field, since \( u_n \) is null and \( \abs{(-1)^n} = 1 \) (@exm-first-sequences-ordered-field (d)); so \( 3 + (-1)^n u_n \to 3 \) by (a). By (c), the product tends to \( (-2) \cdot 3 = -6 \).
 
 In each part Archimedes enters once, through \( u_n \to 0 \); every other step is a law valid in any ordered field.
 :::
@@ -291,7 +291,7 @@ Since \( \varepsilon \in F_{>0} \) was arbitrary, \( b_n \to a \). (The same res
 ::: {#exr-limit-laws-c1}
 [C1: Exit check: the product law]
 
-Prove, from @def-sequence-limit-ordered-field, that if \( a_n \to a \) and \( b_n \to b \) in an ordered field \( F \), then \( a_n b_n \to ab \). You may use that convergent sequences are bounded (@prp-convergent-bounded-ordered-field) and the rules for the absolute value (@prp-absolute-value-ordered-field), but not @thm-limit-laws-ordered-field.
+Prove, from @def-sequence-limit-ordered-field, that if \( a_n \to a \) and \( b_n \to b \) in an ordered field \( F \), then \( a_n b_n \to ab \). You may use that convergent sequences are bounded (@prp-convergent-bounded-ordered-field), the rules for the absolute value (@prp-absolute-value-ordered-field), @prp-limit-null-shift-ordered-field and @prp-null-times-bounded-ordered-field, but not @thm-limit-laws-ordered-field.
 :::
 
 ::: {.solution}
@@ -319,7 +319,7 @@ where the second line uses \( 0 \le \abs{a_n} \le M \) and \( 0 \le \abs{b} \le 
 - 3: chooses \( N_1 \), \( N_2 \) depending only on \( \varepsilon \), \( M \) and \( b \), with the case \( b = 0 \) handled, and \( N \) as their maximum.
 - 2: carries out the estimate with the triangle inequality and the product rule for \( \abs{\cdot} \).
 - 1: concludes with the quantifiers in the order \( \forall \varepsilon \, \exists N \, \forall n \ge N \).
-Fatal errors (0 for the step): a threshold or tolerance that depends on \( n \); the bound "\( \abs{a_n} \le \abs{a} + 1 \) for every \( n \)" without the finite part for \( n < N \); dividing by \( \abs{b} \) without \( b \ne 0 \). A route through null sequences (\( (b_n - b) \) and \( (a_n - a) \) null, null times bounded is null, a sum of null sequences is null) earns the same points: decomposition 2, the bound 2, the null-product step and the sum 5, conclusion 1.
+Fatal errors (0 for the step): a threshold or tolerance that depends on \( n \); the bound "\( \abs{a_n} \le \abs{a} + 1 \) for every \( n \)" without the finite part for \( n < N \); dividing by \( \abs{b} \) without \( b \ne 0 \). A route through null sequences (\( (b_n - b) \) and \( (a_n - a) \) are null by @prp-limit-null-shift-ordered-field; \( a_n(b_n - b) \) and \( b(a_n - a) \) are null by @prp-null-times-bounded-ordered-field, with bounds \( M \) and \( \abs{b} + 1 \); the sum of two null sequences is null, proved from @def-sequence-limit-ordered-field by splitting \( \varepsilon \)) earns the same points: decomposition 2, the bound 2, the two null products and the proved sum 5, conclusion 1. Citing @thm-limit-laws-ordered-field for the sum or for \( b(a_n - a) \) gets 0 for that step. A three-term route (\( a_n b_n - ab = (a_n - a)(b_n - b) + a(b_n - b) + b(a_n - a) \), with a tolerance such as \( \delta = \min\{1, \varepsilon/(1 + \abs{a} + \abs{b})\} \) chosen from \( \varepsilon \), \( a \) and \( b \) only) earns the same points: decomposition 2; the choice of \( \delta \), independent of \( n \) and with \( \delta \le 1 \) controlling the product term (in place of the bound \( M \)), 2; a threshold \( N \) for both sequences at tolerance \( \delta \) (the case \( a = 0 \) or \( b = 0 \) covered by the \( 1 \) in the denominator) 3; the estimate 2; conclusion 1.
 :::
 
 ::: {#exr-limit-laws-c2}
@@ -343,7 +343,7 @@ For (a), compare with a constant sequence. For (b), which result keeps terms awa
 ::: {.solution}
 [Hint 2]
 
-(a) is @prp-limit-preserves-order-ordered-field (b) with \( c = 0 \). For (b), start: "By @lem-limit-bounded-away-ordered-field, since \( a > 0 \), there is \( N_0 \) with \( a_n > a/2 \) for every \( n \ge N_0 \)."
+For (b), start: "By @lem-limit-bounded-away-ordered-field, since \( a > 0 \), there is \( N_0 \) with \( a_n > a/2 \) for every \( n \ge N_0 \)."
 :::
 
 ::: {.solution}
@@ -351,12 +351,12 @@ For (a), compare with a constant sequence. For (b), which result keeps terms awa
 
 (b) Since \( a > 0 \), @lem-limit-bounded-away-ordered-field gives \( N_0 \) with \( a_n > a/2 > 0 \) for every \( n \ge N_0 \). The shifted sequence \( (a_{n+N_0})_n \) converges to \( a \) by @prp-tail-change-ordered-field (b), and each of its terms is non-zero. By @thm-limit-laws-ordered-field (d), applied to the constant sequence \( 1 \) and to \( (a_{n+N_0})_n \), whose limit \( a \) is non-zero, \( 1/a_{n+N_0} \to 1/a \).
 
-(c) \( a_n = 1/(n + 1) \): every term is positive, and \( 1/a_n = n + 1 \) is not bounded in \( \nQ \), so it does not converge (@prp-convergent-bounded-ordered-field). The hypothesis \( a > 0 \) of (b) fails here: \( a = 0 \).
+(c) \( a_n = 1/(n + 1) \): every term is positive, and \( 1/a_n = n + 1 \) is not bounded in \( \nQ \): for any \( M \in \nQ_{>0} \), the non-example after @def-bounded-sequence-ordered-field gives \( n \) with \( M < n < n + 1 = \abs{1/a_n} \). So it does not converge (@prp-convergent-bounded-ordered-field). The hypothesis \( a > 0 \) of (b) fails here: \( a = 0 \).
 
 **Marking scheme.** (10 points)
 - 3: (a), by comparison with the constant sequence \( 0 \) (or by contradiction with \( \varepsilon = -a/2 \)).
 - 3: (b), an index \( N_0 \) beyond which \( a_n \) is bounded away from \( 0 \), from \( a > 0 \).
-- 2: (b), the shift converges to \( a \) and the quotient law applies to it, with its hypotheses checked.
+- 2: (b), \( 1/a_{n+N_0} \to 1/a \), either by the quotient law (@thm-limit-laws-ordered-field (d)) applied to the shift, with its convergence to \( a \) and \( a \ne 0 \) checked, or directly from \( \abs{1/a_{n+N_0} - 1/a} \le (2/a^2)\abs{a_{n+N_0} - a} \), which uses \( a_{n+N_0} > a/2 \).
 - 2: (c), an example with the failure of convergence justified.
 Fatal errors (0 for the step): concluding \( a > 0 \) in (a) from \( a_n > 0 \); applying the quotient law without checking that the limit is non-zero.
 :::
@@ -365,8 +365,10 @@ Fatal errors (0 for the step): concluding \( a > 0 \) in (a) from \( a_n > 0 \);
 prp-null-times-bounded-ordered-field (proof): eps/M > 0 and (eps/M) M = eps | prp-reciprocal-order (a), (O4); (F5), (F8) of def-commutative-ring-and-field
 prp-null-times-bounded-ordered-field (example): (-1)^n bounded by 1 | exm-first-sequences-ordered-field (d), whose solution shows |(-1)^n| = 1
 lem-limit-bounded-away-ordered-field (proof): |b| - |b|/2 = |b|/2 | prp-ordered-field-halves (b)
+lem-limit-bounded-away-ordered-field (example): (1 + (-1)^n)/(n + 1) is null in Q and 0 at odd n | the warning after exm-first-sequences-ordered-field in §03 (0 <= b_n <= 2/(n+1)), with exm-first-sequences-ordered-field (b) (Archimedes)
 thm-limit-laws-ordered-field (proof): (also the Idea) a_n b_n - ab = a_n (b_n - b) + b (a_n - a) | ring algebra, def-commutative-ring-and-field (F1)-(F9), prp-ring-algebra (c); verify/ch04/thm-limit-laws-ordered-field.py
 thm-limit-laws-ordered-field (proof): c a_n - c a = c (a_n - a) and (-1) x = -x | (F9), prp-ring-algebra (c)
+thm-limit-laws-ordered-field (proof): |c| (eps/|c|) = eps | (F5), (F8) of def-commutative-ring-and-field; lem-field-fraction-rules
 thm-limit-laws-ordered-field (proof): M (eps/(2M)) = eps/2, (|b| + 1) (eps/(2(|b| + 1))) = eps/2 | lem-field-fraction-rules (a), (b); verify/ch04/thm-limit-laws-ordered-field.py
 thm-limit-laws-ordered-field (proof): |b| >= 0 gives |b| + 1 >= 1 > 0 | prp-absolute-value-ordered-field (a), prp-ordered-ring-rules (b), (e)
 thm-limit-laws-ordered-field (proof): 1/(|b|^2/2) = 2/|b|^2 and (2/|b|^2)(eps |b|^2/2) = eps; |b|^2 > 0 | lem-field-fraction-rules (a), (b); prp-ordered-ring-rules (e); verify/ch04/thm-limit-laws-ordered-field.py
@@ -381,5 +383,6 @@ exr-limit-laws-a1 (solution): M = 2, least N1 = 0, least N2 = 60, N = 60, and 2/
 exr-limit-laws-b1 (solution): the three rewritings through u_n = 1/(n + 1) and the limits 1/3, 1, -6 | verify/ch04/exr-limit-laws-b1.py
 exr-limit-laws-b1 (solution): 0 < u_n <= 1 | prp-reciprocal-order (b) with 1 <= n + 1 (prp-naturals-in-ordered-field (b))
 exr-limit-laws-b2 (solution): a_n = b_n = (a + b)/2 defeats distractor (ii) | verify/ch04/exr-limit-laws-b2.py
-exr-limit-laws-c2 (solution): n + 1 is unbounded in Q | Archimedes, the non-example after def-bounded-sequence-ordered-field (§03)
+exr-limit-laws-c2 (solution): n + 1 is unbounded in Q, using n < n + 1 | Archimedes, the non-example after def-bounded-sequence-ordered-field (§03); prp-ordered-ring-rules (h)
+exr-limit-laws-c1 (solution): (marking scheme, three-term route) a_n b_n - ab = (a_n - a)(b_n - b) + a(b_n - b) + b(a_n - a), and delta^2 + |a| delta + |b| delta <= delta(1 + |a| + |b|) <= eps for delta <= 1 | ring algebra, (F1)-(F9); prp-ordered-field-halves (d)
 -->

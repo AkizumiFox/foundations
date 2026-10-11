@@ -5,13 +5,18 @@ QUOTED = {
     "abs_three_quarters": F(3, 4),
     "distance_third_half": F(1, 6),
     "interval": (F(1, 4), F(3, 4)),
+    "two_thirds_lower_test": (3, 8),
     "two_thirds_test": (8, 9),
     "endpoint_distance": F(1, 4),
     "square_nonexample": (4, 2),
 }
 assert abs(F(3, 4)) == abs(F(-3, 4)) == QUOTED["abs_three_quarters"]
+# -3/4 < 0 by the comparison formula: (-3)*1 < 0*4
+assert (-3) * 1 < 0 * 4 and F(-3, 4) < 0
 assert F(1, 3) - F(1, 2) == F(-1, 6) and abs(F(-1, 6)) == QUOTED["distance_third_half"]
 assert (F(1, 2) - F(1, 4), F(1, 2) + F(1, 4)) == QUOTED["interval"]
+# 1/4 < 2/3 by the comparison formula: 1*3 < 2*4
+assert (1 * 3, 2 * 4) == QUOTED["two_thirds_lower_test"] and 3 < 8
 # 2/3 < 3/4 by the comparison formula: 2*4 < 3*3
 assert (2 * 4, 3 * 3) == QUOTED["two_thirds_test"] and 8 < 9
 assert abs(F(2, 3) - F(1, 2)) < F(1, 4)

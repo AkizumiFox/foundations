@@ -1,6 +1,6 @@
 # Cauchy Sequences
 
-Every convergence proof so far began with the limit in hand: to show \( a_n \to a \) we estimated \( \abs{a_n - a} \), and the limit laws of Section 4.4 compute a new limit only from limits already known. That is no help for the sequence of Chapter 2 that closes in on the gap at \( \sqrt 2 \) (@exm-newton-rationals-sqrt2), whose terms \( 2, 3/2, 17/12, 577/408, \dots \) visibly settle down while no rational is available to be their limit. This section names a property that can be checked from the terms alone: eventually they are all close **to each other**. We prove the facts about it that Chapter 5 needs: convergent sequences have it, sequences with it are bounded and closed under sums and products, and, when such a sequence does not tend to \( 0 \), its terms keep one sign and stay away from \( 0 \).
+Every convergence proof so far began with the limit in hand: to show \( a_n \to a \) we estimated \( \abs{a_n - a} \), and the limit laws of Section 4.4 compute a new limit only from limits already known. That is no help for the sequence of Chapter 2 that closes in on the gap at \( \sqrt 2 \) (@exm-newton-rationals-sqrt2), whose terms \( 2, 3/2, 17/12, 577/408, \dots \) visibly settle down while no rational is available to be their limit. This section names a property that can be checked from the terms alone: eventually they are all close **to each other**. We prove the facts about it that Chapter 5 needs: convergent sequences have it, sequences with it are bounded and closed under sums and products, and, when such a sequence does not tend to \( 0 \), its terms eventually keep one sign and stay away from \( 0 \).
 
 Throughout, \( F \) is an ordered field (@def-ordered-ring-and-field), sequences are indexed by \( \nN \) (@def-sequence-ordered-field), and \( \varepsilon \) ranges over \( F_{>0} \). We use the absolute-value rules of @prp-absolute-value-ordered-field and the halving rules of @prp-ordered-field-halves without restating them, and write \( 2 \) for \( 1 + 1 \) in \( F \).
 
@@ -46,12 +46,12 @@ One tolerance is beaten beyond every threshold.
 
 **Why this definition.** Each clause is there for a reason.
 
-- *Every pair, not only neighbors.* Asking only that \( \abs{a_{n+1} - a_n} < \varepsilon \) for \( n \ge N \) is too weak: the example at the end of this section has consecutive differences tending to \( 0 \) and terms that grow without bound.
+- *Every pair, not only neighbors.* Asking only that \( \abs{a_{n+1} - a_n} < \varepsilon \) for \( n \ge N \) is too weak: the example at the end of this section has consecutive differences tending to \( 0 \) and is not Cauchy.
 - *The threshold after the tolerance.* With the quantifiers swapped, "\( \exists N \ \forall \varepsilon \ \forall m, n \ge N \)", the condition forces \( \abs{a_m - a_n} < \varepsilon \) for every \( \varepsilon \), hence \( a_m = a_n \) for all \( m, n \ge N \) (the argument of @thm-limit-unique-ordered-field): only sequences that are eventually constant would qualify.
 - *Tolerances from the field.* Changing the set of tolerances changes the notion: in the non-Archimedean field \( \nQ(t) \) of Section 4.2 there are more tolerances than in \( \nQ \), among them \( 1/t \), and Exercise C2 of Section 4.6 shows a sequence of rationals that passes every rational test and fails the test \( 1/t \).
 
 ::: {.warning}
-The definition asks for **one** \( N \) that serves **every** pair \( m, n \ge N \). A proof that fixes \( n \) first, and then picks a threshold depending on \( n \), proves nothing: in the non-example above, for each fixed \( n \) the single pair \( (n, n) \) passes every test, and the sequence still fails.
+The definition asks for **one** \( N \) that serves **every** pair \( m, n \ge N \). A proof that checks only some pairs, say each \( n \) against \( n + 2 \), proves nothing: in the non-example above, \( a_{n+2} = a_n \) for every \( n \), so those pairs pass every test, and the sequence still fails.
 :::
 
 **Payoff.** The tail-change principle extends at once. If \( a_n = b_n \) for every \( n \ge N_0 \) and \( (a_n) \) is Cauchy, then for \( \varepsilon \in F_{>0} \) and its threshold \( N \) for \( (a_n) \), every \( m, n \ge \max\{N, N_0\} \) give \( \abs{b_m - b_n} = \abs{a_m - a_n} < \varepsilon \). So \( (b_n) \) is Cauchy, with thresholds \( \max\{N, N_0\} \), as in @prp-tail-change-ordered-field.
@@ -145,15 +145,15 @@ Let \( (a_n) \) and \( (b_n) \) be Cauchy sequences in \( F \), and let \( c \in
 \end{aligned}
 \]
 
-*Multiples.* If \( c = 0 \), then \( (c \, a_n) \) is the constant sequence \( 0 \) (@prp-ring-algebra (b)), Cauchy by (a). If \( c \ne 0 \), then \( \abs{c} > 0 \) (@prp-absolute-value-ordered-field (a)), so \( \varepsilon/\abs{c} \in F_{>0} \) (@prp-reciprocal-order, (O4)); choose \( N \) with \( \abs{a_m - a_n} < \varepsilon/\abs{c} \) for all \( m, n \ge N \). For such \( m, n \),
+*Multiples.* If \( c = 0 \), then \( (c \, a_n) \) is the constant sequence \( 0 \) (@prp-ring-algebra (b)), Cauchy by (a). If \( c \ne 0 \), then \( \abs{c} > 0 \) (@prp-absolute-value-ordered-field (a)), so \( \varepsilon/\abs{c} \in F_{>0} \) (@prp-reciprocal-order, (O4)); choose \( N \) (depending on \( \varepsilon \) and \( c \)) with \( \abs{a_m - a_n} < \varepsilon/\abs{c} \) for all \( m, n \ge N \). For such \( m, n \),
 \[
-\abs{c \, a_m - c \, a_n} = \abs{c} \, \abs{a_m - a_n} < \abs{c} \cdot \frac{\varepsilon}{\abs{c}} = \varepsilon ,
+\abs{c \, a_m - c \, a_n} = \abs{c (a_m - a_n)} = \abs{c} \, \abs{a_m - a_n} < \abs{c} \cdot \frac{\varepsilon}{\abs{c}} = \varepsilon ,
 \]
-by @prp-absolute-value-ordered-field (b) and @prp-ordered-ring-rules (c).
+by distributivity (F9) and @prp-ring-algebra (c), then @prp-absolute-value-ordered-field (b) and @prp-ordered-ring-rules (c).
 
 *Negatives and differences.* Since \( -a_n = (-1) a_n \) (@prp-ring-algebra (c)), \( (-a_n) \) is the multiple with \( c = -1 \). Then \( a_n - b_n = a_n + (-b_n) \) is the sum of two Cauchy sequences.
 
-(c) By @prp-cauchy-bounded-ordered-field, fix \( A, B \in F_{>0} \) with \( \abs{a_n} \le A \) and \( \abs{b_n} \le B \) for every \( n \in \nN \); they depend on the two sequences only. Now let \( \varepsilon \in F_{>0} \). Then \( \varepsilon/(2A) \) and \( \varepsilon/(2B) \) lie in \( F_{>0} \), so there are \( N_1 \) with \( \abs{b_n - b_m} < \varepsilon/(2A) \) for all \( m, n \ge N_1 \), and \( N_2 \) with \( \abs{a_n - a_m} < \varepsilon/(2B) \) for all \( m, n \ge N_2 \). Let \( N \coloneqq \max\{N_1, N_2\} \), and let \( m, n \ge N \). Expanding the right side shows
+(c) By @prp-cauchy-bounded-ordered-field, fix \( A, B \in F_{>0} \) with \( \abs{a_n} \le A \) and \( \abs{b_n} \le B \) for every \( n \in \nN \); they depend on the two sequences only. Now let \( \varepsilon \in F_{>0} \). Then \( \varepsilon/(2A) \) and \( \varepsilon/(2B) \) lie in \( F_{>0} \) (@prp-ordered-field-halves (b), (O4), @prp-reciprocal-order (a)), so there are \( N_1 \) with \( \abs{b_n - b_m} < \varepsilon/(2A) \) for all \( m, n \ge N_1 \), and \( N_2 \) with \( \abs{a_n - a_m} < \varepsilon/(2B) \) for all \( m, n \ge N_2 \). Let \( N \coloneqq \max\{N_1, N_2\} \), depending on \( \varepsilon \), \( A \), \( B \), and let \( m, n \ge N \). Expanding the right side shows
 \[
 a_n b_n - a_m b_m = a_n (b_n - b_m) + b_m (a_n - a_m) .
 \]
@@ -165,7 +165,7 @@ By the triangle inequality and \( \abs{xy} = \abs{x}\abs{y} \) (@prp-absolute-va
 &< A \cdot \frac{\varepsilon}{2A} + B \cdot \frac{\varepsilon}{2B} = \varepsilon ,
 \end{aligned}
 \]
-where the strict step multiplies by \( A > 0 \) and \( B > 0 \) (@prp-ordered-ring-rules (c)) and adds (@prp-ordered-ring-rules (b)). So \( (a_n b_n) \) is Cauchy.
+where the strict step multiplies by \( A > 0 \) and \( B > 0 \) (@prp-ordered-ring-rules (c)) and adds (@prp-ordered-ring-rules (b)); the equality uses \( A \cdot \varepsilon/(2A) = \varepsilon/2 \) (@lem-field-fraction-rules (a), (F5)–(F8)), likewise for \( B \), and @prp-ordered-field-halves (b). So \( (a_n b_n) \) is Cauchy.
 :::
 
 The order of choices in (c) is the whole proof: \( A \) and \( B \) are chosen before \( \varepsilon \), from the sequences alone, so that \( \varepsilon/(2A) \) is one fixed tolerance. Exercise C3 shows what goes wrong when the bound is skipped.
@@ -201,7 +201,7 @@ The obvious attempt reads this as "\( \abs{a_n} \ge \varepsilon \) for all large
 ::: {.proof}
 Since \( (a_n) \) is not null, the negation of @def-null-sequence-ordered-field holds. Moving \( \neg \) inward by @fd1:prp-bounded-quantifier-negation (a), (b), @fd1:prp-quantifier-negation (a) and @fd1:prp-negated-implication, and reading \( \neg(\abs{a_n - 0} < \varepsilon) \) as \( \abs{a_n} \ge \varepsilon \) by (O1), it says: there is \( \varepsilon \in F_{>0} \) such that for every \( N \in \nN \) some \( n \ge N \) has \( \abs{a_n} \ge \varepsilon \). Fix such an \( \varepsilon \).
 
-By @prp-ordered-field-halves (b), \( \varepsilon/2 \in F_{>0} \). Since \( (a_n) \) is Cauchy, there is \( N_0 \in \nN \) with
+By @prp-ordered-field-halves (b), \( \varepsilon/2 \in F_{>0} \). Since \( (a_n) \) is Cauchy, there is \( N_0 \in \nN \) (depending only on the sequence, through \( \varepsilon \)) with
 \[
 \abs{a_m - a_n} < \frac{\varepsilon}{2} \quad \text{for all } m, n \ge N_0 .
 \]
@@ -213,7 +213,7 @@ Let \( n \ge N_0 \). Since both \( n \) and \( n_0 \) are \( \ge N_0 \), \( \abs
 
 *Case 2: \( a_{n_0} \le -\varepsilon \).* Adding \( a_{n_0} \) to the right inequality, \( a_n < a_{n_0} + \varepsilon/2 \le -\varepsilon + \varepsilon/2 = -\varepsilon/2 \).
 
-Let \( c \coloneqq \varepsilon/2 \) and \( N \coloneqq N_0 \). In Case 1, \( a_n \ge c \) for every \( n \ge N \); in Case 2, \( a_n \le -c \) for every \( n \ge N \).
+Let \( c \coloneqq \varepsilon/2 \) and \( N \coloneqq N_0 \); both depend only on \( (a_n) \). In Case 1, \( a_n \ge c \) for every \( n \ge N \); in Case 2, \( a_n \le -c \) for every \( n \ge N \).
 
 Finally, both alternatives cannot hold, even with different constants and thresholds: if \( a_n \ge c \) for \( n \ge N \) and \( a_n \le -c' \) for \( n \ge N' \), with \( c, c' \in F_{>0} \), then \( n \coloneqq \max\{N, N'\} \) gives \( 0 < c \le a_n \le -c' < 0 \), against (O1). This proves the theorem.
 :::
@@ -236,7 +236,7 @@ Let \( (a_n) \) and \( (b_n) \) be sequences in \( F \) such that \( (a_n - b_n)
 :::
 
 ::: {.proof}
-Since \( c/2 \in F_{>0} \) (@prp-ordered-field-halves (b)) and \( (a_n - b_n) \) is null, there is \( N_1 \) with \( \abs{a_n - b_n} < c/2 \) for every \( n \ge N_1 \). Let \( N' \coloneqq \max\{N, N_1\} \) and \( n \ge N' \). Then \( a_n - b_n < c/2 \) (@prp-absolute-value-ordered-field (c)), so
+Since \( c/2 \in F_{>0} \) (@prp-ordered-field-halves (b)) and \( (a_n - b_n) \) is null, there is \( N_1 \) (depending on \( c \)) with \( \abs{a_n - b_n} < c/2 \) for every \( n \ge N_1 \). Let \( N' \coloneqq \max\{N, N_1\} \), which depends on \( c \) and \( N \), and \( n \ge N' \). Then \( a_n - b_n < c/2 \) (@prp-absolute-value-ordered-field (c)), so
 \[
 b_n > a_n - \frac{c}{2} \ge c - \frac{c}{2} = \frac{c}{2}
 \]
@@ -264,11 +264,11 @@ For \( n \ge N \), \( \abs{a_n} \ge c > 0 \), so \( a_n \ne 0 \) (@prp-absolute-
 \[
 b_n - b_m = \frac{1}{a_n} - \frac{1}{a_m} = \frac{a_m - a_n}{a_n a_m} .
 \]
-By @prp-absolute-value-ordered-field (b), \( \abs{b_n - b_m} = \abs{a_m - a_n} \cdot \bigl(1/(\abs{a_n} \, \abs{a_m})\bigr) \). From \( 0 < c \le \abs{a_n} \) and \( 0 < c \le \abs{a_m} \), @prp-ordered-field-halves (d) gives \( c^2 \le \abs{a_n} \, \abs{a_m} \), and then @prp-ordered-field-halves (c) gives \( 1/(\abs{a_n} \, \abs{a_m}) \le 1/c^2 \). Hence, multiplying by \( \abs{a_m - a_n} \ge 0 \),
+By @prp-absolute-value-ordered-field (b), \( \abs{b_n - b_m} = \abs{a_m - a_n} \cdot \bigl(1/(\abs{a_n} \, \abs{a_m})\bigr) \). From \( 0 < c \le \abs{a_n} \) and \( 0 < c \le \abs{a_m} \), @prp-ordered-field-halves (d) gives \( c^2 \le \abs{a_n} \, \abs{a_m} \), and then @prp-ordered-field-halves (c) gives \( 1/(\abs{a_n} \, \abs{a_m}) \le 1/c^2 \). As \( 1/(\abs{a_n} \, \abs{a_m}) > 0 \) (@prp-reciprocal-order (a)), @prp-ordered-field-halves (d) with \( 0 \le \abs{a_m - a_n} \le \abs{a_m - a_n} \) gives
 \[
 \abs{b_n - b_m} \le \frac{\abs{a_m - a_n}}{c^2} \quad \text{for all } m, n \ge N .
 \]
-Now let \( \varepsilon \in F_{>0} \). Then \( c^2 \varepsilon \in F_{>0} \) by (O4), so there is \( N_1 \) with \( \abs{a_m - a_n} < c^2 \varepsilon \) for all \( m, n \ge N_1 \). Let \( N' \coloneqq \max\{N, N_1\} \). For \( m, n \ge N' \), multiplying by \( 1/c^2 > 0 \) (@prp-reciprocal-order (a), @prp-ordered-ring-rules (c)),
+Now let \( \varepsilon \in F_{>0} \). Then \( c^2 \varepsilon \in F_{>0} \) by (O4), so there is \( N_1 \) (depending on \( \varepsilon \) and \( c \)) with \( \abs{a_m - a_n} < c^2 \varepsilon \) for all \( m, n \ge N_1 \). Let \( N' \coloneqq \max\{N, N_1\} \). For \( m, n \ge N' \), multiplying by \( 1/c^2 > 0 \) (@prp-reciprocal-order (a), @prp-ordered-ring-rules (c)),
 \[
 \abs{b_n - b_m} \le \frac{\abs{a_m - a_n}}{c^2} < \frac{c^2 \varepsilon}{c^2} = \varepsilon .
 \]
@@ -286,7 +286,7 @@ The commonest wrong proof that a sequence is Cauchy looks only at neighboring te
 :::
 
 ::: {#exm-consecutive-differences-not-cauchy}
-[Shrinking Steps, Unbounded Terms]
+[Shrinking Steps, Terms That Do Not Settle]
 
 Here is an argument for the false claim in the warning.
 
@@ -318,7 +318,7 @@ Taking \( k = n \) gives \( H_{2n} - H_n \ge n/(2n) = 1/2 \). (Directly: each of
 *The failing line.* "Each of them is smaller than \( \varepsilon \) … so \( \abs{a_m - a_n} < \varepsilon \)." A sum of \( m - n \) terms, each of absolute value below \( \varepsilon \), is only below \( (m - n) \varepsilon \) (triangle inequality, @prp-absolute-value-ordered-field (e), applied \( m - n - 1 \) times). The number of summands \( m - n \) is not fixed: \( m \) is chosen **after** \( N \), and the definition allows it to be as far beyond \( n \) as we like. To repair the line one would need each step below \( \varepsilon/(m - n) \), a tolerance that depends on \( m \) and \( n \); no single \( N \) is promised for it. For \( (H_n) \), with \( n = N + 1 \) and \( m = 2n \), the \( n \) steps are each below \( 1/n \le 1 \), and their sum is at least \( 1/2 \).
 :::
 
-The sequence \( (H_n) \) even grows without bound: Exercise B2 of Section 4.6 shows \( H_{2^k} \ge 1 + k/2 \) for every \( k \in \nN \).
+Section 4.6 goes further: its Exercise B2 shows \( H_{2^k} \ge 1 + k/2 \) for every \( k \in \nN \), so \( (H_n) \) even grows without bound.
 
 ## Exercises
 
@@ -423,7 +423,7 @@ Here is the beginning of a proof. *Name the move, then complete it.*
 ::: {.solution}
 *The move* is **split \( \varepsilon \)**, now into three parts, one for each term on the right: two come from the null difference, one from the Cauchy condition.
 
-*Completion.* Let \( 3 \coloneqq 1 + 1 + 1 = 3 \cdot 1_F \); then \( 3 > 0 \) (@prp-naturals-in-ordered-field (b)), so \( \varepsilon/3 \in F_{>0} \) (@prp-reciprocal-order (a), (O4)), and \( \varepsilon/3 + \varepsilon/3 + \varepsilon/3 = 3 \cdot (\varepsilon/3) = \varepsilon \) by (F9) and (F7). Since \( (a_n - b_n) \) is null, choose \( N_1 \) with \( \abs{a_n - b_n} < \varepsilon/3 \) for every \( n \ge N_1 \). Since \( (a_n) \) is Cauchy, choose \( N_2 \) with \( \abs{a_n - a_m} < \varepsilon/3 \) for all \( m, n \ge N_2 \). Let \( N \coloneqq \max\{N_1, N_2\} \), which depends only on \( \varepsilon \). For \( m, n \ge N \), using \( \abs{b_n - a_n} = \abs{a_n - b_n} \) (@prp-absolute-value-ordered-field (b)),
+*Completion.* Let \( 3 \coloneqq 1 + 1 + 1 = 3 \cdot 1_F \); then \( 3 > 0 \) (@prp-naturals-in-ordered-field (b)), so \( \varepsilon/3 \in F_{>0} \) (@prp-reciprocal-order (a), (O4)), and \( \varepsilon/3 + \varepsilon/3 + \varepsilon/3 = 3 \cdot (\varepsilon/3) = \varepsilon \): by (F5)–(F9), with \( 3 \ne 0 \). Since \( (a_n - b_n) \) is null, choose \( N_1 \) with \( \abs{a_n - b_n} < \varepsilon/3 \) for every \( n \ge N_1 \). Since \( (a_n) \) is Cauchy, choose \( N_2 \) with \( \abs{a_n - a_m} < \varepsilon/3 \) for all \( m, n \ge N_2 \). Let \( N \coloneqq \max\{N_1, N_2\} \), which depends only on \( \varepsilon \). For \( m, n \ge N \), using \( \abs{b_n - a_n} = \abs{a_n - b_n} \) (@prp-absolute-value-ordered-field (b)),
 \[
 \abs{b_n - b_m} < \frac{\varepsilon}{3} + \frac{\varepsilon}{3} + \frac{\varepsilon}{3} = \varepsilon ,
 \]
@@ -451,11 +451,11 @@ Let \( n \ge N_0 \). As \( n, n_0 \ge N_0 \), \( -\varepsilon/2 < a_n - a_{n_0} 
 
 **Marking scheme.** (10 points)
 - 2: negates "null" correctly, with the quantifiers in order, and fixes one \( \varepsilon \).
-- 2: applies the Cauchy condition with a tolerance strictly smaller than \( \varepsilon \) (\( \varepsilon/2 \) or less) to get \( N_0 \).
+- 2: applies the Cauchy condition with a fixed tolerance \( \delta \) such that \( 0 < \delta < \varepsilon \) (for example \( \delta = \varepsilon/2 \)) to get \( N_0 \).
 - 2: obtains \( n_0 \ge N_0 \) with \( \abs{a_{n_0}} \ge \varepsilon \) from the negation applied **at** \( N_0 \).
-- 3: derives the one-signed bound for every \( n \ge N_0 \), in both sign cases.
+- 3: derives the one-signed bound (with \( c = \varepsilon - \delta \)) for every \( n \ge N_0 \), in both sign cases.
 - 1: names \( c \) and \( N \) and concludes.
-Fatal errors (0 for the step): \( n_0 \) chosen before \( N_0 \), or from the negation at a threshold unrelated to \( N_0 \); "\( \abs{a_n} \ge \varepsilon \) for all large \( n \)" asserted from "not null" alone. A complete proof by contradiction (assume neither alternative holds for any \( c \), \( N \), and refute it at \( c = \varepsilon/2 \), \( N = N_0 \)) maps onto the same 2 + 2 + 2 + 3 + 1.
+Fatal errors (0 for the step): \( n_0 \) chosen before \( N_0 \), or from the negation at a threshold unrelated to \( N_0 \); "\( \abs{a_n} \ge \varepsilon \) for all large \( n \)" asserted from "not null" alone. A complete proof by contradiction (assume neither alternative holds for any \( c \), \( N \), and refute it at \( c = \varepsilon - \delta \), \( N = N_0 \)) maps onto the same 2 + 2 + 2 + 3 + 1.
 :::
 
 ::: {#exr-cauchy-sequences-c3}
@@ -473,7 +473,11 @@ Is the conclusion true? Does the argument prove it? If not, name the line that f
 
 *The argument does not prove it.* The failing line is "choose \( N \) such that \( \abs{b_n - b_m} < \varepsilon/(2\abs{a_n}) \) … for all \( m, n \ge N \)". The tolerances \( \varepsilon/(2\abs{a_n}) \) and \( \varepsilon/(2\abs{b_m}) \) depend on \( n \) and \( m \), which are introduced **after** \( N \). The definition of Cauchy supplies a threshold for one fixed tolerance \( \varepsilon' \in F_{>0} \), named before the threshold; here the threshold is asked to serve a tolerance that changes with the very indices it controls. This is a witness depending on variables introduced later, entry (N2) of @fd1:exm-not-allowed-catalogue.
 
-*A counterexample to the step.* Take \( a_n = 0 \) for every \( n \), a Cauchy sequence. Then \( \varepsilon/(2\abs{a_n}) \) is not even defined, so the line cannot be carried out. Even when every \( a_n \ne 0 \), the line needs the tolerances \( \varepsilon/(2\abs{a_n}) \) to stay above a fixed positive element, which it never establishes.
+*A counterexample to the step.* The step gets one \( N \) for all the tolerances \( \varepsilon/(2\abs{a_n}) \) from their being positive. In \( \nQ \) take the Cauchy sequence \( b_n = 1/(n + 1) \), the never-zero (but unbounded) \( a_n = n + 1 \), and \( \varepsilon = 1 \). For any \( N \), \( n = N \) and \( m = 2N + 1 \) give
+\[
+\abs{b_n - b_m} = \frac{1}{N + 1} - \frac{1}{2N + 2} = \frac{1}{2(N + 1)} = \frac{\varepsilon}{2\abs{a_n}} ,
+\]
+which is not smaller: no \( N \) works. Inside the exercise \( (a_n) \) is Cauchy, hence bounded, but the argument never uses that; the repair does.
 
 *Repair.* Fix bounds first: by @prp-cauchy-bounded-ordered-field, choose \( A, B \in F_{>0} \) with \( \abs{a_n} \le A \) and \( \abs{b_n} \le B \) for every \( n \), before \( \varepsilon \) is named. Then the fixed tolerances \( \varepsilon/(2A) \le \varepsilon/(2\abs{a_n}) \) (when \( a_n \ne 0 \)) and \( \varepsilon/(2B) \) give thresholds \( N_1 \), \( N_2 \), and \( N \coloneqq \max\{N_1, N_2\} \) works, as in the proof of @thm-cauchy-algebra-ordered-field (c).
 :::
@@ -484,16 +488,19 @@ def-cauchy-sequence-ordered-field (example): two elements of (0, c) differ by le
 def-cauchy-sequence-ordered-field (example): for e = 1/100, N = 101 works for 1/(n + 1) | inline arithmetic; verify/ch04/def-cauchy-sequence-ordered-field.py
 def-cauchy-sequence-ordered-field (claim): swapped quantifiers force a_m = a_n for m, n >= N | argument of thm-limit-unique-ordered-field (cited); inline
 def-cauchy-sequence-ordered-field (claim): tail change extends to Cauchy | inline, thresholds max{N, N_0}
+def-cauchy-sequence-ordered-field (claim): non-example a_{n+2} = a_n | inline
 prp-cauchy-bounded-ordered-field (proof): finite maximum of elements of F | fd2:prp-finite-max with F2.2's remark that its proof works in any totally ordered set (F2.2 §06), cited as in prp-convergent-bounded-ordered-field
 prp-cauchy-bounded-ordered-field (proof): 1 > 0 in F | prp-ordered-ring-rules (e), cited
 thm-cauchy-algebra-ordered-field (proof): identity a_n b_n - a_m b_m = a_n (b_n - b_m) + b_m (a_n - a_m) | prp-ring-algebra (field axioms); verify/ch04/thm-cauchy-algebra-ordered-field.py
 thm-cauchy-algebra-ordered-field (proof): -a = (-1) a | prp-ring-algebra (c), cited
+thm-cauchy-algebra-ordered-field (proof): c(x - y) = cx - cy; e/(2A) > 0; A * e/(2A) = e/2 | (F5)-(F9), prp-ring-algebra (c), lem-field-fraction-rules (a), prp-reciprocal-order (a), cited
 thm-cauchy-algebra-ordered-field (proof): a constant sequence converges to its value | exm-first-sequences-ordered-field, cited
 thm-cauchy-not-null-sign (proof): |a_n - 0| = |a_n| (a - 0 = a) | (F3), (F4) with -0 = 0; inline
 thm-cauchy-not-null-sign (proof): e - e/2 = e/2 | prp-ordered-field-halves (b), cited
 thm-cauchy-not-null-sign (claim): |(-1)^n| = 1 | induction with prp-absolute-value-ordered-field (b); inline
 thm-cauchy-not-null-sign (claim): in Q, some n >= N has 1/(n + 1) < c | cor-rationals-archimedean-epsilon, cited
 prp-cauchy-reciprocal-ordered-field (proof): 1/b - 1/d = (d - b)/(bd) | lem-field-fraction-rules (c), cited; verify/ch04/prp-cauchy-reciprocal-ordered-field.py
+prp-cauchy-reciprocal-ordered-field (proof): non-strict product bound | prp-ordered-field-halves (d), cited
 prp-cauchy-reciprocal-ordered-field (claim): n + 1 is unbounded in Q | thm-rationals-archimedean, cited
 exm-consecutive-differences-not-cauchy (example): H defined by recursion | fd2:thm-recursion read on omega (thm-omega-recursion, cor-omega-identification (b)), cited
 exm-consecutive-differences-not-cauchy (example): H_{n+k} - H_n >= k/(n + k) by induction on k; first terms 0, 1, 3/2, 11/6, 25/12 | fd1:ax-induction via cor-omega-identification (b), cited; verify/ch04/exm-consecutive-differences-not-cauchy.py
@@ -502,6 +509,7 @@ exr-cauchy-sequences-a1 (solution): least N_0 = 3 for tolerance 1/4; a_3 = -3/4;
 exr-cauchy-sequences-b1 (solution): (k + 1)/(k + 2) = 1 - 1/(k + 2) | field arithmetic; verify/ch04/exr-cauchy-sequences-b1.py
 exr-cauchy-sequences-b1 (solution): Q(t) remark: (n * 1) bounded by t | exm-rational-function-field (school fact; formal polynomials in F4.4); remark only, nothing depends on it
 exr-cauchy-sequences-b3 (solution): least N_0 = 1 for tolerance 1/2; c = 1/2, N = 1 | verify/ch04/exr-cauchy-sequences-b3.py
-exr-cauchy-sequences-c1 (solution): 3 * 1_F > 0 and e/3 + e/3 + e/3 = e | prp-naturals-in-ordered-field (b), (F9), (F7); inline
+exr-cauchy-sequences-c1 (solution): 3 * 1_F > 0 and e/3 + e/3 + e/3 = e | prp-naturals-in-ordered-field (b), (F5)-(F9); inline
 exr-cauchy-sequences-c3 (solution): catalogue entry (N2) | fd1:exm-not-allowed-catalogue, cited
+exr-cauchy-sequences-c3 (solution): counterexample identity | verify/ch04/exr-cauchy-sequences-c3.py
 -->

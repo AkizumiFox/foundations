@@ -27,7 +27,7 @@ The subscript in \( 1_F \) is there because two fields will often be in play, \(
 
 **Examples.** \( 1 \cdot 1_F = 0 \cdot 1_F + 1_F = 0 + 1_F = 1_F \), and \( 2 \cdot 1_F = 1_F + 1_F \), the element written \( 2 \) in Section 4.1. Also \( x^1 = 1_F x = x \) and \( x^2 = x x \), which is the square of @prp-ring-algebra (d). The degenerate case: \( 0 \cdot 1_F = 0 \), and \( 0^0 = 1_F \) by the first equation, a convention the recursion imposes and nothing below questions.
 
-**A non-example by minimal change.** Keep the field axioms and drop the order. In the two-element field of @exm-finite-ring-not-orderable, the same recursion gives \( 2 \cdot 1 = 1 + 1 = 0 = 0 \cdot 1 \). So the map \( n \mapsto n \cdot 1 \) is not injective there, and the elements \( 0 \cdot 1, 1 \cdot 1, 2 \cdot 1, \dots \) are not a copy of \( \nN \). The next proposition shows that the order axioms are exactly what prevents this.
+**A non-example by minimal change.** Keep the field axioms and drop the order. In the two-element field of @exm-finite-ring-not-orderable, the same recursion gives \( 2 \cdot 1 = 1 + 1 = 0 = 0 \cdot 1 \). So the map \( n \mapsto n \cdot 1 \) is not injective there, and the elements \( 0 \cdot 1, 1 \cdot 1, 2 \cdot 1, \dots \) are not a copy of \( \nN \). The next proposition shows that the order axioms prevent this.
 
 ::: {#prp-naturals-in-ordered-field}
 [The Natural Numbers inside an Ordered Field]
@@ -36,14 +36,14 @@ Let \( F \) be an ordered field, and let \( m, n, k \in \nN \).
 
 ::: {.enumerate options="label=(\alph*)"}
 1. \( (m + n) \cdot 1_F = m \cdot 1_F + n \cdot 1_F \) and \( (mn) \cdot 1_F = (m \cdot 1_F)(n \cdot 1_F) \).
-2. If \( m < n \), then \( m \cdot 1_F < n \cdot 1_F \). Hence \( n \mapsto n \cdot 1_F \) is injective, and \( n \cdot 1_F \ge 1_F \) whenever \( n \ge 1 \).
+2. If \( m < n \), then \( m \cdot 1_F < n \cdot 1_F \). Hence \( n \mapsto n \cdot 1_F \) is injective, and \( n \cdot 1_F \ge 1_F > 0 \) whenever \( n \ge 1 \).
 3. \( (n^k) \cdot 1_F = (n \cdot 1_F)^k \). In particular \( (2^k) \cdot 1_F = (2 \cdot 1_F)^k \), the \( k \)-th power in \( F \) of \( 2 = 1 + 1 \).
 4. In \( \nQ \), \( n \cdot 1_{\nQ} = j(\iota(n)) \), the image of \( n \) under the embeddings @prp-naturals-embed-integers and @prp-integers-embed-rationals. With the identifications \( \nN \subseteq \nZ \subseteq \nQ \), this says \( n \cdot 1_{\nQ} = n \).
 :::
 :::
 
 ::: {.idea}
-Each part is an induction that follows the recursion defining the left side. The product law in (a) is the only one with content: multiplying by \( n + 1 \) is multiplying by \( n \) and adding one more copy, and the sum law and distributivity turn that into the same step on the right. Part (d) compares two functions on \( \nN \) that satisfy the same recursion, and the uniqueness half of the recursion theorem makes them equal.
+The sum law in (a) and part (b) are rules for multiples (@prp-ordered-ring-rules (h)); the product law and (c) are inductions following the recursion defining the left side. The product law is the only step with content: multiplying by \( n + 1 \) is multiplying by \( n \) and adding one more copy, and the sum law and distributivity turn that into the same step on the right. Part (d) compares two functions on \( \nN \) that satisfy the same recursion, and the uniqueness half of the recursion theorem makes them equal.
 :::
 
 ::: {.proof}
@@ -56,7 +56,7 @@ Each part is an induction that follows the recursion defining the left side. The
 \]
 by the sum law, \( P(n) \) with (F7), (F9), and the recursion of (a) in @def-naturals-in-ordered-field. So \( P(n + 1) \) holds, and \( P(n) \) holds for every \( n \).
 
-(b) Since \( 1_F \ne 0 \) in a field, @prp-ordered-ring-rules (h) gives \( m \cdot 1_F < n \cdot 1_F \) whenever \( m < n \). If \( m \ne n \), then \( m < n \) or \( n < m \) by trichotomy in \( \nN \) (@thm-omega-order (a)), so \( m \cdot 1_F \ne n \cdot 1_F \) by (O1): the map is injective. Finally \( 1 \cdot 1_F = 1_F \) (the examples above), and for \( n > 1 \), \( 1_F = 1 \cdot 1_F < n \cdot 1_F \); so \( n \cdot 1_F \ge 1_F \) for every \( n \ge 1 \).
+(b) Since \( 1_F \ne 0 \) in a field, @prp-ordered-ring-rules (h) gives \( m \cdot 1_F < n \cdot 1_F \) whenever \( m < n \). If \( m \ne n \), then \( m < n \) or \( n < m \) by trichotomy in \( \nN \) (@thm-omega-order (a)), so \( m \cdot 1_F \ne n \cdot 1_F \) by (O1): the map is injective. Finally \( 1 \cdot 1_F = 1_F \) (the examples above), and for \( n > 1 \), \( 1_F = 1 \cdot 1_F < n \cdot 1_F \); so \( n \cdot 1_F \ge 1_F \) for every \( n \ge 1 \), and \( 1_F > 0 \) by @prp-ordered-ring-rules (e).
 
 (c) Fix \( n \) and induct on \( k \). *Base:* \( n^0 = 1 \), so \( (n^0) \cdot 1_F = 1 \cdot 1_F = 1_F = (n \cdot 1_F)^0 \). *Step:* if \( (n^k) \cdot 1_F = (n \cdot 1_F)^k \), then, since \( n^{k+1} = n^k n \),
 \[
@@ -184,7 +184,7 @@ In words: whatever element of \( F \) we pick, some natural number, read in \( F
 
 **Why the name.** Archimedes used, as an axiom about lengths, that a smaller length laid off often enough exceeds any larger one. That is Exercise B1: in an Archimedean field, for \( y > 0 \) and any \( x \), some multiple \( (n \cdot 1_F) y \) exceeds \( x \). The definition is the case \( y = 1_F \).
 
-The form in which the next section uses the property is about reciprocals, as in @cor-rationals-archimedean-epsilon, now in an arbitrary field.
+The form in which the next section uses the property is about reciprocals, as in @cor-rationals-archimedean-epsilon, now in an arbitrary Archimedean ordered field.
 
 ::: {#prp-archimedean-reciprocal}
 [Small Reciprocals in an Archimedean Field]
@@ -217,7 +217,7 @@ For \( n \in \nZ_{>0} \), \( 1/n < 7/500 \) if and only if \( 500 < 7n \). Since
 
 ## Integer part and density
 
-In \( \nQ \), the Archimedean property gave every rational an integer part (@prp-rational-integer-part). The proof used only Archimedes, applied to \( x \) and to \( -x \), and the least-element property of \( \nZ \). So it runs in any Archimedean field, with \( \iota_F \) carrying the integers into \( F \).
+In \( \nQ \), the Archimedean property gave every rational an integer part (@prp-rational-integer-part). About \( \nQ \) the proof used only Archimedes, applied to \( x \) and to \( -x \); the rest (least elements and discreteness of \( \nZ \), totality of the order) holds in any ordered field. So it runs in any Archimedean field, with \( \iota_F \) carrying the integers into \( F \).
 
 ::: {#prp-integer-part-ordered-field}
 [Integer Part in an Archimedean Field]
@@ -266,7 +266,7 @@ c x < \iota_F(m + 1) = \iota_F(m) + 1_F \le c x + 1_F < c y ,
 by @thm-rationals-embed-ordered-field and @prp-ordered-ring-rules (b). Multiplying by \( c^{-1} > 0 \) (@prp-reciprocal-order (a), @prp-ordered-ring-rules (c)) gives \( x < \iota_F(m + 1) c^{-1} < y \). Let \( q \coloneqq (m + 1)/n \in \nQ \). Since \( c = \iota_F(n) \) and \( \iota_F \) respects products, \( \iota_F(q)\, c = \iota_F(m + 1) \), so \( \iota_F(q) = \iota_F(m + 1) c^{-1} \), and \( x < \iota_F(q) < y \).
 :::
 
-Applied again, the theorem shows that an interval of an Archimedean field contains infinitely many rationals (Exercise C1). Chapters 5 and 6 use the theorem with \( F \) a field of real numbers, to approximate every real number by rationals.
+Applied again, the theorem shows that an interval of an Archimedean field contains infinitely many rationals (Exercise C1). Chapter 6 uses the theorem with \( F \) a field of real numbers; Chapter 5 uses it only in an exercise.
 
 ## A field that is not Archimedean
 
@@ -275,7 +275,7 @@ Section 2.5 proved the Archimedean property of \( \nQ \) from the construction o
 ::: {#exm-rational-function-field}
 [A Non-Archimedean Ordered Field]
 
-Let \( \nQ(t) \) be the set of quotients \( p/q \) of polynomials \( p, q \) in an indeterminate \( t \) with rational coefficients, \( q \ne 0 \), where \( p/q = r/s \) means \( ps = rq \), with the usual sum and product of fractions. Call \( p/q \) **positive** if the leading coefficients of \( p \) and \( q \) have the same sign. With this positive set, \( \nQ(t) \) is an ordered field; we state this and do not verify it. Show that \( t > n \cdot 1 \) for every \( n \in \nN \), so that \( \nQ(t) \) is **not** Archimedean, and that \( 0 < 1/t < 1/(n \cdot 1) \) for every \( n \ge 1 \).
+Let \( \nQ(t) \) be the set of quotients \( p/q \) of polynomials \( p, q \) in an indeterminate \( t \) with rational coefficients, \( q \ne 0 \), where \( p/q = r/s \) means \( ps = rq \), with the usual sum and product of fractions. Call \( p/q \) with \( p \ne 0 \) **positive** if the leading coefficients of \( p \) and \( q \) have the same sign. With this positive set, \( \nQ(t) \) is an ordered field; we state this and do not verify it. Show that \( t > n \cdot 1 \) for every \( n \in \nN \), so that \( \nQ(t) \) is **not** Archimedean, and that \( 0 < 1/t < 1/(n \cdot 1) \) for every \( n \ge 1 \).
 :::
 
 ::: {.solution}
@@ -292,7 +292,7 @@ whose numerator has leading coefficient \( 1 \) and whose denominator \( n t \) 
 The Archimedean property does not follow from the ordered-field axioms: \( \nQ(t) \) satisfies (F1)–(F9) and (O1)–(O4) and fails it. So in a general ordered field the move "take \( \varepsilon = 1/n \)" does not reach every \( \varepsilon \): in \( \nQ(t) \), the tolerance \( \varepsilon = 1/t \) is below every \( 1/n \). Each later use of "\( 1/n \) eventually drops below \( \varepsilon \)" must name the Archimedean property.
 :::
 
-The density theorem fails in \( \nQ(t) \) too, so its hypothesis is needed. There \( 0 < 1/t \), and no rational lies strictly between them. Suppose \( q \in \nQ \) had \( 0 < \iota(q) < 1/t \), with \( \iota \) the embedding of @thm-rationals-embed-ordered-field for \( \nQ(t) \). Then \( q > 0 \), because \( \iota \) reflects order. By @prp-reciprocal-order (b) and @lem-field-fraction-rules (a), \( t = 1/(1/t) < 1/\iota(q) = \iota(1/q) \). By @thm-rationals-archimedean, \( 1/q < n \) for some \( n \in \nN \), so \( \iota(1/q) < \iota(n) = n \cdot 1 \), and \( t < n \cdot 1 \), against the example.
+The density theorem fails in \( \nQ(t) \) too, so its hypothesis is needed. There \( 0 < 1/t \), and no rational lies strictly between them. Suppose \( q \in \nQ \) had \( 0 < \iota_{\nQ(t)}(q) < 1/t \), with \( \iota_{\nQ(t)} \) the embedding of @thm-rationals-embed-ordered-field. Then \( q > 0 \), because \( \iota_{\nQ(t)} \) reflects order. By @prp-reciprocal-order (b) and @lem-field-fraction-rules (a), \( t = 1/(1/t) < 1/\iota_{\nQ(t)}(q) = \iota_{\nQ(t)}(1/q) \). By @thm-rationals-archimedean, \( 1/q < n \) for some \( n \in \nN \), so \( \iota_{\nQ(t)}(1/q) < \iota_{\nQ(t)}(n) = n \cdot 1 \), and \( t < n \cdot 1 \), against the example.
 
 ## Exercises
 
@@ -344,7 +344,7 @@ Since \( y > 0 \), \( y^{-1} > 0 \) (@prp-reciprocal-order (a)). By @def-archime
 :::
 
 ::: {.solution}
-(a) Suppose, for \( \rulename{\neg I} \) (@fd1:def-rules-negation), that \( x \ne 0 \). Then \( x > 0 \), since \( x \ge 0 \). By @prp-archimedean-reciprocal with \( \varepsilon \coloneqq x \), there is \( N \in \nZ_{>0} \) with \( 1/(N \cdot 1_F) < x \). The hypothesis with \( n = N \ge 1 \) gives \( x < 1/(N \cdot 1_F) \). By (O2), \( x < x \), against (O1). So \( x = 0 \).
+(a) Suppose, for \( \rulename{RAA} \) (@fd1:def-rule-raa), that \( x \ne 0 \). Then \( x > 0 \), since \( x \ge 0 \). By @prp-archimedean-reciprocal with \( \varepsilon \coloneqq x \), there is \( N \in \nZ_{>0} \) with \( 1/(N \cdot 1_F) < x \). The hypothesis with \( n = N \ge 1 \) gives \( x < 1/(N \cdot 1_F) \). By (O2), \( x < x \), against (O1). So \( x = 0 \).
 
 (b) \( x = 1/t \): by @exm-rational-function-field, \( 0 < 1/t < 1/(n \cdot 1) \) for every \( n \ge 1 \), and \( 1/t \ne 0 \). So part (a) fails without the Archimedean hypothesis.
 :::
@@ -412,15 +412,16 @@ s_k \coloneqq r + \frac{s - r}{k + 1} \in \nQ .
 \]
 Since \( k + 1 > 1 > 0 \), \( 0 < 1/(k + 1) < 1 \) (@prp-reciprocal-order), so \( 0 < (s - r)/(k + 1) < s - r \) (@prp-ordered-ring-rules (c)), and \( r < s_k < s \) by (O3). As \( \iota_F \) is strictly increasing, \( x < \iota_F(r) < \iota_F(s_k) < \iota_F(s) < y \), so \( s_k \in S \). If \( k < l \), then \( 1/(l + 1) < 1/(k + 1) \) (@prp-reciprocal-order (b), @prp-naturals-in-ordered-field (b)), so \( s_l < s_k \): the map \( k \mapsto s_k \) is injective. Suppose \( S \) were finite, with \( m \) elements for some \( m \in \nN \) (@fd2:def-finite). The map \( \{1, \dots, m + 1\} \to S \), \( k \mapsto s_k \), would be injective, against @fd2:cor-pigeonhole-finite-sets (a). So \( S \) is infinite.
 
-(b) Let \( c \coloneqq n \cdot 1_F > 0 \) and let \( m \) be the integer part of \( c x \) (@prp-integer-part-ordered-field): \( \iota_F(m) \le c x < \iota_F(m + 1) \). Multiplying by \( c^{-1} > 0 \) (@prp-ordered-ring-rules (c), with equality allowed on the left) gives \( \iota_F(m) c^{-1} \le x < \iota_F(m + 1) c^{-1} \). Let \( q \coloneqq m/n \). Since \( c = \iota_F(n) \) and \( \iota_F \) respects products, \( \iota_F(m) c^{-1} = \iota_F(m/n) = \iota_F(q) \) and \( \iota_F(m + 1) c^{-1} = \iota_F\bigl((m + 1)/n\bigr) = \iota_F(q + 1/n) \), using \( (m + 1)/n = m/n + 1/n \) (@lem-field-fraction-rules (b) in \( \nQ \)). So \( \iota_F(q) \le x < \iota_F(q + 1/n) \).
+(b) Let \( c \coloneqq n \cdot 1_F > 0 \) (@prp-naturals-in-ordered-field (b)) and let \( m \) be the integer part of \( c x \) (@prp-integer-part-ordered-field): \( \iota_F(m) \le c x < \iota_F(m + 1) \). Multiplying by \( c^{-1} > 0 \) (@prp-ordered-ring-rules (c), with equality allowed on the left) gives \( \iota_F(m) c^{-1} \le x < \iota_F(m + 1) c^{-1} \). Let \( q \coloneqq m/n \). Since \( c = \iota_F(n) \) and \( \iota_F \) respects products, \( \iota_F(m) c^{-1} = \iota_F(m/n) = \iota_F(q) \) and \( \iota_F(m + 1) c^{-1} = \iota_F\bigl((m + 1)/n\bigr) = \iota_F(q + 1/n) \), using \( (m + 1)/n = m/n + 1/n \) (@lem-field-fraction-rules (b) in \( \nQ \)). So \( \iota_F(q) \le x < \iota_F(q + 1/n) \).
 
 **Marking scheme.** (10 points)
 - 2: (a) obtains two rationals \( r < s \) inside the interval, by density twice, with \( r < s \) justified (order reflected).
 - 2: (a) exhibits infinitely many distinct rationals between \( r \) and \( s \) (any explicit injective family, or an induction producing one more each time), each checked to lie strictly between.
 - 2: (a) concludes that \( S \) is infinite from an injection, citing a finiteness result (pigeonhole or subsets of finite sets).
+- Second route for (a), same 6 points: 2 for a largest element of a finite non-empty \( S \) (@fd2:prp-finite-max), 2 for density above it, 2 for the contradiction.
 - 2: (b) applies the integer part to \( (n \cdot 1_F) x \).
 - 2: (b) divides by \( n \cdot 1_F > 0 \) and identifies the bounds as \( \iota_F(q) \), \( \iota_F(q + 1/n) \).
-Fatal errors (0 for the step): using density in an arbitrary ordered field (the Archimedean hypothesis must be named); "infinitely many because the construction never stops" with no injection and no finiteness result; dividing by \( n \cdot 1_F \) without its sign.
+Fatal errors (0 for the step): using density in an arbitrary ordered field (the Archimedean hypothesis must be named); "infinitely many because the construction never stops" with no finiteness argument; dividing by \( n \cdot 1_F \) without its sign.
 :::
 
 ::: {#exr-naturals-and-archimedes-c2}
@@ -437,12 +438,12 @@ In \( \nQ(t) \) (@exm-rational-function-field):
 ::: {.solution}
 (a) By @exm-rational-function-field, \( n \cdot 1 < t \) for every \( n \in \nN \), so \( t \) is an upper bound.
 
-(b) The first step: "write \( x = p/q \) with \( p \in \nZ \) and \( q \in \nZ_{>0} \)". The rest of the proof (the case split on the sign of \( p \), discreteness of \( \nZ \), the comparison formula) works for any element of the form \( \iota(p)/\iota(q) \) of an ordered field, with \( \iota = \iota_{\nQ(t)} \). But \( t \) is not of this form. Indeed, \( \iota(p)/\iota(q) = \iota(p/q) \) by @thm-rationals-embed-ordered-field; if \( t = \iota(r) \) with \( r \in \nQ \), then @thm-rationals-archimedean gives \( n \in \nN \) with \( r < n \), so \( t = \iota(r) < \iota(n) = n \cdot 1 \), against (a). So \( t \) is not the image of any rational, and the proof has nothing to start from.
+(b) The first step: "write \( x = p/q \) with \( p \in \nZ \) and \( q \in \nZ_{>0} \)". The rest of the proof (the case split on the sign of \( p \), discreteness of \( \nZ \), the comparison formula) works for any element of the form \( \iota_F(p)/\iota_F(q) \) of an ordered field \( F \), in particular of \( \nQ(t) \). But \( t \) is not of this form. Indeed, \( \iota_{\nQ(t)}(p)/\iota_{\nQ(t)}(q) = \iota_{\nQ(t)}(p/q) \) by @thm-rationals-embed-ordered-field; if \( t = \iota_{\nQ(t)}(r) \) with \( r \in \nQ \), then @thm-rationals-archimedean gives \( n \in \nN \) with \( r < n \), so \( t = \iota_{\nQ(t)}(r) < \iota_{\nQ(t)}(n) = n \cdot 1 \), against (a). So \( t \) is not the image of any rational, and the proof has nothing to start from.
 
 **Marking scheme.** (10 points)
 - 3: (a) exhibits an upper bound and justifies it from the positive set of \( \nQ(t) \).
 - 3: (b) names the representation \( x = p/q \) with integers \( p, q \) as the step that fails.
-- 4: (b) proves that \( t \) is not \( \iota(r) \) for any rational \( r \), using the Archimedean property of \( \nQ \) and that \( \iota \) is strictly increasing.
+- 4: (b) proves that \( t \) is not \( \iota_{\nQ(t)}(r) \) for any rational \( r \), using the Archimedean property of \( \nQ \) and that \( \iota_{\nQ(t)} \) is strictly increasing.
 Fatal errors (0 for the step): naming the comparison formula or discreteness as the failing step (both hold for images of rationals); asserting that \( t \) "is not a fraction" without proof.
 :::
 
@@ -478,6 +479,7 @@ Conversely, let \( x \in P \). Then \( x \ne 0 \) by (P2). If \( x \notin \nQ_{>
 - 2: shows every positive integer is positive for the new order, noting that \( n \cdot 1 \) does not depend on the order.
 - 3: shows every usual-positive \( p/q \) is in \( P \), via inverses and products.
 - 3: shows \( P \subseteq \nQ_{>0} \) by (P2).
+- Route through @thm-rationals-embed-ordered-field for \( F = (\nQ, \prec) \), same 10 points: 4 for \( \iota_F = \mathrm{id} \) by uniqueness (the equations ignore the order), 6 for reading off the order.
 Fatal errors (0 for the step): assuming \( 1 \succ 0 \) without \( 1 \ne 0 \) or a rule; using the usual order's comparison formula to compare elements in the new order.
 :::
 
@@ -486,15 +488,15 @@ def-naturals-in-ordered-field (claim): N-powers n^k are F3.1's (recursion before
 def-naturals-in-ordered-field (example): 0 + 1_F = 1_F | def-commutative-ring-and-field (F1), (F3)
 prp-naturals-in-ordered-field (proof): n + 1 = S(n) and m S(n) = mn + m on omega | def-omega-arithmetic (b), (c) (cited)
 prp-naturals-in-ordered-field (proof): the zero and one of Q are j(0), j(1) | prp-integers-embed-rationals (j(0) = 0, j(1) = 1; cited)
-thm-rationals-embed-ordered-field (proof): naturals are distinct as integers (identification) | prp-naturals-embed-integers (a), injective (cited)
+thm-rationals-embed-ordered-field (proof): naturals are distinct as integers (identification) | prp-naturals-embed-integers (a), injectivity (identification; not cited)
 thm-rationals-embed-ordered-field (proof): (n' + k) - n' = k in Z; -(n + n') = (-n) + (-n') | prp-naturals-embed-integers (a) (iota preserves +), prp-ring-algebra (a) (uniqueness of negatives); inline
-thm-rationals-embed-ordered-field (proof): Z_{>0} is a subset of N, and q >= 1 for q in Z_{>0} | thm-integers-ordered-ring (b), (c) (cited at Step 2 via prp-naturals-in-ordered-field (b); identification)
+thm-rationals-embed-ordered-field (proof): Z_{>0} is a subset of N, and q >= 1 | definition of Z_{>0} (F3.2 §02; identification); thm-omega-order (d) (cited)
 thm-rationals-embed-ordered-field (proof): q s in Z_{>0} for q, s in Z_{>0} | (O4) in Z with thm-integers-ordered-ring (b)
 thm-rationals-embed-ordered-field (proof): p/q = j(p)/j(q), so lem-field-fraction-rules applies in Q | prp-integers-embed-rationals (a) (cited in Step 5)
 prp-integer-part-ordered-field (proof): iota_F(-n') = -iota_F(n') | thm-rationals-embed-ordered-field, Step 5 argument (psi(-x) = -psi(x)), pointed to in the proof
 prp-integer-part-ordered-field (proof): l - 1 < l in Z | (O3) with 0 < 1 (prp-ordered-ring-rules (e)); inline
 thm-rationals-dense-ordered-field (proof): iota_F(m + 1) = iota_F(m) + 1_F | thm-rationals-embed-ordered-field (additive, iota_F(1) = 1_F)
-thm-rationals-dense-ordered-field (claim): Chapters 5 and 6 use it with F a field of real numbers | prose pointer (F3.10, F3.4); nothing here depends on it
+thm-rationals-dense-ordered-field (claim): Chapter 6 uses it; Chapter 5 only in an exercise (F3.10 §04 B1) | prose pointer (F3.10, F3.4); nothing here depends on it
 def-archimedean-ordered-field (claim): the constructed reals of the next chapter are Archimedean | prose pointer (F3.10); nothing here depends on it
 exm-rational-function-field (example): school polynomial algebra (degree, leading coefficient, leading coefficient of a product), Q(t) is an ordered field with the stated positive set, n.1 is the constant polynomial n | school fact; formal polynomials in F4.4 (flagged in the text; nothing in a proof depends on it)
 exm-rational-function-field (claim): density fails in Q(t) (paragraph after the warning) | school facts of the example (as above); otherwise cited
@@ -502,7 +504,7 @@ exr-naturals-and-archimedes-a1 (solution): t + 1 > t, t^2 - n has leading coeffi
 exr-naturals-and-archimedes-b3 (solution): (k + 1) 2 = 2k + 2 and k + 2 <= 2k + 2 in N | thm-omega-arithmetic-laws (cited), prp-omega-order-arithmetic (a)
 exr-naturals-and-archimedes-b3 (solution): 1/6, 64/3, floor 21, 11/32 and the comparisons | verify/ch04/exr-naturals-and-archimedes-b3.py
 exr-naturals-and-archimedes-c1 (solution): {1, ..., m + 1} has m + 1 elements | fd2 def-finite (identity bijection), run on omega by cor-omega-identification
-exr-naturals-and-archimedes-c2 (solution): the rest of the proof of thm-rationals-archimedean works for images iota(p)/iota(q) | inline claim (the proof uses only the representation, discreteness of Z and the comparison formula, as F3.2 remarks after it)
+exr-naturals-and-archimedes-c2 (solution): the rest of the proof of thm-rationals-archimedean works for images iota_F(p)/iota_F(q) | inline claim (the proof uses only the representation, discreteness of Z and the comparison formula, as F3.2 remarks after it)
 exr-naturals-and-archimedes-c3 (solution): n.1 is defined by + alone, independent of the order | def-naturals-in-ordered-field (a) (cited)
 def-archimedean-ordered-field (solution): the Quick check, 355 < 452, 339 < 355, 497 < 500 < 504 | verify/ch04/def-archimedean-ordered-field.py
 -->
