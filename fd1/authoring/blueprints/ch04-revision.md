@@ -1,6 +1,8 @@
 <!-- hand-written -->
 # Revision blueprint: F1.4 Predicate Logic and the Quantifier Rules (fd1 Chapter 4), R4
 
+**S2 passed 2026-10-12 (3 rounds + final revision); frozen.** Two S2a referees per round, three revise/recheck rounds with skeptics, then a final wording correction (word-count provenance) not rechecked.
+
 **What this is.** A **delta** blueprint (stage S1) for revising the released Chapter 4 of *Logic and Proof* so that a first-year reader gets in more easily. It is complete on its own: a drafter executes it with this file, the current `fd1/src/ch04-predicate-logic/`, the original blueprint `fd1/authoring/blueprints/ch04.md` (for anything this file does not change), `authoring/STYLE.md` (§11, §12), `DRAFTING.md` and `NOTATION.md`. The approved pilot `ch01-revision.md` is the model of format and register, and the frozen `ch02-revision.md` and `ch03-revision.md` show how a later chapter applies it; where this file is silent on a convention, do what those files did. All line numbers below are of the **current** files (commit `da6e12e`), written `06:162` for `06-existential-elimination.md` line 162, and so on; `ix` is `index.md`.
 
 **Inputs.** The novice-reader report on Chapter 4 (workflow journal `wf_d5bd0807-139`, result `novice:ch04`), the corpus and classic-texts comparisons as digested in the fd1 revision plan (§2 Chapter 4 rows, §3 Chapter 4 items, §4–§6), the pilot and the two frozen revision blueprints. Reference books were used for teaching technique only (small pictured worlds before infinite domains, a skeleton before the full derivation, drill volume, a cheat sheet after the rules). **Every new example, figure, drill and exercise below is the book's own**; none is taken from any book. The S2 rules recorded in `ch04.md` still bind (no Huth & Ryan exercise lists come back; `exr-existential-elimination-b1` stays off H&R 2.3.9(r)).
@@ -304,7 +306,7 @@ Budgets: **main line** = prose words by `tools/check_structure.py`'s `prose_word
 
 ### 4.3 Section 4.3: Using "For Every": Instantiation (`03-universal-elimination.md`)
 
-**Budget:** main line ≤ 3,250 words (now 3,023; out: the paragraph form of 03:41-47 ~250, 03:49 ~45, 03:187-191 in part ~90, 03:55's last sentence ~20; in: bullets ~60, numbered clauses ~155 (measured after S2 round 2 restored clause 1's main-symbol test), the bound sentence ~30, two new Quick checks ~140, Figure C3's lead and caption ~60, the counter-readings paragraph ~130, the card and table sentences ~40; ≈ 3,235); folds ≤ 200. No Looking-ahead box (the in-chapter pointer to 4.11 sits in item 9).
+**Budget:** main line ≤ 3,250 words (now 3,023; out: the paragraph form of 03:41-47 ~250, 03:49 ~45, 03:187-191 in part ~90, 03:55's last sentence ~20; in: bullets ~60, numbered clauses ~155 (prose_words 121 for the five clauses, 133 with the lead; ~155 kept as a cautious figure), the bound sentence ~30, two new Quick checks ~140, Figure C3's lead and caption ~60, the counter-readings paragraph ~130, the card and table sentences ~40; ≈ 3,235); folds ≤ 200. No Looking-ahead box (the in-chapter pointer to 4.11 sits in item 9).
 
 **Changes, in the file's order.**
 1. 03:3-17 kept (03:9 already reads as Chapter 1's §6 asks; 03:10 `@exm-raa-zero` stays, Chapter 2 keeps it in 2.5).
@@ -924,4 +926,4 @@ Round 2 (all findings applied).
 Round 3 (all findings applied).
 
 - **4.6 Quick check after Figure C6, "the box's last line".** The solution now names the line: the last line of the \( \rulename{\forall I} \) box is line 4, copied from line 3, and both are false when \( x_0 \) names \( 0 \); line 5 inherits the error from line 3 (§4.6 item 6).
-- **4.3 budget after clause 1 grew.** Chose to raise the budget rather than cut: the clause list is measured at ~155 words (not ~110), so 4.3's estimate is ≈ 3,235 and its budget ≤ 3,250. Updated: §4.3's budget line, item 2's figure and the Quick-check density (one per ~1,080); §5's row, the total (≤ 44,850; ~44,450) and the Time figures (core still ≈ 56.5 h, "about 56"; ceilings 44,850 words ≈ 28.0 h, still about 56.7 h; full still ≈ 89.5 h; the honest note's saving 3,680 words ≈ 2.3 h).
+- **4.3 budget after clause 1 grew.** Chose to raise the budget rather than cut: the clause list is estimated at ~155 words (prose_words gives 121) (not ~110), so 4.3's estimate is ≈ 3,235 and its budget ≤ 3,250. Updated: §4.3's budget line, item 2's figure and the Quick-check density (one per ~1,080); §5's row, the total (≤ 44,850; ~44,450) and the Time figures (core still ≈ 56.5 h, "about 56"; ceilings 44,850 words ≈ 28.0 h, still about 56.7 h; full still ≈ 89.5 h; the honest note's saving 3,680 words ≈ 2.3 h).
