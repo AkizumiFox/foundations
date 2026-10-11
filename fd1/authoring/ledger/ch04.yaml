@@ -1137,7 +1137,7 @@ items:
   kind: exr
   file: 03-universal-elimination.md
   line: 438
-  hash: e25de0c06a32
+  hash: b78b404de72e
   verdicts:
   - stage: S5a
     verdict: gap
@@ -4217,7 +4217,7 @@ items:
   kind: exr
   file: 10-uniform-continuity-rule-by-rule.md
   line: 278
-  hash: b01c7c0ea10f
+  hash: c7b3edfdab5a
   verdicts:
   - stage: S5a
     verdict: gap

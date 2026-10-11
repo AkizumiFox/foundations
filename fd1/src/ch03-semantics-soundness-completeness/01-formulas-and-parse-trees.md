@@ -287,7 +287,7 @@ A parse tree is not a truth table. The tree records how a formula is **built**, 
 
 ## Shorthand and official formulas
 
-Nobody wants to write \( (((p \wedge q) \to r) \leftrightarrow (p \to (q \to r))) \). Chapter 1 used conventions that let us drop parentheses (Section 1.1, the four conventions before @def-main-connective), and we keep using them. What changes is their status: they are **not** part of the definition of a formula. A string written with the conventions is **shorthand**, and it stands for exactly one official formula, the one obtained by putting the dropped parentheses back.
+Nobody wants to write \( (((p \wedge q) \to r) \leftrightarrow (p \to (q \to r))) \). Chapter 1 used conventions that let us drop parentheses (Section 1.1, the conventions before @def-main-connective), and we keep using them. What changes is their status: they are **not** part of the definition of a formula. A string written with the conventions is **shorthand**, and it stands for exactly one official formula, the one obtained by putting the dropped parentheses back.
 
 The translation, from shorthand to official form, goes as follows.
 
@@ -297,7 +297,7 @@ The translation, from shorthand to official form, goes as follows.
 4. \( \to \) groups to the right: \( p \to q \to r \) stands for \( (p \to (q \to r)) \).
 5. Chapter 1 sometimes wrote a negation in parentheses for emphasis, as in \( (\neg P) \to Q \); such parentheses are simply removed.
 
-In a mixture of \( \wedge \) with \( \vee \), or of \( \to \) with \( \leftrightarrow \), the shorthand keeps the parentheses (Chapter 1's fourth convention), so no rule is needed for those.
+In a mixture of \( \wedge \) with \( \vee \), or of \( \to \) with \( \leftrightarrow \), the shorthand keeps the parentheses (Chapter 1's rule for such mixtures), so no rule is needed for those.
 
 ::: {#exm-shorthand-translation}
 [Two groupings of three implications]

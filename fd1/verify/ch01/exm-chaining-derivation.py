@@ -1,5 +1,5 @@
-"""exm-chaining-derivation (Section 1.2): the three Tr derivations, the alternative in (c),
-and the Quick checks after the example (citation order; the sequent of (c))."""
+"""exm-chaining-derivation (Section 1.2): the two Tr derivations, the alternative in (b),
+and the Quick checks after the example (citation order; the sequent of (b))."""
 import pathlib
 import sys
 sys.path.insert(0, str(pathlib.Path(__file__).parent))
@@ -8,24 +8,19 @@ from _toyrules import is_derivation, tr_instance
 QUOTED = {
     "(a) is a derivation with Tr": True,
     "(b) is a derivation with Tr": True,
-    "(c) is a derivation with Tr": True,
-    "(c) alternative is a derivation with Tr": True,
+    "(b) alternative is a derivation with Tr": True,
     "lines": 5,
 }
 
 a = [("0 < x", None, ()), ("x < y", None, ()), ("y < 1", None, ()),
      ("0 < y", "Tr", (1, 2)), ("0 < 1", "Tr", (4, 3))]
-b = [("y < 1", None, ()), ("0 < x", None, ()), ("x < y", None, ()),
-     ("0 < y", "Tr", (2, 3)), ("0 < 1", "Tr", (4, 1))]
-c = [("u < v", None, ()), ("w < z", None, ()), ("v < w", None, ()),
+b = [("u < v", None, ()), ("w < z", None, ()), ("v < w", None, ()),
      ("v < z", "Tr", (3, 2)), ("u < z", "Tr", (1, 4))]
-c_alt = [("u < v", None, ()), ("w < z", None, ()), ("v < w", None, ()),
+b_alt = [("u < v", None, ()), ("w < z", None, ()), ("v < w", None, ()),
          ("u < w", "Tr", (1, 3)), ("u < z", "Tr", (4, 2))]
-for name, d in (("(a)", a), ("(b)", b), ("(c)", c), ("(c) alternative", c_alt)):
+for name, d in (("(a)", a), ("(b)", b), ("(b) alternative", b_alt)):
     assert is_derivation(d, rules=("Tr",)) == QUOTED[f"{name} is a derivation with Tr"], name
     assert len(d) == QUOTED["lines"]
-# (b): "Tr 1, 4" for line 5 would be wrong
-assert not tr_instance(b[0][0], b[3][0], "0 < 1")
 # Quick check: line 1 is 0 < x, line 3 is x < 1
 assert tr_instance("0 < x", "x < 1", "0 < 1")
 assert not tr_instance("x < 1", "0 < x", "0 < 1")

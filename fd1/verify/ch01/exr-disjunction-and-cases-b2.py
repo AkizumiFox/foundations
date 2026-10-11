@@ -1,4 +1,4 @@
-"""exr-disjunction-and-cases-b2 (Ch 1, Section 1.7): max(a, b) >= a, b, >= average; max(3, -5)."""
+"""exr-disjunction-and-cases-b2 (Ch 1, Section 1.6): max(a, b) >= a, b, >= average; max(3, -5)."""
 from fractions import Fraction as F
 
 QUOTED = {"max(3,-5)": 3, "average of 3 and -5": -1}

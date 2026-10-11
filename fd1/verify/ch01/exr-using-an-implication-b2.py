@@ -1,4 +1,4 @@
-"""exr-using-an-implication-b2 (Section 1.4): both facts hold for every real x."""
+"""exr-using-an-implication-b2 (Section 1.3): both facts hold for every real x."""
 import sys, pathlib
 sys.path.insert(0, str(pathlib.Path(__file__).parent))
 from _grid import implies_on_grid

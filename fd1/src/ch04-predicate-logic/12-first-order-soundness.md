@@ -16,7 +16,7 @@ Chapter 3 proved that whatever the rules of Chapters 1 and 2 derive is true in e
 
 ## Contexts, once more
 
-The context \( \Gamma_k \) of line \( k \) is still the list of the premises together with the assumptions of every box containing line \( k \) (Section 1.5, recalled before @lem-context-inclusion). A flagged box of \( \rulename{\forall I} \) has **no** assumption, so it adds nothing to the context of the lines inside it. The \( \rulename{\exists E} \) box opens with its assumption \( \varphi[x_0/x] \), which does join the context.
+The context \( \Gamma_k \) of line \( k \) is still the list of the premises together with the assumptions of every box containing line \( k \) (Section 3.5, before @lem-context-inclusion). A flagged box of \( \rulename{\forall I} \) has **no** assumption, so it adds nothing to the context of the lines inside it. The \( \rulename{\exists E} \) box opens with its assumption \( \varphi[x_0/x] \), which does join the context.
 
 Section 4.4 extended @def-derivation to flagged boxes and kept its scope rule and its notion of availability word for word; two boxes are still disjoint or one inside the other. So @lem-context-inclusion (a), whose proof uses only the scope rule, holds as it stands: if line \( i \) is available at line \( k \), then \( \Gamma_i \subseteq \Gamma_k \).
 

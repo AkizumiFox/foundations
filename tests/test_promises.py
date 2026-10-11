@@ -82,6 +82,18 @@ class PromiseTests(unittest.TestCase):
             ("index.md", 3, "9", None),
         ])
 
+    def test_section_number_is_file_order(self):
+        # a merged section leaves a gap: Section 3.3 is the third file, 04-d.md, not §03
+        ch3 = self.src / "ch03-three"
+        (ch3 / "01-a.md").unlink()
+        (ch3 / "04-d.md").write_text("# D\n")
+        (ch3 / "01-a.md").write_text("# A\n\nSection 3.3 does more.\n")
+        self.assertIn(("01-a.md", 3, "3", 4), self.found())
+        missing = pr.reconcile(pr.find_promises(self.src, self.ctx), pr.parse_status(self.status),
+                               pr.existing_sections(self.src, self.ctx))
+        self.assertNotIn(("01-a.md", "3", 4), [(p.file.split("/")[1], p.target, p.target_section)
+                                               for p, _ in missing])
+
     def test_expand_ranges(self):
         self.assertEqual(pr.expand("2", "–5"), [2, 3, 4, 5])
         self.assertEqual(pr.expand("2", " and 4"), [2, 4])

@@ -1,4 +1,4 @@
-"""Shared helper for the Section 1.2 sidecars: the toy rules Tr and Sh, checked by matching.
+"""Shared helper for the Section 1.2 sidecars: the toy rules Tr and Sh (Sh is no longer in the text), checked by matching.
 
 A line is a string "L < R" (exactly one " < ", spaces around it). Matching is symbol for
 symbol, as @def-rule-schema demands: expressions are compared as strings (whitespace

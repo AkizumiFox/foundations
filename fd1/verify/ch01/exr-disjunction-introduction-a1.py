@@ -1,4 +1,4 @@
-"""exr-disjunction-introduction-a1 (Ch 1, Section 1.6): the facts behind the sentences of (b):
+"""exr-disjunction-introduction-a1 (Ch 1, Section 1.5): the facts behind the sentences of (b):
 x < 3 gives x <= 3 = (x < 3 or x = 3); |x - 2| < 1 implies 1 < x < 3; 0 < x < 1 gives x < 1."""
 from _grid import grid
 

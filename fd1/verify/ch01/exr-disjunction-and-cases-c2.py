@@ -1,4 +1,4 @@
-"""exr-disjunction-and-cases-c2 (Ch 1, Section 1.7): the flawed Case 2b; witness x = -3, y = -1;
+"""exr-disjunction-and-cases-c2 (Ch 1, Section 1.6): the flawed Case 2b; witness x = -3, y = -1;
 the repaired Case 2b; the four printed cases (1a, 1b, 2a) are correct."""
 from fractions import Fraction as F
 

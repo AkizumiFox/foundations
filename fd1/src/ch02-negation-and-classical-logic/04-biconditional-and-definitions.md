@@ -397,7 +397,7 @@ Once the cycle is proved, any condition leads to any other by following the arro
 :::
 
 ::: {.idea}
-The goal is an iff, so there are two boxes. From \( P \), one step along the cycle reaches \( Q \). From \( Q \), the cycle reaches \( P \) the long way round, through \( R \): a backward chain of \( \rulename{{\to}E} \), as in Section 1.4. The other two equivalences need no new work, because the three premises do not change when the letters are rotated.
+The goal is an iff, so there are two boxes. From \( P \), one step along the cycle reaches \( Q \). From \( Q \), the cycle reaches \( P \) the long way round, through \( R \): a backward chain of \( \rulename{{\to}E} \), as in Section 1.3. The other two equivalences need no new work, because the three premises do not change when the letters are rotated.
 :::
 
 ::: {.proof}

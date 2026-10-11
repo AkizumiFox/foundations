@@ -1,10 +1,10 @@
-# Statements, Connectives and the Form of an Argument
+# Statements, Arguments and How to Break One
 
-This is where the book starts, and it starts with a question every reader of mathematics eventually asks: when is an argument a proof? A proof is not a list of true sentences, and it is not an argument that merely sounds convincing. This section takes the first steps towards a precise answer. It says what the sentences of a proof are, how they are built from smaller ones, and what it means for two arguments to have the same **form**, which is the thing logic studies.
+When is an argument a proof? This section says what the sentences of a proof are, how they are built from smaller ones, and how to test the **form** of an argument by trying to break it.
 
 ## Two arguments about squares
 
-Recall that an integer \( n \) is **even** when \( n = 2k \) for some integer \( k \), and **odd** when \( n = 2k + 1 \) for some integer \( k \). (The word "some" has rules of its own, which come in Chapter 4; here we use it as school algebra does.) Here is a fact about integers that Chapter 2 proves properly, once the rules for "not" are in place.
+Recall that an integer \( n \) is **even** when \( n = 2k \) for some integer \( k \), and **odd** when \( n = 2k + 1 \) for some integer \( k \). Here is a fact about integers.
 
 > For every integer \( n \), if \( n^2 \) is even, then \( n \) is even.
 
@@ -61,31 +61,43 @@ Decide which of the following are statements.
 (f) This is the sentence of (e) with \( x \) replaced by \( 3 \), and it is a true statement.
 :::
 
-Items (e) and (f) differ by one symbol, and the difference is the whole point. The open sentence \( x > 2 \) becomes a statement in two ways. We can put a number in for \( x \), as in (f). Or we can say which \( x \) we mean in some other way, as in "for every real number \( x \), \( x > 2 \)" (a false statement) or "for some real number \( x \), \( x > 2 \)" (a true one). The words "for every" and "for some" are the **quantifiers**, and they are the subject of Chapter 4.
-
-Mathematics is full of open sentences, and we cannot wait until Chapter 4 to use them. So this chapter adopts a convention. When an example says "let \( x \) be a real number" and then talks about \( x \), the letter \( x \) names **one fixed** number, not further specified. Every sentence about that \( x \) is then a statement, true or false according to which number \( x \) is. "Let \( x \) be a real number with \( x > 2 \); then \( x^2 > 4 \)" is an argument about one number, which happens to work whatever the number is. Chapter 4 explains why an argument of that kind proves a statement about every \( x \) at once.
+Items (e) and (f) differ by one symbol, and the difference is the whole point. The open sentence \( x > 2 \) becomes a statement in two ways. We can put a number in for \( x \), as in (f). Or we can say which \( x \) we mean in some other way, as in "for every real number \( x \), \( x > 2 \)" (a false statement) or "for some real number \( x \), \( x > 2 \)" (a true one). The words "for every" and "for some" are the **quantifiers**.
 
 ::: {.remark}
+**Convention: a fixed but arbitrary number.** When an example says "let \( x \) be a real number" and then talks about \( x \), the letter names **one** number, fixed for the whole example, that we are not told. Every sentence about \( x \) is then a statement, true or false according to which number \( x \) is: with \( x = 3 \), "\( x > 2 \)" is true; with \( x = 0 \), it is false; and the example does not know which \( x \) it has. So an argument about \( x \) may use only what holds whatever \( x \) is, and an argument that never peeks at \( x \) works for \( x = 3 \), for \( x = 0 \), and for every other number at once.
+:::
+
+::: {.check}
+Let \( x \) be a real number. Is "\( x > 2 \) or \( x \le 2 \)" a statement? Is it true?
+:::
+
+::: {.solution}
+Yes: by the convention it is a claim about one fixed number \( x \). And it is true whatever \( x \) is, since one of the two sides holds for every number.
+:::
+
+::: {.second-reading title="Statements or propositions?"}
+::: {.remark}
 The book reserves the words "proposition" and "theorem" for proved results, so it calls the sentences of logic **statements**. Other books call them propositions, which is where the name **propositional logic**, for what this chapter and the next study, comes from.
+:::
 :::
 
 ## The connectives
 
 Most statements in mathematics are built from smaller ones. "\( 0 < x \) and \( x < 1 \)" is built from "\( 0 < x \)" and "\( x < 1 \)" with the word "and". "If \( n^2 \) is even, then \( n \) is even" is built from two statements with "if … then". The words that do the building are the **connectives**. A statement built from smaller statements by a connective is **compound**; one that is not is **atomic**. For this chapter, "\( x > 0 \)" is atomic: it has an inner structure, a number and an order, but no connective joins parts of it.
 
-We write \( P \), \( Q \), \( R \), \( S \) for statements whose inner structure we are ignoring. They stand for **arbitrary** statements, atomic or compound. There are five connectives. In the last column of the table, \( x \) is a real number, \( P \) is "\( x > 0 \)", and \( Q \) is "\( x < 1 \)".
+We write \( P \), \( Q \), \( R \), \( S \) for statements whose inner structure we are ignoring. They stand for **arbitrary** statements, atomic or compound. There are five connectives. In the last column, \( x \) is a real number, and every example is true whatever \( x \) is.
 
 | Symbol | Name | Read | Example |
 |--------|------------|---------------------|--------------------------------|
-| \( P \wedge Q \) | conjunction | \( P \) and \( Q \) | \( x > 0 \) and \( x < 1 \), that is, \( 0 < x < 1 \) |
-| \( P \vee Q \) | disjunction | \( P \) or \( Q \) | \( x > 0 \) or \( x < 1 \) |
-| \( P \to Q \) | implication | if \( P \), then \( Q \) | if \( x > 0 \), then \( x < 1 \) |
-| \( P \leftrightarrow Q \) | biconditional | \( P \) if and only if \( Q \) | \( x > 0 \) if and only if \( x < 1 \) |
-| \( \neg P \) | negation | not \( P \) | \( x \) is not positive, that is, \( x \le 0 \) |
+| \( P \wedge Q \) | conjunction | \( P \) and \( Q \) | \( x^2 \ge 0 \) and \( x^2 + 1 > 0 \) |
+| \( P \vee Q \) | disjunction | \( P \) or \( Q \) | \( x \ge 0 \) or \( x < 0 \) |
+| \( P \to Q \) | implication | if \( P \), then \( Q \) | if \( x > 1 \), then \( x^2 > 1 \) |
+| \( P \leftrightarrow Q \) | biconditional | \( P \) if and only if \( Q \) | \( x^2 = 0 \) if and only if \( x = 0 \) |
+| \( \neg P \) | negation | not \( P \) | not \( x^2 < 0 \), that is, \( x^2 \ge 0 \) |
 
-To the five connectives we add one statement with no parts at all, written \( \bot \) and read "contradiction". It stands for a statement that is false however things stand: \( 0 = 1 \) will do. A proof that reaches \( \bot \) has shown that the situation it was working in cannot occur. That is the heart of proof by contradiction, and Chapter 2 gives \( \bot \) its rules.
+To the five connectives we add one statement with no parts at all, written \( \bot \) and read "contradiction". It stands for a statement that is false however things stand: \( 0 = 1 \) will do. A proof that reaches \( \bot \) has shown that the situation it was working in cannot occur. That is the heart of proof by contradiction, and the rules for \( \bot \) come with those for "not".
 
-In \( P \to Q \), the statement \( P \) is the **hypothesis** (or antecedent) and \( Q \) the **conclusion** (or consequent). English has many ways of saying \( P \to Q \): "\( P \) implies \( Q \)", "\( Q \) if \( P \)", "\( Q \) whenever \( P \)", "\( P \) only if \( Q \)", "\( P \) is sufficient for \( Q \)", and "\( Q \) is necessary for \( P \)" all say the same thing, and the exercises ask you to see why. "If and only if" is often shortened to **iff**.
+In \( P \to Q \), the statement \( P \) is the **hypothesis** (or antecedent) and \( Q \) the **conclusion** (or consequent). "If and only if" is often shortened to **iff**.
 
 Several English words become \( \wedge \): "but", "although", and "while" all assert both parts, and add a tone of contrast that logic ignores. "\( 2 \) is prime but not odd" is a conjunction. So is "neither … nor", in disguise: "\( 9 \) is neither even nor prime" asserts that \( 9 \) is not even **and** that \( 9 \) is not prime, which is \( \neg P \wedge \neg Q \) with \( P \): "\( 9 \) is even" and \( Q \): "\( 9 \) is prime".
 
@@ -98,8 +110,52 @@ In everyday English, "or" is often exclusive: "soup or salad" on a menu means on
 :::
 
 ::: {.warning}
-The word "if" means different things in a theorem and in a definition. In a theorem, "if \( P \), then \( Q \)" is one direction only: "if \( n \) is divisible by \( 4 \), then \( n \) is even" is true, and its converse is false at \( n = 2 \). In a definition, "a number is **even** if it is twice an integer" is meant as "if and only if": a number that is not twice an integer is not called even. Section 2.4 explains this convention of language.
+The word "if" means different things in a theorem and in a definition. In a theorem, "if \( P \), then \( Q \)" is one direction only: "if \( n \) is divisible by \( 4 \), then \( n \) is even" is true, and its converse is false at \( n = 2 \). In a definition, "a number is **even** if it is twice an integer" is meant as "if and only if": a number that is not twice an integer is not called even.
 :::
+
+## When is an implication broken?
+
+Read \( P \to Q \) as a **promise**: whenever \( P \) holds, \( Q \) holds too. A promise is broken only when its condition is met and the promised thing fails.
+
+*An implication is broken only when its hypothesis holds and its conclusion fails.*
+
+Take the table's example, "if \( x > 1 \), then \( x^2 > 1 \)". Its two parts can be true or false in four combinations:
+
+Table: Informal: a reading of "if", not yet a rule of proof.
+
+| \( P \): \( x > 1 \) | \( Q \): \( x^2 > 1 \) | the promise | a value of \( x \) |
+|---|---|---|---|
+| true | true | kept | \( x = 3 \) |
+| true | false | **broken** | none: this is why the promise holds for every \( x \) |
+| false | true | not broken: it says nothing | \( x = -3 \) |
+| false | false | not broken: it says nothing | \( x = 0 \) |
+
+(No value lands in the second row: if \( x > 1 \), then \( x^2 > x > 1 \).) This answers the question "what if \( P \) is false?": then \( P \to Q \) is not broken, so it counts as true. To show \( P \to Q \) false, exhibit one case with \( P \) true and \( Q \) false.
+
+::: {.check}
+Which of \( x = 3 \), \( x = -3 \), \( x = 1 \) breaks "if \( x^2 > 4 \), then \( x > 2 \)"?
+:::
+
+::: {.solution}
+Only \( x = -3 \): \( 9 > 4 \) holds and \( -3 > 2 \) fails. At \( x = 3 \) both parts hold; at \( x = 1 \) the hypothesis fails, so nothing is promised.
+:::
+
+## "Only if", "necessary" and "sufficient"
+
+English has many ways of saying \( P \to Q \): "\( P \) implies \( Q \)", "\( Q \) if \( P \)", "\( Q \) whenever \( P \)", "\( P \) only if \( Q \)", "\( P \) is sufficient for \( Q \)", and "\( Q \) is necessary for \( P \)". To sort out the last three, ask of each sentence: *when is it broken?* Let \( x \) be a real number, with \( P \): "\( x > 2 \)" and \( Q \): "\( x^2 > 4 \)".
+
+- "\( x > 2 \) only if \( x^2 > 4 \)" says that \( x > 2 \) never happens without \( x^2 > 4 \). It is broken exactly when \( x > 2 \) and \( x^2 \le 4 \), which is exactly when \( P \to Q \) is broken. So "\( P \) only if \( Q \)" is \( P \to Q \). It is true here: if \( x > 2 \), then \( x^2 > 2x > 4 \).
+- The reverse, "\( x^2 > 4 \) only if \( x > 2 \)", is \( Q \to P \), broken by \( x = -3 \) (the Quick check above).
+- "\( x^2 > 4 \) is **necessary** for \( x > 2 \)" says that there is no \( x > 2 \) without \( x^2 > 4 \): again \( P \to Q \). "\( x > 2 \) is **sufficient** for \( x^2 > 4 \)" says that \( x > 2 \) is enough to guarantee \( x^2 > 4 \): \( P \to Q \) once more.
+
+| English | broken when | symbols |
+|---|---|---|
+| \( P \) only if \( Q \) | \( P \) true, \( Q \) false | \( P \to Q \) |
+| \( Q \) if \( P \) | \( P \) true, \( Q \) false | \( P \to Q \) |
+| \( Q \) is necessary for \( P \) | \( P \) true, \( Q \) false | \( P \to Q \) |
+| \( P \) is sufficient for \( Q \) | \( P \) true, \( Q \) false | \( P \to Q \) |
+
+"If" and "only if" put the same two statements in opposite directions: "\( Q \) if \( P \)" is \( P \to Q \), while "\( Q \) only if \( P \)" is \( Q \to P \). Confusing them is Argument B's mistake.
 
 ## Translating a sentence
 
@@ -120,11 +176,15 @@ Parentheses settle every such question, and a few conventions let us drop the on
 ::: {.enumerate options="label=(\arabic*)"}
 1. \( \neg \) binds most tightly: it applies to the smallest complete statement that follows it. So \( \neg P \wedge Q \) means \( (\neg P) \wedge Q \), and to deny \( P \wedge Q \) we write \( \neg(P \wedge Q) \).
 2. \( \wedge \) and \( \vee \) bind more tightly than \( \to \) and \( \leftrightarrow \). So \( P \wedge Q \to R \) means \( (P \wedge Q) \to R \).
-3. \( \to \) groups to the right: \( P \to Q \to R \) means \( P \to (Q \to R) \). The book usually writes these parentheses anyway.
-4. In a mixture of \( \wedge \) and \( \vee \), or of \( \to \) and \( \leftrightarrow \), the parentheses are always written. We never write \( P \wedge Q \vee R \).
 :::
 
-Convention (3) is the natural one: a statement "if \( P \), then if \( Q \), then \( R \)" is common, and \( (P \to Q) \to R \), whose hypothesis is itself an implication, is rare. Chapter 3 turns "a statement built from letters by connectives" into an exact definition (@def-formula) and proves that every such statement can be read in only one way (@thm-unique-readability). In this chapter we parse by eye.
+In a mixture of \( \wedge \) and \( \vee \), or of \( \to \) and \( \leftrightarrow \), the parentheses are always written.
+
+::: {.remark}
+When parentheses in a chain of arrows are dropped, they group to the right: \( P \to Q \to R \) means \( P \to (Q \to R) \). This chapter always writes them.
+:::
+
+In this chapter we parse by eye.
 
 The conventions only decide where parentheses may be dropped. The next definition names the one piece of information that reading a statement is for.
 
@@ -155,13 +215,7 @@ By convention (1), the \( \neg \) applies only to the parenthesized \( P \wedge 
 
 Reading the tree from the top: the statement is an implication; its hypothesis is a negation; what is negated is a conjunction. Reading from the bottom retraces how the statement was built. A one-symbol change moves the root: in \( \neg(P \wedge Q \to R) \) the parentheses make the whole implication the thing denied, and the main connective is \( \neg \).
 
-Here is a second statement taken apart the same way, this time with every step said aloud:
-\[
-P \vee Q \to R \wedge S .
-\]
-There is no \( \neg \), so convention (1) does nothing. By convention (2), \( \vee \) and \( \wedge \) bind before \( \to \), so the statement is \( (P \vee Q) \to (R \wedge S) \), and its main connective is \( \to \). The hypothesis \( P \vee Q \) has main connective \( \vee \) and the conclusion \( R \wedge S \) has main connective \( \wedge \). With \( x \) a real number, \( P \): "\( x > 1 \)", \( Q \): "\( x < -1 \)", \( R \): "\( x^2 > 1 \)" and \( S \): "\( x^4 > 1 \)", it reads: if \( x > 1 \) or \( x < -1 \), then \( x^2 > 1 \) and \( x^4 > 1 \).
-
-The main connective is not grammar for its own sake. It is the first thing to find when a proof has to be written, because it decides how the proof begins. To prove "if \( 0 < x < 1 \), then \( x^2 < x \)", whose main connective is \( \to \), a proof starts "Suppose \( 0 < x < 1 \)." To prove "\( x^2 + 1 > 0 \) and \( x^2 + 1 \ne 0 \)", whose main connective is \( \wedge \), a proof has two parts, one for each side. Section 1.3 gives this habit a name, each later section of this chapter adds to it, and Section 2.6 turns it into a method for finding proofs.
+The main connective is not grammar for its own sake. It is the first thing to find when a proof has to be written, because it decides how the proof begins. To prove "if \( 0 < x < 1 \), then \( x^2 < x \)", whose main connective is \( \to \), a proof starts "Suppose \( 0 < x < 1 \)." To prove "\( x^2 + 1 > 0 \) and \( x^2 + 1 \ne 0 \)", whose main connective is \( \wedge \), a proof has two parts, one for each side. Section 1.2 gives this habit a name, and each later section adds to it.
 
 ::: {.check}
 Find the main connective of each statement.
@@ -193,28 +247,27 @@ They are about different things, and yet they are the same argument. Write \( P 
 
 *Logic studies the forms of arguments, not their content.*
 
-Separating the two has a payoff. Once a form has been shown to be correct, every argument of that form is correct, whatever its content; we check the form once and use it forever. The notation for a claim about forms is the following.
-
-::: {#def-sequent}
-[Sequent]
-
-Let \( P_1, \dots, P_n \) and \( Q \) be statements, where \( n \ge 0 \). The **sequent**
+Separating the two has a payoff. Once a form has been shown to be correct, every argument of that form is correct, whatever its content; we check the form once and use it forever. An argument form is written with its premises above a line and its conclusion below it:
 \[
-P_1, \dots, P_n \vdash Q
+\begin{array}{l}
+P \to Q \\
+P \\
+\hline
+Q
+\end{array}
 \]
-is the **claim** that \( Q \) can be derived from \( P_1, \dots, P_n \) by the rules of logic. The statements \( P_1, \dots, P_n \) are its **premises** and \( Q \) is its **conclusion**. When \( n = 0 \) we write \( \vdash Q \).
-:::
+In running text the same form is written "from \( P \to Q \) and \( P \), conclude \( Q \)".
 
-The symbol \( \vdash \) is called the turnstile, and \( P_1, \dots, P_n \vdash Q \) is read "\( P_1 \) to \( P_n \) prove \( Q \)". A sequent is not an argument, and it is not true merely because its conclusion is true: it claims that a certain kind of object, a derivation from those premises to that conclusion, exists. The next section says what a derivation is, and so exactly when the claim holds. It is proved the way any existence claim is proved, by exhibiting one. The two arguments above both have the form
-\[
-P \to Q, \ P \vdash Q ,
-\]
-and the rule \( \rulename{{\to}E} \) of Section 1.4 says that this sequent holds.
+## Try to break it
 
-The case \( n = 0 \) is the degenerate one, and it matters. \( \vdash Q \) claims that \( Q \) can be derived from **no** premises at all: that the rules alone produce it. Such statements exist, and Section 1.5 derives the first of them.
+A form is **bad** if some argument of that form has **true premises and a false conclusion**; such an argument is a **counterexample** to the form. A form that no choice of statements can break is **good**.
+
+*To test a form, try to break it: put statements in for the letters that make every premise true and the conclusion false.*
+
+One counterexample settles that the form is bad. Failing to find one settles nothing yet: showing that a form is good takes a reason that covers every choice of statements at once.
 
 ::: {.check}
-Which of the following arguments has the same form as "If \( n \) is divisible by \( 6 \), then \( n \) is divisible by \( 3 \). And \( n \) is divisible by \( 6 \). So \( n \) is divisible by \( 3 \)"?
+Write the form of each argument, and try to break it.
 
 ::: {.enumerate options="label=(\roman*)"}
 1. If \( n \) is divisible by \( 4 \), then \( n \) is even. And \( n \) is even. So \( n \) is divisible by \( 4 \).
@@ -223,12 +276,33 @@ Which of the following arguments has the same form as "If \( n \) is divisible b
 :::
 
 ::: {.solution}
-The given argument has the form \( P \to Q, \ P \vdash Q \).
+(i) With \( P \): "\( n \) is divisible by \( 4 \)" and \( Q \): "\( n \) is even", the form is "from \( P \to Q \) and \( Q \), conclude \( P \)": the second premise is the conclusion of the implication, not its hypothesis. And \( n = 2 \) breaks it. The first premise is true for every integer, since a multiple of \( 4 \) is \( 4k = 2(2k) \); the second is true, since \( 2 \) is even; yet \( 2 \) is not divisible by \( 4 \). The form is bad.
 
-(i) does not. With \( P \): "\( n \) is divisible by \( 4 \)" and \( Q \): "\( n \) is even", it has the form \( P \to Q, \ Q \vdash P \): the second premise is the conclusion of the implication, not its hypothesis. This form is not correct, and \( n = 2 \) shows it. The first premise is true for every integer, since a multiple of \( 4 \) is \( 4k = 2(2k) \); the second is true, since \( 2 \) is even; yet \( 2 \) is not divisible by \( 4 \).
-
-(ii) has the same form, with \( P \) the compound statement "\( x > 0 \) and \( y > 0 \)" and \( Q \) the statement "\( xy > 0 \)". A letter may stand for a compound statement.
+(ii) With \( P \) the compound statement "\( x > 0 \) and \( y > 0 \)" (a letter may stand for one) and \( Q \): "\( xy > 0 \)", the form is "from \( P \to Q \) and \( P \), conclude \( Q \)". It cannot be broken. By the promise table, \( P \to Q \) is false only when \( P \) is true and \( Q \) false; so when \( P \to Q \) and \( P \) are both true, \( Q \) is true. The form is good.
 :::
+
+**Argument B, tried.** B's reasoning shows "if \( n \) is even, then \( n^2 \) is even", and its last sentence concludes the converse, "if \( n^2 \) is even, then \( n \) is even". That step has the form "from \( P \to Q \), conclude \( Q \to P \)", and it breaks: take \( P \): "\( n \) is divisible by \( 4 \)" and \( Q \): "\( n \) is even". The premise is true for every integer, and the conclusion fails at \( n = 2 \). B's tempting repair, "from \( P \to Q \) and \( Q \), conclude \( P \)", is the form of (i), which \( n = 2 \) just broke. With B's own content no integer breaks the repair, since every integer with an even square is even (the fact B set out to prove); but the *form* breaks. A true conclusion reached by a bad form is still not proved.
+
+::: {.second-reading title="Valid, or only convincing?"}
+Many true cases are evidence, not a proof. The number \( n^2 + n + 41 \) is prime for \( n = 0 \), \( 1 \), \( 2 \), and so on all the way to \( n = 39 \): forty cases without a failure. At \( n = 40 \) it is \( 1600 + 40 + 41 = 1681 = 41^2 \). An argument from many checked cases can be strong, but it is not of a good form: its premises can all be true while its conclusion is false. Logic books call a good form **valid**, and logic studies only form. That is why this book asks of every step not "is it convincing?" but "could this form be broken?"
+:::
+
+## Good form, false sentences
+
+Argument B has true sentences and a bad form. The opposite happens too:
+
+> If \( 6 \) is even, then \( 6 \) is prime. And \( 6 \) is even. So \( 6 \) is prime.
+
+Its form, "from \( P \to Q \) and \( P \), conclude \( Q \)", is good (Quick check (ii) above), and its conclusion is false. The fault is the first premise, false since \( 6 \) is even and not prime. Form and truth are separate questions; all four combinations occur.
+
+| | every sentence true | some sentence false |
+|---|---|---|
+| form good | "If \( 3 \) is odd, then \( 9 \) is odd. \( 3 \) is odd. So \( 9 \) is odd." | the argument about \( 6 \) above |
+| form bad | Argument B, by its last step "from \( P \to Q \), conclude \( Q \to P \)" | "If \( 2 \) is divisible by \( 4 \), then \( 2 \) is even. \( 2 \) is even. So \( 2 \) is divisible by \( 4 \)." |
+
+The top left is the odd-square argument at \( n = 3 \); the bottom right is the Quick check's (i) at \( n = 2 \). Argument A is not placed: its steps use "not", cases and "some", whose forms we cannot test yet.
+
+*A good form guarantees only that true premises give a true conclusion.*
 
 ## Each connective, two rules
 
@@ -237,43 +311,34 @@ We now come to the idea that organizes this chapter and the next. Think about wh
 - To **prove** a statement of the form \( P \wedge Q \), prove \( P \) and prove \( Q \).
 - To **use** a statement of the form \( P \wedge Q \) that is already known, take either half.
 
-Nobody needs to be taught these two moves. They are also, and this is the point, **all** there is to know about "and" for the purpose of writing proofs. Every other fact about \( \wedge \), such as that \( P \wedge Q \) and \( Q \wedge P \) say the same thing, follows from the two moves, as Section 1.3 shows. The first move is called the **introduction rule** for \( \wedge \), written \( \rulename{\wedge I} \), because it is how a \( \wedge \) gets into a proof. The second is the **elimination rule**, \( \rulename{\wedge E} \), because it is how a \( \wedge \) is taken apart.
+Nobody needs to be taught these two moves. They are also, and this is the point, **all** there is to know about "and" for the purpose of writing proofs. Every other fact about \( \wedge \), such as that \( P \wedge Q \) and \( Q \wedge P \) say the same thing, follows from the two moves, as Section 1.2 shows. The first move is called the **introduction rule** for \( \wedge \), written \( \rulename{\wedge I} \), because it is how a \( \wedge \) gets into a proof. The second is the **elimination rule**, \( \rulename{\wedge E} \), because it is how a \( \wedge \) is taken apart.
 
-The table below is an informal preview. Section 1.3 states these two rules exactly, as patterns of lines.
+The table below is an informal preview. Section 1.2 states these two rules exactly, as patterns of lines.
 
 | Rule | What it allows | You write |
 |------|---------------------------|--------------------------------------|
 | \( \rulename{\wedge I} \) | from \( P \) and \( Q \), conclude \( P \wedge Q \) | "We have shown \( x > 0 \) and \( x < 1 \). Hence \( 0 < x < 1 \)." |
 | \( \rulename{\wedge E} \) | from \( P \wedge Q \), conclude \( P \); also \( Q \) | "Since \( 0 < x < 1 \), in particular \( x > 0 \)." |
 
-Every connective works the same way. Each comes with introduction rules, saying how to prove a statement with that main connective, and elimination rules, saying what a statement with that main connective lets us conclude. The rules for \( \wedge \) come in Section 1.3, those for \( \to \) in Sections 1.4 and 1.5, and those for \( \vee \) in Sections 1.6 and 1.7. The rules for \( \neg \), \( \bot \), and \( \leftrightarrow \), and one more rule for proof by contradiction, which stands apart from the others, are the subject of Chapter 2. Two slogans summarize the plan.
+Every connective works the same way. Each comes with introduction rules, saying how to prove a statement with that main connective, and elimination rules, saying what a statement with that main connective lets us conclude. The rules for \( \wedge \) come in Section 1.2, those for \( \to \) in Sections 1.3 and 1.4, and those for \( \vee \) in Sections 1.5 and 1.6. The rules for \( \neg \), \( \bot \), and \( \leftrightarrow \), and one more rule for proof by contradiction, which stands apart from the others, come after these. Two slogans summarize the plan.
 
 *Each connective comes with a way to prove it and a way to use it.*
 
 *A proof is a chain in which every line is a premise, an assumption, or one application of a rule.*
 
-The rules are chosen so that they never lead from true statements to a false one. For \( \wedge \) this is plain: if \( P \) and \( Q \) are both true, so is \( P \wedge Q \), and if \( P \wedge Q \) is true, so is \( P \). Chapter 3 proves it for every rule at once (@thm-soundness); the theorem is called soundness.
+The second slogan is what makes a proof possible to check. Finding a proof may need an idea. Checking one needs none: go through it line by line and ask of each line which rule produced it and whether that rule was applied to lines that really are there. A reader who has lost the thread of a long argument can always fall back on that question, and it is the question to ask of Argument B.
 
-The second slogan is what makes a proof possible to check. Finding a proof may need an idea. Checking one needs none: go through it line by line and ask of each line which rule produced it and whether that rule was applied to lines that really are there. A reader who has lost the thread of a long argument can always fall back on that question, and it is the question to ask of Argument B. In this volume and the next, *Sets, Relations, and Cardinality*, we ask it out loud; Chapter 5 shows how the same rules run silently underneath ordinary written proofs.
-
-The order of these chapters differs from that of many logic books, which begin with truth tables: tables listing, for instance, when \( P \to Q \) is true. There, the row "if \( P \) is false, then \( P \to Q \) is true" has to be accepted as a convention, and it looks arbitrary. Here, that fact comes out of how proofs work (Section 2.1), and the tables arrive in Chapter 3, which proves that the rules and the tables agree (@cor-derivable-iff-valid).
-
-We can now say what we will make of Argument B. Its claim has the form \( Q \to P \), with \( Q \): "\( n^2 \) is even" and \( P \): "\( n \) is even", and B's reasoning runs from \( P \) to \( Q \). Section 1.5 names the error as a misuse of the rule for proving an implication: B began from the conclusion \( P \) where the rule asks it to begin from the hypothesis \( Q \). And to repair B without new ideas, one would have to pass from "if \( n \) is even, then \( n^2 \) is even" and "\( n^2 \) is even" to "\( n \) is even", the form \( P \to Q, \ Q \vdash P \) of the Quick check above. Chapter 3 proves that this pattern cannot be derived from the rules at all: no derivation leads from \( P \to Q \) and \( Q \) to \( P \) (@cor-refuting-row).
+Section 1.4 names exactly what B did wrong; the move above already shows that B's tempting repair, "from \( P \to Q \) and \( Q \), conclude \( P \)", is a bad form.
 
 ## What comes next
 
-The rest of this chapter is built to a pattern, and knowing the pattern in advance makes the sections easier to read.
+Section 1.2 shows what a derivation is, with the rules for "and". Each later section adds one rule. Two questions guide every search: what does the goal's main connective ask for, and what does an available line's main connective let me do?
 
-Section 1.2 says what a derivation looks like and how to read one. It uses no logic at all. Its only rules are two facts about inequalities, borrowed for practice, so that the **format** can be seen on its own: numbered lines, premises at the top, and a justification on every line.
+::: {.remark}
+[Looking ahead]
 
-Each of Sections 1.3 to 1.7 then introduces **one** rule, except that Section 1.3 introduces the pair of rules for "and", which are so simple that the two are one idea. The rule is defined by its **pattern**, a small picture of the lines it needs and the line it writes. The pattern is read clause by clause, since each clause is there for a reason and each is broken by some tempting mistake. Then come several derivations with the new rule, from the smallest possible to a few lines longer, and each is preceded by an *Idea* that says why each rule was chosen. Each section also shows its rule at work in a proof about numbers, where the rule is usually invisible.
-
-The Ideas ask two questions, again and again, and it is worth learning them now.
-
-- *What does the goal's main connective ask for?* The statement we are trying to reach decides the last step of the derivation, and so its overall shape.
-- *What does an available line's main connective let me do?* A statement we already have decides what we can get out of it.
-
-The first question works backwards, from the bottom of a derivation; the second works forwards, from the top. Section 1.3 gives the two directions their names, and every later section adds its rule to one of them: an introduction rule answers the first question, an elimination rule the second.
+Chapter 4 gives "for every" its rules and explains why an argument about a fixed but arbitrary \( x \) proves a statement about every \( x \).
+:::
 
 ## Exercises
 
@@ -287,13 +352,13 @@ The first question works backwards, from the bottom of a derivation; the second 
 2. With \( P \): "\( n \) is even" and \( Q \): "\( n \) is prime", write "\( n \) is prime but not even" in symbols.
 3. Find the main connective of \( P \wedge Q \to \neg R \), and write the statement with all its parentheses.
 4. True or false, with a reason: if \( P \) and \( Q \) are both true, then \( P \vee Q \) is false.
-5. Let \( x \) and \( y \) be real numbers. Write the form of the argument "\( x > 0 \) and \( y > 0 \); so \( y > 0 \) and \( x > 0 \)" as a sequent, saying what each letter stands for.
-6. Which of \( \wedge \), \( \vee \), \( \to \) is the main connective of \( (P \vee Q) \wedge (Q \to R) \)? Using the preview table of "Each connective, two rules", say what a proof of this statement must do, and name the rule that Section 1.3 will state for it.
+5. Let \( x \) and \( y \) be real numbers. Write the form of "\( x > 0 \) and \( y > 0 \); so \( y > 0 \) and \( x > 0 \)" with premises above a line, saying what each letter stands for.
+6. Which of \( \wedge \), \( \vee \), \( \to \) is the main connective of \( (P \vee Q) \wedge (Q \to R) \)? Using the preview table of "Each connective, two rules", say what a proof of this statement must do, and name the rule that Section 1.2 will state for it.
 :::
 :::
 
 ::: {.solution}
-(a) A statement is a declarative sentence that is either true or false, and not both (@def-statement). Yes: \( 10^{100} + 1 \) is a definite integer, so it either is prime or is not. The definition does not ask us to know which. With \( x \) fixed, as in this chapter's convention, "\( x^2 - 1 = 0 \)" is a statement about that one number: true if \( x \) is \( 1 \) or \( -1 \), false otherwise. Without the convention it would be an open sentence. The sentence "\( 0^2 - 1 = 0 \)" is a statement outright, and it is false, since \( 0^2 - 1 = -1 \).
+(a) A statement is a declarative sentence that is either true or false, and not both (@def-statement). Yes: \( 10^{100} + 1 \) is a definite integer, so it either is prime or is not. The definition does not ask us to know which. With \( x \) fixed, by the convention of the box in "Statements", "\( x^2 - 1 = 0 \)" is a statement about that one number: true if \( x \) is \( 1 \) or \( -1 \), false otherwise. Without the convention it would be an open sentence. The sentence "\( 0^2 - 1 = 0 \)" is a statement outright, and it is false, since \( 0^2 - 1 = -1 \).
 
 (b) \( Q \wedge \neg P \). The word "but" is a conjunction.
 
@@ -301,9 +366,58 @@ The first question works backwards, from the bottom of a derivation; the second 
 
 (d) False. The mathematical "or" is inclusive, so \( P \vee Q \) is true when both parts are true.
 
-(e) With \( P \): "\( x > 0 \)" and \( Q \): "\( y > 0 \)", the form is \( P \wedge Q \vdash Q \wedge P \) (@def-sequent). Section 1.3 derives it.
+(e) With \( P \): "\( x > 0 \)" and \( Q \): "\( y > 0 \)", the premise is \( P \wedge Q \) and the conclusion is \( Q \wedge P \):
+\[
+\begin{array}{l}
+P \wedge Q \\
+\hline
+Q \wedge P
+\end{array}
+\]
+Section 1.2 derives it.
 
 (f) \( \wedge \): each parenthesized part is complete, and the last step joins them with "and". So a proof of it has two parts: it proves \( P \vee Q \), and it proves \( Q \to R \). The rule that puts the two parts together is \( \rulename{\wedge I} \). This is the first question of "What comes next", asked before any rule has been stated exactly: the goal's main connective decides the last step.
+:::
+
+::: {#exr-statements-and-connectives-a2}
+[A2: Drill]
+
+Answer each part in a line or two.
+
+::: {.enumerate options="label=(\alph*)"}
+1. What is the main connective of \( \neg P \wedge Q \to R \)?
+2. What is the main connective of \( P \vee Q \to R \wedge S \)? Write the statement with all its parentheses.
+3. What is the main connective of \( \neg (P \to Q) \wedge R \)?
+4. Let \( x \) be a real number, with \( P \): "\( x > 0 \)" and \( Q \): "\( x^2 > x \)". Translate "\( x \) is positive but \( x^2 \) is not greater than \( x \)".
+5. Let \( n \) be an integer, with \( O \): "\( n \) is odd", \( S \): "\( n^2 \) is odd" and \( C \): "\( n^3 \) is odd". Translate "if \( n \) is odd, then \( n^2 \) and \( n^3 \) are odd".
+6. Is "if \( x > 1 \), then \( x^2 > 1 \)" broken at \( x = -2 \)?
+7. Is "if \( x^2 > 1 \), then \( x > 1 \)" broken at \( x = -2 \)?
+8. Let \( n \) be an integer. Write "\( n \) is prime only if \( n \) is odd" as an implication, and break it.
+9. Try to break the form "from \( P \vee Q \) and \( P \), conclude \( \neg Q \)".
+10. The argument "If \( 7 \) is even, then \( 7^2 \) is even. \( 7 \) is even. So \( 7^2 \) is even." has a false conclusion. Is its form bad?
+:::
+:::
+
+::: {.solution}
+(a) \( \to \). The statement is \( ((\neg P) \wedge Q) \to R \).
+
+(b) \( \to \). With all its parentheses it is \( (P \vee Q) \to (R \wedge S) \).
+
+(c) \( \wedge \). The parentheses keep \( \neg \) on \( P \to Q \), and the last step joins \( \neg(P \to Q) \) and \( R \).
+
+(d) \( P \wedge \neg Q \). "But" is a conjunction.
+
+(e) \( O \to (S \wedge C) \).
+
+(f) No. The hypothesis \( -2 > 1 \) is false, so nothing is promised.
+
+(g) Yes. The hypothesis \( 4 > 1 \) holds and the conclusion \( -2 > 1 \) fails.
+
+(h) With \( P \): "\( n \) is prime" and \( O \): "\( n \) is odd", it is \( P \to O \). The integer \( n = 2 \) breaks it: \( 2 \) is prime and not odd.
+
+(i) Let \( x \) be a real number, with \( P \): "\( x \ge 0 \)" and \( Q \): "\( x \le 0 \)", and take \( x = 0 \). Both premises are true (the "or" is inclusive), and \( \neg Q \) is false. The form is bad.
+
+(j) No. Its form is "from \( P \to Q \) and \( P \), conclude \( Q \)", which is good. The premise "\( 7 \) is even" is false, and a form is bad only when some argument of that form has **all** its premises true and its conclusion false.
 :::
 
 ### B. Practice
@@ -340,22 +454,104 @@ For each statement, insert all the parentheses that the conventions allow us to 
 1. \( \neg P \to Q \)
 2. \( P \vee \neg Q \leftrightarrow \neg R \)
 3. \( \neg\neg P \wedge (Q \to R) \)
-4. \( P \to Q \to \neg R \)
 :::
 
 Then let \( x \) and \( y \) be real numbers, with \( P \): "\( x > 0 \)", \( Q \): "\( y > 0 \)" and \( R \): "\( xy > 0 \)". Write \( P \wedge Q \to R \) as an English sentence, and say whether it is true whatever the numbers \( x \) and \( y \) are.
 :::
 
 ::: {.solution}
-(a) \( (\neg P) \to Q \), main connective \( \to \).
+(a) \( (\neg P) \to Q \), main connective \( \to \). As a tree:
 
-(b) \( (P \vee (\neg Q)) \leftrightarrow (\neg R) \), main connective \( \leftrightarrow \). Each \( \neg \) applies to the single letter after it, and \( \vee \) binds more tightly than \( \leftrightarrow \).
+\begin{center}
+\begin{tikzpicture}[level distance=11mm, sibling distance=26mm, every node/.style={font=\normalsize}]
+  \node {$\to$}
+    child { node {$\neg$}
+      child { node {$P$} }
+    }
+    child { node {$Q$} };
+\end{tikzpicture}
+\end{center}
 
-(c) \( (\neg(\neg P)) \wedge (Q \to R) \), main connective \( \wedge \). The first \( \neg \) applies to the statement \( \neg P \), which is the smallest complete statement following it.
+(b) \( (P \vee (\neg Q)) \leftrightarrow (\neg R) \), main connective \( \leftrightarrow \). Each \( \neg \) applies to the single letter after it, and \( \vee \) binds more tightly than \( \leftrightarrow \). As a tree:
 
-(d) \( P \to (Q \to (\neg R)) \), main connective the first \( \to \). By convention (3), \( \to \) groups to the right.
+\begin{center}
+\begin{tikzpicture}[level distance=11mm, sibling distance=26mm, every node/.style={font=\normalsize}]
+  \node {$\leftrightarrow$}
+    child { node {$\vee$}
+      child { node {$P$} }
+      child { node {$\neg$}
+        child { node {$Q$} }
+      }
+    }
+    child { node {$\neg$}
+      child { node {$R$} }
+    };
+\end{tikzpicture}
+\end{center}
+
+(c) \( (\neg(\neg P)) \wedge (Q \to R) \), main connective \( \wedge \). The first \( \neg \) applies to the statement \( \neg P \), which is the smallest complete statement following it. As a tree:
+
+\begin{center}
+\begin{tikzpicture}[level distance=11mm, sibling distance=26mm, every node/.style={font=\normalsize}]
+  \node {$\wedge$}
+    child { node {$\neg$}
+      child { node {$\neg$}
+        child { node {$P$} }
+      }
+    }
+    child { node {$\to$}
+      child { node {$Q$} }
+      child { node {$R$} }
+    };
+\end{tikzpicture}
+\end{center}
 
 The statement \( P \wedge Q \to R \) is \( (P \wedge Q) \to R \): "if \( x > 0 \) and \( y > 0 \), then \( xy > 0 \)". It is true for all real \( x \) and \( y \), since the product of two positive numbers is positive.
+:::
+
+::: {#exr-statements-and-connectives-b3}
+[B3: Necessary and sufficient]
+
+Let \( x \) be a real number.
+
+::: {.enumerate options="label=(\alph*)"}
+1. Write "\( x > 1 \) is sufficient for \( x^2 > 1 \)" and "\( x > 1 \) is necessary for \( x^2 > 1 \)" as implications.
+2. Decide which of the two is true for every real \( x \), and give a value of \( x \) that makes the other false.
+3. Find a condition on \( x \), written with \( \vee \), that is both necessary and sufficient for \( x^2 > 1 \). You may use that \( x^2 > 1 \) exactly when \( \abs{x} > 1 \), where \( \abs{x} \) is \( x \) if \( x \ge 0 \) and \( -x \) if \( x < 0 \).
+:::
+:::
+
+::: {.solution}
+(a) "\( P \) is sufficient for \( Q \)" means that \( P \) is enough to guarantee \( Q \), that is, \( P \to Q \). "\( P \) is necessary for \( Q \)" means that \( Q \) cannot hold without \( P \), that is, \( Q \to P \). So the two sentences are \( (x > 1) \to (x^2 > 1) \) and \( (x^2 > 1) \to (x > 1) \).
+
+(b) The first is true for every \( x \): if \( x > 1 \), then \( x > 0 \), so \( x^2 = x \cdot x > 1 \cdot x = x > 1 \), where multiplying \( x > 1 \) by the positive number \( x \) keeps the inequality. The second is false for \( x = -2 \): then \( x^2 = 4 > 1 \), but \( x < 1 \).
+
+(c) \( (x > 1) \vee (x < -1) \). It is sufficient: if \( x > 1 \), then \( \abs{x} = x > 1 \), and if \( x < -1 \), then \( \abs{x} = -x > 1 \); either way \( x^2 > 1 \). It is necessary: if \( x^2 > 1 \), then \( \abs{x} > 1 \), and \( \abs{x} \) is \( x \) or \( -x \), so \( x > 1 \) or \( -x > 1 \), the latter meaning \( x < -1 \).
+:::
+
+::: {#exr-statements-and-connectives-b4}
+[B4: Break it or explain why not]
+
+For each form, either find statements about a real number \( x \) that make every premise true and the conclusion false, or explain with the table of "When is an implication broken?" why no choice of statements can.
+
+::: {.enumerate options="label=(\alph*)"}
+1. From \( P \to Q \) and \( \neg P \), conclude \( \neg Q \).
+2. From \( P \to Q \) and \( Q \to R \), conclude \( P \to R \).
+3. From \( P \vee Q \), conclude \( P \).
+4. From \( P \wedge Q \), conclude \( P \vee Q \).
+:::
+:::
+
+::: {.solution}
+(a) Bad. Take \( P \): "\( x > 2 \)" and \( Q \): "\( x^2 > 4 \)", and \( x = -3 \). The premise \( P \to Q \) holds for every \( x \), as the "only if" passage of this section showed. The premise \( \neg P \) is true, since \( -3 > 2 \) is false. And \( Q \) is true, since \( 9 > 4 \), so the conclusion \( \neg Q \) is false.
+
+(b) It cannot be broken. To make the conclusion \( P \to R \) false we need \( P \) true and \( R \) false. Now look at \( Q \). If \( Q \) is true, then \( Q \to R \) has a true hypothesis and a false conclusion, so it is broken. If \( Q \) is false, then \( P \to Q \) has a true hypothesis and a false conclusion, so it is broken. Either way some premise is false.
+
+(c) Bad. Take \( P \): "\( x > 0 \)" and \( Q \): "\( x \le 0 \)", and \( x = -1 \). The premise \( P \vee Q \) is true, since \( -1 \le 0 \), and the conclusion \( -1 > 0 \) is false.
+
+(d) It cannot be broken. If \( P \wedge Q \) is true, then \( P \) is true, so \( P \vee Q \) is true.
+
+In (b) and (d), "cannot be broken" is shown by reasoning about every case at once, not by failing to find a counterexample: a search that comes up empty settles nothing.
 :::
 
 ### C. Going deeper
@@ -389,34 +585,23 @@ The third is \( \neg(x = 0) \to (x^2 > 0) \), by (b). It is true for every \( x 
 The first two sentences differ by one word, and they are implications in opposite directions. Confusing them is exactly the mistake of Argument B at the start of this section.
 :::
 
-::: {#exr-statements-and-connectives-c2}
-[C2: Necessary and sufficient]
-
-Let \( x \) be a real number.
-
-::: {.enumerate options="label=(\alph*)"}
-1. Write "\( x > 1 \) is sufficient for \( x^2 > 1 \)" and "\( x > 1 \) is necessary for \( x^2 > 1 \)" as implications.
-2. Decide which of the two is true for every real \( x \), and give a value of \( x \) that makes the other false.
-3. Find a condition on \( x \), written with \( \vee \), that is both necessary and sufficient for \( x^2 > 1 \). You may use that \( x^2 > 1 \) exactly when \( \abs{x} > 1 \), where \( \abs{x} \) is \( x \) if \( x \ge 0 \) and \( -x \) if \( x < 0 \).
-:::
-:::
-
-::: {.solution}
-(a) "\( P \) is sufficient for \( Q \)" means that \( P \) is enough to guarantee \( Q \), that is, \( P \to Q \). "\( P \) is necessary for \( Q \)" means that \( Q \) cannot hold without \( P \), that is, \( Q \to P \). So the two sentences are \( (x > 1) \to (x^2 > 1) \) and \( (x^2 > 1) \to (x > 1) \).
-
-(b) The first is true for every \( x \): if \( x > 1 \), then \( x > 0 \), so \( x^2 = x \cdot x > 1 \cdot x = x > 1 \), where multiplying \( x > 1 \) by the positive number \( x \) keeps the inequality. The second is false for \( x = -2 \): then \( x^2 = 4 > 1 \), but \( x < 1 \).
-
-(c) \( (x > 1) \vee (x < -1) \). It is sufficient: if \( x > 1 \), then \( \abs{x} = x > 1 \), and if \( x < -1 \), then \( \abs{x} = -x > 1 \); either way \( x^2 > 1 \). It is necessary: if \( x^2 > 1 \), then \( \abs{x} > 1 \), and \( \abs{x} \) is \( x \) or \( -x \), so \( x > 1 \) or \( -x > 1 \), the latter meaning \( x < -1 \).
-:::
-
 <!-- dependency ledger
 exm-statements (example): 2^11 - 1 = 2047 = 23 * 89, and 0.999 < 1 | inline arithmetic (checked by verify/ch01/exm-statements.py)
 exm-statements (example): the twin prime conjecture is open | status of an open problem at the time of writing; not used in any argument
 def-statement (example): the opening's Argument A uses that every integer is even or odd, and that no integer is both | school algebra, allowed as a fact in examples by the F1.1 blueprint (Allowed prerequisites); F2.2 (promised); the hook is an illustration, and no proof here uses it
-def-main-connective (example): the connective table before it: every real number is positive or less than 1; 0 < 1/2 < 1; 2 > 1 | school algebra (Allowed prerequisites); AN1.1 (promised)
-def-sequent (example): the Quick check's witness n = 2 (2 is even and not divisible by 4; a multiple of 4 is even) | inline arithmetic (checked by verify/ch01/def-sequent.py)
+exm-statements (example): the convention box's Quick check: every real x has x > 2 or x <= 2 | school algebra (Allowed prerequisites); AN1.1 (promised); checked by verify/ch01/exm-statements.py
+def-main-connective (example): the connective table before it: x^2 >= 0, x^2 + 1 > 0, x >= 0 or x < 0, x > 1 implies x^2 > 1, x^2 = 0 iff x = 0, for every real x | school algebra (Allowed prerequisites); AN1.1 (promised); checked by verify/ch01/def-main-connective.py
+def-main-connective (example): the promise table: x = 3, -3, 0 land in the rows claimed; x > 1 implies x^2 > x > 1 | school algebra (Allowed prerequisites); AN1.1 (promised); checked by verify/ch01/def-main-connective.py
+def-main-connective (example): the promise Quick check: of 3, -3, 1 only -3 breaks "if x^2 > 4 then x > 2" | inline arithmetic (checked by verify/ch01/def-main-connective.py)
+def-main-connective (example): "only if" passage: x > 2 implies x^2 > 2x > 4 | school algebra (Allowed prerequisites); AN1.1 (promised); checked by verify/ch01/def-main-connective.py
+def-main-connective (example): "try to break it" Quick check (i): a multiple of 4 is even; 2 is even and not divisible by 4 | inline arithmetic (checked by verify/ch01/def-main-connective.py)
+def-main-connective (example): "Argument B, tried": every integer with an even square is even | the fact stated in the section's opening (Argument A); F1.2 (promised) for the derivation; used only to say that B's content gives no counterexample, not as a step of any proof
+def-main-connective (example): the 6-argument (6 even, not prime), the n = 3 instance (3 and 9 odd), the n = 2 instance (2 even, not divisible by 4) | inline arithmetic (checked by verify/ch01/def-main-connective.py)
+def-main-connective (example): fold "Valid, or only convincing?": n^2 + n + 41 prime for 0 <= n <= 39; 40^2 + 40 + 41 = 1681 = 41^2 | inline arithmetic (checked by verify/ch01/def-main-connective.py)
 exr-statements-and-connectives-a1 (solution): x^2 - 1 = 0 exactly when x = 1 or x = -1; 0^2 - 1 = -1 | school algebra (Allowed prerequisites); AN1.1 (promised)
+exr-statements-and-connectives-a2 (solution): (-2)^2 = 4 > 1; 2 is prime and not odd; at x = 0 both x >= 0 and x <= 0 hold | inline arithmetic (checked by verify/ch01/exr-statements-and-connectives-a2.py)
 exr-statements-and-connectives-b2 (solution): a product of two positive reals is positive | school algebra (Allowed prerequisites); AN1.1 (promised)
+exr-statements-and-connectives-b3 (solution): multiplying an inequality by a positive number keeps it; x^2 > 1 iff |x| > 1 (given in the item) | school algebra (Allowed prerequisites); AN1.1 (promised); checked by verify/ch01/exr-statements-and-connectives-b3.py
+exr-statements-and-connectives-b4 (solution): x > 2 implies x^2 > 4 for every real x; (-3)^2 = 9 > 4; -1 <= 0 | the "only if" passage of this section; inline arithmetic (checked by verify/ch01/exr-statements-and-connectives-b4.py)
 exr-statements-and-connectives-c1 (solution): the square of a non-zero real is positive; (-2)^2 = 4 | school algebra (Allowed prerequisites); AN1.1 (promised); checked by verify/ch01/exr-statements-and-connectives-c1.py
-exr-statements-and-connectives-c2 (solution): multiplying an inequality by a positive number keeps it; x^2 > 1 iff |x| > 1 (given in the item) | school algebra (Allowed prerequisites); AN1.1 (promised); checked by verify/ch01/exr-statements-and-connectives-c2.py
 -->

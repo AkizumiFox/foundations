@@ -1,4 +1,4 @@
-"""exr-disjunction-introduction-c1 (Ch 1, Section 1.6): (a) the premise "x >= 0 or x < 0" is
+"""exr-disjunction-introduction-c1 (Ch 1, Section 1.5): (a) the premise "x >= 0 or x < 0" is
 true at x = -1 and the line x >= 0 is false; (c) phi: x = -1 true, phi and psi (psi: x >= 0)
 false at x = -1."""
 from _grid import grid

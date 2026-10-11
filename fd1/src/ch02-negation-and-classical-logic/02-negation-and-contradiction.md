@@ -81,7 +81,7 @@ Row by row, \( \neg\varphi \) behaves exactly like \( \varphi \to \bot \): "not 
 :::
 
 ::: {.warning}
-Do not open the box with what you want to prove. To prove \( \neg\varphi \), the box opens with \( \varphi \). A box opened by \( \neg\varphi \) and ending in \( \bot \) gives \( \neg\neg\varphi \) by \( \rulename{\neg I} \), the negation of the goal, not the goal. This is the negation's version of the converse error that Section 1.5 found in Argument B.
+Do not open the box with what you want to prove. To prove \( \neg\varphi \), the box opens with \( \varphi \). A box opened by \( \neg\varphi \) and ending in \( \bot \) gives \( \neg\neg\varphi \) by \( \rulename{\neg I} \), the negation of the goal, not the goal. This is the negation's version of the converse error that Section 1.4 found in Argument B.
 :::
 
 ## First derivations with not-introduction

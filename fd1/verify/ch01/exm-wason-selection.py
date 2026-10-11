@@ -1,4 +1,4 @@
-"""exm-wason-selection (Section 1.4): exactly the 6 and the green card can falsify
+"""exm-wason-selection (Section 1.3): exactly the 6 and the green card can falsify
 "if a card shows an even number, its other side is red"."""
 QUOTED = {"cards to turn": {"6", "green"}}
 

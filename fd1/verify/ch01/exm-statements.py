@@ -22,3 +22,10 @@ assert is_prime(7) == QUOTED["7 is prime"]
 assert (Fraction(999, 1000) > 1) == QUOTED["0.999 > 1"]
 assert (3 > 2) == QUOTED["3 > 2"]
 print("exm-statements: all quoted values check")
+
+# the convention box's Quick check: "x > 2 or x <= 2" is true for every real x
+import sys as _sys, pathlib as _pl
+_sys.path.insert(0, str(_pl.Path(__file__).parent))
+from _grid import grid
+assert all(x > 2 or x <= 2 for x in grid())
+print("exm-statements: convention quick check holds on the grid")

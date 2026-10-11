@@ -1,4 +1,4 @@
-"""exr-disjunction-and-cases-c1 (Ch 1, Section 1.7): ||x|-|y|| <= |x-y| via the two cases
+"""exr-disjunction-and-cases-c1 (Ch 1, Section 1.6): ||x|-|y|| <= |x-y| via the two cases
 |x| >= |y|, |x| < |y|; the triangle-inequality steps; |-a| = |a|."""
 from fractions import Fraction as F
 

@@ -160,7 +160,7 @@ $\begin{nd}
 
 Here \( \varphi = P(x) \wedge Q(x) \) and \( t = c \). Marking only the first \( c \), with \( \varphi = P(x) \wedge Q(c) \), would give the legal but weaker line \( \exists x\, (P(x) \wedge Q(c)) \), which is not the goal.
 
-(b) *Idea.* The goal is a conjunction, so it splits into two goals (Section 1.3), and each is an existential with the line \( R(c, c) \) as an instance, read in two different ways (the first and third rows of the table above).
+(b) *Idea.* The goal is a conjunction, so it splits into two goals (Section 1.2), and each is an existential with the line \( R(c, c) \) as an instance, read in two different ways (the first and third rows of the table above).
 
 ```{=latex}
 \begin{center}

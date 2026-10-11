@@ -1,6 +1,6 @@
 """Flag word sequences shared between a written chapter (src/chNN-*/*.md) and its source chapters.
 
-    python blueprint/originality.py 7 [--n 8] [--extra PMA.2 SPI.5]
+    python blueprint/originality.py 7 [--n 8] [--extra PMA.2 SPI.5] [--src fd1/src]
 
 Sources are the DAG nodes listed for the chapter in book.yaml (plus --extra nodes). Their
 text is read from the converted library (env ANALYSIS_SOURCES, default
@@ -73,12 +73,14 @@ def main():
     ap.add_argument("chapter")
     ap.add_argument("--n", type=int, default=8)
     ap.add_argument("--extra", nargs="*", default=[])
+    ap.add_argument("--src", type=Path, default=ROOT / "src",
+                    help="the volume's source folder (e.g. fd1/src); default ROOT/src")
     a = ap.parse_args()
     book = yaml.safe_load((ROOT / "blueprint/book.yaml").read_text())
     dag = json.loads((ROOT / "blueprint/dag.json").read_text())
     books = yaml.safe_load((ROOT / "blueprint/sources.yaml").read_text())["books"]
     ch = next(c for c in book["chapters"] if c["num"] == int(a.chapter))
-    files = sorted((ROOT / "src").glob(f"ch{int(a.chapter):02d}-*/*.md"))
+    files = sorted(a.src.glob(f"ch{int(a.chapter):02d}-*/*.md"))
     mine = words(md_to_text("\n".join(f.read_text() for f in files)))
     mine_ng = ngrams(mine, a.n)
     print(f"chapter {a.chapter}: {len(mine)} words of prose checked, n = {a.n}")

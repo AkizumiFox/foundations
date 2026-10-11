@@ -1,4 +1,4 @@
-"""exm-abs-at-least-x (Ch 1, Section 1.7): |x| >= x by cases on x >= 0 or x < 0; the premises
+"""exm-abs-at-least-x (Ch 1, Section 1.6): |x| >= x by cases on x >= 0 or x < 0; the premises
 x >= 0 -> |x| = x and x < 0 -> |x| > x; |x| >= x is (|x| > x) or (|x| = x); neither side holds
 for every x (|x| > x fails at 1, |x| = x fails at -1); the instances x = 3 and x = -2."""
 from _grid import grid

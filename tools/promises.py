@@ -177,6 +177,15 @@ def find_promises(src: Path = SRC, ctx: Context | None = None, volume=None, labe
     src = Path(src)
     ctx = ctx or Context(series_mod.Series({}))
     promises = []
+    # "Section N.M" is the M-th section of chapter N, which need not be file NN (a merged
+    # section leaves a gap in the file numbers); map it to its file number by file order
+    files_of = {}
+    for f in src.rglob("*.md"):
+        n, s_ = chapter_of(f.parent.name), section_of(f)
+        if n is not None and s_.isdigit():
+            files_of.setdefault(n, []).append(int(s_))
+    for v in files_of.values():
+        v.sort()
     for f in sorted(src.rglob("*.md")):
         n = chapter_of(f.parent.name)
         if n is None:
@@ -205,7 +214,11 @@ def find_promises(src: Path = SRC, ctx: Context | None = None, volume=None, labe
                     continue
                 t = ctx.chapter_id(vol, int(m.group(2)))
                 if t is not None:
-                    hits.append((m, t, int(m.group(3))))
+                    k = int(m.group(3))
+                    files = files_of.get(int(m.group(2))) if vol is volume else None
+                    if files and 1 <= k <= len(files):
+                        k = files[k - 1]
+                    hits.append((m, t, k))
             # bookkeeping (dependency ledgers): "F1.4 §10" is a section of F1.4, not of this
             # chapter (as "Section 4.10" was before the split; a bare atlas id is not a promise)
             owned = set()

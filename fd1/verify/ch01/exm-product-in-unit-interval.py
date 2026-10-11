@@ -1,5 +1,5 @@
-"""School-algebra facts quoted in Section 1.3 (03-conjunction): exm-product-in-unit-interval,
-the warning on and-E applied to an implication, and exr-conjunction-b2."""
+"""School-algebra facts quoted in Section 1.2 (02-derivations): exm-product-in-unit-interval,
+the warning on and-E applied to an implication, and exr-derivations-b2."""
 import sys, pathlib
 from fractions import Fraction
 sys.path.insert(0, str(pathlib.Path(__file__).parent))
@@ -22,7 +22,7 @@ x0 = QUOTED["warning refuting x"]
 assert (not (x0 > 0 and x0 > 1)) or x0**2 > 1   # the premise holds at x0
 assert not x0 > 0                               # the illegal line is false there
 
-# exr-conjunction-b2: 1 < x < 2 and 3 < y < 4 give 4 < x + y < 6
+# exr-derivations-b2: 1 < x < 2 and 3 < y < 4 give 4 < x + y < 6
 lo, hi = QUOTED["b2 sums"]
 assert 1 + 3 == lo and 2 + 4 == hi
 for x in [Fraction(k, 23) for k in range(24, 46)]:

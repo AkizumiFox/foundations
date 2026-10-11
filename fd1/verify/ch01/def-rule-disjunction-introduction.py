@@ -1,10 +1,11 @@
-"""def-rule-disjunction-introduction and its surroundings (Ch 1, Section 1.6): the instance
+"""def-rule-disjunction-introduction and its surroundings (Ch 1, Section 1.5): the instance
 lines from x > 0, the Quick check from x = 2, and the witnesses of the two warnings
 (x = -1: "x >= 0 or x < 0" true, "x >= 0" false; x = 2.5: P: x > 2, Q: x > 1, R: x > 3)."""
 from fractions import Fraction as F
 from _grid import grid
 
-QUOTED = {"one-way witness": -1, "too-early witness": F(5, 2), "inclusive witness": 2}
+QUOTED = {"one-way witness": -1, "too-early witness": F(5, 2), "inclusive witness": 2,
+          "side-choice witness": 2, "quick-check witness": F(1, 2)}
 
 # instance lines: from x > 0, each of the three disjunctions is true
 for x in grid():
@@ -24,4 +25,12 @@ assert all((t >= 2) == (t > 2 or t == 2) for t in grid())
 assert all((not t > 2) or t > 1 for t in grid())
 x = QUOTED["too-early witness"]
 assert x > 2 and x > 1 and not x > 3
+# side choice: premise x > 1, goal (x > 3) or (x > 0); x > 1 implies x > 0; x = 2 breaks x > 1 -> x > 3
+assert all((not t > 1) or t > 0 for t in grid())
+x = QUOTED["side-choice witness"]
+assert x > 1 and not x > 3
+# Quick check: premise 0 < x < 1, goal (x < 0) or (x < 2); x < 1 implies x < 2; x = 1/2 breaks the left side
+assert all((not (0 < t < 1)) or t < 2 for t in grid())
+x = QUOTED["quick-check witness"]
+assert 0 < x < 1 and not x < 0
 print("def-rule-disjunction-introduction: all quoted values check")

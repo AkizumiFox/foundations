@@ -526,11 +526,11 @@ A logical point is first carried by an example from school mathematics (parity, 
 
 ### 12.10 Notation (fd1 and introductory volumes)
 
-- ⊢ is introduced once, right after the reader has seen a derivation (fd1: Section 1.2). Γ is read "gamma" and explained as a list of statements.
+- ⊢ is introduced once, right after the reader has seen a derivation (fd1: Section 1.2). Γ is read "capital gamma" and explained as a list of statements.
 - Schema letters are separated from statements once, with one sentence and an analogy: φ, ψ are holes in a pattern, like *a* and *b* in (a + b)² = a² + 2ab + b²; P, Q are statements. Each Greek letter is introduced once.
 - In fd1 Chapter 1 nested → is always written with its parentheses; the right-association convention is a one-line remark (NOTATION.md keeps it).
 - A substitution of a compound term parenthesizes the term, \( \varphi[(y+1)/x] \), rather than switching notation; no notation is swept across volumes.
-- "≤ and ≥ are written out as disjunctions in derivations" is stated once, in a box (fd1: Section 1.5), and reused after.
+- "≤ and ≥ are written out as disjunctions in a derivation whenever a rule (∨I, ∨E) has to see the disjunction; otherwise \( a \le b \) may stand as one statement" is stated once, in a box (fd1: Section 1.5), and reused after.
 
 ### 12.11 Citation order of ∧I
 

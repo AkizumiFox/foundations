@@ -1,4 +1,4 @@
-"""Values quoted around def-rules-implication (Section 1.5): the hook "if x > 2, then x^2 > 4"."""
+"""Values quoted around def-rules-implication (Section 1.4): the hook "if x > 2, then x^2 > 4"."""
 import sys, pathlib
 sys.path.insert(0, str(pathlib.Path(__file__).parent))
 from _implies import implies

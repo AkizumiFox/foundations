@@ -1,4 +1,4 @@
-"""Exact rational checks for Section 1.5's sidecars: does one condition on a real x imply another?
+"""Exact rational checks for Section 1.4's sidecars: does one condition on a real x imply another?
 
 Each condition used is a polynomial inequality in x whose truth can change only at a few points
 (the boundaries, passed in).  Sampling every k/16 in [-30, 30], every boundary b and b +- 10^-9,

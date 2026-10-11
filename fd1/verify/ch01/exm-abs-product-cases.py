@@ -1,4 +1,4 @@
-"""exm-abs-product-cases (Ch 1, Section 1.7): |xy| = |x||y| in each of the four sign cases,
+"""exm-abs-product-cases (Ch 1, Section 1.6): |xy| = |x||y| in each of the four sign cases,
 and the remark |a| = -a for a <= 0 (the x = 0, y < 0 hole)."""
 from fractions import Fraction as F
 

@@ -25,7 +25,7 @@ Here \( \mathrm{T} \) stands for "true" and \( \mathrm{F} \) for "false".
 
 *Negation.* The rule \( \rulename{\neg E} \) writes \( \bot \) from \( \varphi \) and \( \neg\varphi \). Since \( \bot \) is false, \( \varphi \) and \( \neg\varphi \) are never both true: if \( \varphi \) is true, \( \neg\varphi \) is false. And @prp-excluded-middle derives \( \varphi \vee \neg\varphi \) from no premises at all, so at least one of the two is true: if \( \varphi \) is false, \( \neg\varphi \) is true. Negation flips the value.
 
-*Implication.* The rule \( \rulename{{\to}E} \) writes \( \psi \) from \( \varphi \to \psi \) and \( \varphi \). So in the combination "\( \varphi \) true, \( \psi \) false", the implication cannot be true: that is the one row where \( \varphi \to \psi \) is false. The other three rows are forced by derivations. @prp-vacuous-implication derives \( P \to Q \) from \( \neg P \), so whenever \( P \) is false (and \( \neg P \) therefore true), \( P \to Q \) must be true, whatever \( Q \) is. And \( P \to Q \) is derivable from \( Q \) alone (@exr-proving-an-implication-b2 (a) of Section 1.5):
+*Implication.* The rule \( \rulename{{\to}E} \) writes \( \psi \) from \( \varphi \to \psi \) and \( \varphi \). So in the combination "\( \varphi \) true, \( \psi \) false", the implication cannot be true: that is the one row where \( \varphi \to \psi \) is false. The other three rows are forced by derivations. @prp-vacuous-implication derives \( P \to Q \) from \( \neg P \), so whenever \( P \) is false (and \( \neg P \) therefore true), \( P \to Q \) must be true, whatever \( Q \) is. And \( P \to Q \) is derivable from \( Q \) alone (@exr-proving-an-implication-b2 (a) of Section 1.4):
 
 ```{=latex}
 \begin{center}
@@ -108,7 +108,7 @@ Clauses (V2)–(V6) say that the value of a compound formula depends **only** on
 \end{array}
 \]
 
-Read them clause by clause. (V1): an atom has the value the valuation gives it, and \( \bot \) is false under every valuation. (V2): negation flips. (V3): a conjunction needs both parts. (V4): a disjunction needs at least one part; "or" is **inclusive**, as the rule \( \rulename{\vee I} \) of Section 1.6 already said, so the row with both parts true gives \( \mathrm{T} \). (V5): an implication is false in exactly one case, a true hypothesis with a false conclusion. (V6): a biconditional says the two sides agree.
+Read them clause by clause. (V1): an atom has the value the valuation gives it, and \( \bot \) is false under every valuation. (V2): negation flips. (V3): a conjunction needs both parts. (V4): a disjunction needs at least one part; "or" is **inclusive**, as the rule \( \rulename{\vee I} \) of Section 1.5 already said, so the row with both parts true gives \( \mathrm{T} \). (V5): an implication is false in exactly one case, a true hypothesis with a false conclusion. (V6): a biconditional says the two sides agree.
 
 The columns for \( \neg \), \( \wedge \) and \( \to \), and the value of \( \bot \), are the ones the first subsection read off the rules. Section 3.6 proves that every row of every table is, in a precise sense, a derivable sequent.
 

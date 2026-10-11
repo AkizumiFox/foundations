@@ -1,4 +1,4 @@
-"""exm-or-hypothesis-split (Ch 1, Section 1.6): the reading "if x >= 0 then x^3 >= 0" splits
+"""exm-or-hypothesis-split (Ch 1, Section 1.5): the reading "if x >= 0 then x^3 >= 0" splits
 into "if x > 0 then x^3 >= 0" and "if x = 0 then x^3 >= 0"; x >= 0 is (x > 0) or (x = 0)."""
 from _grid import grid
 

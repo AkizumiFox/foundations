@@ -1,4 +1,4 @@
-"""exm-triangle-inequality-cases (Ch 1, Section 1.7): a <= |a|, -a <= |a|; the two cases on the
+"""exm-triangle-inequality-cases (Ch 1, Section 1.6): a <= |a|, -a <= |a|; the two cases on the
 sign of x + y; the warning's witness x = 1, y = -1 (0 <= 2, strict)."""
 from fractions import Fraction as F
 

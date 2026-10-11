@@ -1,4 +1,4 @@
-"""exm-illegal-citation and the warning after it (Section 1.5)."""
+"""exm-illegal-citation and the warning after it (Section 1.4)."""
 import sys, pathlib
 sys.path.insert(0, str(pathlib.Path(__file__).parent))
 from _implies import implies

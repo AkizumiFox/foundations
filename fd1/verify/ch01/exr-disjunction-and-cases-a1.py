@@ -1,4 +1,4 @@
-"""exr-disjunction-and-cases-a1 (Ch 1, Section 1.7): (c) the one-case "proof" that n^2 is even fails at n = 1;
+"""exr-disjunction-and-cases-a1 (Ch 1, Section 1.6): (c) the one-case "proof" that n^2 is even fails at n = 1;
 (d) instance P: x > 1, Q: x < 1, R: x > 0 refuted at x = -1; the quick check on x^2 >= 0 splits."""
 QUOTED = {"(c) witness": 1, "(d) witness": -1}
 

@@ -6,7 +6,7 @@ Section 4.2 made the language exact and defined the operation \( \varphi[t/x] \)
 
 Every application of a general fact to a particular case is one step of logic, and so far that step has been taken on trust. Three earlier places took it.
 
-- Section 1.4 used the theorem "if \( a < b \) and \( b < c \), then \( a < c \)" at \( a = \sqrt{2} \), \( b = 1.5 \), \( c = 2 \), and said that passing from "for all \( a, b, c \)" to one instance is a rule of its own, still to be stated.
+- Section 1.3 used the theorem "if an integer is divisible by \( 2 \) and by \( 3 \), then it is divisible by \( 6 \)" at \( n = 42 \), taking the step from "every integer" to the one integer \( 42 \) on trust.
 - In @exm-raa-zero (Section 2.5) the hypothesis was "\( x \le \varepsilon \) for every \( \varepsilon > 0 \)", and the proof applied it to the one number \( \varepsilon = x/2 \).
 - Section 4.1 opened with the argument "every positive real has a square root; \( 2 \) is positive; so \( 2 \) has a square root", which a truth table calls invalid because it sees only three unrelated atoms.
 
@@ -226,17 +226,17 @@ Try the sequent
 \]
 It is plainly correct: if every \( x \) has both properties, then every \( x \) has the first. Search for a derivation. The goal begins with \( \forall \), and no rule so far is made for proving a \( \forall \). Apart from \( \rulename{\bot E} \) (@def-rules-contradiction) and \( \rulename{RAA} \) (@def-rule-raa), which reach a line only by way of a contradiction, a line beginning with \( \forall \) can only be taken out of a line or box that already contains it. So the goal-directed step has nothing to offer, and we turn to the premise. \( \rulename{\forall E} \) at \( c \) gives \( P(c) \wedge Q(c) \), and \( \rulename{\wedge E} \) gives \( P(c) \). The same works at \( d \), at \( f(c) \), at any term we name. But each line is an instance. No finite list of instances is the statement \( \forall x\, P(x) \), which speaks about every object at once, including all the objects that none of our terms happen to name.
 
-So with \( \rulename{\forall E} \) alone, a universal statement can be **used** but not **proved**. Leaving aside a detour through a contradiction, a derivation can write \( \forall x\, \psi \) only by taking it out of a line or box that already contains it, as line 2 of (b) took \( \forall y\, R(c, y) \) out of the premise. Section 1.4 was in the same position with implications, and Section 1.5 filled the gap with a box. Section 4.4 does the same for \( \forall \): it proves \( P \) of one name about which nothing is known, and that box finishes this derivation in four lines.
+So with \( \rulename{\forall E} \) alone, a universal statement can be **used** but not **proved**. Leaving aside a detour through a contradiction, a derivation can write \( \forall x\, \psi \) only by taking it out of a line or box that already contains it, as line 2 of (b) took \( \forall y\, R(c, y) \) out of the premise. Section 1.3 was in the same position with implications, and Section 1.4 filled the gap with a box. Section 4.4 does the same for \( \forall \): it proves \( P \) of one name about which nothing is known, and that box finishes this derivation in four lines.
 
 ## What the rule sounds like
 
-The table of Sections 1.3–1.7 and 2.1–2.5 gains a row for \( \rulename{\forall E} \).
+The table of Sections 1.2–1.6 and 2.1–2.5 gains a row for \( \rulename{\forall E} \).
 
 | Rule | You write | Lean |
 |------|--------------------------------------|------------------------|
 | \( \rulename{\forall E} \) | "In particular, for \( x = t \), …"; "applying the hypothesis to \( t \), …" | `h t` (or `specialize h t`) |
 
-Written mathematics has many forms of the phrase: "in particular, for \( x = 3 \), …"; "applying the hypothesis to \( x_0 - 1 \), …"; "by the theorem with \( \varepsilon/2 \) in place of \( \varepsilon \), …". In the Lean column, `h` is the universal statement and `t` the term; applying `h` to `t` gives the instance, just as applying an implication to a proof of its hypothesis gave its conclusion in Section 1.4. In Lean a universal statement behaves like a function that takes a term and returns a proof of the instance.
+Written mathematics has many forms of the phrase: "in particular, for \( x = 3 \), …"; "applying the hypothesis to \( x_0 - 1 \), …"; "by the theorem with \( \varepsilon/2 \) in place of \( \varepsilon \), …". In the Lean column, `h` is the universal statement and `t` the term; applying `h` to `t` gives the instance, just as applying an implication to a proof of its hypothesis gave its conclusion in Section 1.3. In Lean a universal statement behaves like a function that takes a term and returns a proof of the instance.
 
 ## The search method: one more step
 
@@ -244,7 +244,7 @@ The search method of Section 2.6 had a goal-directed step and a premise-directed
 
 - **A resource \( \forall x\, \varphi \).** Do not instantiate blindly. Instantiate at the term that the goal, or another resource, asks for: match the shape of the goal (or of a hypothesis still needed) against \( \varphi \), and read off the term. If the term is not free for \( x \) in \( \varphi \), rename the bound variables of \( \varphi \) first.
 
-Instantiating is always **safe**, in the sense of Section 2.6: the new line is added and nothing is lost, since the universal line stays available. What can go wrong is only that the derivation fills with instances nobody needs, as a forward search filled with useless lines in Section 1.4.
+Instantiating is always **safe**, in the sense of Section 2.6: the new line is added and nothing is lost, since the universal line stays available. What can go wrong is only that the derivation fills with instances nobody needs, as a forward search filled with useless lines in Section 1.3.
 
 ## Exercises
 
@@ -477,7 +477,7 @@ Fatal errors (0 for the step): claiming the flag \( x \) is fine because \( x \)
 def-rule-universal-elimination (claim): the domain is never empty, so every term names an element | F1.4 §01 (domain convention, stated there); made exact in F1.4 §11, prose pointer only
 def-rule-universal-elimination (claim): the rule never leads from true premises to a false line | NOT proved here: stated in F1.4 §11, proved in optional F1.4 §12; prose pointer only, nothing here rests on it
 def-rule-universal-elimination (claim): x not free in phi gives phi[t/x] = phi | F1.4 §02 (claim after def-substitution), recalled in prose
-def-rule-universal-elimination (example): F1.1 §04's instance of "a < b and b < c give a < c" and exm-raa-zero's epsilon = x/2 are forall-E steps | F1.1 §04 (def-rule-implication-elimination's example), exm-raa-zero (cited)
+def-rule-universal-elimination (example): F1.1 §04's instance at n = 42 of "an integer divisible by 2 and by 3 is divisible by 6" and exm-raa-zero's epsilon = x/2 are forall-E steps | F1.1 §04 (def-rule-implication-elimination's example), exm-raa-zero (cited)
 exm-universal-elimination-derivations (example): over N, f(n) = n + 2, 0 even, f(f(0)) = 4 | school arithmetic; checked by verify/ch04/exm-universal-elimination-derivations.py
 def-rule-universal-elimination (example): in "How this rule looks", (a - 1)^2 = a^2 - 2a + 1; y^2 >= 0 for real y | school algebra, stated as such ("arith"); checked by verify/ch04/def-rule-universal-elimination.py
 def-rule-universal-elimination (claim): the arith convention: an arith line abbreviates a universally quantified arithmetic premise, forall-E at the line's terms and ->E | inline convention, stated in the text; the same convention is recalled in F1.4 §12

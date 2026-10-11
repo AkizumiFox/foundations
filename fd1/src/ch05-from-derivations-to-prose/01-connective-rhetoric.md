@@ -134,7 +134,7 @@ In (b), "recall" is \( \rulename{R} \), and it could be dropped. "Cannot hold" i
 | \( \rulename{DS} \) | "since \( x \ne 0 \), the first case is impossible, so …" | the rule's name, yes; the fact \( x \ne 0 \) it uses, never |
 | "or" and "and" commute (@exm-disjunction-first-derivations, @prp-and-commutes) | "\( P \) or \( Q \)" read as "\( Q \) or \( P \)", with no words of its own | yes |
 
-In analysis, \( \rulename{\vee I} \) hides inside every weakening of a strict inequality: "\( x > 0 \), so \( x \ge 0 \)". \( \rulename{\vee E} \) is the proof of the triangle inequality in Section 1.7 (@exm-triangle-inequality-cases), which splits on the sign of \( x + y \) and reaches \( \abs{x + y} \le \abs{x} + \abs{y} \) in both cases. \( \rulename{DS} \) is the step "\( x^2 = x \), so \( x = 0 \) or \( x = 1 \); since \( x \ne 0 \), \( x = 1 \)".
+In analysis, \( \rulename{\vee I} \) hides inside every weakening of a strict inequality: "\( x > 0 \), so \( x \ge 0 \)". \( \rulename{\vee E} \) is the proof of the triangle inequality in Section 1.6 (@exm-triangle-inequality-cases), which splits on the sign of \( x + y \) and reaches \( \abs{x + y} \le \abs{x} + \abs{y} \) in both cases. \( \rulename{DS} \) is the step "\( x^2 = x \), so \( x = 0 \) or \( x = 1 \); since \( x \ne 0 \), \( x = 1 \)".
 
 ::: {#exm-rhetoric-cases}
 [Two cases, a weakening, a refuted disjunct]

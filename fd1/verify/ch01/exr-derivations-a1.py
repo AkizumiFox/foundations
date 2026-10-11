@@ -1,39 +1,21 @@
-"""exr-derivations-a1 (Section 1.2): the justifications of (b) are forced; (c) fails only at
-line 3 ('earlier'); (e) Tr and Sh preserve truth (sampled on exact rationals)."""
+"""exr-derivations-a1 (Section 1.2): (e) Tr leads from true lines to a true line (sampled on
+exact rationals); (d) the justifications and (f) the sequent of the and-derivation."""
 import itertools
-import pathlib
-import sys
 from fractions import Fraction
-sys.path.insert(0, str(pathlib.Path(__file__).parent))
-from _toyrules import check_line, is_derivation, sh_instance, tr_instance
 
-QUOTED = {"(b) line 6 adds": 2, "(c) failing line": 3, "(e) true": True}
+QUOTED = {"(d) (iv)": "4, 2", "(e) true": True}
 
-prem = [("1 < x", None, ()), ("x < y", None, ()), ("y < 5", None, ())]
-b = prem + [("x < 5", "Tr", (2, 3)), ("1 < 5", "Tr", (1, 4)),
-            ("1 + 2 < 5 + 2", "Sh", (5,))]
-assert is_derivation(b)
-# uniqueness: no other citation of Tr/Sh justifies lines 4, 5, 6
-for k in (4, 5, 6):
-    stmt = b[k - 1][0]
-    ok = []
-    for i, j in itertools.product(range(1, k), repeat=2):
-        if tr_instance(b[i - 1][0], b[j - 1][0], stmt):
-            ok.append(("Tr", (i, j)))
-    for i in range(1, k):
-        if sh_instance(b[i - 1][0], stmt):
-            ok.append(("Sh", (i,)))
-    assert ok == [(b[k - 1][1], b[k - 1][2])], (k, ok)
-c = [("0 < x", None, ()), ("x < 1", None, ()), ("0 + 1 < 1 + 1", "Sh", (4,)),
-     ("0 < 1", "Tr", (1, 2))]
-assert not is_derivation(c)
-assert check_line(c, QUOTED["(c) failing line"]) == (True, True, False)
-assert check_line(c, 4) == (True, True, True)
-# (e): the rules lead from true to true, on a grid of exact rationals
 pts = [Fraction(n, 4) for n in range(-12, 13)]
-for a, bb, cc in itertools.product(pts, repeat=3):
-    if a < bb and bb < cc:
-        assert a < cc
-    if a < bb:
-        assert a + cc < bb + cc
+for a, b, c in itertools.product(pts, repeat=3):
+    if a < b and b < c:
+        assert a < c
+
+# (d): lines 1 P&(Q&R), 2 P (andE 1), 3 Q&R (andE 1), 4 R (andE 3), 5 R&P (andI 4, 2)
+A = lambda l, r: ("and", l, r)
+lines = {1: A("P", A("Q", "R")), 2: "P", 3: A("Q", "R"), 4: "R", 5: A("R", "P")}
+andE = lambda i, k: lines[i][0] == "and" and lines[k] in lines[i][1:]
+assert andE(1, 2) and andE(1, 3) and andE(3, 4) and not andE(1, 4)
+assert lines[5] == A(lines[4], lines[2])          # "andI 4, 2"; "2, 4" equally (either order)
+# (f): premise line 1, last line 5
+assert (lines[1], lines[5]) == (A("P", A("Q", "R")), A("R", "P"))
 print("exr-derivations-a1: all checks pass")

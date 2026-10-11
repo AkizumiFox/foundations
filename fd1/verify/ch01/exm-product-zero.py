@@ -1,4 +1,4 @@
-"""exm-product-zero (Ch 1, Section 1.6): the school fact "a = 0 or b = 0 implies a*b = 0" and
+"""exm-product-zero (Ch 1, Section 1.5): the school fact "a = 0 or b = 0 implies a*b = 0" and
 the derived "a = 0 implies a*b = 0"; x > 0 gives (x > 0) or (x = 0), which is x >= 0."""
 from _grid import grid
 

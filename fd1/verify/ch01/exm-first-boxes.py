@@ -1,4 +1,4 @@
-"""The readings of exm-first-boxes (c) and prp-curry (Section 1.5)."""
+"""The readings of exm-first-boxes (c) and prp-curry (Section 1.4)."""
 from fractions import Fraction
 
 pts = [Fraction(k, 7) for k in range(-70, 71)]

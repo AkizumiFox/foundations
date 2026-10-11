@@ -4,7 +4,7 @@ Chapter 2 ended on a question it could not answer. Section 2.6 searched for a de
 
 ## What must be proved, and why it is not obvious
 
-Chapters 1 and 2 checked each rule as it arrived. \( \rulename{\wedge I} \) is safe because two true statements make a true conjunction (Section 1.3); \( \rulename{{\to}E} \) is safe because that is what "if … then" asserts (Section 1.4). Each time, the book said that Chapter 3 would prove it "for every rule at once". Why is that more than collecting the separate checks?
+Chapters 1 and 2 checked each rule as it arrived. \( \rulename{\wedge I} \) is safe because two true statements make a true conjunction (Section 1.2); \( \rulename{{\to}E} \) is safe because that is what "if … then" asserts (Section 1.3). Section 1.2 said once that Chapter 3 would prove it for every rule of Chapters 1 and 2 at once. Why is that more than collecting the separate checks?
 
 The first attempt at a proof is: go down a derivation, line by line, and show that each line is true in every row in which the premises are true. For a derivation without boxes this works. Each line is a premise, or comes from earlier lines by a rule, and the rule turns true lines into a true line. But it fails at the first box. Here is the derivation of @prp-contrapositive, written with atoms:
 
@@ -40,7 +40,7 @@ A derivation may also use derived rules such as \( \rulename{MT} \) and \( \rule
 
 ## The context of a line
 
-Let a derivation have lines \( 1, \dots, n \). We write \( \varphi_k \) for the formula on line \( k \). Recall from Section 1.5, just after @def-derivation, that the **context** of line \( k \) is the list of the premises together with the assumptions of every box containing line \( k \); we write it \( \Gamma_k \). For lists of formulas \( \Delta \) and \( \Delta' \), we write \( \Delta \subseteq \Delta' \) when every formula of \( \Delta \) occurs in \( \Delta' \).
+Let a derivation have lines \( 1, \dots, n \). We write \( \varphi_k \) for the formula on line \( k \). The **length** of a derivation is its number of lines. The **context** of line \( k \) is the list of the premises together with the assumptions of every box containing line \( k \): the statements the line depends on. We write it \( \Gamma_k \). The context of the last line is just the premises, since by @def-derivation the last line lies in no box. For lists of formulas \( \Delta \) and \( \Delta' \), we write \( \Delta \subseteq \Delta' \) when every formula of \( \Delta \) occurs in \( \Delta' \).
 
 *The context of a line is everything that line depends on: the premises, and every assumption still open where the line stands.*
 
@@ -281,11 +281,11 @@ p \to q \nvdash q \to p .
 \]
 The letters of Chapter 2 stood for arbitrary statements, and the search asked for a derivation of the **pattern**: one derivation, written with \( P \) and \( Q \), that works whatever they are. Such a derivation, with \( P \) and \( Q \) read as the atoms \( p \) and \( q \), would derive \( p \to q \vdash q \to p \), which we have just ruled out. So the pattern has no derivation, and the search was right to fail. (Particular instances can be derivable: with \( P \) and \( Q \) the same statement, \( P \to P \vdash P \to P \) takes one line. A refuting row for atoms speaks about the pattern, as the warning after @lem-substitution said.)
 
-**Affirming the consequent.** Chapter 1 promised, in Sections 1.1 and 1.4, that no derivation leads from \( P \to Q \) and \( Q \) to \( P \), whichever rules of Chapters 1 and 2 it uses. The refuting row of @exm-affirming-the-consequent, \( p = \mathrm{F} \) and \( q = \mathrm{T} \), makes \( p \to q \) and \( q \) true and \( p \) false, so by @cor-refuting-row,
+**Affirming the consequent.** Chapter 1 promised, in Section 1.3, that no derivation leads from \( P \to Q \) and \( Q \) to \( P \), whichever rules of Chapters 1 and 2 it uses. The refuting row of @exm-affirming-the-consequent, \( p = \mathrm{F} \) and \( q = \mathrm{T} \), makes \( p \to q \) and \( q \) true and \( p \) false, so by @cor-refuting-row,
 \[
 p \to q, \ q \nvdash p .
 \]
-Chapter 1 could already see that the step "from \( \varphi \to \psi \) and \( \psi \), infer \( \varphi \)" is not an instance of \( \rulename{{\to}E} \). That did not exclude a longer derivation reaching \( p \) some other way. The row excludes every derivation at once. So the repair of Argument B that Section 1.1 considered is not merely unjustified: it is impossible.
+Chapter 1 could already see that the step "from \( \varphi \to \psi \) and \( \psi \), infer \( \varphi \)" is not an instance of \( \rulename{{\to}E} \). That did not exclude a longer derivation reaching \( p \) some other way. The row excludes every derivation at once. So the repair of Argument B that Section 1.4 considered is not merely unjustified: it is impossible.
 
 **A stall in Chapter 2.** Section 2.5 found that the De Morgan direction \( \neg(P \wedge Q) \vdash \neg P \vee \neg Q \) cannot end with \( \rulename{\vee I} \), because neither \( \neg P \) nor \( \neg Q \) follows from the premise alone, and it said "the rules never lead from true premises to a false conclusion" as its reason. Now that reason is a theorem: the row \( p = \mathrm{T} \), \( q = \mathrm{F} \) makes \( \neg(p \wedge q) \) true and \( \neg p \) false, so \( \neg(p \wedge q) \nvdash \neg p \), and the row \( p = \mathrm{F} \), \( q = \mathrm{T} \) gives \( \neg(p \wedge q) \nvdash \neg q \).
 

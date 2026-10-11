@@ -220,7 +220,7 @@ Show that:
 :::
 
 ::: {.solution}
-(a) \( (\vdash) \) *Idea.* The premise is an existential: open its box first. Inside, the assumption \( P(x_0) \vee Q(x_0) \) is a disjunction, and the premise-directed step for \( \vee \) (Section 1.7) opens two cases, each ending in the current goal. In each case one side of the goal has an instance with the witness \( x_0 \), so \( \rulename{\exists I} \) and \( \rulename{\vee I} \) finish it.
+(a) \( (\vdash) \) *Idea.* The premise is an existential: open its box first. Inside, the assumption \( P(x_0) \vee Q(x_0) \) is a disjunction, and the premise-directed step for \( \vee \) (Section 1.6) opens two cases, each ending in the current goal. In each case one side of the goal has an instance with the witness \( x_0 \), so \( \rulename{\exists I} \) and \( \rulename{\vee I} \) finish it.
 
 ```{=latex}
 \begin{center}

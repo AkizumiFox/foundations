@@ -130,6 +130,10 @@ Citation counts are `@label` / `@fd1:label` hits in fd1 Ch2–5, fd2, fd3 and an
 - `fd1/verify/ch01/`: delete `exr-derivations-b1.py` (Sh); rewrite `exr-derivations-b2.py`, `-b3.py` for the drills they became (or fold them into a new `exr-derivations-a2.py`); update `exm-chaining-derivation.py` (two parts), `def-rule-implication-elimination.py` (the 42 example replaces √2), `def-sequent.py` (its n = 2 witness now sits in 1.1 after `def-main-connective`: rename the script after the block the drafter ledgers it under). New sidecars are listed per section.
 - `NOTATION.md`: the ∧I order rule (R0/R1); the \( \Gamma_k \) row (146) points at F1.3 §05 for "context", which leaves Chapter 1 (§4.4).
 
+*Deviation (S3, 2026-10-12):* `def-sequent.py` is deleted rather than renamed, because its n = 2 witness is already checked by `def-main-connective.py` (the block the drafter ledgers it under) and the `def-sequent` block now quotes no values.
+
+*Deviation (S3, 2026-10-12):* The entry of `exr-statements-and-connectives-c2` is re-keyed to `-b3` with its verdicts kept, not retired, because §3.1 renames the exercise with its content unchanged; the item's hash changed with its new position and heading, so its verdicts are stale and S5–S8 re-review it as for every other changed item. `exr-disjunction-and-cases-b3` likewise keeps its old verdicts, all stale, so none counts as carried. The retired entries are kept in `fd1/authoring/ledger/archive/ch01-r2-retired.yaml`.
+
 ---
 
 ## 4. Per-section plans
@@ -553,6 +557,8 @@ Exercises after the revision: 6 A1, 6 A2 (drill banks, 63 items, which count as 
 | ch05 06:104 | Argument B of Section 1.1, diagnosed in Section 1.5 | "… diagnosed in Section 1.4" |
 
 **Other downstream edits this revision forces** (not "Section 1.x" hits; for R3/R6): ch02 index:3's "none explains why 'if \( x^2 < 0 \), then \( x = 7 \)' should count as true" should become "Chapter 1 read it informally, as a promise not broken; no rule yet derives it" (seam check); NOTATION row 146 (context → F1.3 §05); NOTATION row 84 (`d \mid n`: first use F1.2 §04 → F1.1 §04, since 1.3 now defines it; ch02 04:556's definition may stay as a reminder); STATUS's promise table loses the per-rule soundness promises of F1.1 (one remains, 1.2's Looking ahead, scoped to the rules of Chapters 1 and 2; 1.3's Looking ahead keeps the affirming-the-consequent promise; 1.1's Looking ahead keeps the Chapter 4 promise formerly in the convention box (ch04 04:13); the rules-agree-with-tables promise leaves 1.1's caption for the preface, §4.0a; 1.4's Looking ahead points at `thm-square-even-implies-even`'s chapter). STYLE §12.10's ≤/≥ sentence and its "gamma" (see S2 replies) are for the coordinator, not this file.
+
+*Deviation (S3, 2026-10-12):* Two dependency-ledger lines outside Chapter 1 that this section does not list were also updated, because they described the old text: ch04 03's ledger line for the step at 03:9 (the √2 instance → the instance at \( n = 42 \)), and ch03 04:589 (`def-sequent`'s Quick check → the "try to break it" Quick check after `def-main-connective`). ch02 06:491 takes the optional sharpening ("… diagnosed in Section 1.4").
 
 ---
 

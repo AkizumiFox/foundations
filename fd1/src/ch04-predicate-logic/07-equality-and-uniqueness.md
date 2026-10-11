@@ -416,7 +416,7 @@ Section 4.8 collects all the steps into one method.
 
 ## The rule, phrase and Lean table, completed {#rule-phrase-lean-table}
 
-Chapter 1 began a table that pairs each rule with the sentence that performs it in a written proof and, for readers who use a proof assistant, with the Lean code that does the same (Sections 1.3–1.7), and Chapter 2 added the rows for negation, the biconditional, and the classical rules (Sections 2.1–2.5). Sections 4.3–4.6 added a row for each quantifier rule, and this section adds the two rows for equality. Here is the whole table for the calculus of this volume. Nothing later depends on the last column, and Chapter 5 turns the middle column into a full dictionary of proof phrases.
+Chapter 1 began a table that pairs each rule with the sentence that performs it in a written proof and, for readers who use a proof assistant, with the Lean code that does the same (Sections 1.2–1.6), and Chapter 2 added the rows for negation, the biconditional, and the classical rules (Sections 2.1–2.5). Sections 4.3–4.6 added a row for each quantifier rule, and this section adds the two rows for equality. Here is the whole table for the calculus of this volume. Nothing later depends on the last column, and Chapter 5 turns the middle column into a full dictionary of proof phrases.
 
 | Rule | You write | Lean |
 |------|--------------------------------------|------------------------|

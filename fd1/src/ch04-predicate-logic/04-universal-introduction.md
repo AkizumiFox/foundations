@@ -54,7 +54,7 @@ The rule on the right is \( \rulename{\forall E} \), as in @def-rule-universal-e
 
 In words: to prove that \( \varphi \) holds for every \( x \), open a box flagged with a new name \( x_0 \), prove \( \varphi[x_0/x] \), "\( \varphi \) holds of \( x_0 \)", as the box's last line, close the box, and write \( \forall x\, \varphi \). The side condition says that \( x_0 \) really was arbitrary.
 
-**What a flagged box is.** @def-derivation (Section 1.5) said that a box is a block of consecutive lines whose first line is an assumption. We now extend that definition, and two things change. First, a box may be **flagged**: it carries a name, a variable written at its top, and a flagged box need **not** open with an assumption. The box of \( \rulename{\forall I} \) has none; the box of the rule for using "there exists" in Section 4.6 is flagged and has one. Second, the rules that close a flagged box carry side conditions about its name, such as the one above. Everything else in @def-derivation stays word for word: two boxes are disjoint or one is inside the other, a box ends at one of its lines, and the scope rule decides which lines and boxes are available where. A flagged box with no assumption adds nothing to what is assumed; it only marks where the name is in use.
+**What a flagged box is.** @def-derivation (Section 1.4) said that a box is a block of consecutive lines whose first line is an assumption. We now extend that definition, and two things change. First, a box may be **flagged**: it carries a name, a variable written at its top, and a flagged box need **not** open with an assumption. The box of \( \rulename{\forall I} \) has none; the box of the rule for using "there exists" in Section 4.6 is flagged and has one. Second, the rules that close a flagged box carry side conditions about its name, such as the one above. Everything else in @def-derivation stays word for word: two boxes are disjoint or one is inside the other, a box ends at one of its lines, and the scope rule decides which lines and boxes are available where. A flagged box with no assumption adds nothing to what is assumed; it only marks where the name is in use.
 
 Here are the two boxes side by side: the box of \( \rulename{{\to}I} \) from @def-rules-implication, and the flagged box.
 
@@ -87,7 +87,7 @@ Read the rule part by part: the flag, the three clauses of the side condition, a
 - **The flag.** Opening the box is the written "let \( x_0 \) be arbitrary". The flag is always a variable, never a constant: a constant has a fixed meaning, while the whole point of \( x_0 \) is that it may stand for anything. The book writes flags with a subscript \( 0 \), \( x_0 \), \( y_0 \), \( \varepsilon_0 \), so that they stand out.
 - **No premise, no open assumption** (the first and second clauses). This is "we know nothing about \( x_0 \)". What is known at line \( k \) is the premises and the assumptions of the boxes still open there. If none of them mentions \( x_0 \), then nothing that was used about \( x_0 \) inside the box is special to \( x_0 \).
 - **Not in the conclusion** (the third clause). The name must not leak out. Inside the box it stood for an arbitrary object, and \( \forall x\, \varphi \) is meant to speak about all objects through the bound \( x \). A conclusion that still mentions \( x_0 \) ties what it says to the one object \( x_0 \) names, while claiming it of everything.
-- **The last line.** \( \varphi[x_0/x] \) is what was proved about \( x_0 \), and it must be a line of the flagged box itself, just as the last line of a \( \rulename{{\to}I} \) box must be (Section 1.5). A line inside a further box would still depend on that box's assumption.
+- **The last line.** \( \varphi[x_0/x] \) is what was proved about \( x_0 \), and it must be a line of the flagged box itself, just as the last line of a \( \rulename{{\to}I} \) box must be (Section 1.4). A line inside a further box would still depend on that box's assumption.
 
 "Appear" is the word of Section 4.2: written anywhere in the formula, including just after a quantifier symbol. So a box flagged \( x \) can never end in \( \forall x\, \varphi \), since \( x \) appears in \( \forall x\, \varphi \). That is one more reason the book never uses the quantified letter itself as the flag.
 
@@ -247,7 +247,7 @@ Now the sequent at which Section 4.3 stalled, together with its converse. "For e
 :::
 
 ::: {.idea}
-\( (\vdash) \) The goal is a conjunction, so (Section 1.3) two subgoals, \( \forall x\, P(x) \) and \( \forall x\, Q(x) \). Each is universal, so each gets its own flagged box, and inside each, \( \rulename{\forall E} \) at the flag and \( \rulename{\wedge E} \) give the box's last line. \( (\dashv) \) The goal is universal, so one flagged box, with the goal \( P(x_0) \wedge Q(x_0) \); take the premise apart by \( \rulename{\wedge E} \) and instantiate each half at \( x_0 \).
+\( (\vdash) \) The goal is a conjunction, so (Section 1.2) two subgoals, \( \forall x\, P(x) \) and \( \forall x\, Q(x) \). Each is universal, so each gets its own flagged box, and inside each, \( \rulename{\forall E} \) at the flag and \( \rulename{\wedge E} \) give the box's last line. \( (\dashv) \) The goal is universal, so one flagged box, with the goal \( P(x_0) \wedge Q(x_0) \); take the premise apart by \( \rulename{\wedge E} \) and instantiate each half at \( x_0 \).
 :::
 
 ::: {.proof}
@@ -417,7 +417,7 @@ The table gains a row for \( \rulename{\forall I} \), below the row for \( \rule
 | \( \rulename{\forall E} \) | "In particular, for \( x = t \), …"; "applying the hypothesis to \( t \), …" | `h t` (or `specialize h t`) |
 | \( \rulename{\forall I} \) | "Let \( x \) be arbitrary. … Since \( x \) was arbitrary, …" | `intro x` |
 
-Other forms of the opening phrase are "let \( x \in \nR \)", "fix \( \varepsilon > 0 \)", "take any \( n \in \nN \)"; the closing phrase is often left out, since the reader knows that a proof which began by fixing \( x \) proves a statement about every \( x \). In Lean, `intro x` turns the goal `forall x, P x` into the goal `P x` with a new name `x` in context, about which nothing is assumed: Lean's version of opening the flagged box. The same tactic opened the \( \rulename{{\to}I} \) box in Section 1.5, and the two boxes are, to Lean, one kind of thing.
+Other forms of the opening phrase are "let \( x \in \nR \)", "fix \( \varepsilon > 0 \)", "take any \( n \in \nN \)"; the closing phrase is often left out, since the reader knows that a proof which began by fixing \( x \) proves a statement about every \( x \). In Lean, `intro x` turns the goal `forall x, P x` into the goal `P x` with a new name `x` in context, about which nothing is assumed: Lean's version of opening the flagged box. The same tactic opened the \( \rulename{{\to}I} \) box in Section 1.4, and the two boxes are, to Lean, one kind of thing.
 
 ## The search method: one more step
 
@@ -589,7 +589,7 @@ A stalled search proves nothing by itself; a cleverer derivation might exist. Se
 ::: {#exr-universal-introduction-b3}
 [B3: A number is at most its absolute value, for every number]
 
-@exm-abs-at-least-x (Section 1.7) derived \( \abs{x} > x \vee \abs{x} = x \) for one fixed real \( x \) from three premises about that \( x \): \( x \ge 0 \vee x < 0 \), \( x \ge 0 \to \abs{x} = x \), and \( x < 0 \to \abs{x} > x \). Turn it into a derivation of
+@exm-abs-at-least-x (Section 1.6) derived \( \abs{x} > x \vee \abs{x} = x \) for one fixed real \( x \) from three premises about that \( x \): \( x \ge 0 \vee x < 0 \), \( x \ge 0 \to \abs{x} = x \), and \( x < 0 \to \abs{x} > x \). Turn it into a derivation of
 \[
 \forall x\, (\abs{x} > x \vee \abs{x} = x)
 \]
@@ -597,7 +597,7 @@ from premises that are universal statements. Explain why the premises of @exm-ab
 :::
 
 ::: {.solution}
-The goal is universal, so the derivation of Section 1.7 must run inside a box flagged \( x_0 \). Its three premises mention the number it is about. So here the premises are the three facts **for every** \( x \), and inside the box \( \rulename{\forall E} \) at \( x_0 \) gives each fact about \( x_0 \).
+The goal is universal, so the derivation of Section 1.6 must run inside a box flagged \( x_0 \). Its three premises mention the number it is about. So here the premises are the three facts **for every** \( x \), and inside the box \( \rulename{\forall E} \) at \( x_0 \) gives each fact about \( x_0 \).
 
 ```{=latex}
 \begin{center}

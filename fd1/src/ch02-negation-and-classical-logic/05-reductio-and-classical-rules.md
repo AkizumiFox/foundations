@@ -229,7 +229,7 @@ For every statement \( P \), \( \vdash P \vee \neg P \).
 :::
 
 ::: {.idea}
-The goal is a disjunction, so Section 1.6's move postpones it: choose a side only when that side is in hand. But there are no premises, so no premise-directed move applies, and neither side can be derived on its own (informally: \( P \) may be true or false; Chapter 3 makes this exact). We are stuck, so we assume the negation of the whole goal, \( \neg(P \vee \neg P) \), which says that neither side holds, and hunt for a clash. The new line can clash only with \( P \vee \neg P \), which \( \rulename{\vee I} \) builds from either side. So we manufacture a side, as in @exm-manufactured-clash. If \( P \) held, then \( P \vee \neg P \) would hold, against the assumption; so \( \neg P \), by \( \rulename{\neg I} \). But then \( P \vee \neg P \) holds after all, and that is the final clash.
+The goal is a disjunction, so Section 1.5's move postpones it: choose a side only when that side is in hand. But there are no premises, so no premise-directed move applies, and neither side can be derived on its own (informally: \( P \) may be true or false; Chapter 3 makes this exact). We are stuck, so we assume the negation of the whole goal, \( \neg(P \vee \neg P) \), which says that neither side holds, and hunt for a clash. The new line can clash only with \( P \vee \neg P \), which \( \rulename{\vee I} \) builds from either side. So we manufacture a side, as in @exm-manufactured-clash. If \( P \) held, then \( P \vee \neg P \) would hold, against the assumption; so \( \neg P \), by \( \rulename{\neg I} \). But then \( P \vee \neg P \) holds after all, and that is the final clash.
 :::
 
 ::: {.proof}

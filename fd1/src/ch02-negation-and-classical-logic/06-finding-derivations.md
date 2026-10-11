@@ -4,16 +4,16 @@ We now have every rule for the connectives. Checking a derivation is mechanical,
 
 ## The moves so far
 
-Each section since Section 1.3 has added a move, either to the list read off the **goal** (goal-directed: which introduction rule builds the goal's main connective?) or to the list read off the **premises** (premise-directed: which elimination rule uses an available line's main connective?). Here they are together, with the section where each first appeared.
+Each section since Section 1.2 has added a move, either to the list read off the **goal** (goal-directed: which introduction rule builds the goal's main connective?) or to the list read off the **premises** (premise-directed: which elimination rule uses an available line's main connective?). Here they are together, with the section where each first appeared.
 
 | The situation | The move | First met |
 |---|---|---|
-| goal \( \varphi \wedge \psi \) | two subgoals, \( \varphi \) and \( \psi \), joined by \( \rulename{\wedge I} \) | Section 1.3 |
-| resource \( \varphi \wedge \psi \) | take it apart by \( \rulename{\wedge E} \) | Section 1.3 |
-| resource \( \varphi \to \psi \) | fire it on \( \varphi \) by \( \rulename{{\to}E} \); if \( \varphi \) is missing, make it a subgoal | Section 1.4 |
-| goal \( \varphi \to \psi \) | a box opened with \( \varphi \), with the new goal \( \psi \) | Section 1.5 |
-| goal \( \varphi \vee \psi \) | postpone; choose a side only when it is in hand | Section 1.6 |
-| resource \( \varphi \vee \psi \) | two cases, each ending in the current goal | Section 1.7 |
+| goal \( \varphi \wedge \psi \) | two subgoals, \( \varphi \) and \( \psi \), joined by \( \rulename{\wedge I} \) | Section 1.2 |
+| resource \( \varphi \wedge \psi \) | take it apart by \( \rulename{\wedge E} \) | Section 1.2 |
+| resource \( \varphi \to \psi \) | fire it on \( \varphi \) by \( \rulename{{\to}E} \); if \( \varphi \) is missing, make it a subgoal | Section 1.3 |
+| goal \( \varphi \to \psi \) | a box opened with \( \varphi \), with the new goal \( \psi \) | Section 1.4 |
+| goal \( \varphi \vee \psi \) | postpone; choose a side only when it is in hand | Section 1.5 |
+| resource \( \varphi \vee \psi \) | two cases, each ending in the current goal | Section 1.6 |
 | goal \( \bot \) | find a clash, or manufacture one; an impossible case closes itself by \( \rulename{\bot E} \) | Section 2.1 |
 | goal \( \neg\varphi \) | a box opened with \( \varphi \), with the new goal \( \bot \) | Section 2.2 |
 | a pattern with a name | use the derived rule as one line (\( \rulename{MT} \), \( \rulename{DS} \), …) | Section 2.3 |
@@ -55,14 +55,14 @@ Lines 1, 7, 8, and 9: the premise \( P \to \neg Q \), the line \( \neg(P \wedge 
 
 1. **Set up.** Write the premises \( \Gamma \) at the top and \( \varphi \) at the bottom, with one gap between.
 2. **Goal-directed step.** Take the main connective of the current goal (@def-main-connective) and set up its introduction rule:
-   - \( \psi \wedge \chi \): two gaps, with goals \( \psi \) and \( \chi \) (Section 1.3);
-   - \( \psi \to \chi \): a box opened with \( \psi \); inside it, the new goal is \( \chi \) (Section 1.5);
+   - \( \psi \wedge \chi \): two gaps, with goals \( \psi \) and \( \chi \) (Section 1.2);
+   - \( \psi \to \chi \): a box opened with \( \psi \); inside it, the new goal is \( \chi \) (Section 1.4);
    - \( \neg\psi \): a box opened with \( \psi \); inside it, the new goal is \( \bot \) (Section 2.2);
    - \( \psi \leftrightarrow \chi \): two boxes, one from \( \psi \) to \( \chi \) and one from \( \chi \) to \( \psi \) (Section 2.4);
-   - \( \psi \vee \chi \): **postpone**; do not choose a side yet (Section 1.6), unless the disjunction is being manufactured for a clash with its own negation (step 4), when either side may be chosen (see below).
+   - \( \psi \vee \chi \): **postpone**; do not choose a side yet (Section 1.5), unless the disjunction is being manufactured for a clash with its own negation (step 4), when either side may be chosen (see below).
 
    Repeat while the current goal is a \( \wedge \), \( \to \), \( \neg \), or \( \leftrightarrow \).
-3. **Premise-directed step.** Take the main connective of a resource and apply its elimination rule: \( \rulename{\wedge E} \) freely (Section 1.3); \( \rulename{{\to}E} \) and \( \rulename{{\leftrightarrow}E} \) when the other statement they need is a resource, or can be made a new goal (Sections 1.4 and 2.4); \( \rulename{\vee E} \) by opening two boxes, one per disjunct, **each ending in the current goal** (Section 1.7). A derived rule may do the work of several lines (Section 2.3): a resource \( \psi \to \chi \) with \( \neg\chi \) available gives \( \neg\psi \) by \( \rulename{MT} \); a resource \( \psi \vee \chi \) with \( \neg\psi \) available gives \( \chi \) by \( \rulename{DS} \).
+3. **Premise-directed step.** Take the main connective of a resource and apply its elimination rule: \( \rulename{\wedge E} \) freely (Section 1.2); \( \rulename{{\to}E} \) and \( \rulename{{\leftrightarrow}E} \) when the other statement they need is a resource, or can be made a new goal (Sections 1.3 and 2.4); \( \rulename{\vee E} \) by opening two boxes, one per disjunct, **each ending in the current goal** (Section 1.6). A derived rule may do the work of several lines (Section 2.3): a resource \( \psi \to \chi \) with \( \neg\chi \) available gives \( \neg\psi \) by \( \rulename{MT} \); a resource \( \psi \vee \chi \) with \( \neg\psi \) available gives \( \chi \) by \( \rulename{DS} \).
 4. **Clash.** If the current goal is \( \bot \), look for a pair \( \chi \), \( \neg\chi \) among the resources, or make \( \chi \) the new goal for some resource \( \neg\chi \) and manufacture it, starting again at step 2 for that goal. Whatever the current goal, if the resources clash, write \( \bot \) and then the goal by \( \rulename{\bot E} \): an impossible case closes itself (Section 2.1).
 5. **Stuck.** Use \( \rulename{RAA} \): open a box with the negation of the current goal, whose new goal is \( \bot \); if that gives nothing, try the same with a goal further out whose box contains the stalled gap. Or use \( \rulename{LEM} \) on a well-chosen statement \( \chi \), and split on \( \chi \vee \neg\chi \) by \( \rulename{\vee E} \). Then return to step 3 (Section 2.5).
 
@@ -241,7 +241,7 @@ $\begin{nd}
 \end{center}
 ```
 
-This is the pattern that Section 1.7 called the skeleton of almost every proof by cases (compare @exm-cases-on-hypothesis, which packages the same two boxes into one implication). The method found it without being told.
+This is the pattern that Section 1.6 called the skeleton of almost every proof by cases (compare @exm-cases-on-hypothesis, which packages the same two boxes into one implication). The method found it without being told.
 
 *Why the boxes end in the current goal.* \( \rulename{\vee E} \) (@def-rules-disjunction) gives, after the two boxes, their common last line and nothing else. A box that ends in anything but the current goal leaves that goal still to be reached, and two boxes that end in different statements cannot be combined at all. The word **current** matters: had the goal been \( S \to R \), step 2 would first open a box on \( S \), the current goal inside it would be \( R \), and the two case boxes, opened inside the box of \( S \), would end in \( R \), not in \( S \to R \).
 :::
@@ -459,7 +459,7 @@ $\begin{nd}[schema]
 \end{center}
 ```
 
-The goal \( P \) is a letter. Step 3: \( \rulename{{\to}E} \) on line 1 needs \( P \), the goal itself. Step 4: nothing clashes, and there is no negation among the resources to aim at. Step 5, \( \rulename{RAA} \): assume \( \neg P \); the only negation among the resources is now \( \neg P \), and a clash with it needs \( P \), the goal again. \( \rulename{LEM} \) on \( P \): the case \( \neg P \) needs \( P \) again. \( \rulename{LEM} \) on \( Q \): the case \( \neg Q \) clashes with line 2, and the case \( Q \) is where we started. Step 5 at the goal further out, an \( \rulename{RAA} \) box on \( \neg(Q \to P) \) around the whole search: a clash with it needs \( Q \to P \), the goal again, and step 2 opens the same box on \( Q \) with the same goal \( P \). Every route returns to one gap, "\( P \) from \( P \to Q \) and \( Q \)". That is affirming the consequent (Section 1.4), the step that would repair Argument B.
+The goal \( P \) is a letter. Step 3: \( \rulename{{\to}E} \) on line 1 needs \( P \), the goal itself. Step 4: nothing clashes, and there is no negation among the resources to aim at. Step 5, \( \rulename{RAA} \): assume \( \neg P \); the only negation among the resources is now \( \neg P \), and a clash with it needs \( P \), the goal again. \( \rulename{LEM} \) on \( P \): the case \( \neg P \) needs \( P \) again. \( \rulename{LEM} \) on \( Q \): the case \( \neg Q \) clashes with line 2, and the case \( Q \) is where we started. Step 5 at the goal further out, an \( \rulename{RAA} \) box on \( \neg(Q \to P) \) around the whole search: a clash with it needs \( Q \to P \), the goal again, and step 2 opens the same box on \( Q \) with the same goal \( P \). Every route returns to one gap, "\( P \) from \( P \to Q \) and \( Q \)". That is affirming the consequent (Section 1.3), the step that would repair Argument B.
 
 But notice what we have **not** shown. A search that fails proves nothing about derivations in general. An assumption may be any statement at all, by the assumption clause of @def-derivation, so there are infinitely many derivations to consider, and a cleverer one might exist. To show that **no** derivation of \( Q \to P \) from \( P \to Q \) exists, we need a different tool.
 
@@ -488,7 +488,7 @@ Exchanging the roles of \( m \) and \( n \) in the previous paragraph shows that
 :::
 
 ::: {.warning}
-**Do not assume what you want to prove.** To derive a goal \( \varphi \), it is tempting to open a box with \( \varphi \). The box reaches \( \varphi \) at once, but after it closes it gives \( \varphi \to \varphi \), not \( \varphi \), and its assumption is gone. An assumption is useful when the goal asks for it: the hypothesis of an implication (step 2), the negated goal of \( \rulename{RAA} \) (step 5), a disjunct of a resource (step 3). Opening the box on the conclusion of an implication is the converse error of Argument B in Section 1.1.
+**Do not assume what you want to prove.** To derive a goal \( \varphi \), it is tempting to open a box with \( \varphi \). The box reaches \( \varphi \) at once, but after it closes it gives \( \varphi \to \varphi \), not \( \varphi \), and its assumption is gone. An assumption is useful when the goal asks for it: the hypothesis of an implication (step 2), the negated goal of \( \rulename{RAA} \) (step 5), a disjunct of a resource (step 3). Opening the box on the conclusion of an implication is the converse error of Argument B, diagnosed in Section 1.4.
 :::
 
 ## The rules in one place

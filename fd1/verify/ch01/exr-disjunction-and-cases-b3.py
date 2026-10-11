@@ -1,4 +1,4 @@
-"""exr-disjunction-and-cases-b3 (Ch 1, Section 1.7): (2k)^2 = 4k^2, (2k+1)^2 = 4(k^2+k)+1;
+"""exr-disjunction-and-cases-b3 (Ch 1, Section 1.6): (2k)^2 = 4k^2, (2k+1)^2 = 4(k^2+k)+1;
 36 = 4*9, 49 = 4*12 + 1."""
 QUOTED = {"6^2": (36, 4, 9, 0), "7^2": (49, 4, 12, 1)}
 

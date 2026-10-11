@@ -2846,7 +2846,7 @@ items:
   kind: exr
   file: 05-reductio-and-classical-rules.md
   line: 648
-  hash: 0f2bae9de5c0
+  hash: f4c6b2c294d8
   verdicts:
   - stage: S5a
     verdict: correct
@@ -3087,7 +3087,7 @@ items:
   kind: exr
   file: 05-reductio-and-classical-rules.md
   line: 885
-  hash: 916514ebde2f
+  hash: 04b47b195a15
   verdicts:
   - stage: S5a
     verdict: correct
@@ -3356,7 +3356,7 @@ items:
   kind: exm
   file: 06-finding-derivations.md
   line: 253
-  hash: 631e3bb5ad98
+  hash: 2b7cc27cfb74
   verdicts:
   - stage: S5a
     verdict: correct
@@ -3870,7 +3870,7 @@ items:
   kind: exr
   file: 06-finding-derivations.md
   line: 1201
-  hash: c8664c8f51a5
+  hash: bdfec2c69b9f
   verdicts:
   - stage: S5a
     verdict: correct

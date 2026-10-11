@@ -868,7 +868,7 @@ items:
   kind: def
   file: 03-levels-of-abbreviation.md
   line: 42
-  hash: e3f1c8c9f905
+  hash: e8572e46621e
   verdicts:
   - stage: S5a
     verdict: gap
@@ -1158,7 +1158,7 @@ items:
   kind: exr
   file: 03-levels-of-abbreviation.md
   line: 449
-  hash: 04d4d1286588
+  hash: 95ca3d7fb294
   verdicts:
   - stage: S5a
     verdict: correct
@@ -1255,7 +1255,7 @@ items:
   kind: exm
   file: 04-reading-proofs.md
   line: 19
-  hash: 66a6a5d33e1e
+  hash: fba472fc7ee8
   verdicts:
   - stage: S5a
     verdict: minor
@@ -2049,7 +2049,7 @@ items:
   kind: exr
   file: 06-checking-proofs.md
   line: 160
-  hash: 52b2e98d8a18
+  hash: 207dbc8fe398
   verdicts:
   - stage: S5a
     verdict: minor
@@ -2107,7 +2107,7 @@ items:
   kind: exr
   file: 06-checking-proofs.md
   line: 191
-  hash: 2d0507553abf
+  hash: 49f3fbcfa1ac
   verdicts:
   - stage: S5a
     verdict: correct
@@ -2852,7 +2852,7 @@ items:
   kind: exr
   file: 07-excluded-middle.md
   line: 511
-  hash: 080488f44ce2
+  hash: e15a7ee997fb
   verdicts:
   - stage: S5a
     verdict: correct
