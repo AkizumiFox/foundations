@@ -167,6 +167,49 @@ A second example shows a connective hidden inside a word. Let \( x \) be a real 
 
 In both examples the English word order is a poor guide to the grouping. When in doubt, ask of each connective: which two statements does it join?
 
+## A phrase book
+
+Many English phrases carry a connective in disguise. The table collects the common ones; in each row, ask the question of "Only if": when is the sentence broken? In the examples, \( n \) is an integer and \( x \) is a real number.
+
+| English | paraphrase | symbols | example |
+|---|---|---|---|
+| \( P \) provided \( Q \) | if \( Q \), then \( P \) | \( Q \to P \) | \( x^2 > 4 \) provided \( x > 2 \) |
+| \( P \) whenever \( Q \) | if \( Q \), then \( P \) | \( Q \to P \) | \( n^2 \) is even whenever \( n \) is even |
+| \( P \) but \( Q \) | \( P \) and \( Q \) | \( P \wedge Q \) | \( 2 \) is prime but even |
+| neither \( P \) nor \( Q \) | not \( P \), and not \( Q \) | \( \neg P \wedge \neg Q \) | \( 9 \) is neither even nor prime |
+| not both \( P \) and \( Q \) | not (\( P \) and \( Q \)) | \( \neg(P \wedge Q) \) | \( 9 \) is not both odd and prime |
+| exactly one of \( P \), \( Q \) | \( P \) or \( Q \), and not both | \( (P \vee Q) \wedge \neg(P \wedge Q) \) | exactly one of \( x > 0 \), \( x < 1 \) |
+| at least two of \( P \), \( Q \), \( R \) | some two of them hold | \( ((P \wedge Q) \vee (P \wedge R)) \vee (Q \wedge R) \) | at least two of: \( n \) even, \( n > 0 \), \( n \) a multiple of \( 3 \) |
+
+"Unless" is Exercise C1.
+
+"Neither … nor" and "not both" differ by one word and say different things. At \( n = 3 \), "\( n \) is neither even nor prime" is false, since \( 3 \) is prime, while "\( n \) is not both even and prime" is true. In the "exactly one" row, at \( x = 2 \) exactly one part holds (\( 2 > 0 \), and \( 2 < 1 \) fails); at \( x = \tfrac12 \) both hold, so "exactly one" fails. In the last row, \( n = 6 \) satisfies all three parts, and \( n = -3 \) only one: it is a multiple of \( 3 \), but odd and negative.
+
+::: {.check}
+Let \( n \) be an integer, with \( E \): "\( n \) is even" and \( P \): "\( n \) is prime". Translate "exactly one of: \( n \) is even, \( n \) is prime", and decide it at \( n = 2 \), \( n = 9 \) and \( n = 7 \).
+:::
+
+::: {.solution}
+\( (E \vee P) \wedge \neg(E \wedge P) \). It is false at \( 2 \), where both parts hold; false at \( 9 \), where neither does; and true at \( 7 \), which is prime and not even.
+:::
+
+**Not every "and" joins two statements.** Some sentences with "and" in them make one claim about several things together.
+
+- "\( 4 \) and \( 9 \) are coprime." *Not:* "\( 4 \) is coprime \( \wedge \) \( 9 \) is coprime". Coprime is a relation between two numbers (their only common positive divisor is \( 1 \)), so the sentence is one atomic statement about a pair. Contrast "\( 4 \) and \( 9 \) are squares", which is a conjunction.
+- "The points \( A \), \( B \), \( C \) are collinear." *Not:* a conjunction of three statements about single points. Collinearity is one statement about all three points at once.
+- "\( 1.414 \) is an approximate root of \( x^2 - 2 = 0 \)." *Not:* "\( 1.414 \) is approximate \( \wedge \) \( 1.414 \) is a root". It is not a root, since \( 1.414^2 = 1.999396 \). "Approximate" changes the meaning of "root", and nothing here is a conjunction.
+
+By contrast, "\( 12 \) is a positive even number" is the conjunction of "\( 12 > 0 \)" and "\( 12 \) is even".
+
+::: {.remark}
+**Weak readings.** Mathematics reads four kinds of word weakly, and a reader who reads them strongly translates wrongly.
+
+- "Or" is inclusive: the first warning of "The connectives" above.
+- In a definition, "if" means "if and only if": the second warning there.
+- "Some" never says "not all". "Some solutions of \( x^2 = x \) are non-negative" is true, although every solution (\( 0 \) and \( 1 \)) is non-negative.
+- A word without a sharp boundary makes no statement. "\( x \) is large" is not a statement until a bound is fixed, as in "\( x > 10^6 \)".
+:::
+
 ## Reading a statement: precedence and the main connective
 
 Connectives can be combined without limit, and a string of symbols is only useful if it can be read in one way. Consider \( \neg P \wedge Q \). Does it deny \( P \) and then assert \( Q \), or does it deny the whole of \( P \wedge Q \)? These are different claims. With \( P \): "\( n \) is even" and \( Q \): "\( n > 0 \)", the first says that \( n \) is odd and positive, while the second says only that \( n \) is not a positive even number, which \( n = -4 \) satisfies.
@@ -260,7 +303,15 @@ In running text the same form is written "from \( P \to Q \) and \( P \), conclu
 
 ## Try to break it
 
-A form is **bad** if some argument of that form has **true premises and a false conclusion**; such an argument is a **counterexample** to the form. A form that no choice of statements can break is **good**.
+Breaking a form means making several statements true at once, and the list of them deserves a name.
+
+::: {#def-counterexample-set}
+[Counterexample Set]
+
+The **counterexample set** of an argument form is the list of its premises together with the negation of its conclusion. A **counterexample** to the form is an argument of that form whose premises are **all** true and whose conclusion is false, that is, a choice of statements for the letters that makes **every** member of the counterexample set true. A form is **bad** if it has a counterexample, and **good** if no choice of statements can break it.
+:::
+
+For "from \( P \to Q \) and \( Q \), conclude \( P \)" the counterexample set is \( P \to Q \), \( Q \), \( \neg P \).
 
 *To test a form, try to break it: put statements in for the letters that make every premise true and the conclusion false.*
 
@@ -281,10 +332,26 @@ Write the form of each argument, and try to break it.
 (ii) With \( P \) the compound statement "\( x > 0 \) and \( y > 0 \)" (a letter may stand for one) and \( Q \): "\( xy > 0 \)", the form is "from \( P \to Q \) and \( P \), conclude \( Q \)". It cannot be broken. By the promise table, \( P \to Q \) is false only when \( P \) is true and \( Q \) false; so when \( P \to Q \) and \( P \) are both true, \( Q \) is true. The form is good.
 :::
 
+**Where to look first.** Make the conclusion false first: that fixes some letters, and the premises must then be made true around it. With statements about numbers, try \( 0 \), \( 1 \), \( -1 \), \( 2 \) and \( \tfrac12 \) before anything clever; most bad forms about numbers break at one of them. Take the form "from \( P \to Q \) and \( Q \to R \), conclude \( R \to P \)". Its conclusion is false only with \( R \) true and \( P \) false. Take \( P \): "\( x > 2 \)", \( Q \): "\( x > 1 \)" and \( R \): "\( x > 0 \)"; both premises then hold for every real \( x \). At \( x = \tfrac12 \), \( R \) is true and \( P \) is false, so the whole counterexample set \( P \to Q \), \( Q \to R \), \( \neg(R \to P) \) is true, and the form is bad.
+
+::: {.check}
+Write the counterexample set of "from \( P \to Q \), conclude \( Q \)", and make all of it true with statements about a real number \( x \).
+:::
+
+::: {.solution}
+The counterexample set is \( P \to Q \), \( \neg Q \). Take \( P \): "\( x > 1 \)" and \( Q \): "\( x > 0 \)". The first member holds for every real \( x \), since a number greater than \( 1 \) is greater than \( 0 \). At \( x = -1 \) the second holds too, since \( -1 > 0 \) is false. So both are true at once, and the form is bad.
+:::
+
 **Argument B, tried.** B's reasoning shows "if \( n \) is even, then \( n^2 \) is even", and its last sentence concludes the converse, "if \( n^2 \) is even, then \( n \) is even". That step has the form "from \( P \to Q \), conclude \( Q \to P \)", and it breaks: take \( P \): "\( n \) is divisible by \( 4 \)" and \( Q \): "\( n \) is even". The premise is true for every integer, and the conclusion fails at \( n = 2 \). B's tempting repair, "from \( P \to Q \) and \( Q \), conclude \( P \)", is the form of (i), which \( n = 2 \) just broke. With B's own content no integer breaks the repair, since every integer with an even square is even (the fact B set out to prove); but the *form* breaks. A true conclusion reached by a bad form is still not proved.
+
+::: {.second-reading title="A bad form refutes a step, not its conclusion"}
+Breaking the last step of Argument B shows that the step proves nothing. It does not show that "if \( n^2 \) is even, then \( n \) is even" is false, and Argument A proves that it is true. A bad form may even have instances whose premises always give the conclusion. The form "from \( P \), conclude \( Q \)" is bad: any true \( P \) with a false \( Q \) breaks it. Yet in its instance "\( x > 2 \); so \( x > 1 \)" no number breaks the step, since every real number greater than \( 2 \) is greater than \( 1 \). The guarantee there comes from a fact about numbers, not from the form. Logic certifies only forms; the content of a step may still be checked by other means.
+:::
 
 ::: {.second-reading title="Valid, or only convincing?"}
 Many true cases are evidence, not a proof. The number \( n^2 + n + 41 \) is prime for \( n = 0 \), \( 1 \), \( 2 \), and so on all the way to \( n = 39 \): forty cases without a failure. At \( n = 40 \) it is \( 1600 + 40 + 41 = 1681 = 41^2 \). An argument from many checked cases can be strong, but it is not of a good form: its premises can all be true while its conclusion is false. Logic books call a good form **valid**, and logic studies only form. That is why this book asks of every step not "is it convincing?" but "could this form be broken?"
+
+A list of checked cases says something about the cases checked, and perhaps about most cases; a proof says something about every case. A scientist who reasons "if the hypothesis is right, we shall observe this; we observe it; so the hypothesis is right" uses the bad form of Quick check (i), "from \( P \to Q \) and \( Q \), conclude \( P \)" (Section 1.3 names it *affirming the consequent*). The reasoning is a sensible guide to what to test next, and it is not a proof. Some books call an argument of a good form with true premises *sound*; this book keeps that word for a property of rules.
 :::
 
 ## Good form, false sentences
@@ -303,6 +370,32 @@ Its form, "from \( P \to Q \) and \( P \), conclude \( Q \)", is good (Quick che
 The top left is the odd-square argument at \( n = 3 \); the bottom right is the Quick check's (i) at \( n = 2 \). Argument A is not placed: it argues from a supposition ("Suppose \( n \) is odd ...") and uses "some" (an integer \( k \) with \( n = 2k + 1 \)), and a form written as premises above a line cannot yet express either.
 
 *A good form guarantees only that true premises give a true conclusion.*
+
+## Two ways to attack an argument
+
+An argument can be attacked in two ways, and the two are independent. Attack a **premise**: show that it is false, as with the argument about \( 6 \) above. Attack a **step**: show that its form is bad by breaking it, as with Argument B. A false premise says nothing about the steps, and a broken step says nothing about the premises. A defended argument needs both: good forms, and premises the reader accepts.
+
+*To doubt an argument, doubt a premise or break a step.*
+
+The two attacks, in the order a checker makes them:
+
+\begin{center}
+\begin{tikzpicture}[flowchart]
+  \node[fc start] (s) {an argument you doubt};
+  \node[fc test, below=of s] (t1) {does some step break?\\(try to break it)};
+  \node[fc step, right=of t1] (b) {that step fails:\\the argument proves nothing there};
+  \node[fc test, below=12mm of t1] (t2) {is every premise true?};
+  \node[fc step, right=of t2] (f) {a false premise:\\the argument proves nothing};
+  \node[fc start, below=of t2] (e) {every step good, every premise true:\\the conclusion is true};
+  \draw[fc arrow] (s) -- (t1);
+  \draw[fc arrow] (t1) -- node[above, font=\scriptsize] {yes} (b);
+  \draw[fc arrow] (t1) -- node[left, font=\scriptsize, align=right] {no: each step\\shown good} (t2);
+  \draw[fc arrow] (t2) -- node[above, font=\scriptsize] {no} (f);
+  \draw[fc arrow] (t2) -- node[left, font=\scriptsize] {yes} (e);
+\end{tikzpicture}
+\end{center}
+
+Failing to break a step is not the "no" answer: the arrow down from the first question needs every step shown good, by a reason that covers every choice of statements.
 
 ## Each connective, two rules
 
@@ -337,7 +430,7 @@ Section 1.2 shows what a derivation is, with the rules for "and". Each later sec
 ::: {.remark}
 [Looking ahead]
 
-Chapter 4 gives "for every" its rules and explains why an argument about a fixed but arbitrary \( x \) proves a statement about every \( x \).
+Chapter 5 gives "for every" its rules and explains why an argument about a fixed but arbitrary \( x \) proves a statement about every \( x \).
 :::
 
 ## Exercises
@@ -390,11 +483,16 @@ Answer each part in a line or two.
 3. What is the main connective of \( \neg (P \to Q) \wedge R \)?
 4. Let \( x \) be a real number, with \( P \): "\( x > 0 \)" and \( Q \): "\( x^2 > x \)". Translate "\( x \) is positive but \( x^2 \) is not greater than \( x \)".
 5. Let \( n \) be an integer, with \( O \): "\( n \) is odd", \( S \): "\( n^2 \) is odd" and \( C \): "\( n^3 \) is odd". Translate "if \( n \) is odd, then \( n^2 \) and \( n^3 \) are odd".
-6. Is "if \( x > 1 \), then \( x^2 > 1 \)" broken at \( x = -2 \)?
-7. Is "if \( x^2 > 1 \), then \( x > 1 \)" broken at \( x = -2 \)?
-8. Let \( n \) be an integer. Write "\( n \) is prime only if \( n \) is odd" as an implication, and break it.
-9. Try to break the form "from \( P \vee Q \) and \( P \), conclude \( \neg Q \)".
-10. The argument "If \( 7 \) is even, then \( 7^2 \) is even. \( 7 \) is even. So \( 7^2 \) is even." has a false conclusion. Is its form bad?
+6. Let \( x \) be a real number, with \( P \): "\( x \ge 2 \)" and \( Q \): "\( x \le 3 \)". Write "exactly one of \( x \ge 2 \), \( x \le 3 \)" in symbols, and decide it at \( x = \tfrac52 \) and at \( x = 4 \).
+7. Is "if \( x > 1 \), then \( x^2 > 1 \)" broken at \( x = -2 \)?
+8. Is "if \( x^2 > 1 \), then \( x > 1 \)" broken at \( x = -2 \)?
+9. Let \( n \) be an integer. Write "\( n \) is prime only if \( n \) is odd" as an implication, and break it.
+10. Try to break the form "from \( P \vee Q \) and \( P \), conclude \( \neg Q \)".
+11. The argument "If \( 7 \) is even, then \( 7^2 \) is even. \( 7 \) is even. So \( 7^2 \) is even." has a false conclusion. Is its form bad?
+12. Take the good form "from \( P \to Q \) and \( P \), conclude \( Q \)". (i) Give an instance, with statements about numbers, whose conclusion is true although a premise is false. (ii) Can both premises of an instance be false at once?
+13. Give an example, or explain why there is none: an argument of a good form whose premises are all true and whose conclusion is false.
+14. The form "from \( P \to Q \) and \( Q \to R \), conclude \( R \to P \)" was broken under "Where to look first". Give an argument of this form about one integer whose premises and conclusion are all true, and say whether it proves its conclusion.
+15. Write the counterexample set of "from \( P \to Q \) and \( P \vee R \), conclude \( Q \)", and make every member true with statements about a real number \( x \).
 :::
 :::
 
@@ -409,15 +507,25 @@ Answer each part in a line or two.
 
 (e) \( O \to (S \wedge C) \).
 
-(f) No. The hypothesis \( -2 > 1 \) is false, so nothing is promised.
+(f) \( (P \vee Q) \wedge \neg(P \wedge Q) \). It is false at \( \tfrac52 \), where both parts hold, and true at \( 4 \), where only \( P \) holds (\( 4 \le 3 \) fails).
 
-(g) Yes. The hypothesis \( 4 > 1 \) holds and the conclusion \( -2 > 1 \) fails.
+(g) No. The hypothesis \( -2 > 1 \) is false, so nothing is promised.
 
-(h) With \( P \): "\( n \) is prime" and \( O \): "\( n \) is odd", it is \( P \to O \). The integer \( n = 2 \) breaks it: \( 2 \) is prime and not odd.
+(h) Yes. The hypothesis \( 4 > 1 \) holds and the conclusion \( -2 > 1 \) fails.
 
-(i) Let \( x \) be a real number, with \( P \): "\( x \ge 0 \)" and \( Q \): "\( x \le 0 \)", and take \( x = 0 \). Both premises are true (the "or" is inclusive), and \( \neg Q \) is false. The form is bad.
+(i) With \( P \): "\( n \) is prime" and \( O \): "\( n \) is odd", it is \( P \to O \). The integer \( n = 2 \) breaks it: \( 2 \) is prime and not odd.
 
-(j) No. Its form is "from \( P \to Q \) and \( P \), conclude \( Q \)", which is good. The premise "\( 7 \) is even" is false, and a form is bad only when some argument of that form has **all** its premises true and its conclusion false.
+(j) Let \( x \) be a real number, with \( P \): "\( x \ge 0 \)" and \( Q \): "\( x \le 0 \)", and take \( x = 0 \). Both premises are true (the "or" is inclusive), and \( \neg Q \) is false. The form is bad.
+
+(k) No. Its form is "from \( P \to Q \) and \( P \), conclude \( Q \)", which is good. The premise "\( 7 \) is even" is false, and a form is bad only when some argument of that form has **all** its premises true and its conclusion false.
+
+(l) (i) "If \( 2 > 3 \), then \( 3 \) is odd. \( 2 > 3 \). So \( 3 \) is odd." The second premise is false; the first is true, since its hypothesis fails and nothing is promised; and the conclusion is true. A false premise does not make the conclusion false. (ii) No. When \( P \) is false, \( P \to Q \) is not broken, so it is true; at most one premise of an instance is false.
+
+(m) There is none. Such an argument would be a counterexample to its form, and a good form has none.
+
+(n) "If \( 8 \) is divisible by \( 4 \), then \( 8 \) is even. If \( 8 \) is even, then \( 8 > 0 \). So, if \( 8 > 0 \), then \( 8 \) is divisible by \( 4 \)." Every sentence is true, since \( 8 = 4 \cdot 2 \), and the argument proves nothing: its form is bad. The truth of the conclusion is a fact about \( 8 \), not a gift of the form. With \( 6 \) in place of \( 8 \) the premises stay true and the conclusion fails: \( 6 > 0 \), and \( 4 \) does not divide \( 6 \).
+
+(o) The counterexample set is \( P \to Q \), \( P \vee R \), \( \neg Q \). Take \( P \): "\( x > 5 \)", \( Q \): "\( x > 3 \)", \( R \): "\( x < 0 \)", and \( x = -2 \). The first member holds for every \( x \); \( P \vee R \) holds since \( -2 < 0 \); and \( \neg Q \) holds since \( -2 > 3 \) is false.
 :::
 
 ### B. Practice
@@ -554,6 +662,83 @@ For each form, either find statements about a real number \( x \) that make ever
 In (b) and (d), "cannot be broken" is shown by reasoning about every case at once, not by failing to find a counterexample: a search that comes up empty settles nothing.
 :::
 
+::: {#exr-statements-and-connectives-b5}
+[B5: One key, sixteen sentences]
+
+Let \( n \) be an integer. Use only the letters \( E \): "\( n \) is even", \( P \): "\( n \) is prime", \( T \): "\( n \) is a multiple of \( 3 \)" and \( G \): "\( n > 10 \)". Translate sentences 1–14 into symbols. Then translate 15 and 16 into English, and find an \( n \) that makes 16 false.
+
+::: {.enumerate options="label=\arabic*."}
+1. \( n \) is even and greater than \( 10 \).
+2. \( n \) is odd.
+3. \( n \) is an even prime.
+4. If \( n \) is prime and greater than \( 10 \), then \( n \) is odd.
+5. \( n \) is a multiple of \( 3 \) but not prime.
+6. \( n \) is neither even nor a multiple of \( 3 \).
+7. \( n \) is not both even and a multiple of \( 3 \).
+8. \( n \) is prime only if \( n \) is odd or at most \( 10 \).
+9. \( n \) is even whenever it is a multiple of \( 3 \) greater than \( 10 \).
+10. Provided \( n > 10 \), being even is sufficient for \( n \) not to be prime.
+11. \( n > 10 \) is necessary for \( n \) to be an even multiple of \( 3 \).
+12. Exactly one of "\( n \) is even", "\( n \) is prime" holds.
+13. At least two of "\( n \) is even", "\( n \) is prime", "\( n \) is a multiple of \( 3 \)" hold.
+14. \( n \) is odd, but if it is greater than \( 10 \), it is not a multiple of \( 3 \).
+15. \( \neg G \to (E \vee T) \).
+16. \( (P \wedge \neg E) \to G \).
+:::
+:::
+
+::: {.solution}
+1. \( E \wedge G \).
+2. \( \neg E \): an integer is odd exactly when it is not even.
+3. \( E \wedge P \).
+4. \( (P \wedge G) \to \neg E \).
+5. \( T \wedge \neg P \). "But" is a conjunction.
+6. \( \neg E \wedge \neg T \).
+7. \( \neg(E \wedge T) \). Compare 6: one word apart, and different claims (at \( n = 2 \), 6 is false and 7 is true).
+8. \( P \to (\neg E \vee \neg G) \). "At most \( 10 \)" is "not greater than \( 10 \)", and "\( P \) only if \( Q \)" is \( P \to Q \).
+9. \( (T \wedge G) \to E \). "\( P \) whenever \( Q \)" is \( Q \to P \).
+10. \( G \to (E \to \neg P) \). The statement \( (G \wedge E) \to \neg P \) says the same; Section 1.4 derives each from the other.
+11. \( (E \wedge T) \to G \). "\( Q \) is necessary for \( P \)" is \( P \to Q \).
+12. \( (E \vee P) \wedge \neg(E \wedge P) \).
+13. \( ((E \wedge P) \vee (E \wedge T)) \vee (P \wedge T) \).
+14. \( \neg E \wedge (G \to \neg T) \).
+15. "If \( n \) is at most \( 10 \), then \( n \) is even or a multiple of \( 3 \)."
+16. "If \( n \) is an odd prime, then \( n > 10 \)", or "every odd prime is greater than \( 10 \)". It is false at \( n = 3 \): \( 3 \) is odd and prime, and not greater than \( 10 \).
+
+A translation is checked by reading it back, letter by letter, into English. Read 16 back and the reading "odd prime" falls out of \( P \wedge \neg E \).
+:::
+
+::: {#exr-statements-and-connectives-b6}
+[B6: Same form?]
+
+Here is an argument.
+
+> (T) If \( 12 \) is divisible by \( 6 \), then \( 12 \) is even. If \( 12 \) is divisible by \( 6 \), then \( 12 \) is divisible by \( 3 \). So, if \( 12 \) is even, then \( 12 \) is divisible by \( 3 \).
+
+Which of (a)–(d) have the same form as (T)? For one that does, break the form. Is the conclusion of (T) true, and does (T) prove it?
+
+::: {.enumerate options="label=(\alph*)"}
+1. Let \( x \) be a real number. If \( x > 2 \), then \( x^2 > 4 \). If \( x > 2 \), then \( x > 1 \). So, if \( x^2 > 4 \), then \( x > 1 \).
+2. If a triangle is equilateral, then it is isosceles. If a triangle is equilateral, then each of its angles is \( 60^\circ \). So, if a triangle is isosceles, then each of its angles is \( 60^\circ \).
+3. Let \( n \) be an integer. If \( n \) is divisible by \( 6 \), then \( n \) is even. If \( n \) is even, then \( n^2 \) is even. So, if \( n \) is divisible by \( 6 \), then \( n^2 \) is even.
+4. Let \( x \) be a real number. If \( x > 3 \), then \( x > 2 \). If \( x > 3 \), then \( x > 1 \). So, if \( x > 3 \), then \( x > 2 \) and \( x > 1 \).
+:::
+:::
+
+::: {.solution}
+(T) has the form "from \( P \to Q \) and \( P \to R \), conclude \( Q \to R \)", with \( P \): "\( 12 \) is divisible by \( 6 \)", \( Q \): "\( 12 \) is even", \( R \): "\( 12 \) is divisible by \( 3 \)". The two premises share their hypothesis, and the conclusion joins their two conclusions.
+
+(a) and (b) have this form. In (a), \( P \) is "\( x > 2 \)", \( Q \) is "\( x^2 > 4 \)" and \( R \) is "\( x > 1 \)"; in (b), \( P \) is "equilateral", \( Q \) "isosceles" and \( R \) "each angle is \( 60^\circ \)".
+
+(c) has the form "from \( P \to Q \) and \( Q \to R \), conclude \( P \to R \)": the second premise starts where the first ends. That is the form of B4(b), which cannot be broken.
+
+(d) has the form "from \( P \to Q \) and \( P \to R \), conclude \( P \to (Q \wedge R) \)". It is the look-alike: the same premises as (T), and a different conclusion. It cannot be broken either. To make its conclusion false, \( P \) must be true and \( Q \wedge R \) false, so \( Q \) or \( R \) is false; then \( P \to Q \) or \( P \to R \) has a true hypothesis and a false conclusion, and a premise is false. Section 1.4 derives the forms of (c) and (d).
+
+**Breaking the form of (T).** Let \( n \) be an integer, with \( P \): "\( n \) is divisible by \( 6 \)", \( Q \): "\( n \) is even" and \( R \): "\( n \) is divisible by \( 3 \)". Both premises hold for every integer, since \( 6k = 2 \cdot 3k = 3 \cdot 2k \). At \( n = 2 \) the conclusion \( Q \to R \) is broken: \( 2 \) is even and not divisible by \( 3 \). So the counterexample set \( P \to Q \), \( P \to R \), \( \neg(Q \to R) \) is true at \( n = 2 \), and the form is bad. Argument (a) breaks with its own content, at \( x = -3 \): both premises hold for every \( x \), and \( (-3)^2 = 9 > 4 \) while \( -3 > 1 \) fails.
+
+**(T) itself.** Its conclusion is true, since \( 12 = 3 \cdot 4 \), so an even \( 12 \) is divisible by \( 3 \). But (T) does not prove it: its form is bad, and the truth of the conclusion comes from a fact about \( 12 \), not from the premises.
+:::
+
 ### C. Going deeper
 
 ::: {#exr-statements-and-connectives-c1}
@@ -586,6 +771,14 @@ The first two sentences differ by one word, and they are implications in opposit
 :::
 
 <!-- dependency ledger
+def-counterexample-set (example): phrase book: x > 2 implies x^2 > 4; n even implies n^2 even; 2 prime and even; 9 odd, not prime (9 = 3 * 3); 3 prime; at x = 2 exactly one of x > 0, x < 1, at x = 1/2 both; 6 even, positive, a multiple of 3; -3 odd, negative, a multiple of 3 | school arithmetic (Allowed prerequisites); checked by verify/ch01/def-counterexample-set.py
+def-counterexample-set (example): phrase-book Quick check: 2 even and prime, 9 neither, 7 prime and odd | inline arithmetic (checked by verify/ch01/def-counterexample-set.py)
+def-counterexample-set (example): "Not:" catalogue: gcd(4, 9) = 1, 4 and 9 squares; 1.414^2 = 1.999396; collinearity is a property of three points together; 12 > 0 and 12 even | school arithmetic and geometry (Allowed prerequisites); checked by verify/ch01/def-counterexample-set.py
+def-counterexample-set (example): weak readings: the solutions of x^2 = x are exactly 0 and 1 | inline (x^2 - x = x(x - 1)); checked by verify/ch01/def-counterexample-set.py
+def-counterexample-set (example): "Where to look first": x > 2 implies x > 1 implies x > 0 for every real x; at x = 1/2, x > 0 and not x > 2 | school algebra (Allowed prerequisites); AN1.1 (promised); checked by verify/ch01/def-counterexample-set.py
+def-counterexample-set (example): its Quick check: x > 1 implies x > 0 for every real x; -1 > 0 false | school algebra (Allowed prerequisites); checked by verify/ch01/def-counterexample-set.py
+def-counterexample-set (example): fold "A bad form refutes a step": x > 2 implies x > 1 for every real x; Argument A proves the opening fact | school algebra (Allowed prerequisites); the section's opening
+def-counterexample-set (example): "Two ways to attack an argument": the argument about 6 has a false premise; Argument B's step is broken at n = 2 | earlier in this section ("Good form, false sentences"; "Argument B, tried")
 exm-statements (example): 2^11 - 1 = 2047 = 23 * 89, and 0.999 < 1 | inline arithmetic (checked by verify/ch01/exm-statements.py)
 exm-statements (example): the twin prime conjecture is open | status of an open problem at the time of writing; not used in any argument
 def-statement (example): the opening's Argument A uses that every integer is even or odd, and that no integer is both | school algebra, allowed as a fact in examples by the F1.1 blueprint (Allowed prerequisites); F2.2 (promised); the hook is an illustration, and no proof here uses it
@@ -602,7 +795,10 @@ exm-statements (example): "for every real x, x > 2" false (x = 0), "for some rea
 def-main-connective (example): the 6-argument (6 even, not prime), the n = 3 instance (3 and 9 odd), the n = 2 instance (2 even, not divisible by 4) | inline arithmetic (checked by verify/ch01/def-main-connective.py)
 def-main-connective (example): fold "Valid, or only convincing?": n^2 + n + 41 prime for 0 <= n <= 39; 40^2 + 40 + 41 = 1681 = 41^2 | inline arithmetic (checked by verify/ch01/def-main-connective.py)
 exr-statements-and-connectives-a1 (solution): x^2 - 1 = 0 exactly when x = 1 or x = -1; 0^2 - 1 = -1 | school algebra (Allowed prerequisites); AN1.1 (promised)
-exr-statements-and-connectives-a2 (solution): (-2)^2 = 4 > 1; 2 is prime and not odd; at x = 0 both x >= 0 and x <= 0 hold | inline arithmetic (checked by verify/ch01/exr-statements-and-connectives-a2.py)
+exr-statements-and-connectives-a2 (solution): (-2)^2 = 4 > 1; 2 is prime and not odd; at x = 0 both x >= 0 and x <= 0 hold; at x = 5/2 both x >= 2 and x <= 3, at 4 only x >= 2; 2 > 3 false and 3 odd; 8 = 4 * 2, 8 even and positive; 6 > 0 and 4 does not divide 6; x > 5 implies x > 3 for every real x, -2 < 0, -2 > 3 false | inline arithmetic; school algebra (Allowed prerequisites) (checked by verify/ch01/exr-statements-and-connectives-a2.py)
+exr-statements-and-connectives-a2 (solution): (l)(ii) and (m) use the promise table and def-counterexample-set | earlier in this section
+exr-statements-and-connectives-b5 (solution): primes, parity and multiples of 3 of the integers; 3 odd, prime, not > 10; 2 even, not a multiple of 3; the equivalence of G -> (E -> not P) and (G and E) -> not P | inline arithmetic (checked by verify/ch01/exr-statements-and-connectives-b5.py); the equivalence is stated, not used, and derived in Section 1.4 (prp-curry)
+exr-statements-and-connectives-b6 (solution): a multiple of 6 is even and a multiple of 3; 2 even and not divisible by 3; 12 = 3 * 4; x > 2 implies x^2 > 4 and x > 1 for every real x; (-3)^2 = 9 > 4; an equilateral triangle is isosceles with 60-degree angles | school arithmetic and geometry (Allowed prerequisites); checked by verify/ch01/exr-statements-and-connectives-b6.py; (c)'s form is exr-statements-and-connectives-b4 (b) (an earlier exercise, cited in a solution); (d)'s form argued inline by cases
 exr-statements-and-connectives-b2 (solution): a product of two positive reals is positive | school algebra (Allowed prerequisites); AN1.1 (promised)
 exr-statements-and-connectives-b3 (solution): multiplying an inequality by a positive number keeps it; x^2 > 1 iff |x| > 1 (given in the item) | school algebra (Allowed prerequisites); AN1.1 (promised); checked by verify/ch01/exr-statements-and-connectives-b3.py
 exr-statements-and-connectives-b4 (solution): x > 2 implies x^2 > 4 for every real x; (-3)^2 = 9 > 4; -1 <= 0 | the "only if" passage of this section; inline arithmetic (checked by verify/ch01/exr-statements-and-connectives-b4.py)

@@ -1,6 +1,8 @@
 """exr-proving-an-implication-a2 (Section 1.4) and the scope figure of "Which lines a line
-may cite" that its parts (a)-(c) use: every arrow and bracket of the figure, the Quick check
-after it, and drill parts (a)-(c), (h), (j), decided by def-derivation's scope rule."""
+may cite" that its parts (e)-(g) use: every arrow and bracket of the figure, the Quick check
+after it, and drill parts (e)-(g), (h), (i), (j), decided by def-derivation's scope rule;
+the new derivation part (o) checked by truth table."""
+import itertools
 
 # The figure: lines 1..11; box A = 2-4, box B = 6-10, box C = 7-8 (inside B).
 BOXES = {"A": (2, 4), "B": (6, 10), "C": (7, 8)}
@@ -50,15 +52,25 @@ for k in range(1, 12):
         picture = all(BOXES[n][0] <= k <= BOXES[n][1] for n in boxes_containing_line(i))
         assert picture == line_available(i, k)
 
-# Drill (a) 8 may cite 5; (b) 9 may not cite the box 2-4; (c) 11 may not cite 6.
+# Drill (e) 8 may cite 5; (f) 9 may not cite the box 2-4; (g) 11 may not cite 6.
 assert line_available(5, 8)
 assert not box_available("A", 9)
 assert not line_available(6, 11)
 
-# Drill (h): boxes {2-3}; line 5 cites line 2 (illegal) and line 4 (legal).
+# Drill (i): boxes {2-3}; line 5 cites line 2 (illegal) and line 4 (legal).
 BOXES = {"D": (2, 3)}
 assert not line_available(2, 5) and line_available(4, 5)
 
+# Drill (h): a box 3-6; lines 3-4 are not a box (a box is cited from its assumption to its
+# last line), so "->I 3-4" cites no box; the box 3-6 gives P -> R.
+BOXES = {"E": (3, 6)}
+assert (3, 4) not in BOXES.values() and (3, 6) in BOXES.values()
+
 # Drill (j): x^2 > 9 is false at x = 0.
 assert not 0**2 > 9
+
+# Drill (o): (P -> Q) and R |- P -> (Q and R) is valid.
+imp = lambda a, b: (not a) or b
+for P, Q, R in itertools.product((False, True), repeat=3):
+    assert imp(imp(P, Q) and R, imp(P, Q and R))
 print("exr-proving-an-implication-a2: checks")

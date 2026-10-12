@@ -368,6 +368,8 @@ Scratch work for a search fits in a two-column table: the **Givens**, what is in
 
 The derivation this search finds is @prp-and-commutes below.
 
+A goal line may carry its rule before its citation is known. When the goal \( Q \wedge P \) is written at the bottom and the plan is \( \rulename{\wedge I} \), write "\( \rulename{\wedge I} \)" beside it and leave the line numbers blank, to be filled when the subgoals stand on lines; the left picture in the Idea of @prp-and-commutes does this.
+
 ## First derivations with and
 
 ::: {#exm-conjunction-warm-ups}
@@ -434,7 +436,7 @@ The first result is that the order of a conjunction does not matter.
 :::
 
 ::: {.idea}
-Write the premise at the top, the goal at the bottom, and leave a gap (left picture; the lines carry the numbers they will have at the end). Start from the goal. Its main connective is \( \wedge \), so the last line will be \( \rulename{\wedge I} \), and we need \( P \) and \( Q \) on earlier lines (right picture: two subgoals, not yet justified). Now start from the premise. Its main connective is \( \wedge \), so \( \rulename{\wedge E} \) gives \( P \) and gives \( Q \). That closes the gap: the pieces the goal asks for are the pieces the premise supplies. (This is the search of the Givens/Goal table above.)
+Write the premise at the top, the goal at the bottom, and leave a gap, and write \( \rulename{\wedge I} \) beside the goal, with its citation still blank (left picture; the lines carry the numbers they will have at the end). Start from the goal. Its main connective is \( \wedge \), so the last line will be \( \rulename{\wedge I} \), and we need \( P \) and \( Q \) on earlier lines (right picture: two subgoals, not yet justified). Now start from the premise. Its main connective is \( \wedge \), so \( \rulename{\wedge E} \) gives \( P \) and gives \( Q \). That closes the gap: the pieces the goal asks for are the pieces the premise supplies. (This is the search of the Givens/Goal table above.)
 
 ```{=latex}
 % schema (partial derivations: the gap is unnumbered, lines carry their final numbers)
@@ -442,7 +444,7 @@ Write the premise at the top, the goal at the bottom, and leave a gap (left pict
 $\begin{nd}
   \hypo {1} {P \wedge Q}
   \have[\ ][0] {} {\vdots}
-  \have[][4] {4} {Q \wedge P}
+  \have[][4] {4} {Q \wedge P} \ai{}
 \end{nd}$
 \qquad\qquad
 $\begin{nd}
@@ -685,6 +687,22 @@ The illegal step leads from a true premise to a false line, so no rule that allo
 
 ## The rule card
 
+Before the card, the two rules once more, matched against statements larger than single letters. The schema does not care how big the statements put in for \( \varphi \) and \( \psi \) are; it sees only the main connective.
+
+::: {#exm-derivations-instances}
+[Instances of \( \rulename{\wedge I} \) and \( \rulename{\wedge E} \)]
+
+| Rule | \( \varphi \) | \( \psi \) | Cited line(s) | New line |
+|---|---|---|---|---|
+| \( \rulename{\wedge I} \) | \( P \to Q \) | \( R \vee S \) | \( P \to Q \); \( R \vee S \) | \( (P \to Q) \wedge (R \vee S) \) |
+| \( \rulename{\wedge E} \) (left) | \( \neg P \vee Q \) | \( Q \to (R \wedge S) \) | \( (\neg P \vee Q) \wedge (Q \to (R \wedge S)) \) | \( \neg P \vee Q \) |
+| \( \rulename{\wedge E} \) (right) | \( P \wedge Q \) | \( (R \to P) \wedge Q \) | \( (P \wedge Q) \wedge ((R \to P) \wedge Q) \) | \( (R \to P) \wedge Q \) |
+
+**Not an instance (\( \rulename{\wedge I} \)).** From \( P \wedge Q \) and \( R \), the line \( P \wedge (Q \wedge R) \) is not written by \( \rulename{\wedge I} \): the rule joins the two cited lines **whole**, giving \( (P \wedge Q) \wedge R \) (or \( R \wedge (P \wedge Q) \)).
+
+**Not an instance (\( \rulename{\wedge E} \)).** From \( P \wedge (Q \vee R) \), the line \( Q \) is not written by \( \rulename{\wedge E} \): the right conjunct is \( Q \vee R \), and \( Q \) sits inside a disjunction, which no rule of this section takes apart.
+:::
+
 The card gives each rule so far, its shape, the sentence that uses it in a written proof and, for readers who meet a proof assistant, the Lean code that performs it (`h.1` names the left half of a hypothesis `h`). Nothing later depends on the last column.
 
 | Rule | Shape | You write | Lean |
@@ -692,10 +710,29 @@ The card gives each rule so far, its shape, the sentence that uses it in a writt
 | \( \rulename{\wedge I} \) | \( \varphi \), \( \psi \) \( \Longrightarrow \) \( \varphi \wedge \psi \) | "We show \( P \), and we show \( Q \)." | `constructor` |
 | \( \rulename{\wedge E} \) | \( \varphi \wedge \psi \) \( \Longrightarrow \) \( \varphi \) (or \( \psi \)) | "In particular, \( P \)." | `h.1` (and `h.2`) |
 
+::: {.warning}
+[Not allowed: \( \rulename{\wedge I} \), \( \rulename{\wedge E} \)]
+
+Each line below is a wrong step, with its reason and the clause of @def-box-free-derivation it breaks.
+
+- "\( Q \) from \( (P \wedge Q) \wedge R \) by \( \rulename{\wedge E} \)": reaches through two layers; \( \rulename{\wedge E} \) writes a conjunct of the cited line's main connective (clause (ii): no instance).
+- "\( P \) from \( (P \wedge Q) \to R \) by \( \rulename{\wedge E} \)": the main connective is \( \to \), not \( \wedge \) (clause (ii): no instance).
+- "\( P \wedge R \) from \( P \wedge Q \) and \( R \) by \( \rulename{\wedge I} \)": \( \rulename{\wedge I} \) joins whole cited lines; \( P \) is not a line (clause (ii): no instance).
+- "line 4, \( Q \wedge P \), \( \rulename{\wedge I} \) 2, 6": cites line 6, which is not earlier (clause (ii): a later line cited).
+:::
+
+::: {.check}
+Line 1 is \( (P \vee Q) \wedge (R \wedge S) \). Can "\( (R \wedge S) \wedge (P \vee Q) \) — \( \rulename{\wedge I} \) 1" be written? If not, what must come first?
+:::
+
+::: {.solution}
+No: \( \rulename{\wedge I} \) cites two lines (or one line twice, which gives a line of the form \( \varphi \wedge \varphi \)). First write \( P \vee Q \) and \( R \wedge S \) by \( \rulename{\wedge E} \) 1; then \( \rulename{\wedge I} \) joins them in either order.
+:::
+
 ::: {.remark}
 [Looking ahead]
 
-Chapter 3 checks, for every rule of Chapters 1 and 2 at once, that no rule leads from true lines to a false one. Until then each rule comes with the one-sentence reason it is safe, as the sentence after the bullets for "and" did.
+Chapter 4 checks, for every rule of Chapters 1 and 2 at once, that no rule leads from true lines to a false one. Until then each rule comes with the one-sentence reason it is safe, as the sentence after the bullets for "and" did.
 :::
 
 ## Exercises
@@ -749,50 +786,73 @@ Answer each part in a line or two.
 
 ::: {.enumerate options="label=(\alph*)"}
 1. Lines 1 \( 2 < y \) and 2 \( y < z \) are given. What does "\( \mathrm{Tr} \) 1, 2" justify?
-2. Lines 1 \( u < 3 \) and 2 \( 4 < v \) are given. Is "\( u < v \) — \( \mathrm{Tr} \) 1, 2" justified?
-3. The premises are 1 \( 0 < x \), 2 \( x < 3 \), 3 \( 3 < y \). Is "4. \( 0 < y \) — \( \mathrm{Tr} \) 1, 3" justified?
-4. Write \( 0 < \tfrac14 < \tfrac13 < \tfrac12 \) as a derivation of \( 0 < \tfrac12 \) from its three links with \( \mathrm{Tr} \).
-5. In the list "1 \( 0 < 1 \), premise; 2 \( 1 < 2 \), premise; 3 \( 0 < 2 \) — \( \mathrm{Tr} \) 2, 1", which of the three questions of "Reading a derivation" fails?
-6. May \( \rulename{\wedge E} \) be applied to the line \( \neg P \wedge Q \)?
-7. Lines 1 \( P \wedge (Q \wedge R) \), 2 \( S \) and 3 \( Q \wedge R \) (\( \rulename{\wedge E} \) 1) are given. Which of the following can be line 4? (i) \( (Q \wedge R) \wedge S \), \( \rulename{\wedge I} \) 3, 2; (ii) \( Q \wedge S \), \( \rulename{\wedge I} \) 3, 2; (iii) \( R \), \( \rulename{\wedge E} \) 1; (iv) \( R \), \( \rulename{\wedge E} \) 3.
-8. Derive \( P \wedge Q, \ R \vdash R \wedge P \).
-9. Derive \( (P \wedge Q) \wedge R \vdash Q \).
-10. Derive \( P \wedge Q, \ R \wedge S \vdash S \wedge P \).
-11. Fill in the Givens/Goal table for \( P \wedge (Q \wedge R) \vdash R \), one row per step.
-12. Line 1 is \( (P \wedge Q) \wedge (R \wedge S) \). List every statement \( \rulename{\wedge E} \) can write from line 1 in one step.
+2. Line 1 is \( (P \wedge Q) \wedge (R \wedge S) \). List every statement \( \rulename{\wedge E} \) can write from line 1 in one step.
+3. Line 3 is \( (P \vee Q) \wedge (Q \to R) \). Write the lines that "\( \rulename{\wedge E} \) 3" can give.
+4. Line 6 is \( (R \to S) \wedge P \), justified "\( \rulename{\wedge I} \) 2, 4", and line 4 is \( P \). What is line 2?
+5. Fill in the justifications of lines 2–6.
+
+   ```{=latex}
+   \begin{center}
+   $\begin{nd}
+     \hypo {1} {(P \wedge Q) \wedge R}
+     \have {2} {P \wedge Q} \by{?}{}
+     \have {3} {R} \by{?}{}
+     \have {4} {Q} \by{?}{}
+     \have {5} {R \wedge Q} \by{?}{}
+     \have {6} {(R \wedge Q) \wedge (P \wedge Q)} \by{?}{}
+   \end{nd}$
+   \end{center}
+   ```
+
+6. Lines 1 \( u < 3 \) and 2 \( 4 < v \) are given. Is "\( u < v \) — \( \mathrm{Tr} \) 1, 2" justified?
+7. The premises are 1 \( 0 < x \), 2 \( x < 3 \), 3 \( 3 < y \). Is "4. \( 0 < y \) — \( \mathrm{Tr} \) 1, 3" justified?
+8. In the list "1 \( 0 < 1 \), premise; 2 \( 1 < 2 \), premise; 3 \( 0 < 2 \) — \( \mathrm{Tr} \) 2, 1", which of the three questions of "Reading a derivation" fails?
+9. May \( \rulename{\wedge E} \) be applied to the line \( \neg P \wedge Q \)?
+10. Lines 1 \( P \wedge (Q \wedge R) \), 2 \( S \) and 3 \( Q \wedge R \) (\( \rulename{\wedge E} \) 1) are given. Which of the following can be line 4? (i) \( (Q \wedge R) \wedge S \), \( \rulename{\wedge I} \) 3, 2; (ii) \( Q \wedge S \), \( \rulename{\wedge I} \) 3, 2; (iii) \( R \), \( \rulename{\wedge E} \) 1; (iv) \( R \), \( \rulename{\wedge E} \) 3.
+11. Write \( 0 < \tfrac14 < \tfrac13 < \tfrac12 \) as a derivation of \( 0 < \tfrac12 \) from its three links with \( \mathrm{Tr} \).
+12. Derive \( P \wedge Q, \ R \vdash R \wedge P \).
+13. Derive \( (P \wedge Q) \wedge R \vdash Q \).
+14. Derive \( P \wedge Q, \ R \wedge S \vdash S \wedge P \).
+15. Fill in the Givens/Goal table for \( P \wedge (Q \wedge R) \vdash R \), one row per step.
 :::
 :::
 
 ::: {.solution}
 (a) \( 2 < z \), with \( a \), \( b \), \( c \) replaced by \( 2 \), \( y \), \( z \).
 
-(b) No: the middles \( 3 \) and \( 4 \) differ, so the lines are no instance of \( \mathrm{Tr} \), although \( u < v \) does follow (since \( 3 < 4 \)).
+(b) \( P \wedge Q \) and \( R \wedge S \) only.
 
-(c) No: line 1 makes \( b \) the expression \( x \), and line 3 makes it \( 3 \).
+(c) \( P \vee Q \) and \( Q \to R \): the main connective is the middle \( \wedge \), whatever the conjuncts contain.
 
-(d) Premises 1 \( 0 < \tfrac14 \), 2 \( \tfrac14 < \tfrac13 \), 3 \( \tfrac13 < \tfrac12 \); then 4 \( 0 < \tfrac13 \), \( \mathrm{Tr} \) 1, 2; 5 \( 0 < \tfrac12 \), \( \mathrm{Tr} \) 4, 3.
+(d) \( R \to S \). Line 6 has the left conjunct \( R \to S \) and the right conjunct \( P \); line 4 supplies \( P \), so line 2 must supply \( R \to S \).
 
-(e) The second: citing line 2 first makes \( b \) be \( 2 \) (from line 2, as \( a < b \)) and \( 0 \) (from line 1, as \( b < c \)). The rule is named and the cited lines are earlier.
+(e) 2 \( \rulename{\wedge E} \) 1; 3 \( \rulename{\wedge E} \) 1; 4 \( \rulename{\wedge E} \) 2; 5 \( \rulename{\wedge I} \) 3, 4 (or 4, 3); 6 \( \rulename{\wedge I} \) 5, 2. Line 2 is cited twice.
 
-(f) Yes: \( \neg \) binds most tightly, so the main connective is \( \wedge \), and \( \rulename{\wedge E} \) writes \( \neg P \) or \( Q \).
+(f) No: the middles \( 3 \) and \( 4 \) differ, so the lines are no instance of \( \mathrm{Tr} \), although \( u < v \) does follow (since \( 3 < 4 \)).
 
-(g) (i) Yes. (ii) No: \( \rulename{\wedge I} \) joins the two cited lines whole, and line 3 is \( Q \wedge R \), not \( Q \). (iii) No: \( R \) lies a layer deeper in line 1. (iv) Yes.
+(g) No: line 1 makes \( b \) the expression \( x \), and line 3 makes it \( 3 \).
 
-(h) 3 \( P \), \( \rulename{\wedge E} \) 1; 4 \( R \wedge P \), \( \rulename{\wedge I} \) 2, 3.
+(h) The second: citing line 2 first makes \( b \) be \( 2 \) (from line 2, as \( a < b \)) and \( 0 \) (from line 1, as \( b < c \)). The rule is named and the cited lines are earlier.
 
-(i) 2 \( P \wedge Q \), \( \rulename{\wedge E} \) 1; 3 \( Q \), \( \rulename{\wedge E} \) 2.
+(i) Yes: \( \neg \) binds most tightly, so the main connective is \( \wedge \), and \( \rulename{\wedge E} \) writes \( \neg P \) or \( Q \).
 
-(j) 3 \( P \), \( \rulename{\wedge E} \) 1; 4 \( S \), \( \rulename{\wedge E} \) 2; 5 \( S \wedge P \), \( \rulename{\wedge I} \) 4, 3.
+(j) (i) Yes. (ii) No: \( \rulename{\wedge I} \) joins the two cited lines whole, and line 3 is \( Q \wedge R \), not \( Q \). (iii) No: \( R \) lies a layer deeper in line 1. (iv) Yes.
 
-(k)
+(k) Premises 1 \( 0 < \tfrac14 \), 2 \( \tfrac14 < \tfrac13 \), 3 \( \tfrac13 < \tfrac12 \); then 4 \( 0 < \tfrac13 \), \( \mathrm{Tr} \) 1, 2; 5 \( 0 < \tfrac12 \), \( \mathrm{Tr} \) 4, 3.
+
+(l) 3 \( P \), \( \rulename{\wedge E} \) 1; 4 \( R \wedge P \), \( \rulename{\wedge I} \) 2, 3.
+
+(m) 2 \( P \wedge Q \), \( \rulename{\wedge E} \) 1; 3 \( Q \), \( \rulename{\wedge E} \) 2.
+
+(n) 3 \( P \), \( \rulename{\wedge E} \) 1; 4 \( S \), \( \rulename{\wedge E} \) 2; 5 \( S \wedge P \), \( \rulename{\wedge I} \) 4, 3.
+
+(o)
 
 | Givens | Goal |
 |---|---|
 | \( P \wedge (Q \wedge R) \) | \( R \) |
 | \( P \wedge (Q \wedge R) \), \( P \), \( Q \wedge R \) (\( \rulename{\wedge E} \)) | \( R \) |
 | \( P \wedge (Q \wedge R) \), \( P \), \( Q \wedge R \), \( Q \), \( R \) (\( \rulename{\wedge E} \)) | \( R \) \( \checkmark \) |
-
-(l) \( P \wedge Q \) and \( R \wedge S \) only.
 :::
 
 ### B. Practice
@@ -1066,7 +1126,7 @@ If it is \( \rulename{\wedge E} \), citing line \( i \), then its statement is o
 
 Either way line \( k \) does not contain \( R \), which contradicts the choice of \( k \). So no line contains \( R \). In particular no such derivation has the last line \( P \wedge R \), and \( P \wedge Q \vdash P \wedge R \) cannot be shown with these rules.
 
-The argument, "look at the first bad line; it cannot be a premise, and no rule can create it from good lines", is an induction on the lines of a derivation; Chapter 3 makes such arguments exact.
+The argument, "look at the first bad line; it cannot be a premise, and no rule can create it from good lines", is an induction on the lines of a derivation; Chapter 4 makes such arguments exact.
 
 **Marking scheme.** (10 points)
 

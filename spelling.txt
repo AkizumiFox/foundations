@@ -339,3 +339,6 @@ cofactor
 cofactors
 interpolant
 d’Alembert
+collinear
+collinearity
+asm

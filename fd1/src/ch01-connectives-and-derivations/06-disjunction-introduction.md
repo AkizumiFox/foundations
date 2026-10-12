@@ -58,11 +58,7 @@ In mathematics "or" is inclusive (Section 1.1): \( \varphi \vee \psi \) is true 
 ::: {.second-reading title="Edge cases and near misses"}
 The degenerate case is \( \psi \) equal to \( \varphi \). From \( P \) the rule writes \( P \vee P \), and then the two schemas give the same line. It is a legal step, and the next section uses the statement \( P \vee P \) once.
 
-Now three nonexamples, each a small change of an instance. Take line 1 to be the statement named in each, and line 2 the line shown.
-
-- From \( P \), the line "\( P \wedge Q \) — \( \rulename{\vee I} \) 1" is not an instance. The new line of \( \rulename{\vee I} \) is a disjunction, and the main connective of \( P \wedge Q \) is \( \wedge \).
-- From \( P \vee Q \), the line "\( Q \vee P \) — \( \rulename{\vee I} \) 1" is not an instance. With \( \varphi \) replaced by \( P \vee Q \), the two schemas give \( (P \vee Q) \vee \psi \) and \( \psi \vee (P \vee Q) \). In both, the cited statement is one whole side of the new line, and \( P \vee Q \) is not a side of \( Q \vee P \). Whether \( Q \vee P \) follows from \( P \vee Q \) at all is the question at the end of this section.
-- From \( P \vee Q \), the line "\( P \) — \( \rulename{\vee I} \) 1" is not an instance. It runs the rule backwards, from a disjunction to one of its sides.
+The near misses, steps that look like \( \rulename{\vee I} \) and are not, are listed after the rule card at the end of this section.
 
 ::: {.warning}
 Do not read "or" as "one but not both" when checking a step. From \( x = 2 \), \( \rulename{\vee I} \) gives "\( x = 2 \) or \( x \le 5 \)", although at \( x = 2 \) both sides are true. The step is correct: the disjunction is inclusive, and the rule never claims that the added side is false.
@@ -109,6 +105,94 @@ Let \( x \) be a real number. The premise is \( 0 < x < 1 \) and the goal is \( 
 ::: {.solution}
 The right side, \( x < 2 \): it follows from \( x < 1 \), the right half of the premise. The left side \( x < 0 \) does not follow: at \( x = \tfrac12 \) the premise holds and \( x < 0 \) fails.
 :::
+
+A side chosen too early is worth watching once, all the way to the point where the search stalls, and then once more done right.
+
+::: {#exm-early-choice}
+[A side chosen too early]
+
+Show that \( P \to R \vdash (P \wedge Q) \to (S \vee R) \).
+:::
+
+::: {.solution}
+*The box.* The goal is an implication, so we open a box with its hypothesis \( P \wedge Q \), and the goal inside is \( S \vee R \). The first picture shows the box with its goal at the bottom, and the line that will close it, not yet justified; line 2 records the plan, "asm, for \( \rulename{{\to}I} \)".
+
+```{=latex}
+% schema (partial derivations: the gap is unnumbered, lines carry their final numbers)
+\begin{center}
+$\begin{nd}
+  \hypo {1} {P \to R}
+  \open
+  \hypo {2} {P \wedge Q} \purpose{\ii}
+  \have[\ ][0] {} {\vdots}
+  \have[][5] {5} {S \vee R}
+  \close
+  \have {6} {(P \wedge Q) \to (S \vee R)} \by{?}{}
+\end{nd}$
+\qquad
+$\begin{nd}
+  \hypo {1} {P \to R}
+  \open
+  \hypo {2} {P \wedge Q} \purpose{\ii}
+  \have[\ ][0] {} {\vdots}
+  \have[][4] {4} {S}
+  \have {5} {S \vee R} \oi{4}
+  \close
+  \have {6} {(P \wedge Q) \to (S \vee R)} \by{?}{}
+\end{nd}$
+\end{center}
+```
+
+*The early choice.* \( S \) is the left side of the goal, so suppose we aim at it at once: line 5 becomes "\( S \vee R \), \( \rulename{\vee I} \) 4", and line 4, \( S \), is the new subgoal (the second picture). Now the search stalls. Nothing mentions \( S \) except the goal: no premise, no assumption, no part of either.
+
+Try to break the subgoal. Let \( x \) be a real number, and take \( P \): "\( x > 1 \)", \( Q \): "\( x > 0 \)", \( R \): "\( x^2 > x \)", \( S \): "\( x > 5 \)". The premise \( P \to R \) holds for every \( x \): if \( x > 1 \), then \( x^2 = x \cdot x > x \). At \( x = 2 \) the assumption \( P \wedge Q \) is true and \( S \) is false. So \( S \) does not follow from the lines in hand. The goal was not at fault, since at \( x = 2 \) its right side \( R \) is true (\( 4 > 2 \)); the choice was.
+
+*Redone.* Go back to the choice and postpone it. Work from the lines in hand: \( \rulename{\wedge E} \) takes \( P \) out of the assumption, the premise fires on it, and \( R \), the right side of the goal, is in hand. Only now does \( \rulename{\vee I} \) choose a side.
+
+```{=latex}
+\begin{center}
+$\begin{nd}
+  \hypo {1} {P \to R}
+  \open
+  \hypo {2} {P \wedge Q}
+  \have {3} {P} \ae{2}
+  \have {4} {R} \ie{1,3}
+  \have {5} {S \vee R} \oi{4}
+  \close
+  \have {6} {(P \wedge Q) \to (S \vee R)} \ii{2-5}
+\end{nd}$
+\end{center}
+```
+
+Line 5 uses the second schema, with \( R \) on the right. A stalled branch is abandoned, not defended: go back to the last choice and make it later.
+:::
+
+::: {.check}
+In @exm-early-choice, which side would \( \rulename{\vee I} \) take if the premise were \( P \to S \) instead?
+:::
+
+::: {.solution}
+The left side, \( S \): with the premise \( P \to S \), the lines \( \rulename{\wedge E} \) and \( \rulename{{\to}E} \) would put \( S \) in hand at line 4. The postponing is the same; the choice is made when a side appears.
+:::
+
+The habit of this section as a picture:
+
+```{=latex}
+\begin{center}
+\begin{tikzpicture}[flowchart]
+  \node[fc start] (s) {goal $\varphi \vee \psi$};
+  \node[fc test, below=of s] (t) {is $\varphi$ or $\psi$\\on an available line?};
+  \node[fc start, right=of t] (d) {$\vee$I with that side};
+  \node[fc step, below=of t] (w) {work from the lines in hand:\\$\wedge$E, ${\to}$E, the boxes the goal asks for};
+  \node[fc step, below=of w] (x) {still stuck: split an available\\disjunction (next section)};
+  \draw[fc arrow] (s) -- (t);
+  \draw[fc arrow] (t) -- node[above, font=\scriptsize] {yes} (d);
+  \draw[fc arrow] (t) -- node[right, font=\scriptsize] {no} (w);
+  \draw[fc arrow] (w.west) -- ++(-0.5,0) |- node[pos=0.25, left, font=\scriptsize] {a new line} (t.west);
+  \draw[fc arrow] (w) -- node[right, font=\scriptsize] {nothing new} (x);
+\end{tikzpicture}
+\end{center}
+```
 
 Here are four derivations, in order of difficulty. Each Idea says, for each rule, whether it was chosen by the goal or by a premise.
 
@@ -387,6 +471,14 @@ This derivation is correct, but it shows \( P \vee Q \vdash Q \to (Q \vee P) \),
 
 The missing move is to **use** a disjunction, as \( \rulename{\wedge E} \) uses a conjunction and \( \rulename{{\to}E} \) uses an implication. The next section gives the rule that does this, and with it the six-line derivation that this attempt lacks.
 
+## Derive it or break it
+
+From here on, some exercises list claims \( \Gamma \vdash \varphi \) without saying which hold. For each, either give a derivation, or break the claim: find statements that make its **counterexample set** \( \Gamma, \neg\varphi \) (@def-counterexample-set) true all at once.
+
+For instance, \( P \wedge (Q \vee R) \vdash Q \) breaks. Let \( x \) be a real number, and take \( P \): "\( x > 0 \)", \( Q \): "\( x > 2 \)", \( R \): "\( x < 3 \)". At \( x = 1 \) the set \( P \wedge (Q \vee R) \), \( \neg Q \) is true: \( 1 > 0 \), \( 1 < 3 \), and \( 1 > 2 \) fails.
+
+A claim can also be of neither kind *yet*. \( P \vee Q \vdash Q \vee P \) cannot be broken: if \( P \vee Q \) is true, one of its sides is, and that side makes \( Q \vee P \) true. And with the rules so far no derivation of it has been found: the attempt in "A goal we cannot reach yet" stalls, and the claim waits for the next section's rule. The lists in this section's exercises contain only claims that the rules so far settle.
+
 ## How this looks in a mathematical proof
 
 In written mathematics \( \rulename{\vee I} \) is almost always silent. Here are the two steps of the opening, written out as derivations.
@@ -438,6 +530,20 @@ Every "so \( x \ge 0 \)" after \( x > 0 \), every "so \( \abs{t} \le 1 \)" after
 
 ## The rule card
 
+Before the card, the new rule at work on statements larger than single letters. The schema sees only the whole cited line; how much is inside it does not matter.
+
+::: {#exm-disjunction-introduction-instances}
+[Instances of \( \rulename{\vee I} \)]
+
+| Schema | \( \varphi \) | \( \psi \) | Cited line | New line |
+|---|---|---|---|---|
+| first | \( P \to Q \) | \( R \wedge \neg S \) | \( P \to Q \) | \( (P \to Q) \vee (R \wedge \neg S) \) |
+| second | \( P \vee Q \) | \( P \wedge \neg R \) | \( P \vee Q \) | \( (P \wedge \neg R) \vee (P \vee Q) \) |
+| second | \( (P \wedge Q) \to R \) | \( \neg R \) | \( (P \wedge Q) \to R \) | \( \neg R \vee ((P \wedge Q) \to R) \) |
+
+**Not an instance.** From \( P \vee Q \), the line \( P \vee (Q \vee R) \) is not written by \( \rulename{\vee I} \): the rule adds a side to the **whole** cited line, giving \( (P \vee Q) \vee R \) or \( R \vee (P \vee Q) \); it never reaches inside.
+:::
+
 The card grows by one row. *Shape* shows the given lines (or box), then the new line.
 
 | Rule | Shape | You write | Lean |
@@ -450,6 +556,32 @@ The card grows by one row. *Shape* shows the given lines (or box), then the new 
 | \( \rulename{\vee I} \) | \( \varphi \) \( \Longrightarrow \) \( \varphi \vee \psi \) (or \( \psi \vee \varphi \)) | "So \( P \) or \( Q \) holds." | `left` (or `Or.inl hp`); `right` |
 
 The phrase is different from the "in particular" of \( \rulename{\wedge E} \) on purpose. "In particular" announces that a part is being taken out of something bigger; "so \( P \) or \( Q \)" announces that something bigger, and weaker, is being built.
+
+::: {.warning}
+[Not allowed: \( \rulename{\vee I} \)]
+
+Each step is offered as one application of \( \rulename{\vee I} \); each breaks the Reading of the rule where shown.
+
+- "\( P \) from \( P \vee Q \)": it runs the rule backwards. The cited line is a side of the new line, never the other way round.
+- "\( P \wedge Q \) from \( P \)": the new line must be a disjunction.
+- "\( Q \vee P \) from \( P \vee Q \)": the cited line must be one **whole** side of the new line.
+- "\( P \vee (Q \vee R) \) from \( P \vee Q \)": the rule never reaches inside the cited line.
+- "\( x \ge 0 \) from \( x > 0 \), as written": a checker compares symbols. Write \( x \ge 0 \) out first, as the convention on inequalities at the start of this section asks.
+:::
+
+::: {.check}
+Line 3 is \( Q \). Which of \( Q \vee (P \wedge R) \), \( (P \wedge R) \vee Q \), \( Q \vee Q \), \( Q \wedge Q \) may "\( \rulename{\vee I} \) 3" write?
+:::
+
+::: {.solution}
+The first three. The first is the first schema and the second the second schema, with \( \psi \) replaced by \( P \wedge R \); the third is either schema, with \( \psi \) replaced by \( Q \) itself. \( Q \wedge Q \) is a conjunction, written by \( \rulename{\wedge I} \) 3, 3.
+:::
+
+::: {.remark}
+[Looking ahead]
+
+Chapter 4 proves that a claim that breaks has no derivation, with any of the rules of Chapters 1 and 2, and that a claim that cannot be broken has a derivation with them.
+:::
 
 ## Exercises
 
@@ -483,42 +615,57 @@ The phrase is different from the "in particular" of \( \rulename{\wedge E} \) on
 ::: {#exr-disjunction-introduction-a2}
 [A2: Drill]
 
-Each part takes a line or two. Let \( x \) be a real number and \( n \) an integer.
+Each part takes a line or two. The parts run from single steps, through a missing line and a justification column, to whole derivations. Let \( x \) be a real number and \( n \) an integer.
 
 ::: {.enumerate options="label=(\alph*)"}
-1. Line 1 is \( x = 5 \). Which of these may be written as "\( \rulename{\vee I} \) 1"? (i) \( (x = 5) \vee (x = 6) \); (ii) \( (x > 4) \vee (x = 5) \); (iii) \( x \ge 5 \), as written; (iv) \( (x = 5) \wedge (x \ge 0) \).
-2. Line 1 is \( P \wedge Q \). Is "\( P \vee Q \) — \( \rulename{\vee I} \) 1" legal?
-3. Line 1 is \( Q \vee P \). Is "\( P \vee Q \) — \( \rulename{\vee I} \) 1" legal?
-4. Is "\( x > 0 \), so \( x \ge 0 \)" one step of \( \rulename{\vee I} \)?
-5. The premise is \( x < -1 \) and the goal is \( (x < -5) \vee (x < 0) \). Which side should \( \rulename{\vee I} \) take?
-6. "We have \( n = 4 \). So \( n \) is even or \( n > 10 \)." Which steps does this sentence take?
-7. Derive \( P \vdash (P \vee Q) \wedge (R \vee P) \).
-8. Derive \( P \wedge Q \vdash Q \vee R \).
-9. Derive \( P \to Q \vdash P \to (R \vee Q) \).
-10. Derive \( (P \vee Q) \to R, \ Q \vdash R \).
+1. Line 2 is \( (P \to Q) \wedge R \). Write two lines that "\( \rulename{\vee I} \) 2" can give, one by each schema.
+2. Line 6 is \( (R \wedge S) \vee (P \to Q) \), justified "\( \rulename{\vee I} \) 4". What can line 4 be?
+3. Justify each line: 1 \( P \wedge Q \), premise; 2 \( R \), premise; 3 \( Q \); 4 \( Q \vee R \); 5 \( (Q \vee R) \wedge R \); 6 \( S \vee ((Q \vee R) \wedge R) \).
+4. Line 1 is \( x = 5 \). Which of these may be written as "\( \rulename{\vee I} \) 1"? (i) \( (x = 5) \vee (x = 6) \); (ii) \( (x > 4) \vee (x = 5) \); (iii) \( x \ge 5 \), as written; (iv) \( (x = 5) \wedge (x \ge 0) \).
+5. Line 1 is \( P \wedge Q \). Is "\( P \vee Q \) — \( \rulename{\vee I} \) 1" legal?
+6. Line 1 is \( Q \vee P \). Is "\( P \vee Q \) — \( \rulename{\vee I} \) 1" legal?
+7. Is "\( x > 0 \), so \( x \ge 0 \)" one step of \( \rulename{\vee I} \)?
+8. Line 4 is \( P \wedge Q \). Is "\( (P \vee R) \wedge Q \) — \( \rulename{\vee I} \) 4" correct? If not, how many lines does it take?
+9. "We have \( n = 4 \). So \( n \) is even or \( n > 10 \)." Which steps does this sentence take?
+10. The premise is \( x < -1 \) and the goal is \( (x < -5) \vee (x < 0) \). Which side should \( \rulename{\vee I} \) take?
+11. Derive \( P \vdash (P \vee Q) \wedge (R \vee P) \).
+12. Derive \( P \wedge Q \vdash Q \vee R \).
+13. Derive \( P \to Q \vdash P \to (R \vee Q) \).
+14. Derive \( (P \vee Q) \to R, \ Q \vdash R \).
+15. Derive \( P \to (Q \wedge R) \vdash P \to (S \vee R) \).
 :::
 :::
 
 ::: {.solution}
-(a) (i) Yes, by the first schema. (ii) Yes, by the second schema: \( x = 5 \) is the right side. (iii) No: as written, \( x \ge 5 \) is one statement. Written out as \( (x > 5) \vee (x = 5) \), it is the second schema. (iv) No: the new line is not a disjunction.
+(a) \( ((P \to Q) \wedge R) \vee S \) by the first schema and \( S \vee ((P \to Q) \wedge R) \) by the second, with any statement for \( S \).
 
-(b) No: \( P \wedge Q \) is not a side of \( P \vee Q \). From line 1, \( \rulename{\vee I} \) could write \( (P \wedge Q) \vee R \).
+(b) \( R \wedge S \) (first schema) or \( P \to Q \) (second schema): line 4 is one whole side of line 6.
 
-(c) No: \( Q \vee P \) is not a whole side of \( P \vee Q \).
+(c) 3 \( \rulename{\wedge E} \) 1; 4 \( \rulename{\vee I} \) 3 (first schema); 5 \( \rulename{\wedge I} \) 4, 2; 6 \( \rulename{\vee I} \) 5 (second schema).
 
-(d) Yes, once \( x \ge 0 \) is written out as \( (x > 0) \vee (x = 0) \): it is the first schema.
+(d) (i) Yes, by the first schema. (ii) Yes, by the second schema: \( x = 5 \) is the right side. (iii) No: as written, \( x \ge 5 \) is one statement. Written out as \( (x > 5) \vee (x = 5) \), it is the second schema. (iv) No: the new line is not a disjunction.
 
-(e) The right side, \( x < 0 \), which follows from \( x < -1 \). The left side fails at \( x = -2 \), where the premise holds and \( x < -5 \) does not.
+(e) No: \( P \wedge Q \) is not a side of \( P \vee Q \). From line 1, \( \rulename{\vee I} \) could write \( (P \wedge Q) \vee R \).
 
-(f) Two steps: algebra (\( 4 = 2 \cdot 2 \), so \( n \) is even), then \( \rulename{\vee I} \). From "\( n = 4 \)" itself, \( \rulename{\vee I} \) gives only "\( n = 4 \) or …".
+(f) No: \( Q \vee P \) is not a whole side of \( P \vee Q \).
 
-(g) 2 \( P \vee Q \), \( \rulename{\vee I} \) 1; 3 \( R \vee P \), \( \rulename{\vee I} \) 1; 4 \( (P \vee Q) \wedge (R \vee P) \), \( \rulename{\wedge I} \) 2, 3.
+(g) Yes, once \( x \ge 0 \) is written out as \( (x > 0) \vee (x = 0) \): it is the first schema.
 
-(h) 2 \( Q \), \( \rulename{\wedge E} \) 1; 3 \( Q \vee R \), \( \rulename{\vee I} \) 2.
+(h) No. The new line of \( \rulename{\vee I} \) is a disjunction with line 4 as one whole side; this line is a conjunction, and it reaches inside line 4. It takes four lines: 5 \( P \), \( \rulename{\wedge E} \) 4; 6 \( Q \), \( \rulename{\wedge E} \) 4; 7 \( P \vee R \), \( \rulename{\vee I} \) 5; 8 \( (P \vee R) \wedge Q \), \( \rulename{\wedge I} \) 7, 6.
 
-(i) A box opened with \( P \): 2 \( P \), assumption; 3 \( Q \), \( \rulename{{\to}E} \) 1, 2; 4 \( R \vee Q \), \( \rulename{\vee I} \) 3; then 5 \( P \to (R \vee Q) \), \( \rulename{{\to}I} \) 2–4.
+(i) Two steps: algebra (\( 4 = 2 \cdot 2 \), so \( n \) is even), then \( \rulename{\vee I} \). From "\( n = 4 \)" itself, \( \rulename{\vee I} \) gives only "\( n = 4 \) or …".
 
-(j) 3 \( P \vee Q \), \( \rulename{\vee I} \) 2; 4 \( R \), \( \rulename{{\to}E} \) 1, 3.
+(j) The right side, \( x < 0 \), which follows from \( x < -1 \). The left side fails at \( x = -2 \), where the premise holds and \( x < -5 \) does not.
+
+(k) 2 \( P \vee Q \), \( \rulename{\vee I} \) 1; 3 \( R \vee P \), \( \rulename{\vee I} \) 1; 4 \( (P \vee Q) \wedge (R \vee P) \), \( \rulename{\wedge I} \) 2, 3.
+
+(l) 2 \( Q \), \( \rulename{\wedge E} \) 1; 3 \( Q \vee R \), \( \rulename{\vee I} \) 2.
+
+(m) A box opened with \( P \): 2 \( P \), assumption; 3 \( Q \), \( \rulename{{\to}E} \) 1, 2; 4 \( R \vee Q \), \( \rulename{\vee I} \) 3; then 5 \( P \to (R \vee Q) \), \( \rulename{{\to}I} \) 2–4.
+
+(n) 3 \( P \vee Q \), \( \rulename{\vee I} \) 2; 4 \( R \), \( \rulename{{\to}E} \) 1, 3.
+
+(o) A box opened with \( P \): 2 \( P \), assumption; 3 \( Q \wedge R \), \( \rulename{{\to}E} \) 1, 2; 4 \( R \), \( \rulename{\wedge E} \) 3; 5 \( S \vee R \), \( \rulename{\vee I} \) 4; then 6 \( P \to (S \vee R) \), \( \rulename{{\to}I} \) 2–5.
 :::
 
 ### B. Practice
@@ -575,7 +722,7 @@ $\begin{nd}
   \hypo {1} {P \to Q}
   \hypo {2} {Q \to R}
   \open
-  \hypo {3} {P}
+  \hypo {3} {P} \purpose{\ii}
   \have {4} {Q} \ie{1,3}
   \have {5} {R} \ie{2,4}
   \have {6} {S \vee R} \oi{5}
@@ -632,6 +779,95 @@ $\begin{nd}
 ```
 
 In prose: *Suppose \( x > 1 \). Then \( x \ge 1 \), so \( x^2 \ge x \) by the fact. Hence if \( x > 1 \), then \( x^2 \ge x \).* The words "then \( x \ge 1 \)" are line 3. For instance, at \( x = 3 \) the conclusion reads \( 9 \ge 3 \).
+:::
+
+::: {#exr-disjunction-introduction-b4}
+[B4: Derive or break]
+
+For each claim, either derive it with the rules of Sections 1.2–1.5, or break it by statements about a real number \( x \) that make its counterexample set true.
+
+::: {.enumerate options="label=(\alph*)"}
+1. \( P \vdash P \vee (Q \wedge R) \).
+2. \( P \vdash P \wedge (Q \vee R) \).
+3. \( P \to R \vdash (P \vee Q) \to R \).
+4. \( (P \vee Q) \to R \vdash P \to R \).
+5. \( (P \wedge Q) \to R \vdash (Q \wedge P) \to (R \vee S) \).
+6. \( (P \to Q) \wedge (P \to R) \vdash P \to (Q \vee R) \).
+7. \( P \to (Q \vee R) \vdash P \to Q \).
+:::
+:::
+
+::: {.solution}
+(a) Derive. The side \( P \) of the goal is the premise.
+
+```{=latex}
+\begin{center}
+$\begin{nd}
+  \hypo {1} {P}
+  \have {2} {P \vee (Q \wedge R)} \oi{1}
+\end{nd}$
+\end{center}
+```
+
+(b) Break. Take \( P \): "\( x > 0 \)", \( Q \): "\( x > 5 \)", \( R \): "\( x < -5 \)". At \( x = 1 \), \( P \) is true and \( Q \vee R \) is false (\( 1 > 5 \) and \( 1 < -5 \) both fail), so \( P \wedge (Q \vee R) \) is false. The counterexample set \( P \), \( \neg(P \wedge (Q \vee R)) \) is true.
+
+(c) Break. Take \( P \): "\( x > 3 \)", \( Q \): "\( x < 0 \)", \( R \): "\( x > 1 \)". The premise \( P \to R \) holds for every \( x \). At \( x = -1 \), \( P \vee Q \) is true (\( -1 < 0 \)) and \( R \) is false, so \( (P \vee Q) \to R \) is false, and the counterexample set \( P \to R \), \( \neg((P \vee Q) \to R) \) is true.
+
+(d) Derive. Inside the box of \( P \), \( \rulename{\vee I} \) manufactures the premise's hypothesis, as in @exm-or-hypothesis-split.
+
+```{=latex}
+\begin{center}
+$\begin{nd}
+  \hypo {1} {(P \vee Q) \to R}
+  \open
+  \hypo {2} {P}
+  \have {3} {P \vee Q} \oi{2}
+  \have {4} {R} \ie{1,3}
+  \close
+  \have {5} {P \to R} \ii{2-4}
+\end{nd}$
+\end{center}
+```
+
+(e) Derive. The premise's hypothesis is \( P \wedge Q \), and the box gives \( Q \wedge P \): take it apart and join it the other way round, then postpone the goal \( R \vee S \) until \( R \) is in hand.
+
+```{=latex}
+\begin{center}
+$\begin{nd}
+  \hypo {1} {(P \wedge Q) \to R}
+  \open
+  \hypo {2} {Q \wedge P}
+  \have {3} {Q} \ae{2}
+  \have {4} {P} \ae{2}
+  \have {5} {P \wedge Q} \ai{4,3}
+  \have {6} {R} \ie{1,5}
+  \have {7} {R \vee S} \oi{6}
+  \close
+  \have {8} {(Q \wedge P) \to (R \vee S)} \ii{2-7}
+\end{nd}$
+\end{center}
+```
+
+(f) Derive. One half of the premise is enough.
+
+```{=latex}
+\begin{center}
+$\begin{nd}
+  \hypo {1} {(P \to Q) \wedge (P \to R)}
+  \open
+  \hypo {2} {P}
+  \have {3} {P \to Q} \ae{1}
+  \have {4} {Q} \ie{3,2}
+  \have {5} {Q \vee R} \oi{4}
+  \close
+  \have {6} {P \to (Q \vee R)} \ii{2-5}
+\end{nd}$
+\end{center}
+```
+
+(g) Break. Take \( P \): "\( x > 0 \)", \( Q \): "\( x > 5 \)", \( R \): "\( x < 6 \)". The premise \( P \to (Q \vee R) \) holds for every \( x \), since every real number is \( > 5 \) or \( < 6 \). At \( x = 1 \), \( P \) is true and \( Q \) is false, so the counterexample set \( P \to (Q \vee R) \), \( \neg(P \to Q) \) is true.
+
+The claims come in pairs. (a) and (b) are look-alikes, with \( \vee \) and \( \wedge \) traded; (c) and (d) are converses; (g) is a look-alike of (f), with premise and conclusion traded and weakened. In each pair one claim derives and the other breaks.
 :::
 
 ### C. Going deeper
@@ -721,10 +957,14 @@ def-rule-disjunction-introduction (example): if the cited line is true, the new 
 def-rule-disjunction-introduction (example): the warning's witnesses x = -1 (x >= 0 or x < 0) and x = 2.5 (P: x > 2, Q: x > 1, R: x > 3) | school algebra; AN1.1 (promised); checked by verify/ch01/def-rule-disjunction-introduction.py
 def-rule-disjunction-introduction (example): side choice: x > 1 implies x > 0; at x = 2, x > 1 holds and x > 3 fails; Quick check: 0 < x < 1 implies x < 2; at x = 1/2 the premise holds and x < 0 fails | school algebra; AN1.1 (promised); checked by verify/ch01/def-rule-disjunction-introduction.py
 def-rule-disjunction-introduction (example): a step that leads from a true premise to a false line at one value does not follow (try to break it) | F1.1 §01 ("Try to break it", prose, no label)
+exm-early-choice (example): if x > 1 then x^2 = x * x > x, for every real x; at x = 2: 2 > 1, 2 > 0, 4 > 2, and 2 > 5 fails | school algebra; AN1.1 (promised); checked by verify/ch01/exm-early-choice.py
+exm-early-choice (example): a subgoal that the lines in hand can make true while it is false does not follow (try to break it) | F1.1 §01 ("Try to break it", prose); def-counterexample-set (cited in the section)
+def-rule-disjunction-introduction (claim): ("Derive it or break it") at x = 1: 1 > 0, 1 < 3, and 1 > 2 fails; if P or Q is true then one side is, and that side makes Q or P true | school algebra; argued inline from the inclusive reading; checked by verify/ch01/def-rule-disjunction-introduction.py
 exm-or-hypothesis-split (example): if x >= 0 then x^3 >= 0 | school algebra, used only as a reading; AN1.1 (promised)
 exm-product-zero (example): if a = 0 or b = 0, then a * b = 0 | school algebra, taken as known in the example; AN1.1 (promised)
 exr-disjunction-introduction-a1 (solution): |x - 2| < 1 implies 1 < x < 3; 0 < x < 1 abbreviates (0 < x) and (x < 1) | school algebra; F1.1 §01 (chained inequalities)
-exr-disjunction-introduction-a2 (solution): (e) x < -1 implies x < 0; at x = -2, x < -1 holds and x < -5 fails; (f) 4 = 2 * 2 | school algebra; checked by verify/ch01/exr-disjunction-introduction-a2.py
+exr-disjunction-introduction-a2 (solution): (j) x < -1 implies x < 0; at x = -2, x < -1 holds and x < -5 fails; (i) 4 = 2 * 2 | school algebra; checked by verify/ch01/exr-disjunction-introduction-a2.py
 exr-disjunction-introduction-b3 (solution): if x >= 1 then x^2 >= x | school algebra, taken as known in the item; AN1.1 (promised)
+exr-disjunction-introduction-b4 (solution): (b) at x = 1, 1 > 0 and neither 1 > 5 nor 1 < -5; (c) x > 3 implies x > 1, and at x = -1, -1 < 0 and -1 > 1 fails; (g) every real is > 5 or < 6, and at x = 1, 1 > 0 and 1 > 5 fails | school algebra, inline; checked by verify/ch01/exr-disjunction-introduction-b4.py
 exr-disjunction-introduction-c1 (solution): x >= 0 or x < 0 for every real x | school algebra, stated in the item; AN1.1 (promised)
 -->

@@ -97,7 +97,7 @@ items:
   kind: check
   file: 01-statements-and-connectives.md
   line: 70
-  hash: da1a20f3c87d
+  hash: 314ac6c226e4
   verdicts:
   - stage: S5a
     verdict: correct
@@ -208,10 +208,31 @@ items:
     model: claude-opus-5-5
     evidence: '01:136-141: x=3 (9>4, 3>2), x=-3 breaks, x=1 hypothesis false; def-main-connective.py asserts
       the list [-3]'
+- key: check:01-statements-and-connectives:3
+  kind: check
+  file: 01-statements-and-connectives.md
+  line: 188
+  hash: 0da998c0d1a1
+  verdicts:
+  - stage: S5a
+    verdict: correct
+    by: refereeA
+    hash: e090fcfac904
+    date: '2026-10-12'
+    model: claude-opus-5-5
+    evidence: '01:220-236: (a) ∨, because by convention (1) ¬ takes only P. (b) ¬. (c) ∧. All three are
+      right.'
+  - stage: S5b
+    verdict: correct
+    by: refereeB
+    hash: e090fcfac904
+    date: '2026-10-12'
+    model: claude-opus-5-5
+    evidence: '01:220-236: (a) ∨, (b) ¬, (c) ∧ are right under conventions (1)-(2)'
 - key: def-main-connective
   kind: def
   file: 01-statements-and-connectives.md
-  line: 191
+  line: 234
   hash: 57d4d82709f5
   verdicts:
   - stage: S5a
@@ -255,32 +276,11 @@ items:
     model: claude-opus-5-5
     evidence: 01:191-195 unchanged; tree 01:203-214 and the one-symbol change 01:216 right; 'Section 1.2
       gives this habit a name' true (02:353 'goal-directed')
-- key: check:01-statements-and-connectives:3
-  kind: check
-  file: 01-statements-and-connectives.md
-  line: 220
-  hash: e090fcfac904
-  verdicts:
-  - stage: S5a
-    verdict: correct
-    by: refereeA
-    hash: e090fcfac904
-    date: '2026-10-12'
-    model: claude-opus-5-5
-    evidence: '01:220-236: (a) ∨, because by convention (1) ¬ takes only P. (b) ¬. (c) ∧. All three are
-      right.'
-  - stage: S5b
-    verdict: correct
-    by: refereeB
-    hash: e090fcfac904
-    date: '2026-10-12'
-    model: claude-opus-5-5
-    evidence: '01:220-236: (a) ∨, (b) ¬, (c) ∧ are right under conventions (1)-(2)'
 - key: check:01-statements-and-connectives:4
   kind: check
   file: 01-statements-and-connectives.md
-  line: 269
-  hash: c274dfea524c
+  line: 263
+  hash: e090fcfac904
   verdicts:
   - stage: S5a
     verdict: correct
@@ -301,10 +301,28 @@ items:
     model: claude-opus-5-5
     evidence: '01:269-282: (i) affirming the consequent broken at n=2 (4k=2(2k)); (ii) argued good from
       the promise table, as blueprint item 10 asks'
+- key: def-counterexample-set
+  kind: def
+  file: 01-statements-and-connectives.md
+  line: 308
+  hash: 02ab4e6bee54
+  verdicts: []
+- key: check:01-statements-and-connectives:5
+  kind: check
+  file: 01-statements-and-connectives.md
+  line: 320
+  hash: c274dfea524c
+  verdicts: []
+- key: check:01-statements-and-connectives:6
+  kind: check
+  file: 01-statements-and-connectives.md
+  line: 337
+  hash: adbef18e3f50
+  verdicts: []
 - key: exr-statements-and-connectives-a1
   kind: exr
   file: 01-statements-and-connectives.md
-  line: 347
+  line: 440
   hash: 02d367bb8fe5
   verdicts:
   - stage: S5a
@@ -381,8 +399,8 @@ items:
 - key: exr-statements-and-connectives-a2
   kind: exr
   file: 01-statements-and-connectives.md
-  line: 382
-  hash: d3ba842c7203
+  line: 475
+  hash: 770f85dc8eb4
   verdicts:
   - stage: S5a
     verdict: correct
@@ -414,7 +432,7 @@ items:
 - key: exr-statements-and-connectives-b1
   kind: exr
   file: 01-statements-and-connectives.md
-  line: 425
+  line: 533
   hash: e0e35134ed29
   verdicts:
   - stage: S5a
@@ -471,7 +489,7 @@ items:
 - key: exr-statements-and-connectives-b2
   kind: exr
   file: 01-statements-and-connectives.md
-  line: 448
+  line: 556
   hash: 68543bf4e969
   verdicts:
   - stage: S5a
@@ -532,7 +550,7 @@ items:
 - key: exr-statements-and-connectives-b3
   kind: exr
   file: 01-statements-and-connectives.md
-  line: 512
+  line: 620
   hash: 49e8f3dd83ba
   verdicts:
   - stage: S5a
@@ -593,8 +611,8 @@ items:
 - key: exr-statements-and-connectives-b4
   kind: exr
   file: 01-statements-and-connectives.md
-  line: 532
-  hash: 1b3e9782a969
+  line: 640
+  hash: 56b771d38aa1
   verdicts:
   - stage: S5a
     verdict: minor
@@ -635,10 +653,22 @@ items:
       from the meanings of ∧ and ∨ (table at lines 92-93; inclusive-or warning at line 109). This resolves
       the S5a and S6 findings. I solved each part myself first and compared. (a) Bad: x=-3 with P: x>2,
       Q: x^2>4. P→Q h'
+- key: exr-statements-and-connectives-b5
+  kind: exr
+  file: 01-statements-and-connectives.md
+  line: 665
+  hash: 3206765ed847
+  verdicts: []
+- key: exr-statements-and-connectives-b6
+  kind: exr
+  file: 01-statements-and-connectives.md
+  line: 711
+  hash: f56d53609868
+  verdicts: []
 - key: exr-statements-and-connectives-c1
   kind: exr
   file: 01-statements-and-connectives.md
-  line: 559
+  line: 744
   hash: 5c965194dd8f
   verdicts:
   - stage: S5a
@@ -787,7 +817,7 @@ items:
   kind: exm
   file: 02-derivations.md
   line: 95
-  hash: f58dc787056c
+  hash: e3a296d36204
   verdicts:
   - stage: S5a
     verdict: correct
@@ -894,7 +924,7 @@ items:
   kind: exm
   file: 02-derivations.md
   line: 173
-  hash: 0a32743c8729
+  hash: 568b2725766b
   verdicts:
   - stage: S5a
     verdict: correct
@@ -1226,7 +1256,7 @@ items:
 - key: exm-conjunction-warm-ups
   kind: exm
   file: 02-derivations.md
-  line: 373
+  line: 375
   hash: f4333cb1d4d8
   verdicts:
   - stage: S5a
@@ -1284,7 +1314,7 @@ items:
 - key: prp-and-commutes
   kind: prp
   file: 02-derivations.md
-  line: 430
+  line: 432
   hash: d1ea8434c568
   verdicts:
   - stage: S5a
@@ -1327,7 +1357,7 @@ items:
 - key: proof:prp-and-commutes
   kind: proof
   file: 02-derivations.md
-  line: 459
+  line: 461
   hash: d0c433cd3d0b
   verdicts:
   - stage: S5a
@@ -1378,7 +1408,7 @@ items:
 - key: prp-and-associative
   kind: prp
   file: 02-derivations.md
-  line: 482
+  line: 484
   hash: c89de699e424
   verdicts:
   - stage: S5a
@@ -1422,7 +1452,7 @@ items:
 - key: proof:prp-and-associative
   kind: proof
   file: 02-derivations.md
-  line: 514
+  line: 516
   hash: ac9b3bdcf1ea
   verdicts:
   - stage: S5a
@@ -1473,7 +1503,7 @@ items:
 - key: exm-product-in-unit-interval
   kind: exm
   file: 02-derivations.md
-  line: 620
+  line: 622
   hash: da62a0a8120c
   verdicts:
   - stage: S5a
@@ -1530,11 +1560,23 @@ items:
     evidence: '02:620-652: the algebra steps (lines 7 and 8 cite 3,5 and 3,4,6) are ledgered at 1089 (AN1.1,
       in STATUS row 73). The sidecar passes. The wording ''as Tr was used above'' follows the blueprint,
       item 11.'
+- key: exm-derivations-instances
+  kind: exm
+  file: 02-derivations.md
+  line: 692
+  hash: 84a737ab2164
+  verdicts: []
+- key: check:02-derivations:5
+  kind: check
+  file: 02-derivations.md
+  line: 724
+  hash: 77a84814fba5
+  verdicts: []
 - key: exr-derivations-a1
   kind: exr
   file: 02-derivations.md
-  line: 705
-  hash: c374c45bc21c
+  line: 742
+  hash: c555768b6f4a
   verdicts:
   - stage: S5a
     verdict: correct
@@ -1624,8 +1666,8 @@ items:
 - key: exr-derivations-a2
   kind: exr
   file: 02-derivations.md
-  line: 745
-  hash: 2cd1b48d0ebc
+  line: 782
+  hash: 9488b37a8073
   verdicts:
   - stage: S5a
     verdict: correct
@@ -1656,7 +1698,7 @@ items:
 - key: exr-derivations-b1
   kind: exr
   file: 02-derivations.md
-  line: 800
+  line: 860
   hash: 74bce8feaa76
   verdicts:
   - stage: S5a
@@ -1715,7 +1757,7 @@ items:
 - key: exr-derivations-b2
   kind: exr
   file: 02-derivations.md
-  line: 826
+  line: 886
   hash: bac7135efdbd
   verdicts:
   - stage: S5a
@@ -1781,7 +1823,7 @@ items:
 - key: exr-derivations-b3
   kind: exr
   file: 02-derivations.md
-  line: 844
+  line: 904
   hash: 68fa98b80594
   verdicts:
   - stage: S5a
@@ -1812,7 +1854,7 @@ items:
 - key: exr-derivations-c1
   kind: exr
   file: 02-derivations.md
-  line: 884
+  line: 944
   hash: 1d5a166a00ff
   verdicts:
   - stage: S5a
@@ -1880,7 +1922,7 @@ items:
 - key: exr-derivations-c2
   kind: exr
   file: 02-derivations.md
-  line: 912
+  line: 972
   hash: a748531cd079
   verdicts:
   - stage: S5a
@@ -1941,7 +1983,7 @@ items:
 - key: exr-derivations-c3
   kind: exr
   file: 02-derivations.md
-  line: 971
+  line: 1031
   hash: 66c4ba6cd752
   verdicts:
   - stage: S5a
@@ -2012,7 +2054,7 @@ items:
 - key: exr-derivations-c4
   kind: exr
   file: 02-derivations.md
-  line: 1040
+  line: 1100
   hash: ec4379be0983
   verdicts:
   - stage: S5a
@@ -2206,7 +2248,7 @@ items:
   kind: check
   file: 04-using-an-implication.md
   line: 89
-  hash: 4f6af3374bbd
+  hash: 68bfb6024ad2
   verdicts:
   - stage: S5a
     verdict: correct
@@ -2325,8 +2367,8 @@ items:
 - key: check:04-using-an-implication:3
   kind: check
   file: 04-using-an-implication.md
-  line: 133
-  hash: 2f94bb05abad
+  line: 119
+  hash: 8c7e1af4ac2d
   verdicts:
   - stage: S5a
     verdict: correct
@@ -2343,11 +2385,17 @@ items:
     date: '2026-10-12'
     model: claude-opus-5-5
     evidence: '04:133-139: Q→S is a dead end (nothing gives Q). The route R→S, then P→R, then P is correct.'
+- key: check:04-using-an-implication:4
+  kind: check
+  file: 04-using-an-implication.md
+  line: 153
+  hash: 2f94bb05abad
+  verdicts: []
 - key: exm-implication-chains
   kind: exm
   file: 04-using-an-implication.md
-  line: 141
-  hash: b7b341e495a3
+  line: 179
+  hash: 4429bbaf7618
   verdicts:
   - stage: S5a
     verdict: correct
@@ -2415,10 +2463,28 @@ items:
       0 errors. Finding on (c) is fixed: l.210 now adds ''line 6 stays unjustified until line 5 is there
       for →E to cite'', which matches the second snapshot (l.227-228). Finding on ''the two arguments
       of Section 1.1'' (S5b/'
+- key: exm-chains-about-numbers
+  kind: exm
+  file: 04-using-an-implication.md
+  line: 393
+  hash: f2176d145f03
+  verdicts: []
+- key: check:04-using-an-implication:5
+  kind: check
+  file: 04-using-an-implication.md
+  line: 541
+  hash: 4364e337d315
+  verdicts: []
+- key: exm-using-an-implication-instances
+  kind: exm
+  file: 04-using-an-implication.md
+  line: 602
+  hash: c518fd81852f
+  verdicts: []
 - key: exr-using-an-implication-a1
   kind: exr
   file: 04-using-an-implication.md
-  line: 418
+  line: 646
   hash: 6e8df13ca3c1
   verdicts:
   - stage: S5a
@@ -2491,8 +2557,8 @@ items:
 - key: exr-using-an-implication-a2
   kind: exr
   file: 04-using-an-implication.md
-  line: 439
-  hash: 2eeced525d53
+  line: 667
+  hash: 4e1c0314900e
   verdicts:
   - stage: S5a
     verdict: correct
@@ -2523,7 +2589,7 @@ items:
 - key: exr-using-an-implication-b1
   kind: exr
   file: 04-using-an-implication.md
-  line: 485
+  line: 725
   hash: f527bf4b1741
   verdicts:
   - stage: S5a
@@ -2596,7 +2662,7 @@ items:
 - key: exr-using-an-implication-b2
   kind: exr
   file: 04-using-an-implication.md
-  line: 531
+  line: 771
   hash: 417f591a7d00
   verdicts:
   - stage: S5a
@@ -2656,7 +2722,7 @@ items:
 - key: exr-using-an-implication-b3
   kind: exr
   file: 04-using-an-implication.md
-  line: 555
+  line: 795
   hash: 1126004f9b08
   verdicts:
   - stage: S5a
@@ -2718,7 +2784,7 @@ items:
 - key: exr-using-an-implication-b4
   kind: exr
   file: 04-using-an-implication.md
-  line: 588
+  line: 828
   hash: 37f676d630f4
   verdicts:
   - stage: S5a
@@ -2745,11 +2811,17 @@ items:
     model: claude-opus-5-5
     evidence: 04:588-625. The scaffold is correct. The completion passes my checker, and line 6's R∧P
       matches line 2's hypothesis exactly.
+- key: exr-using-an-implication-b5
+  kind: exr
+  file: 04-using-an-implication.md
+  line: 867
+  hash: 9cdc9cf23b2a
+  verdicts: []
 - key: exr-using-an-implication-c1
   kind: exr
   file: 04-using-an-implication.md
-  line: 629
-  hash: 5e9fe4286d56
+  line: 934
+  hash: b5b164f421eb
   verdicts:
   - stage: S5a
     verdict: correct
@@ -2836,7 +2908,7 @@ items:
 - key: exr-using-an-implication-c2
   kind: exr
   file: 04-using-an-implication.md
-  line: 664
+  line: 969
   hash: 18d22c96168b
   verdicts:
   - stage: S5a
@@ -2957,7 +3029,7 @@ items:
 - key: prp-implication-transitive
   kind: prp
   file: 05-proving-an-implication.md
-  line: 79
+  line: 81
   hash: 999c59619e91
   verdicts:
   - stage: S5a
@@ -3001,7 +3073,7 @@ items:
 - key: proof:prp-implication-transitive
   kind: proof
   file: 05-proving-an-implication.md
-  line: 128
+  line: 130
   hash: 6ac5f75c9705
   verdicts:
   - stage: S5a
@@ -3048,8 +3120,8 @@ items:
 - key: check:05-proving-an-implication:1
   kind: check
   file: 05-proving-an-implication.md
-  line: 228
-  hash: c09ed20a4d42
+  line: 230
+  hash: 10bd5c39b287
   verdicts:
   - stage: S5a
     verdict: correct
@@ -3107,10 +3179,16 @@ items:
       the right way: x<=2 gives x^3<=2^3=8 because cubes increase, so x^3>8 forces x>2. The S5a/S5b finding
       (the reason supported the converse) is resolved. The ledger line (now ''x <= 2 then x^3 <= 8'')
       matches the text'
+- key: exm-errors-that-cancel
+  kind: exm
+  file: 05-proving-an-implication.md
+  line: 239
+  hash: df2263c29dfe
+  verdicts: []
 - key: check:05-proving-an-implication:2
   kind: check
   file: 05-proving-an-implication.md
-  line: 325
+  line: 356
   hash: 62fa211a6281
   verdicts:
   - stage: S5a
@@ -3163,7 +3241,7 @@ items:
 - key: def-derivation
   kind: def
   file: 05-proving-an-implication.md
-  line: 335
+  line: 366
   hash: 7157ac99a525
   verdicts:
   - stage: S5a
@@ -3224,7 +3302,7 @@ items:
 - key: exm-illegal-citation
   kind: exm
   file: 05-proving-an-implication.md
-  line: 426
+  line: 457
   hash: 33c67489ac01
   verdicts:
   - stage: S5a
@@ -3269,7 +3347,7 @@ items:
 - key: check:05-proving-an-implication:3
   kind: check
   file: 05-proving-an-implication.md
-  line: 459
+  line: 490
   hash: 62dd664aee71
   verdicts:
   - stage: S5a
@@ -3291,8 +3369,8 @@ items:
 - key: exm-first-boxes
   kind: exm
   file: 05-proving-an-implication.md
-  line: 485
-  hash: 9745a90852b1
+  line: 516
+  hash: 4d893a7fb3cb
   verdicts:
   - stage: S5a
     verdict: correct
@@ -3350,7 +3428,7 @@ items:
 - key: prp-curry
   kind: prp
   file: 05-proving-an-implication.md
-  line: 599
+  line: 630
   hash: 3a0b6bab11f7
   verdicts:
   - stage: S5a
@@ -3394,8 +3472,8 @@ items:
 - key: proof:prp-curry
   kind: proof
   file: 05-proving-an-implication.md
-  line: 673
-  hash: da8eef11886c
+  line: 704
+  hash: 5a7a3cf09bca
   verdicts:
   - stage: S5a
     verdict: correct
@@ -3452,8 +3530,8 @@ items:
 - key: check:05-proving-an-implication:4
   kind: check
   file: 05-proving-an-implication.md
-  line: 721
-  hash: 9a249d12c819
+  line: 748
+  hash: 78696878bfcf
   verdicts:
   - stage: S5a
     verdict: correct
@@ -3471,11 +3549,23 @@ items:
     model: claude-opus-5-5
     evidence: '05:721-748: two boxes are needed because each implication needs its own ->I; the 8-line
       derivation is legal and the boxes are disjoint'
+- key: check:05-proving-an-implication:5
+  kind: check
+  file: 05-proving-an-implication.md
+  line: 760
+  hash: 9a249d12c819
+  verdicts: []
+- key: exm-proving-an-implication-instances
+  kind: exm
+  file: 05-proving-an-implication.md
+  line: 793
+  hash: a2b3e58d3d63
+  verdicts: []
 - key: exr-proving-an-implication-a1
   kind: exr
   file: 05-proving-an-implication.md
-  line: 776
-  hash: ba668402f44b
+  line: 872
+  hash: 65f4be6b9bf4
   verdicts:
   - stage: S5a
     verdict: correct
@@ -3568,8 +3658,8 @@ items:
 - key: exr-proving-an-implication-a2
   kind: exr
   file: 05-proving-an-implication.md
-  line: 820
-  hash: a61880293396
+  line: 916
+  hash: 5709eeaff92d
   verdicts:
   - stage: S5a
     verdict: minor
@@ -3609,8 +3699,8 @@ items:
 - key: exr-proving-an-implication-b1
   kind: exr
   file: 05-proving-an-implication.md
-  line: 909
-  hash: 3c8729249c4a
+  line: 1020
+  hash: 5fc92bb9ccc8
   verdicts:
   - stage: S5a
     verdict: correct
@@ -3651,7 +3741,7 @@ items:
 - key: exr-proving-an-implication-b2
   kind: exr
   file: 05-proving-an-implication.md
-  line: 960
+  line: 1072
   hash: 6972675d1bab
   verdicts:
   - stage: S5a
@@ -3709,7 +3799,7 @@ items:
 - key: exr-proving-an-implication-b3
   kind: exr
   file: 05-proving-an-implication.md
-  line: 1012
+  line: 1124
   hash: be40f01aba85
   verdicts:
   - stage: S5a
@@ -3768,7 +3858,7 @@ items:
 - key: exr-proving-an-implication-b4
   kind: exr
   file: 05-proving-an-implication.md
-  line: 1047
+  line: 1159
   hash: c576ae0c61e4
   verdicts:
   - stage: S5a
@@ -3831,7 +3921,7 @@ items:
 - key: exr-proving-an-implication-c1
   kind: exr
   file: 05-proving-an-implication.md
-  line: 1077
+  line: 1189
   hash: 14862d6bd445
   verdicts:
   - stage: S5a
@@ -3896,7 +3986,7 @@ items:
 - key: exr-proving-an-implication-c2
   kind: exr
   file: 05-proving-an-implication.md
-  line: 1178
+  line: 1290
   hash: 38a1015c4ed2
   verdicts:
   - stage: S5a
@@ -3978,8 +4068,8 @@ items:
 - key: exr-proving-an-implication-c3
   kind: exr
   file: 05-proving-an-implication.md
-  line: 1237
-  hash: 45895935afae
+  line: 1351
+  hash: 75fcf62d0fb3
   verdicts:
   - stage: S5a
     verdict: correct
@@ -4057,6 +4147,12 @@ items:
       That meets 'one sentence per step' and the 3-point scheme line. The scheme totals 2+2+2+1+3=10.
       The alternative route via Q->S (@prp-implication-transitive) is given equal credit. check_structure
       reports 0 fatal.
+- key: exr-proving-an-implication-c4
+  kind: exr
+  file: 05-proving-an-implication.md
+  line: 1400
+  hash: 1f00b397380b
+  verdicts: []
 - key: def-rule-disjunction-introduction
   kind: def
   file: 06-disjunction-introduction.md
@@ -4124,7 +4220,7 @@ items:
 - key: check:06-disjunction-introduction:1
   kind: check
   file: 06-disjunction-introduction.md
-  line: 76
+  line: 72
   hash: 4ce898e2b04d
   verdicts:
   - stage: S5a
@@ -4177,7 +4273,7 @@ items:
 - key: check:06-disjunction-introduction:2
   kind: check
   file: 06-disjunction-introduction.md
-  line: 105
+  line: 101
   hash: 099f6b6be620
   verdicts:
   - stage: S5a
@@ -4225,11 +4321,39 @@ items:
     model: claude-opus-5-5
     evidence: 06:105-111 is the blueprint's new Quick check, verbatim in substance. x < 1 gives x < 2.
       At x = 1/2 the premise holds and x < 0 fails. Asserted in verify/ch01/def-rule-disjunction-introduction.py.
+- key: exm-early-choice
+  kind: exm
+  file: 06-disjunction-introduction.md
+  line: 111
+  hash: 19e81031dbf2
+  verdicts: []
+- key: check:06-disjunction-introduction:3
+  kind: check
+  file: 06-disjunction-introduction.md
+  line: 170
+  hash: e60b0b0382f4
+  verdicts:
+  - stage: S5a
+    verdict: correct
+    by: refereeA
+    hash: 980257fe0420
+    date: '2026-10-12'
+    model: claude-opus-5-5
+    evidence: '06:352-358: ->E needs the hypothesis exactly (def-rule-implication-elimination, 04:39),
+      and P is not P v Q, so the answer is right.'
+  - stage: S5b
+    verdict: correct
+    by: refereeB
+    hash: 980257fe0420
+    date: '2026-10-12'
+    model: claude-opus-5-5
+    evidence: '06:352-358: the answer appeals to the exact-match bullet of def-rule-implication-elimination
+      (04:59, ''The hypothesis must match exactly''), which exists as cited.'
 - key: exm-disjunction-introduction-derivations
   kind: exm
   file: 06-disjunction-introduction.md
-  line: 115
-  hash: 3e7e50a02584
+  line: 199
+  hash: c2f61a22a32b
   verdicts:
   - stage: S5a
     verdict: correct
@@ -4294,7 +4418,7 @@ items:
 - key: exm-or-hypothesis-split
   kind: exm
   file: 06-disjunction-introduction.md
-  line: 276
+  line: 360
   hash: be534f26cec6
   verdicts:
   - stage: S5a
@@ -4361,32 +4485,16 @@ items:
     evidence: '06:276-346: the derivation is correct. Snapshots a and b match blueprint item 6. 06:345
       is right that line 3 uses the first schema and line 7 the second. 06:350''s ''it is derived there''
       is paid at 07:216 and 07:299.'
-- key: check:06-disjunction-introduction:3
+- key: check:06-disjunction-introduction:4
   kind: check
   file: 06-disjunction-introduction.md
-  line: 352
+  line: 436
   hash: 980257fe0420
-  verdicts:
-  - stage: S5a
-    verdict: correct
-    by: refereeA
-    hash: 980257fe0420
-    date: '2026-10-12'
-    model: claude-opus-5-5
-    evidence: '06:352-358: ->E needs the hypothesis exactly (def-rule-implication-elimination, 04:39),
-      and P is not P v Q, so the answer is right.'
-  - stage: S5b
-    verdict: correct
-    by: refereeB
-    hash: 980257fe0420
-    date: '2026-10-12'
-    model: claude-opus-5-5
-    evidence: '06:352-358: the answer appeals to the exact-match bullet of def-rule-implication-elimination
-      (04:59, ''The hypothesis must match exactly''), which exists as cited.'
+  verdicts: []
 - key: exm-product-zero
   kind: exm
   file: 06-disjunction-introduction.md
-  line: 394
+  line: 486
   hash: 07c3f7be56e7
   verdicts:
   - stage: S5a
@@ -4451,10 +4559,22 @@ items:
     model: claude-opus-5-5
     evidence: '06:394-435: the prose tags and the derivation agree (∨I 2; →E 1, 3; →I 2-4). The snapshots
       are exempt under revision convention 4(ii). The school fact is ledgered at 06:725.'
+- key: exm-disjunction-introduction-instances
+  kind: exm
+  file: 06-disjunction-introduction.md
+  line: 535
+  hash: bf836431a389
+  verdicts: []
+- key: check:06-disjunction-introduction:5
+  kind: check
+  file: 06-disjunction-introduction.md
+  line: 572
+  hash: 918807c7b7ed
+  verdicts: []
 - key: exr-disjunction-introduction-a1
   kind: exr
   file: 06-disjunction-introduction.md
-  line: 458
+  line: 590
   hash: 7e7b0f2b0f0d
   verdicts:
   - stage: S5a
@@ -4548,8 +4668,8 @@ items:
 - key: exr-disjunction-introduction-a2
   kind: exr
   file: 06-disjunction-introduction.md
-  line: 483
-  hash: bfc3d0987caf
+  line: 615
+  hash: 2c26e6a0afb5
   verdicts:
   - stage: S5a
     verdict: correct
@@ -4590,8 +4710,8 @@ items:
 - key: exr-disjunction-introduction-b1
   kind: exr
   file: 06-disjunction-introduction.md
-  line: 526
-  hash: 9fe6d52243cf
+  line: 673
+  hash: 54386e2e64d7
   verdicts:
   - stage: S5a
     verdict: correct
@@ -4661,8 +4781,8 @@ items:
 - key: exr-disjunction-introduction-b2
   kind: exr
   file: 06-disjunction-introduction.md
-  line: 567
-  hash: 669187fd519b
+  line: 714
+  hash: 00cf8396297d
   verdicts:
   - stage: S5a
     verdict: correct
@@ -4721,7 +4841,7 @@ items:
 - key: exr-disjunction-introduction-b3
   kind: exr
   file: 06-disjunction-introduction.md
-  line: 611
+  line: 758
   hash: 468093f8b08f
   verdicts:
   - stage: S5a
@@ -4777,10 +4897,16 @@ items:
     date: '2026-10-12'
     model: claude-opus-5-5
     evidence: '06:611-637. The derivation and prose are complete. Worked example: exm-product-zero.'
+- key: exr-disjunction-introduction-b4
+  kind: exr
+  file: 06-disjunction-introduction.md
+  line: 784
+  hash: f300615c2515
+  verdicts: []
 - key: exr-disjunction-introduction-c1
   kind: exr
   file: 06-disjunction-introduction.md
-  line: 639
+  line: 875
   hash: 0cba9208864c
   verdicts:
   - stage: S5a
@@ -4841,7 +4967,7 @@ items:
 - key: exr-disjunction-introduction-c2
   kind: exr
   file: 06-disjunction-introduction.md
-  line: 668
+  line: 904
   hash: 23aef049b0f8
   verdicts:
   - stage: S5a
@@ -4950,7 +5076,7 @@ items:
   kind: exm
   file: 07-disjunction-and-cases.md
   line: 95
-  hash: 3bb8fe2e5383
+  hash: f1db5a7a2958
   verdicts:
   - stage: S5a
     verdict: correct
@@ -5159,10 +5285,16 @@ items:
     date: '2026-10-12'
     model: claude-opus-5-5
     evidence: '07:296: line 9 cites 2, 3-5 and 6-8, and all of these sit directly in box 2-9.'
+- key: exm-constructive-dilemma
+  kind: exm
+  file: 07-disjunction-and-cases.md
+  line: 305
+  hash: 7a59e40a65dc
+  verdicts: []
 - key: prp-distributivity
   kind: prp
   file: 07-disjunction-and-cases.md
-  line: 305
+  line: 383
   hash: 4da2c340638b
   verdicts:
   - stage: S5a
@@ -5205,7 +5337,7 @@ items:
 - key: proof:prp-distributivity
   kind: proof
   file: 07-disjunction-and-cases.md
-  line: 360
+  line: 438
   hash: ff141db5bf00
   verdicts:
   - stage: S5a
@@ -5251,7 +5383,7 @@ items:
 - key: check:07-disjunction-and-cases:3
   kind: check
   file: 07-disjunction-and-cases.md
-  line: 447
+  line: 527
   hash: 4fdc5cb5d754
   verdicts:
   - stage: S5a
@@ -5271,8 +5403,8 @@ items:
 - key: exm-disjunction-regroup
   kind: exm
   file: 07-disjunction-and-cases.md
-  line: 455
-  hash: 9d52c87e8ed0
+  line: 535
+  hash: 9d976a74786e
   verdicts:
   - stage: S5a
     verdict: correct
@@ -5316,7 +5448,7 @@ items:
 - key: exm-abs-at-least-x
   kind: exm
   file: 07-disjunction-and-cases.md
-  line: 553
+  line: 633
   hash: d7f0633e330e
   verdicts:
   - stage: S5a
@@ -5361,7 +5493,7 @@ items:
 - key: check:07-disjunction-and-cases:4
   kind: check
   file: 07-disjunction-and-cases.md
-  line: 596
+  line: 676
   hash: d4ec124c1ba2
   verdicts:
   - stage: S5a
@@ -5381,7 +5513,7 @@ items:
 - key: exm-abs-product-cases
   kind: exm
   file: 07-disjunction-and-cases.md
-  line: 606
+  line: 686
   hash: d27e295bb8b7
   verdicts:
   - stage: S5a
@@ -5426,7 +5558,7 @@ items:
 - key: exm-triangle-inequality-cases
   kind: exm
   file: 07-disjunction-and-cases.md
-  line: 632
+  line: 712
   hash: 84dc839d12f0
   verdicts:
   - stage: S5a
@@ -5471,7 +5603,7 @@ items:
 - key: check:07-disjunction-and-cases:5
   kind: check
   file: 07-disjunction-and-cases.md
-  line: 662
+  line: 746
   hash: a57f989ea58f
   verdicts:
   - stage: S5a
@@ -5501,11 +5633,17 @@ items:
       line ''def-rules-disjunction (solution): (the quick check on x^2 >= 0) ...'', and the claims of
       the exhaust warning are under ''def-rules-disjunction (claim)''. Both cite school algebra, AN1.1
       (promised). The S5b'
+- key: exm-disjunction-and-cases-instances
+  kind: exm
+  file: 07-disjunction-and-cases.md
+  line: 764
+  hash: 2a45c67d6203
+  verdicts: []
 - key: exr-disjunction-and-cases-a1
   kind: exr
   file: 07-disjunction-and-cases.md
-  line: 805
-  hash: 9aba1ac42fc1
+  line: 986
+  hash: 3ee7e9c79349
   verdicts:
   - stage: S5a
     verdict: correct
@@ -5602,8 +5740,8 @@ items:
 - key: exr-disjunction-and-cases-a2
   kind: exr
   file: 07-disjunction-and-cases.md
-  line: 848
-  hash: 208f91f09ea6
+  line: 1029
+  hash: 917de9097355
   verdicts:
   - stage: S5a
     verdict: correct
@@ -5644,7 +5782,7 @@ items:
 - key: exr-disjunction-and-cases-b1
   kind: exr
   file: 07-disjunction-and-cases.md
-  line: 910
+  line: 1106
   hash: e5abf1a14510
   verdicts:
   - stage: S5a
@@ -5703,7 +5841,7 @@ items:
 - key: exr-disjunction-and-cases-b2
   kind: exr
   file: 07-disjunction-and-cases.md
-  line: 950
+  line: 1146
   hash: 0c99303b71f9
   verdicts:
   - stage: S5a
@@ -5761,8 +5899,8 @@ items:
 - key: exr-disjunction-and-cases-b3
   kind: exr
   file: 07-disjunction-and-cases.md
-  line: 968
-  hash: 53b3fe361bf4
+  line: 1164
+  hash: 7d853547b64d
   verdicts:
   - stage: S5a
     verdict: correct
@@ -5820,7 +5958,7 @@ items:
 - key: exr-disjunction-and-cases-b4
   kind: exr
   file: 07-disjunction-and-cases.md
-  line: 1015
+  line: 1224
   hash: b3700f3c7584
   verdicts:
   - stage: S5a
@@ -5849,10 +5987,28 @@ items:
     model: claude-opus-5-5
     evidence: '07:1015-1036. Every case is checked, including the inner split on -a=-b. Script: min(a,b)=-max(-a,-b)
       on a half-integer grid, and at (3,-5) and (2,2). Worked example: exm-abs-product-cases (nested split).'
+- key: exr-disjunction-and-cases-b5
+  kind: exr
+  file: 07-disjunction-and-cases.md
+  line: 1245
+  hash: 83aa015d3e4c
+  verdicts: []
+- key: exr-disjunction-and-cases-b6
+  kind: exr
+  file: 07-disjunction-and-cases.md
+  line: 1416
+  hash: 817d117ccc24
+  verdicts: []
+- key: exr-disjunction-and-cases-b7
+  kind: exr
+  file: 07-disjunction-and-cases.md
+  line: 1456
+  hash: 485576a1a604
+  verdicts: []
 - key: exr-disjunction-and-cases-c1
   kind: exr
   file: 07-disjunction-and-cases.md
-  line: 1038
+  line: 1824
   hash: 195286ed7245
   verdicts:
   - stage: S5a
@@ -5913,8 +6069,8 @@ items:
 - key: exr-disjunction-and-cases-c2
   kind: exr
   file: 07-disjunction-and-cases.md
-  line: 1094
-  hash: 015b66b5908b
+  line: 1880
+  hash: 4b9bbce1e4c9
   verdicts:
   - stage: S5a
     verdict: correct
@@ -5997,7 +6153,7 @@ items:
 - key: exr-disjunction-and-cases-c3
   kind: exr
   file: 07-disjunction-and-cases.md
-  line: 1131
+  line: 1917
   hash: 027b521d98a1
   verdicts:
   - stage: S5a
@@ -6060,8 +6216,8 @@ items:
 - key: exr-disjunction-and-cases-c4
   kind: exr
   file: 07-disjunction-and-cases.md
-  line: 1180
-  hash: 91ffd9295e0c
+  line: 1966
+  hash: 24987aadbfb5
   verdicts:
   - stage: S5a
     verdict: correct
@@ -6145,7 +6301,7 @@ items:
 - key: exr-disjunction-and-cases-r1
   kind: exr
   file: 07-disjunction-and-cases.md
-  line: 1245
+  line: 2031
   hash: 781be5860f7b
   verdicts:
   - stage: S5a
@@ -6204,7 +6360,7 @@ items:
 - key: exr-disjunction-and-cases-r2
   kind: exr
   file: 07-disjunction-and-cases.md
-  line: 1270
+  line: 2056
   hash: b66f974ca194
   verdicts:
   - stage: S5a
@@ -6261,8 +6417,8 @@ items:
 - key: exr-disjunction-and-cases-r3
   kind: exr
   file: 07-disjunction-and-cases.md
-  line: 1298
-  hash: fd72836a2a24
+  line: 2084
+  hash: f6e3d007706e
   verdicts:
   - stage: S5a
     verdict: correct
@@ -6330,3 +6486,9 @@ items:
       choosing the side R leaves an unsupplied subgoal, and that the side Q is supplied by lines 2-4.
       That is true. The cited labels def-rules-implication and def-rule-disjunction-introduction exist
       in fd1 Chapter 1 and sa'
+- key: check:index:1
+  kind: check
+  file: index.md
+  line: 9
+  hash: 483d7b326e1a
+  verdicts: []

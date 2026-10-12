@@ -114,8 +114,28 @@ Line 1 is \( P \to (Q \to R) \). What does \( \rulename{{\to}E} \) give from lin
 From line 1 and \( Q \): nothing. The main connective of line 1 is the first \( \to \), so its hypothesis is \( P \), and \( Q \) does not match it. From line 1 and \( P \): the conclusion \( Q \to R \). A second application, to \( Q \to R \) and the line \( Q \), would then give \( R \).
 :::
 
+The hypothesis can itself be an implication, and then the brackets put it on the left.
+
+::: {.check}
+Line 1 is \( (P \to Q) \to (R \wedge P) \) and line 2 is \( P \to Q \). What does \( \rulename{{\to}E} \) 1, 2 give? And what does \( \rulename{{\to}E} \) give from line 1 and a line \( P \)?
+:::
+
+::: {.solution}
+\( R \wedge P \). The main connective of line 1 is the \( \to \) outside the brackets, so its hypothesis is \( P \to Q \), and line 2 is that whole hypothesis. From line 1 and \( P \): nothing. \( P \) is only a part of the hypothesis \( P \to Q \).
+:::
+
 ::: {.remark}
 At this point an implication can be **used** but not **proved**. A derivation can write an implication only by taking it out of a line that already contains it: \( \rulename{\wedge E} \) applied to \( (P \to Q) \wedge R \), or \( \rulename{{\to}E} \) applied to \( P \to (Q \to R) \) and \( P \). No rule so far builds a new \( \to \). Section 1.4 gives the rule that does.
+:::
+
+::: {.second-reading title="A rule is not one more premise"}
+Picture a reader who grants both "if \( x > 2 \), then \( x^2 > 4 \)" and "\( x > 2 \)", yet will not write "\( x^2 > 4 \)". We might try to persuade this reader by adding the step itself as a third premise. With \( P \): "\( x > 2 \)" and \( Q \): "\( x^2 > 4 \)", the new premise is
+\[
+\bigl( (P \to Q) \wedge P \bigr) \to Q ,
+\]
+"if (if \( x > 2 \), then \( x^2 > 4 \)) and \( x > 2 \), then \( x^2 > 4 \)". Nothing is gained. Getting from the three premises to \( Q \) still takes two steps of the rules: \( \rulename{\wedge I} \) to join the first two premises into one line, and \( \rulename{{\to}E} \) to fire the new premise on that line. A reader who would not take one step may refuse these two in the same way. A fourth premise that states this passage would call for a fifth, and so on without end: a step that is written down as a premise never gets taken.
+
+So \( \rulename{{\to}E} \) is not a statement standing among the premises. It is a **permission** to write a line, and that is why a derivation names its rules apart from its premises (@def-box-free-derivation). The puzzle is an old one: it was first told, as a dialogue, in 1895.
 :::
 
 ## Chains of implications
@@ -137,6 +157,24 @@ The premises are \( P \), \( P \to R \), \( Q \to S \), and \( R \to S \), and t
 ::: {.solution}
 Two premises have conclusion \( S \): \( Q \to S \) and \( R \to S \). The first makes \( Q \) the new goal, and no line is \( Q \) or has conclusion \( Q \), so that branch is a dead end. The second makes \( R \) the new goal; \( P \to R \) has conclusion \( R \), and its hypothesis \( P \) is a premise. So the derivation is \( R \) by \( \rulename{{\to}E} \) from \( P \to R \) and \( P \), then \( S \) by \( \rulename{{\to}E} \) from \( R \to S \) and \( R \). A backward search may branch, and a branch that stalls is abandoned for the next one.
 :::
+
+A picture shows the search at a glance. Draw each statement as a dot and each implication as an arrow from its hypothesis to its conclusion. Forwards, follow the arrows out of what you have; backwards, follow the arrows into the goal.
+
+```{=latex}
+\begin{center}
+\begin{tikzpicture}[structure]
+  \node[elt, label=below:{$P$ (premise)}] (p) at (0,0) {};
+  \node[elt, label=below:$R$] (r) at (2,0) {};
+  \node[elt, label=below:{$S$ (goal)}] (s) at (4,0) {};
+  \node[elt, label=above:$Q$] (q) at (4,1.6) {};
+  \draw[rel] (p) -- (r);
+  \draw[rel] (r) -- (s);
+  \draw[rel] (q) -- (s);
+\end{tikzpicture}
+\end{center}
+```
+
+Backwards from \( S \), two arrows arrive. One comes from \( Q \), which no arrow reaches and no premise gives: a dead end. The other comes from \( R \), which \( P \) reaches.
 
 ::: {#exm-implication-chains}
 [Chains of implications]
@@ -348,6 +386,166 @@ Here is the check run on lines 5 and 6 of (c), and on a tempting wrong line that
 
 The wrong line fails twice: it feeds line 2 the wrong hypothesis and takes out a part of the conclusion. The main connective settles it: the first \( \to \) is the one applied last, so everything after it, \( Q \to R \), is the conclusion.
 
+## Two chains about numbers
+
+The chains so far were made of letters. Here are two made of facts about numbers, one found forwards and one backwards. In both, the premises are true school facts, and the work is to see which implication fires on what.
+
+::: {#exm-chains-about-numbers}
+[Two chains about numbers]
+
+::: {.enumerate options="label=(\alph*)"}
+1. Let \( n \) be an integer. From the five premises
+   \[
+   \begin{aligned}
+   &6 \mid n, \qquad (6 \mid n) \to \bigl( (2 \mid n) \wedge (3 \mid n) \bigr), \qquad (2 \mid n) \to (4 \mid n^2), \\
+   &(3 \mid n) \to (9 \mid n^2), \qquad \bigl( (4 \mid n^2) \wedge (9 \mid n^2) \bigr) \to (36 \mid n^2),
+   \end{aligned}
+   \]
+   derive \( 36 \mid n^2 \).
+2. Let \( x \) and \( y \) be real numbers. From the six premises
+   \[
+   \begin{aligned}
+   &x > 1, \qquad y > 1, \qquad (x > 1) \to (x^2 > 1), \qquad (y > 1) \to (y^2 > 1), \\
+   &\bigl( (x^2 > 1) \wedge (y^2 > 1) \bigr) \to (x^2 + y^2 > 2), \qquad (x > 2) \to (x^2 + y^2 > 2),
+   \end{aligned}
+   \]
+   derive \( x^2 + y^2 > 2 \).
+:::
+:::
+
+::: {.solution}
+(a) *The premises.* Each implication is a fact about every integer. If \( n = 6k \), then \( n = 2(3k) \) and \( n = 3(2k) \). If \( n = 2k \), then \( n^2 = 4k^2 \); if \( n = 3k \), then \( n^2 = 9k^2 \). And a number divisible by \( 4 \) and by \( 9 \) is divisible by \( 36 \), the theorem of the Quick check on \( 72 \).
+
+*Idea, forwards.* Fire every implication whose hypothesis is in hand. Only the second premise can fire at first, on \( 6 \mid n \). Its conclusion is a conjunction, which \( \rulename{\wedge E} \) splits into \( 2 \mid n \) and \( 3 \mid n \). Now the third and fourth premises fire. The last premise wants its whole hypothesis on one line, so \( \rulename{\wedge I} \) assembles it exactly, and the last premise fires. In the pictures, the goal stands alone at first; then lines 6–8 are written forwards, and line 11, still unjustified, is the hypothesis the last premise asks for.
+
+```{=latex}
+% schema (partial derivations: the gap is unnumbered, lines carry their final numbers)
+\begin{center}
+$\begin{nd}
+  \hypo {1} {6 \mid n}
+  \hypo {2} {(6 \mid n) \to ((2 \mid n) \wedge (3 \mid n))}
+  \hypo {3} {(2 \mid n) \to (4 \mid n^2)}
+  \hypo {4} {(3 \mid n) \to (9 \mid n^2)}
+  \hypo {5} {((4 \mid n^2) \wedge (9 \mid n^2)) \to (36 \mid n^2)}
+  \have[\ ][0] {} {\vdots}
+  \have[][12] {12} {36 \mid n^2}
+\end{nd}$
+\end{center}
+```
+
+Then lines 6–8, written forwards:
+
+```{=latex}
+% schema (partial derivations: the gap is unnumbered, lines carry their final numbers)
+\begin{center}
+$\begin{nd}
+  \hypo {1} {6 \mid n}
+  \hypo {2} {(6 \mid n) \to ((2 \mid n) \wedge (3 \mid n))}
+  \hypo {3} {(2 \mid n) \to (4 \mid n^2)}
+  \hypo {4} {(3 \mid n) \to (9 \mid n^2)}
+  \hypo {5} {((4 \mid n^2) \wedge (9 \mid n^2)) \to (36 \mid n^2)}
+  \have {6} {(2 \mid n) \wedge (3 \mid n)} \ie{2,1}
+  \have {7} {2 \mid n} \ae{6}
+  \have {8} {3 \mid n} \ae{6}
+  \have[\ ][0] {} {\vdots}
+  \have[][11] {11} {(4 \mid n^2) \wedge (9 \mid n^2)}
+  \have {12} {36 \mid n^2} \ie{5,11}
+\end{nd}$
+\end{center}
+```
+
+The finished derivation:
+
+```{=latex}
+\begin{center}
+$\begin{nd}
+  \hypo {1} {6 \mid n}
+  \hypo {2} {(6 \mid n) \to ((2 \mid n) \wedge (3 \mid n))}
+  \hypo {3} {(2 \mid n) \to (4 \mid n^2)}
+  \hypo {4} {(3 \mid n) \to (9 \mid n^2)}
+  \hypo {5} {((4 \mid n^2) \wedge (9 \mid n^2)) \to (36 \mid n^2)}
+  \have {6} {(2 \mid n) \wedge (3 \mid n)} \ie{2,1}
+  \have {7} {2 \mid n} \ae{6}
+  \have {8} {3 \mid n} \ae{6}
+  \have {9} {4 \mid n^2} \ie{3,7}
+  \have {10} {9 \mid n^2} \ie{4,8}
+  \have {11} {(4 \mid n^2) \wedge (9 \mid n^2)} \ai{9,10}
+  \have {12} {36 \mid n^2} \ie{5,11}
+\end{nd}$
+\end{center}
+```
+
+Read back, the twelve lines say: if \( 6 \) divides \( n \), then \( 36 \) divides \( n^2 \).
+
+(b) *The premises.* Each is true for all real \( x \) and \( y \). If \( x > 1 \), then \( x^2 = x \cdot x > x > 1 \), and the same for \( y \). If \( x^2 > 1 \) and \( y^2 > 1 \), adding gives \( x^2 + y^2 > 2 \). If \( x > 2 \), then \( x^2 > 4 \), and \( y^2 \ge 0 \), so \( x^2 + y^2 > 4 > 2 \).
+
+*Idea, backwards.* Two premises end in the goal. The last one makes \( x > 2 \) the subgoal, but no line is \( x > 2 \) and no implication ends in it: a dead end, abandoned. The fifth premise makes its hypothesis, a conjunction, the subgoal. \( \rulename{\wedge I} \) splits it into \( x^2 > 1 \) and \( y^2 > 1 \), and each of these is the conclusion of an implication whose hypothesis is a premise. In the pictures, the goal stands alone at first; then the subgoal read off premise 5 sits above it as line 9, still unjustified.
+
+```{=latex}
+% schema (partial derivations: the gap is unnumbered, lines carry their final numbers)
+\begin{center}
+$\begin{nd}
+  \hypo {1} {x > 1}
+  \hypo {2} {y > 1}
+  \hypo {3} {(x > 1) \to (x^2 > 1)}
+  \hypo {4} {(y > 1) \to (y^2 > 1)}
+  \hypo {5} {((x^2 > 1) \wedge (y^2 > 1)) \to (x^2 + y^2 > 2)}
+  \hypo {6} {(x > 2) \to (x^2 + y^2 > 2)}
+  \have[\ ][0] {} {\vdots}
+  \have[][10] {10} {x^2 + y^2 > 2}
+\end{nd}$
+\end{center}
+```
+
+Then the subgoal read off premise 5:
+
+```{=latex}
+% schema (partial derivations: the gap is unnumbered, lines carry their final numbers)
+\begin{center}
+$\begin{nd}
+  \hypo {1} {x > 1}
+  \hypo {2} {y > 1}
+  \hypo {3} {(x > 1) \to (x^2 > 1)}
+  \hypo {4} {(y > 1) \to (y^2 > 1)}
+  \hypo {5} {((x^2 > 1) \wedge (y^2 > 1)) \to (x^2 + y^2 > 2)}
+  \hypo {6} {(x > 2) \to (x^2 + y^2 > 2)}
+  \have[\ ][0] {} {\vdots}
+  \have[][9] {9} {(x^2 > 1) \wedge (y^2 > 1)}
+  \have {10} {x^2 + y^2 > 2} \ie{5,9}
+\end{nd}$
+\end{center}
+```
+
+The finished derivation:
+
+```{=latex}
+\begin{center}
+$\begin{nd}
+  \hypo {1} {x > 1}
+  \hypo {2} {y > 1}
+  \hypo {3} {(x > 1) \to (x^2 > 1)}
+  \hypo {4} {(y > 1) \to (y^2 > 1)}
+  \hypo {5} {((x^2 > 1) \wedge (y^2 > 1)) \to (x^2 + y^2 > 2)}
+  \hypo {6} {(x > 2) \to (x^2 + y^2 > 2)}
+  \have {7} {x^2 > 1} \ie{3,1}
+  \have {8} {y^2 > 1} \ie{4,2}
+  \have {9} {(x^2 > 1) \wedge (y^2 > 1)} \ai{7,8}
+  \have {10} {x^2 + y^2 > 2} \ie{5,9}
+\end{nd}$
+\end{center}
+```
+
+Premise 6 is true and never cited. A true premise can still be a dead end: what decides a backward search is whether the subgoal can be reached, not whether the implication is true.
+:::
+
+::: {.check}
+In (b), why is premise 6 never fired?
+:::
+
+::: {.solution}
+Its hypothesis \( x > 2 \) stands on no line, and no line has it as its conclusion, so \( \rulename{{\to}E} \) has nothing to fire it on.
+:::
+
 ## How this looks in a mathematical proof
 
 Let \( x \) be a real number with \( x > 2 \). Suppose we know two facts of school algebra:
@@ -381,7 +579,7 @@ The sentence never mentions lines 1 and 2: writers leave a known implication uns
 
 ## Common errors
 
-The first warning of this section was about the wrong given line: the conclusion in place of the hypothesis. The other common error is a hypothesis that is only partly there.
+The first warning of this section was about the wrong given line: the conclusion in place of the hypothesis. Another common error is a hypothesis that is only partly there.
 
 ::: {.warning}
 \( \rulename{{\to}E} \) needs the **whole** hypothesis. From \( (P \wedge Q) \to R \) and \( P \) alone, it gives nothing. Take the true theorem "if \( x > 0 \) and \( y > 0 \), then \( xy > 0 \)" and the line \( x > 0 \): at \( x = 1 \), \( y = -1 \) the theorem and \( x > 0 \) are true, and \( xy > 0 \) is false.
@@ -393,7 +591,25 @@ This is the commonest slip in analysis: "\( f \) is continuous, so by the theore
 
 A near relative is a hypothesis in the wrong order, as in the third bullet of the rule's reading: \( Q \wedge P \) is not the hypothesis of \( (P \wedge Q) \to R \). The repair is two \( \rulename{\wedge E} \) lines and one \( \rulename{\wedge I} \) line, and Exercise B1 asks for it.
 
+::: {.warning}
+A third error: firing an arrow that is not the whole line. \( \rulename{{\to}E} \) fires only on a **whole line** whose main connective is \( \to \). From \( P \wedge (Q \to R) \) and \( Q \), first take out \( Q \to R \) by \( \rulename{\wedge E} \); the step straight to \( R \) is not an instance of the rule, although it never leads from truth to falsehood. From \( (P \to Q) \vee R \) and \( P \), \( \rulename{{\to}E} \) cannot fire at all, and the line \( Q \) does not follow. Let \( x \) be a real number, with \( P \): "\( x > 2 \)", \( Q \): "\( x > 4 \)", \( R \): "\( x \le 4 \)". The first line holds for every \( x \): if \( x \le 4 \), then \( R \) is true, and if \( x > 4 \), then \( Q \) is true, so \( P \to Q \) is. At \( x = 3 \) the line \( P \) is true and \( Q \) is false.
+:::
+
 ## The rule card
+
+Before the card, the rule at work on large statements. Each row is one use of \( \rulename{{\to}E} \): the two given lines, and the line it writes.
+
+::: {#exm-using-an-implication-instances}
+[Instances of \( \rulename{{\to}E} \)]
+
+| \( \varphi \) | \( \psi \) | The implication | The hypothesis line | New line |
+|--------------|--------------|----------------------------------|--------------|--------------|
+| \( P \wedge (Q \vee R) \) | \( S \to P \) | \( (P \wedge (Q \vee R)) \to (S \to P) \) | \( P \wedge (Q \vee R) \) | \( S \to P \) |
+| \( P \to Q \) | \( R \wedge (S \vee P) \) | \( (P \to Q) \to (R \wedge (S \vee P)) \) | \( P \to Q \) | \( R \wedge (S \vee P) \) |
+| \( (P \vee Q) \wedge \neg R \) | \( (P \wedge S) \vee Q \) | \( ((P \vee Q) \wedge \neg R) \to ((P \wedge S) \vee Q) \) | \( (P \vee Q) \wedge \neg R \) | \( (P \wedge S) \vee Q \) |
+
+**Not an instance.** From \( (P \to Q) \to R \) and \( P \), \( \rulename{{\to}E} \) writes neither \( Q \) nor \( R \): the hypothesis is \( P \to Q \), and \( P \) is only a part of it.
+:::
 
 The card of Section 1.2 grows by one row. *Shape* shows the given lines, then the new line; *You write* is the phrase a written proof uses for the rule.
 
@@ -405,10 +621,22 @@ The card of Section 1.2 grows by one row. *Shape* shows the given lines, then th
 
 In the Lean column, `h` is the implication and `hp` the proof of its hypothesis; `h hp` applies the one to the other, which is modus ponens.
 
+::: {.warning}
+[Not allowed: \( \rulename{{\to}E} \)]
+
+Each step below is wrong, for the reason after the colon; the reason names the bullet of the rule's reading that it breaks.
+
+- "\( R \) from \( P \to (Q \to R) \) and \( Q \)": \( Q \) is not the hypothesis, which is \( P \) (*the hypothesis must match exactly*).
+- "\( P \) from \( P \to Q \) and \( Q \)": the second given line must be the hypothesis, not the conclusion; this is affirming the consequent (*two given lines*).
+- "\( R \) from \( (P \wedge Q) \to R \) and \( P \)": the whole hypothesis must stand on a line (*the hypothesis must match exactly*).
+- "\( Q \) from \( P \to (Q \wedge R) \) and \( P \)": the new line is the whole conclusion, \( Q \wedge R \) (*the new line is the whole conclusion*).
+- "\( R \) from \( P \wedge (Q \to R) \) and \( Q \)": the cited line's main connective is \( \wedge \); take out \( Q \to R \) first (*read \( \varphi \) and \( \psi \) off the main connective*).
+:::
+
 ::: {.remark}
 [Looking ahead]
 
-Chapter 3 proves more than "affirming the consequent is a bad form": no derivation, however long, works for every choice of \( P \) and \( Q \) and leads from \( P \to Q \) and \( Q \) to \( P \).
+Chapter 4 proves more than "affirming the consequent is a bad form": no derivation, however long, works for every choice of \( P \) and \( Q \) and leads from \( P \to Q \) and \( Q \) to \( P \).
 :::
 
 ## Exercises
@@ -439,45 +667,57 @@ Chapter 3 proves more than "affirming the consequent is a bad form": no derivati
 ::: {#exr-using-an-implication-a2}
 [A2: Drill]
 
-Each part takes a line or two. Lines are numbered as in a derivation.
+Each part takes a line or two. Lines are numbered as in a derivation. The parts run from one step, through a missing line, a justification column and steps to judge, to short derivations.
 
 ::: {.enumerate options="label=(\alph*)"}
 1. Lines 1 \( (P \vee Q) \to R \), 2 \( P \vee Q \). What does "\( \rulename{{\to}E} \) 1, 2" give?
-2. Lines 1 \( P \to (Q \to R) \), 2 \( Q \). Is "\( \rulename{{\to}E} \) 1, 2" legal?
-3. Lines 1 \( (P \wedge Q) \to R \), 2 \( Q \wedge P \). Is "\( R \) — \( \rulename{{\to}E} \) 1, 2" legal?
-4. Lines 1 \( P \to Q \wedge R \), 2 \( P \). What does "\( \rulename{{\to}E} \) 1, 2" give?
-5. Lines 1 \( P \to Q \), 2 \( R \), 3 \( R \wedge P \). Is "4. \( Q \) — \( \rulename{{\to}E} \) 1, 3" legal?
+2. Lines 1 \( P \to Q \wedge R \), 2 \( P \). What does "\( \rulename{{\to}E} \) 1, 2" give?
+3. Lines 1 \( ((P \vee Q) \wedge R) \to (S \to P) \), 2 \( (P \vee Q) \wedge R \). What does "\( \rulename{{\to}E} \) 1, 2" give?
+4. Line 7 is \( R \wedge S \), justified "\( \rulename{{\to}E} \) 4, 6", and line 6 is \( P \to Q \). What is line 4?
+5. Line 5 is \( Q \), justified "\( \rulename{{\to}E} \) 2, 3", and line 2 is \( (R \wedge S) \to Q \). What is line 3?
 6. Justify each line, the first two being premises: 1 \( (P \to Q) \wedge R \), 2 \( R \to P \), 3 \( P \to Q \), 4 \( R \), 5 \( P \), 6 \( Q \).
-7. Derive \( P \wedge (P \to Q) \vdash Q \).
-8. Derive \( P \to (Q \to R), \ P, \ Q \vdash R \).
-9. Derive \( P \to (Q \wedge R), \ (Q \wedge R) \to S, \ P \vdash S \wedge Q \).
-10. Break the form of "if \( n \) is divisible by \( 6 \), then by \( 3 \); \( n \) is divisible by \( 3 \); so \( n \) is divisible by \( 6 \)".
-11. Premises \( P \to Q \), \( R \to Q \), \( R \); goal \( Q \). Searching backwards, which implication leads to a derivation?
+7. Lines 1 \( P \to (Q \to R) \), 2 \( Q \). Is "\( \rulename{{\to}E} \) 1, 2" legal?
+8. Lines 1 \( (P \wedge Q) \to R \), 2 \( Q \wedge P \). Is "\( R \) — \( \rulename{{\to}E} \) 1, 2" legal?
+9. Lines 1 \( P \to Q \), 2 \( R \), 3 \( R \wedge P \). Is "4. \( Q \) — \( \rulename{{\to}E} \) 1, 3" legal?
+10. Lines 1 \( (P \to Q) \wedge R \), 2 \( P \). Is "3. \( Q \) — \( \rulename{{\to}E} \) 1, 2" legal? If not, repair it.
+11. Break the form of "if \( n \) is divisible by \( 6 \), then by \( 3 \); \( n \) is divisible by \( 3 \); so \( n \) is divisible by \( 6 \)".
+12. Premises \( P \to Q \), \( R \to Q \), \( R \); goal \( Q \). Searching backwards, which implication leads to a derivation?
+13. Derive \( P \wedge (P \to Q) \vdash Q \).
+14. Derive \( P \to (Q \to R), \ P, \ Q \vdash R \).
+15. Derive \( P \to (Q \wedge R), \ (Q \wedge R) \to S, \ P \vdash S \wedge Q \).
 :::
 :::
 
 ::: {.solution}
 (a) \( R \), the conclusion of line 1, whose hypothesis \( P \vee Q \) is line 2 exactly.
 
-(b) No: the hypothesis of line 1 is \( P \), and line 2 is \( Q \).
+(b) \( Q \wedge R \): since \( \wedge \) binds more tightly, line 1 is \( P \to (Q \wedge R) \). Getting \( Q \) needs one more \( \rulename{\wedge E} \) line.
 
-(c) No: the hypothesis must be \( P \wedge Q \) exactly, and \( Q \wedge P \) is a different statement.
+(c) \( S \to P \): the hypothesis of line 1 is \( (P \vee Q) \wedge R \), which is line 2 exactly, and its conclusion is the implication \( S \to P \).
 
-(d) \( Q \wedge R \): since \( \wedge \) binds more tightly, line 1 is \( P \to (Q \wedge R) \). Getting \( Q \) needs one more \( \rulename{\wedge E} \) line.
+(d) \( (P \to Q) \to (R \wedge S) \). \( \rulename{{\to}E} \) cites the implication first, so line 4 is an implication whose hypothesis is line 6 and whose conclusion is line 7.
 
-(e) No: line 3 is \( R \wedge P \), not the hypothesis \( P \). First write \( P \) by \( \rulename{\wedge E} \) 3 as line 4, then \( Q \) by \( \rulename{{\to}E} \) 1, 4.
+(e) \( R \wedge S \), the hypothesis of line 2, exactly.
 
 (f) Lines 1 and 2 are premises; 3 is \( \rulename{\wedge E} \) 1; 4 is \( \rulename{\wedge E} \) 1; 5 is \( \rulename{{\to}E} \) 2, 4; 6 is \( \rulename{{\to}E} \) 3, 5. An implication cut out of a conjunction fires on a line that \( \rulename{{\to}E} \) wrote.
 
-(g) 2 \( P \), \( \rulename{\wedge E} \) 1; 3 \( P \to Q \), \( \rulename{\wedge E} \) 1; 4 \( Q \), \( \rulename{{\to}E} \) 3, 2.
+(g) No: the hypothesis of line 1 is \( P \), and line 2 is \( Q \).
 
-(h) 4 \( Q \to R \), \( \rulename{{\to}E} \) 1, 2; 5 \( R \), \( \rulename{{\to}E} \) 4, 3.
+(h) No: the hypothesis must be \( P \wedge Q \) exactly, and \( Q \wedge P \) is a different statement.
 
-(i) 4 \( Q \wedge R \), \( \rulename{{\to}E} \) 1, 3; 5 \( S \), \( \rulename{{\to}E} \) 2, 4; 6 \( Q \), \( \rulename{\wedge E} \) 4; 7 \( S \wedge Q \), \( \rulename{\wedge I} \) 5, 6.
+(i) No: line 3 is \( R \wedge P \), not the hypothesis \( P \). First write \( P \) by \( \rulename{\wedge E} \) 3 as line 4, then \( Q \) by \( \rulename{{\to}E} \) 1, 4.
 
-(j) Take \( n = 3 \). The first premise is true for every integer, since \( 6k = 3 \cdot 2k \); the second is true, since \( 3 = 3 \cdot 1 \); and \( 3 \) is not divisible by \( 6 \). Both premises true, conclusion false: the form is affirming the consequent.
+(j) No: the main connective of line 1 is \( \wedge \), so line 1 is not an implication, and \( \rulename{{\to}E} \) cannot fire on it. Repair: 3 \( P \to Q \), \( \rulename{\wedge E} \) 1; 4 \( Q \), \( \rulename{{\to}E} \) 3, 2.
 
-(k) \( R \to Q \): its hypothesis \( R \) is a premise, so \( \rulename{{\to}E} \) fires at once. The other, \( P \to Q \), makes \( P \) the new goal, and nothing gives \( P \): a dead end.
+(k) Take \( n = 3 \). The first premise is true for every integer, since \( 6k = 3 \cdot 2k \); the second is true, since \( 3 = 3 \cdot 1 \); and \( 3 \) is not divisible by \( 6 \). Both premises true, conclusion false: the form is affirming the consequent.
+
+(l) \( R \to Q \): its hypothesis \( R \) is a premise, so \( \rulename{{\to}E} \) fires at once. The other, \( P \to Q \), makes \( P \) the new goal, and nothing gives \( P \): a dead end.
+
+(m) 2 \( P \), \( \rulename{\wedge E} \) 1; 3 \( P \to Q \), \( \rulename{\wedge E} \) 1; 4 \( Q \), \( \rulename{{\to}E} \) 3, 2.
+
+(n) 4 \( Q \to R \), \( \rulename{{\to}E} \) 1, 2; 5 \( R \), \( \rulename{{\to}E} \) 4, 3.
+
+(o) 4 \( Q \wedge R \), \( \rulename{{\to}E} \) 1, 3; 5 \( S \), \( \rulename{{\to}E} \) 2, 4; 6 \( Q \), \( \rulename{\wedge E} \) 4; 7 \( S \wedge Q \), \( \rulename{\wedge I} \) 5, 6.
 :::
 
 ### B. Practice
@@ -624,6 +864,71 @@ $\begin{nd}
 Line 6 writes \( R \wedge P \), with \( R \) on the left, because that is how the hypothesis of line 2 is written; \( P \wedge R \) would not match it. Line 3 is cited twice, by lines 4 and 6.
 :::
 
+::: {#exr-using-an-implication-b5}
+[B5: Supply the missing premise]
+
+In (a)–(c), add **one** premise, not the conclusion itself, so that the sequent can be derived with \( \rulename{\wedge I} \), \( \rulename{\wedge E} \) and \( \rulename{{\to}E} \), and give the derivation. In (d), each sentence about an integer \( n \) leaves an implication unsaid: write it, and decide whether it is true for every integer \( n \).
+
+::: {.enumerate options="label=(\alph*)"}
+1. \( P \to Q, \ Q \to R \vdash R \).
+2. \( P, \ (P \wedge Q) \to R \vdash R \).
+3. \( P, \ Q \vdash R \wedge P \).
+4. (i) "Since \( 4 \) divides \( n \), \( n \) is even." (ii) "Since \( n \) is even, \( n^2 \) is divisible by \( 4 \)." (iii) "Since \( n^2 \) is even, \( n \) is even." (iv) "Since \( n^2 \) is divisible by \( 4 \), \( n \) is divisible by \( 4 \)."
+:::
+:::
+
+::: {.solution}
+(a) Several premises work. Add \( P \):
+
+```{=latex}
+\begin{center}
+$\begin{nd}
+  \hypo {1} {P \to Q}
+  \hypo {2} {Q \to R}
+  \hypo {3} {P}
+  \have {4} {Q} \ie{1,3}
+  \have {5} {R} \ie{2,4}
+\end{nd}$
+\end{center}
+```
+
+Or add \( Q \): then 4 \( R \), \( \rulename{{\to}E} \) 2, 3. Any premise from which these rules reach \( P \) or \( Q \) (for instance \( P \wedge Q \)) is right too.
+
+(b) Several premises work. Add \( Q \):
+
+```{=latex}
+\begin{center}
+$\begin{nd}
+  \hypo {1} {P}
+  \hypo {2} {(P \wedge Q) \to R}
+  \hypo {3} {Q}
+  \have {4} {P \wedge Q} \ai{1,3}
+  \have {5} {R} \ie{2,4}
+\end{nd}$
+\end{center}
+```
+
+Or add \( P \wedge Q \) itself (then one \( \rulename{{\to}E} \) line), or \( Q \wedge P \) (then two \( \rulename{\wedge E} \) lines and one \( \rulename{\wedge I} \) line first). Any premise from which these rules reach \( Q \) or \( P \wedge Q \) is right.
+
+(c) Several premises work: any premise from which, together with \( P \) and \( Q \), these rules reach \( R \). For instance \( P \to R \):
+
+```{=latex}
+\begin{center}
+$\begin{nd}
+  \hypo {1} {P}
+  \hypo {2} {Q}
+  \hypo {3} {P \to R}
+  \have {4} {R} \ie{3,1}
+  \have {5} {R \wedge P} \ai{4,1}
+\end{nd}$
+\end{center}
+```
+
+\( Q \to R \) works the same way, and so does \( (P \wedge Q) \to R \), with an \( \rulename{\wedge I} \) line first. The premise \( R \) alone also works, and it says the most: it hands over the new part of the conclusion outright.
+
+(d) (i) "If \( 4 \mid n \), then \( n \) is even": true, since \( 4k = 2(2k) \). (ii) "If \( n \) is even, then \( 4 \mid n^2 \)": true, since \( n = 2k \) gives \( n^2 = 4k^2 \). (iii) "If \( n^2 \) is even, then \( n \) is even": true, by Argument A of Section 1.1. (iv) "If \( 4 \mid n^2 \), then \( 4 \mid n \)": false at \( n = 2 \), where \( 4 \mid 4 \) and \( 4 \) does not divide \( 2 \). The sentence in (iv) looks just like the other three. A missing premise is where a hidden error hides.
+:::
+
 ### C. Going deeper
 
 ::: {#exr-using-an-implication-c1}
@@ -731,7 +1036,14 @@ def-rule-implication-elimination (example): warning witness x = -3 (x > 2 implie
 def-rule-implication-elimination (example): x > 2 implies x^2 > 4; x^2 > 4 implies x^2 + 1 > 5 (the "How this looks" example) | school algebra -> AN1.1 (promised), argued inline; checked by verify/ch01/def-rule-implication-elimination.py
 def-rule-implication-elimination (example): whole-hypothesis warning: if x > 0 and y > 0 then xy > 0 (true); at x = 1, y = -1 the theorem and x > 0 hold and xy > 0 fails | school algebra (sign rule) -> AN1.1 (promised); checked by verify/ch01/def-rule-implication-elimination.py
 def-rule-implication-elimination (example): fold "The same slip in analysis": f(x) = x on (0, 1) is continuous and has no maximum ((a + 1)/2 > a in (0, 1)); the extreme value theorem's hypotheses | continuity: AN1.5; the extreme value theorem: AN1.6 (promised, named in prose only, not used in any argument); (a + 1)/2 argued inline
-exr-using-an-implication-a2 (solution): (j) every multiple of 6 is a multiple of 3; 3 is not divisible by 6 | inline arithmetic; checked by verify/ch01/exr-using-an-implication-a2.py
+def-rule-implication-elimination (example): fold "A rule is not one more premise": x > 2 implies x^2 > 4; the regress (each premise stating the step needs a further and-I and ->E step) | school algebra -> AN1.1 (promised), as for the "How this looks" example; the regress is read off def-box-free-derivation (cited); the 1895 dialogue is a historical remark, not used in any argument
+exm-chains-about-numbers (solution): (a) 6 | n implies 2 | n and 3 | n (6k = 2(3k) = 3(2k)); 2 | n implies 4 | n^2 (n = 2k, n^2 = 4k^2); 3 | n implies 9 | n^2 (n = 3k, n^2 = 9k^2); 4 | m and 9 | m implies 36 | m | school arithmetic, argued inline; the last is the theorem of the Quick check on 72 (gcd(4, 9) = 1), taken as known as there; checked by verify/ch01/exm-chains-about-numbers.py
+exm-chains-about-numbers (solution): (b) x > 1 implies x^2 > 1 (x^2 = x * x > x > 1), the same for y; x^2 > 1 and y^2 > 1 imply x^2 + y^2 > 2; x > 2 implies x^2 + y^2 > 2 (x^2 > 4, y^2 >= 0) | school algebra -> AN1.1 (promised), argued inline; checked by verify/ch01/exm-chains-about-numbers.py
+exm-chains-about-numbers (claim): the Quick check after it: premise 6's hypothesis x > 2 is on no line and is the conclusion of no line | read off the derivation (inline)
+def-rule-implication-elimination (example): "Common errors", the whole-line warning: (x > 2 -> x > 4) or x <= 4 holds for every real x; at x = 3, x > 2 is true and x > 4 false; the step from P and (Q -> R) and Q to R never leads from truth to falsehood | school algebra (order of reals) -> AN1.1 (promised); the promise reading of F1.1 §01 (prose, no label); checked by verify/ch01/exm-using-an-implication-instances.py
+exm-using-an-implication-instances (example): each row is an instance of the schema of def-rule-implication-elimination (cited); the look-alike is not | read off the schema (inline)
+exr-using-an-implication-a2 (solution): (k) every multiple of 6 is a multiple of 3; 3 is not divisible by 6 | inline arithmetic; checked by verify/ch01/exr-using-an-implication-a2.py
+exr-using-an-implication-b5 (solution): (d) 4 | n implies n even (4k = 2(2k)); n even implies 4 | n^2 (n = 2k); n^2 even implies n even; 4 | n^2 does not imply 4 | n (n = 2) | inline arithmetic; (iii) is Argument A of F1.1 §01 (prose, no label), recalled by name; checked by verify/ch01/exr-using-an-implication-b5.py
 exr-using-an-implication-b2 (solution): 0 < x < 1 implies x^2 < x; x^2 < x implies x^3 < x^2 (for every real x) | school algebra -> AN1.1 (promised), argued inline; checked by verify/ch01/exr-using-an-implication-b2.py
 exr-using-an-implication-c1 (solution): every multiple of 6 is even; 10 = 2 * 5; 10 is not divisible by 6 (6k <= 6 for k <= 1, 6k >= 12 for k >= 2) | inline arithmetic; checked by verify/ch01/exr-using-an-implication-c1.py
 -->

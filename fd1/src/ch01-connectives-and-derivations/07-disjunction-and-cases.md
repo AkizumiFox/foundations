@@ -61,7 +61,7 @@ The first schema is the rule \( \rulename{\vee E} \) (**or-elimination**, or **p
 This rule has conditions that matter; read each one.
 
 - **The disjunction.** Line \( i \) holds a disjunction \( \varphi \vee \psi \), available at line \( n \). The cases are not ours to invent: they are the two sides of a disjunction we already have, as a premise, an assumption, or a line derived earlier. Writing "Case 1 … Case 2 …" does not create it.
-- **Two boxes.** The first box opens with the left side \( \varphi \) as its assumption, the second with the right side \( \psi \). They are separate: the second opens after the first has closed, and the drawing shows a break in the vertical bar between them. So, by the scope rule of @def-derivation, no line of the second box may cite a line of the first. The disjunction does not tell us which side holds, so we must be ready for both, and each case's assumption is in force only inside its own box.
+- **Two boxes.** The first box opens with the left side \( \varphi \) as its assumption, the second with the right side \( \psi \). They are separate: the second opens after the first has closed, and the drawing shows a break in the vertical bar between them. So, by the scope rule of @def-derivation, no line of the second box may cite a line of the first. The disjunction does not tell us which side holds, so we must be ready for both, and each case's assumption is in force only inside its own box. Each case box's assumption is printed "asm, for \( \rulename{\vee E} \)"; read it as "Case 1: …" and "Case 2: …".
 - **The same last line.** Both boxes end in the **same** statement \( \chi \), and in each box \( \chi \) is a line of that box itself, not of a box opened inside it. The rule then writes \( \chi \) a third time, outside both boxes, where neither \( \varphi \) nor \( \psi \) is assumed. That is honest only because \( \chi \) was reached whichever case holds.
 - **Three citations.** The justification "\( \rulename{\vee E} \) \( i, \lines{j}{k}, \lines{l}{m} \)" cites the disjunction first, then the box of the left side, then the box of the right side, each box as a range. Both boxes must be available at line \( n \): closed, and sitting directly in the part of the derivation where line \( n \) is (@def-derivation).
 - **Any conclusion.** The statement \( \chi \) need not mention \( \varphi \) or \( \psi \). It is whatever we are trying to reach. The next subsection says how to choose it.
@@ -107,12 +107,12 @@ Show that \( P \vee Q \vdash Q \vee P \), and that \( P \vee P \vdash P \).
 $\begin{nd}
   \hypo {1} {P \vee Q}
   \open
-  \hypo {2} {P}
+  \hypo {2} {P} \purpose{\oe}
   \have[\ ][0] {} {\vdots}
   \have[][3] {3} {Q \vee P}
   \close
   \open
-  \hypo {4} {Q}
+  \hypo {4} {Q} \purpose{\oe}
   \have[\ ][0] {} {\vdots}
   \have[][5] {5} {Q \vee P}
   \close
@@ -122,11 +122,11 @@ $\begin{nd}
 $\begin{nd}
   \hypo {1} {P \vee Q}
   \open
-  \hypo {2} {P}
+  \hypo {2} {P} \purpose{\oe}
   \have {3} {Q \vee P} \oi{2}
   \close
   \open
-  \hypo {4} {Q}
+  \hypo {4} {Q} \purpose{\oe}
   \have {5} {Q \vee P} \oi{4}
   \close
   \have {6} {Q \vee P} \by{?}{}
@@ -298,6 +298,84 @@ Line 9 cites the disjunction on line 2 and the two case boxes, as ranges: \( \li
 
 Section 1.5 derived the converse, \( (P \vee Q) \to R \vdash (P \to R) \wedge (Q \to R) \), in @exm-or-hypothesis-split, using \( \rulename{\vee I} \) and no \( \rulename{\vee E} \). So each of the two statements is derivable from the other: *cases on a hypothesis are two implications*. This is how mathematicians prove "if \( P \) or \( Q \), then \( R \)": they prove "if \( P \), then \( R \)" and "if \( Q \), then \( R \)". To show that an integer which is one more, or three more, than a multiple of \( 4 \) is odd, one treats the two forms separately, and the derivation above is the reason that is enough.
 
+## Two cases, two conclusions
+
+When the two cases lead to different statements, each case can still end in the current goal, if the goal is the disjunction of the two.
+
+::: {#exm-constructive-dilemma}
+[Constructive dilemma]
+
+Show that \( (P \to R) \wedge (Q \to S), \ P \vee Q \vdash R \vee S \).
+:::
+
+::: {.solution}
+*Idea.* The goal \( R \vee S \) is a disjunction with no side in hand: postpone. The premise \( P \vee Q \) is a disjunction: split, both cases ending in \( R \vee S \). In each case \( \rulename{\wedge E} \) takes out the implication that fits the case, \( \rulename{{\to}E} \) fires on the case's assumption, and \( \rulename{\vee I} \) weakens the result to the goal, on the left in one case and on the right in the other. The pictures show the two case boxes opened, each ending in the goal; then the first box filled.
+
+```{=latex}
+% schema (partial derivations: the gap is unnumbered, lines carry their final numbers)
+\begin{center}
+$\begin{nd}
+  \hypo {1} {(P \to R) \wedge (Q \to S)}
+  \hypo {2} {P \vee Q}
+  \open
+  \hypo {3} {P} \purpose{\oe}
+  \have[\ ][0] {} {\vdots}
+  \have[][6] {6} {R \vee S}
+  \close
+  \open
+  \hypo {7} {Q} \purpose{\oe}
+  \have[\ ][0] {} {\vdots}
+  \have[][10] {10} {R \vee S}
+  \close
+  \have {11} {R \vee S} \by{?}{}
+\end{nd}$
+\qquad
+$\begin{nd}
+  \hypo {1} {(P \to R) \wedge (Q \to S)}
+  \hypo {2} {P \vee Q}
+  \open
+  \hypo {3} {P} \purpose{\oe}
+  \have {4} {P \to R} \ae{1}
+  \have {5} {R} \ie{4,3}
+  \have {6} {R \vee S} \oi{5}
+  \close
+  \open
+  \hypo {7} {Q} \purpose{\oe}
+  \have[\ ][0] {} {\vdots}
+  \have[][10] {10} {R \vee S}
+  \close
+  \have {11} {R \vee S} \by{?}{}
+\end{nd}$
+\end{center}
+```
+
+```{=latex}
+\begin{center}
+$\begin{nd}
+  \hypo {1} {(P \to R) \wedge (Q \to S)}
+  \hypo {2} {P \vee Q}
+  \open
+  \hypo {3} {P}
+  \have {4} {P \to R} \ae{1}
+  \have {5} {R} \ie{4,3}
+  \have {6} {R \vee S} \oi{5}
+  \close
+  \open
+  \hypo {7} {Q}
+  \have {8} {Q \to S} \ae{1}
+  \have {9} {S} \ie{8,7}
+  \have {10} {R \vee S} \oi{9}
+  \close
+  \have {11} {R \vee S} \oe{2,3-6,7-10}
+\end{nd}$
+\end{center}
+```
+
+With numbers: let \( x \) be a real number with \( x \ge 1 \) or \( x \le -1 \). Since \( x \ge 1 \) gives \( x^3 \ge 1 \), and \( x \le -1 \) gives \( x^3 \le -1 \), the derivation shows that \( x^3 \ge 1 \) or \( x^3 \le -1 \).
+:::
+
+The pattern is called the **constructive dilemma**. When \( R \) and \( S \) are the same statement there is nothing to weaken: the skeleton of "From a skeleton to a proof about numbers" below reaches \( R \) itself.
+
 ## Laws of "or"
 
 Case splits are not only about numbers. The same two rules prove the laws that let us rearrange "and" and "or". The first says that "and" distributes over "or", in both directions.
@@ -411,7 +489,9 @@ The answer to the prompt: the boxes end on lines 6 and 9, both \( (P \wedge Q) \
 
 In the second derivation, line 8 derives \( P \) a second time instead of citing line 3. It has to: line 3 lies in the box \( \lines{2}{6} \), which has closed, so line 3 is not available at line 8. Each case must earn its own \( P \).
 
+::: {.second-reading title="Distributivity in words"}
 For a real number \( x \), take \( P \): "\( x \ne 0 \)", \( Q \): "\( x > 0 \)" and \( R \): "\( x < 0 \)". The first sequent then reads: a non-zero number that is positive or negative is a positive non-zero number or a negative non-zero number. The law is dull in words, which is as it should be. Its use is in derivations, where it moves a case split from inside a conjunction to the outside, and in the laws of sets, where "and" and "or" become intersection and union.
+:::
 
 The next derivation shows a case split **inside** a case: \( \rulename{\vee E} \) applied within one box of another \( \rulename{\vee E} \). Before the lines, the shape: each split ends with its own \( \rulename{\vee E} \) line, line 11 for the inner split and line 12 for the outer.
 
@@ -421,19 +501,19 @@ The next derivation shows a case split **inside** a case: \( \rulename{\vee E} \
 $\begin{nd}
   \hypo {1} {P \vee (Q \vee R)}
   \open
-  \hypo {2} {P}
+  \hypo {2} {P} \purpose{\oe}
   \have[\ ][0] {} {\vdots}
   \have[][4] {4} {(P \vee Q) \vee R}
   \close
   \open
-  \hypo {5} {Q \vee R}
+  \hypo {5} {Q \vee R} \purpose{\oe}
   \open
-  \hypo {6} {Q}
+  \hypo {6} {Q} \purpose{\oe}
   \have[\ ][0] {} {\vdots}
   \have[][8] {8} {(P \vee Q) \vee R}
   \close
   \open
-  \hypo {9} {R}
+  \hypo {9} {R} \purpose{\oe}
   \have[\ ][0] {} {\vdots}
   \have[][10] {10} {(P \vee Q) \vee R}
   \close
@@ -467,19 +547,19 @@ Show that \( P \vee (Q \vee R) \vdash (P \vee Q) \vee R \).
 $\begin{nd}
   \hypo {1} {P \vee (Q \vee R)}
   \open
-  \hypo {2} {P}
+  \hypo {2} {P} \purpose{\oe}
   \have {3} {P \vee Q} \oi{2}
   \have {4} {(P \vee Q) \vee R} \oi{3}
   \close
   \open
-  \hypo {5} {Q \vee R}
+  \hypo {5} {Q \vee R} \purpose{\oe}
   \open
-  \hypo {6} {Q}
+  \hypo {6} {Q} \purpose{\oe}
   \have {7} {P \vee Q} \oi{6}
   \have {8} {(P \vee Q) \vee R} \oi{7}
   \close
   \open
-  \hypo {9} {R}
+  \hypo {9} {R} \purpose{\oe}
   \have {10} {(P \vee Q) \vee R} \oi{9}
   \close
   \have {11} {(P \vee Q) \vee R} \oe{}
@@ -659,6 +739,10 @@ Cases must **exhaust**, and a split that silently drops a value is a missing cas
 
 Cases may overlap, however. "\( x \ge 0 \) or \( x \le 0 \)" is true for every real \( x \), and \( x = 0 \) lies in both cases. Nothing in \( \rulename{\vee E} \) forbids this: the rule asks that the goal be reached in each case, not that the cases be disjoint. (This is the inclusive "or" of Section 1.1.)
 
+::: {.warning}
+Because "or" is inclusive, knowing one side of a disjunction says nothing about the other. The form "from \( P \vee Q \) and \( P \), conclude \( \neg Q \)" is called **affirming a disjunct**, and it is bad. Let \( n \) be an integer, with \( P \): "\( n \) is even", \( Q \): "\( n \) is a multiple of \( 3 \)"; at \( n = 6 \) both premises are true and \( \neg Q \) is false. No step of \( \rulename{\vee E} \) does this: its cases end in one common statement, never in the falsity of a side.
+:::
+
 ::: {.check}
 Each of the following begins a proof that \( x^2 \ge 0 \) for every real number \( x \). Which case splits are exhaustive, so that \( \rulename{\vee E} \) may be applied?
 
@@ -675,6 +759,20 @@ Each of the following begins a proof that \( x^2 \ge 0 \) for every real number 
 
 ## The rules of this chapter
 
+First, as for each rule before it, the newest rule matched against statements larger than single letters.
+
+::: {#exm-disjunction-and-cases-instances}
+[Instances of \( \rulename{\vee E} \)]
+
+| Disjunction | First box | Second box | New line |
+|---|---|---|---|
+| \( (P \wedge Q) \vee (P \wedge R) \) | \( P \wedge Q \) … \( P \vee S \) | \( P \wedge R \) … \( P \vee S \) | \( P \vee S \) |
+| \( (P \to Q) \vee (R \wedge S) \) | \( P \to Q \) … \( (R \wedge S) \vee (P \to Q) \) | \( R \wedge S \) … \( (R \wedge S) \vee (P \to Q) \) | \( (R \wedge S) \vee (P \to Q) \) |
+| \( (P \vee Q) \vee (Q \wedge S) \) | \( P \vee Q \) (a box of one line) | \( Q \wedge S \) … \( P \vee Q \) | \( P \vee Q \) |
+
+**Not an instance.** From \( (P \vee Q) \wedge R \), two boxes opened by \( P \) and by \( Q \) cannot be closed by \( \rulename{\vee E} \) citing that line: its main connective is \( \wedge \), so it is no disjunction. Take out \( P \vee Q \) by \( \rulename{\wedge E} \) first, and split on that line.
+:::
+
 This chapter has introduced six rules, one or two at a time, and the structural clause \( \rulename{R} \). Here is the whole chapter on one page.
 
 | Rule | Shape | You write | Lean |
@@ -688,6 +786,55 @@ This chapter has introduced six rules, one or two at a time, and the structural 
 | \( \rulename{\vee E} \) | \( \varphi \vee \psi \), box \( \varphi \) … \( \chi \), box \( \psi \) … \( \chi \) \( \Longrightarrow \) \( \chi \) | "Case 1: \( P \). … so \( R \). Case 2: \( Q \). … so \( R \). In either case, \( R \)." | `Or.elim h` (or `cases h`) |
 
 A written proof often drops the first part of the phrase for \( \rulename{\vee E} \), saying "we argue by cases" without naming the disjunction; when that is not a standard fact such as "\( x \ge 0 \) or \( x < 0 \)", ask for it, since it is the line the rule cites first. Nothing depends on the Lean column.
+
+::: {.warning}
+[Not allowed: \( \rulename{\vee E} \)]
+
+Each step breaks the clause of the rule named after it.
+
+- "Close the split with one case box": the clause "Two boxes".
+- "Close it when the boxes end in \( R \) and in \( S \)": the clause "The same last line".
+- "In the second box, cite a line of the first": the clause "Two boxes" and the scope rule; the boxes are separate (the warning after the rule).
+- "Split on 'case \( x > 0 \), case \( x < 0 \)'": the clause "The disjunction"; the cases must be the sides of an available disjunction, and \( (x > 0) \vee (x < 0) \) is not one (the warning on exhaustive cases).
+- "Cite the boxes' lines one by one": the clause "Three citations"; each box is cited as a range.
+
+Here is the third step as a derivation, wrong on the left and right on the right, with premises \( (P \wedge Q) \vee R \) and \( R \to Q \) and goal \( Q \).
+
+```{=latex}
+\begin{center}
+% expect-invalid: line 6 cites line 3, inside the closed box 3-4
+$\begin{nd}
+  \hypo {1} {(P \wedge Q) \vee R}
+  \hypo {2} {R \to Q}
+  \open
+  \hypo {3} {P \wedge Q} \purpose{\oe}
+  \have {4} {Q} \ae{3}
+  \close
+  \open
+  \hypo {5} {R} \purpose{\oe}
+  \have {6} {Q} \ae{3}
+  \close
+  \have {7} {Q} \oe{1,3-4,5-6}
+\end{nd}$
+\qquad
+$\begin{nd}
+  \hypo {1} {(P \wedge Q) \vee R}
+  \hypo {2} {R \to Q}
+  \open
+  \hypo {3} {P \wedge Q}
+  \have {4} {Q} \ae{3}
+  \close
+  \open
+  \hypo {5} {R}
+  \have {6} {Q} \ie{2,5}
+  \close
+  \have {7} {Q} \oe{1,3-4,5-6}
+\end{nd}$
+\end{center}
+```
+
+The wrong line 6 uses the first case's assumption in the second case. Its lines never cite premise 2, so they would "derive" \( Q \) from \( (P \wedge Q) \vee R \) alone, and that claim breaks: with \( P \): "\( x > 0 \)", \( Q \): "\( x > 1 \)", \( R \): "\( x < 0 \)", at \( x = -1 \) the premise is true and \( Q \) is false.
+:::
 
 Here are the rules as schemas. Letters in the number column stand for line numbers; every cited line must be available (@def-derivation), and each box rule needs the box's last line as a line of that box itself.
 
@@ -782,9 +929,43 @@ Each rule is also a move in the search for a derivation. Read by the goal's main
 | \( \to \) | open a box with the hypothesis; the new goal is the conclusion; close with \( \rulename{{\to}I} \) | fire it with \( \rulename{{\to}E} \) once its hypothesis is on a line, or make the hypothesis a subgoal |
 | \( \vee \) | postpone; choose a side with \( \rulename{\vee I} \) when that side is in hand | split with \( \rulename{\vee E} \); both boxes end in the current goal |
 
+The table of moves as an order in which to try them:
+
+```{=latex}
+\begin{center}
+\begin{tikzpicture}[flowchart]
+  \node[fc start] (s) {the current goal and the lines in hand};
+  \node[fc test, below=of s] (t1) {is the goal on an\\available line?};
+  \node[fc test, below=of t1] (t2) {is the goal\\a $\wedge$ or a $\to$?};
+  \node[fc test, below=of t2] (t3) {is the goal a $\vee$\\with a side in hand?};
+  \node[fc test, below=of t3] (t4) {does $\wedge$E or ${\to}$E\\give a new line?};
+  \node[fc test, below=of t4] (t5) {is a $\vee$\\available?};
+  \node[fc start, below=of t5] (e5) {stop and try to break the claim};
+  \node[fc start, anchor=west] (e1) at ($(t1)+(3.1,0)$) {done: cite it,\\or copy it by R};
+  \node[fc step, anchor=west] (b2) at ($(t2)+(3.1,0)$) {build it: $\wedge$I (two subgoals)\\or ${\to}$I (a box)};
+  \node[fc step, anchor=west] (b3) at ($(t3)+(3.1,0)$) {$\vee$I with that side};
+  \node[fc step, anchor=west] (b4) at ($(t4)+(3.1,0)$) {write it};
+  \node[fc step, anchor=west] (b5) at ($(t5)+(3.1,0)$) {$\vee$E: both boxes\\end in the goal};
+  \coordinate (m) at ($(s.south)!0.5!(t1.north)$);
+  \coordinate (r) at ($(b2.east)+(0.6,0)$);
+  \draw[fc arrow] (s) -- (t1);
+  \foreach \t/\b in {t1/e1, t2/b2, t3/b3, t4/b4, t5/b5}
+    \draw[fc arrow] (\t) -- node[above, font=\scriptsize] {yes} (\b);
+  \foreach \a/\b in {t1/t2, t2/t3, t3/t4, t4/t5, t5/e5}
+    \draw[fc arrow] (\a) -- node[right, font=\scriptsize] {no} (\b);
+  \draw (b2.east) -- (b2.east -| r);
+  \draw (b4.east) -- (b4.east -| r);
+  \draw[fc arrow] (b5.east) -- (b5.east -| r) -- (m -| r) -- (m);
+\end{tikzpicture}
+\end{center}
+```
+
+The chart uses only this chapter's rules, and following it never writes an illegal line. It is a guide, not a rule: after asking whether the goal is already in hand, it reads the table's goal column and then its premise column, each from the top.
+
 ### Named moves
 
 - **Try to break it.** To test a form, put statements in for the letters that make every premise true and the conclusion false; one such choice shows the form is bad. (Section 1.1)
+- **Two ways to attack an argument.** Show a premise false, or show a step's form bad; the two attacks are independent. (Section 1.1)
 - **Read the skeleton off the goal.** The goal's main connective chooses the introduction rule: \( \wedge \) gives two subgoals, \( \to \) a box, \( \vee \) a choice to postpone. (Section 1.2)
 - **Use a premise by its main connective.** Its elimination rule says what you may do with it: take a conjunction apart, feed an implication its hypothesis, split a disjunction into cases. (Section 1.2)
 - **Open a box, close a box.** An assumption lives exactly as long as its box. (Section 1.4)
@@ -795,7 +976,7 @@ Each rule is also a move in the search for a derivation. Read by the goal's main
 ::: {.remark}
 [Looking ahead]
 
-The rules for "not", for \( \bot \), and for "if and only if", the rule for proof by contradiction, and the method that turns the table of moves above into a way of finding derivations are the subject of Chapter 2.
+The rules for "not", for \( \bot \), and for "if and only if", and the rule for proof by contradiction, are the subject of Chapter 2; the method that turns the table of moves above into a way of finding derivations is the subject of Chapter 3.
 :::
 
 ## Exercises
@@ -848,16 +1029,17 @@ The rules for "not", for \( \bot \), and for "if and only if", the rule for proo
 ::: {#exr-disjunction-and-cases-a2}
 [A2: Drill]
 
-Each part takes a line or two. Let \( x \) be a real number and \( n \) an integer.
+Each part takes a line or two. The parts run from reading a split, through a missing line and a justification column, to whole derivations. Let \( x \) be a real number and \( n \) an integer.
 
 ::: {.enumerate options="label=(\alph*)"}
 1. "If \( x \ge 0 \), then \( \abs{x}^2 = x^2 \); if \( x < 0 \), then \( \abs{x}^2 = (-x)^2 = x^2 \). So \( \abs{x}^2 = x^2 \)." Name the disjunction that supplies the cases, and the common last line.
-2. Is the split "\( n > 0 \) or \( n < 0 \)" exhaustive for integers?
-3. Two case boxes end in \( R \wedge S \) and \( S \wedge R \). May \( \rulename{\vee E} \) close the split?
-4. How many case boxes does the proof of @exm-abs-product-cases open?
-5. "Case \( x \ge 1 \): \( x^2 \ge 1 \). Case \( x \le -1 \): \( x^2 \ge 1 \). So \( x^2 \ge 1 \) for every real \( x \)." What fails?
-6. Inside a box whose current goal is \( S \), the available line \( Q \vee R \) is split. What do the two case boxes end in?
-7. Find the illegal line.
+2. How many case boxes does the proof of @exm-abs-product-cases open?
+3. Inside a box whose current goal is \( S \), the available line \( Q \vee R \) is split. What do the two case boxes end in?
+4. Line 1 is \( (P \wedge Q) \vee R \); a box \( \lines{2}{4} \) runs from \( P \wedge Q \) to \( S \vee P \), and a box \( \lines{5}{7} \) from \( R \) to \( S \vee P \). What does "\( \rulename{\vee E} \) 1, 2–4, 5–7" write?
+5. Line 9 is \( Q \), justified "\( \rulename{\vee E} \) 2, 3–5, 6–8", with line 3 \( P \to Q \) and line 6 \( R \). What are lines 2, 5 and 8?
+6. Justify each line: 1 \( P \vee (Q \wedge R) \), 2 \( P \to S \), 3 \( R \to S \), premises; 4 \( P \); 5 \( S \); 6 \( Q \wedge R \); 7 \( R \); 8 \( S \); 9 \( S \). The boxes are \( \lines{4}{5} \) and \( \lines{6}{8} \).
+7. Two case boxes end in \( R \wedge S \) and \( S \wedge R \). May \( \rulename{\vee E} \) close the split?
+8. Find the illegal line.
    ```{=latex}
    % expect-invalid: line 7 cites line 4, inside the closed box 4-5
    \begin{center}
@@ -877,32 +1059,46 @@ Each part takes a line or two. Let \( x \) be a real number and \( n \) an integ
    \end{nd}$
    \end{center}
    ```
-8. Derive \( P \vee Q \vdash Q \vee (P \vee R) \).
-9. Derive \( (P \wedge Q) \vee (P \wedge R) \vdash P \).
-10. Derive \( P \vee Q, \ Q \to P \vdash P \).
+9. Is the split "\( n > 0 \) or \( n < 0 \)" exhaustive for integers?
+10. "Case \( x \ge 1 \): \( x^2 \ge 1 \). Case \( x \le -1 \): \( x^2 \ge 1 \). So \( x^2 \ge 1 \) for every real \( x \)." What fails?
+11. Line 1 is \( (P \vee Q) \to R \). A student opens a box with \( P \) and a box with \( Q \), each ending in \( R \), and writes "\( R \) — \( \rulename{\vee E} \) 1, 2–3, 4–5". Correct?
+12. Derive \( P \vee Q \vdash Q \vee (P \vee R) \).
+13. Derive \( (P \wedge Q) \vee (P \wedge R) \vdash P \).
+14. Derive \( P \vee Q, \ Q \to P \vdash P \).
+15. Derive \( (P \wedge Q) \vee (R \wedge S) \vdash Q \vee R \).
 :::
 :::
 
 ::: {.solution}
 (a) The disjunction is \( (x \ge 0) \vee (x < 0) \), and both cases end in \( \abs{x}^2 = x^2 \).
 
-(b) No: \( n = 0 \) is in neither case.
+(b) Six: two for the sign of \( x \), and two inside each of those for the sign of \( y \). (The opening remark that \( \abs{a} = -a \) for \( a \le 0 \) is itself a small split on \( a < 0 \) or \( a = 0 \), like the lemma in @exm-triangle-inequality-cases; counting its two boxes as well gives eight.)
 
-(c) No: both boxes must end in the same statement. Add \( \rulename{\wedge E} \) and \( \rulename{\wedge I} \) lines so that both end in the current goal, say \( R \wedge S \).
+(c) \( S \), the current goal at the point of the split.
 
-(d) Six: two for the sign of \( x \), and two inside each of those for the sign of \( y \). (The opening remark that \( \abs{a} = -a \) for \( a \le 0 \) is itself a small split on \( a < 0 \) or \( a = 0 \), like the lemma in @exm-triangle-inequality-cases; counting its two boxes as well gives eight.)
+(d) \( S \vee P \), the common last line of the two boxes.
 
-(e) The split is not exhaustive: \( (x \ge 1) \vee (x \le -1) \) is false at \( x = 0 \), so \( \rulename{\vee E} \) has no disjunction to cite. The conclusion fails there too: \( 0^2 = 0 < 1 \).
+(e) Line 2 is \( (P \to Q) \vee R \), the disjunction whose sides open the boxes at lines 3 and 6; lines 5 and 8 are both \( Q \), the last line of each box.
 
-(f) \( S \), the current goal at the point of the split.
+(f) 4 assumption, for \( \rulename{\vee E} \); 5 \( \rulename{{\to}E} \) 2, 4; 6 assumption, for \( \rulename{\vee E} \); 7 \( \rulename{\wedge E} \) 6; 8 \( \rulename{{\to}E} \) 3, 7; 9 \( \rulename{\vee E} \) 1, 4–5, 6–8.
 
-(g) Line 7. It cites line 4, which lies in the box \( \lines{4}{5} \), closed before line 7. It should read "\( \rulename{{\to}E} \) 3, 6".
+(g) No: both boxes must end in the same statement. Add \( \rulename{\wedge E} \) and \( \rulename{\wedge I} \) lines so that both end in the current goal, say \( R \wedge S \).
 
-(h) Box \( \lines{2}{4} \): 2 \( P \), assumption; 3 \( P \vee R \), \( \rulename{\vee I} \) 2; 4 \( Q \vee (P \vee R) \), \( \rulename{\vee I} \) 3. Box \( \lines{5}{6} \): 5 \( Q \), assumption; 6 \( Q \vee (P \vee R) \), \( \rulename{\vee I} \) 5. Then 7 \( Q \vee (P \vee R) \), \( \rulename{\vee E} \) 1, 2–4, 5–6.
+(h) Line 7. It cites line 4, which lies in the box \( \lines{4}{5} \), closed before line 7. It should read "\( \rulename{{\to}E} \) 3, 6".
 
-(i) Box \( \lines{2}{3} \): 2 \( P \wedge Q \), assumption; 3 \( P \), \( \rulename{\wedge E} \) 2. Box \( \lines{4}{5} \): 4 \( P \wedge R \), assumption; 5 \( P \), \( \rulename{\wedge E} \) 4. Then 6 \( P \), \( \rulename{\vee E} \) 1, 2–3, 4–5.
+(i) No: \( n = 0 \) is in neither case.
 
-(j) Box \( \lines{3}{3} \): 3 \( P \), assumption, already the goal. Box \( \lines{4}{5} \): 4 \( Q \), assumption; 5 \( P \), \( \rulename{{\to}E} \) 2, 4. Then 6 \( P \), \( \rulename{\vee E} \) 1, 3–3, 4–5.
+(j) The split is not exhaustive: \( (x \ge 1) \vee (x \le -1) \) is false at \( x = 0 \), so \( \rulename{\vee E} \) has no disjunction to cite. The conclusion fails there too: \( 0^2 = 0 < 1 \).
+
+(k) No: the main connective of line 1 is \( \to \), so it is no disjunction, and \( \rulename{\vee E} \) has nothing to split.
+
+(l) Box \( \lines{2}{4} \): 2 \( P \), assumption; 3 \( P \vee R \), \( \rulename{\vee I} \) 2; 4 \( Q \vee (P \vee R) \), \( \rulename{\vee I} \) 3. Box \( \lines{5}{6} \): 5 \( Q \), assumption; 6 \( Q \vee (P \vee R) \), \( \rulename{\vee I} \) 5. Then 7 \( Q \vee (P \vee R) \), \( \rulename{\vee E} \) 1, 2–4, 5–6.
+
+(m) Box \( \lines{2}{3} \): 2 \( P \wedge Q \), assumption; 3 \( P \), \( \rulename{\wedge E} \) 2. Box \( \lines{4}{5} \): 4 \( P \wedge R \), assumption; 5 \( P \), \( \rulename{\wedge E} \) 4. Then 6 \( P \), \( \rulename{\vee E} \) 1, 2–3, 4–5.
+
+(n) Box \( \lines{3}{3} \): 3 \( P \), assumption, already the goal. Box \( \lines{4}{5} \): 4 \( Q \), assumption; 5 \( P \), \( \rulename{{\to}E} \) 2, 4. Then 6 \( P \), \( \rulename{\vee E} \) 1, 3–3, 4–5.
+
+(o) Box \( \lines{2}{4} \): 2 \( P \wedge Q \), assumption; 3 \( Q \), \( \rulename{\wedge E} \) 2; 4 \( Q \vee R \), \( \rulename{\vee I} \) 3. Box \( \lines{5}{7} \): 5 \( R \wedge S \), assumption; 6 \( R \), \( \rulename{\wedge E} \) 5; 7 \( Q \vee R \), \( \rulename{\vee I} \) 6. Then 8 \( Q \vee R \), \( \rulename{\vee E} \) 1, 2–4, 5–7.
 :::
 
 ### B. Practice
@@ -969,47 +1165,60 @@ Adding the two inequalities gives \( 2\max(a, b) \ge a + b \), and dividing by \
 [B3: Two cases, two conclusions]
 
 ::: {.enumerate options="label=(\alph*)"}
-1. A search for \( P \vee Q, \; P \to R, \; Q \to S \vdash R \vee S \) has reached the stage below. *Name the move, then complete it.*
+1. A search for \( P \vee Q, \; P \to R, \; Q \to (S \wedge T) \vdash R \vee T \) has reached the stage below. *Name the move, then complete it.*
    ```{=latex}
-   % schema (partial derivation: the gap is unnumbered, lines carry their final numbers)
+   % schema (partial derivation: the gaps are unnumbered, lines carry their final numbers)
    \begin{center}
    $\begin{nd}
      \hypo {1} {P \vee Q}
      \hypo {2} {P \to R}
-     \hypo {3} {Q \to S}
+     \hypo {3} {Q \to (S \wedge T)}
+     \open
+     \hypo {4} {P} \purpose{\oe}
      \have[\ ][0] {} {\vdots}
-     \have[][10] {10} {R \vee S} \by{?}{}
+     \have[][6] {6} {R \vee T}
+     \close
+     \open
+     \hypo {7} {Q} \purpose{\oe}
+     \have[\ ][0] {} {\vdots}
+     \have[][10] {10} {R \vee T}
+     \close
+     \have {11} {R \vee T} \by{?}{}
    \end{nd}$
    \end{center}
    ```
-2. Use (a) to prove: for every integer \( n \), \( n^2 \) is a multiple of \( 4 \) or \( n^2 \) is one more than a multiple of \( 4 \). You may use that every integer is even or odd.
+2. Use (a) to prove: for every integer \( n \), \( n^2 \) is a multiple of \( 4 \) or one more than a multiple of \( 8 \). You may use that every integer is even or odd, and that \( k(k + 1) \) is even for every integer \( k \).
 :::
 :::
 
 ::: {.solution}
-(a) The move is to **split on the premise** \( P \vee Q \), each case ending in the current goal. The goal \( R \vee S \) is a disjunction with no side in hand, so it is postponed; the premise \( P \vee Q \) is a disjunction, so line 10 will be \( \rulename{\vee E} \) citing it and two case boxes, each ending in \( R \vee S \). In each case the matching implication gives one of \( R \), \( S \), and \( \rulename{\vee I} \) weakens it to the common last line \( R \vee S \).
+(a) The move is to **split on the premise** \( P \vee Q \), each case ending in the current goal: *cases end in the current goal*. The goal \( R \vee T \) is a disjunction with no side in hand, so it is postponed, and line 11 will be \( \rulename{\vee E} \) citing line 1 and the two case boxes. In the case \( P \), line 2 fires and \( \rulename{\vee I} \) weakens \( R \) to the goal. In the case \( Q \), line 3 fires, \( \rulename{\wedge E} \) takes out \( T \), and \( \rulename{\vee I} \) weakens it to the goal on the other side.
+
 ```{=latex}
 \begin{center}
 $\begin{nd}
   \hypo {1} {P \vee Q}
   \hypo {2} {P \to R}
-  \hypo {3} {Q \to S}
+  \hypo {3} {Q \to (S \wedge T)}
   \open
   \hypo {4} {P}
   \have {5} {R} \ie{2,4}
-  \have {6} {R \vee S} \oi{5}
+  \have {6} {R \vee T} \oi{5}
   \close
   \open
   \hypo {7} {Q}
-  \have {8} {S} \ie{3,7}
-  \have {9} {R \vee S} \oi{8}
+  \have {8} {S \wedge T} \ie{3,7}
+  \have {9} {T} \ae{8}
+  \have {10} {R \vee T} \oi{9}
   \close
-  \have {10} {R \vee S} \oe{1,4-6,7-9}
+  \have {11} {R \vee T} \oe{1,4-6,7-10}
 \end{nd}$
 \end{center}
 ```
 
-(b) Take \( P \): "\( n \) is even", \( Q \): "\( n \) is odd", \( R \): "\( n^2 \) is a multiple of \( 4 \)", \( S \): "\( n^2 \) is one more than a multiple of \( 4 \)". The premise \( P \vee Q \) is the fact we may use. For \( P \to R \): if \( n = 2k \) for an integer \( k \), then \( n^2 = 4k^2 \). For \( Q \to S \): if \( n = 2k + 1 \), then \( n^2 = 4k^2 + 4k + 1 = 4(k^2 + k) + 1 \). By (a), \( R \vee S \). For instance, \( 6^2 = 36 = 4 \cdot 9 \) and \( 7^2 = 49 = 4 \cdot 12 + 1 \).
+The two boxes reach different statements, \( R \) at line 5 and \( T \) at line 9, and \( \rulename{\vee I} \) turns both into the common last line \( R \vee T \).
+
+(b) Take \( P \): "\( n \) is even", \( Q \): "\( n \) is odd", \( R \): "\( n^2 \) is a multiple of \( 4 \)", \( S \): "\( n^2 \) is odd", \( T \): "\( n^2 \) is one more than a multiple of \( 8 \)". The premise \( P \vee Q \) is the fact we may use. For \( P \to R \): if \( n = 2k \) for an integer \( k \), then \( n^2 = 4k^2 \). For \( Q \to (S \wedge T) \): if \( n = 2k + 1 \), then \( n^2 = 4k^2 + 4k + 1 = 4k(k + 1) + 1 \), which is odd; and with \( k(k + 1) = 2m \) for an integer \( m \), \( n^2 = 8m + 1 \). By (a), \( R \vee T \). For instance, \( 6^2 = 36 = 4 \cdot 9 \), and \( 7^2 = 49 = 8 \cdot 6 + 1 \).
 :::
 
 ::: {#exr-disjunction-and-cases-b4}
@@ -1031,6 +1240,583 @@ We have \( a \ge b \) or \( a < b \), and we argue by cases \( [\rulename{\vee E
 Both inner cases reach the goal, so \( \rulename{\vee E} \) closes the inner split; then both outer cases have reached it, and \( \rulename{\vee E} \) closes the outer split. Hence \( \min(a, b) = -\max(-a, -b) \).
 
 For instance, at \( a = 3 \), \( b = -5 \): \( \min(3, -5) = -5 \), and \( \max(-3, 5) = 5 \), whose negative is \( -5 \). At \( a = b = 2 \): \( \min(2, 2) = 2 \), and \( \max(-2, -2) = -2 \), whose negative is \( 2 \).
+:::
+
+::: {#exr-disjunction-and-cases-b5}
+[B5: Derive or break]
+
+For each claim, derive it with the rules of this chapter, or break it by statements about a real number \( x \) that make its counterexample set true.
+
+::: {.enumerate options="label=(\alph*)"}
+1. \( P \vee Q, \ R \vdash (P \wedge R) \vee Q \).
+2. \( (P \vee Q) \wedge (P \vee R) \vdash P \wedge (Q \vee R) \).
+3. \( P \vee (Q \vee R), \ Q \to P \vdash P \vee R \).
+4. \( (P \vee Q) \to R \vdash (P \to R) \vee (Q \to R) \).
+5. \( (P \to R) \vee (Q \to R) \vdash (P \vee Q) \to R \).
+6. \( P \vee Q, \ P \to R \vdash R \vee Q \).
+7. \( P \vee (Q \to R), \ Q \vdash P \vee R \).
+8. \( P \vee (Q \to R) \vdash (P \vee Q) \to (P \vee R) \).
+9. \( (P \vee Q) \to (P \vee R) \vdash Q \to R \).
+:::
+:::
+
+::: {.solution}
+(a) Derive. Split on line 1; in the case \( P \), build \( P \wedge R \) with the premise \( R \).
+
+```{=latex}
+\begin{center}
+$\begin{nd}
+  \hypo {1} {P \vee Q}
+  \hypo {2} {R}
+  \open
+  \hypo {3} {P}
+  \have {4} {P \wedge R} \ai{3,2}
+  \have {5} {(P \wedge R) \vee Q} \oi{4}
+  \close
+  \open
+  \hypo {6} {Q}
+  \have {7} {(P \wedge R) \vee Q} \oi{6}
+  \close
+  \have {8} {(P \wedge R) \vee Q} \oe{1,3-5,6-7}
+\end{nd}$
+\end{center}
+```
+
+(b) Break. Take \( P \): "\( x > 5 \)", \( Q \): "\( x > 0 \)", \( R \): "\( x < 10 \)". At \( x = 1 \), \( P \vee Q \) and \( P \vee R \) are true (\( 1 > 0 \), \( 1 < 10 \)) and \( P \) is false, so \( P \wedge (Q \vee R) \) is false: the counterexample set \( (P \vee Q) \wedge (P \vee R) \), \( \neg(P \wedge (Q \vee R)) \) is true.
+
+(c) Derive, with a split inside a case: the case \( Q \vee R \) is itself a disjunction.
+
+```{=latex}
+\begin{center}
+$\begin{nd}
+  \hypo {1} {P \vee (Q \vee R)}
+  \hypo {2} {Q \to P}
+  \open
+  \hypo {3} {P}
+  \have {4} {P \vee R} \oi{3}
+  \close
+  \open
+  \hypo {5} {Q \vee R}
+  \open
+  \hypo {6} {Q}
+  \have {7} {P} \ie{2,6}
+  \have {8} {P \vee R} \oi{7}
+  \close
+  \open
+  \hypo {9} {R}
+  \have {10} {P \vee R} \oi{9}
+  \close
+  \have {11} {P \vee R} \oe{5,6-8,9-10}
+  \close
+  \have {12} {P \vee R} \oe{1,3-4,5-11}
+\end{nd}$
+\end{center}
+```
+
+(d) Derive. The goal is a disjunction; the left side \( P \to R \) can be built, as in @exm-or-hypothesis-split, and \( \rulename{\vee I} \) then adds the other side.
+
+```{=latex}
+\begin{center}
+$\begin{nd}
+  \hypo {1} {(P \vee Q) \to R}
+  \open
+  \hypo {2} {P}
+  \have {3} {P \vee Q} \oi{2}
+  \have {4} {R} \ie{1,3}
+  \close
+  \have {5} {P \to R} \ii{2-4}
+  \have {6} {(P \to R) \vee (Q \to R)} \oi{5}
+\end{nd}$
+\end{center}
+```
+
+(e) Break. Take \( P \): "\( x < 0 \)", \( Q \): "\( x > 0 \)", \( R \): "\( x > 5 \)". At \( x = 1 \), \( P \to R \) is true, since its hypothesis fails, so the premise is true; \( P \vee Q \) is true and \( R \) false, so \( (P \vee Q) \to R \) is false. The counterexample set is true.
+
+(f) Derive.
+
+```{=latex}
+\begin{center}
+$\begin{nd}
+  \hypo {1} {P \vee Q}
+  \hypo {2} {P \to R}
+  \open
+  \hypo {3} {P}
+  \have {4} {R} \ie{2,3}
+  \have {5} {R \vee Q} \oi{4}
+  \close
+  \open
+  \hypo {6} {Q}
+  \have {7} {R \vee Q} \oi{6}
+  \close
+  \have {8} {R \vee Q} \oe{1,3-5,6-7}
+\end{nd}$
+\end{center}
+```
+
+(g) Derive. In the second case the case's assumption is an implication, and the premise \( Q \) fires it.
+
+```{=latex}
+\begin{center}
+$\begin{nd}
+  \hypo {1} {P \vee (Q \to R)}
+  \hypo {2} {Q}
+  \open
+  \hypo {3} {P}
+  \have {4} {P \vee R} \oi{3}
+  \close
+  \open
+  \hypo {5} {Q \to R}
+  \have {6} {R} \ie{5,2}
+  \have {7} {P \vee R} \oi{6}
+  \close
+  \have {8} {P \vee R} \oe{1,3-4,5-7}
+\end{nd}$
+\end{center}
+```
+
+(h) Derive, with a split inside a case, inside a box. The goal is an implication: open the box of \( P \vee Q \). Inside it, split on the premise; in its case \( Q \to R \), split again on the box's assumption \( P \vee Q \), which is available there.
+
+```{=latex}
+\begin{center}
+$\begin{nd}
+  \hypo {1} {P \vee (Q \to R)}
+  \open
+  \hypo {2} {P \vee Q}
+  \open
+  \hypo {3} {P}
+  \have {4} {P \vee R} \oi{3}
+  \close
+  \open
+  \hypo {5} {Q \to R}
+  \open
+  \hypo {6} {P}
+  \have {7} {P \vee R} \oi{6}
+  \close
+  \open
+  \hypo {8} {Q}
+  \have {9} {R} \ie{5,8}
+  \have {10} {P \vee R} \oi{9}
+  \close
+  \have {11} {P \vee R} \oe{2,6-7,8-10}
+  \close
+  \have {12} {P \vee R} \oe{1,3-4,5-11}
+  \close
+  \have {13} {(P \vee Q) \to (P \vee R)} \ii{2-12}
+\end{nd}$
+\end{center}
+```
+
+Line 11 cites line 2, the assumption of the box \( \lines{2}{12} \), which contains line 11; the boxes \( \lines{3}{4} \) and \( \lines{5}{11} \) sit directly in that box, as line 12 does.
+
+(i) Break. Take \( P \): "\( x > 0 \)", \( Q \): "\( x > 1 \)", \( R \): "\( x > 5 \)". At \( x = 2 \), \( P \vee R \) is true, so the premise \( (P \vee Q) \to (P \vee R) \) is true; \( Q \) is true and \( R \) false, so \( Q \to R \) is false. The counterexample set is true.
+
+(d) and (e) are converses: the original derives and the converse breaks. (i) is a look-alike that drops the shared \( P \) from (h)'s conclusion, and breaks. (b) is a look-alike of @exr-disjunction-and-cases-b1, with the conclusion's \( \wedge \) and \( \vee \) traded.
+:::
+
+::: {#exr-disjunction-and-cases-b6}
+[B6: Translate, then derive]
+
+Translate each argument into a sequent with the letters given, then derive it or break its form.
+
+::: {.enumerate options="label=(\alph*)"}
+1. Let \( n \) be an integer. *\( n \) is even or \( n \) is odd. If \( n \) is even, then \( n(n + 1) \) is even. If \( n \) is odd, then \( n + 1 \) is even. If \( n + 1 \) is even, then \( n(n + 1) \) is even. So \( n(n + 1) \) is even.* Letters: \( E \): "\( n \) is even", \( O \): "\( n \) is odd", \( F \): "\( n + 1 \) is even", \( M \): "\( n(n + 1) \) is even".
+2. Let \( x \) be a real number. *If \( x > 1 \), then \( x^2 > 1 \). If \( x < -1 \), then \( x^2 > 1 \). And \( x^2 > 1 \). So \( x > 1 \) or \( x < -1 \).* Letters: \( P \): "\( x > 1 \)", \( Q \): "\( x < -1 \)", \( R \): "\( x^2 > 1 \)". If the form breaks, say whether the conclusion is still true for every \( x \) with \( x^2 > 1 \), and which premise would repair the argument.
+:::
+:::
+
+::: {.solution}
+(a) The sequent is \( E \vee O, \ E \to M, \ O \to F, \ F \to M \vdash M \). Split on the first premise; in the case \( O \) the chain of two implications reaches \( M \).
+
+```{=latex}
+\begin{center}
+$\begin{nd}
+  \hypo {1} {E \vee O}
+  \hypo {2} {E \to M}
+  \hypo {3} {O \to F}
+  \hypo {4} {F \to M}
+  \open
+  \hypo {5} {E}
+  \have {6} {M} \ie{2,5}
+  \close
+  \open
+  \hypo {7} {O}
+  \have {8} {F} \ie{3,7}
+  \have {9} {M} \ie{4,8}
+  \close
+  \have {10} {M} \oe{1,5-6,7-9}
+\end{nd}$
+\end{center}
+```
+
+(b) The sequent is \( P \to R, \ Q \to R, \ R \vdash P \vee Q \), and its form breaks: it affirms the consequent of two implications at once. Keep \( P \) and \( Q \), and replace \( R \) by "\( x \ne 0 \)". Both implications then hold for every \( x \), and at \( x = \tfrac12 \) the premise \( R \) is true and \( P \vee Q \) is false, so the counterexample set \( P \to R \), \( Q \to R \), \( R \), \( \neg(P \vee Q) \) is true.
+
+With the argument's own content no number breaks it, because \( x^2 > 1 \) does imply \( x > 1 \) or \( x < -1 \) (@exr-statements-and-connectives-b3, part (c)). Adding that fact as the premise \( R \to (P \vee Q) \) gives a one-step derivation, \( \rulename{{\to}E} \) on it and the premise \( R \), and makes the other two premises unnecessary. A true conclusion, a bad form: the argument proves nothing until the missing premise is written.
+:::
+
+::: {#exr-disjunction-and-cases-b7}
+[B7: Fifteen standard sequents]
+
+Derive each sequent. They are grouped by the move that does the main work.
+
+*Read the skeleton off the goal.*
+
+::: {.enumerate options="label=\arabic*."}
+1. \( Q \vdash (P \to R) \to (P \to (Q \wedge R)) \).
+2. \( \vdash (P \wedge Q) \to ((Q \to R) \to (R \wedge P)) \).
+3. \( (P \vee Q) \to R \vdash P \to (S \to (R \wedge P)) \).
+4. \( P \to (Q \to R) \vdash (S \wedge P) \to (Q \to (R \vee S)) \).
+5. \( Q \to R \vdash P \to ((P \to Q) \to (R \wedge P)) \).
+:::
+
+*Use a premise by its main connective.*
+
+::: {.enumerate options="label=\arabic*."}
+6. \( P \to (Q \wedge R) \vdash (P \wedge S) \to (R \wedge S) \).
+7. \( P \wedge (Q \to R), \ P \to Q \vdash R \wedge P \).
+8. \( (P \wedge Q) \to R, \ P \to Q \vdash P \to R \).
+9. \( P \to (Q \to R), \ S \to Q \vdash (P \wedge S) \to R \).
+10. \( ((P \wedge Q) \to R) \to S, \ P \to T, \ (T \wedge Q) \to R \vdash S \).
+:::
+
+*Cases end in the current goal.*
+
+::: {.enumerate options="label=\arabic*."}
+11. \( (P \to Q) \vee (Q \wedge R), \ P \vdash Q \).
+12. \( (P \to R) \vee (Q \to R) \vdash (P \wedge Q) \to R \).
+13. \( (P \to Q) \vee (P \to R) \vdash P \to (Q \vee R) \).
+14. \( P \vee Q, \ S \to (Q \to R) \vdash (S \to (P \wedge S)) \vee (S \to R) \).
+15. \( P \vee (Q \wedge R), \ P \to (R \wedge S) \vdash R \wedge (S \vee Q) \).
+:::
+:::
+
+::: {.solution}
+**1.** Two arrows at the top of the goal give two nested boxes; inside, \( R \) comes by \( \rulename{{\to}E} \) and joins the premise.
+
+```{=latex}
+\begin{center}
+$\begin{nd}
+  \hypo {1} {Q}
+  \open
+  \hypo {2} {P \to R}
+  \open
+  \hypo {3} {P}
+  \have {4} {R} \ie{2,3}
+  \have {5} {Q \wedge R} \ai{1,4}
+  \close
+  \have {6} {P \to (Q \wedge R)} \ii{3-5}
+  \close
+  \have {7} {(P \to R) \to (P \to (Q \wedge R))} \ii{2-6}
+\end{nd}$
+\end{center}
+```
+
+**2.** No premises: the skeleton of the goal is two boxes, and everything inside comes from their assumptions.
+
+```{=latex}
+\begin{center}
+$\begin{nd}
+  \open
+  \hypo {1} {P \wedge Q}
+  \open
+  \hypo {2} {Q \to R}
+  \have {3} {Q} \ae{1}
+  \have {4} {R} \ie{2,3}
+  \have {5} {P} \ae{1}
+  \have {6} {R \wedge P} \ai{4,5}
+  \close
+  \have {7} {(Q \to R) \to (R \wedge P)} \ii{2-6}
+  \close
+  \have {8} {(P \wedge Q) \to ((Q \to R) \to (R \wedge P))} \ii{1-7}
+\end{nd}$
+\end{center}
+```
+
+**3.** Two boxes from the goal; inside, \( \rulename{\vee I} \) manufactures the premise's hypothesis. The assumption \( S \) is never cited.
+
+```{=latex}
+\begin{center}
+$\begin{nd}
+  \hypo {1} {(P \vee Q) \to R}
+  \open
+  \hypo {2} {P}
+  \open
+  \hypo {3} {S}
+  \have {4} {P \vee Q} \oi{2}
+  \have {5} {R} \ie{1,4}
+  \have {6} {R \wedge P} \ai{5,2}
+  \close
+  \have {7} {S \to (R \wedge P)} \ii{3-6}
+  \close
+  \have {8} {P \to (S \to (R \wedge P))} \ii{2-7}
+\end{nd}$
+\end{center}
+```
+
+**4.** Two boxes from the goal; the premise fires twice, once on a half of the outer assumption and once on the inner one.
+
+```{=latex}
+\begin{center}
+$\begin{nd}
+  \hypo {1} {P \to (Q \to R)}
+  \open
+  \hypo {2} {S \wedge P}
+  \open
+  \hypo {3} {Q}
+  \have {4} {P} \ae{2}
+  \have {5} {Q \to R} \ie{1,4}
+  \have {6} {R} \ie{5,3}
+  \have {7} {R \vee S} \oi{6}
+  \close
+  \have {8} {Q \to (R \vee S)} \ii{3-7}
+  \close
+  \have {9} {(S \wedge P) \to (Q \to (R \vee S))} \ii{2-8}
+\end{nd}$
+\end{center}
+```
+
+**5.** Two boxes from the goal; the inner assumption fires on the outer one, and the premise on the result.
+
+```{=latex}
+\begin{center}
+$\begin{nd}
+  \hypo {1} {Q \to R}
+  \open
+  \hypo {2} {P}
+  \open
+  \hypo {3} {P \to Q}
+  \have {4} {Q} \ie{3,2}
+  \have {5} {R} \ie{1,4}
+  \have {6} {R \wedge P} \ai{5,2}
+  \close
+  \have {7} {(P \to Q) \to (R \wedge P)} \ii{3-6}
+  \close
+  \have {8} {P \to ((P \to Q) \to (R \wedge P))} \ii{2-7}
+\end{nd}$
+\end{center}
+```
+
+**6.** One box from the goal; inside, each line is read off a main connective: \( \wedge \) is taken apart, \( \to \) is fired.
+
+```{=latex}
+\begin{center}
+$\begin{nd}
+  \hypo {1} {P \to (Q \wedge R)}
+  \open
+  \hypo {2} {P \wedge S}
+  \have {3} {P} \ae{2}
+  \have {4} {Q \wedge R} \ie{1,3}
+  \have {5} {R} \ae{4}
+  \have {6} {S} \ae{2}
+  \have {7} {R \wedge S} \ai{5,6}
+  \close
+  \have {8} {(P \wedge S) \to (R \wedge S)} \ii{2-7}
+\end{nd}$
+\end{center}
+```
+
+**7.** No box: the conjunction is taken apart, and its two halves feed the two implications.
+
+```{=latex}
+\begin{center}
+$\begin{nd}
+  \hypo {1} {P \wedge (Q \to R)}
+  \hypo {2} {P \to Q}
+  \have {3} {P} \ae{1}
+  \have {4} {Q \to R} \ae{1}
+  \have {5} {Q} \ie{2,3}
+  \have {6} {R} \ie{4,5}
+  \have {7} {R \wedge P} \ai{6,3}
+\end{nd}$
+\end{center}
+```
+
+**8.** The first premise needs its whole hypothesis \( P \wedge Q \); the box gives \( P \), and the second premise gives \( Q \).
+
+```{=latex}
+\begin{center}
+$\begin{nd}
+  \hypo {1} {(P \wedge Q) \to R}
+  \hypo {2} {P \to Q}
+  \open
+  \hypo {3} {P}
+  \have {4} {Q} \ie{2,3}
+  \have {5} {P \wedge Q} \ai{3,4}
+  \have {6} {R} \ie{1,5}
+  \close
+  \have {7} {P \to R} \ii{3-6}
+\end{nd}$
+\end{center}
+```
+
+**9.** Both halves of the assumption are used, one by each premise, and the results meet in a third \( \rulename{{\to}E} \).
+
+```{=latex}
+\begin{center}
+$\begin{nd}
+  \hypo {1} {P \to (Q \to R)}
+  \hypo {2} {S \to Q}
+  \open
+  \hypo {3} {P \wedge S}
+  \have {4} {P} \ae{3}
+  \have {5} {S} \ae{3}
+  \have {6} {Q \to R} \ie{1,4}
+  \have {7} {Q} \ie{2,5}
+  \have {8} {R} \ie{6,7}
+  \close
+  \have {9} {(P \wedge S) \to R} \ii{3-8}
+\end{nd}$
+\end{center}
+```
+
+**10.** The only line mentioning \( S \) is the first premise, whose hypothesis is itself an implication: it becomes a subgoal, proved in a box by the other two premises.
+
+```{=latex}
+\begin{center}
+$\begin{nd}
+  \hypo {1} {((P \wedge Q) \to R) \to S}
+  \hypo {2} {P \to T}
+  \hypo {3} {(T \wedge Q) \to R}
+  \open
+  \hypo {4} {P \wedge Q}
+  \have {5} {P} \ae{4}
+  \have {6} {T} \ie{2,5}
+  \have {7} {Q} \ae{4}
+  \have {8} {T \wedge Q} \ai{6,7}
+  \have {9} {R} \ie{3,8}
+  \close
+  \have {10} {(P \wedge Q) \to R} \ii{4-9}
+  \have {11} {S} \ie{1,10}
+\end{nd}$
+\end{center}
+```
+
+**11.** Split on the first premise; in one case the premise \( P \) fires the case's implication, in the other \( \rulename{\wedge E} \) finishes.
+
+```{=latex}
+\begin{center}
+$\begin{nd}
+  \hypo {1} {(P \to Q) \vee (Q \wedge R)}
+  \hypo {2} {P}
+  \open
+  \hypo {3} {P \to Q}
+  \have {4} {Q} \ie{3,2}
+  \close
+  \open
+  \hypo {5} {Q \wedge R}
+  \have {6} {Q} \ae{5}
+  \close
+  \have {7} {Q} \oe{1,3-4,5-6}
+\end{nd}$
+\end{center}
+```
+
+**12.** A box from the goal, then a split inside it, each case ending in the current goal \( R \).
+
+```{=latex}
+\begin{center}
+$\begin{nd}
+  \hypo {1} {(P \to R) \vee (Q \to R)}
+  \open
+  \hypo {2} {P \wedge Q}
+  \open
+  \hypo {3} {P \to R}
+  \have {4} {P} \ae{2}
+  \have {5} {R} \ie{3,4}
+  \close
+  \open
+  \hypo {6} {Q \to R}
+  \have {7} {Q} \ae{2}
+  \have {8} {R} \ie{6,7}
+  \close
+  \have {9} {R} \oe{1,3-5,6-8}
+  \close
+  \have {10} {(P \wedge Q) \to R} \ii{2-9}
+\end{nd}$
+\end{center}
+```
+
+**13.** A box from the goal, then a split inside it; the current goal \( Q \vee R \) is reached from a different side in each case.
+
+```{=latex}
+\begin{center}
+$\begin{nd}
+  \hypo {1} {(P \to Q) \vee (P \to R)}
+  \open
+  \hypo {2} {P}
+  \open
+  \hypo {3} {P \to Q}
+  \have {4} {Q} \ie{3,2}
+  \have {5} {Q \vee R} \oi{4}
+  \close
+  \open
+  \hypo {6} {P \to R}
+  \have {7} {R} \ie{6,2}
+  \have {8} {Q \vee R} \oi{7}
+  \close
+  \have {9} {Q \vee R} \oe{1,3-5,6-8}
+  \close
+  \have {10} {P \to (Q \vee R)} \ii{2-9}
+\end{nd}$
+\end{center}
+```
+
+**14.** The goal is a disjunction, so no box can be opened first: the split comes first, as in @exr-disjunction-and-cases-b3 (a), and each case opens its own \( \rulename{{\to}I} \) box. In the case \( Q \), the box's assumption \( S \) is what opens the premise: \( \rulename{{\to}E} \) on line 2 needs \( S \), which only the box supplies, and only then does the case's assumption \( Q \) give \( R \).
+
+```{=latex}
+\begin{center}
+$\begin{nd}
+  \hypo {1} {P \vee Q}
+  \hypo {2} {S \to (Q \to R)}
+  \open
+  \hypo {3} {P}
+  \open
+  \hypo {4} {S}
+  \have {5} {P \wedge S} \ai{3,4}
+  \close
+  \have {6} {S \to (P \wedge S)} \ii{4-5}
+  \have {7} {(S \to (P \wedge S)) \vee (S \to R)} \oi{6}
+  \close
+  \open
+  \hypo {8} {Q}
+  \open
+  \hypo {9} {S}
+  \have {10} {Q \to R} \ie{2,9}
+  \have {11} {R} \ie{10,8}
+  \close
+  \have {12} {S \to R} \ii{9-11}
+  \have {13} {(S \to (P \wedge S)) \vee (S \to R)} \oi{12}
+  \close
+  \have {14} {(S \to (P \wedge S)) \vee (S \to R)} \oe{1,3-7,8-13}
+\end{nd}$
+\end{center}
+```
+
+**15.** Split on the first premise; each case builds both conjuncts of the goal, and \( S \vee Q \) is reached from a different side in each.
+
+```{=latex}
+\begin{center}
+$\begin{nd}
+  \hypo {1} {P \vee (Q \wedge R)}
+  \hypo {2} {P \to (R \wedge S)}
+  \open
+  \hypo {3} {P}
+  \have {4} {R \wedge S} \ie{2,3}
+  \have {5} {R} \ae{4}
+  \have {6} {S} \ae{4}
+  \have {7} {S \vee Q} \oi{6}
+  \have {8} {R \wedge (S \vee Q)} \ai{5,7}
+  \close
+  \open
+  \hypo {9} {Q \wedge R}
+  \have {10} {Q} \ae{9}
+  \have {11} {R} \ae{9}
+  \have {12} {S \vee Q} \oi{10}
+  \have {13} {R \wedge (S \vee Q)} \ai{11,12}
+  \close
+  \have {14} {R \wedge (S \vee Q)} \oe{1,3-8,9-13}
+\end{nd}$
+\end{center}
+```
 :::
 
 ### C. Going deeper
@@ -1190,7 +1976,7 @@ $\begin{nd}
   \hypo {2} {Q \to (P \to S)}
   \hypo {3} {R \to S}
   \open
-  \hypo {4} {P}
+  \hypo {4} {P} \purpose{\ii}
   \have[\ ][0] {} {\vdots}
   \close
 \end{nd}$
@@ -1326,16 +2112,21 @@ The derivation has no premises, so it shows \( \vdash (P \wedge (P \to Q)) \to (
 exm-abs-at-least-x (example): x >= 0 or x < 0; |x| = x for x >= 0 (definition of |x|); if x < 0 then |x| = -x > 0 > x; |x| >= x is (|x| > x) or (|x| = x) | school algebra, taken as known (blueprint, Allowed prerequisites), stated in prose before the example; AN1.1 (promised); the unfolding of >= is F1.1 §01
 exm-abs-product-cases (example): every real a satisfies a >= 0 or a < 0; sign rules for products; |a| = -a for a <= 0 | school algebra, taken as known; stated in prose before exm-abs-at-least-x; AN1.1 (promised)
 exm-triangle-inequality-cases (example): adding two inequalities of the same direction; -a <= 0 <= a for a >= 0 | school algebra, taken as known; AN1.1 (promised)
+exm-constructive-dilemma (example): x >= 1 implies x^3 >= 1; x <= -1 implies x^3 <= -1 (a reading, not a step) | school algebra; AN1.1 (promised); checked by verify/ch01/exm-constructive-dilemma.py
 exm-cases-on-hypothesis (example): an integer of the form 4k + 1 or 4k + 3 is odd (a reading, not a step) | school fact; F2.2 (promised)
 prp-distributivity (example): the reading with x != 0, x > 0, x < 0; "and" and "or" become intersection and union in the laws of sets | school algebra; the set reading is a prose pointer only, nothing depends on it
 exr-disjunction-and-cases-a1 (solution): n^2 + n = n(n + 1); every integer is even or odd; t >= 0 or t < 0; t^2 >= 0; 1^2 = 1 is odd | school facts; F2.2 (promised) for even or odd; AN1.1 (promised)
 exr-disjunction-and-cases-a1 (solution): (d) the instance P: x > 1, Q: x < 1, R: x > 0 at x = -1 breaks the form (try to break it) | F1.1 §01 ("Try to break it", prose, no label); school algebra
-exr-disjunction-and-cases-a2 (solution): (a) |x|^2 = x^2 in both cases; (b) n = 0 in neither case; (e) at x = 0 neither x >= 1 nor x <= -1, and 0^2 < 1 | school algebra; checked by verify/ch01/exr-disjunction-and-cases-a2.py
+exr-disjunction-and-cases-a2 (solution): (a) |x|^2 = x^2 in both cases; (i) n = 0 in neither case; (j) at x = 0 neither x >= 1 nor x <= -1, and 0^2 < 1 | school algebra; checked by verify/ch01/exr-disjunction-and-cases-a2.py
 exr-disjunction-and-cases-b2 (solution): a >= b or a < b; dividing an inequality by 2 > 0; adding inequalities | school algebra, taken as known; AN1.1 (promised)
-exr-disjunction-and-cases-b3 (solution): every integer is even or odd (stated in the item); n = 2k or n = 2k + 1 with k an integer | stated in the item; school fact; F2.2 (promised); the arbitrary n and naming k are quantifier steps (forall-I, exists-E), F1.4 (promised), taken as given
+exr-disjunction-and-cases-b3 (solution): every integer is even or odd, and k(k + 1) is even for every integer k (both stated in the item); n = 2k or n = 2k + 1 with k an integer; (2k)^2 = 4k^2, (2k + 1)^2 = 4k(k + 1) + 1 = 8m + 1; 36 = 4 * 9, 49 = 8 * 6 + 1 | stated in the item; school algebra; F2.2 (promised) for parity; the arbitrary n and naming k, m are quantifier steps (forall-I, exists-E), F1.4 (promised), taken as given; checked by verify/ch01/exr-disjunction-and-cases-b3.py
+exr-disjunction-and-cases-b5 (solution): the breaks (b) at x = 1, (e) at x = 1, (i) at x = 2, with the stated readings of P, Q, R | school algebra, inline; checked by verify/ch01/exr-disjunction-and-cases-b5.py
+exr-disjunction-and-cases-b6 (solution): (b) x > 1 and x < -1 each imply x != 0; at x = 1/2, x != 0 and neither x > 1 nor x < -1; x^2 > 1 implies x > 1 or x < -1 | school algebra, inline; the last fact is exr-statements-and-connectives-b3 (c), cited; checked by verify/ch01/exr-disjunction-and-cases-b6.py
 exr-disjunction-and-cases-b4 (solution): a >= b or a < b; -a > -b when a < b; -a <= -b when a >= b, written out as (-a < -b) or (-a = -b); the checks at (3, -5) and (2, 2) | school algebra, taken as known; AN1.1 (promised); checked by verify/ch01/exr-disjunction-and-cases-b4.py
 exr-disjunction-and-cases-c1 (solution): a >= b or a < b; |-a| = |a| | school algebra; |-a| = |a| proved inline by cases
 exr-disjunction-and-cases-c2 (solution): order facts for x, y < 0 | school algebra, taken as known; AN1.1 (promised)
 def-rules-disjunction (claim): (the exhaust warning and the paragraph after it) every real x satisfies x > 0, or x = 0, or x < 0 (trichotomy); every real x satisfies x >= 0 or x <= 0, both holding at x = 0; x = 0 satisfies neither x > 0 nor x < 0 | school algebra, taken as known; AN1.1 (promised); the unfolding of >= and <= is F1.1 §01
+def-rules-disjunction (claim): (the affirming-a-disjunct warning) 6 is even and a multiple of 3 | inline arithmetic; checked by verify/ch01/def-rules-disjunction.py
+def-rules-disjunction (claim): (the Not-allowed block) at x = -1: -1 < 0, and -1 > 1 fails | inline; checked by verify/ch01/def-rules-disjunction.py
 def-rules-disjunction (solution): (the quick check on x^2 >= 0) every real is >= 0 or < 0; every real is >= 0 or <= 0; 0 is neither > 0 nor < 0; 0^2 = 0 | school algebra, taken as known; AN1.1 (promised)
 -->

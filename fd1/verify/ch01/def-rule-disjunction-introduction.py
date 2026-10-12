@@ -5,7 +5,8 @@ from fractions import Fraction as F
 from _grid import grid
 
 QUOTED = {"one-way witness": -1, "too-early witness": F(5, 2), "inclusive witness": 2,
-          "side-choice witness": 2, "quick-check witness": F(1, 2)}
+          "side-choice witness": 2, "quick-check witness": F(1, 2),
+          "derive-or-break witness": 1}
 
 # instance lines: from x > 0, each of the three disjunctions is true
 for x in grid():
@@ -33,4 +34,12 @@ assert x > 1 and not x > 3
 assert all((not (0 < t < 1)) or t < 2 for t in grid())
 x = QUOTED["quick-check witness"]
 assert 0 < x < 1 and not x < 0
+# "Derive it or break it": P and (Q or R) |- Q breaks at x = 1 with x > 0, x > 2, x < 3;
+# P or Q |- Q or P cannot be broken (valid by truth table)
+from _s06s07_logic import V, And, Or, classically_valid
+x = QUOTED["derive-or-break witness"]
+assert (x > 0 and (x > 2 or x < 3)) and not x > 2
+_P, _Q, _R = V("P"), V("Q"), V("R")
+assert not classically_valid([And(_P, Or(_Q, _R))], _Q)
+assert classically_valid([Or(_P, _Q)], Or(_Q, _P))
 print("def-rule-disjunction-introduction: all quoted values check")

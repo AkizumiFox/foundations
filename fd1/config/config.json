@@ -15,6 +15,7 @@
   ],
   "title": "Logic and Proof",
   "author": "Akizumi",
+  "fitch-purposes": "infer",
   "output": {
     "html": "_build/html",
     "pdf": "_build/pdf",
