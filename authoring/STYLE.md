@@ -516,7 +516,7 @@ About one Quick check per 800–1,000 words of main-line prose, most of them che
 
 ### 12.8 Drills and scaffolded items (fd1 and introductory volumes)
 
-- **Drill bank.** Each rule section has, under A, a second item `[A2: Drill]` (or A3 when A2 is §12.3's item) of 8–12 short parts in order of difficulty: justify each line of a given derivation, find the illegal line, and 2–6-line derivations. Every part has its answer in the folded solution. For Time, the bank counts by B1's formula as one exercise per four parts, since each part is a one-line task.
+- **Drill bank.** Each rule section has, under A, a second item `[A2: Drill]` (or A3 when A2 is §12.3's item) of short parts in a ramp from recognition to construction: **15 parts in fd1 Chapters 1 and 2, 12 elsewhere** (the author's choice of the heavier workload, 2026-10-12; a chapter blueprint may not go below it). The ramp runs, in this order: one-step parts ("write the line this rule gives from these lines"), then a missing premise ("which line must be above for this step?"), then filling the justification column of a given derivation, then "is this application correct? If not, which clause does it break?", then 2–8-line derivations. Every part has its answer in the folded solution. For Time, the bank counts by B1's formula as one exercise per four parts, since each part is a one-line task.
 - **Scaffolded B items.** At least one B item per rule section gives the premises and the last line, with the gaps marked `\vdots`, and asks "*Name the move, then complete it.*" (fd1's 1.5 B2 and 1.6 C4 are the model).
 - **Challenge items.** A C item that is a meta-proof or needs mathematics beyond the section is titled `[C3: Challenge: …]` and is not on the core track; the core track's "one C per section" is a non-challenge C.
 
@@ -557,3 +557,46 @@ If \( \Gamma \vdash \varphi \) and every formula of \( \Gamma \) is in \( \Delta
 ```
 
 A fold moves a proof; it never changes it. A proof that later volumes cite keeps its content verbatim when it is folded, and a changed proof goes back through S2a.
+
+### 12.13 The deepening devices (fd1; other introductory volumes may adopt them)
+
+Six devices of the fd1 deepening plan (2026-10-12). Each rule section of fd1 (Chapters 1 and 2, and the rule sections of Chapter 4) has all six where they apply; other fd1 sections use the ones that fit.
+
+**1. Purpose-annotated assumptions.** Every assumption that opens a box says what it is for, in the justification column: "asm, for →I", "asm, for ¬I", "asm, for RAA", "asm, for ∨E", "asm, for ∃E". The engine prints it, read off the rule that closes the box, when the book config says `"fitch-purposes": "infer"`; a drafter writes nothing. Write it by hand, `\hypo {3} {P} \purpose{\ii}`, only where no line closes the box yet: a snapshot of a growing derivation (§12.4), a schema, a partial derivation in an exercise. `tools/check_fitch.py` checks every stated purpose against the rule that closes the box, and `--purposes` lists them all. Prose reads the annotation as the step it names ("suppose, for contradiction" is "asm, for RAA"), so the dictionary row of the prose chapter is a reading of a line the reader has seen since Section 1.4. A ∀I box has no assumption; its flag \( x_0 \) beside the bar says what the box is for.
+
+**2. The rule-instance gallery.** Beside the rule card of every rule section, an example titled `[Instances of →E]` (`exm-<section-slug>-instances`) shows **three instances with large compound substitutions** and **one tempting look-alike that is not an instance**, with the reason:
+
+```markdown
+::: {#exm-proving-an-implication-instances}
+[Instances of →I]
+
+| φ | ψ | the instance |
+|---|---|---|
+| \( P \wedge \neg Q \) | \( (R \vee P) \to Q \) | … |
+
+**Not an instance.** … : the box assumed \( Q \), not \( P \wedge \neg Q \), so the line it gives is \( Q \to … \).
+:::
+```
+
+Each substitution is a compound formula (in Chapter 4, compound terms such as \( f(f(c)) \) and \( \varepsilon/2 \)), never a single letter, so the reader sees the schema match a shape and not a letter. The look-alike is the error a reader will actually make with this rule.
+
+**3. The "Not allowed" block.** Each rule card is followed by a warning titled `[Not allowed: →I]` listing three to five one-line wrong steps, each tagged with the clause of the rule it breaks ("cites a box that is still open: clause (ii)"). Where a side condition bites (→I's discharge, ∀I's flag, ∃E's fresh witness, ∨E's two boxes), one wrong step is shown as a derivation **beside** the right one, WRONG on the left (marked `% expect-invalid` before its `\begin{nd}`), RIGHT on the right, in one raw block separated by `\qquad`. A wrong step that is an entry of the frozen catalogue `exm-not-allowed-catalogue` cites it by number ("(N3)"); the catalogue keeps its numbering, wording and instances.
+
+**4. Derive-or-break items.** From Section 1.5 on, at least one B item per rule section is titled `[Bn: Derive or break]` and lists several claims Γ ⊢ φ, some valid and some invalid look-alikes, **without saying which**. The reader either derives φ or breaks the claim by showing the **counterexample set** (Γ together with ¬φ; NOTATION.md) can be made true all at once. The means of breaking grows with the book: a situation making the premises true and the conclusion false (until Chapter 3), or a refuting row (from Section 3.6), or a counter-model (from the counter-model section of the models chapter). The solution states the verdict first, then the derivation or the breaking case.
+
+**5. Chapter Summary and Terms.** Each chapter's `index.md` ends with two sections:
+
+```markdown
+## Summary
+
+What the chapter proved, in four to eight sentences, and what it left open (the next chapter's question).
+
+## Terms
+
+- **derivation**: a list of lines, each a premise, an assumption or a rule's result (@def-derivation).
+- **discharged assumption**: … (@def-…).
+```
+
+The Terms list is a glossary of the chapter's definitions, alphabetical, one line each, every entry linked to its definition by label. The volume's glossary page `src/glossary.md` (listed in the config under `"back-matter"`, which the engine builds as an unnumbered page after the last chapter) collects every chapter's Terms list, merged alphabetically, each entry keeping its link. The Summaries of Chapters 3 and 5 close with a paragraph on what is proved and what is open, under no special name (not "Interlude").
+
+**6. The "used later" marker.** An exercise whose result or object a later section comes back to (a later exercise builds on it, a later example reuses its structure, a later remark recalls it) carries `, used later` in its title: `[B3, used later]`. The later place refers to it by label. No proof rests on an exercise (DRAFTING.md, "References"): a later proof that needs the fact proves it or cites a labelled result, and the marker only tells the reader not to skip the item.

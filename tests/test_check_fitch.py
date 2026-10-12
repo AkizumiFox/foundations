@@ -745,6 +745,153 @@ P & Q & P \to Q & \neg P \vee Q \\
         self.assertEqual((e, counts["tables"]), ([], 0))
 
 
+class PurposeTests(unittest.TestCase):
+    r"""\purpose{\ii} on an assumption: why it is made, checked against the rule that
+    closes its box."""
+
+    def test_matching_purpose_is_clean(self):
+        body = TRANSITIVE.replace(r"\hypo {3} {P}", r"\hypo {3} {P} \purpose{\ii}")
+        self.assertEqual(errors(body), [])
+
+    def test_wrong_purpose_is_an_error(self):
+        body = TRANSITIVE.replace(r"\hypo {3} {P}", r"\hypo {3} {P} \purpose{\ni}")
+        e = errors(body)
+        self.assertEqual(len(e), 1)
+        self.assertIn("made for ¬I, but its box is closed by →I (line 6)", e[0])
+
+    def test_every_box_of_or_elimination(self):
+        body = r"""
+  \hypo {1} {P \vee Q}
+  \open
+  \hypo {2} {P} \purpose{\oe}
+  \have {3} {Q \vee P} \oi{2}
+  \close
+  \open
+  \hypo {4} {Q} \purpose{\raa}
+  \have {5} {Q \vee P} \oi{4}
+  \close
+  \have {6} {Q \vee P} \oe{1,2-3,4-5}
+"""
+        e = errors(body)
+        self.assertEqual(len(e), 1)
+        self.assertIn("assumption 4 is made for RAA, but its box is closed by ∨E", e[0])
+
+    def test_flagged_existential_box(self):
+        body = r"""
+  \hypo {1} {\exists x P(x)}
+  \open
+  \hypo {2}[x_0] {P(x_0)} \purpose{\Ee}
+  \have {3} {\exists y P(y)} \Ei{2}
+  \close
+  \have {4} {\exists y P(y)} \Ee{1,2-3}
+"""
+        self.assertEqual(errors(body), [])
+
+    def test_purpose_on_a_premise_or_a_derived_line(self):
+        e = errors(TRANSITIVE.replace(r"\hypo {1} {P \to Q}", r"\hypo {1} {P \to Q} \purpose{\ii}"))
+        self.assertTrue(any("premise 1 has a \\purpose" in m for m in e), e)
+        e = errors(TRANSITIVE.replace(r"\have {4} {Q} \ie{1,3}", r"\have {4} {Q} \purpose{\ii}"))
+        self.assertTrue(any("line 4 has a \\purpose" in m for m in e), e)
+
+    def test_purpose_naming_no_box_rule(self):
+        for arg in (r"\ie", "for implication"):
+            e = errors(TRANSITIVE.replace(r"\hypo {3} {P}", r"\hypo {3} {P} \purpose{%s}" % arg))
+            self.assertEqual(len(e), 1, e)
+            self.assertIn("names no rule that closes a box", e[0])
+
+    def test_unclosed_box_is_a_note(self):
+        body = r"""
+  \hypo {1} {P}
+  \open
+  \hypo {2} {Q} \purpose{\ii}
+  \have {3} {P} \r{1}
+  \close
+"""
+        e, notes, _ = fitch.check_text(block(body))
+        self.assertEqual(e, [])
+        self.assertTrue(any("not cited by a later line" in m for _, m in notes))
+
+    def test_inferred_purposes_are_listed(self):
+        found = []
+        fitch.check_text(block(TRANSITIVE.replace(r"\hypo {3} {P}", r"\hypo {3} {P} \purpose{\ii}")),
+                         purposes=found)
+        self.assertEqual([item[1:] for item in found], [("3", "ii", "ii")])
+        with tempfile.TemporaryDirectory() as tmp:
+            path = Path(tmp) / "a.md"
+            path.write_text(block(TRANSITIVE))
+            out = io.StringIO()
+            with redirect_stdout(out):
+                self.assertEqual(fitch.main([str(path), "--purposes"]), 0)
+            self.assertIn("assumption 3: for →I", out.getvalue())
+
+
+class TautTests(unittest.TestCase):
+    r"""\by{TAUT}{refs} (or \taut{refs}): a truth-functional step, checked by a truth
+    table over the propositional skeleton (atomic and quantified subformulas are letters)."""
+
+    def taut(self, premises, line, refs=None, macro=r"\by{TAUT}"):
+        rows = [r"  \hypo {%d} {%s}" % (n, f) for n, f in enumerate(premises, 1)]
+        n = len(premises) + 1
+        refs = ",".join(str(k) for k in range(1, n)) if refs is None else refs
+        rows.append(r"  \have {%d} {%s} %s{%s}" % (n, line, macro, refs))
+        return errors("\n".join(rows))
+
+    def test_propositional_consequence(self):
+        self.assertEqual(self.taut([r"P \to Q", r"\neg Q"], r"\neg P"), [])
+        self.assertEqual(self.taut([r"\neg (P \wedge Q)"], r"\neg P \vee \neg Q", macro=r"\taut"), [])
+
+    def test_tautology_with_no_lines(self):
+        self.assertEqual(self.taut([], r"P \vee \neg P", refs=""), [])
+        e = self.taut([], r"P \vee Q", refs="")
+        self.assertEqual(len(e), 1)
+        self.assertIn("is not a tautology", e[0])
+
+    def test_non_consequence_names_a_row(self):
+        e = self.taut([r"P \to Q", "Q"], "P")
+        self.assertEqual(len(e), 1)
+        self.assertIn("TAUT does not follow truth-functionally", e[0])
+        self.assertIn("P F", e[0])
+
+    def test_quantified_subformulas_are_letters(self):
+        self.assertEqual(self.taut([r"\forall x P(x) \to \exists y Q(y)", r"\neg \exists y Q(y)"],
+                                   r"\neg \forall x P(x)"), [])
+        # alike up to bound names: one letter
+        self.assertEqual(self.taut([r"\neg \neg \forall x P(x)"], r"\forall z P(z)"), [])
+        self.assertEqual(self.taut([r"\exists x (P(x) \wedge Q(x)) \wedge x = 0"],
+                                   r"x = 0 \wedge \exists y (P(y) \wedge Q(y))"), [])
+
+    def test_first_order_validity_is_no_taut_step(self):
+        # C2: swapping quantifiers is valid, but not truth-functional
+        e = self.taut([r"\forall x \forall y R(x, y)"], r"\forall y \forall x R(x, y)")
+        self.assertEqual(len(e), 1)
+        self.assertIn("does not follow truth-functionally", e[0])
+        e = self.taut([r"\forall x P(x)"], r"P(c)")
+        self.assertEqual(len(e), 1)
+
+    def test_free_variables_tell_letters_apart(self):
+        e = self.taut([r"P(x) \vee \neg P(x)", r"\neg P(y)"], r"\neg P(x)")
+        self.assertEqual(len(e), 1)
+
+    def test_taut_cannot_cite_a_box(self):
+        body = r"""
+  \open
+  \hypo {1} {P}
+  \have {2} {P} \r{1}
+  \close
+  \have {3} {P \to P} \by{TAUT}{1-2}
+"""
+        e = errors(body)
+        self.assertTrue(any("TAUT cites lines, not a box" in m for m in e), e)
+
+    def test_other_by_text_is_still_skipped(self):
+        e, notes, _ = fitch.check_text(block(r"""
+  \hypo {1} {P}
+  \have {2} {Q} \by{Def}{1}
+"""))
+        self.assertEqual(e, [])
+        self.assertTrue(any("justified by text (Def)" in m for _, m in notes))
+
+
 class CliTests(unittest.TestCase):
     def test_exit_codes(self):
         with tempfile.TemporaryDirectory() as tmp:

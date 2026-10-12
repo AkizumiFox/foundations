@@ -20,10 +20,11 @@ Drafting is stage **S3** of the per-chapter pipeline (`authoring/PIPELINE.md`). 
 - **Second-reading fold** (STYLE §12.0). `::: {.second-reading title="…"}` takes what a first reading may skip: a meta-proof (its statement and one-sentence meaning stay on the main line), edge cases and minimal-change non-examples, long justifications, instructor notes. It is **not** `.optional`: a result proved inside it may be cited later, and the gates read it as main line. Never fold a definition the main line uses, the section's only Quick check or warning, a heading, or another fold. Close every fold and reread: the main line must still teach the section. Moving a cited proof into a fold moves it verbatim.
 - **Forward references** (STYLE §12.1). No `@ref` to a result the reader has not met may serve as a reason, in a proof or in prose; in fd1 and introductory volumes, at most one "Looking ahead" remark per section, at the end of the main line, naming the chapter in words.
 - **Effort in proportion to difficulty** (STYLE §12.2): three bullets for a rule or notion with nothing hidden; the full clause-by-clause reading only where the conditions bite.
-- **Entry conventions (fd1 and introductory volumes; STYLE §12.3–§12.12):** edge cases into the fold or one "Is this legal? Is it useful?" A item; every worked derivation shown as two or three snapshots (goal at the bottom, `\vdots` gap row, final line numbers) before the finished one; scratch work as a Givens / Goal table; a rule card at the end of every rule section, cumulative at the end of a run of them; about one Quick check per 800–1,000 main-line words; a drill bank of 8–12 parts under A with folded answers, at least one scaffolded B item ("Name the move, then complete it."), meta-proof and hard C items titled as challenges; a school-level example before the analysis one; the notation rules of §12.10; ∧I cited in either order (the written line decides), →E implication first.
+- **Entry conventions (fd1 and introductory volumes; STYLE §12.3–§12.12):** edge cases into the fold or one "Is this legal? Is it useful?" A item; every worked derivation shown as two or three snapshots (goal at the bottom, `\vdots` gap row, final line numbers) before the finished one; scratch work as a Givens / Goal table; a rule card at the end of every rule section, cumulative at the end of a run of them; about one Quick check per 800–1,000 main-line words; a drill bank under A with folded answers (15 parts in fd1 Chapters 1–2, 12 elsewhere, in §12.8's ramp from recognition to construction), at least one scaffolded B item ("Name the move, then complete it."), meta-proof and hard C items titled as challenges; a school-level example before the analysis one; the notation rules of §12.10; ∧I cited in either order (the written line decides), →E implication first.
+- **Deepening devices (fd1; STYLE §12.13):** assumption purposes ("asm, for →I": inferred by the engine, written as `\purpose{\ii}` only where no line closes the box yet); a rule-instance gallery beside each rule card (three instances with large compound substitutions, one tempting non-instance with its reason); a "Not allowed" warning after each rule card (three to five wrong steps, each tagged with the clause it breaks, WRONG beside RIGHT where a side condition bites); at least one derive-or-break B item per rule section from 1.5 on, verdict withheld; the chapter `index.md` ends with `## Summary` and `## Terms`; `, used later` in the title of an exercise a later section comes back to.
 - **Structure.** Section length ~2,500–5,000 prose words **on the main line** (math spans count as one word; prose inside second-reading folds is counted apart, and the blueprint gives it its own budget). Complete: opening frame; notions per the explain template; theorems with lead-in / Idea / Proof / aftermath; ≥1 `::: {.check}` followed (not nested) by a `::: {.solution}` block; ≥1 `::: {.warning}`; `## Exercises` with `### A. Check your understanding` / `### B. Practice` / `### C. Going deeper`, and `### R. Review` in the chapter's **last** section only; each exercise `::: {#exr-<section-slug>-a1}` titled `[A1]` (`-r1` titled `[R1]`, and so on) followed by a complete `::: {.solution}`. A Gate section follows STYLE §11.10 instead.
 - **Math.** `\( \)` and `\[ \]` only. Relation symbols are typeset, never unicode characters: proof-direction tags are `\( (\Rightarrow) \)`, `\( (\Leftarrow) \)`, `\( (\subseteq) \)`, `\( (\supseteq) \)`, and a chain reads `(a) \( \Rightarrow \) (b)`. Pandoc fenced divs must be closed, with blank lines around them.
-- **Derivations (Part 0)** are fitch.sty `nd` environments in a raw LaTeX block, as `latex/fitch-book.sty` and NOTATION.md describe: `\hypo`, `\have`, `\open`/`\close`, the rule macros (`\ai{…}`, `\ie{…}`, `\raa{…}`, …) or `\by{text}{refs}`. Never `array`s. A deliberately invalid derivation (a find-the-error item) carries the marker that `tools/check_fitch.py` documents, so the checker expects its failure.
+- **Derivations (Part 0)** are fitch.sty `nd` environments in a raw LaTeX block, as `latex/fitch-book.sty` and NOTATION.md describe: `\hypo`, `\have`, `\open`/`\close`, the rule macros (`\ai{…}`, `\ie{…}`, `\raa{…}`, …) or `\by{text}{refs}`; an assumption's purpose `\purpose{\ii}` (STYLE §12.13); a truth-functional step `\taut{refs}` (`\by{TAUT}{refs}`), over the propositional skeleton, only after F1.3 §07 (NOTATION.md, TAUT). Never `array`s. A deliberately invalid derivation (a find-the-error item) carries the marker that `tools/check_fitch.py` documents, so the checker expects its failure.
 - **Labels** are globally unique: grep `src/` before creating one. Keep every "keep label" exactly.
 - **References.** `@label` refs only to earlier material (earlier chapters, earlier sections of this chapter, or earlier in your file). Forward pointers in prose say "in Chapter N" without an `@ref`. Linear algebra is cited from the companion book with `@la:<label>` (STYLE, "The companion book"). No proof, idea or claim may rest on an exercise, and every result is either proved or plainly marked as not proved here, with nothing depending on it.
 - **Sidecar scripts.** Every non-trivial computation and every chosen constant (N, δ, r, a bound, a numeric answer) is checked by `verify/chNN/<label>.py`, named after the block that quotes the values. Put the values the text quotes in a dict `QUOTED = {...}` at the top, then `assert` each one from an independent computation (sympy, exact fractions, or a numeric check of a constant on several values). The script exits non-zero on failure and runs with `.venv/bin/python` from the repo root. One script may cover several values of one block. Never mention the scripts, or any software, in the book text (runnable `{.python .run}` cells are the only exception).
@@ -33,6 +34,77 @@ Drafting is stage **S3** of the per-chapter pipeline (`authoring/PIPELINE.md`). 
 - **index.md.** If you write the chapter's `index.md`, write it last, against the delivered sections. It has the **Time** line (STYLE §2), computed from your sections' prose word counts and exercise counts by the formula in `authoring/design/research-reader.md` B1: the core track from main-line prose only, the full track adding the folded prose. `python3 tools/check_structure.py --words src/chNN-…` prints both counts and their reading hours.
 - **Spelling.** American spelling. Add genuine new words to `spelling.txt` (append only).
 - **Scope.** Do not delete or rename files other than those assigned; do not edit other sections, the config, or `authoring/STATUS.md` (report promises instead).
+
+## Diagrams
+
+Draw a picture where the structure is spatial: every finite structure as an arrow or Hasse diagram, search and refutation trees, the square of opposition, a procedure as a flowchart. The engine's `latex/book-diagrams.sty` gives each a TikZ template, in the PDF and (compiled to an SVG) on the website. A picture is a raw LaTeX block holding a `tikzpicture` written out in full: the website finds a picture by its `\begin{tikzpicture}`, so never hide one in a macro. No colours and no white fills: the website's dark mode inverts the SVG. Each example below compiles as it stands (the engine's `tests/test_diagrams.py` builds the same files).
+
+**A finite structure as an arrow diagram** (`structure`, `elt`, `rel`, and `universe` for a frame round the domain): elements are dots labelled with `label=below:…`, the relation is arrows, a loop is `to[loop above]`.
+
+```latex
+\begin{tikzpicture}[structure]
+  \node[elt, label=below:$0$] (a) at (0,0) {};
+  \node[elt, label=below:$1$] (b) at (1.6,0) {};
+  \node[elt, label=below:$2$] (c) at (3.2,0) {};
+  \draw[rel] (a) to[bend left] (b);
+  \draw[rel] (b) to[bend left] (a);
+  \draw[rel] (b) -- (c);
+  \draw[rel] (c) to[loop above] (c);
+  \node[universe, fit=(a)(b)(c)] {};
+\end{tikzpicture}
+```
+
+**A Hasse diagram** (`hasse`, and `hpt` for unlabelled points): greater elements higher, plain edges for the covering pairs only.
+
+```latex
+\begin{tikzpicture}[hasse]
+  \node (e) at (0,0) {$\varnothing$};
+  \node (a) at (-1.2,1.1) {$\{a\}$};
+  \node (b) at (1.2,1.1) {$\{b\}$};
+  \node (t) at (0,2.2) {$\{a,b\}$};
+  \path (e) edge (a) (e) edge (b) (a) edge (t) (b) edge (t);
+\end{tikzpicture}
+```
+
+**A truth tree or refutation tree** (`tree`): each node is a stack of formulas separated by `\\`; `\ticked` marks a formula already used, `\closedbranch` (×) ends a closed branch, `\openbranch` an open one; `tlabel` for an edge label. A node hangs from its top, so give a tall first stack room with `level 1/.style={level distance=…}`.
+
+```latex
+\begin{tikzpicture}[tree, level 1/.style={level distance=23mm}]
+  \node {$P \to Q$ \ticked \\ $Q \to R$ \ticked \\ $\neg(P \to R)$ \ticked \\ $P$ \\ $\neg R$}
+    child {node {$\neg P$ \\ \closedbranch}}
+    child {node {$Q$}
+      child {node {$\neg Q$ \\ \closedbranch}}
+      child {node {$R$ \\ \closedbranch}}};
+\end{tikzpicture}
+```
+
+**The square of opposition**: `\oppositionsquare[side]{A}{E}{I}{O}` inside `\begin{tikzpicture}[square]` draws the corners (nodes `A`, `E`, `I`, `O`) and names the four relations.
+
+```latex
+\begin{tikzpicture}[square]
+  \oppositionsquare{$\forall x\,(S(x) \to P(x))$}{$\forall x\,(S(x) \to \neg P(x))$}
+                   {$\exists x\,(S(x) \wedge P(x))$}{$\exists x\,(S(x) \wedge \neg P(x))$}
+\end{tikzpicture}
+```
+
+**A flowchart** (`flowchart`, `fc start`, `fc step`, `fc test`, `fc arrow`), placed with `below=of`, `right=of`; `\\` breaks a line inside a node.
+
+```latex
+\begin{tikzpicture}[flowchart]
+  \node[fc start] (s) {start: the counterexample set};
+  \node[fc test, below=of s] (t) {an unticked formula\\on an open branch?};
+  \node[fc step, below=of t] (d) {apply its rule; close every\\branch holding $\varphi$ and $\neg\varphi$};
+  \node[fc start, right=of t] (e) {stop: all closed, valid;\\else an open branch refutes};
+  \draw[fc arrow] (s) -- (t);
+  \draw[fc arrow] (t) -- node[right, font=\scriptsize] {yes} (d);
+  \draw[fc arrow] (t) -- node[above, font=\scriptsize] {no} (e);
+  \draw[fc arrow] (d.west) -- ++(-0.5,0) |- (t.west);
+\end{tikzpicture}
+```
+
+## The glossary page
+
+A volume's glossary is a plain Markdown page, `src/glossary.md`, listed in its `config/config.json` under `"back-matter": ["src/glossary.md"]`; the engine builds it as an unnumbered page after the last chapter, links it from the sidebar, and prints it at the end of the book PDF. It opens with `# Glossary` and one sentence, then one bulleted list, alphabetical, merging every chapter's `## Terms` list (STYLE §12.13) with each entry's link kept: `- **counterexample set**: the premises together with the negated conclusion (@def-…).` It holds no definitions of its own and no theorem environments. It is assembled in the whole-volume pass, after the chapters' Terms lists exist; until then the config does not list it.
 
 ## When done
 1. Run your sidecars: `for f in verify/chNN/*.py; do .venv/bin/python "$f" || echo "FAIL $f"; done`.

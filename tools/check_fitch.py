@@ -47,6 +47,20 @@ A derivation is mechanical, so it is checked mechanically. For each `nd` block:
   Bounded forms (Chapter 4 §08) reuse the tags: forall-E and exists-I then cite the
   bound's instance as a second line, and the forall-I / exists-E box assumes it.
 
+* **purposes**: an assumption may state why it is made, `\\hypo {3} {P} \\purpose{\\ii}`
+  (latex/fitch-book.sty prints "asm, for ->I" in its justification column). The
+  argument is one rule macro that closes a box (`\\ii \\ni \\raa \\oe \\bi \\Ai \\Ee`), and
+  it must be the rule of the line that cites the assumption's box (an error if not;
+  a note if no line cites the box). A `\\purpose` on a premise or on a derived line
+  is an error. `--purposes` lists every assumption with the rule that closes its
+  box (the purpose the renderer infers when the book sets "fitch-purposes": "infer");
+* **TAUT** (`\\by{TAUT}{refs}` or `\\taut{refs}`, any number of cited lines, no box): the
+  line follows from the cited lines in every row of a truth table over their
+  *propositional skeleton*, in which every atomic and every quantified subformula
+  is a letter, the same letter for subformulas alike up to bound-variable names.
+  So TAUT never licenses a first-order step: forall x forall y R(x, y) to
+  forall y forall x R(x, y) is two letters, and fails.
+
 fitch.sty's optional arguments are read (fitchdoc.pdf, section 3.6):
 `\\have[n][k]{label}{...}` prints the line as n+k (then n+k+1, ...); `\\have[n]` is
 `[n][0]`; `\\have[][7]` jumps the count to 7; `\\have[\\ ][0]{}{\\vdots}` prints no
@@ -59,7 +73,7 @@ a `\\vdots` row). A row that would print a stray "+n" (a blank base left by a ga
 row, e.g. `\\have[\\ ][0]` followed by a plain `\\have`) is an error.
 
 Skipped, with a note (shown by `--notes`): a `\\vdots` or unlabelled row and a
-justification-free line after it, a `\\by{text}{refs}` justification (its refs are
+justification-free line after it, a `\\by{text}{refs}` justification other than TAUT (its refs are
 still checked for availability), and any line whose formula (or a cited one)
 neither parser can read (a metavariable such as `\\varphi`: shape not checked).
 
@@ -722,8 +736,12 @@ RULES = {  # macro -> (display name, citation shape: L = line, B = box)
     # of the unbounded and the bounded form (\forall x \in A: the bound is a line)
     "Ae": ("∀E", "L|LL"), "Ai": ("∀I", "B"), "Ei": ("∃I", "L|LL"), "Ee": ("∃E", "LB"),
     "eqi": ("=I", ""), "eqe": ("=E", "LL"),
+    # a truth-functional step (Chapter 3 on): any number of lines; also \by{TAUT}{refs}
+    "taut": ("TAUT", "*"),
 }
 QUANT_RULES = {"Ae", "Ai", "Ei", "Ee", "eqi", "eqe"}
+# the rules that close a box: what an assumption's \purpose may name
+BOX_RULES = {"ii", "ni", "raa", "oe", "bi", "Ai", "Ee"}
 
 
 @dataclass
@@ -740,6 +758,8 @@ class Line:
     parse_error: str = ""
     display: str = ""       # the number fitch.sty prints for the line
     gap: bool = False       # an unlabelled row or a \vdots row
+    purpose: str = ""       # \purpose{\ii} on an assumption: the rule macro named ("ii")
+    purpose_raw: str = ""   # the argument as written
 
 
 @dataclass
@@ -902,6 +922,13 @@ def parse_nd(body: str, first_lineno: int, schema_key: bool = False):
                 by_text, j = read_group(rest, j)
                 refs, j = read_group(rest, j)
                 line.rule, line.by_text, line.refs = "by", by_text or "", refs or ""
+                if line.by_text.strip() == "TAUT":       # \by{TAUT}{refs} is the TAUT rule
+                    line.rule = "taut"
+            elif name == "purpose":                     # \purpose{\ii}: why the assumption is made
+                arg, j = read_group(rest, j)
+                line.purpose_raw = (arg or "").strip()
+                pm = re.fullmatch(r"\\([A-Za-z]+)", line.purpose_raw)
+                line.purpose = pm.group(1) if pm else "?"
             else:
                 refs, j = read_group(rest, j)
                 line.rule, line.refs = name, refs or ""
@@ -952,13 +979,17 @@ def check_numbering(lines):
     return errors
 
 
-def check_derivation(lines, boxes, schema=False):
+def check_derivation(lines, boxes, schema=False, purposes=None):
     """Return (errors, notes) for one parsed derivation: lists of (lineno, message).
 
     With `schema` (a rule schema or a partial derivation), unjustified lines and
-    justifications citing nothing are notes instead of errors.
+    justifications citing nothing are notes instead of errors. With `purposes` (a
+    list), each assumption's purpose is appended to it as (lineno, label, stated,
+    inferred): the rule macros named by its \\purpose and by the line that closes its
+    box ("" where there is none).
     """
     errors, notes = [], []
+    closers = {}                       # box id -> index of the first line citing it as i-j
     if not schema and any(not re.fullmatch(r"\d+", ln.label) for ln in lines if ln.label):
         errors.append((lines[0].lineno if lines else 0,
                        "non-numeric line labels: mark a rule schema or partial derivation "
@@ -1021,6 +1052,9 @@ def check_derivation(lines, boxes, schema=False):
             ln.formula = read_formula(ln.text)
         except ParseError as e:
             ln.parse_error = str(e)
+        if ln.purpose and not ln.hypo:
+            errors.append((ln.lineno, f"line {ln.label} has a \\purpose, but only an assumption "
+                                      f"(\\hypo) states one"))
         if ln.hypo:
             if ln.rule and ln.rule != "by":
                 errors.append((ln.lineno, f"assumption {ln.label} carries a rule"))
@@ -1056,8 +1090,29 @@ def check_derivation(lines, boxes, schema=False):
                 if err:
                     errors.append((ln.lineno, f"line {ln.label} {err}"))
                     cited_ok = False
+                elif box is not None:
+                    closers.setdefault(box.id, k)
                 resolved.append(("B", box))
 
+        if ln.rule == "taut":
+            if any(shape == "B" for shape, _ in cites):
+                errors.append((ln.lineno, f"line {ln.label}: TAUT cites lines, not a box"))
+                continue
+            if not cited_ok:
+                continue
+            involved = [ln] + [lines[i] for _, i in resolved]
+            bad = [x for x in involved if x.formula is None]
+            if bad:
+                notes.append((ln.lineno, f"line {ln.label}: formula of line {bad[0].label} not "
+                                         f"readable ({bad[0].parse_error}): TAUT not checked"))
+                continue
+            problem = check_taut(ln.formula, [lines[i].formula for _, i in resolved])
+            if problem is None:
+                notes.append((ln.lineno, f"line {ln.label}: TAUT over more than {TAUT_MAX_LETTERS} "
+                                         f"letters: not checked"))
+            elif problem:
+                errors.append((ln.lineno, f"line {ln.label}: TAUT {problem}"))
+            continue
         if ln.rule == "by":
             notes.append((ln.lineno, f"line {ln.label} justified by text "
                                      f"({ln.by_text.strip() or 'empty'}): shape not checked"))
@@ -1095,7 +1150,112 @@ def check_derivation(lines, boxes, schema=False):
             problem = check_shape(ln.rule, ln.formula, resolved, lines)
         if problem:
             errors.append((ln.lineno, f"line {ln.label}: {name} {problem}"))
+
+    # purposes: \purpose{\ii} on an assumption names the rule that closes its box
+    for ln in lines:
+        if not ln.hypo:
+            continue
+        closer = closers.get(ln.boxes[-1]) if ln.boxes else None
+        rule = lines[closer].rule if closer is not None else ""
+        inferred = rule if rule in BOX_RULES else ""
+        if purposes is not None and ln.boxes:
+            purposes.append((ln.lineno, ln.label, ln.purpose, inferred))
+        if not ln.purpose:
+            continue
+        if not ln.boxes:
+            errors.append((ln.lineno, f"premise {ln.label} has a \\purpose: only an assumption "
+                                      f"that opens a box states one"))
+        elif ln.purpose not in BOX_RULES:
+            errors.append((ln.lineno, f"assumption {ln.label}: \\purpose{{{ln.purpose_raw}}} names no "
+                                      f"rule that closes a box (one of "
+                                      f"{', '.join('\\' + r for r in sorted(BOX_RULES))})"))
+        elif closer is None:
+            notes.append((ln.lineno, f"assumption {ln.label}: its box is not cited by a later line, "
+                                     f"so the purpose {RULES[ln.purpose][0]} is not checked"))
+        elif rule != ln.purpose:
+            closed_by = RULES[rule][0] if rule in RULES else f"text ({lines[closer].by_text.strip()})"
+            if rule in RULES or rule == "taut":
+                errors.append((ln.lineno, f"assumption {ln.label} is made for {RULES[ln.purpose][0]}, "
+                                          f"but its box is closed by {closed_by} "
+                                          f"(line {lines[closer].label})"))
+            else:
+                notes.append((ln.lineno, f"assumption {ln.label}: its box is closed by {closed_by}: "
+                                         f"the purpose {RULES[ln.purpose][0]} is not checked"))
     return errors, notes
+
+
+# ---------------------------------------------------------------------------
+# TAUT: a truth-functional step over the propositional skeleton
+# ---------------------------------------------------------------------------
+#
+# The skeleton of a formula keeps its connectives (¬ ∧ ∨ → ↔ ⊥ ⊤) and treats every
+# other subformula -- an atomic one (P(x), s = t, a statement letter) or a quantified
+# one (∀x φ, ∃x φ, bounded or not) -- as a letter. Two such subformulas are the same
+# letter iff they are alike up to the names of bound variables (∀x P(x) and ∀y P(y)).
+# A TAUT line must follow from its cited lines in every row of the skeleton's truth
+# table. So ∀x∀y R(x, y) gives ∀y∀x R(x, y) by no TAUT step: two different letters.
+
+TAUT_MAX_LETTERS = 12
+
+
+def alpha_normal(f, env=None, depth=0):
+    """f with its bound variables renamed #0, #1, ... by depth (alpha-equivalent
+    formulas become equal)."""
+    env = env or {}
+
+    def term(t):
+        if t[0] == "v":
+            return ("v", env.get(t[1], t[1]))
+        return ("app", t[1], tuple(term(a) for a in t[2]))
+
+    k = f[0]
+    if k in ("var", "bot", "top"):
+        return f
+    if k == "pred":
+        return ("pred", f[1], tuple(term(a) for a in f[2]))
+    if k == "rel":
+        return ("rel", f[1], term(f[2]), term(f[3]))
+    if k in CONNECTIVES:
+        return (k,) + tuple(alpha_normal(a, env, depth) for a in f[1:])
+    new = f"#{depth}"
+    inner = {**env, f[1]: new}
+    return (k, new, alpha_normal(f[2], inner, depth + 1),
+            alpha_normal(f[3], inner, depth + 1) if f[3] else None)
+
+
+def skeleton(f, letters):
+    """The propositional skeleton of f; `letters` maps each letter (an alpha-normal
+    subformula) to the first subformula seen for it."""
+    k = f[0]
+    if k == "bot":
+        return BOT
+    if k == "top":
+        return ("not", BOT)
+    if k in CONNECTIVES:
+        return (k,) + tuple(skeleton(a, letters) for a in f[1:])
+    key = alpha_normal(f)
+    letters.setdefault(key, f)
+    return ("var", key)
+
+
+def check_taut(f, premises):
+    """'' if f follows truth-functionally from the premises (on the skeleton), None if
+    there are too many letters to check, else what is wrong."""
+    letters = {}
+    goal = skeleton(f, letters)
+    prem = [skeleton(p, letters) for p in premises]
+    keys = list(letters)
+    if len(keys) > TAUT_MAX_LETTERS:
+        return None
+    for row in range(2 ** len(keys)):
+        env = {key: not (row >> n) & 1 for n, key in enumerate(reversed(keys))}
+        if all(evaluate(p, env) for p in prem) and not evaluate(goal, env):
+            values = ", ".join(f"{show(letters[key])} {'T' if env[key] else 'F'}" for key in keys)
+            if premises:
+                return (f"does not follow truth-functionally: the row {values} makes the cited "
+                        f"lines true and {show(f)} false")
+            return f"is not a tautology: the row {values} makes {show(f)} false"
+    return ""
 
 
 def _shape_words(want: str) -> str:
@@ -1491,8 +1651,10 @@ def nd_options(body: str):
     return keys, " " * m.end() + body[m.end():]
 
 
-def check_text(text: str):
-    """(errors, notes, counts) for one file: errors/notes are (lineno, message)."""
+def check_text(text: str, purposes=None):
+    """(errors, notes, counts) for one file: errors/notes are (lineno, message).
+    With `purposes` (a list), each assumption's stated and inferred purpose is
+    appended to it (check_derivation)."""
     errors, notes = [], []
     counts = {"derivations": 0, "expected_invalid": 0, "schema": 0, "tables": 0}
     for m in ND.finditer(text):
@@ -1505,7 +1667,8 @@ def check_text(text: str):
             counts["schema"] += 1
         try:
             lines, boxes, struct = parse_nd(body, lineno, schema_key="schema" in keys)
-            errs, nts = check_derivation(lines, boxes, schema=schema) if lines else ([], [])
+            errs, nts = (check_derivation(lines, boxes, schema=schema, purposes=purposes)
+                         if lines else ([], []))
             errs = struct + errs
         except ParseError as e:
             errs, nts = [(lineno, f"cannot read derivation: {e}")], []
@@ -1530,17 +1693,22 @@ def check_text(text: str):
     return errors, notes, counts
 
 
-def find_violations(root: Path):
+def find_violations(root: Path, purposes=None):
     """Check every .md under `root` (a file or directory).
 
     Returns (errors, notes, counts); errors and notes are (path, lineno, message).
+    With `purposes` (a list), (path, lineno, label, stated, inferred) is appended for
+    every assumption inside a box.
     """
     root = Path(root)
     files = [root] if root.is_file() else sorted(root.rglob("*.md"))
     errors, notes = [], []
     total = {"derivations": 0, "expected_invalid": 0, "schema": 0, "tables": 0}
     for f in files:
-        e, n, c = check_text(f.read_text(encoding="utf-8"))
+        found = [] if purposes is not None else None
+        e, n, c = check_text(f.read_text(encoding="utf-8"), purposes=found)
+        if found:
+            purposes += [(f,) + item for item in found]
         errors += [(f, ln, msg) for ln, msg in e]
         notes += [(f, ln, msg) for ln, msg in n]
         for k in total:
@@ -1560,15 +1728,26 @@ def main(argv=None) -> int:
                "a rule schema or partial derivation with '% schema'.")
     ap.add_argument("paths", nargs="*", default=["src"], help="files or directories (default: src)")
     ap.add_argument("--notes", action="store_true", help="also list what was skipped and why")
+    ap.add_argument("--purposes", action="store_true",
+                    help="list every assumption with its stated and inferred purpose")
     series.add_book_arg(ap)
     args = ap.parse_args(argv)
     errors, notes, total = [], [], {"derivations": 0, "expected_invalid": 0, "schema": 0, "tables": 0}
+    purposes = [] if args.purposes else None
     for p in args.paths:
-        e, n, c = find_violations(Path(p))
+        e, n, c = find_violations(Path(p), purposes=purposes)
         errors += e
         notes += n
         for k in total:
             total[k] += c[k]
+    if purposes:
+        for path, ln, label, stated, inferred in purposes:
+            name = lambda r: RULES[r][0] if r in RULES else (r and f"\\{r}?")
+            text = (f"for {name(inferred)}" if inferred else "box not closed by a rule")
+            if stated:
+                text += f" (stated: for {name(stated)})"
+            print(f"{path}:{ln}: assumption {label}: {text}")
+        print()
     if args.notes and notes:
         print(report(notes))
         print()
