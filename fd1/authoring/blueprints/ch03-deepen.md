@@ -1,7 +1,7 @@
 <!-- hand-written -->
 # Deepening blueprint: F1.7 Finding Derivations (fd1 Chapter 3), stage S1
 
-**Status: S1 draft (2026-10-13), for S2.**
+**Status: S1 draft (2026-10-13), revised after S2 round 1 (2026-10-13); replies in §11.**
 
 **What this is.** The S1 blueprint for the new Chapter 3 of *Logic and Proof* in the final layout (`layout-final.md` §1.3: Chapter 3, F1.7, *Finding Derivations*, three core sections). It is the unit that `layout-final.md` §6.2 item 3 calls `ch03-finding-derivations.md`, written under the name the coordinator gave it, in the format of `ch01-deepen.md`. It is complete on its own. A drafter executes it with:
 - this file;
@@ -79,7 +79,7 @@ The index also carries the quantifier note (§4.0, item 3).
 
 *Work from both ends* is gathered from Chapter 1 and completed here.
 
-**Time** (§5): core about 14.8 h, written as **"About 15 hours"**; full about 27.4 h, written as **"about 25 hours"**. Layout §3 targets 16 / 27; the difference is rounding and the new sections coming in under their caps.
+**Time** (§5): core about 14.5 h, written as **"About 15 hours"**; full about 27.3 h, written as **"about 25 hours"**. Layout §3 targets 16 / 27; the difference is rounding and the new sections coming in under their caps.
 
 **The chapter's place in two threads** (layout §1.2):
 - *The counterexample set.* Link 2 of its thread is "inconsistent: \( \Gamma, \neg\varphi \vdash \bot \)", in Section 3.2.
@@ -141,7 +141,7 @@ D11. **Not adopted in Chapter 3, with reasons.**
 - (a) The inline "(Why?)" prompt (plan §3.0.9): STYLE §12.13 does not carry it, as in Chapter 1.
 - (b) An opening quiz in the index: layout §1.3's index row for Chapter 3 lists none, and the index cap is 1,000 words.
 - (c) A rule card or gallery per section: there are no rule sections. 3.1 keeps R3's cumulative 13-row card as the one-page reference (STYLE §12.6: "after … 2.6", now 3.1).
-- (d) A Givens/Goal table in 3.2 and 3.3: the four-task table and the two-column tables do that job. R3's two tables in 3.1 stay.
+- (d) A Givens/Goal table in 3.2 and 3.3: the four-task table and the two-column tables do that job. R3's two tables in 3.1 stay, the second (`exm-skeleton-odd-product`'s) in fold F3.1-g for the budget (§4.1).
 
 ---
 
@@ -150,7 +150,7 @@ D11. **Not adopted in Chapter 3, with reasons.**
 | § | Title (the `#` line) | File | Kind (layout keys) | Main line: now → budget | One new idea; what is added (details in §4) |
 |---|---|---|---|---|---|
 | index | Finding Derivations | `index.md` | N (placeholder replaced) | placeholder → ≤ 1,000 | Motivating question; What you need with the quantifier note; Time; Minimum for fd2; Roadmap; nine Named moves; Summary; Terms |
-| 3.1 | How to Find a Derivation | `01-finding-derivations.md` | M, E | 4,652 → ≤ 5,000 | R3 §4.6, plus: four refinements (*find the goal among the resources*, *derive what needs nothing new first*, *a clash partner already on a line*, *no detours*) in a new subsection with `exm-search-free-lines`; the method flowchart; three new folds (Peirce's search, moved; other splits; Harman); A2 to 12; B4 (cut the detours); R items out to 3.3; Looking-ahead box out to 3.3 |
+| 3.1 | How to Find a Derivation | `01-finding-derivations.md` | M, E | 4,652 → ≤ 5,000 | R3 §4.6, plus: four refinements (*find the goal among the resources*, *derive what needs nothing new first*, *a clash partner already on a line*, *no detours*) in a new subsection with `exm-search-free-lines`; the method flowchart; five new folds (Peirce's search, moved; other splits; Harman; why a detour's line was within reach; the odd product's Givens/Goal table, moved); A2 to 12; B4 (cut the detours); R items out to 3.3; Looking-ahead box out to 3.3 |
 | 3.2 | Four Kinds of Task | `02-four-kinds-of-task.md` | N | 0 → ≤ 4,600 | The task decides the search; four worked searches (theorem, equivalence, inconsistency, derive or break); `def-inconsistent-set`, `prp-inconsistent-derives-everything`, `prp-derivable-iff-negation-inconsistent`; gallery of inconsistent lists; Not allowed; "One task in four costumes"; flowchart; A1, A2 (12), B1–B4, C1 (exit check), C2 (Challenge, used later) |
 | 3.3 | From Argument to Derivation | `03-from-argument-to-derivation.md` | N | 0 → ≤ 3,400 | One key (1.1 B5) and three facts; extracting an argument (`exm-extract-argument`, argument map); Not allowed; two columns (`exm-two-columns`); the library of standard sequents grouped by use; Looking ahead (the chapter's question); A1, B1, B2 (scaffolded two-column), B3 (15-item battery), B4 (proof ordering), C1 (exit check), C2 (Challenge: Curry); R1–R3 (moved), R4 (dialogue) |
 
@@ -177,7 +177,7 @@ None of these changes content.
 | `exm-search-cases` | 01:192 | kept; first snapshot added (R3 item 6) | ch04 09:641 |
 | `exm-search-postpone-or` | 01:253 | kept; R3 item 7 (the `@cor-refuting-row` parenthetical of 01:286 cut). 01:344's last two sentences move verbatim to fold F3.1-d (§4.1 item 6); the dead-end snapshot gains `\purpose` (binding rule 8) | ch04 07:435 |
 | `exm-search-raa` | 01:355 | kept; 01:436's last sentence moves verbatim to fold F3.1-d | — |
-| `exm-skeleton-odd-product` | 01:472 | kept; R3 item 10 (Givens/Goal table; the last parenthetical of 01:487 cut) | — |
+| `exm-skeleton-odd-product` | 01:472 | kept; R3 item 10 (Givens/Goal table, placed in fold F3.1-g, §4.1 item 9; the last parenthetical of 01:487 cut) | — |
 | `exr-finding-derivations-a1` | 01:695 | kept; (b)'s solution loses its last parenthetical (R3) | — |
 | `exr-finding-derivations-b1` | 01:726 | **frozen** (R3) | ch06 02, ch07 02 |
 | `exr-finding-derivations-b2` | 01:812 | kept (the faded triple's middle) | — |
@@ -188,7 +188,7 @@ None of these changes content.
 | `exr-finding-derivations-c4` | 01:1092 | kept | — |
 | `exr-finding-derivations-r1` | 01:1145 → **3.3** | moved verbatim | — |
 | `exr-finding-derivations-r2` | 01:1161 → **3.3** | moved verbatim | — |
-| `exr-finding-derivations-r3` | 01:1201 → **3.3** | moved; solution reworded (R3; G10 wording, §4.3 item 13) | — |
+| `exr-finding-derivations-r3` | 01:1201 → **3.3** | moved; solution reworded (R3; G10 wording, §4.3 item 13); stem's second question reworded as derive-or-break (S2 round 1) | — |
 
 The prefix `finding-derivations` of the three R labels is **not** "fixed" in 3.3 (layout §1.4's last paragraph).
 
@@ -255,7 +255,7 @@ Budgets: **main line** = prose words by `tools/check_structure.py`'s `prose_word
 
 ### 4.0 `index.md` (replaces the placeholder; written last, against the delivered sections)
 
-**Budget:** ≤ 1,000 words. Expected about 960: story ~200, What you need ~110, Time ~30, Minimum ~25, Roadmap ~110, Named moves ~230, Summary ~170, Terms ~120. No fold.
+**Budget:** ≤ 1,000 words. Expected about 975: story ~200, What you need ~110, Time ~30, Minimum ~25, Roadmap ~110, Named moves ~245, Summary ~170, Terms ~120. No fold.
 
 1. **Story** (new, ~200 words; replaces index:3).
    - Chapters 1 and 2 gave a rule for using and a rule for proving every connective, and a derivation can be checked line by line with no idea at all. Finding one is another matter: an assumption may be any statement, and every Idea so far found its derivation with a handful of moves.
@@ -280,7 +280,7 @@ Budgets: **main line** = prose words by `tools/check_structure.py`'s `prose_word
    - **Look first for a clash partner already on a line.** For the goal \( \bot \), aim at the statement whose negation you already have. (Section 3.1)
    - **No detours.** Never build a line by an introduction rule and take it apart at once by the matching elimination. (Section 3.1)
    - **Let the task choose the search.** A theorem starts at the goal, an equivalence needs two derivations, an inconsistency aims at a clash. (Section 3.2)
-   - **Try to break it first.** Before searching, try to make the counterexample set true. An attempt that is forced into a clash at every turn is a derivation read backwards. (Section 3.2)
+   - **Try to break it first.** Before searching, try to make the counterexample set true. An attempt that is forced into a clash at every turn is usually a derivation read backwards: its forced statements suggest the boxes, and its clash the \( \bot \). (Section 3.2)
    - **Name the unstated fact.** An argument in prose leaves premises unsaid; write each one down and check it. (Section 3.3)
    - **Two columns.** Write the proof beside the derivation it mirrors, and see which lines the prose leaves silent. (Section 3.3)
 8. **`## Summary`** (new, ~170 words, STYLE §12.13.5). Points, in five to seven sentences:
@@ -304,23 +304,27 @@ Budgets: **main line** = prose words by `tools/check_structure.py`'s `prose_word
 
 ### 4.1 Section 3.1: How to Find a Derivation (`01-finding-derivations.md`)
 
-**Purpose.** To turn the moves of Chapters 1 and 2 into one method with an order, to say why the order loses nothing, and to watch it work and fail. **Kind:** M (moved from 2.6) and E (expanded). **Budget:** main line ≤ 5,000 (now 4,652). Expected about 4,990, by this tally:
+**Purpose.** To turn the moves of Chapters 1 and 2 into one method with an order, to say why the order loses nothing, and to watch it work and fail. **Kind:** M (moved from 2.6) and E (expanded). **Budget:** main line ≤ 5,000 (now 4,652). Expected about 4,965, by this tally (corrected at S2 round 1; the S1 tally summed to 5,045, omitted items 2 and 5, and under-counted the refinements subsection):
 - R3's own estimate ≈ 4,870;
-- refinements subsection ≤ 450 (two Quick checks included);
+- refinements subsection ≈ 470 (itemised in item 7: lead 25, three moves 135, `exm-search-free-lines` 140, its Quick check 40, the detour paragraph's main-line part 90, its Quick check 40);
 - figure lead ≤ 25;
 - `01:466` +15;
+- item 2's new sentence +25;
+- item 5's Peirce pointer +17;
 - R3's Looking-ahead box −40, moved to 3.3;
 - Peirce passage to a fold −115;
 - other splits to a fold −100;
-- R3's three bullets trimmed to lead-in plus one sentence each −60, R3's own fallback, now taken in advance.
+- R3's three bullets trimmed to lead-in plus one sentence each −60, R3's own fallback, now taken in advance;
+- **trims 1, 2 and 4 of the S1 trim order, now taken in advance:** the 13-row card's Lean sentence (−20); 01:186's second sentence (−25); the Givens/Goal table of `exm-skeleton-odd-product` (−95), moved verbatim into fold F3.1-g (item 9).
 
-Folds ≤ 850 (expected ~760: F3.1-a 68, F3.1-b ~315, F3.1-c ~115 plus snapshots, F3.1-d ~100, F3.1-e ~160).
+That is 4,870 + 470 + 25 + 15 + 25 + 17 − 40 − 115 − 100 − 60 − 140 = 4,967.
 
-**Trim order if the delivered count exceeds 5,000:**
-1. the 13-row card's Lean sentence (−20);
-2. 01:186's second sentence (−25);
-3. `exm-search-free-lines`'s closing comparison sentence (−30);
-4. the Givens/Goal table of `exm-skeleton-odd-product` moves into fold F3.1-d, verbatim (−95).
+Folds ≤ 975 (expected ~955: F3.1-a 68, F3.1-b ~315, F3.1-c ~115 plus snapshots, F3.1-d ~100, F3.1-e ~160, F3.1-f ~100, F3.1-g ~95).
+
+**Trim order if the delivered count still exceeds 5,000:**
+1. `exm-search-free-lines`'s closing comparison sentence (−25);
+2. the refinements lead's last sentence (−10);
+3. the first refinement's illustrating sentence ("Step 2 would open a box …", −25).
 
 No forward pointer remains on the main line (the Looking-ahead box moves to 3.3; see item 8).
 
@@ -343,7 +347,7 @@ No forward pointer remains on the main line (the Looking-ahead box moves to 3.3;
        - (e0) `fc start` "done: cite it,\\or copy it by R";
        - (t1) `fc test` "is the goal a $\wedge$, $\to$,\\$\neg$ or $\leftrightarrow$?";
        - (b1) `fc step` "step 2: its introduction\\rule (boxes or two gaps)";
-       - (t2) `fc test` "can a resource\\be taken apart?";
+       - (t2) `fc test` "can a resource not yet\\used be taken apart?";
        - (b2) `fc step` "step 3: its elimination rule\\($\vee$E: both boxes end in the goal)";
        - (t3) `fc test` "is the goal $\bot$, or do\\the resources clash?";
        - (b3) `fc step` "step 4: find or build\\the clash; $\bot$E if needed";
@@ -357,6 +361,7 @@ No forward pointer remains on the main line (the Looking-ahead box moves to 3.3;
        - b1, b2, b3, b4 return to the merge point above t0 (one line on the right, as in 07:936).
      - Caption sentence after the figure (counted in the 25): none beyond the lead.
      - The disjunctive goal goes "no" at t1, so step 2 postpones it, as the algorithm says.
+     - "Not yet used" at t2 (S2 round 1): a resource counts as used for the current goal once its elimination has been written, or tried with its antecedent as a new goal. Without the qualifier the yes-branch could fire forever (∧E on the same line again) and t3, t4, e4 would never be reached. S2a checks that following the chart on \( P \to Q \vdash Q \to P \) reaches e4 (§9, item 9).
      - This chart reads the algorithm's **order**. The table of moves reads **situations**. R3 §9 D9's objection was to a second decision chart duplicating the table; this one does not (§10 records the supersession).
    - Quick check 01:80–93 kept.
 4. **`## Splitting the goal`**, **`## Cases must end in the goal`**, **`## Postponing a disjunction`**: R3 items 5, 6 and 7, executed. Two further changes:
@@ -365,53 +370,55 @@ No forward pointer remains on the main line (the Looking-ahead box moves to 3.3;
 5. **`## When nothing else works`**: `exm-search-raa` kept (R3 item 8's first sentence).
    - 01:436's last sentence ("A split by \( \rulename{LEM} \) on \( P \) also works, but less well: … stuck there a second time.") moves verbatim to fold F3.1-d.
    - R3 item 8's rewrite of 01:439 (Peirce's search, two snapshots and its Quick check) is executed as R3 wrote it, **and then placed verbatim in fold F3.1-c** `title="Step 5 one level out: the search for Peirce's law"`. Its lead sentence keeps its pointer to @prp-peirce in Section 2.5's fold.
-   - One main-line sentence remains in its place (~25 words, new): "Step 5's advice to try a goal further out has a classic instance, the search for Peirce's law, shown in the fold below."
+   - One main-line sentence remains in its place (~17 words, new): "Step 5's advice to try a goal further out is shown on Peirce's law in the fold below."
    - The fold test holds: the algorithm states the advice on the main line, and no A or B item needs the fold.
 6. **New: fold F3.1-d** `title="Other splits that also work"` (~100 words, verbatim moves only). It is placed after `exm-search-raa`'s solution, before F3.1-c, and holds 01:344's last two sentences and 01:436's last sentence. Each moved passage is led by the bold name of its example (`**In @exm-search-postpone-or.**`, `**In @exm-search-raa.**`); the lead-ins add 6 words. Moving them is not a change (STYLE §12.0).
-7. **New: `## Four refinements`** (new subsection after "When nothing else works" and its folds, before "A search that fails"; ≤ 450 words with two Quick checks). [Technique: LB (find the goal in the premises; derive before opening a box; a clash partner already on a line); vD (the detour rule, stated without proof).]
-   - **Lead** (~45 words): "The method finds a derivation; these four refinements find a shorter one. Each fits into one step, and none changes what the method can find. Three come from the questions a searcher asks at every gap; the fourth is a habit to unlearn."
-   - **The three moves**, as a bold-lead-in list, one or two sentences each:
+7. **New: `## Four refinements`** (new subsection after "When nothing else works" and its folds, before "A search that fails"; ≈ 470 words with two Quick checks, itemised in the budget). [Technique: LB (find the goal in the premises; derive before opening a box; a clash partner already on a line); vD (the detour rule, stated without proof).]
+   - **Lead** (~25 words): "The method finds a derivation; these four refinements find a shorter one. Each fits into one step, and none changes what the method can find."
+   - **The three moves**, as a bold-lead-in list, one or two sentences each (~135 words):
      - "**Find the goal among the resources.** Before step 2, ask whether the current goal is already available; if so, cite it, or copy it into the current box by \( \rulename{R} \). Step 2 would open a box for a goal \( P \to Q \) that is already a premise, and write three lines where none is needed."
      - "**Derive what needs nothing new before opening a box.** \( \rulename{\wedge E} \) on a resource, and \( \rulename{{\to}E} \) or \( \rulename{{\leftrightarrow}E} \) when both of their lines stand, may be written at once, above the boxes the goal asks for: a line outside the boxes is available inside all of them, so it is written once instead of once per box." (\( \rulename{\vee E} \) is not such a step: it opens boxes.)
-     - "**Look first for a clash partner already on a line.** When the goal is \( \bot \), scan the resources for a negation \( \neg\chi \) whose \( \chi \) is cheap, or for \( \chi \) and \( \neg\chi \) both in reach, before manufacturing anything (step 4)."
-   - **`exm-search-free-lines`** `[Lines that need nothing new]` (~190 words of prose).
-     - Statement: "Find a derivation of \( P \wedge (P \to Q), \ \neg Q \vee R \vdash (S \to R) \wedge (T \to (Q \wedge R)) \)."
+     - "**Look first for a clash partner already on a line.** When the goal is \( \bot \), scan the resources for a negation \( \neg\chi \) whose \( \chi \) is cheap, or for \( \chi \) and \( \neg\chi \) both in reach, before manufacturing anything (step 4)." (Illustrated on the main line by `exm-inconsistency-search` in 3.2 and by 3.2 C1 (b), which cite this refinement by name; 3.1's own example illustrates the first two.)
+   - **`exm-search-free-lines`** `[Lines that need nothing new]` (~140 words of prose). **Rebuilt at S2 round 1** (option (b) of the finding): the S1 version split \( \neg Q \vee R \) by \( \rulename{\vee E} \) above the boxes, a move neither the method (step 3 ends both boxes in the current goal) nor the refinement (which excludes \( \rulename{\vee E} \)) allows. Now only \( \rulename{\wedge E} \) and \( \rulename{{\to}E} \) lines go above the boxes.
+     - Statement: "Find a derivation of \( P \wedge (P \to Q), \ Q \to R \vdash (S \to R) \wedge (T \to (Q \wedge R)) \)."
      - *Search*:
-       - The goal is a conjunction of two implications. Before step 2 opens their boxes, the resources give lines that need nothing new: \( P \) and \( P \to Q \) by \( \rulename{\wedge E} \), then \( Q \) by \( \rulename{{\to}E} \).
-       - Now the resource \( \neg Q \vee R \) is split by \( \rulename{\vee E} \) with the goal \( R \). In the case \( \neg Q \), the clash partner \( Q \) is already on a line, so \( \bot \) and then \( R \) by \( \rulename{\bot E} \). The case \( R \) is a one-line box.
+       - The goal is a conjunction of two implications, so step 2 will open a box on \( S \) and a box on \( T \). Before it does, the resources give lines that need nothing new: \( P \) and \( P \to Q \) by \( \rulename{\wedge E} \), then \( Q \) by \( \rulename{{\to}E} \), and then \( R \) by \( \rulename{{\to}E} \) on the second premise.
        - With \( Q \) and \( R \) outside every box, the two boxes are short. In the box of \( S \) the goal \( R \) is a resource, copied by \( \rulename{R} \). In the box of \( T \), \( \rulename{\wedge I} \) joins \( Q \) and \( R \).
      - **Snapshot S1** (`% schema (partial derivations: …)`):
-       - 1 \( P \wedge (P \to Q) \) and 2 \( \neg Q \vee R \), premises;
-       - 3 \( P \), ∧E 1; 4 \( P \to Q \), ∧E 1; 5 \( Q \), →E 4, 3;
+       - 1 \( P \wedge (P \to Q) \) and 2 \( Q \to R \), premises;
        - gap;
-       - 17 \( (S \to R) \wedge (T \to (Q \wedge R)) \), unjustified.
+       - 13 \( (S \to R) \wedge (T \to (Q \wedge R)) \), unjustified.
      - **Snapshot S2:**
-       - lines 1–5 as in S1;
-       - 6 | \( \neg Q \), asm; 7 | \( \bot \), ¬E 5, 6; 8 | \( R \), ⊥E 7;
-       - 9 | \( R \), asm (one-line box); 10 \( R \), ∨E 2, 6–8, 9–9;
-       - 11 | \( S \), asm `\purpose{\ii}`; gap; 12 | \( R \), unjustified;
-       - 13 \( S \to R \), →I 11–12;
-       - 14 | \( T \), asm `\purpose{\ii}`; gap; 15 | \( Q \wedge R \), unjustified;
-       - 16 \( T \to (Q \wedge R) \), →I 14–15;
-       - 17 ∧I 13, 16.
+       - lines 1–2 as in S1;
+       - 3 \( P \), ∧E 1; 4 \( P \to Q \), ∧E 1; 5 \( Q \), →E 4, 3; 6 \( R \), →E 2, 5;
+       - 7 | \( S \), asm `\purpose{\ii}`; gap; 8 | \( R \), unjustified;
+       - 9 \( S \to R \), →I 7–8;
+       - 10 | \( T \), asm `\purpose{\ii}`; gap; 11 | \( Q \wedge R \), unjustified;
+       - 12 \( T \to (Q \wedge R) \), →I 10–11;
+       - 13 ∧I 9, 12.
 
-       (Lines 11 and 14 carry `\purpose` because 12 and 15 are unjustified. Their boxes are closed by justified lines, but S4's `--purposes` run accepts the hand annotation either way.)
-     - **Finished derivation (17 lines):** S2 with 12 \( R \), R 10, and 15 \( Q \wedge R \), ∧I 5, 10.
-     - *Closing sentence* (the trim candidate): "Opened first, each box would have to repeat lines 3–10, and the derivation would have 24 lines instead of 17."
-   - **Quick check (new, ~40 words):** "In @exm-search-free-lines, which of the four refinements does line 12 use, and which does line 7 use?" *Solution:* Line 12 finds the goal \( R \) among the resources (line 10) and copies it into the box of \( S \). Line 7 finds the clash partner \( Q \) already on line 5.
-   - **No detours** (~120 words), a bold-lead-in paragraph:
+       (Lines 7 and 10 carry `\purpose` because 8 and 11 are unjustified. Their boxes are closed by justified lines, but S4's `--purposes` run accepts the hand annotation either way.)
+     - **Finished derivation (13 lines):** S2 with 8 \( R \), R 6, and 11 \( Q \wedge R \), ∧I 5, 6.
+     - *Closing sentence* (the first trim candidate): "Opened first, each box would have to repeat lines 3–6, and the derivation would have 16 lines instead of 13." (Count: box of \( S \): asm, \( P \), \( P \to Q \), \( Q \), \( R \) = 5 lines; box of \( T \): asm, \( P \), \( P \to Q \), \( Q \), \( R \), \( Q \wedge R \) = 6 lines; plus 2 premises, 2 →I lines and the ∧I line = 16.)
+   - **Quick check (new, ~40 words):** "In @exm-search-free-lines, which refinement does line 8 use, and which do lines 3–6 use?" *Solution:* Line 8 finds the goal \( R \) among the resources (line 6) and copies it into the box of \( S \). Lines 3–6 need nothing new and are written before any box opens, so both boxes can use them.
+   - **No detours** (~90 words on the main line), a bold-lead-in paragraph:
      - "**No detours.** Never build a line by an introduction rule and then, at once, take that line apart by the matching elimination. The line the pair produces was within reach without it."
+     - One sentence (S2 round 1): "This includes \( \rulename{\neg I} \) followed by \( \rulename{\neg E} \) on the negation it built." (Ruling: a ¬I line used as the **negation** premise of ¬E is a detour; used as the other premise, as in a manufactured clash, it is not.)
+     - One sentence: "A manufactured clash is not a detour: \( \rulename{\vee I} \) followed by \( \rulename{\neg E} \) against \( \neg(\varphi \vee \psi) \) uses the new line with a different connective."
+     - One sentence: "The book uses this as advice, not as a theorem: a detour is legal, and the line it makes was within reach without it." (No claim about length: if the introduced line is also cited elsewhere, it stays, and only the elimination line is replaced. 3.3 C2 (a) shows a case where cutting the detour costs a line.)
+   - **New: fold F3.1-f** `title="Why a detour's line was within reach"` (~100 words; right after the detour paragraph, before its Quick check). Moved off the main line at S2 round 1 for the budget. The fold test holds: the main line states the rule; A2 (i) and B4 (a)–(c) need only the rule, and B4 (d)'s stem says what is copied. Content, one sentence each:
      - After \( \rulename{\wedge I} \) joins lines \( i \) and \( j \), \( \rulename{\wedge E} \) on the new line gives back \( i \) or \( j \).
      - After \( \rulename{{\to}I} \) closes a box from \( \varphi \) to \( \psi \), \( \rulename{{\to}E} \) on the new implication and a line \( \varphi \) gives \( \psi \). The box's lines, copied with that line in place of the assumption, give \( \psi \) directly.
+     - After \( \rulename{\neg I} \) closes a box from \( \varphi \) to \( \bot \), \( \rulename{\neg E} \) on the new negation and a line \( \varphi \) gives \( \bot \); the box's lines, copied likewise, give \( \bot \) directly.
      - After \( \rulename{\vee I} \) builds \( \varphi \vee \psi \) from \( \varphi \), \( \rulename{\vee E} \) on it gives what its first case gives, which the first case's lines, copied with the line \( \varphi \) for the assumption, give directly.
-     - One sentence: "A manufactured clash is not a detour: \( \rulename{\vee I} \) followed by \( \rulename{\neg E} \) against \( \neg(\varphi \vee \psi) \) uses the new line with a different connective."
-     - One sentence: "The book uses this as advice, not as a theorem: a detour is legal, and the line it makes was within reach without it." (No claim about length: if the introduced line is also cited elsewhere, it stays, and only the elimination line is replaced.)
+     - Closing clause: every copied citation stays legal by the scope rule of @def-derivation, since the line put in place of the assumption stands above the copy.
    - **Quick check (new, ~40 words):** "Lines 2 and 3 are \( P \) and \( R \); line 4 is \( P \wedge R \), ∧I 2, 3; line 5 is \( R \), ∧E 4. Which refinement does this break, and what should line 5 cite instead?" *Solution:* No detours. Lines 4–5 build a conjunction and take it apart at once; line 5's statement is line 3, so cite line 3, or copy it by \( \rulename{R} \) where it must lie in the current box.
 8. **`## A search that fails`**: R3 item 9, executed: the table, the close, the Quick check, 01:464 kept, and 01:466's rewrite.
    - **New, one sentence** appended to R3's rewrite of 01:466 (~15 words): "Section 3.2 gives this question a sharper form, and the chapter ends on it."
    - R3 item 12's Looking-ahead box is **not** placed here: its content moves to 3.3 (§4.3, item 9). This follows layout §1.3: "3.3's Looking-ahead box carries the question 'how could we show something is *not* derivable?', and Chapter 4's index opens with it."
    - Ch04 01:3 ("Chapter 3 ended on a question …") and 07:3 ("Chapter 3 ended on a question it could not answer. Section 3.1 searched …") stay true.
 9. **`## A mathematical goal`**: R3 item 10, executed. Warning 01:490–492 kept.
+   - **New: fold F3.1-g** `title="The givens and the goal"` (~95 words, verbatim move only; S2 round 1, the S1 trim 4 taken in advance). R3's Givens/Goal table for `exm-skeleton-odd-product` moves, verbatim, into this fold, placed right after the example's solution. One main-line clause stays where the table stood (counted in the tally as part of the −95): "The givens and the goal are tabulated in the fold below." Moving it is not a change (STYLE §12.0). The fold test holds: no A or B item cites the table.
    - **New: fold F3.1-e** `title="Logic permits; it does not choose"` (~160 words; after the warning 01:490–492, before "The rules in one place"). [Technique: Co (Harman's remark that logic licenses but does not choose), told in fd1's own words; no name.] Content:
      - A derivation of \( \Gamma \vdash \varphi \) says that whoever accepts every member of \( \Gamma \) is committed to \( \varphi \). It does not say that \( \varphi \) should now be believed.
      - If \( \varphi \) is plainly false, say \( 0 = 1 \), the derivation is a reason to give up a member of \( \Gamma \), and it does not say which. A mathematician who derives \( 0 = 1 \) from the hypotheses of a lemma has learned that those hypotheses cannot hold together; Section 3.2 calls such a list inconsistent, and a proof by contradiction is built to reach exactly that.
@@ -463,9 +470,9 @@ No forward pointer remains on the main line (the Looking-ahead box moves to 3.3;
 - refinements (new);
 - detours (new).
 
-Five in ~4,990 words, about one per 1,000. Peirce's Quick check is in fold F3.1-c.
+Five in ~4,970 words, about one per 1,000. Peirce's Quick check is in fold F3.1-c.
 
-**Sidecars:** none new (every item is in letters); `exr-finding-derivations-a2.py` is not needed. **Ledger lines:** F3.1-e makes no mathematical claim beyond "0 = 1 is false". `exm-search-free-lines` has no facts. The detour paragraph's copying claims are argued inline, from `def-derivation`'s scope rule: lines above a box stay available after it.
+**Sidecars:** none new (every item is in letters); `exr-finding-derivations-a2.py` is not needed. **Ledger lines:** F3.1-e makes no mathematical claim beyond "0 = 1 is false". `exm-search-free-lines` has no facts. The detour's copying claims are argued in fold F3.1-f, from `def-derivation`'s scope rule: lines above a box stay available after it.
 
 ### 4.2 Section 3.2: Four Kinds of Task (`02-four-kinds-of-task.md`, new)
 
@@ -483,7 +490,7 @@ Five in ~4,990 words, about one per 1,000. Peirce's Quick check is in fold F3.1-
 - Looking ahead 55;
 - small links 125.
 
-Folds ≤ 350 (F3.2-a, the two proofs, ~270). One forward pointer, the Looking-ahead box (item 9). **Snapshots:** two each for the worked derivations of four or more lines, as listed. The exemption for `exm-equivalence-search`'s (⇒) direction is given in item 4.
+Folds ≤ 350 (F3.2-a, the two proofs, ~280). One forward pointer, the Looking-ahead box (item 9). **Snapshots:** two each for the worked derivations of four or more lines, as listed; no exemption (S2 round 1 withdrew the one S1 claimed for `exm-equivalence-search` (⇒)).
 
 **What the section teaches, in order.**
 
@@ -502,7 +509,7 @@ Folds ≤ 350 (F3.2-a, the two proofs, ~270). One forward pointer, the Looking-a
 
    Then two sentences: "Only the last task can end in 'no'. In the other three, a failed search leaves the question open, as Section 3.1's failed search did."
 
-   **Quick check (new, ~50 words):** "Which task is each? (i) \( \vdash P \vee \neg P \). (ii) \( P \wedge Q \dashv\vdash Q \wedge P \). (iii) Show that \( P, \ \neg P \vee Q, \ \neg Q \) cannot all be accepted together. (iv) Does \( P \to Q, \ Q \vdash P \) hold?" *Solution:* (i) a theorem; (ii) an equivalence; (iii) an inconsistency, the claim \( P, \neg P \vee Q, \neg Q \vdash \bot \); (iv) derive or break. It breaks, as affirming the consequent (Section 1.1).
+   **Quick check (new, ~50 words):** "Which task is each? (i) \( \vdash P \vee \neg P \). (ii) \( P \wedge Q \dashv\vdash Q \wedge P \). (iii) Show that \( P, \ \neg P \vee Q, \ \neg Q \) cannot all be accepted together. (iv) Does \( P \to Q, \ Q \vdash P \) hold?" *Solution:* (i) a theorem; (ii) an equivalence; (iii) an inconsistency, the claim \( P, \neg P \vee Q, \neg Q \vdash \bot \); (iv) derive or break. It breaks, as affirming the consequent (Section 1.3).
 3. **`## Theorems`** (~260 words). **`exm-theorem-search`** `[A statement that implies a contradiction]`.
    - Statement: "Find a derivation of \( \vdash (P \to (Q \wedge \neg Q)) \to \neg P \)."
    - Reading, one sentence before the solution: "In words: a statement that implies a contradiction is false. Every proof that begins 'suppose \( P \)' and ends 'which is impossible' has this shape."
@@ -519,7 +526,9 @@ Folds ≤ 350 (F3.2-a, the two proofs, ~270). One forward pointer, the Looking-a
    - Reading, one sentence: "This is how mathematics proves a disjunction: to show that \( ab = 0 \) implies \( a = 0 \) or \( b = 0 \), assume \( ab = 0 \) and \( a \ne 0 \), and show \( b = 0 \). The equivalence says that this changes nothing."
    - *(⇒)* Idea, one sentence: the goal is an implication, so a box on \( P \wedge \neg Q \); \( \rulename{\wedge E} \) splits it; the premise fires on \( P \); and \( \rulename{DS} \) removes the refuted side.
      - Finished (7 lines): 1 \( P \to (Q \vee R) \); 2 | \( P \wedge \neg Q \), asm; 3 | \( P \), ∧E 2; 4 | \( \neg Q \), ∧E 2; 5 | \( Q \vee R \), →E 1, 3; 6 | \( R \), DS 5, 4; 7 \( (P \wedge \neg Q) \to R \), →I 2–6.
-     - **Snapshot exemption:** every line after the box is forced by the resources, and the derivation is the first of a pair whose second is shown growing. This is the exemption class of `ch01-revision.md` §1 item 4 for a forced derivation beside a worked one. If S2 reads that list otherwise, add S1 (line 1, box 2, gap, 6 \( R \) unjustified, 7) and S2 (lines 3–5 written).
+     - **S1:** 1 \( P \to (Q \vee R) \); box 2 \( P \wedge \neg Q \), asm `\purpose{\ii}`; gap; 6 | \( R \), unjustified; 7 \( (P \wedge \neg Q) \to R \), →I 2–6.
+     - **S2:** 1; 2; 3 | \( P \), ∧E 2; 4 | \( \neg Q \), ∧E 2; 5 | \( Q \vee R \), →E 1, 3; gap; 6 | \( R \), unjustified; 7.
+     - (S2 round 1: `ch01-revision.md` §1 item 4's classes (i)–(vi) do not cover a 7-line derivation that comes first and differs in shape from its partner, so both snapshots are written, as STYLE §12.4 asks. Raw LaTeX, +0 words.)
    - *(⇐)*
      - The goal is an implication: a box on \( P \) with the goal \( Q \vee R \), a disjunction, postponed (Section 3.1, step 2).
      - The premise waits for \( P \wedge \neg Q \). \( P \) is in hand, \( \neg Q \) is not, and nothing clashes. That is step 5, \( \rulename{LEM} \) on \( Q \), the statement the premise waits for.
@@ -576,10 +585,11 @@ Folds ≤ 350 (F3.2-a, the two proofs, ~270). One forward pointer, the Looking-a
      **Quick check (new, ~30 words):** "Which integers between \( 1 \) and \( 10 \) meet conditions (1), (2) and (4) of @exm-inconsistency-search, and which condition does each break?" *Solution:* \( 3 \) and \( 9 \): odd, so (1) promises nothing; multiples of \( 3 \), so (2) holds; not multiples of \( 4 \). Each breaks (3).
    - **`exm-inconsistent-lists`** `[Three inconsistent lists, and a look-alike]` (~170 words). [Technique: Hu (gallery with a tempting non-instance), applied to the chapter's definition.] Table, columns *The list* | *The clash it reaches* | *The derivation of \( \bot \), in brief*:
      - \( (P \vee Q) \to R, \ P \wedge \neg R \) | \( R \), \( \neg R \) | \( P \) ∧E; \( P \vee Q \) ∨I; \( R \) →E; \( \neg R \) ∧E; \( \bot \) ¬E (7 lines)
-     - \( P \leftrightarrow \neg P \) | \( P \), \( \neg P \) | a box on \( P \): \( \neg P \) ↔E, \( \bot \) ¬E; \( \neg P \) ¬I; then \( P \) ↔E; \( \bot \) ¬E (7 lines)
+     - \( P \leftrightarrow \neg P \) | \( P \), \( \neg P \) | a box on \( P \): \( \neg P \) ↔E, \( \bot \) ¬E; \( \neg P \) ¬I; then \( P \) ↔E, and \( \neg P \) ↔E again from that \( P \); \( \bot \) ¬E (8 lines)
      - \( \neg(P \to Q), \ \neg P \) | \( P \to Q \), \( \neg(P \to Q) \) | \( P \to Q \) by VI from \( \neg P \) (@prp-vacuous-implication); \( \bot \) ¬E (4 lines)
 
      One sentence on the second row: "By @prp-derivable-iff-negation-inconsistent below, its inconsistency is the same fact as @lem-not-iff-own-negation of Section 2.4, \( \vdash \neg(P \leftrightarrow \neg P) \)." (A backward pointer to the label fixed by layout §1.4. If ch02-deepen does not deliver it, S3 drops this sentence.)
+     - **Row 2 is a recall, not a new item** (S2 round 1): the list \( P \leftrightarrow \neg P \) is the 2.4 lemma's, seen again as a list; it is kept because the gallery's point is that the chapter's earlier results are inconsistencies in disguise. Its derivation is written **detour-free** (§9, item 3): the 7-line version would apply ¬E to line 5's \( \neg P \), built by ¬I, which is the ¬I/¬E detour of 3.1's paragraph. Lines: 1 \( P \leftrightarrow \neg P \); 2 | \( P \), asm; 3 | \( \neg P \), ↔E 1, 2; 4 | \( \bot \), ¬E 2, 3; 5 \( \neg P \), ¬I 2–4; 6 \( P \), ↔E 1, 5; 7 \( \neg P \), ↔E 1, 6; 8 \( \bot \), ¬E 6, 7. Line 5 stays, being cited at line 6; only the elimination is replaced (the exception the detour paragraph allows). The table's third column gives the line count only.
 
      **Not an instance.** "\( P \to Q, \ P \to \neg Q \). The two members look opposed. But with \( P \) false (say \( P \): '\( 0 = 1 \)') both are true, whatever \( Q \) says, so the claim \( P \to Q, \ P \to \neg Q \vdash \bot \) breaks. What the list does derive is \( \neg P \): from \( P \) it would give \( Q \) and \( \neg Q \). This chapter does not call the list inconsistent, and it does not call it consistent either. Whether a break rules out every derivation of \( \bot \) is the question the chapter ends on (Section 3.3)."
    - **Not allowed** (after the gallery; ~140 words): warning `[Not allowed: claims about inconsistency]`, one line each, tagged:
@@ -614,10 +624,10 @@ Folds ≤ 350 (F3.2-a, the two proofs, ~270). One forward pointer, the Looking-a
      - *Proof of @prp-derivable-iff-negation-inconsistent.*
        - (b) (⇒): From \( \Gamma \vdash \varphi \), @lem-weakening-cut (a) gives \( \Gamma, \neg\varphi \vdash \varphi \). The one-line derivation of the premise \( \neg\varphi \) gives \( \Gamma, \neg\varphi \vdash \neg\varphi \). By @lem-weakening-cut (c) with \( \varphi, \neg\varphi \vdash \bot \), we get \( \Gamma, \neg\varphi \vdash \bot \).
        - (b) (⇐): Let \( D \) be a derivation of \( \bot \) with premises in \( \Gamma, \neg\varphi \).
-         - If \( D \)'s last line is a premise, it is \( \bot \) itself, a member of \( \Gamma \), and \( \Gamma \vdash \varphi \) by ⊥E.
-         - Otherwise, write as premises those premises of \( D \) that belong to \( \Gamma \). Open a box with the assumption \( \neg\varphi \). Inside it, copy the other lines of \( D \) in order, with their boxes, renumbering every citation, and letting every citation of the premise \( \neg\varphi \) cite the box's assumption instead. Close the box after the copy of \( D \)'s last line and write \( \varphi \) by RAA.
+         - If \( D \)'s last line is a premise that belongs to \( \Gamma \), then \( \bot \in \Gamma \), and \( \Gamma \vdash \varphi \) by ⊥E.
+         - Otherwise, write as premises those premises of \( D \) that belong to \( \Gamma \). Open a box with the assumption \( \neg\varphi \). Inside it, copy the lines of \( D \) that are not premises, in order, with their boxes, renumbering every citation, and letting every citation of the premise \( \neg\varphi \) cite the box's assumption instead. Close the box after the copy of \( D \)'s last line and write \( \varphi \) by RAA.
        - Every copied citation is legal. A cited premise of \( \Gamma \) lies above the box and in no box. The assumption is available throughout the box. And \( D \)'s own boxes sit inside the new box exactly as they sat in \( D \), so every line that was available keeps being available (the scope rule of @def-derivation). \( D \)'s last line lies in no box of \( D \), so its copy is a line of the new box itself, as RAA requires. If \( D \) never cites \( \neg\varphi \), the copy is still correct.
-       - (a) is the same with \( \varphi \) in place of \( \neg\varphi \), and ¬I in place of RAA. In (⇒), \( \Gamma, \varphi \vdash \varphi \) by its one-line derivation and \( \Gamma, \varphi \vdash \neg\varphi \) by weakening, and ¬E finishes.
+       - (a) is the same with \( \varphi \) in place of \( \neg\varphi \), and ¬I in place of RAA. If \( D \)'s last line is the premise \( \varphi \) itself (possible only when \( \varphi \) is \( \bot \)), nothing is copied: the box is its one assumption line, and ¬I closes it at once. In (⇒), \( \Gamma, \varphi \vdash \varphi \) by its one-line derivation and \( \Gamma, \varphi \vdash \neg\varphi \) by weakening, and ¬E finishes.
      - One closing sentence: "The copying is the same move as turning a premise into an assumption in Section 1.4, Exercise C4 (b), run backwards."
    - **Quick check (new, ~45 words):** "By @prp-derivable-iff-negation-inconsistent, which list must be shown inconsistent to prove \( \vdash \neg(P \wedge \neg P) \)? Show it." *Solution:* By (a), with \( \Gamma \) empty and \( \varphi = P \wedge \neg P \), the list is \( P \wedge \neg P \): 2 \( P \), ∧E 1; 3 \( \neg P \), ∧E 1; 4 \( \bot \), ¬E 2, 3.
 7. **`## One task in four costumes`** (~220 words and a table).
@@ -630,7 +640,7 @@ Folds ≤ 350 (F3.2-a, the two proofs, ~270). One forward pointer, the Looking-a
    - One sentence on equivalences: "\( \varphi \dashv\vdash \psi \) holds exactly when \( \vdash \varphi \leftrightarrow \psi \). Copy each of the two derivations into a box, as in the fold above, and close both by \( \rulename{{\leftrightarrow}I} \). Conversely, add the premise \( \varphi \) to a derivation of \( \varphi \leftrightarrow \psi \) and write \( \psi \) by \( \rulename{{\leftrightarrow}E} \), and likewise for \( \psi \)."
    - Closing (~50 words): "So the four tasks are one: is this list inconsistent? Each costume starts the search in a different place, which is why the task chooses the search. And each row has a second half, the last column: what to do when the list might instead be made true. That is the fourth task."
 8. **`## Derive or break`** (~640 words with the example and the figure). [Named move: *Try to break it first*. Technique: LPL, Si, En (verdict withheld); Sm (a forced failed attempt read as a plan).]
-   - **Lead** (~90 words): Section 1.5 introduced claims listed without a verdict ("Derive it or break it"). Here the format becomes a task with its own first move: **decide before you search**. Spend a few minutes trying to make the counterexample set true, starting where the conclusion is false (Section 1.1's "Where to look first"). Either some choice of statements works, and the claim breaks; or every attempt is forced into a clash. Then search for a derivation. The forced attempt is a plan for it: the statements the attempt had to make true are the assumptions of the derivation's boxes, and the clash it met is the derivation's \( \bot \).
+   - **Lead** (~90 words): Section 1.5 introduced claims listed without a verdict ("Derive it or break it"). Here the format becomes a task with its own first move: **decide before you search**. Spend a few minutes trying to make the counterexample set true, starting where the conclusion is false (Section 1.1's "Where to look first"). Either some choice of statements works, and the claim breaks; or every attempt is forced into a clash. Then search for a derivation. The forced attempt usually suggests a plan for it: the statements the attempt had to make true suggest the assumptions of the derivation's boxes, and the clash it met suggests the derivation's \( \bot \). (S2 round 1: heuristic wording; that a closed attempt always yields a derivation is the 4.8 Challenge's business, §6.)
    - **`exm-derive-or-break-search`** `[Two claims, one connective apart]`.
      - Statement: "Derive or break each claim: (a) \( P \to (Q \to R), \ P \to \neg R \vdash P \to \neg Q \); (b) \( P \to (Q \vee R), \ P \to \neg R \vdash P \to \neg Q \)."
      - *(a), trying to break it.* The conclusion is false only with \( P \) true and \( \neg Q \) false, that is, \( Q \) true. Then the first premise needs \( Q \to R \) true, so \( R \) true. The second needs \( \neg R \) true, so \( R \) false. Every choice is forced, and the forcing ends in a clash. So search.
@@ -639,13 +649,13 @@ Folds ≤ 350 (F3.2-a, the two proofs, ~270). One forward pointer, the Looking-a
        - **S2:** 1, 2; 3 | \( P \); 4 | \( Q \to R \), →E 1, 3; 5 | \( \neg R \), →E 2, 3; box 6 \( Q \), asm; gap; 8 | | \( \bot \), unjustified; 9 | \( \neg Q \), ¬I 6–8; 10.
        - **Finished (10 lines):** S2 with 7 | | \( R \), →E 4, 6, and 8 | | \( \bot \), ¬E 7, 5.
      - *(b), trying to break it.* The same start: \( P \) true, \( Q \) true. Now the first premise asks only that \( Q \vee R \) be true, and \( Q \) already makes it so. \( R \) is free, and the second premise asks for \( R \) false. Nothing clashes: with \( P \) and \( Q \) true and \( R \) false, every member of the counterexample set \( P \to (Q \vee R), \ P \to \neg R, \ \neg(P \to \neg Q) \) is true. With statements about a real number \( x \): \( P \): "\( x > 0 \)", \( Q \): "\( x > 1 \)", \( R \): "\( x > 3 \)", at \( x = 2 \). The claim breaks.
-     - Closing (~50 words): "The two claims differ in one connective. Trying to break each found its verdict, and for (a) it also found the derivation. The method of Section 3.1 would have found (a) without the attempt. On (b) it could only have stalled, and a stall is not a verdict."
+     - Closing (~50 words): "The two claims differ in one connective. Trying to break each found its verdict, and for (a) it also found the derivation. The method of Section 3.1 would have found (a) without the attempt. On (b) a search would only have stalled for as long as it ran, and a stall is not a verdict; the break is."
    - **Figure 3.2-F** (after the example; lead ~30 words: "The task as a chart. The loop at the bottom is honest: nothing in this chapter promises that it ends."). Template `flowchart`.
      - Nodes:
        - (s) `fc start` "a claim $\Gamma \vdash \varphi$,\\verdict withheld";
        - (t1) `fc test` "can the counterexample set\\be made true? (start where\\the conclusion is false)";
        - (e1) `fc start` "it breaks:\\give the statements";
-       - (b1) `fc step` "search for a derivation\\(Section 3.1): the forced\\clash is its plan";
+       - (b1) `fc step` "search for a derivation\\(Section 3.1): the forced\\clash suggests a plan";
        - (t2) `fc test` "has the search\\finished?";
        - (e2) `fc start` "derived".
      - Arrows:
@@ -655,9 +665,10 @@ Folds ≤ 350 (F3.2-a, the two proofs, ~270). One forward pointer, the Looking-a
        - b1→t2;
        - t2 –"yes"→ e2, to the right;
        - t2 –"stalled"→ back to t1, as a line on the left: `(t2.west) -- ++(-0.6,0) |- (t1.west)`.
-   - **Quick check (new, ~45 words):** "Change one symbol of the first premise of claim (b) in @exm-derive-or-break-search so that the claim can be derived, and derive it." *Solution:* Two answers.
+   - **Quick check (new, ~45 words):** "Change one symbol of the first premise of claim (b) in @exm-derive-or-break-search so that the claim can be derived, and derive it." *Solution:* For example (S2 round 1: "Two answers" was wrong, and the S1 answer \( \neg Q \) inserted a symbol and rested on DS's exercise form):
      - Replace \( \vee \) by \( \to \): that is claim (a), derived above.
-     - Or replace \( Q \) by \( \neg Q \): from \( P \), the premises give \( \neg Q \vee R \) and \( \neg R \), and \( \rulename{DS} \) (its other form, @exr-derived-rules-b1) gives \( \neg Q \). The lines: 3 | \( P \); 4 | \( \neg Q \vee R \), →E 1, 3; 5 | \( \neg R \), →E 2, 3; 6 | \( \neg Q \), DS 4, 5; 7 \( P \to \neg Q \), →I 3–6.
+     - Or replace \( \vee \) by \( \wedge \): from \( P \), the premises give \( Q \wedge R \) and \( \neg R \), which clash. The lines: 3 | \( P \), asm; 4 | \( Q \wedge R \), →E 1, 3; 5 | \( R \), ∧E 4; 6 | \( \neg R \), →E 2, 3; 7 | \( \bot \), ¬E 5, 6; 8 | \( \neg Q \), ⊥E 7; 9 \( P \to \neg Q \), →I 3–8.
+     - The solution ends: "\( \leftrightarrow \) for \( \vee \), or \( R \) for \( Q \), works too." (Each checked by truth table, §9 item 19.)
 9. **Looking ahead** (`::: {.remark}` `[Looking ahead]`, ~40 words, no `@ref`): "Chapter 4 calls a list whose members can all be made true at once *satisfiable*, and proves that the satisfiable lists are exactly the consistent ones."
 
 **Quick checks:**
@@ -695,12 +706,12 @@ Five in ~3,500 words, about one per 700.
   - *Derivations.*
     - (k) Derive \( \bot \) from \( P \to Q, \ Q \to R, \ P, \ \neg R \). — 5 \( Q \), →E 1, 3; 6 \( R \), →E 2, 5; 7 \( \bot \), ¬E 6, 4.
     - (l) Derive \( \bot \) from \( P \vee Q, \ \neg P, \ \neg Q \). — 4 | \( P \); 5 | \( \bot \), ¬E 4, 2; 6 | \( Q \); 7 | \( \bot \), ¬E 6, 3; 8 \( \bot \), ∨E 1, 4–5, 6–7.
-- **B1** `[B1: Three theorems]`. [Technique: LB, Le.] Stem: "Derive each theorem, and say which step of Section 3.1's method opens each box." (a) \( \vdash \neg(P \wedge \neg P) \wedge \neg\neg(P \vee \neg P) \). (b) \( \vdash (P \to (Q \to R)) \to ((P \wedge \neg R) \to \neg Q) \). (c) \( \vdash ((P \to Q) \to Q) \to ((Q \to P) \to P) \).
+- **B1** `[B1: Three theorems]`. [Technique: LB, Le.] Stem: "Derive each theorem, and say which step of Section 3.1's method opens each box." (a) \( \vdash \neg(P \wedge \neg P) \wedge \neg\neg(P \vee \neg P) \). (b) \( \vdash ((P \to Q) \wedge (P \vee Q)) \to Q \). (c) \( \vdash ((P \to Q) \to Q) \to ((Q \to P) \to P) \).
   - *Answer.*
     - (a) 1 | \( P \wedge \neg P \), asm; 2 | \( P \), ∧E 1; 3 | \( \neg P \), ∧E 1; 4 | \( \bot \), ¬E 2, 3; 5 \( \neg(P \wedge \neg P) \), ¬I 1–4; 6 | \( \neg(P \vee \neg P) \), asm; 7 | | \( P \), asm; 8 | | \( P \vee \neg P \), ∨I 7; 9 | | \( \bot \), ¬E 8, 6; 10 | \( \neg P \), ¬I 7–9; 11 | \( P \vee \neg P \), ∨I 10; 12 | \( \bot \), ¬E 11, 6; 13 \( \neg\neg(P \vee \neg P) \), ¬I 6–12; 14 ∧I 5, 13.
       - Boxes 1 and 6 come from step 2 (goals \( \neg\ldots \)). Box 7 comes from step 4: it manufactures \( \neg P \), so that \( \rulename{\vee I} \) can build the disjunction that clashes with line 6.
       - The solution adds one sentence: the second conjunct needed no classical rule, although \( P \vee \neg P \) itself does in this book's derivation (@prp-excluded-middle).
-    - (b) 1 | \( P \to (Q \to R) \); 2 | | \( P \wedge \neg R \); 3 | | \( P \), ∧E 2; 4 | | \( \neg R \), ∧E 2; 5 | | \( Q \to R \), →E 1, 3; 6 | | | \( Q \); 7 | | | \( R \), →E 5, 6; 8 | | | \( \bot \), ¬E 7, 4; 9 | | \( \neg Q \), ¬I 6–8; 10 | \( (P \wedge \neg R) \to \neg Q \), →I 2–9; 11 →I 1–10. Every box comes from step 2.
+    - (b) (Replaced at S2 round 1: the S1 item was `exm-derive-or-break-search` (a) curried.) 1 | \( (P \to Q) \wedge (P \vee Q) \), asm; 2 | \( P \to Q \), ∧E 1; 3 | \( P \vee Q \), ∧E 1; 4 | | \( P \), asm; 5 | | \( Q \), →E 2, 4; 6 | | \( Q \), asm; 7 | \( Q \), ∨E 3, 4–5, 6–6; 8 \( ((P \to Q) \wedge (P \vee Q)) \to Q \), →I 1–7. Box 1 comes from step 2; boxes 4 and 6 from step 3, the resource \( P \vee Q \) split by ∨E with both cases ending in the goal \( Q \) (the case \( Q \) a one-line box). Lines 2–3 need nothing new. Reading: "if \( P \) implies \( Q \), and \( P \) or \( Q \) holds, then \( Q \) holds".
     - (c) 1 | \( (P \to Q) \to Q \); 2 | | \( Q \to P \); 3 | | | \( \neg P \), asm; 4 | | | \( P \to Q \), VI 3; 5 | | | \( Q \), →E 1, 4; 6 | | | \( P \), →E 2, 5; 7 | | | \( \bot \), ¬E 6, 3; 8 | | \( P \), RAA 3–7; 9 | \( (Q \to P) \to P \), →I 2–8; 10 →I 1–9. Boxes 1 and 2 come from step 2, and box 3 from step 5: the goal \( P \) is a letter and the resources wait for \( P \to Q \).
   - Worked example type: `exm-theorem-search`. (None is a sequent of the text: checked against §9 item 15's list.)
 - **B2** `[B2: Two directions]` (scaffolded, STYLE §12.8). [Technique: LPL, Le.] Stem: "Show that \( (P \wedge Q) \to R \dashv\vdash (P \wedge \neg R) \to \neg Q \)."
@@ -718,31 +729,32 @@ Five in ~3,500 words, about one per 700.
   - The claims:
     - (a) \( \neg(P \wedge Q) \vdash \neg P \wedge \neg Q \)
     - (b) \( \neg(P \leftrightarrow Q), \ P \vdash \neg Q \)
-    - (c) \( P \to Q, \ \neg P \to Q \vdash Q \)
-    - (d) \( P \to Q, \ \neg P \to R \vdash Q \wedge R \)
+    - (c) \( P \to (Q \wedge R), \ \neg P \to R \vdash R \)
+    - (d) \( P \to (Q \wedge R), \ \neg P \to R \vdash Q \)
     - (e) \( (P \to Q) \to R, \ \neg R \vdash P \)
     - (f) \( (P \to Q) \to R, \ \neg R \vdash Q \)
     - (g) \( P \vee Q, \ P \vdash \neg Q \)
     - (h) \( P \vee Q, \ \neg(P \wedge Q), \ P \vdash \neg Q \)
-    - (i) \( \neg P \to P \vdash P \)
+    - (i) \( \neg P \to (P \wedge Q) \vdash P \)
+  - (S2 round 1: the S1 (c) and (i) reproduced textbook exercises; they are replaced by fd1's own claims of the same kinds, a LEM split on two implications and a self-refuting negated hypothesis, and (c)/(d) now share their premises.)
   - *Answer* (verdict first, then the derivation or the break; \( x \) is a real number):
     - (a) Breaks. \( P \): "\( x > 0 \)", \( Q \): "\( x > 2 \)", at \( x = 1 \): \( \neg(P \wedge Q) \) is true and \( \neg P \) is false.
     - (b) Derive. 3 | \( Q \), asm; 4 | | \( P \), asm; 5 | | \( Q \), R 3; 6 | | \( Q \), asm; 7 | | \( P \), R 2; 8 | \( P \leftrightarrow Q \), ↔I 4–5, 6–7; 9 | \( \bot \), ¬E 8, 1; 10 \( \neg Q \), ¬I 3–9.
-    - (c) Derive. 3 \( P \vee \neg P \), LEM; 4 | \( P \); 5 | \( Q \), →E 1, 4; 6 | \( \neg P \); 7 | \( Q \), →E 2, 6; 8 \( Q \), ∨E 3, 4–5, 6–7.
-    - (d) Breaks. \( P \): "\( x > 0 \)", \( Q \): "\( x > -1 \)", \( R \): "\( x < -5 \)", at \( x = 1 \): \( P \to Q \) is true, \( \neg P \to R \) is true (its hypothesis is false), and \( R \) is false, so \( Q \wedge R \) is false.
+    - (c) Derive. 3 \( P \vee \neg P \), LEM; 4 | \( P \); 5 | \( Q \wedge R \), →E 1, 4; 6 | \( R \), ∧E 5; 7 | \( \neg P \); 8 | \( R \), →E 2, 7; 9 \( R \), ∨E 3, 4–6, 7–8.
+    - (d) Breaks. \( P \): "\( x > 0 \)", \( Q \): "\( x > 5 \)", \( R \): "\( x < 1 \)", at \( x = -1 \): \( P \) is false, so \( P \to (Q \wedge R) \) is true; \( \neg P \) and \( R \) are true, so \( \neg P \to R \) is true; and \( Q \) is false.
     - (e) Derive. 3 \( \neg(P \to Q) \), MT 1, 2; 4 | \( \neg P \), asm; 5 | \( P \to Q \), VI 4; 6 | \( \bot \), ¬E 5, 3; 7 \( P \), RAA 4–6.
     - (f) Breaks. \( P \): "\( x > 0 \)", \( Q \): "\( x > 2 \)", \( R \): "\( x > 3 \)", at \( x = 1 \): \( P \to Q \) is false, so \( (P \to Q) \to R \) is true; \( \neg R \) is true; \( Q \) is false.
     - (g) Breaks (affirming a disjunct, Section 1.6). \( P \): "\( x > 1 \)", \( Q \): "\( x > 2 \)", at \( x = 3 \).
     - (h) Derive. 4 | \( Q \); 5 | \( P \wedge Q \), ∧I 3, 4; 6 | \( \bot \), ¬E 5, 2; 7 \( \neg Q \), ¬I 4–6. The premise \( P \vee Q \) is not needed.
-    - (i) Derive. 2 | \( \neg P \), asm; 3 | \( P \), →E 1, 2; 4 | \( \bot \), ¬E 3, 2; 5 \( P \), RAA 2–4.
-  - Closing sentence: (c)/(d) and (e)/(f) are look-alike pairs with the same premises. (h) is (g) repaired by "not both". (a) is a De Morgan look-alike with the wrong connective inside.
+    - (i) Derive. 2 | \( \neg P \), asm; 3 | \( P \wedge Q \), →E 1, 2; 4 | \( P \), ∧E 3; 5 | \( \bot \), ¬E 4, 2; 6 \( P \), RAA 2–5. (Step 5: the goal \( P \) is a letter and the premise waits for \( \neg P \).)
+  - Closing sentence: (c)/(d) and (e)/(f) are look-alike pairs: each pair has the same premises and differs in the conclusion. (h) is (g) repaired by "not both". (a) is a De Morgan look-alike with the wrong connective inside.
   - **Used later:** Section 4.6 recalls the four breaking claims (a), (d), (f), (g) by label, and Section 4.7's retroactive paragraph certifies them (§6).
 - **B4** `[B4: Derive ⊥, or make every member true]`. Stem: "For each list, either derive \( \bot \) from it, or give statements that make every member true at once." (a) \( P \to Q, \ Q \to \neg P, \ P \). (b) \( P \vee Q, \ P \to \neg Q, \ Q \to \neg P \). (c) \( \neg(P \to Q), \ Q \vee \neg P \). (d) \( P \to (Q \wedge \neg Q) \). (e) \( \neg(P \vee Q), \ P \vee (Q \wedge R) \). (f) \( \neg(P \wedge Q), \ \neg(P \wedge \neg Q), \ \neg(\neg P \wedge Q) \).
   - *Answer:*
     - (a) Derive. 4 \( Q \), →E 1, 3; 5 \( \neg P \), →E 2, 4; 6 \( \bot \), ¬E 3, 5.
     - (b) True at once. \( P \): "\( x > 0 \)", \( Q \): "\( x < 0 \)", at \( x = 1 \): \( P \vee Q \) is true, \( P \to \neg Q \) is true, and \( Q \to \neg P \) is true since \( Q \) is false.
     - (c) Derive. 3 | \( Q \); 4 | | \( P \); 5 | | \( Q \), R 3; 6 | \( P \to Q \), →I 4–5; 7 | \( \bot \), ¬E 6, 1; 8 | \( \neg P \); 9 | \( P \to Q \), VI 8; 10 | \( \bot \), ¬E 9, 1; 11 \( \bot \), ∨E 2, 3–7, 8–10.
-    - (d) True at once, with \( P \) false (\( P \): "\( 0 = 1 \)", any \( Q \)). A member that mentions a contradiction does not make a list inconsistent.
+    - (d) True at once, with \( P \) false (\( P \): "\( 0 = 1 \)", any \( Q \)). A member that mentions a contradiction is not itself a clash: with \( P \) false every member is true, so the claim that the list derives \( \bot \) breaks.
     - (e) Derive. 3 | \( P \); 4 | \( P \vee Q \), ∨I 3; 5 | \( \bot \), ¬E 4, 1; 6 | \( Q \wedge R \); 7 | \( Q \), ∧E 6; 8 | \( P \vee Q \), ∨I 7; 9 | \( \bot \), ¬E 8, 1; 10 \( \bot \), ∨E 2, 3–5, 6–9.
     - (f) True at once, with \( P \) and \( Q \) both false (\( P \): "\( 1 > 2 \)", \( Q \): "\( 2 > 3 \)"). Adding the fourth member \( \neg(\neg P \wedge \neg Q) \) would give a list from which \( \bot \) can be derived: the four exclude every way for \( P \) and \( Q \) to be. The solution gives the 4-member derivation in one sentence: LEM on \( P \) and on \( Q \), each of the four cases clashing with one member.
   - Last sentence of the solution, a plain pointer: "Section 4.7 shows that a list made true at once, as in (b), (d), (f), is consistent."
@@ -811,7 +823,7 @@ Folds: none planned (budget ≤ 150 in reserve). One forward pointer, the Lookin
    - The method, a numbered list (~160 words):
      1. *Find the conclusion.* Words such as *so*, *hence*, *therefore*, *thus*, *it follows that* introduce it.
      2. *Find the stated premises.* Words such as *since*, *because*, *for*, *given that* introduce them. A supposition ("suppose", "let \( n \) be …") is a premise, or the assumption of a box.
-     3. *Name the unstated facts.* Wherever a step does not follow by a rule from the lines before it, write the fact that would make it follow, as an implication, and check that the fact is true. Supply the weakest fact that closes the gap (Section 1.3, Exercise B5): a stronger one may prove more than the paragraph claims, or be false.
+     3. *Name the unstated facts.* Wherever a step does not follow by a rule from the lines before it, write the fact that would make it follow, as an implication, and check that the fact is true. Supply the weakest fact that closes the gap: a stronger one may prove more than the paragraph claims, or be false. (Compare Section 1.3, Exercise B5 (d), where a missing implication was written and checked. The advice to choose the weakest such fact is new here; S2 round 1 dropped the S1 attribution.)
      4. *Translate on a key*, with Section 1.1's phrase book.
      5. *Derive the sequent, or break it.*
    - Lead-out sentence: "Steps 1–4 are reading. Step 5 is the rest of this book."
@@ -865,7 +877,7 @@ Folds: none planned (budget ≤ 150 in reserve). One forward pointer, the Lookin
      - Aftermath (~50 words): "The proof says lines 2 and 5–9. It is silent on lines 3–4, taking the conjunction apart, and on line 10, since closing the outer box is the claim itself. Its 'Suppose' is line 2's 'asm, for →I', and its 'If \( n \) were' is line 5's 'asm, for ¬I'. The proof hides the fact F3 in a clause; the derivation lists it."
    - **Quick check (new, ~45 words):** "If the claim in @exm-two-columns were 'if \( n \) is even and prime, then \( n \) is at most \( 10 \)', which fact would replace F3, and what would happen to the box of line 5?" *Solution:* F1 replaces F3. The box of line 5 disappears: the goal \( \neg G \) is F1's conclusion, so after ∧E and ∧I give \( P \wedge E \), one →E line reaches it.
 6. **`## A library of standard sequents`** (heading id `a-library-of-standard-sequents`; ~120 words of lead and a table of ~420 words). [Technique: Le, LB (a library cited by name), regrouped by fd1's moves; Critic small correction 7.]
-   - **Lead** (~120 words): "Sections 1.6, 2.3–2.5 and 3.2 proved sequents that searches keep needing. Here they are grouped by what they are for: a searcher with a resource or a goal of a given shape looks up its row. Each row is a derived rule (@def-derived-rule). It is applied to **whole** available lines, never to a part of a line, and it is cited by the name in its middle column. 'The rules in one place' in Section 3.1 lists the same rules by the chapter that proved them; this page lists them by use. The last group is different: it holds facts about derivations, which change the task rather than add a line."
+   - **Lead** (~120 words): "Chapters 1 and 2 and Section 3.2 proved sequents that searches keep needing. Here they are grouped by what they are for: a searcher with a resource or a goal of a given shape looks up its row. Each row is a derived rule (@def-derived-rule). It is applied to **whole** available lines, never to a part of a line, and it is cited by the name in its middle column. 'The rules in one place' in Section 3.1 lists the same rules by the chapter that proved them; this page lists them by use. The last group is different: it holds facts about derivations, which change the task rather than add a line."
    - **The table** (columns *Sequent* | *In a justification* | *Proved in*; each group a bold row):
      - **To use an implication**
        - \( P \to Q, \ \neg Q \vdash \neg P \) | \( \rulename{MT} \) | @prp-modus-tollens
@@ -1033,18 +1045,20 @@ Four in ~2,300 words, about one per 600.
     - A derivation that splits \( E \vee T \) first and opens a ¬I box in each case earns full marks for (c).
 - **C2** `[C2: Challenge: A statement that promises anything]`. [Technique: Co (Curry's paradox in a natural-deduction system), in fd1's own dress.] Stem: "(a) Derive \( C \leftrightarrow (C \to Q) \vdash Q \). (b) Let \( Q \) be '\( 0 = 1 \)'. What does (a) say about a statement \( C \) that is equivalent to 'if \( C \), then \( 0 = 1 \)'? (c) Which rules does your derivation use? Compare @lem-not-iff-own-negation."
   - *Answer.*
-    - (a) 2 | \( C \), asm; 3 | \( C \to Q \), ↔E 1, 2; 4 | \( Q \), →E 3, 2; 5 \( C \to Q \), →I 2–4; 6 \( C \), ↔E 1, 5; 7 \( Q \), →E 5, 6.
-    - (b) Read as an argument, the derivation proves \( 0 = 1 \) from the condition on \( C \). So no statement can meet the condition. In this chapter's words, the list \( C \leftrightarrow (C \to Q), \ \neg Q \) is inconsistent: add 8 \( \bot \), ¬E 7, \( \neg Q \).
+    - (a) (Detour-free, S2 round 1.) 2 | \( C \), asm; 3 | \( C \to Q \), ↔E 1, 2; 4 | \( Q \), →E 3, 2; 5 \( C \to Q \), →I 2–4; 6 \( C \), ↔E 1, 5; 7 \( C \to Q \), ↔E 1, 6; 8 \( Q \), →E 7, 6.
+      - The solution adds two sentences: "The shorter ending 7 \( Q \), →E 5, 6 is a detour: line 5 was built by →I and is taken apart at once. Cutting it costs a line here, because line 5 is cited again at line 6, so it stays; this is why Section 3.1 calls the rule advice, not a theorem."
+    - (b) Read as an argument, the derivation proves \( 0 = 1 \) from the condition on \( C \). So no statement can meet the condition. In this chapter's words, the list \( C \leftrightarrow (C \to Q), \ \neg Q \) is inconsistent: add 9 \( \bot \), ¬E 8, \( \neg Q \).
     - (c) Only ↔E, →I and →E: no rule for \( \neg \) or \( \bot \), and no RAA. @lem-not-iff-own-negation shows that no statement is equivalent to its own negation; this shows more, for "if \( C \), then \( Q \)" with any \( Q \), and without "not". The trouble is self-reference, not negation. The solution names the item: "This is known as Curry's paradox, after the logician whose name is also on the law @prp-curry." Plain pointer: "Section 5.6 meets the same shape with 'for every', in the barber and Russell's theorem."
   - **Marking scheme.** (10 points)
-    - 4: (a), the box on \( C \) using the premise twice inside it, and \( C \) recovered outside by ↔E.
+    - 4: (a), the box on \( C \) (lines 2–4, with the assumption \( C \) cited twice), \( C \) recovered outside it by ↔E (line 6), and \( Q \) reached outside every box. The 7-line ending →E 5, 6 earns full marks; the detour remark is not required.
     - 3: (b), the conclusion that no statement meets the condition, with the inconsistency.
     - 3: (c), the rules named, and the point that no negation rule is used.
     - Fatal error: \( Q \) obtained inside the box and carried out of it.
 - **R1, R2**: `exr-finding-derivations-r1`, `-r2`, moved verbatim from 01:1145–1199 (labels and prefix kept; layout §1.4).
 - **R3**: `exr-finding-derivations-r3`, moved from 01:1201–1235. Its solution's last paragraph combines R3's change (no `@ref`) with layout G10.
   - Was: "The converse is not derivable, but a search can only stall, not show it. … Chapter 4 proves that such a row rules out every derivation (@cor-refuting-row): the chapter's open question, in a new place."
-  - Becomes: "The converse breaks, so a search for it can only stall. With \( P \) and \( R \) false (and \( Q \) either way), the premise \( P \to (Q \to R) \) is true because \( P \) is false, while \( P \to Q \) is true and \( R \) is false, so the conclusion is false. Chapter 4 proves that such a choice rules out every derivation: the chapter's open question, in a new place."
+  - Becomes (S2 round 1, G10): "The converse breaks: with \( P \) and \( R \) false (and \( Q \) either way), the premise \( P \to (Q \to R) \) is true because \( P \) is false, while \( P \to Q \) is true and \( R \) is false, so the conclusion is false. Chapter 4 proves that such a choice rules out every derivation, so that a search for it can only stall: the chapter's open question, in a new place." (The stall is now the consequence of Chapter 4's theorem, stated inside the plain pointer, not an inference made in Chapter 3.)
+  - **Stem, changed** (S2 round 1): the second question "And is its converse, \( P \to (Q \to R) \vdash (P \to Q) \to R \)?" becomes "Derive or break its converse, \( P \to (Q \to R) \vdash (P \to Q) \to R \)." As worded, the stem asked whether the converse is derivable, which Chapter 3 cannot answer "no" to; the new stem asks for what the solution gives. R3's content changes, so it re-enters the ledger (it was already going stale).
 - **R4** (new) `exr-from-argument-to-derivation-r4` `[R4]` (dialogue extraction). [Technique: Hu (dialogue extraction).] Stem (the problem never names its source, STYLE §11.5):
   - The dialogue:
     > **Ana.** Let \( x \) be a real number with \( x^2 < x \). Then \( x \) is positive.
@@ -1080,11 +1094,11 @@ Four in ~2,300 words, about one per 600.
 
 | § | Main line now (before Exercises) | Main-line budget | Expected | Folds now | Fold budget |
 |---|---|---|---|---|---|
-| index | placeholder (~60) | ≤ 1,000 | ~960 | — | — |
-| 3.1 | 4,652 | ≤ 5,000 | ~4,990 | 0 | ≤ 850 (expected ~760) |
-| 3.2 | — (new) | ≤ 4,600 | ~3,500 | — | ≤ 350 (expected ~270) |
+| index | placeholder (~60) | ≤ 1,000 | ~975 | — | — |
+| 3.1 | 4,652 | ≤ 5,000 | ~4,970 | 0 | ≤ 975 (expected ~955) |
+| 3.2 | — (new) | ≤ 4,600 | ~3,500 | — | ≤ 350 (expected ~280) |
 | 3.3 | — (new) | ≤ 3,400 | ~2,300 | — | ≤ 150 (none planned) |
-| sections | 4,652 | ≤ 13,000 (layout §3) | ~10,790 | 0 | ≤ 1,350 (expected ~1,030) |
+| sections | 4,652 | ≤ 13,000 (layout §3) | ~10,770 | 0 | ≤ 1,475 (expected ~1,235) |
 
 Every section file stays at or under 5,000 main-line words (layout §1.3 caps). The whole-file advisory count of `check_structure.py`, exercises included, will exceed 5,000 in 3.1 and 3.2. It is advisory.
 
@@ -1102,22 +1116,22 @@ The chapter's exit checks are 3.1 C3, 3.2 C1 and 3.3 C1.
 
 **Time** (B1 formula: 15 min per 400 main-line words; A1 25 min; a drill bank one exercise per four parts at 30 min; one B 30 min and one non-Challenge C 40 min per section; R 40 min; index pages not counted, as in layout §3).
 - **Core track:**
-  - reading ~10,790 words ≈ 6.7 h;
+  - reading ~10,770 words ≈ 6.7 h (6.73);
   - A1 3 × 25 min = 1.25 h;
   - A2 6 × 30 min = 3 h;
   - one B per section, 3 × 30 min = 1.5 h;
   - one non-Challenge C per section, the three exit checks, 3 × 40 min = 2 h.
 
-  Total **≈ 14.5 h**. Rounded to the nearest 5 hours (STYLE §2): **"About 15 hours on the core track."** Layout §3's 16 h assumed full caps (13,000 words); the sections come in under them.
+  Total **≈ 14.5 h** (6.73 + 1.25 + 3 + 1.5 + 2 = 14.48). Rounded to the nearest 5 hours (STYLE §2): **"About 15 hours on the core track."** Layout §3's 16 h assumed full caps (13,000 words); the sections come in under them.
 - **Full track:**
-  - reading ~10,790 + ~1,030 folded ≈ 11,820 words ≈ 7.4 h;
+  - reading ~10,770 + ~1,235 folded ≈ 12,005 words ≈ 7.5 h (7.50);
   - A1 1.25 h;
   - A2 3 h;
   - B: 11 ordinary + 4 for the battery = 15 × 30 min = 7.5 h;
   - C 8 × 40 min ≈ 5.3 h;
   - R 4 × 40 min ≈ 2.7 h.
 
-  Total **≈ 27.1 h** (layout: 27 h): **"about 25 hours for everything."**
+  Total **≈ 27.3 h** (7.50 + 1.25 + 3 + 7.5 + 5.33 + 2.67 = 27.25; layout: 27 h): **"about 25 hours for everything."** §0 states the same figures (S2 round 1).
 - The drafter of `index.md` recomputes both from the delivered text (`check_structure.py --words`) and the delivered exercise counts, by the same rule, and does not shade either down (STYLE §11.9). If the delivered core reaches 17.5 h, the line reads "About 20 hours".
 
 ---
@@ -1136,12 +1150,12 @@ Every forward pointer in Chapter 3 after this plan. Each section has at most one
 | 3.2 C2 solution | "Section 4.10 (optional) adds statements to a consistent list one at a time, in exactly this way." | — | 4.10 `lem-lindenbaum` |
 | 3.3 Looking ahead | "… Chapter 4 gives each statement a truth value and proves that the rules never lead from true premises to a false conclusion. Then one choice of truth values … proves that no derivation exists." | 3.1's box in R3 (item 12); before D2, 2.6's closing paragraph | 4.7 `thm-soundness`, `cor-refuting-row`; ch04 index:3, 01:3, 07:3, 07:278 |
 | 3.1 C2 (b) solution | "Chapter 4 turns such choices into proofs" | "Chapter 4 turns such rows into proofs, @cor-refuting-row" | 4.7 `cor-refuting-row` |
-| 3.3 R3 solution (moved) | "Chapter 4 proves that such a choice rules out every derivation" | "… such a row … (@cor-refuting-row)" | 4.7 `cor-refuting-row` |
+| 3.3 R3 solution (moved) | "Chapter 4 proves that such a choice rules out every derivation, so that a search for it can only stall" | "… such a row … (@cor-refuting-row)" | 4.7 `cor-refuting-row` |
 | 3.3 C2 solution | "Section 5.6 meets the same shape with 'for every', in the barber and Russell's theorem." | — (**new**) | 5.6 `thm-russell` |
 
 **Backward pointers** (no promise; each to a delivered or planned label):
 - Section 1.1 (`def-counterexample-set`; "Where to look first"; the phrase book; B5's key);
-- Section 1.3 B5 (weakest premise);
+- Section 1.3 B5 (d) (a missing implication written and checked; compared, not attributed);
 - Section 1.4 C4 (b) (copying);
 - Section 1.5 ("Derive it or break it");
 - Section 1.6 (affirming a disjunct; `exm-constructive-dilemma`; the chart 07:936);
@@ -1177,7 +1191,7 @@ If ch02-deepen does not deliver `lem-weakening-cut` in 2.3, the proofs of F3.2-a
 - 8.7 may cite 3.2 B1 (a)'s RAA-free derivation of \( \neg\neg(P \vee \neg P) \).
 - 4.7's G9 "test the subgoal" looks back to 3.1's refinements and the failed search.
 - 4.5 pairs `def-satisfiable` with `def-inconsistent-set` in a box (layout §1.3 row 4.5).
-- 4.8's Challenge "closed tree ⇒ Fitch derivation" may recall 3.2's "a forced failed attempt is a derivation read backwards" as the informal idea it makes exact.
+- 4.8's Challenge "closed tree ⇒ Fitch derivation" may recall 3.2's heuristic "a forced failed attempt is usually a derivation read backwards" as the informal idea it makes exact. Chapter 3 states it only as a heuristic.
 
 ---
 
@@ -1197,7 +1211,7 @@ If ch02-deepen does not deliver `lem-weakening-cut` in 2.3, the proofs of F3.2-a
 
 - Everything that `ch02-revision.md` §7 lists for 2.6 (now 3.1): the faded triple (`exm-search-distribute`, B2, C1), the "What the method did" debriefs, the failed search's honest "a search that fails proves nothing", the schemas and the derived-rules table, the exit check (C3) with its marking scheme, the hint ladders.
 - Every passage of `01-finding-derivations.md` not named in §4.1 or in R3 §4.6.
-- The statements and proofs of all 17 labels of §3.1, except the solution wording of C2 (b) and R3 named there.
+- The statements and proofs of all 17 labels of §3.1, except the solution wording of C2 (b), and R3's solution and stem, named there.
 - The R items' content (R1, R2 verbatim).
 - `exr-finding-derivations-b1` (frozen) is untouched, including its parenthetical "(That no derivation of \( P \) from the premise avoids \( \rulename{RAA} \) is true, but we do not prove it.)". S2 is asked to rule on it under G10 (§9, item 5).
 
@@ -1213,15 +1227,19 @@ If ch02-deepen does not deliver `lem-weakening-cut` in 2.3, the proofs of F3.2-a
    - A2 (g), (i);
    - B4's "true at once" verdicts;
    - C2 (c);
-   - 3.1 C2 (b) and R3 as reworded.
+   - 3.1 C2 (b) and R3 as reworded (solution and stem);
+   - `exm-derive-or-break-search`'s closing sentence ("a search would only have stalled for as long as it ran"; added at S2 round 1);
+   - B4 (d)'s "is not itself a clash … breaks" (reworded at S2 round 1);
+   - the Named move "Try to break it first" and 3.2 item 8's lead, now heuristic ("usually", "suggests").
+   Every sentence that draws "no derivation" or "every search stalls" from a break, rather than citing Chapter 4 for it, is a violation.
 2. **No truth tables, rows, ⊨, "valid", "satisfiable"** on the main line of Chapter 3 (except 3.2's box), and **no TAUT** anywhere. Every derived rule cited (DS, MT, VI, DM, ¬¬I, ¬¬E, LEM, CP) is proved earlier. No step replaces a part of a line.
-3. **No detours** in any derivation of Chapter 3, old or new: check every typeset derivation, the delivered 3.1 ones included, against the detour paragraph. A manufactured clash (∨I, then ¬E) is not a detour.
+3. **No detours** in any derivation of Chapter 3, old or new: check every typeset derivation, the delivered 3.1 ones included, against the detour paragraph. A manufactured clash (∨I, then ¬E) is not a detour. **¬I followed by ¬E on the negation it built counts** (ruling of S2 round 1; the paragraph now says so); a ¬I or →I line used as the non-negation premise of ¬E does not (3.2 B4 (c), line 7). Gallery row 2 (8 lines) and 3.3 C2 (a) (8 lines) are written detour-free; C2's solution shows the 7-line detour version as a remark only, as an instance of "advice, not a theorem". The S1 Curry and gallery derivations each contained one such detour; S2 should re-check every other derivation of §4 for the ¬I/¬E pattern.
 
 **Changed wording of existing blocks:**
 
 4. 3.1 C2 (b): "neither side follows from no premises" and "Chapter 4 turns such choices into proofs" keep the solution's claim, which says only that the **method** needs step 5. Ch04 08:13 and 08:510 still describe the 13-line derivation correctly.
 5. 3.1 B1 (frozen): S2 rules whether its parenthetical on RAA-free derivations is compatible with G10. The claim concerns derivations without RAA, not ⊢. If S2 rules it must change, the minimal fix appends "(Section 4.7 proves a claim of this kind for \( \neg\neg P \vdash P \).)", and ch06 02 and ch07 02, which cite B1, are re-read.
-6. 3.3 R3's reworded paragraph. "The converse breaks": check that \( P \), \( R \) false makes \( P \to (Q \to R) \) true and \( (P \to Q) \to R \) false, for either value of \( Q \). It does: \( P \to Q \) is true when \( P \) is false.
+6. 3.3 R3's reworded paragraph and stem. The stem's second question is now "Derive or break its converse"; the solution's "so that a search for it can only stall" sits inside the Chapter 4 pointer. "The converse breaks": check that \( P \), \( R \) false makes \( P \to (Q \to R) \) true and \( (P \to Q) \to R \) false, for either value of \( Q \). It does: \( P \to Q \) is true when \( P \) is false.
 7. R3's items, re-run on the delivered 3.1: its S2a items 30–38 and 44. Also: the moved Peirce passage in fold F3.1-c is verbatim from R3 item 8, and the main line keeps one sentence pointing to it. The moved sentences of F3.1-d are verbatim. 01:466 plus its new sentence has no forward chapter in it.
 
 **New main-line claims and examples:**
@@ -1230,18 +1248,19 @@ If ch02-deepen does not deliver `lem-weakening-cut` in 2.3, the proofs of F3.2-a
    - (i) the "three lines where none is needed" example (a goal \( P \to Q \) that is a premise: box, →E, →I, against citing it);
    - (ii) lines outside the boxes are available inside them (scope rule);
    - (iii) the clash-partner advice;
-   - `exm-search-free-lines`: the 17-line derivation and its two snapshots; "24 lines" for the boxes-first version (box of \( S \): 9 lines, box of \( T \): 10 lines, plus 2 premises, 2 →I lines and the ∧I line);
-   - its Quick check (line 12 finds the goal; line 7 the clash partner);
-   - the detour paragraph's three copying claims (∧: the line is \( i \) or \( j \); →: the box copied with line \( \varphi \) for its assumption gives \( \psi \), and every copied citation stays legal; ∨: the first case copied likewise), and that a manufactured clash is not a detour;
+   - `exm-search-free-lines` (rebuilt at S2 round 1, premises \( P \wedge (P \to Q), \ Q \to R \)): only ∧E and →E lines above the boxes, no ∨E; the 13-line derivation (passes `check_fitch.py`, checked while revising) and its two snapshots; "16 lines" for the boxes-first version (box of \( S \): 5 lines, box of \( T \): 6 lines, plus 2 premises, 2 →I lines and the ∧I line);
+   - its Quick check (line 8 finds the goal among the resources; lines 3–6 need nothing new);
+   - fold F3.1-f's four copying claims (∧: the line is \( i \) or \( j \); →: the box copied with line \( \varphi \) for its assumption gives \( \psi \); ¬: likewise gives \( \bot \); ∨: the first case copied likewise; every copied citation stays legal), the main line's ¬I/¬E sentence, and that a manufactured clash is not a detour;
+   - the fold test for F3.1-f and F3.1-g (no A or B item needs either);
    - the detour Quick check.
-9. 3.1 Figure 3.1-F: each test and action matches the algorithm's steps 2–5 and R3's step-2 wording (∨ postponed: "no" at t1); following it writes no illegal line; the terminal node says "try to break the claim", not "not derivable".
+9. 3.1 Figure 3.1-F: each test and action matches the algorithm's steps 2–5 and R3's step-2 wording (∨ postponed: "no" at t1); following it writes no illegal line; the terminal node says "try to break the claim", not "not derivable"; with t2's "not yet used", following the chart on \( P \to Q \vdash Q \to P \) reaches e4, as the failed search of "A search that fails" does. Expected trace: box on \( Q \), goal \( P \); t2 tries \( P \to Q \), whose antecedent is the goal itself; t4 opens RAA on \( \neg P \); inside, \( \neg P \) waits for \( P \), the goal already being sought, so nothing is new. If S2 finds that t2 or t4 can still fire again on a goal already being sought, the drafter adds three words to t4 ("still untried **for this gap**") and one clause to the lead ("a goal already being sought is not new"), so that the chart terminates.
 10. 3.1 fold F3.1-e: no claim beyond "a derivation commits whoever accepts \( \Gamma \) to \( \varphi \)", and "the rules permit more lines than a search writes".
 11. 3.2 `exm-theorem-search`: the 8-line derivation; the snapshots; the aftermath's "a theorem is a derived rule with nothing above the line" (consistent with `def-derived-rule` for \( n = 0 \), as \( \rulename{LEM} \) is used).
-12. 3.2 `exm-equivalence-search`: both derivations (7 and 11 lines); the reading (\( ab = 0 \), \( a \ne 0 \Rightarrow b = 0 \)); the snapshot exemption for (⇒) (S2 confirms the class, or the two snapshots are added).
+12. 3.2 `exm-equivalence-search`: both derivations (7 and 11 lines); the reading (\( ab = 0 \), \( a \ne 0 \Rightarrow b = 0 \)); the two snapshots now written for (⇒) (S2 round 1 withdrew the exemption).
 13. 3.2 `def-inconsistent-set`: finite lists, \( n \ge 0 \) as in `def-derivable`; matches NOTATION's *consistent* row (syntactic). The empty list is a list. No claim is made that it is consistent.
 14. 3.2 `prp-inconsistent-derives-everything` and `prp-derivable-iff-negation-inconsistent`:
     - the statements;
-    - fold F3.2-a's proofs, in particular the copying argument for (⇐): premises outside, \( D \)'s boxes nested inside the new box, citations of \( \neg\varphi \) redirected to the assumption, the last line of \( D \) a line of the new box itself, and the case where \( D \)'s last line is a premise (\( \bot \in \Gamma \));
+    - fold F3.2-a's proofs, in particular the copying argument for (⇐): premises outside, \( D \)'s boxes nested inside the new box, citations of \( \neg\varphi \) redirected to the assumption, the last line of \( D \) a line of the new box itself, and the case where \( D \)'s last line is a premise belonging to \( \Gamma \) (\( \bot \in \Gamma \)); only non-premise lines are copied; in (a), the case where \( D \)'s last line is the premise \( \varphi = \bot \) itself (a one-line box);
     - (a) needs no RAA;
     - the reliance on `lem-weakening-cut` (a), (c) as stated at ch04 08:30 (to be in 2.3);
     - "the same move as Section 1.4, Exercise C4 (b), run backwards" (C4 (b) turns open assumptions into premises).
@@ -1250,7 +1269,7 @@ If ch02-deepen does not deliver `lem-weakening-cut` in 2.3, the proofs of F3.2-a
     - no integer meets (1)–(4);
     - \( n = 6 \) fails only (1), \( n = 1 \) only (2), \( n = 3 \) only (3), \( n = 12 \) only (4);
     - Quick check: \( 3 \), \( 9 \) are the integers in \( [1, 10] \) meeting (1), (2), (4), each failing (3). (Of the others, \( 1 \), \( 5 \), \( 7 \) fail (2); \( 2 \), \( 6 \), \( 10 \) fail (1); \( 4 \), \( 8 \) fail (4); the sidecar checks.)
-16. 3.2 gallery: each list's derivation of \( \bot \) (7, 7, 4 lines); every member compound; the look-alike true at once with \( P \) false; the look-alike derives \( \neg P \) (a 5-line ¬I box); the gallery sentence equating row 2 with `lem-not-iff-own-negation` via the proposition (a) with \( \Gamma \) empty and \( \varphi = P \leftrightarrow \neg P \).
+16. 3.2 gallery: each list's derivation of \( \bot \) (7, 8, 4 lines; row 2 detour-free, passes `check_fitch.py`, and marked in the plan as a recall of the 2.4 lemma); every member compound; the look-alike true at once with \( P \) false; the look-alike derives \( \neg P \) (a 5-line ¬I box); the gallery sentence equating row 2 with `lem-not-iff-own-negation` via the proposition (a) with \( \Gamma \) empty and \( \varphi = P \leftrightarrow \neg P \).
 17. 3.2 Not-allowed entries and their tags.
 18. 3.2 "One task in four costumes":
     - the table's entries;
@@ -1259,7 +1278,8 @@ If ch02-deepen does not deliver `lem-weakening-cut` in 2.3, the proofs of F3.2-a
 19. 3.2 `exm-derive-or-break-search`:
     - (a) the forced attempt (each step forced) and the 10-line derivation;
     - (b) the break at \( P \), \( Q \) true, \( R \) false, and at \( x = 2 \) with \( x > 0 \), \( x > 1 \), \( x > 3 \);
-    - the Quick check's two repairs (→ for ∨ gives (a); \( \neg Q \) for \( Q \) with DS other form, a 5-line derivation after the premises).
+    - the Quick check's "For example" repairs, each a replacement of one symbol: → for ∨ gives (a); ∧ for ∨, the 9-line derivation with ⊥E (passes `check_fitch.py`); and the two further replacements named in the last sentence, ↔ for ∨ and \( R \) for \( Q \) (truth-table checked while revising); no row proved only in an exercise is cited;
+    - the closing sentence ("for as long as it ran … the break is") against G10 (item 1).
 20. 3.2 Figure 3.2-F: the loop is drawn and not claimed to terminate; no node asserts non-derivability.
 21. 3.2 Looking-ahead wording against 4.5/4.7/4.8 as layout §1.3 plans them ("satisfiable ⇒ consistent" in 4.7's text; "consistent ⇔ satisfiable" in 4.8's).
 22. 3.3 the key (identical to 1.1 B5's four letters and readings); F1–F3 true for every integer, with their reasons; the definition of prime used ("greater than \( 1 \)"); the Quick check's translation and reading back.
@@ -1278,9 +1298,9 @@ If ch02-deepen does not deliver `lem-weakening-cut` in 2.3, the proofs of F3.2-a
 28. 3.1 A2: all twelve parts; (i)'s detour and its one-line replacement. (No new part prints an answer given on the main line or in another item: (i) is not B4's derivation or the Quick check's.)
 29. 3.1 B4: the 11-line derivation passes `check_fitch.py`; the two detours; the 6-line rewrite; (d)'s copy.
 30. 3.2 A1 (a)–(e); A2 (a)–(l), in particular (f) (two readings, and \( Q \) not a negated conclusion).
-31. 3.2 B1: three theorems (14, 11, 10 lines); which step opens each box; (a)'s second conjunct without RAA.
+31. 3.2 B1: three theorems (14, 8, 10 lines); which step opens each box (in (b), box 1 by step 2 and the two case boxes by step 3); (a)'s second conjunct without RAA. (b) was replaced at S2 round 1 (the S1 (b) was the main-line claim (a) curried); the new (b) is checked against the text's derivations and against Chapter 1's ∨E items, and passes `check_fitch.py`.
 32. 3.2 B2: the scaffold; both derivations (10 lines each); (c).
-33. 3.2 B3: nine verdicts (five derive, four break); the derivations of (b), (c), (e), (h), (i); the breaks of (a), (d), (f), (g) at the stated numbers; the closing pairs. (A truth-table check of all nine was run while writing this blueprint: (b), (c), (e), (h), (i) valid; (a), (d), (f), (g) invalid.)
+33. 3.2 B3: nine verdicts (five derive, four break); the derivations of (b), (c), (e), (h), (i); the breaks of (a), (d), (f), (g) at the stated numbers; the closing pairs. (A truth-table check of all nine was run while writing this blueprint, and of the replaced (c), (d), (i) at S2 round 1: (b), (c), (e), (h), (i) valid; (a), (d), (f), (g) invalid; (d)'s break at \( x = -1 \) checked; the new (c) and (i) pass `check_fitch.py`.) The new (c), (d), (i) are fd1's own: checked against the LPL and Lemmon exercise lists for these shapes.
 34. 3.2 B4: three derivations of \( \bot \) ((a), (c), (e)); three lists true at once ((b), (d), (f)) with their statements; (f) with the fourth member derives \( \bot \) (LEM twice, four cases). Truth-table check run: (a), (c), (e), (f) + fourth member unsatisfiable; (b), (d), (f) satisfiable.
 35. 3.2 C1: the counterexample set; the 13-line derivation of \( \bot \); the 11-line direct derivation; (d)'s break at \( x = 1 \) (all four members of the new counterexample set checked); the marking scheme.
 36. 3.2 C2: (a)–(c) from the two propositions; the marking scheme; the "used later" target.
@@ -1296,7 +1316,7 @@ If ch02-deepen does not deliver `lem-weakening-cut` in 2.3, the proofs of F3.2-a
     None duplicates a derivation in the text or another exercise of Chapters 1–3, nor is one plus a trivial step. Check against `exm-extract-argument`, `exm-two-columns`, B2, C1, B4, 1.1 B5, 1.6 B7, 2.3–2.5's exercises, and the 3.1 items. None matches a Lemmon numbered sequent after renaming letters (Critic small correction 7). Truth-table check run: every derive verdict valid.
 41. 3.3 B4: the six-sentence order and its uniqueness; the two distractors' faults (\( a = 0 \), \( b = 3 \)); the 8-line derivation; the matching.
 42. 3.3 C1: the 14-line derivation; the table; (e)'s break at \( n = 2 \); the marking scheme. Its derivation is not B3 item 8's or item 9's (checked).
-43. 3.3 C2: the 7-line derivation; (b)'s inconsistency; (c)'s rule list; the name "Curry's paradox" and the remark linking it to @prp-curry's name (the logician Haskell Curry; the book gives the surname only).
+43. 3.3 C2: the 8-line detour-free derivation (passes `check_fitch.py`) and the solution's remark on the 7-line detour version; the marking scheme's line references (box 2–4, line 6; the 7-line ending accepted); (b)'s inconsistency; (c)'s rule list; the name "Curry's paradox" and the remark linking it to @prp-curry's name (the logician Haskell Curry; the book gives the surname only).
 44. 3.3 R4: the dialogue's facts (true for all real \( x \) in their ranges); the 10-line derivation with ¬¬I; (d).
 45. The index: the Summary's claims (each a labelled result or worked example of the chapter); the Terms glosses; the nine named moves with their sections.
 
@@ -1325,5 +1345,31 @@ If ch02-deepen does not deliver `lem-weakening-cut` in 2.3, the proofs of F3.2-a
   - (e) Curry is named in a solution, with a note on the clash with @prp-curry's name.
   - (f) `prp-derivable-iff-negation-inconsistent` has a part (a) for negated conclusions (¬I only) besides the layout's (b).
   - (g) 3.2's look-alike and Not-allowed lines are worded so that "consistent" is never asserted.
-  - (h) 3.1 C2 (b) and 3.3 R3 change by a few words for G10.
+  - (h) 3.1 C2 (b) and 3.3 R3 change by a few words for G10; R3's stem also asks "derive or break" for the converse (S2 round 1).
+  - (j) (S2 round 1) ¬I followed by ¬E on the negation it built counts as a detour; the detour copying arguments and the odd product's table go into folds to keep 3.1 under 5,000.
   - (i) The battery is 15 graded items (library, translation, derive-or-break), not 15 bare sequents.
+
+---
+
+## 11. S2 replies (round 1)
+
+All findings of S2 round 1 were applied; none is disputed. Where two reviewers raised the same point, one reply covers both.
+
+1. **`exm-search-free-lines` used an unlicensed ∨E above the boxes** (error and gap). Applied option (b): the example is rebuilt on \( P \wedge (P \to Q), \ Q \to R \vdash (S \to R) \wedge (T \to (Q \wedge R)) \), so only ∧E and →E lines go above the boxes. Snapshots, counts (13 against 16) and the Quick check (line 8; lines 3–6) are rewritten; the derivation passes `check_fitch.py`. The clash-partner refinement is no longer illustrated in 3.1's own example; it is illustrated by name in 3.2's `exm-inconsistency-search` and C1 (b), which the plan now says. Option (a), a fifth refinement, was not taken: it would add a named move and ~40 words to a section already at its cap.
+2. **`exm-derive-or-break-search` closing sentence (G10)**. Reworded as proposed ("a search would only have stalled for as long as it ran, and a stall is not a verdict; the break is"); added to §9 item 1.
+3. **R3's "breaks, so a search can only stall" (G10)**, both reviewers. The stall is now stated inside the Chapter 4 pointer ("Chapter 4 proves that such a choice rules out every derivation, so that a search for it can only stall"), and the stem's second question becomes "Derive or break its converse". R3 re-enters the ledger (§3.3 already had it going stale).
+4. **B4 (d) said a particular list is not inconsistent**. Reworded as proposed: the member is not itself a clash, and the claim that the list derives \( \bot \) breaks. Added to §9 item 1.
+5. **Quick check repair rested on DS's exercise form; "Two answers" wrong; ¬Q inserts a symbol**, both findings. The \( \neg Q \) answer is dropped. The solution says "For example" and gives → for ∨ (claim (a)) and ∧ for ∨ (a 9-line derivation with ⊥E, no exercise row cited), and names ↔ for ∨ and \( R \) for \( Q \) in one closing sentence. §9 item 19 updated.
+6. **Curry's 7-line derivation contains a →I/→E detour; gallery row 2 a ¬I/¬E one**, both reviewers. C2 (a) prints the 8-line detour-free derivation, and the solution adds that the 7-line ending is a detour whose cutting costs a line because line 5 is cited again: "advice, not a theorem". The marking scheme accepts either. Ruling: ¬I followed by ¬E on the negation it built is a detour, and the detour paragraph says so in one sentence; gallery row 2 becomes the 8-line copy. §9 items 3, 16 and 43 updated.
+7. **Equivalence (⇒) snapshot exemption did not fit any class**, both reviewers. The exemption is withdrawn and S1/S2 are written as proposed.
+8. **F3.2-a's case split missed \( \varphi = \bot \) in (a), and "copy the other lines" copied the premise \( \neg\varphi \)**. The first case now reads "a premise that belongs to \( \Gamma \)"; "copy the lines of \( D \) that are not premises"; and (a)'s sentence names the one-line box when \( D \)'s last line is the premise \( \varphi = \bot \). §9 item 14 updated.
+9. **B3 closing sentence wrong for (c)/(d)**, both reviewers. Resolved together with item 10 below: the new (c)/(d) share their premises, so the sentence "each pair has the same premises and differs in the conclusion" is now true of both pairs.
+10. **B3 (c) and (i) reproduced textbook exercises; gallery row 2 is a textbook list**. (c) and (i) are replaced by fd1's own claims of the same kinds: (c) \( P \to (Q \wedge R), \ \neg P \to R \vdash R \) (LEM split), its look-alike (d) \( P \to (Q \wedge R), \ \neg P \to R \vdash Q \) (breaks at \( x = -1 \)), and (i) \( \neg P \to (P \wedge Q) \vdash P \). Verdicts truth-table checked; derivations pass `check_fitch.py`. The breaking claims recalled by 4.6 are still (a), (d), (f), (g). Row 2 stays, marked in the plan as a recall of the 2.4 lemma.
+11. **§0 and §5 Time figures disagreed**, both reviewers. Both now say core ≈ 14.5 h and full ≈ 27.3 h. The full figure moves from 27.1 h because the fold budget grew (F3.1-f, F3.1-g); the printed lines are unchanged.
+12. **"A forced attempt is a derivation read backwards" stated as fact**. Made heuristic in the Named move, in 3.2 item 8's lead, in Figure 3.2-F's node b1, and in §6's seam for 4.8.
+13. **Figure 3.1-F need not terminate**. t2 reads "can a resource not yet used be taken apart?", with "used" defined for the drafter; §9 item 9 asks S2a to follow the chart on \( P \to Q \vdash Q \to P \) to e4, with a three-word fallback for t4 if it still loops.
+14. **"Weakest fact" attributed to Section 1.3 B5**. The attribution is dropped: the advice is stated as new, with its reason, and B5 (d) is only compared. §6's backward-pointer list updated.
+15. **Library lead's list of sections**, both reviewers. Now "Chapters 1 and 2 and Section 3.2".
+16. **Affirming the consequent credited to Section 1.1**, both reviewers. Now "Section 1.3", matching 3.3 B1 (b) and 01:464.
+17. **3.1 budget tally summed to 5,045 and omitted two items**. The tally is corrected and itemised (≈ 4,967). It now takes three trims in advance: the card's Lean sentence, 01:186's second sentence, and the odd product's Givens/Goal table, moved verbatim to the new fold F3.1-g. It also moves the detour paragraph's copying arguments to the new fold F3.1-f. The fold budget rises from ≤ 850 to ≤ 975, and a new three-step trim order covers any remaining excess.
+18. **3.2 B1 (b) was the main-line claim (a) curried**. Replaced by \( \vdash ((P \to Q) \wedge (P \vee Q)) \to Q \). Its search reaches step 3 on a disjunction (8 lines, passes `check_fitch.py`). §9 item 31 updated.
