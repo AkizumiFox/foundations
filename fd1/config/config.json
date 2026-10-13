@@ -100,9 +100,12 @@
   "chapters": [
     "src/ch01-connectives-and-derivations",
     "src/ch02-negation-and-classical-logic",
-    "src/ch03-semantics-soundness-completeness",
-    "src/ch04-predicate-logic",
-    "src/ch05-from-derivations-to-prose"
+    "src/ch03-finding-derivations",
+    "src/ch04-semantics-soundness-completeness",
+    "src/ch05-predicate-logic",
+    "src/ch06-working-with-quantifiers",
+    "src/ch07-models-and-theories",
+    "src/ch08-from-derivations-to-prose"
   ],
   "macros": "../latex/macros.tex",
   "deploy-dir": "site",

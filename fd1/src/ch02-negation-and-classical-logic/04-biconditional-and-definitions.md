@@ -224,7 +224,7 @@ In words: there is a derivation with premise \( P \) and last line \( Q \), and 
 
 The degenerate example is \( P \dashv\vdash P \): the one-line derivation of part (a) of @exm-derivations serves in both directions. A first real example is \( P \vee Q \dashv\vdash Q \vee P \): @exm-disjunction-first-derivations shows \( P \vee Q \vdash Q \vee P \), and the same derivation with the letters exchanged shows the converse. By the same exchange, part (a) of @exm-iff-symmetric gives \( P \leftrightarrow Q \dashv\vdash Q \leftrightarrow P \).
 
-A minimal change gives a one-way street. @exm-double-negation-introduction derived \( P \vdash \neg\neg P \), but the converse, \( \neg\neg P \vdash P \), would have to remove two negations, and no rule met so far removes one. So we cannot claim \( P \dashv\vdash \neg\neg P \): the clause "\( Q \vdash P \)" is the one missing. (It holds once Section 2.5 adds its rule; that it cannot hold without that rule is true, and Chapter 3 proves it: @thm-raa-independent.) Likewise @prp-contrapositive derives \( \neg Q \to \neg P \) from \( P \to Q \), but not yet the reverse.
+A minimal change gives a one-way street. @exm-double-negation-introduction derived \( P \vdash \neg\neg P \), but the converse, \( \neg\neg P \vdash P \), would have to remove two negations, and no rule met so far removes one. So we cannot claim \( P \dashv\vdash \neg\neg P \): the clause "\( Q \vdash P \)" is the one missing. (It holds once Section 2.5 adds its rule; that it cannot hold without that rule is true, and Chapter 4 proves it: @thm-raa-independent.) Likewise @prp-contrapositive derives \( \neg Q \to \neg P \) from \( P \to Q \), but not yet the reverse.
 
 The connective \( \leftrightarrow \) and the relation \( \dashv\vdash \) are two sides of one idea; the next result makes the link exact, and shows that \( \dashv\vdash \) behaves as an equivalence should.
 
@@ -270,7 +270,7 @@ Here are equivalences derived so far. Each row gives two derived rules (@def-der
 The fourth row is distributivity of \( \wedge \) over \( \vee \) as a provable equivalence. Some familiar laws are not in the table, because the text has derived them in one direction only; associativity of \( \vee \) is one (@exm-disjunction-regroup).
 
 ::: {.warning}
-A sequent in one direction is not an equivalence. \( P \wedge Q \vdash P \) holds by \( \rulename{\wedge E} \), but \( P \vdash P \wedge Q \) does not: take \( P \): "\( 2 > 1 \)" and \( Q \): "\( 1 > 2 \)", and the premise is true while the conclusion is false. (A derivation never leads from true premises to a false conclusion; Chapter 3 proves this, @thm-soundness.) Before writing \( \dashv\vdash \), check that **both** derivations exist.
+A sequent in one direction is not an equivalence. \( P \wedge Q \vdash P \) holds by \( \rulename{\wedge E} \), but \( P \vdash P \wedge Q \) does not: take \( P \): "\( 2 > 1 \)" and \( Q \): "\( 1 > 2 \)", and the premise is true while the conclusion is false. (A derivation never leads from true premises to a false conclusion; Chapter 4 proves this, @thm-soundness.) Before writing \( \dashv\vdash \), check that **both** derivations exist.
 :::
 
 ## Proving an iff: two directions
@@ -356,7 +356,7 @@ Grammatically the sentence is an implication, "\( f \) is strictly increasing **
 
 *In a definition, "if" means "if and only if".*
 
-This is a convention of mathematical language, not a rule of logic. Some books write "iff" or \( :\Leftrightarrow \) in definitions; this book, like most, writes "if" and puts the term defined in **bold**, which signals that the "if" is an "iff". Here it is used three ways. The words "for all real numbers \( x \) and \( y \)" are a quantifier, whose rules come in Chapter 4; here we use them informally.
+This is a convention of mathematical language, not a rule of logic. Some books write "iff" or \( :\Leftrightarrow \) in definitions; this book, like most, writes "if" and puts the term defined in **bold**, which signals that the "if" is an "iff". Here it is used three ways. The words "for all real numbers \( x \) and \( y \)" are a quantifier, whose rules come in Chapter 5; here we use them informally.
 
 ::: {#exm-strictly-increasing-both-ways}
 [A definition used in both directions]
@@ -458,7 +458,7 @@ The order of the cycle was a choice, made so that each arrow was short: (b) \( \
 
 ## What the rules sound like
 
-The rows for this section's rules complete the table for the connectives; Section 2.6 collects the rules in one place. The Lean names in the last column come from the two fields of an iff, `mp` ("modus ponens", left to right) and `mpr` (right to left).
+The rows for this section's rules complete the table for the connectives; Section 3.1 collects the rules in one place. The Lean names in the last column come from the two fields of an iff, `mp` ("modus ponens", left to right) and `mpr` (right to left).
 
 | Rule | You write | Lean |
 |------|--------------------------------------|------------------------|

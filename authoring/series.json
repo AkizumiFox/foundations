@@ -26,23 +26,38 @@
     {
      "n": 2,
      "id": "F1.2",
-     "title": "Negation, Classical Logic, and Finding Derivations",
+     "title": "Negation and Classical Logic",
      "ab": 2
     },
     {
      "n": 3,
+     "id": "F1.7",
+     "title": "Finding Derivations"
+    },
+    {
+     "n": 4,
      "id": "F1.3",
      "title": "Truth, Soundness, and Completeness",
      "ab": 3
     },
     {
-     "n": 4,
+     "n": 5,
      "id": "F1.4",
      "title": "Predicate Logic and the Quantifier Rules",
      "ab": 4
     },
     {
-     "n": 5,
+     "n": 6,
+     "id": "F1.8",
+     "title": "Working with Quantifiers: Translation, Laws, and Search"
+    },
+    {
+     "n": 7,
+     "id": "F1.6",
+     "title": "Models and Theories"
+    },
+    {
+     "n": 8,
      "id": "F1.5",
      "title": "From Derivations to Mathematical Prose",
      "ab": 5

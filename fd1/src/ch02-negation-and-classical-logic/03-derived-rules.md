@@ -117,7 +117,7 @@ $\begin{nd}[schema]
 In words: a proved sequent is a new rule. Its premises become the cited lines, its conclusion the line written, and its letters the metavariables of a schema (@def-rule-schema). Read the definition clause by clause.
 
 1. **"Already derived."** The sequent must have been derived **before** the line that uses it: earlier in the book, and never inside its own derivation. A derivation that used a sequent to derive that same sequent would prove nothing.
-2. **"Replace each letter … the same statement for every occurrence."** The letters of a derived sequent stood for arbitrary statements all along (@def-derivable), so they may be replaced by any statements, provided the replacement is **uniform**. From \( (A \wedge B) \to C \) and \( \neg C \), the rule \( \rulename{MT} \) gives \( \neg(A \wedge B) \), with \( \varphi \) replaced by \( A \wedge B \) and \( \psi \) by \( C \). Chapter 3 makes this replacement exact, under the name substitution.
+2. **"Replace each letter … the same statement for every occurrence."** The letters of a derived sequent stood for arbitrary statements all along (@def-derivable), so they may be replaced by any statements, provided the replacement is **uniform**. From \( (A \wedge B) \to C \) and \( \neg C \), the rule \( \rulename{MT} \) gives \( \neg(A \wedge B) \), with \( \varphi \) replaced by \( A \wedge B \) and \( \psi \) by \( C \). Chapter 4 makes this replacement exact, under the name substitution.
 3. **"Available at line \( k \)."** The scope rule of @def-derivation still governs every citation. A derived rule may not reach into a closed box, just as a primitive rule may not.
 4. **"The resulting instance of \( \psi \)."** The rule writes the conclusion, with the same replacement, and nothing else. The derived rule does not open or close any box of the derivation that uses it.
 
@@ -334,7 +334,7 @@ Notice also what the argument never does. It feels like "suppose not", and writt
 ## Common errors
 
 ::: {.warning}
-A derived rule may be used only **after** its sequent has been derived, and never inside its own derivation. A "derivation" of @prp-contrapositive that justifies one of its lines by \( \rulename{CP} \) proves nothing: it assumes what it sets out to show. Exercise C2 is an example, and Section 2.6 returns to the error in general.
+A derived rule may be used only **after** its sequent has been derived, and never inside its own derivation. A "derivation" of @prp-contrapositive that justifies one of its lines by \( \rulename{CP} \) proves nothing: it assumes what it sets out to show. Exercise C2 is an example, and Section 3.1 returns to the error in general.
 :::
 
 ::: {.warning}

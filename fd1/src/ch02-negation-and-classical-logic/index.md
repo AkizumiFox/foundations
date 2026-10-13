@@ -1,8 +1,8 @@
-# Negation, Classical Logic and Finding Derivations
+# Negation and Classical Logic
 
 Chapter 1 could prove that things are so. It could not prove that something is **not** so. No rule of Chapter 1 shows that no rational number has square \( 2 \), or that \( x^2 + 1 \) is never \( 0 \); none lets a proof by cases say "this case cannot occur" and move on; and the sentence "if \( x^2 < 0 \), then \( x = 7 \)", whose hypothesis never holds and whose conclusion has nothing to do with it, Chapter 1 read only informally, as a promise not broken: no rule yet derives it. All three are questions about negation and contradiction, and ordinary proofs are full of them: "suppose not", "which is absurd", "we prove the contrapositive".
 
-This chapter adds the rules for "not" and for contradiction one at a time, first the rules that use a negation, then the rule that proves one. It shows that a sequent, once proved, can be used as a rule of its own; gives "if and only if" its rules, and with them what a definition's "if" means; and then meets the one rule that is different in kind, proof by contradiction, together with the reason why it, double-negation elimination, and the law of excluded middle stand or fall together. It ends with a method for **finding** derivations, which collects the moves the chapter has met one section at a time, and with a question the method cannot answer: we show that something is derivable by exhibiting a derivation, but how could we ever show that something is **not** derivable? Chapter 3 answers it (@cor-refuting-row).
+This chapter adds the rules for "not" and for contradiction one at a time, first the rules that use a negation, then the rule that proves one. It shows that a sequent, once proved, can be used as a rule of its own; gives "if and only if" its rules, and with them what a definition's "if" means; and then meets the one rule that is different in kind, proof by contradiction, together with the reason why it, double-negation elimination, and the law of excluded middle stand or fall together. It ends with a method for **finding** derivations, which collects the moves the chapter has met one section at a time, and with a question the method cannot answer: we show that something is derivable by exhibiting a derivation, but how could we ever show that something is **not** derivable? Chapter 4 answers it (@cor-refuting-row).
 
 **What you need.** All of Chapter 1: the rules for "and", "implies", and "or", and above all the definition of a derivation, with its boxes and its scope rule (@def-derivation). School algebra about integers and real numbers is used in examples, as facts.
 
@@ -15,7 +15,6 @@ This chapter adds the rules for "not" and for contradiction one at a time, first
 - **Derived rules.** A sequent, once proved, may be used as a single line; modus tollens, the contrapositive, and disjunctive syllogism become rules.
 - **Iff, equivalence, and what a definition says.** The rules for \( \leftrightarrow \), provable equivalence, chains of equivalences, and why a definition's "if" means "if and only if".
 - **Proof by contradiction and the classical rules.** The rule \( \rulename{RAA} \), the classical laws it gives (double negation, excluded middle, De Morgan, Peirce), and why three of them are one principle.
-- **How to find a derivation.** The search method, assembled from the moves of the chapter, with worked searches, one search that fails, and all the rules in one place.
 
 ## Named moves
 
@@ -25,4 +24,3 @@ This chapter adds the rules for "not" and for contradiction one at a time, first
 - **Use a derived rule as one line.** A proved sequent is a new rule.
 - **Two boxes for an iff.** One box for each direction, each ending on the other side.
 - **When stuck, assume the negation of the goal.** Proof by contradiction, and then hunt for a clash.
-- **Work from both ends.** The full method: read the skeleton off the goal, use the premises by their main connectives, and keep the classical step for last.

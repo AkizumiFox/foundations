@@ -42,7 +42,7 @@ Read the schema of \( \rulename{\neg I} \) clause by clause.
 
 1. **Open a box** whose first line is the assumption \( \varphi \). It is the **unnegated** statement: the thing we want to refute, not the thing we want to prove. Any statement may be assumed.
 2. **Inside the box** every rule may be used, and every line available just above the box may be cited, as in any box (@def-derivation).
-3. **The last line of the box** is exactly \( \bot \), and it is a line of that box itself, not inside a further box opened within it. This is the same wording as for \( \rulename{{\to}I} \), and every box rule shares it; Chapter 3's soundness proof (@thm-soundness) relies on it.
+3. **The last line of the box** is exactly \( \bot \), and it is a line of that box itself, not inside a further box opened within it. This is the same wording as for \( \rulename{{\to}I} \), and every box rule shares it; Chapter 4's soundness proof (@thm-soundness) relies on it.
 4. **Close the box** and write \( \neg\varphi \) on the next line, outside it. The justification cites the box as a range, "\( \rulename{\neg I} \) \( i \)–\( j \)". The assumption is discharged: after the box closes, nothing inside it may be cited, and only the negation leaves.
 5. **The new line is always a negation.** \( \rulename{\neg I} \) never writes a statement whose main connective is not \( \neg \).
 
@@ -63,7 +63,7 @@ So \( \vdash \neg\bot \): "it is not the case that contradiction" is derivable f
 
 **A noninstance by one change.** Take a box opened by \( \varphi \) whose last line is \( \neg\varphi \) instead of \( \bot \). It looks as if the assumption has refuted itself, and \( \rulename{\neg I} \) still does not apply: the box must end on \( \bot \). One more line, \( \bot \) by \( \rulename{\neg E} \) citing the assumption and the line \( \neg\varphi \), repairs it. The same holds if \( \bot \) is reached only inside a smaller box within the box: it is not then a line of the box itself.
 
-**Why this rule.** The statement \( \neg\varphi \) says that \( \varphi \) fails, and the box shows what would happen if \( \varphi \) held: together with the lines above it, it would lead to \( \bot \), which never holds. So in any situation where the lines above the box hold, \( \varphi \) cannot hold. That is exactly what \( \neg\varphi \) claims. As for Section 2.1's rules, Chapter 3 turns this into a proof (@thm-soundness).
+**Why this rule.** The statement \( \neg\varphi \) says that \( \varphi \) fails, and the box shows what would happen if \( \varphi \) held: together with the lines above it, it would lead to \( \bot \), which never holds. So in any situation where the lines above the box hold, \( \varphi \) cannot hold. That is exactly what \( \neg\varphi \) claims. As for Section 2.1's rules, Chapter 4 turns this into a proof (@thm-soundness).
 
 The rules for \( \neg \) have the same shapes as rules we already know, with \( \bot \) in one slot. Put them beside the rules for \( \to \), applied to the statement \( \varphi \to \bot \):
 
@@ -73,7 +73,7 @@ The rules for \( \neg \) have the same shapes as rules we already know, with \( 
 | use it, given \( \varphi \) | \( \bot \) by \( \rulename{\neg E} \) | \( \bot \) by \( \rulename{{\to}E} \) |
 
 ::: {.remark}
-Row by row, \( \neg\varphi \) behaves exactly like \( \varphi \to \bot \): "not \( \varphi \)" means "\( \varphi \) leads to contradiction". Some presentations of logic take this as the definition of \( \neg \). This book keeps \( \neg \) as a connective with its own rules, and Chapter 5 returns to the reading \( \neg\varphi \approx \varphi \to \bot \) when it asks what a proof of a negation provides.
+Row by row, \( \neg\varphi \) behaves exactly like \( \varphi \to \bot \): "not \( \varphi \)" means "\( \varphi \) leads to contradiction". Some presentations of logic take this as the definition of \( \neg \). This book keeps \( \neg \) as a connective with its own rules, and Chapter 8 returns to the reading \( \neg\varphi \approx \varphi \to \bot \) when it asks what a proof of a negation provides.
 :::
 
 ::: {.warning}
@@ -272,7 +272,7 @@ $\begin{nd}
 \end{center}
 ```
 
-Line 13 is \( r^2 \ne 2 \). The box \( \lines{5}{12} \) is a \( \rulename{\neg I} \) box as the schema asks: opened by the unnegated statement \( r^2 = 2 \), and ending on \( \bot \) as a line of its own. Two steps of the proof lie outside the derivation: choosing \( p \), \( q \), and \( m \), and passing from the arbitrary \( r \) to every rational number. Both are quantifier rules, which come in Chapter 4.
+Line 13 is \( r^2 \ne 2 \). The box \( \lines{5}{12} \) is a \( \rulename{\neg I} \) box as the schema asks: opened by the unnegated statement \( r^2 = 2 \), and ending on \( \bot \) as a line of its own. Two steps of the proof lie outside the derivation: choosing \( p \), \( q \), and \( m \), and passing from the arbitrary \( r \) to every rational number. Both are quantifier rules, which come in Chapter 5.
 
 Notice also what the proof does **not** need: that \( \sqrt{2} \) exists as a real number. The theorem is a statement about rational numbers only. *Analysis on the Real Line*, Chapter 1 uses it in exactly this form, as evidence that the rational numbers have a gap where \( \sqrt{2} \) should be.
 

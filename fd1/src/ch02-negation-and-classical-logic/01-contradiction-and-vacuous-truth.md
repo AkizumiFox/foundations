@@ -57,7 +57,7 @@ As with every rule of Chapter 1, the letters \( \varphi \) and \( i, j, k \) fol
 
 Two more observations complete the reading. First, \( \rulename{\bot E} \) is the **elimination** rule of \( \bot \): it says how a line \( \bot \) is used. There is no introduction rule of its own for \( \bot \). Other rules can pass a \( \bot \) along (\( \rulename{\bot E} \) may write it again, and \( \rulename{{\to}E} \) writes it from \( \varphi \to \bot \) and \( \varphi \)), but each of them needs \( \bot \) already written in a line it uses. Apart from being assumed, the only way a line \( \bot \) first appears is by \( \rulename{\neg E} \): it is the one rule whose new line is always \( \bot \), from lines in which \( \bot \) need not occur. So \( \rulename{\neg E} \) plays two parts at once: it is the way a negation is used, and it is the way \( \bot \) is produced.
 
-Second, why is \( \rulename{\bot E} \) honest? A rule should never lead from lines that hold to a line that fails. A line \( \bot \) can stand only in a part of a derivation where the premises and the open assumptions cannot all hold together, at least when the \( \bot \) was written by \( \rulename{\neg E} \), from some \( \varphi \) and \( \neg\varphi \) that were both available there; that the rules which only pass a \( \bot \) along keep this property is part of what Chapter 3 checks in proving @thm-soundness. In such a place there is no situation in which the conclusion of \( \rulename{\bot E} \) would have to be checked, so it cannot be caught failing. Chapter 3's soundness theorem turns this remark into a proof.
+Second, why is \( \rulename{\bot E} \) honest? A rule should never lead from lines that hold to a line that fails. A line \( \bot \) can stand only in a part of a derivation where the premises and the open assumptions cannot all hold together, at least when the \( \bot \) was written by \( \rulename{\neg E} \), from some \( \varphi \) and \( \neg\varphi \) that were both available there; that the rules which only pass a \( \bot \) along keep this property is part of what Chapter 4 checks in proving @thm-soundness. In such a place there is no situation in which the conclusion of \( \rulename{\bot E} \) would have to be checked, so it cannot be caught failing. Chapter 4's soundness theorem turns this remark into a proof.
 
 ::: {.check}
 Which of these pairs of lines are, as written, an instance of the given lines of \( \rulename{\neg E} \), and in which order must each be cited? The pairs are (i) \( Q \wedge R \) and \( \neg(Q \wedge R) \); (ii) \( \neg P \) and \( \neg\neg P \); (iii) \( P \to Q \) and \( \neg P \to Q \).
@@ -278,7 +278,7 @@ The third is a computation. If \( n = 2k + 1 \) for an integer \( k \), then
 n^2 = 4k^2 + 4k + 1 = 2(2k^2 + 2k) + 1 ,
 \]
 
-and \( 2k^2 + 2k \) is an integer, so \( n^2 \) is odd. Taking "an integer \( k \) with \( n = 2k + 1 \)" and working with it is a step about "there exists"; the rules for such steps come in Chapter 4, and here we use the step as school algebra.
+and \( 2k^2 + 2k \) is an integer, so \( n^2 \) is odd. Taking "an integer \( k \) with \( n = 2k + 1 \)" and working with it is a step about "there exists"; the rules for such steps come in Chapter 5, and here we use the step as school algebra.
 
 ::: {#thm-square-even-implies-even}
 [Even Square, Even Number]
@@ -342,7 +342,7 @@ Each line is one sentence of the proof.
 | 11 | In both cases \( n \) is even. |
 | 12 | This proves that if \( n^2 \) is even, then \( n \) is even. |
 
-Line 8 cites line 4, the assumption of the outer box; it may, since the box \( \lines{4}{11} \) contains line 8 (@def-derivation). Two steps of the proof are not in the derivation: passing from the facts (E1)–(E3), which are about every integer, to their instances for this \( n \) and this \( n^2 \); and naming the \( k \) of (E3). Both are quantifier steps, and Chapter 4 gives their rules.
+Line 8 cites line 4, the assumption of the outer box; it may, since the box \( \lines{4}{11} \) contains line 8 (@def-derivation). Two steps of the proof are not in the derivation: passing from the facts (E1)–(E3), which are about every integer, to their instances for this \( n \) and this \( n^2 \); and naming the \( k \) of (E3). Both are quantifier steps, and Chapter 5 gives their rules.
 
 ::: {.check}
 Which sentence of the proof of @thm-square-even-implies-even is the rule \( \rulename{\bot E} \), and what does it write?
@@ -398,7 +398,7 @@ An implication whose hypothesis cannot hold is called **vacuously true**. Nothin
 
 Everyday language agrees. A friend says: "if you finish the exercises by Friday, I will buy you lunch". You do not finish them. Whatever your friend does on Friday, the promise has not been broken. *A promise never tested is never broken.*
 
-Vacuous truth is not a curiosity; it is what makes case splits work. In @exm-impossible-case, line 7 closed the impossible case by \( \rulename{\bot E} \), and line 10 of the derivation of @thm-square-even-implies-even did the same. When Chapter 3 gives each connective a truth table (@def-truth-value), the rows of \( \to \) with a false hypothesis are the ones these two rules force. Chapter 4 meets the same phenomenon in another dress: a statement about "every element of the empty set" is true, because there is no element to test.
+Vacuous truth is not a curiosity; it is what makes case splits work. In @exm-impossible-case, line 7 closed the impossible case by \( \rulename{\bot E} \), and line 10 of the derivation of @thm-square-even-implies-even did the same. When Chapter 4 gives each connective a truth table (@def-truth-value), the rows of \( \to \) with a false hypothesis are the ones these two rules force. Chapter 5 meets the same phenomenon in another dress: a statement about "every element of the empty set" is true, because there is no element to test.
 
 ::: {.warning}
 "True" is not "useful". The statements "if \( x^2 < 0 \), then \( x = 7 \)" and "if \( x^2 < 0 \), then \( x \ne 7 \)" are both true, and neither says anything about \( x \) or about \( 7 \). Likewise "if \( n \) is an even prime greater than \( 2 \), then \( n = 17 \)" is true and empty. When a hypothesis turns out to be impossible, suspect the hypothesis; do not believe the conclusion.

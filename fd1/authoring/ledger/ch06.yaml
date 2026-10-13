@@ -1,0 +1,1488 @@
+chapter: 6
+dir: ch06-working-with-quantifiers
+items:
+- key: exm-translate-limit
+  kind: exm
+  file: 01-translation.md
+  line: 27
+  hash: 3a1a9280a65f
+  verdicts:
+  - stage: S5a
+    verdict: minor
+    by: refereeA
+    hash: 51dfc73e33ec
+    date: '2026-10-10'
+    model: claude-opus-5-5
+    evidence: 08-translation.md:64 'The two forms are provably equivalent, by the laws of Section 6.2'
+      overstates what logic gives. The quantifier laws only take the negated form to ∀p(Prime(p) → ∃q(Prime(q)
+      ∧ ¬(q ≤ p))). Getting to p < q needs the arithmetic fact ¬(q≤p) ↔ p<q over ℕ.
+  - stage: S5b
+    verdict: gap
+    by: refereeB
+    hash: 51dfc73e33ec
+    date: '2026-10-10'
+    model: claude-opus-5-5
+    evidence: 08-translation.md:64 The two forms of 'no largest prime' are said to be provably equivalent
+      by the quantifier laws of Section 6.2 alone. They are equivalent only given the order fact ¬(q ≤
+      p) ↔ p < q.
+  - stage: S7r
+    verdict: correct
+    by: rereferee
+    hash: 3a1a9280a65f
+    date: '2026-10-11'
+    model: claude-opus-5-5
+    evidence: '08-translation.md:27-73. I solved (a)-(e) myself and got the same formulas. (a) The free
+      variable is L, and a is a function symbol (matches 4.2:215). (b) Line 48 now says x ∈ A is a one-place
+      predicate (matches 4.1:39 and 4.2:36), so the earlier ''two-place ∈'' finding is resolved. (c) Line
+      54 now calls a a variable free in the formula, which agrees with the remark at line 73 (∀a for ''continuous
+      at '
+- key: check:01-translation:1
+  kind: check
+  file: 01-translation.md
+  line: 75
+  hash: b6231bf6c6d0
+  verdicts:
+  - stage: S5a
+    verdict: correct
+    by: refereeA
+    hash: b6231bf6c6d0
+    date: '2026-10-10'
+    model: claude-opus-5-5
+    evidence: 'Line 80: ∃m∈A ∀x∈A (x≤m) is right. Dropping the bound gives ''bounded above'', which is
+      weaker. For A=(0,1), m=1 makes the weak form true and the strong form false.'
+  - stage: S5b
+    verdict: minor
+    by: refereeB
+    hash: b6231bf6c6d0
+    date: '2026-10-10'
+    model: claude-opus-5-5
+    evidence: '08-translation.md:80 A fact is used without an @ref and is not in the ledger: (0,1) has
+      no maximum and is bounded above by 1.'
+  - stage: S7r
+    verdict: correct
+    by: rereferee
+    hash: b6231bf6c6d0
+    date: '2026-10-11'
+    model: claude-opus-5-5
+    evidence: '08-translation.md:75-81. ∃m∈A ∀x∈A (x≤m) is correct. Dropping m∈A gives the ''bounded above''
+      form of exm (b), which is weaker. The claim for A=(0,1) is true. The earlier finding is resolved:
+      ledger line 501 now records that (0,1) is bounded by 1 with no maximum (m < (m+1)/2 < 1). The sidecar
+      verify/ch06/exm-translate-limit.py exists and covers ''check: m bounding (0, 1)''. Interval notation
+      is in NOT'
+- key: prp-bounded-quantifier-rules
+  kind: prp
+  file: 01-translation.md
+  line: 93
+  hash: 2585ba1a362e
+  verdicts:
+  - stage: S5a
+    verdict: correct
+    by: refereeA
+    hash: 985171b3bb12
+    date: '2026-10-10'
+    model: claude-opus-5-5
+    evidence: 'Lines 96-142: the side conditions match the unbounded ones on the unfolded formula, as
+      in def-bounded-quantifier (01:150, including the x>a bound with x not occurring in a). The hypothesis
+      ''x does not occur in a'' is needed: without it (x>x)[t/x] is t>t, not t>a.'
+  - stage: S5b
+    verdict: minor
+    by: refereeB
+    hash: 985171b3bb12
+    date: '2026-10-10'
+    model: claude-opus-5-5
+    evidence: 08-translation.md:149 A meta-claim says 'derived rule' is used here in a looser sense, but
+      the phrase does not occur in the proposition or its proof.
+  - stage: S7r
+    verdict: correct
+    by: rereferee
+    hash: 2585ba1a362e
+    date: '2026-10-11'
+    model: claude-opus-5-5
+    evidence: 08-translation.md:93-143. The statement fixes A so that ∈A is a one-place predicate symbol
+      (4.2:36). The side conditions match the unbounded ones as Section 7.3:196,210 restates them ('appears
+      in no premise, in no assumption of a box still open at line k', not in the conclusion; for ∃E also
+      not in χ). The extension to the bounds >a, ≥a, <a, ≤a keeps the hypothesis 'x not in a', as def-bounded-qua
+- key: proof:prp-bounded-quantifier-rules
+  kind: proof
+  file: 01-translation.md
+  line: 155
+  hash: 07f7742c8c97
+  verdicts:
+  - stage: S5a
+    verdict: correct
+    by: refereeA
+    hash: 2e34d9ae7bea
+    date: '2026-10-10'
+    model: claude-opus-5-5
+    evidence: 'Lines 156-234 check all four blocks. ∀E: (x∈A→φ)[t/x] = t∈A→φ[t/x], and free-for is the
+      same because the bound has no quantifier. ∃I: ∧I then ∃I. ∀I: the →I box closes before k, so the
+      open assumptions at k are unchanged, and the citation i-m follows the blueprint''s convention for
+      nested boxes. ∃E: one assumption plus two ∧E lines, same four items in the side condition. Each
+      block costs exactly on'
+  - stage: S5b
+    verdict: gap
+    by: refereeB
+    hash: 2e34d9ae7bea
+    date: '2026-10-10'
+    model: claude-opus-5-5
+    evidence: 08-translation.md:230 The proof checks that citations stay available but not that side conditions
+      of flagged-box closings nested in the old box still hold.
+  - stage: S7r
+    verdict: correct
+    by: rereferee
+    hash: 07f7742c8c97
+    date: '2026-10-11'
+    model: claude-opus-5-5
+    evidence: '08-translation.md:155-235. ∀E: (x∈A→φ)[t/x] = t∈A→φ[t/x] by the atomic and connective clauses
+      of def-substitution (4.2:236). Free-for reduces to φ by the recursive description in def-free-for
+      (4.2:347ff: atomic formulas are always free-for). ∃I: the same. ∀I: the flagged box with no assumption
+      containing the →I box matches 12:196. Citing i-m follows the range convention of 4.4, as 07:190
+      recalls. '
+- key: check:01-translation:2
+  kind: check
+  file: 01-translation.md
+  line: 239
+  hash: 8a2c14e69bd8
+  verdicts:
+  - stage: S5a
+    verdict: correct
+    by: refereeA
+    hash: 8a2c14e69bd8
+    date: '2026-10-10'
+    model: claude-opus-5-5
+    evidence: 'Lines 244: the single conjunctive assumption is the unbounded ∃E on the unfolded formula.
+      It costs two ∧E lines against two bounded assumptions, so it is one line longer, as stated.'
+  - stage: S5b
+    verdict: correct
+    by: refereeB
+    hash: 8a2c14e69bd8
+    date: '2026-10-10'
+    model: claude-opus-5-5
+    evidence: '08:240-244: (N∈ℕ∧ψ)[N_0/N] = N_0∈ℕ∧ψ[N_0/N], so the box is unbounded ∃E. The two ∧E lines
+      make it one line longer, consistent with 08:237.'
+- key: exr-translation-a1
+  kind: exr
+  file: 01-translation.md
+  line: 339
+  hash: 44a718e49bab
+  verdicts:
+  - stage: S5a
+    verdict: correct
+    by: refereeA
+    hash: 9f98e94edeba
+    date: '2026-10-10'
+    model: claude-opus-5-5
+    evidence: 'Lines 352-358: (a)(i)-(v) are correct, and (v) is true with d=1. (b) A={0}, B={5} makes
+      (ii) true through x=7∉A while the words are false. A=B=ℕ makes (iii) true and the words false. (c)
+      There are no free variables. (d) ∧I then ∃I.'
+  - stage: S5b
+    verdict: correct
+    by: refereeB
+    hash: 9f98e94edeba
+    date: '2026-10-10'
+    model: claude-opus-5-5
+    evidence: '08:352-358 checked. (a)(i)-(v) are correct translations, and (v) is true with d=1. (b):
+      A={0}, B={5}, x=7 makes (ii) vacuously true; A=B=ℕ makes (iii) true and the sentence false. (c):
+      N and n are bound, a is a function symbol. (d) is the ∧I then ∃I block.'
+  - stage: S6
+    verdict: correct
+    by: verifier
+    hash: 9f98e94edeba
+    date: '2026-10-10'
+    model: claude-opus-5-5
+    evidence: '08-translation.md:351-359. Checked all five translations. The (b)(ii) counterexample works:
+      A={0}, B={5}, x=7 makes the implication vacuously true. The (b)(iii) counterexample works: A=B=N
+      with x=y+1. In (c) no variable is free. (d) is wedge-I then exists-I, with the same free-for condition.'
+  - stage: S7r
+    verdict: correct
+    by: rereferee
+    hash: 44a718e49bab
+    date: '2026-10-11'
+    model: claude-opus-5-5
+    evidence: '08-translation.md:339-359. I solved it independently. (a)(i)-(v) agree with my answers.
+      (iii): ∀x∀y covers the y<x case through the swapped instance. (v) is true with d=1, including n=0
+      (0=1·0). (b): only (i) is correct. (ii) is true vacuously with x=7∉{0}, A={0}, B={5}. (iii) is true
+      for A=B=ℕ with x=y+1, while the English is false. (c): no free variables. (d): ∧I then ∃I. Ledger
+      line 510 covers '
+- key: exr-translation-b1
+  kind: exr
+  file: 01-translation.md
+  line: 363
+  hash: 9e7588bab066
+  verdicts:
+  - stage: S5a
+    verdict: correct
+    by: refereeA
+    hash: 6a7ec7c4611e
+    date: '2026-10-10'
+    model: claude-opus-5-5
+    evidence: 'Lines 378-384: (a)-(c) are correct. The swapped (c), ∀n∈ℕ ∃M (|a_n|≤M), holds with M=|a_n|.
+      a_n=n satisfies it but is not bounded.'
+  - stage: S5b
+    verdict: minor
+    by: refereeB
+    hash: 6a7ec7c4611e
+    date: '2026-10-10'
+    model: claude-opus-5-5
+    evidence: 08-translation.md:366 The exercise asks the reader to classify symbols into a kind, 'set
+      symbol', that the book never defines. The solution also leaves the variables unclassified.
+  - stage: S6
+    verdict: minor
+    by: verifier
+    hash: 6a7ec7c4611e
+    date: '2026-10-10'
+    model: claude-opus-5-5
+    evidence: 08-translation.md:379 The problem asks for 'the kind of each symbol (variable, constant,
+      function symbol, set symbol)', but the solution names only A, f and a. It leaves out the variables
+      m, M, x, y and n, and the set symbol N in (c).
+  - stage: S7r
+    verdict: correct
+    by: rereferee
+    hash: 9e7588bab066
+    date: '2026-10-11'
+    model: claude-opus-5-5
+    evidence: '08-translation.md:363-387. Both earlier findings are resolved. The prompt now lists ''predicate
+      symbol'' and says ∈A is a one-place predicate symbol (4.2:36), so ''set symbol'' is gone. The solution
+      now classifies every symbol: the variables m, M, x / x, y / M, n, all bound; f, a and |·| as one-place
+      function symbols; ∈A, ∈ℕ, <, ≤ as predicate symbols; and ''no constants''. I checked the formulas
+      (a) ∃m'
+- key: exr-translation-b2
+  kind: exr
+  file: 01-translation.md
+  line: 389
+  hash: 4063b43db07d
+  verdicts:
+  - stage: S5a
+    verdict: correct
+    by: refereeA
+    hash: 4063b43db07d
+    date: '2026-10-10'
+    model: claude-opus-5-5
+    evidence: 'Lines 403-417: line 5 is bounded ∀E{1,3}, line 6 is →E{5,4}, line 7 is bounded ∃I{3,6}
+      and line 8 is bounded ∃E{2,3-7}. x0 is not in line 8, line 2 or the premises. Lines 5, 7 and 8 are
+      bounded steps, so the unbounded version has 8+3=11 lines, which is right.'
+  - stage: S5b
+    verdict: correct
+    by: refereeB
+    hash: 4063b43db07d
+    date: '2026-10-10'
+    model: claude-opus-5-5
+    evidence: '08:403-417: check_fitch reports 0 errors. Side condition at line 8 checked. The unbounded
+      count is 2 + (3+5) + 1 = 11, which matches 8+3.'
+  - stage: S6
+    verdict: correct
+    by: verifier
+    hash: 4063b43db07d
+    date: '2026-10-10'
+    model: claude-opus-5-5
+    evidence: '08-translation.md:397-420. My derivation matches the book''s: bounded exists-E box, forall
+      x in A E at 1,3, ->E, exists x in A I at 3,6. Side conditions hold. I listed the unbounded version
+      line by line and got 11 = 8+3, as claimed. Worked example: the limit derivation at :256-283.'
+- key: exr-translation-c1
+  kind: exr
+  file: 01-translation.md
+  line: 426
+  hash: e214920a695b
+  verdicts:
+  - stage: S5a
+    verdict: correct
+    by: refereeA
+    hash: e49a5480aedc
+    date: '2026-10-10'
+    model: claude-opus-5-5
+    evidence: 'Lines 438-442: both formulas are right, and they differ only in where ∀x∈A stands, so the
+      dependence of δ is correctly described. Section 6.4 is a prose pointer to an undelivered section.'
+  - stage: S5b
+    verdict: minor
+    by: refereeB
+    hash: e49a5480aedc
+    date: '2026-10-10'
+    model: claude-opus-5-5
+    evidence: '08-translation.md:442 Meta-claim: ''Section 6.4 shows ... that (b) does not derive (a)''.
+      Non-derivability is established in Section 7.2.'
+  - stage: S6
+    verdict: correct
+    by: verifier
+    hash: e49a5480aedc
+    date: '2026-10-10'
+    model: claude-opus-5-5
+    evidence: 08-translation.md:437-443. Both formulas are correct. The only difference is where forall
+      x in A sits relative to exists delta, and the dependence of delta is described correctly. The Section
+      6.4 pointer is prose only.
+  - stage: S7r
+    verdict: correct
+    by: rereferee
+    hash: e214920a695b
+    date: '2026-10-11'
+    model: claude-opus-5-5
+    evidence: '08-translation.md:426-445. I checked formulas (a) and (b). The only difference is the position
+      of ∀x∈A, correctly described, and so is its effect on δ. The earlier meta-claim finding is resolved:
+      line 444 now credits non-derivability to Section 7.2. 11-models.md:311 says exactly that: exm-square-not-uniform
+      (Section 6.4) shows x² is continuous and not uniformly continuous, which makes ℝ a counte'
+- key: exr-translation-c2
+  kind: exr
+  file: 01-translation.md
+  line: 447
+  hash: d72964db7f3b
+  verdicts:
+  - stage: S5a
+    verdict: correct
+    by: refereeA
+    hash: d72964db7f3b
+    date: '2026-10-10'
+    model: claude-opus-5-5
+    evidence: 'Lines 469-486: the grouping by the position of ∃y is right. For the pair under ∃y, the
+      ∃E box with a fresh y0, the swap and then ∃I at y0 are valid. All 8 table entries over ℤ are correct
+      (y=x+1 and y=z+1 as witnesses), and each of the 6 pairs of groups is separated. The swap relies
+      on §04 worked derivation 4, which is undelivered, but it is standard and the route the blueprint
+      plans. It breaks no'
+  - stage: S5b
+    verdict: minor
+    by: refereeB
+    hash: d72964db7f3b
+    date: '2026-10-10'
+    model: claude-opus-5-5
+    evidence: 08-translation.md:479 The section has no sidecar script for its chosen constants and quoted
+      truth values.
+  - stage: S6
+    verdict: correct
+    by: verifier
+    hash: d72964db7f3b
+    date: '2026-10-10'
+    model: claude-opus-5-5
+    evidence: '08-translation.md:468-501. The grouping is correct, and swapping the two foralls under
+      exists y via an exists-E box works. Truth-value table, by hand: F=(F,F), L=(T,T), Mx=(T,F), Mz=(F,T).
+      All rows differ. Marking scheme sums to 10, and an alternative grouping proof still earns its points.
+      The hints name a tool and a first line.'
+- key: prp-quantifier-negation
+  kind: prp
+  file: 02-quantifier-laws.md
+  line: 13
+  hash: a18d404b2027
+  verdicts:
+  - stage: S5a
+    verdict: correct
+    by: refereeA
+    hash: a18d404b2027
+    date: '2026-10-11'
+    model: claude-opus-5-5
+    evidence: 09:13-23. (a) uses RAA (lines 6 and 9); (b) and (c) are RAA-free. Checked against the derivations,
+      and check_fitch passes all 22 derivations.
+  - stage: S5b
+    verdict: correct
+    by: refereeB
+    hash: a18d404b2027
+    date: '2026-10-11'
+    model: claude-opus-5-5
+    evidence: '09:13-23. Checked (a)-(c) and the RAA/no-RAA claims against the derivations at 39-111:
+      RAA only at lines 6 and 9 of (a). The no-RAA-possible claim at 118 is flagged as stated without
+      proof and is in the STATUS Ch 5 row; the Ch 11 pointer is paid (ch11 05:92).'
+- key: proof:prp-quantifier-negation
+  kind: proof
+  file: 02-quantifier-laws.md
+  line: 33
+  hash: 2e4f51763942
+  verdicts:
+  - stage: S5a
+    verdict: gap
+    by: refereeA
+    hash: d3524e19022e
+    date: '2026-10-11'
+    model: claude-opus-5-5
+    evidence: 09-quantifier-laws.md:58 The section's freshness convention does not require x_0 to differ
+      from x. So the stated side-condition checks ('x_0 is not in ∀xφ, since it does not appear in φ')
+      do not follow from the convention.
+  - stage: S5b
+    verdict: minor
+    by: refereeB
+    hash: d3524e19022e
+    date: '2026-10-11'
+    model: claude-opus-5-5
+    evidence: 09-quantifier-laws.md:30 The meta-claim 'The clash is always an instance against a quantified
+      line' is false of the printed derivations.
+  - stage: S7r
+    verdict: correct
+    by: rereferee
+    hash: 2e4f51763942
+    date: '2026-10-11'
+    model: claude-opus-5-5
+    evidence: 09:11 now says x_0 is a variable different from x that does not appear in phi, so it does
+      not appear in ∀xφ or ∃xφ. That resolves the S5a gap. The side-condition checks at 09:58 (line 7
+      ∀I), 09:80 (line 6 ∃E) and 09:115 ((c) line 6 ∀I, second derivation as in (b)) now follow from the
+      convention. I rechecked all four derivations line by line (∃I/∀E at x_0, ¬E order, box ranges 3-5,
+      2-8, 3-6, 2-6, 3
+- key: check:02-quantifier-laws:1
+  kind: check
+  file: 02-quantifier-laws.md
+  line: 120
+  hash: 886d5a9d3f3e
+  verdicts:
+  - stage: S5a
+    verdict: correct
+    by: refereeA
+    hash: 886d5a9d3f3e
+    date: '2026-10-11'
+    model: claude-opus-5-5
+    evidence: 09:120-126. Over ℤ with P = even, ¬∀xP(x) is true and ¬P(0) is false. Then QN(a) and an
+      ∃E box with a fresh witness. Correct.
+  - stage: S5b
+    verdict: correct
+    by: refereeB
+    hash: 886d5a9d3f3e
+    date: '2026-10-11'
+    model: claude-opus-5-5
+    evidence: 09:120-126. Over Z with P even and c=0, the premise is true and ¬P(0) is false. The ∃E follow-up
+      is right.
+- key: prp-negated-implication
+  kind: prp
+  file: 02-quantifier-laws.md
+  line: 134
+  hash: ca52697b50bd
+  verdicts:
+  - stage: S5a
+    verdict: correct
+    by: refereeA
+    hash: ca52697b50bd
+    date: '2026-10-11'
+    model: claude-opus-5-5
+    evidence: 09:134-142. Matches exr-finding-derivations-b1(b) (ch02 06:733). The ⊢ direction uses RAA
+      once; ⊣ does not.
+  - stage: S5b
+    verdict: correct
+    by: refereeB
+    hash: ca52697b50bd
+    date: '2026-10-11'
+    model: claude-opus-5-5
+    evidence: 09:134-142. ⊢ uses RAA only at line 5, and VI (ch02 01:154) is ¬E plus ⊥E with no RAA. ⊣
+      has no RAA.
+- key: proof:prp-negated-implication
+  kind: proof
+  file: 02-quantifier-laws.md
+  line: 148
+  hash: 757dc5802858
+  verdicts:
+  - stage: S5a
+    verdict: correct
+    by: refereeA
+    hash: 757dc5802858
+    date: '2026-10-11'
+    model: claude-opus-5-5
+    evidence: 09:153-184. Line 3 is VI (prp-vacuous-implication ¬P ⊢ P→Q), line 5 is RAA 2-4, lines 6-11
+      are a ¬I box containing a →I box with a repeat, line 12 is ∧I. The ⊣ derivation is correct.
+  - stage: S5b
+    verdict: correct
+    by: refereeB
+    hash: 757dc5802858
+    date: '2026-10-11'
+    model: claude-opus-5-5
+    evidence: 09:151-188. 12 lines plus 7 lines; checked by hand and by check_fitch. The R at line 8 and
+      the VI at line 3 are justified.
+- key: prp-bounded-quantifier-negation
+  kind: prp
+  file: 02-quantifier-laws.md
+  line: 199
+  hash: 0a97f34e2e38
+  verdicts:
+  - stage: S5a
+    verdict: correct
+    by: refereeA
+    hash: 0a97f34e2e38
+    date: '2026-10-11'
+    model: claude-opus-5-5
+    evidence: '09:199-210. The condition ''x not occurring in a'' is used at 09:286 to get (x>a)[x_0/x]
+      = x_0>a. The RAA claims are correct: QN(b) and the NIm ⊣ direction are RAA-free.'
+  - stage: S5b
+    verdict: correct
+    by: refereeB
+    hash: 0a97f34e2e38
+    date: '2026-10-11'
+    model: claude-opus-5-5
+    evidence: 09:199-210. Matches def-bounded-quantifier (01:150), including the order bounds with x not
+      occurring in a.
+- key: proof:prp-bounded-quantifier-negation
+  kind: proof
+  file: 02-quantifier-laws.md
+  line: 218
+  hash: c6a80538043f
+  verdicts:
+  - stage: S5a
+    verdict: correct
+    by: refereeA
+    hash: c6a80538043f
+    date: '2026-10-11'
+    model: claude-opus-5-5
+    evidence: 09:223-286. The instance at x_0 of ¬(x∈A→φ) is right. NIm is used with x_0∈A and φ[x_0/x]
+      in its place. The ∃E side conditions hold. The bounded ∀I/∃E/∀E/∃I uses match prp-bounded-quantifier-rules
+      (08:93), including the closed own-assumption x_0∈A. It inherits the x_0 ≠ x omission from 09:11.
+  - stage: S5b
+    verdict: correct
+    by: refereeB
+    hash: c6a80538043f
+    date: '2026-10-11'
+    model: claude-opus-5-5
+    evidence: 09:219-286. The left derivation's RAA comes only through QN (a) and NIm ⊢, as 247 says.
+      The bounded rules match prp-bounded-quantifier-rules (08:93). (x>a)[x_0/x]=x_0>a holds.
+- key: prp-quantifier-distribution
+  kind: prp
+  file: 02-quantifier-laws.md
+  line: 297
+  hash: a677a4e207cd
+  verdicts:
+  - stage: S5a
+    verdict: correct
+    by: refereeA
+    hash: a677a4e207cd
+    date: '2026-10-11'
+    model: claude-opus-5-5
+    evidence: 09:297-310. (a), (b) and (d) reuse prp-forall-and, exm-existential-elimination-derivations(a)
+      and prp-exists-and. (c) is RAA-free. The converses of (c) and (d) fail over ℤ (even/odd).
+  - stage: S5b
+    verdict: correct
+    by: refereeB
+    hash: a677a4e207cd
+    date: '2026-10-11'
+    model: claude-opus-5-5
+    evidence: 09:297-310. (a) is prp-forall-and (04:241), (b) is exm-existential-elimination-derivations
+      (a) (06:211), (d) is prp-exists-and (06:166). The converses are refuted in §11 (11:265-275).
+- key: proof:prp-quantifier-distribution
+  kind: proof
+  file: 02-quantifier-laws.md
+  line: 318
+  hash: 8e93d79e9e3b
+  verdicts:
+  - stage: S5a
+    verdict: minor
+    by: refereeA
+    hash: 8665624422ec
+    date: '2026-10-11'
+    model: claude-opus-5-5
+    evidence: 09-quantifier-laws.md:319 The restated freshness condition again omits x_0 ≠ x, which the
+      side conditions of the reused derivations need.
+  - stage: S5b
+    verdict: correct
+    by: refereeB
+    hash: 8665624422ec
+    date: '2026-10-11'
+    model: claude-opus-5-5
+    evidence: 09:318-346. The (c) derivation checks and the carry-over argument at 319 is sound.
+  - stage: S7r
+    verdict: correct
+    by: rereferee
+    hash: 8e93d79e9e3b
+    date: '2026-10-11'
+    model: claude-opus-5-5
+    evidence: '09:319 now says the fresh name is ''chosen different from x and not appearing in φ or ψ'',
+      which resolves the S5a finding. The cited labels say what is claimed: prp-forall-and (04-universal-introduction.md:241),
+      prp-exists-and (06-existential-elimination.md:166), and the ∃-over-∨ derivation of exm-existential-elimination-derivations
+      (06:211ff). None uses RAA. The (c) derivation checks: ∨I gives φ[x0'
+- key: prp-quantifier-passage
+  kind: prp
+  file: 02-quantifier-laws.md
+  line: 352
+  hash: 51eabc546425
+  verdicts:
+  - stage: S5a
+    verdict: correct
+    by: refereeA
+    hash: df804ebbaf01
+    date: '2026-10-11'
+    model: claude-opus-5-5
+    evidence: 09:352-366. Each law fails without 'x not free in ψ' (e.g. (b) with φ=ψ=P(x), 09:578). Exactly
+      (d)⊣ and (e)⊣ use LEM/RAA, which matches the derivations.
+  - stage: S5b
+    verdict: minor
+    by: refereeB
+    hash: df804ebbaf01
+    date: '2026-10-11'
+    model: claude-opus-5-5
+    evidence: 09-quantifier-laws.md:365 'two are derived here with RAA (through LEM)' misdescribes (d)⊣,
+      which also uses RAA through QN (a).
+  - stage: S7r
+    verdict: correct
+    by: rereferee
+    hash: 51eabc546425
+    date: '2026-10-11'
+    model: claude-opus-5-5
+    evidence: '09:365 now reads: ⊣ in (d) ''through LEM and the cited QN (a)'', and ⊣ in (e) ''through
+      LEM''. LEM is RAA-derived (prp-excluded-middle, ch02/05:225, RAA at line 8). VI uses only ⊥E (ch02/01:154).
+      The other eight derivations use neither. The S5b finding is resolved.'
+- key: proof:prp-quantifier-passage
+  kind: proof
+  file: 02-quantifier-laws.md
+  line: 374
+  hash: 8a07dad24ed9
+  verdicts:
+  - stage: S5a
+    verdict: minor
+    by: refereeA
+    hash: 76f0fff91e33
+    date: '2026-10-11'
+    model: claude-opus-5-5
+    evidence: 09-quantifier-laws.md:375 The freshness statement for the passage-law derivations omits
+      x_0 ≠ x.
+  - stage: S5b
+    verdict: minor
+    by: refereeB
+    hash: 76f0fff91e33
+    date: '2026-10-11'
+    model: claude-opus-5-5
+    evidence: 09-quantifier-laws.md:575 The side condition of the ∃E at line 10 of the (e)⊣ derivation
+      is never checked.
+  - stage: S7r
+    verdict: correct
+    by: rereferee
+    hash: 8a07dad24ed9
+    date: '2026-10-11'
+    model: claude-opus-5-5
+    evidence: '09:375 now says x_0 is ''a variable other than x that does not appear in φ or ψ'', which
+      resolves the S5a finding. The ∃E side condition at line 10 of (e)⊣ is now checked at 09:575 (conclusion,
+      line 4, premise, open assumption ψ of line 3), which resolves the S5b finding. I rechecked all ten
+      derivations: instances such as ψ→φ[x0/x], since ψ[x0/x]=ψ; (c)⊣ ∧I{4,3}; (d)⊣ ∃I at x on line 8
+      with the non-'
+- key: check:02-quantifier-laws:2
+  kind: check
+  file: 02-quantifier-laws.md
+  line: 580
+  hash: 81bd07ba74e4
+  verdicts:
+  - stage: S5a
+    verdict: correct
+    by: refereeA
+    hash: 81bd07ba74e4
+    date: '2026-10-11'
+    model: claude-opus-5-5
+    evidence: 09:580-586. Law (e) with ψ = x>0, φ = y·y=x, moving y, and y not free in x>0. The direction
+      used is the LEM direction ⊣. Correct; the justification for use under a quantifier is weak (see
+      the finding with key '').
+  - stage: S5b
+    verdict: gap
+    by: refereeB
+    hash: 81bd07ba74e4
+    date: '2026-10-11'
+    model: claude-opus-5-5
+    evidence: 09-quantifier-laws.md:606 The replacement paragraph justifies use under a quantifier only
+      for 'each law of the procedure'. The Quick check (585) and C1 (863) apply the passage laws under
+      a quantifier, and those laws carry a side condition.
+  - stage: S7r
+    verdict: correct
+    by: rereferee
+    hash: 81bd07ba74e4
+    date: '2026-10-11'
+    model: claude-opus-5-5
+    evidence: 'Solved independently: ψ→∃yφ ⊣⊢ ∃y(ψ→φ) is law (e), with ψ = x>0, φ = y·y=x, and y not free
+      in ψ. The student''s move goes from the implication to the ∃, which is (e)⊣, the LEM direction.
+      The solution (09:585) agrees. Its pointer ''the next subsection says why'' now lands on 09:606,
+      which covers passage laws under a quantifier (x_0 ≠ y, so y stays not free in ψ[x_0/x]). The earlier
+      gap is resolved. Th'
+- key: exm-negating-definitions
+  kind: exm
+  file: 02-quantifier-laws.md
+  line: 608
+  hash: 1997dfb72591
+  verdicts:
+  - stage: S5a
+    verdict: minor
+    by: refereeA
+    hash: 124f9f6301bc
+    date: '2026-10-11'
+    model: claude-opus-5-5
+    evidence: 09-quantifier-laws.md:645 ⊣⊢ is written across order-fact steps. The book says these steps
+      are not laws of logic, so the displayed ⊣⊢ claims are false as derivability statements.
+  - stage: S5b
+    verdict: gap
+    by: refereeB
+    hash: 124f9f6301bc
+    date: '2026-10-11'
+    model: claude-opus-5-5
+    evidence: 09-quantifier-laws.md:603 The procedure and the worked examples write ⊣⊢ across order-fact
+      steps, which are not provable equivalences in logic alone.
+  - stage: S7r
+    verdict: minor
+    by: rereferee
+    hash: 1997dfb72591
+    date: '2026-10-11'
+    model: claude-opus-5-5
+    evidence: 'free in ψ, so ψ is unchanged), but the sentence should say so. (3) New, same class as the
+      S5a findings: ''Here x_0 is fresh: it appears in neither α nor β'' omits x_0 ≠ x. With x_0 = x,
+      the closing ∀I to ∀xβ breaks its side condition, since x appears in ∀xβ (''appear'' counts the quantified
+      letter, 04-universal-introduction.md:92). Fix: ''x_0 is a variable other than x that appears in
+      neither α nor β''.'
+  - stage: S7r
+    verdict: correct
+    by: rereferee
+    hash: 1997dfb72591
+    date: '2026-10-11'
+    model: claude-opus-5-5
+    evidence: 't. In all three the dashv-vdash chain stops before the order facts, as 09:603 prescribes.
+      The prime rewrite (09:676) is correct: QN (c); De Morgan (d) with implication-as-disjunction (a),
+      and the converse via (b) and (c); then QN (a)/(b) and NIm under exists q. The ledger line at 09:970
+      lists the new dependencies (forall-I side condition; psi[t/x] = psi from Section 5.2). check_structure:
+      0 fatal.'
+- key: check:02-quantifier-laws:3
+  kind: check
+  file: 02-quantifier-laws.md
+  line: 682
+  hash: 835cb424c959
+  verdicts:
+  - stage: S5a
+    verdict: correct
+    by: refereeA
+    hash: 835cb424c959
+    date: '2026-10-11'
+    model: claude-opus-5-5
+    evidence: 09:674-684. ∃A((E(A)∧B(A))∧¬S(A)) via QN(a)/(b) and NIm. Correct.
+  - stage: S5b
+    verdict: correct
+    by: refereeB
+    hash: 835cb424c959
+    date: '2026-10-11'
+    model: claude-opus-5-5
+    evidence: 09:674-684. QN (a)/(b) and NIm give ∃A((E∧B)∧¬S), which is correct.
+- key: prp-arbitrarily-close-equal
+  kind: prp
+  file: 02-quantifier-laws.md
+  line: 704
+  hash: ee218243d9ec
+  verdicts:
+  - stage: S5a
+    verdict: correct
+    by: refereeA
+    hash: ee218243d9ec
+    date: '2026-10-11'
+    model: claude-opus-5-5
+    evidence: 09:696-700. True. Dropping 'every' (a=0, b=1/2, ε=1) breaks it, as the text shows; the sidecar
+      passes.
+  - stage: S5b
+    verdict: correct
+    by: refereeB
+    hash: ee218243d9ec
+    date: '2026-10-11'
+    model: claude-opus-5-5
+    evidence: 09:696-700. True; the 'some ε' counterexample at 710 checks (a=0, b=1/2, ε=1).
+- key: proof:prp-arbitrarily-close-equal
+  kind: proof
+  file: 02-quantifier-laws.md
+  line: 714
+  hash: 1cc83cb89e7a
+  verdicts:
+  - stage: S5a
+    verdict: correct
+    by: refereeA
+    hash: 1cc83cb89e7a
+    date: '2026-10-11'
+    model: claude-opus-5-5
+    evidence: 09:707. RAA on a≠b. |a−b|>0 is a school fact. Bounded ∀E at the term |a−b| cites the bound
+      line. Then a ¬E clash with irreflexivity of <. The final RAA is genuine (09:710). Every hypothesis
+      is used.
+  - stage: S5b
+    verdict: minor
+    by: refereeB
+    hash: 1cc83cb89e7a
+    date: '2026-10-11'
+    model: claude-opus-5-5
+    evidence: 09-quantifier-laws.md:707 The proof uses a≠b ⇒ a−b≠0 without an @ref, and the ledger does
+      not list it.
+  - stage: S7r
+    verdict: correct
+    by: rereferee
+    hash: 1cc83cb89e7a
+    date: '2026-10-11'
+    model: claude-opus-5-5
+    evidence: '09:715: RAA box on a≠b; a−b≠0; |a−b|>0 (school fact); bounded ∀E citing that line; |a−b|<|a−b|
+      clashes with irreflexivity (¬E); RAA. All steps valid. The step a≠b ⇒ a−b≠0 is now in the ledger
+      as school algebra (09 ledger, ''a - b = 0 then a = (a - b) + b = b''), which STATUS.md:57 allows
+      for Ch 4 §09. The contrapositive remark (09:720) now goes from the bounded law to ∃ε>0 ¬(|a−b|<ε),
+      and from there'
+- key: exr-quantifier-laws-a1
+  kind: exr
+  file: 02-quantifier-laws.md
+  line: 726
+  hash: 43364356ae18
+  verdicts:
+  - stage: S5a
+    verdict: minor
+    by: refereeA
+    hash: b26b41c7469d
+    date: '2026-10-11'
+    model: claude-opus-5-5
+    evidence: 09-quantifier-laws.md:737 The solution miscounts the boxes enclosing line 4.
+  - stage: S5b
+    verdict: minor
+    by: refereeB
+    hash: b26b41c7469d
+    date: '2026-10-11'
+    model: claude-opus-5-5
+    evidence: 09-quantifier-laws.md:737 A1(c) says line 4 lies inside 'the two boxes opened at lines 2
+      and 3', but it is inside three boxes.
+  - stage: S6
+    verdict: correct
+    by: verifier
+    hash: b26b41c7469d
+    date: '2026-10-11'
+    model: claude-opus-5-5
+    evidence: 09:718-744. The RAA lines are 6 and 9, with boxes 3-5 and 2-8 (09:44-62). In (d), the route
+      exists-E then double-negation-E then exists-I is valid; double-negation-E is a ch02 derived rule.
+      In (e), epsilon=0 makes both the wrong form and the original statement true.
+  - stage: S7r
+    verdict: correct
+    by: rereferee
+    hash: 43364356ae18
+    date: '2026-10-11'
+    model: claude-opus-5-5
+    evidence: '(c) at 09:745 now says three boxes: the box opened at line 2, and the flagged box of x_0
+      and the inner box, both opened at line 3. That matches the derivation at 09:40-44. Both S5 findings
+      are resolved. I solved (a), (b), (d) and (e) myself: RAA at lines 6 and 9 with the right assumptions
+      and conclusions; the premise is not an instance; the ∃E/¬¬E/∃I route to ∃x(x·x=2) works, and ¬¬E
+      is a derived '
+- key: exr-quantifier-laws-b1
+  kind: exr
+  file: 02-quantifier-laws.md
+  line: 754
+  hash: cffa2f528fdb
+  verdicts:
+  - stage: S5a
+    verdict: minor
+    by: refereeA
+    hash: e2f92a3c4185
+    date: '2026-10-11'
+    model: claude-opus-5-5
+    evidence: 09-quantifier-laws.md:763 ⊣⊢ is written between the negated definition and a form that already
+      includes the order fact (|a_n| > M).
+  - stage: S5b
+    verdict: gap
+    by: refereeB
+    hash: e2f92a3c4185
+    date: '2026-10-11'
+    model: claude-opus-5-5
+    evidence: 09-quantifier-laws.md:763 The B1(a) solution writes ⊣⊢ across the order fact ¬(|a_n|≤M)
+      to |a_n|>M.
+  - stage: S6
+    verdict: correct
+    by: verifier
+    hash: e2f92a3c4185
+    date: '2026-10-11'
+    model: claude-opus-5-5
+    evidence: 09:746-785. I negated all four definitions myself and got the same forms with the bounds
+      kept. The laws cited are the right ones, including QN for the unbounded forall-x in (c). The worked
+      type is exm-negating-definitions.
+  - stage: S7r
+    verdict: correct
+    by: rereferee
+    hash: cffa2f528fdb
+    date: '2026-10-11'
+    model: claude-opus-5-5
+    evidence: '(a) at 09:768-779: the ⊣⊢ chain (QN (c), then bounded (a) under ∀M) ends at ¬(|a_n|≤M),
+      and the order fact is applied after it in a separate display. The S5a and S5b findings are resolved.
+      I solved (b), (c) and (d) myself: ∃x∈A∃y∈A(x<y ∧ f(x)>f(y)); the limit negation with the unbounded
+      ∀x handled by QN (a)/(b); Cauchy with four bounded laws. These match, and no ⊣⊢ crosses an order
+      fact.'
+- key: exr-quantifier-laws-b2
+  kind: exr
+  file: 02-quantifier-laws.md
+  line: 801
+  hash: 17fa31cb5c33
+  verdicts:
+  - stage: S5a
+    verdict: correct
+    by: refereeA
+    hash: befd995e04a0
+    date: '2026-10-11'
+    model: claude-opus-5-5
+    evidence: 09:798-819. Nested flagged boxes x_0, y_0. Line 7 is ∀I with (P(x_0)→Q(y))[y_0/y]; line
+      8 is ∀I. The side conditions hold and there is no RAA. It combines (b)⊣ and then (a)⊣ under ∀x,
+      with conditions met.
+  - stage: S5b
+    verdict: minor
+    by: refereeB
+    hash: befd995e04a0
+    date: '2026-10-11'
+    model: claude-opus-5-5
+    evidence: 09-quantifier-laws.md:819 The law (a) application does not name φ and does not justify use
+      under ∀x.
+  - stage: S6
+    verdict: correct
+    by: verifier
+    hash: befd995e04a0
+    date: '2026-10-11'
+    model: claude-opus-5-5
+    evidence: 09:787-820. Same derivation as mine. The ranges 2-6 and 2-7 follow the immediately-contains
+      convention (04:83), and the side conditions at lines 7 and 8 hold. Law (b) with psi = forall-y Q(y),
+      then law (a) under forall-x, is correct, and the not-free conditions are met.
+  - stage: S7r
+    verdict: correct
+    by: rereferee
+    hash: 17fa31cb5c33
+    date: '2026-10-11'
+    model: claude-opus-5-5
+    evidence: 'The derivation at 09:813-826 checks: ∃I, →E, ∀E at y_0, →I{2-5}, ∀I{2-6} and ∀I{2-7}; the
+      side conditions are at 09:831; no RAA. At 09:833 law (a) now names ψ = P(x), φ = Q(y) and the moving
+      variable y (not free in P(x)), and justifies use under ∀x by the paragraph after the procedure (09:606),
+      which covers passage laws. Law (b)⊣ with ψ = ∀yQ(y) (x not free) is correct. Resolved.'
+- key: exr-quantifier-laws-b3
+  kind: exr
+  file: 02-quantifier-laws.md
+  line: 836
+  hash: 131b16f6c03e
+  verdicts:
+  - stage: S5a
+    verdict: correct
+    by: refereeA
+    hash: 131b16f6c03e
+    date: '2026-10-11'
+    model: claude-opus-5-5
+    evidence: 09:829-835. ε=min(1,a−b)>0 and ε²≤ε≤a−b give a<a. With ε=a−b and a−b=2 the inequality 2<4
+      holds, so there is no contradiction. The sidecar passes.
+  - stage: S5b
+    verdict: correct
+    by: refereeB
+    hash: 131b16f6c03e
+    date: '2026-10-11'
+    model: claude-opus-5-5
+    evidence: 09:829-835. ε=min(1,a−b) gives ε²≤ε≤a−b and so a<a. With ε=a−b the result a−b<(a−b)² holds
+      for a−b>1. The sidecar passes.
+  - stage: S6
+    verdict: correct
+    by: verifier
+    hash: 131b16f6c03e
+    date: '2026-10-11'
+    model: claude-opus-5-5
+    evidence: '09:822-838. Script: epsilon=min(1,a-b) gives 0<epsilon, epsilon^2<=epsilon<=a-b and the
+      contradiction a<a (10^4 random cases). epsilon=a-b fails when a-b>1 (2<4). The alternative epsilon=sqrt(a-b)
+      also works and needs no scheme.'
+- key: exr-quantifier-laws-c1
+  kind: exr
+  file: 02-quantifier-laws.md
+  line: 854
+  hash: ca29746eed2a
+  verdicts:
+  - stage: S5a
+    verdict: correct
+    by: refereeA
+    hash: ca29746eed2a
+    date: '2026-10-11'
+    model: claude-opus-5-5
+    evidence: 09:859-877. (d) with ψ=∃yQ(y), then (e) under ∃x (y not free in P(x)). (e) with ψ=∀xP(x),
+      then (d) under ∃y (x not free in Q(y)). Steps toward prenex form use the ⊣ directions, which are
+      the LEM ones.
+  - stage: S5b
+    verdict: gap
+    by: refereeB
+    hash: ca29746eed2a
+    date: '2026-10-11'
+    model: claude-opus-5-5
+    evidence: Both routes are correct, with (d)/(e) instances and not-free conditions checked, and the
+      ⊣ directions are classical (877). But 09:863 relies on 'the paragraph after the negation procedure'
+      to use (e) and (d) under ∃. That paragraph (606) covers only the laws of the procedure (same gap
+      as check 2).
+  - stage: S6
+    verdict: correct
+    by: verifier
+    hash: ca29746eed2a
+    date: '2026-10-11'
+    model: claude-opus-5-5
+    evidence: '09:840-885. Both routes are correct: (d) then (e) under exists-x, and (e) then (d) under
+      exists-y, each with its not-free condition satisfied. Every step towards prenex form is the dashv
+      (LEM) direction of (d) or (e). The scheme does not depend on the book''s wording.'
+- key: exr-quantifier-laws-c2
+  kind: exr
+  file: 02-quantifier-laws.md
+  line: 901
+  hash: 043376f90b7c
+  verdicts:
+  - stage: S5a
+    verdict: correct
+    by: refereeA
+    hash: 043376f90b7c
+    date: '2026-10-11'
+    model: claude-opus-5-5
+    evidence: '09:913-929. The negation of uniform convergence is right. For 1/x on (0,1): ε=1 is chosen
+      first; t=min(δ,1/2), x=t and y=t/2 depend only on δ; |x−y|=t/2<δ and |1/x−1/y|=1/t≥2. The sidecar
+      passes.'
+  - stage: S5b
+    verdict: minor
+    by: refereeB
+    hash: 043376f90b7c
+    date: '2026-10-11'
+    model: claude-opus-5-5
+    evidence: 09-quantifier-laws.md:909 Hint 2 gives the execution of the key idea, against STYLE §11.7
+      ('Neither gives the execution of the key idea').
+  - stage: S6
+    verdict: minor
+    by: verifier
+    hash: 043376f90b7c
+    date: '2026-10-11'
+    model: claude-opus-5-5
+    evidence: '09-quantifier-laws.md:907 Hint 2 gives the key idea, not a first line (STYLE §11.7): it
+      states epsilon=1 and both witnesses x=t, y=t/2. All that is left of the solution is t=min(delta,1/2)
+      and the checks.'
+  - stage: S7r
+    verdict: correct
+    by: rereferee
+    hash: 043376f90b7c
+    date: '2026-10-11'
+    model: claude-opus-5-5
+    evidence: 'Hint 2 (09:923) now gives only the first line, ''Take ε=1 and let δ>0 be arbitrary'', and
+      restates what remains to find. It no longer gives the witnesses x=t, y=t/2 or the choice of t, so
+      it complies with STYLE §11.7 (STYLE.md:228, 404-406). Both earlier findings are resolved. Solved
+      myself: (a) needs four bounded laws plus NIm and the order fact, giving ∃ε>0∀N∈ℕ∃n∈ℕ∃x∈A(n≥N ∧ |f_n(x)−f(x)|≥ε).
+      (b) '
+- key: check:04-uniform-continuity-rule-by-rule:1
+  kind: check
+  file: 04-uniform-continuity-rule-by-rule.md
+  line: 20
+  hash: b7a8612c4e55
+  verdicts:
+  - stage: S5a
+    verdict: correct
+    by: refereeA
+    hash: b7a8612c4e55
+    date: '2026-10-11'
+    model: claude-opus-5-5
+    evidence: 10:21-26 checked. The swapped formula gives |f(x)-f(y)|<eps for every eps>0, and prp-arbitrarily-close-equal
+      (09:696, with a=f(x), b=f(y)) then gives f(x)=f(y). For f(x)=x, the points 0 and delta/2 refute
+      it, and delta=eps gives UC.
+  - stage: S5b
+    verdict: correct
+    by: refereeB
+    hash: b7a8612c4e55
+    date: '2026-10-11'
+    model: claude-opus-5-5
+    evidence: '10:20-26: the math is right (prp-arbitrarily-close-equal is cited; 0 and δ/2 work). Bookkeeping
+      slip: ledger line 459 files this check under ''exm-uniform-implies-continuous (solution)'', but
+      the check stands before that example and is not part of it. [finding refuted by skeptics]'
+- key: exm-uniform-implies-continuous
+  kind: exm
+  file: 04-uniform-continuity-rule-by-rule.md
+  line: 30
+  hash: af8f0a950e53
+  verdicts:
+  - stage: S5a
+    verdict: correct
+    by: refereeA
+    hash: af8f0a950e53
+    date: '2026-10-11'
+    model: claude-opus-5-5
+    evidence: '10:45-76 checked line by line against prp-bounded-quantifier-rules (08:93) and the >-bound
+      extension. L4 is forall-E at eps_0 with bound L3. L7 is forall-E at x_0 with bound L2. L8 is exists-I
+      with L5 and L7. L9 is exists-E 4,5-8: delta_0 is not in 9, 4, 1, 2 or 3. L10 closes 3-9 (flag eps_0;
+      open assumption L2 only). L11 closes 2-10. Every free-for check holds. The count 11+6=17 matches
+      the rule '
+  - stage: S5b
+    verdict: correct
+    by: refereeB
+    hash: af8f0a950e53
+    date: '2026-10-11'
+    model: claude-opus-5-5
+    evidence: '10:43-77: check_fitch reports 0 errors. Side conditions at lines 9, 10 and 11 hold against
+      def-rules-universal, def-rules-existential and prp-bounded-quantifier-rules. The 11→17 count matches
+      §08:237 (each bounded step saves exactly one line; there are six). The prose sentences cover lines
+      2-11. The answer to the prompt (line 5 rests on lines 4, 1 and 3, none of which mention x0) is right.
+      The dep'
+- key: check:04-uniform-continuity-rule-by-rule:2
+  kind: check
+  file: 04-uniform-continuity-rule-by-rule.md
+  line: 91
+  hash: 9f2b05ebf06f
+  verdicts:
+  - stage: S5a
+    verdict: correct
+    by: refereeA
+    hash: 5dd82359d082
+    date: '2026-10-11'
+    model: claude-opus-5-5
+    evidence: 10:92-97 checked. The open flagged boxes at L5 are x_0 (L2) and eps_0 (L3). delta_0 comes
+      from L4, which mentions eps_0 only. The reordering claim in the paragraph after it (10:99) is reported
+      separately, under key "".
+  - stage: S5b
+    verdict: minor
+    by: refereeB
+    hash: 5dd82359d082
+    date: '2026-10-11'
+    model: claude-opus-5-5
+    evidence: 10-uniform-continuity-rule-by-rule.md:92 The check asks which flagged boxes are 'open at
+      line 5'. The solution omits δ0's own box, which is open there.
+  - stage: S7r
+    verdict: correct
+    by: rereferee
+    hash: 9f2b05ebf06f
+    date: '2026-10-11'
+    model: claude-opus-5-5
+    evidence: 'Lines 91-97. The question now asks which flagged boxes surround the box of δ0 opened at
+      line 5, and the answer (x0 from line 2, ε0 from line 3) is complete. The ''in fact'' part holds:
+      line 4 (\Ae{1,3}) mentions ε0 and not x0. The principle at line 89 (''chosen in a box ... boxes
+      open around that box'') matches. The S5b finding is resolved.'
+- key: exm-converse-fails
+  kind: exm
+  file: 04-uniform-continuity-rule-by-rule.md
+  line: 107
+  hash: a8feba498ac5
+  verdicts:
+  - stage: S5a
+    verdict: correct
+    by: refereeA
+    hash: a8feba498ac5
+    date: '2026-10-11'
+    model: claude-opus-5-5
+    evidence: '10:124-153 checked. All 11 lines are legal: L4 and L5 are forall-E 1,3 and 4,2. L9 is exists-E
+      (delta_0 not in 9, 5, 1, 2, 3). L10 is forall-I flag x_0 (open assumption L2 only). L11 closes 2-10.
+      Both blocked moves at 148-149 break the stated clauses: x_0 is in open assumptions L3 and L7; delta_0
+      is in chi. The parallel with the two routes at 06:385-430 is accurate.'
+  - stage: S5b
+    verdict: correct
+    by: refereeB
+    hash: a8feba498ac5
+    date: '2026-10-11'
+    model: claude-opus-5-5
+    evidence: '10:122-144: the partial derivation passes check_fitch. Both blocked attempts (10:148-149)
+      break the stated clauses: x0 is in the open assumptions on lines 3 and 7, and δ0 is in χ. The parallel
+      with §06:615 (two blocks) holds. Try-it-first is placed and worded per STYLE §11.8.'
+- key: exm-square-not-uniform
+  kind: exm
+  file: 04-uniform-continuity-rule-by-rule.md
+  line: 160
+  hash: 8d8d781a6b2d
+  verdicts:
+  - stage: S5a
+    verdict: correct
+    by: refereeA
+    hash: fe0bc066326e
+    date: '2026-10-11'
+    model: claude-opus-5-5
+    evidence: 10:167-185 checked. delta=min(1,eps/(2|x|+1))>0. |y|<|x|+1, |x+y|<2|x|+1, and |x^2-y^2|<delta(2|x|+1)<=eps.
+      The negation matches 09 exm-negating-definitions (c). x=1/delta, y=1/delta+delta/2 gives |x-y|=delta/2<delta
+      and |y^2-x^2|=1+delta^2/4>=1. The sidecar passes.
+  - stage: S5b
+    verdict: minor
+    by: refereeB
+    hash: fe0bc066326e
+    date: '2026-10-11'
+    model: claude-opus-5-5
+    evidence: 10-uniform-continuity-rule-by-rule.md:183 |y² − x²| = (y − x)(y + x) drops the absolute
+      value without justification, and the negation to be proved has |x² − y²|.
+  - stage: S7r
+    verdict: correct
+    by: rereferee
+    hash: 8d8d781a6b2d
+    date: '2026-10-11'
+    model: claude-opus-5-5
+    evidence: 'Lines 160-186. C part: δ>0 holds; |y| < |x|+1 and |x+y| < 2|x|+1 follow from the triangle
+      inequality (exm-triangle-inequality-cases, Ch01 07:420); |x²−y²| = |x−y||x+y| is in the ledger (exm-abs-product-cases);
+      the chain to ≤ ε checks. UC part: the displayed goal matches exm-negating-definitions (c) (09-quantifier-laws.md,
+      final display) with the bounds dropped over ℝ. x = 1/δ > 0 and y = x + δ/2 >'
+- key: exr-uniform-continuity-rule-by-rule-a1
+  kind: exr
+  file: 04-uniform-continuity-rule-by-rule.md
+  line: 198
+  hash: 8f51ff01f008
+  verdicts:
+  - stage: S5a
+    verdict: correct
+    by: refereeA
+    hash: 464bf9bb5b51
+    date: '2026-10-11'
+    model: claude-opus-5-5
+    evidence: 10:212-221 checked. (a) The line numbers, the availability of L2 and L6, and the free-for
+      check are right. (d) |(3x0+1)-(3y+1)|=3|x0-y|<eps0. The sidecar passes.
+  - stage: S5b
+    verdict: minor
+    by: refereeB
+    hash: 464bf9bb5b51
+    date: '2026-10-11'
+    model: claude-opus-5-5
+    evidence: 10-uniform-continuity-rule-by-rule.md:218 'Uniform continuity at ε0 gives δ0 = ε0/3' treats
+      the ∃E witness name as a specific number.
+  - stage: S6
+    verdict: minor
+    by: verifier
+    hash: 464bf9bb5b51
+    date: '2026-10-11'
+    model: claude-opus-5-5
+    evidence: 10-uniform-continuity-rule-by-rule.md:218 The solution writes as if the derivation receives
+      the value epsilon_0/3 from UC. The exists-E witness delta_0 is whatever witness UC supplies, and
+      for 3x+1 every delta in (0, epsilon_0/3] works. This blurs the point of Section 5.6's warning that
+      the witness is unknown.
+  - stage: S7r
+    verdict: correct
+    by: rereferee
+    hash: 8f51ff01f008
+    date: '2026-10-11'
+    model: claude-opus-5-5
+    evidence: 'Lines 198-222. (a): line 7 is \Ae{6,2}. Both boxes are open, and x0 is free for x. (b)
+      and (c) are right. (d) now says that line 8 hands C whatever witness δ0 line 4 supplies, that the
+      derivation knows only lines 5 and 6 about it, and that ε0/3 is one such witness (any 0<δ≤ε0/3 works,
+      which is correct for 3x+1). The check |(3x0+1)−(3y+1)| = 3|x0−y| < ε0 is right. The S5b and S6 findings
+      are resolv'
+- key: exr-uniform-continuity-rule-by-rule-b1
+  kind: exr
+  file: 04-uniform-continuity-rule-by-rule.md
+  line: 226
+  hash: b9c7b94ad338
+  verdicts:
+  - stage: S5a
+    verdict: minor
+    by: refereeA
+    hash: de9389545223
+    date: '2026-10-11'
+    model: claude-opus-5-5
+    evidence: 10-uniform-continuity-rule-by-rule.md:257 Line 11, |f(x0)-f(y0)|<eps0, is justified \by{arith}{}
+      with no cited lines, although it depends on lines 2, 3, 8 and 10.
+  - stage: S5b
+    verdict: minor
+    by: refereeB
+    hash: de9389545223
+    date: '2026-10-11'
+    model: claude-opus-5-5
+    evidence: 10-uniform-continuity-rule-by-rule.md:233 The parenthetical meant to justify the bound L
+      ≥ 0 gives a fact (L = −1 satisfies the matrix on sets with at most one point) but never says why
+      that matters.
+  - stage: S6
+    verdict: minor
+    by: verifier
+    hash: de9389545223
+    date: '2026-10-11'
+    model: claude-opus-5-5
+    evidence: '10-uniform-continuity-rule-by-rule.md:257 Line 11 is an arithmetic step that depends on
+      four lines but cites none. The book''s convention is that an arith line cites the lines it uses:
+      exm-sum-of-evens says ''justified "arith", citing the two lines it uses''. With no citations, the
+      availability of lines 2, 3, 8 and 10 goes unchecked. The other \by{arith}{} lines in the chapter
+      are closed numerical fa'
+  - stage: S8
+    verdict: minor
+    by: seam
+    hash: de9389545223
+    date: '2026-10-11'
+    model: claude-opus-5-5
+    evidence: '10-uniform-continuity-rule-by-rule.md:250 In the B1 solution, line 11 is justified \by{arith}{}
+      with no cited lines, although it uses lines 2, 3, 8 and 10. Under §03''s arith convention, a line
+      citing nothing is a bare instance of an arithmetic premise, here |f(x_0) − f(y_0)| < ε_0. That is
+      not a fact of arithmetic. check_fitch does not shape-check arith lines, so nothing catches this.
+      The math in '
+  - stage: S7r
+    verdict: correct
+    by: rereferee
+    hash: b9c7b94ad338
+    date: '2026-10-11'
+    model: claude-opus-5-5
+    evidence: 'Lines 226-276. Line 11 is now \by{arith}{2,3,8,10}, following the convention in exm-sum-of-evens
+      (06-existential-elimination.md:504) and §03:187. Line 5 cites 2 and 3. Checked lines 9 \Ae{4,6},
+      10 \Ae{9,7}, 12 \ii{8-11}, 13 \Ai{7-12}, 14 \Ai{6-13}, 15 \Ei{5,14} (bound on line 5), 16 \Ee{1,3-15}
+      and 17 \Ai{2-16}; every side condition stated at line 273 holds. The parenthetical in the statement
+      now '
+- key: exr-uniform-continuity-rule-by-rule-b2
+  kind: exr
+  file: 04-uniform-continuity-rule-by-rule.md
+  line: 278
+  hash: c7b3edfdab5a
+  verdicts:
+  - stage: S5a
+    verdict: gap
+    by: refereeA
+    hash: 7ae6243179e0
+    date: '2026-10-11'
+    model: claude-opus-5-5
+    evidence: 10-uniform-continuity-rule-by-rule.md:300 The order (iii),(vi),(viii) is said to be 'the
+      derivation of @exm-uniform-implies-continuous with the box of delta_0 opened outside the box of
+      x_0'. As a derivation, that order gives forall eps forall x exists delta, not C.
+  - stage: S5b
+    verdict: gap
+    by: refereeB
+    hash: 7ae6243179e0
+    date: '2026-10-11'
+    model: claude-opus-5-5
+    evidence: 10-uniform-continuity-rule-by-rule.md:300 The third order, (iii),(vi),(viii), is called
+      'the derivation of @exm-uniform-implies-continuous with the box of δ0 opened outside the box of
+      x0'. That re-nesting is impossible in that derivation.
+  - stage: S6
+    verdict: minor
+    by: verifier
+    hash: 7ae6243179e0
+    date: '2026-10-11'
+    model: claude-opus-5-5
+    evidence: 10-uniform-continuity-rule-by-rule.md:300 The admissibility claim does not follow from the
+      solution's own criterion. The solution says orders are admissible 'as long as each sentence comes
+      after what it uses', but then fixes (v) first and counts 'exactly three' orders. (v) uses nothing,
+      so by that criterion it could stand anywhere before (vi), which gives 8 orders. Also, orders 2 and
+      3 fix epsilon
+  - stage: S7r
+    verdict: minor
+    by: rereferee
+    hash: b01c7c0ea10f
+    date: '2026-10-11'
+    model: claude-opus-5-5
+    evidence: 'rsal-introduction.md:161ff). Still open from S6: the second order, (iii),(viii),(vi), also
+      opens ε before x. Its derivation also ends in ∀ε>0 ∀x∈A ∃δ (...) and needs the same swap, but the
+      solution attaches the swap remark, and the gloss that (iv) covers both steps, to the third order
+      only. Fix: say that the swap remark applies to both the second and the third order (in both, ε is
+      fixed before x).'
+  - stage: S7r
+    verdict: correct
+    by: rereferee
+    hash: c7b3edfdab5a
+    date: '2026-10-11'
+    model: claude-opus-5-5
+    evidence: 'arbitrary where an ∃ needs a witness. (vii) generalizes over x while an ∃E assumption mentioning
+      x is open, which breaks the ∀I side condition (the exm-converse-fails reference fits). If δ does
+      not depend on x, (vii) reduces to (vi). Optional nit, not introduced by this diff: the solution
+      quotes (iv) as "since ε and x were arbitrary", but (iv) actually reads ''Since ε > 0 and x ∈ A were
+      arbitrary''.'
+- key: exr-uniform-continuity-rule-by-rule-b3
+  kind: exr
+  file: 04-uniform-continuity-rule-by-rule.md
+  line: 307
+  hash: cc28ac06a1a4
+  verdicts:
+  - stage: S5a
+    verdict: correct
+    by: refereeA
+    hash: cc28ac06a1a4
+    date: '2026-10-11'
+    model: claude-opus-5-5
+    evidence: 10:314-318 checked. delta=eps^2>0. sqrt|x-y|<sqrt(eps^2)=eps, using strict monotonicity
+      and eps>0. The sidecar passes.
+  - stage: S5b
+    verdict: correct
+    by: refereeB
+    hash: cc28ac06a1a4
+    date: '2026-10-11'
+    model: claude-opus-5-5
+    evidence: '10:313-318: δ = ε² with the inequality given in the item, and √ is increasing. The dependence
+      is stated. The sidecar b3 checks it.'
+  - stage: S6
+    verdict: correct
+    by: verifier
+    hash: cc28ac06a1a4
+    date: '2026-10-11'
+    model: claude-opus-5-5
+    evidence: 10:307-319. delta=epsilon^2 gives |sqrt x - sqrt y| <= sqrt|x-y| < epsilon. The script checks
+      the school inequality on random pairs. The dependence on epsilon only is stated.
+- key: exr-uniform-continuity-rule-by-rule-c1
+  kind: exr
+  file: 04-uniform-continuity-rule-by-rule.md
+  line: 323
+  hash: 2cd1e0baa0ee
+  verdicts:
+  - stage: S5a
+    verdict: correct
+    by: refereeA
+    hash: 2cd1e0baa0ee
+    date: '2026-10-11'
+    model: claude-opus-5-5
+    evidence: 10:346-355 checked. delta comes from f's UC applied at eta>0, before any point is fixed.
+      Then |f(x)-f(y)|<eta, and f(x),f(y) in B lets g's UC apply. Every hypothesis is used, including
+      f(A) subset B.
+  - stage: S5b
+    verdict: correct
+    by: refereeB
+    hash: 2cd1e0baa0ee
+    date: '2026-10-11'
+    model: claude-opus-5-5
+    evidence: '10:345-355: the completion is correct and uses f(x), f(y) ∈ B. The move is named as in
+      §06. The marking scheme sums to 2+3+3+2 = 10. The faded-triple prompt is present.'
+  - stage: S6
+    verdict: correct
+    by: verifier
+    hash: 2cd1e0baa0ee
+    date: '2026-10-11'
+    model: claude-opus-5-5
+    evidence: '10:323-356. The faded blank (last half) has one reasonable completion, matching mine, and
+      the move is named. Problem: the last scheme line (10:354) gives 2 points for ''says delta depends
+      on epsilon only'', which the problem never asks for. [finding refuted by skeptics]'
+- key: exr-uniform-continuity-rule-by-rule-c2
+  kind: exr
+  file: 04-uniform-continuity-rule-by-rule.md
+  line: 358
+  hash: 56e382095d59
+  verdicts:
+  - stage: S5a
+    verdict: correct
+    by: refereeA
+    hash: 56e382095d59
+    date: '2026-10-11'
+    model: claude-opus-5-5
+    evidence: 10:382-393 checked. (a) eta=min(delta/4,1/2) gives x in [1/2,1), y in (1,3/2] and |x-y|=2eta<=delta/2<delta,
+      with f-values 0 and 1. (b) In the mixed case x<=b<=y, so |x-b| and |b-y| are at most |x-y|. b lies
+      in A and in B, and the triangle inequality cites exm-triangle-inequality-cases correctly. The sidecar
+      passes.
+  - stage: S5b
+    verdict: minor
+    by: refereeB
+    hash: 56e382095d59
+    date: '2026-10-11'
+    model: claude-opus-5-5
+    evidence: 10-uniform-continuity-rule-by-rule.md:382 'The gluing fails because the two sets have no
+      common point' gives a false reason. Having no common point is not enough for failure.
+  - stage: S6
+    verdict: minor
+    by: verifier
+    hash: 56e382095d59
+    date: '2026-10-11'
+    model: claude-opus-5-5
+    evidence: '10-uniform-continuity-rule-by-rule.md:397 The scheme ties the points to the book''s constant:
+      delta_1 and delta_2 must be ''chosen at epsilon/2''. A correct proof that applies the hypotheses
+      at epsilon/3, or at any epsilon'' with 2*epsilon'' <= epsilon, would lose these points, against
+      STYLE §11.6 (''must not require its route'').'
+  - stage: S7r
+    verdict: minor
+    by: rereferee
+    hash: 56e382095d59
+    date: '2026-10-11'
+    model: claude-opus-5-5
+    evidence: ' on each set and so uniformly continuous on both, yet the same points 1−η, 1+η show f is
+      not uniformly continuous on the union. What matters is that the sets come arbitrarily close but
+      share no point; the sentence''s own tail (''no common point links them'') and line 393 say this
+      correctly. Fix: drop ''without either one containing it'' and say ''come arbitrarily close at 1
+      but have no point in common''.'
+  - stage: S7r
+    verdict: correct
+    by: rereferee
+    hash: 56e382095d59
+    date: '2026-10-11'
+    model: claude-opus-5-5
+    evidence: iate. In the mixed case x ∈ [a,b] and y ∈ [b,c] give x ≤ b ≤ y, so |x−b|, |b−y| ≤ |x−y|
+      < δ, and b lies in both sets. The triangle inequality (exm-triangle-inequality-cases at 07-disjunction-and-cases.md:420)
+      then gives a bound < ε. The cases are exhaustive because S = A ∪ B. The marking scheme matches the
+      solution, and its ε1+ε2 ≤ ε generalization is correct. Line 393 is consistent with line 382.
+- key: exr-uniform-continuity-rule-by-rule-c3
+  kind: exr
+  file: 04-uniform-continuity-rule-by-rule.md
+  line: 403
+  hash: 2f1dea37279a
+  verdicts:
+  - stage: S5a
+    verdict: correct
+    by: refereeA
+    hash: d2e256d383f6
+    date: '2026-10-11'
+    model: claude-opus-5-5
+    evidence: 10:422-444 checked. L5 is forall-E at y_0, L7 exists-I with witness x_0, and L8 exists-E
+      1,2-7 (x_0 not in 8 or 1; the y_0 box has no assumption). L9 is forall-I 2-8. The alternative nesting
+      is legal. (b) On domain {a,b} with R as equality, the premise is true and the conclusion false.
+      The sidecar passes.
+  - stage: S5b
+    verdict: minor
+    by: refereeB
+    hash: d2e256d383f6
+    date: '2026-10-11'
+    model: claude-opus-5-5
+    evidence: 10-uniform-continuity-rule-by-rule.md:439 'Line 8 is the last line of the box of x0 itself'
+      is false.
+  - stage: S6
+    verdict: correct
+    by: verifier
+    hash: d2e256d383f6
+    date: '2026-10-11'
+    model: claude-opus-5-5
+    evidence: '10:403-453. Same 9-line derivation as mine, and the side conditions at lines 8 and 9 hold.
+      The other nesting also works, and the scheme accepts it. Script: on D={a,b} with P=D and R equality,
+      the premise is True and the conclusion False.'
+  - stage: S7r
+    verdict: correct
+    by: rereferee
+    hash: 2f1dea37279a
+    date: '2026-10-11'
+    model: claude-opus-5-5
+    evidence: 'Lines 403-453. Every line of the derivation checks: 3 and 4 ∧E, 5 ∀E at y0, 6 ∧I, 7 ∃I
+      with witness x0, 8 \Ee{1,2-7}, 9 \Ai{2-8} (cited from the first line of the inner box, following
+      the convention of 04-universal-introduction.md (c)). The line 8 bullet now correctly says that line
+      7 is the last line of the box of x0, is a line of that box itself, and is the formula line 8 repeats.
+      This resolves '
