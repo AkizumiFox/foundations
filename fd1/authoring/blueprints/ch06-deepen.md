@@ -1,7 +1,7 @@
 <!-- hand-written -->
 # Deepening blueprint: F1.8 Working with Quantifiers: Translation, Laws and Search (fd1 Chapter 6), D (stage S1)
 
-**Status: S1 draft, 2026-10-13; S2 round 1 findings applied (see "S2 replies" at the end).**
+**Status: S1 draft, 2026-10-13; S2 rounds 1 and 2 findings applied (see "S2 replies" at the end).**
 
 **What this is.** The **full** S1 blueprint for fd1 Chapter 6 (atlas F1.8), the chapter the final layout builds from old Sections 4.8–4.10 and one new section (`layout-final.md` §1.3, §6.2 item 6). It is complete on its own. A drafter executes it with this file, the current `fd1/src/ch06-working-with-quantifiers/` (moved there by D2, commit `034a2ae`), the frozen `ch04-revision.md` (R4) §4.8–§4.10 for every detail this file keeps and does not repeat, `authoring/STYLE.md` (§11, §12, and §12.8 and §12.13 as amended by D1), `DRAFTING.md` (including `\purpose`, `\taut` and the Diagrams templates of `latex/book-diagrams.sty`) and `NOTATION.md`. The model of register and format is the deepened Chapter 1 and its blueprint `ch01-deepen.md`.
 
@@ -477,7 +477,7 @@ Budgets count **main-line** prose words, as `tools/check_structure.py --words` c
 11. **Twin laws** (new, bold lead-in `**Twin laws.**`, after F6.2-c; ~120 words with the table; technique: Le, LB). Lead sentence: "Over a domain with two elements \( a \), \( b \), a \( \forall \) is an 'and' and an \( \exists \) is an 'or' (Section 5.5 read \( \exists \) over a finite domain as a long 'or'), and each law of this section becomes a propositional law." A pipe table with the columns *law* | *over \( \{a, b\} \)* | *the propositional twin*:
     - QN (a), (b): \( \neg(\varphi_a \wedge \varphi_b) \dashv\vdash \neg\varphi_a \vee \neg\varphi_b \) | @prp-de-morgan (d), (c);
     - QN (c): \( \neg(\varphi_a \vee \varphi_b) \dashv\vdash \neg\varphi_a \wedge \neg\varphi_b \) | @prp-de-morgan (a), (b);
-    - distribution (c), one way: \( (\varphi_a \wedge \varphi_b) \vee (\psi_a \wedge \psi_b) \vdash (\varphi_a \vee \psi_a) \wedge (\varphi_b \vee \psi_b) \) | a direct derivation: \( \rulename{\vee E} \) on the premise; in each case \( \rulename{\wedge E} \) twice, \( \rulename{\vee I} \) twice and \( \rulename{\wedge I} \) (the distribution of \( \vee \) over \( \wedge \), one way; @prp-distributivity is \( \wedge \) over \( \vee \) and is not cited);
+    - distribution (c), one way: \( (\varphi_a \wedge \varphi_b) \vee (\psi_a \wedge \psi_b) \vdash (\varphi_a \vee \psi_a) \wedge (\varphi_b \vee \psi_b) \) | a direct derivation: \( \rulename{\vee E} \) on the premise; in each case \( \rulename{\wedge E} \) twice, \( \rulename{\vee I} \) twice and \( \rulename{\wedge I} \) (a consequence of the distribution of \( \vee \) over \( \wedge \); @prp-distributivity is \( \wedge \) over \( \vee \) and is not cited);
     - passage (b): \( (\varphi_a \to \psi) \wedge (\varphi_b \to \psi) \dashv\vdash (\varphi_a \vee \varphi_b) \to \psi \) | @exm-cases-on-hypothesis, @exm-or-hypothesis-split.
     
     (\( \varphi_a \) abbreviates \( \varphi[a/x] \), explained in one clause.) Then two sentences: "In each pair the direction that needs \( \rulename{RAA} \) is the same: QN (a) and De Morgan (d). A twin is a reading, not a proof: a domain may be infinite, and the laws were derived for every domain."
@@ -580,7 +580,7 @@ Budgets count **main-line** prose words, as `tools/check_structure.py --words` c
 **Ledger lines** (new):
 - `prp-replacement` (proof): @exm-universal-introduction-derivations (c) (exchange), @thm-strong-induction, Section 2.4's rules (@def-rules-biconditional), and the side conditions of @def-rules-universal and @def-rules-existential; all argued inline.
 - The renaming sentence: @exm-universal-introduction-derivations (b) and `#existential-renaming` (cited).
-- The square: parity facts and \( 2 \), \( 3 \) prime.
+- The square: school facts: \( 8 \) is not a perfect square, \( 4 = 2^2 \) and \( 16 = 4^2 \) are multiples of \( 4 \), and no odd number is a multiple of \( 4 \) (the empty \( S \)).
 - The twin table: the cited propositional labels; the reading of 5.5.
 - Prenex: the passage laws (cited); "no finite table settles a \( \forall\exists\forall \) sentence" (illustrative, nothing rests on it).
 
@@ -1194,7 +1194,7 @@ Also: every kept exercise and its solution (6.1 A1, B1, B2, C1 (frozen), C2; 6.2
     - the caption's sentence;
     - `\oppositionsquare` labels all four relations, and the caption says which need import;
     - the Quick check (E's negation is I, true at \( 16 \));
-    - originality: no sentence of the square example, its Quick check, 6.2 A2 (i) or 6.1 B3 is an Aristotelian form over Prime/Even or Square/Even (LPL 9.13, 9.25 avoided).
+    - originality: no sentence of the square example, its Quick check, 6.2 A2 (i) or 6.1 B3 is one of LPL 9.13's four forms (every/no/some/some-not over Even and Prime) or LPL 9.25's square/even forms.
 16. 6.2 twin table: each propositional twin is the reading over \( \{a, b\} \) of its law; each is valid (truth-table check done while writing: the distribution (c) twin valid, its converse invalid at \( \varphi_a, \psi_b \) true, others false; passage (a) and (b) twins valid both ways); the cited labels prove the twins stated, and the distribution (c) row's direct derivation (∨E, then ∧E, ∨I, ∧I in each case) is correct; the RAA-direction sentence (QN (a) and De Morgan (d) are the classical directions; `prp-de-morgan` (d) is the part Section 2.5 derives with RAA).
 17. 6.2 prenex: `exm-prenex-conversion`'s two steps (law (b) with \( x \) not free in \( \exists y\, Q(y) \); law (e) under \( \forall x \), \( y \) not free in \( P(x) \)), and the second step's left-to-right direction is (e)'s classical one; alternation counts (\( \forall\exists \); \( \forall\exists\forall \); the Quick check: two each for UC and C); the remark about finite tables is illustrative only.
 18. 6.3: the moved algorithm unchanged; the three moves; the flowchart (every branch uses only rules and moves of the book; no claim of completeness).
@@ -1302,3 +1302,8 @@ Also: every kept exercise and its solution (6.1 A1, B1, B2, C1 (frozen), C2; 6.2
 16. *Quick check on the wrong subgoal made only one available line true.* Applied: the solution now gives a whole reading, \( a_n = L \) except \( a_{n_0} = L + 0.75 \), \( N_0 = n_0 \), \( \varepsilon_0 = 1 \), and checks the premise, the instance at \( \varepsilon_0 \), the box lines and \( n_0 \ge N_0 \) before the subgoal. The question asks for "a sequence and numbers that make every available line true". S2a item 25 updated.
 17. *§6.2 promise row named F1.3 §07 for Section 4.8.* Applied: F1.3 §08, matching `ch04-deepen`.
 
+**Round 2.** Every finding was applied.
+
+1. *§6.2 ledger line for the square still named parity facts and primes.* Applied: "The square: school facts: \( 8 \) is not a perfect square, \( 4 = 2^2 \) and \( 16 = 4^2 \) are multiples of \( 4 \), and no odd number is a multiple of \( 4 \) (the empty \( S \))."
+2. *S2a item 15 originality check, read literally, failed B3 items 3 and 15.* Applied: the check now forbids only LPL 9.13's four forms (every/no/some/some-not over Even and Prime) and LPL 9.25's square/even forms; B3 items 3 and 15 are neither.
+3. *Twin table distribution (c) row called the twin "the distribution of ∨ over ∧".* Applied: "(a consequence of the distribution of \( \vee \) over \( \wedge \); @prp-distributivity is \( \wedge \) over \( \vee \) and is not cited)".
