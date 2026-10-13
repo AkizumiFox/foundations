@@ -1,5 +1,5 @@
 <!-- hand-written -->
-# Deepening blueprint: F1.5 From Derivations to Mathematical Prose (fd1 Chapter 8), D (stage S1)
+# Deepening blueprint: F1.5 From Derivations to Mathematical Prose (fd1 Chapter 8), D (stage S1; revised at S2 round 1)
 
 **What this is.** A **delta** blueprint (stage S1) that deepens Chapter 8 of *Logic and Proof* under the final layout. It is written **on R5**. The frozen revision blueprint `ch05-revision.md` (R5, S2 passed 2026-10-12) was never drafted: `fd1/src/ch08-from-derivations-to-prose/` is still the R1 text that D2 moved and swept (commit `034a2ae`). The drafter therefore executes R5 §4.0–§4.7 **as content**, then the additions of this file, in one pass. Where this file and R5 disagree, this file wins, and every such point is listed (§2, "R5 items superseded"). The drafter needs: this file; R5 (for everything this file does not change); the current section files; `authoring/STYLE.md` (§12, with §12.8 and §12.13 as amended by D1); `DRAFTING.md` (with `\purpose`, `\taut` and the Diagrams templates of `latex/book-diagrams.sty`); and `NOTATION.md`.
 
@@ -20,7 +20,7 @@ Every example, drill, exercise, figure and answer below was written for this boo
 2. **Cited content stays.** `exm-not-allowed-catalogue` is cited 110 times outside the chapter. (N1)–(N10) stay verbatim and (N11) as R5 splits it (§4.6, "The (N11) decision"). (N12)–(N14) are **appended** inside the same enumerate. Nothing else in the block changes. The following are kept as R5 keeps them: `def-levels-of-proof` and `def-silent-steps` verbatim; `exm-rhetoric-universal`, `-existential` (R5's two phrases), `-induction`; `exr-connective-rhetoric-c1` (frozen); `thm-irrational-power-rational`; `prp-log2-9-irrational`.
 3. **Final numbering everywhere.** Every pointer is written in the final layout's numbering (§6). Chapter 8 is the last chapter of the volume. It points back into Chapters 1–7, within itself, and forward only to later volumes, in the three Looking-ahead boxes R5 placed (8.3, 8.6, 8.7). The new optional Section 8.8 has no Looking-ahead box.
 4. **Critic review C1 (soundness for predicate logic).** Chapter 8 cites first-order soundness only through the statement under the heading `#from-counter-models-to-non-derivability` in Section 7.2, as a black box. It never cites `thm-first-order-soundness` or `cor-counter-model`, which are in the optional Section 7.3. Every "the soundness statement for predicate logic in Section 7.2" (06:14, 07:18, 07:77, 07:258; R5 moves 06:14's into fold F5.6-a) links that heading if the engine resolves heading ids (fd2's S3 note says this is untested). Otherwise it stays prose: "Section 7.2, 'From counter-models to non-derivability'". This is the one `b` edge of `F1.5: {s: [F1.8], b: [F1.6]}`.
-5. **Critic review C2 (TAUT).** TAUT is named only as the propositional rule of 4.8 (`def-rule-taut`) and its extension to the propositional skeleton of 6.3 (`def-propositional-skeleton`, `prp-taut-skeleton`). It is never a licence for a first-order validity (§4.3, item 2). A law used on a part under a quantifier is credited to 6.2's syntactic `prp-replacement` and never to completeness. One existing solution does this silently, 8.7 R1 at 07:462, and gets one clause (§4.7, item 4).
+5. **Critic review C2 (TAUT).** TAUT is named only as the propositional rule of 4.8 (`def-rule-taut`) and its extension to the propositional skeleton of 6.3 (`def-propositional-skeleton`, `prp-taut-skeleton`). It is never a licence for a first-order validity (§4.3, item 2). A law used on a part under a quantifier is credited to 6.2's syntactic `prp-replacement` and never to completeness. One existing solution does this silently, 8.7 R1 at 07:462, and gets one clause (§4.7, item 4). TAUT is a classical licence: it rests on completeness, whose proof uses LEM (@lem-atom-splitting). So it is excluded wherever a task or a theorem says "without RAA": 8.7's definition of an intuitionistic derivation (§4.7, item 5), 8.7 B5, `thm-kripke-soundness`, 8.8 B2 and C1 (S2 round 1).
 6. **Critic review C3, smaller correction 1, and the trunk.**
    - Chapter 8 uses no group example and nothing from 7.5's second-pass half.
    - Every Γ in Chapter 8, including 8.8's, is a finite list, as in `def-derivable`.
@@ -60,11 +60,11 @@ D5. **Derive-or-break items with the verdict withheld:** two.
 
 Binding rule 7 governs both.
 
-D6. **Drill banks of 12** (§12.8; "15 in Chapters 1–2, 12 elsewhere; a chapter blueprint may not go below it"). Every section has an `[A2: Drill]` of **12 parts**, answered in one folded solution, one or two lines a part.
+D6. **Drill banks of 12: this blueprint's choice, not a STYLE floor.** Every section has an `[A2: Drill]` of **12 parts**, answered in one folded solution, one or two lines a part.
 - R5's four banks grow: 8.1 from 10 to 12, 8.2 from 10 to 12, 8.3 from 8 to 12, 8.6 from 8 to 12.
 - Four banks are new: 8.4, 8.5, 8.7, 8.8.
 - In all, 8 banks and 96 parts; the 84 parts of 8.1–8.7 are core.
-- **Deviation from layout-final, recorded.** The layout's "banks of 8 in prose sections" (§3, §10 decision 7) predates STYLE §12.8's floor of 12, which binds. This costs about +3.5 core hours (§5).
+- **Deviation from layout-final, recorded as a choice.** STYLE §12.8 sets its bank size (15 in Chapters 1–2, 12 elsewhere) for **rule sections**, and Chapter 8 has none (D2; R5 §1). Layout §3 and §10 decision 7 give prose sections banks of 8, and that would meet the layout's Time target (§5: about 33.8 h). This file nevertheless gives every section 12 parts, matching the author's choice of the heavier workload (2026-10-12) that set §12.8's numbers. The cost is about +3.5 core hours (§5). It is an S9 judgment call (§10): banks of 8 are the fallback, and nothing else in this file depends on the bank size.
 - The ramp in a prose section: recognise the rule a phrase carries → decide silent or spoken → judge a step (face, costume, entry, legal or not) → construct (write the sentence, the skeleton, the column).
 
 D7. **One fixed key and reading back.** Chapter 8 translates no sentences of its own; 6.1 and 3.3 own translation and extraction. The "reading back" check is the core of 8.1–8.3, prose against derivation, and needs no new device. 8.4 recalls 3.3's argument extraction in one sentence (§4.4, item 2).
@@ -94,7 +94,7 @@ D11. **Not adopted in Chapter 8, with reasons.**
 | § | Title | File | Status | Main line: R5 budget → final budget | What this file adds (details in §4) |
 |---|---|---|---|---|---|
 | index | From Derivations to Mathematical Prose | `index.md` | — | R5 ≤ 1,100 → ≤ 1,300 | "What you need" per layout; Minimum for fd2; roadmap bullet for 8.8; two named moves; Summary; Terms; Time recomputed |
-| 8.1 | The Connective Rules in Prose | `01-connective-rhetoric.md` | core | ≤ 4,750 → ≤ 4,900 | spoken purposes; constructive-dilemma row; `## Equivalent conditions, by a cycle` (`exm-rhetoric-cycle`); Not allowed; one fold; A2 to 12; B4 |
+| 8.1 | The Connective Rules in Prose | `01-connective-rhetoric.md` | core | ≤ 4,750 → ≤ 5,000 | spoken purposes; constructive-dilemma row; `## Equivalent conditions, by a cycle` (`exm-rhetoric-cycle`); Not allowed; three folds; A2 to 12; B4 |
 | 8.2 | The Quantifier Rules in Prose | `02-quantifier-rhetoric.md` | core | ≤ 3,700 → ≤ 4,200 | `## Definitions, descriptions and sets` ("we define", "the limit", double inclusion, `exm-rhetoric-double-inclusion`); the two "stronger" rows; Not allowed; A2 to 12; B3 (used later) |
 | 8.3 | Four Levels of One Proof | `03-levels-of-abbreviation.md` | core | ≤ 4,000 → ≤ 4,200 | silent steps tied to TAUT (4.8, 6.3); `## It suffices to show, as a column` (`exm-suffices-column`); one fold; A2 to 12; B3 |
 | 8.4 | Reading a Proof: Self-Explanation | `04-reading-proofs.md` | core | ≤ 2,000 → ≤ 2,200 | the purpose in question 1; `## Naming the unstated fact` (3.3 recalled); A2 (new, 12); B3 |
@@ -103,7 +103,7 @@ D11. **Not adopted in Chapter 8, with reasons.**
 | 8.7 | The Dispute over Excluded Middle | `07-excluded-middle.md` | core | ≤ 3,800 → ≤ 3,900 | `## Which laws survive without RAA {#laws-without-raa}`; stated claims point to 8.8; one fold; A2 (new, 12); B5 |
 | 8.8 | Stages of Knowledge: Kripke Models | `08-kripke-models.md` (**new**) | **optional** | — → ≤ 3,600 | the whole section (§4.8) |
 
-The budgets are those of layout §1.3, except the index (D8; layout ≤ 1,000). Each stays under STYLE's 5,000.
+The budgets are those of layout §1.3, except the index (D8; layout ≤ 1,000) and 8.1 (layout ≤ 4,900; S2 round 1 re-estimated it from the quoted text, §4.1). Each stays at or under STYLE's 5,000.
 
 **R5 items superseded by this file** (layout §6.1 lists the first four):
 - (i) "Chapter 5" → Chapter 8, everywhere. R5 already writes Sections 8.x in its quoted text; its section labels "5.1"–"5.7" and fold ids "F5.x-y" are internal names. The drafter titles R5's folds as R5 says, and the new folds are named F8.x-y.
@@ -113,6 +113,8 @@ The budgets are those of layout §1.3, except the index (D8; layout ≤ 1,000). 
 - (v) R5 §1 item 5, "drill banks only in 8.1, 8.2, 8.3, 8.6, 8–10 parts": replaced by D6.
 - (vi) R5 §4.0 item 7: the roadmap gains an eighth bullet, for 8.8.
 - (vii) R5 §4.7's "stated without proof" sentences that 8.8 now proves gain a pointer (§4.7, item 2).
+- (viii) R5 §4.7's "B4 … its solution 07:24–28 verbatim": part (b) is recomputed against the delivered Chapters 3–7 (§4.7, item 6; S2 round 1).
+- (ix) R5 §4.1 item 14's "01:264–304 verbatim": 01:304 moves verbatim into fold F8.1-f (§4.1, item 6; S2 round 1).
 
 Nothing else in R5 changes.
 
@@ -153,6 +155,7 @@ R5 §3.1 gives each label's R5 status. The table below lists only the blocks tha
 | prose 05:165 | 8.5 | moves verbatim into fold F8.5-c (it sits after `exm-subset-bounded-above` in R5's order) | — |
 | prose 03:80 and 03:82 | 8.3 | move verbatim into fold F8.3-d | — |
 | prose 01:241, its last three sentences | 8.1 | move verbatim into fold F8.1-d | — |
+| prose 01:304 (the costumes' "one smell" paragraph) | 8.1 | moves verbatim into fold F8.1-f (S2 round 1, budget) | — |
 | prose 02:124 | 8.2 | moves verbatim into fold F8.2-b | — |
 | prose 07:212 and the Lean block 07:214–221 | 8.7 | move verbatim into fold F8.7-c | — |
 
@@ -189,6 +192,7 @@ The 8.8 results carry no `.optional` class of their own: the section is the opti
 - `def-rule-taut` (4.8)
 - `thm-monotonicity` (4.9, second pass; cited only in a fold)
 - `thm-russell` (5.6)
+- `exm-extensionality-logical-half` (5.7)
 - `def-definite-description` and `prp-definitional-extension` (5.8)
 - `prp-replacement` (6.2)
 - `def-propositional-skeleton` and `prp-taut-skeleton` (6.3)
@@ -203,7 +207,7 @@ The 8.8 results carry no `.optional` class of their own: the section is the opti
 - `fd1/verify/ch08/` (D2 moved it from `ch05`):
   - R5's sidecars.
   - New, for this file's blocks:
-    - `exm-rhetoric-cycle.py`: odd/even closure on \( |n| \le 200 \); the identities.
+    - `exm-rhetoric-cycle.py`: the parity of \( n \), \( n^2 \) and \( n^2 + 2n \) on \( |n| \le 200 \); the identities.
     - `exm-rhetoric-double-inclusion.py`: \( x^2 \le 2x \iff 0 \le x \le 2 \), exactly on rationals and on a grid.
     - `exm-suffices-column.py`: \( x^2 - 6x + 10 = (x - 3)^2 + 1 \); \( \abs{(2n + 1)/(n + 1) - 2} = 1/(n + 1) \).
     - `exm-generalise-proof.py`: one of \( n \), \( n + 1 \), \( n + 2 \) divisible by 3, for \( |n| \le 300 \); \( 17 = 3 \cdot 5 + 2 \).
@@ -245,7 +249,7 @@ R5 §4.0 is executed, with these changes.
    - The 8.3 bullet adds "; which silent steps are truth-functional; 'it suffices to show' written as a column" before "; how to check".
    - The 8.4 bullet adds "; naming the unstated fact".
    - The 8.5 bullet adds "; generalising a proof".
-   - The 8.6 bullet becomes "Two questions for every line; the catalogue (N1)–(N14) in seven families, under their traditional names too; four student proofs checked line by line."
+   - The 8.6 bullet becomes "Two questions for every line; the catalogue (N1)–(N14) in seven families; four student proofs checked line by line (and, in a fold, the errors' traditional names)."
    - The 8.7 bullet adds "; which laws survive without the rule".
    - Eighth bullet (new): "**Stages of knowledge: Kripke models** (optional). A semantics in which knowledge grows by stages; the rules without RAA are sound for it, and two or three stages show which laws need RAA."
 6. **Named moves.** R5's six (ix:27-32), verbatim, then two more:
@@ -276,7 +280,17 @@ R5 §4.0 is executed, with these changes.
 
 ### 4.1 Section 8.1: The Connective Rules in Prose (`01-connective-rhetoric.md`)
 
-**Budget:** main line ≤ 4,900 (now 4,401; R5 ≤ 4,750; expected about 4,890); folds ≤ 560 (R5 ≤ 450, plus F8.1-d ~110). No Looking-ahead box (R5).
+**Budget:** main line ≤ 5,000 (now 4,401; R5 ≤ 4,750; layout ≤ 4,900; expected about 4,970); folds ≤ 850 (R5 ≤ 450, plus F8.1-d ~110, F8.1-e ~220, F8.1-f ~63). No Looking-ahead box (R5).
+
+**The estimate (S2 round 1).** The S1 figure, "expected ~4,890", did not add up: R5 puts 8.1 at about 4,745, and the S1 additions measured about +645 against F8.1-d's −110, for about 5,390. The estimate below is built from the text quoted in this section, by `prose_words`-style counts of each passage:
+- R5's main line, about 4,745;
+- F8.1-d (item 5), −110; F8.1-f (item 6), −63;
+- the purpose paragraph (item 1), +120; its Quick check moves to A2 (h) and costs no main-line words;
+- the dilemma row (item 2), +45; the S1 sentence appended to 01:137 is dropped;
+- the cycle subsection (item 3): lead +40, row +25, Quick check +55. `exm-rhetoric-cycle` (~145) and its commentary (~75) go into fold F8.1-e;
+- Not allowed (item 4), +110.
+
+That is about 4,970, under STYLE's 5,000 and about 70 over the layout's 4,900, a deviation recorded in §2 and §5. Had `exm-rhetoric-cycle` stayed on the main line, 8.1 would come to about 5,115, over STYLE's cap. **Fallback** if S3 still measures 8.1 over 5,000: the Not-allowed block drops its last line, the (N7) case (about −25; three lines remain, D3's minimum), and the purpose paragraph drops its last sentence (about −17).
 
 R5 §4.1 is executed in full. Additions, in the order of the file:
 
@@ -284,94 +298,97 @@ R5 §4.1 is executed in full. Additions, in the order of the file:
 
    "Since Section 1.4 every derivation in this book has printed, beside an assumption, the rule that will close its box: 'asm, for →I', 'asm, for ¬I', and so on. Prose says the same thing with the sentence that opens the box. 'Suppose \( P \)' is asm, for →I. 'Suppose \( P \); … this is impossible', or 'if \( P \) were true', is asm, for ¬I. 'Suppose, for a contradiction, that not \( P \)' is asm, for RAA. 'Case 1: \( P \)' is asm, for ∨E. 'Choose \( a \) such that \( P(a) \)' is asm, for ∃E. '\( (\Rightarrow) \) Suppose \( P \)' is asm, for ↔I. 'Let \( x \in A \)' is asm, for ∀I, its bounded form. A box whose purpose the reader cannot hear is a box the writer did not open in words."
 
-   **Quick check (new):** "A proof that \( \sqrt 5 \) is irrational opens: 'Suppose, for a contradiction, that \( \sqrt 5 \) is rational.' Which annotation would its derivation print beside that assumption?" *Solution:* "asm, for ¬I". The goal, "\( \sqrt 5 \) is irrational", is the negation "\( \sqrt 5 \) is not rational". The box assumes the positive statement and is closed by ¬I, whatever the words "for a contradiction" suggest; Section 2.5 drew that line, and "The three faces" below calls it face (i). (The check needs only the purpose paragraph and Section 2.5's distinction, and no fact about \( \sqrt 5 \).)
+   No Quick check follows it on the main line (S2 round 1, budget). Its check, the √5 opening, is A2 (h).
 
 2. **Constructive dilemma** (a new row in the table of `## Disjunction and cases`, 01:130–135, after the DS row; plus one sentence appended to 01:137) [technique: LB, Hu — derived rules heard in prose; ch01-deepen §6 seam].
 
    Row: | constructive dilemma (@exm-constructive-dilemma; a derived rule in Section 2.3) | "if \( P \) then \( R \), and if \( Q \) then \( S \); since \( P \) or \( Q \), we get \( R \) or \( S \)"; "in the first case …, in the second …, so \( R \) or \( S \)" | never the split or the two implications; the closing "so \( R \) or \( S \)" yes |
 
-   Sentence appended to 01:137: "The constructive dilemma is a split whose two cases end in different statements, joined at the end by 'or': 'every real \( x \) with \( \abs{x} \ge 1 \) has \( x \ge 1 \) or \( x \le -1 \); in the first case \( x^3 \ge 1 \), in the second \( x^3 \le -1 \); so \( x^3 \ge 1 \) or \( x^3 \le -1 \)', the reading of @exm-constructive-dilemma in Section 1.6."
+   No sentence is appended to 01:137 (S2 round 1, budget): the row's first column cites the worked example, whose reading in Section 1.6 the row abbreviates.
 
-3. **`## Equivalent conditions, by a cycle`** (new subsection, ~250 words, after `## The biconditional`, 01:219–242, and before `## The three faces of "by contradiction"`) [technique: LB, LPL — TFAE by a cycle; gap-matrix row 3.6].
+3. **`## Equivalent conditions, by a cycle`** (new subsection, ~120 words on the main line and ~220 in fold F8.1-e, after `## The biconditional`, 01:219–242, and before `## The three faces of "by contradiction"`) [technique: LB — TFAE by a cycle; gap-matrix row 3.6].
 
    Lead: "Theorems often say that several conditions are equivalent ('the following are equivalent', TFAE). Proving each pair both ways would take six implications for three conditions. A **cycle** takes three."
 
    Table row: | TFAE by a cycle (@prp-equivalence-cycle) | "the following are equivalent"; "we prove (i) ⇒ (ii) ⇒ (iii) ⇒ (i)" | never any arrow of the cycle, the last one included |
 
-   Then **`exm-rhetoric-cycle`** `[Three conditions, one cycle]`. Statement: "Let \( n \) be an integer. Prove that the following are equivalent: (i) \( n \) is odd; (ii) \( n^2 \) is odd; (iii) \( n^3 \) is odd. Tag the steps that carry the logic."
+   Then **fold F8.1-e** `title="A cycle, worked"` (new, S2 round 1, budget; ~220 words), a sibling after the table, holding **`exm-rhetoric-cycle`** and its commentary. The main line keeps the lead, the row and the Quick check, which teach the move with the fold closed (STYLE §12.0's test); B4 is then the reader's first full cycle on the main track. A worked example in a fold is numbered, labelled and citable as on the main line (§12.0), and nothing outside 8.1 cites it.
+
+   **`exm-rhetoric-cycle`** `[Three conditions, one cycle]` (S2 round 1: replaced; the S1 version used the conditions \( n \), \( n^2 \), \( n^3 \) odd, a pattern too close to a published exercise). Statement: "Let \( n \) be an integer. Prove that the following are equivalent: (i) \( n \) is odd; (ii) \( n^2 \) is odd; (iii) \( n^2 + 2n \) is odd. Tag the steps that carry the logic."
 
    Solution: "By @prp-equivalence-cycle it suffices to prove (i) ⇒ (ii), (ii) ⇒ (iii) and (iii) ⇒ (i).
    - (i) ⇒ (ii) is the direction \( (\Rightarrow) \) of @thm-odd-iff-square-odd.
-   - (ii) ⇒ (iii): Suppose \( n^2 \) is odd [asm, for →I]. By @thm-odd-iff-square-odd, \( n \) is odd [→E, citing it]. So \( n^3 = n^2 \cdot n \) is a product of two odd integers, hence odd, since \( (2a + 1)(2b + 1) = 2(2ab + a + b) + 1 \) [algebra].
-   - (iii) ⇒ (i): Suppose \( n^3 \) is odd. By (E1), \( n \) is even or odd [∨E].
-     - If \( n \) is even, say \( n = 2k \), then \( n^3 = 2(4k^3) \) is even. So \( n^3 \) is even and odd, which (E2) forbids [¬E]: this case cannot occur [⊥E].
+   - (ii) ⇒ (iii): Suppose \( n^2 \) is odd [asm, for →I], say \( n^2 = 2a + 1 \) [∃E]. Then \( n^2 + 2n = 2(a + n) + 1 \), which is odd [∃I, witness \( a + n \)].
+   - (iii) ⇒ (i): Suppose \( n^2 + 2n \) is odd. By (E1), \( n \) is even or odd [∨E].
+     - If \( n \) is even, say \( n = 2k \), then \( n^2 + 2n = 2(2k^2 + 2k) \) is even. So \( n^2 + 2n \) is even and odd, which (E2) forbids [¬E]: this case cannot occur [⊥E].
      - If \( n \) is odd, there is nothing more to show.
      - So \( n \) is odd.
 
    The cycle closes."
 
-   Then (inside the solution): "Three implications did the work of six. The last arrow, (iii) ⇒ (i), is the one a hurried writer omits. Without it the proof shows only (i) ⇒ (ii) ⇒ (iii), and no condition later in the chain gives back an earlier one. The case split in (iii) ⇒ (i) uses no RAA: the impossible case reaches the goal by ⊥E, as in @exm-rhetoric-contradiction's case version."
+   Then, still inside F8.1-e, after the solution (~75 words): "Three implications did the work of six. The last arrow, (iii) ⇒ (i), is the one a hurried writer omits. Without it the proof shows only (i) ⇒ (ii) ⇒ (iii), and no condition later in the chain gives back an earlier one. The case split in (iii) ⇒ (i) uses no RAA: the impossible case reaches the goal by ⊥E, as in @exm-rhetoric-contradiction's case version." (The Quick check below asks for the point of its second sentence with the fold closed.)
 
    **Quick check (new):** "To prove four conditions (i)–(iv) equivalent, a writer proves (i) ⇒ (ii), (ii) ⇒ (iii), (iii) ⇒ (iv) and (iv) ⇒ (ii). Is that enough?" *Solution:* No. (ii), (iii) and (iv) are shown equivalent, but nothing leads back to (i): (ii) ⇒ (i) is never shown. A fifth implication (ii) ⇒ (i) would do, or (iv) ⇒ (i) in place of (iv) ⇒ (ii).
 
-4. **Not allowed** (new warning, ~110 words, the last block of the main line, after the warning 01:306–308; R5 places no Looking-ahead box here). `[Not allowed: connective steps in prose]`. Each line is a sentence that might appear in a proof, then its tag:
+4. **Not allowed** (new warning, ~100 words, the last block of the main line, after the warning 01:306–308; R5 places no Looking-ahead box here). `[Not allowed: connective steps in prose]`. Each line is a sentence that might appear in a proof, then its tag:
    - "Suppose \( x \ge 1 \); then \( x^3 \ge x \). Hence \( x^3 \ge x \) for every real \( x \)." The line \( x^3 \ge x \) belongs to a box that has closed; outside it only "if \( x \ge 1 \), then \( x^3 \ge x \)" is available. (N10). False at \( x = \tfrac12 \).
    - "To prove \( \abs{x} < 1 \), suppose, for a contradiction, that \( \abs{x} > 1 \)." The negation of \( \abs{x} < 1 \) is \( \abs{x} \ge 1 \). (N11)(a).
-   - "Suppose \( n \) is odd. Then \( n^2 \) is odd." as the whole proof of "if \( n^2 \) is even, then \( n \) is even". The announcement "we prove the contrapositive" is never silent (@def-silent-steps); without it the text reads as (N5).
+   - "Suppose \( n \) is odd. Then \( n^2 \) is odd." as the whole proof of "if \( n^2 \) is even, then \( n \) is even". It breaks the never-silent item "the announcement of a contrapositive" (@def-silent-steps). Without the announcement the reader sees a box that opens with neither the hypothesis nor the conclusion of the goal. (S2 round 1: the S1 tag "(N5)" was wrong. (N5) is a box that opens with the conclusion, and this text proves the contrapositive, which is valid.)
    - "Case 1: \( x \ge 0 \), so \( \abs{x} = x \ge 0 \). In either case \( \abs{x} \ge 0 \)." There is one case and no disjunction: (N7).
 
-5. **Fold F8.1-d** `title="The hypothesis \( x \ge 0 \), direction by direction"` (new, after the solution of `exm-rhetoric-biconditional`, as a sibling): 01:241's last three sentences verbatim, from "The hypothesis \( x \ge 0 \) does a job in each" to the end (~110 words). The solution keeps its first sentence ("The labels … opens the second."). This is the budget trade for items 1–4, and it is an edge-case discussion (STYLE §12.3).
+5. **Fold F8.1-d** `title="The hypothesis \( x \ge 0 \), direction by direction"` (new, after the solution of `exm-rhetoric-biconditional`, as a sibling): 01:241's last three sentences verbatim, from "The hypothesis \( x \ge 0 \) does a job in each" to the end (~110 words). The solution keeps its first sentence ("The labels … opens the second."). This is part of the budget trade for items 1–4, and it is an edge-case discussion (STYLE §12.3).
 
-**Quick checks:** R5's four, plus the purpose check and the cycle check: six in ~4,890 words, about one per 815.
+6. **Fold F8.1-f** `title="The smell the two tests share"` (new, S2 round 1, budget; a sibling after the second costume test, 01:302): 01:304 verbatim (~63 words). The two tests stay on the main line, and each is complete without the paragraph, which compares them (a long justification, STYLE §12.0). No exercise needs it.
+
+**Quick checks:** R5's four, plus the cycle check: five in ~4,970 words, about one per 995 (STYLE §12.7: one per 800–1,000).
 
 **Exercises.**
 - **A1, B1, B2, B3 (R5), C1 (frozen), C2:** as R5.
 - **A2: Drill** (`exr-connective-rhetoric-a2`): R5's ten parts plus two, **12 parts**, in this order (R5 letters in brackets). Stem as R5: "Name the rule each phrase carries, and say whether plain prose may leave it out." Parts (h) and (l) ask a different question and say so in their own words.
   (a) [a] … (g) [g]: R5's parts and answers.
-  (h) **new** "'Case 2: \( x < 0 \).' Which annotation does the derivation print beside this assumption, and which rule closes its box?" — "asm, for ∨E"; the box closes at the ∨E line that combines the cases. The split it belongs to is never silent.
+  (h) **new** (S2 round 1: the S1 Quick check on the purpose paragraph, moved here) "A proof that \( \sqrt 5 \) is irrational opens: 'Suppose, for a contradiction, that \( \sqrt 5 \) is rational.' Which annotation would its derivation print beside that assumption?" — "asm, for ¬I". The goal, "\( \sqrt 5 \) is irrational", is the negation "\( \sqrt 5 \) is not rational". The box assumes the positive statement and is closed by ¬I, whatever the words "for a contradiction" suggest: Section 2.5's distinction, face (i) of "The three faces". (No fact about \( \sqrt 5 \) is needed.)
   (i) [h] (j) [i] (k) [j]: R5's parts and answers.
   (l) **new** "Four conditions are to be shown equivalent. How many implications does a cycle need, and how many would proofs of every ordered pair need?" — Four for a cycle. Twelve for every ordered pair (\( 4 \cdot 3 \)), that is, six biconditionals.
-- **B4** (new, `exr-connective-rhetoric-b4`) `[B4: Three conditions on a multiple of 3]` [technique: LB — TFAE by a cycle]. Statement: "Let \( n \) be an integer. Prove that the following are equivalent, by a cycle: (i) \( 3 \mid n \); (ii) \( 9 \mid n^2 \); (iii) \( 3 \mid n^2 \). You may use the school fact that every integer is \( 3k \), \( 3k + 1 \) or \( 3k + 2 \) for an integer \( k \). Say which arrow closes the cycle, and tag the logical steps of that arrow."
+- **B4** (new, `exr-connective-rhetoric-b4`) `[B4: Two integers of the same parity]` [technique: LB — TFAE by a cycle] (S2 round 1: replaced; the S1 item, \( 3 \mid n \), \( 9 \mid n^2 \), \( 3 \mid n^2 \), closely paraphrased a published exercise). Statement: "Let \( a \) and \( b \) be integers. Prove that the following are equivalent, by a cycle: (i) \( a + b \) is even; (ii) \( a - b \) is even; (iii) \( a \) and \( b \) are both even or both odd. Say which arrow closes the cycle, and tag the logical steps of that arrow."
 
   *Solution.* By @prp-equivalence-cycle, three implications suffice.
-  - (i) ⇒ (ii): Suppose \( 3 \mid n \); choose \( k \) with \( n = 3k \) [∃E]. Then \( n^2 = 9k^2 \), so \( 9 \mid n^2 \), with the witness \( k^2 \) [∃I].
-  - (ii) ⇒ (iii): Suppose \( 9 \mid n^2 \), and choose \( j \) with \( n^2 = 9j \) [∃E]; then \( n^2 = 3(3j) \) [∃I, witness \( 3j \)].
-  - (iii) ⇒ (i), the closing arrow: Suppose \( 3 \mid n^2 \) [asm, for →I], and choose \( t \) with \( n^2 = 3t \) [∃E]. By the school fact, \( n = 3k \), \( n = 3k + 1 \) or \( n = 3k + 2 \) for an integer \( k \); we consider the three cases [∨E, twice].
-    - If \( n = 3k \), then \( 3 \mid n \) [∃I].
-    - If \( n = 3k + 1 \), then \( n^2 = 3(3k^2 + 2k) + 1 \). With \( n^2 = 3t \) this gives \( 3(t - 3k^2 - 2k) = 1 \), so the integer \( t - 3k^2 - 2k \) equals \( \tfrac13 \). But no integer lies strictly between \( 0 \) and \( 1 \) [¬E]. So this case cannot occur [⊥E].
-    - If \( n = 3k + 2 \), then \( n^2 = 9k^2 + 12k + 4 = 3(3k^2 + 4k + 1) + 1 \), and the same clash follows [¬E, ⊥E].
-    - In every case \( 3 \mid n \).
+  - (i) ⇒ (ii): Suppose \( a + b \) is even; choose \( k \) with \( a + b = 2k \) [∃E]. Then \( a - b = (a + b) - 2b = 2(k - b) \), so \( a - b \) is even, with the witness \( k - b \) [∃I].
+  - (ii) ⇒ (iii): Suppose \( a - b \) is even, and choose \( j \) with \( a - b = 2j \) [∃E]. By (E1), \( b \) is even or odd [∨E].
+    - If \( b = 2m \) [∃E], then \( a = 2(j + m) \) is even [∃I], so both are even [∧I, then ∨I].
+    - If \( b = 2m + 1 \) [∃E], then \( a = 2(j + m) + 1 \) is odd [∃I], so both are odd [∧I, then ∨I].
+  - (iii) ⇒ (i), the closing arrow: Suppose \( a \) and \( b \) are both even or both odd [asm, for →I]. There are two cases [∨E].
+    - Both even: choose \( s \) and \( t \) with \( a = 2s \) and \( b = 2t \) [∃E twice, two fresh names]. Then \( a + b = 2(s + t) \) [∃I, witness \( s + t \)].
+    - Both odd: choose \( s \) and \( t \) with \( a = 2s + 1 \) and \( b = 2t + 1 \) [∃E twice]. Then \( a + b = 2(s + t + 1) \) [∃I, witness \( s + t + 1 \)].
+    - In either case \( a + b \) is even [∨E, closing; silent at level 3].
 
-  The closing arrow is (iii) ⇒ (i). Its logic is a three-way ∨E, two of whose cases close by ⊥E; no RAA is used.
+  The closing arrow is (iii) ⇒ (i). Its logic is a two-case ∨E, each case with two ∃E boxes under distinct names and one ∃I; no RAA is used. (The names \( s \), \( t \) may be reused in the second case: sibling boxes may share a name, as (N4) of Section 8.6 notes.)
 
   **Marking scheme.** (10 points)
-  - 2: (i) ⇒ (ii), with \( k \) chosen and the witness \( k^2 \).
-  - 1: (ii) ⇒ (iii), with the witness \( 3j \).
-  - 4: (iii) ⇒ (i):
-    - 1 for the three-way split, with its school fact named;
-    - 2 for the two identities \( (3k + 1)^2 = 3(3k^2 + 2k) + 1 \) and \( (3k + 2)^2 = 3(3k^2 + 4k + 1) + 1 \);
-    - 1 for the clash, justified (no integer is \( \tfrac13 \), or "nothing strictly between 0 and 1").
-  - 2: the cycle named, with @prp-equivalence-cycle or the sentence that three implications suffice, and the closing arrow identified.
+  - 2: (i) ⇒ (ii), with \( k \) chosen and the witness \( k - b \).
+  - 3: (ii) ⇒ (iii): the split on \( b \), with (E1) named (1); the witness \( j + m \) in each case (2).
+  - 3: (iii) ⇒ (i): the two cases (1); two distinct names in each case (1); the witnesses (1).
+  - 1: the cycle named, with @prp-equivalence-cycle or the sentence that three implications suffice, and the closing arrow identified.
   - 1: the last sentence says what was shown.
 
-  Fatal errors (0 for the step): only two arrows proved; "\( 3 \mid n^2 \), so \( 3 \mid n \)" with no argument (N9); a split on "\( n = 3k \) or \( n = 3k + 1 \)" alone (N8).
+  Fatal errors (0 for the step): only two arrows proved; one name for both witnesses, "\( a = 2s \) and \( b = 2s \)" (N4); "\( a - b \) is even, so \( a \) and \( b \) have the same parity" given as its own reason, with neither proof nor citation (N9).
 
 **Sidecars:**
-- `exm-rhetoric-cycle.py`: \( (2a + 1)(2b + 1) = 2(2ab + a + b) + 1 \); \( (2k)^3 = 2(4k^3) \); the parity of \( n \), \( n^2 \), \( n^3 \) for \( |n| \le 200 \).
-- `exr-connective-rhetoric-b4.py`: the two identities; the equivalence of (i), (ii) and (iii) for \( |n| \le 300 \).
+- `exm-rhetoric-cycle.py`: \( n^2 = 2a + 1 \Rightarrow n^2 + 2n = 2(a + n) + 1 \); \( (2k)^2 + 2(2k) = 2(2k^2 + 2k) \); the parity of \( n \), \( n^2 \), \( n^2 + 2n \) for \( |n| \le 200 \).
+- `exr-connective-rhetoric-b4.py`: the identities \( a - b = 2(k - b) \), \( a = 2(j + m) \), \( a = 2(j + m) + 1 \), \( a + b = 2(s + t) \), \( a + b = 2(s + t + 1) \); the equivalence of (i), (ii) and (iii) for \( |a|, |b| \le 60 \).
 - `exr-connective-rhetoric-a2.py` (R5's), extended by (l)'s count.
 
 **Ledger lines:**
 - the purpose paragraph (`latex/fitch-book.sty`'s printed form; F1.1 §05's introduction of the annotation, prose pointer);
-- the √5 check (the faces table, inline);
+- A2 (h), the √5 opening (the faces table, inline);
 - the constructive-dilemma row (`exm-constructive-dilemma`, cited; F1.2 §03's derived rule, prose pointer);
-- `exm-rhetoric-cycle` (`prp-equivalence-cycle` and `thm-odd-iff-square-odd`, cited; (E1), (E2) of F1.2 §01; school algebra; sidecar);
+- `exm-rhetoric-cycle` (`prp-equivalence-cycle` and `thm-odd-iff-square-odd`, cited; (E1), (E2) and the definitions of even and odd, F1.2 §01; school algebra; sidecar);
+- F8.1-e (a fold holding a worked example; nothing cites it outside 8.1) and F8.1-f (moves with its text);
 - the cycle check (inline);
-- B4 (the school fact "3k, 3k + 1 or 3k + 2": F2.2 (promised), `thm-division-algorithm`, as 8.7 R4's ledger line; "nothing between 0 and 1": F2.2 (promised), STATUS row 113; sidecar).
+- B4 ((E1) and the definitions of even and odd, F1.2 §01; sidecar). B4 no longer uses "\( 3k \), \( 3k + 1 \) or \( 3k + 2 \)" or "nothing between 0 and 1" (§6.2).
 
 ### 4.2 Section 8.2: The Quantifier Rules in Prose (`02-quantifier-rhetoric.md`)
 
-**Budget:** main line ≤ 4,200 (now 3,129; R5 ≤ 3,700; expected about 4,180); folds ≤ 200 (R5: none; new F8.2-a ~70, F8.2-b ~110). No Looking-ahead box (R5). **Fallback** if S3 measures over 4,200: the sentence on definitional extension in item 2's lead paragraph (from "A definition adds a word" to "with the definition.", ~50 words) moves into F8.2-a.
+**Budget:** main line ≤ 4,200 (now 3,129; R5 ≤ 3,700; expected about 4,200: S1's ~4,180, plus about +40 for the extensionality sentences of item 2 (S2 round 1), less the ~17 words cut from the example's closing paragraph); folds ≤ 260 (R5: none; new F8.2-a ~70, F8.2-b ~110, and room for the fallback). No Looking-ahead box (R5). **Fallback** if S3 measures over 4,200: the two sentences on definitional extension in item 2's lead paragraph (from "A definition adds a word" to "with the definition.", ~50 words) move into a new fold F8.2-c `title="What a definition adds"`, a sibling after that paragraph. The table row "a definition" stays on the main line and carries the rule (S2 round 1: F8.2-a, on monotonicity, was the wrong home).
 
 R5 §4.2 is executed in full. Additions:
 
@@ -394,9 +411,9 @@ R5 §4.2 is executed in full. Additions:
    |---|---|---|
    | a definition (a definitional extension, @prp-definitional-extension) | "we define \( f(x) \coloneqq \dots \)"; "call \( n \) *perfect* if …"; "write \( d \) for …" | never the definition; its uses (↔E or =E with it) yes |
    | "the" (a definite description, @def-definite-description) | "let \( L \) be the limit of \( (a_n) \)"; "the least element of \( A \)"; "\( \lim a_n \)" | never the existence and uniqueness behind "the": proved or cited before the name is used |
-   | double inclusion | "we show \( A \subseteq B \) and \( B \subseteq A \)"; element chasing: "let \( x \in A \); … so \( x \in B \)" | never either inclusion, nor the opening "let \( x \in \dots \)" of each |
+   | double inclusion | "we show \( A \subseteq B \) and \( B \subseteq A \)"; element chasing: "let \( x \in A \); … so \( x \in B \)"; "so \( A = B \)" | never either inclusion, nor the opening "let \( x \in \dots \)" of each, nor the appeal to extensionality that turns "the same elements" into \( A = B \) |
 
-   Then (~110 words): "A definition adds a word and proves nothing new about the old words (@prp-definitional-extension, Section 5.8). So 'we define' writes an abbreviation, and every later use of it is ↔E or =E with the definition. 'The', as in 'the limit', names an object. It may be used only once there is exactly one such object (Section 5.8): for a limit, existence is the hypothesis that \( (a_n) \) converges, and uniqueness is @exm-rhetoric-equality. Two sets are equal when they have the same elements: \( A = B \) is read as \( \forall x\, (x \in A \leftrightarrow x \in B) \), as Chapter 5 read \( A \subseteq B \) as \( \forall x\, (x \in A \to x \in B) \). So a proof that \( A = B \) is ↔I inside ∀I, written as two inclusions. Each inclusion is an **element chase**: 'let \( x \in A \)' opens a bounded ∀I box whose last line is \( x \in B \)."
+   Then (~110 words): "A definition adds a word and proves nothing new about the old words (@prp-definitional-extension, Section 5.8). So 'we define' writes an abbreviation, and every later use of it is ↔E or =E with the definition. 'The', as in 'the limit', names an object. It may be used only once there is exactly one such object (Section 5.8): for a limit, existence is the hypothesis that \( (a_n) \) converges, and uniqueness is @exm-rhetoric-equality. Chapter 5 read \( A \subseteq B \) as \( \forall x\, (x \in A \to x \in B) \). Two inclusions give \( \forall x\, (x \in A \leftrightarrow x \in B) \), by ↔I inside ∀I: the two sets have the same elements. Each inclusion is an **element chase**: 'let \( x \in A \)' opens a bounded ∀I box whose last line is \( x \in B \). The last step, from 'the same elements' to \( A = B \), is not logic. Logic gives only the converse, that equal sets have the same elements (@exm-extensionality-logical-half). The step itself is the **axiom of extensionality**, an axiom about sets (Section 5.7), and a proof cites it, as a premise or with the words 'by extensionality'; it is never silent."
 
    **`exm-rhetoric-double-inclusion`** `[Two inclusions]`. Statement: "Let \( A \coloneqq \{ x \in \nR : x^2 \le 2x \} \) and \( B \coloneqq \{ x \in \nR : 0 \le x \le 2 \} \). Prove that \( A = B \), and tag the steps that carry the logic."
 
@@ -406,9 +423,9 @@ R5 §4.2 is executed in full. Additions:
      - If \( x > 2 \), then both factors are positive and the same clash follows. So \( x \le 2 \).
      - Hence \( 0 \le x \le 2 \) [∧I], and \( x \in B \).
    - \( (\supseteq) \) Let \( x \in B \) [asm, for ∀I]; so \( x \ge 0 \) and \( x - 2 \le 0 \) [∧E]. A product of a non-negative and a non-positive number is at most \( 0 \), so \( x(x - 2) \le 0 \), that is, \( x^2 \le 2x \), and \( x \in A \).
-   - So \( A \subseteq B \) and \( B \subseteq A \), and \( A = B \) [↔I inside ∀I].
+   - So \( A \subseteq B \) and \( B \subseteq A \): every real \( x \) has \( x \in A \leftrightarrow x \in B \) [↔I inside ∀I]. By extensionality, \( A = B \) [∀E, →E with the axiom].
 
-   Then: "The words 'that is' unwind the two sets' definitions (↔E, silent at level 3). Each clash closes a ¬I box, and \( \neg(x < 0) \) becomes \( x \ge 0 \) by trichotomy."
+   Then: "The words 'that is' unwind the two sets' definitions (↔E, silent at level 3)." (S2 round 1: the S1 sentence on the ¬I steps is cut, since the solution tags them; it pays for part of the extensionality sentences of the lead.)
 
    **Quick check (new):** "To prove \( \{ n \in \nZ : n^2 \text{ is even} \} = \{ n \in \nZ : n \text{ is even} \} \) by double inclusion, which inclusion is a theorem of Chapter 2, and which takes one line?" *Solution:* \( \subseteq \) is @thm-square-even-implies-even. \( \supseteq \) is one line: \( n = 2k \) gives \( n^2 = 2(2k^2) \).
 
@@ -417,7 +434,7 @@ R5 §4.2 is executed in full. Additions:
    - "Some \( x \in A \) has \( f(x) > 0 \). Let \( x \in A \); then \( f(x) > 0 \)." The witness of an existential is *chosen* ("choose \( x \in A \) with \( f(x) > 0 \)", ∃E with a fresh name). Written with "let", the second sentence claims \( f(x) > 0 \) for every \( x \in A \): (N3).
    - "Choose \( N \) with \( \abs{a_n - L} < \varepsilon/2 \) for \( n \ge N \), and \( N \) with \( \abs{b_n - M} < \varepsilon/2 \) for \( n \ge N \)." (N4).
    - "Let \( L \) be the limit of \( (a_n) \)", in a proof that has not shown that \( (a_n) \) converges: (N14).
-   - "\( x^2 > y \) for some \( x \), for all \( y \)." With quantifiers trailing, their order is unclear. Write them in front ("What the sentence does not say").
+   - "Let \( \varepsilon > 0 \). Then \( \abs{a_n - L} < \varepsilon \) for every \( n \ge N \), as required", where no sentence says what \( N \) is. The witness of ∃I, with what it depends on, is never silent (@def-silent-steps). (S2 round 1: this replaces the S1 line on trailing quantifiers, which carried no tag; that reading error stays with "What the sentence does not say".)
 
 4. **Fold F8.2-b** `title="The bookkeeping of the two choices"` (new, a sibling after the solution of `exm-rhetoric-equality`): 02:124 verbatim (~110 words). The solution keeps 02:122. `exm-rhetoric-equality` is not cited outside the chapter (layout §4.3), and the passage is bookkeeping that R5's dependency picture also shows.
 
@@ -428,12 +445,12 @@ R5 §4.2 is executed in full. Additions:
 
    Every one is a raw LaTeX block with its `tikzpicture` written out (DRAFTING, Diagrams).
 
-**Quick checks:** R5's four (δ at two points, the hidden ∃N, it-suffices, WLOG), plus the double-inclusion check: five in ~4,190 words, about one per 840. (The example's closing paragraph was shortened to pay for the check.)
+**Quick checks:** R5's four (δ at two points, the hidden ∃N, it-suffices, WLOG), plus the double-inclusion check: five in ~4,200 words, about one per 840. (The example's closing paragraph was shortened to pay for the check.)
 
 **Exercises.**
 - **A1, B1, B2, C1, C2:** as R5.
 - **A2: Drill** (`exr-quantifier-rhetoric-a2`): R5's (a)–(j) in R5's order, then:
-  (k) **new** "To prove \( A = B \), a proof shows \( A \subseteq B \) and \( B \subseteq A \). Which rules does that pattern use, and how does each inclusion open?" — ↔I inside ∀I, \( \forall x\, (x \in A \leftrightarrow x \in B) \). Each inclusion is a bounded ∀I that opens with "let \( x \in A \)" (or "let \( x \in B \)").
+  (k) **new** "To prove \( A = B \), a proof shows \( A \subseteq B \) and \( B \subseteq A \). Which rules does that pattern use, and how does each inclusion open?" — ↔I inside ∀I, for \( \forall x\, (x \in A \leftrightarrow x \in B) \); then \( A = B \) by ∀E and →E with the axiom of extensionality, cited. Each inclusion is a bounded ∀I that opens with "let \( x \in A \)" (or "let \( x \in B \)").
   (l) **new** "A proof begins 'Let \( m \) be the least element of \( A \)'. What must already be on the page?" — That such an element exists and that there is only one (∃!, a definite description). Uniqueness is one line, since two least elements are each at most the other; existence is the part that needs a reason.
 - **B3** (new, `exr-quantifier-rhetoric-b3`) `[B3: Six, two and three, used later]` [technique: Ha — element chasing]. Statement: "Let \( A \coloneqq \{ n \in \nZ : 6 \mid n \} \) and \( B \coloneqq \{ n \in \nZ : 2 \mid n \text{ and } 3 \mid n \} \). Prove \( A = B \) by double inclusion. Name each 'let', each 'choose' with its fresh name, and each witness."
 
@@ -461,13 +478,13 @@ R5 §4.2 is executed in full. Additions:
 - the stronger rows (`prp-implication-transitive`, cited; `exm-rhetoric-conjunction`'s \( x^2 < x \), within the chapter);
 - F8.2-a (`thm-monotonicity`, F1.3 §09, second pass, prose pointer in a fold; nothing rests on it);
 - the definitions row (`prp-definitional-extension`, `def-definite-description`, F1.4 §08, cited);
-- set equality read as ↔ (F1.4 §01's gloss of subset, prose);
-- the double-inclusion example (school order facts, trichotomy; sidecar);
+- subset read as → (F1.4 §01's gloss of subset, prose); the appeal to extensionality (`exm-extensionality-logical-half`, F1.4 §07, cited, with its remark that the converse is an axiom about sets). This agrees with F1.4 §08's B4, which takes the axiom as a cited premise \( E \) and marks "\( a = b \) by extensionality" with no instance of \( E \) written as a fatal error, and with F1.6 §02's "Extensionality: an axiom, not a law of logic". Chapter 8 does not cite 7.2 for it (binding rule 4; the What-you-need line);
+- the double-inclusion example (school order facts, trichotomy; extensionality, cited; sidecar);
 - B3 (sidecar).
 
 ### 4.3 Section 8.3: Four Levels of One Proof (`03-levels-of-abbreviation.md`)
 
-**Budget:** main line ≤ 4,200 (now 4,064; R5 ≤ 4,000; expected about 4,180); folds ≤ 1,600 (R5 ≤ 1,300, plus F8.3-d ~300). Looking-ahead box: R5's, kept.
+**Budget:** main line ≤ 4,200 (now 4,064; R5 ≤ 4,000; expected about 4,180); folds ≤ 1,600 (R5 ≤ 1,300, plus F8.3-d ~300). Looking-ahead box: R5's, kept. **Fallback** if S3 measures over 4,200: the read-back sentence for column (a) in `exm-suffices-column`'s closing paragraph ("Read from the bottom, (a) is the proof …", ~25 words) is cut; (b)'s read-back makes the point.
 
 R5 §4.3 is executed in full. Changes and additions:
 
@@ -525,7 +542,7 @@ R5 §4.3 is executed in full. Changes and additions:
   |---|---|
   | \( \abs{x - 1} + \abs{x + 1} \ge 2 \) | (the goal) |
   | \( \abs{1 - x} + \abs{x + 1} \ge \abs{(1 - x) + (x + 1)} \) | \( \abs{x - 1} = \abs{1 - x} \), and \( (1 - x) + (x + 1) = 2 \), so the right side is \( \abs{2} = 2 \) |
-  | — | the triangle inequality, @exm-triangle-inequality-cases, at \( u = 1 - x \), \( v = x + 1 \) |
+  | — | the triangle inequality, @exm-triangle-inequality-cases with \( 1 - x \) and \( x + 1 \) in place of its \( x \) and \( y \) |
 
   (b) "By the triangle inequality, \( \abs{x - 1} + \abs{x + 1} = \abs{1 - x} + \abs{x + 1} \ge \abs{(1 - x) + (x + 1)} = 2 \)."
 
@@ -553,7 +570,7 @@ R5 §4.3 is executed in full. Changes and additions:
 
 ### 4.4 Section 8.4: Reading a Proof: Self-Explanation (`04-reading-proofs.md`)
 
-**Budget:** main line ≤ 2,200 (now 1,895; R5 ≤ 2,000; expected about 2,190); folds ≤ 550, in the exercises (R5). No Looking-ahead box.
+**Budget:** main line ≤ 2,200 (now 1,895; R5 ≤ 2,000; expected about 2,190); folds ≤ 550, in the exercises (R5). No Looking-ahead box. **Fallback** if S3 measures over 2,200: the unstated-fact subsection's second sentence ("A proof is read the same way, one line at a time.") is cut.
 
 R5 §4.4 is executed in full. Additions:
 
@@ -617,13 +634,13 @@ R5 §4.4 is executed in full. Additions:
 
 **Ledger lines:**
 - the 3.3 recall (F1.7 §03, prose pointer);
-- the unstated-fact subsection: \( n = 2 \) (arithmetic; `exr-using-an-implication-b5`, cited); "if \( 3 \mid n^2 \), then \( 3 \mid n \)" (stated; proved in 8.5 C3's solution, prose; nothing rests on it here);
+- the unstated-fact subsection: \( n = 2 \) (arithmetic; `exr-using-an-implication-b5`, cited); "if \( 3 \mid n^2 \), then \( 3 \mid n \)" (stated; proved in 8.5 C3's solution, prose; nothing rests on it here). Classification, for S2a and for consistency with 8.6 (S2 round 1): each of the two lines asserts its step with "since", so its warrant is a general fact the line itself relies on. The false one is an instance of (N9), a "fact" neither proved nor a true school fact; the true one, left unproved, is the same entry with a true conclusion. Neither is (N14), whose premise is presupposed by a name, never asserted (§4.6, item 2). The 8.4 text does not tag them, since 8.6's catalogue comes later;
 - the Quick check (school order facts);
 - B3 (sidecar).
 
 ### 4.5 Section 8.5: Writing a Proof (`05-writing-proofs.md`)
 
-**Budget:** main line ≤ 2,800 (now 2,413; R5 ≤ 2,600; expected about 2,790); folds ≤ 700 (R5 ≤ 650, plus F8.5-c ~50). No Looking-ahead box.
+**Budget:** main line ≤ 2,800 (now 2,413; R5 ≤ 2,600; expected about 2,790); folds ≤ 700 (R5 ≤ 650, plus F8.5-c ~50). No Looking-ahead box. **Fallback** if S3 measures over 2,800: the generalising lead's last sentence ("A line that uses a property of the particular object must be proved again, or the generalisation fails.", ~20 words) is cut; the example's *test* says it.
 
 R5 §4.5 is executed in full. Additions:
 
@@ -704,7 +721,16 @@ R5 §4.5 is executed in full. Additions:
 
 ### 4.6 Section 8.6: Checking Proofs, and What Is Not Allowed (`06-checking-proofs.md`)
 
-**Budget:** main line ≤ 3,000 (now 2,240; R5 ≤ 2,600; expected about 2,990); folds ≤ 120 (R5). Looking-ahead box: R5's, kept. **The (N11) decision** (recorded for S2 and S9): R5's split of (N11) into parts (a)–(c), with one new instance, is kept. The plan's "(N1)–(N11) untouched" protects the entries' numbers, rules and instances, all of which R5 keeps. R5's S2a item 1 checked fd2's one citation of (N11).
+**Budget:** main line ≤ 3,000 (now 2,240; R5 ≤ 2,600; expected about 2,990); folds ≤ 360 (R5 ≤ 120, plus F8.6-b ~150 and F8.6-c ~70).
+
+**The estimate (S2 round 1).** The S1 figure did not add up: (N12)–(N14) as S1 wrote them come to about 374 words, not ~210, and with the other additions (~265) 8.6 came to about 3,200. R5's main line is about 2,560. The estimate below is built from the text quoted in this section:
+- the flowchart's lead and caption, +40;
+- (N12), +95; (N13) with one instance, +85; (N14) with one instance and its line against (N9), +110. The second, true instances of (N13) and (N14) and the barber sentence move into fold F8.6-b (item 2);
+- the families row, +30;
+- the valid-but-improper paragraph, +75;
+- the traditional-names table moves into fold F8.6-c (item 5), 0.
+
+That is about 2,990. **Fallback** if S3 measures over 3,000: the valid-but-improper paragraph (item 4) moves into F8.6-b, and A2 (l)'s answer gains the sentence that makes it self-contained ("a step that no single rule writes, but a chain of rules does, is a matter of level, not an error"). Looking-ahead box: R5's, kept. **The (N11) decision** (recorded for S2 and S9): R5's split of (N11) into parts (a)–(c), with one new instance, is kept. The plan's "(N1)–(N11) untouched" protects the entries' numbers, rules and instances, all of which R5 keeps. R5's S2a item 1 checked fd2's one citation of (N11).
 
 R5 §4.6 is executed in full. Additions:
 
@@ -714,9 +740,9 @@ R5 §4.6 is executed in full. Additions:
    \begin{tikzpicture}[flowchart]
      \node[fc start] (s) {the next line of the proof};
      \node[fc step, below=of s] (q) {first column: is it true wherever\\the hypotheses and the open\\assumptions are true?};
-     \node[fc test, below=of q] (t) {second column: which rule,\\from which available lines?};
-     \node[fc start, right=of t] (f) {none: the proof fails here;\\name its entry, (N1)--(N14)};
-     \node[fc start, below=of t] (n) {the line is licensed;\\go on to the next one};
+     \node[fc test, below=of q] (t) {second column: which rule, or\\which chain of rules and silent\\steps, from which available lines?};
+     \node[fc start, right=of t] (f) {no such chain: the proof fails\\here; name its entry, (N1)--(N14)};
+     \node[fc start, below=of t] (n) {the line is licensed at its level;\\go on to the next one};
      \draw[fc arrow] (s) -- (q);
      \draw[fc arrow] (q) -- (t);
      \draw[fc arrow] (t) -- node[above, font=\scriptsize] {none} (f);
@@ -724,23 +750,27 @@ R5 §4.6 is executed in full. Additions:
    \end{tikzpicture}
    ```
 
-   Caption sentence after it: "A 'no' in the first column marks a line to look at first; only the second column decides."
+   Caption sentence after it: "A 'no' in the first column marks a line to look at first; only the second column decides. The silent steps are those of @def-silent-steps." (S2 round 1: the test node asked for one rule, which contradicted item 4. A line that a chain of rules writes is licensed at its level, and only a line that no chain of rules writes from the available lines fails.)
 
-2. **(N12), (N13), (N14)**, appended inside the enumerate of `exm-not-allowed-catalogue`, after (N11) (06:44, in R5's lettered form), in the catalogue's format (~210 words) [technique: LPL, Ha; gap-matrix rows 1.12, 7.4; plan 6.6]:
+2. **(N12), (N13), (N14)**, appended inside the enumerate of `exm-not-allowed-catalogue`, after (N11) (06:44, in R5's lettered form), in the catalogue's format (~290 words; S2 round 1 measured the S1 text at ~374 and moved the second instances of (N13) and (N14) into fold F8.6-b) [technique: LPL, Ha; gap-matrix rows 1.12, 7.4; plan 6.6]:
 
    "12. **Distinct letters taken for distinct objects.** Two names introduced separately are treated as naming different objects, though no line says they differ. Breaks \( \rulename{\forall I} \): a box opened for two arbitrary names must cover every pair, including the pairs in which both name one object (\( \rulename{\forall E} \) may put the same term for both, @def-rule-universal-elimination). Instance: 'if \( a \) and \( b \) are roots of \( x^2 - 5x + 6 = 0 \), then \( a + b = 5 \): the two roots give \( x^2 - 5x + 6 = (x - a)(x - b) \), and comparing coefficients, \( a + b = 5 \)'. **False:** \( a = b = 2 \) are roots, and \( 2 + 2 = 4 \).
 
-   13. **An 'and so on' with nothing behind it.** A step is repeated 'and so on', and its outcome is used for every stage, but the passage from each stage to the next, or the reason the process ends, is never proved. Breaks @ax-induction (or @thm-strong-induction): \( \rulename{{\to}E} \) on the axiom needs its step as a line, and 'and so on' is not that line. Instances: 'a non-empty set \( A \) of positive rational numbers has a least element: take \( a_1 \in A \); if it is not least, take \( a_2 \in A \) with \( a_2 < a_1 \), and so on, until the least element is reached' (**false:** \( \{1, \tfrac12, \tfrac13, \dots\} \) has no least element, and the process never ends); the same words for a non-empty set of natural numbers (**true**, but the words leave out why the process ends: a strictly decreasing list of natural numbers that starts at \( a_1 \) has at most \( a_1 + 1 \) terms, which needs an induction).
+   13. **An 'and so on' with nothing behind it.** A step is repeated 'and so on', and its outcome is used for every stage, but the passage from each stage to the next, or the reason the process ends, is never proved. Breaks @ax-induction (or @thm-strong-induction): \( \rulename{{\to}E} \) on the axiom needs its step as a line, and 'and so on' is not that line. Instance: 'a non-empty set \( A \) of positive rational numbers has a least element: take \( a_1 \in A \); if it is not least, take \( a_2 \in A \) with \( a_2 < a_1 \), and so on, until the least element is reached' (**false:** \( \{1, \tfrac12, \tfrac13, \dots\} \) has no least element, and the process never ends).
 
-   14. **A hidden premise.** A step uses a statement that is neither a hypothesis, nor proved, nor a true school fact, and is never stated; most often the existence of the object named by 'the' or 'let … be the …'. Breaks \( \rulename{\exists E} \), which opens its box only by citing a line \( \exists x\, \varphi \) (@def-rules-existential), and the use of 'the' (Section 5.8), which needs existence and uniqueness. Instances: 'let \( N \) be the largest natural number; then \( N + 1 \le N \), so \( 1 \le 0 \)' (**false:** the hidden premise, that a largest natural number exists, is false); 'let \( m \) be the least positive integer with \( m^2 > 50 \); since \( 7^2 = 49 \) and \( 8^2 = 64 \), \( m = 8 \)' (**true**, but the existence of a least such integer is a premise the proof must state). The barber who shaves exactly the villagers who do not shave themselves is the same move; Section 5.6 shows that no such barber can exist (@thm-russell)."
+   14. **An object named before it is shown to exist.** A step names an object, with 'the …' or 'let … be the …', and so presupposes that such an object exists (for 'the', exactly one), though no line states or proves it. In (N9) the step asserts a fact that is not available; here the missing premise is never asserted at all, because it hides inside a name. Breaks \( \rulename{\exists E} \), which opens its box only by citing a line \( \exists x\, \varphi \) (@def-rules-existential), and the use of 'the' (Section 5.8), which needs existence and uniqueness. Instance: 'let \( N \) be the largest natural number; then \( N + 1 \le N \), so \( 1 \le 0 \)' (**false:** the presupposed premise, that a largest natural number exists, is false)."
 
-   (In (N13)'s first instance "\( \{1, \tfrac12, \tfrac13, \dots\} \)" is the set \( \{1/n : n \in \nZ_{>0}\} \); the drafter writes whichever form the build renders. The catalogue's head sentence 06:31, "Each entry names the error, the rule it breaks and where that rule lives, and a failing instance whose conclusion is marked true or false", now covers entries with two instances, as (N6), (N9) and (N11) already have.)
+   **The line between (N9) and (N14)** (S2 round 1), which every tag in this chapter follows. (N9) is a step whose warrant is **asserted**, by "since", "so" or a citation, but is not available: the goal, a later result, or a general "fact" neither proved nor a true school fact ("\( 2 \mid m \) and \( 3 \mid m \), so \( 6 \mid m \)" with no argument; "the lemma" used unproved). (N14) is a step that **presupposes** a premise it never asserts at all, most often the existence (and uniqueness) behind "the" or "let … be the …". Checked against the chapter: the (N9) tags of 8.1 B4, 8.2 B3, 8.5 B4 and 8.5 C3 are all asserted warrants, and the 8.4 lines "since \( n^2 \) is a multiple of …" are (N9) cases (§4.4 ledger). The (N14) tags of 8.2's Not-allowed block ("let \( L \) be the limit"), 8.6 A2 (k) ("let \( n \) be the positive integer with …") and 8.6 B3 (v) ("let \( x \) be the real solution") are all presupposed by a name, and none of them asserts the existence it needs, so none is also (N9).
+
+   **Fold F8.6-b** `title="True conclusions behind an 'and so on' and a 'the'"` (new, S2 round 1, budget; ~150 words; a sibling after the catalogue block): "Both new kinds of error can reach a true conclusion. The words of (N13)'s instance, said of a non-empty set of natural numbers, reach a true conclusion, but they leave out why the process ends: a strictly decreasing list of natural numbers that starts at \( a_1 \) has at most \( a_1 + 1 \) terms, which needs an induction. 'Let \( m \) be the least positive integer with \( m^2 > 50 \); since \( 7^2 = 49 \) and \( 8^2 = 64 \), \( m = 8 \)' reaches a true conclusion too, but the existence of a least such integer is a premise the proof must state: it is (N14). The barber who shaves exactly the villagers who do not shave themselves is (N14) as well; Section 5.6 shows that no such barber can exist (@thm-russell)." (Edge cases, STYLE §12.3: a true conclusion with an improper step. No exercise needs the fold: A2 (j) gives its own true (N13) instance.)
+
+   (In (N13)'s instance "\( \{1, \tfrac12, \tfrac13, \dots\} \)" is the set \( \{1/n : n \in \nZ_{>0}\} \); the drafter writes whichever form the build renders. The catalogue's head sentence 06:31, "Each entry names the error, the rule it breaks and where that rule lives, and a failing instance whose conclusion is marked true or false", covers the three new entries, each with one instance.)
 
 3. **The families table** (R5's, before the block): (N12) is added to "Naming errors", whose slogan becomes "A new choice gets a new name, and two names may name one thing." A new last row: "Iteration and existence errors | (N13), (N14) | An 'and so on' needs its step; a 'the' needs its object." There are now seven families.
 
-4. **Valid but improper** (new paragraph, ~60 words, after 06:48 as R5 rewords it): "The catalogue lists steps that can lead from true lines to a false one. A step can also be **valid but improper**. The step "from \( x > 0 \) and \( x > 0 \to y > 0 \), conclude \( y > 0 \wedge x > 0 \)", taken as one line, never leads from truth to falsehood, but no single rule writes it. That is a matter of level (@def-levels-of-proof), not an error: at level 0 it takes two lines, →E and then ∧I, and in prose one sentence."
+4. **Valid but improper** (new paragraph, ~75 words, after 06:48 as R5 rewords it; S2 round 1: the S1 example, a propositional compression, is one that a single TAUT line writes from Section 4.8 on, as 8.3 says, so a first-order example replaces it): "The catalogue lists steps that can lead from true lines to a false one. A step can also be **valid but improper**. 'For all reals \( a \) and \( b \), \( a^2 + b^2 \ge 2ab \); so for all reals \( b \) and \( a \), \( a^2 + b^2 \ge 2ab \)', taken as one line, never leads from truth to falsehood, but no rule of the book writes it in one line, TAUT included (Section 8.3). That is a matter of level (@def-levels-of-proof), not an error: at level 0 it is ∀E twice and ∀I twice, and in prose it needs no words."
 
-5. **Traditional names** (new, ~60 words with the table, after item 4) [technique: Hu — informal fallacies under mathematical names; gap-matrix row 1.12]. One sentence: "Older books name some of these errors as fallacies:" then
+5. **Traditional names**, in **fold F8.6-c** `title="The errors under their traditional names"` (new, ~70 words with the table, a sibling after item 4's paragraph; S2 round 1, budget: an instructor-type comparison, STYLE §12.0, and no exercise needs it) [technique: Hu — informal fallacies under mathematical names; gap-matrix row 1.12]. One sentence: "Older books name some of these errors as fallacies:" then
 
    | Traditional name | Entry |
    |---|---|
@@ -749,19 +779,19 @@ R5 §4.6 is executed in full. Additions:
    | affirming the consequent; denying the antecedent | (N6) |
    | false dichotomy | (N8) |
    | begging the question | (N9) |
-   | a hidden premise; a presupposition ("the …") | (N14) |
+   | a presupposition ("the …") | (N14) |
 
    and "Affirming a disjunct is a common error of Section 1.6."
 
-**Quick checks:** R5's three (two questions; family; (N2)). No new check: the budget goes to the entries. Three in ~2,990 words, about one per 1,000. The new A2 parts (i)–(l) drill (N12)–(N14) and the improper step.
+**Quick checks:** R5's three (two questions; family; (N2)). No new check: the budget goes to the entries. Three in ~2,990 words, about one per 1,000. The new A2 parts (i)–(l) drill (N12)–(N14) and the improper step. The roadmap bullet of §4.0 item 5 is reworded to match (the traditional names are in a fold).
 
 **Exercises.**
 - **A1, B1, B2, C1 (faded), C2, C3 (exit check):** as R5.
 - **A2: Drill** (`exr-checking-proofs-a2`): R5's (a)–(h) (stem: "Name the entry of @exm-not-allowed-catalogue that each line commits, and say whether its conclusion is true"), then:
   (i) **new** "Let \( x \) and \( y \) be solutions of \( x^2 = 9 \). Then \( x^2 - y^2 = 0 \), so \( (x - y)(x + y) = 0 \), and since \( x \ne y \), \( x + y = 0 \)." — (N12); false: \( x = y = 3 \) gives \( x + y = 6 \).
   (j) **new** "\( a_1 = 2 \) and \( a_{n+1} = a_n^2 - 2 \). Then \( a_2 = 2 \), \( a_3 = 2 \), and so on, so \( a_n = 2 \) for every \( n \ge 1 \)." — (N13); true. The step "if \( a_n = 2 \), then \( a_{n+1} = 4 - 2 = 2 \)" is one line, and the proof must write it, as the step of an induction.
-  (k) **new** "Let \( n \) be the positive integer with \( n^2 = 2 \). Then \( 1 < n^2 < 4 \), so \( 1 < n < 2 \)." — (N14). The hidden premise, that such an integer exists, is false, and so is the conclusion that an integer lies strictly between \( 1 \) and \( 2 \).
-  (l) **new** "From '\( x > 0 \)' and '(\( x > 0 \) implies \( y > 0 \)) and (\( y > 0 \) implies \( z > 0 \))', conclude '\( z > 0 \)' in one line." — No entry. The step is valid but improper: at level 0 it is ∧E twice and →E twice. It is a matter of level, not an error.
+  (k) **new** "Let \( n \) be the positive integer with \( n^2 = 2 \). Then \( 1 < n^2 < 4 \), so \( 1 < n < 2 \)." — (N14). The presupposed premise, that such an integer exists, is false, and so is the conclusion that an integer lies strictly between \( 1 \) and \( 2 \).
+  (l) **new** "From '\( x > 0 \)' and '(\( x > 0 \) implies \( y > 0 \)) and (\( y > 0 \) implies \( z > 0 \))', conclude '\( z > 0 \)' in one line." — No entry. No primitive rule writes the step in one line: at level 0 it is ∧E twice and →E twice. From Section 4.8 on, a single TAUT line citing both premises also writes it (Section 8.3). Either way it is a matter of level, not an error. (S2 round 1: the S1 answer called it improper outright, against 8.3's TAUT paragraph.)
 - **B3** (new, `exr-checking-proofs-b3`) `[B3: Correct, or which entry?]` (verdict withheld; D5) [technique: LPL, Hu — critique with the verdict withheld]. Statement: "Each proof below is correct, or commits one of (N12), (N13), (N14); you are not told how many of each. For a correct proof, name its most delicate step. For a wrong one, name the entry, say whether the claim is true, and give a counterexample to the claim or a repair of the proof.
   (i) *Claim:* for all integers \( m \), \( n \), if \( m \) and \( n \) are odd, then \( mn \) is odd. *Proof:* write \( m = 2k + 1 \) and \( n = 2l + 1 \) with integers \( k \), \( l \); then \( mn = 4kl + 2k + 2l + 1 = 2(2kl + k + l) + 1 \).
   (ii) *Claim:* for all real \( a \), \( b \), if \( a^2 = b^2 \), then \( a = b \) or \( a = -b \). *Proof:* \( (a - b)(a + b) = a^2 - b^2 = 0 \), and a product of real numbers is \( 0 \) only if a factor is.
@@ -774,7 +804,7 @@ R5 §4.6 is executed in full. Additions:
   - (ii) **Correct.** The delicate step is the product fact. It gives "\( a - b = 0 \) or \( a + b = 0 \)" (→E, citing it), which is the claim, and no distinctness is assumed.
   - (iii) **(N12); the claim is false**: \( m = n = 0 \) gives \( 0 \). The proof took \( m \) and \( n \) to be different integers.
   - (iv) **(N13); the claim is true.** The "and so on" hides why the splitting ends: each factor is at least \( 2 \) and smaller than the number split. Repair by strong induction (@thm-strong-induction): if every \( k \) with \( 2 \le k < n \) is a product of primes, so is \( n \), being prime or \( ab \) with \( a \), \( b \) in that range.
-  - (v) **(N14); the claim is false**: \( 1 + 1 + 1 = 3 \ne 0 \). The hidden premise "\( x^2 + x + 1 = 0 \) has a real solution" is false, since \( x^2 + x + 1 = (x + \tfrac12)^2 + \tfrac34 > 0 \).
+  - (v) **(N14); the claim is false**: \( 1 + 1 + 1 = 3 \ne 0 \). The presupposed premise "\( x^2 + x + 1 = 0 \) has a real solution" is false, since \( x^2 + x + 1 = (x + \tfrac12)^2 + \tfrac34 > 0 \).
 
   Look-alikes: (i) and (iii) both use two letters; only (iii) assumes the letters differ.
 
@@ -804,30 +834,31 @@ R5 §4.6 is executed in full. Additions:
 **Sidecars:**
 - `exm-not-allowed-catalogue.py` (R5's, extended):
   - (N12): the roots 2 and 3 of \( x^2 - 5x + 6 \), and \( 2 + 2 = 4 \);
-  - (N13): \( 1/(n + 1) < 1/n \); a decreasing list from \( a_1 \) in \( \nN \) has at most \( a_1 + 1 \) terms, checked for \( a_1 \le 30 \) by search;
-  - (N14): \( 7^2 = 49 \le 50 < 64 = 8^2 \), and no smaller positive integer works.
+  - (N13): \( 1/(n + 1) < 1/n \);
+  - F8.6-b: a decreasing list from \( a_1 \) in \( \nN \) has at most \( a_1 + 1 \) terms, checked for \( a_1 \le 30 \) by search; \( 7^2 = 49 \le 50 < 64 = 8^2 \), and no smaller positive integer works.
 - `exr-checking-proofs-a2.py`: (i) \( x = y = 3 \); (j) \( a_n = 2 \); (k) no integer squares to 2.
 - `exr-checking-proofs-b3.py`: (i) and (ii) on a range; (iii) at \( (0, 0) \); (iv) the factorization of every \( n \le 500 \); (v) \( x^2 + x + 1 > 0 \).
 - `exr-checking-proofs-r1.py`: \( n^2 + n \) even for \( |n| \le 500 \).
 
 **Ledger lines:**
 - (N12): `def-rule-universal-elimination`, cited; arithmetic; sidecar.
-- (N13): `ax-induction` and `thm-strong-induction`, cited. The \( \nN \) instance: "a decreasing list in \( \nN \) from \( a_1 \) has at most \( a_1 + 1 \) terms", stated in the instance and not used as a reason; F2.2 (promised), well-ordering.
-- (N14): `def-rules-existential`, cited; Section 5.8's description, prose pointer; `thm-russell`, cited; "the least positive integer with \( m^2 > 50 \) exists", a premise named in the instance, F2.2 (promised).
-- The improper paragraph: `def-levels-of-proof`, within the section's chapter.
-- The traditional-names table: a regrouping, read off the entries.
+- (N13): `ax-induction` and `thm-strong-induction`, cited.
+- (N14): `def-rules-existential`, cited; Section 5.8's description, prose pointer. The line against (N9): read off the two entries.
+- F8.6-b: "a decreasing list in \( \nN \) from \( a_1 \) has at most \( a_1 + 1 \) terms", stated and not used as a reason; "the least positive integer with \( m^2 > 50 \) exists", a premise named in the fold; both F2.2 (promised), well-ordering; `thm-russell`, cited.
+- The improper paragraph: `def-levels-of-proof`, within the section's chapter; Section 8.3's TAUT paragraph, within the chapter.
+- F8.6-c, the traditional-names table: a regrouping, read off the entries.
 - B3: `thm-strong-induction`, cited; school algebra; sidecar.
 - R1: (E1) of F1.2 §01; F1.4 §04's ∀I side condition.
 
 ### 4.7 Section 8.7: The Dispute over Excluded Middle (`07-excluded-middle.md`)
 
-**Budget:** main line ≤ 3,900 (now 3,781; R5 ≤ 3,800; expected about 3,890); folds ≤ 340 (R5 ≤ 200, plus F8.7-c ~140). Looking-ahead box: R5's, kept. Every result stays `.optional` (R5).
+**Budget:** main line ≤ 3,950 (now 3,781; R5 ≤ 3,800; layout ≤ 3,900; expected about 3,915: S1's ~3,890, plus item 5's sentence ~40, the longer Glivenko sentence ~5, less ~20 from item 1's shorter lead); folds ≤ 340 (R5 ≤ 200, plus F8.7-c ~140). **Fallback** if S3 measures over 3,950: the paragraph 07:11 (why ⊥E stays primitive, an instructor-type note, STYLE §12.0; nothing on the main line argues from it) moves into a new fold F8.7-d `title="Why ⊥E stays a primitive rule"`, about −100. Looking-ahead box: R5's, kept. Every result stays `.optional` (R5).
 
 R5 §4.7 is executed in full. Changes and additions:
 
 1. **`## Which laws survive without RAA {#laws-without-raa}`** (new subsection, ~210 words with its table). It goes after R5's `## Excluded middle cannot be refuted` (R5 §4.7, item 5) and before `## A short history` [technique: vD — which direction of each law survives; plan §3.6 item 6.7; gap-matrix row 9.1].
 
-   Lead (~70 words): "Chapters 2 and 6 flagged every law they derived with RAA. Here they are side by side, each split into its directions. The middle column lists the directions derived in this book without RAA. The right column says more than 'derived here with RAA': for letters \( p \), \( q \), **no** derivation without RAA exists at all. The optional Section 8.8 proves this for the propositional rows; for the quantifier rows it is stated without proof."
+   Lead (~50 words; S2 round 1 shortened it from ~70 to pay for item 5): "Chapters 2 and 6 flagged every law they derived with RAA. Here they are side by side, split into directions. The middle column was derived without RAA. For the right column, with letters \( p \), \( q \), **no** derivation without RAA exists. The optional Section 8.8 proves this for the propositional rows; for the quantifier rows it is stated without proof."
 
    | Law | Derived without RAA | Needs RAA |
    |---|---|---|
@@ -842,13 +873,15 @@ R5 §4.7 is executed in full. Changes and additions:
    | quantifier negation (@prp-quantifier-negation) | (b); (c) both ways | (a) \( \neg\forall x\, \varphi \vdash \exists x\, \neg\varphi \) |
    | passage laws (@prp-quantifier-passage) | eight of the ten directions | \( \dashv \) in (d) and in (e) |
 
-   After the table (one sentence): "For each propositional entry of the right column, the double negation of its conclusion is derivable without RAA from the same premises: that is Glivenko's theorem in the remark above (stated without proof), and Exercise B5 derives three cases."
+   After the table (one sentence; S2 round 1): "For each propositional entry of the right column, the double negation of its conclusion is derivable without RAA from the same premises, by Glivenko's theorem in the remark above (stated without proof) applied to the implication from the premises' conjunction; Exercise B5 (a) and (b) derive two cases." (B5 (c) is not a Glivenko case: it is an instance of excluded middle giving ¬¬E. The step from \( \neg\neg(\gamma \to \varphi) \) and \( \gamma \) to \( \neg\neg\varphi \) is RAA-free, S2a item 13; Γ is a finite list, binding rule 6.)
 
    **Quick check (new):** "An intuitionist has proved \( \neg Q \to \neg P \). May she conclude \( P \to Q \)?" *Solution:* Not in general: that is @prp-contrapositive-converse, in the right column. She may when \( Q \) is itself a negation, by R5's fold F5.1-c, which reads Section 2.5's fold.
 
-   (The table is derived from the statements of the cited results, each of which says where RAA enters (07:24–27, now B4's solution in R5). For the right column's propositional rows, see §4.8, item 7. The rule "every result stays `.optional`" concerns labelled results, and the table is unlabelled prose.)
+   (The table is derived from the statements of the cited results, each of which says where RAA enters, and from B4's census as recomputed under item 6 below. For the right column's propositional rows, see §4.8, item 7. The rule "every result stays `.optional`" concerns labelled results, and the table is unlabelled prose.)
 
-2. **Pointers to 8.8** (critic small correction 3; prose pointers, no `@ref`, since 8.8 is later):
+2. **Pointers to 8.8** (critic small correction 3; prose pointers, no `@ref`, since 8.8 is later). There are **six** (S2 round 1: S1 listed four). Each names a claim that 8.8 proves:
+   - The lead of the new table (item 1): "The optional Section 8.8 proves this for the propositional rows".
+   - B5 (d)'s parenthesis (below): one instance of Peirce's law does not give the instance of excluded middle that gives it, proved by 8.8's C1 (b).
    - Table cell 07:15: "not derivable (@thm-raa-independent for the propositional rules; …)" → "not derivable (@thm-raa-independent for the propositional rules, and the optional Section 8.8 again, by stages of knowledge; …)".
    - R5's Quick check in "Excluded middle cannot be refuted" ("Does @prp-not-not-excluded-middle show that \( P \vee \neg P \) is derivable without RAA?"): its solution ends "… and Chapter 4's optional @thm-raa-independent shows that no derivation without RAA reaches it, as does the optional Section 8.8."
    - B1's solution 07:304: "(we state this without proof)" → "(the optional Section 8.8 proves it with a two-stage model)".
@@ -856,11 +889,13 @@ R5 §4.7 is executed in full. Changes and additions:
    - The other "stated without proof" claims stay as they are. These are 07:11 (⊥E; Kripke models do not address it), 07:15's quantifier clause, 07:80 (Glivenko), the remark's quantifier failure, and the right column's quantifier rows.
 3. **Fold F8.7-c** `title="Proofs as programs, in Lean"` (new, after `## Proofs as programs`' paragraph 07:210): 07:212 and the Lean block 07:214–221, verbatim (~140 words). The warning 07:223–225 stays on the main line. This is the budget trade for item 1. The Lean passage is an instructor-type comparison (STYLE §12.0), and nothing on the main line cites it.
 4. **R1's solution** (07:462): "by part (b) of @prp-bounded-quantifier-negation and then part (a) under the \( \forall \)" → "by part (b) of @prp-bounded-quantifier-negation, and then part (a) used under the \( \forall \), as @prp-replacement of Section 6.2 allows". (Critic C2: a law used on a part under a quantifier is licensed syntactically.)
+5. **TAUT is not an intuitionistic rule** (new, S2 round 1; one sentence, ~40 words, appended to 07:9, the definition of an intuitionistic derivation): "TAUT (Section 4.8) is not among these rules: it is licensed by the completeness theorem, whose proof splits on atoms by LEM (@lem-atom-splitting), so a line justified by TAUT, on a formula or on a propositional skeleton (Section 6.3), uses RAA in the sense just defined." Paid by item 1's shorter lead.
+6. **B4's census is recomputed** (S2 round 1; supersedes R5 §4.7's "its solution 07:24–28 verbatim" for part (b)). R5 moved the Quick check 07:20–28 into B4 with its solution verbatim. That text predates the deepened Chapters 3–7. Part (a) (Chapter 2) stays verbatim unless ch02-deepen's delivered Chapter 2 adds a labelled result derived with a classical rule; S3 checks. Part (b) is recomputed by the drafter against the delivered Chapters 3–7, by the same rule ("derived with RAA, directly or through ¬¬E, LEM, or a cited result that uses one of them"). It lists at least what 07:28 lists, plus @def-rule-taut's rule TAUT and @prp-taut-skeleton (Section 6.3), both licensed through @thm-completeness, and every new result of 3.x, 4.x, 5.8 and 7.4–7.6 that the delivered text flags as classical. The table of item 1 and S2a item 13 are read off the recomputed census.
 
-**Quick checks:** R5's four, plus the contraposition check: five in ~3,890 words, about one per 780.
+**Quick checks:** R5's four, plus the contraposition check: five in ~3,915 words, about one per 780.
 
 **Exercises.**
-- **A1, B1 (pointer, item 2), B2, B3, B4 (R5), C1, C2, R1 (item 4), R2, R3 (item 2), R4:** as R5.
+- **A1, B1 (pointer, item 2), B2, B3, C1, C2, R1 (item 4), R2, R3 (item 2), R4:** as R5. **B4:** as R5, with its solution (b) recomputed (item 6).
 - **A2: Drill** (new, `exr-excluded-middle-a2`), 12 parts. Stem: "Answer each in a line." Ramp: intuitionistic or not → BHK readings → apply the table.
   (a) "A derivation's last line is \( P \), by RAA from a box on \( \neg P \). Is the derivation intuitionistic?" — No.
   (b) "A box opens with \( P \) and ends in \( \bot \), and the next line is \( \neg P \). Which rule? Intuitionistic?" — ¬I; yes.
@@ -874,7 +909,7 @@ R5 §4.7 is executed in full. Changes and additions:
   (j) "True or false: every intuitionistic derivation is a derivation of Chapters 1–7." — True. It uses some of the rules, so soundness applies to it.
   (k) "May an intuitionist argue 'not every element of \( A \) is positive, so some element of \( A \) is not positive'?" — Not in general: that is @prp-quantifier-negation (a), derived with RAA. She asks for the element.
   (l) "Which line of the proof of @thm-irrational-power-rational would an intuitionist reject, and would she reject its conclusion?" — The first, the LEM split on "\( s \) is rational". Not the conclusion: @prp-log2-9-irrational proves it with a named witness and no classical rule.
-- **B5** (new, `exr-excluded-middle-b5`) `[B5: Behind two negations, and one instance]` [technique: vD — Glivenko instances; plan 6.7]. Statement: "Derive each without RAA, ¬¬E or LEM, and without citing a result derived with them: (a) \( \neg(P \wedge Q) \vdash \neg\neg(\neg P \vee \neg Q) \); (b) \( P \to Q \vdash \neg\neg(\neg P \vee Q) \); (c) \( \vdash (P \vee \neg P) \to (\neg\neg P \to P) \). (d) Which row of the table in 'Which laws survive without RAA' does each concern?"
+- **B5** (new, `exr-excluded-middle-b5`) `[B5: Behind two negations, and one instance]` [technique: vD — Glivenko instances; plan 6.7]. Statement: "Derive each without RAA, ¬¬E, LEM or TAUT, and without citing a result derived with them: (a) \( \neg(P \wedge Q) \vdash \neg\neg(\neg P \vee \neg Q) \); (b) \( P \to Q \vdash \neg\neg(\neg P \vee Q) \); (c) \( \vdash (P \vee \neg P) \to (\neg\neg P \to P) \). (d) Which row of the table in 'Which laws survive without RAA' does each concern?"
 
   *Solution.* (a), 13 lines:
 
@@ -950,7 +985,7 @@ R5 §4.7 is executed in full. Changes and additions:
 
   Every box closes by ¬I, →I or ∨E. No line uses RAA, ¬¬E or LEM, and no line cites a result. In (c), line 6 is ¬E on \( \neg P \) (line 5) and \( \neg\neg P \) (line 2).
 
-  (d) (a) concerns De Morgan (d): it is Glivenko's double negation of that row's conclusion. (b) concerns implication as a disjunction (b), in the same way. (c) concerns double negation (b): one instance of excluded middle, taken as a hypothesis, gives double-negation elimination at that instance with no further classical step. (Section 8.8's Exercise C1 shows that the converse fails: one instance of ¬¬E does not give the same instance of LEM.)
+  (d) (a) concerns De Morgan (d): it is Glivenko's double negation of that row's conclusion. (b) concerns implication as a disjunction (b), in the same way. (c) concerns double negation (b): one instance of excluded middle, taken as a hypothesis, gives double-negation elimination at that instance with no further classical step. (The optional Section 8.8's Exercise C1 shows that such a step need not run back: one instance of excluded middle gives Peirce's law for that letter, and that instance of Peirce's law does not give the instance of excluded middle.)
 
   **Marking scheme.** (10 points)
   - 3: (a).
@@ -959,7 +994,7 @@ R5 §4.7 is executed in full. Changes and additions:
   - 1: (d).
   - For each derivation: 1 for the skeleton (the outer ¬I or →I box and its last line); 2 for the inside, each clash named.
 
-  Fatal errors (0 for that derivation): a line justified by RAA, ¬¬E or LEM; citing @prp-de-morgan (d), @prp-implication-as-disjunction (b) or @prp-double-negation (b), each derived with RAA.
+  Fatal errors (0 for that derivation): a line justified by RAA, ¬¬E or LEM; a line justified by TAUT (each sequent is a tautology, so one TAUT line would "derive" it, but TAUT is licensed by completeness, which splits on atoms by LEM: item 5); citing @prp-de-morgan (d), @prp-implication-as-disjunction (b) or @prp-double-negation (b), each derived with RAA.
 
 **Sidecars:**
 - `exr-excluded-middle-b5.py`: truth-table validity of the three sequents (each derivation is checked by `tools/check_fitch.py`).
@@ -968,7 +1003,9 @@ R5 §4.7 is executed in full. Changes and additions:
 
 **Ledger lines:**
 - The table: each row read off the cited statements (prp-double-negation, prp-contrapositive, prp-contrapositive-converse, prp-de-morgan, prp-implication-as-disjunction, prp-excluded-middle, prp-not-not-excluded-middle, prp-peirce, prp-negated-implication, prp-modus-tollens, prp-disjunctive-syllogism, exm-constructive-dilemma, prp-quantifier-negation, prp-quantifier-passage, all cited). Right column, propositional rows: F1.5 §08 (later section of this chapter; optional), prose pointer, and `thm-raa-independent` for two rows. Quantifier rows: stated without proof and marked so; nothing depends on them.
-- The Glivenko sentence: stated without proof; the remark 07:79–81.
+- The Glivenko sentences: the theorem stated without proof (the remark 07:79–81), extended to finite lists of premises through the conjunction of the premises (inline; RAA-free step, S2a item 13).
+- Item 5's sentence: `def-rule-taut`, F1.3 §08, and `lem-atom-splitting`, F1.3 §08, cited; `def-propositional-skeleton`, F1.8 §03, prose pointer.
+- B4's recomputed census (item 6): each listed result cited, against the delivered Chapters 3–7.
 - F8.7-c: moves with its text.
 - R1's clause: `prp-replacement`, F1.8 §02, cited.
 - B5: `check_fitch.py`; sidecar.
@@ -977,7 +1014,7 @@ R5 §4.7 is executed in full. Changes and additions:
 
 **Budget:** main line ≤ 3,600 (expected about 3,450); folds ≤ 750 (F8.8-a ~250, F8.8-b ~450). No Looking-ahead box, and no forward pointer of any kind. The section is the volume's last.
 
-**Purpose.** Section 8.7 states, without proof, that several classical laws have no derivation without RAA. This section proves those statements for the propositional rules [technique: Si, vD — the Kripke "stages of knowledge" semantics; gap-matrix row 9.2, "OPT-CH (high value)"]. It mirrors the propositional half's meaning chapter in miniature:
+**Purpose.** Section 8.7 names several classical laws that have no derivation without RAA. For excluded middle and double-negation elimination, Chapter 4's optional @thm-raa-independent gave a proof; for the rest, 8.7 states the fact without proof. This section proves all of the propositional ones [technique: Si, vD — the Kripke "stages of knowledge" semantics; gap-matrix row 9.2, "OPT-CH (high value)"]. It mirrors the propositional half's meaning chapter in miniature:
 - a semantics (stages instead of rows);
 - a soundness theorem whose proof is 4.7's proof with the →I and ¬I cases redone (heredity);
 - countermodels, the refuting row of logic without RAA.
@@ -988,7 +1025,7 @@ It is optional, and nothing outside it depends on it. 8.7's pointers to it are p
 
 **Front matter** (as 7.3 does at its 03:3): `# Stages of Knowledge: Kripke Models`, then the opening paragraph (~120 words):
 
-"This section is optional, and nothing outside it depends on it. Section 8.7 stated without proof that excluded middle, double-negation elimination and several other laws have no derivation without RAA. Truth tables cannot show it: every row makes \( p \vee \neg p \) true, and Chapter 4's optional @thm-raa-independent needed a three-valued reading for two of the laws. Here is a reading that covers them all. A statement is not true or false once and for all, but *known* or *not yet known* at a stage of an inquiry that grows. The rules without RAA are sound for this reading, and RAA is not; two or three stages then suffice to show which laws need it."
+"This section is optional, and nothing outside it depends on it. Section 8.7 named several classical laws that have no derivation without RAA. For two of them, excluded middle and double-negation elimination, Chapter 4's optional @thm-raa-independent gave a proof by a three-valued reading; for the rest it stated the fact without proof. Truth tables cannot show it: every row makes \( p \vee \neg p \) true. Here is a reading that covers them all. A statement is not true or false once and for all, but *known* or *not yet known* at a stage of an inquiry that grows. The rules without RAA are sound for this reading, and RAA is not; two or three stages then suffice to show which laws need it."
 
 **The main line, in order.**
 
@@ -1013,33 +1050,33 @@ It is optional, and nothing outside it depends on it. 8.7's pointers to it are p
 
 2. **`## Forcing`** (~450 words).
 
-   **`def-forcing`** `[Forcing]`: "Let \( w \) be a stage of a Kripke model. **\( w \) forces** a formula \( \varphi \), written \( w \Vdash \varphi \), as follows, by recursion on \( \varphi \) (@thm-structural-recursion):
-   - (F1) \( w \Vdash p \), for a letter \( p \), if \( p \) is known at \( w \);
-   - (F2) \( w \Vdash \bot \) never;
-   - (F3) \( w \Vdash \varphi \wedge \psi \) if \( w \Vdash \varphi \) and \( w \Vdash \psi \);
-   - (F4) \( w \Vdash \varphi \vee \psi \) if \( w \Vdash \varphi \) or \( w \Vdash \psi \);
-   - (F5) \( w \Vdash \varphi \to \psi \) if every stage \( w' \) reachable from \( w \) with \( w' \Vdash \varphi \) has \( w' \Vdash \psi \);
-   - (F6) \( w \Vdash \neg\varphi \) if no stage reachable from \( w \) forces \( \varphi \);
-   - (F7) \( w \Vdash \varphi \leftrightarrow \psi \) if \( w \Vdash \varphi \to \psi \) and \( w \Vdash \psi \to \varphi \).
+   **`def-forcing`** `[Forcing]`: "Let \( w \) be a stage of a Kripke model. **\( w \) forces** a formula \( \varphi \), written \( w \Vdash \varphi \), as follows. The definition is a recursion on \( \varphi \) (@thm-structural-recursion) that defines, for each formula, the set of stages that force it; clauses (K5) and (K6) need the sets of its parts, at other stages. (S2 round 1: the clauses are named (K1)–(K7), since @def-formula's clauses are already (F1)–(F4).)
+   - (K1) \( w \Vdash p \), for a letter \( p \), if \( p \) is known at \( w \);
+   - (K2) \( w \Vdash \bot \) never;
+   - (K3) \( w \Vdash \varphi \wedge \psi \) if \( w \Vdash \varphi \) and \( w \Vdash \psi \);
+   - (K4) \( w \Vdash \varphi \vee \psi \) if \( w \Vdash \varphi \) or \( w \Vdash \psi \);
+   - (K5) \( w \Vdash \varphi \to \psi \) if every stage \( w' \) reachable from \( w \) with \( w' \Vdash \varphi \) has \( w' \Vdash \psi \);
+   - (K6) \( w \Vdash \neg\varphi \) if no stage reachable from \( w \) forces \( \varphi \);
+   - (K7) \( w \Vdash \varphi \leftrightarrow \psi \) if \( w \Vdash \varphi \to \psi \) and \( w \Vdash \psi \to \varphi \).
 
    A stage **refutes** a sequent \( \Gamma \vdash \psi \) if it forces every formula of \( \Gamma \) and does not force \( \psi \)."
 
    *In words* (~80 words): "A conjunction or a disjunction is decided at the stage itself, and a disjunction is forced only when one of its sides is: the inquiry must already know which. An implication and a negation look ahead. To force \( \varphi \to \psi \) is to know that, however the inquiry goes on, \( \psi \) will be known whenever \( \varphi \) is. To force \( \neg\varphi \) is to know that \( \varphi \) will never be known. Not forcing \( \varphi \) is weaker than forcing \( \neg\varphi \)."
 
-   Then, on rows (~70 words): "A model with **one stage** is a row of a truth table. With one stage, the stages reachable from \( w \) are \( w \) alone, so (F5) says '\( \varphi \) is not forced, or \( \psi \) is', and (F6) says '\( \varphi \) is not forced': forcing becomes Chapter 4's truth (@def-truth-value). Kripke models are rows that can grow."
+   Then, on rows (~70 words): "A model with **one stage** is a row of a truth table. With one stage, the stages reachable from \( w \) are \( w \) alone, so (K5) says '\( \varphi \) is not forced, or \( \psi \) is', and (K6) says '\( \varphi \) is not forced': forcing becomes Chapter 4's truth (@def-truth-value). Kripke models are rows that can grow."
 
    The counterexample-set sentence (D4): "A stage that refutes \( \Gamma \vdash \psi \) forces every member of \( \Gamma \) and not \( \psi \), which is weaker than forcing \( \neg\psi \). It is Section 1.1's counterexample set, read at a stage: where truth tables make \( \neg\psi \) true, a stage only fails to know \( \psi \)."
 
-   **Quick check (new):** "In a one-stage model in which \( p \) is not known, does the stage force \( \neg p \)? Does it force \( p \vee \neg p \)?" *Solution:* Yes to both. The only stage reachable is the stage itself, which does not force \( p \), so (F6) gives \( \neg p \), and (F4) gives \( p \vee \neg p \). One stage is one row.
+   **Quick check (new):** "In a one-stage model in which \( p \) is not known, does the stage force \( \neg p \)? Does it force \( p \vee \neg p \)?" *Solution:* Yes to both. The only stage reachable is the stage itself, which does not force \( p \), so (K6) gives \( \neg p \), and (K4) gives \( p \vee \neg p \). One stage is one row.
 
 3. **`## A first countermodel`**, with **`exm-two-stage-model`** `[Two stages refute excluded middle]` (~280 words). Statement: "In \( M_1 \), decide whether \( w_0 \) forces \( p \), \( \neg p \), \( p \vee \neg p \), \( \neg\neg p \) and \( \neg\neg p \to p \)."
 
    Solution:
-   - \( p \) is not known at \( w_0 \), so \( w_0 \not\Vdash p \) (F1).
-   - \( w_1 \) is reachable from \( w_0 \) and forces \( p \), so \( w_0 \not\Vdash \neg p \) (F6).
-   - Hence \( w_0 \not\Vdash p \vee \neg p \) (F4): \( w_0 \) refutes \( \vdash p \vee \neg p \).
+   - \( p \) is not known at \( w_0 \), so \( w_0 \not\Vdash p \) (K1).
+   - \( w_1 \) is reachable from \( w_0 \) and forces \( p \), so \( w_0 \not\Vdash \neg p \) (K6).
+   - Hence \( w_0 \not\Vdash p \vee \neg p \) (K4): \( w_0 \) refutes \( \vdash p \vee \neg p \).
    - Next, \( \neg\neg p \). No stage reachable from \( w_0 \) forces \( \neg p \): not \( w_0 \), as just shown, and not \( w_1 \), which forces \( p \). So \( w_0 \Vdash \neg\neg p \).
-   - So \( w_0 \) forces \( \neg\neg p \) and not \( p \): it refutes \( \neg\neg p \vdash p \), and by (F5), \( w_0 \not\Vdash \neg\neg p \to p \).
+   - So \( w_0 \) forces \( \neg\neg p \) and not \( p \): it refutes \( \neg\neg p \vdash p \), and by (K5), \( w_0 \not\Vdash \neg\neg p \to p \).
 
    Then (inside the solution): "At \( w_0 \) the inquiry knows that \( p \) cannot be refuted, since \( p \) becomes known later on every way it can go, but it does not yet know \( p \). Excluded middle asks it to know now which of \( p \) and \( \neg p \) holds."
 
@@ -1059,26 +1096,29 @@ It is optional, and nothing outside it depends on it. 8.7's pointers to it are p
 
 5. **`## The rules without RAA are sound for stages`** (~400 words).
 
-   **`thm-kripke-soundness`** `[Soundness without RAA]`: "Let \( \Gamma \) be a list of formulas and \( \psi \) a formula. If \( \Gamma \vdash \psi \) by a derivation in which no line uses RAA, nor a derived rule or cited result whose derivation uses RAA, then every stage of every Kripke model that forces every formula of \( \Gamma \) forces \( \psi \)."
+   **`thm-kripke-soundness`** `[Soundness without RAA]`: "Let \( \Gamma \) be a list of formulas and \( \psi \) a formula. If \( \Gamma \vdash \psi \) by a derivation in which no line uses RAA, nor a derived rule or cited result whose derivation uses RAA, nor TAUT, then every stage of every Kripke model that forces every formula of \( \Gamma \) forces \( \psi \)."
 
    *In words:* "A derivation without RAA never leads from what a stage knows to what it does not know."
+
+   Then one sentence (S2 round 1): "TAUT (Section 4.8) is not among the rules here: it is licensed by completeness, whose proof uses LEM (Section 8.7), so a derivation with a TAUT line is not a derivation without RAA."
 
    Then the **rule-by-rule table** (~200 words; a mirror of 4.7's meaning table, layout G7): "The proof is Chapter 4's proof of @thm-soundness, Steps 1–4, with 'every valuation making the context true' replaced by 'every stage forcing the context'. Each rule's case, in one line:"
 
    | Rule | Why its case holds at a stage \( w \) that forces the context |
    |---|---|
-   | ∧I, ∧E, ∨I, R, ↔E | the clause (F3), (F4) or (F7) at \( w \) itself, with (F5) at \( w' = w \) for ↔E |
-   | →E, ¬E | (F5) or (F6), applied at \( w' = w \), which is reachable from \( w \) |
+   | ∧I, ∧E, ∨I, R, ↔E | the clause (K3), (K4) or (K7) at \( w \) itself, with (K5) at \( w' = w \) for ↔E |
+   | →E, ¬E | (K5) or (K6), applied at \( w' = w \), which is reachable from \( w \) |
    | ⊥E | no stage forces \( \bot \), so there is nothing to show |
-   | ∨E | \( w \) forces one side, by (F4); the box of that side ends in its last line, forced at \( w \) |
+   | ∨E | \( w \) forces one side, by (K4); the box of that side ends in its last line, forced at \( w \) |
    | →I, ¬I, ↔I | a later stage \( w' \) forces the context too, **by heredity**, so the box applies at \( w' \) |
    | RAA | **fails**: its box on \( \neg\varphi \) shows only that no stage reachable from \( w \) forces \( \neg\varphi \), that is, \( w \Vdash \neg\neg\varphi \); in \( M_1 \), \( w_0 \) forces \( \neg\neg p \) and not \( p \) |
 
    The full proof is in **fold F8.8-b** `title="The proof, case by case"` (~450 words), written in 4.7's terms.
+   (S2 round 1: renumbered to match 4.7's proof of @thm-soundness, 07-soundness.md:147–217, where Step 2 is the strong induction, Step 3 the cases and Step 4 the last line.)
    - Step 1: reduce to primitive rules, as 4.7 does, since a derived rule derived without RAA unfolds into primitive rules other than RAA.
-   - Step 2: prove, for every line \( k \), that every stage forcing the context \( \Gamma_k \) forces \( \varphi_k \).
-   - Step 3: strong induction on \( k \).
-   - Step 4: the cases. One-step rules use the clauses at \( w \). For →I: let \( w \) force \( \Gamma_k \), and let \( w' \ge w \) force \( \varphi \). By heredity \( w' \) forces \( \Gamma_k \), so \( w' \) forces the context of the box's last line, \( \Gamma_k \) and \( \varphi \) (@lem-context-inclusion (b)). By the induction hypothesis, \( w' \Vdash \psi \). So \( w \Vdash \varphi \to \psi \) by (F5). ¬I is the same with \( \psi = \bot \): no \( w' \ge w \) can force \( \varphi \), since it would force \( \bot \); so \( w \Vdash \neg\varphi \). ↔I is two →I cases. ∨E: \( w \) forces \( \varphi \) or \( \psi \) at \( w \) itself; apply the induction hypothesis to that side's box at \( w \). ⊥E: vacuous.
+   - Step 2: the claim for every line, by strong induction on \( k \) (@thm-strong-induction): every stage forcing the context \( \Gamma_k \) of line \( k \) forces its formula \( \varphi_k \).
+   - Step 3: the cases. One-step rules use the clauses at \( w \). For →I: let \( w \) force \( \Gamma_k \), and let \( w' \ge w \) force \( \varphi \). By heredity \( w' \) forces \( \Gamma_k \), so \( w' \) forces the context of the box's last line, \( \Gamma_k \) and \( \varphi \) (@lem-context-inclusion (b)). By the induction hypothesis, \( w' \Vdash \psi \). So \( w \Vdash \varphi \to \psi \) by (K5). ¬I is the same with \( \psi = \bot \): no \( w' \ge w \) can force \( \varphi \), since it would force \( \bot \); so \( w \Vdash \neg\varphi \). ↔I is two →I cases. ∨E: \( w \) forces \( \varphi \) or \( \psi \) at \( w \) itself; apply the induction hypothesis to that side's box at \( w \). ⊥E: vacuous. RAA: the case fails, as the table says.
+   - Step 4: the last line. It lies in no box (@def-derivation), so its context \( \Gamma_n \) consists of premises only, each of which belongs to \( \Gamma \) (@def-derivable), as in 4.7's Step 4. A stage forcing every formula of \( \Gamma \) forces every formula of \( \Gamma_n \), so by Steps 2–3 it forces \( \varphi_n = \psi \).
 
    **`cor-kripke-countermodel`** `[Kripke Countermodel]`: "If some stage of some Kripke model refutes \( \Gamma \vdash \psi \), then \( \Gamma \vdash \psi \) has no derivation without RAA." Proof (main line, two sentences): "Suppose it had one. By @thm-kripke-soundness the stage would force \( \psi \), and it does not; so it has none." (A ¬I proof.)
 
@@ -1099,8 +1139,8 @@ It is optional, and nothing outside it depends on it. 8.7's pointers to it are p
    Statement: "In \( M_2 \) the inquiry can go two ways: one learns \( p \), the other \( q \). Show that \( w_0 \) refutes \( \vdash (p \to q) \vee (q \to p) \) and \( \neg(p \wedge q) \vdash \neg p \vee \neg q \)."
 
    Solution:
-   - \( w_1 \) is reachable from \( w_0 \), forces \( p \) and does not force \( q \), so \( w_0 \not\Vdash p \to q \) (F5). Likewise \( w_2 \) gives \( w_0 \not\Vdash q \to p \). By (F4), \( w_0 \) does not force the disjunction.
-   - No stage forces both \( p \) and \( q \), so \( w_0 \Vdash \neg(p \wedge q) \) (F6).
+   - \( w_1 \) is reachable from \( w_0 \), forces \( p \) and does not force \( q \), so \( w_0 \not\Vdash p \to q \) (K5). Likewise \( w_2 \) gives \( w_0 \not\Vdash q \to p \). By (K4), \( w_0 \) does not force the disjunction.
+   - No stage forces both \( p \) and \( q \), so \( w_0 \Vdash \neg(p \wedge q) \) (K6).
    - \( w_1 \) forces \( p \), so \( w_0 \not\Vdash \neg p \); \( w_2 \) forces \( q \), so \( w_0 \not\Vdash \neg q \). Hence \( w_0 \not\Vdash \neg p \vee \neg q \).
    - By @cor-kripke-countermodel, neither \( \vdash (p \to q) \vee (q \to p) \) nor \( \neg(p \wedge q) \vdash \neg p \vee \neg q \) has a derivation without RAA.
 
@@ -1136,9 +1176,9 @@ It is optional, and nothing outside it depends on it. 8.7's pointers to it are p
    Nothing in this book depends on these facts."
 
 10. **Not allowed** (~110 words, the last block of the main line). `[Not allowed: misreadings of forcing]`:
-    - "\( w \not\Vdash p \), so \( w \Vdash \neg p \)." (F6) looks at every stage reachable from \( w \): in \( M_1 \), \( w_0 \) forces neither.
-    - "\( w \Vdash \varphi \to \psi \), because \( w \not\Vdash \varphi \)." (F5) looks at every later stage, not only at \( w \).
-    - "\( w \Vdash \varphi \vee \psi \), because every later stage forces \( \varphi \) or \( \psi \)." (F4) is decided at \( w \) itself: in \( M_2 \), every stage reachable from \( w_0 \) other than \( w_0 \) forces \( p \) or \( q \), and \( w_0 \) forces neither.
+    - "\( w \not\Vdash p \), so \( w \Vdash \neg p \)." (K6) looks at every stage reachable from \( w \): in \( M_1 \), \( w_0 \) forces neither.
+    - "\( w \Vdash \varphi \to \psi \), because \( w \not\Vdash \varphi \)." (K5) looks at every later stage, not only at \( w \).
+    - "\( w \Vdash \varphi \vee \psi \), because every later stage forces \( \varphi \) or \( \psi \)." (K4) is decided at \( w \) itself: in \( M_2 \), every stage reachable from \( w_0 \) other than \( w_0 \) forces \( p \) or \( q \), and \( w_0 \) forces neither.
     - "A picture with \( p \) known at \( w_0 \) and not at a later \( w_1 \)." It is not a Kripke model: a known letter stays known (@def-kripke-model).
 
 **Quick checks:** one stage (item 2), heredity (item 4), RAA (item 5): three in ~3,450 words, about one per 1,150. The section is optional and dense with worked computations, and S4 accepts the density. If `check_structure.py` requires about one per 1,000, add after `exm-two-stage-model`: "Does \( w_1 \) of \( M_1 \) force \( p \vee \neg p \)? — Yes: \( w_1 \) forces \( p \). At a stage from which nothing new can be learned, every letter is settled." No drill or exercise part asks this.
@@ -1149,8 +1189,8 @@ It is optional, and nothing outside it depends on it. 8.7's pointers to it are p
 
 **Exercises.**
 - **A1** (new, `exr-kripke-models-a1`).
-  - (a) "In \( M_1 \), does \( w_1 \) force \( \neg\neg p \to p \)?" — Yes. The only stage reachable from \( w_1 \) is \( w_1 \), which forces \( p \), so it forces the implication by (F5).
-  - (b) "Why is a one-stage Kripke model a row of a truth table?" — With one stage, (F5) and (F6) look only at that stage, so the clauses become those of @def-truth-value, with "forced" for "true".
+  - (a) "In \( M_1 \), does \( w_1 \) force \( \neg\neg p \to p \)?" — Yes. The only stage reachable from \( w_1 \) is \( w_1 \), which forces \( p \), so it forces the implication by (K5).
+  - (b) "Why is a one-stage Kripke model a row of a truth table?" — With one stage, (K5) and (K6) look only at that stage, so the clauses become those of @def-truth-value, with "forced" for "true".
   - (c) "True or false: if \( w \) does not force \( \varphi \), then \( w \) forces \( \neg\varphi \)." — False: \( w_0 \) of \( M_1 \), with \( \varphi = p \).
   - (d) "Which rule's case fails in the proof of @thm-kripke-soundness, and how does \( M_1 \) show that it must fail?" — RAA's. \( w_0 \) forces \( \neg\neg p \) and not \( p \), but \( \neg\neg p \vdash p \) is derived with RAA; if RAA's case held, \( w_0 \) would force \( p \).
 - **A2: Drill** (new, `exr-kripke-models-a2`), 12 parts.
@@ -1158,14 +1198,14 @@ It is optional, and nothing outside it depends on it. 8.7's pointers to it are p
   - Stem: "Decide each in a line, with the clause you use."
   - Ramp: one clause → compound → is it a model? → misreadings → refutation.
 
-  (a) "\( M_1 \): does \( w_1 \) force \( \neg p \)?" — No: \( w_1 \) is reachable from itself and forces \( p \) (F6).
-  (b) "\( M_1 \), with \( q \) known nowhere: does \( w_0 \) force \( \neg q \)?" — Yes: no stage reachable from \( w_0 \) forces \( q \) (F6).
-  (c) "\( M_2 \): does \( w_0 \) force \( p \vee q \)?" — No: neither letter is known at \( w_0 \) (F4).
+  (a) "\( M_1 \): does \( w_1 \) force \( \neg p \)?" — No: \( w_1 \) is reachable from itself and forces \( p \) (K6).
+  (b) "\( M_1 \), with \( q \) known nowhere: does \( w_0 \) force \( \neg q \)?" — Yes: no stage reachable from \( w_0 \) forces \( q \) (K6).
+  (c) "\( M_2 \): does \( w_0 \) force \( p \vee q \)?" — No: neither letter is known at \( w_0 \) (K4).
   (d) "\( M_2 \): does \( w_1 \) force \( \neg q \)?" — Yes: the only stage reachable from \( w_1 \) is \( w_1 \), where \( q \) is not known.
-  (e) "\( M_5 \): does \( w_0 \) force \( p \to q \)?" — No: \( w_1 \) is reachable, forces \( p \), and does not force \( q \) (F5).
+  (e) "\( M_5 \): does \( w_0 \) force \( p \to q \)?" — No: \( w_1 \) is reachable, forces \( p \), and does not force \( q \) (K5).
   (f) "\( M_5 \): does \( w_1 \) force \( \neg\neg q \)?" — Yes. The stages reachable from \( w_1 \) are \( w_1 \) and \( w_2 \); neither forces \( \neg q \), since \( w_2 \) forces \( q \) and is reachable from both. And \( w_1 \not\Vdash q \).
   (g) "Is this a Kripke model: \( w_0 \to w_1 \), with \( p \) known at \( w_0 \) and not at \( w_1 \)?" — No: a letter known at \( w_0 \) must be known at every stage reachable from it.
-  (h) "In \( M_1 \), a student says '\( w_0 \) forces \( \neg p \), because \( p \) is not known at \( w_0 \)'. What is wrong?" — (F6) needs \( p \) to fail at every reachable stage, and \( w_1 \) forces \( p \).
+  (h) "In \( M_1 \), a student says '\( w_0 \) forces \( \neg p \), because \( p \) is not known at \( w_0 \)'. What is wrong?" — (K6) needs \( p \) to fail at every reachable stage, and \( w_1 \) forces \( p \).
   (i) "\( M_2 \): does \( w_0 \) force \( \neg p \to q \)?" — Yes. Of the stages reachable from \( w_0 \), only \( w_2 \) forces \( \neg p \) (\( w_0 \) and \( w_1 \) reach \( w_1 \), which knows \( p \)), and \( w_2 \) forces \( q \).
   (j) "\( M_5 \): does \( w_0 \) force \( q \vee \neg q \)?" — No: \( q \) is not known at \( w_0 \), and \( w_2 \), reachable from \( w_0 \), forces \( q \), so \( w_0 \not\Vdash \neg q \).
   (k) "\( M_5 \): does \( w_0 \) force \( q \to p \)?" — Yes: the only stage that forces \( q \) is \( w_2 \), which forces \( p \).
@@ -1187,8 +1227,8 @@ It is optional, and nothing outside it depends on it. 8.7's pointers to it are p
   - 2: (b).
   - 3: (c), the two orders of \( u \), \( v \), each with persistence of letters.
 
-  Fatal errors (0 for the step): deciding (F5) or (F6) at \( w_0 \) alone; in (c), checking one chain only.
-- **B2** (new, `exr-kripke-models-b2`) `[B2: Derive without RAA, or break with a Kripke model]` (verdict withheld; D5) [technique: LPL, Si, En — derive-or-break with a growing means of breaking]. Statement: "For each claim, either derive it without RAA (and without results derived with RAA), or give a stage of a Kripke model that refutes it. (a) \( \neg\neg(p \wedge q) \vdash \neg\neg p \wedge \neg\neg q \). (b) \( \neg\neg p \wedge \neg\neg q \vdash \neg\neg(p \wedge q) \). (c) \( \neg\neg(p \vee q) \vdash \neg\neg p \vee \neg\neg q \). (d) \( (p \to q) \to p \vdash \neg\neg p \). (e) \( \neg p \to p \vdash p \). (f) \( (p \vee q) \wedge \neg p \vdash q \). (g) \( p \to (q \vee r) \vdash (p \to q) \vee (p \to r) \)."
+  Fatal errors (0 for the step): deciding (K5) or (K6) at \( w_0 \) alone; in (c), checking one chain only.
+- **B2** (new, `exr-kripke-models-b2`) `[B2: Derive without RAA, or break with a Kripke model]` (verdict withheld; D5) [technique: LPL, Si, En — derive-or-break with a growing means of breaking]. Statement: "For each claim, either derive it without RAA and without TAUT (and without results derived with RAA), or give a stage of a Kripke model that refutes it. (a) \( \neg\neg(p \wedge q) \vdash \neg\neg p \wedge \neg\neg q \). (b) \( \neg\neg p \wedge \neg\neg q \vdash \neg\neg(p \wedge q) \). (c) \( \neg\neg(p \vee q) \vdash \neg\neg p \vee \neg\neg q \). (d) \( (p \to q) \to p \vdash \neg\neg p \). (e) \( \neg p \to p \vdash p \). (f) \( (p \vee q) \wedge \neg p \vdash q \). (g) \( (p \to q) \wedge (\neg p \to q) \vdash q \)." (S2 round 1: the S1 (g), \( p \to (q \vee r) \vdash (p \to q) \vee (p \to r) \), was a published exercise word for word up to letters; it is replaced by a sequent of fd1's own.)
 
   *Solution* (verdict first):
   - (a) **Derive** (16 lines). 1 \( \neg\neg(p \wedge q) \). Box 2–7: 2 \( \neg p \); box 3–5: 3 \( p \wedge q \), 4 \( p \) ∧E 3, 5 \( \bot \) ¬E 4, 2; 6 \( \neg(p \wedge q) \) ¬I 3–5; 7 \( \bot \) ¬E 6, 1. Then 8 \( \neg\neg p \) ¬I 2–7. Lines 9–15 are the same for \( q \): 9 \( \neg q \); 10 \( p \wedge q \); 11 \( q \) ∧E 10; 12 \( \bot \) ¬E 11, 9; 13 \( \neg(p \wedge q) \) ¬I 10–12; 14 \( \bot \) ¬E 13, 1; 15 \( \neg\neg q \) ¬I 9–14. Finally 16 \( \neg\neg p \wedge \neg\neg q \) ∧I 8, 15.
@@ -1197,19 +1237,19 @@ It is optional, and nothing outside it depends on it. 8.7's pointers to it are p
   - (d) **Derive** (9 lines). 1 \( (p \to q) \to p \). Box 2–8: 2 \( \neg p \); box 3–5: 3 \( p \), 4 \( \bot \) ¬E 3, 2, 5 \( q \) ⊥E 4; 6 \( p \to q \) →I 3–5; 7 \( p \) →E 1, 6; 8 \( \bot \) ¬E 7, 2. Then 9 \( \neg\neg p \) ¬I 2–8.
   - (e) **Break**, at \( w_0 \) of \( M_1 \). No stage forces \( \neg p \), so \( w_0 \Vdash \neg p \to p \) with nothing to check, and \( w_0 \not\Vdash p \).
   - (f) **Derive** (9 lines). 1 \( (p \vee q) \wedge \neg p \); 2 \( p \vee q \) ∧E 1; 3 \( \neg p \) ∧E 1. Box 4–6: 4 \( p \), 5 \( \bot \) ¬E 4, 3, 6 \( q \) ⊥E 5. Box 7–8: 7 \( q \), 8 \( q \) R 7. Then 9 \( q \) ∨E 2, 4–6, 7–8.
-  - (g) **Break**, at \( w_0 \) of the fork \( w_0 \to w_1 \), \( w_0 \to w_2 \), with nothing known at \( w_0 \), \( p \) and \( q \) known at \( w_1 \), and \( p \) and \( r \) known at \( w_2 \). The stages forcing \( p \) are \( w_1 \), which forces \( q \), and \( w_2 \), which forces \( r \). So \( w_0 \Vdash p \to (q \vee r) \). But \( w_2 \) forces \( p \) and not \( q \), and \( w_1 \) forces \( p \) and not \( r \), so \( w_0 \) forces neither disjunct.
+  - (g) **Break**, at \( w_0 \) of \( M_3 \) (the settle table's model: \( w_0 \to w_1 \), nothing known at \( w_0 \), \( p \) and \( q \) known at \( w_1 \)). The only stage forcing \( p \) is \( w_1 \), which forces \( q \), so \( w_0 \Vdash p \to q \). No stage forces \( \neg p \), since both reach \( w_1 \), which forces \( p \); so \( w_0 \Vdash \neg p \to q \) with nothing to check. Hence \( w_0 \) forces the conjunction (K3), and \( w_0 \not\Vdash q \).
 
-  The look-alikes: (a) and (b) are converses, and both derivable. (c) is (b)'s look-alike with ∨ for ∧, and it breaks. (e) is (d)'s look-alike and breaks: from \( \neg p \to p \) one derives only \( \neg\neg p \) (a box on \( \neg p \), then →E, ¬E and ¬I). (g) is the distributive law of Chapter 1 (@prp-distributivity) moved under an implication.
+  The look-alikes: (a) and (b) are converses, and both derivable. (c) is (b)'s look-alike with ∨ for ∧, and it breaks. (e) is (d)'s look-alike and breaks: from \( \neg p \to p \) one derives only \( \neg\neg p \) (a box on \( \neg p \), then →E, ¬E and ¬I). (g) is (f)'s look-alike: a proof by cases on \( p \) and \( \neg p \) with no disjunction to split, which needs \( p \vee \neg p \). It is the pattern of @lem-atom-splitting (Section 4.8) with no further premises, which is why completeness, and with it TAUT, rests on LEM.
 
   **Marking scheme.** (10 points)
   - 6: the four derivations, 1.5 each.
   - 3: the three countermodels, 1 each, every clause checked.
   - 1: one correct remark on a look-alike pair.
 
-  A wrong verdict scores 0 for that item. Fatal errors (0 for that item): a derivation that uses RAA, ¬¬E or LEM, or cites a result derived with one; a "model" with a known letter lost at a later stage.
+  A wrong verdict scores 0 for that item. Fatal errors (0 for that item): a derivation that uses RAA, ¬¬E or LEM, or cites a result derived with one; a TAUT line (every claim is a tautology, so a TAUT line would "derive" each, the breakable (c), (e) and (g) included; TAUT is licensed by completeness, item 5); a "model" with a known letter lost at a later stage.
 
   S2a checks the look-alike note's derivation of \( \neg p \to p \vdash \neg\neg p \): a box on \( \neg p \); →E with the premise gives \( p \); ¬E gives \( \bot \); ¬I closes the box. It uses no RAA.
-- **C1** (new, `exr-kripke-models-c1`) `[C1: Peirce's law and one instance of excluded middle]`. Statement: "(a) Derive \( ((p \to q) \to p) \to p \) from the premise \( p \vee \neg p \) without RAA. (b) Derive without RAA, or refute with a Kripke model: \( \vdash (\neg\neg p \to p) \to (p \vee \neg p) \). (c) Compare (a), (b) and Exercise 8.7 B5 (c) with @thm-classical-rules-interderivable, in one sentence."
+- **C1** (new, `exr-kripke-models-c1`) `[C1: Peirce's law and one instance of excluded middle]`. Statement: "(a) Derive \( ((p \to q) \to p) \to p \) from the premise \( p \vee \neg p \) without RAA or TAUT. (b) Derive without RAA or TAUT, or refute with a Kripke model: \( \vdash \bigl( ((p \to q) \to p) \to p \bigr) \to (p \vee \neg p) \). (c) Compare (a), (b) and Exercise 8.7 B5 (c) with @thm-classical-rules-interderivable, in one sentence."
 
   *Solution.*
   - (a) (12 lines.) 1 \( p \vee \neg p \). Box 2–11: 2 \( (p \to q) \to p \).
@@ -1219,21 +1259,22 @@ It is optional, and nothing outside it depends on it. 8.7's pointers to it are p
 
     Then 12 \( ((p \to q) \to p) \to p \) →I 2–11.
   - (b) **Refute**, at \( w_0 \) of the fork \( M_7 \): \( w_0 \to w_1 \), \( w_0 \to w_2 \), with \( p \) known at \( w_1 \) only.
-    - \( \neg\neg p \) is forced at \( w_1 \) only: \( w_2 \Vdash \neg p \), so neither \( w_0 \) nor \( w_2 \) forces \( \neg\neg p \). And \( w_1 \) forces \( p \). So \( w_0 \Vdash \neg\neg p \to p \).
+    - At \( w_2 \) no stage reachable forces \( p \), so \( w_2 \Vdash p \to q \), and \( w_2 \not\Vdash p \). So \( w_2 \not\Vdash (p \to q) \to p \), and neither does \( w_0 \), which reaches \( w_2 \). \( w_1 \) forces \( p \), hence \( (p \to q) \to p \). The only stage forcing \( (p \to q) \to p \) is \( w_1 \), and it forces \( p \): so \( w_0 \Vdash ((p \to q) \to p) \to p \) (K5).
     - \( w_0 \not\Vdash p \), and \( w_0 \not\Vdash \neg p \) because of \( w_1 \). So \( w_0 \not\Vdash p \vee \neg p \).
-    - (In \( M_1 \) the formula is forced at \( w_0 \), so the second branch is needed.)
-  - (c) @thm-classical-rules-interderivable compares rules, which act on every statement at once. Instance by instance the three differ: one instance of excluded middle gives Peirce's law (a) and double-negation elimination (8.7 B5 (c)) for that letter, while one instance of double-negation elimination does not give excluded middle for it (b).
+    - (In \( M_1 \) the formula is forced at \( w_0 \): there no stage forces \( p \to q \), so \( w_0 \) forces \( (p \to q) \to p \) and not \( p \), and so does not force Peirce's law; the only stage that does, \( w_1 \), forces \( p \vee \neg p \). So the second branch is needed.)
+    - (S2 round 1: the S1 (b), \( (\neg\neg p \to p) \to (p \vee \neg p) \), was an item of a published exercise; it is replaced by this contrast of fd1's own.)
+  - (c) @thm-classical-rules-interderivable compares rules, which act on every statement at once. Instance by instance the three differ: one instance of excluded middle gives Peirce's law (a) and double-negation elimination (8.7 B5 (c)) for that letter, while that instance of Peirce's law does not give the instance of excluded middle back (b).
 
   **Marking scheme.** (10 points)
   - 5: (a). The ∨E on the premise, with both cases inside the box of line 2 (2); the case \( \neg p \) building \( p \to q \) by ⊥E (2); the closing →I (1).
-  - 4: (b). A model whose stage forces \( \neg\neg p \to p \) and not \( p \vee \neg p \), every clause checked.
+  - 4: (b). A model whose stage forces \( ((p \to q) \to p) \to p \) and not \( p \vee \neg p \), every clause checked.
   - 1: (c).
 
-  Fatal errors (0 for the step): using \( M_1 \) in (b), where the formula is forced; using RAA in (a).
+  Fatal errors (0 for the step): using \( M_1 \) in (b), where the formula is forced; using RAA or TAUT in (a).
 - **C2** (new, `exr-kripke-models-c2`) `[C2: Challenge: three negations are one]` (a meta-proof; STYLE §12.8, not on any track's core). Statement: "Prove that in every Kripke model, every stage \( w \) and every formula \( \varphi \): \( w \Vdash \neg\neg\neg\varphi \) if and only if \( w \Vdash \neg\varphi \). Compare with @exm-triple-negation."
 
   *Solution.*
-  - \( (\Leftarrow) \) Let \( w \Vdash \neg\varphi \), and let \( w' \ge w \). By @lem-heredity, \( w' \Vdash \neg\varphi \). Since \( w' \) is reachable from itself, \( w' \not\Vdash \neg\neg\varphi \) (F6). So no stage reachable from \( w \) forces \( \neg\neg\varphi \), and \( w \Vdash \neg\neg\neg\varphi \).
+  - \( (\Leftarrow) \) Let \( w \Vdash \neg\varphi \), and let \( w' \ge w \). By @lem-heredity, \( w' \Vdash \neg\varphi \). Since \( w' \) is reachable from itself, \( w' \not\Vdash \neg\neg\varphi \) (K6). So no stage reachable from \( w \) forces \( \neg\neg\varphi \), and \( w \Vdash \neg\neg\neg\varphi \).
   - \( (\Rightarrow) \) Let \( w \Vdash \neg\neg\neg\varphi \), and suppose some \( w' \ge w \) forces \( \varphi \). Every \( w'' \ge w' \) forces \( \varphi \) by @lem-heredity, so no \( w'' \ge w' \) forces \( \neg\varphi \), and \( w' \Vdash \neg\neg\varphi \). But \( w' \) is reachable from \( w \), and \( w \Vdash \neg\neg\neg\varphi \) says no such stage forces \( \neg\neg\varphi \): a contradiction. So no stage reachable from \( w \) forces \( \varphi \), and \( w \Vdash \neg\varphi \).
   - The comparison: @exm-triple-negation derives \( \neg\neg\neg P \vdash \neg P \) without RAA, and \( \neg P \vdash \neg\neg\neg P \) is @prp-double-negation (a) for \( \neg P \). By @thm-kripke-soundness both directions hold at every stage. The exercise proves the same fact directly, from the clauses.
 
@@ -1245,19 +1286,19 @@ It is optional, and nothing outside it depends on it. 8.7's pointers to it are p
   Fatal errors (0 for the step): "not forced, so the negation is forced"; heredity used without being cited.
 
 **Sidecars:**
-- `kripke.py`: every forced/not-forced claim of items 2–10, A1, A2, B1, B2, C1 and C2's instances. The models are \( M_1 \)–\( M_7 \) and (g)'s fork. Heredity is checked on all formulas over \( p, q, r \) up to depth 4 in each model. One-stage models are checked to agree with truth tables.
+- `kripke.py`: every forced/not-forced claim of items 2–10, A1, A2, B1, B2, C1 and C2's instances. The models are \( M_1 \)–\( M_7 \). Heredity is checked on all formulas over \( p, q, r \) up to depth 4 in each model. One-stage models are checked to agree with truth tables.
 - `exr-kripke-models-b2.py`: truth-table validity of every claim of B2, all classically valid. The derivations of (a), (b), (d), (f) and C1 (a) are checked by `check_fitch.py`.
 
 **Ledger lines:**
 - `def-forcing` (`thm-structural-recursion`, F1.3 §03, cited);
 - the one-stage remark (`def-truth-value`, cited);
 - `lem-heredity` (`thm-structural-induction`, cited; fold);
-- `thm-kripke-soundness` (`thm-soundness`'s Steps 1–4 and `lem-context-inclusion`, F1.3 §07, cited; `thm-strong-induction`, cited; `prp-double-negation` (b) in the Quick check, cited);
+- `thm-kripke-soundness` (`thm-soundness`'s Steps 1–4, `lem-context-inclusion`, `def-derivation` and `def-derivable`, cited; the TAUT sentence, `def-rule-taut`, F1.3 §08, and 8.7's item 5 sentence, within the chapter; `thm-strong-induction`, cited; `prp-double-negation` (b) in the Quick check, cited);
 - `cor-kripke-countermodel` (inline ¬I);
 - `exm-three-stage-model` (`cor-derivable-iff-valid`, cited);
 - the table (`kripke.py`);
 - the remark (stated without proof and marked so; nothing depends on it);
-- B2's (g) (`prp-distributivity`, cited in the look-alike note only);
+- B2's (g) (`lem-atom-splitting`, F1.3 §08, cited in the look-alike note only);
 - C1 (`thm-classical-rules-interderivable`, cited);
 - C2 (`exm-triple-negation`, `prp-double-negation`, cited).
 
@@ -1268,18 +1309,26 @@ It is optional, and nothing outside it depends on it. 8.7's pointers to it are p
 | § | Main line now | R5 budget | Final budget | Expected | Folds (budget) |
 |---|---|---|---|---|---|
 | index | 1,001 | ≤ 1,100 | ≤ 1,300 | ~1,290 | ≤ 300 |
-| 8.1 | 4,401 | ≤ 4,750 | ≤ 4,900 | ~4,890 | ≤ 560 |
-| 8.2 | 3,129 | ≤ 3,700 | ≤ 4,200 | ~4,180 | ≤ 200 |
+| 8.1 | 4,401 | ≤ 4,750 | ≤ 5,000 | ~4,970 | ≤ 850 |
+| 8.2 | 3,129 | ≤ 3,700 | ≤ 4,200 | ~4,200 | ≤ 260 |
 | 8.3 | 4,064 | ≤ 4,000 | ≤ 4,200 | ~4,180 | ≤ 1,600 |
 | 8.4 | 1,895 | ≤ 2,000 | ≤ 2,200 | ~2,190 | ≤ 550 |
 | 8.5 | 2,413 | ≤ 2,600 | ≤ 2,800 | ~2,790 | ≤ 700 |
-| 8.6 | 2,240 | ≤ 2,600 | ≤ 3,000 | ~2,990 | ≤ 120 |
-| 8.7 | 3,781 | ≤ 3,800 | ≤ 3,900 | ~3,890 | ≤ 340 |
-| core sections | 21,923 | ≤ 23,450 | ≤ 25,200 | ~25,110 | ≤ 4,070 |
+| 8.6 | 2,240 | ≤ 2,600 | ≤ 3,000 | ~2,990 | ≤ 360 |
+| 8.7 | 3,781 | ≤ 3,800 | ≤ 3,950 | ~3,915 | ≤ 340 |
+| core sections | 21,923 | ≤ 23,450 | ≤ 25,350 | ~25,235 | ≤ 4,660 |
 | 8.8 (optional) | — | — | ≤ 3,600 | ~3,450 | ≤ 750 |
 
-- **Caps.** The core budgets are layout §1.3's (sum 25,200). Every section stays under 5,000 main-line words. The whole-file advisory count of `check_structure.py` (exercises included) will exceed 5,000 in 8.1, 8.2, 8.3, 8.6 and 8.7; it is advisory.
-- **Where a section runs close** (8.1, 8.2, 8.5, 8.6, 8.7), §4 names the passage that moves to a fold if S3 measures over. The new folds are F8.1-d, F8.2-a, F8.2-b, F8.3-d, F8.5-c and F8.7-c, plus 8.8's two.
+- **Caps.** The core budgets are layout §1.3's (sum 25,200), except 8.1 (≤ 5,000 against the layout's 4,900) and 8.7 (≤ 3,950 against 3,900), raised at S2 round 1 when the S1 estimates were rebuilt from the quoted text (§4.1, §4.6, §4.7); sum 25,350. Every section stays at or under 5,000 main-line words. The whole-file advisory count of `check_structure.py` (exercises included) will exceed 5,000 in 8.1, 8.2, 8.3, 8.6 and 8.7; it is advisory.
+- **Where a section runs close**, §4 names the passage that moves to a fold, or is cut, if S3 measures over (S2 round 1: S1 named one for 8.2 only):
+  - 8.1: the Not-allowed (N7) line and the purpose paragraph's last sentence (§4.1);
+  - 8.2: the definitional-extension sentences into F8.2-c (§4.2);
+  - 8.3: the read-back sentence for column (a) in `exm-suffices-column`'s closing paragraph ("Read from the bottom, (a) is the proof …", ~25 words), cut, since (b)'s read-back makes the point (§4.3);
+  - 8.4: the second sentence of the unstated-fact subsection ("A proof is read the same way, one line at a time.", ~10 words), cut (§4.4);
+  - 8.5: the last sentence of the generalising lead ("A line that uses a property … or the generalisation fails.", ~20 words), cut, since the example's *test* says it (§4.5);
+  - 8.6: the valid-but-improper paragraph into F8.6-b (§4.6);
+  - 8.7: the paragraph 07:11 into F8.7-d (§4.7).
+- The new folds are F8.1-d, F8.1-e, F8.1-f, F8.2-a, F8.2-b, F8.3-d, F8.5-c, F8.6-b, F8.6-c and F8.7-c, plus 8.8's two.
 
 **Exercises after R5 and this file.**
 - **A1:** 8 (one new, in 8.8).
@@ -1294,22 +1343,23 @@ It is optional, and nothing outside it depends on it. 8.7's pointers to it are p
 
 **Time.** This uses the B1 formula: 15 min per 400 main-line words; A1 25 min; a drill bank one exercise per four parts, at 30 min; one B (30 min) and one non-Challenge C (40 min) per core section; exit checks are a section's C. Index pages are not counted (layout §3). Optional 8.8 is off the core track.
 - **Core track:**
-  - reading ~25,110 words ≈ 15.7 h;
+  - reading ~25,235 words ≈ 15.8 h;
   - A1, 7 × 25 min ≈ 2.9 h;
   - A2, 21 × 30 min = 10.5 h;
   - one B per section, 7 × 30 min = 3.5 h;
   - one C per section, 7 × 40 min ≈ 4.7 h.
-  - Total **≈ 37.3 h**. Rounded to the nearest 5 hours (STYLE §2): **"About 35 hours on the core track."**
-  - Layout target: about 33 h. The difference is the banks of 12 against the layout's 8 (D6: +28 parts = 7 exercises ≈ 3.5 h).
+  - Total **≈ 37.4 h**. Rounded to the nearest 5 hours (STYLE §2): **"About 35 hours on the core track."**
+  - **Risk (S2 round 1).** 37.4 h is about 0.1 h below the rounding boundary of 37.5 h. About 230 more main-line words, or one more core A1, would make the line "about 40 hours". The drafter of `index.md` rounds the delivered figure honestly, and the S9 packet names the risk (§10).
+  - Layout target: about 33 h. The difference is the banks of 12 against the layout's 8, which is this file's choice, not a STYLE floor (D6: +28 parts = 7 exercises ≈ 3.5 h). With banks of 8 the core track would come to about 33.9 h, the layout's figure.
 - **Full track:**
-  - reading ~25,110 main + ~3,450 (8.8) + ~4,400 folded ≈ 32,960 words ≈ 20.6 h;
+  - reading ~25,235 main + ~3,450 (8.8) + ~4,900 folded ≈ 33,585 words ≈ 21.0 h;
   - A1, 8 × 25 min ≈ 3.3 h;
   - A2, 24 × 30 min = 12 h;
   - B, 27 × 30 min = 13.5 h;
   - C, 19 × 40 min ≈ 12.7 h;
   - R, 5 × 40 min ≈ 3.3 h.
-  - Total **≈ 65.4 h**: **"about 65 hours for everything"** (layout: about 55 h).
-- The drafter of `index.md` recomputes both numbers from the delivered text (`check_structure.py --words`) and the delivered counts, by the same rule, and does not shade them down (STYLE §11.9). The plan's lever (banks capped lower, the surplus in optional batteries) is not available: STYLE §12.8 fixes 12 as the floor (the author's choice, 2026-10-12).
+  - Total **≈ 65.8 h**: **"about 65 hours for everything"** (layout: about 55 h).
+- The drafter of `index.md` recomputes both numbers from the delivered text (`check_structure.py --words`) and the delivered counts, by the same rule, and does not shade them down (STYLE §11.9). The plan's lever (banks capped lower, the surplus in optional batteries) is available: STYLE §12.8's sizes bind rule sections, and Chapter 8 has none. This file does not use it, and keeps banks of 12 to match the author's choice of the heavier workload (2026-10-12); S9 decides (D6).
 
 ---
 
@@ -1327,6 +1377,7 @@ R5's pointers are already in the final numbering (D2's sweep reached the frozen 
 | 8.1 disjunction row | @exm-constructive-dilemma; "a derived rule in Section 2.3" | F1.1 §07; F1.2 §03 | delivered; 2.3's derived rule per ch02-deepen (wave A) |
 | 8.1 cycle | @prp-equivalence-cycle, @thm-odd-iff-square-odd | F1.2 §04 | in place |
 | 8.2 rows | @prp-implication-transitive; @prp-definitional-extension, @def-definite-description ("Section 5.8") | F1.1 §05; F1.4 §08 | 5.8's labels planned (layout §1.4; ch05-deepen) |
+| 8.2 double inclusion | @exm-extensionality-logical-half; "an axiom about sets (Section 5.7)" | F1.4 §07 | planned (ch05-deepen §4.7 item 3) |
 | 8.2 fold F8.2-a | "the second-pass Section 4.9 … @thm-monotonicity" | F1.3 §09 | planned (ch04-deepen) |
 | 8.3 TAUT paragraph | @def-rule-taut ("Section 4.8"); @def-propositional-skeleton, @prp-taut-skeleton ("Section 6.3") | F1.3 §08; F1.8 §03 | planned (ch04-deepen; ch06 blueprint) |
 | 8.4 unstated fact | "Section 3.3 took a paragraph of argument apart"; @exr-using-an-implication-b5 | F1.7 §03; F1.1 §04 | 3.3 planned (ch03 blueprint, wave A); B5 delivered |
@@ -1334,8 +1385,9 @@ R5's pointers are already in the final numbering (D2's sweep reached the frozen 
 | 8.6 (N12)–(N14) | @def-rule-universal-elimination; @ax-induction, @thm-strong-induction; @def-rules-existential; "Section 5.8"; @thm-russell ("Section 5.6") | F1.4 §03; F1.3 §02; F1.4 §06, §08; F1.4 §06 | `thm-russell` planned (ch05-deepen) |
 | 8.6 traditional names | "a common error of Section 1.6" | F1.1 §07 | delivered (affirming a disjunct) |
 | 8.7 R1 | @prp-replacement ("Section 6.2") | F1.8 §02 | planned (ch06 blueprint) |
-| 8.7 → 8.8 | "the optional Section 8.8" (four prose pointers, §4.7 item 2) | F1.5 §08 | this file; written in the same pass |
-| 8.8 | @thm-raa-independent, @thm-soundness, @lem-context-inclusion, @thm-strong-induction, @thm-structural-induction, @thm-structural-recursion, @def-truth-value, @def-formula, @cor-derivable-iff-valid, @prp-distributivity, @thm-classical-rules-interderivable, @exm-triple-negation, @prp-double-negation | F1.3, F1.2, F1.1 | in place |
+| 8.7 → 8.8 | "the optional Section 8.8" (six prose pointers, §4.7 item 2: the table cell 07:15, the Quick check of "Excluded middle cannot be refuted", B1's solution, R3's solution, the new table's lead, B5 (d)'s parenthesis) | F1.5 §08 | this file; written in the same pass |
+| 8.7 TAUT sentence | @lem-atom-splitting, "TAUT (Section 4.8)", "Section 6.3" | F1.3 §08; F1.8 §03 | in place; TAUT planned (ch04-deepen) |
+| 8.8 | @thm-raa-independent, @thm-soundness, @lem-context-inclusion, @thm-strong-induction, @thm-structural-induction, @thm-structural-recursion, @def-truth-value, @def-formula, @def-derivation, @def-derivable, @cor-derivable-iff-valid, @lem-atom-splitting, @def-rule-taut, @thm-classical-rules-interderivable, @exm-triple-negation, @prp-double-negation | F1.3, F1.2, F1.1 | in place |
 
 **Forward pointers to later volumes:** exactly R5's three Looking-ahead boxes (8.3, 8.6, 8.7). After drafting, S4 greps each section's main line and folds for `Analysis on the Real Line`, `Sets, Relations`, `Number Systems`, `later volume` and `this series` (R5 binding rule 3); the only hits allowed are the three boxes, the index's Minimum line (layout G14) and the frozen C1 stem (R5).
 
@@ -1362,16 +1414,17 @@ R5's pointers are already in the final numbering (D2's sweep reached the frozen 
 
 **Rows this file extends or opens:**
 - **F1.5 → F2.2** (the arithmetic row) gains:
-  - "every integer is 3k, 3k + 1 or 3k + 2" now also in §01 B4, §05 `exm-generalise-proof`, B4 and C3 (`thm-division-algorithm`);
-  - "nothing between 0 and 1" now also in §01 B4 and §05 C3 (`lem-naturals-arithmetic` (e));
+  - "every integer is 3k, 3k + 1 or 3k + 2" now also in §05 `exm-generalise-proof`, B4 and C3 (`thm-division-algorithm`);
+  - "nothing between 0 and 1" now also in §05 C3 (`lem-naturals-arithmetic` (e));
+  - (L₃) and (L₄), "every rational number is \( p/q \) with \( q \ne 0 \) and \( p \), \( q \) not both multiples of 3 (resp. 4)", stated as school facts in §05 C3, as (L) is in F1.2 §02 with its proof promised to F2.2 (S2 round 1: S1 left them out of this row);
   - "every non-empty set of natural numbers has a least element", named in the true instances of (N13) and (N14) in §06 (F2.2's well-ordering, by whatever label F2.2 gives it; not used as a reason).
-- **F1.5 §07 → F1.5 §08** (new row, paid in the same pass): the claims of §07 that the optional §08 proves. They are the propositional right column of the table `#laws-without-raa`; B1's \( \nvdash \neg\neg P \to P \) without RAA; R3's sequent; and the second proof of \( \nvdash P \vee \neg P \).
+- **F1.5 §07 → F1.5 §08** (new row, paid in the same pass): the claims of §07 that the optional §08 proves. They are the propositional right column of the table `#laws-without-raa` (the claim of its lead); B1's \( \nvdash \neg\neg P \to P \) without RAA; R3's sequent; the second proof of \( \nvdash P \vee \neg P \) (the table cell 07:15 and the Quick check); and B5 (d)'s claim that one instance of Peirce's law does not give back the instance of excluded middle that gives it (8.8 C1 (b)). Six prose pointers carry them (§6.1).
 - **Seams this chapter pays** (not STATUS rows; recorded for S8):
   - ch01-deepen §6: "8.1 may cite `exm-constructive-dilemma` as a dictionary row" (paid, §4.1 item 2); "8.1's spoken assumption purposes row reads 1.4's annotation" (paid, §4.1 item 1).
   - layout §8, Wave 3: "5.8 → 8.2" (paid, §4.2 item 2); "4.8/6.3 → 8.3" (paid, §4.3 item 2).
   - Critic, smaller correction 3: "8.7 points to 8.8" (paid, §4.7 item 2).
   - Critic, smaller correction 6: the "we define" row (paid).
-- **Backward citations of planned labels**, for S8 to confirm against the delivered chapters: `def-rule-taut`, `thm-monotonicity`, `thm-russell`, `def-definite-description`, `prp-definitional-extension`, `prp-replacement`, `def-propositional-skeleton`, `prp-taut-skeleton`; and 3.3's argument extraction (prose). If one of these chapters lands after Chapter 8 is drafted (it should not: Wave 3 follows G3), S3 writes the sentence without the `@ref` and S8 restores it.
+- **Backward citations of planned labels**, for S8 to confirm against the delivered chapters: `def-rule-taut`, `thm-monotonicity`, `thm-russell`, `exm-extensionality-logical-half`, `def-definite-description`, `prp-definitional-extension`, `prp-replacement`, `def-propositional-skeleton`, `prp-taut-skeleton`; and 3.3's argument extraction (prose). If one of these chapters lands after Chapter 8 is drafted (it should not: Wave 3 follows G3), S3 writes the sentence without the `@ref` and S8 restores it.
 
 ---
 
@@ -1383,7 +1436,7 @@ R5's pointers are already in the final numbering (D2's sweep reached the frozen 
 | 2 | ¬I against RAA (2.5, its single home, ch02-revision); derived rules, with CD and MPT as derived rules (2.3); TFAE by a cycle (`prp-equivalence-cycle`, 2.4) | teach the ¬I/RAA distinction again (8.1's faces and BHK preview only, R5); re-derive the cycle lemma (8.1 cites it) |
 | 3 | the search (3.1); argument extraction and suppressed premises (3.3) | teach extraction (8.4 recalls it in one sentence) |
 | 4 | soundness and completeness (4.7, 4.8); TAUT (4.8); monotonicity (4.9, second pass); structural induction and recursion (4.3) | prove soundness again (8.8's fold reuses 4.7's Steps 1–4 and redoes only the box cases); define TAUT (8.3 cites it) |
-| 5 | ∃! and "the", definitional extension (5.8); Russell (5.6) | prove that a definition adds nothing (8.2 cites it); prove that no barber exists (8.6 cites it) |
+| 5 | ∃! and "the", definitional extension (5.8); Russell (5.6); the logical half of extensionality, and the converse as an axiom about sets (5.7) | prove that a definition adds nothing (8.2 cites it); prove that no barber exists (8.6 cites it); treat set equality as logic (8.2 cites extensionality as an axiom) |
 | 6 | translation (6.1); quantifier laws and `prp-replacement` (6.2); the skeleton and `prp-taut-skeleton` (6.3); uniform continuity rule by rule (6.4) | negate quantifiers anew (8.1, 8.2 point back); prove replacement (8.7 R1 cites it) |
 | 7 | counter-models and the statement under `#from-counter-models-to-non-derivability` (7.2); first-order soundness (7.3, optional) | cite 7.3 (binding rule 4); build first-order counter-models (8.8 is propositional) |
 
@@ -1414,13 +1467,13 @@ R5 §8's items 1–25 stand, and S2a re-runs only those this file touches (items
 1. `exm-not-allowed-catalogue`:
    - (N12)–(N14) appended. Each is an instance of its entry and of no earlier one, its true/false verdict is right, and its rule tag is right.
    - (N12): \( a = b = 2 \) are roots of \( x^2 - 5x + 6 \) and the factorization step fails there.
-   - (N13): \( \{1/n\} \) has no least element; in \( \nN \) a strictly decreasing list from \( a_1 \) has at most \( a_1 + 1 \) terms.
-   - (N14): "\( N + 1 \le N \)" from "\( N \) largest"; \( m = 8 \) is least with \( m^2 > 50 \).
-   - The citation of `thm-russell` (5.6) says what 5.6 delivers.
+   - (N13): \( \{1/n\} \) has no least element.
+   - (N14): "\( N + 1 \le N \)" from "\( N \) largest". The line between (N9) and (N14) (asserted warrant against presupposed premise), and every (N9)/(N14) tag of the chapter against it (§4.6, item 2).
+   - F8.6-b: in \( \nN \) a strictly decreasing list from \( a_1 \) has at most \( a_1 + 1 \) terms; \( m = 8 \) is least with \( m^2 > 50 \); the citation of `thm-russell` (5.6) says what 5.6 delivers.
    - 06:31's head sentence still describes every entry. (N1)–(N11) are unchanged.
    - All 110 outside citations name (N1)–(N11) by number, and their meaning is unchanged.
 2. The families table: the (N12) placement, the new family and its slogan; the roadmap's "seven families".
-3. 8.7: the four pointers to 8.8 (§4.7, item 2) each name a claim that 8.8's table or examples prove. R1's clause: `prp-replacement` (6.2) licenses the step "part (a) under the ∀" as R1 uses it, with a bounded quantifier.
+3. 8.7: the six pointers to 8.8 (§4.7, item 2) each name a claim that 8.8's table, examples or exercises prove (B5 (d)'s: 8.8 C1 (b)). Item 5's TAUT sentence: TAUT is licensed through @thm-completeness, whose proof uses LEM in @lem-atom-splitting (as 07:28 says). Item 6: B4's census recomputed against the delivered Chapters 3–7, with at least TAUT and `prp-taut-skeleton` added. R1's clause: `prp-replacement` (6.2) licenses the step "part (a) under the ∀" as R1 uses it, with a bounded quantifier.
 4. The moved passages (01:241, 02:124, 03:80, 03:82, 05:165, 07:212 with the Lean block): each moves verbatim. No main-line sentence, A item or B item needs the moved text. In particular 8.3 A2(e) is answerable from `def-silent-steps` with F8.3-d closed.
 5. 8.3 B2's scaffold without `\purpose` (D1), the one exception to STYLE §12.13.1 in the chapter.
 
@@ -1432,22 +1485,21 @@ R5 §8's items 1–25 stand, and S2a re-runs only those this file touches (items
    - every Terms line, against its target.
 7. 8.1:
    - The purpose paragraph. Each phrase pairs with the annotation the engine prints (`latex/fitch-book.sty`'s "asm, for …"), including ↔I and the bounded ∀I.
-   - The √5 check: the box is ¬I despite "for a contradiction".
-   - The constructive-dilemma row, against `exm-constructive-dilemma` and 2.3's derived rule as delivered by ch02-deepen. The \( x^3 \) sentence: \( \abs{x} \ge 1 \Rightarrow x \ge 1 \vee x \le -1 \); \( x \ge 1 \Rightarrow x^3 \ge 1 \); \( x \le -1 \Rightarrow x^3 \le -1 \).
-   - The cycle row. `exm-rhetoric-cycle`'s three arrows; the identity \( (2a + 1)(2b + 1) = 2(2ab + a + b) + 1 \); (iii) ⇒ (i) without RAA; "three implications for six".
+   - The constructive-dilemma row, against `exm-constructive-dilemma` and 2.3's derived rule as delivered by ch02-deepen.
+   - The cycle row. `exm-rhetoric-cycle` (in fold F8.1-e): the three arrows; \( n^2 = 2a + 1 \Rightarrow n^2 + 2n = 2(a + n) + 1 \); \( (2k)^2 + 2(2k) = 2(2k^2 + 2k) \); (iii) ⇒ (i) without RAA; "three implications for six". The subsection teaches the move with the fold closed (lead, row, Quick check).
    - The four-condition Quick check.
    - The Not-allowed lines and tags:
      - \( x = \tfrac12 \) refutes \( x^3 \ge x \);
      - the negation of \( \abs{x} < 1 \) is \( \abs{x} \ge 1 \);
-     - the unannounced contrapositive reads as (N5);
+     - the unannounced contrapositive breaks the never-silent item "the announcement of a contrapositive", and is not (N5);
      - the single case is (N7).
 8. 8.2:
    - The two stronger rows and their sentence: \( x^2 < x < 1 \) for \( 0 < x < 1 \); the chain by `prp-implication-transitive`.
    - F8.2-a's statement of monotonicity, against `thm-monotonicity` as ch04-deepen delivers it.
    - The three new rows. "A definition proves nothing new" against `prp-definitional-extension`; "the" needs ∃! against `def-definite-description`.
-   - Set equality read as \( \forall x\, (x \in A \leftrightarrow x \in B) \), consistent with 5.1's and 8.5's reading of \( \subseteq \).
-   - `exm-rhetoric-double-inclusion`: \( x^2 \le 2x \iff 0 \le x \le 2 \), both inclusions, the tags, the ¬I steps followed by trichotomy.
-   - The Not-allowed lines and tags.
+   - Two inclusions give \( \forall x\, (x \in A \leftrightarrow x \in B) \) by ↔I inside ∀I, consistent with 5.1's and 8.5's reading of \( \subseteq \); the step to \( A = B \) is extensionality, cited and never silent, consistent with `exm-extensionality-logical-half` (5.7), 5.8 B4 and 7.2's "Extensionality: an axiom, not a law of logic" as delivered.
+   - `exm-rhetoric-double-inclusion`: \( x^2 \le 2x \iff 0 \le x \le 2 \), both inclusions, the tags (the last one [∀E, →E with the axiom]), the ¬I steps followed by trichotomy.
+   - The Not-allowed lines and tags, the fifth tagged by the never-silent item "the witness of ∃I, with what it depends on".
 9. 8.3:
    - The TAUT paragraph. Each named item of the first list of `def-silent-steps` is valid on the propositional skeleton (∧I, ∧E, R, ∨I, ⊥E, DS, the exchange, ↔E with a definition, →E on a line of the proof). ∀E, =I and =E are not TAUT steps. The two \( \forall\forall \) formulas are two letters on the skeleton (NOTATION, TAUT).
    - The level-1 TAUT option, against `check_fitch.py`'s TAUT check (D0 g) and the frozen wording of `def-levels-of-proof`, which it extends and does not change.
@@ -1463,51 +1515,54 @@ R5 §8's items 1–25 stand, and S2a re-runs only those this file touches (items
     - `exm-generalise-proof`: the three cases; (P2) is the case \( n = 3k + 2 \) with \( k = 5 \).
     - The \( 7^2 - 1 \) check, against 8.3 B2's claim.
 12. 8.6:
-    - The flowchart's node texts and edges: the first column marks where to look, the second decides.
-    - The valid-but-improper paragraph: two lines at level 0, →E then ∧I.
-    - The traditional-names table, each name matched to its entry.
+    - The flowchart's node texts and edges: the first column marks where to look, the second decides; a line written by a chain of rules and silent steps is "found", and only a line no chain writes fails. The flowchart, item 4 and A2 (l) agree.
+    - The valid-but-improper paragraph: \( \forall a\, \forall b\, \varphi \) to \( \forall b\, \forall a\, \varphi \) is ∀E twice and ∀I twice at level 0, and no TAUT step (two letters on the skeleton, as 8.3 says).
+    - F8.6-c, the traditional-names table, each name matched to its entry.
 13. 8.7:
     - The table `#laws-without-raa`. Every middle-column entry is a derivation without RAA in the cited result. Every right-column propositional entry is refuted in 8.8. Every right-column quantifier entry is marked "stated without proof".
     - "Modus tollens, DS, constructive dilemma: all": `prp-modus-tollens` and `prp-disjunctive-syllogism` use no RAA, and `exm-constructive-dilemma` uses Chapter 1's rules.
-    - The Glivenko sentence, limited to the propositional rows.
+    - The Glivenko sentence, limited to the propositional rows. Its extension to finite lists of premises: from Glivenko for \( \vdash \gamma \to \varphi \) (\( \gamma \) the premises' conjunction), \( \neg\neg(\gamma \to \varphi) \) without RAA; then \( \neg\neg(\gamma \to \varphi), \gamma \vdash \neg\neg\varphi \) without RAA (a box on \( \neg\varphi \), inside it a box on \( \gamma \to \varphi \) giving \( \varphi \) by →E and \( \bot \) by ¬E, closed by ¬I, then ¬E with the premise and ¬I). "B5 (a) and (b) derive two cases": (c) is not a Glivenko case.
     - The contraposition Quick check and its appeal to R5's fold F5.1-c.
 14. 8.8:
-    - `def-kripke-model` (reflexive, transitive reachability; persistence of letters) and `def-forcing` (F1)–(F7), by structural recursion.
+    - `def-kripke-model` (reflexive, transitive reachability; persistence of letters) and `def-forcing` (K1)–(K7), by a structural recursion that defines for each formula the set of stages forcing it (as `thm-structural-recursion` as delivered allows a set-valued recursion). The clause names (K1)–(K7) clash with no clause names cited in 8.8.
     - The one-stage remark: forcing = truth.
     - The counterexample-set sentence (D4).
     - `exm-two-stage-model`: \( w_0 \not\Vdash p \), \( \neg p \), \( p \vee \neg p \); \( w_0 \Vdash \neg\neg p \); \( w_0 \not\Vdash \neg\neg p \to p \).
     - `lem-heredity` and its fold proof. For → and ¬ no induction hypothesis is needed.
-    - `thm-kripke-soundness`: the statement, the rule table row by row (in particular ↔E, ∨E, ⊥E, and RAA's failure), and F8.8-b's case proofs against 4.7's Steps 1–4 and `lem-context-inclusion` as delivered.
+    - `thm-kripke-soundness`: the statement (TAUT excluded, with its sentence), the rule table row by row (in particular ↔E, ∨E, ⊥E, and RAA's failure), and F8.8-b's Steps 1–4 against 4.7's Steps 1–4 (reduction, induction, cases, last line) and `lem-context-inclusion` as delivered.
     - `cor-kripke-countermodel` and its ¬I proof.
     - `exm-three-stage-model`: both refutations.
     - The settle table, every row. Each model is a Kripke model (letters persist): \( M_3 \) (\( p, q \) at \( w_1 \)); \( M_4 \) (\( p \) at both, \( q \) at \( w_1 \)). The row \( \neg(p \to q) \vdash p \wedge \neg q \) at \( w_0 \) of \( M_1 \). The claim that the table covers the propositional right column of 8.7 and the claims of 8.7 B1 and R3.
     - The worked search.
     - The remark: Kripke completeness, the disjunction property and quantifier models are each stated without proof.
     - The Not-allowed lines.
-    - The opening's claim about `thm-raa-independent` (two laws, a three-valued reading).
+    - The opening's and the Purpose line's claims: 8.7 names the laws; `thm-raa-independent` (optional, 4.x) proves the non-derivability of LEM and ¬¬E by a three-valued reading; 8.7 states the rest without proof.
 
 **New and changed exercise answers:**
-15. 8.1 A2 (h), (l); B4: the identities; the clash "no integer is \( \tfrac13 \)"; the marking scheme.
+15. 8.1 A2 (h) (the √5 opening: the box is ¬I despite "for a contradiction"), (l); B4 (new at S2 round 1): the five identities, the split on \( b \) by (E1), the two names in each case of (iii) ⇒ (i), the marking scheme, and the fatal-error tags (N4) and (N9) against §4.6 item 2's line.
 16. 8.2 A2 (k), (l); B3: \( 2a = 3b \Rightarrow b = 2(a - b) \), \( n = 6(a - b) \); the marking scheme.
 17. 8.3 A2 (i)–(l): (k)'s identity and next row; B3: the column, the =E links, the student's row false exactly on \( 0 < \abs{x} < 2 \), the marking scheme.
 18. 8.4 A2 (a)–(l); B3: the identity \( (x - 1)^2(x + 2) = x^3 - 3x + 2 \), \( c = -2 \), the failure at \( -3 \) (\( -25 < -9 \)), the marking scheme.
 19. 8.5 A2 (a)–(l); B4: \( n^3 - n = (n - 1)n(n + 1) \), the citations of `exm-generalise-proof` and `exr-quantifier-rhetoric-b3` (a later exercise citing an earlier one, STYLE §6); C3: the lemma by cases; (L₃) and (L₄) as stated are true; the failure at \( n = 2 \); \( 4 = (2/1)^2 \) satisfies (L₄); the marking schemes.
 20. 8.6 A2 (i)–(l); B3: the five verdicts ((i), (ii) correct; (iii) (N12) false at \( (0, 0) \); (iv) (N13) true, the strong-induction repair; (v) (N14) false, \( x^2 + x + 1 > 0 \)), the look-alike sentence, the marking scheme; R1 (a)–(d).
-21. 8.7 A2 (a)–(l): (c) `exm-triple-negation` is RAA-free; (l) the first line is the only classical step, as 07:149 says. B5: the three derivations (13, 10 and 10 lines, each checked by `check_fitch.py`, no RAA, ¬¬E or LEM); (d)'s row assignments; the marking scheme.
+21. 8.7 A2 (a)–(l): (c) `exm-triple-negation` is RAA-free; (l) the first line is the only classical step, as 07:149 says. B5: the three derivations (13, 10 and 10 lines, each checked by `check_fitch.py`, no RAA, ¬¬E, LEM or TAUT); (d)'s row assignments and its parenthesis (against 8.8 C1 (a) and (b)); the marking scheme with its TAUT line.
 22. 8.8 A1 (a)–(d); A2 (a)–(l) on \( M_1 \), \( M_2 \), \( M_5 \); B1 on \( M_6 \): five verdicts, (b), and (c)'s chain argument. B2's seven verdicts:
     - four derivations ((a) 16 lines, (b) 13, (d) 9, (f) 9);
-    - three countermodels ((c) \( M_2 \), (e) \( M_1 \), (g) the \( \{p, q\} \)/\( \{p, r\} \) fork);
-    - the look-alike notes, including (e)'s parenthesis \( \neg p \to p \vdash \neg\neg p \) (derivable without RAA).
+    - three countermodels ((c) \( M_2 \), (e) \( M_1 \), (g) \( M_3 \); (g) is classically valid by cases on \( p \));
+    - the look-alike notes, including (e)'s parenthesis \( \neg p \to p \vdash \neg\neg p \) (derivable without RAA) and (g)'s link to `lem-atom-splitting` as delivered;
+    - the TAUT clause of the statement and of the fatal errors.
     
     C1:
     - (a) the 12-line derivation from \( p \vee \neg p \);
-    - (b) \( M_7 \) refutes, while \( M_1 \) does not;
+    - (b) \( \vdash (((p \to q) \to p) \to p) \to (p \vee \neg p) \) is classically valid; \( M_7 \) refutes it at \( w_0 \) (Peirce's law forced there, \( q \) known nowhere), while \( M_1 \) does not (checked by a Kripke script at S2 round 1);
     - (c) the comparison with `thm-classical-rules-interderivable` and 8.7 B5 (c).
 
     C2: both directions. Every marking scheme.
 23. **Derive-or-break audit (binding rule 7).** Every claim of 8.6 B3 and 8.8 B2 has its verdict settled here, by a derivation, a counterexample or a Kripke countermodel checked by `kripke.py`. Every "derive" verdict of 8.8 B2 is classically valid (truth table) and has an RAA-free derivation. Every "break" verdict there has a countermodel. No list contains a claim that is classically invalid or whose RAA-freeness is unsettled. (A truth-table and Kripke check of every claim of 8.7 B5, 8.8 B2 and the settle table was run while writing this blueprint: the derivable ones are valid, and each break has the model stated.)
 
-**Originality (for S2's comparison with the twelve books):** every example, drill and exercise above was written for this book. The items with standard names carry fd1's own wording and numbers: the barber, the "and so on", the two-node and fork models, the Glivenko instances, and the generalisation from √2. The 8.8 models are named \( M_1 \)–\( M_7 \) in fd1's notation; their shapes (a chain, a fork) are the only possible small shapes and are folklore. No book's sequent list, model list or exercise order is followed (Critic review, smaller correction 7).
+**Originality (for S2's comparison with the twelve books):** every example, drill and exercise above was written for this book. The items with standard names carry fd1's own wording and numbers: the barber, the "and so on", the two-node and fork models, the Glivenko instances, and the generalisation from √2. The 8.8 models are named \( M_1 \)–\( M_7 \) in fd1's notation; their shapes (a chain, a fork) are the only possible small shapes and are folklore.
+
+Some sequents are **standard and forced**. 8.8 must refute the propositional right column of 8.7's table, which is read off fd1's own Chapters 2 and 6. Those rows, among them the De Morgan direction \( \neg(p \wedge q) \vdash \neg p \vee \neg q \), contraposition's converse, excluded middle, double-negation elimination, Peirce's law and \( (p \to q) \vee (q \to p) \), are the standard examples of every treatment and appear in published exercise lists. They are kept because the table forces them, and S2 should read them as such. The **free choices** follow no book's list: B2's (a)–(g), C1 (b) and the cycle items of 8.1. S2 round 1 replaced three of them that matched published exercises: 8.8's S1 B2 (g) (\( p \to (q \vee r) \vdash (p \to q) \vee (p \to r) \)), 8.8's S1 C1 (b) (\( (\neg\neg p \to p) \to (p \vee \neg p) \)), and 8.1's S1 B4 and `exm-rhetoric-cycle` (the \( n \), \( n^2 \), \( n^3 \) divisibility pattern). Each replacement was grepped against the twelve books' texts: \( (p \to q) \wedge (\neg p \to q) \vdash q \) appears in them only as a classical lemma of a completeness proof, which is fd1's own @lem-atom-splitting. The Kripke contrast of C1 (b), the parity cycle on \( a + b \), \( a - b \) and same parity, and the cycle on \( n \), \( n^2 \), \( n^2 + 2n \) were not found (Critic review, smaller correction 7).
 
 ---
 
@@ -1525,8 +1580,41 @@ R5 §8's items 1–25 stand, and S2a re-runs only those this file touches (items
   - The heading link of binding rule 4 is used only if the engine resolves heading ids. S4 tests it once and records the result in the S4 note.
 - **Seams (S8).** The planned labels of §6.2 against ch03, ch04-deepen, ch05-deepen and the ch06 blueprint as delivered; R5 §6's R4 seam (8.2's reprint against 6.1's derivation; F5.3-c against 6.4's).
 - **The S9 packet** for Chapter 8 (layout G4) goes with the whole-volume pass. The packet names the judgment calls of this file:
-  - D6, banks of 12 against the layout's 8 (Time 35 h against 33 h);
+  - D6, banks of 12 against the layout's 8: this file's choice, not a STYLE floor (Time ≈ 37.4 h, "about 35", against the layout's 33; banks of 8 give ≈ 33.9 h);
+  - the Time line's rounding risk: 37.4 h is about 0.1 h under the 37.5 h boundary, so roughly 230 more main-line words turn "about 35" into "about 40" (§5);
+  - 8.1 at ≤ 5,000 and 8.7 at ≤ 3,950 against the layout's 4,900 and 3,900, with `exm-rhetoric-cycle` in fold F8.1-e to keep 8.1 under STYLE's cap (§4.1, §4.7);
   - the (N11) decision: R5's split kept;
   - the index at ≤ 1,300 words;
   - D2, galleries not adopted;
   - D11 (b), the non-mathematical extraction item not adopted.
+
+---
+
+## S2 replies
+
+**Round 1** (19 findings; two pairs were duplicates: the (N14)/(N9) overlap and the F8.8-b step numbering, each reported twice, and the contrapositive tag also twice). Every finding is applied; none is disputed.
+
+1. **Extensionality in 8.2** (error). Applied (§4.2, item 2; A2 (k); ledger; S2a item 8). ↔I inside ∀I now yields \( \forall x\, (x \in A \leftrightarrow x \in B) \), and \( A = B \) follows by the cited axiom, tagged [∀E, →E with the axiom]. The row's never-silent column names the appeal. The citation goes to 5.7 (`exm-extensionality-logical-half` and its remark), not to 7.2: Chapter 8's What-you-need line admits from Chapter 7 only the statement under `#from-counter-models-to-non-derivability`. 7.2 and 5.8 B4 are named in the ledger as the passages this agrees with.
+2. **The unannounced contrapositive** (error, and its duplicate). Applied (§4.1, item 4; S2a item 7). The line is tagged only with the never-silent item, and "(N5)" is gone.
+3. **The flowchart against "valid but improper"** (gap). Applied (§4.6, items 1 and 4; A2 (l)). The test node asks for "a rule, or a chain of rules and silent steps". The failing outcome is "no such chain", and the licensed outcome is "licensed at its level".
+4. **"Three cases" and Glivenko with premises** (minor). Applied (§4.7, item 1). The text now says "Exercise B5 (a) and (b) derive two cases" and "applied to the implication from the premises' conjunction". The RAA-free step from \( \neg\neg(\gamma \to \varphi) \) and \( \gamma \) to \( \neg\neg\varphi \) is added to S2a item 13.
+5. **F8.8-b's steps** (minor, and its duplicate). Applied (§4.8, item 5). The steps are now Step 1 reduction, Step 2 induction, Step 3 cases (RAA failing) and Step 4 last line, as in 07-soundness.md:147–217.
+6. **8.8's opening contradicted itself** (minor). Applied to the opening paragraph and the Purpose line, in the wording the finding proposed.
+7. **(N9) against (N14)** (minor gap, and its duplicate). Applied (§4.6, item 2; §4.4 ledger). (N14) is now "an object named before it is shown to exist", with a stated line: (N9) **asserts** a warrant that is not available, and (N14) **presupposes** a premise it never asserts. Every tag was re-checked. The B4/B3/C3 fatal errors are asserted warrants and stay (N9), reworded where needed ("given as its own reason"). The "the" instances stay (N14) and are not (N9). (N14)'s second instance moved to fold F8.6-b, which says it is (N14).
+8. **The untagged Not-allowed line in 8.2** (minor). Applied (§4.2, item 3). It is replaced by a tagged line, a missing ∃I witness. No deviation from D3 remains.
+9. **B3's triangle-inequality row** (minor). Applied, in the wording the finding proposed.
+10. **Name clash (F1)–(F7)** (minor). Applied. The forcing clauses are (K1)–(K7) throughout §4.8 and §9, and the recursion sentence now says that it defines, for each formula, the set of stages forcing it.
+11. **The fifth core-to-optional pointer** (minor). Applied (§4.7, item 2; §6.1; §6.2; S2a item 3). Six pointers are listed. B5 (d)'s parenthesis now carries a different claim, because C1 (b) was replaced (item 13 below). The claim is that one instance of Peirce's law does not give back the instance of excluded middle that gives it, and 8.8 C1 (b) proves it.
+12. **8.1 B4 and `exm-rhetoric-cycle` too close to a published exercise** (error). Applied (§4.1). B4 is now a parity cycle on two integers: \( a + b \) even, \( a - b \) even, same parity. `exm-rhetoric-cycle` is now \( n \), \( n^2 \), \( n^2 + 2n \) odd. Sidecars, ledger and the F2.2 promise row are updated: B4 no longer uses the division-algorithm fact or "nothing between 0 and 1".
+13. **8.8's sequents following published lists** (error). Applied. B2 (g) is now \( (p \to q) \wedge (\neg p \to q) \vdash q \), broken at \( M_3 \). Its look-alike note ties it to `lem-atom-splitting`, and the mislabelled "distributive law" note is gone. C1 (b) is now \( \vdash (((p \to q) \to p) \to p) \to (p \vee \neg p) \), refuted at \( M_7 \) and not at \( M_1 \). It is neither \( \neg p \vee \neg\neg p \) nor any item of the two named exercise lists. Both were checked by a Kripke script and by truth tables, and grepped against the books' texts. The originality paragraph of §9 now says which rows are standard and forced by 8.7's table.
+14. **"No single rule" against TAUT** (error). Applied (§4.6, item 4; A2 (l)). The improper example is now first-order (∀∀ exchange), which TAUT does not write. A2 (l) keeps its propositional compression, and its answer says that a TAUT line also writes it from 4.8 on.
+15. **TAUT in the RAA-free tasks** (gap). Applied. "Without TAUT" now appears in the statements of B5, B2 and C1 (a) and (b), and the fatal-error lists have a TAUT line. `thm-kripke-soundness` excludes TAUT, with one sentence. 8.7's definition of an intuitionistic derivation gains a sentence (§4.7, item 5). Binding rule 5 records it. B4's census is recomputed against the delivered Chapters 3–7, with at least TAUT and `prp-taut-skeleton` added (§4.7, item 6; superseded item (viii)).
+16. **Budgets of 8.1 and 8.6** (error). Applied (§4.1, §4.6, §5).
+   - 8.1 was re-estimated from the quoted text. Even with F8.1-f (01:304) folded, the √5 check moved to A2 (h) and the dilemma sentence dropped, it comes to about 5,115 with `exm-rhetoric-cycle` on the main line. The example therefore goes into fold F8.1-e, which leaves about 4,970. The main line keeps the subsection's lead, its row and its Quick check, which teach the move. The budget is raised to ≤ 5,000 (layout 4,900), the most STYLE allows.
+   - 8.6 comes to about 2,990 once the second instances of (N13)/(N14) and the barber sentence move to F8.6-b and the traditional names move to F8.6-c.
+   - 8.7, re-checked after item 15's sentence, is at ≤ 3,950.
+   - Every section that runs close now has a named fallback (§5).
+   - The Time line was recomputed: ≈ 37.4 h, "about 35". The rounding risk is in §5 and in the S9 packet.
+17. **D6 is a choice, not a STYLE floor** (minor). Applied (D6, §5, §10). STYLE §12.8's sizes bind rule sections, and Chapter 8 has none. Banks of 12 are this file's choice, and banks of 8 would give ≈ 33.9 h.
+18. **Bookkeeping** (minor). Applied. §6.1 lists all six 8.7 → 8.8 pointers, and the §07 → §08 row names B5 (d)'s claim. (L₃) and (L₄) are added to the F1.5 → F2.2 row.
+
