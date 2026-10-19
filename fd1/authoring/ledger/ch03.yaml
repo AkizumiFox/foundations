@@ -1153,6 +1153,16 @@ items:
       the classical line'' is therefore ambiguous for the 1-point bullet ''the classical line is named''.
       Fix: write ''its DM (d) and ¬¬E lines are the classical lines; naming either earns the point'',
       or name the one intended.'
+  - stage: S7r
+    verdict: correct
+    by: rereferee
+    hash: 4ee7cef6777a
+    date: '2026-10-19'
+    model: claude-opus-5-5
+    evidence: 'e, P∨¬P, [P, P∨¬Q], [¬P, [Q, ¬P∧Q, ⊥], ¬Q, P∨¬Q], ∨E. The DM route also works: DM (d) (@prp-de-morgan
+      (d): ¬(φ∧ψ) ⊢ ¬φ∨¬ψ, with φ:=¬P) gives ¬¬P∨¬Q; ∨E with ¬¬E then ∨I in the first case and ∨I in the
+      second gives the goal. The table marks both DM (d) and ¬¬E as classical, which matches the revised
+      marking sentence. The marking points total 2+2+2+3+1=10. The fatal clauses fit every accepted route.'
 - key: exr-finding-derivations-c4
   kind: exr
   file: 01-finding-derivations.md
@@ -1911,6 +1921,17 @@ items:
       (a) gives Γ⊢¬φ, part (b) gives Γ⊢φ, and (iii)⇒(i) of @prp-inconsistent-derives-everything gives
       Γ⊢⊥. (b) is the contrapositive. Section 4.10 is a planned optional section in layout-final:145 and
       is marked ''(optional)''.'
+  - stage: S7r
+    verdict: correct
+    by: rereferee
+    hash: 76106349b9f3
+    date: '2026-10-19'
+    model: claude-opus-5-5
+    evidence: 'ent-derives-everything (02:245, with χ=φ) gives Γ inconsistent per def-inconsistent-set.
+      Cut (ch02/03:225) also works: Γ⊢¬φ and Γ,¬φ⊢⊥ give Γ⊢⊥. (b) is the contrapositive of (a), so the
+      solution is right. (c) ''No'' is correct. The marking scheme (4/3/2/1 = 10) now accepts either symmetric
+      route. The Section 4.10 pointer is ledgered at 02:1149 as a plain pointer marked optional. No remaining
+      issues.'
 - key: check:03-from-argument-to-derivation:1
   kind: check
   file: 03-from-argument-to-derivation.md
@@ -2497,6 +2518,17 @@ items:
       (STYLE.md:381-382) assigns R1 to the previous chapter and R2 to as far back as possible. Here R2''s
       method is Chapter 2''s (DM, VI, ¬I/⊥E: ch02/01, ch02/05), while R1''s is Chapter 1''s (∨E, @exm-abs-product-cases
       in ch01/07). The roles are swapped. Fix: swap the order and labels of R1 and R2, or record a deviation.'
+  - stage: S7r
+    verdict: correct
+    by: rereferee
+    hash: d8785ddb913f
+    date: '2026-10-19'
+    model: claude-opus-5-5
+    evidence: rp-de-morgan (ch02/05:406) has (a) ¬(P∨Q)⊢¬P∧¬Q, so 'lines 2-5 are half of (a)' is right.
+      @prp-vacuous-implication is ch02/01:195 and @def-sequent is cited. The 'neither…nor' reading matches
+      the phrase book. The problem text does not name a source chapter. The R1/R2 order differs from STYLE
+      §11.5 but is recorded as a deliberate deviation (ch03-deepen.md:1426), which the early-chapters
+      rule allows.
 - key: exr-finding-derivations-r3
   kind: exr
   file: 03-from-argument-to-derivation.md
@@ -2621,3 +2653,13 @@ items:
       So the S5b/S8 point that the stem ''gives ... the steps'' is only half resolved. Fix: merge (b)-(c)
       into one unscaffolded task (e.g. ''Turn the dialogue into a derivation''), or record that R4 is
       deliberately scaffolded.'
+  - stage: S7r
+    verdict: correct
+    by: rereferee
+    hash: 9c9e1745839b
+    date: '2026-10-19'
+    model: claude-opus-5-5
+    evidence: 'ation checks: 5 ¬¬I 4 (@prp-double-negation (a), ch02/05:132); 6-8 MT 1,5 / 2,5 / 3,5 (@prp-modus-tollens,
+      ch02/03:21); 9 ∧I 6,7; 10 ∧I 9,8. The reading of (¬N∧¬Z)∧¬B as 0<x<1 is justified and ledgered at
+      1107. (c) Yes, the answer is enough. The solution names the tool (@exm-extract-argument, ch03/03:37)
+      and says why the look-alike fails: →E needs N, and MT needs ¬¬L. check_fitch reports 0 errors.'
