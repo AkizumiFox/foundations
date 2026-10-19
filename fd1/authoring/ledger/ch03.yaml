@@ -28,6 +28,22 @@ items:
     date: '2026-09-28'
     model: claude-opus-5-5
     evidence: 'authoring/reviews/ch02-S8-seam.md rows 3, 6, 22: method, worked searches, rules table'
+  - stage: S5a
+    verdict: correct
+    by: refereeA
+    hash: 877088ca6bf3
+    date: '2026-10-19'
+    model: claude-opus-5-5
+    evidence: 01:47-58 match def-derivation's layout; the nonexample's reason (filling a gap adds lines
+      only above its current goal) follows from the definition
+  - stage: S5b
+    verdict: minor
+    by: refereeB
+    hash: 877088ca6bf3
+    date: '2026-10-19'
+    model: claude-opus-5-5
+    evidence: 01-finding-derivations.md:45 The lead-in gives the resources of both gaps as 'here the premise',
+      but the gap above line 13 also has line 7.
 - key: check:01-finding-derivations:1
   kind: check
   file: 01-finding-derivations.md
@@ -69,6 +85,23 @@ items:
     date: '2026-09-28'
     model: claude-opus-5-5
     evidence: 'authoring/reviews/ch02-S8-seam.md rows 3, 6, 22: method, worked searches, rules table'
+  - stage: S5a
+    verdict: correct
+    by: refereeA
+    hash: 5fb5bf6922ba
+    date: '2026-10-19'
+    model: claude-opus-5-5
+    evidence: '01:130-142. (a)-(c) match step 2. (d): LEM on P works (case not-P: a not-I box on P∧Q,
+      ∧E gives P, clash). Consistent with step 5''s ''well-chosen statement'' (the chart''s narrower LEM
+      is reported separately)'
+  - stage: S5b
+    verdict: correct
+    by: refereeB
+    hash: 5fb5bf6922ba
+    date: '2026-10-19'
+    model: claude-opus-5-5
+    evidence: '01:130-143. (a)-(c) match step 2. (d) LEM on P: in the case ¬P, a ¬I box on P∧Q gives P
+      by ∧E, which clashes with ¬P. Checked.'
 - key: exm-search-distribute
   kind: exm
   file: 01-finding-derivations.md
@@ -110,6 +143,24 @@ items:
     date: '2026-09-28'
     model: claude-opus-5-5
     evidence: 'authoring/reviews/ch02-S8-seam.md rows 3, 6, 22: method, worked searches, rules table'
+  - stage: S5a
+    verdict: correct
+    by: refereeA
+    hash: 2daf328127da
+    date: '2026-10-19'
+    model: claude-opus-5-5
+    evidence: '01:213-237 checked line by line: →E 1,3 and 1,9, ¬E 4,5 and 8,10, ¬I 2-6 and 9-11, →I 8-12,
+      ∧I 7,13; check_fitch is clean. The count at 01:240 holds: 9 goal-directed lines (2,6,7,8,9,11,12,13,14)
+      and 4 premise-directed lines (3,4,5,10)'
+  - stage: S5b
+    verdict: correct
+    by: refereeB
+    hash: 2daf328127da
+    date: '2026-10-19'
+    model: claude-opus-5-5
+    evidence: 01:149-241. Derivation checked line by line. 'Nine of the fourteen lines' (2,6,7,8,9,11,12,13,14)
+      and 'four, lines 3, 4, 5, and 10' both add up with the premise. Line 10 sits inside boxes 8 and
+      9.
 - key: check:01-finding-derivations:2
   kind: check
   file: 01-finding-derivations.md
@@ -137,6 +188,20 @@ items:
     date: '2026-09-28'
     model: claude-opus-5-5
     evidence: 'authoring/reviews/ch02-S8-seam.md rows 3, 6, 22: method, worked searches, rules table'
+  - stage: S5a
+    verdict: correct
+    by: refereeA
+    hash: 41c25626bee6
+    date: '2026-10-19'
+    model: claude-opus-5-5
+    evidence: '01:250: line 7 lies in no box and above line 11; lines 2-6 lie in the closed box 2-6'
+  - stage: S5b
+    verdict: correct
+    by: refereeB
+    hash: 41c25626bee6
+    date: '2026-10-19'
+    model: claude-opus-5-5
+    evidence: '01:245-251: line 7 is in no box and above the gap; the box of lines 2-6 has closed.'
 - key: exm-search-cases
   kind: exm
   file: 01-finding-derivations.md
@@ -178,6 +243,22 @@ items:
     date: '2026-09-28'
     model: claude-opus-5-5
     evidence: 'authoring/reviews/ch02-S8-seam.md rows 3, 6, 22: method, worked searches, rules table'
+  - stage: S5a
+    verdict: correct
+    by: refereeA
+    hash: 839f0b7f2ee3
+    date: '2026-10-19'
+    model: claude-opus-5-5
+    evidence: '01:305-321: ∨E 1,4-5,6-7, both boxes end in R; the remark about def-rules-disjunction is
+      accurate'
+  - stage: S5b
+    verdict: correct
+    by: refereeB
+    hash: 839f0b7f2ee3
+    date: '2026-10-19'
+    model: claude-opus-5-5
+    evidence: 01:257-327. Derivation is legal. 'Skeleton of almost every proof by cases' matches ch01
+      07:606. exm-cases-on-hypothesis is (P→R)∧(Q→R) ⊢ (P∨Q)→R, as described.
 - key: exm-search-postpone-or
   kind: exm
   file: 01-finding-derivations.md
@@ -214,6 +295,24 @@ items:
     evidence: 'cross-chapter cleanup 2026-09-28: a Chapter 4 @ref added to an existing prose pointer (signpost
       in a solution/example, not a step); text otherwise unchanged; check_forward_deps and check_optional
       pass'
+  - stage: S5a
+    verdict: correct
+    by: refereeA
+    hash: 173f4625582f
+    date: '2026-10-19'
+    model: claude-opus-5-5
+    evidence: '01:396-421 checked. DS 10,8 instantiates P∨Q, ¬P ⊢ Q with Q∨R, ¬Q. Both breaking choices
+      at 01:366 are right (P,Q true, R false makes P→R false; P,R true, Q false makes P→Q false). The
+      fold''s 22-line count for LEM on P checks: 2+13+7'
+  - stage: S5b
+    verdict: correct
+    by: refereeB
+    hash: 173f4625582f
+    date: '2026-10-19'
+    model: claude-opus-5-5
+    evidence: 01:333-425. Both breaking choices checked. The 14-line derivation is legal (DS 10,8). The
+      fold's 22-line count for LEM on P was recounted. The method-vs-chart mismatch for LEM on Q is reported
+      separately under key "".
 - key: exm-search-raa
   kind: exm
   file: 01-finding-derivations.md
@@ -264,36 +363,127 @@ items:
     date: '2026-09-28'
     model: claude-opus-5-5
     evidence: 'authoring/reviews/ch02-S8-seam.md rows 3, 6, 22: method, worked searches, rules table'
+  - stage: S5a
+    verdict: minor
+    by: refereeA
+    hash: c75832362f82
+    date: '2026-10-19'
+    model: claude-opus-5-5
+    evidence: 01-finding-derivations.md:488 The example closes the gap with goal Q by manufacturing a
+      clash and using ⊥E. As step 4 is written, manufacturing is allowed only when the goal is ⊥, and
+      01:442 says outright that a clash 'needs the goal ⊥'.
+  - stage: S5b
+    verdict: correct
+    by: refereeB
+    hash: c75832362f82
+    date: '2026-10-19'
+    model: claude-opus-5-5
+    evidence: 01:435-517. 13-line derivation checked. Line 2 is used at lines 5 and 9. The fold's claim
+      at 01:522 about the case ¬P holds.
 - key: check:01-finding-derivations:3
   kind: check
   file: 01-finding-derivations.md
   line: 577
   hash: 873c97e0ab2a
-  verdicts: []
+  verdicts:
+  - stage: S5a
+    verdict: correct
+    by: refereeA
+    hash: 873c97e0ab2a
+    date: '2026-10-19'
+    model: claude-opus-5-5
+    evidence: 01:582 matches the second Peirce snapshot (lines 3, 2 give line 4, ⊥E gives line 5 Q)
+  - stage: S5b
+    verdict: correct
+    by: refereeB
+    hash: 873c97e0ab2a
+    date: '2026-10-19'
+    model: claude-opus-5-5
+    evidence: 01:577-583. In the second Peirce snapshot, lines 3 and 2 give ⊥ at line 4, and ⊥E gives
+      Q at line 5, which fills the gap 3..5 exactly.
 - key: exm-search-free-lines
   kind: exm
   file: 01-finding-derivations.md
   line: 594
   hash: c6152cfe7e36
-  verdicts: []
+  verdicts:
+  - stage: S5a
+    verdict: correct
+    by: refereeA
+    hash: c6152cfe7e36
+    date: '2026-10-19'
+    model: claude-opus-5-5
+    evidence: '01:648-667: ∧E 1 (twice), →E 4,3 and 2,5, R 6, ∧I 5,6, →I 7-8 and 10-11, ∧I 9,12. Only
+      ∧E and →E lines stand above the boxes, as the refinement says'
+  - stage: S5b
+    verdict: minor
+    by: refereeB
+    hash: c6152cfe7e36
+    date: '2026-10-19'
+    model: claude-opus-5-5
+    evidence: 01-finding-derivations.md:1562 A ledger line records a claim that is no longer on the page.
 - key: check:01-finding-derivations:4
   kind: check
   file: 01-finding-derivations.md
   line: 671
   hash: b668e59d89da
-  verdicts: []
+  verdicts:
+  - stage: S5a
+    verdict: correct
+    by: refereeA
+    hash: b668e59d89da
+    date: '2026-10-19'
+    model: claude-opus-5-5
+    evidence: 01:676 matches the two refinements at 01:590-591
+  - stage: S5b
+    verdict: correct
+    by: refereeB
+    hash: b668e59d89da
+    date: '2026-10-19'
+    model: claude-opus-5-5
+    evidence: '01:671-677: line 8 = R 6 (find the goal among the resources); lines 3-6 are written before
+      any box opens.'
 - key: check:01-finding-derivations:5
   kind: check
   file: 01-finding-derivations.md
   line: 685
   hash: 4e0bfa29089b
-  verdicts: []
+  verdicts:
+  - stage: S5a
+    verdict: correct
+    by: refereeA
+    hash: 4e0bfa29089b
+    date: '2026-10-19'
+    model: claude-opus-5-5
+    evidence: '01:690: line 5 R equals line 3; this is an ∧I/∧E detour'
+  - stage: S5b
+    verdict: correct
+    by: refereeB
+    hash: 4e0bfa29089b
+    date: '2026-10-19'
+    model: claude-opus-5-5
+    evidence: '01:685-691: a ∧I/∧E detour; line 5 should cite line 3.'
 - key: check:01-finding-derivations:6
   kind: check
   file: 01-finding-derivations.md
   line: 726
   hash: f4182a490e9e
-  verdicts: []
+  verdicts:
+  - stage: S5a
+    verdict: correct
+    by: refereeA
+    hash: f4182a490e9e
+    date: '2026-10-19'
+    model: claude-opus-5-5
+    evidence: '01:731: affirming the consequent would give P from P→Q and Q (row 1)'
+  - stage: S5b
+    verdict: correct
+    by: refereeB
+    hash: f4182a490e9e
+    date: '2026-10-19'
+    model: claude-opus-5-5
+    evidence: '01:726-732: the first table row (→E on line 1) needs P; the mirror rule would give P from
+      P→Q and Q.'
 - key: exm-skeleton-odd-product
   kind: exm
   file: 01-finding-derivations.md
@@ -321,6 +511,24 @@ items:
     date: '2026-09-28'
     model: claude-opus-5-5
     evidence: 'authoring/reviews/ch02-S8-seam.md rows 3, 6, 22: method, worked searches, rules table'
+  - stage: S5a
+    verdict: correct
+    by: refereeA
+    hash: 8066c2799632
+    date: '2026-10-19'
+    model: claude-opus-5-5
+    evidence: '01:753: CP (prp-contrapositive, 2.3: P→Q ⊢ ¬Q→¬P) on ''m even → mn even''; ''not both''
+      gives mn not even; DS with ''m even or m odd'' and ''m not even'' gives m odd. Both hypotheses (m,
+      n integers; mn odd) are used. The witness step ''say m=2k'' is covered by the index''s quantifier
+      note'
+  - stage: S5b
+    verdict: minor
+    by: refereeB
+    hash: 8066c2799632
+    date: '2026-10-19'
+    model: claude-opus-5-5
+    evidence: 01-finding-derivations.md:1565 The parity facts the proof uses without @ref have a promised
+      source with no F1.7 row in STATUS's promise table, and the named source is the wrong chapter.
 - key: exr-finding-derivations-a1
   kind: exr
   file: 01-finding-derivations.md
@@ -355,12 +563,61 @@ items:
     date: '2026-09-28'
     model: claude-opus-5-5
     evidence: 'authoring/reviews/ch02-S8-seam.md rows 3, 6, 22: method, worked searches, rules table'
+  - stage: S5a
+    verdict: correct
+    by: refereeA
+    hash: aa855e65ff73
+    date: '2026-10-19'
+    model: claude-opus-5-5
+    evidence: '01:1016-1026: (a)-(d) name the right main connective and first rule; (e) and (f) give the
+      right elimination and its need'
+  - stage: S5b
+    verdict: minor
+    by: refereeB
+    hash: aa855e65ff73
+    date: '2026-10-19'
+    model: claude-opus-5-5
+    evidence: 01-finding-derivations.md:1016 (a)'s solution uses trichotomy and the sign of a cube without
+      a ledger line.
+  - stage: S6
+    verdict: correct
+    by: verifier
+    hash: aa855e65ff73
+    date: '2026-10-19'
+    model: claude-opus-5-5
+    evidence: '01:1000-1027. My answers agree with all six parts: (a) ->, ->I; (b) not, notI on ''n integer
+      with 2n=7''; (c) and, andI; (d) iff, iffI; (e) ->E needs P and Q, built by andI; (f) notE needs
+      P or Q, built by orI from Q. The RAA-versus-CP parenthetical in (a) is accurate.'
 - key: exr-finding-derivations-a2
   kind: exr
   file: 01-finding-derivations.md
   line: 1029
   hash: c296f14177a9
-  verdicts: []
+  verdicts:
+  - stage: S5a
+    verdict: correct
+    by: refereeA
+    hash: c296f14177a9
+    date: '2026-10-19'
+    model: claude-opus-5-5
+    evidence: '01:1051-1073: (e) 1, 3, 6 available and 4 not; (h) P=F, Q=T, R=F, S=T makes P∨Q, P→R, Q→S
+      true and R false; (j)-(l) derivations check (MT 5,4 in (l))'
+  - stage: S5b
+    verdict: minor
+    by: refereeB
+    hash: c296f14177a9
+    date: '2026-10-19'
+    model: claude-opus-5-5
+    evidence: 01-finding-derivations.md:1057 (d)'s answer contradicts step 3 as the section states it,
+      and (i)'s question and answer disagree in number.
+  - stage: S6
+    verdict: minor
+    by: verifier
+    hash: c296f14177a9
+    date: '2026-10-19'
+    model: claude-opus-5-5
+    evidence: 01-finding-derivations.md:1067 The stem of (i) asks for one refinement ('Which refinement
+      ... does this break'), but the solution answers 'Two refinements'.
 - key: exr-finding-derivations-b1
   kind: exr
   file: 01-finding-derivations.md
@@ -396,6 +653,34 @@ items:
     date: '2026-09-28'
     model: claude-opus-5-5
     evidence: 'authoring/reviews/ch02-S8-seam.md rows 3, 6, 22: method, worked searches, rules table'
+  - stage: S5a
+    verdict: correct
+    by: refereeA
+    hash: 61b24af8559b
+    date: '2026-10-19'
+    model: claude-opus-5-5
+    evidence: '01:1097-1157 checked: (b) VI 2, RAA 2-4, R 6, ¬I 6-10; the 15-line count holds (+3). (c)
+      has 8 lines. The unproved remark that no RAA-free derivation of P exists is true (intuitionistically
+      invalid) and is marked as unproved'
+  - stage: S5b
+    verdict: correct
+    by: refereeB
+    hash: 61b24af8559b
+    date: '2026-10-19'
+    model: claude-opus-5-5
+    evidence: 01:1092-1162. (a) 7 lines, (b) 12 lines (VI from @prp-vacuous-implication; 15 lines with
+      primitives, +3 checked), (c) 8 lines, all legal. The 'RAA box on ¬(P∨Q) with two manufactured clashes'
+      alternative was checked.
+  - stage: S6
+    verdict: correct
+    by: verifier
+    hash: 61b24af8559b
+    date: '2026-10-19'
+    model: claude-opus-5-5
+    evidence: '01:1078-1162. I solved (a)-(c) first, and my derivations match the book''s: (a) the chain
+      P, Q, R; (b) RAA plus VI for P and notI for notQ; (c) LEM on P. The sequents are valid by truth
+      table and check_fitch reports 0 errors. Count in (b): replacing line 3 by a 4-line box gives +3,
+      so 15 lines, as stated. Each part has a worked example: exm-search-distribute, exm-search-raa, exm-search-postpone-or.'
 - key: exr-finding-derivations-b2
   kind: exr
   file: 01-finding-derivations.md
@@ -430,6 +715,29 @@ items:
     date: '2026-09-28'
     model: claude-opus-5-5
     evidence: 'authoring/reviews/ch02-S8-seam.md rows 3, 6, 22: method, worked searches, rules table'
+  - stage: S5a
+    verdict: correct
+    by: refereeA
+    hash: 87c40520423b
+    date: '2026-10-19'
+    model: claude-opus-5-5
+    evidence: '01:1208: →I 3-8; line 8 lies in the outer box only'
+  - stage: S5b
+    verdict: correct
+    by: refereeB
+    hash: 87c40520423b
+    date: '2026-10-19'
+    model: claude-opus-5-5
+    evidence: 01:1164-1214. The given lines 1-8 are legal; line 9 = P→¬R by →I 3-8 completes it. The \purpose
+      on line 3 is allowed, since no line closes that box yet.
+  - stage: S6
+    verdict: correct
+    by: verifier
+    hash: 87c40520423b
+    date: '2026-10-19'
+    model: claude-opus-5-5
+    evidence: '01:1164-1214. The only completion is ->I 3-8, giving P -> notR. Line 8 lies in the outer
+      box itself. Valid by truth table. Worked example: exm-search-distribute.'
 - key: exr-finding-derivations-b3
   kind: exr
   file: 01-finding-derivations.md
@@ -464,12 +772,59 @@ items:
     date: '2026-09-28'
     model: claude-opus-5-5
     evidence: 'authoring/reviews/ch02-S8-seam.md rows 3, 6, 22: method, worked searches, rules table'
+  - stage: S5a
+    verdict: correct
+    by: refereeA
+    hash: ad883bb6926f
+    date: '2026-10-19'
+    model: claude-opus-5-5
+    evidence: 01:1225-1241 checked; the description matches
+  - stage: S5b
+    verdict: correct
+    by: refereeB
+    hash: ad883bb6926f
+    date: '2026-10-19'
+    model: claude-opus-5-5
+    evidence: 01:1216-1245. The 10-line derivation is legal; the description is three sentences plus a
+      parenthesis.
+  - stage: S6
+    verdict: correct
+    by: verifier
+    hash: ad883bb6926f
+    date: '2026-10-19'
+    model: claude-opus-5-5
+    evidence: 01:1216-1245. The 10-line derivation is correct (check_fitch 0 errors, sequent valid). The
+      three-sentence description names the goal-directed and premise-directed steps accurately.
 - key: exr-finding-derivations-b4
   kind: exr
   file: 01-finding-derivations.md
   line: 1247
   hash: 430d6ad31dc7
-  verdicts: []
+  verdicts:
+  - stage: S5a
+    verdict: correct
+    by: refereeA
+    hash: 430d6ad31dc7
+    date: '2026-10-19'
+    model: claude-opus-5-5
+    evidence: '01:1281-1300: the detour pairs 6-7 and 9-10 are right; the 6-line rewrite checks; (d) replaces
+      asm 4 by line 3'
+  - stage: S5b
+    verdict: correct
+    by: refereeB
+    hash: 430d6ad31dc7
+    date: '2026-10-19'
+    model: claude-opus-5-5
+    evidence: 01:1247-1303. The given 11-line derivation is legal; the detour pairs 6-7 and 9-10, the
+      rebuilt premise at line 6, the 6-line rewrite, and (d)'s copied line were all checked.
+  - stage: S6
+    verdict: minor
+    by: verifier
+    hash: 430d6ad31dc7
+    date: '2026-10-19'
+    model: claude-opus-5-5
+    evidence: '01-finding-derivations.md:1302 An authoring note leaked into the reader-facing solution.
+      ''Worked example of this type: ...'' is blueprint metadata and appears nowhere else in the book.'
 - key: exr-finding-derivations-c1
   kind: exr
   file: 01-finding-derivations.md
@@ -504,6 +859,31 @@ items:
     date: '2026-09-28'
     model: claude-opus-5-5
     evidence: 'authoring/reviews/ch02-S8-seam.md rows 3, 6, 22: method, worked searches, rules table'
+  - stage: S5a
+    verdict: correct
+    by: refereeA
+    hash: a85d1da4a997
+    date: '2026-10-19'
+    model: claude-opus-5-5
+    evidence: 01:1350-1369 checked; ∨E 1,2-5,6-11
+  - stage: S5b
+    verdict: correct
+    by: refereeB
+    hash: a85d1da4a997
+    date: '2026-10-19'
+    model: claude-opus-5-5
+    evidence: 01:1307-1373. The schema's lines 1-5 and 12 match the solution; Hint 2 (line 7 = Q, ∧E 6)
+      matches; the derivation is legal; the sibling-box pointer is checked against 2.5 C2 (b).
+  - stage: S6
+    verdict: correct
+    by: verifier
+    hash: a85d1da4a997
+    date: '2026-10-19'
+    model: claude-opus-5-5
+    evidence: '01:1307-1373. The blank has one reasonable completion up to order: andE twice, orI twice,
+      andI. The solution matches it. Hint 1 names the tools and Hint 2 gives the first line, so neither
+      executes the key idea. The cited exr-reductio-and-classical-rules-c2 is indeed the sibling-box error
+      (05:1674).'
 - key: exr-finding-derivations-c2
   kind: exr
   file: 01-finding-derivations.md
@@ -553,6 +933,52 @@ items:
     date: '2026-09-28'
     model: claude-opus-5-5
     evidence: 'authoring/reviews/ch02-S8-seam.md rows 3, 6, 22: method, worked searches, rules table'
+  - stage: S5a
+    verdict: minor
+    by: refereeA
+    hash: 6b6e4dfaa1aa
+    date: '2026-10-19'
+    model: claude-opus-5-5
+    evidence: 01-finding-derivations.md:1429 In the reworded solution (b), 'and RAA only inside it' can
+      be read as saying that RAA occurs inside the case boxes of the derivation, where it does not occur.
+  - stage: S5b
+    verdict: correct
+    by: refereeB
+    hash: 6b6e4dfaa1aa
+    date: '2026-10-19'
+    model: claude-opus-5-5
+    evidence: Re-reviewed (b) by hand at 01:1429. 'RAA only inside it' uses the same idiom as Ch2 05 ('the
+      only RAA is inside it' of LEM). Steps 2/3/4 are correctly ruled out. The breaking choices check
+      out (P true, Q false; P false, Q true). The plain Chapter 4 pointer is in STATUS row 69. The hedge
+      on 'every derivation uses RAA' is present. The 13-line derivation in (a) is legal; the marking scheme
+      sums to 10
+  - stage: S6
+    verdict: minor
+    by: verifier
+    hash: 6b6e4dfaa1aa
+    date: '2026-10-19'
+    model: claude-opus-5-5
+    evidence: 01-finding-derivations.md:1435 The 2-point bullet for the case notQ requires 'a box that
+      clashes with the case assumption, then botE'. It fails the natural route that cites VI.
+  - stage: S6
+    verdict: minor
+    by: verifier
+    hash: 6b6e4dfaa1aa
+    date: '2026-10-19'
+    model: claude-opus-5-5
+    evidence: 01-finding-derivations.md:1429 In the reworded (b), 'RAA only inside it' can be misread
+      as saying that RAA appears inside the derivation's boxes. The derivation has no RAA line. RAA occurs
+      only in the proof of the derived rule LEM.
+  - stage: S8
+    verdict: minor
+    by: seam
+    hash: 6b6e4dfaa1aa
+    date: '2026-10-19'
+    model: claude-opus-5-5
+    evidence: '01-finding-derivations.md:1429 In (b), re-reviewed by hand: "LEM is used at line 1, and
+      RAA only inside it" reads as if the derivation of (a) has an RAA line, and it has none. The intended
+      meaning, that RAA appears only inside the derivation of LEM, is not said. The reworded parts are
+      correct.'
 - key: exr-finding-derivations-c3
   kind: exr
   file: 01-finding-derivations.md
@@ -618,6 +1044,30 @@ items:
     date: '2026-09-28'
     model: claude-opus-5-5
     evidence: 'authoring/reviews/ch02-S8-seam.md rows 3, 6, 22: method, worked searches, rules table'
+  - stage: S5a
+    verdict: minor
+    by: refereeA
+    hash: 2105f7adb26e
+    date: '2026-10-19'
+    model: claude-opus-5-5
+    evidence: 01-finding-derivations.md:1499 The fatal-error rule contradicts the scheme's own award for
+      the LEM-on-Q route.
+  - stage: S5b
+    verdict: minor
+    by: refereeB
+    hash: 2105f7adb26e
+    date: '2026-10-19'
+    model: claude-opus-5-5
+    evidence: 01-finding-derivations.md:1499 The marking scheme contradicts itself on RAA boxes.
+  - stage: S6
+    verdict: minor
+    by: verifier
+    hash: 2105f7adb26e
+    date: '2026-10-19'
+    model: claude-opus-5-5
+    evidence: 01-finding-derivations.md:1499 The marking scheme contradicts itself. Line 1495 says to
+      award the LEM-on-Q route, but the fatal-error clause at line 1499 gives 0 for any RAA box opened
+      with anything but not(P or notQ).
 - key: exr-finding-derivations-c4
   kind: exr
   file: 01-finding-derivations.md
@@ -666,222 +1116,1001 @@ items:
     date: '2026-09-28'
     model: claude-opus-5-5
     evidence: 'authoring/reviews/ch02-S8-seam.md rows 3, 6, 22: method, worked searches, rules table'
+  - stage: S5a
+    verdict: correct
+    by: refereeA
+    hash: 9d788a0aa7ac
+    date: '2026-10-19'
+    model: claude-opus-5-5
+    evidence: 01:1519-1550 checked; the ¬¬Q explanation is right
+  - stage: S5b
+    verdict: correct
+    by: refereeB
+    hash: 9d788a0aa7ac
+    date: '2026-10-19'
+    model: claude-opus-5-5
+    evidence: 01:1502-1551. Both 6-line derivations are legal, and the ¬I-gives-¬¬Q explanation is accurate.
+  - stage: S6
+    verdict: correct
+    by: verifier
+    hash: 9d788a0aa7ac
+    date: '2026-10-19'
+    model: claude-opus-5-5
+    evidence: 01:1502-1550. (a) uses notI and (b) uses RAA; both are valid by truth table and check_fitch
+      reports 0 errors. The explanation of notnotQ versus Q is accurate.
 - key: check:02-four-kinds-of-task:1
   kind: check
   file: 02-four-kinds-of-task.md
   line: 25
   hash: 3c4ce4181b55
-  verdicts: []
+  verdicts:
+  - stage: S5a
+    verdict: correct
+    by: refereeA
+    hash: 3c4ce4181b55
+    date: '2026-10-19'
+    model: claude-opus-5-5
+    evidence: '25-31: tasks named correctly; (iv) P→Q, Q ⊢ P is affirming the consequent (Section 1.3
+      = file 04-using-an-implication), and it breaks with P false, Q true'
+  - stage: S5b
+    verdict: correct
+    by: refereeB
+    hash: 3c4ce4181b55
+    date: '2026-10-19'
+    model: claude-opus-5-5
+    evidence: 02:25-31. The four classifications are right; for (iv), affirming the consequent is in Section
+      1.3 (04-using-an-implication.md:103).
 - key: exm-theorem-search
   kind: exm
   file: 02-four-kinds-of-task.md
   line: 37
   hash: 57c011cfeaad
-  verdicts: []
+  verdicts:
+  - stage: S5a
+    verdict: correct
+    by: refereeA
+    hash: 57c011cfeaad
+    date: '2026-10-19'
+    model: claude-opus-5-5
+    evidence: '79-93: check_fitch passes; →I 1-7, ¬I 2-6, →E 1,2, ∧E, ¬E 4,5 in φ,¬φ order; line 97: def-derived-rule
+      with n=0, as LEM is used'
+  - stage: S5b
+    verdict: correct
+    by: refereeB
+    hash: 57c011cfeaad
+    date: '2026-10-19'
+    model: claude-opus-5-5
+    evidence: 02:37-95. The step attributions (1, 2, 2, 3, 4) match 3.1's steps at 01:68-79. The two snapshots
+      and the final derivation are consistent; check_fitch reports 0 errors.
 - key: exm-equivalence-search
   kind: exm
   file: 02-four-kinds-of-task.md
   line: 101
   hash: 578457c4ff05
-  verdicts: []
+  verdicts:
+  - stage: S5a
+    verdict: correct
+    by: refereeA
+    hash: 578457c4ff05
+    date: '2026-10-19'
+    model: claude-opus-5-5
+    evidence: '142-216: DS 5,4 matches P∨Q, ¬P ⊢ Q (prp-disjunctive-syllogism); LEM written as a rule
+      with no citation (2.5:347); ∨E 3,4-5,6-9; the ab=0 reading matches P: ab=0, Q: a=0, R: b=0'
+  - stage: S5b
+    verdict: minor
+    by: refereeB
+    hash: 578457c4ff05
+    date: '2026-10-19'
+    model: claude-opus-5-5
+    evidence: 02-four-kinds-of-task.md:156 The text says the well-chosen statement is "Q, the one the
+      premise waits for". The premise waits for ¬Q, as the same sentence says two clauses earlier ("P
+      is in hand, ¬Q is not").
 - key: def-inconsistent-set
   kind: def
   file: 02-four-kinds-of-task.md
   line: 226
   hash: 3148a0082c20
-  verdicts: []
+  verdicts:
+  - stage: S5a
+    verdict: correct
+    by: refereeA
+    hash: 3148a0082c20
+    date: '2026-10-19'
+    model: claude-opus-5-5
+    evidence: '226-233: consistent with def-derivable (n ≥ 0, premises belong to Γ); line 235: the remarks
+      on P,¬P and on ⊥ ∈ Γ are correct'
+  - stage: S5b
+    verdict: correct
+    by: refereeB
+    hash: 3148a0082c20
+    date: '2026-10-19'
+    model: claude-opus-5-5
+    evidence: '02:226-233 matches @def-derivable (02-derivations.md:214): premises "belong to" Γ, n ≥
+      0. NOTATION:154 agrees (syntactic sense).'
 - key: prp-inconsistent-derives-everything
   kind: prp
   file: 02-four-kinds-of-task.md
   line: 237
   hash: 41ea14193aeb
-  verdicts: []
+  verdicts:
+  - stage: S5a
+    verdict: correct
+    by: refereeA
+    hash: 41ea14193aeb
+    date: '2026-10-19'
+    model: claude-opus-5-5
+    evidence: '393: (i)⇒(ii) appends a ⊥E line that cites a last line lying in no box; (ii)⇒(iii) trivial;
+      (iii)⇒(i) by lem-weakening-cut (c) with m=2 and χ,¬χ ⊢ ⊥; uses only earlier material'
+  - stage: S5b
+    verdict: correct
+    by: refereeB
+    hash: 41ea14193aeb
+    date: '2026-10-19'
+    model: claude-opus-5-5
+    evidence: 02:237-249. The statement is true. @prp-ex-falso is P, ¬P ⊢ Q (01-contradiction:166), so
+      "grown from two premises" is accurate. The proof is in the fold of the next subsection (02:391),
+      as the text says.
 - key: check:02-four-kinds-of-task:2
   kind: check
   file: 02-four-kinds-of-task.md
   line: 251
   hash: 64e6ff7b65e6
-  verdicts: []
+  verdicts:
+  - stage: S5a
+    verdict: correct
+    by: refereeA
+    hash: 64e6ff7b65e6
+    date: '2026-10-19'
+    model: claude-opus-5-5
+    evidence: '256: (i)⇒(ii) applied to the inconsistent list P,¬P'
+  - stage: S5b
+    verdict: correct
+    by: refereeB
+    hash: 64e6ff7b65e6
+    date: '2026-10-19'
+    model: claude-opus-5-5
+    evidence: 02:251-257. The answer cites (i)⇒(ii) correctly.
 - key: exm-inconsistency-search
   kind: exm
   file: 02-four-kinds-of-task.md
   line: 259
   hash: 9b1b289433a0
-  verdicts: []
+  verdicts:
+  - stage: S5a
+    verdict: correct
+    by: refereeA
+    hash: 9b1b289433a0
+    date: '2026-10-19'
+    model: claude-opus-5-5
+    evidence: '313-330: check_fitch passes (one-line box 5-5, ∨E, →E, ¬E 9,4); n=6, 1, 3, 12 each break
+      exactly (1), (2), (3), (4) (checked by hand; sidecar ok)'
+  - stage: S5b
+    verdict: correct
+    by: refereeB
+    hash: 9b1b289433a0
+    date: '2026-10-19'
+    model: claude-opus-5-5
+    evidence: 02:259-334. Derivation checked. n=6, 1, 3 and 12 each fail exactly (1), (2), (3) and (4)
+      respectively; the sidecar passes. The quoted fold title "Logic permits; it does not choose" exists
+      at 01:773, and the refinement it cites exists at 01:592.
 - key: check:02-four-kinds-of-task:3
   kind: check
   file: 02-four-kinds-of-task.md
   line: 336
   hash: a1f738bed000
-  verdicts: []
+  verdicts:
+  - stage: S5a
+    verdict: correct
+    by: refereeA
+    hash: a1f738bed000
+    date: '2026-10-19'
+    model: claude-opus-5-5
+    evidence: '341: in 1..10, (4) removes 4 and 8, (1) removes 2, 6, 10, (2) leaves only 3 and 9, and
+      both break (3)'
+  - stage: S5b
+    verdict: correct
+    by: refereeB
+    hash: a1f738bed000
+    date: '2026-10-19'
+    model: claude-opus-5-5
+    evidence: 02:336-342. In 1..10, the evens 2, 6, 10 fail (1), and 4, 8 fail (4). The odd multiples
+      of 3 are 3 and 9, and both break (3).
 - key: exm-inconsistent-lists
   kind: exm
   file: 02-four-kinds-of-task.md
   line: 346
   hash: 3ef465e071fc
-  verdicts: []
+  verdicts:
+  - stage: S5a
+    verdict: correct
+    by: refereeA
+    hash: 3ef465e071fc
+    date: '2026-10-19'
+    model: claude-opus-5-5
+    evidence: '351-355: line counts 7, 8, 4 verified; row 2 avoids the ¬I/¬E detour, as 3.1:679 requires;
+      row 3: VI is ¬P ⊢ P→Q; look-alike: P false makes both members true; the G10-safe wording is kept'
+  - stage: S5b
+    verdict: correct
+    by: refereeB
+    hash: 3ef465e071fc
+    date: '2026-10-19'
+    model: claude-opus-5-5
+    evidence: '02:349-356. Line counts recomputed: 7, 8 and 4. Row 2 has no detour, which is consistent
+      with 01:679 ("an introduced line cited elsewhere stays"). The ''Not an instance'' list is true when
+      P is false. The pointer to Section 3.3 matches 03:324.'
 - key: prp-derivable-iff-negation-inconsistent
   kind: prp
   file: 02-four-kinds-of-task.md
   line: 376
   hash: 5a7def1bf8d2
-  verdicts: []
+  verdicts:
+  - stage: S5a
+    verdict: correct
+    by: refereeA
+    hash: 5a7def1bf8d2
+    date: '2026-10-19'
+    model: claude-opus-5-5
+    evidence: '376-385: both parts are true; line 389''s reading with Γ empty matches lem-not-iff-own-negation
+      (⊢ ¬(P↔¬P))'
+  - stage: S5b
+    verdict: minor
+    by: refereeB
+    hash: 5a7def1bf8d2
+    date: '2026-10-19'
+    model: claude-opus-5-5
+    evidence: '02-four-kinds-of-task.md:387 False pointer: "Section 1.1''s two attacks on a claim are
+      now two tasks on one list: make it true, or derive ⊥ from it." Section 1.1''s two attacks are something
+      else.'
 - key: proof:prp-derivable-iff-negation-inconsistent
   kind: proof
   file: 02-four-kinds-of-task.md
   line: 392
   hash: 465662195e58
-  verdicts: []
+  verdicts:
+  - stage: S5a
+    verdict: correct
+    by: refereeA
+    hash: 465662195e58
+    date: '2026-10-19'
+    model: claude-opus-5-5
+    evidence: '393: proof of prp-inconsistent-derives-everything; every cited part of lem-weakening-cut
+      (c) is used with its hypotheses (m≥1)'
+  - stage: S5b
+    verdict: correct
+    by: refereeB
+    hash: 465662195e58
+    date: '2026-10-19'
+    model: claude-opus-5-5
+    evidence: 02:392-394 is the proof of prp-inconsistent-derives-everything. (i)⇒(ii) appends ⊥E. (iii)⇒(i)
+      applies @lem-weakening-cut (c), which is Chaining (03-derived-rules:228), to χ, ¬χ ⊢ ⊥. The part
+      letter is right.
 - key: proof:prp-derivable-iff-negation-inconsistent#2
   kind: proof
   file: 02-four-kinds-of-task.md
   line: 396
   hash: 2815587fe12c
-  verdicts: []
+  verdicts:
+  - stage: S5a
+    verdict: minor
+    by: refereeA
+    hash: 2815587fe12c
+    date: '2026-10-19'
+    model: claude-opus-5-5
+    evidence: '02-four-kinds-of-task.md:399 In the proof of (b), (⇐), the case split leaves one case unmentioned:
+      the last line of D could be the premise ¬φ (not in Γ). If it were, the ''Otherwise'' construction
+      would give a box whose last line is ¬φ, not ⊥, and RAA would not apply. The case cannot happen,
+      because ⊥ is not a negation, but the proof never says so. Part (a) does treat the matching case
+      explicitly (l'
+  - stage: S5b
+    verdict: minor
+    by: refereeB
+    hash: 2815587fe12c
+    date: '2026-10-19'
+    model: claude-opus-5-5
+    evidence: 02-four-kinds-of-task.md:399 In (b)(⇐), the case split is "last line of D is a premise in
+      Γ" / "Otherwise". The construction under "Otherwise" needs the last line of D to be a non-premise,
+      but the case where it is the premise ¬φ is never mentioned. Part (a) does treat its analogue explicitly.
 - key: check:02-four-kinds-of-task:4
   kind: check
   file: 02-four-kinds-of-task.md
   line: 409
   hash: 17c6920859d8
-  verdicts: []
+  verdicts:
+  - stage: S5a
+    verdict: correct
+    by: refereeA
+    hash: 17c6920859d8
+    date: '2026-10-19'
+    model: claude-opus-5-5
+    evidence: '414-425: part (a) with Γ empty and φ = P∧¬P; the derivation is valid'
+  - stage: S5b
+    verdict: correct
+    by: refereeB
+    hash: 17c6920859d8
+    date: '2026-10-19'
+    model: claude-opus-5-5
+    evidence: 02:409-426. Part (a) with Γ empty and φ = P∧¬P gives the list P∧¬P, and the 4-line derivation
+      is correct.
 - key: exm-derive-or-break-search
   kind: exm
   file: 02-four-kinds-of-task.md
   line: 449
   hash: b13eb1edb54a
-  verdicts: []
+  verdicts:
+  - stage: S5a
+    verdict: correct
+    by: refereeA
+    hash: b13eb1edb54a
+    date: '2026-10-19'
+    model: claude-opus-5-5
+    evidence: '500-516: check_fitch passes; (b)''s break: P, Q true and R false makes P→(Q∨R), P→¬R, ¬(P→¬Q)
+      all true; at x=2: 2>0, 2>1, not 2>3; the closing sentence follows G10'
+  - stage: S5b
+    verdict: correct
+    by: refereeB
+    hash: b13eb1edb54a
+    date: '2026-10-19'
+    model: claude-opus-5-5
+    evidence: 02:449-522. In (a) the forced attempt is right and the derivation is correct. In (b), x=2
+      with x>0, x>1, x>3 makes all three members true; the sidecar passes. The pointers Section 1.5 (06-disjunction-introduction:474)
+      and Section 1.1 'Where to look first' (01:335) are correct.
 - key: check:02-four-kinds-of-task:5
   kind: check
   file: 02-four-kinds-of-task.md
   line: 545
   hash: dd3f1dfcf3e4
-  verdicts: []
+  verdicts:
+  - stage: S5a
+    verdict: minor
+    by: refereeA
+    hash: dd3f1dfcf3e4
+    date: '2026-10-19'
+    model: claude-opus-5-5
+    evidence: 02-four-kinds-of-task.md:570 The Quick check says 'derive it'. The solution's last sentence
+      claims that two more replacements give derivable claims, but gives no derivation for either. In
+      this book a derivability claim is shown by a derivation, and the sidecar's truth-table check is
+      not available to the reader before Chapter 4 (completeness). Both derivations are short, so a reader
+      can supply them
+  - stage: S5b
+    verdict: correct
+    by: refereeB
+    hash: dd3f1dfcf3e4
+    date: '2026-10-19'
+    model: claude-opus-5-5
+    evidence: 02:545-571. The ∧ derivation is correct. Replacing ∨ by →, by ↔, or Q by R each gives a
+      derivable claim, checked by hand.
 - key: exr-four-kinds-of-task-a1
   kind: exr
   file: 02-four-kinds-of-task.md
   line: 583
   hash: 528911fdd767
-  verdicts: []
+  verdicts:
+  - stage: S5a
+    verdict: correct
+    by: refereeA
+    hash: 528911fdd767
+    date: '2026-10-19'
+    model: claude-opus-5-5
+    evidence: '596-604: (b) counterexample set correct; (c) one-line derivation; (d) weakening (a); (e)
+      prp-and-commutes with the letters exchanged'
+  - stage: S5b
+    verdict: correct
+    by: refereeB
+    hash: 528911fdd767
+    date: '2026-10-19'
+    model: claude-opus-5-5
+    evidence: 02:583-605. (b) uses part (b) correctly. (c) A one-line derivation is legal under @def-derivation.
+      (d) uses lem-weakening-cut (a), Weakening. (e) @prp-and-commutes is P∧Q ⊢ Q∧P.
+  - stage: S6
+    verdict: correct
+    by: verifier
+    hash: 528911fdd767
+    date: '2026-10-19'
+    model: claude-opus-5-5
+    evidence: 02:583-605. All five parts agree with my answers. (d) cites lem-weakening-cut (a), which
+      is weakening (03-derived-rules.md:224).
 - key: exr-four-kinds-of-task-a2
   kind: exr
   file: 02-four-kinds-of-task.md
   line: 607
   hash: 00fe8e660bd3
-  verdicts: []
+  verdicts:
+  - stage: S5a
+    verdict: correct
+    by: refereeA
+    hash: 00fe8e660bd3
+    date: '2026-10-19'
+    model: claude-opus-5-5
+    evidence: '629-651: all answers checked; (d) and (k) have the ¬E order φ,¬φ; (l) ∨E with both boxes
+      ending ⊥; (f) both claims found, and Q is correctly excluded'
+  - stage: S5b
+    verdict: correct
+    by: refereeB
+    hash: 00fe8e660bd3
+    date: '2026-10-19'
+    model: claude-opus-5-5
+    evidence: '02:607-652. All 12 parts checked. The line numbers in (d), (k) and (l) match the premise
+      counts. (f) is right: both claims are named, and Q is not a negation.'
+  - stage: S6
+    verdict: correct
+    by: verifier
+    hash: 00fe8e660bd3
+    date: '2026-10-19'
+    model: claude-opus-5-5
+    evidence: '02:607-654. All 12 parts are correct. (f) lists both claims, which is consistent with def-counterexample-set
+      (premises plus the negated conclusion). (k) and (l): both derivations are legal.'
 - key: exr-four-kinds-of-task-b1
   kind: exr
   file: 02-four-kinds-of-task.md
   line: 656
   hash: c3b355caaec7
-  verdicts: []
+  verdicts:
+  - stage: S5a
+    verdict: correct
+    by: refereeA
+    hash: c3b355caaec7
+    date: '2026-10-19'
+    model: claude-opus-5-5
+    evidence: '672-748: check_fitch passes; (a) no detour (line 10 ¬P feeds ∨I); (c) VI 3, RAA 3-7; the
+      step attributions are consistent with 3.1''s steps 2-5'
+  - stage: S5b
+    verdict: minor
+    by: refereeB
+    hash: c3b355caaec7
+    date: '2026-10-19'
+    model: claude-opus-5-5
+    evidence: 02-four-kinds-of-task.md:698 B1 asks which step opens each box. Box 7 (assumption P, closed
+      by ¬I to give ¬P) is credited to step 4, but by 3.1's own step text and its practice, step 2 opens
+      it.
+  - stage: S6
+    verdict: correct
+    by: verifier
+    hash: c3b355caaec7
+    date: '2026-10-19'
+    model: claude-opus-5-5
+    evidence: '02:656-751. All three theorems are tautologies (truth table) and check_fitch reports 0
+      errors. The box attributions are right: in (a), box 7 is a manufactured clash (step 4); in (c),
+      box 3 is RAA (step 5). Worked example: exm-theorem-search.'
 - key: exr-four-kinds-of-task-b2
   kind: exr
   file: 02-four-kinds-of-task.md
   line: 753
   hash: fe2d263f5da1
-  verdicts: []
+  verdicts:
+  - stage: S5a
+    verdict: correct
+    by: refereeA
+    hash: fe2d263f5da1
+    date: '2026-10-19'
+    model: claude-opus-5-5
+    evidence: '784-825: both derivations are valid; the stage shown is the (⇐) direction; (c) correctly
+      says RAA is used only in (⇐), and only of these derivations'
+  - stage: S5b
+    verdict: correct
+    by: refereeB
+    hash: fe2d263f5da1
+    date: '2026-10-19'
+    model: claude-opus-5-5
+    evidence: '02:753-830. Both derivations are correct. (c): RAA appears at line 9 of (⇐) only. The direction
+      named in the ''In words'' line is correct.'
+  - stage: S6
+    verdict: correct
+    by: verifier
+    hash: fe2d263f5da1
+    date: '2026-10-19'
+    model: claude-opus-5-5
+    evidence: '02:753-830. The scaffold''s gap (lines 3-8) has one reasonable completion, andE twice then
+      the RAA box, and the solution gives it. The two sides are equivalent by truth table. (c) is correctly
+      limited to ''our two derivations''. Worked example: exm-equivalence-search.'
 - key: exr-four-kinds-of-task-b3
   kind: exr
   file: 02-four-kinds-of-task.md
   line: 832
   hash: 056435bfb0a3
-  verdicts: []
+  verdicts:
+  - stage: S5a
+    verdict: correct
+    by: refereeA
+    hash: 056435bfb0a3
+    date: '2026-10-19'
+    model: claude-opus-5-5
+    evidence: '853-964: breaks (a), (d), (f), (g) checked at the stated x; derivations (b), (c), (e),
+      (h), (i) pass check_fitch; R reiteration inside the ↔I boxes is legal; DS and MT shapes match'
+  - stage: S5b
+    verdict: correct
+    by: refereeB
+    hash: 056435bfb0a3
+    date: '2026-10-19'
+    model: claude-opus-5-5
+    evidence: 02:832-965. The breaks (a), (d), (f), (g) were checked at their stated x, and the sidecar
+      passes. The derivations (b), (c), (e), (h), (i) are correct. DS refutes the left disjunct as stated
+      in 2.3 (03-derived-rules:272). The pointers Sections 1.3 and 1.6 are correct. The 'used later' promise
+      is in STATUS row 91.
+  - stage: S6
+    verdict: minor
+    by: verifier
+    hash: 056435bfb0a3
+    date: '2026-10-19'
+    model: claude-opus-5-5
+    evidence: 02-four-kinds-of-task.md:853 The De Morgan parenthetical in (a) contradicts itself. The
+      law it cites does not differ from the claim by 'the wrong connective inside the negation'.
+  - stage: S8
+    verdict: minor
+    by: seam
+    hash: 056435bfb0a3
+    date: '2026-10-19'
+    model: claude-opus-5-5
+    evidence: 02-four-kinds-of-task.md:855 Claim (b), ¬(P ↔ Q), P ⊢ ¬Q, is the first box of Chapter 2's
+      @exr-reductio-and-classical-rules-b5 (f), and the solution prints the same 10 lines without crediting
+      it. S2 round 1 replaced (a) for exactly this kind of overlap with 2.5 B5.
 - key: exr-four-kinds-of-task-b4
   kind: exr
   file: 02-four-kinds-of-task.md
   line: 967
   hash: 82efac041849
-  verdicts: []
+  verdicts:
+  - stage: S5a
+    verdict: correct
+    by: refereeA
+    hash: 82efac041849
+    date: '2026-10-19'
+    model: claude-opus-5-5
+    evidence: '983-1040: (b), (d), (f) true at once, checked; (c) and (e) are valid, and (c) line 7 is
+      not a detour; adding ¬(¬P∧¬Q) to (f) makes it inconsistent; the Section 4.7 pointer is an allowed
+      plain pointer'
+  - stage: S5b
+    verdict: correct
+    by: refereeB
+    hash: 82efac041849
+    date: '2026-10-19'
+    model: claude-opus-5-5
+    evidence: 02:967-1041. (a), (c) and (e) derive ⊥. (b), (d) and (f) are true at the stated statements.
+      The fourth-member sketch for (f) covers all four LEM cases. The pointer to 4.7 is in STATUS row
+      69 and is soundness per layout-final:142.
+  - stage: S6
+    verdict: correct
+    by: verifier
+    hash: 82efac041849
+    date: '2026-10-19'
+    model: claude-opus-5-5
+    evidence: 02:967-1043. By truth table (a), (c), (e) are unsatisfiable, and (b), (d), (f) are satisfied
+      at the stated statements (x=1; P '0=1'; 1>2 and 2>3). With the fourth member added, (f) is unsatisfiable.
+      The derivations are legal. The 4.7 pointer matches layout-final ('satisfiable => consistent').
 - key: exr-four-kinds-of-task-c1
   kind: exr
   file: 02-four-kinds-of-task.md
   line: 1045
   hash: 052562f04d56
-  verdicts: []
+  verdicts:
+  - stage: S5a
+    verdict: correct
+    by: refereeA
+    hash: 052562f04d56
+    date: '2026-10-19'
+    model: claude-opus-5-5
+    evidence: '1059-1100: derivation valid; 11-line count correct; (d) at x=1: P, R, T true and Q, S false
+      makes all four members true'
+  - stage: S5b
+    verdict: correct
+    by: refereeB
+    hash: 052562f04d56
+    date: '2026-10-19'
+    model: claude-opus-5-5
+    evidence: 02:1045-1101. The derivation is correct. The direct derivation has 3+8 = 11 lines. (d) at
+      x=1 makes all four members true; the sidecar passes. The marking scheme totals 2+3+2+3 = 10.
+  - stage: S6
+    verdict: minor
+    by: verifier
+    hash: 052562f04d56
+    date: '2026-10-19'
+    model: claude-opus-5-5
+    evidence: 02-four-kinds-of-task.md:1096 The 3-point bullet for (b) fixes one route ('P -> S built
+      by a box, the cases of Q or R both ending in S'). It fails a correct derived-rule route.
 - key: exr-four-kinds-of-task-c2
   kind: exr
   file: 02-four-kinds-of-task.md
   line: 1103
   hash: 21005e59689b
-  verdicts: []
+  verdicts:
+  - stage: S5a
+    verdict: correct
+    by: refereeA
+    hash: 21005e59689b
+    date: '2026-10-19'
+    model: claude-opus-5-5
+    evidence: '1116-1131: (a) uses prp (a) for ¬φ and (b) for φ, then (iii)⇒(i); (b) is the correct contrapositive;
+      (c) asserts no particular list consistent (G10); Section 4.10 marked optional, matching layout-final'
+  - stage: S5b
+    verdict: correct
+    by: refereeB
+    hash: 21005e59689b
+    date: '2026-10-19'
+    model: claude-opus-5-5
+    evidence: '02:1103-1132. (a) applies prp (a) and (b), then (iii)⇒(i). The reworded (b) solution, "the
+      contrapositive of (a): if both lists were inconsistent, Γ would be", is exactly the contrapositive
+      given that consistent means not inconsistent. (c) agrees with 02:235. The pointer to 4.10 (optional,
+      Lindenbaum) is in STATUS row 92 and layout-final:145. The marking scheme totals 10.'
+  - stage: S6
+    verdict: minor
+    by: verifier
+    hash: 21005e59689b
+    date: '2026-10-19'
+    model: claude-opus-5-5
+    evidence: 02-four-kinds-of-task.md:1126 The marking scheme fails a correct proof that does not use
+      part (b) of the proposition.
 - key: check:03-from-argument-to-derivation:1
   kind: check
   file: 03-from-argument-to-derivation.md
   line: 17
   hash: 49659d463cfe
-  verdicts: []
+  verdicts:
+  - stage: S5a
+    verdict: correct
+    by: refereeA
+    hash: 49659d463cfe
+    date: '2026-10-19'
+    model: claude-opus-5-5
+    evidence: 'line 17-23: (¬E∧P)∧G matches the key of @exr-statements-and-connectives-b5 and the phrase
+      book; the read-back of G→¬(P∧E) is right.'
+  - stage: S5b
+    verdict: correct
+    by: refereeB
+    hash: 49659d463cfe
+    date: '2026-10-19'
+    model: claude-opus-5-5
+    evidence: '03:17-23: (¬E∧P)∧G matches the key of 1.1 B5 (01-statements-and-connectives.md, B5 items
+      3 and 16); the read-back of G→¬(P∧E) is correct.'
 - key: exm-extract-argument
   kind: exm
   file: 03-from-argument-to-derivation.md
   line: 37
   hash: f6751aabeb62
-  verdicts: []
+  verdicts:
+  - stage: S5a
+    verdict: correct
+    by: refereeA
+    hash: f6751aabeb62
+    date: '2026-10-19'
+    model: claude-opus-5-5
+    evidence: 'lines 45-127: every line checked. 4,5 ∧E 1; 7 ∧I 4,6; 8 →E 2,7; 9 ¬E 5,8; 10 ¬I 6-9; 12-15
+      the same pattern with 3; 16 ∧I 10,15. All hypotheses (P, G, F1, F2) are used. F1/F2 are the weakest
+      facts that close the gaps ((P∧E)→¬G is the contrapositive of (P∧G)→¬E). The sidecar runs ok.'
+  - stage: S5b
+    verdict: correct
+    by: refereeB
+    hash: f6751aabeb62
+    date: '2026-10-19'
+    model: claude-opus-5-5
+    evidence: '03:37-128: the five steps, the sequent, the 16-line derivation (∧I 4,6; →E 2,7; ¬E 5,8;
+      ...) and the aftermath all check. ''as in Section 3.1'' matches exm-search-distribute, and ''Lines
+      4–5 need nothing new ... (Section 3.1)'' matches 01:591. Ledgered as from-argument-to-derivation-key,
+      and the sidecar passes.'
 - key: check:03-from-argument-to-derivation:2
   kind: check
   file: 03-from-argument-to-derivation.md
   line: 151
   hash: 0837bfc8623b
-  verdicts: []
+  verdicts:
+  - stage: S5a
+    verdict: minor
+    by: refereeA
+    hash: 0837bfc8623b
+    date: '2026-10-19'
+    model: claude-opus-5-5
+    evidence: 03-from-argument-to-derivation.md:156 'Lines 4–9, the box that shows it' misnames the box.
+      The box is lines 6–9.
+  - stage: S5b
+    verdict: minor
+    by: refereeB
+    hash: 0837bfc8623b
+    date: '2026-10-19'
+    model: claude-opus-5-5
+    evidence: 03-from-argument-to-derivation.md:156 The solution calls lines 4–9 'the box that shows it',
+      but the ¬I box is lines 6–9.
 - key: exm-two-columns
   kind: exm
   file: 03-from-argument-to-derivation.md
   line: 175
   hash: d946d9c82298
-  verdicts: []
+  verdicts:
+  - stage: S5a
+    verdict: minor
+    by: refereeA
+    hash: d946d9c82298
+    date: '2026-10-19'
+    model: claude-opus-5-5
+    evidence: 03-from-argument-to-derivation.md:255 The summary of which lines the proof says leaves out
+      line 1, which the table assigns to a clause of the proof.
+  - stage: S5b
+    verdict: minor
+    by: refereeB
+    hash: d946d9c82298
+    date: '2026-10-19'
+    model: claude-opus-5-5
+    evidence: 03-from-argument-to-derivation.md:255 'The proof says lines 2 and 5–9' contradicts the example's
+      own table, which puts line 1 on a proof sentence.
 - key: check:03-from-argument-to-derivation:3
   kind: check
   file: 03-from-argument-to-derivation.md
   line: 258
   hash: 26e7134a7696
-  verdicts: []
+  verdicts:
+  - stage: S5a
+    verdict: correct
+    by: refereeA
+    hash: 26e7134a7696
+    date: '2026-10-19'
+    model: claude-opus-5-5
+    evidence: 'lines 258-264: with F1 the box on E∧P gives E, P, P∧E, then ¬G by →E, so no ¬I box is needed.
+      Correct.'
+  - stage: S5b
+    verdict: correct
+    by: refereeB
+    hash: 26e7134a7696
+    date: '2026-10-19'
+    model: claude-opus-5-5
+    evidence: '03:258-264: F1 gives ¬G from P∧E (built by ∧E and ∧I from E∧P), so the ¬I box on T is not
+      needed.'
 - key: check:03-from-argument-to-derivation:4
   kind: check
   file: 03-from-argument-to-derivation.md
   line: 313
   hash: 19086b3c59a9
-  verdicts: []
+  verdicts:
+  - stage: S5a
+    verdict: correct
+    by: refereeA
+    hash: 19086b3c59a9
+    date: '2026-10-19'
+    model: claude-opus-5-5
+    evidence: 'lines 313-319: DM(b) is ¬P∧¬Q ⊢ ¬(P∨Q), DM(d) is ¬(P∧Q) ⊢ ¬P∨¬Q (checked against @prp-de-morgan,
+      ch02 §05 line 406), and MT is right for (iii).'
+  - stage: S5b
+    verdict: correct
+    by: refereeB
+    hash: 19086b3c59a9
+    date: '2026-10-19'
+    model: claude-opus-5-5
+    evidence: '03:313-319: DM (b) and (d) match prp-de-morgan''s part order (05-reductio:412-415), and
+      row (b) sits under ''To reach a negation''. MT is correct for (iii).'
 - key: exr-from-argument-to-derivation-a1
   kind: exr
   file: 03-from-argument-to-derivation.md
   line: 331
   hash: d9bc05e7bea0
-  verdicts: []
+  verdicts:
+  - stage: S5a
+    verdict: correct
+    by: refereeA
+    hash: d9bc05e7bea0
+    date: '2026-10-19'
+    model: claude-opus-5-5
+    evidence: 'lines 343-352: all five answers check against the key and against exm-two-columns line
+      5.'
+  - stage: S5b
+    verdict: correct
+    by: refereeB
+    hash: d9bc05e7bea0
+    date: '2026-10-19'
+    model: claude-opus-5-5
+    evidence: '03:331-353: all five answers check. (d) is (¬E∧P)∧¬G. (e) matches line 5 at 03:225, and
+      6|n ⇒ 2|n is ledgered.'
+  - stage: S6
+    verdict: correct
+    by: verifier
+    hash: d9bc05e7bea0
+    date: '2026-10-19'
+    model: claude-opus-5-5
+    evidence: '03:331-351. Solved before comparing: (a) the premise is n^2 even; (b) the conclusion is
+      ''n is odd''; (c) 6|n implies 2|n; (d) (¬E∧P)∧¬G, which matches the section''s check (¬E∧P)∧G; (e)
+      the sentence is ''If n were a multiple of 3'', with annotation asm, for ¬I, and this matches row
+      5 of the exm-two-columns table. All five agree with the book.'
 - key: exr-from-argument-to-derivation-b1
   kind: exr
   file: 03-from-argument-to-derivation.md
   line: 357
   hash: 2817f412ae4c
-  verdicts: []
+  verdicts:
+  - stage: S5a
+    verdict: correct
+    by: refereeA
+    hash: 2817f412ae4c
+    date: '2026-10-19'
+    model: claude-opus-5-5
+    evidence: 'lines 369-422: (a) uses the convention of Section 2.1 (ch02 §01 line 78) correctly: ¬C
+      is x²≤x, ¬B is x≥0, ¬A is x≤1, and MT is applied twice. (b) uses MT, and the remark on affirming
+      the consequent is right. (c) uses LEM; ∨E 3,4-5,6-9 is valid. The sidecar runs ok.'
+  - stage: S5b
+    verdict: minor
+    by: refereeB
+    hash: 2817f412ae4c
+    date: '2026-10-19'
+    model: claude-opus-5-5
+    evidence: 03-from-argument-to-derivation.md:1085 Four ledger lines (b1, b4, r4, r1) give the source
+      'school algebra, AN1.1 (promised)', but STATUS's promise table has no F1.7 §03 row for AN1.1.
+  - stage: S6
+    verdict: correct
+    by: verifier
+    hash: 2817f412ae4c
+    date: '2026-10-19'
+    model: claude-opus-5-5
+    evidence: '03:357-423. (a) The sequent A→C, B→C, ¬C ⊢ ¬B∧¬A, and the double MT is valid; the readings
+      agree with the Section 2.1 convention box (ch02 01:78). (b) The supplied fact E→S is true ((2k)^2=2(2k^2)),
+      and the remark on ¬E→¬S correctly identifies affirming the consequent. (c) The LEM split is correct
+      and matches 3.1 step 5 (01:79). check_fitch reports 0 errors. Worked example: exm-extract-argument.'
 - key: exr-from-argument-to-derivation-b2
   kind: exr
   file: 03-from-argument-to-derivation.md
   line: 425
   hash: 1a6c8ebb3951
-  verdicts: []
+  verdicts:
+  - stage: S5a
+    verdict: minor
+    by: refereeA
+    hash: 1a6c8ebb3951
+    date: '2026-10-19'
+    model: claude-opus-5-5
+    evidence: 03-from-argument-to-derivation.md:490 Lines 3–7 alone do not derive P→¬(E∧T). They end in
+      ¬(E∧T) inside the box, and a closing →I line is needed.
+  - stage: S5b
+    verdict: minor
+    by: refereeB
+    hash: 1a6c8ebb3951
+    date: '2026-10-19'
+    model: claude-opus-5-5
+    evidence: '03-from-argument-to-derivation.md:433 Two divisibility facts are used but not ledgered:
+      6|n ⇔ (2|n and 3|n), in B2 (a) and in F3''s reason at line 11.'
+  - stage: S6
+    verdict: minor
+    by: verifier
+    hash: 1a6c8ebb3951
+    date: '2026-10-19'
+    model: claude-opus-5-5
+    evidence: 03-from-argument-to-derivation.md:490 'Lines 3–7, with P as the box's assumption' cannot
+      be read literally. If P is the assumption, line 3 (P, ∧E 2) no longer has a conjunction to take
+      apart, and the box would run from the assumption line to line 7.
 - key: exr-from-argument-to-derivation-b3
   kind: exr
   file: 03-from-argument-to-derivation.md
   line: 493
   hash: e30d17b4473e
-  verdicts: []
+  verdicts:
+  - stage: S5a
+    verdict: minor
+    by: refereeA
+    hash: e30d17b4473e
+    date: '2026-10-19'
+    model: claude-opus-5-5
+    evidence: 03-from-argument-to-derivation.md:749 Item 15 does not run F3 'the other way'. The converse
+      of F3 would be ¬P→(E∧T), and item 15 concludes E∨T.
+  - stage: S5b
+    verdict: minor
+    by: refereeB
+    hash: e30d17b4473e
+    date: '2026-10-19'
+    model: claude-opus-5-5
+    evidence: 03-from-argument-to-derivation.md:749 The B3 closing sentence says item 15 'runs F3 the
+      other way, from "not prime" back to "even or a multiple of 3"'. F3's hypothesis is a conjunction,
+      not a disjunction.
+  - stage: S6
+    verdict: minor
+    by: verifier
+    hash: e30d17b4473e
+    date: '2026-10-19'
+    model: claude-opus-5-5
+    evidence: 03-from-argument-to-derivation.md:495 STYLE §6 (B items 'each with a worked example type
+      in the section'; checklist line 314) is not met inside 3.3 for two task types in B3. No example
+      in 3.3 derives a sequent by citing a library row (items 1–5), and none breaks a claim at an integer
+      (items 11–15).
+  - stage: S8
+    verdict: error
+    by: seam
+    hash: e30d17b4473e
+    date: '2026-10-19'
+    model: claude-opus-5-5
+    evidence: '03-from-argument-to-derivation.md:558 Item 3''s solution says "No row helps" and that the
+      library route is no shorter. Both are false: the library''s modus ponendo tollens row shortens the
+      derivation by one line, and the item asks exactly for a row that shortens it.'
 - key: exr-from-argument-to-derivation-b4
   kind: exr
   file: 03-from-argument-to-derivation.md
   line: 752
   hash: c0fb1b4897c9
-  verdicts: []
+  verdicts:
+  - stage: S5a
+    verdict: minor
+    by: refereeA
+    hash: c0fb1b4897c9
+    date: '2026-10-19'
+    model: claude-opus-5-5
+    evidence: 03-from-argument-to-derivation.md:794 The reason given for uniqueness, 'each sentence uses
+      the one before it', is false at (vi). (vi) is a supposition and does not use (ii). The order (ii)
+      before (vi) is forced because the →I box must enclose the RAA box.
+  - stage: S5b
+    verdict: minor
+    by: refereeB
+    hash: c0fb1b4897c9
+    date: '2026-10-19'
+    model: claude-opus-5-5
+    evidence: '03:793-799: the order (ii),(vi),(viii),(iv),(i),(v) is the unique admissible one; (iii)
+      is refuted by a=0, b=3; (vii) is the 3.1 warning at 01:770. The matching to lines is correct. Ledger
+      line 1087 cites ''AN1.1 (promised)'', but STATUS has no F1.7 §03 row for it.'
+  - stage: S6
+    verdict: correct
+    by: verifier
+    hash: c0fb1b4897c9
+    date: '2026-10-19'
+    model: claude-opus-5-5
+    evidence: '03:752-802. My order is (ii),(vi),(viii),(iv),(i),(v), the same as the book''s, and it
+      is the unique admissible one: putting (vi) before (ii) puts the ⊥ inside the S-box, so RAA cannot
+      close at the right level. Distractor (iii) fails at a=0, b=3 (a+b=3>2, a<=1), which I verified.
+      Distractor (vii) opens the box on the goal, which is the warning at 01:770. In the (b) matching,
+      line 4 is DM (a) plus t'
 - key: exr-from-argument-to-derivation-c1
   kind: exr
   file: 03-from-argument-to-derivation.md
   line: 804
   hash: 62f5bb43aa8b
-  verdicts: []
+  verdicts:
+  - stage: S5a
+    verdict: correct
+    by: refereeA
+    hash: 62f5bb43aa8b
+    date: '2026-10-19'
+    model: claude-opus-5-5
+    evidence: 'lines 818-874: the sequent and the derivation are valid (∨E 2,6-8,9-11 with both cases
+      ending in ¬G; 13 ¬E 1,12; 14 ¬I 5-13). The break at n=2 in (e) makes E∨T, F1, F2 and ¬¬P true. The
+      table is consistent. The sidecar runs ok.'
+  - stage: S5b
+    verdict: correct
+    by: refereeB
+    hash: 62f5bb43aa8b
+    date: '2026-10-19'
+    model: claude-opus-5-5
+    evidence: '03:818-875: the sequent, the 14-line derivation, the table and the break at n=2 (all of
+      the counterexample set true, ¬¬P included) check. The marking scheme sums to 10, and the second
+      route is covered.'
+  - stage: S6
+    verdict: minor
+    by: verifier
+    hash: 62f5bb43aa8b
+    date: '2026-10-19'
+    model: claude-opus-5-5
+    evidence: 03-from-argument-to-derivation.md:868 The (c) points require 'the ¬I box on P, the two cases
+      both ending in ¬G, and the clash with G outside the cases'. The only alternative the scheme names
+      is split-first with ¬I boxes, so a valid derivation with no ¬I box at all earns nothing.
 - key: exr-from-argument-to-derivation-c2
   kind: exr
   file: 03-from-argument-to-derivation.md
   line: 877
   hash: adbc0ba5fd9f
-  verdicts: []
+  verdicts:
+  - stage: S5a
+    verdict: minor
+    by: refereeA
+    hash: adbc0ba5fd9f
+    date: '2026-10-19'
+    model: claude-opus-5-5
+    evidence: 03-from-argument-to-derivation.md:909 'Add the premise ¬Q and the line 9 ⊥, ¬E 8 and that
+      premise' clashes with the book's derivations, where premises stand at the top. Adding ¬Q as a premise
+      renumbers the lines, so ⊥ is not line 9.
+  - stage: S5b
+    verdict: minor
+    by: refereeB
+    hash: adbc0ba5fd9f
+    date: '2026-10-19'
+    model: claude-opus-5-5
+    evidence: 03-from-argument-to-derivation.md:911 The C2 (c) solution says the no-statement-equivalent-to-its-negation
+      fact 'holds for "if C, then Q" with any Q'. As written this is false.
+  - stage: S6
+    verdict: minor
+    by: verifier
+    hash: adbc0ba5fd9f
+    date: '2026-10-19'
+    model: claude-opus-5-5
+    evidence: '03-from-argument-to-derivation.md:911 (c)''s ''This shows more: it holds for "if C, then
+      Q" with any Q'' is false under its natural reading (''no statement is equivalent to "if C, then
+      Q"''). It holds only when Q is false.'
 - key: exr-finding-derivations-r1
   kind: exr
   file: 03-from-argument-to-derivation.md
@@ -916,6 +2145,31 @@ items:
     date: '2026-09-28'
     model: claude-opus-5-5
     evidence: 'authoring/reviews/ch02-S8-seam.md rows 3, 6, 22: method, worked searches, rules table'
+  - stage: S5a
+    verdict: correct
+    by: refereeA
+    hash: b707573590ff
+    date: '2026-10-19'
+    model: claude-opus-5-5
+    evidence: 'lines 930-937: the case split a≥b or a<b covers every pair, both cases end in the goal,
+      and the labels cited exist (@def-rules-disjunction, @exm-abs-product-cases).'
+  - stage: S5b
+    verdict: minor
+    by: refereeB
+    hash: b707573590ff
+    date: '2026-10-19'
+    model: claude-opus-5-5
+    evidence: '03:930-937: the proof is correct. Ledger line 1091 cites ''AN1.1 (promised)'', but STATUS
+      has no F1.7 §03 row.'
+  - stage: S6
+    verdict: correct
+    by: verifier
+    hash: b707573590ff
+    date: '2026-10-19'
+    model: claude-opus-5-5
+    evidence: 03:924-938. My proof (by cases on a>=b or a<b) is the same as the book's and is complete.
+      The source is named with @def-rules-disjunction and @exm-abs-product-cases (ch01 07:25, 07:686),
+      and the stem hides it.
 - key: exr-finding-derivations-r2
   kind: exr
   file: 03-from-argument-to-derivation.md
@@ -950,6 +2204,32 @@ items:
     date: '2026-09-28'
     model: claude-opus-5-5
     evidence: 'authoring/reviews/ch02-S8-seam.md rows 3, 6, 22: method, worked searches, rules table'
+  - stage: S5a
+    verdict: minor
+    by: refereeA
+    hash: e9de2063f6b0
+    date: '2026-10-19'
+    model: claude-opus-5-5
+    evidence: 03-from-argument-to-derivation.md:949 'Neither N nor G' is translated as ¬(N∨G) and presented
+      as the only reading. The phrase book of Section 1.1, and this section at line 48, translate 'neither
+      … nor' as ¬N∧¬G.
+  - stage: S5b
+    verdict: minor
+    by: refereeB
+    hash: e9de2063f6b0
+    date: '2026-10-19'
+    model: claude-opus-5-5
+    evidence: '03-from-argument-to-derivation.md:943 Letters of the section key are reused with other
+      meanings, despite 03:7 ''this section keeps it'' (G: ''n > 10'', P: ''n is prime'').'
+  - stage: S6
+    verdict: correct
+    by: verifier
+    hash: e9de2063f6b0
+    date: '2026-10-19'
+    model: claude-opus-5-5
+    evidence: 03:940-978. My sequent is ¬(N∨G) ⊢ ¬N∧(G→S), the same as the book's. The 11-line derivation
+      is valid (check_fitch), and the citation orders follow the book's ¬E order (φ, ¬φ). The sources
+      @prp-de-morgan and @prp-vacuous-implication are cited.
 - key: exr-finding-derivations-r3
   kind: exr
   file: 03-from-argument-to-derivation.md
@@ -993,9 +2273,73 @@ items:
     evidence: 'cross-chapter cleanup 2026-09-28: a Chapter 4 @ref added to an existing prose pointer (signpost
       in a solution/example, not a step); text otherwise unchanged; check_forward_deps and check_optional
       pass'
+  - stage: S5a
+    verdict: correct
+    by: refereeA
+    hash: c70e149018ce
+    date: '2026-10-19'
+    model: claude-opus-5-5
+    evidence: 'lines 986-1013: 5 R 3 inside box 4; 6 →I 4-5; 7 →E 1,6; 8 and 9 →I. The converse breaks
+      at P=R=false, which I checked.'
+  - stage: S5b
+    verdict: correct
+    by: refereeB
+    hash: c70e149018ce
+    date: '2026-10-19'
+    model: claude-opus-5-5
+    evidence: '03:986-1013: the derivation is correct (R at line 5, D3 of def-derivation). The break with
+      P=R=false checks. The Chapter 4 plain pointer is in STATUS row 69, ''R3''s plain pointer, moved
+      from §01''.'
+  - stage: S6
+    verdict: correct
+    by: verifier
+    hash: c70e149018ce
+    date: '2026-10-19'
+    model: claude-opus-5-5
+    evidence: '03:980-1014. The forward sequent is valid, and the 9-line derivation with R at line 5 passes
+      check_fitch; (D3) is repetition (ch01 05:382). For the converse, my truth table finds the refuting
+      row P=Q=R=false, and the book''s choice (P, R false, Q either) checks out: the premise is true and
+      the conclusion false. The Chapter 4 pointer is plain, as the blueprint requires.'
 - key: exr-from-argument-to-derivation-r4
   kind: exr
   file: 03-from-argument-to-derivation.md
   line: 1016
   hash: 68c84c637c54
-  verdicts: []
+  verdicts:
+  - stage: S5a
+    verdict: correct
+    by: refereeA
+    hash: 68c84c637c54
+    date: '2026-10-19'
+    model: claude-opus-5-5
+    evidence: 'lines 1043-1078: the facts, the convention reading (x≥0, x≠0, x<1) and the derivation (5
+      ¬¬I 4; 6-8 MT with ¬¬L; 9-10 ∧I) are right. The sidecar runs ok.'
+  - stage: S5b
+    verdict: minor
+    by: refereeB
+    hash: 68c84c637c54
+    date: '2026-10-19'
+    model: claude-opus-5-5
+    evidence: 03-from-argument-to-derivation.md:1078 R4 does not fit STYLE §11.5. R4 (optional) is 'one
+      item that gives no hint of its method', and its solution 'says why the look-alike tools fail'. This
+      R4 reviews the current section's own method, and its stem gives the letters and the steps.
+  - stage: S6
+    verdict: minor
+    by: verifier
+    hash: 68c84c637c54
+    date: '2026-10-19'
+    model: claude-opus-5-5
+    evidence: 03-from-argument-to-derivation.md:1052 Reading 'x ≥ 0, x ≠ 0, x < 1' as '0 < x < 1' is credited
+      to the Section 2.1 convention. The convention gives only ¬N = x≥0, ¬Z = x≠0 and ¬B = x<1. Combining
+      x≥0 and x≠0 into x>0 is an order fact (trichotomy), not the convention.
+  - stage: S8
+    verdict: minor
+    by: seam
+    hash: 68c84c637c54
+    date: '2026-10-19'
+    model: claude-opus-5-5
+    evidence: '03-from-argument-to-derivation.md:1017 The R group does not follow the roles in STYLE §11.5.
+      The item labelled R4 is heavily scaffolded: it gives the letters N, Z, B, L and asks for the premise,
+      facts and sequent. Its solution names no look-alike tools. R3 is the item that does what §11.5 asks
+      of R4 (no hint, look-alikes @prp-curry and @prp-implication-transitive named). Also, R1''s method
+      (∨E by c'
