@@ -239,7 +239,7 @@ In words, three remarks.
 
 For instance, part (a) of @exm-chaining-derivation shows \( 0 < x, \ x < y, \ y < 1 \vdash 0 < 1 \) with \( \mathrm{Tr} \).
 
-In the derivations from here on, the capital letters \( P \), \( Q \), \( R \), \( S \) stand for arbitrary statements, as in Section 1.1. A derivation written with them proves not one sequent but infinitely many at once, one for each way of putting statements in for the letters.
+In the derivations from here on, the capital letters \( P \), \( Q \), \( R \), \( S \) stand for arbitrary statements, as in Section 1.1. A derivation written with them proves not one sequent but infinitely many at once, one for each way of putting statements in for the letters. So a line written with letters is justified only if it is an instance of the rule whatever statements the letters stand for, different statements for different letters included. When we ask whether such a line is an instance, we therefore compare the lines as written, with different letters counted as different symbols: \( Q \) is not a conjunct of \( (P \wedge Q) \wedge R \), even though it would be one if \( R \) happened to be \( Q \).
 
 ::: {.check}
 What sequent "with \( \mathrm{Tr} \)" does part (b) of @exm-chaining-derivation show?
@@ -650,7 +650,7 @@ $\begin{nd}
 \end{center}
 ```
 
-Lines 7 and 8 are justified "algebra": each is a step by a fact about numbers used as a rule, exactly as Tr was used above, and not a rule of logic. Line 7 uses "a product of two positive numbers is positive"; line 8 uses "multiplying an inequality by a positive number keeps its direction", then the pattern of Tr.
+Lines 7 and 8 are justified "algebra": each is a step by a fact about numbers used as a rule, exactly as Tr was used above, and not a rule of logic. Line 7 uses "a product of two positive numbers is positive"; line 8 uses "if \( 0 < a \), \( a < 1 \) and \( b < 1 \), then \( ab < 1 \)", one fact about numbers (it holds because multiplying \( b < 1 \) by the positive \( a \) gives \( ab < a \), and \( a < 1 \)).
 :::
 
 The facts about numbers supply the content of the solution; the rules supply the joints, taking statements apart and putting the pieces back together. The goal-directed reading is visible in the prose too: "show \( 0 < xy < 1 \)" is a conjunction, so the solution sets itself two subgoals, and it says "finally" when the two meet.
@@ -703,7 +703,7 @@ Before the card, the two rules once more, matched against statements larger than
 **Not an instance (\( \rulename{\wedge E} \)).** From \( P \wedge (Q \vee R) \), the line \( Q \) is not written by \( \rulename{\wedge E} \): the right conjunct is \( Q \vee R \), and \( Q \) sits inside a disjunction, which no rule of this section takes apart.
 :::
 
-The card gives each rule so far, its shape, the sentence that uses it in a written proof and, for readers who meet a proof assistant, the Lean code that performs it (`h.1` names the left half of a hypothesis `h`). Nothing later depends on the last column.
+The card gives each rule of logic so far, its shape, the sentence that uses it in a written proof and, for readers who meet a proof assistant, the Lean code that performs it (`h.1` names the left half of a hypothesis `h`). Nothing later depends on the last column.
 
 | Rule | Shape | You write | Lean |
 |------|------------------|--------------------------------------|------------------------|
@@ -786,7 +786,7 @@ Answer each part in a line or two.
 
 ::: {.enumerate options="label=(\alph*)"}
 1. Lines 1 \( 2 < y \) and 2 \( y < z \) are given. What does "\( \mathrm{Tr} \) 1, 2" justify?
-2. Line 1 is \( (P \wedge Q) \wedge (R \wedge S) \). List every statement \( \rulename{\wedge E} \) can write from line 1 in one step.
+2. Line 1 is \( ((P \wedge Q) \wedge R) \wedge S \). List every statement \( \rulename{\wedge E} \) can write from line 1 in one step.
 3. Line 3 is \( (P \vee Q) \wedge (Q \to R) \). Write the lines that "\( \rulename{\wedge E} \) 3" can give.
 4. Line 6 is \( (R \to S) \wedge P \), justified "\( \rulename{\wedge I} \) 2, 4", and line 4 is \( P \). What is line 2?
 5. Fill in the justifications of lines 2–6.
@@ -820,7 +820,7 @@ Answer each part in a line or two.
 ::: {.solution}
 (a) \( 2 < z \), with \( a \), \( b \), \( c \) replaced by \( 2 \), \( y \), \( z \).
 
-(b) \( P \wedge Q \) and \( R \wedge S \) only.
+(b) \( (P \wedge Q) \wedge R \) and \( S \) only; \( P \wedge Q \), \( P \), \( Q \) and \( R \) each need further applications.
 
 (c) \( P \vee Q \) and \( Q \to R \): the main connective is the middle \( \wedge \), whatever the conjuncts contain.
 
@@ -1100,7 +1100,7 @@ Fatal errors (0 for the step): claiming the conclusion is not derivable; offerin
 ::: {#exr-derivations-c4}
 [C4: Challenge: What conjunction cannot do]
 
-Show that no box-free derivation whose only premise is \( P \wedge Q \), and whose only rules are \( \rulename{\wedge I} \) and \( \rulename{\wedge E} \), has a line whose statement contains the letter \( R \). Deduce that, with these two rules, \( P \wedge Q \vdash P \wedge R \) cannot be shown.
+In this exercise read \( P \), \( Q \), \( R \) as three different letters, each a symbol with no inner structure. Show that no box-free derivation whose only premise is \( P \wedge Q \), and whose only rules are \( \rulename{\wedge I} \) and \( \rulename{\wedge E} \), has a line whose statement contains the letter \( R \). Deduce that, with these two rules, \( P \wedge Q \vdash P \wedge R \) cannot be shown.
 :::
 
 ::: {.solution}
@@ -1118,7 +1118,7 @@ That first line is not a premise. Which rule wrote it, and which letters can tha
 ::: {.solution}
 Suppose, for a contradiction, that some line of such a derivation contains \( R \). The derivation has finitely many lines, so there is a first such line; call it line \( k \). Every line before line \( k \) is free of \( R \).
 
-Line \( k \) is not a premise, because every premise is \( P \wedge Q \), which does not contain \( R \). So line \( k \) is justified by one of the two rules, citing earlier lines (@def-box-free-derivation).
+Line \( k \) is not a premise, because every premise is \( P \wedge Q \), which does not contain \( R \) (\( P \) and \( Q \) being letters other than \( R \)). So line \( k \) is justified by one of the two rules, citing earlier lines (@def-box-free-derivation).
 
 If it is \( \rulename{\wedge I} \), citing lines \( i \) and \( j \), then its statement is \( \varphi \wedge \psi \), where \( \varphi \) and \( \psi \) are the statements of lines \( i \) and \( j \). Both are earlier than \( k \), so neither contains \( R \), and neither does \( \varphi \wedge \psi \).
 
@@ -1126,12 +1126,14 @@ If it is \( \rulename{\wedge E} \), citing line \( i \), then its statement is o
 
 Either way line \( k \) does not contain \( R \), which contradicts the choice of \( k \). So no line contains \( R \). In particular no such derivation has the last line \( P \wedge R \), and \( P \wedge Q \vdash P \wedge R \) cannot be shown with these rules.
 
+The hypothesis on the letters matters. If \( R \) were the same statement as \( P \), the sequent would be \( P \wedge Q \vdash P \wedge P \), which \( \rulename{\wedge E} \) followed by \( \rulename{\wedge I} \) 2, 2 derives (as in "One line cited twice"). What the argument shows is that no single derivation works for every choice of \( R \).
+
 The argument, "look at the first bad line; it cannot be a premise, and no rule can create it from good lines", is an induction on the lines of a derivation; Chapter 4 makes such arguments exact.
 
 **Marking scheme.** (10 points)
 
 - 2: considers a first line containing \( R \), and says why a first one exists (finitely many lines); or, equally, goes down the derivation line by line, showing each line free of \( R \) because every line it cites is.
-- 2: rules out a premise.
+- 2: rules out a premise (\( P \wedge Q \) does not contain \( R \), since \( P \), \( Q \), \( R \) are different letters).
 - 2: \( \rulename{\wedge I} \) case: the new line is built from the statements of two earlier, \( R \)-free lines.
 - 2: \( \rulename{\wedge E} \) case: the new line is part of an earlier, \( R \)-free line.
 - 2: concludes that no line contains \( R \), and so that \( P \wedge R \) is never a last line.

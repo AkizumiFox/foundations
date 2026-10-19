@@ -445,7 +445,7 @@ In the derivation of @exm-or-hypothesis-split, line 3 could not have been skippe
 
 The most obvious fact about "or" is that the order of its sides does not matter: \( P \vee Q \vdash Q \vee P \). Try to derive it with the rules so far.
 
-The goal \( Q \vee P \) is a disjunction, so we postpone it and look at the premise. Its main connective is \( \vee \), and no rule so far takes a disjunction apart. \( \rulename{\wedge E} \) needs a conjunction and \( \rulename{{\to}E} \) an implication; \( \rulename{\wedge I} \), \( \rulename{\vee I} \), and \( \rulename{R} \) may cite \( P \vee Q \), but only to copy it or to build something larger around it. So the premise gives us nothing, and neither side of the goal ever comes into hand.
+The goal \( Q \vee P \) is a disjunction, so we postpone it and look at the premise. Its main connective is \( \vee \), and no rule so far takes a disjunction apart. \( \rulename{\wedge E} \) needs a conjunction and \( \rulename{{\to}E} \) an implication; \( \rulename{\wedge I} \), \( \rulename{\vee I} \), and \( \rulename{R} \) may cite \( P \vee Q \), but only to copy it or to build something larger around it. So the premise gives us nothing, and working from it alone, neither side of the goal ever comes into hand.
 
 We can get this far, though. Each side of the premise, **assumed** in a box, leads to the goal:
 
@@ -661,11 +661,11 @@ Each part takes a line or two. The parts run from single steps, through a missin
 
 (l) 2 \( Q \), \( \rulename{\wedge E} \) 1; 3 \( Q \vee R \), \( \rulename{\vee I} \) 2.
 
-(m) A box opened with \( P \): 2 \( P \), assumption; 3 \( Q \), \( \rulename{{\to}E} \) 1, 2; 4 \( R \vee Q \), \( \rulename{\vee I} \) 3; then 5 \( P \to (R \vee Q) \), \( \rulename{{\to}I} \) 2–4.
+(m) A box opened with \( P \): 2 \( P \), assumption, for \( \rulename{{\to}I} \); 3 \( Q \), \( \rulename{{\to}E} \) 1, 2; 4 \( R \vee Q \), \( \rulename{\vee I} \) 3; then 5 \( P \to (R \vee Q) \), \( \rulename{{\to}I} \) 2–4.
 
 (n) 3 \( P \vee Q \), \( \rulename{\vee I} \) 2; 4 \( R \), \( \rulename{{\to}E} \) 1, 3.
 
-(o) A box opened with \( P \): 2 \( P \), assumption; 3 \( Q \wedge R \), \( \rulename{{\to}E} \) 1, 2; 4 \( R \), \( \rulename{\wedge E} \) 3; 5 \( S \vee R \), \( \rulename{\vee I} \) 4; then 6 \( P \to (S \vee R) \), \( \rulename{{\to}I} \) 2–5.
+(o) A box opened with \( P \): 2 \( P \), assumption, for \( \rulename{{\to}I} \); 3 \( Q \wedge R \), \( \rulename{{\to}E} \) 1, 2; 4 \( R \), \( \rulename{\wedge E} \) 3; 5 \( S \vee R \), \( \rulename{\vee I} \) 4; then 6 \( P \to (S \vee R) \), \( \rulename{{\to}I} \) 2–5.
 :::
 
 ### B. Practice
@@ -867,7 +867,7 @@ $\begin{nd}
 
 (g) Break. Take \( P \): "\( x > 0 \)", \( Q \): "\( x > 5 \)", \( R \): "\( x < 6 \)". The premise \( P \to (Q \vee R) \) holds for every \( x \), since every real number is \( > 5 \) or \( < 6 \). At \( x = 1 \), \( P \) is true and \( Q \) is false, so the counterexample set \( P \to (Q \vee R) \), \( \neg(P \to Q) \) is true.
 
-The claims come in pairs. (a) and (b) are look-alikes, with \( \vee \) and \( \wedge \) traded; (c) and (d) are converses; (g) is a look-alike of (f), with premise and conclusion traded and weakened. In each pair one claim derives and the other breaks.
+Apart from (e), which simply derives, the claims come in pairs. (a) and (b) are look-alikes, with \( \vee \) and \( \wedge \) traded; (c) and (d) are converses; (g) is a look-alike of (f), with premise and conclusion traded and weakened. In each pair one claim derives and the other breaks.
 :::
 
 ### C. Going deeper

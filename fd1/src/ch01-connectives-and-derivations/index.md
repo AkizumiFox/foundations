@@ -1,6 +1,6 @@
 # Connectives and Derivations
 
-Section 1.1 opens with two arguments that every integer with an even square is even. Every sentence in both is true, and yet only one is a proof. The other, Argument B, starts from "\( n \) is even", reaches "\( n^2 \) is even", and then announces the reverse. Spotting the flaw once it is pointed out is easy. Naming it, so that the same flaw can be caught in an argument we have never seen, needs an answer to a harder question: when is a list of true sentences a proof? The motivating problem of this chapter is to *name exactly what is wrong with Argument B*, and the answer arrives in Section 1.4.
+Section 1.1 opens with two arguments that every integer with an even square is even. Every claim in both is true, and yet only one is a proof. The other, Argument B, starts from "\( n \) is even", reaches "\( n^2 \) is even", and then announces the reverse. Spotting the flaw once it is pointed out is easy. Naming it, so that the same flaw can be caught in an argument we have never seen, needs an answer to a harder question: when is a list of true claims a proof? The motivating problem of this chapter is to *name exactly what is wrong with Argument B*, and the answer arrives in Section 1.4.
 
 This chapter builds the calculus that answers it: a proof is a chain in which every line is a premise, an assumption, or one application of a rule. It gives the rules for "and", "implies" and "or", one at a time; Chapter 2 adds "not", "iff" and proof by contradiction.
 
@@ -15,18 +15,18 @@ This chapter builds the calculus that answers it: a proof is a chain in which ev
 :::
 
 ::: {.solution}
-1. An implication breaks only when its hypothesis holds and its conclusion fails; at \( x = 1 \) it promises nothing (Section 1.1, "When is an implication broken?").
-2. "\( P \) only if \( Q \)" is \( P \to Q \): divisible by \( 4 \) implies even. The claim reads the converse, false at \( n = 2 \) (Section 1.1).
-3. It holds only inside the supposition's box. Outside it, only "if \( x > 2 \), then \( x^2 > 4 \)" may be used, and \( x^2 > 4 \) fails at \( x = 0 \) (Section 1.4).
-4. \( 5 \ge 0 \) is \( (5 > 0) \vee (5 = 0) \), and an inclusive "or" needs one true side (Section 1.5).
-5. At \( x = \tfrac32 \) both sides hold. The form "from \( P \vee Q \) and \( P \), conclude not \( Q \)" is affirming a disjunct, a bad form (Sections 1.1 and 1.6).
+1. No. An implication breaks only when its hypothesis holds and its conclusion fails; at \( x = 1 \) it promises nothing (Section 1.1, "When is an implication broken?").
+2. No. "\( P \) only if \( Q \)" is \( P \to Q \): divisible by \( 4 \) implies even, which is true. The claim reads the converse, false at \( n = 2 \) (Section 1.1).
+3. No. It holds only inside the supposition's box. Outside it, only "if \( x > 2 \), then \( x^2 > 4 \)" may be used, and \( x^2 > 4 \) fails at \( x = 0 \) (Section 1.4).
+4. No. \( 5 \ge 0 \) is \( (5 > 0) \vee (5 = 0) \), and an inclusive "or" needs one true side: \( 5 > 0 \) is true (Section 1.5).
+5. No. At \( x = \tfrac32 \) both sides hold. The form "from \( P \vee Q \) and \( P \), conclude not \( Q \)" is affirming a disjunct, a bad form (Sections 1.1 and 1.6).
 :::
 
 **What you need.** School algebra only: the rules of signs, adding and multiplying inequalities, and the facts that every integer is even or odd and every real number is non-negative or negative. They are used as facts in examples; *Analysis on the Real Line*, Chapter 1 proves the order facts from the axioms for the real numbers. No earlier chapter is needed.
 
 **Time.** About 40 hours on the core track (all of A, one B and one C per section, the exit checks); about 65 hours for everything.
 
-**Minimum for fd2.** Chapters 1–6 and 8, core; Chapter 7 (Sections 7.1–7.2) before *Sets, Relations, and Cardinality*, Chapter 3.
+**Minimum before *Sets, Relations, and Cardinality*.** Chapters 1–6 and 8, core; Sections 7.1–7.2 before its Chapter 3.
 
 ## Roadmap
 
@@ -52,7 +52,7 @@ The chapter's eight moves are collected again at the end of Section 1.6, beside 
 
 ## Summary
 
-A proof is a chain in which every line is a premise, an assumption, or one step of a rule, and checking one needs no idea. The chapter gave the six rules for "and", "implies" and "or", with repetition, and with them derived that "and" commutes and regroups (@prp-and-commutes, @prp-and-associative), that implications chain (@prp-implication-transitive), that two hypotheses may be taken at once or one at a time (@prp-curry), that "or" commutes and regroups (@exm-disjunction-first-derivations, @exm-disjunction-regroup), the distributive laws (@prp-distributivity) and the constructive dilemma (@exm-constructive-dilemma). It named Argument B's error: a box opened at the wrong end proves the converse. A form is bad when some choice of statements makes its counterexample set true, and breaking a form is how a bad step is shown bad. Still open: the chapter has no rules for "not" or for contradiction, and the fact Argument B set out to prove waits for them. That is Chapter 2's question.
+A proof is a chain in which every line is a premise, an assumption, or one step of a rule, and checking one needs no idea. The chapter gave the six rules for "and", "implies" and "or", with repetition, and with them derived that "and" commutes and regroups (@prp-and-commutes, @prp-and-associative), that implications chain (@prp-implication-transitive), that two hypotheses may be taken at once or one at a time (@prp-curry), that "or" commutes and regroups (@exm-disjunction-first-derivations, @exm-disjunction-regroup), that "and" distributes over "or" (@prp-distributivity) and the constructive dilemma (@exm-constructive-dilemma). It named Argument B's error: a box opened at the wrong end proves the converse. A form is bad when some choice of statements makes its counterexample set true, and breaking a form is how a bad step is shown bad. Still open: the chapter has no rules for "not" or for contradiction, and the fact Argument B set out to prove waits for them. That is Chapter 2's question.
 
 ## Terms
 

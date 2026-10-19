@@ -61,10 +61,11 @@ assert andE(A(A(P, Q), R), A(P, Q)) and andE(A(P, Q), Q)
 assert andE(A(P, Q), P) and andE(A(R, S), S) and andI(S, P, A(S, P))
 # (o) P&(Q&R) |- R in two rounds of and-E
 assert andE(l1, A(Q, R)) and andE(A(Q, R), R) and not andE(l1, R)
-# (b) exactly two statements from (P&Q)&(R&S)
-top = A(A(P, Q), A(R, S))
-cands = [P, Q, R, S, A(P, Q), A(R, S), top]
-assert [c for c in cands if andE(top, c)] == [A(P, Q), A(R, S)]
+# (b) exactly two statements from ((P&Q)&R)&S
+top = A(A(A(P, Q), R), S)
+cands = [P, Q, R, S, A(P, Q), A(A(P, Q), R), top]
+assert [c for c in cands if andE(top, c)] == [S, A(A(P, Q), R)]
+assert not any(andE(top, c) for c in [A(P, Q), P, Q, R])
 # (c) (P or Q) & (Q -> R): and-E gives exactly the two conjuncts
 PvQ, QtoR = ("or", P, Q), ("imp", Q, R)
 c3 = A(PvQ, QtoR)

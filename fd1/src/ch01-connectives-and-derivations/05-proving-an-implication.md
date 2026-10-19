@@ -57,7 +57,7 @@ The left schema is the rule \( \rulename{{\to}I} \) (**implication-introduction*
 As in every schema (@def-rule-schema), \( \varphi \) and \( \psi \) stand for any statements, replaced consistently, and \( i, j, k \) for line numbers. This rule has conditions that matter; read each one.
 
 1. **Open a box** whose first line is the assumption \( \varphi \). The assumption may be **any** statement: true or false, related to the premises or not. Its justification is "assumption", printed **"asm, for \( \rulename{{\to}I} \)"**: the annotation names the rule that will close the box. The price of assuming anything we like is the box.
-2. **Inside the box**, work as usual. Every rule may be used. A line inside may cite the assumption, the lines derived inside the box so far, and the lines above the box that are still in force: the premises, and earlier lines that are not inside a box that has already closed.
+2. **Inside the box**, work as usual. Every rule may be used. A line inside may cite the assumption and every earlier line that is not inside a box that has already closed: the premises, the lines above the box that are still in force, and the lines derived inside the box so far.
 3. **The last line** of the box is \( \psi \). It must be a line of this box itself, not a line of some further box opened inside it. (The drawing cannot show this, which is why the definition says it in words.)
 4. **Close the box**, and write \( \varphi \to \psi \) on a later line outside it, in practice the very next line. The justification cites the **whole box** as the range \( \lines{i}{j} \), from its assumption to its last line, not its lines one by one.
 5. **After the box closes**, nothing inside it may be cited again. The assumption is discharged, and everything derived under it goes with it. Only the implication leaves.
@@ -539,7 +539,7 @@ $\begin{nd}
 \end{center}
 ```
 
-Line 1 is an assumption (D2) and opens the box \( \lines{1}{1} \), whose last line is \( P \). Line 2 cites that box, which ended before line 2 and, like line 2, lies in no other box. There are no premises, so this shows \( \vdash P \to P \). It is the first statement in the book derivable from **no** premises by the rules of logic alone. Argument B's box in "Argument B, diagnosed" also began without premises, but it used a step of algebra. Every rule before \( \rulename{{\to}I} \) (@def-rules-conjunction, @def-rule-implication-elimination) cites at least one line, so without a box a derivation must start with a premise. A box is what escapes: its first line is an assumption, and the assumption is discharged before the end.
+Line 1 is an assumption (D2) and opens the box \( \lines{1}{1} \), whose last line is \( P \). Line 2 cites that box, which ended before line 2 and, like line 2, lies in no other box. There are no premises, so this shows \( \vdash P \to P \). It is the first statement in the book derivable from **no** premises by the rules of logic alone. Argument B's box in "Argument B, diagnosed" also began without premises, but it used a step of algebra. Every other rule so far (@def-rules-conjunction, @def-rule-implication-elimination, and \( \rulename{R} \) of @def-derivation) cites at least one earlier line, so without a box a derivation must start with a premise. A box is what escapes: its first line is an assumption, and the assumption is discharged before the end.
 
 (b) *Idea.* This is the derivation the checker accepted after the fix in "A box must end on a line of its own": line 3 copies \( P \) into the inner box.
 
@@ -1006,13 +1006,13 @@ $\begin{nd}
 
 In prose: *Assume \( P \) and \( Q \). In particular, \( P \) holds. In particular, \( Q \) holds. Hence \( Q \) and \( P \) both hold. This proves that if \( P \) and \( Q \), then \( Q \) and \( P \).* Compared with @prp-and-commutes, the premise \( P \wedge Q \) has become an assumption, and the conclusion has become an implication that depends on nothing.
 
-(l) 2 \( P \wedge R \), assumption; 3 \( P \), \( \rulename{\wedge E} \) 2; 4 \( Q \), \( \rulename{{\to}E} \) 1, 3; 5 \( (P \wedge R) \to Q \), \( \rulename{{\to}I} \) \( \lines{2}{4} \).
+(l) 2 \( P \wedge R \), assumption, for \( \rulename{{\to}I} \); 3 \( P \), \( \rulename{\wedge E} \) 2; 4 \( Q \), \( \rulename{{\to}E} \) 1, 3; 5 \( (P \wedge R) \to Q \), \( \rulename{{\to}I} \) \( \lines{2}{4} \).
 
-(m) 2 \( P \wedge R \), assumption; 3 \( R \), \( \rulename{\wedge E} \) 2; 4 \( Q \wedge R \), \( \rulename{\wedge I} \) 1, 3; 5 \( (P \wedge R) \to (Q \wedge R) \), \( \rulename{{\to}I} \) \( \lines{2}{4} \).
+(m) 2 \( P \wedge R \), assumption, for \( \rulename{{\to}I} \); 3 \( R \), \( \rulename{\wedge E} \) 2; 4 \( Q \wedge R \), \( \rulename{\wedge I} \) 1, 3; 5 \( (P \wedge R) \to (Q \wedge R) \), \( \rulename{{\to}I} \) \( \lines{2}{4} \).
 
-(n) The box of \( P \wedge Q \) opens first, since the goal's main connective is its first \( \to \): 1 \( P \wedge Q \), assumption; 2 \( R \), assumption, opening a box inside the first; 3 \( P \), \( \rulename{\wedge E} \) 1; 4 \( R \to P \), \( \rulename{{\to}I} \) \( \lines{2}{3} \); 5 \( (P \wedge Q) \to (R \to P) \), \( \rulename{{\to}I} \) \( \lines{1}{4} \).
+(n) The box of \( P \wedge Q \) opens first, since the goal's main connective is its first \( \to \): 1 \( P \wedge Q \), assumption, for \( \rulename{{\to}I} \); 2 \( R \), assumption, for \( \rulename{{\to}I} \), opening a box inside the first; 3 \( P \), \( \rulename{\wedge E} \) 1; 4 \( R \to P \), \( \rulename{{\to}I} \) \( \lines{2}{3} \); 5 \( (P \wedge Q) \to (R \to P) \), \( \rulename{{\to}I} \) \( \lines{1}{4} \).
 
-(o) 2 \( P \), assumption; 3 \( P \to Q \), \( \rulename{\wedge E} \) 1; 4 \( Q \), \( \rulename{{\to}E} \) 3, 2; 5 \( R \), \( \rulename{\wedge E} \) 1; 6 \( Q \wedge R \), \( \rulename{\wedge I} \) 4, 5; 7 \( P \to (Q \wedge R) \), \( \rulename{{\to}I} \) \( \lines{2}{6} \).
+(o) 2 \( P \), assumption, for \( \rulename{{\to}I} \); 3 \( P \to Q \), \( \rulename{\wedge E} \) 1; 4 \( Q \), \( \rulename{{\to}E} \) 3, 2; 5 \( R \), \( \rulename{\wedge E} \) 1; 6 \( Q \wedge R \), \( \rulename{\wedge I} \) 4, 5; 7 \( P \to (Q \wedge R) \), \( \rulename{{\to}I} \) \( \lines{2}{6} \).
 :::
 
 ### B. Practice
@@ -1126,7 +1126,7 @@ Line 4 is legal: the only box containing line 2 also contains line 4. (Applying 
 
 ::: {.enumerate options="label=(\alph*)"}
 1. Show that \( P \to Q, \ P \to R \vdash P \to (Q \wedge R) \).
-2. Let \( x \) be a real number. Use (a) to deduce "if \( \abs{x - 2} < 1 \), then \( 1 < x < 3 \)" from the two facts "if \( \abs{x - 2} < 1 \), then \( x > 1 \)" and "if \( \abs{x - 2} < 1 \), then \( x < 3 \)". Write the resulting argument as prose.
+2. Let \( x \) be a real number. Use (a) to deduce "if \( \abs{x - 2} < 1 \), then \( 1 < x < 3 \)" from the two facts "if \( \abs{x - 2} < 1 \), then \( 1 < x \)" and "if \( \abs{x - 2} < 1 \), then \( x < 3 \)". Write the resulting argument as prose.
 :::
 :::
 
@@ -1151,9 +1151,9 @@ $\begin{nd}
 
 The assumption on line 3 is cited twice, by lines 4 and 5: a line is not used up when it is cited.
 
-(b) Take \( P \): "\( \abs{x - 2} < 1 \)", \( Q \): "\( x > 1 \)" and \( R \): "\( x < 3 \)". The two facts are the premises \( P \to Q \) and \( P \to R \), and \( Q \wedge R \) is \( 1 < x < 3 \). The derivation in (a), with these statements put in for the letters, is a derivation of \( P \to (Q \wedge R) \) from the two facts.
+(b) Take \( P \): "\( \abs{x - 2} < 1 \)", \( Q \): "\( 1 < x \)" and \( R \): "\( x < 3 \)". The two facts are the premises \( P \to Q \) and \( P \to R \), and \( Q \wedge R \) is \( (1 < x) \wedge (x < 3) \), which \( 1 < x < 3 \) abbreviates (Section 1.1). The derivation in (a), with these statements put in for the letters, is a derivation of \( P \to (Q \wedge R) \) from the two facts.
 
-In prose: *Suppose \( \abs{x - 2} < 1 \). Then \( x > 1 \) by the first fact, and \( x < 3 \) by the second. Hence \( 1 < x < 3 \). This proves that \( \abs{x - 2} < 1 \) implies \( 1 < x < 3 \).*
+In prose: *Suppose \( \abs{x - 2} < 1 \). Then \( 1 < x \) by the first fact, and \( x < 3 \) by the second. Hence \( 1 < x < 3 \). This proves that \( \abs{x - 2} < 1 \) implies \( 1 < x < 3 \).*
 :::
 
 ::: {#exr-proving-an-implication-b4}
@@ -1163,14 +1163,14 @@ Here are nine lines, each a statement with its justification. Seven of them, in 
 
 ::: {.enumerate options="label=(\roman*)"}
 1. \( P \to R \), by \( \rulename{{\to}I} \) on the box from \( P \) to \( R \).
-2. \( Q \), assumption.
+2. \( Q \), assumption, for \( \rulename{{\to}I} \).
 3. \( R \), by \( \rulename{{\to}E} \) from \( Q \to R \) and \( Q \).
 4. \( R \), by \( \rulename{R} \), repeating the line \( R \) of (iii), written directly below (i).
 5. \( P \to (Q \to R) \), premise.
 6. \( Q \to (P \to R) \), by \( \rulename{{\to}I} \) on the box from \( Q \) to \( P \to R \).
 7. \( R \), assumption, opening the box for the \( \rulename{{\to}I} \) that proves \( P \to R \).
 8. \( Q \to R \), by \( \rulename{{\to}E} \) from \( P \to (Q \to R) \) and \( P \).
-9. \( P \), assumption.
+9. \( P \), assumption, for \( \rulename{{\to}I} \).
 :::
 :::
 

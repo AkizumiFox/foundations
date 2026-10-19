@@ -633,3 +633,14 @@ Everything that `ch01-revision.md` §7 lists, and every passage of the delivered
 
 **Final revision** (after round 3, not rechecked). Round 3's #14 was the skeleton of 07:972 (1.6 B3(a)) filled with the already-solved one-box derivations 05:839 and 05:962, and the solution of 07:1183 already names the split-first route; round 3's novelty sentence claimed otherwise. Applied: #14 is now \( P \vee Q, \ S \to (Q \to R) \vdash (S \to (P \wedge S)) \vee (S \to R) \) (14 lines, checked by `tools/check_fitch.py`). The skeleton is kept and attributed to 07:972; in the case \( Q \) the box's assumption is combined with the premise by →E, which no earlier derivation does inside a case box. The round-3 sentence in the overlap check under B7 is corrected to cite 07:972, 05:839, 05:962 and 07:1183's split-first remark, and S2a item 41 lists them.
 
+
+## S7 deviations (recorded after the S5–S8 review of the deepened chapter)
+
+- **D9, used-later markers.** Besides 1.4 C4, two more items carry ", used later": 1.1 B3 (part (c), x² > 1 iff x > 1 or x < −1, is cited by a 1.6 solution; intra-chapter, no STATUS row) and 1.1 C1 ("only if" and "unless", cited at 2.4 and 4.9). Title-only change; statements and answers unchanged.
+- **1.1 box at item 168.** The box is titled "Everyday readings" (lead: four kinds of word mean something different in mathematics than in conversation); bullet 2 says a definition's "if" is read more strongly, as "if and only if".
+- **1.1 A2(f)** uses P: "x ≥ 2", Q: "x ≤ 3", decided at x = 5/2 (both hold, so false) and x = 4 (only P holds, so true); the blueprint's version repeated the phrase-book worked example. Checked by verify/ch01/exr-statements-and-connectives-a2.py.
+- **1.1 B6(b)** (items 240, 563) is about a fixed triangle Δ: "If Δ is equilateral, then Δ is isosceles. If Δ is equilateral, then each angle of Δ is 60°. So, if Δ is isosceles, then each angle of Δ is 60°." (Δ, not T, because (T) names the exercise's argument about 12.)
+- **§4.0 item 8, Summary.** It says "and" distributes over "or" (@prp-distributivity): the main line proves one law; the other is an exercise.
+- **§4.0 item 5, minimum path.** The index reads "Minimum before *Sets, Relations, and Cardinality*: Chapters 1–6 and 8, core; Sections 7.1–7.2 before its Chapter 3." (layout-final G14 updated to match.)
+- **Box-opening assumptions** in solutions name their rule throughout Chapter 1 ("assumption, for →I" / "assumption, for ∨E").
+- **1.6 search chart.** The text after the chart names the two moves the chart leaves out (an implication ending in the goal whose hypothesis is on no line: make the hypothesis the goal; a disjunctive goal with neither side in hand: make one side the goal, as in B7 item 14) and says that a stopped chart is no evidence that the claim breaks.

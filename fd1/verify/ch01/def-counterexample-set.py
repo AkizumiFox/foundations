@@ -1,5 +1,5 @@
 """Values quoted in Section 1.1 around def-counterexample-set: the phrase book, its Quick check,
-the "Not:" catalogue, the weak readings, "Where to look first" and its Quick check, fold F1.1-c."""
+the "Not:" catalogue, the everyday readings, "Where to look first" and its Quick check, fold F1.1-c."""
 import sys, pathlib
 from fractions import Fraction as Fr
 from math import gcd, isqrt
@@ -45,7 +45,7 @@ assert gcd(4, 9) == 1 and isqrt(4)**2 == 4 and isqrt(9)**2 == 9
 assert Fr("1.414")**2 == QUOTED["1.414^2"] != 2
 assert 12 > 0 and even(12)
 
-# weak readings: solutions of x^2 = x
+# everyday readings: solutions of x^2 = x
 sols = {x for x in range(-1000, 1001) if x * x == x}
 assert sols == QUOTED["x^2 = x solutions"] and all(s >= 0 for s in sols)
 # x^2 - x = x(x - 1): a product is zero only when a factor is, so no other real solution

@@ -963,7 +963,7 @@ $\begin{nd}
 
 (b) Try to break the step: this instance already does. The first premise is true, because every multiple of \( 6 \) is even (\( 6k = 2(3k) \)); the second is true, since \( 10 = 2 \cdot 5 \); and the conclusion is false: \( 6k \) is at most \( 6 \) when \( k \le 1 \) and at least \( 12 \) when \( k \ge 2 \), so \( 10 = 6k \) for no integer \( k \). So the step at line 3 leads from two true premises to a false line, and no safe rule can allow it.
 
-(c) None. \( \rulename{{\to}E} \) cannot fire, since no line is the hypothesis \( D \); \( \rulename{\wedge E} \) has no conjunction to take apart; and \( \rulename{\wedge I} \) only joins the premises into conjunctions such as \( (D \to E) \wedge E \), which say nothing the premises did not. The premises tell us nothing about whether \( 10 \) is divisible by \( 6 \), which is why the conclusion had to be smuggled in.
+(c) None. Go down any derivation from these premises line by line, as in @exr-derivations-c4: every line is \( D \to E \), \( E \), or a conjunction built from them by \( \wedge \) alone. A premise is of this kind. \( \rulename{\wedge I} \) joins two such lines into another one. \( \rulename{\wedge E} \) gives back a conjunct of such a line, which is again of this kind. \( \rulename{{\to}E} \) would need, besides the implication \( D \to E \), a line \( D \), and \( D \) is not of this kind; so \( \rulename{{\to}E} \) never fires, and no line is \( D \). What we can reach are the premises and conjunctions of them, such as \( (D \to E) \wedge E \), which say nothing the premises did not. The premises tell us nothing about whether \( 10 \) is divisible by \( 6 \), which is why the conclusion had to be smuggled in.
 :::
 
 ::: {#exr-using-an-implication-c2}
@@ -1046,4 +1046,5 @@ exr-using-an-implication-a2 (solution): (k) every multiple of 6 is a multiple of
 exr-using-an-implication-b5 (solution): (d) 4 | n implies n even (4k = 2(2k)); n even implies 4 | n^2 (n = 2k); n^2 even implies n even; 4 | n^2 does not imply 4 | n (n = 2) | inline arithmetic; (iii) is Argument A of F1.1 §01 (prose, no label), recalled by name; checked by verify/ch01/exr-using-an-implication-b5.py
 exr-using-an-implication-b2 (solution): 0 < x < 1 implies x^2 < x; x^2 < x implies x^3 < x^2 (for every real x) | school algebra -> AN1.1 (promised), argued inline; checked by verify/ch01/exr-using-an-implication-b2.py
 exr-using-an-implication-c1 (solution): every multiple of 6 is even; 10 = 2 * 5; 10 is not divisible by 6 (6k <= 6 for k <= 1, 6k >= 12 for k >= 2) | inline arithmetic; checked by verify/ch01/exr-using-an-implication-c1.py
+exr-using-an-implication-c1 (solution): (c) every line of a derivation from D -> E and E with and-I, and-E, ->E is D -> E, E, or a conjunction of such lines; so no line is D | the line-by-line argument of exr-derivations-c4 (cited), argued inline
 -->

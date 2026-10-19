@@ -12,7 +12,7 @@ x & \text{if } x \ge 0, \\
 -x & \text{if } x < 0 .
 \end{cases}
 \]
-Suppose we want to prove that \( \abs{xy} = \abs{x}\abs{y} \) for all real numbers \( x \) and \( y \). There is no single computation to do. Which formula gives \( \abs{xy} \) depends on the sign of \( xy \), and that depends on the signs of \( x \) and \( y \). Yet once the signs are fixed, each case is one line: if \( x \ge 0 \) and \( y < 0 \), for instance, then \( \abs{xy} = -xy = x \cdot (-y) = \abs{x}\abs{y} \).
+Suppose we want to prove that \( \abs{xy} = \abs{x}\abs{y} \) for all real numbers \( x \) and \( y \). There is no single computation to do. Which formula gives \( \abs{xy} \) depends on the sign of \( xy \), and that depends on the signs of \( x \) and \( y \). Yet once the signs are fixed, each case is one line: if \( x > 0 \) and \( y < 0 \), for instance, then \( \abs{xy} = -xy = x \cdot (-y) = \abs{x}\abs{y} \).
 
 So the proof we want has the shape "every real number is \( \ge 0 \) or \( < 0 \); in the first case …; in the second case …; so in every case …". The rules so far cannot say this. The attempt at \( P \vee Q \vdash Q \vee P \) in Section 1.5 met the same wall from the other side. It derived that each side of the premise, assumed in a box, leads to the goal: lines 4 and 7 there were \( P \to (Q \vee P) \) and \( Q \to (Q \vee P) \). What it lacked was a rule to say "one of \( P \), \( Q \) holds, and either one leads to \( Q \vee P \); so \( Q \vee P \)": a rule that takes "\( \varphi \) or \( \psi \)", which does not say **which** side holds, and still reaches a definite conclusion. That is the job of the elimination rule for "or".
 
@@ -960,7 +960,7 @@ The table of moves as an order in which to try them:
 \end{center}
 ```
 
-The chart uses only this chapter's rules, and following it never writes an illegal line. It is a guide, not a rule: after asking whether the goal is already in hand, it reads the table's goal column and then its premise column, each from the top.
+The chart uses only this chapter's rules, and following it never writes an illegal line. It is a guide, not a rule: after asking whether the goal is already in hand, it reads the table's goal column and then its premise column, each from the top, except that it leaves out two moves. When an available implication ends in the goal but its hypothesis is on no line, make the hypothesis the current goal and start the chart again; items 3, 8 and 10 of @exr-disjunction-and-cases-b7 need this. When the goal is a disjunction and neither side is in hand, make one side the current goal; item 14 of @exr-disjunction-and-cases-b7 does this in each case. So when the chart stops, try these moves. A claim the chart cannot finish may still be derivable: stopping is no evidence that the claim breaks.
 
 ### Named moves
 
@@ -1061,7 +1061,7 @@ Each part takes a line or two. The parts run from reading a split, through a mis
    ```
 9. Is the split "\( n > 0 \) or \( n < 0 \)" exhaustive for integers?
 10. "Case \( x \ge 1 \): \( x^2 \ge 1 \). Case \( x \le -1 \): \( x^2 \ge 1 \). So \( x^2 \ge 1 \) for every real \( x \)." What fails?
-11. Line 1 is \( (P \vee Q) \to R \). A student opens a box with \( P \) and a box with \( Q \), each ending in \( R \), and writes "\( R \) — \( \rulename{\vee E} \) 1, 2–3, 4–5". Correct?
+11. Line 1 is \( (P \vee Q) \to R \). A student opens a box with \( P \) and a box with \( Q \), each ending in \( R \), and writes "\( R \) — \( \rulename{\vee E} \) 1, 2–4, 5–7". Correct?
 12. Derive \( P \vee Q \vdash Q \vee (P \vee R) \).
 13. Derive \( (P \wedge Q) \vee (P \wedge R) \vdash P \).
 14. Derive \( P \vee Q, \ Q \to P \vdash P \).
@@ -1092,13 +1092,13 @@ Each part takes a line or two. The parts run from reading a split, through a mis
 
 (k) No: the main connective of line 1 is \( \to \), so it is no disjunction, and \( \rulename{\vee E} \) has nothing to split.
 
-(l) Box \( \lines{2}{4} \): 2 \( P \), assumption; 3 \( P \vee R \), \( \rulename{\vee I} \) 2; 4 \( Q \vee (P \vee R) \), \( \rulename{\vee I} \) 3. Box \( \lines{5}{6} \): 5 \( Q \), assumption; 6 \( Q \vee (P \vee R) \), \( \rulename{\vee I} \) 5. Then 7 \( Q \vee (P \vee R) \), \( \rulename{\vee E} \) 1, 2–4, 5–6.
+(l) Box \( \lines{2}{4} \): 2 \( P \), assumption, for \( \rulename{\vee E} \); 3 \( P \vee R \), \( \rulename{\vee I} \) 2; 4 \( Q \vee (P \vee R) \), \( \rulename{\vee I} \) 3. Box \( \lines{5}{6} \): 5 \( Q \), assumption, for \( \rulename{\vee E} \); 6 \( Q \vee (P \vee R) \), \( \rulename{\vee I} \) 5. Then 7 \( Q \vee (P \vee R) \), \( \rulename{\vee E} \) 1, 2–4, 5–6.
 
-(m) Box \( \lines{2}{3} \): 2 \( P \wedge Q \), assumption; 3 \( P \), \( \rulename{\wedge E} \) 2. Box \( \lines{4}{5} \): 4 \( P \wedge R \), assumption; 5 \( P \), \( \rulename{\wedge E} \) 4. Then 6 \( P \), \( \rulename{\vee E} \) 1, 2–3, 4–5.
+(m) Box \( \lines{2}{3} \): 2 \( P \wedge Q \), assumption, for \( \rulename{\vee E} \); 3 \( P \), \( \rulename{\wedge E} \) 2. Box \( \lines{4}{5} \): 4 \( P \wedge R \), assumption, for \( \rulename{\vee E} \); 5 \( P \), \( \rulename{\wedge E} \) 4. Then 6 \( P \), \( \rulename{\vee E} \) 1, 2–3, 4–5.
 
-(n) Box \( \lines{3}{3} \): 3 \( P \), assumption, already the goal. Box \( \lines{4}{5} \): 4 \( Q \), assumption; 5 \( P \), \( \rulename{{\to}E} \) 2, 4. Then 6 \( P \), \( \rulename{\vee E} \) 1, 3–3, 4–5.
+(n) Box \( \lines{3}{3} \): 3 \( P \), assumption, for \( \rulename{\vee E} \), already the goal. Box \( \lines{4}{5} \): 4 \( Q \), assumption, for \( \rulename{\vee E} \); 5 \( P \), \( \rulename{{\to}E} \) 2, 4. Then 6 \( P \), \( \rulename{\vee E} \) 1, 3–3, 4–5.
 
-(o) Box \( \lines{2}{4} \): 2 \( P \wedge Q \), assumption; 3 \( Q \), \( \rulename{\wedge E} \) 2; 4 \( Q \vee R \), \( \rulename{\vee I} \) 3. Box \( \lines{5}{7} \): 5 \( R \wedge S \), assumption; 6 \( R \), \( \rulename{\wedge E} \) 5; 7 \( Q \vee R \), \( \rulename{\vee I} \) 6. Then 8 \( Q \vee R \), \( \rulename{\vee E} \) 1, 2–4, 5–7.
+(o) Box \( \lines{2}{4} \): 2 \( P \wedge Q \), assumption, for \( \rulename{\vee E} \); 3 \( Q \), \( \rulename{\wedge E} \) 2; 4 \( Q \vee R \), \( \rulename{\vee I} \) 3. Box \( \lines{5}{7} \): 5 \( R \wedge S \), assumption, for \( \rulename{\vee E} \); 6 \( R \), \( \rulename{\wedge E} \) 5; 7 \( Q \vee R \), \( \rulename{\vee I} \) 6. Then 8 \( Q \vee R \), \( \rulename{\vee E} \) 1, 2–4, 5–7.
 :::
 
 ### B. Practice
@@ -1552,7 +1552,7 @@ $\begin{nd}
 \end{center}
 ```
 
-**4.** Two boxes from the goal; the premise fires twice, once on a half of the outer assumption and once on the inner one.
+**4.** Two boxes from the goal; the premise fires on a half of the outer assumption, and the implication it gives fires on the inner one.
 
 ```{=latex}
 \begin{center}
@@ -1844,7 +1844,7 @@ In the case \( \abs{x} \ge \abs{y} \), the left side is \( \abs{x} - \abs{y} \).
 :::
 
 ::: {.solution}
-We use two school facts: for real numbers \( a \), \( b \), either \( a \ge b \) or \( a < b \); and \( \abs{-a} = \abs{a} \) for every real \( a \) (if \( a \ge 0 \) then \( -a \le 0 \), so \( \abs{-a} = a \); if \( a < 0 \) then \( -a > 0 \), so \( \abs{-a} = -a = \abs{a} \)).
+We use two school facts: for real numbers \( a \), \( b \), either \( a \ge b \) or \( a < b \); and \( \abs{-a} = \abs{a} \) for every real \( a \) (if \( a \ge 0 \) then \( -a \le 0 \), so \( \abs{-a} = -(-a) = a = \abs{a} \), using, as in @exm-abs-product-cases, that \( \abs{b} = -b \) whenever \( b \le 0 \); if \( a < 0 \) then \( -a > 0 \), so \( \abs{-a} = -a = \abs{a} \)).
 
 By the first fact, \( \abs{x} \ge \abs{y} \) or \( \abs{x} < \abs{y} \), and we argue by cases \( [\rulename{\vee E}] \).
 
@@ -1921,7 +1921,7 @@ Derive \( (P \wedge Q) \vee (R \wedge Q) \vdash (P \vee R) \wedge Q \), naming t
 :::
 
 ::: {.solution}
-The goal is a conjunction, but neither of its sides is on a line, and the premise is a disjunction, so we split on the premise first; both cases end in the current goal \( (P \vee R) \wedge Q \). In each case, \( \rulename{\wedge E} \) takes the assumption apart, \( \rulename{\vee I} \) builds \( P \vee R \) from the side in hand, and \( \rulename{\wedge I} \) builds the goal.
+The chart would build the conjunction by \( \rulename{\wedge I} \), with subgoals \( P \vee R \) and \( Q \), and reach each one by splitting the premise; that route works (it is the second route below). Here one split is enough: the premise is a disjunction, so we split on it first and build the whole goal in each case; both cases end in the current goal \( (P \vee R) \wedge Q \). In each case, \( \rulename{\wedge E} \) takes the assumption apart, \( \rulename{\vee I} \) builds \( P \vee R \) from the side in hand, and \( \rulename{\wedge I} \) builds the goal.
 
 ```{=latex}
 \begin{center}
@@ -2123,7 +2123,7 @@ exr-disjunction-and-cases-b3 (solution): every integer is even or odd, and k(k +
 exr-disjunction-and-cases-b5 (solution): the breaks (b) at x = 1, (e) at x = 1, (i) at x = 2, with the stated readings of P, Q, R | school algebra, inline; checked by verify/ch01/exr-disjunction-and-cases-b5.py
 exr-disjunction-and-cases-b6 (solution): (b) x > 1 and x < -1 each imply x != 0; at x = 1/2, x != 0 and neither x > 1 nor x < -1; x^2 > 1 implies x > 1 or x < -1 | school algebra, inline; the last fact is exr-statements-and-connectives-b3 (c), cited; checked by verify/ch01/exr-disjunction-and-cases-b6.py
 exr-disjunction-and-cases-b4 (solution): a >= b or a < b; -a > -b when a < b; -a <= -b when a >= b, written out as (-a < -b) or (-a = -b); the checks at (3, -5) and (2, 2) | school algebra, taken as known; AN1.1 (promised); checked by verify/ch01/exr-disjunction-and-cases-b4.py
-exr-disjunction-and-cases-c1 (solution): a >= b or a < b; |-a| = |a| | school algebra; |-a| = |a| proved inline by cases
+exr-disjunction-and-cases-c1 (solution): a >= b or a < b; |-a| = |a|; |u| = u for u >= 0 and |u| = -u for u < 0 (removing the outer absolute value); subtracting |y| (resp. |x|) from both sides of an inequality; y - x = -(x - y) | school algebra, taken as known; AN1.1 (promised); |-a| = |a| proved inline by cases, using |b| = -b for b <= 0 from exm-abs-product-cases
 exr-disjunction-and-cases-c2 (solution): order facts for x, y < 0 | school algebra, taken as known; AN1.1 (promised)
 def-rules-disjunction (claim): (the exhaust warning and the paragraph after it) every real x satisfies x > 0, or x = 0, or x < 0 (trichotomy); every real x satisfies x >= 0 or x <= 0, both holding at x = 0; x = 0 satisfies neither x > 0 nor x < 0 | school algebra, taken as known; AN1.1 (promised); the unfolding of >= and <= is F1.1 §01
 def-rules-disjunction (claim): (the affirming-a-disjunct warning) 6 is even and a multiple of 3 | inline arithmetic; checked by verify/ch01/def-rules-disjunction.py

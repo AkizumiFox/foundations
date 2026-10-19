@@ -8,19 +8,19 @@ Recall that an integer \( n \) is **even** when \( n = 2k \) for some integer \(
 
 > For every integer \( n \), if \( n^2 \) is even, then \( n \) is even.
 
-Read the following two arguments for it. Each is written in the style of a textbook proof, and each sentence in each of them is true.
+Read the following two arguments for it. Each is written in the style of a textbook proof, and each claim in each of them is true.
 
 **Argument A.** Suppose \( n \) is odd, say \( n = 2k + 1 \) for an integer \( k \). Then \( n^2 = 4k^2 + 4k + 1 = 2(2k^2 + 2k) + 1 \), so \( n^2 \) is odd, and therefore \( n^2 \) is not even. So an odd \( n \) never has an even square. Since every integer is even or odd, an integer with an even square must be even.
 
 **Argument B.** Suppose \( n \) is even, say \( n = 2k \) for an integer \( k \). Then \( n^2 = 4k^2 = 2(2k^2) \), and \( 2k^2 \) is an integer, so \( n^2 \) is even. Hence if \( n^2 \) is even, then \( n \) is even.
 
-Argument A is a correct proof. Argument B is not, although none of its sentences is false. It starts from "\( n \) is even" and arrives at "\( n^2 \) is even". That is a perfectly good proof of a different statement: "if \( n \) is even, then \( n^2 \) is even". The claim asks for the journey in the opposite direction, from the square back to the number, and the last sentence of B announces a conclusion that the argument never reached.
+Argument A is a correct proof. Argument B is not, although none of its claims is false. It starts from "\( n \) is even" and arrives at "\( n^2 \) is even". That is a perfectly good proof of a different statement: "if \( n \) is even, then \( n^2 \) is even". The claim asks for the journey in the opposite direction, from the square back to the number, and the last sentence of B announces a conclusion that the argument never reached.
 
 Seeing this is easy once it is pointed out. Saying in general what went wrong is harder, and that is what this chapter and the next are for. To name the error we need to know what the rules of proof are, and before that, what they act on. So we start with the smallest pieces: the sentences a proof is made of.
 
 ## Statements
 
-A proof is written in sentences, but not every sentence can appear in one. "Is 91 prime?" cannot be a step of an argument, because it asserts nothing; neither can "Let us now turn to the case \( n = 0 \)." The sentences that can serve as steps are the ones that make a claim.
+A proof is written in sentences, but not every sentence can appear in one. "Is 91 prime?" asserts nothing, so it cannot serve as a premise or a conclusion; neither can "Let us now turn to the case \( n = 0 \)." The sentences a proof asserts are the ones that make a claim. A proof also has steps of another kind, such as "Suppose \( n \) is odd", which assert nothing but set up a temporary hypothesis; their rules come in Section 1.4.
 
 *A statement is a sentence that is either true or false.*
 
@@ -202,10 +202,10 @@ Let \( n \) be an integer, with \( E \): "\( n \) is even" and \( P \): "\( n \)
 By contrast, "\( 12 \) is a positive even number" is the conjunction of "\( 12 > 0 \)" and "\( 12 \) is even".
 
 ::: {.remark}
-**Weak readings.** Mathematics reads four kinds of word weakly, and a reader who reads them strongly translates wrongly.
+**Everyday readings.** Four kinds of word mean something different in mathematics from what they mean in conversation, and the everyday reading translates wrongly.
 
 - "Or" is inclusive: the first warning of "The connectives" above.
-- In a definition, "if" means "if and only if": the second warning there.
+- In a definition, "if" is read more strongly, as "if and only if": the second warning there.
 - "Some" never says "not all". "Some solutions of \( x^2 = x \) are non-negative" is true, although every solution (\( 0 \) and \( 1 \)) is non-negative.
 - A word without a sharp boundary makes no statement. "\( x \) is large" is not a statement until a bound is fixed, as in "\( x > 10^6 \)".
 :::
@@ -356,18 +356,18 @@ A list of checked cases says something about the cases checked, and perhaps abou
 
 ## Good form, false sentences
 
-Argument B has true sentences and a bad form. The opposite happens too:
+Argument B has true claims and a bad form. The opposite happens too:
 
 > If \( 6 \) is even, then \( 6 \) is prime. And \( 6 \) is even. So \( 6 \) is prime.
 
 Its form, "from \( P \to Q \) and \( P \), conclude \( Q \)", is good (Quick check (ii) above), and its conclusion is false. The fault is the first premise, false since \( 6 \) is even and not prime. Form and truth are separate questions; all four combinations occur.
 
-| | every sentence true | some sentence false |
+| | every claim true | some claim false |
 |---|---|---|
 | form good | "If \( 3 \) is odd, then \( 9 \) is odd. \( 3 \) is odd. So \( 9 \) is odd." | the argument about \( 6 \) above |
 | form bad | Argument B, by its last step "from \( P \to Q \), conclude \( Q \to P \)" | "If \( 2 \) is divisible by \( 4 \), then \( 2 \) is even. \( 2 \) is even. So \( 2 \) is divisible by \( 4 \)." |
 
-The top left is the odd-square argument at \( n = 3 \); the bottom right is the Quick check's (i) at \( n = 2 \). Argument A is not placed: it argues from a supposition ("Suppose \( n \) is odd ...") and uses "some" (an integer \( k \) with \( n = 2k + 1 \)), and a form written as premises above a line cannot yet express either.
+The top left is the odd-square argument at \( n = 3 \); the bottom right is the Quick check's (i) at \( n = 2 \). Argument A is not placed. One bad step puts an argument in the bottom row, which is how B got there, but the top row needs every step shown good. A's steps argue from a supposition ("Suppose \( n \) is odd ...") and use "some" (an integer \( k \) with \( n = 2k + 1 \)), and a form written as premises above a line cannot yet express either. Section 1.4 gives the rules for a supposition, and Chapter 5 those for "some".
 
 *A good form guarantees only that true premises give a true conclusion.*
 
@@ -442,7 +442,7 @@ Chapter 5 gives "for every" its rules and explains why an argument about a fixed
 
 ::: {.enumerate options="label=(\alph*)"}
 1. State the definition of a statement. Is "\( 10^{100} + 1 \) is prime" a statement? For a real number \( x \), is "\( x^2 - 1 = 0 \)" a statement? Is "\( 0^2 - 1 = 0 \)"?
-2. With \( P \): "\( n \) is even" and \( Q \): "\( n \) is prime", write "\( n \) is prime but not even" in symbols.
+2. Let \( n \) be an integer, with \( P \): "\( n \) is even" and \( Q \): "\( n \) is prime". Write "\( n \) is prime but not even" in symbols.
 3. Find the main connective of \( P \wedge Q \to \neg R \), and write the statement with all its parentheses.
 4. True or false, with a reason: if \( P \) and \( Q \) are both true, then \( P \vee Q \) is false.
 5. Let \( x \) and \( y \) be real numbers. Write the form of "\( x > 0 \) and \( y > 0 \); so \( y > 0 \) and \( x > 0 \)" with premises above a line, saying what each letter stands for.
@@ -618,7 +618,7 @@ The statement \( P \wedge Q \to R \) is \( (P \wedge Q) \to R \): "if \( x > 0 \
 :::
 
 ::: {#exr-statements-and-connectives-b3}
-[B3: Necessary and sufficient]
+[B3: Necessary and sufficient, used later]
 
 Let \( x \) be a real number.
 
@@ -719,7 +719,7 @@ Which of (a)–(d) have the same form as (T)? For one that does, break the form.
 
 ::: {.enumerate options="label=(\alph*)"}
 1. Let \( x \) be a real number. If \( x > 2 \), then \( x^2 > 4 \). If \( x > 2 \), then \( x > 1 \). So, if \( x^2 > 4 \), then \( x > 1 \).
-2. If a triangle is equilateral, then it is isosceles. If a triangle is equilateral, then each of its angles is \( 60^\circ \). So, if a triangle is isosceles, then each of its angles is \( 60^\circ \).
+2. Let \( \Delta \) be a triangle. If \( \Delta \) is equilateral, then \( \Delta \) is isosceles. If \( \Delta \) is equilateral, then each angle of \( \Delta \) is \( 60^\circ \). So, if \( \Delta \) is isosceles, then each angle of \( \Delta \) is \( 60^\circ \).
 3. Let \( n \) be an integer. If \( n \) is divisible by \( 6 \), then \( n \) is even. If \( n \) is even, then \( n^2 \) is even. So, if \( n \) is divisible by \( 6 \), then \( n^2 \) is even.
 4. Let \( x \) be a real number. If \( x > 3 \), then \( x > 2 \). If \( x > 3 \), then \( x > 1 \). So, if \( x > 3 \), then \( x > 2 \) and \( x > 1 \).
 :::
@@ -728,7 +728,7 @@ Which of (a)–(d) have the same form as (T)? For one that does, break the form.
 ::: {.solution}
 (T) has the form "from \( P \to Q \) and \( P \to R \), conclude \( Q \to R \)", with \( P \): "\( 12 \) is divisible by \( 6 \)", \( Q \): "\( 12 \) is even", \( R \): "\( 12 \) is divisible by \( 3 \)". The two premises share their hypothesis, and the conclusion joins their two conclusions.
 
-(a) and (b) have this form. In (a), \( P \) is "\( x > 2 \)", \( Q \) is "\( x^2 > 4 \)" and \( R \) is "\( x > 1 \)"; in (b), \( P \) is "equilateral", \( Q \) "isosceles" and \( R \) "each angle is \( 60^\circ \)".
+(a) and (b) have this form. In (a), \( P \) is "\( x > 2 \)", \( Q \) is "\( x^2 > 4 \)" and \( R \) is "\( x > 1 \)"; in (b), \( P \) is "\( \Delta \) is equilateral", \( Q \) is "\( \Delta \) is isosceles" and \( R \) is "each angle of \( \Delta \) is \( 60^\circ \)".
 
 (c) has the form "from \( P \to Q \) and \( Q \to R \), conclude \( P \to R \)": the second premise starts where the first ends. That is the form of B4(b), which cannot be broken.
 
@@ -742,7 +742,7 @@ Which of (a)–(d) have the same form as (T)? For one that does, break the form.
 ### C. Going deeper
 
 ::: {#exr-statements-and-connectives-c1}
-[C1: "Only if" and "unless"]
+[C1: "Only if" and "unless", used later]
 
 Let \( P \) and \( Q \) be statements.
 
@@ -774,7 +774,7 @@ The first two sentences differ by one word, and they are implications in opposit
 def-counterexample-set (example): phrase book: x > 2 implies x^2 > 4; n even implies n^2 even; 2 prime and even; 9 odd, not prime (9 = 3 * 3); 3 prime; at x = 2 exactly one of x > 0, x < 1, at x = 1/2 both; 6 even, positive, a multiple of 3; -3 odd, negative, a multiple of 3 | school arithmetic (Allowed prerequisites); checked by verify/ch01/def-counterexample-set.py
 def-counterexample-set (example): phrase-book Quick check: 2 even and prime, 9 neither, 7 prime and odd | inline arithmetic (checked by verify/ch01/def-counterexample-set.py)
 def-counterexample-set (example): "Not:" catalogue: gcd(4, 9) = 1, 4 and 9 squares; 1.414^2 = 1.999396; collinearity is a property of three points together; 12 > 0 and 12 even | school arithmetic and geometry (Allowed prerequisites); checked by verify/ch01/def-counterexample-set.py
-def-counterexample-set (example): weak readings: the solutions of x^2 = x are exactly 0 and 1 | inline (x^2 - x = x(x - 1)); checked by verify/ch01/def-counterexample-set.py
+def-counterexample-set (example): everyday readings: the solutions of x^2 = x are exactly 0 and 1 | inline (x^2 - x = x(x - 1)); checked by verify/ch01/def-counterexample-set.py
 def-counterexample-set (example): "Where to look first": x > 2 implies x > 1 implies x > 0 for every real x; at x = 1/2, x > 0 and not x > 2 | school algebra (Allowed prerequisites); AN1.1 (promised); checked by verify/ch01/def-counterexample-set.py
 def-counterexample-set (example): its Quick check: x > 1 implies x > 0 for every real x; -1 > 0 false | school algebra (Allowed prerequisites); checked by verify/ch01/def-counterexample-set.py
 def-counterexample-set (example): fold "A bad form refutes a step": x > 2 implies x > 1 for every real x; Argument A proves the opening fact | school algebra (Allowed prerequisites); the section's opening
@@ -802,5 +802,5 @@ exr-statements-and-connectives-b6 (solution): a multiple of 6 is even and a mult
 exr-statements-and-connectives-b2 (solution): a product of two positive reals is positive | school algebra (Allowed prerequisites); AN1.1 (promised)
 exr-statements-and-connectives-b3 (solution): multiplying an inequality by a positive number keeps it; x^2 > 1 iff |x| > 1 (given in the item) | school algebra (Allowed prerequisites); AN1.1 (promised); checked by verify/ch01/exr-statements-and-connectives-b3.py
 exr-statements-and-connectives-b4 (solution): x > 2 implies x^2 > 4 for every real x; (-3)^2 = 9 > 4; -1 <= 0 | the "only if" passage of this section; inline arithmetic (checked by verify/ch01/exr-statements-and-connectives-b4.py)
-exr-statements-and-connectives-c1 (solution): the square of a non-zero real is positive; (-2)^2 = 4 | school algebra (Allowed prerequisites); AN1.1 (promised); checked by verify/ch01/exr-statements-and-connectives-c1.py
+exr-statements-and-connectives-c1 (solution): the square of a non-zero real is positive; (-2)^2 = 4; a multiple of 4 is even (4k = 2(2k)); 2 is even and not divisible by 4 | school algebra (Allowed prerequisites); inline arithmetic; AN1.1 (promised); checked by verify/ch01/exr-statements-and-connectives-c1.py
 -->
