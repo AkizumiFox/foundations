@@ -495,7 +495,7 @@ Every worked derivation in a volume's rule sections (fd1: Chapters 1–2 and Sec
 
 ### 12.5 The Givens / Goal table (fd1 and introductory volumes)
 
-Scratch work is drawn as a two-column table, introduced where the two directions of reasoning are (fd1: Section 1.2) and reused wherever a proof is planned (fd1: 2.6, 4.4–4.6, and step 1 of 5.5's procedure):
+Scratch work is drawn as a two-column table, introduced where the two directions of reasoning are (fd1: Section 1.2) and reused wherever a proof is planned (fd1: 3.1, 4.4–4.6, and step 1 of 5.5's procedure):
 
 ```markdown
 | Givens | Goal |
@@ -508,7 +508,7 @@ Each row is one move, and each rule is a change to the table: →I moves the hyp
 
 ### 12.6 The rule card (fd1 and introductory volumes)
 
-Every rule section ends its main line with a **rule card**: a small table of the rules so far, each with a one-line picture (premises ⟹ conclusion) and its everyday phrase ("so", "suppose … then", "in either case"). The card grows section by section; the cumulative card is a one-page reference at the end of a run of rule sections (fd1: after 1.6, 2.6 and 4.6), and the goal/premise decision chart grows with it.
+Every rule section ends its main line with a **rule card**: a small table of the rules so far, each with a one-line picture (premises ⟹ conclusion) and its everyday phrase ("so", "suppose … then", "in either case"). The card grows section by section; the cumulative card is a one-page reference at the end of a run of rule sections (fd1: after 1.6, 3.1 and 5.6 (the quantifier card)), and the goal/premise decision chart grows with it.
 
 ### 12.7 Quick-check density (fd1 and introductory volumes)
 

@@ -345,3 +345,9 @@ asm
 ponendo
 logics
 scaffolded
+# fd1 Chapter 3 (F1.7, finding derivations), S4 2026-10-19
+untried
+rereading
+Ana
+Ben
+Curry

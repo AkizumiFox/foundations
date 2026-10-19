@@ -226,7 +226,7 @@ Notes on the table:
 - **`fd1/authoring/ledger/ch03.yaml`**:
   - new entries for the 29 new labels and their Quick checks;
   - the three R items change file (`01-…` → `03-…`) with their verdicts carried where the hash is unchanged (R1, R2), while R3 goes stale (solution reworded) and is re-reviewed;
-  - `exr-finding-derivations-c2` goes stale (solution, two words) and is re-reviewed;
+  - `exr-finding-derivations-c2` goes stale (solution, two words) and is re-reviewed; *Deviation (S3, 2026-10-19):* C2 (b)'s solution was reworded as planned ("follows", "Chapter 4 turns such choices into proofs", `@cor-refuting-row` dropped), but the ledger hash of `exr-finding-derivations-c2` did not change (the hash does not cover the solution), so it is not flagged stale; S5 re-reviews it by hand.
   - every item that R3 changes goes stale as R3 §3.3 already foresaw;
   - `ledger.py init 3` is run at S4.
 - **`fd1/verify/ch03/`**:
@@ -268,7 +268,7 @@ Budgets: **main line** = prose words by `tools/check_structure.py`'s `prose_word
 2. **What you need** (~110 words). "Chapters 1 and 2: the rules for every connective; derivations with boxes and the scope rule (@def-derivation); derived rules (@def-derived-rule) and @lem-weakening-cut; the classical rules of Section 2.5; and from Section 1.1 the counterexample set (@def-counterexample-set) and the move *try to break it*."
 3. **Quantifier note** (one sentence, part of What you need). "Steps about 'every' and 'some', such as 'say \( m = 2k \)', are used as ordinary reasoning, as in Chapter 2, until Chapter 5 gives them their rules." This replaces, for Chapter 3, the per-proof caveats that R3 cut (`01:487`, A1(b)'s solution). It carries STATUS row "F1.7 §01 quantifier steps" (§6).
 4. **Time** (one line). Recomputed by the drafter from the delivered text (§5). Expected: "**Time.** About 15 hours on the core track (all of A, one B and one C per section, the exit checks); about 25 hours for everything."
-5. **Minimum for fd2** (one line, layout G14). "**Minimum for fd2.** Chapters 1–6 and 8, core; Chapter 7 (Sections 7.1–7.2) before *Sets, Relations, and Cardinality*, Chapter 3."
+5. **Minimum for fd2** (one line, layout G14). "**Minimum for fd2.** Chapters 1–6 and 8, core; Chapter 7 (Sections 7.1–7.2) before *Sets, Relations, and Cardinality*, Chapter 3." *Deviation (S3, 2026-10-19):* the delivered line uses the wording already in Chapters 1 and 2: "**Minimum before *Sets, Relations, and Cardinality*.** Chapters 1–6 and 8, core; Sections 7.1–7.2 before its Chapter 3." Same meaning; STATUS row "F1.7 index" added at S4.
 6. **`## Roadmap`** (three bullets, one or two sentences each).
    - **How to Find a Derivation.** The moves of Chapters 1 and 2 put in order as one method, the reason the order loses nothing, four refinements including the detour rule, searches that succeed and one that fails, and every rule on one card.
    - **Four Kinds of Task.** Theorems, equivalences, inconsistent lists and claims whose verdict is withheld: how each task starts its search, and why all four are one question about whether a list derives \( \bot \).
@@ -284,7 +284,7 @@ Budgets: **main line** = prose words by `tools/check_structure.py`'s `prose_word
    - **Name the unstated fact.** An argument in prose leaves premises unsaid; write each one down and check it. (Section 3.3)
    - **Two columns.** Write the proof beside the derivation it mirrors, and see which lines the prose leaves silent. (Section 3.3)
 8. **`## Summary`** (new, ~170 words, STYLE §12.13.5). Points, in five to seven sentences:
-   - The search method reads boxes off the goal and eliminations off the resources, and its goal steps and its classical step never turn a derivable gap into one that is not (Section 3.1's fold).
+   - The search method reads boxes off the goal and eliminations off the resources, and its goal steps and its classical step never turn a derivable gap into one that is not (Section 3.1's fold). *Deviation (S3, 2026-10-19):* delivered as "never turn a gap that can be filled into one that cannot".
    - Postponing \( \vee \) and the four refinements make it efficient.
    - Every task is a question about derivability, and every question about derivability is a question about whether a list is **inconsistent** (@prp-derivable-iff-negation-inconsistent): proving \( \varphi \) from \( \Gamma \) is showing the counterexample set \( \Gamma, \neg\varphi \) inconsistent.
    - An inconsistent list proves everything (@prp-inconsistent-derives-everything).
@@ -1140,6 +1140,7 @@ The chapter's exit checks are 3.1 C3, 3.2 C1 and 3.3 C1.
 
   Total **≈ 27.3 h** (7.53 + 1.25 + 3 + 7.5 + 5.33 + 2.67 = 27.28; layout: 27 h): **"about 25 hours for everything."** §0 states the same figures (S2 round 1).
 - The drafter of `index.md` recomputes both from the delivered text (`check_structure.py --words`) and the delivered exercise counts, by the same rule, and does not shade either down (STYLE §11.9). If the delivered core reaches 17.5 h, the line reads "About 20 hours".
+- *Deviation (S3, 2026-10-19):* delivered main line 9,532 words (3.1 4,984; 3.2 2,596; 3.3 1,952) and 1,323 folded (3.1 975; 3.2 348; 3.3 0), under the expected ~10,815 and ~1,235, each within its budget. Recomputed: core 5.96 + 1.25 + 3 + 1.5 + 2 = 13.7 h, full 6.78 + 1.25 + 3 + 7.5 + 5.33 + 2.67 = 26.5 h; the printed line is unchanged ("About 15 hours … about 25 hours"). Exercise counts as planned.
 
 ---
 
@@ -1189,7 +1190,7 @@ If ch02-deepen does not deliver `lem-weakening-cut` in 2.3, the proofs of F3.2-a
   - "F1.2 §03, §04, §05 | the search method … 'Section 3.1'": paid by F1.7 §01;
   - `ch01-deepen.md` §6 seams: 3.2 recalls 1.5's "Derive it or break it" (paid: 3.2 item 8); 3.3 reuses 1.1 B5's key (paid: 3.3 item 2).
 
-  For 1.1 B5, the coordinator adds ", used later" to `exr-statements-and-connectives-b5`'s title at the S8 seam pass, the one ch01 file change this plan causes. The S8 seam referee records it. It is a title change only, so no hash change for the block's content; if the hash covers the title, B5 is re-reviewed.
+  For 1.1 B5, the coordinator adds ", used later" to `exr-statements-and-connectives-b5`'s title at the S8 seam pass, the one ch01 file change this plan causes. The S8 seam referee records it. It is a title change only, so no hash change for the block's content; if the hash covers the title, B5 is re-reviewed. *Deviation (S3, 2026-10-19):* the title change was made at S3 by the index drafter, not at S8. The ledger hash covers the title, so the item went stale; the S4 coordinator checked that the diff is the title only and recorded a coordinator verdict (`fd1/authoring/ledger/ch01.yaml`). The S8 seam referee still records it.
 
 **Seams recorded for later S1 units (not promises):**
 - 6.3 mirrors 3.1 and 3.2: the four tasks with quantifiers, a first-order library citing 3.3's heading id, and the "propositional core" move.

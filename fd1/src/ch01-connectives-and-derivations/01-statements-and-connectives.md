@@ -663,7 +663,7 @@ In (b) and (d), "cannot be broken" is shown by reasoning about every case at onc
 :::
 
 ::: {#exr-statements-and-connectives-b5}
-[B5: One key, sixteen sentences]
+[B5: One key, sixteen sentences, used later]
 
 Let \( n \) be an integer. Use only the letters \( E \): "\( n \) is even", \( P \): "\( n \) is prime", \( T \): "\( n \) is a multiple of \( 3 \)" and \( G \): "\( n > 10 \)". Translate sentences 1–14 into symbols. Then translate 15 and 16 into English, and find an \( n \) that makes 16 false.
 

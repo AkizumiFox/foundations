@@ -1010,6 +1010,14 @@ items:
     evidence: '01-statements-and-connectives.md:665 title is [B5: One key, sixteen sentences]; ch01-deepen
       D7 and ch03-deepen.md:1185 give the '', used later'' title change to the S8 seam pass once 3.3 reuses
       the key; ch03-deepen is still an unfrozen S1 draft [finding refuted by skeptics]'
+  - stage: S8
+    verdict: correct
+    by: coordinator
+    hash: 3a6f3f07a50c
+    date: '2026-10-19'
+    model: claude-opus-5-5
+    evidence: 'ch03 S4 2026-10-19: diff is the title only (''[B5: One key, sixteen sentences, used later]'',
+      ch03-deepen §6); stem and solution unchanged'
 - key: exr-statements-and-connectives-b6
   kind: exr
   file: 01-statements-and-connectives.md
