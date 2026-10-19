@@ -359,12 +359,12 @@ No forward pointer remains on the main line (the Looking-ahead box moves to 3.3;
        - each test –yes→ its action;
        - t0 –no→ t1 –no→ t2 –no→ t3 –no→ t4 –no→ e4;
        - b1, b2, b3, b4 return to the merge point above t0 (one line on the right, as in 07:936).
-     - Caption sentence after the figure (counted in the 25): none beyond the lead.
+     - Caption sentence after the figure (counted in the ~42): none beyond the lead.
      - The disjunctive goal goes "no" at t1, so step 2 postpones it, as the algorithm says.
      - **Termination (decided at S2 round 2; replaces round 1's "not yet used").** Three rules, all on the page (the lead's two sentences and the words "untried for this gap" in t2, t3, t4):
        - *A gap* is a goal with its resources. A move whose new gap has the same goal and the same resources as a gap still open above it (the current gap included) is not a move: the chart skips it. This replaces "a goal already being sought is not new", which is too strong: inside an RAA box on \( \neg(P \vee Q) \), aiming at \( P \vee Q \) is the right move (3.2 B3 (i), and \( \vdash P \vee \neg P \)), and there the resources differ by the assumption.
        - *Untried for this gap*: each move is tried at most once in a gap. ∧E on a line already taken apart, a LEM split whose case adds a statement already a resource, and RAA on the goal \( \bot \) (its box would seek \( \bot \) again; b4 says "not \( \bot \)") are not moves.
-       - *t4's candidates are bounded*: RAA on the current goal, and LEM only on a statement some resource waits for (the antecedent of \( \to \), a side of \( \leftrightarrow \), the \( \chi \) of a resource \( \neg\chi \)). This is step 5's "a well-chosen statement" made finite, and it is what 01:462's failed search does (LEM on \( P \), then on \( Q \)).
+       - *t4's candidates are bounded*: RAA on the current goal, and LEM only on a statement some resource waits for (the antecedent of \( \to \), a side of \( \leftrightarrow \), the \( \chi \) of a resource \( \neg\chi \)). This is step 5's "a well-chosen statement" made finite, and it is what 01:462's failed search does (LEM on \( P \), as 01:462 does; 01:462's further LEM on \( Q \), which no resource waits for, is a move the chart skips: its case \( Q \) repeats the open gap). The drafter cuts 01:462's LEM-on-\( Q \) sentence so that the prose and the figure agree.
        - *Back up*: a gap with no move left returns to the gap that made it, where that move now counts as tried; at the first gap, e4 stops the search. This is step 5's "try the same with a goal further out" and fold F3.1-c's Peirce search.
        - Why it ends (for S2a, not for the text): every statement in any gap is a part of the claim or the negation of one, so there are finitely many gaps; on any route resources only grow and no gap repeats one open above it; so every route is finite, and the search is a finite tree. §9 item 9 gives the run on \( P \to Q \vdash Q \to P \).
      - This chart reads the algorithm's **order**. The table of moves reads **situations**. R3 §9 D9's objection was to a second decision chart duplicating the table; this one does not (§10 records the supersession).
@@ -483,12 +483,12 @@ Five in ~4,990 words, about one per 1,000. Peirce's Quick check is in fold F3.1-
 
 **Purpose.** To show that the **task** decides the shape of a search, and to name the syntactic idea under all four tasks: an **inconsistent** list, one from which \( \bot \) is derivable. With it, Chapter 1's counterexample set gets its second link: a claim is derivable exactly when its counterexample set is inconsistent. **Kind:** N. [Technique: LB, vD (inconsistency, Γ ∪ {¬φ} ⊢ ⊥ as the syntactic counterexample set); LB, LPL (task types; derive or refute, verdict withheld); Hu (flowchart); Sm, Le (deliberate failure shown).] **Sources in fd1:** plan §3.2 "2.7 Four Kinds of Task", first half; layout §1.3 row 3.2. None of the prose exists yet; everything below is **newly written**.
 
-**Budget:** main line ≤ 4,600. Expected about 3,500:
+**Budget:** main line ≤ 4,600. Expected about 3,520:
 - opening 150;
 - four tasks 350;
 - theorems 260;
 - equivalences 380;
-- inconsistent lists 1,000;
+- inconsistent lists 1,020;
 - the counterexample set, derived 250;
 - one task in four costumes 290;
 - derive or break 640;
@@ -543,7 +543,7 @@ Folds ≤ 350 (F3.2-a, the two proofs, ~280). One forward pointer, the Looking-a
      - **Finished (11 lines):** 1 \( (P \wedge \neg Q) \to R \); 2 | \( P \), asm; 3 | \( Q \vee \neg Q \), LEM; 4 | | \( Q \), asm; 5 | | \( Q \vee R \), ∨I 4; 6 | | \( \neg Q \), asm; 7 | | \( P \wedge \neg Q \), ∧I 2, 6; 8 | | \( R \), →E 1, 7; 9 | | \( Q \vee R \), ∨I 8; 10 | \( Q \vee R \), ∨E 3, 4–5, 6–9; 11 \( P \to (Q \vee R) \), →I 2–10.
    - *Aftermath* (~60 words): "An equivalence is two searches, and they need not be alike. One direction used a derived rule and no classical step. The other reached step 5, because its goal was a disjunction with no side in hand. When one direction is easy, do it first: it is a check that the statements are worth comparing, and its lines often suggest the other direction's split."
 5. **`## Inconsistent lists`** (~1,000 words with the gallery and the block).
-   - **Lead** (~60 words): "Sometimes the task is not to reach a conclusion but to show that some statements cannot be accepted together. Examples: a puzzle's conditions that no number meets, the hypotheses of a lemma that contradict each other, or the assumption of a proof by contradiction together with what is given. A derivation of \( \bot \) does that, and the list it starts from gets a name."
+   - **Lead** (~80 words; S2 final added the B5 recall, closing seam note 2): "Sometimes the task is not to reach a conclusion but to show that some statements cannot be accepted together. Examples: a puzzle's conditions that no number meets, the hypotheses of a lemma that contradict each other, or the assumption of a proof by contradiction together with what is given. Section 2.5 (@exr-reductio-and-classical-rules-b5) already read an RAA derivation as a derivation of \( \bot \) from the counterexample set. A derivation of \( \bot \) does that, and the list it starts from gets a name."
    - **`def-inconsistent-set`** (block, verbatim as drafted here):
 
      ```
@@ -732,7 +732,7 @@ Five in ~3,500 words, about one per 700.
   - The solution adds the reading: to prove "if \( P \) and \( Q \), then \( R \)", it is enough to prove "if \( P \) and not \( R \), then not \( Q \)", a contrapositive in one hypothesis.
 - **B3** `[B3: Derive or break, used later]`. [Technique: LPL, Si, En; look-alikes seeded.] Stem: "For each claim, derive it or break it. Try to break it first. To break a claim, give statements that make its counterexample set true."
   - The claims:
-    - (a) \( \neg(P \wedge Q) \vdash \neg P \wedge \neg Q \)
+    - (a) \( \neg P \vee \neg Q \vdash \neg(P \vee Q) \)
     - (b) \( \neg(P \leftrightarrow Q), \ P \vdash \neg Q \)
     - (c) \( P \to Q, \ \neg P \to (R \vee Q), \ \neg R \vdash Q \)
     - (d) \( P \to Q, \ \neg P \to (R \vee Q), \ \neg R \vdash P \)
@@ -741,9 +741,9 @@ Five in ~3,500 words, about one per 700.
     - (g) \( P \vee Q, \ P \vdash \neg Q \)
     - (h) \( P \vee Q, \ \neg(P \wedge Q), \ P \vdash \neg Q \)
     - (i) \( \neg(P \vee Q) \to P \vdash P \vee Q \)
-  - (S2 round 1: the S1 (c) and (i) reproduced textbook exercises; they were replaced, and (c)/(d) share their premises. S2 round 2: the round 1 replacements were textbook items plus one ∧E line; replaced again. The new (c) splits by LEM on \( P \), and its two cases reach \( Q \) by different rules: →E in the case \( P \), →E and then DS in the case \( \neg P \). The new (i) has a disjunctive goal, so step 2 postpones it; RAA on the goal supplies the hypothesis the premise waits for, and the clash with the RAA assumption must be manufactured by ∨I.)
+  - (S2 final: the earlier (a), \( \neg(P \wedge Q) \vdash \neg P \wedge \neg Q \), was word for word `@exr-reductio-and-classical-rules-b5` (b) of the approved Chapter 2; it is replaced by \( \neg P \vee \neg Q \vdash \neg(P \vee Q) \), still a De Morgan look-alike with the wrong connective inside, still breaking.) (S2 round 1: the S1 (c) and (i) reproduced textbook exercises; they were replaced, and (c)/(d) share their premises. S2 round 2: the round 1 replacements were textbook items plus one ∧E line; replaced again. The new (c) splits by LEM on \( P \), and its two cases reach \( Q \) by different rules: →E in the case \( P \), →E and then DS in the case \( \neg P \). The new (i) has a disjunctive goal, so step 2 postpones it; RAA on the goal supplies the hypothesis the premise waits for, and the clash with the RAA assumption must be manufactured by ∨I.)
   - *Answer* (verdict first, then the derivation or the break; \( x \) is a real number):
-    - (a) Breaks. \( P \): "\( x > 0 \)", \( Q \): "\( x > 2 \)", at \( x = 1 \): \( \neg(P \wedge Q) \) is true and \( \neg P \) is false.
+    - (a) Breaks. \( P \): "\( x > 2 \)", \( Q \): "\( x > 0 \)", at \( x = 1 \): \( \neg P \) is true, so \( \neg P \vee \neg Q \) is true; \( Q \) is true, so \( P \vee Q \) is true and \( \neg(P \vee Q) \) is false. (The true De Morgan law runs the other way, \( \neg(P \vee Q) \vdash \neg P \wedge \neg Q \); here the wrong connective sits inside the negation.)
     - (b) Derive. 3 | \( Q \), asm; 4 | | \( P \), asm; 5 | | \( Q \), R 3; 6 | | \( Q \), asm; 7 | | \( P \), R 2; 8 | \( P \leftrightarrow Q \), ↔I 4–5, 6–7; 9 | \( \bot \), ¬E 8, 1; 10 \( \neg Q \), ¬I 3–9.
     - (c) Derive. 4 \( P \vee \neg P \), LEM; 5 | \( P \); 6 | \( Q \), →E 1, 5; 7 | \( \neg P \); 8 | \( R \vee Q \), →E 2, 7; 9 | \( Q \), DS 8, 3; 10 \( Q \), ∨E 4, 5–6, 7–9. (Step 5: the goal \( Q \) is a letter, and the first two premises wait for \( P \) and for \( \neg P \), so LEM on \( P \). DS matches as stated in Section 2.3, refuting the **left** disjunct \( R \); that is why the premise is written \( R \vee Q \).)
     - (d) Breaks. \( P \): "\( x > 5 \)", \( Q \): "\( x > 0 \)", \( R \): "\( x > 10 \)", at \( x = 1 \): \( P \) is false, so \( P \to Q \) is true; \( \neg P \) and \( Q \) are true, so \( \neg P \to (R \vee Q) \) is true; \( \neg R \) is true; and \( P \) is false. (Trying to break it first: with \( P \) false, the premises force \( Q \) true and \( R \) false, and nothing clashes. The tempting step from "\( P \) gives \( Q \)" and "\( Q \) holds", which (c) derives, to \( P \) is affirming the consequent, Section 1.3.)
@@ -753,7 +753,7 @@ Five in ~3,500 words, about one per 700.
     - (h) Derive. 4 | \( Q \); 5 | \( P \wedge Q \), ∧I 3, 4; 6 | \( \bot \), ¬E 5, 2; 7 \( \neg Q \), ¬I 4–6. The premise \( P \vee Q \) is not needed.
     - (i) Derive. 2 | \( \neg(P \vee Q) \), asm; 3 | \( P \), →E 1, 2; 4 | \( P \vee Q \), ∨I 3; 5 | \( \bot \), ¬E 4, 2; 6 \( P \vee Q \), RAA 2–5. (Step 2 postpones the disjunction; the premise waits for \( \neg(P \vee Q) \), which RAA on the goal supplies; step 4 then manufactures the clash partner \( P \vee Q \) from line 3 by ∨I, a manufactured clash and not a detour. Reading: a statement whose failure would force one of its own sides holds.)
   - Closing sentence: (c)/(d) and (e)/(f) are look-alike pairs: each pair has the same premises and differs in the conclusion. (h) is (g) repaired by "not both". (a) is a De Morgan look-alike with the wrong connective inside.
-  - **Used later:** Section 4.6 recalls the four breaking claims (a), (d), (f), (g) by label, and Section 4.7's retroactive paragraph certifies them (§6).
+  - **Used later:** Section 4.6 recalls the four breaking claims (a), (d), (f), (g) by label, and Section 4.7's retroactive paragraph certifies them (§6). The breaking claims after S2 final are (a) \( \neg P \vee \neg Q \vdash \neg(P \vee Q) \), (d), (f), (g); none is a Chapter 2 exercise.
 - **B4** `[B4: Derive ⊥, or make every member true]`. Stem: "For each list, either derive \( \bot \) from it, or give statements that make every member true at once." (a) \( P \to Q, \ Q \to \neg P, \ P \). (b) \( P \vee Q, \ P \to \neg Q, \ Q \to \neg P \). (c) \( \neg(P \to Q), \ Q \vee \neg P \). (d) \( P \to (Q \wedge \neg Q) \). (e) \( \neg(P \vee Q), \ P \vee (Q \wedge R) \). (f) \( \neg(P \wedge Q), \ \neg(P \wedge \neg Q), \ \neg(\neg P \wedge Q) \).
   - *Answer:*
     - (a) Derive. 4 \( Q \), →E 1, 3; 5 \( \neg P \), →E 2, 4; 6 \( \bot \), ¬E 3, 5.
@@ -1103,9 +1103,9 @@ Four in ~2,300 words, about one per 600.
 |---|---|---|---|---|---|
 | index | placeholder (~60) | ≤ 1,000 | ~975 | — | — |
 | 3.1 | 4,652 | ≤ 5,000 | ~4,995 | 0 | ≤ 975 (expected ~955) |
-| 3.2 | — (new) | ≤ 4,600 | ~3,500 | — | ≤ 350 (expected ~280) |
+| 3.2 | — (new) | ≤ 4,600 | ~3,520 | — | ≤ 350 (expected ~280) |
 | 3.3 | — (new) | ≤ 3,400 | ~2,300 | — | ≤ 150 (none planned) |
-| sections | 4,652 | ≤ 13,000 (layout §3) | ~10,770 | 0 | ≤ 1,475 (expected ~1,235) |
+| sections | 4,652 | ≤ 13,000 (layout §3) | ~10,815 | 0 | ≤ 1,475 (expected ~1,235) |
 
 Every section file stays at or under 5,000 main-line words (layout §1.3 caps). The whole-file advisory count of `check_structure.py`, exercises included, will exceed 5,000 in 3.1 and 3.2. It is advisory.
 
@@ -1123,22 +1123,22 @@ The chapter's exit checks are 3.1 C3, 3.2 C1 and 3.3 C1.
 
 **Time** (B1 formula: 15 min per 400 main-line words; A1 25 min; a drill bank one exercise per four parts at 30 min; one B 30 min and one non-Challenge C 40 min per section; R 40 min; index pages not counted, as in layout §3).
 - **Core track:**
-  - reading ~10,770 words ≈ 6.7 h (6.73);
+  - reading ~10,815 words ≈ 6.8 h (6.76);
   - A1 3 × 25 min = 1.25 h;
   - A2 6 × 30 min = 3 h;
   - one B per section, 3 × 30 min = 1.5 h;
   - one non-Challenge C per section, the three exit checks, 3 × 40 min = 2 h.
 
-  Total **≈ 14.5 h** (6.73 + 1.25 + 3 + 1.5 + 2 = 14.48). Rounded to the nearest 5 hours (STYLE §2): **"About 15 hours on the core track."** Layout §3's 16 h assumed full caps (13,000 words); the sections come in under them.
+  Total **≈ 14.5 h** (6.76 + 1.25 + 3 + 1.5 + 2 = 14.51). Rounded to the nearest 5 hours (STYLE §2): **"About 15 hours on the core track."** Layout §3's 16 h assumed full caps (13,000 words); the sections come in under them.
 - **Full track:**
-  - reading ~10,770 + ~1,235 folded ≈ 12,005 words ≈ 7.5 h (7.50);
+  - reading ~10,815 + ~1,235 folded ≈ 12,050 words ≈ 7.5 h (7.53);
   - A1 1.25 h;
   - A2 3 h;
   - B: 11 ordinary + 4 for the battery = 15 × 30 min = 7.5 h;
   - C 8 × 40 min ≈ 5.3 h;
   - R 4 × 40 min ≈ 2.7 h.
 
-  Total **≈ 27.3 h** (7.50 + 1.25 + 3 + 7.5 + 5.33 + 2.67 = 27.25; layout: 27 h): **"about 25 hours for everything."** §0 states the same figures (S2 round 1).
+  Total **≈ 27.3 h** (7.53 + 1.25 + 3 + 7.5 + 5.33 + 2.67 = 27.28; layout: 27 h): **"about 25 hours for everything."** §0 states the same figures (S2 round 1).
 - The drafter of `index.md` recomputes both from the delivered text (`check_structure.py --words`) and the delivered exercise counts, by the same rule, and does not shade either down (STYLE §11.9). If the delivered core reaches 17.5 h, the line reads "About 20 hours".
 
 ---
@@ -1315,7 +1315,7 @@ If ch02-deepen does not deliver `lem-weakening-cut` in 2.3, the proofs of F3.2-a
 30. 3.2 A1 (a)–(e); A2 (a)–(l), in particular (f) (two readings, and \( Q \) not a negated conclusion).
 31. 3.2 B1: three theorems (14, 8, 10 lines); which step opens each box (in (b), box 1 by step 2 and the two case boxes by step 3); (a)'s second conjunct without RAA. (b) was replaced at S2 round 1 (the S1 (b) was the main-line claim (a) curried); the new (b) is checked against the text's derivations and against Chapter 1's ∨E items, and passes `check_fitch.py`.
 32. 3.2 B2: the scaffold; both derivations (10 lines each); (c).
-33. 3.2 B3: nine verdicts (five derive, four break); the derivations of (b), (c), (e), (h), (i); the breaks of (a), (d), (f), (g) at the stated numbers; the closing pairs. (A truth-table check of all nine was run while writing this blueprint, and of the replaced (c), (d), (i) at S2 rounds 1 and 2: (b), (c), (e), (h), (i) valid; (a), (d), (f), (g) invalid; (d)'s break at \( x = 1 \) with \( x > 5 \), \( x > 0 \), \( x > 10 \) checked; the round 2 (c) (10 lines, LEM and DS) and (i) (6 lines) pass `check_fitch.py`, checked while revising.) The round 2 (c), (d), (i) are fd1's own, and none is a textbook item plus a trivial step (item 40's standard): (c)'s two cases end by different rules, and (c) is not 3.1's `exm-search-postpone-or` (whose goal is a disjunction and whose split is on \( Q \)); (i)'s premise has a consequent that is neither the goal nor the RAA assumption's negation, so the clash is manufactured (Lemmon's \( \neg P \to P \vdash P \) closes by a direct clash). Checked against the LPL and Lemmon exercise lists for these shapes. The (c)/(d) look-alike pair shares its premises, so B3's closing sentence stays true.
+33. 3.2 B3: nine verdicts (five derive, four break); the derivations of (b), (c), (e), (h), (i); the breaks of (a), (d), (f), (g) at the stated numbers; the closing pairs. (S2 final: (a) is now \( \neg P \vee \neg Q \vdash \neg(P \vee Q) \), invalid, broken at \( x = 1 \) with \( P \): "\( x > 2 \)", \( Q \): "\( x > 0 \)"; truth-table checked (row \( P \) false, \( Q \) true); it is not `@exr-reductio-and-classical-rules-b5` (b), nor any Chapter 2 exercise (grep of `fd1/src`).) (A truth-table check of all nine was run while writing this blueprint, and of the replaced (c), (d), (i) at S2 rounds 1 and 2: (b), (c), (e), (h), (i) valid; (a), (d), (f), (g) invalid; (d)'s break at \( x = 1 \) with \( x > 5 \), \( x > 0 \), \( x > 10 \) checked; the round 2 (c) (10 lines, LEM and DS) and (i) (6 lines) pass `check_fitch.py`, checked while revising.) The round 2 (c), (d), (i) are fd1's own, and none is a textbook item plus a trivial step (item 40's standard): (c)'s two cases end by different rules, and (c) is not 3.1's `exm-search-postpone-or` (whose goal is a disjunction and whose split is on \( Q \)); (i)'s premise has a consequent that is neither the goal nor the RAA assumption's negation, so the clash is manufactured (Lemmon's \( \neg P \to P \vdash P \) closes by a direct clash). Checked against the LPL and Lemmon exercise lists for these shapes. The (c)/(d) look-alike pair shares its premises, so B3's closing sentence stays true.
 34. 3.2 B4: three derivations of \( \bot \) ((a), (c), (e)); three lists true at once ((b), (d), (f)) with their statements; (f) with the fourth member derives \( \bot \) (LEM twice, four cases). Truth-table check run: (a), (c), (e), (f) + fourth member unsatisfiable; (b), (d), (f) satisfiable.
 35. 3.2 C1: the counterexample set; the 13-line derivation of \( \bot \); the 11-line direct derivation; (d)'s break at \( x = 1 \) (all four members of the new counterexample set checked); the marking scheme.
 36. 3.2 C2: (a)–(c) from the two propositions; the marking scheme; the "used later" target.
@@ -1365,6 +1365,16 @@ If ch02-deepen does not deliver `lem-weakening-cut` in 2.3, the proofs of F3.2-a
   - (i) The battery is 15 graded items (library, translation, derive-or-break), not 15 bare sequents.
 
 ---
+
+## S2 replies (final)
+
+1. **3.2 B3 (a) was Chapter 2's `@exr-reductio-and-classical-rules-b5` (b)**. Replaced by \( \neg P \vee \neg Q \vdash \neg(P \vee Q) \), broken at \( x = 1 \) with \( P \): "\( x > 2 \)", \( Q \): "\( x > 0 \)". The answer, the closing sentence (still true), the Used-later note and §9 item 33 are updated; 4.6 still recalls (a), (d), (f), (g).
+2. **Seam note 2 was not in the plan**. The lead of `## Inconsistent lists` gains the sentence "Section 2.5 (@exr-reductio-and-classical-rules-b5) already read an RAA derivation as a derivation of \( \bot \) from the counterexample set." (+20 words; lead ~80; 3.2 expected ~3,520 of 4,600). Seam note 2 now matches the plan.
+3. **t4's bounded-candidate rule misdescribed 01:462**. The parenthesis now says the chart does LEM on \( P \) and skips 01:462's LEM on \( Q \), which no resource waits for; the drafter cuts that sentence from 01:462.
+4. **§5 figures**. Sections ~10,815 (3.1 ~4,995, 3.2 ~3,520, 3.3 ~2,300), ~12,050 with folds; reading 6.76 h core and 7.53 h full; totals ≈ 14.5 h and ≈ 27.3 h; printed lines unchanged.
+5. **Figure 3.1-F caption count** reads "(counted in the ~42)".
+
+**Frozen after S2 (final revision, 2026-10-19).**
 
 ## 11. S2 replies (round 1)
 
