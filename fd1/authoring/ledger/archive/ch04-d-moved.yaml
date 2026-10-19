@@ -1,0 +1,77 @@
+chapter: 4
+note: 'Entries retired from ch04.yaml by ch02-deepen (2026-10-19): lem-weakening-cut moved to F1.2 §03 (layout G2), wording ''formula(s)'' -> ''statement(s)'', so its hash is new and no verdict is carried; the live entries are in ch02.yaml. Never read by tools/ledger.py'
+items:
+- key: lem-weakening-cut
+  kind: lem
+  file: 08-completeness.md
+  line: 30
+  hash: 20ce82b7fa9f
+  verdicts:
+  - stage: S5a
+    verdict: minor
+    by: refereeA
+    hash: 20ce82b7fa9f
+    date: '2026-09-28'
+    model: claude-opus-5-5
+    evidence: authoring/reviews/ch03-S5-A.md row 06:30
+  - stage: S5b
+    verdict: minor
+    by: refereeB
+    hash: 20ce82b7fa9f
+    date: '2026-09-28'
+    model: claude-opus-5-5
+    evidence: 'authoring/reviews/ch03-S5-B.md item findings: 06:42/06:68 (c) overstated as the form of derived rules'
+  - stage: S7
+    verdict: correct
+    by: reviser
+    hash: 20ce82b7fa9f
+    date: '2026-09-28'
+    model: claude-opus-5-5
+    evidence: 'fixed (S5a/S5b): 06:42 and 06:68 now say (c) is def-derived-rule for sequents / whole derivations; inside a box the pasting of def-derived-rule (Section 2.3) does the job'
+  - stage: S7r
+    verdict: correct
+    by: rereferee
+    hash: 20ce82b7fa9f
+    date: '2026-09-28'
+    model: claude-opus-5-5
+    evidence: 'authoring/reviews/ch03-S7-recheck.md: fix verified in context (round 1)'
+  - stage: S8
+    verdict: correct
+    by: seam
+    hash: 20ce82b7fa9f
+    date: '2026-09-28'
+    model: claude-opus-5-5
+    evidence: 'S8 seam (authoring/reviews/ch03-S8-seam.md): cross-section, cross-chapter labels and notation checked'
+- key: proof:lem-weakening-cut
+  kind: proof
+  file: 08-completeness.md
+  line: 48
+  hash: 609714fc3969
+  verdicts:
+  - stage: S5a
+    verdict: correct
+    by: refereeA
+    hash: d655d2c4fd89
+    date: '2026-09-28'
+    model: claude-opus-5-5
+    evidence: authoring/reviews/ch03-S5-A.md row 06:30
+  - stage: S5b
+    verdict: correct
+    by: refereeB
+    hash: d655d2c4fd89
+    date: '2026-09-28'
+    model: claude-opus-5-5
+    evidence: 'authoring/reviews/ch03-S5-B.md section rows "(all)/(all others)": claims checked'
+  - stage: S8
+    verdict: correct
+    by: seam
+    hash: d655d2c4fd89
+    date: '2026-09-28'
+    model: claude-opus-5-5
+    evidence: 'S8 seam (authoring/reviews/ch03-S8-seam.md): cross-section, cross-chapter labels and notation checked'
+  - stage: fmt
+    verdict: correct
+    by: coordinator
+    hash: 609714fc3969
+    date: '2026-09-28'
+    evidence: 'typographic change only: lettered paragraph ''(a)'' set as ''*(a)*'' (2026-09-28); content reviewed at S5-S8 unchanged'

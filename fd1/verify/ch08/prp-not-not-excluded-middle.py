@@ -14,7 +14,10 @@ LINE = re.compile(r"\\(hypo|have)\s*\{(\d+)\}\s*\{(.*?)\}\s*(\\[a-z]+\{[^}]*\})?
 
 
 def nd_lines(text, label):
-    blk = text.split(label)[1].split("\\begin{nd}")[1].split("\\end{nd}")[0]
+    # the first raw LaTeX block after the label that is not a "% schema" snapshot
+    raws = text.split(label)[1].split("```{=latex}")[1:]
+    raw = next(r.split("```")[0] for r in raws if "% schema" not in r.split("```")[0])
+    blk = raw.split("\\begin{nd}")[1].split("\\end{nd}")[0]
     return [(int(n), f.strip(), (j or "").strip()) for _, n, f, j in LINE.findall(blk)]
 
 

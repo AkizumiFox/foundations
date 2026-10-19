@@ -38,14 +38,15 @@ $\begin{nd}[schema]
 The left schema is \( \rulename{\neg I} \) (**not-introduction**): the assumption \( \varphi \) is **discharged** when the box closes, and the line \( \bot \) is a line of that box itself, not of a box inside it. The right schema is \( \rulename{\neg E} \), recalled from @def-rules-contradiction, so that the rule that proves a negation and the rule that uses one stand together.
 :::
 
-Read the schema of \( \rulename{\neg I} \) clause by clause.
+This rule has conditions that matter; read each one.
 
-1. **Open a box** whose first line is the assumption \( \varphi \). It is the **unnegated** statement: the thing we want to refute, not the thing we want to prove. Any statement may be assumed.
+1. **Open a box** whose first line is the assumption \( \varphi \). It is the **unnegated** statement: the thing we want to refute, not the thing we want to prove. Any statement may be assumed. In a finished derivation this assumption is printed **"asm, for \( \rulename{\neg I} \)"**: the annotation names the rule that will close the box, as "asm, for \( \rulename{{\to}I} \)" did in Section 1.4.
 2. **Inside the box** every rule may be used, and every line available just above the box may be cited, as in any box (@def-derivation).
-3. **The last line of the box** is exactly \( \bot \), and it is a line of that box itself, not inside a further box opened within it. This is the same wording as for \( \rulename{{\to}I} \), and every box rule shares it; Chapter 4's soundness proof (@thm-soundness) relies on it.
+3. **The last line of the box** is exactly \( \bot \), and it is a line of that box itself, not inside a further box opened within it. This is the same wording as for \( \rulename{{\to}I} \), and every box rule shares it.
 4. **Close the box** and write \( \neg\varphi \) on the next line, outside it. The justification cites the box as a range, "\( \rulename{\neg I} \) \( i \)–\( j \)". The assumption is discharged: after the box closes, nothing inside it may be cited, and only the negation leaves.
 5. **The new line is always a negation.** \( \rulename{\neg I} \) never writes a statement whose main connective is not \( \neg \).
 
+::: {.second-reading title="Edge cases of not-introduction"}
 The degenerate case is a box of one line, whose assumption is already \( \bot \). The box \( \lines{1}{1} \) then ends on \( \bot \) as soon as it opens, and \( \rulename{\neg I} \) gives \( \neg\bot \):
 
 ```{=latex}
@@ -63,7 +64,10 @@ So \( \vdash \neg\bot \): "it is not the case that contradiction" is derivable f
 
 **A noninstance by one change.** Take a box opened by \( \varphi \) whose last line is \( \neg\varphi \) instead of \( \bot \). It looks as if the assumption has refuted itself, and \( \rulename{\neg I} \) still does not apply: the box must end on \( \bot \). One more line, \( \bot \) by \( \rulename{\neg E} \) citing the assumption and the line \( \neg\varphi \), repairs it. The same holds if \( \bot \) is reached only inside a smaller box within the box: it is not then a line of the box itself.
 
-**Why this rule.** The statement \( \neg\varphi \) says that \( \varphi \) fails, and the box shows what would happen if \( \varphi \) held: together with the lines above it, it would lead to \( \bot \), which never holds. So in any situation where the lines above the box hold, \( \varphi \) cannot hold. That is exactly what \( \neg\varphi \) claims. As for Section 2.1's rules, Chapter 4 turns this into a proof (@thm-soundness).
+**A box that never uses its assumption.** A box may reach \( \bot \) without ever using its assumption. That is legal, but it is a sign: if no line of the box depends on \( \varphi \), the same lines could have been written just above the box, where \( \bot \) would then stand, and \( \rulename{\bot E} \) would have written \( \neg\varphi \), or anything else, directly. The lines available above the box were already contradictory. When your \( \rulename{\neg I} \) box never uses its assumption, look for the error above the box, not in it.
+:::
+
+**Why this rule.** The statement \( \neg\varphi \) says that \( \varphi \) fails, and the box shows what would happen if \( \varphi \) held: together with the lines above it, it would lead to \( \bot \), which never holds. So in any situation where the lines above the box hold, \( \varphi \) cannot hold. That is exactly what \( \neg\varphi \) claims.
 
 The rules for \( \neg \) have the same shapes as rules we already know, with \( \bot \) in one slot. Put them beside the rules for \( \to \), applied to the statement \( \varphi \to \bot \):
 
@@ -73,15 +77,55 @@ The rules for \( \neg \) have the same shapes as rules we already know, with \( 
 | use it, given \( \varphi \) | \( \bot \) by \( \rulename{\neg E} \) | \( \bot \) by \( \rulename{{\to}E} \) |
 
 ::: {.remark}
-Row by row, \( \neg\varphi \) behaves exactly like \( \varphi \to \bot \): "not \( \varphi \)" means "\( \varphi \) leads to contradiction". Some presentations of logic take this as the definition of \( \neg \). This book keeps \( \neg \) as a connective with its own rules, and Chapter 8 returns to the reading \( \neg\varphi \approx \varphi \to \bot \) when it asks what a proof of a negation provides.
+Row by row, \( \neg\varphi \) behaves exactly like \( \varphi \to \bot \): "not \( \varphi \)" means "\( \varphi \) leads to contradiction". Some presentations of logic take this as the definition of \( \neg \). This book keeps \( \neg \) as a connective with its own rules.
 :::
 
 ::: {.warning}
-\( \rulename{\neg I} \) proves **negative** statements only. Its box opens with \( \varphi \) and ends by writing \( \neg\varphi \). A proof that says "suppose \( x \) is **not** positive; …; contradiction; hence \( x \) is positive" has a box opened by \( \neg(x > 0) \), and \( \rulename{\neg I} \) applied to that box gives \( \neg\neg(x > 0) \), not \( x > 0 \). Getting from there to \( x > 0 \) needs a rule we have not met. Section 2.5 is about that rule, and contrasts the two kinds of box in full.
+Do not open the box with what you want to prove. To prove \( \neg\varphi \), the box opens with \( \varphi \). A box opened by \( \neg\varphi \) and ending in \( \bot \) gives \( \neg\neg\varphi \) by \( \rulename{\neg I} \), the negation of the goal, not the goal. So a box opened with \( \neg(x > 0) \) and closed by \( \rulename{\neg I} \) gives \( \neg\neg(x > 0) \), not \( x > 0 \); Section 2.5 shows the other kind of "suppose not". This is the negation's version of the converse error that Section 1.4 found in Argument B.
 :::
 
-::: {.warning}
-Do not open the box with what you want to prove. To prove \( \neg\varphi \), the box opens with \( \varphi \). A box opened by \( \neg\varphi \) and ending in \( \bot \) gives \( \neg\neg\varphi \) by \( \rulename{\neg I} \), the negation of the goal, not the goal. This is the negation's version of the converse error that Section 1.4 found in Argument B.
+In the Givens/Goal table, \( \rulename{\neg I} \) moves \( \varphi \) into the Givens and makes \( \bot \) the goal.
+
+## The first example: a number that is never zero
+
+The goal we could not reach at the start of the section comes first.
+
+::: {#exm-square-plus-one}
+[A negative statement proved by not-introduction]
+
+Let \( x \) be a real number. Prove that \( x^2 + 1 \ne 0 \), naming the rules.
+:::
+
+::: {.idea}
+The goal \( x^2 + 1 \ne 0 \) is \( \neg(x^2 + 1 = 0) \), a negation, so open a box on \( x^2 + 1 = 0 \) and look for a clash. The school fact \( x^2 \ge 0 \), that is \( \neg(x^2 < 0) \), is the negation available; its unnegated half \( x^2 < 0 \) is the subgoal, and algebra on the assumption produces it.
+:::
+
+::: {.solution}
+The goal \( x^2 + 1 \ne 0 \) is \( \neg(x^2 + 1 = 0) \), so we use \( \rulename{\neg I} \). Suppose \( x^2 + 1 = 0 \) \( [\text{assumption for } \rulename{\neg I}] \). Then \( x^2 = -1 \), so \( x^2 < 0 \). But \( x^2 \ge 0 \), that is, \( \neg(x^2 < 0) \), so we have a contradiction \( [\rulename{\neg E}] \). Hence \( x^2 + 1 \ne 0 \) \( [\rulename{\neg I}] \).
+
+With the school fact as the premise:
+
+```{=latex}
+\begin{center}
+$\begin{nd}
+  \hypo {1} {\neg(x^2 < 0)}
+  \open
+  \hypo {2} {x^2 + 1 = 0}
+  \have {3} {x^2 < 0} \by{algebra}{2}
+  \have {4} {\bot} \ne{3,1}
+  \close
+  \have {5} {\neg(x^2 + 1 = 0)} \ni{2-4}
+\end{nd}$
+\end{center}
+```
+:::
+
+::: {.check}
+In this derivation, which box does \( \rulename{\neg I} \) cite, and which statement opened it?
+:::
+
+::: {.solution}
+The box \( \lines{2}{4} \), opened by \( x^2 + 1 = 0 \), the unnegated statement. The conclusion on line 5 is its negation, \( x^2 + 1 \ne 0 \).
 :::
 
 ## First derivations with not-introduction
@@ -95,7 +139,60 @@ Show that (a) \( P \vdash \neg\neg P \), and (b) \( (P \vee Q) \to \neg P \vdash
 :::
 
 ::: {.idea}
-(a) The goal \( \neg\neg P \) is \( \neg(\neg P) \), a negation of \( \neg P \). So the box opens with what is negated, \( \neg P \), and aims at \( \bot \). The clash is immediate: the premise \( P \) and the assumption \( \neg P \). (b) The goal \( \neg P \) opens a box on \( P \). Inside it the premise is an implication, and the premise-directed move feeds it its hypothesis \( P \vee Q \), which \( \rulename{\vee I} \) manufactures from \( P \). The premise then hands back \( \neg P \), and that clashes with the box's own assumption. The assumption is used twice: once to build the hypothesis, once in the clash.
+(a) The goal \( \neg\neg P \) is \( \neg(\neg P) \), a negation of \( \neg P \). So the box opens with what is negated, \( \neg P \), and aims at \( \bot \). The clash is immediate: the premise \( P \) and the assumption \( \neg P \).
+
+The goal alone (left); then the box opened on \( \neg P \), its goal \( \bot \) at its foot (right).
+
+```{=latex}
+% schema (partial derivations: the gap is unnumbered, lines carry their final numbers)
+\begin{center}
+$\begin{nd}
+  \hypo {1} {P}
+  \have[\ ][0] {} {\vdots}
+  \have[][4] {4} {\neg\neg P}
+\end{nd}$
+\qquad\qquad
+$\begin{nd}
+  \hypo {1} {P}
+  \open
+  \hypo {2} {\neg P}
+  \have[\ ][0] {} {\vdots}
+  \have[][3] {3} {\bot}
+  \close
+  \have {4} {\neg\neg P} \ni{2-3}
+\end{nd}$
+\end{center}
+```
+
+(b) The goal \( \neg P \) opens a box on \( P \). Inside it the premise is an implication, and the premise-directed move feeds it its hypothesis \( P \vee Q \), which \( \rulename{\vee I} \) manufactures from \( P \). The premise then hands back \( \neg P \), and that clashes with the box's own assumption. The assumption is used twice: once to build the hypothesis, once in the clash.
+
+The box opened, its goal \( \bot \) at its foot (left); then the hypothesis \( P \vee Q \) manufactured, with line 5 still to reach (right).
+
+```{=latex}
+% schema (partial derivations: the gap is unnumbered, lines carry their final numbers)
+\begin{center}
+$\begin{nd}
+  \hypo {1} {(P \vee Q) \to \neg P}
+  \open
+  \hypo {2} {P}
+  \have[\ ][0] {} {\vdots}
+  \have[][5] {5} {\bot}
+  \close
+  \have {6} {\neg P} \ni{2-5}
+\end{nd}$
+\qquad\qquad
+$\begin{nd}
+  \hypo {1} {(P \vee Q) \to \neg P}
+  \open
+  \hypo {2} {P}
+  \have {3} {P \vee Q} \oi{2}
+  \have[\ ][0] {} {\vdots}
+  \have[][5] {5} {\bot}
+  \close
+  \have {6} {\neg P} \ni{2-5}
+\end{nd}$
+\end{center}
+```
 :::
 
 ::: {.solution}
@@ -170,6 +267,34 @@ Show that \( \neg\neg\neg P \vdash \neg P \).
 
 ::: {.idea}
 The goal \( \neg P \) opens a box on \( P \), with goal \( \bot \). Which clash? The only negation available is the premise \( \neg(\neg\neg P) \), so the premise-directed question asks for its unnegated half, \( \neg\neg P \): that becomes the subgoal. It is itself a negation, \( \neg(\neg P) \), so the goal-directed move opens a second \( \rulename{\neg I} \) box, on \( \neg P \), with goal \( \bot \). Inside it, \( \neg P \) clashes with the outer assumption \( P \). This is the first derivation in which a \( \rulename{\neg I} \) box is opened for a subgoal that a clash created.
+
+The outer box opened, its goal \( \bot \) at its foot (left); then the clash with the premise chosen, so that \( \neg\neg P \) becomes the goal of the gap (right).
+
+```{=latex}
+% schema (partial derivations: the gap is unnumbered, lines carry their final numbers)
+\begin{center}
+$\begin{nd}
+  \hypo {1} {\neg\neg\neg P}
+  \open
+  \hypo {2} {P}
+  \have[\ ][0] {} {\vdots}
+  \have[][6] {6} {\bot}
+  \close
+  \have {7} {\neg P} \ni{2-6}
+\end{nd}$
+\qquad\qquad
+$\begin{nd}
+  \hypo {1} {\neg\neg\neg P}
+  \open
+  \hypo {2} {P}
+  \have[\ ][0] {} {\vdots}
+  \have[][5] {5} {\neg\neg P}
+  \have {6} {\bot} \ne{5,1}
+  \close
+  \have {7} {\neg P} \ni{2-6}
+\end{nd}$
+\end{center}
+```
 :::
 
 ::: {.solution}
@@ -196,33 +321,13 @@ $\begin{nd}
 Line 4 may cite line 2, because the only box containing line 2, the box \( \lines{2}{6} \), also contains line 4 (@def-derivation). The inner box \( \lines{3}{4} \) ends on \( \bot \) as a line of its own, and so does the outer box \( \lines{2}{6} \), at line 6; each \( \rulename{\neg I} \) cites its own box. Notice what did **not** happen: no line removes a pair of negations. Three became one by adding them, twice, and clashing.
 :::
 
-::: {.warning}
-A box may reach \( \bot \) without ever using its assumption. That is legal, but it is a sign: if no line of the box depends on \( \varphi \), the same lines could have been written just above the box, where \( \bot \) would then stand, and \( \rulename{\bot E} \) would have written \( \neg\varphi \), or anything else, directly. The lines available above the box were already contradictory. When your \( \rulename{\neg I} \) box never uses its assumption, look for the error above the box, not in it.
-:::
-
-The first example about numbers is the goal we could not reach at the start of the section.
-
-::: {#exm-square-plus-one}
-[A negative statement proved by not-introduction]
-
-Let \( x \) be a real number. Prove that \( x^2 + 1 \ne 0 \), naming the rules.
-:::
-
-::: {.idea}
-The goal \( x^2 + 1 \ne 0 \) is \( \neg(x^2 + 1 = 0) \), a negation, so open a box on \( x^2 + 1 = 0 \) and look for a clash. The school fact \( x^2 \ge 0 \), that is \( \neg(x^2 < 0) \), is the negation available; its unnegated half \( x^2 < 0 \) is the subgoal, and algebra on the assumption produces it.
-:::
-
-::: {.solution}
-The goal \( x^2 + 1 \ne 0 \) is \( \neg(x^2 + 1 = 0) \), so we use \( \rulename{\neg I} \). Suppose \( x^2 + 1 = 0 \) \( [\text{assumption for } \rulename{\neg I}] \). Then \( x^2 = -1 \), so \( x^2 < 0 \). But \( x^2 \ge 0 \), that is, \( \neg(x^2 < 0) \), so we have a contradiction \( [\rulename{\neg E}] \). Hence \( x^2 + 1 \ne 0 \) \( [\rulename{\neg I}] \).
-:::
-
 ## How the rule looks in a mathematical proof
 
 The proof that no rational number has square \( 2 \) has the shape of \( \rulename{\neg I} \): the claim is negative, so we assume its opposite and look for \( \bot \). The tool that finds the clash is @thm-square-even-implies-even, and the school fact it needs is about writing fractions:
 
 **(L)** Every rational number can be written as \( p/q \) with \( p \) and \( q \) integers, \( q \ne 0 \), and \( p \) and \( q \) **not both even**.
 
-This holds because a fraction whose numerator and denominator are both even can be reduced by \( 2 \), and the reduction cannot go on for ever, since the denominator shrinks in absolute value each time. Making "cannot go on for ever" precise needs the well-ordering of the natural numbers, which comes in *Sets, Relations, and Cardinality*, Chapter 2; here we take (L) as known.
+This holds because a fraction whose numerator and denominator are both even can be reduced by \( 2 \), and the reduction cannot go on for ever, since the denominator shrinks in absolute value each time. Making "cannot go on for ever" precise needs a fact about the natural numbers that this book does not prove; here we take (L) as known.
 
 ::: {#thm-sqrt2-irrational}
 [Irrationality of the Square Root of Two]
@@ -272,21 +377,86 @@ $\begin{nd}
 \end{center}
 ```
 
-Line 13 is \( r^2 \ne 2 \). The box \( \lines{5}{12} \) is a \( \rulename{\neg I} \) box as the schema asks: opened by the unnegated statement \( r^2 = 2 \), and ending on \( \bot \) as a line of its own. Two steps of the proof lie outside the derivation: choosing \( p \), \( q \), and \( m \), and passing from the arbitrary \( r \) to every rational number. Both are quantifier rules, which come in Chapter 5.
+Line 13 is \( r^2 \ne 2 \). The box \( \lines{5}{12} \) is a \( \rulename{\neg I} \) box as the schema asks: opened by the unnegated statement \( r^2 = 2 \), and ending on \( \bot \) as a line of its own. Two steps of the proof lie outside the derivation: choosing \( p \), \( q \) and \( m \), and passing from the arbitrary \( r \) to every rational number. Both are steps about "some" and "every", used as ordinary reasoning (the note at the start of this chapter).
 
-Notice also what the proof does **not** need: that \( \sqrt{2} \) exists as a real number. The theorem is a statement about rational numbers only. *Analysis on the Real Line*, Chapter 1 uses it in exactly this form, as evidence that the rational numbers have a gap where \( \sqrt{2} \) should be.
+Notice also what the proof does **not** need: that \( \sqrt{2} \) exists as a real number. The theorem is a statement about rational numbers only.
 
-And notice which rule closes it. "Suppose \( r^2 = 2 \)" opens a box whose **negation** is the goal, so the proof is \( \rulename{\neg I} \), even though it is what everyone calls a proof by contradiction. Section 2.5 meets a second kind of box, which looks the same on the page and is a different rule; the distinction starts from the warning above about \( \neg(x > 0) \).
+And notice which rule closes it. "Suppose \( r^2 = 2 \)" opens a box whose **negation** is the goal, so the proof is \( \rulename{\neg I} \), even though it is what everyone calls a proof by contradiction.
 
-## What the rule sounds like
+## The rule card
 
-Here is the row of the rule, phrase, and Lean table for this section's rule; the rows for \( \rulename{\neg E} \) and \( \rulename{\bot E} \) are in Section 2.1.
+Before the card, the rule at work on large statements. Each row is one use of \( \rulename{\neg I} \): the box, and the line it writes.
 
-| Rule | You write | Lean |
-|------|--------------------------------------|------------------------|
-| \( \rulename{\neg I} \) | "Suppose \( \varphi \). … This is a contradiction. Hence not \( \varphi \)." | `intro hp` (goal `False`) |
+::: {#exm-negation-and-contradiction-instances}
+[Instances of \( \rulename{\neg I} \)]
+
+| \( \varphi \) | The box | New line |
+|------------|------------------------|----------------------------|
+| \( P \vee \neg Q \) | from \( P \vee \neg Q \) (asm) to \( \bot \) | \( \neg(P \vee \neg Q) \) |
+| \( Q \to R \) | from \( Q \to R \) (asm) to \( \bot \) | \( \neg(Q \to R) \) |
+| \( \neg(P \wedge R) \) | from \( \neg(P \wedge R) \) (asm) to \( \bot \) | \( \neg\neg(P \wedge R) \) |
+
+**Not an instance.** From the third box, the line "\( P \wedge R \) — \( \rulename{\neg I} \)" is not an instance: \( \rulename{\neg I} \) puts one \( \neg \) in front of the whole assumption and never takes one away. (The rule that writes \( P \wedge R \) from that box is Section 2.5's.)
+:::
+
+Chapter 1's seven rules are on the card at the end of Section 1.6; here are this chapter's so far.
+
+| Rule | Shape | You write | Lean |
+|---|---|---|---|
+| \( \rulename{\neg E} \) | \( \varphi \), \( \neg\varphi \) \( \Longrightarrow \) \( \bot \) | "…, which contradicts …" | `exact hn hp` (goal `False`) |
+| \( \rulename{\bot E} \) | \( \bot \) \( \Longrightarrow \) any \( \varphi \) | "This case cannot occur." "So there is nothing to prove." | `exfalso` |
+| \( \rulename{\neg I} \) | box \( \varphi \) … \( \bot \) \( \Longrightarrow \) \( \neg\varphi \) | "Suppose \( P \). … This is a contradiction. Hence not \( P \)." | `intro hp` (goal `False`) |
 
 In Lean, the negation of `P` is defined to be `P → False`, with `False` playing the part of \( \bot \): the reading of the remark above. So `intro` performs both \( \rulename{{\to}I} \) and \( \rulename{\neg I} \).
+
+::: {.warning}
+[Not allowed: \( \rulename{\neg I} \)]
+
+Each step below is wrong; the tag names the clause of the rule's reading that it breaks.
+
+- Close the box on \( \neg\varphi \) instead of \( \bot \): clause 3, the last line is \( \bot \) (one \( \rulename{\neg E} \) line repairs it; the fold "Edge cases of not-introduction").
+- Close it on a \( \bot \) that stands in a box inside it: clause 3, the last line is a line of the box itself.
+- Write \( \varphi \) after a box opened by \( \neg\varphi \): clause 4, the new line is the negation of the whole assumption, here \( \neg\neg\varphi \).
+- Write the negation of part of the assumption: clause 4, the whole assumption is negated (the pair below).
+- Cite a line of the box after it has closed: clause 4, only the negation leaves.
+
+The discharge is where the rule bites, so here is one wrong step beside the right one, with the premise \( \neg(Q \vee R) \). On the left, line 6 negates only \( P \), part of the assumption; on the right, line 6 negates the whole assumption.
+
+```{=latex}
+\begin{center}
+% expect-invalid: line 6 negates P, but the box 2-5 assumed P and Q, so not-I may write only not(P and Q)
+$\begin{nd}
+  \hypo {1} {\neg(Q \vee R)}
+  \open
+  \hypo {2} {P \wedge Q} \purpose{\ni}
+  \have {3} {Q} \ae{2}
+  \have {4} {Q \vee R} \oi{3}
+  \have {5} {\bot} \ne{4,1}
+  \close
+  \have {6} {\neg P} \ni{2-5}
+\end{nd}$
+\qquad\qquad
+$\begin{nd}
+  \hypo {1} {\neg(Q \vee R)}
+  \open
+  \hypo {2} {P \wedge Q}
+  \have {3} {Q} \ae{2}
+  \have {4} {Q \vee R} \oi{3}
+  \have {5} {\bot} \ne{4,1}
+  \close
+  \have {6} {\neg(P \wedge Q)} \ni{2-5}
+\end{nd}$
+\end{center}
+```
+
+The left list would show \( \neg(Q \vee R) \vdash \neg P \), which breaks. Let \( x \) be a real number, with \( P \): "\( x > 0 \)", \( Q \): "\( x > 5 \)", \( R \): "\( x < -5 \)". At \( x = 1 \) the premise is true and \( \neg P \) is false.
+:::
+
+::: {.remark}
+[Looking ahead]
+
+*Sets, Relations, and Cardinality*, Chapter 2 proves (L) from a fact about the natural numbers called well-ordering. *Analysis on the Real Line*, Chapter 1 uses this section's theorem in exactly the form proved here, as evidence that the rational numbers have a gap where \( \sqrt{2} \) should be.
+:::
 
 ## Exercises
 
@@ -313,7 +483,98 @@ In Lean, the negation of `P` is defined to be `P → False`, with `False` playin
 
 (d) The fact (L) supplies the line "\( p \) and \( q \) are not both even" (line 2 of the derivation), which the \( \rulename{\neg E} \) of line 12 cites. Without that clause the proof still derives "both even", but it contradicts nothing (\( 2 = 4/2 \) has both even), and no \( \bot \) is reached.
 
-(e) With \( r^2 = 4 \) we get \( p^2 = 4q^2 = 2(2q^2) \), so \( p^2 \) is even and \( p \) is even, \( p = 2k \). Then \( 4k^2 = 4q^2 \), so \( q^2 = k^2 \). This is where the proof stalls: nothing says \( q^2 \) is even, so @thm-square-even-implies-even cannot be applied to \( q \). Indeed for \( r = 2 = 2/1 \) we have \( q = 1 \), which is odd. Every step before the stall is valid; the proof simply fails to reach \( \bot \).
+(e) With \( r^2 = 4 \) we get \( p^2 = 4q^2 = 2(2q^2) \), so \( p^2 \) is even and \( p \) is even, \( p = 2k \). Then \( 4k^2 = 4q^2 \), so \( q^2 = k^2 \). This is where the proof stalls: nothing says \( q^2 \) is even, so @thm-square-even-implies-even cannot be applied to \( q \). Indeed for \( r = 2 = 2/1 \) we have \( q = 1 \), which is odd. Every step before the stall is correct; the proof simply fails to reach \( \bot \).
+:::
+
+::: {#exr-negation-and-contradiction-a2}
+[A2: Drill]
+
+The parts run from one step, through a missing line, a justification column and steps to judge, to short derivations.
+
+::: {.enumerate options="label=(\alph*)"}
+1. Which statement opens the \( \rulename{\neg I} \) box for the goal \( \neg(P \vee Q) \)?
+2. A box opens with \( \neg P \) and ends with \( \bot \). What does \( \rulename{\neg I} \) write after it?
+3. For a real number \( x \), the goal is \( x \ne 3 \). Which statement opens the box?
+4. A box runs from line 4, \( (P \to Q) \wedge \neg R \), to line 8, \( \bot \), a line of that box itself. What does "\( \rulename{\neg I} \) 4–8" write?
+5. Line 10 is \( \neg(Q \vee \neg P) \), justified "\( \rulename{\neg I} \) 6–9". What are lines 6 and 9?
+6. Inside a box opened at line 3 by \( P \), line 5 is \( \bot \), justified "\( \rulename{\neg E} \) 4, 2", and line 2 is \( \neg(P \vee R) \). What is line 4?
+7. Fill in (i)–(iv), and say what the derivation shows, written with \( \vdash \).
+
+    ```{=latex}
+    \begin{center}
+    $\begin{nd}
+      \hypo {1} {\neg Q}
+      \hypo {2} {P \to (Q \wedge R)}
+      \open
+      \hypo {3} {P} \purpose{\ni}
+      \have {4} {Q \wedge R} \by{(i)}{}
+      \have {5} {Q} \by{(ii)}{}
+      \have {6} {\bot} \by{(iii)}{}
+      \close
+      \have {7} {\neg P} \by{(iv)}{}
+    \end{nd}$
+    \end{center}
+    ```
+
+8. A box opens with \( P \) and its last line is \( \neg P \). May \( \rulename{\neg I} \) close it?
+9. Line 1 is the premise \( \neg Q \); line 2, \( Q \), opens a box; line 3, \( \bot \), justified "\( \rulename{\neg E} \) 2, 1", is the last line of that box. What may line 4, just after the box, be by \( \rulename{\neg I} \)?
+10. Find the illegal line, and say why it is illegal.
+
+    ```{=latex}
+    \begin{center}
+    % expect-invalid: line 7 cites line 3, inside the closed box 3-5
+    $\begin{nd}
+      \hypo {1} {P \to Q}
+      \hypo {2} {\neg Q}
+      \open
+      \hypo {3} {P}
+      \have {4} {Q} \ie{1,3}
+      \have {5} {\bot} \ne{4,2}
+      \close
+      \have {6} {\neg P} \ni{3-5}
+      \have {7} {Q} \ie{1,3}
+    \end{nd}$
+    \end{center}
+    ```
+
+11. Lines 3–7 form a box opened by \( P \wedge Q \). Inside it, lines 4–6 form a box opened by \( R \), whose last line, 6, is \( \bot \); line 7 is \( \neg R \), justified "\( \rulename{\neg I} \) 4–6". Is "8. \( \neg(P \wedge Q) \) — \( \rulename{\neg I} \) 3–7" correct?
+12. "Suppose \( x^2 + 4 = 2x \) for a real \( x \). Then \( (x - 1)^2 = -3 < 0 \), which contradicts \( (x - 1)^2 \ge 0 \)." What may "Hence" write, and by which rule?
+13. Derive \( \neg P \vdash \neg(P \wedge Q) \).
+14. Derive \( P \to \neg P \vdash \neg P \).
+15. Derive \( P \wedge \neg Q \vdash \neg(P \to Q) \).
+:::
+:::
+
+::: {.solution}
+(a) \( P \vee Q \), the statement the goal negates.
+
+(b) \( \neg\neg P \): one \( \neg \) in front of the whole assumption.
+
+(c) \( x = 3 \), since \( x \ne 3 \) is \( \neg(x = 3) \).
+
+(d) \( \neg((P \to Q) \wedge \neg R) \), the negation of the whole assumption of line 4.
+
+(e) Line 6 is the assumption \( Q \vee \neg P \), which opens the box; line 9 is \( \bot \), the last line of that box.
+
+(f) \( P \vee R \), the unnegated half of line 2; it comes from line 3 by \( \rulename{\vee I} \).
+
+(g) Line 3 is the assumption for \( \rulename{\neg I} \); (i) \( \rulename{{\to}E} \) 2, 3; (ii) \( \rulename{\wedge E} \) 4; (iii) \( \rulename{\neg E} \) 5, 1; (iv) \( \rulename{\neg I} \) \( \lines{3}{6} \). The derivation shows \( \neg Q, \ P \to (Q \wedge R) \vdash \neg P \).
+
+(h) No: the last line must be \( \bot \). First write \( \bot \) by \( \rulename{\neg E} \), citing the assumption and the line \( \neg P \); then \( \rulename{\neg I} \) closes the box.
+
+(i) \( \neg Q \), the negation of the box's assumption; not \( Q \).
+
+(j) Line 7: it cites line 3, which lies inside the box \( \lines{3}{5} \), closed before line 7.
+
+(k) No. The box \( \lines{3}{7} \) ends on \( \neg R \), not on \( \bot \); the \( \bot \) at line 6 is a line of the inner box, not of the box \( \lines{3}{7} \) itself (clause 3). The outer box needs a line \( \bot \) of its own.
+
+(l) \( x^2 + 4 \ne 2x \), by \( \rulename{\neg I} \). The supposition opens the box, and the contradiction is its line \( \bot \); the step to \( (x - 1)^2 = -3 \) is the identity \( x^2 + 4 - 2x = (x - 1)^2 + 3 \).
+
+(m) 2 \( P \wedge Q \), assumption, for \( \rulename{\neg I} \); 3 \( P \), \( \rulename{\wedge E} \) 2; 4 \( \bot \), \( \rulename{\neg E} \) 3, 1; 5 \( \neg(P \wedge Q) \), \( \rulename{\neg I} \) \( \lines{2}{4} \).
+
+(n) 2 \( P \), assumption, for \( \rulename{\neg I} \); 3 \( \neg P \), \( \rulename{{\to}E} \) 1, 2; 4 \( \bot \), \( \rulename{\neg E} \) 2, 3; 5 \( \neg P \), \( \rulename{\neg I} \) \( \lines{2}{4} \).
+
+(o) 2 \( P \to Q \), assumption, for \( \rulename{\neg I} \); 3 \( P \), \( \rulename{\wedge E} \) 1; 4 \( Q \), \( \rulename{{\to}E} \) 2, 3; 5 \( \neg Q \), \( \rulename{\wedge E} \) 1; 6 \( \bot \), \( \rulename{\neg E} \) 4, 5; 7 \( \neg(P \to Q) \), \( \rulename{\neg I} \) \( \lines{2}{6} \).
 :::
 
 ### B. Practice
@@ -321,7 +582,18 @@ In Lean, the negation of `P` is defined to be `P → False`, with `False` playin
 ::: {#exr-negation-and-contradiction-b1}
 [B1: A box inside a box]
 
-Show that \( P \to \neg Q \vdash Q \to \neg P \). Name the move that opens each box.
+A search for \( P \to \neg Q \vdash Q \to \neg P \) has reached the stage below. *Name the move that opens each box, then complete it.*
+
+```{=latex}
+% schema (partial derivation: the gap is unnumbered, lines carry their final numbers)
+\begin{center}
+$\begin{nd}
+  \hypo {1} {P \to \neg Q}
+  \have[\ ][0] {} {\vdots}
+  \have[][7] {7} {Q \to \neg P} \by{?}{}
+\end{nd}$
+\end{center}
+```
 :::
 
 ::: {.solution}
@@ -369,7 +641,7 @@ This is the pattern of @exm-square-plus-one, with the square \( (x - \tfrac12)^2
 :::
 
 ::: {#exr-negation-and-contradiction-b3}
-[B3: The square root of three]
+[B3: The square root of three, used later]
 
 You may use that every integer can be written as \( 3k \), \( 3k + 1 \) or \( 3k + 2 \) with \( k \) an integer, in one way only, and that every rational number can be written as \( p/q \) with integers \( p \), \( q \), \( q \ne 0 \), and \( p \), \( q \) not both divisible by \( 3 \).
 
@@ -428,6 +700,161 @@ $\begin{nd}
 ```
 
 In words: if \( P \) leads to \( Q \), and \( Q \) rules \( P \) out, then \( P \) refutes itself, and so \( P \) fails. Line 5 is the moment of self-refutation: the assumption has produced its own negation. Line 6 is still needed, because the box must end on \( \bot \), not on \( \neg P \).
+:::
+
+::: {#exr-negation-and-contradiction-b5}
+[B5: From \( \sqrt 2 \) to \( \sqrt p \)]
+
+Let \( p \) be a prime number. You may use two facts.
+
+- (\( \mathrm{L}_p \)) Every rational number can be written as \( a/b \) with integers \( a \), \( b \), \( b \ne 0 \), and \( a \), \( b \) not both divisible by \( p \).
+- (\( \mathrm{E}_p \)) For every integer \( n \), if \( p \) divides \( n^2 \), then \( p \) divides \( n \).
+
+::: {.enumerate options="label=(\alph*)"}
+1. Prove that no rational number has square \( p \), naming the rule at each logical step.
+2. Where does your proof use (\( \mathrm{E}_p \)), and where (\( \mathrm{L}_p \))?
+3. Your proof never used that \( p \) is prime, only the two facts. Put \( 6 \) and \( 9 \) in place of \( p \). (\( \mathrm{E}_6 \)) is true (Exercise C1 of Section 2.4 proves it; take it as given here). Does (\( \mathrm{L}_6 \)) follow from (L)? Is (\( \mathrm{E}_9 \)) true? What does the argument then prove about \( \sqrt 6 \), and why does it prove nothing about \( \sqrt 9 \)?
+:::
+:::
+
+::: {.solution}
+(a) Let \( r \) be a rational number, and suppose \( r^2 = p \) \( [\text{assumption for } \rulename{\neg I}] \). By (\( \mathrm{L}_p \)), \( r = a/b \) with \( b \ne 0 \) and \( a \), \( b \) not both divisible by \( p \). Then \( a^2 = r^2 b^2 = p b^2 \), so \( p \) divides \( a^2 \), and by (\( \mathrm{E}_p \)) \( p \) divides \( a \) \( [\rulename{{\to}E}] \); write \( a = pm \). Then \( p^2 m^2 = p b^2 \), so \( b^2 = p m^2 \), \( p \) divides \( b^2 \), and by (\( \mathrm{E}_p \)) again \( p \) divides \( b \) \( [\rulename{{\to}E}] \). So \( p \) divides both \( a \) and \( b \) \( [\rulename{\wedge I}] \), which contradicts their choice \( [\rulename{\neg E}] \). Hence \( r^2 \ne p \) \( [\rulename{\neg I}] \); since \( r \) was arbitrary, no rational number has square \( p \).
+
+(b) (\( \mathrm{E}_p \)) twice, once for \( a \) and once for \( b \), in the places where @thm-sqrt2-irrational used @thm-square-even-implies-even. (\( \mathrm{L}_p \)) when \( a \) and \( b \) are chosen, and again at the clash, which cites "not both divisible by \( p \)".
+
+(c) For \( 6 \): (\( \mathrm{L}_6 \)) follows from (L) of the text, since integers \( a \), \( b \) that are not both even are not both divisible by \( 6 \). With (\( \mathrm{E}_6 \)) as given, the argument proves that \( \sqrt 6 \) is irrational; Exercise C1 of this section did it by another route. (\( \mathrm{E}_6 \)) itself is not proved here: its proof is Exercise C1 of Section 2.4. For \( 9 \): (\( \mathrm{E}_9 \)) is false, since \( 9 \) divides \( 3^2 \) but not \( 3 \). The proof breaks at its first use of (\( \mathrm{E}_9 \)), as it must, since \( 9 = 3^2 \) and \( 3 = 3/1 \) is rational: with \( r = 3/1 \), \( 9 \) divides \( a^2 = 9 \), but not \( a = 3 \).
+
+**Marking scheme.** (10 points)
+
+- 2: the \( \rulename{\neg I} \) frame, a fixed rational \( r \), and \( a/b \) from (\( \mathrm{L}_p \)).
+- 2: \( a^2 = pb^2 \) and the first use of (\( \mathrm{E}_p \)).
+- 2: \( b^2 = pm^2 \) and the second use.
+- 1: the clash with (\( \mathrm{L}_p \)), \( \rulename{\neg I} \), and the passage from \( r \) to every rational number.
+- 1: (b).
+- 2: (c), (\( \mathrm{L}_6 \)) from (L) with the conclusion about \( \sqrt 6 \) (1), and \( 9 \) with a witness against (\( \mathrm{E}_9 \)) (1).
+
+Fatal errors (0 for the step): using "\( p \) divides \( n^2 \), so \( p \) divides \( n \)" for \( p = 9 \) or \( p = 4 \); dividing by \( p \) before \( p \) is known to divide \( a \).
+:::
+
+::: {#exr-negation-and-contradiction-b6}
+[B6: Derive or break]
+
+For each claim, either derive it with the rules of Chapter 1 and Sections 2.1–2.2, or break it by statements about a real number \( x \) that make its counterexample set true at one value of \( x \).
+
+::: {.enumerate options="label=(\alph*)"}
+1. \( P \vdash \neg(\neg P \wedge Q) \).
+2. \( \neg(P \wedge Q) \vdash \neg P \).
+3. \( (P \vee Q) \to \neg P \vdash \neg P \).
+4. \( P \to (Q \to R), \ \neg R \vdash \neg(P \wedge Q) \).
+5. \( \neg Q \vdash \neg(P \to Q) \).
+6. \( P \to Q, \ P \to \neg Q \vdash \neg P \).
+7. \( \neg\neg(P \wedge Q) \vdash \neg\neg P \).
+8. \( \neg\neg P \vdash \neg\neg(P \wedge Q) \).
+:::
+:::
+
+::: {.solution}
+(a) Derive. The goal is a negation, so the box opens on \( \neg P \wedge Q \), and its first half clashes with the premise.
+
+```{=latex}
+\begin{center}
+$\begin{nd}
+  \hypo {1} {P}
+  \open
+  \hypo {2} {\neg P \wedge Q}
+  \have {3} {\neg P} \ae{2}
+  \have {4} {\bot} \ne{1,3}
+  \close
+  \have {5} {\neg(\neg P \wedge Q)} \ni{2-4}
+\end{nd}$
+\end{center}
+```
+
+(b) Break. Take \( P \): "\( x > 0 \)", \( Q \): "\( x > 5 \)". At \( x = 1 \), \( P \wedge Q \) is false (\( 1 > 5 \) fails), so \( \neg(P \wedge Q) \) is true, and \( P \) is true, so \( \neg\neg P \) is true. The counterexample set \( \neg(P \wedge Q) \), \( \neg\neg P \) (@def-counterexample-set) is true.
+
+(c) Derive. This is the sequent of @exm-double-negation-introduction (b), met again without its label.
+
+```{=latex}
+\begin{center}
+$\begin{nd}
+  \hypo {1} {(P \vee Q) \to \neg P}
+  \open
+  \hypo {2} {P}
+  \have {3} {P \vee Q} \oi{2}
+  \have {4} {\neg P} \ie{1,3}
+  \have {5} {\bot} \ne{2,4}
+  \close
+  \have {6} {\neg P} \ni{2-5}
+\end{nd}$
+\end{center}
+```
+
+(d) Derive. Inside the box of \( P \wedge Q \), feed the premise its two hypotheses one at a time; the \( R \) it hands back clashes with \( \neg R \).
+
+```{=latex}
+\begin{center}
+$\begin{nd}
+  \hypo {1} {P \to (Q \to R)}
+  \hypo {2} {\neg R}
+  \open
+  \hypo {3} {P \wedge Q}
+  \have {4} {P} \ae{3}
+  \have {5} {Q \to R} \ie{1,4}
+  \have {6} {Q} \ae{3}
+  \have {7} {R} \ie{5,6}
+  \have {8} {\bot} \ne{7,2}
+  \close
+  \have {9} {\neg(P \wedge Q)} \ni{3-8}
+\end{nd}$
+\end{center}
+```
+
+(e) Break. Take \( P \): "\( x > 5 \)", \( Q \): "\( x > 3 \)". The implication \( P \to Q \) holds for every \( x \). At \( x = 0 \), \( \neg Q \) is true, and \( P \to Q \) is true, so \( \neg\neg(P \to Q) \) is true: the counterexample set \( \neg Q \), \( \neg\neg(P \to Q) \) is true.
+
+(f) Derive. On the assumption \( P \), the two premises give \( Q \) and \( \neg Q \).
+
+```{=latex}
+\begin{center}
+$\begin{nd}
+  \hypo {1} {P \to Q}
+  \hypo {2} {P \to \neg Q}
+  \open
+  \hypo {3} {P}
+  \have {4} {Q} \ie{1,3}
+  \have {5} {\neg Q} \ie{2,3}
+  \have {6} {\bot} \ne{4,5}
+  \close
+  \have {7} {\neg P} \ni{3-6}
+\end{nd}$
+\end{center}
+```
+
+(g) Derive. The goal \( \neg\neg P \) opens a box on \( \neg P \). The only way to use the premise is to clash with it, so \( \neg(P \wedge Q) \) becomes a subgoal, and a second box proves it, as in @exm-triple-negation.
+
+```{=latex}
+\begin{center}
+$\begin{nd}
+  \hypo {1} {\neg\neg(P \wedge Q)}
+  \open
+  \hypo {2} {\neg P}
+  \open
+  \hypo {3} {P \wedge Q}
+  \have {4} {P} \ae{3}
+  \have {5} {\bot} \ne{4,2}
+  \close
+  \have {6} {\neg(P \wedge Q)} \ni{3-5}
+  \have {7} {\bot} \ne{6,1}
+  \close
+  \have {8} {\neg\neg P} \ni{2-7}
+\end{nd}$
+\end{center}
+```
+
+(h) Break. Take \( P \): "\( x > 0 \)", \( Q \): "\( x > 5 \)". At \( x = 1 \), \( P \) is true, so \( \neg\neg P \) is true; \( P \wedge Q \) is false, so \( \neg(P \wedge Q) \) is true and \( \neg\neg(P \wedge Q) \) is false. The counterexample set \( \neg\neg P \), \( \neg\neg\neg(P \wedge Q) \) is true.
+
+(b) and (h) are the look-alikes, each moving a negation or a conjunct the wrong way: (b) would refute a conjunct from a refuted conjunction, and (h) would add a conjunct under two negations. (g) keeps both negations because \( \rulename{\neg I} \) can only add them, as the warning of this section says. (d) unpacks its nested premise inside the \( \rulename{\neg I} \) box, one \( \rulename{{\to}E} \) per hypothesis, as the two forms of @prp-curry suggest.
+
+**Marking scheme.** (16 points) For each claim: 1 for the verdict; 1 for a derivation every line of which checks, or for a choice of statements and one value of \( x \) at which **every** member of the counterexample set is true. Fatal errors (0 for the claim): a "break" at which some premise is false; a derivation that uses a rule other than those of Chapter 1 and Sections 2.1–2.2.
 :::
 
 ### C. Going deeper
@@ -490,15 +917,25 @@ Here is a "proof" that \( \sqrt{4} \) is irrational, modeled on @thm-sqrt2-irrat
 :::
 
 <!-- dependency ledger
-def-rules-negation (claim): if the lines above a box hold and the box leads from phi to bot, then phi fails (not-I never leads from true lines to a false one) | F1.3 (promised; soundness, thm-soundness), a remark used in no proof
+def-rules-negation (claim): if the lines above a box hold and the box leads from phi to bot, then phi fails (not-I never leads from true lines to a false one) | argued informally in the text ("Why this rule"); a remark used in no proof
 exm-square-plus-one (example): x^2 >= 0 for real x, i.e. not(x^2 < 0); x^2 = -1 gives x^2 < 0 | school algebra (F1.2 blueprint, Allowed prerequisites); AN1.1 (promised)
+exm-square-plus-one (solution): derivation line 3 "algebra 2": x^2 + 1 = 0 gives x^2 < 0 | school algebra, inline
 thm-sqrt2-irrational (proof): (L) every rational is p/q with q != 0, p and q not both even | school fact stated as (L) in the text, with its informal reason; F2.2 (promised; lem-lowest-terms, by well-ordering)
 thm-sqrt2-irrational (proof): p^2 = r^2 q^2; 4m^2 = 2q^2 gives q^2 = 2m^2; "p^2 = 2q^2, so p^2 is even" (definition of even) | school algebra, inline
 thm-sqrt2-irrational (proof): choosing p, q, m; "r arbitrary, so every rational" | quantifier steps used as school reasoning; F1.4 (promised)
+exm-negation-and-contradiction-instances (example): the Not-allowed WRONG/RIGHT pair: at x = 1, x > 5 and x < -5 both fail, so not(Q or R) is true, and x > 0 holds, so not P is false | arithmetic, inline; checked by verify/ch02/exm-negation-and-contradiction-instances.py
+exr-negation-and-contradiction-a2 (solution): (l) x^2 + 4 - 2x = (x - 1)^2 + 3 | algebra, inline; checked by verify/ch02/exr-negation-and-contradiction-a2.py
 exr-negation-and-contradiction-a1 (solution): 1 != 0; 2 = 4/2; p^2 = 4q^2 = 2(2q^2), p = 2k gives q^2 = k^2; 2 = 2/1 | arithmetic, inline
 exr-negation-and-contradiction-b2 (solution): x^2 - x + 1 = (x - 1/2)^2 + 3/4; a square of a real is never negative | algebra inline; school algebra, AN1.1 (promised)
 exr-negation-and-contradiction-b3 (solution): every integer is 3k, 3k+1 or 3k+2 in one way only; the mod-3 form of (L) | stated in the item as usable facts
 exr-negation-and-contradiction-b3 (solution): (3k+1)^2 = 3(3k^2+2k)+1, (3k+2)^2 = 3(3k^2+4k+1)+1; 9m^2 = 3q^2 gives q^2 = 3m^2 | algebra, inline
+exr-negation-and-contradiction-b5 (solution): (L_p), stated in the item, every rational is a/b with b != 0 and a, b not both divisible by the prime p (lowest terms) | stated in the item as a usable fact; F2.2 (promised; lem-lowest-terms)
+exr-negation-and-contradiction-b5 (solution): (E_p), stated in the item, for every integer n, if the prime p divides n^2 then p divides n | stated in the item as a usable fact; F3.5 (promised; cor-prime-divides-product)
+exr-negation-and-contradiction-b5 (solution): a^2 = r^2 b^2 = p b^2; a = pm gives p^2 m^2 = p b^2, so b^2 = p m^2 | algebra, inline
+exr-negation-and-contradiction-b5 (solution): (L_6) from (L): a, b not both even are not both divisible by 6 | inline (6 = 2 * 3)
+exr-negation-and-contradiction-b5 (solution): (E_6) taken as given | stated in the item as a usable fact; proved in Section 2.4, exr-biconditional-and-definitions-c1 (an exercise of this chapter; nothing here rests on it)
+exr-negation-and-contradiction-b5 (solution): 9 divides 3^2 = 9 but not 3; 3 = 3/1 | arithmetic; checked by verify/ch02/exr-negation-and-contradiction-b5.py
+exr-negation-and-contradiction-b6 (solution): breaks: (b) at x = 1 with x > 0, x > 5; (e) at x = 0 with x > 5, x > 3 (x > 5 implies x > 3 for every real x); (h) at x = 1 with x > 0, x > 5 | arithmetic, inline; school algebra; checked by verify/ch02/exr-negation-and-contradiction-b6.py
 exr-negation-and-contradiction-c1 (solution): (E1)-(E3) and (L) | stated in the text (F1.2 §01 and this section)
 exr-negation-and-contradiction-c1 (solution): p^2 = 6q^2 = 2(3q^2); 4m^2 = 6q^2 gives 3q^2 = 2m^2; q^2 = 2j+1 gives 3q^2 = 2(3j+1)+1 | algebra, inline
 exr-negation-and-contradiction-c2 (solution): 2^2 = 4 and 4 does not divide 2 | arithmetic

@@ -27,43 +27,7 @@ The first idea is known as Kalmár's lemma, and gluing rows by excluded middle i
 
 In Chapter 2 we learned to use a proved sequent as a single line (@def-derived-rule): its derivation could be pasted in, with its letters replaced by formulas. The completeness proof uses this move dozens of times, so we now state exactly what it gives and check that pasting really produces a derivation.
 
-::: {#lem-weakening-cut}
-[Weakening and Cut]
-
-Let \( \Gamma \) and \( \Delta \) be lists of formulas, and let \( \varphi \), \( \psi \), \( \alpha_1, \dots, \alpha_m \) (\( m \ge 1 \)), and \( \beta \) be formulas.
-
-::: {.enumerate options="label=(\alph*)"}
-1. **Weakening.** If \( \Gamma \vdash \psi \) and every member of \( \Gamma \) is a member of \( \Delta \), then \( \Delta \vdash \psi \). In particular, \( \Gamma \vdash \psi \) implies \( \Gamma, \varphi \vdash \psi \).
-2. **Cut.** If \( \Gamma \vdash \varphi \) and \( \Gamma, \varphi \vdash \psi \), then \( \Gamma \vdash \psi \).
-3. **Chaining.** If \( \Gamma \vdash \alpha_i \) for **every** \( i = 1, \dots, m \), and \( \alpha_1, \dots, \alpha_m \vdash \beta \), then \( \Gamma \vdash \beta \).
-:::
-:::
-
-In words: (a) extra premises never hurt; (b) a formula that has been derived may be used as a premise; (c) a sequent already proved can be applied to formulas already derived. Part (c) is @def-derived-rule for sequents: applying a proved sequent to formulas already derived, outside every box. Inside a box, Section 2.3's expansion does the same job.
-
-::: {.idea}
-Part (a) is read off @def-derivable, which asks only that the premises of the derivation **belong to** the list. For (b) and (c), write the derivations one after another and let the last one cite, instead of its premise \( \alpha_i \), the last line of the derivation of \( \alpha_i \). The only thing to check is the scope rule of @def-derivation: the last line of a derivation lies in no box, so it stays available to everything written after it.
-:::
-
-::: {.proof}
-*(a)* A derivation witnessing \( \Gamma \vdash \psi \) has premises that belong to \( \Gamma \), hence to \( \Delta \), and its last line is \( \psi \). By @def-derivable it witnesses \( \Delta \vdash \psi \). The second sentence is the case where \( \Delta \) is \( \Gamma, \varphi \).
-
-For (b) and (c) we prove one statement that contains both:
-
-\( (\ast) \) If \( \Gamma \vdash \alpha_i \) for every \( i = 1, \dots, m \), and \( \Gamma, \alpha_1, \dots, \alpha_m \vdash \beta \), then \( \Gamma \vdash \beta \).
-
-Part (b) is \( (\ast) \) with \( m = 1 \), \( \alpha_1 = \varphi \) and \( \beta = \psi \). Part (c) follows from \( (\ast) \), since \( \alpha_1, \dots, \alpha_m \vdash \beta \) gives \( \Gamma, \alpha_1, \dots, \alpha_m \vdash \beta \) by (a).
-
-To prove \( (\ast) \), let \( D_i \) be a derivation of \( \alpha_i \) with premises in \( \Gamma \), for each \( i \), and let \( E \) be a derivation of \( \beta \) with premises in \( \Gamma, \alpha_1, \dots, \alpha_m \). If the last line of \( E \) is one of its premises, then \( \beta \) is a member of \( \Gamma \), and the one-line derivation whose only line is the premise \( \beta \) shows \( \Gamma \vdash \beta \); or \( \beta \) is some \( \alpha_i \), and \( D_i \) shows \( \Gamma \vdash \beta \). Otherwise, build a list of lines \( F \) as follows.
-
-1. First, as premises, every premise of \( D_1, \dots, D_m \), and every premise of \( E \) that is a member of \( \Gamma \).
-2. Then the lines of \( D_1 \) that are not premises, then those of \( D_2 \), and so on up to \( D_m \), each with its boxes.
-3. Then the lines of \( E \) that are not premises, with its boxes.
-
-Renumber the lines, and change each citation as follows. A citation of a premise that is in \( \Gamma \) now cites the premise line of step 1 carrying that formula. A citation in \( E \) of a premise \( \alpha_i \) that is not in \( \Gamma \) now cites the last line of \( D_i \); that line is not a premise of \( D_i \), because the premises of \( D_i \) are in \( \Gamma \) and \( \alpha_i \) is not, so it was copied in step 2. Every other citation follows its line to its new number.
-
-We check that \( F \) is a derivation (@def-derivation). The premises come first and lie in no box. The boxes are those of the \( D_i \) and of \( E \), moved as blocks, so two boxes are still disjoint or nested, each still begins with its assumption, and each line lies in exactly the boxes it lay in before. Hence a line and a box that were available at a citing line are still available there, since the boxes containing each are unchanged. A premise line of step 1 lies in no box and comes first, so it is available at every later line. The last line of \( D_i \) lies in no box (it was the last line of a derivation) and comes before every line of \( E \), so it is available at every line of \( E \). Each line carries the same formula and the same justification as before, citing lines with the same formulas, so it is an instance of the same rule. Finally, the last line of \( F \) is the last line of \( E \), namely \( \beta \), and it lies in no box. The premises of \( F \) are all in \( \Gamma \). Therefore \( \Gamma \vdash \beta \), which proves \( (\ast) \).
-:::
+Section 2.3 stated and proved that bookkeeping as @lem-weakening-cut: (a) weakening, (b) cut, (c) chaining.
 
 The lemma is pure bookkeeping, but it is what makes "cite a proved sequent as one line" honest. From now on, when a derivation cites a sequent proved earlier as a single line, the lemma (for a line in no box) or @def-derived-rule (for a line inside a box, where the cited lines are repeated inside the box first) is the reason the result is a derivation in the primitive rules. As Section 4.7 said, soundness was proved for the primitive rules, and a line citing a derived rule abbreviates a pasted derivation; for whole derivations, part (c) is the precise form of "abbreviates", and inside a box the pasting of @def-derived-rule is the same bookkeeping.
 
@@ -858,8 +822,6 @@ Fatal errors (0 for the step): splitting on an atom using the Claim for a single
 :::
 
 <!-- dependency ledger
-lem-weakening-cut (proof): renumbering lines and moving boxes as blocks preserves nesting, availability and rule instances | inline (checked clause by clause against def-derivation)
-lem-weakening-cut (proof): a one-line derivation whose only line is a premise is a derivation | def-derivation, def-derivable (a premise line; the last line lies in no box)
 lem-connective-rows (proof): De Morgan (b) and (c) are derived without RAA | F1.2 prp-de-morgan (the sentence after its derivations says so; cited in the proof)
 lem-connective-rows (proof): prp-vacuous-implication and exm-double-negation-introduction come before RAA (F1.2 §01, F1.2 §02) | F1.2 section order
 lem-truth-table-line (proof): every atom of an immediate part is an atom of the whole formula | the recursive definition of the set of atoms, F1.3 §03 (after thm-structural-recursion)

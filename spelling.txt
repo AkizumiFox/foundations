@@ -342,3 +342,6 @@ d’Alembert
 collinear
 collinearity
 asm
+ponendo
+logics
+scaffolded

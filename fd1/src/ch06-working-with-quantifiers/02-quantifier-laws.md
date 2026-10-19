@@ -697,7 +697,7 @@ there is a non-empty set of reals, bounded above, with no supremum. The two cond
 
 ## How the laws look in a mathematical proof
 
-Chapter 2 proved, in @exm-raa-zero, that a number \( x \ge 0 \) below every positive number is \( 0 \). Its key step chose \( \varepsilon \coloneqq x/2 \), and the reading after it said that "the hypothesis applies to it" is a rule for "every" that Chapter 5 would make precise. The rule is \( \rulename{\forall E} \), in its bounded form (@prp-bounded-quantifier-rules), at a term built from the data. Here is the same move once more, the way it appears in analysis.
+Chapter 2 proved, in @exm-raa-zero, that a number \( x \ge 0 \) below every positive number is \( 0 \). Its key step chose \( \varepsilon \coloneqq x/2 \), and the reading after it called "the hypothesis applies to it" a step about "every", used as ordinary reasoning until Chapter 5. The rule is \( \rulename{\forall E} \), in its bounded form (@prp-bounded-quantifier-rules), at a term built from the data. Here is the same move once more, the way it appears in analysis.
 
 *Two real numbers that are closer than every positive number are equal.*
 
