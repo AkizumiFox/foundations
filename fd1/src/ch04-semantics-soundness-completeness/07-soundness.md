@@ -953,21 +953,21 @@ Fatal errors (0 for the step): in (b), using the ordinary valuations, under whic
 ::: {#exr-soundness-c5}
 [C5: Challenge: two three-valued tables]
 
-A **Kleene valuation** \( u \) assigns one of the values \( 0 \), \( \frac12 \), \( 1 \) to each atom and is extended by \( u(\bot) = 0 \), \( u(\neg\varphi) = 1 - u(\varphi) \), \( u(\varphi \wedge \psi) = \min\{ u(\varphi), u(\psi) \} \), \( u(\varphi \vee \psi) = \max\{ u(\varphi), u(\psi) \} \), \( u(\varphi \to \psi) = \max\{ 1 - u(\varphi), u(\psi) \} \). (This extension differs from the three-valued valuation of the optional excursion below, whose \( \neg \) gives \( \neg\varphi \) the value \( 0 \) at \( \frac12 \).) For a set \( D \) of **designated** values, say that \( \Gamma \) \( D \)-entails \( \psi \) if every Kleene valuation \( u \) giving every formula of \( \Gamma \) a value in \( D \) gives \( \psi \) a value in \( D \).
+A **Kleene valuation** \( u_{\mathrm{K}} \) assigns one of the values \( 0 \), \( \frac12 \), \( 1 \) to each atom and is extended by \( u_{\mathrm{K}}(\bot) = 0 \), \( u_{\mathrm{K}}(\neg\varphi) = 1 - u_{\mathrm{K}}(\varphi) \), \( u_{\mathrm{K}}(\varphi \wedge \psi) = \min\{ u_{\mathrm{K}}(\varphi), u_{\mathrm{K}}(\psi) \} \), \( u_{\mathrm{K}}(\varphi \vee \psi) = \max\{ u_{\mathrm{K}}(\varphi), u_{\mathrm{K}}(\psi) \} \), \( u_{\mathrm{K}}(\varphi \to \psi) = \max\{ 1 - u_{\mathrm{K}}(\varphi), u_{\mathrm{K}}(\psi) \} \). (This extension differs from the three-valued valuation of the optional excursion below, whose \( \neg \) gives \( \neg\varphi \) the value \( 0 \) at \( \frac12 \).) For a set \( D \) of **designated** values, say that \( \Gamma \) \( D \)-entails \( \psi \) if every Kleene valuation \( u_{\mathrm{K}} \) giving every formula of \( \Gamma \) a value in \( D \) gives \( \psi \) a value in \( D \).
 
 ::: {.enumerate options="label=(\alph*)"}
-1. For \( D = \{ 1 \} \), show that the case \( \rulename{{\to}I} \) fails: give a box that is correct for \( D \)-entailment and a \( u \) at which the line that \( \rulename{{\to}I} \) writes is undesignated.
+1. For \( D = \{ 1 \} \), show that the case \( \rulename{{\to}I} \) fails: give a box that is correct for \( D \)-entailment and a \( u_{\mathrm{K}} \) at which the line that \( \rulename{{\to}I} \) writes is undesignated.
 2. For \( D = \{ \frac12, 1 \} \), show that the case \( \rulename{{\to}E} \) fails.
-3. Is \( p \vee \neg p \) designated under every \( u \) in (a)? In (b)?
+3. Is \( p \vee \neg p \) designated under every \( u_{\mathrm{K}} \) in (a)? In (b)?
 :::
 :::
 
 ::: {.solution}
-(a) The one-line box \( p \): \( p \) \( D \)-entails \( p \). \( \rulename{{\to}I} \) writes \( p \to p \), and at \( u(p) = \frac12 \), \( u(p \to p) = \max\{ \frac12, \frac12 \} = \frac12 \notin D \).
+(a) The one-line box \( p \): \( p \) \( D \)-entails \( p \). \( \rulename{{\to}I} \) writes \( p \to p \), and at \( u_{\mathrm{K}}(p) = \frac12 \), \( u_{\mathrm{K}}(p \to p) = \max\{ \frac12, \frac12 \} = \frac12 \notin D \).
 
-(b) The premises \( p \to q \), \( p \) and the conclusion \( q \), at \( u(p) = \frac12 \), \( u(q) = 0 \): \( u(p \to q) = \max\{ \frac12, 0 \} = \frac12 \in D \) and \( u(p) = \frac12 \in D \), but \( u(q) = 0 \notin D \).
+(b) The premises \( p \to q \), \( p \) and the conclusion \( q \), at \( u_{\mathrm{K}}(p) = \frac12 \), \( u_{\mathrm{K}}(q) = 0 \): \( u_{\mathrm{K}}(p \to q) = \max\{ \frac12, 0 \} = \frac12 \in D \) and \( u_{\mathrm{K}}(p) = \frac12 \in D \), but \( u_{\mathrm{K}}(q) = 0 \notin D \).
 
-(c) In (a), no: \( u(p \vee \neg p) = \max\{ \frac12, \frac12 \} = \frac12 \) at \( u(p) = \frac12 \). In (b), yes: \( \max\{ x, 1 - x \} \ge \frac12 \) for each of the three values \( x \).
+(c) In (a), no: \( u_{\mathrm{K}}(p \vee \neg p) = \max\{ \frac12, \frac12 \} = \frac12 \) at \( u_{\mathrm{K}}(p) = \frac12 \). In (b), yes: \( \max\{ x, 1 - x \} \ge \frac12 \) for each of the three values \( x \).
 
 So the first choice of \( D \) loses excluded middle and the box rule for \( \to \); the second keeps excluded middle and loses modus ponens.
 

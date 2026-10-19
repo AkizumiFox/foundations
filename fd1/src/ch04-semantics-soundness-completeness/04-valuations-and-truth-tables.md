@@ -742,7 +742,7 @@ Fatal errors (0 for the step): calling the claim false; locating the error in li
 ::: {#exr-valuations-and-truth-tables-c3}
 [C3: The game and the clauses]
 
-Fix a valuation \( v \). For formulas built from atoms by \( \neg \), \( \wedge \), \( \vee \) alone, define by recursion (@thm-structural-recursion; give \( \bot \), \( \to \) and \( \leftrightarrow \) any values, they play no part) two statements, \( \mathrm{Ver}(\varphi) \) ("the verifier can always win at \( \varphi \)") and \( \mathrm{Fal}(\varphi) \) ("the falsifier can always win at \( \varphi \)"):
+Fix a valuation \( v \). For formulas built from atoms by \( \neg \), \( \wedge \), \( \vee \) alone, define by recursion (@thm-structural-recursion, applied to the pair of truth values of the two statements as one function, since each clause for \( \neg \) calls on the other statement; give \( \bot \), \( \to \) and \( \leftrightarrow \) any values, they play no part) two statements, \( \mathrm{Ver}(\varphi) \) ("the verifier can always win at \( \varphi \)") and \( \mathrm{Fal}(\varphi) \) ("the falsifier can always win at \( \varphi \)"):
 
 | \( \varphi \) | \( \mathrm{Ver}(\varphi) \) holds iff | \( \mathrm{Fal}(\varphi) \) holds iff |
 |---|---|---|

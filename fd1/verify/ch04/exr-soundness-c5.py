@@ -1,4 +1,4 @@
-"""exr-soundness-c5 (Section 4.7, two three-valued tables): u(not) = 1 - u, min, max,
+"""exr-soundness-c5 (Section 4.7, two three-valued tables; the Kleene valuation u_K, written u below): u(not) = 1 - u, min, max,
 u(phi -> psi) = max(1 - u(phi), u(psi)). Every one-step rule is checked for each set D of
 designated values ({1} and {1/2, 1}), the box rules on the instances quoted; the values quoted in (a)-(c)."""
 import itertools

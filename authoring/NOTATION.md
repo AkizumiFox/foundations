@@ -167,6 +167,8 @@ The main characters: what letter each kind of object gets.
 | `\Gamma_k`, `\varphi_k`; `\Delta \subseteq \Delta'` | the context of line k of a derivation (defined in F1.3 §07, "The context of a line", for derivations in the sense of F1.1 `def-derivation`) and the formula on line k (F1.3 §07); for lists, every formula of Δ occurs in Δ' (F1.3 §07, before `lem-context-inclusion`) |
 | `u`, `\models_3` | a three-valued valuation (values 0 < ½ < 1) and its entailment (local to F1.3 §07, the optional `thm-raa-independent`) |
 | `w` (letter valuation), `\models_\ell` | a **letter valuation**: ⊥ read as an ordinary letter, so \( w(\bot) \) may be T; and its entailment (local to F1.3 §07 exercise C4) |
+| `u_{\mathrm{K}}` | a Kleene valuation (values 0 < ½ < 1; ¬ is 1 − u_K, ∧ is min, ∨ is max, → is max{1 − u_K(φ), u_K(ψ)}) (local to F1.3 §07 exercise C5); not the \( u \) of `thm-raa-independent` |
+| `\Pi_X` | the list of formulas on the path from the root of a search tree down to node X, X included (local to F1.3 §08 exercise C5) |
 | `v_{\mathrm{T}}` | the all-T valuation: every atom true (local to F1.3 §04 C2, §09 `thm-adequate-connectives` (b) and C2 (a)); not \( u \), which is three-valued |
 | `\varphi^{v}`, `p^{v}` | the formula signed by a valuation: φ if v(φ) = T, ¬φ if v(φ) = F (F1.3 §08, before `lem-truth-table-line`; the literals of §09 rows) |
 | `\mathbin{\vert}`, `\downarrow`, `\mathsf{M}` | NAND ("not both"; the source writes `\mathbin{|}`, which a pipe table cannot show), NOR ("neither"), and the three-place majority connective. NAND is introduced in F1.3 §05 exercise C1 with clause (V7) and reused in §06 exercises C1, C3 and §09 exercise C1; ↓ and M are local to §09 exercises C1, C2 |

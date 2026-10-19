@@ -1250,10 +1250,10 @@ Fatal errors (0 for the step): in (c), using the ordinary tables.
 ::: {#exr-completeness-c5}
 [C5: Challenge: From a closed tree to a derivation]
 
-Let a search tree (Section 4.6) for \( \Gamma, \neg\psi \) have every branch closed. For a node \( X \), let \( \Pi_X \) be the list of formulas on the path from the root down to \( X \), \( X \) included.
+Let a search tree (Section 4.6) for \( \Gamma, \neg\psi \) have every branch closed. For a node \( X \), the *path list* of \( X \) is the list of formulas on the path from the root down to \( X \), \( X \) included.
 
 ::: {.enumerate options="label=(\alph*)"}
-1. Prove, by induction on the number of nodes below \( X \), that if every branch through \( X \) is closed, then \( \Pi_X \vdash \bot \). Treat a closed leaf and each rule of the table of search rules, naming the derivable sequents you use.
+1. Prove, by induction on the number of nodes below \( X \), that if every branch through \( X \) is closed, then \( \Delta \vdash \bot \), where \( \Delta \) is the path list of \( X \). Treat a closed leaf and each rule of the table of search rules, naming the derivable sequents you use.
 2. Deduce \( \Gamma \vdash \psi \).
 3. Explain why (a), (b) and @prp-search-decides give a second proof of @thm-completeness, and where it uses \( \rulename{RAA} \) or \( \rulename{LEM} \).
 :::
@@ -1268,11 +1268,11 @@ A one-way rule: derive the added formulas from the used one, then chain (@lem-we
 ::: {.solution}
 [Hint 2]
 
-For \( \varphi \to \psi \), split as \( \neg\varphi \) or \( \psi \): from \( \Pi_X, \neg\varphi \vdash \bot \) get \( \Pi_X \vdash \varphi \) by \( \rulename{RAA} \).
+For \( \varphi \to \psi \), split as \( \neg\varphi \) or \( \psi \): with \( \Delta \) the path list of \( X \), from \( \Delta, \neg\varphi \vdash \bot \) get \( \Delta \vdash \varphi \) by \( \rulename{RAA} \).
 :::
 
 ::: {.solution}
-(a) We use @thm-strong-induction on the number of nodes below \( X \). Write \( \Delta \) for \( \Pi_X \).
+(a) We use @thm-strong-induction on the number of nodes below \( X \). Write \( \Delta \) for the path list of \( X \).
 
 *A closed leaf.* \( \Delta \) holds \( \varphi \) and \( \neg\varphi \) (one \( \rulename{\neg E} \) line) or \( \bot \) (the premise itself): \( \Delta \vdash \bot \).
 
