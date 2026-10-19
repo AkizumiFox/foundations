@@ -6526,6 +6526,16 @@ items:
       for §05 it names only the reading of exm-raa-zero. Fix: add ''§05 exr-reductio-and-classical-rules-r1
       (naming k in n = 2k, 2k + 1)'' to that row''s list. Its payment, def-rules-existential, is already
       recorded there.'
+  - stage: S7r
+    verdict: correct
+    by: rereferee
+    hash: 8c4a115cc67e
+    date: '2026-10-19'
+    model: claude-opus-5-5
+    evidence: ' ch01/07:25 and @exm-abs-product-cases at ch01/07:686, and (E1) is in ch02 §01. The note
+      that no rule of this chapter is needed is accurate, since neither case contains a clash. The ledger
+      line at 05:2022 covers the arithmetic, the cited F1.1 method, and naming k as F1.4 (promised; def-rules-existential).
+      STATUS row 89 now lists this exercise under the index note, so the bookkeeping gap is closed.'
 - key: exr-reductio-and-classical-rules-r2
   kind: exr
   file: 05-reductio-and-classical-rules.md
