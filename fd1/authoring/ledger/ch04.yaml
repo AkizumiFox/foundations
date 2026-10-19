@@ -142,6 +142,17 @@ items:
       is a formula' is circular. It shows that chi_i is the last entry of a formation sequence, which
       makes chi_i a formula only if every such last entry is a formula, and that is the claim being proved.
       (F4) gives only 'formula => last entry'.
+  - stage: S7r
+    verdict: correct
+    by: rereferee
+    hash: fadb99e2bcd1
+    date: '2026-10-19'
+    model: claude-opus-5-5
+    evidence: 01:136. The first fact is now argued forward along the list. chi_1 is an atom or bot, so
+      it is a formula by (F1). Each later entry is an atom or bot, or is built by (F2)/(F3) from earlier
+      entries that are already formulas. That is an informal induction on position. It is not circular,
+      because it no longer uses (F4) in the wrong direction. It points to the 4.3 fold "Sets built from
+      a base" (03:102)
 - key: check:01-formulas-and-parse-trees:3
   kind: check
   file: 01-formulas-and-parse-trees.md
@@ -317,6 +328,17 @@ items:
     evidence: 01-formulas-and-parse-trees.md:251 def-parse-tree has no closing clause, so nothing excludes
       trees not produced by (T1)-(T3). 4.3's proof that every formula has exactly one parse tree depends
       on such a clause.
+  - stage: S7r
+    verdict: correct
+    by: rereferee
+    hash: e3accb71e037
+    date: '2026-10-19'
+    model: claude-opus-5-5
+    evidence: '01:255 adds (T4): a tree is a parse tree for phi only if that follows from finitely many
+      uses of (T1)-(T3). Its ''in particular'' holds. A tree for neg-phi cannot come last from (T1), since
+      neg-phi is not an atom or bot, or from (T3), since neg-phi does not begin with ''(''. So it comes
+      from (T2). A tree for (phi o psi) likewise comes from (T3). The sentence does not claim the parts
+      are phi and psi, a'
 - key: exm-parse-trees
   kind: exm
   file: 01-formulas-and-parse-trees.md
@@ -412,6 +434,17 @@ items:
     model: claude-opus-5-5
     evidence: 01-formulas-and-parse-trees.md:337 The meta-claim 'the safe method is to walk the tree level
       by level, as we just did' is false of the page.
+  - stage: S7r
+    verdict: correct
+    by: rereferee
+    hash: 9a8d496bb0d6
+    date: '2026-10-19'
+    model: claude-opus-5-5
+    evidence: 01:328 adds the note that, until Section 4.3, the set of subformulas depends on the chosen
+      parse tree as far as we know, and that 4.3 (03:249) proves the tree is unique. This resolves both
+      findings that the definition is relative to the chosen tree. 01:340 now says 'walk the tree node
+      by node, as we just did', which matches the ten-node listing just before it, so the meta-claim finding
+      is resolved
 - key: check:01-formulas-and-parse-trees:5
   kind: check
   file: 01-formulas-and-parse-trees.md
@@ -476,6 +509,16 @@ items:
     model: claude-opus-5-5
     evidence: 01-formulas-and-parse-trees.md:400 The text says Chapter 1 gave a reason for grouping arrows
       to the right. Chapter 1 gives none.
+  - stage: S7r
+    verdict: correct
+    by: rereferee
+    hash: 84e32b0746a1
+    date: '2026-10-19'
+    model: claude-opus-5-5
+    evidence: 01:401 now cites 'vacuous truth, Section 2.1' rather than prp-vacuous-implication. fd1 src/ch02-*/01-contradiction-and-vacuous-truth.md:500
+      has the subsection 'Vacuous truth', and the claim is framed as the everyday reading, made exact
+      in Section 4.4. That resolves the soundness/derivability finding. 01:403 no longer credits Chapter
+      1 with a reason for right grouping; it gives the reason in its ow
 - key: exr-formulas-and-parse-trees-a1
   kind: exr
   file: 01-formulas-and-parse-trees.md
@@ -543,6 +586,17 @@ items:
     model: claude-opus-5-5
     evidence: '01-formulas-and-parse-trees.md:500 Markup slip: sub-part (v) is italicised as if it were
       a top-level part label, unlike (i)-(iv).'
+  - stage: S7r
+    verdict: minor
+    by: rereferee
+    hash: ac1ec4a18eee
+    date: '2026-10-19'
+    model: claude-opus-5-5
+    evidence: 'phi o psi)) to be a formula, it would have to be (alpha o'' beta) with alpha a proper initial
+      segment of the formula (phi o psi). Ruling that out needs 4.3''s result that no proper initial segment
+      of a formula is a formula. The argument just given covers only ((p -> q)). Fix: drop the sentence,
+      or limit it (''so here the doubled pair is not official''), or add ''as Section 4.3 shows for every
+      formula''.'
 - key: exr-formulas-and-parse-trees-a2
   kind: exr
   file: 01-formulas-and-parse-trees.md
@@ -834,6 +888,17 @@ items:
     evidence: 02-induction.md:47 The fold says each P(n) follows from P(0) and 'the step' by →E alone.
       But the step is a for-every statement, so each instance P(k) → P(k+1) first needs a for-every elimination,
       which Chapter 5 gives. Ledger 02:494 repeats 'by ->E'.
+  - stage: S7r
+    verdict: correct
+    by: rereferee
+    hash: 20603e2e255a
+    date: '2026-10-19'
+    model: claude-opus-5-5
+    evidence: '02:21-68. The fold at 02:47 now derives each P(n) by ->E from P(0) and the step''s instances
+      P(0)->P(1), P(1)->P(2), ..., which are taken as given, so no for-every elimination is claimed (S5b
+      finding 1 resolved; ledger 02:494 matches). ''Starting from another number'' (02:68) uses n>=b =>
+      n-b in N and b+m>=b; ledger 02:495 now sources them to blueprint ch03.md:21 (Allowed prerequisites:
+      arithmetic an'
 - key: exm-sum-consecutive-products
   kind: exm
   file: 02-induction.md
@@ -889,6 +954,16 @@ items:
     evidence: ledger 02:495 cites 'F2.2 (promised; STATUS row "definition by recursion", from AN1.1)'.
       No row in foundations/authoring/STATUS.md covers F1.3 §02 for this. The only such row is AN1.1's
       own (analysis-series STATUS:45). Math checked; the sidecar passes
+  - stage: S7r
+    verdict: correct
+    by: rereferee
+    hash: 22fce241351f
+    date: '2026-10-19'
+    model: claude-opus-5-5
+    evidence: 02:72-99. Small cases are 2, 8, 20 on both sides. The base case is 2 = 2. The step factors
+      out (n+1)(n+2), leaving n/3 + 1 = (n+3)/3, which is the right side of P(n+1). The proof uses induction
+      started at 1, with a pointer to 02:68. Ledger 02:496 cites STATUS row 124 (F1.3 §02, paid by thm-recursion
+      and def-sum-product, both in fd2 ch02/03), so the seam check can find it.
 - key: exm-power-inequality
   kind: exm
   file: 02-induction.md
@@ -943,6 +1018,15 @@ items:
     model: claude-opus-5-5
     evidence: ledger 02:496 cites the same non-existent F1.3 §02 STATUS row for powers by recursion (F2.2).
       Math correct; the sidecar passes
+  - stage: S7r
+    verdict: correct
+    by: rereferee
+    hash: e03b25b4fb8e
+    date: '2026-10-19'
+    model: claude-opus-5-5
+    evidence: 02:103-123. 3^0 = 1 = 2*0+1. The chain 3*3^n >= 3(2n+1) = 6n+3 >= 2n+3 = 2(n+1)+1 holds,
+      multiplying by 3 > 0 and using 6n >= 2n because n >= 0. Ledger 02:497 cites STATUS row 124, paid
+      by def-power (fd2 ch02/03:185).
 - key: check:02-induction:1
   kind: check
   file: 02-induction.md
@@ -1031,6 +1115,16 @@ items:
     model: claude-opus-5-5
     evidence: '02-induction.md:165 P gets two meanings in one sentence: the property P(k) of the theorem,
       and the statement letter of prp-vacuous-implication.'
+  - stage: S7r
+    verdict: correct
+    by: rereferee
+    hash: 301d4805df60
+    date: '2026-10-19'
+    model: claude-opus-5-5
+    evidence: '02:157-165. The theorem statement is right. The hidden base case is now cited as ''@prp-vacuous-implication:
+      from ¬(k<0) we get (k<0)->P(k)''. That is an instance of the proposition''s ¬P ⊢ P->Q (fd1 ch02/01:195),
+      and the proposition''s own letters are no longer written beside the property P, so the double meaning
+      of P is gone (S5b finding resolved).'
 - key: proof:thm-strong-induction
   kind: proof
   file: 02-induction.md
@@ -1090,6 +1184,16 @@ items:
     evidence: '02:171-179: the proof is correct. Ledger 02:498 cites ''F2.2 (promised; STATUS row "nothing
       between n and n + 1", from AN1.1)'', but no foundations STATUS row lists F1.3 §02 for that fact.
       The only such rows are F1.5''s (STATUS:133) and AN1.1''s'
+  - stage: S7r
+    verdict: correct
+    by: rereferee
+    hash: 81ea58be4d66
+    date: '2026-10-19'
+    model: claude-opus-5-5
+    evidence: '02:171-179. Q(n) is ''P(k) for all k<=n''. The base case uses the vacuous hypothesis at
+      n=0 and ''k<=0 iff k=0''. The step uses ''k<n+1 iff k<=n'' and ''k<=n+1 iff k<=n or k=n+1''. Ledger
+      02:499 cites STATUS row 124, paid by lem-naturals-arithmetic (e) (fd2 ch02/01:42: no k with n<k<n+1),
+      and the blueprint''s school facts about N. The proof ends with Q(n) at k=n.'
 - key: check:02-induction:2
   kind: check
   file: 02-induction.md
@@ -1179,6 +1283,17 @@ items:
     evidence: 02-induction.md:503 Several ledger lines cite F2.2 promises through 'STATUS row ... from
       AN1.1', or as 'promised'. No row in foundations/authoring/STATUS.md lists F1.3 §02 for these facts,
       so the seam check cannot find them.
+  - stage: S7r
+    verdict: correct
+    by: rereferee
+    hash: 7874cfbdeec7
+    date: '2026-10-19'
+    model: claude-opus-5-5
+    evidence: '02:217-243. ''First try'' now speaks of a number x<1 that may exceed 1-1/((n+1)(n+2)) and
+      says the step cannot be reached ''from S_n<1 alone''. It makes no claim about the value of S_n (S5a
+      finding resolved). S_1..S_3 = 1/2, 2/3, 3/4. Step algebra: n(n+2)+1 = (n+1)^2, giving (n+1)/(n+2).
+      The conclusion uses induction started at 1. The pointer to Section 4.3 at 02:242 matches 03:168
+      and 03:201 (parts p'
 - key: check:02-induction:3
   kind: check
   file: 02-induction.md
@@ -1278,6 +1393,17 @@ items:
     model: claude-opus-5-5
     evidence: 02:275-283 4^(n+1)-1=4(4^n-1)+3; 12..15 = 4a+5b checked by script (11 is not representable);
       (b) false, (c),(d) fine.
+  - stage: S7r
+    verdict: correct
+    by: rereferee
+    hash: 0db40138daf3
+    date: '2026-10-19'
+    model: claude-opus-5-5
+    evidence: '02:263-284. I solved each part first. (a)(i): 4^{n+1}-1 = 4(4^n-1)+3. (a)(ii): base cases
+      12=4*3, 13=4*2+5, 14=4+5*2, 15=5*3, with n-4 for n>=16. (b): false, because the n=0 case is vacuous.
+      (c): Q(m)=P(m+5). (d) now says ''the stronger S_n = n/(n+1) gives one (and so would S_n <= n/(n+1))''.
+      That is true, since S_n <= n/(n+1) gives S_{n+1} <= (n+1)/(n+2), and the false ''only'' is gone
+      (S5b finding r'
 - key: exr-induction-a2
   kind: exr
   file: 02-induction.md
@@ -1308,6 +1434,16 @@ items:
     model: claude-opus-5-5
     evidence: '02:308-330 all 12 checked: (b),(k) identities expand correctly; 41^2-41+41=41^2, n=40 gives
       1601; (h) even n only; (i) P(0),P(1),P(2).'
+  - stage: S7r
+    verdict: correct
+    by: rereferee
+    hash: 0aeddad878b9
+    date: '2026-10-19'
+    model: claude-opus-5-5
+    evidence: '02:286-331. Part (e) now glosses n! = 1*2***n inline. This agrees with NOTATION.md:91,
+      and n >= 4 makes the empty product irrelevant (S5b finding resolved). Answers checked: (b) (n+1)^2+(n+1)
+      = (n^2+n)+2(n+1); (d) adds the term 2n+1 to get (n+1)^2; (e) 24 >= 16; (g) 41^2; (h) even n; (i)
+      P(0), P(1), P(2); (k) 3(n^2+n+1); (l) checklist item 2.'
 - key: exr-induction-b1
   kind: exr
   file: 02-induction.md
@@ -1406,6 +1542,17 @@ items:
       gives every point but the base case to inductive features (property, step, principle). A complete
       direct proof scores about 0. Example: n^3−n=(n−1)n(n+1), with 2 | n(n+1) given and 3 | one of the
       three consecutive factors by cases on n mod 3.'
+  - stage: S7r
+    verdict: correct
+    by: rereferee
+    hash: 4cc24b0f6794
+    date: '2026-10-19'
+    model: claude-opus-5-5
+    evidence: '02:355-380. The item now reads ''Prove by induction'', so a marking scheme built on induction
+      steps fits it (S6 finding resolved). Identity: (n+1)^3-(n+1) = n^3+3n^2+2n = (n^3-n)+3n(n+1). The
+      evenness of n(n+1) is given in the item. The 6-point scheme is allowed for a B item: STYLE §11.6
+      binds exit checks, Gate problems and write-up C items. Parity goes to STATUS row 97 (F1.3 §02 B4
+      solution).'
 - key: exr-induction-b5
   kind: exr
   file: 02-induction.md
@@ -1468,6 +1615,16 @@ items:
     model: claude-opus-5-5
     evidence: 02:432-440 step algebra right ((n^2+n+2)/2+n+1=((n+1)^2+(n+1)+2)/2); only flaw is the missing
       base case (1 vs 2), as stated; sum (n^2+n)/2 checked by script.
+  - stage: S7r
+    verdict: correct
+    by: rereferee
+    hash: 53271e1d0524
+    date: '2026-10-19'
+    model: claude-opus-5-5
+    evidence: '02:411-449. (a) The true sum is (n^2+n)/2, and the claim is larger by 1. (b) Checklist
+      item 3 fails: at n=1, 1 != 2; the step is correct. (c) (n^2+n)/2 + c + (n+1) = ((n+1)^2+(n+1))/2
+      + c, and the base case forces c=0. The scheme now totals 10 over 3 steps (3+4+3) and names a fatal
+      error, as STYLE §11.6 (lines 392-403) requires (S5b finding resolved).'
 - key: exr-induction-c5
   kind: exr
   file: 02-induction.md
@@ -1500,6 +1657,17 @@ items:
     evidence: 02-induction.md:468 Hint 2 executes the key idea of a 'Prove more' item by stating the strengthened
       claim itself. STYLE §11.7 / PIPELINE S6 require that no rung execute the key idea. The text follows
       the blueprint (ch04-deepen.md, 4.2 C2).
+  - stage: S7r
+    verdict: correct
+    by: rereferee
+    hash: 4d93a771b168
+    date: '2026-10-19'
+    model: claude-opus-5-5
+    evidence: '02:451-491. The item now asks to show that ''R_n > 1/2 alone, with R_{n+1} = R_n(1-1/(n+1)^2),
+      does not give R_{n+1} > 1/2'', which is literally true. The solution gives an explicit x = 1/2 +
+      t/4 with t = 1/(n+1)^2, and x(1-t) = 1/2 - t/4 - t^2/4 < 1/2 (S5a finding resolved). Hint 2 no longer
+      states the formula: it asks for a guess from the denominators 4, 6, 8 followed by an induction.
+      This is the '
 - key: thm-structural-induction
   kind: thm
   file: 03-structural-induction.md
@@ -1547,6 +1715,16 @@ items:
     evidence: 03-structural-induction.md:27 'There are six cases in all when the four binary connectives
       are counted separately' does not match the paragraph's own count. (i) is 'one for each kind of formula
       of length one' (atom, bot), so the total is 2 + 1 + 4 = 7.
+  - stage: S7r
+    verdict: correct
+    by: rereferee
+    hash: 7b38a9bd6d3a
+    date: '2026-10-19'
+    model: claude-opus-5-5
+    evidence: '03:27 now reads ''seven cases in all (atoms, ⊥, ¬, and the four binary connectives)'',
+      which matches (i)-(iii) at 03:18-22. The S5a/S5b count findings are resolved. The new main-line
+      worked example at 03:31 (balance of parentheses: 0/0 at the base, unchanged at ¬, k+l+1 at ∘) is
+      correct and agrees with lem-parenthesis-count (a) and its proof at 03:184.'
 - key: proof:thm-structural-induction
   kind: proof
   file: 03-structural-induction.md
@@ -1844,6 +2022,16 @@ items:
     evidence: 03-structural-induction.md:247 The one-parse-tree argument says a parse tree for neg phi
       'must have been made by (T2)'. That needs every parse tree to come from (T1)-(T3), and def-parse-tree
       (01:246-258) has no 'nothing else' clause.
+  - stage: S7r
+    verdict: correct
+    by: rereferee
+    hash: de77b32d5100
+    date: '2026-10-19'
+    model: claude-opus-5-5
+    evidence: '03:249 now cites ''(T4) of @def-parse-tree'' for ''every parse tree is made by one of (T1)–(T3)''.
+      01:255 (T4) says exactly this (''a parse tree for ¬φ is made by (T2), and ... for (φ∘ψ) by (T3)'').
+      The S5b finding is resolved. The rest of the one-parse-tree induction checks out: the atom/⊥ case
+      uses the first symbol, the ¬ case removes ¬, and the binary case cites thm-unique-readability.'
 - key: proof:thm-unique-readability
   kind: proof
   file: 03-structural-induction.md
@@ -1890,6 +2078,16 @@ items:
     evidence: 03-structural-induction.md:235 STYLE §12.12 says the unique-readability meta-proof goes
       into a second-reading fold. Here it is on the main line, a deviation recorded only in the blueprint
       (layout J3), not in STYLE.
+  - stage: S7r
+    verdict: correct
+    by: rereferee
+    hash: e0f8e122b0e2
+    date: '2026-10-19'
+    model: claude-opus-5-5
+    evidence: '03:237-245 checked line by line. Existence comes from looking at the last step and the
+      first symbol separates the two forms. Case (ii) gives excess 1 before ∘ by lem (a), and ≥2 before
+      any other connective by lem (c) for φ and (c)+(a) for ψ, so the lengths and the parts are forced.
+      The proof stays on the main line against STYLE §12.12, but that deviation is now recorded in authoring/STATUS.md:268 '
 - key: def-height
   kind: def
   file: 03-structural-induction.md
@@ -1979,6 +2177,15 @@ items:
     model: claude-opus-5-5
     evidence: 03-structural-induction.md:745 Ledger line 745 sources 'function' to 'F2.1 (prose pointer)',
       but the section contains no prose pointer to fd2. 03:267 says only that the everyday sense suffices.
+  - stage: S7r
+    verdict: correct
+    by: rereferee
+    hash: c6bdbfb90b68
+    date: '2026-10-19'
+    model: claude-opus-5-5
+    evidence: 03:269 uses 'function' only in its everyday sense. The ledger line now reads 'F2.1 (promised,
+      STATUS row 114, everyday sense; no prose pointer)', and STATUS.md:114 lists F1.3 §03 'function'
+      in exactly this sense. The ledger and the text now agree, so the S5b finding is resolved.
 - key: proof:thm-structural-recursion
   kind: proof
   file: 03-structural-induction.md
@@ -2037,6 +2244,17 @@ items:
     evidence: 03-structural-induction.md:298 The proof inducts '@ax-induction, started at 1'. That form
       is not ax-induction as stated (02:21-31, base 0) but the unlabelled 4.2 paragraph 'Starting from
       another number'. No ledger line covers it for this proof.
+  - stage: S7r
+    verdict: correct
+    by: rereferee
+    hash: 1917cdd3fbf1
+    date: '2026-10-19'
+    model: claude-opus-5-5
+    evidence: '03:300 now reads ''@ax-induction, started at 1 ("Starting from another number", Section
+      4.2)''. That paragraph is 02:68, which defines induction started at b as ax-induction applied to
+      Q(m)=P(b+m). A new ledger line covers it. The pointer uses fd1''s local numbering. The base case
+      (first-symbol test, 01:142), the step (unique readability; parts of length ≤ n), uniqueness via
+      the restriction, and the '
 - key: check:03-structural-induction:3
   kind: check
   file: 03-structural-induction.md
@@ -2226,6 +2444,17 @@ items:
       about recursively defined counts. The main line has no worked example of that kind: the one model
       (the parenthesis-count proof) sits in a fold. With folds closed the section does not model these
       B items (STYLE §12.0 test; the S6 rule that every B task has a worked example).'
+  - stage: S7r
+    verdict: correct
+    by: rereferee
+    hash: 093f04524b88
+    date: '2026-10-19'
+    model: claude-opus-5-5
+    evidence: '03:449-461. I solved it first. Base: s=1=len. Step ¬: s≤1+s(φ)≤len(¬φ). Binary: 1+s+s''
+      < len+len''+3. The revised parenthetical at 461 is correct. Equality holds for ¬…¬p and ¬…¬⊥, whose
+      n+1 subformulas have distinct lengths. The inequality is strict once a binary connective appears
+      (strict at ∘, and kept by ¬). Both S5a/S5b findings are resolved. len is now defined at 03:353 and
+      is in NOTATION.md:'
 - key: exr-induction-b3
   kind: exr
   file: 03-structural-induction.md
@@ -2316,6 +2545,15 @@ items:
     evidence: '03-structural-induction.md:520 ''3: (c), with the recursive height'' rewards one method.
       A correct proof by structural induction that m''s parse tree is the mirror of φ''s, so that branches
       correspond one-to-one with equal length, gets no credit.'
+  - stage: S7r
+    verdict: correct
+    by: rereferee
+    hash: 8f772fd8404d
+    date: '2026-10-19'
+    model: claude-opus-5-5
+    evidence: 03:502-523. I checked (a), the involution in (b), (c) and (d). Marking scheme line 522 now
+      gives credit for either the recursive-height induction or the mirrored-tree induction, so the S6
+      finding is resolved. Points total 1+3+3+1=8, as stated.
 - key: exr-induction-c1
   kind: exr
   file: 03-structural-induction.md
@@ -2377,6 +2615,17 @@ items:
     evidence: 03-structural-induction.md:563 The scheme requires 'a structural induction', which penalises
       an equally valid strong induction on the length of the formula with the same three cases (needed
       for the ¬ case).
+  - stage: S7r
+    verdict: correct
+    by: rereferee
+    hash: 31d39a28a03d
+    date: '2026-10-19'
+    model: claude-opus-5-5
+    evidence: '03:550 uses ''every formula has at least one symbol''. A new ledger line points to F1.3
+      §01, where 01:144 states it inline (ledger 01:666), so the S5b finding is resolved. Marking scheme
+      line 565 now accepts strong induction on the length, so the S6 finding is resolved. The solution
+      is correct: in the ¬ case u'' is proper, and a formula, hence non-empty. The binary case uses lem
+      (b) against (a). Poin'
 - key: exr-induction-c2
   kind: exr
   file: 03-structural-induction.md
@@ -2446,6 +2695,15 @@ items:
       argument and (d) a repaired proof, but no marking scheme. STYLE §11.6 asks for one on 'any C item
       a reader is likely to write up in full', and the sibling find-the-error items (4.2 C1 at 02:442,
       4.4 C2 at 04:718) have one.
+  - stage: S7r
+    verdict: correct
+    by: rereferee
+    hash: b4fd4b15b375
+    date: '2026-10-19'
+    model: claude-opus-5-5
+    evidence: '03:605-612 adds a marking scheme (2+3+3+2=10) with a fatal error, which resolves the S6
+      finding. The solution is correct: (a) by lem (a). (b) line 5 applies the hypothesis to the non-formula
+      φ∘ψ. (c) the lem (c) property fails on p∧q. (d) applies the hypothesis to φ and ψ.'
 - key: exr-induction-c3
   kind: exr
   file: 03-structural-induction.md
@@ -2506,6 +2764,17 @@ items:
     model: claude-opus-5-5
     evidence: 03-structural-induction.md:618 The stem offers '(say, as for ∧)' as the choice for the clauses
       of ⊥ as well, but ⊥ is nullary and has no parts to sum.
+  - stage: S7r
+    verdict: correct
+    by: rereferee
+    hash: 58f7c97d9639
+    date: '2026-10-19'
+    model: claude-opus-5-5
+    evidence: 03:629 now fixes nodes(⊥)=1 and neg(⊥)=0, and gives the other binary connectives the ∧ clauses.
+      nodes is now the parse-tree node count, the same as B2 (03:467). Both findings are resolved. The
+      solution (restriction inside P, vacuous cases, ¬ case, conjunction case adding both hypotheses,
+      slack ≥3) is correct. 03:651's 'whatever the clauses chosen for them' is harmless with the stem's
+      '(these choic
 - key: exr-structural-induction-c4
   kind: exr
   file: 03-structural-induction.md
@@ -2573,6 +2842,17 @@ items:
     model: claude-opus-5-5
     evidence: 03:715-727 Polish strings CKpNqp, NApEqr correct; running weights -1,-2,-1,0,0,1; ((p∨q)→¬r);
       all four prefix kinds of Kφψ are covered.
+  - stage: S7r
+    verdict: correct
+    by: rereferee
+    hash: ba0da2303b54
+    date: '2026-10-19'
+    model: claude-opus-5-5
+    evidence: 'The new paragraph at 03:728 reads ''nothing else is'' as smallest closure, following the
+      fold ''Sets built from a base'' (03:102-111). It derives the induction principle and the decomposition
+      into atom, ⊥, Nφ, Kφψ, … with Polish parts. The collection of strings of these forms is closed because
+      each such string is Polish. Hint 1 (03:716) and the ledger line match. Both findings are resolved.
+      (b): I che'
 - key: def-valuation
   kind: def
   file: 04-valuations-and-truth-tables.md
@@ -2851,6 +3131,17 @@ items:
     model: claude-opus-5-5
     evidence: 04-valuations-and-truth-tables.md:184 The Idea says the immediate parts 'have fewer atoms
       to disagree on', which is false in general.
+  - stage: S7r
+    verdict: correct
+    by: rereferee
+    hash: a396e082c256
+    date: '2026-10-19'
+    model: claude-opus-5-5
+    evidence: '04:177-219. Both earlier findings are fixed. The Idea (04:184) now says that every atom
+      of a part is an atom of the whole, so v and w agree on each part''s atoms. That is the reason the
+      induction hypothesis applies, and the proof''s conjunction case (04:196) uses the same reason. ''at
+      most 2^n'' now reads ''exactly 2^n'' (04:219), which matches ''one for each way''. Checked the proof
+      case by case against '
 - key: proof:lem-coincidence
   kind: proof
   file: 04-valuations-and-truth-tables.md
@@ -3027,6 +3318,17 @@ items:
     date: '2026-10-19'
     model: claude-opus-5-5
     evidence: 04:256-263 table recomputed (all T); 'Section 4.7 proves this' = soundness
+  - stage: S7r
+    verdict: correct
+    by: rereferee
+    hash: a184d1e36961
+    date: '2026-10-19'
+    model: claude-opus-5-5
+    evidence: '04:247-268. The table is correct: p->q is F only at TF, (p->q) and p is T only in row 1,
+      and the last column is T in every row. The earlier finding is fixed: 04:267 now reads ''at least
+      when phi and psi are the atoms p and q'', where phi and psi are the metavariables of ->E as stated
+      at 04:28. ''Section 4.7 proves this for every rule'' points to the local fd1 section 07-soundness,
+      which is correct.'
 - key: exm-table-contrapositive
   kind: exm
   file: 04-valuations-and-truth-tables.md
@@ -3129,6 +3431,17 @@ items:
     evidence: 04-valuations-and-truth-tables.md:334 The method paragraph says that if the forcing ends
       in a consistent assignment, 'that assignment is a row making the formula false'. A forced assignment
       may leave some atoms unset, and then it is not a row.
+  - stage: S7r
+    verdict: correct
+    by: rereferee
+    hash: 1d55a45ccf0b
+    date: '2026-10-19'
+    model: claude-opus-5-5
+    evidence: '04:296-334. The full table is correct: F only in row TTF. The four forced steps are each
+      justified by (V5) or (V3). The earlier finding is fixed: the method paragraph (04:334) now says
+      that a consistent case ''completed in every way on the atoms it leaves unset'' gives the rows, and
+      that every case ending in a contradiction means no row. This agrees with how B1 (d) and A2 (h) are
+      used.'
 - key: def-truth-function
   kind: def
   file: 04-valuations-and-truth-tables.md
@@ -3173,6 +3486,17 @@ items:
     model: claude-opus-5-5
     evidence: 04-valuations-and-truth-tables.md:343 The symbol f is used before it is introduced, and
       the same section later gives f two other meanings.
+  - stage: S7r
+    verdict: correct
+    by: rereferee
+    hash: cff7a698d50f
+    date: '2026-10-19'
+    model: claude-opus-5-5
+    evidence: '04:340-347. f is now introduced in the definition (''A truth function f with n inputs'').
+      The other meanings are gone: B4''s atom f is now q, and the only other f-like symbol in the section
+      is C1''s subscripted f_v, which is a different notation defined in its own item. The revised warning
+      (04:380) uses p and q, which are atoms of the language. Its claim is correct: for a fixed real x,
+      ''if x>2 then x^'
 - key: check:04-valuations-and-truth-tables:4
   kind: check
   file: 04-valuations-and-truth-tables.md
@@ -3516,6 +3840,17 @@ items:
     model: claude-opus-5-5
     evidence: 04-valuations-and-truth-tables.md:607 The marking scheme specified by the frozen blueprint
       is missing.
+  - stage: S7r
+    verdict: correct
+    by: rereferee
+    hash: a36bd231537f
+    date: '2026-10-19'
+    model: claude-opus-5-5
+    evidence: '04:595-627. I solved it independently. (A)=p, (B)=p->q, (C)=q or not p. The counts are
+      TT three, TF one, FT two and FF two, so only TF works: n is even and not divisible by 4, and 2,
+      6 and -10 all qualify. This matches the text. The atoms are now p and q, as in the language (the
+      earlier finding is fixed). A marking scheme is now present. The blueprint (ch04-deepen:387) gives
+      a 6-point scheme weigh'
 - key: exr-valuations-and-truth-tables-b5
   kind: exr
   file: 04-valuations-and-truth-tables.md
@@ -3545,6 +3880,17 @@ items:
     model: claude-opus-5-5
     evidence: 04-valuations-and-truth-tables.md:635 The marking scheme specified by the frozen blueprint
       is missing.
+  - stage: S7r
+    verdict: correct
+    by: rereferee
+    hash: bd31711f89b5
+    date: '2026-10-19'
+    model: claude-opus-5-5
+    evidence: 04:629-657. I solved it independently. If r=T, claim 3 forces p=T, which contradicts claim
+      4, so r=F. Claim 2 then gives q=T, and claim 1 gives p=F. The row FTF satisfies all four claims.
+      n=3, 9 and 21 all qualify. The witnesses 30, 6, 10, 2, 15, 3, 5, 1 give TTT through FFF in order,
+      which I checked. The marking scheme is now present. It is the blueprint's 1/3/1/1-of-6 scheme (ch04-deepen:388)
+      re
 - key: exr-valuations-and-truth-tables-c1
   kind: exr
   file: 04-valuations-and-truth-tables.md
@@ -3684,6 +4030,17 @@ items:
     model: claude-opus-5-5
     evidence: 04-valuations-and-truth-tables.md:693 A later section recalls this exercise by label, but
       its title lacks ', used later' (STYLE §12.13.6).
+  - stage: S7r
+    verdict: correct
+    by: rereferee
+    hash: 26568fe5feb4
+    date: '2026-10-19'
+    model: claude-opus-5-5
+    evidence: '04:706-740. The title is now ''[C2: Find the error, used later]'', which follows STYLE
+      12.13.6 (STYLE:602), and 09-normal-forms.md:509 recalls it by label. The solution is correct: the
+      claim is true, line (4) contradicts its own hypothesis v_T(phi)=T, p->q shows the stated reason
+      fails, and the repair uses the true conclusion. The pointer to ''Section 4.9'' is local to fd1 and
+      correct.'
 - key: exr-valuations-and-truth-tables-c3
   kind: exr
   file: 04-valuations-and-truth-tables.md
@@ -3715,6 +4072,17 @@ items:
     model: claude-opus-5-5
     evidence: 04:760-772 joint induction correct; the ¬ step needs both halves, as (c) says; scheme sums
       to 10.
+  - stage: S7r
+    verdict: minor
+    by: rereferee
+    hash: f60cb3a82115
+    date: '2026-10-19'
+    model: claude-opus-5-5
+    evidence: 'function. That is exactly the point that part (c) later makes for the induction. Fix: write
+      ''define by recursion (@thm-structural-recursion, applied to the pair (Ver(phi), Fal(phi)) of truth
+      values as one function; give bot, -> and <-> any values ...)''. Otherwise everything checks: the
+      (a) clauses match the game at 04:169, the (b) induction steps match (V2)-(V4), and the marking scheme
+      sums to 10.'
 - key: def-tautology
   kind: def
   file: 05-entailment-and-equivalence.md
@@ -3808,6 +4176,17 @@ items:
     evidence: 05-entailment-and-equivalence.md:45 The pointer says Section 4.9 uses the tautology/unsatisfiable
       equivalence to turn a question about tautologies into one about satisfiability. Section 4.9 uses
       it in the opposite direction.
+  - stage: S7r
+    verdict: correct
+    by: rereferee
+    hash: 249c97d1d7b9
+    date: '2026-10-19'
+    model: claude-opus-5-5
+    evidence: '05:41-45: (V2) justifies the display. The pointer now reads ''Sections 4.6 and 4.9 use
+      it to pass between the two kinds of question'', which carries no direction, so the S5b finding about
+      the direction is resolved. 09:258 uses it to go from unsatisfiable to tautology. 06:3 opens from
+      4.5''s reduction of every question to unsatisfiability (the table at 05:480-488, which includes
+      this case; 05:95 also '
 - key: def-valid-argument
   kind: def
   file: 05-entailment-and-equivalence.md
@@ -4177,6 +4556,17 @@ items:
     evidence: 05-entailment-and-equivalence.md:300 The claim that grouping the terms of a long conjunction
       (or disjunction) differently gives an equivalent formula is said to 'follow at once' from the displayed
       evaluation rule, but that rule (and its fold proof) covers only the right-grouped form.
+  - stage: S7r
+    verdict: correct
+    by: rereferee
+    hash: 32257867292e
+    date: '2026-10-19'
+    model: claude-opus-5-5
+    evidence: The new fold paragraph (05:299) defines a grouping recursively as θ1∧θ2 with a split point
+      k, 1≤k<n. For n=1 the grouping is φ1, and the parts have fewer terms. @thm-strong-induction (fd1
+      02:157) states the course-of-values form on ℕ, and the base case is covered by the vacuous hypothesis.
+      With (V3)/(V4), this proves that a grouping is true exactly when every term is (some term, for ∨).
+      05:302 now
 - key: proof:prp-standard-equivalences
   kind: proof
   file: 05-entailment-and-equivalence.md
@@ -4688,6 +5078,16 @@ items:
     model: claude-opus-5-5
     evidence: '05:592-642 script: (a),(b),(d) hold; (c) refuted at p=F, q=T. check_fitch: 0 errors on
       the derivations.'
+  - stage: S7r
+    verdict: correct
+    by: rereferee
+    hash: b9757b2304d2
+    date: '2026-10-19'
+    model: claude-opus-5-5
+    evidence: 'I solved all four parts first. (a) holds, by MT. (b) holds: the →I box over lines 3-5 is
+      correct, with DS on 4,2. (c) fails at p=F, q=T. (d) holds, by ∨E with the boxes 4-5 and 6-7. All
+      four match the solution. (c) now names the Quick check ''p → q, ¬p ⊨ ¬q'', which is the one at 05:177-181,
+      where it is called ''denying the hypothesis''. The STYLE §9 finding is resolved.'
 - key: exr-entailment-and-equivalence-b2
   kind: exr
   file: 05-entailment-and-equivalence.md
@@ -4747,6 +5147,17 @@ items:
     evidence: '05-entailment-and-equivalence.md:662 The solution draws a conclusion (''both are derivable'')
       from completeness, which is proved only in Section 4.8. STYLE §12.1: a result the reader has not
       met is never a reason. The ledger''s ''used as a pointer only'' does not match the wording.'
+  - stage: S7r
+    verdict: correct
+    by: rereferee
+    hash: 08441a4f9b9f
+    date: '2026-10-19'
+    model: claude-opus-5-5
+    evidence: 'I checked the table: p↔q gives TFFT and the disjunction gives TFFT. Completeness (Section
+      4.8) is now only something to look forward to: ''Once it is proved, it will give ...; until then
+      the table shows only that the two sequents are valid''. No conclusion rests on a result the reader
+      has not met, so the S6 finding (STYLE §12.1) is resolved, and the wording matches the ledger''s
+      ''used as a pointer on'
 - key: exr-entailment-and-equivalence-b3
   kind: exr
   file: 05-entailment-and-equivalence.md
@@ -4832,6 +5243,17 @@ items:
     model: claude-opus-5-5
     evidence: 05-entailment-and-equivalence.md:701 The marking scheme specified by the frozen blueprint
       is missing.
+  - stage: S7r
+    verdict: correct
+    by: rereferee
+    hash: 4bf102e68417
+    date: '2026-10-19'
+    model: claude-opus-5-5
+    evidence: 'I solved all six first. (a) contradictory. (b) contrary, both false at q=F. (c) subcontrary,
+      both true at FT. (d) subcontrary: false only at TF and at FT respectively. (e) contrary, both false
+      at FT. (f) none of the three, with TT/T and FF. All match. The marking scheme added at 05:716-720
+      (6 points, 1 per part: the class with both witnesses or the reason a case is impossible) matches
+      the frozen b'
 - key: exr-entailment-and-equivalence-c1
   kind: exr
   file: 05-entailment-and-equivalence.md
@@ -4905,6 +5327,17 @@ items:
     model: claude-opus-5-5
     evidence: 05-entailment-and-equivalence.md:720 Section 4.6 C1 reuses this exercise's object (the connective
       | and its clause (V7)) by label, but the title lacks ', used later' (STYLE §12.13.6).
+  - stage: S7r
+    verdict: correct
+    by: rereferee
+    hash: 264898e8ffaa
+    date: '2026-10-19'
+    model: claude-opus-5-5
+    evidence: The title now ends ', used later' (05:728), and the item is reused by 06:496 (Section 4.6
+      C1, by label). NOTATION.md:172 records \mathbin{|} (NAND), introduced in F1.3 §05 C1 with (V7).
+      Both findings are resolved. The solution has the right count, eight cases (atom, ⊥, ¬, five binary
+      connectives), and each case is correct from (V1), (V2), the old clauses and (V7). The marking scheme
+      adds up to 10.
 - key: exr-entailment-and-equivalence-c2
   kind: exr
   file: 05-entailment-and-equivalence.md
@@ -4980,6 +5413,17 @@ items:
     evidence: 05-entailment-and-equivalence.md:777 The scheme fails the alternative proof that the solution
       itself offers. Applying lem-substitution (b) to φ⊨ψ and to ψ⊨φ is complete and correct, but it never
       computes σ(φ↔ψ), so it cannot earn those 2 points.
+  - stage: S7r
+    verdict: correct
+    by: rereferee
+    hash: ffd022ff9817
+    date: '2026-10-19'
+    model: claude-opus-5-5
+    evidence: 'The main proof is correct: the display after @def-semantic-equivalence, then @lem-substitution
+      (a), then σ(φ↔ψ)=σ(φ)↔σ(ψ). The alternative is also correct, since @def-semantic-equivalence is
+      literally the two entailments, and lem-substitution (b) applies to each. In the marking scheme,
+      the 2-point line now credits each route (''in the entailment route, applies (b) in both directions''),
+      so the S6 fi'
 - key: exr-entailment-and-equivalence-c3
   kind: exr
   file: 05-entailment-and-equivalence.md
@@ -5063,6 +5507,16 @@ items:
     model: claude-opus-5-5
     evidence: '06:11-17: the counts (one way true and two false for ∧, one way false and two true for
       →) match (V3) and (V5) at 04:83-85'
+  - stage: S7r
+    verdict: correct
+    by: rereferee
+    hash: 6b456e8b9360
+    date: '2026-10-19'
+    model: claude-opus-5-5
+    evidence: '06:12 now says how to count (''counting each way as a condition on one or both parts''),
+      and the solution at 06:16 counts that way: one way true and two ways false for the conjunction,
+      one way false and two ways true for the implication. Both answers agree with (V3) and (V5). The
+      S5a finding is resolved.'
 - key: def-search-tree
   kind: def
   file: 06-refuting-row-search.md
@@ -5087,6 +5541,15 @@ items:
     evidence: 06-refuting-row-search.md:47 The definition makes χ used only 'on each new branch' at the
       stage that applies its rule. It never says that the branches which later extend those branches inherit
       the status. Proof (a) asserts that inheritance without a reason.
+  - stage: S7r
+    verdict: correct
+    by: rereferee
+    hash: 249c2b7f7b5b
+    date: '2026-10-19'
+    model: claude-opus-5-5
+    evidence: 06:47 now defines 'used on a branch' as 'the branch passes through a node added by its rule,
+      so it stays used on every branch extending that one'. This gives the inheritance that proof (a)
+      at 06:168 relies on. 06:49 also defines a finished tree. The S5b finding is resolved.
 - key: exm-refuting-row-search-closed
   kind: exm
   file: 06-refuting-row-search.md
@@ -5111,6 +5574,17 @@ items:
     evidence: 06-refuting-row-search.md:296 The fold 'A tree is a table with rows merged' says that a
       split divides the rows of its branch into two groups, and that in the first tree 'the branch through
       r strikes out the rest' of the four candidates. Both are false.
+  - stage: S7r
+    verdict: minor
+    by: rereferee
+    hash: b47ca4d104eb
+    date: '2026-10-19'
+    model: claude-opus-5-5
+    evidence: 'nd make every formula on it true. (2) The fold no longer follows the frozen blueprint,
+      whose ch04-deepen.md:506 says ''a split divides the rows of its branch into two (possibly overlapping)
+      groups''. The correction is right, but it is not listed under Blueprint deviations in STATUS.md
+      (the fd1 Ch 4 deepening entry lists only (a) and (b)). DRAFTING.md:18 requires it to be reported.
+      Fix: add it there.'
 - key: exm-refuting-row-search-open
   kind: exm
   file: 06-refuting-row-search.md
@@ -5175,6 +5649,14 @@ items:
     model: claude-opus-5-5
     evidence: 06-refuting-row-search.md:160 'Finished tree' is used but never defined. Only 'finished
       branch' is.
+  - stage: S7r
+    verdict: correct
+    by: rereferee
+    hash: c8b1def131cb
+    date: '2026-10-19'
+    model: claude-opus-5-5
+    evidence: 06:152 now reads 'continued until it is finished', and 'finished tree' is defined at 06:49.
+      The last sentence at 06:157 and the line at 06:160 use only defined terms. The S5b finding is resolved.
 - key: proof:prp-search-decides
   kind: proof
   file: 06-refuting-row-search.md
@@ -5200,6 +5682,17 @@ items:
     model: claude-opus-5-5
     evidence: 06-refuting-row-search.md:182 Proof (b) uses induction on the stages with no @ref, and the
       dependency ledger has no line for it.
+  - stage: S7r
+    verdict: correct
+    by: rereferee
+    hash: 478bfd785a06
+    date: '2026-10-19'
+    model: claude-opus-5-5
+    evidence: '(b) at 06:182 now cites @ax-induction (02-induction.md:21) on the number of stages, and
+      the dependency ledger has a line for it. (c) at 06:190 now gives the count: one symbol more at a
+      negation, plus 3 at a binary formula. That is the length clause in 03-structural-induction.md:353,
+      and the ''Section 4.3'' pointer is local to fd1. I checked each inequality: phi, psi, not-phi and
+      not-psi are all shor'
 - key: check:06-refuting-row-search:3
   kind: check
   file: 06-refuting-row-search.md
@@ -5294,6 +5787,16 @@ items:
     date: '2026-10-19'
     model: claude-opus-5-5
     evidence: 06:338-348; (a) only ¬(p∧q) and p↔q split; (b) row p=F,q=F,r=T; (c)-(e) agree with prp-search-decides
+  - stage: S7r
+    verdict: correct
+    by: rereferee
+    hash: a57ac3e45952
+    date: '2026-10-19'
+    model: claude-opus-5-5
+    evidence: '(e) at 06:334 now quotes the warning correctly (''refutes the guess, not the claim'', 06:199),
+      and the solution at 06:347 answers it. I solved (a) to (d) myself and my answers match: not(p ^
+      q) and p <-> q split; the row is p=F, q=F, r=T; (c) and (d) are both false. ''Finished tree'' is
+      now defined. The S5a finding is resolved.'
 - key: exr-refuting-row-search-a2
   kind: exr
   file: 06-refuting-row-search.md
@@ -5355,6 +5858,17 @@ items:
     evidence: 06-refuting-row-search.md:413 The problem asks for each search tree 'drawn in full'. The
       solution gives only a list of stages with no tree, and in (b) it says 'take ¬p', 'take ¬r', leaving
       the other sides unfollowed.
+  - stage: S7r
+    verdict: minor
+    by: rereferee
+    hash: c5e660e8c107
+    date: '2026-10-19'
+    model: claude-opus-5-5
+    evidence: 'the text. But the frozen blueprint, ch04-deepen.md:530, says ''Decide each claim by a search
+      tree, drawn in full''. This change of wording is not listed under Blueprint deviations in STATUS.md,
+      whose fd1 Ch 4 deepening entry lists only (a) STYLE deviations and (b) the 4.10 wording. Fix: add
+      the B1 rewording, with its reason (tactic 5 at 06:210, stop at the first finished open branch),
+      to that entry.'
 - key: exr-refuting-row-search-b2
   kind: exr
   file: 06-refuting-row-search.md
@@ -5385,6 +5899,16 @@ items:
     model: claude-opus-5-5
     evidence: '06:442-446; script: the five formulas are unsat; dropping (4) leaves only s,f,t,¬o and
       dropping (1) only s,¬f,t,¬o; n=12 and n=6 satisfy them'
+  - stage: S7r
+    verdict: correct
+    by: rereferee
+    hash: 397ed765d77e
+    date: '2026-10-19'
+    model: claude-opus-5-5
+    evidence: 'I solved it myself. Part (a) gives a closed tree, so the list is unsatisfiable. In (b),
+      n=12 satisfies (1), (2), (3) and (5) once (4) is dropped; n=6 satisfies (2) to (5) once (1) is dropped,
+      (4) being vacuous since 4 does not divide 6. The marking scheme at 06:447-451 (6 points: 1+3+2)
+      matches the blueprint at ch04-deepen.md:531 word for word. The S5b finding is resolved.'
 - key: exr-refuting-row-search-b3
   kind: exr
   file: 06-refuting-row-search.md
@@ -5414,6 +5938,15 @@ items:
     model: claude-opus-5-5
     evidence: '06:465-477; the split of p∨(q∧r): side p closes, side q∧r gives q,r and closes against
       ¬q; entailment valid (script)'
+  - stage: S7r
+    verdict: correct
+    by: rereferee
+    hash: df1665146c62
+    date: '2026-10-19'
+    model: claude-opus-5-5
+    evidence: 'The solution at 06:472 is correct: split the disjunction; p closes against not-p; q ^ r
+      adds q and r, and q closes against not-q. The tree matches. The marking scheme at 06:484-488 (4
+      points: 1+2+1) matches the blueprint at ch04-deepen.md:532.'
 - key: exr-refuting-row-search-c1
   kind: exr
   file: 06-refuting-row-search.md
@@ -5806,6 +6339,17 @@ items:
     evidence: 07-soundness.md:270 Step 4 says 'By Step 3, Gamma_n |= psi'. Step 3 only proves the three
       claims for a fixed k. The result for every line comes from the induction set up in Step 2, concluded
       at line 268.
+  - stage: S7r
+    verdict: correct
+    by: rereferee
+    hash: 6f94f92ac316
+    date: '2026-10-19'
+    model: claude-opus-5-5
+    evidence: '07-soundness.md:199-271. Step 4 (l.270) now says ''By the induction of Steps 2 and 3, Γ_n
+      ⊨ ψ'', which resolves the S5b finding. Checked from scratch: Step 1 rests on the ''Derivations of
+      formulas'' subsection (l.47-53: derived rules expand into primitive ones). Step 2''s S(k) with the
+      k=0 / k>n vacuous cases matches @thm-strong-induction. ''Cited lines and boxes lie before line k''
+      follows from the scop'
 - key: exm-soundness-run
   kind: exm
   file: 07-soundness.md
@@ -6241,6 +6785,16 @@ items:
     model: claude-opus-5-5
     evidence: 07-soundness.md:592 In the proof-ordering item, only the labels of lines (i) and (v) are
       italicized. A reader can take this as a cue about the order.
+  - stage: S7r
+    verdict: correct
+    by: rereferee
+    hash: 44e9b0df131a
+    date: '2026-10-19'
+    model: claude-opus-5-5
+    evidence: '07-soundness.md:588-630. The italics on (i) and (v) are gone, so all nine labels are plain
+      and both S5a/S6 findings are resolved. I solved it myself first: (iii) fixes v; (v) needs (iii);
+      (viii) and (iv) need (iii), (vii) and (i); (ii) needs (v), (viii) and (iv). The given order (iii),(v),(vii),(i),(viii),(iv),(ii)
+      and the alternative (vii),(i),(iii),(v),(iv),(viii),(ii) both satisfy the stated co'
 - key: exr-soundness-b3
   kind: exr
   file: 07-soundness.md
@@ -6442,6 +6996,17 @@ items:
     date: '2026-10-19'
     model: claude-opus-5-5
     evidence: 07:854-874; the three cases are complete, the scheme totals 10, and it allows length induction
+  - stage: S7r
+    verdict: correct
+    by: rereferee
+    hash: e78546d16e4a
+    date: '2026-10-19'
+    model: claude-opus-5-5
+    evidence: '07-soundness.md:855-883. The context is now defined inline as ''(the premises and the assumptions
+      of the boxes containing line k)'', which matches the section''s definition (l.57). The wrong citation
+      of def-derivation is removed, so the S5b finding is resolved. The →I, ¬I and ∨E cases are checked
+      line by line against @lem-context-inclusion (a)/(b) and (V1), (V2), (V4), (V5), and agree with the
+      proof '
 - key: exr-soundness-c3
   kind: exr
   file: 07-soundness.md
@@ -6471,6 +7036,17 @@ items:
     date: '2026-10-19'
     model: claude-opus-5-5
     evidence: 07:888-902; with exclusive-or only ∨I fails (∨E needs only 'some side true'); row p=q=T
+  - stage: S7r
+    verdict: correct
+    by: rereferee
+    hash: 9ac4f7112237
+    date: '2026-10-19'
+    model: claude-opus-5-5
+    evidence: '07-soundness.md:885-904. The marking scheme now has 3 steps worth 4+4+2=10, so it meets
+      STYLE §11.6 and the S5b finding is resolved. Solved first: only (V4) changes. ∨I fails at p=q=T,
+      where p is true and p∨q false under the new table. ∨E still needs only that ''a true disjunction
+      has a true side'', which still holds. No other case uses (V4). In (c), p ⊢ p∨q is derivable but
+      not valid for the new ta'
 - key: exr-soundness-c4
   kind: exr
   file: 07-soundness.md
@@ -6503,6 +7079,17 @@ items:
     model: claude-opus-5-5
     evidence: 07:916-951; ¬E and ¬I cases correct under letter valuations; w(⊥)=T, w(p)=F refutes ⊥⊢p;
       the RAA derivation and its failing case are correct
+  - stage: S7r
+    verdict: correct
+    by: rereferee
+    hash: 3ad32b035b9f
+    date: '2026-10-19'
+    model: claude-opus-5-5
+    evidence: '07-soundness.md:906-951. Part (b) now cites ''@prp-double-negation (b)'', and ch02/05:139
+      confirms that only (b) uses RAA, so the first finding is resolved. NOTATION.md:169 now records `w`
+      (letter valuation) and `\models_\ell` as local to F1.3 §07 C4. That row is explicit, and the general
+      `v, w` row (l.151) does not conflict with it, so the second finding is resolved. Checked from scratch:
+      in ¬E, w('
 - key: exr-soundness-c5
   kind: exr
   file: 07-soundness.md
@@ -6536,6 +7123,17 @@ items:
     model: claude-opus-5-5
     evidence: 07:965-981; computed u(p→p)=1/2 at 1/2 (K3), MP fails at (1/2,0) for D={1/2,1}; LEM values
       right
+  - stage: S7r
+    verdict: minor
+    by: rereferee
+    hash: bedb2371c724
+    date: '2026-10-19'
+    model: claude-opus-5-5
+    evidence: ' (the Kleene ¬ here, the Gödel-style ¬ in the optional excursion). STYLE.md:319 says no
+      symbol is ''reused with a new meaning''. NOTATION.md:168 still records u only for the optional thm-raa-independent
+      and does not mention C5''s Kleene valuation. Fix: rename C5''s valuation (e.g. k or u_K throughout
+      C5 and its solution), or add C5''s Kleene valuation to the NOTATION.md:168 row as a separate local
+      use.'
 - key: thm-raa-independent
   kind: thm
   file: 07-soundness.md
@@ -6892,6 +7490,17 @@ items:
     model: claude-opus-5-5
     evidence: 08-completeness.md:258 The Idea says lem-connective-rows has a sequent 'from exactly those
       signed parts' α^v, β^v, but most sequents use only one of the two.
+  - stage: S7r
+    verdict: correct
+    by: rereferee
+    hash: d5e34e0e1ceb
+    date: '2026-10-19'
+    model: claude-opus-5-5
+    evidence: '08:246-292. The Idea at 08:258 now says the sequent goes ''from (some of) those signed
+      parts'', so the S5b finding is resolved. I checked the proof case by case against lem-connective-rows
+      (08:52-56). The atom case, ⊥ via (⊥1) plus weakening, and ¬ via (¬1) or the hypothesis itself are
+      right. ∧ covers TT, F-anything and TF; → covers F-anything, TT and TF; ∨ and ↔ at 08:289 match the
+      tag table at 08:'
 - key: proof:lem-truth-table-line
   kind: proof
   file: 08-completeness.md
@@ -7185,6 +7794,16 @@ items:
     model: claude-opus-5-5
     evidence: '08-completeness.md:1382 A ledger line gives the wrong atlas id: exr-finding-derivations-c2
       is in F1.7 (fd1 Chapter 3, Finding Derivations), not F1.2.'
+  - stage: S7r
+    verdict: correct
+    by: rereferee
+    hash: c4750e4469ff
+    date: '2026-10-19'
+    model: claude-opus-5-5
+    evidence: 'The ledger line at 08:1395 now reads ''F1.7 §01''; exr-finding-derivations-c2 is at fd1/src/ch03-finding-derivations/01-finding-derivations.md:1379,
+      so the earlier finding is resolved. That solution has 13 lines and splits once on Q, as 08:477 says.
+      I checked the 20-line derivation line by line: (→2) on 4, (→1) on 7 with α=q, line 14 and line 17
+      cite line 11, which is still available, and the ∨E ran'
 - key: check:08-completeness:4
   kind: check
   file: 08-completeness.md
@@ -7277,6 +7896,17 @@ items:
     evidence: 08-completeness.md:565 The fold calls the equivalence of ⊢ and ⊨ for infinite Γ 'the compactness
       theorem'. Section 4.10, which the next sentence cites, proves that equivalence as completeness for
       infinitely many premises and gives compactness a different statement.
+  - stage: S7r
+    verdict: correct
+    by: rereferee
+    hash: d098d7704e91
+    date: '2026-10-19'
+    model: claude-opus-5-5
+    evidence: 'The fold at 08:565 now calls the infinite-Γ equivalence ''completeness for infinitely many
+      premises'' and says that, with the finiteness of derivations, it gives compactness. That matches
+      10-compactness.md: thm-completeness-infinite at :170, and thm-compactness at :194, whose proof uses
+      it plus finite derivations. Both S5a and S5b findings are resolved, and the ledger line at 08:1398
+      now cites both '
 - key: proof:cor-derivable-iff-valid
   kind: proof
   file: 08-completeness.md
@@ -7358,6 +7988,17 @@ items:
     model: claude-opus-5-5
     evidence: '08:630-676: premise true only at p=T,q=F; the 12-line fold derivation checked by hand;
       the sidecar passes'
+  - stage: S7r
+    verdict: correct
+    by: rereferee
+    hash: d35728d9b7ad
+    date: '2026-10-19'
+    model: claude-opus-5-5
+    evidence: '08:646 now says ''the derivation takes twelve lines''. The fold at 08:655-672 has exactly
+      12 lines including the premise, so the S5a finding is resolved. I checked the derivation: VI on
+      line 2, ¬E 3,1, RAA 2-4, R 6 inside the inner box (available), →I 7-8, ¬E 9,1, ¬I 6-10, ∧I 5,11.
+      The row check is right. The title ''[One line for twelve]'' is the frozen blueprint''s and reads
+      as one TAUT line standing'
 - key: check:08-completeness:5
   kind: check
   file: 08-completeness.md
@@ -7688,6 +8329,16 @@ items:
     date: '2026-10-19'
     model: claude-opus-5-5
     evidence: 08:989-1017; both derivations valid; ¬(p∧¬q) ≡ p→q (script)
+  - stage: S7r
+    verdict: correct
+    by: rereferee
+    hash: dbc5ac640667
+    date: '2026-10-19'
+    model: claude-opus-5-5
+    evidence: '08:1018-1023 now has a marking scheme summing to 10 (3+2+3+2), so the S5b finding is resolved.
+      It rescales the blueprint''s 6-point scheme with the same split, as STYLE §11.6 requires. I solved
+      it myself and both derivations check: →E 1,3; ∧E 4; ¬E 5,2; ¬I 3-6. The answer to (b) is right,
+      and in (c) ¬(p∧¬q) and p→q are both false exactly at p=T, q=F.'
 - key: exr-completeness-b5
   kind: exr
   file: 08-completeness.md
@@ -7718,6 +8369,16 @@ items:
     date: '2026-10-19'
     model: claude-opus-5-5
     evidence: 08:1031-1051; (a),(b) unsat, (c) all-F row satisfies (script)
+  - stage: S7r
+    verdict: correct
+    by: rereferee
+    hash: 9ac6480f42c4
+    date: '2026-10-19'
+    model: claude-opus-5-5
+    evidence: '08:1059-1063 now has a marking scheme summing to 10 (3+4+3), with a verdict and a justification
+      point in each part, matching the blueprint''s intent. The S5b finding is resolved. I re-solved all
+      three parts. (a) →E, →E, ¬E is correct. (b) The search closes: under p,q the formula ¬p∨¬q closes
+      both ways, and under ¬p,¬q the formula p∨q does; the conclusion cites prp-search-decides and thm-completenes'
 - key: exr-completeness-c1
   kind: exr
   file: 08-completeness.md
@@ -7861,6 +8522,17 @@ items:
     model: claude-opus-5-5
     evidence: 08-completeness.md:1125 The scheme for (a) gives 3+1 points only for pasting D and E into
       the two boxes of a ∨E on p∨¬p and citing LEM. That fails a correct alternative proof without LEM.
+  - stage: S7r
+    verdict: correct
+    by: rereferee
+    hash: f3a34c7f0b76
+    date: '2026-10-19'
+    model: claude-opus-5-5
+    evidence: '08:1138-1139: the scheme now credits any construction of one derivation with premises in
+      Δ, the ∨E paste or an RAA box on ¬ψ, and gives the 1 point for naming whichever classical step is
+      used, LEM or RAA. That resolves the S6 finding. The RAA alternative works: inside the box, a ¬I
+      box on p using D gives ¬p, then E gives ψ, which clashes with ¬ψ. Points sum to 10. I checked solution
+      (a) against th'
 - key: exr-normal-forms-c3
   kind: exr
   file: 08-completeness.md
@@ -7957,6 +8629,17 @@ items:
     model: claude-opus-5-5
     evidence: 08-completeness.md:1222 Part (a) asks 'which step of the proof of thm-completeness also
       uses ∨I'. The solution names the lemma but never the step.
+  - stage: S7r
+    verdict: correct
+    by: rereferee
+    hash: 88dab3349ba3
+    date: '2026-10-19'
+    model: claude-opus-5-5
+    evidence: '08:1235: (a) now names the step (''that is Step 3 of the proof, where @lem-atom-splitting
+      removes the signed atoms''), matching the proof at 08:505-525. The S6 finding is resolved. prp-excluded-middle
+      (02/05:284) is derived with ∨I at lines 6 and 7 of its derivation, so ''twice'' is right. (b) and
+      (c) are unchanged and correct: with ∨ read as ∧, ∨E is sound, p∨¬p is never true, and p=T, q=F refutes
+      p⊢'
 - key: exr-completeness-c5
   kind: exr
   file: 08-completeness.md
@@ -7990,6 +8673,17 @@ items:
     model: claude-opus-5-5
     evidence: 08:1261-1285; every one-way and two-way case checked (cut, RAA, atom-splitting for a formula);
       RAA/LEM located correctly for this construction
+  - stage: S7r
+    verdict: minor
+    by: rereferee
+    hash: cd25de7d068b
+    date: '2026-10-19'
+    model: claude-opus-5-5
+    evidence: 'and this chapter''s other exercise-local symbols do have rows, e.g. nodes(φ) at NOTATION:148
+      and occ/bin at :173. Fix: add a row such as ''| `\Pi_X` | the list of formulas on the path from
+      the root of a search tree down to node X, X included (local to F1.3 §08 exercise C5) |''. The case
+      analysis is unchanged and correct; I checked the one-way and two-way sequents and the RAA and LEM
+      locations in (c).'
 - key: exr-normal-forms-r1
   kind: exr
   file: 08-completeness.md
@@ -8602,6 +9296,16 @@ items:
     model: claude-opus-5-5
     evidence: 09-normal-forms.md:151 The proof says '@eq-many-term-values, used three times', but the
       displayed chain uses it four times.
+  - stage: S7r
+    verdict: correct
+    by: rereferee
+    hash: 4f8c19909c01
+    date: '2026-10-19'
+    model: claude-opus-5-5
+    evidence: '09-normal-forms.md:148-161. Each of the four equivalences in the chain is one use of @eq-many-term-values
+      (line 15): the long conjunction K, the disjunction K_i combined with the opposite-literal fact from
+      def-literal (line 30), the conjunction C_i, and the long disjunction. So ''used at each step'' is
+      accurate and the S5b finding (three vs four uses) is resolved. The atom clause follows from thm-dn'
 - key: exm-normal-forms-two-routes
   kind: exm
   file: 09-normal-forms.md
@@ -8989,6 +9693,15 @@ items:
     date: '2026-10-19'
     model: claude-opus-5-5
     evidence: '09:398-404; in ¬(p→q)∨r: p is +, q is −, r is +'
+  - stage: S7r
+    verdict: correct
+    by: rereferee
+    hash: 95b63c3c4af2
+    date: '2026-10-19'
+    model: claude-opus-5-5
+    evidence: Line 166, the new CNF-clause check (the index moved because of the new checks). Row p=F,q=T,r=F
+      has signed atoms ¬p,q,¬r. Their opposites give p∨¬q∨r, which is false only in that row. Solved independently
+      and the answer matches.
 - key: def-adequate
   kind: def
   file: 09-normal-forms.md
@@ -9051,6 +9764,16 @@ items:
     date: '2026-10-19'
     model: claude-opus-5-5
     evidence: 09:442-448; t_3(p∧q) evaluated at T,F gives F
+  - stage: S7r
+    verdict: correct
+    by: rereferee
+    hash: 2d0c558a2b21
+    date: '2026-10-19'
+    model: claude-opus-5-5
+    evidence: Line 342, new. (p∨q)∧(p∨¬q) ≡ p∨(q∧¬q) by prp-standard-equivalences (g) second form read
+      right to left (05-entailment-and-equivalence.md:218). Then ≡ p∨⊥ by prp-more-equivalences (c) first
+      form inside, via lem-replacement. Then ≡ p by (a) second form. Every citation checked and the result
+      p is correct.
 - key: thm-adequate-connectives
   kind: thm
   file: 09-normal-forms.md
@@ -9432,6 +10155,17 @@ items:
     evidence: 09-normal-forms.md:634 The side claim 'a conjunctive clause omitting an atom would be T
       in two rows' is false for a clause that contains an atom and its negation. Such a clause is T in
       no row. The minimality argument also never states the count it rests on.
+  - stage: S7r
+    verdict: correct
+    by: rereferee
+    hash: 516adfd2dd75
+    date: '2026-10-19'
+    model: claude-opus-5-5
+    evidence: Lines 645-650. The DNF and the checks (i)-(iv) via eq-row-conjunct are correct. The revised
+      minimality argument now handles unsatisfiable clauses (an atom and its negation, T nowhere). A satisfiable
+      clause that omits an atom is T in two rows that differ there, and one of them has even parity, so
+      the DNF would be T on an even row. So every useful clause is a full minterm, T in one row, and four
+      T-r
 - key: exr-normal-forms-c1
   kind: exr
   file: 09-normal-forms.md
@@ -9512,6 +10246,17 @@ items:
     model: claude-opus-5-5
     evidence: 09-normal-forms.md:659 The scheme's first 3 points for (a) require the identity (α|β)|(α|β)
       ≡ α∧β. A correct proof through {¬,∨} uses α∨β ≡ (α|α)|(β|β) instead and would lose those points.
+  - stage: S7r
+    verdict: correct
+    by: rereferee
+    hash: 862da60e834f
+    date: '2026-10-19'
+    model: claude-opus-5-5
+    evidence: 'Lines 667-680. Both equivalences hold: (α|β)|(α|β) ≡ ¬(α|β) ≡ α∧β, and likewise for ↓.
+      The recursion and induction match the Claim of thm-adequate-connectives, and the extension to new
+      connectives is noted. The revised scheme awards the 3 points for any two equivalences expressing
+      an adequate set from thm-adequate-connectives (a), with the NAND/∧ pair given only as an example.
+      A route through {¬,∨'
 - key: exr-normal-forms-c2
   kind: exr
   file: 09-normal-forms.md
@@ -9584,6 +10329,17 @@ items:
     model: claude-opus-5-5
     evidence: 09-normal-forms.md:700 The scheme for (b) asks for a truth function 'that is F on a row
       and on its flipped row'. A function that is T on both rows witnesses non-adequacy just as well.
+  - stage: S7r
+    verdict: correct
+    by: rereferee
+    hash: 23ea3bfa9772
+    date: '2026-10-19'
+    model: claude-opus-5-5
+    evidence: 'Lines 697-718. (a) extends the v_T induction from thm-adequate-connectives (b) with the
+      ↔ case and names the vacuous cases. (b) The flipped-valuation induction is correct: the M case holds
+      because at least two T after the flip means at most one T before. p1∧p2 is F at (T,F) and at (F,T),
+      which gives the contradiction. The revised scheme line ''takes the same value on some row and on
+      its flipped row'
 - key: exr-normal-forms-c4
   kind: exr
   file: 09-normal-forms.md
@@ -9644,6 +10400,17 @@ items:
     evidence: 09-normal-forms.md:747 The problem allows 'either route', and the solution says any correct
       DNF and CNF earns full marks. Yet 2 of the 10 points are for eliminating → with its reason, which
       the table route never does.
+  - stage: S7r
+    verdict: correct
+    by: rereferee
+    hash: 9ec0b0de4e35
+    date: '2026-10-19'
+    model: claude-opus-5-5
+    evidence: 'Lines 727-768. Rewriting gives the DNF (p∧¬q)∨(q∧r), and distribution gives the CNF (p∨q)∧(p∨r)∧(¬q∨r),
+      which is equivalent to (p∨q)∧(¬q∨r). The table was rechecked row by row: the T-rows are TTT, TFT,
+      TFF, FTT, and the DNF and CNF checks on those rows are right. The table-route clause ¬p∨¬q∨r for
+      row TTF is right. The scheme''s first 2 points now also go to ''the T-rows and F-rows read off a
+      correc'
 - key: exr-normal-forms-c5
   kind: exr
   file: 09-normal-forms.md
@@ -9674,6 +10441,17 @@ items:
     model: claude-opus-5-5
     evidence: 09:767-781; the tautology and both equivalences checked by script; the step from valuation
       to membership is argued
+  - stage: S7r
+    verdict: correct
+    by: rereferee
+    hash: 14d66cf9b1f7
+    date: '2026-10-19'
+    model: claude-opus-5-5
+    evidence: Lines 771-797. The collection C was renamed E, with the statement e, so the clash with the
+      section's conjunctive clauses C_i and C_v is gone (S5b finding resolved). E for a subset is allowed
+      by NOTATION.md:121. (a) uses De Morgan, prp-standard-equivalences (b). (b) uses distributivity (g),
+      first form. In (c) the backward-from-F argument is correct, and so is the step from the formula
+      to collection
 - key: exr-normal-forms-c6
   kind: exr
   file: 09-normal-forms.md
@@ -9706,6 +10484,17 @@ items:
     evidence: '09-normal-forms.md:800 The parenthetical says the DNF from thm-dnf has #φ/2^j minterms
       when j of the p_i do not occur in φ. This is false for a formula with no atoms. There thm-dnf, Case
       2, gives p∨¬p: two one-literal clauses, which are not minterms over the atoms of φ.'
+  - stage: S7r
+    verdict: minor
+    by: rereferee
+    hash: 6061581859f9
+    date: '2026-10-19'
+    model: claude-opus-5-5
+    evidence: 'parenthetical''s cases overlap, and the first one is still false when #φ=0. A φ with at
+      least one atom and #φ=0 is covered by ''it gives #φ/2^j minterms'', which would be 0, but thm-dnf
+      Case 1 gives the one clause p_1∧¬p_1, as the third sentence then says. Fix: write ''when φ is satisfiable
+      and has at least one atom, and j of the p_i do not occur in φ, it gives #φ/2^j minterms on the remaining
+      atoms''.'
 - key: exr-normal-forms-c7
   kind: exr
   file: 09-normal-forms.md
@@ -9759,6 +10548,17 @@ items:
     model: claude-opus-5-5
     evidence: 10-compactness.md:422 The ledger promises 'sets' to F2.1 for §10, but no STATUS row records
       it.
+  - stage: S7r
+    verdict: correct
+    by: rereferee
+    hash: 6f6e759bece0
+    date: '2026-10-19'
+    model: claude-opus-5-5
+    evidence: '10-compactness.md:14-17. The definition is fine. ''Agree for a finite list'' is justified:
+      ⊢ and consistency by @lem-weakening-cut (a); ⊨ and satisfiable now ''say for a finite list exactly
+      what'' @def-valid-argument (05:61) and @def-satisfiable (05:31) said, which I checked against both.
+      That resolves the ''word for word'' finding. The F2.1 ''sets'' promise is gone: the ledger now uses
+      the everyday sense'
 - key: check:10-compactness:1
   kind: check
   file: 10-compactness.md
@@ -9824,6 +10624,16 @@ items:
     model: claude-opus-5-5
     evidence: 10:47-53. 6 connective and ⊥ symbols plus 2 parentheses give n+8. The bound (n+8)^k ≤ (n+8)^n
       holds. a_n first appears at stage n, so the list is infinite. Stage max{ℓ,m} ≥ 1. All checked.
+  - stage: S7r
+    verdict: correct
+    by: rereferee
+    hash: f57f9b792d3c
+    date: '2026-10-19'
+    model: claude-opus-5-5
+    evidence: '10:47-53. There are 8 non-atom symbols, so n+8 symbols at stage n, and the bound (n+8)^n
+      per length holds. 10:51 now says each stage n lists at least a_n, which is new because earlier stages
+      had only a_1..a_{n-1}. That is true and resolves the ''may list nothing new'' finding. Coverage:
+      stage max{l,m} >= 1 works, since atoms count as single symbols (len, 03:353).'
 - key: lem-lindenbaum
   kind: lem
   file: 10-compactness.md
@@ -9869,6 +10679,16 @@ items:
     evidence: 10-compactness.md:91 'The Δ_N with the largest of those indices N' uses, without a ledger
       line, that a non-empty finite set of naturals has a maximum, and it does not cover a derivation
       of ⊥ that cites no premises.
+  - stage: S7r
+    verdict: correct
+    by: rereferee
+    hash: 1b9877ab98ce
+    date: '2026-10-19'
+    model: claude-opus-5-5
+    evidence: 10:78-93. The recursive definition is well-formed. Consistency of every Δ_n is by @ax-induction
+      (02:21) with the key step (10:65). 10:91 now says 'N = 0 if the list is empty', so a derivation
+      with no premises gives Δ_0 = Γ ⊢ ⊥, which contradicts consistency. The empty-list finding is resolved.
+      The ledger has a new line for the maximum of a finite set (F2.2 prp-finite-max) and cites the 'recursion;
 - key: check:10-compactness:2
   kind: check
   file: 10-compactness.md
@@ -10080,6 +10900,16 @@ items:
     evidence: '10:206-223. (b): with p1..p50 true, p_n→p_{n+1} is true for n<50 and n>50, and p100 is
       false. The aftermath''s claim that a list entailing p100 must contain every implication p_k→p_{k+1}
       (k<100) and p1 was checked with the analogous valuations.'
+  - stage: S7r
+    verdict: correct
+    by: rereferee
+    hash: b17837e5d54a
+    date: '2026-10-19'
+    model: claude-opus-5-5
+    evidence: 10:19 now cites '@ax-induction on n, started at 1'. That matches 02's paragraph 'Starting
+      from another number' and the phrasing used at 03:300/306. The intro (10:5) now indexes the atoms
+      by n >= 1. The ⊢ p_3 derivation (two →E) and the ⊨ argument are right. The earlier finding is resolved,
+      and the same fix is made in B-level 10:218 (a).
 - key: exr-compactness-a1
   kind: exr
   file: 10-compactness.md
@@ -10136,6 +10966,17 @@ items:
     date: '2026-10-19'
     model: claude-opus-5-5
     evidence: 10:284-308; (f) Δ2={p,q,¬¬p}; (j) a1,a2,⊥; (l) alternating row
+  - stage: S7r
+    verdict: correct
+    by: rereferee
+    hash: 40344d1b05d6
+    date: '2026-10-19'
+    model: claude-opus-5-5
+    evidence: '10:263-308. I solved every part myself and agree with each answer: (c) the list p1→p2..p6→p7;
+      (d) the first three members are unsatisfiable; (f) Δ1={p,q}, Δ2={p,q,¬¬p}, using φ_0=q first; (g)
+      p∨q∈Δ iff q∈Δ; (j) p, q, ⊥ = 3; (k) No, by @thm-compactness''s second sentence (10:197); (l) the
+      alternating row works. The preamble now ends with ''and end with one more collection to judge'',
+      which matches (l)'
 - key: exr-compactness-b1
   kind: exr
   file: 10-compactness.md
@@ -10222,6 +11063,17 @@ items:
     model: claude-opus-5-5
     evidence: 10:362-383; the three kinds of formula and the finite-part valuation are right; the scheme
       fits
+  - stage: S7r
+    verdict: correct
+    by: rereferee
+    hash: 6be228ae8a3e
+    date: '2026-10-19'
+    model: claude-opus-5-5
+    evidence: '10:356-383. The statement now says the c_{n,i} are distinct atoms, e.g. p_{3n+i}. For n
+      >= 1 and i in {1,2,3} these indices (4,5,6,7,...) are distinct, so the alphabet finding is resolved.
+      The ledger drops the F2.3 ''finite sets'' promise for everyday finiteness, which is consistent with
+      10:5, so no unrecorded promise remains. The solution checks: a satisfying valuation gives exactly
+      one color per v'
 - key: exr-compactness-c2
   kind: exr
   file: 10-compactness.md
@@ -10255,6 +11107,16 @@ items:
       by @ax-induction from P_0 and (a), and the answer to (c) ('which earlier results does (b) use?')
       leaves induction out. Also, (a) shows that some value works but fixes no rule for choosing, which
       a definition by recursion needs.
+  - stage: S7r
+    verdict: correct
+    by: rereferee
+    hash: 602fe7e13b0c
+    date: '2026-10-19'
+    model: claude-opus-5-5
+    evidence: 10:385-420. (a) is correct with the joint list F1, F2, and it now fixes a tie-break ('choose
+      T if T works, and F otherwise'), so the recursion defines v. (b) now opens 'By (a) and @ax-induction,
+      P_n holds for every n' (P_0 is the hypothesis, plain induction from 0), then uses P_N and @lem-coincidence
+      (04:177). N = 0 works when γ has no atoms. (c) now lists @ax-induction, and the marking scheme for
 - key: proof:thm-completeness
   kind: proof
   file: 08-completeness.md
