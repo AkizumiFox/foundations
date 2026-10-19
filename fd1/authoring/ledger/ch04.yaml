@@ -288,7 +288,7 @@ items:
   kind: def
   file: 01-formulas-and-parse-trees.md
   line: 246
-  hash: 0bcf1d24030d
+  hash: e3accb71e037
   verdicts:
   - stage: S5a
     verdict: correct
@@ -342,7 +342,7 @@ items:
 - key: exm-parse-trees
   kind: exm
   file: 01-formulas-and-parse-trees.md
-  line: 266
+  line: 267
   hash: 9b143a713841
   verdicts:
   - stage: S5a
@@ -392,7 +392,7 @@ items:
 - key: def-subformula
   kind: def
   file: 01-formulas-and-parse-trees.md
-  line: 321
+  line: 322
   hash: 9a8d496bb0d6
   verdicts:
   - stage: S5a
@@ -448,7 +448,7 @@ items:
 - key: check:01-formulas-and-parse-trees:5
   kind: check
   file: 01-formulas-and-parse-trees.md
-  line: 341
+  line: 344
   hash: 7191e5d0d871
   verdicts:
   - stage: S5a
@@ -468,8 +468,8 @@ items:
 - key: exm-shorthand-translation
   kind: exm
   file: 01-formulas-and-parse-trees.md
-  line: 369
-  hash: eb38bdcc9bcd
+  line: 372
+  hash: 84e32b0746a1
   verdicts:
   - stage: S5a
     verdict: correct
@@ -522,8 +522,8 @@ items:
 - key: exr-formulas-and-parse-trees-a1
   kind: exr
   file: 01-formulas-and-parse-trees.md
-  line: 479
-  hash: d0e91108403c
+  line: 482
+  hash: a47656d84279
   verdicts:
   - stage: S5a
     verdict: correct
@@ -597,10 +597,32 @@ items:
       of a formula is a formula. The argument just given covers only ((p -> q)). Fix: drop the sentence,
       or limit it (''so here the doubled pair is not official''), or add ''as Section 4.3 shows for every
       formula''.'
+  - stage: S7r
+    verdict: correct
+    by: rereferee
+    hash: a47656d84279
+    date: '2026-10-19'
+    model: claude-opus-5-5
+    evidence: 'h an atom, so it fails the first-symbol test. (b) The five subformulas are correct per
+      def-subformula (01:322), with q at two leaves. (c) The 5-entry sequence is valid, and (p v q) is
+      built once. (d) and (e) are correct: (F1)-(F3) are satisfied by the set of all strings, and (F4)
+      yields the first-symbol test, which rules out ''-> p''. The Section 4.5 pointer in (v) was checked
+      in the previous round.'
+  - stage: S7r
+    verdict: correct
+    by: rereferee
+    hash: a47656d84279
+    date: '2026-10-19'
+    model: claude-opus-5-5
+    evidence: 'h an atom, so it fails the first-symbol test. (b) The five subformulas are correct per
+      def-subformula (01:322), with q at two leaves. (c) The 5-entry sequence is valid, and (p v q) is
+      built once. (d) and (e) are correct: (F1)-(F3) are satisfied by the set of all strings, and (F4)
+      yields the first-symbol test, which rules out ''-> p''. The Section 4.5 pointer in (v) was checked
+      in the previous round.'
 - key: exr-formulas-and-parse-trees-a2
   kind: exr
   file: 01-formulas-and-parse-trees.md
-  line: 511
+  line: 514
   hash: ee0dc7afba59
   verdicts:
   - stage: S5a
@@ -630,7 +652,7 @@ items:
 - key: exr-formulas-and-parse-trees-b1
   kind: exr
   file: 01-formulas-and-parse-trees.md
-  line: 560
+  line: 563
   hash: 54e36ce47b2f
   verdicts:
   - stage: S5a
@@ -696,7 +718,7 @@ items:
 - key: exr-formulas-and-parse-trees-b2
   kind: exr
   file: 01-formulas-and-parse-trees.md
-  line: 597
+  line: 600
   hash: db84c7666ecb
   verdicts:
   - stage: S5a
@@ -760,7 +782,7 @@ items:
 - key: exr-formulas-and-parse-trees-c1
   kind: exr
   file: 01-formulas-and-parse-trees.md
-  line: 618
+  line: 621
   hash: e649d6f7c68f
   verdicts:
   - stage: S5a
@@ -1263,7 +1285,7 @@ items:
   kind: exm
   file: 02-induction.md
   line: 217
-  hash: a114714c77e7
+  hash: 7874cfbdeec7
   verdicts:
   - stage: S5a
     verdict: minor
@@ -1319,7 +1341,7 @@ items:
   kind: exr
   file: 02-induction.md
   line: 263
-  hash: 544fe890e205
+  hash: 0db40138daf3
   verdicts:
   - stage: S5a
     verdict: correct
@@ -1408,7 +1430,7 @@ items:
   kind: exr
   file: 02-induction.md
   line: 286
-  hash: 61e5709ced26
+  hash: 0aeddad878b9
   verdicts:
   - stage: S5a
     verdict: correct
@@ -1513,7 +1535,7 @@ items:
   kind: exr
   file: 02-induction.md
   line: 355
-  hash: b0319d33c20f
+  hash: 4cc24b0f6794
   verdicts:
   - stage: S5a
     verdict: correct
@@ -1587,7 +1609,7 @@ items:
   kind: exr
   file: 02-induction.md
   line: 411
-  hash: 8480149db4c5
+  hash: 53271e1d0524
   verdicts:
   - stage: S5a
     verdict: correct
@@ -1628,8 +1650,8 @@ items:
 - key: exr-induction-c5
   kind: exr
   file: 02-induction.md
-  line: 449
-  hash: bef6dbf72d0f
+  line: 451
+  hash: 4d93a771b168
   verdicts:
   - stage: S5a
     verdict: minor
@@ -1728,7 +1750,7 @@ items:
 - key: proof:thm-structural-induction
   kind: proof
   file: 03-structural-induction.md
-  line: 67
+  line: 69
   hash: 2148db05b2bc
   verdicts:
   - stage: S5a
@@ -1785,7 +1807,7 @@ items:
 - key: check:03-structural-induction:1
   kind: check
   file: 03-structural-induction.md
-  line: 90
+  line: 92
   hash: f581cc999d44
   verdicts:
   - stage: S5a
@@ -1845,7 +1867,7 @@ items:
 - key: lem-parenthesis-count
   kind: lem
   file: 03-structural-induction.md
-  line: 154
+  line: 156
   hash: a49db4e5f646
   verdicts:
   - stage: S5a
@@ -1907,7 +1929,7 @@ items:
 - key: proof:lem-parenthesis-count
   kind: proof
   file: 03-structural-induction.md
-  line: 173
+  line: 175
   hash: b8ea808d1d6e
   verdicts:
   - stage: S5a
@@ -1960,7 +1982,7 @@ items:
 - key: check:03-structural-induction:2
   kind: check
   file: 03-structural-induction.md
-  line: 204
+  line: 206
   hash: 2dacb9214a06
   verdicts:
   - stage: S5a
@@ -1981,7 +2003,7 @@ items:
 - key: thm-unique-readability
   kind: thm
   file: 03-structural-induction.md
-  line: 216
+  line: 218
   hash: de77b32d5100
   verdicts:
   - stage: S5a
@@ -2035,7 +2057,7 @@ items:
 - key: proof:thm-unique-readability
   kind: proof
   file: 03-structural-induction.md
-  line: 235
+  line: 237
   hash: e0f8e122b0e2
   verdicts:
   - stage: S5a
@@ -2091,7 +2113,7 @@ items:
 - key: def-height
   kind: def
   file: 03-structural-induction.md
-  line: 251
+  line: 253
   hash: f0c6edeaaf22
   verdicts:
   - stage: S5a
@@ -2137,7 +2159,7 @@ items:
 - key: thm-structural-recursion
   kind: thm
   file: 03-structural-induction.md
-  line: 271
+  line: 273
   hash: c6bdbfb90b68
   verdicts:
   - stage: S5a
@@ -2189,8 +2211,8 @@ items:
 - key: proof:thm-structural-recursion
   kind: proof
   file: 03-structural-induction.md
-  line: 297
-  hash: 281b92717bce
+  line: 299
+  hash: 1917cdd3fbf1
   verdicts:
   - stage: S5a
     verdict: correct
@@ -2258,7 +2280,7 @@ items:
 - key: check:03-structural-induction:3
   kind: check
   file: 03-structural-induction.md
-  line: 314
+  line: 316
   hash: 14f76882ac2e
   verdicts:
   - stage: S5a
@@ -2279,7 +2301,7 @@ items:
 - key: exm-recursive-definitions
   kind: exm
   file: 03-structural-induction.md
-  line: 322
+  line: 324
   hash: b6813e75bb49
   verdicts:
   - stage: S5a
@@ -2324,7 +2346,7 @@ items:
 - key: exr-structural-induction-a1
   kind: exr
   file: 03-structural-induction.md
-  line: 367
+  line: 369
   hash: f93129ab0b07
   verdicts:
   - stage: S5a
@@ -2353,7 +2375,7 @@ items:
 - key: exr-structural-induction-a2
   kind: exr
   file: 03-structural-induction.md
-  line: 391
+  line: 393
   hash: 7c5acba1b89b
   verdicts:
   - stage: S5a
@@ -2384,8 +2406,8 @@ items:
 - key: exr-induction-b2
   kind: exr
   file: 03-structural-induction.md
-  line: 440
-  hash: 755a5a61de0a
+  line: 442
+  hash: 093f04524b88
   verdicts:
   - stage: S5a
     verdict: correct
@@ -2458,7 +2480,7 @@ items:
 - key: exr-induction-b3
   kind: exr
   file: 03-structural-induction.md
-  line: 462
+  line: 464
   hash: 88ed0ef9e794
   verdicts:
   - stage: S5a
@@ -2517,8 +2539,8 @@ items:
 - key: exr-structural-induction-b3
   kind: exr
   file: 03-structural-induction.md
-  line: 487
-  hash: e6628baf5df5
+  line: 489
+  hash: 8f772fd8404d
   verdicts:
   - stage: S5a
     verdict: correct
@@ -2557,7 +2579,7 @@ items:
 - key: exr-induction-c1
   kind: exr
   file: 03-structural-induction.md
-  line: 526
+  line: 528
   hash: 31d39a28a03d
   verdicts:
   - stage: S5a
@@ -2629,8 +2651,8 @@ items:
 - key: exr-induction-c2
   kind: exr
   file: 03-structural-induction.md
-  line: 571
-  hash: bdca1693ab39
+  line: 573
+  hash: b4fd4b15b375
   verdicts:
   - stage: S5a
     verdict: correct
@@ -2707,8 +2729,8 @@ items:
 - key: exr-induction-c3
   kind: exr
   file: 03-structural-induction.md
-  line: 604
-  hash: 7e555d9d0b1b
+  line: 615
+  hash: 58f7c97d9639
   verdicts:
   - stage: S5a
     verdict: correct
@@ -2778,7 +2800,7 @@ items:
 - key: exr-structural-induction-c4
   kind: exr
   file: 03-structural-induction.md
-  line: 663
+  line: 674
   hash: 73f393cee17a
   verdicts:
   - stage: S5a
@@ -2809,8 +2831,8 @@ items:
 - key: exr-structural-induction-c5
   kind: exr
   file: 03-structural-induction.md
-  line: 689
-  hash: a9fc4a40836e
+  line: 700
+  hash: ba0da2303b54
   verdicts:
   - stage: S5a
     verdict: minor
@@ -3278,7 +3300,7 @@ items:
   kind: exm
   file: 04-valuations-and-truth-tables.md
   line: 247
-  hash: 51577d27ffcc
+  hash: a184d1e36961
   verdicts:
   - stage: S5a
     verdict: correct
@@ -3446,7 +3468,7 @@ items:
   kind: def
   file: 04-valuations-and-truth-tables.md
   line: 340
-  hash: bb04abb1c76a
+  hash: cff7a698d50f
   verdicts:
   - stage: S5a
     verdict: correct
@@ -3815,7 +3837,7 @@ items:
   kind: exr
   file: 04-valuations-and-truth-tables.md
   line: 595
-  hash: f73b100d71f9
+  hash: a36bd231537f
   verdicts:
   - stage: S5a
     verdict: correct
@@ -3854,8 +3876,8 @@ items:
 - key: exr-valuations-and-truth-tables-b5
   kind: exr
   file: 04-valuations-and-truth-tables.md
-  line: 622
-  hash: 85a7f95da064
+  line: 629
+  hash: bd31711f89b5
   verdicts:
   - stage: S5a
     verdict: correct
@@ -3894,7 +3916,7 @@ items:
 - key: exr-valuations-and-truth-tables-c1
   kind: exr
   file: 04-valuations-and-truth-tables.md
-  line: 647
+  line: 661
   hash: 1afb32bb9a85
   verdicts:
   - stage: S5a
@@ -3952,8 +3974,8 @@ items:
 - key: exr-valuations-and-truth-tables-c2
   kind: exr
   file: 04-valuations-and-truth-tables.md
-  line: 692
-  hash: 86fc1c0afdd0
+  line: 706
+  hash: 26568fe5feb4
   verdicts:
   - stage: S5a
     verdict: correct
@@ -4044,8 +4066,8 @@ items:
 - key: exr-valuations-and-truth-tables-c3
   kind: exr
   file: 04-valuations-and-truth-tables.md
-  line: 728
-  hash: efc99fd149bd
+  line: 742
+  hash: 00369edcc15d
   verdicts:
   - stage: S5a
     verdict: correct
@@ -4083,6 +4105,28 @@ items:
       values as one function; give bot, -> and <-> any values ...)''. Otherwise everything checks: the
       (a) clauses match the game at 04:169, the (b) induction steps match (V2)-(V4), and the marking scheme
       sums to 10.'
+  - stage: S7r
+    verdict: correct
+    by: rereferee
+    hash: 00369edcc15d
+    date: '2026-10-19'
+    model: claude-opus-5-5
+    evidence: 'thm-structural-induction gives C(φ) for every formula. That the parts of a restricted formula
+      are themselves restricted is left implicit, which is acceptable at this level. (c) is correct: each
+      ¬ step needs the other half of the hypothesis. The marking scheme is 2+2+1+2+2+1=10, and the fatal
+      error it names is apt. verify/ch04/exr-valuations-and-truth-tables-c3.py reports ''all quoted values
+      check''.'
+  - stage: S7r
+    verdict: correct
+    by: rereferee
+    hash: 00369edcc15d
+    date: '2026-10-19'
+    model: claude-opus-5-5
+    evidence: 'thm-structural-induction gives C(φ) for every formula. That the parts of a restricted formula
+      are themselves restricted is left implicit, which is acceptable at this level. (c) is correct: each
+      ¬ step needs the other half of the hypothesis. The marking scheme is 2+2+1+2+2+1=10, and the fatal
+      error it names is apt. verify/ch04/exr-valuations-and-truth-tables-c3.py reports ''all quoted values
+      check''.'
 - key: def-tautology
   kind: def
   file: 05-entailment-and-equivalence.md
@@ -4629,7 +4673,7 @@ items:
 - key: check:05-entailment-and-equivalence:3
   kind: check
   file: 05-entailment-and-equivalence.md
-  line: 306
+  line: 308
   hash: d585d97dfe6b
   verdicts:
   - stage: S5a
@@ -4651,7 +4695,7 @@ items:
 - key: check:05-entailment-and-equivalence:4
   kind: check
   file: 05-entailment-and-equivalence.md
-  line: 324
+  line: 326
   hash: 3aafdc421d33
   verdicts:
   - stage: S5a
@@ -4673,7 +4717,7 @@ items:
 - key: def-pair-relations
   kind: def
   file: 05-entailment-and-equivalence.md
-  line: 336
+  line: 338
   hash: 6a7542fbab89
   verdicts:
   - stage: S5a
@@ -4694,7 +4738,7 @@ items:
 - key: check:05-entailment-and-equivalence:5
   kind: check
   file: 05-entailment-and-equivalence.md
-  line: 350
+  line: 352
   hash: 3dd503d52c53
   verdicts:
   - stage: S5a
@@ -4714,7 +4758,7 @@ items:
 - key: lem-replacement
   kind: lem
   file: 05-entailment-and-equivalence.md
-  line: 364
+  line: 366
   hash: ac43eaa6c067
   verdicts:
   - stage: S5a
@@ -4758,7 +4802,7 @@ items:
 - key: proof:lem-replacement
   kind: proof
   file: 05-entailment-and-equivalence.md
-  line: 377
+  line: 379
   hash: 97e0b9c4723f
   verdicts:
   - stage: S5a
@@ -4803,7 +4847,7 @@ items:
 - key: exm-substitution-in-one-row
   kind: exm
   file: 05-entailment-and-equivalence.md
-  line: 423
+  line: 425
   hash: a4bec24cadf8
   verdicts:
   - stage: S5a
@@ -4823,7 +4867,7 @@ items:
 - key: lem-substitution
   kind: lem
   file: 05-entailment-and-equivalence.md
-  line: 437
+  line: 439
   hash: d0c1b61b7a90
   verdicts:
   - stage: S5a
@@ -4868,7 +4912,7 @@ items:
 - key: proof:lem-substitution
   kind: proof
   file: 05-entailment-and-equivalence.md
-  line: 452
+  line: 454
   hash: 3f4586dd7f21
   verdicts:
   - stage: S5a
@@ -4919,7 +4963,7 @@ items:
 - key: exr-entailment-and-equivalence-a1
   kind: exr
   file: 05-entailment-and-equivalence.md
-  line: 508
+  line: 510
   hash: 97795d8136d2
   verdicts:
   - stage: S5a
@@ -4984,7 +5028,7 @@ items:
 - key: exr-entailment-and-equivalence-a2
   kind: exr
   file: 05-entailment-and-equivalence.md
-  line: 529
+  line: 531
   hash: b8157fb4a911
   verdicts:
   - stage: S5a
@@ -5013,8 +5057,8 @@ items:
 - key: exr-entailment-and-equivalence-b1
   kind: exr
   file: 05-entailment-and-equivalence.md
-  line: 578
-  hash: 90ca4d6ad6f8
+  line: 580
+  hash: b9757b2304d2
   verdicts:
   - stage: S5a
     verdict: correct
@@ -5091,8 +5135,8 @@ items:
 - key: exr-entailment-and-equivalence-b2
   kind: exr
   file: 05-entailment-and-equivalence.md
-  line: 645
-  hash: a2403ac20c79
+  line: 647
+  hash: 08441a4f9b9f
   verdicts:
   - stage: S5a
     verdict: correct
@@ -5161,7 +5205,7 @@ items:
 - key: exr-entailment-and-equivalence-b3
   kind: exr
   file: 05-entailment-and-equivalence.md
-  line: 665
+  line: 667
   hash: 2a049bdb6998
   verdicts:
   - stage: S5a
@@ -5217,8 +5261,8 @@ items:
 - key: exr-entailment-and-equivalence-b4
   kind: exr
   file: 05-entailment-and-equivalence.md
-  line: 686
-  hash: 2ccaaf167e71
+  line: 688
+  hash: 4bf102e68417
   verdicts:
   - stage: S5a
     verdict: correct
@@ -5257,8 +5301,8 @@ items:
 - key: exr-entailment-and-equivalence-c1
   kind: exr
   file: 05-entailment-and-equivalence.md
-  line: 719
-  hash: e2cb2acb39cf
+  line: 727
+  hash: 264898e8ffaa
   verdicts:
   - stage: S5a
     verdict: correct
@@ -5341,8 +5385,8 @@ items:
 - key: exr-entailment-and-equivalence-c2
   kind: exr
   file: 05-entailment-and-equivalence.md
-  line: 760
-  hash: 535a43cbf4a0
+  line: 768
+  hash: ffd022ff9817
   verdicts:
   - stage: S5a
     verdict: correct
@@ -5427,7 +5471,7 @@ items:
 - key: exr-entailment-and-equivalence-c3
   kind: exr
   file: 05-entailment-and-equivalence.md
-  line: 783
+  line: 791
   hash: b583409797ea
   verdicts:
   - stage: S5a
@@ -5457,7 +5501,7 @@ items:
 - key: exr-entailment-and-equivalence-c4
   kind: exr
   file: 05-entailment-and-equivalence.md
-  line: 831
+  line: 839
   hash: 96b7b03cce6a
   verdicts:
   - stage: S5a
@@ -5488,7 +5532,7 @@ items:
   kind: check
   file: 06-refuting-row-search.md
   line: 11
-  hash: e25f688cef9b
+  hash: 6b456e8b9360
   verdicts:
   - stage: S5a
     verdict: minor
@@ -5521,7 +5565,7 @@ items:
   kind: def
   file: 06-refuting-row-search.md
   line: 44
-  hash: aedef1140728
+  hash: 249c2b7f7b5b
   verdicts:
   - stage: S5a
     verdict: correct
@@ -5585,6 +5629,28 @@ items:
       groups''. The correction is right, but it is not listed under Blueprint deviations in STATUS.md
       (the fd1 Ch 4 deepening entry lists only (a) and (b)). DRAFTING.md:18 requires it to be reported.
       Fix: add it there.'
+  - stage: S7r
+    verdict: correct
+    by: rereferee
+    hash: b47ca4d104eb
+    date: '2026-10-19'
+    model: claude-opus-5-5
+    evidence: 'each open side and the verdict cannot change, by @prp-search-decides (06:146). The fold
+      at 06:296 now holds together under its own definition: 4 candidate rows; q strikes 2; r strikes
+      the one left (q F, r T); the row q F, r F makes p→(q∨r) false and lies on neither side; the tally
+      is 12+1+3=16. verify/ch04/exm-refuting-row-search-closed.py passes. The blueprint deviation is recorded
+      in STATUS (c).'
+  - stage: S7r
+    verdict: correct
+    by: rereferee
+    hash: b47ca4d104eb
+    date: '2026-10-19'
+    model: claude-opus-5-5
+    evidence: 'each open side and the verdict cannot change, by @prp-search-decides (06:146). The fold
+      at 06:296 now holds together under its own definition: 4 candidate rows; q strikes 2; r strikes
+      the one left (q F, r T); the row q F, r F makes p→(q∨r) false and lies on neither side; the tally
+      is 12+1+3=16. verify/ch04/exm-refuting-row-search-closed.py passes. The blueprint deviation is recorded
+      in STATUS (c).'
 - key: exm-refuting-row-search-open
   kind: exm
   file: 06-refuting-row-search.md
@@ -5631,7 +5697,7 @@ items:
   kind: prp
   file: 06-refuting-row-search.md
   line: 146
-  hash: a8aff3fed80c
+  hash: c8b1def131cb
   verdicts:
   - stage: S5a
     verdict: correct
@@ -5661,7 +5727,7 @@ items:
   kind: proof
   file: 06-refuting-row-search.md
   line: 167
-  hash: b359add8d238
+  hash: 478bfd785a06
   verdicts:
   - stage: S5a
     verdict: correct
@@ -5762,7 +5828,7 @@ items:
   kind: exr
   file: 06-refuting-row-search.md
   line: 326
-  hash: 61dbeb22d922
+  hash: a57ac3e45952
   verdicts:
   - stage: S5a
     verdict: minor
@@ -5831,7 +5897,7 @@ items:
   kind: exr
   file: 06-refuting-row-search.md
   line: 399
-  hash: a49d69147095
+  hash: c5e660e8c107
   verdicts:
   - stage: S5a
     verdict: minor
@@ -5869,11 +5935,33 @@ items:
       whose fd1 Ch 4 deepening entry lists only (a) STYLE deviations and (b) the 4.10 wording. Fix: add
       the B1 rewording, with its reason (tactic 5 at 06:210, stop at the first finished open branch),
       to that entry.'
+  - stage: S7r
+    verdict: correct
+    by: rereferee
+    hash: c5e660e8c107
+    date: '2026-10-19'
+    model: claude-opus-5-5
+    evidence: 'r gives ¬(p∧q), then ¬p×/¬q×, or r×. (d) Refuted: ¬p, r; p↔q gives (p,q)× or (¬p,¬q); q∨r
+      gives q× or r. The row F, F, T makes p↔q T, q∨r T and p∨¬r F. The statement at 06:402 allows stopping
+      at the first finished open branch, which agrees with tactic 5 (06:210) and with the pruned solution
+      of (b). The blueprint deviation is recorded in STATUS (c). verify/ch04/exr-refuting-row-search-b1.py
+      passes.'
+  - stage: S7r
+    verdict: correct
+    by: rereferee
+    hash: c5e660e8c107
+    date: '2026-10-19'
+    model: claude-opus-5-5
+    evidence: 'r gives ¬(p∧q), then ¬p×/¬q×, or r×. (d) Refuted: ¬p, r; p↔q gives (p,q)× or (¬p,¬q); q∨r
+      gives q× or r. The row F, F, T makes p↔q T, q∨r T and p∨¬r F. The statement at 06:402 allows stopping
+      at the first finished open branch, which agrees with tactic 5 (06:210) and with the pruned solution
+      of (b). The blueprint deviation is recorded in STATUS (c). verify/ch04/exr-refuting-row-search-b1.py
+      passes.'
 - key: exr-refuting-row-search-b2
   kind: exr
   file: 06-refuting-row-search.md
   line: 426
-  hash: 90cebaf24cfd
+  hash: 397ed765d77e
   verdicts:
   - stage: S5a
     verdict: correct
@@ -5912,8 +6000,8 @@ items:
 - key: exr-refuting-row-search-b3
   kind: exr
   file: 06-refuting-row-search.md
-  line: 448
-  hash: 148e129f9498
+  line: 454
+  hash: df1665146c62
   verdicts:
   - stage: S5a
     verdict: correct
@@ -5950,7 +6038,7 @@ items:
 - key: exr-refuting-row-search-c1
   kind: exr
   file: 06-refuting-row-search.md
-  line: 481
+  line: 493
   hash: 70f8e86f1957
   verdicts:
   - stage: S5a
@@ -5980,7 +6068,7 @@ items:
 - key: exr-refuting-row-search-c2
   kind: exr
   file: 06-refuting-row-search.md
-  line: 507
+  line: 519
   hash: 5f05223bd3ed
   verdicts:
   - stage: S5a
@@ -6009,7 +6097,7 @@ items:
 - key: exr-refuting-row-search-c3
   kind: exr
   file: 06-refuting-row-search.md
-  line: 533
+  line: 545
   hash: 7d645ec6adb1
   verdicts:
   - stage: S5a
@@ -6285,7 +6373,7 @@ items:
   kind: proof
   file: 07-soundness.md
   line: 199
-  hash: 7da2835ac41c
+  hash: 6f94f92ac316
   verdicts:
   - stage: S5a
     verdict: correct
@@ -6708,7 +6796,7 @@ items:
   kind: exr
   file: 07-soundness.md
   line: 587
-  hash: 2900204bf9bd
+  hash: 44e9b0df131a
   verdicts:
   - stage: S5a
     verdict: correct
@@ -6918,7 +7006,7 @@ items:
   kind: exr
   file: 07-soundness.md
   line: 846
-  hash: 8d56a0671a59
+  hash: e78546d16e4a
   verdicts:
   - stage: S5a
     verdict: correct
@@ -7011,7 +7099,7 @@ items:
   kind: exr
   file: 07-soundness.md
   line: 876
-  hash: d14a56c253c5
+  hash: 9ac4f7112237
   verdicts:
   - stage: S5a
     verdict: correct
@@ -7051,7 +7139,7 @@ items:
   kind: exr
   file: 07-soundness.md
   line: 904
-  hash: dffb3c85d4e4
+  hash: 3ad32b035b9f
   verdicts:
   - stage: S5a
     verdict: correct
@@ -7094,7 +7182,7 @@ items:
   kind: exr
   file: 07-soundness.md
   line: 953
-  hash: d446a4ae8c03
+  hash: 8de65b8cb842
   verdicts:
   - stage: S5a
     verdict: correct
@@ -7134,6 +7222,50 @@ items:
       and does not mention C5''s Kleene valuation. Fix: rename C5''s valuation (e.g. k or u_K throughout
       C5 and its solution), or add C5''s Kleene valuation to the NOTATION.md:168 row as a separate local
       use.'
+  - stage: S7r
+    verdict: correct
+    by: rereferee
+    hash: 8de65b8cb842
+    date: '2026-10-19'
+    model: claude-opus-5-5
+    evidence: cks themselves are unchanged and the script passes. I checked the text quickly. (a) With
+      D={1}, →I writes p→p, which has value 1/2 when u_K(p)=1/2. (b) With D={1/2,1}, MP fails at p=1/2,
+      q=0. (c) max{x,1−x} is 1/2 at x=1/2, which is undesignated in (a) and designated in (b). All three
+      are correct. The ledger's STALE mark on this item comes from concurrent work in 07 that falls outside
+      this packet.
+  - stage: S7r
+    verdict: correct
+    by: rereferee
+    hash: 8de65b8cb842
+    date: '2026-10-19'
+    model: claude-opus-5-5
+    evidence: 'bookkeeping recommendation, which does not block this item: NOTATION.md records the parallel
+      local exercise symbols w (row 169, C4) and v_T (row 170). For consistency it should get a row such
+      as `u_{\mathrm{K}}`: Kleene valuation (¬ as 1−u_K, ∧ min, ∨ max, → max{1−u_K(φ),u_K(ψ)}), local
+      to F1.3 §07 C5; not the u of thm-raa-independent. The coordinator can add this row. I made no edits
+      (read-only).'
+  - stage: S7r
+    verdict: correct
+    by: rereferee
+    hash: 8de65b8cb842
+    date: '2026-10-19'
+    model: claude-opus-5-5
+    evidence: cks themselves are unchanged and the script passes. I checked the text quickly. (a) With
+      D={1}, →I writes p→p, which has value 1/2 when u_K(p)=1/2. (b) With D={1/2,1}, MP fails at p=1/2,
+      q=0. (c) max{x,1−x} is 1/2 at x=1/2, which is undesignated in (a) and designated in (b). All three
+      are correct. The ledger's STALE mark on this item comes from concurrent work in 07 that falls outside
+      this packet.
+  - stage: S7r
+    verdict: correct
+    by: rereferee
+    hash: 8de65b8cb842
+    date: '2026-10-19'
+    model: claude-opus-5-5
+    evidence: 'bookkeeping recommendation, which does not block this item: NOTATION.md records the parallel
+      local exercise symbols w (row 169, C4) and v_T (row 170). For consistency it should get a row such
+      as `u_{\mathrm{K}}`: Kleene valuation (¬ as 1−u_K, ∧ min, ∨ max, → max{1−u_K(φ),u_K(ψ)}), local
+      to F1.3 §07 C5; not the u of thm-raa-independent. The coordinator can add this row. I made no edits
+      (read-only).'
 - key: thm-raa-independent
   kind: thm
   file: 07-soundness.md
@@ -7969,7 +8101,7 @@ items:
   kind: exm
   file: 08-completeness.md
   line: 630
-  hash: 3f66eb12f352
+  hash: d35728d9b7ad
   verdicts:
   - stage: S5a
     verdict: minor
@@ -8304,7 +8436,7 @@ items:
   kind: exr
   file: 08-completeness.md
   line: 979
-  hash: c374fa402e48
+  hash: dbc5ac640667
   verdicts:
   - stage: S5a
     verdict: correct
@@ -8342,8 +8474,8 @@ items:
 - key: exr-completeness-b5
   kind: exr
   file: 08-completeness.md
-  line: 1019
-  hash: 0be31e5d7302
+  line: 1026
+  hash: 9ac6480f42c4
   verdicts:
   - stage: S5a
     verdict: correct
@@ -8382,7 +8514,7 @@ items:
 - key: exr-completeness-c1
   kind: exr
   file: 08-completeness.md
-  line: 1055
+  line: 1068
   hash: d6efab821e82
   verdicts:
   - stage: S5a
@@ -8453,7 +8585,7 @@ items:
 - key: exr-completeness-c2
   kind: exr
   file: 08-completeness.md
-  line: 1089
+  line: 1102
   hash: f3a34c7f0b76
   verdicts:
   - stage: S5a
@@ -8536,7 +8668,7 @@ items:
 - key: exr-normal-forms-c3
   kind: exr
   file: 08-completeness.md
-  line: 1134
+  line: 1147
   hash: e6bbc347436f
   verdicts:
   - stage: S5a
@@ -8601,8 +8733,8 @@ items:
 - key: exr-completeness-c4
   kind: exr
   file: 08-completeness.md
-  line: 1209
-  hash: 6e3685d425d3
+  line: 1222
+  hash: 88dab3349ba3
   verdicts:
   - stage: S5a
     verdict: correct
@@ -8643,8 +8775,8 @@ items:
 - key: exr-completeness-c5
   kind: exr
   file: 08-completeness.md
-  line: 1237
-  hash: 59d1024daadc
+  line: 1250
+  hash: 3afbf57c8c7c
   verdicts:
   - stage: S5a
     verdict: correct
@@ -8684,10 +8816,30 @@ items:
       the root of a search tree down to node X, X included (local to F1.3 §08 exercise C5) |''. The case
       analysis is unchanged and correct; I checked the one-way and two-way sequents and the RAA and LEM
       locations in (c).'
+  - stage: S7r
+    verdict: correct
+    by: rereferee
+    hash: 3afbf57c8c7c
+    date: '2026-10-19'
+    model: claude-opus-5-5
+    evidence: 't and then joined. All of these check. (b) At the root, Γ,¬ψ⊢⊥, then RAA, citing @prp-derivable-iff-negation-inconsistent
+      (03-02:376). (c) Uses @prp-search-decides (06:146) (a) and (c). The RAA and LEM locations are listed
+      correctly: the ↔ case uses only ¬I plus LEM through atom-splitting. Scheme: 1+2+5+1+1=10, with four
+      one-way and five two-way cases, which matches the table. No remaining issues.'
+  - stage: S7r
+    verdict: correct
+    by: rereferee
+    hash: 3afbf57c8c7c
+    date: '2026-10-19'
+    model: claude-opus-5-5
+    evidence: 't and then joined. All of these check. (b) At the root, Γ,¬ψ⊢⊥, then RAA, citing @prp-derivable-iff-negation-inconsistent
+      (03-02:376). (c) Uses @prp-search-decides (06:146) (a) and (c). The RAA and LEM locations are listed
+      correctly: the ↔ case uses only ¬I plus LEM through atom-splitting. Scheme: 1+2+5+1+1=10, with four
+      one-way and five two-way cases, which matches the table. No remaining issues.'
 - key: exr-normal-forms-r1
   kind: exr
   file: 08-completeness.md
-  line: 1289
+  line: 1302
   hash: 5a150781b436
   verdicts:
   - stage: S5a
@@ -8744,7 +8896,7 @@ items:
 - key: exr-normal-forms-r2
   kind: exr
   file: 08-completeness.md
-  line: 1321
+  line: 1334
   hash: 458d9daaa285
   verdicts:
   - stage: S5a
@@ -8818,7 +8970,7 @@ items:
 - key: exr-normal-forms-r3
   kind: exr
   file: 08-completeness.md
-  line: 1335
+  line: 1348
   hash: 87bf8e5d1e60
   verdicts:
   - stage: S5a
@@ -9256,7 +9408,7 @@ items:
   kind: proof
   file: 09-normal-forms.md
   line: 148
-  hash: 450ac961988d
+  hash: 4f8c19909c01
   verdicts:
   - stage: S5a
     verdict: correct
@@ -9306,10 +9458,61 @@ items:
       (line 15): the long conjunction K, the disjunction K_i combined with the opposite-literal fact from
       def-literal (line 30), the conjunction C_i, and the long disjunction. So ''used at each step'' is
       accurate and the S5b finding (three vs four uses) is resolved. The atom clause follows from thm-dn'
+- key: check:09-normal-forms:2
+  kind: check
+  file: 09-normal-forms.md
+  line: 166
+  hash: 95b63c3c4af2
+  verdicts:
+  - stage: S5a
+    verdict: correct
+    by: refereeA
+    hash: 72fbf1ba7fb7
+    date: '2026-09-28'
+    model: claude-opus-5-5
+    evidence: 'authoring/reviews/ch03-S5-A.md: check verified within the neighbouring item row'
+  - stage: S5b
+    verdict: correct
+    by: refereeB
+    hash: 72fbf1ba7fb7
+    date: '2026-09-28'
+    model: claude-opus-5-5
+    evidence: 'authoring/reviews/ch03-S5-B.md section rows "(all)/(all others)": claims checked'
+  - stage: S8
+    verdict: correct
+    by: seam
+    hash: 72fbf1ba7fb7
+    date: '2026-09-28'
+    model: claude-opus-5-5
+    evidence: 'S8 seam (authoring/reviews/ch03-S8-seam.md): cross-section, cross-chapter labels and notation
+      checked'
+  - stage: S5a
+    verdict: correct
+    by: refereeA
+    hash: ec96b5d65ad7
+    date: '2026-10-19'
+    model: claude-opus-5-5
+    evidence: '09:398-404; ¬(p→q)∨r: p +, q −, r +'
+  - stage: S5b
+    verdict: correct
+    by: refereeB
+    hash: ec96b5d65ad7
+    date: '2026-10-19'
+    model: claude-opus-5-5
+    evidence: '09:398-404; in ¬(p→q)∨r: p is +, q is −, r is +'
+  - stage: S7r
+    verdict: correct
+    by: rereferee
+    hash: 95b63c3c4af2
+    date: '2026-10-19'
+    model: claude-opus-5-5
+    evidence: Line 166, the new CNF-clause check (the index moved because of the new checks). Row p=F,q=T,r=F
+      has signed atoms ¬p,q,¬r. Their opposites give p∨¬q∨r, which is false only in that row. Solved independently
+      and the answer matches.
 - key: exm-normal-forms-two-routes
   kind: exm
   file: 09-normal-forms.md
-  line: 168
+  line: 176
   hash: fcf883c3af06
   verdicts:
   - stage: S5a
@@ -9368,7 +9571,7 @@ items:
 - key: prp-cnf-validity
   kind: prp
   file: 09-normal-forms.md
-  line: 220
+  line: 228
   hash: 4911e5219143
   verdicts:
   - stage: S5a
@@ -9410,7 +9613,7 @@ items:
 - key: proof:prp-cnf-validity
   kind: proof
   file: 09-normal-forms.md
-  line: 235
+  line: 243
   hash: 0c32e16f868d
   verdicts:
   - stage: S5a
@@ -9461,7 +9664,7 @@ items:
 - key: exm-cnf-validity-glance
   kind: exm
   file: 09-normal-forms.md
-  line: 255
+  line: 263
   hash: ce41aa0cd08f
   verdicts:
   - stage: S5a
@@ -9525,7 +9728,7 @@ items:
 - key: prp-more-equivalences
   kind: prp
   file: 09-normal-forms.md
-  line: 276
+  line: 284
   hash: 8d7b91a7d817
   verdicts:
   - stage: S5a
@@ -9545,7 +9748,7 @@ items:
 - key: proof:prp-more-equivalences
   kind: proof
   file: 09-normal-forms.md
-  line: 291
+  line: 299
   hash: bbcf0268de28
   verdicts:
   - stage: S5a
@@ -9565,7 +9768,7 @@ items:
 - key: exm-simplify-by-calculation
   kind: exm
   file: 09-normal-forms.md
-  line: 314
+  line: 322
   hash: 482945bae14e
   verdicts:
   - stage: S5a
@@ -9584,10 +9787,40 @@ items:
     model: claude-opus-5-5
     evidence: 09:314-332; step 2 is (g) second form read right to left with φ=¬p, ψ=q, χ=¬q (05:213);
       steps 3 and 4 are prp-more-equivalences (c) and (a)
+- key: check:09-normal-forms:3
+  kind: check
+  file: 09-normal-forms.md
+  line: 342
+  hash: 2d0c558a2b21
+  verdicts:
+  - stage: S5a
+    verdict: correct
+    by: refereeA
+    hash: 72fbf1ba7fb7
+    date: '2026-10-19'
+    model: claude-opus-5-5
+    evidence: 09:442-448; (p→(q→⊥))→⊥ is F at p=T,q=F
+  - stage: S5b
+    verdict: correct
+    by: refereeB
+    hash: 72fbf1ba7fb7
+    date: '2026-10-19'
+    model: claude-opus-5-5
+    evidence: 09:442-448; t_3(p∧q) evaluated at T,F gives F
+  - stage: S7r
+    verdict: correct
+    by: rereferee
+    hash: 2d0c558a2b21
+    date: '2026-10-19'
+    model: claude-opus-5-5
+    evidence: Line 342, new. (p∨q)∧(p∨¬q) ≡ p∨(q∧¬q) by prp-standard-equivalences (g) second form read
+      right to left (05-entailment-and-equivalence.md:218). Then ≡ p∨⊥ by prp-more-equivalences (c) first
+      form inside, via lem-replacement. Then ≡ p by (a) second form. Every citation checked and the result
+      p is correct.
 - key: def-occurrence-polarity
   kind: def
   file: 09-normal-forms.md
-  line: 338
+  line: 354
   hash: e9a651ebe18f
   verdicts:
   - stage: S5a
@@ -9609,7 +9842,7 @@ items:
 - key: thm-monotonicity
   kind: thm
   file: 09-normal-forms.md
-  line: 366
+  line: 382
   hash: 5bbdf57133ba
   verdicts:
   - stage: S5a
@@ -9631,7 +9864,7 @@ items:
 - key: proof:thm-monotonicity
   kind: proof
   file: 09-normal-forms.md
-  line: 379
+  line: 395
   hash: b048bf8363e1
   verdicts:
   - stage: S5a
@@ -9651,61 +9884,23 @@ items:
     model: claude-opus-5-5
     evidence: 09:378-396; all the cases are handled; the monotone and antitone facts for V3-V5 are ledgered
       inline (09:874)
-- key: check:09-normal-forms:2
+- key: check:09-normal-forms:4
   kind: check
   file: 09-normal-forms.md
-  line: 398
+  line: 414
   hash: ec96b5d65ad7
   verdicts:
-  - stage: S5a
-    verdict: correct
-    by: refereeA
-    hash: 72fbf1ba7fb7
-    date: '2026-09-28'
-    model: claude-opus-5-5
-    evidence: 'authoring/reviews/ch03-S5-A.md: check verified within the neighbouring item row'
-  - stage: S5b
-    verdict: correct
-    by: refereeB
-    hash: 72fbf1ba7fb7
-    date: '2026-09-28'
-    model: claude-opus-5-5
-    evidence: 'authoring/reviews/ch03-S5-B.md section rows "(all)/(all others)": claims checked'
   - stage: S8
     verdict: correct
-    by: seam
-    hash: 72fbf1ba7fb7
-    date: '2026-09-28'
-    model: claude-opus-5-5
-    evidence: 'S8 seam (authoring/reviews/ch03-S8-seam.md): cross-section, cross-chapter labels and notation
-      checked'
-  - stage: S5a
-    verdict: correct
-    by: refereeA
+    by: coordinator
     hash: ec96b5d65ad7
     date: '2026-10-19'
     model: claude-opus-5-5
-    evidence: '09:398-404; ¬(p→q)∨r: p +, q −, r +'
-  - stage: S5b
-    verdict: correct
-    by: refereeB
-    hash: ec96b5d65ad7
-    date: '2026-10-19'
-    model: claude-opus-5-5
-    evidence: '09:398-404; in ¬(p→q)∨r: p is +, q is −, r is +'
-  - stage: S7r
-    verdict: correct
-    by: rereferee
-    hash: 95b63c3c4af2
-    date: '2026-10-19'
-    model: claude-opus-5-5
-    evidence: Line 166, the new CNF-clause check (the index moved because of the new checks). Row p=F,q=T,r=F
-      has signed atoms ¬p,q,¬r. Their opposites give p∨¬q∨r, which is false only in that row. Solved independently
-      and the answer matches.
+    evidence: re-derived by the coordinator after S7 renumbered the section's checks; answer recomputed
 - key: def-adequate
   kind: def
   file: 09-normal-forms.md
-  line: 422
+  line: 438
   hash: a41e6e70d28b
   verdicts:
   - stage: S5a
@@ -9744,40 +9939,23 @@ items:
     date: '2026-10-19'
     model: claude-opus-5-5
     evidence: 09:422-426; consistent with def-truth-function (04:340-348) and with 'in S' at 09:420
-- key: check:09-normal-forms:3
+- key: check:09-normal-forms:5
   kind: check
   file: 09-normal-forms.md
-  line: 442
+  line: 458
   hash: 72fbf1ba7fb7
   verdicts:
-  - stage: S5a
+  - stage: S8
     verdict: correct
-    by: refereeA
+    by: coordinator
     hash: 72fbf1ba7fb7
     date: '2026-10-19'
     model: claude-opus-5-5
-    evidence: 09:442-448; (p→(q→⊥))→⊥ is F at p=T,q=F
-  - stage: S5b
-    verdict: correct
-    by: refereeB
-    hash: 72fbf1ba7fb7
-    date: '2026-10-19'
-    model: claude-opus-5-5
-    evidence: 09:442-448; t_3(p∧q) evaluated at T,F gives F
-  - stage: S7r
-    verdict: correct
-    by: rereferee
-    hash: 2d0c558a2b21
-    date: '2026-10-19'
-    model: claude-opus-5-5
-    evidence: Line 342, new. (p∨q)∧(p∨¬q) ≡ p∨(q∧¬q) by prp-standard-equivalences (g) second form read
-      right to left (05-entailment-and-equivalence.md:218). Then ≡ p∨⊥ by prp-more-equivalences (c) first
-      form inside, via lem-replacement. Then ≡ p by (a) second form. Every citation checked and the result
-      p is correct.
+    evidence: re-derived by the coordinator after S7 renumbered the section's checks; answer recomputed
 - key: thm-adequate-connectives
   kind: thm
   file: 09-normal-forms.md
-  line: 450
+  line: 466
   hash: 8b63dbcfaa6d
   verdicts:
   - stage: S5a
@@ -9819,7 +9997,7 @@ items:
 - key: proof:thm-adequate-connectives
   kind: proof
   file: 09-normal-forms.md
-  line: 463
+  line: 479
   hash: 355044c332bd
   verdicts:
   - stage: S5a
@@ -9885,7 +10063,7 @@ items:
 - key: exr-normal-forms-a1
   kind: exr
   file: 09-normal-forms.md
-  line: 505
+  line: 521
   hash: caa2a9de6430
   verdicts:
   - stage: S5a
@@ -9949,7 +10127,7 @@ items:
 - key: exr-normal-forms-a2
   kind: exr
   file: 09-normal-forms.md
-  line: 529
+  line: 545
   hash: d9bc2549abb0
   verdicts:
   - stage: S5a
@@ -9977,7 +10155,7 @@ items:
 - key: exr-normal-forms-b1
   kind: exr
   file: 09-normal-forms.md
-  line: 578
+  line: 594
   hash: 4a5742169354
   verdicts:
   - stage: S5a
@@ -10041,7 +10219,7 @@ items:
 - key: exr-normal-forms-b2
   kind: exr
   file: 09-normal-forms.md
-  line: 598
+  line: 614
   hash: 7e81ab6a0ccf
   verdicts:
   - stage: S5a
@@ -10097,8 +10275,8 @@ items:
 - key: exr-normal-forms-b3
   kind: exr
   file: 09-normal-forms.md
-  line: 621
-  hash: b976462b5a72
+  line: 637
+  hash: 516adfd2dd75
   verdicts:
   - stage: S5a
     verdict: correct
@@ -10169,8 +10347,8 @@ items:
 - key: exr-normal-forms-c1
   kind: exr
   file: 09-normal-forms.md
-  line: 639
-  hash: e4be8d8636fd
+  line: 655
+  hash: 862da60e834f
   verdicts:
   - stage: S5a
     verdict: correct
@@ -10260,7 +10438,7 @@ items:
 - key: exr-normal-forms-c2
   kind: exr
   file: 09-normal-forms.md
-  line: 667
+  line: 683
   hash: 23ea3bfa9772
   verdicts:
   - stage: S5a
@@ -10343,8 +10521,8 @@ items:
 - key: exr-normal-forms-c4
   kind: exr
   file: 09-normal-forms.md
-  line: 705
-  hash: 1b867804b961
+  line: 721
+  hash: 9ec0b0de4e35
   verdicts:
   - stage: S5a
     verdict: correct
@@ -10414,8 +10592,8 @@ items:
 - key: exr-normal-forms-c5
   kind: exr
   file: 09-normal-forms.md
-  line: 755
-  hash: 43eda9619bc4
+  line: 771
+  hash: 14d66cf9b1f7
   verdicts:
   - stage: S5a
     verdict: correct
@@ -10455,8 +10633,8 @@ items:
 - key: exr-normal-forms-c6
   kind: exr
   file: 09-normal-forms.md
-  line: 783
-  hash: 1c7a0e4c6538
+  line: 799
+  hash: 55e5fd5fa2a7
   verdicts:
   - stage: S5a
     verdict: minor
@@ -10495,10 +10673,32 @@ items:
       Case 1 gives the one clause p_1∧¬p_1, as the third sentence then says. Fix: write ''when φ is satisfiable
       and has at least one atom, and j of the p_i do not occur in φ, it gives #φ/2^j minterms on the remaining
       atoms''.'
+  - stage: S7r
+    verdict: correct
+    by: rereferee
+    hash: 55e5fd5fa2a7
+    date: '2026-10-19'
+    model: claude-opus-5-5
+    evidence: '. Satisfiable φ with atoms: Case 1 with k≥1 builds minterms on the atoms of φ only, and
+      each such row covers 2^j rows on p_1..p_n, which gives #φ/2^j. No atoms: Case 2 gives p∨¬p or p∧¬p.
+      #φ=0: the result is p_1∧¬p_1 (or p∧¬p), a conjunctive clause but no minterm. That justifies the
+      restriction to satisfiable φ. Both cited labels exist and say what is claimed. The marking scheme
+      matches the parts.'
+  - stage: S7r
+    verdict: correct
+    by: rereferee
+    hash: 55e5fd5fa2a7
+    date: '2026-10-19'
+    model: claude-opus-5-5
+    evidence: '. Satisfiable φ with atoms: Case 1 with k≥1 builds minterms on the atoms of φ only, and
+      each such row covers 2^j rows on p_1..p_n, which gives #φ/2^j. No atoms: Case 2 gives p∨¬p or p∧¬p.
+      #φ=0: the result is p_1∧¬p_1 (or p∧¬p), a conjunctive clause but no minterm. That justifies the
+      restriction to satisfiable φ. Both cited labels exist and say what is claimed. The marking scheme
+      matches the parts.'
 - key: exr-normal-forms-c7
   kind: exr
   file: 09-normal-forms.md
-  line: 811
+  line: 827
   hash: b07268551655
   verdicts:
   - stage: S5a
@@ -10606,7 +10806,7 @@ items:
   kind: proof
   file: 10-compactness.md
   line: 46
-  hash: efb575bdd109
+  hash: f57f9b792d3c
   verdicts:
   - stage: S5a
     verdict: minor
@@ -10660,7 +10860,7 @@ items:
   kind: proof
   file: 10-compactness.md
   line: 77
-  hash: 202852206bde
+  hash: 1b9877ab98ce
   verdicts:
   - stage: S5a
     verdict: minor
@@ -10881,7 +11081,7 @@ items:
   kind: exm
   file: 10-compactness.md
   line: 206
-  hash: c8e75ced1cab
+  hash: b17837e5d54a
   verdicts:
   - stage: S5a
     verdict: minor
@@ -10941,7 +11141,7 @@ items:
   kind: exr
   file: 10-compactness.md
   line: 263
-  hash: 47d13f415f33
+  hash: 40344d1b05d6
   verdicts:
   - stage: S5a
     verdict: correct
@@ -11037,7 +11237,7 @@ items:
   kind: exr
   file: 10-compactness.md
   line: 356
-  hash: 5bd71d8f7eab
+  hash: 6be228ae8a3e
   verdicts:
   - stage: S5a
     verdict: correct
@@ -11117,43 +11317,3 @@ items:
       T if T works, and F otherwise'), so the recursion defines v. (b) now opens 'By (a) and @ax-induction,
       P_n holds for every n' (P_0 is the hypothesis, plain induction from 0), then uses P_N and @lem-coincidence
       (04:177). N = 0 works when γ has no atoms. (c) now lists @ax-induction, and the marking scheme for
-- key: proof:thm-completeness
-  kind: proof
-  file: 08-completeness.md
-  line: 372
-  hash: cbce6cd947db
-  verdicts:
-  - stage: S5a
-    verdict: correct
-    by: refereeA
-    hash: 75433652aea7
-    date: '2026-09-28'
-    model: claude-opus-5-5
-    evidence: authoring/reviews/ch03-S5-A.md row 06:396
-  - stage: S5b
-    verdict: correct
-    by: refereeB
-    hash: 75433652aea7
-    date: '2026-09-28'
-    model: claude-opus-5-5
-    evidence: 'authoring/reviews/ch03-S5-B.md section rows "(all)/(all others)": claims checked'
-  - stage: S8
-    verdict: correct
-    by: seam
-    hash: 75433652aea7
-    date: '2026-09-28'
-    model: claude-opus-5-5
-    evidence: 'S8 seam (authoring/reviews/ch03-S8-seam.md): cross-section, cross-chapter labels and notation
-      checked'
-  - stage: S7r
-    verdict: correct
-    by: rereferee
-    hash: cbce6cd947db
-    date: '2026-10-10'
-    model: claude-opus-5-5
-    evidence: 'S7r after N-includes-0 edit (diff vs 410a4ee4/earlier reviewed text): src/ch04-semantics-soundness-completeness/08-completeness.md:445.
-      Base case: T(0) is ''if 0 <= n then S(n)'', and 0 <= n always holds, so T(0) is Step 2''s Claim.
-      Step: from m + 1 <= n we get m <= n, so T(m) gives S(n - m). Then j = n - m satisfies 1 <= j (since
-      m <= n - 1) and j <= n (since m >= 0), which matches the Claim''s hypothesis 1 <= j <= n (line 425),
-      and the Claim gives S(n - m - 1) = T(...'
-  removed: true
