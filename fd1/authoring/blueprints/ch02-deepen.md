@@ -585,9 +585,11 @@ One per section, in its Looking-ahead box (STYLE §12.1); the index and a few ex
 - The derived-rule citations of 2.3 B4 (a) are written `\by{CD}{1,2}` and `\by{or}{3}`-style text justifications naming the result (`check_fitch.py` notes them as text, unchecked, as it does Chapter 2's existing "or commutes" line 03:327); the solution names the two examples in prose.
 - `lem-weakening-cut` is moved by cutting its block (08:30-40), the "In words" paragraph (08:42), the Idea (08:44-46) and the proof (08:48-66) from `08-completeness.md`; S4 rebuilds the volume and checks that 4.8's and 8.4's citations resolve to 2.3 and that `ch04` still builds with the lead and closing paragraphs left for `ch04-deepen.md` (they cite the label and read correctly as backward references until rewritten).
 - The R heading of 2.5 is `### R. Review`, after `### C.`, as in 1.6 and 3.1.
-- After drafting: the forward-pointer grep of §6.1; the G10 grep (`not derivable`, `cannot be derived`, `no derivation`, `without proof`, `must not be`, `nothing follows`) on main lines, folds and solutions, where only the four places listed after §8 S19 may match; separately, a read-each-hit grep for `needs` and `need` (many hits are legitimate rule descriptions, e.g. 01:184 "→I needs the box to end on Q", 04:50, 05:455), which passes when no hit asks or claims whether a sequent *needs* a rule (such a sentence is reworded to where a derivation *uses* it); and a grep for `consistent`, `satisfiable`, `valid`, `\\models`, `\\taut` (no match).
+- After drafting: the forward-pointer grep of §6.1; the G10 grep (`not derivable`, `cannot be derived`, `no derivation`, `without proof`, `must not be`, `nothing follows`) on main lines, folds and solutions, where only the four places listed after §8 S19 may match; separately, a read-each-hit grep for `needs` and `need` (many hits are legitimate rule descriptions, e.g. 01:184 "→I needs the box to end on Q", 04:50, 05:455), which fails only on a hit that asks whether a sequent needs a rule or claims that it cannot do without one (such a sentence is reworded to where a derivation *uses* it); positive statements pass ("needs no RAA", "needs only the earlier rules", a rule's own needs); and a grep for `consistent`, `satisfiable`, `valid`, `\\models`, `\\taut` (no match).
 
 ---
+
+**Frozen after S2 (round 2 recheck: one minor, refuted by its skeptic; its wording clarified here).**
 
 ## 11. S2 replies (round 1)
 
