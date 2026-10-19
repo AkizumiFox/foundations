@@ -8862,6 +8862,17 @@ items:
       points to. Items 3, 8 and 10 do stop at t5 as claimed. Fix: reword t5 as ''is a ∨ available that
       has not been split in this box?'' (or say so in the paragraph), or drop the claim that the chart
       stops for item 14.'
+  - stage: S7r
+    verdict: correct
+    by: rereferee
+    hash: fdb92f921f28
+    date: '2026-10-19'
+    model: claude-opus-5-5
+    evidence: 'vations, 0 errors. The chart paragraph''s claims about items 3, 8, 10 and 14 (07:963) now
+      hold under the revised t5 (''unsplit ∨''). Each of these stops at t5, and then the named move finishes
+      it: make the hypothesis the goal for items 3, 8 and 10, make one side the goal for item 14. The
+      solution-14 commentary (07:1763) agrees with the derivation: the split comes first, and line 10
+      needs the box''s S.'
 - key: exr-disjunction-and-cases-c1
   kind: exr
   file: 07-disjunction-and-cases.md
