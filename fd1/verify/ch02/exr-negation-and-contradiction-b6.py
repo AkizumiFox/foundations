@@ -15,14 +15,14 @@ P, Q, R = V("P"), V("Q"), V("R")
 CLAIMS = {
     "a": ([P], Not(And(Not(P), Q)), "derive"),
     "b": ([Not(And(P, Q))], Not(P), "break"),
-    "c": ([Imp(Or(P, Q), Not(P))], Not(P), "derive"),
+    "c": ([Imp(And(P, Q), Not(P)), Q], Not(P), "derive"),
     "d": ([Imp(P, Imp(Q, R)), Not(R)], Not(And(P, Q)), "derive"),
     "e": ([Not(Q)], Not(Imp(P, Q)), "break"),
     "f": ([Imp(P, Q), Imp(P, Not(Q))], Not(P), "derive"),
     "g": ([Not(Not(And(P, Q)))], Not(Not(P)), "derive"),
     "h": ([Not(Not(P))], Not(Not(And(P, Q))), "break"),
 }
-QUOTED = {"b": 1, "e": 0, "h": 1, "lines": {"a": 5, "c": 6, "d": 9, "f": 7, "g": 8}}
+QUOTED = {"b": 1, "e": 0, "h": 1, "lines": {"a": 5, "c": 7, "d": 9, "f": 7, "g": 8}}
 for k, (prem, concl, verdict) in CLAIMS.items():
     assert classically_valid(prem, concl) == (verdict == "derive"), k
     if verdict == "derive":
@@ -40,14 +40,15 @@ D = {
   \have {5} {\neg(\neg P \wedge Q)} \ni{2-4}
 """,
 "c": r"""
-  \hypo {1} {(P \vee Q) \to \neg P}
+  \hypo {1} {(P \wedge Q) \to \neg P}
+  \hypo {2} {Q}
   \open
-  \hypo {2} {P}
-  \have {3} {P \vee Q} \oi{2}
-  \have {4} {\neg P} \ie{1,3}
-  \have {5} {\bot} \ne{2,4}
+  \hypo {3} {P}
+  \have {4} {P \wedge Q} \ai{3,2}
+  \have {5} {\neg P} \ie{1,4}
+  \have {6} {\bot} \ne{3,5}
   \close
-  \have {6} {\neg P} \ni{2-5}
+  \have {7} {\neg P} \ni{3-6}
 """,
 "d": r"""
   \hypo {1} {P \to (Q \to R)}

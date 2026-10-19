@@ -121,7 +121,7 @@ We are **stuck** at a gap when the goal-directed moves give nothing (the goal is
 
 *When stuck, assume the negation of the goal, and hunt for a clash.*
 
-The move is a last resort, not a first one: try every other move first. Three of the derivations under the next heading reach the moment of being stuck, and their Ideas say where.
+The move is a last resort, not a first one: try every other move first. Four of the derivations under the next heading reach the moment of being stuck, and their Ideas say where.
 
 **When \( \rulename{RAA} \) earns its place.** Look ahead at where the classical step enters the derivations below: a goal that is a letter with nothing to build it (@prp-double-negation), and a disjunction neither of whose sides follows from what is available, each side's step breaking on its own (@prp-excluded-middle, De Morgan's law (d)). Premises that say little and a goal that decides something: that is where to expect \( \rulename{RAA} \). Exercise B6 meets a third such disjunction.
 
@@ -202,7 +202,7 @@ $\begin{nd}
 \end{center}
 ```
 
-It is legal and pointless, since line 1 already is the goal. It is the purest case of a pattern that turns up in real proofs: a contradiction box whose assumption does nothing except clash with a line we already had. The warnings at the end of this section return to it.
+It is legal and pointless, since line 1 already is the goal. It is the purest case of a pattern that turns up in real proofs: a contradiction box whose assumption does nothing except clash with a line we already had. A warning later in this section, after @exm-raa-zero, returns to it.
 
 **Nonexample by minimal change.** Change only the last line of (a), from \( \neg\neg P \) to \( P \), keeping the justification \( \rulename{\neg I}\ \lines{2}{3} \). Lines 1–3 still check. What fails is the conclusion of \( \rulename{\neg I} \), which must be the negation of the box's assumption, here \( \neg\neg P \). To write \( P \), the justification must be \( \rulename{RAA} \).
 :::
@@ -987,7 +987,7 @@ Suppose, for a contradiction, that \( x \ne 0 \). Since \( x \ge 0 \) and \( x \
 :::
 
 1. "Suppose, for a contradiction, that \( x \ne 0 \)." [An \( \rulename{RAA} \) box opens, with \( \neg(x = 0) \), the exact negation of the goal \( x = 0 \).]
-2. "Since \( x \ge 0 \) and \( x \ne 0 \), we have \( x > 0 \)." [\( x \ge 0 \) means \( x = 0 \vee x > 0 \), and the box's assumption refutes the left side, so \( \rulename{DS} \) (@prp-disjunctive-syllogism) gives \( x > 0 \).]
+2. "Since \( x \ge 0 \) and \( x \ne 0 \), we have \( x > 0 \)." [\( x \ge 0 \) is written out \( (x > 0) \vee (x = 0) \) (the box of Section 1.5), and the box's assumption refutes the right side. So \( \rulename{\vee E} \) with that case impossible (@exm-impossible-case), which is \( \rulename{DS} \) (@prp-disjunctive-syllogism) with the two sides exchanged, gives \( x > 0 \).]
 3. "Then \( \varepsilon \coloneqq x/2 \) is a real number with \( \varepsilon > 0 \)." [School algebra.]
 4. "So the hypothesis applies to it and gives \( x \le x/2 \)." [The hypothesis is about **every** \( \varepsilon > 0 \); applying it to one is a step about "every", used as ordinary reasoning (the note at the start of this chapter).]
 5. "… gives \( x/2 \le 0 \), and … \( x \le 0 \)." [School algebra.]
@@ -1012,7 +1012,7 @@ The proof of @thm-sqrt2-irrational assumes the positive statement \( r^2 = 2 \) 
 :::
 
 ::: {.second-reading title="RAA is never needed to finish a negation"}
-For one kind of goal the new rule is never needed at the last step. Suppose the goal is itself a negation \( \neg\psi \). An \( \rulename{RAA} \) box for it opens with \( \neg\neg\psi \). Replace it by a \( \rulename{\neg I} \) box that opens with \( \psi \); inside it, derive \( \neg\neg\psi \) from \( \psi \) by the three lines of @exm-double-negation-introduction (a box on \( \neg\psi \) that clashes with \( \psi \)); then continue as the \( \rulename{RAA} \) box did, citing that line wherever the \( \rulename{RAA} \) box cited its assumption. The box still ends in \( \bot \), and \( \rulename{\neg I} \) closes it with \( \neg\psi \). So the **last** step of a derivation of a negation never needs \( \rulename{RAA} \), though steps inside its box still may. \( \rulename{RAA} \) earns its place on the other goals.
+For one kind of goal the new rule is never needed at the last step. Suppose the goal is itself a negation \( \neg\psi \). An \( \rulename{RAA} \) box for it opens with \( \neg\neg\psi \). Replace it by a \( \rulename{\neg I} \) box that opens with \( \psi \); inside it, derive \( \neg\neg\psi \) from \( \psi \) by the three lines of @exm-double-negation-introduction (a) (a box on \( \neg\psi \) that clashes with \( \psi \)); then continue as the \( \rulename{RAA} \) box did, citing that line wherever the \( \rulename{RAA} \) box cited its assumption. The box still ends in \( \bot \), and \( \rulename{\neg I} \) closes it with \( \neg\psi \). So the **last** step of a derivation of a negation never needs \( \rulename{RAA} \), though steps inside its box still may. \( \rulename{RAA} \) earns its place on the other goals.
 
 When \( Q \) is itself a negation, the inner goal in @prp-contrapositive-converse is a negation, and its \( \rulename{RAA} \) can be replaced by \( \rulename{\neg I} \) in this way.
 :::
@@ -1596,7 +1596,7 @@ $\begin{nd}
 \end{center}
 ```
 
-(a) needs no classical line, although its goal is a disjunction, because each case of the premise hands over one side. (c) and (h) are disjunctions whose sides break on their own, the place "When \( \rulename{RAA} \) earns its place" points to, and the answers use both classical tools there: (c) decides a letter first with \( \rulename{LEM} \), as @prp-implication-as-disjunction (b) does, but the letter is \( Q \), a side of the goal, not \( P \); (h) assumes the negation of the goal. In (f) the classical line closes a box whose goal is a letter, \( P \) from \( \neg Q \), as in @prp-double-negation, the other case that paragraph names; the box \( \lines{2}{10} \) of (f) has no classical line. (b), (d) and (g) are look-alikes. Worked examples of these types: @prp-excluded-middle, @prp-de-morgan (d), Exercise C3.
+(a) needs no classical line, although its goal is a disjunction, because each case of the premise hands over one side. (c) and (h) are disjunctions whose sides break on their own, the place "When \( \rulename{RAA} \) earns its place" points to, and the answers use both classical tools there: (c) decides a letter first with \( \rulename{LEM} \), as @prp-implication-as-disjunction (b) does, but the letter is \( Q \), a side of the goal, not \( P \); (h) assumes the negation of the goal. In (f) the classical line closes a box whose goal is a letter, \( P \) from \( \neg Q \), as in @prp-double-negation, the other case that paragraph names; the box \( \lines{2}{10} \) of (f) has no classical line. (b), (d) and (g) are look-alikes. Worked examples of these types: @prp-excluded-middle, @prp-de-morgan (d), @prp-implication-as-disjunction (b), @prp-contrapositive-converse.
 
 **Marking scheme.** (16 points) For each claim: 1 for the verdict; 1 for a derivation every line of which checks, with the classical line correctly marked, or for a choice of statements and one value of \( x \) at which **every** member of the counterexample set is true. Fatal errors (0 for the claim): a "break" at which a premise fails; a classical line not marked, or a non-classical line marked as classical.
 :::
@@ -1782,7 +1782,7 @@ A second correct route first derives \( P \vee \neg P \) by the eight lines of @
 - 2: \( \rulename{RAA} \) closes the outer box, and it is named as the classical step.
 - 1: every citation is available.
 
-The second route earns the same points, step for step: 2 for the written-out excluded middle opened correctly (its \( \rulename{RAA} \) box on \( \neg(P \vee \neg P) \)); 3 for the box on \( P \) in the case \( \neg P \), closed by \( \rulename{\bot E} \); 2 for \( \rulename{{\to}I} \), the two \( \rulename{\vee I} \) lines, and the \( \rulename{\vee E} \); 2 for naming the \( \rulename{RAA} \) inside excluded middle as the classical step; 1 for availability. Fatal errors (0 for the step): opening the outer box with anything but \( \neg(P \vee (P \to Q)) \); closing the outer box by \( \rulename{\neg I} \) (that gives \( \neg\neg(P \vee (P \to Q)) \)); a line justified by \( \rulename{\neg\neg E} \) or \( \rulename{LEM} \) taken as a rule, which the item excludes.
+The second route earns the same points, step for step: 2 for the written-out excluded middle opened correctly (its \( \rulename{RAA} \) box on \( \neg(P \vee \neg P) \)); 3 for the box on \( P \) in the case \( \neg P \), ending with \( Q \) by \( \rulename{\bot E} \); 2 for \( \rulename{{\to}I} \), the two \( \rulename{\vee I} \) lines, and the \( \rulename{\vee E} \); 2 for naming the \( \rulename{RAA} \) inside excluded middle as the classical step; 1 for availability. Fatal errors (0 for the step): opening the outer box with anything but \( \neg(P \vee (P \to Q)) \); closing the outer box by \( \rulename{\neg I} \) (that gives \( \neg\neg(P \vee (P \to Q)) \)); a line justified by \( \rulename{\neg\neg E} \) or \( \rulename{LEM} \) taken as a rule, which the item excludes.
 :::
 
 ::: {#exr-reductio-and-classical-rules-c4}
@@ -1854,13 +1854,19 @@ The \( \rulename{\neg I} \) box never uses its assumption; the fold "Edge cases 
 ::: {#exr-reductio-and-classical-rules-r1}
 [R1]
 
-Let \( n \) be an integer. Prove that \( n^2 \ne 4n + 2 \), naming the rule at each logical step.
+Let \( n \) be an integer. Prove that \( n^2 + 3n \) is even, naming the rule at each logical step.
 :::
 
 ::: {.solution}
-The goal is \( \neg(n^2 = 4n + 2) \), a negation, so we use \( \rulename{\neg I} \). Suppose \( n^2 = 4n + 2 \) [assumption for \( \rulename{\neg I} \)]. Then \( n^2 = 2(2n + 1) \) is even, so \( n \) is even by @thm-square-even-implies-even [\( \rulename{{\to}E} \)]; write \( n = 2k \) with \( k \) an integer. Then \( 4k^2 = 8k + 2 \), so \( 2k^2 = 4k + 1 \). The left side is even and the right side odd, so \( 2k^2 \) is both even and odd [\( \rulename{\wedge I} \)], and no integer is both [\( \rulename{\neg E} \) with (E2)]. Hence \( n^2 \ne 4n + 2 \) [\( \rulename{\neg I} \)].
+By (E1), \( n \) is even or \( n \) is odd, and we argue by cases \( [\rulename{\vee E}] \).
 
-There is no \( \rulename{RAA} \) here: the box opens with the unnegated equation, and the conclusion is its negation.
+*Case \( n \) even.* Write \( n = 2k \) with \( k \) an integer. Then \( n^2 + 3n = 4k^2 + 6k = 2(2k^2 + 3k) \), which is even.
+
+*Case \( n \) odd.* Write \( n = 2k + 1 \) with \( k \) an integer. Then \( n^2 + 3n = (4k^2 + 4k + 1) + (6k + 3) = 2(2k^2 + 5k + 2) \), which is even.
+
+Both cases reach the goal, so \( n^2 + 3n \) is even \( [\rulename{\vee E}] \).
+
+The method is Chapter 1's case split (@def-rules-disjunction), used as in @exm-abs-product-cases, here on the parity of \( n \). No rule of this chapter is needed: neither case clashes, and each ends in the goal.
 :::
 
 ::: {#exr-reductio-and-classical-rules-r2}
@@ -1875,7 +1881,7 @@ Call an integer \( n \) **balanced** if \( n \) is even exactly when \( n \) is 
 :::
 
 ::: {.solution}
-(a) \( E \leftrightarrow T \): a definition's "if" is read as an iff (Section 2.4). At \( 4 \), \( E \) is true and \( T \) false: not balanced. At \( 6 \), both are true: balanced. At \( 7 \), both are false: balanced. At \( 9 \), \( E \) is false and \( T \) true: not balanced.
+(a) \( E \leftrightarrow T \): a definition's "if" is read as an iff (Section 2.4, as in @exm-strictly-increasing-both-ways; the rules are @def-rules-biconditional). At \( 4 \), \( E \) is true and \( T \) false: not balanced. At \( 6 \), both are true: balanced. At \( 7 \), both are false: balanced. At \( 9 \), \( E \) is false and \( T \) true: not balanced.
 
 (b) Left to right; the classical line is line 2, \( \rulename{LEM} \) (@prp-excluded-middle as a derived rule):
 
@@ -1951,7 +1957,7 @@ The classical line of these derivations is in the left-to-right direction, the \
 ::: {#exr-reductio-and-classical-rules-r3}
 [R3]
 
-Let \( n \) be an integer, \( P \): "\( n \) is a multiple of \( 6 \)", \( Q \): "\( n \) is even", so that \( P \to Q \) is true. For each statement, say whether it follows from \( P \to Q \) by the rules of Chapters 1 and 2, naming the result that gives it, or break the step from \( P \to Q \) to it at a value of \( n \): (i) \( \neg Q \to \neg P \); (ii) \( Q \to P \); (iii) \( \neg P \to \neg Q \); (iv) \( \neg P \vee Q \); (v) \( P \to (P \wedge Q) \); (vi) \( P \leftrightarrow Q \). Which of the derivations you cite uses a classical line (\( \rulename{RAA} \), \( \rulename{\neg\neg E} \) or \( \rulename{LEM} \))?
+Let \( n \) be an integer, \( P \): "\( n \) is a multiple of \( 6 \)", \( Q \): "\( n \) is even", so that \( P \to Q \) is true. For each statement, say whether it follows from \( P \to Q \) by the rules so far, naming the result that gives it, or break the step from \( P \to Q \) to it at a value of \( n \): (i) \( \neg Q \to \neg P \); (ii) \( Q \to P \); (iii) \( \neg P \to \neg Q \); (iv) \( \neg P \vee Q \); (v) \( P \to (P \wedge Q) \); (vi) \( P \leftrightarrow Q \). Which of the derivations you cite uses a classical line (\( \rulename{RAA} \), \( \rulename{\neg\neg E} \) or \( \rulename{LEM} \))?
 :::
 
 ::: {.solution}
@@ -1986,16 +1992,19 @@ The breaks are of the step with this \( P \) and \( Q \): at \( n = 2 \) the pre
 
 <!-- dependency ledger
 exm-raa-at-most-one (example): x > 1 gives x > 0 and x^2 > x (multiply x > 1 by x > 0); "x <= 1 fails" is x > 1 | school algebra, AN1.1 (promised); the order convention of F1.2 s01; checked by verify/ch02/exm-raa-at-most-one.py
+exm-raa-at-most-one (claim): in the first Quick check after def-rule-raa, x >= 0 is not(x < 0) | the order convention of F1.2 s01
 exm-raa-at-most-one (example): in the derivation after def-rule-raa and its instances of parts 2 and 3, line 3 "algebra 2" (not x <= 1 gives x > 1) and line 4 "algebra 3" (x > 1 gives x^2 > x, written not(x^2 <= x)) | school algebra, AN1.1 (promised); the order convention of F1.2 s01
 def-rule-raa (claim): no derivation of P from not-not-P uses only the rules of F1.1 and s01-s04 | F1.3 (promised; thm-raa-independent, optional there); stated only as a claim "which no search can settle", with the Looking-ahead box saying where it is proved; the motivation for RAA, nothing proved from it
 def-rule-raa (claim): in the fold "RAA is never needed to finish a negation", the last step of a derivation of a negation never needs RAA (replace the RAA box on not-not-psi by a not-I box on psi) | inline (argued in the paragraph, using exm-double-negation-introduction)
+prp-excluded-middle (claim): every integer is even or odd; every real is >= 0 or < 0 | (E1) of F1.2 s01; school algebra, AN1.1 (promised); motivation only
 prp-excluded-middle (idea): P false breaks the step to P, P true breaks the step to not-P | read off Section 1.1's test (breaking); motivation only
+prp-de-morgan (claim): not(0 <= x and x <= 1) iff x < 0 or x > 1 | school algebra, AN1.1 (promised); the order convention of F1.2 s01; motivation only
 prp-de-morgan (idea): the step from not(P and Q) to not-P breaks (P true, Q false), and the step to not-Q breaks (P false, Q true) | read off Section 1.1's test (breaking); motivation only, the proof does not use it
 prp-de-morgan (claim): in the fold "De Morgan (d) by excluded middle", the LEM route to (d) is 11 lines | described inline; nothing depends on it
 thm-classical-rules-interderivable (proof): replacing a line by a fragment keeps every citation available and the premises and last line unchanged | inline (argued in the proof)
 exm-raa-zero (example): x >= 0 and x != 0 give x > 0; x/2 > 0 for x > 0; subtracting x/2 and multiplying by 2 preserve <= | school algebra, AN1.1 (promised)
 exm-raa-zero (example): the hypothesis "x <= eps for every eps > 0" applies to eps = x/2 | F1.4 (promised; rules for "every"), used as ordinary reasoning under the index note; the example illustrates the shape of RAA and nothing cites it for its logic
-exm-raa-zero (example): in the rule-by-rule reading, x >= 0 read as (x = 0 or x > 0), and x > 0 read as not(x <= 0) | school algebra (trichotomy), AN1.1 (promised); the order convention of F1.2 s01
+exm-raa-zero (example): in the rule-by-rule reading, x >= 0 written out (x > 0 or x = 0), and x > 0 read as not(x <= 0) | the box of F1.1 §06 (Section 1.5); the order convention of F1.2 s01; the vE split with an impossible case is exm-impossible-case (cited), DS with the sides exchanged
 exm-raa-zero (claim): in the x^3 comparison of "Not-I or RAA?" after it, x >= 0 implies x^3 = x*x*x >= 0; "x^3 not >= 0" is x^3 < 0 and "x not >= 0" is x < 0 | school algebra, AN1.1 (promised); the order convention of F1.2 s01; checked by verify/ch02/exm-raa-at-most-one.py
 exm-raa-zero (claim): in the Quick check after "Not-I or RAA?", 15 = 3 * 5 is not prime | arithmetic
 exm-reductio-and-classical-rules-instances (example): in the Not-allowed WRONG/RIGHT pair after it, (x > 2 or x < -2) implies x^2 > 4 for every real x; at x = 0, not(x^2 > 4) holds and x > 2 fails | school algebra, AN1.1 (promised); checked by verify/ch02/exm-reductio-and-classical-rules-instances.py
@@ -2010,7 +2019,7 @@ exr-reductio-and-classical-rules-b6 (solution): Chapter 4 states, without proof,
 exr-reductio-and-classical-rules-c2 (solution): P or Q |- P breaks (P false, Q true) | read off Section 1.1's test (breaking); the find-the-error verdict does not depend on it
 exr-reductio-and-classical-rules-c3 (solution): P false breaks the step to P; P true and Q false break the step to P -> Q (the search's motivation) | read off Section 1.1's test (breaking); motivation only, the derivation does not depend on it
 exr-reductio-and-classical-rules-c4 (solution): in (c), replacing the uses of bot-E and not-I one at a time, innermost boxes first, terminates and uses neither dropped rule | inline (each fragment uses RAA, not-E and repetition only)
-exr-reductio-and-classical-rules-r1 (solution): n^2 = 4n + 2 = 2(2n + 1) is even; n = 2k gives 4k^2 = 8k + 2, so 2k^2 = 4k + 1, even against odd | thm-square-even-implies-even (cited), (E2) of F1.2 s01; arithmetic checked by verify/ch02/exr-reductio-and-classical-rules-r1.py
+exr-reductio-and-classical-rules-r1 (solution): n^2 + 3n = 2(2k^2 + 3k) for n = 2k and 2(2k^2 + 5k + 2) for n = 2k + 1 | (E1) of F1.2 s01; def-rules-disjunction and exm-abs-product-cases (F1.1, cited); arithmetic checked by verify/ch02/exr-reductio-and-classical-rules-r1.py; naming k in n = 2k, n = 2k + 1 | F1.4 (promised; def-rules-existential), used as ordinary reasoning under the index note
 exr-reductio-and-classical-rules-r2 (solution): a definition's "if" read as an iff; 4, 6, 7, 9 against "even" and "multiple of 3" | F1.2 s04 (the definition convention); arithmetic checked by verify/ch02/exr-reductio-and-classical-rules-r2.py
 exr-reductio-and-classical-rules-r3 (solution): a multiple of 6 is 6k = 2(3k), so even; n = 2 is even and not a multiple of 6 | arithmetic; checked by verify/ch02/exr-reductio-and-classical-rules-r3.py
 -->

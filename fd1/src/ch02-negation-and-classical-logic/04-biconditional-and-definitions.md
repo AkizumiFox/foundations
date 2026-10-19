@@ -4,7 +4,7 @@ One connective is still without rules: "if and only if". Theorems say "\( n \) i
 
 ## The rules for "if and only if"
 
-"\( P \) if and only if \( Q \)" combines "\( P \) if \( Q \)", which is \( Q \to P \), with "\( P \) only if \( Q \)", which is \( P \to Q \), as @exr-statements-and-connectives-c1 explains. A proof of it travels both ways; a use of it, either way. An implication is proved by a box, opened on the hypothesis and closed on the conclusion (@def-rules-implication); an "if and only if" needs two such boxes.
+"\( P \) if and only if \( Q \)" combines "\( P \) if \( Q \)", which is \( Q \to P \), with "\( P \) only if \( Q \)", which is \( P \to Q \), as Section 1.1 explained. A proof of it travels both ways; a use of it, either way. An implication is proved by a box, opened on the hypothesis and closed on the conclusion (@def-rules-implication); an "if and only if" needs two such boxes.
 
 *An "if and only if" is two implications, and proving it takes two proofs.*
 
@@ -273,7 +273,7 @@ Show that \( P \leftrightarrow Q \vdash \neg P \leftrightarrow \neg Q \).
 :::
 
 ::: {.solution}
-*Idea.* The goal is an iff, so there are two boxes, one opened by \( \neg P \) and reaching \( \neg Q \), the other the reverse. Each box's goal is a negation, so each contains a \( \rulename{\neg I} \) box: the goal-directed move applied twice, one inside the other. Inside the inner box, \( \rulename{{\leftrightarrow}E} \) crosses from one side of the premise to the other, and the result clashes with the outer assumption. Each half is part (b) of @exm-iff-symmetric, run inside a box.
+*Idea.* The goal is an iff, so there are two boxes, one opened by \( \neg P \) and reaching \( \neg Q \), the other the reverse. Each box's goal is a negation, so each contains a \( \rulename{\neg I} \) box: the goal-directed move applied twice, one inside the other. Inside the inner box, \( \rulename{{\leftrightarrow}E} \) crosses from one side of the premise to the other, and the result clashes with the outer assumption. The second half is part (b) of @exm-iff-symmetric, run inside a box; the first is its mirror image, with the other form of \( \rulename{{\leftrightarrow}E} \).
 
 The outer boxes (left), then a \( \rulename{\neg I} \) box inside each (right).
 
@@ -506,6 +506,7 @@ Here are equivalences derived so far. Each row gives two derived rules (@def-der
 | \( (P \to R) \wedge (Q \to R) \dashv\vdash (P \vee Q) \to R \) | @exm-cases-on-hypothesis and @exm-or-hypothesis-split |
 | \( P \leftrightarrow Q \dashv\vdash (P \to Q) \wedge (Q \to P) \) | @prp-iff-two-implications |
 | \( P \leftrightarrow Q \dashv\vdash Q \leftrightarrow P \) | @exm-iff-symmetric (a), with the letters exchanged |
+| \( \neg\neg\neg P \dashv\vdash \neg P \) | @exm-triple-negation, and @exm-double-negation-introduction (a) with \( \neg P \) for \( P \) |
 
 The fourth row is distributivity of \( \wedge \) over \( \vee \) as a provable equivalence. Some familiar laws are not in the table, because the text has derived them in one direction only; associativity of \( \vee \) is one (@exm-disjunction-regroup).
 
@@ -616,7 +617,7 @@ This is a convention of mathematical language, not a rule of logic. Some books w
 (c) Suppose \( h \) were strictly increasing \( [\text{assumption for } \rulename{\neg I}] \). By the definition read from left to right, as in (b), \( -1 < 0 \) would give \( h(-1) < h(0) \), that is, \( 1 < 0 \), which is false \( [\rulename{\neg E}] \). So \( h \) is not strictly increasing \( [\rulename{\neg I}] \).
 :::
 
-Part (a) uses the definition from the condition to the term; parts (b) and (c) use it from the term to the condition. A definition read only as an "if" would permit (a) and nothing else.
+Part (a) uses the definition from the condition to the term; parts (b) and (c) use it from the term to the condition. A definition read only as an "if" would permit (a) and nothing else. Because the term means exactly the condition, a candidate condition is judged against the intended meaning. Had the definition said "\( x < y \) implies \( f(x) \le f(y) \)", it would be too broad: the constant function \( f(x) = 0 \) would count as strictly increasing. Had it said "\( x < y \) implies \( f(y) - f(x) \ge 1 \)", it would be too narrow: \( f(x) = x \) would not count, since \( 0 < \frac{1}{2} \) and \( \frac{1}{2} - 0 < 1 \).
 
 ::: {.warning}
 The convention is for **definitions only**. In a theorem, "if" means "if", one direction. The theorem "if \( 6 \mid n \), then \( n \) is even" is true for every integer \( n \): \( n = 6k = 2(3k) \). Its converse, "if \( n \) is even, then \( 6 \mid n \)", breaks at \( n = 4 \). Reading a theorem's "if" as "iff" means proving its converse without a proof, which is the error of Argument B in Section 1.1.
@@ -707,10 +708,10 @@ $\begin{nd}
 \end{center}
 ```
 
-Now replace \( P \), \( Q \), \( R \) throughout by \( Q \), \( R \), \( P \) respectively. The premises \( P \to Q \), \( Q \to R \), \( R \to P \) become \( Q \to R \), \( R \to P \), \( P \to Q \), the same three statements in a different order, and every line remains justified by the same rule. So the renamed derivation derives \( Q \leftrightarrow R \) from the same premises. Rotating once more gives \( R \leftrightarrow P \). This proves the proposition.
+Now replace \( P \), \( Q \), \( R \) throughout by \( Q \), \( R \), \( P \) respectively. The premises \( P \to Q \), \( Q \to R \), \( R \to P \) become \( Q \to R \), \( R \to P \), \( P \to Q \), the same three statements in a different order, and every line remains justified by the same rule, since the letters stood for any statements (as in clause 2 after @def-derived-rule). So the renamed derivation derives \( Q \leftrightarrow R \) from the same premises. Rotating once more gives \( R \leftrightarrow P \). This proves the proposition.
 :::
 
-In a cycle every condition reaches every other along the arrows; longer cycles work the same way.
+In a cycle every condition reaches every other along the arrows; longer cycles work the same way, with longer chains of \( \rulename{{\to}E} \) in the boxes.
 
 ::: {.warning}
 Two arrows back and forth are not a cycle through three conditions. Proving (a) \( \Rightarrow \) (b) and (b) \( \Rightarrow \) (a) shows that (a) and (b) are equivalent and says nothing about (c): no arrow enters or leaves it. For a real number \( x \), take (a) "\( x > 0 \)", (b) "\( 2x > 0 \)", and (c) "\( x > 1 \)". Both arrows between (a) and (b) are true, and (c) is not equivalent to them: \( x = \frac{1}{2} \) satisfies (a) and (b) but not (c). Every condition in the list must lie on the cycle.
@@ -885,7 +886,7 @@ The parts run from one step, through a missing line, a justification column and 
 8. Lines 1 \( P \leftrightarrow Q \), 2 \( \neg P \). Does \( \rulename{{\leftrightarrow}E} \) give anything?
 9. A box \( \lines{2}{4} \) runs from \( P \) to \( Q \); a box \( \lines{5}{7} \) from \( Q \) to \( P \), and line 6 cites line 3. Is "\( P \leftrightarrow Q \) — \( \rulename{{\leftrightarrow}I} \) 2–4, 5–7" correct?
 10. One box runs from \( P \) to \( Q \). What does it prove?
-11. True or false: \( P \dashv\vdash Q \) says that \( \vdash P \to Q \).
+11. True or false: \( P \dashv\vdash Q \) says no more than \( \vdash P \to Q \).
 12. A proof that (a), (b), (c) are equivalent proves (a) \( \Rightarrow \) (b), (b) \( \Rightarrow \) (a) and (b) \( \Rightarrow \) (c). Is it complete?
 13. Derive \( P \leftrightarrow Q, \ P \vdash Q \wedge P \).
 14. Derive \( P \leftrightarrow Q, \ Q \leftrightarrow R, \ R \vdash P \).
@@ -914,7 +915,7 @@ The parts run from one step, through a missing line, a justification column and 
 
 (j) \( P \to Q \), by \( \rulename{{\to}I} \); not \( P \leftrightarrow Q \).
 
-(k) False: it says \( P \vdash Q \) and \( Q \vdash P \), two derivations (equivalently \( \vdash P \leftrightarrow Q \)).
+(k) False: it says \( P \vdash Q \) and \( Q \vdash P \), two derivations (equivalently \( \vdash P \leftrightarrow Q \)); \( \vdash P \to Q \) is only half of it.
 
 (l) No: no arrow leaves (c). Add (c) \( \Rightarrow \) (a) or (c) \( \Rightarrow \) (b).
 
@@ -1103,7 +1104,7 @@ You may use @thm-odd-iff-square-odd and the fact that \( k(k - 1) \) is even for
 :::
 
 ::: {.solution}
-We prove the cycle (i) \( \Rightarrow \) (ii) \( \Rightarrow \) (iii) \( \Rightarrow \) (iv) \( \Rightarrow \) (i). It suffices by @prp-equivalence-cycle: a cycle of four works as the cycle of three does, since every condition reaches every other along the arrows.
+We prove the cycle (i) \( \Rightarrow \) (ii) \( \Rightarrow \) (iii) \( \Rightarrow \) (iv) \( \Rightarrow \) (i). It suffices by the argument of @prp-equivalence-cycle: for any two conditions, each reaches the other by a chain of \( \rulename{{\to}E} \) along the arrows, inside the two boxes of \( \rulename{{\leftrightarrow}I} \).
 
 *(i) \( \Rightarrow \) (ii).* If \( n = 2k + 1 \), then \( n + 1 = 2(k + 1) \).
 
@@ -1115,10 +1116,10 @@ We prove the cycle (i) \( \Rightarrow \) (ii) \( \Rightarrow \) (iii) \( \Righta
 
 (Exercise B3 of Section 1.6 met the fact (i) \( \Rightarrow \) (iii) by another route.)
 
-For the second question: any two implications joining the two pairs, one in each direction, for instance (ii) \( \Rightarrow \) (iii) and (iv) \( \Rightarrow \) (i), the two arrows above that cross between the pairs. With them every condition reaches every other.
+For the second question: (i) \( \Rightarrow \) (iv) and (iv) \( \Rightarrow \) (i). Both are @thm-odd-iff-square-odd, so they cost nothing. Any two implications joining the two pairs, one in each direction, would do, for instance (ii) \( \Rightarrow \) (iii) and (iv) \( \Rightarrow \) (i); with them every condition reaches every other.
 
 **Marking scheme.** (10 points)
-- 1: a cycle through all four conditions, citing @prp-equivalence-cycle or arguing that it suffices.
+- 1: a cycle through all four conditions, citing the argument of @prp-equivalence-cycle or arguing that it suffices.
 - 8: 2 for each of the four arrows.
 - 1: the completion question.
 
@@ -1262,7 +1263,7 @@ $\begin{nd}
 \end{center}
 ```
 
-(b), (d) and (g) are the converses of (a), (c) and (f), and each breaks. (a) is the \( \vee \)-twin of @exr-biconditional-and-definitions-b4, with a case split inside each box.
+(b) and (g) are the converses of (a) and (f), and (d) replaces the conclusion of (c) by its converse; each of the three breaks. (a) is the \( \vee \)-twin of @exr-biconditional-and-definitions-b4, with a case split inside each box.
 
 **Marking scheme.** (16 points) For each claim: 1 for the verdict; 1 for a derivation every line of which checks, or for a choice of statements and one value of \( x \) at which every member of the counterexample set is true. Fatal errors (0 for the claim): a "break" at which a premise fails; RAA in a derivation; a box of \( \rulename{{\leftrightarrow}I} \) citing its sibling.
 :::
@@ -1333,6 +1334,7 @@ Any other cycle through the three conditions earns full marks if each of its arr
 
 <!-- dependency ledger
 prp-provable-equivalence-basics (proof): copying a derivation into a new place (inside extra boxes, numbers shifted) keeps every citation available | inline (the "observation" in the proof), from def-derivation's scope rule and (D3)
+prp-equivalence-cycle (proof): uniform renaming of letters in a derivation keeps every line an instance of its rule | def-rule-schema (consistent replacement), def-derivable, clause 2 after def-derived-rule (cited); the semantic counterpart is F1.3 lem-substitution (4.5)
 prp-provable-equivalence-basics (proof): a one-line derivation consisting of a premise is a derivation | exm-derivations (cited in the fold before the proposition); def-derivation
 def-provable-equivalence (claim): (warning) the form "from P conclude P and Q" breaks at P: "2 > 1", Q: "1 > 2" | arithmetic; a break by a choice of statements (def-counterexample-set), no soundness claim
 def-provable-equivalence (claim): (fold "Edge cases") not-not-P |- P holds once F1.2 §05 adds its rule | F1.2 §05 (prp-double-negation, a later section of this chapter); nothing here depends on it
@@ -1344,6 +1346,7 @@ thm-squares-order (claim): (aftermath) existence of square roots of non-negative
 thm-squares-order (solution): (the quick check after this theorem) a product of reals is zero only if a factor is zero | school algebra, taken as known
 exm-strictly-increasing-both-ways (example): 3 > 0; multiplying/adding inequalities; the quantifier "for all x, y" used informally | school algebra; quantifier steps as ordinary reasoning (the note in this chapter's index)
 exm-strictly-increasing-both-ways (claim): (warning) 6 | n implies n even (n = 6k = 2(3k)); 4 is even and 6 does not divide 4; (quick check) x = -3 has x^2 = 9 > 4 and x < 2 | arithmetic; checked by verify/ch02/exm-strictly-increasing-both-ways.py
+exm-strictly-increasing-both-ways (claim): (after the example) the constant 0 satisfies "x < y implies f(x) <= f(y)"; f(x) = x at 0 < 1/2 has f(1/2) - f(0) = 1/2 < 1 | arithmetic
 exm-unit-interval-tfae (example): x <= 0 or x > 0; x^2 >= 0; dividing an inequality by x > 0 | school algebra, taken as known
 def-rules-biconditional (claim): (fold "The same slip in calculus") differentiable at a implies continuous at a; |h|/h = 1 for h > 0 and -1 for h < 0 | AN1.7 (promised; the fold names no volume); the corner computation inline; nothing depends on it
 exm-biconditional-and-definitions-instances (example): the Not-allowed WRONG/RIGHT pair: at x = 4, x > 5 implies x > 3 is true and (x > 5 iff x > 3) is false | arithmetic; checked by verify/ch02/exm-biconditional-and-definitions-instances.py

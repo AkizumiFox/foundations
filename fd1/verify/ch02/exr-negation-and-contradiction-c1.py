@@ -7,6 +7,9 @@ for m in range(-100, 101):
     for q in range(-100, 101):
         assert ((2 * m) ** 2 == 6 * q * q) == (3 * q * q == 2 * m * m)
         assert 6 * q * q == 2 * (3 * q * q)
+        # marking-scheme alternative: from 3q^2 = 2m^2, q^2 = 2(m^2 - q^2)
+        if 3 * q * q == 2 * m * m:
+            assert q * q == 2 * (m * m - q * q)
 for j in range(-500, 501):
     assert 3 * (2 * j + 1) == 6 * j + 3 == 2 * (3 * j + 1) + 1
 for q in range(-500, 501):

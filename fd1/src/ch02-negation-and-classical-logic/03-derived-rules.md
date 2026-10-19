@@ -128,7 +128,7 @@ This is what a mathematician does when she writes "by Lemma 3": the lemma was pr
 ::: {#def-derived-rule}
 [Derived Rule]
 
-Let \( \varphi_1, \dots, \varphi_n \vdash \psi \) be a sequent, written with statement letters, that has **already been derived** earlier in the book. In a later derivation, replace each letter in \( \varphi_1, \dots, \varphi_n, \psi \) by a statement, the **same** statement for every occurrence of the same letter. If lines \( i_1, \dots, i_n \), all **available** at line \( k \), hold the resulting instances of \( \varphi_1, \dots, \varphi_n \), we may write the resulting instance of \( \psi \) on line \( k \). The justification names the result and cites \( i_1, \dots, i_n \). A sequent used in this way is a **derived rule**. For example, @prp-modus-tollens becomes the rule \( \rulename{MT} \):
+Let \( \alpha_1, \dots, \alpha_n \vdash \beta \) be a sequent, written with statement letters, that has **already been derived** earlier in the book. In a later derivation, replace each letter in \( \alpha_1, \dots, \alpha_n, \beta \) by a statement, the **same** statement for every occurrence of the same letter. If lines \( i_1, \dots, i_n \), all **available** at line \( k \), hold the resulting instances of \( \alpha_1, \dots, \alpha_n \), we may write the resulting instance of \( \beta \) on line \( k \). The justification names the result and cites \( i_1, \dots, i_n \). A sequent used in this way is a **derived rule**. For example, @prp-modus-tollens becomes the rule \( \rulename{MT} \):
 
 ```{=latex}
 % schema
@@ -145,11 +145,11 @@ $\begin{nd}[schema]
 In words: a proved sequent is a new rule. Its premises become the cited lines, its conclusion the line written, and its letters the metavariables of a schema (@def-rule-schema). Read the definition clause by clause.
 
 1. **"Already derived."** The sequent must have been derived **before** the line that uses it: earlier in the book, and never inside its own derivation. A derivation that used a sequent to derive that same sequent would prove nothing.
-2. **"Replace each letter … the same statement for every occurrence."** The letters of a derived sequent stood for arbitrary statements all along (@def-derivable), so they may be replaced by any statements, provided the replacement is **uniform**. From \( (A \wedge B) \to C \) and \( \neg C \), the rule \( \rulename{MT} \) gives \( \neg(A \wedge B) \), with \( \varphi \) replaced by \( A \wedge B \) and \( \psi \) by \( C \).
+2. **"Replace each letter … the same statement for every occurrence."** The letters of a derived sequent stood for arbitrary statements all along (@def-derivable), so they may be replaced by any statements, provided the replacement is **uniform**. From \( (A \wedge B) \to C \) and \( \neg C \), the rule \( \rulename{MT} \) gives \( \neg(A \wedge B) \), with the letters \( P \) and \( Q \) of @prp-modus-tollens (written \( \varphi \) and \( \psi \) in the schema) replaced by \( A \wedge B \) and \( C \).
 3. **"Available at line \( k \)."** The scope rule of @def-derivation still governs every citation. A derived rule may not reach into a closed box, just as a primitive rule may not.
-4. **"The resulting instance of \( \psi \)."** The rule writes the conclusion, with the same replacement, and nothing else. The derived rule does not open or close any box of the derivation that uses it.
+4. **"The resulting instance of \( \beta \)."** The rule writes the conclusion, with the same replacement, and nothing else. The derived rule does not open or close any box of the derivation that uses it.
 
-We give the derived rules of this section short tags: \( \rulename{MT} \) for @prp-modus-tollens, \( \rulename{CP} \) for @prp-contrapositive, and, once it is proved below, \( \rulename{DS} \) for @prp-disjunctive-syllogism. Every other derived sequent is a derived rule too, cited by its name: the five lines written out in @exm-vacuous-square, for instance, are now one line citing @prp-vacuous-implication.
+We give the derived rules of this section short tags: \( \rulename{MT} \) for @prp-modus-tollens, \( \rulename{CP} \) for @prp-contrapositive, and, once it is proved below, \( \rulename{DS} \) for @prp-disjunctive-syllogism. Every other derived sequent is a derived rule too, cited by its name: the four lines 2–5 of @exm-vacuous-square, for instance, are now one line citing @prp-vacuous-implication.
 
 **Left: with the derived rule. Right: written out.**
 
@@ -187,7 +187,7 @@ Lines 1 and 2. On the right, line 4 cites line 1 and line 5 cites line 2.
 :::
 
 ::: {.second-reading title="Why a derived rule adds no power"}
-**Convenience, not power.** A derived-rule line abbreviates a stretch of derivation that we could write out in full. To expand it, repeat each cited line by (D3) of @def-derivation, then copy the derivation of the sequent below the repetitions, with its letters replaced, its premises replaced by the repetitions, and its line numbers shifted. Every citation inside the copy points inside the copy or to a repetition, all in the current box, so every citation is available. The copy's boxes close before its last line, which is the instance of \( \psi \). If the copy itself uses derived rules, expand those lines in the same way; this stops, because each derivation cites only results proved before it. So whatever can be derived with derived rules can be derived with the primitive rules alone.
+**Convenience, not power.** A derived-rule line abbreviates a stretch of derivation that we could write out in full. To expand it, repeat each cited line by (D3) of @def-derivation, then copy the derivation of the sequent below the repetitions, with its letters replaced, its premises replaced by the repetitions, and its line numbers shifted. Every citation inside the copy points inside the copy or to a repetition, all in the current box, so every citation is available. The copy's boxes close before its last line, which is the instance of \( \beta \). If the copy itself uses derived rules, expand those lines in the same way; this stops, because each derivation cites only results proved before it. So whatever can be derived with derived rules can be derived with the primitive rules alone.
 
 The degenerate case is a sequent with nothing done to its premise, \( P \vdash P \), whose derivation is the single premise line (part (a) of @exm-derivations): as a derived rule it copies an available line, which repetition already does. The first use with content is modus tollens proved a second time, with \( \rulename{CP} \) as a rule. The premise \( P \to Q \) invites \( \rulename{CP} \), and its conclusion \( \neg Q \to \neg P \) is an implication whose hypothesis is the other premise.
 
@@ -229,7 +229,7 @@ Let \( \Gamma \) and \( \Delta \) be lists of statements, and let \( \varphi \),
 
 *In words: (a) extra premises never hurt; (b) a statement that has been derived may be used as a premise; (c) a sequent already proved can be applied to statements already derived. Part (c) is @def-derived-rule for whole derivations, outside every box; inside a box, the expansion of the fold "Why a derived rule adds no power" does the same job.*
 
-Cut is the reason a derived rule is legitimate: a derivation that cites a proved sequent as one line, outside every box, becomes a derivation in the primitive rules when the sequent's own derivation is pasted in front of it.
+Chaining and cut are the reason a derived-rule line outside every box is legitimate: the lines it cites lie in no box, so the derivation up to each of them derives it from \( \Gamma \), and (c) then derives the instance of the sequent's conclusion from \( \Gamma \); by (b), the rest of the derivation may use that instance.
 
 ::: {.second-reading title="The proof: pasting derivations"}
 ::: {.idea}
@@ -267,7 +267,7 @@ Part (a), weakening, with \( R \) as the extra premise. Part (c), chaining, with
 
 ## Disjunctive syllogism: the impossible case, filed
 
-The second pattern is the impossible case of Section 2.1. Every integer is even or odd; this one is not odd; so it is even. A disjunction, one side refuted, the other side left.
+The second pattern is the impossible case of Section 2.1. Every integer is even or odd; this one is not even; so it is odd. A disjunction, one side refuted, the other side left.
 
 ::: {#prp-disjunctive-syllogism}
 [Disjunctive Syllogism]
@@ -379,7 +379,7 @@ $\begin{nd}
 \end{center}
 ```
 
-The literal expansion of @def-derived-rule adds a repetition of each cited line and is longer; the natural one cites the available lines directly.
+The literal expansion of the fold "Why a derived rule adds no power" adds a repetition of each cited line and is longer; the natural one cites the available lines directly.
 
 (b) The disjunction \( P \vee Q \) has its left side refuted by \( \neg P \), so \( \rulename{DS} \) gives \( Q \), and then \( Q \to R \) fires.
 
@@ -417,7 +417,7 @@ $\begin{nd}
 \end{center}
 ```
 
-Expanded, line 4 becomes the seven lines of the derivation of @prp-disjunctive-syllogism, with a case split on line 1 and the case \( P \) closed by \( \rulename{\bot E} \).
+Expanded, line 4 becomes lines 3–7 of the derivation of @prp-disjunctive-syllogism (five lines), with a case split on line 1 and the case \( P \) closed by \( \rulename{\bot E} \).
 :::
 
 ::: {.check}
@@ -449,7 +449,7 @@ The claim of @exm-wason-selection (Section 1.3), for one card, is \( E \to R \),
 | The card shows | So we have | What a rule gives | Turn it? |
 |---|---|---|---|
 | \( 6 \) | \( E \) | \( \rulename{{\to}E} \): \( R \); the back must be red | yes: a green back would break the claim |
-| \( 7 \) | \( \neg E \) | nothing: no rule uses \( E \to R \) with \( \neg E \) | no |
+| \( 7 \) | \( \neg E \) | nothing about \( R \): no rule takes \( E \to R \) and \( \neg E \) to \( R \) or to \( \neg R \) | no |
 | red | \( R \) | nothing about \( E \): concluding \( E \) would be affirming the consequent | no |
 | green | \( \neg R \) | \( \rulename{MT} \): \( \neg E \); the number must be odd | yes: an even number would break the claim |
 
@@ -887,7 +887,7 @@ For each claim, derive it with the rules so far, including \( \rulename{MT} \), 
 :::
 
 ::: {.solution}
-(a) Break. Take \( P \): "\( x > 0 \)" and \( Q \): "\( x > 1 \)". At \( x = 2 \), \( P \vee Q \) and \( Q \) are true and \( P \) is true, so the counterexample set \( P \vee Q \), \( Q \), \( \neg\neg P \) is true. This is affirming a disjunct (Section 1.6).
+(a) Break. Take \( P \): "\( x > 0 \)" and \( Q \): "\( x > 1 \)". At \( x = 2 \), \( P \vee Q \) and \( Q \) are true and \( P \) is true, so the counterexample set (@def-counterexample-set) \( P \vee Q \), \( Q \), \( \neg\neg P \) is true. This is affirming a disjunct (Section 1.6).
 
 (b) Derive. The goal is a negation: open a box on \( R \), and manufacture the premise's hypothesis by \( \rulename{\vee I} \).
 
@@ -1042,7 +1042,7 @@ $\begin{nd}
 
 ::: {.enumerate options="label=(\alph*)"}
 1. Every line is an instance of the rule it names. What is wrong?
-2. Give a correct derivation. May line 3 be replaced by a line "\( \neg P \), \( \rulename{MT} \) 1, 2"?
+2. Give a correct derivation. May lines 3 and 4 be replaced by the one line "\( \neg P \), \( \rulename{MT} \) 1, 2"?
 :::
 :::
 
@@ -1069,7 +1069,7 @@ $\begin{nd}
 \end{center}
 ```
 
-Yes: a line "\( \neg P \), \( \rulename{MT} \) 1, 2" inside the box of \( \neg Q \) is legitimate, because @prp-modus-tollens was derived from the primitive rules, without \( \rulename{CP} \). What matters is that the chain of derived rules ends in primitive rules, without a loop.
+Yes: lines 3–4 become the one line "\( \neg P \), \( \rulename{MT} \) 1, 2" inside the box of \( \neg Q \), and line 5 becomes \( \neg Q \to \neg P \), \( \rulename{{\to}I} \) 2–3. This is legitimate, because @prp-modus-tollens was derived from the primitive rules, without \( \rulename{CP} \). What matters is that the chain of derived rules ends in primitive rules, without a loop.
 :::
 
 ::: {#exr-derived-rules-c3}
@@ -1137,7 +1137,7 @@ def-derived-rule (claim): letters of a derived sequent may be replaced uniformly
 def-derived-rule (claim): the figure: line 3 on the left stands for lines 3-6 on the right | read off the two derivations (prp-modus-tollens, cited)
 lem-weakening-cut (proof): renumbering lines and moving boxes as blocks preserves nesting, availability and rule instances | inline (checked clause by clause against def-derivation)
 lem-weakening-cut (proof): a one-line derivation whose only line is a premise is a derivation | def-derivation, def-derivable (a premise line; the last line lies in no box)
-lem-weakening-cut (claim): cut is why a derived-rule line outside every box is legitimate | lem-weakening-cut (c), def-derived-rule (cited)
+lem-weakening-cut (claim): chaining and cut are why a derived-rule line outside every box is legitimate | lem-weakening-cut (b), (c), def-derived-rule (cited)
 exm-derived-rules-instances (example): each row is an instance of its rule's sequent under the stated replacement; the look-alike is not | read off prp-modus-tollens, prp-contrapositive, prp-disjunctive-syllogism (cited)
 exm-modus-tollens-instance (example): x > 2 implies x^2 > 4; x^2 <= 4 is the negation of x^2 > 4; x <= 2 is the negation of x > 2 | school algebra, shown inline
 exm-modus-tollens-instance (example): (the green-card table) a card's color side has one color, so green is not red; the turned cards 6 and green | stated in the table; exm-wason-selection (cited)
@@ -1149,6 +1149,6 @@ exr-derived-rules-a2 (solution): (c) not(x^2 > 0) is x^2 <= 0 and not(x > 0) is 
 exr-derived-rules-b1 (solution): -1 < 0; x^2 = 1 gives x = 1 or x = -1 | school algebra; the second is supplied by the item
 exr-derived-rules-b4 (solution): (a) uses exm-constructive-dilemma and exm-disjunction-first-derivations as derived rules | cited; def-derived-rule
 exr-derived-rules-b4 (solution): a multiple of 4 is even (4k = 2(2k)); a multiple of 9 is a multiple of 3 (9k = 3(3k)); 7 is odd and not a multiple of 4; the look-alike break at x = 0 | school arithmetic, inline; checked by verify/ch02/exr-derived-rules-b4.py
-exr-derived-rules-b5 (solution): the four breaks (x = 2, 1, 0, 1) and the premises true for every x in (g), (h) | order of the reals, inline; checked by verify/ch02/exr-derived-rules-b5.py
+exr-derived-rules-b5 (solution): the four breaks (x = 2, 1, 0, 1) and the premises true for every x in (g), (h) | order of the reals, inline; checked by verify/ch02/exr-derived-rules-b5.py; the breaks make def-counterexample-set (cited) true
 exr-derived-rules-c3 (solution): (2k)^2 = 2(2k^2); (E1), (E2) | computation inline; facts of F1.2 §01
 -->

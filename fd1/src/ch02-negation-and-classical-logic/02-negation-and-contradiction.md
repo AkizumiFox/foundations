@@ -1,6 +1,6 @@
 # Proving a Negation
 
-The rules of Section 2.1 **use** a negation: \( \rulename{\neg E} \) records a clash, and \( \rulename{\bot E} \) turns a clash into any statement we like. Neither rule can **prove** a negation that was not already there. So we still cannot prove that no rational number has square \( 2 \), or even that \( x^2 + 1 \) is never \( 0 \). This section adds the one rule that proves a negation, \( \rulename{\neg I} \), and uses it for one of the oldest proofs in mathematics.
+The rules of Section 2.1 **use** a negation: \( \rulename{\neg E} \) records a clash, and \( \rulename{\bot E} \) turns a clash into any statement we like. Neither rule can **prove** a negation unless the lines already clash: \( \rulename{\bot E} \) writes one only from a line \( \bot \). So we still cannot prove that no rational number has square \( 2 \), or even that \( x^2 + 1 \) is never \( 0 \). This section adds the one rule that proves a negation, \( \rulename{\neg I} \), and uses it for one of the oldest proofs in mathematics.
 
 ## How to prove that something is not so
 
@@ -332,7 +332,7 @@ This holds because a fraction whose numerator and denominator are both even can 
 ::: {#thm-sqrt2-irrational}
 [Irrationality of the Square Root of Two]
 
-There is no rational number whose square is \( 2 \). In other words, \( \sqrt{2} \) is irrational.
+There is no rational number whose square is \( 2 \). So if a real number \( \sqrt{2} \) with square \( 2 \) exists, it is irrational.
 :::
 
 ::: {.idea}
@@ -377,7 +377,7 @@ $\begin{nd}
 \end{center}
 ```
 
-Line 13 is \( r^2 \ne 2 \). The box \( \lines{5}{12} \) is a \( \rulename{\neg I} \) box as the schema asks: opened by the unnegated statement \( r^2 = 2 \), and ending on \( \bot \) as a line of its own. Two steps of the proof lie outside the derivation: choosing \( p \), \( q \) and \( m \), and passing from the arbitrary \( r \) to every rational number. Both are steps about "some" and "every", used as ordinary reasoning (the note at the start of this chapter).
+Line 13 is \( r^2 \ne 2 \). The box \( \lines{5}{12} \) is a \( \rulename{\neg I} \) box as the schema asks: opened by the unnegated statement \( r^2 = 2 \), and ending on \( \bot \) as a line of its own. Three steps of the proof lie outside the derivation: applying @thm-square-even-implies-even, a fact about every integer, to \( p \) and to \( q \); choosing \( p \), \( q \) and \( m \); and passing from the arbitrary \( r \) to every rational number. All three are steps about "some" and "every", used as ordinary reasoning (the note at the start of this chapter).
 
 Notice also what the proof does **not** need: that \( \sqrt{2} \) exists as a real number. The theorem is a statement about rational numbers only.
 
@@ -722,7 +722,7 @@ Let \( p \) be a prime number. You may use two facts.
 
 (b) (\( \mathrm{E}_p \)) twice, once for \( a \) and once for \( b \), in the places where @thm-sqrt2-irrational used @thm-square-even-implies-even. (\( \mathrm{L}_p \)) when \( a \) and \( b \) are chosen, and again at the clash, which cites "not both divisible by \( p \)".
 
-(c) For \( 6 \): (\( \mathrm{L}_6 \)) follows from (L) of the text, since integers \( a \), \( b \) that are not both even are not both divisible by \( 6 \). With (\( \mathrm{E}_6 \)) as given, the argument proves that \( \sqrt 6 \) is irrational; Exercise C1 of this section did it by another route. (\( \mathrm{E}_6 \)) itself is not proved here: its proof is Exercise C1 of Section 2.4. For \( 9 \): (\( \mathrm{E}_9 \)) is false, since \( 9 \) divides \( 3^2 \) but not \( 3 \). The proof breaks at its first use of (\( \mathrm{E}_9 \)), as it must, since \( 9 = 3^2 \) and \( 3 = 3/1 \) is rational: with \( r = 3/1 \), \( 9 \) divides \( a^2 = 9 \), but not \( a = 3 \).
+(c) For \( 6 \): (\( \mathrm{L}_6 \)) follows from (L) of the text, since integers \( a \), \( b \) that are not both even are not both divisible by \( 6 \). With (\( \mathrm{E}_6 \)) as given, the argument proves that \( \sqrt 6 \) is irrational; Exercise C1 of this section does it by another route, with (L) and @thm-square-even-implies-even in place of (\( \mathrm{E}_6 \)). (\( \mathrm{E}_6 \)) itself is not proved here: its proof is Exercise C1 of Section 2.4. For \( 9 \): (\( \mathrm{E}_9 \)) is false, since \( 9 \) divides \( 3^2 \) but not \( 3 \). The proof breaks at its first use of (\( \mathrm{E}_9 \)), as it must, since \( 9 = 3^2 \) and \( 3 = 3/1 \) is rational: with \( r = 3/1 \), \( 9 \) divides \( a^2 = 9 \), but not \( a = 3 \).
 
 **Marking scheme.** (10 points)
 
@@ -744,7 +744,7 @@ For each claim, either derive it with the rules of Chapter 1 and Sections 2.1–
 ::: {.enumerate options="label=(\alph*)"}
 1. \( P \vdash \neg(\neg P \wedge Q) \).
 2. \( \neg(P \wedge Q) \vdash \neg P \).
-3. \( (P \vee Q) \to \neg P \vdash \neg P \).
+3. \( (P \wedge Q) \to \neg P, \ Q \vdash \neg P \).
 4. \( P \to (Q \to R), \ \neg R \vdash \neg(P \wedge Q) \).
 5. \( \neg Q \vdash \neg(P \to Q) \).
 6. \( P \to Q, \ P \to \neg Q \vdash \neg P \).
@@ -772,19 +772,20 @@ $\begin{nd}
 
 (b) Break. Take \( P \): "\( x > 0 \)", \( Q \): "\( x > 5 \)". At \( x = 1 \), \( P \wedge Q \) is false (\( 1 > 5 \) fails), so \( \neg(P \wedge Q) \) is true, and \( P \) is true, so \( \neg\neg P \) is true. The counterexample set \( \neg(P \wedge Q) \), \( \neg\neg P \) (@def-counterexample-set) is true.
 
-(c) Derive. This is the sequent of @exm-double-negation-introduction (b), met again without its label.
+(c) Derive. On the assumption \( P \), the premise \( Q \) completes the antecedent, and the assumption produces its own negation.
 
 ```{=latex}
 \begin{center}
 $\begin{nd}
-  \hypo {1} {(P \vee Q) \to \neg P}
+  \hypo {1} {(P \wedge Q) \to \neg P}
+  \hypo {2} {Q}
   \open
-  \hypo {2} {P}
-  \have {3} {P \vee Q} \oi{2}
-  \have {4} {\neg P} \ie{1,3}
-  \have {5} {\bot} \ne{2,4}
+  \hypo {3} {P}
+  \have {4} {P \wedge Q} \ai{3,2}
+  \have {5} {\neg P} \ie{1,4}
+  \have {6} {\bot} \ne{3,5}
   \close
-  \have {6} {\neg P} \ni{2-5}
+  \have {7} {\neg P} \ni{3-6}
 \end{nd}$
 \end{center}
 ```
@@ -868,7 +869,7 @@ Prove that no rational number has square \( 6 \). Use only the facts (E1)–(E3)
 ::: {.solution}
 [Hint 1]
 
-Follow the proof of @thm-sqrt2-irrational. After writing \( p = 2m \), you will need to show that \( q \) is even without knowing that \( q^2 \) is even.
+Follow the proof of @thm-sqrt2-irrational. After writing \( p = 2m \), you will need to show that \( q \) is even from \( 3q^2 = 2m^2 \), where \( q^2 \) is not yet known to be even.
 :::
 
 ::: {.solution}
@@ -887,7 +888,7 @@ So \( p \) and \( q \) are both even \( [\rulename{\wedge I}] \); this contradic
 **Marking scheme.** (10 points)
 - 2: opens with \( \rulename{\neg I} \): a fixed rational \( r \), the assumption \( r^2 = 6 \), and \( r = p/q \) with \( p \), \( q \) not both even from (L).
 - 2: derives \( p \) even from \( p^2 = 2(3q^2) \) by @thm-square-even-implies-even.
-- 3: derives \( q \) even from \( 3q^2 = 2m^2 \), with the odd case ruled out by a correct parity computation and (E2).
+- 3: derives \( q \) even from \( 3q^2 = 2m^2 \), either by ruling out the odd case (a correct parity computation and (E2)) or by showing \( q^2 = 2(m^2 - q^2) \) even and applying @thm-square-even-implies-even.
 - 2: reaches \( \bot \) by clashing "both even" with (L), and concludes \( r^2 \ne 6 \) by \( \rulename{\neg I} \).
 - 1: rules named at the logical steps, and the passage from the arbitrary \( r \) to every rational number.
 
@@ -922,14 +923,15 @@ exm-square-plus-one (example): x^2 >= 0 for real x, i.e. not(x^2 < 0); x^2 = -1 
 exm-square-plus-one (solution): derivation line 3 "algebra 2": x^2 + 1 = 0 gives x^2 < 0 | school algebra, inline
 thm-sqrt2-irrational (proof): (L) every rational is p/q with q != 0, p and q not both even | school fact stated as (L) in the text, with its informal reason; F2.2 (promised; lem-lowest-terms, by well-ordering)
 thm-sqrt2-irrational (proof): p^2 = r^2 q^2; 4m^2 = 2q^2 gives q^2 = 2m^2; "p^2 = 2q^2, so p^2 is even" (definition of even) | school algebra, inline
-thm-sqrt2-irrational (proof): choosing p, q, m; "r arbitrary, so every rational" | quantifier steps used as school reasoning; F1.4 (promised)
+thm-sqrt2-irrational (proof): applying thm-square-even-implies-even (about every integer n) at n = p and n = q; choosing p, q, m; "r arbitrary, so every rational" | quantifier steps used as school reasoning; F1.4 (promised)
 exm-negation-and-contradiction-instances (example): the Not-allowed WRONG/RIGHT pair: at x = 1, x > 5 and x < -5 both fail, so not(Q or R) is true, and x > 0 holds, so not P is false | arithmetic, inline; checked by verify/ch02/exm-negation-and-contradiction-instances.py
 exr-negation-and-contradiction-a2 (solution): (l) x^2 + 4 - 2x = (x - 1)^2 + 3 | algebra, inline; checked by verify/ch02/exr-negation-and-contradiction-a2.py
+exr-negation-and-contradiction-a1 (solution): y a reciprocal of 0 means 0 * y = 1; 0 * y = 0 | school algebra, AN1.1 (promised)
 exr-negation-and-contradiction-a1 (solution): 1 != 0; 2 = 4/2; p^2 = 4q^2 = 2(2q^2), p = 2k gives q^2 = k^2; 2 = 2/1 | arithmetic, inline
 exr-negation-and-contradiction-b2 (solution): x^2 - x + 1 = (x - 1/2)^2 + 3/4; a square of a real is never negative | algebra inline; school algebra, AN1.1 (promised)
-exr-negation-and-contradiction-b3 (solution): every integer is 3k, 3k+1 or 3k+2 in one way only; the mod-3 form of (L) | stated in the item as usable facts
+exr-negation-and-contradiction-b3 (solution): every integer is 3k, 3k+1 or 3k+2 in one way only; the mod-3 form of (L) | stated in the item as usable facts; F2.2 (promised; thm-division-algorithm with n = 3; exr-induction-in-practice-c2, the general form of lem-lowest-terms, for the mod-3 lowest terms)
 exr-negation-and-contradiction-b3 (solution): (3k+1)^2 = 3(3k^2+2k)+1, (3k+2)^2 = 3(3k^2+4k+1)+1; 9m^2 = 3q^2 gives q^2 = 3m^2 | algebra, inline
-exr-negation-and-contradiction-b5 (solution): (L_p), stated in the item, every rational is a/b with b != 0 and a, b not both divisible by the prime p (lowest terms) | stated in the item as a usable fact; F2.2 (promised; lem-lowest-terms)
+exr-negation-and-contradiction-b5 (solution): (L_p), stated in the item, every rational is a/b with b != 0 and a, b not both divisible by the prime p (lowest terms) | stated in the item as a usable fact; F2.2 (promised; exr-induction-in-practice-c2, the general form of lem-lowest-terms)
 exr-negation-and-contradiction-b5 (solution): (E_p), stated in the item, for every integer n, if the prime p divides n^2 then p divides n | stated in the item as a usable fact; F3.5 (promised; cor-prime-divides-product)
 exr-negation-and-contradiction-b5 (solution): a^2 = r^2 b^2 = p b^2; a = pm gives p^2 m^2 = p b^2, so b^2 = p m^2 | algebra, inline
 exr-negation-and-contradiction-b5 (solution): (L_6) from (L): a, b not both even are not both divisible by 6 | inline (6 = 2 * 3)
@@ -937,6 +939,7 @@ exr-negation-and-contradiction-b5 (solution): (E_6) taken as given | stated in t
 exr-negation-and-contradiction-b5 (solution): 9 divides 3^2 = 9 but not 3; 3 = 3/1 | arithmetic; checked by verify/ch02/exr-negation-and-contradiction-b5.py
 exr-negation-and-contradiction-b6 (solution): breaks: (b) at x = 1 with x > 0, x > 5; (e) at x = 0 with x > 5, x > 3 (x > 5 implies x > 3 for every real x); (h) at x = 1 with x > 0, x > 5 | arithmetic, inline; school algebra; checked by verify/ch02/exr-negation-and-contradiction-b6.py
 exr-negation-and-contradiction-c1 (solution): (E1)-(E3) and (L) | stated in the text (F1.2 §01 and this section)
-exr-negation-and-contradiction-c1 (solution): p^2 = 6q^2 = 2(3q^2); 4m^2 = 6q^2 gives 3q^2 = 2m^2; q^2 = 2j+1 gives 3q^2 = 2(3j+1)+1 | algebra, inline
+exr-negation-and-contradiction-c1 (solution): p^2 = 6q^2 = 2(3q^2); 4m^2 = 6q^2 gives 3q^2 = 2m^2; q^2 = 2j+1 gives 3q^2 = 2(3j+1)+1; (marking scheme alternative) q^2 = 3q^2 - 2q^2 = 2(m^2 - q^2) | algebra, inline
 exr-negation-and-contradiction-c2 (solution): 2^2 = 4 and 4 does not divide 2 | arithmetic
+exr-negation-and-contradiction-c2 (solution): every rational is p/q with p, q not both divisible by 4 (part (c), "every other step") | from (L): not both even implies not both divisible by 4 (inline)
 -->
