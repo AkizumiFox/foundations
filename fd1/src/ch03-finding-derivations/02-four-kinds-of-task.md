@@ -967,7 +967,7 @@ Read aloud: a statement whose failure would force one of its own sides holds.
 :::
 
 ::: {#exr-four-kinds-of-task-b4}
-[B4: Derive ⊥, or make every member true]
+[B4: Derive ⊥, or make every member true, used later]
 
 For each list, either derive \( \bot \) from it, or give statements that make every member true at once.
 
@@ -1045,7 +1045,7 @@ Section 4.7 shows that a list made true at once, as in (b), (d) and (f), is cons
 ### C. Going deeper
 
 ::: {#exr-four-kinds-of-task-c1}
-[C1: Exit check: the counterexample set]
+[C1: Exit check: the counterexample set, used later]
 
 Let \( \Gamma \) be the list \( P \to (Q \vee R), \ Q \to S, \ R \to S \).
 

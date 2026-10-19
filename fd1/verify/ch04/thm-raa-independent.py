@@ -68,3 +68,12 @@ for a, b in itertools.product((Fraction(0), Fraction(1)), repeat=2):
     assert (min(a, b) == 1) == (A and B) and (max(a, b) == 1) == (A or B)
     assert (imp(a, b) == 1) == ((not A) or B) and (iff(a, b) == 1) == (A == B) and (neg(a) == 1) == (not A)
 print("thm-raa-independent: all quoted values check")
+
+# R3's displayed tables (the excursion): u(phi -> psi) by rows u(phi) = 0, 1/2, 1 and
+# columns u(psi) = 0, 1/2, 1; u(not phi) for u(phi) = 0, 1/2, 1
+TABLE = [[1, 1, 1], [0, 1, 1], [0, H, 1]]
+for i, a in enumerate(V):
+    for j, b in enumerate(V):
+        assert imp(a, b) == TABLE[i][j], (a, b)
+assert [neg(a) for a in V] == [1, 0, 0]
+print("thm-raa-independent: the excursion's tables check")

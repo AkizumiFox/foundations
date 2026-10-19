@@ -327,7 +327,7 @@ items:
   kind: exm
   file: 01-finding-derivations.md
   line: 435
-  hash: c75832362f82
+  hash: 90290a867dd2
   verdicts:
   - stage: S5a
     verdict: minor
@@ -574,7 +574,7 @@ items:
 - key: exr-finding-derivations-a1
   kind: exr
   file: 01-finding-derivations.md
-  line: 1000
+  line: 1006
   hash: aa855e65ff73
   verdicts:
   - stage: S5a
@@ -633,8 +633,8 @@ items:
 - key: exr-finding-derivations-a2
   kind: exr
   file: 01-finding-derivations.md
-  line: 1029
-  hash: c296f14177a9
+  line: 1035
+  hash: 2bfd7ffdaa47
   verdicts:
   - stage: S5a
     verdict: correct
@@ -674,7 +674,7 @@ items:
 - key: exr-finding-derivations-b1
   kind: exr
   file: 01-finding-derivations.md
-  line: 1078
+  line: 1084
   hash: 61b24af8559b
   verdicts:
   - stage: S5a
@@ -737,7 +737,7 @@ items:
 - key: exr-finding-derivations-b2
   kind: exr
   file: 01-finding-derivations.md
-  line: 1164
+  line: 1170
   hash: 87c40520423b
   verdicts:
   - stage: S5a
@@ -794,7 +794,7 @@ items:
 - key: exr-finding-derivations-b3
   kind: exr
   file: 01-finding-derivations.md
-  line: 1216
+  line: 1222
   hash: ad883bb6926f
   verdicts:
   - stage: S5a
@@ -851,8 +851,8 @@ items:
 - key: exr-finding-derivations-b4
   kind: exr
   file: 01-finding-derivations.md
-  line: 1247
-  hash: 430d6ad31dc7
+  line: 1253
+  hash: 1c8f61c551e9
   verdicts:
   - stage: S5a
     verdict: correct
@@ -891,7 +891,7 @@ items:
 - key: exr-finding-derivations-c1
   kind: exr
   file: 01-finding-derivations.md
-  line: 1307
+  line: 1311
   hash: a85d1da4a997
   verdicts:
   - stage: S5a
@@ -950,7 +950,7 @@ items:
 - key: exr-finding-derivations-c2
   kind: exr
   file: 01-finding-derivations.md
-  line: 1375
+  line: 1379
   hash: 6b6e4dfaa1aa
   verdicts:
   - stage: S5a
@@ -1056,8 +1056,8 @@ items:
 - key: exr-finding-derivations-c3
   kind: exr
   file: 01-finding-derivations.md
-  line: 1443
-  hash: 2105f7adb26e
+  line: 1447
+  hash: 4ee7cef6777a
   verdicts:
   - stage: S5a
     verdict: minor
@@ -1166,7 +1166,7 @@ items:
 - key: exr-finding-derivations-c4
   kind: exr
   file: 01-finding-derivations.md
-  line: 1502
+  line: 1506
   hash: 9d788a0aa7ac
   verdicts:
   - stage: S5a
@@ -1281,7 +1281,7 @@ items:
   kind: exm
   file: 02-four-kinds-of-task.md
   line: 101
-  hash: 578457c4ff05
+  hash: 6429d61b0a0f
   verdicts:
   - stage: S5a
     verdict: correct
@@ -1505,7 +1505,7 @@ items:
   kind: proof
   file: 02-four-kinds-of-task.md
   line: 396
-  hash: 2815587fe12c
+  hash: f835f4a7fa13
   verdicts:
   - stage: S5a
     verdict: minor
@@ -1586,7 +1586,7 @@ items:
   kind: check
   file: 02-four-kinds-of-task.md
   line: 545
-  hash: dd3f1dfcf3e4
+  hash: fb827f6c6c8d
   verdicts:
   - stage: S5a
     verdict: minor
@@ -1682,7 +1682,7 @@ items:
   kind: exr
   file: 02-four-kinds-of-task.md
   line: 656
-  hash: c3b355caaec7
+  hash: 3ad506bfec2b
   verdicts:
   - stage: S5a
     verdict: correct
@@ -1756,7 +1756,7 @@ items:
   kind: exr
   file: 02-four-kinds-of-task.md
   line: 832
-  hash: 056435bfb0a3
+  hash: 85eedd6a9e83
   verdicts:
   - stage: S5a
     verdict: correct
@@ -1807,8 +1807,8 @@ items:
 - key: exr-four-kinds-of-task-b4
   kind: exr
   file: 02-four-kinds-of-task.md
-  line: 967
-  hash: 82efac041849
+  line: 969
+  hash: 9345506fac61
   verdicts:
   - stage: S5a
     verdict: correct
@@ -1837,11 +1837,19 @@ items:
     evidence: 02:967-1043. By truth table (a), (c), (e) are unsatisfiable, and (b), (d), (f) are satisfied
       at the stated statements (x=1; P '0=1'; 1>2 and 2>3). With the fourth member added, (f) is unsatisfiable.
       The derivations are legal. The 4.7 pointer matches layout-final ('satisfiable => consistent').
+  - stage: S8
+    verdict: correct
+    by: coordinator
+    hash: 9345506fac61
+    date: '2026-10-19'
+    model: claude-opus-5-5
+    evidence: 'ch04 S4 2026-10-19: diff is the title only (''[B4: Derive ⊥, or make every member true,
+      used later]'', ch04-deepen §3.3); stem and solution unchanged'
 - key: exr-four-kinds-of-task-c1
   kind: exr
   file: 02-four-kinds-of-task.md
-  line: 1045
-  hash: 052562f04d56
+  line: 1047
+  hash: 66d2b039c29d
   verdicts:
   - stage: S5a
     verdict: correct
@@ -1878,11 +1886,19 @@ items:
       raised by S6 now earns credit. The S6 finding is resolved. (Strictly, exm-cases-on-hypothesis takes
       the premise (P→R)∧(Q→R) (ch01/07:216), so an ∧I line comes first; it is a marking-scheme parenthetical
       and noth
+  - stage: S8
+    verdict: correct
+    by: coordinator
+    hash: 66d2b039c29d
+    date: '2026-10-19'
+    model: claude-opus-5-5
+    evidence: 'ch04 S4 2026-10-19: diff is the title only (''[C1: Exit check: the counterexample set,
+      used later]'', ch04-deepen §3.3); stem and solution unchanged'
 - key: exr-four-kinds-of-task-c2
   kind: exr
   file: 02-four-kinds-of-task.md
-  line: 1103
-  hash: 21005e59689b
+  line: 1105
+  hash: 76106349b9f3
   verdicts:
   - stage: S5a
     verdict: correct
@@ -1983,7 +1999,7 @@ items:
   kind: check
   file: 03-from-argument-to-derivation.md
   line: 151
-  hash: 0837bfc8623b
+  hash: e6401f9fce82
   verdicts:
   - stage: S5a
     verdict: minor
@@ -2014,7 +2030,7 @@ items:
   kind: exm
   file: 03-from-argument-to-derivation.md
   line: 175
-  hash: d946d9c82298
+  hash: 64c2724617be
   verdicts:
   - stage: S5a
     verdict: minor
@@ -2122,7 +2138,7 @@ items:
   kind: exr
   file: 03-from-argument-to-derivation.md
   line: 357
-  hash: 2817f412ae4c
+  hash: a3678f8515eb
   verdicts:
   - stage: S5a
     verdict: correct
@@ -2166,7 +2182,7 @@ items:
   kind: exr
   file: 03-from-argument-to-derivation.md
   line: 425
-  hash: 1a6c8ebb3951
+  hash: f337209b7788
   verdicts:
   - stage: S5a
     verdict: minor
@@ -2208,7 +2224,7 @@ items:
   kind: exr
   file: 03-from-argument-to-derivation.md
   line: 493
-  hash: e30d17b4473e
+  hash: 97ce937a0949
   verdicts:
   - stage: S5a
     verdict: minor
@@ -2260,8 +2276,8 @@ items:
 - key: exr-from-argument-to-derivation-b4
   kind: exr
   file: 03-from-argument-to-derivation.md
-  line: 752
-  hash: c0fb1b4897c9
+  line: 769
+  hash: 797448ca6081
   verdicts:
   - stage: S5a
     verdict: minor
@@ -2306,8 +2322,8 @@ items:
 - key: exr-from-argument-to-derivation-c1
   kind: exr
   file: 03-from-argument-to-derivation.md
-  line: 804
-  hash: 62f5bb43aa8b
+  line: 821
+  hash: 88844ce11c44
   verdicts:
   - stage: S5a
     verdict: correct
@@ -2349,8 +2365,8 @@ items:
 - key: exr-from-argument-to-derivation-c2
   kind: exr
   file: 03-from-argument-to-derivation.md
-  line: 877
-  hash: adbc0ba5fd9f
+  line: 894
+  hash: 4d8d3bf35017
   verdicts:
   - stage: S5a
     verdict: minor
@@ -2392,7 +2408,7 @@ items:
 - key: exr-finding-derivations-r1
   kind: exr
   file: 03-from-argument-to-derivation.md
-  line: 924
+  line: 941
   hash: b707573590ff
   verdicts:
   - stage: S5a
@@ -2451,8 +2467,8 @@ items:
 - key: exr-finding-derivations-r2
   kind: exr
   file: 03-from-argument-to-derivation.md
-  line: 940
-  hash: e9de2063f6b0
+  line: 957
+  hash: d8785ddb913f
   verdicts:
   - stage: S5a
     verdict: correct
@@ -2532,7 +2548,7 @@ items:
 - key: exr-finding-derivations-r3
   kind: exr
   file: 03-from-argument-to-derivation.md
-  line: 980
+  line: 997
   hash: c70e149018ce
   verdicts:
   - stage: S5a
@@ -2602,8 +2618,8 @@ items:
 - key: exr-from-argument-to-derivation-r4
   kind: exr
   file: 03-from-argument-to-derivation.md
-  line: 1016
-  hash: 68c84c637c54
+  line: 1033
+  hash: 9c9e1745839b
   verdicts:
   - stage: S5a
     verdict: correct

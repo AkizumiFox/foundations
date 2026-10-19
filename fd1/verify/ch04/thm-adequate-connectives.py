@@ -50,5 +50,13 @@ for f in build(2, ["and", "or", "imp"]):
 g = cf.parse_formula("(P \\to (Q \\to \\bot)) \\to \\bot")
 assert g == t(3, ("and", A[0], A[1]))
 assert value(g, {"P": True, "Q": False}) is False
+# Section 4.9's t1 passage: t1((p v q) & ~r) = ~(~p & ~q) & ~r, both T in the row F, T, F
+R = ("var", "R")
+f = ("and", ("or", A[0], A[1]), ("not", R))
+g = cf.parse_formula("\\neg(\\neg P \\wedge \\neg Q) \\wedge \\neg R")
+assert t(1, f) == g
+env = {"P": False, "Q": True, "R": False}
+assert value(f, env) is True and value(g, env) is True
+assert value(cf.parse_formula("\\neg P \\wedge \\neg Q"), env) is False
 QUOTED = {}
 print("thm-adequate-connectives: all quoted values check")

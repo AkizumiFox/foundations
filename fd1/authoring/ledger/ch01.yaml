@@ -476,7 +476,7 @@ items:
   kind: exr
   file: 01-statements-and-connectives.md
   line: 440
-  hash: 02d367bb8fe5
+  hash: e7c00cb4ecfe
   verdicts:
   - stage: S5a
     verdict: correct
@@ -809,7 +809,7 @@ items:
   kind: exr
   file: 01-statements-and-connectives.md
   line: 620
-  hash: 49e8f3dd83ba
+  hash: 05c6352afe7a
   verdicts:
   - stage: S5a
     verdict: correct
@@ -975,7 +975,7 @@ items:
   kind: exr
   file: 01-statements-and-connectives.md
   line: 665
-  hash: 3206765ed847
+  hash: 3a6f3f07a50c
   verdicts:
   - stage: S5a
     verdict: correct
@@ -1022,7 +1022,7 @@ items:
   kind: exr
   file: 01-statements-and-connectives.md
   line: 711
-  hash: f56d53609868
+  hash: 3148fa7d1b41
   verdicts:
   - stage: S5a
     verdict: correct
@@ -1063,7 +1063,7 @@ items:
   kind: exr
   file: 01-statements-and-connectives.md
   line: 744
-  hash: 5c965194dd8f
+  hash: c0d024ebb918
   verdicts:
   - stage: S5a
     verdict: correct
@@ -2191,7 +2191,7 @@ items:
   kind: exm
   file: 02-derivations.md
   line: 622
-  hash: da62a0a8120c
+  hash: 24216c29b86b
   verdicts:
   - stage: S5a
     verdict: correct
@@ -2436,7 +2436,7 @@ items:
   kind: exr
   file: 02-derivations.md
   line: 782
-  hash: 9488b37a8073
+  hash: 273cbd1cbf27
   verdicts:
   - stage: S5a
     verdict: correct
@@ -3008,7 +3008,7 @@ items:
   kind: exr
   file: 02-derivations.md
   line: 1100
-  hash: ec4379be0983
+  hash: bb15bd3d59e8
   verdicts:
   - stage: S5a
     verdict: correct
@@ -4161,7 +4161,7 @@ items:
   kind: exr
   file: 04-using-an-implication.md
   line: 934
-  hash: b5b164f421eb
+  hash: f5ee3d88d666
   verdicts:
   - stage: S5a
     verdict: correct
@@ -4934,7 +4934,7 @@ items:
   kind: exm
   file: 05-proving-an-implication.md
   line: 516
-  hash: 4d893a7fb3cb
+  hash: 4f3388271666
   verdicts:
   - stage: S5a
     verdict: correct
@@ -5358,7 +5358,7 @@ items:
   kind: exr
   file: 05-proving-an-implication.md
   line: 916
-  hash: 5709eeaff92d
+  hash: e2c317c9f04e
   verdicts:
   - stage: S5a
     verdict: minor
@@ -5582,7 +5582,7 @@ items:
   kind: exr
   file: 05-proving-an-implication.md
   line: 1124
-  hash: be40f01aba85
+  hash: b342b2187aac
   verdicts:
   - stage: S5a
     verdict: correct
@@ -5675,7 +5675,7 @@ items:
   kind: exr
   file: 05-proving-an-implication.md
   line: 1159
-  hash: c576ae0c61e4
+  hash: 96f58253d781
   verdicts:
   - stage: S5a
     verdict: correct
@@ -6831,7 +6831,7 @@ items:
   kind: exr
   file: 06-disjunction-introduction.md
   line: 615
-  hash: 2c26e6a0afb5
+  hash: e1b96a5b3614
   verdicts:
   - stage: S5a
     verdict: correct
@@ -7175,7 +7175,7 @@ items:
   kind: exr
   file: 06-disjunction-introduction.md
   line: 784
-  hash: f300615c2515
+  hash: 0c5c33b7edac
   verdicts:
   - stage: S5a
     verdict: minor
@@ -8394,7 +8394,7 @@ items:
   kind: exr
   file: 07-disjunction-and-cases.md
   line: 1029
-  hash: 917de9097355
+  hash: 5ab62079ee71
   verdicts:
   - stage: S5a
     verdict: correct
@@ -8833,7 +8833,7 @@ items:
   kind: exr
   file: 07-disjunction-and-cases.md
   line: 1456
-  hash: 485576a1a604
+  hash: fdb92f921f28
   verdicts:
   - stage: S5a
     verdict: correct
@@ -9090,7 +9090,7 @@ items:
   kind: exr
   file: 07-disjunction-and-cases.md
   line: 1917
-  hash: 027b521d98a1
+  hash: bd2bbb7b4502
   verdicts:
   - stage: S5a
     verdict: correct
@@ -9555,7 +9555,7 @@ items:
   kind: check
   file: index.md
   line: 9
-  hash: 483d7b326e1a
+  hash: 372613c1b13d
   verdicts:
   - stage: S5a
     verdict: correct

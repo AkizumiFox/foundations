@@ -351,3 +351,26 @@ rereading
 Ana
 Ben
 Curry
+# fd1 Chapter 4 (F1.3, truth, soundness and completeness), ch04-deepen S4 2026-10-19
+subcontrary
+verifier
+tonk
+unsatisfiability
+Kreisel
+derivability
+minterm
+minterms
+Lindenbaum
+antitone
+biconditionals
+undesignated
+idempotence
+# rows of a three-atom table, written as words
+TTT
+TTF
+TFT
+TFF
+FTT
+FTF
+FFT
+FFF

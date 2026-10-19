@@ -867,7 +867,7 @@ items:
   kind: exr
   file: 01-contradiction-and-vacuous-truth.md
   line: 743
-  hash: 1eefef459a56
+  hash: 52adfcf5c5f9
   verdicts:
   - stage: S5a
     verdict: correct
@@ -1028,7 +1028,7 @@ items:
   kind: exr
   file: 01-contradiction-and-vacuous-truth.md
   line: 844
-  hash: 344cc4033922
+  hash: 4fc45c9bafb1
   verdicts:
   - stage: S5a
     verdict: correct
@@ -1074,7 +1074,7 @@ items:
   kind: exr
   file: 01-contradiction-and-vacuous-truth.md
   line: 947
-  hash: 7d57b39478d8
+  hash: 6722312cfbc8
   verdicts:
   - stage: S5a
     verdict: correct
@@ -1502,7 +1502,7 @@ items:
   kind: thm
   file: 02-negation-and-contradiction.md
   line: 332
-  hash: 084e1d4b32c9
+  hash: 9486a38cf874
   verdicts:
   - stage: S5a
     verdict: correct
@@ -1976,7 +1976,7 @@ items:
   kind: exr
   file: 02-negation-and-contradiction.md
   line: 705
-  hash: 97bc292a0c74
+  hash: e14aa59a4e11
   verdicts:
   - stage: S5a
     verdict: correct
@@ -2025,7 +2025,7 @@ items:
   kind: exr
   file: 02-negation-and-contradiction.md
   line: 739
-  hash: 66b09ef6e278
+  hash: 23860e1a7489
   verdicts:
   - stage: S5a
     verdict: correct
@@ -2066,8 +2066,8 @@ items:
 - key: exr-negation-and-contradiction-c1
   kind: exr
   file: 02-negation-and-contradiction.md
-  line: 862
-  hash: 6e629707fd2c
+  line: 863
+  hash: 2c33072b400c
   verdicts:
   - stage: S5a
     verdict: correct
@@ -2153,7 +2153,7 @@ items:
 - key: exr-negation-and-contradiction-c2
   kind: exr
   file: 02-negation-and-contradiction.md
-  line: 897
+  line: 898
   hash: cb755ae68036
   verdicts:
   - stage: S5a
@@ -2383,7 +2383,7 @@ items:
   kind: def
   file: 03-derived-rules.md
   line: 128
-  hash: 52cf72e97306
+  hash: 0cc611959383
   verdicts:
   - stage: S5a
     verdict: correct
@@ -2662,7 +2662,7 @@ items:
   kind: exm
   file: 03-derived-rules.md
   line: 310
-  hash: 91d4cbe88550
+  hash: ce82569ea5a8
   verdicts:
   - stage: S5a
     verdict: correct
@@ -3200,7 +3200,7 @@ items:
   kind: exr
   file: 03-derived-rules.md
   line: 872
-  hash: 749a3fbd580b
+  hash: c39e34f3efd6
   verdicts:
   - stage: S5a
     verdict: correct
@@ -3301,7 +3301,7 @@ items:
   kind: exr
   file: 03-derived-rules.md
   line: 1024
-  hash: 71978adb8a45
+  hash: fa0f319743b3
   verdicts:
   - stage: S5a
     verdict: correct
@@ -3603,7 +3603,7 @@ items:
   kind: exm
   file: 04-biconditional-and-definitions.md
   line: 269
-  hash: d11aaec318c4
+  hash: 12be5a0ce027
   verdicts:
   - stage: S5a
     verdict: correct
@@ -3891,7 +3891,7 @@ items:
 - key: thm-odd-iff-square-odd
   kind: thm
   file: 04-biconditional-and-definitions.md
-  line: 522
+  line: 523
   hash: 02dfb9b03792
   verdicts:
   - stage: S5a
@@ -3932,7 +3932,7 @@ items:
 - key: proof:thm-odd-iff-square-odd
   kind: proof
   file: 04-biconditional-and-definitions.md
-  line: 532
+  line: 533
   hash: 082696ed6b0e
   verdicts:
   - stage: S5a
@@ -3975,7 +3975,7 @@ items:
 - key: thm-squares-order
   kind: thm
   file: 04-biconditional-and-definitions.md
-  line: 544
+  line: 545
   hash: 8dcde642927a
   verdicts:
   - stage: S5a
@@ -4019,7 +4019,7 @@ items:
 - key: proof:thm-squares-order
   kind: proof
   file: 04-biconditional-and-definitions.md
-  line: 557
+  line: 558
   hash: 4177bac3b4ff
   verdicts:
   - stage: S5a
@@ -4062,7 +4062,7 @@ items:
 - key: check:04-biconditional-and-definitions:3
   kind: check
   file: 04-biconditional-and-definitions.md
-  line: 571
+  line: 572
   hash: 8d0471ff8c83
   verdicts:
   - stage: S5a
@@ -4083,7 +4083,7 @@ items:
 - key: exm-strictly-increasing-both-ways
   kind: exm
   file: 04-biconditional-and-definitions.md
-  line: 601
+  line: 602
   hash: e7ed5e1ad60f
   verdicts:
   - stage: S5a
@@ -4136,7 +4136,7 @@ items:
 - key: check:04-biconditional-and-definitions:4
   kind: check
   file: 04-biconditional-and-definitions.md
-  line: 629
+  line: 630
   hash: 6891b6460240
   verdicts:
   - stage: S5a
@@ -4156,7 +4156,7 @@ items:
 - key: prp-equivalence-cycle
   kind: prp
   file: 04-biconditional-and-definitions.md
-  line: 645
+  line: 646
   hash: dc2a87f9ee1f
   verdicts:
   - stage: S5a
@@ -4206,8 +4206,8 @@ items:
 - key: proof:prp-equivalence-cycle
   kind: proof
   file: 04-biconditional-and-definitions.md
-  line: 687
-  hash: 45166e459a72
+  line: 688
+  hash: 0dfc8ce43777
   verdicts:
   - stage: S5a
     verdict: correct
@@ -4260,7 +4260,7 @@ items:
 - key: exm-unit-interval-tfae
   kind: exm
   file: 04-biconditional-and-definitions.md
-  line: 719
+  line: 720
   hash: 6ff6247ba7e8
   verdicts:
   - stage: S5a
@@ -4303,7 +4303,7 @@ items:
 - key: exm-biconditional-and-definitions-instances
   kind: exm
   file: 04-biconditional-and-definitions.md
-  line: 747
+  line: 748
   hash: de7a68d530a5
   verdicts:
   - stage: S5a
@@ -4325,7 +4325,7 @@ items:
 - key: exr-biconditional-and-definitions-a1
   kind: exr
   file: 04-biconditional-and-definitions.md
-  line: 835
+  line: 836
   hash: d0640697987a
   verdicts:
   - stage: S5a
@@ -4381,8 +4381,8 @@ items:
 - key: exr-biconditional-and-definitions-a2
   kind: exr
   file: 04-biconditional-and-definitions.md
-  line: 856
-  hash: 2b7ea253005e
+  line: 857
+  hash: f64e9ec2782a
   verdicts:
   - stage: S5a
     verdict: minor
@@ -4424,7 +4424,7 @@ items:
 - key: exr-biconditional-and-definitions-b1
   kind: exr
   file: 04-biconditional-and-definitions.md
-  line: 930
+  line: 931
   hash: d29f3f59a62e
   verdicts:
   - stage: S5a
@@ -4480,7 +4480,7 @@ items:
 - key: exr-biconditional-and-definitions-b2
   kind: exr
   file: 04-biconditional-and-definitions.md
-  line: 962
+  line: 963
   hash: fe30a0711cf6
   verdicts:
   - stage: S5a
@@ -4536,7 +4536,7 @@ items:
 - key: exr-biconditional-and-definitions-b3
   kind: exr
   file: 04-biconditional-and-definitions.md
-  line: 976
+  line: 977
   hash: 9295aa984c88
   verdicts:
   - stage: S5a
@@ -4595,7 +4595,7 @@ items:
 - key: exr-biconditional-and-definitions-b4
   kind: exr
   file: 04-biconditional-and-definitions.md
-  line: 999
+  line: 1000
   hash: f8212dec8be5
   verdicts:
   - stage: S5a
@@ -4623,7 +4623,7 @@ items:
 - key: exr-biconditional-and-definitions-b5
   kind: exr
   file: 04-biconditional-and-definitions.md
-  line: 1045
+  line: 1046
   hash: 477dfdaba844
   verdicts:
   - stage: S5a
@@ -4656,8 +4656,8 @@ items:
 - key: exr-biconditional-and-definitions-b6
   kind: exr
   file: 04-biconditional-and-definitions.md
-  line: 1090
-  hash: 8141ed11ebb2
+  line: 1091
+  hash: 41bc83125a59
   verdicts:
   - stage: S5a
     verdict: minor
@@ -4702,8 +4702,8 @@ items:
 - key: exr-biconditional-and-definitions-b7
   kind: exr
   file: 04-biconditional-and-definitions.md
-  line: 1128
-  hash: 58eb5fdbc4b6
+  line: 1129
+  hash: d525ca5411ca
   verdicts:
   - stage: S5a
     verdict: minor
@@ -4745,7 +4745,7 @@ items:
 - key: exr-biconditional-and-definitions-c1
   kind: exr
   file: 04-biconditional-and-definitions.md
-  line: 1272
+  line: 1273
   hash: 8db1a6eaf2af
   verdicts:
   - stage: S5a
@@ -4820,7 +4820,7 @@ items:
 - key: exr-biconditional-and-definitions-c2
   kind: exr
   file: 04-biconditional-and-definitions.md
-  line: 1317
+  line: 1318
   hash: 7f37a8292d4e
   verdicts:
   - stage: S5a
@@ -6134,7 +6134,7 @@ items:
   kind: exr
   file: 05-reductio-and-classical-rules.md
   line: 1418
-  hash: 991814f8596a
+  hash: b38ac159d69b
   verdicts:
   - stage: S5a
     verdict: correct
@@ -6363,7 +6363,7 @@ items:
   kind: exr
   file: 05-reductio-and-classical-rules.md
   line: 1744
-  hash: 6d96951032b9
+  hash: c7bccc42eb3a
   verdicts:
   - stage: S5a
     verdict: correct
@@ -6480,7 +6480,7 @@ items:
   kind: exr
   file: 05-reductio-and-classical-rules.md
   line: 1854
-  hash: 28a9fca80c51
+  hash: 8c4a115cc67e
   verdicts:
   - stage: S5a
     verdict: correct
@@ -6539,8 +6539,8 @@ items:
 - key: exr-reductio-and-classical-rules-r2
   kind: exr
   file: 05-reductio-and-classical-rules.md
-  line: 1866
-  hash: d7f8e9b197fb
+  line: 1872
+  hash: fbbc6a771832
   verdicts:
   - stage: S5a
     verdict: correct
@@ -6590,8 +6590,8 @@ items:
 - key: exr-reductio-and-classical-rules-r3
   kind: exr
   file: 05-reductio-and-classical-rules.md
-  line: 1951
-  hash: 032a05208cbd
+  line: 1957
+  hash: 31dc43ef7588
   verdicts:
   - stage: S5a
     verdict: correct

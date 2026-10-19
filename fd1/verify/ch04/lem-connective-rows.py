@@ -2,6 +2,7 @@
 column is right; the case choice used in lem-truth-table-line calls, for each connective and
 pair of values, a row whose premises are the signed parts and whose conclusion is the signed
 whole; the printed derivations have 4, 6, 7, 9, 6, 6 and 2 lines."""
+import re
 from _s0607_lib import S06, ROWS, block, derivations, cf, value, rows, check_row_instance
 
 QUOTED = {"lines (->2), (->3), (<->1), (<->2), (<->3), (<->4), (bot1)": [4, 6, 7, 9, 6, 6, 2]}
@@ -47,3 +48,16 @@ assert counts == QUOTED[list(QUOTED)[0]], counts
 # and none uses RAA
 assert "\\raa" not in txt
 print("lem-connective-rows: all quoted values check")
+# the tagged tables (Section 4.8): each tag is the sequent choose() picks for that row
+import _s0708_lib as H
+sec = H.between(H.S08, "Here are the tables of @def-truth-value again", "Each sequent has as premises")
+rows = [l for l in sec.split("\n") if l.startswith("| T") or l.startswith("| F")]
+assert len(rows) == 4
+for line in rows:
+    cells = [c.strip() for c in line.strip("|").split("|")]
+    a, b = cells[0] == "T", cells[1] == "T"
+    for op, cell in zip(("and", "or", "imp", "iff"), cells[2:]):
+        tag = re.search(r"\\\( (.*?) \\\)", cell).group(1)
+        assert tag == choose(op, a, b), (op, a, b, tag)
+        assert (cell[0] == "T") == value((op, A, B), {"A": a, "B": b})
+print("lem-connective-rows: the tagged tables check")

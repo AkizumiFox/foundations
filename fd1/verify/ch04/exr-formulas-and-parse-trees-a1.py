@@ -1,7 +1,8 @@
-"""exr-formulas-and-parse-trees-a1 (Ch 3, Section 3.1): formula or not; subformulas and height."""
-from _s0102_formulas import tok, is_formula, height, subformulas
+"""exr-formulas-and-parse-trees-a1 (Ch 4, Section 4.1): formula or not; subformulas;
+a formation sequence listing (p or q) once."""
+from _s0102_formulas import tok, is_formula, subformulas
 
-QUOTED = {"(b) subformulas": "five, with \\( q \\) listed once", "(b) height": "so the height is \\( 4 \\)"}
+QUOTED = {"(b) subformulas": "five, with \\( q \\) listed once"}
 
 verdict = {
     r"(p \vee \bot)": True, r"\neg\neg p": True, r"(p \neg q)": False,
@@ -10,9 +11,9 @@ verdict = {
 for s, v in verdict.items():
     assert is_formula(tok(s)) == v, s
 f = tok(r"(\neg(p \to q) \vee q)")
-assert len(subformulas(f)) == 5 and height(f) == 4
-# (c): every proper subformula has smaller height, on all formulas up to length 11
-from _s0102_formulas import all_formulas
-for g in all_formulas(11):
-    assert all(height(h) < height(g) for h in subformulas(g) if h != g)
+assert len(subformulas(f)) == 5
+assert subformulas(f) == {tok(s) for s in [r"(\neg(p \to q) \vee q)", r"\neg(p \to q)", r"(p \to q)", "p", "q"]}
+# (c): the sequence is checked entry by entry in exm-not-formulas.py; here: (p or q) occurs once in it
+seq = [tok(s) for s in ["p", "q", r"(p \vee q)", r"\neg(p \vee q)", r"((p \vee q) \wedge \neg(p \vee q))"]]
+assert seq.count(tok(r"(p \vee q)")) == 1 and all(is_formula(x) for x in seq)
 print("exr-formulas-and-parse-trees-a1: all quoted values check")

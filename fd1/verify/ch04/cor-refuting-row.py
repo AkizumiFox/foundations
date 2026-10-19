@@ -36,3 +36,39 @@ for c, f in [([r"\neg p"], r"\neg p"), ([r"\neg p", "p"], r"\bot"), ([r"\neg p",
              ([r"\neg p"], r"p \to q")]:
     assert not L.entails(c, f)
 print("cor-refuting-row: all quoted values check")
+
+# --- Section 4.7 deepening (ch04-deepen.md item 6-8, A2) ---
+import _s0708_lib as H
+# R3's new Quick check: p = q = T does not refute p -> q |- q; p = q = F does
+assert rows_of([r"p \to q"], "q", "p", "q") == [(False, False)]
+# Quick check on contexts: the lines with p in their context are 3, 4, 5
+assert [k for k in ctx if "p" in ctx[k]] == [3, 4, 5]
+# the meaning table's four wrong versions: the rows refute what they would license
+assert (True, False) in rows_of([], r"p \to (p \wedge q)", "p", "q")
+assert (False, True) in rows_of([r"p \vee q"], "p", "p", "q")
+assert rows_of([], r"\neg p", "p") == [(True,)]
+assert rows_of([r"\neg p"], "p", "p") == [(False,)]
+# the four wrong derivations (printed with P, Q) fail exactly at their last line
+assert H.invalid_lines(H.between(H.S07, "## Every rule, checked", "## Refuting with one row")) == [["3"], ["4"], ["2"], ["4"]]
+# test the subgoal: p or q |/- q at (T, F); the De Morgan subgoals
+assert (True, False) in rows_of([r"p \vee q"], "q", "p", "q")
+assert (True, False) in rows_of([r"\neg(p \wedge q)"], r"\neg p", "p", "q")
+assert (False, True) in rows_of([r"\neg(p \wedge q)"], r"\neg q", "p", "q")
+# its Quick check: the context p -> q, not q, p is unsatisfiable, and q follows
+assert not L.entails([r"p \to q", r"\neg q", "p"], r"\bot") and not L.entails([r"p \to q", "p"], "q")
+# A2 (a)-(h), R3's drill
+assert (False, True) in rows_of([r"p \vee q"], "p", "p", "q")
+assert (False, True) in rows_of([r"p \to q", r"\neg p"], r"\neg q", "p", "q")
+assert not L.val(L.parse(r"p \wedge q"), {"p": True, "q": False})
+assert not L.entails(["p", r"p \to q"], "q")
+assert rows_of([], r"p \vee q", "p", "q") == [(False, False)]
+assert (True, False, True) in rows_of([r"p \to (q \vee r)"], r"p \to q", "p", "q", "r")
+# A2 (i)-(l)
+assert (True, False) in rows_of([r"p \vee q"], "q", "p", "q")
+sat = [L.tv(r, "p", "q") for r in L.rows(["p", "q"])
+       if L.val(L.parse(r"p \to q"), r) and L.val(L.parse(r"q \to \neg p"), r)]
+assert (False, True) in sat and (False, False) in sat and len(sat) == 2
+assert not L.entails([r"p \to q", r"q \to \neg p", "p"], r"\bot")   # with p: unsatisfiable
+assert (True, False, False) in rows_of([r"(p \wedge q) \to r"], r"(p \to r) \wedge (q \to r)", "p", "q", "r")
+# retroactive paragraph: affirming the consequent (above); B3 of 3.2 is checked in 4.6's sidecars
+print("cor-refuting-row: Section 4.7 additions check")

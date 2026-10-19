@@ -1,8 +1,22 @@
 # Soundness
 
-Chapter 3 ended on a question it could not answer. Section 3.1 searched for a derivation of \( P \to Q \vdash Q \to P \), and every route came back to the same gap; but a search that fails proves nothing, since a cleverer derivation might exist. The row that refutes affirming the consequent in Section 4.5, \( p = \mathrm{F} \) and \( q = \mathrm{T} \), finds what the search could not: it makes \( p \to q \) true and \( q \to p \) false. This section proves the theorem that turns such a row into a proof that **no** derivation exists. It is called soundness: whatever the rules derive is true in every row where the premises are true. The proof is the book's first long proof about proofs, and it is an induction on the lines of a derivation.
+Chapter 3 ended on a question it could not answer. Section 3.1 searched for a derivation of \( P \to Q \vdash Q \to P \), and every route came back to the same gap; but a search that fails proves nothing, since a cleverer derivation might exist. The row that refutes affirming the consequent in Section 4.5, \( p = \mathrm{F} \) and \( q = \mathrm{T} \), finds what the search could not: it makes \( p \to q \) true and \( q \to p \) false, and the search of Section 4.6 finds such rows whenever they exist. This section proves the theorem that turns such a row into a proof that **no** derivation exists. It is called soundness: whatever the rules derive is true in every row where the premises are true. The proof is the book's first long proof about proofs, and it is an induction on the lines of a derivation.
 
 ## What must be proved, and why it is not obvious
+
+::: {.remark}
+**Two levels.** This section speaks about the calculus from outside it.
+
+| Object level: written in the language | Meta level: claims about it, proved in ordinary mathematics |
+|---|---|
+| formulas; derivations, with their lines, boxes, justifications and printed purposes ("asm, for →I", which the proof reads as the rule whose case applies) | "\( \Gamma \vdash \psi \)", "\( \Gamma \models \psi \)", "line \( k \) is justified by \( \rulename{\vee E} \)", "\( \Gamma_k \models \varphi_k \)" |
+
+Section 4.2's checklist reads: objects, the lines of one derivation; property, \( \Gamma_k \models \varphi_k \) (contexts are defined below); base cases, the premises and assumptions, which cite nothing; steps, one for each rule; principle, @thm-strong-induction.
+:::
+
+::: {.second-reading title="Is the proof circular?"}
+The proof below argues by cases ("if \( v(\varphi) = \mathrm{F} \) … if \( v(\varphi) = \mathrm{T} \)") and by contradiction, in the metalanguage: the very patterns that \( \rulename{\vee E} \) and \( \rulename{RAA} \) record in the object language. That is not circular. The theorem is not meant to persuade someone who rejects reasoning by cases. It is a theorem of ordinary mathematics about a calculus, and what it rules out is a mismatch between the rules and the tables, of the kind the connective in the fold of Section 4.4 has.
+:::
 
 Chapters 1 and 2 checked each rule as it arrived. \( \rulename{\wedge I} \) is safe because two true statements make a true conjunction (Section 1.2); \( \rulename{{\to}E} \) is safe because that is what "if … then" asserts (Section 1.3). Section 1.2 said once that Chapter 4 would prove it for every rule of Chapters 1 and 2 at once. Why is that more than collecting the separate checks?
 
@@ -42,6 +56,8 @@ A derivation may also use derived rules such as \( \rulename{MT} \) and \( \rule
 
 Let a derivation have lines \( 1, \dots, n \). We write \( \varphi_k \) for the formula on line \( k \). The **length** of a derivation is its number of lines. The **context** of line \( k \) is the list of the premises together with the assumptions of every box containing line \( k \): the statements the line depends on. We write it \( \Gamma_k \). The context of the last line is just the premises, since by @def-derivation the last line lies in no box. For lists of formulas \( \Delta \) and \( \Delta' \), we write \( \Delta \subseteq \Delta' \) when every formula of \( \Delta \) occurs in \( \Delta' \).
 
+Exercise C4 of Section 1.4 (@exr-proving-an-implication-c4) wrote such lists by hand, as sets of line numbers; its part (c) observed what @lem-context-inclusion below proves.
+
 *The context of a line is everything that line depends on: the premises, and every assumption still open where the line stands.*
 
 In the derivation of @prp-contrapositive above, the boxes are \( \lines{2}{6} \) and \( \lines{3}{5} \), and the contexts are:
@@ -53,6 +69,14 @@ In the derivation of @prp-contrapositive above, the boxes are \( \lines{2}{6} \)
 | 3, 4, 5 | \( p \), \( q \), \( \bot \) | \( \lines{2}{6} \), \( \lines{3}{5} \) | \( p \to q, \ \neg q, \ p \) |
 | 6 | \( \neg p \) | \( \lines{2}{6} \) | \( p \to q, \ \neg q \) |
 | 7 | \( \neg q \to \neg p \) | none | \( p \to q \) |
+
+::: {.check}
+In that derivation, which lines have \( p \) in their context?
+:::
+
+::: {.solution}
+Lines 3, 4 and 5, the lines of the box opened by \( p \).
+:::
 
 Now look at each line through its context. Line 3 is one of the formulas in its own context, so every row making the context true makes line 3 true. Line 4: every row making \( p \to q \) and \( p \) true makes \( q \) true. Line 5: no row makes \( p \to q \), \( \neg q \), and \( p \) all true (the first and third force \( q \)), so the context is unsatisfiable and it entails even \( \bot \) (Section 4.5). Line 6: every row making \( p \to q \) and \( \neg q \) true makes \( p \) false. Line 7: its context is the premise, and we know \( p \to q \models \neg q \to \neg p \). So on this derivation, every line \( k \) satisfies
 \[
@@ -73,10 +97,36 @@ Let lines \( i \), \( k \) and \( a \le b \) belong to a derivation, and let \( 
 :::
 :::
 
+```{=latex}
+\begin{center}
+\begin{tikzpicture}[x=1cm, y=1cm, every node/.style={font=\small}]
+  \draw (0,0.35) -- (0,-3.75);
+  \node[anchor=south west, font=\scriptsize] at (-0.1,0.4) {premises and the boxes around line $k$};
+  \draw (0.4,0.2) -- (0.4,-2.2);
+  \node[anchor=east] at (-0.25,0) {$a$};
+  \node[anchor=west] at (0.45,0) {$\varphi_a$};
+  \draw (0.4,-0.25) -- (1.3,-0.25);
+  \node at (0.85,-0.95) {$\vdots$};
+  \node[anchor=east] at (-0.25,-1.9) {$b$};
+  \node[anchor=west] at (0.45,-1.9) {$\varphi_b$};
+  \node[anchor=east] at (-0.25,-3.3) {$k$};
+  \node[anchor=west] (pk) at (0.05,-3.3) {$\varphi_k$};
+  \draw[->] (pk.east) to[out=0, in=0, looseness=1.6] (1.45,-0.95);
+  \node[anchor=west, font=\scriptsize] at (2.7,-1.9) {context $\Gamma_k, \varphi_a$};
+  \node[anchor=west, font=\scriptsize] at (2.7,-3.3) {context $\Gamma_k$};
+\end{tikzpicture}
+\end{center}
+```
+
+*Part (b): the last line of a cited box depends on everything line \( k \) depends on, and on the box's own assumption.* The arrow is the citation.
+
 ::: {.idea}
 Both parts compare two sets of boxes, since contexts differ only in the assumptions of the boxes around a line. For (a), the scope rule says that the boxes around line \( i \) are among the boxes around line \( k \). For (b), the boxes around line \( b \) should be the cited box itself and the boxes around line \( k \); the danger is a further box inside the cited box that also ends on line \( b \), and the box rules forbid exactly that.
 :::
 
+The proof reads both parts off the scope rule; it is in the fold below.
+
+::: {.second-reading title="The proof: reading the scope rule"}
 ::: {.proof}
 *(a)* The premises belong to every context. Any other formula of \( \Gamma_i \) is the assumption of a box containing line \( i \). Since line \( i \) is available at line \( k \), every box containing line \( i \) also contains line \( k \), by the scope rule of @def-derivation. So that assumption belongs to \( \Gamma_k \).
 
@@ -86,9 +136,11 @@ We find the boxes containing line \( b \). Every box containing line \( k \) con
 
 Hence the boxes containing line \( b \) are \( B \) and the boxes containing line \( k \). The assumption of \( B \) is \( \varphi_a \), so \( \Gamma_b \) consists of the premises, the assumptions of the boxes containing line \( k \), and \( \varphi_a \), which is \( \Gamma_k \) together with \( \varphi_a \).
 :::
+:::
 
 In the derivation of @prp-contrapositive, line 6 cites the box \( \lines{3}{5} \) by \( \rulename{\neg I} \), and \( \Gamma_5 = p \to q, \ \neg q, \ p \) is \( \Gamma_6 = p \to q, \ \neg q \) with the assumption \( p \) added, as (b) says. Line 5 cites lines 4 and 2, both available there, and \( \Gamma_4 \) and \( \Gamma_2 \) are contained in \( \Gamma_5 \), as (a) says.
 
+::: {.second-reading title="A box that ends inside another"}
 ::: {.warning}
 Part (b) needs the box to be **cited by a box rule**. @def-derivation allows a box to end on the same line as a box inside it, and then its last line has a larger context. In the derivation below, the box \( \lines{2}{4} \) is available at line 5, but \( \Gamma_4 = p, \ q, \ r \) contains \( r \), the assumption of the inner box, as well as \( q \). No box rule may cite \( \lines{2}{4} \): its last line lies inside the box \( \lines{3}{4} \), not in \( \lines{2}{4} \) itself. (This is why the derivation of @exm-disjunction-regroup needs its line 11.)
 
@@ -107,6 +159,7 @@ $\begin{nd}
 \end{nd}$
 \end{center}
 ```
+:::
 :::
 
 ::: {.check}
@@ -219,7 +272,9 @@ The three claims cover every way line \( k \) can be justified, so \( S(k) \) ho
 
 The proof is long, but each case is one step of the truth-table reasoning of Section 4.4, placed in the right context. Every primitive rule has passed. So has every derived rule, since each abbreviates primitive ones. *The rules never lead from truth to falsehood*, not merely line by line but for every derivation that can ever be written.
 
+::: {.second-reading title="Why induction on the position of a line"}
 Why strong induction and the position \( k \) of a line? A rule may cite any available line, however far back: line 7 of the derivation of @prp-contrapositive cites the box that begins at line 2. So the hypothesis is needed for all earlier lines at once. A different route would induct on the length of the whole derivation, removing its last line. But the lines above the last line need not form a derivation, since a box may still be open there (in the derivation of @prp-contrapositive, lines 1–6 end inside the box \( \lines{2}{6} \)), and that route has to cut boxes open. Carrying the context of every line avoids the surgery.
+:::
 
 ::: {#exm-soundness-run}
 [Running the claim on a case split]
@@ -259,6 +314,74 @@ The boxes are \( \lines{2}{3} \) and \( \lines{4}{5} \).
 For line 6: by @lem-context-inclusion (b), \( \Gamma_3 = \Gamma_6, p \) and \( \Gamma_5 = \Gamma_6, q \), and the claim for lines 3 and 5 says that rows making \( p \vee q \) and \( p \) true, and rows making \( p \vee q \) and \( q \) true, make \( q \vee p \) true. A row making \( \Gamma_6 \) true makes \( p \vee q \) true, so it makes \( p \) or \( q \) true, and one of the two boxes applies. Line 6 is the last line, and its context is the premise: so \( p \vee q \models q \vee p \), as soundness promises.
 :::
 
+## Every rule, checked against the tables
+
+| Rule | Introduced | Case | Clause | Wrong version; its derivation; refuting row |
+|---|---|---|---|---|
+| \( \rulename{R} \) | 1.4 (clause (D3)) | Claim 2 | none: the line is repeated | |
+| \( \rulename{\wedge I} \), \( \rulename{\wedge E} \) | 1.2 | Claim 2 | (V3) | |
+| \( \rulename{{\to}E} \) | 1.3 | Claim 2 | (V5) | |
+| \( \rulename{{\to}I} \) | 1.4 | Claim 3 | (V5) | "a box from \( \varphi \) to \( \psi \) gives \( \psi \to \varphi \)"; the box \( p \wedge q \), \( p \) would give \( \vdash p \to (p \wedge q) \); row \( p = \mathrm{T} \), \( q = \mathrm{F} \) |
+| \( \rulename{\vee I} \) | 1.5 | Claim 2 | (V4) | |
+| \( \rulename{\vee E} \) | 1.6 | Claim 3 | (V4) | "the two boxes may end in different lines; write the first box's"; from \( p \vee q \), the boxes \( p \) and \( q \) would give \( p \vee q \vdash p \); row \( p = \mathrm{F} \), \( q = \mathrm{T} \) |
+| \( \rulename{\neg E} \), \( \rulename{\bot E} \) | 2.1 | Claim 2 | (V2); (V1) | |
+| \( \rulename{\neg I} \) | 2.2 | Claim 3 | (V1), (V2) | "a box from \( \varphi \) to any line gives \( \neg\varphi \)"; the one-line box \( p \) would give \( \vdash \neg p \); row \( p = \mathrm{T} \) |
+| \( \rulename{{\leftrightarrow}I} \), \( \rulename{{\leftrightarrow}E} \) | 2.4 | Claim 3; Claim 2 | (V6) | |
+| \( \rulename{RAA} \) | 2.5 | Claim 3 | (V1), (V2) | "a box from \( \varphi \) to \( \bot \) gives \( \varphi \)"; from \( \neg p \), the box \( p \), \( \bot \) (by \( \rulename{\neg E} \)) would give \( \neg p \vdash p \); row \( p = \mathrm{F} \) |
+
+*The thirteen primitive rules, with the case and clause each uses. Each wrong version changes one condition, and its case fails there: the row makes the premises true and the line false.*
+
+::: {.second-reading title="The four wrong derivations, written out"}
+Here are the four derivations the wrong versions would license, written as patterns with Chapter 2's letters; read \( P \) and \( Q \) as the atoms \( p \) and \( q \) for the rows of the table. Each is correct except at its last line, which only the wrong version allows. Wrong \( \rulename{{\to}I} \) reverses the implication its box proves; wrong \( \rulename{\vee E} \) closes on a line that only the first box reaches; wrong \( \rulename{\neg I} \) closes a box that never reached \( \bot \); wrong \( \rulename{RAA} \) opens its box with \( \varphi \) instead of \( \neg\varphi \).
+
+```{=latex}
+\begin{center}
+% expect-invalid
+$\begin{nd}
+  \open
+  \hypo {1} {P \wedge Q}
+  \have {2} {P} \ae{1}
+  \close
+  \have {3} {P \to (P \wedge Q)} \ii{1-2}
+\end{nd}$
+\qquad
+% expect-invalid
+$\begin{nd}
+  \hypo {1} {P \vee Q}
+  \open
+  \hypo {2} {P}
+  \close
+  \open
+  \hypo {3} {Q}
+  \close
+  \have {4} {P} \oe{1,2-2,3-3}
+\end{nd}$
+\end{center}
+```
+
+```{=latex}
+\begin{center}
+% expect-invalid
+$\begin{nd}
+  \open
+  \hypo {1} {P}
+  \close
+  \have {2} {\neg P} \ni{1-1}
+\end{nd}$
+\qquad
+% expect-invalid
+$\begin{nd}
+  \hypo {1} {\neg P}
+  \open
+  \hypo {2} {P}
+  \have {3} {\bot} \ne{2,1}
+  \close
+  \have {4} {P} \raa{2-3}
+\end{nd}$
+\end{center}
+```
+:::
+
 ## Refuting with one row
 
 Soundness is most often used backwards. If the conclusion can be false while the premises are true, no derivation can exist.
@@ -275,19 +398,25 @@ Let \( v \) make every formula of \( \Gamma \) true and \( \psi \) false. Then \
 
 Here \( \Gamma \nvdash \psi \) means that there is **no** derivation of \( \psi \) from premises in \( \Gamma \): not with the primitive rules, not with any derived rule, not in a thousand lines. One row has settled a question about infinitely many derivations.
 
+::: {.check}
+Does the row \( p = q = \mathrm{T} \) refute \( p \to q \vdash q \)? Does the row \( p = q = \mathrm{F} \)?
+:::
+
+::: {.solution}
+The first does not, since its conclusion \( q \) is true. The second does: \( p \to q \) is T and \( q \) is F. So \( p \to q \nvdash q \), by @cor-refuting-row.
+:::
+
 **Chapter 3's question.** Section 3.1 searched for a derivation of \( P \to Q \vdash Q \to P \) and stalled. The row \( p = \mathrm{F} \), \( q = \mathrm{T} \) makes \( p \to q \) true (false hypothesis) and \( q \to p \) false (true hypothesis, false conclusion). By @cor-refuting-row,
 \[
 p \to q \nvdash q \to p .
 \]
 The letters of Chapter 3 stood for arbitrary statements, and the search asked for a derivation of the **pattern**: one derivation, written with \( P \) and \( Q \), that works whatever they are. Such a derivation, with \( P \) and \( Q \) read as the atoms \( p \) and \( q \), would derive \( p \to q \vdash q \to p \), which we have just ruled out. So the pattern has no derivation, and the search was right to fail. (Particular instances can be derivable: with \( P \) and \( Q \) the same statement, \( P \to P \vdash P \to P \) takes one line. A refuting row for atoms speaks about the pattern, as the warning after @lem-substitution said.)
 
-**Affirming the consequent.** Chapter 1 promised, in Section 1.3, that no derivation leads from \( P \to Q \) and \( Q \) to \( P \), whichever rules of Chapters 1 and 2 it uses. The refuting row of @exm-affirming-the-consequent, \( p = \mathrm{F} \) and \( q = \mathrm{T} \), makes \( p \to q \) and \( q \) true and \( p \) false, so by @cor-refuting-row,
+**What soundness certifies.** Soundness turns every break this book has made into a proof that no derivation exists. Section 1.1 called a form bad when some choice of statements makes its counterexample set true (@def-counterexample-set). For a propositional form, a row making the counterexample set true is such a choice, and by @cor-refuting-row no derivation of the form exists, with any rule of Chapters 1 and 2. Chapter 1 promised exactly this, in Section 1.3, for affirming the consequent: the row \( p = \mathrm{F} \), \( q = \mathrm{T} \) of @exm-affirming-the-consequent makes \( p \to q \) and \( q \) true and \( p \) false, so
 \[
 p \to q, \ q \nvdash p .
 \]
-Chapter 1 could already see that the step "from \( \varphi \to \psi \) and \( \psi \), infer \( \varphi \)" is not an instance of \( \rulename{{\to}E} \). That did not exclude a longer derivation reaching \( p \) some other way. The row excludes every derivation at once. So the repair of Argument B that Section 1.4 considered is not merely unjustified: it is impossible.
-
-**A stall in Chapter 2.** Section 2.5 did not aim at \( \rulename{\vee I} \) for the De Morgan direction \( \neg(P \wedge Q) \vdash \neg P \vee \neg Q \), because the step from the premise to either disjunct can be broken, by a choice of statements that makes the premise true and the disjunct false. Now such a break is a proof: the row \( p = \mathrm{T} \), \( q = \mathrm{F} \) makes \( \neg(p \wedge q) \) true and \( \neg p \) false, so \( \neg(p \wedge q) \nvdash \neg p \), and the row \( p = \mathrm{F} \), \( q = \mathrm{T} \) gives \( \neg(p \wedge q) \nvdash \neg q \).
+So the repair of Argument B that Section 1.4 considered is not merely unjustified: it is impossible. The same holds for every break in the derive-or-break items from Section 1.5 on, for each claim of Section 3.2 that the search of Section 4.6 refuted, the four breaks of @exr-four-kinds-of-task-b3 among them, and for every refuting row of Sections 4.5 and 4.6. A break by statements about a number certifies the same: the truth values of those statements form a row, and since the connectives are truth-functional (Section 4.4), that row makes the counterexample set true.
 
 ::: {.warning}
 A refuting row must make **every** premise true. For \( p \to q, \ p \vdash q \), the row \( p = \mathrm{F} \), \( q = \mathrm{F} \) makes the conclusion false, but it also makes the premise \( p \) false, so it refutes nothing; and the sequent is derivable, by one line of \( \rulename{{\to}E} \). A row in which some premise fails is simply not one of the rows @def-valid-argument looks at.
@@ -305,55 +434,26 @@ Give a row showing \( p \to r \nvdash (p \vee q) \to r \).
 Take \( p = \mathrm{F} \), \( q = \mathrm{T} \), \( r = \mathrm{F} \). The premise \( p \to r \) is true, since \( p \) is false. The conclusion has hypothesis \( p \vee q \), which is true, and conclusion \( r \), which is false, so it is false. By @cor-refuting-row, no derivation exists. (The rows with \( p \) true fail: they make the premise force \( r \) true, or make the premise false.)
 :::
 
-## Reductio says something new
+**Satisfiable lists are consistent.** Section 4.5 kept two words apart, and soundness joins them in one direction. A satisfiable list \( \Delta \) is consistent (@def-inconsistent-set): if \( \Delta \vdash \bot \), soundness would give \( \Delta \models \bot \), but a row making \( \Delta \) true makes \( \bot \) false. With @prp-derivable-iff-negation-inconsistent (b) this is @cor-refuting-row once more: a row making the counterexample set \( \Gamma, \neg\psi \) true shows it consistent, and so \( \Gamma \nvdash \psi \), as Exercise B4 of Section 3.2 anticipated. Section 4.8 proves the converse.
 
-Chapter 2 introduced \( \rulename{RAA} \) in Section 2.5 because the rules before it stalled on \( \neg\neg P \vdash P \), and said that Chapter 4 would prove that no derivation of \( P \) from \( \neg\neg P \) avoids \( \rulename{RAA} \). Truth tables cannot do it. The row method only proves nonderivability from **all** the rules, and with \( \rulename{RAA} \) the sequent is derivable, so no two-valued row refutes it. The trick is to run the proof of @thm-soundness with a different notion of truth, one with three values, under which every rule except \( \rulename{RAA} \) still passes. This result is optional: it answers a question Chapter 2 raised, and nothing later uses it.
+## Test the subgoal
 
-A **three-valued valuation** \( u \) assigns to each atom one of the values \( 0 \), \( \frac12 \), \( 1 \), ordered \( 0 < \frac12 < 1 \). Think of \( 1 \) as "true", \( 0 \) as "false", and \( \frac12 \) as "not yet settled". It is extended to all formulas by recursion (@thm-structural-recursion):
-\[
-\begin{aligned}
-u(\bot) &= 0, \qquad u(\neg\varphi) = u(\varphi \to \bot), \\
-u(\varphi \wedge \psi) &= \min\{ u(\varphi), u(\psi) \}, \qquad u(\varphi \vee \psi) = \max\{ u(\varphi), u(\psi) \}, \\
-u(\varphi \to \psi) &= \begin{cases} 1 & \text{if } u(\varphi) \le u(\psi), \\ u(\psi) & \text{otherwise,} \end{cases} \\
-u(\varphi \leftrightarrow \psi) &= \min\{ u(\varphi \to \psi), u(\psi \to \varphi) \} .
-\end{aligned}
-\]
-So \( u(\neg\varphi) = 1 \) if \( u(\varphi) = 0 \), and \( u(\neg\varphi) = 0 \) otherwise. On the values \( 0 \) and \( 1 \) alone these are exactly the tables of @def-truth-value, with \( 1 \) for \( \mathrm{T} \) and \( 0 \) for \( \mathrm{F} \). For a list \( \Gamma \), let \( u(\Gamma) \) be the least of the values \( u(\gamma) \) for \( \gamma \) in \( \Gamma \), and \( u(\Gamma) = 1 \) if \( \Gamma \) is empty. Write \( \Gamma \models_3 \psi \) if \( u(\Gamma) \le u(\psi) \) for every three-valued valuation \( u \): the conclusion is at least as true as the weakest premise.
+Section 3.1's search works on subgoals: a goal, and the lines available for it. Soundness gives it a test. Before chasing a subgoal, look for a row making the available lines true and the subgoal false. If there is one, no line with those lines as its context can hold the subgoal: the proof of @thm-soundness showed that every line \( k \) satisfies \( \Gamma_k \models \varphi_k \), and the row refutes exactly that. This is the move **test the subgoal**. Section 3.1 met it without the name ("Choosing a side of \( \vee \) can leave a goal that does not follow"): from \( p \vee q \), the goal \( q \vee p \) tempts \( \rulename{\vee I} \) from \( q \), and the row \( p = \mathrm{T} \), \( q = \mathrm{F} \) makes \( p \vee q \) true and \( q \) false, so the search must split \( p \vee q \) first.
 
-::: {#thm-raa-independent .optional}
-[Reductio Is Not Derivable from the Other Rules]
+Chapter 2 met a harder case. Section 2.5 did not aim at \( \rulename{\vee I} \) for the De Morgan direction \( \neg(P \wedge Q) \vdash \neg P \vee \neg Q \), because the step from the premise to either disjunct can be broken. Now such a break is a proof: the row \( p = \mathrm{T} \), \( q = \mathrm{F} \) makes \( \neg(p \wedge q) \) true and \( \neg p \) false, so \( \neg(p \wedge q) \nvdash \neg p \), and the row \( p = \mathrm{F} \), \( q = \mathrm{T} \) gives \( \neg(p \wedge q) \nvdash \neg q \). Both subgoals fail the test, so a derivation of @prp-de-morgan (d) cannot end with \( \rulename{\vee I} \), which is why Section 2.5 reached for \( \rulename{RAA} \). The test only refutes. A subgoal that passes it may still be hard to reach; whether it can be reached at all is Section 4.8's question.
 
-Neither \( \neg\neg p \vdash p \) nor \( \vdash p \vee \neg p \) has a derivation that uses only the primitive rules other than \( \rulename{RAA} \) (and derived rules derived from those).
+::: {.check}
+A search for \( p \to q, \ \neg q \vdash \neg p \) opens a box \( p \) for \( \rulename{\neg I} \), with the goal \( \bot \). Does the subgoal \( q \) pass the test?
 :::
 
-::: {.idea}
-Repeat the proof of @thm-soundness with \( \models_3 \) in place of \( \models \): every line of a derivation without \( \rulename{RAA} \) satisfies \( \Gamma_k \models_3 \varphi_k \). Then show that both sequents fail for \( \models_3 \), at \( u(p) = \frac12 \). The one case that breaks is \( \rulename{RAA} \), and that is the point.
+::: {.solution}
+Yes, trivially. The available lines \( p \to q \), \( \neg q \), \( p \) are made true by no row at all (\( p \) and \( p \to q \) force \( q \)), so no row refutes any subgoal there; and indeed \( q \) follows by \( \rulename{{\to}E} \), then \( \bot \) by \( \rulename{\neg E} \). An unsatisfiable context lets every subgoal pass.
 :::
-
-::: {.proof}
-As in Step 1 of the proof of @thm-soundness, a derived rule derived without \( \rulename{RAA} \) abbreviates a pasted derivation in the primitive rules other than \( \rulename{RAA} \), so it is enough to consider those. Fix a derivation that uses only the primitive rules other than \( \rulename{RAA} \), with lines \( 1, \dots, n \), formulas \( \varphi_k \) and contexts \( \Gamma_k \). We show \( \Gamma_k \models_3 \varphi_k \) for every \( k \) with \( 1 \le k \le n \), by @thm-strong-induction exactly as in Step 2 of the proof of @thm-soundness, the cases \( k = 0 \) and \( k > n \) being vacuous. Fix \( k \), assume the claim for all earlier lines, and fix a three-valued valuation \( u \); write \( m = u(\Gamma_k) \). We must show \( m \le u(\varphi_k) \). Two facts do the bookkeeping. If line \( k \) cites line \( i \), then \( \Gamma_i \subseteq \Gamma_k \) (@lem-context-inclusion (a)), and the least value over a longer list is at most the least over a shorter one, so \( m \le u(\Gamma_i) \le u(\varphi_i) \). If line \( k \) cites a box from line \( a \) to line \( b \) by a box rule, then \( \Gamma_b = \Gamma_k, \varphi_a \) (@lem-context-inclusion (b)), so the hypothesis for line \( b \) says \( \min\{ m, u(\varphi_a) \} \le u(\varphi_b) \). Below, \( x = u(\varphi) \), \( y = u(\psi) \), \( z = u(\chi) \).
-
-*Premises and assumptions:* \( \varphi_k \) is in \( \Gamma_k \), so \( m \le u(\varphi_k) \). *\( \rulename{R} \):* \( m \le u(\varphi_i) = u(\varphi_k) \). *\( \rulename{\wedge I} \):* \( m \le x \) and \( m \le y \), so \( m \le \min\{x, y\} \). *\( \rulename{\wedge E} \):* \( m \le \min\{x, y\} \le x \), and likewise \( \le y \). *\( \rulename{\vee I} \):* \( m \le x \le \max\{x, y\} \).
-
-*\( \rulename{{\to}E} \):* \( m \le u(\varphi \to \psi) \) and \( m \le x \). If \( x \le y \), then \( m \le x \le y \). Otherwise \( u(\varphi \to \psi) = y \), so \( m \le y \). *\( \rulename{{\leftrightarrow}E} \):* \( m \le u(\varphi \leftrightarrow \psi) \le u(\varphi \to \psi) \) and \( m \le x \), so \( m \le y \) as for \( \rulename{{\to}E} \); the second form is symmetric.
-
-*\( \rulename{\neg E} \):* \( m \le x \) and \( m \le u(\neg\varphi) \). If \( x = 0 \), then \( m \le 0 \); if \( x > 0 \), then \( u(\neg\varphi) = 0 \) and \( m \le 0 \). So \( m = 0 = u(\bot) \). *\( \rulename{\bot E} \):* \( m \le u(\bot) = 0 \), so \( m = 0 \le u(\varphi_k) \).
-
-*\( \rulename{{\to}I} \):* the hypothesis gives \( \min\{m, x\} \le y \). If \( x \le y \), then \( u(\varphi \to \psi) = 1 \ge m \). Otherwise \( y < x \) and \( u(\varphi \to \psi) = y \); since \( \min\{m, x\} \le y < x \), the minimum is not \( x \), so it is \( m \), and \( m \le y \). *\( \rulename{{\leftrightarrow}I} \):* the same argument for each box gives \( m \le u(\varphi \to \psi) \) and \( m \le u(\psi \to \varphi) \), so \( m \) is at most their minimum.
-
-*\( \rulename{\neg I} \):* the hypothesis gives \( \min\{m, x\} \le u(\bot) = 0 \). If \( x = 0 \), then \( u(\neg\varphi) = 1 \ge m \). If \( x > 0 \), the minimum is \( 0 \) and is not \( x \), so \( m = 0 \le u(\neg\varphi) \).
-
-*\( \rulename{\vee E} \):* \( m \le \max\{x, y\} \), and the boxes give \( \min\{m, x\} \le z \) and \( \min\{m, y\} \le z \). If \( x \ge y \), then \( m \le x \), so \( \min\{m, x\} = m \) and \( m \le z \). If \( y > x \), then \( m \le y \) and \( m \le z \) from the second box.
-
-This covers every rule used, so \( \Gamma_k \models_3 \varphi_k \) for every line, and in particular for the last line, whose context is the premises. As in Step 4 of the proof of @thm-soundness, a list containing all the premises has least value at most theirs, so every sequent \( \Gamma \vdash \psi \) derived without \( \rulename{RAA} \) satisfies \( \Gamma \models_3 \psi \).
-
-Now let \( u(p) = \frac12 \). Then \( u(\neg p) = 0 \), since \( \frac12 > 0 \), and \( u(\neg\neg p) = 1 \), since \( u(\neg p) = 0 \). So \( u(\neg\neg p) = 1 > \frac12 = u(p) \), and \( \neg\neg p \models_3 p \) fails. Also \( u(p \vee \neg p) = \max\{ \frac12, 0 \} = \frac12 < 1 \), the value of the empty list, so \( \models_3 p \vee \neg p \) fails. Hence neither sequent is derivable without \( \rulename{RAA} \).
-:::
-
-The case that was not written is \( \rulename{RAA} \) itself. Its box would give \( \min\{m, u(\neg\varphi)\} \le 0 \), and we would need \( m \le x \). At \( u(\varphi) = \frac12 \) the box gives nothing, since \( u(\neg\varphi) = 0 \) already, while \( m \) may be \( 1 \). This is the three-valued face of the question asked in the Idea of @thm-soundness: the two-valued \( \rulename{RAA} \) case used that \( v(\varphi) = \mathrm{F} \) forces \( v(\neg\varphi) = \mathrm{T} \), and with a third value, \( \varphi \) and \( \neg\varphi \) can both fail to be true.
 
 ::: {.remark}
-The same values settle Peirce's law, \( ((p \to q) \to p) \to p \), which Section 2.5 derived with \( \rulename{RAA} \) (@prp-peirce): at \( u(p) = \frac12 \), \( u(q) = 0 \), we get \( u(p \to q) = 0 \), \( u((p \to q) \to p) = 1 \), and the whole formula has value \( \frac12 \), so it too needs \( \rulename{RAA} \). The values do not refute everything Chapter 2 derived with \( \rulename{RAA} \): the De Morgan direction \( \neg(p \wedge q) \vdash \neg p \vee \neg q \) passes this test, and so does \( \vdash (p \to q) \vee (q \to p) \). Neither of these is derivable without \( \rulename{RAA} \) either, but showing that needs a different kind of model, and this book states it without proof, as Section 2.5's Looking-ahead box announced. \( \rulename{RAA} \) says something the other rules cannot, and Chapter 8 says what it is and who objected to it.
+[Looking ahead]
+
+Chapter 8 says what reductio asserts that the other rules do not, and who objected to it.
 :::
 
 ## Exercises
@@ -408,6 +508,53 @@ Line 3 is the \( \rulename{\neg E} \) case, line 4 the \( \rulename{\bot E} \) c
 *(d)* Claim 2, the one-step rules: it would need a new case, and the case is false. From \( v(\varphi \to \psi) = \mathrm{T} \) and \( v(\psi) = \mathrm{T} \) nothing follows about \( v(\varphi) \). The valuation with \( v(p) = \mathrm{F} \), \( v(q) = \mathrm{T} \) makes \( p \to q \) and \( q \) true and \( p \) false; with the new rule, the three-line derivation of \( p \) from \( p \to q \) and \( q \) would have a last line whose context does not entail it.
 
 *(e)* It concludes that the context of the last line is just the premises. Without that, the last line could depend on an undischarged assumption, and \( \Gamma_n \models \psi \) would say nothing about the rows making the premises true.
+:::
+
+::: {#exr-soundness-a2}
+[A2: Drill]
+
+The parts run from reading off a refuting row, through contexts, to testing a subgoal and deciding a claim.
+
+::: {.enumerate options="label=(\alph*)"}
+1. Give a refuting row for \( p \vee q \vdash p \).
+2. Give one for \( p \to q, \ \neg p \vdash \neg q \).
+3. Does \( p = \mathrm{T} \), \( q = \mathrm{F} \) refute \( p \wedge q \vdash q \)?
+4. Is there a refuting row for \( p, \ p \to q \vdash q \)?
+5. Refute \( \vdash p \vee q \).
+6. Refute \( p \to (q \vee r) \vdash p \to q \).
+7. Line 5 of a derivation lies in the boxes opened at lines 2 and 4, and line 1 is the only premise. What is \( \Gamma_5 \)?
+8. Line \( k \) is justified by \( \rulename{\neg I} \) citing the box 3–6. What is \( \Gamma_6 \), in terms of \( \Gamma_k \)?
+9. A search for \( p \vee q \vdash q \vee p \) considers ending with \( \rulename{\vee I} \) from \( q \). Test the subgoal \( q \).
+10. The list \( p \to q, \ q \to \neg p \) is satisfiable: give a row, and say what follows about \( \vdash \).
+11. Which clause of @def-truth-value does the \( \rulename{\vee E} \) case of the proof of @thm-soundness use?
+12. Derive or refute: \( (p \wedge q) \to r \vdash (p \to r) \wedge (q \to r) \).
+:::
+:::
+
+::: {.solution}
+(a) \( p = \mathrm{F} \), \( q = \mathrm{T} \).
+
+(b) \( p = \mathrm{F} \), \( q = \mathrm{T} \).
+
+(c) No: it makes the premise false.
+
+(d) No. The only row making both premises true has \( q \) true. (The sequent is derivable, by one line of \( \rulename{{\to}E} \).)
+
+(e) \( p = q = \mathrm{F} \). With no premises, every row qualifies.
+
+(f) \( p = \mathrm{T} \), \( q = \mathrm{F} \), \( r = \mathrm{T} \).
+
+(g) \( \varphi_1, \varphi_2, \varphi_4 \).
+
+(h) \( \Gamma_k, \varphi_3 \), by @lem-context-inclusion (b).
+
+(i) The row \( p = \mathrm{T} \), \( q = \mathrm{F} \) makes \( p \vee q \) true and \( q \) false: \( p \vee q \nvdash q \) (@cor-refuting-row), so the subgoal is dead.
+
+(j) \( p = \mathrm{F} \), \( q = \mathrm{T} \) (or both F). So the list is consistent: \( p \to q, \ q \to \neg p \nvdash \bot \). (It is the list of @exr-four-kinds-of-task-b4 (a) without its third member \( p \); with \( p \), Section 3.2 derived \( \bot \).)
+
+(k) (V4).
+
+(l) Refute: \( p = \mathrm{T} \), \( q = \mathrm{F} \), \( r = \mathrm{F} \) makes the premise true (false hypothesis) and \( p \to r \) false, so the conclusion false; by @cor-refuting-row no derivation exists.
 :::
 
 ### B. Practice
@@ -469,6 +616,180 @@ What each line needs: (v) and (viii), (iv) use the valuation fixed in (iii); (vi
 Line (vi) applies the induction hypothesis to line \( k \) itself. The hypothesis of @thm-strong-induction covers only the lines \( j < k \); (vi) assumes what is to be proved.
 
 Line (ix) uses the context of the citing line for the box's last line. It is false: line \( b \) lies inside the box, whose assumption \( \varphi \) is part of its context, so \( \Gamma_b = \Gamma_k, \varphi \), not \( \Gamma_k \). In the derivation of @exm-soundness-run, line 3 has context \( p \vee q, \ p \), while line 6 has context \( p \vee q \), and \( p \vee q \models q \vee p \) could not be read off from line 3 directly.
+:::
+
+::: {#exr-soundness-b3}
+[B3: Derive or refute]
+
+For each claim, give a derivation, or a refuting row and the result that makes it a proof of non-derivability.
+
+::: {.enumerate options="label=(\alph*)"}
+1. \( p \leftrightarrow q \vdash \neg p \leftrightarrow \neg q \).
+2. \( p \leftrightarrow \neg q \vdash \neg(p \wedge q) \).
+3. \( p \to q, \ q \to r \vdash r \to p \).
+4. \( \neg p \vee q \vdash p \to q \).
+5. \( p \leftrightarrow q, \ \neg q \vdash p \).
+6. \( \neg(p \to q) \vdash q \to p \).
+:::
+:::
+
+::: {.solution}
+(a) **Derive.**
+
+```{=latex}
+\begin{center}
+$\begin{nd}
+  \hypo {1} {p \leftrightarrow q}
+  \open
+  \hypo {2} {\neg p}
+  \open
+  \hypo {3} {q}
+  \have {4} {p} \bie{1,3}
+  \have {5} {\bot} \ne{4,2}
+  \close
+  \have {6} {\neg q} \ni{3-5}
+  \close
+  \open
+  \hypo {7} {\neg q}
+  \open
+  \hypo {8} {p}
+  \have {9} {q} \bie{1,8}
+  \have {10} {\bot} \ne{9,7}
+  \close
+  \have {11} {\neg p} \ni{8-10}
+  \close
+  \have {12} {\neg p \leftrightarrow \neg q} \bi{2-6,7-11}
+\end{nd}$
+\end{center}
+```
+
+(b) **Derive.**
+
+```{=latex}
+\begin{center}
+$\begin{nd}
+  \hypo {1} {p \leftrightarrow \neg q}
+  \open
+  \hypo {2} {p \wedge q}
+  \have {3} {p} \ae{2}
+  \have {4} {q} \ae{2}
+  \have {5} {\neg q} \bie{1,3}
+  \have {6} {\bot} \ne{4,5}
+  \close
+  \have {7} {\neg (p \wedge q)} \ni{2-6}
+\end{nd}$
+\end{center}
+```
+
+(c) **Refute.** \( p = \mathrm{F} \), \( q = \mathrm{F} \), \( r = \mathrm{T} \): both premises have false hypotheses, and \( r \to p \) is \( \mathrm{T} \to \mathrm{F} \). By @cor-refuting-row, no derivation exists.
+
+(d) **Derive.**
+
+```{=latex}
+\begin{center}
+$\begin{nd}
+  \hypo {1} {\neg p \vee q}
+  \open
+  \hypo {2} {p}
+  \open
+  \hypo {3} {\neg p}
+  \have {4} {\bot} \ne{2,3}
+  \have {5} {q} \be{4}
+  \close
+  \open
+  \hypo {6} {q}
+  \close
+  \have {7} {q} \oe{1,3-5,6-6}
+  \close
+  \have {8} {p \to q} \ii{2-7}
+\end{nd}$
+\end{center}
+```
+
+(e) **Refute.** \( p = q = \mathrm{F} \): \( p \leftrightarrow q \) is T, \( \neg q \) is T, and \( p \) is F. By @cor-refuting-row, no derivation exists.
+
+(f) **Derive**, without \( \rulename{RAA} \).
+
+```{=latex}
+\begin{center}
+$\begin{nd}
+  \hypo {1} {\neg (p \to q)}
+  \open
+  \hypo {2} {q}
+  \open
+  \hypo {3} {p}
+  \have {4} {q} \r{2}
+  \close
+  \have {5} {p \to q} \ii{3-4}
+  \have {6} {\bot} \ne{5,1}
+  \have {7} {p} \be{6}
+  \close
+  \have {8} {q \to p} \ii{2-7}
+\end{nd}$
+\end{center}
+```
+
+(c) is the converse of the chain, a way of affirming a conclusion; (e) is a look-alike of \( p \leftrightarrow q, \ \neg q \vdash \neg p \), which (a) gives by \( \rulename{{\leftrightarrow}E} \); (f) looks paradoxical and is not: its premise is false in every row but one, and there \( q \to p \) is true.
+:::
+
+::: {#exr-soundness-b4}
+[B4: Test the subgoal]
+
+A search for \( p \to (q \vee r), \ \neg q \vdash p \to r \) has reached this stage:
+
+```{=latex}
+% schema (partial derivation: the gap is unnumbered, lines carry their final numbers)
+\begin{center}
+$\begin{nd}
+  \hypo {1} {p \to (q \vee r)}
+  \hypo {2} {\neg q}
+  \open
+  \hypo {3} {p} \purpose{\ii}
+  \have[\ ][0] {} {\vdots}
+  \have[][9] {9} {r}
+  \close
+  \have {10} {p \to r} \ii{3-9}
+\end{nd}$
+\end{center}
+```
+
+A student plans to reach \( r \) by deriving \( q \) first.
+
+::: {.enumerate options="label=(\alph*)"}
+1. Test that subgoal.
+2. *Name the move that works, then complete it.*
+:::
+:::
+
+::: {.solution}
+(a) The available lines are \( p \to (q \vee r) \), \( \neg q \), \( p \), and the subgoal is \( q \). The row \( p = \mathrm{T} \), \( q = \mathrm{F} \), \( r = \mathrm{T} \) makes the three lines true and \( q \) false. So no line of the box itself, whose context is \( p \to (q \vee r), \ \neg q, \ p \), can hold \( q \): every line satisfies \( \Gamma_k \models \varphi_k \), by the proof of @thm-soundness. The plan is dead. (\( q \) may still stand as the assumption of a case box inside it, whose lines have a larger context; that is how (b) uses it.)
+
+(b) Use the premise by its main connective: \( \rulename{{\to}E} \) gives \( q \vee r \); split it, closing the case \( q \) by the clash with \( \neg q \).
+
+```{=latex}
+\begin{center}
+$\begin{nd}
+  \hypo {1} {p \to (q \vee r)}
+  \hypo {2} {\neg q}
+  \open
+  \hypo {3} {p}
+  \have {4} {q \vee r} \ie{1,3}
+  \open
+  \hypo {5} {q}
+  \have {6} {\bot} \ne{5,2}
+  \have {7} {r} \be{6}
+  \close
+  \open
+  \hypo {8} {r}
+  \close
+  \have {9} {r} \oe{4,5-7,8-8}
+  \close
+  \have {10} {p \to r} \ii{3-9}
+\end{nd}$
+\end{center}
+```
+
+(@prp-disjunctive-syllogism gives line 9 from lines 4 and 2 in one step, as a derived rule; either is correct.)
 :::
 
 ### C. Going deeper
@@ -552,6 +873,189 @@ Write out, in full, the \( \rulename{{\to}I} \), \( \rulename{\neg I} \) and \( 
 A proof that inducts on the length of the derivation instead, and handles open boxes correctly, earns the same points step for step. Fatal errors (0 for the step): applying the hypothesis to line \( k \) itself; using \( \Gamma_k \) as the context of a box's last line.
 :::
 
+::: {#exr-soundness-c3}
+[C3: A changed table]
+
+Replace (V4) by: \( v(\varphi \vee \psi) = \mathrm{T} \) exactly when **exactly one** of \( v(\varphi) \), \( v(\psi) \) is \( \mathrm{T} \). Keep every other clause and every rule.
+
+::: {.enumerate options="label=(\alph*)"}
+1. Which cases of the proof of @thm-soundness still go through?
+2. For each rule whose case fails, give a derivation and a row that is a counterexample for the new table.
+3. Is \( p \vdash p \vee q \) still derivable? Is it valid for the new table? What does this show?
+:::
+:::
+
+::: {.solution}
+(a) Every case except \( \rulename{\vee I} \). The rules that do not mention \( \vee \) use other clauses, which are unchanged. The \( \rulename{\vee E} \) case needs only that a true disjunction has a true side, and that still holds: exactly one side is true.
+
+(b) \( \rulename{\vee I} \): the derivation 1 \( p \); 2 \( p \vee q \), \( \rulename{\vee I} \) 1. The row \( p = q = \mathrm{T} \) makes \( p \) true and, for the new table, \( p \vee q \) false.
+
+(c) Derivable: the rules did not change. Not valid for the new table: the row of (b). So soundness is a fact about the rules **and** the tables together; change a table, and the same rules can lead from truth to falsehood.
+
+**Marking scheme.** (8 points)
+
+- 3: (a), with the argument for the \( \rulename{\vee E} \) case.
+- 3: (b), the derivation and the row, checked.
+- 2: (c), both answers and the conclusion.
+
+Fatal errors (0 for the step): in (a), declaring the \( \rulename{\vee E} \) case broken without a row that breaks it.
+:::
+
+::: {#exr-soundness-c4}
+[C4: Challenge: ⊥ read as a letter]
+
+Read \( \bot \) as an ordinary letter. A **letter valuation** \( w \) gives \( \mathrm{T} \) or \( \mathrm{F} \) to every atom **and to \( \bot \)**, computes \( \wedge \), \( \vee \), \( \to \), \( \leftrightarrow \) by (V3)–(V6), and sets \( w(\neg\varphi) = \mathrm{T} \) exactly when \( w(\varphi) = \mathrm{F} \) or \( w(\bot) = \mathrm{T} \). Write \( \Gamma \models_\ell \psi \) when every letter valuation making every formula of \( \Gamma \) true makes \( \psi \) true.
+
+::: {.enumerate options="label=(\alph*)"}
+1. Show that every line of a derivation that uses no \( \rulename{\bot E} \) and no \( \rulename{RAA} \), and cites no derived rule whose own derivation uses them, satisfies \( \Gamma_k \models_\ell \varphi_k \). Give the cases \( \rulename{\neg E} \) and \( \rulename{\neg I} \), and say why the others are those of @thm-soundness.
+2. Deduce that \( \bot \vdash p \) has no derivation without \( \rulename{\bot E} \) and \( \rulename{RAA} \) (and without derived rules derived with them).
+3. Derive \( \bot \vdash p \) with \( \rulename{RAA} \) and without \( \rulename{\bot E} \), and say why (b) must exclude \( \rulename{RAA} \) as well.
+:::
+:::
+
+::: {.solution}
+(a) Step 1 of the proof expands each line citing a derived rule into a pasted derivation of that rule, which by hypothesis uses neither \( \rulename{\bot E} \) nor \( \rulename{RAA} \); so the expanded derivation is in the remaining primitive rules (and a derived rule derived from derived rules of this kind expands the same way, one layer at a time). Steps 1, 2 and 4 do not look at the clauses, and the cases of premises, assumptions, \( \rulename{R} \) and the rules for \( \wedge \), \( \vee \), \( \to \), \( \leftrightarrow \) use only (V3)–(V6), which are unchanged; they go through word for word with \( w \) for \( v \).
+
+\( \rulename{\neg E} \): \( w \) makes \( \Gamma_k \) true, so by \( (\ast) \) it makes \( \varphi \) and \( \neg\varphi \) true. Now \( w(\neg\varphi) = \mathrm{T} \) with \( w(\varphi) = \mathrm{T} \) forces \( w(\bot) = \mathrm{T} \), and line \( k \) is \( \bot \).
+
+\( \rulename{\neg I} \): by \( (\ast\ast) \), every letter valuation making \( \Gamma_k \) and \( \varphi \) true makes \( \bot \) true. If \( w(\varphi) = \mathrm{F} \), then \( w(\neg\varphi) = \mathrm{T} \). If \( w(\varphi) = \mathrm{T} \), then \( w \) makes \( \Gamma_k \) and \( \varphi \) true, so \( w(\bot) = \mathrm{T} \), and again \( w(\neg\varphi) = \mathrm{T} \).
+
+(b) The letter valuation with \( w(\bot) = \mathrm{T} \) and \( w(p) = \mathrm{F} \) makes the premise true and the conclusion false. So \( \bot \models_\ell p \) fails, and by (a) no derivation of \( \bot \vdash p \) without \( \rulename{\bot E} \) and \( \rulename{RAA} \), and without derived rules derived with them, exists. (Many derived rules of Chapter 2 use one of the two, @prp-double-negation (with \( \rulename{RAA} \)) and @prp-ex-falso (with \( \rulename{\bot E} \)) among them; a derivation that avoids the two only on its face is not covered.)
+
+(c)
+
+```{=latex}
+\begin{center}
+$\begin{nd}
+  \hypo {1} {\bot}
+  \open
+  \hypo {2} {\neg p}
+  \have {3} {\bot} \r{1}
+  \close
+  \have {4} {p} \raa{2-3}
+\end{nd}$
+\end{center}
+```
+
+So with \( \rulename{RAA} \) the rule \( \rulename{\bot E} \) is derivable, and (a) must fail for \( \rulename{RAA} \). It does: with \( w(\bot) = \mathrm{T} \), every negation is true, so the box of lines 2–3 satisfies \( (\ast\ast) \), and yet \( w(p) = \mathrm{F} \).
+
+**Marking scheme.** (10 points)
+
+- 2: the carried-over cases named, with the reason (Steps 1, 2, 4 and the clauses (V3)–(V6) unchanged), and Step 1's restriction to derived rules derived without \( \rulename{\bot E} \) and \( \rulename{RAA} \).
+- 2: the \( \rulename{\neg E} \) case.
+- 3: the \( \rulename{\neg I} \) case, both values of \( w(\varphi) \).
+- 1: (b), the letter valuation and the conclusion.
+- 2: (c), the derivation and the failing case.
+
+Fatal errors (0 for the step): in (b), using the ordinary valuations, under which \( \bot \models p \) holds.
+:::
+
+::: {#exr-soundness-c5}
+[C5: Challenge: two three-valued tables]
+
+Use the values \( 0 \), \( \frac12 \), \( 1 \), with \( u(\bot) = 0 \), \( u(\neg\varphi) = 1 - u(\varphi) \), \( u(\varphi \wedge \psi) = \min\{ u(\varphi), u(\psi) \} \), \( u(\varphi \vee \psi) = \max\{ u(\varphi), u(\psi) \} \), \( u(\varphi \to \psi) = \max\{ 1 - u(\varphi), u(\psi) \} \). For a set \( D \) of **designated** values, say that \( \Gamma \) \( D \)-entails \( \psi \) if every \( u \) giving every formula of \( \Gamma \) a value in \( D \) gives \( \psi \) a value in \( D \).
+
+::: {.enumerate options="label=(\alph*)"}
+1. For \( D = \{ 1 \} \), show that the case \( \rulename{{\to}I} \) fails: give a box that is correct for \( D \)-entailment and a \( u \) at which the line that \( \rulename{{\to}I} \) writes is undesignated.
+2. For \( D = \{ \frac12, 1 \} \), show that the case \( \rulename{{\to}E} \) fails.
+3. Is \( p \vee \neg p \) designated under every \( u \) in (a)? In (b)?
+:::
+:::
+
+::: {.solution}
+(a) The one-line box \( p \): \( p \) \( D \)-entails \( p \). \( \rulename{{\to}I} \) writes \( p \to p \), and at \( u(p) = \frac12 \), \( u(p \to p) = \max\{ \frac12, \frac12 \} = \frac12 \notin D \).
+
+(b) The premises \( p \to q \), \( p \) and the conclusion \( q \), at \( u(p) = \frac12 \), \( u(q) = 0 \): \( u(p \to q) = \max\{ \frac12, 0 \} = \frac12 \in D \) and \( u(p) = \frac12 \in D \), but \( u(q) = 0 \notin D \).
+
+(c) In (a), no: \( u(p \vee \neg p) = \max\{ \frac12, \frac12 \} = \frac12 \) at \( u(p) = \frac12 \). In (b), yes: \( \max\{ x, 1 - x \} \ge \frac12 \) for each of the three values \( x \).
+
+So the first choice of \( D \) loses excluded middle and the box rule for \( \to \); the second keeps excluded middle and loses modus ponens.
+
+**Marking scheme.** (10 points)
+
+- 4: (a), the box, the valuation and the computation.
+- 3: (b), the valuation and the three values.
+- 3: (c), both parts, with the computation.
+
+Fatal errors (0 for the step): a "failure" in (a) or (b) at a valuation that does not designate every premise.
+:::
+
+## Optional excursion: reductio says something new
+
+*Optional: nothing later depends on this excursion. It answers a question Chapter 2 raised.*
+
+A **three-valued valuation** \( u \) assigns to each atom one of the values \( 0 \), \( \frac12 \), \( 1 \), ordered \( 0 < \frac12 < 1 \). Think of \( 1 \) as "true", \( 0 \) as "false", and \( \frac12 \) as "not yet settled".
+
+\[
+\begin{array}{c|ccc}
+u(\varphi \to \psi) & u(\psi) = 0 & u(\psi) = \tfrac12 & u(\psi) = 1 \\
+\hline
+u(\varphi) = 0 & 1 & 1 & 1 \\
+u(\varphi) = \tfrac12 & 0 & 1 & 1 \\
+u(\varphi) = 1 & 0 & \tfrac12 & 1
+\end{array}
+\qquad
+\begin{array}{c|c}
+u(\varphi) & u(\neg\varphi) \\
+\hline
+0 & 1 \\
+\tfrac12 & 0 \\
+1 & 0
+\end{array}
+\]
+An implication gets \( 1 \) when its conclusion is at least as true as its hypothesis, and otherwise the value of its conclusion; a negation is \( 1 \) only on \( 0 \).
+
+Chapter 2 introduced \( \rulename{RAA} \) in Section 2.5 because the rules before it stalled on \( \neg\neg P \vdash P \), and said that Chapter 4 would prove that no derivation of \( P \) from \( \neg\neg P \) avoids \( \rulename{RAA} \). Truth tables cannot do it. The row method only proves non-derivability from **all** the rules, and with \( \rulename{RAA} \) the sequent is derivable, so no two-valued row refutes it. The trick is to run the proof of @thm-soundness with a different notion of truth, one with three values, under which every rule except \( \rulename{RAA} \) still passes.
+
+A three-valued valuation is extended to all formulas by recursion (@thm-structural-recursion):
+\[
+\begin{aligned}
+u(\bot) &= 0, \qquad u(\neg\varphi) = u(\varphi \to \bot), \\
+u(\varphi \wedge \psi) &= \min\{ u(\varphi), u(\psi) \}, \qquad u(\varphi \vee \psi) = \max\{ u(\varphi), u(\psi) \}, \\
+u(\varphi \to \psi) &= \begin{cases} 1 & \text{if } u(\varphi) \le u(\psi), \\ u(\psi) & \text{otherwise,} \end{cases} \\
+u(\varphi \leftrightarrow \psi) &= \min\{ u(\varphi \to \psi), u(\psi \to \varphi) \} .
+\end{aligned}
+\]
+So \( u(\neg\varphi) = 1 \) if \( u(\varphi) = 0 \), and \( u(\neg\varphi) = 0 \) otherwise. On the values \( 0 \) and \( 1 \) alone these are exactly the tables of @def-truth-value, with \( 1 \) for \( \mathrm{T} \) and \( 0 \) for \( \mathrm{F} \). For a list \( \Gamma \), let \( u(\Gamma) \) be the least of the values \( u(\gamma) \) for \( \gamma \) in \( \Gamma \), and \( u(\Gamma) = 1 \) if \( \Gamma \) is empty. Write \( \Gamma \models_3 \psi \) if \( u(\Gamma) \le u(\psi) \) for every three-valued valuation \( u \): the conclusion is at least as true as the weakest premise.
+
+::: {#thm-raa-independent .optional}
+[Reductio Is Not Derivable from the Other Rules]
+
+Neither \( \neg\neg p \vdash p \) nor \( \vdash p \vee \neg p \) has a derivation that uses only the primitive rules other than \( \rulename{RAA} \) (and derived rules derived from those).
+:::
+
+::: {.idea}
+Repeat the proof of @thm-soundness with \( \models_3 \) in place of \( \models \): every line of a derivation without \( \rulename{RAA} \) satisfies \( \Gamma_k \models_3 \varphi_k \). Then show that both sequents fail for \( \models_3 \), at \( u(p) = \frac12 \). The one case that breaks is \( \rulename{RAA} \), and that is the point.
+:::
+
+::: {.proof}
+As in Step 1 of the proof of @thm-soundness, a derived rule derived without \( \rulename{RAA} \) abbreviates a pasted derivation in the primitive rules other than \( \rulename{RAA} \), so it is enough to consider those. Fix a derivation that uses only the primitive rules other than \( \rulename{RAA} \), with lines \( 1, \dots, n \), formulas \( \varphi_k \) and contexts \( \Gamma_k \). We show \( \Gamma_k \models_3 \varphi_k \) for every \( k \) with \( 1 \le k \le n \), by @thm-strong-induction exactly as in Step 2 of the proof of @thm-soundness, the cases \( k = 0 \) and \( k > n \) being vacuous. Fix \( k \), assume the claim for all earlier lines, and fix a three-valued valuation \( u \); write \( m = u(\Gamma_k) \). We must show \( m \le u(\varphi_k) \). Two facts do the bookkeeping. If line \( k \) cites line \( i \), then \( \Gamma_i \subseteq \Gamma_k \) (@lem-context-inclusion (a)), and the least value over a longer list is at most the least over a shorter one, so \( m \le u(\Gamma_i) \le u(\varphi_i) \). If line \( k \) cites a box from line \( a \) to line \( b \) by a box rule, then \( \Gamma_b = \Gamma_k, \varphi_a \) (@lem-context-inclusion (b)), so the hypothesis for line \( b \) says \( \min\{ m, u(\varphi_a) \} \le u(\varphi_b) \). Below, \( x = u(\varphi) \), \( y = u(\psi) \), \( z = u(\chi) \).
+
+*Premises and assumptions:* \( \varphi_k \) is in \( \Gamma_k \), so \( m \le u(\varphi_k) \). *\( \rulename{R} \):* \( m \le u(\varphi_i) = u(\varphi_k) \). *\( \rulename{\wedge I} \):* \( m \le x \) and \( m \le y \), so \( m \le \min\{x, y\} \). *\( \rulename{\wedge E} \):* \( m \le \min\{x, y\} \le x \), and likewise \( \le y \). *\( \rulename{\vee I} \):* \( m \le x \le \max\{x, y\} \).
+
+*\( \rulename{{\to}E} \):* \( m \le u(\varphi \to \psi) \) and \( m \le x \). If \( x \le y \), then \( m \le x \le y \). Otherwise \( u(\varphi \to \psi) = y \), so \( m \le y \). *\( \rulename{{\leftrightarrow}E} \):* \( m \le u(\varphi \leftrightarrow \psi) \le u(\varphi \to \psi) \) and \( m \le x \), so \( m \le y \) as for \( \rulename{{\to}E} \); the second form is symmetric.
+
+*\( \rulename{\neg E} \):* \( m \le x \) and \( m \le u(\neg\varphi) \). If \( x = 0 \), then \( m \le 0 \); if \( x > 0 \), then \( u(\neg\varphi) = 0 \) and \( m \le 0 \). So \( m = 0 = u(\bot) \). *\( \rulename{\bot E} \):* \( m \le u(\bot) = 0 \), so \( m = 0 \le u(\varphi_k) \).
+
+*\( \rulename{{\to}I} \):* the hypothesis gives \( \min\{m, x\} \le y \). If \( x \le y \), then \( u(\varphi \to \psi) = 1 \ge m \). Otherwise \( y < x \) and \( u(\varphi \to \psi) = y \); since \( \min\{m, x\} \le y < x \), the minimum is not \( x \), so it is \( m \), and \( m \le y \). *\( \rulename{{\leftrightarrow}I} \):* the same argument for each box gives \( m \le u(\varphi \to \psi) \) and \( m \le u(\psi \to \varphi) \), so \( m \) is at most their minimum.
+
+*\( \rulename{\neg I} \):* the hypothesis gives \( \min\{m, x\} \le u(\bot) = 0 \). If \( x = 0 \), then \( u(\neg\varphi) = 1 \ge m \). If \( x > 0 \), the minimum is \( 0 \) and is not \( x \), so \( m = 0 \le u(\neg\varphi) \).
+
+*\( \rulename{\vee E} \):* \( m \le \max\{x, y\} \), and the boxes give \( \min\{m, x\} \le z \) and \( \min\{m, y\} \le z \). If \( x \ge y \), then \( m \le x \), so \( \min\{m, x\} = m \) and \( m \le z \). If \( y > x \), then \( m \le y \) and \( m \le z \) from the second box.
+
+This covers every rule used, so \( \Gamma_k \models_3 \varphi_k \) for every line, and in particular for the last line, whose context is the premises. As in Step 4 of the proof of @thm-soundness, a list containing all the premises has least value at most theirs, so every sequent \( \Gamma \vdash \psi \) derived without \( \rulename{RAA} \) satisfies \( \Gamma \models_3 \psi \).
+
+Now let \( u(p) = \frac12 \). Then \( u(\neg p) = 0 \), since \( \frac12 > 0 \), and \( u(\neg\neg p) = 1 \), since \( u(\neg p) = 0 \). So \( u(\neg\neg p) = 1 > \frac12 = u(p) \), and \( \neg\neg p \models_3 p \) fails. Also \( u(p \vee \neg p) = \max\{ \frac12, 0 \} = \frac12 < 1 \), the value of the empty list, so \( \models_3 p \vee \neg p \) fails. Hence neither sequent is derivable without \( \rulename{RAA} \).
+:::
+
+The case that was not written is \( \rulename{RAA} \) itself. Its box would give \( \min\{m, u(\neg\varphi)\} \le 0 \), and we would need \( m \le x \). At \( u(\varphi) = \frac12 \) the box gives nothing, since \( u(\neg\varphi) = 0 \) already, while \( m \) may be \( 1 \). This is the three-valued face of the question asked in the Idea of @thm-soundness: the two-valued \( \rulename{RAA} \) case used that \( v(\varphi) = \mathrm{F} \) forces \( v(\neg\varphi) = \mathrm{T} \), and with a third value, \( \varphi \) and \( \neg\varphi \) can both fail to be true.
+
+::: {.remark}
+The same values settle Peirce's law, \( ((p \to q) \to p) \to p \), which Section 2.5 derived with \( \rulename{RAA} \) (@prp-peirce): at \( u(p) = \frac12 \), \( u(q) = 0 \), we get \( u(p \to q) = 0 \), \( u((p \to q) \to p) = 1 \), and the whole formula has value \( \frac12 \), so it too needs \( \rulename{RAA} \). The values do not refute everything Chapter 2 derived with \( \rulename{RAA} \): the De Morgan direction \( \neg(p \wedge q) \vdash \neg p \vee \neg q \) passes this test, and so does \( \vdash (p \to q) \vee (q \to p) \). Neither of these is derivable without \( \rulename{RAA} \) either, but showing that needs a different kind of model, and this book states it without proof, as Section 2.5's Looking-ahead box announced. \( \rulename{RAA} \) says something the other rules cannot.
+:::
+
+**A technique, named.** The proof is an instance of a general technique: to show that a rule cannot be derived from the others, find a new notion of "true" under which the other rules are sound and that rule is not. Here the notion has three values; Exercise C4 uses two values with \( \bot \) read as an ordinary letter, and Exercise C5 two other three-valued tables. Each notion is a different semantics. For the two-valued tables the rules are not only sound but complete, which is Section 4.8's theorem.
+
 <!-- dependency ledger
 thm-soundness (proof): every derived-rule line expands into primitive rules, and chains of derived rules end in primitive rules (Step 1) | def-derived-rule and F1.2 §03 ("Convenience, not power"), recalled in prose
 thm-soundness (claim): rules stated as schemas apply to formulas; derivations with letters read as atoms are derivations | def-rule-schema; F1.3 §01 schema remark
@@ -567,4 +1071,17 @@ exr-soundness-b1 (solution): (d) is derivable | exm-search-postpone-or (F1.7 §0
 thm-raa-independent (proof): the three-valued recursion is well defined; min over a longer list is at most min over a shorter; every rule except RAA preserves |=_3 | thm-structural-recursion (cited); inline; every case checked exhaustively over all value combinations by verify/ch04/thm-raa-independent.py
 thm-raa-independent (claim): Peirce at (1/2, 0) has value 1/2; De Morgan (d) and (p -> q) or (q -> p) are not refuted by these values, and neither is derivable without RAA (remark) | values checked by verify/ch04/thm-raa-independent.py; the non-derivability is stated without proof and marked so; nothing depends on it
 exr-soundness-c1 (solution): derivation with Y; row p = T, q = F | checked by verify/ch04/exr-soundness-c1.py
+thm-soundness (claim): the two-level box and the fold "Is the proof circular?": the proof reasons by cases and contradiction in the metalanguage | inline (meta-claim about the proof on this page)
+lem-context-inclusion (claim): Exercise C4 of Section 1.4 observed (c) what the lemma proves; no proof rests on it | exr-proving-an-implication-c4 (F1.1 §05), recalled as a pointer
+thm-soundness (claim): the meaning table: each rule's introducing section, case and clause; the four wrong versions, their derivations and rows | inline; the rows checked by verify/ch04/cor-refuting-row.py; the wrong derivations fail tools/check_fitch.py at their last line (marked expect-invalid)
+cor-refuting-row (claim): the retroactive paragraph: a choice of statements gives a row making the counterexample set true | def-truth-value (truth-functionality, F1.3 §04), recalled
+cor-refuting-row (claim): the four breaks of exr-four-kinds-of-task-b3 are refuting rows found by the search | F1.3 §06 (the withheld verdicts), recalled; no proof rests on the exercise
+cor-refuting-row (claim): satisfiable lists are consistent; with prp-derivable-iff-negation-inconsistent (b), a row making the counterexample set true shows it consistent | thm-soundness (this section); def-inconsistent-set, prp-derivable-iff-negation-inconsistent (F1.7 §02), cited
+thm-soundness (claim): test the subgoal: a row making the context of a line true and a formula false shows that no line with that context holds the formula | Step 3 of the proof of thm-soundness (this section)
+cor-refuting-row (example): the De Morgan subgoals not p and not q are refuted by rows, so a derivation of prp-de-morgan (d) cannot end with or-introduction | inline; rows checked by verify/ch04/cor-refuting-row.py
+exr-soundness-b3 (solution): verdicts and rows; the four derivations | verify/ch04/exr-soundness-b3.py (truth tables; tools/check_fitch.py on a capital-letter copy)
+exr-soundness-b4 (solution): the row refuting the subgoal q; the completion | verify/ch04/exr-soundness-b4.py
+exr-soundness-c3 (solution): with exclusive or, only the or-introduction case fails | verify/ch04/exr-soundness-c3.py (exhaustive)
+exr-soundness-c4 (solution): letter valuations: every rule other than bot-E and RAA preserves |=_l | verify/ch04/exr-soundness-c4.py (exhaustive over value combinations)
+exr-soundness-c5 (solution): the two three-valued tables, the values quoted | verify/ch04/exr-soundness-c5.py
 -->

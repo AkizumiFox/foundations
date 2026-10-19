@@ -22,7 +22,7 @@ No derivation, with any rule of Chapters 1 and 2, leads from \( p \) and \( q \)
 
 There is no contradiction here, and it is worth seeing exactly why. @cor-refuting-row is about the **form** \( p, q \therefore r \): it says that no derivation leads from two arbitrary statements to a third, unrelated one. That is true. Our argument is correct for a reason that the form cannot see. The first premise speaks about **every** positive real number. The second says that \( 2 \) is **one** of the things the first premise speaks about. The conclusion says of \( 2 \) what the first premise said of all of them. The three statements share parts: a property ("is positive"), another property ("has a square root"), an object (\( 2 \)), and the word "every". Chopped into atoms, the shared parts disappear.
 
-This is the warning of Section 4.4 come true: a truth table sees only the connectives, and everything inside an atom is invisible to it. Section 4.4 ended that warning with the remark that this chapter looks inside atoms. We now do. The first job is a vocabulary for the parts inside: the properties, the objects, and the words "every" and "some". Section 5.3 then gives the rule that makes the argument above a derivation, four lines long.
+This is the warning of Section 4.4 come true: a truth table sees only the connectives, and everything inside an atom is invisible to it. Section 4.4 closed with the remark that this chapter looks inside atoms. We now do. The first job is a vocabulary for the parts inside: the properties, the objects, and the words "every" and "some". Section 5.3 then gives the rule that makes the argument above a derivation, four lines long.
 
 ## Predicates: statements with holes
 

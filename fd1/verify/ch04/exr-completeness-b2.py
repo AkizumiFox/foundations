@@ -6,4 +6,9 @@ t = block(S06, "exr-completeness-b2")
 assert entails(["p", "p \\to q"], "q")
 assert count_lines(t) == 21
 assert check_rows_in(t) == 1
+# the case-split tree (Section 4.8): its boxes are the derivation's
+import sys
+sys.path.insert(0, "verify/ch04")
+import _s0708_lib as H
+assert H.tree_boxes(t) == H.boxes(t), (H.tree_boxes(t), H.boxes(t))
 print("exr-completeness-b2: all quoted values check")
