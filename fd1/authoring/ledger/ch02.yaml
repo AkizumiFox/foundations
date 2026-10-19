@@ -69,6 +69,17 @@ items:
     evidence: 01-contradiction-and-vacuous-truth.md:62 The fold says 'Apart from being assumed, the only
       way a line ⊥ first appears is by ¬E'. A premise is not an assumption in this book ((D1) and (D2)
       of def-derivation are separate clauses), and a premise can be ⊥.
+  - stage: S7r
+    verdict: correct
+    by: rereferee
+    hash: 5d16c9d045e5
+    date: '2026-10-19'
+    model: claude-opus-5-5
+    evidence: '01:61 (fold). I checked it against the Ch1 rule list (R as (D3) of def-derivation at ch01/05:366,
+      the ∧ rules, the → rules at ch01/05:31, and ∨I/∨E at ch01/07:25). Of these, only R, ∧E, →E, ∨E and
+      ⊥E can write a line that is ⊥ itself, and each needs ⊥ already in a cited line or box line. ∨I brings
+      ⊥ in only as a disjunct, and the only way to take it back out is ∨E, which needs an assumption ⊥.
+      So '
 - key: check:01-contradiction-and-vacuous-truth:1
   kind: check
   file: 01-contradiction-and-vacuous-truth.md
@@ -480,6 +491,17 @@ items:
     evidence: 01-contradiction-and-vacuous-truth.md:324 This is a false meta-claim. 'The last derivation
       of this section is the pattern of the opening argument', but exm-impossible-case is not the section's
       last derivation.
+  - stage: S7r
+    verdict: correct
+    by: rereferee
+    hash: 9cfcb577c5f8
+    date: '2026-10-19'
+    model: claude-opus-5-5
+    evidence: 01:326-398. I redid the derivation line by line. ¬E 5,3 cites the unnegated line first.
+      ⊥E 6 is fine. ∨E 1,4-7,8-8 is fine; a one-line box is allowed because a box 'ends at one of its
+      lines' (def-derivation). The new sentence 'nothing in the second box could cite lines 4–7' is right
+      by the scope rule, since box 4–7 does not contain line 8; the wrong reason flagged in S5a is gone.
+      The meta-claim no
 - key: thm-square-even-implies-even
   kind: thm
   file: 01-contradiction-and-vacuous-truth.md
@@ -904,6 +926,17 @@ items:
     evidence: 01-contradiction-and-vacuous-truth.md:752 The item says 'Tag each step with its rule', but
       the step 'so n + 1 is odd' has no rule tag. Line 758 then calls this same step 'the implication
       fired by ->E'.
+  - stage: S7r
+    verdict: correct
+    by: rereferee
+    hash: 52adfcf5c5f9
+    date: '2026-10-19'
+    model: claude-opus-5-5
+    evidence: '01:743-759. I solved it myself: split on (E1). In the even case n = 2k gives n + 1 = 2k
+      + 1, which is odd; ∧I with the hypothesis, then a clash with (E2) by ¬E, then ⊥E to n odd. The odd
+      case is the goal; finish with ∨E and →I. This matches the model solution. The step ''so n + 1 is
+      odd'' is now tagged [→E] (01:752), which agrees with the closing paragraph and with how the proof
+      of thm-square-even-i'
 - key: exr-contradiction-and-vacuous-truth-b3
   kind: exr
   file: 01-contradiction-and-vacuous-truth.md
@@ -1026,6 +1059,17 @@ items:
       of the counterexample set true: (b) x=1, (d) x=2 with x>3 -> x>1 for all x, (f) x=1, (g) x=1 with
       x>5 -> x>3 for all x. Each look-alike cross-reference is accurate (DS in 2.3, MT in 2.3, De Morgan
       in 2.5). The sche'
+  - stage: S7r
+    verdict: correct
+    by: rereferee
+    hash: 4fc45c9bafb1
+    date: '2026-10-19'
+    model: claude-opus-5-5
+    evidence: '01:844-944. I checked all eight claims. (a), (c), (e) and (h) derive: every ¬E citation
+      puts the unnegated line first, and the ∨E/→I box ranges are right. For the breaks: (b) at x = 1
+      with P: x > 0, Q: x > 5, the set P∨Q, ¬Q, ¬¬P is true. (d) at x = 2 is true, and P→Q holds for every
+      x. (f) at x = 1: ¬(P∧Q) is true and ¬P∨Q is false. (g) at x = 1: P→R holds for every x, and P∨Q,
+      ¬R, ¬P are true. T'
 - key: exr-contradiction-and-vacuous-truth-b6
   kind: exr
   file: 01-contradiction-and-vacuous-truth.md
@@ -1058,6 +1102,17 @@ items:
     evidence: 01-contradiction-and-vacuous-truth.md:998 The (d) scheme ('one point per value, each with
       the truth values of hypothesis and conclusion') gives the points for truth values alone. The question
       asks which sequent, if any, decides each instance.
+  - stage: S7r
+    verdict: correct
+    by: rereferee
+    hash: 6722312cfbc8
+    date: '2026-10-19'
+    model: claude-opus-5-5
+    evidence: 01:947-998. (a) The rule lists are right. (b) The four-line derivation checks (¬E 2,1 and
+      →I 2-3). (c) The new derivation of Q ⊢ P→Q (∧I 2,1, then ∧E 3, then →I 2-4) cites the assumption,
+      so it meets the restriction. (d) For n = 3, both parts are false, so only the first sequent decides
+      it. For n = 6, the hypothesis is false and the conclusion true, so either sequent does. For n =
+      8, both are true
 - key: exr-contradiction-and-vacuous-truth-c1
   kind: exr
   file: 01-contradiction-and-vacuous-truth.md
@@ -1488,6 +1543,16 @@ items:
     evidence: 02-negation-and-contradiction.md:335 The theorem's second sentence, 'In other words, √2
       is irrational', presupposes that a real number √2 exists. 02:382 then says the theorem is about
       rational numbers only and does not need √2 to exist. The existence fact is not ledgered for §02.
+  - stage: S7r
+    verdict: correct
+    by: rereferee
+    hash: 9486a38cf874
+    date: '2026-10-19'
+    model: claude-opus-5-5
+    evidence: 02-negation-and-contradiction.md:335. The second sentence now reads 'So if a real number
+      √2 with square 2 exists, it is irrational'. That follows directly from the first sentence and no
+      longer assumes √2 exists, so it agrees with :382 ('does not need √2 to exist'). The S5a and S5b
+      findings are resolved.
 - key: proof:thm-sqrt2-irrational
   kind: proof
   file: 02-negation-and-contradiction.md
@@ -1533,6 +1598,17 @@ items:
     evidence: '02-negation-and-contradiction.md:380 The meta-claim ''Two steps of the proof lie outside
       the derivation'' leaves out a third quantifier step: instantiating @thm-square-even-implies-even
       (a statement about every integer n) at n=p and n=q to get premises 3 and 4.'
+  - stage: S7r
+    verdict: correct
+    by: rereferee
+    hash: 3daec1a36b88
+    date: '2026-10-19'
+    model: claude-opus-5-5
+    evidence: ':344-380. I checked the prose proof and the 13-line derivation line by line. Line 6 is
+      algebra from 1 and 5; 7 is the definition of even; 8 and 10 are →E on 3,7 and 4,9; 9 is algebra
+      on 6,8 with p=2m; 11 is ∧I on 8,10; 12 is ¬E on 11,2; 13 is ¬I on 5-12. The box opens on r^2=2 and
+      ends on ⊥. The meta-claim at :380 now names three quantifier steps outside the derivation: instantiating
+      @thm-square-e'
 - key: check:02-negation-and-contradiction:3
   kind: check
   file: 02-negation-and-contradiction.md
@@ -1934,6 +2010,17 @@ items:
     model: claude-opus-5-5
     evidence: 02-negation-and-contradiction.md:932 The promise for (L_p), lowest terms with respect to
       an arbitrary prime p, is credited to @fd2:lem-lowest-terms, which proves only the case p = 2.
+  - stage: S7r
+    verdict: correct
+    by: rereferee
+    hash: e14aa59a4e11
+    date: '2026-10-19'
+    model: claude-opus-5-5
+    evidence: ':707-735. I solved (a) myself: a^2=pb^2, then (E_p) gives a=pm, so b^2=pm^2, (E_p) again
+      gives p|b, which clashes with (L_p). That matches the text. (b) and (c) check: L_6 follows from
+      L, and 9 is a witness against E_9. The C1 pointer is now present tense (''does it by another route'')
+      and correctly describes C1''s route, which uses (L) and @thm-square-even-implies-even instead of
+      (E_6). The (L_p) pr'
 - key: exr-negation-and-contradiction-b6
   kind: exr
   file: 02-negation-and-contradiction.md
@@ -1965,6 +2052,17 @@ items:
     model: claude-opus-5-5
     evidence: '02:739-859. My verdicts match: derive (a), (c), (d), (f), (g); break (b), (e), (h). Derivations
       pass check_fitch. Breaks confirmed by script: (b) x=1; (e) x=0 with x>5 -> x>3 for all x; (h) x=1.'
+  - stage: S7r
+    verdict: correct
+    by: rereferee
+    hash: 23860e1a7489
+    date: '2026-10-19'
+    model: claude-opus-5-5
+    evidence: ':747 and :775-791. Claim (c) is now (P∧Q)→¬P, Q ⊢ ¬P, which is a different sequent from
+      @exm-double-negation-introduction (b), (P∨Q)→¬P ⊢ ¬P (:138). That resolves the overlap finding.
+      I checked the 7-line derivation: ∧I on 3,2, →E on 1,4, ¬E on 3,5, ¬I on 3-6, with the box ending
+      on ⊥. verify/ch02/exr-negation-and-contradiction-b6.py has been updated to the new (c) and passes.
+      The other claims and'
 - key: exr-negation-and-contradiction-c1
   kind: exr
   file: 02-negation-and-contradiction.md
@@ -2041,6 +2139,17 @@ items:
       it gives the 3 points for ''q even'' only to the odd-case parity argument. Hint 1 (line 871) also
       steers the reader away from that alternative by saying q must be shown even ''without knowing that
       q^2 is even''.'
+  - stage: S7r
+    verdict: correct
+    by: rereferee
+    hash: 2c33072b400c
+    date: '2026-10-19'
+    model: claude-opus-5-5
+    evidence: :863-897. Hint 1 now says to show q even from 3q^2=2m^2 'where q^2 is not yet known to be
+      even', which no longer rules out the alternative. The marking scheme now gives the 3 points either
+      for the odd-case parity argument or for q^2=3q^2-2q^2=2(m^2-q^2) followed by @thm-square-even-implies-even.
+      I checked that algebra and it is correct. The alternative stays within the allowed facts and does
+      not h
 - key: exr-negation-and-contradiction-c2
   kind: exr
   file: 02-negation-and-contradiction.md
@@ -2316,6 +2425,17 @@ items:
       sequent's conclusion (phi_1..phi_n |- psi), and two sentences later, in the MT schema, it is the
       metavariable for MT's letter Q (conclusion ¬phi). Clause 2 (03:148) then speaks of replacing 'each
       letter' but names phi, psi as the things replaced.
+  - stage: S7r
+    verdict: correct
+    by: rereferee
+    hash: 0cc611959383
+    date: '2026-10-19'
+    model: claude-opus-5-5
+    evidence: '03:131-152. The definition now uses alpha_1..alpha_n |- beta, so psi is no longer used
+      for two things; the MT schema keeps phi/psi as metavariables (def-rule-schema). Clause 2 now names
+      the letters P, Q of prp-modus-tollens (03:24, P->Q, ¬Q |- ¬P), written phi, psi in the schema, replaced
+      by A∧B and C, which is right. 03:152 ''the four lines 2-5 of @exm-vacuous-square'' checked against
+      01:524-530: l'
 - key: check:03-derived-rules:1
   kind: check
   file: 03-derived-rules.md
@@ -2383,6 +2503,17 @@ items:
       not give a derivation: the pasted derivation''s premises are the cited instances, which are derived
       lines and not members of Gamma. The construction that works is (*)/(c) (derivations of the cited
       lines first, then t'
+  - stage: S7r
+    verdict: correct
+    by: rereferee
+    hash: e00358ac6626
+    date: '2026-10-19'
+    model: claude-opus-5-5
+    evidence: '03:232. The new construction works. A cited line in no box ends a prefix in which every
+      box is closed, so that prefix derives the line from Gamma. A uniform instance of the proved sequent
+      is derivable (def-derivable), so (c) gives Gamma |- the instance. Turning the derived-rule line
+      into a premise gives a derivation from Gamma plus the instance, and (b) removes that premise. This
+      is no longer the '
 - key: proof:lem-weakening-cut
   kind: proof
   file: 03-derived-rules.md
@@ -2474,6 +2605,16 @@ items:
       or odd; not odd; so even'). The sequent stated right after refutes the left one (P ∨ Q, ¬P |- Q),
       and 03:308, 03:476 and 03:515 stress that applying DS to this exact parity disjunction needs the
       disjuncts swapped first.
+  - stage: S7r
+    verdict: correct
+    by: rereferee
+    hash: a25df75c2bdb
+    date: '2026-10-19'
+    model: claude-opus-5-5
+    evidence: '03:270 now reads ''not even; so it is odd'', which refutes the left disjunct of ''even
+      or odd'' and matches P∨Q, ¬P |- Q (03:275). This fits 03:308, 03:476/487 (the swap is needed for
+      the ''not odd'' direction) and C3''s 03:1092/1127. The derivation at 03:285-296 checks: ¬E 3,2;
+      ⊥E 4; ∨E 1, 3-5, 6-6. The earlier finding is resolved.'
 - key: proof:prp-disjunctive-syllogism
   kind: proof
   file: 03-derived-rules.md
@@ -2560,6 +2701,16 @@ items:
     model: claude-opus-5-5
     evidence: 03-derived-rules.md:382 @def-derived-rule defines no expansion. The literal expansion (repeat
       each cited line, then copy) is the one in the fold 'Why a derived rule adds no power'.
+  - stage: S7r
+    verdict: correct
+    by: rereferee
+    hash: ce82569ea5a8
+    date: '2026-10-19'
+    model: claude-opus-5-5
+    evidence: '03:382 now points the ''literal expansion'' to the fold ''Why a derived rule adds no power''
+      (03:190), which is where that expansion is defined. 03:420 ''lines 3-7 of the derivation of prp-disjunctive-syllogism
+      (five lines)'' counts the same way as (a): two boxes plus ∨E, citing lines 1 and 2 directly. Part
+      (a): the eleven-line expansion (03:358-378) checks: ->E 2,4; ¬E 5,3; ¬I 4-6; ->E 1,8; ¬E 9,7; ¬I '
 - key: check:03-derived-rules:3
   kind: check
   file: 03-derived-rules.md
@@ -2624,6 +2775,17 @@ items:
     evidence: 03-derived-rules.md:452 This 'none' claim is literally false. Rules do use E -> R together
       with ¬E (∧I gives (E -> R) ∧ ¬E), so 'nothing' is true only of conclusions about the hidden side,
       R.
+  - stage: S7r
+    verdict: correct
+    by: rereferee
+    hash: 87a95a723107
+    date: '2026-10-19'
+    model: claude-opus-5-5
+    evidence: '03:441: x > 2 > 0 gives x·x > 2x > 4, and x^2 <= 4 is the negation of x^2 > 4, so MT gives
+      x <= 2. Table row for the 7 (03:452): ''nothing about R: no rule takes E->R and ¬E to R or to ¬R''.
+      This is now true (neither sequent is valid) and no longer denies that ∧I can combine the two lines.
+      The other rows and the check at 03:461-466 (R->E, the 7 shows ¬E, MT gives ¬R) check. The earlier
+      finding is re'
 - key: check:03-derived-rules:4
   kind: check
   file: 03-derived-rules.md
@@ -3021,6 +3183,17 @@ items:
     model: claude-opus-5-5
     evidence: 03-derived-rules.md:790 Chapter 2 opens a promise for this item (the ', used later' title
       and STATUS row 83) that F1.7's blueprint does not deliver.
+  - stage: S7r
+    verdict: correct
+    by: rereferee
+    hash: f4bcc0a18f9d
+    date: '2026-10-19'
+    model: claude-opus-5-5
+    evidence: '03:789-855. (a) CD (ch01/07:308) with S:=R, then P∨P |- P (ch01/07:98) with P:=R, four
+      lines. (b) The 11-line derivation checks (MT 3,5; MT 4,8; ∨E 2,5-7,8-10). (c) The nested boxes check,
+      and the look-alike breaks at x=0 (x>5, x>3). (d) The replacement F,N,E,T into (b) is right. The
+      S8 promise is now delivered: F1.7''s blueprint fd1/authoring/blueprints/ch03-deepen.md:896-897 cites
+      @exr-derived-ru'
   note: 'used later (D8): F1.7 §03''s library of standard sequents cites this item for the CD and MPT
     forms (ch02-deepen §6.3); ch03 S4 confirms the seam or removes the marker'
 - key: exr-derived-rules-b5
@@ -3056,6 +3229,17 @@ items:
     evidence: '03:872-969. My verdicts match: break (a), (c), (g), (h); derive (b), (d), (e), (f). Derivations
       pass check_fitch. Breaks verified by script: (a) x=2; (c) x=1; (g) x=0 with the premise true for
       all x; (h) x=1.'
+  - stage: S7r
+    verdict: correct
+    by: rereferee
+    hash: c39e34f3efd6
+    date: '2026-10-19'
+    model: claude-opus-5-5
+    evidence: '03:890 (a) now links @def-counterexample-set (ch01/01:308) by name, as sibling 2.2 B6 does
+      (02:773), and ledger line 1152 records the citation. I solved all eight myself: (a) breaks at x=2;
+      (b) derivation checks (¬E 2,5 with Q, ¬Q); (c) breaks at x=1 (¬P->Q true, ¬Q true, ¬P false); (d)
+      DS then ∧E; (e) MT, then a ¬I box; (f) DS 4,2 refutes the left disjunct Q; (g) breaks at x=0 with
+      the premise tr'
 - key: exr-derived-rules-c1
   kind: exr
   file: 03-derived-rules.md
@@ -3173,6 +3357,17 @@ items:
     model: claude-opus-5-5
     evidence: 03-derived-rules.md:1072 The answer 'Yes' to replacing line 3 by '¬P, MT 1, 2' leaves the
       rest of the student's derivation unchanged, and the result is not a derivation.
+  - stage: S7r
+    verdict: correct
+    by: rereferee
+    hash: fa0f319743b3
+    date: '2026-10-19'
+    model: claude-opus-5-5
+    evidence: '03:1045 now asks whether lines 3 and 4 may be replaced by one MT line. 03:1072 answers
+      yes and renumbers ->I as 2-3: 1 P->Q; [2 ¬Q; 3 ¬P MT 1,2]; ¬Q->¬P ->I 2-3. That is a derivation,
+      and it is legitimate because prp-modus-tollens (03:21) was derived from primitive rules without
+      CP. Part (a) (CP is used before it is derived) and the 7-line derivation in (b) check. One small
+      wording point: the solu'
 - key: exr-derived-rules-c3
   kind: exr
   file: 03-derived-rules.md
@@ -3448,6 +3643,17 @@ items:
     evidence: 04-biconditional-and-definitions.md:276 The text says each half of the derivation is part
       (b) of @exm-iff-symmetric run inside a box. Only the second half is. The first half is the mirror
       sequent P↔Q, ¬P ⊢ ¬Q.
+  - stage: S7r
+    verdict: correct
+    by: rereferee
+    hash: 12be5a0ce027
+    date: '2026-10-19'
+    model: claude-opus-5-5
+    evidence: '04:269-353. Checked the finished derivation line by line: 4 and 9 by ↔E (forms 2 and 1
+      of def-rules-biconditional), 5 and 10 by ¬E citing the open outer assumptions 2 and 7, 6 and 11
+      by ¬I, 12 by ↔I over the sibling boxes 2-6 and 7-11. The S5b finding is resolved: the Idea (04:276)
+      now says only the second half is exm-iff-symmetric (b) inside a box (04:120-131, the same lines
+      8-10) and the first h'
 - key: check:04-biconditional-and-definitions:1
   kind: check
   file: 04-biconditional-and-definitions.md
@@ -3916,6 +4122,17 @@ items:
     model: claude-opus-5-5
     evidence: STATUS.md:89 STATUS row 89 says §04's quantifier source was removed. §04 still instantiates
       a universal claim, and its own ledger still sources that to the index note.
+  - stage: S7r
+    verdict: correct
+    by: rereferee
+    hash: e7ed5e1ad60f
+    date: '2026-10-19'
+    model: claude-opus-5-5
+    evidence: '04:602-620. (a)-(c) are justified as before. The new paragraph at 04:620 checks out: the
+      constant 0 satisfies ''x<y implies f(x)<=f(y)'', so that wording is too broad; f(x)=x at 0<1/2 has
+      1/2-0<1, so the other wording is too narrow. A new ledger line covers it. The S5b finding is resolved:
+      STATUS.md row 89 now lists §04 exm-strictly-increasing-both-ways (b), (c) under the index note,
+      and says only §'
 - key: check:04-biconditional-and-definitions:4
   kind: check
   file: 04-biconditional-and-definitions.md
@@ -3978,6 +4195,14 @@ items:
     model: claude-opus-5-5
     evidence: '04:645-685: the statement is for three conditions only. 04:713 ''longer cycles work the
       same way'' is asserted, not proved. B6 relies on it (see the B6 finding).'
+  - stage: S7r
+    verdict: correct
+    by: rereferee
+    hash: dc2a87f9ee1f
+    date: '2026-10-19'
+    model: claude-opus-5-5
+    evidence: 04:646-650. The statement matches the proof. The derived conclusions are Q↔R and R↔P from
+      the same three premises.
 - key: proof:prp-equivalence-cycle
   kind: proof
   file: 04-biconditional-and-definitions.md
@@ -4022,6 +4247,16 @@ items:
     evidence: 04-biconditional-and-definitions.md:710 The proof renames letters throughout a derivation
       and claims every line stays justified. That fact is used without an @ref and without a ledger line.
       The STATUS promise for it (row 68, to F1.3 lem-substitution) names §03 only.
+  - stage: S7r
+    verdict: correct
+    by: rereferee
+    hash: 0dfc8ce43777
+    date: '2026-10-19'
+    model: claude-opus-5-5
+    evidence: '04:688-712. Checked the derivation: 5 →E 1,4; 7 →E 2,6; 8 →E 3,7; 9 ↔I 4-5,6-8. The S5b
+      finding is resolved. The renaming step now cites clause 2 after @def-derived-rule (03-derived-rules.md:154):
+      the letters stood for arbitrary statements (@def-derivable), so uniform replacement is allowed.
+      A new ledger line sources this to def-rule-schema, def-derivable and that clause, with F1.3 lem-substitutio'
 - key: exm-unit-interval-tfae
   kind: exm
   file: 04-biconditional-and-definitions.md
@@ -4176,6 +4411,16 @@ items:
     evidence: '04-biconditional-and-definitions.md:888 Part (k), ''True or false: P ⊣⊢ Q says that ⊢ P
       → Q'', expects ''False''. But P ⊣⊢ Q implies ⊢ P → Q (P ⊢ Q, then →I), so a reader can correctly
       answer ''True''. The item only works if ''says'' means ''says exactly''.'
+  - stage: S7r
+    verdict: correct
+    by: rereferee
+    hash: f64e9ec2782a
+    date: '2026-10-19'
+    model: claude-opus-5-5
+    evidence: 04:857-927. Item (k) now reads 'P ⊣⊢ Q says no more than ⊢ P → Q'. Its only correct answer
+      is False, and the key says P ⊢ Q and Q ⊢ P, with ⊢ P→Q only half of it. The ambiguity raised at
+      S5a, S5b and S6 is resolved. I re-solved the other parts. (a) P; (e) line 5 is P; (f) lines 4/7/8/11
+      are ¬P/Q/Q/¬P; (g) the justifications are right; (m), (n) and (o) check line by line.
 - key: exr-biconditional-and-definitions-b1
   kind: exr
   file: 04-biconditional-and-definitions.md
@@ -4443,6 +4688,17 @@ items:
       ''(i)⇔(ii) and (iii)⇔(iv)'' ''most cheaply''. The solution answers ''any two ... for instance (ii)⇒(iii)
       and (iv)⇒(i)''. That does not answer ''most cheaply'', and its example includes (ii)⇒(iii), the
       one arrow that needs real work. The cheapest pair is (i)⇒(iv) and (iv)⇒(i), and both are @thm-odd-iff-square-odd, '
+  - stage: S7r
+    verdict: correct
+    by: rereferee
+    hash: 41bc83125a59
+    date: '2026-10-19'
+    model: claude-opus-5-5
+    evidence: '04:1091-1127. Checked the arithmetic: n+1=2j gives n²-1=4j(j-1)=8m, and n²=8m+1=2(4m)+1.
+      (iv)⇒(i) is thm-odd-iff-square-odd (04:523). The four-cycle finding is resolved: the solution now
+      relies on ''the argument of'' prp-equivalence-cycle, namely chains of →E inside the two ↔I boxes,
+      and 04:714 says the same. The S6 ''most cheaply'' finding is resolved: the answer is now (i)⇒(iv)
+      and (iv)⇒(i), both fr'
 - key: exr-biconditional-and-definitions-b7
   kind: exr
   file: 04-biconditional-and-definitions.md
@@ -4475,6 +4731,17 @@ items:
     evidence: '04-biconditional-and-definitions.md:1265 ''(b), (d) and (g) are the converses of (a), (c)
       and (f)'' is true for (b)/(a) and (g)/(f), which swap premise and conclusion. It is false for (d)/(c):
       (d) keeps the premise P ↔ (Q∧R) and only reverses the conclusion''s arrow.'
+  - stage: S7r
+    verdict: correct
+    by: rereferee
+    hash: d525ca5411ca
+    date: '2026-10-19'
+    model: claude-opus-5-5
+    evidence: '04:1129-1268. Checked the derivations (a), (c), (e), (f) and (h) line by line. Checked
+      the breaks: (b) at x=1, P true, Q false, R true; (d) at x=1, P and Q∧R both false so the premise
+      holds, while Q→P fails; (g) at x=1. The converse finding is resolved: 04:1266 now says (b) and (g)
+      are the converses of (a) and (f), and that (d) replaces (c)''s conclusion P→Q by its converse Q→P.
+      That is accurate. T'
 - key: exr-biconditional-and-definitions-c1
   kind: exr
   file: 04-biconditional-and-definitions.md
@@ -4688,6 +4955,16 @@ items:
     date: '2026-10-19'
     model: claude-opus-5-5
     evidence: 05-reductio-and-classical-rules.md:1015 Citation does not name the part of a two-part example
+  - stage: S7r
+    verdict: correct
+    by: rereferee
+    hash: b3f06612c440
+    date: '2026-10-19'
+    model: claude-opus-5-5
+    evidence: '05:41-59 (the schema and its four conditions) and the RAA/not-I table are sound. The derivation
+      after it (lines 1-6, not-E citing 1 and 4, RAA 2-5) checks. The fold at 05:1015 now cites @exm-double-negation-introduction
+      (a) (02:135, part (a) is P |- not-not-P by a not-I box on not-P), and the replacement argument holds:
+      a not-I box on psi derives not-not-psi in three lines, then cites it wherever '
 - key: check:05-reductio-and-classical-rules:1
   kind: check
   file: 05-reductio-and-classical-rules.md
@@ -4731,6 +5008,17 @@ items:
     model: claude-opus-5-5
     evidence: 05-reductio-and-classical-rules.md:105 An order fact used in the solution has no ledger
       line
+  - stage: S7r
+    verdict: correct
+    by: rereferee
+    hash: 9d51f566a64d
+    date: '2026-10-19'
+    model: claude-opus-5-5
+    evidence: '05:100-106: (i) RAA writes x<0; (ii) not-I writes not-not(x<0); (iii) x>=0 is not(x<0)
+      by the order convention (ch02 01:78), which is the statement the box refuted, so neither rule writes
+      it. I solved it independently and got the same answers. The order fact is now ledgered (05:1995,
+      ''in the first Quick check after def-rule-raa, x >= 0 is not(x < 0) | the order convention of F1.2
+      s01''). The earlie'
 - key: check:05-reductio-and-classical-rules:2
   kind: check
   file: 05-reductio-and-classical-rules.md
@@ -5472,6 +5760,17 @@ items:
     model: claude-opus-5-5
     evidence: 05-reductio-and-classical-rules.md:990 The rule-by-rule reading writes x >= 0 against the
       book's own written-out convention, so the DS step does not match DS symbol for symbol
+  - stage: S7r
+    verdict: correct
+    by: rereferee
+    hash: de9ed07a262f
+    date: '2026-10-19'
+    model: claude-opus-5-5
+    evidence: '05:990: x>=0 is now written out as (x>0) v (x=0), matching the Section 1.5 convention (ch01
+      06:16, ''a >= b as (a > b) v (a = b)''; Section 1.5 is file 06 per the ch01 roadmap). The assumption
+      not(x=0) refutes the right disjunct, and vE with that case closed by botE is exactly the pattern
+      of @exm-impossible-case (ch02 01:326), which is DS (03:272) with the sides exchanged. The step is
+      now justified '
 - key: check:05-reductio-and-classical-rules:4
   kind: check
   file: 05-reductio-and-classical-rules.md
@@ -5874,6 +6173,17 @@ items:
     model: claude-opus-5-5
     evidence: '05-reductio-and-classical-rules.md:1419 The same problem for B5: STATUS row 83 promises
       that 3.2''s def-inconsistent-set reads this stem, but the F1.7 blueprint never cites it.'
+  - stage: S7r
+    verdict: correct
+    by: rereferee
+    hash: b38ac159d69b
+    date: '2026-10-19'
+    model: claude-opus-5-5
+    evidence: I rechecked every derivation line by line. (a) vE 2,4-6,7-8 and vE 1,3-9,10-11. (c) LEM
+      on Q, <->I 6-7,8-10; its breaks at x=4 and x=0 are right. (e) not-not-E on line 3. (f) not-I 3-9,
+      RAA 12-20, <->I 2-10,11-21. (h) RAA 2-13; the premise holds and P->R fails at x=1. The breaks (b),
+      (d), (g) at x=1 make every member of the counterexample set true. The 'Worked examples' list now
+      names text items o
   note: 'used later (D8): F1.7 §02''s def-inconsistent-set reads this item''s stem (an RAA derivation
     derives ⊥ from the counterexample set) (ch02-deepen §6.3); ch03 S4 confirms the seam or removes the
     marker'
@@ -6122,6 +6432,16 @@ items:
     evidence: 05:1744-1786. 9-line derivation checks. My alternative (inside the RAA box, ¬P by ¬I, then
       a box on P closed by ⊥E) still gets points under the 3- and 2-point lines. The second-route mapping
       is given.
+  - stage: S7r
+    verdict: correct
+    by: rereferee
+    hash: c7bccc42eb3a
+    date: '2026-10-19'
+    model: claude-opus-5-5
+    evidence: '05:1755-1770: the derivation checks (vI 2, not-E 3,1, botE 4, ->I 2-5, vI 6, not-E 7,1,
+      RAA 1-8), and line 9 is the only classical line. The second route matches @prp-excluded-middle''s
+      eight lines (05:322-345). Its marking scheme now reads ''ending with Q by botE'', which is the right
+      rule. The marks total 10 and both routes are scored. The earlier S5b finding is resolved.'
 - key: exr-reductio-and-classical-rules-c4
   kind: exr
   file: 05-reductio-and-classical-rules.md
@@ -6195,6 +6515,17 @@ items:
     evidence: 05-reductio-and-classical-rules.md:1854 The R group does not follow STYLE §11.5. R1 takes
       its method from this chapter (¬I with thm-square-even-implies-even), not from the previous chapter.
       R2's solution names its source in prose only. R3's stem names its source chapters.
+  - stage: S7r
+    verdict: minor
+    by: rereferee
+    hash: 8c4a115cc67e
+    date: '2026-10-19'
+    model: claude-opus-5-5
+    evidence: 'istential) under the index note. Both earlier findings are resolved. Remaining bookkeeping
+      gap: STATUS row 89 lists the places in F1.2 that use quantifier steps under the index note, and
+      for §05 it names only the reading of exm-raa-zero. Fix: add ''§05 exr-reductio-and-classical-rules-r1
+      (naming k in n = 2k, 2k + 1)'' to that row''s list. Its payment, def-rules-existential, is already
+      recorded there.'
 - key: exr-reductio-and-classical-rules-r2
   kind: exr
   file: 05-reductio-and-classical-rules.md
@@ -6235,6 +6566,17 @@ items:
     model: claude-opus-5-5
     evidence: The R2 solution (a) names its source only in prose, '(Section 2.4)', with no @ref. STYLE
       §11.5 says the solution names the source with an @ref.
+  - stage: S7r
+    verdict: correct
+    by: rereferee
+    hash: fbbc6a771832
+    date: '2026-10-19'
+    model: claude-opus-5-5
+    evidence: '05:1884: (a) now names its source with @ref (@exm-strictly-increasing-both-ways, ch02 04:602,
+      under the ''In a definition, if means iff'' convention at 04:598; rules @def-rules-biconditional,
+      04:11), so the S5b and S6 findings are resolved. The values at 4, 6, 7 and 9 are right. In (b),
+      left to right: LEM on line 2, <->E 1,3 and 1,8, not-E 9,7, not-I 8-10, vE 2,3-6,7-13, all checked.
+      Right to left: '
 - key: exr-reductio-and-classical-rules-r3
   kind: exr
   file: 05-reductio-and-classical-rules.md
@@ -6266,3 +6608,14 @@ items:
     evidence: '05:1951-1990. At n=2: Q→P, ¬P→¬Q and P↔Q are false, P→Q is true. (iv) is the one cited
       classical derivation (LEM); (v) has 5 lines and checks. Sources named with @prp-contrapositive and
       @prp-implication-as-disjunction.'
+  - stage: S7r
+    verdict: correct
+    by: rereferee
+    hash: 31dc43ef7588
+    date: '2026-10-19'
+    model: claude-opus-5-5
+    evidence: '05:1960: the stem now says ''by the rules so far'' and no longer names chapters, as STYLE
+      §11.5 requires. Solution: (i) @prp-contrapositive; (ii), (iii) and (vi) break at n=2 (P false, Q
+      true), which I checked; (iv) @prp-implication-as-disjunction, the direction P->Q |- not-P v Q, uses
+      LEM (Idea at 05:722); (v) the derivation checks (->E 1,2, ^I 2,3, ->I 2-4). The answer that (iv)
+      is the only classi'
