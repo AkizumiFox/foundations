@@ -20,7 +20,7 @@ Each of these changes where a search starts and what counts as its end. This sec
 | inconsistency | \( \Gamma \vdash \bot \) | step 4: the goal is \( \bot \); look for a clash partner already on a line | \( \bot \), outside every box |
 | derive or break | \( \Gamma \vdash \varphi \)? (verdict withheld) | try to break it first | a derivation, or statements that make the counterexample set true |
 
-Only the last task can end in "no". In the other three, a failed search leaves the question open, as Section 3.1's failed search did.
+Only the last task leaves open which way it ends. The other three state their claim: a failed search leaves the question open, as Section 3.1's failed search did, and a break ends the task against the claim.
 
 ::: {.check}
 Which task is each? (i) \( \vdash P \vee \neg P \). (ii) \( P \wedge Q \dashv\vdash Q \wedge P \). (iii) Show that \( P \), \( \neg P \vee Q \) and \( \neg Q \) cannot all be accepted together. (iv) Does \( P \to Q, \ Q \vdash P \) hold?
@@ -153,7 +153,7 @@ $\begin{nd}
 \end{center}
 ```
 
-\( (\Leftarrow) \) The goal is an implication: a box on \( P \), with the goal \( Q \vee R \). That goal is a disjunction, so it is postponed (step 2). The premise waits for \( P \wedge \neg Q \): \( P \) is in hand, \( \neg Q \) is not, and nothing clashes. That is step 5, and the well-chosen statement is \( Q \), the one the premise waits for: \( \rulename{LEM} \) on \( Q \).
+\( (\Leftarrow) \) The goal is an implication: a box on \( P \), with the goal \( Q \vee R \). That goal is a disjunction, so it is postponed (step 2). The premise waits for \( P \wedge \neg Q \): \( P \) is in hand, \( \neg Q \) is not, and nothing clashes. That is step 5, and the well-chosen statement is \( Q \), whose negation the premise waits for: \( \rulename{LEM} \) on \( Q \).
 
 ```{=latex}
 % schema (partial derivations: the gap is unnumbered, lines carry their final numbers)
@@ -384,7 +384,7 @@ Let \( \Gamma \) be a list of statements and \( \varphi \) a statement.
 :::
 :::
 
-*In words: (b) says that a claim is derivable exactly when its counterexample set is inconsistent, and (a) says the same for a negated conclusion.* Part (a) rests on \( \rulename{\neg I} \) alone, and (b) on \( \rulename{RAA} \): Section 2.5's distinction between the two rules, stated about whole derivations. Section 1.1's two attacks on a claim are now two tasks on one list: make it true, or derive \( \bot \) from it.
+*In words: (b) says that a claim is derivable exactly when its counterexample set is inconsistent, and (a) says the same for a negated conclusion.* In the proofs, the box of (a) closes by \( \rulename{\neg I} \) and that of (b) by \( \rulename{RAA} \): Section 2.5's distinction between the two rules, stated about whole derivations. Section 1.1's test of a form, try to break it, now has a partner on the same list: make the counterexample set true, or derive \( \bot \) from it.
 
 With \( \Gamma \) empty and \( \varphi \) the statement \( P \leftrightarrow \neg P \), part (a) says that the second row of @exm-inconsistent-lists and @lem-not-iff-own-negation, \( \vdash \neg(P \leftrightarrow \neg P) \), are the same fact.
 
@@ -396,9 +396,9 @@ With \( \Gamma \) empty and \( \varphi \) the statement \( P \leftrightarrow \ne
 ::: {.proof}
 *Proof of @prp-derivable-iff-negation-inconsistent.* (b), \( (\Rightarrow) \): from \( \Gamma \vdash \varphi \), @lem-weakening-cut (a) gives \( \Gamma, \neg\varphi \vdash \varphi \). The one-line derivation of the premise \( \neg\varphi \) gives \( \Gamma, \neg\varphi \vdash \neg\varphi \). By @lem-weakening-cut (c) with \( \varphi, \neg\varphi \vdash \bot \), we get \( \Gamma, \neg\varphi \vdash \bot \).
 
-(b), \( (\Leftarrow) \): let \( D \) be a derivation of \( \bot \) with premises in \( \Gamma, \neg\varphi \). If the last line of \( D \) is a premise in \( \Gamma \), then \( \bot \) is a member of \( \Gamma \), and \( \rulename{\bot E} \) gives \( \varphi \). Otherwise, write as premises those premises of \( D \) that belong to \( \Gamma \). Open a box with the assumption \( \neg\varphi \). Inside it, copy the lines of \( D \) that are not premises, in order, with their boxes, renumbering citations; a citation of the premise \( \neg\varphi \) now cites the assumption. Close the box after the copy of the last line of \( D \), and write \( \varphi \) by \( \rulename{RAA} \).
+(b), \( (\Leftarrow) \): let \( D \) be a derivation of \( \bot \) with premises in \( \Gamma, \neg\varphi \). If the last line of \( D \) is a premise in \( \Gamma \), then \( \bot \) is a member of \( \Gamma \), and \( \rulename{\bot E} \) gives \( \varphi \). (The last line cannot be the premise \( \neg\varphi \), since \( \neg\varphi \) is not \( \bot \).) Otherwise, write as premises those premises of \( D \) that belong to \( \Gamma \). Open a box with the assumption \( \neg\varphi \). Inside it, copy the lines of \( D \) that are not premises, in order, with their boxes, renumbering citations; a citation of the premise \( \neg\varphi \) now cites the assumption. Close the box after the copy of the last line of \( D \), and write \( \varphi \) by \( \rulename{RAA} \).
 
-Every copied citation is legal. A cited premise of \( \Gamma \) lies above the box, in no box. The assumption is available throughout the box. The boxes of \( D \) sit inside the new box as they sat in \( D \), so every available line stays available (the scope rule of @def-derivation). The last line of \( D \) lies in no box of \( D \), so its copy is a line of the new box itself, as \( \rulename{RAA} \) requires. If \( D \) never cites \( \neg\varphi \), nothing changes.
+Every copied citation is legal. A cited premise of \( \Gamma \) lies above the box, in no box. The assumption is available throughout the box. The boxes of \( D \) sit inside the new box as they sat in \( D \), so every line and every box that was available at a citing line stays available (the scope rule of @def-derivation). The last line of \( D \) lies in no box of \( D \), so its copy is a line of the new box itself, as \( \rulename{RAA} \) requires. If \( D \) never cites \( \neg\varphi \), nothing changes.
 
 Part (a) is the same, with \( \varphi \) in place of \( \neg\varphi \) and \( \rulename{\neg I} \) in place of \( \rulename{RAA} \). If the last line of \( D \) is the premise \( \varphi \) itself (possible only when \( \varphi \) is \( \bot \)), nothing is copied: the box is its one assumption line, and \( \rulename{\neg I} \) closes it at once. In \( (\Rightarrow) \), \( \Gamma, \varphi \vdash \varphi \) and, by weakening, \( \Gamma, \varphi \vdash \neg\varphi \); chaining with \( \rulename{\neg E} \) finishes.
 :::
@@ -567,7 +567,7 @@ $\begin{nd}
 \end{center}
 ```
 
-Replacing \( \vee \) by \( \leftrightarrow \), or \( Q \) by \( R \), works too.
+Replacing \( \vee \) by \( \leftrightarrow \), or \( Q \) by \( R \), works too. For \( \leftrightarrow \): from \( P \), the premises give \( Q \leftrightarrow R \) and \( \neg R \); a box on \( Q \) gives \( R \) by \( \rulename{{\leftrightarrow}E} \), which clashes with \( \neg R \), so \( \neg Q \) by \( \rulename{\neg I} \). For \( Q \) replaced by \( R \): from \( P \), \( R \vee R \) gives \( R \) by \( \rulename{\vee E} \), which clashes with \( \neg R \), so \( \neg Q \) by \( \rulename{\bot E} \).
 :::
 
 ::: {.remark}
@@ -695,7 +695,7 @@ $\begin{nd}
 \end{center}
 ```
 
-Boxes 1 and 6 come from step 2: each goal is a negation. Box 7 comes from step 4: it manufactures \( \neg P \), so that \( \rulename{\vee I} \) can build the disjunction that clashes with line 6. The second conjunct needed no classical rule, although \( P \vee \neg P \) itself does in this book's derivation (@prp-excluded-middle).
+Boxes 1 and 6 come from step 2: each goal is a negation. Box 7 comes from step 2 inside step 4: step 4 chooses to manufacture \( P \vee \neg P \) from its side \( \neg P \), so that it clashes with line 6, and the goal \( \neg P \), a negation, opens the box. The second conjunct needed no classical rule, although \( P \vee \neg P \) itself does in this book's derivation (@prp-excluded-middle).
 
 (b)
 
@@ -850,7 +850,7 @@ For each claim, derive it or break it. Try to break it first. To break a claim, 
 ::: {.solution}
 The verdict comes first, then the derivation or the break. In every break, \( x \) is a real number.
 
-(a) Breaks. Take \( P \): "\( x > 2 \)", \( Q \): "\( x > 0 \)", at \( x = 1 \). \( \neg P \) is true, so \( \neg P \vee \neg Q \) is true; \( Q \) is true, so \( P \vee Q \) is true and \( \neg(P \vee Q) \) is false. (The De Morgan law runs the other way, \( \neg(P \vee Q) \vdash \neg P \wedge \neg Q \); here the wrong connective sits inside the negation.)
+(a) Breaks. Take \( P \): "\( x > 2 \)", \( Q \): "\( x > 0 \)", at \( x = 1 \). \( \neg P \) is true, so \( \neg P \vee \neg Q \) is true; \( Q \) is true, so \( P \vee Q \) is true and \( \neg(P \vee Q) \) is false. (The De Morgan law with this premise is \( \neg P \vee \neg Q \vdash \neg(P \wedge Q) \), @prp-de-morgan (c); here the wrong connective sits inside the negation.)
 
 (b) Derive.
 
@@ -876,6 +876,8 @@ $\begin{nd}
 \end{nd}$
 \end{center}
 ```
+
+This is the first box of @exr-reductio-and-classical-rules-b5 (f).
 
 (c) Derive. Step 5: the goal \( Q \) is a letter, and the first two premises wait for \( P \) and for \( \neg P \), so \( \rulename{LEM} \) on \( P \). \( \rulename{DS} \) matches as stated in Section 2.3, refuting the **left** disjunct \( R \).
 
@@ -1093,7 +1095,7 @@ $\begin{nd}
 **Marking scheme.** (10 points)
 
 - 2: the counterexample set, with \( \neg(P \to S) \), not \( \neg P \to S \) or \( P \to \neg S \).
-- 3: the derivation of \( \bot \): \( P \to S \) built by a box, the cases of \( Q \vee R \) both ending in \( S \), \( \rulename{\neg E} \) outside every box.
+- 3: the derivation of \( \bot \): \( P \to S \) derived (by a box whose cases of \( Q \vee R \) both end in \( S \), or by @exm-cases-on-hypothesis and @prp-implication-transitive), and \( \rulename{\neg E} \) outside every box.
 - 2: the conclusion drawn by the proposition, and the direct derivation.
 - 3: (d), a changed premise, with statements checked against all four members of the new counterexample set.
 
@@ -1123,8 +1125,8 @@ Section 4.10 (optional) adds statements to a consistent list one at a time, in e
 
 **Marking scheme.** (10 points)
 
-- 4: (a) uses both parts of the proposition, (a) for \( \neg\varphi \) and (b) for \( \varphi \).
-- 3: (a) concludes by @prp-inconsistent-derives-everything, or by @lem-weakening-cut (c) with one \( \rulename{\neg E} \).
+- 4: (a) derives \( \Gamma \vdash \neg\varphi \) by part (a) of the proposition, and either \( \Gamma \vdash \varphi \) by part (b) or uses \( \Gamma, \neg\varphi \vdash \bot \) directly.
+- 3: (a) concludes by @prp-inconsistent-derives-everything, by @lem-weakening-cut (c) with one \( \rulename{\neg E} \), or by Cut (@lem-weakening-cut (b)).
 - 2: (b) as the contrapositive.
 - 1: (c) "no".
 
@@ -1139,7 +1141,7 @@ exm-inconsistency-search (claim): in the Quick check after it, 3 and 9 are the i
 exm-inconsistent-lists (example): with P "0 = 1" false, P -> Q and P -> not-Q are both true | an implication with a false hypothesis is true (the reading of -> in F1.1); 0 = 1 is false
 exm-inconsistent-lists (example): the line counts 7, 8 and 4 of the table rows | inline (each row's derivation given in brief; row 3 cites prp-vacuous-implication)
 exm-derive-or-break-search (example): (b) at x = 2 with x > 0, x > 1, x > 3 | arithmetic; checked by verify/ch03/exm-derive-or-break-search.py
-exm-derive-or-break-search (claim): in the Quick check after it, replacing or by iff, or Q by R, in the first premise of (b) gives a derivable claim | stated without derivation in a solution; checked by truth table in verify/ch03/exm-derive-or-break-search.py; nothing depends on it
+exm-derive-or-break-search (claim): in the Quick check after it, replacing or by iff, or Q by R, in the first premise of (b) gives a derivable claim | derivation sketched inline in the solution; checked by truth table in verify/ch03/exm-derive-or-break-search.py; nothing depends on it
 exr-four-kinds-of-task-b3 (solution): the breaks (a), (d), (f), (g) at the stated x | arithmetic; checked by verify/ch03/exr-four-kinds-of-task-b3.py
 exr-four-kinds-of-task-b4 (solution): the lists (b), (d), (f) made true at the stated statements; (f) with the fourth member derives bot by LEM on P and Q | arithmetic; the derivation described inline; checked by truth table in verify/ch03/exr-four-kinds-of-task-b4.py
 exr-four-kinds-of-task-b4 (solution): Section 4.7 shows that a list made true at once is consistent | plain pointer in a solution (F1.3 s07, text); nothing depends on it

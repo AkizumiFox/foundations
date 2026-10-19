@@ -1415,3 +1415,11 @@ All four findings of S2 round 2 were applied; none is disputed.
 
 - The 3.3 library (above) cites `@exr-derived-rules-b4` (b), (c) for the destructive dilemma and *modus ponendo tollens*; that exercise carries ", used later" for this reason (STATUS row on F1.2 §03/§05 → F1.7).
 - In 3.2 the lead of `def-inconsistent-set` recalls `@exr-reductio-and-classical-rules-b5`: an RAA derivation derives ⊥ from a counterexample set. That exercise carries ", used later" for this reason.
+
+## S7 deviations (2026-10-19)
+
+- 3.1 derived-rules card gains rows for (or merges), (and regroups), (or regroups), CD, the destructive dilemma and *modus ponendo tollens* (@exr-derived-rules-b4 (b), (c)); step 4 also covers a manufactured clash with a resource ¬χ at any goal; chart node t4 reads "LEM on a well-chosen statement".
+- 3.1 C2 marking scheme credits VI (@prp-vacuous-implication) in the other case and on the RAA route once ¬Q or ¬P is derived; C3 accepts a classical derived rule at step 3 (DM (d) then ¬¬E) as the classical line.
+- 3.3 B3 item 3 uses *modus ponendo tollens* from the card (6 lines); the RAA route (7 lines) is the "without the library" alternative.
+- 3.3 R4 (b) no longer gives the letters (STYLE §11.5: less scaffolding); the solution offers them "for instance".
+- 3.3 C2 (c): ¬C and C → ⊥ are interderivable (Section 2.2), not identical.

@@ -1,6 +1,6 @@
 # How to Find a Derivation
 
-We now have every rule for the connectives. Checking a derivation is mechanical, as @def-derivation makes it: for each line, which rule, which lines, and are they available. Finding one is not, since an assumption may be any statement at all. Yet every Idea in Chapters 1 and 2 found its derivation with the same handful of moves. This section introduces no new rule. It collects those moves into one method, puts them in order, says why the order is right, and then watches the method work: on four searches that succeed, one that fails, and one mathematical goal. It ends with every rule in one place.
+We now have every rule for the connectives. Checking a derivation is mechanical, as @def-derivation makes it: for each line, which rule, which lines, and are they available. Finding one is not, since an assumption may be any statement at all. Yet every Idea in Chapters 1 and 2 found its derivation with the same handful of moves. This section introduces no new rule. It collects those moves into one method, puts them in order, says why the order is right, and then watches the method work: on five searches that succeed, one that fails, and one mathematical goal. It ends with every rule in one place.
 
 ## The moves so far
 
@@ -42,7 +42,7 @@ $\begin{nd}[schema]
 \end{center}
 ```
 
-Each row \( \vdots \) is a **gap**. The written line just below a gap, here line 7 or line 13, is the gap's **current goal**; it has no justification yet. The lines available at that goal, here the premise, are the gap's **resources**. The definition says the same thing exactly.
+Each row \( \vdots \) is a **gap**. The written line just below a gap, here line 7 or line 13, is the gap's **current goal**; it has no justification yet. The lines available at that goal, here the premise for the first gap and the premise and line 7 for the second, are the gap's **resources**. The definition says the same thing exactly.
 
 ::: {#def-partial-derivation}
 [Partial Derivation]
@@ -75,7 +75,7 @@ The snapshots in the worked searches below are all partial derivations; a line c
 
    Repeat while the current goal is a \( \wedge \), \( \to \), \( \neg \), or \( \leftrightarrow \).
 3. **Premise-directed step.** Take the main connective of a resource and apply its elimination rule: \( \rulename{\wedge E} \) freely (Section 1.2); \( \rulename{{\to}E} \) and \( \rulename{{\leftrightarrow}E} \) when the other statement they need is a resource, or can be made a new goal (Sections 1.3 and 2.4); \( \rulename{\vee E} \) by opening two boxes, one per disjunct, **each ending in the current goal** (Section 1.6). A derived rule may do the work of several lines (Section 2.3): a resource \( \psi \to \chi \) with \( \neg\chi \) available gives \( \neg\psi \) by \( \rulename{MT} \); a resource \( \psi \vee \chi \) with \( \neg\psi \) available gives \( \chi \) by \( \rulename{DS} \).
-4. **Clash.** If the current goal is \( \bot \), look for a pair \( \chi \), \( \neg\chi \) among the resources, or make \( \chi \) the new goal for some resource \( \neg\chi \) and manufacture it, starting again at step 2 for that goal. Whatever the current goal, if the resources clash, write \( \bot \) and then the goal by \( \rulename{\bot E} \): an impossible case closes itself (Section 2.1). When the clash needs a disjunction whose negation is a resource, either side may be chosen to build it: once the disjunction is written, \( \bot \) follows.
+4. **Clash.** If the current goal is \( \bot \), look for a pair \( \chi \), \( \neg\chi \) among the resources, or make \( \chi \) the new goal for some resource \( \neg\chi \) and manufacture it, starting again at step 2 for that goal. Whatever the current goal, if the resources clash, or a clash with a resource \( \neg\chi \) can be manufactured, write \( \bot \) and then the goal by \( \rulename{\bot E} \): an impossible case closes itself (Section 2.1). When the clash needs a disjunction whose negation is a resource, either side may be chosen to build it: once the disjunction is written, \( \bot \) follows.
 5. **Stuck.** Use \( \rulename{RAA} \): open a box with the negation of the current goal, whose new goal is \( \bot \); if that gives nothing, try the same with a goal further out whose box contains the stalled gap. Or use \( \rulename{LEM} \) on a well-chosen statement \( \chi \), and split on \( \chi \vee \neg\chi \) by \( \rulename{\vee E} \). Then return to step 3 (Section 2.5).
 
 When no gap is left, number the lines and check the derivation as @def-derivation says.
@@ -88,7 +88,7 @@ The steps are listed in the order in which to try them, and the order has reason
 - **Step 5 loses nothing either, and still comes last.** The goal \( \bot \) gives step 2 nothing to work with, and a good statement to split on must be chosen.
 
 ::: {.second-reading title="Why the order loses nothing"}
-**The goal-directed steps lose nothing.** Suppose the goal \( \psi \to \chi \) is derivable from the resources \( \Gamma \) at all, by some derivation \( D \). Then \( \chi \) is derivable from \( \Gamma \) together with \( \psi \): add \( \psi \) to the premises of \( D \) (@def-derivable asks only that the premises belong to the list), and append the line \( \chi \) by \( \rulename{{\to}E} \), citing the last line of \( D \) and the premise \( \psi \). So opening a box on \( \psi \) never turns a derivable gap into an underivable one. With \( \rulename{\wedge E} \), \( \rulename{\neg E} \), or \( \rulename{{\leftrightarrow}E} \) as the appended line, the same argument covers \( \wedge \), \( \neg \), and \( \leftrightarrow \). That is why step 2 may be applied without thinking.
+**The goal-directed steps lose nothing.** Suppose the goal \( \psi \to \chi \) is derivable from the resources \( \Gamma \) at all, by some derivation \( D \). Then \( \chi \) is derivable from \( \Gamma \) together with \( \psi \): add \( \psi \) to the premises of \( D \) (@def-derivable asks only that the premises belong to the list), and append the line \( \chi \) by \( \rulename{{\to}E} \), citing the last line of \( D \) and the premise \( \psi \). A derivation from \( \Gamma \) and \( \psi \) can be written inside the box, its premises from \( \Gamma \) cited as available lines and \( \psi \) as the box's assumption (the pasting of @lem-weakening-cut). So opening a box on \( \psi \) never turns a derivable gap into an underivable one. With \( \rulename{\wedge E} \), \( \rulename{\neg E} \), or \( \rulename{{\leftrightarrow}E} \) as the appended line, the same argument covers \( \wedge \), \( \neg \), and \( \leftrightarrow \). That is why step 2 may be applied without thinking.
 
 **Choosing a side of \( \vee \) can leave a goal that does not follow.** A disjunction can be derivable when neither side follows from the resources. From \( P \vee Q \) the goal \( Q \vee P \) is derivable (@exm-disjunction-first-derivations), but \( P \vee Q \) does not say which side holds, so a last line \( \rulename{\vee I} \) from \( Q \), or from \( P \), leaves a gap whose goal does not follow from its resources: \( P \) true and \( Q \) false makes \( P \vee Q \) true and \( Q \) false. Choosing a side is safe only once the resources decide it, typically inside a case of \( \rulename{\vee E} \), or when the disjunction is being manufactured for a clash (step 4) with a resource that is its negation: then the resources derive \( \bot \) as soon as they derive the disjunction, and from \( \bot \) every statement, either side included, by \( \rulename{\bot E} \).
 
@@ -105,7 +105,7 @@ The same method as a chart. A move counts only if the gap it makes is not alread
   \node[fc test, below=of t0] (t1) {is the goal a $\wedge$, $\to$,\\$\neg$ or $\leftrightarrow$?};
   \node[fc test, below=of t1] (t2) {can a resource be taken\\apart by a move untried\\for this gap?};
   \node[fc test, below=of t2] (t3) {is the goal $\bot$, or do the\\resources clash, with a clash\\untried for this gap?};
-  \node[fc test, below=of t3] (t4) {is RAA on this goal, or LEM on\\a statement a resource waits for,\\still untried for this gap?};
+  \node[fc test, below=of t3] (t4) {is RAA on this goal, or LEM on\\a well-chosen statement,\\still untried for this gap?};
   \node[fc start, below=of t4] (e4) {no move left: back to the gap\\that made this one; at the first\\gap, stop and try to break the claim};
   \node[fc start, anchor=west] (e0) at ($(t0)+(4.5,0)$) {done: cite it,\\or copy it by R};
   \node[fc step, anchor=west] (b1) at ($(t1)+(4.5,0)$) {step 2: its introduction\\rule (boxes or two gaps)};
@@ -439,7 +439,7 @@ Find a derivation of \( \neg(P \leftrightarrow Q) \vdash P \vee Q \).
 :::
 
 ::: {.solution}
-*Steps 1–4.* The goal is a disjunction, so step 2 postpones it. The one resource is a negation, and a negation can be used only in a clash (step 4), which needs the goal \( \bot \); the goal is \( P \vee Q \). Neither side is in hand: the premise says only that \( P \) and \( Q \) differ, not which one holds. Steps 2–4 have nothing to offer.
+*Steps 1–4.* The goal is a disjunction, so step 2 postpones it. The one resource is a negation, and a negation can be used only in a clash (step 4), and here no clash can be found or manufactured. Neither side is in hand: the premise says only that \( P \) and \( Q \) differ, not which one holds. Steps 2–4 have nothing to offer.
 
 *Step 5.* We assume the negation of the goal. The new goal is \( \bot \), and the gap has one more resource:
 
@@ -957,7 +957,7 @@ $\begin{nd}[schema]
 \end{center}
 ```
 
-**Derived rules.** Each is a proved sequent, used as one line that cites the lines holding its premises (@def-derived-rule). The table lists every sequent that Chapters 1 and 2 name as a rule or use as one; every other sequent proved in the text may be used in the same way. Where a rule has no short name, the justification names the result, as "(ex falso)" or "VI".
+**Derived rules.** Each is a proved sequent, used as one line that cites the lines holding its premises (@def-derived-rule). The table lists the sequents of Chapters 1 and 2 that searches use most; every other sequent proved there may be used in the same way. Where a rule has no short name, the justification names the result, as "(ex falso)" or "VI".
 
 | In a justification | Sequent | Proved in | Our derivation uses \( \rulename{RAA} \) |
 |---|---|---|---|
@@ -965,8 +965,14 @@ $\begin{nd}[schema]
 | (implication is transitive) | \( P \to Q, \ Q \to R \vdash P \to R \) | @prp-implication-transitive | no |
 | (curry) | \( (P \wedge Q) \to R \dashv\vdash P \to (Q \to R) \) | @prp-curry | no |
 | (or commutes) | \( P \vee Q \vdash Q \vee P \) | @exm-disjunction-first-derivations | no |
+| (or merges) | \( P \vee P \vdash P \) | @exm-disjunction-first-derivations | no |
+| (and regroups) | \( (P \wedge Q) \wedge R \vdash P \wedge (Q \wedge R) \) | @prp-and-associative | no |
+| (or regroups) | \( P \vee (Q \vee R) \vdash (P \vee Q) \vee R \) | @exm-disjunction-regroup | no |
 | (distributivity) | \( P \wedge (Q \vee R) \dashv\vdash (P \wedge Q) \vee (P \wedge R) \) | @prp-distributivity | no |
 | (cases on a hypothesis) | \( (P \to R) \wedge (Q \to R) \dashv\vdash (P \vee Q) \to R \) | @exm-cases-on-hypothesis; the converse @exm-or-hypothesis-split | no |
+| \( \rulename{CD} \) (constructive dilemma) | \( (P \to R) \wedge (Q \to S), \ P \vee Q \vdash R \vee S \) | @exm-constructive-dilemma | no |
+| (destructive dilemma) | \( (P \to R) \wedge (Q \to S), \ \neg R \vee \neg S \vdash \neg P \vee \neg Q \) | @exr-derived-rules-b4 (b) | no |
+| (*modus ponendo tollens*) | \( \neg(P \wedge Q) \vdash P \to \neg Q \) | @exr-derived-rules-b4 (c) | no |
 | (ex falso) | \( P, \ \neg P \vdash Q \) | @prp-ex-falso | no |
 | VI (vacuous implication) | \( \neg P \vdash P \to Q \) | @prp-vacuous-implication | no |
 | \( \rulename{MT} \) | \( P \to Q, \ \neg Q \vdash \neg P \) | @prp-modus-tollens | no |
@@ -985,7 +991,7 @@ $\begin{nd}[schema]
 | \( \rulename{DM} \) | the four laws of @prp-de-morgan | @prp-de-morgan | (d) only |
 | (implication as disjunction) | \( \neg P \vee Q \vdash P \to Q \), and its converse | @prp-implication-as-disjunction | the converse only, through \( \rulename{LEM} \) |
 
-Two rows are proved in exercises, not in the text: the other form of \( \rulename{DS} \) and the converse of the iff of negations. Exercises may use them as rules; the text's own proofs do not.
+Four rows are proved in exercises, not in the text: the other form of \( \rulename{DS} \), the destructive dilemma, *modus ponendo tollens*, and the converse of the iff of negations. Exercises may use them as rules; the text's own proofs do not.
 
 Each rule is also a move: the table of moves at the start of this section is the decision chart of Section 1.6, grown to every connective, read by the goal for the introduction rules and by an available line for the elimination rules; the chart after the method's steps draws their order.
 
@@ -1040,7 +1046,7 @@ The parts run from one step of the method, through available lines and steps to 
 6. Which step of the method opens an \( \rulename{RAA} \) box, and when?
 7. True or false: a failed search shows that the sequent is not derivable.
 8. The goal is \( R \), and the resources are \( P \vee Q \), \( P \to R \), \( Q \to S \). Should the search be expected to succeed?
-9. Lines 3 and 4 are \( Q \to R \) (a premise) and \( Q \). A searcher writes 5 \( Q \), assumption; 6 \( R \), \( \rulename{{\to}E} \) 3, 5; 7 \( Q \to R \), \( \rulename{{\to}I} \) 5–6; 8 \( R \), \( \rulename{{\to}E} \) 7, 4. Which refinement of the section does this break, and what single line replaces lines 5–8?
+9. Lines 3 and 4 are \( Q \to R \) (a premise) and \( Q \). A searcher writes 5 \( Q \), assumption; 6 \( R \), \( \rulename{{\to}E} \) 3, 5; 7 \( Q \to R \), \( \rulename{{\to}I} \) 5–6; 8 \( R \), \( \rulename{{\to}E} \) 7, 4. Which refinements of the section does this break, and what single line replaces lines 5–8?
 10. Find a derivation of \( P \vee Q, \ \neg P \vdash Q \vee R \).
 11. Find a derivation of \( (P \vee Q) \to R \vdash Q \to R \).
 12. Find a derivation of \( P \to (Q \to R), \ P \wedge \neg R \vdash \neg Q \).
@@ -1054,7 +1060,7 @@ The parts run from one step of the method, through available lines and steps to 
 
 (c) \( P \wedge Q \) by \( \rulename{\wedge I} \), then \( \bot \) by \( \rulename{\neg E} \).
 
-(d) Step 2 postpones the goal. Step 3 cannot fire, since it needs \( \neg P \). So step 5: \( \rulename{LEM} \) on \( P \), the statement the resource waits for.
+(d) Step 2 postpones the goal. Step 3 needs \( \neg P \), which is not a resource, and making it a goal stalls. So step 5: \( \rulename{LEM} \) on \( P \), whose negation the resource waits for.
 
 (e) 1, 3 and 6; not 4.
 
@@ -1298,8 +1304,6 @@ $\begin{nd}
 ```
 
 (d) Line 3 takes the place of the assumption on line 4. The box's one other line, "\( R \), \( \rulename{{\to}E} \) 2, 4", becomes "\( R \), \( \rulename{{\to}E} \) 2, 3", which is line 4 of (c).
-
-Worked example of this type: the paragraph on detours in "Four refinements", and its Quick check.
 :::
 
 ### C. Going deeper
@@ -1426,18 +1430,18 @@ $\begin{nd}
 
 \( \rulename{LEM} \) on \( P \) works equally well, with the roles of the two sides exchanged.
 
-(b) \( \rulename{LEM} \) is used at line 1, and \( \rulename{RAA} \) only inside it. The method cannot avoid step 5 here. Step 2 postpones the \( \vee \) goal; with no premises, step 3 has nothing to eliminate and step 4 nothing to clash; and \( \rulename{\vee I} \) cannot come first, because neither side follows from no premises (with \( P \) true and \( Q \) false, \( P \to Q \) is false; with \( P \) false and \( Q \) true, \( Q \to P \) is false; Chapter 4 turns such choices into proofs). So a resource must be created from nothing, and only step 5 does that. This shows that the **method** needs step 5; that every derivation of the sequent uses \( \rulename{RAA} \) or an equivalent is a stronger claim, which we do not prove.
+(b) \( \rulename{LEM} \) is used at line 1; \( \rulename{RAA} \) appears only inside the derivation of \( \rulename{LEM} \) (@prp-excluded-middle) that line 1 abbreviates. The method cannot avoid step 5 here. Step 2 postpones the \( \vee \) goal; with no premises, step 3 has nothing to eliminate and step 4 nothing to clash; and \( \rulename{\vee I} \) cannot come first, because neither side follows from no premises (with \( P \) true and \( Q \) false, \( P \to Q \) is false; with \( P \) false and \( Q \) true, \( Q \to P \) is false; Chapter 4 turns such choices into proofs). So a resource must be created from nothing, and only step 5 does that. This shows that the **method** needs step 5; that every derivation of the sequent uses \( \rulename{RAA} \) or an equivalent is a stronger claim, which we do not prove.
 
 **Marking scheme.** (10 points)
 
 - 3: a correct split by \( \rulename{LEM} \) (on \( Q \) or on \( P \)), with two case boxes combined by \( \rulename{\vee E} \), or a correct \( \rulename{RAA} \) box on the negated goal.
 - 2: in one case, the implication by a box that repeats the case assumption.
-- 2: in the other case, the implication by a box that clashes with the case assumption, then \( \rulename{\bot E} \).
+- 2: in the other case, the implication by a box that clashes with the case assumption, then \( \rulename{\bot E} \), or by VI (@prp-vacuous-implication).
 - 1: \( \rulename{\vee I} \) on the correct side in each case, every citation available.
 - 2: the paragraph names the \( \rulename{LEM} \) line (or the \( \rulename{RAA} \) line) and explains why no other step of the method applies.
 
 Fatal errors (0 for the step): choosing a side of the goal before the split; citing one case's assumption in the other case.
-A correct derivation by \( \rulename{RAA} \) on the negated goal earns full marks: its 2 + 2 + 1 points go to the two implications derived inside the \( \rulename{RAA} \) box (one by a box that repeats an assumption, one by a clash and \( \rulename{\bot E} \)) and to the \( \rulename{\vee I} \) lines that clash with the \( \rulename{RAA} \) assumption.
+A correct derivation by \( \rulename{RAA} \) on the negated goal earns full marks: its 2 + 2 + 1 points go to the two implications derived inside the \( \rulename{RAA} \) box (one by a box that repeats an assumption, one by a clash and \( \rulename{\bot E} \), or by VI (@prp-vacuous-implication) once \( \neg Q \) or \( \neg P \) has been derived) and to the \( \rulename{\vee I} \) lines that clash with the \( \rulename{RAA} \) assumption.
 :::
 
 ::: {#exr-finding-derivations-c3}
@@ -1492,11 +1496,11 @@ The classical step is line 13, the \( \rulename{RAA} \) that closes the box of l
 
 - 2: step 2 postpones the disjunctive goal, with the reason (neither side is in hand).
 - 2: steps 3 and 4 find that the premise can be used only by producing \( \neg P \wedge Q \) for a clash.
-- 2: step 5 is chosen: \( \rulename{RAA} \) on the whole goal, or \( \rulename{LEM} \) on \( P \). (\( \rulename{LEM} \) on \( Q \) also works; our route with it then uses a second classical step, an \( \rulename{RAA} \) for \( P \) in the case \( Q \); award it.)
+- 2: step 5 is chosen: \( \rulename{RAA} \) on the whole goal, or \( \rulename{LEM} \) on \( P \). (\( \rulename{LEM} \) on \( Q \) also works; our route with it then uses a second classical step, an \( \rulename{RAA} \) for \( P \) in the case \( Q \); award it.) A classical derived rule used at step 3, such as DM (d) on the premise followed by \( \rulename{\neg\neg E} \), is also accepted; its line is the classical line.
 - 3: the inner boxes and their clashes are correct, and every citation is available.
 - 1: the classical line is named.
 
-Fatal errors (0 for the step): \( \rulename{\vee I} \) as the last line, from a disjunct derived from the premise alone; an \( \rulename{RAA} \) box opened with anything but \( \neg(P \vee \neg Q) \).
+Fatal errors (0 for the step): \( \rulename{\vee I} \) as the last line, from a disjunct derived from the premise alone; on the \( \rulename{RAA} \) route, an \( \rulename{RAA} \) box on the whole goal opened with anything but \( \neg(P \vee \neg Q) \).
 :::
 
 ::: {#exr-finding-derivations-c4}
@@ -1559,12 +1563,14 @@ exm-search-postpone-or (example): neither disjunct follows from the premise (two
 exm-search-postpone-or (example): LEM on P also succeeds, with a nested or-E, in 22 lines | inline description, in fold "Other splits that also work"; not used
 exm-search-raa (example): LEM on P leaves the method stuck again in the case not-P | inline (steps 2-4 read off the resources), in fold "Other splits that also work"; not used
 finding-derivations-peirce (example): assuming not-Q at the stalled gap of Peirce's search gives no clash | inline (the resources listed), in fold "Step 5 one level out"; not used
-exm-search-free-lines (example): lines outside the boxes are available inside them; the boxes-first version has 16 lines | inline (scope rule of @def-derivation; count of lines)
+exm-search-free-lines (example): lines outside the boxes are available inside them | inline (scope rule of @def-derivation)
 finding-derivations-detours (claim): a detour's line was within reach without it | inline (copying argument in fold "Why a detour's line was within reach", from @def-derivation's scope rule); stated as advice, no normalization theorem
 finding-derivations-failed-search (claim): no derivation of Q -> P from P -> Q exists | not claimed; the paragraph says only that the form breaks and that "no derivation" cannot yet be shown
-exm-skeleton-odd-product (example): every integer is even or odd, and not both; m = 2k gives mn = 2(kn) | school algebra, AN1.1 (promised)
+exm-skeleton-odd-product (example): every integer is even or odd, and not both | F2.2 (promised; thm-division-algorithm, the case n = 2)
+exm-skeleton-odd-product (example): m = 2k gives mn = 2(kn) | school algebra
 exm-skeleton-odd-product (example): "say m = 2k" names a witness | F1.4 (promised; rules for "there exists"), carried by the chapter index's quantifier note
 exr-finding-derivations-a1 (solution): (b) naming n uses a rule for "there exists" | F1.4 (promised), carried by the chapter index's quantifier note
+exr-finding-derivations-a1 (solution): (a) not(x < 0) iff x >= 0; x >= 0 implies x^3 >= 0 | school algebra, AN1.1 (promised)
 exr-finding-derivations-a2 (solution): (h) the resources are true and R false at P false, Q true, R false, S true | inline (the choice given)
 exr-finding-derivations-b1 (solution): no derivation of P from not(P -> Q) avoids RAA | stated without proof and marked so; nothing depends on it
 exr-finding-derivations-c2 (solution): neither disjunct follows from no premises (breaking choices) | informal; plain pointer to Chapter 4; the solution says it proves only that the method needs step 5
