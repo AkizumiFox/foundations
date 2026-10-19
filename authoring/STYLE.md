@@ -475,11 +475,11 @@ On the website the fold is closed, with a marker and its title ("Second reading"
   ::: {.remark}
   [Looking ahead]
 
-  Chapter 3 checks that no rule leads from truth to falsehood.
+  Chapter 4 checks that no rule leads from truth to falsehood.
   :::
   ```
 
-  It names the chapter in words, never with `@ref`, and is reported to STATUS's promise table like any other promise. In fd1, soundness is promised once, in Section 1.2, and is not used as a reason anywhere before Chapter 3; one global note in Chapter 2's `index.md` ("steps about every and some are used as ordinary reasoning until Chapter 4") replaces per-proof caveats.
+  It names the chapter in words, never with `@ref`, and is reported to STATUS's promise table like any other promise. In fd1, soundness is promised once, in Section 1.2, and is not used as a reason anywhere before Chapter 4; one global note in Chapter 2's `index.md` ("steps about every and some are used as ordinary reasoning until Chapter 5") replaces per-proof caveats.
 
 ### 12.2 Effort in proportion to difficulty
 
