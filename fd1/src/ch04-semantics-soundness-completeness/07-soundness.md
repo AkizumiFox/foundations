@@ -267,7 +267,7 @@ Recall that \( v \) makes every formula of \( \Gamma_k \) true.
 
 The three claims cover every way line \( k \) can be justified, so \( S(k) \) holds. By @thm-strong-induction, \( S(k) \) holds for every \( k \in \nN \): every line \( k \) of the derivation satisfies \( \Gamma_k \models \varphi_k \).
 
-**Step 4 (the last line).** The last line \( n \) of a derivation lies in no box (@def-derivation), so its context \( \Gamma_n \) consists of the premises alone, and \( \varphi_n = \psi \). By Step 3, \( \Gamma_n \models \psi \). Every premise belongs to \( \Gamma \) (@def-derivable), so a valuation making every formula of \( \Gamma \) true makes every formula of \( \Gamma_n \) true, and hence makes \( \psi \) true. This proves \( \Gamma \models \psi \).
+**Step 4 (the last line).** The last line \( n \) of a derivation lies in no box (@def-derivation), so its context \( \Gamma_n \) consists of the premises alone, and \( \varphi_n = \psi \). By the induction of Steps 2 and 3, \( \Gamma_n \models \psi \). Every premise belongs to \( \Gamma \) (@def-derivable), so a valuation making every formula of \( \Gamma \) true makes every formula of \( \Gamma_n \) true, and hence makes \( \psi \) true. This proves \( \Gamma \models \psi \).
 :::
 
 The proof is long, but each case is one step of the truth-table reasoning of Section 4.4, placed in the right context. Every primitive rule has passed. So has every derived rule, since each abbreviates primitive ones. *The rules never lead from truth to falsehood*, not merely line by line but for every derivation that can ever be written.
@@ -438,7 +438,7 @@ Take \( p = \mathrm{F} \), \( q = \mathrm{T} \), \( r = \mathrm{F} \). The premi
 
 ## Test the subgoal
 
-Section 3.1's search works on subgoals: a goal, and the lines available for it. Soundness gives it a test. Before chasing a subgoal, look for a row making the available lines true and the subgoal false. If there is one, no line with those lines as its context can hold the subgoal: the proof of @thm-soundness showed that every line \( k \) satisfies \( \Gamma_k \models \varphi_k \), and the row refutes exactly that. This is the move **test the subgoal**. Section 3.1 met it without the name ("Choosing a side of \( \vee \) can leave a goal that does not follow"): from \( p \vee q \), the goal \( q \vee p \) tempts \( \rulename{\vee I} \) from \( q \), and the row \( p = \mathrm{T} \), \( q = \mathrm{F} \) makes \( p \vee q \) true and \( q \) false, so the search must split \( p \vee q \) first.
+Section 3.1's search works on subgoals: a goal, and the lines available for it. Soundness gives it a test. Before chasing a subgoal, look for a row making the available lines true and the subgoal false. If there is one, no line standing at this point can hold the subgoal: its context, the premises and the open assumptions, is among the available lines, so the row makes that context true and the subgoal false, while the proof of @thm-soundness showed that every line \( k \) satisfies \( \Gamma_k \models \varphi_k \). This is the move **test the subgoal**. Section 3.1 met it without the name ("Choosing a side of \( \vee \) can leave a goal that does not follow"): from \( p \vee q \), the goal \( q \vee p \) tempts \( \rulename{\vee I} \) from \( q \), and the row \( p = \mathrm{T} \), \( q = \mathrm{F} \) makes \( p \vee q \) true and \( q \) false, so the search must split \( p \vee q \) first.
 
 Chapter 2 met a harder case. Section 2.5 did not aim at \( \rulename{\vee I} \) for the De Morgan direction \( \neg(P \wedge Q) \vdash \neg P \vee \neg Q \), because the step from the premise to either disjunct can be broken. Now such a break is a proof: the row \( p = \mathrm{T} \), \( q = \mathrm{F} \) makes \( \neg(p \wedge q) \) true and \( \neg p \) false, so \( \neg(p \wedge q) \nvdash \neg p \), and the row \( p = \mathrm{F} \), \( q = \mathrm{T} \) gives \( \neg(p \wedge q) \nvdash \neg q \). Both subgoals fail the test, so a derivation of @prp-de-morgan (d) cannot end with \( \rulename{\vee I} \), which is why Section 2.5 reached for \( \rulename{RAA} \). The test only refutes. A subgoal that passes it may still be hard to reach; whether it can be reached at all is Section 4.8's question.
 
@@ -589,7 +589,7 @@ The trap is (d). Its conclusion **looks** stronger than the premise, since it se
 
 Here are nine lines. Seven of them, in the right order, form the \( \rulename{\vee E} \) case of the proof of @thm-soundness. Line \( k \) is \( \chi \), by \( \rulename{\vee E} \) citing line \( i \) (holding \( \varphi \vee \psi \)), the box from line \( a \) to line \( b \) (opening with \( \varphi \), ending with \( \chi \)), and the box from line \( c \) to line \( d \) (opening with \( \psi \), ending with \( \chi \)). Give an admissible order, and say why each of the other two lines cannot be used.
 
-*(i)* By the induction hypothesis for lines \( b \) and \( d \), which come before line \( k \), \( \Gamma_b \models \chi \) and \( \Gamma_d \models \chi \).
+(i) By the induction hypothesis for lines \( b \) and \( d \), which come before line \( k \), \( \Gamma_b \models \chi \) and \( \Gamma_d \models \chi \).
 
 (ii) Hence \( v(\chi) = \mathrm{T} \) in either case; since \( v \) was arbitrary, \( \Gamma_k \models \chi \).
 
@@ -597,7 +597,7 @@ Here are nine lines. Seven of them, in the right order, form the \( \rulename{\v
 
 (iv) If \( v(\psi) = \mathrm{T} \), then \( v \) makes every formula of \( \Gamma_d \) true, so \( v(\chi) = \mathrm{T} \).
 
-*(v)* By @lem-context-inclusion (a), \( \Gamma_i \subseteq \Gamma_k \), so \( v \) makes every formula of \( \Gamma_i \) true; by the induction hypothesis for line \( i \), \( v(\varphi \vee \psi) = \mathrm{T} \), so \( v(\varphi) = \mathrm{T} \) or \( v(\psi) = \mathrm{T} \).
+(v) By @lem-context-inclusion (a), \( \Gamma_i \subseteq \Gamma_k \), so \( v \) makes every formula of \( \Gamma_i \) true; by the induction hypothesis for line \( i \), \( v(\varphi \vee \psi) = \mathrm{T} \), so \( v(\varphi) = \mathrm{T} \) or \( v(\psi) = \mathrm{T} \).
 
 (vi) By the induction hypothesis for line \( k \), \( \Gamma_k \models \chi \).
 
@@ -852,7 +852,7 @@ Write out, in full, the \( \rulename{{\to}I} \), \( \rulename{\neg I} \) and \( 
 :::
 
 ::: {.solution}
-*The claim.* Fix a derivation in primitive rules with lines \( 1, \dots, n \), and write \( \varphi_k \) for the formula on line \( k \) and \( \Gamma_k \) for its context (@def-derivation). We prove \( \Gamma_k \models \varphi_k \) for every \( k \) with \( 1 \le k \le n \), by @thm-strong-induction applied to "if \( 1 \le k \le n \), then \( \Gamma_k \models \varphi_k \)" (for \( k = 0 \) it holds vacuously): fix \( k \) with \( 1 \le k \le n \), assume \( \Gamma_j \models \varphi_j \) for every line \( j < k \), and let \( v \) be a valuation making every formula of \( \Gamma_k \) true. Every line and box that line \( k \) cites lies before line \( k \), so the hypothesis applies to the cited lines and to the last lines of the cited boxes. We show \( v(\varphi_k) = \mathrm{T} \).
+*The claim.* Fix a derivation in primitive rules with lines \( 1, \dots, n \), and write \( \varphi_k \) for the formula on line \( k \) and \( \Gamma_k \) for its context (the premises and the assumptions of the boxes containing line \( k \)). We prove \( \Gamma_k \models \varphi_k \) for every \( k \) with \( 1 \le k \le n \), by @thm-strong-induction applied to "if \( 1 \le k \le n \), then \( \Gamma_k \models \varphi_k \)" (for \( k = 0 \) it holds vacuously): fix \( k \) with \( 1 \le k \le n \), assume \( \Gamma_j \models \varphi_j \) for every line \( j < k \), and let \( v \) be a valuation making every formula of \( \Gamma_k \) true. Every line and box that line \( k \) cites lies before line \( k \), so the hypothesis applies to the cited lines and to the last lines of the cited boxes. We show \( v(\varphi_k) = \mathrm{T} \).
 
 *\( \rulename{{\to}I} \).* Line \( k \) is \( \varphi \to \psi \), citing the box from line \( a \) (the assumption \( \varphi \)) to line \( b \) (the formula \( \psi \)). By @lem-context-inclusion (b), \( \Gamma_b = \Gamma_k, \varphi \). Since \( b < k \), the hypothesis gives \( \Gamma_k, \varphi \models \psi \). If \( v(\varphi) = \mathrm{F} \), then \( v(\varphi \to \psi) = \mathrm{T} \) by (V5). If \( v(\varphi) = \mathrm{T} \), then \( v \) makes every formula of \( \Gamma_k, \varphi \) true, so \( v(\psi) = \mathrm{T} \), and \( v(\varphi \to \psi) = \mathrm{T} \) by (V5).
 
@@ -892,10 +892,10 @@ Replace (V4) by: \( v(\varphi \vee \psi) = \mathrm{T} \) exactly when **exactly 
 
 (c) Derivable: the rules did not change. Not valid for the new table: the row of (b). So soundness is a fact about the rules **and** the tables together; change a table, and the same rules can lead from truth to falsehood.
 
-**Marking scheme.** (8 points)
+**Marking scheme.** (10 points)
 
-- 3: (a), with the argument for the \( \rulename{\vee E} \) case.
-- 3: (b), the derivation and the row, checked.
+- 4: (a), with the argument for the \( \rulename{\vee E} \) case.
+- 4: (b), the derivation and the row, checked.
 - 2: (c), both answers and the conclusion.
 
 Fatal errors (0 for the step): in (a), declaring the \( \rulename{\vee E} \) case broken without a row that breaks it.
@@ -920,7 +920,7 @@ Read \( \bot \) as an ordinary letter. A **letter valuation** \( w \) gives \( \
 
 \( \rulename{\neg I} \): by \( (\ast\ast) \), every letter valuation making \( \Gamma_k \) and \( \varphi \) true makes \( \bot \) true. If \( w(\varphi) = \mathrm{F} \), then \( w(\neg\varphi) = \mathrm{T} \). If \( w(\varphi) = \mathrm{T} \), then \( w \) makes \( \Gamma_k \) and \( \varphi \) true, so \( w(\bot) = \mathrm{T} \), and again \( w(\neg\varphi) = \mathrm{T} \).
 
-(b) The letter valuation with \( w(\bot) = \mathrm{T} \) and \( w(p) = \mathrm{F} \) makes the premise true and the conclusion false. So \( \bot \models_\ell p \) fails, and by (a) no derivation of \( \bot \vdash p \) without \( \rulename{\bot E} \) and \( \rulename{RAA} \), and without derived rules derived with them, exists. (Many derived rules of Chapter 2 use one of the two, @prp-double-negation (with \( \rulename{RAA} \)) and @prp-ex-falso (with \( \rulename{\bot E} \)) among them; a derivation that avoids the two only on its face is not covered.)
+(b) The letter valuation with \( w(\bot) = \mathrm{T} \) and \( w(p) = \mathrm{F} \) makes the premise true and the conclusion false. So \( \bot \models_\ell p \) fails, and by (a) no derivation of \( \bot \vdash p \) without \( \rulename{\bot E} \) and \( \rulename{RAA} \), and without derived rules derived with them, exists. (Many derived rules of Chapter 2 use one of the two, @prp-double-negation (b) (with \( \rulename{RAA} \)) and @prp-ex-falso (with \( \rulename{\bot E} \)) among them; a derivation that avoids the two only on its face is not covered.)
 
 (c)
 
@@ -953,7 +953,7 @@ Fatal errors (0 for the step): in (b), using the ordinary valuations, under whic
 ::: {#exr-soundness-c5}
 [C5: Challenge: two three-valued tables]
 
-Use the values \( 0 \), \( \frac12 \), \( 1 \), with \( u(\bot) = 0 \), \( u(\neg\varphi) = 1 - u(\varphi) \), \( u(\varphi \wedge \psi) = \min\{ u(\varphi), u(\psi) \} \), \( u(\varphi \vee \psi) = \max\{ u(\varphi), u(\psi) \} \), \( u(\varphi \to \psi) = \max\{ 1 - u(\varphi), u(\psi) \} \). For a set \( D \) of **designated** values, say that \( \Gamma \) \( D \)-entails \( \psi \) if every \( u \) giving every formula of \( \Gamma \) a value in \( D \) gives \( \psi \) a value in \( D \).
+A **Kleene valuation** \( u \) assigns one of the values \( 0 \), \( \frac12 \), \( 1 \) to each atom and is extended by \( u(\bot) = 0 \), \( u(\neg\varphi) = 1 - u(\varphi) \), \( u(\varphi \wedge \psi) = \min\{ u(\varphi), u(\psi) \} \), \( u(\varphi \vee \psi) = \max\{ u(\varphi), u(\psi) \} \), \( u(\varphi \to \psi) = \max\{ 1 - u(\varphi), u(\psi) \} \). (This extension differs from the three-valued valuation of the optional excursion below, whose \( \neg \) gives \( \neg\varphi \) the value \( 0 \) at \( \frac12 \).) For a set \( D \) of **designated** values, say that \( \Gamma \) \( D \)-entails \( \psi \) if every Kleene valuation \( u \) giving every formula of \( \Gamma \) a value in \( D \) gives \( \psi \) a value in \( D \).
 
 ::: {.enumerate options="label=(\alph*)"}
 1. For \( D = \{ 1 \} \), show that the case \( \rulename{{\to}I} \) fails: give a box that is correct for \( D \)-entailment and a \( u \) at which the line that \( \rulename{{\to}I} \) writes is undesignated.
@@ -1077,7 +1077,7 @@ thm-soundness (claim): the meaning table: each rule's introducing section, case 
 cor-refuting-row (claim): the retroactive paragraph: a choice of statements gives a row making the counterexample set true | def-truth-value (truth-functionality, F1.3 §04), recalled
 cor-refuting-row (claim): the four breaks of exr-four-kinds-of-task-b3 are refuting rows found by the search | F1.3 §06 (the withheld verdicts), recalled; no proof rests on the exercise
 cor-refuting-row (claim): satisfiable lists are consistent; with prp-derivable-iff-negation-inconsistent (b), a row making the counterexample set true shows it consistent | thm-soundness (this section); def-inconsistent-set, prp-derivable-iff-negation-inconsistent (F1.7 §02), cited
-thm-soundness (claim): test the subgoal: a row making the context of a line true and a formula false shows that no line with that context holds the formula | Step 3 of the proof of thm-soundness (this section)
+thm-soundness (claim): test the subgoal: a row making the available lines true and a formula false shows that no line at that point holds the formula, since its context (premises and open assumptions) is among the available lines | Step 3 of the proof of thm-soundness (this section); def-derivation (availability)
 cor-refuting-row (example): the De Morgan subgoals not p and not q are refuted by rows, so a derivation of prp-de-morgan (d) cannot end with or-introduction | inline; rows checked by verify/ch04/cor-refuting-row.py
 exr-soundness-b3 (solution): verdicts and rows; the four derivations | verify/ch04/exr-soundness-b3.py (truth tables; tools/check_fitch.py on a capital-letter copy)
 exr-soundness-b4 (solution): the row refuting the subgoal q; the completion | verify/ch04/exr-soundness-b4.py

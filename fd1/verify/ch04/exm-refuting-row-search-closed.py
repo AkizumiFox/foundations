@@ -45,4 +45,15 @@ assert len([r for r in cand if r["q"]]) == 2
 # every candidate violates a root formula (so is struck out)
 for r in cand:
     assert not all(L.val(L.parse(f), r) for f in root)
+# fold partition: q branch covers the two with q T; r branch the one with q F, r T; the row
+# q F, r F makes p -> (q v r) false, so it lies on neither side of that split
+q_side = [r for r in cand if r["q"]]
+r_only = [r for r in cand if not r["q"] and r["r"]]
+neither = [r for r in cand if not r["q"] and not r["r"]]
+assert len(q_side) == 2 and len(r_only) == 1 and len(neither) == 1
+for r in neither:
+    assert not L.val(L.parse(r"p \to (q \vee r)"), r)
+    assert not L.val(L.parse(r"\neg p"), r) and not L.val(L.parse(r"q \vee r"), r)
+for r in r_only:  # covered by the r side of q v r, not by the q side
+    assert L.val(L.parse("r"), r) and not L.val(L.parse("q"), r)
 print("exm-refuting-row-search-closed: all quoted values check")

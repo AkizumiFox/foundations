@@ -14,7 +14,7 @@ assert entails(["p_1 \\to p_2", "p_2 \\to p_3", "p_3 \\to p_4", "p_4 \\to p_5",
 assert not entails(["p_1 \\vee p_2", "\\neg p_1", "\\neg p_2"], "\\bot")  # (d) unsatisfiable
 assert not entails(["p", "\\neg q"], "p \\wedge \\neg q")                   # (h)
 assert not entails(["p \\to q", "p", "\\neg q"], "\\bot")                   # (i)
-assert len(["a_1", "a_2", "\\bot"]) == 3                                    # (j)
+assert len(["p", "q", "\\bot"]) == 3                                         # (j)
 v = {n: n % 2 == 1 for n in range(1, N + 2)}                                # (l)
 assert all(v[n] == (not v[n + 1]) for n in range(1, N + 1))
 print("exr-compactness-a2: all quoted values check")

@@ -1,6 +1,6 @@
 # Tautologies, Entailment and Equivalence
 
-Section 4.4 gave every formula a value under every valuation, and collected the values in a truth table. One formula at a time, though, is not what Chapters 1 and 2 were about. They were about **sequents**: premises on the left, a conclusion on the right, and the claim that the conclusion can be derived. This section defines the counterpart of a sequent in terms of truth, \( \Gamma \models \psi \): every valuation that makes the premises true makes the conclusion true. On the way it names the formulas that are true in every row, and the pairs of formulas that are true in the same rows. It ends with two lemmas about changing a formula, by replacing one part or by putting formulas in for its atoms, that later sections use.
+Section 4.4 gave every formula a value under every valuation, and collected the values in a truth table. One formula at a time, though, is not what Chapters 1 and 2 were about. They were about **sequents**: premises on the left, a conclusion on the right, and the claim that the conclusion can be derived. This section defines the counterpart of a sequent in terms of truth, \( \Gamma \models \psi \): every valuation that makes the premises true makes the conclusion true. On the way it names the formulas that are true in every row, and the pairs of formulas that are true in the same rows. It then proves two lemmas about changing a formula, by replacing one part or by putting formulas in for its atoms, that later sections use, and ends by sorting the section's questions by whether one row or every row settles them, and by setting \( \models \) beside \( \vdash \).
 
 ## Tautologies and contradictions
 
@@ -42,7 +42,7 @@ Tautologies and unsatisfiable formulas are two sides of one coin. For every form
 \[
 \psi \text{ is a tautology} \iff \neg\psi \text{ is unsatisfiable.}
 \]
-Indeed, by (V2) of @def-truth-value, \( v(\neg\psi) = \mathrm{T} \) exactly when \( v(\psi) = \mathrm{F} \). So "no valuation makes \( \neg\psi \) true" says "no valuation makes \( \psi \) false", which is "every valuation makes \( \psi \) true". Section 4.9 uses this to turn a question about tautologies into one about satisfiability.
+Indeed, by (V2) of @def-truth-value, \( v(\neg\psi) = \mathrm{T} \) exactly when \( v(\psi) = \mathrm{F} \). So "no valuation makes \( \neg\psi \) true" says "no valuation makes \( \psi \) false", which is "every valuation makes \( \psi \) true". Sections 4.6 and 4.9 use it to pass between the two kinds of question.
 
 ::: {.remark}
 **Satisfiable and consistent.** Section 3.2 called a list \( \Gamma \) *inconsistent* if \( \Gamma \vdash \bot \) (@def-inconsistent-set), and *consistent* otherwise: a word about derivations. *Satisfiable* is its twin about truth: some row makes every member of the list true. Nothing yet connects the two words. Section 4.7 proves that a satisfiable list is consistent, and Section 4.8 the converse; until then we keep them apart. The counterexample set lives in both worlds: \( \Gamma \vdash \psi \) exactly when \( \Gamma, \neg\psi \) is inconsistent (@prp-derivable-iff-negation-inconsistent (b)), and \( \Gamma \models \psi \) exactly when \( \Gamma, \neg\psi \) is unsatisfiable (below).
@@ -295,9 +295,11 @@ v(\varphi_1 \vee \dots \vee \varphi_n) = \mathrm{T} &\iff v(\varphi_i) = \mathrm
 
 ::: {.second-reading title="Why long conjunctions are evaluated term by term"}
 For the conjunction, we prove by @ax-induction on \( n \), started at \( 1 \), that the first line holds for **every** list of \( n \) formulas. For \( n = 1 \) both sides say \( v(\varphi_1) = \mathrm{T} \). If it holds for every list of \( n \) formulas, take a list of \( n + 1 \). The conjunction is \( \varphi_1 \wedge \theta \), where \( \theta = \varphi_2 \wedge \dots \wedge \varphi_{n+1} \) has \( n \) terms. By (V3), \( v(\varphi_1 \wedge \theta) = \mathrm{T} \) exactly when \( v(\varphi_1) = \mathrm{T} \) and \( v(\theta) = \mathrm{T} \), and by the hypothesis for \( n \), \( v(\theta) = \mathrm{T} \) exactly when \( v(\varphi_i) = \mathrm{T} \) for \( 2 \le i \le n + 1 \). Together: exactly when every \( v(\varphi_i) = \mathrm{T} \). The disjunction is the same with (V4) and "some".
+
+The same holds for any grouping. Call a formula built from \( \varphi_1, \dots, \varphi_n \), in this order, using \( \wedge \) alone, a *grouping* of the list. For \( n \ge 2 \) a grouping is \( \theta_1 \wedge \theta_2 \), where \( \theta_1 \) is a grouping of \( \varphi_1, \dots, \varphi_k \) and \( \theta_2 \) a grouping of \( \varphi_{k+1}, \dots, \varphi_n \), for some \( k \) with \( 1 \le k < n \). Each part has fewer terms, so by (V3) and @thm-strong-induction on \( n \), a grouping is true under \( v \) exactly when every \( \varphi_i \) is. Likewise for \( \vee \) with (V4).
 :::
 
-Two consequences follow at once, since the right-hand sides do not care about order or grouping. Reordering the terms of a long conjunction, or grouping them differently, gives an equivalent formula; likewise for disjunctions. And De Morgan's laws extend to many terms:
+Two consequences follow at once, since the right-hand sides do not care about order, and by the fold every grouping has the same right-hand side. Reordering the terms of a long conjunction, or grouping them differently, gives an equivalent formula; likewise for disjunctions. And De Morgan's laws extend to many terms:
 \[
 \neg(\varphi_1 \wedge \dots \wedge \varphi_n) \equiv \neg\varphi_1 \vee \dots \vee \neg\varphi_n, \qquad \neg(\varphi_1 \vee \dots \vee \varphi_n) \equiv \neg\varphi_1 \wedge \dots \wedge \neg\varphi_n ,
 \]
@@ -465,7 +467,7 @@ By @thm-structural-induction. For an atom \( p \), \( v(\sigma(p)) = w(p) \) is 
 *(b)* Let \( \Gamma \models \psi \), and let \( v \) make every formula of \( \sigma(\Gamma) \) true. For each \( \gamma \) in \( \Gamma \), the claim gives \( w(\gamma) = v(\sigma(\gamma)) = \mathrm{T} \), so \( w \) makes every formula of \( \Gamma \) true. By \( \Gamma \models \psi \), \( w(\psi) = \mathrm{T} \), and by the claim again \( v(\sigma(\psi)) = w(\psi) = \mathrm{T} \). This proves \( \sigma(\Gamma) \models \sigma(\psi) \).
 :::
 
-So a table computed once for atoms settles infinitely many instances. From \( \models p \vee \neg p \) we get \( \models (q \to r) \vee \neg(q \to r) \), and every other instance of excluded middle. From \( p \to q, \ p \models q \) (@exm-truth-table-modus-ponens) we get \( \varphi \to \psi, \ \varphi \models \psi \) for all formulas \( \varphi, \psi \), which is the table's version of \( \rulename{{\to}E} \) as a schema. And from @exm-affirming-the-consequent's refuting row we learn something about all instances too, but only in one direction; the next warning says which.
+So a table computed once for atoms settles infinitely many instances. From \( \models p \vee \neg p \) we get \( \models (q \to r) \vee \neg(q \to r) \), and every other instance of excluded middle. From \( p \to q, \ p \models q \) (@exm-truth-table-modus-ponens) we get \( \varphi \to \psi, \ \varphi \models \psi \) for all formulas \( \varphi, \psi \), which is the table's version of \( \rulename{{\to}E} \) as a schema. And from @exm-affirming-the-consequent's refuting row we learn only that the pattern is not valid, not that its instances fail; the lemma runs one way only, as the next warning says.
 
 ::: {.warning}
 Substitution must be **uniform**: every occurrence of \( p_i \) is replaced by the same \( \varphi_i \). Replacing only the first \( p \) of the tautology \( p \to p \) by \( q \) gives \( q \to p \), which is false in the row \( q = \mathrm{T} \), \( p = \mathrm{F} \). And the lemma runs one way only. An instance can be a tautology when the pattern is not: \( p \vee q \) is not a tautology, but its instance with \( \neg p \) put in for \( q \) is \( p \vee \neg p \), which is. So a refuting row for a pattern with atoms shows that the **pattern** is not valid, not that every instance fails.
@@ -618,7 +620,7 @@ $\begin{nd}
 \end{center}
 ```
 
-*(c)* Fails. The row \( p = \mathrm{F} \), \( q = \mathrm{T} \) makes \( p \to q \) true (false hypothesis) and \( \neg p \to \neg q \) false (\( \neg p \) true, \( \neg q \) false). It is the pattern of the Quick check, "denying the hypothesis", in the form of an implication.
+*(c)* Fails. The row \( p = \mathrm{F} \), \( q = \mathrm{T} \) makes \( p \to q \) true (false hypothesis) and \( \neg p \to \neg q \) false (\( \neg p \) true, \( \neg q \) false). It is the pattern "denying the hypothesis" of the Quick check \( p \to q, \ \neg p \models \neg q \), now in the form of an implication.
 
 *(d)* Holds. Backwards from F: \( r = \mathrm{F} \); then \( p \to r \) true forces \( p = \mathrm{F} \), and \( q \to r \) true forces \( q = \mathrm{F} \); then \( p \vee q \) is \( \mathrm{F} \), a contradiction. A derivation by cases:
 
@@ -659,7 +661,7 @@ p & q & p \leftrightarrow q & p \wedge q & \neg p \wedge \neg q & (p \wedge q) \
 \mathrm{F} & \mathrm{F} & \mathrm{T} & \mathrm{F} & \mathrm{T} & \mathrm{T}
 \end{array}
 \]
-The columns of \( p \leftrightarrow q \) and of the disjunction agree in every row, so the two formulas are equivalent: each side entails the other. The theorem that turns each entailment into a derivation is completeness, in Section 4.8: if \( \Gamma \models \psi \), then \( \Gamma \vdash \psi \). So \( p \leftrightarrow q \vdash (p \wedge q) \vee (\neg p \wedge \neg q) \) and its converse are both derivable, before any derivation has been written.
+The columns of \( p \leftrightarrow q \) and of the disjunction agree in every row, so the two formulas are equivalent: each side entails the other. The theorem that turns each entailment into a derivation is completeness, in Section 4.8: if \( \Gamma \models \psi \), then \( \Gamma \vdash \psi \). Once it is proved, it will give \( p \leftrightarrow q \vdash (p \wedge q) \vee (\neg p \wedge \neg q) \) and its converse, before any derivation has been written; until then the table shows only that the two sequents are valid.
 :::
 
 ::: {#exr-entailment-and-equivalence-b3}
@@ -712,12 +714,18 @@ Classify each pair, and give the rows that show it.
 *(f)* None of the three: both true at \( p = \mathrm{T} \), both false at \( p = q = \mathrm{F} \). (In fact \( p \models p \vee q \).)
 
 The pair (d) is the surprise: an implication and its converse can never both fail.
+
+**Marking scheme.** (6 points)
+
+- 1 per part: the class, with a witness for each of the two questions (both true? both false?): a row where it happens, or the reason it cannot.
+
+Fatal error (0 for the part): a class claimed with one of the two questions unanswered.
 :::
 
 ### C. Going deeper
 
 ::: {#exr-entailment-and-equivalence-c1}
-[C1: Substitution with a new connective, the last half blank]
+[C1: Substitution with a new connective, the last half blank, used later]
 
 Extend the formulas by a new binary connective \( \mathbin{|} \) ("not both", often called NAND): add to @def-formula the clause "if \( \varphi \) and \( \psi \) are formulas, so is \( (\varphi \mathbin{|} \psi) \)", and to @def-truth-value the clause
 
@@ -774,7 +782,7 @@ A tempting counterexample fails for a reason worth seeing. With \( \sigma \) put
 
 - 3: reduces \( \equiv \) to a tautology \( \models \varphi \leftrightarrow \psi \), or to two entailments, citing the definition.
 - 3: applies @lem-substitution correctly.
-- 2: computes \( \sigma(\varphi \leftrightarrow \psi) = \sigma(\varphi) \leftrightarrow \sigma(\psi) \) from the definition of \( \sigma \).
+- 2: in the \( \leftrightarrow \) route, computes \( \sigma(\varphi \leftrightarrow \psi) = \sigma(\varphi) \leftrightarrow \sigma(\psi) \) from the definition of \( \sigma \); in the entailment route, applies (b) in both directions.
 - 2: the instance, with the substitution named.
 
 Fatal errors (0 for the step): answering "no" by a pair that is not equivalent before the substitution; using a nonuniform replacement.
@@ -878,6 +886,7 @@ def-valid-argument (example): the rows-as-regions picture and caption (p and q |
 def-semantic-equivalence (claim): phi == psi iff same value under every v iff |= phi <-> psi; == is reflexive, symmetric, transitive | inline, from V6
 prp-standard-equivalences (proof): the value of a compound built from phi, psi, chi depends only on (v(phi), v(psi), v(chi)) through the clauses | def-truth-value (V2)-(V6), stated in the proof; all tables checked by verify/ch04/prp-standard-equivalences.py
 prp-standard-equivalences (claim): v of a right-grouped n-term conjunction is T iff every term is T (disjunction: some term); De Morgan for n terms | inline, by ax-induction on n (fold "Why long conjunctions are evaluated term by term")
+prp-standard-equivalences (claim): every grouping of phi_1, ..., phi_n with and (or) has the same value as the right-grouped one, so regrouping gives an equivalent formula | inline, by thm-strong-induction (F1.3 §02) on n with V3/V4, same fold
 def-pair-relations (example): the three pairs of the table, the Quick check, contradictory iff phi == not-psi | inline; checked by verify/ch04/def-pair-relations.py
 lem-replacement (proof): a node below the root of a parse tree lies in the subtree of exactly one immediate part, and those subtrees are the parse trees of the immediate parts | def-parse-tree (F1.3 §01), with thm-unique-readability for "the" parse tree
 lem-substitution (proof): the recursion defining sigma is well defined | thm-structural-recursion (values are formulas), cited in the text

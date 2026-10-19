@@ -181,7 +181,7 @@ Let \( \varphi \) be a formula, and let \( v \) and \( w \) be valuations that a
 :::
 
 ::: {.idea}
-Structural induction on \( \varphi \), with the property "for **all** valuations \( v \), \( w \) that agree on the atoms of \( \varphi \), \( v(\varphi) = w(\varphi) \)". At an atom, the two valuations agree by hypothesis. At a compound formula, both values are computed by the same clause from the values of the immediate parts, and the parts have fewer atoms to disagree on, so the hypothesis for the parts applies.
+Structural induction on \( \varphi \), with the property "for **all** valuations \( v \), \( w \) that agree on the atoms of \( \varphi \), \( v(\varphi) = w(\varphi) \)". At an atom, the two valuations agree by hypothesis. At a compound formula, both values are computed by the same clause from the values of the immediate parts, and every atom of a part is an atom of the whole, so the two valuations agree on the atoms of each part and the hypothesis for the parts applies.
 :::
 
 ::: {.proof}
@@ -216,7 +216,7 @@ The table's three cases are the conjunction case again, with another clause. The
 *Biconditional.* Assume \( C(\varphi) \) and \( C(\psi) \), and let \( v \), \( w \) agree on \( \atoms(\varphi \leftrightarrow \psi) \). Again \( v(\varphi) = w(\varphi) \) and \( v(\psi) = w(\psi) \). By (V6), \( v(\varphi \leftrightarrow \psi) = \mathrm{T} \) exactly when \( v(\varphi) = v(\psi) \), that is, when \( w(\varphi) = w(\psi) \), that is, when \( w(\varphi \leftrightarrow \psi) = \mathrm{T} \). So \( C(\varphi \leftrightarrow \psi) \).
 :::
 
-Two consequences. First, to know \( v(\varphi) \) we need only the values of \( v \) on the finitely many atoms of \( \varphi \): if \( \varphi \) has \( n \) atoms, it has at most \( 2^n \) different "situations", one for each way of giving its atoms the values \( \mathrm{T} \) and \( \mathrm{F} \). (Each atom has two choices, and the choices are independent, so the number of ways doubles with each new atom: \( 2, 4, 8, \dots, 2^n \). This count is itself a small induction on \( n \), by @ax-induction.) Second, the extra atoms a valuation happens to fix are irrelevant: two valuations that differ only on atoms not in \( \varphi \) give \( \varphi \) the same value.
+Two consequences. First, to know \( v(\varphi) \) we need only the values of \( v \) on the finitely many atoms of \( \varphi \): if \( \varphi \) has \( n \) atoms, it has exactly \( 2^n \) different "situations", one for each way of giving its atoms the values \( \mathrm{T} \) and \( \mathrm{F} \). (Each atom has two choices, and the choices are independent, so the number of ways doubles with each new atom: \( 2, 4, 8, \dots, 2^n \). This count is itself a small induction on \( n \), by @ax-induction.) Second, the extra atoms a valuation happens to fix are irrelevant: two valuations that differ only on atoms not in \( \varphi \) give \( \varphi \) the same value.
 
 ::: {.check}
 Let \( \varphi = p \to (q \vee p) \). Two valuations \( v \) and \( w \) agree on \( p \) and \( q \) but disagree on \( r \) and on every \( p_n \). What does @lem-coincidence say about \( v(\varphi) \) and \( w(\varphi) \)? Does it say anything about \( v(\varphi \wedge r) \) and \( w(\varphi \wedge r) \)?
@@ -264,7 +264,7 @@ p & q & p \to q & (p \to q) \wedge p & ((p \to q) \wedge p) \to q \\
 \]
 The third column is (V5): \( \mathrm{F} \) only in the row TF. The fourth is (V3) applied to the third column and the \( p \) column: \( \mathrm{T} \) only in the first row. The last is (V5) again, with the fourth column as hypothesis and \( q \) as conclusion: the hypothesis is false in rows 2–4, so those rows are \( \mathrm{T} \), and in row 1 the conclusion \( q \) is \( \mathrm{T} \).
 
-So the formula is true in every row. Read as a statement about \( \rulename{{\to}E} \): the only row in which both given lines \( p \to q \) and \( p \) are true is row 1, and in that row the line the rule writes, \( q \), is true as well. The rule never leads from true lines to a false one, at least when its lines are atoms. Section 4.7 proves this for every rule and every formula.
+So the formula is true in every row. Read as a statement about \( \rulename{{\to}E} \): the only row in which both given lines \( p \to q \) and \( p \) are true is row 1, and in that row the line the rule writes, \( q \), is true as well. The rule never leads from true lines to a false one, at least when \( \varphi \) and \( \psi \) are the atoms \( p \) and \( q \). Section 4.7 proves this for every rule and every formula.
 :::
 
 Now a table built column by column for a biconditional, whose two sides Chapter 2 related by derivations.
@@ -331,7 +331,7 @@ The formula is false in exactly one row, row 2: \( p \) and \( q \) true, \( r \
 Each step was forced, so there is exactly one row making \( \varphi \) false: \( p = \mathrm{T} \), \( q = \mathrm{T} \), \( r = \mathrm{F} \). Four short steps replace eight rows.
 :::
 
-The second method has a name in this book: **working backwards from F**. Assume the formula is false, and ask what each part is forced to be, starting from the main connective. Implications and disjunctions are false in only one way, and conjunctions are true in only one way, so they force values; a false conjunction, a true disjunction, or a true implication leaves a choice, and then we split into cases. If the forcing ends in a contradiction (some atom would need both values), the formula is false in **no** row. If it ends in a consistent assignment, that assignment is a row making the formula false, and the cases that were split give all such rows.
+The second method has a name in this book: **working backwards from F**. Assume the formula is false, and ask what each part is forced to be, starting from the main connective. Implications and disjunctions are false in only one way, and conjunctions are true in only one way, so they force values; a false conjunction, a true disjunction, or a true implication leaves a choice, and then we split into cases. If every case ends in a contradiction (some atom would need both values), the formula is false in **no** row. A case that ends in a consistent assignment, completed in every way on the atoms it leaves unset, gives rows making the formula false, and together these cases give all such rows.
 
 ## Truth-functional connectives
 
@@ -340,7 +340,7 @@ Each of the clauses (V2)–(V6) computes the value of a compound formula from th
 ::: {#def-truth-function}
 [Truth Function]
 
-Let \( n \ge 1 \). A **truth function** with \( n \) inputs assigns to **each** list \( (a_1, \dots, a_n) \) of truth values (each \( a_i \) is \( \mathrm{T} \) or \( \mathrm{F} \)) a truth value \( f(a_1, \dots, a_n) \). A formula \( \varphi \) **expresses** \( f \) if
+Let \( n \ge 1 \). A **truth function** \( f \) with \( n \) inputs assigns to **each** list \( (a_1, \dots, a_n) \) of truth values (each \( a_i \) is \( \mathrm{T} \) or \( \mathrm{F} \)) a truth value \( f(a_1, \dots, a_n) \). A formula \( \varphi \) **expresses** \( f \) if
 \[
 v(\varphi) = f\bigl(v(p_1), \dots, v(p_n)\bigr) \quad \text{for every valuation } v .
 \]
@@ -377,7 +377,7 @@ Yes. It is \( \mathrm{T} \) when both parts are \( \mathrm{F} \), and \( \mathrm
 :::
 
 ::: {.warning}
-A truth table sees only the connectives. Everything inside an atom is invisible to it. The statement "for every real \( x \), if \( x > 2 \), then \( x^2 > 4 \)" is true, but its propositional form, with the atoms \( a \): "\( x > 2 \)" and \( b \): "\( x^2 > 4 \)", is \( a \to b \), which is false in the row with \( a \) true and \( b \) false. That row cannot happen for real numbers, and the reason lies in algebra, not in the connectives. Likewise "for every \( \varepsilon > 0 \) there is an \( N \) such that …" is a single atom for a truth table, with two rows and nothing to compute.
+A truth table sees only the connectives. Everything inside an atom is invisible to it. Fix a real number \( x \). The statement "if \( x > 2 \), then \( x^2 > 4 \)" is true, but its propositional form, with the atoms \( p \): "\( x > 2 \)" and \( q \): "\( x^2 > 4 \)", is \( p \to q \), which is false in the row with \( p \) true and \( q \) false. That row cannot happen for any real \( x \), and the reason lies in algebra, not in the connectives. The quantified statement "for every real \( x \), if \( x > 2 \), then \( x^2 > 4 \)" is, like "for every \( \varepsilon > 0 \) there is an \( N \) such that …", a single atom for a truth table, with two rows and nothing to compute.
 :::
 
 ::: {.check}
@@ -601,22 +601,29 @@ An integer \( n \) is such that **exactly one** of these three statements is tru
 - (B) If \( n \) is even, then \( n \) is divisible by \( 4 \).
 - (C) \( n \) is divisible by \( 4 \), or \( n \) is odd.
 
-With the atoms \( e \): "\( n \) is even" and \( f \): "\( n \) is divisible by \( 4 \)", write (A), (B), (C) as formulas, find every row on \( e, f \) in which exactly one of them is true, and say what \( n \) can be.
+With the atom \( p \) for "\( n \) is even" and the atom \( q \) for "\( n \) is divisible by \( 4 \)", write (A), (B), (C) as formulas, find every row on \( p, q \) in which exactly one of them is true, and say what \( n \) can be.
 :::
 
 ::: {.solution}
-(A) is \( e \), (B) is \( e \to f \), and (C) is \( f \vee \neg e \) ("\( n \) is odd" is "\( n \) is not even").
+(A) is \( p \), (B) is \( p \to q \), and (C) is \( q \vee \neg p \) ("\( n \) is odd" is "\( n \) is not even").
 
-| \( e \) | \( f \) | (A) | (B) | (C) | true |
+| \( p \) | \( q \) | (A) | (B) | (C) | true |
 |:-:|:-:|:-:|:-:|:-:|:-:|
 | \( \mathrm{T} \) | \( \mathrm{T} \) | \( \mathrm{T} \) | \( \mathrm{T} \) | \( \mathrm{T} \) | three |
 | \( \mathrm{T} \) | \( \mathrm{F} \) | \( \mathrm{T} \) | \( \mathrm{F} \) | \( \mathrm{F} \) | one |
 | \( \mathrm{F} \) | \( \mathrm{T} \) | \( \mathrm{F} \) | \( \mathrm{T} \) | \( \mathrm{T} \) | two |
 | \( \mathrm{F} \) | \( \mathrm{F} \) | \( \mathrm{F} \) | \( \mathrm{T} \) | \( \mathrm{T} \) | two |
 
-In the row TF, (B) has a true hypothesis and a false conclusion, and (C) has two false disjuncts. In the rows with \( e \) false, (B) has a false hypothesis and (C) the true disjunct \( \neg e \). So only the row \( e = \mathrm{T} \), \( f = \mathrm{F} \) makes exactly one statement true: \( n \) is even and not divisible by \( 4 \), for instance \( 2 \), \( 6 \) or \( -10 \).
+In the row TF, (B) has a true hypothesis and a false conclusion, and (C) has two false disjuncts. In the rows with \( p \) false, (B) has a false hypothesis and (C) the true disjunct \( \neg p \). So only the row \( p = \mathrm{T} \), \( q = \mathrm{F} \) makes exactly one statement true: \( n \) is even and not divisible by \( 4 \), for instance \( 2 \), \( 6 \) or \( -10 \).
 
 The row FT is impossible for an integer, since a number divisible by \( 4 \) is even; it does not matter, as it fails the puzzle anyway. (B) and (C) agree in every row, and Section 4.5 explains why.
+
+**Marking scheme.** (10 points)
+
+- 3: the three formulas.
+- 3: the four rows evaluated.
+- 2: the conclusion about \( n \).
+- 2: an example.
 :::
 
 ::: {#exr-valuations-and-truth-tables-b5}
@@ -629,17 +636,24 @@ Of an integer \( n \) we know that all four of these claims hold.
 3. If \( 5 \) divides \( n \), then \( 2 \) does.
 4. \( 2 \) and \( 5 \) do not both divide \( n \).
 
-With the atoms \( a \), \( b \), \( c \) for "\( 2 \mid n \)", "\( 3 \mid n \)", "\( 5 \mid n \)", find every row making all four claims true by working backwards, and give two such integers \( n \). Why may the three atoms be treated as independent here?
+With the atoms \( p \), \( q \), \( r \) for "\( 2 \mid n \)", "\( 3 \mid n \)", "\( 5 \mid n \)", find every row making all four claims true by working backwards, and give two such integers \( n \). Why may the three atoms be treated as independent here?
 :::
 
 ::: {.solution}
-The claims are \( a \to \neg b \), \( b \vee c \), \( c \to a \) and \( \neg(a \wedge c) \).
+The claims are \( p \to \neg q \), \( q \vee r \), \( r \to p \) and \( \neg(p \wedge r) \).
 
-If \( c \) were \( \mathrm{T} \), claim 3 would force \( a = \mathrm{T} \) (a true implication with a true hypothesis has a true conclusion), and then \( a \wedge c \) would be \( \mathrm{T} \), against claim 4. So \( c = \mathrm{F} \). Then claim 2 forces \( b = \mathrm{T} \), and claim 1 forces \( a = \mathrm{F} \): with \( a \) true, its conclusion \( \neg b \) would be false. Check: the row \( a = \mathrm{F} \), \( b = \mathrm{T} \), \( c = \mathrm{F} \) makes all four claims true, and since every step was forced, it is the only such row.
+If \( r \) were \( \mathrm{T} \), claim 3 would force \( p = \mathrm{T} \) (a true implication with a true hypothesis has a true conclusion), and then \( p \wedge r \) would be \( \mathrm{T} \), against claim 4. So \( r = \mathrm{F} \). Then claim 2 forces \( q = \mathrm{T} \), and claim 1 forces \( p = \mathrm{F} \): with \( p \) true, its conclusion \( \neg q \) would be false. Check: the row \( p = \mathrm{F} \), \( q = \mathrm{T} \), \( r = \mathrm{F} \) makes all four claims true, and since every step was forced, it is the only such row.
 
 So \( 3 \) divides \( n \), and \( 2 \) and \( 5 \) do not: \( n = 3 \), \( 9 \) or \( 21 \), for instance.
 
 Independence: each of the eight rows is the row of some integer. The integers \( 30, 6, 10, 2, 15, 3, 5, 1 \) give the rows TTT, TTF, TFT, TFF, FTT, FTF, FFT, FFF, in that order. So arithmetic rules out no row in advance, and the table's answer is the answer about integers.
+
+**Marking scheme.** (10 points)
+
+- 2: the four formulas.
+- 4: the forced steps, each with its clause.
+- 2: the check and two values of \( n \).
+- 2: independence.
 :::
 
 ### C. Going deeper
@@ -690,7 +704,7 @@ Fatal errors (0 for the step): a step that uses the hypothesis for one part only
 :::
 
 ::: {#exr-valuations-and-truth-tables-c2}
-[C2: Find the error]
+[C2: Find the error, used later]
 
 Here is a claim and a "proof".
 
@@ -728,7 +742,7 @@ Fatal errors (0 for the step): calling the claim false; locating the error in li
 ::: {#exr-valuations-and-truth-tables-c3}
 [C3: The game and the clauses]
 
-Fix a valuation \( v \). For formulas built from atoms by \( \neg \), \( \wedge \), \( \vee \) alone, define by recursion two statements, \( \mathrm{Ver}(\varphi) \) ("the verifier can always win at \( \varphi \)") and \( \mathrm{Fal}(\varphi) \) ("the falsifier can always win at \( \varphi \)"):
+Fix a valuation \( v \). For formulas built from atoms by \( \neg \), \( \wedge \), \( \vee \) alone, define by recursion (@thm-structural-recursion; give \( \bot \), \( \to \) and \( \leftrightarrow \) any values, they play no part) two statements, \( \mathrm{Ver}(\varphi) \) ("the verifier can always win at \( \varphi \)") and \( \mathrm{Fal}(\varphi) \) ("the falsifier can always win at \( \varphi \)"):
 
 | \( \varphi \) | \( \mathrm{Ver}(\varphi) \) holds iff | \( \mathrm{Fal}(\varphi) \) holds iff |
 |---|---|---|
@@ -795,6 +809,7 @@ def-truth-table (claim): some valuation agrees with any row (extend by F) | inli
 def-truth-table (example): every printed truth table (the examples, A1, B3) and every F-row (exm-backwards-from-f, B1) | inline computations; checked by verify/ch04/def-truth-table.py, exm-backwards-from-f.py, exr-valuations-and-truth-tables-b1.py
 def-truth-function (claim): each of the five connectives is a truth function, read off (V2)-(V6); "neither nor" and "not both" are expressed by not-p1 and not-p2, not (p1 and p2) | inline; checked by verify/ch04/def-truth-table.py
 def-truth-function (example): 6 is a multiple of 2 and of 3; sqrt 2 irrational (Chapter 2, thm-sqrt2-irrational); x^n + y^n = z^n has no positive solution for n >= 3, proved after 1900 | stated as a fact of history, not used in any argument (the second is Wiles's theorem, 1995; the book names no one)
+def-truth-function (example): for real x, x > 2 implies x^2 > 4 (the warning's row p = T, q = F cannot happen) | school algebra (F1 allowed prerequisites)
 exm-table-contrapositive (solution): the derivation of prp-contrapositive-converse uses RAA | F1.2 §05, cited by label; visible in its printed derivation
 exr-valuations-and-truth-tables-a2 (solution): every drill answer | inline; checked by verify/ch04/def-truth-table.py
 exr-valuations-and-truth-tables-b2 (solution): the recursion for occ and bin is well defined; binary-built parts are binary-built | thm-structural-recursion (cited in the item); stated in the item

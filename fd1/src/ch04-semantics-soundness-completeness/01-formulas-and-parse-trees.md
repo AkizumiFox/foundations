@@ -133,7 +133,7 @@ In words, clause by clause.
 
 Two facts about formation sequences are used constantly, and both are immediate from the definition.
 
-First, **every entry of a formation sequence is a formula.** The first \( i \) entries \( \chi_1, \dots, \chi_i \) of a formation sequence are themselves a formation sequence (each entry was built from entries earlier still), and it ends in \( \chi_i \).
+First, **every entry of a formation sequence is a formula.** Walk along the list. The first entry \( \chi_1 \) is an atom or \( \bot \), so it is a formula by (F1). Each later entry is an atom or \( \bot \), a formula by (F1), or it is \( \neg\chi_j \) or \( (\chi_j \circ \chi_l) \) for earlier entries that are already formulas, and so it is a formula by (F2) or (F3). (Section 4.3 makes this walk exact with strong induction, in the fold "Sets built from a base".)
 
 Second, **every formula was made by one of the clauses from formulas.** Take a formula \( \chi \) and a formation sequence ending in it. Its last entry \( \chi \) is an atom or \( \bot \), or it is \( \neg\chi_j \), or it is \( (\chi_j \circ \chi_l) \), where the earlier entries \( \chi_j, \chi_l \) are formulas by the first fact. So every formula is an atom, or \( \bot \), or \( \neg\varphi \) for a formula \( \varphi \), or \( (\varphi \circ \psi) \) for formulas \( \varphi, \psi \). We will call this **looking at the last step** of a formula.
 
@@ -252,12 +252,13 @@ A **parse tree for** a formula is defined along the clauses of @def-formula.
 1. For an atom or \( \bot \): a single node, labeled by that atom or by \( \bot \).
 2. If \( T \) is a parse tree for \( \varphi \), then the tree whose **root** is labeled \( \neg \) and has \( T \) hanging below it as its only subtree is a parse tree for \( \neg\varphi \).
 3. If \( T \) and \( T' \) are parse trees for \( \varphi \) and \( \psi \), then the tree whose root is labeled \( \circ \), with \( T \) hanging below it on the **left** and \( T' \) on the **right**, is a parse tree for \( (\varphi \circ \psi) \).
+4. **Nothing else** is a parse tree: a tree is a parse tree for a formula \( \varphi \) **only if** that follows from finitely many uses of (T1)–(T3). In particular, a parse tree for \( \neg\varphi \) is made by (T2), and a parse tree for \( (\varphi \circ \psi) \) by (T3).
 :::
 
 The **leaves** are the nodes with nothing below them; a **branch** is a path from the root down to a leaf.
 :::
 
-In words: (T1) is the tree of a formula that was not built at all, a single node. (T2) puts a new root \( \neg \) on top of an existing tree. (T3) joins two existing trees under a new root carrying the connective, keeping left and right apart, because \( (p \to q) \) and \( (q \to p) \) are different formulas. Parentheses do not appear in a parse tree: their only job in the string was to show the grouping, and the tree shows the grouping by its shape.
+In words: (T1) is the tree of a formula that was not built at all, a single node. (T2) puts a new root \( \neg \) on top of an existing tree. (T3) joins two existing trees under a new root carrying the connective, keeping left and right apart, because \( (p \to q) \) and \( (q \to p) \) are different formulas. (T4), as (F4) did for formulas, says that only trees built this way count; Section 4.3 uses it when it asks how a given tree could have been made. Parentheses do not appear in a parse tree: their only job in the string was to show the grouping, and the tree shows the grouping by its shape.
 
 **Every formula has a parse tree.** Take a formation sequence of the formula and build a tree for each entry in turn: an atom or \( \bot \) gets (T1), and an entry \( \neg\chi_j \) or \( (\chi_j \circ \chi_l) \) gets (T2) or (T3) from the trees already built for the earlier entries. The tree built for the last entry is a parse tree for the formula.
 
@@ -324,6 +325,8 @@ Each node of a parse tree is the root of the part of the tree below it, and that
 The **subformulas** of a formula \( \varphi \) are the formulas whose parse trees hang from the nodes of a parse tree for \( \varphi \): for each node, the formula of which the part of the tree from that node downwards is a parse tree. The formulas at the children of the root are the **immediate subformulas** of \( \varphi \).
 :::
 
+Until Section 4.3 this depends, as far as we know, on the parse tree chosen; Section 4.3 shows there is only one, so the subformulas of \( \varphi \) are determined by \( \varphi \).
+
 So the subformulas of \( \varphi \) include \( \varphi \) itself (at the root) and each atom that occurs in \( \varphi \) (at the leaves). A formula of the form \( \neg\varphi \) has one immediate subformula, \( \varphi \); a formula \( (\varphi \circ \psi) \) has the two immediate subformulas \( \varphi \) and \( \psi \) (one, if \( \varphi \) and \( \psi \) are the same formula); an atom or \( \bot \) has none. When we list the subformulas, a formula that sits at several nodes is listed once.
 
 For the formula (c) of @exm-parse-trees, the subformulas are
@@ -334,7 +337,7 @@ For the formula (c) of @exm-parse-trees, the subformulas are
 \neg q, \quad (\bot \to p), \quad p, \quad q, \quad r, \quad \bot ,
 \end{gathered}
 \]
-nine in all. The tree has ten nodes, \( \vee \), \( \leftrightarrow \), \( p \), \( \neg \), \( q \), \( \wedge \), \( r \), \( \to \), \( \bot \) and \( p \) again, and only \( p \) sits at two of them; so ten nodes give nine distinct subformulas. Counting by eye is easy to get wrong, and the safe method is to walk the tree level by level, as we just did.
+nine in all. The tree has ten nodes, \( \vee \), \( \leftrightarrow \), \( p \), \( \neg \), \( q \), \( \wedge \), \( r \), \( \to \), \( \bot \) and \( p \) again, and only \( p \) sits at two of them; so ten nodes give nine distinct subformulas. Counting by eye is easy to get wrong, and the safe method is to walk the tree node by node, as we just did.
 
 A string that merely **appears inside** a formula need not be a subformula. The formula \( ((p \wedge q) \vee r) \) contains the string \( q) \vee r \), which is not a formula at all, and it contains the string \( p \wedge q \), which is only the shorthand of a formula. Its subformulas are the formulas at the nodes: \( ((p \wedge q) \vee r) \), \( (p \wedge q) \), \( p \), \( q \) and \( r \).
 
@@ -395,9 +398,9 @@ By rule 4, \( p \to q \to r \) stands for \( (p \to (q \to r)) \): the first \( 
 \end{tikzpicture}
 \end{center}
 
-The two trees are mirror images in shape, and they say different things. Suppose \( p \), \( q \) and \( r \) are all false. The left formula is an implication whose hypothesis \( p \) is false, so it is true (vacuous truth, @prp-vacuous-implication). The right formula has the true hypothesis \( p \to q \) (again vacuous, since \( p \) is false) and the false conclusion \( r \), so it is false. The everyday reading of Chapters 1 and 2 is enough to see this; Section 4.4 makes it a computation.
+The two trees are mirror images in shape, and they say different things. Suppose \( p \), \( q \) and \( r \) are all false. The left formula is an implication whose hypothesis \( p \) is false, so it is true (vacuous truth, Section 2.1). The right formula has the true hypothesis \( p \to q \) (again vacuous, since \( p \) is false) and the false conclusion \( r \), so it is false. The everyday reading of Chapters 1 and 2 is enough to see this; Section 4.4 makes it a computation.
 
-This is why the grouping convention matters. Chapter 1 chose to group to the right because statements of the form "if \( P \), then if \( Q \), then \( R \)" are common and \( (P \to Q) \to R \) is rare.
+This is why the grouping convention matters. Grouping to the right is the useful choice, because statements of the form "if \( P \), then if \( Q \), then \( R \)" are common and \( (P \to Q) \to R \) is rare.
 :::
 
 Going the other way, from official to shorthand, we drop every pair of parentheses the rules would put back. \( (\neg(p \vee q) \leftrightarrow (\neg p \wedge \neg q)) \) becomes \( \neg(p \vee q) \leftrightarrow \neg p \wedge \neg q \): the outer pair goes by rule 1, the pair around \( \neg p \wedge \neg q \) by rule 3, and the pair after the first \( \neg \) must stay, since without it rule 2 would read \( \neg p \vee q \).
@@ -495,9 +498,9 @@ Section 4.3 proves that every formula is built in only one way. Then "the parse 
 
 (iii) Not a formula. It begins with \( ( \), so by the first-symbol test it would be \( (\varphi \circ \psi) \), and the string \( p \neg q \) between the parentheses would contain a binary connective. It contains none.
 
-(iv) Not a formula. It begins with \( ( \), so it would be \( (\varphi \circ \psi) \) with \( \varphi \circ \psi \) the string \( (p \to q) \). The only binary connective in that string is the \( \to \), so \( \varphi \) would be the string \( (p \), of length \( 2 \). A formula of length \( 2 \) begins with \( \neg \), by the first-symbol test (one beginning with \( ( \) has length at least \( 5 \)). So \( (p \) is not a formula, and neither is the string. Doubled parentheses are never part of an official formula.
+(iv) Not a formula. It begins with \( ( \), so it would be \( (\varphi \circ \psi) \) with \( \varphi \circ \psi \) the string \( (p \to q) \). The only binary connective in that string is the \( \to \), so \( \varphi \) would be the string \( (p \), of length \( 2 \). A formula of length \( 2 \) begins with \( \neg \), by the first-symbol test (one beginning with \( ( \) has length at least \( 5 \)). So \( (p \) is not a formula, and neither is the string. A pair of parentheses around a formula that already carries its own outer pair is never official.
 
-*(v)* Not a formula. It would be \( (\varphi \wedge \psi) \) with the \( \wedge \) one of the two. If it is the first, \( \psi \) is the string \( q \wedge r \); if the second, \( \varphi \) is \( p \wedge q \). Each has length \( 3 \) and begins with an atom, so by the first-symbol test neither is a formula. (Chapter 1's conventions give no reading of the shorthand \( p \wedge q \wedge r \); Section 4.5 introduces it for the right-grouped \( (p \wedge (q \wedge r)) \) and explains why either grouping would do.)
+(v) Not a formula. It would be \( (\varphi \wedge \psi) \) with the \( \wedge \) one of the two. If it is the first, \( \psi \) is the string \( q \wedge r \); if the second, \( \varphi \) is \( p \wedge q \). Each has length \( 3 \) and begins with an atom, so by the first-symbol test neither is a formula. (Chapter 1's conventions give no reading of the shorthand \( p \wedge q \wedge r \); Section 4.5 introduces it for the right-grouped \( (p \wedge (q \wedge r)) \) and explains why either grouping would do.)
 
 *(b)* The formula is \( (\neg(p \to q) \vee q) \). Its subformulas are \( (\neg(p \to q) \vee q) \), \( \neg(p \to q) \), \( (p \to q) \), \( p \) and \( q \): five, with \( q \) listed once although it sits at two leaves.
 
@@ -665,10 +668,12 @@ def-formula (example): the build-up figure: entries p, q, neg q, (p and neg q), 
 def-formula (claim): ("Two languages") ⊢ and ⊨ are not symbols of the alphabet | def-formula's alphabet (this section)
 def-formula (claim): ("Two languages") "(p -> q) has length 5" | inline (count of symbols); checked by verify/ch04/exr-formulas-and-parse-trees-a2.py
 def-parse-tree (claim): every formula has a parse tree, built along a formation sequence | inline
-exm-shorthand-translation (example): with p, q, r false, p -> (q -> r) is true and (p -> q) -> r is false | informal reading of F1.1-F1.2 (prp-vacuous-implication cited); made exact in F1.3 §04
+def-formula (claim): every entry of a formation sequence is a formula | inline ((F1)-(F3) along the list); made exact in F1.3 §03 fold "Sets built from a base"
+def-formula (claim): ("Why this definition") the formulas are the smallest collection closed under (F1)-(F3) | F1.3 §03 fold "Sets built from a base" (made exact there); not used in this section
+exm-shorthand-translation (example): with p, q, r false, p -> (q -> r) is true and (p -> q) -> r is false | informal reading of F1.1-F1.2 (vacuous truth, Section 2.1); made exact in F1.3 §04
 def-formula (example): ("Why this definition") with p false and r true, (p and q) or r is true and p and (q or r) false | informal reading of F1.1; made exact in F1.3 §04 (prose pointer)
 def-formula (claim): (substitution paragraph, last subsection) replacing atoms uniformly in a derivation gives a derivation | inline, in the fold "Why the result is again a derivation" (formation sequences; def-rule-schema; def-derivation (D1)-(D4) and the scope rule)
 exr-formulas-and-parse-trees-a2 (solution): (b) a formula beginning with ( has length at least 5; (g) a string beginning with ( must end with ); (h) a string with no binary connective yields only neg p and p as formulas | inline (first-symbol test, this section); checked by verify/ch04/exr-formulas-and-parse-trees-a2.py
 exr-formulas-and-parse-trees-a2 (solution): (l) the substituted derivation is a derivation | the substitution paragraph (this section); checked by verify/ch04/exr-formulas-and-parse-trees-a2.py
-exr-formulas-and-parse-trees-c1 (solution): counts c_1..c_4 = 1, 1, 2, 5 by splitting at the main connective; Catalan growth ~4^n (remark only) | inline; checked by verify/ch04/exr-formulas-and-parse-trees-c1.py; the growth remark is not used
+exr-formulas-and-parse-trees-c1 (solution): counts c_1..c_4 = 1, 1, 2, 5 by splitting at the main connective; Catalan numbers 1, 1, 2, 5, 14, 42 and c_11 = 16,796 (remark only) | inline; checked by verify/ch04/exr-formulas-and-parse-trees-c1.py; the growth remark is not used
 -->

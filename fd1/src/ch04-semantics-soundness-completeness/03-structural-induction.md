@@ -1,6 +1,6 @@
 # Induction and Recursion on Formulas
 
-Section 4.2 proved statements about every natural number. This section proves statements about every formula in the same way, and with them answers two questions Section 4.1 left open: is every formula read in only one way, and does a definition with one clause per connective define exactly one thing? It ends by showing what goes wrong when an object can be built in two ways.
+Section 4.2 proved statements about every natural number. This section proves statements about every formula in the same way, and with them answers the question Section 4.1 left open, whether every formula is read in only one way, and with it a second: does a definition with one clause per connective define exactly one thing? On the way it shows what goes wrong when an object can be built in two ways.
 
 ## Structural induction
 
@@ -24,9 +24,11 @@ Let \( P(\varphi) \) be a property of formulas. Suppose that
 Then \( P(\varphi) \) holds for every formula \( \varphi \).
 :::
 
-In words: (i) is the base case, one for each kind of formula of length one. (ii) and (iii) are the inductive steps, one for each building clause of @def-formula, and inside them "\( P(\varphi) \) and \( P(\psi) \)" is the induction hypothesis, assumed for the **immediate parts** of the formula being built. There are six cases in all when the four binary connectives are counted separately; often the four are handled at once, with \( \circ \) left unspecified.
+In words: (i) is the base case, one for each kind of formula of length one. (ii) and (iii) are the inductive steps, one for each building clause of @def-formula, and inside them "\( P(\varphi) \) and \( P(\psi) \)" is the induction hypothesis, assumed for the **immediate parts** of the formula being built. There are seven cases in all (atoms, \( \bot \), \( \neg \), and the four binary connectives); often the four binary ones are handled at once, with \( \circ \) left unspecified.
 
 Section 4.2's checklist reads: objects, the formulas; property, \( P(\varphi) \), with any restriction inside it; base cases, every atom and \( \bot \); steps, one for \( \neg \) and one for each binary connective; principle, @thm-structural-induction.
+
+For example, take the property "\( \varphi \) has as many left as right parentheses". *Base cases:* an atom and \( \bot \) have no parentheses, none of either. *Step for \( \neg \):* if \( \varphi \) has \( k \) of each, so has \( \neg\varphi \), since \( \neg \) is not a parenthesis. *Step for \( \circ \):* if \( \varphi \) has \( k \) of each and \( \psi \) has \( l \) of each, then \( (\varphi \circ \psi) \) has \( k + l + 1 \) of each, the outer pair adding one of each. By @thm-structural-induction, every formula has as many left as right parentheses. This is part (a) of @lem-parenthesis-count below; its other parts need more care.
 
 ::: {.idea}
 Take any formula and a formation sequence ending in it. Walk along the sequence: each entry is an atom or \( \bot \), which has the property by (i), or is built from **earlier** entries, which have it already, by (ii) or (iii). "Earlier entries, any of them" is exactly the shape of strong induction, applied to the position in the list.
@@ -163,7 +165,7 @@ Let \( \chi \) be a formula.
 :::
 :::
 
-In words: (a) is balance. (b) says that reading a formula from the left, we never close more parentheses than we have opened, and that inside a formula \( (\varphi \circ \psi) \) we stay at depth at least \( 1 \) until the very last symbol. (c) says that no binary connective lies outside all parentheses. Part (a) is the fact we set out to prove; (c), with (a), is what the unique readability theorem needs, and (b) shows that no proper initial segment of a formula is a formula (Exercise C1). The steps for (b) and (c) use (a) for the parts, so the three are proved together. Part (b)'s second sentence, alone, does not pass through the step; that is why the lemma proves more, as @exm-strengthen-the-claim did (fold below).
+In words: (a) is balance. (b) says that reading a formula from the left, we never close more parentheses than we have opened, and that inside a formula \( (\varphi \circ \psi) \) we stay at depth at least \( 1 \) until the very last symbol. (c) says that no binary connective lies outside all parentheses. Part (a) is the balance proved above, repeated in the proof because (b) and (c) need it for the parts; (c), with (a), is what the unique readability theorem needs, and (b), with (a), is the key to showing that no proper initial segment of a formula is a formula (Exercise C1). The steps for (b) and (c) use (a) for the parts, so the three are proved together. Part (b)'s second sentence, alone, does not pass through the step; that is why the lemma proves more, as @exm-strengthen-the-claim did (fold below).
 
 ::: {.idea}
 Induction on the shape of a formula, all three parts at once. For \( \neg\varphi \), the extra \( \neg \) changes no count. For \( (\varphi \circ \psi) \), list its initial segments by where they stop: before anything, inside \( \varphi \), at the connective, inside \( \psi \), at the end. Each is "\( ( \)" followed by pieces whose excess the induction hypothesis controls.
@@ -244,7 +246,7 @@ Now suppose also \( \chi = (\varphi' \circ' \psi') \) for formulas \( \varphi', 
 
 The theorem settles the question Section 4.1 left open about parse trees.
 
-**Every formula has exactly one parse tree.** We know it has one. That it has only one is proved by structural induction. An atom or \( \bot \) has only the one-node tree, since a tree made by (T2) or (T3) of @def-parse-tree is a tree for a string beginning with \( \neg \) or \( ( \). A parse tree for \( \neg\varphi \) must have been made by (T2), from a parse tree for some \( \varphi' \) with \( \neg\varphi' = \neg\varphi \); so \( \varphi' = \varphi \), and by the induction hypothesis the tree below the root is the one parse tree of \( \varphi \). A parse tree for \( (\varphi \circ \psi) \) must have been made by (T3), from parse trees for some \( \varphi', \psi' \) and a connective \( \circ' \) with \( (\varphi' \circ' \psi') = (\varphi \circ \psi) \); by @thm-unique-readability, \( \circ' = \circ \), \( \varphi' = \varphi \) and \( \psi' = \psi \), and by the induction hypothesis the two subtrees are the parse trees of \( \varphi \) and \( \psi \). From now on we speak of **the** parse tree of a formula.
+**Every formula has exactly one parse tree.** We know it has one. That it has only one is proved by structural induction. By (T4) of @def-parse-tree, every parse tree is made by one of (T1)–(T3). An atom or \( \bot \) has only the one-node tree, since a tree made by (T2) or (T3) of @def-parse-tree is a tree for a string beginning with \( \neg \) or \( ( \). A parse tree for \( \neg\varphi \) must have been made by (T2), from a parse tree for some \( \varphi' \) with \( \neg\varphi' = \neg\varphi \); so \( \varphi' = \varphi \), and by the induction hypothesis the tree below the root is the one parse tree of \( \varphi \). A parse tree for \( (\varphi \circ \psi) \) must have been made by (T3), from parse trees for some \( \varphi', \psi' \) and a connective \( \circ' \) with \( (\varphi' \circ' \psi') = (\varphi \circ \psi) \); by @thm-unique-readability, \( \circ' = \circ \), \( \varphi' = \varphi \) and \( \psi' = \psi \), and by the induction hypothesis the two subtrees are the parse trees of \( \varphi \) and \( \psi \). From now on we speak of **the** parse tree of a formula.
 
 With one parse tree for each formula, a measurement of that tree is a measurement of the formula.
 
@@ -295,7 +297,7 @@ Build the function on short formulas first. A formula with one symbol is an atom
 
 ::: {.second-reading title="The proof of structural recursion"}
 ::: {.proof}
-For \( n \in \nN \) with \( n \ge 1 \), call a function \( h \), defined on the formulas of length at most \( n \), **\( n \)-good** if it obeys the three clauses at every formula of length at most \( n \). This makes sense: the immediate parts of a formula are shorter than it, so the clauses at a formula of length at most \( n \) mention values of \( h \) only at formulas of length at most \( n \). Let \( S(n) \) be "there is exactly one \( n \)-good function"; we prove \( S(n) \) for every \( n \ge 1 \) by @ax-induction, started at \( 1 \).
+For \( n \in \nN \) with \( n \ge 1 \), call a function \( h \), defined on the formulas of length at most \( n \), **\( n \)-good** if it obeys the three clauses at every formula of length at most \( n \). This makes sense: the immediate parts of a formula are shorter than it, so the clauses at a formula of length at most \( n \) mention values of \( h \) only at formulas of length at most \( n \). Let \( S(n) \) be "there is exactly one \( n \)-good function"; we prove \( S(n) \) for every \( n \ge 1 \) by @ax-induction, started at \( 1 \) ("Starting from another number", Section 4.2).
 
 *Base case.* By the first-symbol test (Section 4.1), the formulas of length \( 1 \) are the atoms and \( \bot \). A \( 1 \)-good function must give each atom \( p \) the value \( a_p \) and \( \bot \) the value \( a_\bot \), and the function that does so is \( 1 \)-good, since the other two clauses concern no formula of length \( 1 \). So \( S(1) \) holds.
 
@@ -348,7 +350,7 @@ The atoms of \( \neg(p \wedge q) \) are \( p \) and \( q \), those of \( q \vee 
 
 Two checks connect these definitions with the parse trees. The **recursive height agrees with the tree height**: the parse tree of \( \neg\varphi \) is that of \( \varphi \) with one node on top, so each branch gains one node; the tree of \( (\varphi \circ \psi) \) is a new root over the trees of \( \varphi \) and \( \psi \), so a longest branch is the root followed by a longest branch of the taller of the two. A structural induction whose cases are these two sentences (and the one-node tree for atoms and \( \bot \)) shows the two heights are equal. In the same way, the recursive list of subformulas is the list of formulas at the nodes of the parse tree (@def-subformula): the nodes of the tree of \( \neg\varphi \) are its root, carrying \( \neg\varphi \), and the nodes of the tree of \( \varphi \).
 
-The length of a formula also satisfies clauses of this shape, by counting symbols: a formula of length one for atoms and \( \bot \), one more at \( \neg\varphi \), and at \( (\varphi \circ \psi) \) the lengths of \( \varphi \) and \( \psi \) plus \( 3 \) (two parentheses and the connective). For \( \chi \) above: \( (p \wedge q) \) has \( 1 + 1 + 3 = 5 \) symbols, so \( \neg(p \wedge q) \) has \( 6 \); \( (q \vee \bot) \) has \( 5 \); so \( \chi \) has \( 6 + 5 + 3 = 14 \), as counted.
+The length \( \operatorname{len}(\varphi) \) of a formula \( \varphi \), its number of symbols, also satisfies clauses of this shape, by counting symbols: a formula of length one for atoms and \( \bot \), one more at \( \neg\varphi \), and at \( (\varphi \circ \psi) \) the lengths of \( \varphi \) and \( \psi \) plus \( 3 \) (two parentheses and the connective). For \( \chi \) above: \( (p \wedge q) \) has \( 1 + 1 + 3 = 5 \) symbols, so \( \neg(p \wedge q) \) has \( 6 \); \( (q \vee \bot) \) has \( 5 \); so \( \chi \) has \( 6 + 5 + 3 = 14 \), as counted.
 
 ::: {.warning}
 A recursive definition must have a clause for **every** way of building a formula, and each clause may use only the **immediate parts**. "Let \( f(\varphi) \) be \( f \) of the longest subformula of \( \varphi \) plus one" is not a recursive definition: at \( \varphi \) itself the longest subformula is \( \varphi \), and the "definition" refers to the value it is trying to define. The theorem applies only to clauses of the form it states.
@@ -444,7 +446,7 @@ Prove by structural induction that every formula has at most as many distinct su
 :::
 
 ::: {.solution}
-For a formula \( \varphi \), write \( s(\varphi) \) for the number of distinct subformulas of \( \varphi \) and \( \operatorname{len}(\varphi) \) for its length. We prove \( s(\varphi) \le \operatorname{len}(\varphi) \) by @thm-structural-induction.
+For a formula \( \varphi \), write \( s(\varphi) \) for the number of distinct subformulas of \( \varphi \). We prove \( s(\varphi) \le \operatorname{len}(\varphi) \) by @thm-structural-induction.
 
 *Atoms and \( \bot \).* The only subformula is the formula itself: \( s = 1 = \operatorname{len} \).
 
@@ -456,7 +458,7 @@ s((\varphi \circ \psi)) \le 1 + s(\varphi) + s(\psi) \le 1 + \operatorname{len}(
 \]
 and the right side is \( \operatorname{len}((\varphi \circ \psi)) \).
 
-By @thm-structural-induction, \( s(\varphi) \le \operatorname{len}(\varphi) \) for every formula \( \varphi \). (The bound is far from tight: the parentheses never start a subformula of their own.)
+By @thm-structural-induction, \( s(\varphi) \le \operatorname{len}(\varphi) \) for every formula \( \varphi \). (The bound is attained by \( p \), \( \neg p \), \( \neg\neg p \), and every formula built from an atom or \( \bot \) by negations alone; each binary connective adds three symbols but at most one new subformula, so the inequality is strict for every formula that contains a binary connective.)
 :::
 
 ::: {#exr-induction-b3}
@@ -517,7 +519,7 @@ using the hypothesis for both parts.
 
 - 1: (a).
 - 3: (b), all four cases (atoms, \( \bot \), negation, binary).
-- 3: (c), with the recursive height and the hypothesis for both parts.
+- 3: (c), a structural induction (on the recursive height, or showing that the tree of \( m(\varphi) \) mirrors that of \( \varphi \)) using the hypothesis for both parts.
 - 1: (d).
 :::
 
@@ -560,7 +562,7 @@ By @thm-structural-induction, no formula has a proper non-empty initial segment 
 **Marking scheme.** (10 points)
 
 - 1: reduces (a) to non-empty segments (the empty string is not a formula).
-- 2: sets up a structural induction with the property "no proper non-empty initial segment is a formula", with the atom and \( \bot \) case.
+- 2: sets up a structural induction (or a strong induction on the length) with the property "no proper non-empty initial segment is a formula", with the atom and \( \bot \) case.
 - 3: negation case: reads the segment as \( \neg \) followed by a proper initial segment of \( \varphi \), and uses the last step of a formula beginning with \( \neg \) to reach a contradiction with the hypothesis.
 - 2: binary case: excess at least \( 1 \) by @lem-parenthesis-count (b) against excess \( 0 \) by (a).
 - 2: (b): compares \( \varphi \) and \( \varphi' \) as initial segments of one string, concludes equal length by (a), then reads off \( \circ \) and \( \psi \).
@@ -599,6 +601,15 @@ The following argument claims to prove that every formula contains an **even** n
 *(c)* Take the property of @lem-parenthesis-count (c), that no binary connective lies outside all parentheses; every formula has it. Run the same argument for it: in the case \( \chi = (\varphi \circ \psi) \), line 5's move applies the hypothesis to the string \( \varphi \circ \psi \) and asserts that no binary connective of \( \varphi \circ \psi \) lies outside all parentheses. For \( \chi = (p \wedge q) \) this asserts it of \( p \wedge q \), whose \( \wedge \) lies outside all parentheses. So the move leads from true hypotheses to a false statement; it is not a valid step, even though in the original argument its conclusion happens to be true.
 
 *(d)* In line 5, apply the hypothesis to the formulas \( \varphi \) and \( \psi \), each with fewer than \( n \) symbols: they have \( 2a \) and \( 2b \) parentheses for some integers \( a, b \ge 0 \), and \( \chi \) has \( 2a + 2b + 2 \), which is even. (Alternatively, prove the claim by @thm-structural-induction, with the same three cases.)
+
+**Marking scheme.** (10 points)
+
+- 2: (a), with @lem-parenthesis-count (a).
+- 3: (b), naming line 5 and why it fails (the hypothesis is about formulas, and \( \varphi \circ \psi \) is not one).
+- 3: (c), a property every formula has and a formula on which the move leads to a false statement.
+- 2: (d), the repair through the formulas \( \varphi \) and \( \psi \).
+
+Fatal errors (0 for the step): locating the error in line 4.
 :::
 
 ::: {#exr-induction-c3}
@@ -615,7 +626,7 @@ Say that a formula is a **\( \neg\wedge \)-formula** if its only connectives are
 \operatorname{neg}((\varphi \wedge \psi)) &= \operatorname{neg}(\varphi) + \operatorname{neg}(\psi) ,
 \end{aligned}
 \]
-with the clauses for \( \bot \) and the other connectives chosen in any way (say, as for \( \wedge \)). Prove by structural induction that every \( \neg\wedge \)-formula \( \varphi \) satisfies \( \operatorname{nodes}(\varphi) > \operatorname{neg}(\varphi) \).
+with \( \operatorname{nodes}(\bot) = 1 \) and \( \operatorname{neg}(\bot) = 0 \), and the clauses for the other binary connectives as for \( \wedge \) (these choices play no part in what follows). Prove by structural induction that every \( \neg\wedge \)-formula \( \varphi \) satisfies \( \operatorname{nodes}(\varphi) > \operatorname{neg}(\varphi) \).
 :::
 
 ::: {.solution}
@@ -702,7 +713,7 @@ Write connectives in front of their parts and drop all parentheses. The **Polish
 ::: {.solution}
 [Hint 1]
 
-(b) is a structural induction over the Polish clauses, set up as in the proof of @thm-structural-induction, with a strengthened property, as in @lem-parenthesis-count.
+(b) is an induction over the Polish clauses, set up as in the fold "Sets built from a base": the Polish formulas with the property form a collection closed under the Polish clauses. Use a strengthened property, as in @lem-parenthesis-count.
 :::
 
 ::: {.solution}
@@ -713,6 +724,8 @@ Write connectives in front of their parts and drop all parentheses. The **Polish
 
 ::: {.solution}
 *(a)* \( \mathsf{C}\mathsf{K}p\mathsf{N}qp \) and \( \mathsf{N}\mathsf{A}p\mathsf{E}qr \).
+
+Read "nothing else is" as in the fold "Sets built from a base": the Polish formulas are the smallest collection of strings that contains every atom and \( \bot \) and is closed under the Polish clauses. So if a property holds at atoms and \( \bot \) and passes from the parts to the whole at each clause, the Polish formulas with it form such a collection and include every Polish formula. In the same way every Polish formula is non-empty, and is an atom, \( \bot \), \( \mathsf{N}\varphi \), or \( \mathsf{K}\varphi\psi \), \( \mathsf{A}\varphi\psi \), \( \mathsf{C}\varphi\psi \), \( \mathsf{E}\varphi\psi \) for Polish \( \varphi, \psi \) (the strings of these forms make such a collection); (c) and (d) use this.
 
 *(b)* By induction over the clauses, the property being "weight \( 1 \), and every proper initial segment has weight \( \le 0 \)".
 
@@ -742,7 +755,7 @@ lem-parenthesis-count (proof): excess of a concatenation is the sum of the exces
 thm-unique-readability (proof): every formula is an atom, bot, neg(phi) or (phi o psi) for formulas ("looking at the last step") | F1.3 §01, after def-formula (inline there)
 thm-unique-readability (claim): (paragraph after the proof) each formula has exactly one parse tree | inline structural induction, citing thm-unique-readability
 thm-structural-recursion (proof): the first-symbol test (formulas of length 1 are atoms and bot); immediate parts are shorter | F1.3 §01 (inline there); inline
-thm-structural-recursion (proof): "function" in the everyday sense | F2.1 (prose pointer); no property of functions beyond "one value per argument" is used
+thm-structural-recursion (proof): "function" in the everyday sense | F2.1 (promised, STATUS row 114, everyday sense; no prose pointer); no property of functions beyond "one value per argument" is used
 exm-recursive-definitions (example): height 4, atoms {p, q}, 4 connectives, length 14; recursive height = tree height; recursive subformula list = formulas at nodes | inline; checked by verify/ch04/exm-recursive-definitions.py
 exr-induction-b2 (solution): a list of subformulas joined from lists of sizes s1, s2 plus one formula has at most 1 + s1 + s2 distinct members; len clauses | school counting; len clauses inline after exm-recursive-definitions
 exr-induction-b3 (solution): 2^a <= 2^b for a <= b; 1 <= 2^h; ((p and q) and (r and p)) has 7 nodes | school algebra; checked by verify/ch04/exr-induction-b3.py
@@ -757,5 +770,7 @@ exr-structural-induction-a1 (solution): (e) g(n) = n obeys g(1) = 1, g(n+1) = g(
 exr-structural-induction-a2 (solution): depths, excess 3, heights 4 and 4, the subformula list, b = 2, the length 6 of (p and neg q), the clash at g(4) | inline counting; checked by verify/ch04/exr-structural-induction-a2.py
 exr-structural-induction-b3 (solution): m is an involution and keeps the height; m((p -> (q and neg r))) = ((neg r and q) -> p) | thm-structural-induction, thm-structural-recursion (this section); checked by verify/ch04/exr-structural-induction-b3.py
 exr-structural-induction-c4 (solution): (c) strong induction on the position in a formation sequence | thm-strong-induction (F1.3 §02); thm-structural-induction's proof pattern (this section)
-exr-structural-induction-c5 (solution): induction over the Polish clauses | thm-structural-induction's proof pattern, cited (this section); the Polish clauses are the item's own definition; checked by verify/ch04/exr-structural-induction-c5.py
+thm-structural-recursion (proof): induction started at 1 | F1.3 §02, "Starting from another number" (after ax-induction)
+exr-induction-c1 (solution): every formula has at least one symbol | F1.3 §01 (after the first-symbol test, inline there)
+exr-structural-induction-c5 (solution): induction over the Polish clauses; every Polish formula is non-empty and is an atom, bot, N phi or X phi psi for Polish parts | the smallest-closed-collection argument of the fold "Sets built from a base" (this section); the Polish clauses are the item's own definition; checked by verify/ch04/exr-structural-induction-c5.py
 -->

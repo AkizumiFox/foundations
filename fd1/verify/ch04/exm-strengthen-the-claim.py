@@ -1,5 +1,5 @@
 """exm-strengthen-the-claim (Ch 4, Section 4.2): S_n = n/(n+1) exactly for n <= 200;
-S_1, S_2, S_3; the step algebra; the first try fails: a value allowed by "S_n < 1" with S_(n+1) > 1."""
+S_1, S_2, S_3; the step algebra; the first try fails: a number x < 1 with x + 1/((n+1)(n+2)) > 1."""
 from fractions import Fraction as F
 
 QUOTED = {"S_1": F(1, 2), "S_2": F(2, 3), "S_3": F(3, 4), "S_2 terms": F(1, 6), "S_3 term": F(1, 12)}

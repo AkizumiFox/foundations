@@ -97,7 +97,7 @@ Every stage has the same fields:
 
 **The "strange" parts, made natural.**
 - Vacuous truth follows from ⊥E.
-- Truth tables summarize the rules; soundness and completeness are proved in full (Chapter 3).
+- Truth tables summarize the rules; soundness and completeness are proved in full (F1.3, fd1 Chapter 4).
 - RAA needs LEM, whereas ¬I does not.
 - The "if" of a definition means "iff".
 

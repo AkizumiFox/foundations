@@ -1,6 +1,6 @@
 # Induction on the Natural Numbers
 
-Section 4.1 made formulas into objects: strings built from atoms and \( \bot \) by five clauses, and by nothing else. There are infinitely many of them, and the theorems this chapter is heading for are about all of them. This section supplies the tool for proving anything about infinitely many objects at once. It is **induction** on the natural numbers, where it is familiar. Section 4.3 carries it over to formulas, where the chapter needs it most.
+Section 4.1 made formulas into objects: strings built from atoms and \( \bot \) by the clauses of @def-formula, and by nothing else. There are infinitely many of them, and the theorems this chapter is heading for are about all of them. This section supplies the tool for proving anything about infinitely many objects at once. It is **induction** on the natural numbers, where it is familiar. Section 4.3 carries it over to formulas, where the chapter needs it most.
 
 ## One argument for infinitely many cases
 
@@ -44,7 +44,7 @@ In words: hypothesis (i) is the **base case**. Hypothesis (ii) is the **inductiv
 **Dominoes.** The usual picture is a row of dominoes, one for each natural number. The base case knocks over the first. The inductive step says that each domino, if it falls, knocks over the next. Then every domino falls. The picture carries the one point that matters: the step must work for **every** \( n \), the first transition from \( 0 \) to \( 1 \) included. A single domino standing too far from the next stops the whole row, however well the others are placed.
 
 ::: {.second-reading title="Why induction is not a rule of logic"}
-**Not an infinite derivation.** From \( P(0) \) and the step we could derive \( P(1) \) by \( \rulename{{\to}E} \), then \( P(2) \), and so on; each single \( P(n) \) has a finite derivation, \( n \) lines long or so. But no finite derivation contains all of them, and "and so on" is not a rule. The principle of induction is what licenses the passage, in one step, from the two hypotheses to "for every \( n \)". It is a rule about \( \nN \), not a rule of logic.
+**Not an infinite derivation.** From \( P(0) \) and the instances \( P(0) \to P(1) \), \( P(1) \to P(2) \), \dots{} of the step we could derive \( P(1) \) by \( \rulename{{\to}E} \), then \( P(2) \), and so on; each single \( P(n) \) has a finite derivation, \( n \) lines long or so. But no finite derivation contains all of them, and "and so on" is not a rule. The principle of induction is what licenses the passage, in one step, from the two hypotheses to "for every \( n \)". It is a rule about \( \nN \), not a rule of logic.
 :::
 
 **The step as a box.** In the language of Chapter 1, the inductive step is proved by a \( \rulename{{\to}I} \) box. We fix a natural number \( n \), knowing nothing about it except what the step allows, and open a box assuming \( P(n) \); inside the box we reach \( P(n + 1) \); closing the box gives the implication.
@@ -162,7 +162,7 @@ Let \( P(n) \) be a property of natural numbers. Suppose that **for every** \( n
 
 This form is also called **course-of-values induction**: the hypothesis may use the whole course of values \( P(0), \dots, P(n - 1) \), not just the last one. Its induction hypothesis is stronger (we assume more), so its step is easier to prove; the theorem says we lose nothing by it.
 
-There seems to be no base case. There is one, hidden. For \( n = 0 \), the hypothesis says: if \( P(k) \) holds for every \( k \in \nN \) with \( k < 0 \), then \( P(0) \) holds. No natural number is less than \( 0 \), so "\( P(k) \) holds for every \( k \in \nN \) with \( k < 0 \)" is **vacuously** true: for each \( k \in \nN \), the implication "if \( k < 0 \), then \( P(k) \)" has a false hypothesis, and an implication with a false hypothesis holds (@prp-vacuous-implication, \( \neg P \vdash P \to Q \)). So at \( n = 0 \) the hypothesis of the theorem hands us \( P(0) \) outright. In practice, the proof of the step usually treats small \( n \) separately, and that is where the base cases live.
+There seems to be no base case. There is one, hidden. For \( n = 0 \), the hypothesis says: if \( P(k) \) holds for every \( k \in \nN \) with \( k < 0 \), then \( P(0) \) holds. No natural number is less than \( 0 \), so "\( P(k) \) holds for every \( k \in \nN \) with \( k < 0 \)" is **vacuously** true: for each \( k \in \nN \), the implication "if \( k < 0 \), then \( P(k) \)" has a false hypothesis, and an implication with a false hypothesis holds (@prp-vacuous-implication: from \( \neg (k < 0) \) we get \( (k < 0) \to P(k) \)). So at \( n = 0 \) the hypothesis of the theorem hands us \( P(0) \) outright. In practice, the proof of the step usually treats small \( n \) separately, and that is where the base cases live.
 
 ::: {.idea}
 Strong induction is ordinary induction applied to a stronger property. Let \( Q(n) \) say "\( P(k) \) holds for **every** \( k \le n \)". Then \( Q(n) \) is exactly the hypothesis the theorem needs at \( n + 1 \), since the numbers below \( n + 1 \) are those up to \( n \); so the theorem's hypothesis moves us from \( Q(n) \) to \( Q(n + 1) \). Ordinary induction on \( Q \) does the rest, and \( Q(n) \) contains \( P(n) \).
@@ -225,7 +225,7 @@ Show that \( S_n < 1 \) for every \( n \ge 1 \).
 :::
 
 ::: {.solution}
-*First try.* Let \( P(n) \) be "\( S_n < 1 \)". The base case holds: \( S_1 = \frac12 \). In the step, \( S_{n+1} = S_n + \frac{1}{(n+1)(n+2)} \), and the hypothesis \( S_n < 1 \) allows \( S_n \) to be as close to \( 1 \) as we like, for instance larger than \( 1 - \frac{1}{(n+1)(n+2)} \); then \( S_{n+1} > 1 \). The hypothesis is too weak to give \( P(n + 1) \). The claim is not to blame; the hypothesis is.
+*First try.* Let \( P(n) \) be "\( S_n < 1 \)". The base case holds: \( S_1 = \frac12 \). In the step, \( S_{n+1} = S_n + \frac{1}{(n+1)(n+2)} \), and the hypothesis \( S_n < 1 \) tells us nothing more about \( S_n \): a number \( x < 1 \) may exceed \( 1 - \frac{1}{(n+1)(n+2)} \), and then \( x + \frac{1}{(n+1)(n+2)} > 1 \). From \( S_n < 1 \) alone we cannot reach \( S_{n+1} < 1 \). The hypothesis is too weak to give \( P(n + 1) \). The claim is not to blame; the hypothesis is.
 
 *Guess more.* \( S_1 = \frac12 \), \( S_2 = \frac12 + \frac16 = \frac23 \), \( S_3 = \frac23 + \frac{1}{12} = \frac34 \). Let \( Q(n) \) be "\( S_n = \frac{n}{n+1} \)".
 
@@ -280,7 +280,7 @@ Chapter 5 gives "for every" and "there is" their rules, among them the step from
 
 *(c)* Induction started at \( 5 \) ("Starting from another number"): @ax-induction applied to \( Q(m) \): "\( P(m + 5) \) holds". The claim is only about \( n \ge 5 \), and no step reaches below \( 5 \), so nothing about \( 4 \) is ever asked.
 
-*(d)* It allows \( S_n \) to be closer to \( 1 \) than \( \frac{1}{(n+1)(n+2)} \), and then \( S_{n+1} > 1 \). The step would need a bound on how close \( S_n \) is to \( 1 \), which only the stronger \( S_n = \frac{n}{n+1} \) gives.
+*(d)* It says nothing about how close \( S_n \) is to \( 1 \): a number \( x < 1 \) within \( \frac{1}{(n+1)(n+2)} \) of \( 1 \) has \( x + \frac{1}{(n+1)(n+2)} > 1 \), so from \( S_n < 1 \) alone the step cannot reach \( S_{n+1} < 1 \). The step would need a bound on how close \( S_n \) is to \( 1 \); the stronger \( S_n = \frac{n}{n+1} \) gives one (and so would \( S_n \le \frac{n}{n+1} \)).
 :::
 
 ::: {#exr-induction-a2}
@@ -293,7 +293,7 @@ The parts run from locating the hypothesis, through writing one base case or one
 2. Write down the base case and the step for "\( n^2 + n \) is even for every \( n \in \nN \)".
 3. Ordinary or strong induction for "every \( n \ge 2 \) is a product of one or more primes"?
 4. Write down \( P(n + 1) \) for the property \( P(n) \): "\( 1 + 3 + \dots + (2n - 1) = n^2 \)" (\( n \ge 1 \)).
-5. Write down the base case for "\( n! \ge 2^n \) for every \( n \ge 4 \)".
+5. Write down the base case for "\( n! \ge 2^n \) for every \( n \ge 4 \)" (here \( n! = 1 \cdot 2 \cdots n \)).
 6. Does checking \( P(0) \), \( P(1) \) and \( P(2) \) prove the step "if \( P(n) \), then \( P(n + 1) \)"?
 7. "\( n^2 - n + 41 \) is prime" holds for \( n = 0, 1, \dots, 40 \). Is it true for every \( n \in \nN \)?
 8. A proof shows \( P(0) \) and "if \( P(n) \), then \( P(n + 2) \)" for every \( n \in \nN \). For which \( n \) is \( P(n) \) proved?
@@ -355,7 +355,7 @@ By @ax-induction, \( 2^n \ge n + 1 \) for every \( n \in \nN \).
 ::: {#exr-induction-b4}
 [B2: Divisible by six]
 
-Prove that \( n^3 - n \) is divisible by \( 6 \) for every \( n \in \nN \). You may use that \( n(n + 1) \) is even for every \( n \in \nN \).
+Prove by induction that \( n^3 - n \) is divisible by \( 6 \) for every \( n \in \nN \). You may use that \( n(n + 1) \) is even for every \( n \in \nN \).
 :::
 
 ::: {.solution}
@@ -439,11 +439,13 @@ so it holds for \( n + 1 \); by induction it holds for every \( n \ge 1 \).
 \]
 so a correct step passes any constant along. Only the base case decides \( c \): at \( n = 1 \), \( 1 = 1 + c \) forces \( c = 0 \).
 
-**Marking scheme.** (6 points)
+**Marking scheme.** (10 points)
 
-- 2: (a), with the true sum.
-- 2: (b), naming the missing base case and endorsing the step.
-- 2: (c).
+- 3: (a), with the true sum.
+- 4: (b), naming the missing base case and endorsing the step.
+- 3: (c).
+
+Fatal error (0 for (b)): calling the step wrong, or claiming the formula holds at \( n = 1 \).
 :::
 
 ::: {#exr-induction-c5}
@@ -453,7 +455,7 @@ Prove that for every \( n \ge 2 \),
 \[
 \Bigl(1 - \frac14\Bigr)\Bigl(1 - \frac19\Bigr) \cdots \Bigl(1 - \frac{1}{n^2}\Bigr) > \frac12 .
 \]
-First show that induction on the claim as it stands cannot work; then prove more.
+Write \( R_n \) for this product. First show that the hypothesis \( R_n > \frac12 \) alone, with \( R_{n+1} = R_n \bigl(1 - \frac{1}{(n+1)^2}\bigr) \), does not give \( R_{n+1} > \frac12 \); then prove more.
 :::
 
 ::: {.solution}
@@ -465,13 +467,11 @@ Compute the product for \( n = 2, 3, 4 \) as fractions.
 ::: {.solution}
 [Hint 2]
 
-Prove that the product equals \( \frac{n+1}{2n} \).
+Write \( R_2, R_3, R_4 \) with denominators \( 4, 6, 8 \) and guess a formula for the product; then prove that formula by induction.
 :::
 
 ::: {.solution}
-Write \( R_n \) for the product.
-
-*The plain claim.* The step multiplies by \( 1 - \frac{1}{(n+1)^2} < 1 \), and the hypothesis \( R_n > \frac12 \) allows \( R_n \) to lie just above \( \frac12 \); then \( R_{n+1} \) could fall below \( \frac12 \). The hypothesis is too weak to give the claim for \( n + 1 \).
+*The plain claim.* The step multiplies by \( 1 - \frac{1}{(n+1)^2} < 1 \), and the hypothesis \( R_n > \frac12 \) tells us nothing more about \( R_n \): for a number \( x \) just above \( \frac12 \), such as \( x = \frac12 + \frac{1}{4(n+1)^2} \), the number \( x \bigl(1 - \frac{1}{(n+1)^2}\bigr) \) is below \( \frac12 \), so the hypothesis alone does not give the claim for \( n + 1 \).
 
 *Prove more.* \( R_2 = \frac34 \), \( R_3 = \frac34 \cdot \frac89 = \frac23 \), \( R_4 = \frac23 \cdot \frac{15}{16} = \frac58 \) suggest \( R_n = \frac{n+1}{2n} \). Base case \( n = 2 \): \( R_2 = \frac34 = \frac{2 + 1}{2 \cdot 2} \). Step: let \( n \ge 2 \) and suppose \( R_n = \frac{n+1}{2n} \). Then
 \[
@@ -491,20 +491,21 @@ Fatal error (0 for the step): "proving" the step from \( R_n > \frac12 \) alone.
 :::
 
 <!-- dependency ledger
-ax-induction (claim): each P(n) alone has a finite derivation from P(0) and the step by ->E | informal, motivation only; not used in any proof
-exm-sum-consecutive-products (example): the sum 1*2 + ... + n(n+1) read as "the sum of the first n terms, plus the next"; algebra of fractions | school algebra (blueprint, Allowed prerequisites); recursion on N (finite sums) is F2.2 (promised; STATUS row "definition by recursion", from AN1.1); checked by verify/ch04/exm-sum-consecutive-products.py
-exm-power-inequality (example): 3^(n+1) = 3 * 3^n; multiplying an inequality by a positive number; 6n >= 2n for n >= 0 | school algebra; powers by recursion are F2.2 (promised; STATUS row, from AN1.1); checked by verify/ch04/exm-power-inequality.py
+ax-induction (claim): each P(n) alone has a finite derivation from P(0) and the instances P(k) -> P(k+1) of the step by ->E | informal, motivation only; not used in any proof
+ax-induction (claim): (Starting from another number) n >= b implies n - b in N and n = b + (n - b); b + m >= b | school facts about N (blueprint, Allowed prerequisites)
+exm-sum-consecutive-products (example): the sum 1*2 + ... + n(n+1) read as "the sum of the first n terms, plus the next"; algebra of fractions | school algebra (blueprint, Allowed prerequisites); recursion on N (finite sums) is F2.2 (promised; STATUS row F1.3 §02, paid by thm-recursion, def-sum-product); checked by verify/ch04/exm-sum-consecutive-products.py
+exm-power-inequality (example): 3^(n+1) = 3 * 3^n; multiplying an inequality by a positive number; 6n >= 2n for n >= 0 | school algebra; powers by recursion are F2.2 (promised; STATUS row F1.3 §02, paid by def-power); checked by verify/ch04/exm-power-inequality.py
 ax-induction (example): (the warning after exm-power-inequality) 2n^2 >= (n+1)^2 exactly for n >= 3 (fails at n = 0, 1, 2); 2^3 = 8 < 9; 2^n >= n^2 for n = 0, 1, 2 and n >= 4 | school algebra; checked by verify/ch04/ax-induction.py
-thm-strong-induction (proof): no natural number is less than 0; k < n + 1 iff k <= n for natural k (nothing strictly between n and n + 1); k <= n + 1 iff k <= n or k = n + 1 | school facts about N (blueprint, Allowed prerequisites); F2.2 (promised; STATUS row "nothing between n and n + 1", from AN1.1)
+thm-strong-induction (proof): no natural number is less than 0; k < n + 1 iff k <= n for natural k (nothing strictly between n and n + 1); k <= n + 1 iff k <= n or k = n + 1 | school facts about N (blueprint, Allowed prerequisites); F2.2 (promised; STATUS row F1.3 §02, paid by lem-naturals-arithmetic (e))
 thm-strong-induction (proof): "for every k < 0, P(k)" holds vacuously | prp-vacuous-implication (cited in the prose before the proof); the rule for "every" is F1.4 (prose pointer)
 exm-threes-and-fives (example): 8 = 3 + 5, 9 = 3*3, 10 = 5*2; 7 is not a sum of threes and fives | inline arithmetic; checked by verify/ch04/exm-threes-and-fives.py
 exr-induction-a1 (solution): 4^(n+1) - 1 = 4(4^n - 1) + 3; 12..15 as 4a + 5b | school algebra; checked by verify/ch04/exr-induction-a1.py
 ax-induction (claim): (the Quick check after exm-power-inequality) 5^0 - 1 = 0; 5^(n+1) - 1 = 5(5^n - 1) + 4 | school algebra; checked by verify/ch04/ax-induction.py
-exm-strengthen-the-claim (example): sums of fractions; S_1, S_2, S_3 = 1/2, 2/3, 3/4; the guess S_n = n/(n+1) and its step algebra; a value of S_n below 1 with S_(n+1) > 1 | school algebra; finite sums by recursion are F2.2 (promised, as for exm-sum-consecutive-products; STATUS row "definition by recursion", from AN1.1); checked by verify/ch04/exm-strengthen-the-claim.py
+exm-strengthen-the-claim (example): sums of fractions; S_1, S_2, S_3 = 1/2, 2/3, 3/4; the guess S_n = n/(n+1) and its step algebra; a number x < 1 with x + 1/((n+1)(n+2)) > 1 | school algebra; finite sums by recursion are F2.2 (promised, as for exm-sum-consecutive-products; STATUS row F1.3 §02, paid by thm-recursion, def-sum-product); checked by verify/ch04/exm-strengthen-the-claim.py
 exr-induction-a1 (solution): (c) induction started at 5 is ax-induction applied to Q(m) = P(m + 5) | "Starting from another number" (this section)
 exr-induction-a2 (solution): (b) (n+1)^2 + (n+1) = (n^2 + n) + 2(n + 1); (e) 4! = 24 >= 16; (g) 41^2 - 41 + 41 = 41^2; (k) (n+1)^3 + 2(n+1) = (n^3 + 2n) + 3(n^2 + n + 1) | school arithmetic (factorial: school arithmetic); checked by verify/ch04/exr-induction-a2.py
 exr-induction-b4 (solution): (n+1)^3 - (n+1) = (n^3 - n) + 3n(n+1); n(n+1) even | school algebra; evenness stated in the item; parity is F2.2 (promised: parity); checked by verify/ch04/exr-induction-b4.py
 exr-induction-b5 (solution): a sequence given by recursion; a_n = 2^n + 1 from the recursion | the sequence is the item's own; sequences by recursion are F2.2 (promised); checked by verify/ch04/exr-induction-b5.py
 exr-induction-c4 (solution): 1 + ... + n = (n^2 + n)/2; the step passes any constant c along | school algebra; checked by verify/ch04/exr-induction-c4.py
-exr-induction-c5 (solution): R_2, R_3, R_4 = 3/4, 2/3, 5/8; R_n = (n+1)/(2n) and its step algebra | school algebra; checked by verify/ch04/exr-induction-c5.py
+exr-induction-c5 (solution): R_2, R_3, R_4 = 3/4, 2/3, 5/8; x = 1/2 + 1/(4(n+1)^2) has x(1 - 1/(n+1)^2) < 1/2; R_n = (n+1)/(2n) and its step algebra | school algebra; checked by verify/ch04/exr-induction-c5.py
 -->

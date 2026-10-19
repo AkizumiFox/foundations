@@ -148,7 +148,7 @@ Apply @thm-dnf to \( \neg\varphi \) and negate the result: \( \varphi \equiv \ne
 ::: {.proof}
 By @thm-dnf, \( \neg\varphi \equiv C_1 \vee \dots \vee C_k \) for some conjunctive clauses \( C_1, \dots, C_k \) (with atoms among those of \( \varphi \) if it has any, since \( \neg\varphi \) has the same atoms). For each \( i \), let \( K_i \) be the disjunction of the opposites of the literals of \( C_i \), in the same order, and let \( K \coloneqq K_1 \wedge \dots \wedge K_k \). Then \( K \) is in CNF, with the same atoms as \( C_1 \vee \dots \vee C_k \).
 
-Let \( w \) be a valuation. Each literal of \( K_i \) is true under \( w \) exactly when the corresponding literal of \( C_i \) is false. By @eq-many-term-values, used three times:
+Let \( w \) be a valuation. Each literal of \( K_i \) is true under \( w \) exactly when the corresponding literal of \( C_i \) is false. By @eq-many-term-values, used at each step:
 \[
 \begin{aligned}
 w(K) = \mathrm{T}
@@ -163,7 +163,15 @@ Since \( C_1 \vee \dots \vee C_k \equiv \neg\varphi \), the last line holds exac
 
 Unwinding the construction: the conjunctive clauses \( C_i \) of the DNF of \( \neg\varphi \) are the rows where \( \varphi \) is **false**, and \( K_i \) is the clause that is false exactly in the row of \( C_i \). So the CNF can be read straight off the table: **one clause per F-row**, built from the opposites of that row's signed atoms. In the row \( p = \mathrm{T} \), \( q = \mathrm{F} \), for instance, the clause is \( \neg p \vee q \). A formula with no F-row gets, by the proof, the clause of a contradiction's DNF negated, \( \neg p \vee p \) (from \( C_1 = p \wedge \neg p \)), which is true in every row.
 
-Alternatively, a CNF can be reached by **rewriting**. First replace each \( \bot \), which is not a literal, by \( p \wedge \neg p \) for an atom \( p \); both are false in every row. Replace \( \alpha \leftrightarrow \beta \) by \( (\alpha \to \beta) \wedge (\beta \to \alpha) \) and \( \alpha \to \beta \) by \( \neg\alpha \vee \beta \); push each \( \neg \) inwards by De Morgan's laws, and remove \( \neg\neg \); finally distribute \( \vee \) over \( \wedge \), replacing \( \alpha \vee (\beta \wedge \gamma) \) by \( (\alpha \vee \beta) \wedge (\alpha \vee \gamma) \). Each step replaces a part of the formula by an equivalent one: the equivalences are \( \bot \equiv p \wedge \neg p \) and those of @prp-standard-equivalences, which hold for arbitrary formulas, and @lem-replacement says the whole formula stays equivalent; since \( \equiv \) is transitive (Section 4.5), the steps chain. Stopping before the distribution step, and distributing \( \wedge \) over \( \vee \) instead, gives a DNF. The rewriting route is often much shorter than the table, as the next example shows, but it can also be much longer, as the warning after it shows.
+::: {.check}
+On the atoms \( p \), \( q \), \( r \), write the CNF clause for the F-row \( p = \mathrm{F} \), \( q = \mathrm{T} \), \( r = \mathrm{F} \).
+:::
+
+::: {.solution}
+The row's signed atoms are \( \neg p \), \( q \), \( \neg r \); their opposites give \( p \vee \neg q \vee r \). It is false exactly when \( p \) is F, \( q \) is T and \( r \) is F, that is, in that row only.
+:::
+
+Alternatively, a CNF can be reached by **rewriting**. First replace each \( \bot \), which is not a literal, by \( p \wedge \neg p \) for an atom \( p \); both are false in every row. Replace \( \alpha \leftrightarrow \beta \) by \( (\alpha \to \beta) \wedge (\beta \to \alpha) \) and \( \alpha \to \beta \) by \( \neg\alpha \vee \beta \); push each \( \neg \) inwards by De Morgan's laws, and remove \( \neg\neg \); finally distribute \( \vee \) over \( \wedge \), replacing \( \alpha \vee (\beta \wedge \gamma) \) by \( (\alpha \vee \beta) \wedge (\alpha \vee \gamma) \). Each step replaces a part of the formula by an equivalent one: the equivalences are \( \bot \equiv p \wedge \neg p \) and those of @prp-standard-equivalences, which hold for arbitrary formulas, and @lem-replacement says the whole formula stays equivalent; since \( \equiv \) is transitive (Section 4.5), the steps chain. Stopping before the distribution step, and distributing \( \wedge \) over \( \vee \) instead, gives a DNF. The rewriting route is often much shorter than the table, as the next example shows, but it can also explode, as the warning after it shows.
 
 ::: {#exm-normal-forms-two-routes}
 [Two routes to a normal form]
@@ -210,7 +218,7 @@ The formula \( p \vee q \vee r \) is also a DNF, with three conjunctive clauses 
 :::
 
 ::: {.warning}
-A formula has **many** equivalent CNFs and DNFs; "normal form" does not mean "unique form". \( p \vee q \vee r \) and \( (p \vee q \vee r) \wedge (\neg q \vee q \vee r) \) are both CNFs of the formula above. And the two routes have opposite weaknesses. The table route needs all \( 2^n \) rows. The rewriting route can explode at the distribution step: distributing \( (p_1 \wedge q_1) \vee (p_2 \wedge q_2) \vee (p_3 \wedge q_3) \) gives 8 clauses, one for each way of picking \( p_i \) or \( q_i \) from every conjunctive clause, and \( n \) such conjunctive clauses give \( 2^n \) clauses.
+A formula has **many** equivalent CNFs and DNFs; "normal form" does not mean "unique form". \( p \vee q \vee r \) and \( (p \vee q \vee r) \wedge (\neg q \vee q \vee r) \) are both CNFs of the formula above. And the two routes have opposite weaknesses. The table route needs all \( 2^n \) rows for \( n \) atoms. The rewriting route can explode at the distribution step: distributing \( (p_1 \wedge q_1) \vee (p_2 \wedge q_2) \vee (p_3 \wedge q_3) \) gives 8 clauses, one for each way of picking \( p_i \) or \( q_i \) from every conjunctive clause, and \( m \) such conjunctive clauses give \( 2^m \) clauses.
 :::
 
 ## Reading validity off a CNF
@@ -329,6 +337,14 @@ Simplify \( (p \to q) \wedge (p \to \neg q) \), citing a law at each step.
 Step 1 is (c) of @prp-standard-equivalences, used twice, each time applied inside the formula by @lem-replacement. Step 2 is (g), second form, read from right to left with \( \varphi = \neg p \), \( \psi = q \), \( \chi = \neg q \). Step 3 is (c) of @prp-more-equivalences, applied inside. Step 4 is (a).
 
 Read the result: if \( p \) gives both \( q \) and not \( q \), then not \( p \). This is the table's face of \( \rulename{\neg I} \).
+:::
+
+::: {.check}
+Simplify \( (p \vee q) \wedge (p \vee \neg q) \), citing a law at each step.
+:::
+
+::: {.solution}
+\( (p \vee q) \wedge (p \vee \neg q) \equiv p \vee (q \wedge \neg q) \equiv p \vee \bot \equiv p \): (g) of @prp-standard-equivalences, second form, read from right to left; then (c) of @prp-more-equivalences, first form, applied inside by @lem-replacement; then its (a), second form.
 :::
 
 ## Stronger and weaker parts
@@ -631,7 +647,7 @@ The rows with an odd number of T's are those with three T's, T T T, and those wi
 \]
 The properties an answer must have: (i) it is in DNF (a disjunction of conjunctions of literals); (ii) its atoms are among \( p \), \( q \), \( r \); (iii) it is T in the four rows T T T, T F F, F T F, F F T; (iv) it is F in the other four, T T F, T F T, F T T, F F F. Check: (i) and (ii) hold by inspection. By @eq-row-conjunct, each minterm is T in its own row only, so the disjunction is T exactly in the four rows listed, which gives (iii) and (iv).
 
-A different correct answer, for instance the same minterms in another order, or with the literals of a minterm reordered, passes the same checks. No DNF with fewer conjunctive clauses works: a conjunctive clause omitting an atom, say \( p \wedge q \), would be T in two rows that differ at that atom, and changing one atom always changes the parity.
+A different correct answer, for instance the same minterms in another order, or with the literals of a minterm reordered, passes the same checks. No DNF with fewer conjunctive clauses works. A conjunctive clause containing an atom and its negation is T in no row and contributes nothing. Any other conjunctive clause omitting an atom, say \( p \wedge q \), is T in two rows that differ at that atom, and changing one atom always changes the parity, so one of those rows has even parity. So every conjunctive clause that is T somewhere mentions all three atoms and is T in exactly one row, and four T-rows need at least four conjunctive clauses.
 :::
 
 ### C. Going deeper
@@ -656,7 +672,7 @@ Add to the language two binary connectives: \( \alpha \mathbin{|} \beta \) ("not
 
 **Marking scheme.** (10 points)
 
-- 3: (a) the two equivalences \( \alpha \mathbin{|} \alpha \equiv \neg\alpha \) and \( (\alpha \mathbin{|} \beta) \mathbin{|} (\alpha \mathbin{|} \beta) \equiv \alpha \wedge \beta \), read off the table of \( \mathbin{|} \).
+- 3: (a) two equivalences expressing the connectives of an adequate set from @thm-adequate-connectives (a) in terms of \( \mathbin{|} \), read off its table (for instance \( \alpha \mathbin{|} \alpha \equiv \neg\alpha \) and \( (\alpha \mathbin{|} \beta) \mathbin{|} (\alpha \mathbin{|} \beta) \equiv \alpha \wedge \beta \)).
 - 3: (a) the recursive translation and the structural induction showing that it keeps the value under every valuation.
 - 1: (a) the conclusion, via @thm-adequate-connectives (a).
 - 3: (b) the same for \( \downarrow \), with \( \{\neg, \vee\} \).
@@ -697,7 +713,7 @@ Now the two-input function of \( p_1 \wedge p_2 \) is F at \( (\mathrm{T}, \math
 - 3: (a) states the all-T valuation and runs the induction, with the \( \leftrightarrow \) case and the vacuous cases (\( \neg \), \( \bot \)) named.
 - 1: (a) names a truth function that is not expressed (negation), with the reason.
 - 4: (b) states the flipped-row property for **every** formula in \( \{\neg, \mathsf{M}\} \) and proves it by structural induction, including the \( \mathsf{M} \) case.
-- 2: (b) exhibits a truth function that is F on a row and on its flipped row, and concludes.
+- 2: (b) exhibits a truth function that takes the same value on some row and on its flipped row, and concludes.
 
 Fatal errors (0 for the step): in (b), checking the flipped-row property on a few formulas instead of proving it for all; in (a), an implication case justified by the hypothesis being true rather than by the conclusion.
 :::
@@ -744,7 +760,7 @@ The T-rows are T T T, T F T, T F F, and F T T. The DNF \( (p \wedge \neg q) \vee
 
 **Marking scheme.** (10 points)
 
-- 2: eliminates \( \to \) correctly, with \( \neg(p \to q) \equiv p \wedge \neg q \) and its reason.
+- 2: the route carried out correctly: \( \to \) eliminated, with \( \neg(p \to q) \equiv p \wedge \neg q \) and its reason, or the T-rows and F-rows read off a correct table.
 - 3: a correct DNF.
 - 3: a correct CNF, by distribution carried out in full or by one clause per F-row.
 - 2: the check against the table, covering at least the four F-rows (or the four T-rows).
@@ -755,21 +771,21 @@ Fatal errors (0 for the step): \( \neg(p \to q) \) rewritten as \( \neg p \to \n
 ::: {#exr-normal-forms-c5}
 [C4: From connectives to sets]
 
-Let \( U \) be a collection, and \( A \), \( B \), \( C \) collections of members of \( U \), in the everyday sense; \( U \setminus A \) is the collection of members of \( U \) not in \( A \). For a member \( x \) of \( U \), write \( a \), \( b \), \( c \) for the statements \( x \in A \), \( x \in B \), \( x \in C \).
+Let \( U \) be a collection, and \( A \), \( B \), \( E \) collections of members of \( U \), in the everyday sense; \( U \setminus A \) is the collection of members of \( U \) not in \( A \). For a member \( x \) of \( U \), write \( a \), \( b \), \( e \) for the statements \( x \in A \), \( x \in B \), \( x \in E \).
 
 ::: {.enumerate options="label=(\alph*)"}
 1. Write "\( x \in U \setminus (A \cap B) \)" and "\( x \in (U \setminus A) \cup (U \setminus B) \)" as formulas in \( a \), \( b \), and deduce from a standard equivalence that the two collections have the same members.
-2. Show in the same way that \( A \cap (B \cup C) \) and \( (A \cap B) \cup (A \cap C) \) have the same members.
-3. Show that \( (a \to b) \to ((a \wedge c) \to (b \wedge c)) \) is a tautology, and deduce: if every member of \( A \) is in \( B \), then every member of \( A \cap C \) is in \( B \cap C \).
+2. Show in the same way that \( A \cap (B \cup E) \) and \( (A \cap B) \cup (A \cap E) \) have the same members.
+3. Show that \( (a \to b) \to ((a \wedge e) \to (b \wedge e)) \) is a tautology, and deduce: if every member of \( A \) is in \( B \), then every member of \( A \cap E \) is in \( B \cap E \).
 :::
 :::
 
 ::: {.solution}
 *(a)* The formulas are \( \neg(a \wedge b) \) and \( \neg a \vee \neg b \). They are equivalent by @prp-standard-equivalences (b). Each member \( x \) of \( U \) gives a valuation of \( a \) and \( b \), by whether it lies in \( A \) and in \( B \), and under that valuation the two formulas have the same value. So \( x \) is in one collection exactly when it is in the other.
 
-*(b)* The formulas are \( a \wedge (b \vee c) \) and \( (a \wedge b) \vee (a \wedge c) \), equivalent by @prp-standard-equivalences (g); conclude as in (a).
+*(b)* The formulas are \( a \wedge (b \vee e) \) and \( (a \wedge b) \vee (a \wedge e) \), equivalent by @prp-standard-equivalences (g); conclude as in (a).
 
-*(c)* Work backwards from F. Falsity needs \( a \to b \) true and \( (a \wedge c) \to (b \wedge c) \) false, so \( a \) and \( c \) true and \( b \wedge c \) false. Then \( b \) is true, by \( a \to b \), so \( b \wedge c \) is true: no row makes the formula false, and it is a tautology. For each \( x \), its memberships give a valuation making the formula true: so if "\( x \in A \) implies \( x \in B \)" holds, then "\( x \in A \cap C \) implies \( x \in B \cap C \)" holds. If every member of \( A \) is in \( B \), the first holds for every \( x \), hence so does the second.
+*(c)* Work backwards from F. Falsity needs \( a \to b \) true and \( (a \wedge e) \to (b \wedge e) \) false, so \( a \) and \( e \) true and \( b \wedge e \) false. Then \( b \) is true, by \( a \to b \), so \( b \wedge e \) is true: no row makes the formula false, and it is a tautology. For each \( x \), its memberships give a valuation making the formula true: so if "\( x \in A \) implies \( x \in B \)" holds, then "\( x \in A \cap E \) implies \( x \in B \cap E \)" holds. If every member of \( A \) is in \( B \), the first holds for every \( x \), hence so does the second.
 
 **Marking scheme.** (8 points)
 
@@ -797,7 +813,7 @@ For a formula \( \varphi \) whose atoms are among \( p_1, \dots, p_n \), let \( 
 
 *(b)* By (V4), the rows of \( \varphi \vee \psi \) are those of \( \varphi \) together with those of \( \psi \). By (V3), the rows in both are the rows of \( \varphi \wedge \psi \). The sum \( \#\varphi + \#\psi \) counts those twice and every other row of \( \varphi \vee \psi \) once.
 
-*(c)* Two different rows differ at some \( p_i \); one minterm contains \( p_i \) and the other \( \neg p_i \), and no valuation makes both literals true. Each row makes its own minterm true (@eq-row-conjunct), so the disjunction of all \( 2^n \) is true in every row (@eq-many-term-values). The full DNF over \( p_1, \dots, p_n \) has one minterm for each row on them in which \( \varphi \) is true, and different rows give different minterms, so it has \( \#\varphi \) of them. (It is not always the DNF that the proof of @thm-dnf builds: that one is over the atoms of \( \varphi \) itself, so it has \( \#\varphi / 2^j \) minterms when \( j \) of the \( p_i \) do not occur in \( \varphi \); and for \( \#\varphi = 0 \) it is \( p_1 \wedge \neg p_1 \), a conjunctive clause that is no minterm. Hence the restriction to satisfiable \( \varphi \).)
+*(c)* Two different rows differ at some \( p_i \); one minterm contains \( p_i \) and the other \( \neg p_i \), and no valuation makes both literals true. Each row makes its own minterm true (@eq-row-conjunct), so the disjunction of all \( 2^n \) is true in every row (@eq-many-term-values). The full DNF over \( p_1, \dots, p_n \) has one minterm for each row on them in which \( \varphi \) is true, and different rows give different minterms, so it has \( \#\varphi \) of them. (It is not always the DNF that the proof of @thm-dnf builds. That proof uses only the atoms of \( \varphi \), so when \( \varphi \) has at least one atom and \( j \) of the \( p_i \) do not occur in \( \varphi \), it gives \( \#\varphi / 2^j \) minterms on the remaining atoms. When \( \varphi \) has no atoms it gives \( p \vee \neg p \) or \( p \wedge \neg p \). When \( \#\varphi = 0 \) it gives a contradiction \( q \wedge \neg q \) for some atom \( q \), which is a conjunctive clause but no minterm. Hence the restriction to satisfiable \( \varphi \).)
 
 **Marking scheme.** (8 points)
 

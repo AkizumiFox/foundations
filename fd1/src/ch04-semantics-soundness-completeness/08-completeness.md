@@ -10,7 +10,7 @@ Recall the two relations from Section 4.5. \( \Gamma \vdash \psi \) says that **
 \]
 Its converse is not automatic. The rules are a list that people wrote down, and a list can leave something out. Suppose, as a thought experiment, that we struck \( \rulename{RAA} \) (@def-rule-raa) from the list. Every derivation that remains is still a derivation, so soundness still holds. But the tautology \( p \vee \neg p \) would then have no derivation (this is the optional @thm-raa-independent of Section 4.7). So a sound list of rules can be too short. The question is whether **our** list is long enough.
 
-Here is a sequent to keep in mind. The formula \( (p \to q) \vee (q \to p) \) is a tautology: if \( q \) is true then \( p \to q \) is true, and if \( q \) is false then \( q \to p \) is true. Chapter 3 found a derivation of it (@exr-finding-derivations-c2), but only after reaching for \( \rulename{LEM} \), and nothing in Chapter 3 promised that a derivation would be there to find. We want a theorem that promises it in advance, for every tautology and every valid sequent.
+Here is a sequent to keep in mind. The formula \( (p \to q) \vee (q \to p) \) is a tautology: if \( q \) is true then \( p \to q \) is true, and if \( q \) is false then \( q \to p \) is true. Chapter 3 found a derivation of it (@exr-finding-derivations-c2), but only after reaching for \( \rulename{LEM} \), and nothing in Chapter 3 proved that a derivation would be there to find. We want a theorem that promises it in advance, for every tautology and every valid sequent.
 
 We are going to prove:
 
@@ -255,7 +255,7 @@ p_1^{v}, \dots, p_n^{v} \vdash \varphi^{v} .
 In words: in each row of the truth table of \( \varphi \), the value of \( \varphi \) can be derived from the values of its atoms, where "value T" is written as the formula and "value F" as its negation.
 
 ::: {.idea}
-Climb the parse tree. At an atom, \( \varphi^{v} \) is one of the premises. At a connective, the induction hypothesis gives the signed parts \( \alpha^{v} \), \( \beta^{v} \), and @lem-connective-rows has a sequent from exactly those signed parts to the signed whole. So structural induction (@thm-structural-induction), with @lem-weakening-cut (c) to chain, does the whole job. The only care is to pick, for each pair of values, the row whose premises are the signs we actually have.
+Climb the parse tree. At an atom, \( \varphi^{v} \) is one of the premises. At a connective, the induction hypothesis gives the signed parts \( \alpha^{v} \), \( \beta^{v} \), and @lem-connective-rows has a sequent from (some of) those signed parts to the signed whole. So structural induction (@thm-structural-induction), with @lem-weakening-cut (c) to chain, does the whole job. The only care is to pick, for each pair of values, the row whose premises are the signs we actually have.
 :::
 
 ::: {.proof}
@@ -562,7 +562,7 @@ Before Chapter 1, "\( \psi \) follows from \( \Gamma \)" had only an informal me
 :::
 
 ::: {.second-reading title="Infinitely many premises"}
-We defined \( \Gamma \vdash \psi \) only for a list, that is, for finitely many premises. One may allow an infinite collection \( \Gamma \) of premises and say \( \Gamma \vdash \psi \) when \( \psi \) is derivable from finitely many members of \( \Gamma \) (a derivation has finitely many lines, so it can only use finitely many). The equivalence with \( \Gamma \models \psi \) still holds for infinite \( \Gamma \); this is the compactness theorem of propositional logic. The optional Section 4.10 proves it; nothing in the core depends on it. Our proof does not reach it: Step 1 needs finitely many atoms.
+We defined \( \Gamma \vdash \psi \) only for a list, that is, for finitely many premises. One may allow an infinite collection \( \Gamma \) of premises and say \( \Gamma \vdash \psi \) when \( \psi \) is derivable from finitely many members of \( \Gamma \) (a derivation has finitely many lines, so it can only use finitely many). The equivalence with \( \Gamma \models \psi \) still holds for infinite \( \Gamma \) (completeness for infinitely many premises); together with the finiteness of derivations it gives the compactness theorem of propositional logic. The optional Section 4.10 proves both; nothing in the core depends on them. Our proof does not reach infinite \( \Gamma \): Step 1 needs finitely many atoms.
 :::
 
 ## Two columns that agree
@@ -643,7 +643,7 @@ $\begin{nd}
 \end{center}
 ```
 
-The check: the premise is true only in the row \( p = \mathrm{T} \), \( q = \mathrm{F} \), since an implication is false only there, and \( p \wedge \neg q \) is true in that row. Written out with the rules of Chapter 2, the step takes twelve lines (fold below). It is a step a written proof passes over ("an implication fails only with a true hypothesis and a false conclusion"), so the convention allows it.
+The check: the premise is true only in the row \( p = \mathrm{T} \), \( q = \mathrm{F} \), since an implication is false only there, and \( p \wedge \neg q \) is true in that row. Written out with the rules of Chapter 2, the derivation takes twelve lines (fold below). It is a step a written proof passes over ("an implication fails only with a true hypothesis and a false conclusion"), so the convention allows it.
 :::
 
 ::: {.second-reading title="The step written out"}
@@ -1014,6 +1014,13 @@ $\begin{nd}
 (b) The primitive one. The TAUT line hides the only idea of the argument, modus tollens through the conjunction, which is exactly what the convention forbids.
 
 (c) 8 \( p \to q \), TAUT 7. The two formulas are equivalent (each is false exactly at \( p = \mathrm{T} \), \( q = \mathrm{F} \)), and the step is a rearrangement a written proof makes without comment.
+
+**Marking scheme.** (10 points)
+
+- 3: (a) the TAUT derivation, with the row check.
+- 2: (a) the primitive derivation.
+- 3: (b) the primitive one, because the TAUT line hides the argument's only idea.
+- 2: (c) the TAUT line, with why the convention allows it.
 :::
 
 ::: {#exr-completeness-b5}
@@ -1048,6 +1055,12 @@ $\begin{nd}
 (b) Inconsistent. A search closes: \( p \leftrightarrow q \) gives \( p, q \) or \( \neg p, \neg q \); under the first, \( \neg p \vee \neg q \) closes both ways; under the second, \( p \vee q \) closes both ways. So the list is unsatisfiable (@prp-search-decides), hence inconsistent, by @thm-completeness ("Consistent and satisfiable coincide").
 
 (c) Consistent. The row with \( p \), \( q \), \( r \) all false makes all three members true (false hypotheses), so the list is satisfiable, hence consistent (Section 4.7, by @thm-soundness).
+
+**Marking scheme.** (10 points)
+
+- 3: (a) the verdict (1) and the derivation of \( \bot \) (2).
+- 4: (b) the verdict (1) and the closed search with the results that make it a proof (3).
+- 3: (c) the verdict (1) and the row with the theorem it rests on (2).
 :::
 
 ### C. Going deeper
@@ -1122,8 +1135,8 @@ For (b): let \( S(j) \) say "for every valuation \( v \), \( \Gamma, p_1^{v}, \d
 
 **Marking scheme.** (10 points)
 
-- 3: (a) pastes both derivations into the two boxes of a \( \rulename{\vee E} \) on \( p \vee \neg p \), with the premise \( p \) (or \( \neg p \)) redirected to the box's assumption, and says why every citation is still available.
-- 1: (a) cites \( \rulename{LEM} \) (@prp-excluded-middle) as a derived rule.
+- 3: (a) builds one derivation from the two given ones with premises in \( \Delta \) (for instance by pasting them into the two boxes of a \( \rulename{\vee E} \) on \( p \vee \neg p \), or by an \( \rulename{RAA} \) box on \( \neg\psi \)), with each premise \( p \) or \( \neg p \) replaced by an available line, and says why every citation is still available.
+- 1: (a) names the classical step (\( \rulename{LEM} \), @prp-excluded-middle, or \( \rulename{RAA} \)).
 - 3: (b) sets up an induction on the number of atoms removed (or downward on \( j \)) with a statement quantified over **every** valuation, and names the induction principle.
 - 2: (b) in the step, applies the hypothesis to **both** valuations that differ at \( p_j \), and notes that they agree with \( v \) on the other atoms.
 - 1: (b) concludes \( \Gamma \vdash \psi \) from \( S(0) \).
@@ -1219,7 +1232,7 @@ Strike \( \rulename{\vee I} \) from the primitive rules.
 :::
 
 ::: {.solution}
-(a) \( (\vee 1) \) and \( (\vee 2) \) are \( \rulename{\vee I} \) itself; \( (\wedge 2) \) and \( (\wedge 3) \) are derived by \( \rulename{\vee I} \) and then @prp-de-morgan (c). And @lem-atom-splitting uses @prp-excluded-middle, whose derivation in Section 2.5 uses \( \rulename{\vee I} \) twice.
+(a) \( (\vee 1) \) and \( (\vee 2) \) are \( \rulename{\vee I} \) itself; \( (\wedge 2) \) and \( (\wedge 3) \) are derived by \( \rulename{\vee I} \) and then @prp-de-morgan (c). And @lem-atom-splitting uses @prp-excluded-middle, whose derivation in Section 2.5 uses \( \rulename{\vee I} \) twice; that is Step 3 of the proof, where @lem-atom-splitting removes the signed atoms.
 
 (b) Only the cases \( \rulename{\vee I} \) and \( \rulename{\vee E} \) of the proof of @thm-soundness use the clause for \( \vee \), and \( \rulename{\vee I} \) is gone. \( \rulename{\vee E} \): if a valuation makes \( \Gamma_k \) true, it makes \( \varphi \vee \psi \) true, hence, in the new reading, both \( \varphi \) and \( \psi \); by the first box it makes \( \chi \) true. Every other case is unchanged.
 
@@ -1237,10 +1250,10 @@ Fatal errors (0 for the step): in (c), using the ordinary tables.
 ::: {#exr-completeness-c5}
 [C5: Challenge: From a closed tree to a derivation]
 
-Let a search tree (Section 4.6) for \( \Gamma, \neg\psi \) have every branch closed. For a node \( X \), let \( \Delta_X \) be the list of formulas on the path from the root down to \( X \), \( X \) included.
+Let a search tree (Section 4.6) for \( \Gamma, \neg\psi \) have every branch closed. For a node \( X \), let \( \Pi_X \) be the list of formulas on the path from the root down to \( X \), \( X \) included.
 
 ::: {.enumerate options="label=(\alph*)"}
-1. Prove, by induction on the number of nodes below \( X \), that if every branch through \( X \) is closed, then \( \Delta_X \vdash \bot \). Treat a closed leaf and each rule of the table of search rules, naming the derivable sequents you use.
+1. Prove, by induction on the number of nodes below \( X \), that if every branch through \( X \) is closed, then \( \Pi_X \vdash \bot \). Treat a closed leaf and each rule of the table of search rules, naming the derivable sequents you use.
 2. Deduce \( \Gamma \vdash \psi \).
 3. Explain why (a), (b) and @prp-search-decides give a second proof of @thm-completeness, and where it uses \( \rulename{RAA} \) or \( \rulename{LEM} \).
 :::
@@ -1255,11 +1268,11 @@ A one-way rule: derive the added formulas from the used one, then chain (@lem-we
 ::: {.solution}
 [Hint 2]
 
-For \( \varphi \to \psi \), split as \( \neg\varphi \) or \( \psi \): from \( \Delta, \neg\varphi \vdash \bot \) get \( \Delta \vdash \varphi \) by \( \rulename{RAA} \).
+For \( \varphi \to \psi \), split as \( \neg\varphi \) or \( \psi \): from \( \Pi_X, \neg\varphi \vdash \bot \) get \( \Pi_X \vdash \varphi \) by \( \rulename{RAA} \).
 :::
 
 ::: {.solution}
-(a) Write \( \Delta \) for \( \Delta_X \).
+(a) We use @thm-strong-induction on the number of nodes below \( X \). Write \( \Delta \) for \( \Pi_X \).
 
 *A closed leaf.* \( \Delta \) holds \( \varphi \) and \( \neg\varphi \) (one \( \rulename{\neg E} \) line) or \( \bot \) (the premise itself): \( \Delta \vdash \bot \).
 
@@ -1273,13 +1286,13 @@ For \( \varphi \to \psi \), split as \( \neg\varphi \) or \( \psi \): from \( \D
 
 (c) If \( \Gamma \models \psi \), a search tree for \( \Gamma, \neg\psi \) can be continued until every branch is closed or finished (@prp-search-decides (a)), and it has no open finished branch, since by (c) of that proposition its row would refute \( \Gamma \models \psi \). So every branch is closed, and (a), (b) give \( \Gamma \vdash \psi \). \( \rulename{RAA} \) enters in the cases \( \neg(\varphi \to \psi) \), \( \neg\neg\varphi \), \( \neg(\varphi \wedge \psi) \), \( \varphi \to \psi \), \( \neg(\varphi \leftrightarrow \psi) \) and at the root; \( \rulename{LEM} \) in the two biconditional cases. The derivation follows the tree, so it is often far shorter than the \( 2^n \) rows of the first proof.
 
-**Marking scheme.** (12 points)
+**Marking scheme.** (10 points)
 
 - 1: the closed leaf.
-- 3: the four one-way cases.
+- 2: the four one-way cases.
 - 5: the five two-way cases (1 each).
 - 1: (b).
-- 2: (c), with the classical steps located.
+- 1: (c), with the classical steps located.
 
 Fatal errors (0 for the step): treating a split by assuming one side only.
 :::
@@ -1379,10 +1392,10 @@ thm-completeness (proof): a finite list of formulas contains only finitely many 
 thm-completeness (proof): integer arithmetic 1 <= n - m <= n from 0 <= m <= n - 1 | school arithmetic
 thm-completeness (proof): a valuation may be changed at one atom and stays a valuation; at least one valuation exists | def-valuation (cited)
 cor-derivable-iff-valid (proof): 2^n rows for n atoms | def-truth-table, lem-coincidence (F1.3 §04)
-exm-completeness-run (example): the search derivation of F1.2 has 13 lines | exr-finding-derivations-c2 solution (cited)
+exm-completeness-run (example): the search derivation of F1.7 §01 has 13 lines | exr-finding-derivations-c2 solution (cited)
 exr-completeness-b3 (solution): no derivation of the sequent avoids RAA | stated without proof and marked so; nothing depends on it
 exr-completeness-b3 (solution): pasting the two cited rows gives 22 lines in primitive rules | inline count: the non-premise lines of the (<->2) and (<->1) derivations, 7 and 5, replace lines 4 and 9, so 12 + 6 + 4 = 22
-cor-derivable-iff-valid (claim): the fold after it, compactness for infinite premise sets | proved in the optional F1.3 §10 (thm-compactness); nothing in the core depends on it
+cor-derivable-iff-valid (claim): the fold after it, completeness for infinite premise sets and compactness | proved in the optional F1.3 §10 (thm-completeness-infinite, thm-compactness); nothing in the core depends on it
 lem-weakening-cut (claim): the recall: weakening, cut, chaining | lem-weakening-cut (F1.2 §03), cited
 lem-connective-rows (claim): the tagged tables: each tag is a sequent of the lemma, and where two fit, the one the proof of lem-truth-table-line uses | inline; checked by verify/ch04/lem-connective-rows.py
 exm-completeness-run (example): the case-split tree's line ranges and rules match the printed 20-line derivation | verify/ch04/exm-completeness-run.py
@@ -1400,9 +1413,10 @@ exr-completeness-b5 (solution): (b) unsatisfiable by a closed search, hence inco
 exr-completeness-c4 (solution): the or-as-and reading: every primitive rule except or-I is sound; the two countervaluations | verify/ch04/exr-completeness-c4.py (exhaustive)
 exr-completeness-c4 (solution): prp-excluded-middle is derived with or-I; De Morgan (c) gives the (and 2), (and 3) rows | F1.2 §05 (prp-excluded-middle, prp-de-morgan), cited
 exr-completeness-c5 (solution): each case's sequents are derivable | verify/ch04/exr-completeness-c5.py (one tools/check_fitch.py derivation per case, schematic letters)
+exr-completeness-c5 (solution): strong induction on the number of nodes below X | thm-strong-induction (F1.3 §02), cited
 exr-completeness-c5 (solution): the search rules; a finished tree with no open branch has every branch closed | prp-search-decides, the table of search rules (F1.3 §06), cited
 exr-normal-forms-c3 (solution): moved here with its label from the normal-forms section; content unchanged | verify/ch04/exr-normal-forms-c3.py
 exr-normal-forms-r1 (solution): moved here with its label from the normal-forms section; content unchanged | verify/ch04/exr-normal-forms-r1.py
-exr-normal-forms-r2 (solution): an integer is odd exactly when it is not even | school fact about integers (F2.2, promised; STATUS row from F1.1: every integer is even or odd, and not both)
+exr-normal-forms-r2 (solution): an integer is odd exactly when it is not even | school fact; F2.2 (paid: thm-division-algorithm), STATUS row 97 (every integer is even or odd, and not both)
 exr-normal-forms-r3 (solution): moved here with its label from the normal-forms section; content unchanged | verify/ch04/exr-normal-forms-r3.py
 -->
