@@ -1125,7 +1125,7 @@ Section 4.10 (optional) adds statements to a consistent list one at a time, in e
 
 **Marking scheme.** (10 points)
 
-- 4: (a) derives \( \Gamma \vdash \neg\varphi \) by part (a) of the proposition, and either \( \Gamma \vdash \varphi \) by part (b) or uses \( \Gamma, \neg\varphi \vdash \bot \) directly.
+- 4: (a) obtains \( \Gamma \vdash \neg\varphi \) by part (a) of the proposition or \( \Gamma \vdash \varphi \) by part (b), and combines it with the other inconsistency, directly (by Cut, @lem-weakening-cut (b)) or by the other part.
 - 3: (a) concludes by @prp-inconsistent-derives-everything, by @lem-weakening-cut (c) with one \( \rulename{\neg E} \), or by Cut (@lem-weakening-cut (b)).
 - 2: (b) as the contrapositive.
 - 1: (c) "no".

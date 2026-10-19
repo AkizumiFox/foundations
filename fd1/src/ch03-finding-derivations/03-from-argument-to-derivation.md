@@ -1051,9 +1051,8 @@ Ana and Ben talk about a real number.
 
 ::: {.enumerate options="label=(\alph*)"}
 1. What is the conclusion, and who states it?
-2. Choose letters for the statements about \( x \) that the dialogue uses, and write the premise, the facts used, and the sequent.
-3. Derive it.
-4. Is Ana's last answer enough?
+2. Turn the dialogue into a derivation.
+3. Is Ana's last answer enough?
 :::
 :::
 
@@ -1071,7 +1070,7 @@ The conclusion \( (\neg N \wedge \neg Z) \wedge \neg B \) reads as "\( x \ge 0 \
 N \to \neg L, \ Z \to \neg L, \ B \to \neg L, \ L \vdash (\neg N \wedge \neg Z) \wedge \neg B.
 \]
 
-(c) \( \rulename{MT} \) (@prp-modus-tollens) needs the negation of each fact's conclusion, and that is \( \neg\neg L \), given by \( \rulename{\neg\neg I} \) (@prp-double-negation (a)); hence line 5.
+For the derivation: \( \rulename{MT} \) (@prp-modus-tollens) needs the negation of each fact's conclusion, and that is \( \neg\neg L \), given by \( \rulename{\neg\neg I} \) (@prp-double-negation (a)); hence line 5.
 
 ```{=latex}
 \begin{center}
@@ -1090,7 +1089,7 @@ $\begin{nd}
 \end{center}
 ```
 
-(d) Yes: \( x \ge 1 \) gives \( x > 0 \), and multiplying \( x \ge 1 \) by the positive \( x \) gives \( x^2 \ge x \).
+(c) Yes: \( x \ge 1 \) gives \( x > 0 \), and multiplying \( x \ge 1 \) by the positive \( x \) gives \( x^2 \ge x \).
 
 The method is the extraction of this section (@exm-extract-argument), run on a dialogue; the rules are Chapter 2's. The look-alike, \( \neg N \) by \( \rulename{{\to}E} \) from line 1 and \( L \), fails: \( \rulename{{\to}E} \) needs the hypothesis \( N \) on a line, and \( \rulename{MT} \) needs \( \neg\neg L \), not \( L \), which is why line 5 is written.
 :::

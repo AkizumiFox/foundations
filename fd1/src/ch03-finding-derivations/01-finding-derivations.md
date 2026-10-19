@@ -1496,7 +1496,7 @@ The classical step is line 13, the \( \rulename{RAA} \) that closes the box of l
 
 - 2: step 2 postpones the disjunctive goal, with the reason (neither side is in hand).
 - 2: steps 3 and 4 find that the premise can be used only by producing \( \neg P \wedge Q \) for a clash.
-- 2: step 5 is chosen: \( \rulename{RAA} \) on the whole goal, or \( \rulename{LEM} \) on \( P \). (\( \rulename{LEM} \) on \( Q \) also works; our route with it then uses a second classical step, an \( \rulename{RAA} \) for \( P \) in the case \( Q \); award it.) A classical derived rule used at step 3, such as DM (d) on the premise followed by \( \rulename{\neg\neg E} \), is also accepted; its line is the classical line.
+- 2: step 5 is chosen: \( \rulename{RAA} \) on the whole goal, or \( \rulename{LEM} \) on \( P \). (\( \rulename{LEM} \) on \( Q \) also works; our route with it then uses a second classical step, an \( \rulename{RAA} \) for \( P \) in the case \( Q \); award it.) A classical derived rule used at step 3, such as DM (d) on the premise followed by \( \rulename{\neg\neg E} \), is also accepted; its DM (d) and \( \rulename{\neg\neg E} \) lines are the classical lines, and naming either earns the point.
 - 3: the inner boxes and their clashes are correct, and every citation is available.
 - 1: the classical line is named.
 

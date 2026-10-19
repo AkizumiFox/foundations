@@ -1423,3 +1423,6 @@ All four findings of S2 round 2 were applied; none is disputed.
 - 3.3 B3 item 3 uses *modus ponendo tollens* from the card (6 lines); the RAA route (7 lines) is the "without the library" alternative.
 - 3.3 R4 (b) no longer gives the letters (STYLE §11.5: less scaffolding); the solution offers them "for instance".
 - 3.3 C2 (c): ¬C and C → ⊥ are interderivable (Section 2.2), not identical.
+- 3.3 R1/R2 (S7r): R1 uses Chapter 1's ∨E and R2 Chapter 2's rules, the reverse of STYLE §11.5's order. Kept deliberately: both items came over from old 2.6 (where Chapter 1 was the previous chapter); for Chapter 3, Chapters 1 and 2 are both "previous", and the labels exr-finding-derivations-r1/-r2 are cited by STATUS and the ledger, so the order is not swapped.
+- 3.3 R4 (S7r): (b) and (c) merged into one unscaffolded task, "Turn the dialogue into a derivation" (STYLE §11.5 R4: no hint of method); the old (d) is now (c).
+- 3.1 C3 (S7r): on the DM (d) + ¬¬E route both lines are classical; naming either earns the point. 3.2 C2 (S7r): the 4-point bullet accepts either part of the proposition, combined with the other inconsistency by Cut or by the other part.
