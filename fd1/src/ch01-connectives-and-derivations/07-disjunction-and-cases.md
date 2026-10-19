@@ -939,7 +939,7 @@ The table of moves as an order in which to try them:
   \node[fc test, below=of t1] (t2) {is the goal\\a $\wedge$ or a $\to$?};
   \node[fc test, below=of t2] (t3) {is the goal a $\vee$\\with a side in hand?};
   \node[fc test, below=of t3] (t4) {does $\wedge$E or ${\to}$E\\give a new line?};
-  \node[fc test, below=of t4] (t5) {is a $\vee$\\available?};
+  \node[fc test, below=of t4] (t5) {is an unsplit $\vee$\\available?};
   \node[fc start, below=of t5] (e5) {stop and try to break the claim};
   \node[fc start, anchor=west] (e1) at ($(t1)+(3.1,0)$) {done: cite it,\\or copy it by R};
   \node[fc step, anchor=west] (b2) at ($(t2)+(3.1,0)$) {build it: $\wedge$I (two subgoals)\\or ${\to}$I (a box)};
@@ -960,7 +960,7 @@ The table of moves as an order in which to try them:
 \end{center}
 ```
 
-The chart uses only this chapter's rules, and following it never writes an illegal line. It is a guide, not a rule: after asking whether the goal is already in hand, it reads the table's goal column and then its premise column, each from the top, except that it leaves out two moves. When an available implication ends in the goal but its hypothesis is on no line, make the hypothesis the current goal and start the chart again; items 3, 8 and 10 of @exr-disjunction-and-cases-b7 need this. When the goal is a disjunction and neither side is in hand, make one side the current goal; item 14 of @exr-disjunction-and-cases-b7 does this in each case. So when the chart stops, try these moves. A claim the chart cannot finish may still be derivable: stopping is no evidence that the claim breaks.
+The chart uses only this chapter's rules, and following it never writes an illegal line. It is a guide, not a rule: after asking whether the goal is already in hand, it reads the table's goal column and then its premise column, each from the top, except that it leaves out two moves. When an available implication ends in the goal but its hypothesis is on no line, make the hypothesis the current goal and start the chart again; items 3, 8 and 10 of @exr-disjunction-and-cases-b7 need this. When the goal is a disjunction and neither side is in hand, make one side the current goal; item 14 of @exr-disjunction-and-cases-b7 does this in each case. ("Unsplit" at the test for \( \vee \) means not already split by a case box you are inside; without that word the chart would split \( P \vee Q \) again in each case of item 14 and never stop.) So when the chart stops, try these moves. A claim the chart cannot finish may still be derivable: stopping is no evidence that the claim breaks.
 
 ### Named moves
 
