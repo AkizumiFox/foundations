@@ -1,6 +1,6 @@
 # Terms, Formulas, Free Variables and Substitution
 
-Section 5.1 read quantified sentences by eye. That is enough to understand them, and not enough to reason with them: every quantifier rule of Sections 5.3 to 5.5, and the rule for using an equation in Section 5.7, has the form "put the term \( t \) in for the variable \( x \) in \( \varphi \)", written \( \varphi[t/x] \), and a rule has to say exactly which symbols change. This section makes the language of Section 5.1 exact, in the way Section 4.1 made the propositional language exact, says exactly what \( \varphi[t/x] \) does, and names the one way it goes wrong, **capture**.
+Section 5.1 read quantified sentences by eye. That is enough to understand them, and not enough to reason with them: every quantifier rule of Sections 5.3 to 5.6, and the rule for using an equation in Section 5.7, has the form "put the term \( t \) in for the variable \( x \) in \( \varphi \)", written \( \varphi[t/x] \), and a rule has to say exactly which symbols change. This section makes the language of Section 5.1 exact, in the way Section 4.1 made the propositional language exact, says exactly what \( \varphi[t/x] \) does, and names the one way it goes wrong, **capture**.
 
 ## Which letters are holes
 
@@ -407,7 +407,7 @@ Four special cases, each immediate from the definition, cover most uses.
 
 In our examples: \( y \) is **not** free for \( x \) in \( \exists y\, (y \ne x) \), because the free occurrence of \( x \) lies in the scope of \( \exists y \) and \( y \) is a variable of the term \( y \). Likewise \( y + 1 \) is not free for \( x \) in \( \exists y\, (y > x) \). And \( y + 1 \) **is** free for \( x \) in \( \forall z\, (x < z) \): the only quantifier above the free occurrence of \( x \) is on \( z \), which is not a variable of \( y + 1 \).
 
-"Free for" is the precise condition under which \( \varphi[t/x] \) says about \( t \) what \( \varphi \) says about \( x \). The rules \( \forall\text{E} \) (Section 5.3), \( \exists\text{I} \) (Section 5.5) and \( =\text{E} \) (Section 5.7) carry it as a side condition.
+"Free for" is the precise condition under which \( \varphi[t/x] \) says about \( t \) what \( \varphi \) says about \( x \). The rules \( \rulename{\forall E} \) (Section 5.3), \( \rulename{\exists I} \) (Section 5.5) and \( \rulename{{=}E} \) (Section 5.7) carry it as a side condition.
 
 ::: {.second-reading title="A second capture, the recursive description of 'free for', and why it asks no more than it needs"}
 Here is a second example, with a compound term. Over \( \nR \), \( \exists y\, (y > x) \) is true for every \( x \): there is a number larger than \( x \). Put \( y + 1 \) in for \( x \):

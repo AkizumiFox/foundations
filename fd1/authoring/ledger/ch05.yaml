@@ -426,7 +426,7 @@ items:
   kind: exr
   file: 01-predicates-and-quantifiers.md
   line: 502
-  hash: c2b23c4425cb
+  hash: b80dcea6fb36
   verdicts:
   - stage: S5a
     verdict: minor
@@ -1032,7 +1032,7 @@ items:
   kind: exr
   file: 02-terms-formulas-substitution.md
   line: 551
-  hash: fbdb6afa12ec
+  hash: 5fa8f1ebf45b
   verdicts:
   - stage: S5a
     verdict: correct
@@ -1148,7 +1148,7 @@ items:
   kind: exr
   file: 02-terms-formulas-substitution.md
   line: 626
-  hash: 1b68e07393fb
+  hash: 5d7cd581378d
   verdicts:
   - stage: S5a
     verdict: correct
@@ -1830,7 +1830,7 @@ items:
   kind: exr
   file: 03-universal-elimination.md
   line: 558
-  hash: 029edb0eec85
+  hash: 79fd266a1174
   verdicts:
   - stage: S5a
     verdict: minor
@@ -1877,6 +1877,15 @@ items:
     date: '2026-10-25'
     model: claude-opus-5-5
     evidence: pairing instruction added; it fits the derive-or-break format
+  - stage: S8
+    verdict: correct
+    by: coordinator
+    hash: 79fd266a1174
+    date: '2026-10-25'
+    model: claude-opus-5-5
+    evidence: S7 leftover resolved by the coordinator per the re-referee's fix (stem narrowed to the paid
+      pairings / b0 rename / ledger citation wording / Idea reordered / front-lock constant c); re-read
+      after the edit
 - key: exr-universal-elimination-c1
   kind: exr
   file: 03-universal-elimination.md
@@ -1916,7 +1925,7 @@ items:
   kind: exr
   file: 03-universal-elimination.md
   line: 719
-  hash: eced78d9be73
+  hash: d67d4e514e7e
   verdicts:
   - stage: S5a
     verdict: gap
@@ -2192,7 +2201,7 @@ items:
   kind: check
   file: 04-universal-introduction.md
   line: 437
-  hash: dda78ef7be22
+  hash: bb30f6c66f7c
   verdicts:
   - stage: S5a
     verdict: correct
@@ -2593,7 +2602,7 @@ items:
   kind: exr
   file: 04-universal-introduction.md
   line: 1059
-  hash: 2203ee36bb95
+  hash: c52bc74afce3
   verdicts:
   - stage: S5a
     verdict: correct
@@ -2640,7 +2649,7 @@ items:
   kind: exr
   file: 04-universal-introduction.md
   line: 1095
-  hash: 7ad9d8a54924
+  hash: 17eecc7266be
   verdicts:
   - stage: S5a
     verdict: correct
@@ -2690,7 +2699,7 @@ items:
 - key: exr-universal-introduction-c1
   kind: exr
   file: 04-universal-introduction.md
-  line: 1205
+  line: 1211
   hash: bdc08d2671f5
   verdicts:
   - stage: S5a
@@ -2738,7 +2747,7 @@ items:
 - key: exr-universal-introduction-c2
   kind: exr
   file: 04-universal-introduction.md
-  line: 1261
+  line: 1267
   hash: 03b17b38bcd4
   verdicts:
   - stage: S5a
@@ -2990,7 +2999,7 @@ items:
   kind: check
   file: 05-existential-introduction.md
   line: 151
-  hash: 870718087fcc
+  hash: 142bd5e5849b
   verdicts:
   - stage: S5a
     verdict: minor
@@ -3349,6 +3358,15 @@ items:
     evidence: The solution text is unchanged and correct, but the new ledger line 763 marks def-rules-universal
       as '(cited)' although the B4 solution has no @def-rules-universal (line 634 states the side condition
       without a citation).
+  - stage: S8
+    verdict: correct
+    by: coordinator
+    hash: dc89f3e9e728
+    date: '2026-10-25'
+    model: claude-opus-5-5
+    evidence: S7 leftover resolved by the coordinator per the re-referee's fix (stem narrowed to the paid
+      pairings / b0 rename / ledger citation wording / Idea reordered / front-lock constant c); re-read
+      after the edit
 - key: exr-existential-introduction-c1
   kind: exr
   file: 05-existential-introduction.md
@@ -3428,7 +3446,7 @@ items:
   kind: exr
   file: 05-existential-introduction.md
   line: 716
-  hash: 9ffa0825601e
+  hash: 92b0b8cfd749
   verdicts:
   - stage: S5a
     verdict: minor
@@ -3925,11 +3943,20 @@ items:
     date: '2026-10-25'
     model: claude-opus-5-5
     evidence: the added motivation sentence is correct
+  - stage: S8
+    verdict: correct
+    by: coordinator
+    hash: f70a1df05e93
+    date: '2026-10-25'
+    model: claude-opus-5-5
+    evidence: S7 leftover resolved by the coordinator per the re-referee's fix (stem narrowed to the paid
+      pairings / b0 rename / ledger citation wording / Idea reordered / front-lock constant c); re-read
+      after the edit
 - key: proof:thm-barber
   kind: proof
   file: 06-existential-elimination.md
   line: 937
-  hash: bf4f0ad1a555
+  hash: ba9754b52c3a
   verdicts:
   - stage: S5a
     verdict: minor
@@ -4021,7 +4048,7 @@ items:
   kind: exr
   file: 06-existential-elimination.md
   line: 1103
-  hash: 2410cff3f6d6
+  hash: 3ef841c5bdf5
   verdicts:
   - stage: S5a
     verdict: minor
@@ -4104,7 +4131,7 @@ items:
   kind: exr
   file: 06-existential-elimination.md
   line: 1129
-  hash: 345dea509d59
+  hash: 88e166e31761
   verdicts:
   - stage: S5a
     verdict: correct
@@ -4248,7 +4275,7 @@ items:
   kind: exr
   file: 06-existential-elimination.md
   line: 1312
-  hash: 57105e68c3b2
+  hash: ea3e2716c414
   verdicts:
   - stage: S5a
     verdict: correct
@@ -4747,7 +4774,7 @@ items:
   kind: check
   file: 07-equality-and-uniqueness.md
   line: 325
-  hash: 690722207e3e
+  hash: 6713794ff196
   verdicts:
   - stage: S5a
     verdict: correct
@@ -4874,7 +4901,7 @@ items:
   kind: exr
   file: 07-equality-and-uniqueness.md
   line: 462
-  hash: dbda514a7d19
+  hash: 3ee6105cad7d
   verdicts:
   - stage: S5a
     verdict: correct
@@ -4990,7 +5017,7 @@ items:
   kind: exr
   file: 07-equality-and-uniqueness.md
   line: 545
-  hash: 7c36746b3658
+  hash: 5487cea4d917
   verdicts:
   - stage: S5a
     verdict: correct
@@ -5038,7 +5065,7 @@ items:
   kind: exr
   file: 07-equality-and-uniqueness.md
   line: 586
-  hash: 0bece3e6e5f7
+  hash: aab9e7fb478c
   verdicts:
   - stage: S5a
     verdict: correct
@@ -5087,7 +5114,7 @@ items:
   kind: exr
   file: 07-equality-and-uniqueness.md
   line: 692
-  hash: 202e5b874df0
+  hash: 6c04290b127e
   verdicts:
   - stage: S5a
     verdict: correct
@@ -5295,7 +5322,7 @@ items:
   kind: def
   file: 08-counting-and-descriptions.md
   line: 187
-  hash: 1aa18540f18e
+  hash: a2755da7f21a
   verdicts:
   - stage: S5a
     verdict: minor
@@ -5484,7 +5511,7 @@ items:
   kind: proof
   file: 08-counting-and-descriptions.md
   line: 296
-  hash: ac1ce8124d43
+  hash: 3c0d0f2a639b
   verdicts:
   - stage: S5a
     verdict: minor
@@ -5557,7 +5584,7 @@ items:
   kind: exr
   file: 08-counting-and-descriptions.md
   line: 339
-  hash: bc73829dba6b
+  hash: a528506be878
   verdicts:
   - stage: S5a
     verdict: correct
@@ -5852,7 +5879,7 @@ items:
   kind: exr
   file: 08-counting-and-descriptions.md
   line: 653
-  hash: 690c5de7cc4b
+  hash: e18d554d272c
   verdicts:
   - stage: S5a
     verdict: correct
@@ -5896,6 +5923,15 @@ items:
     model: claude-opus-5-5
     evidence: 'the a→a0, b→b0 rename missed one: 08:668 step 5 reads ''"at most one Q" at z_0 and \( b
       \) gives z_0 = b_0'''
+  - stage: S8
+    verdict: correct
+    by: coordinator
+    hash: e18d554d272c
+    date: '2026-10-25'
+    model: claude-opus-5-5
+    evidence: S7 leftover resolved by the coordinator per the re-referee's fix (stem narrowed to the paid
+      pairings / b0 rename / ledger citation wording / Idea reordered / front-lock constant c); re-read
+      after the edit
 - key: exr-counting-and-descriptions-r1
   kind: exr
   file: 08-counting-and-descriptions.md
@@ -5931,7 +5967,7 @@ items:
   kind: exr
   file: 08-counting-and-descriptions.md
   line: 699
-  hash: 6c151c3fb85a
+  hash: 1809be57c083
   verdicts:
   - stage: S5a
     verdict: correct
@@ -6056,27 +6092,3 @@ items:
     date: '2026-10-25'
     model: claude-opus-5-5
     evidence: ledger comment updates match the text (a2 facts, three substitution facts)
-- key: proof:exm-computing-substitutions
-  kind: proof
-  file: 02-terms-formulas-substitution.md
-  line: 309
-  hash: 6c732b25c374
-  verdicts:
-  - stage: S5a
-    verdict: correct
-    by: refereeA
-    hash: 6c732b25c374
-    date: '2026-10-10'
-    model: claude-opus-5-5
-    evidence: 305-315 is the proof of the claim at 297 (x not free implies φ[t/x]=φ). The term lemma is
-      proved first. Every case uses the recursive description of 'free'. In the quantifier case y=x is
-      handled by the clause and y≠x by the IH. The hypothesis is used. No later material is used.
-  - stage: S5b
-    verdict: correct
-    by: refereeB
-    hash: 6c732b25c374
-    date: '2026-10-10'
-    model: claude-opus-5-5
-    evidence: '305-315: the term lemma, then structural induction. The atomic, connective and quantifier
-      cases are complete (y = x is handled by the stopping clause), and the steps are ledgered as inline.'
-  removed: true

@@ -760,7 +760,7 @@ exr-existential-introduction-a1 (solution): b: over N with R as <, f(x) = x + 1,
 exr-existential-introduction-a2 (solution): (d): x_0 + 2 > x_0 + 1 and 7 > x_0 + 1 (any t > x_0 + 1); (g): over Z every integer equals itself and no integer equals every integer; (i): the counter-reading on {a, b} | school arithmetic; informal truth, F1.4 §01; verify/ch05/exr-existential-introduction-b4.py (the finite reading of (i))
 exr-existential-introduction-b2 (solution): the forall-I side condition | def-rules-universal (cited)
 exr-existential-introduction-b3 (solution): 2 * 2 = 2 + 2 and (-1) * (-1) = -1 + 2 | arith line (school arithmetic)
-exr-existential-introduction-b4 (solution): (e) the forall-I side condition; (d) a constant is free for x | def-rules-universal (cited); def-free-for (F1.4 §02)
+exr-existential-introduction-b4 (solution): (e) the forall-I side condition; (d) a constant is free for x | def-rules-universal (recalled in prose, not cited by @ref); def-free-for (F1.4 §02)
 exr-existential-introduction-b4 (solution): the counter-readings (b), (c), (f) on {0, 1}: each premise true, each conclusion false; (g) uses the non-empty domain | finite readings, F1.4 §01, checked by verify/ch05/exr-existential-introduction-b4.py; convention of F1.4 §01 for (g)
 exr-existential-introduction-c1 (solution): over N, x <= x, and y + 1 > y | school arithmetic
 exr-existential-introduction-c2 (solution): the list of rules of F1.1-F1.2 and F1.4 §03-F1.4 §04 with the main symbol of each cited line | def-rules-conjunction, def-rules-implication, def-rules-disjunction, def-rules-negation, def-rules-contradiction, def-rules-biconditional, def-rule-raa, def-derivation (R), def-rule-universal-elimination, def-rules-universal (recalled in prose, not cited by @ref)

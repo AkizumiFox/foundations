@@ -904,7 +904,7 @@ For every two-place predicate symbol \( R \),
 *Try it first (five minutes): the goal is a negation.*
 
 ::: {.idea}
-An attempt that instantiates the universal at some other term \( t \) gets \( R(t, y_0) \leftrightarrow \neg R(t, t) \), and nothing clashes with it; the one term that makes both sides speak of the same thing is \( y_0 \) itself. The goal is a negation: open a \( \rulename{\neg I} \) box on the existential, aimed at \( \bot \). Its assumption is an existential: name the witness early, \( y_0 \), aiming the \( \rulename{\exists E} \) box at the same \( \bot \). Inside, instantiate the universal at the one term that makes both sides speak of the same thing, \( y_0 \) itself. The instance says that \( R(y_0, y_0) \) holds exactly when it does not, and a statement equivalent to its own negation is contradictory (@lem-not-iff-own-negation).
+The goal is a negation: open a \( \rulename{\neg I} \) box on the existential, aimed at \( \bot \). Its assumption is an existential: name the witness early, \( y_0 \), aiming the \( \rulename{\exists E} \) box at the same \( \bot \). Inside, an attempt that instantiates the universal at some other term \( t \) gets \( R(t, y_0) \leftrightarrow \neg R(t, t) \), and nothing clashes with it; the one term that makes both sides speak of the same thing is \( y_0 \) itself. The instance says that \( R(y_0, y_0) \) holds exactly when it does not, and a statement equivalent to its own negation is contradictory (@lem-not-iff-own-negation).
 
 ```{=latex}
 % schema (partial derivations: the gap is unnumbered, lines carry their final numbers)

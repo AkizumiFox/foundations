@@ -558,7 +558,7 @@ $\begin{nd}
 ::: {#exr-universal-elimination-b5}
 [B5: Derive or break]
 
-For each claim, either derive it with the rules of Chapters 1–2 and \( \rulename{\forall E} \), or break it with a counter-reading: a domain, a meaning for each symbol, and a value for each constant, that make its counterexample set true. Then pair each break with the derivable claim it imitates, and say what separates them.
+For each claim, either derive it with the rules of Chapters 1–2 and \( \rulename{\forall E} \), or break it with a counter-reading: a domain, a meaning for each symbol, and a value for each constant, that make its counterexample set true. Then pair each of the breaks (e) and (g) with the derivable claim in the list that it imitates, and say what separates them.
 
 ::: {.enumerate options="label=(\alph*)"}
 1. \( \forall x\, (P(x) \vee Q(x)), \ \neg P(c) \vdash Q(c) \).
