@@ -321,14 +321,14 @@ The word **"any"** can mean "every" or "some", and only the sentence around it d
 
 ## Keys and locks
 
-A domain with no numbers in it makes the shapes easy to see: the objects of a building, with \( \mathrm{Key}(x) \): "\( x \) is a key", \( \mathrm{Lock}(x) \): "\( x \) is a lock", and \( \mathrm{Opens}(x, y) \): "\( x \) opens \( y \)". The table reads in either direction; \( f \) is a constant, "the front lock".
+A domain with no numbers in it makes the shapes easy to see: the objects of a building, with \( \mathrm{Key}(x) \): "\( x \) is a key", \( \mathrm{Lock}(x) \): "\( x \) is a lock", and \( \mathrm{Opens}(x, y) \): "\( x \) opens \( y \)". The table reads in either direction; \( c \) is a constant, "the front lock".
 
 | English | Formula | Note |
 |---|---|---|
-| every key opens lock \( f \) | \( \forall x\, (\mathrm{Key}(x) \to \mathrm{Opens}(x, f)) \) | \( \to \) under \( \forall \) |
-| some key opens lock \( f \) | \( \exists x\, (\mathrm{Key}(x) \wedge \mathrm{Opens}(x, f)) \) | \( \wedge \) under \( \exists \) |
-| no key opens lock \( f \) | \( \forall x\, (\mathrm{Key}(x) \to \neg\mathrm{Opens}(x, f)) \), or \( \neg\exists x\, (\mathrm{Key}(x) \wedge \mathrm{Opens}(x, f)) \) | two equally good forms |
-| only keys open lock \( f \) | \( \forall x\, (\mathrm{Opens}(x, f) \to \mathrm{Key}(x)) \) | "only" turns the arrow round |
+| every key opens lock \( c \) | \( \forall x\, (\mathrm{Key}(x) \to \mathrm{Opens}(x, c)) \) | \( \to \) under \( \forall \) |
+| some key opens lock \( c \) | \( \exists x\, (\mathrm{Key}(x) \wedge \mathrm{Opens}(x, c)) \) | \( \wedge \) under \( \exists \) |
+| no key opens lock \( c \) | \( \forall x\, (\mathrm{Key}(x) \to \neg\mathrm{Opens}(x, c)) \), or \( \neg\exists x\, (\mathrm{Key}(x) \wedge \mathrm{Opens}(x, c)) \) | two equally good forms |
+| only keys open lock \( c \) | \( \forall x\, (\mathrm{Opens}(x, c) \to \mathrm{Key}(x)) \) | "only" turns the arrow round |
 | every lock has a key that opens it | \( \forall y\, (\mathrm{Lock}(y) \to \exists x\, (\mathrm{Key}(x) \wedge \mathrm{Opens}(x, y))) \) | every … some |
 | some key opens every lock | \( \exists x\, (\mathrm{Key}(x) \wedge \forall y\, (\mathrm{Lock}(y) \to \mathrm{Opens}(x, y))) \) | some … every |
 
@@ -358,7 +358,7 @@ Translate "no key opens every lock". Is it true in the building of Figure K?
 :::
 
 ::: {.second-reading title="Two slips with an implication inside \"there is\""}
-"Some key opens lock \( f \)" is **not** \( \exists x\, (\mathrm{Key}(x) \to \mathrm{Opens}(x, f)) \): that formula is true in every building, since the lock \( f \) is not a key, so \( f \) itself makes the hypothesis \( \mathrm{Key}(f) \) false. It is the warning after @def-bounded-quantifier again.
+"Some key opens lock \( c \)" is **not** \( \exists x\, (\mathrm{Key}(x) \to \mathrm{Opens}(x, c)) \): that formula is true in every building, since the lock \( c \) is not a key, so \( c \) itself makes the hypothesis \( \mathrm{Key}(c) \) false. It is the warning after @def-bounded-quantifier again.
 
 **An implication inside \( \exists \).** This is the warning after @def-bounded-quantifier once more, and it comes up in analysis: "there is an \( N \) such that, if \( n \ge N \), then …" is not the shape of "for every \( \varepsilon > 0 \) there is \( N \in \nN \) such that for every \( n \ge N \), …", where the implication \( n \ge N \to \dots \) sits under \( \forall n \in \nN \). The implication belongs under a \( \forall \).
 :::
@@ -507,7 +507,7 @@ Let the domain be \( D = \{0, 1, 2\} \), with \( \le \) and \( < \) as usual, an
 ::: {.enumerate options="label=(\alph*)"}
 1. Write \( \exists x\, \forall y\, (x \le y) \) without quantifiers, as a disjunction of conjunctions, and decide it.
 2. Write \( \neg\forall x\, (x < 2) \) without quantifiers, as a disjunction, using De Morgan's law, and say which disjunct is true.
-3. Let \( A \) be the set of elements of \( D \) greater than \( 2 \). Decide \( \forall x \in A\; (x > 5) \) and \( \exists x \in A\; (x > 5) \).
+3. Let \( A \) be the set of elements of \( D \) greater than \( 2 \). Decide \( \forall x \in A\; (x < 0) \) and \( \exists x \in A\; (x < 0) \).
 4. Give an example, or explain why there is none: a domain and a one-place predicate \( P \) for which \( \forall x\, P(x) \) is true and \( \exists x\, P(x) \) is false.
 :::
 :::

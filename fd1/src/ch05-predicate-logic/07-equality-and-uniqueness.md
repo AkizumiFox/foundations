@@ -233,7 +233,7 @@ The claim is one of the classical "axioms of equality", often taken as a startin
 :::
 
 ::: {.warning}
-**Words about knowledge are not formulas.** \( \rulename{{=}E} \) rewrites formulas of the language, and "it is obvious that …", "the pupil checked that …", "it is known that …" are not among its connectives. A pupil checked that \( 7 \cdot 13 = 91 \), and indeed \( 7 \cdot 13 = 91 \). Replacing \( 7 \cdot 13 \) by \( 91 \) inside the report gives "the pupil checked that \( 91 = 91 \)", a different claim about what the pupil did. Inside a formula every free occurrence of a term may be rewritten; inside words about what someone knows or checked, none may.
+**Words about knowledge are not formulas.** \( \rulename{{=}E} \) rewrites formulas of the language, and "it is obvious that …", "the pupil checked that …", "it is known that …" are not among its connectives. A pupil checked that \( 7 \cdot 13 = 91 \), and indeed \( 7 \cdot 13 = 91 \). Replacing \( 7 \cdot 13 \) by \( 91 \) inside the report gives "the pupil checked that \( 91 = 91 \)", a different claim about what the pupil did. Inside a formula every free occurrence of a term may be rewritten, subject to the side condition of @def-rules-equality; inside words about what someone knows or checked, none may.
 :::
 
 ### Equal sets have the same elements
@@ -327,7 +327,7 @@ Under the premise \( a = 2 \), the chain \( a + 1 = 2 + 1 = 3 \le 4 \) has three
 :::
 
 ::: {.solution}
-The first link is \( \rulename{{=}E} \): from \( a + 1 = a + 1 \) (\( \rulename{{=}I} \)) and \( a = 2 \), with \( \varphi = (a + 1 = z + 1) \), it writes \( a + 1 = 2 + 1 \). The links \( 2 + 1 = 3 \) and \( 3 \le 4 \) are facts of school arithmetic, written as "arith" lines; the last is about order, not equality.
+The first link is \( \rulename{{=}E} \): from \( a + 1 = a + 1 \) (\( \rulename{{=}I} \)) and \( a = 2 \), with \( \varphi = (a + 1 = z + 1) \), it writes \( a + 1 = 2 + 1 \). The links \( 2 + 1 = 3 \) and \( 3 \le 4 \) are facts of school arithmetic, written as "arith" lines, and each is then carried into the chain by one more \( \rulename{{=}E} \) (with \( \varphi = (a + 1 = z) \), then with \( \varphi = (z \le 4) \) and the equation turned round); the last link is about order, not equality.
 :::
 
 ## What equality sounds like in a proof
@@ -398,12 +398,12 @@ Chapter 1 began a table that pairs each rule with the sentence that performs it 
 ∧I `constructor`; ∧E `h.1`, `h.2`; →E `exact h hp`; →I `intro hp`; R `exact hp`; ∨I `left`, `right` (or `Or.inl hp`); ∨E `Or.elim h` (or `cases h`); ¬E `exact hn hp` (goal `False`); ⊥E `exfalso`; ¬I `intro hp` (goal `False`); ↔I `constructor`; ↔E `h.mp hp`, `h.mpr hq`; RAA `by_contra h`; ∀E `h t` (or `specialize h t`); ∀I `intro x`; ∃I `use t` (or `Exists.intro t h`); ∃E `obtain` (or `Exists.elim h`); =I `rfl`; =E `rw [h]`, chains `calc`. Nothing later depends on these.
 :::
 
-Of the derived rules of Chapter 2, \( \rulename{MT} \), \( \rulename{CP} \) and \( \rulename{DS} \) have their rows in Section 2.3, and \( \rulename{\neg\neg E} \) and \( \rulename{LEM} \) in Section 2.5; all the derived sequents are collected in Section 3.1. With the two equality rows, every rule of the calculus has its phrase.
+Of the derived rules of Chapter 2, \( \rulename{MT} \), \( \rulename{CP} \) and \( \rulename{DS} \) have their rows in Section 2.3, and \( \rulename{\neg\neg E} \) and \( \rulename{LEM} \) in Section 2.5; the derived sequents that searches use most are collected in Section 3.1. With the two equality rows, every rule of the calculus has its phrase.
 
 ::: {.warning}
 [Not allowed: \( \rulename{{=}E} \)]
 
-Each step breaks the clause of the reading of @def-rules-equality shown.
+Each step breaks the clause of the reading of @def-rules-equality, or the warning, shown.
 
 - "From \( c = f(b) \) and \( Q(f(b)) \), write \( Q(c) \)": the equation is read left to right and rewrites \( c \) into \( f(b) \); turn it round first, by (sym) (clause 2).
 - "From \( x = 0 \) and \( \forall x\, (x \ge x) \), write \( \forall x\, (0 \ge 0) \)": only free occurrences are replaced, and both \( x \)'s of \( x \ge x \) are bound (the warning "A bound variable is not a place to substitute").
@@ -497,7 +497,7 @@ Each part takes a line or two. The parts run from single steps, through a missin
 
 (h) No, clause 4: the \( y \) put in would be captured by \( \exists y \).
 
-(i) The first is legal: \( \varphi = \forall y\, (z \le y) \), and \( 0 \) is free for \( z \). The second is not: the \( y \) of \( \forall y\, (x_0 \le y) \) is bound, and \( \rulename{{=}E} \) replaces only free occurrences.
+(i) The first is legal: \( \varphi = \forall y\, (z \le y) \), and \( 0 \) is free for \( z \). The second is not: with \( \varphi = \forall y\, (x_0 \le z) \), the term \( y \) of the equation is not free for \( z \) in \( \varphi \) (clause 4); the \( y \) would be captured.
 
 (j) 2 \( f(a) = f(a) \), \( \rulename{{=}I} \); 3 \( f(b) = f(a) \), \( \rulename{{=}E} \) 1, 2, with \( \varphi = (f(z) = f(a)) \).
 
@@ -562,7 +562,7 @@ $\begin{nd}
 :::
 
 ::: {.solution}
-The move is *substitute equals, holes marked*, with an \( \rulename{{=}I} \) line to turn an equation round.
+The move is the search step "An equation" of this section: mark the holes, and turn the equation round with an \( \rulename{{=}I} \) line if it points the wrong way.
 
 ```{=latex}
 \begin{center}
@@ -586,7 +586,7 @@ Lines 4 and 5: \( \varphi = P(z) \). Line 6: \( \varphi = (a = z) \), so line 1 
 ::: {#exr-equality-and-uniqueness-b5}
 [B3: Derive or break]
 
-For each claim, derive it with the rules of this chapter, or break it with a counter-reading.
+For each claim, derive it with the rules of Chapters 1–2 and of this chapter, or break it with a counter-reading.
 
 ::: {.enumerate options="label=(\alph*)"}
 1. \( f(a) = b, \ a = c \vdash f(c) = b \).
@@ -740,13 +740,15 @@ Line 7 is \( \rulename{{=}E} \) with \( \varphi = (z = y_0) \): line 6 is \( \va
 
 (b) The premise says "there are two different objects"; the conclusion says "every object has one different from it". The converse derives: 2 \( \exists y\, (x \ne y) \), \( \rulename{\forall E} \) 1 (at \( x \)); 3 \( \exists x\, \exists y\, (x \ne y) \), \( \rulename{\exists I} \) 2 (witness \( x \)). Over a one-element domain both are false; over larger ones both are true.
 
-**Marking scheme.** (10 points) 2: both \( \rulename{\exists E} \) boxes opened first, with different names. 2: the flagged box inside them, and the goal postponed. 3: the split on \( u_0 = x_0 \), with the first case reaching \( u_0 \ne y_0 \) by \( \rulename{\neg I} \) and \( \rulename{{=}E} \), and the second giving the witness \( x_0 \) at once. 1: the classical line named, with the reason. 2: (b), the converse derived, with both readings. An \( \rulename{RAA} \) box on \( \neg\exists y\, (u_0 \ne y) \) in place of the \( \rulename{LEM} \) split earns full marks if correct, its \( \rulename{RAA} \) line then named as the classical one. Fatal errors (0 for the step): the flag \( u_0 \) chosen as \( x_0 \); an \( \rulename{\exists E} \) box closed on a line that mentions its witness.
+**Marking scheme.** (10 points) 2: two \( \rulename{\exists E} \) boxes with different names, each aimed at the goal it must reach. 2: a flagged box \( u_0 \) for the \( \forall \) (inside or outside the \( \rulename{\exists E} \) boxes), and the goal postponed. 3: the split on \( u_0 = x_0 \), with the first case reaching \( u_0 \ne y_0 \) by \( \rulename{\neg I} \) and \( \rulename{{=}E} \), and the second giving the witness \( x_0 \) at once. 1: the classical line named, with the reason. 2: (b), the converse derived, with both readings. An \( \rulename{RAA} \) box on \( \neg\exists y\, (u_0 \ne y) \) in place of the \( \rulename{LEM} \) split earns full marks if correct, its \( \rulename{RAA} \) line then named as the classical one. Fatal errors (0 for the step): the flag \( u_0 \) chosen as \( x_0 \); an \( \rulename{\exists E} \) box closed on a line that mentions its witness.
 :::
 
 <!-- dependency ledger
 def-rules-equality (claim): the eight readings of a + a = 2 * a: each of three occurrences marked or not | inline (2^3 = 8)
-def-rules-equality (claim): over Z with R read as < and P(x) as x < 1, a = 0, b = 5, the premises R(a, b), P(a) are true and P(b) is false | informal truth over a domain, F1.4 §01 (reading only; no derivability claim rests on it)
+def-rules-equality (claim): over Z with R read as < and P(x) as x < 1, a = 0, b = 5, the premises R(a, b), P(a) are true and P(b) is false | informal truth over a domain, F1.4 §01; non-derivability via the counter-reading convention of F1.4 §03 (#counter-readings), made exact in F1.6 §01-§02 (promised; STATUS)
 def-rules-equality (claim): over Z with a and y naming 0, "some integer is less than 0" is true and "some integer is less than itself" is false | informal truth over a domain, F1.4 §01 (reading only; no derivability claim rests on it)
+def-rules-equality (claim): warning, over Z with x naming 0, forall x (0 = x) is false | informal truth over a domain, F1.4 §01
+exr-equality-and-uniqueness-c3 (solution): both formulas false on a one-element domain, true on larger ones | informal truth over a domain, F1.4 §01
 def-rules-equality (claim): exists z (z < a) is the same sentence as exists y (y < a) up to renaming | F1.4 §02 (renaming bound variables)
 prp-equality-symmetric-transitive (proof): (x = s)[s/x] is s = s and (x = s)[t/x] is t = s for x not in s, t | def-substitution (cited)
 prp-equality-symmetric-transitive (proof): (s = x)[t/x] is s = t and (s = x)[u/x] is s = u for x not in s | def-substitution (cited)
@@ -755,13 +757,13 @@ prp-leibniz-law (proof): the 7-line derivation; the flagged-box range convention
 prp-leibniz-law (claim): remark: with the law as premise, two forall-E and two ->E do the work of =E for P(x) | def-rule-universal-elimination (cited)
 def-rules-equality (claim): warning, opacity: 7 * 13 = 91 | school arithmetic
 exm-extensionality-logical-half (solution): the 9-line derivation | def-rules-equality, def-rules-universal (cited); sets used informally, F2.1 (index, Where this goes)
-exm-extensionality-logical-half (claim): converse: two dots a, b, no membership: the hypothesis is true and a = b is false | finite counter-reading, checked by verify/ch05/exm-extensionality-logical-half.py
+exm-extensionality-logical-half (claim): converse: two dots a, b, no membership: the hypothesis is true and a = b is false | finite counter-reading, checked by verify/ch05/exm-extensionality-logical-half.py; non-derivability via the counter-reading convention of F1.4 §03 (#counter-readings), made exact in F1.6 §01-§02 (promised; STATUS)
 def-rules-equality (example): the chain a + b = 9: 2 * 3 + 3 = 9 | arith line (school arithmetic)
 def-rules-equality (example): mixed chains: b^2 >= 0, so adding b^2 does not decrease a number; the = link carries over by =E | school algebra; AN1.1 (index, Where this goes); def-rules-equality and prp-equality-symmetric-transitive (cited)
 def-rules-equality (claim): Quick check, mixed chain: 2 + 1 = 3, 3 <= 4 | school arithmetic
 prp-equality-symmetric-transitive (example): additive inverse: y + 0 = y, 0 + c = c, associativity and commutativity of + | school algebra (field axioms); AN1.1 (index, Where this goes)
 exm-equality-and-uniqueness-instances (claim): look-alike: the numeral 32 is one constant | F1.4 §02 (numerals such as 2 and 32 are constant symbols)
 exr-equality-and-uniqueness-a1 (solution): (2+1)(2+1) = 9 | school arithmetic
-exr-equality-and-uniqueness-b5 (solution): the counter-readings of (b), (e), (h) on {0, 1} | finite counter-readings, checked by verify/ch05/exr-equality-and-uniqueness-b5.py
+exr-equality-and-uniqueness-b5 (solution): the counter-readings of (b), (e), (h) on {0, 1} | finite counter-readings, checked by verify/ch05/exr-equality-and-uniqueness-b5.py; non-derivability via the counter-reading convention of F1.4 §03 (#counter-readings), made exact in F1.6 §01-§02 (promised; STATUS)
 exr-equality-and-uniqueness-c3 (solution): LEM is a derived rule whose derivation uses RAA | F1.2 §05 (prp-excluded-middle, cited by section)
 -->

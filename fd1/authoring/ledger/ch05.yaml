@@ -252,6 +252,13 @@ items:
     model: claude-opus-5-5
     evidence: 01:300-306. The swapped sentence fails at n=m. The ledger row is at 01:610. The 'which we
       do not use' claim holds, as for exm-reading (c).
+  - stage: S7r
+    verdict: correct
+    by: rereferee
+    hash: 3712b40f62e2
+    date: '2026-10-25'
+    model: claude-opus-5-5
+    evidence: f→c rename is consistent through the key/lock table; sidecar a2 updated and passes
 - key: check:01-predicates-and-quantifiers:5
   kind: check
   file: 01-predicates-and-quantifiers.md
@@ -275,6 +282,13 @@ items:
     evidence: 01:352-358. Both translations are equivalent and correct. In Figure K, k1 does not open
       ℓ2 and k2 does not open ℓ1, so the sentence is true. The world-W/keys ledger row at 01:598 covers
       'its Quick check'.
+  - stage: S7r
+    verdict: correct
+    by: rereferee
+    hash: c4635b5b99e0
+    date: '2026-10-25'
+    model: claude-opus-5-5
+    evidence: '361: Key(c) false because the lock c is not a key; the formula is true in every building'
 - key: exr-predicates-and-quantifiers-a1
   kind: exr
   file: 01-predicates-and-quantifiers.md
@@ -444,6 +458,22 @@ items:
       because the domain is non-empty. The section has worked examples (long and/or of W; the empty set).
       The scheme grades the book''s answer and my alternative (writing the De Morgan form directly) the
       same, 10/10.'
+  - stage: S7r
+    verdict: correct
+    by: rereferee
+    hash: b80dcea6fb36
+    date: '2026-10-25'
+    model: claude-opus-5-5
+    evidence: (c) is ∀x∈A (x<0) and ∃x∈A (x<0), with A = ∅ because no element of {0,1,2} exceeds 2. The
+      universal is vacuously true and the existential false, matching 01:527 and the marking at 01:537.
+      Both sentences stay inside the stem's vocabulary (<, the constant 0). The sidecar b3 passes.
+  - stage: S7r
+    verdict: correct
+    by: rereferee
+    hash: b80dcea6fb36
+    date: '2026-10-25'
+    model: claude-opus-5-5
+    evidence: A is empty on D={0,1,2}, so ∀x∈A(x<0) is true and ∃ is false; verify b3.py passes
 - key: exr-predicates-and-quantifiers-c1
   kind: exr
   file: 01-predicates-and-quantifiers.md
@@ -565,6 +595,13 @@ items:
       at line 34. The two-place minus and halving \cdot/2 are listed with their arities, and line 35 says
       the one-place and two-place minus are different symbols written alike. > and >= are added as predicate
       symbols
+  - stage: S7r
+    verdict: correct
+    by: rereferee
+    hash: ad9f92851ddd
+    date: '2026-10-25'
+    model: claude-opus-5-5
+    evidence: Rule 1 aside now notes the sets-as-objects example of 5.7
 - key: def-first-order-formula
   kind: def
   file: 02-terms-formulas-substitution.md
@@ -895,6 +932,13 @@ items:
     model: claude-opus-5-5
     evidence: 343-347 matches the blueprint. The four special cases (353-356) and the recursive description
       (362-366) are correct and argued.
+  - stage: S7r
+    verdict: correct
+    by: rereferee
+    hash: 54a2a2275e4b
+    date: '2026-10-25'
+    model: claude-opus-5-5
+    evidence: '410: ∀E, ∃I and =E carry the side condition, which matches the rules'
 - key: check:02-terms-formulas-substitution:4
   kind: check
   file: 02-terms-formulas-substitution.md
@@ -1016,6 +1060,21 @@ items:
     model: claude-opus-5-5
     evidence: 02:551-600. All 12 computations agree with mine. (h) gives y+y=y+y, then x+x=x+x, not the
       swap y+x=x+y. (i) gives P(f(c),c). (j) is not free for. (k) gives ∃x(x>z+1). (l) gives ∃z(z>x).
+  - stage: S7r
+    verdict: correct
+    by: rereferee
+    hash: 5fa8f1ebf45b
+    date: '2026-10-25'
+    model: claude-opus-5-5
+    evidence: '02:560 (d): the added clause makes a a variable, so the repaired formula ∀ε>0 ∃δ>0 ∀x(...)
+      at the (d) solution has FV = {a}. f is a function symbol. The other parts are unchanged.'
+  - stage: S7r
+    verdict: correct
+    by: rereferee
+    hash: 5fa8f1ebf45b
+    date: '2026-10-25'
+    model: claude-opus-5-5
+    evidence: says a is a variable, so the repair has a as its only free variable
 - key: exr-terms-formulas-substitution-b1
   kind: exr
   file: 02-terms-formulas-substitution.md
@@ -1140,6 +1199,21 @@ items:
     model: claude-opus-5-5
     evidence: 02:626-660. The Var/FV clauses match the recursive description. The FV computations give
       {x,y} and {z}, as mine do. The aside over R (y=z-x) is correct.
+  - stage: S7r
+    verdict: correct
+    by: rereferee
+    hash: 5d7cd581378d
+    date: '2026-10-25'
+    model: claude-opus-5-5
+    evidence: '02:629: the parenthetical explains ∪, ∖ and ∅ before the clauses use them. Nothing else
+      changed.'
+  - stage: S7r
+    verdict: correct
+    by: rereferee
+    hash: 5d7cd581378d
+    date: '2026-10-25'
+    model: claude-opus-5-5
+    evidence: set-notation gloss added
 - key: exr-terms-formulas-substitution-b3
   kind: exr
   file: 02-terms-formulas-substitution.md
@@ -1255,6 +1329,23 @@ items:
       in ∀yφ' by the claim of the text. That case is already handled in the problem's 'Given for (a)'
       preamble, and the book's quantifier-case solution does not mention it. A solution that follows the
       Given (the book's own included) does not visibly earn the point.
+  - stage: S7r
+    verdict: correct
+    by: rereferee
+    hash: 00b7c3222c6b
+    date: '2026-10-25'
+    model: claude-opus-5-5
+    evidence: '02:728 Hint 2: the first line FV((∀yφ)[t/x]) = FV(φ[t/x]) ∖ {y} is right by the substitution
+      clause for y ≠ x and the FV clause. 02:734: the not-free case uses the claim of the text, consistent
+      with the Given at 02:704. The computation recomputed: ((FV φ ∖ {x}) ∪ Var t) ∖ {y} = (FV φ ∖ {x,y})
+      ∪ Var t when y ∉ Var t, and this equals E(∀yφ). The marking scheme lines are all now earned.'
+  - stage: S7r
+    verdict: correct
+    by: rereferee
+    hash: 00b7c3222c6b
+    date: '2026-10-25'
+    model: claude-opus-5-5
+    evidence: hint and the quantifier case with x not free agree with the claim of the text
 - key: exr-terms-formulas-substitution-c2
   kind: exr
   file: 02-terms-formulas-substitution.md
@@ -1335,6 +1426,23 @@ items:
       4 (''forbids exactly the substitutions in which a variable of t would be captured'') is the definition
       of @def-free-for. The new clause 5 matches the scope rule. The S5b finding is resolved: line 55
       now says o'
+  - stage: S7r
+    verdict: correct
+    by: rereferee
+    hash: 2deaa300686b
+    date: '2026-10-25'
+    model: claude-opus-5-5
+    evidence: The reworded clause 1 (03:47) is accurate. ∧E does take ∀x P(x) out of ∀x P(x) ∧ Q(c). A
+      ∀ in the hypothesis of an implication cannot be reached by ∀E, which matches the 'buried quantifier'
+      error at ~241 and the check:3 answer (clause 1).
+  - stage: S7r
+    verdict: correct
+    by: rereferee
+    hash: 2deaa300686b
+    date: '2026-10-25'
+    model: claude-opus-5-5
+    evidence: 'clause 1 gloss is right: ∧E extracts a ∀ conjunct, and a ∀ in an implication''s hypothesis
+      cannot be instantiated'
 - key: check:03-universal-elimination:1
   kind: check
   file: 03-universal-elimination.md
@@ -1471,6 +1579,13 @@ items:
     evidence: '03:271-277: in figure C3, capture breaks clause 4, the buried quantifier breaks clause
       1 (main symbol →), and some-occurrences-only breaks clause 3. This agrees with the clause list at
       03:47-51 and the figure caption 03:269.'
+  - stage: S7r
+    verdict: correct
+    by: rereferee
+    hash: a8ddd962cfaf
+    date: '2026-10-25'
+    model: claude-opus-5-5
+    evidence: a counter-reading now includes values for free variables
 - key: exm-universal-elimination-instances
   kind: exm
   file: 03-universal-elimination.md
@@ -1744,6 +1859,24 @@ items:
     evidence: 03-universal-elimination.md:654 The scheme gives 2 of 10 points for 'the closing pairing,
       (e) with (f) and (g) with (h)', which the problem never asks for. A complete, correct answer to
       all eight claims scores 8/10.
+  - stage: S7r
+    verdict: minor
+    by: rereferee
+    hash: a9ad1fa6f3cd
+    date: '2026-10-25'
+    model: claude-opus-5-5
+    evidence: 'I rechecked all eight verdicts and they are correct: (a) derive; (b) break on {0}; (c)
+      derive; (d) break, R(1,0) false; (e) break, f swaps 0 and 1; (f) derive in 10 lines, citations correct;
+      (g) break with ''differs''; (h) derive. What remains is a mismatch. The new stem sentence asks for
+      a pairing for every break, but the solution and the scheme cover only (e)/(f) and (g)/(h): (d) is
+      not paired wit'
+  - stage: S7r
+    verdict: correct
+    by: rereferee
+    hash: a9ad1fa6f3cd
+    date: '2026-10-25'
+    model: claude-opus-5-5
+    evidence: pairing instruction added; it fits the derive-or-break format
 - key: exr-universal-elimination-c1
   kind: exr
   file: 03-universal-elimination.md
@@ -1863,6 +1996,22 @@ items:
     evidence: '03:719-750. (a): all five clauses are checked, including that x is free for x. (b): over
       Z, ''even'' at x=2 makes P(x) true and ∀x P(x) false. The scheme gives my alternative proof full
       marks.'
+  - stage: S7r
+    verdict: correct
+    by: rereferee
+    hash: d67d4e514e7e
+    date: '2026-10-25'
+    model: claude-opus-5-5
+    evidence: The new fatal-error line (03:747) is about (b) and matches the scheme's requirement that
+      P(x) be true and x have a value. The stray x_0 is gone. (a) checks the five clauses, and (b) has
+      x naming 2 with P read as 'even', which is correct.
+  - stage: S7r
+    verdict: correct
+    by: rereferee
+    hash: d67d4e514e7e
+    date: '2026-10-25'
+    model: claude-opus-5-5
+    evidence: 'the fatal error matches (b): the reading must make P(x) true with x valued'
 - key: def-rules-universal
   kind: def
   file: 04-universal-introduction.md
@@ -1911,6 +2060,14 @@ items:
       clause'' and the last line, which matches the definition''s three bullets at :48-50. :113, :136
       and :153 say first, second and third clause, and :155 now says ''the requirement on the last line'',
       so the two numbe'
+  - stage: S7r
+    verdict: correct
+    by: rereferee
+    hash: 78fe35443065
+    date: '2026-10-25'
+    model: claude-opus-5-5
+    evidence: '116/153/155: the ε box wording and the in-practice habit (rename the bound letter, last
+      line φ[x0/x]) are accurate'
 - key: check:04-universal-introduction:1
   kind: check
   file: 04-universal-introduction.md
@@ -2053,6 +2210,22 @@ items:
     model: claude-opus-5-5
     evidence: 04-universal-introduction.md:442 The closing sentence 'Nested flagged boxes need two names.'
       is a general claim that the definition does not support and the section itself contradicts.
+  - stage: S7r
+    verdict: correct
+    by: rereferee
+    hash: bb30f6c66f7c
+    date: '2026-10-25'
+    model: claude-opus-5-5
+    evidence: If both boxes are flagged x_0, the inner box ends in R(x_0,x_0) and must close with ∀x R(x,x_0),
+      which contains x_0, so clause 3 fails. 'Here the nested flagged boxes need two names' is now limited
+      to (c) and agrees with the fold at l.243.
+  - stage: S7r
+    verdict: correct
+    by: rereferee
+    hash: bb30f6c66f7c
+    date: '2026-10-25'
+    model: claude-opus-5-5
+    evidence: wording only
 - key: prp-forall-and
   kind: prp
   file: 04-universal-introduction.md
@@ -2448,6 +2621,21 @@ items:
     evidence: '04:1059-1093. (a): the derivation is right, and flag x breaks clause 3. (b): both flag
       cases are covered; the counter-reading over Z (even, x=2) is right. The scheme grades the book''s
       answer and my alternative the same, 10/10.'
+  - stage: S7r
+    verdict: correct
+    by: rereferee
+    hash: c52bc74afce3
+    date: '2026-10-25'
+    model: claude-opus-5-5
+    evidence: The title now points to exr-universal-elimination-c2 (03:719), which (a) and (b) continue.
+      The problem text and solution are unchanged.
+  - stage: S7r
+    verdict: correct
+    by: rereferee
+    hash: c52bc74afce3
+    date: '2026-10-25'
+    model: claude-opus-5-5
+    evidence: the title points to 5.3 C2, which is the P(x) to ∀xP(x) step
 - key: exr-universal-introduction-b5
   kind: exr
   file: 04-universal-introduction.md
@@ -2483,6 +2671,22 @@ items:
     evidence: 04-universal-introduction.md:1197 The marking scheme gives 2 points each to (a), (c) and
       (e) for 'the side condition checked once at the last ∀I'. The book's own solutions to (a), (c) and
       (e) check no side condition, so the official solution scores at most about 7/10 under its own scheme.
+  - stage: S7r
+    verdict: correct
+    by: rereferee
+    hash: 17eecc7266be
+    date: '2026-10-25'
+    model: claude-opus-5-5
+    evidence: The problem now asks for the converse and repair remark that the scheme scores. The side-condition
+      sentences added after (a) line 8, (c) lines 14-15 and (e) line 13 match the derivations' boxes,
+      premises and conclusions. The counter-readings in (b), (d) and (f) are unchanged and correct.
+  - stage: S7r
+    verdict: correct
+    by: rereferee
+    hash: 17eecc7266be
+    date: '2026-10-25'
+    model: claude-opus-5-5
+    evidence: added side-condition checks at lines 8, 14/15 and 13 are consistent with the derivations
 - key: exr-universal-introduction-c1
   kind: exr
   file: 04-universal-introduction.md
@@ -2609,6 +2813,23 @@ items:
       is right (1, 0, 1). g(x)=x(x-1)(x-2) gives 0, 0, 0 at 0, 1, 2 and -6 at -1 (my script), so it defeats
       the illegal step. Each hint names a tool and does not execute the key idea. The scheme gives my
       alternative proof full marks.
+  - stage: S7r
+    verdict: correct
+    by: rereferee
+    hash: 03b17b38bcd4
+    date: '2026-10-25'
+    model: claude-opus-5-5
+    evidence: '(b) now locates the error in the student''s justification (the conclusion rests on lines
+      (2)–(4), and no rule takes those instances at constants to the instance at the flag), which is consistent
+      with the arith convention. (d) points to this section''s ''A first flagged box'' derivation (ll.95-103).
+      (a) and (c) are unchanged: g(−1) = −6.'
+  - stage: S7r
+    verdict: correct
+    by: rereferee
+    hash: 03b17b38bcd4
+    date: '2026-10-25'
+    model: claude-opus-5-5
+    evidence: the reference to 'A first flagged box' and the reworded (b) are accurate
 - key: def-rule-existential-introduction
   kind: def
   file: 05-existential-introduction.md
@@ -2787,6 +3008,21 @@ items:
     date: '2026-10-25'
     model: claude-opus-5-5
     evidence: '05:151-157: forall-E at 2 gives P(2)->Q(2+1), ->E gives Q(2+1), witness 2+1; ledger 750'
+  - stage: S7r
+    verdict: correct
+    by: rereferee
+    hash: 142bd5e5849b
+    date: '2026-10-25'
+    model: claude-opus-5-5
+    evidence: Witness 2+1 found by forall-E at 2 and ->E, then exists-I; the new parenthetical correctly
+      sends the rewrite to 3 to =E of Section 5.7 (def-rules-equality in 07-equality-and-uniqueness.md).
+  - stage: S7r
+    verdict: correct
+    by: rereferee
+    hash: 142bd5e5849b
+    date: '2026-10-25'
+    model: claude-opus-5-5
+    evidence: 'writing the witness as 3 needs 2+1=3 and =E: correct'
 - key: exm-existential-introduction-derivations
   kind: exm
   file: 05-existential-introduction.md
@@ -3104,6 +3340,15 @@ items:
     evidence: 05:569-663. Verdicts derive a, d, e, g and break b, c, f, as I found. My script confirms
       the readings for (b), (c), (f) (premises true, conclusion false). In (d) both ∃I instances are right
       (φ[d/y], then φ[c/x]). The marking scheme adds to 6+2+2=10. Worked examples are cited.
+  - stage: S7r
+    verdict: minor
+    by: rereferee
+    hash: dc89f3e9e728
+    date: '2026-10-25'
+    model: claude-opus-5-5
+    evidence: The solution text is unchanged and correct, but the new ledger line 763 marks def-rules-universal
+      as '(cited)' although the B4 solution has no @def-rules-universal (line 634 states the side condition
+      without a citation).
 - key: exr-existential-introduction-c1
   kind: exr
   file: 05-existential-introduction.md
@@ -3254,6 +3499,21 @@ items:
       is right. The solution itself says the argument is informal, and it points to a counter-model plus
       soundness (7.2, with the proof in optional 7.3), which matches layout-final for ch07 (7.2 counter-models,
       7.3 soundness). The reading over ℤ (P = even, c = 3) is correct. Scheme adds to 10.
+  - stage: S7r
+    verdict: correct
+    by: rereferee
+    hash: 92b0b8cfd749
+    date: '2026-10-25'
+    model: claude-opus-5-5
+    evidence: The case list at line 725 now covers all primitive rules, including ¬E (whose conclusion
+      is only ⊥); the stall argument and the informal/soundness caveat are unchanged and correct.
+  - stage: S7r
+    verdict: correct
+    by: rereferee
+    hash: 92b0b8cfd749
+    date: '2026-10-25'
+    model: claude-opus-5-5
+    evidence: ¬E added to the list of rules that cannot write P(c); new ledger line for b4
 - key: def-rules-existential
   kind: def
   file: 06-existential-elimination.md
@@ -3422,6 +3682,14 @@ items:
     evidence: 06-existential-elimination.md:1623 A ledger line names F2.2 as a promised source, but STATUS's
       promise table has no F1.4 §06 entry for that promise. The same section also sources the same parity
       facts inconsistently.
+  - stage: S7r
+    verdict: correct
+    by: rereferee
+    hash: bcfa3853c9fa
+    date: '2026-10-25'
+    model: claude-opus-5-5
+    evidence: The Quick-check solution (over ℤ, even/odd) is a valid counter-reading. Its ledger line
+      now gives school arithmetic as the source, consistent with c2.
 - key: check:06-existential-elimination:3
   kind: check
   file: 06-existential-elimination.md
@@ -3641,6 +3909,22 @@ items:
     evidence: '06-existential-elimination.md:960 The seam from Chapter 3 is only half paid: Ch3 sends
       the reader to Section 5.6 for ''Russell''s theorem'', but 5.6 never uses the name. The set reading
       is there, unnamed.'
+  - stage: S7r
+    verdict: minor
+    by: rereferee
+    hash: f70a1df05e93
+    date: '2026-10-25'
+    model: claude-opus-5-5
+    evidence: The Idea at 06:907 now names the obstacle, but it says 'the one term that makes both sides
+      speak of the same thing … y_0 itself' twice and uses y_0 before introducing it (see F031). The statement
+      and the schemas are unchanged and correct.
+  - stage: S7r
+    verdict: correct
+    by: rereferee
+    hash: f70a1df05e93
+    date: '2026-10-25'
+    model: claude-opus-5-5
+    evidence: the added motivation sentence is correct
 - key: proof:thm-barber
   kind: proof
   file: 06-existential-elimination.md
@@ -3663,6 +3947,23 @@ items:
     model: claude-opus-5-5
     evidence: 06-existential-elimination.md:964 The text says lines 4–9 are 'the derivation of @lem-not-iff-own-negation'.
       They are only the inside of its ¬I box, that is, lines 2–7 of the lemma's 8-line derivation.
+  - stage: S7r
+    verdict: correct
+    by: rereferee
+    hash: ba9754b52c3a
+    date: '2026-10-25'
+    model: claude-opus-5-5
+    evidence: 'The 11-line derivation checks: ∀E 2 at y_0 gives line 3; lines 4–9 are the lemma''s lines
+      2–7; ∃E 1, 2–9 has y_0 absent from ⊥, line 1 and every open assumption; ¬I 1–10 follows. The new
+      sentence at 964 states the correspondence exactly.'
+  - stage: S7r
+    verdict: correct
+    by: rereferee
+    hash: ba9754b52c3a
+    date: '2026-10-25'
+    model: claude-opus-5-5
+    evidence: lem-not-iff-own-negation lines 2–7 map to barber lines 4–9 with line 3 as the biconditional;
+      the Russell sentence is accurate (fd2 thm-russell, Section 1.1)
 - key: check:06-existential-elimination:5
   kind: check
   file: 06-existential-elimination.md
@@ -3709,6 +4010,13 @@ items:
     evidence: '06:1042-1054: row 2 goes by and-E, forall-E at u_0, exists-I to ∃y R(y,y); rows 1 and 3
       by arith; no last line mentions its name; the look-alike R(c,x_0) is not R(x_0,c); the sidecar def-rules-existential.py
       covers the rows'
+  - stage: S7r
+    verdict: correct
+    by: rereferee
+    hash: 2cd98ba7666b
+    date: '2026-10-25'
+    model: claude-opus-5-5
+    evidence: cross-reference to 'Not an instance'
 - key: exr-existential-elimination-a1
   kind: exr
   file: 06-existential-elimination.md
@@ -3777,6 +4085,21 @@ items:
     evidence: 06:1103-1127. (a) matches def-rules-existential (06:24-50), all four clauses. (b) matches
       the 'Either nesting works' fold (06:705-725). (c) and (d) match the proof (06:672-692) and the two
       blocked lines of the converse (06:750, 06:777). (e) is two sentences as asked.
+  - stage: S7r
+    verdict: correct
+    by: rereferee
+    hash: 3ef841c5bdf5
+    date: '2026-10-25'
+    model: claude-opus-5-5
+    evidence: The (e) solution is an informal ∃E/∀I argument with no semantic vocabulary. The witness
+      x_0 gives R(x_0, y_0), so ∃x R(x, y_0) holds and ∀I over the arbitrary y_0 follows.
+  - stage: S7r
+    verdict: correct
+    by: rereferee
+    hash: 3ef841c5bdf5
+    date: '2026-10-25'
+    model: claude-opus-5-5
+    evidence: grammar only
 - key: exr-existential-elimination-a2
   kind: exr
   file: 06-existential-elimination.md
@@ -3809,6 +4132,21 @@ items:
       assumption, 5 = ∃xφ), so (d), (e), (f), (i) are right. (j), (k), (l) checked line by line, including
       the side condition of the inner ∃E in (l) against the open assumption ∃y R(x0,y). (g) is matched
       by the reuse of x0 across the two cases of exm-existential-elimination-derivations (⊣).
+  - stage: S7r
+    verdict: correct
+    by: rereferee
+    hash: 88e166e31761
+    date: '2026-10-25'
+    model: claude-opus-5-5
+    evidence: '(i): line 3 breaks clause 3 because its last line P(x_0) mentions x_0, and ∃y P(y) is derivable
+      from ∃x P(x) with ∃I inside the box. The remaining answers are unchanged.'
+  - stage: S7r
+    verdict: correct
+    by: rereferee
+    hash: 88e166e31761
+    date: '2026-10-25'
+    model: claude-opus-5-5
+    evidence: '''derivable, with the ∃I inside the box'' is right'
 - key: exr-existential-elimination-b1
   kind: exr
   file: 06-existential-elimination.md
@@ -3939,6 +4277,21 @@ items:
     model: claude-opus-5-5
     evidence: 06-existential-elimination.md:1419 The marking scheme for (c) awards its 2 points only for
       a ¬I box inside the ∃E box, so it fails a correct shorter proof that uses the derived rule MT.
+  - stage: S7r
+    verdict: correct
+    by: rereferee
+    hash: ea3e2716c414
+    date: '2026-10-25'
+    model: claude-opus-5-5
+    evidence: The worked-example list now matches the item types. The marking scheme for (c) accepts both
+      the ¬I-box proof and the MT proof.
+  - stage: S7r
+    verdict: correct
+    by: rereferee
+    hash: ea3e2716c414
+    date: '2026-10-25'
+    model: claude-opus-5-5
+    evidence: worked-example pointers and step 2 (¬I box or MT) are fine
 - key: exr-existential-elimination-c1
   kind: exr
   file: 06-existential-elimination.md
@@ -4089,6 +4442,13 @@ items:
       2 witness, line 3 instance, lines 4-9 contradiction). My script confirms (b): first list D = ℕ,
       with differences at 0, 1, 2; second list D = {1,2,3,…}, with A0 containing 0 and A1, A2 missing
       1 and 2.'
+  - stage: S7r
+    verdict: correct
+    by: rereferee
+    hash: c2fcfbc95769
+    date: '2026-10-25'
+    model: claude-opus-5-5
+    evidence: ledger comment for prp-exists-and only
 - key: def-rules-equality
   kind: def
   file: 07-equality-and-uniqueness.md
@@ -4321,6 +4681,13 @@ items:
     evidence: '07:204-232: the =E 1,2 step with phi=P(x) is legal; the ranges 1-5 and 1-6 follow the 5.4
       convention (04:603); the eigenvariable checks at lines 6 and 7 hold; ''every line but one'' is goal-directed
       (line 3 is the exception); the closing remark (two forall-E and two ->E) is correct.'
+  - stage: S7r
+    verdict: correct
+    by: rereferee
+    hash: fa9852fc2622
+    date: '2026-10-25'
+    model: claude-opus-5-5
+    evidence: knowledge-context note now cites the =E side condition
 - key: exm-extensionality-logical-half
   kind: exm
   file: 07-equality-and-uniqueness.md
@@ -4346,6 +4713,15 @@ items:
     evidence: 02-terms-formulas-substitution.md:80 Section 5.2 says that throughout this chapter ∈ is
       one-place with A a fixed set. Section 5.7's example makes sets objects of the domain, with ∈ two-place,
       so the 5.2 meta-claim is false.
+  - stage: S7r
+    verdict: correct
+    by: rereferee
+    hash: c7e15a1c0557
+    date: '2026-10-25'
+    model: claude-opus-5-5
+    evidence: 'The text is unchanged. The converse''s ledger line now cites the verify script and the
+      #counter-readings convention made exact in F1.6 §01-§02. Only the deferred STATUS row 85 source-cell
+      addition remains.'
 - key: check:07-equality-and-uniqueness:3
   kind: check
   file: 07-equality-and-uniqueness.md
@@ -4390,6 +4766,21 @@ items:
     evidence: '07-equality-and-uniqueness.md:330 The Quick check answer says only the first link is an
       =E step and the other two are ''arith'' lines. The section itself says each link costs an =E step:
       an arith line alone does not extend the chain.'
+  - stage: S7r
+    verdict: correct
+    by: rereferee
+    hash: 6713794ff196
+    date: '2026-10-25'
+    model: claude-opus-5-5
+    evidence: '07:330: the first link is =E (phi=(a+1=z+1)). Then 2+1=3 is carried by =E with phi=(a+1=z),
+      and 3<=4 by =E with phi=(z<=4) and a+1=3 turned round. Recomputed; matches 07:313-315.'
+  - stage: S7r
+    verdict: correct
+    by: rereferee
+    hash: 6713794ff196
+    date: '2026-10-25'
+    model: claude-opus-5-5
+    evidence: the arith links are carried by =E with φ=(a+1=z), then φ=(z≤4) with the equation turned
 - key: exm-equality-and-uniqueness-instances
   kind: exm
   file: 07-equality-and-uniqueness.md
@@ -4413,6 +4804,13 @@ items:
     model: claude-opus-5-5
     evidence: '07:358-366: in all three rows phi[t1/z] and phi[t2/z] are right; row 3 meets the free-for
       condition (no y in a+b, b+a); the look-alike is correct; the terms are compound as §12.13 requires.'
+  - stage: S7r
+    verdict: correct
+    by: rereferee
+    hash: e9d7eb920c38
+    date: '2026-10-25'
+    model: claude-opus-5-5
+    evidence: wording
 - key: exr-equality-and-uniqueness-a1
   kind: exr
   file: 07-equality-and-uniqueness.md
@@ -4506,6 +4904,21 @@ items:
     evidence: 07-equality-and-uniqueness.md:500 In (i), the reason given for the second step names the
       wrong mechanism. The step does fit the rule's form, and it fails clause 4 (free for), which the
       drill's 'judge' parts expect the reader to name.
+  - stage: S7r
+    verdict: correct
+    by: rereferee
+    hash: 3ee6105cad7d
+    date: '2026-10-25'
+    model: claude-opus-5-5
+    evidence: '(i) at 07:500: the first step is legal (phi=∀y(z<=y); 0 and x0 are free for z). The second
+      fails clause 4, since y is captured by ∀y in phi=∀y(x0<=z). The other parts are unchanged.'
+  - stage: S7r
+    verdict: correct
+    by: rereferee
+    hash: 3ee6105cad7d
+    date: '2026-10-25'
+    model: claude-opus-5-5
+    evidence: '(i): with φ=∀y(x0≤z), y is not free for z, so the step is illegal (clause 4)'
 - key: exr-equality-and-uniqueness-b1
   kind: exr
   file: 07-equality-and-uniqueness.md
@@ -4605,6 +5018,22 @@ items:
       answer 'substitute equals, holes marked' is not a move the book names. It is not in the index's
       Named moves (index.md:26-35), and the search-method step of 5.7 is headed 'An equation' (07:349).
       A reader cannot give the expected name.
+  - stage: S7r
+    verdict: correct
+    by: rereferee
+    hash: 5487cea4d917
+    date: '2026-10-25'
+    model: claude-opus-5-5
+    evidence: 'The move is named as the search step ''An equation'' (07:349). Derivation lines 4-9 check:
+      4 and 5 use phi=P(z); 6 uses phi=(a=z) on line 1 with the equation b=c; 8 uses phi=(z=a) on line
+      7 with a=c; 9 is ∧I 5,8.'
+  - stage: S7r
+    verdict: correct
+    by: rereferee
+    hash: 5487cea4d917
+    date: '2026-10-25'
+    model: claude-opus-5-5
+    evidence: names the search step
 - key: exr-equality-and-uniqueness-b5
   kind: exr
   file: 07-equality-and-uniqueness.md
@@ -4638,6 +5067,22 @@ items:
     evidence: '07:586-688. Derive a, c, d, f, g and break b, e, h, as I found; my script confirms the
       three breaks. Each φ checked, e.g. (g) line 3: φ = (f(f(a)) = f(z)) with line 2 = φ[f(a)/z]. Scheme:
       8 + 2 = 10.'
+  - stage: S7r
+    verdict: correct
+    by: rereferee
+    hash: aab9e7fb478c
+    date: '2026-10-25'
+    model: claude-opus-5-5
+    evidence: The stem 'rules of Chapters 1–2 and of this chapter' now covers the ->E (d) and ¬I/¬E (f)
+      of the solutions. The counter-readings are ledgered to the verify script and the counter-reading
+      convention.
+  - stage: S7r
+    verdict: correct
+    by: rereferee
+    hash: aab9e7fb478c
+    date: '2026-10-25'
+    model: claude-opus-5-5
+    evidence: scope 'Chapters 1–2 and this chapter'
 - key: exr-equality-and-uniqueness-c3
   kind: exr
   file: 07-equality-and-uniqueness.md
@@ -4673,6 +5118,22 @@ items:
     evidence: 07-equality-and-uniqueness.md:743 The marking scheme gives 2+2 points for 'both ∃E boxes
       opened first' and 'the flagged box inside them', so it penalizes the other correct nesting. The
       book itself says either nesting works (06:705).
+  - stage: S7r
+    verdict: correct
+    by: rereferee
+    hash: 6c04290b127e
+    date: '2026-10-25'
+    model: claude-opus-5-5
+    evidence: The derivation side conditions at lines 14-16 hold. The marking scheme now accepts the u0
+      box inside or outside the ∃E boxes and totals 10. The one-element-domain remark is correct and now
+      ledgered.
+  - stage: S7r
+    verdict: correct
+    by: rereferee
+    hash: 6c04290b127e
+    date: '2026-10-25'
+    model: claude-opus-5-5
+    evidence: the marking scheme allows the flagged box inside or outside the ∃E boxes; ledger lines added
 - key: def-unique-existence
   kind: def
   file: 08-counting-and-descriptions.md
@@ -4853,6 +5314,21 @@ items:
     model: claude-opus-5-5
     evidence: 08:187-198 matches blueprint 4.8 item 3 and NOTATION row 164 (equality-disjunction form
       of at most n; ∃! the only shorthand); side conditions on y, z adequate.
+  - stage: S7r
+    verdict: correct
+    by: rereferee
+    hash: a2755da7f21a
+    date: '2026-10-25'
+    model: claude-opus-5-5
+    evidence: '08:197: the general-n clause now asks for n different variables that do not appear in φ,
+      which matches the n=2 hypothesis at 08:190. 08:226: ''the smallest'' matches A2 (h) and (j).'
+  - stage: S7r
+    verdict: correct
+    by: rereferee
+    hash: a2755da7f21a
+    date: '2026-10-25'
+    model: claude-opus-5-5
+    evidence: different variables not appearing in φ
 - key: exm-exactly-two-solutions
   kind: exm
   file: 08-counting-and-descriptions.md
@@ -4895,6 +5371,13 @@ items:
     date: '2026-10-25'
     model: claude-opus-5-5
     evidence: '08:218-224: formula has x≠y; an even prime is 2 (ledger 805).'
+  - stage: S7r
+    verdict: correct
+    by: rereferee
+    hash: 4ff3725e7ffc
+    date: '2026-10-25'
+    model: claude-opus-5-5
+    evidence: '''the smallest'' matches drill items 8 and 10'
 - key: def-definite-description
   kind: def
   file: 08-counting-and-descriptions.md
@@ -4918,6 +5401,22 @@ items:
     model: claude-opus-5-5
     evidence: 08-counting-and-descriptions.md:238 The ∀E steps credit only one substitution fact, but
       they need three.
+  - stage: S7r
+    verdict: correct
+    by: rereferee
+    hash: 6447ea3f5929
+    date: '2026-10-25'
+    model: claude-opus-5-5
+    evidence: 08:238 now cites the substitution facts of the proof of @prp-unique-existence-use. Those
+      three facts are at 08:103 and are what the two ∀E steps need (second; then third and first, the
+      same pattern as 08:175). Ledger line 806 is updated to match.
+  - stage: S7r
+    verdict: correct
+    by: rereferee
+    hash: 6447ea3f5929
+    date: '2026-10-25'
+    model: claude-opus-5-5
+    evidence: the proof of prp-unique-existence-use states 'Three facts about substitution'
 - key: check:08-counting-and-descriptions:3
   kind: check
   file: 08-counting-and-descriptions.md
@@ -5006,6 +5505,23 @@ items:
     model: claude-opus-5-5
     evidence: 08-counting-and-descriptions.md:814 The ledger says def-rules-existential is cited, but
       the fold cites no label.
+  - stage: S7r
+    verdict: correct
+    by: rereferee
+    hash: 3c0d0f2a639b
+    date: '2026-10-25'
+    model: claude-opus-5-5
+    evidence: (b) now cites @def-rules-existential, so the ledger's 'cited' is true. In (a), the flag
+      x_0 is fresh for Γ, φ and D, so the ∀I side condition holds under the premises Γ. x_0 is not in
+      ∀x(φ↔φ), and the box is closed before D starts. The renamed-premise remark appeals to the 5.2 renaming
+      convention, as part (a) already does.
+  - stage: S7r
+    verdict: correct
+    by: rereferee
+    hash: 3c0d0f2a639b
+    date: '2026-10-25'
+    model: claude-opus-5-5
+    evidence: the ∃E citation and the fresh flag for the ∀x(φ↔φ) box are sound
 - key: exr-counting-and-descriptions-a1
   kind: exr
   file: 08-counting-and-descriptions.md
@@ -5068,6 +5584,22 @@ items:
     model: claude-opus-5-5
     evidence: 08-counting-and-descriptions.md:377 The 'no maximum' argument in (i) checks only 3 and 4,
       and leaves out 2.
+  - stage: S7r
+    verdict: correct
+    by: rereferee
+    hash: a528506be878
+    date: '2026-10-25'
+    model: claude-opus-5-5
+    evidence: '(i): rechecked on {2,3,4} under divisibility. 2 is not a multiple of 3, 3 is not a multiple
+      of 2 or 4, and 4 is not a multiple of 3, so there is no maximum, and 3 and 4 are maximal. Ledger
+      817 now includes antisymmetry and cancellation by x≠0.'
+  - stage: S7r
+    verdict: correct
+    by: rereferee
+    hash: a528506be878
+    date: '2026-10-25'
+    model: claude-opus-5-5
+    evidence: 2 is not a multiple of 3, which completes 'no maximum'
 - key: exr-counting-and-descriptions-b1
   kind: exr
   file: 08-counting-and-descriptions.md
@@ -5348,6 +5880,22 @@ items:
     evidence: '08-counting-and-descriptions.md:665 Step 2 names the ∃E witnesses a and b. def-rules-existential
       requires the box name to be a variable (06:47), and the chapter uses a, b, c, d as constants (07:466:
       ''Letters a, b, c, d are constants'').'
+  - stage: S7r
+    verdict: minor
+    by: rereferee
+    hash: 2fc578b5ed6d
+    date: '2026-10-25'
+    model: claude-opus-5-5
+    evidence: 'The witnesses are now the variables a_0, b_0, and the argument is otherwise sound. One
+      leftover constant remains: 08:668 says ''at z_0 and \( b \)'' where it should say b_0.'
+  - stage: S7r
+    verdict: minor
+    by: rereferee
+    hash: 2fc578b5ed6d
+    date: '2026-10-25'
+    model: claude-opus-5-5
+    evidence: 'the a→a0, b→b0 rename missed one: 08:668 step 5 reads ''"at most one Q" at z_0 and \( b
+      \) gives z_0 = b_0'''
 - key: exr-counting-and-descriptions-r1
   kind: exr
   file: 08-counting-and-descriptions.md
@@ -5409,6 +5957,23 @@ items:
     evidence: 08-counting-and-descriptions.md:730 The R2 marking scheme puts 4 points on 'the RAA box
       on ¬Q(x0)' and 2 on 'line 7 named', so it fails correct proofs by other classical routes. Exercise
       C2 of the same section (08:649) explicitly accepts such routes.
+  - stage: S7r
+    verdict: correct
+    by: rereferee
+    hash: 1809be57c083
+    date: '2026-10-25'
+    model: claude-opus-5-5
+    evidence: 'The derivation is unchanged: line 7 is RAA on the 4-6 box, and the line numbers check.
+      The new scheme clause credits the ¬I box + ¬¬E route and the derived-rule route. The derived rule
+      is legal here: 04:650 says Chapter 2 derived rules may be used inside boxes, and 02-05:222 shows
+      the derivation of prp-contrapositive-converse uses RAA, which justifies the naming points.'
+  - stage: S7r
+    verdict: correct
+    by: rereferee
+    hash: 1809be57c083
+    date: '2026-10-25'
+    model: claude-opus-5-5
+    evidence: alternative routes (¬I + ¬¬E, or prp-contrapositive-converse) get the right credit
 - key: exr-counting-and-descriptions-r3
   kind: exr
   file: 08-counting-and-descriptions.md
@@ -5447,6 +6012,13 @@ items:
     model: claude-opus-5-5
     evidence: '08-counting-and-descriptions.md:762 The R3 solution credits prp-curry to the wrong section:
       it is in Section 1.4, not Section 1.5.'
+  - stage: S7r
+    verdict: correct
+    by: rereferee
+    hash: f9765a179eee
+    date: '2026-10-25'
+    model: claude-opus-5-5
+    evidence: prp-curry is in ch01/05-proving-an-implication = Section 1.4
 - key: exr-counting-and-descriptions-r4
   kind: exr
   file: 08-counting-and-descriptions.md
@@ -5477,6 +6049,13 @@ items:
     evidence: 08:767-792. ∀E at f(x0) is free for y, then =I and →E. The problem gives no hint of method,
       and the solution names the tool and explains why =E, ∀E at y0 and ∃E fail, as STYLE §11.5 requires
       for R4. Scheme adds to 10.
+  - stage: S7r
+    verdict: correct
+    by: rereferee
+    hash: afc5696657ec
+    date: '2026-10-25'
+    model: claude-opus-5-5
+    evidence: ledger comment updates match the text (a2 facts, three substitution facts)
 - key: proof:exm-computing-substitutions
   kind: proof
   file: 02-terms-formulas-substitution.md

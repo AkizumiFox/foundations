@@ -56,9 +56,9 @@ alt = ALL(x, IMP(P("Key", x), NOT(ALL(y, IMP(P("Lock", y), P("Opens", x, y))))))
 assert sat(alt, K, {}) == QUOTED["K Quick check"]
 h = EX(y, AND(P("Lock", y), ALL(x, IMP(P("Key", x), P("Opens", x, y)))))
 assert sat(h, K, {}) == QUOTED["drill (i)"]
-# the slip: exists x (Key(x) -> Opens(x, f)) is true when f is a lock that is no key
-Kf = dict(K, const={"f": "l1"})
-assert sat(EX(x, IMP(P("Key", x), P("Opens", x, ("c", "f")))), Kf, {})
+# the slip: exists x (Key(x) -> Opens(x, c)) is true when c is a lock that is no key
+Kf = dict(K, const={"c": "l1"})
+assert sat(EX(x, IMP(P("Key", x), P("Opens", x, ("c", "c")))), Kf, {})
 # sixth implies fifth in every building on up to 3 objects (sanity check)
 import itertools
 for n in range(1, 4):

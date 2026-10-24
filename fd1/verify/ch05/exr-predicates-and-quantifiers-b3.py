@@ -11,7 +11,7 @@ assert (not all(x < 2 for x in D)) == any(neg)
 assert [x for x in D if neg[x]] == [QUOTED["(b) true disjunct"]]
 A = {x for x in D if x > 2}
 assert A == QUOTED["(c) A"]
-assert (all(x > 5 for x in D if x in A), any(x in A and x > 5 for x in D)) == QUOTED["(c) verdicts"]
+assert (all(x < 0 for x in D if x in A), any(x in A and x < 0 for x in D)) == QUOTED["(c) verdicts"]
 # (d): on every non-empty domain of size 1-4 and every P, forall P implies exists P
 import itertools
 for n in range(1, 5):

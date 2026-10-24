@@ -1,6 +1,6 @@
 # Terms, Formulas, Free Variables and Substitution
 
-Section 5.1 read quantified sentences by eye. That is enough to understand them, and not enough to reason with them: every rule of Sections 5.3 to 5.7 has the form "put the term \( t \) in for the variable \( x \) in \( \varphi \)", written \( \varphi[t/x] \), and a rule has to say exactly which symbols change. This section makes the language of Section 5.1 exact, in the way Section 4.1 made the propositional language exact, says exactly what \( \varphi[t/x] \) does, and names the one way it goes wrong, **capture**.
+Section 5.1 read quantified sentences by eye. That is enough to understand them, and not enough to reason with them: every quantifier rule of Sections 5.3 to 5.5, and the rule for using an equation in Section 5.7, has the form "put the term \( t \) in for the variable \( x \) in \( \varphi \)", written \( \varphi[t/x] \), and a rule has to say exactly which symbols change. This section makes the language of Section 5.1 exact, in the way Section 4.1 made the propositional language exact, says exactly what \( \varphi[t/x] \) does, and names the one way it goes wrong, **capture**.
 
 ## Which letters are holes
 
@@ -77,7 +77,7 @@ Terms can be drawn as trees, exactly as formulas were in Section 4.1: a variable
 
 **Shorthand rules 1 and 3.**
 
-**Rule 1.** Two-place predicate symbols such as \( <, \le \) are written between their terms: \( x < y \) is shorthand for \( <(x, y) \). The one-place symbol \( \in A \) is written after its term: \( t \in A \) is shorthand for \( (\in A)(t) \). (When sets are themselves objects of the domain, \( \in \) is a two-place predicate symbol and \( x \in A \) is \( \in(x, A) \); in this chapter \( A \) is always a fixed set, so we treat \( \in A \) as one-place.) We write \( t_1 \ne t_2 \) for \( \neg(t_1 = t_2) \).
+**Rule 1.** Two-place predicate symbols such as \( <, \le \) are written between their terms: \( x < y \) is shorthand for \( <(x, y) \). The one-place symbol \( \in A \) is written after its term: \( t \in A \) is shorthand for \( (\in A)(t) \). (When sets are themselves objects of the domain, \( \in \) is a two-place predicate symbol and \( x \in A \) is \( \in(x, A) \); in this chapter \( A \) is a fixed set, except in one example of Section 5.7 where sets are the objects, so we treat \( \in A \) as one-place.) We write \( t_1 \ne t_2 \) for \( \neg(t_1 = t_2) \).
 **Rule 3.** The bounded quantifiers of @def-bounded-quantifier, \( \forall x \in A \; \varphi \) and the rest, stand for the formulas given there.
 :::
 
@@ -407,7 +407,7 @@ Four special cases, each immediate from the definition, cover most uses.
 
 In our examples: \( y \) is **not** free for \( x \) in \( \exists y\, (y \ne x) \), because the free occurrence of \( x \) lies in the scope of \( \exists y \) and \( y \) is a variable of the term \( y \). Likewise \( y + 1 \) is not free for \( x \) in \( \exists y\, (y > x) \). And \( y + 1 \) **is** free for \( x \) in \( \forall z\, (x < z) \): the only quantifier above the free occurrence of \( x \) is on \( z \), which is not a variable of \( y + 1 \).
 
-"Free for" is the precise condition under which \( \varphi[t/x] \) says about \( t \) what \( \varphi \) says about \( x \). Each rule of Sections 5.3, 5.5 and 5.7 carries it as a side condition.
+"Free for" is the precise condition under which \( \varphi[t/x] \) says about \( t \) what \( \varphi \) says about \( x \). The rules \( \forall\text{E} \) (Section 5.3), \( \exists\text{I} \) (Section 5.5) and \( =\text{E} \) (Section 5.7) carry it as a side condition.
 
 ::: {.second-reading title="A second capture, the recursive description of 'free for', and why it asks no more than it needs"}
 Here is a second example, with a compound term. Over \( \nR \), \( \exists y\, (y > x) \) is true for every \( x \): there is a number larger than \( x \). Put \( y + 1 \) in for \( x \):
@@ -557,7 +557,7 @@ Answer each part in a line or two.
 1. In \( \forall y\, (x < y) \wedge \exists x\, (x = y) \), which occurrences are free, and what are the free variables?
 2. Is \( \forall x\, \exists y\, (x + y = 0) \) a sentence?
 3. Someone writes \( \forall x\, P(x) \to Q(x) \) for "every \( P \) is a \( Q \)". Which occurrence of \( x \) is free, and what is the repair?
-4. Repair \( \forall \varepsilon > 0\; \exists \delta > 0\; (\abs{x - a} < \delta \to \abs{f(x) - f(a)} < \varepsilon) \), meant as "\( f \) is continuous at \( a \)", so that \( a \) is its only free variable.
+4. Repair \( \forall \varepsilon > 0\; \exists \delta > 0\; (\abs{x - a} < \delta \to \abs{f(x) - f(a)} < \varepsilon) \), meant as "\( f \) is continuous at \( a \)", with \( a \) a variable here (not a constant symbol), so that \( a \) is its only free variable.
 5. Compute \( \bigl( x \le y \wedge \exists y\, (y < x) \bigr)[3/x] \).
 6. Compute \( \bigl( \forall x\, (x \ge y) \bigr)[0/y] \).
 7. Compute \( \bigl( \forall x\, P(x) \to P(x) \bigr)[c/x] \).
@@ -626,7 +626,7 @@ Compute each substitution. Where the term is not free for the variable, say whic
 ::: {#exr-terms-formulas-substitution-b2}
 [B2: The set of free variables]
 
-For a term \( t \), let \( \mathrm{Var}(t) \) be the set of variables of \( t \), and for a formula \( \varphi \), let \( \mathrm{FV}(\varphi) \) be the set of its free variables.
+For a term \( t \), let \( \mathrm{Var}(t) \) be the set of variables of \( t \), and for a formula \( \varphi \), let \( \mathrm{FV}(\varphi) \) be the set of its free variables. (Here \( \cup \) is the union of two sets, \( \setminus \) removes elements, and \( \emptyset \) is the empty set, all in the everyday sense.)
 
 ::: {.enumerate options="label=(\alph*)"}
 1. Write down clauses that define \( \mathrm{Var}(t) \) by recursion on terms and \( \mathrm{FV}(\varphi) \) by recursion on formulas, one clause for each case of @def-term and of @def-first-order-formula.
@@ -725,13 +725,13 @@ When \( x \) is free in \( \forall y\, \varphi \), what does "free for" tell you
 ::: {.solution}
 [Hint 2]
 
-The recursive description of "free for" (in the fold after the definition of "free for") gives \( y \notin \mathrm{Var}(t) \). Where does the computation of \( \mathrm{FV}((\forall y\, \varphi)[t/x]) \) need it?
+Start from \( \mathrm{FV}((\forall y\, \varphi)[t/x]) = \mathrm{FV}(\varphi[t/x]) \setminus \{y\} \) and apply the induction hypothesis to \( \varphi \). Then see where removing \( y \) from the resulting set needs something about \( y \) and \( \mathrm{Var}(t) \).
 :::
 
 ::: {.solution}
 *(a)* The term version and the atomic, negation and connective cases are given in the statement. It remains to treat the quantifiers.
 
-*Quantifier.* Let \( x \) be free in \( \forall y\, \varphi \). Then \( y \) is not \( x \) and \( x \) is free in \( \varphi \); and since \( t \) is free for \( x \) in \( \forall y\, \varphi \) while \( x \) is free there, \( y \notin \mathrm{Var}(t) \) and \( t \) is free for \( x \) in \( \varphi \) (the recursive description of "free for"). So
+*Quantifier.* If \( x \) is not free in \( \forall y\, \varphi \), then \( (\forall y\, \varphi)[t/x] = \forall y\, \varphi \) by the claim of the text. Now let \( x \) be free in \( \forall y\, \varphi \). Then \( y \) is not \( x \) and \( x \) is free in \( \varphi \); and since \( t \) is free for \( x \) in \( \forall y\, \varphi \) while \( x \) is free there, \( y \notin \mathrm{Var}(t) \) and \( t \) is free for \( x \) in \( \varphi \) (the recursive description of "free for"). So
 \[
 \begin{aligned}
 \mathrm{FV}\bigl( (\forall y\, \varphi)[t/x] \bigr)

@@ -904,7 +904,7 @@ For every two-place predicate symbol \( R \),
 *Try it first (five minutes): the goal is a negation.*
 
 ::: {.idea}
-The goal is a negation: open a \( \rulename{\neg I} \) box on the existential, aimed at \( \bot \). Its assumption is an existential: name the witness early, \( y_0 \), aiming the \( \rulename{\exists E} \) box at the same \( \bot \). Inside, instantiate the universal at the one term that makes both sides speak of the same thing, \( y_0 \) itself. The instance says that \( R(y_0, y_0) \) holds exactly when it does not, and a statement equivalent to its own negation is contradictory (@lem-not-iff-own-negation).
+An attempt that instantiates the universal at some other term \( t \) gets \( R(t, y_0) \leftrightarrow \neg R(t, t) \), and nothing clashes with it; the one term that makes both sides speak of the same thing is \( y_0 \) itself. The goal is a negation: open a \( \rulename{\neg I} \) box on the existential, aimed at \( \bot \). Its assumption is an existential: name the witness early, \( y_0 \), aiming the \( \rulename{\exists E} \) box at the same \( \bot \). Inside, instantiate the universal at the one term that makes both sides speak of the same thing, \( y_0 \) itself. The instance says that \( R(y_0, y_0) \) holds exactly when it does not, and a statement equivalent to its own negation is contradictory (@lem-not-iff-own-negation).
 
 ```{=latex}
 % schema (partial derivations: the gap is unnumbered, lines carry their final numbers)
@@ -961,10 +961,10 @@ $\begin{nd}
 \end{center}
 ```
 
-Lines 4–9 are the derivation of @lem-not-iff-own-negation at the statement \( R(y_0, y_0) \), written out. At line 10, \( y_0 \) is not in \( \bot \), not in the existential of line 1 (its \( y \) is bound), and there is no premise; the only open assumption, line 1, does not contain \( y_0 \). This proves the theorem.
+Lines 4–9 are lines 2–7 of the derivation of @lem-not-iff-own-negation at the statement \( R(y_0, y_0) \), with line 3 in place of its assumption. At line 10, \( y_0 \) is not in \( \bot \), not in the existential of line 1 (its \( y \) is bound), and there is no premise; the only open assumption, line 1, does not contain \( y_0 \). This proves the theorem.
 :::
 
-Read \( R(x, y) \) as "\( y \) shaves \( x \)": nobody shaves exactly those who do not shave themselves. The old puzzle of the barber who does is answered by this theorem: there is no such barber. Read the domain as consisting of sets and \( R(x, y) \) as \( x \in y \): no set has as its elements exactly the sets that are not elements of themselves. Neither reading was used in the proof, which holds for every \( R \); the "paradox" is eleven lines of logic, and its conclusion is that something does not exist.
+Read \( R(x, y) \) as "\( y \) shaves \( x \)": nobody shaves exactly those who do not shave themselves. The old puzzle of the barber who does is answered by this theorem: there is no such barber. Read the domain as consisting of sets and \( R(x, y) \) as \( x \in y \): no set has as its elements exactly the sets that are not elements of themselves. For sets this is Russell's theorem, which *Sets, Relations, and Cardinality*, Section 1.1 proves as a theorem about sets. Neither reading was used in the proof, which holds for every \( R \); the "paradox" is eleven lines of logic, and its conclusion is that something does not exist.
 
 ::: {.check}
 In the proof of @thm-barber, lines 3–9 are all about \( y_0 \). Why may line 10 close the \( \rulename{\exists E} \) box?
@@ -1072,7 +1072,7 @@ The phrase "choose" is apt and slightly misleading. We do not choose the witness
 - "Close the box on a line that mentions its witness": clause 3 (the pair in "Three ways to break the rule").
 - "Name the witness with a letter that a premise or an open assumption mentions": clause 4 (the fold "Clauses 4 and 5, broken"; the warning "Two witnesses, one name").
 - "Name the witness with a letter that the existential mentions": clause 5 (the fold "Clauses 4 and 5, broken").
-- "Open the box with an assumption other than \( \varphi[x_0/x] \)": clause 1 (the gallery's look-alike).
+- "Open the box with an assumption other than \( \varphi[x_0/x] \)": clause 1 ("Not an instance" in @exm-existential-elimination-instances).
 :::
 
 The decision chart grows by two rows:
@@ -1123,7 +1123,7 @@ These parts are about the proof of @prp-exists-forall-swap.
 
 *(d)* In the first attempt, line 5 (\( \rulename{\forall I} \) over \( y_0 \)) is blocked by the clause "\( y_0 \) appears in no assumption of a box still open", since the \( \rulename{\exists E} \) box's assumption \( R(x_0, y_0) \) contains \( y_0 \). In the second, line 4 (\( \rulename{\exists E} \)) is blocked by the clause "\( x_0 \) does not appear in \( \chi \)", since \( \chi = R(x_0, y_0) \).
 
-*(e)* Fix an arbitrary \( y_0 \) and obtain the witness \( x_0 \) of the premise, which satisfies \( R(x_0, y) \) for every \( y \), in particular for \( y_0 \). So \( x_0 \) is a witness for \( \exists x\, R(x, y_0) \), and since \( y_0 \) was arbitrary, \( \forall y\, \exists x\, R(x, y) \) follows.
+*(e)* Fix an arbitrary \( y_0 \) and obtain the witness \( x_0 \) of the premise, for which \( R(x_0, y) \) holds for every \( y \), in particular for \( y_0 \). So \( x_0 \) is a witness for \( \exists x\, R(x, y_0) \), and since \( y_0 \) was arbitrary, \( \forall y\, \exists x\, R(x, y) \) follows.
 :::
 
 ::: {#exr-existential-elimination-a2}
@@ -1164,7 +1164,7 @@ Each part takes a line or two. The parts run from a single step, through a missi
 
 (h) No: \( x_0 \) is in an open assumption, which the second clause of \( \rulename{\forall I} \) forbids; the witness is not arbitrary.
 
-(i) Line 3, clause 3: its box's last line mentions \( x_0 \). (Line 4 would be legal; the conclusion is even true, but this derivation does not prove it.)
+(i) Line 3, clause 3: its box's last line mentions \( x_0 \). (Line 4 would be legal; the conclusion is even derivable, with the \( \rulename{\exists I} \) inside the box, but this derivation does not derive it.)
 
 (j) In a box flagged \( x_0 \): 2 \( P(x_0) \wedge Q(x_0) \), assumption; 3 \( Q(x_0) \), \( \rulename{\wedge E} \) 2; 4 \( \exists x\, Q(x) \), \( \rulename{\exists I} \) 3; then 5 \( \exists x\, Q(x) \), \( \rulename{\exists E} \) 1, 2–4.
 
@@ -1411,12 +1411,12 @@ $\begin{nd}
 
 At line 9 the open assumption \( P(x_0) \) does not contain \( y_0 \); at line 10 no box is open.
 
-The pairs: (c) and (d) are the contrapositive and its look-alike (denying the antecedent); (e) and (f) are converses; (a) and (b) differ in the order of the quantifiers. Worked examples of these types: @prp-exists-and; @exm-sum-of-evens; the readings of "Three ways to break the rule".
+The pairs: (c) and (d) are the contrapositive and its look-alike (denying the antecedent); (e) and (f) are converses; (a) and (b) differ in the order of the quantifiers. Worked examples of these types: @prp-exists-and and its Quick check (a counter-reading); @exm-existential-elimination-derivations (b); @exm-sum-of-evens; the two-dot counter-reading of the converse of @prp-exists-forall-swap.
 
 **Marking scheme.** (10 points)
 
 - 1 each: (a), (b), (d), (e), (f), with the derivation or the counter-reading in full.
-- 2: (c), with the \( \rulename{\exists E} \) box opened first and aimed at the goal, and the \( \rulename{\neg I} \) box inside it.
+- 2: (c), with the \( \rulename{\exists E} \) box opened first and aimed at the goal, and \( \neg P(x_0) \) obtained inside it (by a \( \rulename{\neg I} \) box or by \( \rulename{MT} \)).
 - 2: (g), with two boxes, different names, closed in the right order.
 - 1: the closing pairing.
 
@@ -1620,7 +1620,7 @@ def-rules-existential (claim): a variable that does not appear in phi is free fo
 def-rules-existential (example): the three illegal derivations: over N, some number exceeds 5 and 0 does not; 1 is not even; over Z every integer has a smaller one and none is less than itself | school arithmetic; informal truth, F1.4 §01
 def-rules-existential (claim): "open the box early" keeps every resource and the box can always close (not "loses nothing"; see blueprint deviation): every line available before the box opens is available inside it (def-derivation scope rule, recalled in prose); x_0 is chosen to appear in no premise, no open assumption, not in the existential and not in the goal chi, and the assumptions open at the closing line are those open at the opening; a forall-I flag inside the box that is fresh at that point does not appear in the new assumption | inline argument
 def-rules-existential (example): the warning: forall-I side condition, open-assumption clause; clause 3 keeps the witness inside its box | def-rules-universal (F1.4 §04; recalled in prose); the clause-3 derivation above
-prp-exists-and (solution): the Quick check after it: over Z, some integer is even (0), some is odd (1), none is both | F2.2 (promised); STATUS F1.1 row, as in F1.1 §01, §07 (0 even and 1 odd: school arithmetic); informal truth, F1.4 §01; the counter-reading named in prose (F1.4 §03)
+prp-exists-and (solution): the Quick check after it: over Z, some integer is even (0), some is odd (1), none is both | school arithmetic (as in F1.1 §01, §07; 0 even and 1 odd); informal truth, F1.4 §01; the counter-reading named in prose (F1.4 §03)
 exm-existential-elimination-derivations (solution): b: over Z, some integer is odd and no odd integer is divisible by 4 | school arithmetic
 exm-existential-elimination-derivations (solution): a: or-E requires the case conclusions to be lines of the case boxes themselves | def-rules-disjunction (cited)
 prp-exists-forall-swap (proof): the citation convention for a flagged box that immediately contains another box; forall-I side condition | F1.4 §04 (def-rules-universal, cited)

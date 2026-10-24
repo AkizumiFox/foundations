@@ -1,6 +1,6 @@
 # Using "For Every": Instantiation
 
-Section 5.2 made the language exact and defined the operation \( \varphi[t/x] \), "put the term \( t \) in for the variable \( x \)", with its one hazard, capture. We can now give the first quantifier rule. It is the rule for **using** a universal statement: whatever holds for every object holds for the object named by any term we care to write. The rule is called \( \rulename{\forall E} \). It is the rule behind every "by the theorem, applied to \( x = 2 \)". With it alone, universal statements can be used but not proved, and the section ends at exactly that gap, which Section 5.4 fills.
+Section 5.2 made the language exact and defined the operation \( \varphi[t/x] \), "put the term \( t \) in for the variable \( x \)", with its one hazard, capture. We can now give the first quantifier rule. It is the rule for **using** a universal statement: whatever holds for every object holds for the object named by any term we care to write. The rule is called \( \rulename{\forall E} \). It is the rule behind every "by the theorem, applied to \( x = 2 \)". With it alone, universal statements can be used but not proved, and the section meets exactly that gap ("A stall" below), which Section 5.4 fills.
 
 ## Applying a statement about everything
 
@@ -44,7 +44,7 @@ In words: if a line says that \( \varphi \) holds for every \( x \), then any la
 
 Read the definition clause by clause; exercises cite the clauses by number.
 
-1. **The cited line's main symbol is \( \forall x \)**, with all of \( \varphi \) as its scope: \( \forall x\, P(x) \to Q(c) \) is an implication, and a \( \forall \) buried inside another connective is dug out first by that connective's rule.
+1. **The cited line's main symbol is \( \forall x \)**, with all of \( \varphi \) as its scope: \( \forall x\, P(x) \to Q(c) \) is an implication; a \( \forall \) buried inside another connective must first be taken out by that connective's rule, when it can be (\( \rulename{\wedge E} \) takes \( \forall x\, P(x) \) out of \( \forall x\, P(x) \wedge Q(c) \)), and a \( \forall \) in the hypothesis of an implication cannot be instantiated at all.
 2. **Any term:** a constant, a variable (\( x \) itself included) or a compound term. Nothing about it needs to be established first, since every term names an object of the domain.
 3. **Every free occurrence, by the same term:** the new line is \( \varphi[t/x] \); we do not choose which occurrences change.
 4. **Free for \( x \)** (@def-free-for): no letter of \( t \) is caught by a quantifier of \( \varphi \). This is the rule's only restriction.
@@ -286,7 +286,7 @@ It is plainly correct: if every \( x \) has both properties, then every \( x \) 
 
 So with \( \rulename{\forall E} \) alone, a universal statement can be **used** but not **proved**. Leaving aside a detour through a contradiction, a derivation can write \( \forall x\, \psi \) only by taking it out of a line or box that already contains it, as line 2 of (b) took \( \forall y\, R(c, y) \) out of the premise. Section 1.3 was in the same position with implications, and Section 1.4 filled the gap with a box. Section 5.4 does the same for \( \forall \): it proves \( P \) of one name about which nothing is known, and that box finishes this derivation in four lines.
 
-**Counter-readings.**[]{#counter-readings} Each error above was shown wrong by a reading, a domain with a meaning for every symbol, in which the premises are true and the line is false. Call such a reading a **counter-reading**: it makes the whole counterexample set of the claim (Section 1.1), its premises and the negation of its line, true at once. A counter-reading shows that a step is unsafe. It is also how this book shows that a sequent has no derivation at all: a search that stalls proves nothing, since a cleverer derivation might exist. Sections 7.1 and 7.2 make readings exact and state that a counter-reading rules out every derivation. Until then, when this chapter says that something does not follow, it gives a counter-reading, and it never treats a stalled search as a proof.
+**Counter-readings.**[]{#counter-readings} Each error above was shown wrong by a reading, a domain with a meaning for every symbol and a value for each free variable, in which the premises are true and the line is false. Call such a reading a **counter-reading**: it makes the whole counterexample set of the claim (Section 1.1), its premises and the negation of its line, true at once. A counter-reading shows that a step is unsafe. It is also how this book shows that a sequent has no derivation at all: a search that stalls proves nothing, since a cleverer derivation might exist. Sections 7.1 and 7.2 make readings exact and state that a counter-reading rules out every derivation. Until then, when this chapter says that something does not follow, it gives a counter-reading, and it never treats a stalled search as a proof.
 
 ## The rule card
 
@@ -558,7 +558,7 @@ $\begin{nd}
 ::: {#exr-universal-elimination-b5}
 [B5: Derive or break]
 
-For each claim, either derive it with the rules of Chapters 1–2 and \( \rulename{\forall E} \), or break it with a counter-reading: a domain, a meaning for each symbol, and a value for each constant, that make its counterexample set true.
+For each claim, either derive it with the rules of Chapters 1–2 and \( \rulename{\forall E} \), or break it with a counter-reading: a domain, a meaning for each symbol, and a value for each constant, that make its counterexample set true. Then pair each break with the derivable claim it imitates, and say what separates them.
 
 ::: {.enumerate options="label=(\alph*)"}
 1. \( \forall x\, (P(x) \vee Q(x)), \ \neg P(c) \vdash Q(c) \).
@@ -744,7 +744,7 @@ Clause 1: the main symbol of line 1 is \( \forall x \), with scope \( P(x) \). C
 **Marking scheme.** (10 points)
 - 6: (a) the derivation, with each of the five numbered clauses checked (main symbol \( \forall x \); any term; every free occurrence by the same term; free for \( x \); availability), including that \( x \) is free for \( x \).
 - 4: (b) a reading with \( P(x) \) true and \( \forall x\, P(x) \) false, with the value of \( x \) stated.
-Fatal error (0 for the step): treating \( P(x) \) and \( P(x_0) \) as the same line.
+Fatal error (0 for the step): in (b), a reading in which \( P(x) \) is false or \( x \) has no value.
 :::
 
 <!-- dependency ledger

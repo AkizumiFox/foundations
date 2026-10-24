@@ -6,7 +6,7 @@ The chapter is the first-order twin of Chapters 1 and 2: one rule per section, e
 
 **What you need.** Chapters 1–4. From Chapters 1–3: the rules of every connective, derivations with boxes and the scope rule (@def-derivation), derived rules (@def-derived-rule), and the search method of Section 3.1, which each rule section here extends by one step. From Chapter 4: formulas as objects (@def-formula), structural induction and recursion (@thm-structural-induction, @thm-structural-recursion), and refuting rows (@cor-refuting-row). School arithmetic and the order of \( \nN \), \( \nZ \), \( \nQ \), \( \nR \) are used in examples as facts.
 
-**Time.** About 45 hours on the core track (all of A, one B and one C per section); about 70 hours for everything.
+**Time.** About 45 hours on the core track (all of A, one B and one C per section); about 65 hours for everything.
 
 **Minimum before *Sets, Relations, and Cardinality*.** Chapters 1–6 and 8, core; Sections 7.1–7.2 before its Chapter 3.
 
@@ -40,7 +40,7 @@ The four quantifier rules are on one card at the end of Section 5.6, and the who
 
 ## Summary
 
-The language and its substitution are exact, capture included. Each quantifier rule has a side condition about names: \( \rulename{\forall E} \) at a term free for the variable, \( \rulename{\forall I} \) over a fresh flag, \( \rulename{\exists I} \) at a witness a line shows, \( \rulename{\exists E} \) with a fresh name kept in its box. With them and the two rules for equality, \( \exists x\, \forall y \) gives \( \forall y\, \exists x \) but not conversely, equals share every property (@prp-leibniz-law), no relation has the barber's property (@thm-barber), and a definition proves nothing new about the old words (@prp-definitional-extension).
+The language and its substitution are exact, capture included. Each quantifier rule has a side condition about names: \( \rulename{\forall E} \) at a term free for the variable, \( \rulename{\forall I} \) over a fresh flag, \( \rulename{\exists I} \) at a witness a line shows, \( \rulename{\exists E} \) with a fresh name kept in its box. With them and the two rules for equality, \( \exists x\, \forall y \) gives \( \forall y\, \exists x \) and a counter-reading breaks the converse, equals share every property (@prp-leibniz-law), no relation has the barber's property (@thm-barber), and a definition proves nothing new about the old words (@prp-definitional-extension).
 
 What is open: a stalled search shows nothing, and the counter-readings are not yet certified (Chapter 7). The definitions of analysis, four quantifiers deep, are still to be translated, negated and derived (Chapter 6).
 
