@@ -1347,7 +1347,7 @@ Suppose \( \exists \) were not a symbol of the language, and \( \exists x\, \var
 ::: {.enumerate options="label=(\alph*)"}
 1. Show that \( \rulename{\exists I} \) is then a derived step: from \( \varphi[t/x] \), with \( t \) free for \( x \) in \( \varphi \), derive \( \neg\forall x\, \neg\varphi \).
 2. Show that \( \rulename{\exists E} \) is one too: if \( \Gamma, \varphi[x_0/x] \vdash \chi \), where \( x_0 \) is a variable other than \( x \) that appears neither in \( \Gamma \), nor in \( \chi \), nor in \( \varphi \), then \( \Gamma, \neg\forall x\, \neg\varphi \vdash \chi \).
-3. Which of (a) and (b) needs a classical rule (\( \rulename{RAA} \) or \( \rulename{LEM} \))?
+3. Which of (a) and (b) uses a classical rule (\( \rulename{RAA} \) or \( \rulename{LEM} \))?
 :::
 :::
 
@@ -1390,7 +1390,7 @@ Line 3 is \( \rulename{\forall E} \) at \( t \), which is free for \( x \) in \(
 - write \( \bot \) by \( \rulename{\neg E} \) with \( \neg\chi \), and \( \neg\varphi[x_0/x] \) by \( \rulename{\neg I} \); close the flagged box with \( \forall x\, \neg\varphi \) by \( \rulename{\forall I} \). Here \( x_0 \) is in no premise, not in the open assumption \( \neg\chi \) and not in \( \forall x\, \neg\varphi \);
 - write \( \bot \) by \( \rulename{\neg E} \) with the premise \( \neg\forall x\, \neg\varphi \), and \( \chi \) by \( \rulename{RAA} \).
 
-*(c)* (b) uses \( \rulename{RAA} \), at its last line, and (a) does not. (Whether (b) could avoid it is not asked.)
+*(c)* (b) uses one: \( \rulename{RAA} \) at its last line (or \( \rulename{LEM} \), in a proof by cases); (a) uses neither. (Whether (b) could avoid a classical rule altogether is not asked.)
 
 **Marking scheme.** (10 points)
 

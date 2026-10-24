@@ -5,7 +5,7 @@ items:
   kind: exm
   file: 01-translation.md
   line: 47
-  hash: aace7f6380f1
+  hash: a285c7d46648
   verdicts:
   - stage: S5a
     verdict: minor
@@ -284,7 +284,7 @@ items:
   kind: check
   file: 01-translation.md
   line: 367
-  hash: 2d8663b85b4c
+  hash: 26a2a7af7445
   verdicts:
   - stage: S5a
     verdict: correct
@@ -639,7 +639,7 @@ items:
   kind: exr
   file: 01-translation.md
   line: 725
-  hash: 34d399a15794
+  hash: fb2f19fc1657
   verdicts:
   - stage: S5a
     verdict: correct
@@ -888,7 +888,7 @@ items:
   kind: proof
   file: 02-quantifier-laws.md
   line: 330
-  hash: d76d995a7bb0
+  hash: c9dc63367072
   verdicts:
   - stage: S5a
     verdict: minor
@@ -1221,7 +1221,7 @@ items:
   kind: proof
   file: 02-quantifier-laws.md
   line: 580
-  hash: 8e93d79e9e3b
+  hash: 09538a6c3fa0
   verdicts:
   - stage: S5a
     verdict: minor
@@ -1289,7 +1289,7 @@ items:
   kind: proof
   file: 02-quantifier-laws.md
   line: 610
-  hash: 8a07dad24ed9
+  hash: 7e1e2326a31f
   verdicts:
   - stage: S5a
     verdict: correct
@@ -1647,7 +1647,7 @@ items:
   kind: exr
   file: 02-quantifier-laws.md
   line: 1181
-  hash: 80d0ea96737a
+  hash: 9f315435d88b
   verdicts:
   - stage: S5a
     verdict: minor
@@ -1774,7 +1774,7 @@ items:
   kind: exr
   file: 02-quantifier-laws.md
   line: 1342
-  hash: 3b124ed4e012
+  hash: fbcee4b32015
   verdicts:
   - stage: S5a
     verdict: correct
@@ -1821,6 +1821,14 @@ items:
       ~02:1392 still answers ''(b) uses RAA … (Whether (b) could avoid it is not asked.)'', which contradicts
       the new wording. The hint ladder follows the STYLE §11 hint-ladder form (two folded rungs written
       as .solution blocks starting [Hint 1]/[Hint 2]).'
+  - stage: S8
+    verdict: correct
+    by: coordinator
+    hash: fbcee4b32015
+    date: '2026-10-25'
+    model: claude-opus-5-5
+    evidence: 'S7 leftover resolved by the coordinator per the re-referee''s fix, re-read after the edit:
+      (c) now asks which part uses a classical rule and the solution answers it'
 - key: exm-search-with-witnesses
   kind: exm
   file: 03-first-order-search.md
@@ -1879,7 +1887,7 @@ items:
   kind: def
   file: 03-first-order-search.md
   line: 174
-  hash: 8e5968a86523
+  hash: 70a571906005
   verdicts:
   - stage: S5a
     verdict: minor
@@ -1918,7 +1926,7 @@ items:
   kind: prp
   file: 03-first-order-search.md
   line: 196
-  hash: 6c9819dfee7e
+  hash: a2e5f6e184d1
   verdicts:
   - stage: S5a
     verdict: correct
@@ -1945,11 +1953,21 @@ items:
     evidence: 03-first-order-search.md:214 Step 2 needs, for any two prime formulas that differ only by
       renaming bound variables, a derivable closure of their biconditional, so that @prp-replacement can
       be applied. The text cites the renaming sentence for this, and that sentence does not give it.
+  - stage: S8
+    verdict: correct
+    by: coordinator
+    hash: a2e5f6e184d1
+    date: '2026-10-25'
+    model: claude-opus-5-5
+    evidence: 'S7 leftover resolved by the coordinator per the re-referee''s fix, re-read after the edit:
+      the hypothesis now reads prime formulas occurring outside all quantifiers, as Step 2 needs; the
+      S8 gap (closure of a renaming) is paid by the extended renaming sentence after prp-replacement (02,
+      S7 cross-file fix)'
 - key: proof:prp-taut-skeleton
   kind: proof
   file: 03-first-order-search.md
   line: 211
-  hash: 225e79b99c05
+  hash: 09d8d6f8b52e
   verdicts:
   - stage: S5a
     verdict: minor
@@ -1989,6 +2007,14 @@ items:
       assigned prime formula, others to ⊥). 03:214: γ* replaces only occurrences outside all quantifiers,
       and it is reached by one-step renamings through new letters, chained by lem-weakening-cut (c). This
       is consistent with the new renaming sentence at 02:359.'
+  - stage: S8
+    verdict: correct
+    by: coordinator
+    hash: 09d8d6f8b52e
+    date: '2026-10-25'
+    model: claude-opus-5-5
+    evidence: 'S7 leftover resolved by the coordinator per the re-referee''s fix, re-read after the edit:
+      Step 1 heading and Step 2''s appeal to Step 1 now use the outside-all-quantifiers reading'
 - key: check:03-first-order-search:2
   kind: check
   file: 03-first-order-search.md
@@ -2014,7 +2040,7 @@ items:
   kind: exm
   file: 03-first-order-search.md
   line: 253
-  hash: ee220cc7437f
+  hash: e803c21bfbce
   verdicts:
   - stage: S5a
     verdict: minor
@@ -2207,7 +2233,7 @@ items:
   kind: exr
   file: 03-first-order-search.md
   line: 695
-  hash: 5d7950d60172
+  hash: 7871648e48c9
   verdicts:
   - stage: S5a
     verdict: minor
@@ -2287,7 +2313,7 @@ items:
   kind: exr
   file: 03-first-order-search.md
   line: 820
-  hash: c214fb3b3637
+  hash: 71781ecc23ac
   verdicts:
   - stage: S5a
     verdict: correct
@@ -2337,7 +2363,7 @@ items:
   kind: exr
   file: 03-first-order-search.md
   line: 899
-  hash: a79f0ec34ad8
+  hash: 42c45e2a1416
   verdicts:
   - stage: S5a
     verdict: correct
@@ -2602,7 +2628,7 @@ items:
   kind: exm
   file: 04-uniform-continuity-rule-by-rule.md
   line: 319
-  hash: 07f9279ccfd6
+  hash: 9d138cd2cf40
   verdicts:
   - stage: S5a
     verdict: correct
@@ -2707,7 +2733,7 @@ items:
   kind: exr
   file: 04-uniform-continuity-rule-by-rule.md
   line: 380
-  hash: a431470774be
+  hash: 283581ffc638
   verdicts:
   - stage: S5a
     verdict: correct
@@ -2900,7 +2926,7 @@ items:
   kind: exr
   file: 04-uniform-continuity-rule-by-rule.md
   line: 537
-  hash: acd324ff88c1
+  hash: ff53cd953e68
   verdicts:
   - stage: S5a
     verdict: correct
@@ -3111,7 +3137,7 @@ items:
   kind: exr
   file: 04-uniform-continuity-rule-by-rule.md
   line: 729
-  hash: 48c94e3fe265
+  hash: 1107d118d0c9
   verdicts:
   - stage: S5a
     verdict: minor
@@ -3167,7 +3193,7 @@ items:
   kind: exr
   file: 04-uniform-continuity-rule-by-rule.md
   line: 773
-  hash: c123622efcd6
+  hash: 385e4e1b154f
   verdicts:
   - stage: S5a
     verdict: correct
