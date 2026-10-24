@@ -1086,3 +1086,5 @@ All six recheck findings are applied; none is rejected.
 4. *R2's link sentence (minor).* Applied: "Lines 2 and 4–8 … with line 3 as its premise". The derivation is unchanged, so no new `check_fitch.py` run was needed.
 5. *5.6 budget sum (minor).* Applied: ~4,900 in §2, §4.6 and §5; Quick checks one per ~980. With item 3 the sections total ~31,645; core ≈ 44.5 h (still "About 45 hours"), full ≈ 67.8 h (still "about 70 hours").
 6. *Missing `-a2.py` sidecar (minor).* Applied: `exr-counting-and-descriptions-a2.py` (parts (i), (j)) added to §3.3's list.
+
+*Deviation (S3, 2026-10-24):* the index's Minimum line uses Chapters 1–4's delivered wording ("Minimum before *Sets, Relations, and Cardinality*") rather than §4.0's "Minimum for fd2"; equality rules are written `\rulename{{=}I}`, `{{=}E}` as in 5.7; the counter-reading entry links `[Section 5.3](#counter-readings)`. 5.6 is 5,136 words on the main line against a budget of 5,000, accepted pending the author's review. Chapter 6, Section 6.1 must carry the "one domain per formula" convention (old 01:178–182), on which fold F4.2-d and 6.4 rely.

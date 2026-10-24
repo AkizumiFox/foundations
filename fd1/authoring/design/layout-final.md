@@ -156,7 +156,7 @@ There are also 3 "Chapter 2" hits, checked by hand for "search", which becomes C
 | 5.3 | Using "For Every": Instantiation (was 4.3) | ∀E; gallery; ∀E as ∧E over {0,1,2} | ≤ 3,500 | core | M, E | D 3.4 (4.3) |
 | 5.4 | Proving "For Every": Let x Be Arbitrary (was 4.4) | ∀I and the flag; critique; relation-property items | ≤ 4,200 | core | M, E | D 3.4 (4.4) |
 | 5.5 | Proving "There Exists": Exhibit a Witness (was 4.5) | ∃I; derive-or-break with counter-readings worded for 7.2 (G10) | ≤ 3,400 | core | M, E | D 3.4 (4.5) |
-| 5.6 | Using "There Exists": Name a Witness (was 4.6) | ∃E; twin figure with ∨E; **the barber and Russell's theorem** (`thm-russell`); finite choice | ≤ 5,000 | core | M, E | D 3.4 (4.6) |
+| 5.6 | Using "There Exists": Name a Witness (was 4.6) | ∃E; twin figure with ∨E; **the barber and Russell's theorem** (`thm-barber`); finite choice | ≤ 5,000 | core | M, E | D 3.4 (4.6) |
 | 5.7 | Equality (old 4.7, lines 1–249 and 409–444) | =I, =E, congruence, calculation chains; Leibniz's Law; opacity; logical half of extensionality; **`rule-phrase-lean-table` ends this, the last rule section** (C1; it has no ∃! rows) | ≤ 4,000 | core | S, E | D 3.4 (4.7); C1 |
 | 5.8 | Unique Existence, Counting and Descriptions (old 4.7, lines 250–408, + new; file `08-counting-and-descriptions.md`) | ∃! (labels kept with their `equality-and-uniqueness` prefix); at least, at most and exactly *n*; distinct letters need not be distinct objects; "the x such that φ"; function symbol against its graph; **definitional extension** (C small 6) with the **"we define …" and "the limit" phrases introduced here** (G3 fallback); only, except and superlatives **as drills** (C3); **the chapter's R items** (new `exr-counting-and-descriptions-r*`) | ≤ 4,800 | core | S, N | D 3.4 (4.8); C3; C small 6 |
 
@@ -214,7 +214,7 @@ There are also 3 "Chapter 2" hits, checked by hand for "search", which becomes C
 | 4.8 | `def-rule-taut` |
 | 4.9 | `thm-monotonicity` |
 | 4.10 | `def-infinite-entailment`, `lem-lindenbaum`, `thm-compactness` |
-| 5.6 | `thm-russell` |
+| 5.6 | `thm-barber` |
 | 5.8 | counting definitions, `def-definite-description`, `prp-definitional-extension`, `exr-counting-and-descriptions-*` (with R items) |
 | 6.2 | `prp-replacement` |
 | 6.3 | `def-propositional-skeleton`, `prp-taut-skeleton` |

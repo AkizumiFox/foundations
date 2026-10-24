@@ -374,3 +374,10 @@ FTT
 FTF
 FFT
 FFF
+# Chapter 5 (ch05-deepen): names and Lean commands
+Leibniz
+Leibniz's
+Russell
+Russell's
+rfl
+calc

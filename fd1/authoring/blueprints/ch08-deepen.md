@@ -191,7 +191,7 @@ The 8.8 results carry no `.optional` class of their own: the section is the opti
 **Planned labels of other units that this file cites.** Each is fixed in layout §1.4. If its blueprint names it differently, S8's seam pass uses the delivered name.
 - `def-rule-taut` (4.8)
 - `thm-monotonicity` (4.9, second pass; cited only in a fold)
-- `thm-russell` (5.6)
+- `thm-barber` (5.6)
 - `exm-extensionality-logical-half` (5.7)
 - `def-definite-description` and `prp-definitional-extension` (5.8)
 - `prp-replacement` (6.2)
@@ -762,7 +762,7 @@ R5 §4.6 is executed in full. Additions:
 
    **The line between (N9) and (N14)** (S2 round 1), which every tag in this chapter follows. (N9) is a step whose warrant is **asserted**, by "since", "so" or a citation, but is not available: the goal, a later result, or a general "fact" neither proved nor a true school fact ("\( 2 \mid m \) and \( 3 \mid m \), so \( 6 \mid m \)" with no argument; "the lemma" used unproved). (N14) is a step that **presupposes** a premise it never asserts at all, most often the existence (and uniqueness) behind "the" or "let … be the …". Checked against the chapter: the (N9) tags of 8.1 B4, 8.2 B3, 8.5 B4 and 8.5 C3 are all asserted warrants, and the 8.4 lines "since \( n^2 \) is a multiple of …" are (N9) cases (§4.4 ledger). The (N14) tags of 8.2's Not-allowed block ("let \( L \) be the limit"), 8.6 A2 (k) ("let \( n \) be the positive integer with …") and 8.6 B3 (v) ("let \( x \) be the real solution") are all presupposed by a name, and none of them asserts the existence it needs, so none is also (N9).
 
-   **Fold F8.6-b** `title="True conclusions behind an 'and so on' and a 'the'"` (new, S2 round 1, budget; ~150 words; a sibling after the catalogue block): "Both new kinds of error can reach a true conclusion. The words of (N13)'s instance, said of a non-empty set of natural numbers, reach a true conclusion, but they leave out why the process ends: a strictly decreasing list of natural numbers that starts at \( a_1 \) has at most \( a_1 + 1 \) terms, which needs an induction. 'Let \( m \) be the least positive integer with \( m^2 > 50 \); since \( 7^2 = 49 \) and \( 8^2 = 64 \), \( m = 8 \)' reaches a true conclusion too, but the existence of a least such integer is a premise the proof must state: it is (N14). The barber who shaves exactly the villagers who do not shave themselves is (N14) as well; Section 5.6 shows that no such barber can exist (@thm-russell)." (Edge cases, STYLE §12.3: a true conclusion with an improper step. No exercise needs the fold: A2 (j) gives its own true (N13) instance.)
+   **Fold F8.6-b** `title="True conclusions behind an 'and so on' and a 'the'"` (new, S2 round 1, budget; ~150 words; a sibling after the catalogue block): "Both new kinds of error can reach a true conclusion. The words of (N13)'s instance, said of a non-empty set of natural numbers, reach a true conclusion, but they leave out why the process ends: a strictly decreasing list of natural numbers that starts at \( a_1 \) has at most \( a_1 + 1 \) terms, which needs an induction. 'Let \( m \) be the least positive integer with \( m^2 > 50 \); since \( 7^2 = 49 \) and \( 8^2 = 64 \), \( m = 8 \)' reaches a true conclusion too, but the existence of a least such integer is a premise the proof must state: it is (N14). The barber who shaves exactly the villagers who do not shave themselves is (N14) as well; Section 5.6 shows that no such barber can exist (@thm-barber)." (Edge cases, STYLE §12.3: a true conclusion with an improper step. No exercise needs the fold: A2 (j) gives its own true (N13) instance.)
 
    (In (N13)'s instance "\( \{1, \tfrac12, \tfrac13, \dots\} \)" is the set \( \{1/n : n \in \nZ_{>0}\} \); the drafter writes whichever form the build renders. The catalogue's head sentence 06:31, "Each entry names the error, the rule it breaks and where that rule lives, and a failing instance whose conclusion is marked true or false", covers the three new entries, each with one instance.)
 
@@ -844,7 +844,7 @@ R5 §4.6 is executed in full. Additions:
 - (N12): `def-rule-universal-elimination`, cited; arithmetic; sidecar.
 - (N13): `ax-induction` and `thm-strong-induction`, cited.
 - (N14): `def-rules-existential`, cited; Section 5.8's description, prose pointer. The line against (N9): read off the two entries.
-- F8.6-b: "a decreasing list in \( \nN \) from \( a_1 \) has at most \( a_1 + 1 \) terms", stated and not used as a reason; "the least positive integer with \( m^2 > 50 \) exists", a premise named in the fold; both F2.2 (promised), well-ordering; `thm-russell`, cited.
+- F8.6-b: "a decreasing list in \( \nN \) from \( a_1 \) has at most \( a_1 + 1 \) terms", stated and not used as a reason; "the least positive integer with \( m^2 > 50 \) exists", a premise named in the fold; both F2.2 (promised), well-ordering; `thm-barber`, cited.
 - The improper paragraph: `def-levels-of-proof`, within the section's chapter; Section 8.3's TAUT paragraph, within the chapter.
 - F8.6-c, the traditional-names table: a regrouping, read off the entries.
 - B3: `thm-strong-induction`, cited; school algebra; sidecar.
@@ -1382,7 +1382,7 @@ R5's pointers are already in the final numbering (D2's sweep reached the frozen 
 | 8.3 TAUT paragraph | @def-rule-taut ("Section 4.8"); @def-propositional-skeleton, @prp-taut-skeleton ("Section 6.3") | F1.3 §08; F1.8 §03 | planned (ch04-deepen; ch06 blueprint) |
 | 8.4 unstated fact | "Section 3.3 took a paragraph of argument apart"; @exr-using-an-implication-b5 | F1.7 §03; F1.1 §04 | 3.3 planned (ch03 blueprint, wave A); B5 delivered |
 | 8.5 generalising | "the move of ∀I (Section 5.4)" | F1.4 §04 | in place |
-| 8.6 (N12)–(N14) | @def-rule-universal-elimination; @ax-induction, @thm-strong-induction; @def-rules-existential; "Section 5.8"; @thm-russell ("Section 5.6") | F1.4 §03; F1.3 §02; F1.4 §06, §08; F1.4 §06 | `thm-russell` planned (ch05-deepen) |
+| 8.6 (N12)–(N14) | @def-rule-universal-elimination; @ax-induction, @thm-strong-induction; @def-rules-existential; "Section 5.8"; @thm-barber ("Section 5.6") | F1.4 §03; F1.3 §02; F1.4 §06, §08; F1.4 §06 | `thm-barber` planned (ch05-deepen) |
 | 8.6 traditional names | "a common error of Section 1.6" | F1.1 §07 | delivered (affirming a disjunct) |
 | 8.7 R1 | @prp-replacement ("Section 6.2") | F1.8 §02 | planned (ch06 blueprint) |
 | 8.7 → 8.8 | "the optional Section 8.8" (six prose pointers, §4.7 item 2: the table cell 07:15, the Quick check of "Excluded middle cannot be refuted", B1's solution, R3's solution, the new table's lead, B5 (d)'s parenthesis) | F1.5 §08 | this file; written in the same pass |
@@ -1424,7 +1424,7 @@ R5's pointers are already in the final numbering (D2's sweep reached the frozen 
   - layout §8, Wave 3: "5.8 → 8.2" (paid, §4.2 item 2); "4.8/6.3 → 8.3" (paid, §4.3 item 2).
   - Critic, smaller correction 3: "8.7 points to 8.8" (paid, §4.7 item 2).
   - Critic, smaller correction 6: the "we define" row (paid).
-- **Backward citations of planned labels**, for S8 to confirm against the delivered chapters: `def-rule-taut`, `thm-monotonicity`, `thm-russell`, `exm-extensionality-logical-half`, `def-definite-description`, `prp-definitional-extension`, `prp-replacement`, `def-propositional-skeleton`, `prp-taut-skeleton`; and 3.3's argument extraction (prose). If one of these chapters lands after Chapter 8 is drafted (it should not: Wave 3 follows G3), S3 writes the sentence without the `@ref` and S8 restores it.
+- **Backward citations of planned labels**, for S8 to confirm against the delivered chapters: `def-rule-taut`, `thm-monotonicity`, `thm-barber`, `exm-extensionality-logical-half`, `def-definite-description`, `prp-definitional-extension`, `prp-replacement`, `def-propositional-skeleton`, `prp-taut-skeleton`; and 3.3's argument extraction (prose). If one of these chapters lands after Chapter 8 is drafted (it should not: Wave 3 follows G3), S3 writes the sentence without the `@ref` and S8 restores it.
 
 ---
 
@@ -1469,7 +1469,7 @@ R5 §8's items 1–25 stand, and S2a re-runs only those this file touches (items
    - (N12): \( a = b = 2 \) are roots of \( x^2 - 5x + 6 \) and the factorization step fails there.
    - (N13): \( \{1/n\} \) has no least element.
    - (N14): "\( N + 1 \le N \)" from "\( N \) largest". The line between (N9) and (N14) (asserted warrant against presupposed premise), and every (N9)/(N14) tag of the chapter against it (§4.6, item 2).
-   - F8.6-b: in \( \nN \) a strictly decreasing list from \( a_1 \) has at most \( a_1 + 1 \) terms; \( m = 8 \) is least with \( m^2 > 50 \); the citation of `thm-russell` (5.6) says what 5.6 delivers.
+   - F8.6-b: in \( \nN \) a strictly decreasing list from \( a_1 \) has at most \( a_1 + 1 \) terms; \( m = 8 \) is least with \( m^2 > 50 \); the citation of `thm-barber` (5.6) says what 5.6 delivers.
    - 06:31's head sentence still describes every entry. (N1)–(N11) are unchanged.
    - All 110 outside citations name (N1)–(N11) by number, and their meaning is unchanged.
 2. The families table: the (N12) placement, the new family and its slogan; the roadmap's "seven families".

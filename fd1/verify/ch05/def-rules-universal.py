@@ -1,4 +1,4 @@
-"""def-rules-universal (Ch 4, Section 4.4): the readings in "Why each clause", the
+"""def-rules-universal (Section 5.4): the readings in "Why each clause", the
 quick check, the warning, and the algebra of "How this rule looks"."""
 from fractions import Fraction as Fr
 
@@ -24,4 +24,14 @@ n = QUOTED["warning: n"]
 assert not even(n) and not even(n * n)
 # How this rule looks: (x - 1)^2 = x^2 - 2x + 1, at many exact points (degree 2).
 assert all((t - 1) ** 2 == t * t - 2 * t + 1 for t in [Fr(k, 11) for k in range(-100, 100)])
+# The WRONG/RIGHT pair: over Z with x_0 naming 1, line 4 "if 1 > 0 then every integer is
+# positive" is false (0 > 0 fails); the RIGHT half's arith step x_0 > 0 => x_0 + 1 > 0.
+x0 = QUOTED["assumption: y"]
+assert x0 > 0 and not all(z > 0 for z in Z)
+assert all(z + 1 > 0 for z in Z if z > 0)
+# A1 D3: over Z, R is <, c = 5, x_0 = 1: R(1, 5) holds; forall x (x < 5) fails at 6.
+assert 1 < 5 and not (6 < 5)
+# The critique: over R, x <= x + 1 always; M + 1 > M, so no real M is >= every real.
+assert all(t <= t + 1 for t in [Fr(k, 7) for k in range(-100, 100)])
+assert all(m + 1 > m for m in [Fr(k, 7) for k in range(-100, 100)])
 print("def-rules-universal: all quoted values check")

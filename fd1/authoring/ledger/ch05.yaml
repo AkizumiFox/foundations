@@ -4,8 +4,8 @@ items:
 - key: check:01-predicates-and-quantifiers:1
   kind: check
   file: 01-predicates-and-quantifiers.md
-  line: 108
-  hash: 6d511c01e283
+  line: 128
+  hash: 64827ac77369
   verdicts:
   - stage: S5a
     verdict: correct
@@ -22,11 +22,39 @@ items:
     model: claude-opus-5-5
     evidence: 01:108-114. x+x=x iff x=0; 0 is in Z and R and not in Z_{>0}; n+n>n for n>0. The parenthetical
       about N is right. The witness and reason match the question.
+- key: check:01-predicates-and-quantifiers:2
+  kind: check
+  file: 01-predicates-and-quantifiers.md
+  line: 138
+  hash: e7b96e49c54e
+  verdicts:
+  - stage: S5a
+    verdict: correct
+    by: refereeA
+    hash: 25d33d02b71f
+    date: '2026-10-10'
+    model: claude-opus-5-5
+    evidence: 'lines 230-236: the swap is ∃p∀n(Prime(p)∧p>n), and n=p refutes it for every p. It is correctly
+      called false.'
+  - stage: S5b
+    verdict: correct
+    by: refereeB
+    hash: 25d33d02b71f
+    date: '2026-10-10'
+    model: claude-opus-5-5
+    evidence: 01:230-236. The swap gives ∃p∀n(Prime(p)∧p>n), which n=p refutes. The original is correctly
+      flagged as the infinitude of primes, not used. Only the shared p/q notation issue applies (see exm-reading).
+- key: check:01-predicates-and-quantifiers:3
+  kind: check
+  file: 01-predicates-and-quantifiers.md
+  line: 166
+  hash: 6d511c01e283
+  verdicts: []
 - key: exm-reading-quantified-sentences
   kind: exm
   file: 01-predicates-and-quantifiers.md
-  line: 120
-  hash: cd7bca888558
+  line: 178
+  hash: 4d6c956f4fa0
   verdicts:
   - stage: S5a
     verdict: correct
@@ -59,7 +87,7 @@ items:
 - key: def-bounded-quantifier
   kind: def
   file: 01-predicates-and-quantifiers.md
-  line: 150
+  line: 208
   hash: 49e2950198a0
   verdicts:
   - stage: S5a
@@ -95,8 +123,8 @@ items:
 - key: exm-quantifier-order-sum
   kind: exm
   file: 01-predicates-and-quantifiers.md
-  line: 199
-  hash: 662062a9b1b2
+  line: 255
+  hash: 7ca2f568ed72
   verdicts:
   - stage: S5a
     verdict: correct
@@ -114,32 +142,22 @@ items:
     model: claude-opus-5-5
     evidence: 01:199-219. y=-x is a witness for (i). x=1-y refutes (ii), since x+y=1≠0. 'Each y serves
       only x=-y' holds. Sidecar verify/ch05/exm-quantifier-order-sum.py passes.
-- key: check:01-predicates-and-quantifiers:2
+- key: check:01-predicates-and-quantifiers:4
   kind: check
   file: 01-predicates-and-quantifiers.md
-  line: 230
-  hash: 25d33d02b71f
-  verdicts:
-  - stage: S5a
-    verdict: correct
-    by: refereeA
-    hash: 25d33d02b71f
-    date: '2026-10-10'
-    model: claude-opus-5-5
-    evidence: 'lines 230-236: the swap is ∃p∀n(Prime(p)∧p>n), and n=p refutes it for every p. It is correctly
-      called false.'
-  - stage: S5b
-    verdict: correct
-    by: refereeB
-    hash: 25d33d02b71f
-    date: '2026-10-10'
-    model: claude-opus-5-5
-    evidence: 01:230-236. The swap gives ∃p∀n(Prime(p)∧p>n), which n=p refutes. The original is correctly
-      flagged as the infinitude of primes, not used. Only the shared p/q notation issue applies (see exm-reading).
+  line: 300
+  hash: 3712b40f62e2
+  verdicts: []
+- key: check:01-predicates-and-quantifiers:5
+  kind: check
+  file: 01-predicates-and-quantifiers.md
+  line: 352
+  hash: c4635b5b99e0
+  verdicts: []
 - key: exr-predicates-and-quantifiers-a1
   kind: exr
   file: 01-predicates-and-quantifiers.md
-  line: 258
+  line: 380
   hash: d921ac801b34
   verdicts:
   - stage: S5a
@@ -170,10 +188,16 @@ items:
     evidence: '01:258-285. I solved it independently and all 15 truth values in (a) match: (v) is true
       over N and Z and false over R at 1/2 (script checked). (b), (c) and (d) are correct; the A={1} example
       in (b) is valid.'
+- key: exr-predicates-and-quantifiers-a2
+  kind: exr
+  file: 01-predicates-and-quantifiers.md
+  line: 409
+  hash: efa4b777a6a0
+  verdicts: []
 - key: exr-predicates-and-quantifiers-b1
   kind: exr
   file: 01-predicates-and-quantifiers.md
-  line: 289
+  line: 458
   hash: 3c67c9eb95e8
   verdicts:
   - stage: S5a
@@ -205,7 +229,7 @@ items:
 - key: exr-predicates-and-quantifiers-b2
   kind: exr
   file: 01-predicates-and-quantifiers.md
-  line: 312
+  line: 481
   hash: e9f2d798c334
   verdicts:
   - stage: S5a
@@ -235,10 +259,16 @@ items:
     evidence: '01:312-331. y>x works. The two listed properties characterize correct answers exactly.
       The alternatives y!=x and y>=x are valid and the non-answer y>=1 is correctly rejected. Worked-example
       type: exm-quantifier-order-sum, ''what makes the pair work''.'
+- key: exr-predicates-and-quantifiers-b3
+  kind: exr
+  file: 01-predicates-and-quantifiers.md
+  line: 502
+  hash: c2b23c4425cb
+  verdicts: []
 - key: exr-predicates-and-quantifiers-c1
   kind: exr
   file: 01-predicates-and-quantifiers.md
-  line: 335
+  line: 545
   hash: 1543c74ea56e
   verdicts:
   - stage: S5a
@@ -269,7 +299,7 @@ items:
 - key: exr-predicates-and-quantifiers-c2
   kind: exr
   file: 01-predicates-and-quantifiers.md
-  line: 355
+  line: 565
   hash: b201beaf4b04
   verdicts:
   - stage: S5a
@@ -323,7 +353,7 @@ items:
 - key: def-term
   kind: def
   file: 02-terms-formulas-substitution.md
-  line: 47
+  line: 33
   hash: ad9f92851ddd
   verdicts:
   - stage: S5a
@@ -359,7 +389,7 @@ items:
 - key: def-first-order-formula
   kind: def
   file: 02-terms-formulas-substitution.md
-  line: 85
+  line: 88
   hash: dd2b2dfe64c7
   verdicts:
   - stage: S5a
@@ -413,7 +443,7 @@ items:
 - key: check:02-terms-formulas-substitution:1
   kind: check
   file: 02-terms-formulas-substitution.md
-  line: 132
+  line: 134
   hash: 822aac641692
   verdicts:
   - stage: S5a
@@ -434,7 +464,7 @@ items:
 - key: def-free-variable
   kind: def
   file: 02-terms-formulas-substitution.md
-  line: 146
+  line: 175
   hash: 2385efb84db6
   verdicts:
   - stage: S5a
@@ -456,7 +486,7 @@ items:
 - key: def-sentence
   kind: def
   file: 02-terms-formulas-substitution.md
-  line: 161
+  line: 188
   hash: b9577afe2cf3
   verdicts:
   - stage: S5a
@@ -476,7 +506,7 @@ items:
 - key: exm-free-and-bound-limit
   kind: exm
   file: 02-terms-formulas-substitution.md
-  line: 187
+  line: 224
   hash: 68333c6bbff6
   verdicts:
   - stage: S5a
@@ -510,7 +540,7 @@ items:
 - key: check:02-terms-formulas-substitution:2
   kind: check
   file: 02-terms-formulas-substitution.md
-  line: 222
+  line: 260
   hash: 58cd0a52a55e
   verdicts:
   - stage: S5a
@@ -527,10 +557,31 @@ items:
     date: '2026-10-10'
     model: claude-opus-5-5
     evidence: '221-226: x is free in x<y and bound in x=0; y is not free. Correct.'
+- key: exm-computing-substitutions
+  kind: exm
+  file: 02-terms-formulas-substitution.md
+  line: 274
+  hash: 72fbb3d8f985
+  verdicts:
+  - stage: S5a
+    verdict: correct
+    by: refereeA
+    hash: 7e545c54c9b4
+    date: '2026-10-10'
+    model: claude-opus-5-5
+    evidence: '278-288: all four results match def-substitution, and the sidecar passes.'
+  - stage: S5b
+    verdict: correct
+    by: refereeB
+    hash: 7e545c54c9b4
+    date: '2026-10-10'
+    model: claude-opus-5-5
+    evidence: '264-289: (a) P(2)→S(2); (b) y+1<y ∧ ∀x(x≥0); (c) ∀y R(f(z),y); (d) unchanged. All agree
+      with def-substitution. The sidecar passes.'
 - key: def-substitution
   kind: def
   file: 02-terms-formulas-substitution.md
-  line: 236
+  line: 303
   hash: d68a6f1a424a
   verdicts:
   - stage: S5a
@@ -562,54 +613,37 @@ items:
       and records "appears in". NOTATION.md:133 has a row for Var/FV; its scope is noted under c1. Line
       262 says the slash in [t/x] separates and does not divide, so [y + 1/x] puts in y+1. That settles
       the clash w
-- key: exm-computing-substitutions
-  kind: exm
-  file: 02-terms-formulas-substitution.md
-  line: 268
-  hash: 7e545c54c9b4
-  verdicts:
-  - stage: S5a
-    verdict: correct
-    by: refereeA
-    hash: 7e545c54c9b4
-    date: '2026-10-10'
-    model: claude-opus-5-5
-    evidence: '278-288: all four results match def-substitution, and the sidecar passes.'
-  - stage: S5b
-    verdict: correct
-    by: refereeB
-    hash: 7e545c54c9b4
-    date: '2026-10-10'
-    model: claude-opus-5-5
-    evidence: '264-289: (a) P(2)→S(2); (b) y+1<y ∧ ∀x(x≥0); (c) ∀y R(f(z),y); (d) unchanged. All agree
-      with def-substitution. The sidecar passes.'
-- key: proof:exm-computing-substitutions
+- key: proof:def-substitution
   kind: proof
   file: 02-terms-formulas-substitution.md
-  line: 309
+  line: 350
   hash: 6c732b25c374
+  verdicts: []
+- key: check:02-terms-formulas-substitution:3
+  kind: check
+  file: 02-terms-formulas-substitution.md
+  line: 365
+  hash: 4580d4d3d417
   verdicts:
   - stage: S5a
     verdict: correct
     by: refereeA
-    hash: 6c732b25c374
+    hash: 6781a2711c3f
     date: '2026-10-10'
     model: claude-opus-5-5
-    evidence: 305-315 is the proof of the claim at 297 (x not free implies φ[t/x]=φ). The term lemma is
-      proved first. Every case uses the recursive description of 'free'. In the quantifier case y=x is
-      handled by the clause and y≠x by the IH. The hypothesis is used. No later material is used.
+    evidence: '379-381: ∀z(y+1<z) and ∀y(y+1<y) are computed correctly. The readings are right.'
   - stage: S5b
     verdict: correct
     by: refereeB
-    hash: 6c732b25c374
+    hash: 6781a2711c3f
     date: '2026-10-10'
     model: claude-opus-5-5
-    evidence: '305-315: the term lemma, then structural induction. The atomic, connective and quantifier
-      cases are complete (y = x is handled by the stopping clause), and the steps are ledgered as inline.'
+    evidence: '375-382: free for in ∀z(x<z), giving ∀z(y+1<z); not free for in ∀y(x<y), where the definition
+      gives ∀y(y+1<y), ''every number is larger than its successor''. Correct.'
 - key: def-free-for
   kind: def
   file: 02-terms-formulas-substitution.md
-  line: 347
+  line: 393
   hash: 54a2a2275e4b
   verdicts:
   - stage: S5a
@@ -629,31 +663,22 @@ items:
     model: claude-opus-5-5
     evidence: 343-347 matches the blueprint. The four special cases (353-356) and the recursive description
       (362-366) are correct and argued.
-- key: check:02-terms-formulas-substitution:3
+- key: check:02-terms-formulas-substitution:4
   kind: check
   file: 02-terms-formulas-substitution.md
-  line: 378
+  line: 432
+  hash: 8ab786660f52
+  verdicts: []
+- key: check:02-terms-formulas-substitution:5
+  kind: check
+  file: 02-terms-formulas-substitution.md
+  line: 444
   hash: 6781a2711c3f
-  verdicts:
-  - stage: S5a
-    verdict: correct
-    by: refereeA
-    hash: 6781a2711c3f
-    date: '2026-10-10'
-    model: claude-opus-5-5
-    evidence: '379-381: ∀z(y+1<z) and ∀y(y+1<y) are computed correctly. The readings are right.'
-  - stage: S5b
-    verdict: correct
-    by: refereeB
-    hash: 6781a2711c3f
-    date: '2026-10-10'
-    model: claude-opus-5-5
-    evidence: '375-382: free for in ∀z(x<z), giving ∀z(y+1<z); not free for in ∀y(x<y), where the definition
-      gives ∀y(y+1<y), ''every number is larger than its successor''. Correct.'
+  verdicts: []
 - key: exr-terms-formulas-substitution-a1
   kind: exr
   file: 02-terms-formulas-substitution.md
-  line: 442
+  line: 524
   hash: 6928184e1159
   verdicts:
   - stage: S5a
@@ -692,11 +717,17 @@ items:
       agrees with def-free-variable at line 149. (ii) is a sentence. (iii): x and y are each free once
       and bound once, and the formula is not a sentence; this matches B2(b). (iv): epsilon occurs twice
       and delta twice, '
+- key: exr-terms-formulas-substitution-a2
+  kind: exr
+  file: 02-terms-formulas-substitution.md
+  line: 551
+  hash: fbdb6afa12ec
+  verdicts: []
 - key: exr-terms-formulas-substitution-b1
   kind: exr
   file: 02-terms-formulas-substitution.md
-  line: 471
-  hash: 2628f805259f
+  line: 600
+  hash: 593b30a6bf74
   verdicts:
   - stage: S5a
     verdict: correct
@@ -738,8 +769,8 @@ items:
 - key: exr-terms-formulas-substitution-b2
   kind: exr
   file: 02-terms-formulas-substitution.md
-  line: 497
-  hash: c12871be7467
+  line: 626
+  hash: 1b68e07393fb
   verdicts:
   - stage: S5a
     verdict: correct
@@ -765,11 +796,17 @@ items:
     model: claude-opus-5-5
     evidence: 02:493-527. The Var/FV clauses are correct. FV of the two formulas is {x,y} and {z}. The
       side remark y=z-x over R is correct.
+- key: exr-terms-formulas-substitution-b3
+  kind: exr
+  file: 02-terms-formulas-substitution.md
+  line: 662
+  hash: e454b0f53325
+  verdicts: []
 - key: exr-terms-formulas-substitution-c1
   kind: exr
   file: 02-terms-formulas-substitution.md
-  line: 535
-  hash: 8765d9a58325
+  line: 694
+  hash: 00b7c3222c6b
   verdicts:
   - stage: S5a
     verdict: correct
@@ -819,7 +856,7 @@ items:
 - key: exr-terms-formulas-substitution-c2
   kind: exr
   file: 02-terms-formulas-substitution.md
-  line: 600
+  line: 762
   hash: a5ded9bd0f4b
   verdicts:
   - stage: S5a
@@ -899,8 +936,8 @@ items:
 - key: check:03-universal-elimination:1
   kind: check
   file: 03-universal-elimination.md
-  line: 57
-  hash: d690c252919a
+  line: 55
+  hash: 8c3859e33880
   verdicts:
   - stage: S5a
     verdict: correct
@@ -933,10 +970,16 @@ items:
       > y + y). t = z + 1 gives exists z (z > z + 1 + y), where the z of the term is captured. The renaming
       to w follows Section 5.2''s renaming convention (02:392-396): w appears neither in the formula nor
       in t. Insta'
+- key: check:03-universal-elimination:2
+  kind: check
+  file: 03-universal-elimination.md
+  line: 73
+  hash: d690c252919a
+  verdicts: []
 - key: exm-universal-elimination-derivations
   kind: exm
   file: 03-universal-elimination.md
-  line: 69
+  line: 87
   hash: 88ae0b456d45
   verdicts:
   - stage: S5a
@@ -968,10 +1011,28 @@ items:
       is free for its variable: the terms have no variables (02:357 special case) or pass a non-x quantifier
       (@def-substitution). The S5b finding is resolved. The new straw man (line 126) matches the goal
       R(b,a) aga'
+- key: check:03-universal-elimination:3
+  kind: check
+  file: 03-universal-elimination.md
+  line: 271
+  hash: a8ddd962cfaf
+  verdicts: []
+- key: exm-universal-elimination-instances
+  kind: exm
+  file: 03-universal-elimination.md
+  line: 293
+  hash: 824ce3969e91
+  verdicts: []
+- key: check:03-universal-elimination:4
+  kind: check
+  file: 03-universal-elimination.md
+  line: 307
+  hash: 3f58076eb592
+  verdicts: []
 - key: exr-universal-elimination-a1
   kind: exr
   file: 03-universal-elimination.md
-  line: 253
+  line: 348
   hash: cdeb14b898fb
   verdicts:
   - stage: S5a
@@ -1003,10 +1064,16 @@ items:
       replaced, clause 3; (iii) main symbol is ->, clause 1; (iv) legal at f(c); (c) false; (d) every
       term names an element and the domain is non-empty. All match. Readings checked by script: over N,
       P=x>=1, c=0, a=1 makes line 1 true and line 2 false; over R, 3*(-1)<0.'
+- key: exr-universal-elimination-a2
+  kind: exr
+  file: 03-universal-elimination.md
+  line: 381
+  hash: 443cb55975e6
+  verdicts: []
 - key: exr-universal-elimination-b1
   kind: exr
   file: 03-universal-elimination.md
-  line: 288
+  line: 430
   hash: d265262ae32d
   verdicts:
   - stage: S5a
@@ -1037,7 +1104,7 @@ items:
 - key: exr-universal-elimination-b2
   kind: exr
   file: 03-universal-elimination.md
-  line: 316
+  line: 458
   hash: b51ca8149d79
   verdicts:
   - stage: S5a
@@ -1069,7 +1136,7 @@ items:
 - key: exr-universal-elimination-b3
   kind: exr
   file: 03-universal-elimination.md
-  line: 349
+  line: 491
   hash: 638e789bb699
   verdicts:
   - stage: S5a
@@ -1098,10 +1165,22 @@ items:
     evidence: '03:358-373. forall-E at a+b and at a-b, then ^I. The arith line cites line 3, and (a-b)^2>=0
       gives a^2+b^2>=2ab; (a+b)^2 gives only >=-2ab. Identity checked numerically. Worked type: the ''How
       this rule looks'' arith derivation at 03:171-177.'
+- key: exr-universal-elimination-b4
+  kind: exr
+  file: 03-universal-elimination.md
+  line: 519
+  hash: 17692cac7ddd
+  verdicts: []
+- key: exr-universal-elimination-b5
+  kind: exr
+  file: 03-universal-elimination.md
+  line: 558
+  hash: 029edb0eec85
+  verdicts: []
 - key: exr-universal-elimination-c1
   kind: exr
   file: 03-universal-elimination.md
-  line: 379
+  line: 660
   hash: 4e3824acd0d1
   verdicts:
   - stage: S5a
@@ -1136,8 +1215,8 @@ items:
 - key: exr-universal-elimination-c2
   kind: exr
   file: 03-universal-elimination.md
-  line: 438
-  hash: b78b404de72e
+  line: 719
+  hash: eced78d9be73
   verdicts:
   - stage: S5a
     verdict: gap
@@ -1239,11 +1318,35 @@ items:
       clause'' and the last line, which matches the definition''s three bullets at :48-50. :113, :136
       and :153 say first, second and third clause, and :155 now says ''the requirement on the last line'',
       so the two numbe'
+- key: check:04-universal-introduction:1
+  kind: check
+  file: 04-universal-introduction.md
+  line: 161
+  hash: 40ccd01325ce
+  verdicts:
+  - stage: S5a
+    verdict: correct
+    by: refereeA
+    hash: f5077595dd66
+    date: '2026-10-11'
+    model: claude-opus-5-5
+    evidence: ':386-400. Lines 3-5 are legal (∀E at c, ∀E at y_0, →E 4,1, and line 1 is available). Line
+      6 fails clause 1. Reading over Z with R = ≠, c = 0, y_0 = 1: ≠ is symmetric and 0 ≠ 1, so both premises
+      hold, and ∀y (y ≠ 0) fails at 0. The sidecar confirms this.'
+  - stage: S5b
+    verdict: correct
+    by: refereeB
+    hash: f5077595dd66
+    date: '2026-10-11'
+    model: claude-opus-5-5
+    evidence: '379-401: line 6 fails only the premise clause. The reading over Z with R as x != y, c =
+      0 and y_0 = 1 is right: the premises hold, and forall y (y != 0) fails at 0. This is asserted in
+      verify/ch05/def-rules-universal.py, which passes.'
 - key: exm-universal-introduction-derivations
   kind: exm
   file: 04-universal-introduction.md
-  line: 161
-  hash: 9df407d80c92
+  line: 269
+  hash: 7ea6b68ea91d
   verdicts:
   - stage: S5a
     verdict: gap
@@ -1275,10 +1378,22 @@ items:
       x and for y, and the comparison with Section 5.3 (b), which reached R(c,c), is right (03-universal-elimination.md:76,105).
       (b): with z not in phi and z_0 different from y and z and not in phi, the identity (phi[z/y])[z_0/z]
       = phi[z_0/y] holds. Both forall-E lines are legal because z_0 is free. At line 3 of eac'
+- key: check:04-universal-introduction:2
+  kind: check
+  file: 04-universal-introduction.md
+  line: 429
+  hash: 757d99f24543
+  verdicts: []
+- key: check:04-universal-introduction:3
+  kind: check
+  file: 04-universal-introduction.md
+  line: 437
+  hash: dda78ef7be22
+  verdicts: []
 - key: prp-forall-and
   kind: prp
   file: 04-universal-introduction.md
-  line: 241
+  line: 474
   hash: 2552b85c9bb0
   verdicts:
   - stage: S5a
@@ -1300,7 +1415,7 @@ items:
 - key: proof:prp-forall-and
   kind: proof
   file: 04-universal-introduction.md
-  line: 253
+  line: 556
   hash: b00b54257366
   verdicts:
   - stage: S5a
@@ -1322,35 +1437,29 @@ items:
     evidence: '256-295: both derivations pass check_fitch (24 derivations, 0 errors). The reuse of the
       name x_0 is justified correctly at 275. The ''4 lines'' that 03''s stall promises are lines 1-4
       here (298).'
-- key: check:04-universal-introduction:1
+- key: check:04-universal-introduction:4
   kind: check
   file: 04-universal-introduction.md
-  line: 379
+  line: 688
   hash: f5077595dd66
-  verdicts:
-  - stage: S5a
-    verdict: correct
-    by: refereeA
-    hash: f5077595dd66
-    date: '2026-10-11'
-    model: claude-opus-5-5
-    evidence: ':386-400. Lines 3-5 are legal (∀E at c, ∀E at y_0, →E 4,1, and line 1 is available). Line
-      6 fails clause 1. Reading over Z with R = ≠, c = 0, y_0 = 1: ≠ is symmetric and 0 ≠ 1, so both premises
-      hold, and ∀y (y ≠ 0) fails at 0. The sidecar confirms this.'
-  - stage: S5b
-    verdict: correct
-    by: refereeB
-    hash: f5077595dd66
-    date: '2026-10-11'
-    model: claude-opus-5-5
-    evidence: '379-401: line 6 fails only the premise clause. The reading over Z with R as x != y, c =
-      0 and y_0 = 1 is right: the premises hold, and forall y (y != 0) fails at 0. This is asserted in
-      verify/ch05/def-rules-universal.py, which passes.'
+  verdicts: []
+- key: exm-universal-introduction-critique
+  kind: exm
+  file: 04-universal-introduction.md
+  line: 712
+  hash: c49aba05d783
+  verdicts: []
+- key: exm-universal-introduction-instances
+  kind: exm
+  file: 04-universal-introduction.md
+  line: 742
+  hash: 0ca43e56f421
+  verdicts: []
 - key: exr-universal-introduction-a1
   kind: exr
   file: 04-universal-introduction.md
-  line: 432
-  hash: 0aac190aad5c
+  line: 794
+  hash: caf08b0e5392
   verdicts:
   - stage: S5a
     verdict: correct
@@ -1380,11 +1489,17 @@ items:
     evidence: 04:494-506. D1 breaks clause 1; D2 is legal; D3 breaks clause 2; (c) false; (d) the box
       closed and the side condition is not about it. All match mine. The D1 and D3 readings over Z (even,
       x0=2) check. check_fitch agrees that D1 and D3 are invalid and accepts D2.
+- key: exr-universal-introduction-a2
+  kind: exr
+  file: 04-universal-introduction.md
+  line: 871
+  hash: abcacca2348f
+  verdicts: []
 - key: exr-universal-introduction-b1
   kind: exr
   file: 04-universal-introduction.md
-  line: 511
-  hash: 72cb62089ace
+  line: 920
+  hash: fc6f93a05117
   verdicts:
   - stage: S5a
     verdict: correct
@@ -1413,8 +1528,8 @@ items:
 - key: exr-universal-introduction-b2
   kind: exr
   file: 04-universal-introduction.md
-  line: 547
-  hash: a5b02d4a046f
+  line: 972
+  hash: ef1b86d4fcc2
   verdicts:
   - stage: S5a
     verdict: correct
@@ -1448,7 +1563,7 @@ items:
 - key: exr-universal-introduction-b3
   kind: exr
   file: 04-universal-introduction.md
-  line: 589
+  line: 1014
   hash: 1a12524a9827
   verdicts:
   - stage: S5a
@@ -1477,10 +1592,22 @@ items:
     evidence: '04:599-631. My solution is the same: universal premises, forall-E at x0, the vE of exm-abs-at-least-x
       (ch01 07:349-386 matches), 14 lines. The reason the x0-premise copy fails (clause 1) is right. Worked
       type: the flagged-box example at 04:343-352.'
+- key: exr-universal-introduction-b4
+  kind: exr
+  file: 04-universal-introduction.md
+  line: 1059
+  hash: 2203ee36bb95
+  verdicts: []
+- key: exr-universal-introduction-b5
+  kind: exr
+  file: 04-universal-introduction.md
+  line: 1095
+  hash: 7ad9d8a54924
+  verdicts: []
 - key: exr-universal-introduction-c1
   kind: exr
   file: 04-universal-introduction.md
-  line: 636
+  line: 1205
   hash: bdc08d2671f5
   verdicts:
   - stage: S5a
@@ -1528,8 +1655,8 @@ items:
 - key: exr-universal-introduction-c2
   kind: exr
   file: 04-universal-introduction.md
-  line: 692
-  hash: dfb64014df5f
+  line: 1261
+  hash: 03b17b38bcd4
   verdicts:
   - stage: S5a
     verdict: minor
@@ -1613,8 +1740,8 @@ items:
 - key: check:05-existential-introduction:1
   kind: check
   file: 05-existential-introduction.md
-  line: 80
-  hash: da74672913fd
+  line: 69
+  hash: 475dfaf9653d
   verdicts:
   - stage: S5a
     verdict: correct
@@ -1633,10 +1760,16 @@ items:
     evidence: '05:80-90: with phi = (x+x=4), (x+2=4) and (2+2=x), and witnesses 2, 2 and 4, phi[t/x] is
       exactly 2+2=4 in each case, and phi has no quantifier, so t is free for x. The sidecar asserts the
       same.'
+- key: check:05-existential-introduction:2
+  kind: check
+  file: 05-existential-introduction.md
+  line: 95
+  hash: da74672913fd
+  verdicts: []
 - key: prp-forall-implies-exists
   kind: prp
   file: 05-existential-introduction.md
-  line: 96
+  line: 111
   hash: 8bbc30e44558
   verdicts:
   - stage: S5a
@@ -1672,7 +1805,7 @@ items:
 - key: proof:prp-forall-implies-exists
   kind: proof
   file: 05-existential-introduction.md
-  line: 102
+  line: 117
   hash: 80ccd632749f
   verdicts:
   - stage: S5a
@@ -1692,11 +1825,17 @@ items:
     evidence: '05:102-116: forall-E at the variable x and exists-I with witness x. phi[x/x] = phi and
       ''x is free for x in every formula'' are both in §02 (02: the facts after def-substitution and the
       special cases after def-free-for). Ledger line 458 covers them, and check_fitch reports 0 errors.'
+- key: check:05-existential-introduction:3
+  kind: check
+  file: 05-existential-introduction.md
+  line: 151
+  hash: 870718087fcc
+  verdicts: []
 - key: exm-existential-introduction-derivations
   kind: exm
   file: 05-existential-introduction.md
-  line: 136
-  hash: 2a61a74ac3a8
+  line: 161
+  hash: 02e1dec4f557
   verdicts:
   - stage: S5a
     verdict: minor
@@ -1726,10 +1865,22 @@ items:
       clauses hold. In (d), forall-E at c, then ->E, then exists-I at f(c). The arithmetic readings also
       hold: (b) x*y=1 with c=0, (c) <= on N, (d) odd/even with f(x)=x+1. The meta-claim at 05:214 is now
       accurate. Postp'
+- key: exm-existential-introduction-instances
+  kind: exm
+  file: 05-existential-introduction.md
+  line: 352
+  hash: 399e9f7561ea
+  verdicts: []
+- key: check:05-existential-introduction:4
+  kind: check
+  file: 05-existential-introduction.md
+  line: 366
+  hash: 420e15ad5238
+  verdicts: []
 - key: exr-existential-introduction-a1
   kind: exr
   file: 05-existential-introduction.md
-  line: 270
+  line: 404
   hash: b0547530e9ab
   verdicts:
   - stage: S5a
@@ -1759,11 +1910,17 @@ items:
     evidence: '05:282-292. Mine: (i) yes, t=c; (ii) yes, t=f(c); (iii) yes, phi=R(x,f(x)); (iv) and (v)
       no; (c) illegal by capture, line 1 true and line 2 false over Z; (d) false; (e) postpone. All match.
       Script: y<=y*y for all integers, x*x+1>x*x, and the N reading of (iv) and (v).'
+- key: exr-existential-introduction-a2
+  kind: exr
+  file: 05-existential-introduction.md
+  line: 429
+  hash: 5feb02165eef
+  verdicts: []
 - key: exr-existential-introduction-b1
   kind: exr
   file: 05-existential-introduction.md
-  line: 297
-  hash: 146a3c721cc4
+  line: 478
+  hash: 546ef0a1e01f
   verdicts:
   - stage: S5a
     verdict: correct
@@ -1792,7 +1949,7 @@ items:
 - key: exr-existential-introduction-b2
   kind: exr
   file: 05-existential-introduction.md
-  line: 322
+  line: 517
   hash: b467dabf9b51
   verdicts:
   - stage: S5a
@@ -1823,7 +1980,7 @@ items:
 - key: exr-existential-introduction-b3
   kind: exr
   file: 05-existential-introduction.md
-  line: 349
+  line: 544
   hash: c5c99f171a86
   verdicts:
   - stage: S5a
@@ -1850,11 +2007,17 @@ items:
     model: claude-opus-5-5
     evidence: '05:355-371. The arith line 2*2=2+2 and the exists-I marking three of the four 2''s are
       right. Script: the integer solutions of n^2=n+2 are exactly {-1,2}. Worked type: 05:220-227.'
+- key: exr-existential-introduction-b4
+  kind: exr
+  file: 05-existential-introduction.md
+  line: 569
+  hash: dc89f3e9e728
+  verdicts: []
 - key: exr-existential-introduction-c1
   kind: exr
   file: 05-existential-introduction.md
-  line: 376
-  hash: 2d06d7cc4955
+  line: 667
+  hash: 4f51fd603dd8
   verdicts:
   - stage: S5a
     verdict: correct
@@ -1898,8 +2061,8 @@ items:
 - key: exr-existential-introduction-c2
   kind: exr
   file: 05-existential-introduction.md
-  line: 425
-  hash: 10c927be0f94
+  line: 716
+  hash: 9ffa0825601e
   verdicts:
   - stage: S5a
     verdict: minor
@@ -1945,7 +2108,7 @@ items:
 - key: def-rules-existential
   kind: def
   file: 06-existential-elimination.md
-  line: 26
+  line: 24
   hash: d4e5e6370bf8
   verdicts:
   - stage: S5a
@@ -1975,56 +2138,11 @@ items:
       (warning), 156-162 (open the box early), 436-467 (renaming), 519, 553-576. All four earlier findings
       are resolved. (1) Ledger l.916 no longer says ''loses nothing''; it states ''keeps every resource
       and th'
-- key: prp-exists-and
-  kind: prp
-  file: 06-existential-elimination.md
-  line: 166
-  hash: 175f2b54ac4c
-  verdicts:
-  - stage: S5a
-    verdict: correct
-    by: refereeA
-    hash: 175f2b54ac4c
-    date: '2026-10-11'
-    model: claude-opus-5-5
-    evidence: 06:169. This is a sequent with no hidden hypotheses. The converse is refuted only by a forward
-      pointer to §11 (11:265).
-  - stage: S5b
-    verdict: correct
-    by: refereeB
-    hash: 175f2b54ac4c
-    date: '2026-10-11'
-    model: claude-opus-5-5
-    evidence: 'Line 169: the statement matches the blueprint, and the Idea at line 173 matches the proof.'
-- key: proof:prp-exists-and
-  kind: proof
-  file: 06-existential-elimination.md
-  line: 176
-  hash: c7f60136133f
-  verdicts:
-  - stage: S5a
-    verdict: correct
-    by: refereeA
-    hash: c7f60136133f
-    date: '2026-10-11'
-    model: claude-opus-5-5
-    evidence: '06:182-196. Line by line: 3 and 5 are ∧E of 2; 4 and 6 are ∃I with witness x_0, which is
-      free for x because there is no quantifier; 7 is ∧I; at 8, x_0 is not in line 7 or line 1 and no
-      box is open. check_fitch reports 0 errors.'
-  - stage: S5b
-    verdict: correct
-    by: refereeB
-    hash: c7f60136133f
-    date: '2026-10-11'
-    model: claude-opus-5-5
-    evidence: 'Lines 181–196: 8 lines, and check_fitch passes it. At line 8, x_0 is not in line 7, not
-      in line 1 and not in any open box. The meta-claim at line 199 (used twice, forgotten twice) is true
-      of lines 4 and 6.'
 - key: check:06-existential-elimination:1
   kind: check
   file: 06-existential-elimination.md
-  line: 201
-  hash: e700f3caaf5d
+  line: 123
+  hash: 19a3de83aecc
   verdicts:
   - stage: S5a
     verdict: minor
@@ -2054,11 +2172,84 @@ items:
       term. The reading over ℤ is correct. Earlier finding 1 is resolved: the text now says Section 7.2
       gives a counter-model and that the soundness statement stated there (proved in 4.12) yields non-derivability.
       This '
+- key: prp-exists-and
+  kind: prp
+  file: 06-existential-elimination.md
+  line: 185
+  hash: 175f2b54ac4c
+  verdicts:
+  - stage: S5a
+    verdict: correct
+    by: refereeA
+    hash: 175f2b54ac4c
+    date: '2026-10-11'
+    model: claude-opus-5-5
+    evidence: 06:169. This is a sequent with no hidden hypotheses. The converse is refuted only by a forward
+      pointer to §11 (11:265).
+  - stage: S5b
+    verdict: correct
+    by: refereeB
+    hash: 175f2b54ac4c
+    date: '2026-10-11'
+    model: claude-opus-5-5
+    evidence: 'Line 169: the statement matches the blueprint, and the Idea at line 173 matches the proof.'
+- key: proof:prp-exists-and
+  kind: proof
+  file: 06-existential-elimination.md
+  line: 223
+  hash: c7f60136133f
+  verdicts:
+  - stage: S5a
+    verdict: correct
+    by: refereeA
+    hash: c7f60136133f
+    date: '2026-10-11'
+    model: claude-opus-5-5
+    evidence: '06:182-196. Line by line: 3 and 5 are ∧E of 2; 4 and 6 are ∃I with witness x_0, which is
+      free for x because there is no quantifier; 7 is ∧I; at 8, x_0 is not in line 7 or line 1 and no
+      box is open. check_fitch reports 0 errors.'
+  - stage: S5b
+    verdict: correct
+    by: refereeB
+    hash: c7f60136133f
+    date: '2026-10-11'
+    model: claude-opus-5-5
+    evidence: 'Lines 181–196: 8 lines, and check_fitch passes it. At line 8, x_0 is not in line 7, not
+      in line 1 and not in any open box. The meta-claim at line 199 (used twice, forgotten twice) is true
+      of lines 4 and 6.'
+- key: check:06-existential-elimination:2
+  kind: check
+  file: 06-existential-elimination.md
+  line: 248
+  hash: bcfa3853c9fa
+  verdicts:
+  - stage: S5a
+    verdict: correct
+    by: refereeA
+    hash: f6c5f3435dc8
+    date: '2026-10-11'
+    model: claude-opus-5-5
+    evidence: 06:512. Reusing k_0 breaks the open-assumption clause at line 7 (line 3 n = 2·k_0 is still
+      open). This matches check_fitch's verdict on the warning derivation at 556.
+  - stage: S5b
+    verdict: correct
+    by: refereeB
+    hash: f6c5f3435dc8
+    date: '2026-10-11'
+    model: claude-opus-5-5
+    evidence: 'Line 512: reusing k_0 breaks the open-assumption clause at line 7 because line 3 is still
+      open, which matches check_fitch''s result on the warning derivation (556: line 7).'
+- key: check:06-existential-elimination:3
+  kind: check
+  file: 06-existential-elimination.md
+  line: 306
+  hash: cb8031fa7593
+  verdicts: []
 - key: exm-existential-elimination-derivations
   kind: exm
   file: 06-existential-elimination.md
-  line: 211
-  hash: 721093953f89
+  line: 404
+  hash: 87b67313cc2a
   verdicts:
   - stage: S5a
     verdict: correct
@@ -2092,7 +2283,7 @@ items:
 - key: prp-exists-forall-swap
   kind: prp
   file: 06-existential-elimination.md
-  line: 313
+  line: 614
   hash: cb2ec9db372b
   verdicts:
   - stage: S5a
@@ -2114,7 +2305,7 @@ items:
 - key: proof:prp-exists-forall-swap
   kind: proof
   file: 06-existential-elimination.md
-  line: 331
+  line: 668
   hash: 1f5eec7c9977
   verdicts:
   - stage: S5a
@@ -2140,8 +2331,8 @@ items:
 - key: exm-sum-of-evens
   kind: exm
   file: 06-existential-elimination.md
-  line: 473
-  hash: fc8b265a56ea
+  line: 816
+  hash: 6174b5cfcb3f
   verdicts:
   - stage: S5a
     verdict: correct
@@ -2161,33 +2352,41 @@ items:
     evidence: 'Lines 485–504: 8 lines. The arith line (n+m = 2(k_0+l_0)) is correct, the ∃I witness is
       k_0+l_0, and the side conditions at lines 7 and 8 are right. The ledger has the line (l.920), and
       a sidecar exists.'
-- key: check:06-existential-elimination:2
+- key: check:06-existential-elimination:4
   kind: check
   file: 06-existential-elimination.md
-  line: 509
+  line: 883
   hash: f6c5f3435dc8
-  verdicts:
-  - stage: S5a
-    verdict: correct
-    by: refereeA
-    hash: f6c5f3435dc8
-    date: '2026-10-11'
-    model: claude-opus-5-5
-    evidence: 06:512. Reusing k_0 breaks the open-assumption clause at line 7 (line 3 n = 2·k_0 is still
-      open). This matches check_fitch's verdict on the warning derivation at 556.
-  - stage: S5b
-    verdict: correct
-    by: refereeB
-    hash: f6c5f3435dc8
-    date: '2026-10-11'
-    model: claude-opus-5-5
-    evidence: 'Line 512: reusing k_0 breaks the open-assumption clause at line 7 because line 3 is still
-      open, which matches check_fitch''s result on the warning derivation (556: line 7).'
+  verdicts: []
+- key: thm-barber
+  kind: thm
+  file: 06-existential-elimination.md
+  line: 895
+  hash: f70a1df05e93
+  verdicts: []
+- key: proof:thm-barber
+  kind: proof
+  file: 06-existential-elimination.md
+  line: 937
+  hash: bf4f0ad1a555
+  verdicts: []
+- key: check:06-existential-elimination:5
+  kind: check
+  file: 06-existential-elimination.md
+  line: 969
+  hash: 499f68c880d9
+  verdicts: []
+- key: exm-existential-elimination-instances
+  kind: exm
+  file: 06-existential-elimination.md
+  line: 1042
+  hash: 2cd98ba7666b
+  verdicts: []
 - key: exr-existential-elimination-a1
   kind: exr
   file: 06-existential-elimination.md
-  line: 596
-  hash: 318a3adf9dcf
+  line: 1103
+  hash: 2410cff3f6d6
   verdicts:
   - stage: S5a
     verdict: minor
@@ -2226,10 +2425,16 @@ items:
       which is the right derivation, so the earlier finding is resolved. Its side-condition checks are
       correct: y_0 is not in the bound-y assumption, and x_0 is not in line 5 or line 1. (c) lists the
       four places correc'
+- key: exr-existential-elimination-a2
+  kind: exr
+  file: 06-existential-elimination.md
+  line: 1129
+  hash: 345dea509d59
+  verdicts: []
 - key: exr-existential-elimination-b1
   kind: exr
   file: 06-existential-elimination.md
-  line: 624
+  line: 1178
   hash: 568574a634c3
   verdicts:
   - stage: S5a
@@ -2260,7 +2465,7 @@ items:
 - key: exr-existential-elimination-b2
   kind: exr
   file: 06-existential-elimination.md
-  line: 657
+  line: 1211
   hash: 279be81bc5c8
   verdicts:
   - stage: S5a
@@ -2294,7 +2499,7 @@ items:
 - key: exr-existential-elimination-b3
   kind: exr
   file: 06-existential-elimination.md
-  line: 721
+  line: 1275
   hash: 6ae4f5250de6
   verdicts:
   - stage: S5a
@@ -2323,10 +2528,16 @@ items:
     model: claude-opus-5-5
     evidence: '06:719-754. Script check: (2k+1)(2l+1)=2(2kl+k+l)+1 on a grid. The side conditions at lines
       7 and 8 hold, the prose is three sentences, and the worked type is exm-sum-of-evens.'
+- key: exr-existential-elimination-b4
+  kind: exr
+  file: 06-existential-elimination.md
+  line: 1312
+  hash: 57105e68c3b2
+  verdicts: []
 - key: exr-existential-elimination-c1
   kind: exr
   file: 06-existential-elimination.md
-  line: 760
+  line: 1428
   hash: 133fa8f32c7e
   verdicts:
   - stage: S5a
@@ -2370,8 +2581,8 @@ items:
 - key: exr-existential-elimination-c2
   kind: exr
   file: 06-existential-elimination.md
-  line: 822
-  hash: ae0aba082592
+  line: 1490
+  hash: 7bc161c507c3
   verdicts:
   - stage: S5a
     verdict: correct
@@ -2411,6 +2622,12 @@ items:
       gives the ∀I generalization, which is the key idea, so the S6 finding is resolved. I worked the
       parts myself and they agree. (a) is derivable: prp-exists-and plus ∧E, or the repaired 5-line derivation,
       whose ∃E at line '
+- key: exr-existential-elimination-c3
+  kind: exr
+  file: 06-existential-elimination.md
+  line: 1579
+  hash: c2fcfbc95769
+  verdicts: []
 - key: def-rules-equality
   kind: def
   file: 07-equality-and-uniqueness.md
@@ -2455,7 +2672,7 @@ items:
 - key: check:07-equality-and-uniqueness:1
   kind: check
   file: 07-equality-and-uniqueness.md
-  line: 66
+  line: 84
   hash: 42047b847d18
   verdicts:
   - stage: S5a
@@ -2484,10 +2701,41 @@ items:
       = 3·3>x_0. φ=(x_0·z>z) gives the cited line and x_0·3>3. Neither φ has a quantifier, so both terms
       are free for z. The remark that the hole cannot be x_0 is right: using x_0 as the hole would replace
       every free x_0.'
+- key: check:07-equality-and-uniqueness:2
+  kind: check
+  file: 07-equality-and-uniqueness.md
+  line: 92
+  hash: 6a5046f7edff
+  verdicts:
+  - stage: S5a
+    verdict: correct
+    by: refereeA
+    hash: 00011c2b9fba
+    date: '2026-10-10'
+    model: claude-opus-5-5
+    evidence: Lines 230-236. φ=(a+b=2·z+b) turns line 4 into a+b=2·3+b. Then φ=(a+b=2·3+z) gives a+b=2·3+3,
+      which is line 5.
+  - stage: S5b
+    verdict: minor
+    by: refereeB
+    hash: 00011c2b9fba
+    date: '2026-10-10'
+    model: claude-opus-5-5
+    evidence: 07-equality-and-uniqueness.md:231 The check says line 4 has two b's.
+  - stage: S7r
+    verdict: correct
+    by: rereferee
+    hash: 82f2c9f53b97
+    date: '2026-10-11'
+    model: claude-opus-5-5
+    evidence: '07:230-236. The earlier finding is resolved: the text now says ''both b''s on the right
+      of line 4''. Line 4, a+b = 2·b+b, has three b''s in total, two of them on the right. φ=(a+b = 2·z+b)
+      gives line 4 as φ[b/z], and =E 1,4 gives a+b = 2·3+b. Then φ=(a+b = 2·3+z) gives line 5. I solved
+      it independently and got the same answer.'
 - key: prp-equality-symmetric-transitive
   kind: prp
   file: 07-equality-and-uniqueness.md
-  line: 101
+  line: 131
   hash: eff8bc8e6eec
   verdicts:
   - stage: S5a
@@ -2519,7 +2767,7 @@ items:
 - key: proof:prp-equality-symmetric-transitive
   kind: proof
   file: 07-equality-and-uniqueness.md
-  line: 116
+  line: 146
   hash: dbe1d820a62a
   verdicts:
   - stage: S5a
@@ -2548,42 +2796,47 @@ items:
       ''a variable x that does not occur in s'', so (s=x)[t/x] is s=t and (s=x)[u/x] is s=u. =E 2,1 cites
       line 2 as i and line 1 as j, and the text says so at 07:141. Neither φ has a quantifier, so the
       fr'
-- key: check:07-equality-and-uniqueness:2
+- key: prp-leibniz-law
+  kind: prp
+  file: 07-equality-and-uniqueness.md
+  line: 194
+  hash: 03c32db28b94
+  verdicts: []
+- key: proof:prp-leibniz-law
+  kind: proof
+  file: 07-equality-and-uniqueness.md
+  line: 204
+  hash: fa9852fc2622
+  verdicts: []
+- key: exm-extensionality-logical-half
+  kind: exm
+  file: 07-equality-and-uniqueness.md
+  line: 241
+  hash: c7e15a1c0557
+  verdicts: []
+- key: check:07-equality-and-uniqueness:3
   kind: check
   file: 07-equality-and-uniqueness.md
-  line: 230
+  line: 317
   hash: 82f2c9f53b97
-  verdicts:
-  - stage: S5a
-    verdict: correct
-    by: refereeA
-    hash: 00011c2b9fba
-    date: '2026-10-10'
-    model: claude-opus-5-5
-    evidence: Lines 230-236. φ=(a+b=2·z+b) turns line 4 into a+b=2·3+b. Then φ=(a+b=2·3+z) gives a+b=2·3+3,
-      which is line 5.
-  - stage: S5b
-    verdict: minor
-    by: refereeB
-    hash: 00011c2b9fba
-    date: '2026-10-10'
-    model: claude-opus-5-5
-    evidence: 07-equality-and-uniqueness.md:231 The check says line 4 has two b's.
-  - stage: S7r
-    verdict: correct
-    by: rereferee
-    hash: 82f2c9f53b97
-    date: '2026-10-11'
-    model: claude-opus-5-5
-    evidence: '07:230-236. The earlier finding is resolved: the text now says ''both b''s on the right
-      of line 4''. Line 4, a+b = 2·b+b, has three b''s in total, two of them on the right. φ=(a+b = 2·z+b)
-      gives line 4 as φ[b/z], and =E 1,4 gives a+b = 2·3+b. Then φ=(a+b = 2·3+z) gives line 5. I solved
-      it independently and got the same answer.'
+  verdicts: []
+- key: check:07-equality-and-uniqueness:4
+  kind: check
+  file: 07-equality-and-uniqueness.md
+  line: 325
+  hash: 690722207e3e
+  verdicts: []
+- key: exm-equality-and-uniqueness-instances
+  kind: exm
+  file: 07-equality-and-uniqueness.md
+  line: 353
+  hash: e9d7eb920c38
+  verdicts: []
 - key: exr-equality-and-uniqueness-a1
   kind: exr
   file: 07-equality-and-uniqueness.md
-  line: 290
-  hash: 4f5c3cfc61ef
+  line: 424
+  hash: 0c85769c36e1
   verdicts:
   - stage: S5a
     verdict: correct
@@ -2612,11 +2865,17 @@ items:
     evidence: '07:449-485. I checked every φ in (b) by substitution and each reproduces its cited and
       new line. (c) φ=(a·a=z·z) is valid. (d) is false: one =E step from P(b) can only return P(b). (e)
       is true over N and false over Z; the script confirms solutions {3} and {-3,3}.'
+- key: exr-equality-and-uniqueness-a2
+  kind: exr
+  file: 07-equality-and-uniqueness.md
+  line: 462
+  hash: dbda514a7d19
+  verdicts: []
 - key: exr-equality-and-uniqueness-b1
   kind: exr
   file: 07-equality-and-uniqueness.md
-  line: 330
-  hash: c6f1c077cfa9
+  line: 511
+  hash: b4646e8354b9
   verdicts:
   - stage: S5a
     verdict: minor
@@ -2654,6 +2913,24 @@ items:
       finding is resolved: 07:520 now gives the generalization step explicitly. It takes φ=∀z(x·z=z ∧
       z·x=z), runs the same steps on u_0 and v_0 inside flagged boxes and an →I box on φ[u_0/x]∧φ[v_0/x],
       and then applies '
+- key: exr-equality-and-uniqueness-b4
+  kind: exr
+  file: 07-equality-and-uniqueness.md
+  line: 545
+  hash: 7c36746b3658
+  verdicts: []
+- key: exr-equality-and-uniqueness-b5
+  kind: exr
+  file: 07-equality-and-uniqueness.md
+  line: 586
+  hash: 0bece3e6e5f7
+  verdicts: []
+- key: exr-equality-and-uniqueness-c3
+  kind: exr
+  file: 07-equality-and-uniqueness.md
+  line: 692
+  hash: 202e5b874df0
+  verdicts: []
 - key: def-unique-existence
   kind: def
   file: 08-counting-and-descriptions.md
@@ -2712,10 +2989,16 @@ items:
       exists-I reads line 5 as psi[c/x] with the stated occurrence choice. check_fitch reports 0 errors
       and check_structure 0 fatal. The ledger advisory on line 689 is the same format advisory the neighbouring
       lines get.'
+- key: check:08-counting-and-descriptions:1
+  kind: check
+  file: 08-counting-and-descriptions.md
+  line: 37
+  hash: ed966c079591
+  verdicts: []
 - key: prp-unique-existence-use
   kind: prp
   file: 08-counting-and-descriptions.md
-  line: 69
+  line: 84
   hash: f87094368c5f
   verdicts:
   - stage: S5a
@@ -2747,7 +3030,7 @@ items:
 - key: proof:prp-unique-existence-use
   kind: proof
   file: 08-counting-and-descriptions.md
-  line: 84
+  line: 102
   hash: 0b725c475147
   verdicts:
   - stage: S5a
@@ -2790,10 +3073,76 @@ items:
       0 errors. A cosmetic nit, not a defect: at line 15, x0 is free for x because it does not appear
       in the whole body, which also holds since x0 is not y. The text gives the reason only as ''does
       not appear in phi''.'
+- key: def-counting-with-equality
+  kind: def
+  file: 08-counting-and-descriptions.md
+  line: 187
+  hash: 1aa18540f18e
+  verdicts: []
+- key: exm-exactly-two-solutions
+  kind: exm
+  file: 08-counting-and-descriptions.md
+  line: 202
+  hash: e600a42166c5
+  verdicts: []
+- key: check:08-counting-and-descriptions:2
+  kind: check
+  file: 08-counting-and-descriptions.md
+  line: 218
+  hash: 4ff3725e7ffc
+  verdicts: []
+- key: def-definite-description
+  kind: def
+  file: 08-counting-and-descriptions.md
+  line: 232
+  hash: 6447ea3f5929
+  verdicts: []
+- key: check:08-counting-and-descriptions:3
+  kind: check
+  file: 08-counting-and-descriptions.md
+  line: 248
+  hash: 239df4315e04
+  verdicts: []
+- key: check:08-counting-and-descriptions:4
+  kind: check
+  file: 08-counting-and-descriptions.md
+  line: 264
+  hash: b7891644652a
+  verdicts: []
+- key: prp-definitional-extension
+  kind: prp
+  file: 08-counting-and-descriptions.md
+  line: 276
+  hash: d0f02233abba
+  verdicts: []
+- key: proof:prp-definitional-extension
+  kind: proof
+  file: 08-counting-and-descriptions.md
+  line: 296
+  hash: ac1ce8124d43
+  verdicts: []
+- key: exr-counting-and-descriptions-a1
+  kind: exr
+  file: 08-counting-and-descriptions.md
+  line: 315
+  hash: 9de1c7e6571a
+  verdicts: []
+- key: exr-counting-and-descriptions-a2
+  kind: exr
+  file: 08-counting-and-descriptions.md
+  line: 339
+  hash: bc73829dba6b
+  verdicts: []
+- key: exr-counting-and-descriptions-b1
+  kind: exr
+  file: 08-counting-and-descriptions.md
+  line: 388
+  hash: 2f5b2ec530a1
+  verdicts: []
 - key: exr-equality-and-uniqueness-b2
   kind: exr
   file: 08-counting-and-descriptions.md
-  line: 172
+  line: 407
   hash: acbeca44d93e
   verdicts:
   - stage: S5a
@@ -2823,7 +3172,7 @@ items:
 - key: exr-equality-and-uniqueness-b3
   kind: exr
   file: 08-counting-and-descriptions.md
-  line: 190
+  line: 425
   hash: 5caff50dc78c
   verdicts:
   - stage: S5a
@@ -2862,10 +3211,22 @@ items:
       argued in both directions, and Section 6.2 appears only as a prose pointer that nothing depends
       on (blueprint §09 = quantifier laws). This matches ledger 07:697. (c): x·x=x exactly at 0 and 1;
       x+1=x has no solution;'
+- key: exr-counting-and-descriptions-b4
+  kind: exr
+  file: 08-counting-and-descriptions.md
+  line: 445
+  hash: 1eff88cc1a12
+  verdicts: []
+- key: exr-counting-and-descriptions-b5
+  kind: exr
+  file: 08-counting-and-descriptions.md
+  line: 496
+  hash: 23edf6757005
+  verdicts: []
 - key: exr-equality-and-uniqueness-c1
   kind: exr
   file: 08-counting-and-descriptions.md
-  line: 212
+  line: 539
   hash: 17a084cba7c0
   verdicts:
   - stage: S5a
@@ -2906,7 +3267,7 @@ items:
 - key: exr-equality-and-uniqueness-c2
   kind: exr
   file: 08-counting-and-descriptions.md
-  line: 233
+  line: 560
   hash: 0d181cc4c5d4
   verdicts:
   - stage: S5a
@@ -2946,3 +3307,57 @@ items:
       ∧E at ⊢ lines 5-6, ∧I at ⊣ line 4 and the ¬E clash 6,1 (which follows the schema order φ, ¬φ of
       ch02/02:31-33) are valid rule instances, and check_fitch reports 0 errors. I checked the ∃E freshness
       at lines'
+- key: exr-counting-and-descriptions-c3
+  kind: exr
+  file: 08-counting-and-descriptions.md
+  line: 653
+  hash: 690c5de7cc4b
+  verdicts: []
+- key: exr-counting-and-descriptions-r1
+  kind: exr
+  file: 08-counting-and-descriptions.md
+  line: 678
+  hash: 0bebd589207c
+  verdicts: []
+- key: exr-counting-and-descriptions-r2
+  kind: exr
+  file: 08-counting-and-descriptions.md
+  line: 699
+  hash: 6c151c3fb85a
+  verdicts: []
+- key: exr-counting-and-descriptions-r3
+  kind: exr
+  file: 08-counting-and-descriptions.md
+  line: 733
+  hash: f9765a179eee
+  verdicts: []
+- key: exr-counting-and-descriptions-r4
+  kind: exr
+  file: 08-counting-and-descriptions.md
+  line: 767
+  hash: afc5696657ec
+  verdicts: []
+- key: proof:exm-computing-substitutions
+  kind: proof
+  file: 02-terms-formulas-substitution.md
+  line: 309
+  hash: 6c732b25c374
+  verdicts:
+  - stage: S5a
+    verdict: correct
+    by: refereeA
+    hash: 6c732b25c374
+    date: '2026-10-10'
+    model: claude-opus-5-5
+    evidence: 305-315 is the proof of the claim at 297 (x not free implies φ[t/x]=φ). The term lemma is
+      proved first. Every case uses the recursive description of 'free'. In the quantifier case y=x is
+      handled by the clause and y≠x by the IH. The hypothesis is used. No later material is used.
+  - stage: S5b
+    verdict: correct
+    by: refereeB
+    hash: 6c732b25c374
+    date: '2026-10-10'
+    model: claude-opus-5-5
+    evidence: '305-315: the term lemma, then structural induction. The atomic, connective and quantifier
+      cases are complete (y = x is handled by the stopping clause), and the steps are ledgered as inline.'
+  removed: true
