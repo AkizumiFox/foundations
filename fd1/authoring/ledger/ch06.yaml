@@ -1725,35 +1725,3 @@ items:
   line: 773
   hash: c123622efcd6
   verdicts: []
-- key: proof:prp-quantifier-distribution
-  kind: proof
-  file: 02-quantifier-laws.md
-  line: 318
-  hash: 8e93d79e9e3b
-  verdicts:
-  - stage: S5a
-    verdict: minor
-    by: refereeA
-    hash: 8665624422ec
-    date: '2026-10-11'
-    model: claude-opus-5-5
-    evidence: 09-quantifier-laws.md:319 The restated freshness condition again omits x_0 ≠ x, which the
-      side conditions of the reused derivations need.
-  - stage: S5b
-    verdict: correct
-    by: refereeB
-    hash: 8665624422ec
-    date: '2026-10-11'
-    model: claude-opus-5-5
-    evidence: 09:318-346. The (c) derivation checks and the carry-over argument at 319 is sound.
-  - stage: S7r
-    verdict: correct
-    by: rereferee
-    hash: 8e93d79e9e3b
-    date: '2026-10-11'
-    model: claude-opus-5-5
-    evidence: '09:319 now says the fresh name is ''chosen different from x and not appearing in φ or ψ'',
-      which resolves the S5a finding. The cited labels say what is claimed: prp-forall-and (04-universal-introduction.md:241),
-      prp-exists-and (06-existential-elimination.md:166), and the ∃-over-∨ derivation of exm-existential-elimination-derivations
-      (06:211ff). None uses RAA. The (c) derivation checks: ∨I gives φ[x0'
-  removed: true
