@@ -11,7 +11,7 @@ A reader checks a proof forwards, one line at a time. A writer finds a proof mos
 
 1. **Write the goal in symbols.** Translate the statement, its hypotheses and its conclusion into a formula, as in Section 6.1, with every quantifier and its bound. Read a letter that is not introduced as universally quantified (Section 5.1).
 2. **Unwind the definitions.** Replace each defined word ("bounded", "converges", "irrational", "\( \subseteq \)") by its definition, in the hypotheses and in the goal. This is \( \rulename{{\leftrightarrow}E} \) on a definition.
-3. **Read the skeleton off the goal** (Section 3.1, extended in Section 6.1), and write it at level 1: the boxes, their first lines and their last lines. Open the \( \rulename{\exists E} \) boxes of existential hypotheses early.
+3. **Read the skeleton off the goal** (Section 3.1, extended in Section 6.3), and write it at level 1: the boxes, their first lines and their last lines. Open the \( \rulename{\exists E} \) boxes of existential hypotheses early.
 4. **Fill the boxes:** backwards in scratch, forwards on the page. The search runs from the goal; the written proof runs from the hypotheses, each line citing lines above it. What the search found goes into the Idea, not into the Proof.
 5. **Choose constants last in the search, and write them first on the page,** each with what it depends on.
 6. **Write level 3,** leaving silent exactly the steps that @def-silent-steps allows, and no others.

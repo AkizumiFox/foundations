@@ -1,4 +1,4 @@
-"""exr-quantifier-laws-b3 (Section 4.9): with a > b and eps = min(1, a - b), eps > 0,
+"""exr-quantifier-laws-b3 (Section 6.2): with a > b and eps = min(1, a - b), eps > 0,
 eps^2 <= eps <= a - b, so the hypothesis a < b + eps^2 would give a < a; the copied choice
 eps = a - b gives a - b < (a - b)^2, true when a - b > 1 (example a - b = 2: 2 < 4)."""
 from fractions import Fraction as F

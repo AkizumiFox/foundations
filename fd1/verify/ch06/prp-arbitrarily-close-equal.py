@@ -1,4 +1,4 @@
-"""prp-arbitrarily-close-equal (Section 4.9): the remark's values a = 0, b = 1/2, eps = 1 show
+"""prp-arbitrarily-close-equal (Section 6.2): the remark's values a = 0, b = 1/2, eps = 1 show
 that "for some eps > 0" is not enough; and the proof's choice eps = |a - b| makes the
 hypothesis fail for a != b (checked on samples)."""
 from fractions import Fraction as F

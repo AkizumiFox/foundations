@@ -1,4 +1,4 @@
-"""prp-quantifier-passage and prp-quantifier-distribution (Section 4.9): independent semantic
+"""prp-quantifier-passage and prp-quantifier-distribution (Section 6.2): independent semantic
 sanity check. Each of the ten passage directions, with phi = R(x, y) and psi = Q(y) (x not free
 in psi), holds in every structure with at most three elements under every assignment; the four
 distribution laws hold, and the converses of (c) and (d) fail on D = {a, b} with P = {a},

@@ -1,6 +1,12 @@
 # Negating and Moving Quantifiers
 
-To prove that a sequence does **not** converge, or that a function is **not** uniformly continuous, we must use the negation of a definition, and a negation is only usable once the \( \neg \) has been pushed all the way in. "It is not the case that for every \( \varepsilon > 0 \) there is an \( N \) …" gives a proof nothing to hold. "There is an \( \varepsilon > 0 \) such that for every \( N \) there is an \( n \ge N \) with …" tells it what to find. Section 5.1 read the step from the first form to the second informally, as the challenger and the defender changing sides. This section derives the laws that make it exact, with the rules of Sections 5.3–5.6. Once they are proved, negating a definition is mechanical: one law per symbol, from the outside in. The section also derives the laws that move a quantifier across a connective, and it ends with a short analysis proof in which a negation and a well-chosen \( \varepsilon \) do the work.
+To prove that a sequence does **not** converge, or that a function is **not** uniformly continuous, we must use the negation of a definition, and a negation is only usable once the \( \neg \) has been pushed all the way in. "It is not the case that for every \( \varepsilon > 0 \) there is an \( N \) …" gives a proof nothing to hold. "There is an \( \varepsilon > 0 \) such that for every \( N \) there is an \( n \ge N \) with …" tells it what to find. Section 5.1 read the step from the first form to the second informally, as the challenger and the defender changing sides. This section derives the laws that make it exact, with the rules of Sections 5.3–5.6. Once they are proved, negating a definition is mechanical: one law per symbol, from the outside in. It then shows the laws at work, in an analysis proof in which a negation and a well-chosen \( \varepsilon \) do the work, and ends with the laws that move a quantifier across a connective, and with prenex form, where every quantifier stands at the front.
+
+::: {.remark}
+[Looking back]
+
+Section 3.2 proved two statements equivalent by two derivations, one each way. Every law of this section is such a pair. What is new is that a law may now be used on a part of a formula buried under quantifiers, and the subsection on negating a definition says why that is safe.
+:::
 
 ## Not every, and some not
 
@@ -22,7 +28,7 @@ Let \( \varphi \) be a formula and \( x \) a variable.
 :::
 :::
 
-*Try it first (ten minutes): run the search method of Section 6.1 on (a). Which rule should give the last line, and what would that rule need from the premise?*
+*Try it first (ten minutes): run the search method of Section 3.1, with the quantifier steps of Sections 5.3–5.6, on (a). Which rule should give the last line, and what would that rule need from the premise?*
 
 ::: {.idea}
 Start with (a), and with the obstacle. The goal \( \exists x\, \neg\varphi \) is an \( \exists \), so the search postpones it until an available line shows an instance \( \neg\varphi[t/x] \). None ever does. The premise \( \neg\forall x\, \varphi \) is a negation, and a negation is used only by clashing it with what it negates, \( \forall x\, \varphi \). It says that a counterexample exists and names none, so \( \rulename{\exists I} \) has nothing to act on. We are stuck, and the last step of the method applies: assume \( \neg\exists x\, \neg\varphi \), "no \( x \) fails \( \varphi \)", and hunt for a clash. The clash will be with the premise, so the new goal is \( \forall x\, \varphi \). Open a flagged box for it, with the goal \( \varphi[x_0/x] \). That goal is again stuck (we know nothing about \( \varphi \)), so a second \( \rulename{RAA} \) assumes \( \neg\varphi[x_0/x] \); and now an instance of \( \neg\varphi \) is on a line, so \( \rulename{\exists I} \) produces \( \exists x\, \neg\varphi \), which clashes with the outer assumption.
@@ -115,7 +121,7 @@ $\begin{nd}
 In the first, line 5 is the instance of \( \neg\varphi \) at \( x_0 \), as \( \rulename{\forall I} \) requires, and \( x_0 \) appears neither in the premise nor in \( \forall x\, \neg\varphi \); no assumption is open at line 6. In the second, the side condition of \( \rulename{\exists E} \) at line 6 is checked as in (b). No line of the derivations of (b) and (c) is justified by \( \rulename{RAA} \), and the derivation of (a) uses it twice, at lines 6 and 9. This proves the proposition.
 :::
 
-So "not every" and "some not" are interderivable, and so are "none" and "every not". The direction that cost two \( \rulename{RAA} \) boxes is the one that **produces** an existential statement from a negative one. That is not an accident of our derivation: no derivation of (a) avoids \( \rulename{RAA} \). This is a claim about all derivations, which no search can establish, and we state it without proof (Chapter 4's optional @thm-raa-independent proves the propositional analogue for \( \neg\neg P \vdash P \)). Chapter 8 returns to what is at stake: the conclusion of (a) asserts that something fails \( \varphi \), and the derivation never says what. This is the law that *Analysis on the Real Line*, Chapter 1 uses at the end of the proof of the Archimedean property, where "not every \( n \) satisfies \( n \le x \)" becomes "some \( n \) satisfies \( n > x \)".
+So "not every" and "some not" are interderivable, and so are "none" and "every not". The direction that cost two \( \rulename{RAA} \) boxes is the one that **produces** an existential statement from a negative one. That is not an accident of our derivation: no derivation of (a) avoids \( \rulename{RAA} \). This is a claim about all derivations, which no search can establish, and we state it without proof (Chapter 4's optional @thm-raa-independent proves the propositional analogue for \( \neg\neg P \vdash P \)).
 
 ::: {.check}
 From the line \( \neg\forall x\, P(x) \), may a derivation write \( \neg P(c) \) for a constant \( c \)? If not, what may it write, and what does a derivation do next to use it?
@@ -287,12 +293,241 @@ For the bounds \( x > a \) and the others, the same four derivations work with \
 :::
 
 ::: {.warning}
-**Negate the quantifier, not the bound** (Chapter 8 lists this among the wrong negations it catalogues). The negation of "\( a_n \to L \)" begins \( \exists \varepsilon > 0 \), not \( \exists \varepsilon \le 0 \). The wrong form, \( \exists \varepsilon \le 0\; \forall N \in \nN\; \exists n \in \nN\; (n \ge N \wedge \abs{a_n - L} \ge \varepsilon) \), is true for **every** sequence: \( \varepsilon = 0 \) works, since \( \abs{a_n - L} \ge 0 \) always. So it would "prove" that the constant sequence \( a_n = 0 \) does not converge to \( 0 \).
+**Negate the quantifier, not the bound.** The negation of "\( a_n \to L \)" begins \( \exists \varepsilon > 0 \), not \( \exists \varepsilon \le 0 \). The wrong form, \( \exists \varepsilon \le 0\; \forall N \in \nN\; \exists n \in \nN\; (n \ge N \wedge \abs{a_n - L} \ge \varepsilon) \), is true for **every** sequence: \( \varepsilon = 0 \) works, since \( \abs{a_n - L} \ge 0 \) always. So it would "prove" that the constant sequence \( a_n = 0 \) does not converge to \( 0 \).
 :::
+
+## Negating a definition, mechanically
+
+With the laws in hand, negating a definition is a procedure.
+
+::: {.algorithm}
+**Negating a formula.**
+
+1. **Rewrite \( \leftrightarrow \)** as two implications, by @prp-iff-two-implications.
+2. **Push \( \neg \) inward**, one symbol at a time, from the outside, citing a law at each step:
+   - \( \neg\forall x \) becomes \( \exists x\, \neg \), and \( \neg\exists x \) becomes \( \forall x\, \neg \) (@prp-quantifier-negation); a bounded quantifier keeps its bound (@prp-bounded-quantifier-negation);
+   - \( \neg(\alpha \to \beta) \) becomes \( \alpha \wedge \neg\beta \) (@prp-negated-implication);
+   - \( \neg(\alpha \wedge \beta) \) becomes \( \neg\alpha \vee \neg\beta \), and \( \neg(\alpha \vee \beta) \) becomes \( \neg\alpha \wedge \neg\beta \) (De Morgan, @prp-de-morgan);
+   - \( \neg\neg\alpha \) becomes \( \alpha \) (@prp-double-negation).
+3. **Stop at atomic formulas.** In an ordered domain, replace \( \neg(s < t) \) by \( s \ge t \) and \( \neg(s \le t) \) by \( s > t \); these are facts about the order, not laws of logic.
+
+Each step of 1 and 2 replaces a part of the formula by a part provably equivalent to it. Write that chain with \( \dashv\vdash \) between the stages, not \( \equiv \). Step 3 is not a law of logic: make its replacements after the chain, citing the order fact.
+:::
+
+Why may a step act on a part buried inside the formula? Because a part may be replaced by a part provably equivalent to it, even under quantifiers that bind its variables, as long as the equivalence is derivable for every choice of those variables, that is, its closure is derivable.
+
+::: {#prp-replacement}
+[Replacement of Provable Equivalents]
+
+Let \( \varphi \) and \( \psi \) be formulas, and let \( z_1, \dots, z_k \) be the variables free in \( \varphi \) or in \( \psi \). Suppose that \( \vdash \forall z_1 \cdots \forall z_k\, (\varphi \leftrightarrow \psi) \). If \( \chi' \) is obtained from a formula \( \chi \) by replacing one occurrence of \( \varphi \) in \( \chi \) by \( \psi \), then \( \vdash \forall w_1 \cdots \forall w_m\, (\chi \leftrightarrow \chi') \), where \( w_1, \dots, w_m \) are the variables free in \( \chi \) or in \( \chi' \). In particular, \( \chi \dashv\vdash \chi' \).
+:::
+
+*In words: swap a part for a provably equivalent part anywhere in a formula, provided the equivalence is derivable for every choice of its free variables, that is, its closure is derivable; every law of this section is.*
+
+The proof is an induction on the formula \( \chi \); its connective steps are short derivations with the rules of Chapters 1 and 2, its quantifier steps use a flagged box or an \( \rulename{\exists E} \) box with a fresh name, and it does not use truth tables or completeness. It is in the fold below, followed by a second fold that checks the hypothesis for the laws of this section.
+
+::: {.second-reading title="The proof of the replacement rule"}
+::: {.proof}
+For a formula \( \theta \), write \( \overline{\forall}\theta \) for its **closure**: \( \theta \) preceded by one \( \forall \) for each variable free in \( \theta \). The order of these \( \forall \)'s does not matter, because adjacent \( \forall \)'s may be exchanged (@exm-universal-introduction-derivations (c)), so "the closure" means the closure in any one order. The hypothesis is \( \vdash \overline{\forall}(\varphi \leftrightarrow \psi) \), and the claim is \( \vdash \overline{\forall}(\chi \leftrightarrow \chi') \). A derivable formula may stand as a line of any derivation: paste its derivation in, with its flags renamed to names new to the whole derivation, as "The laws as one line" allows.
+
+We use strong induction (@thm-strong-induction) on the number of connectives and quantifier symbols of \( \chi \): assume the claim for every formula with fewer such symbols, and prove it for \( \chi \).
+
+*Case 0: the occurrence is \( \chi \) itself.* Then \( \chi \) is \( \varphi \), \( \chi' \) is \( \psi \), and the claim is the hypothesis.
+
+Otherwise the occurrence lies in an immediate part of \( \chi \), which has fewer symbols; an atomic formula has no part other than itself.
+
+*Case 1: \( \chi = \neg\chi_0 \), with the occurrence in \( \chi_0 \),* so \( \chi' = \neg\chi_0' \). The induction hypothesis gives \( \vdash \overline{\forall}(\chi_0 \leftrightarrow \chi_0') \). Open one flagged box for each variable of the closure of \( \neg\chi_0 \leftrightarrow \neg\chi_0' \), nested in the closure's order, with fresh flags. Inside, \( \rulename{\forall E} \) of the induction hypothesis at the flags, each variable at its own flag in the closure's order, gives the instance \( \alpha \leftrightarrow \alpha' \) of \( \chi_0 \leftrightarrow \chi_0' \) at the flags; every variable of that closure is free in \( \chi \) or \( \chi' \), so it has a flag. The rules of Section 2.4 give \( \neg\alpha \leftrightarrow \neg\alpha' \): each direction is a \( \rulename{\neg I} \) box with \( \rulename{\leftrightarrow E} \) inside, and \( \rulename{\leftrightarrow I} \) (@def-rules-biconditional) joins them. The flagged boxes then close by \( \rulename{\forall I} \), the innermost first. Each side condition holds: the flag is fresh, and no assumption is open at the closing line.
+
+*Case 2: \( \chi = \chi_1 \circ \chi_2 \),* where \( \circ \) is \( \wedge \), \( \vee \), \( \to \) or \( \leftrightarrow \), and the occurrence is in \( \chi_1 \) (in \( \chi_2 \), exchange the parts). As in case 1, with the propositional step \( \alpha \leftrightarrow \alpha' \vdash (\alpha \circ \gamma) \leftrightarrow (\alpha' \circ \gamma) \), where \( \gamma \) is the instance of \( \chi_2 \) at the flags. For each \( \circ \) it is a short derivation with that connective's rules of Chapters 1 and 2 and \( \rulename{\leftrightarrow E} \) on \( \alpha \leftrightarrow \alpha' \). A variable free in \( \chi \) but not in \( \chi_1 \) is flagged and never instantiated, which is harmless: the instance of the induction hypothesis is taken at the flags of its own variables only.
+
+*Case 3: \( \chi = \forall x\, \chi_0 \) or \( \exists x\, \chi_0 \), with the occurrence in \( \chi_0 \),* so \( \chi' \) is \( \forall x\, \chi_0' \) or \( \exists x\, \chi_0' \). The induction hypothesis gives \( \vdash \overline{\forall}(\chi_0 \leftrightarrow \chi_0') \), whose closure may include \( x \). Let \( \bar w \) be the variables free in \( \chi \) or \( \chi' \), so \( x \) is not among them, flag them with fresh names \( \bar w_0 \), and write \( \theta_0 \) for \( \theta[\bar w_0/\bar w] \). Substitution passes \( \forall x \) and \( \exists x \), because \( x \) is not among \( \bar w \); and all the flags are fresh, so the simultaneous and the step-by-step substitutions agree.
+
+- For \( \forall \), left to right: assume \( \forall x\, (\chi_0)_0 \) and open a flagged box with a fresh \( x_1 \). Use \( \rulename{\forall E} \) at \( x_1 \). Use \( \rulename{\forall E} \) of the induction hypothesis at \( \bar w_0 \) and \( x_1 \), each variable at its own flag in the closure's order. Then \( \rulename{\leftrightarrow E} \) gives \( (\chi_0')_0[x_1/x] \), and \( \rulename{\forall I} \) gives \( \forall x\, (\chi_0')_0 \). The flag \( x_1 \) is in no premise, open assumption or conclusion.
+- Right to left is the same, and \( \rulename{\leftrightarrow I} \) joins the two directions.
+- For \( \exists \): an \( \rulename{\exists E} \) box with a fresh witness \( x_1 \), \( \rulename{\leftrightarrow E} \) inside, closed after \( \rulename{\exists I} \).
+
+The flagged boxes of \( \bar w_0 \) then close by \( \rulename{\forall I} \), as in case 1.
+
+*The "in particular".* From \( \vdash \overline{\forall}(\chi \leftrightarrow \chi') \), \( \rulename{\forall E} \) at each \( w_i \) itself (a variable is free for itself) gives \( \chi \leftrightarrow \chi' \), and \( \rulename{\leftrightarrow E} \) gives each direction. No truth table and no completeness theorem was used.
+:::
+:::
+
+::: {.second-reading title="Why the laws of this section meet the hypothesis"}
+A law of this section is proved for every formula that meets its condition, so it holds for the instances at fresh names \( z_{1,0}, \dots, z_{k,0} \), and \( k \) flagged boxes give its closure, as @prp-replacement asks. Take one variable \( x \) at a time, with sides \( \alpha \) and \( \beta \) of the law, and a fresh \( x_0 \): a variable other than \( x \) that appears in neither \( \alpha \) nor \( \beta \). The derivation of \( \alpha[x_0/x] \vdash \beta[x_0/x] \) is available because each law used holds for **every** formula that meets its condition, in particular for the instances at \( x_0 \). The laws this book applies to parts have conditions of two kinds, and both survive, for the same reason; the passage laws at the end of this section have one kind, checked in the fold after them, and the bounded negation laws the other. A law of @prp-bounded-quantifier-negation with a bound such as \( z > a \) asks that its bound variable \( z \) not occur in the term \( a \); since \( z \) appears in \( \beta \), again \( x_0 \) is not \( z \). If \( z \) is \( x \), substitution stops at the quantifier on \( x \) and the pair is unchanged; otherwise it passes the quantifier on \( z \), and \( a[x_0/x] \) contains no variable that \( a \) lacks except \( x_0 \), so \( z \) does not occur in it. So the instance is again an instance of the same law, with its condition met.
+:::
+
+Renaming a bound variable is a replacement of this kind: Section 5.4 derived \( \forall y\, \varphi \dashv\vdash \forall z\, \varphi[z/y] \) for every formula \( \varphi \) in which \( z \) does not appear (the fold after @exm-universal-introduction-derivations), and [Section 5.6](#existential-renaming) did the same for \( \exists \), so the convention of Section 5.2, that a renaming may be made anywhere inside a formula, is now a provable equivalence.
+
+
+::: {#exm-negating-definitions}
+[Three negations from analysis]
+
+Negate each statement into positive form: no \( \neg \) in front of a quantifier, a connective or an inequality. Work over \( \nR \).
+
+::: {.enumerate options="label=(\alph*)"}
+1. \( a_n \to L \): \( \forall \varepsilon > 0 \; \exists N \in \nN \; \forall n \in \nN \; \bigl( n \ge N \to \abs{a_n - L} < \varepsilon \bigr) \).
+2. \( s \) is the supremum of \( A \), in the two-clause form "\( s \) is an upper bound of \( A \), and for every \( \varepsilon > 0 \) some element of \( A \) exceeds \( s - \varepsilon \)":
+\[
+\forall x \in A \; (x \le s) \;\wedge\; \forall \varepsilon > 0 \; \exists x \in A \; (s - \varepsilon < x) .
+\]
+3. \( f \) is uniformly continuous on \( A \): \( \forall \varepsilon > 0 \; \exists \delta > 0 \; \forall x \in A \; \forall y \in A \; \bigl( \abs{x - y} < \delta \to \abs{f(x) - f(y)} < \varepsilon \bigr) \).
+:::
+:::
+
+::: {.solution}
+*(a)* Three quantifiers, then an implication, then an inequality:
+\[
+\begin{aligned}
+&\neg \forall \varepsilon > 0 \; \exists N \in \nN \; \forall n \in \nN \; \bigl( n \ge N \to \abs{a_n - L} < \varepsilon \bigr) \\
+\dashv\vdash\; &\exists \varepsilon > 0 \; \neg \exists N \in \nN \; \forall n \in \nN \; \bigl( n \ge N \to \abs{a_n - L} < \varepsilon \bigr) \\
+\dashv\vdash\; &\exists \varepsilon > 0 \; \forall N \in \nN \; \neg \forall n \in \nN \; \bigl( n \ge N \to \abs{a_n - L} < \varepsilon \bigr) \\
+\dashv\vdash\; &\exists \varepsilon > 0 \; \forall N \in \nN \; \exists n \in \nN \; \neg \bigl( n \ge N \to \abs{a_n - L} < \varepsilon \bigr) \\
+\dashv\vdash\; &\exists \varepsilon > 0 \; \forall N \in \nN \; \exists n \in \nN \; \bigl( n \ge N \wedge \neg (\abs{a_n - L} < \varepsilon) \bigr).
+\end{aligned}
+\]
+The first three steps are @prp-bounded-quantifier-negation, the fourth is @prp-negated-implication. Last, the order fact turns \( \neg(\abs{a_n - L} < \varepsilon) \) into \( \abs{a_n - L} \ge \varepsilon \):
+\[
+\exists \varepsilon > 0 \; \forall N \in \nN \; \exists n \in \nN \; \bigl( n \ge N \wedge \abs{a_n - L} \ge \varepsilon \bigr).
+\]
+In words: some \( \varepsilon > 0 \) is such that, however far out we start, some later term is at least \( \varepsilon \) away from \( L \). Every bound stayed, and the order of the quantifiers stayed: \( \varepsilon \), then \( N \), then \( n \).
+
+*(b)* The outer symbol is \( \wedge \). By De Morgan the negation becomes a disjunction, and each side is negated on its own:
+\[
+\begin{aligned}
+&\neg \bigl( \forall x \in A \; (x \le s) \;\wedge\; \forall \varepsilon > 0 \; \exists x \in A \; (s - \varepsilon < x) \bigr) \\
+\dashv\vdash\; &\neg \forall x \in A \; (x \le s) \;\vee\; \neg \forall \varepsilon > 0 \; \exists x \in A \; (s - \varepsilon < x) \\
+\dashv\vdash\; &\exists x \in A \; \neg (x \le s) \;\vee\; \exists \varepsilon > 0 \; \forall x \in A \; \neg (s - \varepsilon < x).
+\end{aligned}
+\]
+The first step is @prp-de-morgan, (d) for \( \vdash \) and (c) for \( \dashv \); the second is @prp-bounded-quantifier-negation, (a) on the left and (a) then (b) on the right. Last, the order facts turn \( \neg(x \le s) \) into \( s < x \) and \( \neg(s - \varepsilon < x) \) into \( x \le s - \varepsilon \):
+\[
+\exists x \in A \; (s < x) \;\vee\; \exists \varepsilon > 0 \; \forall x \in A \; (x \le s - \varepsilon).
+\]
+In words: \( s \) fails to be the supremum when some element of \( A \) lies above it (it is not an upper bound), or when some \( s - \varepsilon \) with \( \varepsilon > 0 \) is still an upper bound (it is not the least).
+
+*(c)* Four quantifiers and an implication:
+\[
+\begin{aligned}
+&\neg \forall \varepsilon > 0 \; \exists \delta > 0 \; \forall x \in A \; \forall y \in A \; \bigl( \abs{x - y} < \delta \to \abs{f(x) - f(y)} < \varepsilon \bigr) \\
+\dashv\vdash\; &\exists \varepsilon > 0 \; \forall \delta > 0 \; \exists x \in A \; \exists y \in A \; \neg \bigl( \abs{x - y} < \delta \to \abs{f(x) - f(y)} < \varepsilon \bigr) \\
+\dashv\vdash\; &\exists \varepsilon > 0 \; \forall \delta > 0 \; \exists x \in A \; \exists y \in A \; \bigl( \abs{x - y} < \delta \wedge \neg (\abs{f(x) - f(y)} < \varepsilon) \bigr),
+\end{aligned}
+\]
+where the first step is four uses of @prp-bounded-quantifier-negation, and the second is @prp-negated-implication. Last, the order fact turns \( \neg(\abs{f(x) - f(y)} < \varepsilon) \) into \( \abs{f(x) - f(y)} \ge \varepsilon \):
+\[
+\exists \varepsilon > 0 \; \forall \delta > 0 \; \exists x \in A \; \exists y \in A \; \bigl( \abs{x - y} < \delta \wedge \abs{f(x) - f(y)} \ge \varepsilon \bigr).
+\]
+In words: one \( \varepsilon > 0 \) defeats every \( \delta \): however small \( \delta > 0 \) is, two points of \( A \) closer than \( \delta \) have values at least \( \varepsilon \) apart. To prove that a function is **not** uniformly continuous, this is the statement to prove, and it says exactly what to exhibit: first \( \varepsilon \); then, for an arbitrary \( \delta \), the two points \( x \) and \( y \), which may depend on \( \delta \). Section 6.4 does this for \( x^2 \) on \( \nR \).
+:::
+
+The same procedure finishes the rewriting promised in Section 6.1 for "there is no largest prime". By @prp-quantifier-negation (c),
+\[
+\begin{aligned}
+&\neg \exists m \; \bigl( \mathrm{Prime}(m) \wedge \forall n \; (\mathrm{Prime}(n) \to n \le m) \bigr) \\
+\dashv\vdash\; &\forall m \; \neg \bigl( \mathrm{Prime}(m) \wedge \forall n \; (\mathrm{Prime}(n) \to n \le m) \bigr).
+\end{aligned}
+\]
+A negated conjunction \( \neg(\alpha \wedge \beta) \) is interderivable with \( \alpha \to \neg\beta \): De Morgan's law (@prp-de-morgan (d)) and @prp-implication-as-disjunction (a) give one direction, and (b) of the latter with @prp-de-morgan (c) the other. Then @prp-quantifier-negation (a) and (b) turn \( \neg\forall n\, (\mathrm{Prime}(n) \to n \le m) \) into \( \exists n\, \neg(\mathrm{Prime}(n) \to n \le m) \), and @prp-negated-implication, used under \( \exists n \), pushes the last \( \neg \) in; both steps act on a part, by @prp-replacement:
+\[
+\forall m \; \Bigl( \mathrm{Prime}(m) \to \exists n \; \bigl( \mathrm{Prime}(n) \wedge \neg(n \le m) \bigr) \Bigr).
+\]
+The quantifier \( \forall n\, (\mathrm{Prime}(n) \to \dots) \) works like a bounded one, with the bound \( \mathrm{Prime}(n) \). That bound is not one that @prp-bounded-quantifier-negation covers, but the same two steps work for it, and the bound stays unnegated.
+
+::: {.check}
+Negate "every non-empty set of reals that is bounded above has a supremum", writing \( E(A) \) for "\( A \) is non-empty", \( B(A) \) for "\( A \) is bounded above" and \( S(A) \) for "\( A \) has a supremum", with the variable \( A \) ranging over sets of reals.
+:::
+
+::: {.solution}
+The statement is \( \forall A\, \bigl( (E(A) \wedge B(A)) \to S(A) \bigr) \). By @prp-quantifier-negation (a) and (b) and then @prp-negated-implication, its negation is
+\[
+\exists A \; \bigl( (E(A) \wedge B(A)) \wedge \neg S(A) \bigr):
+\]
+there is a non-empty set of reals, bounded above, with no supremum. The two conditions are not negated: they stay as conditions on the counterexample, just as a bound stays with its quantifier.
+:::
+
+::: {.check}
+Negate "\( f \) is bounded on \( A \)", \( \exists M\; \forall x \in A\; (\abs{f(x)} \le M) \), into positive form, and say it in words.
+:::
+
+::: {.solution}
+\( \forall M\; \exists x \in A\; (\abs{f(x)} > M) \): every proposed bound is beaten somewhere on \( A \). The quantifiers flip, the bound \( x \in A \) stays, and the order fact turns \( \neg(\abs{f(x)} \le M) \) into \( \abs{f(x)} > M \).
+:::
+
+::: {.warning}
+**The negation of an implication is not an implication.** "If \( x > 2 \), then \( x^2 > 4 \)" is not negated by "if \( x > 2 \), then \( x^2 \le 4 \)", nor by "if \( x \le 2 \), then \( x^2 \le 4 \)". For \( x = 0 \) the original is true (its hypothesis fails), and so is the second candidate, so the candidate cannot be its negation. The negation is \( x > 2 \wedge x^2 \le 4 \) (@prp-negated-implication), and it is false for every real \( x \).
+:::
+
+## Four forms and their square {#the-square-of-opposition}
+
+Four sentence shapes come up so often that they have names. Fix two one-place predicates \( S \) and \( P \).
+
+- **A**, "every \( S \) is \( P \)": \( \forall x\, (S(x) \to P(x)) \);
+- **E**, "no \( S \) is \( P \)": \( \forall x\, (S(x) \to \neg P(x)) \);
+- **I**, "some \( S \) is \( P \)": \( \exists x\, (S(x) \wedge P(x)) \);
+- **O**, "some \( S \) is not \( P \)": \( \exists x\, (S(x) \wedge \neg P(x)) \).
+
+```{=latex}
+\begin{center}
+\begin{tikzpicture}[square]
+  \oppositionsquare{$\forall x\,(S(x) \to P(x))$}{$\forall x\,(S(x) \to \neg P(x))$}
+                   {$\exists x\,(S(x) \wedge P(x))$}{$\exists x\,(S(x) \wedge \neg P(x))$}
+\end{tikzpicture}
+\end{center}
+```
+
+The diagonals always hold: A and O are each the negation of the other, and so are E and I. The other three labels hold only when something is an \( S \).
+
+**The diagonals, by the laws.** A–O is the two steps of the proof of @prp-bounded-quantifier-negation (a), QN and then NIm under \( \exists \), which work for the bound \( S(x) \) as for \( \mathrm{Prime}(n) \) above. E–I is the same, followed by @prp-double-negation under \( \exists x \) (by @prp-replacement).
+
+**Contrary against contradictory.** A and E are **contrary**: never both true when something is an \( S \), but possibly both false. The negation of "every element of \( A \) is positive" is the O form "some element of \( A \) is not positive", not the E form "every element of \( A \) is non-positive".
+
+::: {#exm-square-of-opposition}
+[The square for multiples of 4 and squares]
+
+Over \( \nN \), let \( S \) be "is a multiple of \( 4 \)" and \( P \) "is a perfect square". Find the truth value of each corner. Then do the same with \( S \) read as "is an odd multiple of \( 4 \)".
+:::
+
+::: {.solution}
+A, "every multiple of \( 4 \) is a perfect square", is false at \( 8 \). E, "no multiple of \( 4 \) is a perfect square", is false at \( 4 = 2^2 \). I is true at \( 4 \), and O at \( 8 \). Each diagonal joins a true corner to a false one.
+
+No number is an odd multiple of \( 4 \). Now A and E are both true, vacuously, and I and O both false. Contraries both true, subcontraries both false: this is why the outer labels need something to be an \( S \) (existential import, Section 5.1).
+:::
+
+::: {.check}
+Which corner is the negation of "no multiple of \( 4 \) is a perfect square", and is that corner true?
+:::
+
+::: {.solution}
+I: "some multiple of \( 4 \) is a perfect square". It is true, since \( 16 = 4 \cdot 4 = 4^2 \). The negation of E is I, by the diagonal.
+:::
+
+## How the laws look in a mathematical proof
+
+Chapter 2 proved, in @exm-raa-zero, that a number \( x \ge 0 \) below every positive number is \( 0 \). Its key step chose \( \varepsilon \coloneqq x/2 \), and the reading after it called "the hypothesis applies to it" a step about "every", used as ordinary reasoning until Chapter 5. The rule is \( \rulename{\forall E} \), in its bounded form (@prp-bounded-quantifier-rules), at a term built from the data. Here is the same move once more, the way it appears in analysis.
+
+*Two real numbers that are closer than every positive number are equal.*
+
+::: {#prp-arbitrarily-close-equal}
+[Arbitrarily Close Numbers Are Equal]
+
+Let \( a \) and \( b \) be real numbers. If \( \abs{a - b} < \varepsilon \) for every \( \varepsilon > 0 \), then \( a = b \).
+:::
+
+::: {.idea}
+The goal \( a = b \) is atomic, so no introduction rule applies, and the hypothesis is a \( \forall \) whose instances are all inequalities, never an equation. We are stuck, so suppose \( a \ne b \). The hypothesis may be instantiated at any positive term, so choose the term that makes the numbers collide: \( \varepsilon \coloneqq \abs{a - b} \), which is positive exactly because \( a \ne b \).
+:::
+
+::: {.proof}
+Suppose that \( \abs{a - b} < \varepsilon \) for every \( \varepsilon > 0 \), and suppose, for a contradiction, that \( a \ne b \) [an \( \rulename{RAA} \) box]. Then \( a - b \ne 0 \), so \( \abs{a - b} > 0 \), by the school fact that \( \abs{u} > 0 \) for every real \( u \ne 0 \). So the hypothesis applies to the term \( \abs{a - b} \) [bounded \( \rulename{\forall E} \), citing the line \( \abs{a - b} > 0 \)] and gives \( \abs{a - b} < \abs{a - b} \). No real number is less than itself, so this is a contradiction [\( \rulename{\neg E} \)]. Hence \( a = b \) [\( \rulename{RAA} \)].
+:::
+
+The last step is a genuine \( \rulename{RAA} \): the box assumed \( \neg(a = b) \), written \( a \ne b \), and concluded \( a = b \); \( \rulename{\neg I} \) would only have given \( \neg\neg(a = b) \). The hypothesis cannot be weakened to "for **some** \( \varepsilon > 0 \)": \( a = 0 \), \( b = \frac12 \), \( \varepsilon = 1 \) satisfy \( \abs{a - b} < \varepsilon \) and \( a \ne b \). The facts about \( \abs{\cdot} \) used here are school algebra.
+
+Read the result through the negation laws. Its contrapositive says: if \( a \ne b \), then \( \neg\forall \varepsilon > 0\, (\abs{a - b} < \varepsilon) \), which by @prp-bounded-quantifier-negation is interderivable with \( \exists \varepsilon > 0\, \neg(\abs{a - b} < \varepsilon) \), that is, by the order fact, \( \exists \varepsilon > 0\, (\abs{a - b} \ge \varepsilon) \). The proof did not search for that \( \varepsilon \): it named it, \( \abs{a - b} \), from the data. A proof by contradiction in analysis is usually this shape. Negate the goal; the negation hands over an object (here the positive number \( \abs{a - b} \)); feed it to a hypothesis that holds for **every** object of its kind.
 
 ## Moving a quantifier across a connective
 
-Negation is not the only thing that needs moving. A formula such as \( \exists x\, P(x) \to \psi \) has its quantifier buried in a hypothesis, and proofs often want it outside, or the reverse. Two groups of laws do this. The **distribution** laws move a quantifier across \( \wedge \) or \( \vee \) when both sides mention \( x \); the **passage** laws move it across a connective when one side does not.
+Negation is not the only thing that needs moving. A formula such as \( \exists x\, P(x) \to \psi \) has its quantifier buried in a hypothesis, and proofs often want it outside, or the reverse. Two groups of laws do this. The **distribution** laws move a quantifier across \( \wedge \) or \( \vee \) when both sides mention \( x \); the **passage** laws move it across a connective when one side does not. The laws of this subsection are proved by the method's short runs; the derivations are in a fold, and Section 7.2 returns to two of the one-way laws.
 
 ::: {#prp-quantifier-distribution}
 [Distribution of Quantifiers]
@@ -315,6 +550,33 @@ The proposition collects laws that are mostly proved already. Its point is the c
 Three of the four laws were derived in Sections 5.4 and 5.6 for \( P(x) \) and \( Q(x) \); only the fresh name's instances were used there, so formulas can take their place. For (c), the goal is a \( \forall \) and the premise a disjunction: open the flagged box first, then split on the premise inside it.
 :::
 
+The converses of (c) and (d) are false. Over \( \nZ \), every integer is even or odd, but neither "every integer is even" nor "every integer is odd" holds; some integer is even and some integer is odd, but none is both. These are counter-readings; Section 7.2 draws them as counter-models.
+
+The passage laws need a condition: the quantified variable must not be free in the formula that the quantifier moves away from. Section 5.2 proved the fact that makes this work: if \( x \) is not free in \( \psi \), then \( \psi[t/x] = \psi \) for every term \( t \). So an instance of \( \psi \to \varphi \) at \( x_0 \) is \( \psi \to \varphi[x_0/x] \), with \( \psi \) untouched.
+
+::: {#prp-quantifier-passage}
+[Passage Laws]
+
+Let \( \varphi \) and \( \psi \) be formulas and \( x \) a variable that is **not free in \( \psi \)**. Then
+
+::: {.enumerate options="label=(\alph*)"}
+1. \( \forall x\, (\psi \to \varphi) \dashv\vdash \psi \to \forall x\, \varphi \);
+2. \( \forall x\, (\varphi \to \psi) \dashv\vdash \exists x\, \varphi \to \psi \);
+3. \( \exists x\, (\varphi \wedge \psi) \dashv\vdash \exists x\, \varphi \wedge \psi \);
+4. \( \exists x\, (\varphi \to \psi) \dashv\vdash \forall x\, \varphi \to \psi \);
+5. \( \exists x\, (\psi \to \varphi) \dashv\vdash \psi \to \exists x\, \varphi \).
+:::
+
+Of the ten directions, two are derived here with \( \rulename{RAA} \): \( \dashv \) in (d), through \( \rulename{LEM} \) and the cited QN (a), and \( \dashv \) in (e), through \( \rulename{LEM} \). The other eight are derived without it.
+:::
+
+Read (b) aloud: "everything with \( \varphi \) has \( \psi \)" says the same as "if something has \( \varphi \), then \( \psi \)". In (b) and (d) the quantifier changes from \( \forall \) to \( \exists \) or back as it leaves the hypothesis of an implication. That is the game reading of Section 5.1 once more: a quantifier in a hypothesis changes sides.
+
+::: {.idea}
+Each intuitionistic direction is a short run of the search method. A goal \( \to \) opens a \( \rulename{{\to}I} \) box; a goal \( \forall \) a flagged box; a premise \( \exists \) an \( \rulename{\exists E} \) box, early; a premise \( \forall \) is instantiated at \( x_0 \), where the condition on \( \psi \) keeps \( \psi \) unchanged; and the \( \exists \) goal waits for its witness \( x_0 \). The two classical directions get stuck. In (d), the premise \( \forall x\, \varphi \to \psi \) is usable only once \( \forall x\, \varphi \) is in hand, and it may not be; so decide it, by \( \rulename{LEM} \). If \( \forall x\, \varphi \) holds, then \( \psi \) holds, and \( \varphi \to \psi \) holds at every \( x \). If not, (a) of @prp-quantifier-negation supplies an \( x_0 \) with \( \neg\varphi[x_0/x] \), and \( \varphi[x_0/x] \to \psi \) is vacuously true. In (e), decide \( \psi \): if \( \psi \) holds, the premise supplies a witness; if not, \( \psi \to \varphi \) is vacuously true at every \( x \).
+:::
+
+::: {.second-reading #distribution-and-passage-derivations title="The derivations of the distribution and passage laws"}
 ::: {.proof}
 (a) is @prp-forall-and, (d) is @prp-exists-and, and (b) is the derivation of \( \exists \) over \( \vee \) in @exm-existential-elimination-derivations. Those derivations are written with \( P(x) \) and \( Q(x) \); they work word for word with \( \varphi \) and \( \psi \) in their place, because they use nothing about \( P(x) \) and \( Q(x) \) beyond the instances at the fresh name, which is chosen different from \( x \) and not appearing in \( \varphi \) or \( \psi \).
 
@@ -343,32 +605,6 @@ $\begin{nd}
 ```
 
 Line 8 is the instance of \( \varphi \vee \psi \) at \( x_0 \) and the last line of the flagged box; at line 9, \( x_0 \) is in neither the premise nor the conclusion, and no assumption is open. This proves the proposition.
-:::
-
-The converses of (c) and (d) are false. Over \( \nZ \), every integer is even or odd, but neither "every integer is even" nor "every integer is odd" holds; some integer is even and some integer is odd, but none is both. Section 7.2 turns these two observations into proofs that the converses are not derivable.
-
-The passage laws need a condition: the quantified variable must not be free in the formula that the quantifier moves away from. Section 5.2 proved the fact that makes this work: if \( x \) is not free in \( \psi \), then \( \psi[t/x] = \psi \) for every term \( t \). So an instance of \( \psi \to \varphi \) at \( x_0 \) is \( \psi \to \varphi[x_0/x] \), with \( \psi \) untouched.
-
-::: {#prp-quantifier-passage}
-[Passage Laws]
-
-Let \( \varphi \) and \( \psi \) be formulas and \( x \) a variable that is **not free in \( \psi \)**. Then
-
-::: {.enumerate options="label=(\alph*)"}
-1. \( \forall x\, (\psi \to \varphi) \dashv\vdash \psi \to \forall x\, \varphi \);
-2. \( \forall x\, (\varphi \to \psi) \dashv\vdash \exists x\, \varphi \to \psi \);
-3. \( \exists x\, (\varphi \wedge \psi) \dashv\vdash \exists x\, \varphi \wedge \psi \);
-4. \( \exists x\, (\varphi \to \psi) \dashv\vdash \forall x\, \varphi \to \psi \);
-5. \( \exists x\, (\psi \to \varphi) \dashv\vdash \psi \to \exists x\, \varphi \).
-:::
-
-Of the ten directions, two are derived here with \( \rulename{RAA} \): \( \dashv \) in (d), through \( \rulename{LEM} \) and the cited QN (a), and \( \dashv \) in (e), through \( \rulename{LEM} \). The other eight are derived without it.
-:::
-
-Read (b) aloud: "everything with \( \varphi \) has \( \psi \)" says the same as "if something has \( \varphi \), then \( \psi \)". In (b) and (d) the quantifier changes from \( \forall \) to \( \exists \) or back as it leaves the hypothesis of an implication. That is the game reading of Section 5.1 once more: a quantifier in a hypothesis changes sides.
-
-::: {.idea}
-Each intuitionistic direction is a short run of the search method. A goal \( \to \) opens a \( \rulename{{\to}I} \) box; a goal \( \forall \) a flagged box; a premise \( \exists \) an \( \rulename{\exists E} \) box, early; a premise \( \forall \) is instantiated at \( x_0 \), where the condition on \( \psi \) keeps \( \psi \) unchanged; and the \( \exists \) goal waits for its witness \( x_0 \). The two classical directions get stuck. In (d), the premise \( \forall x\, \varphi \to \psi \) is usable only once \( \forall x\, \varphi \) is in hand, and it may not be; so decide it, by \( \rulename{LEM} \). If \( \forall x\, \varphi \) holds, then \( \psi \) holds, and \( \varphi \to \psi \) holds at every \( x \). If not, (a) of @prp-quantifier-negation supplies an \( x_0 \) with \( \neg\varphi[x_0/x] \), and \( \varphi[x_0/x] \to \psi \) is vacuously true. In (e), decide \( \psi \): if \( \psi \) holds, the premise supplies a witness; if not, \( \psi \to \varphi \) is vacuously true at every \( x \).
 :::
 
 ::: {.proof}
@@ -574,150 +810,75 @@ $\begin{nd}
 
 Line 13 is again \( \rulename{\exists I} \) at the variable \( x \). At line 10, \( x_0 \) is in neither the conclusion \( \exists x\, (\psi \to \varphi) \) nor line 4, \( \exists x\, \varphi \), nor in the premise or the open assumption \( \psi \) of line 3. In each of the eight other derivations, the side conditions are checked as in @prp-quantifier-negation, and \( \rulename{LEM} \) and \( \rulename{RAA} \) do not occur. This proves the proposition.
 :::
+:::
 
-**Why the condition on \( \psi \).** Drop it, and (b) fails. Take \( \varphi \) and \( \psi \) both to be \( P(x) \). Then \( \forall x\, (P(x) \to P(x)) \) is true in every domain, while \( \exists x\, P(x) \to P(x) \), over \( \nZ \) with \( P \) read as "is even" and \( x \) read as \( 1 \), says "if some integer is even, then \( 1 \) is even", which is false. The derivation of (b) shows where the condition was used. Without it, line 4 would be \( P(x_0) \to P(x_0) \), line 5 would be \( P(x_0) \), and the \( \rulename{\exists E} \) box could not close on a line that mentions its witness.
+**Why the condition on \( \psi \).** Drop it, and (b) fails. Take \( \varphi \) and \( \psi \) both to be \( P(x) \). Then \( \forall x\, (P(x) \to P(x)) \) is true in every domain, while \( \exists x\, P(x) \to P(x) \), over \( \nZ \) with \( P \) read as "is even" and \( x \) read as \( 1 \), says "if some integer is even, then \( 1 \) is even", which is false. The derivation of (b), in [the fold above](#distribution-and-passage-derivations), shows where the condition was used. Without it, line 4 would be \( P(x_0) \to P(x_0) \), line 5 would be \( P(x_0) \), and the \( \rulename{\exists E} \) box could not close on a line that mentions its witness.
+
+::: {.second-reading title="Passage laws on a part"}
+A passage law of @prp-quantifier-passage asks that its moving variable \( y \) not be free in \( \psi \); since \( y \) appears in \( \beta \), the fresh \( x_0 \) is not \( y \). If \( y \) is \( x \) itself, substitution stops at the quantifier on \( x \), and \( \psi[x_0/x] \) is \( \psi \) because \( x \) is not free in \( \psi \); the pair is then the law's own instance, unchanged. Otherwise substituting \( x_0 \) for \( x \) passes the quantifier on \( y \) unchanged, and \( \psi[x_0/x] \) has no free variable that \( \psi \) lacks except \( x_0 \), and \( y \) is not free in it either. So the pair is again an instance of the law, with its condition met.
+:::
 
 ::: {.check}
 A student writes \( \forall x\, (x > 0 \to \exists y\, (y \cdot y = x)) \) as \( \forall x\, \exists y\, (x > 0 \to y \cdot y = x) \), citing a passage law. Which law, and is the condition met?
 :::
 
 ::: {.solution}
-Law (e) of @prp-quantifier-passage, applied under \( \forall x \) (a law may be used on a part under a quantifier; the next subsection says why), with \( \psi \) the formula \( x > 0 \), \( \varphi \) the formula \( y \cdot y = x \), and \( y \) as the moving variable. The condition asks that \( y \) not be free in \( \psi \), and \( y \) does not occur in \( x > 0 \); so the step is correct. It is the classical direction of (e), the one derived with \( \rulename{LEM} \).
+Law (e) of @prp-quantifier-passage, applied under \( \forall x \) (a law may be used on a part under a quantifier: @prp-replacement, with the fold "Passage laws on a part" above), with \( \psi \) the formula \( x > 0 \), \( \varphi \) the formula \( y \cdot y = x \), and \( y \) as the moving variable. The condition asks that \( y \) not be free in \( \psi \), and \( y \) does not occur in \( x > 0 \); so the step is correct. It is the classical direction of (e), the one derived with \( \rulename{LEM} \).
 :::
 
-## Negating a definition, mechanically
+::: {.second-reading title="Twin laws"}
+Over a domain with two elements \( a \), \( b \), a \( \forall \) is an "and" and an \( \exists \) is an "or" (Section 5.5 read \( \exists \) over a finite domain as a long "or"), and each law of this section becomes a propositional law. Below, \( \varphi_a \) abbreviates \( \varphi[a/x] \), the instance at \( a \); a formula \( \psi \) in which \( x \) is not free is the same at \( a \) and at \( b \).
 
-With the laws in hand, negating a definition is a procedure.
+| law | over \( \{a, b\} \) | the propositional twin |
+|---|---|---|
+| QN (a), (b) | \( \neg(\varphi_a \wedge \varphi_b) \dashv\vdash \neg\varphi_a \vee \neg\varphi_b \) | @prp-de-morgan (d), (c) |
+| QN (c) | \( \neg(\varphi_a \vee \varphi_b) \dashv\vdash \neg\varphi_a \wedge \neg\varphi_b \) | @prp-de-morgan (a), (b) |
+| distribution (c) | \( (\varphi_a \wedge \varphi_b) \vee (\psi_a \wedge \psi_b) \vdash (\varphi_a \vee \psi_a) \wedge (\varphi_b \vee \psi_b) \) | a direct derivation: \( \rulename{\vee E} \) on the premise, and in each case \( \rulename{\wedge E} \) twice, \( \rulename{\vee I} \) twice and \( \rulename{\wedge I} \) |
+| passage (b) | \( (\varphi_a \to \psi) \wedge (\varphi_b \to \psi) \dashv\vdash (\varphi_a \vee \varphi_b) \to \psi \) | @exm-cases-on-hypothesis, @exm-or-hypothesis-split |
 
-::: {.algorithm}
-**Negating a formula.**
-
-1. **Rewrite \( \leftrightarrow \)** as two implications, by @prp-iff-two-implications.
-2. **Push \( \neg \) inward**, one symbol at a time, from the outside, citing a law at each step:
-   - \( \neg\forall x \) becomes \( \exists x\, \neg \), and \( \neg\exists x \) becomes \( \forall x\, \neg \) (@prp-quantifier-negation); a bounded quantifier keeps its bound (@prp-bounded-quantifier-negation);
-   - \( \neg(\alpha \to \beta) \) becomes \( \alpha \wedge \neg\beta \) (@prp-negated-implication);
-   - \( \neg(\alpha \wedge \beta) \) becomes \( \neg\alpha \vee \neg\beta \), and \( \neg(\alpha \vee \beta) \) becomes \( \neg\alpha \wedge \neg\beta \) (De Morgan, @prp-de-morgan);
-   - \( \neg\neg\alpha \) becomes \( \alpha \) (@prp-double-negation).
-3. **Stop at atomic formulas.** In an ordered domain, replace \( \neg(s < t) \) by \( s \ge t \) and \( \neg(s \le t) \) by \( s > t \); these are facts about the order, not laws of logic.
-
-Each step of 1 and 2 replaces a part of the formula by a part provably equivalent to it. Write that chain with \( \dashv\vdash \) between the stages, not \( \equiv \). Step 3 is not a law of logic: make its replacements after the chain, citing the order fact.
+In each pair the direction that needs \( \rulename{RAA} \) is the same: QN (a) and De Morgan (d). A twin is a reading, not a proof: a domain may be infinite, and the laws were derived for every domain.
 :::
 
-Why may a step act on a part buried inside the formula? Because provable equivalence passes through every symbol. If \( \alpha \dashv\vdash \beta \), then \( \neg\alpha \dashv\vdash \neg\beta \): from \( \neg\alpha \), a \( \rulename{\neg I} \) box on \( \beta \) derives \( \alpha \) from \( \beta \) and clashes it with \( \neg\alpha \), and the other direction is the same with the letters exchanged. Also \( \alpha \wedge \gamma \dashv\vdash \beta \wedge \gamma \), and the same holds for the other connectives, with the part on either side, by pasting the given derivations into the boxes of the connective's rules. Under a quantifier, \( \forall x\, \alpha \vdash \forall x\, \beta \) by a flagged box: \( \rulename{\forall E} \) at \( x_0 \), the derivation of \( \alpha[x_0/x] \vdash \beta[x_0/x] \), and \( \rulename{\forall I} \); and \( \exists x\, \alpha \vdash \exists x\, \beta \) by an \( \rulename{\exists E} \) box ending in \( \rulename{\exists I} \). Here \( x_0 \) is fresh: a variable other than \( x \) that appears in neither \( \alpha \) nor \( \beta \). The derivation of \( \alpha[x_0/x] \vdash \beta[x_0/x] \) is available because each law used holds for **every** formula that meets its condition, in particular for the instances at \( x_0 \). The laws this book applies to parts have only two kinds of condition, and both survive, for the same reason. A passage law of @prp-quantifier-passage asks that its moving variable \( y \) not be free in \( \psi \); since \( y \) appears in \( \beta \), the fresh \( x_0 \) is not \( y \). If \( y \) is \( x \) itself, substitution stops at the quantifier on \( x \), and \( \psi[x_0/x] \) is \( \psi \) because \( x \) is not free in \( \psi \); the pair is then the law's own instance, unchanged. Otherwise substituting \( x_0 \) for \( x \) passes the quantifier on \( y \) unchanged, and \( \psi[x_0/x] \) has no free variable that \( \psi \) lacks except \( x_0 \), and \( y \) is not free in it either. A law of @prp-bounded-quantifier-negation with a bound such as \( z > a \) asks that its bound variable \( z \) not occur in the term \( a \); since \( z \) appears in \( \beta \), again \( x_0 \) is not \( z \). If \( z \) is \( x \), substitution stops at the quantifier on \( x \) and the pair is unchanged; otherwise it passes the quantifier on \( z \), and \( a[x_0/x] \) contains no variable that \( a \) lacks except \( x_0 \), so \( z \) does not occur in it. So the pair \( \alpha[x_0/x] \), \( \beta[x_0/x] \) is again an instance of the same law, with its condition met. A part sitting under several symbols is reached one symbol at a time.
+## Prenex form {#prenex-form}
 
-::: {#exm-negating-definitions}
-[Three negations from analysis]
+A formula is in **prenex form** when all its quantifiers stand at the front, as a **prefix**, before a part with no quantifier, the **matrix**.
 
-Negate each statement into positive form: no \( \neg \) in front of a quantifier, a connective or an inequality. Work over \( \nR \).
+::: {#exm-prenex-conversion}
+[Bringing a formula into prenex form]
 
-::: {.enumerate options="label=(\alph*)"}
-1. \( a_n \to L \): \( \forall \varepsilon > 0 \; \exists N \in \nN \; \forall n \in \nN \; \bigl( n \ge N \to \abs{a_n - L} < \varepsilon \bigr) \).
-2. \( s \) is the supremum of \( A \), in the two-clause form "\( s \) is an upper bound of \( A \), and for every \( \varepsilon > 0 \) some element of \( A \) exceeds \( s - \varepsilon \)":
-\[
-\forall x \in A \; (x \le s) \;\wedge\; \forall \varepsilon > 0 \; \exists x \in A \; (s - \varepsilon < x) .
-\]
-3. \( f \) is uniformly continuous on \( A \): \( \forall \varepsilon > 0 \; \exists \delta > 0 \; \forall x \in A \; \forall y \in A \; \bigl( \abs{x - y} < \delta \to \abs{f(x) - f(y)} < \varepsilon \bigr) \).
-:::
+Bring \( \exists x\, P(x) \to \exists y\, Q(y) \) into prenex form.
 :::
 
 ::: {.solution}
-*(a)* Three quantifiers, then an implication, then an inequality:
 \[
 \begin{aligned}
-&\neg \forall \varepsilon > 0 \; \exists N \in \nN \; \forall n \in \nN \; \bigl( n \ge N \to \abs{a_n - L} < \varepsilon \bigr) \\
-\dashv\vdash\; &\exists \varepsilon > 0 \; \neg \exists N \in \nN \; \forall n \in \nN \; \bigl( n \ge N \to \abs{a_n - L} < \varepsilon \bigr) \\
-\dashv\vdash\; &\exists \varepsilon > 0 \; \forall N \in \nN \; \neg \forall n \in \nN \; \bigl( n \ge N \to \abs{a_n - L} < \varepsilon \bigr) \\
-\dashv\vdash\; &\exists \varepsilon > 0 \; \forall N \in \nN \; \exists n \in \nN \; \neg \bigl( n \ge N \to \abs{a_n - L} < \varepsilon \bigr) \\
-\dashv\vdash\; &\exists \varepsilon > 0 \; \forall N \in \nN \; \exists n \in \nN \; \bigl( n \ge N \wedge \neg (\abs{a_n - L} < \varepsilon) \bigr).
+&\exists x\, P(x) \to \exists y\, Q(y) \\
+\dashv\vdash\; &\forall x\, \bigl( P(x) \to \exists y\, Q(y) \bigr) \\
+\dashv\vdash\; &\forall x\, \exists y\, \bigl( P(x) \to Q(y) \bigr).
 \end{aligned}
 \]
-The first three steps are @prp-bounded-quantifier-negation, the fourth is @prp-negated-implication. Last, the order fact turns \( \neg(\abs{a_n - L} < \varepsilon) \) into \( \abs{a_n - L} \ge \varepsilon \):
-\[
-\exists \varepsilon > 0 \; \forall N \in \nN \; \exists n \in \nN \; \bigl( n \ge N \wedge \abs{a_n - L} \ge \varepsilon \bigr).
-\]
-In words: some \( \varepsilon > 0 \) is such that, however far out we start, some later term is at least \( \varepsilon \) away from \( L \). Every bound stayed, and the order of the quantifiers stayed: \( \varepsilon \), then \( N \), then \( n \).
 
-*(b)* The outer symbol is \( \wedge \). By De Morgan the negation becomes a disjunction, and each side is negated on its own:
-\[
-\begin{aligned}
-&\neg \bigl( \forall x \in A \; (x \le s) \;\wedge\; \forall \varepsilon > 0 \; \exists x \in A \; (s - \varepsilon < x) \bigr) \\
-\dashv\vdash\; &\neg \forall x \in A \; (x \le s) \;\vee\; \neg \forall \varepsilon > 0 \; \exists x \in A \; (s - \varepsilon < x) \\
-\dashv\vdash\; &\exists x \in A \; \neg (x \le s) \;\vee\; \exists \varepsilon > 0 \; \forall x \in A \; \neg (s - \varepsilon < x).
-\end{aligned}
-\]
-The first step is @prp-de-morgan, (d) for \( \vdash \) and (c) for \( \dashv \); the second is @prp-bounded-quantifier-negation, (a) on the left and (a) then (b) on the right. Last, the order facts turn \( \neg(x \le s) \) into \( s < x \) and \( \neg(s - \varepsilon < x) \) into \( x \le s - \varepsilon \):
-\[
-\exists x \in A \; (s < x) \;\vee\; \exists \varepsilon > 0 \; \forall x \in A \; (x \le s - \varepsilon).
-\]
-In words: \( s \) fails to be the supremum when some element of \( A \) lies above it (it is not an upper bound), or when some \( s - \varepsilon \) with \( \varepsilon > 0 \) is still an upper bound (it is not the least).
+- The first step is passage law (b), with \( \psi \) the formula \( \exists y\, Q(y) \), in which \( x \) is not free.
+- The second is law (e) under \( \forall x \), by @prp-replacement, with \( \psi \) the formula \( P(x) \), in which \( y \) is not free. Its hypothesis is checked in the fold "Passage laws on a part".
 
-*(c)* Four quantifiers and an implication:
-\[
-\begin{aligned}
-&\neg \forall \varepsilon > 0 \; \exists \delta > 0 \; \forall x \in A \; \forall y \in A \; \bigl( \abs{x - y} < \delta \to \abs{f(x) - f(y)} < \varepsilon \bigr) \\
-\dashv\vdash\; &\exists \varepsilon > 0 \; \forall \delta > 0 \; \exists x \in A \; \exists y \in A \; \neg \bigl( \abs{x - y} < \delta \to \abs{f(x) - f(y)} < \varepsilon \bigr) \\
-\dashv\vdash\; &\exists \varepsilon > 0 \; \forall \delta > 0 \; \exists x \in A \; \exists y \in A \; \bigl( \abs{x - y} < \delta \wedge \neg (\abs{f(x) - f(y)} < \varepsilon) \bigr),
-\end{aligned}
-\]
-where the first step is four uses of @prp-bounded-quantifier-negation, and the second is @prp-negated-implication. Last, the order fact turns \( \neg(\abs{f(x) - f(y)} < \varepsilon) \) into \( \abs{f(x) - f(y)} \ge \varepsilon \):
-\[
-\exists \varepsilon > 0 \; \forall \delta > 0 \; \exists x \in A \; \exists y \in A \; \bigl( \abs{x - y} < \delta \wedge \abs{f(x) - f(y)} \ge \varepsilon \bigr).
-\]
-In words: one \( \varepsilon > 0 \) defeats every \( \delta \): however small \( \delta > 0 \) is, two points of \( A \) closer than \( \delta \) have values at least \( \varepsilon \) apart. To prove that a function is **not** uniformly continuous, this is the statement to prove, and it says exactly what to exhibit: first \( \varepsilon \); then, for an arbitrary \( \delta \), the two points \( x \) and \( y \), which may depend on \( \delta \). Section 6.4 does this for \( x^2 \) on \( \nR \).
+Going down, the second step uses the classical direction of (e).
 :::
 
-The same procedure finishes the rewriting promised in Section 6.1 for "there is no largest prime". By @prp-quantifier-negation (c),
-\[
-\begin{aligned}
-&\neg \exists p \; \bigl( \mathrm{Prime}(p) \wedge \forall q \; (\mathrm{Prime}(q) \to q \le p) \bigr) \\
-\dashv\vdash\; &\forall p \; \neg \bigl( \mathrm{Prime}(p) \wedge \forall q \; (\mathrm{Prime}(q) \to q \le p) \bigr).
-\end{aligned}
-\]
-A negated conjunction \( \neg(\alpha \wedge \beta) \) is interderivable with \( \alpha \to \neg\beta \): De Morgan's law (@prp-de-morgan (d)) and @prp-implication-as-disjunction (a) give one direction, and (b) of the latter with @prp-de-morgan (c) the other. Then @prp-quantifier-negation (a) and (b) turn \( \neg\forall q\, (\mathrm{Prime}(q) \to q \le p) \) into \( \exists q\, \neg(\mathrm{Prime}(q) \to q \le p) \), and @prp-negated-implication, used under \( \exists q \), pushes the last \( \neg \) in; both steps act on a part, as the paragraph before @exm-negating-definitions allows:
-\[
-\forall p \; \Bigl( \mathrm{Prime}(p) \to \exists q \; \bigl( \mathrm{Prime}(q) \wedge \neg(q \le p) \bigr) \Bigr).
-\]
-The quantifier \( \forall q\, (\mathrm{Prime}(q) \to \dots) \) works like a bounded one, with the bound \( \mathrm{Prime}(q) \). That bound is not one that @prp-bounded-quantifier-negation covers, but the same two steps work for it, and the bound stays unnegated.
+**Alternation.** Count the changes between \( \forall \) and \( \exists \) along the prefix: the example has one, \( \forall x\, \exists y \), and "\( a_n \to L \)" has two, \( \forall \varepsilon\; \exists N\; \forall n \). Each change is one more round of the game of Section 5.1: a challenger move answered by a defender move. A prefix with more alternations takes more rounds to win, and checking it by examples gets harder: no finite table of values settles a \( \forall \exists \forall \) sentence over \( \nN \).
 
 ::: {.check}
-Negate "every non-empty set of reals that is bounded above has a supremum", writing \( E(A) \) for "\( A \) is non-empty", \( B(A) \) for "\( A \) is bounded above" and \( S(A) \) for "\( A \) has a supremum", with the variable \( A \) ranging over sets of reals.
+How many alternations have the prefixes of "uniformly continuous on \( A \)" and "continuous at every point of \( A \)" (Section 6.1, @exr-translation-c1)?
 :::
 
 ::: {.solution}
-The statement is \( \forall A\, \bigl( (E(A) \wedge B(A)) \to S(A) \bigr) \). By @prp-quantifier-negation (a) and (b) and then @prp-negated-implication, its negation is
-\[
-\exists A \; \bigl( (E(A) \wedge B(A)) \wedge \neg S(A) \bigr):
-\]
-there is a non-empty set of reals, bounded above, with no supremum. The two conditions are not negated: they stay as conditions on the counterexample, just as a bound stays with its quantifier.
+Two each: \( \forall \varepsilon\; \exists \delta\; \forall x\; \forall y \) and \( \forall x\; \forall \varepsilon\; \exists \delta\; \forall y \). The count is the same, and the order differs. Section 6.4 is about that difference.
 :::
 
-::: {.warning}
-**The negation of an implication is not an implication.** "If \( x > 2 \), then \( x^2 > 4 \)" is not negated by "if \( x > 2 \), then \( x^2 \le 4 \)", nor by "if \( x \le 2 \), then \( x^2 \le 4 \)". For \( x = 0 \) the original is true (its hypothesis fails), and so is the second candidate, so the candidate cannot be its negation. The negation is \( x > 2 \wedge x^2 \le 4 \) (@prp-negated-implication), and it is false for every real \( x \). Chapter 8 catalogues this slip among the wrong negations.
+::: {.remark}
+[Looking ahead]
+
+Chapter 8 says what is at stake when "not every" becomes "some not" by \( \rulename{RAA} \), and catalogues the wrong negations of this section among the steps a proof may not take.
 :::
-
-## How the laws look in a mathematical proof
-
-Chapter 2 proved, in @exm-raa-zero, that a number \( x \ge 0 \) below every positive number is \( 0 \). Its key step chose \( \varepsilon \coloneqq x/2 \), and the reading after it called "the hypothesis applies to it" a step about "every", used as ordinary reasoning until Chapter 5. The rule is \( \rulename{\forall E} \), in its bounded form (@prp-bounded-quantifier-rules), at a term built from the data. Here is the same move once more, the way it appears in analysis.
-
-*Two real numbers that are closer than every positive number are equal.*
-
-::: {#prp-arbitrarily-close-equal}
-[Arbitrarily Close Numbers Are Equal]
-
-Let \( a \) and \( b \) be real numbers. If \( \abs{a - b} < \varepsilon \) for every \( \varepsilon > 0 \), then \( a = b \).
-:::
-
-::: {.idea}
-The goal \( a = b \) is atomic, so no introduction rule applies, and the hypothesis is a \( \forall \) whose instances are all inequalities, never an equation. We are stuck, so suppose \( a \ne b \). The hypothesis may be instantiated at any positive term, so choose the term that makes the numbers collide: \( \varepsilon \coloneqq \abs{a - b} \), which is positive exactly because \( a \ne b \).
-:::
-
-::: {.proof}
-Suppose that \( \abs{a - b} < \varepsilon \) for every \( \varepsilon > 0 \), and suppose, for a contradiction, that \( a \ne b \) [an \( \rulename{RAA} \) box]. Then \( a - b \ne 0 \), so \( \abs{a - b} > 0 \), by the school fact that \( \abs{u} > 0 \) for every real \( u \ne 0 \). So the hypothesis applies to the term \( \abs{a - b} \) [bounded \( \rulename{\forall E} \), citing the line \( \abs{a - b} > 0 \)] and gives \( \abs{a - b} < \abs{a - b} \). No real number is less than itself, so this is a contradiction [\( \rulename{\neg E} \)]. Hence \( a = b \) [\( \rulename{RAA} \)].
-:::
-
-The last step is a genuine \( \rulename{RAA} \): the box assumed \( \neg(a = b) \), written \( a \ne b \), and concluded \( a = b \); \( \rulename{\neg I} \) would only have given \( \neg\neg(a = b) \). The hypothesis cannot be weakened to "for **some** \( \varepsilon > 0 \)": \( a = 0 \), \( b = \frac12 \), \( \varepsilon = 1 \) satisfy \( \abs{a - b} < \varepsilon \) and \( a \ne b \). The facts about \( \abs{\cdot} \) used here are school algebra; *Analysis on the Real Line*, Chapter 1 proves them from the axioms of \( \nR \).
-
-Read the result through the negation laws. Its contrapositive says: if \( a \ne b \), then \( \neg\forall \varepsilon > 0\, (\abs{a - b} < \varepsilon) \), which by @prp-bounded-quantifier-negation is interderivable with \( \exists \varepsilon > 0\, \neg(\abs{a - b} < \varepsilon) \), that is, by the order fact, \( \exists \varepsilon > 0\, (\abs{a - b} \ge \varepsilon) \). The proof did not search for that \( \varepsilon \): it named it, \( \abs{a - b} \), from the data. A proof by contradiction in analysis is usually this shape. Negate the goal; the negation hands over an object (here the positive number \( \abs{a - b} \)); feed it to a hypothesis that holds for **every** object of its kind.
 
 ## Exercises
 
@@ -747,6 +908,53 @@ These parts are about the derivation of @prp-quantifier-negation (a).
 *(d)* Line 1: "not every real number has a square different from \( 2 \)". Line 9: "some real number does not have a square different from \( 2 \)", that is, \( \exists x\, \neg(x \cdot x \ne 2) \). No line names \( \sqrt 2 \): the only witness on any line is the fresh name \( x_0 \), inside boxes that closed, and line 9 comes from \( \rulename{RAA} \), not from \( \rulename{\exists I} \). To reach \( \exists x\, (x \cdot x = 2) \), open an \( \rulename{\exists E} \) box on line 9 with the assumption \( \neg(x_1 \cdot x_1 \ne 2) \), apply \( \rulename{\neg\neg E} \) (the formula \( x_1 \cdot x_1 \ne 2 \) is \( \neg(x_1 \cdot x_1 = 2) \)) to get \( x_1 \cdot x_1 = 2 \), and close with \( \rulename{\exists I} \).
 
 *(e)* False. By @prp-bounded-quantifier-negation the negation is \( \exists \varepsilon > 0\; \neg\varphi \): the bound stays. The wrong form can be true together with the statement it claims to negate. Over \( \nR \), take \( \varphi \) to be \( \varepsilon > 0 \): then \( \forall \varepsilon > 0\, (\varepsilon > 0) \) is true, and \( \exists \varepsilon \le 0\; \neg(\varepsilon > 0) \) is true as well, with the witness \( \varepsilon = 0 \). A statement and its negation are never both true.
+:::
+
+::: {#exr-quantifier-laws-a2}
+[A2: Drill]
+
+Each part takes a line or two. In (a)–(h), negate the statement into positive form (in (g), choose the negation); the last four parts use the square, the reading over two elements, prenex form and a law under a quantifier.
+
+::: {.enumerate options="label=(\alph*)"}
+1. \( \forall x\, P(x) \).
+2. \( \exists x\, (P(x) \wedge Q(x)) \).
+3. \( \forall x > 0\; (x^2 > 0) \), over \( \nR \).
+4. "If \( n \) is even, then \( n^2 \) is even", for one integer \( n \).
+5. \( \forall \varepsilon > 0\; \exists \delta > 0\; (\delta < \varepsilon) \).
+6. \( \forall x \in A\; (x \le s) \).
+7. Which is the negation of \( \forall x \in A\; \exists y \in B\; (x < y) \): (i) \( \exists x \in A\; \forall y \in B\; (x \ge y) \); (ii) \( \exists x \notin A\; \forall y \notin B\; (x \ge y) \); (iii) \( \forall x \in A\; \exists y \in B\; (x \ge y) \)?
+8. "\( (a_n) \) is bounded below": \( \exists m\; \forall n \in \nN\; (m \le a_n) \).
+9. Over \( \nN \), with \( S \) "is a multiple of \( 3 \)" and \( P \) "is odd", which corner of the square is the negation of "some multiple of \( 3 \) is not odd", and is it true?
+10. Over \( \{a, b\} \), write \( \exists x\, (P(x) \wedge Q(x)) \) and \( \exists x\, P(x) \wedge \exists x\, Q(x) \) without quantifiers, and give truth values that make the second true and the first false.
+11. Name the passage law, and give a prenex form of \( \exists x\, P(x) \to R \), where \( x \) is not free in \( R \).
+12. Is this step correct: from \( \forall x\, (P(x) \to Q(x)) \) to \( \forall x\, (\neg P(x) \to \neg Q(x)) \), "contrapositive under \( \forall \)"?
+:::
+:::
+
+::: {.solution}
+(a) \( \exists x\, \neg P(x) \).
+
+(b) \( \forall x\, (\neg P(x) \vee \neg Q(x)) \), equivalently \( \forall x\, (P(x) \to \neg Q(x)) \).
+
+(c) \( \exists x > 0\; (x^2 \le 0) \): the bound stays, and the order fact turns \( \neg(x^2 > 0) \) into \( x^2 \le 0 \).
+
+(d) "\( n \) is even and \( n^2 \) is not even" (@prp-negated-implication).
+
+(e) \( \exists \varepsilon > 0\; \forall \delta > 0\; (\delta \ge \varepsilon) \), by the order fact for \( \neg(\delta < \varepsilon) \).
+
+(f) \( \exists x \in A\; (x > s) \).
+
+(g) (i): flip each quantifier, keep each bound.
+
+(h) \( \forall m\; \exists n \in \nN\; (a_n < m) \), by the order fact for \( \neg(m \le a_n) \).
+
+(i) A, "every multiple of \( 3 \) is odd", by the diagonal. It is false: \( 6 \) is a multiple of \( 3 \) and even.
+
+(j) \( (P(a) \wedge Q(a)) \vee (P(b) \wedge Q(b)) \) and \( (P(a) \vee P(b)) \wedge (Q(a) \vee Q(b)) \). Take \( P(a) \) and \( Q(b) \) true, \( P(b) \) and \( Q(a) \) false.
+
+(k) Law (b): \( \forall x\, (P(x) \to R) \).
+
+(l) No. The contrapositive is \( \forall x\, (\neg Q(x) \to \neg P(x)) \). Over \( \nZ \), with \( P \) "is a multiple of \( 4 \)" and \( Q \) "is even", the premise is true and the line is false at \( 2 \).
 :::
 
 ### B. Practice
@@ -830,7 +1038,7 @@ $\begin{nd}
 
 At line 7, \( y_0 \) is not in the premise or in line 7, and no assumption is open (the box of line 2 has closed). At line 8 the same holds for \( x_0 \). No \( \rulename{RAA} \) is used.
 
-The sequent combines (b) and (a) of @prp-quantifier-passage. Law (b), with \( \varphi \) the formula \( P(x) \) and \( \psi \) the formula \( \forall y\, Q(y) \) (in which \( x \) is not free), turns the premise into \( \forall x\, \bigl( P(x) \to \forall y\, Q(y) \bigr) \). Then law (a), applied under \( \forall x \) (a provable equivalence may be used under a quantifier, the paragraph after the negation procedure) with \( \psi \) the formula \( P(x) \), \( \varphi \) the formula \( Q(y) \) and \( y \) as the moving variable (\( y \) is not free in \( P(x) \)), turns \( P(x) \to \forall y\, Q(y) \) into \( \forall y\, (P(x) \to Q(y)) \).
+The sequent combines (b) and (a) of @prp-quantifier-passage. Law (b), with \( \varphi \) the formula \( P(x) \) and \( \psi \) the formula \( \forall y\, Q(y) \) (in which \( x \) is not free), turns the premise into \( \forall x\, \bigl( P(x) \to \forall y\, Q(y) \bigr) \). Then law (a), applied under \( \forall x \) (a provable equivalence may be used under a quantifier, by @prp-replacement) with \( \psi \) the formula \( P(x) \), \( \varphi \) the formula \( Q(y) \) and \( y \) as the moving variable (\( y \) is not free in \( P(x) \)), turns \( P(x) \to \forall y\, Q(y) \) into \( \forall y\, (P(x) \to Q(y)) \).
 :::
 
 ::: {#exr-quantifier-laws-b3}
@@ -847,6 +1055,186 @@ a < b + \varepsilon^2 \le b + \varepsilon \le b + (a - b) = a ,
 so \( a < a \), a contradiction. Hence \( a \le b \).
 
 The choice \( \varepsilon = a - b \), copied from the text, gives \( a < b + (a - b)^2 \), that is, \( a - b < (a - b)^2 \). When \( a - b > 1 \) this is true (for \( a - b = 2 \): \( 2 < 4 \)), so there is no contradiction. The square shrinks a number only when it is at most \( 1 \), and the \( \min \) with \( 1 \) is what puts \( \varepsilon \) there.
+:::
+
+::: {#exr-quantifier-laws-b4}
+[B4: Derive or break]
+
+Derive each claim with the rules and laws so far, or break it by a reading over \( \nZ \) that makes every member of its counterexample set true.
+
+::: {.enumerate options="label=(\alph*)"}
+1. \( \forall x\, (P(x) \leftrightarrow Q(x)) \vdash \forall x\, P(x) \leftrightarrow \forall x\, Q(x) \).
+2. \( \forall x\, P(x) \leftrightarrow \forall x\, Q(x) \vdash \forall x\, (P(x) \leftrightarrow Q(x)) \).
+3. \( \neg\exists x\, (P(x) \wedge \neg Q(x)) \vdash \forall x\, (P(x) \to Q(x)) \).
+4. \( \exists x\, P(x) \to \exists x\, Q(x) \vdash \forall x\, (P(x) \to Q(x)) \).
+5. \( \forall x\, (P(x) \vee Q(x)) \vdash \forall x\, P(x) \vee \exists x\, Q(x) \).
+6. \( \forall x\, P(x) \vee \exists x\, Q(x) \vdash \forall x\, (P(x) \vee Q(x)) \).
+:::
+:::
+
+::: {.solution}
+(a) Derive. The goal is a biconditional, so \( \rulename{\leftrightarrow I} \) closes two boxes (@def-rules-biconditional); in each, the goal is a \( \forall \), so a flagged box.
+
+```{=latex}
+\begin{center}
+$\begin{nd}
+  \hypo {1} {\forall x\, (P(x) \leftrightarrow Q(x))}
+  \open
+  \hypo {2} {\forall x\, P(x)}
+  \open[x_0]
+  \have {3} {P(x_0) \leftrightarrow Q(x_0)} \Ae{1}
+  \have {4} {P(x_0)} \Ae{2}
+  \have {5} {Q(x_0)} \bie{3,4}
+  \close
+  \have {6} {\forall x\, Q(x)} \Ai{3-5}
+  \close
+  \open
+  \hypo {7} {\forall x\, Q(x)}
+  \open[x_1]
+  \have {8} {P(x_1) \leftrightarrow Q(x_1)} \Ae{1}
+  \have {9} {Q(x_1)} \Ae{7}
+  \have {10} {P(x_1)} \bie{8,9}
+  \close
+  \have {11} {\forall x\, P(x)} \Ai{8-10}
+  \close
+  \have {12} {\forall x\, P(x) \leftrightarrow \forall x\, Q(x)} \bi{2-6,7-11}
+\end{nd}$
+\end{center}
+```
+
+At line 6, \( x_0 \) is in neither the premise, the open assumption on line 2, nor \( \forall x\, Q(x) \); line 11 is checked the same way for \( x_1 \).
+
+(b) Breaks. Under the reading with \( P \) "is even" and \( Q \) "is odd", every member of the counterexample set is true. Both \( \forall x\, P(x) \) and \( \forall x\, Q(x) \) are false, so the premise is true; at \( 0 \), "\( 0 \) is even if and only if \( 0 \) is odd" is false, so the negated conclusion is true.
+
+(c) Derive. Turn the premise into a \( \forall \) by QN (c), then open a flagged box for the goal.
+
+```{=latex}
+\begin{center}
+$\begin{nd}
+  \hypo {1} {\neg \exists x\, (P(x) \wedge \neg Q(x))}
+  \have {2} {\forall x\, \neg (P(x) \wedge \neg Q(x))} \by{QN (c)}{1}
+  \open[x_0]
+  \have {3} {\neg (P(x_0) \wedge \neg Q(x_0))} \Ae{2}
+  \open
+  \hypo {4} {P(x_0)}
+  \open
+  \hypo {5} {\neg Q(x_0)}
+  \have {6} {P(x_0) \wedge \neg Q(x_0)} \ai{4,5}
+  \have {7} {\bot} \ne{6,3}
+  \close
+  \have {8} {Q(x_0)} \raa{5-7}
+  \close
+  \have {9} {P(x_0) \to Q(x_0)} \ii{4-8}
+  \close
+  \have {10} {\forall x\, (P(x) \to Q(x))} \Ai{3-9}
+\end{nd}$
+\end{center}
+```
+
+At line 10, \( x_0 \) is in neither the premise nor the conclusion, and no assumption is open.
+
+(d) Breaks. Under the reading with \( P \) "is even" and \( Q \) "is positive", every member of the counterexample set is true. Some integer is even (\( 2 \)) and some integer is positive (\( 1 \)), so the premise is true; "every even integer is positive" fails at \( 0 \), so the negated conclusion is true.
+
+(e) Derive. Decide \( \forall x\, P(x) \) by \( \rulename{LEM} \); in the second case QN (a) supplies a witness that fails \( P \), and the premise gives it \( Q \).
+
+```{=latex}
+\begin{center}
+$\begin{nd}
+  \hypo {1} {\forall x\, (P(x) \vee Q(x))}
+  \have {2} {\forall x\, P(x) \vee \neg \forall x\, P(x)} \lem{}
+  \open
+  \hypo {3} {\forall x\, P(x)}
+  \have {4} {\forall x\, P(x) \vee \exists x\, Q(x)} \oi{3}
+  \close
+  \open
+  \hypo {5} {\neg \forall x\, P(x)}
+  \have {6} {\exists x\, \neg P(x)} \by{QN (a)}{5}
+  \open[x_0]
+  \hypo {7} {\neg P(x_0)}
+  \have {8} {P(x_0) \vee Q(x_0)} \Ae{1}
+  \have {9} {Q(x_0)} \ds{8,7}
+  \have {10} {\exists x\, Q(x)} \Ei{9}
+  \close
+  \have {11} {\exists x\, Q(x)} \Ee{6,7-10}
+  \have {12} {\forall x\, P(x) \vee \exists x\, Q(x)} \oi{11}
+  \close
+  \have {13} {\forall x\, P(x) \vee \exists x\, Q(x)} \oe{2,3-4,5-12}
+\end{nd}$
+\end{center}
+```
+
+At line 11, \( x_0 \) is not in line 11, in line 6, in the premise or in the open assumption on line 5.
+
+(f) Breaks. Under the reading with \( P \) "is even" and \( Q(x) \) "\( x = 0 \)", every member of the counterexample set is true. Some integer is \( 0 \), so \( \exists x\, Q(x) \) and the premise are true; "every integer is even or equal to \( 0 \)" fails at \( 1 \), so the negated conclusion is true.
+
+(a) and (b), and (e) and (f), are converse pairs; (d) asks for more than its premise gives. The breaks are counter-readings (Section 7.2).
+
+**Marking scheme.** (10 points)
+
+- 6: one for each correct verdict.
+- 2: the derivations of (a), (c) and (e), with the side condition checked at every closing line of a flagged or \( \rulename{\exists E} \) box.
+- 2: the three readings, each with the truth values of the premise and of the conclusion justified.
+
+Fatal errors (0 for the part): a "break" whose reading leaves the premise false; a derivation that closes an \( \rulename{\exists E} \) box on a line that mentions its witness.
+:::
+
+::: {#exr-quantifier-laws-b5}
+[B5: Find the error]
+
+Here is a "derivation" of \( \exists x\, (P(x) \wedge Q(x)), \ \forall x\, (Q(x) \to R(x)) \vdash \exists x\, R(x) \).
+
+```{=latex}
+\begin{center}
+% expect-invalid
+$\begin{nd}
+  \hypo {1} {\exists x\, (P(x) \wedge Q(x))}
+  \hypo {2} {\forall x\, (Q(x) \to R(x))}
+  \have {3} {P(c) \wedge Q(c)} \Ee{1}
+  \have {4} {Q(c)} \ae{3}
+  \have {5} {Q(c) \to R(c)} \Ae{2}
+  \have {6} {R(c)} \ie{5,4}
+  \have {7} {\exists x\, R(x)} \Ei{6}
+\end{nd}$
+\end{center}
+```
+
+Is the conclusion derivable? Does this derivation prove it? Find the line that fails, break the step that line takes, and repair the derivation.
+:::
+
+::: {.solution}
+The conclusion is derivable, and this derivation does not prove it. Line 3 fails: \( \rulename{\exists E} \) is not a one-line step. It opens a box with a fresh witness, and a constant already in use is not fresh; nothing licenses passing from "something has \( P \) and \( Q \)" to "\( c \) has them".
+
+The step from \( \exists x\, (P(x) \wedge Q(x)) \) to \( P(c) \wedge Q(c) \) breaks over \( \nZ \), with \( P \) "is even", \( Q \) "is positive" and \( c \) read as \( 0 \): the premise is true (\( 2 \) is both), and the line is false, since \( 0 \) is not positive.
+
+The repair opens an \( \rulename{\exists E} \) box:
+
+```{=latex}
+\begin{center}
+$\begin{nd}
+  \hypo {1} {\exists x\, (P(x) \wedge Q(x))}
+  \hypo {2} {\forall x\, (Q(x) \to R(x))}
+  \open[x_0]
+  \hypo {3} {P(x_0) \wedge Q(x_0)}
+  \have {4} {Q(x_0)} \ae{3}
+  \have {5} {Q(x_0) \to R(x_0)} \Ae{2}
+  \have {6} {R(x_0)} \ie{5,4}
+  \have {7} {\exists x\, R(x)} \Ei{6}
+  \close
+  \have {8} {\exists x\, R(x)} \Ee{1,3-7}
+\end{nd}$
+\end{center}
+```
+
+At line 8, \( x_0 \) is not in line 8, in line 1 or in a premise, and no other assumption is open.
+
+**Marking scheme.** (10 points)
+
+- 2: "derivable, but not proved by this derivation".
+- 3: line 3, and the rule it breaks: \( \rulename{\exists E} \) needs a box with a fresh witness.
+- 2: a reading that breaks the step, with both truth values.
+- 3: a repaired derivation, with the side condition of \( \rulename{\exists E} \) checked.
+
+Fatal error (0 for the step): naming line 7 (\( \rulename{\exists I} \) is legal there).
 :::
 
 ### C. Going deeper
@@ -874,7 +1262,7 @@ For the first route, start with law (d), taking \( \psi \) to be the whole concl
 \[
 \forall x\, P(x) \to \exists y\, Q(y) \;\dashv\vdash\; \exists x\, \bigl( P(x) \to \exists y\, Q(y) \bigr).
 \]
-Then law (e) under \( \exists x \), with \( \psi \) the formula \( P(x) \), \( \varphi \) the formula \( Q(y) \), and \( y \) as the moving variable (\( y \) is not free in \( P(x) \)): \( P(x) \to \exists y\, Q(y) \dashv\vdash \exists y\, (P(x) \to Q(y)) \). A provable equivalence may be used under a quantifier (the paragraph after the negation procedure), so
+Then law (e) under \( \exists x \), with \( \psi \) the formula \( P(x) \), \( \varphi \) the formula \( Q(y) \), and \( y \) as the moving variable (\( y \) is not free in \( P(x) \)): \( P(x) \to \exists y\, Q(y) \dashv\vdash \exists y\, (P(x) \to Q(y)) \). A provable equivalence may be used under a quantifier (@prp-replacement), so
 \[
 \exists x\, \bigl( P(x) \to \exists y\, Q(y) \bigr) \;\dashv\vdash\; \exists x\, \exists y\, \bigl( P(x) \to Q(y) \bigr).
 \]
@@ -951,10 +1339,66 @@ A different correct choice earns full marks (for instance \( x = t \), \( y = t/
 Fatal errors (0 for the step): \( \varepsilon \) chosen depending on \( \delta \); points chosen before \( \delta \) is given, or not depending on it where they must; a bound negated instead of the quantifier (\( \exists \varepsilon \le 0 \), \( \exists n < N \)).
 :::
 
+::: {#exr-quantifier-laws-c3}
+[C3: "There exists" from "for every"]
+
+Suppose \( \exists \) were not a symbol of the language, and \( \exists x\, \varphi \) abbreviated \( \neg\forall x\, \neg\varphi \).
+
+::: {.enumerate options="label=(\alph*)"}
+1. Show that \( \rulename{\exists I} \) is then a derived step: from \( \varphi[t/x] \), with \( t \) free for \( x \) in \( \varphi \), derive \( \neg\forall x\, \neg\varphi \).
+2. Show that \( \rulename{\exists E} \) is one too: if \( \Gamma, \varphi[x_0/x] \vdash \chi \), where \( x_0 \) is a variable other than \( x \) that appears neither in \( \Gamma \), nor in \( \chi \), nor in \( \varphi \), then \( \Gamma, \neg\forall x\, \neg\varphi \vdash \chi \).
+3. Which of (a) and (b) uses \( \rulename{RAA} \)?
+:::
+:::
+
+::: {.solution}
+[Hint]
+
+In (a) the goal is a negation. In (b) nothing in the premises can be taken apart, so the last line will come from \( \rulename{RAA} \); aim the clash at the premise \( \neg\forall x\, \neg\varphi \).
+:::
+
+::: {.solution}
+*(a)* Five lines:
+
+```{=latex}
+\begin{center}
+$\begin{nd}
+  \hypo {1} {\varphi[t/x]}
+  \open
+  \hypo {2} {\forall x\, \neg \varphi}
+  \have {3} {\neg \varphi[t/x]} \Ae{2}
+  \have {4} {\bot} \ne{1,3}
+  \close
+  \have {5} {\neg \forall x\, \neg \varphi} \ni{2-4}
+\end{nd}$
+\end{center}
+```
+
+Line 3 is \( \rulename{\forall E} \) at \( t \), which is free for \( x \) in \( \neg\varphi \) because it is free for \( x \) in \( \varphi \).
+
+*(b)* From the premises \( \Gamma \) and \( \neg\forall x\, \neg\varphi \):
+
+- assume \( \neg\chi \), for \( \rulename{RAA} \);
+- open a flagged box \( x_0 \), and in it assume \( \varphi[x_0/x] \), for \( \rulename{\neg I} \);
+- paste the given derivation of \( \chi \), whose premises \( \Gamma \) are available. Its own flags are first renamed to names that appear nowhere else, as "The laws as one line" requires, so that the open assumption \( \neg\chi \) cannot spoil its side conditions;
+- write \( \bot \) by \( \rulename{\neg E} \) with \( \neg\chi \), and \( \neg\varphi[x_0/x] \) by \( \rulename{\neg I} \); close the flagged box with \( \forall x\, \neg\varphi \) by \( \rulename{\forall I} \). Here \( x_0 \) is in no premise, not in the open assumption \( \neg\chi \) and not in \( \forall x\, \neg\varphi \);
+- write \( \bot \) by \( \rulename{\neg E} \) with the premise \( \neg\forall x\, \neg\varphi \), and \( \chi \) by \( \rulename{RAA} \).
+
+*(c)* (b) uses \( \rulename{RAA} \), at its last line, and (a) does not. (Whether (b) could avoid it is not asked.)
+
+**Marking scheme.** (10 points)
+
+- 3: (a).
+- 2: (b)'s \( \rulename{RAA} \) box and flagged box, in the right nesting.
+- 3: the side condition of the \( \rulename{\forall I} \) line, including the renaming of the pasted flags.
+- 2: (c).
+
+Fatal errors (0 for the step): \( \rulename{\forall I} \) on \( x_0 \) while \( \varphi[x_0/x] \) is still open; instantiating \( \neg\forall x\, \neg\varphi \) by \( \rulename{\forall E} \).
+:::
+
 <!-- dependency ledger
 prp-quantifier-negation (proof): (neg phi)[x_0/x] is neg(phi[x_0/x]); x_0 not appearing in phi is free for x in phi | def-substitution, def-free-for (cited / F1.4 §02 special case "a variable that does not appear is free for every variable"), argued inline
-prp-quantifier-negation (claim): no derivation of (a) avoids RAA | stated without proof, flagged in the text; propositional analogue thm-raa-independent (optional, cited only as an analogue); F1.5 (prose pointer); nothing rests on it
-prp-quantifier-negation (claim): AN1.1 uses (a) at the end of the Archimedean proof | AN1.1 05-archimedean-property remark (drafted; prose pointer only)
+prp-quantifier-negation (claim): no derivation of (a) avoids RAA | stated without proof, flagged in the text; propositional analogue thm-raa-independent (optional, cited only as an analogue); F1.5 (pointer in the Looking-ahead box); nothing rests on it
 prp-quantifier-negation (claim): in "The laws as one line" after it, a law used as one line abbreviates its pasted derivation with a fresh name new to the larger derivation, keeping all side conditions | argued inline, extending prp-bounded-quantifier-rules' looser sense of derived rule
 prp-quantifier-negation (solution): the Quick check after it: over Z, not every integer is even, and 0 is even | school arithmetic, informal truth (F1.4 §01)
 prp-negated-implication (example): x > 2 and x^2 <= 4 | illustrative reading only
@@ -967,15 +1411,31 @@ prp-quantifier-passage (proof): psi[t/x] = psi when x is not free in psi | the c
 prp-quantifier-passage (proof): exists-I at the variable x itself, (phi -> psi)[x/x] = phi -> psi; sound because domains are non-empty | phi[x/x] = phi (F1.4 §02, stated after exm-computing-substitutions); non-emptiness explained in F1.6 §01 (prose pointer, nothing rests on it)
 prp-quantifier-passage (claim): exactly two directions use LEM/RAA here | inspection of the printed derivations (meta-claim, checkable on the page); "cannot be avoided" is not claimed
 prp-quantifier-passage (claim): in "Why the condition on psi", over Z with P = even and x read as 1, "if some integer is even then 1 is even" is false | school arithmetic, informal truth (F1.4 §01); checked by verify/ch06/prp-quantifier-passage.py
-exm-negating-definitions (claim): in the paragraph before it ("Why may a step act on a part"), provable equivalence is preserved under every connective and quantifier, including for a passage law whose condition must survive the instance at x_0 | argued inline (pasting derivations into the rules' boxes; laws hold for every formula meeting their condition, so for instances at x_0; x_0 is a variable other than x, as the closing forall-I needs (F1.4 04-universal-introduction side condition); x_0 is not the moving variable y, so the substitution passes the quantifier on y and y stays not free in psi[x_0/x], by def-substitution; if y (or the bound variable z) is x itself, def-substitution stops at that quantifier and psi[x_0/x] = psi since x is not free in psi (F1.4 §02 claim after exm-computing-substitutions), so the pair is unchanged)
+prp-replacement (claim): F6.2-b "Why the laws of this section meet the hypothesis": a law proved for every formula meeting its condition holds for the instances at fresh names, and k flagged boxes give its closure; the passage condition (fold "Passage laws on a part") and the bounded condition survive the instance at x_0 | argued inline (x_0 is not the moving variable y or the bound variable z; def-substitution passes the quantifier on y or z, or stops at the quantifier on x, and psi[x_0/x] = psi when x is not free in psi (F1.4 §02 claim after exm-computing-substitutions))
 exm-negating-definitions (solution): not(u < v) iff u >= v and not(u <= v) iff u > v over R | order facts (school algebra), stated as such in the procedure
 exm-negating-definitions (claim): not(alpha and beta) -||- alpha -> not beta | prp-de-morgan (c), (d) and prp-implication-as-disjunction (a), (b) (cited)
-prp-quantifier-passage (solution): the Quick check after it uses law (e) under forall x | prp-quantifier-passage (e), and the replacement paragraph (inline)
-prp-arbitrarily-close-equal (proof): a != b gives a - b != 0 (if a - b = 0 then a = (a - b) + b = b); |u| > 0 for real u != 0; no real is less than itself | school algebra; AN1.1 prp-absolute-value-rules (prose pointer, "AN1.1 proves them")
+prp-quantifier-passage (solution): the Quick check after it uses law (e) under forall x | prp-quantifier-passage (e), and prp-replacement with the fold "Passage laws on a part" (cited)
+prp-arbitrarily-close-equal (proof): a != b gives a - b != 0 (if a - b = 0 then a = (a - b) + b = b); |u| > 0 for real u != 0; no real is less than itself | school algebra
 prp-arbitrarily-close-equal (claim): a = 0, b = 1/2, eps = 1 shows "some eps" is not enough | arithmetic; checked by verify/ch06/prp-arbitrarily-close-equal.py
 exr-quantifier-laws-a1 (solution): (d) x * x = 2 has a real solution; (e) over R, forall eps > 0 (eps > 0) is true and eps = 0 witnesses exists eps <= 0 not(eps > 0) | informal truth (F1.4 §01); school facts; checked by verify/ch06/exr-quantifier-laws-a1.py
 exr-quantifier-laws-b1 (solution): order facts not(|a_n| <= M) iff |a_n| > M etc. | school algebra
 exr-quantifier-laws-b3 (solution): eps = min(1, a - b) > 0, eps^2 <= eps <= a - b; a - b < (a - b)^2 when a - b > 1 | school algebra; checked by verify/ch06/exr-quantifier-laws-b3.py
-exr-quantifier-laws-c1 (solution): passage laws used under exists | prp-quantifier-passage (cited) and the replacement paragraph after the negation procedure (inline)
+exr-quantifier-laws-c1 (solution): passage laws used under exists | prp-quantifier-passage (cited) and prp-replacement (cited)
 exr-quantifier-laws-c2 (solution): t = min(delta, 1/2); 0 < t/2 < t <= 1/2 < 1; |1/t - 2/t| = 1/t >= 2 | school algebra; checked by verify/ch06/exr-quantifier-laws-c2.py
+prp-replacement (proof): fold "The proof of the replacement rule": exchange of adjacent foralls | exm-universal-introduction-derivations (c) (cited)
+prp-replacement (proof): strong induction on the number of connectives and quantifier symbols | thm-strong-induction (cited)
+prp-replacement (proof): connective steps alpha <-> alpha' |- (alpha o gamma) <-> (alpha' o gamma) and not-alpha <-> not-alpha' | rules of Chapters 1-2, def-rules-biconditional (cited); argued inline, no truth table or completeness
+prp-replacement (proof): quantifier step; the side conditions of def-rules-universal and def-rules-existential at the closing lines; fresh flags make simultaneous and step-by-step substitution agree; substitution of w_0 passes forall x because x is not among the w | def-substitution, def-free-for (special case: a variable that appears nowhere is free for every variable), argued inline
+prp-replacement (proof): a derivable formula pasted as a line with its flags renamed | "The laws as one line" (this section, inline)
+prp-replacement (claim): renaming a bound variable anywhere is a provable equivalence | F1.4 §04 fold "The front renaming, derived" (after exm-universal-introduction-derivations) and F1.4 §06 #existential-renaming (cited); closure by the F6.2-b argument
+exm-square-of-opposition (claim): the diagonals: A/O by the two steps of the proof of prp-bounded-quantifier-negation (a) with bound S(x); E/I with prp-double-negation under exists by prp-replacement | cited
+exm-square-of-opposition (solution): 8 is a multiple of 4 and not a perfect square; 4 = 2^2; 16 = 4^2; no odd number is a multiple of 4 (the empty S) | school arithmetic; checked by verify/ch06/exm-square-of-opposition.py
+exm-square-of-opposition (claim): contraries, subcontraries and subalternation need some S | existential import, F1.4 §01 (cited); the empty-S case of the example
+prp-quantifier-passage (claim): twin laws over {a, b} | prp-de-morgan (a)-(d), exm-cases-on-hypothesis, exm-or-hypothesis-split (cited); the distribution (c) twin by an inline derivation; the reading of exists as a long "or", F1.4 §05; De Morgan (d) is the part of prp-de-morgan derived with RAA
+exm-prenex-conversion (solution): passage law (b), then law (e) under forall x | prp-quantifier-passage (cited), prp-replacement (cited), fold "Passage laws on a part"
+exm-prenex-conversion (claim): alternation counts; "no finite table of values settles a forall-exists-forall sentence over N" | illustrative; nothing rests on it
+exr-quantifier-laws-a2 (solution): (i) 6 is a multiple of 3 and even; (j) the two expansions and values; (l) at 2 | school arithmetic; checked by verify/ch06/exr-quantifier-laws-a2.py
+exr-quantifier-laws-b4 (solution): the readings of (b), (d), (f) over Z (0 even and not odd; 2 even, 1 positive, 0 not positive; 0 = 0, 1 neither even nor 0); breaks are counter-readings | school arithmetic; checked by verify/ch06/exr-quantifier-laws-b4.py; F1.6 §02 (prose pointer, nothing rests on it)
+exr-quantifier-laws-b5 (solution): over Z with P even, Q positive, c = 0, the premise is true (2) and P(c) and Q(c) is false | school arithmetic; checked by verify/ch06/exr-quantifier-laws-b5.py
+exr-quantifier-laws-c3 (solution): (b) pasted derivation with flags renamed | "The laws as one line" (this section, inline)
 -->

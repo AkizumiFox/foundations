@@ -1,4 +1,4 @@
-"""exr-translation-c2 (Ch 4, Section 4.8): the truth table of the four groups over Z, on a window."""
+"""exr-translation-c2 (Ch 6, Section 6.1): the truth table of the four groups over Z, on a window."""
 
 QUOTED = {"L witness y = x + 1 offset": 1}
 

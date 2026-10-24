@@ -381,3 +381,6 @@ Russell
 Russell's
 rfl
 calc
+subcontraries
+propositionally
+instantiations

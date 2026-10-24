@@ -1,4 +1,4 @@
-"""exm-square-not-uniform (Section 4.10): f(x) = x^2 on R.
+"""exm-square-not-uniform (Section 6.4): f(x) = x^2 on R.
 C: delta = min(1, eps/(2|x| + 1)) works (sampled x, eps, y); it depends on x.
 not UC: eps = 1, x = 1/delta, y = 1/delta + delta/2 give |x - y| = delta/2 < delta and
 |y^2 - x^2| = 1 + delta^2/4 >= 1 (exact arithmetic at many rational delta; both sides are
@@ -25,4 +25,17 @@ for d in [F(k, 7) for k in range(1, 60)] + [F(1, 10**6), F(10**3)]:
     assert y * y - x * x == 1 + d * d / 4 == (d / 2) * (2 / d + d / 2)
     assert y * y - x * x >= 1
 assert QUOTED["eps for not UC"] == 1
+# Figure D (Section 6.4): with eps = 1 the largest delta that works at x >= 0 is
+# sqrt(x^2 + 1) - x: 1, 0.4142, 0.2361, 0.1623 at 0, 1, 2, 3; it works, and larger ones fail.
+import math
+figD = {0: 1.0, 1: 0.4142, 2: 0.2361, 3: 0.1623}
+for x0, quoted in figD.items():
+    d = math.sqrt(x0 * x0 + 1) - x0
+    assert round(d, 4) == quoted
+    for k in range(-999, 1000):
+        y = x0 + d * k / 1000                  # |y - x0| < d
+        assert abs(y * y - x0 * x0) < 1
+    y = x0 + d * 1.001                         # just past the window: fails
+    assert abs(y * y - x0 * x0) > 1
+    assert round(d, 2) == {0: 1.0, 1: 0.41, 2: 0.24, 3: 0.16}[x0]
 print("exm-square-not-uniform: all quoted values check")

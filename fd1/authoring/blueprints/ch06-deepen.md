@@ -1359,3 +1359,4 @@ Also: every kept exercise and its solution (6.1 A1, B1, B2, C1 (frozen), C2; 6.2
     
     The old row numbers in §6.2 and S2a item 30 are replaced by these line numbers. The F1.8 row (line 37) is rewritten at S4, as §10 says. No row is missing from the plan.
 
+*Deviation (S3, 2026-10-25):* Time is written as core about 20 h and full about 35 h (blueprint: about 40), since R items are timed at the STYLE §11.5 cap of 20 minutes, as in Chapter 5. Section 6.2's main line is 4,690 words against the 4,600 budget (under STYLE's cap of 5,000), accepted at S4. The two proofs of 6.2 moved into fold F6.2-d, so their ledger keys changed (`proof:prp-quantifier-passage`, `#2`); B1 claim 1's replacement (the sequent using f(x)) is recorded only in 6.3's dependency ledger.

@@ -1,4 +1,4 @@
-"""exr-translation-a1 (Ch 4, Section 4.8): the counterexamples and witnesses of (a)(v) and (b)."""
+"""exr-translation-a1 (Ch 6, Section 6.1): the counterexamples and witnesses of (a)(v) and (b)."""
 
 QUOTED = {"(b)(ii) x outside A": 7, "(a)(v) d": 1}
 

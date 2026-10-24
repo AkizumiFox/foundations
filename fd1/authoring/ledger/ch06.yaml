@@ -4,8 +4,8 @@ items:
 - key: exm-translate-limit
   kind: exm
   file: 01-translation.md
-  line: 27
-  hash: 3a1a9280a65f
+  line: 47
+  hash: aace7f6380f1
   verdicts:
   - stage: S5a
     verdict: minor
@@ -39,7 +39,7 @@ items:
 - key: check:01-translation:1
   kind: check
   file: 01-translation.md
-  line: 75
+  line: 95
   hash: b6231bf6c6d0
   verdicts:
   - stage: S5a
@@ -69,10 +69,38 @@ items:
       ledger line 501 now records that (0,1) is bounded by 1 with no maximum (m < (m+1)/2 < 1). The sidecar
       verify/ch06/exm-translate-limit.py exists and covers ''check: m bounding (0, 1)''. Interval notation
       is in NOT'
+- key: exm-translation-traps
+  kind: exm
+  file: 01-translation.md
+  line: 111
+  hash: 7848799a8bb4
+  verdicts: []
+- key: check:01-translation:2
+  kind: check
+  file: 01-translation.md
+  line: 137
+  hash: cacc031644cf
+  verdicts:
+  - stage: S5a
+    verdict: correct
+    by: refereeA
+    hash: 8a2c14e69bd8
+    date: '2026-10-10'
+    model: claude-opus-5-5
+    evidence: 'Lines 244: the single conjunctive assumption is the unbounded ∃E on the unfolded formula.
+      It costs two ∧E lines against two bounded assumptions, so it is one line longer, as stated.'
+  - stage: S5b
+    verdict: correct
+    by: refereeB
+    hash: 8a2c14e69bd8
+    date: '2026-10-10'
+    model: claude-opus-5-5
+    evidence: '08:240-244: (N∈ℕ∧ψ)[N_0/N] = N_0∈ℕ∧ψ[N_0/N], so the box is unbounded ∃E. The two ∧E lines
+      make it one line longer, consistent with 08:237.'
 - key: prp-bounded-quantifier-rules
   kind: prp
   file: 01-translation.md
-  line: 93
+  line: 153
   hash: 2585ba1a362e
   verdicts:
   - stage: S5a
@@ -105,7 +133,7 @@ items:
 - key: proof:prp-bounded-quantifier-rules
   kind: proof
   file: 01-translation.md
-  line: 155
+  line: 233
   hash: 07f7742c8c97
   verdicts:
   - stage: S5a
@@ -138,32 +166,22 @@ items:
       (4.2:347ff: atomic formulas are always free-for). ∃I: the same. ∀I: the flagged box with no assumption
       containing the →I box matches 12:196. Citing i-m follows the range convention of 4.4, as 07:190
       recalls. '
-- key: check:01-translation:2
+- key: check:01-translation:3
   kind: check
   file: 01-translation.md
-  line: 239
+  line: 318
   hash: 8a2c14e69bd8
-  verdicts:
-  - stage: S5a
-    verdict: correct
-    by: refereeA
-    hash: 8a2c14e69bd8
-    date: '2026-10-10'
-    model: claude-opus-5-5
-    evidence: 'Lines 244: the single conjunctive assumption is the unbounded ∃E on the unfolded formula.
-      It costs two ∧E lines against two bounded assumptions, so it is one line longer, as stated.'
-  - stage: S5b
-    verdict: correct
-    by: refereeB
-    hash: 8a2c14e69bd8
-    date: '2026-10-10'
-    model: claude-opus-5-5
-    evidence: '08:240-244: (N∈ℕ∧ψ)[N_0/N] = N_0∈ℕ∧ψ[N_0/N], so the box is unbounded ∃E. The two ∧E lines
-      make it one line longer, consistent with 08:237.'
+  verdicts: []
+- key: check:01-translation:4
+  kind: check
+  file: 01-translation.md
+  line: 367
+  hash: 2d8663b85b4c
+  verdicts: []
 - key: exr-translation-a1
   kind: exr
   file: 01-translation.md
-  line: 339
+  line: 431
   hash: 44a718e49bab
   verdicts:
   - stage: S5a
@@ -204,11 +222,17 @@ items:
       (0=1·0). (b): only (i) is correct. (ii) is true vacuously with x=7∉{0}, A={0}, B={5}. (iii) is true
       for A=B=ℕ with x=y+1, while the English is false. (c): no free variables. (d): ∧I then ∃I. Ledger
       line 510 covers '
+- key: exr-translation-a2
+  kind: exr
+  file: 01-translation.md
+  line: 453
+  hash: adf596373481
+  verdicts: []
 - key: exr-translation-b1
   kind: exr
   file: 01-translation.md
-  line: 363
-  hash: 9e7588bab066
+  line: 502
+  hash: 47e50ebf16bc
   verdicts:
   - stage: S5a
     verdict: correct
@@ -249,7 +273,7 @@ items:
 - key: exr-translation-b2
   kind: exr
   file: 01-translation.md
-  line: 389
+  line: 528
   hash: 4063b43db07d
   verdicts:
   - stage: S5a
@@ -278,10 +302,22 @@ items:
     evidence: '08-translation.md:397-420. My derivation matches the book''s: bounded exists-E box, forall
       x in A E at 1,3, ->E, exists x in A I at 3,6. Side conditions hold. I listed the unbounded version
       line by line and got 11 = 8+3, as claimed. Worked example: the limit derivation at :256-283.'
+- key: exr-translation-b3
+  kind: exr
+  file: 01-translation.md
+  line: 563
+  hash: efe58f2512c4
+  verdicts: []
+- key: exr-translation-b4
+  kind: exr
+  file: 01-translation.md
+  line: 615
+  hash: af71616726e8
+  verdicts: []
 - key: exr-translation-c1
   kind: exr
   file: 01-translation.md
-  line: 426
+  line: 653
   hash: e214920a695b
   verdicts:
   - stage: S5a
@@ -322,7 +358,7 @@ items:
 - key: exr-translation-c2
   kind: exr
   file: 01-translation.md
-  line: 447
+  line: 674
   hash: d72964db7f3b
   verdicts:
   - stage: S5a
@@ -354,10 +390,16 @@ items:
       exists y via an exists-E box works. Truth-value table, by hand: F=(F,F), L=(T,T), Mx=(T,F), Mz=(F,T).
       All rows differ. Marking scheme sums to 10, and an alternative grouping proof still earns its points.
       The hints name a tool and a first line.'
+- key: exr-translation-c3
+  kind: exr
+  file: 01-translation.md
+  line: 725
+  hash: 34d399a15794
+  verdicts: []
 - key: prp-quantifier-negation
   kind: prp
   file: 02-quantifier-laws.md
-  line: 13
+  line: 19
   hash: a18d404b2027
   verdicts:
   - stage: S5a
@@ -380,7 +422,7 @@ items:
 - key: proof:prp-quantifier-negation
   kind: proof
   file: 02-quantifier-laws.md
-  line: 33
+  line: 39
   hash: 2e4f51763942
   verdicts:
   - stage: S5a
@@ -414,7 +456,7 @@ items:
 - key: check:02-quantifier-laws:1
   kind: check
   file: 02-quantifier-laws.md
-  line: 120
+  line: 126
   hash: 886d5a9d3f3e
   verdicts:
   - stage: S5a
@@ -436,7 +478,7 @@ items:
 - key: prp-negated-implication
   kind: prp
   file: 02-quantifier-laws.md
-  line: 134
+  line: 140
   hash: ca52697b50bd
   verdicts:
   - stage: S5a
@@ -458,7 +500,7 @@ items:
 - key: proof:prp-negated-implication
   kind: proof
   file: 02-quantifier-laws.md
-  line: 148
+  line: 154
   hash: 757dc5802858
   verdicts:
   - stage: S5a
@@ -480,7 +522,7 @@ items:
 - key: prp-bounded-quantifier-negation
   kind: prp
   file: 02-quantifier-laws.md
-  line: 199
+  line: 205
   hash: 0a97f34e2e38
   verdicts:
   - stage: S5a
@@ -502,7 +544,7 @@ items:
 - key: proof:prp-bounded-quantifier-negation
   kind: proof
   file: 02-quantifier-laws.md
-  line: 218
+  line: 224
   hash: c6a80538043f
   verdicts:
   - stage: S5a
@@ -522,162 +564,22 @@ items:
     model: claude-opus-5-5
     evidence: 09:219-286. The left derivation's RAA comes only through QN (a) and NIm ⊢, as 247 says.
       The bounded rules match prp-bounded-quantifier-rules (08:93). (x>a)[x_0/x]=x_0>a holds.
-- key: prp-quantifier-distribution
+- key: prp-replacement
   kind: prp
   file: 02-quantifier-laws.md
-  line: 297
-  hash: a677a4e207cd
-  verdicts:
-  - stage: S5a
-    verdict: correct
-    by: refereeA
-    hash: a677a4e207cd
-    date: '2026-10-11'
-    model: claude-opus-5-5
-    evidence: 09:297-310. (a), (b) and (d) reuse prp-forall-and, exm-existential-elimination-derivations(a)
-      and prp-exists-and. (c) is RAA-free. The converses of (c) and (d) fail over ℤ (even/odd).
-  - stage: S5b
-    verdict: correct
-    by: refereeB
-    hash: a677a4e207cd
-    date: '2026-10-11'
-    model: claude-opus-5-5
-    evidence: 09:297-310. (a) is prp-forall-and (04:241), (b) is exm-existential-elimination-derivations
-      (a) (06:211), (d) is prp-exists-and (06:166). The converses are refuted in §11 (11:265-275).
-- key: proof:prp-quantifier-distribution
+  line: 319
+  hash: b67b34996ffe
+  verdicts: []
+- key: proof:prp-replacement
   kind: proof
   file: 02-quantifier-laws.md
-  line: 318
-  hash: 8e93d79e9e3b
-  verdicts:
-  - stage: S5a
-    verdict: minor
-    by: refereeA
-    hash: 8665624422ec
-    date: '2026-10-11'
-    model: claude-opus-5-5
-    evidence: 09-quantifier-laws.md:319 The restated freshness condition again omits x_0 ≠ x, which the
-      side conditions of the reused derivations need.
-  - stage: S5b
-    verdict: correct
-    by: refereeB
-    hash: 8665624422ec
-    date: '2026-10-11'
-    model: claude-opus-5-5
-    evidence: 09:318-346. The (c) derivation checks and the carry-over argument at 319 is sound.
-  - stage: S7r
-    verdict: correct
-    by: rereferee
-    hash: 8e93d79e9e3b
-    date: '2026-10-11'
-    model: claude-opus-5-5
-    evidence: '09:319 now says the fresh name is ''chosen different from x and not appearing in φ or ψ'',
-      which resolves the S5a finding. The cited labels say what is claimed: prp-forall-and (04-universal-introduction.md:241),
-      prp-exists-and (06-existential-elimination.md:166), and the ∃-over-∨ derivation of exm-existential-elimination-derivations
-      (06:211ff). None uses RAA. The (c) derivation checks: ∨I gives φ[x0'
-- key: prp-quantifier-passage
-  kind: prp
-  file: 02-quantifier-laws.md
-  line: 352
-  hash: 51eabc546425
-  verdicts:
-  - stage: S5a
-    verdict: correct
-    by: refereeA
-    hash: df804ebbaf01
-    date: '2026-10-11'
-    model: claude-opus-5-5
-    evidence: 09:352-366. Each law fails without 'x not free in ψ' (e.g. (b) with φ=ψ=P(x), 09:578). Exactly
-      (d)⊣ and (e)⊣ use LEM/RAA, which matches the derivations.
-  - stage: S5b
-    verdict: minor
-    by: refereeB
-    hash: df804ebbaf01
-    date: '2026-10-11'
-    model: claude-opus-5-5
-    evidence: 09-quantifier-laws.md:365 'two are derived here with RAA (through LEM)' misdescribes (d)⊣,
-      which also uses RAA through QN (a).
-  - stage: S7r
-    verdict: correct
-    by: rereferee
-    hash: 51eabc546425
-    date: '2026-10-11'
-    model: claude-opus-5-5
-    evidence: '09:365 now reads: ⊣ in (d) ''through LEM and the cited QN (a)'', and ⊣ in (e) ''through
-      LEM''. LEM is RAA-derived (prp-excluded-middle, ch02/05:225, RAA at line 8). VI uses only ⊥E (ch02/01:154).
-      The other eight derivations use neither. The S5b finding is resolved.'
-- key: proof:prp-quantifier-passage
-  kind: proof
-  file: 02-quantifier-laws.md
-  line: 374
-  hash: 8a07dad24ed9
-  verdicts:
-  - stage: S5a
-    verdict: minor
-    by: refereeA
-    hash: 76f0fff91e33
-    date: '2026-10-11'
-    model: claude-opus-5-5
-    evidence: 09-quantifier-laws.md:375 The freshness statement for the passage-law derivations omits
-      x_0 ≠ x.
-  - stage: S5b
-    verdict: minor
-    by: refereeB
-    hash: 76f0fff91e33
-    date: '2026-10-11'
-    model: claude-opus-5-5
-    evidence: 09-quantifier-laws.md:575 The side condition of the ∃E at line 10 of the (e)⊣ derivation
-      is never checked.
-  - stage: S7r
-    verdict: correct
-    by: rereferee
-    hash: 8a07dad24ed9
-    date: '2026-10-11'
-    model: claude-opus-5-5
-    evidence: '09:375 now says x_0 is ''a variable other than x that does not appear in φ or ψ'', which
-      resolves the S5a finding. The ∃E side condition at line 10 of (e)⊣ is now checked at 09:575 (conclusion,
-      line 4, premise, open assumption ψ of line 3), which resolves the S5b finding. I rechecked all ten
-      derivations: instances such as ψ→φ[x0/x], since ψ[x0/x]=ψ; (c)⊣ ∧I{4,3}; (d)⊣ ∃I at x on line 8
-      with the non-'
-- key: check:02-quantifier-laws:2
-  kind: check
-  file: 02-quantifier-laws.md
-  line: 580
-  hash: 81bd07ba74e4
-  verdicts:
-  - stage: S5a
-    verdict: correct
-    by: refereeA
-    hash: 81bd07ba74e4
-    date: '2026-10-11'
-    model: claude-opus-5-5
-    evidence: 09:580-586. Law (e) with ψ = x>0, φ = y·y=x, moving y, and y not free in x>0. The direction
-      used is the LEM direction ⊣. Correct; the justification for use under a quantifier is weak (see
-      the finding with key '').
-  - stage: S5b
-    verdict: gap
-    by: refereeB
-    hash: 81bd07ba74e4
-    date: '2026-10-11'
-    model: claude-opus-5-5
-    evidence: 09-quantifier-laws.md:606 The replacement paragraph justifies use under a quantifier only
-      for 'each law of the procedure'. The Quick check (585) and C1 (863) apply the passage laws under
-      a quantifier, and those laws carry a side condition.
-  - stage: S7r
-    verdict: correct
-    by: rereferee
-    hash: 81bd07ba74e4
-    date: '2026-10-11'
-    model: claude-opus-5-5
-    evidence: 'Solved independently: ψ→∃yφ ⊣⊢ ∃y(ψ→φ) is law (e), with ψ = x>0, φ = y·y=x, and y not free
-      in ψ. The student''s move goes from the implication to the ∃, which is (e)⊣, the LEM direction.
-      The solution (09:585) agrees. Its pointer ''the next subsection says why'' now lands on 09:606,
-      which covers passage laws under a quantifier (x_0 ≠ y, so y stays not free in ψ[x_0/x]). The earlier
-      gap is resolved. Th'
+  line: 330
+  hash: d76d995a7bb0
+  verdicts: []
 - key: exm-negating-definitions
   kind: exm
   file: 02-quantifier-laws.md
-  line: 608
+  line: 362
   hash: 1997dfb72591
   verdicts:
   - stage: S5a
@@ -718,11 +620,46 @@ items:
       and the converse via (b) and (c); then QN (a)/(b) and NIm under exists q. The ledger line at 09:970
       lists the new dependencies (forall-I side condition; psi[t/x] = psi from Section 5.2). check_structure:
       0 fatal.'
+- key: check:02-quantifier-laws:2
+  kind: check
+  file: 02-quantifier-laws.md
+  line: 436
+  hash: 835cb424c959
+  verdicts:
+  - stage: S5a
+    verdict: correct
+    by: refereeA
+    hash: 81bd07ba74e4
+    date: '2026-10-11'
+    model: claude-opus-5-5
+    evidence: 09:580-586. Law (e) with ψ = x>0, φ = y·y=x, moving y, and y not free in x>0. The direction
+      used is the LEM direction ⊣. Correct; the justification for use under a quantifier is weak (see
+      the finding with key '').
+  - stage: S5b
+    verdict: gap
+    by: refereeB
+    hash: 81bd07ba74e4
+    date: '2026-10-11'
+    model: claude-opus-5-5
+    evidence: 09-quantifier-laws.md:606 The replacement paragraph justifies use under a quantifier only
+      for 'each law of the procedure'. The Quick check (585) and C1 (863) apply the passage laws under
+      a quantifier, and those laws carry a side condition.
+  - stage: S7r
+    verdict: correct
+    by: rereferee
+    hash: 81bd07ba74e4
+    date: '2026-10-11'
+    model: claude-opus-5-5
+    evidence: 'Solved independently: ψ→∃yφ ⊣⊢ ∃y(ψ→φ) is law (e), with ψ = x>0, φ = y·y=x, and y not free
+      in ψ. The student''s move goes from the implication to the ∃, which is (e)⊣, the LEM direction.
+      The solution (09:585) agrees. Its pointer ''the next subsection says why'' now lands on 09:606,
+      which covers passage laws under a quantifier (x_0 ≠ y, so y stays not free in ψ[x_0/x]). The earlier
+      gap is resolved. Th'
 - key: check:02-quantifier-laws:3
   kind: check
   file: 02-quantifier-laws.md
-  line: 682
-  hash: 835cb424c959
+  line: 448
+  hash: d3cf4915710c
   verdicts:
   - stage: S5a
     verdict: correct
@@ -738,10 +675,22 @@ items:
     date: '2026-10-11'
     model: claude-opus-5-5
     evidence: 09:674-684. QN (a)/(b) and NIm give ∃A((E∧B)∧¬S), which is correct.
+- key: exm-square-of-opposition
+  kind: exm
+  file: 02-quantifier-laws.md
+  line: 484
+  hash: 35b3fc608b69
+  verdicts: []
+- key: check:02-quantifier-laws:4
+  kind: check
+  file: 02-quantifier-laws.md
+  line: 496
+  hash: 1ff45af17a69
+  verdicts: []
 - key: prp-arbitrarily-close-equal
   kind: prp
   file: 02-quantifier-laws.md
-  line: 704
+  line: 510
   hash: ee218243d9ec
   verdicts:
   - stage: S5a
@@ -762,7 +711,7 @@ items:
 - key: proof:prp-arbitrarily-close-equal
   kind: proof
   file: 02-quantifier-laws.md
-  line: 714
+  line: 520
   hash: 1cc83cb89e7a
   verdicts:
   - stage: S5a
@@ -793,10 +742,120 @@ items:
       as school algebra (09 ledger, ''a - b = 0 then a = (a - b) + b = b''), which STATUS.md:57 allows
       for Ch 4 §09. The contrapositive remark (09:720) now goes from the bounded law to ∃ε>0 ¬(|a−b|<ε),
       and from there'
+- key: prp-quantifier-distribution
+  kind: prp
+  file: 02-quantifier-laws.md
+  line: 532
+  hash: a677a4e207cd
+  verdicts:
+  - stage: S5a
+    verdict: correct
+    by: refereeA
+    hash: a677a4e207cd
+    date: '2026-10-11'
+    model: claude-opus-5-5
+    evidence: 09:297-310. (a), (b) and (d) reuse prp-forall-and, exm-existential-elimination-derivations(a)
+      and prp-exists-and. (c) is RAA-free. The converses of (c) and (d) fail over ℤ (even/odd).
+  - stage: S5b
+    verdict: correct
+    by: refereeB
+    hash: a677a4e207cd
+    date: '2026-10-11'
+    model: claude-opus-5-5
+    evidence: 09:297-310. (a) is prp-forall-and (04:241), (b) is exm-existential-elimination-derivations
+      (a) (06:211), (d) is prp-exists-and (06:166). The converses are refuted in §11 (11:265-275).
+- key: prp-quantifier-passage
+  kind: prp
+  file: 02-quantifier-laws.md
+  line: 557
+  hash: 51eabc546425
+  verdicts:
+  - stage: S5a
+    verdict: correct
+    by: refereeA
+    hash: df804ebbaf01
+    date: '2026-10-11'
+    model: claude-opus-5-5
+    evidence: 09:352-366. Each law fails without 'x not free in ψ' (e.g. (b) with φ=ψ=P(x), 09:578). Exactly
+      (d)⊣ and (e)⊣ use LEM/RAA, which matches the derivations.
+  - stage: S5b
+    verdict: minor
+    by: refereeB
+    hash: df804ebbaf01
+    date: '2026-10-11'
+    model: claude-opus-5-5
+    evidence: 09-quantifier-laws.md:365 'two are derived here with RAA (through LEM)' misdescribes (d)⊣,
+      which also uses RAA through QN (a).
+  - stage: S7r
+    verdict: correct
+    by: rereferee
+    hash: 51eabc546425
+    date: '2026-10-11'
+    model: claude-opus-5-5
+    evidence: '09:365 now reads: ⊣ in (d) ''through LEM and the cited QN (a)'', and ⊣ in (e) ''through
+      LEM''. LEM is RAA-derived (prp-excluded-middle, ch02/05:225, RAA at line 8). VI uses only ⊥E (ch02/01:154).
+      The other eight derivations use neither. The S5b finding is resolved.'
+- key: proof:prp-quantifier-passage
+  kind: proof
+  file: 02-quantifier-laws.md
+  line: 580
+  hash: 8e93d79e9e3b
+  verdicts:
+  - stage: S5a
+    verdict: minor
+    by: refereeA
+    hash: 76f0fff91e33
+    date: '2026-10-11'
+    model: claude-opus-5-5
+    evidence: 09-quantifier-laws.md:375 The freshness statement for the passage-law derivations omits
+      x_0 ≠ x.
+  - stage: S5b
+    verdict: minor
+    by: refereeB
+    hash: 76f0fff91e33
+    date: '2026-10-11'
+    model: claude-opus-5-5
+    evidence: 09-quantifier-laws.md:575 The side condition of the ∃E at line 10 of the (e)⊣ derivation
+      is never checked.
+  - stage: S7r
+    verdict: correct
+    by: rereferee
+    hash: 8a07dad24ed9
+    date: '2026-10-11'
+    model: claude-opus-5-5
+    evidence: '09:375 now says x_0 is ''a variable other than x that does not appear in φ or ψ'', which
+      resolves the S5a finding. The ∃E side condition at line 10 of (e)⊣ is now checked at 09:575 (conclusion,
+      line 4, premise, open assumption ψ of line 3), which resolves the S5b finding. I rechecked all ten
+      derivations: instances such as ψ→φ[x0/x], since ψ[x0/x]=ψ; (c)⊣ ∧I{4,3}; (d)⊣ ∃I at x on line 8
+      with the non-'
+- key: proof:prp-quantifier-passage#2
+  kind: proof
+  file: 02-quantifier-laws.md
+  line: 610
+  hash: 8a07dad24ed9
+  verdicts: []
+- key: check:02-quantifier-laws:5
+  kind: check
+  file: 02-quantifier-laws.md
+  line: 821
+  hash: 9cba912473cd
+  verdicts: []
+- key: exm-prenex-conversion
+  kind: exm
+  file: 02-quantifier-laws.md
+  line: 846
+  hash: ba17fbf1b4ef
+  verdicts: []
+- key: check:02-quantifier-laws:6
+  kind: check
+  file: 02-quantifier-laws.md
+  line: 869
+  hash: 72a51feb31c9
+  verdicts: []
 - key: exr-quantifier-laws-a1
   kind: exr
   file: 02-quantifier-laws.md
-  line: 726
+  line: 887
   hash: 43364356ae18
   verdicts:
   - stage: S5a
@@ -834,10 +893,16 @@ items:
       are resolved. I solved (a), (b), (d) and (e) myself: RAA at lines 6 and 9 with the right assumptions
       and conclusions; the premise is not an instance; the ∃E/¬¬E/∃I route to ∃x(x·x=2) works, and ¬¬E
       is a derived '
+- key: exr-quantifier-laws-a2
+  kind: exr
+  file: 02-quantifier-laws.md
+  line: 913
+  hash: 6cd2f0a336e0
+  verdicts: []
 - key: exr-quantifier-laws-b1
   kind: exr
   file: 02-quantifier-laws.md
-  line: 754
+  line: 962
   hash: cffa2f528fdb
   verdicts:
   - stage: S5a
@@ -879,8 +944,8 @@ items:
 - key: exr-quantifier-laws-b2
   kind: exr
   file: 02-quantifier-laws.md
-  line: 801
-  hash: 17fa31cb5c33
+  line: 1009
+  hash: 241ae12d790f
   verdicts:
   - stage: S5a
     verdict: correct
@@ -921,7 +986,7 @@ items:
 - key: exr-quantifier-laws-b3
   kind: exr
   file: 02-quantifier-laws.md
-  line: 836
+  line: 1044
   hash: 131b16f6c03e
   verdicts:
   - stage: S5a
@@ -949,10 +1014,22 @@ items:
     evidence: '09:822-838. Script: epsilon=min(1,a-b) gives 0<epsilon, epsilon^2<=epsilon<=a-b and the
       contradiction a<a (10^4 random cases). epsilon=a-b fails when a-b>1 (2<4). The alternative epsilon=sqrt(a-b)
       also works and needs no scheme.'
+- key: exr-quantifier-laws-b4
+  kind: exr
+  file: 02-quantifier-laws.md
+  line: 1060
+  hash: 1efd7d5be6af
+  verdicts: []
+- key: exr-quantifier-laws-b5
+  kind: exr
+  file: 02-quantifier-laws.md
+  line: 1181
+  hash: 80d0ea96737a
+  verdicts: []
 - key: exr-quantifier-laws-c1
   kind: exr
   file: 02-quantifier-laws.md
-  line: 854
+  line: 1242
   hash: ca29746eed2a
   verdicts:
   - stage: S5a
@@ -986,7 +1063,7 @@ items:
 - key: exr-quantifier-laws-c2
   kind: exr
   file: 02-quantifier-laws.md
-  line: 901
+  line: 1289
   hash: 043376f90b7c
   verdicts:
   - stage: S5a
@@ -1026,6 +1103,114 @@ items:
       it complies with STYLE §11.7 (STYLE.md:228, 404-406). Both earlier findings are resolved. Solved
       myself: (a) needs four bounded laws plus NIm and the order fact, giving ∃ε>0∀N∈ℕ∃n∈ℕ∃x∈A(n≥N ∧ |f_n(x)−f(x)|≥ε).
       (b) '
+- key: exr-quantifier-laws-c3
+  kind: exr
+  file: 02-quantifier-laws.md
+  line: 1342
+  hash: 3b124ed4e012
+  verdicts: []
+- key: exm-search-with-witnesses
+  kind: exm
+  file: 03-first-order-search.md
+  line: 83
+  hash: e37cb6b491c4
+  verdicts: []
+- key: check:03-first-order-search:1
+  kind: check
+  file: 03-first-order-search.md
+  line: 162
+  hash: d5f0aeb56bd5
+  verdicts: []
+- key: def-propositional-skeleton
+  kind: def
+  file: 03-first-order-search.md
+  line: 174
+  hash: 8e5968a86523
+  verdicts: []
+- key: prp-taut-skeleton
+  kind: prp
+  file: 03-first-order-search.md
+  line: 196
+  hash: 6c9819dfee7e
+  verdicts: []
+- key: proof:prp-taut-skeleton
+  kind: proof
+  file: 03-first-order-search.md
+  line: 211
+  hash: 225e79b99c05
+  verdicts: []
+- key: check:03-first-order-search:2
+  kind: check
+  file: 03-first-order-search.md
+  line: 231
+  hash: 9d5eb1bf9646
+  verdicts: []
+- key: exm-propositional-core
+  kind: exm
+  file: 03-first-order-search.md
+  line: 253
+  hash: ee220cc7437f
+  verdicts: []
+- key: check:03-first-order-search:3
+  kind: check
+  file: 03-first-order-search.md
+  line: 282
+  hash: 0e83fe48c60d
+  verdicts: []
+- key: exm-four-tasks-with-quantifiers
+  kind: exm
+  file: 03-first-order-search.md
+  line: 325
+  hash: 29ca12817200
+  verdicts: []
+- key: check:03-first-order-search:4
+  kind: check
+  file: 03-first-order-search.md
+  line: 429
+  hash: 62e087d8bca6
+  verdicts: []
+- key: check:03-first-order-search:5
+  kind: check
+  file: 03-first-order-search.md
+  line: 437
+  hash: 2d4f8fa6e313
+  verdicts: []
+- key: exr-first-order-search-a1
+  kind: exr
+  file: 03-first-order-search.md
+  line: 488
+  hash: 4e25bc82c8df
+  verdicts: []
+- key: exr-first-order-search-b1
+  kind: exr
+  file: 03-first-order-search.md
+  line: 514
+  hash: 810ad29235cb
+  verdicts: []
+- key: exr-first-order-search-b2
+  kind: exr
+  file: 03-first-order-search.md
+  line: 695
+  hash: 5d7950d60172
+  verdicts: []
+- key: exr-first-order-search-b3
+  kind: exr
+  file: 03-first-order-search.md
+  line: 762
+  hash: f3bf1b8c98ff
+  verdicts: []
+- key: exr-first-order-search-c1
+  kind: exr
+  file: 03-first-order-search.md
+  line: 820
+  hash: c214fb3b3637
+  verdicts: []
+- key: exr-first-order-search-c2
+  kind: exr
+  file: 03-first-order-search.md
+  line: 899
+  hash: a79f0ec34ad8
+  verdicts: []
 - key: check:04-uniform-continuity-rule-by-rule:1
   kind: check
   file: 04-uniform-continuity-rule-by-rule.md
@@ -1050,39 +1235,11 @@ items:
     evidence: '10:20-26: the math is right (prp-arbitrarily-close-equal is cited; 0 and δ/2 work). Bookkeeping
       slip: ledger line 459 files this check under ''exm-uniform-implies-continuous (solution)'', but
       the check stands before that example and is not part of it. [finding refuted by skeptics]'
-- key: exm-uniform-implies-continuous
-  kind: exm
-  file: 04-uniform-continuity-rule-by-rule.md
-  line: 30
-  hash: af8f0a950e53
-  verdicts:
-  - stage: S5a
-    verdict: correct
-    by: refereeA
-    hash: af8f0a950e53
-    date: '2026-10-11'
-    model: claude-opus-5-5
-    evidence: '10:45-76 checked line by line against prp-bounded-quantifier-rules (08:93) and the >-bound
-      extension. L4 is forall-E at eps_0 with bound L3. L7 is forall-E at x_0 with bound L2. L8 is exists-I
-      with L5 and L7. L9 is exists-E 4,5-8: delta_0 is not in 9, 4, 1, 2 or 3. L10 closes 3-9 (flag eps_0;
-      open assumption L2 only). L11 closes 2-10. Every free-for check holds. The count 11+6=17 matches
-      the rule '
-  - stage: S5b
-    verdict: correct
-    by: refereeB
-    hash: af8f0a950e53
-    date: '2026-10-11'
-    model: claude-opus-5-5
-    evidence: '10:43-77: check_fitch reports 0 errors. Side conditions at lines 9, 10 and 11 hold against
-      def-rules-universal, def-rules-existential and prp-bounded-quantifier-rules. The 11→17 count matches
-      §08:237 (each bounded step saves exactly one line; there are six). The prose sentences cover lines
-      2-11. The answer to the prompt (line 5 rests on lines 4, 1 and 3, none of which mention x0) is right.
-      The dep'
 - key: check:04-uniform-continuity-rule-by-rule:2
   kind: check
   file: 04-uniform-continuity-rule-by-rule.md
-  line: 91
-  hash: 9f2b05ebf06f
+  line: 51
+  hash: a15ee24f680d
   verdicts:
   - stage: S5a
     verdict: correct
@@ -1111,10 +1268,44 @@ items:
       line 5, and the answer (x0 from line 2, ε0 from line 3) is complete. The ''in fact'' part holds:
       line 4 (\Ae{1,3}) mentions ε0 and not x0. The principle at line 89 (''chosen in a box ... boxes
       open around that box'') matches. The S5b finding is resolved.'
+- key: exm-uniform-implies-continuous
+  kind: exm
+  file: 04-uniform-continuity-rule-by-rule.md
+  line: 61
+  hash: af8f0a950e53
+  verdicts:
+  - stage: S5a
+    verdict: correct
+    by: refereeA
+    hash: af8f0a950e53
+    date: '2026-10-11'
+    model: claude-opus-5-5
+    evidence: '10:45-76 checked line by line against prp-bounded-quantifier-rules (08:93) and the >-bound
+      extension. L4 is forall-E at eps_0 with bound L3. L7 is forall-E at x_0 with bound L2. L8 is exists-I
+      with L5 and L7. L9 is exists-E 4,5-8: delta_0 is not in 9, 4, 1, 2 or 3. L10 closes 3-9 (flag eps_0;
+      open assumption L2 only). L11 closes 2-10. Every free-for check holds. The count 11+6=17 matches
+      the rule '
+  - stage: S5b
+    verdict: correct
+    by: refereeB
+    hash: af8f0a950e53
+    date: '2026-10-11'
+    model: claude-opus-5-5
+    evidence: '10:43-77: check_fitch reports 0 errors. Side conditions at lines 9, 10 and 11 hold against
+      def-rules-universal, def-rules-existential and prp-bounded-quantifier-rules. The 11→17 count matches
+      §08:237 (each bounded step saves exactly one line; there are six). The prose sentences cover lines
+      2-11. The answer to the prompt (line 5 rests on lines 4, 1 and 3, none of which mention x0) is right.
+      The dep'
+- key: check:04-uniform-continuity-rule-by-rule:3
+  kind: check
+  file: 04-uniform-continuity-rule-by-rule.md
+  line: 122
+  hash: 9f2b05ebf06f
+  verdicts: []
 - key: exm-converse-fails
   kind: exm
   file: 04-uniform-continuity-rule-by-rule.md
-  line: 107
+  line: 142
   hash: a8feba498ac5
   verdicts:
   - stage: S5a
@@ -1139,7 +1330,7 @@ items:
 - key: exm-square-not-uniform
   kind: exm
   file: 04-uniform-continuity-rule-by-rule.md
-  line: 160
+  line: 222
   hash: 8d8d781a6b2d
   verdicts:
   - stage: S5a
@@ -1169,10 +1360,28 @@ items:
       inequality (exm-triangle-inequality-cases, Ch01 07:420); |x²−y²| = |x−y||x+y| is in the ledger (exm-abs-product-cases);
       the chain to ≤ ε checks. UC part: the displayed goal matches exm-negating-definitions (c) (09-quantifier-laws.md,
       final display) with the bounds dropped over ℝ. x = 1/δ > 0 and y = x + δ/2 >'
+- key: exm-not-uniform-derived
+  kind: exm
+  file: 04-uniform-continuity-rule-by-rule.md
+  line: 258
+  hash: be1c9e6dd57b
+  verdicts: []
+- key: exm-converse-proof-critique
+  kind: exm
+  file: 04-uniform-continuity-rule-by-rule.md
+  line: 319
+  hash: 07f9279ccfd6
+  verdicts: []
+- key: check:04-uniform-continuity-rule-by-rule:4
+  kind: check
+  file: 04-uniform-continuity-rule-by-rule.md
+  line: 336
+  hash: 9db9be6b997a
+  verdicts: []
 - key: exr-uniform-continuity-rule-by-rule-a1
   kind: exr
   file: 04-uniform-continuity-rule-by-rule.md
-  line: 198
+  line: 354
   hash: 8f51ff01f008
   verdicts:
   - stage: S5a
@@ -1212,10 +1421,16 @@ items:
       derivation knows only lines 5 and 6 about it, and that ε0/3 is one such witness (any 0<δ≤ε0/3 works,
       which is correct for 3x+1). The check |(3x0+1)−(3y+1)| = 3|x0−y| < ε0 is right. The S5b and S6 findings
       are resolv'
+- key: exr-uniform-continuity-rule-by-rule-a2
+  kind: exr
+  file: 04-uniform-continuity-rule-by-rule.md
+  line: 380
+  hash: a431470774be
+  verdicts: []
 - key: exr-uniform-continuity-rule-by-rule-b1
   kind: exr
   file: 04-uniform-continuity-rule-by-rule.md
-  line: 226
+  line: 442
   hash: b9c7b94ad338
   verdicts:
   - stage: S5a
@@ -1271,7 +1486,7 @@ items:
 - key: exr-uniform-continuity-rule-by-rule-b2
   kind: exr
   file: 04-uniform-continuity-rule-by-rule.md
-  line: 278
+  line: 494
   hash: c7b3edfdab5a
   verdicts:
   - stage: S5a
@@ -1328,7 +1543,7 @@ items:
 - key: exr-uniform-continuity-rule-by-rule-b3
   kind: exr
   file: 04-uniform-continuity-rule-by-rule.md
-  line: 307
+  line: 523
   hash: cc28ac06a1a4
   verdicts:
   - stage: S5a
@@ -1355,10 +1570,16 @@ items:
     model: claude-opus-5-5
     evidence: 10:307-319. delta=epsilon^2 gives |sqrt x - sqrt y| <= sqrt|x-y| < epsilon. The script checks
       the school inequality on random pairs. The dependence on epsilon only is stated.
+- key: exr-uniform-continuity-rule-by-rule-b4
+  kind: exr
+  file: 04-uniform-continuity-rule-by-rule.md
+  line: 537
+  hash: acd324ff88c1
+  verdicts: []
 - key: exr-uniform-continuity-rule-by-rule-c1
   kind: exr
   file: 04-uniform-continuity-rule-by-rule.md
-  line: 323
+  line: 569
   hash: 2cd1e0baa0ee
   verdicts:
   - stage: S5a
@@ -1390,7 +1611,7 @@ items:
 - key: exr-uniform-continuity-rule-by-rule-c2
   kind: exr
   file: 04-uniform-continuity-rule-by-rule.md
-  line: 358
+  line: 604
   hash: 56e382095d59
   verdicts:
   - stage: S5a
@@ -1445,7 +1666,7 @@ items:
 - key: exr-uniform-continuity-rule-by-rule-c3
   kind: exr
   file: 04-uniform-continuity-rule-by-rule.md
-  line: 403
+  line: 649
   hash: 2f1dea37279a
   verdicts:
   - stage: S5a
@@ -1486,3 +1707,53 @@ items:
       the convention of 04-universal-introduction.md (c)). The line 8 bullet now correctly says that line
       7 is the last line of the box of x0, is a line of that box itself, and is the formula line 8 repeats.
       This resolves '
+- key: exr-uniform-continuity-rule-by-rule-r1
+  kind: exr
+  file: 04-uniform-continuity-rule-by-rule.md
+  line: 703
+  hash: a1e37312641f
+  verdicts: []
+- key: exr-uniform-continuity-rule-by-rule-r2
+  kind: exr
+  file: 04-uniform-continuity-rule-by-rule.md
+  line: 729
+  hash: 48c94e3fe265
+  verdicts: []
+- key: exr-uniform-continuity-rule-by-rule-r3
+  kind: exr
+  file: 04-uniform-continuity-rule-by-rule.md
+  line: 773
+  hash: c123622efcd6
+  verdicts: []
+- key: proof:prp-quantifier-distribution
+  kind: proof
+  file: 02-quantifier-laws.md
+  line: 318
+  hash: 8e93d79e9e3b
+  verdicts:
+  - stage: S5a
+    verdict: minor
+    by: refereeA
+    hash: 8665624422ec
+    date: '2026-10-11'
+    model: claude-opus-5-5
+    evidence: 09-quantifier-laws.md:319 The restated freshness condition again omits x_0 ≠ x, which the
+      side conditions of the reused derivations need.
+  - stage: S5b
+    verdict: correct
+    by: refereeB
+    hash: 8665624422ec
+    date: '2026-10-11'
+    model: claude-opus-5-5
+    evidence: 09:318-346. The (c) derivation checks and the carry-over argument at 319 is sound.
+  - stage: S7r
+    verdict: correct
+    by: rereferee
+    hash: 8e93d79e9e3b
+    date: '2026-10-11'
+    model: claude-opus-5-5
+    evidence: '09:319 now says the fresh name is ''chosen different from x and not appearing in φ or ψ'',
+      which resolves the S5a finding. The cited labels say what is claimed: prp-forall-and (04-universal-introduction.md:241),
+      prp-exists-and (06-existential-elimination.md:166), and the ∃-over-∨ derivation of exm-existential-elimination-derivations
+      (06:211ff). None uses RAA. The (c) derivation checks: ∨I gives φ[x0'
+  removed: true

@@ -1,4 +1,4 @@
-"""exm-translate-limit (Ch 4, Section 4.8): the warning's constants and the Quick check on (0, 1)."""
+"""exm-translate-limit (Ch 6, Section 6.1): the warning's constants and the Quick check on (0, 1)."""
 from fractions import Fraction as Fr
 
 QUOTED = {"warning (3): N for a_n = n - 3": 4, "warning (3): a_0": -3,

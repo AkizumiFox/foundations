@@ -1,6 +1,12 @@
 # Translating Mathematics: Nested and Bounded Quantifiers
 
-The calculus is now complete: Sections 5.3–5.7 gave a rule for using and a rule for proving each quantifier, and the two rules for equality. Before any of those rules can act on a definition from analysis, the definition has to be written as a formula, and written correctly. The definitions of analysis have three or four quantifiers stacked in a fixed order, most of them carrying a bound such as \( \varepsilon > 0 \) or \( n \ge N \), and every bound costs extra lines in a derivation. This section does three things. It translates the standard definitions into formulas, by a procedure that works from the outside in. It turns each quantifier rule into a **bounded** rule that handles the bound in the same step. And it collects the steps of Sections 5.3–5.7 into the search method of Section 3.1, extended to quantifiers and equality.
+The calculus is now complete: Sections 5.3–5.7 gave a rule for using and a rule for proving each quantifier, and the two rules for equality. Before any of those rules can act on a definition from analysis, the definition has to be written as a formula, and written correctly. The definitions of analysis have three or four quantifiers stacked in a fixed order, most of them carrying a bound such as \( \varepsilon > 0 \) or \( n \ge N \), and every bound costs extra lines in a derivation. This section does three things. It translates the standard definitions into formulas, by a procedure that works from the outside in. It turns each quantifier rule into a **bounded** rule that handles the bound in the same step. And it collects the traps that make a translation wrong, each with a reading that shows the wrong formula wrong.
+
+::: {.remark}
+[Looking back]
+
+Section 3.3 turned an argument in words into a derivation, with one key for a whole paragraph. This section does the same for definitions with quantifiers. What is new is the order of the quantifiers and the bounds they carry, which the propositional key never had.
+:::
 
 ## Four pieces in one sentence
 
@@ -18,11 +24,25 @@ So translation deserves a procedure, and the rules deserve a form that handles b
 
 The procedure, in three steps:
 
-1. **Fix the domain.** State what the variables range over. By the one-domain convention of Section 5.1 (after @def-bounded-quantifier), a sentence that mixes kinds of object uses the largest kind as the domain, and each smaller kind enters as a bound: \( N \in \nN \) inside the domain \( \nR \). A sequence \( (a_n) \) is a function symbol \( a \), with \( a_n \) its value at \( n \).
+1. **Fix the domain.** State what the variables range over. A sentence of analysis often mixes kinds of objects: **One domain per formula.** The logic of this book has a single domain for all the variables of a formula. Mathematics often mixes kinds of objects in one sentence: in "for every \( \varepsilon > 0 \) there is an \( N \in \nN \) such that for every \( n \ge N \), …", the letter \( \varepsilon \) is a real number, while \( N \) and \( n \) are natural numbers. The convention is: **the domain is the larger kind** (here \( \nR \)), and **the smaller kind enters as a bound** (\( \exists N \in \nN \), \( \forall n \in \nN \)). So the sentence begins
+   \[
+   \forall \varepsilon > 0 \; \exists N \in \nN \; \forall n \in \nN \; \bigl( n \ge N \to \dots \bigr),
+   \]
+   and \( n \) ranges over real numbers that happen to be required, by the bound, to be natural numbers. A sequence \( (a_n) \) becomes a function symbol \( a \), with \( a(n) \), written \( a_n \), the \( n \)-th term. Its values at real numbers that are not natural numbers are never used, because \( a \) is only ever applied to variables bounded by \( n \in \nN \). Section 5.1 stated this convention in two sentences ("Mixing kinds of number"); here it is in full, and every translation in this chapter follows it.
 2. **Find the outermost claim.** Ask what the sentence says first, before any detail: "every \( \varepsilon > 0 \) has a property", "there is an \( M \) with a property", "no prime is largest". That gives the outermost quantifier (or connective) and its bound.
-3. **Recurse.** Translate the property, which is a sentence about the object just quantified, by the same two steps. Stop at atomic formulas: equations, inequalities, membership, and predicate symbols such as \( \mathrm{Prime}(p) \).
+3. **Recurse.** Translate the property, which is a sentence about the object just quantified, by the same two steps. Stop at atomic formulas: equations, inequalities, membership, and predicate symbols such as \( \mathrm{Prime}(m) \).
 
 A bound is attached to its own quantifier with the connective of @def-bounded-quantifier: \( \to \) under \( \forall \), \( \wedge \) under \( \exists \). The bounded notation \( \forall \varepsilon > 0 \), \( \exists N \in \nN \) does this automatically, which is why we use it.
+
+**A mixed stage.** Halfway through, a translation is part words and part symbols, and writing that stage down catches most slips. Take "for every positive \( \varepsilon \), some element of \( A \) lies within \( \varepsilon \) of \( s \)". Each line below translates one more quantifier and leaves the rest in words, in square brackets, until no words are left:
+\[
+\begin{aligned}
+&\forall \varepsilon > 0 \; [\text{some element of } A \text{ lies within } \varepsilon \text{ of } s] \\
+&\forall \varepsilon > 0 \; \exists x \in A \; [x \text{ lies within } \varepsilon \text{ of } s] \\
+&\forall \varepsilon > 0 \; \exists x \in A \; (\abs{x - s} < \varepsilon)
+\end{aligned}
+\]
+Read the last line back, symbol by symbol, into words: if the words are the sentence you began with, the translation is done.
 
 ::: {#exm-translate-limit}
 [Five definitions, translated]
@@ -57,15 +77,15 @@ The bound \( x \in A \) belongs to the \( \forall \); there is no bound on \( M 
 \]
 The last quantifier has no bound of the form "\( x \in \) something", because \( f \) is defined on all of \( \nR \); its restriction \( \abs{x - a} < \delta \) goes under the implication, like \( n \ge N \) in (a). For \( f \) defined on a set \( A \), the last quantifier would be \( \forall x \in A \).
 
-*(d)* Domain \( \nN \), with \( \mathrm{Prime}(p) \) the predicate "\( p \) is prime". Section 5.1 read the sentence as \( \neg\exists p\, \bigl( \mathrm{Prime}(p) \wedge \forall q\, (\mathrm{Prime}(q) \to q \le p) \bigr) \). A mathematician more often states it positively, "for every prime there is a larger prime":
+*(d)* Domain \( \nN \), with \( \mathrm{Prime}(m) \) the predicate "\( m \) is prime". Section 5.1 read the sentence as \( \neg\exists m\, \bigl( \mathrm{Prime}(m) \wedge \forall n\, (\mathrm{Prime}(n) \to n \le m) \bigr) \). A mathematician more often states it positively, "for every prime there is a larger prime":
 \[
-\forall p \; \bigl( \mathrm{Prime}(p) \to \exists q \; (\mathrm{Prime}(q) \wedge p < q) \bigr).
+\forall m \; \bigl( \mathrm{Prime}(m) \to \exists n \; (\mathrm{Prime}(n) \wedge m < n) \bigr).
 \]
-The two forms say the same thing over \( \nN \): the laws of Section 6.2 push the \( \neg \) inside and give \( \forall p\, \bigl( \mathrm{Prime}(p) \to \exists q\, (\mathrm{Prime}(q) \wedge \neg(q \le p)) \bigr) \), and the order fact that \( \neg(q \le p) \) is the same as \( p < q \) finishes the job. (They are not provably equivalent in logic alone: that last step is a fact about the order of \( \nN \), not a law of logic.)
+The two forms say the same thing over \( \nN \): the laws of Section 6.2 push the \( \neg \) inside and give \( \forall m\, \bigl( \mathrm{Prime}(m) \to \exists n\, (\mathrm{Prime}(n) \wedge \neg(n \le m)) \bigr) \), and the order fact that \( \neg(n \le m) \) is the same as \( m < n \) finishes the job. (They are not provably equivalent in logic alone: that last step is a fact about the order of \( \nN \), not a law of logic.)
 
-*(e)* Domain \( \nZ \). Outermost claim: every integer greater than \( 1 \) has a property, \( \forall n > 1 \). The property: some \( p \) is prime and divides \( n \). "Divides" is itself a quantifier: \( p \mid n \) means \( n = p \cdot k \) for some integer \( k \). So
+*(e)* Domain \( \nZ \). Outermost claim: every integer greater than \( 1 \) has a property, \( \forall n > 1 \). The property: some \( m \) is prime and divides \( n \). "Divides" is itself a quantifier: \( m \mid n \) means \( n = m \cdot k \) for some integer \( k \). So
 \[
-\forall n > 1 \; \exists p \; \bigl( \mathrm{Prime}(p) \wedge \exists k \; (n = p \cdot k) \bigr).
+\forall n > 1 \; \exists m \; \bigl( \mathrm{Prime}(m) \wedge \exists k \; (n = m \cdot k) \bigr).
 \]
 Unfolded, the first bound is \( \forall n\, (n > 1 \to \dots) \). The innermost quantifier came from a **defined** word, "divides", which is typical: a definition in words often hides quantifiers, and a translation unfolds them.
 :::
@@ -83,6 +103,46 @@ Translate "\( A \) has a maximum" (an element of \( A \) that is at least every 
 ::: {.warning}
 **Three mistranslations to avoid.** (1) An \( \exists \) with \( \to \) under it, such as \( \exists x\, (x \in A \to x > 5) \): it is true as soon as something lies outside \( A \) (Section 5.1). (2) A bound on the wrong quantifier: "\( f \) is bounded on \( A \)" is \( \exists M\, \forall x \in A\, (\abs{f(x)} \le M) \); the form \( \exists M \in A\, \forall x\, (\abs{f(x)} \le M) \) asks for a bound that lies in \( A \) and works on all of \( \nR \), and it fails for \( f(x) = x \) on \( A = [0, 1] \), which is bounded on \( A \) by \( 1 \). (3) "For all large \( n \)" read as "for all \( n \)": "\( a_n > 0 \) for all large \( n \)" is \( \exists N \in \nN\; \forall n \in \nN\; (n \ge N \to a_n > 0) \), not \( \forall n \in \nN\, (a_n > 0) \). The sequence \( a_n = n - 3 \) satisfies the first (take \( N = 4 \)) and not the second (\( a_0 = -3 \)).
 :::
+
+## Five traps
+
+The warning above caught three slips. Here are five more, each with the reading that shows the wrong formula saying something else.
+
+::: {#exm-translation-traps}
+[Five traps, each with a separating reading]
+
+The domain is \( \nR \) unless the row says \( \nN \). \( A \) and \( B \) are sets of reals, and \( x \in A \) is a one-place predicate (Section 5.1).
+
+| | Sentence | Wrong | Right | A reading that separates them |
+|---|---|---|---|---|
+| (a) | Some natural number lies strictly between \( \tfrac13 \) and \( \tfrac23 \). | \( \exists n\, (\tfrac13 < n \wedge n < \tfrac23) \) | \( \exists n \in \nN\; (\tfrac13 < n \wedge n < \tfrac23) \) | The domain is \( \nR \), by step 1. The sentence is false, since \( 0 < \tfrac13 \) and \( \tfrac23 < 1 \); the wrong formula is true, with \( n = \tfrac12 \). Under one domain, a letter for a natural number ranges over the reals unless its bound \( n \in \nN \) says otherwise. |
+| (b) | Every element of \( A \) and of \( B \) is positive. | \( \forall x\, ((x \in A \wedge x \in B) \to x > 0) \) | \( \forall x\, ((x \in A \vee x \in B) \to x > 0) \) | \( A = \{1\} \), \( B = \{-1\} \): the sentence is false (\( -1 \in B \)). The wrong formula speaks only of common elements, and there are none, so it is true. The "and" of the sentence is an "or" in the restriction. |
+| (c) | Only even numbers are multiples of \( 4 \). (Over \( \nN \).) | \( \forall n\, (\mathrm{Even}(n) \to 4 \mid n) \) | \( \forall n\, (4 \mid n \to \mathrm{Even}(n)) \) | The right formula is true; the wrong one is false at \( n = 2 \). "Only \( E \) are \( M \)" puts \( E \) after the arrow, as "only if" did in Section 1.1. |
+| (d) | If a natural number is divisible by \( 6 \), then it is even. (Over \( \nN \).) | \( \exists n\, (6 \mid n) \to \mathrm{Even}(n) \) | \( \forall n\, (6 \mid n \to \mathrm{Even}(n)) \) | The right formula is true. In the wrong one the last \( n \) is free, and read at \( n = 1 \) it says "if some number is divisible by \( 6 \), then \( 1 \) is even": the hypothesis is true (\( 6 \mid 6 \)) and the conclusion false. "A … it" hides a "for every". |
+| (e) | If any element of \( A \) is negative, then \( 0 \) is not a lower bound of \( A \). | \( \forall x \in A\, (x < 0) \to \neg\forall x \in A\, (0 \le x) \) | \( \exists x \in A\, (x < 0) \to \neg\forall x \in A\, (0 \le x) \) | \( A = \emptyset \): the right formula is true, since its hypothesis is false. In the wrong one the hypothesis "every element of \( \emptyset \) is negative" is true and the conclusion "not every element of \( \emptyset \) is at least \( 0 \)" is false (Section 5.1, the empty set). This is Section 5.1's warning on "any", now with the reading that separates the two formulas: the empty set. |
+:::
+
+A reading like these is a counter-reading for the step from one formula to the other; it shows that the two say different things, which is all a translation needs to know.
+
+**Infinitely many, and eventually.** "\( a_n > 0 \) for infinitely many \( n \)" says that however far out you start, some later term is positive:
+\[
+\forall N \in \nN\; \exists n \in \nN\; (n \ge N \wedge a_n > 0).
+\]
+"Eventually \( a_n > 0 \)", that is, \( a_n > 0 \) for all large \( n \) (warning (3) above), says
+\[
+\exists N \in \nN\; \forall n \in \nN\; (n \ge N \to a_n > 0).
+\]
+The quantifiers are swapped, and the bound \( n \ge N \) moves from \( \wedge \) to \( \to \), as the two connectives of @def-bounded-quantifier require. For \( a_n = (-1)^n \) the first is true (every even \( n \ge N \) will do) and the second is false (every odd \( n \ge N \) fails).
+
+::: {.check}
+Translate "\( a_n = 0 \) for only finitely many \( n \)".
+:::
+
+::: {.solution}
+From some index on, no term is \( 0 \): \( \exists N \in \nN\; \forall n \in \nN\; (n \ge N \to a_n \ne 0) \). Finitely many exceptions all lie below some \( N \).
+:::
+
+**Translation error or derivation error?** When a derivation ends in a statement you believe false, there are two places to look. A **derivation error** is an illegal line, and checking the derivation line by line finds it. A **translation error** is a formula that does not say what its sentence says, and no line check finds it, because every line may be correct. Suppose a reader translates "some element of \( A \) exceeds \( 5 \)" as \( \exists x\, (x \in A \to x > 5) \), the slip of warning (1) above, and takes \( A = \{1, 2\} \). From the true line \( \neg(7 \in A) \), two steps derive that formula: \( 7 \in A \to 7 > 5 \) by @prp-vacuous-implication, then \( \rulename{\exists I} \) at \( 7 \). Both steps are legal. The conclusion is a true formula about \( A \), and the sentence it was meant to translate is false, since neither \( 1 \) nor \( 2 \) exceeds \( 5 \). The fault is in the translation, not in the derivation. So check a surprising conclusion in two ways: run the line check, and read the formulas back into words.
 
 ## Rules for bounded quantifiers
 
@@ -146,12 +206,30 @@ In words: to **use** "every \( x \) in \( A \) has \( \varphi \)", produce an el
 
 The bounded \( \rulename{\forall I} \) box is the only flagged box with an assumption that closes by \( \rulename{\forall I} \). Its assumption \( x_0 \in A \) mentions the flag, and that is allowed: the side condition asks about assumptions of boxes **still open at line \( k \)**, and the box's own assumption has closed there.
 
+In a finished derivation, the assumption \( x_0 \in A \) of a bounded \( \rulename{\forall I} \) box is printed "asm, for \( \rulename{\forall I} \)", since the box closes by \( \rulename{\forall I} \).
+
+::: {.second-reading title="Why a proposition, not a definition"}
 Why is this a proposition and not simply a definition? Because the calculus is fixed: its rules are those of Chapters 1–2 and Sections 5.3–5.7, and a new rule is admissible only if it adds no derivable sequents. @def-derived-rule gave one way to show that: a proved sequent, written with statement letters, may be used as one line. It does not cover these rules. The bounded \( \rulename{\forall E} \) and \( \rulename{\exists I} \) are one line each, but they are schemas in a formula, a variable and a term, not in statement letters; the bounded \( \rulename{\forall I} \) and \( \rulename{\exists E} \) close boxes, which no proved sequent can. So the proposition proves admissibility the direct way: each bounded step is shown to be an abbreviation of a block of unbounded steps. In this sense the bounded rules are derived rules, in a looser sense that extends Chapter 2's: a line citing one abbreviates a block of primitive steps, not a proved sequent.
+:::
 
 ::: {.idea}
 A bounded quantifier is an abbreviation (@def-bounded-quantifier): \( \forall x \in A\; \varphi \) **is** the formula \( \forall x\, (x \in A \to \varphi) \), and \( \exists x \in A\; \varphi \) **is** \( \exists x\, (x \in A \wedge \varphi) \). So each bounded rule should be an unbounded rule on the unfolded formula, plus the connective rule that handles \( \to \) or \( \wedge \). Write the block, then check two things: the block is a correct piece of derivation wherever the bounded step was, and its side conditions hold exactly when the bounded ones do.
 :::
 
+::: {.warning}
+[Not allowed: the bounded rules]
+
+Each step below is wrong; the tag names the condition of @prp-bounded-quantifier-rules that it breaks.
+
+- From \( \forall \varepsilon > 0\; \varphi \) alone, write \( \varphi[1/\varepsilon] \): the bounded \( \rulename{\forall E} \) cites two lines, and the line \( 1 > 0 \) is missing.
+- From \( \abs{a_7 - L} < 1 \) alone, write \( \exists N \in \nN\; (\abs{a_N - L} < 1) \): the bounded \( \rulename{\exists I} \) needs the line \( 7 \in \nN \) too.
+- Close a bounded \( \rulename{\forall I} \) box on \( \varepsilon_0 \) while the assumption \( \delta_0 < \varepsilon_0 \) of an enclosing box is still open: the flag appears in an assumption of a box still open.
+- Close a bounded \( \rulename{\exists E} \) box on \( N_0 \) with the last line \( N_0 + 1 \in \nN \): the conclusion \( \chi \) mentions the witness.
+:::
+
+The proof writes out, for each bounded rule, the block of unbounded steps it abbreviates, and checks that the side conditions match; it is in the fold below.
+
+:::: {.second-reading title="The proof: each bounded rule as a block of unbounded steps"}
 ::: {.proof}
 We give the replacement block for each rule and check it. In each block, the lines of the bounded version keep their labels, and new lines get new letters.
 
@@ -233,6 +311,7 @@ For the bounds \( x > a \) and the others, the same four blocks work with \( x >
 
 Replacing the bounded steps one at a time, each by its block, removes them all; the premises and the last line do not change. This proves the proposition.
 :::
+::::
 
 Each block is one line longer than the bounded step it replaces: two lines for one in \( \rulename{\forall E} \) and \( \rulename{\exists I} \); the extra \( \rulename{{\to}I} \) line in \( \rulename{\forall I} \); three lines (an assumption and two \( \rulename{\wedge E} \)) for two assumptions in \( \rulename{\exists E} \). So **each bounded step saves exactly one line**, and a derivation with many bounds saves many. More than the count, the bounded rules keep the derivation at the level at which a mathematician thinks: "let \( \varepsilon > 0 \)" is one step, not two.
 
@@ -256,6 +335,41 @@ derives the same formula with \( 2 \cdot a_n \) and \( 2 \cdot L \) in place of 
 
 ::: {.idea}
 Run the search. The goal starts with \( \forall \varepsilon > 0 \): open a bounded \( \rulename{\forall I} \) box, "let \( \varepsilon_0 > 0 \)". The new goal starts with \( \exists N \in \nN \): **postpone** it (the step of Section 5.5), since no witness is in sight. Turn to the premise: it starts with \( \forall \varepsilon > 0 \), and the step of Section 5.3 says to instantiate it at the term the goal needs. Which term? The goal will need \( \abs{2 a_n - 2 L} < \varepsilon_0 \), which follows from \( \abs{a_n - L} < \varepsilon_0 / 2 \): so instantiate at \( \varepsilon_0 / 2 \), after an "arith" line \( \varepsilon_0 / 2 > 0 \) for the bound. That gives an \( \exists N \in \nN \) line: open its \( \rulename{\exists E} \) box **at once**, with a witness \( N_0 \) (the step of Section 5.6), and let the box's last line be the current goal. Now the postponed goal has its witness: \( N_0 \) itself. The remaining goal \( \forall n \in \nN\, (\dots) \) opens a bounded \( \rulename{\forall I} \) box for \( n_0 \), and a \( \rulename{{\to}I} \) box on \( n_0 \ge N_0 \) finishes with one \( \rulename{\forall E} \), one \( \rulename{{\to}E} \), and the second "arith" line. This is the pattern of @prp-exists-forall-swap: **fix** \( \varepsilon_0 \), **obtain** \( N_0 \), **choose** \( N_0 \) as the witness.
+:::
+
+Two abbreviations show the shape. Write \( G(N, \varepsilon) \) for \( \forall n \in \nN\; (n \ge N \to \abs{a_n - L} < \varepsilon) \), "from \( N \) on, every term is within \( \varepsilon \) of \( L \)", and \( G_2(N, \varepsilon) \) for the same formula with \( 2 \cdot a_n \) and \( 2 \cdot L \). The premise is \( \forall \varepsilon > 0\; \exists N \in \nN\; G(N, \varepsilon) \), and the goal is the same with \( G_2 \). With the lines that look inside \( G \) left as a gap, the derivation is:
+
+```{=latex}
+% schema (partial derivations: the gap is unnumbered, lines carry their final numbers)
+\begin{center}
+$\begin{nd}
+  \hypo {1} {\forall \varepsilon > 0 \; \exists N \in \nN \; G(N, \varepsilon)}
+  \open[\varepsilon_0]
+  \hypo {2} {\varepsilon_0 > 0}
+  \have {3} {\varepsilon_0 / 2 > 0} \by{arith}{2}
+  \have {4} {\exists N \in \nN \; G(N, \varepsilon_0 / 2)} \Ae{1,3}
+  \open[N_0]
+  \hypo {5} {N_0 \in \nN}
+  \hypo {6} {G(N_0, \varepsilon_0 / 2)}
+  \have[\ ][0] {} {\vdots}
+  \have[][13] {13} {G_2(N_0, \varepsilon_0)}
+  \have {14} {\exists N \in \nN \; G_2(N, \varepsilon_0)} \Ei{5,13}
+  \close
+  \have {15} {\exists N \in \nN \; G_2(N, \varepsilon_0)} \Ee{4,5-14}
+  \close
+  \have {16} {\forall \varepsilon > 0 \; \exists N \in \nN \; G_2(N, \varepsilon)} \Ai{2-15}
+\end{nd}$
+\end{center}
+```
+
+Lines 7–12 are the only lines that look inside \( G \) and \( G_2 \): they unfold \( G(N_0, \varepsilon_0/2) \) at a fresh \( n_0 \) and prove the instance that line 13 folds back into \( G_2(N_0, \varepsilon_0) \). Here is the derivation in full; its lines 1–6 and 13–16 are the lines above, written out.
+
+::: {.check}
+In the outline, line 4 instantiates the premise at \( \varepsilon_0/2 \). Why that term, and not \( \varepsilon_0 \)?
+:::
+
+::: {.solution}
+The goal needs \( \abs{2a_n - 2L} < \varepsilon_0 \), which is \( 2\abs{a_n - L} < \varepsilon_0 \), so it is enough to have \( \abs{a_n - L} < \varepsilon_0/2 \). The term is read off the goal (Section 5.3's step), not off the premise.
 :::
 
 ```{=latex}
@@ -302,35 +416,13 @@ In prose, line by line:
 
 > Let \( \varepsilon > 0 \) [lines 2, 16]. Then \( \varepsilon / 2 > 0 \) [3], so, since \( a_n \to L \), there is \( N \in \nN \) with \( \abs{a_n - L} < \varepsilon/2 \) for every \( n \ge N \) [4]; choose such an \( N \) [5, 6, 15]. Let \( n \in \nN \) with \( n \ge N \) [7, 9]. Then \( \abs{a_n - L} < \varepsilon / 2 \) [8, 10], so \( \abs{2 a_n - 2 L} = 2 \abs{a_n - L} < \varepsilon \) [11]. So this \( N \) works [12–14].
 
-Written with the unbounded rules, the same derivation has 22 lines, since each of its six bounded steps (lines 4, 8, 13, 14, 15, and 16) costs one line more. The claim "\( \frac1n \to 0 \)" (for \( n \ge 1 \)) is not derived here: its proof needs a fact about \( \nN \) inside \( \nR \), the Archimedean property, which is a theorem of *Analysis on the Real Line*, Chapter 1, not of logic.
+Written with the unbounded rules, the same derivation has 22 lines, since each of its six bounded steps (lines 4, 8, 13, 14, 15, and 16) costs one line more. The claim "\( \frac1n \to 0 \)" (for \( n \ge 1 \)) is not derived here: its proof needs the Archimedean property, a fact about \( \nN \) inside \( \nR \), not a law of logic.
 
-## The search method, extended
+::: {.remark}
+[Looking ahead]
 
-Section 3.1 put the moves for the connectives in order. Each of Sections 5.3–5.7 added a step. Here is the method with all of them.
-
-::: {.algorithm}
-**Searching for a derivation of \( \Gamma \vdash \varphi \) in predicate logic.**
-
-1. **Set up.** Write the premises \( \Gamma \) at the top and \( \varphi \) at the bottom, with one gap between. Translate any definition in words into a formula first, as in @exm-translate-limit.
-2. **Goal-directed step.** Take the current goal's main symbol and set up its introduction rule:
-   - \( \wedge \), \( \to \), \( \neg \), \( \leftrightarrow \): as in Section 3.1;
-   - \( \forall x\, \psi \): open a **flagged box** with a fresh name \( x_0 \); the new goal, the box's last line, is \( \psi[x_0/x] \) (Section 5.4). For \( \forall x \in A\; \psi \), the box opens with the assumption \( x_0 \in A \);
-   - \( \vee \): **postpone**, as in Section 3.1;
-   - \( \exists x\, \psi \): **postpone**; work on the premises until an available line shows a term \( t \) with \( \psi[t/x] \), then use \( \rulename{\exists I} \) (Section 5.5). For \( \exists x \in A\; \psi \), the line \( t \in A \) is needed too.
-
-   Repeat while the goal is \( \wedge \), \( \to \), \( \neg \), \( \leftrightarrow \), or \( \forall \).
-3. **Premise-directed step.** Take the main symbol of a resource and apply its elimination rule:
-   - \( \wedge \), \( \to \), \( \vee \), \( \leftrightarrow \), and the derived rules: as in Section 3.1;
-   - \( \exists x\, \psi \): open the \( \rulename{\exists E} \) box **early**, as soon as the line is available, with a fresh witness \( x_0 \), and make its last line the current goal, which must not mention \( x_0 \) (Section 5.6). An early box lets the witness serve the goals that come later;
-   - \( \forall x\, \psi \): do not instantiate blindly; instantiate at the term that the goal, or another resource, mentions (Section 5.3). For \( \forall x \in A\; \psi \), the line \( t \in A \) is needed too;
-   - an equation \( t_1 = t_2 \): use \( \rulename{{=}E} \) with a \( \varphi \) chosen so that one substitution turns an available line into the goal, turning the equation round first if needed (Section 5.7).
-4. **Clash.** As in Section 3.1: for the goal \( \bot \), find or manufacture a pair \( \chi \), \( \neg\chi \); an impossible case closes itself by \( \rulename{\bot E} \).
-5. **Stuck.** As in Section 3.1: \( \rulename{RAA} \) on the current goal, or \( \rulename{LEM} \) on a well-chosen statement.
-
-When no gap is left, number the lines and check the derivation as @def-derivation, extended in Section 5.4, says: every citation is available, and every side condition holds (\( t \) free for \( x \) at \( \rulename{\forall E} \) and \( \rulename{\exists I} \), bounded or not; \( t_1 \) and \( t_2 \) free for \( x \) at \( \rulename{{=}E} \); a fresh name at each line that closes a flagged box).
+Induction ("a set of natural numbers that contains \( 0 \) and contains \( n + 1 \) whenever it contains \( n \) contains every natural number") and the least-upper-bound property of the real numbers say "for every **set** of numbers", and the variables of this chapter range over numbers only. Chapter 7's optional last section says what that costs.
 :::
-
-Two of the new steps deserve a word on their place in the order. The goal step for \( \forall \) is safe in the same way as the goal steps for \( \to \) and \( \neg \) (Section 3.1): if \( \forall x\, \psi \) is derivable at all, then so is \( \psi[x_0/x] \) for a fresh \( x_0 \), by one more \( \rulename{\forall E} \); so opening the box loses nothing. The goal step for \( \exists \) is unsafe in the same way as the one for \( \vee \): a witness chosen too early may be the wrong one, as in @exm-existential-introduction-derivations, where "take \( y = c \)" stalled. That is why \( \exists \) is postponed and the \( \rulename{\exists E} \) boxes of the premises are opened early: the witnesses they supply are often the terms the postponed goal is waiting for, as \( N_0 \) was in the limit derivation above.
 
 ## Exercises
 
@@ -358,6 +450,53 @@ Two of the new steps deserve a word on their place in the order. The goal step f
 *(d)* From \( t \in A \) and \( \varphi[t/x] \): first \( t \in A \wedge \varphi[t/x] \) by \( \rulename{\wedge I} \), then \( \exists x\, (x \in A \wedge \varphi) \) by \( \rulename{\exists I} \), which is \( \exists x \in A\; \varphi \) unfolded.
 :::
 
+::: {#exr-translation-a2}
+[A2: Drill]
+
+Each part takes a line or two. The domain is \( \nR \), and \( A \), \( B \) are sets of reals. The parts run from translating, through unfolding and judging, to single steps of the bounded rules.
+
+::: {.enumerate options="label=(\alph*)"}
+1. Translate "\( f \) is bounded above on \( A \)".
+2. Translate "every element of \( A \) is less than some element of \( B \)".
+3. Translate "some element of \( A \) is less than every element of \( B \)".
+4. Unfold the bounds of (c).
+5. Write the mixed stage, then the formula, for "every element of \( A \) has a larger element in \( A \)".
+6. Translate "\( a_n > 0 \) for all large \( n \)".
+7. Translate "\( a_n \le 0 \) for infinitely many \( n \)".
+8. Translate "not every element of \( A \) is positive" and "no element of \( A \) is positive", and decide both for \( A = \{-1, 1\} \).
+9. Translate "if \( x \cdot x < 0 \) for any real \( x \), then \( 0 = 1 \)".
+10. Lines 1 \( \forall \varepsilon > 0\; \varphi \) and 2 \( 1 > 0 \). What does the bounded \( \rulename{\forall E} \) 1, 2 give?
+11. Lines 1 \( 3 \in \nN \) and 2 \( 3 + 3 = 6 \). What does the bounded \( \rulename{\exists I} \) 1, 2 give, with \( \varphi \) the formula \( n + n = 6 \)?
+12. How many lines does a bounded \( \rulename{\exists E} \) save over the unbounded rule?
+:::
+:::
+
+::: {.solution}
+(a) \( \exists M\; \forall x \in A\; (f(x) \le M) \).
+
+(b) \( \forall x \in A\; \exists y \in B\; (x < y) \).
+
+(c) \( \exists x \in A\; \forall y \in B\; (x < y) \).
+
+(d) \( \exists x\, (x \in A \wedge \forall y\, (y \in B \to x < y)) \).
+
+(e) \( \forall x \in A\; [\text{some element of } A \text{ is larger than } x] \), then \( \forall x \in A\; \exists y \in A\; (x < y) \).
+
+(f) \( \exists N \in \nN\; \forall n \in \nN\; (n \ge N \to a_n > 0) \).
+
+(g) \( \forall N \in \nN\; \exists n \in \nN\; (n \ge N \wedge a_n \le 0) \).
+
+(h) \( \neg\forall x \in A\; (x > 0) \), true for \( \{-1, 1\} \) (because of \( -1 \)); \( \neg\exists x \in A\; (x > 0) \), or \( \forall x \in A\; \neg(x > 0) \), false (because of \( 1 \)). One word apart, opposite truth values.
+
+(i) \( \exists x\, (x \cdot x < 0) \to 0 = 1 \): "any" after "if" is "some". It is true, since no real square is negative.
+
+(j) \( \varphi[1/\varepsilon] \).
+
+(k) \( \exists n \in \nN\; (n + n = 6) \).
+
+(l) One: two assumptions in place of one assumption and two \( \rulename{\wedge E} \) lines.
+:::
+
 ### B. Practice
 
 ::: {#exr-translation-b1}
@@ -381,7 +520,7 @@ No constants occur in any of the three parts.
 
 *(b)* Domain \( \nR \); \( x \), \( y \) variables (bound); \( f \) a one-place function symbol; \( \in A \) a one-place and \( < \), \( \le \) two-place predicate symbols. \( \forall x \in A\; \forall y \in A\; \bigl( x < y \to f(x) \le f(y) \bigr) \).
 
-*(c)* Domain \( \nR \); \( M \), \( n \) variables (bound); \( a \) a one-place function symbol (the one-domain convention of Section 5.1), and \( \abs{\cdot} \) a one-place function symbol; \( \in \nN \) a one-place and \( \le \) a two-place predicate symbol. \( \exists M\; \forall n \in \nN\; (\abs{a_n} \le M) \).
+*(c)* Domain \( \nR \); \( M \), \( n \) variables (bound); \( a \) a one-place function symbol (the one-domain convention, step 1 of the procedure), and \( \abs{\cdot} \) a one-place function symbol; \( \in \nN \) a one-place and \( \le \) a two-place predicate symbol. \( \exists M\; \forall n \in \nN\; (\abs{a_n} \le M) \).
 
 Swapped: \( \forall n \in \nN\; \exists M\; (\abs{a_n} \le M) \). It holds for every sequence, because the witness may depend on \( n \): take \( M = \abs{a_n} \). The sequence \( a_n = n \), which is not bounded, satisfies it. As in @exm-quantifier-order-sum, the swap turns a statement about one \( M \) for all \( n \) into a statement about each term separately.
 :::
@@ -419,6 +558,94 @@ $\begin{nd}
 At line 8, \( x_0 \) is not in line 8, not in line 2, and not in either premise; no other box is open. The derivation uses three bounded steps (lines 5, 7 and 8), each of which costs one more line unbounded, so the unbounded derivation has \( 8 + 3 = 11 \) lines: the \( \rulename{\exists E} \) box assumes \( x_0 \in A \wedge P(x_0) \) and splits it with two \( \rulename{\wedge E} \) lines; line 5 becomes \( \rulename{\forall E} \) then \( \rulename{{\to}E} \); line 7 becomes \( \rulename{\wedge I} \) then \( \rulename{\exists I} \).
 
 The bound is the whole point of the exercise: the witness \( x_0 \) must carry its membership in \( A \) from the premise to the conclusion, and the bounded rules make that one assumption and one citation.
+:::
+
+::: {#exr-translation-b3}
+[B3: One key, twenty sentences]
+
+The domain is \( \nN = \{0, 1, 2, \dots\} \). Use only \( \mathrm{Prime}(x) \) ("\( x \) is prime"), \( \mathrm{Even}(x) \), \( x < y \), \( x \mid y \) ("\( x \) divides \( y \)", that is, \( y = x \cdot k \) for some \( k \)), \( = \) and the constants \( 1 \), \( 2 \), \( 9 \), with variables \( x \), \( y \), \( z \). Translate sentences 1–18 into formulas. Then translate 19 and 20 into English and decide whether each is true.
+
+1. \( 2 \) is an even prime.
+2. Some prime divides \( 9 \).
+3. Every prime greater than \( 2 \) is odd.
+4. No prime is less than \( 2 \).
+5. Every even number is divisible by \( 2 \).
+6. Only odd numbers divide \( 9 \).
+7. \( 1 \) divides every number.
+8. Some number divides every number.
+9. Every number is divisible by some number.
+10. There is no largest prime.
+11. There are infinitely many primes.
+12. Every number greater than \( 1 \) has a prime divisor.
+13. The only divisors of a prime are \( 1 \) and the prime itself.
+14. If a number divides \( 2 \), it is \( 1 \) or \( 2 \).
+15. Not every odd number is prime.
+16. Between any two numbers, one less than the other, there is a third.
+17. Some prime divides every even number.
+18. Every divisor of \( 1 \) is \( 1 \).
+19. \( \forall x\, \forall y\, ((x \mid y \wedge y \mid x) \to x = y) \).
+20. \( \forall x\, (\mathrm{Even}(x) \to \exists y\, (\mathrm{Prime}(y) \wedge y \mid x \wedge \neg(y = 2))) \).
+:::
+
+::: {.solution}
+1. \( \mathrm{Even}(2) \wedge \mathrm{Prime}(2) \).
+2. \( \exists x\, (\mathrm{Prime}(x) \wedge x \mid 9) \).
+3. \( \forall x\, ((\mathrm{Prime}(x) \wedge 2 < x) \to \neg\mathrm{Even}(x)) \).
+4. \( \neg\exists x\, (\mathrm{Prime}(x) \wedge x < 2) \), or \( \forall x\, (\mathrm{Prime}(x) \to \neg(x < 2)) \).
+5. \( \forall x\, (\mathrm{Even}(x) \to 2 \mid x) \).
+6. \( \forall x\, (x \mid 9 \to \neg\mathrm{Even}(x)) \).
+7. \( \forall x\, (1 \mid x) \).
+8. \( \exists x\, \forall y\, (x \mid y) \).
+9. \( \forall y\, \exists x\, (x \mid y) \).
+10. \( \forall x\, (\mathrm{Prime}(x) \to \exists y\, (\mathrm{Prime}(y) \wedge x < y)) \).
+11. \( \forall x\, \exists y\, (x < y \wedge \mathrm{Prime}(y)) \).
+12. \( \forall x\, (1 < x \to \exists y\, (\mathrm{Prime}(y) \wedge y \mid x)) \).
+13. \( \forall x\, (\mathrm{Prime}(x) \to \forall y\, (y \mid x \to (y = 1 \vee y = x))) \).
+14. \( \forall x\, (x \mid 2 \to (x = 1 \vee x = 2)) \).
+15. \( \neg\forall x\, (\neg\mathrm{Even}(x) \to \mathrm{Prime}(x)) \).
+16. \( \forall x\, \forall y\, (x < y \to \exists z\, (x < z \wedge z < y)) \).
+17. \( \exists x\, (\mathrm{Prime}(x) \wedge \forall y\, (\mathrm{Even}(y) \to x \mid y)) \).
+18. \( \forall x\, (x \mid 1 \to x = 1) \).
+19. "Two numbers that divide each other are equal." True in \( \nN \): if \( y = xk \) and \( x = yl \), then \( x = xkl \), so either \( x = 0 \), and then \( y = 0 \) too, or \( kl = 1 \), which in \( \nN \) means \( k = l = 1 \).
+20. "Every even number has a prime divisor other than \( 2 \)." False: at \( x = 2 \), and at every power of \( 2 \) (\( 4, 8, 16, 32, \dots \)), the only prime divisor is \( 2 \).
+
+Sentence 10 restricts \( x \) to primes and 11 does not; both are true, and in \( \nN \) each follows from the other. Sentence 16 is false (take \( x = 0 \), \( y = 1 \)), and its translation is still correct: a correct translation of a false sentence is a false formula.
+:::
+
+::: {#exr-translation-b4}
+[B4: Unfold, then fold back]
+
+Over \( \nR \), for fixed sets \( A \), \( B \), \( C \) of reals, write \( A \subseteq B \) for "every element of \( A \) is an element of \( B \)", \( A \cup B \) for the set of reals in \( A \) or in \( B \), and \( A \cap B \) for the set of those in both. Use only the predicates \( \in A \), \( \in B \), \( \in C \).
+
+::: {.enumerate options="label=(\alph*)"}
+1. Unfold \( A \subseteq B \cap C \).
+2. Unfold \( A \cup B \subseteq C \).
+3. Unfold "\( A \cap B \) has no element".
+4. Fold back \( \forall x\, (x \in A \to x \in B) \wedge \forall x\, (x \in B \to x \in C) \).
+5. Fold back \( \forall x\, ((x \in A \wedge x \in B) \to x \in C) \).
+6. A reader unfolds \( A \cup B \subseteq C \) as the formula in (e). Give sets that separate the two, and say why the reader's formula is wrong.
+:::
+:::
+
+::: {.solution}
+*(a)* \( \forall x\, (x \in A \to (x \in B \wedge x \in C)) \).
+
+*(b)* \( \forall x\, ((x \in A \vee x \in B) \to x \in C) \).
+
+*(c)* \( \neg\exists x\, (x \in A \wedge x \in B) \).
+
+*(d)* \( A \subseteq B \) and \( B \subseteq C \).
+
+*(e)* \( A \cap B \subseteq C \).
+
+*(f)* \( A = \{1\} \), \( B = \{2\} \), \( C = \emptyset \). Then \( A \cup B \subseteq C \) is false, since \( 1 \in A \cup B \) and \( 1 \notin C \). The formula of (e) is true, because \( A \cap B \) has no element, so its hypothesis \( x \in A \wedge x \in B \) is false for every \( x \). The reader's mistake is trap (b) of the section: "in \( A \) or in \( B \)" is the restriction of (b), and it must be written with \( \vee \); the "and" of "every element of \( A \) and of \( B \)" is an "or" in the restriction.
+
+**Marking scheme.** (10 points)
+- 2: (a)–(c) together, with every bound attached by \( \to \) under \( \forall \) (and by \( \wedge \) under the \( \exists \) of (c)).
+- 2: (d) and (e).
+- 3: (f): the two sets, with one sentence on each truth value.
+- 3: the reason in words that the restriction of (b) is an "or".
+Fatal error (0 for (f)): a pair of sets on which the two formulas agree.
 :::
 
 ### C. Going deeper
@@ -495,19 +722,87 @@ Every two rows differ in at least one column, so every two groups are separated 
 Fatal errors (0 for the step): exchanging \( \forall \) with \( \exists \); a "separation" in which the two sentences have the same truth value.
 :::
 
+::: {#exr-translation-c3}
+[C3: Eventually, therefore infinitely often]
+
+::: {.enumerate options="label=(\alph*)"}
+1. With the bounded rules, derive
+   \[
+   \exists N \in \nN\; \forall n \in \nN\; (n \ge N \to P(n)) \;\vdash\; \forall M \in \nN\; \exists n \in \nN\; (n \ge M \wedge P(n)).
+   \]
+   Lines of arithmetic may be justified "arith".
+2. For the converse, give a reading of \( P \) over \( \nN \) under which the premise is true and the conclusion false.
+:::
+:::
+
+::: {.solution}
+*(a)* The goal is a bounded \( \forall \): open its box first, with \( M_0 \in \nN \). The premise is a bounded \( \exists \): open its box early, with \( N_0 \in \nN \) and its property. The postponed goal \( \exists n \in \nN \) needs a term that is at least \( M_0 \) and at which the premise applies, so at least \( N_0 \): the sum \( N_0 + M_0 \) is both.
+
+```{=latex}
+\begin{center}
+$\begin{nd}
+  \hypo {1} {\exists N \in \nN \; \forall n \in \nN \; (n \ge N \to P(n))}
+  \open[M_0]
+  \hypo {2} {M_0 \in \nN}
+  \open[N_0]
+  \hypo {3} {N_0 \in \nN}
+  \hypo {4} {\forall n \in \nN \; (n \ge N_0 \to P(n))}
+  \have {5} {N_0 + M_0 \in \nN} \by{arith}{2,3}
+  \have {6} {N_0 + M_0 \ge N_0 \to P(N_0 + M_0)} \Ae{4,5}
+  \have {7} {N_0 + M_0 \ge N_0} \by{arith}{2}
+  \have {8} {P(N_0 + M_0)} \ie{6,7}
+  \have {9} {N_0 + M_0 \ge M_0} \by{arith}{3}
+  \have {10} {N_0 + M_0 \ge M_0 \wedge P(N_0 + M_0)} \ai{9,8}
+  \have {11} {\exists n \in \nN \; (n \ge M_0 \wedge P(n))} \Ei{5,10}
+  \close
+  \have {12} {\exists n \in \nN \; (n \ge M_0 \wedge P(n))} \Ee{1,3-11}
+  \close
+  \have {13} {\forall M \in \nN \; \exists n \in \nN \; (n \ge M \wedge P(n))} \Ai{2-12}
+\end{nd}$
+\end{center}
+```
+
+Lines 7 and 9 use \( M_0 \ge 0 \) and \( N_0 \ge 0 \), which hold for natural numbers. The side conditions:
+
+- At line 12, \( N_0 \) is not in line 12, not in line 1, not in the premise, and not in the open assumption on line 2.
+- At line 13, \( M_0 \) is not in the premise and not in line 13, and no assumption is open.
+- At lines 6 and 11, the term \( N_0 + M_0 \) is free for \( n \).
+
+The witness \( N_0 + M_0 \) is built from the two names in play: fix \( M_0 \), obtain \( N_0 \), choose a term made from both.
+
+*(b)* Let \( P(n) \) be "\( n \) is even". The premise of the converse, \( \forall M \in \nN\; \exists n \in \nN\; (n \ge M \wedge P(n)) \), is true: beyond any \( M \) there is an even number, such as \( 2M \). Its conclusion, \( \exists N \in \nN\; \forall n \in \nN\; (n \ge N \to P(n)) \), is false: beyond any \( N \) there is an odd number, \( 2N + 1 \). This is a counter-reading (Section 7.2).
+
+**Marking scheme.** (10 points)
+- 2: opens the box of \( M_0 \) first, and the \( \rulename{\exists E} \) box on the premise early.
+- 3: a witness that depends on both names, with both bounds checked by arith lines.
+- 2: checks the side conditions at lines 12 and 13.
+- 3: (b): a reading, with both truth values justified.
+Fatal errors (0 for the step): a witness chosen before \( M_0 \) is given; the witness \( N_0 \) itself, which need not be at least \( M_0 \).
+:::
+
 <!-- dependency ledger
-exm-translate-limit (solution): p | n means n = p * k for some integer k | NOTATION.md row for d | n (definition, first used F1.2); stated in the solution
-exm-translate-limit (solution): (d) the two forms of "no largest prime" say the same thing over N; not (q <= p) iff p < q over N | order fact (school arithmetic); the logical part is F1.8 §02 (later section of this chapter; prose pointer only, nothing here rests on it)
+exm-translate-limit (solution): m | n means n = m * k for some integer k | NOTATION.md row for d | n (definition, first used F1.2); stated in the solution
+exm-translate-limit (solution): (d) the two forms of "no largest prime" say the same thing over N; not (n <= m) iff m < n over N | order fact (school arithmetic); the logical part is F1.8 §02 (later section of this chapter; prose pointer only, nothing here rests on it)
 translation-check (solution): (0, 1) is bounded above by 1 (x < 1 for x in (0, 1)) and has no maximum (m < (m+1)/2 < 1 for m in (0, 1)) | school algebra (order); AN1.1 (prose pointer); checked by verify/ch06/exm-translate-limit.py
-exm-translate-limit (claim, the opening list): 1, 1/2, 1/3, ... has terms not all close to any L; only eventually-L sequences satisfy the swapped form | informal reading, illustrative only; no result rests on it
-exm-translate-limit (claim, the warning): f(x) = x is bounded by 1 on [0, 1] and not on R; a_n = n - 3 has a_0 = -3 and a_n > 0 for n >= 4 | school arithmetic; checked by verify/ch06/exm-translate-limit.py
+exm-translate-limit (claim): the opening list: 1, 1/2, 1/3, ... has terms not all close to any L; only eventually-L sequences satisfy the swapped form | informal reading, illustrative only; no result rests on it
+exm-translate-limit (claim): the warning: f(x) = x is bounded by 1 on [0, 1] and not on R; a_n = n - 3 has a_0 = -3 and a_n > 0 for n >= 4 | school arithmetic; checked by verify/ch06/exm-translate-limit.py
 prp-bounded-quantifier-rules (proof): (x in A -> phi)[t/x] is t in A -> phi[t/x]; t free for x in (x in A -> phi) iff t free for x in phi; likewise with x > a when x does not occur in a | def-substitution, def-free-for (cited); argued inline
 prp-bounded-quantifier-rules (proof): moving lines into a new enclosing box keeps each citation available | def-derivation's scope rule (F1.1, cited as def-derivation via F1.4 §04's extension to flagged boxes); argued inline
 prp-bounded-quantifier-rules (claim): a new rule is admissible if every use can be replaced by old steps | def-derived-rule (cited), extended; argued in the text
-prp-bounded-quantifier-rules (example, the limit derivation): eps_0 > 0 gives eps_0/2 > 0; |a - L| < eps_0/2 gives |2a - 2L| < eps_0 since |2u - 2v| = 2|u - v| | arith lines (school algebra); AN1.1 (prose pointer for the Archimedean remark only)
-prp-bounded-quantifier-rules (example, the limit derivation): the unbounded version has 22 lines | inline count: 16 lines + one per bounded step (six)
-prp-bounded-quantifier-rules (claim, the search method): opening a forall box loses nothing: forall-E at a fresh name recovers psi[x_0/x] | inline, as in F1.7 §01's argument for ->
+prp-bounded-quantifier-rules (example): the limit derivation: eps_0 > 0 gives eps_0/2 > 0; |a - L| < eps_0/2 gives |2a - 2L| < eps_0 since |2u - 2v| = 2|u - v| | arith lines (school algebra); AN1.1 (prose pointer for the Archimedean remark only)
+prp-bounded-quantifier-rules (example): the limit derivation: the unbounded version has 22 lines | inline count: 16 lines + one per bounded step (six)
 exr-translation-a1 (solution): 7 not in {0}; no natural number exceeds every natural number; 1 divides every n | school arithmetic; checked by verify/ch06/exr-translation-a1.py
 exr-translation-c2 (solution): exchange of adjacent foralls for any matrix | exm-universal-introduction-derivations (cited); its derivation uses nothing about R(x, y) but that it is a formula
 exr-translation-c2 (solution): truth values over Z of the eight sentences in the table | informal truth, F1.4 §01; witnesses y = x + 1, y = z + 1 given; checked by verify/ch06/exr-translation-c2.py
+exm-translate-limit (claim): step 1 of the procedure, a convention: one domain per formula; the larger kind is the domain and the smaller kind enters as a bound; a sequence is a function symbol | convention of this book, no fact (moved from old 5.1; 5.1 keeps two sentences, "Mixing kinds of number")
+exm-translate-limit (example): the mixed stage: the three stages say the same thing as "for every positive eps, some element of A lies within eps of s" | no fact; reading back
+exm-translation-traps (example): no natural number lies strictly between 1/3 and 2/3, and 1/2 does; 2 is even and not a multiple of 4, and every multiple of 4 is even; 6 divides 6, 1 is odd, every multiple of 6 is even; A = {1}, B = {-1} has no common element; every element of the empty set has every property | school arithmetic; the empty set and "any" from F1.4 §01 (cited as Section 5.1); one-domain convention of step 1; checked by verify/ch06/exm-translation-traps.py
+exm-translation-traps (claim): infinitely many and eventually: (-1)^n is positive at every even n and negative at every odd n | parity (school arithmetic)
+exm-translation-traps (claim): translation error or derivation error: not (7 in {1, 2}); 7 > 5; neither 1 nor 2 exceeds 5; the two steps are prp-vacuous-implication and exists-I | school arithmetic; prp-vacuous-implication (F1.2, cited)
+prp-bounded-quantifier-rules (claim): the Not-allowed block: each wrong step breaks the named condition of the proposition | prp-bounded-quantifier-rules (cited); no entry is legal
+prp-bounded-quantifier-rules (example): the outline of the limit derivation: lines 1-6 and 13-16 of the outline are those of the full derivation with G and G_2 abbreviated | inline; the full derivation is checked line by line
+exr-translation-a2 (solution): (h) on {-1, 1}; (i) x * x >= 0 for every real x | school algebra; checked by verify/ch06/exr-translation-a2.py
+exr-translation-b3 (solution): the twenty formulas against their sentences over N; 19 true (x = xkl gives x = 0 = y or k = l = 1); 20 false at powers of 2; 16 false at (0, 1); 10 and 11 both true (Euclid, school fact) | school arithmetic; checked by verify/ch06/exr-translation-b3.py (bounded search to 60)
+exr-translation-b4 (solution): A = {1}, B = {2}, C = empty separate (b) from (e) | school arithmetic; checked by verify/ch06/exr-translation-b4.py
+exr-translation-c3 (solution): N_0 + M_0 is in N and at least N_0 and M_0 for N_0, M_0 in N; beyond any M there is an even number (2M) and beyond any N an odd one (2N + 1) | arith lines (school arithmetic); checked by verify/ch06/exr-translation-c3.py; counter-reading pointer to F1.6 §02 (prose, nothing rests on it)
 -->

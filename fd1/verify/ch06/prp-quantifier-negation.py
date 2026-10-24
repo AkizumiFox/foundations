@@ -1,4 +1,4 @@
-"""prp-quantifier-negation and prp-bounded-quantifier-negation (Section 4.9): an independent
+"""prp-quantifier-negation and prp-bounded-quantifier-negation (Section 6.2): an independent
 semantic sanity check. Every direction derived in the text must hold in every finite structure
 (a derivable sequent is valid), so we check each direction in all structures with at most three
 elements, with phi = R(x, y) (x and y free), under every assignment of y. The bounded laws are

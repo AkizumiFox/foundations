@@ -1,4 +1,4 @@
-"""exr-quantifier-laws-c2 (Section 4.9, exit check (b)): f(x) = 1/x on (0, 1), eps = 1; for each
+"""exr-quantifier-laws-c2 (Section 6.2, exit check (b)): f(x) = 1/x on (0, 1), eps = 1; for each
 delta, t = min(delta, 1/2), x = t, y = t/2: x, y in (0, 1), |x - y| = t/2 < delta and
 |1/x - 1/y| = 1/t >= 2 >= 1."""
 from fractions import Fraction as F
