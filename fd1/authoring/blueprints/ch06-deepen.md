@@ -1,7 +1,7 @@
 <!-- hand-written -->
 # Deepening blueprint: F1.8 Working with Quantifiers: Translation, Laws and Search (fd1 Chapter 6), D (stage S1)
 
-**Status: S1 draft, 2026-10-13; S2 rounds 1 and 2 findings applied (see "S2 replies" at the end).**
+**Status: S1 draft, 2026-10-13; S2 rounds 1 and 2 findings applied; reconciled with the delivered Chapters 2–5 and frozen, 2026-10-25 (see "S2 replies" at the end, round 3).**
 
 **What this is.** The **full** S1 blueprint for fd1 Chapter 6 (atlas F1.8), the chapter the final layout builds from old Sections 4.8–4.10 and one new section (`layout-final.md` §1.3, §6.2 item 6). It is complete on its own. A drafter executes it with this file, the current `fd1/src/ch06-working-with-quantifiers/` (moved there by D2, commit `034a2ae`), the frozen `ch04-revision.md` (R4) §4.8–§4.10 for every detail this file keeps and does not repeat, `authoring/STYLE.md` (§11, §12, and §12.8 and §12.13 as amended by D1), `DRAFTING.md` (including `\purpose`, `\taut` and the Diagrams templates of `latex/book-diagrams.sty`) and `NOTATION.md`. The model of register and format is the deepened Chapter 1 and its blueprint `ch01-deepen.md`.
 
@@ -209,14 +209,15 @@ Budgets count **main-line** prose words, as `tools/check_structure.py --words` c
 
 ### 4.0 `index.md` (written new; replaces the D2 placeholder ix:1–16)
 
-**Budget:** ≤ 1,000 words. Expected about 960: story ~110, mirror box ~70, What you need ~110, Time ~35, Minimum ~30, Roadmap ~110, Named moves ~140, Where this goes ~120, Summary ~140, Terms ~150. No fold. Written last, against the delivered sections (DRAFTING).
+**Budget:** ≤ 1,000 words. Expected about 985: story ~100, mirror box ~70, What you need ~110, Time ~35, Minimum ~25, How to read ~35, Roadmap ~110, Named moves ~130, Where this goes ~120, Summary ~140, Terms ~150. No fold. Written last, against the delivered sections (DRAFTING).
 
 1. **Title:** `# Working with Quantifiers: Translation, Laws and Search` (ix:1, kept).
 2. **Story and motivating question** (~110 words, replaces ix:3). A first course in analysis defines a limit in one sentence with three quantifiers and two bounds, then asks the reader to prove that a sequence does **not** converge, which needs that sentence negated. Chapter 5 gave every quantifier rule, one per section, and this chapter puts them to work on three tasks: turning a definition into a formula, negating and rearranging it by laws, and finding the derivation a claim needs. Then the layout's question, in italics: *"You know every quantifier rule. Can you turn a definition from analysis into a formula, negate it without error, and find the derivation it needs?"* Last, one sentence: the chapter ends where Chapter 5 began, with why "uniformly continuous implies continuous" has a short derivation while its converse is false.
 3. **Mirror box** (layout §1.2, G13), a `::: {.remark}` titled `[Looking back]`, ~70 words: "Chapter 3 did for the connectives what this chapter does for the quantifiers. Section 3.3 turned arguments in words into derivations; Section 6.1 does the same for definitions with quantifiers. Section 3.2 sorted the tasks, and Section 3.1 gave the search method; Section 6.3 does both again, with flags and witnesses. Section 6.2 collects the equivalences the tasks keep using. Section 6.4 has no twin: it is the chapter's capstone."
-4. **What you need** (~110 words): "Chapters 1–5. From Chapter 3: the search method (Section 3.1) and the four kinds of task (Section 3.2). From Chapter 4: truth tables and tautological consequence (@def-valid-argument), completeness (@thm-completeness) and the TAUT step for propositional formulas (@def-rule-taut). From Chapter 5: the four quantifier rules with their side conditions (@def-rules-universal, @def-rules-existential), bounded quantifiers (@def-bounded-quantifier), substitution, free-for and renaming (Section 5.2), equality (Section 5.7), and counter-readings (Section 5.3). School arithmetic and the order of \( \nN \), \( \nZ \), \( \nR \) are used in examples as facts." (`def-rule-taut` is a new label of `ch04-deepen` (layout §1.4, 4.8); S4 checks that it exists before this index is built.)
+4. **What you need** (~110 words): "Chapters 1–5. From Chapter 3: the search method (Section 3.1) and the four kinds of task (Section 3.2). From Chapter 4: truth tables and semantic entailment (@def-valid-argument), completeness (@thm-completeness), the move *test the subgoal* (Section 4.7) and the TAUT step for propositional formulas (@def-rule-taut). From Chapter 5: the four quantifier rules with their side conditions (@def-rules-universal, @def-rules-existential), bounded quantifiers and the convention for mixing kinds of number (@def-bounded-quantifier), substitution, free-for and renaming (Section 5.2), equality (Section 5.7), and counter-readings ([Section 5.3](#counter-readings)). School arithmetic and the order of \( \nN \), \( \nZ \), \( \nR \) are used in examples as facts." (`def-rule-taut` is delivered in 4.8, `08-completeness.md`; the counter-reading link is written as Chapter 5's index writes it.)
 5. **Time** (STYLE §11.9): recomputed by the drafter from the delivered text and exercise counts (§5). The expected line is "About 20 hours on the core track (all of A, one B and one C per section, the exit checks); about 40 hours for everything." Not shaded down.
-6. **Minimum for fd2** (layout G14, one line, the same as every index): "**Minimum for fd2.** Chapters 1–6 and 8, core; Chapter 7 (Sections 7.1–7.2) before *Sets, Relations, and Cardinality*, Chapter 3."
+6. **Minimum** (layout G14, one line, word for word as delivered in the indexes of Chapters 1–5): "**Minimum before *Sets, Relations, and Cardinality*.** Chapters 1–6 and 8, core; Sections 7.1–7.2 before its Chapter 3."
+   - **How to read this chapter** (new, ~35 words, after the Minimum line, as in the indexes of Chapters 4 and 5): "**How to read this chapter.** Every section is on the first reading, with its folds closed. The folds hold the proofs of the bounded rules, of the replacement rule and of TAUT on the skeleton, the derivations of the distribution and passage laws, and short remarks on edge cases. They are not optional: later proofs may use them."
 7. **Roadmap** (replaces ix:7–11; four bullets, one sentence each):
    - **Translating mathematics.** Definitions from analysis as formulas, worked from the outside in; the bounded rules; five traps, each with a reading that shows the wrong formula wrong; "infinitely many" against "eventually".
    - **Negating and moving quantifiers.** "Not every" is "some not"; negation pushed inward law by law, through the replacement rule; the four forms A, E, I, O and their square; the laws that move a quantifier across a connective, and prenex form.
@@ -225,10 +226,10 @@ Budgets count **main-line** prose words, as `tools/check_structure.py --words` c
 8. **Named moves** (replaces ix:13–16; each with the section where it is named):
    - **Read it back** (6.1): read a translation back into words before using it.
    - **Negate quantifier by quantifier** (6.2): ix:15 kept.
-   - **Open the ∃E boxes early, postpone ∀E until the term is known** (6.3; recalls 5.6 and 5.3).
+   - **Name the witness early, then instantiate at the term it supplies** (6.3): Chapter 5's two moves of Sections 5.6 and 5.3, put in order. The index names them as Chapter 5's index does and adds only the order.
    - **The propositional core** (6.3): instantiate at the names in play, reason propositionally (with TAUT), then close the boxes.
-   - **Test the subgoal by a counter-reading** (6.3).
-   - **Read the dependency off the boxes** (6.4): ix:16 "read the dependency off the order" kept, with "(Section 5.1; off the boxes, Section 6.4)".
+   - **Test the subgoal by a counter-reading** (6.3): the first-order form of Section 4.7's *test the subgoal*.
+   - **Read the dependency off the boxes** (6.4). ix:16's "read the dependency off the order" is not repeated: Chapter 5's index already names it for Section 5.1.
 9. **Where this goes** (new, ~120 words, bold lead-in; the cross-volume pointers of 6.1–6.4, gathered here by R4 §1 item 3's rule): "*Analysis on the Real Line*, Chapter 1 proves from the axioms of the real numbers the facts about \( \nN \) inside \( \nR \) and about absolute value that Sections 6.1 and 6.2 use as school facts, and it uses '"not every" gives "some not"' (Section 6.2) in its proof of the Archimedean property. Its Chapters 5 and 6 define continuity and uniform continuity properly, which Section 6.4 uses only as quantifier patterns. Picking a witness for every ε at once, as one function (Section 6.4), is in general an appeal to the axiom of choice, which *Sets, Relations, and Cardinality*, Chapter 3 states." These replace the pointers R4 cut from 01:305, 02:118, 02:718 and 04:7, which R4 §4.0 item 7 had sent to Chapter 5's index. STATUS rows F1.8 §01/§02 → AN1.1 and F1.8 §04 → AN1.5, AN1.6 move their source to "F1.8 index" (§6), and the axiom-of-choice row is new.
 10. **`## Summary`** (~140 words, STYLE §12.13.5), four to six sentences:
     - **Proved:** the bounded rules are abbreviations, not new power; "not every" is "some not", with one direction classical; a negated implication is a conjunction; a bound stays with its quantifier; a part may be replaced by a provably equivalent part anywhere, by a syntactic induction; a step that is right for propositional reasons alone is derivable (TAUT on the skeleton).
@@ -261,7 +262,15 @@ Budgets count **main-line** prose words, as `tools/check_structure.py --words` c
 1. **Opening (01:3).** Kept up to "… and every bound costs extra lines in a derivation." The last three sentences ("This section does three things. … extended to quantifiers and equality.") become: "This section does three things. It translates the standard definitions into formulas, by a procedure that works from the outside in. It turns each quantifier rule into a **bounded** rule that handles the bound in the same step. And it collects the traps that make a translation wrong, each with a reading that shows the wrong formula wrong." (The search method now lives in 6.3.)
 2. **Looking back** (new, after 01:3; ~55 words): `::: {.remark}` `[Looking back]`: "Section 3.3 turned an argument in words into a derivation, with one key for a whole paragraph. This section does the same for definitions with quantifiers. What is new is the order of the quantifiers and the bounds they carry, which the propositional key never had."
 3. **Four pieces in one sentence** (01:5–13): kept.
-4. **Translation from the outside in** (01:15–25): R4 item 2, with the paragraph moved from 5.1 (`ch05…/01:178–182`, 156 words) as step 1's body, and the one reworded sentence. Then, after 01:25, **a mixed stage** (new, ~90 words, bold lead-in `**A mixed stage.**`; technique: Sm, En, LB): "Halfway through, a translation is part words and part symbols, and writing that stage down catches most slips." Then a three-row display (an `aligned` block of three lines, words in `\text{…}`), for "for every positive ε, some element of \( A \) lies within ε of \( s \)":
+4. **Translation from the outside in** (01:15–25): R4 item 2, with the "one domain per formula" paragraph as step 1's body, and the one reworded sentence. Chapter 5 as delivered keeps only the two sentences "Mixing kinds of number" (05/01:238, after @def-bounded-quantifier), so **Section 6.1 carries the convention in full**, and 5.2's fold F4.2-d (`exm-free-and-bound-limit`) and 5.2's shorthand \( a_n \) rest on 5.1's two sentences, while 6.4 (04:7) and every translation of this chapter rest on 6.1's paragraph. Spelled out:
+   - **Source:** old 5.1 lines 178–182, `git show 034a2ae:fd1/src/ch05-predicate-logic/01-predicates-and-quantifiers.md`, from "**One domain per formula.** The logic of this book has a single domain …" to its last sentence. The paragraph is verbatim (its display \( \forall \varepsilon > 0 \; \exists N \in \nN \; \forall n \in \nN \; (n \ge N \to \dots) \) and the sentence on the function symbol \( a \) included), except the last sentence.
+   - **Step 1 reads:** "**Fix the domain.** State what the variables range over. A sentence of analysis often mixes kinds of objects:" (R4's lead), then the paragraph.
+   - **The reworded last sentence:** "We state this convention once, here; every translation in this chapter and in Chapter 6 follows it." → "Section 5.1 stated this convention in two sentences ('Mixing kinds of number'); here it is in full, and every translation in this chapter follows it."
+   - **Cut:** the delivered 01:21 ("By the one-domain convention of Section 5.1 …"), which the paragraph replaces. 01:384's "(the one-domain convention of Section 5.1)", in the solution of B1 (c), becomes "(the one-domain convention, step 1 of the procedure)", a pointer remap only (§8).
+   - **Budget:** ≤ 200 main-line words for step 1 (the paragraph ~156, the lead ~17, the reworded sentence ~25), replacing 01:21 (~60), so about +110 net. This is inside R4's ~3,290 (R4 counted the move among its "about 330 new or moved in"), so the section's expected ~3,680 stands.
+   - **Ledger:** one new line for the paragraph (a convention, no fact). No other text changes for it: `exm-translate-limit` stays verbatim, and 04:7 already works over \( \nR \) with the convention unnamed.
+   
+   Then, after 01:25, **a mixed stage** (new, ~90 words, bold lead-in `**A mixed stage.**`; technique: Sm, En, LB): "Halfway through, a translation is part words and part symbols, and writing that stage down catches most slips." Then a three-row display (an `aligned` block of three lines, words in `\text{…}`), for "for every positive ε, some element of \( A \) lies within ε of \( s \)":
    - stage 1: \( \forall \varepsilon > 0 \; [\text{some element of } A \text{ lies within } \varepsilon \text{ of } s] \);
    - stage 2: \( \forall \varepsilon > 0 \; \exists x \in A \; [x \text{ lies within } \varepsilon \text{ of } s] \);
    - stage 3: \( \forall \varepsilon > 0 \; \exists x \in A \; (\abs{x - s} < \varepsilon) \).
@@ -269,11 +278,11 @@ Budgets count **main-line** prose words, as `tools/check_structure.py --words` c
    Then one sentence: "Read the last line back, symbol by symbol, into words: if the words are the sentence you began with, the translation is done." (This is the named move *read it back*.)
 5. **`exm-translate-limit`, 01:73, Quick check 01:75–81, warning 01:83–85:** R4 item 3 (verbatim, with the bound letters of (d) and (e) renamed to \( m, n \)).
 6. **`## Five traps`** (new subsection after the warning 01:85, before "Rules for bounded quantifiers"; ~380 words including the table; technique: LB, Hu, Sm, Ho, a traps gallery with each wrong version refuted). Lead-in, two sentences: "The warning above caught three slips. Here are five more, each with the reading that shows the wrong formula saying something else." Then **`exm-translation-traps`** `[Five traps, each with a separating reading]`, a pipe table with the columns *sentence* | *wrong* | *right* | *a reading that separates them*. Domain \( \nR \) unless the row says \( \nN \); \( A \), \( B \) are sets of reals, and \( x \in A \) is a one-place predicate (Section 5.1).
-   - (a) "\( A \) has at least two elements." | \( \exists x\, \exists y\, (x \in A \wedge y \in A) \) | \( \exists x\, \exists y\, (x \in A \wedge y \in A \wedge x \ne y) \) | \( A = \{3\} \): the sentence is false; the wrong formula is true, with \( x \) and \( y \) both \( 3 \). Two letters may name one element, and "two" needs \( x \ne y \). (Section 5.1's \( \forall \)-with-\( \wedge \) slip is not repeated here: 5.1 works it at 05/01:169 and drills it at 05/01:361.)
+   - (a) "Some natural number lies strictly between \( \tfrac13 \) and \( \tfrac23 \)." | \( \exists n\, (\tfrac13 < n \wedge n < \tfrac23) \) | \( \exists n \in \nN\; (\tfrac13 < n \wedge n < \tfrac23) \) | Domain \( \nR \), by step 1: the sentence is false, since \( 0 < \tfrac13 \) and \( \tfrac23 < 1 \); the wrong formula is true, with \( n = \tfrac12 \). "Under one domain, a letter for a natural number ranges over the reals unless its bound \( n \in \nN \) says otherwise." (Neither 5.1's \( \forall \)-with-\( \wedge \) slip, worked at 05/01:229 and drilled at 05/01:571, nor 5.8's "at least two" slip, the warning "Different letters, perhaps the same object" at 05/08:215 and drill part 5 at 05/08:349, is repeated here.)
    - (b) "Every element of \( A \) and of \( B \) is positive." | \( \forall x\, ((x \in A \wedge x \in B) \to x > 0) \) | \( \forall x\, ((x \in A \vee x \in B) \to x > 0) \) | \( A = \{1\} \), \( B = \{-1\} \): the sentence is false (\( -1 \in B \)); the wrong formula speaks only of common elements, and there are none, so it is true. The "and" of the sentence is an "or" in the restriction.
    - (c) "Only even numbers are multiples of \( 4 \)." (over \( \nN \)) | \( \forall n\, (\mathrm{Even}(n) \to 4 \mid n) \) | \( \forall n\, (4 \mid n \to \mathrm{Even}(n)) \) | The right formula is true; the wrong one is false at \( n = 2 \). "Only \( E \) are \( M \)" puts \( E \) after the arrow, as "only if" did in Section 1.1.
    - (d) "If a natural number is divisible by \( 6 \), then it is even." (over \( \nN \)) | \( \exists n\, (6 \mid n) \to \mathrm{Even}(n) \) | \( \forall n\, (6 \mid n \to \mathrm{Even}(n)) \) | The right formula is true. In the wrong one the last \( n \) is free, and read at \( n = 1 \) it says "if some number is divisible by \( 6 \), then \( 1 \) is even": hypothesis true (\( 6 \mid 6 \)), conclusion false. "A … it" hides a "for every".
-   - (e) "If any element of \( A \) is negative, then \( 0 \) is not a lower bound of \( A \)." | \( \forall x \in A\, (x < 0) \to \neg\forall x \in A\, (0 \le x) \) | \( \exists x \in A\, (x < 0) \to \neg\forall x \in A\, (0 \le x) \) | \( A = \emptyset \): the right formula is true (its hypothesis is false); in the wrong one the hypothesis "every element of \( \emptyset \) is negative" is true and the conclusion "not every element of \( \emptyset \) is at least \( 0 \)" is false (Section 5.1, the empty set). After "if" or "not", "any" means "some"; elsewhere it means "every".
+   - (e) "If any element of \( A \) is negative, then \( 0 \) is not a lower bound of \( A \)." | \( \forall x \in A\, (x < 0) \to \neg\forall x \in A\, (0 \le x) \) | \( \exists x \in A\, (x < 0) \to \neg\forall x \in A\, (0 \le x) \) | \( A = \emptyset \): the right formula is true (its hypothesis is false); in the wrong one the hypothesis "every element of \( \emptyset \) is negative" is true and the conclusion "not every element of \( \emptyset \) is at least \( 0 \)" is false (Section 5.1, the empty set). This is Section 5.1's warning on "any" (05/01:316–318), now with the reading that separates the two formulas: the empty set.
    
    Aftermath, one sentence: "A reading like these is a counter-reading for the step from one formula to the other; it shows that the two say different things, which is all a translation needs to know." (No derivability claim, G10.)
 7. **Infinitely many and eventually** (new paragraph after the traps, bold lead-in `**Infinitely many, and eventually.**`, ~120 words; technique: LPL, Si). "\( a_n > 0 \) for infinitely many \( n \)" says that however far out you start, some later term is positive: \( \forall N \in \nN\; \exists n \in \nN\; (n \ge N \wedge a_n > 0) \). "Eventually \( a_n > 0 \)" (for all large \( n \), warning (3) above) says \( \exists N \in \nN\; \forall n \in \nN\; (n \ge N \to a_n > 0) \). The quantifiers are swapped, and the bound \( n \ge N \) moves from \( \wedge \) to \( \to \), as @def-bounded-quantifier's two connectives require. For \( a_n = (-1)^n \) the first is true (every even \( n \ge N \)) and the second false (every odd \( n \ge N \)).
@@ -315,7 +324,7 @@ Budgets count **main-line** prose words, as `tools/check_structure.py --words` c
   - (l) [h] How many lines does a bounded \( \rulename{\exists E} \) save over the unbounded rule? — One: two assumptions in place of one assumption and two \( \rulename{\wedge E} \) lines.
   
   None of the new parts repeats a main-line answer: (e) and (g) use sentences of their own, (h)'s pair is not among the traps, and (i)'s "any" differs from trap (e).
-- **B1, B2:** kept.
+- **B1, B2:** kept. B1's solution (c) (01:384) gets the pointer remap of item 4.
 - **B3** (new) `[B3: One key, twenty sentences]` (technique: LB, Sm; one key across a graded set, with reading back). Stem: "The domain is \( \nN = \{0, 1, 2, \dots\} \). Use only \( \mathrm{Prime}(x) \) ('\( x \) is prime'), \( \mathrm{Even}(x) \), \( x < y \), \( x \mid y \) ('\( x \) divides \( y \)', that is, \( y = x \cdot k \) for some \( k \)), \( = \) and the constants \( 1 \), \( 2 \), \( 9 \), with variables \( x \), \( y \), \( z \). Translate sentences 1–18 into formulas. Then translate 19 and 20 into English and decide whether each is true." (Variables avoid \( p, q \): R4 §1 item 10.) Answers:
   1. \( 2 \) is an even prime. — \( \mathrm{Even}(2) \wedge \mathrm{Prime}(2) \)
   2. Some prime divides \( 9 \). — \( \exists x\, (\mathrm{Prime}(x) \wedge x \mid 9) \)
@@ -374,7 +383,7 @@ Budgets count **main-line** prose words, as `tools/check_structure.py --words` c
   **Marking scheme** (10 points): 2 for opening the box of \( M_0 \) first and the \( \rulename{\exists E} \) box on the premise early; 3 for a witness depending on both names, with both bounds checked by arith lines; 2 for checking the side conditions at lines 12 and 13; 3 for (b): a reading, with both truth values justified. Fatal errors, scoring 0 for the step: a witness chosen before \( M_0 \) is given; the witness \( N_0 \) itself (it need not be \( \ge M_0 \)).
 
 **Sidecars:**
-- `exm-translation-traps.py`: each of (a)–(e) checked on its reading. Over finite \( A \), \( B \) and a grid of reals for (a), (b), (e); over \( \nN \) up to 200 for (c), (d).
+- `exm-translation-traps.py`: each of (a)–(e) checked on its reading. For (a), no natural number up to 200 lies in \( (\tfrac13, \tfrac23) \), and \( \tfrac12 \) does (exact fractions); over finite \( A \), \( B \) and a grid of reals for (b), (e); over \( \nN \) up to 200 for (c), (d).
 - `exr-translation-a2.py`: (h) on \( \{-1, 1\} \); (i)'s hypothesis false on a grid (for the statement, \( x^2 \ge 0 \)).
 - `exr-translation-b3.py`: every one of the twenty formulas evaluated against its English sentence for numbers up to 60 (bounded quantifiers cut at 60, the sentence's own truth asserted only for 19 and 20); 19 true and 20 false at \( 2, 4, 8, 16, 32 \); 16 false at \( (0, 1) \).
 - `exr-translation-b4.py`: (f).
@@ -382,7 +391,7 @@ Budgets count **main-line** prose words, as `tools/check_structure.py --words` c
 
 **Ledger lines** (new):
 - the mixed stage (no fact);
-- the traps (school facts: \( \{3\} \) has one element, \( 4 \mid n \Rightarrow \) even, \( 6 \mid 6 \), \( 1 \) odd; the empty set of 5.1);
+- the traps (school facts: no natural number lies between \( \tfrac13 \) and \( \tfrac23 \), and \( \tfrac12 \) does; \( 4 \mid n \Rightarrow \) even, \( 6 \mid 6 \), \( 1 \) odd; the empty set of 5.1; the one-domain convention of step 1);
 - \( (-1)^n \) (parity);
 - the translation-error example (\( \neg(7 \in \{1, 2\}) \), \( 7 > 5 \));
 - the Not-allowed entries (rule clauses of `prp-bounded-quantifier-rules`, cited).
@@ -446,7 +455,7 @@ Budgets count **main-line** prose words, as `tools/check_structure.py --words` c
      - then "So the instance is again an instance of the same law, with its condition met."
      
      The sentences of 02:606 that the new proposition makes redundant ("If \( \alpha \dashv\vdash \beta \), then \( \neg\alpha \dashv\vdash \neg\beta \) …" through "… and \( \exists x\, \alpha \vdash \exists x\, \beta \) by an \( \rulename{\exists E} \) box ending in \( \rulename{\exists I} \).") and "A part sitting under several symbols is reached one symbol at a time." are cut. Their content is cases 1–3 of F6.2-a.
-   - Then, on the main line, **one sentence on renaming** (new): "Renaming a bound variable is a replacement of this kind: Section 5.4 derived \( \forall y\, \varphi \dashv\vdash \forall z\, \varphi[z/y] \) for every formula \( \varphi \) in which \( z \) does not appear (@exm-universal-introduction-derivations (b)), and Section 5.6 did the same for \( \exists \), so the convention of Section 5.2, that a renaming may be made anywhere inside a formula, is now a provable equivalence." The 5.6 result is the heading `#existential-renaming`. This sentence is the payoff 6.3 uses in `prp-taut-skeleton`.
+   - Then, on the main line, **one sentence on renaming** (new): "Renaming a bound variable is a replacement of this kind: Section 5.4 derived \( \forall y\, \varphi \dashv\vdash \forall z\, \varphi[z/y] \) for every formula \( \varphi \) in which \( z \) does not appear (the fold after @exm-universal-introduction-derivations), and Section 5.6 did the same for \( \exists \), so the convention of Section 5.2, that a renaming may be made anywhere inside a formula, is now a provable equivalence." The 5.4 result is the fold "The front renaming, derived" (05/04:445, no id; 5.6's fold cites it by the same words), and the 5.6 result is the fold `#existential-renaming` (05/06:777). The 5.2 convention is in the fold paragraph "Its status" (05/02:465). This sentence is the payoff 6.3 uses in `prp-taut-skeleton`.
    - Then `exm-negating-definitions` (02:608–667) verbatim; 02:669–680 with R4's letters \( m, n \); the Quick check 02:682–692; R4's new Quick check ("\( f \) is bounded on \( A \)"); and the warning 02:694–696 without its last sentence (R4).
    - 02:676's "both steps act on a part, as the paragraph before @exm-negating-definitions allows" → "both steps act on a part, by @prp-replacement".
 7. **`## Four forms and their square {#the-square-of-opposition}`** (new subsection, ~300 words with the figure; technique: LB, Hu, Le — A/E/I/O and the square with its diagonals; contrary against contradictory).
@@ -519,7 +528,7 @@ Budgets count **main-line** prose words, as `tools/check_structure.py --words` c
   - (l) **new** Is this step correct: from \( \forall x\, (P(x) \to Q(x)) \) to \( \forall x\, (\neg P(x) \to \neg Q(x)) \), "contrapositive under \( \forall \)"? — No. The contrapositive is \( \forall x\, (\neg Q(x) \to \neg P(x)) \). Over \( \nZ \), with \( P \) "multiple of \( 4 \)" and \( Q \) "even", the premise is true and the line false at \( 2 \).
   
   None of the new parts repeats a main-line answer: (i) is not the main line's corner, (j) is distribution (d), which the twin table omits, and (k) is not the worked conversion.
-- **B4** (new) `[B4: Derive or break]` (§12.13.4; verdict withheld). Stem: "Derive each claim with the rules and laws so far, or break it by a reading over \( \nZ \) that makes every member of its counterexample set true. (a) \( \forall x\, (P(x) \leftrightarrow Q(x)) \vdash \forall x\, P(x) \leftrightarrow \forall x\, Q(x) \). (b) \( \forall x\, P(x) \leftrightarrow \forall x\, Q(x) \vdash \forall x\, (P(x) \leftrightarrow Q(x)) \). (c) \( \neg\exists x\, (P(x) \wedge \neg Q(x)) \vdash \forall x\, (P(x) \to Q(x)) \). (d) \( \exists x\, P(x) \to \exists x\, Q(x) \vdash \forall x\, (P(x) \to Q(x)) \). (e) \( \exists x\, \forall y\, R(x, y) \vdash \exists x\, R(x, x) \). (f) \( \exists x\, R(x, x) \vdash \exists x\, \forall y\, R(x, y) \)." Answers, each verdict first:
+- **B4** (new) `[B4: Derive or break]` (§12.13.4; verdict withheld). Stem: "Derive each claim with the rules and laws so far, or break it by a reading over \( \nZ \) that makes every member of its counterexample set true. (a) \( \forall x\, (P(x) \leftrightarrow Q(x)) \vdash \forall x\, P(x) \leftrightarrow \forall x\, Q(x) \). (b) \( \forall x\, P(x) \leftrightarrow \forall x\, Q(x) \vdash \forall x\, (P(x) \leftrightarrow Q(x)) \). (c) \( \neg\exists x\, (P(x) \wedge \neg Q(x)) \vdash \forall x\, (P(x) \to Q(x)) \). (d) \( \exists x\, P(x) \to \exists x\, Q(x) \vdash \forall x\, (P(x) \to Q(x)) \). (e) \( \forall x\, (P(x) \vee Q(x)) \vdash \forall x\, P(x) \vee \exists x\, Q(x) \). (f) \( \forall x\, P(x) \vee \exists x\, Q(x) \vdash \forall x\, (P(x) \vee Q(x)) \)." Answers, each verdict first:
   - (a) **Derive.** \( \rulename{\leftrightarrow I} \) closing two boxes (@def-rules-biconditional). Left to right: assume \( \forall x\, P(x) \); open a flagged box \( x_0 \); \( \rulename{\forall E} \) at \( x_0 \) of the premise and of the assumption; \( \rulename{\leftrightarrow E} \) gives \( Q(x_0) \); \( \rulename{\forall I} \). Right to left is the same with \( P \) and \( Q \) exchanged. Each \( \rulename{\forall I} \): the flag is in neither the premise, the open assumption nor the conclusion. 12 lines (the premise, two boxes of five lines, the \( \rulename{\leftrightarrow I} \) line).
   - (b) **Breaks.** \( P \): "even", \( Q \): "odd". Both \( \forall \)'s are false, so the premise is true; at \( 0 \), "even ↔ odd" is false, so the conclusion is false.
   - (c) **Derive.** 10 lines:
@@ -534,8 +543,17 @@ Budgets count **main-line** prose words, as `tools/check_structure.py --words` c
     9. \( P(x_0) \to Q(x_0) \) — →I 4–8;
     10. \( \forall x\, (P(x) \to Q(x)) \) — ∀I 3–9.
   - (d) **Breaks.** \( P \): "even", \( Q \): "positive". \( \exists \) even and \( \exists \) positive are both true, so the premise is true; "every even integer is positive" fails at \( 0 \).
-  - (e) **Derive.** Open the \( \rulename{\exists E} \) box early with a witness \( x_0 \) and \( \forall y\, R(x_0, y) \); \( \rulename{\forall E} \) at \( x_0 \) gives \( R(x_0, x_0) \); \( \rulename{\exists I} \); \( \rulename{\exists E} \). Five lines; \( x_0 \) is not in the conclusion.
-  - (f) **Breaks.** \( R(x, y) \): "\( x \le y \)". \( \exists x\, (x \le x) \) is true, and \( \exists x\, \forall y\, (x \le y) \), "some integer is at most every integer", is false.
+  - (e) **Derive.** 13 lines, classical, with LEM on \( \forall x\, P(x) \):
+    1. premise;
+    2. \( \forall x\, P(x) \vee \neg\forall x\, P(x) \) — LEM;
+    3. \( \forall x\, P(x) \) — asm (for ∨E); 4. the goal — ∨I 3;
+    5. \( \neg\forall x\, P(x) \) — asm (for ∨E); 6. \( \exists x\, \neg P(x) \) — QN (a) 5;
+    7. box \( x_0 \): \( \neg P(x_0) \) — asm (for ∃E); 8. \( P(x_0) \vee Q(x_0) \) — ∀E 1; 9. \( Q(x_0) \) — DS 8, 7; 10. \( \exists x\, Q(x) \) — ∃I 9;
+    11. \( \exists x\, Q(x) \) — ∃E 6, 7–10; 12. the goal — ∨I 11;
+    13. the goal — ∨E 2, 3–4, 5–12.
+    
+    At 11, \( x_0 \) is not in line 11, line 6, the premise or the open assumption on line 5.
+  - (f) **Breaks.** \( P \): "even", \( Q(x) \): "\( x = 0 \)". "Some integer is \( 0 \)" is true, so the premise is true; "every integer is even or \( 0 \)" fails at \( 1 \).
   
   Closing sentence: (a)/(b) and (e)/(f) are converse pairs; (d) asks for more than its premise gives. The breaks are counter-readings (Section 7.2).
   
@@ -574,12 +592,12 @@ Budgets count **main-line** prose words, as `tools/check_structure.py --words` c
 **Sidecars:**
 - `exm-square-of-opposition.py`: the four values over \( \nN \) up to 100, and the empty-\( S \) case.
 - `exr-quantifier-laws-a2.py`: (i), (j) by truth table, (l) at \( 2 \).
-- `exr-quantifier-laws-b4.py`: the readings of (b), (d), (f) over \( \nZ \) cut to \( [-50, 50] \), with the \( \exists \)-witnesses \( 2 \), \( 1 \) quoted.
+- `exr-quantifier-laws-b4.py`: the readings of (b), (d), (f) over \( \nZ \) cut to \( [-50, 50] \), with the quoted points: \( 0 \) for (b); the \( \exists \)-witnesses \( 2 \), \( 1 \) and the point \( 0 \) for (d); the witness \( 0 \) and the point \( 1 \) for (f).
 - `exr-quantifier-laws-b5.py`: \( c = 0 \).
 
 **Ledger lines** (new):
 - `prp-replacement` (proof): @exm-universal-introduction-derivations (c) (exchange), @thm-strong-induction, Section 2.4's rules (@def-rules-biconditional), and the side conditions of @def-rules-universal and @def-rules-existential; all argued inline.
-- The renaming sentence: @exm-universal-introduction-derivations (b) and `#existential-renaming` (cited).
+- The renaming sentence: the fold "The front renaming, derived" after @exm-universal-introduction-derivations and `#existential-renaming` (cited).
 - The square: school facts: \( 8 \) is not a perfect square, \( 4 = 2^2 \) and \( 16 = 4^2 \) are multiples of \( 4 \), and no odd number is a multiple of \( 4 \) (the empty \( S \)).
 - The twin table: the cited propositional labels; the reading of 5.5.
 - Prenex: the passage laws (cited); "no finite table settles a \( \forall\exists\forall \) sentence" (illustrative, nothing rests on it).
@@ -590,17 +608,17 @@ Budgets count **main-line** prose words, as `tools/check_structure.py --words` c
 
 **Content, in the order of the new file.** The file opens with `# Finding First-Order Derivations`.
 
-1. **Opening** (~150 words). "Chapter 5 added one step to the search method in each rule section, and Section 6.2 added laws. This section puts the steps into one method, names the three moves that do most of the work with quantifiers, admits the propositional step TAUT into derivations with quantifiers, and runs the four kinds of task of Section 3.2 again. The new difficulty is names: which term to instantiate at, when to open a box for a witness, and which names a line may mention when a box closes."
+1. **Opening** (~150 words). "Chapter 5 added one step to the search method in each rule section, and Section 6.2 added laws. This section puts the steps into one method, puts in order the moves that do most of the work with quantifiers and names a third, admits the propositional step TAUT into derivations with quantifiers, and runs the four kinds of task of Section 3.2 again. The new difficulty is names: which term to instantiate at, when to open a box for a witness, and which names a line may mention when a box closes."
 2. **Looking back** (~60 words): `::: {.remark}` `[Looking back]`: "Section 3.1 assembled the search method for the connectives, and Section 3.2 sorted the tasks it serves. Here both return with flags and witnesses. Backward from the goal and forward from the premises is unchanged; what is new is that a box may carry a name, and a closing line must not mention it."
 3. **`## The search method, extended`**: 01:307–333 moved **verbatim** (the algorithm and its two paragraphs), with one change: 01:333's last clause "as \( N_0 \) was in the limit derivation above" → "as \( N_0 \) was in the limit derivation of Section 6.1". The opening sentence "Section 3.1 put the moves for the connectives in order. Each of Sections 5.3–5.7 added a step. Here is the method with all of them." stays. 01:314's "as in @exm-translate-limit" stays (a backward citation).
-4. **`## Three moves for quantifiers`** (new, ~300 words; technique: Le, LB, named strategy moves). Three bold-led paragraphs:
-   - **Open the \( \exists E \) boxes early.** An \( \exists \) line among the resources: open its box at once, with a fresh witness, and make the box's last line the current goal (Section 5.6's "name the witness early"). The witness is often the very term that a \( \forall \) line or the goal is waiting for.
-   - **Postpone \( \forall E \) until the term is known.** A \( \forall \) line can be instantiated at any term, so instantiating it before the goal or a witness names the term is a blind choice (Section 5.3's "instantiate at the term you need"). Wait.
+4. **`## Three moves for quantifiers`** (new, ~300 words; technique: Le, LB, named strategy moves). Three bold-led paragraphs. The first two keep the names Chapter 5's index gives them (5.6 and 5.3), so that no move has two names; what is new here is their order:
+   - **Name the witness early** (Section 5.6). An \( \exists \) line among the resources: open its box at once, with a fresh witness, and make the box's last line the current goal. The witness is often the very term that a \( \forall \) line or the goal is waiting for.
+   - **Instantiate at the term you need** (Section 5.3), and so not before it is known. A \( \forall \) line can be instantiated at any term, so instantiating it before the goal or a witness names the term is a blind choice. Wait for the witnesses.
    - **The propositional core**, named in its own subsection below.
    
    Then one sentence on two rules in a row (technique: Hu): "Two pairs of steps recur: \( \rulename{\forall E} \) followed by \( \rulename{{\to}E} \), which applies a general law at one point, and \( \rulename{\exists E} \) followed, inside its box, by \( \rulename{\exists I} \) with a term built from the names in hand." Then the figure.
 
-   **Figure 6.3-F** (the `flowchart` template; caption sentence before it: "The next move, read off the goal and the lines in hand"):
+   **Figure 6.3-F** (the `flowchart` template, laid out as 3.1's chart at 03/01:102–125: tests in a column, step nodes at \( +4.5 \) to the right, the return arrows on the right; caption sentence before it: "The next move, read off the goal and the lines in hand"):
    - nodes:
      - (s) `fc start`: "the current goal and the available lines";
      - (t1) `fc test`, below s: "goal begins with \( \forall \),\\ \( \wedge \), \( \to \), \( \neg \) or \( \leftrightarrow \)?";
@@ -643,7 +661,7 @@ Budgets count **main-line** prose words, as `tools/check_structure.py --words` c
    - Side conditions: at 12, \( y_0 \) is not in line 12, line 6, the premises or the open assumption on line 4. At 13, \( x_0 \) is not in line 13, line 3 or the premises.
    - Reading (one sentence, school level, over \( \nZ \)): \( P(x) \): "\( x > 0 \)", \( R(x, y) \): "\( y = 2x + 1 \)", \( Q(y) \): "\( y \) is odd". Every positive integer has a \( 2x + 1 \); every number of the form \( 2x + 1 \) is odd; some integer is positive; so some integer is odd.
    
-   **Quick check (new):** "Why is line 8 an instance at \( x_0 \) and not at some other term?" *Solution:* line 7, the only line that asserts \( R \) of particular terms, mentions \( x_0 \) and \( y_0 \). Premise 2 is useful only at the terms that line names. This is the move "postpone \( \rulename{\forall E} \) until the term is known".
+   **Quick check (new):** "Why is line 8 an instance at \( x_0 \) and not at some other term?" *Solution:* line 7, the only line that asserts \( R \) of particular terms, mentions \( x_0 \) and \( y_0 \). Premise 2 is useful only at the terms that line names. This is the move "instantiate at the term you need": the terms were known only once the witnesses were named.
 6. **`## Steps that are right for propositional reasons`** (new, ~880 words; technique: LPL, a tautological-consequence rule restricted to the propositional skeleton; C2, G11).
    - **Lead** (~80 words): "Inside the boxes of a first-order derivation, many steps are propositional: \( \rulename{\wedge E} \), \( \rulename{{\to}E} \), a contrapositive, a case split. Section 4.8 let a propositional derivation take such steps in one line, as TAUT. With quantifiers the step must not look inside a quantifier, and the next definition says exactly what it may look at."
    - **`def-propositional-skeleton`:**
@@ -672,8 +690,8 @@ Budgets count **main-line** prose words, as `tools/check_structure.py --words` c
      [Tautological Steps on the Skeleton]
 
      Let \( \Gamma \) be a list of first-order formulas and \( \psi \) a formula, with skeletons taken
-     from one assignment. If \( \mathrm{sk}(\psi) \) is a tautological consequence of the skeletons of
-     \( \Gamma \) (@def-valid-argument), then \( \Gamma \vdash \psi \). If no two different prime
+     from one assignment. If the skeletons of \( \Gamma \) semantically entail \( \mathrm{sk}(\psi) \)
+     (@def-valid-argument), then \( \Gamma \vdash \psi \). If no two different prime
      formulas of \( \Gamma \) and \( \psi \) share an atom, the derivation uses only the rules of
      Chapters 1 and 2.
      :::
@@ -693,7 +711,7 @@ Budgets count **main-line** prose words, as `tools/check_structure.py --words` c
        - Prime formulas with one atom differ only by renaming. A renaming is a provable equivalence whose closure is derivable (the renaming sentence after @prp-replacement), so @prp-replacement gives \( \gamma \dashv\vdash \gamma^* \) for each formula of the list, and \( \psi \dashv\vdash \psi^* \).
        - Step 1 gives \( \Gamma^* \vdash \psi^* \).
        - @lem-weakening-cut (Section 2.3) chains \( \Gamma \vdash \gamma^* \) for each \( \gamma \), then \( \Gamma^* \vdash \psi^* \), then \( \psi^* \vdash \psi \). Each pasted block's flags are first renamed to names new to the whole derivation, as "The laws as one line" (Section 6.2) argues, so @lem-weakening-cut (c) holds for these first-order derivations by the same pasting: no flag of a pasted block then occurs in a premise or an open assumption of the derivation it is pasted into.
-   - **The TAUT step** (~120 words, bold lead-in `**TAUT on the skeleton.**`): "From now on, a line of a derivation may be justified \( \rulename{TAUT} \) (`\taut{…}`), citing available lines, when its skeleton is a tautological consequence of their skeletons, all from one assignment; with no cited lines, when its skeleton is a tautology. This is @def-rule-taut of Section 4.8, applied to skeletons. By @prp-taut-skeleton the line abbreviates a block of primitive steps, pasted in with any flags renamed to names new to the whole derivation, as 'The laws as one line' (Section 6.2) allows. As in Section 4.8, use TAUT only for a step a written proof would leave unsaid." (Layout §2 rule 3: `check_fitch.py` builds the skeleton.)
+   - **The TAUT step** (~120 words, bold lead-in `**TAUT on the skeleton.**`): "From now on, a line of a derivation may be justified \( \rulename{TAUT} \) (`\taut{…}`), citing available lines, when their skeletons semantically entail its skeleton (@def-valid-argument), all from one assignment; with no cited lines, when its skeleton is a tautology. This is @def-rule-taut of Section 4.8, applied to skeletons. By @prp-taut-skeleton the line abbreviates a block of primitive steps, pasted in with any flags renamed to names new to the whole derivation, as 'The laws as one line' (Section 6.2) allows. As in Section 4.8, use TAUT only for a step a written proof would leave unsaid." (Layout §2 rule 3: `check_fitch.py` builds the skeleton.)
    - **Examples** (~150 words; a short list). These are TAUT steps:
      - from \( \neg(\exists x\, P(x) \wedge Q(c)) \) and \( Q(c) \) to \( \neg\exists x\, P(x) \): \( \neg(p \wedge q), q \models \neg p \);
      - from \( \forall x\, (P(x) \to Q(x)) \to R \) and \( \neg R \) to \( \neg\forall x\, (P(x) \to Q(x)) \): modus tollens on the skeleton, \( p \to r, \neg r \models \neg p \).
@@ -705,7 +723,7 @@ Budgets count **main-line** prose words, as `tools/check_structure.py --words` c
    - **Quick check (new):** "Which are TAUT steps? (a) From \( \exists x\, P(x) \wedge \forall y\, Q(y) \) to \( \forall y\, Q(y) \wedge \exists x\, P(x) \). (b) From \( \forall x\, (P(x) \wedge Q(x)) \) to \( \forall x\, P(x) \). (c) From \( \neg\forall x\, P(x) \) to \( \exists x\, \neg P(x) \)." *Solution:* (a) yes: \( p \wedge q \models q \wedge p \). (b) no: the skeletons are two different atoms; the step is @prp-quantifier-distribution (a), which looks inside \( \forall x \). (c) no: \( \neg p \) and \( q \); it is QN (a) of Section 6.2, which needs quantifier rules and \( \rulename{RAA} \).
    - **`::: {.warning}` titled `[Not allowed: TAUT]`** (~120 words; D3), five one-line wrong steps, each tagged with what it really needs:
      - from \( \forall x\, (P(x) \wedge Q(x)) \) to \( \forall x\, Q(x) \): *looks inside a quantifier; needs a flagged box*;
-     - from \( \forall x\, P(x) \) to \( P(f(c)) \): *an instance, not a tautological consequence; needs \( \rulename{\forall E} \)*;
+     - from \( \forall x\, P(x) \) to \( P(f(c)) \): *an instance, not an entailment of skeletons; needs \( \rulename{\forall E} \)*;
      - from \( P(c) \) to \( \exists x\, P(x) \): *needs \( \rulename{\exists I} \)*;
      - from \( s = t \) and \( P(s) \) to \( P(t) \): *the skeleton is \( p, q \models r \), false; needs \( \rulename{{=}E} \)*;
      - citing a line inside a box that has closed: *not available, whatever the table says (@def-derivation)*.
@@ -736,7 +754,7 @@ Budgets count **main-line** prose words, as `tools/check_structure.py --words` c
        5. \( \forall x\, P(x) \to \exists x\, (P(x) \vee Q(x)) \) — →I 1–4
        
        With no premises the search starts from the goal alone.
-     - (b) *Equivalence.* \( \forall x\, (P(x) \to Q(x)) \dashv\vdash \forall x\, (\neg Q(x) \to \neg P(x)) \). Each direction: open a flagged box \( x_0 \); \( \rulename{\forall E} \) at \( x_0 \); TAUT (\( p \to q \models \neg q \to \neg p \), and back); \( \rulename{\forall I} \). Four lines each.
+     - (b) *Equivalence.* \( \forall x\, (P(x) \to \neg Q(x)) \dashv\vdash \forall x\, (Q(x) \to \neg P(x)) \): the E form of Section 6.2 says the same with \( S \) and \( P \) exchanged ("no \( P \) is \( Q \)" is "no \( Q \) is \( P \)"). Each direction: open a flagged box \( x_0 \); \( \rulename{\forall E} \) at \( x_0 \); TAUT (\( p \to \neg q \models q \to \neg p \), and the same with \( p \) and \( q \) exchanged); \( \rulename{\forall I} \). Four lines each (checked by `check_fitch.py`, 2026-10-25).
      - (c) *Inconsistency.* The list \( \forall x\, (P(x) \to Q(x)), \ \exists x\, (P(x) \wedge \neg Q(x)) \) is inconsistent (an A form and its O form, Section 6.2):
        1. \( \forall x\, (P(x) \to Q(x)) \) — premise
        2. \( \exists x\, (P(x) \wedge \neg Q(x)) \) — premise
@@ -754,7 +772,7 @@ Budgets count **main-line** prose words, as `tools/check_structure.py --words` c
          6. \( \forall x\, Q(x) \) — ∀I 3–5;
          7. →I 2–6.
          
-         At 6, \( x_0 \) is not in the premise or in the open assumption on line 2.
+         At 6, \( x_0 \) is not in the premise or in the open assumption on line 2. One sentence says that lines 3–6 are @exm-universal-introduction-derivations (b) inside the box of line 2.
        - The converse breaks. Over \( \nZ \), with \( P \): "even" and \( Q \): "positive", "every integer is even" is false, so the premise is true; "every even integer is positive" is false at \( 0 \).
    - **Test the subgoal** (bold lead-in `**Test the subgoal by a counter-reading.**`, ~150 words; the first-order form of G9's move, which 4.7 names; technique: LPL). "When a search produces a subgoal, look for a reading that makes the available lines true and the subgoal false before you chase it. If you find one, the subgoal is the wrong one: Section 7.2 states that such a reading rules out every derivation of it from those lines. Return to the step that produced it." The text cites 4.7 for the propositional move, and says that the first-order statement is 7.2's. No rule-by-rule reason is given: read line by line it is false (∀I goes from a true \( P(x_0) \) to a possibly false \( \forall x\, P(x) \), and →I and ∃E close boxes), and the true reason is first-order soundness, which C1 keeps out of the core. The sentence is a forward claim citing 7.2, which G10 allows.
    - **Quick check (new):** "A search for the limit derivation of Section 6.1 instantiates the premise at \( \varepsilon_0 \) instead of \( \varepsilon_0/2 \), and reaches the subgoal \( \abs{2 a_{n_0} - 2L} < \varepsilon_0 \) with \( \abs{a_{n_0} - L} < \varepsilon_0 \) available. Find a sequence and numbers that make every available line true and the subgoal false." *Solution:* \( \varepsilon_0 = 1 \); \( a_n = L \) for every \( n \) except \( a_{n_0} = L + 0.75 \); \( N_0 = n_0 \). The premise holds, since the sequence is eventually constant at \( L \). Every term is within \( 0.75 < 1 \) of \( L \), so the instance of the premise at \( \varepsilon_0 \) and the box line \( \forall n \in \nN\, (n \ge N_0 \to \abs{a_n - L} < \varepsilon_0) \) hold; \( n_0 \ge N_0 \) holds; and \( \abs{a_{n_0} - L} = 0.75 < 1 \). But \( \abs{2 a_{n_0} - 2L} = 1.5 \ge 1 \). The subgoal is the wrong one; go back to the choice of term.
@@ -764,14 +782,14 @@ Budgets count **main-line** prose words, as `tools/check_structure.py --words` c
    - **Table columns:** *use* | *sequent* | *where*.
    - **Rows:**
      - exchange two like quantifiers: \( \forall x\, \forall y\, \varphi \dashv\vdash \forall y\, \forall x\, \varphi \) | @exm-universal-introduction-derivations (c);
-     - rename a bound variable: \( \forall y\, \varphi \dashv\vdash \forall z\, \varphi[z/y] \), and the same for \( \exists \) | @exm-universal-introduction-derivations (b), Section 5.6 (`#existential-renaming`);
+     - rename a bound variable: \( \forall y\, \varphi \dashv\vdash \forall z\, \varphi[z/y] \), and the same for \( \exists \) | Section 5.4 (the fold after @exm-universal-introduction-derivations), Section 5.6 (`#existential-renaming`);
      - every gives some: \( \forall x\, \varphi \vdash \exists x\, \varphi \) | @prp-forall-implies-exists;
      - some-all gives all-some: \( \exists x\, \forall y\, R(x, y) \vdash \forall y\, \exists x\, R(x, y) \) | @prp-exists-forall-swap;
-     - distribute: \( \forall \) over \( \wedge \) and \( \exists \) over \( \vee \) both ways, \( \forall \) over \( \vee \) and \( \exists \) over \( \wedge \) one way | @prp-quantifier-distribution;
+     - distribute: \( \forall \) over \( \wedge \) and \( \exists \) over \( \vee \) both ways, \( \forall \) over \( \vee \) and \( \exists \) over \( \wedge \) one way | @prp-quantifier-distribution (the instances for \( P \), \( Q \) first in @prp-forall-and and @prp-exists-and);
      - negate: "not every" and "some not", "none" and "every not", a negated implication, bounded forms | @prp-quantifier-negation, @prp-negated-implication, @prp-bounded-quantifier-negation;
      - move across a connective | @prp-quantifier-passage;
      - replace a part | @prp-replacement;
-     - equality: symmetric and transitive | @prp-equality-symmetric-transitive;
+     - equality: symmetric and transitive; equals share every property | @prp-equality-symmetric-transitive, @prp-leibniz-law;
      - bounds in one step | @prp-bounded-quantifier-rules;
      - propositional steps | @prp-taut-skeleton.
    - **The licence:** no new licence. The laws of Section 6.2 may already be used as one line, by "The laws as one line" (02:128), and the others are patterns to copy. The table counts toward the main line, and layout §3's lever (a) applies to 3.3's library, not to this one.
@@ -788,14 +806,14 @@ Budgets count **main-line** prose words, as `tools/check_structure.py --words` c
   - (a) The skeleton of \( \neg\exists x\, P(x) \vee (Q(c) \wedge \exists y\, P(y)) \)? Is it a tautology? — \( \neg p \vee (q \wedge p) \): \( \exists x\, P(x) \) and \( \exists y\, P(y) \) share \( p \). Not a tautology: \( p \) true and \( q \) false make it false.
   - (b) The skeleton of \( \exists x\, (P(x) \wedge Q(x)) \wedge \neg\exists x\, (Q(x) \wedge P(x)) \)? Can a TAUT step derive \( \bot \) from it? — \( p \wedge \neg q \). The two prime formulas are not renamings of each other (\( P(x) \wedge Q(x) \) against \( Q(x) \wedge P(x) \)), so they get different atoms, and \( p \wedge \neg q \) is not contradictory: no. \( \bot \) is derivable all the same, by an \( \rulename{\exists E} \) box on the first conjunct, TAUT inside it, \( \rulename{\exists I} \) and a clash with the second conjunct.
   - (c) Which are TAUT steps? (i) From \( \forall x\, P(x) \) and \( \forall x\, P(x) \to \exists y\, Q(y) \) to \( \exists y\, Q(y) \). (ii) From \( \forall x\, (P(x) \to Q(x)) \) and \( P(c) \) to \( Q(c) \). (iii) From \( \neg\neg\exists x\, P(x) \) to \( \exists x\, P(x) \). — (i) yes (\( p, p \to q \models q \)); (ii) no (\( p, q \not\models r \)): it is \( \rulename{\forall E} \) at \( c \), then \( \rulename{{\to}E} \); (iii) yes (\( \neg\neg p \models p \)).
-  - (d) In @exm-search-with-witnesses, why is the box on premise 3 opened before premise 1 is used? — Premise 1 is a \( \forall \) whose useful term is not yet known, and the box supplies it, \( x_0 \). These are the moves "open the \( \exists E \) boxes early" and "postpone \( \forall E \)".
+  - (d) In @exm-search-with-witnesses, why is the box on premise 3 opened before premise 1 is used? — Premise 1 is a \( \forall \) whose useful term is not yet known, and the box supplies it, \( x_0 \). These are the moves "name the witness early" and "instantiate at the term you need", in that order.
   - (e) A counter-reading makes the premises of a claim true and its conclusion false. What may you say now, and what will Section 7.2 add? — Now: the claim breaks, and a search for it is abandoned. Section 7.2 states that such a claim has no derivation. (Answered within G10.)
 - **B1** (new) `[B1: Derive or break, twelve claims]`: the battery, **in place of** an A2 bank. It is fd1's own selection and order, grouped by the move that does the main work (C small 7; no book's sequent list). Stem: "Derive each claim, with TAUT allowed, or break it by a reading over \( \nZ \) that makes every member of its counterexample set true. The groups say which move to try first; they do not say which claims hold." Twelve claims in four groups, with answers, verdict first.
-  - *Open the \( \exists E \) box early:*
+  - *Name the witness early:*
     1. \( \exists x\, (P(x) \wedge Q(x)), \ \forall x\, (Q(x) \to R(x)) \vdash \exists x\, (P(x) \wedge R(x)) \). — **Derive.** 3 box \( x_0 \): \( P(x_0) \wedge Q(x_0) \) (asm, for ∃E); 4 \( Q(x_0) \to R(x_0) \) (∀E 2); 5 \( P(x_0) \wedge R(x_0) \) (TAUT 3, 4); 6 \( \exists x\, (P(x) \wedge R(x)) \) (∃I 5); 7 the same (∃E 1, 3–6).
     2. \( \exists x\, R(x, x) \vdash \forall x\, \exists y\, R(x, y) \). — **Breaks.** \( R(x, y) \): "\( x \cdot y = 1 \)". The premise is true (\( 1 \cdot 1 = 1 \)); the conclusion fails at \( x = 0 \).
-    3. \( \exists x\, \exists y\, R(x, y) \vdash \exists y\, \exists x\, R(x, y) \). — **Derive.** 2 box \( x_0 \): \( \exists y\, R(x_0, y) \) (asm); 3 box \( y_0 \): \( R(x_0, y_0) \) (asm); 4 \( \exists x\, R(x, y_0) \) (∃I 3); 5 \( \exists y\, \exists x\, R(x, y) \) (∃I 4); 6 the same (∃E 2, 3–5); 7 the same (∃E 1, 2–6).
-  - *Postpone \( \forall E \) until the term is known:*
+    3. \( \exists x\, P(x), \ \forall x\, (P(x) \to \forall y\, R(x, y)) \vdash \forall y\, \exists x\, R(x, y) \). — **Derive.** 3 box \( x_0 \): \( P(x_0) \) (asm, for ∃E); 4 \( P(x_0) \to \forall y\, R(x_0, y) \) (∀E 2); 5 \( \forall y\, R(x_0, y) \) (→E 4, 3); 6 flagged box \( y_0 \): \( R(x_0, y_0) \) (∀E 5); 7 \( \exists x\, R(x, y_0) \) (∃I 6); 8 \( \forall y\, \exists x\, R(x, y) \) (∀I 6–7); 9 the same (∃E 1, 3–8). At 8, \( y_0 \) is not in a premise, in the open assumption on line 3 or in line 8; at 9, \( x_0 \) is not in line 9, line 1 or a premise. (Checked by `check_fitch.py`, 2026-10-25.)
+  - *Instantiate at the term you need:*
     4. \( \forall x\, \forall y\, (R(x, y) \to R(y, x)), \ \forall x\, R(x, f(x)) \vdash \forall x\, R(f(x), x) \). — **Derive.** 3 box \( x_0 \): \( R(x_0, f(x_0)) \) (∀E 2); 4 \( \forall y\, (R(x_0, y) \to R(y, x_0)) \) (∀E 1); 5 \( R(x_0, f(x_0)) \to R(f(x_0), x_0) \) (∀E 4, at \( f(x_0) \), free for \( y \)); 6 \( R(f(x_0), x_0) \) (→E 5, 3); 7 \( \forall x\, R(f(x), x) \) (∀I 3–6).
     5. \( \forall x\, R(x, f(x)) \vdash \forall x\, R(f(x), x) \). — **Breaks.** \( f(x) = x + 1 \), \( R \) is \( < \): every \( x < x + 1 \), and no \( x + 1 < x \).
   - *The propositional core:*
@@ -838,7 +856,7 @@ Budgets count **main-line** prose words, as `tools/check_structure.py --words` c
   *Answer:*
   - (a) With TAUT, 6 lines: box \( x_0 \): 3 \( P(x_0) \to Q(x_0) \) (∀E 1); 4 \( Q(x_0) \to \neg P(x_0) \) (∀E 2); 5 \( \neg P(x_0) \) (TAUT 3, 4: \( p \to q, q \to \neg p \models \neg p \)); 6 ∀I 3–5.
   - Without, 10 lines: 3 and 4 as before; 5 \( P(x_0) \) (asm, for ¬I); 6 \( Q(x_0) \) (→E 3, 5); 7 \( \neg P(x_0) \) (→E 4, 6); 8 \( \bot \) (¬E 5, 7); 9 \( \neg P(x_0) \) (¬I 5–8); 10 ∀I 3–9.
-  - (b) No: the skeletons are two different atoms. The step is derivable by instantiating, one TAUT line and generalizing, which is @exm-four-tasks-with-quantifiers (b).
+  - (b) No: the skeletons are two different atoms. The step is derivable by instantiating, one TAUT line (\( p \to q \models \neg q \to \neg p \)) and generalizing, the pattern of @exm-four-tasks-with-quantifiers (b).
   
   **Marking scheme** (10 points): 3 for the TAUT derivation with the skeleton named; 4 for the derivation without TAUT; 1 for the count; 2 for (b) with the reason. Fatal error, scoring 0 for the step: a TAUT line citing \( \forall \) lines directly to reach \( \neg P(x_0) \).
 - **C1** (new) `[C1: Some index decides, used later]` (the drinker sentence in index dress; technique: vD, En; 7.1 comes back to it, D9). Stem: "Let \( D(n) \) say '\( a_n > 0 \)' for a sequence \( (a_n) \), over a domain of indices. (a) Derive \( \vdash \exists n\, (D(n) \to \forall m\, D(m)) \), with \( \rulename{LEM} \) on \( \forall m\, D(m) \). (b) Derive it again in two lines, from one TAUT line and one law of Section 6.2. (c) Say in two sentences which index the sentence promises, and why the derivations of (a) and (b) name none."
@@ -927,7 +945,7 @@ Budgets count **main-line** prose words, as `tools/check_structure.py --words` c
    19. \( \bot \) — ∃E 1, 3–18
    20. \( \neg\mathrm{UC} \) — ¬I 2–19
    
-   Then three sentences. Line 15's propositional skeleton is \( p \wedge \neg q, \ p \to q \models \bot \), so the line replaces \( \rulename{\wedge E} \) twice, \( \rulename{{\to}E} \) and \( \rulename{\neg E} \), four lines. The witness lines 5, 8 and 10 are opened as soon as they exist, the move of Section 6.3. Every closing line's witness (\( y_1 \), \( x_1 \), \( \delta_1 \), \( \varepsilon_1 \)) is absent from \( \bot \), from the \( \exists \) line it cites, from the premise, and from the assumptions still open. The display stays one block, wide, scrolled by the renderer (R4 §1 item 4's rule for long derivations).
+   Then three sentences. Line 15's propositional skeleton is \( p \wedge \neg q, \ p \to q \models \bot \), so the line replaces \( \rulename{\wedge E} \) twice, \( \rulename{{\to}E} \) and \( \rulename{\neg E} \), four lines. The boxes on the witness lines 5, 8 and 10 are opened as soon as those lines exist, the move "name the witness early" (Section 5.6), which Section 6.3 puts first. Every closing line's witness (\( y_1 \), \( x_1 \), \( \delta_1 \), \( \varepsilon_1 \)) is absent from \( \bot \), from the \( \exists \) line it cites, from the premise, and from the assumptions still open. The display stays one block, wide, scrolled by the renderer (R4 §1 item 4's rule for long derivations).
 9. **`## Witness functions {#witness-functions}`** (new, ~280 words; technique: vD, En, LPL, Skolem functions and strategies). Text points, in order:
    - "UC says that for every \( \varepsilon > 0 \) some \( \delta > 0 \) works for all points. A rule that picks such a \( \delta \) for each \( \varepsilon \) is a function, \( \delta(\varepsilon) \): a **witness function** for UC." Example: for \( f(x) = x/2 \) on \( \nR \), \( \delta(\varepsilon) = 2\varepsilon \) works, since \( \abs{x/2 - y/2} = \abs{x - y}/2 < \varepsilon \) when \( \abs{x - y} < 2\varepsilon \).
    - "For C the witness may depend on the point too: \( \delta(x, \varepsilon) \). For \( x^2 \), @exm-square-not-uniform gave \( \delta(x, \varepsilon) = \min(1, \varepsilon/(2\abs{x} + 1)) \)."
@@ -1095,27 +1113,25 @@ Each section has at most one forward pointer, in its Looking-ahead box (STYLE §
 
 | STATUS row (atlas ids) | What | Paid by |
 |---|---|---|
-| F1.4 §01–§08, index → F1.8 (row 83) | translation, the search method extended, quantifier laws, dependence | already paid by `prp-bounded-quantifier-rules`, `exm-translate-limit`, `prp-quantifier-negation`, `prp-bounded-quantifier-negation`, `prp-quantifier-distribution`, `prp-quantifier-passage`, `exm-uniform-implies-continuous`. **Update:** "the search method extended" is now paid in F1.8 §03 (the moved algorithm), not §01 |
-| F1.2 §05 → F1.8 (row 87) | ε = x/2, "the hypothesis applies to it" | `prp-arbitrarily-close-equal` (unchanged) |
-| F2.1 → F1.8 (rows 105, 106) | bounded rules; quantifier negation, unbounded and bounded; negated implication | `prp-bounded-quantifier-rules`, `prp-quantifier-negation`, `prp-bounded-quantifier-negation`, `prp-negated-implication` (unchanged, verbatim) |
-| F1.4 §02 (5.2, 02:396): renaming inside a formula is "a convention of this book" | — (not a STATUS row today) | 6.2's renaming sentence after `prp-replacement` makes it a provable equivalence. `ch05-deepen` may add one clause to 02:396 pointing to Section 6.2 (seam, not a promise) |
-| F1.3 §08 (4.8) → F1.8 (expected from `ch04-deepen`) | `def-rule-taut` extended to quantified formulas | `def-propositional-skeleton`, `prp-taut-skeleton` (6.3). Recorded for the ch04 S1; 4.8's box may name Chapter 6 |
-| F1.4 §03–§07 (5.3–5.7) → F1.8: "Section 6.1 collects the steps" | ch05 05:262, 06:588, 07:256 | 6.3's "The search method, extended". The pointers must read "Section 6.3" (§6.3 below) |
+| F1.4 §01–§08, index → F1.8 (STATUS.md line 86, 2026-10-25) | translation, quantifier laws, dependence. Since `ch05-deepen` the row keeps only the index hook (05/ix:3, "Chapter 6 reads the answer off the rules"), 05/ix:45 ("translated, negated and derived (Chapter 6)"), and two exercise solutions: 05/03:378 ("Section 6.1 builds that into a rule") and 05/08:440 ("Section 6.2 derives such negations mechanically, one quantifier at a time") | already paid: 05/03:378 by `prp-bounded-quantifier-rules` (6.1); 05/08:440 by the subsection "Negating a definition, mechanically" (6.2), whose procedure handles the negated \( \exists! \) with \( = \) and \( \ne \) unchanged; the index hook and 05/ix:45 by 6.1, 6.2 and `exm-uniform-implies-continuous` (6.4). **No update needed for the search method:** Chapter 5 as delivered no longer points to Chapter 6 for it (its "The search method: one more step" paragraphs name no later section), so the moved algorithm in 6.3 pays no Chapter 5 pointer. S4 adds "§02 'Negating a definition, mechanically' (05/08:440)" to the row's paid list |
+| F1.2 index, §01, §02, §04, §05 → F1.4, F1.8 (STATUS.md line 90) | ε = x/2, "the hypothesis applies to it" | `prp-arbitrarily-close-equal` (unchanged) |
+| F2.1 → F1.8 (STATUS.md lines 132, 133) | bounded rules; quantifier negation, unbounded and bounded; negated implication | `prp-bounded-quantifier-rules`, `prp-quantifier-negation`, `prp-bounded-quantifier-negation`, `prp-negated-implication` (unchanged, verbatim) |
+| F1.4 §02 (5.2, the fold paragraph "Its status", 05/02:465): renaming inside a formula is "a convention of this book" | — (not a STATUS row today) | 6.2's renaming sentence after `prp-replacement` makes it a provable equivalence. `ch05-deepen` could have added one clause to 05/02:465 pointing to Section 6.2 (seam, not a promise; Chapter 5 as delivered has none, and none is needed) |
+| F1.3 §08 → F1.8 (STATUS.md line 122; 04/08:700: "Chapter 6 extends TAUT to formulas with quantifiers, reading each quantified part as a letter") | `def-rule-taut` extended to quantified formulas | `def-propositional-skeleton`, `prp-taut-skeleton` (6.3), citing @def-rule-taut as the row requires. A skeleton letter also stands for an atomic formula other than \( \bot \); 4.8's "each quantified part" is the case that matters, and the two agree on every formula with a quantifier |
+| F1.3 §09 → F1.4, F1.8, F1.6, F1.5 (STATUS.md line 131) | nothing in Chapters 5–8 uses Section 4.9 | nothing to pay: prenex form (6.2) is not a normal form of 4.9, and 6.2 does not cite 4.9 |
+| F1.1, F1.2, F1.7, F1.3, F1.4 index → F1.8 core (STATUS.md lines 113–115, 129, 130) | the Minimum line | Chapter 6's index carries the same line word for word (§4.0 item 6) |
 
 ### 6.3 Edits needed outside Chapter 6 (for the coordinator, `ch05-deepen` and `ch08-deepen`)
 
 | File:line | Now | Becomes | Why |
 |---|---|---|---|
-| `ch05…/05-existential-introduction.md:262` | "… and Section 6.1 collects them." | "… and Section 6.3 collects them." | the method moved |
-| `ch05…/06-existential-elimination.md:588` | "… Section 6.1 collects them with the steps of Section 3.1." | "Section 6.3" | same |
-| `ch05…/07-equality-and-uniqueness.md:256` | "Section 6.1 collects all the steps into one method." | "Section 6.3" | same |
-| `ch08…/05-writing-proofs.md:14` | "(Section 3.1, extended in Section 6.1)" | "(Section 3.1, extended in Section 6.3)" | same |
-| `ch05…/index.md` (R4 §4.0 items 4 and 7) | the first-reading path and "Where this goes" name 6.1–6.4 | `ch05-deepen` drops the 6.x items; Chapter 6's index carries them (§2.1) | one index per chapter |
-| `ch05…/05-existential-introduction.md:244` | "Section 6.1 folds lines 3 and 4 into a single bounded step." | unchanged (still true) | — |
+| `ch08…/05-writing-proofs.md:14` | "(Section 3.1, extended in Section 6.1)" | "(Section 3.1, extended in Section 6.3)" | the method moved to 6.3 |
+| `ch05…/index.md` (R4 §4.0 items 4 and 7) | the first-reading path and "Where this goes" name 6.1–6.4 | **done** by `ch05-deepen`: the delivered index names no 6.x section (only "Chapter 6" at ix:3 and ix:45); Chapter 6's index carries the cross-volume pointers (§2.1) | one index per chapter |
+| `ch07…/03-first-order-soundness.md:13` | "each of which Section 6.1 expanded into a displayed block of unbounded steps" | unchanged: the proof of `prp-bounded-quantifier-rules` stays, verbatim, in fold F6.1-b | — |
 | `ch08…/02-quantifier-rhetoric.md:7, 13, 57, 68, 88`; `03-levels-of-abbreviation.md:26, 269, 275, 462`; `index.md:7` | cite 6.1's 16-line and 6.4's 11-line derivations and 6.2's RAA box | unchanged: those derivations stay verbatim with their line numbers | binding rule 2 |
 | fd2 ch03 07:94 | names "Negating a definition, mechanically" | unchanged: heading kept | — |
 
-The D2 sweep is done, so these four one-word pointer edits go to the ch05/ch08 drafters, or to the S8 seam pass if those chapters are drafted first.
+The three Chapter 5 rows this table had (05:262, 06:588 and 07:256, "Section 6.1 collects …") and the row for 05:244 are gone: the delivered Chapter 5 has none of those sentences (grep 2026-10-25), so nothing in Chapter 5 needs an edit for Chapter 6. The one remaining pointer edit, 08/05:14, goes to the ch08 drafter, or to the S8 seam pass.
 
 ### 6.4 Seams recorded for later S1 units (not promises)
 
@@ -1151,7 +1167,7 @@ Everything R4 §7 lists for 4.8–4.10:
 - the \( x^2 \) proof;
 - the warning "Depending on ε is a claim".
 
-Also: every kept exercise and its solution (6.1 A1, B1, B2, C1 (frozen), C2; 6.2 A1, B1–B3, C1, C2; 6.4 A1, B1–B3, C1–C3), except the pointer remaps of B2's and C1's solutions in 6.2 (§4.2, Exercises); the dependency-ledger comments of the three files, which move with their text, plus new lines; and every Try-it-first (02:25 with its pointer reworded; 04:113).
+Also: every kept exercise and its solution (6.1 A1, B1, B2, C1 (frozen), C2; 6.2 A1, B1–B3, C1, C2; 6.4 A1, B1–B3, C1–C3), except the pointer remaps of B2's and C1's solutions in 6.2 (§4.2, Exercises) and of 6.1 B1's solution (c) at 01:384 (§4.1 item 4); the dependency-ledger comments of the three files, which move with their text, plus new lines; and every Try-it-first (02:25 with its pointer reworded; 04:113).
 
 ---
 
@@ -1169,13 +1185,13 @@ Also: every kept exercise and its solution (6.1 A1, B1, B2, C1 (frozen), C2; 6.2
 **New main-line claims and examples:**
 8. 6.1 mixed stage: the three stages say the same thing; the formula is the translation of the sentence.
 9. 6.1 `exm-translation-traps`, each row:
-   - (a) \( A = \{3\} \): the sentence and the right formula false, the wrong formula true at \( x = y = 3 \); the trap is not in 5.1 (05/01:169 and 05/01:361 are the \( \forall \)-with-\( \wedge \) slip, which this file no longer repeats);
+   - (a) domain \( \nR \): no natural number lies in \( (\tfrac13, \tfrac23) \), so the sentence and the right formula are false, and the wrong formula is true at \( n = \tfrac12 \); the trap is in neither 5.1 (05/01:229, 05/01:571: the \( \forall \)-with-\( \wedge \) slip) nor 5.8 (05/08:215, 05/08:349: the \( x \ne y \) slip), and it exercises the one-domain convention that 6.1 now carries;
    - (b) \( A = \{1\} \), \( B = \{-1\} \): the sentence false and the wrong formula true;
    - (c) wrong false at \( 2 \), right true;
    - (d) the wrong formula's last \( n \) is free, and at \( n = 1 \) it is false while the sentence is true;
    - (e) at \( A = \emptyset \) the right formula is true and the wrong one false.
    
-   Also: "after 'if' or 'not', 'any' means 'some'" is offered as a reading rule, with no claim beyond the examples; and the traps do not duplicate 5.1's translations as delivered (checked against 05/01:167–175 and 05/01:361 in S2 round 1; recheck once `ch05-deepen` is drafted).
+   Also: trap (e) is credited to Section 5.1's warning on "any" (05/01:316–318) and adds only the separating reading; and the traps do not duplicate the translations of the delivered 5.1 and 5.8 (rechecked 2026-10-25 against 05/01:174–330, 05/01:571 and 05/08:183–227, 05/08:346–367).
 10. 6.1 infinitely many and eventually: both formulas; \( (-1)^n \) values; the Quick check's formula for "only finitely many \( n \)".
 11. 6.1 translation error: \( \neg(7 \in \{1, 2\}) \vdash \exists x\, (x \in A \to x > 5) \) for \( A = \{1, 2\} \) by VI and ∃I at \( 7 \) (both legal); "some element of \( \{1, 2\} \) exceeds 5" is false. 6.1 Not allowed: each entry breaks the clause named, and no entry is in fact legal.
 12. `prp-replacement`: the statement (with the closure hypothesis) and the proof route of F6.2-a, in particular:
@@ -1186,7 +1202,7 @@ Also: every kept exercise and its solution (6.1 A1, B1, B2, C1 (frozen), C2; 6.2
     - that the "in particular" follows by ∀E at the variables themselves;
     - and that no truth table or completeness is used (C2, G6).
 13. F6.2-b's new opening sentence: "a law proved for every formula meeting its condition holds for the instances at fresh names, and \( k \) flagged boxes give its closure", for every law of 6.2 including the bounded ones with \( z > a \).
-14. The renaming sentence: front renamings (5.4 (b), 5.6 `#existential-renaming`) plus `prp-replacement` give renaming anywhere as a provable equivalence; the closure hypothesis holds for the front renamings.
+14. The renaming sentence: front renamings (5.4's fold "The front renaming, derived", 05/04:445; 5.6 `#existential-renaming`, 05/06:777) plus `prp-replacement` give renaming anywhere as a provable equivalence; the closure hypothesis holds for the front renamings.
 15. 6.2 square:
     - the diagonals derived as stated (A/O by `prp-bounded-quantifier-negation` with bound \( S(x) \), as 02:680 argues; E/I with `prp-double-negation` under ∃ by `prp-replacement`);
     - contraries and subcontraries need some \( S \);
@@ -1200,7 +1216,7 @@ Also: every kept exercise and its solution (6.1 A1, B1, B2, C1 (frozen), C2; 6.2
 18. 6.3: the moved algorithm unchanged; the three moves; the flowchart (every branch uses only rules and moves of the book; no claim of completeness).
 19. `exm-search-with-witnesses`: the 13-line derivation, the snapshots, the side conditions at 12 and 13, the reading over \( \nZ \) (all three premises true), and the Quick check.
 20. `def-propositional-skeleton`:
-    - well defined by recursion on first-order formulas (5.2's formation rules; bounded quantifiers are abbreviations beginning with a quantifier); \( \bot \), atomic under (Fm1) (05/02:91), is excluded from the prime formulas, so the clauses \( \mathrm{sk}(\bot) = \bot \) and \( \mathrm{sk}(\pi) \) never apply to one formula;
+    - well defined by recursion on first-order formulas (5.2's formation rules; bounded quantifiers are abbreviations beginning with a quantifier); \( \bot \), atomic under (Fm1) (05/02:94), is excluded from the prime formulas, so the clauses \( \mathrm{sk}(\bot) = \bot \) and \( \mathrm{sk}(\pi) \) never apply to one formula;
     - "alike up to renaming" is an equivalence on prime formulas, so the assignment exists;
     - the example skeleton \( p \to (q \vee \neg p) \);
     - the distinction from 3.1's "skeleton".
@@ -1221,7 +1237,7 @@ Also: every kept exercise and its solution (6.1 A1, B1, B2, C1 (frozen), C2; 6.2
     - the Quick check's nine-line expansion.
 24. `exm-four-tasks-with-quantifiers`:
     - (a) the 5 lines, with ∃I at \( x \) itself, sound as `prp-forall-implies-exists` is;
-    - (b) both TAUT skeletons;
+    - (b) the E-form equivalence, both directions (4 lines each, checked by `check_fitch.py` 2026-10-25), and both TAUT skeletons; it is not the contrapositive pair, whose direction \( \dashv \) is 5.8's C item at 05/08:702;
     - (c) the 6 lines and the skeleton \( p \wedge \neg q, p \to q \models \bot \);
     - (d) the 7-line derivation and the reading (P even, Q positive, 0);
     - "Section 3.2's definition reads the same for first-order formulas" (`def-inconsistent-set`'s wording as drafted by `ch03-finding-derivations` must allow this; S2 checks once 3.2's blueprint exists).
@@ -1239,7 +1255,7 @@ Also: every kept exercise and its solution (6.1 A1, B1, B2, C1 (frozen), C2; 6.2
     - the finite case by \( k \) uses of ∃E and the minimum;
     - the claim about the search;
     - the Quick check (finite non-empty \( A \); empty \( A \) trivial).
-30. Index: the Summary's claims (each a labelled result or worked example of the chapter); "What you need" labels exist (`def-rule-taut` from `ch04-deepen`); "Where this goes" against STATUS rows 79 and 80 and fd2 `ax-choice`; the mirror box's claims against layout §1.2.
+30. Index: the Summary's claims (each a labelled result or worked example of the chapter); "What you need" labels exist (all checked 2026-10-25, `def-rule-taut` in 4.8 included); "Where this goes" against STATUS.md lines 81 and 82 (2026-10-25) and fd2 `ax-choice`; the Minimum line word for word as in Chapters 1–5; the mirror box's claims against layout §1.2.
 
 **New and changed exercise answers:**
 31. `exr-translation-a2`: all twelve parts, the four new ((e), (g), (h), (i)) in particular; (h)'s values on \( \{-1, 1\} \).
@@ -1247,18 +1263,18 @@ Also: every kept exercise and its solution (6.1 A1, B1, B2, C1 (frozen), C2; 6.2
 33. `exr-translation-b4`: (a)–(e); (f)'s sets \( \{1\}, \{2\}, \emptyset \).
 34. `exr-translation-c3`: the 13-line derivation (arith lines 5, 7, 9 true for \( M_0, N_0 \in \nN \); side conditions at 12 and 13); (b)'s parity reading.
 35. `exr-quantifier-laws-a2`: R4's (a)–(h) (R4 S2a item 31 stands); (i) A false at \( 1 \); (j) the two expansions and the truth values; (k) law (b); (l) at \( 2 \).
-36. `exr-quantifier-laws-b4`: six verdicts; the derivations of (a) (12 lines with ↔I closing two boxes), (c) (10 lines, RAA at 8), (e); the readings of (b), (d), (f) over \( \nZ \).
+36. `exr-quantifier-laws-b4`: six verdicts; the derivations of (a) (12 lines with ↔I closing two boxes), (c) (10 lines, RAA at 8), (e) (13 lines: LEM, QN (a) as one line, DS; checked by `check_fitch.py` 2026-10-25); the readings of (b), (d), (f) over \( \nZ \).
 37. `exr-quantifier-laws-b5`: line 3 is the only illegal line; the break at \( c = 0 \); the repaired 8-line derivation and its side condition; the conclusion is derivable.
 38. `exr-quantifier-laws-c3`: (a)'s 5 lines; (b)'s nesting and the side condition of its ∀I, with the pasted flags renamed; (c).
 39. `exr-first-order-search-a1`: five answers; (b)'s claim that the two prime formulas are not renamings of each other and that \( \bot \) is still derivable.
 40. **Binding rule 5 audit:**
     - `exr-first-order-search-b1`: seven derivations (1, 3, 4, 6, 7, 9, 11) and five readings (2, 5, 8, 10, 12), each truth value checked;
     - every TAUT skeleton verified by truth table while writing this blueprint: claims 1, 6, 7, 11, the propositional core, B3, the inconsistency example, C2(b), and R2's cycle (no satisfying row);
-    - no claim duplicates a sequent stated in Chapter 5 or 6 (checked against the grep list of ch05's \( \vdash \)-statements of 2026-10-13; claim 2 deliberately weakens `exm-existential-introduction-derivations` (c));
+    - no claim duplicates a sequent stated in Chapter 5 or 6 (rechecked 2026-10-25 against the delivered Chapter 5: the old claim 3, \( \exists x\, \exists y\, R(x, y) \vdash \exists y\, \exists x\, R(x, y) \), was 5.6's drill part 12 at 05/06:1146 and is replaced; the new claim 3 is checked by `check_fitch.py`; claim 2 deliberately weakens `exm-existential-introduction-derivations` (c); claim 7 generalizes 5.3's 05/03:564 by a flagged box, which is its point);
     - claim 1 against 6.2 B5's sequent: different conclusions;
     - no claim matches a sequent list of any of the twelve books (C small 7).
 41. `exr-first-order-search-b2`: the 17-line derivation, the instantiation terms, and the side conditions at 16 and 17.
-42. `exr-first-order-search-b3`: 6 and 10 lines; (b).
+42. `exr-first-order-search-b3`: 6 and 10 lines; (b), with the skeleton \( p \to q \models \neg q \to \neg p \).
 43. `exr-first-order-search-c1`: the 13-line derivation (LEM, QN (a) as one line, VI, ∃I at \( n \) and at \( m_0 \)); (b)'s TAUT line (\( \forall n\, D(n) \) and \( \forall m\, D(m) \) are renamings, so \( p \to p \)) and passage (d)'s condition; (c)'s two cases.
 44. `exr-first-order-search-c2`: (a)'s reading with \( M \) empty; (b)'s 9 lines; (c).
 45. `exr-uniform-continuity-rule-by-rule-a2`: twelve answers, especially (f), (h) \( = 1/7 \), (i) \( = \sqrt{17} - 4 \), (j), (l).
@@ -1270,6 +1286,8 @@ Also: every kept exercise and its solution (6.1 A1, B1, B2, C1 (frozen), C2; 6.2
 
 ---
 
+**Frozen after S2 (final revision, 2026-10-25).**
+
 ## 10. Notes for S3 and S4
 
 - **Drafters:** three, as in R4: (i) 6.1 (with the move of its search subsection to (ii)); (ii) the new 6.3, which takes 01:307–333 verbatim from (i)'s file; (iii) 6.2 and 6.4. The index is written last, against the delivered sections (DRAFTING). (i) and (ii) coordinate the move in one commit, so the method is never in both files or in neither.
@@ -1278,6 +1296,7 @@ Also: every kept exercise and its solution (6.1 A1, B1, B2, C1 (frozen), C2; 6.2
 - **Checking derivations:** every new derivation passes `tools/check_fitch.py`, including its TAUT lines, which the tool checks on skeletons. Every snapshot carries `% schema (partial derivations: …)` and `\purpose{…}` on each assumption whose box no justified line closes yet. 6.2 B5's flawed derivation, as printed in the stem, carries the expect-invalid marker.
 - **Figures:** each is a raw LaTeX block with its `tikzpicture` written out in full: the square in 6.2, the flowchart in 6.3, Figure D in 6.4. They use only `latex/book-diagrams.sty`'s styles, plus plain TikZ for Figure D's graph, with no colour and no white fill. S4 checks both the HTML (SVG) and the PDF renderings.
 - **STATUS:** the F1.8 row's text ("§03 is not yet written, so §04 displays as 6.3 … 'The search method, extended' stays in §01 until §03 exists") is rewritten once 03 exists. That is the coordinator's job at S4.
+- **Back-pointers into Chapter 5:** the three kept files were written against the old F1.4. Each drafter checks every "Section 5.x" in their file against the delivered Chapter 5 before S4. Spot-checked at the final S2 (2026-10-25), all hold: 01:48, 01:84 (05/01:235), 01:96 and 01:366 (05/02:64, 80), 02:7 (05/01:164), 02:132 (05/01:229), 02:350 and 02:375 (05/02:333–343), 04:7, 04:18 (05/01:279).
 - **STYLE:** §12.13.4's means of breaking still reads "a counter-model (from the counter-model section of the models chapter)". Chapter 6 breaks by counter-readings (D5), which is consistent, since 7.2 is that section. No STYLE change is needed.
 
 ## S2 replies
@@ -1307,3 +1326,36 @@ Also: every kept exercise and its solution (6.1 A1, B1, B2, C1 (frozen), C2; 6.2
 1. *§6.2 ledger line for the square still named parity facts and primes.* Applied: "The square: school facts: \( 8 \) is not a perfect square, \( 4 = 2^2 \) and \( 16 = 4^2 \) are multiples of \( 4 \), and no odd number is a multiple of \( 4 \) (the empty \( S \))."
 2. *S2a item 15 originality check, read literally, failed B3 items 3 and 15.* Applied: the check now forbids only LPL 9.13's four forms (every/no/some/some-not over Even and Prime) and LPL 9.25's square/even forms; B3 items 3 and 15 are neither.
 3. *Twin table distribution (c) row called the twin "the distribution of ∨ over ∧".* Applied: "(a consequence of the distribution of \( \vee \) over \( \wedge \); @prp-distributivity is \( \wedge \) over \( \vee \) and is not cited)".
+
+**Round 3: reconciliation with the delivered Chapters 2–5 (final S2, 2026-10-25).** This is not a re-review. Every label, section pointer and seam the blueprint cites was grepped in `fd1/src/ch0[2-5]-*/`, and the blueprint was changed only where the delivered text differs. New derivations were checked by `check_fitch.py` (4 derivations, 0 errors; scratch file `…/scratchpad/fd1ch06/s2/recon.md`).
+
+1. *Labels.* Every label the blueprint cites outside Chapter 6 exists where the blueprint says (`def-rule-taut`, `cor-derivable-iff-valid` and `thm-completeness` in 4.8; `def-valid-argument`, `lem-substitution` in 4.5; `thm-strong-induction` in 4.2; `def-partial-derivation` in 3.1; `def-inconsistent-set` in 3.2; Chapter 2's and Chapter 5's labels). `thm-barber` (5.6) is not cited by this blueprint, and no new claim restates it. `def-inconsistent-theory`, `ax-choice`, `thm-naturals-unbounded` and the AN1 labels are later or downstream, as the blueprint already says. `def-rule-taut` is delivered, so §4.0 item 4 drops "S4 checks that it exists".
+2. *Ch. 4 wording.* `def-valid-argument` is "Semantic Entailment" (⊨); Chapter 4 never says "tautological consequence". `prp-taut-skeleton`'s statement, the TAUT paragraph, the Not-allowed entry and §4.0's What you need now say "semantically entail". *Test the subgoal* is delivered as 4.7's subsection and named move. §4.0 item 4 adds it, and §4.0 item 8 calls 6.3's move its first-order form. The refuting-row search (4.6) and soundness (4.7) are cited only as the blueprint already cites them.
+3. *Renaming.* 5.4's renaming is not part (b) of `exm-universal-introduction-derivations` (part (b) is \( \forall x\, (P(x) \to Q(x)), \forall x\, P(x) \vdash \forall x\, Q(x) \)). It is the fold "The front renaming, derived" after that example (05/04:445, no id). The fix is made in §4.2 item 6, in 6.3's library, in the ledger line and in S2a item 14. The 5.2 convention is at 05/02:465, the fold paragraph "Its status", and the §6.2 row is updated.
+4. *Duplicates of the delivered Chapter 5 (binding rule 5, S2a item 40).* Three items restated Chapter 5 sequents and are replaced:
+   - 6.3 B1 claim 3 was 5.6's drill part 12 (05/06:1146). It is now \( \exists x\, P(x), \forall x\, (P(x) \to \forall y\, R(x, y)) \vdash \forall y\, \exists x\, R(x, y) \), 9 lines, still under "name the witness early".
+   - 6.2 B4 (e)/(f) was 5.6 B4 (a) (05/06:1318). It is now the converse pair \( \forall x\, (P(x) \vee Q(x)) \vdash \forall x\, P(x) \vee \exists x\, Q(x) \) (derive: 13 lines, LEM, QN (a), DS) and its converse (breaks: \( P \) even, \( Q(x) \): \( x = 0 \), at \( 1 \)). The sidecar line is updated.
+   - `exm-four-tasks-with-quantifiers` (b), the contrapositive under \( \forall \), had its direction \( \dashv \) as 5.8's C item (05/08:702). It is now the E-form equivalence \( \forall x\, (P(x) \to \neg Q(x)) \dashv\vdash \forall x\, (Q(x) \to \neg P(x)) \). B3 (b) keeps the contrapositive and points to (b) as the pattern.
+   
+   (d)'s derivable half is 5.4 (b) inside a →I box, and its solution now says so.
+5. *Traps against the delivered 5.1 and 5.8.* Trap (a), "at least two", is now 5.8's warning "Different letters, perhaps the same object" (05/08:215) and drill part 5 (05/08:349). It is replaced by a missing bound under the one-domain convention: "some natural number lies strictly between \( \tfrac13 \) and \( \tfrac23 \)", wrong without \( n \in \nN \), with \( \tfrac12 \) as the separating value. This keeps "five more" true. Trap (e)'s rule on "any" is 5.1's warning (05/01:316–318), so its last sentence now credits that warning and adds only the empty-set reading. The line references of 5.1's \( \forall \)-with-\( \wedge \) slip are now 05/01:229 and 05/01:571. The sidecar, the ledger line and S2a item 9 are updated.
+6. *Named moves.* Chapter 5's index names "Name the witness early" (5.6), "Instantiate at the term you need" (5.3) and "Read the dependency off the order" (5.1). 6.3's first two moves had new names for the same moves ("open the ∃E boxes early", "postpone ∀E until the term is known"). They now carry Chapter 5's names, and what is new is the order. The change is made in §4.3 items 1 and 4, the Quick check after `exm-search-with-witnesses`, A1 (d), B1's group titles, 6.4's `exm-not-uniform-derived` and §4.0 item 8, which no longer repeats 5.1's move.
+7. *Chapter 5's pointers into Chapter 6.* The delivered Chapter 5 has four: 05/ix:3, 05/ix:45, 05/03:378 and 05/08:440. All are paid: 6.4; 6.1, 6.2 and 6.4; `prp-bounded-quantifier-rules`; and "Negating a definition, mechanically". 04/08:700 is paid by 6.3. The old "Section 6.1 collects …" sentences (05:262, 06:588, 07:256) and 05:244 no longer exist, so §6.3 drops their four edit rows and §6.2 its row for them. 07/03:13 (bounded rules expanded in 6.1) is recorded as unchanged, since F6.1-b keeps the proof.
+8. *One domain per formula (Chapter 5's S4).* §4.1 item 4 now spells out the move:
+   - the source: old 5.1 lines 178–182 at `034a2ae`;
+   - step 1's lead, and the reworded last sentence, which names 5.1's "Mixing kinds of number";
+   - the cut of the delivered 01:21, and the remap of 01:384, which §8 also records;
+   - a budget of ≤ 200 words, net +110, inside R4's ~3,290, so the section's expected ~3,680 stands;
+   - who rests on what: 5.2's fold F4.2-d rests on 5.1's two sentences, and 6.4 and this chapter's translations rest on 6.1's paragraph.
+9. *Index against the delivered indexes.* The Minimum line now uses the delivered wording ("Minimum before *Sets, Relations, and Cardinality*"). A "How to read this chapter" line (~35 words) is added, as in Chapters 4 and 5, inside the 1,000-word budget (expected ~985). The counter-reading pointer is written `[Section 5.3](#counter-readings)`, as Chapter 5's index writes it.
+10. *Smaller pointers.* (Fm1) is at 05/02:94. 6.3's library adds @prp-forall-and and @prp-exists-and to the distribution row and @prp-leibniz-law to the equality row. Figure 6.3-F follows the layout of 3.1's chart (03/01:102–125). `def-inconsistent-set` (3.2) speaks of "statements", so S2a item 24's condition holds. 4.8's box says "each quantified part as a letter", and `def-propositional-skeleton` agrees on every formula with a quantifier (§6.2 row).
+11. *STATUS rows targeting F1.8* (STATUS.md, 2026-10-25):
+    - line 86 (F1.4 → F1.8): paid as planned; S4 adds 05/08:440's payer;
+    - line 90 (F1.2 → F1.4, F1.8): `prp-arbitrarily-close-equal`;
+    - line 122 (F1.3 §08 → F1.8): `prp-taut-skeleton`, citing `def-rule-taut`;
+    - line 131 (F1.3 §09): nothing to pay, and 6.2's prenex form does not use 4.9;
+    - lines 132–133 (F2.1 → F1.8): the verbatim labels;
+    - lines 113–115, 129, 130 (Minimum): the same line in 6's index.
+    
+    The old row numbers in §6.2 and S2a item 30 are replaced by these line numbers. The F1.8 row (line 37) is rewritten at S4, as §10 says. No row is missing from the plan.
+
