@@ -328,7 +328,7 @@ The proof is an induction on the formula \( \chi \); its connective steps are sh
 
 ::: {.second-reading title="The proof of the replacement rule"}
 ::: {.proof}
-For a formula \( \theta \), write \( \overline{\forall}\theta \) for its **closure**: \( \theta \) preceded by one \( \forall \) for each variable free in \( \theta \). The order of these \( \forall \)'s does not matter, because adjacent \( \forall \)'s may be exchanged (@exm-universal-introduction-derivations (c)), so "the closure" means the closure in any one order. The hypothesis is \( \vdash \overline{\forall}(\varphi \leftrightarrow \psi) \), and the claim is \( \vdash \overline{\forall}(\chi \leftrightarrow \chi') \). A derivable formula may stand as a line of any derivation: paste its derivation in, with its flags renamed to names new to the whole derivation, as "The laws as one line" allows.
+For a formula \( \theta \), write \( \overline{\forall}\theta \) for its **closure**: \( \theta \) preceded by one \( \forall \) for each variable free in \( \theta \). The order of these \( \forall \)'s does not matter, because the instance of \( \forall z_1 \cdots \forall z_k\,\theta \) at fresh flags comes by \( \rulename{\forall E} \) in that order, and \( k \) flagged boxes closed by \( \rulename{\forall I} \) in any other order give the \( \forall \)'s in that other order (this is the derivation of @exm-universal-introduction-derivations (c), with \( k \) variables), so "the closure" means the closure in any one order. The hypothesis is \( \vdash \overline{\forall}(\varphi \leftrightarrow \psi) \), and the claim is \( \vdash \overline{\forall}(\chi \leftrightarrow \chi') \). A derivable formula may stand as a line of any derivation: paste its derivation in, with its flags renamed to names new to the whole derivation, as "The laws as one line" allows.
 
 We use strong induction (@thm-strong-induction) on the number of connectives and quantifier symbols of \( \chi \): assume the claim for every formula with fewer such symbols, and prove it for \( \chi \).
 
@@ -336,7 +336,7 @@ We use strong induction (@thm-strong-induction) on the number of connectives and
 
 Otherwise the occurrence lies in an immediate part of \( \chi \), which has fewer symbols; an atomic formula has no part other than itself.
 
-*Case 1: \( \chi = \neg\chi_0 \), with the occurrence in \( \chi_0 \),* so \( \chi' = \neg\chi_0' \). The induction hypothesis gives \( \vdash \overline{\forall}(\chi_0 \leftrightarrow \chi_0') \). Open one flagged box for each variable of the closure of \( \neg\chi_0 \leftrightarrow \neg\chi_0' \), nested in the closure's order, with fresh flags. Inside, \( \rulename{\forall E} \) of the induction hypothesis at the flags, each variable at its own flag in the closure's order, gives the instance \( \alpha \leftrightarrow \alpha' \) of \( \chi_0 \leftrightarrow \chi_0' \) at the flags; every variable of that closure is free in \( \chi \) or \( \chi' \), so it has a flag. The rules of Section 2.4 give \( \neg\alpha \leftrightarrow \neg\alpha' \): each direction is a \( \rulename{\neg I} \) box with \( \rulename{\leftrightarrow E} \) inside, and \( \rulename{\leftrightarrow I} \) (@def-rules-biconditional) joins them. The flagged boxes then close by \( \rulename{\forall I} \), the innermost first. Each side condition holds: the flag is fresh, and no assumption is open at the closing line.
+*Case 1: \( \chi = \neg\chi_0 \), with the occurrence in \( \chi_0 \),* so \( \chi' = \neg\chi_0' \). The induction hypothesis gives \( \vdash \overline{\forall}(\chi_0 \leftrightarrow \chi_0') \). Open one flagged box for each variable of the closure of \( \neg\chi_0 \leftrightarrow \neg\chi_0' \), nested in the closure's order, with fresh flags. Inside, \( \rulename{\forall E} \) of the induction hypothesis at the flags, each variable at its own flag in the closure's order, gives the instance \( \alpha \leftrightarrow \alpha' \) of \( \chi_0 \leftrightarrow \chi_0' \) at the flags; every variable of that closure is free in \( \chi \) or \( \chi' \), so it has a flag. The rules of Sections 2.2 and 2.4 give \( \neg\alpha \leftrightarrow \neg\alpha' \): each direction is a \( \rulename{\neg I} \) box (@def-rules-negation) with \( \rulename{\leftrightarrow E} \) inside, and \( \rulename{\leftrightarrow I} \) (@def-rules-biconditional) joins them. The flagged boxes then close by \( \rulename{\forall I} \), the innermost first. Each side condition holds: the flag is fresh, and no assumption is open at the closing line.
 
 *Case 2: \( \chi = \chi_1 \circ \chi_2 \),* where \( \circ \) is \( \wedge \), \( \vee \), \( \to \) or \( \leftrightarrow \), and the occurrence is in \( \chi_1 \) (in \( \chi_2 \), exchange the parts). As in case 1, with the propositional step \( \alpha \leftrightarrow \alpha' \vdash (\alpha \circ \gamma) \leftrightarrow (\alpha' \circ \gamma) \), where \( \gamma \) is the instance of \( \chi_2 \) at the flags. For each \( \circ \) it is a short derivation with that connective's rules of Chapters 1 and 2 and \( \rulename{\leftrightarrow E} \) on \( \alpha \leftrightarrow \alpha' \). A variable free in \( \chi \) but not in \( \chi_1 \) is flagged and never instantiated, which is harmless: the instance of the induction hypothesis is taken at the flags of its own variables only.
 
@@ -353,10 +353,10 @@ The flagged boxes of \( \bar w_0 \) then close by \( \rulename{\forall I} \), as
 :::
 
 ::: {.second-reading title="Why the laws of this section meet the hypothesis"}
-A law of this section is proved for every formula that meets its condition, so it holds for the instances at fresh names \( z_{1,0}, \dots, z_{k,0} \), and \( k \) flagged boxes give its closure, as @prp-replacement asks. Take one variable \( x \) at a time, with sides \( \alpha \) and \( \beta \) of the law, and a fresh \( x_0 \): a variable other than \( x \) that appears in neither \( \alpha \) nor \( \beta \). The derivation of \( \alpha[x_0/x] \vdash \beta[x_0/x] \) is available because each law used holds for **every** formula that meets its condition, in particular for the instances at \( x_0 \). The laws this book applies to parts have conditions of two kinds, and both survive, for the same reason; the passage laws at the end of this section have one kind, checked in the fold after them, and the bounded negation laws the other. A law of @prp-bounded-quantifier-negation with a bound such as \( z > a \) asks that its bound variable \( z \) not occur in the term \( a \); since \( z \) appears in \( \beta \), again \( x_0 \) is not \( z \). If \( z \) is \( x \), substitution stops at the quantifier on \( x \) and the pair is unchanged; otherwise it passes the quantifier on \( z \), and \( a[x_0/x] \) contains no variable that \( a \) lacks except \( x_0 \), so \( z \) does not occur in it. So the instance is again an instance of the same law, with its condition met.
+A law of this section is proved for every formula that meets its condition, so it holds for the instances at fresh names \( z_{1,0}, \dots, z_{k,0} \), and \( \rulename{\leftrightarrow I} \) (@def-rules-biconditional) joins the two directions into \( \alpha \leftrightarrow \beta \) at the fresh names, and \( k \) flagged boxes give its closure, as @prp-replacement asks. Take one variable \( x \) at a time, with sides \( \alpha \) and \( \beta \) of the law, and a fresh \( x_0 \): a variable other than \( x \) that appears in neither \( \alpha \) nor \( \beta \). The derivation of \( \alpha[x_0/x] \vdash \beta[x_0/x] \) is available because each law used holds for **every** formula that meets its condition, in particular for the instances at \( x_0 \). The laws this book applies to parts have conditions of two kinds, and both survive, for the same reason; the passage laws at the end of this section have one kind, checked in the fold after them, and the bounded negation laws the other. A law of @prp-bounded-quantifier-negation with a bound such as \( z > a \) asks that its bound variable \( z \) not occur in the term \( a \); since \( z \) appears in \( \beta \), \( x_0 \) is not \( z \) (as for the passage laws, in the fold after them). If \( z \) is \( x \), substitution stops at the quantifier on \( x \) and the pair is unchanged; otherwise it passes the quantifier on \( z \), and \( a[x_0/x] \) contains no variable that \( a \) lacks except \( x_0 \), so \( z \) does not occur in it. So the instance is again an instance of the same law, with its condition met.
 :::
 
-Renaming a bound variable is a replacement of this kind: Section 5.4 derived \( \forall y\, \varphi \dashv\vdash \forall z\, \varphi[z/y] \) for every formula \( \varphi \) in which \( z \) does not appear (the fold after @exm-universal-introduction-derivations), and [Section 5.6](#existential-renaming) did the same for \( \exists \), so the convention of Section 5.2, that a renaming may be made anywhere inside a formula, is now a provable equivalence.
+Renaming a bound variable is a replacement of this kind: Section 5.4 derived \( \forall y\, \varphi \dashv\vdash \forall z\, \varphi[z/y] \) for every formula \( \varphi \) in which \( z \) does not appear (the fold after @exm-universal-introduction-derivations), and [Section 5.6](#existential-renaming) did the same for \( \exists \), so the convention of Section 5.2, that a renaming may be made anywhere inside a formula, is now a provable equivalence. Its closure is derivable, as @prp-replacement asks: for a variable \( x \) free in it and a fresh \( x_0 \) (as in the fold above), \( x \) is neither \( y \) nor \( z \), and \( x_0 \) is not \( z \), because \( z \) appears in \( \forall z\, \varphi[z/y] \), so \( z \) does not appear in \( \varphi[x_0/x] \), and the instance is the renaming of \( \forall y\, \varphi[x_0/x] \) to \( \forall z\, \varphi[x_0/x][z/y] \). Two formulas that differ only by renaming bound variables are joined by a chain of single renamings, each to a letter absent from the formula at that step (for \( \forall x\, \forall y\, R(x, y) \) and \( \forall y\, \forall x\, R(y, x) \): \( x \) to \( u \), then \( y \) to \( x \), then \( u \) to \( y \)), each applied to a part by @prp-replacement and chained by @lem-weakening-cut.
 
 
 ::: {#exm-negating-definitions}
@@ -578,7 +578,7 @@ Each intuitionistic direction is a short run of the search method. A goal \( \to
 
 ::: {.second-reading #distribution-and-passage-derivations title="The derivations of the distribution and passage laws"}
 ::: {.proof}
-(a) is @prp-forall-and, (d) is @prp-exists-and, and (b) is the derivation of \( \exists \) over \( \vee \) in @exm-existential-elimination-derivations. Those derivations are written with \( P(x) \) and \( Q(x) \); they work word for word with \( \varphi \) and \( \psi \) in their place, because they use nothing about \( P(x) \) and \( Q(x) \) beyond the instances at the fresh name, which is chosen different from \( x \) and not appearing in \( \varphi \) or \( \psi \).
+For @prp-quantifier-distribution: (a) is @prp-forall-and, (d) is @prp-exists-and, and (b) is part (a) of @exm-existential-elimination-derivations, the derivation of \( \exists \) over \( \vee \). Those derivations are written with \( P(x) \) and \( Q(x) \); they work word for word with \( \varphi \) and \( \psi \) in their place, because they use nothing about \( P(x) \) and \( Q(x) \) beyond the instances at the fresh name, which is chosen different from \( x \) and not appearing in \( \varphi \) or \( \psi \).
 
 For (c), the goal is a \( \forall \): open a flagged box. Inside it the premise is a disjunction, so split on it; in each case one \( \rulename{\forall E} \) at \( x_0 \) and one \( \rulename{\vee I} \) reach the instance of \( \varphi \vee \psi \):
 
@@ -604,7 +604,7 @@ $\begin{nd}
 \end{center}
 ```
 
-Line 8 is the instance of \( \varphi \vee \psi \) at \( x_0 \) and the last line of the flagged box; at line 9, \( x_0 \) is in neither the premise nor the conclusion, and no assumption is open. This proves the proposition.
+Line 8 is the instance of \( \varphi \vee \psi \) at \( x_0 \) and the last line of the flagged box; at line 9, \( x_0 \) is in neither the premise nor the conclusion, and no assumption is open. This proves @prp-quantifier-distribution.
 :::
 
 ::: {.proof}
@@ -808,7 +808,7 @@ $\begin{nd}
 \end{center}
 ```
 
-Line 13 is again \( \rulename{\exists I} \) at the variable \( x \). At line 10, \( x_0 \) is in neither the conclusion \( \exists x\, (\psi \to \varphi) \) nor line 4, \( \exists x\, \varphi \), nor in the premise or the open assumption \( \psi \) of line 3. In each of the eight other derivations, the side conditions are checked as in @prp-quantifier-negation, and \( \rulename{LEM} \) and \( \rulename{RAA} \) do not occur. This proves the proposition.
+Line 13 is again \( \rulename{\exists I} \) at the variable \( x \). At line 10, \( x_0 \) is in neither the conclusion \( \exists x\, (\psi \to \varphi) \) nor line 4, \( \exists x\, \varphi \), nor in the premise or the open assumption \( \psi \) of line 3. In each of the eight other derivations, the side conditions are checked as in @prp-quantifier-negation, and \( \rulename{LEM} \) and \( \rulename{RAA} \) do not occur. This proves @prp-quantifier-passage.
 :::
 :::
 
@@ -1202,7 +1202,7 @@ Is the conclusion derivable? Does this derivation prove it? Find the line that f
 :::
 
 ::: {.solution}
-The conclusion is derivable, and this derivation does not prove it. Line 3 fails: \( \rulename{\exists E} \) is not a one-line step. It opens a box with a fresh witness, and a constant already in use is not fresh; nothing licenses passing from "something has \( P \) and \( Q \)" to "\( c \) has them".
+The conclusion is derivable, and this derivation does not prove it. Line 3 fails: \( \rulename{\exists E} \) is not a one-line step. It opens a box whose witness is a fresh variable, never a constant (a constant has a fixed meaning), and the box must close on a line that does not mention the witness; here no box is opened. Nothing licenses passing from "something has \( P \) and \( Q \)" to "\( c \) has them".
 
 The step from \( \exists x\, (P(x) \wedge Q(x)) \) to \( P(c) \wedge Q(c) \) breaks over \( \nZ \), with \( P \) "is even", \( Q \) "is positive" and \( c \) read as \( 0 \): the premise is true (\( 2 \) is both), and the line is false, since \( 0 \) is not positive.
 
@@ -1347,14 +1347,20 @@ Suppose \( \exists \) were not a symbol of the language, and \( \exists x\, \var
 ::: {.enumerate options="label=(\alph*)"}
 1. Show that \( \rulename{\exists I} \) is then a derived step: from \( \varphi[t/x] \), with \( t \) free for \( x \) in \( \varphi \), derive \( \neg\forall x\, \neg\varphi \).
 2. Show that \( \rulename{\exists E} \) is one too: if \( \Gamma, \varphi[x_0/x] \vdash \chi \), where \( x_0 \) is a variable other than \( x \) that appears neither in \( \Gamma \), nor in \( \chi \), nor in \( \varphi \), then \( \Gamma, \neg\forall x\, \neg\varphi \vdash \chi \).
-3. Which of (a) and (b) uses \( \rulename{RAA} \)?
+3. Which of (a) and (b) needs a classical rule (\( \rulename{RAA} \) or \( \rulename{LEM} \))?
 :::
 :::
 
 ::: {.solution}
-[Hint]
+[Hint 1]
 
-In (a) the goal is a negation. In (b) nothing in the premises can be taken apart, so the last line will come from \( \rulename{RAA} \); aim the clash at the premise \( \neg\forall x\, \neg\varphi \).
+In (a) the goal is a negation: open a \( \rulename{\neg I} \) box.
+:::
+
+::: {.solution}
+[Hint 2]
+
+In (b) nothing in the premises can be taken apart; aim the clash at the premise \( \neg\forall x\, \neg\varphi \).
 :::
 
 ::: {.solution}
@@ -1389,7 +1395,7 @@ Line 3 is \( \rulename{\forall E} \) at \( t \), which is free for \( x \) in \(
 **Marking scheme.** (10 points)
 
 - 3: (a).
-- 2: (b)'s \( \rulename{RAA} \) box and flagged box, in the right nesting.
+- 2: (b)'s classical step (\( \rulename{RAA} \), or \( \rulename{LEM} \) with a case split) and flagged box, in the right nesting.
 - 3: the side condition of the \( \rulename{\forall I} \) line, including the renaming of the pasted flags.
 - 2: (c).
 
@@ -1424,10 +1430,10 @@ exr-quantifier-laws-c1 (solution): passage laws used under exists | prp-quantifi
 exr-quantifier-laws-c2 (solution): t = min(delta, 1/2); 0 < t/2 < t <= 1/2 < 1; |1/t - 2/t| = 1/t >= 2 | school algebra; checked by verify/ch06/exr-quantifier-laws-c2.py
 prp-replacement (proof): fold "The proof of the replacement rule": exchange of adjacent foralls | exm-universal-introduction-derivations (c) (cited)
 prp-replacement (proof): strong induction on the number of connectives and quantifier symbols | thm-strong-induction (cited)
-prp-replacement (proof): connective steps alpha <-> alpha' |- (alpha o gamma) <-> (alpha' o gamma) and not-alpha <-> not-alpha' | rules of Chapters 1-2, def-rules-biconditional (cited); argued inline, no truth table or completeness
+prp-replacement (proof): connective steps alpha <-> alpha' |- (alpha o gamma) <-> (alpha' o gamma) and not-alpha <-> not-alpha' | rules of Chapters 1-2, def-rules-negation, def-rules-biconditional (cited); argued inline, no truth table or completeness
 prp-replacement (proof): quantifier step; the side conditions of def-rules-universal and def-rules-existential at the closing lines; fresh flags make simultaneous and step-by-step substitution agree; substitution of w_0 passes forall x because x is not among the w | def-substitution, def-free-for (special case: a variable that appears nowhere is free for every variable), argued inline
 prp-replacement (proof): a derivable formula pasted as a line with its flags renamed | "The laws as one line" (this section, inline)
-prp-replacement (claim): renaming a bound variable anywhere is a provable equivalence | F1.4 §04 fold "The front renaming, derived" (after exm-universal-introduction-derivations) and F1.4 §06 #existential-renaming (cited); closure by the F6.2-b argument
+prp-replacement (claim): renaming a bound variable anywhere is a provable equivalence | F1.4 §04 fold "The front renaming, derived" (after exm-universal-introduction-derivations) and F1.4 §06 #existential-renaming (cited); closure argued inline after the renaming sentence (the instantiated x is neither y nor z; x_0 is not z, since z appears in the right side; def-substitution passes the quantifier on y), as in F6.2-b; formulas alike up to renaming joined by a chain of single renamings, each to a letter absent at that step, chained by lem-weakening-cut (cited)
 exm-square-of-opposition (claim): the diagonals: A/O by the two steps of the proof of prp-bounded-quantifier-negation (a) with bound S(x); E/I with prp-double-negation under exists by prp-replacement | cited
 exm-square-of-opposition (solution): 8 is a multiple of 4 and not a perfect square; 4 = 2^2; 16 = 4^2; no odd number is a multiple of 4 (the empty S) | school arithmetic; checked by verify/ch06/exm-square-of-opposition.py
 exm-square-of-opposition (claim): contraries, subcontraries and subalternation need some S | existential import, F1.4 §01 (cited); the empty-S case of the example

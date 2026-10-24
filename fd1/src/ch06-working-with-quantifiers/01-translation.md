@@ -24,11 +24,11 @@ So translation deserves a procedure, and the rules deserve a form that handles b
 
 The procedure, in three steps:
 
-1. **Fix the domain.** State what the variables range over. A sentence of analysis often mixes kinds of objects: **One domain per formula.** The logic of this book has a single domain for all the variables of a formula. Mathematics often mixes kinds of objects in one sentence: in "for every \( \varepsilon > 0 \) there is an \( N \in \nN \) such that for every \( n \ge N \), …", the letter \( \varepsilon \) is a real number, while \( N \) and \( n \) are natural numbers. The convention is: **the domain is the larger kind** (here \( \nR \)), and **the smaller kind enters as a bound** (\( \exists N \in \nN \), \( \forall n \in \nN \)). So the sentence begins
+1. **Fix the domain.** State what the variables range over. The logic of this book has a single domain for all the variables of a formula. Mathematics often mixes kinds of objects in one sentence: in "for every \( \varepsilon > 0 \) there is an \( N \in \nN \) such that for every \( n \ge N \), …", the letter \( \varepsilon \) is a real number, while \( N \) and \( n \) are natural numbers. The convention is: **the domain is the larger kind** (here \( \nR \)), and **the smaller kind enters as a bound** (\( \exists N \in \nN \), \( \forall n \in \nN \)). So the sentence begins
    \[
    \forall \varepsilon > 0 \; \exists N \in \nN \; \forall n \in \nN \; \bigl( n \ge N \to \dots \bigr),
    \]
-   and \( n \) ranges over real numbers that happen to be required, by the bound, to be natural numbers. A sequence \( (a_n) \) becomes a function symbol \( a \), with \( a(n) \), written \( a_n \), the \( n \)-th term. Its values at real numbers that are not natural numbers are never used, because \( a \) is only ever applied to variables bounded by \( n \in \nN \). Section 5.1 stated this convention in two sentences ("Mixing kinds of number"); here it is in full, and every translation in this chapter follows it.
+   and \( n \) ranges over real numbers that happen to be required, by the bound, to be natural numbers. A sequence \( (a_n) \) becomes a function symbol \( a \), with \( a(n) \), written \( a_n \), the \( n \)-th term. Its values at real numbers that are not natural numbers are never used, because \( a \) is only ever applied to variables bounded by \( n \in \nN \). Section 5.1 stated this convention in one sentence ("Mixing kinds of number"); here it is in full, and every translation in this chapter follows it.
 2. **Find the outermost claim.** Ask what the sentence says first, before any detail: "every \( \varepsilon > 0 \) has a property", "there is an \( M \) with a property", "no prime is largest". That gives the outermost quantifier (or connective) and its bound.
 3. **Recurse.** Translate the property, which is a sentence about the object just quantified, by the same two steps. Stop at atomic formulas: equations, inequalities, membership, and predicate symbols such as \( \mathrm{Prime}(m) \).
 
@@ -81,7 +81,7 @@ The last quantifier has no bound of the form "\( x \in \) something", because \(
 \[
 \forall m \; \bigl( \mathrm{Prime}(m) \to \exists n \; (\mathrm{Prime}(n) \wedge m < n) \bigr).
 \]
-The two forms say the same thing over \( \nN \): the laws of Section 6.2 push the \( \neg \) inside and give \( \forall m\, \bigl( \mathrm{Prime}(m) \to \exists n\, (\mathrm{Prime}(n) \wedge \neg(n \le m)) \bigr) \), and the order fact that \( \neg(n \le m) \) is the same as \( m < n \) finishes the job. (They are not provably equivalent in logic alone: that last step is a fact about the order of \( \nN \), not a law of logic.)
+The two forms say the same thing over \( \nN \): the laws of Section 6.2 push the \( \neg \) inside and give \( \forall m\, \bigl( \mathrm{Prime}(m) \to \exists n\, (\mathrm{Prime}(n) \wedge \neg(n \le m)) \bigr) \), and the order fact that \( \neg(n \le m) \) is the same as \( m < n \) finishes the job. (That last step is a fact about the order of \( \nN \), not a law of logic.)
 
 *(e)* Domain \( \nZ \). Outermost claim: every integer greater than \( 1 \) has a property, \( \forall n > 1 \). The property: some \( m \) is prime and divides \( n \). "Divides" is itself a quantifier: \( m \mid n \) means \( n = m \cdot k \) for some integer \( k \). So
 \[
@@ -362,14 +362,14 @@ $\begin{nd}
 \end{center}
 ```
 
-Lines 7–12 are the only lines that look inside \( G \) and \( G_2 \): they unfold \( G(N_0, \varepsilon_0/2) \) at a fresh \( n_0 \) and prove the instance that line 13 folds back into \( G_2(N_0, \varepsilon_0) \). Here is the derivation in full; its lines 1–6 and 13–16 are the lines above, written out.
+Lines 7–12 are the only lines that look inside \( G \) and \( G_2 \): they unfold \( G(N_0, \varepsilon_0/2) \) at a fresh \( n_0 \) and prove the instance that line 13 folds back into \( G_2(N_0, \varepsilon_0) \). The derivation in full follows the check below; its lines 1–6 and 13–16 are the lines above, written out.
 
 ::: {.check}
 In the outline, line 4 instantiates the premise at \( \varepsilon_0/2 \). Why that term, and not \( \varepsilon_0 \)?
 :::
 
 ::: {.solution}
-The goal needs \( \abs{2a_n - 2L} < \varepsilon_0 \), which is \( 2\abs{a_n - L} < \varepsilon_0 \), so it is enough to have \( \abs{a_n - L} < \varepsilon_0/2 \). The term is read off the goal (Section 5.3's step), not off the premise.
+The goal needs \( \abs{2a_n - 2L} < \varepsilon_0 \), which is \( 2\abs{a_n - L} < \varepsilon_0 \), so it is enough to have \( \abs{a_n - L} < \varepsilon_0/2 \). The term is read off the goal (Section 5.3's step), not off the premise. At \( \varepsilon_0 \) the premise would give only \( \abs{a_n - L} < \varepsilon_0 \), hence \( \abs{2a_n - 2L} < 2\varepsilon_0 \), which does not reach the goal.
 :::
 
 ```{=latex}
@@ -773,7 +773,7 @@ The witness \( N_0 + M_0 \) is built from the two names in play: fix \( M_0 \), 
 *(b)* Let \( P(n) \) be "\( n \) is even". The premise of the converse, \( \forall M \in \nN\; \exists n \in \nN\; (n \ge M \wedge P(n)) \), is true: beyond any \( M \) there is an even number, such as \( 2M \). Its conclusion, \( \exists N \in \nN\; \forall n \in \nN\; (n \ge N \to P(n)) \), is false: beyond any \( N \) there is an odd number, \( 2N + 1 \). This is a counter-reading (Section 7.2).
 
 **Marking scheme.** (10 points)
-- 2: opens the box of \( M_0 \) first, and the \( \rulename{\exists E} \) box on the premise early.
+- 2: opens the flagged box of \( M_0 \) and the \( \rulename{\exists E} \) box on the premise (in either nesting) before choosing the witness.
 - 3: a witness that depends on both names, with both bounds checked by arith lines.
 - 2: checks the side conditions at lines 12 and 13.
 - 3: (b): a reading, with both truth values justified.
@@ -783,18 +783,18 @@ Fatal errors (0 for the step): a witness chosen before \( M_0 \) is given; the w
 <!-- dependency ledger
 exm-translate-limit (solution): m | n means n = m * k for some integer k | NOTATION.md row for d | n (definition, first used F1.2); stated in the solution
 exm-translate-limit (solution): (d) the two forms of "no largest prime" say the same thing over N; not (n <= m) iff m < n over N | order fact (school arithmetic); the logical part is F1.8 §02 (later section of this chapter; prose pointer only, nothing here rests on it)
-translation-check (solution): (0, 1) is bounded above by 1 (x < 1 for x in (0, 1)) and has no maximum (m < (m+1)/2 < 1 for m in (0, 1)) | school algebra (order); AN1.1 (prose pointer); checked by verify/ch06/exm-translate-limit.py
+exm-translate-limit (solution): (0, 1) is bounded above by 1 (x < 1 for x in (0, 1)) and has no maximum (m < (m+1)/2 < 1 for m in (0, 1)) | school algebra (order); checked by verify/ch06/exm-translate-limit.py
 exm-translate-limit (claim): the opening list: 1, 1/2, 1/3, ... has terms not all close to any L; only eventually-L sequences satisfy the swapped form | informal reading, illustrative only; no result rests on it
 exm-translate-limit (claim): the warning: f(x) = x is bounded by 1 on [0, 1] and not on R; a_n = n - 3 has a_0 = -3 and a_n > 0 for n >= 4 | school arithmetic; checked by verify/ch06/exm-translate-limit.py
 prp-bounded-quantifier-rules (proof): (x in A -> phi)[t/x] is t in A -> phi[t/x]; t free for x in (x in A -> phi) iff t free for x in phi; likewise with x > a when x does not occur in a | def-substitution, def-free-for (cited); argued inline
 prp-bounded-quantifier-rules (proof): moving lines into a new enclosing box keeps each citation available | def-derivation's scope rule (F1.1, cited as def-derivation via F1.4 §04's extension to flagged boxes); argued inline
 prp-bounded-quantifier-rules (claim): a new rule is admissible if every use can be replaced by old steps | def-derived-rule (cited), extended; argued in the text
-prp-bounded-quantifier-rules (example): the limit derivation: eps_0 > 0 gives eps_0/2 > 0; |a - L| < eps_0/2 gives |2a - 2L| < eps_0 since |2u - 2v| = 2|u - v| | arith lines (school algebra); AN1.1 (prose pointer for the Archimedean remark only)
+prp-bounded-quantifier-rules (example): the limit derivation: eps_0 > 0 gives eps_0/2 > 0; |a - L| < eps_0/2 gives |2a - 2L| < eps_0 since |2u - 2v| = 2|u - v| | arith lines (school algebra); the Archimedean remark names no book (AN1.1 pointer now in the chapter index)
 prp-bounded-quantifier-rules (example): the limit derivation: the unbounded version has 22 lines | inline count: 16 lines + one per bounded step (six)
 exr-translation-a1 (solution): 7 not in {0}; no natural number exceeds every natural number; 1 divides every n | school arithmetic; checked by verify/ch06/exr-translation-a1.py
 exr-translation-c2 (solution): exchange of adjacent foralls for any matrix | exm-universal-introduction-derivations (cited); its derivation uses nothing about R(x, y) but that it is a formula
 exr-translation-c2 (solution): truth values over Z of the eight sentences in the table | informal truth, F1.4 §01; witnesses y = x + 1, y = z + 1 given; checked by verify/ch06/exr-translation-c2.py
-exm-translate-limit (claim): step 1 of the procedure, a convention: one domain per formula; the larger kind is the domain and the smaller kind enters as a bound; a sequence is a function symbol | convention of this book, no fact (moved from old 5.1; 5.1 keeps two sentences, "Mixing kinds of number")
+exm-translate-limit (claim): step 1 of the procedure, a convention: one domain per formula; the larger kind is the domain and the smaller kind enters as a bound; a sequence is a function symbol | convention of this book, no fact (moved from old 5.1; 5.1 keeps one sentence, "Mixing kinds of number")
 exm-translate-limit (example): the mixed stage: the three stages say the same thing as "for every positive eps, some element of A lies within eps of s" | no fact; reading back
 exm-translation-traps (example): no natural number lies strictly between 1/3 and 2/3, and 1/2 does; 2 is even and not a multiple of 4, and every multiple of 4 is even; 6 divides 6, 1 is odd, every multiple of 6 is even; A = {1}, B = {-1} has no common element; every element of the empty set has every property | school arithmetic; the empty set and "any" from F1.4 §01 (cited as Section 5.1); one-domain convention of step 1; checked by verify/ch06/exm-translation-traps.py
 exm-translation-traps (claim): infinitely many and eventually: (-1)^n is positive at every even n and negative at every odd n | parity (school arithmetic)

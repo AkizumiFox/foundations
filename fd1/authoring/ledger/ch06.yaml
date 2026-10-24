@@ -56,6 +56,23 @@ items:
     evidence: 01-translation.md:84 The parenthetical says the two forms of 'no largest prime' are 'not
       provably equivalent in logic alone'. That is a non-derivability claim for first-order formulas,
       made with no counter-reading and no forward citation of Section 7.2.
+  - stage: S7r
+    verdict: correct
+    by: rereferee
+    hash: a285c7d46648
+    date: '2026-10-25'
+    model: claude-opus-5-5
+    evidence: Step 1 (:27-31) reads cleanly and its meta-claim (one sentence in 5.1) is true. The parenthetical
+      in (d) (:84) is now a correct remark with no non-derivability claim. Ledger lines updated to match.
+  - stage: S7r
+    verdict: correct
+    by: rereferee
+    hash: a285c7d46648
+    date: '2026-10-25'
+    model: claude-opus-5-5
+    evidence: '01:84: the parenthesis now just calls the last step an order fact about ℕ, which is accurate.
+      Ledger lines 786/792/797 match the text. 5.1 ''Mixing kinds of number'' (ch05/01:238) is indeed
+      one sentence.'
 - key: check:01-translation:1
   kind: check
   file: 01-translation.md
@@ -89,6 +106,14 @@ items:
       ledger line 501 now records that (0,1) is bounded by 1 with no maximum (m < (m+1)/2 < 1). The sidecar
       verify/ch06/exm-translate-limit.py exists and covers ''check: m bounding (0, 1)''. Interval notation
       is in NOT'
+  - stage: S7r
+    verdict: correct
+    by: rereferee
+    hash: b6231bf6c6d0
+    date: '2026-10-25'
+    model: claude-opus-5-5
+    evidence: Text unchanged. Its (0,1) ledger line is rekeyed and has lost the stale AN1.1 pointer. The
+      fact (bounded by 1, no maximum since m<(m+1)/2<1) is right and checked by verify/ch06/exm-translate-limit.py.
 - key: exm-translation-traps
   kind: exm
   file: 01-translation.md
@@ -187,6 +212,14 @@ items:
       (4.2:36). The side conditions match the unbounded ones as Section 7.3:196,210 restates them ('appears
       in no premise, in no assumption of a box still open at line k', not in the conclusion; for ∃E also
       not in χ). The extension to the bounds >a, ≥a, <a, ≤a keeps the hypothesis 'x not in a', as def-bounded-qua
+  - stage: S7r
+    verdict: correct
+    by: rereferee
+    hash: 2585ba1a362e
+    date: '2026-10-25'
+    model: claude-opus-5-5
+    evidence: 'The :365 sentence now points forward correctly to the full derivation at :374. The ledger
+      line for the Archimedean remark is accurate: :419 names no book, and the pointer is in index.md:35.'
 - key: proof:prp-bounded-quantifier-rules
   kind: proof
   file: 01-translation.md
@@ -269,6 +302,22 @@ items:
     model: claude-opus-5-5
     evidence: 01-translation.md:372 The solution does not answer the 'and not ε0' half of the question.
       Also, the sentence before the check announces the full derivation, but the check comes first.
+  - stage: S7r
+    verdict: correct
+    by: rereferee
+    hash: 26a2a7af7445
+    date: '2026-10-25'
+    model: claude-opus-5-5
+    evidence: The solution answers both halves. ε0/2 suffices because |2a_n−2L|=2|a_n−L|. ε0 gives only
+      <2ε0, which fails the goal.
+  - stage: S7r
+    verdict: correct
+    by: rereferee
+    hash: 26a2a7af7445
+    date: '2026-10-25'
+    model: claude-opus-5-5
+    evidence: '01:372: at ε_0 the premise gives |2a_n−2L| < 2ε_0, which does not reach the goal (correct).
+      01:365: the full derivation does follow the check block.'
 - key: exr-translation-a1
   kind: exr
   file: 01-translation.md
@@ -618,6 +667,22 @@ items:
     date: '2026-10-25'
     model: claude-opus-5-5
     evidence: 01-translation.md:773 The marking scheme takes points from a correct alternative box order.
+  - stage: S7r
+    verdict: correct
+    by: rereferee
+    hash: fb2f19fc1657
+    date: '2026-10-25'
+    model: claude-opus-5-5
+    evidence: The marking scheme now accepts both valid box nestings and stays consistent with the fatal
+      errors and the line 12/13 side-condition points.
+  - stage: S7r
+    verdict: correct
+    by: rereferee
+    hash: fb2f19fc1657
+    date: '2026-10-25'
+    model: claude-opus-5-5
+    evidence: 'Marking line 776: the flagged box of M_0 and the ∃E box may nest either way before the
+      witness is chosen, which is valid. (b): 2M ≥ M is even, and the line carries ''(Section 7.2)''.'
 - key: prp-quantifier-negation
   kind: prp
   file: 02-quantifier-laws.md
@@ -811,6 +876,14 @@ items:
     evidence: 02-quantifier-laws.md:356 Fold F6.2-b says the instances at fresh names plus k flagged boxes
       give the law's closure, but a law is a ⊣⊢ pair, so the biconditional must first be formed by ↔I.
       'again x_0 is not z' also refers back to an argument that now comes later.
+  - stage: S7r
+    verdict: correct
+    by: rereferee
+    hash: b67b34996ffe
+    date: '2026-10-25'
+    model: claude-opus-5-5
+    evidence: The fold at 02:356 now forms α↔β by ↔I before the k flagged boxes, which meets the hypothesis
+      ⊢∀̄(φ↔ψ). The back-reference is now a correct forward pointer to the fold at 02:816.
 - key: proof:prp-replacement
   kind: proof
   file: 02-quantifier-laws.md
@@ -844,6 +917,24 @@ items:
     model: claude-opus-5-5
     evidence: 02-quantifier-laws.md:339 The proof credits the ¬ step to Section 2.4, but ¬I is a Section
       2.2 rule. Section 2.4 supplies only ↔E and ↔I.
+  - stage: S7r
+    verdict: correct
+    by: rereferee
+    hash: c9dc63367072
+    date: '2026-10-25'
+    model: claude-opus-5-5
+    evidence: Closure order is now justified directly by ∀E plus k ∀I boxes (exm (c), 05-04:426), with
+      no circularity. Case 1 cites Sections 2.2 and 2.4 correctly. The derivation sketches are valid,
+      although case 1 omits mentioning ¬E.
+  - stage: S7r
+    verdict: correct
+    by: rereferee
+    hash: c9dc63367072
+    date: '2026-10-25'
+    model: claude-opus-5-5
+    evidence: '02:331: exchanging the ∀ order through k flags with ∀E/∀I is sound. 02:339 cites def-rules-negation.
+      02:356: ↔I joins the two directions before the k flagged boxes. 02:359: the renaming closure and
+      chain are checked (see F043).'
 - key: exm-negating-definitions
   kind: exm
   file: 02-quantifier-laws.md
@@ -1177,6 +1268,23 @@ items:
     evidence: 02-quantifier-laws.md:607 The first proof in fold F6.2-d proves prp-quantifier-distribution,
       but it comes right after prp-quantifier-passage and ends 'This proves the proposition', which in
       that position reads as the passage law. Its part letters are also ambiguous between the two propositions.
+  - stage: S7r
+    verdict: correct
+    by: rereferee
+    hash: 09538a6c3fa0
+    date: '2026-10-25'
+    model: claude-opus-5-5
+    evidence: 'The block is now explicitly the proof of @prp-quantifier-distribution: it opens ''For @prp-quantifier-distribution''
+      and closes ''This proves @prp-quantifier-distribution''. The (b) citation names exm part (a). The
+      (c) derivation is unchanged and valid.'
+  - stage: S7r
+    verdict: correct
+    by: rereferee
+    hash: 09538a6c3fa0
+    date: '2026-10-25'
+    model: claude-opus-5-5
+    evidence: 02:581 attributes (a)/(d)/(b) of prp-quantifier-distribution to prp-forall-and, prp-exists-and
+      and exm-existential-elimination-derivations (a). This is attribution wording only.
 - key: proof:prp-quantifier-passage#2
   kind: proof
   file: 02-quantifier-laws.md
@@ -1203,6 +1311,21 @@ items:
     evidence: '02:610-811: all ten derivations checked line by line, with side conditions. Exactly two
       use LEM, (d)⊣ and (e)⊣, which matches 02:570. The ∃I at x (lines 8 and 13) matches prp-forall-implies-exists.
       Section 7.1 has #why-domains-are-non-empty, and STATUS row 87 records it.'
+  - stage: S7r
+    verdict: correct
+    by: rereferee
+    hash: 7e1e2326a31f
+    date: '2026-10-25'
+    model: claude-opus-5-5
+    evidence: Only the closing sentence changed, to 'This proves @prp-quantifier-passage.', which is correct.
+  - stage: S7r
+    verdict: correct
+    by: rereferee
+    hash: 7e1e2326a31f
+    date: '2026-10-25'
+    model: claude-opus-5-5
+    evidence: 02:607/811 now end 'This proves @prp-quantifier-distribution.' / '@prp-quantifier-passage.',
+      the right targets. The side conditions are unchanged, and check_fitch reports 0 errors.
 - key: check:02-quantifier-laws:5
   kind: check
   file: 02-quantifier-laws.md
@@ -1553,6 +1676,23 @@ items:
     model: claude-opus-5-5
     evidence: '02-quantifier-laws.md:1205 The diagnosis of line 3 gives an inaccurate reason: c is not
       ''already in use''.'
+  - stage: S7r
+    verdict: correct
+    by: rereferee
+    hash: 9f315435d88b
+    date: '2026-10-25'
+    model: claude-opus-5-5
+    evidence: 'The diagnosis now matches def-rules-existential: the witness is a fresh variable, never
+      a constant, the box closes on a line free of the witness, and no box is opened. The counter-reading
+      over ℤ (even, positive, c=0) is correct.'
+  - stage: S7r
+    verdict: correct
+    by: rereferee
+    hash: 9f315435d88b
+    date: '2026-10-25'
+    model: claude-opus-5-5
+    evidence: '02:1205: the ∃E explanation (the witness is a fresh variable, never a constant; the box
+      closes on a line free of the witness; here no box is opened) is accurate.'
 - key: exr-quantifier-laws-c1
   kind: exr
   file: 02-quantifier-laws.md
@@ -1662,6 +1802,25 @@ items:
     model: claude-opus-5-5
     evidence: 02-quantifier-laws.md:1358 The hint answers part (c), and it is a single unnumbered rung,
       which does not match STYLE §11.7 / §6.
+  - stage: S7r
+    verdict: minor
+    by: rereferee
+    hash: 7e39c587e851
+    date: '2026-10-25'
+    model: claude-opus-5-5
+    evidence: Part (c) now asks which part 'needs a classical rule (RAA or LEM)', but the solution at
+      02:1393 still answers '(b) uses RAA' and adds that whether (b) could avoid it is not asked. That
+      contradicts the question as now worded. The hints and the marking scheme are fine.
+  - stage: S7r
+    verdict: minor
+    by: rereferee
+    hash: 7e39c587e851
+    date: '2026-10-25'
+    model: claude-opus-5-5
+    evidence: '02:1350: part 3 now asks which of (a), (b) ''needs a classical rule''. Solution (c) at
+      ~02:1392 still answers ''(b) uses RAA … (Whether (b) could avoid it is not asked.)'', which contradicts
+      the new wording. The hint ladder follows the STYLE §11 hint-ladder form (two folded rungs written
+      as .solution blocks starting [Hint 1]/[Hint 2]).'
 - key: exm-search-with-witnesses
   kind: exm
   file: 03-first-order-search.md
@@ -1686,6 +1845,14 @@ items:
     evidence: 03-first-order-search.md:159 'the only one in sight is a constant c that nothing mentions'
       is false. The sequent has no constant, and a variable is always available as a term, as the same
       section says at 353.
+  - stage: S7r
+    verdict: correct
+    by: rereferee
+    hash: e37cb6b491c4
+    date: '2026-10-25'
+    model: claude-opus-5-5
+    evidence: 03:159 now offers 'a variable or a constant that nothing mentions, say c'. P(c)→∃y R(c,y)
+      still waits for P(c), which no premise gives, and premise 3's box supplies x0.
 - key: check:03-first-order-search:1
   kind: check
   file: 03-first-order-search.md
@@ -1730,6 +1897,23 @@ items:
     model: claude-opus-5-5
     evidence: 03-first-order-search.md:188 The meta-claim 'the book always says "propositional skeleton"
       for this one' is false on the page.
+  - stage: S7r
+    verdict: correct
+    by: rereferee
+    hash: 70a571906005
+    date: '2026-10-25'
+    model: claude-opus-5-5
+    evidence: 03:178 now uses finite chains of renamings in either direction, which is reflexive, symmetric
+      and transitive, so the atom assignment is well defined. 03:188 hedges the 'propositional skeleton'
+      usage claim. The NOTATION sk row is deferred.
+  - stage: S7r
+    verdict: correct
+    by: rereferee
+    hash: 70a571906005
+    date: '2026-10-25'
+    model: claude-opus-5-5
+    evidence: '03:179: ''alike up to renaming'' is now defined as a chain of finitely many renamings,
+      an equivalence relation, so the atom assignment is well defined. 03:188 wording change is harmless.'
 - key: prp-taut-skeleton
   kind: prp
   file: 03-first-order-search.md
@@ -1784,6 +1968,27 @@ items:
     evidence: 03-first-order-search.md:214 Step 2 says prp-replacement 'gives γ ⊣⊢ γ*', but prp-replacement
       replaces one occurrence and the renaming sentence gives one renaming step with a new letter. γ*
       may need many occurrences replaced and several renaming steps each.
+  - stage: S7r
+    verdict: minor
+    by: rereferee
+    hash: 12ae5e5fba03
+    date: '2026-10-25'
+    model: claude-opus-5-5
+    evidence: 'Step 1''s substitution (the atoms of sk(Γ), sk(ψ) go to their prime formulas in Γ, ψ, every
+      other atom to ⊥) and Step 2''s stepwise replacement chained by cut are correct. One gap remains:
+      Step 2 applies Step 1 to Γ*, ψ*. Those meet Step 1''s hypothesis only if it is read for prime occurrences
+      outside all quantifiers, but the statement and Step 1''s heading say ''prime formulas'', which includes
+      nested '
+  - stage: S7r
+    verdict: correct
+    by: rereferee
+    hash: 12ae5e5fba03
+    date: '2026-10-25'
+    model: claude-opus-5-5
+    evidence: '03:212: the atom replacement now names its domain (atoms of the skeletons map to their
+      assigned prime formula, others to ⊥). 03:214: γ* replaces only occurrences outside all quantifiers,
+      and it is reached by one-step renamings through new letters, chained by lem-weakening-cut (c). This
+      is consistent with the new renaming sentence at 02:359.'
 - key: check:03-first-order-search:2
   kind: check
   file: 03-first-order-search.md
@@ -1827,6 +2032,22 @@ items:
     model: claude-opus-5-5
     evidence: '262-277: derivation passes check_fitch. Skeleton p→(q∨r), ¬q ⊨ p→r. Side condition and
       Z-reading check (sidecar passes).'
+  - stage: S7r
+    verdict: correct
+    by: rereferee
+    hash: e803c21bfbce
+    date: '2026-10-25'
+    model: claude-opus-5-5
+    evidence: '03:277: over ℤ, premise 1 is true, premise 2 (no integer squares to 2) is true, and the
+      conclusion ∀n(n>1→n>0) is true. The false ''checked without the conclusion'' claim is gone.'
+  - stage: S7r
+    verdict: correct
+    by: rereferee
+    hash: e803c21bfbce
+    date: '2026-10-25'
+    model: claude-opus-5-5
+    evidence: '03:277: over ℤ, n>1 → (n²=2 ∨ n>0) is true and no integer squares to 2, so both premises
+      are true. The conclusion (n>1 → n>0) is also true.'
 - key: check:03-first-order-search:3
   kind: check
   file: 03-first-order-search.md
@@ -2013,6 +2234,24 @@ items:
     evidence: '03:695-760. My completion matches lines 4-17 exactly: ∀E at c, at c then y0, and at y0;
       boxes y0 and z0; ∃I at z then at y0. Line 14''s φ and line 15''s free-for check out, as do the side
       conditions at lines 16 and 17. Worked example: exm-search-with-witnesses.'
+  - stage: S7r
+    verdict: correct
+    by: rereferee
+    hash: 7871648e48c9
+    date: '2026-10-25'
+    model: claude-opus-5-5
+    evidence: 'I rechecked the derivation. ∀E lines: 4 (at c, from 1), 7 (at c, from 2), 8 (at y0, from
+      7), 10 (at y0, from 1). The text ''Lines 4 and 7 … at c, and lines 8 and 10 at y0'' matches, the
+      marking scheme lists ''c, c, y0 and y0'', and c is attributed to premise 3. The side conditions
+      at 16 and 17 hold.'
+  - stage: S7r
+    verdict: correct
+    by: rereferee
+    hash: 7871648e48c9
+    date: '2026-10-25'
+    model: claude-opus-5-5
+    evidence: '03:752: lines 4 (∀E of 1 at c) and 7 (∀E of 2 at c) instantiate at c; lines 8 and 10 at
+      y_0. Marking line 757 lists c, c, y_0, y_0, which matches.'
 - key: exr-first-order-search-b3
   kind: exr
   file: 03-first-order-search.md
@@ -2077,6 +2316,23 @@ items:
     evidence: 03-first-order-search.md:831 Hint 1 gives away the key idea of the hard case of (a), and
       the two rungs do not form the ladder STYLE §11.7 describes. Rung 1 is supposed to name a tool and
       rung 2 to give a first line, but here the rungs serve two different parts.
+  - stage: S7r
+    verdict: correct
+    by: rereferee
+    hash: 71781ecc23ac
+    date: '2026-10-25'
+    model: claude-opus-5-5
+    evidence: Hint 1 now only names the tool (QN (a), used at line 8). Hint 2 now names law (d), ∃x(φ→ψ)
+      ⊣⊢ ∀xφ→ψ, which solution (b) line 2 uses in the ⊣ direction. The marking scheme now gives the (a)
+      marks for any correct closing of a flagged box, not just line 12.
+  - stage: S7r
+    verdict: correct
+    by: rereferee
+    hash: 71781ecc23ac
+    date: '2026-10-25'
+    model: claude-opus-5-5
+    evidence: '03:835/841: the hints now ask for the law (negated ∀ to ∃; the passage law moving ∀n out
+      of a hypothesis as ∃n). Both are correct and neither executes the key step.'
 - key: exr-first-order-search-c2
   kind: exr
   file: 03-first-order-search.md
@@ -2109,6 +2365,23 @@ items:
     evidence: 03-first-order-search.md:938 Part (c)'s answer, "Line 8 needs a witness, and x0 exists only
       inside the box", points at the wrong line. A term for ∃I is always available. What needs the new
       premise is the line that cites M(x0).
+  - stage: S7r
+    verdict: correct
+    by: rereferee
+    hash: 42c45e2a1416
+    date: '2026-10-25'
+    model: claude-opus-5-5
+    evidence: '(c) now names line 7: its TAUT cites line 4, M(x0), which is the assumption of premise
+      3''s ∃E box (lines 4–8). Without that box, ∃I could still be applied at some term, but no line would
+      give S∧P of it. The existential-import discussion is unchanged and correct.'
+  - stage: S7r
+    verdict: correct
+    by: rereferee
+    hash: 42c45e2a1416
+    date: '2026-10-25'
+    model: claude-opus-5-5
+    evidence: '03:934: line 7''s TAUT (m, m→p, m→s ⊨ s∧p) needs M(x_0) from line 4, which only premise
+      3''s box supplies. Correct. Marking line 893 is fine.'
 - key: check:04-uniform-continuity-rule-by-rule:1
   kind: check
   file: 04-uniform-continuity-rule-by-rule.md
@@ -2317,6 +2590,14 @@ items:
     evidence: 04-uniform-continuity-rule-by-rule.md:256 The sentence says the positive form of the negation
       (the one with ≥ that exm-square-not-uniform proved) refutes UC by logic alone. The derivation that
       follows starts from E, which has ¬(|f(x)-f(y)|<ε) and comes before the last order fact.
+  - stage: S7r
+    verdict: correct
+    by: rereferee
+    hash: be1c9e6dd57b
+    date: '2026-10-25'
+    model: claude-opus-5-5
+    evidence: Lead-in at 256 now limits the claim to E before its last order fact; the derivation (lines
+      1-20) passes check_fitch; line 15 TAUT on p∧¬q, p→q ⊨ ⊥ is valid.
 - key: exm-converse-proof-critique
   kind: exm
   file: 04-uniform-continuity-rule-by-rule.md
@@ -2341,6 +2622,22 @@ items:
     evidence: 04-uniform-continuity-rule-by-rule.md:330 The bullet says the line 'the smallest of them'
       is the line whose two routes exm-converse-fails found blocked. The line blocked there says one δ_0
       works at every point. It is not a line about a minimum of all the witnesses.
+  - stage: S7r
+    verdict: correct
+    by: rereferee
+    hash: 9d138cd2cf40
+    date: '2026-10-25'
+    model: claude-opus-5-5
+    evidence: Third bullet now correctly names the blocked all-points line from exm-converse-fails; the
+      other bullets are unchanged and checked by the verify script; the ledger line now cites exm-abs-product-cases.
+  - stage: S7r
+    verdict: correct
+    by: rereferee
+    hash: 9d138cd2cf40
+    date: '2026-10-25'
+    model: claude-opus-5-5
+    evidence: '04:330: the smallest δ would need a uniform δ line ∀x∈A ∀y∈A (|x−y|<δ → …), the line exm-converse-fails
+      found blocked. The ledger now cites exm-abs-product-cases for |uv|=|u||v|.'
 - key: check:04-uniform-continuity-rule-by-rule:4
   kind: check
   file: 04-uniform-continuity-rule-by-rule.md
@@ -2440,6 +2737,22 @@ items:
     evidence: 04:380-438. All 12 parts solved first and they agree. (h) 1/7. (i) √17−4≈0.1231, and (4+d)²−16=1
       (script). (j) is the correct positive negation of C. (l) is a valid 4-line derivation, with the
       bound on line 1.
+  - stage: S7r
+    verdict: correct
+    by: rereferee
+    hash: 283581ffc638
+    date: '2026-10-25'
+    model: claude-opus-5-5
+    evidence: Stem says 'a negation' (only (j) is one); answers (g)-(l) unchanged; the ledger now sources
+      (j) and (k).
+  - stage: S7r
+    verdict: correct
+    by: rereferee
+    hash: 283581ffc638
+    date: '2026-10-25'
+    model: claude-opus-5-5
+    evidence: 04:383 has a singular-wording fix. New ledger lines (j)/(k) cite prp-bounded-quantifier-negation,
+      prp-negated-implication and exm-universal-introduction-derivations (c), which fit those parts.
 - key: exr-uniform-continuity-rule-by-rule-b1
   kind: exr
   file: 04-uniform-continuity-rule-by-rule.md
@@ -2614,6 +2927,22 @@ items:
     model: claude-opus-5-5
     evidence: 04-uniform-continuity-rule-by-rule.md:561 The scheme for (a) rewards one method, "the two
       triangle inequalities", so other correct proofs of ||x|−|y|| ≤ |x−y| lose marks.
+  - stage: S7r
+    verdict: correct
+    by: rereferee
+    hash: ff53cd953e68
+    date: '2026-10-25'
+    model: claude-opus-5-5
+    evidence: (a) proof by the triangle inequality is correct; (b) bound 6 on [0,3] is correct; the scheme
+      now accepts any proof of the bound; the ledger cites exm-abs-product-cases.
+  - stage: S7r
+    verdict: correct
+    by: rereferee
+    hash: ff53cd953e68
+    date: '2026-10-25'
+    model: claude-opus-5-5
+    evidence: '04:561: the marking now requires ||x|−|y|| ≤ |x−y| proved (the triangle inequality used
+      twice). This is correct and matches the ledger.'
 - key: exr-uniform-continuity-rule-by-rule-c1
   kind: exr
   file: 04-uniform-continuity-rule-by-rule.md
@@ -2818,6 +3147,22 @@ items:
     model: claude-opus-5-5
     evidence: 04-uniform-continuity-rule-by-rule.md:735 STYLE §11.5 says an R item's solution names its
       source chapter with @ref. R2's solution names its sources only by section number.
+  - stage: S7r
+    verdict: correct
+    by: rereferee
+    hash: 1107d118d0c9
+    date: '2026-10-25'
+    model: claude-opus-5-5
+    evidence: 19-line derivation is valid (check_fitch 0 errors). Prose counts three ¬I boxes correctly,
+      cites @def-inconsistent-set, and gives the ↔E forms correctly.
+  - stage: S7r
+    verdict: correct
+    by: rereferee
+    hash: 1107d118d0c9
+    date: '2026-10-25'
+    model: claude-opus-5-5
+    evidence: 04:736 cites @def-inconsistent-set and @def-rules-biconditional. The derivation has three
+      ¬I boxes giving ¬R (9), ¬P (12) and ¬Q (17), and ⊥ at line 19, all checked line by line.
 - key: exr-uniform-continuity-rule-by-rule-r3
   kind: exr
   file: 04-uniform-continuity-rule-by-rule.md
@@ -2851,3 +3196,20 @@ items:
     evidence: '04:773-809. My 11-line derivation matches the book''s: ∃E box, then distributivity/TAUT,
       then ∨E with ∃I and ∨I. x0 is absent from line 11. @prp-distributivity is at ch01/07, which is Section
       1.6 because the file 03 is missing; the index confirms this. The problem text hides its source.'
+  - stage: S7r
+    verdict: correct
+    by: rereferee
+    hash: 385e4e1b154f
+    date: '2026-10-25'
+    model: claude-opus-5-5
+    evidence: Line 3 is \taut{2} as the prose now says; the distributivity skeleton is valid; the ∃E side
+      condition at line 11 holds (x_0 not in 11 or in premise 1, and no other open assumption).
+  - stage: S7r
+    verdict: correct
+    by: rereferee
+    hash: 385e4e1b154f
+    date: '2026-10-25'
+    model: claude-opus-5-5
+    evidence: '04:808: line 3 is TAUT on the skeleton p∧(q∨r) ⊨ (p∧q)∨(p∧r), and is the same as the derived
+      rule prp-distributivity. At line 11, x_0 is in neither line 11, line 1 nor the premise, and no assumption
+      is open.'

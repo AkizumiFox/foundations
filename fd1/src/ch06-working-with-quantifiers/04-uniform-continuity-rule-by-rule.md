@@ -253,7 +253,7 @@ The \( \delta \) for C grows smaller as \( \abs{x} \) grows, and no single \( \d
 **"Depending on \( \varepsilon \)" is a claim, and it can be false.** When a proof says "choose \( \delta \) (depending on \( \varepsilon \))", the parenthesis records which boxes are open where \( \delta \) is chosen, and which names its formula uses. This is the logical origin of the book's rule that every chosen constant says what it depends on: the dependence is a record of the open boxes, and a reader can check it. A proof of uniform continuity must be able to write "depending on \( \varepsilon \)" truthfully. A "proof" that \( x^2 \) is uniformly continuous on \( \nR \) that takes \( \delta = \min(1, \varepsilon/(2\abs{x} + 1)) \) "(depending on \( \varepsilon \))" has a formula for \( \delta \) that mentions \( x \): the \( \delta \) was chosen inside the box of \( x \), so the proof shows only C, and @exm-square-not-uniform shows that UC is false.
 :::
 
-The proof that UC fails for \( x^2 \) established, with numbers, the positive form of the negation from Section 6.2. That form refutes UC by logic alone, and a derivation shows how; one TAUT line (Section 6.3) carries its propositional core.
+The proof that UC fails for \( x^2 \) established, with numbers, the positive form of the negation from Section 6.2. That form, taken before its last order fact, refutes UC by logic alone, and a derivation shows how; one TAUT line (Section 6.3) carries its propositional core.
 
 ::: {#exm-not-uniform-derived}
 [The negation at work, in one derivation]
@@ -327,7 +327,7 @@ Find the error in this argument, which claims that every function continuous at 
 ::: {.solution}
 - The conclusion is false for \( x^2 \) on \( \nR \) (@exm-square-not-uniform), so some step fails, and it is the third sentence.
 - Infinitely many positive numbers need not have a smallest, and they may come arbitrarily close to \( 0 \). With \( \varepsilon = 1 \), the largest \( \delta \) that works for \( x^2 \) at \( x \ge 0 \) is \( \sqrt{x^2 + 1} - x \) (the figure above), which is \( 1/(\sqrt{x^2 + 1} + x) < 1/(2x) \) for \( x > 0 \), and so smaller than any given positive number once \( x \) is large.
-- In the rules: each \( \delta_x \) is the witness of an \( \rulename{\exists E} \) box inside the box of \( x_0 \), and "the smallest of them" would be a line about all the witnesses at once. That is the line whose two routes @exm-converse-fails found blocked by side conditions.
+- In the rules: each \( \delta_x \) is the witness of an \( \rulename{\exists E} \) box inside the box of \( x_0 \), and "the smallest of them" would be a line about all the witnesses at once. Using it needs a \( \delta \) that works at every point, the line \( \forall x \in A \; \forall y \in A \; (\abs{x - y} < \delta \to \dots) \) whose two routes @exm-converse-fails found blocked by side conditions.
 - For finite \( A = \{a_1, \dots, a_k\} \) the proof is right: \( k \) uses of \( \rulename{\exists E} \) give \( \delta_1, \dots, \delta_k \) (the subsection "Two witnesses" of Section 5.6, repeated), and \( \min(\delta_1, \dots, \delta_k) > 0 \) works at every point.
 
 The search stalls at the same side condition that stopped @exm-converse-fails; that \( x^2 \) is a counter-reading for the converse is the evidence that no other route exists (Section 7.2).
@@ -380,7 +380,7 @@ These parts are about the derivation of @exm-uniform-implies-continuous.
 ::: {#exr-uniform-continuity-rule-by-rule-a2}
 [A2: Drill]
 
-Each part takes a line or two. The parts run from single steps, through a missing line, a justification column and a step to judge, to witness functions, negations and one short derivation. UC and C are the formulas of "Two definitions that differ in one place".
+Each part takes a line or two. The parts run from single steps, through a missing line, a justification column and a step to judge, to witness functions, a negation and one short derivation. UC and C are the formulas of "Two definitions that differ in one place".
 
 ::: {.enumerate options="label=(\alph*)"}
 1. Line 1 is UC and line 2 is \( 1 > 0 \). Write the line that the bounded \( \rulename{\forall E} \) 1, 2 gives.
@@ -558,7 +558,7 @@ It depends on \( \varepsilon \) and on the bound \( 3 \) of the set, and on no p
 *(c)* On \( \nR \), \( \abs{x + y} \) has no bound, so no constant can replace the \( 6 \), and @exm-square-not-uniform shows that no witness function exists there at all.
 
 **Marking scheme.** (10 points)
-- 3: (a), with the two triangle inequalities.
+- 3: (a), with \( \abs{\abs{x} - \abs{y}} \le \abs{x - y} \) proved (for instance by the triangle inequality twice).
 - 4: (b): 1 for the bound \( \abs{x + y} \le 6 \), 2 for the chain, 1 for the dependence.
 - 3: (c).
 Fatal error (0 for the step): a "witness" that mentions \( x \) or \( y \).
@@ -733,7 +733,7 @@ Show that the list \( P \leftrightarrow \neg Q, \ Q \leftrightarrow \neg R, \ R 
 :::
 
 ::: {.solution}
-A list is inconsistent when \( \bot \) is derivable from it (Section 3.2). The derivation below uses no \( \rulename{RAA} \): two \( \rulename{\neg I} \) boxes give \( \neg P \) and then \( \neg Q \), and each \( \rulename{\leftrightarrow E} \) runs in the direction written (Section 2.4).
+A list is inconsistent when \( \bot \) is derivable from it (@def-inconsistent-set). The derivation below uses no \( \rulename{RAA} \): three \( \rulename{\neg I} \) boxes give \( \neg R \), \( \neg P \) and \( \neg Q \), and each \( \rulename{\leftrightarrow E} \) is used in whichever of its two forms (@def-rules-biconditional) the line needs.
 
 ```{=latex}
 \begin{center}
@@ -805,11 +805,11 @@ $\begin{nd}
 \end{center}
 ```
 
-Line 3 is the propositional law, @prp-distributivity of Section 1.6, used as a derived rule (@def-derived-rule); TAUT on its skeleton \( p \wedge (q \vee r) \models (p \wedge q) \vee (p \wedge r) \) gives the same line. At line 11, \( x_0 \) is not in line 11, in line 1, or in the premise. The quantifier steps frame the law: this is the propositional core of Section 6.3.
+Line 3, justified by TAUT on the skeleton \( p \wedge (q \vee r) \models (p \wedge q) \vee (p \wedge r) \), is the propositional law @prp-distributivity of Section 1.6; citing it as a derived rule (@def-derived-rule) gives the same line. At line 11, \( x_0 \) is not in line 11 or in line 1, the premise, and no assumption is open. The quantifier steps frame the law: this is the propositional core of Section 6.3.
 :::
 
 <!-- dependency ledger
-exm-uniform-implies-continuous (example): continuity and uniform continuity used only as quantifier patterns; AN1.5 and AN1.6 own the definitions | prose pointer (AN1.5, AN1.6); nothing rests on it
+exm-uniform-implies-continuous (example): continuity and uniform continuity used only as quantifier patterns; no pointer here; the AN1.5, AN1.6 pointer is in the chapter index | chapter index (STATUS row F1.8 index); nothing rests on it
 exm-uniform-implies-continuous (claim): 17 lines with the unbounded rules | inline count: 11 lines + one per bounded step (six), as in prp-bounded-quantifier-rules' line saving
 exm-uniform-implies-continuous (claim): a derivation opening the boxes of eps_0 and delta_0 outside the box of x_0 ends in forall eps forall x exists delta (...), and C follows by exchanging the two bounded universals (also used in exr-uniform-continuity-rule-by-rule-b2's solution) | exm-universal-introduction-derivations (c) and the remark after it (F1.4 §04, cited), carried out with prp-bounded-quantifier-rules
 exm-uniform-implies-continuous (claim): the prose may rename bound variables of UC | renaming of bound variables, F1.4 §02 (prose); not used in the derivation
@@ -832,13 +832,15 @@ exm-square-not-uniform (claim): figure D: with eps = 1 the largest delta that wo
 exm-not-uniform-derived (solution): the bounded rules | prp-bounded-quantifier-rules (F1.8 §01, cited)
 exm-not-uniform-derived (solution): line 15 by TAUT on the skeleton p and not q, p -> q |= bot | prp-taut-skeleton (F1.8 §03, cited); checked by check_fitch.py
 exm-not-uniform-derived (claim): E is exm-negating-definitions (c) before its last order fact | exm-negating-definitions (F1.8 §02, cited)
-exm-converse-proof-critique (claim): witness functions: |x/2 - y/2| = |x - y|/2 | school algebra
+exm-converse-proof-critique (claim): witness functions: |x/2 - y/2| = |x - y|/2 | school algebra; |uv| = |u||v| exm-abs-product-cases (F1.1)
 exm-converse-proof-critique (claim): witness functions remark: a formula of this book cannot say "there is a function" | remark; nothing rests on it
 exm-converse-proof-critique (solution): sqrt(x^2 + 1) - x = 1/(sqrt(x^2 + 1) + x) < 1/(2x) for x > 0; finitely many positive numbers have a positive minimum | school algebra; checked by verify/ch06/exm-converse-proof-critique.py
 exm-converse-proof-critique (solution): k uses of exists-E give delta_1, ..., delta_k | def-rules-existential, F1.4 §06 "Two witnesses" (cited by section)
 exm-converse-proof-critique (claim): no route from C to UC exists | F1.6 §02 (prose pointer); nothing here rests on it
-exr-uniform-continuity-rule-by-rule-a2 (solution): (g) |5x - 5y| = 5|x - y|; (h) min(1, 1/7) = 1/7; (i) sqrt(17) - 4 = 0.1231 | school arithmetic; checked by verify/ch06/exr-uniform-continuity-rule-by-rule-a2.py
-exr-uniform-continuity-rule-by-rule-b4 (solution): ||x| - |y|| <= |x - y|; |x^2 - y^2| <= 6|x - y| on [0, 3] | exm-triangle-inequality-cases (cited); school algebra; checked by verify/ch06/exr-uniform-continuity-rule-by-rule-b4.py
+exr-uniform-continuity-rule-by-rule-a2 (solution): (j) negation of a bounded universal and of an implication, order fact not(a < b) iff a >= b | prp-bounded-quantifier-negation, prp-negated-implication (F1.8 §02), as in exm-negating-definitions (c)
+exr-uniform-continuity-rule-by-rule-a2 (solution): (k) two universals exchange | exm-universal-introduction-derivations (c) (F1.4 §04)
+exr-uniform-continuity-rule-by-rule-a2 (solution): (g) |5x - 5y| = 5|x - y|; (h) min(1, 1/7) = 1/7; (i) sqrt(17) - 4 = 0.1231 | school arithmetic; |uv| = |u||v| exm-abs-product-cases (F1.1); checked by verify/ch06/exr-uniform-continuity-rule-by-rule-a2.py
+exr-uniform-continuity-rule-by-rule-b4 (solution): ||x| - |y|| <= |x - y|; |x^2 - y^2| <= 6|x - y| on [0, 3] | exm-triangle-inequality-cases (cited); |uv| = |u||v| exm-abs-product-cases (F1.1); school algebra; checked by verify/ch06/exr-uniform-continuity-rule-by-rule-b4.py
 exr-uniform-continuity-rule-by-rule-r1 (solution): transitivity as one =E step | prp-equality-symmetric-transitive (F1.4 §07, cited)
 exr-uniform-continuity-rule-by-rule-r2 (solution): no row satisfies the three biconditionals | truth table; checked by verify/ch06/exr-uniform-continuity-rule-by-rule-r2.py
 exr-uniform-continuity-rule-by-rule-r3 (solution): line 3 is distributivity | prp-distributivity (F1.1 §07, cited), def-derived-rule (cited); or TAUT, prp-taut-skeleton (F1.8 §03)
