@@ -190,7 +190,7 @@ For limits, a threshold for one sequence becomes a threshold for the other once 
 \[
 M' \coloneqq \max\{ \abs{b_0}, \dots, \abs{b_{N_0 - 1}}, M \} ,
 \]
-the maximum of finitely many elements of \( F \), which exists by @fd2:prp-finite-max (its proof works in any ordered field, as *Sets and Functions*, Section 4.3 remarks). Then \( M' \ge M > 0 \). For \( n < N_0 \), \( \abs{b_n} \le M' \) because \( \abs{b_n} \) is one of the listed elements; for \( n \ge N_0 \), \( \abs{b_n} = \abs{a_n} \le M \le M' \). So \( M' \) bounds \( (b_n) \). The converse is the same with the sequences exchanged.
+the maximum of finitely many elements of \( F \), which exists by @fd2:prp-finite-max (its proof works in any ordered field, as *Sets and Functions*, Section 5.3 remarks). Then \( M' \ge M > 0 \). For \( n < N_0 \), \( \abs{b_n} \le M' \) because \( \abs{b_n} \) is one of the listed elements; for \( n \ge N_0 \), \( \abs{b_n} = \abs{a_n} \le M \le M' \). So \( M' \) bounds \( (b_n) \). The converse is the same with the sequences exchanged.
 
 (b) Suppose \( a_n \to a \), and let \( \varepsilon \in F_{>0} \), with \( N \) as in the definition. For \( n \ge N \), also \( n + k \ge N \), so \( \abs{a_{n+k} - a} < \varepsilon \). Hence \( (a_{n+k})_n \) converges to \( a \), with the same \( N \).
 

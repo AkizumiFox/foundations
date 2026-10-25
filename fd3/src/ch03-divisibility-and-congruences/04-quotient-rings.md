@@ -1,6 +1,6 @@
 # Ideals, Quotient Rings, and the Integers Modulo n
 
-*Sets and Functions*, Section 4.2 turned the school integers into a clock, \( \nZ/n \), and checked by hand that its sum and product are well defined (@fd2:prp-congruence-arithmetic). Chapter 2 made the same kind of check twice more, for \( \nZ \) and for \( \nQ \), each time through @thm-well-defined-on-classes and a computation special to the formula. This section makes the check **once**, for every commutative ring and every subset of the right kind, called an ideal. The integers modulo \( n \), now a ring, are the first example. Chapter 5 builds \( \nR \) in the same shape, from classes of Cauchy sequences of rationals that differ by a null sequence, and checks its operations there directly; *Algebraic Preliminaries*, Chapter 4 runs division with remainder, gcd and unique factorization again for polynomials over a field.
+*Sets and Functions*, Section 5.2 turned the school integers into a clock, \( \nZ/n \), and checked by hand that its sum and product are well defined (@fd2:prp-congruence-arithmetic). Chapter 2 made the same kind of check twice more, for \( \nZ \) and for \( \nQ \), each time through @thm-well-defined-on-classes and a computation special to the formula. This section makes the check **once**, for every commutative ring and every subset of the right kind, called an ideal. The integers modulo \( n \), now a ring, are the first example. Chapter 5 builds \( \nR \) in the same shape, from classes of Cauchy sequences of rationals that differ by a null sequence, and checks its operations there directly; *Algebraic Preliminaries*, Chapter 4 runs division with remainder, gcd and unique factorization again for polynomials over a field.
 
 Throughout, \( R \) is a commutative ring (@def-commutative-ring-and-field), with \( a - b \coloneqq a + (-b) \).
 
@@ -137,7 +137,7 @@ For \( I = a\nZ + b\nZ \) with \( (a, b) \ne (0, 0) \), (b) says \( a\nZ + b\nZ 
 
 ## The ring of integers modulo n
 
-Now the clock of *Sets and Functions*, Section 4.2 can be rebuilt on the constructed \( \nZ \), as an instance of the general theorem.
+Now the clock of *Sets and Functions*, Section 5.2 can be rebuilt on the constructed \( \nZ \), as an instance of the general theorem.
 
 ::: {#def-integers-mod-n-ring}
 [The Integers Modulo n]

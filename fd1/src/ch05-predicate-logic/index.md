@@ -8,7 +8,7 @@ The chapter is the first-order twin of Chapters 1 and 2: one rule per section, e
 
 **Time.** About 45 hours on the core track (all of A, one B and one C per section); about 65 hours for everything.
 
-**Minimum before *Sets and Functions*.** Chapters 1–6 and 8, core; Sections 7.1–7.2 before its Section 2.5.
+**Minimum before *Sets and Functions*.** Chapters 1–6 and 8, core; Sections 7.1–7.2 before its Section 4.1.
 
 **How to read this chapter.** Every section is on the first reading, with its folds closed. The folds hold proofs about the language (substitution, renaming, definitions), longer error analyses and edge cases. They are not optional: later proofs may use them.
 
@@ -36,7 +36,7 @@ The chapter is the first-order twin of Chapters 1 and 2: one rule per section, e
 
 The four quantifier rules are on one card at the end of Section 5.6, and the whole calculus on the table at the end of Section 5.7.
 
-**Where this goes.** *Sets and Functions*, Chapter 1 develops sets, membership, the empty set, pairs and functions, used here in their everyday sense (Sections 5.1, 5.2, 5.7, 5.8). *Analysis on the Real Line*, Chapter 1 proves from the axioms of the real numbers the school facts used in examples: that \( \sqrt 2 \) exists (Sections 5.1, 5.8) and the field and order facts behind mixed chains (Section 5.7).
+**Where this goes.** *Sets and Functions*, Chapters 1 and 2 develop sets, membership, the empty set, pairs and functions, used here in their everyday sense (Sections 5.1, 5.2, 5.7, 5.8). *Analysis on the Real Line*, Chapter 1 proves from the axioms of the real numbers the school facts used in examples: that \( \sqrt 2 \) exists (Sections 5.1, 5.8) and the field and order facts behind mixed chains (Section 5.7).
 
 ## Summary
 

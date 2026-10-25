@@ -75,36 +75,37 @@
     {
      "n": 1,
      "id": "F2.1",
-     "title": "Proofs from Definitions: Sets and Functions",
+     "title": "Sets",
      "ab": 6
     },
     {
      "n": 2,
-     "id": "F2.2",
-     "title": "Induction, Contradiction, and Finite Sets",
-     "ab": 7
+     "id": "F2.6",
+     "title": "Functions",
+     "ab": 6
     },
     {
      "n": 3,
-     "id": "F2.3",
-     "title": "Countable and Uncountable Sets",
-     "ab": 8
-    },
-    {
-     "n": 4,
-     "id": "F2.5",
-     "title": "Relations: Equivalence and Order",
+     "id": "F2.2",
+     "title": "Induction and Recursion",
      "ab": 7
     },
     {
+     "n": 4,
+     "id": "F2.3",
+     "title": "Cardinality",
+     "ab": 8
+    },
+    {
      "n": 5,
-     "id": "F2.6",
-     "title": "Building Functions"
+     "id": "F2.5",
+     "title": "Relations",
+     "ab": 7
     },
     {
      "n": 6,
      "id": "F2.4",
-     "title": "Zorn's Lemma"
+     "title": "The Axiom of Choice"
     }
    ]
   },

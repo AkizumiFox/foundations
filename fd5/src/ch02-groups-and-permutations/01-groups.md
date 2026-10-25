@@ -1,6 +1,6 @@
 # Groups
 
-Several structures met so far behave alike: the integers under addition, the non-zero rationals under multiplication, the units of \( \nZ/n\nZ \) (*Number Systems: From \(\nN\) to \(\nR\)*, Section 3.5), and the bijections of a set under composition (*Sets and Functions*, Chapter 1). This section names their common structure, a group, and proves its basic laws once, from three axioms, so that they hold in all of these at once. It then makes two habits honest: dropping brackets from a product of many factors, and writing powers \( g^n \) with \( n \in \nZ \).
+Several structures met so far behave alike: the integers under addition, the non-zero rationals under multiplication, the units of \( \nZ/n\nZ \) (*Number Systems: From \(\nN\) to \(\nR\)*, Section 3.5), and the bijections of a set under composition (*Sets and Functions*, Chapter 2). This section names their common structure, a group, and proves its basic laws once, from three axioms, so that they hold in all of these at once. It then makes two habits honest: dropping brackets from a product of many factors, and writing powers \( g^n \) with \( n \in \nZ \).
 
 Throughout the chapter \( \nN \) is \( \omega \), and \( \nZ \), \( \nQ \) are the integers and rationals built in *Number Systems: From \(\nN\) to \(\nR\)*, Chapter 2. Induction and recursion on \( \nN \) are @fd1:ax-induction and @fd2:thm-recursion, read on \( \omega \) through @fd3:cor-omega-identification (b). Strong induction, @fd1:thm-strong-induction, holds on \( \omega \) too, since its proof uses only @fd1:ax-induction and the order facts @fd3:thm-omega-order (a), (b), (d).
 
@@ -506,7 +506,7 @@ exm-group-nonexamples (solution): 2 != 1 and 2 != -1 | order of Z (fd3:thm-integ
 exm-group-nonexamples (solution): -1 < 0 | fd3:prp-ordered-ring-rules (a), (e) with 1 != 0 (fd3:thm-integers-commutative-ring), used silently
 exm-group-nonexamples (solution): (N, +) associative with identity 0 | (F1)-(F3) in Z (fd3:thm-integers-commutative-ring)
 exm-group-nonexamples (solution): (1 - 1) - 1 = -1, 1 - (1 - 1) = 1 | ring arithmetic in Z; verify/ch02/exm-group-nonexamples.py
-thm-group-basic-properties (claim): (remark) (2) is the argument of fd2:prp-inverse-unique and of the uniqueness paragraph after fd3:def-ring-unit; (1) that of fd3:prp-ring-algebra (a) | meta-claim, checked against F2.1 §05, F3.5 §05, F3.2 §03
+thm-group-basic-properties (claim): (remark) (2) is the argument of fd2:prp-inverse-unique and of the uniqueness paragraph after fd3:def-ring-unit; (1) that of fd3:prp-ring-algebra (a) | meta-claim, checked against F2.6 §01, F3.5 §05, F3.2 §03
 def-group-list-product (claim): recursion on N for a list extended by e; independence of the extension; the remark never reorders factors | fd2:def-sum-product and its "Finite lists" remark used as a template (F3.1 §07 citing rule, group (iii)), fd2:thm-recursion read on omega; checked: the remark's induction only compares the added terms a_{n+1}
 prp-group-list-product-laws (proof): (b) concatenating (g_1..g_k) with the re-indexed rest (g_{k+1}..g_r) gives (g_1..g_r) | definition of the concatenated list (entry r + i is h_i), inline
 prp-group-list-product-laws (proof): strong induction with the property "r >= 1 implies ..." | fd1:thm-strong-induction read on omega (opening line above)

@@ -1,6 +1,6 @@
 # fd2 *Sets and Functions*: six-chapter layout (Sets, Functions, Induction and Recursion, Cardinality, Relations, The Axiom of Choice)
 
-**Status.** Proposal, awaiting the author. Nothing has moved yet. If the author approves it, this file overrides `layout-final.md` and `layout-addendum-sets-and-functions.md`; both stay as the record of the earlier cuts.
+**Status.** **Approved 2026-10-26** by the author, with the two open questions of §9 answered (§0 below). This file overrides `layout-final.md` and `layout-addendum-sets-and-functions.md`; both stay as the record of the earlier cuts. The structural commit of §7 was made on 2026-10-26; where §0 and the tables below differ, §0 governs.
 
 **What the author asked for (2026-10-26, verbatim).** 「我覺得 fd2 好像有太多不必要的太難的知識了」. Asked which parts: 「Building Functions, AOC 直接放到 5 然後接到 zorn's lemma 跟他的等價敘述？set 的 cardinality 我覺得需要一的 standalone 的章節去處理它，然後 injections 跟 surjections 那邊應該很多東西可以講？ 第一章 sets 第二章 functions 第三章 induction, recursion 第四章 cardinatility 第五章 relations 第六章 aoc？」. The author chose to move the material that is too hard into ST (axiomatic set theory), approved the table of contents in §1, and asked to see this layout file before anything moves.
 
@@ -15,6 +15,33 @@
 - **Labels keep their names**: no label is renamed, including exercise labels whose slug no longer matches the file they sit in (no tool checks that prefix).
 - "exercises `b2`" in a table means `exr-<old slug>-b2`.
 - **Scaffold levels** follow STYLE §11.4: **full** = `[Scratch work]` + method box + Givens/Goal + two worked examples; **Idea** = short Idea with a back-reference; **terse** = proof only.
+
+---
+
+## 0. Author decisions (2026-10-26) and the structural commit
+
+**Q1, verbatim: 「Ch2 多開一節」.** The alternative of §9 Q1 is taken. Chapter 2 has **five** sections:
+
+| § | File | Title | Sources |
+|---|---|---|---|
+| 2.1 | `01-functions-and-composition.md` | Functions and Composition | old 1.5, first half (up to "Composition"), verbatim; new A/B/C exercises at S3 |
+| 2.2 | `02-injections-and-surjections.md` | Injections and Surjections | old 1.5, second half, with all seven `exr-functions-*`; the new topics of §1 at S3 |
+| 2.3 | `03-gluing-and-characteristic-functions.md` | Gluing and Characteristic Functions (**new**) | old 5.1 whole (restriction, extension, gluing, indicators; exercises A1, B1–B4), plus `thm-power-set-two-power` (\(\powerset{X} \approx \{0,1\}^X\)) from old 3.6 |
+| 2.4 | `04-inverses.md` | Left, Right and Two-Sided Inverses | old 1.6, verbatim |
+| 2.5 | `05-images-and-preimages.md` | Images and Preimages | old 1.7, verbatim |
+
+So restriction and extension stay with gluing in 2.3 instead of going to 2.1, and the 2.2 budget problem of §9 Q1 disappears. In §3 and §5 read: old 1.6 → **2.4**, old 1.7 → **2.5**, old 5.1 → **2.3** (all of it except C1 → 4.1, C2 → 5.2, C3 → 4.5), `thm-power-set-two-power` → **2.3**. R6 and R7 read "Section 2.4" for inverses. R2 still applies to `prp-restriction-properties`, now in 2.3 before 2.4 and 2.5.
+
+**Q2, verbatim: 「移到 6.1」.** The default of §9 Q2 is taken: `prp-card-le-surjection` (old 3.4), `thm-infinite-countable-subset`, `thm-infinite-iff-proper-subset`, the rest of old 3.5 and `exr-infinite-sets-r4` move to 6.1; Chapter 4 uses no choice and nothing depends forward.
+
+**What the structural commit did beyond the tables (2026-10-26).** Every block moved verbatim with its label; new text is marked `<!-- S3: rewrite per blueprint (...) -->` in place. Changes forced by `./build.py check`, each marked in the text:
+- `prp-restriction-properties` (2.3): part (e) cut (R2), because its proof cites `def-image` of 2.5; the removed text is kept verbatim in an S3 comment, and exercises A1 and B1, which cite (e), are rewritten at S3.
+- `thm-power-set-two-power` (2.3): the last sentence of the proof no longer cites `thm-bijection-iff-inverse` (2.4, later); the two round trips give injective and surjective directly (`def-bijective`). Changed-only review owed.
+- `exr-cardinal-arithmetic-c3` (Rearrangements of ℕ) is parked to ST with `thm-baire-space-reals`, on which its solution rests.
+- 4.3's opening frame and B4 solution, and the Chapter 4 index, lost their citations of parked labels (the algebraic numbers, `exm-choice-free-unions`, the Baire-space results).
+- The sidecar `verify/ch02/exm-fraction-map.py` gave its five-string values to `exm-function-set-small.py`, since that Quick check now sits in 2.1.
+- Chapter indexes: Chapter 2 is a title-only stub; the other five keep their old text under an S3 marker, retitled.
+- Parked files: `fd2/authoring/parked/st/from-3.2-…`, `from-3.3-…`, `from-3.6-…`, `from-5.2-…` (with their dependency-ledger lines and four sidecars in `parked/st/verify/`), `fd5/authoring/parked/from-fd2/03-binary-operations.md`, `04-permutations-and-iteration.md` (with 17 sidecars and `_perm.py`), and the old Chapter 5 index in `fd2/authoring/parked/old-indexes/`. Ledger items of parked labels are in `fd2/authoring/parked/ledger-parked.yaml`.
 
 ---
 
@@ -328,7 +355,7 @@ These are estimates by STYLE §2's formula; each chapter's Time line is recomput
 
 **Words.** The main line goes from 167,145 to about **141,000** (−16%). About 12,400 words go to fd5 (parked) and about 4,500 to ST (parked, counting the 3.6 cuts). About 9,000 come out by condensing 4.5, 5.2, 6.1 and 6.2, and about 3,500 are added (2.2's new topics, 6.3's well-ordering theorem).
 
-## 9. Open questions for the author
+## 9. Open questions for the author (answered 2026-10-26, §0)
 
 1. **2.2 is tight.** Injections and surjections, the six new topics, gluing and characteristic functions come to about 7,000 words if nothing is trimmed.
    - **Default:** keep the approved table of contents. Restriction and extension go to 2.1, one worked example of old 1.5 becomes an exercise, gluing and indicators are condensed, and 2.2 is drafted to 5,000.

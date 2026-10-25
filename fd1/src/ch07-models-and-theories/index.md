@@ -26,7 +26,7 @@ The axioms of a partial order say that \( \le \) is reflexive, antisymmetric and
 
 **Time.** About 20 hours on the core track (Sections 7.1, 7.2, 7.4 and the first half of 7.5: all of A, one B and one C per section, the exit checks); about 45 hours for everything.
 
-**Minimum before *Sets and Functions*.** Chapters 1–6 and 8, core; Sections 7.1–7.2 before its Section 2.5; Sections 7.4–7.5 recommended.
+**Minimum before *Sets and Functions*.** Chapters 1–6 and 8, core; Sections 7.1–7.2 before its Section 4.1; Sections 7.4–7.5 recommended.
 
 ## Roadmap
 
@@ -47,7 +47,7 @@ The axioms of a partial order say that \( \le \) is reflexive, antisymmetric and
 - **Define by a formula.** (Section 7.5)
 - **An automorphism moves what cannot be defined.** (Section 7.5, second pass)
 
-**Where this goes.** *Sets and Functions*, Chapter 1 develops the sets, pairs and functions that Sections 7.1 and 7.5 use in their everyday sense, and its Chapter 3 builds a counter-model by Section 7.2's procedure; its Chapter 4 studies the relations of Section 7.4.
+**Where this goes.** *Sets and Functions*, Chapters 1 and 2 develop the sets, pairs and functions that Sections 7.1 and 7.5 use in their everyday sense, and its Chapter 6 builds a counter-model by Section 7.2's procedure; its Chapter 5 studies the relations of Section 7.4.
 
 ## Summary
 

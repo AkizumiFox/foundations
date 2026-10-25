@@ -6,7 +6,7 @@ The tool is the binomial theorem. School proves it for numbers; we need it in an
 
 ## Sums and powers in a commutative ring
 
-*Sets and Functions*, Chapter 2 defines finite sums, products and powers of real numbers by recursion (@fd2:def-sum-product, @fd2:def-power, both from @fd2:thm-recursion). The definitions use nothing about \( \nR \) except an addition with a \( 0 \) and a multiplication with a \( 1 \). So, read on \( \nN = \omega \) through @fd3:cor-omega-identification (b), with \( X = R \), they define in every commutative ring \( R \):
+*Sets and Functions*, Chapter 3 defines finite sums, products and powers of real numbers by recursion (@fd2:def-sum-product, @fd2:def-power, both from @fd2:thm-recursion). The definitions use nothing about \( \nR \) except an addition with a \( 0 \) and a multiplication with a \( 1 \). So, read on \( \nN = \omega \) through @fd3:cor-omega-identification (b), with \( X = R \), they define in every commutative ring \( R \):
 
 - sums \( \sum_{k=m}^{n} a_k \) of elements \( a_k \in R \), with the empty sum \( 0 \), and the three remarks after @fd2:def-sum-product: a sum depends only on the terms it adds (finite lists), **shifting the index**, and **splitting off the last term**, \( \sum_{k=m}^{n+1} a_k = \sum_{k=m}^{n} a_k + a_{n+1} \) for \( m \le n + 1 \);
 - powers \( x^0 \coloneqq 1 \), \( x^{n+1} \coloneqq x^n x \) for \( x \in R \) and \( n \in \nN \), with the laws of @fd2:prp-power-laws (a)–(c):

@@ -1,6 +1,6 @@
 # Order and Well-Ordering of the Natural Numbers
 
-*Sets and Functions*, Chapter 2 compared natural numbers with the order of the real line, and proved that every non-empty set of natural numbers has a least element (@fd2:thm-well-ordering) from that order and induction. In \( \omega \) there is no real line to borrow from. But the von Neumann numerals carry their order inside them: \( 3 = \{0, 1, 2\} \) is the set of the numbers before it. This section takes "is an element of" as the order, proves that it is a strict total order and a well-ordering, ties it to the arithmetic of the previous section, and then collects three groups of facts about \( \omega \): powers and parity, \( n \)-tuples, and lists of variable length.
+*Sets and Functions*, Chapter 3 compared natural numbers with the order of the real line, and proved that every non-empty set of natural numbers has a least element (@fd2:thm-well-ordering) from that order and induction. In \( \omega \) there is no real line to borrow from. But the von Neumann numerals carry their order inside them: \( 3 = \{0, 1, 2\} \) is the set of the numbers before it. This section takes "is an element of" as the order, proves that it is a strict total order and a well-ordering, ties it to the arithmetic of the previous section, and then collects three groups of facts about \( \omega \): powers and parity, \( n \)-tuples, and lists of variable length.
 
 ## Less than is "element of"
 
@@ -62,7 +62,7 @@ We use @thm-omega-induction (b) on \( n \), for the property "for every \( m \in
 (e) Let \( k \in \mathrm{S}(n) \setminus \{0\} \). Then \( k \in \omega \) (as in (c)), \( k \le n \) by (b), and \( 1 \le k \) by (d), since \( k \ne 0 \). Conversely, let \( k \in \omega \) with \( 1 \le k \le n \). Then \( k \in \mathrm{S}(n) \) by (b). And \( k \ne 0 \): otherwise \( 1 \le 0 \), but \( 1 \ne 0 \) by (P3) of @thm-omega-peano and \( 1 \notin 0 = \emptyset \). This proves the theorem.
 :::
 
-So the notation of *Sets and Functions*, Chapter 2, \( \{0, \dots, n\} \) and \( \{1, \dots, n\} \), keeps its meaning on \( \omega \), and the two sets are \( \mathrm{S}(n) \) and \( \mathrm{S}(n) \setminus \{0\} \); in particular \( \{1, \dots, 0\} = \emptyset \). In the "plus one" notation of @def-omega-arithmetic, (b) says that \( n + 1 \) is the next number after \( n \), and (d) with @cor-omega-successor-cancellation gives \( 1 \le k + 1 \) for every \( k \in \omega \), since \( k + 1 \ne 0 \).
+So the notation of *Sets and Functions*, Chapter 3, \( \{0, \dots, n\} \) and \( \{1, \dots, n\} \), keeps its meaning on \( \omega \), and the two sets are \( \mathrm{S}(n) \) and \( \mathrm{S}(n) \setminus \{0\} \); in particular \( \{1, \dots, 0\} = \emptyset \). In the "plus one" notation of @def-omega-arithmetic, (b) says that \( n + 1 \) is the next number after \( n \), and (d) with @cor-omega-successor-cancellation gives \( 1 \le k + 1 \) for every \( k \in \omega \), since \( k + 1 \ne 0 \).
 
 ::: {.warning}
 **On arbitrary sets, \( \in \) is not transitive.** \( \emptyset \in \{\emptyset\} \) and \( \{\emptyset\} \in \{\{\emptyset\}\} \), but \( \emptyset \notin \{\{\emptyset\}\} \), whose only element is \( \{\emptyset\} \ne \emptyset \). The conclusion "\( k \in m \) and \( m \in n \) give \( k \in n \)" is false in general; on \( \omega \) it holds by a theorem, @lem-omega-transitive (a): the elements of \( \omega \) are transitive sets. Membership by itself does not give it.
@@ -70,7 +70,7 @@ So the notation of *Sets and Functions*, Chapter 2, \( \{0, \dots, n\} \) and \(
 
 ## Well-ordering
 
-In *Sets and Functions*, Chapter 2, @fd2:thm-well-ordering was derived from @fd1:ax-induction, which there was an axiom. On \( \omega \), induction is a theorem (@thm-omega-induction), so well-ordering becomes one too. The proof here takes a different route from *Sets and Functions*, Chapter 2's strong induction, and the order of \( \omega \) as membership makes it short.
+In *Sets and Functions*, Chapter 3, @fd2:thm-well-ordering was derived from @fd1:ax-induction, which there was an axiom. On \( \omega \), induction is a theorem (@thm-omega-induction), so well-ordering becomes one too. The proof here takes a different route from *Sets and Functions*, Chapter 3's strong induction, and the order of \( \omega \) as membership makes it short.
 
 ::: {#thm-omega-well-ordering}
 [Well-Ordering of \( \omega \)]
@@ -170,11 +170,11 @@ by @def-omega-arithmetic (a), which contradicts @cor-omega-successor-cancellatio
 (g) Let \( Q(i) \) be "\( P(b + i) \)", for \( i \in \omega \). \( Q(0) \) is \( P(b + 0) = P(b) \). If \( Q(i) \) holds, then \( b + i \ge b \) by (a), so the hypothesis gives \( P((b + i) + 1) \); and \( (b + i) + 1 = b + (i + 1) \) by @def-omega-arithmetic (a), so \( Q(i + 1) \) holds. By @thm-omega-induction (b), \( Q(i) \) holds for every \( i \in \omega \). Finally, if \( n \ge b \), then \( n = b + i \) for some \( i \) by (a), and \( P(n) \) is \( Q(i) \).
 :::
 
-Clause (a) is how subtraction appears on \( \omega \): \( n - m \) is defined only when \( m \le n \), as the unique \( j \) with \( m + j = n \). For example \( 5 - 2 = 3 \), by the Quick check above, and \( n - 0 = n \). Clause (g) is the "induction from a base" that *Sets and Functions*, Chapter 2 used as @fd2:thm-induction, now proved on \( \omega \).
+Clause (a) is how subtraction appears on \( \omega \): \( n - m \) is defined only when \( m \le n \), as the unique \( j \) with \( m + j = n \). For example \( 5 - 2 = 3 \), by the Quick check above, and \( n - 0 = n \). Clause (g) is the "induction from a base" that *Sets and Functions*, Chapter 3 used as @fd2:thm-induction, now proved on \( \omega \).
 
 ## Powers and parity
 
-*Sets and Functions*, Chapter 3 counted with powers \( 2^m 3^n \) and with even and odd numbers, and took both from the real numbers and the integers. Here are the facts it used, proved on \( \omega \). They are recorded for the citing rule at the end of this chapter, which says how *Sets and Functions*, Chapter 3's counting arguments read on \( \omega \).
+*Sets and Functions*, Chapter 4 counted with powers \( 2^m 3^n \) and with even and odd numbers, and took both from the real numbers and the integers. Here are the facts it used, proved on \( \omega \). They are recorded for the citing rule at the end of this chapter, which says how *Sets and Functions*, Chapter 4's counting arguments read on \( \omega \).
 
 For \( b \in \omega \), the powers \( b^n \) (\( n \in \omega \)) are defined by @thm-omega-recursion with \( X = \omega \), \( a = 1 \) and \( g(n, x) = x \cdot b \):
 \[
@@ -238,7 +238,7 @@ Any other definition of powers on \( \omega \) by the same two equations, \( c(0
 
 ## Tuples and lists as sets
 
-*Sets and Functions*, Chapter 1 used \( n \)-tuples \( (x_1, \dots, x_n) \) with \( n \) a variable, as working rule (W5), and stated working rule (W2) for lists (*Sets and Functions*, Section 1.2); *Sets and Functions*, Chapters 2 and 3 write \( \{x_1, \dots, x_n\} \) with \( n \) a variable. With pairs built from sets (@thm-kuratowski-pair) and with \( \{1, \dots, n\} = \mathrm{S}(n) \setminus \{0\} \) (@thm-omega-order (e)), we can now say what they are. An \( n \)-tuple, for \( n \ge 3 \), is a list of entries labeled by \( 1, \dots, n \), and a function on \( \{1, \dots, n\} \) is exactly that.
+*Sets and Functions*, Chapter 1 used \( n \)-tuples \( (x_1, \dots, x_n) \) with \( n \) a variable, as working rule (W5), and stated working rule (W2) for lists (*Sets and Functions*, Section 1.2); *Sets and Functions*, Chapters 3 and 4 write \( \{x_1, \dots, x_n\} \) with \( n \) a variable. With pairs built from sets (@thm-kuratowski-pair) and with \( \{1, \dots, n\} = \mathrm{S}(n) \setminus \{0\} \) (@thm-omega-order (e)), we can now say what they are. An \( n \)-tuple, for \( n \ge 3 \), is a list of entries labeled by \( 1, \dots, n \), and a function on \( \{1, \dots, n\} \) is exactly that.
 
 ::: {#prp-tuples-as-sets}
 [Tuples and Lists as Sets]
@@ -263,7 +263,7 @@ is a set: the image \( x(\{1, \dots, n\}) \) of @fd2:def-image.
 
 The tuple is the graph alone, without the codomain \( X \), so the same list of entries is the same tuple in every set that contains them.
 
-Since a natural number is also a set, an exponent \( n \in \omega \) could be read in more than one way. In \( X^n \) the exponent is always read as a number: \( X^n \) is the set of \( n \)-tuples of (a), not the set \( Y^X \) of *Sets and Functions*, Section 1.5 taken with \( Y = X \) and with the set \( n \) as exponent, whose elements are pairs (graph, codomain) with graphs on \( n = \{0, \dots, n - 1\} \). And \( X^n \) is written only for a declared set of entries \( X \), never for \( X \in \omega \); for \( b \in \omega \), \( b^n \) is always the power defined above. For example, the power \( 2^2 \) is \( 4 = \{0, 1, 2, 3\} \), while \( 2 \times 2 \) is a set of four pairs.
+Since a natural number is also a set, an exponent \( n \in \omega \) could be read in more than one way. In \( X^n \) the exponent is always read as a number: \( X^n \) is the set of \( n \)-tuples of (a), not the set \( Y^X \) of *Sets and Functions*, Section 2.1 taken with \( Y = X \) and with the set \( n \) as exponent, whose elements are pairs (graph, codomain) with graphs on \( n = \{0, \dots, n - 1\} \). And \( X^n \) is written only for a declared set of entries \( X \), never for \( X \in \omega \); for \( b \in \omega \), \( b^n \) is always the power defined above. For example, the power \( 2^2 \) is \( 4 = \{0, 1, 2, 3\} \), while \( 2 \times 2 \) is a set of four pairs.
 
 ::: {.idea}
 Each clause unwinds a definition. Sets come from (Z5) and (Z6); equality of tuples is equality of graphs, which is agreement of values. For (c) and (e), look at the elements: an \( n \)-tuple with \( n \ge 3 \) has at least three elements, all of them pairs, while a pair has at most two elements and every non-zero natural number has the element \( \emptyset \), which is not a pair.
@@ -289,7 +289,7 @@ Let \( 3 \le n < n' \). The \( n' \)-tuple contains a pair with first coordinate
 (e) An \( n \)-tuple \( t \) contains \( (1, x_1) \), so \( t \ne \emptyset = 0 \). Each element of \( t \) is a pair \( (k, x_k) = \{\{k\}, \{k, x_k\}\} \), which has the element \( \{k\} \), so no element of \( t \) is \( \emptyset \). Every \( m \in \omega \) with \( m \ne 0 \) has \( 0 = \emptyset \) as an element (@lem-omega-transitive (e)). So \( t \) is neither \( 0 \) nor any other element of \( \omega \).
 :::
 
-Clause (d) is the second half of working rule (W2): @fd2:prp-finite-max and @fd2:def-finite in *Sets and Functions*, Chapter 2, speak of \( \{x_1, \dots, x_n\} \) for a variable \( n \), and this is the set they mean. Clauses (a) and (b) are working rule (W5) for \( n \)-tuples. Clause (c) bears out the convention of *Sets and Functions*, Chapter 1, that a triple is not a pair, and (e), with @prp-pair-not-natural for \( n = 2 \), that no pair or \( n \)-tuple is a natural number.
+Clause (d) is the second half of working rule (W2): @fd2:prp-finite-max and @fd2:def-finite in *Sets and Functions*, Chapters 3 and 4, speak of \( \{x_1, \dots, x_n\} \) for a variable \( n \), and this is the set they mean. Clauses (a) and (b) are working rule (W5) for \( n \)-tuples. Clause (c) bears out the convention of *Sets and Functions*, Chapter 1, that a triple is not a pair, and (e), with @prp-pair-not-natural for \( n = 2 \), that no pair or \( n \)-tuple is a natural number.
 
 ## Exercises
 
@@ -302,7 +302,7 @@ Clause (d) is the second half of working rule (W2): @fd2:prp-finite-max and @fd2
 1. List the elements of \( \{ k \in \omega : k \le 3 \} \). Which natural number is this set?
 2. True or false: for \( m, n \in \omega \), \( m < n \) implies \( m \subseteq n \). Justify your answer.
 3. Find the least element of \( \{ n \in \omega : n \cdot n > 10 \} \), and say why it is least.
-4. Which clause of @thm-omega-order says that the notation \( \{0, \dots, n\} \) of *Sets and Functions*, Chapter 2 still means what it meant there, and what set is it on \( \omega \)?
+4. Which clause of @thm-omega-order says that the notation \( \{0, \dots, n\} \) of *Sets and Functions*, Chapter 3 still means what it meant there, and what set is it on \( \omega \)?
 :::
 :::
 

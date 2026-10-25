@@ -2,7 +2,7 @@
 
 Section 5.5 proved one form of completeness: in \( \nR \) every Cauchy sequence converges (@thm-constructed-reals-cauchy-complete). *Analysis on the Real Line*, Chapter 1 starts from another form, about sets rather than sequences: every non-empty set of real numbers that is bounded above has a least upper bound. In \( \nQ \) both fail, the first by @thm-sqrt2-cauchy-no-rational-limit and the second by @thm-rationals-gap-sqrt2. This section names the second property for an arbitrary ordered field, proves that an ordered field that is Archimedean and Cauchy-complete has it, and concludes that the constructed \( \nR \) is a complete ordered field. The proof bisects intervals, and one line of it, which we shall point at, cannot do without Archimedes.
 
-Throughout, \( F \) is an ordered field (@def-ordered-ring-and-field). Its order \( \le \) is a total order (@prp-ordered-field-halves (a)), so the words "upper bound", "bounded above" and "supremum" of *Sets and Functions*, Section 4.3 apply to subsets of \( F \) (@fd2:def-order-bounds, @fd2:def-order-supremum). When \( F = \nR \), we keep the identification of Section 5.4, writing \( q \) for \( \kappa(q) \).
+Throughout, \( F \) is an ordered field (@def-ordered-ring-and-field). Its order \( \le \) is a total order (@prp-ordered-field-halves (a)), so the words "upper bound", "bounded above" and "supremum" of *Sets and Functions*, Section 5.3 apply to subsets of \( F \) (@fd2:def-order-bounds, @fd2:def-order-supremum). When \( F = \nR \), we keep the identification of Section 5.4, writing \( q \) for \( \kappa(q) \).
 
 ## Complete ordered fields
 
@@ -415,7 +415,7 @@ So \( S(s) - S(t) \) is eventually \( \ge \delta \coloneqq 1/3^{j+1} \in \nQ_{>0
 
 *(iv) Uncountable.* If \( \nR \) were countable, there would be an injection \( g \colon \nR \to \nN \) (@fd2:thm-countable-characterizations, (i) \( \Rightarrow \) (ii)). Then \( g \circ \Phi \colon \{0, 1\}^{\nN} \to \nN \) would be injective (@fd2:thm-composition-injective-surjective (a)), so \( \{0, 1\}^{\nN} \) would be countable ((ii) \( \Rightarrow \) (i)), against @fd2:thm-binary-sequences-uncountable.
 
-The method is that of *Sets and Functions*, Chapter 3: an injection from a set known to be uncountable. (The route through @fd2:prp-card-le-surjection is not taken: its (\( \Leftarrow \)) direction uses choice.)
+The method is that of *Sets and Functions*, Chapter 4: an injection from a set known to be uncountable. (The route through @fd2:prp-card-le-surjection is not taken: its (\( \Leftarrow \)) direction uses choice.)
 :::
 
 ::: {#exr-the-least-upper-bound-property-r4}

@@ -1093,7 +1093,7 @@ In the Givens/Goal table, \( \rulename{\exists E} \) puts a witness among the Gi
 ::: {.remark}
 [Looking ahead]
 
-A derivation with \( n \) existential premises opens \( n \) boxes and names \( n \) witnesses, one choice per box. *Sets and Functions*, Chapter 3 asks when infinitely many witnesses may be chosen at once, and answers with the axiom of choice.
+A derivation with \( n \) existential premises opens \( n \) boxes and names \( n \) witnesses, one choice per box. *Sets and Functions*, Chapter 6 asks when infinitely many witnesses may be chosen at once, and answers with the axiom of choice.
 :::
 
 ## Exercises

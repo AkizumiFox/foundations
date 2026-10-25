@@ -79,7 +79,7 @@ The degenerate case is the empty set itself, and it matters: each natural number
 
 - **Infinity** says that some set contains \( \emptyset \) and is closed under one particular step. It is (Z7), stated in Section 1.3, once there is a step to iterate. Without it, the axioms above produce each finite set we write down, one at a time. That they cannot produce a set holding infinitely many of them is a theorem of set theory, which this book states and does not prove.
 - **Replacement** and **Foundation** are not needed to build the natural numbers, and are left to the volume on set theory, which revisits this chapter.
-- **Choice** is @fd2:ax-choice of *Sets and Functions*, Chapter 3. Nothing in this chapter uses it.
+- **Choice** is @fd2:ax-choice of *Sets and Functions*, Chapter 6. Nothing in this chapter uses it.
 
 We do not ask whether the axioms are consistent, or (apart from exercise C1) whether one of them follows from the others. Those are questions about the axioms, and this chapter only uses them.
 

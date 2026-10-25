@@ -117,7 +117,7 @@ In words: whatever rational tolerance is named, **from some index on**, the two 
 - *Why not "eventually equal".* Then \( (x_k) \) and \( (d_k) \) would name different numbers, and so would \( (1/(n + 1))_n \) and \( (0)_n \). Sequences that agree ever more closely, without ever agreeing exactly, would never be identified.
 - *Why only on \( \sC \).* On all sequences of rationals the same relation would not respect products, and Section 5.2 needs it to. For instance \( (1/(n + 1))_n \) and \( (0)_n \) have null difference, but multiplying both termwise by \( (n + 1)_n \), which is not Cauchy, gives \( (1)_n \) and \( (0)_n \), whose difference is not null. Inside \( \sC \) every multiplier is bounded, and that is what saves the product.
 
-It must be checked that \( \sim \) really sorts sequences into groups, that is, that it is an equivalence relation in the sense of *Sets and Functions*, Section 4.2.
+It must be checked that \( \sim \) really sorts sequences into groups, that is, that it is an equivalence relation in the sense of *Sets and Functions*, Section 5.2.
 
 ::: {#prp-cauchy-equivalent-relation}
 [Equivalence of Cauchy Sequences Is an Equivalence Relation]

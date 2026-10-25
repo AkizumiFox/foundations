@@ -97,12 +97,12 @@
   },
   "reading-paths": [],
   "chapters": [
-    "src/ch01-sets-and-functions",
-    "src/ch02-induction-and-finite-sets",
-    "src/ch03-countable-and-uncountable",
-    "src/ch04-relations-and-orders",
-    "src/ch05-building-functions",
-    "src/ch06-zorns-lemma"
+    "src/ch01-sets",
+    "src/ch02-functions",
+    "src/ch03-induction-and-recursion",
+    "src/ch04-cardinality",
+    "src/ch05-relations",
+    "src/ch06-axiom-of-choice"
   ],
   "macros": "../latex/macros.tex",
   "deploy-dir": "site",

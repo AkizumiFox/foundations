@@ -1,6 +1,6 @@
 # The Integers as Classes of Pairs
 
-Chapter 1 built the natural numbers as the set \( \omega \), with its \( 0 \), \( + \), \( \cdot \) and \( < \), and proved the laws of arithmetic, the order and well-ordering from the axioms for sets. From this chapter on, \( \nN \) **means** that set (@cor-omega-identification and the citing rule of Section 1.7). In \( \nN \) the equation \( 5 + x = 3 \) has no solution: \( 5 \le 5 + x \) for every \( x \in \nN \) by @prp-omega-order-arithmetic (a), while \( 3 < 5 \) by the same result, as \( 5 = 3 + 2 \) with \( 2 \ne 0 \). So \( 5 + x = 3 \) would give \( 5 \le 3 < 5 \), hence \( 5 < 5 \), which @thm-omega-order (a) rules out. This section builds a larger set \( \nZ \), out of \( \nN \) alone, with the one tool of *Sets and Functions*, Section 4.2: the quotient of a set by an equivalence relation.
+Chapter 1 built the natural numbers as the set \( \omega \), with its \( 0 \), \( + \), \( \cdot \) and \( < \), and proved the laws of arithmetic, the order and well-ordering from the axioms for sets. From this chapter on, \( \nN \) **means** that set (@cor-omega-identification and the citing rule of Section 1.7). In \( \nN \) the equation \( 5 + x = 3 \) has no solution: \( 5 \le 5 + x \) for every \( x \in \nN \) by @prp-omega-order-arithmetic (a), while \( 3 < 5 \) by the same result, as \( 5 = 3 + 2 \) with \( 2 \ne 0 \). So \( 5 + x = 3 \) would give \( 5 \le 3 < 5 \), hence \( 5 < 5 \), which @thm-omega-order (a) rules out. This section builds a larger set \( \nZ \), out of \( \nN \) alone, with the one tool of *Sets and Functions*, Section 5.2: the quotient of a set by an equivalence relation.
 
 ## What we use about the natural numbers
 
@@ -193,7 +193,7 @@ So every integer has a **normal form**: it is \( [(n, 0)] \) for a unique \( n \
 \[
 [(n, 0)] = \{ (y + n, y) : y \in \nN \} \quad \text{and} \quad [(0, n)] = \{ (x, x + n) : x \in \nN \} .
 \]
-The normal form is where the class's diagonal meets an axis. The next section reads \( [(n, 0)] \) as the natural number \( n \) and \( [(0, n)] \) as its negative; this is how the description of *Sets and Functions*, Section 2.1, "an integer is a natural number or the negative of one", becomes a theorem about the constructed \( \nZ \).
+The normal form is where the class's diagonal meets an axis. The next section reads \( [(n, 0)] \) as the natural number \( n \) and \( [(0, n)] \) as its negative; this is how the description of *Sets and Functions*, Section 3.1, "an integer is a natural number or the negative of one", becomes a theorem about the constructed \( \nZ \).
 
 ::: {.warning}
 A property of a class must not be read off **one** representative. "The integer \( [(a, b)] \) is small when \( a \le 3 \)" sounds like a property of integers and is not one: \( [(3, 3)] = [(5, 5)] \), the first pair has \( a = 3 \le 3 \), and the second has \( a = 5 \). The class is "small" or not according to the name we happened to use. The property "\( [(a, b)] \) is positive when \( b < a \)" looks the same and happens to be safe: if \( (a, b) \sim (a', b') \) and \( b < a \), then \( b' < a' \). That needs a proof, and Section 2.3 gives it before it calls any integer positive.

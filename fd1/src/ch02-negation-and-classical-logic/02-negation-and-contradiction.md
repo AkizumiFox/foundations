@@ -455,7 +455,7 @@ The left list would show \( \neg(Q \vee R) \vdash \neg P \), which breaks. Let \
 ::: {.remark}
 [Looking ahead]
 
-*Sets and Functions*, Chapter 2 proves (L) from a fact about the natural numbers called well-ordering. *Analysis on the Real Line*, Chapter 1 uses this section's theorem in exactly the form proved here, as evidence that the rational numbers have a gap where \( \sqrt{2} \) should be.
+*Sets and Functions*, Chapter 3 proves (L) from a fact about the natural numbers called well-ordering. *Analysis on the Real Line*, Chapter 1 uses this section's theorem in exactly the form proved here, as evidence that the rational numbers have a gap where \( \sqrt{2} \) should be.
 :::
 
 ## Exercises

@@ -2,7 +2,7 @@
 
 Chapter 5 ended with one complete ordered field, the classes of Cauchy sequences of rationals (@thm-reals-complete-ordered-field). The optional Chapter 7 builds another from Dedekind cuts, and *Analysis on the Real Line* simply assumes that one exists. This chapter asks whether these are the same field. Before that question can be asked we need a precise meaning for "the same": a map between ordered fields that respects everything. This section fixes that meaning, and then collects what completeness gives at once: the Archimedean property, a way to tell elements apart by the rationals below them, and square roots.
 
-**Standing setting.** Throughout the chapter, \( F \) and \( L \) are ordered fields (@def-ordered-ring-and-field), so \( \le \) is a total order on each (@prp-ordered-field-halves (a)) and upper bounds and suprema in the sense of *Sets and Functions*, Section 4.3 apply to their subsets (@fd2:def-order-bounds, @fd2:def-order-supremum). "Complete" is always the property of @def-complete-ordered-field: every non-empty subset that is bounded above has a supremum. We do not redefine it.
+**Standing setting.** Throughout the chapter, \( F \) and \( L \) are ordered fields (@def-ordered-ring-and-field), so \( \le \) is a total order on each (@prp-ordered-field-halves (a)) and upper bounds and suprema in the sense of *Sets and Functions*, Section 5.3 apply to their subsets (@fd2:def-order-bounds, @fd2:def-order-supremum). "Complete" is always the property of @def-complete-ordered-field: every non-empty subset that is bounded above has a supremum. We do not redefine it.
 
 Each ordered field \( F \) carries its own copy of \( \nQ \): the map \( \iota_F \colon \nQ \to F \) of @thm-rationals-embed-ordered-field, the only map with \( \iota_F(1) = 1_F \) that preserves sums and products. It is injective, strictly increasing and reflects order, and \( \iota_F(n) = n \cdot 1_F \) for \( n \in \nN \). For the constructed reals, \( \iota_{\nR} \) is the map \( \kappa \) of Chapter 5 (@thm-rational-embedding (d)). When only one field is in play, a proof may write \( q \) for \( \iota_F(q) \), as Chapter 4 did; statements keep \( \iota_F \) visible, and so does every argument that moves between two fields.
 
@@ -329,7 +329,7 @@ Let \( F \) be an Archimedean ordered field. Prove that the map \( F \to \powers
 ::: {.solution}
 Let \( x, y \in F \) with \( \nQ_F(x) = \nQ_F(y) \). By @lem-cof-rationals-separate, \( x = y \). So the map is injective (@fd2:def-injective).
 
-An injection \( F \to \powerset{\nQ} \) says that \( F \) has at most as many elements as \( \powerset{\nQ} \), in the sense of *Sets and Functions*, Chapter 3. In particular every Archimedean ordered field, and so (by @thm-cof-complete-archimedean) every complete ordered field, is no larger than the set of all sets of rationals. The non-Archimedean field \( \nQ(t) \) shows that the hypothesis is needed for injectivity: \( t \) and \( t + 1 \) have the same image.
+An injection \( F \to \powerset{\nQ} \) says that \( F \) has at most as many elements as \( \powerset{\nQ} \), in the sense of *Sets and Functions*, Chapter 4. In particular every Archimedean ordered field, and so (by @thm-cof-complete-archimedean) every complete ordered field, is no larger than the set of all sets of rationals. The non-Archimedean field \( \nQ(t) \) shows that the hypothesis is needed for injectivity: \( t \) and \( t + 1 \) have the same image.
 :::
 
 ::: {#exr-completeness-and-archimedes-c2}

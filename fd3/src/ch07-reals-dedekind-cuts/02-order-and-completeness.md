@@ -54,7 +54,7 @@ For the second statement: if \( \alpha \le \beta \), then \( \alpha = \beta \) o
 
 The proof used (C2), directly and through @lem-cut-separation, whose proof uses only (C2) and trichotomy in \( \nQ \); it never used (C1) or (C3). So any two subsets of \( \nQ \) that are closed downward are comparable by inclusion. The pair \( \{0\} \), \( \{1\} \) fails (C2), and that is why it could be incomparable.
 
-With @thm-cut-order-total, \( (\nR_{\mathrm D}, \le) \) is a totally ordered set, and the vocabulary of *Sets and Functions*, Section 4.3 applies to it: a set \( A \subseteq \nR_{\mathrm D} \) is **bounded above** if some cut \( \beta \) has \( \alpha \le \beta \) for every \( \alpha \in A \) (@fd2:def-order-bounds), and a cut \( \gamma \) is its **supremum** if it is an upper bound of \( A \), clause (S1), and \( \gamma \le \delta \) for every upper bound \( \delta \) of \( A \), clause (S2) (@fd2:def-order-supremum). A supremum is unique when it exists (@fd2:prp-greatest-unique, applied to the set of upper bounds).
+With @thm-cut-order-total, \( (\nR_{\mathrm D}, \le) \) is a totally ordered set, and the vocabulary of *Sets and Functions*, Section 5.3 applies to it: a set \( A \subseteq \nR_{\mathrm D} \) is **bounded above** if some cut \( \beta \) has \( \alpha \le \beta \) for every \( \alpha \in A \) (@fd2:def-order-bounds), and a cut \( \gamma \) is its **supremum** if it is an upper bound of \( A \), clause (S1), and \( \gamma \le \delta \) for every upper bound \( \delta \) of \( A \), clause (S2) (@fd2:def-order-supremum). A supremum is unique when it exists (@fd2:prp-greatest-unique, applied to the set of upper bounds).
 
 ## Least upper bounds are unions
 

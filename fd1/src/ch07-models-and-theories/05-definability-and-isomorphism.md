@@ -181,7 +181,7 @@ where \( h \circ \ell \) gives each variable \( x \) the value \( h(\ell(x)) \).
 
 *In words: renaming the elements, consistently, changes the truth of nothing.*
 
-The theorem is most often used backwards: a sentence true in one structure and false in another shows that the two are **not** isomorphic. The sentence \( \forall x\, \exists y\, (y + y = x) \), "every element is a sum of two equal ones", is true in \( (\nQ; +) \) (take \( y = x/2 \)) and false in \( (\nZ; +) \) (at \( x = 1 \)), so no bijection \( \nQ \to \nZ \) carries addition to addition, although bijections \( \nQ \to \nZ \) exist (*Sets and Functions*, Chapter 3). The converse of the theorem fails: two structures can satisfy the same sentences without being isomorphic, and the optional Section 7.6 meets such a pair.
+The theorem is most often used backwards: a sentence true in one structure and false in another shows that the two are **not** isomorphic. The sentence \( \forall x\, \exists y\, (y + y = x) \), "every element is a sum of two equal ones", is true in \( (\nQ; +) \) (take \( y = x/2 \)) and false in \( (\nZ; +) \) (at \( x = 1 \)), so no bijection \( \nQ \to \nZ \) carries addition to addition, although bijections \( \nQ \to \nZ \) exist (*Sets and Functions*, Chapter 4). The converse of the theorem fails: two structures can satisfy the same sentences without being isomorphic, and the optional Section 7.6 meets such a pair.
 
 The proof is in the fold below.
 

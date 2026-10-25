@@ -1,0 +1,41 @@
+# The Axiom of Choice
+
+<!-- S3: rewrite this chapter page for the six-chapter layout (fd2/authoring/design/layout-six-chapters.md §1): roadmap, named moves, threads, summary, terms, Time -->
+
+Some objects are built one piece at a time: an injection one pair at a time, a set of representatives one class at a time, a total order one comparison at a time. When the pieces can be listed, induction finishes the job, one step for each natural number. When they cannot, as for the elements of \( \nR \), the words "and so on" stand in for a step that is never given, and that is not a proof. Zorn's lemma is the principle that replaces them. *If every unfinished partial object can be enlarged, and every growing chain of partial objects has a partial object above it, then there is one that cannot be enlarged, and it is complete.*
+
+The chapter states the lemma and says why it is not proved here: it is equivalent to the axiom of choice of Section 6.1, and this volume proves only the half that gives choice. It turns the lemma into a single method of proof, the maximality template, and runs the template four times. The third run settles the question Section 4.4 left open: any two sets are comparable in size.
+
+**What you need.** *Logic and Proof*, Chapters 1–8, in particular the rule \( \rulename{\exists E} \) (@fd1:def-rules-existential) and the catalogue of what is not allowed (@fd1:exm-not-allowed-catalogue), above all (N13), "an 'and so on' needs its step". From this volume: Section 5.3 on orders (@def-partial-order, @exm-subset-order-not-total, @def-order-bounds, @def-greatest-element, @def-maximal-element, @prp-greatest-maximal, @exm-maximal-not-greatest, @prp-greatest-unique); Section 5.2 on equivalence relations (@def-equivalence-relation, @def-equivalence-class, @thm-classes-partition, @exm-reals-mod-integers); Chapter 4 and Section 6.1 on sizes and choice (@ax-choice, Section 6.1's method box @exm-method-name-the-choice, @def-card-le, @thm-schroder-bernstein, @prp-card-le-surjection, @prp-countable-image, @prp-union-two-countable, @thm-reals-uncountable-decimal); Section 4.1 on finite sets (@prp-subset-finite, @exm-hilbert-hotel, @prp-disjoint-union-count, @cor-pigeonhole-finite-sets, @prp-equinumerous-properties); Sections 3.1–3.2 (@thm-well-ordering, @thm-induction); Chapters 1 and 2 (@def-divides, @def-relation, @def-function). Proof methods: proof by contradiction (@exm-method-choosing-the-form, Chapter 3) and disproof by counterexample (@exm-method-counterexample, Chapter 1).
+
+**Time.** About 10 hours on the core track (all of A, one B and one C per section, the exit checks); about 15 hours for everything.
+
+## Roadmap
+
+- **Chains and Zorn's lemma.** A pair-by-pair matching that cannot finish; chains in a partially ordered set, and why finitely many elements of the union of a chain of sets lie in one member; Zorn's lemma, why each hypothesis is needed, and why it is stated and not proved; the axiom of choice from Zorn's lemma, as the first run of the maximality template; a set of representatives for any equivalence relation.
+- **Using Zorn's lemma.** Any two sets are comparable, so sizes satisfy trichotomy; every partial order extends to a total order, one added comparison at a time; and, in an optional last subsection, how the same template gives every vector space a basis (*Linear Algebra*, Section 1.8).
+
+## Named moves
+
+- **The maximality template** (@exm-method-maximality). Partial objects ordered by extension; the union of a chain is again a partial object, since each defining condition mentions finitely many elements and these lie in one member of the chain (@lem-chain-union); Zorn's lemma gives a maximal one; a maximal one is complete, since a missing piece would give a strictly larger partial object. (Section 6.2)
+
+## Threads
+
+- **Comparing sizes.** Section 4.4 asked whether any two sets are comparable. Section 6.2 opens with a pair-by-pair matching that does not finish, and Section 6.3 finishes it with Zorn's lemma (@thm-cardinal-comparability).
+- **Choice.** Section 6.1 states the axiom of choice. Section 6.3 derives it from Zorn's lemma (@thm-choice-from-zorn), and *Axiomatic Set Theory*, Chapter 4 proves the converse.
+
+## Summary
+
+A chain is a subset of a partially ordered set on which the order is total (@def-chain), and finitely many elements of the union of a chain of sets lie in one member (@lem-chain-union). Zorn's lemma (@thm-zorn): a non-empty partially ordered set in which every non-empty chain has an upper bound has a maximal element, usually one of many and not a greatest one. It is stated without proof; it implies the axiom of choice (@thm-choice-from-zorn), and the converse belongs to *Axiomatic Set Theory*, Chapter 4. The maximality template (@exm-method-maximality) gives a set of representatives for any equivalence relation (@exm-zorn-representatives), shows that any two sets are comparable in size (@thm-cardinal-comparability), so that exactly one of \( \card{A} < \card{B} \), \( \card{A} = \card{B} \), \( \card{B} < \card{A} \) holds (@cor-cardinal-trichotomy), and extends every partial order to a total order (@thm-order-extension), by adding one comparison at a time (@lem-one-step-order-extension).
+
+Every object built in this chapter is shown to exist and none is written down: no formula is known for a set of representatives of \( \nR \) modulo \( \nQ \), for an injection between two arbitrary sets, or for a total order containing \( \subseteq \) on \( \powerset{\nR} \). Where a formula exists, as for divisibility on \( \nN \) (@exm-divisibility-linear-extension), it is the better proof.
+
+## Terms
+
+- **chain**: a subset in which any two elements are comparable (@def-chain).
+- **linear extension**: a total order containing a given partial order; "linear order" is a synonym of "total order" (@thm-order-extension).
+- **maximality template**: partial objects, unions of chains, Zorn's lemma, completeness of a maximal object (@exm-method-maximality).
+- **partial choice function**: a set of pairs \( (i, x) \) with \( x \in A_i \), at most one for each index (@thm-choice-from-zorn).
+- **partial matching**: a relation \( G \subseteq A \times B \) in which each element of \( A \) and of \( B \) occurs in at most one pair (@thm-cardinal-comparability).
+- **set of representatives**: a set meeting every equivalence class in exactly one element (@exm-zorn-representatives).
+- **Zorn's lemma**: a non-empty partially ordered set in which every non-empty chain has an upper bound has a maximal element (@thm-zorn).

@@ -1,10 +1,10 @@
 # Well-Definedness, and the Arithmetic of the Integers
 
-Section 2.1 built \( \nZ \) as the set of classes of \( \sim \) on \( \nN \times \nN \), and gave each integer a normal form (@prp-integer-normal-form). The integers cannot yet be added. Every operation on classes will be defined by a formula on representatives, and *Sets and Functions*, Section 4.2 showed what can go wrong: a formula that gives two answers for one class (@fd2:exm-ill-defined-class-map). This section proves, once and for all, the lemma that says when such a formula defines a function. It then uses the lemma for the sum, product and negative of integers, and finds a copy of \( \nN \) inside \( \nZ \).
+Section 2.1 built \( \nZ \) as the set of classes of \( \sim \) on \( \nN \times \nN \), and gave each integer a normal form (@prp-integer-normal-form). The integers cannot yet be added. Every operation on classes will be defined by a formula on representatives, and *Sets and Functions*, Section 5.2 showed what can go wrong: a formula that gives two answers for one class (@fd2:exm-ill-defined-class-map). This section proves, once and for all, the lemma that says when such a formula defines a function. It then uses the lemma for the sum, product and negative of integers, and finds a copy of \( \nN \) inside \( \nZ \).
 
 ## Definitions through representatives
 
-In *Sets and Functions*, Section 4.2 the addition of \( \nZ/n \) was defined by \( [a] + [b] \coloneqq [a + b] \), and @fd2:prp-congruence-arithmetic checked that the right side depends only on the classes, not on the integers \( a \) and \( b \) used to name them. In @fd2:exm-ill-defined-class-map the same kind of formula, \( [a]_6 \mapsto [a]_4 \), gave one class two values, and so defined no function.
+In *Sets and Functions*, Section 5.2 the addition of \( \nZ/n \) was defined by \( [a] + [b] \coloneqq [a + b] \), and @fd2:prp-congruence-arithmetic checked that the right side depends only on the classes, not on the integers \( a \) and \( b \) used to name them. In @fd2:exm-ill-defined-class-map the same kind of formula, \( [a]_6 \mapsto [a]_4 \), gave one class two values, and so defined no function.
 
 The same situation will recur throughout this volume: for \( \nZ \) in this section, for \( \nQ \) in Section 2.4, and for \( \nR \) later in this volume. Each time, a set is a quotient \( X/{\sim} \), and something is defined on it by a formula on elements of \( X \). Rather than repeat the argument of @fd2:prp-congruence-arithmetic for every formula, we separate it into two parts: a general lemma, proved here once, which turns a **check on representatives** into a function on classes; and the check itself, which is different for each formula and is all that remains to do each time.
 
@@ -230,7 +230,7 @@ With this convention, (b) reads \( [(a, b)] = a + (-b) \): the pair \( (a, b) \)
 \[
 \nZ = \nN \cup \{ -n : n \in \nN \} ,
 \]
-which is word for word the definition of the integers in *Sets and Functions*, Section 2.1. There it was a definition inside the familiar real numbers; here it is a theorem about a set built from \( \omega \). The positive integers keep the definition of *Sets and Functions*, Section 2.1,
+which is word for word the definition of the integers in *Sets and Functions*, Section 3.1. There it was a definition inside the familiar real numbers; here it is a theorem about a set built from \( \omega \). The positive integers keep the definition of *Sets and Functions*, Section 3.1,
 \[
 \nZ_{>0} \coloneqq \{ n \in \nN : n \ne 0 \} ,
 \]

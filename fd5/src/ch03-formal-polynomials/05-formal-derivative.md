@@ -513,7 +513,7 @@ Show that \( \nZ[x] \) and \( \nF_2[x] \) are countable, and that the set of all
 :::
 
 ::: {.solution}
-The tools are the countability results of *Sets and Functions*, Chapter 3, read on \( \nN = \omega \) through @fd3:cor-omega-identification.
+The tools are the countability results of *Sets and Functions*, Chapter 4, read on \( \nN = \omega \) through @fd3:cor-omega-identification.
 
 *\( \nZ \) and \( \nF_2 \) are countable.* \( \nN \times \nN \) is countable (@fd2:thm-product-countable). The class map \( \nN \times \nN \to \nZ = (\nN \times \nN)/{\sim} \) is surjective (@fd2:def-quotient-set), so \( \nZ \) is countable by @fd2:prp-countable-image; this is the count of @fd3:exr-gaps-in-the-rationals-r2. The map \( \nN \to \nF_2 \), \( n \mapsto [n] \), is surjective, since every class is \( [0] \) or \( [1] \) (@fd3:thm-integers-mod-n-ring (b)); so \( \nF_2 \) is countable (@fd2:def-countable).
 
@@ -523,7 +523,7 @@ The tools are the countability results of *Sets and Functions*, Chapter 3, read 
 
 *All sequences.* The set \( \{0, 1\}^{\nN} \) is uncountable (@fd2:thm-binary-sequences-uncountable). The map \( \{0, 1\} \to \nF_2 \), \( 0 \mapsto [0] \), \( 1 \mapsto [1] \), is a bijection; composing a sequence with its inverse turns every sequence \( \nN \to \nF_2 \) into a sequence of zeros and ones, and this is a surjection onto \( \{0, 1\}^{\nN} \). If the sequences \( \nN \to \nF_2 \) were countable, so would be \( \{0, 1\}^{\nN} \), by @fd2:prp-countable-image. So they are uncountable.
 
-*The clause.* The difference is the clause **only finitely many** of @def-polynomial: a polynomial is a sequence that is \( 0 \) from some point on, so it is determined by a finite tuple, and there are countably many finite tuples. A general sequence carries infinitely many independent choices. The same count, with the polynomials written as integer tuples, is the proof of @fd2:thm-algebraic-countable.
+*The clause.* The difference is the clause **only finitely many** of @def-polynomial: a polynomial is a sequence that is \( 0 \) from some point on, so it is determined by a finite tuple, and there are countably many finite tuples. A general sequence carries infinitely many independent choices. The same count, with the polynomials written as integer tuples, shows that the algebraic numbers are countable (by @fd2:cor-product-countable and @fd2:thm-countable-union).
 :::
 
 ::: {#exr-formal-derivative-r4}
