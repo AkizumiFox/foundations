@@ -69,6 +69,13 @@ items:
     model: claude-opus-5-5
     evidence: 01-proofs-from-definitions.md:54 The symbol a ∤ b is used in 1.1 (scratch table 262-264,
       solution 268, B4(b) 423) but never introduced. NOTATION.md:85 credits its introduction to F2.1 §01.
+  - stage: S8
+    verdict: correct
+    by: coordinator
+    hash: cd48e257af48
+    date: '2026-10-25'
+    model: claude-opus-5-5
+    evidence: 01:54 now introduces a ∤ b before its first use (S7 F008); NOTATION row F2.1 §01 matches
 - key: check:01-proofs-from-definitions:1
   kind: check
   file: 01-proofs-from-definitions.md
@@ -422,6 +429,14 @@ items:
     evidence: The ledger line (end of 01) now also covers the scratch work's claim about a=2, b=3. The
       STATUS.md promise row for the prose pointer to fd3 Chapter 3 (F3.5, prp-coprime-divisors-product)
       is still missing. That part of F007 is deferred to the shared file.
+  - stage: S8
+    verdict: correct
+    by: coordinator
+    hash: d60c8c72fb90
+    date: '2026-10-25'
+    model: claude-opus-5-5
+    evidence: STATUS row F2.1 §01 -> F3.5 (prp-coprime-divisors-product) records the prose pointer; ledger
+      covers the scratch work
 - key: exm-method-counterexample
   kind: exm
   file: 01-proofs-from-definitions.md
@@ -859,6 +874,14 @@ items:
     evidence: The prose change at 02:33 is correct. But its dependency-ledger line 02:608 ('membership
       is a two-place predicate') now names F1.8 and the quantifier-negation laws as the source. The prose
       at 02:31 cites *Logic and Proof*, Chapter 5 (F1.4) for this, so the ledger source is wrong.
+  - stage: S8
+    verdict: correct
+    by: coordinator
+    hash: ba81513888cc
+    date: '2026-10-25'
+    model: claude-opus-5-5
+    evidence: '02 ledger: membership as a two-place predicate restored to F1.4 (prose cites Logic and
+      Proof Chapter 5)'
 - key: check:02-sets-and-subsets:1
   kind: check
   file: 02-sets-and-subsets.md
@@ -1062,6 +1085,14 @@ items:
     evidence: 'The proof text (02:167-172) is unchanged and correct. Its ledger line 02:620 (''let x be
       arbitrary ... is forall-I'') was wrongly changed to ''F1.8 (paid: prp-quantifier-negation, prp-negated-implication
       ...)''. forall-I is F1.4''s rule (*Logic and Proof*, Chapter 5).'
+  - stage: S8
+    verdict: correct
+    by: coordinator
+    hash: 19e36b80906c
+    date: '2026-10-25'
+    model: claude-opus-5-5
+    evidence: '02 ledger: forall-I restored to F1.4; the F1.8 quantifier-negation source moved to the
+      def-subset negation claim and A1 solution lines'
 - key: exm-method-double-inclusion
   kind: exm
   file: 02-sets-and-subsets.md
@@ -1741,6 +1772,14 @@ items:
       place. The ledger calls "ℤ minus the evens is the odd integers" a school fact that F2.2 proves,
       but 1.1 now proves it (thm-even-or-odd, the "not both" half plus existence). The blueprint's ledger
       re-key list (§6) covered 05 and 06 and missed this line.
+  - stage: S8
+    verdict: correct
+    by: coordinator
+    hash: 945dfc05c72f
+    date: '2026-10-25'
+    model: claude-opus-5-5
+    evidence: '03:609 ledger re-keyed: Z minus the evens by thm-even-or-odd (F2.1 §01); 2 and 3 => 6 school
+      fact, F2.2 exm-divisibility-lcm'
 - key: check:03-set-operations:1
   kind: check
   file: 03-set-operations.md
@@ -6323,397 +6362,3 @@ items:
     evidence: 06-images-and-preimages.md:712-716. ⋃T exists by (W3) and the ⋃𝒮 form of def-family-union-intersection
       (02-set-operations.md:197-213), and it contains every set, which contradicts the second clause of
       thm-russell (01:322-326). The look-alike explanation is accurate. Same route as mine.
-- key: check:01-sets-and-subsets:1
-  kind: check
-  file: 01-sets-and-subsets.md
-  line: 57
-  hash: b88472b99c1b
-  verdicts:
-  - stage: S5a
-    verdict: correct
-    by: refereeA
-    hash: b88472b99c1b
-    date: '2026-10-10'
-    model: claude-opus-5-5
-    evidence: 'l.57-63: 2 is in {1,2,2,3} and not in {1,{2},3}, because 2≠1, 2≠3 and 2≠{2} (numbers are
-      not sets, l.33).'
-  - stage: S5b
-    verdict: correct
-    by: refereeB
-    hash: b88472b99c1b
-    date: '2026-10-10'
-    model: claude-opus-5-5
-    evidence: '01:57-63: {1,2,2,3}={3,2,1}; 2 is not in {1,{2},3} since 2 != 1, 3, {2}. Checked.'
-  removed: true
-- key: check:01-sets-and-subsets:2
-  kind: check
-  file: 01-sets-and-subsets.md
-  line: 205
-  hash: 97cdaf2ab955
-  verdicts:
-  - stage: S5a
-    verdict: correct
-    by: refereeA
-    hash: 97cdaf2ab955
-    date: '2026-10-10'
-    model: claude-opus-5-5
-    evidence: 'l.205-211: all six verdicts and witnesses check against A={1,2}, B={1,2,3}, C={1,3}.'
-  - stage: S5b
-    verdict: correct
-    by: refereeB
-    hash: 97cdaf2ab955
-    date: '2026-10-10'
-    model: claude-opus-5-5
-    evidence: 01:205-211 classifies all six statements correctly, and the witnesses (3, 2, 3, 2) are correct.
-  removed: true
-- key: check:01-sets-and-subsets:3
-  kind: check
-  file: 01-sets-and-subsets.md
-  line: 273
-  hash: 42ed3fcb04e7
-  verdicts:
-  - stage: S5a
-    verdict: correct
-    by: refereeA
-    hash: 42ed3fcb04e7
-    date: '2026-10-10'
-    model: claude-opus-5-5
-    evidence: 'l.239-253: yes; no; none. In (c), ∅∉{{∅}} because ∅≠{∅}, which is established first.'
-  - stage: S5b
-    verdict: correct
-    by: refereeB
-    hash: 42ed3fcb04e7
-    date: '2026-10-10'
-    model: claude-opus-5-5
-    evidence: '01:239-253: (a) yes; (b) no; (c) none, with ∅ ≠ {∅} giving ∅ ∉ {{∅}}. Correct.'
-  removed: true
-- key: check:02-set-operations:1
-  kind: check
-  file: 02-set-operations.md
-  line: 48
-  hash: 345247e8a15e
-  verdicts:
-  - stage: S5a
-    verdict: minor
-    by: refereeA
-    hash: 5df834371577
-    date: '2026-10-10'
-    model: claude-opus-5-5
-    evidence: 02-set-operations.md:53 The check's solution makes an @ref to @thm-de-morgan-families, which
-      comes later in the same file. DRAFTING.md allows @refs only to earlier material.
-  - stage: S5b
-    verdict: correct
-    by: refereeB
-    hash: 5df834371577
-    date: '2026-10-10'
-    model: claude-opus-5-5
-    evidence: '02:48-54: A∪B={1,2,3,4,6}, X\(A∪B)={5}, X\A={4,5,6}, X\B={1,3,5}, intersection {5}. The
-      pointer to thm-de-morgan-families with I={1,2} fits, because 218 identifies the two-index ⋂ with
-      ∩.'
-  - stage: S7r
-    verdict: correct
-    by: rereferee
-    hash: 345247e8a15e
-    date: '2026-10-11'
-    model: claude-opus-5-5
-    evidence: 'src/ch06-sets-and-functions/02-set-operations.md:48-54. I recomputed every answer: A∪B={1,2,3,4,6},
-      A∩B={2}, X\(A∪B)={5}, X\A={4,5,6}, X\B={1,3,5}, and (X\A)∩(X\B)={5}. The forward @thm-de-morgan-families
-      ref is gone. Line 53 now uses a prose pointer (''proved for arbitrary families later in this section''),
-      as DRAFTING.md:24 requires. A,B ⊆ X, so the family theorem does cover this case. S5a finding'
-  removed: true
-- key: check:02-set-operations:2
-  kind: check
-  file: 02-set-operations.md
-  line: 138
-  hash: 21ba4a1881a4
-  verdicts:
-  - stage: S5a
-    verdict: correct
-    by: refereeA
-    hash: 21ba4a1881a4
-    date: '2026-10-10'
-    model: claude-opus-5-5
-    evidence: 'Line 143: p∧(p∨q) ≡ p, which is not a clause of prp-standard-equivalences. The direct ∧E
-      and ∨I+∧I derivations are correct.'
-  - stage: S5b
-    verdict: correct
-    by: refereeB
-    hash: 21ba4a1881a4
-    date: '2026-10-10'
-    model: claude-opus-5-5
-    evidence: '02:138-144: p∧(p∨q)≡p holds in all four rows. Absorption is not a clause of prp-standard-equivalences,
-      which is correct. The direct route (∧E one way; ∨I then ∧I the other) is correct.'
-  removed: true
-- key: check:02-set-operations:3
-  kind: check
-  file: 02-set-operations.md
-  line: 290
-  hash: f10f4057725c
-  verdicts:
-  - stage: S5a
-    verdict: correct
-    by: refereeA
-    hash: f10f4057725c
-    date: '2026-10-10'
-    model: claude-opus-5-5
-    evidence: 'Line 279: the union is [0,2] (member t=2) and the intersection is [0,1] (member t=1). Both
-      are correct.'
-  - stage: S5b
-    verdict: correct
-    by: refereeB
-    hash: f10f4057725c
-    date: '2026-10-10'
-    model: claude-opus-5-5
-    evidence: '02:274-280: union [0,2], intersection [0,1]. Both are members (t=2 and t=1). Correct. Its
-      order facts are unledgered, which is folded into the exm-families finding.'
-  removed: true
-- key: check:03-products-and-relations:1
-  kind: check
-  file: 03-products-and-relations.md
-  line: 52
-  hash: 86f0ac76da2f
-  verdicts:
-  - stage: S5a
-    verdict: correct
-    by: refereeA
-    hash: 86f0ac76da2f
-    date: '2026-10-10'
-    model: claude-opus-5-5
-    evidence: 'l.57: pair case t=-1; set case uses that -1 is t^2 or t and t^2>=0; the (t,1)/(1,t) contrast
-      is correct'
-  - stage: S5b
-    verdict: correct
-    by: refereeB
-    hash: 86f0ac76da2f
-    date: '2026-10-10'
-    model: claude-opus-5-5
-    evidence: '03:57: the pair equation forces t=−1. For the sets, −1 must be t² or t, and t²≥0, so t=−1.
-      (t,1)=(1,t) iff t=1, while {t,1}={1,t} for every t. t²≥0 is ledgered at 03:454.'
-  removed: true
-- key: check:03-products-and-relations:2
-  kind: check
-  file: 03-products-and-relations.md
-  line: 114
-  hash: a0d75ff6d567
-  verdicts:
-  - stage: S5a
-    verdict: correct
-    by: refereeA
-    hash: a0d75ff6d567
-    date: '2026-10-10'
-    model: claude-opus-5-5
-    evidence: 'l.117: six pairs; (1,1) not in {1}x emptyset by (*)'
-  - stage: S5b
-    verdict: correct
-    by: refereeB
-    hash: a0d75ff6d567
-    date: '2026-10-10'
-    model: claude-opus-5-5
-    evidence: '03:117: the six pairs are right. (1,1)∉{1}×∅ by (∗), since 1∉∅.'
-  removed: true
-- key: check:03-products-and-relations:3
-  kind: check
-  file: 03-products-and-relations.md
-  line: 275
-  hash: cad28ef992f1
-  verdicts:
-  - stage: S5a
-    verdict: correct
-    by: refereeA
-    hash: cad28ef992f1
-    date: '2026-10-10'
-    model: claude-opus-5-5
-    evidence: 'l.278: L^{-1}={(2,1),(3,1),(3,2)} is >; the domain/range swap is right'
-  - stage: S5b
-    verdict: correct
-    by: refereeB
-    hash: cad28ef992f1
-    date: '2026-10-10'
-    model: claude-opus-5-5
-    evidence: '03:278: L^{-1}={(2,1),(3,1),(3,2)}, which is > on {1,2,3}. Its domain and range swap with
-      those of L.'
-  removed: true
-- key: check:04-functions:1
-  kind: check
-  file: 04-functions.md
-  line: 103
-  hash: 42476039e93c
-  verdicts:
-  - stage: S5a
-    verdict: correct
-    by: refereeA
-    hash: fcda63f581ff
-    date: '2026-10-10'
-    model: claude-opus-5-5
-    evidence: 'l.108: constant 2; F1 fails at 3; F2 fails at 2 with outputs 1 and 3. Verified.'
-  - stage: S5b
-    verdict: correct
-    by: refereeB
-    hash: fcda63f581ff
-    date: '2026-10-10'
-    model: claude-opus-5-5
-    evidence: '04:104-108: the constant 2 is a function; the second relation fails (F1) at 3; the third
-      fails (F2) at 2 (outputs 1 and 3).'
-  - stage: S7r
-    verdict: correct
-    by: rereferee
-    hash: 42476039e93c
-    date: '2026-10-11'
-    model: claude-opus-5-5
-    evidence: l.103-109, solved independently. {(1,2),(2,2),(3,2)} is the constant function with value
-      2. {(1,1),(2,2)} fails (Fn1) at 3. {(1,3),(2,1),(3,2),(2,3)} fails (Fn2) at 2, which has outputs
-      1 and 3. This matches the text.
-  removed: true
-- key: check:04-functions:2
-  kind: check
-  file: 04-functions.md
-  line: 264
-  hash: 8f322564403c
-  verdicts:
-  - stage: S5a
-    verdict: correct
-    by: refereeA
-    hash: 8f322564403c
-    date: '2026-10-10'
-    model: claude-opus-5-5
-    evidence: 'l.269: (g∘f)(2)=g(4)=1, (f∘g)(2)=f(-1)=1, (g∘f)(0)=-3, (f∘g)(0)=9. Verified.'
-  - stage: S5b
-    verdict: correct
-    by: refereeB
-    hash: 8f322564403c
-    date: '2026-10-10'
-    model: claude-opus-5-5
-    evidence: '04:269: (g∘f)(2) = g(4) = 1 and (f∘g)(2) = f(-1) = 1; at 0 the values are -3 and 9, which
-      is correct.'
-  removed: true
-- key: check:04-functions:3
-  kind: check
-  file: 04-functions.md
-  line: 402
-  hash: fb3cd0f98e10
-  verdicts:
-  - stage: S5a
-    verdict: correct
-    by: refereeA
-    hash: fb3cd0f98e10
-    date: '2026-10-10'
-    model: claude-opus-5-5
-    evidence: 'l.407: witness 0 on ℕ (ℕ∋0, n+1≥1); m−1 preimage on ℤ; injective both. Correct.'
-  - stage: S5b
-    verdict: minor
-    by: refereeB
-    hash: fb3cd0f98e10
-    date: '2026-10-10'
-    model: claude-opus-5-5
-    evidence: 04:407 is correct, but it uses n + 1 ≥ 1 and n + 1 ∈ ℕ for n ∈ ℕ, and m - 1 ∈ ℤ, with no
-      ledger line. Ledger 672 covers n + 1 ≥ 1 only for B3.
-  - stage: S7r
-    verdict: correct
-    by: rereferee
-    hash: fb3cd0f98e10
-    date: '2026-10-11'
-    model: claude-opus-5-5
-    evidence: l.402-408, solved independently. On N (which includes 0), n+1 >= 1 for every n, so 0 is
-      never reached and the map is not surjective. On Z, m-1 is a preimage of m, so it is surjective.
-      Both maps are injective. This matches the text. The arithmetic used (n+1 in N, n+1 >= 1, m-1 in
-      Z) is now ledgered at l.676 against the STATUS rows at l.76 ('ℕ closed under + and ·', 'nothing
-      between n and n + 1') an
-  removed: true
-- key: check:05-inverses:1
-  kind: check
-  file: 05-inverses.md
-  line: 76
-  hash: 2e38d74cbb07
-  verdicts:
-  - stage: S5a
-    verdict: correct
-    by: refereeA
-    hash: 78a7235fe82f
-    date: '2026-10-10'
-    model: claude-opus-5-5
-    evidence: 05:76-82; p(s(n))=n since n+1≥1; k(0)+1=0 impossible in ℕ. Uses n≥1 ⇒ n−1∈ℕ as a school
-      fact (ledger 05:516)
-  - stage: S5b
-    verdict: minor
-    by: refereeB
-    hash: 78a7235fe82f
-    date: '2026-10-10'
-    model: claude-opus-5-5
-    evidence: 05-inverses.md:81 The quick-check solution uses the symbol k without introducing it.
-  - stage: S7r
-    verdict: correct
-    by: rereferee
-    hash: 2e38d74cbb07
-    date: '2026-10-11'
-    model: claude-opus-5-5
-    evidence: '05-inverses.md:76-82. The earlier finding is resolved: line 81 now introduces k as "a right
-      inverse k: N -> N of s" before using it. I solved it first and got the same answer. p (with p(0)=0
-      and p(m)=m-1 for m>=1) is a function N->N, using the n>=1 => n-1 in N fact the ledger line at 542
-      promises from ch07 per STATUS. p(s(n)) = p(n+1) = n. No right inverse exists because k(0)+1 = 0
-      has no solution'
-  removed: true
-- key: check:05-inverses:2
-  kind: check
-  file: 05-inverses.md
-  line: 331
-  hash: 39ba61d81f66
-  verdicts:
-  - stage: S5a
-    verdict: correct
-    by: refereeA
-    hash: 73c304f0c179
-    date: '2026-10-10'
-    model: claude-opus-5-5
-    evidence: 05:331-337; cube root school fact (ledger 05:532); x² on [0,∞)→ℝ misses -1, so no inverse
-      by the theorem; left inverse √y / 0 satisfies √(x²)=x for x≥0
-  - stage: S5b
-    verdict: minor
-    by: refereeB
-    hash: 73c304f0c179
-    date: '2026-10-10'
-    model: claude-opus-5-5
-    evidence: 05-inverses.md:336 The cube root is used outside the meaning NOTATION gives \sqrt[n]{·},
-      and the injectivity of x↦x² on [0,∞) is asserted without a reference or a ledger line.
-  - stage: S7r
-    verdict: correct
-    by: rereferee
-    hash: 39ba61d81f66
-    date: '2026-10-11'
-    model: claude-opus-5-5
-    evidence: '05-inverses.md:331-337. I solved it first and agree with the answer. The earlier finding
-      is resolved. NOTATION.md:72 now defines sqrt[n]{a} for odd n and a<0 as -sqrt[n]{-a}, citing its
-      use in Ch 6 §05 as a school fact. sqrt[n]{0}=0 is also covered. Injectivity of x->x^2 on [0,inf)
-      to R is now cited as @exm-square-three-ways (b) (04-functions.md:388), which is exactly q_2: [0,inf)->R.
-      Non-surjecti'
-  removed: true
-- key: check:06-images-and-preimages:1
-  kind: check
-  file: 06-images-and-preimages.md
-  line: 133
-  hash: 88eef6430ef4
-  verdicts:
-  - stage: S5a
-    verdict: minor
-    by: refereeA
-    hash: dcee547db70e
-    date: '2026-10-10'
-    model: claude-opus-5-5
-    evidence: 06-images-and-preimages.md:136 This set-builder names no ambient set, against the book's
-      written rule that every set-builder names one.
-  - stage: S5b
-    verdict: correct
-    by: refereeB
-    hash: dcee547db70e
-    date: '2026-10-10'
-    model: claude-opus-5-5
-    evidence: '06:136: {-2,2}, ∅ and [0,1] are all correct; it cites exm (a).'
-  - stage: S7r
-    verdict: correct
-    by: rereferee
-    hash: 88eef6430ef4
-    date: '2026-10-11'
-    model: claude-opus-5-5
-    evidence: '06:133-139. The set-builder now names its ambient set, {x ∈ ℝ : -1 ≤ x² ≤ 1}, so the S5a
-      finding is resolved. I re-derived the values: f^{-1}({4})={-2,2}; f^{-1}([-4,-1])=∅; f^{-1}([-1,1])=[-1,1];
-      f([-1,1])=[0,1]. So f(f^{-1}([-1,1]))=[0,1] ⊆ [-1,1], strictly smaller, as stated.'
-  removed: true

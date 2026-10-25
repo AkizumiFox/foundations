@@ -28,11 +28,11 @@ for nx, ny in [(1, 2), (2, 3), (2, 2), (3, 3)]:
         for gv in product(Xs, repeat=ny):
             if all(gv[fv[x]] == x for x in Xs) and not all(fv[gv[y]] == y for y in Ys):
                 assert set(fv) != set(Ys)
-# quick check: left inverse of s(n) = 2n + 1 on N
-s = lambda n: 2 * n + 1
-gs = lambda m: (m - 1) // 2 if m % 2 else 0
-assert all(gs(m) >= 0 for m in range(500)) and all(gs(s(n)) == n for n in range(500))
-assert all(s(n) % 2 == 1 for n in range(500))   # even m are never values
+# quick check: left inverse of u(n) = 2n + 1 on N
+u = lambda n: 2 * n + 1
+gu = lambda m: (m - 1) // 2 if m % 2 else 0
+assert all(gu(m) >= 0 for m in range(500)) and all(gu(u(n)) == n for n in range(500))
+assert all(u(n) % 2 == 1 for n in range(500))   # even m are never values
 # quick check: inverse of 2x^3 - 5 (exact on rationals with rational cube roots)
 for x in [F(k, 7) for k in range(-50, 51)]:
     y = 2 * x**3 - 5
