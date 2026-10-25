@@ -411,7 +411,7 @@ By @def-well-ordered-set, well-ordered says that \( \preceq \) is total and that
 \[
 \forall S \, \bigl( S \subseteq X \wedge S \ne \emptyset \to \exists m \in S \; \forall s \in S \; m \preceq s \bigr).
 \]
-Its negation, the second alternative, (@fd1:prp-bounded-quantifier-negation, as in @fd1:exm-negating-definitions) is
+Its negation (@fd1:prp-bounded-quantifier-negation, as in @fd1:exm-negating-definitions), the second alternative, is
 \[
 \exists S \, \bigl( S \subseteq X \wedge S \ne \emptyset \wedge \forall m \in S \; \exists s \in S \; s \prec m \bigr),
 \]
