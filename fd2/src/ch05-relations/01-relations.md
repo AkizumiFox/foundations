@@ -196,7 +196,7 @@ Reflexive: every integer \( x \ge 2 \) has a prime factor \( p \) (@thm-prime-fa
 :::
 
 ::: {.warning}
-**A false theorem: "symmetric and transitive imply reflexive."** The "proof": let \( x \in X \), and take \( y \) with \( x \mathrel{R} y \); by symmetry \( y \mathrel{R} x \), and by transitivity \( x \mathrel{R} x \). The conclusion is false: the empty relation on \( \{1\} \) is symmetric and transitive (vacuously) and not reflexive, with witness \( 1 \). The illegal step, "take \( y \) with \( x \mathrel{R} y \)", is an \( \rulename{\exists E} \) (@fd1:def-rules-existential) on \( \exists y \in X \ x \mathrel{R} y \), which was never derived and need not be true: (N9) of @fd1:exm-not-allowed-catalogue (Exercise C2 gives the correct version).
+**A false theorem: "symmetric and transitive imply reflexive."** The "proof": let \( x \in X \), and take \( y \) with \( x \mathrel{R} y \); by symmetry \( y \mathrel{R} x \), and by transitivity \( x \mathrel{R} x \). The conclusion is false: the empty relation on \( \{1\} \) is symmetric and transitive (vacuously) and not reflexive, with witness \( 1 \). The illegal step, "take \( y \) with \( x \mathrel{R} y \)", is an \( \rulename{\exists E} \) (@fd1:def-rules-existential) on \( \exists y \in X \ x \mathrel{R} y \), which was never derived and need not be true: (N14) of @fd1:exm-not-allowed-catalogue (Exercise C2 gives the correct version).
 :::
 
 ::: {.remark}

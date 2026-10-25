@@ -690,6 +690,25 @@ items:
     model: claude-opus-5-5
     evidence: 02-equivalence-relations.md:52 Part (d) is posed on the main line, but its only answer is
       in a second-reading fold.
+  - stage: S7r
+    verdict: correct
+    by: rereferee
+    hash: 80f1757cb8e5
+    date: '2026-10-26'
+    model: claude-opus-5-5
+    evidence: Part (d) removed and title is now 'Three equivalence relations'. The solution answers (a)-(c).
+      The fold opens with its own question and answers it, and its second paragraph now says 'This is
+      the degenerate case'. No other text in the file refers to part (d) of this example.
+  - stage: S7r
+    verdict: correct
+    by: rereferee
+    hash: 80f1757cb8e5
+    date: '2026-10-26'
+    model: claude-opus-5-5
+    evidence: The example now lists three relations; (a)–(c) are solved correctly. The empty-relation
+      case moved into the second-reading box as a question, and its vacuous argument and the non-empty
+      failure of (Eq1) are correct. The class paragraph at :105 says 'three relations' and keeps the empty
+      set in parentheses. Nothing elsewhere cites part (d) (grep finds only a reference to (c), at :441).
 - key: def-equivalence-class
   kind: def
   file: 02-equivalence-relations.md
@@ -711,6 +730,14 @@ items:
     date: '2026-10-11'
     model: claude-opus-5-5
     evidence: '05:93-102: set-builder, (Eq2) remark, classes for the four examples all correct.'
+  - stage: S7r
+    verdict: correct
+    by: rereferee
+    hash: 748299eb1adf
+    date: '2026-10-26'
+    model: claude-opus-5-5
+    evidence: Line 105 now reads 'three relations' to match the example, with the empty-set remark in
+      parentheses. The classes [a]={a}, X, {-3,3}, {0} are correct.
 - key: check:02-equivalence-relations:1
   kind: check
   file: 02-equivalence-relations.md
@@ -1505,6 +1532,14 @@ items:
     model: claude-opus-5-5
     evidence: 02:118-134; well-definedness, injectivity via thm-classes-partition (b), surjectivity via
       def-image, factorization via prp-function-equality, uniqueness via q onto; all cited
+  - stage: S7r
+    verdict: correct
+    by: rereferee
+    hash: fc550d85d4c8
+    date: '2026-10-26'
+    model: claude-opus-5-5
+    evidence: 'Only the ledger line changed: def-restriction-extension is now cited as F2.2 §03. It is
+      defined at fd2/src/ch02-functions/03-gluing-and-characteristic-functions.md:31, which matches.'
 - key: exm-fraction-map-factorization
   kind: exm
   file: 02-equivalence-relations.md
@@ -1555,6 +1590,24 @@ items:
     model: claude-opus-5-5
     evidence: 02-equivalence-relations.md:592 'hence none on Q' is an unstated inference, and X is used
       without being named.
+  - stage: S7r
+    verdict: correct
+    by: rereferee
+    hash: c3721b1d5059
+    date: '2026-10-26'
+    model: claude-opus-5-5
+    evidence: 'f(Z x Z_{>0}) = Q replaces the unnamed f(X). The h-argument holds: f = iota o f-bar o q
+      with iota = id_Q, so h o f-bar o q = h o f = p, which contradicts the result just proved for g.'
+  - stage: S7r
+    verdict: correct
+    by: rereferee
+    hash: c3721b1d5059
+    date: '2026-10-26'
+    model: claude-opus-5-5
+    evidence: 'f(ℤ×ℤ_{>0}) = ℚ, so ι = id_ℚ. New argument: given h: ℚ→ℤ, set g = h∘\bar f : X/∼_f → ℤ.
+      Then g∘q = h∘ι∘\bar f∘q = h∘f = p, which contradicts the result for functions on the classes just
+      proved via (1,2) ∼_f (2,4). The argument is valid, and the domains match because \bar f maps into
+      f(X) = ℚ.'
 - key: check:02-equivalence-relations:5
   kind: check
   file: 02-equivalence-relations.md
@@ -1710,6 +1763,24 @@ items:
       two are classes, the empty one is not (classes are non-empty). (b) X/~f={{a,c},{b,d}}, f(X)={1,3},
       fbar and iota as stated. (c) mod 2: yes; mod 8: no (0 vs 4); a^2 mod 8: yes, since (a+4k)^2-a^2=8(ak+2k^2).
       Brute-force script agrees on all parts.'
+  - stage: S7r
+    verdict: correct
+    by: rereferee
+    hash: cc4468d2c1de
+    date: '2026-10-26'
+    model: claude-opus-5-5
+    evidence: (b) now names X = {a,b,c,d}. In (c), [0]_8 != [4]_8 cites @prp-integers-closed (c) (discreteness,
+      ch03-induction-and-recursion/01:113), as elsewhere in the section, and ledger line 903 matches.
+      The STYLE §6 two-A-items issue was deferred (F003).
+  - stage: S7r
+    verdict: correct
+    by: rereferee
+    hash: cc4468d2c1de
+    date: '2026-10-26'
+    model: claude-opus-5-5
+    evidence: '(b) now names X. In (c), 4 − 0 = 4 = 8j would need an integer j with 0 < j < 1, which prp-integers-closed
+      (c) rules out (discreteness: m < n ⇒ m+1 ≤ n). The citation is right, and the ledger line at :903
+      was updated to match. (a) and (b) are unchanged and correct.'
 - key: exr-equivalence-relations-b1
   kind: exr
   file: 02-equivalence-relations.md
@@ -1943,6 +2014,14 @@ items:
       (d) (a+b)d=b(c+d) holds on all sampled related pairs, and the output stays in Z x Z>0; (e) 10 !=
       9; (f) 1 != -1; (g) follows from thm-squares-order. Worked example present: exm-method-well-definedness
       (line 399) and'
+  - stage: S7r
+    verdict: correct
+    by: rereferee
+    hash: 82e4bbb9be46
+    date: '2026-10-26'
+    model: claude-opus-5-5
+    evidence: 'Only the ledger line changed: it adds ''|x|^2 = x^2 since |x| = x or -x | R arithmetic,
+      school fact'', which covers the step in (g).'
 - key: exr-fibres-and-factorization-b2
   kind: exr
   file: 02-equivalence-relations.md
@@ -2155,6 +2234,26 @@ items:
     model: claude-opus-5-5
     evidence: 02-equivalence-relations.md:831 The C3 marking scheme only rewards the book's induction
       on k, so a correct proof by a different route scores at most about 3/10.
+  - stage: S7r
+    verdict: minor
+    by: rereferee
+    hash: 961bb02ff0fd
+    date: '2026-10-26'
+    model: claude-opus-5-5
+    evidence: The alternative-route clause is correct. It builds the bijection X -> {1..k} x {1..m} from
+      per-fiber bijections, gets injectivity and surjectivity from disjoint fibers, and cites exr-finite-sets-c2
+      (a) (ch04 01-finite-sets.md:623, |A x B| = mn) and cor-finite-size-unique. The points total 10.
+      But it writes 'fibre'/'fibres' where the rest of the prose uses American 'fiber' (STYLE line 247).
+  - stage: S7r
+    verdict: minor
+    by: rereferee
+    hash: 961bb02ff0fd
+    date: '2026-10-26'
+    model: claude-opus-5-5
+    evidence: 'The proof is unchanged and correct. The new alternative-route marking line is mathematically
+      sound: per-fibre bijections onto {1..m} give a bijection X → {1..k}×{1..m}, then exr-finite-sets-c2
+      (a) (ch04 01-finite-sets.md:617) and cor-finite-size-unique apply. However, :836 spells it ''fibre''
+      twice, while the chapter''s prose (and the index glossary at :48) uses ''fiber''. Write ''fiber''.'
 - key: exr-restriction-extension-and-gluing-c2
   kind: exr
   file: 02-equivalence-relations.md
@@ -2230,6 +2329,22 @@ items:
       hypothesis is agreement on overlaps. The flaw is the choice-dependent definition of f (the well-definedness
       check is missing), and as a result f|A_j=f_j fails at overlap points. The counterexample exm-piecewise-as-gluing
       (b) (ch02/03:143, pieces x on [0,inf) and x+1 on (-inf,0]) really gives 0 vs 1 at x=0. The
+  - stage: S7r
+    verdict: correct
+    by: rereferee
+    hash: 4cb935314ccc
+    date: '2026-10-26'
+    model: claude-opus-5-5
+    evidence: There are now blank lines before the list and before 'Fatal errors', matching C1/C3. The
+      content is unchanged.
+  - stage: S7r
+    verdict: correct
+    by: rereferee
+    hash: 4cb935314ccc
+    date: '2026-10-26'
+    model: claude-opus-5-5
+    evidence: The only change is blank lines around the marking-scheme list, so it renders as a list.
+      The content is unchanged and correct.
 - key: def-partial-order
   kind: def
   file: 03-orders.md

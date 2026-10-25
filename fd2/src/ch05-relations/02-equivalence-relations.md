@@ -41,7 +41,7 @@ In words: (Eq1) says everything is the same as itself. (Eq2) says "the same" has
 The symbol \( \sim \) is a letter for a relation, like \( R \) in Section 5.1; it is written between its arguments because it is read like \( = \). Nothing needs checking for well-definedness: the definition names a property of a set of pairs.
 
 ::: {#exm-first-equivalences}
-[Four equivalence relations]
+[Three equivalence relations]
 
 Check (Eq1)–(Eq3) for each relation.
 
@@ -49,7 +49,6 @@ Check (Eq1)–(Eq3) for each relation.
 1. Equality on any set \( X \): \( x \sim y \) if and only if \( x = y \).
 2. The relation \( X \times X \) on a set \( X \), which relates every \( x \) to every \( y \).
 3. "Same absolute value" on \( \nR \): \( x \sim y \) if and only if \( \abs{x} = \abs{y} \).
-4. The empty relation \( \emptyset \) on the empty set.
 :::
 :::
 
@@ -64,9 +63,9 @@ Check (Eq1)–(Eq3) for each relation.
 Part (c) is an instance of a pattern that returns later in this section, with the fibers of a function: "\( x \sim y \) when some quantity attached to \( x \) equals the same quantity attached to \( y \)". Any such relation inherits (Eq1)–(Eq3) from equality.
 
 ::: {.second-reading title="The degenerate case and a non-example"}
-(d) Each of (Eq1)–(Eq3) begins "for every element of \( X \)", and \( X = \emptyset \) has none, so all three hold vacuously. The empty relation **is** an equivalence relation on \( \emptyset \).
+*Is the empty relation an equivalence relation on the empty set?* Each of (Eq1)–(Eq3) begins "for every element of \( X \)", and \( X = \emptyset \) has none, so all three hold vacuously. The empty relation **is** an equivalence relation on \( \emptyset \).
 
-Part (d) is the degenerate case, and it is worth keeping: it says that the definition makes no demand on an empty set, so the theorems below hold for \( X = \emptyset \) without a separate case. On a **non-empty** set the empty relation is not an equivalence relation: (Eq1) fails at any element \( x \), since \( (x, x) \notin \emptyset \). The same set of pairs passes on one set and fails on another, because (Eq1) speaks about every element of \( X \).
+This is the degenerate case, and it is worth keeping: it says that the definition makes no demand on an empty set, so the theorems below hold for \( X = \emptyset \) without a separate case. On a **non-empty** set the empty relation is not an equivalence relation: (Eq1) fails at any element \( x \), since \( (x, x) \notin \emptyset \). The same set of pairs passes on one set and fails on another, because (Eq1) speaks about every element of \( X \).
 
 **A non-example by minimal change.** On \( \nR \), let \( x \sim y \) mean \( x - y \in \nZ \), and let \( x \mathrel{R} y \) mean \( x - y \in \nN \). The first is an equivalence relation, as the fold on the reals modulo the integers, at the end of "Congruence modulo n", checks. The second changes one letter. It is still reflexive, since \( x - x = 0 \in \nN \) by (\( \nN \)0), and still transitive: if \( x - y \in \nN \) and \( y - z \in \nN \), then \( x - z = (x - y) + (y - z) \in \nN \) by @lem-naturals-arithmetic (b). But it is not symmetric: \( 1 \mathrel{R} 0 \), since \( 1 - 0 = 1 \in \nN \), while \( 0 - 1 = -1 \), and \( -1 \notin \nN \) because every natural number is \( \ge 0 \) (@lem-naturals-arithmetic (a)). The clause that fails is (Eq2). The relation \( R \) is the order \( y \le x \) restricted to pairs at integer distance; it has a direction, and sameness has none.
 :::
@@ -103,7 +102,7 @@ When the relation must be named, we write \( [a]_\sim \). Any element of a class
 
 The class is a subset of \( X \), by specification (@def-set-builder). Its definition fixes the order of the letters as \( x \sim a \); by (Eq2) the order does not matter, and \( x \in [a] \) holds exactly when \( a \sim x \).
 
-For the four relations of @exm-first-equivalences: under equality, \( [a] = \{a\} \); under \( X \times X \), \( [a] = X \) for every \( a \in X \); under "same absolute value", \( [3] = \{-3, 3\} \) and \( [0] = \{0\} \); and on the empty set there are no elements and so no classes.
+For the three relations of @exm-first-equivalences: under equality, \( [a] = \{a\} \); under \( X \times X \), \( [a] = X \) for every \( a \in X \); under "same absolute value", \( [3] = \{-3, 3\} \) and \( [0] = \{0\} \). (On the empty set there are no elements and so no classes.)
 
 ::: {.check}
 On \( \{1, 2, \dots, 30\} \), let \( x \sim y \) mean that \( x \) and \( y \) have the same last digit. List the classes. How many are there, and how many elements has each?
@@ -333,7 +332,7 @@ and in the same way \( [\sqrt 2] = \{ \sqrt 2 + k : k \in \nZ \} = \{ \dots, \sq
 
 Picture each class as one point of a circle of circumference \( 1 \): the real line is wound around it, and two numbers land on the same point when they differ by an integer. Each class has exactly one representative in \( [0, 1) \): the class of \( \sqrt 2 \) meets \( [0, 1) \) in \( \sqrt 2 - 1 \), for instance. Proving this for every class needs the integer part of a real number, which *Analysis on the Real Line*, Chapter 1 constructs; we do not use it here.
 
-With \( \nQ \) in place of \( \nZ \), the relation "\( x - y \in \nQ \)" is again an equivalence relation on \( \nR \), and choosing one point from each of its classes is how *Measure and Integration*, Chapter 1 builds a set of real numbers that has no length.
+With \( \nQ \) in place of \( \nZ \), the relation "\( x - y \in \nQ \)" is again an equivalence relation on \( \nR \), and choosing one point from each of its classes is how *Measure, Integration, and Real Analysis*, Chapter 1 builds a set of real numbers that has no length.
 :::
 
 ## Operations on classes
@@ -587,9 +586,9 @@ Let \( f \colon \nZ \times \nZ_{>0} \to \nQ \), \( f(a, b) \coloneqq a/b \). Des
 ::: {.solution}
 *The relation.* \( (a, b) \sim_f (c, d) \) means \( a/b = c/d \), and since \( b, d \ne 0 \) this holds exactly when \( ad = bc \), by the arithmetic of fractions. It is the relation of Exercise B1 at the end of this section, now seen as the fiber relation of a function; that it is an equivalence relation is immediate from @exm-fibres-of-function. The class of \( (1, 2) \) is the fiber over \( \tfrac12 \): the pairs \( (1, 2), (2, 4), (3, 6), \dots \), all the ways of writing one half as a fraction.
 
-*The three maps.* The quotient map \( q \) sends a pair to its class, "the fraction \( a/b \) up to rewriting". The map \( \bar f \) sends a class to the rational number its pairs all name. And \( f \) is onto \( \nQ \), since every rational number is \( a/b \) for some \( a \in \nZ \) and \( b \in \nZ_{>0} \); so \( f(X) = \nQ \) and \( \iota = \id_\nQ \). By @thm-canonical-factorization, \( \bar f \) is a bijection from the set of classes onto \( \nQ \): a rational number "is" a class of fractions, and nothing is lost by identifying the two.
+*The three maps.* The quotient map \( q \) sends a pair to its class, "the fraction \( a/b \) up to rewriting". The map \( \bar f \) sends a class to the rational number its pairs all name. And \( f \) is onto \( \nQ \), since every rational number is \( a/b \) for some \( a \in \nZ \) and \( b \in \nZ_{>0} \); so \( f(\nZ \times \nZ_{>0}) = \nQ \) and \( \iota = \id_\nQ \). By @thm-canonical-factorization, \( \bar f \) is a bijection from the set of classes onto \( \nQ \): a rational number "is" a class of fractions, and nothing is lost by identifying the two.
 
-*The numerator.* Let \( p(a, b) \coloneqq a \). If \( p \) were \( g \circ q \) for some function \( g \) on the classes, then \( (a, b) \sim_f (c, d) \) would force \( p(a, b) = g([(a, b)]) = g([(c, d)]) = p(c, d) \). But \( (1, 2) \sim_f (2, 4) \), since \( 1 \cdot 4 = 2 \cdot 2 \), while \( p(1, 2) = 1 \ne 2 = p(2, 4) \). So \( p \) does not pass through \( q \), and no function on the classes, hence none on \( \nQ \), sends each fraction to its numerator. This is the failure of @exm-not-a-function (b), located: the numerator is a function of the pair, not of its fiber.
+*The numerator.* Let \( p(a, b) \coloneqq a \). If \( p \) were \( g \circ q \) for some function \( g \) on the classes, then \( (a, b) \sim_f (c, d) \) would force \( p(a, b) = g([(a, b)]) = g([(c, d)]) = p(c, d) \). But \( (1, 2) \sim_f (2, 4) \), since \( 1 \cdot 4 = 2 \cdot 2 \), while \( p(1, 2) = 1 \ne 2 = p(2, 4) \). So \( p \) does not pass through \( q \), and no function on the classes sends each fraction to its numerator. Nor does any function on \( \nQ \): if \( h \colon \nQ \to \nZ \) did, then \( g \coloneqq h \circ \bar f \) would satisfy \( g \circ q = h \circ f = p \), since \( \iota = \id_\nQ \). This is the failure of @exm-not-a-function (b), located: the numerator is a function of the pair, not of its fiber.
 :::
 
 ::: {.check}
@@ -644,7 +643,7 @@ Parts (a)–(d) are about @thm-classes-partition and its proof.
 
 ::: {.enumerate options="label=(\alph*)"}
 1. For \( f \colon \nR \to \nR \), \( f(x) = x^2 - 1 \), find the fibers over \( 3 \), over \( -1 \) and over \( -2 \). Which of them are classes of \( \sim_f \)?
-2. Let \( f \colon \{a, b, c, d\} \to \{1, 2, 3\} \) send \( a \) and \( c \) to \( 1 \), and \( b \) and \( d \) to \( 3 \). Write down \( X/{\sim_f} \), \( f(X) \), \( \bar f \) and \( \iota \) of @thm-canonical-factorization.
+2. Let \( X = \{a, b, c, d\} \) and \( f \colon X \to \{1, 2, 3\} \) send \( a \) and \( c \) to \( 1 \), and \( b \) and \( d \) to \( 3 \). Write down \( X/{\sim_f} \), \( f(X) \), \( \bar f \) and \( \iota \) of @thm-canonical-factorization.
 3. Which of the functions \( a \mapsto [a]_2 \), \( a \mapsto [a]_8 \) and \( a \mapsto [a^2]_8 \), from \( \nZ \), are constant on the classes of congruence modulo \( 4 \)?
 :::
 :::
@@ -656,7 +655,7 @@ Parts (a)–(d) are about @thm-classes-partition and its proof.
 
 (c) Let \( a' = a + 4k \) with \( k \in \nZ \), the general element of the class of \( a \) modulo \( 4 \).
 \( a \mapsto [a]_2 \): yes, since \( a' - a = 4k = 2(2k) \).
-\( a \mapsto [a]_8 \): no. \( 0 \equiv 4 \pmod 4 \), but \( [0]_8 \ne [4]_8 \), since \( 4 - 0 = 4 \) lies strictly between \( 0 \) and \( 8 \).
+\( a \mapsto [a]_8 \): no. \( 0 \equiv 4 \pmod 4 \), but \( [0]_8 \ne [4]_8 \), since \( 4 - 0 = 4 \) lies strictly between \( 0 \) and \( 8 \) (@prp-integers-closed (c)).
 \( a \mapsto [a^2]_8 \): yes, since \( a'^2 - a^2 = 8ak + 16k^2 = 8(ak + 2k^2) \), with \( ak + 2k^2 \in \nZ \).
 :::
 
@@ -834,6 +833,7 @@ The statement says that a function whose fibers all have one size cuts \( X \) i
 - 2: the base case \( k = 0 \): \( X = \emptyset \) and \( n = 0 \).
 - 3: the step: \( X' \) and \( F \) are disjoint with union \( X \), the fibers of \( f' \) are fibers of \( f \), and \( j = km \).
 - 3: the conclusion by @prp-disjoint-union-count and @cor-finite-size-unique.
+- Alternative route, full marks: a bijection \( X \to \{1, \dots, k\} \times \{1, \dots, m\} \) built from one bijection per fibre (4), with injectivity and surjectivity by disjoint fibres (3), and the count \( km \) by @exr-finite-sets-c2 (a) with @cor-finite-size-unique (3).
 
 Fatal errors (0 for the step): induction with \( X \) fixed; applying \( P(k) \) to a function whose fibers were not shown to have \( m \) elements.
 :::
@@ -850,9 +850,11 @@ The conclusion is true: it is @thm-gluing. The argument does not prove it.
 Agreement on overlaps is never used. The failure is in the definition of \( f \): the rule reads a chosen index \( i \) from the set \( \{ i \in I : x \in A_i \} \), and it defines a function only if the value \( f_i(x) \) does not depend on which such \( i \) is picked. That is the well-definedness check of @exm-method-well-definedness, with "an index \( i \) with \( x \in A_i \)" in the role of a representative; it is exactly agreement on overlaps. Without it, the second sentence fails too: at a point \( x \in A_i \cap A_j \) where \( i \) was picked, \( f|_{A_j}(x) = f_i(x) \), which need not equal \( f_j(x) \). @exm-piecewise-as-gluing (b) at \( x = 0 \) is a case: picking the first piece gives \( f(0) = 0 \), and then \( f|_{(-\infty, 0]} \) is not \( x \mapsto x + 1 \), which has the value \( 1 \) at \( 0 \).
 
 **Marking scheme.** (10 points)
+
 - 3: names agreement on overlaps as the unused hypothesis.
 - 4: locates the failure either in the definition of \( f \) (the value depends on the choice of \( i \), so a well-definedness check is missing) or in the claim \( f|_{A_j} = f_j \) at a point of \( A_i \cap A_j \) where another index was picked, and says that agreement on overlaps is what is missing.
 - 3: gives a concrete case where the choice matters and \( f|_{A_j} = f_j \) fails.
+
 Fatal errors (0 for the step): claiming the conclusion is false; locating the error in the cover (every \( x \) does lie in some \( A_i \)).
 :::
 
@@ -888,17 +890,17 @@ thm-partition-equivalence (claim): (correspondence) Eq(X) subset of P(X x X), Pa
 thm-partition-equivalence (claim): (quick check) 4 + 3 = 7 two-block partitions of {1, 2, 3, 4} | arithmetic; verify/ch05/thm-partition-equivalence.py
 exm-method-well-definedness (claim): (quick check) 0 != 36; a^2 - a'^2 = (a - a')(a + a'); 2k(a + a') in Z | R arithmetic, school fact; prp-integers-closed (a) (cited)
 exm-same-size-subsets (solution): sizes 0, 1, 1, 1, 2, 2, 2, 3 of the eight subsets of {1, 2, 3}; |A'| = |A| from |A| = |A'| | arithmetic; prp-equinumerous-properties (a)-(c), prp-subset-finite, cor-finite-size-unique, thm-russell (cited); verify/ch05/exm-same-size-subsets.py
-exr-equivalence-relations-b4 (solution): (f) 1 != -1; (g) equal squares of non-negatives | thm-squares-order (F1, cited)
+exr-equivalence-relations-b4 (solution): (f) 1 != -1; (g) equal squares of non-negatives | thm-squares-order (F1, cited); |x|^2 = x^2 since |x| = x or -x | R arithmetic, school fact
 exr-equivalence-relations-b4 (solution): (a-2b) - (a'-2b') = 6(k - 2l); 16/9 - 1/9 = 5/3; 2*5 != 3*3; (a+b)d = ad + bd | prp-integers-closed (a), (c) (cited); thm-classes-partition (b) (cited); R arithmetic; verify/ch05/exr-equivalence-relations-b4.py
 prp-congruence-arithmetic (claim): (Looking ahead) Z/n rebuilt as a quotient ring | F3.5 (prose pointer; paid by thm-quotient-ring-by-ideal, def-integers-mod-n-ring; nothing here depends on it)
 prp-fibres-partition (proof): the fiber over f(a) is the class [a] | exm-fibres-of-function (cited)
 prp-fibres-partition (claim): (quick check) values of n^2 - 2n on {-1, ..., 3} | arithmetic; verify/ch05/prp-fibres-partition.py
 prp-fibres-partition (claim): (same-size payoff) sizes of the eight subsets of {1, 2, 3}; "number of elements" is a function | arithmetic; prp-subset-finite, cor-finite-size-unique (cited); verify/ch05/prp-fibres-partition.py
-thm-canonical-factorization (proof): the inclusion map sends each point to itself | def-restriction-extension (cited, F2.6 §03)
+thm-canonical-factorization (proof): the inclusion map sends each point to itself | def-restriction-extension (cited, F2.2 §03)
 thm-canonical-factorization (claim): (aftermath) f injective iff q injective | direct argument via thm-classes-partition (b) (cited)
 thm-canonical-factorization (claim): (warning) x^2 >= 0, every t >= 0 is a square | R arithmetic and order, square roots, school fact (AN1.1 thm-nth-root)
 exm-fraction-map-factorization (solution): a/b = c/d iff ad = bc for b, d != 0; every rational is a/b with b > 0 | arithmetic of fractions, school fact (Q built in F3.2); verify/ch05/exm-fraction-map-factorization.py
-exr-fibres-and-factorization-a1 (solution): fibers of x^2 - 1; no real square is negative; 8ak + 16k^2 = 8(ak + 2k^2); 4 not a multiple of 8 | R arithmetic and order, school fact; verify/ch05/exr-fibres-and-factorization-a1.py
+exr-fibres-and-factorization-a1 (solution): fibers of x^2 - 1; no real square is negative; 8ak + 16k^2 = 8(ak + 2k^2); 4 not a multiple of 8 | R arithmetic and order, school fact; prp-integers-closed (c) (cited); verify/ch05/exr-fibres-and-factorization-a1.py
 exr-fibres-and-factorization-c1 (solution): f(x) <= k or f(x) = k + 1, not both, for f(x) in {1, ..., k + 1}; km + m = (k + 1)m | lem-naturals-arithmetic (F2.2), arithmetic
 exr-fibres-and-factorization-c1 (solution): 1 is in {1, ..., n} for n >= 1 | lem-naturals-arithmetic (F2.2), with def-finite
 -->
