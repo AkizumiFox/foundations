@@ -75,23 +75,29 @@
     {
      "n": 1,
      "id": "F2.1",
-     "title": "Sets, Functions, Images, and Preimages",
+     "title": "Sets and Functions: Proofs from Definitions",
      "ab": 6
     },
     {
      "n": 2,
      "id": "F2.2",
-     "title": "Equivalence Relations, Orders, and Induction",
+     "title": "Induction, Contradiction, and Finite Sets",
      "ab": 7
     },
     {
      "n": 3,
      "id": "F2.3",
-     "title": "Cardinality: Countable and Uncountable Sets",
+     "title": "Countable and Uncountable Sets",
      "ab": 8
     },
     {
      "n": 4,
+     "id": "F2.5",
+     "title": "Relations: Equivalence and Order",
+     "ab": 7
+    },
+    {
+     "n": 5,
      "id": "F2.4",
      "title": "Zorn's Lemma"
     }

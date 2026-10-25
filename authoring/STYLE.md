@@ -30,6 +30,7 @@ The reader is a motivated student working **alone**. They have no lecture to fil
 - **Stay calm.** No hype and no "clearly" or "obviously" hiding a step. "Trivially" is allowed only for something that really is one line and is then written out.
 - **One new notion at a time.** Use at most two new **major** notions per section. Minor definitions (notation, auxiliary terms) may exceed this when they are introduced just before their first use; if a section carries more than two major notions, the blueprint splits it.
 - **Taper the scaffolding.** The reader is taught to read and write proofs early and is then trusted to do it. §11 says what is dense in Parts 0–I and sparse afterwards.
+- **House manner from fd2 on.** From fd2 on, the structural moves of a methods-first proofs course are the house manner: a major definition is motivated before it is stated (weird examples as Quick checks, the naive attempt as the hook, an almost-correct proof to repair); scratch work and the proof idea are kept apart from the formal proof; and scaffolding fades, from full (a `[Scratch work]` idea, a method box, a Givens/Goal table, two worked examples) to a short Idea with a back-reference to terse (§4, §11.4, §12.14). There is no footnote humour and no first-person persona: the voice stays "we" (§7), and history appears only as one line of prose when it carries mathematics. fd1 is unchanged.
 
 ## 2. Page skeleton
 
@@ -65,7 +66,7 @@ A chapter's `index.md` contains, in this order:
 3. **What you need:** the earlier chapters or sections used, with links.
 4. **Time:** one line, `**Time.** About N hours on the core track (all of A, one B and one C per section, the exit checks); about M hours for everything.` Until there are reader logs, N and M come from the formula in `authoring/design/research-reader.md` B1: about 15 minutes per 400 words of prose for reading, plus 20–45 minutes per exercise. **N counts main-line prose only; M adds the prose inside second-reading folds** (§12). `python3 tools/check_structure.py --words src/chNN-…` prints both word counts and their reading hours. Round to the nearest 5 hours. Replace them with the median of logged hours when there is one.
 5. **Roadmap:** a bullet per section, with one sentence each.
-6. **Named moves:** a short list of the proof techniques this chapter introduces, so the reader can transfer them.
+6. **Named moves:** a short list of the proof techniques this chapter introduces, so the reader can transfer them. **From fd2 on**, each entry links to its **method box**: at a method's first full appearance the section gives a labelled example `::: {#exm-method-<slug>}` titled `[Method: proving an inclusion]`, stating the template, when to use it, and the usual failure. Later sections cite it instead of re-explaining ("by the method of @exm-method-element-chasing"). A section that introduces at least one method box is a **method section** (§12.14).
 
 No chapter ends with an examination section: the Gate system was retired on 2026-10-25 (§11.10).
 
@@ -107,6 +108,7 @@ For each theorem:
    - The reasoning found backwards, a picture described in words (or TikZ), a small case, or a numbered plan ① ② ③.
    - This is where "why do we do this?" is answered.
    - Omit it for proofs of 3 lines or fewer.
+   - **Scratch work (fd2 and later volumes).** At a proof method's first appearance, and at most once more, the Idea may be titled `[Scratch work]` and run to about 20 lines with displays: the search itself, working backwards, the gap in the middle marked and closed. Later proofs by the same method get a short Idea (2–6 lines) that points back to the method box ("as in @exm-method-surjectivity: solve for x, then check"). The scratch work never enters the proof, which is written forwards.
    - For at most two theorems per chapter, a *Try it first* prompt comes between the statement and the Idea, and the Idea then starts from what the attempt runs into (§11.8).
 4. **Proof** (`::: {.proof}`), in the typeset register:
    - **First sentence does mathematics:** "Let …", "Suppose …", "Since …", "By @thm-x, …". Never motivation (that went in the Idea).
@@ -499,6 +501,8 @@ Scratch work is drawn as a two-column table, introduced where the two directions
 
 Each row is one move, and each rule is a change to the table: →I moves the hypothesis into the Givens, ∀I adds a fresh name, ∃E adds a witness. A rule section says, in one line, what its rule does to the table.
 
+**fd2 and later volumes.** Each method section (§2 item 6) plans its first proof by the new method with a Givens/Goal table, written in prose form: the rows are mathematical statements ("\( x \in A \)", "\( f(a) = f(b) \)"), not formulas of a derivation, and the last row before the proof shows the gap that the method closes. It sits in or beside the `[Scratch work]` idea, never in the proof.
+
 ### 12.6 The rule card (fd1 and introductory volumes)
 
 Every rule section ends its main line with a **rule card**: a small table of the rules so far, each with a one-line picture (premises ⟹ conclusion) and its everyday phrase ("so", "suppose … then", "in either case"). The card grows section by section; the cumulative card is a one-page reference at the end of a run of rule sections (fd1: after 1.6, 3.1 and 5.6 (the quantifier card)), and the goal/premise decision chart grows with it.
@@ -577,6 +581,8 @@ Each substitution is a compound formula (in Chapter 4, compound terms such as \(
 
 **4. Derive-or-break items.** From Section 1.5 on, at least one B item per rule section is titled `[Bn: Derive or break]` and lists several claims Γ ⊢ φ, some valid and some invalid look-alikes, **without saying which**. The reader either derives φ or breaks the claim by showing the **counterexample set** (Γ together with ¬φ; NOTATION.md) can be made true all at once. The means of breaking grows with the book: a situation making the premises true and the conclusion false (until Chapter 4), or a refuting row (once Section 4.7 has proved soundness), or a counter-model (from the counter-model section of the models chapter). The solution states the verdict first, then the derivation or the breaking case.
 
+**Prove or disprove (fd2 and later volumes).** Each method section (§2 item 6) has at least one B item titled `[Bn: Prove or disprove]`, listing statements, some true and some false look-alikes, **without saying which**. The reader proves each true one by the section's method and refutes each false one with a concrete counterexample. The solution states the verdict first, then the proof or the counterexample.
+
 **5. Chapter Summary and Terms.** Each chapter's `index.md` ends with two sections:
 
 ```markdown
@@ -593,3 +599,7 @@ What the chapter proved, in four to eight sentences, and what it left open (the 
 The Terms list is a glossary of the chapter's definitions, alphabetical, one line each, every entry linked to its definition by label. The volume's glossary page `src/glossary.md` (listed in the config under `"back-matter"`, which the engine builds as an unnumbered page after the last chapter) collects every chapter's Terms list, merged alphabetically, each entry keeping its link. The Summaries of Chapters 3 and 5 close with a paragraph on what is proved and what is open, under no special name (not "Interlude").
 
 **6. The "used later" marker.** An exercise whose result or object a later section comes back to (a later exercise builds on it, a later example reuses its structure, a later remark recalls it) carries `, used later` in its title: `[B3, used later]`. The later place refers to it by label. No proof rests on an exercise (DRAFTING.md, "References"): a later proof that needs the fact proves it or cites a labelled result, and the marker only tells the reader not to skip the item.
+
+### 12.14 Proof methods (fd2 and later volumes)
+
+From fd2 on (author's decision, 2026-10-25; fd1 unchanged), a section that teaches a proof method first carries four devices: a `[Scratch work]` idea at the method's first appearance, then short Ideas with a back-reference (§4 item 3); a method box `exm-method-<slug>` linked from the chapter's Named moves (§2 item 6); a Givens/Goal table in prose form (§12.5); and a *Prove or disprove* B item (§12.13.4). Scaffolding then fades in three levels, marked in the volume's layout: **full** (all four, plus two worked examples), **Idea** (a short Idea citing the method box), **terse** (the proof alone). No footnotes and no first person (§1, "House manner from fd2 on").
