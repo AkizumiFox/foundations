@@ -1,12 +1,12 @@
 # Divisibility and Division with Remainder
 
-Chapter 2 built \( \nZ \) as an ordered commutative ring, and a Quick check in Section 2.3 showed that it is not a field: \( 2x = 1 \) has no solution in \( \nZ \). So "\( a/b \)" is not available among the integers. What remains is a relation, "\( b \) is a multiple of \( a \)", and the next best thing to division: dividing with a quotient and a remainder. *Sets, Relations, and Cardinality*, Section 2.2 defined the relation and proved division with remainder for the school integers. This section does both again for the integers of Chapter 2, where every step must come from the ordered-ring axioms and from the least-element property of \( \nZ \).
+Chapter 2 built \( \nZ \) as an ordered commutative ring, and a Quick check in Section 2.3 showed that it is not a field: \( 2x = 1 \) has no solution in \( \nZ \). So "\( a/b \)" is not available among the integers. What remains is a relation, "\( b \) is a multiple of \( a \)", and the next best thing to division: dividing with a quotient and a remainder. *Sets, Relations, and Cardinality*, Section 1.1 defined the relation and its Section 2.2 proved division with remainder for the school integers. This section does both again for the integers of Chapter 2, where every step must come from the ordered-ring axioms and from the least-element property of \( \nZ \).
 
 Throughout, \( \nZ \) is the ordered ring of @thm-integers-ordered-ring, with \( \nN \subseteq \nZ \) and \( \nZ_{>0} = \{ n \in \nZ : n > 0 \} \) (@thm-integers-ordered-ring (b)), and \( a - b \coloneqq a + (-b) \). Numerals \( 2 \coloneqq 1 + 1 \), \( 3 \coloneqq 2 + 1 \), and so on, are the natural numbers of those names, as in Section 2.6; a sum or product of numerals may be computed in \( \nN \), because the embedding of @prp-naturals-embed-integers preserves \( + \) and \( \cdot \), and a sign is moved by @prp-ring-algebra (c), as in \( (-4) \cdot 5 = -(4 \cdot 5) = -20 \).
 
 ## Divisibility on the constructed integers
 
-The definition of divisibility needs nothing that the ring \( \nZ \) lacks. We restate it, and the definition of a prime, from *Sets, Relations, and Cardinality*, Section 2.2, with \( \nZ \) now the ring of Chapter 2.
+The definition of divisibility needs nothing that the ring \( \nZ \) lacks. We restate it, and the definition of a prime, from *Sets, Relations, and Cardinality*, Section 1.1, with \( \nZ \) now the ring of Chapter 2.
 
 **Divisibility** (@fd2:def-divides). Let \( a, b \in \nZ \). Then \( a \) **divides** \( b \), written \( a \mid b \), if **there exists** \( k \in \nZ \) with \( b = ka \). Then \( a \) is a **divisor** of \( b \), and \( b \) is a **multiple** of \( a \). We write \( a \nmid b \) when \( a \) does not divide \( b \).
 
@@ -67,7 +67,7 @@ by (F5), (F6) and (F9), and \( kx + ly \in \nZ \). So \( a \mid bx + cy \).
 (g) Let \( a \mid 1 \), say \( 1 = ka \). Then \( a \ne 0 \): otherwise \( 1 = k \cdot 0 = 0 \), against \( 1 \ne 0 \) in \( \nZ \) (@thm-integers-commutative-ring). By (h), one of \( a \), \( -a \) is positive; call it \( e \). Then \( e \mid 1 \), by (d) if \( e = -a \). Since \( 1 > 0 \) (@prp-ordered-ring-rules (e)), part (e) gives \( e \le 1 \); and \( e > 0 \) gives \( 1 \le e \) by discreteness. So \( e = 1 \). If \( e = a \), then \( a = 1 \); if \( e = -a \), then \( a = -(-a) = -1 \) by @prp-ring-algebra (a). This proves the proposition.
 :::
 
-Part (f) is the antisymmetry of divisibility on \( \nN \), @fd2:prp-divides-partial-order of *Sets, Relations, and Cardinality*, Section 2.4, now proved on \( \nN \subseteq \nZ \) for the constructed integers. On all of \( \nZ \) it fails: \( 2 \mid -2 \) and \( -2 \mid 2 \), by (d), yet \( 2 \ne -2 \). That is why (f) is stated for \( a, b \in \nN \), and why (e) needs \( b > 0 \): \( 3 \mid -3 \), but \( 3 > -3 \). (The hypothesis \( a > 0 \) is a convenience for the proof: \( a = 0 \) cannot divide \( b > 0 \), by (a), and if \( a < 0 < b \), then \( a \le b \) holds anyway.)
+Part (f) is the antisymmetry of divisibility on \( \nN \), @fd2:prp-divides-partial-order of *Sets, Relations, and Cardinality*, Section 4.1, now proved on \( \nN \subseteq \nZ \) for the constructed integers. On all of \( \nZ \) it fails: \( 2 \mid -2 \) and \( -2 \mid 2 \), by (d), yet \( 2 \ne -2 \). That is why (f) is stated for \( a, b \in \nN \), and why (e) needs \( b > 0 \): \( 3 \mid -3 \), but \( 3 > -3 \). (The hypothesis \( a > 0 \) is a convenience for the proof: \( a = 0 \) cannot divide \( b > 0 \), by (a), and if \( a < 0 < b \), then \( a \le b \) holds anyway.)
 
 ::: {.check}
 Which hypothesis of (e) fails for \( a = 3 \), \( b = 0 \), and is the conclusion \( a \le b \) true there?
@@ -184,7 +184,7 @@ Section 2.6 proved that no rational squares to \( 2 \) by a descent on denominat
 
 ## Small primes
 
-Later sections need to know that a few small integers are prime in the constructed \( \nZ \). *Sets, Relations, and Cardinality*, Section 2.2 checked some of these after @fd2:def-prime, for the school integers; that check is not a proof about the ring of Chapter 2, so we redo it here.
+Later sections need to know that a few small integers are prime in the constructed \( \nZ \). *Sets, Relations, and Cardinality*, Section 1.1 checked some of these after @fd2:def-prime, for the school integers; that check is not a proof about the ring of Chapter 2, so we redo it here.
 
 ::: {.remark}
 **The small-primes remark.** The integers \( 2 \), \( 3 \), \( 5 \) and \( 7 \) are prime in \( \nZ \). Let \( p \in \{2, 3, 5, 7\} \). Then \( p \ge 2 \). Let \( d \) be a positive divisor of \( p \). Then \( 1 \le d \) by discreteness (@thm-integers-ordered-ring (c)) and \( d \le p \) by @prp-divisibility-rules-integers (e), so \( d \) is one of \( 1, 2, \dots, p \): applying discreteness repeatedly (if \( d \ne 1 \) then \( 2 \le d \); if \( d \ne 2 \) then \( 3 \le d \); and so on up to \( p \)) leaves no other value. Each \( d \) with \( 1 < d < p \) leaves a non-zero remainder:

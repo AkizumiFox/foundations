@@ -6,7 +6,7 @@ Chapters 1 and 2 gave every connective a rule for using it and a rule for provin
 
 **Time.** About 15 hours on the core track (all of A, one B and one C per section, the exit checks); about 25 hours for everything.
 
-**Minimum before *Sets, Relations, and Cardinality*.** Chapters 1–6 and 8, core; Sections 7.1–7.2 before its Chapter 3.
+**Minimum before *Sets, Relations, and Cardinality*.** Chapters 1–6 and 8, core; Sections 7.1–7.2 before its Section 2.5.
 
 ## Roadmap
 

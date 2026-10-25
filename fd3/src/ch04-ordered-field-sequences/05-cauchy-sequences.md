@@ -490,7 +490,7 @@ def-cauchy-sequence-ordered-field (example): for e = 1/100, N = 101 works for 1/
 def-cauchy-sequence-ordered-field (claim): swapped quantifiers force a_m = a_n for m, n >= N | argument of thm-limit-unique-ordered-field (cited); inline
 def-cauchy-sequence-ordered-field (claim): tail change extends to Cauchy | inline, thresholds max{N, N_0}
 def-cauchy-sequence-ordered-field (claim): non-example a_{n+2} = a_n | inline
-prp-cauchy-bounded-ordered-field (proof): finite maximum of elements of F | fd2:prp-finite-max with F2.2's remark that its proof works in any totally ordered set (F2.2 §06), cited as in prp-convergent-bounded-ordered-field
+prp-cauchy-bounded-ordered-field (proof): finite maximum of elements of F | fd2:prp-finite-max with F2.5's remark that its proof works in any totally ordered set (F2.5 §03), cited as in prp-convergent-bounded-ordered-field
 prp-cauchy-bounded-ordered-field (proof): 1 > 0 in F | prp-ordered-ring-rules (e), cited
 thm-cauchy-algebra-ordered-field (proof): identity a_n b_n - a_m b_m = a_n (b_n - b_m) + b_m (a_n - a_m) | prp-ring-algebra (field axioms); verify/ch04/thm-cauchy-algebra-ordered-field.py
 thm-cauchy-algebra-ordered-field (proof): -a = (-1) a | prp-ring-algebra (c), cited

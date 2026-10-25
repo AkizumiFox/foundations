@@ -17,7 +17,7 @@ For cuts \( \alpha \) and \( \beta \), the **sum** is the set
 \]
 :::
 
-In symbols, \( x \in \alpha + \beta \iff \exists p \in \alpha \ \exists q \in \beta \ \ x = p + q \). This is the set sum \( A + B \) of *Sets, Relations, and Cardinality*, Section 1.6 (@fd2:exm-sets-of-numbers-as-images), applied to two sets of rationals: the same notation with the same meaning. For instance, if \( p < 1 \) and \( q < 2 \), then \( p + q < 3 \), so \( D_1 + D_2 \subseteq D_3 \); the Quick check later in this section shows how the reverse inclusion goes for a similar pair.
+In symbols, \( x \in \alpha + \beta \iff \exists p \in \alpha \ \exists q \in \beta \ \ x = p + q \). This is the set sum \( A + B \) of *Sets, Relations, and Cardinality*, Section 1.7 (@fd2:exm-sets-of-numbers-as-images), applied to two sets of rationals: the same notation with the same meaning. For instance, if \( p < 1 \) and \( q < 2 \), then \( p + q < 3 \), so \( D_1 + D_2 \subseteq D_3 \); the Quick check later in this section shows how the reverse inclusion goes for a similar pair.
 
 The definition makes sense for any two sets of rationals. The work is to show that a sum of cuts is again a cut, and that this addition behaves.
 

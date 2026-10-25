@@ -8,7 +8,7 @@ The chapter is the first-order twin of Chapters 1 and 2: one rule per section, e
 
 **Time.** About 45 hours on the core track (all of A, one B and one C per section); about 65 hours for everything.
 
-**Minimum before *Sets, Relations, and Cardinality*.** Chapters 1–6 and 8, core; Sections 7.1–7.2 before its Chapter 3.
+**Minimum before *Sets, Relations, and Cardinality*.** Chapters 1–6 and 8, core; Sections 7.1–7.2 before its Section 2.5.
 
 **How to read this chapter.** Every section is on the first reading, with its folds closed. The folds hold proofs about the language (substitution, renaming, definitions), longer error analyses and edge cases. They are not optional: later proofs may use them.
 

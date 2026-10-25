@@ -59,7 +59,7 @@ If \( h \) is a partial solution up to \( m \) and \( j \in \mathrm{S}(m) \), th
 :::
 
 ::: {.proofofclaim}
-Here \( j \in \omega \) by (v), and \( \mathrm{S}(j) \subseteq \mathrm{S}(m) \) by (iii), so the restriction (*Sets, Relations, and Cardinality*, Section 1.4) is a function \( \mathrm{S}(j) \to X \) with the same values as \( h \). Its value at \( 0 \) is \( h(0) = a \), since \( 0 \in \mathrm{S}(j) \) by (i). Let \( i \in \omega \) with \( \mathrm{S}(i) \in \mathrm{S}(j) \). Then \( \mathrm{S}(i) \in \mathrm{S}(m) \), because \( \mathrm{S}(j) \subseteq \mathrm{S}(m) \), and \( i \in \mathrm{S}(j) \) by (ii). So the equation at \( \mathrm{S}(i) \) is one of the equations of \( h \), and both of its sides are values at points of \( \mathrm{S}(j) \):
+Here \( j \in \omega \) by (v), and \( \mathrm{S}(j) \subseteq \mathrm{S}(m) \) by (iii), so the restriction (*Sets, Relations, and Cardinality*, Section 1.5) is a function \( \mathrm{S}(j) \to X \) with the same values as \( h \). Its value at \( 0 \) is \( h(0) = a \), since \( 0 \in \mathrm{S}(j) \) by (i). Let \( i \in \omega \) with \( \mathrm{S}(i) \in \mathrm{S}(j) \). Then \( \mathrm{S}(i) \in \mathrm{S}(m) \), because \( \mathrm{S}(j) \subseteq \mathrm{S}(m) \), and \( i \in \mathrm{S}(j) \) by (ii). So the equation at \( \mathrm{S}(i) \) is one of the equations of \( h \), and both of its sides are values at points of \( \mathrm{S}(j) \):
 \[
 h|_{\mathrm{S}(j)}\bigl(\mathrm{S}(i)\bigr) = g\bigl(i, h(i)\bigr) = g\bigl(i, h|_{\mathrm{S}(j)}(i)\bigr) .
 \]

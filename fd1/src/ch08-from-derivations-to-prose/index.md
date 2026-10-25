@@ -60,7 +60,7 @@ From Chapters 1 and 2: the rules for every connective, derivations with their bo
 
 **Time.** About 35 hours on the core track (all of A, one B and one C per section, the exit checks); about 65 hours for everything.
 
-**Minimum before *Sets, Relations, and Cardinality*.** Chapters 1–6 and 8, core; Sections 7.1–7.2 before its Chapter 3.
+**Minimum before *Sets, Relations, and Cardinality*.** Chapters 1–6 and 8, core; Sections 7.1–7.2 before its Section 2.5.
 
 ## Roadmap
 

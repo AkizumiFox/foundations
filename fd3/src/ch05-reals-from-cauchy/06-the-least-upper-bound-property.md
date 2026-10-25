@@ -2,7 +2,7 @@
 
 Section 5.5 proved one form of completeness: in \( \nR \) every Cauchy sequence converges (@thm-constructed-reals-cauchy-complete). *Analysis on the Real Line*, Chapter 1 starts from another form, about sets rather than sequences: every non-empty set of real numbers that is bounded above has a least upper bound. In \( \nQ \) both fail, the first by @thm-sqrt2-cauchy-no-rational-limit and the second by @thm-rationals-gap-sqrt2. This section names the second property for an arbitrary ordered field, proves that an ordered field that is Archimedean and Cauchy-complete has it, and concludes that the constructed \( \nR \) is a complete ordered field. The proof bisects intervals, and one line of it, which we shall point at, cannot do without Archimedes.
 
-Throughout, \( F \) is an ordered field (@def-ordered-ring-and-field). Its order \( \le \) is a total order (@prp-ordered-field-halves (a)), so the words "upper bound", "bounded above" and "supremum" of *Sets, Relations, and Cardinality*, Section 2.6 apply to subsets of \( F \) (@fd2:def-order-bounds, @fd2:def-order-supremum). When \( F = \nR \), we keep the identification of Section 5.4, writing \( q \) for \( \kappa(q) \).
+Throughout, \( F \) is an ordered field (@def-ordered-ring-and-field). Its order \( \le \) is a total order (@prp-ordered-field-halves (a)), so the words "upper bound", "bounded above" and "supremum" of *Sets, Relations, and Cardinality*, Section 4.3 apply to subsets of \( F \) (@fd2:def-order-bounds, @fd2:def-order-supremum). When \( F = \nR \), we keep the identification of Section 5.4, writing \( q \) for \( \kappa(q) \).
 
 ## Complete ordered fields
 

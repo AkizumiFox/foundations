@@ -53,7 +53,7 @@ The proof assumes \( x^2 = 2 \), reaches a contradiction, and concludes \( \neg(
 
 ## The set below the gap
 
-*Sets, Relations, and Cardinality*, Section 2.6 stated, without proof, that the set of positive rationals with square below \( 2 \) has no least upper bound in \( \nQ \), and pointed out that the ambient set decides whether a supremum exists. We now prove it. By @prp-ordered-ring-rules (i) and @thm-rationals-ordered-field, \( \le \) is a total order on \( \nQ \), so \( (\nQ, \le) \) is a partially ordered set and the words of *Sets, Relations, and Cardinality*, Section 2.6 apply: upper bounds (@fd2:def-order-bounds) and a supremum, an upper bound \( s \) with (S1) \( x \le s \) for every \( x \) in the set and (S2) \( s \le u \) for every upper bound \( u \) (@fd2:def-order-supremum).
+*Sets, Relations, and Cardinality*, Section 4.3 stated, without proof, that the set of positive rationals with square below \( 2 \) has no least upper bound in \( \nQ \), and pointed out that the ambient set decides whether a supremum exists. We now prove it. By @prp-ordered-ring-rules (i) and @thm-rationals-ordered-field, \( \le \) is a total order on \( \nQ \), so \( (\nQ, \le) \) is a partially ordered set and the words of *Sets, Relations, and Cardinality*, Section 4.3 apply: upper bounds (@fd2:def-order-bounds) and a supremum, an upper bound \( s \) with (S1) \( x \le s \) for every \( x \) in the set and (S2) \( s \le u \) for every upper bound \( u \) (@fd2:def-order-supremum).
 
 ::: {#thm-rationals-gap-sqrt2}
 [A Bounded Set of Rationals with No Rational Supremum]
@@ -110,7 +110,7 @@ Both cases are impossible, so \( A \) has no supremum in \( \nQ \).
 Conditions (S1) and (S2) for a set mention only the set of its upper bounds: (S1) says that \( s \) is one, and (S2) that it lies below all of them. So \( s \) is a supremum of \( A^+ \) if and only if it is a supremum of \( A \), and by (a), \( A^+ \) has none. It is non-empty, since \( 1 \in A^+ \), and bounded above, by \( 2 \).
 :::
 
-The set \( A^+ \) is the set of *Sets, Relations, and Cardinality*, Section 2.6, so clause (b) is the statement left unproved there. The two descriptions differ only by the non-positive elements of \( A \), which lie below every upper bound anyway.
+The set \( A^+ \) is the set of *Sets, Relations, and Cardinality*, Section 4.3, so clause (b) is the statement left unproved there. The two descriptions differ only by the non-positive elements of \( A \), which lie below every upper bound anyway.
 
 ::: {.remark}
 *Analysis on the Real Line*, Chapter 1 proves the same conclusion for \( A^+ \) in \( \nQ \), as part of its motivation for the axioms of the real numbers, and then shows that \( A^+ \) does have a supremum in the real numbers. That is the sense of "gap": a bounded set of rationals whose least upper bound, if it is anywhere, is not a rational.

@@ -56,7 +56,7 @@ Examples:
 - \( \gcd(-5, 5) = 5 \): the common divisors of \( -5 \) and \( 5 \) are the divisors of \( 5 \) (@prp-divisibility-rules-integers (d) and @prp-ring-algebra (a)), and the greatest is \( 5 \), by @prp-divisibility-rules-integers (e).
 - \( \gcd(1, b) = 1 \) for every \( b \in \nZ \): a common divisor \( d \) divides \( 1 \), so \( d = \pm 1 \) (@prp-divisibility-rules-integers (g)), and the greater is \( 1 \).
 
-*Why the convention for \( (0, 0) \).* Every integer divides \( 0 \), so \( 0 \) and \( 0 \) have no greatest common divisor for \( \le \), and some value has to be chosen. The value \( 0 \) is the one that keeps clauses (c) and (e) of the theorem below true for \( (0, 0) \), as the remark after it shows. It also matches @fd2:exm-divisibility-lcm of *Sets, Relations, and Cardinality*, Section 2.6, where \( 0 \) is the top of \( (\nN, \mid) \), divisible by everything.
+*Why the convention for \( (0, 0) \).* Every integer divides \( 0 \), so \( 0 \) and \( 0 \) have no greatest common divisor for \( \le \), and some value has to be chosen. The value \( 0 \) is the one that keeps clauses (c) and (e) of the theorem below true for \( (0, 0) \), as the remark after it shows. It also matches @fd2:exm-divisibility-lcm of *Sets, Relations, and Cardinality*, Section 4.3, where \( 0 \) is the top of \( (\nN, \mid) \), divisible by everything.
 
 Listing divisors one by one, as in the first example, is slow. The Euclidean algorithm below replaces the list by one division per step, and Bézout's theorem is what makes it work.
 
@@ -420,7 +420,7 @@ def-integer-gcd (claim): (well-definedness) the argument with b in place of a wh
 def-integer-gcd (example): 6 = 1 * 4 + 2, 4 = 1 * 3 + 1, and 2 | 4, 2 | 6 | numerals (01-division-with-remainder opening paragraph); verify/ch03/def-integer-gcd.py
 def-integer-gcd (example): a positive d <= 4 lies in {1, 2, 3, 4} | discreteness, thm-integers-ordered-ring (c), cited
 def-integer-gcd (example): a and -a have the same divisors (gcd(-5, 5), gcd(0, -6)) | prp-divisibility-rules-integers (d), prp-ring-algebra (a), cited
-def-integer-gcd (claim): the convention gcd(0, 0) = 0 matches fd2 exm-divisibility-lcm (0 the top of (N, |)) | fd2 F2.2 §06 exm-divisibility-lcm (cited)
+def-integer-gcd (claim): the convention gcd(0, 0) = 0 matches fd2 exm-divisibility-lcm (0 the top of (N, |)) | fd2 F2.5 §03 exm-divisibility-lcm (cited)
 thm-integers-bezout (proof): the case a = 0 is the same with b in place of a | symmetric repeat (a Z + b Z is symmetric in a, b by (F1))
 thm-integers-bezout (proof): r = a - q(a x0 + b y0) = a(1 - q x0) + b(-q y0) | ring laws of Z, thm-integers-commutative-ring; prp-ring-algebra (c)
 thm-integers-bezout (claim): the coin hook, 42 - 3 * 12 = 6 and the Try-it-first list | verify/ch03/thm-integers-bezout.py

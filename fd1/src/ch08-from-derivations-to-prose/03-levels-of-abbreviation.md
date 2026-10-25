@@ -500,7 +500,7 @@ The expansion took six lines, and it was enough to expand the one doubtful stret
 ::: {.remark}
 [Looking ahead]
 
-From *Analysis on the Real Line*, Chapter 1 on, proofs are written at level 3, and a rule tag appears only where the rule is itself the point; *Sets, Relations, and Cardinality*, Chapters 1–3 may still tag some proofs at level 2.
+From *Analysis on the Real Line*, Chapter 1 on, proofs are written at level 3, and a rule tag appears only where the rule is itself the point; *Sets, Relations, and Cardinality*, Chapters 1–5 may still tag some proofs at level 2.
 :::
 
 ## Exercises
@@ -903,7 +903,7 @@ def-levels-of-proof (example): [the opening "One short proof, four texts"] (2k +
 def-levels-of-proof (example): [the opening] the skeleton (7 lines) and full derivation (8 lines); side conditions at the exists-E and forall-I lines (k_0 not in line 5/6, n_0 in no premise) | def-rules-existential, def-rules-universal (F1.4, cited by name); checked on the page and by the derivation checker
 def-levels-of-proof (claim): f(x) = 3x + 1 is uniformly continuous on R with delta = eps/3, since |(3x+1)-(3y+1)| = 3|x-y| | inline (school algebra)
 def-levels-of-proof (claim): [fold "Levels already on the page"] the derivation after thm-sqrt2-irrational in F1.2 §02 fixes r, p, q and leaves out the two quantifier steps (choosing p, q and m), as the paragraph after it says | thm-sqrt2-irrational (F1.2 §02, cited), read on the page
-def-levels-of-proof (claim): Looking ahead: from AN1.1 on proofs are written at level 3 in plain prose, rule tags only where the rule is itself the point; F2.1-F2.3 (Sets, Relations, and Cardinality, Chapters 1-3) may tag some proofs at level 2 | STYLE section 10 (book convention); the two STATUS rows for F1.5 §03, index; Looking-ahead box only, nothing rests on it
+def-levels-of-proof (claim): Looking ahead: from AN1.1 on proofs are written at level 3 in plain prose, rule tags only where the rule is itself the point; F2.1-F2.5 (Sets, Relations, and Cardinality, Chapters 1-5) may tag some proofs at level 2 | STYLE section 10 (book convention); the two STATUS rows for F1.5 §03, index; Looking-ahead box only, nothing rests on it
 def-levels-of-proof (claim): F1.5 §05 turns level 1 into a procedure; F1.5 §04 reconstructs it when reading | this chapter (sections 04, 05; prose pointers, nothing rests on them)
 def-silent-steps (claim): [before the table] Section 8.1 stated the principle | F1.5 §01 (drafted in parallel from the same frozen blueprint; prose pointer within the chapter)
 def-silent-steps (claim): the six-row table gives common entries of def-silent-steps and says no more than it | def-silent-steps (on the page)

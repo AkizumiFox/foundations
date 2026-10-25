@@ -12,7 +12,7 @@ Chapter 3 did for the connectives what this chapter does for the quantifiers. Se
 
 **Time.** About 20 hours on the core track (all of A, one B and one C per section, the exit checks); about 35 hours for everything.
 
-**Minimum before *Sets, Relations, and Cardinality*.** Chapters 1–6 and 8, core; Sections 7.1–7.2 before its Chapter 3.
+**Minimum before *Sets, Relations, and Cardinality*.** Chapters 1–6 and 8, core; Sections 7.1–7.2 before its Section 2.5.
 
 **How to read this chapter.** Every section is on the first reading, with its folds closed. The folds hold the proofs of the bounded rules, of the replacement rule and of TAUT on the skeleton, the derivations of the distribution and passage laws, and short remarks on edge cases. They are not optional: later proofs may use them.
 

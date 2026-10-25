@@ -630,7 +630,7 @@ lem-polynomial-coprime-to-product (proof): gcd is symmetric | def-polynomial-gcd
 lem-polynomial-coprime-to-product (proof): induction from s = 1 (resp. k = 1) | fd1:ax-induction applied to P(n) := the claim for n + 1, read on omega via fd3:cor-omega-identification (b), cited
 thm-polynomial-chinese-remainder (proof): m = M_i m_i, so m_i | m; m_j | M_i for j != i; m = m_1...m_k is non-zero | (L2) and (L1) of Section 4.3 (03-irreducible-factorization, "Two facts about products of lists"), cited by name
 thm-polynomial-chinese-remainder (proof): f - r_j = sum_{i != j} r_i e_i + r_j(e_j - 1); a sum of multiples of m_j is a multiple | lem-finite-sums-and-powers (b) (Sigma1), (Sigma3); prp-polynomial-divisibility-rules (c) with induction on the number of terms; inline
-thm-polynomial-chinese-remainder (proof): the k-fold product of the quotient sets with componentwise operations | NOTATION row A_1 x ... x A_k (F2.3 §02); componentwise operations defined in the statement
+thm-polynomial-chinese-remainder (proof): the k-fold product of the quotient sets with componentwise operations | NOTATION row A_1 x ... x A_k (F2.3 §01); componentwise operations defined in the statement
 thm-polynomial-chinese-remainder (claim): (quick check) e_1 = 1 - x, e_2 = x, f = 3 + 2x | inline arithmetic; verify/ch04/thm-polynomial-chinese-remainder.py
 prp-interpolation-as-chinese-remainder (proof): deg m = n + 1 | thm-degree-of-product (b) with induction on the number of factors; inline
 exm-polynomial-chinese-remainder-run (example): x^2 + 1 = (x + 2)(x - 2) + 5; e_1, e_2; the product and the reduction; f = -(2/5)x^2 + 2x - 7/5 and its check | inline arithmetic; verify/ch04/exm-polynomial-chinese-remainder-run.py

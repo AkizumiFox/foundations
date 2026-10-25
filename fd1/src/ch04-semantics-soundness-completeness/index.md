@@ -17,7 +17,7 @@ The answer is to give formulas a **meaning**. **Soundness** says that whatever c
 
 **Time.** About 45 hours on the core track (Sections 4.1–4.8: all of A, one B and one C per section, the exit checks); about 90 hours for everything.
 
-**Minimum before *Sets, Relations, and Cardinality*.** Chapters 1–6 and 8, core; Sections 7.1–7.2 before its Chapter 3.
+**Minimum before *Sets, Relations, and Cardinality*.** Chapters 1–6 and 8, core; Sections 7.1–7.2 before its Section 2.5.
 
 **How to read this chapter.** A first reading takes Sections 4.1–4.8 with every second-reading fold closed. Each section's main line teaches the section, and every A and B exercise can be done from it. The folds hold the proofs of structural induction, the parenthesis count and structural recursion, the bookkeeping lemmas, the proof that the search of Section 4.6 decides, and the descent in the completeness proof. They are not optional: later proofs use those results, and the proofs are complete. Section 4.9, on normal forms, is a second-pass section; nothing in Chapters 5–8 uses it. Section 4.10, on compactness, is optional; nothing outside it depends on it.
 

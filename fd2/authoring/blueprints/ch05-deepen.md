@@ -291,3 +291,11 @@ Referee B:
 
 ## S3 deviations (S4 record)
 - 5.2: added warning "One comparison at a time" and a paragraph on maximal matchings on N; 5.1: B1 hint folded, C2 Hint 1, Fatal-errors lines. Chain row and script letters sD sE sT not yet in NOTATION.md.
+
+## Notes after freezing (fd2 wrap-up, 2026-10-25)
+
+*Note (2026-10-25):* §5's Time line (and the 5.2 plan) calls R1 and R2 the exit checks; STYLE says exit checks are C items titled "Exit check". The source follows STYLE (the exit checks are 5.1 C2 and 5.2 C1; `index.md` says "the exit checks"), so only this blueprint's wording is stale. Read "the exit checks R1–R2" as "the exit checks 5.1 C2 and 5.2 C1".
+
+*Note (2026-10-25):* `exm-zorn-representatives`' aftermath now says "no formula for one is known" (S7, F003), not "No formula describes it" as in §4; align this wording when the blueprint is next unfrozen.
+
+*Note (2026-10-25):* the Zorn's-lemma row of the spiral table (`authoring/design/curriculum.md`: F2.4 → LA §1.8 → FA) was added at the wrap-up, so `exr-using-zorn-r3` needs no STYLE §11.5 early-chapter exception note.

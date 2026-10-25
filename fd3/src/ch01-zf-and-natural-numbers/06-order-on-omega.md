@@ -238,7 +238,7 @@ Any other definition of powers on \( \omega \) by the same two equations, \( c(0
 
 ## Tuples and lists as sets
 
-*Sets, Relations, and Cardinality*, Chapter 1 used \( n \)-tuples \( (x_1, \dots, x_n) \) with \( n \) a variable, as working rule (W5), and stated working rule (W2) for lists (*Sets, Relations, and Cardinality*, Section 1.1); *Sets, Relations, and Cardinality*, Chapters 2 and 3 write \( \{x_1, \dots, x_n\} \) with \( n \) a variable. With pairs built from sets (@thm-kuratowski-pair) and with \( \{1, \dots, n\} = \mathrm{S}(n) \setminus \{0\} \) (@thm-omega-order (e)), we can now say what they are. An \( n \)-tuple, for \( n \ge 3 \), is a list of entries labeled by \( 1, \dots, n \), and a function on \( \{1, \dots, n\} \) is exactly that.
+*Sets, Relations, and Cardinality*, Chapter 1 used \( n \)-tuples \( (x_1, \dots, x_n) \) with \( n \) a variable, as working rule (W5), and stated working rule (W2) for lists (*Sets, Relations, and Cardinality*, Section 1.2); *Sets, Relations, and Cardinality*, Chapters 2 and 3 write \( \{x_1, \dots, x_n\} \) with \( n \) a variable. With pairs built from sets (@thm-kuratowski-pair) and with \( \{1, \dots, n\} = \mathrm{S}(n) \setminus \{0\} \) (@thm-omega-order (e)), we can now say what they are. An \( n \)-tuple, for \( n \ge 3 \), is a list of entries labeled by \( 1, \dots, n \), and a function on \( \{1, \dots, n\} \) is exactly that.
 
 ::: {#prp-tuples-as-sets}
 [Tuples and Lists as Sets]
@@ -263,7 +263,7 @@ is a set: the image \( x(\{1, \dots, n\}) \) of @fd2:def-image.
 
 The tuple is the graph alone, without the codomain \( X \), so the same list of entries is the same tuple in every set that contains them.
 
-Since a natural number is also a set, an exponent \( n \in \omega \) could be read in more than one way. In \( X^n \) the exponent is always read as a number: \( X^n \) is the set of \( n \)-tuples of (a), not the set \( Y^X \) of *Sets, Relations, and Cardinality*, Section 1.4 taken with \( Y = X \) and with the set \( n \) as exponent, whose elements are pairs (graph, codomain) with graphs on \( n = \{0, \dots, n - 1\} \). And \( X^n \) is written only for a declared set of entries \( X \), never for \( X \in \omega \); for \( b \in \omega \), \( b^n \) is always the power defined above. For example, the power \( 2^2 \) is \( 4 = \{0, 1, 2, 3\} \), while \( 2 \times 2 \) is a set of four pairs.
+Since a natural number is also a set, an exponent \( n \in \omega \) could be read in more than one way. In \( X^n \) the exponent is always read as a number: \( X^n \) is the set of \( n \)-tuples of (a), not the set \( Y^X \) of *Sets, Relations, and Cardinality*, Section 1.5 taken with \( Y = X \) and with the set \( n \) as exponent, whose elements are pairs (graph, codomain) with graphs on \( n = \{0, \dots, n - 1\} \). And \( X^n \) is written only for a declared set of entries \( X \), never for \( X \in \omega \); for \( b \in \omega \), \( b^n \) is always the power defined above. For example, the power \( 2^2 \) is \( 4 = \{0, 1, 2, 3\} \), while \( 2 \times 2 \) is a set of four pairs.
 
 ::: {.idea}
 Each clause unwinds a definition. Sets come from (Z5) and (Z6); equality of tuples is equality of graphs, which is agreement of values. For (c) and (e), look at the elements: an \( n \)-tuple with \( n \ge 3 \) has at least three elements, all of them pairs, while a pair has at most two elements and every non-zero natural number has the element \( \emptyset \), which is not a pair.
@@ -289,7 +289,7 @@ Let \( 3 \le n < n' \). The \( n' \)-tuple contains a pair with first coordinate
 (e) An \( n \)-tuple \( t \) contains \( (1, x_1) \), so \( t \ne \emptyset = 0 \). Each element of \( t \) is a pair \( (k, x_k) = \{\{k\}, \{k, x_k\}\} \), which has the element \( \{k\} \), so no element of \( t \) is \( \emptyset \). Every \( m \in \omega \) with \( m \ne 0 \) has \( 0 = \emptyset \) as an element (@lem-omega-transitive (e)). So \( t \) is neither \( 0 \) nor any other element of \( \omega \).
 :::
 
-Clause (d) is the second half of working rule (W2): @fd2:prp-finite-max and @fd2:def-finite in *Sets, Relations, and Cardinality*, Chapters 2 and 3, speak of \( \{x_1, \dots, x_n\} \) for a variable \( n \), and this is the set they mean. Clauses (a) and (b) are working rule (W5) for \( n \)-tuples. Clause (c) bears out the convention of *Sets, Relations, and Cardinality*, Chapter 1, that a triple is not a pair, and (e), with @prp-pair-not-natural for \( n = 2 \), that no pair or \( n \)-tuple is a natural number.
+Clause (d) is the second half of working rule (W2): @fd2:prp-finite-max and @fd2:def-finite in *Sets, Relations, and Cardinality*, Chapter 2, speak of \( \{x_1, \dots, x_n\} \) for a variable \( n \), and this is the set they mean. Clauses (a) and (b) are working rule (W5) for \( n \)-tuples. Clause (c) bears out the convention of *Sets, Relations, and Cardinality*, Chapter 1, that a triple is not a pair, and (e), with @prp-pair-not-natural for \( n = 2 \), that no pair or \( n \)-tuple is a natural number.
 
 ## Exercises
 
