@@ -168,13 +168,45 @@ items:
   file: 01-countable-sets.md
   line: 129
   hash: 31b4bdd41887
-  verdicts: []
+  verdicts:
+  - stage: S5a
+    verdict: minor
+    by: refereeA
+    hash: 31b4bdd41887
+    date: '2026-10-25'
+    model: claude-opus-5-5
+    evidence: 01-countable-sets.md:132 The method template names @prp-countable-image as the citation
+      for route (S), but that result is stated later (:161).
+  - stage: S5b
+    verdict: correct
+    by: refereeB
+    hash: 31b4bdd41887
+    date: '2026-10-25'
+    model: claude-opus-5-5
+    evidence: '01-countable-sets.md:129-137: (S) cites def-countable/prp-countable-image, (I) cites thm-countable-characterizations
+      (ii)=>(i) with composition through (i)=>(ii) for a countable target; both routes are sound and agree
+      with how 3.1 later uses them'
 - key: check:01-countable-sets:1
   kind: check
   file: 01-countable-sets.md
   line: 139
   hash: 31bb2cf351ed
-  verdicts: []
+  verdicts:
+  - stage: S5a
+    verdict: minor
+    by: refereeA
+    hash: 31bb2cf351ed
+    date: '2026-10-25'
+    model: claude-opus-5-5
+    evidence: 01-countable-sets.md:144 The solution to quick check 1(b) relies only on results proved
+      later in the section, so the reader cannot answer it from what they have read when the check appears.
+  - stage: S5b
+    verdict: minor
+    by: refereeB
+    hash: 31bb2cf351ed
+    date: '2026-10-25'
+    model: claude-opus-5-5
+    evidence: 01-countable-sets.md:144 Pointer '(... at the end of this section)' is false for @cor-product-countable.
 - key: prp-countable-subset
   kind: prp
   file: 01-countable-sets.md
@@ -426,7 +458,26 @@ items:
   file: 01-countable-sets.md
   line: 295
   hash: 504844455f52
-  verdicts: []
+  verdicts:
+  - stage: S5a
+    verdict: correct
+    by: refereeA
+    hash: 504844455f52
+    date: '2026-10-25'
+    model: claude-opus-5-5
+    evidence: ':300 L is finite, so countable by (iii)=>(i), and L^5 is countable by @cor-product-countable
+      (b) with k=5; L^5 is the product with every A_i=L (:268). The count 26^5 in the parenthetical is
+      right: the bijection from the remark at :293 plus @exr-finite-sets-c2 (a) (|AxB|=mn, checked), applied
+      for k=2,3,4. The parenthetical is not a step toward the answer.'
+  - stage: S5b
+    verdict: correct
+    by: refereeB
+    hash: 504844455f52
+    date: '2026-10-25'
+    model: claude-opus-5-5
+    evidence: 'line 300: L finite => countable by (iii)=>(i); L^5 is the k=5 product (line 268 identifies
+      X^k); counting via exr-finite-sets-c2 (a) (|AxB|=mn, fd2 ch02 05-finite-sets.md:617) plus the bijection
+      L^k x L -> L^{k+1} gives 26^5'
 - key: thm-integers-rationals-countable
   kind: thm
   file: 01-countable-sets.md
@@ -487,13 +538,45 @@ items:
   file: 01-countable-sets.md
   line: 337
   hash: e7f8c62c6f26
-  verdicts: []
+  verdicts:
+  - stage: S5a
+    verdict: correct
+    by: refereeA
+    hash: e7f8c62c6f26
+    date: '2026-10-25'
+    model: claude-opus-5-5
+    evidence: ':344 the map ZxZ->S is onto by the definition of S, ZxZ is countable, and @prp-countable-image
+      applies. N ⊆ S (n=0), so S is infinite by @prp-subset-finite, and (i)=>(iii) finishes. Remark at
+      :347: (n-n'')√2 = m''-m gives √2=(m-m'')/(n''-n), which @fd1:thm-sqrt2-irrational rules out; checked.'
+  - stage: S5b
+    verdict: minor
+    by: refereeB
+    hash: e7f8c62c6f26
+    date: '2026-10-25'
+    model: claude-opus-5-5
+    evidence: 01-countable-sets.md:347 'Route (I) would need the map to be injective' does not match the
+      box's route (I), which injects S itself.
 - key: exm-list-two-element-subsets
   kind: exm
   file: 01-countable-sets.md
   line: 349
   hash: 650ce7d8bb22
-  verdicts: []
+  verdicts:
+  - stage: S5a
+    verdict: minor
+    by: refereeA
+    hash: 650ce7d8bb22
+    date: '2026-10-25'
+    model: claude-opus-5-5
+    evidence: 01-countable-sets.md:356 The solution calls the parametrization that leaves P_2 'the usual
+      failure of the box', but the box's 'usual failure' paragraph does not list it.
+  - stage: S5b
+    verdict: minor
+    by: refereeB
+    hash: 650ce7d8bb22
+    date: '2026-10-25'
+    model: claude-opus-5-5
+    evidence: 01-countable-sets.md:356 Meta-claim 'the usual failure of the box' misnames the box's content.
 - key: exr-countable-sets-a1
   kind: exr
   file: 01-countable-sets.md
@@ -611,6 +694,37 @@ items:
       2 and 1). The rejection of (vii) (:377) now argues that the book has declined to take unique factorization
       as an available fact. This matches the book: ch07/02:112 says it is ''a fact this chapter does not
       prove or use'''
+  - stage: S5a
+    verdict: correct
+    by: refereeA
+    hash: 147fe11653a4
+    date: '2026-10-25'
+    model: claude-opus-5-5
+    evidence: :430 the order (ii),(v),(viii),(i),(ix),(iv),(vi) is a correct proof. (ii) has to be outermost
+      because (iv) uses the equation after the contradiction box closes, and (iv) needs (ix). Line (iii)
+      gets the parities backwards. Line (vii) cites unique factorization, which fd2 Section 2.2 (02-induction-in-practice.md:153)
+      explicitly does not prove or use; the (N9) label @fd1:exm-not-allowed-catalogue ex
+  - stage: S5b
+    verdict: correct
+    by: refereeB
+    hash: 147fe11653a4
+    date: '2026-10-25'
+    model: claude-opus-5-5
+    evidence: 'lines 430-434: the order (ii),(v),(viii),(i),(ix),(iv),(vi) is forced (if (v) came before
+      (ii), the contradiction would discharge the equation, not m≠m''). The (iii) counterexample computes
+      the parities correctly. The (vii) citation claim matches 02-induction-in-practice.md:153 (''does
+      not prove or use'') and fd1 (N9) at 06-checking-proofs.md:67,500'
+  - stage: S6
+    verdict: correct
+    by: verifier
+    hash: 147fe11653a4
+    date: '2026-10-25'
+    model: claude-opus-5-5
+    evidence: '01-countable-sets.md:411-435. My order before reading: (ii),(v),(viii),(i),(ix),(iv),(vi),
+      the same as the book''s. Uniqueness holds: (ii) must open the outer box, (v)..(ix) form the contradiction
+      box, and (iv) needs m=m''. Distractor (iii) reverses the parities; my script confirms the counterexample
+      m=1,m''=0,n=n''=0 gives 2 vs 1. Distractor (vii) cites unique factorization, which the text declines
+      a'
 - key: exr-countable-sets-b3
   kind: exr
   file: 01-countable-sets.md
@@ -646,7 +760,36 @@ items:
   file: 01-countable-sets.md
   line: 455
   hash: fbc7a214f9c1
-  verdicts: []
+  verdicts:
+  - stage: S5a
+    verdict: correct
+    by: refereeA
+    hash: fbc7a214f9c1
+    date: '2026-10-25'
+    model: claude-opus-5-5
+    evidence: ':470-478. (a) f↦(f(0),f(1)) is injective by @prp-function-equality, then composed with
+      p. (b) N≅j(N)⊆A, and A finite would force N finite, which @exm-hilbert-hotel rules out. (c) A={0},
+      B=N: a valid counterexample. (d) A=∅: valid via @prp-empty-function (b). (e) @prp-union-two-countable
+      plus @prp-subset-finite and (i)=>(iii). Every step is justified.'
+  - stage: S5b
+    verdict: gap
+    by: refereeB
+    hash: fbc7a214f9c1
+    date: '2026-10-25'
+    model: claude-opus-5-5
+    evidence: 01-countable-sets.md:478 (e) calls A 'the infinite set A' without proof; the hypothesis
+      gives only |A| = |N|.
+  - stage: S6
+    verdict: correct
+    by: verifier
+    hash: fbc7a214f9c1
+    date: '2026-10-25'
+    model: claude-opus-5-5
+    evidence: '01-countable-sets.md:455-485. My verdicts: (a) T, (b) T, (c) F, (d) F (A=empty; def-countable
+      allows the empty set; prp-empty-function(b)), (e) T. They agree with the book''s. (a) uses route
+      (I) of exm-method-list-it, citing prp-function-equality, thm-product-countable and (ii)=>(i). (b)
+      uses ℕ ≈ j(ℕ) ⊆ A finite, then prp-subset-finite, against exm-hilbert-hotel. (e) cites prp-union-two-countable
+      a'
 - key: exr-countable-sets-c1
   kind: exr
   file: 01-countable-sets.md
@@ -783,19 +926,78 @@ items:
   file: 02-countable-unions-and-choice.md
   line: 75
   hash: 9f9aaaa10df8
-  verdicts: []
+  verdicts:
+  - stage: S5a
+    verdict: correct
+    by: refereeA
+    hash: 9f9aaaa10df8
+    date: '2026-10-25'
+    model: claude-opus-5-5
+    evidence: '02-countable-unions-and-choice.md:75-83: the template (a rule = specification, otherwise
+      flag @ax-choice on a family of non-empty S_i), the triggers, and the failure modes match ax-choice
+      (line 33, which requires non-empty sets) and the warning at line 70. No false claim.'
+  - stage: S5b
+    verdict: correct
+    by: refereeB
+    hash: 9f9aaaa10df8
+    date: '2026-10-25'
+    model: claude-opus-5-5
+    evidence: '02:75-83 matches blueprint ch03-deepen.md:161-163 (only change: ''say that'' dropped from
+      ''no choice is used''). Three bold lead-ins present, about 130 words after stripping markup (at
+      the blueprint''s 130 cap). The non-example pointer (''the non-example above'', 02:59) is accurate.
+      The method''s own advice is not followed at 02:133 (separate finding, key "").'
 - key: check:02-countable-unions-and-choice:1
   kind: check
   file: 02-countable-unions-and-choice.md
   line: 85
   hash: d253830b7b8e
-  verdicts: []
+  verdicts:
+  - stage: S5a
+    verdict: correct
+    by: refereeA
+    hash: d253830b7b8e
+    date: '2026-10-25'
+    model: claude-opus-5-5
+    evidence: 'Lines 85-91: (n+1)^2 = n^2+2n+1 > n holds for every n in N, so k_n := n+1 is a rule. The
+      least element exists because the set is non-empty (@thm-well-ordering, ch02/01:154). The answer
+      ''no'' is right.'
+  - stage: S5b
+    verdict: correct
+    by: refereeB
+    hash: d253830b7b8e
+    date: '2026-10-25'
+    model: claude-opus-5-5
+    evidence: '02:85-91: (n+1)^2 = n^2+2n+1 > n for all n in N, so n+1 is in the set; @thm-well-ordering
+      (fd2 2/01:154) gives the least element. Both rewrites are specifications. Checked in verify/ch03/exr-countable-unions-and-choice-b4.py
+      (last assert).'
 - key: exm-choice-or-rule
   kind: exm
   file: 02-countable-unions-and-choice.md
   line: 93
   hash: 254b4c76db78
-  verdicts: []
+  verdicts:
+  - stage: S5a
+    verdict: correct
+    by: refereeA
+    hash: 254b4c76db78
+    date: '2026-10-25'
+    model: claude-opus-5-5
+    evidence: 'Lines 93-116. (a) A non-empty finite S is {phi(1),...,phi(n)} (def-finite, ch02/05:87-93),
+      so @prp-finite-max applies. (b) One ∃E names a surjection q (thm-integers-rationals-countable);
+      density of Q is a school fact under the book''s convention; min comes from thm-well-ordering. (c)
+      Choice really is needed: in ZF, with no choice, R can be a countable union of countable sets (Feferman-Levy),
+      and su'
+  - stage: S5b
+    verdict: correct
+    by: refereeB
+    hash: 254b4c76db78
+    date: '2026-10-25'
+    model: claude-opus-5-5
+    evidence: 02:93-116 matches blueprint :167-176. (a) @prp-finite-max (2/03:354) covers {x_1,...,x_n}
+      of reals, n>=1. (b) q is one ∃E. The rational-between-reals school fact is in ledger :490. The interval
+      determines a and b, so the rule is well defined. (c) S_A is a subset of A^N; the index set comes
+      by specification in P(R) (ledger :491); 'as far as this book is concerned' is the right hedge. (d)
+      The min se
 - key: thm-surjection-right-inverse
   kind: thm
   file: 02-countable-unions-and-choice.md
@@ -847,7 +1049,23 @@ items:
   file: 02-countable-unions-and-choice.md
   line: 138
   hash: 338f418708d3
-  verdicts: []
+  verdicts:
+  - stage: S5a
+    verdict: correct
+    by: refereeA
+    hash: 338f418708d3
+    date: '2026-10-25'
+    model: claude-opus-5-5
+    evidence: 'Lines 138-144: g(n) := n is a map N→Z with |n| = n, so it is a right inverse given by a
+      formula. (At n=0 the ''two'' preimages n and -n coincide, which is harmless.)'
+  - stage: S5b
+    verdict: minor
+    by: refereeB
+    hash: 338f418708d3
+    date: '2026-10-25'
+    model: claude-opus-5-5
+    evidence: 02-countable-unions-and-choice.md:143 The claim that every n has the two preimages n and
+      -n is false for n = 0.
 - key: thm-countable-union
   kind: thm
   file: 02-countable-unions-and-choice.md
@@ -1160,7 +1378,36 @@ items:
   file: 02-countable-unions-and-choice.md
   line: 353
   hash: f592c193b83f
-  verdicts: []
+  verdicts:
+  - stage: S5a
+    verdict: minor
+    by: refereeA
+    hash: f592c193b83f
+    date: '2026-10-25'
+    model: claude-opus-5-5
+    evidence: 02-countable-unions-and-choice.md:374 Part (d) refutes 'the union is countably infinite'
+      by saying only that the union {0} is finite. It never says why a finite set cannot be countably
+      infinite.
+  - stage: S5b
+    verdict: minor
+    by: refereeB
+    hash: f592c193b83f
+    date: '2026-10-25'
+    model: claude-opus-5-5
+    evidence: '02-countable-unions-and-choice.md:376 The minimum min{j : φ(j) in A_n} has no citation.
+      Every other least-element step in the section cites @thm-well-ordering (B4(c) at 02:372, exm-choice-or-rule
+      (b) and (d), the check at 02:90).'
+  - stage: S6
+    verdict: correct
+    by: verifier
+    hash: f592c193b83f
+    date: '2026-10-25'
+    model: claude-opus-5-5
+    evidence: '02-countable-unions-and-choice.md:353-379. My verdicts: (a) T with choice, (b) F ({n}),
+      (c) T (least preimage, a rule), (d) F (constant {0}), (e) T. They agree with the book''s. (a) correctly
+      says thm-countable-union(a) uses ax-choice (the bold line in its proof at line 170). (e): c(n)=φ(min{j:
+      φ(j)∈A_n}) is a rule; if c were injective, ℕ would be equinumerous with a subset of the finite set
+      U, aga'
 - key: exr-countable-unions-and-choice-c1
   kind: exr
   file: 02-countable-unions-and-choice.md
@@ -1283,13 +1530,49 @@ items:
   file: 03-diagonal-arguments.md
   line: 9
   hash: 2254fb87eee9
-  verdicts: []
+  verdicts:
+  - stage: S5a
+    verdict: correct
+    by: refereeA
+    hash: 2254fb87eee9
+    date: '2026-10-25'
+    model: claude-opus-5-5
+    evidence: '03:16-22: diagonal of 00000,11111,01010,10101,00111 is 0,1,0,0,1, so g=10110; I checked
+      each of the five stated difference places. The general step uses 1-b≠b on {0,1} and the contrapositive
+      of prp-function-equality (fd2 1.5:118). The strings-as-functions {1..5}→{0,1} convention is the
+      one at 1.5:202.'
+  - stage: S5b
+    verdict: correct
+    by: refereeB
+    hash: 2254fb87eee9
+    date: '2026-10-25'
+    model: claude-opus-5-5
+    evidence: 03:9-23. Diagonal of 00000,11111,01010,10101,00111 is 0,1,0,0,1 and g=10110, which differs
+      from s_k in place k for every k. The list matches fd2/src/ch01-sets-and-functions/05-functions.md:202.
+      The verify script verify/ch03/exm-five-strings-diagonal.py passes. prp-function-equality is cited.
+      Meta-claim 03:25 'never used the number 32' is true of the solution.
 - key: check:03-diagonal-arguments:1
   kind: check
   file: 03-diagonal-arguments.md
   line: 27
   hash: 7701303e5177
-  verdicts: []
+  verdicts:
+  - stage: S5a
+    verdict: correct
+    by: refereeA
+    hash: 7701303e5177
+    date: '2026-10-25'
+    model: claude-opus-5-5
+    evidence: '03:27-33: with six strings, the rule needs a sixth place, which does not exist. A list
+      of 32 strings can contain all 2^5 strings, so nothing is contradicted.'
+  - stage: S5b
+    verdict: correct
+    by: refereeB
+    hash: 7701303e5177
+    date: '2026-10-25'
+    model: claude-opus-5-5
+    evidence: 03:27-33. The sixth string has no sixth place to flip. A 32-entry list can hold all 2^5
+      strings (ledger 472, prp-power-set-count at ch02/05:362). No false claim.
 - key: thm-binary-sequences-uncountable
   kind: thm
   file: 03-diagonal-arguments.md
@@ -1340,25 +1623,94 @@ items:
   file: 03-diagonal-arguments.md
   line: 94
   hash: 4ff5579e659f
-  verdicts: []
+  verdicts:
+  - stage: S5a
+    verdict: correct
+    by: refereeA
+    hash: 4ff5579e659f
+    date: '2026-10-25'
+    model: claude-opus-5-5
+    evidence: '03:94-102: the template quantifies over an arbitrary f first, and d depends only on f.
+      Uncountability also needs X≠∅, and the template flags it, matching def-countable as used at 03:37.
+      Its failure modes match the later uses (thm-reals-uncountable-decimal, B4(a)).'
+  - stage: S5b
+    verdict: correct
+    by: refereeB
+    hash: 4ff5579e659f
+    date: '2026-10-25'
+    model: claude-opus-5-5
+    evidence: '03:94-102. The template matches the proof at 03:85-89, including ''check X != empty'' for
+      def-countable. ''Met below'' points are both on the page: 0.4999... at 03:268 and the warning at
+      03:120. The R4/B4(a)/C2 uses of ''the usual failure'' agree with the first failure listed.'
 - key: check:03-diagonal-arguments:2
   kind: check
   file: 03-diagonal-arguments.md
   line: 104
   hash: 8f02c6bfefb4
-  verdicts: []
+  verdicts:
+  - stage: S5a
+    verdict: correct
+    by: refereeA
+    hash: 8f02c6bfefb4
+    date: '2026-10-25'
+    model: claude-opus-5-5
+    evidence: '03:104-110: on the all-zero list, the unflipped diagonal is the zero sequence, which is
+      f(0).'
+  - stage: S5b
+    verdict: correct
+    by: refereeB
+    hash: 8f02c6bfefb4
+    date: '2026-10-25'
+    model: claude-opus-5-5
+    evidence: 03:104-110. On the all-zero list the unflipped diagonal is the zero sequence, which is f(0).
+      Correct.
 - key: check:03-diagonal-arguments:3
   kind: check
   file: 03-diagonal-arguments.md
   line: 112
   hash: 6e6465b73e7a
-  verdicts: []
+  verdicts:
+  - stage: S5a
+    verdict: correct
+    by: refereeA
+    hash: 6e6465b73e7a
+    date: '2026-10-25'
+    model: claude-opus-5-5
+    evidence: '03:112-118: ind_{{n}}(n)=1, so g is the zero sequence. Each f(n) has a 1 in place n, so
+      g≠f(n). ind is defined at 1.5:61.'
+  - stage: S5b
+    verdict: correct
+    by: refereeB
+    hash: 6e6465b73e7a
+    date: '2026-10-25'
+    model: claude-opus-5-5
+    evidence: 03:112-118. ind_{n}(n)=1 gives g = the zero sequence, and no f(n) is the zero sequence because
+      each has a 1 in place n. \ind is in NOTATION:82.
 - key: exm-diagonal-outgrows-list
   kind: exm
   file: 03-diagonal-arguments.md
   line: 124
   hash: ea87362eb737
-  verdicts: []
+  verdicts:
+  - stage: S5a
+    verdict: correct
+    by: refereeA
+    hash: ea87362eb737
+    date: '2026-10-25'
+    model: claude-opus-5-5
+    evidence: '03:130-138: g(n)=max{f_0(n),...,f_n(n)}+1. prp-finite-max (2.3:354) covers n+1≥1 reals,
+      so it applies to these naturals. The max is one of the listed values, so it is in N, and so is g(n).
+      For n≥k, f_k(n) is in the set, so f_k(n)≤max<g(n). The order is correct: g is fixed before k and
+      n are taken.'
+  - stage: S5b
+    verdict: correct
+    by: refereeB
+    hash: ea87362eb737
+    date: '2026-10-25'
+    model: claude-opus-5-5
+    evidence: 03:124-138. prp-finite-max (ch02/03:354, for reals x_1..x_n with n>=1) applies with n+1
+      values. The max is an element, so g(n) is in N. For n>=k, f_k(n) is in the set. The text never states
+      g != f_k, as blueprint item 14 requires. verify/ch03/exm-diagonal-outgrows-list.py passes.
 - key: thm-cantor
   kind: thm
   file: 03-diagonal-arguments.md
@@ -1807,7 +2159,38 @@ items:
   file: 03-diagonal-arguments.md
   line: 357
   hash: 893e81f02062
-  verdicts: []
+  verdicts:
+  - stage: S5a
+    verdict: correct
+    by: refereeA
+    hash: 893e81f02062
+    date: '2026-10-25'
+    model: claude-opus-5-5
+    evidence: 03:371-380. (a) The division-algorithm hypothesis p>0 holds, and q≥0 follows because qp=n-r>-p.
+      Restriction is injective, the finite set injects into N by thm-countable-characterizations (iii)⇒(ii),
+      and thm-countable-union (b) applies with I=Z_{>0}, which is countable. (b) n↦(b(n) at even places,
+      0 at odd places) is injective, and composing it with an injection into N would contradict thm-binary-s
+  - stage: S5b
+    verdict: correct
+    by: refereeB
+    hash: 893e81f02062
+    date: '2026-10-25'
+    model: claude-opus-5-5
+    evidence: 03:357-381. (a) thm-division-algorithm (ch02/02:157, a in Z) and q>=0 is argued. 2^p comes
+      from prp-power-set-count via indicators. thm-countable-characterizations (iii)=>(ii)=>(i) matches
+      the numbering at ch03/01:89. thm-countable-union (b) is indexed by a countable I. (b) uses (i)=>(ii)
+      correctly. (c) thm-left-inverse-iff-injective item (b) needs X != empty, and the solution supplies
+      it. (d) and
+  - stage: S6
+    verdict: minor
+    by: verifier
+    hash: 893e81f02062
+    date: '2026-10-25'
+    model: claude-opus-5-5
+    evidence: '03-diagonal-arguments.md:375 Part (a) concludes countability by citing thm-countable-union
+      (b), whose proof uses ax-choice, and then says ''No choice is involved''. As written this is self-contradictory:
+      the cited proof does use choice. The choice-free alternative is only sketched (''order the 2^p patterns
+      lexicographically ... as in exm-choice-free-unions''), and no single listing function is written'
 - key: exr-diagonal-arguments-c1
   kind: exr
   file: 03-diagonal-arguments.md
@@ -1995,7 +2378,25 @@ items:
   file: 04-comparing-cardinalities.md
   line: 70
   hash: 0602df634d03
-  verdicts: []
+  verdicts:
+  - stage: S5a
+    verdict: correct
+    by: refereeA
+    hash: 0602df634d03
+    date: '2026-10-25'
+    model: claude-opus-5-5
+    evidence: '04:74-76: a ↦ {n : a(n)=1}. Equal sets mean the 1s are at the same places, hence the 0s
+      too, so the sequences are equal by prp-function-equality (same domain ℕ and codomain {0,1}). The
+      inverse S ↦ ind_S matches the remark after cor-powerset-naturals-uncountable (03-diagonal-arguments.md:186).'
+  - stage: S5b
+    verdict: correct
+    by: refereeB
+    hash: 0602df634d03
+    date: '2026-10-25'
+    model: claude-opus-5-5
+    evidence: '04:70-76: a ↦ {n : a(n)=1} is injective via @prp-function-equality; the inverse S ↦ ind_S
+      and ''correspondence of Section 1.5'' check out (exm-function-set-small is in 05-functions.md, Section
+      1.5; the recall is at 03-diagonal-arguments.md:186, after cor-powerset-naturals-uncountable).'
 - key: thm-schroder-bernstein
   kind: thm
   file: 04-comparing-cardinalities.md
@@ -2093,13 +2494,48 @@ items:
   file: 04-comparing-cardinalities.md
   line: 172
   hash: 5eeceb0dbb69
-  verdicts: []
+  verdicts:
+  - stage: S5a
+    verdict: correct
+    by: refereeA
+    hash: 5eeceb0dbb69
+    date: '2026-10-25'
+    model: claude-opus-5-5
+    evidence: '04:172-180: the template is just thm-schroder-bernstein. The cross-references hold: there
+      is a warning after def-card-le (l.29) and one after exm-reals-open-interval (l.255). The failure
+      example is right: x/2 maps 0 to 0, which is not in (0,1).'
+  - stage: S5b
+    verdict: correct
+    by: refereeB
+    hash: 5eeceb0dbb69
+    date: '2026-10-25'
+    model: claude-opus-5-5
+    evidence: '04:172-180: the template matches blueprint ch03-deepen §4.4 item 3. ''the warnings after
+      @def-card-le and after @exm-reals-open-interval'' points to real warnings (04:29, 04:255); this
+      wording is S3 deviation 5. The x/2 failure example is correct.'
 - key: check:04-comparing-cardinalities:2
   kind: check
   file: 04-comparing-cardinalities.md
   line: 182
   hash: 3bbc043c9b2e
-  verdicts: []
+  verdicts:
+  - stage: S5a
+    verdict: correct
+    by: refereeA
+    hash: 3bbc043c9b2e
+    date: '2026-10-25'
+    model: claude-opus-5-5
+    evidence: '04:186-188: the two clauses do not overlap because 5 ∉ [0,1]. Values: x/2 ∈ [0,1/2] and
+      1 ∈ [0,1]. Injective within [0,1], and across the two clauses because x/2 ≤ 1/2 < 1. The inclusion
+      handles the other direction, then SB applies.'
+  - stage: S5b
+    verdict: minor
+    by: refereeB
+    hash: 3bbc043c9b2e
+    date: '2026-10-25'
+    model: claude-opus-5-5
+    evidence: 04-comparing-cardinalities.md:187 In the injectivity sentence the comparison is between
+      a point and 5, when it should be between their images.
 - key: exm-closed-open-interval
   kind: exm
   file: 04-comparing-cardinalities.md
@@ -2123,6 +2559,24 @@ items:
     model: claude-opus-5-5
     evidence: 05:178-203. Cases are disjoint, H→H' is a bijection, φ is the identity on the complement,
       and the sample values are right. The sidecar passes.
+  - stage: S5a
+    verdict: correct
+    by: refereeA
+    hash: b977904dc4f8
+    date: '2026-10-25'
+    model: claude-opus-5-5
+    evidence: '04:209: u maps [0,1] into [1/4,3/4] ⊆ (0,1) and is injective. 04:211-224: φ(H) = {1/2}
+      ∪ {1/3,1/4,...} = H'', injective on H because 1/(n+2) ≤ 1/3 < 1/2. [0,1]∖H = (0,1)∖H'' holds because
+      0 and 1 = 1/1 lie in H. Pasting two bijections on disjoint pieces gives a bijection. Spot values
+      φ(1)=1/3, φ(1/2)=1/4 are correct.'
+  - stage: S5b
+    verdict: minor
+    by: refereeB
+    hash: b977904dc4f8
+    date: '2026-10-25'
+    model: claude-opus-5-5
+    evidence: 04-comparing-cardinalities.md:220 The claim that φ takes values in (0,1) is justified only
+      for the second case.
 - key: exm-reals-open-interval
   kind: exm
   file: 04-comparing-cardinalities.md
@@ -2148,12 +2602,50 @@ items:
     evidence: 05:207-229. The algebra for both inverses is right, and s(-3)=-3/4. The interval-convexity
       fact is ledgered. The uncountability corollary correctly uses thm-reals-uncountable-decimal and
       prp-countable-image. The sidecar passes.
+  - stage: S5a
+    verdict: correct
+    by: refereeA
+    hash: a8a8b7bc038d
+    date: '2026-10-25'
+    model: claude-opus-5-5
+    evidence: '04:238-246: computed |s(x)| = |x|/(1+|x|), so 1-|s(x)| = 1/(1+|x|) and t(s(x)) = x; symmetrically
+      s(t(y)) = y. Then thm-bijection-iff-inverse. Affine maps compose with s by thm-composition-injective-surjective
+      (c) (01-sets/05-functions.md:510, part (c) is bijections). For a general interval I ⊇ (c,d), the
+      restriction of β is an injection I → (c,d); SB plus transitivity (prp-equinumerous-properties'
+  - stage: S5b
+    verdict: minor
+    by: refereeB
+    hash: a8a8b7bc038d
+    date: '2026-10-25'
+    model: claude-opus-5-5
+    evidence: 'The math is checked: t∘s = id and s∘t = id (04:238-246); the affine maps; composition by
+      thm-composition-injective-surjective (c) (bijective); restriction of β to I is injective. The only
+      problem is ledger 04:467, which cites verify/ch08/exm-reals-open-interval.py when the file is verify/ch03/.'
 - key: check:04-comparing-cardinalities:3
   kind: check
   file: 04-comparing-cardinalities.md
   line: 259
   hash: 63f7568087b4
-  verdicts: []
+  verdicts:
+  - stage: S5a
+    verdict: correct
+    by: refereeA
+    hash: 63f7568087b4
+    date: '2026-10-25'
+    model: claude-opus-5-5
+    evidence: '04:264: n ↦ (n,1) is injective by def-ordered-pair. Injectivity of 2^m 3^n is the statement
+      of thm-product-countable (01-countable-sets.md:227, in Section 3.1, which matches the prose). SB
+      then gives a bijection ℕ → ℕ×ℕ, which is countably infinite by def-countably-infinite (01:41, either
+      direction allowed).'
+  - stage: S5b
+    verdict: correct
+    by: refereeB
+    hash: 63f7568087b4
+    date: '2026-10-25'
+    model: claude-opus-5-5
+    evidence: '04:264: (n,1) is injective by def-ordered-pair, and 2^m3^n is from the proof of thm-product-countable
+      (01:230). def-countably-infinite (01:44) itself allows a bijection N → A. ''Section 3.1 showed only
+      that N×N is countable'' is true: thm-product-countable states only countability.'
 - key: exr-comparing-cardinalities-a1
   kind: exr
   file: 04-comparing-cardinalities.md
@@ -2307,7 +2799,37 @@ items:
   file: 04-comparing-cardinalities.md
   line: 360
   hash: 63e84957f167
-  verdicts: []
+  verdicts:
+  - stage: S5a
+    verdict: correct
+    by: refereeA
+    hash: 63e84957f167
+    date: '2026-10-25'
+    model: claude-opus-5-5
+    evidence: '(a) 04:375: thm-integers-rationals-countable states that ℤ and ℚ are countably infinite,
+      so the statement is false. (b) 04:377: uses both hypotheses; φ^{-1}∘k : B → A is injective, so SB
+      contradicts |A|<|B|. (c) uses thm-countable-characterizations (i)⇔(ii) and composition. (d) a ↦
+      a with codomain ℕ is injective by prp-function-equality (domain, codomain and values agree). The
+      graph map, S ↦ p(S) '
+  - stage: S5b
+    verdict: minor
+    by: refereeB
+    hash: 63e84957f167
+    date: '2026-10-25'
+    model: claude-opus-5-5
+    evidence: 04-comparing-cardinalities.md:383 The B4(d) solution uses the symbol Γ_f for the graph of
+      f, but Γ_f is not in NOTATION and clashes with the reserved Γ / Γ_k.
+  - stage: S6
+    verdict: correct
+    by: verifier
+    hash: 63e84957f167
+    date: '2026-10-25'
+    model: claude-opus-5-5
+    evidence: 04-comparing-cardinalities.md:360-389. Before reading the solution I got (a) F, (b) T, (c)
+      T, (d) T by Schröder-Bernstein, (e) T, and the book agrees on all five. (a) Z and Q are both countably
+      infinite. (b) If A were equinumerous with C, then phi^{-1} o k would inject B into A, and Schröder-Bernstein
+      would give |A|=|B|, which is excluded. (c) Compose the injections and use characterization (ii)
+      a
 - key: exr-comparing-cardinalities-c1
   kind: exr
   file: 04-comparing-cardinalities.md
@@ -2447,7 +2969,26 @@ items:
   file: 05-infinite-sets.md
   line: 61
   hash: 2e347da86b3a
-  verdicts: []
+  verdicts:
+  - stage: S5a
+    verdict: correct
+    by: refereeA
+    hash: 2e347da86b3a
+    date: '2026-10-25'
+    model: claude-opus-5-5
+    evidence: '05-infinite-sets.md:61-67: X ≠ ∅ since ∅ is countable by def-countable (01-countable-sets.md:16,
+      ''A = ∅ or ...''); X = (X\{x}) ∪ {x} with prp-union-two-countable (01:173, no hypotheses beyond
+      countability); {x} countable via a constant surjection, which is trivial and left unstated. Every
+      step is justified.'
+  - stage: S5b
+    verdict: correct
+    by: refereeB
+    hash: 2e347da86b3a
+    date: '2026-10-25'
+    model: claude-opus-5-5
+    evidence: '05:61-67: emptiness from def-countable (01:13, A = emptyset is countable); X = (X\{x})
+      ∪ {x}, with {x} countable, so prp-union-two-countable (01:173) applies. Both cited labels come earlier
+      in the book.'
 - key: thm-infinite-iff-proper-subset
   kind: thm
   file: 05-infinite-sets.md
@@ -2499,7 +3040,27 @@ items:
   file: 05-infinite-sets.md
   line: 105
   hash: b2017c0bb9a2
-  verdicts: []
+  verdicts:
+  - stage: S5a
+    verdict: correct
+    by: refereeA
+    hash: b2017c0bb9a2
+    date: '2026-10-25'
+    model: claude-opus-5-5
+    evidence: '05:105-111: exm-reals-open-interval (04-comparing-cardinalities.md:231) proves x↦x/(1+|x|)
+      is a bijection ℝ→(-1,1), and that every interval with more than one point is equinumerous with ℝ,
+      so the parenthetical ''any interval with more than one point other than ℝ'' (proper subset) is covered.
+      ''No choice needed'' refers to the formula bijection for (-1,1), which is accurate.'
+  - stage: S5b
+    verdict: correct
+    by: refereeB
+    hash: b2017c0bb9a2
+    date: '2026-10-25'
+    model: claude-opus-5-5
+    evidence: '05:105-111: exm-reals-open-interval (04:231) proves x/(1+|x|) is a bijection R -> (-1,1),
+      and its third part covers every interval with more than one point (through Schroder-Bernstein).
+      So the parenthetical ''any interval ... works, by the same example'' is true. The ''no choice''
+      remark is about the formula bijection to (-1,1), which is accurate.'
 - key: exr-infinite-sets-a1
   kind: exr
   file: 05-infinite-sets.md
@@ -2752,6 +3313,35 @@ items:
       x=1 gives 2^n ≥ n+1). This gives 0 ≤ s < 2^K and k_i<K. My script checks the greedy decomposition
       for n<3000, including 13=2^3+2^2+2^0. The source (Ch 7) is hidden in the problem and named in the
       solution by @thm-strong-induction-from-base.
+  - stage: S5a
+    verdict: correct
+    by: refereeA
+    hash: a7f26b29f42b
+    date: '2026-10-25'
+    model: claude-opus-5-5
+    evidence: '05:252-266: thm-strong-induction-from-base (ch02/02:42) used with n0=1, and the hypothesis
+      matches (''every integer m with 1≤m<n''). thm-bernoulli (x=1≥-1) gives 2^n≥1+n. thm-well-ordering
+      gives the least m∈T; m≥1 since 2^0=1≤n, and K=m-1 via lem-naturals-arithmetic (c). 2^{K+1}-2^K=2^K
+      by prp-power-laws (a). k_i<K: k_i=K gives equality and k_i>K gives strict inequality by (e); both
+      contradict 2^{k_'
+  - stage: S5b
+    verdict: minor
+    by: refereeB
+    hash: a7f26b29f42b
+    date: '2026-10-25'
+    model: claude-opus-5-5
+    evidence: 05-infinite-sets.md:332 Ledger row cites a verification script path that no longer exists.
+  - stage: S6
+    verdict: correct
+    by: verifier
+    hash: a7f26b29f42b
+    date: '2026-10-25'
+    model: claude-opus-5-5
+    evidence: '05-infinite-sets.md:246-266. My solution: strong induction from 1, take the largest 2^K
+      <= n, and apply the hypothesis to n - 2^K < 2^K. The book takes the same route. T is non-empty by
+      Bernoulli with x=1 (02/03:324). The least-element step and K=m-1 are fine. s<n holds because 2^K>=1,
+      and k_i<K follows from prp-power-laws (e) (03-recursion:255; the equality case is trivial). The
+      base n=1 is handl'
 - key: exr-infinite-sets-r2
   kind: exr
   file: 05-infinite-sets.md
@@ -2827,6 +3417,34 @@ items:
     evidence: 06:280-292. The answer 2^{2^n} is right. The bijections rows↔P({1..n}) and truth functions↔P(L)
       are correct, and prp-power-set-count gives the count. Brute force gives 4, 16, 256 for n=1,2,3.
       The source (@def-truth-function) is hidden in the problem and named in the solution.
+  - stage: S5a
+    verdict: correct
+    by: refereeA
+    hash: d930ad9524f4
+    date: '2026-10-25'
+    model: claude-opus-5-5
+    evidence: '05:292-298: matches fd1:def-truth-function (fd1 ch04/04:340, n≥1, lists of T/F). Row ↔
+      set of T-places is a bijection L→P({1..n}), so |L|=2^n by prp-power-set-count (ch02/05:362) and
+      composition. Truth function ↔ set of T-rows is a bijection with P(L), giving 2^{2^n}. Values 4,
+      16, 256 are right. Sidecar verify/ch03/exr-infinite-sets-r3.py prints ok.'
+  - stage: S5b
+    verdict: minor
+    by: refereeB
+    hash: d930ad9524f4
+    date: '2026-10-25'
+    model: claude-opus-5-5
+    evidence: 05-infinite-sets.md:334 Ledger row cites a verification script path that no longer exists.
+  - stage: S6
+    verdict: correct
+    by: verifier
+    hash: d930ad9524f4
+    date: '2026-10-25'
+    model: claude-opus-5-5
+    evidence: '05-infinite-sets.md:286-297. My answer: 2^{2^n}, via rows <-> P({1..n}) and truth functions
+      <-> P(rows). The book agrees and the bijections are stated correctly. prp-power-set-count (ch02/05:365)
+      applies twice. My brute-force script gave 4, 16, 256 for n=1,2,3, matching the text. The problem
+      hides its source and the solution cites @fd1:def-truth-function (the spiral item, allowed under
+      the early-c'
 - key: exr-infinite-sets-r4
   kind: exr
   file: 05-infinite-sets.md
@@ -2859,6 +3477,35 @@ items:
     evidence: '06:294-310. Yes, the set is countable: Z_N has one element, or bijects with ℕ, or with
       ℕ^N, and thm-countable-union finishes. The solution names the tool and explains why the diagonal
       look-alike fails (g(n)≥1, so g is not eventually zero). The problem gives no hint of its method.'
+  - stage: S5a
+    verdict: correct
+    by: refereeA
+    hash: 279a5fd8634b
+    date: '2026-10-25'
+    model: claude-opus-5-5
+    evidence: '05:306-316: Z=∪Z_N. Z_0 is the singleton {zero function}. Z_1≅ℕ via f(0). For N≥2, Z_N≅ℕ^N
+      (NOTATION: X^n is n-tuples), countable by cor-product-countable (b) (k≥2, 01:270), which is why
+      N=0 and N=1 are handled separately; transfer by prp-countable-image. thm-countable-union (a) (02:150)
+      concludes. Diagonal paragraph: g(n)=f_n(n)+1≥1 is not eventually zero, which matches the ''usual
+      failure'' of exm'
+  - stage: S5b
+    verdict: minor
+    by: refereeB
+    hash: 279a5fd8634b
+    date: '2026-10-25'
+    model: claude-opus-5-5
+    evidence: 05-infinite-sets.md:335 Ledger tag gives the wrong section for the characteristic property
+      of tuples.
+  - stage: S6
+    verdict: minor
+    by: verifier
+    hash: 279a5fd8634b
+    date: '2026-10-25'
+    model: claude-opus-5-5
+    evidence: 05-infinite-sets.md:311 The solution writes \nN^N for the set of N-tuples. NOTATION.md has
+      no row for A^k as tuples; its only row, Y^X, means the set of functions X -> Y. In this chapter
+      \nN^{\nN} means functions N -> N (B4(d), 04:370), and the letter N here sits right beside the blackboard
+      \nN, so \nN^N reads as 'functions from N to \nN' as easily as 'N-tuples'.
 - key: check:02-countable-sets:1
   kind: check
   file: 01-countable-sets.md
