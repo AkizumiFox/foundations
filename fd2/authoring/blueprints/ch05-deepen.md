@@ -288,3 +288,6 @@ Referee B:
 - **Checkers:** `check_structure.py` (0 fatal; main line ≤ 4,500 per section by `--words`), `check_numbers.py`, `check_notation.py`, the forward-deps check (5.1 cites nothing after 5.1 except fd1; 5.2 cites only 5.1 and earlier). Builds may fail on other chapters' half-edited files during the parallel run; only Chapter 5 must be clean.
 - **Review:** both sections, full pipeline (layout §7).
 - **Calls made here (not blocking, for the author):** (1) The half Zorn ⇒ choice is proved in 5.1 as the template's first full use (`thm-choice-from-zorn`); layout §1 names "thm-zorn stated" and the template, and this is the template's most instructive first instance. (2) "Linear order" is introduced only as a synonym; fd2's word stays "total". (3) The basis subsection carries no label and no proof (vector spaces are not defined in this volume).
+
+## S3 deviations (S4 record)
+- 5.2: added warning "One comparison at a time" and a paragraph on maximal matchings on N; 5.1: B1 hint folded, C2 Hint 1, Fatal-errors lines. Chain row and script letters sD sE sT not yet in NOTATION.md.
