@@ -3418,22 +3418,153 @@ items:
   file: 04-products-and-relations.md
   line: 538
   hash: 45a28ff4d4a4
-  verdicts: []
+  verdicts:
+  - stage: S5a
+    verdict: correct
+    by: refereeA
+    hash: 45a28ff4d4a4
+    date: '2026-10-26'
+    model: claude-opus-5-5
+    evidence: '04-products-and-relations.md:538-587. The Fitch derivation checks: ∀I at 12 (6-11) and
+      16 (3-15). The eigenvariables S_0 and x_0 do not occur in lines 1-2 or in the conclusion. The ''by
+      def.'' steps match def-subset (02:75) and def-power-set (03:208). The prose has five boxes, each
+      assigned to a sentence correctly. The ''Section 8.3'' pointer matches fd1 ch08/03 def-levels-of-proof.
+      check_fitch: 0 err'
+  - stage: S5b
+    verdict: minor
+    by: refereeB
+    hash: 45a28ff4d4a4
+    date: '2026-10-26'
+    model: claude-opus-5-5
+    evidence: 04-products-and-relations.md:587 STYLE says an R item's solution names its source with an
+      @ref. R1's solution gives only a prose pointer, even though the label exists and the blueprint asks
+      for the citation.
+  - stage: S6
+    verdict: minor
+    by: verifier
+    hash: 45a28ff4d4a4
+    date: '2026-10-26'
+    model: claude-opus-5-5
+    evidence: '04-products-and-relations.md:585 The R1 solution names its source only by a prose pointer
+      ("level 0 to level 3 of *Logic and Proof*, Section 8.3"). It has no @ref. STYLE §11.5/213 says an
+      R item''s solution names its source with @ref, and PIPELINE.md:119 checks that rule. The ledger
+      line "levels of proof | F1.5 (promised): def-levels-of-proof" is stale: the label is drafted at
+      fd1/src/ch08-from-der'
+  - stage: S8
+    verdict: minor
+    by: seam
+    hash: 45a28ff4d4a4
+    date: '2026-10-26'
+    model: claude-opus-5-5
+    evidence: 04-products-and-relations.md:586 STYLE §11.5 says an R item's solution names its source
+      with @ref. R1's source is the levels of proof in *Logic and Proof*, Chapter 8 (F1.5), and the solution
+      points to it only in prose. The ledger lines for R1 also still list the source as promised.
 - key: exr-images-and-preimages-r2
   kind: exr
   file: 04-products-and-relations.md
   line: 589
   hash: d105429cce7e
-  verdicts: []
+  verdicts:
+  - stage: S5a
+    verdict: correct
+    by: refereeA
+    hash: d105429cce7e
+    date: '2026-10-26'
+    model: claude-opus-5-5
+    evidence: '04:589-614. I checked all 8 rows by hand. The two columns differ exactly at TTT and TFT.
+      A=B=C={1} gives {1} vs ∅, and A=C={1}, B=∅ gives the same. The cor-refuting-row statement (fd1 07-soundness:389)
+      matches the use. Sidecar exr-images-and-preimages-r2.py: all quoted values check. check_fitch truth
+      table: 0 errors.'
+  - stage: S5b
+    verdict: correct
+    by: refereeB
+    hash: d105429cce7e
+    date: '2026-10-26'
+    model: claude-opus-5-5
+    evidence: '04:589-614. Recomputed all 8 rows: the columns differ in rows 1 and 3 only. A=B=C={1} gives
+      {1} against ∅, and A=C={1}, B=∅ gives the same pair. The sidecar verify/ch01/exr-images-and-preimages-r2.py
+      agrees. @fd1:cor-refuting-row (fd1 ch04 07:389) is used as stated. ''Logic and Proof, Chapter 4''
+      is F1.3, which matches.'
+  - stage: S6
+    verdict: correct
+    by: verifier
+    hash: d105429cce7e
+    date: '2026-10-26'
+    model: claude-opus-5-5
+    evidence: 04:589-614. My own script (scratchpad S6:01a/r2.py) reproduces all 8 rows. The columns differ
+      only in rows 1 (TTT) and 3 (TFT). For A=B=C={1}, LHS={1} and RHS=∅; for A=C={1}, B=∅, the answers
+      are the same. The appeal to @fd1:cor-refuting-row (fd1 ch04 07:389) matches that corollary's statement.
+      The source is named with @ref.
 - key: exr-images-and-preimages-r3
   kind: exr
   file: 04-products-and-relations.md
   line: 616
   hash: ebda37a879f9
-  verdicts: []
+  verdicts:
+  - stage: S5a
+    verdict: correct
+    by: refereeA
+    hash: ebda37a879f9
+    date: '2026-10-26'
+    model: claude-opus-5-5
+    evidence: '04:616-652. The derivation is valid: LEM at line 3, ∨E (3, 4-5, 6-9), ∧I and →E at lines
+      7-8, →I (2-10). check_fitch: 0 errors. The set reading unwinds def-subset and def-set-operations
+      at a fixed x. The derived rule is applied to the instance P:=x∈A etc. (fd1 def-derived-rule). The
+      classical step is identified correctly as LEM via RAA (fd1 def-rule-raa, prp-excluded-middle).'
+  - stage: S5b
+    verdict: correct
+    by: refereeB
+    hash: ebda37a879f9
+    date: '2026-10-26'
+    model: claude-opus-5-5
+    evidence: 04:616-652. The Fitch derivation is valid (∨E 3,4-5,6-9; →I 2-10). The \lem{} justification
+      matches fd1 usage (fd1 ch06 02:738). The set reading cites def-subset, def-set-operations and @fd1:def-derived-rule.
+      The classical step (line 3, from LEM via @fd1:def-rule-raa) is named correctly, and the sequent
+      really is not intuitionistically derivable (P=T, R=⊥ leaves ¬¬Q ⊢ Q).
+  - stage: S6
+    verdict: correct
+    by: verifier
+    hash: ebda37a879f9
+    date: '2026-10-26'
+    model: claude-opus-5-5
+    evidence: 04:616-652. My solution (→I on P, LEM on Q, ∨E) is the book's 11-line derivation; every
+      rule citation checks and the sequent is a tautology (script). The reading as sets unwinds A∖B⊆C
+      at x to (P∧¬Q)→R, which is correct. The book names line 3 (LEM) as the classical step and cites
+      @fd1:prp-excluded-middle and @fd1:def-rule-raa. That matches fd1 ch02 05:284-347, where LEM is derived
+      by one RAA.
 - key: exr-images-and-preimages-r4
   kind: exr
   file: 04-products-and-relations.md
   line: 654
   hash: faf3a07684a2
-  verdicts: []
+  verdicts:
+  - stage: S5a
+    verdict: correct
+    by: refereeA
+    hash: faf3a07684a2
+    date: '2026-10-26'
+    model: claude-opus-5-5
+    evidence: '04:654-664. T is a set of sets by specification (def-set-builder). ⋃T is defined via the
+      ⋃𝒮 clause of def-family-union-intersection (03:255, earlier section). x∈{x}∈T gives x∈⋃T for every
+      set x. This contradicts the second sentence of thm-russell (02:384), ''no set of which every set
+      is an element''. The quantifier order is fine: S is fixed first, then T, then x is arbitrary.'
+  - stage: S5b
+    verdict: correct
+    by: refereeB
+    hash: faf3a07684a2
+    date: '2026-10-26'
+    model: claude-opus-5-5
+    evidence: 04:654-662. T is cut out by specification. ⋃T uses the ⋃𝒮 form of def-family-union-intersection
+      (03:255-272), which needs only that the elements of 𝒮 are sets, and T guarantees that. Every set
+      x lies in ⋃T because x ∈ {x} ∈ T, and this contradicts the second sentence of thm-russell (02:384-388).
+      The remark that applying Russell's theorem to S directly gives only R_S ∉ S is accurate.
+  - stage: S6
+    verdict: correct
+    by: verifier
+    hash: faf3a07684a2
+    date: '2026-10-26'
+    model: claude-opus-5-5
+    evidence: '04:654-664. My proof: if S contains every {x}, then the union of the singletons in S contains
+      every object, which contradicts @thm-russell. The book proves the same thing, and it correctly first
+      cuts T={s∈S : s a singleton} by specification, so that ⋃T is defined for a set of sets (@def-family-union-intersection,
+      03:255-271). @thm-russell''s second sentence (02:384-388) gives the contradiction. As '
