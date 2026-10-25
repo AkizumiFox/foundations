@@ -60,12 +60,20 @@ So the first kind of reading does three things the second does not. It **checks*
 
 For each line, ask four questions, in this order.
 
-1. **What kind of line is it?** An assumption that opens a box ("let", "suppose", "choose … such that"), a line derived from earlier ones, or the closing of a box ("hence", "so", "since \( x \) was arbitrary").
+1. **What kind of line is it?** An assumption that opens a box ("let", "suppose", "choose … such that"), a line derived from earlier ones, or the closing of a box ("hence", "so", "since \( x \) was arbitrary"). In a derivation the annotation answers it: "asm, for \( \rulename{{\to}I} \)" beside an assumption names the rule that will close its box (Section 8.1).
 2. **Where does it come from?** Name the earlier lines, the definitions and the results it uses. "Line 2", "the definition of even", "@thm-square-even-implies-even", "the hypothesis \( x > 0 \)". A result is named, not paraphrased.
 3. **By which step?** A rule of Chapters 1–7, or a piece of arithmetic that you can say in one clause ("divide both sides by \( x \)", "expand the square").
 4. **Is it legitimate here?** Is every cited line still available, inside the boxes that are open (@def-derivation)? Is a chosen name fresh? Does a division have a non-zero divisor, and does an inequality keep its direction?
 
 You do not need to write out a derivation; a phrase per line is enough, at the level of the "explained well" column above. When you cannot answer one of the four questions, you have found what to look at: either a step you do not yet understand, or a gap in the proof. Section 8.3 says what to do next: expand that stretch to level 1.
+
+::: {.check}
+Which of the four questions does the bad explanation of line 3 in @exm-self-explanation fail to answer?
+:::
+
+::: {.solution}
+The fourth, whether the step is legitimate here: does dividing by \( x \) keep the direction of the inequality? With it the second fails too, since the warrant \( x > 0 \) is never named.
+:::
 
 ::: {.warning}
 **Self-explanation is not re-reading, and not summarizing.** Reading a proof twice more makes it familiar, not checked: familiarity is what makes the bad explanation of @exm-self-explanation feel adequate. A summary ("the proof expands a square and divides by \( x \)") is useful afterwards, but it skips exactly the warrants that matter, such as why the division by \( x \) is allowed and keeps the inequality's direction. Self-explanation is local and backward-looking: each line, against what came before it.
@@ -94,6 +102,23 @@ Self-explain lines 2–4.
 (For the record: line 5 is the order fact \( x + y \le 2 \) means \( \neg(x + y > 2) \); line 6 closes the box by \( \rulename{{\to}I} \) and then passes from the contrapositive to the claim by @prp-contrapositive-converse, a classical step.)
 :::
 
+## Naming the unstated fact
+
+Section 3.3 turned a paragraph of argument into a sequent: its conclusion, its stated premises, and the unstated facts that close its gaps. A proof is read the same way, one line at a time. Often the second question, *where does it come from?*, has an answer the writer did not write: a fact used but not stated. Self-explaining the line means naming that fact, and the fact then turns out to be one of three things. It may be a school fact or a definition: name it. It may be an earlier result: cite it. Or it may be false, and then the line fails. Two lines that look alike:
+
+- "Since \( n^2 \) is a multiple of \( 3 \), so is \( n \)." The unstated fact, "if \( 3 \mid n^2 \), then \( 3 \mid n \)", is true. A careful proof proves it, by cases on the remainder of \( n \) on division by \( 3 \).
+- "Since \( n^2 \) is a multiple of \( 4 \), so is \( n \)." The unstated fact, "if \( 4 \mid n^2 \), then \( 4 \mid n \)", is false at \( n = 2 \). Chapter 1 met it as a missing premise (@exr-using-an-implication-b5).
+
+A reader who only paraphrases reads both lines alike.
+
+::: {.check}
+In "Since \( x > 1 \), \( x^2 > x \)", name the unstated fact and the hypothesis it needs.
+:::
+
+::: {.solution}
+Multiplying both sides of \( x > 1 \) by \( x \) keeps the direction of the inequality because \( x > 0 \); and \( x > 0 \) follows from \( x > 1 > 0 \).
+:::
+
 ## Strategies of good readers
 
 Self-explanation is the habit for single lines. Readers who are good at proofs also do a few things with a proof as a whole. Here are five, shown on one short proof.
@@ -108,7 +133,7 @@ Hence \( 2\sqrt{xy} \le x + y \), and dividing by \( 2 \) gives the claim.
 
 1. **Try it first.** Before reading the proof, spend a few minutes on the claim yourself. A natural attempt squares both sides: \( xy \le (x + y)^2/4 \) is \( 4xy \le x^2 + 2xy + y^2 \), that is, \( 0 \le (x - y)^2 \), which is true. Already you know what the difficulty is (the square root) and what your attempt rests on (that a square is at least \( 0 \)).
 2. **Identify the framework.** Find the skeleton, level 1 of @def-levels-of-proof. Here: a bounded \( \rulename{\forall I} \) on \( x \) and \( y \) (opened by "Let", closed silently) with the bounds \( x > 0 \), \( y > 0 \), then a direct chain. There is no case split, no contradiction, and no chosen witness. Knowing that tells you where to look: every line is a computation, so every warrant is an algebraic fact.
-3. **Break it into sub-proofs.** The proof has one claim inside it, the displayed identity, and then a short finish. A claim inside a proof is a cut (the cut row of Section 8.2's dictionary): it is proved once and then used. Here the claim is proved inside the box on \( x \) and \( y \), so it is simply a line that later lines of the box may cite (@def-derivation); @lem-weakening-cut (b) is the same move for sequents proved outside every box. Read the claim on its own: it needs \( \sqrt{xy} = \sqrt x \sqrt y \) (true for \( x, y \ge 0 \)) and \( (\sqrt x)^2 = x \).
+3. **Break it into sub-proofs.** The proof has one claim inside it, the displayed identity, and then a short finish. A claim inside a proof is proved once and then used, as with a lemma in Section 8.2 ("It suffices to show"). Read the claim on its own: it needs \( \sqrt{xy} = \sqrt x \sqrt y \) (true for \( x, y \ge 0 \)) and \( (\sqrt x)^2 = x \).
 4. **Illustrate a hard line with an example.** If the identity is not clear, try numbers. With \( x = 1 \) and \( y = 4 \): the left side is \( 1 + 4 - 2 \cdot 2 = 1 \), the right side \( (1 - 2)^2 = 1 \). An example checks nothing in general, but it shows what the line claims.
 5. **Compare with your own attempt.** Your squaring route proves the claim too, and it hides a warrant the given proof avoids: passing back from \( xy \le (x + y)^2/4 \) to \( \sqrt{xy} \le (x + y)/2 \) uses the converse of "squaring preserves order": from \( a^2 \le b^2 \) conclude \( a \le b \). This holds when \( b \ge 0 \), because then \( \abs{a} \le b \); here \( b = (x + y)/2 > 0 \). Without that hypothesis it fails: \( a = 1 \), \( b = -2 \). Comparing the two routes shows why the given proof introduces \( \sqrt x \) and \( \sqrt y \): it never has to undo a squaring. The comparison also links this claim to @exm-self-explanation: put \( y = 1/x \), and \( \sqrt{xy} = 1 \), so the claim becomes \( x + 1/x \ge 2 \).
 
@@ -151,6 +176,53 @@ Classify each explanation as one that **justifies** its line or one that **parap
 (f) Paraphrases: it gives no warrant. A justification would say: by line 2 a product is zero, so one of its factors is zero; line 3 says the factor \( a + b \) is not zero, being positive; so \( a - b = 0 \) (@prp-disjunctive-syllogism, applied to "\( a + b = 0 \) or \( a - b = 0 \)" and \( a + b \ne 0 \)).
 :::
 
+::: {#exr-reading-proofs-a2}
+[A2: Drill]
+
+Answer each part in a phrase. (a) and (b) ask whether an explanation justifies or paraphrases; (c) and (d) which of the four questions is at work; (e) and (f) what kind of line it is; (g)–(i) name the unstated fact; (j)–(l) are about the habits of good readers.
+
+::: {.enumerate options="label=(\alph*)"}
+1. A line: "Since \( n \) is even, \( n^2 \) is even." An explanation: "With \( n = 2k \), \( n^2 = 2(2k^2) \), and \( 2k^2 \) is an integer." Does it justify or paraphrase?
+2. A line: "\( x^2 - 1 = (x - 1)(x + 1) \)." An explanation: "We factor it." Justify or paraphrase?
+3. Which of the four questions asks "May we divide by \( x - 1 \) here?"
+4. Which question does the answer "this line opens a box" answer?
+5. What kind of line is "Choose \( \delta > 0 \) such that …", and what does its derivation print beside it?
+6. What kind of line is "Since \( \varepsilon \) was arbitrary, …"?
+7. Name the unstated fact: "Since \( 0 < a < b \), \( a^2 < b^2 \)."
+8. Name the unstated fact: "\( \abs{x - 2} < 1 \), so \( x > 1 \)."
+9. Name the unstated facts: "\( x^2 = 9 \) and \( x > 0 \), so \( x = 3 \)."
+10. After three readings, a proof feels clear. Has the reader self-explained it?
+11. "Let \( x < 0 \). Then \( 1/x < 0 \)." Which hypothesis is used, and how?
+12. "Before reading the proof, I tried the claim myself by squaring both sides." Which strategy is this?
+:::
+:::
+
+::: {.solution}
+(a) It justifies: it names the definition of even, the witness and the algebra.
+
+(b) Paraphrase. It says what happened, not which identity makes the line true (\( u^2 - v^2 = (u - v)(u + v) \) at \( u = x \), \( v = 1 \)).
+
+(c) The fourth: is the step legitimate here (is \( x - 1 \ne 0 \))?
+
+(d) The first: what kind of line it is.
+
+(e) An assumption that opens an \( \rulename{\exists E} \) box with a fresh name; "asm, for \( \rulename{\exists E} \)".
+
+(f) The closing of a \( \rulename{\forall I} \) box.
+
+(g) Multiplying an inequality by a positive number keeps it: \( a \cdot a < a \cdot b \) (multiply \( a < b \) by \( a > 0 \)) and \( a \cdot b < b \cdot b \) (multiply by \( b > 0 \)).
+
+(h) \( \abs{u} < r \) holds exactly when \( -r < u < r \); here \( -1 < x - 2 \).
+
+(i) \( x^2 - 9 = (x - 3)(x + 3) \), and a product of real numbers is \( 0 \) only if a factor is, so \( x = 3 \) or \( x = -3 \); then \( x > 0 \) rules out \( -3 \) (\( \rulename{DS} \)).
+
+(j) Not necessarily: familiarity is not a warrant checked line by line (the warning "Self-explanation is not re-reading").
+
+(k) \( x < 0 \). It gives \( x \ne 0 \), so \( 1/x \) exists; and \( x \cdot (1/x) = 1 > 0 \), so \( 1/x \) has the sign of \( x \).
+
+(l) Try it first.
+:::
+
 ### B. Practice
 
 ::: {#exr-reading-proofs-b1}
@@ -172,6 +244,10 @@ Self-explain each line, citing labels where a line uses an earlier result. Say a
 :::
 
 ::: {.solution}
+*(1)* The goal "not uniformly continuous" is replaced by the displayed formula: the negation of uniform continuity with no \( \neg \) in front of a quantifier (Section 6.2's recipe, @exm-negating-definitions (c)). The proof now proves that formula. *(2)* \( 1 \) is the witness for "there is \( \varepsilon > 0 \)", and \( 1 > 0 \). It is written first and justified by the end. *(3)* \( \delta > 0 \) is arbitrary: what follows must work for every \( \delta \). The numbers \( x \) and \( y \) are built from \( \delta \), which is allowed because \( \delta \) is already given; \( 1/\delta \) exists because \( \delta \ne 0 \). *(4)* \( y - x = \delta/2 > 0 \), so \( \abs{x - y} = \delta/2 \), and \( \delta/2 < \delta \) because \( \delta > 0 \). *(5)* Both numbers are positive and \( y > x \), so \( \abs{x^2 - y^2} = y^2 - x^2 = (y - x)(y + x) \); multiplying out gives \( 1 + \delta^2/4 \), at least \( 1 \) because a square is at least \( 0 \). *(6)* \( \delta \) was arbitrary, so the displayed formula holds with \( \varepsilon = 1 \), and uniform continuity fails. \( \delta > 0 \) is used in (3), in (4) twice, and in (5).
+:::
+
+::: {.second-reading title="The same lines, rule by rule"}
 *(1)* A cut: the goal "\( f \) is not uniformly continuous" is replaced by the displayed formula, and the proof then proves the formula. The formula is the positive form of the negation of uniform continuity, @exm-negating-definitions (c), read with \( A = \nR \); there the two are shown interderivable, by @prp-bounded-quantifier-negation, @prp-negated-implication and the order fact \( \neg(u < \varepsilon) \) iff \( u \ge \varepsilon \). The direction used here is from the displayed formula to the negation. The bounds can be dropped because a bounded quantifier \( \exists x \in \nR \) abbreviates \( \exists x\, (x \in \nR \wedge \dots) \) (@def-bounded-quantifier), and over the domain \( \nR \) the conjunct \( x \in \nR \) always holds.
 
 *(2)* The witness for \( \exists \varepsilon > 0 \): a bounded \( \rulename{\exists I} \) at the term \( 1 \), with its bound \( 1 > 0 \). It is written first, but as a rule it is applied last: the instance it needs, the formula after \( \exists \varepsilon > 0 \) with \( 1 \) for \( \varepsilon \), is what lines (3)–(6) prove.
@@ -207,10 +283,85 @@ y^2 + xy + x^2 = \Bigl( y + \frac{x}{2} \Bigr)^2 + \frac{3x^2}{4} \ge 0 ,
 with equality only if \( x = 0 \) and \( y + x/2 = 0 \), that is, only if \( x = y = 0 \). Line 1 rules that out, since \( x < y \) gives \( x \ne y \). So \( y^2 + xy + x^2 > 0 \). The repaired line 4 uses the hypothesis \( x < y \) a second time, which the proof as printed hides; a reader who explains only "the bracket is positive" has paraphrased line 4 and missed this.
 :::
 
+::: {#exr-reading-proofs-b3}
+[B3: Name the unstated facts]
+
+Here is a proof.
+
+> **Claim.** For every real \( x \ge 0 \), \( x^3 + 2 \ge 3x \).
+>
+> (1) \( x^3 - 3x + 2 = (x - 1)^2 (x + 2) \). (2) \( (x - 1)^2 \ge 0 \). (3) \( x + 2 > 0 \). (4) So \( x^3 - 3x + 2 \ge 0 \), (5) that is, \( x^3 + 2 \ge 3x \).
+
+::: {.enumerate options="label=(\alph*)"}
+1. Name the unstated fact behind each line.
+2. Which line uses the hypothesis \( x \ge 0 \), and how?
+3. Find the least \( c \) such that the same proof, with at most two lines reworded, proves the claim for every \( x \ge c \). Show that the claim fails at \( x = -3 \).
+:::
+:::
+
+::: {.solution}
+*(a)*
+
+- (1) A polynomial identity, checked by expanding: \( (x^2 - 2x + 1)(x + 2) = x^3 + 2x^2 - 2x^2 - 4x + x + 2 = x^3 - 3x + 2 \).
+- (2) Every square is at least \( 0 \).
+- (3) \( x \ge 0 \) gives \( x + 2 \ge 2 > 0 \).
+- (4) A product of a non-negative and a positive number is non-negative, applied to (2) and (3), then (1) substituted (\( \rulename{{=}E} \)).
+- (5) Adding \( 3x \) to both sides keeps the inequality.
+
+*(b)* Line (3), and only there.
+
+*(c)* \( c = -2 \). For \( x \ge -2 \), line (3) becomes "\( x + 2 \ge 0 \)", and line (4) uses "a product of two non-negative numbers is non-negative"; every other line stands. Below \( -2 \) the claim is false. At \( x = -3 \): \( (-3)^3 + 2 = -25 \), while \( 3x = -9 \), and \( -25 \ge -9 \) fails. (For every \( x < -2 \), \( (x - 1)^2 > 0 \) and \( x + 2 < 0 \), so the product is negative.)
+
+**Marking scheme.** (10 points)
+- 5: (a), one per line, each naming the fact (not restating the line).
+- 2: (b) line (3), with how \( x \ge 0 \) enters.
+- 2: (c) \( c = -2 \), with the reworded lines (3) and (4).
+- 1: the failure at \( x = -3 \) computed.
+
+Fatal errors (0 for the step): explanations that restate the lines; in (c), "the hypothesis can be dropped".
+:::
+
 ### C. Going deeper
 
 ::: {#exr-reading-proofs-c1}
 [C1: A longer proof]
+
+Here is a proof that a sequence has at most one limit, with its lines numbered.
+
+> **Claim.** If \( a_n \to L \) and \( a_n \to M \), then \( L = M \).
+>
+> (1) Suppose \( a_n \to L \) and \( a_n \to M \), and suppose, for a contradiction, that \( L \ne M \). (2) Let \( \varepsilon \coloneqq \abs{L - M}/2 \). Then \( \varepsilon > 0 \). (3) Choose \( N_1 \in \nN \) such that \( \abs{a_n - L} < \varepsilon \) for every \( n \ge N_1 \), and \( N_2 \in \nN \) such that \( \abs{a_n - M} < \varepsilon \) for every \( n \ge N_2 \). (4) Let \( n \coloneqq \max\{N_1, N_2\} \). (5) Then \( \abs{L - M} \le \abs{L - a_n} + \abs{a_n - M} < \varepsilon + \varepsilon = \abs{L - M} \). (6) So \( \abs{L - M} < \abs{L - M} \), which is impossible. (7) Hence \( L = M \).
+
+Self-explain each line, citing labels where a line uses an earlier result. Say where the assumption \( L \ne M \) is used, and which rule closes the box it opens.
+:::
+
+::: {.solution}
+[Hint 1]
+
+Line (3) applies the definition of a limit at \( \varepsilon \). What does that need, and which line supplies it?
+:::
+
+::: {.solution}
+[Hint 2]
+
+Line (5) uses one named result and two lines of (3). Which?
+:::
+
+::: {.solution}
+*(1)* Two openings: the \( \rulename{{\to}I} \) box with the two hypotheses, and inside it a box on \( L \ne M \), that is, \( \neg(L = M) \); the goal \( L = M \) is positive, so this is an \( \rulename{RAA} \) box. *(2)* A constant, defined from \( L \) and \( M \). It is positive because \( L \ne M \) gives \( \abs{L - M} > 0 \): the one use of the assumption. *(3)* The definition of \( a_n \to L \) applied at \( \varepsilon \) (\( \rulename{\forall E} \) at a term that is not the obvious one, with its bound \( \varepsilon > 0 \) from (2)), then \( \rulename{\exists E} \) with the fresh name \( N_1 \); the same for \( M \), with a second fresh name \( N_2 \) (one name for both would be (N4) of Section 8.6). *(4)* A constant: the larger of two natural numbers, so \( n \ge N_1 \) and \( n \ge N_2 \). *(5)* The triangle inequality (@exm-triangle-inequality-cases), with \( \abs{L - a_n} = \abs{a_n - L} \); then the two bounds of (3) at this \( n \) (\( \rulename{\forall E} \) at \( n \), \( \rulename{{\to}E} \) with \( n \ge N_1 \) and with \( n \ge N_2 \)); then \( \varepsilon + \varepsilon = \abs{L - M} \) by (2). *(6)* The clash: \( \abs{L - M} < \abs{L - M} \) against the fact that no number is less than itself (\( \rulename{\neg E} \)). The line does not mention \( N_1 \) or \( N_2 \), so the two \( \rulename{\exists E} \) boxes close on it. *(7)* \( \rulename{RAA} \): the box assumed \( \neg(L = M) \) and the line written after it is \( L = M \). The closing of the \( \rulename{{\to}I} \) box is silent. The assumption is used once, at (2), and it does work there, so the proof is not in costume; Section 8.2 proved the same claim without opening this box (@exm-rhetoric-equality).
+
+**Marking scheme.** (10 points)
+- 2: (1) and (7), the two boxes and \( \rulename{RAA} \) as the closing rule (not \( \rulename{\neg I} \)).
+- 2: (2), \( \varepsilon > 0 \) from \( L \ne M \), named as the use of the assumption.
+- 2: (3), the instance named, two fresh names.
+- 2: (5), the triangle inequality cited and both bounds applied at \( n \ge N_1, N_2 \).
+- 2: (6), the clash named, and the \( \rulename{\exists E} \) boxes closing because \( \bot \) does not mention \( N_1 \), \( N_2 \).
+
+Fatal errors (0 for the step): calling (7) \( \rulename{\neg I} \); applying the definition at \( \varepsilon \) without its positivity.
+:::
+
+::: {#exr-reading-proofs-c2}
+[C2: Challenge: A proof about derivations]
 
 Self-explain the proof of @lem-atom-splitting in Section 4.8: for each of its five numbered steps, and for each claim in the paragraph that follows them, say what it uses and why that is legitimate. Then state the idea of the proof in two sentences.
 :::
@@ -257,11 +408,21 @@ exm-self-explanation (claim): x = -1 gives x + 1/x = -2 < 2; equality at x = 1 |
 exm-self-explanation (claim): "this is the only place the hypothesis is used" (line 3) | read off the four lines on the page
 exm-self-explanation (claim): [the Quick check after it] de Morgan (a); not (u > 1) iff u <= 1; inequalities add; line 6 by prp-contrapositive-converse | prp-de-morgan, prp-contrapositive-converse (cited); order facts (school)
 exm-self-explanation (claim): [the strategies passage after it] sqrt(xy) = sqrt(x) sqrt(y) and (sqrt x)^2 = x for x, y >= 0; x + y - 2 sqrt(xy) = (sqrt x - sqrt y)^2; (x + y)^2 = x^2 + 2xy + y^2; 4xy <= x^2 + 2xy + y^2 iff 0 <= (x - y)^2 (the try-it-first route); a^2 <= b^2 and b >= 0 imply a <= b (via |a| <= b), failing at a = 1, b = -2; the instance x = 1, y = 4 | school facts about square roots (NOTATION: a school fact before AN1.1, then thm-nth-root); checked by verify/ch08/exm-self-explanation.py
-exm-self-explanation (claim): [the strategies passage after it] a claim inside a proof is a cut; inside a box it is a line later lines may cite | F1.5 §02's dictionary (prose pointer); def-derivation, lem-weakening-cut (b) (cited)
+exm-self-explanation (claim): [the strategies passage after it] a claim inside a proof is proved once and then used, as with a lemma | F1.5 §02's "It suffices to show" (prose pointer within the chapter)
+exm-self-explanation (claim): [How to explain a line] the annotation "asm, for ->I" names the rule that closes the box | STYLE 12.13.1 (printed by the engine since Section 1.4, F1.1 §05); F1.5 §01's spoken purposes (prose pointer within the chapter)
+exm-self-explanation (claim): [Quick check after "How to explain a line"] the bad explanation of line 3 fails the fourth question and the second (x > 0 never named) | read off exm-self-explanation on the page
+exm-self-explanation (claim): [subsection "Naming the unstated fact"] Section 3.3 turned a paragraph into a sequent with its unstated facts | F1.7 §03 "Extracting an argument", step 3 "Name the unstated facts" (prose pointer)
+exm-self-explanation (claim): [subsection "Naming the unstated fact"] if 3 | n^2 then 3 | n (true; by cases on n mod 3, stated here, proved in F1.5 §05's C3 solution; nothing rests on it); if 4 | n^2 then 4 | n fails at n = 2 | arithmetic; exr-using-an-implication-b5 (d)(iv) (cited); checked by verify/ch08/exr-reading-proofs-a2.py
+exm-self-explanation (claim): [Quick check in "Naming the unstated fact"] x > 1 gives x > 0, and multiplying x > 1 by x > 0 gives x^2 > x | school order facts
 exr-reading-proofs-a1 (solution): u^2 - v^2 = (u - v)(u + v); a product is zero only if a factor is; a sum of positives is positive | school algebra; prp-disjunctive-syllogism (cited); checked by verify/ch08/exr-reading-proofs-a1.py
 exr-reading-proofs-b1 (solution): |x - y| = delta/2 < delta; (delta/2)(2/delta + delta/2) = 1 + delta^2/4 >= 1; |u| = u for u >= 0 (bars dropped, y - x > 0 and y^2 - x^2 > 0); 0 < x < y implies x^2 < y^2; delta^2/4 >= 0; delta > 0 gives delta != 0, 1/delta > 0, delta/2 < delta | school algebra and order facts (AN1.1 proves them from the axioms); checked by verify/ch08/exr-reading-proofs-b1.py
 exr-reading-proofs-b1 (solution): the displayed formula yields the negation of uniform continuity | exm-negating-definitions (c), prp-bounded-quantifier-negation, prp-negated-implication, def-bounded-quantifier (cited)
 exr-reading-proofs-b1 (solution): the flag delta_0 meets the side condition of the bounded forall-I; the prose uses one letter for flag and bound variable | prp-bounded-quantifier-rules (cited); F1.4 §04 (prose pointer)
 exr-reading-proofs-b2 (solution): y^3 - x^3 = (y - x)(y^2 + xy + x^2); y^2 + xy + x^2 = (y + x/2)^2 + 3x^2/4; zero only at x = y = 0 | school algebra; checked by verify/ch08/exr-reading-proofs-b2.py
-exr-reading-proofs-c1 (solution): reading of the proof of lem-atom-splitting | lem-atom-splitting, def-derivation, prp-excluded-middle, def-derived-rule, def-rules-disjunction, lem-weakening-cut (cited)
+exr-reading-proofs-a2 (solution): n = 2k gives n^2 = 2(2k^2); u^2 - v^2 = (u - v)(u + v); 0 < a < b gives a^2 < ab < b^2; |u| < r iff -r < u < r; x^2 - 9 = (x - 3)(x + 3), a product is 0 only if a factor is, x > 0 rules out -3 (DS); x < 0 gives x != 0 and x (1/x) = 1 > 0, so 1/x < 0 | school algebra and order facts; prp-disjunctive-syllogism (named); checked by verify/ch08/exr-reading-proofs-a2.py
+exr-reading-proofs-a2 (solution): (j), (l) refer to the warning "Self-explanation is not re-reading" and strategy 1 "Try it first" | on the page
+exr-reading-proofs-b1 (solution): [plain-words main solution] the same warrants as the folded rule-by-rule solution; Section 6.2's recipe | exm-negating-definitions (c) (cited); school order facts
+exr-reading-proofs-b3 (solution): (x - 1)^2 (x + 2) = x^3 - 3x + 2; squares >= 0; x >= 0 gives x + 2 >= 2 > 0; non-negative times positive (or times non-negative) is non-negative; c = -2; at x = -3, x^3 + 2 = -25 < -9 = 3x; for x < -2 the product (x - 1)^2 (x + 2) is negative | school algebra and order facts; checked by verify/ch08/exr-reading-proofs-b3.py
+exr-reading-proofs-c1 (solution): max of two naturals is >= each; no number is less than itself; eps + eps = |L - M| for eps = |L - M|/2; L != M gives |L - M| > 0 | school facts; exm-triangle-inequality-cases, exm-rhetoric-equality (cited); F1.5 §06's (N4) (prose pointer within the chapter, nothing rests on it)
+exr-reading-proofs-c2 (solution): reading of the proof of lem-atom-splitting | lem-atom-splitting, def-derivation, prp-excluded-middle, def-derived-rule, def-rules-disjunction, lem-weakening-cut (cited)
 -->

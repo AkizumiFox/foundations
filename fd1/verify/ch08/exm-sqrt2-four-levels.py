@@ -9,7 +9,8 @@ from pathlib import Path
 
 QUOTED = {"level 0 lines": 24, "level 1 lines": 15, "ch02 derivation lines": 13,
           "ch04 uniform derivation lines": 11, "silent lines": [5, 10, 13, 16, 19, 21, 22, 24],
-          "level 3 sentences": 4}
+          "level 3 sentences": 4,
+          "level 1 silent lines": [4, 12, 13, 15], "L lines": [1, 4, 6, 8]}
 
 ROOT = Path(__file__).resolve().parents[2]
 
@@ -30,8 +31,9 @@ def block_after(path, marker, k=0):
 
 
 SEC = "src/ch08-from-derivations-to-prose/03-levels-of-abbreviation.md"
-lv0 = numbered_lines(block_after(SEC, "{#exm-sqrt2-four-levels}", 0))
-lv1 = numbered_lines(block_after(SEC, "{#exm-sqrt2-four-levels}", 1))
+# the solution prints level 1 first; level 0 follows in the fold "Level 0 of the square root of two"
+lv1 = numbered_lines(block_after(SEC, "{#exm-sqrt2-four-levels}", 0))
+lv0 = numbered_lines(block_after(SEC, "{#exm-sqrt2-four-levels}", 1))
 assert lv0 == list(range(1, QUOTED["level 0 lines"] + 1)), lv0
 assert lv1 == list(range(1, QUOTED["level 1 lines"] + 1)), lv1
 ch2 = numbered_lines(block_after("src/ch02-negation-and-classical-logic/02-negation-and-contradiction.md",
@@ -43,7 +45,7 @@ assert ch4 == list(range(1, QUOTED["ch04 uniform derivation lines"] + 1))
 
 # the silent lines: those whose justification is forall-E at the obvious term, and-E,
 # or a closing exists-E / forall-I (read off the level-0 block)
-b0 = block_after(SEC, "{#exm-sqrt2-four-levels}", 0)
+b0 = block_after(SEC, "{#exm-sqrt2-four-levels}", 1)
 just = {}
 for line in b0.splitlines():
     m = re.search(r"\\(?:hypo|have)\s*\{(\d+)\}", line)
@@ -53,6 +55,21 @@ for line in b0.splitlines():
 silent = sorted(n for n, j in just.items() if j in (r"\ae", r"\Ee", r"\Ai")) + [5, 13, 16]
 assert sorted(silent) == QUOTED["silent lines"], sorted(silent)
 assert just[5] == just[13] == just[16] == r"\Ae"
+
+# level 1: the lines without words are the forall-E at the obvious term r_0 (line 4) and the
+# closing exists-E / forall-I lines; L(r, p, q) appears exactly in lines 1, 4, 6, 8
+b1 = block_after(SEC, "{#exm-sqrt2-four-levels}", 0)
+j1, lset = {}, []
+for line in b1.splitlines():
+    m = re.search(r"\\(?:hypo|have)\s*\{(\d+)\}", line)
+    if m:
+        js = re.findall(r"(\\(?:ae|Ae|Ee|Ai|ai|ie|ne|ni|Ei|by))\{", line)
+        j1[int(m.group(1))] = js[-1] if js and "\\hypo" not in line else None
+        if "L(" in line:
+            lset.append(int(m.group(1)))
+s1 = sorted(n for n, j in j1.items() if j in (r"\Ae", r"\Ee", r"\Ai"))
+assert s1 == QUOTED["level 1 silent lines"], s1
+assert lset == QUOTED["L lines"], lset
 
 # arithmetic: p = r q and r^2 = 2 give p^2 = 2 q^2 (p^2 = r^2 q^2 identically)
 for r in [Fr(a, b) for a in range(-6, 7) for b in range(1, 6)]:

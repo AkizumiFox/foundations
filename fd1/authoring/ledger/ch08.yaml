@@ -4,8 +4,8 @@ items:
 - key: check:01-connective-rhetoric:1
   kind: check
   file: 01-connective-rhetoric.md
-  line: 53
-  hash: e1dfb03f2ac2
+  line: 35
+  hash: aee8403d8f9a
   verdicts:
   - stage: S5a
     verdict: minor
@@ -36,43 +36,28 @@ items:
       directly in the box of line 4, where it is in fact false''. That matches the derivation at lines
       12-28: T is assumed at line 5 inside the box of line 4, where S holds. The S5a finding (''outside
       any box'') is resolved.'
+- key: check:01-connective-rhetoric:2
+  kind: check
+  file: 01-connective-rhetoric.md
+  line: 53
+  hash: 0007cb7bdb9f
+  verdicts: []
+- key: check:01-connective-rhetoric:3
+  kind: check
+  file: 01-connective-rhetoric.md
+  line: 111
+  hash: e1dfb03f2ac2
+  verdicts: []
 - key: exm-rhetoric-conjunction
   kind: exm
   file: 01-connective-rhetoric.md
-  line: 83
-  hash: a014c4a264f2
-  verdicts:
-  - stage: S5a
-    verdict: correct
-    by: refereeA
-    hash: 280fc5d9d757
-    date: '2026-10-11'
-    model: claude-opus-5-5
-    evidence: 'Lines 90-94: m=max{t,0} is in [0,2), a=(m+2)/2 is in [1,2), and a-m=(2-m)/2>0, so a>t.
-      The forall-E, neg-E and neg-I tags are right. The sidecar passes. (The S2 equivalence remark at
-      line 81 is reported separately with key "".)'
-  - stage: S5b
-    verdict: gap
-    by: refereeB
-    hash: 280fc5d9d757
-    date: '2026-10-11'
-    model: claude-opus-5-5
-    evidence: 01-connective-rhetoric.md:92 The tagged worked example hides a ∨E inside max{t, 0} < 2.
-      That breaks the section's own warning that the case split hidden in a max is never silent.
-  - stage: S7r
-    verdict: correct
-    by: rereferee
-    hash: a014c4a264f2
-    date: '2026-10-11'
-    model: claude-opus-5-5
-    evidence: Lines 90-96, re-checked step by step. The case split on t>=0 or t<0 for max{t,0} is now
-      written and tagged [∨E]. In both cases m>=t and 0<=m<2, so a=(m+2)/2 lies in [1,2) and a-m=(2-m)/2>0,
-      which gives a>m>=t and clashes with a<=t. The definition of max agrees with Ch 11 01-ordered-fields.md:297.
-      Line 96 now says the split is written out, as the warning at :160 requires, so the S5b gap is resolved
+  line: 132
+  hash: a936f7e1cd3b
+  verdicts: []
 - key: exm-rhetoric-implication
   kind: exm
   file: 01-connective-rhetoric.md
-  line: 110
+  line: 155
   hash: 72d49bd00efa
   verdicts:
   - stage: S5a
@@ -94,7 +79,7 @@ items:
 - key: exm-rhetoric-cases
   kind: exm
   file: 01-connective-rhetoric.md
-  line: 139
+  line: 185
   hash: e4e44abdbb5d
   verdicts:
   - stage: S5a
@@ -118,7 +103,7 @@ items:
 - key: exm-rhetoric-negation
   kind: exm
   file: 01-connective-rhetoric.md
-  line: 176
+  line: 226
   hash: f047cd2e3a41
   verdicts:
   - stage: S5a
@@ -160,8 +145,8 @@ items:
 - key: exm-rhetoric-contradiction
   kind: exm
   file: 01-connective-rhetoric.md
-  line: 201
-  hash: a1249cf44e0d
+  line: 253
+  hash: 7f8302e77829
   verdicts:
   - stage: S5a
     verdict: minor
@@ -194,8 +179,8 @@ items:
 - key: exm-rhetoric-biconditional
   kind: exm
   file: 01-connective-rhetoric.md
-  line: 228
-  hash: 779d62468899
+  line: 284
+  hash: 7081f9a431ff
   verdicts:
   - stage: S5a
     verdict: correct
@@ -223,10 +208,28 @@ items:
       Both are correct. The remark now gives its reason: for x<0, x^2>=0>x, so x^2<=x forces x>=0. That
       is correct, and the ledger entry is at :473. The counterexample x=-1 for (⇒) is correct. The finding
       is resolved.'
+- key: exm-rhetoric-cycle
+  kind: exm
+  file: 01-connective-rhetoric.md
+  line: 313
+  hash: eeb49f6a2fb9
+  verdicts: []
+- key: check:01-connective-rhetoric:4
+  kind: check
+  file: 01-connective-rhetoric.md
+  line: 335
+  hash: 4f37bf268323
+  verdicts: []
+- key: check:01-connective-rhetoric:5
+  kind: check
+  file: 01-connective-rhetoric.md
+  line: 367
+  hash: b451e545eb64
+  verdicts: []
 - key: exm-costume-direct
   kind: exm
   file: 01-connective-rhetoric.md
-  line: 268
+  line: 379
   hash: e702ee96aed5
   verdicts:
   - stage: S5a
@@ -248,7 +251,7 @@ items:
 - key: exm-costume-contrapositive
   kind: exm
   file: 01-connective-rhetoric.md
-  line: 286
+  line: 397
   hash: 05ffdbfcbd72
   verdicts:
   - stage: S5a
@@ -281,8 +284,8 @@ items:
 - key: exr-connective-rhetoric-a1
   kind: exr
   file: 01-connective-rhetoric.md
-  line: 314
-  hash: b5848fd2e00d
+  line: 438
+  hash: 971567eff44b
   verdicts:
   - stage: S5a
     verdict: correct
@@ -311,10 +314,16 @@ items:
       column. (c) is face (i): the box assumes 7=2k and the proof concludes ''not even''. (d): Ch 11''s
       proof does open ''Suppose, for contradiction'' (ch11 05-archimedean-property.md:82). Script confirms
       3<7/2<4.'
+- key: exr-connective-rhetoric-a2
+  kind: exr
+  file: 01-connective-rhetoric.md
+  line: 459
+  hash: 85428a87766b
+  verdicts: []
 - key: exr-connective-rhetoric-b1
   kind: exr
   file: 01-connective-rhetoric.md
-  line: 337
+  line: 508
   hash: d022d8d30a88
   verdicts:
   - stage: S5a
@@ -354,7 +363,7 @@ items:
 - key: exr-connective-rhetoric-b2
   kind: exr
   file: 01-connective-rhetoric.md
-  line: 356
+  line: 527
   hash: cf6ad6b3a5bb
   verdicts:
   - stage: S5a
@@ -392,10 +401,49 @@ items:
       classical rule enters''. That is accurate and no longer claims a split. Part (a) is correct: the
       hypothesis is used in the middle of the box, so neither costume test applies. Part (b) is correct:
       ¬I gives ¬(x≠0), then ¬¬E.'
+- key: exr-connective-rhetoric-b3
+  kind: exr
+  file: 01-connective-rhetoric.md
+  line: 549
+  hash: 053a5390e3b3
+  verdicts:
+  - stage: S5a
+    verdict: correct
+    by: refereeA
+    hash: 280fc5d9d757
+    date: '2026-10-11'
+    model: claude-opus-5-5
+    evidence: 'Lines 90-94: m=max{t,0} is in [0,2), a=(m+2)/2 is in [1,2), and a-m=(2-m)/2>0, so a>t.
+      The forall-E, neg-E and neg-I tags are right. The sidecar passes. (The S2 equivalence remark at
+      line 81 is reported separately with key "".)'
+  - stage: S5b
+    verdict: gap
+    by: refereeB
+    hash: 280fc5d9d757
+    date: '2026-10-11'
+    model: claude-opus-5-5
+    evidence: 01-connective-rhetoric.md:92 The tagged worked example hides a ∨E inside max{t, 0} < 2.
+      That breaks the section's own warning that the case split hidden in a max is never silent.
+  - stage: S7r
+    verdict: correct
+    by: rereferee
+    hash: a014c4a264f2
+    date: '2026-10-11'
+    model: claude-opus-5-5
+    evidence: Lines 90-96, re-checked step by step. The case split on t>=0 or t<0 for max{t,0} is now
+      written and tagged [∨E]. In both cases m>=t and 0<=m<2, so a=(m+2)/2 lies in [1,2) and a-m=(2-m)/2>0,
+      which gives a>m>=t and clashes with a<=t. The definition of max agrees with Ch 11 01-ordered-fields.md:297.
+      Line 96 now says the split is written out, as the warning at :160 requires, so the S5b gap is resolved
+- key: exr-connective-rhetoric-b4
+  kind: exr
+  file: 01-connective-rhetoric.md
+  line: 567
+  hash: 39faedc16cd8
+  verdicts: []
 - key: exr-connective-rhetoric-c1
   kind: exr
   file: 01-connective-rhetoric.md
-  line: 380
+  line: 599
   hash: e241d2aff0be
   verdicts:
   - stage: S5a
@@ -437,7 +485,7 @@ items:
 - key: exr-connective-rhetoric-c2
   kind: exr
   file: 01-connective-rhetoric.md
-  line: 412
+  line: 631
   hash: 7e57fd05f37c
   verdicts:
   - stage: S5a
@@ -478,7 +526,7 @@ items:
 - key: exm-rhetoric-universal
   kind: exm
   file: 02-quantifier-rhetoric.md
-  line: 33
+  line: 73
   hash: f3b21b4340f2
   verdicts:
   - stage: S5a
@@ -500,11 +548,33 @@ items:
     evidence: 02:33-49. Checked the annotations against the 4.8 box structure, |c-c|=0<eps, the claim
       that 'take N:=0' comes before the work that justifies it, the three silent closings at l.46, and
       that 'any N works' (l.48). All true.
+- key: check:02-quantifier-rhetoric:1
+  kind: check
+  file: 02-quantifier-rhetoric.md
+  line: 134
+  hash: 2fbad5ac2c11
+  verdicts:
+  - stage: S5a
+    verdict: correct
+    by: refereeA
+    hash: f42c0d6246a4
+    date: '2026-10-11'
+    model: claude-opus-5-5
+    evidence: 02:88. The order forall eps > 0, exists N in N, forall n (n>=N -> ...) matches exm-translate-limit
+      (a) (08-translation.md:51). The dependence remark is correct.
+  - stage: S5b
+    verdict: correct
+    by: refereeB
+    hash: f42c0d6246a4
+    date: '2026-10-11'
+    model: claude-opus-5-5
+    evidence: 02:83-89. The hidden exists-N sits between forall eps and forall n>=N, matching 4.8:84 ('for
+      all large n' read as exists N forall n>=N) and exm-translate-limit.
 - key: exm-rhetoric-existential
   kind: exm
   file: 02-quantifier-rhetoric.md
-  line: 61
-  hash: 849d2af92425
+  line: 142
+  hash: f3d59252157d
   verdicts:
   - stage: S5a
     verdict: minor
@@ -535,33 +605,17 @@ items:
       by ∃E is right, and so is the bound check: 1/eps > 0 gives N > 0, and with N an integer that gives
       N ∈ Z_{>0}. Taking reciprocals of N > 1/eps > 0 gives (*). Then ∃I. The example works: eps = 0.03
       gives 1/eps = '
-- key: check:02-quantifier-rhetoric:1
+- key: check:02-quantifier-rhetoric:2
   kind: check
   file: 02-quantifier-rhetoric.md
-  line: 83
+  line: 164
   hash: f42c0d6246a4
-  verdicts:
-  - stage: S5a
-    verdict: correct
-    by: refereeA
-    hash: f42c0d6246a4
-    date: '2026-10-11'
-    model: claude-opus-5-5
-    evidence: 02:88. The order forall eps > 0, exists N in N, forall n (n>=N -> ...) matches exm-translate-limit
-      (a) (08-translation.md:51). The dependence remark is correct.
-  - stage: S5b
-    verdict: correct
-    by: refereeB
-    hash: f42c0d6246a4
-    date: '2026-10-11'
-    model: claude-opus-5-5
-    evidence: 02:83-89. The hidden exists-N sits between forall eps and forall n>=N, matching 4.8:84 ('for
-      all large n' read as exists N forall n>=N) and exm-translate-limit.
+  verdicts: []
 - key: exm-rhetoric-equality
   kind: exm
   file: 02-quantifier-rhetoric.md
-  line: 106
-  hash: 67b32f589a9a
+  line: 187
+  hash: 63ca8e6ef4a7
   verdicts:
   - stage: S5a
     verdict: correct
@@ -583,10 +637,34 @@ items:
       of prp-arbitrarily-close-equal (4.9:704). The 'four things never silent' are all visible, and the
       (N4) pointer to Section 8.6 exists (06:37). The side-condition claim at l.124 is right. Problems
       in the surrounding prose are listed under key "".
+- key: exm-rhetoric-double-inclusion
+  kind: exm
+  file: 02-quantifier-rhetoric.md
+  line: 226
+  hash: ac3f08d4a22d
+  verdicts: []
+- key: check:02-quantifier-rhetoric:3
+  kind: check
+  file: 02-quantifier-rhetoric.md
+  line: 243
+  hash: 0e678de5358f
+  verdicts: []
+- key: check:02-quantifier-rhetoric:4
+  kind: check
+  file: 02-quantifier-rhetoric.md
+  line: 281
+  hash: 98adf0bb4460
+  verdicts: []
+- key: check:02-quantifier-rhetoric:5
+  kind: check
+  file: 02-quantifier-rhetoric.md
+  line: 335
+  hash: 93d397ae3a85
+  verdicts: []
 - key: exm-rhetoric-induction
   kind: exm
   file: 02-quantifier-rhetoric.md
-  line: 139
+  line: 343
   hash: a676615e206e
   verdicts:
   - stage: S5a
@@ -623,7 +701,7 @@ items:
 - key: exr-quantifier-rhetoric-a1
   kind: exr
   file: 02-quantifier-rhetoric.md
-  line: 194
+  line: 410
   hash: 28036b7e6fa0
   verdicts:
   - stage: S5a
@@ -663,10 +741,16 @@ items:
       with my own list: the ∃E box of (3) and the →I box of (1) close silently, while (6) states the ∀I/→I
       closings of (4) and the ∃I. Both earlier findings are resolved. The statement at line 197 now begins
       ''Let (a_'
+- key: exr-quantifier-rhetoric-a2
+  kind: exr
+  file: 02-quantifier-rhetoric.md
+  line: 435
+  hash: 650c2226ff2e
+  verdicts: []
 - key: exr-quantifier-rhetoric-b1
   kind: exr
   file: 02-quantifier-rhetoric.md
-  line: 221
+  line: 484
   hash: a87c89836417
   verdicts:
   - stage: S5a
@@ -701,7 +785,7 @@ items:
 - key: exr-quantifier-rhetoric-b2
   kind: exr
   file: 02-quantifier-rhetoric.md
-  line: 243
+  line: 506
   hash: d98f4d9177cc
   verdicts:
   - stage: S5a
@@ -741,10 +825,16 @@ items:
       = 0 = 4·0 is right. The ∃E side condition holds, since P(n+1) does not mention k. Hypotheses (i)
       and (ii) of ax-induction are attributed correctly. The earlier finding is resolved. Ledger line
       342 now records 5^0 = '
+- key: exr-quantifier-rhetoric-b3
+  kind: exr
+  file: 02-quantifier-rhetoric.md
+  line: 528
+  hash: c351edac73a9
+  verdicts: []
 - key: exr-quantifier-rhetoric-c1
   kind: exr
   file: 02-quantifier-rhetoric.md
-  line: 267
+  line: 552
   hash: 6cbe370ee8ca
   verdicts:
   - stage: S5a
@@ -780,7 +870,7 @@ items:
 - key: exr-quantifier-rhetoric-c2
   kind: exr
   file: 02-quantifier-rhetoric.md
-  line: 308
+  line: 593
   hash: 5faa70462d41
   verdicts:
   - stage: S5a
@@ -819,10 +909,44 @@ items:
       n. The earlier finding is resolved. The alternative at line 326 now begins ''for every x, for every
       eps > 0 there is delta > 0 ...''. Moving ''for every x'' to the end gives exactly the sentence of
       the warning (line 187'
+- key: check:03-levels-of-abbreviation:1
+  kind: check
+  file: 03-levels-of-abbreviation.md
+  line: 66
+  hash: 507f2d7a6c2e
+  verdicts:
+  - stage: S5a
+    verdict: minor
+    by: refereeA
+    hash: 66297945e897
+    date: '2026-10-11'
+    model: claude-opus-5-5
+    evidence: '03-levels-of-abbreviation.md:192 ''Every other line has a phrase'' gives a list that accounts
+      for only 22 of the 24 lines: the premises 1 and 2 are missing.'
+  - stage: S5b
+    verdict: minor
+    by: refereeB
+    hash: 66297945e897
+    date: '2026-10-11'
+    model: claude-opus-5-5
+    evidence: 03-levels-of-abbreviation.md:192 The check's answer counts line 10 among the eight lines
+      with no counterpart, contradicting the example's own answer. It also leaves lines 1 and 2 out of
+      both lists.
+  - stage: S7r
+    verdict: correct
+    by: rereferee
+    hash: 3c09abfa24b1
+    date: '2026-10-11'
+    model: claude-opus-5-5
+    evidence: 03:199-201 checked. The eight silent lines (5, 10, 19, 13, 16, 21, 22, 24) agree with the
+      example's answer at 03:190, which treats line 10 as silent. The phrase list now includes premises
+      1 and 2, so 8 + 16 = 24 lines are all accounted for. Both earlier findings are resolved. The only
+      remaining problem is the claim that lines 18 and 20 are 'the clash ... which names the pair through
+      "not both even
 - key: def-levels-of-proof
   kind: def
   file: 03-levels-of-abbreviation.md
-  line: 13
+  line: 76
   hash: 6e4cbd7fbeb5
   verdicts:
   - stage: S5a
@@ -867,7 +991,7 @@ items:
 - key: def-silent-steps
   kind: def
   file: 03-levels-of-abbreviation.md
-  line: 42
+  line: 116
   hash: e8572e46621e
   verdicts:
   - stage: S5a
@@ -915,10 +1039,16 @@ items:
       at 03:53, 03:55 and 03:56 (NOTATION.md:142). Cited labels exm-disjunction-first-derivations, prp-and-commutes,
       prp-double-negation, prp-de-morgan, prp-quantifier-negation and prp-bounded-quantifier-negation
       are used as stated. Leftover outside this section: ch05/04:39 still has bare \rulename{=I}/\rulename{=E}.'
+- key: check:03-levels-of-abbreviation:2
+  kind: check
+  file: 03-levels-of-abbreviation.md
+  line: 166
+  hash: 5c6477e2fa89
+  verdicts: []
 - key: exm-sqrt2-four-levels
   kind: exm
   file: 03-levels-of-abbreviation.md
-  line: 92
+  line: 178
   hash: 8932f3ccfb32
   verdicts:
   - stage: S5a
@@ -969,45 +1099,23 @@ items:
       5, 6-9, silent AND-E at 10) is correct. The check at 03:200 lists eight lines (5, 10, 19, 13, 16,
       21, 22, 24), which I confirmed. 03:193 says 15 lines with lines 9-10 carrying the mathematics, which
       is correct.
-- key: check:03-levels-of-abbreviation:1
+- key: check:03-levels-of-abbreviation:3
   kind: check
   file: 03-levels-of-abbreviation.md
-  line: 195
+  line: 286
   hash: 3c09abfa24b1
-  verdicts:
-  - stage: S5a
-    verdict: minor
-    by: refereeA
-    hash: 66297945e897
-    date: '2026-10-11'
-    model: claude-opus-5-5
-    evidence: '03-levels-of-abbreviation.md:192 ''Every other line has a phrase'' gives a list that accounts
-      for only 22 of the 24 lines: the premises 1 and 2 are missing.'
-  - stage: S5b
-    verdict: minor
-    by: refereeB
-    hash: 66297945e897
-    date: '2026-10-11'
-    model: claude-opus-5-5
-    evidence: 03-levels-of-abbreviation.md:192 The check's answer counts line 10 among the eight lines
-      with no counterpart, contradicting the example's own answer. It also leaves lines 1 and 2 out of
-      both lists.
-  - stage: S7r
-    verdict: correct
-    by: rereferee
-    hash: 3c09abfa24b1
-    date: '2026-10-11'
-    model: claude-opus-5-5
-    evidence: 03:199-201 checked. The eight silent lines (5, 10, 19, 13, 16, 21, 22, 24) agree with the
-      example's answer at 03:190, which treats line 10 as silent. The phrase list now includes premises
-      1 and 2, so 8 + 16 = 24 lines are all accounted for. Both earlier findings are resolved. The only
-      remaining problem is the claim that lines 18 and 20 are 'the clash ... which names the pair through
-      "not both even
+  verdicts: []
+- key: check:03-levels-of-abbreviation:4
+  kind: check
+  file: 03-levels-of-abbreviation.md
+  line: 297
+  hash: c7d99aaa71b8
+  verdicts: []
 - key: exm-uniform-four-levels
   kind: exm
   file: 03-levels-of-abbreviation.md
-  line: 207
-  hash: 4e6c89158073
+  line: 309
+  hash: ee7dd893ce66
   verdicts:
   - stage: S5a
     verdict: minor
@@ -1036,11 +1144,29 @@ items:
       9, and only 7 is none of these. Level-1 line 7 (''forall E, exists I'' from 2, 5, 6) is allowed
       by the revised definition. 03:278 now marks 9, 10 and 11 as level-0 numbers, so both earlier findings
       are resolved. The d'
+- key: check:03-levels-of-abbreviation:5
+  kind: check
+  file: 03-levels-of-abbreviation.md
+  line: 390
+  hash: 58ae9f01bd32
+  verdicts: []
+- key: exm-suffices-column
+  kind: exm
+  file: 03-levels-of-abbreviation.md
+  line: 402
+  hash: fc9a019494d9
+  verdicts: []
+- key: check:03-levels-of-abbreviation:6
+  kind: check
+  file: 03-levels-of-abbreviation.md
+  line: 431
+  hash: 219cbaef1994
+  verdicts: []
 - key: exr-levels-of-abbreviation-a1
   kind: exr
   file: 03-levels-of-abbreviation.md
-  line: 319
-  hash: 7ddd894a5b02
+  line: 510
+  hash: d0117418c8f2
   verdicts:
   - stage: S5a
     verdict: minor
@@ -1077,10 +1203,16 @@ items:
       the finding. (a) Lines 2, 3, 10 and 11 match the bracket in Section 6.4 (ch04/10:77). (b) agrees
       with 03:275. (d) The line numbers 9/19/20 and 8/11 are right. (e) NOT-I's conclusion is on the never-silent
       list (03:63), and the boxes of p, q and r^2 = 2 are open when the contradiction is reached.
+- key: exr-levels-of-abbreviation-a2
+  kind: exr
+  file: 03-levels-of-abbreviation.md
+  line: 536
+  hash: ac589cf240ea
+  verdicts: []
 - key: exr-levels-of-abbreviation-b1
   kind: exr
   file: 03-levels-of-abbreviation.md
-  line: 347
+  line: 585
   hash: ed6fb44f4f9f
   verdicts:
   - stage: S5a
@@ -1122,8 +1254,8 @@ items:
 - key: exr-levels-of-abbreviation-b2
   kind: exr
   file: 03-levels-of-abbreviation.md
-  line: 384
-  hash: afca00a178d9
+  line: 622
+  hash: e7f204a61c1e
   verdicts:
   - stage: S5a
     verdict: correct
@@ -1154,10 +1286,16 @@ items:
     evidence: '03:376-437. I rebuilt the 22-line skeleton myself and it agrees. The ∃E side conditions
       hold at lines 9, 14, 19 and 20. Script: (2k+1)^2 - 1 = 4k(k+1); the two case products match; 8 |
       n^2 - 1 for odd n. The missing (E1) reason is correctly flagged against def-silent-steps (03:63).'
+- key: exr-levels-of-abbreviation-b3
+  kind: exr
+  file: 03-levels-of-abbreviation.md
+  line: 688
+  hash: c1bb411fbc57
+  verdicts: []
 - key: exr-levels-of-abbreviation-c1
   kind: exr
   file: 03-levels-of-abbreviation.md
-  line: 449
+  line: 725
   hash: 95ca3d7fb294
   verdicts:
   - stage: S5a
@@ -1211,7 +1349,7 @@ items:
 - key: exr-levels-of-abbreviation-c2
   kind: exr
   file: 03-levels-of-abbreviation.md
-  line: 501
+  line: 777
   hash: c5a993edea1f
   verdicts:
   - stage: S5a
@@ -1251,6 +1389,12 @@ items:
       3, 6, 7), EXISTS-I at 15 (bound line 6), EXISTS-E at 16 (N0 not in 16, 5, 3), forall I at 17. The
       silent ->E of line 11 is now allowed by def-silent-steps 03:55: its implication is line 9, an instance
       of the chosen'
+- key: exr-levels-of-abbreviation-c3
+  kind: exr
+  file: 03-levels-of-abbreviation.md
+  line: 847
+  hash: 5806957fba8e
+  verdicts: []
 - key: exm-self-explanation
   kind: exm
   file: 04-reading-proofs.md
@@ -1294,8 +1438,8 @@ items:
 - key: check:04-reading-proofs:1
   kind: check
   file: 04-reading-proofs.md
-  line: 74
-  hash: 134b2c0e59c9
+  line: 70
+  hash: a0cb2400520b
   verdicts:
   - stage: S5a
     verdict: correct
@@ -1315,10 +1459,22 @@ items:
     evidence: 'L74-95: six lines as claimed. prp-de-morgan (a) is ¬(P∨Q) ⊢ ¬P∧¬Q (ch02/05:315). prp-contrapositive-converse
       is ¬Q→¬P ⊢ P→Q, which matches contrapositive to claim. The order facts are ledgered at L258 (under
       the exm key, the only label available).'
+- key: check:04-reading-proofs:2
+  kind: check
+  file: 04-reading-proofs.md
+  line: 82
+  hash: 134b2c0e59c9
+  verdicts: []
+- key: check:04-reading-proofs:3
+  kind: check
+  file: 04-reading-proofs.md
+  line: 114
+  hash: 3ff8cab21e5f
+  verdicts: []
 - key: exr-reading-proofs-a1
   kind: exr
   file: 04-reading-proofs.md
-  line: 121
+  line: 146
   hash: c58dc871a128
   verdicts:
   - stage: S5a
@@ -1347,11 +1503,17 @@ items:
     model: claude-opus-5-5
     evidence: 04:121-152. My classification is (a) J, (b) P, (c) J, (d) P, (e) J, (f) P, the same as the
       solution's. The warrant written out for (f) is correct.
+- key: exr-reading-proofs-a2
+  kind: exr
+  file: 04-reading-proofs.md
+  line: 179
+  hash: b399ef08725b
+  verdicts: []
 - key: exr-reading-proofs-b1
   kind: exr
   file: 04-reading-proofs.md
-  line: 156
-  hash: 575f94336f87
+  line: 228
+  hash: 3a9d24af18fc
   verdicts:
   - stage: S5a
     verdict: gap
@@ -1392,7 +1554,7 @@ items:
 - key: exr-reading-proofs-b2
   kind: exr
   file: 04-reading-proofs.md
-  line: 190
+  line: 266
   hash: f87375dc15c9
   verdicts:
   - stage: S5a
@@ -1432,11 +1594,23 @@ items:
       Line 4 is not an instance of any fact stated so far. The earlier finding (lines 2 and 6 also cite
       nothing) is resolved by the words ''cited or not''. I solved it myself: (y+x/2)^2+3x^2/4 = y^2+xy+x^2,
       which is zero o'
+- key: exr-reading-proofs-b3
+  kind: exr
+  file: 04-reading-proofs.md
+  line: 286
+  hash: c1de953d1983
+  verdicts: []
 - key: exr-reading-proofs-c1
   kind: exr
   file: 04-reading-proofs.md
-  line: 212
-  hash: 014e7f35a704
+  line: 326
+  hash: 8c58fd968cce
+  verdicts: []
+- key: exr-reading-proofs-c2
+  kind: exr
+  file: 04-reading-proofs.md
+  line: 363
+  hash: 960ace086c57
   verdicts:
   - stage: S5a
     verdict: minor
@@ -1475,7 +1649,7 @@ items:
 - key: check:05-writing-proofs:1
   kind: check
   file: 05-writing-proofs.md
-  line: 27
+  line: 23
   hash: 4447b3bee352
   verdicts:
   - stage: S5a
@@ -1495,11 +1669,57 @@ items:
     evidence: 05-writing-proofs.md:27-33. Step 3 does produce the box opening, and def-silent-steps (03:60)
       lists the opening of a ∀I box as never silent. The closing may be silent (03:56). Consistent with
       prp-bounded-quantifier-rules.
+- key: exm-subset-bounded-above
+  kind: exm
+  file: 05-writing-proofs.md
+  line: 35
+  hash: 4bdecc1040fc
+  verdicts:
+  - stage: S5a
+    verdict: minor
+    by: refereeA
+    hash: af2a2e71c88f
+    date: '2026-10-11'
+    model: claude-opus-5-5
+    evidence: 05-writing-proofs.md:158 The level-3 prose proves an implication by opening an ->I box ('Suppose
+      B is bounded above'), but the derivation it is said to render has that hypothesis as premise line
+      2 and no ->I. Line 9 is the consequent, not the stated implication.
+  - stage: S5b
+    verdict: minor
+    by: refereeB
+    hash: af2a2e71c88f
+    date: '2026-10-11'
+    model: claude-opus-5-5
+    evidence: 05-writing-proofs.md:154 'The search found it last' contradicts the search as written in
+      Step 4.
+  - stage: S7r
+    verdict: correct
+    by: rereferee
+    hash: 86626647b962
+    date: '2026-10-11'
+    model: claude-opus-5-5
+    evidence: ':126 now says the derivation is the inside of a ->I box, with line 2 as its assumption,
+      and :160 says that box''s closing is silent. That resolves the ->I mismatch. The level-3 prose (:158)
+      now gives the dependence (''depending on B only''), as def-silent-steps requires for the exists-I
+      witness. Step 5 (:154) no longer says the search ''found it last'', which is consistent with Step
+      4''s ''try it''. :165 '
+- key: check:05-writing-proofs:2
+  kind: check
+  file: 05-writing-proofs.md
+  line: 124
+  hash: ed8c72880eb8
+  verdicts: []
+- key: check:05-writing-proofs:3
+  kind: check
+  file: 05-writing-proofs.md
+  line: 132
+  hash: 37812fed8961
+  verdicts: []
 - key: exm-annotate-abs
   kind: exm
   file: 05-writing-proofs.md
-  line: 51
-  hash: fc17ed01e087
+  line: 156
+  hash: 7fb7b414bf11
   verdicts:
   - stage: S5a
     verdict: minor
@@ -1532,8 +1752,8 @@ items:
 - key: exm-write-from-derivation
   kind: exm
   file: 05-writing-proofs.md
-  line: 80
-  hash: 32c5bb1d0031
+  line: 202
+  hash: 39ec354adb08
   verdicts:
   - stage: S5a
     verdict: minor
@@ -1562,44 +1782,22 @@ items:
       (n=2k+1 gives n+1=2(k+1); n+1=2m gives n(n+1)=2(nm)). The model paragraph now cites premise 3 ('since
       an odd number plus one is even'), and lines 8-9 stay one sentence joined by 'so', as the comparison
       says. All
-- key: exm-subset-bounded-above
+- key: exm-generalise-proof
   kind: exm
   file: 05-writing-proofs.md
-  line: 119
-  hash: 86626647b962
-  verdicts:
-  - stage: S5a
-    verdict: minor
-    by: refereeA
-    hash: af2a2e71c88f
-    date: '2026-10-11'
-    model: claude-opus-5-5
-    evidence: 05-writing-proofs.md:158 The level-3 prose proves an implication by opening an ->I box ('Suppose
-      B is bounded above'), but the derivation it is said to render has that hypothesis as premise line
-      2 and no ->I. Line 9 is the consequent, not the stated implication.
-  - stage: S5b
-    verdict: minor
-    by: refereeB
-    hash: af2a2e71c88f
-    date: '2026-10-11'
-    model: claude-opus-5-5
-    evidence: 05-writing-proofs.md:154 'The search found it last' contradicts the search as written in
-      Step 4.
-  - stage: S7r
-    verdict: correct
-    by: rereferee
-    hash: 86626647b962
-    date: '2026-10-11'
-    model: claude-opus-5-5
-    evidence: ':126 now says the derivation is the inside of a ->I box, with line 2 as its assumption,
-      and :160 says that box''s closing is silent. That resolves the ->I mismatch. The level-3 prose (:158)
-      now gives the dependence (''depending on B only''), as def-silent-steps requires for the exists-I
-      witness. Step 5 (:154) no longer says the search ''found it last'', which is consistent with Step
-      4''s ''try it''. :165 '
+  line: 241
+  hash: aa87494a023b
+  verdicts: []
+- key: check:05-writing-proofs:4
+  kind: check
+  file: 05-writing-proofs.md
+  line: 257
+  hash: f5becd649d20
+  verdicts: []
 - key: exr-writing-proofs-a1
   kind: exr
   file: 05-writing-proofs.md
-  line: 179
+  line: 269
   hash: 40193c3804bf
   verdicts:
   - stage: S5a
@@ -1637,10 +1835,16 @@ items:
       neg-E. This matches row (4), and the fact is in the dependency ledger at :500. The rest checks out:
       (b) cites De Morgan (a), which is exactly prp-de-morgan (a); (c) is face (iii) and cites prp-contrapositive-converse,
       which uses RAA (ch02 05:187); (d) agrees with def-silent-steps. The earlier finding is resolved.'
+- key: exr-writing-proofs-a2
+  kind: exr
+  file: 05-writing-proofs.md
+  line: 306
+  hash: 3da6402dab30
+  verdicts: []
 - key: exr-writing-proofs-b1
   kind: exr
   file: 05-writing-proofs.md
-  line: 218
+  line: 355
   hash: ca898ae0c4fa
   verdicts:
   - stage: S5a
@@ -1674,7 +1878,7 @@ items:
 - key: exr-writing-proofs-b2
   kind: exr
   file: 05-writing-proofs.md
-  line: 332
+  line: 469
   hash: 41d09d715e86
   verdicts:
   - stage: S5a
@@ -1718,7 +1922,7 @@ items:
 - key: exr-writing-proofs-b3
   kind: exr
   file: 05-writing-proofs.md
-  line: 361
+  line: 498
   hash: 96cc56423cd3
   verdicts:
   - stage: S5a
@@ -1757,10 +1961,16 @@ items:
       opens on x+y in Q with goal bottom. Both are accurate. 'Skeleton first' is how the book names the
       move elsewhere (03:99, 06:297). The ¬I conclusion is never silent and the ->I closing may be silent,
       both per def-silent-steps. The S5b finding is resolved.
+- key: exr-writing-proofs-b4
+  kind: exr
+  file: 05-writing-proofs.md
+  line: 538
+  hash: 091326346235
+  verdicts: []
 - key: exr-writing-proofs-c1
   kind: exr
   file: 05-writing-proofs.md
-  line: 403
+  line: 573
   hash: 7dcbfae518ae
   verdicts:
   - stage: S5a
@@ -1792,7 +2002,7 @@ items:
 - key: exr-writing-proofs-c2
   kind: exr
   file: 05-writing-proofs.md
-  line: 441
+  line: 611
   hash: e037d43abf71
   verdicts:
   - stage: S5a
@@ -1840,10 +2050,16 @@ items:
       which I checked is correct. The fatal errors are appropriate. Note: the diff also changes verify/ch08/exr-checking-proofs-b1.py,
       which belongs to another section (5.6), not this file. It adds an assert that not(x^2 < 1) when
       x > 1, which matches its docstring, and it runs clean (''all quoted values check'').'
+- key: exr-writing-proofs-c3
+  kind: exr
+  file: 05-writing-proofs.md
+  line: 660
+  hash: 4d76a8889ca5
+  verdicts: []
 - key: check:06-checking-proofs:1
   kind: check
   file: 06-checking-proofs.md
-  line: 16
+  line: 49
   hash: aee1eea20ac0
   verdicts:
   - stage: S5a
@@ -1877,8 +2093,8 @@ items:
 - key: exm-not-allowed-catalogue
   kind: exm
   file: 06-checking-proofs.md
-  line: 28
-  hash: ec974807f358
+  line: 71
+  hash: e085c648c906
   verdicts:
   - stage: S5a
     verdict: correct
@@ -1913,8 +2129,8 @@ items:
 - key: check:06-checking-proofs:2
   kind: check
   file: 06-checking-proofs.md
-  line: 50
-  hash: bb9cbbec537a
+  line: 120
+  hash: c75a747f0665
   verdicts:
   - stage: S5a
     verdict: correct
@@ -1932,10 +2148,16 @@ items:
     model: claude-opus-5-5
     evidence: 06:55 matches the blueprint answer. The finite maximum is ledgered at 06:400 and has a STATUS
       row (Ch 5 §06 → Ch 7).
+- key: check:06-checking-proofs:3
+  kind: check
+  file: 06-checking-proofs.md
+  line: 128
+  hash: bb9cbbec537a
+  verdicts: []
 - key: exm-verify-cases
   kind: exm
   file: 06-checking-proofs.md
-  line: 66
+  line: 144
   hash: e687cdf6ea2c
   verdicts:
   - stage: S5a
@@ -1969,7 +2191,7 @@ items:
 - key: exm-verify-converse
   kind: exm
   file: 06-checking-proofs.md
-  line: 87
+  line: 165
   hash: e8cb96dacadc
   verdicts:
   - stage: S5a
@@ -1993,7 +2215,7 @@ items:
 - key: exm-verify-negation
   kind: exm
   file: 06-checking-proofs.md
-  line: 107
+  line: 185
   hash: ff88877032fb
   verdicts:
   - stage: S5a
@@ -2026,7 +2248,7 @@ items:
 - key: exm-verify-scope
   kind: exm
   file: 06-checking-proofs.md
-  line: 129
+  line: 207
   hash: 272abd1db1c3
   verdicts:
   - stage: S5a
@@ -2048,8 +2270,8 @@ items:
 - key: exr-checking-proofs-a1
   kind: exr
   file: 06-checking-proofs.md
-  line: 160
-  hash: 207dbc8fe398
+  line: 244
+  hash: 5d098aaa59c7
   verdicts:
   - stage: S5a
     verdict: minor
@@ -2103,10 +2325,16 @@ items:
       divisible by 6. (f) N8: the disjunction is underived and false at x = 0, so ∨E has no valid first
       input. Every part now names an entry and a rule, and the cited labels match the catalogue. The a1
       sidecar passes.'
+- key: exr-checking-proofs-a2
+  kind: exr
+  file: 06-checking-proofs.md
+  line: 273
+  hash: d62d3f6a06a9
+  verdicts: []
 - key: exr-checking-proofs-b1
   kind: exr
   file: 06-checking-proofs.md
-  line: 191
+  line: 322
   hash: 49f3fbcfa1ac
   verdicts:
   - stage: S5a
@@ -2171,7 +2399,7 @@ items:
 - key: exr-checking-proofs-b2
   kind: exr
   file: 06-checking-proofs.md
-  line: 227
+  line: 358
   hash: 9e1eebd8981b
   verdicts:
   - stage: S5a
@@ -2209,10 +2437,16 @@ items:
       applies. The pair x=1, y=-1 gives 2 vs 0 and meets neither case. Lines (3) and (4) are correct,
       and exm-triangle-inequality-cases exists (ch01/07). The earlier finding is resolved: the solution
       now cites ''(N8) of @exm-not-allowed-catalogue'', as STYLE §11.3 requires.'
+- key: exr-checking-proofs-b3
+  kind: exr
+  file: 06-checking-proofs.md
+  line: 374
+  hash: 82a8487214be
+  verdicts: []
 - key: exr-checking-proofs-c1
   kind: exr
   file: 06-checking-proofs.md
-  line: 245
+  line: 409
   hash: 18f3df7ee111
   verdicts:
   - stage: S5a
@@ -2255,7 +2489,7 @@ items:
 - key: exr-checking-proofs-c2
   kind: exr
   file: 06-checking-proofs.md
-  line: 315
+  line: 479
   hash: 7b0c11ff6c38
   verdicts:
   - stage: S5a
@@ -2300,7 +2534,7 @@ items:
 - key: exr-checking-proofs-c3
   kind: exr
   file: 06-checking-proofs.md
-  line: 352
+  line: 516
   hash: c3037e16ef14
   verdicts:
   - stage: S5a
@@ -2333,44 +2567,152 @@ items:
       case 0<x<1 holds (script); (4) fails at line (2), (N9), x=0. Each proof is flawed only where stated.
       The points sum to 10. However, hint 2 (373) points at the failing line of (3) and at the delicate
       step of (1). [fi'
-- key: check:07-excluded-middle:1
-  kind: check
+- key: exr-checking-proofs-r1
+  kind: exr
+  file: 06-checking-proofs.md
+  line: 558
+  hash: a29d7c6fee04
+  verdicts: []
+- key: thm-irrational-power-rational
+  kind: thm
   file: 07-excluded-middle.md
-  line: 20
-  hash: fa15718eba56
+  line: 9
+  hash: c811efe79634
+  verdicts:
+  - stage: S5a
+    verdict: correct
+    by: refereeA
+    hash: c811efe79634
+    date: '2026-10-11'
+    model: claude-opus-5-5
+    evidence: 07:126. It has no hypotheses and the statement is true (both proofs below establish it).
+  - stage: S5b
+    verdict: correct
+    by: refereeB
+    hash: c811efe79634
+    date: '2026-10-11'
+    model: claude-opus-5-5
+    evidence: 07:123-133. The statement is well-posed. The Try-it-first sits between statement and Idea,
+      and the chapter has two in total (≤ 2, STYLE §11.8). The meta-claim 'nothing in this book decides
+      it' is consistent with the Gelfond-Schneider remark at 07:152
+- key: proof:thm-irrational-power-rational
+  kind: proof
+  file: 07-excluded-middle.md
+  line: 21
+  hash: 8cdcce6f6603
+  verdicts:
+  - stage: S5a
+    verdict: correct
+    by: refereeA
+    hash: 8cdcce6f6603
+    date: '2026-10-11'
+    model: claude-opus-5-5
+    evidence: 07:136-146. LEM on 's rational', then ∨E with ∃I inside each case. The witnesses depend
+      only on the case. Case 2 uses s real and not rational, and (x^y)^z = x^{yz} with x = √2 > 0 (school
+      fact, in the ledger). thm-sqrt2-irrational states that √2 is irrational.
+  - stage: S5b
+    verdict: correct
+    by: refereeB
+    hash: 8cdcce6f6603
+    date: '2026-10-11'
+    model: claude-opus-5-5
+    evidence: 07:135-147. LEM on 's is rational', then ∨E. Case 1 uses thm-sqrt2-irrational (ch02 02:230,
+      'sqrt 2 is irrational'). Case 2's exponent law and sqrt2·sqrt2 = 2 are in the ledger (ch11/ch20
+      promised, STATUS rows 96 and 100). The meta-claim at 149 ('every other step is intuitionistic')
+      holds on the page
+- key: prp-log2-9-irrational
+  kind: prp
+  file: 07-excluded-middle.md
+  line: 43
+  hash: 1b1ad0946592
+  verdicts:
+  - stage: S5a
+    verdict: correct
+    by: refereeA
+    hash: 1b1ad0946592
+    date: '2026-10-11'
+    model: claude-opus-5-5
+    evidence: '07:160. True: 2^p = 9^q has no solution with p, q ≥ 1, and (2^{1/2})^{log2 9} = 3. The
+      sidecar passes.'
+  - stage: S5b
+    verdict: correct
+    by: refereeB
+    hash: 1b1ad0946592
+    date: '2026-10-11'
+    model: claude-opus-5-5
+    evidence: '07:157-161. The statement is correct: 2^{(log2 9)/2} = 3. The consequence is proved in
+      the same block, which avoids an optional-cites-optional problem'
+- key: proof:prp-log2-9-irrational
+  kind: proof
+  file: 07-excluded-middle.md
+  line: 53
+  hash: f92c069f3d88
   verdicts:
   - stage: S5a
     verdict: minor
     by: refereeA
-    hash: c6c340dc51df
+    hash: 45ba2599dc5b
     date: '2026-10-11'
     model: claude-opus-5-5
-    evidence: 07-excluded-middle.md:25 The sentence 'Everything else Chapter 2 derived uses no classical
-      rule' is literally false. The list also includes only part ① of thm-classical-rules-interderivable,
-      although parts ② and ③ use ¬¬E and LEM, which the question's own test counts.
+    evidence: 07-excluded-middle.md:168 The proof assumes a representation p/q with q ≥ 1 without saying
+      why every rational has one. The book's (L) supplies only q ≠ 0.
   - stage: S5b
     verdict: minor
     by: refereeB
-    hash: c6c340dc51df
+    hash: 45ba2599dc5b
     date: '2026-10-11'
     model: claude-opus-5-5
-    evidence: 07-excluded-middle.md:25 The Quick check solution's 'all/none' sentence is false as written,
-      and its count mixes labeled results with a proof part.
+    evidence: 07-excluded-middle.md:168 'p > 0, that is, p ≥ 1' uses 'no integer lies strictly between
+      0 and 1', a ch07 fact that is neither ledgered nor listed for §07 in STATUS.
   - stage: S7r
     verdict: correct
     by: rereferee
-    hash: fa15718eba56
+    hash: f92c069f3d88
     date: '2026-10-11'
     model: claude-opus-5-5
-    evidence: '07-excluded-middle.md:25-27. I checked part (a) against every prp/thm label in ch02. §§2.1-2.4
-      come before RAA and contain no RAA, ¬¬E or LEM line (grep). §2.5 has exactly the seven listed labels:
-      double-negation (b) RAA; contrapositive-converse RAA; excluded-middle RAA; peirce RAA; de-morgan
-      (d) RAA; implication-as-disjunction (b) LEM; thm-classical-rules-interderivable uses RAA in ①, ¬¬E
-      in ② an'
+    evidence: l.168-178. The proof now starts from q ≠ 0, which is (L) of §2.2 as quoted at ch05/03:90,
+      and passes to q ≥ 1 by negating both p and q. Then p = q·log2 9 > 0 gives p ≥ 1. 2^p = 2·2^(p-1)
+      with p-1 ≥ 0 is even; 9^q is odd as a product of q ≥ 1 odd factors; (E2) supplies the clash; the
+      conclusion is ¬I. The consequence 2^{(log2 9)/2} = 2^{log2 3} = 3 holds. Both earlier findings are
+      resolved. The q ≥
+- key: check:07-excluded-middle:1
+  kind: check
+  file: 07-excluded-middle.md
+  line: 69
+  hash: 6f44f6785893
+  verdicts: []
+- key: check:07-excluded-middle:2
+  kind: check
+  file: 07-excluded-middle.md
+  line: 100
+  hash: 2793e9acc601
+  verdicts:
+  - stage: S5a
+    verdict: correct
+    by: refereeA
+    hash: 2793e9acc601
+    date: '2026-10-11'
+    model: claude-opus-5-5
+    evidence: 07:116. The BHK method applies f to p, which matches ¬I with ∧E and ¬E. The parenthetical
+      leaves out ∧E, which is harmless.
+  - stage: S5b
+    verdict: correct
+    by: refereeB
+    hash: 2793e9acc601
+    date: '2026-10-11'
+    model: claude-opus-5-5
+    evidence: '07:111-117. The BHK method for ¬(P∧¬P) is correct: apply the second component to the first.
+      It decides nothing'
+- key: check:07-excluded-middle:3
+  kind: check
+  file: 07-excluded-middle.md
+  line: 125
+  hash: 641479eeb6a2
+  verdicts: []
 - key: prp-not-not-excluded-middle
   kind: prp
   file: 07-excluded-middle.md
-  line: 34
+  line: 137
   hash: c8b5914b6e94
   verdicts:
   - stage: S5a
@@ -2403,7 +2745,7 @@ items:
 - key: proof:prp-not-not-excluded-middle
   kind: proof
   file: 07-excluded-middle.md
-  line: 48
+  line: 151
   hash: 60bce2b3105c
   verdicts:
   - stage: S5a
@@ -2424,134 +2766,22 @@ items:
     evidence: '07:51-70. Eight lines checked against prp-excluded-middle (ch02 05:240-256): lines 1-7
       match line for line. The only rules are ¬I (5, 8), ∨I (3, 6) and ¬E (4, 7). There is no ⊥E or RAA,
       as the statement claims'
-- key: check:07-excluded-middle:2
+- key: check:07-excluded-middle:4
   kind: check
   file: 07-excluded-middle.md
-  line: 111
-  hash: 2793e9acc601
-  verdicts:
-  - stage: S5a
-    verdict: correct
-    by: refereeA
-    hash: 2793e9acc601
-    date: '2026-10-11'
-    model: claude-opus-5-5
-    evidence: 07:116. The BHK method applies f to p, which matches ¬I with ∧E and ¬E. The parenthetical
-      leaves out ∧E, which is harmless.
-  - stage: S5b
-    verdict: correct
-    by: refereeB
-    hash: 2793e9acc601
-    date: '2026-10-11'
-    model: claude-opus-5-5
-    evidence: '07:111-117. The BHK method for ¬(P∧¬P) is correct: apply the second component to the first.
-      It decides nothing'
-- key: thm-irrational-power-rational
-  kind: thm
+  line: 194
+  hash: 8b578a68fab3
+  verdicts: []
+- key: check:07-excluded-middle:5
+  kind: check
   file: 07-excluded-middle.md
-  line: 123
-  hash: c811efe79634
-  verdicts:
-  - stage: S5a
-    verdict: correct
-    by: refereeA
-    hash: c811efe79634
-    date: '2026-10-11'
-    model: claude-opus-5-5
-    evidence: 07:126. It has no hypotheses and the statement is true (both proofs below establish it).
-  - stage: S5b
-    verdict: correct
-    by: refereeB
-    hash: c811efe79634
-    date: '2026-10-11'
-    model: claude-opus-5-5
-    evidence: 07:123-133. The statement is well-posed. The Try-it-first sits between statement and Idea,
-      and the chapter has two in total (≤ 2, STYLE §11.8). The meta-claim 'nothing in this book decides
-      it' is consistent with the Gelfond-Schneider remark at 07:152
-- key: proof:thm-irrational-power-rational
-  kind: proof
-  file: 07-excluded-middle.md
-  line: 135
-  hash: 8cdcce6f6603
-  verdicts:
-  - stage: S5a
-    verdict: correct
-    by: refereeA
-    hash: 8cdcce6f6603
-    date: '2026-10-11'
-    model: claude-opus-5-5
-    evidence: 07:136-146. LEM on 's rational', then ∨E with ∃I inside each case. The witnesses depend
-      only on the case. Case 2 uses s real and not rational, and (x^y)^z = x^{yz} with x = √2 > 0 (school
-      fact, in the ledger). thm-sqrt2-irrational states that √2 is irrational.
-  - stage: S5b
-    verdict: correct
-    by: refereeB
-    hash: 8cdcce6f6603
-    date: '2026-10-11'
-    model: claude-opus-5-5
-    evidence: 07:135-147. LEM on 's is rational', then ∨E. Case 1 uses thm-sqrt2-irrational (ch02 02:230,
-      'sqrt 2 is irrational'). Case 2's exponent law and sqrt2·sqrt2 = 2 are in the ledger (ch11/ch20
-      promised, STATUS rows 96 and 100). The meta-claim at 149 ('every other step is intuitionistic')
-      holds on the page
-- key: prp-log2-9-irrational
-  kind: prp
-  file: 07-excluded-middle.md
-  line: 157
-  hash: 1b1ad0946592
-  verdicts:
-  - stage: S5a
-    verdict: correct
-    by: refereeA
-    hash: 1b1ad0946592
-    date: '2026-10-11'
-    model: claude-opus-5-5
-    evidence: '07:160. True: 2^p = 9^q has no solution with p, q ≥ 1, and (2^{1/2})^{log2 9} = 3. The
-      sidecar passes.'
-  - stage: S5b
-    verdict: correct
-    by: refereeB
-    hash: 1b1ad0946592
-    date: '2026-10-11'
-    model: claude-opus-5-5
-    evidence: '07:157-161. The statement is correct: 2^{(log2 9)/2} = 3. The consequence is proved in
-      the same block, which avoids an optional-cites-optional problem'
-- key: proof:prp-log2-9-irrational
-  kind: proof
-  file: 07-excluded-middle.md
-  line: 167
-  hash: f92c069f3d88
-  verdicts:
-  - stage: S5a
-    verdict: minor
-    by: refereeA
-    hash: 45ba2599dc5b
-    date: '2026-10-11'
-    model: claude-opus-5-5
-    evidence: 07-excluded-middle.md:168 The proof assumes a representation p/q with q ≥ 1 without saying
-      why every rational has one. The book's (L) supplies only q ≠ 0.
-  - stage: S5b
-    verdict: minor
-    by: refereeB
-    hash: 45ba2599dc5b
-    date: '2026-10-11'
-    model: claude-opus-5-5
-    evidence: 07-excluded-middle.md:168 'p > 0, that is, p ≥ 1' uses 'no integer lies strictly between
-      0 and 1', a ch07 fact that is neither ledgered nor listed for §07 in STATUS.
-  - stage: S7r
-    verdict: correct
-    by: rereferee
-    hash: f92c069f3d88
-    date: '2026-10-11'
-    model: claude-opus-5-5
-    evidence: l.168-178. The proof now starts from q ≠ 0, which is (L) of §2.2 as quoted at ch05/03:90,
-      and passes to q ≥ 1 by negating both p and q. Then p = q·log2 9 > 0 gives p ≥ 1. 2^p = 2·2^(p-1)
-      with p-1 ≥ 0 is even; 9^q is odd as a product of q ≥ 1 odd factors; (E2) supplies the clash; the
-      conclusion is ¬I. The consequence 2^{(log2 9)/2} = 2^{log2 3} = 3 holds. Both earlier findings are
-      resolved. The q ≥
+  line: 221
+  hash: f9f04733e902
+  verdicts: []
 - key: exr-excluded-middle-a1
   kind: exr
   file: 07-excluded-middle.md
-  line: 237
+  line: 295
   hash: 36c4a912f2c8
   verdicts:
   - stage: S5a
@@ -2590,11 +2820,17 @@ items:
       the hypothetical derivation, together with prp-excluded-middle (main line, not optional), gives
       ⊥ by ¬E{P∨¬P, ¬(P∨¬P)}; that contradicts @thm-soundness, or the soundness statement of Section 7.2
       in the predicate'
+- key: exr-excluded-middle-a2
+  kind: exr
+  file: 07-excluded-middle.md
+  line: 321
+  hash: e0793102c798
+  verdicts: []
 - key: exr-excluded-middle-b1
   kind: exr
   file: 07-excluded-middle.md
-  line: 265
-  hash: 8f3d9d72d522
+  line: 370
+  hash: 39c2b2a383d5
   verdicts:
   - stage: S5a
     verdict: minor
@@ -2635,7 +2871,7 @@ items:
 - key: exr-excluded-middle-b2
   kind: exr
   file: 07-excluded-middle.md
-  line: 307
+  line: 412
   hash: 8b5df3fdaf89
   verdicts:
   - stage: S5a
@@ -2676,7 +2912,7 @@ items:
 - key: exr-excluded-middle-b3
   kind: exr
   file: 07-excluded-middle.md
-  line: 328
+  line: 433
   hash: e466dfcd763e
   verdicts:
   - stage: S5a
@@ -2704,10 +2940,50 @@ items:
     evidence: 07:334-337. Checked against ch04/09-quantifier-laws.md:39-53. Line 9 is the RAA that asserts
       existence; line 6 is the other RAA; line 4's ∃I sits inside box 3-5 on the flagged x_0, and it is
       unavailable at line 9. The 'Not every, and some not' paragraph (07:109) is the worked example.
+- key: exr-excluded-middle-b4
+  kind: exr
+  file: 07-excluded-middle.md
+  line: 445
+  hash: 70e5e2aa2ebb
+  verdicts:
+  - stage: S5a
+    verdict: minor
+    by: refereeA
+    hash: c6c340dc51df
+    date: '2026-10-11'
+    model: claude-opus-5-5
+    evidence: 07-excluded-middle.md:25 The sentence 'Everything else Chapter 2 derived uses no classical
+      rule' is literally false. The list also includes only part ① of thm-classical-rules-interderivable,
+      although parts ② and ③ use ¬¬E and LEM, which the question's own test counts.
+  - stage: S5b
+    verdict: minor
+    by: refereeB
+    hash: c6c340dc51df
+    date: '2026-10-11'
+    model: claude-opus-5-5
+    evidence: 07-excluded-middle.md:25 The Quick check solution's 'all/none' sentence is false as written,
+      and its count mixes labeled results with a proof part.
+  - stage: S7r
+    verdict: correct
+    by: rereferee
+    hash: fa15718eba56
+    date: '2026-10-11'
+    model: claude-opus-5-5
+    evidence: '07-excluded-middle.md:25-27. I checked part (a) against every prp/thm label in ch02. §§2.1-2.4
+      come before RAA and contain no RAA, ¬¬E or LEM line (grep). §2.5 has exactly the seven listed labels:
+      double-negation (b) RAA; contrapositive-converse RAA; excluded-middle RAA; peirce RAA; de-morgan
+      (d) RAA; implication-as-disjunction (b) LEM; thm-classical-rules-interderivable uses RAA in ①, ¬¬E
+      in ② an'
+- key: exr-excluded-middle-b5
+  kind: exr
+  file: 07-excluded-middle.md
+  line: 459
+  hash: ea4b82438614
+  verdicts: []
 - key: exr-excluded-middle-c1
   kind: exr
   file: 07-excluded-middle.md
-  line: 342
+  line: 567
   hash: d1321b89d639
   verdicts:
   - stage: S5a
@@ -2740,7 +3016,7 @@ items:
 - key: exr-excluded-middle-c2
   kind: exr
   file: 07-excluded-middle.md
-  line: 393
+  line: 618
   hash: d406f4d8e8e9
   verdicts:
   - stage: S5a
@@ -2776,8 +3052,8 @@ items:
 - key: exr-excluded-middle-r1
   kind: exr
   file: 07-excluded-middle.md
-  line: 447
-  hash: 89d9cdfe5c6d
+  line: 672
+  hash: 29ed8f2e2ac2
   verdicts:
   - stage: S5a
     verdict: correct
@@ -2809,7 +3085,7 @@ items:
 - key: exr-excluded-middle-r2
   kind: exr
   file: 07-excluded-middle.md
-  line: 475
+  line: 700
   hash: 829f0b5b8ae9
   verdicts:
   - stage: S5a
@@ -2851,8 +3127,8 @@ items:
 - key: exr-excluded-middle-r3
   kind: exr
   file: 07-excluded-middle.md
-  line: 511
-  hash: e15a7ee997fb
+  line: 736
+  hash: b17f2ab4fdc9
   verdicts:
   - stage: S5a
     verdict: correct
@@ -2896,7 +3172,7 @@ items:
 - key: exr-excluded-middle-r4
   kind: exr
   file: 07-excluded-middle.md
-  line: 561
+  line: 786
   hash: f8b836feeb3e
   verdicts:
   - stage: S5a
@@ -2926,3 +3202,117 @@ items:
       in [-100,100], and (-m)^3-(-m)=-(m^3-m). The solution names the tool (∨E on residues mod 3) and
       explains why the look-alikes (RAA as a costume, induction only on ℕ) are worse, as STYLE §11.5 asks
       for R4.
+- key: def-kripke-model
+  kind: def
+  file: 08-kripke-models.md
+  line: 9
+  hash: daaaf4d8024a
+  verdicts: []
+- key: def-forcing
+  kind: def
+  file: 08-kripke-models.md
+  line: 37
+  hash: aae11550ea96
+  verdicts: []
+- key: check:08-kripke-models:1
+  kind: check
+  file: 08-kripke-models.md
+  line: 61
+  hash: 2c01a592c14d
+  verdicts: []
+- key: exm-two-stage-model
+  kind: exm
+  file: 08-kripke-models.md
+  line: 71
+  hash: 32a5c13abfd5
+  verdicts: []
+- key: lem-heredity
+  kind: lem
+  file: 08-kripke-models.md
+  line: 91
+  hash: b42b7afda0b4
+  verdicts: []
+- key: proof:lem-heredity
+  kind: proof
+  file: 08-kripke-models.md
+  line: 100
+  hash: 3311b7a769c8
+  verdicts: []
+- key: check:08-kripke-models:2
+  kind: check
+  file: 08-kripke-models.md
+  line: 119
+  hash: a18583d3f810
+  verdicts: []
+- key: thm-kripke-soundness
+  kind: thm
+  file: 08-kripke-models.md
+  line: 129
+  hash: 7613d54e180e
+  verdicts: []
+- key: proof:thm-kripke-soundness
+  kind: proof
+  file: 08-kripke-models.md
+  line: 151
+  hash: e08854d4f943
+  verdicts: []
+- key: cor-kripke-countermodel
+  kind: cor
+  file: 08-kripke-models.md
+  line: 166
+  hash: c78c81400aac
+  verdicts: []
+- key: proof:cor-kripke-countermodel
+  kind: proof
+  file: 08-kripke-models.md
+  line: 172
+  hash: 7182c8bab273
+  verdicts: []
+- key: check:08-kripke-models:3
+  kind: check
+  file: 08-kripke-models.md
+  line: 176
+  hash: a9d334e51e08
+  verdicts: []
+- key: exm-three-stage-model
+  kind: exm
+  file: 08-kripke-models.md
+  line: 186
+  hash: adc8b791c8cd
+  verdicts: []
+- key: exr-kripke-models-a1
+  kind: exr
+  file: 08-kripke-models.md
+  line: 273
+  hash: 2e51584e62f9
+  verdicts: []
+- key: exr-kripke-models-a2
+  kind: exr
+  file: 08-kripke-models.md
+  line: 294
+  hash: 73d29c45b021
+  verdicts: []
+- key: exr-kripke-models-b1
+  kind: exr
+  file: 08-kripke-models.md
+  line: 343
+  hash: 4360347f5140
+  verdicts: []
+- key: exr-kripke-models-b2
+  kind: exr
+  file: 08-kripke-models.md
+  line: 376
+  hash: e2430820e33d
+  verdicts: []
+- key: exr-kripke-models-c1
+  kind: exr
+  file: 08-kripke-models.md
+  line: 518
+  hash: 112c3ab0f328
+  verdicts: []
+- key: exr-kripke-models-c2
+  kind: exr
+  file: 08-kripke-models.md
+  line: 574
+  hash: 3ae69fca0b4e
+  verdicts: []

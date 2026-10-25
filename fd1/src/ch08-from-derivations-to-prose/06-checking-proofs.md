@@ -11,7 +11,40 @@ A proof is correct when every line is licensed: by @def-derivation, each line is
 
 *The first column finds where to look; the second decides.*
 
-The two questions are different. A line can be **true and not follow**: a correct fact the proof has not earned. This is the dangerous case, because nothing about the line looks wrong. A line can also **follow and be false**: false in a situation where the hypotheses and open assumptions are true. Since the rules never lead from true lines to a false one (@thm-soundness; Section 7.2 for predicate logic), some line it rests on, neither a hypothesis nor an open assumption, is false there too; follow it back until the second column fails. (Proof C's "\( 1 \) is even" is true given its box's assumption.)
+The two questions are different. A line can be **true and not follow**: a correct fact the proof has not earned. This is the dangerous case, because nothing about the line looks wrong.
+
+| | It follows | It does not follow |
+|---|---|---|
+| **It is true** | the normal case: "\( n = 2k \), so \( n^2 = 2(2k^2) \)", in a proof that \( n^2 \) is even when \( n \) is | the dangerous case: Proof B's last line, "if \( n^2 \) is even, then \( n \) is even", true and not earned |
+| **It is false** | the fault is higher up: from the false line "every real \( x \) has \( x \ge 1 \) or \( x \le 0 \)", \( \rulename{\forall E} \) at \( \tfrac12 \) gives "\( \tfrac12 \ge 1 \) or \( \tfrac12 \le 0 \)", which follows and is false | "\( x < 1 \), so \( x^2 < 1 \)": false at \( x = -2 \) |
+
+"False" means false in some situation where the hypotheses and the open assumptions are true. When a line follows and is false, some line it rests on, neither a hypothesis nor an open assumption, is false there too, because the rules never lead from true lines to a false one (@thm-soundness); follow it back until the second column fails.
+
+The two columns, as a procedure for one line:
+
+```{=latex}
+\begin{center}
+\begin{tikzpicture}[flowchart]
+  \node[fc start] (s) {the next line of the proof};
+  \node[fc step, below=of s] (q) {first column: is it true wherever\\the hypotheses and the open\\assumptions are true?};
+  \node[fc test, below=of q] (t) {second column: which rule, or\\which chain of rules and silent\\steps, from which available lines?};
+  \node[fc start, right=of t] (f) {no such chain: the proof fails\\here; name its entry, (N1)--(N14)};
+  \node[fc start, below=of t] (n) {the line is licensed at its level;\\go on to the next one};
+  \draw[fc arrow] (s) -- (q);
+  \draw[fc arrow] (q) -- (t);
+  \draw[fc arrow] (t) -- node[above, font=\scriptsize] {none} (f);
+  \draw[fc arrow] (t) -- node[right, font=\scriptsize] {found} (n);
+\end{tikzpicture}
+\end{center}
+```
+
+A "no" in the first column marks a line to look at first; only the second column decides. The silent steps are those of @def-silent-steps.
+
+::: {.second-reading title="Two notes on the second column"}
+The same holds for derivations with quantifiers and equality, by the soundness statement for predicate logic in Section 7.2 ("From counter-models to non-derivability").
+
+(Proof C's "\( 1 \) is even" is true given its box's assumption.)
+:::
 
 ::: {.check}
 A proof that \( n^2 \ge n \) for every integer \( n \) opens with the line "\( n^2 - n = n(n - 1) \ge 0 \)". Is the line true? Does it follow? Would the answers change if \( n \) ranged over the reals?
@@ -23,7 +56,17 @@ For an integer \( n \) the line is true: no integer lies strictly between \( 0 \
 
 ## The catalogue
 
-Most wrong proofs fail in one of a few ways, each breaking a particular rule.
+Most wrong proofs fail in one of a few ways, each breaking a particular rule. The entries fall into seven families.
+
+| Family | Entries | Slogan |
+|---|---|---|
+| "For all" errors | (N1), (N2), (N3) | A "for all" needs one argument about a name that is new and arbitrary. |
+| Naming errors | (N4), (N12) | A new choice gets a new name, and two names may name one thing. |
+| Implication errors | (N5), (N6) | The box of \( P \to Q \) opens with \( P \); \( Q \) alone gives no \( P \). |
+| Case errors | (N7), (N8) | Every case, from a disjunction that covers everything. |
+| Scope and citation errors | (N9), (N10) | Cite only what is proved, given, or open around you. |
+| Negation errors | (N11) | Negate exactly: an \( \rulename{RAA} \) box opens with the negation of the goal; negate the quantifier, not the bound; \( \varphi \wedge \neg\psi \), not an implication. |
+| Iteration and existence errors | (N13), (N14) | An "and so on" needs its step; a "the" needs its object. |
 
 ::: {#exm-not-allowed-catalogue}
 [What is not allowed]
@@ -41,11 +84,46 @@ Each entry names the error, the rule it breaks and where that rule lives, and a 
 8. **Cases that do not exhaust.** Breaks \( \rulename{\vee E} \), whose first input must be a disjunction already derived (Section 1.6). Instance: "\( x^2 \ge x \) for every real \( x \): either \( x \ge 1 \) or \( x \le 0 \); in the first case \( x^2 = x \cdot x \ge x \), in the second \( x^2 \ge 0 \ge x \)". **False:** \( x = 1/2 \) satisfies neither case, and \( 1/4 < 1/2 \).
 9. **Citing a line that is not available:** the goal itself (circular reasoning), a result proved later, or a general "fact" neither proved nor a true school fact (a false "fact" never qualifies). Breaks @def-derivation: every line is a premise, an assumption, or a rule applied to available lines (Section 1.4). Instances: "if \( n^2 \) is even, then \( n \) is even: suppose \( n^2 \) is even; since \( n \) is even, …" (**true**, and circular); "\( x < 1 \), so \( x^2 < 1 \), since squaring preserves \( < \)" (**false:** \( x = -2 \)).
 10. **Using an assumption after its box has closed.** Breaks the scope rule of @def-derivation (Section 1.4). Instance: "Suppose \( n \) is even, say \( n = 2k \); then \( n^2 = 4k^2 \). Hence if \( n \) is even, \( 4 \mid n^2 \). Now \( n^2 = 4k^2 \), so \( 4 \mid n^2 \) for every integer \( n \)." **False:** \( n = 1 \). Proof D below makes the same move with a **true** conclusion.
-11. **A wrong negation.** An \( \rulename{RAA} \) box opened with a statement that is not the negation of the goal; a bound negated instead of a quantifier (@prp-bounded-quantifier-negation); the negation of \( \varphi \to \psi \) written as an implication, \( \neg\varphi \to \neg\psi \) or \( \varphi \to \neg\psi \), instead of \( \varphi \wedge \neg\psi \) (@prp-negated-implication). Breaks \( \rulename{RAA} \), which closes only a box opened with \( \neg\varphi \) (Section 2.5), or the laws of Section 6.2. Instances: "if \( x > 2 \), then \( x^2 > 4 \)" is "refuted" because "if \( x \le 2 \), then \( x^2 \le 4 \)" holds at \( x = 0 \) (**false**: both are true at \( x = 0 \), so one is not the negation of the other); "\( a_n = 0 \) does not converge to \( 0 \), since some \( \varepsilon \le 0 \) has \( \abs{a_n - 0} \ge \varepsilon \) for all \( n \)" (**false**).
+11. **A wrong negation**, in three forms. Each breaks \( \rulename{RAA} \), which closes only a box opened with \( \neg\varphi \) (Section 2.5), or the laws of Section 6.2.
+    - (a) An \( \rulename{RAA} \) box opened with a statement that is not the negation of the goal. Instance: "if \( x^2 > 9 \) and \( x > 0 \), then \( x > 3 \): suppose, for a contradiction, that \( x < 3 \); then \( 0 < x < 3 \) gives \( x^2 < 9 \), against \( x^2 > 9 \); hence \( x > 3 \)" (**true**: the box should open with \( x \le 3 \), and the case \( x = 3 \) is never examined).
+    - (b) A bound negated instead of a quantifier (@prp-bounded-quantifier-negation). Instance: "\( a_n = 0 \) does not converge to \( 0 \), since some \( \varepsilon \le 0 \) has \( \abs{a_n - 0} \ge \varepsilon \) for all \( n \)" (**false**).
+    - (c) The negation of \( \varphi \to \psi \) written as an implication, \( \neg\varphi \to \neg\psi \) or \( \varphi \to \neg\psi \), instead of \( \varphi \wedge \neg\psi \) (@prp-negated-implication). Instance: "if \( x > 2 \), then \( x^2 > 4 \)" is "refuted" because "if \( x \le 2 \), then \( x^2 \le 4 \)" holds at \( x = 0 \) (**false**: both are true at \( x = 0 \), so one is not the negation of the other).
+12. **Distinct letters taken for distinct objects.** Two names introduced separately are treated as naming different objects, though no line says they differ. Breaks \( \rulename{\forall I} \): a box opened for two arbitrary names must cover every pair, including the pairs in which both name one object (\( \rulename{\forall E} \) may put the same term for both, @def-rule-universal-elimination). Instance: "if \( a \) and \( b \) are roots of \( x^2 - 5x + 6 = 0 \), then \( a + b = 5 \): the two roots give \( x^2 - 5x + 6 = (x - a)(x - b) \), and comparing coefficients, \( a + b = 5 \)". **False:** \( a = b = 2 \) are roots, and \( 2 + 2 = 4 \).
+13. **An "and so on" with nothing behind it.** A step is repeated "and so on", and its outcome is used for every stage, but the passage from each stage to the next, or the reason the process ends, is never proved. Breaks @ax-induction (or @thm-strong-induction): \( \rulename{{\to}E} \) on the axiom needs its step as a line, and "and so on" is not that line. Instance: "a non-empty set \( A \) of positive rational numbers has a least element: take \( a_1 \in A \); if it is not least, take \( a_2 \in A \) with \( a_2 < a_1 \), and so on, until the least element is reached" (**false:** \( \{ 1/n : n \in \nZ_{>0} \} \) has no least element, and the process never ends).
+14. **An object named before it is shown to exist.** A step names an object, with "the …" or "let … be the …", and so presupposes that such an object exists (for "the", exactly one), though no line states or proves it. In (N9) the step asserts a fact that is not available; here the missing premise is never asserted at all, because it hides inside a name. Breaks \( \rulename{\exists E} \), which opens its box only by citing a line \( \exists x \, \varphi \) (@def-rules-existential), and the use of "the" (Section 5.8), which needs existence and uniqueness. Instance: "let \( N \) be the largest natural number; then \( N + 1 \le N \), so \( 1 \le 0 \)" (**false:** the presupposed premise, that a largest natural number exists, is false).
 :::
 :::
 
-An entry diagnoses a step, not the conclusion: a **false** instance shows the step leading from true premises to a false conclusion, and a **true** one that a correct conclusion does not excuse it. From *Sets, Relations, and Cardinality*, Chapter 1 on, a warning about one of these errors cites the entry by number, as in "(N3) of @exm-not-allowed-catalogue". Some entries name errors met before: (N1) is the first error of Section 5.4's list, and two parts of (N11) are warnings of Section 6.2.
+::: {.second-reading title="True conclusions behind an 'and so on' and a 'the'"}
+Both new kinds of error can reach a true conclusion. The words of (N13)'s instance, said of a non-empty set of natural numbers, reach a true conclusion, but they leave out why the process ends: a strictly decreasing list of natural numbers that starts at \( a_1 \) has at most \( a_1 + 1 \) terms, which needs an induction. "Let \( m \) be the least positive integer with \( m^2 > 50 \); since \( 7^2 = 49 \) and \( 8^2 = 64 \), \( m = 8 \)" reaches a true conclusion too, but the existence of a least such integer is a premise the proof must state: it is (N14). The barber who shaves exactly the villagers who do not shave themselves is (N14) as well; Section 5.6 shows that no such barber can exist (@thm-barber).
+:::
+
+An entry diagnoses a step, not the conclusion: a **false** instance shows the step leading from true premises to a false conclusion, and a **true** one that a correct conclusion does not excuse it. Some entries name errors met before: (N1) is the first error of Section 5.4's list, and parts (b) and (c) of (N11) are warnings of Section 6.2.
+
+The catalogue lists steps that can lead from true lines to a false one. A step can also be **valid but improper**. "For all reals \( a \) and \( b \), \( a^2 + b^2 \ge 2ab \); so for all reals \( b \) and \( a \), \( a^2 + b^2 \ge 2ab \)", taken as one line, never leads from truth to falsehood, but no rule of the book writes it in one line, TAUT included (Section 8.3). That is a matter of level (@def-levels-of-proof), not an error: at level 0 it is \( \rulename{\forall E} \) twice and \( \rulename{\forall I} \) twice, and in prose it needs no words.
+
+::: {.second-reading title="The errors under their traditional names"}
+Older books name some of these errors as fallacies:
+
+| Traditional name | Entry |
+|---|---|
+| hasty generalization | (N1) |
+| equivocation: one name for two things | (N4) |
+| affirming the consequent; denying the antecedent | (N6) |
+| false dichotomy | (N8) |
+| begging the question | (N9) |
+| a presupposition ("the …") | (N14) |
+
+Affirming a disjunct is a common error of Section 1.6.
+:::
+
+::: {.check}
+Which family, and which entry, does this belong to: "Some integer \( n \) has \( n^2 = n + 6 \); fix such an \( n \). Since \( n \) was arbitrary, every integer \( n \) satisfies \( n^2 = n + 6 \)"?
+:::
+
+::: {.solution}
+A "for all" error, (N3): a name chosen by \( \rulename{\exists E} \) is not arbitrary. The premise holds at \( n = 3 \); the conclusion fails at \( n = 0 \).
+:::
 
 ::: {.check}
 Which entry does the sentence "choose \( N \) larger than every \( N_\varepsilon \), one for each \( \varepsilon > 0 \)" commit, and when is the same move **not** an error?
@@ -153,6 +231,12 @@ since a square is non-negative; so \( x^2 + 1 > x \), with nothing from the clos
 
 In Proofs B and D every sentence sounds right, and in Proof B every sentence is true. The errors are in the connections, which the rules govern: "which rule, from which available lines?" catches both.
 
+::: {.remark}
+[Looking ahead]
+
+From *Sets, Relations, and Cardinality*, Chapter 1 on, a warning about one of these errors cites its entry by number, as in "(N3) of the catalogue".
+:::
+
 ## Exercises
 
 ### A. Check your understanding
@@ -179,11 +263,58 @@ Each line below comes from a proof. Name the catalogue entry of @exm-not-allowed
 
 *(c)* (N5): the \( \rulename{{\to}I} \) box opens with the conclusion, so it proves the converse, which every function satisfies.
 
-*(d)* (N11): the negation of \( x \ge 0 \) is \( x < 0 \), not \( x \le 0 \), so \( \rulename{RAA} \) cannot close this box with \( x \ge 0 \). Closed by \( \rulename{\neg I} \) it proves \( x > 0 \), more than the goal, so it closes only if the hypotheses exclude \( x = 0 \).
+*(d)* (N11) (part (a)): the negation of \( x \ge 0 \) is \( x < 0 \), not \( x \le 0 \), so \( \rulename{RAA} \) cannot close this box with \( x \ge 0 \). Closed by \( \rulename{\neg I} \) it proves \( x > 0 \), more than the goal, so it closes only if the hypotheses exclude \( x = 0 \).
 
 *(e)* (N6), affirming the consequent. No rule licenses it, so it breaks @def-derivation: \( P \to Q \) with \( Q \) gives no \( P \). Here \( n = 4 \) is even and not divisible by \( 6 \).
 
 *(f)* (N8): the disjunction is not derived, and it is false at \( x = 0 \), so \( \rulename{\vee E} \) has no valid first input.
+:::
+
+::: {#exr-checking-proofs-a2}
+[A2: Drill]
+
+Name the entry of @exm-not-allowed-catalogue that each line commits, if any, and say whether its conclusion is true.
+
+::: {.enumerate options="label=(\alph*)"}
+1. "We checked that \( n^2 + n \) is even for \( n = 1, \dots, 6 \), so it is even for every \( n \)."
+2. "Let \( \varepsilon > 0 \) and choose \( N \) with \( \abs{a_n - L} < \varepsilon \) for \( n \ge N \); since \( \varepsilon \) was arbitrary, this one \( N \) works for every \( \varepsilon \)."
+3. "\( x \) and \( y \) are odd, so \( x = 2k + 1 \) and \( y = 2k + 1 \)."
+4. "If \( n \) is divisible by \( 4 \), then \( n \) is even; \( n \) is not divisible by \( 4 \), so \( n \) is not even."
+5. "\( n^3 - n \) is even for every integer \( n \): if \( n \) is even, say \( n = 2k \), then \( n^3 - n = 2(4k^3 - k) \); so \( n^3 - n \) is even."
+6. "Suppose \( x > 0 \); then \( x^2 > 0 \). Hence if \( x > 0 \), then \( x^2 > 0 \). Since \( x^2 > 0 \), …"
+7. "The negation of 'for every \( \varepsilon > 0 \), \( \abs{x} < \varepsilon \)' is 'for some \( \varepsilon \le 0 \), \( \abs{x} \ge \varepsilon \)'."
+8. "To prove 'if \( n^2 \) is odd, then \( n \) is odd': suppose \( n \) is odd; then \( n^2 \) is odd."
+9. "Let \( x \) and \( y \) be solutions of \( x^2 = 9 \). Then \( x^2 - y^2 = 0 \), so \( (x - y)(x + y) = 0 \), and since \( x \ne y \), \( x + y = 0 \)."
+10. "\( a_1 = 2 \) and \( a_{n+1} = a_n^2 - 2 \). Then \( a_2 = 2 \), \( a_3 = 2 \), and so on, so \( a_n = 2 \) for every \( n \ge 1 \)."
+11. "Let \( n \) be the positive integer with \( n^2 = 2 \). Then \( 1 < n^2 < 4 \), so \( 1 < n < 2 \)."
+12. "From '\( x > 0 \)' and '(\( x > 0 \) implies \( y > 0 \)) and (\( y > 0 \) implies \( z > 0 \))', conclude '\( z > 0 \)' in one line."
+:::
+:::
+
+::: {.solution}
+(a) (N1); true (\( n^2 + n = n(n + 1) \)), still not a proof.
+
+(b) (N2); in general false.
+
+(c) (N4); false (\( x = 1 \), \( y = 3 \)).
+
+(d) (N6), denying the antecedent; false (\( n = 2 \)).
+
+(e) (N7), a missing case: the odd case is never written. The conclusion is true (\( n^3 - n = (n - 1)n(n + 1) \), and of \( n - 1 \), \( n \) one is even), still not a proof.
+
+(f) (N10); "\( x^2 > 0 \)" is false at \( x = 0 \).
+
+(g) (N11), part (b); false. The stated "negation" holds for every \( x \) (take \( \varepsilon = -1 \)), also at \( x = 0 \), where the original holds too, so it is not the negation; the negation is "for some \( \varepsilon > 0 \), \( \abs{x} \ge \varepsilon \)".
+
+(h) (N5); the claim is true, but the proof proves the converse.
+
+(i) (N12); false: \( x = y = 3 \) gives \( x + y = 6 \).
+
+(j) (N13); true. The step "if \( a_n = 2 \), then \( a_{n+1} = 4 - 2 = 2 \)" is one line, and the proof must write it, as the step of an induction.
+
+(k) (N14). The presupposed premise, that such an integer exists, is false, and so is the conclusion that an integer lies strictly between \( 1 \) and \( 2 \).
+
+(l) No entry. No primitive rule writes the step in one line: at level 0 it is \( \rulename{\wedge E} \) twice and \( \rulename{{\to}E} \) twice. From Section 4.8 on, a single TAUT line citing both premises also writes it (Section 8.3). Either way it is a matter of level, not an error.
 :::
 
 ### B. Practice
@@ -238,6 +369,39 @@ Find the error in the following proof, name its catalogue entry, and decide whet
 Line (2) fails. Its disjunction is not derived, and it is false when \( x \) and \( y \) have opposite signs, so line (5) combines cases that do not exhaust: entry (N8) of @exm-not-allowed-catalogue. Lines (3) and (4) are correct in their cases.
 
 The claim is **false**: for \( x = 1 \), \( y = -1 \), \( \abs{x} + \abs{y} = 2 \) and \( \abs{x + y} = 0 \); this pair satisfies neither case of line (2). What is true is \( \abs{x + y} \le \abs{x} + \abs{y} \) (@exm-triangle-inequality-cases).
+:::
+
+::: {#exr-checking-proofs-b3}
+[B3: Correct, or which entry?]
+
+Each proof below is correct, or commits one of (N12), (N13), (N14); you are not told how many of each. For a correct proof, name its most delicate step. For a wrong one, name the entry, say whether the claim is true, and give a counterexample to the claim or a repair of the proof.
+
+::: {.enumerate options="label=(\roman*)"}
+1. *Claim:* for all integers \( m \), \( n \), if \( m \) and \( n \) are odd, then \( mn \) is odd. *Proof:* write \( m = 2k + 1 \) and \( n = 2l + 1 \) with integers \( k \), \( l \); then \( mn = 4kl + 2k + 2l + 1 = 2(2kl + k + l) + 1 \).
+2. *Claim:* for all real \( a \), \( b \), if \( a^2 = b^2 \), then \( a = b \) or \( a = -b \). *Proof:* \( (a - b)(a + b) = a^2 - b^2 = 0 \), and a product of real numbers is \( 0 \) only if a factor is.
+3. *Claim:* for all integers \( m \), \( n \), \( m^2 + n^2 \ge 1 \). *Proof:* two different integers are not both \( 0 \), so one of \( m^2 \), \( n^2 \) is at least \( 1 \).
+4. *Claim:* every integer \( n \ge 2 \) is a product of primes. *Proof:* if \( n \) is prime, it is a product of one prime. If not, \( n = ab \) with \( 1 < a, b < n \); split \( a \) and \( b \) in the same way, and so on, until only primes remain.
+5. *Claim:* \( 1 \) is a solution of \( x^2 + x + 1 = 0 \). *Proof:* let \( x \) be the real solution. Then \( x^3 - 1 = (x - 1)(x^2 + x + 1) = 0 \), so \( x^3 = 1 \), and since \( x \) is real, \( x = 1 \).
+:::
+:::
+
+::: {.solution}
+*(i)* **Correct.** The delicate step is the second \( \rulename{\exists E} \), which uses a second name \( l \). The case \( m = n \) is covered, since nothing stops \( k = l \): the names are distinct, the objects need not be.
+
+*(ii)* **Correct.** The delicate step is the product fact. It gives "\( a - b = 0 \) or \( a + b = 0 \)" (\( \rulename{{\to}E} \), citing it), which is the claim, and no distinctness is assumed.
+
+*(iii)* **(N12); the claim is false**: \( m = n = 0 \) gives \( 0 \). The proof took \( m \) and \( n \) to be different integers.
+
+*(iv)* **(N13); the claim is true.** The "and so on" hides why the splitting ends: each factor is at least \( 2 \) and smaller than the number split. Repair by strong induction (@thm-strong-induction): if every \( k \) with \( 2 \le k < n \) is a product of primes, so is \( n \), being prime or \( ab \) with \( a \), \( b \) in that range.
+
+*(v)* **(N14); the claim is false**: \( 1 + 1 + 1 = 3 \ne 0 \). The presupposed premise "\( x^2 + x + 1 = 0 \) has a real solution" is false, since \( x^2 + x + 1 = (x + \tfrac12)^2 + \tfrac34 > 0 \).
+
+Look-alikes: (i) and (iii) both use two letters; only (iii) assumes the letters differ.
+
+**Marking scheme.** (10 points: 2 per part)
+- 1: the verdict.
+- 1: for a correct proof, the delicate step named; for a wrong one, the entry with a counterexample (iii, v) or a repair (iv).
+Fatal errors (0 for that part): calling (i) an instance of (N12) because \( k \) and \( l \) might be equal; calling (iv) correct.
 :::
 
 ### C. Going deeper
@@ -389,6 +553,45 @@ In (1), ask which boxes are open when the second \( k \) is chosen. In (3), ask 
 For (4), "\( \rulename{{\to}E} \) without its antecedent \( x \ne 0 \)" is also accepted. Fatal errors (0 for that proof): calling proof (1) wrong as an instance of (N4) because the name \( k \) recurs; judging (2) or (3) correct because its conclusion is true.
 :::
 
+### R. Review
+
+::: {#exr-checking-proofs-r1}
+[R1: A dialogue]
+
+This item reviews (E1) of Section 2.1, \( \rulename{\forall I} \) of Section 5.4 and (N1). Two students discuss a claim.
+
+> **Ana:** For every integer \( n \), \( n^2 + n \) is even.
+>
+> **Ben:** Why?
+>
+> **Ana:** Take \( n = 3 \): \( 9 + 3 = 12 \). Take \( n = 4 \): \( 16 + 4 = 20 \). It always works.
+>
+> **Ben:** That is two numbers.
+>
+> **Ana:** All right. \( n^2 + n = n(n + 1) \). If \( n \) is even, the product has an even factor. If \( n \) is odd, \( n + 1 \) is even, so again it has an even factor. Either way \( n^2 + n \) is even.
+>
+> **Ben:** You only did positive numbers.
+>
+> **Ana:** I never used that \( n \) is positive.
+
+::: {.enumerate options="label=(\alph*)"}
+1. Which entry of @exm-not-allowed-catalogue does Ana's first argument commit?
+2. Write her second argument as a level-3 proof, and name the rule each sentence carries.
+3. Is Ben's last objection right?
+4. On which fact does the case split rest, and where was it stated?
+:::
+:::
+
+::: {.solution}
+*(a)* (N1): two instances, then "always".
+
+*(b)* "Let \( n \) be an integer [\( \rulename{\forall I} \)]. Then \( n^2 + n = n(n + 1) \) [algebra]. By (E1), \( n \) is even or odd [\( \rulename{\vee E} \), with the reason the cases exhaust]. If \( n \) is even, say \( n = 2k \) [\( \rulename{\exists E} \)], then \( n(n + 1) = 2\bigl(k(n + 1)\bigr) \) is even [\( \rulename{\exists I} \), witness \( k(n + 1) \)]. If \( n \) is odd, say \( n = 2k + 1 \), then \( n + 1 = 2(k + 1) \), and \( n(n + 1) = 2\bigl(n(k + 1)\bigr) \) is even [\( \rulename{\exists E} \), \( \rulename{\exists I} \)]. In either case \( n^2 + n \) is even [\( \rulename{\vee E} \), closing; silent at level 3]."
+
+*(c)* No. The box of \( n \) assumed only that \( n \) is an integer, and no line used more, so \( \rulename{\forall I} \) gives the claim for every integer: \( n \) is in no premise, and the conclusion is about the bound variable. A proof that used \( n > 0 \) would have had to assume it in the box.
+
+*(d)* (E1), "every integer is even or odd", stated in Section 2.1 as a school fact.
+:::
+
 <!-- dependency ledger
 exm-not-allowed-catalogue (claim): (the section's opening, "Two questions") rules never lead from true lines to a false one | thm-soundness (cited); F1.6 §02's statement (from-counter-models-to-non-derivability; its proof in F1.6 §03, optional)
 exm-not-allowed-catalogue (claim): (the Quick check after "Two questions") for integers n(n - 1) >= 0 since no integer lies strictly between 0 and 1; at n = 1/2 the product is -1/4 | school arithmetic of Z (F2.2 promised in STATUS: "nothing between n and n + 1"); checked by verify/ch08/exm-not-allowed-catalogue.py
@@ -410,4 +613,24 @@ exr-checking-proofs-c1 (solution): -|u| <= u; |u| < r gives u > -r; f(a) - f(a)/
 exr-checking-proofs-c1 (example): continuity at a used only as a quantifier pattern | exm-translate-limit (c) (F1.8 §01)
 exr-checking-proofs-c2 (solution): (sqrt2 + sqrt3)^2 = 5 + 2 sqrt6; sqrt6 = sqrt2 sqrt3; sqrt2 sqrt2 = 2; 3 = r^2 - 2r sqrt2 + 2 gives sqrt2 = (r^2 - 1)/(2r); r > 0; rationals closed under +, -, x, / by non-zero | school algebra of square roots (a school fact before thm-nth-root, per NOTATION) and of Q; thm-sqrt2-irrational (cited); checked by verify/ch08/exr-checking-proofs-c2.py
 exr-checking-proofs-c3 (solution): n = 4k = 2(2k), n = 6k = 2(3k); m = 2k, n = 2l give mn = 4kl; x = 1/2 for (3) and the case 0 < x < 1; x = 0 for (4); x(x - 2) = 0 | school algebra; trichotomy; F1.4 §06 (sibling boxes); checked by verify/ch08/exr-checking-proofs-c3.py
+exm-not-allowed-catalogue (claim): (the 2x2 table) n = 2k gives n^2 = 2(2k^2); forall-E at 1/2 of "x >= 1 or x <= 0" gives a false line that follows; x = -2 has x < 1 and x^2 = 4 | arithmetic; Proof B's line (5) (this section); checked by verify/ch08/exm-not-allowed-catalogue.py
+exm-not-allowed-catalogue (claim): (the paragraph after the 2x2 table) a line that follows and is false rests on a false line | thm-soundness (cited); the same statement as the ledger's first line
+exm-not-allowed-catalogue (claim): (the flowchart and its caption) a line written by a chain of rules and silent steps is licensed at its level; only a line no chain writes fails | def-derivation, def-levels-of-proof, def-silent-steps (cited or within the chapter)
+exm-not-allowed-catalogue (claim): (fold "Two notes on the second column") the same for quantifiers and equality | F1.6 §02's statement under "From counter-models to non-derivability" (prose; its proof in F1.6 §03, optional, not cited)
+exm-not-allowed-catalogue (claim): the families table | a regrouping, read off the entries
+exm-not-allowed-catalogue (example): (N11)(a) 0 < x < 3 gives x^2 < 9; x^2 > 9 and x > 0 give x > 3; x = 3 has x^2 = 9 | school algebra; checked by verify/ch08/exm-not-allowed-catalogue.py
+exm-not-allowed-catalogue (example): (N12) 2 and 3 are the roots of x^2 - 5x + 6; a = b = 2 gives a + b = 4; forall-E may put one term for two variables | def-rule-universal-elimination (cited); arithmetic; checked by verify/ch08/exm-not-allowed-catalogue.py
+exm-not-allowed-catalogue (example): (N13) the step of an induction must be a line | ax-induction, thm-strong-induction (cited); {1/n : n in Z>0} has no least element since 1/(n + 1) < 1/n; checked by verify/ch08/exm-not-allowed-catalogue.py
+exm-not-allowed-catalogue (example): (N14) exists-E needs a line exists x phi; "the" needs existence and uniqueness; N largest gives N + 1 <= N | def-rules-existential (cited); F1.4 §08's definite description (prose pointer, "Section 5.8"); arithmetic
+exm-not-allowed-catalogue (claim): (fold F8.6-b) a strictly decreasing list in N from a_1 has at most a_1 + 1 terms (stated, not used as a reason); the least positive integer with m^2 > 50 is 8 (7^2 = 49, 8^2 = 64), its existence a premise named in the fold | F2.2 (promised): well-ordering of N; checked by verify/ch08/exm-not-allowed-catalogue.py
+exm-not-allowed-catalogue (claim): (fold F8.6-b) no barber shaves exactly those who do not shave themselves | thm-barber (cited)
+exm-not-allowed-catalogue (claim): (the valid-but-improper paragraph) forall a forall b phi to forall b forall a phi is forall-E twice and forall-I twice, and no TAUT step; a^2 + b^2 >= 2ab | def-levels-of-proof (within the chapter); F1.5 §03's TAUT paragraph (prose pointer, "Section 8.3"); (a - b)^2 >= 0, school algebra
+exm-not-allowed-catalogue (claim): (fold F8.6-c) the traditional names against the entries; affirming a disjunct | a regrouping, read off the entries; F1.1 §07 (prose pointer, "Section 1.6")
+exm-not-allowed-catalogue (claim): (the family Quick check) n = 3 has n^2 = n + 6; n = 0 does not | arithmetic; checked by verify/ch08/exm-not-allowed-catalogue.py
+exr-checking-proofs-a2 (solution): (a) n(n + 1) even; (c) x = 1, y = 3; (d) n = 2; (e) (2k)^3 - 2k = 2(4k^3 - k), n^3 - n = (n - 1)n(n + 1); (f) x = 0; (g) |x| >= -1 for every x; (i) x = y = 3; (j) a_n = 2 for every n >= 1; (k) no integer squares to 2 | school algebra; checked by verify/ch08/exr-checking-proofs-a2.py
+exr-checking-proofs-a2 (solution): (l) the step is wedge-E twice and to-E twice at level 0, or one TAUT line from Section 4.8 on | def-rule-taut (F1.3 §08, prose pointer); F1.5 §03's TAUT paragraph (prose pointer, "Section 8.3")
+exr-checking-proofs-b3 (solution): (i) (2k + 1)(2l + 1) = 2(2kl + k + l) + 1; (ii) (a - b)(a + b) = a^2 - b^2, a product of reals is 0 only if a factor is; (iii) m = n = 0; (iv) every n in [2, 500] is a product of primes; (v) 1 + 1 + 1 = 3, x^2 + x + 1 = (x + 1/2)^2 + 3/4 > 0 | school algebra; thm-strong-induction (cited); checked by verify/ch08/exr-checking-proofs-b3.py
+exr-checking-proofs-r1 (solution): n^2 + n = n(n + 1); 2k(2k + 1) = 2(k(2k + 1)); (2k + 1) + 1 = 2(k + 1); n^2 + n even for every integer n | school algebra; checked by verify/ch08/exr-checking-proofs-r1.py
+exr-checking-proofs-r1 (solution): every integer is even or odd | (E1) of F1.2 §01 (school fact, stated there)
+exr-checking-proofs-r1 (solution): the box of n assumes only that n is an integer, so forall-I gives every integer | F1.4 §04's side condition of forall-I (prose pointer, "Section 5.4")
 -->

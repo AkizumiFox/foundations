@@ -24,4 +24,9 @@ for y in [Fr(k, 7) for k in range(-50, 51)]:
     assert xw**2 > y
 for xv in [Fr(k, 5) for k in range(-20, 21)]:
     assert not (xv**2 > xv**2)     # y = x^2 refutes exists x forall y
+# the WLOG Quick check: x^2 + y^2 - 2xy = (x - y)^2 >= 0, symmetric in x and y
+for xv in [Fr(k, 3) for k in range(-12, 13)]:
+    for yv in [Fr(k, 4) for k in range(-12, 13)]:
+        assert xv**2 + yv**2 - 2 * xv * yv == (xv - yv) ** 2 >= 0
+        assert xv**2 + yv**2 - 2 * xv * yv == yv**2 + xv**2 - 2 * yv * xv
 print("exm-rhetoric-induction: all quoted values check")
