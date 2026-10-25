@@ -163,7 +163,7 @@ By the two claims, \( h \colon A \to B \) is a bijection, so \( \card{A} = \card
 
 The answer to the prompt: \( g(b) \) is a value of \( g \), and \( C_0 \) consists exactly of the points of \( A \) that are **not** values of \( g \). That is what pushes the index \( n \) of Case 2 up to at least \( 1 \), so that \( g(b) \) has a predecessor \( a \in C_{n-1} \) in its chain, and \( b \) is reached by \( f \) from that predecessor.
 
-Every value of \( h \) is given by a rule, so the proof makes **no use of @ax-choice**: Step 1 is a recursion with an explicit step, and Step 2 picks the unique preimage, where there is nothing to choose. The case split "\( a \in C \) or \( a \notin C \)" is an instance of excluded middle, the classical step discussed in *Logic and Proof*, Section 5.7; nothing in the proof decides which case holds for a given \( a \), and nothing needs to.
+Every value of \( h \) is given by a rule, so the proof makes **no use of @ax-choice**: Step 1 is a recursion with an explicit step, and Step 2 picks the unique preimage, where there is nothing to choose. The case split "\( a \in C \) or \( a \notin C \)" is an instance of excluded middle, the classical step discussed in *Logic and Proof*, Section 8.7; nothing in the proof decides which case holds for a given \( a \), and nothing needs to.
 
 Each hypothesis is used. Without the injection \( g \), the conclusion fails: \( \nN \to \powerset{\nN} \), \( n \mapsto \{n\} \), is an injection, and \( \card{\nN} \ne \card{\powerset{\nN}} \) by @thm-cantor. In the proof, injectivity of \( f \) is used once, in Case 1 of Step 3, and injectivity of \( g \) twice, in (F2) and in Case 2 of Step 4.
 

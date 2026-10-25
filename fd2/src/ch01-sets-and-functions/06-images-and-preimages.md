@@ -48,7 +48,7 @@ In Section 1.4 a point \( x \) with \( f(x) = y \) was called a preimage of \( y
 Read the two definitions clause by clause.
 
 - **The ambient sets.** Both are sets by specification (@def-set-builder): \( f(A) \) is carved out of the codomain \( Y \), and \( f^{-1}(B) \) out of the domain \( X \). So \( f(A) \subseteq Y \) and \( f^{-1}(B) \subseteq X \) always. The shorthand \( \{ f(a) : a \in A \} \) names the same subset of \( Y \); it is a way of writing, not a new rule of set formation.
-- **The image.** "\( y \in f(A) \)" says that \( y \) is **hit** by some point of \( A \). The words "there exists" are part of the definition. To **use** a line \( y \in f(A) \), we must name a witness: "let \( a \in A \) with \( f(a) = y \)". That is the rule \( \exists \)E of *Logic and Proof*, Section 4.6, and the name must be fresh. To **prove** \( y \in f(A) \), we exhibit a witness, by \( \exists \)I (*Logic and Proof*, Section 4.5).
+- **The image.** "\( y \in f(A) \)" says that \( y \) is **hit** by some point of \( A \). The words "there exists" are part of the definition. To **use** a line \( y \in f(A) \), we must name a witness: "let \( a \in A \) with \( f(a) = y \)". That is the rule \( \exists \)E of *Logic and Proof*, Section 5.6, and the name must be fresh. To **prove** \( y \in f(A) \), we exhibit a witness, by \( \exists \)I (*Logic and Proof*, Section 5.5).
 - **The preimage.** "\( x \in f^{-1}(B) \)" says that \( x \) is sent **into** \( B \). There is no quantifier. For \( x \in X \), a line \( x \in f^{-1}(B) \) is used and proved by one substitution: it is exchanged for \( f(x) \in B \), and back.
 - **The symbol \( f^{-1} \).** In \( f^{-1}(B) \), the symbol \( f^{-1} \) is not a function that is applied to \( B \). The whole expression \( f^{-1}(B) \) is the name of a set built from \( f \) and \( B \). Section 1.5 used \( f^{-1} \) for the inverse function of a bijection; the remark at the end of this section reconciles the two readings.
 
@@ -312,7 +312,7 @@ We prove two inclusions. The union \( \bigcup_{i \in I} A_i \) is a subset of \(
 This proves the theorem.
 :::
 
-Look at the order of the tags in \( (\subseteq) \): \( \exists \)E for \( a \), \( \exists \)E for \( j \), \( \exists \)I for \( a \), \( \exists \)I for \( j \). The witnesses are reintroduced in the same order they were named. Because \( \exists \)I builds the formula from the inside out, \( a \), which was the outer witness, ends up as the inner one. To rebuild the quantifiers in their old order, the \( \exists \)I steps would have run in reverse, \( \exists \)I for \( j \) before \( \exists \)I for \( a \). That the order is not reversed is the exchange of the two "there exists". The two \( \exists \)E boxes may close at the end because the conclusion \( y \in \bigcup_i f(A_i) \) mentions neither \( a \) nor \( j \): the side condition of \( \exists \)E (*Logic and Proof*, Section 4.6) holds. The case \( I = \emptyset \) needs no separate treatment: both sides are \( f(\emptyset) = \emptyset \) and \( \emptyset \).
+Look at the order of the tags in \( (\subseteq) \): \( \exists \)E for \( a \), \( \exists \)E for \( j \), \( \exists \)I for \( a \), \( \exists \)I for \( j \). The witnesses are reintroduced in the same order they were named. Because \( \exists \)I builds the formula from the inside out, \( a \), which was the outer witness, ends up as the inner one. To rebuild the quantifiers in their old order, the \( \exists \)I steps would have run in reverse, \( \exists \)I for \( j \) before \( \exists \)I for \( a \). That the order is not reversed is the exchange of the two "there exists". The two \( \exists \)E boxes may close at the end because the conclusion \( y \in \bigcup_i f(A_i) \) mentions neither \( a \) nor \( j \): the side condition of \( \exists \)E (*Logic and Proof*, Section 5.6) holds. The case \( I = \emptyset \) needs no separate treatment: both sides are \( f(\emptyset) = \emptyset \) and \( \emptyset \).
 
 ## Images and intersections
 
@@ -331,7 +331,7 @@ Show that the conclusion is false, and find the line that fails.
 ::: {.solution}
 *The conclusion is false.* Take \( f(x) = x^2 \) on \( \nR \), \( A = \{-1\} \), and \( B = \{1\} \). Then \( f(A) = f(B) = \{1\} \), so \( f(A) \cap f(B) = \{1\} \); but \( A \cap B = \emptyset \), so \( f(A \cap B) = \emptyset \), and \( 1 \notin \emptyset \).
 
-*The failing line is (3).* Line (2) is a correct \( \exists \)E: it names a witness \( x \in A \) with \( f(x) = y \). Line (3) performs a second \( \exists \)E, on \( y \in f(B) \), and gives its witness the **same** name \( x \). The rule requires a fresh name (*Logic and Proof*, Section 4.6). The statement "\( y = f(b) \) for some \( b \in B \)" promises some point of \( B \), not the point already named. Reusing the name silently asserts that the two witnesses are equal, and nothing says they are. This is the error "one name for two witnesses", entry (N4) of the catalogue of what is not allowed (*Logic and Proof*, Section 5.6).
+*The failing line is (3).* Line (2) is a correct \( \exists \)E: it names a witness \( x \in A \) with \( f(x) = y \). Line (3) performs a second \( \exists \)E, on \( y \in f(B) \), and gives its witness the **same** name \( x \). The rule requires a fresh name (*Logic and Proof*, Section 5.6). The statement "\( y = f(b) \) for some \( b \in B \)" promises some point of \( B \), not the point already named. Reusing the name silently asserts that the two witnesses are equal, and nothing says they are. This is the error "one name for two witnesses", entry (N4) of the catalogue of what is not allowed (*Logic and Proof*, Section 8.6).
 
 *A counterexample to the step.* With the data above and \( y = 1 \): line (2) names \( x = -1 \), the only point of \( A \). The only point of \( B \) with square \( 1 \) is \( 1 \ne -1 \), so line (3), with the name \( x \) meaning the \( x \) of line (2), asserts \( -1 \in B \), which is false. Lines (4) and (5) are correct inferences from what (3) wrongly asserts.
 :::
@@ -533,7 +533,7 @@ Suppose \( a \in B \). Then \( y = f(a) \in f(B) \), with witness \( a \) \( [\r
 - 3: (c) \( (\Leftarrow) \) names two witnesses, \( a \in A \setminus B \) and \( b \in B \), and uses injectivity to identify them.
 - 2: (c) \( (\Rightarrow) \) applies the hypothesis to one-point sets (or any sets that separate \( x_1 \) from \( x_2 \)) and concludes \( x_1 = x_2 \).
 
-Fatal errors (0 for the step): using one name for the witnesses of \( y \in f(A \setminus B) \) and \( y \in f(B) \) (entry (N4) of *Logic and Proof*, Chapter 5's catalogue); in \( (\Rightarrow) \), assuming injectivity to compute \( f(A \setminus B) \).
+Fatal errors (0 for the step): using one name for the witnesses of \( y \in f(A \setminus B) \) and \( y \in f(B) \) (entry (N4) of *Logic and Proof*, Chapter 8's catalogue); in \( (\Rightarrow) \), assuming injectivity to compute \( f(A \setminus B) \).
 :::
 
 ::: {#exr-images-and-preimages-c2}
@@ -553,7 +553,7 @@ A student proves the following claim: *if \( f \colon X \to Y \) is injective an
 ::: {.solution}
 (a) The claim is true: it is the \( (\Leftarrow) \) half of @prp-image-preimage (a).
 
-(b) Line (3) fails. The statement \( f(x) \in f(A) \) says only that \( f(a) = f(x) \) for **some** \( a \in A \) (@def-image). To use it, the proof must name that witness by \( \exists \)E, with a fresh name. Line (3) skips the \( \exists \)E and silently takes the witness to be \( x \) itself. The name \( x \) is already in use (line (1) introduced it), so the step breaks the fresh-name condition of \( \exists \)E (*Logic and Proof*, Section 4.6), the condition behind entry (N4) of the catalogue of *Logic and Proof*, Chapter 5. The tell is that injectivity, a hypothesis, is never used: an argument that ignores a necessary hypothesis cannot be right.
+(b) Line (3) fails. The statement \( f(x) \in f(A) \) says only that \( f(a) = f(x) \) for **some** \( a \in A \) (@def-image). To use it, the proof must name that witness by \( \exists \)E, with a fresh name. Line (3) skips the \( \exists \)E and silently takes the witness to be \( x \) itself. The name \( x \) is already in use (line (1) introduced it), so the step breaks the fresh-name condition of \( \exists \)E (*Logic and Proof*, Section 5.6), the condition behind entry (N4) of the catalogue of *Logic and Proof*, Chapter 8. The tell is that injectivity, a hypothesis, is never used: an argument that ignores a necessary hypothesis cannot be right.
 
 (c) A counterexample to the step "\( f(x) \in f(A) \), so \( x \in A \)" needs a non-injective function, since for injective ones the conclusion of the step is true. Take \( f(x) = x^2 \) on \( \nR \), \( A = \{1\} \), and \( x = -1 \). Then \( f(x) = 1 \in f(A) \), but \( x \notin A \).
 
@@ -588,7 +588,7 @@ If \( I = \emptyset \), both sides are \( X \), and the argument above covers th
 - 1: the ambient sets are named (\( x \in X \), \( f(x) \in Y \)) or the case \( I = \emptyset \) is handled.
 - 2: a correct example, with both sides computed.
 
-A single chain of equivalences, each step justified, earns the first seven points. Fatal errors (0 for the step): fixing one \( i \) and concluding for all \( i \) (entry (N1) of *Logic and Proof*, Chapter 5's catalogue); stating the example's two sides without checking an element that lies in one and not the other.
+A single chain of equivalences, each step justified, earns the first seven points. Fatal errors (0 for the step): fixing one \( i \) and concluding for all \( i \) (entry (N1) of *Logic and Proof*, Chapter 8's catalogue); stating the example's two sides without checking an element that lies in one and not the other.
 :::
 
 ### R. Review
@@ -641,7 +641,7 @@ Write the proof as plain prose, the way a mathematician would. Then say which se
 
 *The boxes.* "Suppose \( A \subseteq B \)" opens the \( \rulename{{\to}I} \) box \( \lines{1}{17} \); its closing line 18 is the silent frame of the whole proof. "Let \( S \in \powerset{A} \)" opens two boxes at once: the \( \rulename{\forall I} \) box for \( S_0 \) and the \( \rulename{{\to}I} \) box \( \lines{3}{14} \) inside it. "Let \( x \in S \)" likewise opens the \( \rulename{\forall I} \) box for \( x_0 \) and the \( \rulename{{\to}I} \) box \( \lines{6}{10} \). "Hence \( S \subseteq B \)" closes the two inner boxes (lines 11 and 12) and rewinds the definition (line 13). "This proves \( \powerset{A} \subseteq \powerset{B} \)" closes the \( S \) boxes (lines 15, 16) and rewinds (line 17).
 
-This is the passage from level 0 to level 3 of *Logic and Proof*, Section 5.3: each "let" carries a \( \rulename{\forall I} \) box together with the \( \rulename{{\to}I} \) box of a subset statement, the \( \rulename{\forall E} \) and \( \rulename{{\to}E} \) lines 7–10 become the two "since" clauses, the unwinding lines 2 and 5 go silent, line 4 becomes a "so" and line 14 a "that is", and the rewinding lines 13 and 17 are the two conclusions the prose states.
+This is the passage from level 0 to level 3 of *Logic and Proof*, Section 8.3: each "let" carries a \( \rulename{\forall I} \) box together with the \( \rulename{{\to}I} \) box of a subset statement, the \( \rulename{\forall E} \) and \( \rulename{{\to}E} \) lines 7–10 become the two "since" clauses, the unwinding lines 2 and 5 go silent, line 4 becomes a "so" and line 14 a "that is", and the rewinding lines 13 and 17 are the two conclusions the prose states.
 :::
 
 ::: {#exr-images-and-preimages-r2}
@@ -668,7 +668,7 @@ P & Q & R & P \wedge \neg (Q \wedge \neg R) & (P \wedge \neg Q) \wedge \neg R \\
 \]
 The columns differ in the first and third rows. Take the first row: put the point \( 1 \) in exactly the sets whose statement is true, all three, so \( A = B = C = \{1\} \). Then \( B \setminus C = \emptyset \), so \( A \setminus (B \setminus C) = \{1\} \); and \( A \setminus B = \emptyset \), so \( (A \setminus B) \setminus C = \emptyset \). The two sides differ, so the identity is false. (The third row gives \( A = C = \{1\} \), \( B = \emptyset \), with the same two answers.)
 
-Why a table suffices: each side's membership condition is a formula in \( P \), \( Q \), \( R \), and a row with the two columns different gives sets directly, which are then checked by computing both sides, as above. The truth tables of *Logic and Proof*, Chapter 3 add one more thing: by @fd1:cor-refuting-row, the first row shows that the sequent \( P \wedge \neg(Q \wedge \neg R) \vdash (P \wedge \neg Q) \wedge \neg R \) is not derivable, so the propositional rules cannot carry a point of the left side into the right side.
+Why a table suffices: each side's membership condition is a formula in \( P \), \( Q \), \( R \), and a row with the two columns different gives sets directly, which are then checked by computing both sides, as above. The truth tables of *Logic and Proof*, Chapter 4 add one more thing: by @fd1:cor-refuting-row, the first row shows that the sequent \( P \wedge \neg(Q \wedge \neg R) \vdash (P \wedge \neg Q) \wedge \neg R \) is not derivable, so the propositional rules cannot carry a point of the left side into the right side.
 :::
 
 ::: {#exr-images-and-preimages-r3}

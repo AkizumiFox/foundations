@@ -197,7 +197,7 @@ Combining the two \( \emptyset \) laws with one more step gives the full descrip
 :::
 
 ::: {.warning}
-"\( A \times B = \emptyset \), so \( A = \emptyset \)" misses a case. The product \( \{1, 2\} \times \emptyset \) is empty, and \( \{1, 2\} \) is not. The correct conclusion is the disjunction "\( A = \emptyset \) or \( B = \emptyset \)" of the remark, and an argument that continues from it must treat both cases. Dropping one is the missing case of the catalogue in *Logic and Proof*, Chapter 5, entry (N7): a \( \rulename{\vee E} \) with one of its boxes left out.
+"\( A \times B = \emptyset \), so \( A = \emptyset \)" misses a case. The product \( \{1, 2\} \times \emptyset \) is empty, and \( \{1, 2\} \) is not. The correct conclusion is the disjunction "\( A = \emptyset \) or \( B = \emptyset \)" of the remark, and an argument that continues from it must treat both cases. Dropping one is the missing case of the catalogue in *Logic and Proof*, Chapter 8, entry (N7): a \( \rulename{\vee E} \) with one of its boxes left out.
 :::
 
 ## Relations
@@ -443,7 +443,7 @@ Both witnesses are needed. With \( B = \emptyset \) there is no \( b_0 \), and i
 - 2: \( B \subseteq A \), through a pair \( (a_0, b) \) with an arbitrary \( b \in B \).
 - 2: uses the characteristic property (directly or through \( (\ast) \)) to read the coordinates off a pair of \( B \times A \), and concludes \( A = B \) by two inclusions.
 
-Fatal errors (0 for the step): testing inclusion on particular elements only (entry (N1) of *Logic and Proof*, Chapter 5's catalogue); using \( b_0 \) without having shown that \( B \) has an element; concluding \( A = B \) from \( A \times B = B \times A \) "by canceling" without an element argument.
+Fatal errors (0 for the step): testing inclusion on particular elements only (entry (N1) of *Logic and Proof*, Chapter 8's catalogue); using \( b_0 \) without having shown that \( B \) has an element; concluding \( A = B \) from \( A \times B = B \times A \) "by canceling" without an element argument.
 A proof of \( (\Rightarrow) \) by contraposition (assume \( A \ne B \) and both nonempty, and exhibit a pair of \( A \times B \) outside \( B \times A \)) earns full marks if it finds the pair: 2 points for the witnesses and 4 for the pair and the check that it is outside \( B \times A \), in place of the two inclusions.
 :::
 

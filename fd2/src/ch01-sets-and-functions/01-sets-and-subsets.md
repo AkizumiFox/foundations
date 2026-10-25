@@ -1,6 +1,6 @@
 # Sets, Subsets and Russell's Paradox
 
-*Logic and Proof*, Chapters 1 to 5 built the grammar of mathematical statements: the connectives, the quantifiers, and the prose that carries their rules. The statements themselves have so far been about numbers, and occasionally about "collections" taken in their everyday sense. Analysis talks about collections all the time: the set of upper bounds of a set of numbers, the set of points where a function is positive, the set of all formulas. This section says what a set is allowed to be, what it means for one set to lie inside another, and how sets are described. One new notion carries the weight, the **subset**; the rest is the vocabulary it needs.
+*Logic and Proof*, Chapters 1 to 8 built the grammar of mathematical statements: the connectives, the quantifiers, and the prose that carries their rules. The statements themselves have so far been about numbers, and occasionally about "collections" taken in their everyday sense. Analysis talks about collections all the time: the set of upper bounds of a set of numbers, the set of points where a function is positive, the set of all formulas. This section says what a set is allowed to be, what it means for one set to lie inside another, and how sets are described. One new notion carries the weight, the **subset**; the rest is the vocabulary it needs.
 
 We begin with the simplest possible idea of a set, and we will see it fail.
 
@@ -28,7 +28,7 @@ x \in A
 \]
 for "\( x \) is an element of \( A \)", or "\( x \) belongs to \( A \)", or "\( x \) lies in \( A \)". Its negation is written \( x \notin A \). The objects may be numbers, or sets, or (later in this chapter) pairs and functions.
 
-In the language of *Logic and Proof*, Chapter 4, "\( \in \)" is a two-place predicate: \( x \in A \) is a statement about the two objects \( x \) and \( A \), true or false like \( x < y \). So everything *Logic and Proof*, Chapter 4 says about predicates, quantifiers, and their rules applies to it unchanged. A statement such as "every element of \( A \) is positive" is \( \forall x\, (x \in A \to x > 0) \), which the bounded notation of @fd1:def-bounded-quantifier shortens to \( \forall x \in A\ (x > 0) \).
+In the language of *Logic and Proof*, Chapter 5, "\( \in \)" is a two-place predicate: \( x \in A \) is a statement about the two objects \( x \) and \( A \), true or false like \( x < y \). So everything *Logic and Proof*, Chapter 5 says about predicates, quantifiers, and their rules applies to it unchanged. A statement such as "every element of \( A \) is positive" is \( \forall x\, (x \in A \to x > 0) \), which the bounded notation of @fd1:def-bounded-quantifier shortens to \( \forall x \in A\ (x > 0) \).
 
 Two conventions fix what kind of objects we deal with. First, the number sets \( \nN \), \( \nZ \), \( \nQ \), and \( \nR \) are **given**: we use them as familiar sets, with their school arithmetic and order, as the earlier chapters did. (*Analysis on the Real Line*, Chapter 1 turns the facts we use about \( \nR \) into consequences of axioms.) Second, **numbers are not sets**: a number has no elements, and no number is equal to a set. So \( 1 \ne \{1\} \), and \( z \in 5 \) is false for every \( z \). *Number Systems: From \(\nN\) to \(\nR\)*, Chapters 1, 2 and 5 explain how numbers can be built out of sets; nothing in this volume depends on how that is done.
 
@@ -84,7 +84,7 @@ We also say that \( A \) is **contained in** \( B \), or that \( B \) **contains
 
 In words, clause by clause. The quantifier \( \forall x \) ranges over every object whatsoever, not over the elements of \( A \) only; the implication \( x \in A \to x \in B \) restricts attention to the elements of \( A \), and says nothing about objects outside \( A \). With the bounded notation of @fd1:def-bounded-quantifier, the same condition is \( \forall x \in A\ (x \in B) \): "for every \( x \) in \( A \), \( x \) is in \( B \)". The symbol \( \subseteq \) allows equality, as \( \le \) does for numbers; the symbol \( \subsetneq \) excludes it, as \( < \) does. This book never writes \( \subset \), which some books use for \( \subseteq \) and others for \( \subsetneq \).
 
-The definition is a \( \forall \) around an \( \to \), and its rules are the rules of those two symbols. To **prove** \( A \subseteq B \), we prove the \( \forall \) statement: by the rule \( \rulename{\forall I} \) of *Logic and Proof*, Chapter 4 we open a box for an arbitrary \( x \) (in prose, "let \( x \) be arbitrary"), and inside it we prove \( x \in A \to x \in B \) by \( \rulename{{\to}I} \) (@fd1:def-rules-implication): assume \( x \in A \) and reach \( x \in B \). The two openings are always written together, as "let \( x \in A \)". To **use** \( A \subseteq B \), we apply \( \rulename{\forall E} \) (*Logic and Proof*, Chapter 4) at the element we care about, and then \( \rulename{{\to}E} \): from \( A \subseteq B \) and \( a \in A \), conclude \( a \in B \). This gives the chapter's first named move.
+The definition is a \( \forall \) around an \( \to \), and its rules are the rules of those two symbols. To **prove** \( A \subseteq B \), we prove the \( \forall \) statement: by the rule \( \rulename{\forall I} \) of *Logic and Proof*, Chapter 5 we open a box for an arbitrary \( x \) (in prose, "let \( x \) be arbitrary"), and inside it we prove \( x \in A \to x \in B \) by \( \rulename{{\to}I} \) (@fd1:def-rules-implication): assume \( x \in A \) and reach \( x \in B \). The two openings are always written together, as "let \( x \in A \)". To **use** \( A \subseteq B \), we apply \( \rulename{\forall E} \) (*Logic and Proof*, Chapter 5) at the element we care about, and then \( \rulename{{\to}E} \): from \( A \subseteq B \) and \( a \in A \), conclude \( a \in B \). This gives the chapter's first named move.
 
 *To show \( A \subseteq B \), take an arbitrary element of \( A \) and show that it lies in \( B \).*
 
@@ -103,7 +103,7 @@ We call this **element-chasing**: we follow one element from \( A \) to \( B \),
 ::: {.solution}
 (a) Let \( x \in [1, 2] \). Then \( 1 \le x \le 2 \), by the meaning of the interval. Hence \( 0 \le 1 \le x \) and \( x \le 2 \le 3 \), so \( 0 \le x \le 3 \), that is, \( x \in [0, 3] \). Since \( x \) was arbitrary, \( [1, 2] \subseteq [0, 3] \).
 
-(b) Let \( x \in S \), that is, let \( x \) be an integer with \( 6 \mid x \). By the definition of \( \mid \), there is an integer \( k \) with \( x = 6k \); choose such a \( k \) (this is \( \rulename{\exists E} \) of *Logic and Proof*, Chapter 4, and the name \( k \) is new). Then \( x = 3 \cdot (2k) \), and \( 2k \) is an integer, so \( 3 \mid x \), with \( 2k \) as the witness (\( \rulename{\exists I} \)). Hence \( x \in T \). Since \( x \) was arbitrary, \( S \subseteq T \).
+(b) Let \( x \in S \), that is, let \( x \) be an integer with \( 6 \mid x \). By the definition of \( \mid \), there is an integer \( k \) with \( x = 6k \); choose such a \( k \) (this is \( \rulename{\exists E} \) of *Logic and Proof*, Chapter 5, and the name \( k \) is new). Then \( x = 3 \cdot (2k) \), and \( 2k \) is an integer, so \( 3 \mid x \), with \( 2k \) as the witness (\( \rulename{\exists I} \)). Hence \( x \in T \). Since \( x \) was arbitrary, \( S \subseteq T \).
 
 (c) Let \( x \in A \). Then \( x \in A \). Since \( x \) was arbitrary, \( A \subseteq A \). The box of \( \rulename{{\to}I} \) opens on \( x \in A \) and closes on the same line; in a derivation it is the one-line box that proves \( x \in A \to x \in A \).
 :::
@@ -112,7 +112,7 @@ Part (c) is the degenerate case: every set is a subset of itself. It matters bec
 
 A nonexample by minimal change. Replace \( 6 \) by \( 4 \) and \( 3 \) by \( 6 \) in (b): is the set of multiples of \( 4 \) a subset of the set of multiples of \( 6 \)? The first sentence of the proof still works (let \( x = 4k \)), but the last step fails: \( 4k \) need not be \( 6 \) times an integer. One element is enough to show the failure: \( 4 \) is a multiple of \( 4 \), and it is not a multiple of \( 6 \). What fails is the clause "**every** element of \( A \)" of @def-subset; here it fails at the element \( 4 \).
 
-That last observation is worth recording in symbols, because it is how every inclusion is refuted. By the negation laws of *Logic and Proof*, Chapter 4 (\( \neg\forall x\, \varphi \) is equivalent to \( \exists x\, \neg\varphi \), and \( \neg(\varphi \to \psi) \) to \( \varphi \wedge \neg\psi \)),
+That last observation is worth recording in symbols, because it is how every inclusion is refuted. By the negation laws of *Logic and Proof*, Chapter 6 (\( \neg\forall x\, \varphi \) is equivalent to \( \exists x\, \neg\varphi \), and \( \neg(\varphi \to \psi) \) to \( \varphi \wedge \neg\psi \)),
 \[
 A \not\subseteq B \quad\text{means}\quad \exists x\, (x \in A \wedge x \notin B).
 \]
@@ -127,7 +127,7 @@ A \not\subseteq B \quad\text{means}\quad \exists x\, (x \in A \wedge x \notin B)
 Sometimes a set is both an element and a subset of the same set. In \( C = \{1, \{1\}\} \), the set \( \{1\} \) is an element (it is listed) and also a subset (its only element, \( 1 \), is listed too). Change one entry: in \( \{1, 2\} \), the set \( \{1\} \) is still a subset, but it is no longer an element, since the two elements are the numbers \( 1 \) and \( 2 \). Whether \( \{1\} \in D \) and whether \( \{1\} \subseteq D \) are two separate questions, and each is answered by looking at the elements of \( D \).
 
 ::: {.warning}
-**Checking some elements proves nothing about all of them.** To prove \( A \subseteq B \), checking that a few elements of \( A \) lie in \( B \) is not enough, however many are checked. "The integers \( 0, 12, 24 \) and \( -12 \) are multiples of \( 4 \) and of \( 3 \)" does not prove that the set of multiples of \( 4 \) is a subset of the set of multiples of \( 3 \), and that inclusion is false (\( 4 \) is a witness). The error is entry (N1) of the catalogue of *Logic and Proof*, Chapter 5: verifying instances and concluding a \( \forall \). The rule \( \rulename{\forall I} \) needs an **arbitrary** element, one about which nothing is known except that it lies in \( A \).
+**Checking some elements proves nothing about all of them.** To prove \( A \subseteq B \), checking that a few elements of \( A \) lie in \( B \) is not enough, however many are checked. "The integers \( 0, 12, 24 \) and \( -12 \) are multiples of \( 4 \) and of \( 3 \)" does not prove that the set of multiples of \( 4 \) is a subset of the set of multiples of \( 3 \), and that inclusion is false (\( 4 \) is a witness). The error is entry (N1) of the catalogue of *Logic and Proof*, Chapter 8: verifying instances and concluding a \( \forall \). The rule \( \rulename{\forall I} \) needs an **arbitrary** element, one about which nothing is known except that it lies in \( A \).
 :::
 
 ### Two inclusions make an equality
@@ -158,7 +158,7 @@ A proof of this kind is written in two paragraphs, labeled \( (\subseteq) \) and
 
 ### Transitivity, rule by rule
 
-The second payoff is that inclusions chain, as \( \le \) does. Its proof is the first element-chase of the chapter written with every rule named, and we give it at two levels: first as a derivation, then as prose in which each sentence carries its rule in brackets. (These are levels 0 and 2 of *Logic and Proof*, Chapter 5; from here on the book writes level-3 prose; after one more fully tagged proof, in Section 1.2, brackets appear only on the step a proof is about.)
+The second payoff is that inclusions chain, as \( \le \) does. Its proof is the first element-chase of the chapter written with every rule named, and we give it at two levels: first as a derivation, then as prose in which each sentence carries its rule in brackets. (These are levels 0 and 2 of *Logic and Proof*, Chapter 8; from here on the book writes level-3 prose; after one more fully tagged proof, in Section 1.2, brackets appear only on the step a proof is about.)
 
 ::: {#prp-subset-transitive}
 [Inclusion Is Transitive]
@@ -171,7 +171,7 @@ The goal \( A \subseteq C \) is a \( \forall \) around an \( \to \), so the goal
 :::
 
 ::: {.proof}
-Unwound by @def-subset, the hypotheses are \( \forall x\, (x \in A \to x \in B) \) and \( \forall x\, (x \in B \to x \in C) \), and the goal is \( \forall x\, (x \in A \to x \in C) \). The following is a derivation of the goal from the hypotheses. The outer box, flagged \( x_0 \), is the box of \( \rulename{\forall I} \) (*Logic and Proof*, Chapter 4); it has no assumption line.
+Unwound by @def-subset, the hypotheses are \( \forall x\, (x \in A \to x \in B) \) and \( \forall x\, (x \in B \to x \in C) \), and the goal is \( \forall x\, (x \in A \to x \in C) \). The following is a derivation of the goal from the hypotheses. The outer box, flagged \( x_0 \), is the box of \( \rulename{\forall I} \) (*Logic and Proof*, Chapter 5); it has no assumption line.
 
 ```{=latex}
 \begin{center}
@@ -200,7 +200,7 @@ The same proof in prose, with each step's rule in brackets:
 This proves the proposition.
 :::
 
-At level 3, the prose a mathematician writes, the same proof is one line: *let \( x \in A \); then \( x \in B \) since \( A \subseteq B \), and \( x \in C \) since \( B \subseteq C \).* The silent steps are those *Logic and Proof*, Chapter 5's convention allows: the two instances of \( \rulename{\forall E} \) at the obvious term \( x \), and the two closing sentences. What may never be silent is the opening "let \( x \in A \)", and the two citations, "since \( A \subseteq B \)" and "since \( B \subseteq C \)".
+At level 3, the prose a mathematician writes, the same proof is one line: *let \( x \in A \); then \( x \in B \) since \( A \subseteq B \), and \( x \in C \) since \( B \subseteq C \).* The silent steps are those *Logic and Proof*, Chapter 8's convention allows: the two instances of \( \rulename{\forall E} \) at the obvious term \( x \), and the two closing sentences. What may never be silent is the opening "let \( x \in A \)", and the two citations, "since \( A \subseteq B \)" and "since \( B \subseteq C \)".
 
 ::: {.check}
 Let \( A = \{1, 2\} \), \( B = \{1, 2, 3\} \), and \( C = \{1, 3\} \). Which of the six statements \( A \subseteq B \), \( B \subseteq A \), \( A \subseteq C \), \( C \subseteq A \), \( B \subseteq C \), \( C \subseteq B \) are true? For each false one, name a witness.
@@ -396,7 +396,7 @@ The argument has a shape that will return: a set built from \( A \) so that it d
 :::
 
 ::: {.solution}
-(a) By @def-subset, \( A \subseteq B \) is \( \forall x\, (x \in A \to x \in B) \). By the quantifier negation law of *Logic and Proof*, Chapter 4, its negation is equivalent to \( \exists x\, \neg(x \in A \to x \in B) \), and by the law for negated implications (also *Logic and Proof*, Chapter 4) to
+(a) By @def-subset, \( A \subseteq B \) is \( \forall x\, (x \in A \to x \in B) \). By the quantifier negation law of *Logic and Proof*, Chapter 6, its negation is equivalent to \( \exists x\, \neg(x \in A \to x \in B) \), and by the law for negated implications (also *Logic and Proof*, Chapter 6) to
 \[
 \exists x\, (x \in A \wedge x \notin B).
 \]
@@ -406,7 +406,7 @@ In words: some element of \( A \) is not an element of \( B \).
 
 (c) \( \{-3, -2, -1, 1, 2, 3\} \). The integer \( 0 \) is excluded because \( 0^2 = 0 \) is not \( > 0 \), and integers with \( \abs{n} \ge 4 \) have \( n^2 \ge 16 > 9 \).
 
-(d) "Let \( x \in A \)" opens two boxes. Its first clause, "let \( x \) be arbitrary", is \( \rulename{\forall I} \) (*Logic and Proof*, Chapter 4); its second, "suppose \( x \in A \)", is \( \rulename{{\to}I} \) (@fd1:def-rules-implication). The proof must then reach \( x \in B \) inside both boxes.
+(d) "Let \( x \in A \)" opens two boxes. Its first clause, "let \( x \) be arbitrary", is \( \rulename{\forall I} \) (*Logic and Proof*, Chapter 5); its second, "suppose \( x \in A \)", is \( \rulename{{\to}I} \) (@fd1:def-rules-implication). The proof must then reach \( x \in B \) inside both boxes.
 :::
 
 ### B. Practice

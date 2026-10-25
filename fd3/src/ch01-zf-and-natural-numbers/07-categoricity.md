@@ -1,6 +1,6 @@
 # All Peano Systems Are Alike
 
-Section 1.4 proved that \( (\omega, 0, \mathrm{S}) \) is a Peano system (@thm-omega-peano, @def-peano-system), and Sections 1.5 and 1.6 built \( + \), \( \cdot \) and \( < \) on it. One question is left. *Sets, Relations, and Cardinality*, Chapter 2 worked with a set \( \nN \) inside the familiar real numbers, and this chapter has built a quite different set \( \omega \) out of \( \emptyset \). In what sense are they the same? This section answers: any two Peano systems are copies of each other, by exactly one matching, which also carries \( + \), \( \cdot \) and \( < \) across. Then it says what the later chapters may take from *Logic and Proof*, Chapter 3, and *Sets, Relations, and Cardinality*, Chapter 2 when they write \( \nN \) for \( \omega \).
+Section 1.4 proved that \( (\omega, 0, \mathrm{S}) \) is a Peano system (@thm-omega-peano, @def-peano-system), and Sections 1.5 and 1.6 built \( + \), \( \cdot \) and \( < \) on it. One question is left. *Sets, Relations, and Cardinality*, Chapter 2 worked with a set \( \nN \) inside the familiar real numbers, and this chapter has built a quite different set \( \omega \) out of \( \emptyset \). In what sense are they the same? This section answers: any two Peano systems are copies of each other, by exactly one matching, which also carries \( + \), \( \cdot \) and \( < \) across. Then it says what the later chapters may take from *Logic and Proof*, Chapter 4, and *Sets, Relations, and Cardinality*, Chapter 2 when they write \( \nN \) for \( \omega \).
 
 ## Two Peano systems, and what "alike" should mean
 
@@ -158,7 +158,7 @@ So once a Peano system carries an addition and a multiplication obeying the recu
 
 ## Identifying the two sets of natural numbers
 
-Now apply all this to the set \( \nN \) of *Sets, Relations, and Cardinality*, Chapter 2. Two different things are true, and it matters which one the later chapters lean on. One is a statement about *Sets, Relations, and Cardinality*, Chapter 2's \( \nN \), a subset of the familiar real numbers: it is a Peano system, so it is a copy of \( \omega \). The other is a statement about \( \omega \) alone: the principles *Logic and Proof*, Chapter 3, and *Sets, Relations, and Cardinality*, Chapter 2 assumed or proved for \( \nN \) are theorems about \( \omega \), proved from the axioms (Z1)–(Z7).
+Now apply all this to the set \( \nN \) of *Sets, Relations, and Cardinality*, Chapter 2. Two different things are true, and it matters which one the later chapters lean on. One is a statement about *Sets, Relations, and Cardinality*, Chapter 2's \( \nN \), a subset of the familiar real numbers: it is a Peano system, so it is a copy of \( \omega \). The other is a statement about \( \omega \) alone: the principles *Logic and Proof*, Chapter 4, and *Sets, Relations, and Cardinality*, Chapter 2 assumed or proved for \( \nN \) are theorems about \( \omega \), proved from the axioms (Z1)–(Z7).
 
 ::: {#cor-omega-identification}
 [ω Is the Natural Numbers]
@@ -208,13 +208,13 @@ Clause (a) is the honest sense in which "\( \omega \) **is** \( \nN \)": the two
 The isomorphism carries \( 0 \), successor, \( + \), \( \cdot \) and \( < \), and nothing else. In \( \omega \), \( 0 \in 5 \) and \( 2 \subseteq 3 \) are true, because natural numbers here are sets (@exm-von-neumann-numerals). In *Sets, Relations, and Cardinality*, Chapter 2's picture numbers are not sets, and "\( 0 \in 5 \)" has no meaning there. Such statements are facts about one particular construction, and no theorem of the later chapters asks them.
 :::
 
-## How later chapters cite *Logic and Proof*, Chapter 3, and *Sets, Relations, and Cardinality*, Chapter 2
+## How later chapters cite *Logic and Proof*, Chapter 4, and *Sets, Relations, and Cardinality*, Chapter 2
 
-In the rest of this volume, \( \nN \) **means** \( \omega \), with the \( 0 \), \( + \), \( \cdot \) and \( < \) of this chapter. The later chapters build \( \nZ \), \( \nQ \) and finally \( \nR \) from it, and they cite results of *Logic and Proof*, Chapter 3, and *Sets, Relations, and Cardinality*, Chapters 2 and 3 about \( \nN \). This subsection says how such a citation is to be read, so that the construction of \( \nR \) never rests on the school \( \nR \) it is meant to replace.
+In the rest of this volume, \( \nN \) **means** \( \omega \), with the \( 0 \), \( + \), \( \cdot \) and \( < \) of this chapter. The later chapters build \( \nZ \), \( \nQ \) and finally \( \nR \) from it, and they cite results of *Logic and Proof*, Chapter 4, and *Sets, Relations, and Cardinality*, Chapters 2 and 3 about \( \nN \). This subsection says how such a citation is to be read, so that the construction of \( \nR \) never rests on the school \( \nR \) it is meant to replace.
 
 The proofs in *Sets, Relations, and Cardinality*, Chapters 2 and 3 use the arithmetic of the real numbers freely: *Sets, Relations, and Cardinality*, Chapter 2's "What you need" paragraph takes the arithmetic and order of \( \nR \) as school facts, *Sets, Relations, and Cardinality*, Section 2.1 says so for itself in "the rule for this section", and *Sets, Relations, and Cardinality*, Chapter 3's proofs do the same (@fd2:thm-binary-sequences-uncountable, for example, uses \( 1 - b \)). So they do **not** rest only on (\( \nN \)0), (\( \nN \)S), @fd1:ax-induction, @fd2:thm-recursion and @fd2:lem-naturals-arithmetic, and "they hold unchanged on \( \omega \)" would be false. What is true is a **dictionary**: each fact about \( \nN \) those proofs use has a counterpart proved on \( \omega \) here.
 
-| used for \( \nN \) in *Logic and Proof*, Chapter 3, and *Sets, Relations, and Cardinality*, Chapters 2, 3 | read on \( \omega \) as |
+| used for \( \nN \) in *Logic and Proof*, Chapter 4, and *Sets, Relations, and Cardinality*, Chapters 2, 3 | read on \( \omega \) as |
 |---|---|
 | @fd1:ax-induction; @fd2:thm-recursion | @cor-omega-identification (b): @thm-omega-induction (b); @thm-omega-recursion |
 | @fd2:thm-induction with a base \( n_0 = b \in \nN \), induction from a base | @prp-omega-order-arithmetic (g) |
@@ -234,7 +234,7 @@ With the dictionary, the results of *Sets, Relations, and Cardinality*, Chapters
 
 Finally, the axiom of choice. Apart from *Sets, Relations, and Cardinality*, Chapter 2's \( \nN \subseteq \nR \) and its school operations, which @cor-omega-identification (a) takes as given, every set in Sections 1.1–1.7 is produced by one of (Z1)–(Z7). Every function is produced by @thm-omega-recursion, by (Z6) applied to a graph described by a property (as \( g \) was in the proof of @thm-peano-categoricity (a)), or by *Sets, Relations, and Cardinality*, Chapter 1's inverses and composites of such functions. Nothing is chosen from infinitely many sets, and @fd2:ax-choice is used nowhere in this chapter; it is mentioned only to say where it lives.
 
-So everything that *Logic and Proof*, Chapter 3, and *Sets, Relations, and Cardinality*, Chapter 2 assumed about \( \nN \) (that \( 0 \) is a natural number, that \( n + 1 \) is one whenever \( n \) is, induction, recursion, and the arithmetic of @fd2:lem-naturals-arithmetic) is now proved, from seven axioms about sets. The set-theory volume returns to those axioms and adds the rest of the system. Chapter 2 builds \( \nZ \) and \( \nQ \) from \( \omega \) by the same kind of construction as here: pairs, and classes of pairs.
+So everything that *Logic and Proof*, Chapter 4, and *Sets, Relations, and Cardinality*, Chapter 2 assumed about \( \nN \) (that \( 0 \) is a natural number, that \( n + 1 \) is one whenever \( n \) is, induction, recursion, and the arithmetic of @fd2:lem-naturals-arithmetic) is now proved, from seven axioms about sets. The set-theory volume returns to those axioms and adds the rest of the system. Chapter 2 builds \( \nZ \) and \( \nQ \) from \( \omega \) by the same kind of construction as here: pairs, and classes of pairs.
 
 ## Exercises
 
@@ -387,7 +387,7 @@ Let \( M = \{0, 1\} \), \( e = 0 \) and \( s(0) = s(1) = 1 \). Show that there i
 ::: {.solution}
 Suppose \( f \) exists. Taking \( x = 1 \), \( f(1) = f(s(1)) = \mathrm{S}(f(1)) \). But no \( n \in \omega \) has \( n = \mathrm{S}(n) \): \( n \in \mathrm{S}(n) \) (@def-set-successor), so \( n = \mathrm{S}(n) \) would give \( n \in n \), against @lem-omega-transitive (c). So no such \( f \) exists. (Taking \( x = 0 \) instead gives \( f(1) = \mathrm{S}(0) = 1 \), so the two equations at the input \( 1 \) also contradict each other.)
 
-The trouble is that \( 1 \) is built in two ways, as \( s(0) \) and as \( s(1) \), and the two ways ask for different values. In *Logic and Proof*, Chapter 3, @fd1:thm-structural-recursion defines functions on formulas, and what makes it work is @fd1:thm-unique-readability: each compound formula is built from its parts in exactly one way. On \( \omega \) the same job is done by (P3) and (P4): \( 0 \) is not a successor, so its value is not asked for twice, and a successor is the successor of exactly one number, so the equation at \( \mathrm{S}(n) \) asks for one thing. The structure \( M \) fails (P4), since \( s(0) = s(1) \), though it satisfies (P5).
+The trouble is that \( 1 \) is built in two ways, as \( s(0) \) and as \( s(1) \), and the two ways ask for different values. In *Logic and Proof*, Chapter 4, @fd1:thm-structural-recursion defines functions on formulas, and what makes it work is @fd1:thm-unique-readability: each compound formula is built from its parts in exactly one way. On \( \omega \) the same job is done by (P3) and (P4): \( 0 \) is not a successor, so its value is not asked for twice, and a successor is the successor of exactly one number, so the equation at \( \mathrm{S}(n) \) asks for one thing. The structure \( M \) fails (P4), since \( s(0) = s(1) \), though it satisfies (P5).
 :::
 
 ::: {#exr-categoricity-r4}

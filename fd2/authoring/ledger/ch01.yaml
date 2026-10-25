@@ -4308,7 +4308,7 @@ items:
     model: claude-opus-5-5
     evidence: ' valid level-3 rendering: each box-opening is spoken (''Suppose'', two ''Let''s), and the
       →E steps that rely on the hypotheses appear as ''since S ⊆ A'' and ''since A ⊆ B''. The box map
-      in the solution matches the derivation. The pointer ''*Logic and Proof*, Section 5.3'' has the correct
+      in the solution matches the derivation. The pointer ''*Logic and Proof*, Section 8.3'' has the correct
       cross-volume form. The revised closing sentence accurately describes how each def. line is rendered.
       No remaining issues.'
 - key: exr-images-and-preimages-r2

@@ -1,10 +1,10 @@
 # Induction, Strong Induction and the Smallest Counterexample
 
-*Logic and Proof*, Chapter 3 gave the principle of induction (@fd1:ax-induction), its strong form (@fd1:thm-strong-induction), and the first worked proofs: a sum (@fd1:exm-sum-consecutive-products), an inequality (@fd1:exm-power-inequality), and a strong induction with three base cases (@fd1:exm-threes-and-fives). *Logic and Proof*, Chapter 5 showed how an induction is written in prose and which rule each phrase stands for (@fd1:exm-rhetoric-induction). This section is about the craft: which form of induction fits a claim, where it starts, how a smallest counterexample becomes a proof, and how an induction goes wrong, each failure located at one step. On the way it proves facts that *Logic and Proof*, Chapters 1, 2 and 5 took from school: every integer is even or odd and not both, a fraction can be reduced until numerator and denominator are not both even, and every integer \( n \ge 2 \) has a prime factor.
+*Logic and Proof*, Chapter 4 gave the principle of induction (@fd1:ax-induction), its strong form (@fd1:thm-strong-induction), and the first worked proofs: a sum (@fd1:exm-sum-consecutive-products), an inequality (@fd1:exm-power-inequality), and a strong induction with three base cases (@fd1:exm-threes-and-fives). *Logic and Proof*, Chapter 8 showed how an induction is written in prose and which rule each phrase stands for (@fd1:exm-rhetoric-induction). This section is about the craft: which form of induction fits a claim, where it starts, how a smallest counterexample becomes a proof, and how an induction goes wrong, each failure located at one step. On the way it proves facts that *Logic and Proof*, Chapters 1, 2 and 8 took from school: every integer is even or odd and not both, a fraction can be reduced until numerator and denominator are not both even, and every integer \( n \ge 2 \) has a prime factor.
 
 ## Induction from any integer
 
-*Logic and Proof*, Chapter 3 already started inductions at numbers other than \( 0 \) (*Logic and Proof*, Section 3.2, "Starting from another number"), for a starting point \( b \in \nN \). With \( \nZ \) and @prp-integers-closed in hand, the starting point may be any integer, negative ones included.
+*Logic and Proof*, Chapter 4 already started inductions at numbers other than \( 0 \) (*Logic and Proof*, Section 4.2, "Starting from another number"), for a starting point \( b \in \nN \). With \( \nZ \) and @prp-integers-closed in hand, the starting point may be any integer, negative ones included.
 
 *To prove a statement for every integer from \( n_0 \) on, prove it at \( n_0 \) and show that it passes from each integer to the next.*
 
@@ -35,7 +35,7 @@ For \( k \in \nN \), let \( Q(k) \) be the statement \( P(n_0 + k) \). This make
 By @fd1:ax-induction, \( Q(k) \) holds for every \( k \in \nN \). Now let \( n \) be an integer with \( n \ge n_0 \). Then \( k \coloneqq n - n_0 \) is an integer by @prp-integers-closed (a), and \( k \ge 0 \), so \( k \in \nN \) by @prp-integers-closed (b). Hence \( Q(k) \) holds, and \( Q(k) \) is \( P(n_0 + k) = P(n) \). This proves the theorem.
 :::
 
-For \( n_0 = 0 \) the theorem is @fd1:ax-induction itself, and for \( n_0 \in \nN \) it is *Logic and Proof*, Chapter 3's induction started at \( n_0 \). In the inductive step, "\( P(n) \) is true" is the induction hypothesis: one implication, proved once, inside a \( \rulename{{\to}I} \) box whose assumption is \( P(n) \) for one fixed but arbitrary integer \( n \ge n_0 \).
+For \( n_0 = 0 \) the theorem is @fd1:ax-induction itself, and for \( n_0 \in \nN \) it is *Logic and Proof*, Chapter 4's induction started at \( n_0 \). In the inductive step, "\( P(n) \) is true" is the induction hypothesis: one implication, proved once, inside a \( \rulename{{\to}I} \) box whose assumption is \( P(n) \) for one fixed but arbitrary integer \( n \ge n_0 \).
 
 The strong form moves to a base in the same way.
 
@@ -189,7 +189,7 @@ Hence \( r \) has a representation of the required kind. As \( r \in \nQ \) was 
 
 This is (L), with more: the denominator can be taken positive, not merely non-zero. The proof of @fd1:thm-sqrt2-irrational now rests on a proved lemma. The same argument with "not both even" replaced by "no common divisor \( d \ge 2 \)" puts every fraction in lowest terms in the full sense; that is Exercise C2. Two of the proof's steps adapt those of the smallest-counterexample method above: the failures are the denominators in \( F \), and the supposition makes every element of \( F \) one, so the third step needs only the supposition at \( m \), not the claim below \( m \), and the contradiction of the fourth step is the smaller failure \( m' \). This proof is written out in full; two later exercises use the same move with less given: Exercise B2 below leaves its last step blank, and Exercise C1 of Section 2.3 leaves the last half blank.
 
-The next result is the prime-factor fact that *Logic and Proof*, Chapter 5 used. Its proof is a strong induction from base \( 2 \); the same argument inside an \( \rulename{RAA} \) box is a smallest-counterexample proof, in which the least failure \( m \) gets a prime factor from its divisor \( a \), contradicting the choice of \( m \) (compare Exercise B2).
+The next result is the prime-factor fact that *Logic and Proof*, Chapter 8 used. Its proof is a strong induction from base \( 2 \); the same argument inside an \( \rulename{RAA} \) box is a smallest-counterexample proof, in which the least failure \( m \) gets a prime factor from its divisor \( a \), contradicting the choice of \( m \) (compare Exercise B2).
 
 ::: {#thm-prime-factor}
 [Every Integer at Least Two Has a Prime Factor]
@@ -250,7 +250,7 @@ Everything else is correct. The base case (1) is true. For every \( n \ge 2 \) t
 | \( P(n) \Rightarrow P(n + 1) \) for \( n \ge 2 \) | yes | yes, lines (2)–(6) |
 | \( P(n) \) for every \( n \ge 1 \) | no | no |
 
-This is the failure that *Logic and Proof*, Chapter 3's warning about \( 2^n \ge n^2 \) foreshadowed: a step that holds only from some point on, with a gap at the first transition. A step must be proved for **every** \( n \ge n_0 \), and the place to look for a gap is the smallest \( n \), where the objects the step talks about are smallest.
+This is the failure that *Logic and Proof*, Chapter 4's warning about \( 2^n \ge n^2 \) foreshadowed: a step that holds only from some point on, with a gap at the first transition. A step must be proved for **every** \( n \ge n_0 \), and the place to look for a gap is the smallest \( n \), where the objects the step talks about are smallest.
 :::
 
 The other failures are quicker to state.

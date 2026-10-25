@@ -10,7 +10,7 @@ That raises two questions, which this chapter answers in order. Which of the wor
 
 To build numbers out of sets we must let sets be the only objects. From here to the end of the chapter, **every object is a set**, and every element of a set is again a set. *Sets, Relations, and Cardinality*, Section 1.1 used a different picture, in which numbers are given objects that are not sets, and it said that nothing in the main line would depend on how numbers are made. That picture stays valid for *Sets, Relations, and Cardinality*, Chapters 1 to 3; this chapter works in the other one, where \( 0 \) will be the empty set and \( 0 \in 1 \) will be a true statement. The chapter's introduction says how the two pictures fit together.
 
-**The language.** Statements about sets are written in the first-order language of *Logic and Proof*, Chapter 4 (@fd1:def-first-order-formula) with **one** predicate symbol, the two-place \( \in \), together with equality. There are no constant symbols and no function symbols. The variables range over sets. So "\( x \in y \)" and "\( x = y \)" are the atomic formulas, and everything else is built from them with the connectives and the quantifiers. A **property** \( P(x) \) of sets is a formula of this language in which the variable \( x \) may occur free; other free variables, called **parameters**, are allowed too, and stand for sets fixed in advance.
+**The language.** Statements about sets are written in the first-order language of *Logic and Proof*, Chapter 5 (@fd1:def-first-order-formula) with **one** predicate symbol, the two-place \( \in \), together with equality. There are no constant symbols and no function symbols. The variables range over sets. So "\( x \in y \)" and "\( x = y \)" are the atomic formulas, and everything else is built from them with the connectives and the quantifiers. A **property** \( P(x) \) of sets is a formula of this language in which the variable \( x \) may occur free; other free variables, called **parameters**, are allowed too, and stand for sets fixed in advance.
 
 ## The axioms
 
@@ -45,7 +45,7 @@ In symbols, with \( S \subseteq X \) as an abbreviation of \( \forall y\, (y \in
 \[
 \forall p_1 \cdots \forall p_k\, \forall A\, \exists B\, \forall x\, \bigl(x \in B \leftrightarrow (x \in A \wedge \varphi)\bigr). \tag{Z6}
 \]
-The letter \( B \) here is bound, and may be renamed (*Logic and Proof*, Section 4.2) to any letter that appears nowhere else in (Z6) (not in \( \varphi \), and neither \( x \) nor \( A \)). So a property may mention a given set called \( B \), as \( A \setminus B \) below does, once the new set is given another letter, say \( D \): \( \forall B\, \forall A\, \exists D\, \forall x\, \bigl(x \in D \leftrightarrow (x \in A \wedge x \notin B)\bigr) \).
+The letter \( B \) here is bound, and may be renamed (*Logic and Proof*, Section 5.2) to any letter that appears nowhere else in (Z6) (not in \( \varphi \), and neither \( x \) nor \( A \)). So a property may mention a given set called \( B \), as \( A \setminus B \) below does, once the new set is given another letter, say \( D \): \( \forall B\, \forall A\, \exists D\, \forall x\, \bigl(x \in D \leftrightarrow (x \in A \wedge x \notin B)\bigr) \).
 
 In words, clause by clause, with what each one licenses.
 
@@ -242,7 +242,7 @@ For (a): consider \( \{ x \in A : x \ne x \} \). For (b): let \( x \in \bigcap \
 :::
 
 ::: {.solution}
-(a) Let \( A \) be a set. By (Z6) with the property \( \neg(x = x) \), the set \( E \coloneqq \{ x \in A : x \ne x \} \) exists. If \( x \in E \), then \( x \ne x \), which contradicts \( x = x \) (\( \rulename{{=}I} \), @fd1:def-rules-equality). So \( E \) has no elements, and (Z2) holds. Thus in the presence of (Z6), (Z2) says only "there is a set". The Axiom of Infinity of Section 1.3 also says that a set exists, so it could replace (Z2) altogether; that is how the full system is often stated, with the clause "\( \emptyset \in I \)" of Section 1.3 read as "\( I \) has an element with no elements", so that the symbol \( \emptyset \) is not needed before (Z2) is. (In the logic of *Logic and Proof*, Chapter 4 even "there is a set" can be derived: \( \rulename{{=}I} \) gives \( x = x \), and \( \rulename{\exists I} \) gives \( \exists x\, (x = x) \), because every domain is non-empty, *Logic and Proof*, Section 4.11. We keep (Z2) anyway, so that the axioms say plainly where the first set comes from.)
+(a) Let \( A \) be a set. By (Z6) with the property \( \neg(x = x) \), the set \( E \coloneqq \{ x \in A : x \ne x \} \) exists. If \( x \in E \), then \( x \ne x \), which contradicts \( x = x \) (\( \rulename{{=}I} \), @fd1:def-rules-equality). So \( E \) has no elements, and (Z2) holds. Thus in the presence of (Z6), (Z2) says only "there is a set". The Axiom of Infinity of Section 1.3 also says that a set exists, so it could replace (Z2) altogether; that is how the full system is often stated, with the clause "\( \emptyset \in I \)" of Section 1.3 read as "\( I \) has an element with no elements", so that the symbol \( \emptyset \) is not needed before (Z2) is. (In the logic of *Logic and Proof*, Chapter 5 even "there is a set" can be derived: \( \rulename{{=}I} \) gives \( x = x \), and \( \rulename{\exists I} \) gives \( \exists x\, (x = x) \), because every domain is non-empty, *Logic and Proof*, Section 7.1. We keep (Z2) anyway, so that the axioms say plainly where the first set comes from.)
 
 (b) Let \( x \in \bigcap \sS \) and \( S \in \sS \). By the membership condition of @prp-zf-basic-sets (c), \( x \) lies in every member of \( \sS \), in particular in \( S \). So \( \bigcap \sS \subseteq S \).
 
@@ -270,6 +270,6 @@ ax-zf-fragment (claim): (Z1)-(Z6) cannot produce a set with infinitely many elem
 ax-zf-fragment (claim): Replacement and Foundation are left to the set-theory volume | prose pointer outside this book; nothing depends on it
 prp-zf-basic-sets (proof): "x = a or x = a" iff "x = a"; "x = d or x = c" iff "x = c or x = d" | propositional logic (vee-I, vee-E; disjunction commutes, exm-disjunction-first-derivations in F1.1)
 prp-zf-basic-sets (proof): case split on a = c or a = d | vee-E, def-rules-disjunction (F1.1)
-exr-sets-from-axioms-c1 (solution): exists x (x = x) is derivable because every domain is non-empty | F1.4 §11 (prose; nothing in the exercise rests on it)
+exr-sets-from-axioms-c1 (solution): exists x (x = x) is derivable because every domain is non-empty | F1.6 §01 (prose; nothing in the exercise rests on it)
 exr-sets-from-axioms-c1 (solution): the clause "emptyset in I" of F3.1 §03 | F3.1 §03 (prose pointer, this chapter; a remark, nothing rests on it)
 -->

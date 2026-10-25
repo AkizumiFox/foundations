@@ -104,7 +104,7 @@ Let \( f \colon X \to Y \) be a function.
 Consequently, if \( X \ne \emptyset \), then \( f \) has a left inverse **if and only if** \( f \) is injective.
 :::
 
-Part (a) carries no hypothesis on \( X \), on purpose: the last theorem of this section uses it for every \( X \), the empty set included. The hypothesis \( X \ne \emptyset \) sits in (b) only, where it is used. As in @prp-empty-function (b), "\( X \ne \emptyset \)" is read as "\( X \) is non-empty: it has an element", and the proof uses it in that form. (From an element, \( X \ne \emptyset \) follows at once, since the empty set has none (@def-empty-set). The passage back, from "\( X \) is not the empty set" to "\( X \) has an element", is the classical law "not all fail, so one holds" of *Logic and Proof*, Chapter 4; reading the hypothesis as "has an element" avoids it.)
+Part (a) carries no hypothesis on \( X \), on purpose: the last theorem of this section uses it for every \( X \), the empty set included. The hypothesis \( X \ne \emptyset \) sits in (b) only, where it is used. As in @prp-empty-function (b), "\( X \ne \emptyset \)" is read as "\( X \) is non-empty: it has an element", and the proof uses it in that form. (From an element, \( X \ne \emptyset \) follows at once, since the empty set has none (@def-empty-set). The passage back, from "\( X \) is not the empty set" to "\( X \) has an element", is the classical law "not all fail, so one holds" of *Logic and Proof*, Chapter 6; reading the hypothesis as "has an element" avoids it.)
 
 ::: {.idea}
 For (a), start from the goal. Injectivity asks: from \( f(x_1) = f(x_2) \), get \( x_1 = x_2 \). A left inverse \( g \) turns each \( f(x) \) back into \( x \), so apply \( g \) to both sides.
@@ -209,9 +209,9 @@ Read what a right inverse must do. For **every** \( y \in Y \), \( g(y) \) must 
 
 Now look at what our rules can do.
 
-- **One \( y \).** For a single \( y \), the statement "there is \( x \in X \) with \( f(x) = y \)" lets us name a preimage by \( \exists \)E (*Logic and Proof*, Section 4.6). That is one choice, made inside one proof.
+- **One \( y \).** For a single \( y \), the statement "there is \( x \in X \) with \( f(x) = y \)" lets us name a preimage by \( \exists \)E (*Logic and Proof*, Section 5.6). That is one choice, made inside one proof.
 - **Finitely many \( y \).** For a particular finite \( Y = \{y_1, \dots, y_n\} \), with \( n \) a fixed number, we can apply \( \exists \)E \( n \) times, once for each point, and write down the \( n \) pairs. (To get this for every finite \( Y \) at once, with \( n \) arbitrary, one inducts on \( n \), @fd1:ax-induction.) @exm-right-inverses-finite picked one preimage per point in the same spirit, by listing the preimage sets and choosing from them.
-- **Infinitely many \( y \).** A proof is a finite object. It cannot contain one \( \exists \)E for each of infinitely many points, and no rule of *Logic and Proof*, Chapter 4 makes infinitely many choices in one step.
+- **Infinitely many \( y \).** A proof is a finite object. It cannot contain one \( \exists \)E for each of infinitely many points, and no rule of *Logic and Proof*, Chapter 5 makes infinitely many choices in one step.
 
 Sometimes the difficulty does not arise, because a **rule** picks the preimage. The squaring map from \( \nR \) onto \( [0, \infty) \) is surjective, and each \( y \ge 0 \) has the preimages \( \sqrt y \) and \( -\sqrt y \). The rule "take the non-negative one" defines \( g(y) \coloneqq \sqrt y \), and \( g \) is a right inverse: \( (\sqrt y)^2 = y \). Likewise the projection \( \nN \times \nN \to \nN \), \( (m, n) \mapsto m \), is surjective, and \( m \mapsto (m, 1) \) is a right inverse. In each case the specification of @def-set-builder writes \( g \) down, because the rule names one preimage for each \( y \).
 

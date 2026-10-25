@@ -278,7 +278,7 @@ Let \( \fM \) have domain \( \nN \) and \( R^{\fM} \coloneqq \{ (d, e) \in \nN \
 
 *The conclusion is false.* \( \exists y\, \forall x\, (x < y) \) says "some natural number is larger than every natural number". For any \( e \in \nN \), the choice \( d \coloneqq e \) gives \( d < e \) false, so no \( e \) works.
 
-So \( \fM \) is a counter-model, and \( \forall x\, \exists y\, R(x, y) \not\models \exists y\, \forall x\, R(x, y) \). By the soundness statement of *Logic and Proof*, Section 4.11 (the subsection "From counter-models to non-derivability"), a counter-model shows non-derivability: \( \forall x\, \exists y\, R(x, y) \nvdash \exists y\, \forall x\, R(x, y) \).
+So \( \fM \) is a counter-model, and \( \forall x\, \exists y\, R(x, y) \not\models \exists y\, \forall x\, R(x, y) \). By the soundness statement of *Logic and Proof*, Section 7.2 (the subsection "From counter-models to non-derivability"), a counter-model shows non-derivability: \( \forall x\, \exists y\, R(x, y) \nvdash \exists y\, \forall x\, R(x, y) \).
 
 This is the converse of @fd1:prp-exists-forall-swap with the variables renamed and the two places of \( R \) exchanged (read \( R(x, y) \) as \( R(y, x) \)), and the counter-model is the one of @fd1:exm-counter-model-swap: there the domain was \( \nZ \) and \( R \) was read as \( > \); with the roles of the variables exchanged, \( R \) read as \( < \) and the domain cut down to \( \nN \), the same witnesses work, as checked above. In the premise the larger number \( y \) is chosen after \( x \) and depends on it; the conclusion asks for one \( y \) in advance.
 :::
@@ -330,7 +330,7 @@ exr-infinite-sets-b3 (solution): (0, infinity) is an interval with more than one
 exr-infinite-sets-c1 (solution): max{a, b} of two naturals exists and is >= each | prp-finite-max (F2.2 §03), used silently in the given half
 exr-infinite-sets-c1 (solution): counterexample to the plain diagonal: f_0(n) = 5 + n, f_1(n) = n give g(0) = 6, g(1) = 2 | verify/ch08/exr-infinite-sets-c1.py
 exr-infinite-sets-r1 (solution): 2^(K+1) - 2^K = 2^K; 2^K >= 1 (a positive natural number) | def-power, prp-power-laws (d), (e), lem-naturals-arithmetic (a), used silently; verify/ch08/exr-infinite-sets-r1.py
-exr-infinite-sets-r2 (solution): soundness for predicate logic (counter-model gives non-derivability) | F1.4 §11, subsection #from-counter-models-to-non-derivability (statement; proof in optional F1.4 §12); prose pointer, unlabelled statement
+exr-infinite-sets-r2 (solution): soundness for predicate logic (counter-model gives non-derivability) | F1.6 §02, subsection #from-counter-models-to-non-derivability (statement; proof in optional F1.6 §03); prose pointer, unlabelled statement
 exr-infinite-sets-r3 (solution): row <-> set of T-places and truth function <-> set of T-rows are bijections; equinumerous with an n-element set has n elements | inline; prp-equinumerous-properties via composition; verify/ch08/exr-infinite-sets-r3.py
 exr-infinite-sets-r4 (solution): Z_N -> N^N bijection | characteristic property of tuples (F2.1 §03)
 -->

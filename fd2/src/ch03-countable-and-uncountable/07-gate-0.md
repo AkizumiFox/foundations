@@ -1,6 +1,6 @@
 # Gate 0: Logic and Sets Examination
 
-The five chapters of *Logic and Proof* and the first three chapters of this volume taught one skill in many forms: reading a mathematical statement exactly, and proving it in sentences that a reader can check line by line. This section is an examination on all of it, and the test of whether *Analysis on the Real Line* will be readable: from its Chapter 1 on, every proof assumes that negating a quantified statement, naming a witness, running an induction and chasing an element through a preimage are routine. A reader who comes to the book by a reading path that begins with *Analysis on the Real Line*, such as a first course in real analysis, takes this Gate first, as an entry test, and goes back only to the sections that the remediation map at the end names. Grading your own work is a skill too; the front matter's page on getting feedback without a teacher describes the loop of attempting, writing, grading against the scheme and only then reading the solution.
+The eight chapters of *Logic and Proof* and the first three chapters of this volume taught one skill in many forms: reading a mathematical statement exactly, and proving it in sentences that a reader can check line by line. This section is an examination on all of it, and the test of whether *Analysis on the Real Line* will be readable: from its Chapter 1 on, every proof assumes that negating a quantified statement, naming a witness, running an induction and chasing an element through a preimage are routine. A reader who comes to the book by a reading path that begins with *Analysis on the Real Line*, such as a first course in real analysis, takes this Gate first, as an entry test, and goes back only to the sections that the remediation map at the end names. Grading your own work is a skill too; the front matter's page on getting feedback without a teacher describes the loop of attempting, writing, grading against the scheme and only then reading the solution.
 
 ## Instructions
 
@@ -12,7 +12,7 @@ The five chapters of *Logic and Proof* and the first three chapters of this volu
 - If you fail, follow the remediation map, then wait a week and retake the whole Gate (the same problems) before starting *Analysis on the Real Line*.
 :::
 
-The definition drill comes first and is not scored. It is the one retrieval list for those eight chapters: every major definition in them, to be written from memory before the clock starts.
+The definition drill comes first and is not scored. It is the one retrieval list for those eleven chapters: every major definition in them, to be written from memory before the clock starts.
 
 ::: {.warning}
 A proof that reads well is not thereby correct, and grading your own script is where a reader working alone is most easily fooled. Grade the step, not the impression: a marking-scheme line such as "\( y \) given as a function of \( \delta \)" is either on your page or it is not. A script that says "choose \( y \) close to \( 1 \)" in Problem P1 has not given \( y \) as a function of \( \delta \), however clear the idea, and loses those points.
@@ -91,7 +91,7 @@ Count an item right only if every quantifier, every bound and the order of the q
 \forall x \in \nR\ \exists \delta > 0\ \forall y \in \nR\ \bigl( \abs{y - x} < \delta \to f(y) \ge f(x) \bigr).
 \]
 
-*(b)* Push the negation inward one symbol at a time, as in the procedure of *Logic and Proof*, Section 4.9 ("Negating a definition, mechanically"): @fd1:prp-bounded-quantifier-negation three times, the bound of each quantifier kept, and @fd1:prp-negated-implication once. Write \( \alpha \) for \( \abs{y - x} < \delta \) and \( \beta \) for \( f(y) \ge f(x) \).
+*(b)* Push the negation inward one symbol at a time, as in the procedure of *Logic and Proof*, Section 6.2 ("Negating a definition, mechanically"): @fd1:prp-bounded-quantifier-negation three times, the bound of each quantifier kept, and @fd1:prp-negated-implication once. Write \( \alpha \) for \( \abs{y - x} < \delta \) and \( \beta \) for \( f(y) \ge f(x) \).
 \[
 \begin{aligned}
 &\neg\, \forall x \in \nR\ \exists \delta > 0\ \forall y \in \nR\ (\alpha \to \beta) \\
@@ -360,16 +360,16 @@ Add up your points. A pass is 42 of 60 with no core problem (P1, P2, P4, P5) at 
 
 | Problem | What it tests | Sections to reread |
 |---|---|---|
-| P1 | quantifiers, bounds and their negation; the order of choices | *Logic and Proof*, Section 4.1 (@fd1:def-bounded-quantifier); *Logic and Proof*, Section 4.9 (@fd1:prp-quantifier-negation, @fd1:prp-negated-implication, @fd1:prp-bounded-quantifier-negation); *Logic and Proof*, Section 4.10 (@fd1:exm-uniform-implies-continuous); *Logic and Proof*, Section 5.2 (@fd1:exm-rhetoric-universal) |
-| P2 | the quantifier rules and their side conditions; a derivation read as prose | *Logic and Proof*, Sections 4.3–4.6 (@fd1:def-rule-universal-elimination, @fd1:def-rules-universal, @fd1:def-rule-existential-introduction, @fd1:def-rules-existential); *Logic and Proof*, Sections 5.2–5.3 (@fd1:exm-rhetoric-existential, @fd1:def-levels-of-proof); Section 1.4 (@thm-composition-injective-surjective) |
-| P3 | checking a proof; is the conclusion true, and does the argument prove it | *Logic and Proof*, Section 5.6 (@fd1:exm-not-allowed-catalogue); *Logic and Proof*, Section 3.2 (@fd1:ax-induction); *Logic and Proof*, Section 4.6 (@fd1:prp-exists-forall-swap); *Logic and Proof*, Section 4.11 (@fd1:exm-counter-model-swap); Section 2.2 (@thm-induction, and "How induction proofs go wrong", @exm-all-equal-induction) |
-| P4 | recursion and induction with two starting values | *Logic and Proof*, Section 3.2 (@fd1:thm-strong-induction); Section 2.2 (@thm-strong-induction-from-base); Section 2.3 (@cor-two-step-recursion, and the two-step example after @def-power) |
+| P1 | quantifiers, bounds and their negation; the order of choices | *Logic and Proof*, Section 5.1 (@fd1:def-bounded-quantifier); *Logic and Proof*, Section 6.2 (@fd1:prp-quantifier-negation, @fd1:prp-negated-implication, @fd1:prp-bounded-quantifier-negation); *Logic and Proof*, Section 6.4 (@fd1:exm-uniform-implies-continuous); *Logic and Proof*, Section 8.2 (@fd1:exm-rhetoric-universal) |
+| P2 | the quantifier rules and their side conditions; a derivation read as prose | *Logic and Proof*, Sections 5.3–5.6 (@fd1:def-rule-universal-elimination, @fd1:def-rules-universal, @fd1:def-rule-existential-introduction, @fd1:def-rules-existential); *Logic and Proof*, Sections 8.2–8.3 (@fd1:exm-rhetoric-existential, @fd1:def-levels-of-proof); Section 1.4 (@thm-composition-injective-surjective) |
+| P3 | checking a proof; is the conclusion true, and does the argument prove it | *Logic and Proof*, Section 8.6 (@fd1:exm-not-allowed-catalogue); *Logic and Proof*, Section 4.2 (@fd1:ax-induction); *Logic and Proof*, Section 5.6 (@fd1:prp-exists-forall-swap); *Logic and Proof*, Section 7.2 (@fd1:exm-counter-model-swap); Section 2.2 (@thm-induction, and "How induction proofs go wrong", @exm-all-equal-induction) |
+| P4 | recursion and induction with two starting values | *Logic and Proof*, Section 4.2 (@fd1:thm-strong-induction); Section 2.2 (@thm-strong-induction-from-base); Section 2.3 (@cor-two-step-recursion, and the two-step example after @def-power) |
 | P5 | images and preimages, element by element | Section 1.2 (@thm-de-morgan-families); Section 1.6 (@thm-preimage-operations, @thm-image-intersection) |
 | P6 | countable sets and the diagonal argument | Section 3.2 (@def-countable); Section 3.3 (@thm-countable-union); Section 3.4 (@thm-binary-sequences-uncountable, @thm-cantor) |
 
 <!-- dependency ledger
 exr-gate-0-p1 (solution): of two reals exactly one of a < b, a >= b holds; min{d, 1} > 0 and <= d for d > 0; 0 < y < 1 implies y^2 < y < 1; |y - x| < x implies y > 0 | school facts about the order of R (F1-F2 convention; AN1.1 states them as axioms)
-exr-gate-0-p1 (solution): a law may be applied to a part of a formula under quantifiers, in the chain of (b) | F1.4 §09, the paragraph after the procedure "Negating a formula" (unlabelled; recalled in prose by the subsection name)
+exr-gate-0-p1 (solution): a law may be applied to a part of a formula under quantifiers, in the chain of (b) | F1.8 §02, the paragraph after the procedure "Negating a formula" (unlabelled; recalled in prose by the subsection name)
 exr-gate-0-p3 (solution): N is not bounded above in R (for every real M some natural number exceeds M) | school fact (F1-F2 convention); AN1.1 proves it, prose pointer only
 exr-gate-0-p3 (solution): (n + 1)^2 + (n + 1) = (n^2 + n) + 2(n + 1); a sum of two even integers is even | school algebra; def-divides with prp-integers-closed, inline
 exr-gate-0-p4 (solution): integer arithmetic 3 * 2^(n+1) - 2^(n+1) = 2 * 2^(n+1) (distributivity) | school algebra; prp-power-laws

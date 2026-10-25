@@ -1,10 +1,10 @@
 # Definition by Recursion
 
-Since school we have defined powers by two clauses: \( u^0 = 1 \), and \( u^{n+1} = u^n u \). Sums \( a_1 + \dots + a_n \), factorials and many sequences are defined the same way: a starting value, and a rule that produces the next value from the last. *Logic and Proof*, Chapter 3 used induction to prove facts about such objects, such as \( 3^n \ge 2n + 1 \) in @fd1:exm-power-inequality. But induction proves facts about a function that **already exists**, and here the function is what we want to obtain. This section proves that two such clauses always define exactly one function on \( \nN \), and then uses the theorem to define sums, products and powers properly and to prove their first laws.
+Since school we have defined powers by two clauses: \( u^0 = 1 \), and \( u^{n+1} = u^n u \). Sums \( a_1 + \dots + a_n \), factorials and many sequences are defined the same way: a starting value, and a rule that produces the next value from the last. *Logic and Proof*, Chapter 4 used induction to prove facts about such objects, such as \( 3^n \ge 2n + 1 \) in @fd1:exm-power-inequality. But induction proves facts about a function that **already exists**, and here the function is what we want to obtain. This section proves that two such clauses always define exactly one function on \( \nN \), and then uses the theorem to define sums, products and powers properly and to prove their first laws.
 
 ## Definitions that define something
 
-*Logic and Proof*, Chapter 3 met the same question for formulas. A recursive definition on formulas gives a value for each atom and a rule for each way of building a compound formula, and @fd1:thm-structural-recursion showed that such clauses define exactly one function, because unique readability leaves no choice of clause. On \( \nN \) the clauses are simpler: one starting value at \( 0 \), and one rule for passing from \( n \) to \( n + 1 \). What we want to prove is this.
+*Logic and Proof*, Chapter 4 met the same question for formulas. A recursive definition on formulas gives a value for each atom and a rule for each way of building a compound formula, and @fd1:thm-structural-recursion showed that such clauses define exactly one function, because unique readability leaves no choice of clause. On \( \nN \) the clauses are simpler: one starting value at \( 0 \), and one rule for passing from \( n \) to \( n + 1 \). What we want to prove is this.
 
 *A starting value and a rule for the next value determine exactly one sequence.*
 
@@ -436,7 +436,7 @@ which is the formula for \( n + 1 \). By @fd1:ax-induction the formula holds for
 ::: {#exr-recursion-b2}
 [B2: Starting at the right place]
 
-*Logic and Proof*, Chapter 3 observed, in the warning after @fd1:exm-power-inequality, that "\( 2^n \ge n^2 \)" fails at \( n = 3 \) and holds again from \( n = 4 \) on. Prove that \( 2^n \ge n^2 \) for every integer \( n \ge 4 \), using @thm-induction. Say why the base must be \( 4 \) and not \( 3 \).
+*Logic and Proof*, Chapter 4 observed, in the warning after @fd1:exm-power-inequality, that "\( 2^n \ge n^2 \)" fails at \( n = 3 \) and holds again from \( n = 4 \) on. Prove that \( 2^n \ge n^2 \) for every integer \( n \ge 4 \), using @thm-induction. Say why the base must be \( 4 \) and not \( 3 \).
 :::
 
 ::: {.solution}

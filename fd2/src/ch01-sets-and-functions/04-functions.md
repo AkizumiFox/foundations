@@ -293,7 +293,7 @@ In words: if two inputs give the same output, they were the same input. By @fd1:
 \]
 different inputs give different outputs. The two forms are equivalent; the way back, from the contrapositive form to the definition, is @fd1:prp-contrapositive-converse, which uses \( \rulename{RAA} \). A proof of injectivity usually uses the form of the definition, because an equation \( f(x_1) = f(x_2) \) is something to compute with, while an inequation \( x_1 \ne x_2 \) is not.
 
-The negation is found by the laws of *Logic and Proof*, Chapter 4 for negating bounded quantifiers and implications: "\( f \) is **not** injective" is
+The negation is found by the laws of *Logic and Proof*, Chapter 6 for negating bounded quantifiers and implications: "\( f \) is **not** injective" is
 \[
 \exists x_1 \in X \ \ \exists x_2 \in X \ \ \bigl( f(x_1) = f(x_2) \wedge x_1 \ne x_2 \bigr) .
 \]
@@ -321,7 +321,7 @@ so a failure of surjectivity is shown by **one witness**: a point of the codomai
 Surjectivity depends on the codomain, which is why @def-function records it: \( s_1 \) and \( s_2 \) of @exm-equal-functions have the same graph, and we shall see that \( s_2 \) is surjective and \( s_1 \) is not.
 
 ::: {.warning}
-Surjectivity cannot be checked by trying some \( y \). The function \( f \colon \nR \to \nR \), \( f(x) = x^2 + x \), reaches \( 0 = f(0) \), \( 2 = f(1) \), \( 6 = f(2) \), and \( 12 = f(3) \), and a reader who tries these may believe it reaches everything. It does not reach \( -1 \): \( x^2 + x = -1 \) would mean \( x^2 + x + 1 = 0 \), but \( x^2 + x + 1 = (x + \tfrac12)^2 + \tfrac34 > 0 \) for every real \( x \). Concluding "for every \( y \)" from a few instances is entry (N1) of the catalogue in *Logic and Proof*, Chapter 5.
+Surjectivity cannot be checked by trying some \( y \). The function \( f \colon \nR \to \nR \), \( f(x) = x^2 + x \), reaches \( 0 = f(0) \), \( 2 = f(1) \), \( 6 = f(2) \), and \( 12 = f(3) \), and a reader who tries these may believe it reaches everything. It does not reach \( -1 \): \( x^2 + x = -1 \) would mean \( x^2 + x + 1 = 0 \), but \( x^2 + x + 1 = (x + \tfrac12)^2 + \tfrac34 > 0 \) for every real \( x \). Concluding "for every \( y \)" from a few instances is entry (N1) of the catalogue in *Logic and Proof*, Chapter 8.
 :::
 
 ### Bijective functions
@@ -397,7 +397,7 @@ The same rule gives three different functions. Shrinking the domain from \( \nR 
 :::
 
 ::: {.warning}
-Injectivity is not the defining property of a function read backwards. Every function satisfies "if \( x_1 = x_2 \), then \( f(x_1) = f(x_2) \)": equal inputs give equal outputs, which is part of \( f(x) \) being well defined. Injectivity is the **converse**, "if \( f(x_1) = f(x_2) \), then \( x_1 = x_2 \)". A "proof" of injectivity that starts from \( x_1 = x_2 \) and reaches \( f(x_1) = f(x_2) \) has proved the wrong implication, entry (N5) of *Logic and Proof*, Chapter 5's catalogue, and it "proves" \( q_1 \) injective, which is false.
+Injectivity is not the defining property of a function read backwards. Every function satisfies "if \( x_1 = x_2 \), then \( f(x_1) = f(x_2) \)": equal inputs give equal outputs, which is part of \( f(x) \) being well defined. Injectivity is the **converse**, "if \( f(x_1) = f(x_2) \), then \( x_1 = x_2 \)". A "proof" of injectivity that starts from \( x_1 = x_2 \) and reaches \( f(x_1) = f(x_2) \) has proved the wrong implication, entry (N5) of *Logic and Proof*, Chapter 8's catalogue, and it "proves" \( q_1 \) injective, which is false.
 :::
 
 ::: {.check}
@@ -440,7 +440,7 @@ so \( z \) has the preimage \( x \) under \( g \circ f \) [\( \rulename{\exists 
 (c) If \( f \) and \( g \) are bijective, they are injective and surjective, so \( g \circ f \) is injective by (a) and surjective by (b), that is, bijective.
 :::
 
-Part (a) is short enough to see whole at level 0 of *Logic and Proof*, Section 5.3, a full derivation. Here is its derivation, with the quantifiers bounded and handled by the bounded rules (@fd1:prp-bounded-quantifier-rules), and \( (g \circ f)(u) \) already unwound to \( g(f(u)) \) by @def-composition. Premises 1 and 2 are the injectivity of \( f \) and of \( g \); premise 3 says that \( f \) maps \( X \) into \( Y \), which the prose used in the clause "the points \( f(x_1) \) and \( f(x_2) \) lie in \( Y \)".
+Part (a) is short enough to see whole at level 0 of *Logic and Proof*, Section 8.3, a full derivation. Here is its derivation, with the quantifiers bounded and handled by the bounded rules (@fd1:prp-bounded-quantifier-rules), and \( (g \circ f)(u) \) already unwound to \( g(f(u)) \) by @def-composition. Premises 1 and 2 are the injectivity of \( f \) and of \( g \); premise 3 says that \( f \) maps \( X \) into \( Y \), which the prose used in the clause "the points \( f(x_1) \) and \( f(x_2) \) lie in \( Y \)".
 
 ```{=latex}
 \begin{center}
@@ -472,7 +472,7 @@ $\begin{nd}
 \end{center}
 ```
 
-Compare it with the prose of (a). "Let \( x_1, x_2 \in X \)" opens the two flagged boxes of lines 4 and 5, and "with \( g(f(x_1)) = g(f(x_2)) \)" is the assumption of line 6. The first tagged sentence is lines 7–11, and the second is lines 12–14. The closing "so \( g \circ f \) is injective" stands for lines 15–17, the closing lines of \( \rulename{{\to}I} \) and of the two \( \rulename{\forall I} \)'s; by the convention of *Logic and Proof*, Chapter 5 on silent steps, the prose may state their result without naming them. The two tags in the prose mark the only steps where a hypothesis is used, and that is what the proof is about.
+Compare it with the prose of (a). "Let \( x_1, x_2 \in X \)" opens the two flagged boxes of lines 4 and 5, and "with \( g(f(x_1)) = g(f(x_2)) \)" is the assumption of line 6. The first tagged sentence is lines 7–11, and the second is lines 12–14. The closing "so \( g \circ f \) is injective" stands for lines 15–17, the closing lines of \( \rulename{{\to}I} \) and of the two \( \rulename{\forall I} \)'s; by the convention of *Logic and Proof*, Chapter 8 on silent steps, the prose may state their result without naming them. The two tags in the prose mark the only steps where a hypothesis is used, and that is what the proof is about.
 
 **Each hypothesis is needed.** In (a), dropping the injectivity of \( g \) breaks the conclusion: with \( f = \id_{\nR} \) and \( g = q_1 \), squaring on \( \nR \), the composite \( g \circ f = q_1 \) is not injective, although \( f \) is. Dropping the injectivity of \( f \) instead, with \( f = q_1 \) and \( g = \id_{\nR} \), gives the same composite. In (b), with \( f = \id_{\nR} \) and \( g = q_1 \), the composite \( q_1 \) is not surjective, although \( f \) is; with \( f = q_1 \) and \( g = \id_{\nR} \), again \( g \circ f = q_1 \) is not surjective, although \( g \) is.
 
@@ -495,7 +495,7 @@ The converses are more interesting, and they are the exercises of this section. 
 :::
 
 ::: {.solution}
-(a) \( f \) is injective: \( \forall x_1 \in X \ \forall x_2 \in X \ \bigl( f(x_1) = f(x_2) \to x_1 = x_2 \bigr) \) (@def-injective). Its negation: \( \exists x_1 \in X \ \exists x_2 \in X \ \bigl( f(x_1) = f(x_2) \wedge x_1 \ne x_2 \bigr) \). The bounds stay as they are, and the negated implication becomes "hypothesis and not conclusion", by the negation laws of *Logic and Proof*, Chapter 4.
+(a) \( f \) is injective: \( \forall x_1 \in X \ \forall x_2 \in X \ \bigl( f(x_1) = f(x_2) \to x_1 = x_2 \bigr) \) (@def-injective). Its negation: \( \exists x_1 \in X \ \exists x_2 \in X \ \bigl( f(x_1) = f(x_2) \wedge x_1 \ne x_2 \bigr) \). The bounds stay as they are, and the negated implication becomes "hypothesis and not conclusion", by the negation laws of *Logic and Proof*, Chapter 6.
 
 (b) Injective: yes. The condition "for all \( x_1, x_2 \in \emptyset \), …" holds vacuously, since there are no \( x_1 \in \emptyset \) (@fd1:prp-vacuous-implication). Surjective: no. The witness is \( 1 \): there is no \( x \in \emptyset \) at all, so none with value \( 1 \).
 
@@ -624,7 +624,7 @@ Let \( f \colon X \to Y \) and \( g \colon Y \to Z \) be functions.
 - 3: rewrites the result as an equation of values of \( g \circ f \) and invokes the injectivity of \( g \circ f \).
 - 3: an example with explicit sets and functions, and both claims checked: \( g \circ f \) injective, and two different points with the same value under \( g \).
 
-Fatal errors (0 for the step): assuming \( g \) is injective; starting from \( x_1 = x_2 \) and deriving \( f(x_1) = f(x_2) \) (the converse, entry (N5) of *Logic and Proof*, Chapter 5's catalogue); an example in which \( g \circ f \) is not defined because the codomain of \( f \) is not the domain of \( g \).
+Fatal errors (0 for the step): assuming \( g \) is injective; starting from \( x_1 = x_2 \) and deriving \( f(x_1) = f(x_2) \) (the converse, entry (N5) of *Logic and Proof*, Chapter 8's catalogue); an example in which \( g \circ f \) is not defined because the codomain of \( f \) is not the domain of \( g \).
 A proof by contrapositive (from \( x_1 \ne x_2 \), \( g \circ f \) injective gives \( g(f(x_1)) \ne g(f(x_2)) \), hence \( f(x_1) \ne f(x_2) \), since equal values of \( f \) would give equal values of \( g \)) earns full marks: 2 points for fixing \( x_1 \ne x_2 \) and the goal, 3 for the use of the injectivity of \( g \circ f \), and 2 for the step from \( g(f(x_1)) \ne g(f(x_2)) \) to \( f(x_1) \ne f(x_2) \).
 :::
 

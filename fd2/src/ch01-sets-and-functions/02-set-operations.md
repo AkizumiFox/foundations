@@ -90,7 +90,7 @@ For all sets \( A \), \( B \), and \( C \):
 :::
 
 ::: {.idea}
-Each law is a propositional equivalence under \( \forall x \). *Logic and Proof*, Chapter 3 gives a uniform license for all of them at once: an equivalence that holds in every row of a truth table is derivable in both directions, by completeness, and a derived sequent may be used with its letters replaced by any statements. So one argument covers every law, and the table after the proof names, for each law, the equivalence it comes from. We also write out two laws in full, as element-chases, so that the reader sees what the uniform argument does: the first distributive law, and the second difference law, the one law whose element-chase needs a classical rule (the uniform argument uses one for every law, inside the proof of @fd1:thm-completeness).
+Each law is a propositional equivalence under \( \forall x \). *Logic and Proof*, Chapter 4 gives a uniform license for all of them at once: an equivalence that holds in every row of a truth table is derivable in both directions, by completeness, and a derived sequent may be used with its letters replaced by any statements. So one argument covers every law, and the table after the proof names, for each law, the equivalence it comes from. We also write out two laws in full, as element-chases, so that the reader sees what the uniform argument does: the first distributive law, and the second difference law, the one law whose element-chase needs a classical rule (the uniform argument uses one for every law, inside the proof of @fd1:thm-completeness).
 :::
 
 ::: {.proof}
@@ -222,7 +222,7 @@ With two sets the new definitions give the old ones back. For \( I = \{1, 2\} \)
 | \( x \in \bigcup_{i \in I} A_i \) | \( \exists i \in I\ (x \in A_i) \) | \( \exists \) |
 | \( x \in \bigcap_{i \in I} A_i \), for \( x \in X \) | \( \forall i \in I\ (x \in A_i) \) | \( \forall \) |
 
-**Why the intersection is taken inside \( X \).** The ambient set is not decoration; it is forced by the case \( I = \emptyset \). If \( I \) is empty, the condition \( \forall i \in I\ (x \in A_i) \) is **vacuously true** for every object \( x \): there is no index at which it could fail (*Logic and Proof*, Chapter 4, vacuous truth for \( \forall \)). A definition without an ambient set, "\( \bigcap_{i \in I} A_i = \) all \( x \) with \( \forall i \in I\ (x \in A_i) \)", would then describe the set of all objects, which @thm-russell forbids. Inside \( X \), the empty intersection is simply \( X \):
+**Why the intersection is taken inside \( X \).** The ambient set is not decoration; it is forced by the case \( I = \emptyset \). If \( I \) is empty, the condition \( \forall i \in I\ (x \in A_i) \) is **vacuously true** for every object \( x \): there is no index at which it could fail (*Logic and Proof*, Chapter 5, vacuous truth for \( \forall \)). A definition without an ambient set, "\( \bigcap_{i \in I} A_i = \) all \( x \) with \( \forall i \in I\ (x \in A_i) \)", would then describe the set of all objects, which @thm-russell forbids. Inside \( X \), the empty intersection is simply \( X \):
 \[
 \bigcap_{i \in \emptyset} A_i = X, \qquad \bigcup_{i \in \emptyset} A_i = \emptyset .
 \]
@@ -230,7 +230,7 @@ The union needs no ambient set, because its condition \( \exists i \in \emptyset
 
 ### The smallest set closed under some steps
 
-One use of the intersection pays a debt to *Logic and Proof*, Chapter 3. There, the formulas were described as the smallest collection of strings closed under (F1)–(F3) of @fd1:def-formula: the collection that contains the atoms and \( \bot \) and is closed under the building steps (F2) and (F3). What does "smallest" mean, and why does such a collection exist? Intersections answer both questions, in any setting of this kind.
+One use of the intersection pays a debt to *Logic and Proof*, Chapter 4. There, the formulas were described as the smallest collection of strings closed under (F1)–(F3) of @fd1:def-formula: the collection that contains the atoms and \( \bot \) and is closed under the building steps (F2) and (F3). What does "smallest" mean, and why does such a collection exist? Intersections answer both questions, in any setting of this kind.
 
 Let \( X \) be a set, and consider some **starting elements** of \( X \) and some **steps**, each of which turns elements of \( X \) into an element of \( X \). Call a subset \( S \subseteq X \) **closed** if it contains the starting elements and, whenever a step is applied to elements of \( S \), the result lies in \( S \).
 
@@ -253,7 +253,7 @@ The set \( \sS \) is non-empty, since \( X \) itself is closed; so \( \bigcap \s
 This proves the proposition.
 :::
 
-For *Logic and Proof*, Chapter 3, \( X \) is the set of all strings of symbols, the starting elements are the atoms and \( \bot \), and the steps are (F2) and (F3) of @fd1:def-formula; \( M \) is then the set of formulas. (That this \( M \) consists exactly of the strings with a formation sequence, as clause (F4) says, follows by strong induction along a formation sequence, @fd1:thm-strong-induction; we do not need it here.) For *Analysis on the Real Line*, Chapter 1, \( X = \nR \), the starting element is \( 0 \), the step is \( x \mapsto x + 1 \), and \( M \) is \( \nN \), the set *Analysis on the Real Line*, Chapter 1 works with.
+For *Logic and Proof*, Chapter 4, \( X \) is the set of all strings of symbols, the starting elements are the atoms and \( \bot \), and the steps are (F2) and (F3) of @fd1:def-formula; \( M \) is then the set of formulas. (That this \( M \) consists exactly of the strings with a formation sequence, as clause (F4) says, follows by strong induction along a formation sequence, @fd1:thm-strong-induction; we do not need it here.) For *Analysis on the Real Line*, Chapter 1, \( X = \nR \), the starting element is \( 0 \), the step is \( x \mapsto x + 1 \), and \( M \) is \( \nN \), the set *Analysis on the Real Line*, Chapter 1 works with.
 
 ### Worked examples with a real parameter
 
@@ -297,7 +297,7 @@ The union is \( [0, 2] \): each \( [0, t] \subseteq [0, 2] \) since \( t \le 2 \
 
 ## De Morgan's laws for families
 
-The laws of set algebra have versions for families, and the most used are De Morgan's laws: the complement of a union is the intersection of the complements, and the complement of an intersection is the union of the complements. In analysis they convert statements about open sets into statements about closed sets, and back. By the dictionary, they should be the quantifier negation laws of *Logic and Proof*, Chapter 4, read through membership: "not in some \( A_i \)" is "outside every \( A_i \)", and "not in every \( A_i \)" is "outside some \( A_i \)".
+The laws of set algebra have versions for families, and the most used are De Morgan's laws: the complement of a union is the intersection of the complements, and the complement of an intersection is the union of the complements. In analysis they convert statements about open sets into statements about closed sets, and back. By the dictionary, they should be the quantifier negation laws of *Logic and Proof*, Chapter 6, read through membership: "not in some \( A_i \)" is "outside every \( A_i \)", and "not in every \( A_i \)" is "outside some \( A_i \)".
 
 ::: {#thm-de-morgan-families}
 [De Morgan's Laws for Families]
@@ -315,7 +315,7 @@ All intersections here are taken inside \( X \); the family \( (X \setminus A_i)
 ::: {.idea}
 Unwind both sides of each law through membership, for an element \( x \in X \). In the first law, the left side says \( \neg\exists i \in I\ (x \in A_i) \), and the right side says \( \forall i \in I\ \neg(x \in A_i) \). In the second, the left side says \( \neg\forall i \in I\ (x \in A_i) \), and the right side says \( \exists i \in I\ \neg(x \in A_i) \). So each law is a quantifier negation law, and each inclusion is one of its directions. We write the first law out rule by rule, since it is the chapter's model element-chase for families, and the second at level 3, tagging only the step it is about.
 
-*Before reading on: which law of *Logic and Proof*, Chapter 4 turns "not in every \( A_i \)" into "outside some \( A_i \)", and which of its directions is classical?*
+*Before reading on: which law of *Logic and Proof*, Chapter 6 turns "not in every \( A_i \)" into "outside some \( A_i \)", and which of its directions is classical?*
 :::
 
 ::: {.proof}
@@ -325,14 +325,14 @@ Unwind both sides of each law through membership, for an element \( x \in X \). 
 
 By @prp-subset-antisymmetric, the first law holds.
 
-*Second law.* \( (\subseteq) \) Let \( x \in X \setminus \bigcap_{i \in I} A_i \), so \( x \in X \) and \( x \notin \bigcap_{i \in I} A_i \). Then \( \forall i \in I\ (x \in A_i) \) fails: if it held, then together with \( x \in X \) it would put \( x \) in \( \bigcap_{i \in I} A_i \). By the bounded quantifier negation law of *Logic and Proof*, Chapter 4 (\( \neg\forall i \in I\ \varphi \) gives \( \exists i \in I\ \neg\varphi \), the bound kept), there is \( i \in I \) with \( x \notin A_i \) [\( \rulename{RAA} \), inside the quantifier negation law]. Choose such an index \( i_0 \). Then \( x \in X \setminus A_{i_0} \), so \( x \in \bigcup_{i \in I} (X \setminus A_i) \), with \( i_0 \) as the witness.
+*Second law.* \( (\subseteq) \) Let \( x \in X \setminus \bigcap_{i \in I} A_i \), so \( x \in X \) and \( x \notin \bigcap_{i \in I} A_i \). Then \( \forall i \in I\ (x \in A_i) \) fails: if it held, then together with \( x \in X \) it would put \( x \) in \( \bigcap_{i \in I} A_i \). By the bounded quantifier negation law of *Logic and Proof*, Chapter 6 (\( \neg\forall i \in I\ \varphi \) gives \( \exists i \in I\ \neg\varphi \), the bound kept), there is \( i \in I \) with \( x \notin A_i \) [\( \rulename{RAA} \), inside the quantifier negation law]. Choose such an index \( i_0 \). Then \( x \in X \setminus A_{i_0} \), so \( x \in \bigcup_{i \in I} (X \setminus A_i) \), with \( i_0 \) as the witness.
 
 \( (\supseteq) \) Let \( x \in \bigcup_{i \in I} (X \setminus A_i) \), and choose \( i_0 \in I \) with \( x \in X \setminus A_{i_0} \). Then \( x \in X \) and \( x \notin A_{i_0} \). If \( x \) were in \( \bigcap_{i \in I} A_i \), then \( x \in A_{i_0} \) by the definition, applied at \( i_0 \); so \( x \notin \bigcap_{i \in I} A_i \), and \( x \in X \setminus \bigcap_{i \in I} A_i \).
 
 By @prp-subset-antisymmetric, the second law holds. This proves the theorem.
 :::
 
-The answer to the prompt: the bounded quantifier negation law of *Logic and Proof*, Chapter 4 turns \( \neg\forall i \in I \) into \( \exists i \in I\ \neg \), and that direction is classical because it rests on the unbounded law \( \neg\forall x\, \varphi \vdash \exists x\, \neg\varphi \), which needs \( \rulename{RAA} \). It is used once, in the \( (\subseteq) \) half of the second law. The first law and the \( (\supseteq) \) half of the second use no classical rule: they are the directions of quantifier negation that *Logic and Proof*, Chapter 4 derives without \( \rulename{RAA} \). The pattern is the one met in the difference laws of @thm-set-algebra, which are the case \( I = \{1, 2\} \), \( X = A \), \( A_1 = A \cap B \), \( A_2 = A \cap C \) (replacing \( B \) and \( C \) by \( A \cap B \) and \( A \cap C \) changes neither side): "not in every member" does not by itself name the member it misses.
+The answer to the prompt: the bounded quantifier negation law of *Logic and Proof*, Chapter 6 turns \( \neg\forall i \in I \) into \( \exists i \in I\ \neg \), and that direction is classical because it rests on the unbounded law \( \neg\forall x\, \varphi \vdash \exists x\, \neg\varphi \), which needs \( \rulename{RAA} \). It is used once, in the \( (\subseteq) \) half of the second law. The first law and the \( (\supseteq) \) half of the second use no classical rule: they are the directions of quantifier negation that *Logic and Proof*, Chapter 6 derives without \( \rulename{RAA} \). The pattern is the one met in the difference laws of @thm-set-algebra, which are the case \( I = \{1, 2\} \), \( X = A \), \( A_1 = A \cap B \), \( A_2 = A \cap C \) (replacing \( B \) and \( C \) by \( A \cap B \) and \( A \cap C \) changes neither side): "not in every member" does not by itself name the member it misses.
 
 **The empty family.** The theorem was stated for every index set, and the conventions of @def-family-union-intersection are what make that true. For \( I = \emptyset \), the first law reads \( X \setminus \emptyset = X \), since the empty union is \( \emptyset \) and the empty intersection is \( X \); and the second reads \( X \setminus X = \emptyset \), since the empty intersection is \( X \) and the empty union is \( \emptyset \). Both are true. Had the empty intersection been defined as anything other than \( X \), the laws would have needed the hypothesis \( I \ne \emptyset \).
 
@@ -350,7 +350,7 @@ The answer to the prompt: the bounded quantifier negation law of *Logic and Proo
 These parts are about @thm-de-morgan-families and its proof.
 
 ::: {.enumerate options="label=(\alph*)"}
-1. Which law of *Logic and Proof*, Chapter 4 is used in the \( (\subseteq) \) half of the second law, and which of its directions is classical?
+1. Which law of *Logic and Proof*, Chapter 6 is used in the \( (\subseteq) \) half of the second law, and which of its directions is classical?
 2. Run the first law on \( X = \nZ \), \( I = \{2, 3\} \), and \( A_i \) the set of integer multiples of \( i \). Describe both sides in words, and name two integers in each side and two outside it.
 3. What are the two sides of each law when \( I = \emptyset \)?
 4. Let \( x \in X \). Translate \( x \notin \bigcap_{i \in I} A_i \) into a statement with \( \exists \). What is the correct translation if \( x \in X \) is **not** assumed?
@@ -358,7 +358,7 @@ These parts are about @thm-de-morgan-families and its proof.
 :::
 
 ::: {.solution}
-(a) The bounded quantifier negation law of *Logic and Proof*, Chapter 4: \( \neg\forall i \in I\ \varphi \) gives \( \exists i \in I\ \neg\varphi \), with the bound kept. That direction is classical: it rests on the unbounded law \( \neg\forall x\, \varphi \vdash \exists x\, \neg\varphi \), which needs \( \rulename{RAA} \).
+(a) The bounded quantifier negation law of *Logic and Proof*, Chapter 6: \( \neg\forall i \in I\ \varphi \) gives \( \exists i \in I\ \neg\varphi \), with the bound kept. That direction is classical: it rests on the unbounded law \( \neg\forall x\, \varphi \vdash \exists x\, \neg\varphi \), which needs \( \rulename{RAA} \).
 
 (b) The left side \( \nZ \setminus (A_2 \cup A_3) \) is the set of integers divisible by neither \( 2 \) nor \( 3 \). The right side \( (\nZ \setminus A_2) \cap (\nZ \setminus A_3) \) is the set of integers that are odd and not multiples of \( 3 \). By the theorem they are equal. For instance \( 1 \) and \( 5 \) (also \( -1 \), \( 7 \)) lie in both, and \( 3 \) and \( 4 \) (also \( 6 \)) lie in neither.
 
@@ -418,7 +418,7 @@ Take \( A = \{1\} \), \( B = \emptyset \), \( C = \{1\} \). Then \( A \cup B = \
 
 *Properties of any answer.* Call an element **odd one out** if it lies in exactly one of \( B \) and \( C \).
 
-- \( B \ne C \) holds exactly when there is at least one odd one out (by @def-set-equality; getting such an element from \( B \ne C \) uses the classical direction of quantifier negation, *Logic and Proof*, Chapter 4).
+- \( B \ne C \) holds exactly when there is at least one odd one out (by @def-set-equality; getting such an element from \( B \ne C \) uses the classical direction of quantifier negation, *Logic and Proof*, Chapter 6).
 - \( A \cup B = A \cup C \) holds exactly when **every** odd one out lies in \( A \). Indeed, if \( x \in B \setminus C \) and \( x \notin A \), then \( x \in A \cup B \) but \( x \notin A \cup C \); symmetrically for \( x \in C \setminus B \). Conversely, if every odd one out lies in \( A \), then an element of \( A \cup B \) either lies in \( A \), or lies in \( B \) and then, by excluded middle on \( x \in C \) (@fd1:prp-excluded-middle), in \( C \) or in \( A \); so it lies in \( A \cup C \), and symmetrically.
 
 So an answer is correct exactly when some element lies in exactly one of \( B \), \( C \), and every such element lies in \( A \). The union with \( A \) "hides" the difference between \( B \) and \( C \); the lesson is that \( \cup \) cannot be canceled.
@@ -460,7 +460,7 @@ Now let \( S \in \powerset{A \setminus B} \) be non-empty, and choose \( s \in S
 
 \( (\Leftarrow) \) Suppose \( A \subseteq B \). Then \( A \cup B = B \) (if \( x \in A \cup B \), then \( x \in A \subseteq B \) or \( x \in B \); and \( B \subseteq A \cup B \)). Let \( S \in \powerset{A \cup B} \). Then \( S \subseteq B \), so \( S \in \powerset{B} \subseteq \powerset{A} \cup \powerset{B} \). With the inclusion above, equality holds. The case \( B \subseteq A \) is the same with \( A \) and \( B \) exchanged.
 
-\( (\Rightarrow) \) We prove the contrapositive. Suppose that neither \( A \subseteq B \) nor \( B \subseteq A \). By the negation of \( \subseteq \) (@exr-sets-and-subsets-a1 (a) records it), there is \( a \in A \) with \( a \notin B \), and there is \( b \in B \) with \( b \notin A \); choose such \( a \) and \( b \). Let \( S \coloneqq \{a, b\} \). Then \( S \subseteq A \cup B \), so \( S \in \powerset{A \cup B} \). But \( S \not\subseteq A \), because \( b \in S \) and \( b \notin A \); and \( S \not\subseteq B \), because \( a \in S \) and \( a \notin B \). So \( S \notin \powerset{A} \cup \powerset{B} \), and the two sets differ. Two steps here are classical: turning "\( A \not\subseteq B \)" into a witness uses the classical directions of quantifier negation and of the law for negated implications (*Logic and Proof*, Chapter 4; see @exr-sets-and-subsets-a1 (a)), and concluding the implication from its contrapositive is @fd1:prp-contrapositive-converse.
+\( (\Rightarrow) \) We prove the contrapositive. Suppose that neither \( A \subseteq B \) nor \( B \subseteq A \). By the negation of \( \subseteq \) (@exr-sets-and-subsets-a1 (a) records it), there is \( a \in A \) with \( a \notin B \), and there is \( b \in B \) with \( b \notin A \); choose such \( a \) and \( b \). Let \( S \coloneqq \{a, b\} \). Then \( S \subseteq A \cup B \), so \( S \in \powerset{A \cup B} \). But \( S \not\subseteq A \), because \( b \in S \) and \( b \notin A \); and \( S \not\subseteq B \), because \( a \in S \) and \( a \notin B \). So \( S \notin \powerset{A} \cup \powerset{B} \), and the two sets differ. Two steps here are classical: turning "\( A \not\subseteq B \)" into a witness uses the classical directions of quantifier negation and of the law for negated implications (*Logic and Proof*, Chapter 6; see @exr-sets-and-subsets-a1 (a)), and concluding the implication from its contrapositive is @fd1:prp-contrapositive-converse.
 
 **Marking scheme.** (10 points)
 - 2: (a) the empty set as the witness that the equality never holds, with both memberships checked.
@@ -483,7 +483,7 @@ Here is a "proof" that \( (A \cup B) \cap (A \cup C) \subseteq A \cup (B \cap C)
 
 ::: {.enumerate options="label=(\alph*)"}
 1. Is the conclusion true?
-2. Which line fails, which rule does it break, and which entry of the catalogue of *Logic and Proof*, Chapter 5 does it commit?
+2. Which line fails, which rule does it break, and which entry of the catalogue of *Logic and Proof*, Chapter 8 does it commit?
 3. Give a counterexample to the illegal step itself: sets and an element for which the line's premise holds and its conclusion fails.
 4. Repair the proof.
 :::
@@ -492,7 +492,7 @@ Here is a "proof" that \( (A \cup B) \cap (A \cup C) \subseteq A \cup (B \cap C)
 ::: {.solution}
 (a) Yes. It is the \( (\supseteq) \) half of the second distributive law of @thm-set-algebra (c).
 
-(b) Line (5). From \( x \in A \cup C \), that is, \( x \in A \) or \( x \in C \), it concludes \( x \in C \), dropping the case \( x \in A \). A disjunction is used by \( \rulename{\vee E} \), which needs **both** cases; the line uses only one. This is a missing case, entry (N7) of the catalogue of *Logic and Proof*, Chapter 5.
+(b) Line (5). From \( x \in A \cup C \), that is, \( x \in A \) or \( x \in C \), it concludes \( x \in C \), dropping the case \( x \in A \). A disjunction is used by \( \rulename{\vee E} \), which needs **both** cases; the line uses only one. This is a missing case, entry (N7) of the catalogue of *Logic and Proof*, Chapter 8.
 
 (c) Take \( A = \{1\} \), \( B = \{1\} \), \( C = \emptyset \), and \( x = 1 \). Then \( x \in B \) (the case of line (5)) and \( x \in A \cup C \) (the premise of the line), but \( x \notin C \). The step is illegal although the conclusion of the whole proof is true: here \( x \in A \), so \( x \in A \cup (B \cap C) \) by the other case.
 

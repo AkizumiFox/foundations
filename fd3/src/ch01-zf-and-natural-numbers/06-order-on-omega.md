@@ -378,7 +378,7 @@ This is the statement of @fd1:thm-strong-induction, read on \( \omega \). There 
 - 3: applies @thm-omega-well-ordering, with the set non-empty, to obtain a least failure \( a \).
 - 3: shows \( P(k) \) for every \( k < a \), using that \( a \) is least and the order facts.
 - 2: applies the hypothesis at \( a \) and reaches the contradiction.
-Fatal errors (0 for the step): citing @fd1:thm-strong-induction (a statement about *Logic and Proof*, Chapter 3's \( \nN \), not proved on \( \omega \)) instead of proving the result; taking a least element of a set not shown to be non-empty. A route by @thm-omega-induction (b) on "\( P(k) \) for every \( k < n \)" earns the same points: 2 for the property, 3 for the base (vacuous) and the use of @thm-omega-order (b) in the step, 3 for the step, 2 for deducing \( P(n) \) from the property at \( n + 1 \).
+Fatal errors (0 for the step): citing @fd1:thm-strong-induction (a statement about *Logic and Proof*, Chapter 4's \( \nN \), not proved on \( \omega \)) instead of proving the result; taking a least element of a set not shown to be non-empty. A route by @thm-omega-induction (b) on "\( P(k) \) for every \( k < n \)" earns the same points: 2 for the property, 3 for the base (vacuous) and the use of @thm-omega-order (b) in the step, 3 for the step, 2 for deducing \( P(n) \) from the property at \( n + 1 \).
 :::
 
 ::: {#exr-order-on-omega-c2}

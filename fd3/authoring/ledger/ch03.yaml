@@ -1593,7 +1593,7 @@ items:
     date: '2026-10-12'
     model: claude-opus-5-5
     evidence: 03-unique-factorization.md:397 C3 (no finite list contains every prime) is the constructed-Z
-      version of *Logic and Proof*'s Exercise C1 (c) after Section 5.1. That exercise has the same statement
+      version of *Logic and Proof*'s Exercise C1 (c) after Section 8.1. That exercise has the same statement
       and the same N = product + 1 argument, for the school integers. The solution does not name it, though
       the chapter names twins elsewhere (e.g. R3 names @fd1:thm-sqrt2-irrational).
   - stage: S7r

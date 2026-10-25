@@ -1,6 +1,6 @@
 # Successors, Inductive Sets and the Natural Numbers
 
-*Logic and Proof*, Chapter 3 described the natural numbers as what we reach from \( 0 \) by adding \( 1 \), again and again, and nothing else; induction (@fd1:ax-induction) was the precise form of "nothing else". In this chapter every object is a set, so we need a set to play \( 0 \) and an operation on sets to play "add \( 1 \)". This section chooses both, adds the one axiom that lets the repetition be completed into a set, and proves induction as a theorem about the set it produces.
+*Logic and Proof*, Chapter 4 described the natural numbers as what we reach from \( 0 \) by adding \( 1 \), again and again, and nothing else; induction (@fd1:ax-induction) was the precise form of "nothing else". In this chapter every object is a set, so we need a set to play \( 0 \) and an operation on sets to play "add \( 1 \)". This section chooses both, adds the one axiom that lets the repetition be completed into a set, and proves induction as a theorem about the set it produces.
 
 ## Going one step further
 
@@ -158,7 +158,7 @@ The elements of \( \omega \) are the **natural numbers**.
 
 In words: a natural number is an element of the fixed inductive set \( I \) that survives every attempt to shrink \( I \) to a smaller inductive set.
 
-The set \( \omega \) exists by Separation (Z6), with ambient set \( I \), once the condition is a property in the sense of (Z6): a formula of *Logic and Proof*, Chapter 4's first-order language with \( \in \) and \( = \) (@fd1:def-first-order-formula), with \( I \) as a parameter. The condition is "for every \( J \), if \( J \subseteq I \) and \( J \) is inductive, then \( x \in J \)", and, since \( J \subseteq I \) abbreviates \( \forall y \, (y \in J \to y \in I) \) as in (Z5) (@fd2:def-subset), the only part not yet written in that language is "\( J \) is inductive". Written out with no abbreviations it is
+The set \( \omega \) exists by Separation (Z6), with ambient set \( I \), once the condition is a property in the sense of (Z6): a formula of *Logic and Proof*, Chapter 5's first-order language with \( \in \) and \( = \) (@fd1:def-first-order-formula), with \( I \) as a parameter. The condition is "for every \( J \), if \( J \subseteq I \) and \( J \) is inductive, then \( x \in J \)", and, since \( J \subseteq I \) abbreviates \( \forall y \, (y \in J \to y \in I) \) as in (Z5) (@fd2:def-subset), the only part not yet written in that language is "\( J \) is inductive". Written out with no abbreviations it is
 \[
 \begin{aligned}
 &\exists e \, \bigl( e \in J \wedge \forall y \, \neg (y \in e) \bigr) \\
@@ -221,7 +221,7 @@ Leastness has an immediate consequence. To show that every natural number belong
 *(b)* Let \( A \coloneqq \{ n \in \omega : P(n) \} \), a set by (Z6). Then \( 0 \in A \), because \( 0 \in \omega \) by @thm-omega-least-inductive (a) and \( P(0) \) holds. Let \( n \in A \). Then \( n \in \omega \) and \( P(n) \), so \( P(\mathrm{S}(n)) \) by hypothesis, and \( \mathrm{S}(n) \in \omega \) because \( \omega \) is inductive; hence \( \mathrm{S}(n) \in A \). By (a), \( A = \omega \), which says that \( P(n) \) holds for every \( n \in \omega \).
 :::
 
-Compare part (b) with the principle of induction, @fd1:ax-induction. Read with \( \omega \) in place of \( \nN \), and with \( \mathrm{S}(n) \) in place of \( n + 1 \), the two statements are the same; and once addition is defined, later in this chapter, \( n + 1 \) will be \( \mathrm{S}(n) \). The difference lies in their status. In *Logic and Proof*, Chapter 3, induction was an axiom, a basic property of \( \nN \) taken on trust. Here it is a **theorem**, proved from the seven axioms (Z1)–(Z7) about sets, and the proof is three lines long because all the work went into the definition of \( \omega \): the natural numbers were defined as what every inductive set contains, and induction says exactly that.
+Compare part (b) with the principle of induction, @fd1:ax-induction. Read with \( \omega \) in place of \( \nN \), and with \( \mathrm{S}(n) \) in place of \( n + 1 \), the two statements are the same; and once addition is defined, later in this chapter, \( n + 1 \) will be \( \mathrm{S}(n) \). The difference lies in their status. In *Logic and Proof*, Chapter 4, induction was an axiom, a basic property of \( \nN \) taken on trust. Here it is a **theorem**, proved from the seven axioms (Z1)–(Z7) about sets, and the proof is three lines long because all the work went into the definition of \( \omega \): the natural numbers were defined as what every inductive set contains, and induction says exactly that.
 
 The proof of (b) is the model for the inductions in the rest of this chapter.
 

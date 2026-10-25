@@ -1,4 +1,21 @@
-# fd1 D2: downstream sweep report (dry run, not applied)
+# fd1 D2: downstream sweep report (applied 2026-10-25)
+
+**Applied 2026-10-25**, after all eight chapters passed S5–S8. The dry run was regenerated on the current texts (117 mechanical rewrites in 33 files, 176 hand hits), the map checked against layout-final §5.1, and every hand hit resolved by the `@fd1:` labels on or near its line. Pointer changes per volume:
+
+| | fd2 | fd3 | fd4 | an1 | root `authoring/STATUS.md` | Σ |
+|---|---:|---:|---:|---:|---:|---:|
+| mechanical (renumber.py) | 77 | 29 | 3 | 3 | 5 | **117** |
+| by hand: old Chapter 4, Sections 4.7, 4.11, ranges, and pointers renumber.py cannot see ("its Chapter 3", "induction, Chapter 3 (@fd1:…)", "from Section 5.6") | 31 | 22 | 14 | 3 | 2 | **72** |
+| chapter counts ("five chapters" → "eight"; Gate 0's "those eight chapters" → "eleven"; fd2 Ch 1 "the first five chapters" → "eight") | 3 | 0 | 0 | 0 | 0 | **3** |
+| atlas tags (`F1.4 §07` → `§08` for the maximum, `F1.4 §09` → `F1.8 §02`, `F1.4 §11` → `F1.6 §01`/`§02`, `F1.4 §12` → `F1.6 §03`) in src ledger rows and blueprints | 11 | 4 | 2 | 0 | 0 | **17** |
+| blueprint/ledger quotes of changed pointers | 0 | 2 | 0 | 0 | 0 | **2** |
+
+The 19 "Chapter 2" hits were screened: none means the search method (now Chapter 3). Every Chapter 2 hit and every unchanged "Chapters 1 and 2" stands. The fd2 Gate 0 map (07:94, 363–366) names every fd1 item by its current section. Checks after the sweep: `build.py check` passes in fd2, fd3, fd4 and an1; `promises.py --reconcile` reports 0 unrecorded promises in fd1–fd4 (one new false match, fd3 Ch 4 index:7 "chiefly Chapter 6", recorded in STATUS row F3.9 → F3.4); `ledger.py stale` reports 0 stale verdicts in every chapter of fd2, fd3, fd4 and an1 (pointer masking), so no S8 verdict needed recording. STATUS.md's deferred note (fd1 Ch 8 deepening, (b)) is closed. Not done, left to the author: the optional content upgrades of layout-final §8 (fd2 1.1 citing `@fd1:thm-barber`, fd3 6.5 citing `@fd1:thm-isomorphism-invariance`); analysis-series `authoring/NOTATION.md` (a copy of foundations' NOTATION.md, still with the old F1.3/F1.4 tags) and `authoring/series.json` are refreshed by their own sync, not by this sweep. Ledger evidence that names old fd1 paths (fd3 ch03–05, fd4 ch02–03) is history and was left.
+
+The report below is the dry run of 2026-10-13, kept as the record of the method.
+
+---
+
 
 Generated 2026-10-13 during the D2 restructure. **Nothing below has been applied**: per the D2 brief, fd2, fd3, fd4 and analysis-series are swept at the very end, after the author merges D2.
 

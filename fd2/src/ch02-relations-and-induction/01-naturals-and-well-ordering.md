@@ -1,6 +1,6 @@
 # The Natural Numbers and Well-Ordering
 
-*Logic and Proof*, Chapter 3 took one fact about the natural numbers on trust: the principle of induction (@fd1:ax-induction), which says that a property holding at \( 0 \) and passing from each \( n \) to \( n + 1 \) holds for every \( n \in \nN \). From it, *Logic and Proof*, Chapter 3 proved strong induction (@fd1:thm-strong-induction), whose step may use the property at **every** smaller number. Everything else we have said about \( \nN \) was school knowledge: that \( 7 - 3 \) is a natural number, that none lies strictly between \( 3 \) and \( 4 \), that every non-empty set of natural numbers has a least member. This section derives those facts from induction, extends them to the integers, and then proves that the least-member property, **well-ordering**, is induction in another form.
+*Logic and Proof*, Chapter 4 took one fact about the natural numbers on trust: the principle of induction (@fd1:ax-induction), which says that a property holding at \( 0 \) and passing from each \( n \) to \( n + 1 \) holds for every \( n \in \nN \). From it, *Logic and Proof*, Chapter 4 proved strong induction (@fd1:thm-strong-induction), whose step may use the property at **every** smaller number. Everything else we have said about \( \nN \) was school knowledge: that \( 7 - 3 \) is a natural number, that none lies strictly between \( 3 \) and \( 4 \), that every non-empty set of natural numbers has a least member. This section derives those facts from induction, extends them to the integers, and then proves that the least-member property, **well-ordering**, is induction in another form.
 
 ## What we assume about the natural numbers
 
@@ -15,9 +15,9 @@ Here is everything the section assumes about \( \nN \). The natural numbers form
 - (\( \nN \)0) \( 0 \in \nN \);
 - (\( \nN \)S) for every \( n \in \nN \), also \( n + 1 \in \nN \);
 
-and @fd1:ax-induction holds. The arithmetic and the order of the real numbers (the laws of \( + \), \( - \), \( \cdot \) and \( \le \), trichotomy, multiplying an inequality by a positive number) are school facts in this volume and in *Logic and Proof*; *Analysis on the Real Line*, Chapter 1 states them as axioms of an ordered field. These three items are a description of \( \nN \), not new axioms: *Logic and Proof*, Chapter 3 already used all of them.
+and @fd1:ax-induction holds. The arithmetic and the order of the real numbers (the laws of \( + \), \( - \), \( \cdot \) and \( \le \), trichotomy, multiplying an inequality by a positive number) are school facts in this volume and in *Logic and Proof*; *Analysis on the Real Line*, Chapter 1 states them as axioms of an ordered field. These three items are a description of \( \nN \), not new axioms: *Logic and Proof*, Chapter 4 already used all of them.
 
-**The rule for this section.** From here to the end of the section, a fact about \( \nN \) is used only if it is (\( \nN \)0), (\( \nN \)S), @fd1:ax-induction, a statement proved earlier in the section, or @fd1:thm-strong-induction once the paragraph after @lem-naturals-arithmetic has shown that its *Logic and Proof*, Chapter 3 proof rests only on these. The real-number arithmetic is used freely. In particular "\( n \ge 0 \)" for a natural number \( n \), which looks too obvious to mention, is not available until it is proved below, in @lem-naturals-arithmetic (a).
+**The rule for this section.** From here to the end of the section, a fact about \( \nN \) is used only if it is (\( \nN \)0), (\( \nN \)S), @fd1:ax-induction, a statement proved earlier in the section, or @fd1:thm-strong-induction once the paragraph after @lem-naturals-arithmetic has shown that its *Logic and Proof*, Chapter 4 proof rests only on these. The real-number arithmetic is used freely. In particular "\( n \ge 0 \)" for a natural number \( n \), which looks too obvious to mention, is not available until it is proved below, in @lem-naturals-arithmetic (a).
 
 The integers and the rationals are then **defined** from \( \nN \), as subsets of \( \nR \):
 \[
@@ -37,7 +37,7 @@ So \( \{1, \dots, 0\} = \emptyset \), since no \( k \) has \( 1 \le k \le 0 \). 
 
 ## The arithmetic of the natural numbers
 
-The facts below are the ones *Logic and Proof*, Chapter 3 and *Analysis on the Real Line*, Chapter 1 used without proof. Each of (a)–(d) is one ordinary induction, and the only work is to choose the property to induct on; (e) follows from (a) and (d).
+The facts below are the ones *Logic and Proof*, Chapter 4 and *Analysis on the Real Line*, Chapter 1 used without proof. Each of (a)–(d) is one ordinary induction, and the only work is to choose the property to induct on; (e) follows from (a) and (d).
 
 ::: {#lem-naturals-arithmetic}
 [Arithmetic of the Natural Numbers]
@@ -76,16 +76,16 @@ Read the proof of (c) again. Its inductive step never mentions \( P(n) \).
 ::: {#exm-predecessor-no-hypothesis}
 [An induction that ignores its hypothesis]
 
-*Logic and Proof*, Chapter 3, after its first worked induction (@fd1:exm-sum-consecutive-products), said: "A proof by induction that never uses its induction hypothesis is either not an induction or is hiding a gap." The proof of @lem-naturals-arithmetic (c) never uses its induction hypothesis. Is it an induction, and is it hiding a gap?
+*Logic and Proof*, Chapter 4, after its first worked induction (@fd1:exm-sum-consecutive-products), said: "A proof by induction that never uses its induction hypothesis is either not an induction or is hiding a gap." The proof of @lem-naturals-arithmetic (c) never uses its induction hypothesis. Is it an induction, and is it hiding a gap?
 :::
 
 ::: {.solution}
 It is an induction, and it hides no gap. Its base case \( P(0) \) is proved, and its step "\( P(n) \Rightarrow P(n + 1) \)" is a valid implication for every \( n \in \nN \): the conclusion \( P(n + 1) \) is proved outright, so the implication holds whatever \( P(n) \) says. Then @fd1:ax-induction delivers \( P(n) \) for every \( n \). The hypothesis \( n \in \nN \) of the step is used, through \( (n + 1) - 1 = n \in \nN \); only \( P(n) \) is not.
 
-Nor can a case analysis replace the axiom here. A direct proof would have to say which numbers lie in \( \nN \), and the only thing that says so is induction: the step shows that every number of the form \( n + 1 \) with \( n \in \nN \) has the property, and it is @fd1:ax-induction that tells us every natural number other than \( 0 \) is of this form. *Logic and Proof*, Chapter 3's sentence is a rule of thumb, and a good one: an unused hypothesis is a reason to check the proof line by line. Here the check passes. The exception is a step whose conclusion is reached without the hypothesis, and the axiom is still what carries the property from \( 0 \) to every \( n \).
+Nor can a case analysis replace the axiom here. A direct proof would have to say which numbers lie in \( \nN \), and the only thing that says so is induction: the step shows that every number of the form \( n + 1 \) with \( n \in \nN \) has the property, and it is @fd1:ax-induction that tells us every natural number other than \( 0 \) is of this form. *Logic and Proof*, Chapter 4's sentence is a rule of thumb, and a good one: an unused hypothesis is a reason to check the proof line by line. Here the check passes. The exception is a step whose conclusion is reached without the hypothesis, and the axiom is still what carries the property from \( 0 \) to every \( n \).
 :::
 
-The lemma also closes a gap in *Logic and Proof*, Chapter 3. The proof of @fd1:thm-strong-induction used two facts about \( \nN \) as school knowledge. In its base case it said "No natural number is less than \( 0 \), so \( P(k) \) holds for every \( k \in \nN \) with \( k < 0 \), vacuously" and "The only \( k \in \nN \) with \( k \le 0 \) is \( 0 \)": both are (a), the second with trichotomy. In its inductive step it said "The natural numbers \( k < n + 1 \) are exactly those with \( k \le n \), since no natural number lies strictly between \( n \) and \( n + 1 \)", and then "A natural number \( k \le n + 1 \) satisfies \( k \le n \) or \( k = n + 1 \)": both are (e), with trichotomy. The proofs of (a), (d) and (e) above use only @fd1:ax-induction, (\( \nN \)0), (\( \nN \)S), part (c) and the arithmetic of \( \nR \), and none of them uses strong induction. So strong induction rests on those items alone, and from now on we may cite @fd1:thm-strong-induction with no school fact behind it.
+The lemma also closes a gap in *Logic and Proof*, Chapter 4. The proof of @fd1:thm-strong-induction used two facts about \( \nN \) as school knowledge. In its base case it said "No natural number is less than \( 0 \), so \( P(k) \) holds for every \( k \in \nN \) with \( k < 0 \), vacuously" and "The only \( k \in \nN \) with \( k \le 0 \) is \( 0 \)": both are (a), the second with trichotomy. In its inductive step it said "The natural numbers \( k < n + 1 \) are exactly those with \( k \le n \), since no natural number lies strictly between \( n \) and \( n + 1 \)", and then "A natural number \( k \le n + 1 \) satisfies \( k \le n \) or \( k = n + 1 \)": both are (e), with trichotomy. The proofs of (a), (d) and (e) above use only @fd1:ax-induction, (\( \nN \)0), (\( \nN \)S), part (c) and the arithmetic of \( \nR \), and none of them uses strong induction. So strong induction rests on those items alone, and from now on we may cite @fd1:thm-strong-induction with no school fact behind it.
 
 ::: {.check}
 Where in the proof of @lem-naturals-arithmetic (d) is part (c) used, and could \( n \) have been fixed before the induction on \( m \), as \( m \) was in (b)?
@@ -147,7 +147,7 @@ Discreteness is the fact behind "an integer greater than \( 3 \) is at least \( 
 
 A fraction with even numerator and denominator can be halved, and halved again, and *Logic and Proof*, Chapter 2 claimed that this cannot go on for ever (the fact (L) in the proof of @fd1:thm-sqrt2-irrational). The reason is that the absolute values of the denominators form a strictly decreasing list of positive integers, and such a list must stop. The precise form of "must stop" is a statement about least elements.
 
-A **least element** of a set \( S \subseteq \nR \) is an element \( m \in S \) such that \( m \le s \) for **every** \( s \in S \). Not every set has one: \( (0, 1] \) has none, since for every \( x \in (0, 1] \) the number \( x/2 \) lies in the set and is smaller. The empty set has none either, as a least element must be an element. Reversing the inequality, a **greatest element** of \( S \) is an element \( m \in S \) with \( s \le m \) for every \( s \in S \); this is the maximum of *Logic and Proof*, Section 4.7.
+A **least element** of a set \( S \subseteq \nR \) is an element \( m \in S \) such that \( m \le s \) for **every** \( s \in S \). Not every set has one: \( (0, 1] \) has none, since for every \( x \in (0, 1] \) the number \( x/2 \) lies in the set and is smaller. The empty set has none either, as a least element must be an element. Reversing the inequality, a **greatest element** of \( S \) is an element \( m \in S \) with \( s \le m \) for every \( s \in S \); this is the maximum of *Logic and Proof*, Section 5.8.
 
 *Every non-empty set of natural numbers has a least element.*
 
@@ -171,7 +171,7 @@ Let \( n \in \nN \), and suppose \( P(k) \) holds for every \( k \in \nN \) with
 By @fd1:thm-strong-induction, \( n \notin S \) for every \( n \in \nN \). Since \( S \subseteq \nN \), the set \( S \) has no elements, which contradicts \( S \) being non-empty. So \( S \) has a least element. This proves the theorem.
 :::
 
-The outer frame is an \( \rulename{RAA} \) on the statement "\( S \) has a least element". The proof shows that a least element **exists**; it does not say how to find it. *Logic and Proof*, Section 5.7 explained why mathematicians have argued over proofs of this kind. Here the debate has a quiet ending: if \( S \) is given by a property that can be checked number by number, testing \( 0, 1, 2, \dots \) in turn finds the least element, and the theorem says the search stops. Nothing in the proof above depends on such a test.
+The outer frame is an \( \rulename{RAA} \) on the statement "\( S \) has a least element". The proof shows that a least element **exists**; it does not say how to find it. *Logic and Proof*, Section 8.7 explained why mathematicians have argued over proofs of this kind. Here the debate has a quiet ending: if \( S \) is given by a property that can be checked number by number, testing \( 0, 1, 2, \dots \) in turn finds the least element, and the theorem says the search stops. Nothing in the proof above depends on such a test.
 
 ::: {.check}
 In the proof of @thm-well-ordering, to which property is strong induction applied, and what is the induction hypothesis at \( n \)?
@@ -227,7 +227,7 @@ Each hypothesis on \( X \) has a job, and dropping any one of them breaks the th
 
 In the last two witnesses the induction property is not false but vacuous. That is why the theorem uses plain closure of \( S \). Under a "closure relative to \( X \)" reading (\( n + 1 \in S \) only when \( n + 1 \in X \)), the set \( S = \{0\} \) would qualify in the closure witness, the induction property would fail there, and the witness would no longer separate the two properties.
 
-So the slogan "induction and well-ordering are the same principle" means exactly @thm-induction-iff-well-ordering: for a set of numbers with \( 0 \), closure and predecessors, either principle implies the other. So *Logic and Proof*, Chapter 3 could have taken, alongside (\( \nN \)0) and (\( \nN \)S), the predecessor property and well-ordering as its axioms, and proved induction from them by the \( (\Leftarrow) \) half of @thm-induction-iff-well-ordering. The first witness above shows that the predecessor property cannot be left out, and with induction gone it could no longer be proved as @lem-naturals-arithmetic (c) was. *Number Systems: From \(\nN\) to \(\nR\)*, Chapter 1 builds \( \nN \) from sets and proves the Peano axioms, induction among them, there.
+So the slogan "induction and well-ordering are the same principle" means exactly @thm-induction-iff-well-ordering: for a set of numbers with \( 0 \), closure and predecessors, either principle implies the other. So *Logic and Proof*, Chapter 4 could have taken, alongside (\( \nN \)0) and (\( \nN \)S), the predecessor property and well-ordering as its axioms, and proved induction from them by the \( (\Leftarrow) \) half of @thm-induction-iff-well-ordering. The first witness above shows that the predecessor property cannot be left out, and with induction gone it could no longer be proved as @lem-naturals-arithmetic (c) was. *Number Systems: From \(\nN\) to \(\nR\)*, Chapter 1 builds \( \nN \) from sets and proves the Peano axioms, induction among them, there.
 
 ## Sets of integers
 
@@ -435,7 +435,7 @@ thm-induction-iff-well-ordering (claim): (the witness paragraph) n + 1/2 not in 
 thm-induction-iff-well-ordering (claim): (the first witness) N u (N + 1/2) has the least-element property | inline sketch; proved in full in exr-naturals-and-well-ordering-c2 (not used by any proof)
 cor-well-ordering-integers (claim): (the paragraph after it) a real bound must first be replaced by an integer below it (Archimedean); a non-Archimedean field has a set of integers bounded below with no least element ({-n : n in N} in R(x), bounded below by -x since n < x) | AN1.1 exm-nonarchimedean-field (n < x for every n in N; prose pointer, no @ref; nothing here depends on it); -(n + 1) < -n, R arithmetic
 thm-well-ordering (claim): (the remark after the proof) disputes over existence proofs | F1.5 §07 (prose pointer)
-thm-well-ordering (claim): (the paragraph before it) a greatest element is the maximum of F1.4 §07 | F1.4 §07 (prose pointer; the definition is restated here)
+thm-well-ordering (claim): (the paragraph before it) a greatest element is the maximum of F1.4 §08 | F1.4 §08 (prose pointer; the definition is restated here)
 thm-induction-iff-well-ordering (claim): (aftermath) N built from sets, Peano axioms (induction among them) proved | F3.1 (prose pointer; nothing depends on it)
 exr-naturals-and-well-ordering-a1 (solution): (e) 1/4 not in N, 1/2 - 1 < 0; Z u (Z + 1/2) has the predecessor property | R arithmetic; lem-naturals-arithmetic (a), (d), (e) (cited); verify/ch07/exr-naturals-and-well-ordering-a1.py
 exr-naturals-and-well-ordering-b1 (solution): multiplying an inequality by a positive number | R order, school fact
