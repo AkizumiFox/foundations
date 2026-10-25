@@ -98,8 +98,9 @@
   "reading-paths": [],
   "chapters": [
     "src/ch01-sets-and-functions",
-    "src/ch02-relations-and-induction",
-    "src/ch03-countable-and-uncountable"
+    "src/ch02-induction-and-finite-sets",
+    "src/ch03-countable-and-uncountable",
+    "src/ch04-relations-and-orders"
   ],
   "macros": "../latex/macros.tex",
   "deploy-dir": "site",

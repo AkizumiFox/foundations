@@ -1,809 +1,9 @@
 chapter: 3
 dir: ch03-countable-and-uncountable
 items:
-- key: def-equinumerous
-  kind: def
-  file: 01-finite-sets.md
-  line: 13
-  hash: 0e848211743a
-  verdicts:
-  - stage: S5a
-    verdict: correct
-    by: refereeA
-    hash: 0e848211743a
-    date: '2026-10-11'
-    model: claude-opus-5-5
-    evidence: 01:13-37 definition and examples checked; [0,1]->[0,2] inverse y/2 verified; empty-set converse
-      uses prp-empty-function (b) correctly; non-example quantifies over all g
-  - stage: S5b
-    verdict: correct
-    by: refereeB
-    hash: 0e848211743a
-    date: '2026-10-11'
-    model: claude-opus-5-5
-    evidence: '01-finite-sets.md:13-37. The definition, the four examples (the empty function via prp-empty-function
-      (a)/(b), [0,1] to [0,2] with inverse y/2) and the non-example (every g: {a,b,c} to {1,2} fails injectivity)
-      all check out.'
-- key: prp-equinumerous-properties
-  kind: prp
-  file: 01-finite-sets.md
-  line: 41
-  hash: 70125ec520dd
-  verdicts:
-  - stage: S5a
-    verdict: correct
-    by: refereeA
-    hash: 70125ec520dd
-    date: '2026-10-11'
-    model: claude-opus-5-5
-    evidence: 01:41-51 statement fine; remark 01:64 uses (W3) union + thm-russell ('no set of which every
-      set is an element') correctly
-  - stage: S5b
-    verdict: correct
-    by: refereeB
-    hash: 70125ec520dd
-    date: '2026-10-11'
-    model: claude-opus-5-5
-    evidence: :41-51 statement. The paragraph at :61 (not an equivalence relation on a set, citing thm-russell)
-      matches def-equivalence-relation (ch07/05:19-25). The remark at :64 ((W3) family union plus thm-russell
-      'no set of which every set is an element') is sound. Its length is a separate finding with key ''.
-- key: proof:prp-equinumerous-properties
-  kind: proof
-  file: 01-finite-sets.md
-  line: 53
-  hash: 511c3dbdc0e9
-  verdicts:
-  - stage: S5a
-    verdict: correct
-    by: refereeA
-    hash: 511c3dbdc0e9
-    date: '2026-10-11'
-    model: claude-opus-5-5
-    evidence: '01:54-58: (b) uses symmetry of def-inverse-function + thm-bijection-iff-inverse both directions;
-      (c) thm-composition-injective-surjective (c)'
-  - stage: S5b
-    verdict: correct
-    by: refereeB
-    hash: 511c3dbdc0e9
-    date: '2026-10-11'
-    model: claude-opus-5-5
-    evidence: :53-59. (a) uses the identity; (b) uses thm-bijection-iff-inverse twice with def-inverse-function;
-      (c) uses thm-composition-injective-surjective (c), whose statement at ch06/04:415 matches.
-- key: def-finite
-  kind: def
-  file: 01-finite-sets.md
-  line: 77
-  hash: 51dcf03623e7
-  verdicts:
-  - stage: S5a
-    verdict: correct
-    by: refereeA
-    hash: 51dcf03623e7
-    date: '2026-10-11'
-    model: claude-opus-5-5
-    evidence: 01:75-90; {0,...,n} is defined in ch07/01:34; k->k-1 with lem-naturals-arithmetic (c), inverse
-      j->j+1 checked
-  - stage: S5b
-    verdict: correct
-    by: refereeB
-    hash: 51dcf03623e7
-    date: '2026-10-11'
-    model: claude-opus-5-5
-    evidence: :75-90. The {1,...,n} and {0,...,n} notation matches ch07/01. The 0-element examples are
-      right. For {0,...,n}, k-1 is in N by lem-naturals-arithmetic (c). The well-definedness gap is flagged
-      at :83 and paid at :183-195.
-- key: def-infinite
-  kind: def
-  file: 01-finite-sets.md
-  line: 94
-  hash: 8971cf14f0c4
-  verdicts:
-  - stage: S5a
-    verdict: correct
-    by: refereeA
-    hash: 8971cf14f0c4
-    date: '2026-10-11'
-    model: claude-opus-5-5
-    evidence: 01:92-100; 'Shrinking the codomain' paragraph correct per def-function (graph in X x C)
-  - stage: S5b
-    verdict: correct
-    by: refereeB
-    hash: 8971cf14f0c4
-    date: '2026-10-11'
-    model: claude-opus-5-5
-    evidence: :92-100. It is the negation of def-finite. The 'Shrinking the codomain' paragraph is correct
-      (it cites def-function and def-image) and is used later, at 02:82, 02:150 and 03:88.
-- key: thm-pigeonhole
-  kind: thm
-  file: 01-finite-sets.md
-  line: 108
-  hash: de45bc8cf894
-  verdicts:
-  - stage: S5a
-    verdict: correct
-    by: refereeA
-    hash: de45bc8cf894
-    date: '2026-10-11'
-    model: claude-opus-5-5
-    evidence: '01:106-110; dropping m>n: identity {1..n}->{1..n} is injective, so hypothesis is needed
-      and used (base case m>0, step m>n+1)'
-  - stage: S5b
-    verdict: minor
-    by: refereeB
-    hash: de45bc8cf894
-    date: '2026-10-11'
-    model: claude-opus-5-5
-    evidence: '01-finite-sets.md:104 False meta-claim: ''In Chapter 6 we checked by hand that a function
-      from a three-element set to a two-element set cannot be injective (@exm-injective-surjective-first
-      (c))''.'
-  - stage: S8
-    verdict: minor
-    by: seam
-    hash: de45bc8cf894
-    date: '2026-10-11'
-    model: claude-opus-5-5
-    evidence: 01-finite-sets.md:104 Wrong attribution of what Chapter 6 did. The text says 'In Chapter
-      6 we checked by hand that a function from a three-element set to a two-element set cannot be injective
-      (@exm-injective-surjective-first (c))'. Part (c) checks one particular function. The general statement
-      is only asserted, not checked, in the paragraph after the example.
-  - stage: S7r
-    verdict: correct
-    by: rereferee
-    hash: de45bc8cf894
-    date: '2026-10-11'
-    model: claude-opus-5-5
-    evidence: '01-finite-sets.md:106 now says Chapter 6 found one non-injective function (@exm-injective-surjective-first
-      (c)) and ''observed without proof that none can be''. That matches ch06 04-functions.md:368-372:
-      (c) checks one h, and the paragraph after it asserts the general fact without proof. The S5b and
-      S8 findings are resolved. The statement at :111 is correct.'
-- key: proof:thm-pigeonhole
-  kind: proof
-  file: 01-finite-sets.md
-  line: 118
-  hash: 52dcdf006f04
-  verdicts:
-  - stage: S5a
-    verdict: correct
-    by: refereeA
-    hash: 52dcdf006f04
-    date: '2026-10-11'
-    model: claude-opus-5-5
-    evidence: '01:116-141: P(n) quantifies over m inside, as needed for use at m-1; base uses lem (a)
-      and prp-empty-function (b); Case 1 lem (e); Case 2 sigma injective, sigma(i)!=j since j<=m-1<m when
-      i=j, g=f o sigma avoids n+1 by injectivity of f; m-1 in N by lem (c), m-1>n. Sidecar thm-pigeonhole.py
-      passes'
-  - stage: S5b
-    verdict: correct
-    by: refereeB
-    hash: 52dcdf006f04
-    date: '2026-10-11'
-    model: claude-opus-5-5
-    evidence: :116-142. P(n) quantifies m inside. In the base case m>=1 gives a non-empty domain, so prp-empty-function
-      (b) applies. In Case 1, f(i)<=n follows by (e). In Case 2, sigma is injective and misses j; g=f∘sigma
-      avoids n+1, and P(n) is applied at m-1. The idea's 'move pigeon j to the hole of pigeon m' matches
-      g(j)=f(m). The school order facts are in the ledger (:531-532). The sidecar thm-pigeonhole.py
-- key: cor-pigeonhole-finite-sets
-  kind: cor
-  file: 01-finite-sets.md
-  line: 148
-  hash: 7ccba4379074
-  verdicts:
-  - stage: S5a
-    verdict: correct
-    by: refereeA
-    hash: 7ccba4379074
-    date: '2026-10-11'
-    model: claude-opus-5-5
-    evidence: '01:146-155 statement; (b) with m=0<n: no surjection from empty set onto nonempty B holds'
-  - stage: S5b
-    verdict: minor
-    by: refereeB
-    hash: 7ccba4379074
-    date: '2026-10-11'
-    model: claude-opus-5-5
-    evidence: '01-finite-sets.md:177 In the three-integers example, ''p: A → {0, 1}'' and ''which is even''
-      use facts about Z that Chapter 7 proved as prp-integers-closed, but the ledger attributes them to
-      ''R arithmetic, school fact''.'
-  - stage: S8
-    verdict: minor
-    by: seam
-    hash: 7ccba4379074
-    date: '2026-10-11'
-    model: claude-opus-5-5
-    evidence: 01-finite-sets.md:175 The sentence 'With m = 3, n = 2 and m = 2, n = 3, it gives the two
-      observations after @exm-injective-surjective-first' has 'it' referring back to 'part (a)'. The case
-      m = 2, n = 3 (no surjection) is part (b).
-  - stage: S7r
-    verdict: correct
-    by: rereferee
-    hash: 7ccba4379074
-    date: '2026-10-11'
-    model: claude-opus-5-5
-    evidence: Line 177 now reads 'With m = 3, n = 2 in (a) and m = 2, n = 3 in (b)', so the S8 finding
-      is resolved. I checked the exr-models-c2 claim against 11-models.md:487 and ledger :717, and it
-      is accurate. In the three-integers paragraph (:179-183), r is in N by prp-integers-closed (b) and
-      r <= 1 by lem-naturals-arithmetic (e). The paragraph also cites q+q'+r in Z (prp-integers-closed
-      (a)), and ledger :54
-- key: proof:cor-pigeonhole-finite-sets
-  kind: proof
-  file: 01-finite-sets.md
-  line: 163
-  hash: 6dd49ecf7d6a
-  verdicts:
-  - stage: S5a
-    verdict: minor
-    by: refereeA
-    hash: 60aa858c61b4
-    date: '2026-10-11'
-    model: claude-opus-5-5
-    evidence: 01-finite-sets.md:162 The citation for 'psi^{-1} is a bijection' points to the wrong result.
-  - stage: S5b
-    verdict: minor
-    by: refereeB
-    hash: 60aa858c61b4
-    date: '2026-10-11'
-    model: claude-opus-5-5
-    evidence: 01-finite-sets.md:162 The section cites the statement of prp-equinumerous-properties (b)
-      for the fact that the specific inverse map is a bijection, but the statement only asserts that some
-      bijection B to A exists.
-  - stage: S7r
-    verdict: correct
-    by: rereferee
-    hash: 6dd49ecf7d6a
-    date: '2026-10-11'
-    model: claude-opus-5-5
-    evidence: 'Line 164 now proves that psi^{-1} is a bijection directly: psi is a two-sided inverse of
-      psi^{-1} (def-inverse-function, 05-inverses.md:241, whose symmetry remark is at :253), and thm-bijection-iff-inverse
-      (:295) then gives the bijection. It no longer cites prp-equinumerous-properties (b), so the S5a
-      and S5b findings are resolved. In (a), the triple composite is injective by thm-composition (a).
-      I'
-- key: cor-finite-size-unique
-  kind: cor
-  file: 01-finite-sets.md
-  line: 187
-  hash: 365223cc680f
-  verdicts:
-  - stage: S5a
-    verdict: correct
-    by: refereeA
-    hash: 365223cc680f
-    date: '2026-10-11'
-    model: claude-opus-5-5
-    evidence: 01:185-189
-  - stage: S5b
-    verdict: correct
-    by: refereeB
-    hash: 365223cc680f
-    date: '2026-10-11'
-    model: claude-opus-5-5
-    evidence: :185-189.
-- key: proof:cor-finite-size-unique
-  kind: proof
-  file: 01-finite-sets.md
-  line: 193
-  hash: 6c1acc88ca99
-  verdicts:
-  - stage: S5a
-    verdict: minor
-    by: refereeA
-    hash: 6c1acc88ca99
-    date: '2026-10-11'
-    model: claude-opus-5-5
-    evidence: '01:192: injectivity of psi^{-1} needs psi^{-1} bijective (psi is its inverse); cited only
-      as thm-bijection-iff-inverse, acceptable but compressed. Logic and trichotomy fine'
-  - stage: S5b
-    verdict: correct
-    by: refereeB
-    hash: 6c1acc88ca99
-    date: '2026-10-11'
-    model: claude-opus-5-5
-    evidence: :192. psi^{-1}∘phi is injective (thm-bijection-iff-inverse, thm-composition (a)), which
-      contradicts thm-pigeonhole. Trichotomy is in the ledger (:534).
-- key: prp-disjoint-union-count
-  kind: prp
-  file: 01-finite-sets.md
-  line: 203
-  hash: 4140f115f2ad
-  verdicts:
-  - stage: S5a
-    verdict: correct
-    by: refereeA
-    hash: 4140f115f2ad
-    date: '2026-10-11'
-    model: claude-opus-5-5
-    evidence: '01:201-205; dropping disjointness: A=B={1} gives 1 != 2 elements; hypothesis used at 01:221'
-  - stage: S5b
-    verdict: correct
-    by: refereeB
-    hash: 4140f115f2ad
-    date: '2026-10-11'
-    model: claude-opus-5-5
-    evidence: ':201-205. The meta-claim at :199 (''uses nothing else from this section'') holds: the proof
-      uses only def-finite and Chapter 7.'
-- key: proof:prp-disjoint-union-count
-  kind: proof
-  file: 01-finite-sets.md
-  line: 213
-  hash: 50115fc140af
-  verdicts:
-  - stage: S5a
-    verdict: correct
-    by: refereeA
-    hash: 50115fc140af
-    date: '2026-10-11'
-    model: claude-opus-5-5
-    evidence: '01:212-225: k>m gives m+1<=k (lem (e)), k-m in N (lem (d)); chi injective in all three
-      cases; surjective via k=m+j'
-  - stage: S5b
-    verdict: correct
-    by: refereeB
-    hash: 50115fc140af
-    date: '2026-10-11'
-    model: claude-opus-5-5
-    evidence: :211-226. chi is well defined (k-m lies in {1..n} by lem (d),(e)). Injectivity has all three
-      cases, using disjointness. Surjectivity uses k=m+j. The ledger line is at :535.
-- key: prp-subset-finite
-  kind: prp
-  file: 01-finite-sets.md
-  line: 232
-  hash: b61091b72523
-  verdicts:
-  - stage: S5a
-    verdict: correct
-    by: refereeA
-    hash: b61091b72523
-    date: '2026-10-11'
-    model: claude-opus-5-5
-    evidence: 01:230-234
-  - stage: S5b
-    verdict: correct
-    by: refereeB
-    hash: b61091b72523
-    date: '2026-10-11'
-    model: claude-opus-5-5
-    evidence: ':230-234. The meta-claim at :228 (''cites nothing proved later'') holds: the proof uses
-      only prp-disjoint-union-count, which comes earlier.'
-- key: proof:prp-subset-finite
-  kind: proof
-  file: 01-finite-sets.md
-  line: 242
-  hash: bdc1946c2188
-  verdicts:
-  - stage: S5a
-    verdict: correct
-    by: refereeA
-    hash: bdc1946c2188
-    date: '2026-10-11'
-    model: claude-opus-5-5
-    evidence: '01:241-259: A=A'' u {a} via lem (e), a notin A'' by injectivity; case a in S: j taken from
-      the same instance of P(n) so ''j<n by P(n)'' is justified; S cap A'' = A'' would give S=A. Uses
-      only prp-disjoint-union-count (earlier)'
-  - stage: S5b
-    verdict: correct
-    by: refereeB
-    hash: bdc1946c2188
-    date: '2026-10-11'
-    model: claude-opus-5-5
-    evidence: :240-260. A' has n elements (the ledger notes the restriction), A=A'∪{a}, and a∉A'. Both
-      cases, including the strict clause, are correct. The base case uses the 0-element example at :87.
-- key: cor-remove-point
-  kind: cor
-  file: 01-finite-sets.md
-  line: 266
-  hash: 240f08b8b551
-  verdicts:
-  - stage: S5a
-    verdict: correct
-    by: refereeA
-    hash: 240f08b8b551
-    date: '2026-10-11'
-    model: claude-opus-5-5
-    evidence: 01:264-268
-  - stage: S5b
-    verdict: correct
-    by: refereeB
-    hash: 240f08b8b551
-    date: '2026-10-11'
-    model: claude-opus-5-5
-    evidence: :264-268. The meta-claim at :274 ('every later induction on the number of elements' uses
-      it on an arbitrary A) checks against 03:65, 03:366 and C2 in this section. The induction at 06:28
-      builds F_n and is not an induction over arbitrary n-element sets.
-- key: proof:cor-remove-point
-  kind: proof
-  file: 01-finite-sets.md
-  line: 272
-  hash: 209943f88ad6
-  verdicts:
-  - stage: S5a
-    verdict: correct
-    by: refereeA
-    hash: 209943f88ad6
-    date: '2026-10-11'
-    model: claude-opus-5-5
-    evidence: '01:271: prp-subset-finite, prp-disjoint-union-count, cor-finite-size-unique; k+1=n+1 gives
-      k=n'
-  - stage: S5b
-    verdict: correct
-    by: refereeB
-    hash: 209943f88ad6
-    date: '2026-10-11'
-    model: claude-opus-5-5
-    evidence: :270-272. A proper subset has k<n+1 elements; the disjoint union gives k+1; uniqueness gives
-      k=n.
-- key: prp-power-set-count
-  kind: prp
-  file: 01-finite-sets.md
-  line: 278
-  hash: 53204555eb13
-  verdicts:
-  - stage: S5a
-    verdict: correct
-    by: refereeA
-    hash: 53204555eb13
-    date: '2026-10-11'
-    model: claude-opus-5-5
-    evidence: 01:276-280; sidecar prp-power-set-count.py passes
-  - stage: S5b
-    verdict: minor
-    by: refereeB
-    hash: 53204555eb13
-    date: '2026-10-11'
-    model: claude-opus-5-5
-    evidence: '01-finite-sets.md:302 Notation clash: the paragraph after the proof rebinds A and X. The
-      function A ↦ ind_A takes A to range over subsets of a generic X, immediately after a proof in which
-      A is the (n+1)-element set and X := A∖{a}.'
-  - stage: S7r
-    verdict: correct
-    by: rereferee
-    hash: 53204555eb13
-    date: '2026-10-11'
-    model: claude-opus-5-5
-    evidence: The paragraph after the proof (:304) now uses Y and S (S ↦ ind_S, P(Y) → {0,1}^Y), so it
-      no longer rebinds A and X and the notation clash is resolved. The correspondence it cites is at
-      ch06 04-functions.md:193 (Section 6.4). \ind matches NOTATION.md:70.
-- key: proof:prp-power-set-count
-  kind: proof
-  file: 01-finite-sets.md
-  line: 288
-  hash: 60c0acd45a34
-  verdicts:
-  - stage: S5a
-    verdict: minor
-    by: refereeA
-    hash: e879c2a32c20
-    date: '2026-10-11'
-    model: claude-opus-5-5
-    evidence: 01-finite-sets.md:299 prp-disjoint-union-count requires its two counts to be natural numbers,
-      and the text does not check this for 2^n.
-  - stage: S5b
-    verdict: minor
-    by: refereeB
-    hash: e879c2a32c20
-    date: '2026-10-11'
-    model: claude-opus-5-5
-    evidence: 01-finite-sets.md:297 The proof says P(X) and T 'have 2^n elements' without noting 2^n ∈
-      N, which def-finite requires (n ∈ N). The same issue occurs with n^m and mn in exercise C2.
-  - stage: S7r
-    verdict: correct
-    by: rereferee
-    hash: 60c0acd45a34
-    date: '2026-10-11'
-    model: claude-opus-5-5
-    evidence: Line 291 now notes that 2^n and 2^{n+1} are in N by prp-power-laws (d) (03-recursion.md:228,
-      'if u in N then u^n in N'), with ledger :545, so the S5a and S5b findings are resolved. I checked
-      the base case P(∅) = {∅}. Removing a uses cor-remove-point on an arbitrary A. I checked the disjointness
-      and covering of P(A) = P(X) ∪ T, and the bijection P(X) → T by injectivity via (S∪{a})∖{a} = S.
-      Composin
-- key: thm-finite-no-proper-copy
-  kind: thm
-  file: 01-finite-sets.md
-  line: 310
-  hash: ee9a0f3dbf41
-  verdicts:
-  - stage: S5a
-    verdict: correct
-    by: refereeA
-    hash: ee9a0f3dbf41
-    date: '2026-10-11'
-    model: claude-opus-5-5
-    evidence: '01:308-312; dropping ''finite'': N and 2N'
-  - stage: S5b
-    verdict: correct
-    by: refereeB
-    hash: ee9a0f3dbf41
-    date: '2026-10-11'
-    model: claude-opus-5-5
-    evidence: :308-312.
-- key: proof:thm-finite-no-proper-copy
-  kind: proof
-  file: 01-finite-sets.md
-  line: 316
-  hash: c1b469157f65
-  verdicts:
-  - stage: S5a
-    verdict: correct
-    by: refereeA
-    hash: c1b469157f65
-    date: '2026-10-11'
-    model: claude-opus-5-5
-    evidence: '01:315: prp-subset-finite gives k<n, g o phi bijection gives n elements, cor-finite-size-unique
-      gives k=n, contradiction'
-  - stage: S5b
-    verdict: correct
-    by: refereeB
-    hash: c1b469157f65
-    date: '2026-10-11'
-    model: claude-opus-5-5
-    evidence: :314-316. It uses prp-subset-finite (k<n), composition (c) and cor-finite-size-unique.
-- key: exm-hilbert-hotel
-  kind: exm
-  file: 01-finite-sets.md
-  line: 326
-  hash: 0542aba7a3b5
-  verdicts:
-  - stage: S5a
-    verdict: correct
-    by: refereeA
-    hash: 0542aba7a3b5
-    date: '2026-10-11'
-    model: claude-opus-5-5
-    evidence: '01:324-336: d bijective, 1 notin 2N via lem (a), conclusion via thm-finite-no-proper-copy.
-      Warning 01:341: x/(1+x) maps 1/n to 1/(n+1), y/(1-y) inverts, 1 notin {1/n: n>=2}; checked'
-  - stage: S5b
-    verdict: correct
-    by: refereeB
-    hash: 0542aba7a3b5
-    date: '2026-10-11'
-    model: claude-opus-5-5
-    evidence: :324-336. d(n)=2n is a bijection onto 2N, 2N ⊆ N by lem (b), and 1∉2N by the case split
-      with lem (a). The ledger line is at :539. The pointer at :338 to Section 8.6 is paid by thm-infinite-iff-proper-subset
-      (06:69).
-- key: check:01-finite-sets:1
-  kind: check
-  file: 01-finite-sets.md
-  line: 350
-  hash: 89a537e526a3
-  verdicts:
-  - stage: S5a
-    verdict: correct
-    by: refereeA
-    hash: 89a537e526a3
-    date: '2026-10-11'
-    model: claude-opus-5-5
-    evidence: '01:344-350: n+1>=1, inverse m-1 via lem (c), thm-bijection-iff-inverse'
-  - stage: S5b
-    verdict: correct
-    by: refereeB
-    hash: 89a537e526a3
-    date: '2026-10-11'
-    model: claude-opus-5-5
-    evidence: :344-350. n+1 ≥ 1, the inverse m-1 is in N by lem (c), and N∖{0}=Z_{>0} by the ch07/01 definition.
-- key: exr-finite-sets-a1
-  kind: exr
-  file: 01-finite-sets.md
-  line: 366
-  hash: d6bb729a2ba5
-  verdicts:
-  - stage: S5a
-    verdict: correct
-    by: refereeA
-    hash: d6bb729a2ba5
-    date: '2026-10-11'
-    model: claude-opus-5-5
-    evidence: '01:372-382: negation via prp-bounded-quantifier-negation (b) and De Morgan; (b) counterexample
-      empty set in N; (c),(d) correct'
-  - stage: S5b
-    verdict: correct
-    by: refereeB
-    hash: d6bb729a2ba5
-    date: '2026-10-11'
-    model: claude-opus-5-5
-    evidence: :360-383. (a) The negation via prp-bounded-quantifier-negation plus De Morgan is in the
-      ledger (:541). (b) The emptyset counterexample is right, and so is the use of prp-subset-finite.
-      (c) The answer 0 follows from thm-pigeonhole. (d) The answer follows from cor-pigeonhole-finite-sets
-      (a).
-  - stage: S6
-    verdict: correct
-    by: verifier
-    hash: d6bb729a2ba5
-    date: '2026-10-11'
-    model: claude-opus-5-5
-    evidence: '01:360-383. I solved all parts first. (a) The negation matches def-infinite. (b) The first
-      statement is false (∅ ⊆ ℕ), the second is true by prp-subset-finite. (c) 0: my brute force over
-      {1,2}^3 finds 0 injections. (d) matches cor-pigeonhole-finite-sets (a). §01 holds no key proof (blueprint:
-      key proofs are in §03, §04, §05), so no comprehension part is required.'
-- key: exr-finite-sets-b1
-  kind: exr
-  file: 01-finite-sets.md
-  line: 393
-  hash: f3ff87942d3a
-  verdicts:
-  - stage: S5a
-    verdict: correct
-    by: refereeA
-    hash: f3ff87942d3a
-    date: '2026-10-11'
-    model: claude-opus-5-5
-    evidence: '01:394-398: N\{0,1,2} = {m>=3} via lem (a),(e); inverses m-3, m-5 via lem (d); (m-1)/2.
-      Sidecar passes'
-  - stage: S5b
-    verdict: correct
-    by: refereeB
-    hash: f3ff87942d3a
-    date: '2026-10-11'
-    model: claude-opus-5-5
-    evidence: :387-399. Each of the three bijections has its inverse written out; m ≥ 3 is derived via
-      lem (a),(e). The sidecar exr-finite-sets-b1.py passes.
-  - stage: S6
-    verdict: correct
-    by: verifier
-    hash: f3ff87942d3a
-    date: '2026-10-11'
-    model: claude-opus-5-5
-    evidence: 01:387-399. The maps are n+3, n+5 and 2n+1, with inverses m-3, m-5 and (m-1)/2. ℕ∖{0,1,2}
-      = {m ≥ 3} is proved, and the script checked it on a range. The worked example is exm-hilbert-hotel
-      together with the Quick check at 01:344-350.
-- key: exr-finite-sets-b2
-  kind: exr
-  file: 01-finite-sets.md
-  line: 407
-  hash: 79e7183e2ffd
-  verdicts:
-  - stage: S5a
-    verdict: correct
-    by: refereeA
-    hash: 908b9570c068
-    date: '2026-10-11'
-    model: claude-opus-5-5
-    evidence: '01:413-415: {0..4} has 5 elements (third example after def-finite); p(x)=min{x,9-x} in
-      {1..4}, same pair gives x+y=9 since c != 9-c; sidecar passes'
-  - stage: S5b
-    verdict: minor
-    by: refereeB
-    hash: 908b9570c068
-    date: '2026-10-11'
-    model: claude-opus-5-5
-    evidence: 01-finite-sets.md:413 The solution of B2(a) asserts r(a) ∈ {0, ..., 4} directly from the
-      division algorithm, without justification or a ledger line.
-  - stage: S6
-    verdict: correct
-    by: verifier
-    hash: 908b9570c068
-    date: '2026-10-11'
-    model: claude-opus-5-5
-    evidence: 01:401-416. (a) The remainder map goes to {0..4}, then cor-pigeonhole (a). The script checked
-      every 6-subset of [-20,20]. (b) p(x)=min{x,9-x}; the script checked that all 56 five-element subsets
-      of {1..8} contain a pair with sum 9, that {1,2,3,4} has no such pair, and that p maps into {1..4}.
-      The worked example is the three-integers paragraph at 01:177-181.
-  - stage: S7r
-    verdict: correct
-    by: rereferee
-    hash: 79e7183e2ffd
-    date: '2026-10-11'
-    model: claude-opus-5-5
-    evidence: 'I solved both parts independently and they agree. (a), at :419: the remainder r(a) is in
-      N by prp-integers-closed (b), and r(a) <= 4 by discreteness (prp-integers-closed (c), ch07 01:102).
-      {0,...,4} has 5 elements by the third example after def-finite (n = 4). Then cor-pigeonhole (a)
-      applies with 6 > 5. Ledger :552 is added, so the S5b finding is resolved. (b): p(x) = min{x, 9−x}
-      lands in {1,...,4'
-- key: exr-finite-sets-b3
-  kind: exr
-  file: 01-finite-sets.md
-  line: 424
-  hash: 8458fd4fad1c
-  verdicts:
-  - stage: S5a
-    verdict: correct
-    by: refereeA
-    hash: 8458fd4fad1c
-    date: '2026-10-11'
-    model: claude-opus-5-5
-    evidence: '01:425-435: empty union, U_{n+1}=U_n u (A_{n+1}\U_n) disjoint, prp-subset-finite, prp-disjoint-union-count'
-  - stage: S5b
-    verdict: correct
-    by: refereeB
-    hash: 8458fd4fad1c
-    date: '2026-10-11'
-    model: claude-opus-5-5
-    evidence: :418-436. The empty union is ∅ via def-family-union-intersection. The step splits off A_{n+1}∖U_n
-      as a disjoint piece. The ledger line is at :544.
-  - stage: S6
-    verdict: correct
-    by: verifier
-    hash: 8458fd4fad1c
-    date: '2026-10-11'
-    model: claude-opus-5-5
-    evidence: 01:418-436. The induction runs from the empty family. The union U_n ∪ (A_{n+1}∖U_n) is disjoint,
-      and the counts follow from prp-subset-finite and prp-disjoint-union-count. My own proof matched.
-      The induction pattern is worked in prp-subset-finite and prp-power-set-count.
-- key: exr-finite-sets-c1
-  kind: exr
-  file: 01-finite-sets.md
-  line: 446
-  hash: 22eb3017810e
-  verdicts:
-  - stage: S5a
-    verdict: minor
-    by: refereeA
-    hash: 22eb3017810e
-    date: '2026-10-11'
-    model: claude-opus-5-5
-    evidence: 01-finite-sets.md:471 The marking scheme gives full credit to a base case n = 1, which leaves
-      the claim at n = 0 unproved.
-  - stage: S5b
-    verdict: minor
-    by: refereeB
-    hash: 22eb3017810e
-    date: '2026-10-11'
-    model: claude-opus-5-5
-    evidence: 01-finite-sets.md:455 Hint 2 of C1 gives the key step of (⇒) rather than the first line
-      of the proof, against STYLE §11.7 ('rung 2 gives the first line of the proof. Neither executes the
-      key idea').
-  - stage: S6
-    verdict: minor
-    by: verifier
-    hash: 22eb3017810e
-    date: '2026-10-11'
-    model: claude-opus-5-5
-    evidence: 01-finite-sets.md:470 The (⇐) scheme line awards its 2 points for a route ('composes with
-      a bijection to contradict thm-pigeonhole') rather than for the step.
-  - stage: S7r
-    verdict: correct
-    by: rereferee
-    hash: 22eb3017810e
-    date: '2026-10-11'
-    model: claude-opus-5-5
-    evidence: 'I solved it independently and it agrees. (⇐), at :465: phi^{-1} is shown to be a bijection
-      via def-inverse-function and thm-bijection-iff-inverse before thm-composition (a) is used, so the
-      S5a finding is resolved. (⇒): the base case is the empty function (prp-empty-function (a)). The
-      step shrinks the codomain to F, gets F ≠ A because A is infinite, extends the injection and checks
-      injectivity. The'
-- key: exr-finite-sets-c2
-  kind: exr
-  file: 01-finite-sets.md
-  line: 484
-  hash: 604e1a184cd1
-  verdicts:
-  - stage: S5a
-    verdict: minor
-    by: refereeA
-    hash: 604e1a184cd1
-    date: '2026-10-11'
-    model: claude-opus-5-5
-    evidence: 01-finite-sets.md:513 The bijection R^{-1} is attributed to prp-equinumerous-properties
-      (b), which does not supply it.
-  - stage: S5b
-    verdict: minor
-    by: refereeB
-    hash: 604e1a184cd1
-    date: '2026-10-11'
-    model: claude-opus-5-5
-    evidence: The math is correct (:503-515). Applying (a) to B^{A'}, which has n^m elements, and stating
-      'mn elements' both need n^m, mn ∈ N (prp-power-laws (d), lem (b)), which are not cited. :513 cites
-      prp-equinumerous-properties (b) for 'the bijection R^{-1}', the same issue as at :162. The marking
-      scheme sums to 10.
-  - stage: S6
-    verdict: minor
-    by: verifier
-    hash: 604e1a184cd1
-    date: '2026-10-11'
-    model: claude-opus-5-5
-    evidence: 01-finite-sets.md:518 The marking scheme requires the induction route for (a). A natural
-      direct proof of (a) loses up to 4 points.
-  - stage: S7r
-    verdict: correct
-    by: rereferee
-    hash: 604e1a184cd1
-    date: '2026-10-11'
-    model: claude-opus-5-5
-    evidence: '(b), at :519: R^{-1} is gone. The text now goes from |B^A| = |B^{A''}×B| (R is a bijection)
-      and |{1..n^{m+1}}| = |B^{A''}×B| to the result via prp-equinumerous-properties (b) and (c), which
-      supply exactly this, so the S5a finding is resolved. mn in N comes from lem-naturals-arithmetic
-      (b) and n^m in N from prp-power-laws (d). Applying (a) to the sets B^{A''} and B is valid. I checked
-      n^m·n = n^{m+1},'
 - key: def-countable
   kind: def
-  file: 02-countable-sets.md
+  file: 01-countable-sets.md
   line: 13
   hash: 4bf412fa673a
   verdicts:
@@ -826,7 +26,7 @@ items:
       after the non-example in Section 8.1' (01:33) exists
 - key: def-countably-infinite
   kind: def
-  file: 02-countable-sets.md
+  file: 01-countable-sets.md
   line: 41
   hash: c8824000d1d7
   verdicts:
@@ -859,7 +59,7 @@ items:
       ''equivalently'' clau'
 - key: lem-subsets-of-naturals
   kind: lem
-  file: 02-countable-sets.md
+  file: 01-countable-sets.md
   line: 57
   hash: fd33a8801d8b
   verdicts:
@@ -879,7 +79,7 @@ items:
     evidence: 02:57-61; statement fine
 - key: proof:lem-subsets-of-naturals
   kind: proof
-  file: 02-countable-sets.md
+  file: 01-countable-sets.md
   line: 67
   hash: 460b8408b791
   verdicts:
@@ -904,7 +104,7 @@ items:
       (491)'
 - key: thm-countable-characterizations
   kind: thm
-  file: 02-countable-sets.md
+  file: 01-countable-sets.md
   line: 89
   hash: f77795bc7b93
   verdicts:
@@ -933,7 +133,7 @@ items:
       is resolved. The statement at :92-98 matches the proof.
 - key: proof:thm-countable-characterizations
   kind: proof
-  file: 02-countable-sets.md
+  file: 01-countable-sets.md
   line: 105
   hash: c050b3f4d1fb
   verdicts:
@@ -965,7 +165,7 @@ items:
       f^{-1} is a bijection, and the composite to thm-composition-injective-surjective (c); the countably'
 - key: prp-countable-subset
   kind: prp
-  file: 02-countable-sets.md
+  file: 01-countable-sets.md
   line: 133
   hash: 510bac694aba
   verdicts:
@@ -985,7 +185,7 @@ items:
     evidence: 02:136
 - key: proof:prp-countable-subset
   kind: proof
-  file: 02-countable-sets.md
+  file: 01-countable-sets.md
   line: 139
   hash: b66132e1efee
   verdicts:
@@ -1005,7 +205,7 @@ items:
     evidence: 02:140; the restriction fact is ledgered (493)
 - key: prp-countable-image
   kind: prp
-  file: 02-countable-sets.md
+  file: 01-countable-sets.md
   line: 143
   hash: 00244397229b
   verdicts:
@@ -1025,7 +225,7 @@ items:
     evidence: 02:146
 - key: proof:prp-countable-image
   kind: proof
-  file: 02-countable-sets.md
+  file: 01-countable-sets.md
   line: 149
   hash: c7bb251cb609
   verdicts:
@@ -1047,7 +247,7 @@ items:
       cited correctly
 - key: prp-union-two-countable
   kind: prp
-  file: 02-countable-sets.md
+  file: 01-countable-sets.md
   line: 155
   hash: b225d3958a0f
   verdicts:
@@ -1067,7 +267,7 @@ items:
     evidence: 02:158
 - key: proof:prp-union-two-countable
   kind: proof
-  file: 02-countable-sets.md
+  file: 01-countable-sets.md
   line: 165
   hash: 842c04c5812b
   verdicts:
@@ -1090,7 +290,7 @@ items:
       and lem (e) give r in {0,1} and q in N; the arithmetic is ledgered (494)'
 - key: exm-rows-first-listing
   kind: exm
-  file: 02-countable-sets.md
+  file: 01-countable-sets.md
   line: 189
   hash: ef4abb6e5c2e
   verdicts:
@@ -1111,7 +311,7 @@ items:
       uncountable, which follows the section's own warning at 35
 - key: thm-product-countable
   kind: thm
-  file: 02-countable-sets.md
+  file: 01-countable-sets.md
   line: 209
   hash: 43471f451e59
   verdicts:
@@ -1131,7 +331,7 @@ items:
     evidence: 02:212
 - key: proof:thm-product-countable
   kind: proof
-  file: 02-countable-sets.md
+  file: 01-countable-sets.md
   line: 221
   hash: 993a346bc037
   verdicts:
@@ -1156,7 +356,7 @@ items:
       no chapter proves it; ch07 02:112 disclaims it)'
 - key: cor-product-countable
   kind: cor
-  file: 02-countable-sets.md
+  file: 01-countable-sets.md
   line: 241
   hash: 574846896c7c
   verdicts:
@@ -1177,7 +377,7 @@ items:
       row 63 matches
 - key: proof:cor-product-countable
   kind: proof
-  file: 02-countable-sets.md
+  file: 01-countable-sets.md
   line: 254
   hash: 9c7b316458c7
   verdicts:
@@ -1211,7 +411,7 @@ items:
       since a k-tup
 - key: check:02-countable-sets:1
   kind: check
-  file: 02-countable-sets.md
+  file: 01-countable-sets.md
   line: 266
   hash: acd73886ae2c
   verdicts:
@@ -1244,7 +444,7 @@ items:
       ''A×B '
 - key: thm-integers-rationals-countable
   kind: thm
-  file: 02-countable-sets.md
+  file: 01-countable-sets.md
   line: 280
   hash: cdecb44f29a4
   verdicts:
@@ -1264,7 +464,7 @@ items:
     evidence: 02:268 definitions match ch07 01:25-27; statement fine
 - key: proof:thm-integers-rationals-countable
   kind: proof
-  file: 02-countable-sets.md
+  file: 01-countable-sets.md
   line: 290
   hash: 9ccad1570deb
   verdicts:
@@ -1299,7 +499,7 @@ items:
       Infinite: N ⊆ Q, exm-hilbert-hotel and prp-subset-finite, then (i)=>(iii). All lab'
 - key: exr-countable-sets-a1
   kind: exr
-  file: 02-countable-sets.md
+  file: 01-countable-sets.md
   line: 308
   hash: dfab47c7031a
   verdicts:
@@ -1329,7 +529,7 @@ items:
       no key proof.
 - key: exr-countable-sets-b1
   kind: exr
-  file: 02-countable-sets.md
+  file: 01-countable-sets.md
   line: 331
   hash: 53ee689205a4
   verdicts:
@@ -1359,7 +559,7 @@ items:
       thm-integers-rationals-countable.'
 - key: exr-countable-sets-b2
   kind: exr
-  file: 02-countable-sets.md
+  file: 01-countable-sets.md
   line: 354
   hash: ddf878358348
   verdicts:
@@ -1416,7 +616,7 @@ items:
       prove or use'''
 - key: exr-countable-sets-b3
   kind: exr
-  file: 02-countable-sets.md
+  file: 01-countable-sets.md
   line: 380
   hash: e41eec4f10b3
   verdicts:
@@ -1446,7 +646,7 @@ items:
       worked example is z in thm-integers-rationals-countable.
 - key: exr-countable-sets-c1
   kind: exr
-  file: 02-countable-sets.md
+  file: 01-countable-sets.md
   line: 400
   hash: 27388e9686c3
   verdicts:
@@ -1490,7 +690,7 @@ items:
       scheme (:450) ma
 - key: exr-countable-sets-c2
   kind: exr
-  file: 02-countable-sets.md
+  file: 01-countable-sets.md
   line: 456
   hash: be848a088ba5
   verdicts:
@@ -1522,7 +722,7 @@ items:
       so no (N·) citation is due.'
 - key: ax-choice
   kind: ax
-  file: 03-countable-unions-and-choice.md
+  file: 02-countable-unions-and-choice.md
   line: 30
   hash: 18b44f911789
   verdicts:
@@ -1577,7 +777,7 @@ items:
       no defects.'
 - key: thm-surjection-right-inverse
   kind: thm
-  file: 03-countable-unions-and-choice.md
+  file: 02-countable-unions-and-choice.md
   line: 77
   hash: 3ed13ecdf0a6
   verdicts:
@@ -1599,7 +799,7 @@ items:
       it gives the ''iff'' at 03:91. This pays STATUS row 92.'
 - key: proof:thm-surjection-right-inverse
   kind: proof
-  file: 03-countable-unions-and-choice.md
+  file: 02-countable-unions-and-choice.md
   line: 87
   hash: bf89e497abdd
   verdicts:
@@ -1623,7 +823,7 @@ items:
       uses def-family-union-intersection. Neither is cited or ledgered. [finding refuted by skeptics]
 - key: check:03-countable-unions-and-choice:1
   kind: check
-  file: 03-countable-unions-and-choice.md
+  file: 02-countable-unions-and-choice.md
   line: 93
   hash: 338f418708d3
   verdicts:
@@ -1645,7 +845,7 @@ items:
       blueprint asks.'
 - key: thm-countable-union
   kind: thm
-  file: 03-countable-unions-and-choice.md
+  file: 02-countable-unions-and-choice.md
   line: 105
   hash: 989a8951c013
   verdicts:
@@ -1678,7 +878,7 @@ items:
       in bo
 - key: proof:thm-countable-union
   kind: proof
-  file: 03-countable-unions-and-choice.md
+  file: 02-countable-unions-and-choice.md
   line: 119
   hash: 408322484b19
   verdicts:
@@ -1704,7 +904,7 @@ items:
       one surjection s. The ''only line'' meta-claim holds.'
 - key: exm-choice-free-unions
   kind: exm
-  file: 03-countable-unions-and-choice.md
+  file: 02-countable-unions-and-choice.md
   line: 149
   hash: 6b144da7e9c9
   verdicts:
@@ -1750,7 +950,7 @@ items:
       from infinitely many sets is made without a rule. The citations are correct and earlier in the book.
 - key: thm-algebraic-countable
   kind: thm
-  file: 03-countable-unions-and-choice.md
+  file: 02-countable-unions-and-choice.md
   line: 181
   hash: fd13a725b6ad
   verdicts:
@@ -1774,7 +974,7 @@ items:
       tuple from 03:169 and in C2. NOTATION.md:28 says one symbol, one meaning. [finding refuted by skeptics]'
 - key: proof:thm-algebraic-countable
   kind: proof
-  file: 03-countable-unions-and-choice.md
+  file: 02-countable-unions-and-choice.md
   line: 191
   hash: 8ece87dbb69d
   verdicts:
@@ -1798,7 +998,7 @@ items:
       sets Z_d and ℤ_{>0}. The claim at 03:199 that the proof cites the theorem twice is true.'
 - key: exr-countable-unions-and-choice-a1
   kind: exr
-  file: 03-countable-unions-and-choice.md
+  file: 02-countable-unions-and-choice.md
   line: 207
   hash: c0dc08fac519
   verdicts:
@@ -1839,7 +1039,7 @@ items:
       (:'
 - key: exr-countable-unions-and-choice-b1
   kind: exr
-  file: 03-countable-unions-and-choice.md
+  file: 02-countable-unions-and-choice.md
   line: 235
   hash: 6d253859c42d
   verdicts:
@@ -1869,7 +1069,7 @@ items:
       √y are checked. The worked material is the ax-choice examples and 'A rule that picks' at 03:53-67.
 - key: exr-countable-unions-and-choice-b2
   kind: exr
-  file: 03-countable-unions-and-choice.md
+  file: 02-countable-unions-and-choice.md
   line: 258
   hash: 298859a03063
   verdicts:
@@ -1912,7 +1112,7 @@ items:
       base and at the step'
 - key: exr-countable-unions-and-choice-b3
   kind: exr
-  file: 03-countable-unions-and-choice.md
+  file: 02-countable-unions-and-choice.md
   line: 284
   hash: 53644efddc6c
   verdicts:
@@ -1952,7 +1152,7 @@ items:
       and does not break a written rule. The mathematics is correct: D is countable by cor-product-cou'
 - key: exr-countable-unions-and-choice-c1
   kind: exr
-  file: 03-countable-unions-and-choice.md
+  file: 02-countable-unions-and-choice.md
   line: 296
   hash: c6fe67935eeb
   verdicts:
@@ -1992,7 +1192,7 @@ items:
       (b). The main marking scheme sums to 10. The alternative injectio
 - key: exr-countable-unions-and-choice-c2
   kind: exr
-  file: 03-countable-unions-and-choice.md
+  file: 02-countable-unions-and-choice.md
   line: 317
   hash: 54a4e35cda44
   verdicts:
@@ -2026,7 +1226,7 @@ items:
       increasing-order/surjection alternative.
 - key: exr-countable-unions-and-choice-c3
   kind: exr
-  file: 03-countable-unions-and-choice.md
+  file: 02-countable-unions-and-choice.md
   line: 357
   hash: e1265fb9f289
   verdicts:
@@ -2069,7 +1269,7 @@ items:
       and cho'
 - key: thm-binary-sequences-uncountable
   kind: thm
-  file: 04-diagonal-arguments.md
+  file: 03-diagonal-arguments.md
   line: 33
   hash: 20cd9d97499c
   verdicts:
@@ -2090,7 +1290,7 @@ items:
       the diagonal is 0,1,0,1 and the flipped row g is 1,0,1,0, both correct.'
 - key: proof:thm-binary-sequences-uncountable
   kind: proof
-  file: 04-diagonal-arguments.md
+  file: 03-diagonal-arguments.md
   line: 39
   hash: 2914e2dc3eca
   verdicts:
@@ -2114,7 +1314,7 @@ items:
       rule tags are present.
 - key: check:04-diagonal-arguments:1
   kind: check
-  file: 04-diagonal-arguments.md
+  file: 03-diagonal-arguments.md
   line: 51
   hash: 6e6465b73e7a
   verdicts:
@@ -2135,7 +1335,7 @@ items:
       The solution is a sibling block, as STYLE §5 requires.
 - key: thm-cantor
   kind: thm
-  file: 04-diagonal-arguments.md
+  file: 03-diagonal-arguments.md
   line: 67
   hash: 8a9ea7b71bab
   verdicts:
@@ -2157,7 +1357,7 @@ items:
       and ''Section 8.5 names this relation'' is true of def-card-le (ch08/05).'
 - key: proof:thm-cantor
   kind: proof
-  file: 04-diagonal-arguments.md
+  file: 03-diagonal-arguments.md
   line: 81
   hash: 5350b05bdaa0
   verdicts:
@@ -2181,7 +1381,7 @@ items:
       is true of line 86.
 - key: cor-powerset-naturals-uncountable
   kind: cor
-  file: 04-diagonal-arguments.md
+  file: 03-diagonal-arguments.md
   line: 97
   hash: 70a95229f124
   verdicts:
@@ -2201,7 +1401,7 @@ items:
     evidence: 04:97-101, together with line 107. The bijection S ↦ ind_S is ledgered at line 346.
 - key: proof:cor-powerset-naturals-uncountable
   kind: proof
-  file: 04-diagonal-arguments.md
+  file: 03-diagonal-arguments.md
   line: 103
   hash: 8980286e4b5b
   verdicts:
@@ -2222,7 +1422,7 @@ items:
     evidence: 04:103-105. Non-empty because ∅ ∈ P(N), and thm-cantor with X = N excludes the surjection.
 - key: def-decimal-expansion
   kind: def
-  file: 04-diagonal-arguments.md
+  file: 03-diagonal-arguments.md
   line: 117
   hash: 524f6baae6b4
   verdicts:
@@ -2268,7 +1468,7 @@ items:
       uniqueness at '
 - key: thm-reals-uncountable-decimal
   kind: thm
-  file: 04-diagonal-arguments.md
+  file: 03-diagonal-arguments.md
   line: 160
   hash: 820af0fe836d
   verdicts:
@@ -2303,7 +1503,7 @@ items:
       checks out: d_{1,1}=5 and d_{n'
 - key: proof:thm-reals-uncountable-decimal
   kind: proof
-  file: 04-diagonal-arguments.md
+  file: 03-diagonal-arguments.md
   line: 170
   hash: df5f0a7c5566
   verdicts:
@@ -2339,7 +1539,7 @@ items:
       consequence at'
 - key: cor-transcendental-exist
   kind: cor
-  file: 04-diagonal-arguments.md
+  file: 03-diagonal-arguments.md
   line: 197
   hash: 497e2826fc68
   verdicts:
@@ -2383,7 +1583,7 @@ items:
       is advisory only.'
 - key: proof:cor-transcendental-exist
   kind: proof
-  file: 04-diagonal-arguments.md
+  file: 03-diagonal-arguments.md
   line: 203
   hash: d57b10f07403
   verdicts:
@@ -2429,7 +1629,7 @@ items:
       each step.
 - key: exr-diagonal-arguments-a1
   kind: exr
-  file: 04-diagonal-arguments.md
+  file: 03-diagonal-arguments.md
   line: 215
   hash: ad792aacfe3c
   verdicts:
@@ -2460,7 +1660,7 @@ items:
       f: X → X, D is not a value but need not be in X.'
 - key: exr-diagonal-arguments-b1
   kind: exr
-  file: 04-diagonal-arguments.md
+  file: 03-diagonal-arguments.md
   line: 240
   hash: 5bd6bf86843a
   verdicts:
@@ -2490,7 +1690,7 @@ items:
       is named.'
 - key: exr-diagonal-arguments-b2
   kind: exr
-  file: 04-diagonal-arguments.md
+  file: 03-diagonal-arguments.md
   line: 252
   hash: 4c5c16f1b27d
   verdicts:
@@ -2532,7 +1732,7 @@ items:
       (02:155) and cor-powerset-naturals-uncountable give the contradiction. I solved it indep'
 - key: exr-diagonal-arguments-b3
   kind: exr
-  file: 04-diagonal-arguments.md
+  file: 03-diagonal-arguments.md
   line: 262
   hash: 57f097f81829
   verdicts:
@@ -2578,7 +1778,7 @@ items:
       the :154 consequence. For 1/2 (:273): the both-end-in-9s case is now closed, because a sequence '
 - key: exr-diagonal-arguments-c1
   kind: exr
-  file: 04-diagonal-arguments.md
+  file: 03-diagonal-arguments.md
   line: 280
   hash: 4e6a7f663fb3
   verdicts:
@@ -2610,7 +1810,7 @@ items:
       are apt.
 - key: exr-diagonal-arguments-c2
   kind: exr
-  file: 04-diagonal-arguments.md
+  file: 03-diagonal-arguments.md
   line: 301
   hash: 2e7f3671774d
   verdicts:
@@ -2644,7 +1844,7 @@ items:
       injection route is also covered by the scheme. The hints name the object and the correspondence.
 - key: def-card-le
   kind: def
-  file: 05-comparing-cardinalities.md
+  file: 04-comparing-cardinalities.md
   line: 11
   hash: e7854476ff49
   verdicts:
@@ -2668,7 +1868,7 @@ items:
       {x1}={x2} is ledgered. The warning and the non-example are sound.'
 - key: prp-card-le-preorder
   kind: prp
-  file: 05-comparing-cardinalities.md
+  file: 04-comparing-cardinalities.md
   line: 35
   hash: 68867fbfc1b0
   verdicts:
@@ -2690,7 +1890,7 @@ items:
       2N≠N claim is ledgered (l.399).
 - key: proof:prp-card-le-preorder
   kind: proof
-  file: 05-comparing-cardinalities.md
+  file: 04-comparing-cardinalities.md
   line: 46
   hash: ebc38d9f0bae
   verdicts:
@@ -2712,7 +1912,7 @@ items:
       (a).
 - key: prp-card-le-surjection
   kind: prp
-  file: 05-comparing-cardinalities.md
+  file: 04-comparing-cardinalities.md
   line: 56
   hash: 0241d61a7eda
   verdicts:
@@ -2735,7 +1935,7 @@ items:
       at 02:108.
 - key: proof:prp-card-le-surjection
   kind: proof
-  file: 05-comparing-cardinalities.md
+  file: 04-comparing-cardinalities.md
   line: 62
   hash: ebba443d60cf
   verdicts:
@@ -2760,7 +1960,7 @@ items:
       is flagged.
 - key: check:05-comparing-cardinalities:1
   kind: check
-  file: 05-comparing-cardinalities.md
+  file: 04-comparing-cardinalities.md
   line: 70
   hash: 0602df634d03
   verdicts:
@@ -2793,7 +1993,7 @@ items:
       it), ''re'
 - key: thm-schroder-bernstein
   kind: thm
-  file: 05-comparing-cardinalities.md
+  file: 04-comparing-cardinalities.md
   line: 82
   hash: be6f47731dda
   verdicts:
@@ -2847,7 +2047,7 @@ items:
       matches STATUS.'
 - key: proof:thm-schroder-bernstein
   kind: proof
-  file: 05-comparing-cardinalities.md
+  file: 04-comparing-cardinalities.md
   line: 104
   hash: c4396f118b46
   verdicts:
@@ -2885,7 +2085,7 @@ items:
       with the form used.'
 - key: exm-closed-open-interval
   kind: exm
-  file: 05-comparing-cardinalities.md
+  file: 04-comparing-cardinalities.md
   line: 178
   hash: 57ac416ed00e
   verdicts:
@@ -2908,7 +2108,7 @@ items:
       and the sample values are right. The sidecar passes.
 - key: exm-reals-open-interval
   kind: exm
-  file: 05-comparing-cardinalities.md
+  file: 04-comparing-cardinalities.md
   line: 207
   hash: b19364c72fce
   verdicts:
@@ -2933,7 +2133,7 @@ items:
       prp-countable-image. The sidecar passes.
 - key: check:05-comparing-cardinalities:2
   kind: check
-  file: 05-comparing-cardinalities.md
+  file: 04-comparing-cardinalities.md
   line: 235
   hash: 63f7568087b4
   verdicts:
@@ -2966,7 +2166,7 @@ items:
       only that N '
 - key: exr-comparing-cardinalities-a1
   kind: exr
-  file: 05-comparing-cardinalities.md
+  file: 04-comparing-cardinalities.md
   line: 247
   hash: d515bbed4fbe
   verdicts:
@@ -2998,7 +2198,7 @@ items:
       1 is the only use of f''s injectivity).'
 - key: exr-comparing-cardinalities-b1
   kind: exr
-  file: 05-comparing-cardinalities.md
+  file: 04-comparing-cardinalities.md
   line: 278
   hash: 6db348595218
   verdicts:
@@ -3041,7 +2241,7 @@ items:
       (m,k) -> (m,j(k)) fol
 - key: exr-comparing-cardinalities-b2
   kind: exr
-  file: 05-comparing-cardinalities.md
+  file: 04-comparing-cardinalities.md
   line: 300
   hash: 898dbe4a1f68
   verdicts:
@@ -3073,7 +2273,7 @@ items:
       works, since a superset of an uncountable set is uncountable (prp-countable-subset).
 - key: exr-comparing-cardinalities-b3
   kind: exr
-  file: 05-comparing-cardinalities.md
+  file: 04-comparing-cardinalities.md
   line: 314
   hash: adf23f1f10f4
   verdicts:
@@ -3114,7 +2314,7 @@ items:
       N and codomain {0,1}), and the pairs are equal by @def-ordered-pair. Phi(Psi(c)) = c holds by'
 - key: exr-comparing-cardinalities-c1
   kind: exr
-  file: 05-comparing-cardinalities.md
+  file: 04-comparing-cardinalities.md
   line: 332
   hash: b04dcb9849b4
   verdicts:
@@ -3149,7 +2349,7 @@ items:
       and give the '
 - key: exr-comparing-cardinalities-c2
   kind: exr
-  file: 05-comparing-cardinalities.md
+  file: 04-comparing-cardinalities.md
   line: 376
   hash: 490def46136b
   verdicts:
@@ -3192,7 +2392,7 @@ items:
       This matches'
 - key: thm-infinite-countable-subset
   kind: thm
-  file: 06-infinite-sets.md
+  file: 05-infinite-sets.md
   line: 9
   hash: 382e0f08d31c
   verdicts:
@@ -3214,7 +2414,7 @@ items:
       infinite per def-countably-infinite (02:41).
 - key: proof:thm-infinite-countable-subset
   kind: proof
-  file: 06-infinite-sets.md
+  file: 05-infinite-sets.md
   line: 19
   hash: ee4981247900
   verdicts:
@@ -3248,7 +2448,7 @@ items:
       matches the '
 - key: check:06-infinite-sets:1
   kind: check
-  file: 06-infinite-sets.md
+  file: 05-infinite-sets.md
   line: 61
   hash: 2e347da86b3a
   verdicts:
@@ -3270,7 +2470,7 @@ items:
       prp-union-two-countable (02:155).
 - key: thm-infinite-iff-proper-subset
   kind: thm
-  file: 06-infinite-sets.md
+  file: 05-infinite-sets.md
   line: 73
   hash: 7d89a084844a
   verdicts:
@@ -3291,7 +2491,7 @@ items:
     evidence: 06:69-73. The statement is right, and both directions are proved.
 - key: proof:thm-infinite-iff-proper-subset
   kind: proof
-  file: 06-infinite-sets.md
+  file: 05-infinite-sets.md
   line: 83
   hash: cfca915868d0
   verdicts:
@@ -3316,7 +2516,7 @@ items:
       m-1. (The idea block's wrong pointer to the hotel is reported separately under key ''.)
 - key: check:06-infinite-sets:2
   kind: check
-  file: 06-infinite-sets.md
+  file: 05-infinite-sets.md
   line: 105
   hash: b2017c0bb9a2
   verdicts:
@@ -3338,7 +2538,7 @@ items:
       with more than one point.
 - key: exr-infinite-sets-a1
   kind: exr
-  file: 06-infinite-sets.md
+  file: 05-infinite-sets.md
   line: 117
   hash: 0e97f65bc3e1
   verdicts:
@@ -3370,7 +2570,7 @@ items:
       rule.
 - key: exr-infinite-sets-b1
   kind: exr
-  file: 06-infinite-sets.md
+  file: 05-infinite-sets.md
   line: 140
   hash: e0fa7fae747d
   verdicts:
@@ -3403,7 +2603,7 @@ items:
       the proof of thm-infinite-iff-proper-subset.'
 - key: exr-infinite-sets-b2
   kind: exr
-  file: 06-infinite-sets.md
+  file: 05-infinite-sets.md
   line: 161
   hash: 197ad3180573
   verdicts:
@@ -3444,7 +2644,7 @@ items:
       (ℕ is infinite)'
 - key: exr-infinite-sets-b3
   kind: exr
-  file: 06-infinite-sets.md
+  file: 05-infinite-sets.md
   line: 175
   hash: b4e77ffb76ec
   verdicts:
@@ -3485,7 +2685,7 @@ items:
       (-∞,0] nor ℝ is'
 - key: exr-infinite-sets-c1
   kind: exr
-  file: 06-infinite-sets.md
+  file: 05-infinite-sets.md
   line: 191
   hash: 2e371266c040
   verdicts:
@@ -3526,7 +2726,7 @@ items:
       with base m+'
 - key: exr-infinite-sets-c2
   kind: exr
-  file: 06-infinite-sets.md
+  file: 05-infinite-sets.md
   line: 234
   hash: 1880c2584a06
   verdicts:
@@ -3557,7 +2757,7 @@ items:
       hence infinite. B2 then applies with C=ℚ.
 - key: exr-infinite-sets-r1
   kind: exr
-  file: 06-infinite-sets.md
+  file: 05-infinite-sets.md
   line: 246
   hash: 3265a39df183
   verdicts:
@@ -3590,7 +2790,7 @@ items:
       solution by @thm-strong-induction-from-base.
 - key: exr-infinite-sets-r2
   kind: exr
-  file: 06-infinite-sets.md
+  file: 05-infinite-sets.md
   line: 268
   hash: 5a0889682eaf
   verdicts:
@@ -3633,7 +2833,7 @@ items:
       The S5a finding is res'
 - key: exr-infinite-sets-r3
   kind: exr
-  file: 06-infinite-sets.md
+  file: 05-infinite-sets.md
   line: 286
   hash: 19d9405b7263
   verdicts:
@@ -3665,7 +2865,7 @@ items:
       The source (@def-truth-function) is hidden in the problem and named in the solution.
 - key: exr-infinite-sets-r4
   kind: exr
-  file: 06-infinite-sets.md
+  file: 05-infinite-sets.md
   line: 300
   hash: 2f4d4a063dc6
   verdicts:

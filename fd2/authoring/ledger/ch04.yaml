@@ -1,0 +1,1955 @@
+chapter: 4
+dir: ch04-relations-and-orders
+items:
+- key: def-relation-properties
+  kind: def
+  file: 01-relations.md
+  line: 11
+  hash: e88eef2f3db0
+  verdicts:
+  - stage: S5a
+    verdict: minor
+    by: refereeA
+    hash: e88eef2f3db0
+    date: '2026-10-11'
+    model: claude-opus-5-5
+    evidence: 04-relations.md:41 The displayed witnesses regroup the conjunction without citing the rule
+      that allows it.
+  - stage: S5b
+    verdict: minor
+    by: refereeB
+    hash: e88eef2f3db0
+    date: '2026-10-11'
+    model: claude-opus-5-5
+    evidence: 04-relations.md:41 The witness forms are said to follow from @prp-bounded-quantifier-negation
+      and @prp-negated-implication. Those give (xRy ∧ yRx) ∧ ¬(x=y), but the display writes xRy ∧ (yRx
+      ∧ x≠y). The rebracketing needs @prp-and-associative, which is neither cited nor ledgered. The same
+      happens on line 42 and in the A1(a) solution at line 166.
+  - stage: S7r
+    verdict: correct
+    by: rereferee
+    hash: e88eef2f3db0
+    date: '2026-10-11'
+    model: claude-opus-5-5
+    evidence: 04-relations.md:14-45. The four definitions match their symbolic forms. The witnesses at
+      lines 39-42 are now exactly what @prp-negated-implication (09-quantifier-laws.md:134, ¬(φ→ψ) ⊣⊢
+      φ ∧ ¬ψ) gives with φ = (xRy ∧ yRx) or (xRy ∧ yRz), so no regrouping and no @prp-and-associative
+      is needed. The quantifiers are pushed through by @prp-bounded-quantifier-negation (a) (09:199).
+      All three earlier S5b f
+- key: prp-divides-partial-order
+  kind: prp
+  file: 01-relations.md
+  line: 71
+  hash: 96bb0b9fe6a2
+  verdicts:
+  - stage: S5a
+    verdict: correct
+    by: refereeA
+    hash: 96bb0b9fe6a2
+    date: '2026-10-11'
+    model: claude-opus-5-5
+    evidence: '04:74. The statement is true. Every hypothesis is used: the restriction to ℕ is used in
+      Case 2 (k,l>0), and dropping it gives the counterexample 2,-2 that the text itself states.'
+  - stage: S5b
+    verdict: correct
+    by: refereeB
+    hash: 96bb0b9fe6a2
+    date: '2026-10-11'
+    model: claude-opus-5-5
+    evidence: '04:71-75: the statement is true. 04:78: the idea''s ''On N the multipliers are positive''
+      is read inside the a != 0 case and is fine there. The ledger covers the order and cancellation facts
+      (04:285-286).'
+- key: proof:prp-divides-partial-order
+  kind: proof
+  file: 01-relations.md
+  line: 81
+  hash: 1217718deb04
+  verdicts:
+  - stage: S5a
+    verdict: correct
+    by: refereeA
+    hash: 1217718deb04
+    date: '2026-10-11'
+    model: claude-opus-5-5
+    evidence: '04:82-94. Reflexive: a=1·a. Transitive: c=(lk)a, with lk∈ℤ by @prp-integers-closed(a).
+      Case 1 handles 0. Case 2: a,b≥1 by @lem-naturals-arithmetic(a). k>0 is a school order fact. k,l≥1
+      by @prp-integers-closed(b), which says exactly ℤ_{>0}={n∈ℕ:n≥1}. kl=1 comes from cancelling a≠0
+      (in the ledger). From k>1, kl>l≥1 gives a contradiction, so k=1 and b=a. Quantifier order: k and
+      l depend only on a and'
+  - stage: S5b
+    verdict: correct
+    by: refereeB
+    hash: 1217718deb04
+    date: '2026-10-11'
+    model: claude-opus-5-5
+    evidence: '04:82-94: checked each step. Reflexive: a = 1·a. Transitive: @prp-integers-closed (a).
+      Case 1 covers a=0 or b=0. Case 2: @lem-naturals-arithmetic (a) and @prp-integers-closed (b), which
+      matches 01:110 (Z_{>0} = {n in N : n >= 1}); then kl=1 and k>1 gives kl>l>=1, a contradiction. The
+      Z witness is correct: -2 = (-1)·2 and 2 = (-1)(-2). The ledger covers the uncited steps.'
+- key: exm-relation-table
+  kind: exm
+  file: 01-relations.md
+  line: 103
+  hash: 817ae8899958
+  verdicts:
+  - stage: S5a
+    verdict: correct
+    by: refereeA
+    hash: 8b9e8710fdaa
+    date: '2026-10-11'
+    model: claude-opus-5-5
+    evidence: 04:110-123. All 32 entries checked. 2∤1 holds by discreteness (@prp-integers-closed(c),
+      which says m<n ⇒ m+1≤n, enough for 0<k ⇒ 1≤k). The ⊆ witness needs X≠∅, and that is assumed. The
+      relation x−y∈ℤ uses @prp-integers-closed(a). The degenerate cases at 04:128-130 are correct. Sidecar
+      ok.
+  - stage: S5b
+    verdict: minor
+    by: refereeB
+    hash: 8b9e8710fdaa
+    date: '2026-10-11'
+    model: claude-opus-5-5
+    evidence: 04-relations.md:123 The meta-claim at line 101 says every 'yes' has a one-line argument
+      after the table. The 'yes' for reflexivity of <= on R (row at 113) has none, and the ledger (line
+      287) lists only 'antisymmetry and transitivity of <= and <'.
+  - stage: S7r
+    verdict: correct
+    by: rereferee
+    hash: 817ae8899958
+    date: '2026-10-11'
+    model: claude-opus-5-5
+    evidence: '04-relations.md:101-124. Line 123 now gives the reflexivity of ≤ (''x = x gives x ≤ x''),
+      so the meta-claim at line 101 (every ''yes'' has a one-line argument) holds. The ledger at line
+      287 adds ''reflexivity of <= (x = x)'', so the earlier finding is resolved. Other checks: ''Section
+      6.1, after @prp-empty-set-unique'' matches 06/01-sets-and-subsets.md:269, which proves ∅ ⊆ A for
+      every A. The step 2∤1 via'
+- key: check:04-relations:1
+  kind: check
+  file: 01-relations.md
+  line: 132
+  hash: a8b7870d9dad
+  verdicts:
+  - stage: S5a
+    verdict: correct
+    by: refereeA
+    hash: a33a3a5fc554
+    date: '2026-10-11'
+    model: claude-opus-5-5
+    evidence: 04:137. Reflexivity follows from @thm-prime-factor, which covers every integer ≥2. Witnesses
+      2,4 and 2,6,3 are correct. 'The only prime dividing 2 is 2' follows from @def-prime. 2∤3 is stated
+      without reason but is the same discreteness argument as 3∤14 in @def-divides.
+  - stage: S5b
+    verdict: minor
+    by: refereeB
+    hash: a33a3a5fc554
+    date: '2026-10-11'
+    model: claude-opus-5-5
+    evidence: '04-relations.md:137 The non-transitivity witness relies on two uncited and unledgered facts:
+      ''the only prime dividing 2 is 2'' (from @def-prime with 2 prime, shown after def-prime at 02:112)
+      and ''2 ∤ 3''.'
+  - stage: S7r
+    verdict: correct
+    by: rereferee
+    hash: e47d8846f216
+    date: '2026-10-11'
+    model: claude-opus-5-5
+    evidence: '04-relations.md:137. The earlier finding is resolved. The text now argues that a prime
+      dividing 2 is a positive divisor ≥ 2, hence 2, citing ''the example after @def-prime''. That example
+      (07/02-induction-in-practice.md:113) proves the positive divisors of 2 lie in {1,2}, and @def-prime
+      requires p ≥ 2. For 2∤3, 3 = 2k gives 1<k<2, which is impossible by @prp-integers-closed (c), since
+      1<k gives k ≥ '
+- key: exr-relations-a1
+  kind: exr
+  file: 01-relations.md
+  line: 154
+  hash: d652cfc219d6
+  verdicts:
+  - stage: S5a
+    verdict: minor
+    by: refereeA
+    hash: 0ca6afcde3c1
+    date: '2026-10-11'
+    model: claude-opus-5-5
+    evidence: '04:166-172. (b): equality and ∅ are correct witnesses. (c): witnesses 0,1 and 0,1,2 checked.
+      (d): 4 is correct. (a) has the same uncited ∧-regrouping as at 04:41 (minor).'
+  - stage: S5b
+    verdict: minor
+    by: refereeB
+    hash: 0ca6afcde3c1
+    date: '2026-10-11'
+    model: claude-opus-5-5
+    evidence: '04:166: (a) rebrackets ((xRy ∧ yRx) ∧ ¬(x=y)) as (xRy ∧ (yRx ∧ x≠y)). @prp-negated-implication
+      does not give that form, and @prp-and-associative is not cited. Parts (b)-(d) are correct: the count
+      for (d) is 4, which matches the blueprint.'
+  - stage: S6
+    verdict: correct
+    by: verifier
+    hash: 0ca6afcde3c1
+    date: '2026-10-11'
+    model: claude-opus-5-5
+    evidence: 04:165-172. I solved it first and checked it. (a) The negation is right. (b) False, with
+      equality as the witness. (c) Reflexive and symmetric, not antisymmetric (0,1), not transitive (0,1,2).
+      (d) Script brute force gives 4.
+  - stage: S7r
+    verdict: correct
+    by: rereferee
+    hash: d652cfc219d6
+    date: '2026-10-11'
+    model: claude-opus-5-5
+    evidence: '04-relations.md:166-172. (a) The negation ∃x∈X ∃y∈X ((xRy ∧ yRx) ∧ x≠y) now matches @prp-negated-implication
+      and @prp-bounded-quantifier-negation directly, with no regrouping. (b) False: equality (and ∅) is
+      both symmetric and antisymmetric. (c) |x−y| ≤ 1: reflexive and symmetric; the witnesses 0,1 and
+      0,1,2 are correct. (d) 2·2 = 4 reflexive relations, and the listing is correct. My own solutions '
+- key: exr-relations-b1
+  kind: exr
+  file: 01-relations.md
+  line: 177
+  hash: c0325a233d88
+  verdicts:
+  - stage: S5a
+    verdict: minor
+    by: refereeA
+    hash: 386aa4f857de
+    date: '2026-10-11'
+    model: claude-opus-5-5
+    evidence: 04-relations.md:192 The pointer calls Chapter 10 'optional', but Chapter 10 is now main
+      line.
+  - stage: S5b
+    verdict: minor
+    by: refereeB
+    hash: 386aa4f857de
+    date: '2026-10-11'
+    model: claude-opus-5-5
+    evidence: 04-relations.md:198 The witness for 'not antisymmetric' must show x P y, y P x and x ≠ y.
+      The text shows only 1 P 2.
+  - stage: S6
+    verdict: correct
+    by: verifier
+    hash: 386aa4f857de
+    date: '2026-10-11'
+    model: claude-opus-5-5
+    evidence: '04:191-201. My answers agree on all five. E: R,S,T, not antisymmetric. S: R,S,T, not antisymmetric.
+      L: R,A,T, not symmetric. P: S,T, not reflexive at 0, not antisymmetric. N: antisymmetric only, vacuously.
+      Every witness checks. The worked example is exm-relation-table.'
+  - stage: S7r
+    verdict: correct
+    by: rereferee
+    hash: c0325a233d88
+    date: '2026-10-11'
+    model: claude-opus-5-5
+    evidence: '04-relations.md:192-200. Both earlier findings are resolved. (1) Line 192 says ''Chapter
+      10 builds ℤ from the classes of this relation'' with no ''optional''. authoring/blueprints/ch10.md:4
+      marks Ch 10 MAIN LINE, and :65/:94 confirm that def-integers-as-classes uses (a,b)~(c,d) ⟺ a+d=b+c.
+      (2) In (d), the not-antisymmetric witness now shows 1P2, 2P1 (products 2 > 0) and 1 ≠ 2. I re-solved
+      (a)-(e): (a) '
+- key: exr-relations-b2
+  kind: exr
+  file: 01-relations.md
+  line: 203
+  hash: 9cb9db1605a4
+  verdicts:
+  - stage: S5a
+    verdict: correct
+    by: refereeA
+    hash: c6328287f5d3
+    date: '2026-10-11'
+    model: claude-opus-5-5
+    evidence: '04:212-222. The path list for R is complete (checked by hand). The non-example fails transitivity
+      at 3→1→2. The count of six checks out: preorders with exactly one 2-element class and the third
+      element comparable to it, so 3 pairs × above/below. Sidecar ok.'
+  - stage: S5b
+    verdict: minor
+    by: refereeB
+    hash: c6328287f5d3
+    date: '2026-10-11'
+    model: claude-opus-5-5
+    evidence: 04-relations.md:222 The exception 'unless the arrow avoids the pair' cannot occur on {1,2,3}.
+      It suggests that a 6-pair answer exists, but none does. The count 'exactly six' is asserted without
+      the listing it cites.
+  - stage: S6
+    verdict: minor
+    by: verifier
+    hash: c6328287f5d3
+    date: '2026-10-11'
+    model: claude-opus-5-5
+    evidence: 04-relations.md:222 The closing paragraph contains a vacuous clause and an unproved count.
+      'unless the arrow avoids the pair' can never apply, and 'Listing all the possibilities shows that
+      {1,2,3} carries exactly six correct answers' is asserted, not shown.
+  - stage: S7r
+    verdict: minor
+    by: rereferee
+    hash: 0b0a58e7fddb
+    date: '2026-10-11'
+    model: claude-opus-5-5
+    evidence: 'the pair are relabelings of the example, and those with c below are obtained by reversing
+      every arrow, which keeps loops, two-way pairs, one-way pairs and the shortcuts of two-arrow paths.''
+      (Also optional: the sentence ''such an arrow joins the third element to one element of the pair''
+      assumes a single two-way pair before the next sentences prove it; reordering would remove the forward
+      dependence.)'
+  - stage: S7r
+    verdict: correct
+    by: rereferee
+    hash: 9cb9db1605a4
+    date: '2026-10-11'
+    model: claude-opus-5-5
+    evidence: and the reversal argument (verified) covers the three 'below' cases. So there are exactly
+      six answers. The counterexample {loops,(1,2),(2,1),(3,1)} does fail transitivity (3R1R2, not 3R2).
+      The ledger row at line 294 matches the argument. verify/ch07/exr-relations-b2.py runs, prints ok
+      and finds 6 answers by brute force, and its new assertion checks that the set of answers is closed
+      under reversal.
+- key: exr-relations-b3
+  kind: exr
+  file: 01-relations.md
+  line: 225
+  hash: 0e04ace6338f
+  verdicts:
+  - stage: S5a
+    verdict: correct
+    by: refereeA
+    hash: 0e04ace6338f
+    date: '2026-10-11'
+    model: claude-opus-5-5
+    evidence: 04:232-234. The intersection argument is valid. The union counterexample {(1,2)}∪{(2,3)}
+      is correct, and each part is vacuously transitive.
+  - stage: S5b
+    verdict: correct
+    by: refereeB
+    hash: 0e04ace6338f
+    date: '2026-10-11'
+    model: claude-opus-5-5
+    evidence: '04:232-234: the intersection proof is complete. R={(1,2)} and S={(2,3)} are each vacuously
+      transitive; their union lacks (1,3).'
+  - stage: S6
+    verdict: correct
+    by: verifier
+    hash: 0e04ace6338f
+    date: '2026-10-11'
+    model: claude-opus-5-5
+    evidence: '04:231-234. The intersection proof is complete. The script checks the union counterexample:
+      {(1,2)} and {(2,3)} are transitive and their union is not.'
+- key: exr-relations-c1
+  kind: exr
+  file: 01-relations.md
+  line: 239
+  hash: 0b4131d20e59
+  verdicts:
+  - stage: S5a
+    verdict: correct
+    by: refereeA
+    hash: 0b4131d20e59
+    date: '2026-10-11'
+    model: claude-opus-5-5
+    evidence: '04:251-257. (a) is correct by @def-relation for R^{-1}, @prp-subset-antisymmetric and @def-ordered-pair,
+      and pairs of R∩R^{-1} lie in X×X because R⊆X×X. (b): R=R∩R^{-1}⊆Δ_X, and the converse holds. Δ_X
+      is in NOTATION.md:73.'
+  - stage: S5b
+    verdict: correct
+    by: refereeB
+    hash: 0b4131d20e59
+    date: '2026-10-11'
+    model: claude-opus-5-5
+    evidence: '04:251-257: (a) both directions, with @prp-subset-antisymmetric. The Δ_X membership uses
+      @def-ordered-pair, which is ledgered (04:294). (b) R = R∩R^{-1} ⊆ Δ_X, and the converse holds. Δ_X
+      is in NOTATION row 73 as a local symbol.'
+  - stage: S6
+    verdict: correct
+    by: verifier
+    hash: 0b4131d20e59
+    date: '2026-10-11'
+    model: claude-opus-5-5
+    evidence: 04:250-257. Both equivalences in (a) are proved. (b) R=R∩R^{-1}⊆Δ_X, and the converse (every
+      subset of Δ_X has both properties) is correct.
+- key: exr-relations-c2
+  kind: exr
+  file: 01-relations.md
+  line: 260
+  hash: fe819589950c
+  verdicts:
+  - stage: S5a
+    verdict: correct
+    by: refereeA
+    hash: fe819589950c
+    date: '2026-10-11'
+    model: claude-opus-5-5
+    evidence: '04:267-273. R⊆D×D uses symmetry. Reflexivity on D: the ∃E is applied to x∈D, which is the
+      existential itself, so the eigenvariable y is fresh and the conclusion xRx does not contain y. Symmetry
+      and transitivity restrict to D. Both hypotheses are used. Without symmetry, R={(1,2)} on {1,2} has
+      D={1} and R⊄D×D.'
+  - stage: S5b
+    verdict: correct
+    by: refereeB
+    hash: fe819589950c
+    date: '2026-10-11'
+    model: claude-opus-5-5
+    evidence: '04:267-280: R ⊆ D×D via symmetry. Reflexivity on D uses ∃E on x ∈ D. The restriction holds.
+      The marking scheme sums to 2+4+2+2 = 10, and its fatal errors match the warning.'
+  - stage: S6
+    verdict: correct
+    by: verifier
+    hash: fe819589950c
+    date: '2026-10-11'
+    model: claude-opus-5-5
+    evidence: '04:266-280. It matches my proof: R⊆D×D by symmetry, then ∃E from x∈D, symmetry, transitivity.
+      The scheme sums to 10, and both the book''s proof and mine get 10. There is no other natural route.'
+- key: def-equivalence-relation
+  kind: def
+  file: 02-equivalence-relations.md
+  line: 19
+  hash: 4b0f4454faf1
+  verdicts:
+  - stage: S5a
+    verdict: correct
+    by: refereeA
+    hash: 4b0f4454faf1
+    date: '2026-10-11'
+    model: claude-opus-5-5
+    evidence: 05:19-31 matches def-relation-properties (04:11) clause for clause; non-example 05:70 checked
+      (lem-naturals-arithmetic (a),(b)); the 'why these clauses' witnesses at 74-76 are correct.
+  - stage: S5b
+    verdict: minor
+    by: refereeB
+    hash: 4b0f4454faf1
+    date: '2026-10-11'
+    model: claude-opus-5-5
+    evidence: 05-equivalence-relations.md:76 'Every number is linked to every other through a chain' (for
+      |x - y| <= 1 on R) needs the Archimedean property, a Chapter 11 fact. It has no ledger line and
+      no prose pointer.
+  - stage: S7r
+    verdict: correct
+    by: rereferee
+    hash: 4b0f4454faf1
+    date: '2026-10-11'
+    model: claude-opus-5-5
+    evidence: '05:76 now says only ''Every integer is linked to every other through a chain of steps of
+      length 1''. That is true. The ledger at 05:534 records it as an uncited ax-induction fact (Ch 3,
+      src/ch03-.../02-induction.md:21) that nothing depends on. So the earlier Archimedean finding is
+      resolved. Rechecked the rest: the 05:70 non-example (lem-naturals-arithmetic (a), (b)), the 05:74-75
+      bullets (empty rela'
+- key: exm-first-equivalences
+  kind: exm
+  file: 02-equivalence-relations.md
+  line: 43
+  hash: 47d315c10e3d
+  verdicts:
+  - stage: S5a
+    verdict: correct
+    by: refereeA
+    hash: 47d315c10e3d
+    date: '2026-10-11'
+    model: claude-opus-5-5
+    evidence: '05:57-63: =I with prp-equality-symmetric-transitive (ch04 07:101); X×X; |x|; the empty
+      relation on the empty set holds vacuously. All correct.'
+  - stage: S5b
+    verdict: correct
+    by: refereeB
+    hash: 47d315c10e3d
+    date: '2026-10-11'
+    model: claude-opus-5-5
+    evidence: '05:57-63 checked: =I and prp-equality-symmetric-transitive (ch04/07) as cited; X x X; |x|;
+      empty relation on the empty set is vacuous. 05:66 meta-claim that the theorems need no separate
+      case for the empty X holds for thm-classes-partition and thm-partition-equivalence (the partition
+      of the empty set is the empty set of blocks).'
+- key: def-equivalence-class
+  kind: def
+  file: 02-equivalence-relations.md
+  line: 90
+  hash: 748299eb1adf
+  verdicts:
+  - stage: S5a
+    verdict: correct
+    by: refereeA
+    hash: 748299eb1adf
+    date: '2026-10-11'
+    model: claude-opus-5-5
+    evidence: '05:93-100: class defined by specification; the (Eq2) remark is correct; the classes listed
+      at 102 are right.'
+  - stage: S5b
+    verdict: correct
+    by: refereeB
+    hash: 748299eb1adf
+    date: '2026-10-11'
+    model: claude-opus-5-5
+    evidence: '05:93-102: set-builder, (Eq2) remark, classes for the four examples all correct.'
+- key: check:05-equivalence-relations:1
+  kind: check
+  file: 02-equivalence-relations.md
+  line: 104
+  hash: 6726a5b3e86d
+  verdicts:
+  - stage: S5a
+    verdict: correct
+    by: refereeA
+    hash: 6726a5b3e86d
+    date: '2026-10-11'
+    model: claude-opus-5-5
+    evidence: '05:109: ten classes of three each; the sidecar thm-classes-partition.py passes.'
+  - stage: S5b
+    verdict: correct
+    by: refereeB
+    hash: 6726a5b3e86d
+    date: '2026-10-11'
+    model: claude-opus-5-5
+    evidence: '05:105-109: ten classes {k,k+10,k+20}, three each; sidecar thm-classes-partition.py passes.'
+- key: def-partition
+  kind: def
+  file: 02-equivalence-relations.md
+  line: 114
+  hash: e7396ceabdbe
+  verdicts:
+  - stage: S5a
+    verdict: correct
+    by: refereeA
+    hash: e7396ceabdbe
+    date: '2026-10-11'
+    model: claude-opus-5-5
+    evidence: '05:117-130: (P1)-(P3); ''exactly one block'' derived from (P2); the empty partition of
+      the empty set is consistent with def-family-union-intersection (ch06 02:197); the non-examples are
+      correct.'
+  - stage: S5b
+    verdict: correct
+    by: refereeB
+    hash: e7396ceabdbe
+    date: '2026-10-11'
+    model: claude-opus-5-5
+    evidence: '05:117-130: (P1)-(P3); ''exactly one'' argument at 126; the examples and non-examples (including
+      the empty partition and the set with an empty block) all check out.'
+- key: def-quotient-set
+  kind: def
+  file: 02-equivalence-relations.md
+  line: 134
+  hash: c84bf73f4885
+  verdicts:
+  - stage: S5a
+    verdict: minor
+    by: refereeA
+    hash: c84bf73f4885
+    date: '2026-10-11'
+    model: claude-opus-5-5
+    evidence: '05-equivalence-relations.md:144 Two claims about the quotient map rest on thm-classes-partition
+      (b), which is stated only later (05:157): q(a)=q(b) whenever a~b, and q is injective only when every
+      class has a single element. As placed, the claims are unjustified.'
+  - stage: S5b
+    verdict: minor
+    by: refereeB
+    hash: c84bf73f4885
+    date: '2026-10-11'
+    model: claude-opus-5-5
+    evidence: 05-equivalence-relations.md:144 The prose uses thm-classes-partition (b) before it is stated,
+      with no @ref and no ledger line.
+  - stage: S7r
+    verdict: correct
+    by: rereferee
+    hash: c84bf73f4885
+    date: '2026-10-11'
+    model: claude-opus-5-5
+    evidence: 05:144 no longer makes the injectivity claim before thm-classes-partition. The claim now
+      sits after the theorem (05:189), with (b) cited, so the S5a and S5b findings are resolved. What
+      remains is right. q is a function by def-function, since [a] is a subset of X by specification,
+      so [a] is in P(X) and therefore in X/~. q is surjective straight from the definition of X/~ (def-surjective).
+- key: thm-classes-partition
+  kind: thm
+  file: 02-equivalence-relations.md
+  line: 150
+  hash: 11d92d14f24c
+  verdicts:
+  - stage: S5a
+    verdict: correct
+    by: refereeA
+    hash: 11d92d14f24c
+    date: '2026-10-11'
+    model: claude-opus-5-5
+    evidence: '05:150-161: every hypothesis is used. Dropping (Eq1) (empty relation on {1}) breaks (a);
+      dropping (Eq2) (<= on {1,2}) breaks (c).'
+  - stage: S5b
+    verdict: minor
+    by: refereeB
+    hash: 11d92d14f24c
+    date: '2026-10-11'
+    model: claude-opus-5-5
+    evidence: 05-equivalence-relations.md:192 The warning says '"a + 1" as a function of the class [a]
+      needs a proof, which the section supplies'. As written the rule is integer-valued, so it is never
+      well defined and the section proves no such thing.
+  - stage: S7r
+    verdict: minor
+    by: rereferee
+    hash: 11d92d14f24c
+    date: '2026-10-11'
+    model: claude-opus-5-5
+    evidence: 'f-equivalence-class (05:93) defines classes only for an equivalence relation, and NOTATION.md:180
+      reserves [a] for equivalence classes. Exercise A1(c) at 05:404 is careful to say ''define [a] by
+      the formula of @def-equivalence-class''. Fix: write ''the sets [2] = {1, 2} and [1] = {1} given
+      by the formula of @def-equivalence-class'', or go back to the earlier ''the sets of elements below
+      2 and below 1''.'
+  - stage: S7r
+    verdict: correct
+    by: rereferee
+    hash: 11d92d14f24c
+    date: '2026-10-11'
+    model: claude-opus-5-5
+    evidence: t 05:192 is unchanged and still correct. The cited labels (def-equivalence-class, def-quotient-set,
+      def-partition, prp-subset-antisymmetric) exist and say what the proof uses. The other path in the
+      diff, verify/ch07/exr-relations-b2.py, belongs to the §04 exercise exr-relations-b2, not to this
+      section. I ran it with the .venv Python and it prints 'ok'. Its new reverse-closure assertions are
+      sound.
+- key: proof:thm-classes-partition
+  kind: proof
+  file: 02-equivalence-relations.md
+  line: 169
+  hash: ad81c4d80be6
+  verdicts:
+  - stage: S5a
+    verdict: correct
+    by: refereeA
+    hash: ad81c4d80be6
+    date: '2026-10-11'
+    model: claude-opus-5-5
+    evidence: '05:170-186: (a) uses Eq1; (b) uses Eq3 for one inclusion, Eq2+Eq3 for the other, then prp-subset-antisymmetric;
+      (c) c is chosen after a and b; (d) checks P1-P3. Every step is justified.'
+  - stage: S5b
+    verdict: correct
+    by: refereeB
+    hash: ad81c4d80be6
+    date: '2026-10-11'
+    model: claude-opus-5-5
+    evidence: '05:170-186: each step names (Eq1)/(Eq2)/(Eq3), def-equivalence-class, prp-subset-antisymmetric;
+      =E ledgered at 539; (P1)-(P3) checked against def-partition.'
+- key: thm-partition-equivalence
+  kind: thm
+  file: 02-equivalence-relations.md
+  line: 199
+  hash: 28f4accab79b
+  verdicts:
+  - stage: S5a
+    verdict: correct
+    by: refereeA
+    hash: 28f4accab79b
+    date: '2026-10-11'
+    model: claude-opus-5-5
+    evidence: '05:199-209: (b) presupposes that X/~ is a partition (thm-classes-partition (d)), which
+      comes earlier; the statement is true.'
+  - stage: S5b
+    verdict: correct
+    by: refereeB
+    hash: 28f4accab79b
+    date: '2026-10-11'
+    model: claude-opus-5-5
+    evidence: 'Idea 05:212 says ''(b) is @thm-classes-partition (b) in disguise'', but the proof of (b)
+      (05:222) never uses thm-classes-partition (b): it argues from def-equivalence-class, (Eq2) and (Eq3).
+      [finding refuted by skeptics]'
+- key: proof:thm-partition-equivalence
+  kind: proof
+  file: 02-equivalence-relations.md
+  line: 215
+  hash: fca56b77e063
+  verdicts:
+  - stage: S5a
+    verdict: correct
+    by: refereeA
+    hash: 9aa9360ca3bf
+    date: '2026-10-11'
+    model: claude-opus-5-5
+    evidence: '05:216-224: P and Q are chosen after x,y,z; (P2) is used for Eq3 and for [x]=P; block ⊆
+      X gives x∈X at 220; (c) is uniqueness via (b). All correct.'
+  - stage: S5b
+    verdict: minor
+    by: refereeB
+    hash: 9aa9360ca3bf
+    date: '2026-10-11'
+    model: claude-opus-5-5
+    evidence: '05-equivalence-relations.md:229 False meta-claim: ''The transitivity step in (a) is the
+      only place the proof uses (P2) to merge two blocks.'''
+  - stage: S7r
+    verdict: correct
+    by: rereferee
+    hash: fca56b77e063
+    date: '2026-10-11'
+    model: claude-opus-5-5
+    evidence: '05:222 now gives the reason that [y] contains y: ''@thm-classes-partition (a)''. 05:229
+      now reads ''where (P2) does its real work (the classes part uses it again, the same way)''. That
+      is true, since (P2) is used at 05:216 and again at 05:218. Both earlier findings are resolved. Rechecked
+      the proof: (a) (Eq1) by (P3) and (Eq3) by (P2); [x] = P in both directions; X/~_P = P from the two
+      inclusions, usi'
+- key: def-congruence
+  kind: def
+  file: 02-equivalence-relations.md
+  line: 235
+  hash: 3ccd9f604b7b
+  verdicts:
+  - stage: S5a
+    verdict: correct
+    by: refereeA
+    hash: 3ccd9f604b7b
+    date: '2026-10-11'
+    model: claude-opus-5-5
+    evidence: '05:238 matches def-divides (02:90). The non-multiple argument at 241 uses discreteness
+      correctly. Remark 244: the count fails for n=0 because {0,...,-1} is empty.'
+  - stage: S5b
+    verdict: correct
+    by: refereeB
+    hash: 3ccd9f604b7b
+    date: '2026-10-11'
+    model: claude-opus-5-5
+    evidence: '05:238-244: examples 14, -10, 7 mod 12 checked; multiples-of-12 argument by discreteness
+      ledgered at 541; the ≡ clash note matches NOTATION:127/182; the n=0 remark is correct.'
+- key: prp-congruence-equivalence
+  kind: prp
+  file: 02-equivalence-relations.md
+  line: 247
+  hash: 33e3c8a1d87f
+  verdicts:
+  - stage: S5a
+    verdict: correct
+    by: refereeA
+    hash: 33e3c8a1d87f
+    date: '2026-10-11'
+    model: claude-opus-5-5
+    evidence: 05:250 is true for every n in Z_{>0}.
+  - stage: S5b
+    verdict: correct
+    by: refereeB
+    hash: 33e3c8a1d87f
+    date: '2026-10-11'
+    model: claude-opus-5-5
+    evidence: 05:250 statement matches blueprint.
+- key: proof:prp-congruence-equivalence
+  kind: proof
+  file: 02-equivalence-relations.md
+  line: 253
+  hash: 46e4491c5b32
+  verdicts:
+  - stage: S5a
+    verdict: correct
+    by: refereeA
+    hash: 46e4491c5b32
+    date: '2026-10-11'
+    model: claude-opus-5-5
+    evidence: '05:254: k=0, -k, k+l are integers by prp-integers-closed (a).'
+  - stage: S5b
+    verdict: correct
+    by: refereeB
+    hash: 46e4491c5b32
+    date: '2026-10-11'
+    model: claude-opus-5-5
+    evidence: '05:254: -k, k+l in Z by prp-integers-closed (a); arithmetic ledgered at 542.'
+- key: prp-integers-mod-n
+  kind: prp
+  file: 02-equivalence-relations.md
+  line: 261
+  hash: c7f3b4005b3e
+  verdicts:
+  - stage: S5a
+    verdict: correct
+    by: refereeA
+    hash: c7f3b4005b3e
+    date: '2026-10-11'
+    model: claude-opus-5-5
+    evidence: '05:264-271: n-1 ∈ N by lem-naturals-arithmetic (c), since Z_{>0} ⊆ N. ''Remainder'' is
+      defined at 02:149.'
+  - stage: S5b
+    verdict: correct
+    by: refereeB
+    hash: c7f3b4005b3e
+    date: '2026-10-11'
+    model: claude-opus-5-5
+    evidence: '05:271 ''n - 1 in N by @lem-naturals-arithmetic (c), since n != 0'': lem (c) is stated
+      for n in N, and n in Z_{>0} subset N (prp-integers-closed (b)) is not cited. The statement itself
+      is correct. [finding refuted by skeptics]'
+- key: proof:prp-integers-mod-n
+  kind: proof
+  file: 02-equivalence-relations.md
+  line: 273
+  hash: a0bb934ca29d
+  verdicts:
+  - stage: S5a
+    verdict: correct
+    by: refereeA
+    hash: a0bb934ca29d
+    date: '2026-10-11'
+    model: claude-opus-5-5
+    evidence: '05:274-278: existence from thm-division-algorithm plus discreteness. Uniqueness writes
+      r = 0·n + r = kn + s, and the division-algorithm uniqueness gives s = r. Pairwise distinctness follows
+      with a = r.'
+  - stage: S5b
+    verdict: correct
+    by: refereeB
+    hash: a0bb934ca29d
+    date: '2026-10-11'
+    model: claude-opus-5-5
+    evidence: '05:274-278: existence by thm-division-algorithm, r in N by prp-integers-closed (b), r <=
+      n-1 by discreteness; uniqueness by division-algorithm uniqueness applied to r = 0n + r = kn + s;
+      correct.'
+- key: exm-fibres-of-function
+  kind: exm
+  file: 02-equivalence-relations.md
+  line: 287
+  hash: e3ed20d18a69
+  verdicts:
+  - stage: S5a
+    verdict: correct
+    by: refereeA
+    hash: e3ed20d18a69
+    date: '2026-10-11'
+    model: claude-opus-5-5
+    evidence: '05:294-306: classes are the fibres over f(X); the converse is via q and thm-classes-partition
+      (b), then def-set-equality.'
+  - stage: S5b
+    verdict: correct
+    by: refereeB
+    hash: e3ed20d18a69
+    date: '2026-10-11'
+    model: claude-opus-5-5
+    evidence: '05:294-309: fibers as classes (def-preimage), converse via q and thm-classes-partition
+      (b), remainder map mod 3: all correct.'
+- key: exm-reals-mod-integers
+  kind: exm
+  file: 02-equivalence-relations.md
+  line: 311
+  hash: ded4296cee17
+  verdicts:
+  - stage: S5a
+    verdict: minor
+    by: refereeA
+    hash: 2dca192c0afc
+    date: '2026-10-11'
+    model: claude-opus-5-5
+    evidence: 05-equivalence-relations.md:326 Strict inequalities are drawn from thm-squares-order, which
+      is stated only for the non-strict order. The conversion is not shown.
+  - stage: S5b
+    verdict: minor
+    by: refereeB
+    hash: 2dca192c0afc
+    date: '2026-10-11'
+    model: claude-opus-5-5
+    evidence: 05-equivalence-relations.md:326 The cited @thm-squares-order is the non-strict x <= y iff
+      x^2 <= y^2, but the text needs strict inequalities (1 < sqrt2 < 2, 1/2 < sqrt2 < 3/2).
+  - stage: S8
+    verdict: correct
+    by: seam
+    hash: 2dca192c0afc
+    date: '2026-10-11'
+    model: claude-opus-5-5
+    evidence: 05:70 says an example 'later in this section checks' that x - y in Z is an equivalence relation,
+      and 05:318 checks (Eq1)-(Eq3) again. Section 7.4 already proved all three in exm-relation-table
+      (04:118 and 04:123), and neither place cites it. [finding refuted by skeptics]
+  - stage: S7r
+    verdict: correct
+    by: rereferee
+    hash: ded4296cee17
+    date: '2026-10-11'
+    model: claude-opus-5-5
+    evidence: 05:326 now gets the strict bounds by contraposition of thm-squares-order (ch02 04:304, the
+      non-strict x <= y iff x^2 <= y^2 for x, y >= 0). sqrt2 <= 1 would give 2 <= 1; 2 <= sqrt2 would
+      give 4 <= 2; sqrt2 <= 1/2 would give 2 <= 1/4; 3/2 <= sqrt2 would give 9/4 <= 2. Each pair has both
+      terms >= 0, and trichotomy turns 'not (s <= t)' into t < s, as the ledger at 05:546 records. So
+      the S5a and S5b f
+- key: prp-congruence-arithmetic
+  kind: prp
+  file: 02-equivalence-relations.md
+  line: 339
+  hash: 548f6dae0d0f
+  verdicts:
+  - stage: S5a
+    verdict: correct
+    by: refereeA
+    hash: 548f6dae0d0f
+    date: '2026-10-11'
+    model: claude-opus-5-5
+    evidence: 05:342-346 is true. Well-definedness is stated as a consequence.
+  - stage: S5b
+    verdict: minor
+    by: refereeB
+    hash: 548f6dae0d0f
+    date: '2026-10-11'
+    model: claude-opus-5-5
+    evidence: '05-equivalence-relations.md:337 The sentence misquotes Section 6.4: it says the failed
+      rule was ''write a rational number as p/q, then send it to q''.'
+  - stage: S7r
+    verdict: correct
+    by: rereferee
+    hash: 548f6dae0d0f
+    date: '2026-10-11'
+    model: claude-opus-5-5
+    evidence: '05:337 now says ''send it to its numerator p''. That matches exm-not-a-function (b) in
+      ch06 04-functions.md:79-84, which is in Section 6.4, so the misquote is fixed. Proof checked: (a+b)-(a''+b'')
+      = (k+l)n, and ab - a''b'' = a(b-b'') + (a-a'')b'' = (al + kb'')n. Integer closure comes from prp-integers-closed
+      (a). Well-definedness goes through thm-classes-partition (b) in both directions. All correct.'
+- key: proof:prp-congruence-arithmetic
+  kind: proof
+  file: 02-equivalence-relations.md
+  line: 353
+  hash: 229ce0dece5e
+  verdicts:
+  - stage: S5a
+    verdict: correct
+    by: refereeA
+    hash: 229ce0dece5e
+    date: '2026-10-11'
+    model: claude-opus-5-5
+    evidence: '05:354-367: ab-a''b'' = a(b-b'') + (a-a'')b'' = (al+kb'')n is verified; well-definedness
+      goes through thm-classes-partition (b) both ways.'
+  - stage: S5b
+    verdict: correct
+    by: refereeB
+    hash: 229ce0dece5e
+    date: '2026-10-11'
+    model: claude-opus-5-5
+    evidence: '05:354-367: ab - a''b'' = a(b-b'') + (a-a'')b'' = (al + kb'')n is correct; well-definedness
+      via thm-classes-partition (b) both ways.'
+- key: exm-ill-defined-class-map
+  kind: exm
+  file: 02-equivalence-relations.md
+  line: 378
+  hash: 61b4b8a065b1
+  verdicts:
+  - stage: S5a
+    verdict: correct
+    by: refereeA
+    hash: 80f98dba8cae
+    date: '2026-10-11'
+    model: claude-opus-5-5
+    evidence: '05:385-387: [0]_6=[6]_6, [6]_4=[2]_4 ≠ [0]_4; (b) uses 6k=3(2k). The sidecar passes.'
+  - stage: S5b
+    verdict: minor
+    by: refereeB
+    hash: 80f98dba8cae
+    date: '2026-10-11'
+    model: claude-opus-5-5
+    evidence: 05-equivalence-relations.md:387 The fact '2k in Z' is used without @ref and is missing from
+      the ledger. The same holds in exr-equivalence-relations-b3 (c) at line 474.
+  - stage: S7r
+    verdict: correct
+    by: rereferee
+    hash: 61b4b8a065b1
+    date: '2026-10-11'
+    model: claude-opus-5-5
+    evidence: '05:387 now cites @prp-integers-closed (a) for 2k in Z, and the ledger has a row for it
+      (05:550), so the finding is resolved. Solved it myself. (a): 0 and 6 name the same class mod 6,
+      and [6]_4 = [2]_4 differs from [0]_4 because 2 is not a multiple of 4, so F is not a function. (b):
+      6k = 3(2k), so G is well defined. The text agrees.'
+- key: exr-equivalence-relations-a1
+  kind: exr
+  file: 02-equivalence-relations.md
+  line: 396
+  hash: 9aaca39869d0
+  verdicts:
+  - stage: S5a
+    verdict: correct
+    by: refereeA
+    hash: 9aaca39869d0
+    date: '2026-10-11'
+    model: claude-opus-5-5
+    evidence: '05:411-419: (b) numbers verified; (c) has a=2, b=1, c=1, and the Eq2 line fails (2<=1);
+      (e) has three classes. The sidecar passes.'
+  - stage: S5b
+    verdict: correct
+    by: refereeB
+    hash: 9aaca39869d0
+    date: '2026-10-11'
+    model: claude-opus-5-5
+    evidence: '05:402-419: (b) numbers 7-4=3, 7-10=-3, 4-10=-6; (c) c=1, the Eq2 line needs 2<=1; (e)
+      three classes; sidecar passes.'
+  - stage: S6
+    verdict: correct
+    by: verifier
+    hash: 9aaca39869d0
+    date: '2026-10-11'
+    model: claude-opus-5-5
+    evidence: '05:410-419. Script: 7-4, 7-10 and 4-10 are all ≡0 mod 3. [2]={1,2} and [1]={1}, and the
+      failing line is ''by (Eq2), a~c'' (2≤1). The classes are {0},{-1,1},{-2,2}. Part (a) correctly names
+      Eq1 and Eq2+Eq3.'
+- key: exr-equivalence-relations-b1
+  kind: exr
+  file: 02-equivalence-relations.md
+  line: 424
+  hash: 44dda6538d10
+  verdicts:
+  - stage: S5a
+    verdict: minor
+    by: refereeA
+    hash: becc9ded0597
+    date: '2026-10-11'
+    model: claude-opus-5-5
+    evidence: 05-equivalence-relations.md:436 The prose pointer calls Chapter 10 'optional', but Chapter
+      10 is now main line.
+  - stage: S5b
+    verdict: minor
+    by: refereeB
+    hash: becc9ded0597
+    date: '2026-10-11'
+    model: claude-opus-5-5
+    evidence: '05-equivalence-relations.md:436 ''the optional Chapter 10 builds Q as this quotient set''
+      is out of date: Chapter 10 is now main line.'
+  - stage: S6
+    verdict: correct
+    by: verifier
+    hash: becc9ded0597
+    date: '2026-10-11'
+    model: claude-opus-5-5
+    evidence: 05:433-438. The Eq3 cancellation uses the middle d≠0. The class of (1,2) is {(k,2k):k∈Z_{>0}}
+      (script agrees on a range). In (b), the script confirms the counterexample (1,1)R(0,0)R(2,1) with
+      (1,1) not R (2,1).
+  - stage: S7r
+    verdict: correct
+    by: rereferee
+    hash: 44dda6538d10
+    date: '2026-10-11'
+    model: claude-opus-5-5
+    evidence: '05:436 and the ledger at 05:553 no longer call Chapter 10 optional. That matches authoring/blueprints/ch10.md:4,
+      which says MAIN LINE. def-rationals-as-classes (ch10.md:148) is the same relation ps = rq on Z x
+      Z>0. Solved myself. (a): (Eq3) via adf = bcf = bde and cancelling d != 0; the class of (1,2) is
+      {(k,2k) : k in Z>0}, with c > 0 by prp-integers-closed (b). (b): (1,1) R (0,0) R (2,1) but not'
+- key: exr-equivalence-relations-b2
+  kind: exr
+  file: 02-equivalence-relations.md
+  line: 441
+  hash: 958d17d4aa1c
+  verdicts:
+  - stage: S5a
+    verdict: correct
+    by: refereeA
+    hash: 958d17d4aa1c
+    date: '2026-10-11'
+    model: claude-opus-5-5
+    evidence: '05:448-452: [8]=[1] and [15]=[1]; the power induction uses prp-power-laws (d) and def-power;
+      729=104·7+1 and 81=11·7+4, so 3^100 ≡ 4 (mod 7). The sidecar passes.'
+  - stage: S5b
+    verdict: correct
+    by: refereeB
+    hash: 958d17d4aa1c
+    date: '2026-10-11'
+    model: claude-opus-5-5
+    evidence: '05:448-452: [8]=[1], [15]=[1]; 729=104*7+1, 81=11*7+4, 96=6*16; 3^100 ≡ 4 mod 7; the induction
+      is correct; sidecar passes.'
+  - stage: S6
+    verdict: correct
+    by: verifier
+    hash: 958d17d4aa1c
+    date: '2026-10-11'
+    model: claude-opus-5-5
+    evidence: '05:447-452. Script: [3]+[5]=[1], [3][5]=[1], 729=104·7+1, 81=11·7+4, pow(3,100,7)=4. The
+      induction on k is complete. The worked examples are the clock computation and prp-congruence-arithmetic.'
+- key: exr-equivalence-relations-b3
+  kind: exr
+  file: 02-equivalence-relations.md
+  line: 455
+  hash: ef8c01fbc4fd
+  verdicts:
+  - stage: S5a
+    verdict: correct
+    by: refereeA
+    hash: d0a6bcb33a62
+    date: '2026-10-11'
+    model: claude-opus-5-5
+    evidence: '05:470-474: (a) yes by the product clause; (b) no, since [0]_5=[5]_5 but [0]_10≠[5]_10;
+      (c) yes, since 10k=5(2k).'
+  - stage: S5b
+    verdict: minor
+    by: refereeB
+    hash: d0a6bcb33a62
+    date: '2026-10-11'
+    model: claude-opus-5-5
+    evidence: 05:474 '2k in Z' is used without @ref and has no ledger line (ledger 552 covers only '5
+      is not a multiple of 10'). Answers yes/no/yes are correct; sidecar passes.
+  - stage: S6
+    verdict: correct
+    by: verifier
+    hash: d0a6bcb33a62
+    date: '2026-10-11'
+    model: claude-opus-5-5
+    evidence: 05:467-474. (a) yes, (b) no ([0]_5=[5]_5 but [0]_10≠[5]_10), (c) yes. This matches my answers,
+      and the worked example is exm-ill-defined-class-map.
+  - stage: S7r
+    verdict: correct
+    by: rereferee
+    hash: ef8c01fbc4fd
+    date: '2026-10-11'
+    model: claude-opus-5-5
+    evidence: '05:474 now cites @prp-integers-closed (a) for 2k in Z, with a ledger row at 05:556. Solved
+      myself. (a): yes, by applying the product clause twice. (b): no, since [0]_5 = [5]_5 but 5 is not
+      a multiple of 10 (0 < 5 < 10, discreteness). (c): yes, since 10k = 5(2k). All three agree with the
+      text.'
+- key: exr-equivalence-relations-c1
+  kind: exr
+  file: 02-equivalence-relations.md
+  line: 479
+  hash: 76ce6a2283e7
+  verdicts:
+  - stage: S5a
+    verdict: correct
+    by: refereeA
+    hash: 2ac0af56fd14
+    date: '2026-10-11'
+    model: claude-opus-5-5
+    evidence: '05:486-504: the solution is complete; the marking scheme sums to 2+1+4+2+1=10 and matches
+      the blueprint (ch07.md:237).'
+  - stage: S5b
+    verdict: correct
+    by: refereeB
+    hash: 2ac0af56fd14
+    date: '2026-10-11'
+    model: claude-opus-5-5
+    evidence: '05:482-504: the solution is complete; the marking scheme sums to 2+1+4+2+1=10, gives an
+      alternative route and names fatal errors (STYLE 11.6).'
+  - stage: S6
+    verdict: minor
+    by: verifier
+    hash: 2ac0af56fd14
+    date: '2026-10-11'
+    model: claude-opus-5-5
+    evidence: 05-equivalence-relations.md:500 The 4-point line of the marking scheme requires 'symmetry
+      to reverse one of them; transitivity to link a and b'. It does not map a second natural correct
+      route, and STYLE 11.6 says the scheme must not require the book's route.
+  - stage: S7r
+    verdict: correct
+    by: rereferee
+    hash: 76ce6a2283e7
+    date: '2026-10-11'
+    model: claude-opus-5-5
+    evidence: 05:504 now maps a second natural route. From c ~ a and c ~ b, applying the (<=) direction
+      of [a]=[b] <=> a~b twice gives [a] = [c] = [b]. The route counts if that equivalence was proved
+      independently and symmetry and transitivity are named. This answers the STYLE 11.6 finding. Points
+      add up to 2+1+4+2+1 = 10. The model solution at 05:486-494 is correct and covers (P1), (P2) and
+      (P3).
+- key: exr-equivalence-relations-c2
+  kind: exr
+  file: 02-equivalence-relations.md
+  line: 507
+  hash: 2b23da83b6de
+  verdicts:
+  - stage: S5a
+    verdict: correct
+    by: refereeA
+    hash: 2b23da83b6de
+    date: '2026-10-11'
+    model: claude-opus-5-5
+    evidence: '05:522-528: the claim is true; line (3) is the (N4) witness-name reuse, consistent with
+      ch05 06-checking-proofs.md:380; the cover {{1,2},{2,3}} counterexample is valid; the repair uses
+      (P2).'
+  - stage: S5b
+    verdict: correct
+    by: refereeB
+    hash: 2b23da83b6de
+    date: '2026-10-11'
+    model: claude-opus-5-5
+    evidence: '05:512-528: true conclusion; line (3) reuses witness P, matching (N4) as used in ch05/06-checking-proofs.md:378-380;
+      the counterexample to the step is the cover {{1,2},{2,3}}; the repair uses (P2).'
+  - stage: S6
+    verdict: correct
+    by: verifier
+    hash: 2b23da83b6de
+    date: '2026-10-11'
+    model: claude-opus-5-5
+    evidence: '05:521-528. The flaw is only in line (3): it identifies the second witness with P, which
+      is (N4). Lines (1), (2) and (4) are sound. The conclusion is true (the per-chapter true-conclusion
+      item). The overlapping cover {{1,2},{2,3}} defeats the step as written, since nothing in it uses
+      (P2). The repair is correct.'
+- key: def-partial-order
+  kind: def
+  file: 03-orders.md
+  line: 11
+  hash: a79d14d39cec
+  verdicts:
+  - stage: S5a
+    verdict: correct
+    by: refereeA
+    hash: a79d14d39cec
+    date: '2026-10-11'
+    model: claude-opus-5-5
+    evidence: 06:11-31 (PO1)-(PO3) match def-relation-properties (04:11). The strict part is shown irreflexive
+      and transitive inline, and that argument uses (PO2) correctly. The examples (06:35-40) agree with
+      prp-divides-partial-order and exm-relation-table.
+  - stage: S5b
+    verdict: correct
+    by: refereeB
+    hash: a79d14d39cec
+    date: '2026-10-11'
+    model: claude-opus-5-5
+    evidence: 06:11-31. (PO1)-(PO3) match def-relation-properties. The proof that the strict part is irreflexive
+      and transitive (06:31) is complete. Examples 06:35-38 are right, and the non-examples at 06:40 agree
+      with prp-divides-partial-order (04:71) and with the table at 04:103.
+- key: exm-subset-order-not-total
+  kind: exm
+  file: 03-orders.md
+  line: 44
+  hash: 2da8c7d1de66
+  verdicts:
+  - stage: S5a
+    verdict: correct
+    by: refereeA
+    hash: c1e2d6ec748a
+    date: '2026-10-11'
+    model: claude-opus-5-5
+    evidence: '06:51-55. (PO2) cites prp-subset-antisymmetric and (PO3) cites prp-subset-transitive. Both
+      directions of ''total iff |X|<=1'' are checked: {a},{b} incomparable; every subset is ∅ or X.'
+  - stage: S5b
+    verdict: minor
+    by: refereeB
+    hash: c1e2d6ec748a
+    date: '2026-10-11'
+    model: claude-opus-5-5
+    evidence: 06-orders.md:55 Wrong citation target for the fact that the empty set is a subset of X.
+      The same miscitation is at 06:289 (B2).
+  - stage: S8
+    verdict: minor
+    by: seam
+    hash: c1e2d6ec748a
+    date: '2026-10-11'
+    model: claude-opus-5-5
+    evidence: 06-orders.md:55 The fact that the empty set is a subset of every set is credited to @def-empty-set
+      at 06:55 and again in exr-orders-b2 (06:289). That definition only defines an empty set.
+  - stage: S7r
+    verdict: correct
+    by: rereferee
+    hash: 2da8c7d1de66
+    date: '2026-10-11'
+    model: claude-opus-5-5
+    evidence: 06:51-55. (PO2) is @prp-subset-antisymmetric and (PO3) is @prp-subset-transitive; (PO1)
+      A ⊆ A is covered by ledger 476. The non-total direction uses {a},{b}; the converse shows every subset
+      is ∅ or X. The empty-set fact now cites 'Section 6.1, after @prp-empty-set-unique'. ch06-01:269
+      does prove ∅ ⊆ A for every A right after that proposition. The earlier S5b/S8 miscitation of def-empty-set
+      is reso
+- key: def-order-bounds
+  kind: def
+  file: 03-orders.md
+  line: 66
+  hash: 4cbfd6461fa8
+  verdicts:
+  - stage: S5a
+    verdict: correct
+    by: refereeA
+    hash: 4cbfd6461fa8
+    date: '2026-10-11'
+    model: claude-opus-5-5
+    evidence: 06:66-72. Bounds are taken in X. The examples (5 bounds [0,1]; ∅ is bounded vacuously; 12,
+      24, 0 bound {4,6} under |) are right.
+  - stage: S5b
+    verdict: correct
+    by: refereeB
+    hash: 4cbfd6461fa8
+    date: '2026-10-11'
+    model: claude-opus-5-5
+    evidence: 06:66-72. 12, 24 and 0 are common multiples of 4 and 6, and every element of X bounds the
+      empty set vacuously.
+- key: def-greatest-element
+  kind: def
+  file: 03-orders.md
+  line: 76
+  hash: f1ee40fdc077
+  verdicts:
+  - stage: S5a
+    verdict: correct
+    by: refereeA
+    hash: f1ee40fdc077
+    date: '2026-10-11'
+    model: claude-opus-5-5
+    evidence: '06:76-80. Examples at 06:97 hold: (a+1)/2 lies in [0,1) and is > a; ∅ has no greatest,
+      least, maximal or minimal element.'
+  - stage: S5b
+    verdict: correct
+    by: refereeB
+    hash: f1ee40fdc077
+    date: '2026-10-11'
+    model: claude-opus-5-5
+    evidence: '06:76-97. The worked numbers check: {1,4,9} has greatest 9; for [0,1), (a+1)/2 lies in
+      [0,1) above a (this is ledgered); the empty set has none of the four.'
+- key: def-maximal-element
+  kind: def
+  file: 03-orders.md
+  line: 82
+  hash: 53d9fdb9afdb
+  verdicts:
+  - stage: S5a
+    verdict: correct
+    by: refereeA
+    hash: 53d9fdb9afdb
+    date: '2026-10-11'
+    model: claude-opus-5-5
+    evidence: 06:82-95. The negation via prp-bounded-quantifier-negation (b) (04-predicate-logic/09:199)
+      is cited with the right clause. ¬(m≺a) ⇔ (m≼a → m=a) is correct.
+  - stage: S5b
+    verdict: correct
+    by: refereeB
+    hash: 53d9fdb9afdb
+    date: '2026-10-11'
+    model: claude-opus-5-5
+    evidence: 06:82-95. Reading ¬(m≺a) as 'm⪯a → m=a' is correct, and the citation of prp-bounded-quantifier-negation
+      (b) (ch04 09:199, ¬∃ to ∀¬) is right.
+- key: prp-greatest-unique
+  kind: prp
+  file: 03-orders.md
+  line: 101
+  hash: 21a90a32eff5
+  verdicts:
+  - stage: S5a
+    verdict: correct
+    by: refereeA
+    hash: 21a90a32eff5
+    date: '2026-10-11'
+    model: claude-opus-5-5
+    evidence: 06:101-105, a statement about a subset of any poset.
+  - stage: S5b
+    verdict: minor
+    by: refereeB
+    hash: 21a90a32eff5
+    date: '2026-10-11'
+    model: claude-opus-5-5
+    evidence: 06-orders.md:111 The well-ordering step for q0 omits the non-emptiness hypothesis.
+  - stage: S7r
+    verdict: correct
+    by: rereferee
+    hash: 21a90a32eff5
+    date: '2026-10-11'
+    model: claude-opus-5-5
+    evidence: '06:104-108. The proof uses g''∈A, g∈A and (PO2), and is correct. The q0 note at 06:111
+      now gives non-emptiness: r = p/q with q ∈ Z>0, so rq = p ∈ Z. This matches ch06-04:91 (solution
+      of (b), Fn1 sentence), and ledger 480 records it. The earlier finding about the missing non-emptiness
+      hypothesis is resolved.'
+- key: proof:prp-greatest-unique
+  kind: proof
+  file: 03-orders.md
+  line: 107
+  hash: 1f62ad5a4272
+  verdicts:
+  - stage: S5a
+    verdict: correct
+    by: refereeA
+    hash: 1f62ad5a4272
+    date: '2026-10-11'
+    model: claude-opus-5-5
+    evidence: 06:108. g'≼g and g≼g' follow from the greatest property and membership in A; (PO2) then
+      gives g=g'. Every hypothesis is used. The application to exm-not-a-function at 06:111 is sound (Ch
+      6 gives non-emptiness).
+  - stage: S5b
+    verdict: correct
+    by: refereeB
+    hash: 1f62ad5a4272
+    date: '2026-10-11'
+    model: claude-opus-5-5
+    evidence: 06:108 uses only the definition and (PO2). This agrees with the meta-claim at 06:42 ('uses
+      (PO2) and nothing else').
+- key: prp-greatest-maximal
+  kind: prp
+  file: 03-orders.md
+  line: 115
+  hash: e8310bfb7a20
+  verdicts:
+  - stage: S5a
+    verdict: minor
+    by: refereeA
+    hash: e8310bfb7a20
+    date: '2026-10-11'
+    model: claude-opus-5-5
+    evidence: 06-orders.md:140 The sentence says the proof of prp-finite-max 'uses nothing about ≤ on
+      ℝ beyond reflexivity, transitivity and the comparability of any two elements, so it works word for
+      word in any totally ordered set'. That is false for the minimum half of prp-finite-max.
+  - stage: S5b
+    verdict: gap
+    by: refereeB
+    hash: e8310bfb7a20
+    date: '2026-10-11'
+    model: claude-opus-5-5
+    evidence: '06-orders.md:140 The meta-claim is false: the proof of prp-finite-max does not work ''word
+      for word in any totally ordered set''. It uses more than reflexivity, transitivity and comparability.'
+  - stage: S8
+    verdict: minor
+    by: seam
+    hash: e8310bfb7a20
+    date: '2026-10-11'
+    model: claude-opus-5-5
+    evidence: 06-orders.md:140 The meta-claim says the proof of prp-finite-max 'uses nothing about <=
+      on R beyond reflexivity, transitivity and the comparability of any two elements, so it works word
+      for word in any totally ordered set'. This is true of the maximum half only. The minimum half applies
+      the result to -x_1, ..., -x_n, and a totally ordered set has no negation.
+  - stage: S7r
+    verdict: correct
+    by: rereferee
+    hash: e8310bfb7a20
+    date: '2026-10-11'
+    model: claude-opus-5-5
+    evidence: 'Statement 06:118-125 is correct. The meta-claim at 06:140 is now limited to the maximum
+      half of prp-finite-max. Checked against ch07-03 proof (lines ~340-357): the maximum half uses comparability
+      (the trichotomy split x_{n+1} ≤ M or M < x_{n+1}), reflexivity and transitivity, and never antisymmetry
+      or negation. The text now says the minimum half needs negation, which needs an ordered field, and
+      re'
+- key: proof:prp-greatest-maximal
+  kind: proof
+  file: 03-orders.md
+  line: 132
+  hash: 89de4b3de5d6
+  verdicts:
+  - stage: S5a
+    verdict: correct
+    by: refereeA
+    hash: 116ee1f54873
+    date: '2026-10-11'
+    model: claude-opus-5-5
+    evidence: 06:133-137. (a) uses (PO2). (b) uses totality in the case split, then maximality and (PO1).
+      The dual case goes through ≽, which B3 checks in detail. Dropping totality fails, as exm-maximal-not-greatest
+      shows.
+  - stage: S5b
+    verdict: gap
+    by: refereeB
+    hash: 116ee1f54873
+    date: '2026-10-11'
+    model: claude-opus-5-5
+    evidence: 06-orders.md:137 The reduction to ⪰ silently uses that the strict part of ⪰ is the reverse
+      of ≺. The proof says only that ⪰ satisfies (PO1)-(PO3), and the ledger line (06:478) claims the
+      inline sentence covers everything used.
+  - stage: S7r
+    verdict: correct
+    by: rereferee
+    hash: 89de4b3de5d6
+    date: '2026-10-11'
+    model: claude-opus-5-5
+    evidence: 06:133-137. (a) uses (PO2), and the contradiction is correct. (b) splits on totality; Case
+      2 uses maximality and (PO1). The reduction paragraph now states that the strict part of ⪰ is the
+      reverse of ≺ (since x≠y is symmetric). It translates 'no a with m ≻ a' into 'no a with a ≺ m' and
+      'a ⪰ l for every a' into 'l ⪯ a for every a'. That is everything the minimal/least transfer needs.
+      Ledger 478 matc
+- key: exm-maximal-not-greatest
+  kind: exm
+  file: 03-orders.md
+  line: 144
+  hash: bb8b05c0a3ad
+  verdicts:
+  - stage: S5a
+    verdict: minor
+    by: refereeA
+    hash: eee9548a07e3
+    date: '2026-10-11'
+    model: claude-opus-5-5
+    evidence: 06-orders.md:151 'a multiple of 4, 5 or 6 other than itself is at least twice it' is false
+      as stated in this book's ℕ, where 0 is a multiple of every number.
+  - stage: S5b
+    verdict: correct
+    by: refereeB
+    hash: eee9548a07e3
+    date: '2026-10-11'
+    model: claude-opus-5-5
+    evidence: 06:151-158. The strict divisibilities within A are exactly 2|4, 2|6, 3|6. The maximal elements
+      are 4, 5, 6 and the minimal ones 2, 3, 5. 5∤4, 4∤5 and 4∤6 rule out a greatest element. {1,…,6}
+      has least element 1 and no greatest. The sidecar passes. [finding refuted by skeptics]
+  - stage: S7r
+    verdict: correct
+    by: rereferee
+    hash: bb8b05c0a3ad
+    date: '2026-10-11'
+    model: claude-opus-5-5
+    evidence: '06:151-155. The strict divisibilities within A are 2|4, 2|6 and 3|6. For n ∈ {4,5,6}, a
+      positive multiple kn ≠ n gives k>0 (school fact, ledger 482) and k≠1. Then k ≥ 2 follows by applying
+      @prp-integers-closed (c) (discreteness) twice. So kn ≥ 2n ≥ 8 > 6. Restricting to positive multiples
+      deals with the earlier S5a point that 0 is a multiple of everything. For no greatest element: 5∤4,
+      4∤5 and 4∤6'
+- key: check:06-orders:1
+  kind: check
+  file: 03-orders.md
+  line: 164
+  hash: b326d808c322
+  verdicts:
+  - stage: S5a
+    verdict: correct
+    by: refereeA
+    hash: b326d808c322
+    date: '2026-10-11'
+    model: claude-opus-5-5
+    evidence: 06:169. The maximal elements are the three 2-sets. There is no greatest element, by prp-greatest-maximal
+      (a).
+  - stage: S5b
+    verdict: correct
+    by: refereeB
+    hash: b326d808c322
+    date: '2026-10-11'
+    model: claude-opus-5-5
+    evidence: 06:165-170. The maximal elements are the three 2-sets. Every set with at most one element
+      lies strictly inside a 2-set. There is no greatest element.
+- key: def-order-supremum
+  kind: def
+  file: 03-orders.md
+  line: 178
+  hash: f497a2cb1fc6
+  verdicts:
+  - stage: S5a
+    verdict: correct
+    by: refereeA
+    hash: f497a2cb1fc6
+    date: '2026-10-11'
+    model: claude-opus-5-5
+    evidence: 06:178-193. Uniqueness follows from prp-greatest-unique applied to the set of upper bounds.
+      The two consequences and A∪B = sup{A,B} are proved with both (S1) and (S2).
+  - stage: S5b
+    verdict: minor
+    by: refereeB
+    hash: f497a2cb1fc6
+    date: '2026-10-11'
+    model: claude-opus-5-5
+    evidence: 06-orders.md:219 'Chapter 11 proves it' points at a different set, and 'the supremum of
+      Chapter 11 is @def-order-supremum for the order ≤ on R' misdescribes Chapter 11's definition.
+  - stage: S7r
+    verdict: correct
+    by: rereferee
+    hash: f497a2cb1fc6
+    date: '2026-10-11'
+    model: claude-opus-5-5
+    evidence: 'Definition 06:181-188 and uniqueness via @prp-greatest-unique (06:191) are correct. 06:219
+      now uses {x∈Q : x>0, x²<2}. This is exactly the set of ch11 thm-no-rational-sup-sqrt2 (cited at
+      ch11-03:3 and ch11-03:154). It also describes Chapter 11''s def-supremum correctly as ''defined
+      in an ordered field'', i.e. def-order-supremum for that field''s ≤ (ch11-02:85-95). Both S5b points
+      are resolved.'
+- key: exm-divisibility-lcm
+  kind: exm
+  file: 03-orders.md
+  line: 199
+  hash: a147bad75906
+  verdicts:
+  - stage: S5a
+    verdict: correct
+    by: refereeA
+    hash: 3720f4be5032
+    date: '2026-10-11'
+    model: claude-opus-5-5
+    evidence: 06:206-214. M is non-empty (ab, with lem-naturals-arithmetic (b) and prp-integers-closed
+      (b)). The well-ordering, the division algorithm (a ∈ ℤ, n = L ∈ ℤ_{>0}) and the remainder argument
+      are valid for every c ∈ ℤ. The a=0 case is right. The instance L=6 is checked by the sidecar.
+  - stage: S5b
+    verdict: minor
+    by: refereeB
+    hash: 3720f4be5032
+    date: '2026-10-11'
+    model: claude-opus-5-5
+    evidence: 06-orders.md:206 An order fact is used without an @ref or a ledger line.
+  - stage: S8
+    verdict: minor
+    by: seam
+    hash: 3720f4be5032
+    date: '2026-10-11'
+    model: claude-opus-5-5
+    evidence: 06-orders.md:219 'It has no least upper bound in Q. ... Chapter 11 proves it' points to
+      a theorem about a different set.
+  - stage: S7r
+    verdict: minor
+    by: rereferee
+    hash: 3720f4be5032
+    date: '2026-10-11'
+    model: claude-opus-5-5
+    evidence: ' ''r = c − qL = a(s − qt), so a | r'' needs s − qt ∈ Z, and nothing cites this. Ledger
+      484 records only the ring identity. The same step in C2(b) at 06:371 does cite @prp-integers-closed
+      (a). Fix: add ''(s − qt ∈ Z by @prp-integers-closed (a))''. The rest checks out: the division algorithm
+      applies with L ∈ Z>0 and any integer c; the case a = 0 is handled; and 6 is the least common multiple
+      of 2 and 3.'
+  - stage: S7r
+    verdict: correct
+    by: rereferee
+    hash: a147bad75906
+    date: '2026-10-11'
+    model: claude-opus-5-5
+    evidence: ' 2 and 4 are not multiples of 3. So L = 6, and 2 | n and 3 | n together give 6 | n for
+      every integer n. The verify script passes. The diff touches only this ledger item in 06-orders.md.
+      Note: the diff against 5df9563 also changes verify/ch07/exr-relations-b2.py (adds reverse-relation
+      sufficiency asserts). That change is outside this packet and the reviser''s report, so I give no
+      verdict on it here.'
+- key: def-well-ordered-set
+  kind: def
+  file: 03-orders.md
+  line: 225
+  hash: 119fe7edd8eb
+  verdicts:
+  - stage: S5a
+    verdict: correct
+    by: refereeA
+    hash: 119fe7edd8eb
+    date: '2026-10-11'
+    model: claude-opus-5-5
+    evidence: 06:225-234. The ℕ, ℤ (prp-integers-closed (a)) and ℚ_{>0} examples are right, and so is
+      the 'totality automatic' argument. The remark cites an exercise only as a prose aside and no proof
+      rests on it. The STATUS rows for Ch 8 and Ch 67 exist (STATUS:107, 112).
+  - stage: S5b
+    verdict: minor
+    by: refereeB
+    hash: 119fe7edd8eb
+    date: '2026-10-11'
+    model: claude-opus-5-5
+    evidence: 06-orders.md:234 The remark rests a claim on an exercise when a result exists, and it exceeds
+      STYLE §5's limit of 1-3 sentences.
+  - stage: S7r
+    verdict: correct
+    by: rereferee
+    hash: 119fe7edd8eb
+    date: '2026-10-11'
+    model: claude-opus-5-5
+    evidence: 06:228-234. The examples for N, Z and the positive rationals are correct. Totality-is-automatic
+      is correct. The claim 'N bounded above has a greatest element' is now in the body text and cites
+      @cor-well-ordering-integers (ch07-01:236). The cited statement applies, because an upper bound in
+      N is an integer, and ledger 490 records this. The remark is now three sentences with one job (outlook)
+      and re
+- key: exr-orders-a1
+  kind: exr
+  file: 03-orders.md
+  line: 241
+  hash: b2042240767a
+  verdicts:
+  - stage: S5a
+    verdict: correct
+    by: refereeA
+    hash: 3474d21dd0f2
+    date: '2026-10-11'
+    model: claude-opus-5-5
+    evidence: 06:253-261. The negations are right (De Morgan, double negation). (b) has a valid witness.
+      In (c), 12 is the least positive common multiple, so sup = 12 by exm-divisibility-lcm, and sup =
+      6 under ≤. (d) splits by trichotomy correctly.
+  - stage: S5b
+    verdict: minor
+    by: refereeB
+    hash: 3474d21dd0f2
+    date: '2026-10-11'
+    model: claude-opus-5-5
+    evidence: 06-orders.md:257 A1(b) is phrased for 'finite' subsets, and the answer points to R4, which
+      proves the fact only for lists x1..xn. The step from a finite set to a list is Chapter 8's definition
+      and is not recorded for §06.
+  - stage: S6
+    verdict: correct
+    by: verifier
+    hash: 3474d21dd0f2
+    date: '2026-10-11'
+    model: claude-opus-5-5
+    evidence: '06:252-261. The negations are correct (de Morgan, double negation). (b) is false, with
+      witness {{1},{2}}. (c) Script: the divisibility sup is 12 = lcm, and the ≤ sup is 6. (d) The order
+      is total, by trichotomy.'
+  - stage: S7r
+    verdict: correct
+    by: rereferee
+    hash: b2042240767a
+    date: '2026-10-11'
+    model: claude-opus-5-5
+    evidence: '06:253-261. (a) The negations via de Morgan, prp-bounded-quantifier-negation (a) and double
+      negation are correct. (b) The counterexample {{1},{2}} is correct. The passage from a finite set
+      to a list now says this is Chapter 8''s meaning of ''finite'' (ledger 492), which resolves the earlier
+      S5b point, and R4 applies. (c) gives 12 under divisibility (the only multiple of 6 below 12 is 6,
+      and 4∤6) and '
+- key: exr-orders-b1
+  kind: exr
+  file: 03-orders.md
+  line: 266
+  hash: 6eb4750fc2de
+  verdicts:
+  - stage: S5a
+    verdict: correct
+    by: refereeA
+    hash: 6eb4750fc2de
+    date: '2026-10-11'
+    model: claude-opus-5-5
+    evidence: 06:273-279. The intersection is relative to X, per def-family-union-intersection (b) (02-set-operations:197),
+      so I=∅ gives N=X. Both (S1)/(S2) and the dual are proved.
+  - stage: S5b
+    verdict: correct
+    by: refereeB
+    hash: 6eb4750fc2de
+    date: '2026-10-11'
+    model: claude-opus-5-5
+    evidence: 06:273-279. Both clauses are shown for the union and the intersection, and the case I=∅
+      agrees with def-family-union-intersection (ch06 02:197), which takes the intersection inside X.
+  - stage: S6
+    verdict: correct
+    by: verifier
+    hash: 6eb4750fc2de
+    date: '2026-10-11'
+    model: claude-opus-5-5
+    evidence: 06:272-279. S1, S2 and the infimum argument are complete. For I=∅, U=∅ and N=X, which agrees
+      with def-family-union-intersection (b), where the intersection is taken in X. The worked example
+      is the 'Suprema of sets' paragraph.
+- key: exr-orders-b2
+  kind: exr
+  file: 03-orders.md
+  line: 282
+  hash: 8d712238237a
+  verdicts:
+  - stage: S5a
+    verdict: correct
+    by: refereeA
+    hash: ca2d9f4d979e
+    date: '2026-10-11'
+    model: claude-opus-5-5
+    evidence: '06:289-297. Both examples check. The necessary properties are proved: m1, m2 incomparable;
+      no greatest; l, m1, m2 distinct.'
+  - stage: S5b
+    verdict: minor
+    by: refereeB
+    hash: ca2d9f4d979e
+    date: '2026-10-11'
+    model: claude-opus-5-5
+    evidence: 06:289 cites @def-empty-set for the inclusion of the empty set in A. The fact is proved
+      after prp-empty-set-unique, not in the definition. The two examples and the list of required properties
+      are correct.
+  - stage: S6
+    verdict: correct
+    by: verifier
+    hash: ca2d9f4d979e
+    date: '2026-10-11'
+    model: claude-opus-5-5
+    evidence: '06:288-297. Script: {∅,{1},{2}} has maximal elements {1},{2}, and ({1,2,3},|) has maximal
+      elements 2,3. The necessary properties (incomparable maximal elements, no greatest element, l, m1,
+      m2 distinct, at least 3 elements) are each proved.'
+  - stage: S7r
+    verdict: correct
+    by: rereferee
+    hash: 8d712238237a
+    date: '2026-10-11'
+    model: claude-opus-5-5
+    evidence: '06:289-297. In the example {∅,{1},{2}}, the least element ∅ now cites Section 6.1 after
+      @prp-empty-set-unique (ch06-01:269), which is correct. The two maximal elements and the second example
+      {1,2,3} under divisibility check out. The ''every answer must have'' list is correct: the two maximal
+      elements are incomparable, there is no greatest element, and l, m1, m2 are distinct. It meets STYLE
+      §6''s requ'
+- key: exr-orders-b3
+  kind: exr
+  file: 03-orders.md
+  line: 300
+  hash: a9cc194d6393
+  verdicts:
+  - stage: S5a
+    verdict: correct
+    by: refereeA
+    hash: a9cc194d6393
+    date: '2026-10-11'
+    model: claude-opus-5-5
+    evidence: 06:307-311. ≽ is checked for PO1-3 and totality. Its strict part is y≺x. The translation
+      of minimal and least is right, and prp-greatest-maximal (b) applies.
+  - stage: S5b
+    verdict: correct
+    by: refereeB
+    hash: a9cc194d6393
+    date: '2026-10-11'
+    model: claude-opus-5-5
+    evidence: 06:307-311. All of (PO1)-(PO3), totality, the strict part and the translation for ⪰ are
+      checked.
+  - stage: S6
+    verdict: correct
+    by: verifier
+    hash: a9cc194d6393
+    date: '2026-10-11'
+    model: claude-opus-5-5
+    evidence: 06:306-311. It checks PO1-PO3, totality and the strict part of ⪰, and the translation is
+      correct. The worked example is the last paragraph of the proof of prp-greatest-maximal.
+- key: exr-orders-c1
+  kind: exr
+  file: 03-orders.md
+  line: 316
+  hash: 36f054bbf494
+  verdicts:
+  - stage: S5a
+    verdict: minor
+    by: refereeA
+    hash: 3f6db7cba953
+    date: '2026-10-11'
+    model: claude-opus-5-5
+    evidence: 06-orders.md:333 The question (06:324) asks how many elements 'lie below' k in (ℕ, ≤). In
+      this section 'below' means ≼, which includes k itself. The solution counts only the elements strictly
+      below and answers 'exactly k'.
+  - stage: S5b
+    verdict: minor
+    by: refereeB
+    hash: 3f6db7cba953
+    date: '2026-10-11'
+    model: claude-opus-5-5
+    evidence: 06-orders.md:324 The question asks how many elements lie 'below' k, but the solution answers
+      for 'strictly below'. The count it gives is ledgered to a later chapter.
+  - stage: S6
+    verdict: minor
+    by: verifier
+    hash: 3f6db7cba953
+    date: '2026-10-11'
+    model: claude-opus-5-5
+    evidence: 06-orders.md:324 Part (c) asks how many elements 'lie below' k in (N, ≤), but the solution
+      answers with the elements strictly below k. Under the section's own usage, 'below' means ⪯, and
+      the count would then be k+1. The question also asks for a count before Chapter 8, which the drafter's
+      deviation 6 meant to avoid.
+  - stage: S7r
+    verdict: correct
+    by: rereferee
+    hash: 36f054bbf494
+    date: '2026-10-11'
+    model: claude-opus-5-5
+    evidence: 06:324 and 06:329-333. The question now asks which elements lie strictly below k, and the
+      solution answers that exactly. 'Exactly 0,…,k−1 (none when k = 0)' follows from @lem-naturals-arithmetic
+      (a) (n ≥ 0) and (e) (n < k gives n+1 ≤ k). No count is claimed, so the Chapter 8 dependence is gone.
+      This resolves the S5a/S5b/S6 findings. In (a), PO1-PO3 are correct, including mixed a<c≤e. (b) The
+      two-s
+- key: exr-orders-c2
+  kind: exr
+  file: 03-orders.md
+  line: 336
+  hash: 053c5b69508a
+  verdicts:
+  - stage: S5a
+    verdict: correct
+    by: refereeA
+    hash: 053c5b69508a
+    date: '2026-10-11'
+    model: claude-opus-5-5
+    evidence: 06:365-391. D ≠ ∅. The remainder r=(1-qk0)a+(-ql0)b is in D unless 0. The common-divisor
+      step and inf both clauses are right. (d) Case 1 and Case 2 are right. In ℤ_{>0}, (c+1)|c forces
+      c ≥ c+1. The marks sum to 10.
+  - stage: S5b
+    verdict: minor
+    by: refereeB
+    hash: 053c5b69508a
+    date: '2026-10-11'
+    model: claude-opus-5-5
+    evidence: 06-orders.md:381 Sign and order facts are used without an @ref or a ledger line, and the
+      ledger has no line for C2.
+  - stage: S6
+    verdict: correct
+    by: verifier
+    hash: 053c5b69508a
+    date: '2026-10-11'
+    model: claude-opus-5-5
+    evidence: '06:352-391. Script: min D = gcd(a,b) for 0≤a,b<15, not both 0. (b), (c) and (d) are complete,
+      and the Z_{>0} counterexample (c+1)|c is valid. Hint 1 names the tool and Hint 2 gives the first
+      line; neither executes r∈D plus minimality. The scheme sums to 10 and passes both the book''s proof
+      and my alternative, which runs (d) via the least positive element of the set of integer combinations
+      of upper '
+- key: exr-orders-r1
+  kind: exr
+  file: 03-orders.md
+  line: 396
+  hash: dc3e80a8684f
+  verdicts:
+  - stage: S5a
+    verdict: correct
+    by: refereeA
+    hash: dc3e80a8684f
+    date: '2026-10-11'
+    model: claude-opus-5-5
+    evidence: 06:405-411. f([-3,1])=[-4,5], f^{-1}([-3,0])=[-4,-3]∪[-1,0], f(ℝ)=[-4,∞) and both sides
+      [-4,0] all recomputed. prp-image-preimage (b) is cited correctly. The sidecar passes.
+  - stage: S5b
+    verdict: correct
+    by: refereeB
+    hash: dc3e80a8684f
+    date: '2026-10-11'
+    model: claude-opus-5-5
+    evidence: 06:405-411. f([-3,1])=[-4,5]; f^{-1}([-3,0])=[-4,-3]∪[-1,0]; f(R)=[-4,∞); both sides equal
+      [-4,0], as prp-image-preimage (b) says. The sidecar passes, and the square roots are ledgered under
+      the school-fact convention.
+  - stage: S6
+    verdict: correct
+    by: verifier
+    hash: dc3e80a8684f
+    date: '2026-10-11'
+    model: claude-opus-5-5
+    evidence: '06:402-411. Script sampling: f([-3,1])=[-4,5], f^{-1}([-3,0])=[-4,-3]∪[-1,0], f^{-1}([-5,0])=[-4,0],
+      whose image is [-4,0] = [-5,0]∩[-4,∞). The problem hides its source (Ch 6), and the solution cites
+      @prp-image-preimage (b).'
+- key: exr-orders-r2
+  kind: exr
+  file: 03-orders.md
+  line: 414
+  hash: 503c9042a84f
+  verdicts:
+  - stage: S5a
+    verdict: correct
+    by: refereeA
+    hash: 2013841a6836
+    date: '2026-10-11'
+    model: claude-opus-5-5
+    evidence: '06:421-427. prp-bounded-quantifier-negation (a) then (b) is applied correctly. N11 does
+      include ''a bound negated instead of a quantifier'' (05/06-checking-proofs: entry 11). The witnesses
+      are right.'
+  - stage: S5b
+    verdict: minor
+    by: refereeB
+    hash: 2013841a6836
+    date: '2026-10-11'
+    model: claude-opus-5-5
+    evidence: 06-orders.md:427 The facts n+1 ∈ N and n < n+1 are used without an @ref or a ledger line,
+      here and in the warning at 06:161.
+  - stage: S6
+    verdict: correct
+    by: verifier
+    hash: 2013841a6836
+    date: '2026-10-11'
+    model: claude-opus-5-5
+    evidence: 06:420-427. The negation via bounded-quantifier-negation (a), then (b), is correct, and
+      totality turns ¬(a<b) into b≤a. N satisfies the statement and {1..5} its negation (a=5). The source
+      is cited with @ref.
+  - stage: S7r
+    verdict: correct
+    by: rereferee
+    hash: 503c9042a84f
+    date: '2026-10-11'
+    model: claude-opus-5-5
+    evidence: 06:421-427. The negation is ¬∀∃ → ∃¬∃ → ∃∀¬ by prp-bounded-quantifier-negation (a) then
+      (b), which matches ch04-09. ¬(a<b) is b≤a by totality. (N11) exists in exm-not-allowed-catalogue
+      (ch05-06). a+1 ∈ N now cites (NS), and a < a+1 is ledgered at 497. Witness a = 5 is correct. The
+      earlier finding is resolved.
+- key: exr-orders-r3
+  kind: exr
+  file: 03-orders.md
+  line: 430
+  hash: 4bb58d0d0fdc
+  verdicts:
+  - stage: S5a
+    verdict: correct
+    by: refereeA
+    hash: 4bb58d0d0fdc
+    date: '2026-10-11'
+    model: claude-opus-5-5
+    evidence: 06:437-447. thm-structural-induction clauses (i)-(iii) are matched. ⊥ is not an atom in
+      this book, so it is vacuous. The parts of (φ↔ψ) are biconditional by unique readability. (V6) is
+      cited correctly.
+  - stage: S5b
+    verdict: correct
+    by: refereeB
+    hash: 4bb58d0d0fdc
+    date: '2026-10-11'
+    model: claude-opus-5-5
+    evidence: 06:437-447. Clause numbering (i), (iii) matches thm-structural-induction (ch03 02:197),
+      and (V6) matches def-truth-value (ch03 03:75). The ⊥, ¬ and other binary cases hold vacuously.
+  - stage: S6
+    verdict: correct
+    by: verifier
+    hash: 4bb58d0d0fdc
+    date: '2026-10-11'
+    model: claude-opus-5-5
+    evidence: 06:436-447. The clauses (i) and (iii) for ↔ match thm-structural-induction (i)-(iii), and
+      the other clauses hold vacuously. (V6) is quoted correctly from def-truth-value. The statement hides
+      its source.
+- key: exr-orders-r4
+  kind: exr
+  file: 03-orders.md
+  line: 450
+  hash: 9b8569786f05
+  verdicts:
+  - stage: S5a
+    verdict: minor
+    by: refereeA
+    hash: 3559761c05fc
+    date: '2026-10-11'
+    model: claude-opus-5-5
+    evidence: 06-orders.md:461 The step asserts {x_1, …, x_{n+1}} = A ∪ {x_{n+1}} without justification.
+      The notation {x_1, …, x_n} was defined in §03 only for lists of reals.
+  - stage: S5b
+    verdict: minor
+    by: refereeB
+    hash: 3559761c05fc
+    date: '2026-10-11'
+    model: claude-opus-5-5
+    evidence: 06-orders.md:461 The set identity at the heart of the inductive step is unjustified and
+      unledgered.
+  - stage: S6
+    verdict: minor
+    by: verifier
+    hash: 3559761c05fc
+    date: '2026-10-11'
+    model: claude-opus-5-5
+    evidence: 06-orders.md:461 The identity A' = {x_1,…,x_{n+1}} = A ∪ {x_{n+1}} is used without justification.
+      The proof that R4 imitates (prp-finite-max) justifies the same step by citation.
+  - stage: S7r
+    verdict: correct
+    by: rereferee
+    hash: 9b8569786f05
+    date: '2026-10-11'
+    model: claude-opus-5-5
+    evidence: 06:457-469. The proof uses thm-induction with n0 = 1, matching ch07-02. The base case uses
+      irreflexivity of the strict part (06:31). The step now defines {x1,…,xn} as in Section 7.3 for elements
+      of X. It derives A' = A ∪ {x_{n+1}} from {1,…,n+1} = {1,…,n} ∪ {n+1} via @lem-naturals-arithmetic
+      (e), as prp-finite-max does, and ledger 500 records this. Case 1 uses m ∈ A ⊆ A' and is correct.
+      Case 2 use
