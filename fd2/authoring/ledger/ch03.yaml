@@ -1014,6 +1014,17 @@ items:
     model: claude-opus-5-5
     evidence: The ledger rows now point to F2.3 §05 (matching 'Section 3.5' at 02:47) and to def-finite
       at F2.2 §05. The prose is unchanged.
+  - stage: S8
+    verdict: minor
+    by: seam
+    hash: 18b44f911789
+    date: '2026-10-26'
+    model: claude-opus-5-5
+    evidence: 02-countable-unions-and-choice.md:47 Three pointers in the "Its status" paragraph name the
+      wrong chapter. "*Functional Analysis*, Chapter 4 ... Hahn–Banach", "*Functional Analysis*, Chapter
+      6, for Tychonoff's theorem" and "*Measure and Integration*, Chapter 1, for the Vitali set" do not
+      match the series map (Atlas v2, already applied). STATUS row 194 and the section's own ledger line
+      468 already n
 - key: exm-method-name-the-choice
   kind: exm
   file: 02-countable-unions-and-choice.md
@@ -3540,229 +3551,874 @@ items:
   file: 06-cardinal-arithmetic.md
   line: 19
   hash: 03fb9e487030
-  verdicts: []
+  verdicts:
+  - stage: S5a
+    verdict: correct
+    by: refereeA
+    hash: 03fb9e487030
+    date: '2026-10-26'
+    model: claude-opus-5-5
+    evidence: 06:19-29; 'not both' via 0≠1 and def-ordered-pair; the inclusions are injective with disjoint
+      images; the two-part rule holds
+  - stage: S5b
+    verdict: correct
+    by: refereeB
+    hash: 03fb9e487030
+    date: '2026-10-26'
+    model: claude-opus-5-5
+    evidence: '06:19-29: definition and the unwinding (not both, by def-ordered-pair; inclusions injective
+      with disjoint images) checked; ledger line 741 matches'
 - key: exm-two-copies-of-naturals
   kind: exm
   file: 06-cardinal-arithmetic.md
   line: 31
   hash: 1f0e0937542a
-  verdicts: []
+  verdicts:
+  - stage: S5a
+    verdict: correct
+    by: refereeA
+    hash: 1f0e0937542a
+    date: '2026-10-26'
+    model: claude-opus-5-5
+    evidence: 06:38; e and d are inverse both ways; (q,r)∈ℕ×{0,1}=ℕ⊔ℕ; uniqueness comes from the claim
+      in prp-union-two-countable (01-countable-sets:186)
+  - stage: S5b
+    verdict: correct
+    by: refereeB
+    hash: 1f0e0937542a
+    date: '2026-10-26'
+    model: claude-opus-5-5
+    evidence: '06:38: e, d and both round trips checked against the claim in prp-union-two-countable (01:186);
+      ''method box comes with the next one'' is true (exm-method-encode at 187)'
 - key: check:06-cardinal-arithmetic:1
   kind: check
   file: 06-cardinal-arithmetic.md
   line: 43
   hash: d8eef416d52e
-  verdicts: []
+  verdicts:
+  - stage: S5a
+    verdict: correct
+    by: refereeA
+    hash: d8eef416d52e
+    date: '2026-10-26'
+    model: claude-opus-5-5
+    evidence: 06:48; the three-element vs two-element listing, ∅×{0}=∅, and the disjoint case split are
+      right
+  - stage: S5b
+    verdict: correct
+    by: refereeB
+    hash: d8eef416d52e
+    date: '2026-10-26'
+    model: claude-opus-5-5
+    evidence: '06:48: (a) 3 vs 2 elements, (b) empty x {0} is empty, (c) cases disjoint; all correct'
 - key: prp-card-operations-well-defined
   kind: prp
   file: 06-cardinal-arithmetic.md
   line: 61
   hash: f2936825ecd1
-  verdicts: []
+  verdicts:
+  - stage: S5a
+    verdict: correct
+    by: refereeA
+    hash: f2936825ecd1
+    date: '2026-10-26'
+    model: claude-opus-5-5
+    evidence: 06:61-71; the statement is right as written
+  - stage: S5b
+    verdict: correct
+    by: refereeB
+    hash: f2936825ecd1
+    date: '2026-10-26'
+    model: claude-opus-5-5
+    evidence: 06:64-70 well-posed
 - key: proof:prp-card-operations-well-defined
   kind: proof
   file: 06-cardinal-arithmetic.md
   line: 77
   hash: 37d32fa9753c
-  verdicts: []
+  verdicts:
+  - stage: S5a
+    verdict: correct
+    by: refereeA
+    hash: 37d32fa9753c
+    date: '2026-10-26'
+    model: claude-opus-5-5
+    evidence: 06:78-88; the domain and codomain of α∘f∘β^{-1} match; Λ∘Θ and Θ∘Λ are identities by associativity;
+      inverses exist by thm-bijection-iff-inverse
+  - stage: S5b
+    verdict: correct
+    by: refereeB
+    hash: 37d32fa9753c
+    date: '2026-10-26'
+    model: claude-opus-5-5
+    evidence: '06:78-88: (a) two-part rule ledgered (743); (b) def-ordered-pair; (c) Lambda(Theta(f))
+      = f via prp-composition-associative; all round trips checked'
 - key: prp-card-operations-monotone
   kind: prp
   file: 06-cardinal-arithmetic.md
   line: 97
   hash: 334f8520bca3
-  verdicts: []
+  verdicts:
+  - stage: S5a
+    verdict: correct
+    by: refereeA
+    hash: 334f8520bca3
+    date: '2026-10-26'
+    model: claude-opus-5-5
+    evidence: '06:97-107; the hypothesis A''≠∅ is necessary: the non-example at 06:131 (∅^∅ has 1 element,
+      ∅^{0} has 0) is right'
+  - stage: S5b
+    verdict: correct
+    by: refereeB
+    hash: 334f8520bca3
+    date: '2026-10-26'
+    model: claude-opus-5-5
+    evidence: 06:100-106; hypothesis A' nonempty used once (a_0) and shown necessary by the non-example
+      at 131
 - key: proof:prp-card-operations-monotone
   kind: proof
   file: 06-cardinal-arithmetic.md
   line: 113
   hash: 8c64ea8dd1fe
-  verdicts: []
+  verdicts:
+  - stage: S5a
+    verdict: correct
+    by: refereeA
+    hash: 8c64ea8dd1fe
+    date: '2026-10-26'
+    model: claude-opus-5-5
+    evidence: 06:114-128; all of u, v and a_0 are used; F(f) is well defined because v is injective; F
+      is injective because u is injective and prp-function-equality applies
+  - stage: S5b
+    verdict: correct
+    by: refereeB
+    hash: 8c64ea8dd1fe
+    date: '2026-10-26'
+    model: claude-opus-5-5
+    evidence: '06:114-128: F(f) is a function because v is injective, F is injective because u is; the
+      parenthetical at 131 is ledgered (744, prp-empty-function (b))'
 - key: check:06-cardinal-arithmetic:2
   kind: check
   file: 06-cardinal-arithmetic.md
   line: 133
   hash: bc653adf32fd
-  verdicts: []
+  verdicts:
+  - stage: S5a
+    verdict: correct
+    by: refereeA
+    hash: bc653adf32fd
+    date: '2026-10-26'
+    model: claude-opus-5-5
+    evidence: 06:138 names exactly the two uses
+  - stage: S5b
+    verdict: correct
+    by: refereeB
+    hash: bc653adf32fd
+    date: '2026-10-26'
+    model: claude-opus-5-5
+    evidence: 06:138 matches the proof at 124 and 128
 - key: exm-pairing-bijection
   kind: exm
   file: 06-cardinal-arithmetic.md
   line: 147
   hash: 950f2375d8a1
-  verdicts: []
+  verdicts:
+  - stage: S5a
+    verdict: minor
+    by: refereeA
+    hash: 950f2375d8a1
+    date: '2026-10-26'
+    model: claude-opus-5-5
+    evidence: 06-cardinal-arithmetic.md:182 The text says τ_{m+n}∈ℕ follows from lem-naturals-arithmetic
+      (b) alone, which does not cover it.
+  - stage: S5b
+    verdict: correct
+    by: refereeB
+    hash: 950f2375d8a1
+    date: '2026-10-26'
+    model: claude-opus-5-5
+    evidence: '06:168-184: existence by induction and uniqueness (tau_s+s < tau_{s+1} <= tau_{s''}) checked;
+      table and delta(11)=(3,1) recomputed; verify/ch03/exm-pairing-bijection.py runs ok'
 - key: exm-method-encode
   kind: exm
   file: 06-cardinal-arithmetic.md
   line: 187
   hash: 3323ef722f0c
-  verdicts: []
+  verdicts:
+  - stage: S5a
+    verdict: correct
+    by: refereeA
+    hash: 3323ef722f0c
+    date: '2026-10-26'
+    model: claude-opus-5-5
+    evidence: 06:190-194; the left-inverse remark matches thm-left-inverse-iff-injective
+  - stage: S5b
+    verdict: correct
+    by: refereeB
+    hash: 3323ef722f0c
+    date: '2026-10-26'
+    model: claude-opus-5-5
+    evidence: '06:190-194: the forward mention of the interleaving (no reading at 1/11) matches 391; thm-left-inverse-iff-injective
+      is correct for one round trip'
 - key: check:06-cardinal-arithmetic:3
   kind: check
   file: 06-cardinal-arithmetic.md
   line: 201
   hash: d489447c094d
-  verdicts: []
+  verdicts:
+  - stage: S5a
+    verdict: correct
+    by: refereeA
+    hash: d489447c094d
+    date: '2026-10-26'
+    model: claude-opus-5-5
+    evidence: 06:206; τ_5=15, τ_9=45, τ_10=55; π(7,2)=47
+  - stage: S5b
+    verdict: correct
+    by: refereeB
+    hash: d489447c094d
+    date: '2026-10-26'
+    model: claude-opus-5-5
+    evidence: '06:206: pi(3,2)=tau_5+2=17; 47=tau_9+2 gives (7,2); recomputed'
 - key: thm-cardinal-laws
   kind: thm
   file: 06-cardinal-arithmetic.md
   line: 213
   hash: 2b0683d9be8c
-  verdicts: []
+  verdicts:
+  - stage: S5a
+    verdict: correct
+    by: refereeA
+    hash: 2b0683d9be8c
+    date: '2026-10-26'
+    model: claude-opus-5-5
+    evidence: 06:213-226; every law is true for arbitrary sets
+  - stage: S5b
+    verdict: minor
+    by: refereeB
+    hash: 2b0683d9be8c
+    date: '2026-10-26'
+    model: claude-opus-5-5
+    evidence: 06-cardinal-arithmetic.md:268 The dependency ledger line for the finite-case aftermath is
+      incomplete.
 - key: proof:thm-cardinal-laws
   kind: proof
   file: 06-cardinal-arithmetic.md
   line: 240
   hash: 9d3cb916269c
-  verdicts: []
+  verdicts:
+  - stage: S5a
+    verdict: correct
+    by: refereeA
+    hash: 9d3cb916269c
+    date: '2026-10-26'
+    model: claude-opus-5-5
+    evidence: 06:241-266; (d) and (f) round trips checked; the fold maps for (a), (b), (c), (e) are right,
+      including the three associativity cases and X^∅={(∅,X)} from prp-empty-function (a); the sidecar
+      passes
+  - stage: S5b
+    verdict: correct
+    by: refereeB
+    hash: 9d3cb916269c
+    date: '2026-10-26'
+    model: claude-opus-5-5
+    evidence: '06:241-265: (d) and (f) round trips checked; the fold maps for (a), (b), (c), (e) and their
+      inverses checked, including the associativity sample ((b,1),0) -> ((b,0),1)'
 - key: exm-method-laws-by-bijection
   kind: exm
   file: 06-cardinal-arithmetic.md
   line: 270
   hash: b2d9273b1890
-  verdicts: []
+  verdicts:
+  - stage: S5a
+    verdict: correct
+    by: refereeA
+    hash: b2d9273b1890
+    date: '2026-10-26'
+    model: claude-opus-5-5
+    evidence: 06:273-277; the (N9) and B4 (b) pointers are right
+  - stage: S5b
+    verdict: correct
+    by: refereeB
+    hash: b2d9273b1890
+    date: '2026-10-26'
+    model: claude-opus-5-5
+    evidence: '06:273-277: (N9) of fd1:exm-not-allowed-catalogue is ''citing a line that is not available''
+      (fd1 06:85), which fits'
 - key: check:06-cardinal-arithmetic:4
   kind: check
   file: 06-cardinal-arithmetic.md
   line: 280
   hash: 6e529d3f833d
-  verdicts: []
+  verdicts:
+  - stage: S5a
+    verdict: correct
+    by: refereeA
+    hash: 6e529d3f833d
+    date: '2026-10-26'
+    model: claude-opus-5-5
+    evidence: 06:285; 8=8; Φ(h)=(f,g) with f(a)=1, g(b)=0, g(c)=1
+  - stage: S5b
+    verdict: correct
+    by: refereeB
+    hash: 6e529d3f833d
+    date: '2026-10-26'
+    model: claude-opus-5-5
+    evidence: '06:285: 8 = 2*4; Phi(h) correct'
 - key: thm-power-set-two-power
   kind: thm
   file: 06-cardinal-arithmetic.md
   line: 292
   hash: d91ebd1a1932
-  verdicts: []
+  verdicts:
+  - stage: S5a
+    verdict: correct
+    by: refereeA
+    hash: d91ebd1a1932
+    date: '2026-10-26'
+    model: claude-opus-5-5
+    evidence: 06:292-296
+  - stage: S5b
+    verdict: correct
+    by: refereeB
+    hash: d91ebd1a1932
+    date: '2026-10-26'
+    model: claude-opus-5-5
+    evidence: '06:295: the statement matches the Section 1.5 correspondence (05-functions after exm-function-set-small)'
 - key: proof:thm-power-set-two-power
   kind: proof
   file: 06-cardinal-arithmetic.md
   line: 298
   hash: 9ecd68ed763f
-  verdicts: []
+  verdicts:
+  - stage: S5a
+    verdict: correct
+    by: refereeA
+    hash: 9ecd68ed763f
+    date: '2026-10-26'
+    model: claude-opus-5-5
+    evidence: 06:299; both round trips; f(x)≠1 gives f(x)=0 from the codomain; prp-function-equality applies
+  - stage: S5b
+    verdict: correct
+    by: refereeB
+    hash: 9ecd68ed763f
+    date: '2026-10-26'
+    model: claude-opus-5-5
+    evidence: '06:299: both round trips; f(x) != 1 gives 0 (ledger 752). The three back-pointers at 302
+      checked: 2.5 fold at 05:388, 3.3 at 03:186, 3.4 check at 04:70-79'
 - key: cor-cantor-two-power
   kind: cor
   file: 06-cardinal-arithmetic.md
   line: 304
   hash: 76e56a067950
-  verdicts: []
+  verdicts:
+  - stage: S5a
+    verdict: correct
+    by: refereeA
+    hash: 76e56a067950
+    date: '2026-10-26'
+    model: claude-opus-5-5
+    evidence: 06:304-308
+  - stage: S5b
+    verdict: correct
+    by: refereeB
+    hash: 76e56a067950
+    date: '2026-10-26'
+    model: claude-opus-5-5
+    evidence: 06:307
 - key: proof:cor-cantor-two-power
   kind: proof
   file: 06-cardinal-arithmetic.md
   line: 314
   hash: ef813bb1b307
-  verdicts: []
+  verdicts:
+  - stage: S5a
+    verdict: correct
+    by: refereeA
+    hash: ef813bb1b307
+    date: '2026-10-26'
+    model: claude-opus-5-5
+    evidence: 06:315; x↦ind_{x} is injective; the composite of bijections is a bijection by thm-composition-injective-surjective
+      (c), against thm-cantor
+  - stage: S5b
+    verdict: correct
+    by: refereeB
+    hash: ef813bb1b307
+    date: '2026-10-26'
+    model: claude-opus-5-5
+    evidence: '06:315: injection by singletons; composition with the inverse bijection gives a surjection
+      onto P(X), which thm-cantor forbids'
 - key: thm-reals-power-set-naturals
   kind: thm
   file: 06-cardinal-arithmetic.md
   line: 332
   hash: 45a54be9f511
-  verdicts: []
+  verdicts:
+  - stage: S5a
+    verdict: correct
+    by: refereeA
+    hash: 45a54be9f511
+    date: '2026-10-26'
+    model: claude-opus-5-5
+    evidence: 06:332-336
+  - stage: S5b
+    verdict: minor
+    by: refereeB
+    hash: 45a54be9f511
+    date: '2026-10-26'
+    model: claude-opus-5-5
+    evidence: '06-cardinal-arithmetic.md:354 False meta-claim: the middle step does not ''replace that
+      exercise''s hand-built code 10k + d_k''.'
 - key: proof:thm-reals-power-set-naturals
   kind: proof
   file: 06-cardinal-arithmetic.md
   line: 342
   hash: d9f36dd2f5c1
-  verdicts: []
+  verdicts:
+  - stage: S5a
+    verdict: correct
+    by: refereeA
+    hash: d9f36dd2f5c1
+    date: '2026-10-26'
+    model: claude-opus-5-5
+    evidence: 06:343-351; uses (D1)-(D3) exactly as stated at 03-diagonal-arguments:217-221; well-defined
+      (c), monotone (c) with {0,1}^T≠∅ checked, and law (f) with X={0,1}, Y=T, Z=ℕ are applied correctly;
+      y_b≤t_1+1/10≤2/10; exm-reals-open-interval does cover [0,1)
+  - stage: S5b
+    verdict: minor
+    by: refereeB
+    hash: d9f36dd2f5c1
+    date: '2026-10-26'
+    model: claude-opus-5-5
+    evidence: 06-cardinal-arithmetic.md:343 Symbols get a second meaning within the section, against the
+      STYLE §9 checklist.
 - key: check:06-cardinal-arithmetic:5
   kind: check
   file: 06-cardinal-arithmetic.md
   line: 362
   hash: ac222d638ba9
-  verdicts: []
+  verdicts:
+  - stage: S5a
+    verdict: correct
+    by: refereeA
+    hash: ac222d638ba9
+    date: '2026-10-26'
+    model: claude-opus-5-5
+    evidence: 06:367; SB is choice-free (04-comparing-cardinalities:166), and every map is given by a
+      rule
+  - stage: S5b
+    verdict: correct
+    by: refereeB
+    hash: ac222d638ba9
+    date: '2026-10-26'
+    model: claude-opus-5-5
+    evidence: '06:367: true. S-B is choice-free (04:166); exm-reals-open-interval uses formulas and S-B'
 - key: exm-interleaving-decimals
   kind: exm
   file: 06-cardinal-arithmetic.md
   line: 372
   hash: b8389dae85d4
-  verdicts: []
+  verdicts:
+  - stage: S5a
+    verdict: correct
+    by: refereeA
+    hash: b8389dae85d4
+    date: '2026-10-26'
+    model: claude-opus-5-5
+    evidence: 06:383-393; t_n≤1-2·10^{-n}; injectivity by (D3) and (D2); for 1/11, t_{2j}=(1/11)(1-100^{-j})
+      and the odd places hold since (1/11)100^{-j}≤100^{-j}/10; the expansion is unique by (D3)
+  - stage: S5b
+    verdict: correct
+    by: refereeB
+    hash: b8389dae85d4
+    date: '2026-10-26'
+    model: claude-opus-5-5
+    evidence: '06:383-393: t_n <= 1 - 2*10^-n, z <= 1 - 10^-n; injectivity by (D3); 1/11 = 0.0909... is
+      its only expansion (no tail of 0s or 9s), so a preimage needs b = 999...; sidecar runs ok'
 - key: thm-plane-equinumerous-line
   kind: thm
   file: 06-cardinal-arithmetic.md
   line: 396
   hash: 09b1319cbe8a
-  verdicts: []
+  verdicts:
+  - stage: S5a
+    verdict: correct
+    by: refereeA
+    hash: 09b1319cbe8a
+    date: '2026-10-26'
+    model: claude-opus-5-5
+    evidence: 06:396-400
+  - stage: S5b
+    verdict: correct
+    by: refereeB
+    hash: 09b1319cbe8a
+    date: '2026-10-26'
+    model: claude-opus-5-5
+    evidence: '06:399; the aftermath at 410 checked: Theta(h) = h o d puts a(n) at 2n and b(n) at 2n+1,
+      as in 3.4 B3 (04:355)'
 - key: proof:thm-plane-equinumerous-line
   kind: proof
   file: 06-cardinal-arithmetic.md
   line: 406
   hash: 0ce3e47d08a0
-  verdicts: []
+  verdicts:
+  - stage: S5a
+    verdict: correct
+    by: refereeA
+    hash: 0ce3e47d08a0
+    date: '2026-10-26'
+    model: claude-opus-5-5
+    evidence: 06:407; the chain of bijections is right; at 06:410 the composite h(d(m)) puts a(n) at 2n
+      and b(n) at 2n+1, which matches 3.4 B3
+  - stage: S5b
+    verdict: correct
+    by: refereeB
+    hash: 0ce3e47d08a0
+    date: '2026-10-26'
+    model: claude-opus-5-5
+    evidence: '06:407: chain of well-defined (b), laws (d), two-copies with well-defined (c)'
 - key: thm-baire-space-reals
   kind: thm
   file: 06-cardinal-arithmetic.md
   line: 412
   hash: 17d33c7cc549
-  verdicts: []
+  verdicts:
+  - stage: S5a
+    verdict: correct
+    by: refereeA
+    hash: 17d33c7cc549
+    date: '2026-10-26'
+    model: claude-opus-5-5
+    evidence: 06:412-416
+  - stage: S5b
+    verdict: minor
+    by: refereeB
+    hash: 17d33c7cc549
+    date: '2026-10-26'
+    model: claude-opus-5-5
+    evidence: 06-cardinal-arithmetic.md:426 Imprecise meta-claim 'reached the same equality'.
 - key: proof:thm-baire-space-reals
   kind: proof
   file: 06-cardinal-arithmetic.md
   line: 422
   hash: 3141d84a8bac
-  verdicts: []
+  verdicts:
+  - stage: S5a
+    verdict: minor
+    by: refereeA
+    hash: 3141d84a8bac
+    date: '2026-10-26'
+    model: claude-opus-5-5
+    evidence: 06-cardinal-arithmetic.md:423 The proof applies prp-card-operations-monotone (c) without
+      checking its hypothesis A'≠∅.
+  - stage: S5b
+    verdict: correct
+    by: refereeB
+    hash: 3141d84a8bac
+    date: '2026-10-26'
+    model: claude-opus-5-5
+    evidence: '06:423: injections both ways; monotone (c) applies with A'' = {0,1}^N nonempty; laws (f)
+      and exm-pairing-bijection'
 - key: cor-real-sequences
   kind: cor
   file: 06-cardinal-arithmetic.md
   line: 428
   hash: 6765df60d310
-  verdicts: []
+  verdicts:
+  - stage: S5a
+    verdict: correct
+    by: refereeA
+    hash: 6765df60d310
+    date: '2026-10-26'
+    model: claude-opus-5-5
+    evidence: 06:428-432
+  - stage: S5b
+    verdict: correct
+    by: refereeB
+    hash: 6765df60d310
+    date: '2026-10-26'
+    model: claude-opus-5-5
+    evidence: 06:431
 - key: proof:cor-real-sequences
   kind: proof
   file: 06-cardinal-arithmetic.md
   line: 434
   hash: 43fd8cc16f27
-  verdicts: []
+  verdicts:
+  - stage: S5a
+    verdict: correct
+    by: refereeA
+    hash: 43fd8cc16f27
+    date: '2026-10-26'
+    model: claude-opus-5-5
+    evidence: 06:435-442; every equality cites the right part
+  - stage: S5b
+    verdict: minor
+    by: refereeB
+    hash: 43fd8cc16f27
+    date: '2026-10-26'
+    model: claude-opus-5-5
+    evidence: 06-cardinal-arithmetic.md:442 Misleading meta-claim 'No appeal to @thm-schroder-bernstein
+      is needed'.
 - key: check:06-cardinal-arithmetic:6
   kind: check
   file: 06-cardinal-arithmetic.md
   line: 447
   hash: 6d9053157ea3
-  verdicts: []
+  verdicts:
+  - stage: S5a
+    verdict: correct
+    by: refereeA
+    hash: 6d9053157ea3
+    date: '2026-10-26'
+    model: claude-opus-5-5
+    evidence: 06:452
+  - stage: S5b
+    verdict: correct
+    by: refereeB
+    hash: 6d9053157ea3
+    date: '2026-10-26'
+    model: claude-opus-5-5
+    evidence: 06:452
 - key: exr-cardinal-arithmetic-a1
   kind: exr
   file: 06-cardinal-arithmetic.md
   line: 465
   hash: 9c15015bf3be
-  verdicts: []
+  verdicts:
+  - stage: S5a
+    verdict: correct
+    by: refereeA
+    hash: 9c15015bf3be
+    date: '2026-10-26'
+    model: claude-opus-5-5
+    evidence: 06:477-483; (a) truth values right, including ∅^∅; (b) gives id; (c) the images are disjoint;
+      (d) the argument matches (D3)'s two-sided form
+  - stage: S5b
+    verdict: minor
+    by: refereeB
+    hash: 9c15015bf3be
+    date: '2026-10-26'
+    model: claude-opus-5-5
+    evidence: 06-cardinal-arithmetic.md:472 Part (d) asks for pairs that serve 'by the same appeal to
+      (D3)'. The solution also counts pairs that miss 0, which need the other half of (D3) and a widened
+      target.
+  - stage: S6
+    verdict: correct
+    by: verifier
+    hash: 9c15015bf3be
+    date: '2026-10-26'
+    model: claude-opus-5-5
+    evidence: '06:477-483. (a) True/True/True/False checked: the empty set ⊔ A = A×{1} by def-disjoint-union
+      line 24, and ∅^∅ has one element by prp-empty-function (a). (b) Φ(g)(y,z)=g(z)(y) (line 247) gives
+      g(0)=id; my script agrees. (c) The images (-1,1) and [1,∞) do not meet. (d) Checked against the
+      (D3) wording at 03:226: with {0,9} both tail shapes are possible, so (D3) alone does not settle
+      injectivity. Pa'
 - key: exr-cardinal-arithmetic-b1
   kind: exr
   file: 06-cardinal-arithmetic.md
   line: 488
   hash: f2e09d22a46f
-  verdicts: []
+  verdicts:
+  - stage: S5a
+    verdict: correct
+    by: refereeA
+    hash: f2e09d22a46f
+    date: '2026-10-26'
+    model: claude-opus-5-5
+    evidence: 06:501-505; E(1,0,1)=π(1,1)=4; the sidecar passes
+  - stage: S5b
+    verdict: correct
+    by: refereeB
+    hash: f2e09d22a46f
+    date: '2026-10-26'
+    model: claude-opus-5-5
+    evidence: '06:501-505: E(1,0,1) = pi(1,1) = 4; division arguments correct; sidecar ok'
+  - stage: S6
+    verdict: correct
+    by: verifier
+    hash: f2e09d22a46f
+    date: '2026-10-26'
+    model: claude-opus-5-5
+    evidence: 06:501-505. (a) and (b) round trips checked by script, with (b) on 8-bit prefixes. (c) E(1,0,1)=π(1,1)=τ2+1=4;
+      script checks E round trips on [0,15)^3 and that E hits every value 0..499. The worked examples
+      exm-two-copies-of-naturals and exm-pairing-bijection cover this task type.
 - key: exr-cardinal-arithmetic-b2
   kind: exr
   file: 06-cardinal-arithmetic.md
   line: 508
   hash: 7fadc5250ef6
-  verdicts: []
+  verdicts:
+  - stage: S5a
+    verdict: correct
+    by: refereeA
+    hash: 7fadc5250ef6
+    date: '2026-10-26'
+    model: claude-opus-5-5
+    evidence: 06:520-522
+  - stage: S5b
+    verdict: correct
+    by: refereeB
+    hash: 7fadc5250ef6
+    date: '2026-10-26'
+    model: claude-opus-5-5
+    evidence: '06:520-522: both routes correct'
+  - stage: S6
+    verdict: correct
+    by: verifier
+    hash: 7fadc5250ef6
+    date: '2026-10-26'
+    model: claude-opus-5-5
+    evidence: '06:520-522. The direct maps and their inverses are right. In the route by the laws, X={0,1}
+      in thm-cardinal-laws (d), and {0,1}≅{0}⊔{0} via 0↦(0,0), 1↦(0,1) is right. Worked example: exm-method-laws-by-bijection.'
 - key: exr-cardinal-arithmetic-b3
   kind: exr
   file: 06-cardinal-arithmetic.md
   line: 525
   hash: e474b187be02
-  verdicts: []
+  verdicts:
+  - stage: S5a
+    verdict: correct
+    by: refereeA
+    hash: e474b187be02
+    date: '2026-10-26'
+    model: claude-opus-5-5
+    evidence: 06:538-546; ℝ⊔ℝ=ℝ×{0,1}⊆ℝ×ℝ; the induction starts at 2, matching cor-product-countable's
+      no-1-tuples remark
+  - stage: S5b
+    verdict: correct
+    by: refereeB
+    hash: e474b187be02
+    date: '2026-10-26'
+    model: claude-opus-5-5
+    evidence: '06:538-546: S-B applications and the induction from k = 2 correct; the no-1-tuples remark
+      matches 01:288'
+  - stage: S6
+    verdict: correct
+    by: verifier
+    hash: e474b187be02
+    date: '2026-10-26'
+    model: claude-opus-5-5
+    evidence: '06:538-546. N×R ⊆ R×R, and R⊔R = R×{0,1}, are both right. The induction from n0=2 matches
+      the convention at 01:293 (no 1-tuples). Worked examples: thm-plane-equinumerous-line and cor-real-sequences.'
 - key: exr-cardinal-arithmetic-b4
   kind: exr
   file: 06-cardinal-arithmetic.md
   line: 549
   hash: 795fff8df031
-  verdicts: []
+  verdicts:
+  - stage: S5a
+    verdict: minor
+    by: refereeA
+    hash: 795fff8df031
+    date: '2026-10-26'
+    model: claude-opus-5-5
+    evidence: 06-cardinal-arithmetic.md:567 The side remark on the disjoint case leaves out the citation
+      that moves the bijection into the exponent.
+  - stage: S5b
+    verdict: minor
+    by: refereeB
+    hash: 795fff8df031
+    date: '2026-10-26'
+    model: claude-opus-5-5
+    evidence: 06-cardinal-arithmetic.md:567 The 'true when Y n Z = empty' remark leaves out the step that
+      moves the bijection into the exponent.
+  - stage: S6
+    verdict: minor
+    by: verifier
+    hash: 795fff8df031
+    date: '2026-10-26'
+    model: claude-opus-5-5
+    evidence: 06-cardinal-arithmetic.md:567 The remark 'true when Y∩Z=∅, by Quick check 1 (c) and @thm-cardinal-laws
+      (d)' leaves out the step that moves the size change into the exponent.
 - key: exr-cardinal-arithmetic-c1
   kind: exr
   file: 06-cardinal-arithmetic.md
   line: 580
   hash: cd26734d287a
-  verdicts: []
+  verdicts:
+  - stage: S5a
+    verdict: correct
+    by: refereeA
+    hash: cd26734d287a
+    date: '2026-10-26'
+    model: claude-opus-5-5
+    evidence: 06:599-608; currying direction Y=ℕ, Z=ℝ; B3 (a) in the exponent; then thm-cantor
+  - stage: S5b
+    verdict: minor
+    by: refereeB
+    hash: cd26734d287a
+    date: '2026-10-26'
+    model: claude-opus-5-5
+    evidence: 06-cardinal-arithmetic.md:608 The conclusion 'there are more functions R -> R than real
+      numbers' (|R| < |R^R|) is not proved. Only the absence of a surjection R -> R^R is shown.
+  - stage: S6
+    verdict: minor
+    by: verifier
+    hash: cd26734d287a
+    date: '2026-10-26'
+    model: claude-opus-5-5
+    evidence: 06-cardinal-arithmetic.md:608 The closing sentence 'So there are more functions R → R than
+      real numbers' asserts |R| < |R^R|, but only 'no surjection' was proved; the ≤ half is never stated.
 - key: exr-cardinal-arithmetic-c2
   kind: exr
   file: 06-cardinal-arithmetic.md
   line: 619
   hash: 381da9dc47a2
-  verdicts: []
+  verdicts:
+  - stage: S5a
+    verdict: correct
+    by: refereeA
+    hash: 381da9dc47a2
+    date: '2026-10-26'
+    model: claude-opus-5-5
+    evidence: 06:630-634; (N14) is the right entry; the repair through R4 is right
+  - stage: S5b
+    verdict: correct
+    by: refereeB
+    hash: 381da9dc47a2
+    date: '2026-10-26'
+    model: claude-opus-5-5
+    evidence: '06:630-642: (N14) fits (fd1 06:93); R1 gives existence only; R4 is at the end of this section'
+  - stage: S6
+    verdict: correct
+    by: verifier
+    hash: 381da9dc47a2
+    date: '2026-10-26'
+    model: claude-opus-5-5
+    evidence: '06:629-642. The flaw is in line 1: an infinite sum is named as a natural number, which
+      is (N14) at fd1 06-checking-proofs:93. The all-1 sequence is a witness to it. The second line''s
+      unproved uniqueness of binary digits is the only other weak spot, and the solution flags it and
+      gives it 1 point. The rescue through R4 by changing the codomain is valid.'
 - key: exr-cardinal-arithmetic-c3
   kind: exr
   file: 06-cardinal-arithmetic.md
   line: 645
   hash: 2589972d3906
-  verdicts: []
+  verdicts:
+  - stage: S5a
+    verdict: correct
+    by: refereeA
+    hash: 2589972d3906
+    date: '2026-10-26'
+    model: claude-opus-5-5
+    evidence: 06:652-656; B⊆ℕ^ℕ; σ_b is an involution; b is read off σ_b(2n); SB
+  - stage: S5b
+    verdict: correct
+    by: refereeB
+    hash: 2589972d3906
+    date: '2026-10-26'
+    model: claude-opus-5-5
+    evidence: '06:652-656: sigma_b is an involution and b is read off sigma_b(2n); matches exr-diagonal-arguments-c2
+      (03:433)'
+  - stage: S6
+    verdict: minor
+    by: verifier
+    hash: 2589972d3906
+    date: '2026-10-26'
+    model: claude-opus-5-5
+    evidence: 06-cardinal-arithmetic.md:656 Schröder-Bernstein is applied to B and {0,1}^N, but the 'Up'
+      paragraph built an injection B → R, not B → {0,1}^N.
 - key: exr-infinite-sets-r1
   kind: exr
   file: 06-cardinal-arithmetic.md
