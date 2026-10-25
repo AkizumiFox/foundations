@@ -186,7 +186,7 @@ The four uses of the template on the main line of this chapter, side by side:
 
 ## Optional: every vector space has a basis
 
-Nothing later in the book depends on this subsection. It sketches, without proving here, for a reader who has met vector spaces, how *Linear Algebra*, Section 1.8 uses the same template.
+Nothing later in the book depends on this subsection. For a reader who has met vector spaces, it sketches, without proving here, how *Linear Algebra*, Section 1.8 uses the same template.
 
 A basis of a vector space \( V \) is a linearly independent set of vectors that spans \( V \). The theorem there is that every linearly independent set \( S \subseteq V \) lies in a basis. In the language of @exm-method-maximality, the partial objects are the linearly independent sets containing \( S \), ordered by \( \subseteq \); \( S \) itself is one. Independence is a condition on finitely many vectors at a time: a set is independent when no finite non-trivial combination of its vectors is \( 0 \). So a dependence among vectors of the union of a chain involves finitely many vectors, which lie in one member of the chain (@lem-chain-union (b)), and that member is independent: the union is a partial object. Zorn's lemma gives a maximal independent set \( M \). It spans \( V \), since a vector outside its span could be added to \( M \) without creating a dependence, giving a strictly larger partial object. With \( S = \emptyset \), every vector space has a basis, including \( \nR \) as a vector space over \( \nQ \), where no basis can be written down.
 
@@ -379,7 +379,7 @@ This item is optional and goes with the optional subsection. A set of vectors is
 
 (b) The union of a chain of finite sets need not be finite (the second warning of Section 5.1), so step (2) fails: the union need not be a partial object.
 
-(c) This is the warning of @exm-maximal-not-greatest. Maximal independent sets need not contain one another, so a vector space can have many bases, none of them greatest. In \( \nR^2 \), \( \{ (1, 0), (1, 1) \} \) and \( \{ (2, 0), (0, 3) \} \) are both bases, and neither contains the other.
+(c) This is the point of @exm-maximal-not-greatest. Maximal independent sets need not contain one another, so a vector space can have many bases, none of them greatest. In \( \nR^2 \), \( \{ (1, 0), (1, 1) \} \) and \( \{ (2, 0), (0, 3) \} \) are both bases, and neither contains the other.
 :::
 
 <!-- dependency ledger

@@ -193,7 +193,7 @@ Let \( X = \nZ \) and \( m \sim n \iff m - n \) is even. Describe the partial ob
 :::
 
 ::: {.solution}
-They are the sets \( \{e, o\} \) with \( e \) even and \( o \) odd: two even or two odd integers are related, since their difference is even, so a partial object holds at most one of each parity. These are exactly the maximal elements, since any third integer has the parity of \( e \) or of \( o \) (every integer is even or odd, @thm-even-or-odd), and \( \emptyset \) and the one-element sets are not maximal, since each lies strictly inside some \( \{e, o\} \). There are many maximal elements, such as \( \{0, 1\} \) and \( \{4, -7\} \), and no greatest one.
+They are the sets \( \{e, o\} \) with \( e \) even and \( o \) odd: two even or two odd integers are related, since their difference is even, so a partial object holds at most one of each parity. Conversely, \( \{e, o\} \) is a partial object: with \( e = 2a \) and \( o = 2b + 1 \), \( e - o = 2(a - b - 1) + 1 \) is odd, hence not even (no integer is both, @thm-even-or-odd), so \( e \not\sim o \). These are exactly the maximal elements, since any third integer has the parity of \( e \) or of \( o \) (every integer is even or odd, @thm-even-or-odd), and \( \emptyset \) and the one-element sets are not maximal, since each lies strictly inside some \( \{e, o\} \). There are many maximal elements, such as \( \{0, 1\} \) and \( \{4, -7\} \), and no greatest one.
 :::
 
 ::: {.warning}
@@ -288,9 +288,11 @@ Prove each true statement and refute each false one.
 1. If every chain of a non-empty partially ordered set \( P \) has an upper bound in \( P \), then \( P \) has a greatest element.
 2. Every non-empty finite partially ordered set has a maximal element.
 3. The set of subsets of \( \nN \) that contain no two consecutive numbers, ordered by \( \subseteq \), has a greatest element.
-4. If \( P \) is a non-empty partially ordered set in which every non-empty chain has an upper bound, then every \( p \in P \) lies below some maximal element of \( P \). (Hint: apply Zorn's lemma to the elements above \( p \).)
+4. If \( P \) is a non-empty partially ordered set in which every non-empty chain has an upper bound, then every \( p \in P \) lies below some maximal element of \( P \).
 5. The set of countable subsets of \( \nR \), ordered by \( \subseteq \), has a maximal element.
 :::
+
+*Hint for (d): apply Zorn's lemma to the elements above \( p \).*
 :::
 
 ::: {.solution}

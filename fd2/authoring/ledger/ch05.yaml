@@ -49,7 +49,7 @@ items:
   kind: lem
   file: 01-chains-and-zorn.md
   line: 55
-  hash: 35256edb4e1a
+  hash: 92ac43291991
   verdicts:
   - stage: S5a
     verdict: correct
@@ -166,6 +166,14 @@ items:
     evidence: 'The status paragraph (01:92) now argues soundly: Zorn ⇔ AC, and AC is independent (Section
       3.2, ch03/02:46). The open item is F004 (deferred): the forward pointers to ST.4 and MT.1 have no
       promise row in STATUS.md.'
+  - stage: S8
+    verdict: correct
+    by: coordinator
+    hash: c4073f785522
+    date: '2026-10-25'
+    evidence: 01:92 status paragraph sound (Zorn<=>AC, AC independent, ch03/02:46); ST pointer in '*Book*,
+      Chapter N' form; sidecar thm-zorn.py passes; remaining STATUS promise rows (ST.4, MT.1) are shared-file
+      bookkeeping, shared-todo item 1
 - key: check:01-chains-and-zorn:3
   kind: check
   file: 01-chains-and-zorn.md
@@ -215,11 +223,18 @@ items:
     model: claude-opus-5-5
     evidence: 01-chains-and-zorn.md:138 The chapter's new notation is not recorded in NOTATION.md, and
       it contradicts NOTATION rows.
+  - stage: S8
+    verdict: correct
+    by: coordinator
+    hash: eba75cf91c31
+    date: '2026-10-25'
+    evidence: 01:122-157 statement and proof correct; local clause names (C1),(C2) used consistently in
+      01 and 02:188; NOTATION row amendment is shared, shared-todo item 3
 - key: proof:thm-choice-from-zorn
   kind: proof
   file: 01-chains-and-zorn.md
   line: 145
-  hash: 6eba99f4bd3c
+  hash: e65fe7a6e8eb
   verdicts:
   - stage: S5a
     verdict: minor
@@ -282,6 +297,13 @@ items:
     model: claude-opus-5-5
     evidence: index.md:19 Named moves entry 'Finitely many, so one member' links to @lem-chain-union,
       which is a lemma, not a method box (STYLE §2 item 6)
+  - stage: S8
+    verdict: correct
+    by: coordinator
+    hash: 89b9d6b65f5e
+    date: '2026-10-25'
+    evidence: 01:159-167 template matches all four runs; index.md:18 Named moves now lists only @exm-method-maximality
+      (S8 seam finding gone)
 - key: exm-zorn-representatives
   kind: exm
   file: 01-chains-and-zorn.md
@@ -320,11 +342,18 @@ items:
     evidence: '''no formula for one is known'' at 01:189 is correct and consistent with the rest of the
       chapter. Still open: the MT.1 pointer has no STATUS promise row (F004, deferred) and the blueprint
       wording (F003 aftermath, deferred).'
+  - stage: S8
+    verdict: correct
+    by: coordinator
+    hash: 50b984f0a483
+    date: '2026-10-25'
+    evidence: 01:171-189 proof correct; 'no formula for one is known' consistent; MT pointer '*Measure
+      and Integration*, Chapter 1'; sidecar passes; STATUS row is shared-todo item 1
 - key: check:01-chains-and-zorn:4
   kind: check
   file: 01-chains-and-zorn.md
   line: 191
-  hash: d43e0057eaaf
+  hash: 56aca86433c0
   verdicts:
   - stage: S5a
     verdict: minor
@@ -362,6 +391,13 @@ items:
       is odd, so not even, which needs ''not both even and odd''). It only shows at most one element of
       each parity. Everything else is right: the maximal elements are the {e,o}, and ∅ and the singletons
       lie strictly inside some {e,o}.'
+  - stage: S8
+    verdict: correct
+    by: coordinator
+    hash: 56aca86433c0
+    date: '2026-10-25'
+    evidence: '01:196 added: {e,o} is a partial object, e-o=2(a-b-1)+1 odd hence not even (thm-even-or-odd,
+      ch01/01:139), so e !~ o; rest (at most one per parity, maximality, no greatest) rechecked'
 - key: exr-chains-and-zorn-a1
   kind: exr
   file: 01-chains-and-zorn.md
@@ -394,6 +430,14 @@ items:
       of P, the same two maximal elements, and no greatest element. Cross-reference prp-greatest-maximal
       (a) is valid. The A1 wording is fine; the ''minor'' verdict is only so the item is not marked clean
       while C1 has an open find-the-error issue (see findings). The math in A1 is correct.'
+  - stage: S8
+    verdict: correct
+    by: coordinator
+    hash: cabfeb4e1de4
+    date: '2026-10-25'
+    evidence: '01:209-234 (a)-(d) rechecked: (c) six partial choice functions for I={1,2}, two maximal,
+      no greatest; sidecar exr-chains-and-zorn-a1.py passes; the C1 issue that held it at minor is closed
+      (c1 correct S7r)'
 - key: exr-chains-and-zorn-b1
   kind: exr
   file: 01-chains-and-zorn.md
@@ -488,7 +532,7 @@ items:
   kind: exr
   file: 01-chains-and-zorn.md
   line: 282
-  hash: 65bfcefffbd6
+  hash: 8a594e96b15a
   verdicts:
   - stage: S5a
     verdict: correct
@@ -534,11 +578,18 @@ items:
     evidence: The hint in (d) points to the method of the solution (Q = elements above p). (c) now justifies
       that n ∉ E is odd by thm-even-or-odd, so n+1 ∈ E gives two consecutive numbers. (a) false, (b) true,
       (d) true, (e) as before.
+  - stage: S8
+    verdict: correct
+    by: coordinator
+    hash: 8a594e96b15a
+    date: '2026-10-25'
+    evidence: '01:282-296 hint moved after the list as italic ''*Hint for (d): ...*'' per STYLE.md:229;
+      names tool+object only; solutions (a)-(e) rechecked, (d) at 01:305 uses Q={q: p<=q} as hinted'
 - key: exr-chains-and-zorn-c1
   kind: exr
   file: 01-chains-and-zorn.md
-  line: 310
-  hash: cdfbccea7fe2
+  line: 312
+  hash: a8ce33ff905a
   verdicts:
   - stage: S5a
     verdict: correct
@@ -586,8 +637,8 @@ items:
 - key: exr-chains-and-zorn-c2
   kind: exr
   file: 01-chains-and-zorn.md
-  line: 333
-  hash: 9f6860d53bc6
+  line: 335
+  hash: 89edaf8e06ef
   verdicts:
   - stage: S5a
     verdict: correct
@@ -660,6 +711,14 @@ items:
     model: claude-opus-5-5
     evidence: STATUS.md:188 The promise bookkeeping for the chapter's main payoff is stale. Section 5.2
       pays it, but STATUS still credits it to ST.4 and does not mark it paid.
+  - stage: S8
+    verdict: correct
+    by: coordinator
+    hash: 4d40da190c25
+    date: '2026-10-25'
+    evidence: 02:9-40 theorem and proof correct (partial matchings, chain union via lem-chain-union, maximal
+      one exhausts a side); sidecar thm-cardinal-comparability.py passes; STATUS paid-row and ch03 retag
+      are shared-todo item 2
 - key: proof:thm-cardinal-comparability
   kind: proof
   file: 02-using-zorn.md
@@ -737,6 +796,13 @@ items:
     evidence: 'The pointer at :54 now reads ''*Axiomatic Set Theory*, Chapter 4''. series.py show confirms
       ST Ch 4 = ST.4 ''Equivalents of the Axiom of Choice''. Still open, and deferred: the STATUS promise
       row for F2.4 §01/§02 -> ST.4 (F013).'
+  - stage: S8
+    verdict: correct
+    by: coordinator
+    hash: 98905c41394f
+    date: '2026-10-25'
+    evidence: 02:48-54 proof correct (trichotomy from comparability + Schroder-Bernstein); ST pointer
+      '*Axiomatic Set Theory*, Chapter 4' = ST.4; STATUS row shared-todo item 1
 - key: check:02-using-zorn:1
   kind: check
   file: 02-using-zorn.md
@@ -905,6 +971,13 @@ items:
     evidence: 'The summary table now follows this example''s check, closes the order-extension subsection
       and is introduced as ''on the main line''. The four rows match the four main-line uses. Still open,
       and deferred: the NOTATION rows for \sqsubseteq, ≤_p and ≤_l (F019).'
+  - stage: S8
+    verdict: correct
+    by: coordinator
+    hash: 2ebd4c2865bc
+    date: '2026-10-25'
+    evidence: 02:146-168 order on N with 0 on top checked, extends divisibility; sidecar exm-divisibility-linear-extension.py
+      passes; NOTATION rows for sqsubseteq, <=_p, <=_l are shared-todo item 4
 - key: check:02-using-zorn:3
   kind: check
   file: 02-using-zorn.md
@@ -929,7 +1002,7 @@ items:
   kind: exr
   file: 02-using-zorn.md
   line: 197
-  hash: bcdfa692c7ac
+  hash: 1734b6c4e081
   verdicts:
   - stage: S5a
     verdict: correct
@@ -974,7 +1047,7 @@ items:
   kind: exr
   file: 02-using-zorn.md
   line: 222
-  hash: f289265c3c21
+  hash: 823458f97403
   verdicts:
   - stage: S5a
     verdict: correct
@@ -1080,7 +1153,7 @@ items:
   kind: exr
   file: 02-using-zorn.md
   line: 274
-  hash: b8ebebf84013
+  hash: f4cd13a42f42
   verdicts:
   - stage: S5a
     verdict: correct
@@ -1129,7 +1202,7 @@ items:
   kind: exr
   file: 02-using-zorn.md
   line: 307
-  hash: b42ba8f59cb4
+  hash: 62839358e08a
   verdicts:
   - stage: S5a
     verdict: correct
@@ -1177,7 +1250,7 @@ items:
   kind: exr
   file: 02-using-zorn.md
   line: 327
-  hash: f22dc0dc541c
+  hash: 814dc747d07d
   verdicts:
   - stage: S5a
     verdict: correct
@@ -1224,8 +1297,8 @@ items:
 - key: exr-using-zorn-r2
   kind: exr
   file: 02-using-zorn.md
-  line: 337
-  hash: ddf0afe8df96
+  line: 342
+  hash: 02af306525cf
   verdicts:
   - stage: S5a
     verdict: correct
@@ -1282,8 +1355,8 @@ items:
 - key: exr-using-zorn-r3
   kind: exr
   file: 02-using-zorn.md
-  line: 352
-  hash: a6b795c4081a
+  line: 365
+  hash: 793fd5af0fb5
   verdicts:
   - stage: S5a
     verdict: correct
@@ -1333,3 +1406,11 @@ items:
     model: claude-opus-5-5
     evidence: (c) no longer names Section 4.3 in the problem; the solution cites @exm-maximal-not-greatest.
       The two bases of ℝ^2 are valid and incomparable. (a) and (b) are unchanged and correct.
+  - stage: S8
+    verdict: correct
+    by: coordinator
+    hash: 793fd5af0fb5
+    date: '2026-10-25'
+    evidence: 02:382 now 'This is the point of @exm-maximal-not-greatest' (label is an example); (a),(b)
+      unchanged; (c) {(1,0),(1,1)} and {(2,0),(0,3)} both bases of R^2 (det 1, 6), neither contains the
+      other
