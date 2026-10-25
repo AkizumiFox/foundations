@@ -186,6 +186,23 @@ items:
     evidence: '01-countable-sets.md:129-137: (S) cites def-countable/prp-countable-image, (I) cites thm-countable-characterizations
       (ii)=>(i) with composition through (i)=>(ii) for a countable target; both routes are sound and agree
       with how 3.1 later uses them'
+  - stage: S7r
+    verdict: correct
+    by: rereferee
+    hash: 2fac0d4a4b9e
+    date: '2026-10-25'
+    model: claude-opus-5-5
+    evidence: In the template, route (S) cites @def-countable plus a ref-free pointer to the image result.
+      Route (I) cites thm-countable-characterizations, which is stated earlier. Nothing in the box refers
+      forward.
+  - stage: S7r
+    verdict: correct
+    by: rereferee
+    hash: 2fac0d4a4b9e
+    date: '2026-10-25'
+    model: claude-opus-5-5
+    evidence: Template (S) now cites @def-countable, or 'the result on images proved below' for a countable
+      domain. This avoids a forward @ref and is accurate.
 - key: check:01-countable-sets:1
   kind: check
   file: 01-countable-sets.md
@@ -207,6 +224,24 @@ items:
     date: '2026-10-25'
     model: claude-opus-5-5
     evidence: 01-countable-sets.md:144 Pointer '(... at the end of this section)' is false for @cor-product-countable.
+  - stage: S7r
+    verdict: correct
+    by: rereferee
+    hash: 7216e822e5c5
+    date: '2026-10-25'
+    model: claude-opus-5-5
+    evidence: (a) is the image of N, a surjection onto its image (Section 2.5), so @def-countable applies.
+      (b) is the odd numbers, but the solution rightly needs only the inclusion into N and (ii)=>(i).
+      Every citation precedes the check.
+  - stage: S7r
+    verdict: correct
+    by: rereferee
+    hash: 7216e822e5c5
+    date: '2026-10-25'
+    model: claude-opus-5-5
+    evidence: '(a) uses the image surjection (shrinking the codomain, ch02/05:120) with def-countable.
+      (b) {n : n^2+1 even} ⊆ ℕ via the inclusion and thm-countable-characterizations (ii)⇒(i). Both are
+      correct.'
 - key: prp-countable-subset
   kind: prp
   file: 01-countable-sets.md
@@ -556,6 +591,15 @@ items:
     model: claude-opus-5-5
     evidence: 01-countable-sets.md:347 'Route (I) would need the map to be injective' does not match the
       box's route (I), which injects S itself.
+  - stage: S7r
+    verdict: correct
+    by: rereferee
+    hash: e7f8c62c6f26
+    date: '2026-10-25'
+    model: claude-opus-5-5
+    evidence: 'The route (I) paragraph now matches the box: it needs an injection S -> ZxZ, which is the
+      inverse of the map. Both cases are covered: n != n'' contradicts irrationality, and n = n'' gives
+      m = m''.'
 - key: exm-list-two-element-subsets
   kind: exm
   file: 01-countable-sets.md
@@ -577,6 +621,22 @@ items:
     date: '2026-10-25'
     model: claude-opus-5-5
     evidence: 01-countable-sets.md:356 Meta-claim 'the usual failure of the box' misnames the box's content.
+  - stage: S7r
+    verdict: correct
+    by: rereferee
+    hash: 0d8248922477
+    date: '2026-10-25'
+    model: claude-opus-5-5
+    evidence: The meta-reference now matches the box's 'When to use it' (:134). The rest is unchanged
+      and correct.
+  - stage: S7r
+    verdict: correct
+    by: rereferee
+    hash: 0d8248922477
+    date: '2026-10-25'
+    model: claude-opus-5-5
+    evidence: The solution's reference to the box's 'When to use it' matches the box text (01:134). The
+      coding 2^min 3^max is injective and the proof that P_2 is infinite is intact.
 - key: exr-countable-sets-a1
   kind: exr
   file: 01-countable-sets.md
@@ -790,6 +850,24 @@ items:
       (I) of exm-method-list-it, citing prp-function-equality, thm-product-countable and (ii)=>(i). (b)
       uses ℕ ≈ j(ℕ) ⊆ A finite, then prp-subset-finite, against exm-hilbert-hotel. (e) cites prp-union-two-countable
       a'
+  - stage: S7r
+    verdict: correct
+    by: rereferee
+    hash: c84614181cdf
+    date: '2026-10-25'
+    model: claude-opus-5-5
+    evidence: '(e): A ∪ B is countable (prp-union-two-countable), and bijection N->A composed with the
+      inclusion is an injection N -> A ∪ B (thm-composition-injective-surjective (a)). Part (b), proved
+      just above, then gives countably infinite.'
+  - stage: S7r
+    verdict: correct
+    by: rereferee
+    hash: c84614181cdf
+    date: '2026-10-25'
+    model: claude-opus-5-5
+    evidence: (e) The bijection ℕ→A composed with the inclusion is an injection ℕ→A∪B (thm-composition-injective-surjective
+      (a)). A∪B is countable by prp-union-two-countable, so it is countably infinite by part (b). The
+      argument is valid.
 - key: exr-countable-sets-c1
   kind: exr
   file: 01-countable-sets.md
@@ -921,6 +999,14 @@ items:
       forming (a_n) as a choice function for ({a in A : a > sup A - 1/n})_n. The warning correctly separates
       least preimages of a surjection already in hand from choosing the surjections themselves. I found
       no defects.'
+  - stage: S7r
+    verdict: correct
+    by: rereferee
+    hash: 18b44f911789
+    date: '2026-10-25'
+    model: claude-opus-5-5
+    evidence: The ledger rows now point to F2.3 §05 (matching 'Section 3.5' at 02:47) and to def-finite
+      at F2.2 §05. The prose is unchanged.
 - key: exm-method-name-the-choice
   kind: exm
   file: 02-countable-unions-and-choice.md
@@ -1044,6 +1130,21 @@ items:
     model: claude-opus-5-5
     evidence: 03:88 steps are sound. 'So f∘g = id_Y' uses prp-function-equality (Ch 6) and '⋃P_y ⊆ X'
       uses def-family-union-intersection. Neither is cited or ledgered. [finding refuted by skeptics]
+  - stage: S7r
+    verdict: correct
+    by: rereferee
+    hash: c04a83ac0ca3
+    date: '2026-10-25'
+    model: claude-opus-5-5
+    evidence: 'The only change is bolding ''**By @ax-choice**''. The argument is unchanged and valid:
+      P_y is non-empty by surjectivity, the choice function c is re-coded as g: Y→X, and f∘g = id_Y.'
+  - stage: S7r
+    verdict: correct
+    by: rereferee
+    hash: c04a83ac0ca3
+    date: '2026-10-25'
+    model: claude-opus-5-5
+    evidence: Only the bold flag '**By @ax-choice**' was added. The proof is unchanged and correct.
 - key: check:02-countable-unions-and-choice:2
   kind: check
   file: 02-countable-unions-and-choice.md
@@ -1066,6 +1167,22 @@ items:
     model: claude-opus-5-5
     evidence: 02-countable-unions-and-choice.md:143 The claim that every n has the two preimages n and
       -n is false for n = 0.
+  - stage: S7r
+    verdict: correct
+    by: rereferee
+    hash: ea23deae2176
+    date: '2026-10-25'
+    model: claude-opus-5-5
+    evidence: 'The preimage description is now correct for n = 0. g(n)=n is a rule-defined right inverse
+      of |·|: Z→N.'
+  - stage: S7r
+    verdict: correct
+    by: rereferee
+    hash: ea23deae2176
+    date: '2026-10-25'
+    model: claude-opus-5-5
+    evidence: The preimages of n under |k| are n, and also -n when n>0. This is the correct fix for n=0,
+      and g(n)=n is a right inverse.
 - key: thm-countable-union
   kind: thm
   file: 02-countable-unions-and-choice.md
@@ -1099,6 +1216,13 @@ items:
       J x N is countable by cor-product-countable (a) and non-empty via (n_0, 0). The composite is onto
       by thm-composition-injective-surjective (b). In (b), the renumbering B_n = A_{s(n)} is shown equal
       in bo
+  - stage: S7r
+    verdict: correct
+    by: rereferee
+    hash: 989a8951c013
+    date: '2026-10-25'
+    model: claude-opus-5-5
+    evidence: The ledger row 'R is not countable' now points to F2.3 §03, matching prose 02:198.
 - key: proof:thm-countable-union
   kind: proof
   file: 02-countable-unions-and-choice.md
@@ -1195,6 +1319,13 @@ items:
     evidence: '03:169-182: the definition and examples are right; √2+√3 is a root of x^4-10x^2+1, checked
       by sidecar. The letter c means the choice function at 03:35 and 03:128 and in A1, then a coefficient
       tuple from 03:169 and in C2. NOTATION.md:28 says one symbol, one meaning. [finding refuted by skeptics]'
+  - stage: S7r
+    verdict: correct
+    by: rereferee
+    hash: fd13a725b6ad
+    date: '2026-10-25'
+    model: claude-opus-5-5
+    evidence: The ledger row now points to verify/ch03/thm-algebraic-countable.py, which exists.
 - key: proof:thm-algebraic-countable
   kind: proof
   file: 02-countable-unions-and-choice.md
@@ -1260,6 +1391,13 @@ items:
       Each c(n) is onto via m = 1 and m = 0. (d) The two-sentence idea is right. (e) The union is a subset
       of N, so prp-countable-subset applies. The S5b finding is resolved: min A in h_A now cites thm-well-ordering
       (:'
+  - stage: S7r
+    verdict: correct
+    by: rereferee
+    hash: c0dc08fac519
+    date: '2026-10-25'
+    model: claude-opus-5-5
+    evidence: The ledger row now points to verify/ch03/exr-countable-unions-and-choice-a1.py, which exists.
 - key: exr-countable-unions-and-choice-b1
   kind: exr
   file: 02-countable-unions-and-choice.md
@@ -1290,6 +1428,13 @@ items:
     model: claude-opus-5-5
     evidence: 03:233-254. The four verdicts (no, no, yes, no) are justified. The rules n+1/2, min S and
       √y are checked. The worked material is the ax-choice examples and 'A rule that picks' at 03:53-67.
+  - stage: S7r
+    verdict: correct
+    by: rereferee
+    hash: 6d253859c42d
+    date: '2026-10-25'
+    model: claude-opus-5-5
+    evidence: The ledger row now points to verify/ch03/exr-countable-unions-and-choice-b1.py, which exists.
 - key: exr-countable-unions-and-choice-b2
   kind: exr
   file: 02-countable-unions-and-choice.md
@@ -1408,6 +1553,24 @@ items:
       says thm-countable-union(a) uses ax-choice (the bold line in its proof at line 170). (e): c(n)=φ(min{j:
       φ(j)∈A_n}) is a rule; if c were injective, ℕ would be equinumerous with a subset of the finite set
       U, aga'
+  - stage: S7r
+    verdict: correct
+    by: rereferee
+    hash: a966163e34b5
+    date: '2026-10-25'
+    model: claude-opus-5-5
+    evidence: '(d): the counterexample {0} is finite, hence not equinumerous with N, via transitivity
+      and Hilbert hotel. (e): the min step is cited to thm-well-ordering, the finiteness of N is cited
+      to prp-equinumerous-properties, and the pigeonhole argument is valid. Ledger rows are updated.'
+  - stage: S7r
+    verdict: correct
+    by: rereferee
+    hash: a966163e34b5
+    date: '2026-10-25'
+    model: claude-opus-5-5
+    evidence: '(d) {0} is finite, so not countably infinite: a bijection ℕ→{0} would make ℕ finite (transitivity
+      in prp-equinumerous-properties), against exm-hilbert-hotel. (e) The min is justified by thm-well-ordering,
+      and the pigeonhole step is intact.'
 - key: exr-countable-unions-and-choice-c1
   kind: exr
   file: 02-countable-unions-and-choice.md
@@ -2191,6 +2354,26 @@ items:
       (b), whose proof uses ax-choice, and then says ''No choice is involved''. As written this is self-contradictory:
       the cited proof does use choice. The choice-free alternative is only sketched (''order the 2^p patterns
       lexicographically ... as in exm-choice-free-unions''), and no single listing function is written'
+  - stage: S7r
+    verdict: correct
+    by: rereferee
+    hash: e3677bf5a580
+    date: '2026-10-25'
+    model: claude-opus-5-5
+    evidence: '(a) now cites thm-countable-union (b) for countability and says plainly that its proof
+      uses ax-choice in general. It then writes down one listing function. L(p,k)(n) = w_{p,k}(n mod p),
+      with w_{p,k} := w_{p,2^p-1} when k >= 2^p, is onto the periodic sequences: a in P_p has the pattern
+      a|{0..p-1} = w_{p,k} for some k < 2^p, and a(qp+r) = a(r). Composing L with a surjection N -> Z>0
+      x N matches exm-'
+  - stage: S7r
+    verdict: correct
+    by: rereferee
+    hash: e3677bf5a580
+    date: '2026-10-25'
+    model: claude-opus-5-5
+    evidence: (a) The explicit L(p,k) with padding w_{p,k}=w_{p,2^p-1} for k≥2^p maps ℤ_{>0}×ℕ onto the
+      periodic sequences. Composed with a surjection ℕ→ℤ_{>0}×ℕ it lists them without choice. The note
+      that thm-countable-union uses choice in general is accurate.
 - key: exr-diagonal-arguments-c1
   kind: exr
   file: 03-diagonal-arguments.md
@@ -2536,6 +2719,22 @@ items:
     model: claude-opus-5-5
     evidence: 04-comparing-cardinalities.md:187 In the injectivity sentence the comparison is between
       a point and 5, when it should be between their images.
+  - stage: S7r
+    verdict: correct
+    by: rereferee
+    hash: 42c432524315
+    date: '2026-10-25'
+    model: claude-opus-5-5
+    evidence: 'Line 187: inclusion is injective; the reverse map x->x/2, 5->1 is well defined because
+      5 is not in [0,1]. It is injective within [0,1], and its images (at most 1/2) never equal 1, the
+      image of 5. Schroder-Bernstein applies.'
+  - stage: S7r
+    verdict: correct
+    by: rereferee
+    hash: 42c432524315
+    date: '2026-10-25'
+    model: claude-opus-5-5
+    evidence: The injectivity clause now says that x/2 ≤ 1/2 < 1, the image of 5. This is correct.
 - key: exm-closed-open-interval
   kind: exm
   file: 04-comparing-cardinalities.md
@@ -2577,6 +2776,23 @@ items:
     model: claude-opus-5-5
     evidence: 04-comparing-cardinalities.md:220 The claim that φ takes values in (0,1) is justified only
       for the second case.
+  - stage: S7r
+    verdict: correct
+    by: rereferee
+    hash: 9af3c9480dfa
+    date: '2026-10-25'
+    model: claude-opus-5-5
+    evidence: The u(x)=x/2+1/4 route is sound. phi is well defined, and its values lie in (0,1) in all
+      three cases (line 220). It maps H onto H' bijectively, and [0,1]\H = (0,1)\H' because 0 and 1 lie
+      in H and H\{0,1} = H'. The sample values phi(1)=1/3, phi(1/2)=1/4, phi(3/4)=3/4 are correct.
+  - stage: S7r
+    verdict: correct
+    by: rereferee
+    hash: 9af3c9480dfa
+    date: '2026-10-25'
+    model: claude-opus-5-5
+    evidence: 'Values lie in (0,1): either 1/2, or 1/(n+2) ∈ (0,1/3], or x ∉ H, so x ≠ 0,1, giving 0<x<1.
+      The rest of the bijection argument is unchanged.'
 - key: exm-reals-open-interval
   kind: exm
   file: 04-comparing-cardinalities.md
@@ -2830,6 +3046,22 @@ items:
       infinite. (b) If A were equinumerous with C, then phi^{-1} o k would inject B into A, and Schröder-Bernstein
       would give |A|=|B|, which is excluded. (c) Compose the injections and use characterization (ii)
       a
+  - stage: S7r
+    verdict: correct
+    by: rereferee
+    hash: 780fe382c241
+    date: '2026-10-25'
+    model: claude-opus-5-5
+    evidence: '(d): f->G_f is injective by prp-function-equality. S->p(S) is injective because p is injective.
+      S->ind_S is injective. Composing these and applying Schroder-Bernstein gives the equality. The G_f
+      symbol matches def-function''s G. The other parts are unchanged.'
+  - stage: S7r
+    verdict: correct
+    by: rereferee
+    hash: 780fe382c241
+    date: '2026-10-25'
+    model: claude-opus-5-5
+    evidence: The graph is renamed Γ_f→G_f. The injection ℕ^ℕ→P(ℕ×ℕ) via prp-function-equality is correct.
 - key: exr-comparing-cardinalities-c1
   kind: exr
   file: 04-comparing-cardinalities.md
@@ -3445,6 +3677,24 @@ items:
       applies twice. My brute-force script gave 4, 16, 256 for n=1,2,3, matching the text. The problem
       hides its source and the solution cites @fd1:def-truth-function (the spiral item, allowed under
       the early-c'
+  - stage: S7r
+    verdict: correct
+    by: rereferee
+    hash: a88e4cd62989
+    date: '2026-10-25'
+    model: claude-opus-5-5
+    evidence: 05:293-297. The row map has an explicit inverse (T on A, F elsewhere) and an injectivity
+      check. The second bijection uses the same checks. prp-power-set-count gives 2^n, then 2^(2^n), and
+      4, 16, 256 for n = 1, 2, 3 is correct. Ledger row cites verify/ch03/exr-infinite-sets-r3.py, which
+      exists.
+  - stage: S7r
+    verdict: correct
+    by: rereferee
+    hash: a88e4cd62989
+    date: '2026-10-25'
+    model: claude-opus-5-5
+    evidence: The surjectivity and injectivity of the row↔T-places map are spelled out, and the truth-function
+      bijection is handled the same way. The counts 2^n and 2^{2^n} (4, 16, 256) are correct.
 - key: exr-infinite-sets-r4
   kind: exr
   file: 05-infinite-sets.md
@@ -3506,6 +3756,25 @@ items:
       no row for A^k as tuples; its only row, Y^X, means the set of functions X -> Y. In this chapter
       \nN^{\nN} means functions N -> N (B4(d), 04:370), and the letter N here sits right beside the blackboard
       \nN, so \nN^N reads as 'functions from N to \nN' as easily as 'N-tuples'.
+  - stage: S7r
+    verdict: correct
+    by: rereferee
+    hash: e27fe8942ed1
+    date: '2026-10-25'
+    model: claude-opus-5-5
+    evidence: 05:306-315. Z_0 is a singleton, Z_1 is in bijection with N, and Z_m for m >= 2 is in bijection
+      with the m-fold product, which is countable by cor-product-countable (b). Z_m is countable via prp-countable-image,
+      and the union via thm-countable-union. The diagonal remark is correct. Ledger tag F2.1 §04 def-ordered-pair
+      is accurate. The only blemish is the cosmetic letter mix reported under new_probl
+  - stage: S7r
+    verdict: correct
+    by: rereferee
+    hash: e27fe8942ed1
+    date: '2026-10-25'
+    model: claude-opus-5-5
+    evidence: Using m in place of N removes the clash with the index N. Z_m→ℕ×…×ℕ (m factors) is a bijection
+      and is countable by cor-product-countable and prp-countable-image. The text is consistent with the
+      Z_N family defined above.
 - key: check:02-countable-sets:1
   kind: check
   file: 01-countable-sets.md

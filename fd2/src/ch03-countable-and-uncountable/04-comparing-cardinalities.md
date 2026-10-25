@@ -184,7 +184,7 @@ Show \( \card{[0, 1] \cup \{5\}} = \card{[0, 1]} \) by the method.
 :::
 
 ::: {.solution}
-The inclusion \( [0, 1] \to [0, 1] \cup \{5\} \) is injective. In the other direction, send \( x \in [0, 1] \) to \( x/2 \) and \( 5 \) to \( 1 \). Since \( 5 \notin [0, 1] \), the two clauses define a function into \( [0, 1] \). It is injective: two points of \( [0, 1] \) with \( x/2 = y/2 \) are equal, and a point of \( [0, 1] \) never meets \( 5 \), since \( x/2 \le \frac12 < 1 \). By @thm-schroder-bernstein the sets are equinumerous.
+The inclusion \( [0, 1] \to [0, 1] \cup \{5\} \) is injective. In the other direction, send \( x \in [0, 1] \) to \( x/2 \) and \( 5 \) to \( 1 \). Since \( 5 \notin [0, 1] \), the two clauses define a function into \( [0, 1] \). It is injective: two points of \( [0, 1] \) with \( x/2 = y/2 \) are equal, and the image \( x/2 \) of a point of \( [0, 1] \) is never \( 1 \), the image of \( 5 \), since \( x/2 \le \frac12 < 1 \). By @thm-schroder-bernstein the sets are equinumerous.
 :::
 
 ## Intervals of real numbers
@@ -217,7 +217,7 @@ The inclusion \( (0, 1) \to [0, 1] \) is an injection. In the other direction le
 x & \text{otherwise.}
 \end{cases}
 \]
-The cases do not overlap, since \( \frac1n \ne 0 \), and in the second case \( n = 1/x \) is determined by \( x \); so \( \varphi \) is a function, with values in \( (0, 1) \) because \( 0 < \frac{1}{n + 2} \le \frac13 \). Let \( H \coloneqq \{0\} \cup \{ \frac1n : n \in \nZ_{>0} \} = \{0, 1, \frac12, \frac13, \dots\} \) and \( H' \coloneqq \{ \frac1m : m \in \nZ_{>0}, \ m \ge 2 \} = \{\frac12, \frac13, \frac14, \dots\} \). Then \( \varphi \) maps \( H \) onto \( H' \): \( 0 \mapsto \frac12 \), and \( \frac1n \mapsto \frac{1}{n + 2} \) runs through \( \frac13, \frac14, \dots \). It is injective on \( H \), since \( \frac{1}{n + 2} = \frac{1}{n' + 2} \) forces \( n = n' \), and \( \frac{1}{n + 2} \le \frac13 < \frac12 \). Off \( H \) it is the identity of \( [0, 1] \setminus H = (0, 1) \setminus H' \). Since
+The cases do not overlap, since \( \frac1n \ne 0 \), and in the second case \( n = 1/x \) is determined by \( x \); so \( \varphi \) is a function, with values in \( (0, 1) \): the value is \( \frac12 \), or \( \frac{1}{n + 2} \in (0, \frac13] \), or, in the last case, \( x \) with \( x \ne 0 \) and \( x \ne 1 = \frac11 \), so \( 0 < x < 1 \). Let \( H \coloneqq \{0\} \cup \{ \frac1n : n \in \nZ_{>0} \} = \{0, 1, \frac12, \frac13, \dots\} \) and \( H' \coloneqq \{ \frac1m : m \in \nZ_{>0}, \ m \ge 2 \} = \{\frac12, \frac13, \frac14, \dots\} \). Then \( \varphi \) maps \( H \) onto \( H' \): \( 0 \mapsto \frac12 \), and \( \frac1n \mapsto \frac{1}{n + 2} \) runs through \( \frac13, \frac14, \dots \). It is injective on \( H \), since \( \frac{1}{n + 2} = \frac{1}{n' + 2} \) forces \( n = n' \), and \( \frac{1}{n + 2} \le \frac13 < \frac12 \). Off \( H \) it is the identity of \( [0, 1] \setminus H = (0, 1) \setminus H' \). Since
 \[
 [0, 1] = H \cup \bigl([0, 1] \setminus H\bigr), \qquad (0, 1) = H' \cup \bigl((0, 1) \setminus H'\bigr),
 \]
@@ -380,7 +380,7 @@ Prove each true statement and refute each false one with a counterexample. Here 
 
 (d) True, by the method of @exm-method-injections-both-ways. *Into \( \nN^{\nN} \):* send \( a \in \{0, 1\}^{\nN} \) to the same rule read with codomain \( \nN \). Two sequences with the same image have the same values, so they are equal (@prp-function-equality). *Back:* in three injective steps.
 
-- \( f \mapsto \Gamma_f \), the graph of \( f \), is an injection \( \nN^{\nN} \to \powerset{\nN \times \nN} \): equal graphs give equal values, so equal functions (@prp-function-equality).
+- \( f \mapsto G_f \), the graph of \( f \), is an injection \( \nN^{\nN} \to \powerset{\nN \times \nN} \): equal graphs give equal values, so equal functions (@prp-function-equality).
 - With the injection \( p(m, n) \coloneqq 2^m 3^n \) from the proof of @thm-product-countable, \( S \mapsto p(S) \) is an injection \( \powerset{\nN \times \nN} \to \powerset{\nN} \). If \( p(S) = p(T) \) and \( x \in S \), then \( p(x) \in p(T) \), so \( p(x) = p(y) \) for some \( y \in T \), and \( x = y \in T \). So \( S \subseteq T \), and \( T \subseteq S \) in the same way.
 - \( S \mapsto \ind_S \) is an injection \( \powerset{\nN} \to \{0, 1\}^{\nN} \): \( \ind_S = \ind_T \) says that \( n \in S \) exactly when \( n \in T \).
 
@@ -457,22 +457,22 @@ Is the conclusion true? Does the argument prove it? If not, name the line that f
 
 <!-- dependency ledger
 def-card-le (example): finite case, the inclusion {1..m} into {1..n} for m <= n | {1, ..., n} notation (NOTATION; F2.2 §01); order of N
-def-card-le (example): {x1} = {x2} gives x1 = x2 | def-set-equality (F2.1 §01), used silently
+def-card-le (example): {x1} = {x2} gives x1 = x2 | def-set-equality (F2.1 §02), used silently
 prp-card-le-preorder (claim): (after it) 2N is not N, n -> 2n injective | arithmetic (1 is not even: thm-division-algorithm uniqueness)
 thm-schroder-bernstein (proof): case split a in C or a not in C | excluded middle (F1.5 §07, prose pointer; classical logic of F1.2)
-thm-schroder-bernstein (proof): g(f(S)) is a subset of A for S subset of A, so (n, S) -> g(f(S)) is a function N x P(A) -> P(A) | def-image (cited), def-power-set (F2.1 §02), used silently
-thm-schroder-bernstein (claim): ([Looking ahead] remark, end of main line) any two sets are comparable, via Zorn's lemma, Section 5.2 | F2.5 §02 (prose pointer; nothing depends on it); a recursion on N has countable image, prp-countable-image
-exm-closed-open-interval (solution): 1/4 <= x/2 + 1/4 <= 3/4; 1/n distinct for distinct n; 0 < 1/(n+2) <= 1/3 < 1/2 | R arithmetic and order, school fact; verify/ch08/exm-closed-open-interval.py
+thm-schroder-bernstein (proof): g(f(S)) is a subset of A for S subset of A, so (n, S) -> g(f(S)) is a function N x P(A) -> P(A) | def-image (cited), def-power-set (F2.1 §03), used silently
+thm-schroder-bernstein (claim): ([Looking ahead] remark, end of main line) any two sets are comparable, via Zorn's lemma, Section 5.2 | F2.4 §02 (thm-cardinal-comparability; prose pointer; nothing depends on it); a recursion on N has countable image, prp-countable-image
+exm-closed-open-interval (solution): 1/4 <= x/2 + 1/4 <= 3/4; 1/n distinct for distinct n; 0 < 1/(n+2) <= 1/3 < 1/2 | R arithmetic and order, school fact; verify/ch03/exm-closed-open-interval.py
 exm-closed-open-interval (solution): [0,1] \ H = (0,1) \ H' | inline (0 and 1 = 1/1 lie in H; H \ {0, 1} = H')
-exm-reals-open-interval (solution): algebra of |x|/(1 + |x|) and its inverse; |y/(1-|y|)| = |y|/(1-|y|) | R arithmetic with absolute values, school fact (F2.1 §05 B3 does the same computation, not cited); verify/ch08/exm-reals-open-interval.py
+exm-reals-open-interval (solution): algebra of |x|/(1 + |x|) and its inverse; |y/(1-|y|)| = |y|/(1-|y|) | R arithmetic with absolute values, school fact (F2.1 §05 B3 does the same computation, not cited); verify/ch03/exm-reals-open-interval.py
 exm-reals-open-interval (solution): an interval contains every number between two of its points | school fact about intervals (each kind by its defining inequalities)
 exm-reals-open-interval (claim): (after it) a set equinumerous with a countable set is countable | inline (prp-countable-image with the bijection; empty case trivial)
-exr-comparing-cardinalities-a1 (solution): C_n = {4^n q : q odd} by induction; 4^k q != 0 and >= 4 for k >= 1 | inline induction; prp-power-laws (e); verify/ch08/exr-comparing-cardinalities-a1.py
+exr-comparing-cardinalities-a1 (solution): C_n = {4^n q : q odd} by induction; 4^k q != 0 and >= 4 for k >= 1 | inline induction; prp-power-laws (e); verify/ch03/exr-comparing-cardinalities-a1.py
 exr-comparing-cardinalities-b1 (solution): j(k) = 2k / -2k-1 lands in N and is injective | thm-division-algorithm (cited), prp-integers-closed (b), used silently
 exr-comparing-cardinalities-b1 (solution): x/4 maps (0,1) u (2,3) into (0,1/4) u (1/2,3/4) | R arithmetic, school fact
 exr-comparing-cardinalities-b2 (solution): x -> 3x bijection (0,1) -> (0,3) | R arithmetic, school fact
-exr-comparing-cardinalities-c1 (solution): uses (D1), (D2), (D3) | school facts (D1)-(D3), stated in F2.3 §04 (def-decimal-expansion)
-exr-comparing-cardinalities-c1 (solution): y_S <= t_1 + 1/10 <= 3/10 | def-decimal-expansion (cited) with n = 1; verify/ch08/exr-comparing-cardinalities-c1.py
+exr-comparing-cardinalities-c1 (solution): uses (D1), (D2), (D3) | school facts (D1)-(D3), stated in F2.3 §03 (def-decimal-expansion)
+exr-comparing-cardinalities-c1 (solution): y_S <= t_1 + 1/10 <= 3/10 | def-decimal-expansion (cited) with n = 1; verify/ch03/exr-comparing-cardinalities-c1.py
 exr-comparing-cardinalities-c2 (solution): 9/10 not in [1/4, 3/4] | R order, school fact
 exm-method-injections-both-ways (example): x/2 at most 1/2, below 1, for x in [0,1]; 5 not in [0,1] | R order, school fact
 exr-comparing-cardinalities-b4 (solution): S -> p(S) injective on subsets of N x N | inline from injectivity of p; verify/ch03/exr-comparing-cardinalities-b4.py

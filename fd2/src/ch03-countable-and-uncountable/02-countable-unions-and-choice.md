@@ -44,7 +44,7 @@ In symbols, with \( Y^X \) the set of functions of Section 1.5 and \( U \coloneq
 
 In words: the hypothesis says that each set of the family has an element; the conclusion says that **one** function picks an element of every \( A_i \) at the same time. The codomain, a set by (W3), only gives \( c \) somewhere to take its values. The axiom asserts that \( c \) exists and gives no recipe for it.
 
-**Its status.** For finitely many indices the axiom adds nothing (proved below); for infinitely many it is a genuinely new principle. It can be neither proved nor refuted from the other axioms of set theory (Gödel, Cohen). Chapter 5 states its best-known equivalent, Zorn's lemma; the companion volume on set theory proves it equivalent to the axiom, together with the other equivalents such as the well-ordering theorem, and surveys the independence results. This book uses the axiom openly on the main line, among other places: here, for countable unions and right inverses; in Section 3.5, for infinite subsets that can be listed; in *Analysis on the Real Line*, Chapter 1, for sup approximations (the remark below); in *Measure and Integration*, Chapter 1, for the Vitali set; in *Functional Analysis*, Chapter 4, through Zorn's lemma, for the Hahn–Banach theorem; and in *Functional Analysis*, Chapter 6, for Tychonoff's theorem. Each use is flagged at its line.
+**Its status.** For finitely many indices the axiom adds nothing (proved below); for infinitely many it is a genuinely new principle. It can be neither proved nor refuted from the other axioms of set theory (Gödel, Cohen). Chapter 5 states its best-known equivalent, Zorn's lemma; *Axiomatic Set Theory* proves it equivalent to the axiom, together with the other equivalents such as the well-ordering theorem, and surveys the independence results. This book uses the axiom openly on the main line, among other places: here, for countable unions and right inverses; in Section 3.5, for infinite subsets that can be listed; in *Analysis on the Real Line*, Chapter 1, for sup approximations (the remark below); in *Measure and Integration*, Chapter 1, for the Vitali set; in *Functional Analysis*, Chapter 4, through Zorn's lemma, for the Hahn–Banach theorem; and in *Functional Analysis*, Chapter 6, for Tychonoff's theorem. Each use is flagged at its line.
 
 ::: {.remark}
 A corollary in *Analysis on the Real Line*, Chapter 1 gives, for each \( n \ge 1 \) separately, some \( a_n \in A \) with \( a_n > \sup A - \frac1n \): one \( \rulename{\exists E} \) per \( n \), and no axiom. Forming the **sequence** \( (a_n)_{n \ge 1} \) from these is a choice function for the family \( \bigl( \{ a \in A : a > \sup A - \tfrac1n \} \bigr)_{n \in \nZ_{>0}} \), an instance of @ax-choice with the countable index set \( I = \nZ_{>0} \). *Analysis on the Real Line*, Chapter 1 flags exactly this step.
@@ -130,7 +130,7 @@ A right inverse must name a preimage of every \( y \). The preimages of the poin
 :::
 
 ::: {.proof}
-For \( y \in Y \), let \( P_y \coloneqq f^{-1}(\{y\}) = \{ x \in X : f(x) = y \} \) (@def-preimage). This defines a family \( (P_y)_{y \in Y} \) of subsets of \( X \), indexed by \( Y \). Each \( P_y \) is non-empty, since \( f \) is surjective (@def-surjective). By @ax-choice there is a function \( c \colon Y \to \bigcup_{y \in Y} P_y \) with \( c(y) \in P_y \) for every \( y \in Y \). The union is a subset of \( X \), so the graph of \( c \) is a subset of \( Y \times X \), and with codomain \( X \) it is a function \( g \colon Y \to X \) with \( g(y) = c(y) \) (@def-function). For every \( y \in Y \), \( g(y) \in P_y \), that is, \( f(g(y)) = y \). So \( f \circ g = \id_Y \), and \( g \) is a right inverse of \( f \) (@def-left-right-inverse (b)).
+For \( y \in Y \), let \( P_y \coloneqq f^{-1}(\{y\}) = \{ x \in X : f(x) = y \} \) (@def-preimage). This defines a family \( (P_y)_{y \in Y} \) of subsets of \( X \), indexed by \( Y \). Each \( P_y \) is non-empty, since \( f \) is surjective (@def-surjective). **By @ax-choice** there is a function \( c \colon Y \to \bigcup_{y \in Y} P_y \) with \( c(y) \in P_y \) for every \( y \in Y \). The union is a subset of \( X \), so the graph of \( c \) is a subset of \( Y \times X \), and with codomain \( X \) it is a function \( g \colon Y \to X \) with \( g(y) = c(y) \) (@def-function). For every \( y \in Y \), \( g(y) \in P_y \), that is, \( f(g(y)) = y \). So \( f \circ g = \id_Y \), and \( g \) is a right inverse of \( f \) (@def-left-right-inverse (b)).
 :::
 
 Together with @prp-right-inverse-surjective: a function is surjective **if and only if** it has a right inverse. The theorem is in fact equivalent to the axiom: a right inverse of the projection \( (i, a) \mapsto i \), from the set of pairs with \( a \in A_i \) onto \( I \), is a choice function in disguise.
@@ -140,7 +140,7 @@ Let \( f \colon \nZ \to \nN \), \( f(k) \coloneqq \abs{k} \). It is surjective. 
 :::
 
 ::: {.solution}
-No. Each \( n \in \nN \) has the preimages \( n \) and \( -n \), and the rule "take the non-negative one" names one of them: \( g(n) \coloneqq n \). Then \( f(g(n)) = \abs{n} = n \), so \( g \colon \nN \to \nZ \) is a right inverse, defined by a formula. The axiom is needed only when no such rule is available.
+No. Each \( n \in \nN \) has the preimage \( n \), and also \( -n \) when \( n > 0 \); the rule "take the non-negative one" names one of them: \( g(n) \coloneqq n \). Then \( f(g(n)) = \abs{n} = n \), so \( g \colon \nN \to \nZ \) is a right inverse, defined by a formula. The axiom is needed only when no such rule is available.
 :::
 
 ## Countable unions
@@ -371,9 +371,9 @@ Prove each true statement, naming each use of @ax-choice as in @exm-method-name-
 
 (c) **True.** For \( y \in Y \), the set \( f^{-1}(\{y\}) \subseteq \nN \) is non-empty, since \( f \) is onto, so \( g(y) \coloneqq \min f^{-1}(\{y\}) \) exists by @thm-well-ordering. This is a rule, and \( f(g(y)) = y \).
 
-(d) **False.** Take \( A_n \coloneqq \{0\} \) for every \( n \): the union is \( \{0\} \), which is finite.
+(d) **False.** Take \( A_n \coloneqq \{0\} \) for every \( n \): the union is \( \{0\} \), which is finite, hence not countably infinite: a bijection \( \nN \to \{0\} \) would make \( \nN \) finite (@prp-equinumerous-properties), against @exm-hilbert-hotel.
 
-(e) **True, with no axiom.** The set \( U \coloneqq \bigcup_{n \in \nN} A_n \) is non-empty (it contains the elements of \( A_0 \)) and finite, say with \( k \ge 1 \) elements via a bijection \( \varphi \colon \{1, \dots, k\} \to U \) (one \( \rulename{\exists E} \)). Define \( c(n) \coloneqq \varphi\bigl(\min \{ j : \varphi(j) \in A_n \}\bigr) \); the set is non-empty because \( A_n \ne \emptyset \) and \( \varphi \) is onto. This is a rule, and \( c(n) \in A_n \). If \( c \) were injective, \( \nN \) would be equinumerous with \( c(\nN) \subseteq U \), which is finite (@prp-subset-finite). Then \( \nN \) would be finite, against @exm-hilbert-hotel. So \( c(m) = c(n) \) for some \( m \ne n \), and that element lies in \( A_m \cap A_n \). This is the pigeonhole idea of @exm-method-pigeonhole, with infinitely many pigeons.
+(e) **True, with no axiom.** The set \( U \coloneqq \bigcup_{n \in \nN} A_n \) is non-empty (it contains the elements of \( A_0 \)) and finite, say with \( k \ge 1 \) elements via a bijection \( \varphi \colon \{1, \dots, k\} \to U \) (one \( \rulename{\exists E} \)). Define \( c(n) \coloneqq \varphi\bigl(\min \{ j : \varphi(j) \in A_n \}\bigr) \) (@thm-well-ordering); the set is non-empty because \( A_n \ne \emptyset \) and \( \varphi \) is onto. This is a rule, and \( c(n) \in A_n \). If \( c \) were injective, \( \nN \) would be equinumerous with \( c(\nN) \subseteq U \), which is finite (@prp-subset-finite). Then \( \nN \) would be finite (@prp-equinumerous-properties), against @exm-hilbert-hotel. So \( c(m) = c(n) \) for some \( m \ne n \), and that element lies in \( A_m \cap A_n \). This is the pigeonhole idea of @exm-method-pigeonhole, with infinitely many pigeons.
 :::
 
 ### C. Going deeper
@@ -465,22 +465,22 @@ which is countable by @prp-union-two-countable. So \( P(n + 1) \) holds, and @fd
 <!-- dependency ledger
 ax-choice (claim): no rule makes infinitely many choices; a proof is finite | def-rules-existential (cited); F2.1 §05
 ax-choice (claim): independence (Goedel 1938, Cohen 1963); Zorn, well-ordering theorem | F2.4 (Zorn stated), ST.4 (equivalences proved), ST.5 (independence) (prose pointers)
-ax-choice (claim): uses in F2.3 §06, AN1.1, MT.1, FA.3, FA.5 | F2.3 §06, AN1.1, MT.1, FA.3, FA.5 (prose pointers)
+ax-choice (claim): uses in F2.3 §05, AN1.1, MT.1, FA.3, FA.5 | F2.3 §05, AN1.1, MT.1, FA.3, FA.5 (prose pointers)
 ax-choice (claim): (remark) sup approximation, one exists-E per n | AN1.1 (prose pointer; flagged there)
 ax-choice (example): (0, 1) has no least element | F2.2 §01, halving as for (0, 1]
 ax-choice (claim): positive reals have non-negative square roots | school fact (F1-F2 convention); proved in AN1.1
 ax-choice (example): 0 | k iff k = 0 | def-divides (F2.1 §01), silent
-ax-choice (claim): (finite case) 0 elements gives empty; n + 1 elements gives non-empty | def-finite (F2.3 §01)
+ax-choice (claim): (finite case) 0 elements gives empty; n + 1 elements gives non-empty | def-finite (F2.2 §05)
 thm-surjection-right-inverse (claim): equivalence with the axiom | inline sketch; ST.4 (prose pointer)
 thm-countable-union (proof): N is countable | def-countable, identity map
-thm-countable-union (claim): R is not countable | F2.3 §04 (prose pointer)
+thm-countable-union (claim): R is not countable | F2.3 §03 (prose pointer)
 exm-choice-free-unions (solution): Q = {m/n : m in Z, n in Z_{>0}} | F2.2 §01
 exm-choice-free-unions (solution): injection to list by recursion from least elements | lem-subsets-of-naturals, thm-well-ordering (cited)
 thm-algebraic-countable (proof): non-zero integer polynomial of degree <= d has <= d real roots | school fact (factor theorem), stated as not proved here
 thm-algebraic-countable (claim): choice avoidable for Alg | inline sketch; C2 (pointer); unused
-thm-algebraic-countable (claim): sqrt 2 + sqrt 3 is a root of x^4 - 10x^2 + 1 | verify/ch08/thm-algebraic-countable.py
-exr-countable-unions-and-choice-a1 (solution): F(3, 2) = 4 | verify/ch08/exr-countable-unions-and-choice-a1.py
-exr-countable-unions-and-choice-b1 (solution): n < n + 1/2 < n + 1 | school fact; verify/ch08/exr-countable-unions-and-choice-b1.py
+thm-algebraic-countable (claim): sqrt 2 + sqrt 3 is a root of x^4 - 10x^2 + 1 | verify/ch03/thm-algebraic-countable.py
+exr-countable-unions-and-choice-a1 (solution): F(3, 2) = 4 | verify/ch03/exr-countable-unions-and-choice-a1.py
+exr-countable-unions-and-choice-b1 (solution): n < n + 1/2 < n + 1 | school fact; verify/ch03/exr-countable-unions-and-choice-b1.py
 exr-countable-unions-and-choice-b1 (solution): y > 0 has square roots sqrt y > 0 and -sqrt y | school fact (F1-F2 convention); proved in AN1.1
 exr-countable-unions-and-choice-b2 (solution): Seq_k in bijection with N^k | characteristic property of tuples (F2.1)
 exr-countable-unions-and-choice-b3 (solution): two points lie on exactly one line | school geometry
@@ -488,6 +488,6 @@ exr-countable-unions-and-choice-c1 (solution): N is countable | def-countable, i
 exr-countable-unions-and-choice-c2 (solution): inverse of the bijection z | thm-bijection-iff-inverse (F2.1), silent
 exm-method-name-the-choice (example): (n + 1)^2 = n^2 + 2n + 1 exceeds n | arithmetic, school fact; verify/ch03/exr-countable-unions-and-choice-b4.py
 exm-choice-or-rule (solution): between two reals lies a rational | school fact (F1-F2 convention); proved in AN1.1
-exm-choice-or-rule (solution): the countably infinite subsets of R form a set | def-set-builder in def-power-set (F2.1 §02)
+exm-choice-or-rule (solution): the countably infinite subsets of R form a set | def-set-builder (F2.1 §02) in def-power-set (F2.1 §03)
 exr-countable-unions-and-choice-b4 (solution): (e) c(n) = phi(min{j : phi(j) in A_n}) repeats; (c) least preimage is a right inverse | verify/ch03/exr-countable-unions-and-choice-b4.py
 -->

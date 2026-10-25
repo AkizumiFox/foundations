@@ -292,9 +292,9 @@ For an integer \( n \ge 1 \), how many truth functions with \( n \) inputs are t
 ::: {.solution}
 There are \( 2^{2^n} \). A truth function with \( n \) inputs (@fd1:def-truth-function) assigns a truth value to each row \( (a_1, \dots, a_n) \); read a row as the function \( i \mapsto a_i \) on \( \{1, \dots, n\} \), and let \( L \) be the set of rows.
 
-*There are \( 2^n \) rows.* The map sending a row to \( \{ i \in \{1, \dots, n\} : a_i = \mathrm{T} \} \) is a bijection \( L \to \powerset{\{1, \dots, n\}} \) (injective and surjective by @exm-method-injectivity and @exm-method-surjectivity): a row is determined by the places where it is \( \mathrm{T} \), and every set of places arises. Since \( \{1, \dots, n\} \) has \( n \) elements, @prp-power-set-count gives \( 2^n \) subsets, so \( L \) has \( 2^n \) elements (compose the bijections).
+*There are \( 2^n \) rows.* The map sending a row to \( \{ i \in \{1, \dots, n\} : a_i = \mathrm{T} \} \) is a bijection \( L \to \powerset{\{1, \dots, n\}} \) (injective and surjective by @exm-method-injectivity and @exm-method-surjectivity): a row is determined by the places where it is \( \mathrm{T} \), and every set of places arises: given \( A \subseteq \{1, \dots, n\} \), the row with \( a_i = \mathrm{T} \) for \( i \in A \) and \( a_i = \mathrm{F} \) otherwise maps to \( A \), and two rows with the same \( \mathrm{T} \)-places agree at every \( i \), since each \( a_i \) is \( \mathrm{T} \) or \( \mathrm{F} \). Since \( \{1, \dots, n\} \) has \( n \) elements, @prp-power-set-count gives \( 2^n \) subsets, so \( L \) has \( 2^n \) elements (compose the bijections).
 
-*There are \( 2^{2^n} \) truth functions.* In the same way, a truth function \( f \) is determined by the set \( \{ \rho \in L : f(\rho) = \mathrm{T} \} \subseteq L \), and every subset of \( L \) arises; so the truth functions are in bijection with \( \powerset{L} \), which has \( 2^{2^n} \) elements by @prp-power-set-count again. For \( n = 1, 2, 3 \) this gives \( 4, 16, 256 \).
+*There are \( 2^{2^n} \) truth functions.* In the same way, a truth function \( f \) is determined by the set \( \{ \rho \in L : f(\rho) = \mathrm{T} \} \subseteq L \), and every subset of \( L \) arises (the same two checks, with \( f \mapsto \{ \rho : f(\rho) = \mathrm{T} \} \) in place of the row map); so the truth functions are in bijection with \( \powerset{L} \), which has \( 2^{2^n} \) elements by @prp-power-set-count again. For \( n = 1, 2, 3 \) this gives \( 4, 16, 256 \).
 :::
 
 ::: {#exr-infinite-sets-r4}
@@ -308,7 +308,7 @@ A function \( f \colon \nN \to \nN \) is **eventually zero** if there is \( N \i
 
 - \( Z_0 \) has one element, the zero function, so it is countable.
 - For \( N = 1 \), \( f \mapsto f(0) \) is a bijection \( Z_1 \to \nN \): a function in \( Z_1 \) is determined by its value at \( 0 \), and every value occurs.
-- For \( N \ge 2 \), \( f \mapsto (f(0), \dots, f(N - 1)) \) is a bijection \( Z_N \to \nN^N \), by the same reasoning and the characteristic property of tuples; \( \nN^N \) is countable by @cor-product-countable, and so is \( Z_N \) (compose a surjection \( \nN \to \nN^N \) with the inverse bijection, @prp-countable-image).
+- For \( m \ge 2 \), \( f \mapsto (f(0), \dots, f(m - 1)) \) is a bijection \( Z_m \to \nN \times \dots \times \nN \) (\( m \) factors), by the same reasoning and the characteristic property of tuples; the product is countable by @cor-product-countable, and so is \( Z_m \) (compose a surjection \( \nN \to \nN \times \dots \times \nN \) with the inverse bijection, @prp-countable-image).
 
 By @thm-countable-union, \( Z \) is countable. (That theorem uses @ax-choice; here it could be avoided, since each \( Z_N \) comes with an explicit listing, but the question did not ask for that.)
 
@@ -316,7 +316,7 @@ By @thm-countable-union, \( Z \) is countable. (That theorem uses @ax-choice; he
 :::
 
 <!-- dependency ledger
-thm-infinite-countable-subset (proof): the family (S) indexed by P(X) \ {empty}, union equal to X | def-indexed-family, def-family-union-intersection (F2.1 §02), used silently; ax-choice (cited)
+thm-infinite-countable-subset (proof): the family (S) indexed by P(X) \ {empty}, union equal to X | def-indexed-family, def-family-union-intersection (F2.1 §03), used silently; ax-choice (cited)
 thm-infinite-countable-subset (proof): a singleton {x} has 1 element | def-finite (cited): the bijection 1 -> x from {1}
 thm-infinite-countable-subset (proof): F_m subset of F_(m+k), induction on k | inline (ax-induction, cited)
 thm-infinite-countable-subset (claim): (remark) AN1.1's nested-interval proof uses an explicit rule | AN1.1 §07 (prose pointer; nothing depends on it)
@@ -328,9 +328,9 @@ exr-infinite-sets-b2 (solution): disjoint pieces, piecewise bijection is a bijec
 exr-infinite-sets-b3 (solution): a set equinumerous with a finite set is finite | inline (compose the bijections, thm-composition-injective-surjective, cited)
 exr-infinite-sets-b3 (solution): (0, infinity) is an interval with more than one point; n -> -n a bijection N -> {-n : n in N}, so it is infinite; a superset of it is infinite | exm-reals-open-interval (cited); inline, as in the first answer; prp-subset-finite (cited)
 exr-infinite-sets-c1 (solution): max{a, b} of two naturals exists and is >= each | prp-finite-max (F2.2 §03), used silently in the given half
-exr-infinite-sets-c1 (solution): counterexample to the plain diagonal: f_0(n) = 5 + n, f_1(n) = n give g(0) = 6, g(1) = 2 | verify/ch08/exr-infinite-sets-c1.py
-exr-infinite-sets-r1 (solution): 2^(K+1) - 2^K = 2^K; 2^K >= 1 (a positive natural number) | def-power, prp-power-laws (d), (e), lem-naturals-arithmetic (a), used silently; verify/ch08/exr-infinite-sets-r1.py
-exr-infinite-sets-r2 (solution): soundness for predicate logic (counter-model gives non-derivability) | F1.6 §02, subsection #from-counter-models-to-non-derivability (statement; proof in optional F1.6 §03); prose pointer, unlabelled statement
-exr-infinite-sets-r3 (solution): row <-> set of T-places and truth function <-> set of T-rows are bijections; equinumerous with an n-element set has n elements | inline; prp-equinumerous-properties via composition; verify/ch08/exr-infinite-sets-r3.py
-exr-infinite-sets-r4 (solution): Z_N -> N^N bijection | characteristic property of tuples (F2.1 §03)
+exr-infinite-sets-c1 (solution): counterexample to the plain diagonal: f_0(n) = 5 + n, f_1(n) = n give g(0) = 6, g(1) = 2 | verify/ch03/exr-infinite-sets-c1.py
+exr-infinite-sets-r1 (solution): 2^(K+1) - 2^K = 2^K; 2^K >= 1 (a positive natural number) | def-power, prp-power-laws (d), (e), lem-naturals-arithmetic (a), used silently; verify/ch03/exr-infinite-sets-r1.py
+exr-infinite-sets-r2 (solution): soundness for predicate logic (counter-model gives non-derivability) | F1.7 §02, subsection #from-counter-models-to-non-derivability (statement; proof in optional F1.7 §03); prose pointer, unlabelled statement
+exr-infinite-sets-r3 (solution): row <-> set of T-places and truth function <-> set of T-rows are bijections; equinumerous with an n-element set has n elements | inline; prp-equinumerous-properties via composition; verify/ch03/exr-infinite-sets-r3.py
+exr-infinite-sets-r4 (solution): Z_m -> N x ... x N (m factors) bijection | characteristic property of tuples (F2.1 §04, def-ordered-pair)
 -->

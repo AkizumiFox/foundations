@@ -129,7 +129,7 @@ Which form to use is the first decision in every countability proof:
 ::: {#exm-method-list-it}
 [Method: list it]
 
-**Template.** To show \( A \) countable, give one map and check it. *(S)* A surjection onto \( A \) from \( \nN \) or a countable set: check that every \( a \in A \) is a value (repetitions are free; split off \( A = \emptyset \)), and cite @def-countable or @prp-countable-image. *(I)* An injection of \( A \) into \( \nN \) or a countable set: check that equal values come from equal elements, and cite @thm-countable-characterizations, (ii) \( \Rightarrow \) (i), composing if needed.
+**Template.** To show \( A \) countable, give one map and check it. *(S)* A surjection onto \( A \) from \( \nN \) or a countable set: check that every \( a \in A \) is a value (repetitions are free; split off \( A = \emptyset \)), and cite @def-countable (or, from a countable set, the result on images proved below). *(I)* An injection of \( A \) into \( \nN \) or a countable set: check that equal values come from equal elements, and cite @thm-countable-characterizations, (ii) \( \Rightarrow \) (i), composing if needed.
 
 **When to use it.** (S) for "all objects of the form \( \varphi(m, n, \dots) \)": list the parameters. (I) when each element carries a code that can be read back, above all when a parametrization would leave \( A \).
 
@@ -137,11 +137,11 @@ Which form to use is the first decision in every countability proof:
 :::
 
 ::: {.check}
-Which route of the method would you take for (a) the set of numbers \( n^2 + 3n \) with \( n \in \nN \); (b) the set of pairs \( (q, n) \in \nQ \times \nN \) with \( q n \in \nZ \)?
+Which route of the method would you take for (a) the set of numbers \( n^2 + 3n \) with \( n \in \nN \); (b) the set of \( n \in \nN \) with \( n^2 + 1 \) even?
 :::
 
 ::: {.solution}
-(a) Route (S): the set is the image of \( \nN \) under \( n \mapsto n^2 + 3n \), so @prp-countable-image (or @def-countable directly) applies, and nothing is left to check. (b) Route (I): the inclusion into \( \nQ \times \nN \) is an injection with nothing to check, and \( \nQ \times \nN \) is countable (@thm-integers-rationals-countable and @cor-product-countable (a), at the end of this section); this is @prp-countable-subset. No parametrization of the set is needed.
+(a) Route (S): the set is the image of \( \nN \) under \( n \mapsto n^2 + 3n \), and a function is a surjection onto its image (Section 2.5), so @def-countable applies and nothing is left to check. (b) Route (I): the inclusion into \( \nN \) is an injection with nothing to check, so the set is countable by @thm-countable-characterizations, (ii) \( \Rightarrow \) (i). No parametrization of the set is needed, and nobody has to work out which \( n \) qualify.
 :::
 
 ## Closure properties
@@ -344,7 +344,7 @@ Let \( S \coloneqq \{ m + n\sqrt 2 : m, n \in \nZ \} \). Show that \( S \) is co
 Route (S). The map \( \nZ \times \nZ \to S \), \( (m, n) \mapsto m + n\sqrt 2 \), is onto by the definition of \( S \), and \( \nZ \times \nZ \) is countable (@thm-integers-rationals-countable, @cor-product-countable (a)). So \( S \) is countable by @prp-countable-image. It is infinite: \( \nN \subseteq S \) (take \( n = 0 \) and \( m \in \nN \)), and \( \nN \) is infinite (@exm-hilbert-hotel), so \( S \) is not finite by @prp-subset-finite. By @thm-countable-characterizations, (i) \( \Rightarrow \) (iii), \( S \) is countably infinite.
 :::
 
-Route (I) would need the map to be injective. If \( m + n\sqrt 2 = m' + n'\sqrt 2 \) with \( n \ne n' \), then \( \sqrt 2 = (m - m')/(n' - n) \) would be rational, against @fd1:thm-sqrt2-irrational. So route (I) works here, but it costs a theorem. Route (S) never asks whether two parameter pairs give the same number.
+Route (I) would need an injection \( S \to \nZ \times \nZ \), that is, that the map is injective, so that it can be inverted. If \( m + n\sqrt 2 = m' + n'\sqrt 2 \) with \( n \ne n' \), then \( \sqrt 2 = (m - m')/(n' - n) \) would be rational, against @fd1:thm-sqrt2-irrational; and if \( n = n' \), then \( m = m' \). So route (I) works here, but it costs a theorem. Route (S) never asks whether two parameter pairs give the same number.
 
 ::: {#exm-list-two-element-subsets}
 [Coding the two-element subsets of \( \nN \)]
@@ -353,7 +353,7 @@ Let \( P_2 \) be the set of subsets of \( \nN \) with exactly two elements. Show
 :::
 
 ::: {.solution}
-Route (S) from \( \nN \times \nN \), \( (m, n) \mapsto \{m, n\} \), leaves \( P_2 \) when \( m = n \), the usual failure of the box. Route (I) needs a code from which the set can be read back, and a two-element set has a least and a largest element.
+Route (S) from \( \nN \times \nN \), \( (m, n) \mapsto \{m, n\} \), leaves \( P_2 \) when \( m = n \), the case that the box's "When to use it" sends to route (I). Route (I) needs a code from which the set can be read back, and a two-element set has a least and a largest element.
 
 Let \( S \in P_2 \). By @def-finite, \( S = \{s, t\} \) with \( s \ne t \), and by trichotomy one of them is smaller. Write \( \min S \) and \( \max S \) for the smaller and the larger. They are named by a rule, so no choice is made. Define \( c(S) \coloneqq 2^{\min S} 3^{\max S} \), that is, \( c(S) = p(\min S, \max S) \) with \( p \) of @thm-product-countable. If \( c(S) = c(T) \), then \( (\min S, \max S) = (\min T, \max T) \), since \( p \) is injective, and so \( S = \{\min S, \max S\} = T \). By @thm-countable-characterizations, (ii) \( \Rightarrow \) (i), \( P_2 \) is countable. It is infinite: \( n \mapsto \{0, n + 1\} \) is an injection \( \nN \to P_2 \) (the sets differ in their larger elements), so \( P_2 \) contains a copy of \( \nN \), and a set with a subset equinumerous with \( \nN \) is not finite (@exm-hilbert-hotel, @prp-equinumerous-properties, @prp-subset-finite). By (i) \( \Rightarrow \) (iii), \( P_2 \) is countably infinite.
 :::
@@ -475,7 +475,7 @@ Prove each true statement, by a route of @exm-method-list-it where a set must be
 
 (d) **False.** \( A = \emptyset \) is countable, and there is no function \( \nN \to \emptyset \) at all (@prp-empty-function (b)).
 
-(e) **True.** \( A \cup B \) is countable by @prp-union-two-countable. It is not finite, since it contains the infinite set \( A \) (@prp-subset-finite). It is countably infinite by @thm-countable-characterizations, (i) \( \Rightarrow \) (iii).
+(e) **True.** \( A \cup B \) is countable by @prp-union-two-countable. A bijection \( \nN \to A \) followed by the inclusion \( A \to A \cup B \) is an injection \( \nN \to A \cup B \) (@thm-composition-injective-surjective (a)), so \( A \cup B \) is countably infinite by (b).
 :::
 
 ### C. Going deeper
@@ -573,22 +573,22 @@ Fatal errors (0 for the step): calling the conclusion false; blaming line (4) or
 def-countable (claim): between rationals p < q lies (p + q)/2, a rational | Q arithmetic and order, school fact; axioms in AN1.1
 def-countable (example): n -> n^2 and n -> 2n map N into N | lem-naturals-arithmetic (b) (cited elsewhere in the section)
 lem-subsets-of-naturals (proof): trichotomy; s_m <= s_n < s_(n+1) | R order, school fact
-thm-countable-characterizations (proof): a set with 0 elements is empty | F2.3 §01, examples after def-finite (inline there)
-prp-countable-subset (proof): a restriction of an injective function is injective | restriction, F2.1 §04 (no label)
+thm-countable-characterizations (proof): a set with 0 elements is empty | F2.2 §05, examples after def-finite (inline there)
+prp-countable-subset (proof): a restriction of an injective function is injective | restriction, F2.1 §05 (no label)
 prp-union-two-countable (claim): 2q + r <= -2 + 1 < 0 for q <= -1, r <= 1 | R arithmetic and order, school fact
 prp-union-two-countable (claim): "finitely many countable sets" by induction on the number of sets | inline sentence after the proof; nothing depends on it
 thm-product-countable (proof): 3^k * 3 = 6j + 3 = 2(3j + 1) + 1; canceling a positive factor | R arithmetic, school fact
 thm-product-countable (proof): trichotomy on N | R order, school fact
-cor-product-countable (proof): k-tuples are determined by their coordinates; a (k+1)-tuple is the image of ((x_1, ..., x_k), x_(k+1)) | F2.1 §03, n-tuples and their characteristic property (prose, no label)
-cor-product-countable (claim): A_1 x ... x A_k is a set | (W1), (W3), (W5) of F2.1 §01 (working rules, no label)
+cor-product-countable (proof): k-tuples are determined by their coordinates; a (k+1)-tuple is the image of ((x_1, ..., x_k), x_(k+1)) | F2.1 §04, n-tuples and their characteristic property (prose, no label)
+cor-product-countable (claim): A_1 x ... x A_k is a set | (W1), (W3), (W5) of F2.1 §02 (working rules, no label)
 thm-integers-rationals-countable (proof): definitions of Z, Z_{>0}, Q | F2.2 §01 (definitions in prose, no label)
 thm-integers-rationals-countable (proof): -0 = 0; -(k + 1) <= -1 < 0; n = n/1 | R arithmetic and order, school fact
-exr-countable-sets-b1 (solution): the interval {x in R : a < x < b} is a subset of R, so J maps into P(R) | def-power-set (F2.1 §02)
+exr-countable-sets-b1 (solution): the interval {x in R : a < x < b} is a subset of R, so J maps into P(R) | def-power-set (F2.1 §03)
 exr-countable-sets-b2 (solution): 2^1 3^0 = 2, 2^0 3^0 = 1 | arithmetic, by hand
 exr-countable-sets-c1 (solution): sum of terms each at most 2^k is at most the sum of the 2^k; splitting off the last term of a finite sum; shifting the index | R order, school fact; F2.2 §03 (prose after def-sum-product, no label)
-exr-countable-sets-c1 (solution): indicator function 1_F | F2.1 §04 (example in prose)
-exr-countable-sets-c1 (solution): a non-empty finite subset of N is {x_1, ..., x_n} | remark at the end of F2.3 §01 (no label)
-exm-method-list-it (example): n^2 + 3n in N; (q, n) -> (q, n) is an inclusion | lem-naturals-arithmetic (b); verify/ch03/exm-list-two-element-subsets.py
+exr-countable-sets-c1 (solution): indicator function 1_F | F2.1 §05 (example in prose)
+exr-countable-sets-c1 (solution): a non-empty finite subset of N is {x_1, ..., x_n} | remark at the end of F2.2 §05 (no label)
+exm-method-list-it (solution): (the Quick check after exm-method-list-it) n^2 + 3n in N; the inclusion into N is injective | lem-naturals-arithmetic (b); verify/ch03/exm-list-two-element-subsets.py
 exm-list-integer-combinations (solution): (m - m')/(n' - n) is rational for integers with n != n' | Q arithmetic, school fact
 exm-list-two-element-subsets (solution): trichotomy names min S and max S; n + 1 != 0; c injective | R order, school fact; verify/ch03/exm-list-two-element-subsets.py
 exr-countable-sets-b4 (solution): (a) injectivity of f -> 2^f(0) 3^f(1); (c), (d) counterexamples | verify/ch03/exr-countable-sets-b4.py

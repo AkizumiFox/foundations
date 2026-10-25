@@ -369,7 +369,7 @@ Prove each true statement, and show each false one false.
 :::
 
 ::: {.solution}
-(a) **False:** the set is countable. For \( p \in \nZ_{>0} \) let \( P_p \) be the set of sequences \( a \) with \( a(n + p) = a(n) \) for every \( n \in \nN \). For \( a \in P_p \), \( a(qp + r) = a(r) \) for all \( q \in \nN \) and \( 0 \le r < p \), by induction on \( q \). Every \( n \in \nN \) is \( qp + r \) for such \( q \) and \( r \) (@thm-division-algorithm; \( q \ge 0 \) since \( n \ge 0 \) and \( r < p \)). So \( a \) is determined by \( a(0), \dots, a(p - 1) \), and \( a \mapsto a|_{\{0, \dots, p-1\}} \) is an injection of \( P_p \) into the set of functions \( \{0, \dots, p - 1\} \to \{0, 1\} \), which is finite, with \( 2^p \) elements (@prp-power-set-count, through indicator functions). A finite set injects into \( \nN \) (@thm-countable-characterizations, (iii) ⇒ (ii)); composing, \( P_p \) injects into \( \nN \), so \( P_p \) is countable ((ii) ⇒ (i)). The set of periodic sequences is \( \bigcup_{p \in \nZ_{>0}} P_p \), countable by @thm-countable-union (b), since \( \nZ_{>0} \subseteq \nN \) is countable (@prp-countable-subset). No choice is involved: each pattern \( w \colon \{0, \dots, p - 1\} \to \{0, 1\} \) gives the sequence \( n \mapsto w(r) \), \( r \) the remainder of \( n \) on division by \( p \), so each \( P_p \) is listed by a rule (order the \( 2^p \) patterns lexicographically), and the union is listed without @ax-choice, as in @exm-choice-free-unions. The diagonal fails here because the flipped diagonal of a list of periodic sequences need not be periodic: the first usual failure of @exm-method-diagonal.
+(a) **False:** the set is countable. For \( p \in \nZ_{>0} \) let \( P_p \) be the set of sequences \( a \) with \( a(n + p) = a(n) \) for every \( n \in \nN \). For \( a \in P_p \), \( a(qp + r) = a(r) \) for all \( q \in \nN \) and \( 0 \le r < p \), by induction on \( q \). Every \( n \in \nN \) is \( qp + r \) for such \( q \) and \( r \) (@thm-division-algorithm; \( q \ge 0 \) since \( n \ge 0 \) and \( r < p \)). So \( a \) is determined by \( a(0), \dots, a(p - 1) \), and \( a \mapsto a|_{\{0, \dots, p-1\}} \) is an injection of \( P_p \) into the set of functions \( \{0, \dots, p - 1\} \to \{0, 1\} \), which is finite, with \( 2^p \) elements (@prp-power-set-count, through indicator functions). A finite set injects into \( \nN \) (@thm-countable-characterizations, (iii) ⇒ (ii)); composing, \( P_p \) injects into \( \nN \), so \( P_p \) is countable ((ii) ⇒ (i)). The set of periodic sequences is \( \bigcup_{p \in \nZ_{>0}} P_p \), countable by @thm-countable-union (b), since \( \nZ_{>0} \subseteq \nN \) is countable (@prp-countable-subset). Choice is not needed here, although the proof of the cited theorem uses @ax-choice in general: the lists are given by a formula. Let \( w_{p,k} \) (\( k < 2^p \)) be the \( k \)-th pattern \( \{0, \dots, p - 1\} \to \{0, 1\} \) in binary order, put \( w_{p,k} \coloneqq w_{p,2^p-1} \) for \( k \ge 2^p \), and let \( L(p,k) \) be the sequence \( n \mapsto w_{p,k}(r) \), \( r \) the remainder of \( n \) on division by \( p \). Then \( L \) maps \( \nZ_{>0} \times \nN \) onto the set of periodic sequences, and composing it with a surjection \( \nN \to \nZ_{>0} \times \nN \), as in @exm-choice-free-unions, lists them without @ax-choice. The diagonal fails here because the flipped diagonal of a list of periodic sequences need not be periodic: the first usual failure of @exm-method-diagonal.
 
 (b) **True.** Send \( b \in \{0, 1\}^{\nN} \) to the sequence \( a \) with \( a(2n) \coloneqq b(n) \) and \( a(2n + 1) \coloneqq 0 \). Every odd place of \( a \) is \( 0 \), and of two consecutive places one is odd, so \( a \) has no two consecutive \( 1 \)s. The map is injective, since \( b \) is read back from the even places (@prp-function-equality). If the set were countable, composing with an injection of it into \( \nN \) (@thm-countable-characterizations, (i) ⇒ (ii)) would give an injection \( \{0, 1\}^{\nN} \to \nN \), so \( \{0, 1\}^{\nN} \) would be countable ((ii) ⇒ (i)), against @thm-binary-sequences-uncountable.
 
@@ -445,11 +445,11 @@ Fatal errors (0 for the step): the plain diagonal \( g(n) \coloneqq f_n(n) + 1 \
 
 <!-- dependency ledger
 thm-binary-sequences-uncountable (proof): 1 - b is in {0, 1} and differs from b, for b in {0, 1} | arithmetic (two cases)
-thm-binary-sequences-uncountable (example): the table entries and the flipped diagonal 1, 0, 1, 0 | verify/ch08/thm-binary-sequences-uncountable.py
-thm-cantor (claim): (ii) {x} = {y} gives x = y | def-set-equality (F2.1 §01), used silently
-thm-cantor (claim): (ii), (iii) "strictly bigger" as a relation | F2.3 §05 (prose pointer within the chapter; nothing here depends on it)
-cor-powerset-naturals-uncountable (claim): (after it) S -> ind_S is a bijection P(N) -> {0, 1}^N with inverse b -> {n : b(n) = 1} | F2.1 §04 (the correspondence after exm-function-set-small); thm-bijection-iff-inverse (cited)
-def-decimal-expansion (example): t_n = 1/2 - 10^(-n) for 0.4999..., t_n = 1 - 10^(-n) for 0.999...; the non-example 0.51 fails first at n = 3 | prp-geometric-sum (cited); verify/ch08/def-decimal-expansion.py
+thm-binary-sequences-uncountable (example): the table entries and the flipped diagonal 1, 0, 1, 0 | verify/ch03/thm-binary-sequences-uncountable.py
+thm-cantor (claim): (ii) {x} = {y} gives x = y | def-set-equality (F2.1 §02), used silently
+thm-cantor (claim): (ii), (iii) "strictly bigger" as a relation | F2.3 §04 (prose pointer within the chapter; nothing here depends on it)
+cor-powerset-naturals-uncountable (claim): (after it) S -> ind_S is a bijection P(N) -> {0, 1}^N with inverse b -> {n : b(n) = 1} | F2.1 §05 (the correspondence after exm-function-set-small); thm-bijection-iff-inverse (cited)
+def-decimal-expansion (example): t_n = 1/2 - 10^(-n) for 0.4999..., t_n = 1 - 10^(-n) for 0.999...; the non-example 0.51 fails first at n = 3 | prp-geometric-sum (cited); verify/ch03/def-decimal-expansion.py
 def-decimal-expansion (claim): (why this definition) no x has 1 - 10^(-n) <= x < 1 for every n | Archimedean property, school fact; AN1.1
 def-decimal-expansion (claim): (why this definition) 1 is the only x with 1 - 10^(-n) <= x <= 1 for every n | Archimedean property, school fact; AN1.1 (the uniqueness half of (D2))
 def-decimal-expansion (claim): 10^(-k) := (1/10)^k | def-power (cited)
@@ -461,10 +461,10 @@ def-decimal-expansion (claim): a digit sequence with no 0 and no 9 is the only e
 thm-reals-uncountable-decimal (proof): the expansion of x_n not ending in 9s exists and is unique | school facts (D1), (D3), stated in this section
 thm-reals-uncountable-decimal (proof): some y has expansion (e_k), and y lies in [0.4, 0.6] | school fact (D2), stated in this section; the definition at n = 1
 thm-reals-uncountable-decimal (proof): y = x_n is impossible | the consequence of (D3) stated in this section (a digit sequence with no 0 and no 9 is the only expansion of its number)
-thm-reals-uncountable-decimal (claim): the naive rule gives 0.4999... = 1/2; the 4/5 rule gives 0.4555... = 41/90 | def-decimal-expansion Example 2; school fact (D2); verify/ch08/thm-reals-uncountable-decimal.py
+thm-reals-uncountable-decimal (claim): the naive rule gives 0.4999... = 1/2; the 4/5 rule gives 0.4555... = 41/90 | def-decimal-expansion Example 2; school fact (D2); verify/ch03/thm-reals-uncountable-decimal.py
 thm-reals-uncountable-decimal (claim): AN1.1 reproves it without decimals | AN1.1 (prose pointer; thm-reals-uncountable exists)
 cor-transcendental-exist (proof): R = Alg u (R \ Alg), every real is algebraic or not | prp-excluded-middle (cited; classical step, flagged in the remark)
-cor-transcendental-exist (proof): the empty set is countable | def-countable (F2.3 §02)
+cor-transcendental-exist (proof): the empty set is countable | def-countable (F2.3 §01)
 cor-transcendental-exist (proof): a set that is not empty has an element | def-empty-set, prp-empty-set-unique (F2.1); prp-quantifier-negation (a) and not-not-E (classical step, flagged)
 cor-transcendental-exist (claim): (remark) F1.5 §07 comparison | thm-irrational-power-rational, prp-log2-9-irrational (optional; pointer in a remark only)
 cor-transcendental-exist (claim): (remark) pi is transcendental | not proved and not used (a remark only)
@@ -476,12 +476,12 @@ exm-diagonal-outgrows-list (solution): max of n + 1 numbers exists; g(n) > f_k(n
 thm-cantor (claim): (hook) R_A disagrees with each x in A about x | thm-russell (F2.1 §02, cited)
 exr-diagonal-arguments-b4 (solution): (a) periodic sequences determined by p values; P_p listed by a rule; union countable | thm-division-algorithm (F2.2 §02), prp-power-set-count (F2.2 §05), thm-countable-characterizations, thm-countable-union, prp-countable-subset, exm-choice-free-unions (cited); verify/ch03/exr-diagonal-arguments-b4.py
 exr-diagonal-arguments-b4 (solution): (b) interleaving injection; (c) left inverse, right inverse; (d) N x N countable; (e) restriction onto | prp-function-equality, thm-left-inverse-iff-injective, prp-right-inverse-surjective (F2.1 §06), thm-product-countable, prp-countable-image (cited); verify/ch03/exr-diagonal-arguments-b4.py
-exr-diagonal-arguments-a1 (solution): D = {2} | verify/ch08/exr-diagonal-arguments-a1.py
+exr-diagonal-arguments-a1 (solution): D = {2} | verify/ch03/exr-diagonal-arguments-a1.py
 exr-diagonal-arguments-b2 (solution): the finite subsets of N form a countable set | exr-countable-sets-c1 (cited; an exercise may cite an earlier one)
 exr-diagonal-arguments-b2 (solution): every subset of N is finite or infinite | prp-excluded-middle (cited), def-infinite
-exr-diagonal-arguments-b3 (solution): t_n for 0.333...; the bound t_m <= 1 - 2 * 10^(-m) | prp-geometric-sum (cited); school facts (D1)-(D3); verify/ch08/exr-diagonal-arguments-b3.py
+exr-diagonal-arguments-b3 (solution): t_n for 0.333...; the bound t_m <= 1 - 2 * 10^(-m) | prp-geometric-sum (cited); school facts (D1)-(D3); verify/ch03/exr-diagonal-arguments-b3.py
 exr-diagonal-arguments-b3 (solution): termwise comparison of finite sums (d_k <= 9 for k < m, d_m <= 9 - 1) | induction on n via def-sum-product (F2.2) and the order axioms for +
 exr-diagonal-arguments-b3 (solution): no sequence ends in both all 0s and all 9s | 0 != 9, at a place beyond both thresholds
 exr-diagonal-arguments-c2 (solution): m = 2q + r uniquely with q in N, r in {0, 1} | thm-division-algorithm (cited), quotient in N as in prp-union-two-countable
-exr-diagonal-arguments-c2 (solution): pi_b o pi_b = id; pi(2n) differs from f_n(2n) | inline; verify/ch08/exr-diagonal-arguments-c2.py
+exr-diagonal-arguments-c2 (solution): pi_b o pi_b = id; pi(2n) differs from f_n(2n) | inline; verify/ch03/exr-diagonal-arguments-c2.py
 -->
