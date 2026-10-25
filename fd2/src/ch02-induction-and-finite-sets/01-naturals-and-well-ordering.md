@@ -221,7 +221,7 @@ The hypothesis on \( f \) is used once, at the one place where it bites: just af
 Suppose \( f \) is such a function, and let \( V \coloneqq f(\nN) \) (@def-image). Then \( V \subseteq \nN \), and \( V \ne \emptyset \) since \( f(0) \in V \). By @thm-well-ordering, \( V \) has a least element, say \( f(m) \) with \( m \in \nN \). Now \( m + 1 \in \nN \) by (\( \nN \)S), so \( f(m + 1) \in V \), and \( f(m + 1) < f(m) \) by hypothesis, contradicting the choice of \( f(m) \). So no such \( f \) exists.
 :::
 
-Repeated halving of a fraction \( p/q \) with \( q > 0 \) and both entries even would give such a function, \( n \mapsto \) the (positive) denominator after \( n \) halvings, if the halving never stopped. So it stops. Section 2.2 writes this argument out as a proof, in its lemma on lowest terms.
+Repeated halving of a fraction \( p/q \) with \( q > 0 \) and both entries even would give such a function, \( n \mapsto \) the (positive) denominator after \( n \) halvings, if the halving never stopped: an even denominator \( q > 0 \) is \( 2k \) with \( k \in \nZ \) (@def-parity), so \( k > 0 \), \( k \in \nZ_{>0} \) by @prp-integers-closed (b), and \( k < 2k = q \). So it stops. Section 2.2 writes this argument out as a proof, in its lemma on lowest terms.
 
 The example follows a pattern that recurs throughout the book, and it is worth fixing as a method.
 

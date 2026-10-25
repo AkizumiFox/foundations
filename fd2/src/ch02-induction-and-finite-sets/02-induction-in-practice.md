@@ -132,7 +132,7 @@ so \( 3n^3 = n^3 + 2n^3 \ge n^3 + 3n^2 + 3n + 1 = (n + 1)^3 \). Hence \( 3^{n+1}
 The small cases and the induction together give \( 3^n \ge n^3 \) for every \( n \in \nN \).
 :::
 
-The claim is true at \( 0 \), \( 1 \) and \( 2 \), but the argument of the step fails from \( 2 \) to \( 3 \): \( 3 \cdot 2^3 = 24 < 27 = 3^3 \). The base is where the step starts working (or where the claim starts, if that is later), not where the claim starts being true, and the cases below it are checked one by one.
+The claim is true at \( 0 \), \( 1 \) and \( 2 \), but the argument of the step fails from \( 2 \) to \( 3 \): \( 3 \cdot 2^3 = 24 < 27 = 3^3 \). The base is where the step starts working, or the first \( n \) the claim covers if that is later. It need not be the first \( n \) at which the claim is true, and the cases below it are checked one by one.
 
 ::: {.check}
 For which \( n \in \nN \) is \( 3n^3 \ge (n + 1)^3 \) false, and why does that make \( 3 \) the base although \( 3^n \ge n^3 \) holds at \( 0 \), \( 1 \) and \( 2 \)?

@@ -235,7 +235,7 @@ The pigeons are the points and the holes are the parity patterns (@exm-method-pi
 :::
 
 ::: {.solution}
-Let \( A \) be a set of five lattice points, so \( A \) has \( 5 \) elements. Let \( B \coloneqq \{0, 1\} \times \{0, 1\} \), which has the \( 4 \) elements \( (0, 0) \), \( (0, 1) \), \( (1, 0) \), \( (1, 1) \) (number them \( 1 \) to \( 4 \)). Send \( (a, b) \in A \) to \( (r, s) \), where \( r \) and \( s \) are the remainders of \( a \) and \( b \) on division by \( 2 \) (@thm-division-algorithm); \( r, s \in \{0, 1\} \) as in the three-integers paragraph above, so the values lie in \( B \). Since \( 5 > 4 \), @cor-pigeonhole-finite-sets (a) gives two different points \( (a, b) \ne (c, d) \) in \( A \) with the same remainders. Then \( a \) and \( c \) have the same parity, and so do \( b \) and \( d \), so their midpoint is a lattice point by @exm-lattice-midpoint. This answers (Q1) of Section 1.1: yes.
+Let \( A \) be a set of five lattice points, so \( A \) has \( 5 \) elements. Let \( B \coloneqq \{0, 1\} \times \{0, 1\} \), which has the \( 4 \) elements \( (0, 0) \), \( (0, 1) \), \( (1, 0) \), \( (1, 1) \) (number them \( 1 \) to \( 4 \)). Send \( (a, b) \in A \) to \( (r, s) \), where \( r \) and \( s \) are the remainders of \( a \) and \( b \) on division by \( 2 \) (@thm-division-algorithm); \( r, s \in \{0, 1\} \) as in the three-integers paragraph above, so the values lie in \( B \). Since \( 5 > 4 \), @cor-pigeonhole-finite-sets (a) gives two different points \( (a, b) \ne (c, d) \) in \( A \) with the same remainders. Then \( a \) and \( c \) have the same parity (@def-parity: remainder \( 0 \) means \( a = 2q \), which is even, and remainder \( 1 \) means \( a = 2q + 1 \), which is odd), and so do \( b \) and \( d \), so their midpoint is a lattice point by @exm-lattice-midpoint. This answers (Q1) of Section 1.1: yes.
 :::
 
 The word "different" costs nothing, since a point and itself have that point as midpoint; and the four corners of a unit square (Section 1.1) show that five cannot be lowered to four.
@@ -246,14 +246,6 @@ Choose pigeons and holes: among any \( 11 \) different integers, two differ by a
 
 ::: {.solution}
 The pigeons are the \( 11 \) different integers. The holes are the remainders \( 0, \dots, 9 \) on division by \( 10 \) (@thm-division-algorithm), a set with \( 10 \) elements. By @cor-pigeonhole-finite-sets (a) two of the integers, \( a \ne b \), have the same remainder \( r \): \( a = 10q + r \) and \( b = 10q' + r \), so \( a - b = 10(q - q') \).
-:::
-
-::: {.check}
-Choose parts and sizes: among any \( 5 \) different elements of \( \{1, 2\} \times \{1, 2, 3\} \), three have the same first coordinate.
-:::
-
-::: {.solution}
-Let \( A \) have \( 5 \) elements and let \( A_i \) be its elements with first coordinate \( i \), for \( i = 1, 2 \); these are disjoint with union \( A \), and both are finite by @prp-subset-finite. If both had at most \( 2 \) elements, then @prp-disjoint-union-count would give \( A \) at most \( 4 \) elements, contradicting @cor-finite-size-unique. So some \( A_i \) has at least \( 3 \) elements.
 :::
 
 The next corollary is the well-definedness promised after @def-finite.
@@ -345,6 +337,14 @@ A set \( S \subseteq \{1, \dots, 7\} \) has \( 7 \) elements. What is \( S \), a
 
 ::: {.solution}
 \( S = \{1, \dots, 7\} \). If \( S \ne \{1, \dots, 7\} \), then @prp-subset-finite gives \( S \) some number \( k < 7 \) of elements, and @cor-finite-size-unique forbids \( S \) to have both \( k \) and \( 7 \) elements.
+:::
+
+::: {.check}
+Choose parts and sizes: among any \( 5 \) different elements of \( \{1, 2\} \times \{1, 2, 3\} \), three have the same first coordinate.
+:::
+
+::: {.solution}
+Let \( A \subseteq \{1, 2\} \times \{1, 2, 3\} \) have \( 5 \) elements, and let \( A_i \) be its elements with first coordinate \( i \), for \( i = 1, 2 \); these are disjoint with union \( A \), and both are finite by @prp-subset-finite. If both had at most \( 2 \) elements, then @prp-disjoint-union-count would give \( A \) at most \( 4 \) elements, contradicting @cor-finite-size-unique. So some \( A_i \) has \( k_i > 2 \) elements, that is \( k_i \ge 3 \) (@lem-naturals-arithmetic (e)), and a bijection \( \varphi \colon \{1, \dots, k_i\} \to A_i \) gives three different elements \( \varphi(1) \), \( \varphi(2) \), \( \varphi(3) \) of \( A \), all with first coordinate \( i \).
 :::
 
 ::: {#cor-remove-point}
@@ -671,13 +671,13 @@ Fatal errors (0 for the step): "each of the \( m \) elements has \( n \) possibl
 Decide whether each function is injective and whether it is surjective. Justify your answers.
 
 ::: {.enumerate options="label=(\alph*)"}
-1. \( g \colon \nZ \times \nZ \to \nZ \), \( g(a, b) \coloneqq 2a + 3b \).
+1. \( g \colon \nZ \times \nZ \to \nZ \), \( g(a, b) \coloneqq 4a + 6b \).
 2. \( k \colon \nZ \to \nZ \), \( k(n) \coloneqq 3n + 1 \).
 :::
 :::
 
 ::: {.solution}
-*(a)* \( g \) is surjective and not injective. Surjective, by the method of @exm-method-surjectivity: given \( n \in \nZ \), the pair \( (-n, n) \in \nZ \times \nZ \) has \( g(-n, n) = -2n + 3n = n \). Not injective (@def-injective): \( g(0, 0) = 0 = 2 \cdot 3 + 3 \cdot (-2) = g(3, -2) \), and \( (0, 0) \ne (3, -2) \), since their first coordinates differ (@def-ordered-pair).
+*(a)* \( g \) is neither injective nor surjective. Not surjective (@def-surjective): \( 1 \) is not a value. Every value \( g(a, b) = 2(2a + 3b) \) is even, with \( 2a + 3b \in \nZ \) by @prp-integers-closed (a) (@def-parity), while \( 1 = 2 \cdot 0 + 1 \) is odd, and no integer is both (@thm-even-or-odd). Not injective (@def-injective): \( g(3, -2) = 12 - 12 = 0 = g(0, 0) \), and \( (3, -2) \ne (0, 0) \), since their first coordinates differ (@def-ordered-pair). The method of @exm-method-surjectivity has nothing to work with here: a witness for the value \( 1 \) would be a pair with \( 4a + 6b = 1 \), and the parity argument shows there is none.
 
 *(b)* \( k \) is injective and not surjective. Injective, by the method of @exm-method-injectivity: if \( 3n + 1 = 3n' + 1 \), then \( 3n = 3n' \) and \( n = n' \). Not surjective (@def-surjective): \( 0 \) is not a value. If \( 3n + 1 = 0 \) for some \( n \in \nZ \), then \( 0 = 3n + 1 \) and \( 0 = 3 \cdot 0 + 0 \) are two divisions of \( 0 \) by \( 3 \), with remainders \( 1 \) and \( 0 \) in \( \{0, 1, 2\} \), against the uniqueness in @thm-division-algorithm.
 :::
@@ -692,7 +692,7 @@ For a set \( X \) and a property \( R(x, y) \) of two elements of \( X \), consi
 
 ::: {.enumerate options="label=(\alph*)"}
 1. Decide (S1) and (S2) for \( R(x, y) \): "\( x \mid y \)", first with \( X = \{1, \dots, 6\} \), then with \( X = \{2, \dots, 6\} \).
-2. Decide (S1) and (S2) for \( X = \nN \) and \( R(x, y) \): "\( y < x \)".
+2. Decide (S1) and (S2) for \( X = \nZ \) and \( R(x, y) \): "\( x + y = 0 \)".
 3. Prove that (S1) implies (S2) for every \( X \) and \( R \).
 :::
 :::
@@ -700,7 +700,7 @@ For a set \( X \) and a property \( R(x, y) \) of two elements of \( X \), consi
 ::: {.solution}
 *(a)* For \( X = \{1, \dots, 6\} \) both hold: \( x = 1 \) divides every \( y \) (\( y = y \cdot 1 \)), which is (S1); and (S2) follows by (c). For \( X = \{2, \dots, 6\} \), (S2) holds with \( x \coloneqq y \), since \( y = 1 \cdot y \). (S1) fails: its negation is \( \forall x \in X \ \exists y \in X \ \, x \nmid y \) (@fd1:prp-bounded-quantifier-negation), and for \( x = 2 \) take \( y = 3 \), for \( x \in \{3, \dots, 6\} \) take \( y = 2 \), since a positive divisor of \( 2 \) is at most \( 2 \).
 
-*(b)* (S2) holds: for \( y \in \nN \), \( x \coloneqq y + 1 \in \nN \) has \( y < x \). (S1) fails: for every \( x \in \nN \), the choice \( y \coloneqq x \) gives \( \neg(x < x) \).
+*(b)* (S2) holds: for \( y \in \nZ \), \( x \coloneqq -y \in \nZ \) has \( x + y = 0 \). (S1) fails: its negation is \( \forall x \in \nZ \ \exists y \in \nZ \ \, x + y \ne 0 \), and for \( x \in \nZ \) the choice \( y \coloneqq 1 - x \), an integer by @prp-integers-closed (a), gives \( x + y = 1 \ne 0 \).
 
 *(c)* Suppose (S1), and let \( x_0 \in X \) be a witness: \( R(x_0, y) \) for every \( y \in X \) (\( \rulename{\exists E} \)). Let \( y \in X \). Then \( R(x_0, y) \), so \( \exists x \in X \ R(x, y) \), with witness \( x_0 \) (\( \rulename{\exists I} \)). As \( y \) was arbitrary, (S2) holds (\( \rulename{\forall I} \)). This is @fd1:prp-exists-forall-swap, with bounded quantifiers. The converse fails, by (a) for \( X = \{2, \dots, 6\} \) and by (b): one \( x \) for all \( y \) is more than one \( x \) for each \( y \).
 :::
@@ -721,6 +721,8 @@ By structural induction (@fd1:thm-structural-induction), with \( P(\varphi) \): 
 *Step for \( (\varphi \circ \psi) \).* If \( \circ \) is \( \to \) or \( \leftrightarrow \), \( P \) holds vacuously. Otherwise, if \( (\varphi \circ \psi) \) contains none of the four symbols, neither do \( \varphi \) and \( \psi \), whose symbols are among its own, so \( P(\varphi) \) and \( P(\psi) \) apply to them. For \( \circ = \wedge \): \( v(\varphi \wedge \psi) = \mathrm{T} \) gives \( v(\varphi) = v(\psi) = \mathrm{T} \), so \( w(\varphi) = w(\psi) = \mathrm{T} \), and \( w(\varphi \wedge \psi) = \mathrm{T} \). For \( \circ = \vee \): \( v(\varphi) = \mathrm{T} \) or \( v(\psi) = \mathrm{T} \), so \( w(\varphi) = \mathrm{T} \) or \( w(\psi) = \mathrm{T} \), and \( w(\varphi \vee \psi) = \mathrm{T} \).
 
 *The consequence.* Let \( v \) be the all-F valuation and \( w \) the all-T valuation; every atom true under \( v \) (there is none) is true under \( w \). Then \( v(\neg p) = \mathrm{T} \) and \( w(\neg p) = \mathrm{F} \). If \( \varphi \), built with \( \wedge \) and \( \vee \) alone, were equivalent to \( \neg p \), it would have the same value as \( \neg p \) under every valuation: \( v(\varphi) = \mathrm{T} \), hence \( w(\varphi) = \mathrm{T} \) by the first part, against \( w(\varphi) = w(\neg p) = \mathrm{F} \).
+
+This consequence is a special case of @fd1:thm-adequate-connectives (b), which allows \( \to \) as well and looks only at the all-T row; here the \( \wedge \)/\( \vee \) case comes out of the stronger statement that such formulas are monotone in the valuation.
 :::
 
 <!-- dependency ledger
@@ -749,7 +751,7 @@ exr-finite-sets-b3 (solution): {1, ..., n + 1} = {1, ..., n} u {n + 1}; the unio
 exr-finite-sets-c1 (solution): phi^(-1) is a bijection; {1, ..., n + 1} = {1, ..., n} u {n + 1}, n + 1 not in {1, ..., n} | thm-bijection-iff-inverse, def-inverse-function, lem-naturals-arithmetic (e) (cited)
 exr-finite-sets-c2 (solution): mn in N; n^m in N; B^A equinumerous with {1, ..., n^(m+1)} via R | lem-naturals-arithmetic (b), prp-power-laws (d), prp-equinumerous-properties (b), (c) (cited)
 exr-finite-sets-c2 (solution): restriction f|_A' is a function A' -> B | restriction, F2.1 §05 (no label)
-exr-finite-sets-r1 (solution): -2n + 3n = n; 2*3 + 3*(-2) = 0; 3n = 3n' gives n = n' | R arithmetic, school fact; exm-method-surjectivity, exm-method-injectivity, def-ordered-pair, thm-division-algorithm (cited)
-exr-finite-sets-r2 (solution): y = y * 1; a positive divisor of 2 is at most 2; y < y + 1; not x < x | R arithmetic and order, school fact; def-divides (F2.1 §01), fd1:prp-bounded-quantifier-negation, fd1:prp-exists-forall-swap (cited)
-exr-finite-sets-r3 (solution): structural induction; truth values of atoms, not, and, or | fd1:thm-structural-induction, fd1:def-truth-value (cited); the all-F and all-T valuations (F1.3 §04, named after fd1:def-valuation)
+exr-finite-sets-r1 (solution): 4a + 6b = 2(2a + 3b); 2a + 3b in Z; 4*3 + 6*(-2) = 0; 1 = 2*0 + 1; 3n = 3n' gives n = n' | R arithmetic, school fact; prp-integers-closed (a), def-parity, thm-even-or-odd, exm-method-surjectivity, exm-method-injectivity, def-ordered-pair, thm-division-algorithm (cited)
+exr-finite-sets-r2 (solution): y = y * 1; a positive divisor of 2 is at most 2; -y + y = 0; x + (1 - x) = 1; -y in Z | R arithmetic and order, school fact; prp-integers-closed (a) (cited for 1 - x); def-divides (F2.1 §01), fd1:prp-bounded-quantifier-negation, fd1:prp-exists-forall-swap (cited)
+exr-finite-sets-r3 (solution): structural induction; truth values of atoms, not, and, or | fd1:thm-structural-induction, fd1:def-truth-value, fd1:thm-adequate-connectives (cited); the all-F and all-T valuations (F1.3 §04, named after fd1:def-valuation)
 -->

@@ -231,7 +231,7 @@ The proof of @thm-primes-infinite and the contrapositive of @exm-contrapositive-
 
 *(c)* \( N = 6! + 1 = 721 \). It is not divisible by \( 2 \), \( 3 \) or \( 5 \): \( 721 = 2 \cdot 360 + 1 = 3 \cdot 240 + 1 = 5 \cdot 144 + 1 \). And \( 721 = 7 \cdot 103 \). The least prime factor is \( 7 > 6 \), and \( 721 \) is not prime.
 
-*(d)* Face (i): it refutes "there is a largest prime". Its body names \( q \), so it can be rewritten without contradiction: for every prime \( p \), a prime factor of \( p! + 1 \) is a larger prime (@thm-primes-infinite with \( n = p \)).
+*(d)* Face (i): it refutes "there is a largest prime". Its body names \( q \), so it can be rewritten without contradiction: for every prime \( p \), a prime factor of \( p! + 1 \) is a larger prime (@thm-primes-infinite with \( n = p \)). This is the rewrite of @fd1:exr-connective-rhetoric-c1, applied to \( p! + 1 \) in place of Euclid's product.
 :::
 
 ### B. Practice
@@ -391,7 +391,7 @@ Prove that for every integer \( n \ge 1 \) there is a prime \( p > n \) with \( 
 :::
 
 ::: {.solution}
-\( N = 3(n! - 1) + 2 \ge 2 \), since \( n! \ge 1 \). By @exr-induction-in-practice-b2, \( N = q_1 \cdots q_r \) with primes \( q_i \). Each \( q_i > n \): if \( q_i \le n \), then \( q_i \mid n! \) (Step 1 of the proof of @thm-primes-infinite), and \( q_i \mid N \) (school arithmetic of finite products, as in Exercise C2), so \( q_i \mid 3 \cdot n! - N = 1 \) (@exm-divides-combination), which is impossible. No \( q_i \) is \( 3 \), since \( N \) leaves remainder \( 2 \) on division by \( 3 \). By @thm-division-algorithm with \( n = 3 \) and discreteness, each \( q_i \) is \( 3t \), \( 3t + 1 \) or \( 3t + 2 \). So each \( q_i \) is \( 3t + 1 \) or \( 3t + 2 \): if \( q_i = 3t \), then \( 3 \mid q_i \), and \( q_i = 3 \) since \( q_i \) is prime. If every \( q_i \) were of the form \( 3t + 1 \), then \( N \) would be too, since \( (3a + 1)(3b + 1) = 3(3ab + a + b) + 1 \) and an induction on \( r \) carries this along the product; but \( N = 3(n! - 1) + 2 \), against the uniqueness in @thm-division-algorithm. So some \( q_i \) is \( 3t + 2 \), and \( q_i > n \).
+\( N = 3(n! - 1) + 2 \ge 2 \), since \( n! \ge 1 \). By @exr-induction-in-practice-b2, \( N = q_1 \cdots q_r \) with primes \( q_i \). Each \( q_i > n \): if \( q_i \le n \), then \( q_i \mid n! \) (Step 1 of the proof of @thm-primes-infinite), and \( q_i \mid N \) (school arithmetic of finite products, as in Exercise C2), so \( q_i \mid 3 \cdot n! - N = 1 \) (@exm-divides-combination), which is impossible. No \( q_i \) is \( 3 \), since \( N \) leaves remainder \( 2 \) on division by \( 3 \). Dividing \( q_i \) by \( 3 \) (@thm-division-algorithm) and using discreteness, each \( q_i \) is \( 3t \), \( 3t + 1 \) or \( 3t + 2 \). So each \( q_i \) is \( 3t + 1 \) or \( 3t + 2 \): if \( q_i = 3t \), then \( 3 \mid q_i \), and \( q_i = 3 \) since \( q_i \) is prime. If every \( q_i \) were of the form \( 3t + 1 \), then \( N \) would be too, since \( (3a + 1)(3b + 1) = 3(3ab + a + b) + 1 \) and an induction on \( r \) carries this along the product; but \( N = 3(n! - 1) + 2 \), against the uniqueness in @thm-division-algorithm. So some \( q_i \) is \( 3t + 2 \), and \( q_i > n \).
 
 **Marking scheme.** (10 points)
 - 2: shows \( N \ge 2 \) and a factorization into primes.

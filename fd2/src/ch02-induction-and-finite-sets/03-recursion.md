@@ -101,7 +101,7 @@ Name \( X \), \( a \) and \( g \) for the sequence \( 1, 3, 7, 15, \dots \), in 
 :::
 
 ::: {.solution}
-\( X = \nN \) (or \( \nR \)), \( a = 1 \) and \( g(n, x) = 2x + 1 \); the rule does not use \( n \). Since \( 2x + 1 \in \nN \) for \( x \in \nN \), \( g \) is a function \( \nN \times X \to X \), so @thm-recursion applies. The clauses give \( f(1) = 2 \cdot 1 + 1 = 3 \), \( f(2) = 7 \), \( f(3) = 15 \), as listed.
+\( X = \nN \) (or \( \nR \)), \( a = 1 \) and \( g(n, x) = 2x + 1 \); the rule does not use \( n \). Since \( 2x + 1 \in \nN \) for \( x \in \nN \) (@lem-naturals-arithmetic (b)), \( g \) is a function \( \nN \times X \to X \), so @thm-recursion applies. The clauses give \( f(1) = 2 \cdot 1 + 1 = 3 \), \( f(2) = 7 \), \( f(3) = 15 \), as listed.
 :::
 
 ## Starting elsewhere, looking two steps back

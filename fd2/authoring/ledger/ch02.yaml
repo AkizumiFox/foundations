@@ -282,6 +282,15 @@ items:
       2.2 ... lemma on lowest terms'') is right: lem-lowest-terms is at 02:205 and uses well-ordering.
       The only problem: the aftermath at 224 relies on ''an even q>0 halves to a positive integer q/2<q'',
       which is not cited'
+  - stage: S8
+    verdict: correct
+    by: coordinator
+    hash: a8262a4ae600
+    date: '2026-10-25'
+    model: claude-opus-5-5
+    evidence: '01-naturals-and-well-ordering.md:224: aftermath now justifies the halving step: even q>0
+      is 2k, k in Z (@def-parity), k>0 so k in Z_{>0} (@prp-integers-closed (b)), k<2k. Solution 01:221
+      unchanged and correct.'
 - key: exm-method-least-element
   kind: exm
   file: 01-naturals-and-well-ordering.md
@@ -336,7 +345,7 @@ items:
   kind: check
   file: 01-naturals-and-well-ordering.md
   line: 254
-  hash: 705ac7f89d19
+  hash: 7e5997142d11
   verdicts:
   - stage: S5a
     verdict: correct
@@ -515,7 +524,7 @@ items:
   kind: check
   file: 01-naturals-and-well-ordering.md
   line: 320
-  hash: c6d3a1d9160c
+  hash: 137425ad130f
   verdicts:
   - stage: S5a
     verdict: correct
@@ -708,7 +717,7 @@ items:
   kind: exr
   file: 01-naturals-and-well-ordering.md
   line: 421
-  hash: e7e2f5696934
+  hash: 4c6fa9228d53
   verdicts:
   - stage: S5a
     verdict: correct
@@ -937,7 +946,7 @@ items:
   kind: check
   file: 02-induction-in-practice.md
   line: 54
-  hash: cec5dd8e4140
+  hash: 4e6cdbe353be
   verdicts:
   - stage: S5a
     verdict: correct
@@ -976,7 +985,7 @@ items:
   kind: exm
   file: 02-induction-in-practice.md
   line: 93
-  hash: 3dfb674e492d
+  hash: 629ab4f5b3b5
   verdicts:
   - stage: S5a
     verdict: minor
@@ -1064,6 +1073,15 @@ items:
     model: claude-opus-5-5
     evidence: The aftermath sentence at :135 is accurate, but its parenthetical 'where the claim starts'
       sits against 'where the claim starts being true', which reads as contradictory (F009 rejection).
+  - stage: S8
+    verdict: correct
+    by: coordinator
+    hash: edd57ecdb6e6
+    date: '2026-10-25'
+    model: claude-opus-5-5
+    evidence: '02-induction-in-practice.md:135: aftermath rewritten as ''where the step starts working,
+      or the first n the claim covers if that is later; need not be the first n at which the claim is
+      true''. Matches the example: claim true at 0,1,2, step fails 2->3 (24<27), base 3. F009 resolved.'
 - key: check:02-induction-in-practice:3
   kind: check
   file: 02-induction-in-practice.md
@@ -1302,7 +1320,7 @@ items:
   kind: check
   file: 02-induction-in-practice.md
   line: 311
-  hash: bff9a537596d
+  hash: 3dc683cff54c
   verdicts:
   - stage: S5a
     verdict: correct
@@ -1340,7 +1358,7 @@ items:
   kind: exr
   file: 02-induction-in-practice.md
   line: 323
-  hash: 3efec0dafa7b
+  hash: e49fe80b2509
   verdicts:
   - stage: S5a
     verdict: correct
@@ -1419,7 +1437,7 @@ items:
   kind: exr
   file: 02-induction-in-practice.md
   line: 346
-  hash: fcff6a927174
+  hash: 08b8dfcd0ce0
   verdicts:
   - stage: S5a
     verdict: correct
@@ -1487,7 +1505,7 @@ items:
   kind: exr
   file: 02-induction-in-practice.md
   line: 360
-  hash: c323be1ea852
+  hash: 1fc0fba9634b
   verdicts:
   - stage: S5a
     verdict: correct
@@ -1577,7 +1595,7 @@ items:
   kind: exr
   file: 02-induction-in-practice.md
   line: 378
-  hash: 78cc350a7d66
+  hash: 340205ca25b7
   verdicts:
   - stage: S5a
     verdict: correct
@@ -1634,7 +1652,7 @@ items:
   kind: exr
   file: 02-induction-in-practice.md
   line: 398
-  hash: 6fa7a305339f
+  hash: 6779fc62b883
   verdicts:
   - stage: S5a
     verdict: minor
@@ -1732,7 +1750,7 @@ items:
   kind: exr
   file: 02-induction-in-practice.md
   line: 487
-  hash: abe9b3a54e2a
+  hash: 79a6a69a5c50
   verdicts:
   - stage: S5a
     verdict: correct
@@ -1866,7 +1884,7 @@ items:
   kind: check
   file: 03-recursion.md
   line: 99
-  hash: 536b0b67728e
+  hash: 51fddf9fad90
   verdicts:
   - stage: S5a
     verdict: correct
@@ -1906,6 +1924,14 @@ items:
     model: claude-opus-5-5
     evidence: The solution is correct, but its ledger row (:633) marks lem-naturals-arithmetic (b) as
       '(cited)' and the solution at :104 does not cite it.
+  - stage: S8
+    verdict: correct
+    by: coordinator
+    hash: 51fddf9fad90
+    date: '2026-10-25'
+    model: claude-opus-5-5
+    evidence: '03-recursion.md:104: solution now cites @lem-naturals-arithmetic (b) for 2x+1 in N, so
+      the ledger row (''(cited)'') is true; f(1)=3, f(2)=7, f(3)=15 correct. F018 resolved.'
 - key: cor-recursion-from-base
   kind: cor
   file: 03-recursion.md
@@ -2020,7 +2046,7 @@ items:
   kind: check
   file: 03-recursion.md
   line: 163
-  hash: 0e1089583498
+  hash: 7d9cbc147387
   verdicts:
   - stage: S5a
     verdict: correct
@@ -2477,7 +2503,7 @@ items:
   kind: check
   file: 03-recursion.md
   line: 410
-  hash: d396551500b0
+  hash: 66117fcdf1aa
   verdicts:
   - stage: S5a
     verdict: minor
@@ -2872,7 +2898,7 @@ items:
   kind: proof
   file: 04-contrapositive-and-contradiction.md
   line: 89
-  hash: 7a57ee5c1702
+  hash: a2604ef95135
   verdicts:
   - stage: S5a
     verdict: correct
@@ -3106,7 +3132,7 @@ items:
   kind: exr
   file: 04-contrapositive-and-contradiction.md
   line: 216
-  hash: 92db2ccc83ef
+  hash: 8f59a8872e94
   verdicts:
   - stage: S5a
     verdict: correct
@@ -3143,6 +3169,15 @@ items:
     model: claude-opus-5-5
     evidence: '04:223/234 (d) makes the same point as @fd1:exr-connective-rhetoric-c1 (a)/(d): face (i),
       and the witness-naming rewrite. fd1 is not cited.'
+  - stage: S8
+    verdict: correct
+    by: coordinator
+    hash: 8f59a8872e94
+    date: '2026-10-25'
+    model: claude-opus-5-5
+    evidence: '04-contrapositive-and-contradiction.md:234: (d) now cites @fd1:exr-connective-rhetoric-c1
+      (fd1 ch08/01-connective-rhetoric.md:600, already in index What you need). (a)-(c) unchanged: 721=7*103,
+      remainder 1 mod 2,3,5.'
 - key: exr-contrapositive-and-contradiction-b1
   kind: exr
   file: 04-contrapositive-and-contradiction.md
@@ -3239,7 +3274,7 @@ items:
   kind: exr
   file: 04-contrapositive-and-contradiction.md
   line: 287
-  hash: 0e36f793a335
+  hash: cfa74f442400
   verdicts:
   - stage: S5a
     verdict: minor
@@ -3288,7 +3323,7 @@ items:
   kind: exr
   file: 04-contrapositive-and-contradiction.md
   line: 320
-  hash: 211100ecbcc4
+  hash: b03a079cfbee
   verdicts:
   - stage: S5a
     verdict: correct
@@ -3334,7 +3369,7 @@ items:
   kind: exr
   file: 04-contrapositive-and-contradiction.md
   line: 352
-  hash: 003f2b291610
+  hash: 92d5c4b83e54
   verdicts:
   - stage: S5a
     verdict: correct
@@ -3391,8 +3426,8 @@ items:
 - key: exr-contrapositive-and-contradiction-c3
   kind: exr
   file: 04-contrapositive-and-contradiction.md
-  line: 374
-  hash: 6e225ecc138f
+  line: 385
+  hash: abc19d8e82d7
   verdicts:
   - stage: S5a
     verdict: minor
@@ -3439,6 +3474,15 @@ items:
     model: claude-opus-5-5
     evidence: q_i | N and q_i | 3·n! give q_i | 1. The residue classes 3t, 3t + 1, 3t + 2 and the product
       of (3t + 1) factors are right. The new scheme totals 10.
+  - stage: S8
+    verdict: correct
+    by: coordinator
+    hash: abc19d8e82d7
+    date: '2026-10-25'
+    model: claude-opus-5-5
+    evidence: '04-contrapositive-and-contradiction.md:383: ''with n = 3'' replaced by ''Dividing q_i by
+      3 (@thm-division-algorithm)''; no clash with the fixed n. Rest rechecked: N=3(n!-1)+2>=2, q_i>n
+      via q_i | 3n!-N=1, q_i != 3, (3a+1)(3b+1)=3(..)+1; sidecar c3 passes.'
 - key: def-equinumerous
   kind: def
   file: 05-finite-sets.md
@@ -3819,11 +3863,20 @@ items:
       (remainder 0 means a=2q, which is even; remainder 1 means a=2q+1, which is odd). The ledger line
       667 covers only r,s∈{0,1}. The math is fine: exm-lattice-midpoint (1.1:303) takes ''same parity
       pattern'' as its hypothesis.'
+  - stage: S8
+    verdict: correct
+    by: coordinator
+    hash: 2af632e893d0
+    date: '2026-10-25'
+    model: claude-opus-5-5
+    evidence: '05-finite-sets.md:238: same remainder now gives same parity explicitly (remainder 0: a=2q
+      even; 1: a=2q+1 odd; @def-parity). B has 4 elements, 5>4, cor-pigeonhole-finite-sets (a), exm-lattice-midpoint.
+      Correct.'
 - key: check:05-finite-sets:3
   kind: check
   file: 05-finite-sets.md
   line: 243
-  hash: 296a34c01caf
+  hash: 43f6d23412f1
   verdicts:
   - stage: S5a
     verdict: minor
@@ -4038,10 +4091,58 @@ items:
     model: claude-opus-5-5
     evidence: 'New check: 5 points in {1,2}x{1,2,3}. If both rows had ≤ 2 points, prp-disjoint-union-count
       would give ≤ 4, which contradicts cor-finite-size-unique.'
+  - stage: S8
+    verdict: correct
+    by: coordinator
+    hash: 4970798cd512
+    date: '2026-10-25'
+    model: claude-opus-5-5
+    evidence: '05-finite-sets.md:334-340: S subset {1..7} with 7 elements is {1..7}, by prp-subset-finite
+      (stated before it) and cor-finite-size-unique. Correct.'
+- key: check:05-finite-sets:5
+  kind: check
+  file: 05-finite-sets.md
+  line: 342
+  hash: c41e0424fd32
+  verdicts:
+  - stage: S5a
+    verdict: correct
+    by: refereeA
+    hash: 89a537e526a3
+    date: '2026-10-25'
+    model: claude-opus-5-5
+    evidence: '05-finite-sets.md:435: n+1≥1, so n+1≠0. The inverse m↦m−1 is in ℕ by lem (c). The two maps
+      undo each other, so thm-bijection-iff-inverse applies. 0∉ℕ∖{0} makes the subset proper, and thm-finite-no-proper-copy
+      applies.'
+  - stage: S5b
+    verdict: correct
+    by: refereeB
+    hash: 89a537e526a3
+    date: '2026-10-25'
+    model: claude-opus-5-5
+    evidence: '05:430-436: the inverse m↦m−1 is in ℕ by lem-naturals-arithmetic (c); it is a bijection
+      by thm-bijection-iff-inverse; ℕ is infinite by thm-finite-no-proper-copy. This matches the forward
+      mention at 05:29.'
+  - stage: S7r
+    verdict: correct
+    by: rereferee
+    hash: 4970798cd512
+    date: '2026-10-25'
+    model: claude-opus-5-5
+    evidence: S ⊆ {1..7} with 7 elements equals {1..7}, by prp-subset-finite and cor-finite-size-unique.
+  - stage: S8
+    verdict: correct
+    by: coordinator
+    hash: c41e0424fd32
+    date: '2026-10-25'
+    model: claude-opus-5-5
+    evidence: '05-finite-sets.md:342-348: parts check moved after prp-subset-finite (F048); all cited
+      results now precede it; A tied to {1,2}x{1,2,3}; k_i>2 gives k_i>=3 and phi(1),phi(2),phi(3) three
+      different elements with first coordinate i; 2+2=4<5.'
 - key: cor-remove-point
   kind: cor
   file: 05-finite-sets.md
-  line: 342
+  line: 350
   hash: 240f08b8b551
   verdicts:
   - stage: S5a
@@ -4063,7 +4164,7 @@ items:
 - key: proof:cor-remove-point
   kind: proof
   file: 05-finite-sets.md
-  line: 348
+  line: 356
   hash: 209943f88ad6
   verdicts:
   - stage: S5a
@@ -4085,7 +4186,7 @@ items:
 - key: prp-power-set-count
   kind: prp
   file: 05-finite-sets.md
-  line: 354
+  line: 362
   hash: 53204555eb13
   verdicts:
   - stage: S5a
@@ -4124,7 +4225,7 @@ items:
 - key: proof:prp-power-set-count
   kind: proof
   file: 05-finite-sets.md
-  line: 364
+  line: 372
   hash: 60c0acd45a34
   verdicts:
   - stage: S5a
@@ -4157,7 +4258,7 @@ items:
 - key: thm-finite-no-proper-copy
   kind: thm
   file: 05-finite-sets.md
-  line: 388
+  line: 396
   hash: ee9a0f3dbf41
   verdicts:
   - stage: S5a
@@ -4177,7 +4278,7 @@ items:
 - key: proof:thm-finite-no-proper-copy
   kind: proof
   file: 05-finite-sets.md
-  line: 394
+  line: 402
   hash: c1b469157f65
   verdicts:
   - stage: S5a
@@ -4198,7 +4299,7 @@ items:
 - key: exm-hilbert-hotel
   kind: exm
   file: 05-finite-sets.md
-  line: 406
+  line: 414
   hash: 0542aba7a3b5
   verdicts:
   - stage: S5a
@@ -4218,42 +4319,11 @@ items:
     evidence: :324-336. d(n)=2n is a bijection onto 2N, 2N ⊆ N by lem (b), and 1∉2N by the case split
       with lem (a). The ledger line is at :539. The pointer at :338 to Section 8.6 is paid by thm-infinite-iff-proper-subset
       (06:69).
-- key: check:05-finite-sets:5
-  kind: check
-  file: 05-finite-sets.md
-  line: 430
-  hash: 89a537e526a3
-  verdicts:
-  - stage: S5a
-    verdict: correct
-    by: refereeA
-    hash: 89a537e526a3
-    date: '2026-10-25'
-    model: claude-opus-5-5
-    evidence: '05-finite-sets.md:435: n+1≥1, so n+1≠0. The inverse m↦m−1 is in ℕ by lem (c). The two maps
-      undo each other, so thm-bijection-iff-inverse applies. 0∉ℕ∖{0} makes the subset proper, and thm-finite-no-proper-copy
-      applies.'
-  - stage: S5b
-    verdict: correct
-    by: refereeB
-    hash: 89a537e526a3
-    date: '2026-10-25'
-    model: claude-opus-5-5
-    evidence: '05:430-436: the inverse m↦m−1 is in ℕ by lem-naturals-arithmetic (c); it is a bijection
-      by thm-bijection-iff-inverse; ℕ is infinite by thm-finite-no-proper-copy. This matches the forward
-      mention at 05:29.'
-  - stage: S7r
-    verdict: correct
-    by: rereferee
-    hash: 4970798cd512
-    date: '2026-10-25'
-    model: claude-opus-5-5
-    evidence: S ⊆ {1..7} with 7 elements equals {1..7}, by prp-subset-finite and cor-finite-size-unique.
 - key: check:05-finite-sets:6
   kind: check
   file: 05-finite-sets.md
-  line: 442
-  hash: 45bf6c0b2acf
+  line: 438
+  hash: 89a537e526a3
   verdicts:
   - stage: S5a
     verdict: correct
@@ -4281,10 +4351,33 @@ items:
     model: claude-opus-5-5
     evidence: n -> n + 1 is a bijection N -> N\{0} with inverse m - 1 (lem-naturals-arithmetic (c)). N
       is infinite by thm-finite-no-proper-copy.
+  - stage: S8
+    verdict: correct
+    by: coordinator
+    hash: 89a537e526a3
+    date: '2026-10-25'
+    model: claude-opus-5-5
+    evidence: '05-finite-sets.md:438-444: n->n+1 lands in N minus {0}, inverse m->m-1 by lem (c), thm-bijection-iff-inverse,
+      thm-finite-no-proper-copy. Pointer at :29 (''Quick check near the end of this section'') still holds
+      after the move.'
+- key: check:05-finite-sets:7
+  kind: check
+  file: 05-finite-sets.md
+  line: 450
+  hash: 45bf6c0b2acf
+  verdicts:
+  - stage: S8
+    verdict: correct
+    by: coordinator
+    hash: 45bf6c0b2acf
+    date: '2026-10-25'
+    model: claude-opus-5-5
+    evidence: '05-finite-sets.md:450-456: primes nonempty (2); if finite, {p_1..p_n} with max M (prp-finite-max,
+      remark before it); thm-primes-infinite gives prime p>M, contradiction. Correct.'
 - key: exr-finite-sets-a1
   kind: exr
   file: 05-finite-sets.md
-  line: 460
+  line: 468
   hash: d6bb729a2ba5
   verdicts:
   - stage: S5a
@@ -4318,7 +4411,7 @@ items:
 - key: exr-finite-sets-b1
   kind: exr
   file: 05-finite-sets.md
-  line: 487
+  line: 495
   hash: f3ff87942d3a
   verdicts:
   - stage: S5a
@@ -4349,8 +4442,8 @@ items:
 - key: exr-finite-sets-b2
   kind: exr
   file: 05-finite-sets.md
-  line: 501
-  hash: d149708d5e8f
+  line: 509
+  hash: ceec7d878e27
   verdicts:
   - stage: S5a
     verdict: correct
@@ -4438,7 +4531,7 @@ items:
 - key: exr-finite-sets-b3
   kind: exr
   file: 05-finite-sets.md
-  line: 518
+  line: 526
   hash: 8458fd4fad1c
   verdicts:
   - stage: S5a
@@ -4468,7 +4561,7 @@ items:
 - key: exr-finite-sets-b4
   kind: exr
   file: 05-finite-sets.md
-  line: 538
+  line: 546
   hash: 2c32aaa863b8
   verdicts:
   - stage: S5a
@@ -4504,7 +4597,7 @@ items:
 - key: exr-finite-sets-c1
   kind: exr
   file: 05-finite-sets.md
-  line: 571
+  line: 579
   hash: 22eb3017810e
   verdicts:
   - stage: S5a
@@ -4546,7 +4639,7 @@ items:
 - key: exr-finite-sets-c2
   kind: exr
   file: 05-finite-sets.md
-  line: 609
+  line: 617
   hash: 604e1a184cd1
   verdicts:
   - stage: S5a
@@ -4593,82 +4686,49 @@ items:
     date: '2026-10-25'
     model: claude-opus-5-5
     evidence: 'Only the ledger line changed: restriction is now sourced to F2.1 §05, which is correct.'
-- key: def-divides
-  kind: def
-  file: 02-induction-in-practice.md
-  line: 90
-  hash: cd48e257af48
-  verdicts:
-  - stage: S5a
-    verdict: correct
-    by: refereeA
-    hash: cd48e257af48
-    date: '2026-10-11'
-    model: claude-opus-5-5
-    evidence: '02:93. The examples at 02:96-104 check out: 0|0, transitivity with lk ∈ ℤ, and 3∤14 by
-      discreteness (an integer k with 4 < k forces 5 ≤ k, which contradicts k < 5). For the 3 | 4^n−1
-      step, 4^{n+1}−1 = 4(4^n−1)+3 = 3(4k+1). The sidecar passes.'
-  - stage: S5b
-    verdict: correct
-    by: refereeB
-    hash: cd48e257af48
-    date: '2026-10-11'
-    model: claude-opus-5-5
-    evidence: 02:93; examples 02:96-104 checked (3|12 k=4, -3|12 k=-4, 4<14/3<5 with discreteness clause
-      01:111, 4^{n+1}-1=3(4k+1)); sidecar def-divides.py passes.
-  removed: true
-- key: def-prime
-  kind: def
-  file: 02-induction-in-practice.md
-  line: 106
-  hash: 5f9b6b250ccc
-  verdicts:
-  - stage: S5a
-    verdict: correct
-    by: refereeA
-    hash: 5f9b6b250ccc
-    date: '2026-10-11'
-    model: claude-opus-5-5
-    evidence: '02:109. Example 2 at 02:112: k>0 because kd=2>0 and d>0. k≥1 by (b). d ≤ kd = 2, then discreteness.
-      The non-examples 9 and 1 are correct.'
-  - stage: S5b
-    verdict: minor
-    by: refereeB
-    hash: 5f9b6b250ccc
-    date: '2026-10-11'
-    model: claude-opus-5-5
-    evidence: 02-induction-in-practice.md:112 The meta-claim that unique factorization is 'a fact this
-      book neither proves nor needs' cannot be checked on the page and makes a claim about unwritten chapters.
-  - stage: S7r
-    verdict: correct
-    by: rereferee
-    hash: 5f9b6b250ccc
-    date: '2026-10-11'
-    model: claude-opus-5-5
-    evidence: '02-induction-in-practice.md:109-112. The definition and the example (2 prime via k>=1 by
-      prp-integers-closed (b), d<=kd=2, discreteness (c)) check out, and so do the non-examples 9 and
-      1. The earlier S5b finding is resolved: the meta-claim now reads ''a fact this chapter does not
-      prove or use''. I grepped src/ch07-* for factori[sz]ation and the only hit is this sentence, so
-      the claim is true and can'
-  removed: true
-- key: check:01-finite-sets:1
-  kind: check
+- key: exr-finite-sets-r1
+  kind: exr
   file: 05-finite-sets.md
-  line: 350
-  hash: 89a537e526a3
+  line: 668
+  hash: 30c0aeac08f1
   verdicts:
-  - stage: S5a
+  - stage: S8
     verdict: correct
-    by: refereeA
-    hash: 89a537e526a3
-    date: '2026-10-11'
+    by: coordinator
+    hash: 30c0aeac08f1
+    date: '2026-10-25'
     model: claude-opus-5-5
-    evidence: '01:344-350: n+1>=1, inverse m-1 via lem (c), thm-bijection-iff-inverse'
-  - stage: S5b
+    evidence: '05-finite-sets.md:668-682: (a) replaced by g(a,b)=4a+6b (fresh data, F049): values 2(2a+3b)
+      even (prp-integers-closed (a), def-parity), 1 odd, thm-even-or-odd, so not surjective; g(3,-2)=0=g(0,0),
+      not injective. (b) unchanged. Sidecar exr-finite-sets-r1.py updated, passes.'
+- key: exr-finite-sets-r2
+  kind: exr
+  file: 05-finite-sets.md
+  line: 685
+  hash: f74bde38a3da
+  verdicts:
+  - stage: S8
     verdict: correct
-    by: refereeB
-    hash: 89a537e526a3
-    date: '2026-10-11'
+    by: coordinator
+    hash: f74bde38a3da
+    date: '2026-10-25'
     model: claude-opus-5-5
-    evidence: :344-350. n+1 ≥ 1, the inverse m-1 is in N by lem (c), and N∖{0}=Z_{>0} by the ch07/01 definition.
-  removed: true
+    evidence: '05-finite-sets.md:685-705: (b) replaced by X=Z, x+y=0 (fresh data, F049): (S2) x=-y; (S1)
+      negated, y=1-x gives x+y=1. (a) and (c) unchanged; converse remark still valid. Sidecar r2 updated,
+      passes.'
+- key: exr-finite-sets-r3
+  kind: exr
+  file: 05-finite-sets.md
+  line: 708
+  hash: ba2146dd6d29
+  verdicts:
+  - stage: S8
+    verdict: correct
+    by: coordinator
+    hash: ba2146dd6d29
+    date: '2026-10-25'
+    model: claude-opus-5-5
+    evidence: '05-finite-sets.md:708-728: structural induction rechecked (vacuous for bot/not/->/<->,
+      monotone and/or steps, all-F/all-T pair); solution now notes the consequence is a special case of
+      @fd1:thm-adequate-connectives (b) (fd1 ch04/09-normal-forms.md:471); label added to index.md What
+      you need.'
