@@ -263,7 +263,7 @@ The box assumes \( a > b \), which is \( \neg(a \le b) \) by the order fact of S
 
 *By cases.* By trichotomy, \( a \le b \) or \( a > b \) [\( \rulename{\vee E} \)]. In the first case we are done. In the second, the lines of the box above reach \( a \le b \) against \( a > b \), so this case cannot occur, and in it \( a \le b \) [\( \rulename{\neg E} \), \( \rulename{\bot E} \)]. In either case \( a \le b \).
 
-The two proofs share their mathematics, the instance \( \varepsilon = (a - b)/2 \), and differ only in how the classical step is written: as \( \rulename{RAA} \), or as a split on trichotomy, which over \( \nR \) is an axiom, so neither is flagged: \( a > b \) is \( \neg(a \le b) \) by trichotomy, so \( \rulename{RAA} \) adds nothing beyond that axiom. The fold below writes the same box closed by \( \rulename{\neg I} \) and followed by \( \rulename{\neg\neg E} \).
+The two proofs share their mathematics, the instance \( \varepsilon = (a - b)/2 \), and differ only in how the classical step is written: as \( \rulename{RAA} \), or as a split on trichotomy, which over \( \nR \) is an axiom. Neither is flagged: \( a > b \) is \( \neg(a \le b) \) by trichotomy, so \( \rulename{RAA} \) adds nothing beyond that axiom. The fold below writes the same box closed by \( \rulename{\neg I} \) and followed by \( \rulename{\neg\neg E} \).
 :::
 
 ::: {.second-reading title="The same proof by ¬I and ¬¬E"}

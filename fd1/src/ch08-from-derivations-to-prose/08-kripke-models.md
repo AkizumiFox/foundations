@@ -167,7 +167,7 @@ So \( S(k) \) holds, and by @thm-strong-induction every line \( k \) satisfies i
 ::: {#cor-kripke-countermodel}
 [Kripke Countermodel]
 
-If some stage of some Kripke model refutes \( \Gamma \vdash \psi \), then \( \Gamma \vdash \psi \) has no derivation without \( \rulename{RAA} \) in the propositional rules.
+If some stage of some Kripke model refutes \( \Gamma \vdash \psi \), then \( \Gamma \vdash \psi \) has no derivation without \( \rulename{RAA} \) in the propositional rules whose lines are all formulas of @def-formula.
 :::
 
 ::: {.proof}
@@ -227,7 +227,7 @@ Here is the propositional right column of the table in Section 8.7, "Which laws 
 | \( \neg q \to \neg p \vdash p \to q \) | \( w_0 \) of \( M_4 \): no stage forces \( \neg q \), so \( w_0 \Vdash \neg q \to \neg p \); \( w_0 \) forces \( p \) and not \( q \) |
 | \( \vdash (p \to q) \vee (q \to p) \); \( \neg(p \wedge q) \vdash \neg p \vee \neg q \) | \( w_0 \) of \( M_2 \) (@exm-three-stage-model) |
 
-With @cor-kripke-countermodel, each row proves that the sequent has no derivation without \( \rulename{RAA} \) in the propositional rules; that the rules for \( \forall \), \( \exists \) and \( = \) do not change this is stated without proof (Section 8.7). This covers every propositional entry of Section 8.7's right column, and the claims stated without proof in its Exercises B1 and R3.
+With @cor-kripke-countermodel, each row proves that the sequent has no derivation without \( \rulename{RAA} \) in the propositional rules; that lines outside @def-formula and the rules for \( \forall \), \( \exists \) and \( = \) do not change this is stated without proof (Section 8.7). This covers every propositional entry of Section 8.7's right column, and the claims stated without proof in its Exercises B1 and R3.
 
 ## Searching for a countermodel
 
@@ -589,7 +589,7 @@ The comparison: @exm-triple-negation derives \( \neg\neg\neg P \vdash \neg P \) 
 - 4: \( (\Leftarrow) \), with heredity and reflexivity named.
 - 5: \( (\Rightarrow) \), with heredity of \( \varphi \) used to get \( w' \Vdash \neg\neg\varphi \).
 - 1: the comparison.
-- Second route: both directions from @thm-kripke-soundness, applied to the derivations without \( \rulename{RAA} \) of @exm-triple-negation and @prp-double-negation (a) with \( \varphi \) for \( P \), earn the 9 points for the two directions; the 1 point for the comparison then goes to naming where the direct proof uses heredity.
+- Second route: both directions from @thm-kripke-soundness, applied to the derivations without \( \rulename{RAA} \) of @exm-triple-negation with \( \varphi \) for \( P \) and @prp-double-negation (a) with \( \neg\varphi \) for \( P \), earn the 9 points for the two directions; the 1 point for the comparison then goes to naming where the direct proof uses heredity.
 
 Fatal errors (0 for the step): "not forced, so the negation is forced"; heredity used without being cited.
 :::

@@ -105,7 +105,7 @@ Steps 4 and 5 say that the search runs backwards and the page runs forwards. Her
 | 4. That needs \( a \in B \). | 4. So \( a \le M \). |
 | 5. \( a \in B \) comes from \( A \subseteq B \). ✓ | 5. Hence \( M \) is an upper bound of \( A \). |
 
-Read the scratch column from the bottom up and it is the page. The constant \( M \) is found at scratch line 2, after the goal has been read; on the page it is chosen in the first sentence, before anything uses it.
+Read the scratch column from the bottom up and it is the page, except for the constant: \( M \) is found at scratch line 2, after the goal has been read, but on the page it is chosen in the first sentence, before anything uses it.
 
 ::: {.second-reading title="Why the page runs forwards"}
 **Step 4 as a logical fact.** The search of Section 3.1 opens a box for the goal before it knows how the box will be filled, and it postpones an existential goal until a witness appears; that is why it works backwards. But a derivation is a list in which line \( k \) cites only lines available at \( k \) (@def-derivation), and a written proof is that list in sentences. So the order of the page is forced by the rules, not by taste: "\( \abs{f(x) - f(a)} < \varepsilon \) holds if \( \abs{x - a} < \varepsilon/2 \)" points from a later line to an earlier one. The backward reasoning lives in the Idea block.
@@ -691,7 +691,7 @@ Let \( r \) be rational, and suppose \( r^2 = 3 \). By \( (\mathrm{L}_3) \), wri
 *(c)* A generalization keeps the skeleton (the boxes, the choices, the clash) and every line that used only properties shared by the new object; it must prove again each line that used a property of the old one, here the lemma.
 
 **Marking scheme.** (10 points)
-- 3: (a) the lemma proved (by the residues mod 3, or cited from a proved result such as Euclid's lemma), with the clash justified.
+- 3: (a) the lemma proved by the residues mod 3, with the clash \( 3j + 1 \ne 3t \) justified.
 - 2: (a) the rest of the proof, with \( (\mathrm{L}_3) \) and the lemma used twice.
 - 2: (b) the failing line named, with the counterexample \( n = 2 \).
 - 1: (b) why a line must fail (\( \sqrt 4 = 2 \) is rational).

@@ -296,6 +296,14 @@ items:
     evidence: 'Retitled ''read two ways'', which matches the two proofs in the body. The fold''s third
       version is introduced as ''With this third version''. The trichotomy remark is accurate: a > b is
       ¬(a ≤ b) by trichotomy.'
+  - stage: S8
+    verdict: correct
+    by: coordinator
+    hash: 5474a24d867a
+    date: '2026-10-25'
+    model: claude-opus-5-5
+    evidence: '01:266 split into two sentences after S7r: ''Neither is flagged: a > b is not(a <= b) by
+      trichotomy''; mathematics unchanged'
 - key: exm-rhetoric-biconditional
   kind: exm
   file: 01-connective-rhetoric.md
@@ -2895,6 +2903,14 @@ items:
     model: claude-opus-5-5
     evidence: The table description now says the second row is step 2 and the later rows are moves of
       steps 3 and 4. Accurate.
+  - stage: S8
+    verdict: correct
+    by: coordinator
+    hash: d0f12dc764b4
+    date: '2026-10-25'
+    model: claude-opus-5-5
+    evidence: '05:108 now qualifies the bottom-up reading: M found at scratch line 2 but chosen in the
+      first sentence'
 - key: check:05-writing-proofs:2
   kind: check
   file: 05-writing-proofs.md
@@ -3515,6 +3531,14 @@ items:
     evidence: 'Hint 2 is now the first line. The lemma (residues 3k+1, 3k+2 squared, then 3j+1≠3t), the
       main proof and (b) at n=2 with 4=(2/1)^2 are all correct. Leftover: the widened scheme line keeps
       ''with the clash justified'', which only fits the residues route (see new_problems).'
+  - stage: S8
+    verdict: correct
+    by: coordinator
+    hash: 4d76a8889ca5
+    date: '2026-10-25'
+    model: claude-opus-5-5
+    evidence: '05:694 scheme: lemma by residues mod 3 with 3j+1 != 3t justified; Euclid route (not proved
+      in fd1) dropped, as the stem asks for a proof'
 - key: check:06-checking-proofs:1
   kind: check
   file: 06-checking-proofs.md
@@ -4472,6 +4496,14 @@ items:
     evidence: 07-excluded-middle.md:137 This result was already proved in an earlier chapter. The derivation
       of ⊢ ¬¬(P ∨ ¬P) without RAA and without ⊥E appears in fd1 Chapter 3, and 8.7 presents it as new
       without citing it.
+  - stage: S8
+    verdict: correct
+    by: coordinator
+    hash: c8b5914b6e94
+    date: '2026-10-25'
+    model: claude-opus-5-5
+    evidence: 07:152 cites exr-four-kinds-of-task-b1 (Section 3.2) as the earlier derivation; ledger 07:813
+      records it (S7)
 - key: proof:prp-not-not-excluded-middle
   kind: proof
   file: 07-excluded-middle.md
@@ -4742,6 +4774,13 @@ items:
     model: claude-opus-5-5
     evidence: The non-derivability of ¬¬p → p is stated for a letter p, which is what the two-stage model
       of 8.8 refutes.
+  - stage: S8
+    verdict: correct
+    by: coordinator
+    hash: cc4d8a489074
+    date: '2026-10-25'
+    model: claude-opus-5-5
+    evidence: ledger claims row now scoped to a letter p, matching the solution
 - key: exr-excluded-middle-b2
   kind: exr
   file: 07-excluded-middle.md
@@ -5299,6 +5338,13 @@ items:
     model: claude-opus-5-5
     evidence: NOTATION.md:173 The NOTATION entry for forcing says clauses (K1)-(K6). The delivered definition
       has seven clauses, (K1)-(K7), the seventh being for ↔.
+  - stage: S8
+    verdict: correct
+    by: coordinator
+    hash: aae11550ea96
+    date: '2026-10-25'
+    model: claude-opus-5-5
+    evidence: NOTATION.md:173 now says (K1)-(K7), matching the seven clauses (S7)
 - key: check:08-kripke-models:1
   kind: check
   file: 08-kripke-models.md
@@ -5521,6 +5567,14 @@ items:
     model: claude-opus-5-5
     evidence: '''in the propositional rules'' matches the scope of the theorem. The table paragraph states
       without proof that the quantifier rules do not change this.'
+  - stage: S8
+    verdict: correct
+    by: coordinator
+    hash: 15195110c8ed
+    date: '2026-10-25'
+    model: claude-opus-5-5
+    evidence: 08:170 now requires every line to be a formula of def-formula, matching thm-kripke-soundness;
+      08:230 caveat names lines outside def-formula as stated without proof
 - key: proof:cor-kripke-countermodel
   kind: proof
   file: 08-kripke-models.md
@@ -5829,3 +5883,11 @@ items:
     evidence: The added second route by @thm-kripke-soundness, applied to the RAA-free derivations of
       exm-triple-negation and prp-double-negation (a), is valid. The point allocation is consistent (9
       + 1).
+  - stage: S8
+    verdict: correct
+    by: coordinator
+    hash: 086fcd8afd84
+    date: '2026-10-25'
+    model: claude-opus-5-5
+    evidence: '08:592 second route: exm-triple-negation with phi for P and prp-double-negation (a) with
+      not-phi for P, matching the solution at 08:585'
