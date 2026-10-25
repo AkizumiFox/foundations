@@ -1,4 +1,4 @@
-# Reading the book: schedules, rhythm, gates, feedback
+# Reading the book: schedules, rhythm, feedback
 
 > **Numbering.** Chapter numbers in this file are analysis-book's 78-chapter numbers (before the split into volumes). `python3 tools/series.py show` maps them (`ab ch N`) to atlas ids and volumes.
 
@@ -86,32 +86,16 @@ For every schedule. The shares are of the week's hours.
 
 If after a week you still cannot, **move on anyway** and mark the section for the next review session. Stalling is the likeliest way a reader working alone stops altogether; a mastery loop that never ends costs more than a gap that review will close.
 
-## Checkpoints and gates
+## Checkpoints
 
-Three levels, each with feedback the reader can get alone.
+Two levels, each with feedback the reader can get alone.
 
 | Level | What | Feedback |
 |---|---|---|
 | Section | Quick checks and the A exercise | immediate folded answers; no grading needed |
 | Chapter | Exit checks (titled "Exit check"), each with a marking scheme | grade yourself, a partner or an AI against the scheme; re-attempt after 48 hours |
-| Part | A **Gate**: the last section of the Part's last main-line chapter | timed and closed-book; pass line; remediation map |
 
-**How a Gate works.**
-- It is timed (2 hours for Gate 0, 3 hours after) and closed-book; the solutions are folded.
-- It opens with a **definition drill**: every major definition of the Part, stated in symbols.
-- Each problem has a marking scheme. **Pass line: 70% overall, and no core problem at 0.**
-- Each problem lists, with links, the sections it tests. A failed problem sends you to those sections, not to "reread Part II".
-- **A Gate is also an entry test.** A reader arriving at a Part by a reading path takes the Gate of the Part before it.
-
-| Gate | Where | Size |
-|---|---|---|
-| Gate 0 | Ch 8 §07 (last section) | 2 h, 6 problems |
-| Gate I | Ch 21 §06 (last section) | 3 h, 8 problems |
-| Gate II | Ch 33 §07 (last section) | 3 h, 8 problems |
-| Gate III | Ch 42 §08 (last section) | 3 h, 6 problems |
-| Gate IV | Ch 54 §08 (last section); problems on Ch 54 are non-core | 3 h, 8 problems |
-| Gate V | Ch 62 §08 (last section) | 3 h, 8 problems |
-| Gate VI | Ch 78 §08 (last section) | 3 h, mixed across Parts IV–VI |
+There is no Part-level examination: the Gates (timed tests with a pass line) were retired on 2026-10-25. The schedule tables below that still name a Gate week are history; read those weeks as review weeks.
 
 **Each Part is a complete course.** Stopping after Part I (a first course in real analysis) or after Part IV (measure and integration) is a legitimate outcome, and the page should say so plainly.
 

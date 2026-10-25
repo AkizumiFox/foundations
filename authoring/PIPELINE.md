@@ -110,7 +110,7 @@ Where a second model family is available, run one of A or B on it; otherwise var
 
 ### S6. Exercise verification (1 agent per chapter; 2 for a long chapter)
 **Brief:**
-- "Solve every B, C and R exercise, and every Gate problem, **before** reading the book's solution. Then compare. Report every disagreement, and every solution that is incomplete or a sketch."
+- "Solve every B, C and R exercise **before** reading the book's solution. Then compare. Report every disagreement, and every solution that is incomplete or a sketch."
 - "Check every numeric answer with a script of your own (not the drafter's sidecar)."
 - "Confirm every B-type task has a worked example in the section."
 - "Confirm each find-the-error item is flawed exactly where the solution says, and nowhere else; that at least one per chapter has a true conclusion; and that the solution's counterexample defeats the illegal step."
@@ -130,7 +130,6 @@ The drafter or a fresh reviser fixes every `minor`, `gap` and `error`. A fix is 
 - "Run `tools/promises.py`: every promise this chapter owed is paid by a named, existing label; every promise it opened is in the list for STATUS and targets a chapter whose blueprint delivers it."
 - "Check notation across the chapter's sections, and against the Part so far."
 - "Check the chapter's entries in the spiral table (`curriculum.md`) are written out as STYLE §10 requires, and its R items reach back as §11.5 requires."
-- "If the chapter ends a Part: check the Gate's remediation map points at sections that test what each problem tests."
 **Exit:** findings fixed through S7's acceptance rule.
 
 ### S9. Author sampling

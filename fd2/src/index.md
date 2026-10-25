@@ -10,11 +10,9 @@ Every definition of analysis is a sentence about sets and functions. *Logic and 
 |---|---|
 | 1 | Sets and the working rules that say which sets exist, Russell's paradox, families of sets, products and relations, functions and their inverses, images and preimages |
 | 2 | The arithmetic of \( \nN \) and \( \nZ \) from induction, well-ordering, induction as a craft, definition by recursion, equivalence relations and partitions, partial orders |
-| 3 | Finite and countable sets, the axiom of choice, diagonal arguments and Cantor's theorem, the Schröder–Bernstein theorem, infinite sets; and Gate 0 |
+| 3 | Finite and countable sets, the axiom of choice, diagonal arguments and Cantor's theorem, the Schröder–Bernstein theorem, infinite sets |
 | 4 | Zorn's lemma |
 
 Chapters 1–3 are written; Chapter 4 is not yet. The real numbers are used throughout as familiar objects, with their school arithmetic and order, and every use of a school fact is named where it occurs. *Analysis on the Real Line* turns those facts into consequences of axioms, and *Number Systems: From \(\nN\) to \(\nR\)* builds the numbers out of sets.
 
 **How to read it.** Read the chapters in order: each uses the ones before it. Every section has Quick checks with folded answers; answer each one before you unfold it. The exercises of a section come in three groups, A to check understanding, B for practice and C to go deeper, and the last section of each chapter adds R items that reach back to earlier chapters. A chapter's opening page lists what it needs, with links, and the time it takes.
-
-**Gate 0.** Chapter 3 ends with an examination on *Logic and Proof* and the first three chapters of this volume: a definition drill and six problems, closed book, with a marking scheme and a map that sends each lost problem back to named sections. Pass it before starting *Analysis on the Real Line*. Chapter 4 is not needed there.

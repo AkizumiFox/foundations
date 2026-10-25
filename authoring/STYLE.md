@@ -67,7 +67,7 @@ A chapter's `index.md` contains, in this order:
 5. **Roadmap:** a bullet per section, with one sentence each.
 6. **Named moves:** a short list of the proof techniques this chapter introduces, so the reader can transfer them.
 
-The **last main-line chapter of each Part** also ends with a **Gate** section (§11.10). The Gate is a section like any other in the Roadmap, and it has no Exercises heading of its own: its problems are the section.
+No chapter ends with an examination section: the Gate system was retired on 2026-10-25 (§11.10).
 
 ## 3. Introducing a notion (the explain template)
 
@@ -227,7 +227,7 @@ The chapter's **exit checks** are C items titled `[C1: Exit check: …]`, and th
 - An A or B item may carry **one** hint, at the end of the problem in italics: *Hint: consider the kernel of …*. It names a tool or an object, never a step.
 - A C item may instead carry a **hint ladder** of two folded rungs, placed between the problem and the solution (§11.7): rung 1 names the tool or object; rung 2 gives the first line of the proof. Neither executes the key idea. Until the engine has a hint block, write each rung as a `::: {.solution}` whose first line is `[Hint 1]` or `[Hint 2]`, so it folds on the web.
 
-**Marking schemes.** Every exit check, every Gate problem and any C item a reader is likely to write up in full ends its solution with a `**Marking scheme.**` paragraph (§11.6).
+**Marking schemes.** Every exit check and any C item a reader is likely to write up in full ends its solution with a `**Marking scheme.**` paragraph (§11.6).
 
 **Calibration:**
 - B uses one theorem once.
@@ -384,12 +384,11 @@ The flawed argument is written to be plausible: the error sits in one line, and 
 
 Rules:
 - The problem text **never names its source chapter**; the solution does, with `@ref`.
-- **Chapters that end in a Gate.** The R group sits in the last section that has an exercise set, just before the Gate section.
 - **Early chapters.** Where the book has too few earlier chapters (Chapter 1 has none; Chapters 3–5 have no earlier Part), R items reach back as far as the book allows, within the chapter if need be, spaced as far apart as possible.
 - Each item takes at most 20 minutes.
 - Prefer results that later chapters rarely cite in proofs: a heavily cited result is reviewed for free, a dormant one is forgotten.
 
-**11.6 Marking schemes.** Every exit check, every Gate problem, and any C item a reader is likely to write up in full ends its solution with a paragraph:
+**11.6 Marking schemes.** Every exit check, and any C item a reader is likely to write up in full ends its solution with a paragraph:
 
 ```markdown
 **Marking scheme.** (10 points)
@@ -420,13 +419,7 @@ The Idea that follows **starts from the obstacles such an attempt meets** ("the 
 
 **11.9 The chapter's time line.** Every chapter `index.md` has the **Time** line of §2, after **What you need**. The core track is all of A, one B and one C per section, the exit checks, and the main-line prose; the full track is everything, including the prose inside second-reading folds (§12). The estimate is a promise to the reader about their week, so round honestly and do not shade it down.
 
-**11.10 Gates.** The last main-line chapter of each Part ends with a **Gate** section: in the 78-chapter numbering, Chapters 8, 21 (its §06 review becomes the Gate), 33, 42, 54, 62 and 78 (§08, the mixed qualifying exam). Renumbering may move these; the Gate follows the Part's last main-line chapter. A Gate section contains, in order:
-1. **Instructions:** time allowed (2 hours for Gate 0, 3 hours after), closed book, and the pass line: 70% overall, with no *core* problem at 0.
-2. **Definition drill:** every major definition of the Part, to be stated in symbols, answers folded. This is the Part's one retrieval list.
-3. **The problems** (6 for Gate 0 and Gate III, 8 otherwise), each `::: {#exr-<section-slug>-p1}` titled `[P1]`, or `[P1: core]` for a core problem, followed by a folded solution ending in a marking scheme (§11.6).
-4. **Remediation map:** for each problem, the sections it tests, as `@ref`s, so a failed item sends the reader to named sections, not "reread Part II".
-
-Gate problems are original. They may take the style and level of a qualifying exam (the floor of a good one for Gate I, real- and complex-analysis exams for Gates IV and V), never their text. A reader arriving by a reading path takes the Gate of the Part before their target as an entry test; the Gate's opening frame says so.
+**11.10 No Gates (retired 2026-10-25).** The author removed the Part-end Gate examinations (timed tests with a pass line and a remediation map). No section is a Gate, no reading path names an entry test, and the Gate items of `blueprint/book.yaml` and of older blueprints are void. Chapter-level feedback stays: exit checks with marking schemes (§11.6), R items (§11.5).
 
 **11.11 No narration in proofs.** Interactive elements illustrate objects: a sequence of functions, a kernel, the iterates of a contraction. They never step through, animate or narrate a proof, and there is no "watch the proof" alternative to reading it. A proof is read, not watched.
 
