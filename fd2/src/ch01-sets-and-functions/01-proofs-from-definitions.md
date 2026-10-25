@@ -27,7 +27,7 @@ The first two words are the ones the puzzle needs.
 An integer \( n \) is **even** if \( n = 2k \) for **some** \( k \in \nZ \), and **odd** if \( n = 2k + 1 \) for **some** \( k \in \nZ \).
 :::
 
-*Logic and Proof* used these words informally, and wrote "\( n \) is even" as \( \exists k\, (n = 2k) \) once (@fd1:exm-sum-of-evens); from now on they mean exactly this, a "there exists".
+*Logic and Proof* used these words informally, and wrote "\( n \) is even" as \( \exists k\, (n = 2k) \) in its derivations (for instance @fd1:exm-sum-of-evens); from now on they mean exactly this, a "there exists".
 
 Evenness is divisibility by \( 2 \), so the next word generalizes it. One might define "\( a \) divides \( b \)" as "\( b/a \) is an integer". That works for \( 3 \) and \( 12 \), but it says nothing when \( a = 0 \), since \( 0/0 \) and \( 5/0 \) are undefined; yet \( 0 = 0 \cdot 0 \) suggests that \( 0 \) should divide \( 0 \). The definition avoids division altogether and asks for a multiplier.
 
@@ -51,7 +51,7 @@ Decide, from the definitions alone: (a) Is \( 0 \) even? (b) Does \( -4 \) divid
 (d) No. If \( 3 = 12k \) with \( k \in \nZ \), then \( k \ge 1 \) gives \( 12k \ge 12 \) and \( k \le 0 \) gives \( 12k \le 0 \).
 :::
 
-So \( 3 \mid 12 \), with \( k = 4 \), and \( -3 \mid 12 \), with \( k = -4 \). Every integer \( a \) divides \( 0 \), with \( k = 0 \); this is the degenerate case, and it shows that "\( a \mid b \)" is a statement, not the number \( b/a \): \( 0 \mid 0 \) is true, while \( 0/0 \) is not defined. Also \( 1 \mid b \) and \( b \mid b \) for every integer \( b \), and "\( n \) is even" is "\( 2 \mid n \)".
+So \( 3 \mid 12 \), with \( k = 4 \), and \( -3 \mid 12 \), with \( k = -4 \). Every integer \( a \) divides \( 0 \), with \( k = 0 \); this is the degenerate case, and it shows that "\( a \mid b \)" is a statement, not the number \( b/a \): \( 0 \mid 0 \) is true, while \( 0/0 \) is not defined. Also \( 1 \mid b \) and \( b \mid b \) for every integer \( b \), and "\( n \) is even" is "\( 2 \mid n \)". We write \( a \nmid b \) when \( a \) does not divide \( b \).
 
 The last definition singles out the integers with as few divisors as possible.
 
@@ -91,7 +91,7 @@ The last row closes the gap. The proof writes this forwards: the witness \( m \)
 Let \( a, b, c \in \nZ \) with \( a \mid b \) and \( b \mid c \). By @def-divides there are \( k, l \in \nZ \) with \( b = ka \) and \( c = lb \). Then \( c = l(ka) = (lk)a \), and \( lk \in \nZ \), as a product of integers. So \( a \mid c \), with witness \( lk \), by @def-divides.
 :::
 
-The proof used nothing but the definition of divisibility, read in both directions: once to unwind the hypotheses, once to rewind the conclusion.
+The proof used only the definition of divisibility and integer arithmetic, and it read the definition in both directions: once to unwind the hypotheses, once to rewind the conclusion.
 
 ::: {#exm-method-direct-proof}
 [Method: direct proof from a definition]
@@ -161,7 +161,7 @@ The negative integers come next, by cases again: for \( n < 0 \), \( -n \in \nN 
 *No integer is both.* Suppose \( n = 2a \) and \( n = 2b + 1 \) with \( a, b \in \nZ \). Then \( 2(a - b) = 1 \), with \( c \coloneqq a - b \in \nZ \). If \( c \ge 1 \), then \( 2c \ge 2 \); if \( c \le 0 \), then \( 2c \le 0 \). Either way \( 2c \ne 1 \), a contradiction. So no integer is both even and odd (\( \rulename{\neg I} \)).
 :::
 
-A fact *Logic and Proof* took from school is now proved from the definitions. The proof has three case splits, each into cases that together cover everything.
+A fact *Logic and Proof* took from school is now proved from the definitions. The proof has four case splits, each into cases that together cover everything.
 
 ::: {#exm-method-cases}
 [Method: proof by cases]
@@ -318,12 +318,12 @@ Which pattern does \( (-3, 8) \) have? Find a second point with the same pattern
 Odd–even: \( -3 = 2 \cdot (-2) + 1 \) and \( 8 = 2 \cdot 4 \). For example \( (1, 0) \), with midpoint \( (-1, 4) \).
 :::
 
-**(Q1), almost.** Among five lattice points there are five patterns to hand out and only four patterns exist, so two of the points must share a pattern, and then @exm-lattice-midpoint finishes. The step "five objects in four boxes put two in one box" is the **pigeonhole principle**. It is stated here, not proved, and so the answer to (Q1) is "yes, once the principle is proved". The four corners show that five cannot be lowered to four.
+**(Q1), almost.** Among five lattice points, each point has one of only four patterns, so two of the points must share a pattern, and then @exm-lattice-midpoint finishes. The step "five objects in four boxes put two in one box" is the **pigeonhole principle**. It is stated here, not proved, and so the answer to (Q1) is "yes, once the principle is proved". The four corners show that five cannot be lowered to four.
 
 ::: {.remark}
 [Looking ahead]
 
-Chapter 2 proves the pigeonhole principle, from a precise definition of "finite", and comes back to these five points.
+Section 2.5 proves the pigeonhole principle, from a precise definition of "finite", and comes back to these five points.
 :::
 
 ## Exercises
@@ -337,7 +337,7 @@ Chapter 2 proves the pigeonhole principle, from a precise definition of "finite"
 1. Write out "\( 6 \mid n \)" and "\( n \) is odd" by their definitions, each as a "there exists".
 2. True or false, with reasons: \( -1 \) is odd; \( 7 \mid 0 \); \( 0 \mid 7 \); \( 1 \) is prime.
 3. What must a counterexample to "every multiple of \( 4 \) is a multiple of \( 8 \)" satisfy? Give one.
-4. In the proof of @thm-even-or-odd, name the three case splits and say why each is exhaustive.
+4. In the proof of @thm-even-or-odd, name the four case splits and say why each is exhaustive.
 :::
 :::
 
@@ -348,7 +348,7 @@ Chapter 2 proves the pigeonhole principle, from a precise definition of "finite"
 
 (c) It must be a multiple of \( 4 \) that is not a multiple of \( 8 \). For example \( 4 = 1 \cdot 4 \); and \( 4 = 8k \) has no integer solution, since \( k \ge 1 \) gives \( 8k \ge 8 \) and \( k \le 0 \) gives \( 8k \le 0 \).
 
-(d) First, even or odd in the induction step: this is the induction hypothesis itself, a disjunction already derived. Second, \( n \ge 0 \) or \( n < 0 \): every integer is one or the other, by the order of \( \nZ \). Third, \( c \ge 1 \) or \( c \le 0 \): no integer lies strictly between \( 0 \) and \( 1 \).
+(d) First, even or odd in the induction step: this is the induction hypothesis itself, a disjunction already derived. Second, \( n \ge 0 \) or \( n < 0 \): every integer is one or the other, by the order of \( \nZ \). Third, \( -n \) even or \( -n \) odd, for \( n < 0 \): the first half of the proof, applied to \( -n \in \nN \). Fourth, \( c \ge 1 \) or \( c \le 0 \): no integer lies strictly between \( 0 \) and \( 1 \).
 :::
 
 ### B. Practice
@@ -426,7 +426,7 @@ Prove each true statement and refute each false one with a counterexample.
 \[
 n^4 + n^2 = n^2(n^2 + 1) = (2j + 1)(2j + 2) = 2(2j + 1)(j + 1),
 \]
-and \( n^4 + n^2 + 1 = 2(2j + 1)(j + 1) + 1 \). In both cases the result is odd.
+and \( n^4 + n^2 + 1 = 2(2j + 1)(j + 1) + 1 \). In both cases the bracket (\( 8k^4 + 2k^2 \), respectively \( (2j + 1)(j + 1) \)) is an integer, so \( n^4 + n^2 + 1 \) is odd by @def-parity.
 
 (d) False. Take \( 1 \), \( 1 \), \( 1 \): their sum \( 3 = 2 \cdot 1 + 1 \) is odd, hence not even (@thm-even-or-odd).
 
@@ -464,7 +464,7 @@ First line: "Suppose \( 3 \mid a^2 + b^2 \), and suppose \( 3 \nmid a \)."
 
 (b) By (a), \( n \) has one of the three forms. If \( n = 3k \), then \( n^2 = 3(3k^2) \). If \( n = 3k + 1 \), then \( n^2 = 9k^2 + 6k + 1 = 3(3k^2 + 2k) + 1 \). If \( n = 3k + 2 \), then \( n^2 = 9k^2 + 12k + 4 = 3(3k^2 + 4k + 1) + 1 \). So \( n^2 \) has the form \( 3k \) in the first case and \( 3k + 1 \) in the other two. Since no integer has two forms, \( n^2 \) has the form \( 3k \) exactly in the first case, that is, exactly when \( 3 \mid n \).
 
-(c) Suppose \( 3 \mid a^2 + b^2 \), and suppose \( 3 \nmid a \). By (b), \( a^2 = 3j + 1 \) with \( j \in \nZ \). *Case 1: \( 3 \mid b \).* Then \( b^2 = 3l \) by (b), and \( a^2 + b^2 = 3(j + l) + 1 \). *Case 2: \( 3 \nmid b \).* Then \( b^2 = 3l + 1 \) by (b), and \( a^2 + b^2 = 3(j + l) + 2 \). In both cases \( a^2 + b^2 \) has a form other than \( 3k \); but \( 3 \mid a^2 + b^2 \) says it has the form \( 3k \), against the "no two forms" half of (a). This contradiction refutes \( 3 \nmid a \), so \( 3 \mid a \) (by \( \rulename{RAA} \), or by excluded middle on \( 3 \mid a \) with the first case closed by \( \rulename{\bot E} \)). The statement and the hypothesis are unchanged when \( a \) and \( b \) are exchanged, so the same argument gives \( 3 \mid b \).
+(c) Suppose \( 3 \mid a^2 + b^2 \), and suppose \( 3 \nmid a \). By (b), \( a^2 = 3j + 1 \) with \( j \in \nZ \). *Case 1: \( 3 \mid b \).* Then \( b^2 = 3l \) by (b), and \( a^2 + b^2 = 3(j + l) + 1 \). *Case 2: \( 3 \nmid b \).* Then \( b^2 = 3l + 1 \) by (b), and \( a^2 + b^2 = 3(j + l) + 2 \). In both cases \( a^2 + b^2 \) has a form other than \( 3k \); but \( 3 \mid a^2 + b^2 \) says it has the form \( 3k \), against the "no two forms" half of (a). This contradiction refutes \( 3 \nmid a \), so \( 3 \mid a \) (by \( \rulename{RAA} \), or by excluded middle on \( 3 \mid a \), with the case \( 3 \nmid a \) closed by \( \rulename{\bot E} \)). The statement and the hypothesis are unchanged when \( a \) and \( b \) are exchanged, so the same argument gives \( 3 \mid b \).
 
 **Marking scheme.** (10 points)
 - 2: (a) existence on \( \nN \) by induction, with the three step cases.
@@ -472,9 +472,9 @@ First line: "Suppose \( 3 \mid a^2 + b^2 \), and suppose \( 3 \nmid a \)."
 - 1: (a) uniqueness of the form, by the bound on \( 3c \).
 - 1: (b) the three cases computed.
 - 1: (b) "exactly when" derived from uniqueness, not only from the computation.
-- 2: (c) the cases on \( b \) complete, each giving a form other than \( 3k \).
+- 2: (c) the case split complete (cases on \( b \) under \( 3 \nmid a \), or all four cases on \( a \) and \( b \)), each giving the right form.
 - 1: (c) the contradiction named as one with the uniqueness in (a).
-- 1: (c) the symmetric half licensed by the symmetry of statement and hypothesis.
+- 1: (c) both conclusions \( 3 \mid a \) and \( 3 \mid b \) obtained (by licensed symmetry, or by the full case split).
 Fatal errors (0 for the step): treating \( 3 \nmid a \) as "\( a = 3k + 1 \)" only, forgetting \( 3k + 2 \) (N7); concluding \( 3 \mid a \) from \( 3 \mid a^2 \) without (b).
 :::
 
@@ -485,7 +485,12 @@ Claim: if \( n \in \nZ \) and \( n^2 \) is odd, then \( n \) is odd.
 
 "Proof": Let \( n \) be odd, \( n = 2k + 1 \). Then \( n^2 = 4k^2 + 4k + 1 = 2(2k^2 + 2k) + 1 \) is odd.
 
-Is the conclusion true? Does the argument prove it?
+::: {.enumerate options="label=(\alph*)"}
+1. Is the conclusion true?
+2. Does the argument prove it? Name the failing line.
+3. Give a counterexample to the illegal step itself.
+4. Write a correct proof.
+:::
 :::
 
 ::: {.solution}
@@ -496,10 +501,10 @@ The argument does not prove it. Its first line assumes the conclusion, "\( n \) 
 A correct proof, by cases on \( n \) (@thm-even-or-odd). Let \( n \in \nZ \) with \( n^2 \) odd. *Case 1: \( n = 2k \).* Then \( n^2 = 2(2k^2) \) is even, hence not odd (@thm-even-or-odd), against the hypothesis; so this case cannot occur (\( \rulename{\bot E} \)). *Case 2: \( n = 2k + 1 \).* Then \( n \) is odd, as claimed. So \( n \) is odd.
 
 **Marking scheme.** (6 points)
-- 1: the conclusion is true, with the citation.
-- 2: the error named as proving the converse (N5), pointing at the first line.
-- 1: a false instance of the pattern "\( Q \to P \), hence \( P \to Q \)".
-- 2: a correct proof with both cases, the even case closed by contradiction with the hypothesis.
+- 1: (a) the conclusion is true, with the citation.
+- 2: (b) the error named as proving the converse (N5), pointing at the first line.
+- 1: (c) a false instance of the pattern "\( Q \to P \), hence \( P \to Q \)".
+- 2: (d) a correct proof, using @thm-even-or-odd (cases on the parity of \( n \) with the even case shown impossible, or the contrapositive).
 Fatal errors (0 for the step): calling the conclusion false; "fixing" the proof by assuming \( n \) odd again.
 :::
 
@@ -531,7 +536,7 @@ thm-even-or-odd (proof): c >= 1 or c <= 0 for c in Z (no integer strictly betwee
 def-divides (example): k <= -2 => -4k >= 8, k >= -1 => -4k <= 4; k >= 1 => 12k >= 12, k <= 0 => 12k <= 0 | order of Z, school fact
 def-prime (example): a positive divisor of a positive integer n is at most n; trial divisions of 7 by 2, ..., 6 | school arithmetic
 exm-refute-product-of-divisors (solution): k >= 1 => 4k >= 4, k <= 0 => 4k <= 0 | order of Z, school fact
-exm-refute-product-of-divisors (example): coprime a, b with a | c, b | c give ab | c | prose pointer to fd3 Chapter 3 only; nothing rests on it
+exm-refute-product-of-divisors (example): coprime a, b with a | c, b | c give ab | c | prose pointer to fd3 Chapter 3 only; nothing rests on it; the same pointer covers the scratch work on a = 2, b = 3
 exm-lattice-midpoint (solution): (a + c)/2 = s from a + c = 2s | school arithmetic
 exr-proofs-from-definitions-a1 (solution): k >= 1 => 8k >= 8, k <= 0 => 8k <= 0 | order of Z, school fact
 exr-proofs-from-definitions-c1 (solution): c >= 1 => 3c >= 3, c <= 0 => 3c <= 0; -n in N for n < 0 | order of Z, school fact

@@ -94,7 +94,7 @@ Each law is a propositional equivalence under \( \forall x \). *Logic and Proof*
 :::
 
 ::: {.proof}
-*The uniform argument.* Fix one of the eight equations, \( L = R \), and let \( \varphi \) and \( \psi \) be the propositional formulas in the atoms \( p, q, r \) that describe membership in \( L \) and in \( R \), as in the dictionary: for the first distributive law, \( \varphi = p \wedge (q \vee r) \) and \( \psi = (p \wedge q) \vee (p \wedge r) \). For (a)–(c), the semantic equivalence \( \varphi \equiv \psi \) is a clause of @fd1:prp-standard-equivalences, with \( p, q, r \) in the places of \( \varphi, \psi, \chi \): (f) for (a), (h) for (b), (g) for (c). For (d), it is checked by the truth table displayed below. By @fd1:def-semantic-equivalence, \( \varphi \models \psi \) and \( \psi \models \varphi \), so by @fd1:thm-completeness, \( \varphi \vdash \psi \) and \( \psi \vdash \varphi \). Now let \( x \) be arbitrary. By @fd1:def-derived-rule, each of these two sequents may be used with \( p \), \( q \), \( r \) replaced by the statements \( x \in A \), \( x \in B \), \( x \in C \); with @def-set-operations, the first gives \( x \in L \to x \in R \) and the second \( x \in R \to x \in L \). Hence \( x \in L \leftrightarrow x \in R \), and since \( x \) was arbitrary, \( L = R \) by @def-set-equality.
+*The uniform argument.* Fix one of the eight equations, \( L = R \), and let \( \varphi \) and \( \psi \) be the propositional formulas in the atoms \( p, q, r \) that describe membership in \( L \) and in \( R \), as in the dictionary: for the first distributive law, \( \varphi = p \wedge (q \vee r) \) and \( \psi = (p \wedge q) \vee (p \wedge r) \). For (a)–(c), the semantic equivalence \( \varphi \equiv \psi \) is a clause of @fd1:prp-standard-equivalences, with \( p, q, r \) in the places of \( \varphi, \psi, \chi \): (f) for (a), (h) for (b), (g) for (c). For (d), it is checked by the truth table displayed below. By @fd1:def-semantic-equivalence, \( \varphi \models \psi \) and \( \psi \models \varphi \), so by @fd1:thm-completeness (as in the step TAUT, @fd1:def-rule-taut), \( \varphi \vdash \psi \) and \( \psi \vdash \varphi \). Now let \( x \) be arbitrary. Each of these two sequents may be pasted in, like a derived rule (@fd1:def-derived-rule), with \( p \), \( q \), \( r \) replaced by the statements \( x \in A \), \( x \in B \), \( x \in C \); with @def-set-operations, the first gives \( x \in L \to x \in R \) and the second \( x \in R \to x \in L \). Hence \( x \in L \leftrightarrow x \in R \), and since \( x \) was arbitrary, \( L = R \) by @def-set-equality.
 
 The truth table for (d), with the atoms in the book's order (T before F, the last atom alternating fastest):
 \[
@@ -140,11 +140,11 @@ The two difference laws look alike, but their element-chases are not alike. The 
 ::: {#exm-method-chain-of-iff}
 [Method: a chain of equivalences]
 
-**Template.** For \( L = R \): let \( x \) be arbitrary, and write \( x \in L \iff \dots \iff x \in R \), one step per line. Each step either unwinds a definition (@def-set-operations) or applies a propositional equivalence to membership statements, with its name on the line. Since \( \dashv\vdash \) is used like \( = \) (@fd1:prp-provable-equivalence-basics (b)), the chain gives \( x \in L \leftrightarrow x \in R \), and @def-set-equality finishes.
+**Template.** For \( L = R \): let \( x \) be arbitrary, and write \( x \in L \iff \dots \iff x \in R \), one step per line. Each step either unwinds a definition (@def-set-operations) or applies a propositional equivalence to membership statements, with its name on the line; a step may act on a part of the line (@fd1:prp-replacement). Since \( \dashv\vdash \) is used like \( = \) (@fd1:prp-provable-equivalence-basics (b)), the chain gives \( x \in L \dashv\vdash x \in R \), so \( x \in L \leftrightarrow x \in R \) by (a), and @def-set-equality finishes.
 
 **When to use it.** Identities built from \( \cup \), \( \cap \), \( \setminus \) and families, where every step is reversible.
 
-**The usual failure.** A step that holds in one direction only, written as \( \iff \): for example \( x \in A \implies x \in A \cup B \). When a chain will not close, look for a small witness instead (@exm-method-counterexample); a membership table finds one.
+**The usual failure.** A step that holds in one direction only, written as \( \iff \): for example \( x \in A \implies x \in A \cup B \). When a chain will not close, look for a small witness instead (@exm-method-counterexample); a truth table in the statements \( x \in A \), \( x \in B \), \( x \in C \) finds one, each row saying which of \( A \), \( B \), \( C \) a witness should lie in.
 :::
 
 ::: {#exm-difference-chain}
@@ -179,7 +179,7 @@ Let \( x \) be arbitrary. Then
 &\quad\iff x \in A \setminus (B \cup C) && \text{[definition of } \setminus \text{]}
 \end{aligned}
 \]
-The definitions are those of @def-set-operations, the regrouping is @fd1:prp-and-associative from left to right and takes only \( \rulename{\wedge E} \) and \( \rulename{\wedge I} \) from right to left, and De Morgan (a), (b) are @fd1:prp-de-morgan, with \( x \in B \), \( x \in C \) for \( P \), \( Q \). By @def-set-equality the two sets are equal. No step needs \( \rulename{RAA} \).
+The definitions are those of @def-set-operations, the regrouping is @fd1:prp-and-associative from left to right and takes only \( \rulename{\wedge E} \) and \( \rulename{\wedge I} \) from right to left, and De Morgan (a), (b) are @fd1:prp-de-morgan, with \( x \in B \), \( x \in C \) for \( P \), \( Q \), applied to the second conjunct (@fd1:prp-replacement), as is the definition of \( \cup \). By @def-set-equality the two sets are equal. No step needs \( \rulename{RAA} \).
 :::
 
 ::: {.check}
@@ -381,7 +381,7 @@ Element-chasing (@exm-method-element-chasing), with "or" and "and" replaced by "
 &\quad\iff x \in \textstyle\bigcap_{i \in I} (X \setminus A_i) && \text{[definition of } \bigcap \text{]}
 \end{aligned}
 \]
-The definitions are @def-set-operations and @def-family-union-intersection, and the second step is @fd1:prp-bounded-quantifier-negation (b). In the second law, the left side says \( \neg\forall i \in I\ (x \in A_i) \), and the right side says \( \exists i \in I\ \neg(x \in A_i) \). So each law is a quantifier negation law, and each inclusion is one of its directions. We write the first law out rule by rule, since it is the chapter's model element-chase for families, and the second at level 3, tagging only the step it is about.
+The definitions are @def-set-operations and @def-family-union-intersection, and the second step is @fd1:prp-bounded-quantifier-negation (b), applied to the second conjunct (@fd1:prp-replacement). The third step is no law applied to a part: it uses the first conjunct \( x \in X \) under the quantifier. In the second law, the left side says \( \neg\forall i \in I\ (x \in A_i) \), and the right side says \( \exists i \in I\ \neg(x \in A_i) \). So each law is a quantifier negation law, and each inclusion is one of its directions. We write the first law out rule by rule, since it is the chapter's model element-chase for families, and the second at level 3, tagging only the step it is about.
 
 *Before reading on: which law of *Logic and Proof*, Chapter 6 turns "not in every \( A_i \)" into "outside some \( A_i \)", and which of its directions is classical?*
 :::
@@ -517,11 +517,11 @@ For all sets \( A \), \( B \), \( C \), decide which of these hold. Prove each t
 ::: {.solution}
 Throughout, \( x \) is arbitrary, and \( p \), \( q \), \( r \) stand for \( x \in A \), \( x \in B \), \( x \in C \).
 
-(a) **True.** \( x \in A \setminus (A \setminus B) \iff p \wedge \neg(p \wedge \neg q) \). By De Morgan (d) and (c) (@fd1:prp-de-morgan) and double negation, this is \( \iff p \wedge (\neg p \vee q) \); the direction \( (\Rightarrow) \) is classical, since it uses (d) and removes a double negation. By distributivity (@fd1:prp-distributivity) it is \( \iff (p \wedge \neg p) \vee (p \wedge q) \), and since the first disjunct is impossible, \( \iff p \wedge q \), that is, \( x \in A \cap B \).
+(a) **True.** \( x \in A \setminus (A \setminus B) \iff p \wedge \neg(p \wedge \neg q) \). By De Morgan (d) and (c) (@fd1:prp-de-morgan) and double negation, this is \( \iff p \wedge (\neg p \vee q) \); the direction \( (\Rightarrow) \) is classical, since it uses (d) and removes a double negation. By distributivity (@fd1:prp-distributivity) it is \( \iff (p \wedge \neg p) \vee (p \wedge q) \), and \( \iff p \wedge q \), since the first disjunct is impossible: in \( \rulename{\vee E} \) its case gives \( \bot \) by \( \rulename{\wedge E} \) and \( \rulename{\neg E} \), hence \( p \wedge q \) by \( \rulename{\bot E} \), and the way back is \( \rulename{\vee I} \). That is, \( x \in A \cap B \). The De Morgan and double negation steps act on the second conjunct, the double negation inside a disjunct there (@fd1:prp-replacement).
 
 (b) **False.** Take \( A = B = \{1\} \). Then \( (A \cup B) \setminus B = \{1\} \setminus \{1\} = \emptyset \), while \( A = \{1\} \).
 
-(c) **True.** \( x \in (A \cup B) \setminus B \iff (p \vee q) \wedge \neg q \iff (p \wedge \neg q) \vee (q \wedge \neg q) \), by distributivity, \( \iff p \wedge \neg q \), since the second disjunct is impossible; that is, \( x \in A \setminus B \).
+(c) **True.** \( x \in (A \cup B) \setminus B \iff (p \vee q) \wedge \neg q \iff \neg q \wedge (p \vee q) \), by commutativity of \( \wedge \) (@fd1:prp-and-commutes), \( \iff (\neg q \wedge p) \vee (\neg q \wedge q) \), by distributivity (@fd1:prp-distributivity), \( \iff (p \wedge \neg q) \vee (q \wedge \neg q) \), by commutativity of \( \wedge \) in each disjunct (@fd1:prp-replacement), \( \iff p \wedge \neg q \), since the second disjunct is impossible, as in (a); that is, \( x \in A \setminus B \).
 
 (d) **False.** Take \( A = C = \{1\} \) and \( B = \emptyset \). Then \( A \cup (B \setminus C) = \{1\} \cup \emptyset = \{1\} \), while \( (A \cup B) \setminus C = \{1\} \setminus \{1\} = \emptyset \).
 
@@ -606,14 +606,20 @@ Here is a "proof" that \( (A \cup B) \cap (A \cup C) \subseteq A \cup (B \cap C)
 :::
 
 <!-- dependency ledger
-def-set-operations (claim): an integer divisible by 2 and by 3 is divisible by 6; Z minus the evens is the odd integers | school fact (F1-F2 convention); F2.2 proves the arithmetic of Z
+def-set-operations (claim): an integer divisible by 2 and by 3 is divisible by 6; Z minus the evens is the odd integers | Z minus the evens: thm-even-or-odd (F2.1 §01); divisible by 2 and 3 => by 6: school fact (F1-F2 convention), F2.2 proves it (exm-divisibility-lcm)
 def-set-operations (claim): no complement without an ambient set (the set of everything outside A joined with A would contain every set) | thm-russell, one-line argument inline
 def-set-operations (example): interval computations [0,2] union [1,3] = [0,3] etc. | school order facts (F1-F2 convention); proved in AN1.1
 thm-set-algebra (proof): letters of a derived sequent replaced by membership statements x in A (first-order atomic statements) | def-derived-rule; statements with variables are F1.4's (prose pointer)
+thm-set-algebra (proof): a sequent obtained by completeness pasted in like a derived rule | thm-completeness, def-rule-taut, def-derived-rule (cited)
+exm-method-chain-of-iff (claim): a chain step may replace a part of a line by a provable equivalent; a chain of dashv-vdash gives <-> | prp-replacement, prp-provable-equivalence-basics (a), (b) (cited)
+exm-difference-chain (solution): De Morgan and the definition of union applied to the second conjunct | prp-replacement (cited)
+thm-de-morgan-families (claim): the Idea's quantifier negation step applied to the second conjunct | prp-replacement (cited)
+exr-set-operations-b4 (solution): De Morgan, double negation and commutativity applied to a part of a line | prp-replacement (cited)
+exr-set-operations-b4 (solution): commutativity of and in (c); an impossible disjunct dropped by or-E, and-E, not-E, bot-E and back by or-I | prp-and-commutes (cited); inline
 thm-set-algebra (proof): "let x be arbitrary ... since x was arbitrary" is forall-I | F1.4 (promised; prose pointer)
 thm-set-algebra (claim): prp-de-morgan (a)-(c) derived without RAA, (d) with it | F1.2 section 2.5 (checked on the page there)
 thm-set-algebra (claim): truth table for (d) | computed inline (checked table)
-def-power-set (claim): a set with n elements has 2^n subsets | F2.3 (prose pointer; nothing depends on it)
+def-power-set (claim): a set with n elements has 2^n subsets | F2.2 §05 (prose pointer "Section 2.5"; prp-power-set-count moves there per layout-final §3; nothing depends on it)
 def-power-set (claim): the empty set is a subset of every set | F2.1 §02 (prose after prp-empty-set-unique: def-subset with prp-vacuous-implication)
 exm-power-set-small (example): the empty set is a subset of the empty set | F2.1 §02 (prose after prp-empty-set-unique: def-subset with prp-vacuous-implication)
 exm-power-set-small (example): excluded middle on membership | prp-excluded-middle (cited)
@@ -630,12 +636,12 @@ exm-families-real-parameter (solution): (the quick check after it) [0,t] subset 
 exm-families-real-parameter (claim): AN1.1's nested interval theorem needs closed intervals | AN1.1 (prose pointer)
 thm-de-morgan-families (proof): bounded forall-I, forall-E, exists-I, exists-E over I | prp-bounded-quantifier-rules (cited)
 thm-de-morgan-families (proof): unbounded forall-I/->-I for the element x | F1.4 (promised; prose pointer)
-thm-de-morgan-families (proof): bounded quantifier negation, not-forall to exists-not, classical via quantifier negation (a) | F1.4 (promised; prose pointer; blueprint labels prp-bounded-quantifier-negation, prp-quantifier-negation)
+thm-de-morgan-families (proof): bounded quantifier negation, not-forall to exists-not, classical via quantifier negation (a) | F1.8 (paid; prp-bounded-quantifier-negation, prp-quantifier-negation; prose pointer "Logic and Proof, Chapter 6")
 exr-set-operations-a1 (solution): 1, 5, -1, 7 divisible by neither 2 nor 3; 3, 4, 6 by one of them | arithmetic
-exr-set-operations-a1 (solution): bounded quantifier negation (not-forall over I to exists-not over I, bound kept), used in (a) and (d); its classical direction rests on not-forall x phi |- exists x not-phi, which needs RAA | F1.4 (promised; prose pointer; blueprint labels prp-bounded-quantifier-negation, prp-quantifier-negation)
+exr-set-operations-a1 (solution): bounded quantifier negation (not-forall over I to exists-not over I, bound kept), used in (a) and (d); its classical direction rests on not-forall x phi |- exists x not-phi, which needs RAA | F1.8 (paid; prp-bounded-quantifier-negation, prp-quantifier-negation; prose pointer "Logic and Proof, Chapter 6")
 exr-set-operations-b2 (solution): order facts on R (|x| + 1 > x, 1/(2x) > 0, 4x/3 > x for x > 0) | school fact (F1-F2 convention); proved in AN1.1
-exr-set-operations-b3 (solution): from B != C to an odd one out, by the classical direction of quantifier negation (not-forall to exists-not) and not(P<->Q) giving exactly one of P, Q; the forward half of the A-cup characterization by contrapositive; the converse splits on x in C | F1.4 (promised; prose pointer); prp-contrapositive-converse; prp-excluded-middle (cited)
-exr-set-operations-c1 (solution): classical quantifier negation and the law for negated implications to obtain witnesses a, b | F1.4 (promised; prose pointer)
+exr-set-operations-b3 (solution): from B != C to an odd one out, by the classical direction of quantifier negation (not-forall to exists-not) and not(P<->Q) giving exactly one of P, Q; the forward half of the A-cup characterization by contrapositive; the converse splits on x in C | F1.8 (paid; prp-quantifier-negation; prose pointer "Logic and Proof, Chapter 6"); prp-contrapositive-converse; prp-excluded-middle (cited)
+exr-set-operations-c1 (solution): classical quantifier negation and the law for negated implications to obtain witnesses a, b | F1.8 (paid; prp-quantifier-negation, prp-negated-implication; prose pointer "Logic and Proof, Chapter 6")
 exr-set-operations-c1 (solution): the empty set is a subset of every set | F2.1 §02 (prose after prp-empty-set-unique: def-subset with prp-vacuous-implication)
 exr-set-operations-c2 (solution): catalogue entry (N7) | F1.5 (promised; prose pointer "the catalogue of F1.5")
 thm-set-algebra (claim): the Idea says two laws are written out in the fold after the proof | the fold "Two laws by element-chasing, and where each law comes from" (on the page)

@@ -352,7 +352,7 @@ Show that the conclusion is false, and find the line that fails.
 *A counterexample to the step.* With the data above and \( y = 1 \): line (2) names \( x = -1 \), the only point of \( A \). The only point of \( B \) with square \( 1 \) is \( 1 \ne -1 \), so line (3), with the name \( x \) meaning the \( x \) of line (2), asserts \( -1 \in B \), which is false. Lines (4) and (5) are correct inferences from what (3) wrongly asserts.
 :::
 
-**Hunting a counterexample.** How would one find that counterexample without knowing it? The inclusion that might fail is \( f(A) \cap f(B) \subseteq f(A \cap B) \). A failure needs a point \( y \) in both images with no preimage in \( A \cap B \): a preimage \( a \in A \) and a preimage \( b \in B \), with \( a \ne b \). So \( f \) must send two different points to one, and the smallest attempt is \( A = \{a\} \), \( B = \{b\} \) (@exm-method-counterexample). For squaring, \( a = -1 \) and \( b = 1 \) is the failure just found, cut down to two points.
+**Hunting a counterexample.** How would one find that counterexample without knowing it? The inclusion that might fail is \( f(A) \cap f(B) \subseteq f(A \cap B) \). A failure needs a point \( y \) in both images with no preimage in \( A \cap B \): a preimage \( a \in A \) and a preimage \( b \in B \), with \( a \ne b \). So \( f \) must send two different points to one, and the smallest attempt is \( A = \{a\} \), \( B = \{b\} \) (@exm-method-counterexample). For squaring, \( a = -1 \) and \( b = 1 \) gives exactly the failure just found.
 
 ::: {.check}
 For a constant map \( c \colon X \to Y \) with value \( y_0 \) and two points \( x_1 \ne x_2 \) of \( X \), compute \( c(\{x_1\} \cap \{x_2\}) \) and \( c(\{x_1\}) \cap c(\{x_2\}) \).

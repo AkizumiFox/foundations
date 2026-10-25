@@ -628,7 +628,7 @@ Determine which of the following are injective, which are surjective, and which 
 :::
 
 ::: {.solution}
-(a) *Injective:* \( 2n_1 = 2n_2 \) gives \( n_1 = n_2 \). *Not surjective:* the witness is \( 1 \), which is odd, while every \( 2n \) is even, and no integer is both even and odd.
+(a) *Injective:* \( 2n_1 = 2n_2 \) gives \( n_1 = n_2 \). *Not surjective:* the witness is \( 1 \), which is odd, while every \( 2n \) is even, and no integer is both even and odd (@thm-even-or-odd).
 
 (b) *Not injective:* \( (1, 2) \ne (2, 1) \) (@def-ordered-pair), and both are sent to \( 3 \). *Surjective:* for \( k \in \nN \), the pair \( (0, k) \) lies in \( \nN \times \nN \) and is sent to \( k \).
 
@@ -783,14 +783,14 @@ exm-first-functions (example): (x, y) in X x {c} gives y = c | def-cartesian-pro
 exm-first-functions (example): x in A or x not in A | prp-excluded-middle (cited)
 exm-not-a-function (example): no real square is negative; square roots of non-negative reals exist | school fact (F1-F2 convention); proved in AN1.1
 exm-not-a-function (example): every rational is p/q with p in Z, q in Z_{>0}; 1/2 = 2/4 | school facts (F1-F2 convention)
-exm-not-a-function (example): a non-empty set of positive integers has a least element (the q0 of the repair); a least element is unique | well-ordering, F2.2 (promised; prose pointer; STATUS row "F2.1 §01, §02, §03, §04 → F2.2"); uniqueness: two least elements are each <= the other, so equal (order facts, F1-F2 convention; proved in AN1.1)
+exm-not-a-function (example): a non-empty set of positive integers has a least element (the q0 of the repair); a least element is unique | well-ordering, F2.2 (promised; prose pointer; STATUS row "F2.1 §02, §03, §05 → F2.2"); uniqueness: two least elements are each <= the other, so equal (order facts, F1-F2 convention; proved in AN1.1)
 exm-equal-functions (example): (x + 1)^2 - 2x - 1 = x^2; |x| >= 0 and |x|^2 = x^2; sqrt(x^2) is the non-negative square root | school algebra (F1-F2 convention); uniqueness by thm-squares-order (cited)
 prp-function-equality (proof): domain = set of first coordinates of the graph | inline, in the paraphrase of def-function
 def-composition (claim): f(x) in Y, so g(f(x)) is defined and in Z | inline, from (**) in def-function's paraphrase
 exm-composition-order (example): 2x + 2 != 2x + 1 | arithmetic
 prp-empty-function (proof): empty set is a subset of every set | F2.1 §02, prose after prp-empty-set-unique (vacuous implication, cited there)
 def-surjective (claim): (the warning after it) x^2 + x + 1 = (x + 1/2)^2 + 3/4 > 0; values 0, 2, 6, 12 | school algebra (F1-F2 convention); computation inline
-def-injective (claim): negation of bounded quantifiers and of an implication | F1.4 (promised): prp-bounded-quantifier-negation, prp-negated-implication, prose pointer
+def-injective (claim): negation of bounded quantifiers and of an implication | F1.8 §02 (paid): prp-bounded-quantifier-negation, prp-negated-implication, prose pointer "Logic and Proof, Chapter 6"
 exm-injective-surjective-first (example): dividing by 3; n >= 1 gives 3n >= 3, n <= 0 gives 3n <= 0 | school algebra and order facts (F1-F2 convention); proved in AN1.1 (order) and F2.2 (integers)
 exm-injective-surjective-first (claim): a function from a 3-element set to a 2-element set is not injective, etc. | F2.2 §05 (prose pointer "Section 2.5", pigeonhole, the principle stated in F2.1 §01's lattice-point puzzle); only the two specific cases (c), (d) are proved, by listing; nothing depends on the general claim
 exm-function-set-small (claim): Y^X has m^n elements for finite sets; subsets of X correspond to functions X -> {0, 1} | F2.2 §05 (prose pointers "the business of Section 2.5", "which Section 2.5 solves"); the correspondence is stated with its two maps, and nothing depends on either
@@ -801,12 +801,12 @@ thm-composition-injective-surjective (claim): level 0 = full derivation | F1.5 (
 thm-composition-injective-surjective (claim): closing lines of ->I and forall-I may be silent | F1.5 (promised): def-silent-steps, prose pointer
 exr-functions-b1 (solution): parity (1 is odd, 2n even, not both) | thm-even-or-odd (F2.1 §01)
 exr-functions-b1 (solution): x1^3 - x2^3 factorization; real cube roots exist; for x/sqrt(1+x^2): sqrt increasing on [0, inf), sqrt(x^2) = |x|, sqrt(1/t) = 1/sqrt(t) for t > 0 | school algebra (F1-F2 convention); cube roots proved in AN1.1 (thm-nth-root with a sign change)
-exr-functions-b1 (solution): 0 in N and 0 + k = k | school arithmetic of N; F2.2 (promised; STATUS row "ℕ closed under + and ·", AN1.1)
-def-function (claim): m + n in N for m, n in N (addition N x N -> N, the example after the definition; also exr-functions-b1 (b)) | F2.2 (promised; STATUS row "ℕ closed under + and ·", AN1.1)
-exr-functions-b1 (solution): in (e), (-1)^n is defined, and is 1 for even n and -1 for odd n | F2.2 (promised; STATUS rows "definition by recursion (powers)", AN1.1); parity: thm-even-or-odd (F2.1 §01)
-def-surjective (example): the Quick check on n -> n + 1 uses n + 1 in N and n + 1 >= 1 for n in N; m - 1 in Z for m in Z | F2.2 (promised; STATUS rows "ℕ closed under + and ·" and "nothing between n and n + 1", AN1.1, and "ℤ closed under +, − and ·", AN1.1)
-exr-functions-b3 (solution): n >= 1 gives n - 1 in N; n + 1 >= 1 for n in N | F2.2 (promised; STATUS row "n >= 1 => n - 1 in N")
-exr-functions-a1 (solution): negation laws | F1.4 (promised): prp-bounded-quantifier-negation, prp-negated-implication, prose pointer
+exr-functions-b1 (solution): 0 in N and 0 + k = k | school arithmetic of N; F2.2 (promised; STATUS row "F2.1 §02, §03, §05 → F2.2", ℕ closed under + by lem-naturals-arithmetic (b); 0 + k = k and closure under · as in AN1.1)
+def-function (claim): m + n in N for m, n in N (addition N x N -> N, the example after the definition; also exr-functions-b1 (b)) | F2.2 (promised; STATUS row "F2.1 §02, §03, §05 → F2.2", lem-naturals-arithmetic (b))
+exr-functions-b1 (solution): in (e), (-1)^n is defined, and is 1 for even n and -1 for odd n | F2.2 (promised; STATUS row "F2.1 §02, §03, §05 → F2.2", (−1)^n by prp-power-laws (b), thm-recursion); parity: thm-even-or-odd (F2.1 §01)
+def-surjective (example): the Quick check on n -> n + 1 uses n + 1 in N and n + 1 >= 1 for n in N; m - 1 in Z for m in Z | F2.2 (promised; STATUS row "F2.1 §02, §03, §05 → F2.2": m − 1 in Z by prp-integers-closed, n + 1 in N by lem-naturals-arithmetic (b); n + 1 >= 1 for n in N is an order fact of N, AN1.1)
+exr-functions-b3 (solution): n >= 1 gives n - 1 in N; n + 1 >= 1 for n in N | F2.2 (promised; STATUS row "F2.1 §02, §03, §05 → F2.2"; n >= 1 gives n - 1 in N is an order fact of N, AN1.1)
+exr-functions-a1 (solution): negation laws | F1.8 §02 (paid): prp-bounded-quantifier-negation, prp-negated-implication, prose pointer "Logic and Proof, Chapter 6"
 exm-not-a-function (claim): well-definedness returns for functions defined on classes | F2.5 (prose pointer "Chapter 4"); nothing depends on it
 exm-fraction-map (example): 1 + |x| >= 1 > 0; |x|/(1 + |x|) < 1; f(x) has the sign of x; |x| = x for x >= 0 and -x for x < 0; clearing denominators; |y| < 1 gives 1 - |y| > 0 | school algebra and order facts (F1-F2 convention); proved in AN1.1
 exm-fraction-map (example): the case split on the sign of y (y >= 0 or y < 0) | trichotomy of the order on R, school fact (F1-F2 convention); proved in AN1.1

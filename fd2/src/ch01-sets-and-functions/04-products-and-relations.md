@@ -95,7 +95,7 @@ of all ordered pairs with first coordinate in \( A \) and second coordinate in \
 For a set \( X \) we write \( X^2 \coloneqq X \times X \), and, for \( n \in \nN \) with \( n \ge 2 \), \( X^n \) is the set of all \( n \)-tuples \( (x_1, \dots, x_n) \) with every \( x_k \in X \).
 :::
 
-In words: an element of \( A \times B \) is **a pair**, and **there exist** coordinates, one in \( A \) and one in \( B \), from which it is made. The membership condition hides two existential quantifiers, so using it means naming the coordinates, by \( \rulename{\exists E} \) (@fd1:prp-bounded-quantifier-rules), and then matching them against any other naming by the characteristic property of pairs. That two-step move is the one move of this section; \( (\ast) \) below packages it.
+In words: an element of \( A \times B \) is **a pair**, and **there exist** coordinates, one in \( A \) and one in \( B \), from which it is made. The membership condition hides two existential quantifiers, so using it means naming the coordinates, by \( \rulename{\exists E} \) (@fd1:prp-bounded-quantifier-rules), and then matching them against any other naming by the characteristic property of pairs. That two-step move is the basic move for products; \( (\ast) \) below packages it.
 
 For a pair the condition simplifies, and we use the simpler form constantly:
 \[
@@ -542,12 +542,12 @@ def-cartesian-product (claim): (*) uses exists-I and exists-E on "exists a in A 
 def-cartesian-product (claim): (*) uses =E to pass from x = a, a in A to x in A (and likewise y) | def-rules-equality (cited after def-ordered-pair)
 def-cartesian-product (claim): (the pair-pattern set-builder paragraph) membership in {(x, y) in A x B : P(x, y)}, via (*), the characteristic property and =E | def-set-builder (cited); def-rules-equality (cited after def-ordered-pair)
 exm-pair-equations (example): solving x + y = 3, x - y = 1 by adding and subtracting | school algebra
-exm-pair-equations (solution): (the quick check after it) t^2 >= 0 for real t | school fact (F1-F2 convention); proved in AN1.1
+exm-pair-equations (solution): (the quick check after "Longer lists") t^2 >= 0 for real t | school fact (F1-F2 convention); proved in AN1.1
 exm-small-products (example): an element of the empty set does not exist | def-empty-set
 exm-small-products (example): (a) a, b, c are pairwise different and none of them is 1 or 2 | hypothesis stated in part (a) ("three different objects, none of them a number"); the six pairs are distinct and the two lists disjoint by def-ordered-pair (characteristic property)
 prp-product-set-laws (proof): exists-E with fresh names; case split on d in B or d in C | prp-bounded-quantifier-rules (cited) for exists-E; F1.1 or-E (def-set-operations unwinds the union)
 prp-product-set-laws (proof): substituting equals (=E): from p = (a, d) and (a, d) in A x B infer p in A x B, and likewise in the intersection and set-difference cases | def-rules-equality (cited after def-ordered-pair)
-prp-product-set-laws (claim): (the warning after the remark) catalogue entry (N7), missing case | F1.5 (promised; prose pointer "the catalogue in F1.5, entry (N7)")
+prp-product-set-laws (claim): (the warning after the remark) catalogue entry (N7), missing case | F1.5 (promised; prose pointer "the catalogue in *Logic and Proof*, Chapter 8, entry (N7)")
 prp-product-set-laws (proof): the not-in conclusions by not-I | F1.2 (def-rules-negation), named in the prose after the proof
 exm-product-of-intervals (example): order facts 0 <= x <= 2 and 1 <= x <= 3 give 1 <= x <= 2, etc. | school fact (F1-F2 convention); proved in AN1.1
 prp-product-set-laws (claim): (the remark after exm-product-of-intervals) "not both sets have an element" plus excluded middle gives A empty or B empty | prp-excluded-middle (cited); prp-empty-set-unique (cited)
@@ -559,7 +559,7 @@ def-relation (claim): (the warning and the paragraph before the exercises) symme
 exr-products-and-relations-b1 (solution): [0, 2] = [0, 1] u [1, 2] | school order fact (F1-F2 convention); proved in AN1.1
 exr-products-and-relations-c1 (solution): (1, 2) is neither (1, 1) nor (2, 2) | def-ordered-pair (characteristic property), as stated
 exr-products-and-relations-c2 (solution): a set either has an element or has none | prp-excluded-middle (cited); a set with no element is the empty set by prp-empty-set-unique (cited)
-exr-products-and-relations-c2 (solution): (the marking scheme) catalogue entry (N1) | F1.5 (promised; prose pointer "F1.5's catalogue")
+exr-products-and-relations-c2 (solution): (the marking scheme) catalogue entry (N1) | F1.5 (promised; prose pointer "*Logic and Proof*, Chapter 8's catalogue")
 exm-method-uniqueness (claim): the quick check after it, x^3 = -8 forces x = -2; 3^2 = 9 | school fact (F1-F2 convention: a real number has exactly one real cube root); proved in AN1.1
 exm-coordinates-unique (solution): from p = (a, b) and p = (a', b') infer (a, b) = (a', b') | def-rules-equality (cited after def-ordered-pair)
 exr-products-and-relations-b4 (solution): (a) solving the linear system and the check by exact arithmetic; (b) 1^2 = (-1)^2 = 1 and 1 != -1 | school algebra

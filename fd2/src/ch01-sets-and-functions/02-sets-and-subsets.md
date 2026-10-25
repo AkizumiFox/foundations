@@ -30,7 +30,7 @@ for "\( x \) is an element of \( A \)", or "\( x \) belongs to \( A \)", or "\( 
 
 In the language of *Logic and Proof*, Chapter 5, "\( \in \)" is a two-place predicate: \( x \in A \) is a statement about the two objects \( x \) and \( A \), true or false like \( x < y \). So everything *Logic and Proof*, Chapter 5 says about predicates, quantifiers, and their rules applies to it unchanged. A statement such as "every element of \( A \) is positive" is \( \forall x\, (x \in A \to x > 0) \), which the bounded notation of @fd1:def-bounded-quantifier shortens to \( \forall x \in A\ (x > 0) \).
 
-Two conventions fix what kind of objects we deal with. First, the number sets \( \nN \), \( \nZ \), \( \nQ \), and \( \nR \) are **given**: we use them as familiar sets, with their school arithmetic and order, as the earlier chapters did. (*Analysis on the Real Line*, Chapter 1 turns the facts we use about \( \nR \) into consequences of axioms.) Second, **numbers are not sets**: a number has no elements, and no number is equal to a set. So \( 1 \ne \{1\} \), and \( z \in 5 \) is false for every \( z \). *Number Systems: From \(\nN\) to \(\nR\)*, Chapters 1, 2 and 5 explain how numbers can be built out of sets; nothing in this volume depends on how that is done.
+Two conventions fix what kind of objects we deal with. First, the number sets \( \nN \), \( \nZ \), \( \nQ \), and \( \nR \) are **given**: we use them as familiar sets, with their school arithmetic and order, as *Logic and Proof* and Section 1.1 did. (*Analysis on the Real Line*, Chapter 1 turns the facts we use about \( \nR \) into consequences of axioms.) Second, **numbers are not sets**: a number has no elements, and no number is equal to a set. So \( 1 \ne \{1\} \), and \( z \in 5 \) is false for every \( z \). *Number Systems: From \(\nN\) to \(\nR\)*, Chapters 1, 2 and 5 explain how numbers can be built out of sets; nothing in this volume depends on how that is done.
 
 The single most important fact about sets is that **a set is determined by its elements**. It has no other features: no order in which the elements come, no count of how often each is listed, no color. Two sets with the same elements are the same set.
 
@@ -177,7 +177,7 @@ The name of the proposition in words is **antisymmetry** of \( \subseteq \): as 
 
 **Template.** To prove \( A = B \), write two paragraphs, labeled \( (\subseteq) \) and \( (\supseteq) \), each an element-chase (@exm-method-element-chasing). The two paragraphs are separate boxes: neither uses the other's assumption. To compute a set, first guess it from small cases, then prove the guess this way.
 
-**When to use it.** A set equality that no known law gives at once. For "\( S = \emptyset \)", only \( (\subseteq) \) needs work, since \( \emptyset \subseteq S \) always holds.
+**When to use it.** A set equality that no known law gives at once. For "\( S = \emptyset \)", only \( (\subseteq) \) needs work.
 
 **The usual failure.** Proving one inclusion only, or using the assumption of the \( (\subseteq) \) paragraph inside the \( (\supseteq) \) paragraph. *Logic and Proof* wrote such a proof in prose (@fd1:exm-rhetoric-double-inclusion).
 :::
@@ -605,7 +605,7 @@ The point of the question is a habit: an element-chasing proof treats its elemen
 
 <!-- dependency ledger
 def-set-equality (claim): {1, 1, 2} = {1, 2} uses "x = 1 or x = 1" iff "x = 1" | proved inline in words (vee-E / vee-I); disjunction rules def-rules-disjunction (F1.1)
-def-set-equality (claim): membership is a two-place predicate | F1.4 (promised; prose pointer "F1.4")
+def-set-equality (claim): membership is a two-place predicate | F1.8 (paid: prp-quantifier-negation, prp-negated-implication; prose pointer "Logic and Proof, Chapter 6")
 def-set-equality (claim): numbers are not sets; no number equals a set | convention stated in this section (F2.1 working convention)
 def-subset (claim): forall-I, forall-E and the flagged box | F1.4 (promised; prose pointer "F1.4")
 def-subset (claim): 6k = 3(2k); 3 is not a multiple of 6; 4 is not a multiple of 6; 4 is not a multiple of 3 | school fact (F1-F2 convention); proved in F2.2 (integers)
@@ -617,7 +617,7 @@ def-subset (claim): the warning's catalogue entry (N1) | F1.5 (promised; prose p
 prp-subset-transitive (proof): forall-I with a flagged box, forall-E | F1.4 (promised; prose pointer "F1.4"; the derivation is checked with F1.4's rules)
 prp-subset-transitive (claim): levels 0, 2, 3 and the silent-step convention | F1.5 (promised; prose pointer "F1.5")
 prp-subset-transitive (claim): F2.1 §03 tags one more proof rule by rule | F2.1 §03 (prose pointer, in the fold; nothing depends on it)
-prp-subset-antisymmetric (proof): "let x be arbitrary ... since x was arbitrary" is forall-I | F1.4 (promised; prose pointer)
+prp-subset-antisymmetric (proof): "let x be arbitrary ... since x was arbitrary" is forall-I | F1.8 (paid: prp-quantifier-negation, prp-negated-implication; prose pointer "Logic and Proof, Chapter 6")
 exm-set-builder-small (example): an integer with |x| >= 3 has x^2 >= 9; the integers with |x| <= 2 are -2..2; x^2 >= 0 for real x | school fact (F1-F2 convention); proved in AN1.1 (order) and F2.2 (integers)
 thm-russell (proof): forall-E on the specification premise | F1.4 (promised; prose pointer); the derivation is checked with F1.4's rules
 thm-russell (claim): F2.3's "no map X -> P(X) is onto" has the same shape | F2.3 (prose pointer; nothing depends on it)

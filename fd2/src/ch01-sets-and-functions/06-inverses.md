@@ -162,7 +162,7 @@ Neither hypothesis of (b) can be dropped.
 - **Without injectivity.** The constant map \( c \) of @exm-left-inverses-small-sets (c) sends \( 1 \) and \( 2 \) to \( 3 \), and it has no left inverse. In the proof, the uniqueness step breaks: \( (3, 1) \) and \( (3, 2) \) both lie in \( G \), so \( G \) is not a function.
 - **Without \( X \ne \emptyset \).** The empty function \( \emptyset \to \{1\} \) is injective: the condition "for all \( x_1, x_2 \in \emptyset \) …" holds vacuously. A left inverse would be a function \( \{1\} \to \emptyset \), and there is none, since the point \( 1 \) would need a value in the empty set (@prp-empty-function). In the proof, the first line fails: there is no \( x_0 \) to fix, and the point \( 1 \), which lies outside the range, has nowhere to go.
 
-The proof of (b) builds an object and then checks it. The same pattern serves whenever something is claimed to exist.
+The proof of (b) builds an object and then checks it. The same pattern serves for many existence claims: build the object explicitly, then check it.
 
 ::: {#exm-method-construct-and-verify}
 [Method: construct and verify]
@@ -175,11 +175,11 @@ The proof of (b) builds an object and then checks it. The same pattern serves wh
 :::
 
 ::: {.check}
-Construct a left inverse of \( s \colon \nN \to \nN \), \( s(n) = 2n + 1 \), verify it, and say where its values are free.
+Construct a left inverse of \( u \colon \nN \to \nN \), \( u(n) = 2n + 1 \), verify it, and say where its values are free.
 :::
 
 ::: {.solution}
-Let \( g(m) \coloneqq (m - 1)/2 \) for odd \( m \) and \( g(m) \coloneqq 0 \) for even \( m \). This is a function \( \nN \to \nN \): every \( m \in \nN \) is even or odd and not both (@thm-even-or-odd), so exactly one clause applies, and for odd \( m \ge 1 \) the value \( (m - 1)/2 \) lies in \( \nN \). For every \( n \in \nN \), the number \( s(n) = 2n + 1 \) is odd, so \( g(s(n)) = (2n + 1 - 1)/2 = n \). The values at even \( m \) are free: no even number is of the form \( s(n) \), so the equation \( g(s(n)) = n \) never looks at them.
+Let \( g(m) \coloneqq (m - 1)/2 \) for odd \( m \) and \( g(m) \coloneqq 0 \) for even \( m \). This is a function \( \nN \to \nN \): every \( m \in \nN \) is even or odd and not both (@thm-even-or-odd), so exactly one clause applies, and for odd \( m \ge 1 \) the value \( (m - 1)/2 \) lies in \( \nN \). For every \( n \in \nN \), the number \( u(n) = 2n + 1 \) is odd, so \( g(u(n)) = (2n + 1 - 1)/2 = n \). The values at even \( m \) are free: no even number is of the form \( u(n) \), so the equation \( g(u(n)) = n \) never looks at them.
 :::
 
 The proof of (b) describes \( g \) explicitly in terms of \( f \) and \( x_0 \), so on a small example the construction can be run by hand.
@@ -346,7 +346,7 @@ A function \( f \colon X \to Y \) is bijective if and only if it has a two-sided
 ::: {.idea}
 \( (\Leftarrow) \) is already proved in two halves: an inverse is a left inverse, which gives injectivity by @thm-left-inverse-iff-injective (a), and a right inverse, which gives surjectivity by @prp-right-inverse-surjective. Neither half asks anything of \( X \).
 
-\( (\Rightarrow) \) looks like the open question of the last subsection, since we must pick a preimage of every \( y \). But for a bijection there is nothing to pick. Surjectivity gives each \( y \) a preimage and injectivity says there is only one. So the set of pairs \( (y, x) \) with \( f(x) = y \) already has the \( \forall\exists! \) property of @def-function.
+\( (\Rightarrow) \) looks like the open question of the last subsection, since we must pick a preimage of every \( y \). But for a bijection there is nothing to pick. Surjectivity gives each \( y \) a preimage and injectivity says there is only one. So the set of pairs \( (y, x) \) with \( f(x) = y \) already has the \( \forall\exists! \) property of @def-function. The proof is @exm-method-construct-and-verify with every value forced: define \( g \) by this set of pairs, check that it is a function, then verify the two equations.
 :::
 
 ::: {.proof}
@@ -370,6 +370,8 @@ Every \( y \in Y \) has exactly one preimage: at least one because \( f \) is su
 :::
 
 Compare the two constructions of this section. The left inverse of @thm-left-inverse-iff-injective (b) needed a fixed point \( x_0 \) and a case split by excluded middle, because some \( y \) have no preimage. The inverse of a bijection needs neither. Every \( y \) has **exactly one** preimage, so the definition "\( g(y) \) is the preimage of \( y \)" names one element for each \( y \) without any choosing. This is why no new principle is needed here, while the open question about surjections needs one. The difference between the two is exactly the difference between "exactly one" and "at least one".
+
+A bijection \( f \colon X \to Y \) pairs each element of \( X \) with exactly one element of \( Y \), and its inverse pairs them back. Section 2.5 takes the existence of such a pairing as the definition of "\( X \) and \( Y \) have the same size".
 
 The theorem also covers the degenerate case. A function \( f \colon \emptyset \to Y \) is surjective only if \( Y = \emptyset \), since a point of \( Y \) would need a preimage in \( \emptyset \). The empty function \( \emptyset \to \emptyset \) is bijective, and it is its own inverse: both composites are the empty function \( \emptyset \to \emptyset \), which is \( \id_\emptyset \). The proof of \( (\Leftarrow) \) runs at \( X = \emptyset \) without change, because it cites only part (a) of @thm-left-inverse-iff-injective, which has no hypothesis on \( X \).
 
@@ -624,15 +626,15 @@ def-left-right-inverse (claim): (first subsection) h and h' are functions N -> N
 def-left-right-inverse (claim): (first subsection) 1 is odd, so 2k(1) = 1 has no solution in N | school fact (F1-F2 convention)
 def-left-right-inverse (claim): g o f = id_X iff g(f(x)) = x for all x | prp-function-equality (cited), def-composition (cited)
 exm-left-inverses-small-sets (example): a function has one value at each point | def-function (cited in the section opening)
-exm-left-inverses-small-sets (claim): (quick check after it) successor s(n) = n + 1: m >= 1 gives m - 1 in N; n + 1 >= 1 for n in N; -1 is not in N | F2.2 (promised; STATUS row "n >= 1 => n - 1 in N")
-thm-left-inverse-iff-injective (claim): "X != empty" read as "X has an element" (as in F2.1 §05, prp-empty-function (b)); the passage from not-empty to has-an-element is the classical quantifier law | def-empty-set (cited); F1.4 (promised): prp-quantifier-negation (prose pointer "F1.4"); nothing uses the passage
+exm-left-inverses-small-sets (claim): (quick check after it) successor s(n) = n + 1: m >= 1 gives m - 1 in N; n + 1 >= 1 for n in N; -1 is not in N | school fact (F1-F2 convention): m >= 1 gives m - 1 in N; proved in F2.2 (lem-naturals-arithmetic)
+thm-left-inverse-iff-injective (claim): "X != empty" read as "X has an element" (as in F2.1 §05, prp-empty-function (b)); the passage from not-empty to has-an-element is the classical quantifier law | def-empty-set (cited); F1.8 (fd1 Chapter 6): prp-quantifier-negation (prose pointer); nothing uses the passage
 thm-left-inverse-iff-injective (proof): the range f(X) = { y in Y : f(x) = y for some x in X } | def-function (F2.1 §05 preview of the range), recalled on the page
-thm-left-inverse-iff-injective (proof): exists-E naming x_0 and x_1 | F1.4 (promised): def-rules-existential (prose pointer, F1.4 §06)
+thm-left-inverse-iff-injective (proof): exists-E naming x_0 and x_1 | F1.4 (fd1 Section 5.6): def-rules-existential (prose pointer)
 thm-left-inverse-iff-injective (proof): exactly one = existence (Fn1) plus uniqueness (Fn2) | def-function and the split (Fn1)/(Fn2) in F2.1 §05; prp-unique-existence-use (cited)
 thm-left-inverse-iff-injective (proof): the mixed case is contradictory (y in f(X) and y not in f(X)) | def-rules-negation (not-E), then bot-E; F1.2, used silently per the silent-steps convention (F1.5 promised)
 thm-left-inverse-iff-injective (proof): equal inputs give equal outputs for a function g | def-function (cited): exists! gives uniqueness of the value
 thm-left-inverse-iff-injective (claim): the empty function is injective vacuously | prp-vacuous-implication (F1.2), used in words
-prp-right-inverse-surjective (proof): exists-I with witness g(y) | F1.4 (promised): def-rules-existential (prose pointer, F1.4 §06)
+prp-right-inverse-surjective (proof): exists-I with witness g(y) | F1.4 (fd1 Section 5.6): def-rules-existential (prose pointer)
 prp-right-inverse-surjective (claim): (open-question subsection) sqrt(y) >= 0 and (sqrt y)^2 = y for y >= 0 | school fact (F1-F2 convention); proved in AN1.1 (thm-nth-root)
 prp-right-inverse-surjective (claim): (open-question subsection) a proof is finite, so it contains finitely many exists-E | informal remark about derivations (def-derivation, F1.1), no result depends on it
 prp-inverse-unique (proof): g o id_Y = g and id_X o h = h | prp-composition-associative (identity laws, cited)
@@ -645,5 +647,6 @@ exr-inverses-b3 (solution): |x| < 1 gives 1 - |x| > 0; fraction arithmetic | sch
 exm-method-construct-and-verify (claim): (quick check after it) an odd m in N is >= 1 and (m - 1)/2 in N; 2n + 1 is odd | def-parity (F2.1 §01; the witness k = (m - 1)/2 is an integer >= 0); an integer >= 0 lies in N: school fact (F1-F2 convention)
 thm-bijection-iff-inverse (claim): (quick check after the proof) every y has exactly one preimage under a bijection | def-bijective, def-injective, def-surjective (cited in the section)
 exm-two-sided-inverses (claim): (quick check after it) the real cube root of (y + 5)/2 exists and is unique; cube root of x^3 is x | school fact (F1-F2 convention); AN1.1 (thm-nth-root) for odd roots of positives, sign by symmetry
-exr-inverses-b4 (solution): n + 3 >= 3 for n in N; m >= 3 gives m - 3 in N; each m in N has m >= 3 or m < 3, not both | F2.2 (promised; STATUS row "n >= 1 => n - 1 in N", applied three times); trichotomy of the order on N: school fact (F1-F2 convention)
+exr-inverses-b4 (solution): n + 3 >= 3 for n in N; m >= 3 gives m - 3 in N; each m in N has m >= 3 or m < 3, not both | school fact (F1-F2 convention): m >= 1 gives m - 1 in N, applied three times; proved in F2.2 (lem-naturals-arithmetic); trichotomy of the order on N: school fact (F1-F2 convention)
+thm-bijection-iff-inverse (claim): (paragraph after the theorem) a bijection is how two sets are said to have the same size | F2.2 §05 (prose pointer "Section 2.5", def-equinumerous per layout-final §3); nothing depends on it
 -->
