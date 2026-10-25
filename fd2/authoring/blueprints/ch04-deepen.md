@@ -1,0 +1,280 @@
+<!-- hand-written -->
+# Deepening blueprint: F2.5 Relations: Equivalence and Order (fd2 Chapter 4), stage S1
+
+**Status: S1, 2026-10-25.** Next: S2 (two blind referees), then S2a, then S3.
+
+**What this is.** The S1 blueprint for fd2 Chapter 4 under the binding layout `fd2/authoring/design/layout-final.md` (option C; §1 Ch4 rows, §3, §5, §7). It is complete on its own: a drafter executes it with this file, the three files now in `fd2/src/ch04-relations-and-orders/`, `authoring/STYLE.md` (§1 "House manner from fd2 on", §2 item 6, §4 item 3, §5, §6, §11, §12.0, §12.5, §12.8, §12.13.4–6, §12.14), `DRAFTING.md` and `NOTATION.md`. The format follows `ch01-deepen.md`, leaner.
+
+**File state and line references.** The coordinator's Ch2 S1 commit (`4bd59ac`) moved old 2.4–2.6 by `git mv` into this directory as `01-relations.md`, `02-equivalence-relations.md`, `03-orders.md`, unchanged; there is no `index.md` yet. This blueprint moves no file. Line references are to those files at the commit of this blueprint: `1:84` is `01-relations.md` line 84, `2:` is `02-equivalence-relations.md`, `3:` is `03-orders.md`, `ix:` is the new `index.md`, `oix:` is the old Chapter 2 index at `aac98d0:fd2/src/ch02-relations-and-induction/index.md`. Sidecars in `fd2/verify/ch04/` are named by label and already moved.
+
+**Word counts** are main-line prose words as `tools/check_structure.py`'s `prose_words` counts them (a math span is one word; code and folds excluded), from the top of the file to `## Exercises`. None of the three files has a fold yet. Measured at this commit:
+
+| File | Main line now (to Exercises) | Whole file | Layout budget |
+|---|---|---|---|
+| 01 | 1,778 | 3,530 | 3,500 |
+| 02 | 4,696 | 6,651 | 5,000 |
+| 03 | 3,395 | 6,576 | 5,000 |
+
+**Inputs.** layout-final §1 (Ch4 rows: 4.1 *prove or disprove each property; a table of counterexamples*, `exm-method-relation-properties`, full; 4.2 *well-definedness; a correspondence proved both ways; "same size" revisited as an example*, `exm-method-well-definedness`, full; 4.3 *greatest vs maximal; uniqueness by antisymmetry (R items)*, no box, Idea), §3.2 (the 22 downstream-cited labels of this chapter), §3.3 (pointers), §5 (devices; threads *same size* and *the clock*), §7 (4.1 and 4.3 moved: S8 and a changed-only blind review; 4.2 full pipeline). The old blueprint `ch02.md` (sections 04–06) fixed what is kept here: the hook "9 + 5 = 2 on a clock"; `thm-classes-partition` as the key proof with its exit check 4.2 C1 and the comprehension item 4.2 A1; the find-the-error 4.2 C2 (true conclusion, (N4)); the false-theorem warning of 4.1 ((N9)); the example-generation items 4.1 B2 and 4.3 B2; the R group (R1 image/preimage, R2 negation, R3 structural induction, R4 no hint). This blueprint changes only R3 (§4.3 item 9). The Cummings long-form skill is used for its moves only (motivation before a major definition, scratch work kept apart from the proof, hooks and payoffs); there are no footnotes, no jokes, no history, no first person. *Proofs* (Cummings) was consulted for technique only: its relation examples and exercises (congruence-style relations on ℤ, "x R y iff x − y is even", the relation tables of its Chapter 11 analogue) and its well-definedness exercises are **not** used. Every example, item and answer below is the book's own.
+
+**Binding rules.**
+1. **No label is lost or renamed.** Every label now in 01–03 stays in its file. The 22 downstream-cited labels (layout §3.2 rows 2.4, 2.5, 2.6 → 4.1, 4.2, 4.3) keep the content of their blocks: `def-relation-properties`, `prp-divides-partial-order`; `def-congruence`, `def-equivalence-class`, `def-equivalence-relation`, `def-quotient-set`, `exm-fibres-of-function`, `exm-ill-defined-class-map`, `exr-equivalence-relations-b1`, `prp-congruence-arithmetic`, `prp-congruence-equivalence`, `prp-integers-mod-n`, `thm-classes-partition`; `def-order-bounds`, `def-order-supremum`, `def-partial-order`, `exm-divisibility-lcm`, `exm-subset-order-not-total`, `prp-greatest-unique`. A proof may change where this blueprint says so (the statement never does). Moving a passage verbatim into a fold is not a change. No cited statement, no definition used on the main line, and no section's only Quick check or warning goes into a fold (STYLE §12.0).
+2. **Chapters 1–3 are earlier and cited freely; their method boxes are cited, never re-taught.** From Chapter 1: `exm-method-direct-proof`, `-cases`, `-counterexample` (1.1), `-element-chasing`, `-double-inclusion` (1.2), `-uniqueness` (1.4), `-injectivity` (1.5), `-construct-and-verify` (1.6); `prp-divides-transitive`, `thm-even-or-odd`, `def-parity` (1.1). From Chapter 2 (frozen `ch02-deepen.md`): `exm-method-least-element` (2.1), `exm-method-choosing-the-form`, `exm-method-smallest-counterexample` (2.4), `exm-method-pigeonhole` (2.5); `def-equinumerous`, `prp-equinumerous-properties`, `cor-finite-size-unique`, `def-finite`, `def-infinite`, `prp-subset-finite`, `exm-hilbert-hotel` (2.5). From Chapter 3: `prp-countable-image`, `def-countable` (3.1), `ax-choice` (3.2). fd1 is cited by `@fd1:` labels and never re-taught.
+3. **fd3 division (layout §4).** Nothing new about the integers beyond definitional unwinding. In particular no Euclid's lemma, no inverses mod n, no ring ℤ/n: the 4.1 example `7 | 3x + 4y` is **not** identified with congruence modulo 7 (that needs Euclid's lemma); the clock thread points to *Number Systems* Section 3.4 in prose only.
+4. **Pointers** inside this chapter are fixed by hand (§4.4); the same rows appear in `ch02-deepen.md` §4.8 for the coordinator. Whoever lands first applies them; the second pass finds nothing to change. No other chapter's file is edited by the Chapter 4 drafters (§6 lists the needs).
+5. **No drill banks** (layout §5). Quick checks: STYLE §5's minimum (one per section, on the main line), with one per new device; the chapter ends with 2, 4 and 2 main-line checks.
+6. **Fading.** 4.1 and 4.2 are *full* for their own boxes; Chapter 1–2 methods appear at *Idea* level (a clause with a back-reference) or *terse*. 4.3 is *Idea*: no box, no scratch work, no Givens/Goal table, no Prove-or-disprove item.
+
+---
+
+## 1. Devices as applied
+
+- **Method boxes** (STYLE §2 item 6): two, each `::: {#exm-method-<slug>}` titled `[Method: …]` with the bold lead-ins **Template.**, **When to use it.**, **The usual failure.** (≤ 130 words each): `relation-properties` (4.1), `well-definedness` (4.2). Both are linked from the index's Named moves.
+- **`[Scratch work]` ideas** (STYLE §4 item 3), one per box at its first full appearance: the new `exm-checking-a-relation` (4.1, symmetry planned) and `prp-congruence-arithmetic` (4.2, replacing its two-line Idea 2:349–351). No second scratch work for either method; later uses get a clause "by the method of @exm-method-…".
+- **Givens/Goal tables in prose form** (STYLE §12.5): inside each of those two scratch ideas; the last row shows the gap.
+- **Prove or disprove** (STYLE §12.13.4): 4.1 B4 and 4.2 B4. Verdicts withheld in the stem; the solution states the verdict first. 4.3 is not a method section and has none.
+- **Two worked examples per box** (STYLE §12.14 *full*): 4.1: `exm-checking-a-relation` (new) and `exm-relation-table` (kept, now named as the method run eight times). 4.2: `exm-ill-defined-class-map` (kept, failure beside success) and `exm-same-size-subsets` (new; part (c) is a well-definedness check outside ℤ/n).
+- **Fading of earlier methods** (Idea level, a clause each): 4.1 `prp-divides-partial-order` (direct proof, cases); 4.2 `thm-classes-partition` (b) (double inclusion), `thm-partition-equivalence` (construct and verify, two directions); 4.3 `prp-greatest-unique` (existence and uniqueness: *uniqueness by antisymmetry*), `prp-greatest-maximal` (contradiction; cases), `exm-divisibility-lcm` (least element), `exm-maximal-not-greatest` (counterexample). Terse elsewhere.
+- **Motivation before a major definition.** Already in place: `def-relation-properties` (1:7, equality vs ≤), `def-equivalence-relation` (the clock 2:5–11, then 2:15), `def-partition` (the Quick check 2:104–110 before it), `def-congruence` (the clock), `def-partial-order` (3:7), `def-maximal-element` (3:83). Well-definedness gets its naive attempt on the main line (2:333–337, "[a] + [b] := [a + b]" read from representatives, with Section 1.5's failed numerator map) before the box.
+- **Threads** (layout §5): *same size* (1.6 → 2.5 `def-equinumerous` → 4.2 `exm-same-size-subsets`; paid here); *the clock* (4.2 hook and congruence → *Number Systems*, Section 3.4; planted here, a prose Looking-ahead); *maximal elements and chains* (4.3's closing remark → Chapter 5; planted here). All three go into the index.
+
+## 2. Section map
+
+| § | File | Main line now → budget (expected) | Changes |
+|---|---|---|---|
+| index | `index.md` **new** | — | title, story, What you need, Time, Roadmap, Named moves, Threads, Summary, Terms |
+| 4.1 | `01-relations.md` | 1,778 → ≤ 3,500 (~2,400) | subsection *Prove or disprove, property by property*: `exm-checking-a-relation` with scratch work and table, the box, a Quick check; Idea back-references in `prp-divides-partial-order`, transitivity by `prp-divides-transitive`; table framed as the method; A1 (e); B4; pointers |
+| 4.2 | `02-equivalence-relations.md` | 4,696 → ≤ 5,000 (~4,850) | scratch work and table for `prp-congruence-arithmetic`; the box; 2 Quick checks; *a correspondence proved both ways* paragraph; `exm-same-size-subsets`; clock Looking-ahead; evens/odds by `thm-even-or-odd`; folds F4.2-a…f (~610); A1 (f); B4; pointers |
+| 4.3 | `03-orders.md` | 3,395 → ≤ 5,000 (~3,560) | Idea back-references (uniqueness by antisymmetry; contradiction; cases; least element; counterexample); 1 Quick check; pointers; C1 (c) extended (infinite, now available); R3 replaced (one chapter back) |
+
+## 3. Labels
+
+**Kept, in place:** every label now in 01–03.
+
+**New:**
+- 4.1: `exm-method-relation-properties`, `exm-checking-a-relation`, `exr-relations-b4`.
+- 4.2: `exm-method-well-definedness`, `exm-same-size-subsets`, `exr-equivalence-relations-b4`. Folds F4.2-a…f are unlabelled.
+- 4.3: none (`exr-orders-r3` keeps its label with new content; it is cited nowhere).
+
+**Downstream:** no change. fd3's Section 2.2 (`thm-well-defined-on-classes`) and Section 3.4 already cite `@fd2:prp-congruence-arithmetic`; they may later cite `@fd2:exm-method-well-definedness` (§6, optional, not required).
+
+---
+
+## 4. Per-section plans
+
+### 4.0 `index.md` (new; the coordinator writes it last, against the delivered sections)
+
+Carved from oix:5 (relations paragraph), oix:18–20 (the three relations Roadmap bullets) and oix:25 (Named move "Classes from a relation, …"); the rest is new.
+
+- **Title** `# Relations: Equivalence and Order`.
+- **Story (ix:3)**, oix:5 with its first sentence changed and one sentence added (~190):
+  "This chapter is about relations. When is "the same" a legitimate way to identify different things, as a clock identifies \( 2 \) with \( 14 \), or a function identifies two points with the same value? And what does "larger" mean when not everything can be compared, as with sets under inclusion or natural numbers under divisibility? The motivating problem: *in what sense is "\( 9 + 5 = 2 \) on a clock" a true statement?* The answer is an equivalence relation, the partition it cuts its set into, and a check that arithmetic on the pieces does not depend on which integer names a piece. For orders the answer is that "largest" splits into two notions, greatest and maximal, which agree only when every two elements are comparable. The last section reaches least upper bounds in a general partially ordered set (*Analysis on the Real Line*, Chapter 1's supremum is the case of \( \le \) on \( \nR \), and its axiom says that such suprema exist) and closes with well-ordered sets, the order-theoretic name for what Section 2.1 proved about \( \nN \)."
+  New second paragraph (ix:5, ~70): "Two methods of proof are new. Section 4.1 decides a property of a relation by a proof for all elements or by one witness against it, and records the verdicts in a table. Section 4.2 checks that a definition made through a representative does not depend on the representative: the check called well-definedness, promised in Section 1.5. Section 4.3 uses the methods of Chapters 1 and 2 without new scaffolding."
+- **What you need (ix:7).** "*Logic and Proof*, Chapters 1–8, and *Sets, Relations, and Cardinality*, Chapters 1–3." From fd1: the rules for "for every" and "there exists" (@fd1:def-rules-universal, @fd1:def-rules-existential), equality (@fd1:def-rules-equality, @fd1:prp-equality-symmetric-transitive), bounded quantifiers and their negation (@fd1:prp-bounded-quantifier-rules, @fd1:prp-bounded-quantifier-negation, @fd1:prp-negated-implication), the catalogue (@fd1:exm-not-allowed-catalogue). From Chapter 1: relations as sets of pairs and products (@def-relation, @def-cartesian-product), functions, their equality, images and preimages (@def-function, @prp-function-equality, @def-preimage), power sets and unions of families (@def-power-set, @def-family-union-intersection), divisibility (@def-divides, @prp-divides-transitive, @thm-even-or-odd), and the methods direct proof, counterexample, double inclusion, uniqueness and construct-and-verify (@exm-method-direct-proof, @exm-method-counterexample, @exm-method-double-inclusion, @exm-method-uniqueness, @exm-method-construct-and-verify). From Chapter 2: well-ordering and the least-element method (@thm-well-ordering, @exm-method-least-element), the division algorithm and prime factors (@thm-division-algorithm, @thm-prime-factor), finite maxima (@prp-finite-max), contradiction (@exm-method-choosing-the-form), equinumerous and finite sets (@def-equinumerous, @prp-equinumerous-properties, @cor-finite-size-unique). From Chapter 3, for one review exercise: images of countable sets (@prp-countable-image). The arithmetic and order of \( \nR \) are school facts, as before.
+- **Time.** "About 15 hours on the core track (all of A, one B and one C per section, the exit check); about 20 hours for everything" (layout §2). The coordinator recomputes with `check_structure.py --words` after S3 (§5).
+- **Roadmap** (three bullets; oix:18–20 with the method named):
+  - "**Properties of relations.** Reflexive, symmetric, antisymmetric and transitive; deciding each one by a proof for all elements or by a single witness, with the verdicts collected in a table of eight relations; divisibility as the relation whose antisymmetry depends on the set."
+  - "**Equivalence relations and partitions.** Relations that behave like equality, the proof that their classes partition the set and that every partition arises from exactly one of them (a correspondence proved in both directions), the integers modulo \( n \), sizes of subsets as a last example, and the method for checking that a definition on classes is well defined."
+  - "**Partial orders, maximal and greatest elements.** Relations that behave like \( \le \), greatest elements against maximal ones and when the two agree, uniqueness from antisymmetry, least upper bounds in a partially ordered set, and well-ordered sets."
+- **Named moves (ix).** "The first two are method boxes; Chapters 1–3's boxes are cited where they are used."
+  - "**Prove or disprove each property** (@exm-method-relation-properties). A property that holds is a "for all": take arbitrary related elements and unwind. A property that fails needs one witness: an element, a pair or a triple. (Section 4.1)"
+  - "**Well-definedness** (@exm-method-well-definedness). For a rule that reads a representative, take two representatives of one class and show that the outputs agree. (Section 4.2)"
+  - oix:25 verbatim: "**Classes from a relation, a relation from classes.** Pass between an equivalence relation and its partition, whichever description makes the next step easier."
+  - "**Uniqueness by antisymmetry.** Two candidates, each below the other, are equal: the method of @exm-method-uniqueness with (PO2) closing the gap. (Section 4.3)"
+- **Threads (ix):**
+  - "**Same size.** The bijections of Section 1.6 say when two sets have the same size; Section 2.5 makes this a definition; Section 4.2 meets it as an equivalence relation on the subsets of one set, and explains why it is not one on all sets."
+  - "**The clock.** The arithmetic of \( \nZ/n \) in Section 4.2 returns in *Number Systems: From \(\nN\) to \(\nR\)*, Section 3.4, where \( \nZ/n \) becomes a ring."
+  - "**Maximal elements and chains.** Section 4.3 ends by asking when a partially ordered set must have a maximal element; Chapter 5 answers with Zorn's lemma."
+- **Summary (ix)** (~150):
+  "A relation on a set may be reflexive, symmetric, antisymmetric or transitive (@def-relation-properties); each property is proved for all elements or refuted by one witness. The relations with the first, second and fourth are the equivalence relations (@def-equivalence-relation); their classes partition the set (@thm-classes-partition), and every partition comes from exactly one of them (@thm-partition-equivalence). Congruence modulo \( n \) gives \( \nZ/n = \{[0], \dots, [n - 1]\} \) (@prp-integers-mod-n), whose sum and product are well defined (@prp-congruence-arithmetic), while some rules on classes are not functions at all (@exm-ill-defined-class-map). The relations with the first, third and fourth are the partial orders (@def-partial-order). A greatest element is unique (@prp-greatest-unique) and maximal, and the converse needs totality (@prp-greatest-maximal); a supremum is the least upper bound (@def-order-supremum), and under divisibility it is the least common multiple (@exm-divisibility-lcm).
+  What is open: in a partially ordered set where every chain has an upper bound, must there be a maximal element? Nothing proved so far decides it. Chapter 5 states the principle that does, Zorn's lemma, and puts it to work."
+- **Terms (ix)**, alphabetical, one line each, linked: antisymmetric, reflexive, symmetric, transitive (@def-relation-properties, one line each); comparable, partially ordered set, strict part, total (@def-partial-order); congruent modulo n (@def-congruence); equivalence class, representative (@def-equivalence-class); equivalence relation (@def-equivalence-relation); greatest element, least element (@def-greatest-element); maximal element, minimal element (@def-maximal-element); partition, block (@def-partition); quotient set, quotient map (@def-quotient-set); supremum, infimum (@def-order-supremum); upper bound, lower bound, bounded (@def-order-bounds); well-ordered set (@def-well-ordered-set); well defined: a rule on classes whose output does not depend on the representative (@exm-method-well-definedness). The glossary page collects them (STYLE §12.13.5; coordinator).
+
+### 4.1 Section 4.1: Properties of Relations (`01`, moved; devices added)
+
+Budget: 1,778 → ≤ 3,500 (expected ~2,400). No folds. Changed-only blind review (layout §7): every item below counts as a change.
+
+1. **Opening, 1:3.** Last sentence "Sections 2.5 and 2.6 then study the two combinations that matter most." → "Sections 4.2 and 4.3 then study the two combinations that matter most." Insert before it (~25): "Each property is decided by the same method: a proof for all elements when it holds, one witness when it fails."
+2. **New subsection `## Prove or disprove, property by property`**, after 1:65 ("Why reflexive on X") and before `## Divisibility` (1:67). Lead (~40): "A relation given by a formula has each property or not, and nothing tells us in advance which. So the first step is to test small elements and guess; the second is a proof if the guess is "yes", and a witness, checked clause by clause, if it is "no"."
+3. **`exm-checking-a-relation`** `[Deciding four properties]`: "On \( \nZ \), let \( x \mathrel{R} y \) mean \( 7 \mid 3x + 4y \). Decide which of the four properties of @def-relation-properties \( R \) has."
+   - **`[Scratch work]`** (`::: {.idea}`, between the example and its solution, ≤ 18 lines): "Test small elements first. \( 1 \mathrel{R} 1 \), since \( 3 + 4 = 7 \). Also \( 0 \mathrel{R} 7 \) (\( 0 + 28 = 28 \)) and \( 7 \mathrel{R} 0 \) (\( 21 + 0 = 21 \)), with \( 0 \ne 7 \): antisymmetry fails, and the pair \( 0, 7 \) is the witness. Reflexivity looks true in general: \( 3x + 4x = 7x \). Symmetry is the one to plan, since the coefficients swap places.
+
+     | Givens | Goal |
+     |---|---|
+     | \( x \mathrel{R} y \) | \( y \mathrel{R} x \) |
+     | \( 3x + 4y = 7k \), with \( k \in \nZ \) | \( 3y + 4x = 7m \) for some \( m \in \nZ \): find \( m \) |
+     | \( 3x + 4y = 7k \) | \( (3y + 4x) + (3x + 4y) = 7x + 7y \), so \( 3y + 4x = 7(x + y - k) \): try \( m = x + y - k \) |
+
+     The last row closes the gap: the two expressions add up to a multiple of \( 7 \), because \( 3 + 4 = 7 \). Transitivity goes the same way: adding the givens \( 3x + 4y = 7k \) and \( 3y + 4z = 7l \) gives \( 3x + 7y + 4z \), and the middle term is a multiple of \( 7 \)."
+   - *Solution* (~110): "*Reflexive.* For \( x \in \nZ \), \( 3x + 4x = 7x \) with \( x \in \nZ \), so \( 7 \mid 3x + 4x \). *Symmetric.* Let \( x \mathrel{R} y \), say \( 3x + 4y = 7k \) with \( k \in \nZ \). Then \( 3y + 4x = 7(x + y) - (3x + 4y) = 7(x + y - k) \), and \( x + y - k \in \nZ \), so \( y \mathrel{R} x \). *Transitive.* Let \( 3x + 4y = 7k \) and \( 3y + 4z = 7l \) with \( k, l \in \nZ \). Adding, \( 3x + 7y + 4z = 7(k + l) \), so \( 3x + 4z = 7(k + l - y) \), and \( x \mathrel{R} z \). *Not antisymmetric.* \( 3 \cdot 0 + 4 \cdot 7 = 28 = 7 \cdot 4 \) and \( 3 \cdot 7 + 4 \cdot 0 = 21 = 7 \cdot 3 \), so \( 0 \mathrel{R} 7 \) and \( 7 \mathrel{R} 0 \), while \( 0 \ne 7 \). So \( R \) is reflexive, symmetric and transitive, and not antisymmetric." Aftermath (one sentence): "Three verdicts needed a proof about all integers, and one needed a single pair: that asymmetry of effort is the method."
+4. **`exm-method-relation-properties`** `[Method: proving or disproving a property of a relation]`, right after the aftermath.
+   - **Template.** Test small elements and guess. To prove a property, write it as the "for all" it is (@def-relation-properties), take arbitrary elements satisfying its hypothesis, unwind the relation's definition and rewind the conclusion (@exm-method-direct-proof). To disprove it, exhibit one element, pair or triple of the witness forms above, and check every clause of the witness (@exm-method-counterexample). Record the verdicts in a table, each "no" with its witness.
+   - **When to use it.** A relation is given by a formula, a list or a picture, and the question is which properties it has: whether it is an equivalence relation, or a partial order.
+   - **The usual failure.** "Proving" a property from one example; refuting antisymmetry with a pair related one way only, which refutes symmetry instead; a witness for "not reflexive" that is not in \( X \); and reading a vacuous property as false, as with the empty relation.
+5. **Quick check** after the box (minimal change of the example): "On \( \nZ \), let \( x \mathrel{S} y \) mean \( 7 \mid 3x + 5y \). Is \( S \) reflexive? Is it symmetric?" *Solution:* "Neither. Not reflexive: \( 1 \mathrel{S} 1 \) would need \( 7 \mid 8 \), and \( 8 = 7k \) fails, since \( k \le 1 \) gives \( 7k \le 7 \) and \( k \ge 2 \) gives \( 7k \ge 14 \). Not symmetric: \( 1 \mathrel{S} 5 \), since \( 3 + 25 = 28 = 7 \cdot 4 \), but \( 5 \mathrel{S} 1 \) fails, since \( 15 + 5 = 20 \) and \( 14 < 20 < 21 \). With \( 3 + 5 = 8 \), the coefficients no longer add up to a multiple of \( 7 \), and the trick of the scratch work is gone."
+6. **`prp-divides-partial-order`** (statement unchanged).
+   - **Idea 1:77–79**, append: "(The method of @exm-method-relation-properties: three proofs for \( \nN \) and one witness for \( \nZ \).)"
+   - **Proof 1:84**, the *Transitive* paragraph becomes: "*Transitive.* This is @prp-divides-transitive." (Its old computation duplicated 1.1's proof.) 1:86 ("These two arguments work for all integers, …") kept.
+   - **1:90–92** kept (the two cases are a proof by cases; no back-reference needed, terse level).
+7. **1:97**, "will matter in Section 2.6" → "will matter in Section 4.3".
+8. **1:101** (table lead), append (~20): "The table is the method of @exm-method-relation-properties run eight times: thirty-two verdicts, nine of them refuted by a witness."
+   (Counted at S1 from 1:112–119: ≤ 1, < 2, ⊆ 1, ∣ on ℕ 1, ∣ on ℤ 2, x − y ∈ ℤ 1, ∅ 1, = 0. S2a rechecks.)
+9. **1:148**, "Section 2.5 calls it" → "Section 4.2 calls it"; "Section 2.6 calls it" → "Section 4.3 calls it".
+10. **Exercises.**
+    - **A1, new part (e)** (STYLE §6 "name the method"): "To show that a relation is **not** transitive, what must you produce? To show that it **is**, what do you assume?" *Solution:* "Three elements \( x, y, z \) with \( x \mathrel{R} y \), \( y \mathrel{R} z \) and not \( x \mathrel{R} z \) (the witness form of @def-relation-properties). To show transitivity, assume arbitrary \( x, y, z \in X \) with \( x \mathrel{R} y \) and \( y \mathrel{R} z \), and derive \( x \mathrel{R} z \) (@exm-method-relation-properties)."
+    - **C2's solution 1:273**, "In the language of Section 2.5" → "In the language of Section 4.2".
+    - **B4** `[B4: Prove or disprove]`, after B3 (1:235). Stem: "Prove or disprove each statement. Here \( R \) and \( S \) are relations on a set \( X \), and \( R^{-1} \) is the inverse relation (@def-relation)."
+      - (a) If \( R \) is symmetric and antisymmetric, then \( R \) is transitive.
+      - (b) If \( R \) and \( S \) are symmetric, then \( R \cup S \) is symmetric.
+      - (c) If \( R \) and \( S \) are antisymmetric, then \( R \cup S \) is antisymmetric.
+      - (d) If \( R \) is transitive, then \( R^{-1} \) is transitive.
+      - (e) On \( \nZ \), the relation "\( x - y \) is odd" is transitive.
+      - *Solution:* (a) True. Let \( x \mathrel{R} y \) and \( y \mathrel{R} z \). By symmetry \( y \mathrel{R} x \); with \( x \mathrel{R} y \), antisymmetry gives \( x = y \). So \( x \mathrel{R} z \) is \( y \mathrel{R} z \), which holds. (b) True. If \( (x, y) \in R \cup S \), say \( (x, y) \in R \), then \( (y, x) \in R \) by symmetry of \( R \), so \( (y, x) \in R \cup S \); likewise if \( (x, y) \in S \). (c) False. On \( X = \{1, 2\} \), \( R = \{(1, 2)\} \) and \( S = \{(2, 1)\} \) are antisymmetric (vacuously: neither relates two elements both ways), but \( R \cup S \) contains \( (1, 2) \) and \( (2, 1) \), and \( 1 \ne 2 \). (d) True. Let \( x \mathrel{R^{-1}} y \) and \( y \mathrel{R^{-1}} z \), that is, \( y \mathrel{R} x \) and \( z \mathrel{R} y \). By transitivity of \( R \), from \( z \mathrel{R} y \) and \( y \mathrel{R} x \), \( z \mathrel{R} x \), that is, \( x \mathrel{R^{-1}} z \). (e) False. \( 0 - 1 = -1 = 2 \cdot (-1) + 1 \) and \( 1 - 2 = -1 \) are odd, but \( 0 - 2 = -2 = 2 \cdot (-1) \) is even, and no integer is both (@thm-even-or-odd), so \( 0 - 2 \) is not odd.
+11. **Ledger lines (coordinator, S4):** add `exm-checking-a-relation` (solution: 28 = 7·4, 21 = 7·3; arithmetic; sidecar); the Quick check (8, 20 not multiples of 7; discreteness, `prp-integers-closed` (c) not needed: the bounds are school order facts); `exr-relations-b4` ((e) parity by `thm-even-or-odd`). Re-key `prp-divides-partial-order (proof)` lines 1:285–286 if the transitivity line no longer uses `prp-integers-closed` (a).
+
+Count: +~610 ≈ 2,390.
+
+### 4.2 Section 4.2: Equivalence Relations and Partitions (`02`, full pipeline)
+
+Budget: 4,696 → ≤ 5,000 (expected ~4,850 main + ~610 folded). Two Quick checks added (three in all), one Looking-ahead remark.
+
+1. **Opening, 2:3.** "Section 2.4 sorted relations" → "Section 4.1 sorted relations". Last two sentences ("Then we build the integers modulo n, and meet the check …; here it is.") kept, with one clause appended to the last: "here it is, with a method for making it."
+2. **2:41**, "like \( R \) in Section 2.4" → "like \( R \) in Section 4.1".
+3. **Folds** (each a `::: {.second-reading title="…"}` placed where the passage now stands; content verbatim except as noted):
+   - **F4.2-a** `title="The degenerate case and a non-example"`: 2:66 (part (d) discussion, 75 words) and 2:70 (the non-example "x − y ∈ ℕ", 103). 2:68 (fibers pattern, 42) stays on the main line.
+   - **F4.2-b** `title="Why these three clauses"`: 2:72–78 (163). Its bullet "Drop (Eq1)" names "Section 2.4's warning" → "Section 4.1's warning". The warning 2:80–82 stays on the main line (it is not the only warning, but it carries the "named set" point the A items use).
+   - **F4.2-c** `title="Non-examples by minimal change"`: 2:130 (60).
+   - **F4.2-d** `title="When the quotient map is injective, and what ≤ lacked"`: the part of 2:189 from "By (b), the quotient map \( q \) …" to the end of the paragraph (~85); the first three sentences of 2:189 ("Part (b) is the rule we will use most. … a multiple of 12.") stay, and the sentence "Part (c) says that two classes are either equal or disjoint; there is no third possibility." moves up to end the kept part.
+   - **F4.2-e** `title="Why n ≥ 1"`: the remark 2:243–245 (54) goes inside the fold as plain text (the fold replaces the remark box; folds may hold remarks, but a remark in a fold is a box in a box: write it as a paragraph).
+   - **F4.2-f** `title="The circle, and a set with no length"`: 2:329 from "Proving this for every class …" to the end (~80). The first two sentences (the circle picture; one representative in \( [0, 1) \), with the example \( \sqrt 2 - 1 \)) stay.
+   Total folded ≈ 620. The section must still teach with every fold closed: nothing later on the main line or in A/B items refers into these passages. S2a checks this (item 9).
+4. **2:128**, "(@thm-division-algorithm with \( n = 2 \))" → "(@thm-even-or-odd)". (Section 1.1 proved it; the division algorithm reproof is Chapter 2's.)
+5. **Correspondence proved both ways.** After 2:227 ("So the two passages undo each other. …") insert a paragraph (~90): "**A correspondence, proved both ways.** Put this in the language of Section 1.6. Write \( \mathrm{Eq}(X) \) for the set of equivalence relations on \( X \) (a subset of \( \powerset{X \times X} \)) and \( \mathrm{Part}(X) \) for the set of partitions (a subset of \( \powerset{\powerset{X}} \)). The theorem gives two functions, \( \Phi(\sim) \coloneqq X/{\sim} \) and \( \Psi(\sP) \coloneqq {\sim_{\sP}} \). Part (a) says \( \Phi \circ \Psi = \id_{\mathrm{Part}(X)} \), and part (b) says \( \Psi \circ \Phi = \id_{\mathrm{Eq}(X)} \). So each is the other's two-sided inverse, and both are bijections (@thm-bijection-iff-inverse): the method of @exm-method-construct-and-verify, with both composites checked. To count the equivalence relations on a finite set, count its partitions." (2:229, the transitivity remark, stays after it.)
+6. **Quick check** after that paragraph: "How many equivalence relations are there on \( \{1, 2, 3\} \)?" *Solution:* "Five, one for each partition: \( \{\{1, 2, 3\}\} \); \( \{\{1\}, \{2, 3\}\} \), \( \{\{2\}, \{1, 3\}\} \), \( \{\{3\}, \{1, 2\}\} \); and \( \{\{1\}, \{2\}, \{3\}\} \). A partition has one block, three singletons, or a singleton and a pair, and the singleton of the last kind can be chosen in three ways." (Sidecar `thm-partition-equivalence.py`: brute force over all 2⁹ relations on a three-element set.)
+7. **Operations on classes: the scratch work.** The Idea 2:349–351 of `prp-congruence-arithmetic` is replaced by a **`[Scratch work]`** idea (≤ 20 lines):
+   "The rule \( [a] + [b] \coloneqq [a + b] \) reads representatives. So take two representatives of each class, \( a, a' \) and \( b, b' \), and compare the outputs. By @thm-classes-partition (b), equal classes means congruent representatives, and a congruence unwinds to a "there exists" (@def-congruence): name the multipliers, with different names.
+
+   | Givens | Goal |
+   |---|---|
+   | \( [a] = [a'] \), \( [b] = [b'] \) | \( [a + b] = [a' + b'] \) and \( [ab] = [a'b'] \) |
+   | \( a - a' = kn \), \( b - b' = ln \), with \( k, l \in \nZ \) | \( (a + b) - (a' + b') = mn \) and \( ab - a'b' = m'n \) for some \( m, m' \in \nZ \) |
+   | the same | sum: \( (a - a') + (b - b') = (k + l)n \), done; product: \( ab - a'b' \) changes both factors at once, and neither given appears |
+   | the same | \( ab - a'b' = (ab - ab') + (ab' - a'b') = a(b - b') + (a - a')b' \): change one factor at a time |
+
+   The last row closes the gap: each bracket is a given times an integer, so \( m' = al + kb' \). The proof writes this forwards."
+   The proof 2:353–368 is kept verbatim.
+8. **2:370–374** kept. Then the box.
+9. **`exm-method-well-definedness`** `[Method: checking that a definition on classes is well defined]`, after 2:374 and before 2:376.
+   - **Template.** For a rule \( F([a]) \coloneqq \) (an expression in \( a \)) on \( X/{\sim} \): (1) take two representatives of one class, \( a, a' \in X \) with \( [a] = [a'] \), that is, \( a \sim a' \) (@thm-classes-partition (b)); (2) unwind \( a \sim a' \) by the definition of \( \sim \), naming any witness; (3) show that the two outputs are equal, in the codomain's own sense (equal classes, if the codomain is a quotient set); (4) conclude that the rule gives each class exactly one value, as @def-function requires. To refute, give one pair \( a \sim a' \) with different outputs.
+   - **When to use it.** Whenever a definition picks one name for something that has many: operations on \( \nZ/n \), maps out of a quotient set, "write \( r \) as \( p/q \), then …", the number of elements of a finite set.
+   - **The usual failure.** Checking one pair of representatives, which is an example and not a proof; proving the converse, that equal outputs force \( a \sim a' \), which is injectivity (@exm-method-injectivity); comparing outputs as elements when the codomain compares them as classes.
+10. **Quick check** after the box: "Which of these rules define a function on \( \nZ/12 \): (a) \( [a]_{12} \mapsto [a]_4 \); (b) \( [a]_{12} \mapsto [a]_5 \)?" *Solution:* "(a) Yes: if \( a - a' = 12k \), then \( a - a' = 4(3k) \), so \( [a]_4 = [a']_4 \). (b) No: \( [0]_{12} = [12]_{12} \), but \( [0]_5 \ne [12]_5 \), since \( 12 - 0 = 12 \) lies strictly between \( 10 \) and \( 15 \) and so is not a multiple of \( 5 \)."
+11. **`exm-ill-defined-class-map`** (2:378–388) kept verbatim; it is now the first worked example after the box. Its title and solution stay; 2:376's lead stays.
+12. **2:390** ("The general lesson: … show that the outputs agree.") → "That is the method of @exm-method-well-definedness, applied once with success and once with failure." (−24 words.)
+13. **`exm-same-size-subsets`** `[Same size, revisited]`, after 2:390 and before `## Exercises`. Lead (one sentence): "The check is not special to congruences. Section 2.5 met it for the number of elements of a finite set."
+    - Stem: "Let \( X \) be a set, and for \( A, B \in \powerset{X} \) let \( A \approx B \) mean \( \card{A} = \card{B} \) (@def-equinumerous). (a) Show that \( \approx \) is an equivalence relation on \( \powerset{X} \). (b) For \( X = \{1, 2, 3\} \), list the classes. (c) For \( X = \{1, 2, 3\} \), show that the rule sending the class of \( A \) to the number of elements of \( A \) is a well-defined function \( \powerset{X}/{\approx} \to \{0, 1, 2, 3\} \)."
+    - *Solution* (~210): "(a) (Eq1)–(Eq3) are @prp-equinumerous-properties (a)–(c), read for subsets of \( X \). (b) Every subset of \( \{1, 2, 3\} \) has \( 0, 1, 2 \) or \( 3 \) elements. Two subsets with the same number \( m \) of elements are equivalent: \( \card{\{1, \dots, m\}} = \card{A} \) and \( \card{\{1, \dots, m\}} = \card{B} \) give \( \card{A} = \card{B} \) by @prp-equinumerous-properties (b) and (c). Two with different numbers are not, by (c) below. So the classes are \( \{\emptyset\} \), \( \{\{1\}, \{2\}, \{3\}\} \), \( \{\{1, 2\}, \{1, 3\}, \{2, 3\}\} \) and \( \{\{1, 2, 3\}\} \). (c) By the method of @exm-method-well-definedness: let \( A \approx A' \), and let \( A \) have \( m \) elements and \( A' \) have \( m' \). From \( \card{\{1, \dots, m'\}} = \card{A'} \) and \( \card{A'} = \card{A} \) we get that \( A \) has \( m' \) elements as well, so \( m = m' \) by @cor-finite-size-unique. Each class has a representative, and all its representatives give the same number."
+    - Aftermath (~50): "Part (c) is the well-definedness step that Section 2.5 needed for the notation \( \card{A} = n \). And the relation lives on \( \powerset{X} \), a set: for equinumerosity between arbitrary sets there is no set of all sets for it to be a relation on (@thm-russell), which is why Section 2.5 said only that it behaves like an equivalence relation."
+14. **Clock Looking-ahead** (`::: {.remark}` titled `[Looking ahead]`, last on the main line, ~45): "The clock does not stop here. *Number Systems: From \(\nN\) to \(\nR\)*, Section 3.4 builds \( \nZ/n \) again on the constructed integers and shows that its sum and product, well defined by the check of @prp-congruence-arithmetic, obey the laws of a ring." (A promise row in STATUS, paid by fd3 3.4's `def-integers-mod-n-ring`; §6.)
+15. **Exercises.**
+    - **A1, new part (f):** "To show that a rule \( [a] \mapsto \dots \) on \( \nZ/n \) is well defined, what do you assume and what do you show?" *Solution:* "Assume \( [a] = [a'] \), that is, \( a \equiv a' \pmod n \), for arbitrary \( a, a' \in \nZ \); show that the rule's outputs for \( a \) and for \( a' \) are equal (@exm-method-well-definedness)."
+    - **B4** `[B4: Prove or disprove]`, after B3. Stem: "Prove or disprove: each rule defines a function." Parts:
+      - (a) \( \nZ/8 \to \nZ/4 \), \( [a]_8 \mapsto [3a]_4 \).
+      - (b) \( \nZ/4 \to \nZ/8 \), \( [a]_4 \mapsto [2a]_8 \).
+      - (c) On \( \nR \), with \( x \sim y \) meaning \( x - y \in \nZ \) (@exm-reals-mod-integers), the rule \( \nR/{\sim} \to \nR/{\sim} \), \( [x] \mapsto [x^2] \).
+      - (d) On \( \nZ \times \nZ_{>0} \), with \( (a, b) \sim (c, d) \) meaning \( ad = bc \) (an equivalence relation), the rule \( [(a, b)] \mapsto [(a + b, b)] \), from the quotient set to itself.
+      - (e) With the same relation, the rule \( [(a, b)] \mapsto [(a + 1, b + 1)] \).
+      - *Solution:* (a) True. If \( a - a' = 8k \) with \( k \in \nZ \), then \( 3a - 3a' = 24k = 4(6k) \), so \( [3a]_4 = [3a']_4 \). (b) True. If \( a - a' = 4k \), then \( 2a - 2a' = 8k \), so \( [2a]_8 = [2a']_8 \). (Compare B3 (b), where \( [a]_5 \mapsto [a]_{10} \) failed: doubling the representative doubles the difference.) (c) False. \( [\tfrac13] = [\tfrac43] \), since \( \tfrac43 - \tfrac13 = 1 \). But \( (\tfrac43)^2 - (\tfrac13)^2 = \tfrac{16}{9} - \tfrac19 = \tfrac53 \), and \( \tfrac53 \notin \nZ \): \( 0 < \tfrac53 - 1 = \tfrac23 < 1 \), and no integer lies strictly between \( 0 \) and \( 1 \) (@prp-integers-closed (c)), so \( \tfrac53 - 1 \notin \nZ \), hence \( \tfrac53 \notin \nZ \). So \( [\tfrac19] \ne [\tfrac{16}{9}] \): one class, two values. (d) True. Let \( (a, b) \sim (c, d) \), so \( ad = bc \). Then \( (a + b)d = ad + bd = bc + bd = b(c + d) \), so \( (a + b, b) \sim (c + d, d) \); and \( b, d \in \nZ_{>0} \), so the outputs lie in \( \nZ \times \nZ_{>0} \). (e) False. \( (1, 2) \sim (2, 4) \), since \( 1 \cdot 4 = 2 \cdot 2 \). The outputs are \( (2, 3) \) and \( (3, 5) \), and \( 2 \cdot 5 = 10 \ne 9 = 3 \cdot 3 \), so \( (2, 3) \not\sim (3, 5) \). (Reading the classes as fractions: (d) adds \( 1 \), and (e) adds \( 1 \) to numerator and denominator, which depends on how the fraction is written.)
+    - B1–B3, C1, C2: unchanged. C2 is the section's almost-correct proof checked against the catalogue ((N4)).
+16. **Ledger lines (coordinator, S4):** the scratch work (no new claim); the correspondence paragraph (`thm-bijection-iff-inverse`, cited; Eq(X) ⊆ 𝒫(X × X) and Part(X) ⊆ 𝒫(𝒫(X)) by specification, `def-set-builder`); the Quick check (five partitions; sidecar); the second Quick check (12 not a multiple of 5; arithmetic); `exm-same-size-subsets` (`prp-equinumerous-properties`, `cor-finite-size-unique`, `thm-russell`, cited; sizes of the eight subsets, sidecar); the Looking-ahead (fd3 3.4, prose pointer); `exr-equivalence-relations-b4` (sidecar). The ledger's stale sidecar paths `verify/ch07/…` (2:539, 2:547, 2:550, 2:551, 2:553, 2:554) become `verify/ch04/…`, and `def-partition (claim)` 2:534 cites `thm-even-or-odd`.
+
+Count: +15 (opening) +125 (scratch) +130 (box) +70 +70 (checks) +90 (correspondence) +255 (same size, with lead and aftermath) +45 (remark) −24 (2:390) ≈ +776; folded −620. Expected 4,696 + 776 − 620 ≈ 4,850. **Reserve** if over 5,000: fold the "Two instances" paragraph 2:309 (84) under `title="Two instances of fibers"`.
+
+### 4.3 Section 4.3: Partial Orders, Maximal and Greatest Elements (`03`, moved; Idea level)
+
+Budget: 3,395 → ≤ 5,000 (expected ~3,560). No folds, no box, no scratch work, no B4. Changed-only blind review.
+
+1. **Opening, 3:3.** "Section 2.5 studied" → "Section 4.2 studied".
+2. **3:7.** "Section 2.4 found three relations" → "Section 4.1 found three relations".
+3. **`prp-greatest-unique` (3:104–109): uniqueness by antisymmetry.** Insert an Idea before the proof (one line, ~35): "::: {.idea} The method of @exm-method-uniqueness, uniqueness half: take two greatest elements, about which nothing else is assumed. Each is in \( A \), so each is below the other, and (PO2) closes the gap. :::" The proof is kept.
+4. **Quick check** after 3:111 (the paragraph on max and min), the payoff of "uniqueness by antisymmetry": "Divisibility on \( \nZ \) is reflexive and transitive but not antisymmetric. In it, find two different elements of \( A = \{2, -2\} \) each of which lies in \( A \) and is divisible by every element of \( A \)." *Solution:* "\( 2 \) and \( -2 \) both: \( 2 \mid 2 \), \( -2 \mid 2 \) (\( 2 = (-1)(-2) \)), \( 2 \mid -2 \) and \( -2 \mid -2 \). So "greatest element" would have two different answers; the uniqueness proof breaks exactly at its last step, (PO2)."
+5. **`prp-greatest-maximal`, Idea 3:129** append (~30): "Part (a) proves a negative claim, "no element strictly above", so it starts by supposing one (@exm-method-choosing-the-form); part (b) is a proof by cases on the two outcomes of comparability (@exm-method-cases)."
+6. **`exm-maximal-not-greatest`** (3:146): after "Without totality, (b) fails, and maximal elements need not be greatest." insert "Each failure is shown by a counterexample (@exm-method-counterexample)." (~8)
+7. **`exm-divisibility-lcm`** (3:195–215): no Idea is added inside the solution. 3:190 (lead "… is a job for the division algorithm.") append "and for the least-element method (@exm-method-least-element): the least common multiple is a least element, and a smaller common multiple would contradict it." (~25)
+8. **Remark 3:233–235** (Zorn). "which Chapter 3 states" → "which Section 3.2 states (@ax-choice)"; "A later chapter of this volume states Zorn's lemma" → "Chapter 5 states Zorn's lemma and uses it". The rest is kept. This is the planting of the *maximal elements and chains* thread (a promise row: paid by Chapter 5's `thm-zorn` section; §6).
+9. **Exercises.**
+   - **A1 (b) solution 3:257**: "which is what "finite" will mean in Chapter 3" (and the rest of that clause) → "which is what "finite" means (@def-finite, Section 2.5)". S2a reads the whole sentence and makes it grammatical.
+   - **C1 (c)** (3:324), stem extended: after the last sentence append "Deduce that infinitely many elements lie strictly below \( (2, 1) \)." *Solution* addition (~75), after the current (c): "Let \( S \) be the set of elements strictly below \( (2, 1) \), and \( B \coloneqq \{ (1, n) : n \in \nN \} \subseteq S \). The map \( \nN \to B \), \( n \mapsto (1, n) \), is injective (just shown) and surjective, so \( \card{\nN} = \card{B} \). Suppose \( S \) were finite. Then \( B \) would be finite (@prp-subset-finite), and so would \( \nN \), by @prp-equinumerous-properties; but \( \nN \) is infinite (@exm-hilbert-hotel). So \( S \) is infinite (@def-infinite)." The old deviation note ("F2.3 has not yet defined finite") is void.
+   - **R3 replaced** (the R group needs one item one chapter back, STYLE §6; R1 now reaches three chapters back, R2 is the fd1 spiral, R4 gives no hint). New `exr-orders-r3` `[R3]`: "Let \( X \) be a countable set and \( \sim \) an equivalence relation on \( X \). Prove that \( X/{\sim} \) is countable. Give an example with \( X \) countable, not finite, and \( X/{\sim} \) finite." *Solution:* "The quotient map \( q \colon X \to X/{\sim} \), \( q(a) = [a] \), is surjective (@def-quotient-set and the paragraph after it). By @prp-countable-image, the image of a countable set under a function is countable, and here the image is all of \( X/{\sim} \). Example: \( X = \nZ \), countable by @thm-integers-rationals-countable, and not finite, since it contains \( \nN \), which is infinite (@exm-hilbert-hotel, @prp-subset-finite), with congruence modulo \( 2 \): \( \nZ/2 = \{[0], [1]\} \) (@prp-integers-mod-n) has two elements." The old R3 (structural induction on biconditional formulas) is deleted with its solution; it is cited nowhere and has no sidecar. Its ledger line goes (coordinator).
+   - R1, R2, R4, A1 (a), (c), (d), B1–B3, C2: unchanged.
+10. **Ledger lines (coordinator, S4):** `exr-orders-a1 (solution)` 3:492 "F2.3 (prose pointer; F2.3's definition of finite)" → "def-finite (F2.2 §05, cited)"; C1 (c)'s new lines (`prp-subset-finite`, `prp-equinumerous-properties`, `exm-hilbert-hotel`, `def-infinite`, cited); new R3 (`prp-countable-image`, `thm-integers-rationals-countable`, `prp-integers-mod-n`, cited).
+
+Count: +35 (Idea) +90 (check) +30 +8 +25 (Ideas and leads) +10 (remark) ≈ +170 → ~3,565.
+
+### 4.4 Pointer fixes inside Chapter 4 (by hand; same rows as `ch02-deepen.md` §4.8)
+
+| Where | Now | Becomes |
+|---|---|---|
+| 1:3 | "Sections 2.5 and 2.6" | "Sections 4.2 and 4.3" (§4.1 item 1) |
+| 1:97 | "Section 2.6" | "Section 4.3" |
+| 1:148 | "Section 2.5 … Section 2.6" | "Section 4.2 … Section 4.3" |
+| 1:273 | "Section 2.5" | "Section 4.2" |
+| 2:3, 2:41, 2:74 (now in F4.2-b) | "Section 2.4" | "Section 4.1" |
+| 3:3 | "Section 2.5" | "Section 4.2" |
+| 3:7 | "Section 2.4" | "Section 4.1" |
+| 3:234 | "which Chapter 3 states"; "A later chapter of this volume" | "which Section 3.2 states (@ax-choice)"; "Chapter 5" (§4.3 item 8) |
+| 3:257 | "what 'finite' will mean in Chapter 3" | §4.3 item 9 |
+
+**Kept** (correct as they stand): 1:121 ("Section 1.2"), 1:137 (the "2 is prime" example in Section 2.2's subsection on divisibility, which `ch02-deepen` keeps after "Recall @def-prime"), 1:192 (*Number Systems*, Chapter 2), 2:3 ("Section 1.5 promised"), 2:241 (*Logic and Proof*, Chapter 4), 2:271 ("Section 2.1"), 2:329 (*Analysis on the Real Line*, *Measure and Integration*), 2:337 ("Section 1.5"), 2:436 (*Number Systems*, Chapter 2), 3:111 ("Section 1.5"), 3:140 ("Section 2.3"), 3:217 ("Section 1.3"), 3:223 ("Section 2.1"), 3:461 ("Section 2.3"). Ledger prose tags in the files' `dependency ledger` comments (e.g. "F2.1 §01" for `prp-subset-transitive`, which is now F2.1 §02) are re-keyed by `tools/ledger.py` at S4, not by hand.
+
+## 5. Budgets and Time
+
+| § | Main now | Budget | Expected | Folds |
+|---|---|---|---|---|
+| 4.1 | 1,778 | 3,500 | ~2,390 | 0 |
+| 4.2 | 4,696 | 5,000 | ~4,850 | ~620 |
+| 4.3 | 3,395 | 5,000 | ~3,565 | 0 |
+| total | 9,869 | 13,500 | ~10,800 | ~620 |
+
+**Exercises.** New: two B4s; R3 replaced; A1 parts added in 4.1 and 4.2. The chapter has 23 (A 3, B 10, C 6, R 4). Core track: all A, one B and one C per section, the exit check 4.2 C1, R1–R4: about 13 items. Calibrated on the Chapter 1 figures (40 h core, 55 h full for ~30,600 + 1,900 words and 54 exercises, 25 on the core track), ~10,800 main and ~620 folded words with 23 exercises come to about 15 h core and about 20 h full, as layout §2 expects. The coordinator recomputes with `check_structure.py --words` after S3 and writes the index Time line.
+
+## 6. Pointers, promises, edits outside the chapter (not done by Chapter 4 drafters)
+
+- **Forward pointers planted here.** 4.2's Looking-ahead (*Number Systems*, Section 3.4; a STATUS promise row, paid by fd3 3.4's `def-integers-mod-n-ring`); 4.3's remark (Zorn's lemma → Chapter 5; promise row, paid by `thm-zorn`'s section 5.1). The index's three threads name the same places.
+- **Promises paid here.** *Same size* (STATUS row 158 region, from 2.5's Looking-ahead "Chapter 4 … meets equinumerosity again"): paid by `exm-same-size-subsets`. Section 1.5's "well-definedness returns in Chapter 4" (05:93; ledger 1/05:810): paid by `exm-method-well-definedness` and `prp-congruence-arithmetic` (already F2.5 §02).
+- **STATUS** (coordinator): the two new promise rows; retag the rows above; F2.2 §04/§05/§06 tags for this chapter's labels → F2.5 §01/§02/§03 (layout §3.3 last sentence).
+- **fd3 prose pointers** (layout §3.3 sweep; not this chapter's S3): "*Sets, Relations, and Cardinality*, Section 2.5" meaning ℤ/n → "Section 4.2" in fd3 `ch03…/04-quotient-rings.md:3`, `ch02…/02-well-defined-operations.md:7`, `ch05…/02-the-field-of-reals.md:51`, and the "chiefly Section 2.5" in fd3 `ch02…/index.md:7` and `ch03…/index.md:9` where they mean equivalence relations. Optional: fd3 2.2 may cite `@fd2:exm-method-well-definedness` beside `thm-well-defined-on-classes`.
+- **fd2 Preface** `fd2/src/index.md`: the table row for Chapter 4 ("Relations: equivalence relations and partitions, partial orders") per `ch02-deepen.md` §4.8; no further change from this blueprint.
+- **NOTATION.** No new symbol: `≈` in `exm-same-size-subsets` fits the `\approx` row (a second, local equivalence relation); the coordinator adds "F2.5 §02, `exm-same-size-subsets`" to it.
+- **Not touched:** fd1, Chapters 1–3 and 5, config (already lists `src/ch04-relations-and-orders`).
+
+## 7. S2a: claims to verify
+
+1. `exm-checking-a-relation`: 1 R 1; 0 R 7 (28), 7 R 0 (21); the symmetry identity (3y + 4x) + (3x + 4y) = 7x + 7y; the transitivity identity 3x + 4z = 7(k + l − y); the scratch-work table rows match the solution. Confirm the relation is not identified with congruence mod 7 anywhere (binding rule 3).
+2. The 4.1 Quick check: 7 ∤ 8; 1 S 5 (28); 5 S 1 fails (20, between 14 and 21).
+3. `exm-method-relation-properties`: ≤ 130 words; its failure list is accurate (one-way pair refutes symmetry, not antisymmetry).
+4. `prp-divides-partial-order`: the transitive part now cites `prp-divides-transitive` (1.1), whose statement covers all integers; the ledger line for `prp-integers-closed` (a) in that proof is dropped only if nothing else in the proof uses it (the Case 2 text cites (b) and (c), not (a)).
+5. 1:101's added sentence: nine "no" entries among the 32 verdicts of 1:112–119.
+6. 4.1 A1 (e) and B4 (a)–(e): (a) the proof (symmetric + antisymmetric ⇒ transitive); (c) R = {(1,2)}, S = {(2,1)} antisymmetric, union not; (d) the inverse relation as defined in `def-relation`; (e) 0 − 1, 1 − 2 odd, 0 − 2 even, citing `thm-even-or-odd` for "not both". Sidecar brute-forces (a), (b), (d) over all relations on a three-element set.
+7. 4.2 scratch work: the product identity ab − a′b′ = a(b − b′) + (a − a′)b′ and m′ = al + kb′ agree with the kept proof 2:360–363.
+8. `exm-method-well-definedness`: ≤ 130 words; (4) is exactly (Fn1)–(Fn2) of `def-function`.
+9. Folds F4.2-a…f: verbatim; no cited statement, no definition used later, no only-check or only-warning; with every fold closed, every A and B item is doable (A1 (c) is self-contained; 2:229's cover {{1,2},{2,3}} is introduced in 2:229 itself); the sentence moved within 2:189 reads correctly; the remark of F4.2-e turned into a paragraph.
+10. 2:128 → `thm-even-or-odd`: the partition claim (every integer even or odd, not both) is exactly that theorem.
+11. The correspondence paragraph: Eq(X), Part(X) are sets by specification; Φ∘Ψ = id is (a) and Ψ∘Φ = id is (b) of `thm-partition-equivalence`; `thm-bijection-iff-inverse`'s hypotheses (the codomain and domain as declared). The Quick check: five partitions of {1,2,3} (sidecar).
+12. `exm-same-size-subsets`: (a) from `prp-equinumerous-properties`; (b) the four classes and their sizes 1, 3, 3, 1; (c) the argument uses only (b), (c) of `prp-equinumerous-properties` and `cor-finite-size-unique` (check its exact statement in 2.5); the aftermath's claim about Section 2.5 matches 2.5's text after S3 of Chapter 2 (25:61 repair and 25:95 "the well-definedness step").
+13. 4.2 Quick check (ℤ/12 → ℤ/4 yes, → ℤ/5 no).
+14. 4.2 B4: (a) 24k = 4·6k; (b) 2(a − a′) = 8k; (c) 16/9 − 1/9 = 5/3 ∉ ℤ, and 4/3 − 1/3 = 1; (d) the identity (a + b)d = b(c + d) and positivity of b, d; (e) (1,2) ∼ (2,4), (2,3) ≁ (3,5). Sidecar with exact Fractions.
+15. The clock remark: fd3 Section 3.4's title and that it proves the ring laws for ℤ/n (`def-integers-mod-n-ring`).
+16. 4.3: the Idea of `prp-greatest-unique` matches its proof; the Quick check ({2, −2} in (ℤ, |)); the added clauses name the methods the proofs actually use (3:133 is by contradiction; 3:135 by cases; `exm-divisibility-lcm` uses the least element of M and a contradiction).
+17. 4.3 C1 (c) extension: the bijection ℕ → B; `prp-subset-finite`'s statement (a subset of a finite set is finite); "ℕ finite" from |ℕ| = |B| and B finite via `prp-equinumerous-properties` and `def-finite`; `exm-hilbert-hotel` concludes that ℕ is infinite.
+18. New R3: the quotient map is surjective (stated after `def-quotient-set`, 2:144); `prp-countable-image`'s "in particular, if f is surjective, then B is countable"; ℤ countable (`thm-integers-rationals-countable`) and not finite; ℤ/2 has two elements. R group meets STYLE §6 (one chapter back: R3; three back: R1; fd1 spiral: R2; no hint: R4).
+19. Index: every label named in What you need, Named moves, Summary and Terms exists and is in Chapters 1–4 or fd1; Summary's claims match the statements; Terms alphabetical.
+20. Word counts after S3: 4.1 ≤ 3,500, 4.2 ≤ 5,000, 4.3 ≤ 5,000, measured to `## Exercises` with folds excluded.
+
+## 8. Notes for S3 and S4
+
+- **Drafters:** two. (i) 4.2 (full pipeline; Opus): items §4.2 1–16 and the 4.2 rows of §4.4. (ii) 4.1 and 4.3 (lean workflow; Sonnet may take it): §4.1, §4.3 and their §4.4 rows. They touch different files and may run in parallel. The coordinator writes `index.md` last (§4.0), against the delivered sections.
+- **Sidecars** (`fd2/verify/ch04/`, new): `exm-checking-a-relation.py` (properties over a window of ℤ; the witnesses; the Quick check's 3x + 5y); `exr-relations-b4.py` (brute force over all relations on {0,1,2} for (a), (b), (d); the counterexamples (c), (e)); `thm-partition-equivalence.py` (2⁹ relations on {1,2,3}: exactly 5 equivalence relations, matching the 5 partitions); `exm-same-size-subsets.py` (the four classes of 𝒫({1,2,3})); `exr-equivalence-relations-b4.py` (exact Fractions for (c); random and exhaustive representative checks for (a), (b), (d); the witness for (e)). Existing sidecars unchanged.
+- **Checkers:** `check_structure.py` (0 fatal; the folds are bold-lead-in free, not nested, hold no heading); `check_numbers.py`; `check_notation.py`; forward-deps (Chapter 4 cites nothing after Chapter 4 except prose pointers to Chapter 5 and other volumes).
+- **Review (lean workflow):** 4.2 runs the full pipeline (S5–S8). 4.1 and 4.3 get S8 and a changed-only blind review; the box, scratch work, table, B4, checks, Ideas, C1 (c) and R3 count as changes.
+- **Open for the author:** none blocking. Calls made here: (1) the 4.1 worked example avoids naming congruence mod 7 (fd3 division); (2) 4.3's R3 is replaced so that the R group reaches one chapter back, as STYLE §6 asks now that Chapter 3 precedes; the old structural-induction R3 leaves the book; (3) the doubling map on ℝ/ℤ was considered as a third worked example and dropped for budget; B4 (c) keeps the ℝ case.
