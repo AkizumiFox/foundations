@@ -100,7 +100,8 @@
     "src/ch01-sets-and-functions",
     "src/ch02-induction-and-finite-sets",
     "src/ch03-countable-and-uncountable",
-    "src/ch04-relations-and-orders"
+    "src/ch04-relations-and-orders",
+    "src/ch05-zorns-lemma"
   ],
   "macros": "../latex/macros.tex",
   "deploy-dir": "site",
