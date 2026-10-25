@@ -451,7 +451,7 @@ and, with \( j^2 = -1 \),
 \]
 by @def-complex-numbers. This proves (c).
 
-So any field that contains \( \nR \) and a square root \( j \) of \( -1 \) contains an exact copy of \( \nC \), namely \( \{ a + bj : a, b \in \nR \} \), and its arithmetic is forced to be the arithmetic of @def-complex-numbers. Chapter 2 meets more fields of this shape, built from a smaller field and one new element, such as \( \{ a + bi : a, b \in \nQ \} \).
+So any field that contains \( \nR \) and a square root \( j \) of \( -1 \) contains an exact copy of \( \nC \), namely \( \{ a + bj : a, b \in \nR \} \), and its arithmetic is forced to be the arithmetic of @def-complex-numbers. *Algebraic Preliminaries*, Chapter 1 meets more fields of this shape, built from a smaller field and one new element, such as \( \{ a + bi : a, b \in \nQ \} \).
 
 **Marking scheme.** (10 points)
 - 2: (a) identifies \( 0 \) and \( 1 \) of \( \nR \) in \( K \) by cancellation, and negatives and inverses of reals by uniqueness.
@@ -489,5 +489,5 @@ exr-pairs-of-reals-b2 (solution): (1+i)^2 = 2i, (1+i)^3 = -2 + 2i, (1+i)^4 = -4,
 exr-pairs-of-reals-b3 (solution): (2,1)*(2/3,-1/3) = (1,0); the eliminations a*(first) - b*(second); (a,+-a)*(c,d) = (a(c+-d), +-a(c+-d)) is never (1,0) | arithmetic in R, 1 != 0 in R; verify/ch01/exr-pairs-of-reals-b3.py
 exr-pairs-of-reals-c1 (solution): -1 < 0 in R | fd3:prp-ordered-ring-rules (e), (a) (cited)
 exr-pairs-of-reals-c1 (solution): j != 0 since 0^2 = 0 != -1, so j^2 > 0 | fd3:prp-ring-algebra (b), fd3:prp-ordered-ring-rules (e) (cited)
-exr-pairs-of-reals-c1 (solution): pointer to Chapter 2 (subfields such as Q(i), F4.2 exm-subfields-gaussian) | prose pointer; nothing depends on it
+exr-pairs-of-reals-c1 (solution): pointer to *Algebraic Preliminaries*, Chapter 1 (subfields such as Q(i), F5.2 exm-subfields-gaussian) | prose pointer; nothing depends on it
 -->

@@ -421,8 +421,8 @@ exm-first-sequences-ordered-field (solution): Q is Archimedean in the sense of d
 def-bounded-sequence-ordered-field (example): Q is Archimedean, so (n) is unbounded in Q | thm-rationals-archimedean (cited)
 def-bounded-sequence-ordered-field (example): |c| + 1 > 0 | prp-absolute-value-ordered-field (a), prp-ordered-ring-rules (b), (e)
 prp-reciprocals-null-iff-archimedean (proof): negation of def-archimedean-ordered-field; not(x < n 1_F) iff x >= n 1_F | fd1:prp-bounded-quantifier-negation (cited), prp-ordered-field-halves (a)
-prp-reciprocals-null-iff-archimedean (claim): Q(t) is not Archimedean (t > n 1 for every n) | exm-rational-function-field: school fact; formal polynomials in F4.4 (flagged; nothing in fd3 depends on it, and no proof here cites it)
-prp-reciprocals-null-iff-archimedean (claim): (the remark after it) 1/(n+1) in Q(t) is iota(1/(n+1)) (iota respects products, iota(1) = 1), and 1/(n+1) < q eventually in Q, carried over by iota | thm-rationals-embed-ordered-field, exm-first-sequences-ordered-field (b) (cited); Q(t) as above, school fact; formal polynomials in F4.4
+prp-reciprocals-null-iff-archimedean (claim): Q(t) is not Archimedean (t > n 1 for every n) | exm-rational-function-field: school fact; formal polynomials in F5.4 (flagged; nothing in fd3 depends on it, and no proof here cites it)
+prp-reciprocals-null-iff-archimedean (claim): (the remark after it) 1/(n+1) in Q(t) is iota(1/(n+1)) (iota respects products, iota(1) = 1), and 1/(n+1) < q eventually in Q, carried over by iota | thm-rationals-embed-ordered-field, exm-first-sequences-ordered-field (b) (cited); Q(t) as above, school fact; formal polynomials in F5.4
 prp-tail-change-ordered-field (proof): finite maximum of elements of F | fd2:prp-finite-max (stated for reals; its proof works in any ordered field, fd2 Section 2.6, prose remark after prp-greatest-maximal)
 prp-convergent-bounded-ordered-field (proof): finite maximum of elements of F | fd2:prp-finite-max (stated for reals; its proof works in any ordered field, fd2 Section 2.6, prose remark after prp-greatest-maximal), as in prp-tail-change-ordered-field (proof)
 prp-tail-change-ordered-field (proof): n >= N gives n + k >= N; n >= N + k gives n = m + k with m >= N | prp-omega-order-arithmetic (a), (c) (cited)
@@ -430,8 +430,8 @@ thm-limit-unique-ordered-field (proof): a != b gives a - b != 0 | (F4), prp-ring
 thm-limit-unique-ordered-field (proof): max{N1, N2} exists in N | thm-omega-order (a); the same in prp-tail-change-ordered-field (proof)
 exr-limits-a1 (solution): (2n + 1)/(n + 1) - 2 = -1/(n + 1); the least N is 50 | verify/ch04/exr-limits-a1.py
 exr-limits-b1 (solution): the distance 1/(2(2n^2 + 3)) and 4n^2 - n + 5 >= 3n + 5 for n >= 1 | verify/ch04/exr-limits-b1.py
-exr-limits-b1 (solution): in Q(t), 1/(n+1) >= 1/t for every n, so no N meets the tolerance 1/t | proof of prp-reciprocals-null-iff-archimedean ((=>) direction, x = t), exm-rational-function-field: school fact; formal polynomials in F4.4 (flagged)
-exr-limits-b3 (solution): t > n 1 for every n in Q(t) | exm-rational-function-field: school fact; formal polynomials in F4.4 (flagged)
+exr-limits-b1 (solution): in Q(t), 1/(n+1) >= 1/t for every n, so no N meets the tolerance 1/t | proof of prp-reciprocals-null-iff-archimedean ((=>) direction, x = t), exm-rational-function-field: school fact; formal polynomials in F5.4 (flagged)
+exr-limits-b3 (solution): t > n 1 for every n in Q(t) | exm-rational-function-field: school fact; formal polynomials in F5.4 (flagged)
 exr-limits-b3 (solution): (n + 1) 1 - n 1 = 1 | def-naturals-in-ordered-field (a) (cited)
 exr-limits-c1 (solution): the weak inequality a >= 0 survives limits | prp-limit-preserves-order-ordered-field (b), Section 4.4 (prose pointer; the solution does not use it)
 exr-limits-c2 (solution): the counterexample a_0 = 5, a_n = 0 | verify/ch04/exr-limits-c2.py

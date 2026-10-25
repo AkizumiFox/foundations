@@ -1,0 +1,3048 @@
+chapter: 2
+dir: ch02-groups-and-permutations
+items:
+- key: def-group
+  kind: def
+  file: 01-groups.md
+  line: 20
+  hash: c248289d046a
+  verdicts:
+  - stage: S5a
+    verdict: correct
+    by: refereeA
+    hash: c248289d046a
+    date: '2026-10-12'
+    model: claude-opus-5-5
+    evidence: 01-groups.md:20-32. (G1)-(G3) are stated two-sided. (G3) refers to the e of (G2), and that
+      is harmless because thm (1) shows e is unique using only (G2). The fd2:def-function and def-cartesian-product
+      citations exist.
+  - stage: S5b
+    verdict: gap
+    by: refereeB
+    hash: c248289d046a
+    date: '2026-10-12'
+    model: claude-opus-5-5
+    evidence: 01:5 opening sentence claims strong induction is read on omega through @fd3:cor-omega-identification
+      (b) 'exactly as in that volume'; (b) names only ax-induction, thm-recursion and induction from a
+      base, and fd3 never does this (see finding). Definition itself (01:20-32) checked correct.
+  - stage: S8
+    verdict: correct
+    by: seam
+    hash: c248289d046a
+    date: '2026-10-12'
+    model: claude-opus-5-5
+    evidence: NOTATION.md:254 says fd4 has no exp, but F4.1 uses e^{iθ} and e^{2πik/n}, and 02:77 points
+      to that exercise [finding refuted by skeptics]
+- key: exm-groups
+  kind: exm
+  file: 01-groups.md
+  line: 38
+  hash: 4176a2de459a
+  verdicts:
+  - stage: S5a
+    verdict: correct
+    by: refereeA
+    hash: 02e4d81accd9
+    date: '2026-10-12'
+    model: claude-opus-5-5
+    evidence: ':53-71. (a): the F-clauses match fd3 (F1)-(F4). (b): the chain y=1y=(x^{-1}x)y=... is justified
+      by (F7),(F6),(F5) and fd3:prp-ring-algebra (b), which says a·0=0. 1≠0 is the field clause. (c):
+      fd2 thm-composition-injective-surjective (c), prp-composition-associative (which includes the identity
+      laws) and thm-bijection-iff-inverse all say what is claimed. The swap computation (f∘g)(x)=y, (g∘f)(x)=z '
+  - stage: S5b
+    verdict: correct
+    by: refereeB
+    hash: 02e4d81accd9
+    date: '2026-10-12'
+    model: claude-opus-5-5
+    evidence: 01:38-72 all cited labels exist with the quoted content (fd3 F1-F9 numbering at fd3 03-ordered-rings:16-26;
+      fd2 prp-composition-associative includes identity laws; thm-composition-injective-surjective (c));
+      fold computation (f o g)(x)=y, (g o f)(x)=z checked; sidecar exm-groups.py runs ok; pointers to
+      Section 3.2 (trivial subgroup, 02:53) and Section 3.4 Exercise B3 (04:358) confirmed.
+  - stage: S8
+    verdict: minor
+    by: seam
+    hash: 02e4d81accd9
+    date: '2026-10-12'
+    model: claude-opus-5-5
+    evidence: 01-groups.md:55 exm-groups (b) proves again that a product of non-zero elements of a field
+      is non-zero. The chapter cites existing versions of this fact elsewhere, so the handling is inconsistent.
+  - stage: S7r
+    verdict: minor
+    by: rereferee
+    hash: 4176a2de459a
+    date: '2026-10-12'
+    model: claude-opus-5-5
+    evidence: '-algebra (b). Before the revision that label was cited a few lines earlier in this solution
+      (for x^{-1} . 0 = 0). The rewrite removed that citation, so the step now has no justification, and
+      the ledger line for exm-groups (b) does not cover it either. Fix: write ''1 = a . 0 = 0 (@fd3:prp-ring-algebra
+      (b))'' and add the step to the ledger line. Parts (a), (c), (d) and (e) are unchanged and check
+      out.'
+  - stage: S7r
+    verdict: correct
+    by: rereferee
+    hash: 009628a5fb08
+    date: '2026-10-12'
+    model: claude-opus-5-5
+    evidence: 'ty come from prp-composition-associative. Inverses come from thm-bijection-iff-inverse
+      and def-inverse-function, and f^{-1} is a bijection by the same symmetric argument. The second-reading
+      fold is correct: (f∘g)(x)=y and (g∘f)(x)=z. With at most two elements there are at most two bijections.
+      (d) is trivially correct. (e) is a forward pointer only. The touched ledger line for (b) matches
+      the text.'
+- key: exm-group-nonexamples
+  kind: exm
+  file: 01-groups.md
+  line: 76
+  hash: 5afdfe910018
+  verdicts:
+  - stage: S5a
+    verdict: correct
+    by: refereeA
+    hash: fdda9c85309c
+    date: '2026-10-12'
+    model: claude-opus-5-5
+    evidence: :87-93. fd3:prp-divisibility-rules-integers (g) says a|1 ⇒ a=±1. prp-naturals-embed-integers
+      (a) is additivity of ι. thm-integers-ordered-ring (b) is N={x≥0}. (1*1)*1=-1 and 1*(1*1)=1. [2][3]=[0]
+      is in exm-integers-mod-six.
+  - stage: S5b
+    verdict: minor
+    by: refereeB
+    hash: fdda9c85309c
+    date: '2026-10-12'
+    model: claude-opus-5-5
+    evidence: 01-groups.md:89 '(N, +) ... it is associative, and 0 is an identity' gives no reason and
+      has no ledger line, while every other clause in the solution cites one.
+  - stage: S7r
+    verdict: correct
+    by: rereferee
+    hash: 5afdfe910018
+    date: '2026-10-12'
+    model: claude-opus-5-5
+    evidence: 'Line 85 now justifies associativity and the identity 0 for (N, +) by ''(F1)-(F3) in Z''.
+      This is valid because N''s addition is Z''s addition (@fd3:prp-naturals-embed-integers (a)), and
+      0 is in N. A matching ledger line has been added. The (G3) failure at a = 1 is correct: the negative
+      of 1 is unique by @fd3:prp-ring-algebra (a), and -1 is not in N by @fd3:thm-integers-ordered-ring
+      (b). The other thre'
+- key: thm-group-basic-properties
+  kind: thm
+  file: 01-groups.md
+  line: 100
+  hash: 94d019ae6157
+  verdicts:
+  - stage: S5a
+    verdict: correct
+    by: refereeA
+    hash: 94d019ae6157
+    date: '2026-10-12'
+    model: claude-opus-5-5
+    evidence: :104-116. All parts are true for arbitrary groups. Dropping (G3) breaks (2)-(5), e.g. (N,+);
+      dropping (G2) leaves (G3) meaningless.
+  - stage: S5b
+    verdict: correct
+    by: refereeB
+    hash: 94d019ae6157
+    date: '2026-10-12'
+    model: claude-opus-5-5
+    evidence: '01:104-116 statement true; meta-claim at 01:102 (uniqueness of 0, -a for rings: fd3 prp-ring-algebra
+      (a); u^{-1}: def-ring-unit paragraph) checked.'
+  - stage: S8
+    verdict: minor
+    by: seam
+    hash: 94d019ae6157
+    date: '2026-10-12'
+    model: claude-opus-5-5
+    evidence: '01-groups.md:148 Part (1) is credited to the wrong source: it is not the argument of @fd2:prp-inverse-unique.'
+  - stage: S7r
+    verdict: correct
+    by: rereferee
+    hash: 94d019ae6157
+    date: '2026-10-12'
+    model: claude-opus-5-5
+    evidence: 'Remark at line 144 now credits part (2) to @fd2:prp-inverse-unique. That proof is the chain
+      g = g∘id = g∘(f∘h) = (g∘f)∘h = id∘h = h (fd2/src/ch01-sets-and-functions/05-inverses.md:231-236),
+      which matches line 123 with functions erased. Part (1) is credited to the uniqueness of 0 and 1
+      in @fd3:prp-ring-algebra (a): fd3 plays the two identity properties against each other (0'' = 0''
+      + 0 = 0 + 0'' = 0),'
+- key: proof:thm-group-basic-properties
+  kind: proof
+  file: 01-groups.md
+  line: 118
+  hash: d16f8a2bbf47
+  verdicts:
+  - stage: S5a
+    verdict: minor
+    by: refereeA
+    hash: f3a8ab3082a9
+    date: '2026-10-12'
+    model: claude-opus-5-5
+    evidence: 01-groups.md:214 Line 214 says prp-group-list-product-laws (b) 'licenses the phrase "regroup
+      by (G1)" used in @thm-group-basic-properties'. That suggests the earlier theorem rests on a later
+      result. In fact the theorem only writes four-factor products such as a(bb^{-1})a^{-1} (:133, :135)
+      with the outer bracket missing, before any bracket convention is defined.
+  - stage: S5b
+    verdict: minor
+    by: refereeB
+    hash: f3a8ab3082a9
+    date: '2026-10-12'
+    model: claude-opus-5-5
+    evidence: 01-groups.md:148 The meta-claim 'Parts (1) and (2) are the argument of @fd2:prp-inverse-unique
+      ... with functions erased' is false for part (1).
+  - stage: S7r
+    verdict: correct
+    by: rereferee
+    hash: d16f8a2bbf47
+    date: '2026-10-12'
+    model: claude-opus-5-5
+    evidence: '(1) line 119 and (2) lines 121-125 are correct; (2) uses (G2), the hypothesis ab'' = e,
+      (G1), ba = e and (G2). (3) line 129 now writes every bracket: ((ab)b^{-1})a^{-1}, then (a(bb^{-1}))a^{-1},
+      then (ae)a^{-1}, then aa^{-1} = e. The justification ''by (G1) twice, then (G3), (G2) and (G3)''
+      matches the steps in order, and the mirror chain on line 131 is also correct. (4) and (5) are correct.
+      Both ear'
+- key: def-group-list-product
+  kind: def
+  file: 01-groups.md
+  line: 150
+  hash: eac12da66155
+  verdicts:
+  - stage: S5a
+    verdict: correct
+    by: refereeA
+    hash: eac12da66155
+    date: '2026-10-12'
+    model: claude-opus-5-5
+    evidence: :154-166. The recursion is well-founded. fd2:def-sum-product's 'Finite lists' remark (read
+      at fd2 03-recursion.md) only compares the added terms a_{n+1} and never reorders, so the transfer
+      to a non-abelian G is valid. It is a template use, allowed by F3.1 §07 citing rule group (iii).
+  - stage: S5b
+    verdict: correct
+    by: refereeB
+    hash: eac12da66155
+    date: '2026-10-12'
+    model: claude-opus-5-5
+    evidence: 01:154-166; fd2:def-sum-product (fd2 03-recursion:159) and its 'Finite lists' remark (:181)
+      exist and only append on the right; fd3:def-prime-factorization at Section 3.3 uses the same recursion,
+      as claimed.
+- key: prp-group-list-product-laws
+  kind: prp
+  file: 01-groups.md
+  line: 164
+  hash: 993fc9413c81
+  verdicts:
+  - stage: S5a
+    verdict: correct
+    by: refereeA
+    hash: 993fc9413c81
+    date: '2026-10-12'
+    model: claude-opus-5-5
+    evidence: :168-180. All three laws are true. The definition of a bracketing is precise.
+  - stage: S5b
+    verdict: correct
+    by: refereeB
+    hash: 993fc9413c81
+    date: '2026-10-12'
+    model: claude-opus-5-5
+    evidence: 01:168-180 statements true; bracketing definition well-formed.
+- key: proof:prp-group-list-product-laws
+  kind: proof
+  file: 01-groups.md
+  line: 182
+  hash: d97420aab05b
+  verdicts:
+  - stage: S5a
+    verdict: correct
+    by: refereeA
+    hash: d97420aab05b
+    date: '2026-10-12'
+    model: claude-opus-5-5
+    evidence: ':187-196. Induction on s with the first list fixed. Base: Pe=P by (G2). Step: recursion,
+      then (G1), then the IH on the prefix list, then the recursion on the concatenation. Quantifier order
+      is fine: the first list is fixed before the induction, and the statement quantifies over all second
+      lists.'
+  - stage: S5b
+    verdict: correct
+    by: refereeB
+    hash: d97420aab05b
+    date: '2026-10-12'
+    model: claude-opus-5-5
+    evidence: '01:186-197 induction on s: base Pe=P by (G2), step by recursion, (G1), hypothesis, recursion;
+      every step named.'
+- key: proof:prp-group-list-product-laws#2
+  kind: proof
+  file: 01-groups.md
+  line: 196
+  hash: d3fa6e7fc252
+  verdicts:
+  - stage: S5a
+    verdict: gap
+    by: refereeA
+    hash: d3fa6e7fc252
+    date: '2026-10-12'
+    model: claude-opus-5-5
+    evidence: 01-groups.md:5 Strong induction on ω is cited as @fd1:thm-strong-induction 'read on ω through
+      @fd3:cor-omega-identification (b), exactly as in that volume', but clause (b) does not cover strong
+      induction, and fd3 never reads fd1:thm-strong-induction on ω.
+  - stage: S5b
+    verdict: gap
+    by: refereeB
+    hash: d3fa6e7fc252
+    date: '2026-10-12'
+    model: claude-opus-5-5
+    evidence: '01-groups.md:201 Part (b) of the list laws uses @fd1:thm-strong-induction on r in N = omega,
+      and line 5 says this reading is licensed by @fd3:cor-omega-identification (b) ''exactly as in that
+      volume''. Both claims are false: (b) covers only induction, induction from a base and recursion,
+      and fd3 never reads strong induction on omega through it.'
+  - stage: S7r
+    verdict: correct
+    by: rereferee
+    hash: d3fa6e7fc252
+    date: '2026-10-12'
+    model: claude-opus-5-5
+    evidence: Earlier gap resolved. Line 5 no longer claims @fd3:cor-omega-identification (b) covers strong
+      induction. It now says @fd1:thm-strong-induction holds on omega because its proof uses only @fd1:ax-induction
+      and @fd3:thm-omega-order (a), (b), (d). I checked the fd1 proof (fd1/src/ch03-semantics-soundness-completeness/02-induction.md:153-163).
+      It uses ax-induction (available on omega through cor (b)) a
+- key: def-group-integer-power
+  kind: def
+  file: 01-groups.md
+  line: 216
+  hash: 1846e35db783
+  verdicts:
+  - stage: S5a
+    verdict: correct
+    by: refereeA
+    hash: 1846e35db783
+    date: '2026-10-12'
+    model: claude-opus-5-5
+    evidence: :220-230. For n<0, n=-ι(m) by fd3:prp-naturals-embed-integers (c), and n∉N by thm-integers-ordered-ring
+      (b). m=-n is unique. g^1=g and g^{-1} (as a power) is the inverse.
+  - stage: S5b
+    verdict: correct
+    by: refereeB
+    hash: 1846e35db783
+    date: '2026-10-12'
+    model: claude-opus-5-5
+    evidence: 01:220-230; prp-naturals-embed-integers (c) is Z = iota(N) u {-iota(n)}; thm-integers-ordered-ring
+      (b) gives the non-overlap; agrees with NOTATION rows 249, 255.
+- key: prp-group-power-laws
+  kind: prp
+  file: 01-groups.md
+  line: 230
+  hash: 831347ce8a6b
+  verdicts:
+  - stage: S5a
+    verdict: correct
+    by: refereeA
+    hash: 831347ce8a6b
+    date: '2026-10-12'
+    model: claude-opus-5-5
+    evidence: :234-246. All parts are true. The hypothesis gh=hg in (d) is used and necessary (a §04 counterexample
+      is cited). R being a commutative ring is used in (e).
+  - stage: S5b
+    verdict: correct
+    by: refereeB
+    hash: 831347ce8a6b
+    date: '2026-10-12'
+    model: claude-opus-5-5
+    evidence: 01:234-246 all five parts true; (e) matches fd3 Section 2.3 'Multiples' (fd3 03-ordered-rings:300-304,
+      which proves n.a = na in Z for n in N).
+- key: proof:prp-group-power-laws
+  kind: proof
+  file: 01-groups.md
+  line: 249
+  hash: 8793ae03c148
+  verdicts:
+  - stage: S5a
+    verdict: minor
+    by: refereeA
+    hash: 293dc2bc28cf
+    date: '2026-10-12'
+    model: claude-opus-5-5
+    evidence: 01-groups.md:273 The proof of (a) redefines h := g^{-1}, but h is already a fixed element
+      of G in the statement of the proposition (g, h ∈ G).
+  - stage: S5b
+    verdict: minor
+    by: refereeB
+    hash: 293dc2bc28cf
+    date: '2026-10-12'
+    model: claude-opus-5-5
+    evidence: 01-groups.md:299 The remark says 'No proof in this chapter rests on this comparison', but
+      the R1 solution in Section 3.5 cites this remark.
+  - stage: S7r
+    verdict: correct
+    by: rereferee
+    hash: 8793ae03c148
+    date: '2026-10-12'
+    model: claude-opus-5-5
+    evidence: 'Line 269: the auxiliary element is now u := g^{-1}, so it no longer clashes with h, which
+      the statement fixes in G. (∗) at line 260 gives g^p = u^{-p}. Case m < 0 <= n: u^j u^{-n} = u^{j-n}
+      by (∗∗) for u (j, n in N), and u^{j-n} = g^{n-j} = g^{m+n}. Case m, n < 0 is correct too. Re-checked
+      the rest: (b) at lines 252-258, (∗∗) at line 267, (c) at lines 271-275 via @fd3:prp-ring-algebra
+      (c), (d) at '
+- key: prp-units-form-group
+  kind: prp
+  file: 01-groups.md
+  line: 303
+  hash: 8f6eee56b8e2
+  verdicts:
+  - stage: S5a
+    verdict: correct
+    by: refereeA
+    hash: 8f6eee56b8e2
+    date: '2026-10-12'
+    model: claude-opus-5-5
+    evidence: :307-311. True for every commutative ring, including the zero ring, where R^×={0} is the
+      trivial group.
+  - stage: S5b
+    verdict: correct
+    by: refereeB
+    hash: 8f6eee56b8e2
+    date: '2026-10-12'
+    model: claude-opus-5-5
+    evidence: 01:303-321; fd3 def-ring-unit (05-units-and-crt:17-35) gives uniqueness, 1 a unit, closure
+      under products and inverses, exactly as 01:305 says; thm-units-mod-n gives (Z/nZ)^x; sidecar prp-units-form-group.py
+      ok.
+- key: proof:prp-units-form-group
+  kind: proof
+  file: 01-groups.md
+  line: 309
+  hash: 7590e5cf8706
+  verdicts:
+  - stage: S5a
+    verdict: correct
+    by: refereeA
+    hash: 7590e5cf8706
+    date: '2026-10-12'
+    model: claude-opus-5-5
+    evidence: ':314. The paragraph after fd3:def-ring-unit (05-units-and-crt.md, ''Closure'') gives: 1
+      is a unit, products of units are units, u^{-1} is a unit, and u^{-1}u=1. (F5),(F6),(F7) are used
+      correctly.'
+  - stage: S5b
+    verdict: correct
+    by: refereeB
+    hash: 7590e5cf8706
+    date: '2026-10-12'
+    model: claude-opus-5-5
+    evidence: 01:313-315 each axiom named; uu^{-1}=u^{-1}u=1 from def-ring-unit and (F6).
+- key: check:01-groups:1
+  kind: check
+  file: 01-groups.md
+  line: 319
+  hash: 27af5f1e2bf2
+  verdicts:
+  - stage: S5a
+    verdict: correct
+    by: refereeA
+    hash: 27af5f1e2bf2
+    date: '2026-10-12'
+    model: claude-opus-5-5
+    evidence: :328. [3][5]=[15]=[1]. [3]^{-2}=([3]^{-1})^2=[25]=[4]. [9][4]=[36]=[1]. The verify sidecar
+      prp-units-form-group.py passes.
+  - stage: S5b
+    verdict: correct
+    by: refereeB
+    hash: 27af5f1e2bf2
+    date: '2026-10-12'
+    model: claude-opus-5-5
+    evidence: 01:323-329 [3]^{-1}=[5], [3]^{-2}=[5]^2=[25]=[4], check [9][4]=[36]=[1]; asserted in prp-units-form-group.py
+      (runs ok).
+- key: exr-groups-a1
+  kind: exr
+  file: 01-groups.md
+  line: 331
+  hash: 00603abf2038
+  verdicts:
+  - stage: S5a
+    verdict: correct
+    by: refereeA
+    hash: 00603abf2038
+    date: '2026-10-12'
+    model: claude-opus-5-5
+    evidence: ':348-351. (b): identity -1, inverse -a-2, both bracketings equal a+b+c+2. (c): f∘g is 1→2,
+      2→3, 3→1, its inverse sends 1→3, and f∘g sends 1→2. (d): [15]=[1], and 2·[2]=[4]. exr-groups-a1.py
+      passes.'
+  - stage: S5b
+    verdict: correct
+    by: refereeB
+    hash: 00603abf2038
+    date: '2026-10-12'
+    model: claude-opus-5-5
+    evidence: '01:335-353 (b) identity -1, inverse -a-2, both bracketings a+b+c+2; (c) f o g: 1->2,2->3,3->1,
+      inverse sends 1->3; (d) 3.[5]=[1], (-2).[5]=2.[2]=[4] (-10 = 4 mod 7); sidecar ok.'
+  - stage: S6
+    verdict: correct
+    by: verifier
+    hash: 00603abf2038
+    date: '2026-10-12'
+    model: claude-opus-5-5
+    evidence: '01-groups.md:349-354: (b) identity -1, inverse -a-2 and associativity confirmed by script
+      over [-15,15]^3; (c) f∘g = (1→2,2→3,3→1), its inverse sends 1→3, f^{-1}∘g^{-1}(1)=2, confirmed;
+      (d) 3·[5]=[1], (-2)·[5]=[4] in Z/7Z confirmed.'
+- key: exr-groups-b1
+  kind: exr
+  file: 01-groups.md
+  line: 353
+  hash: 0e16f95a4737
+  verdicts:
+  - stage: S5a
+    verdict: correct
+    by: refereeA
+    hash: e2f0986691e9
+    date: '2026-10-12'
+    model: claude-opus-5-5
+    evidence: :373-377. (a) uses (O4) (products of positives are positive), prp-ordered-ring-rules (e)
+      (1>0, valid since 1≠0 in ℚ) and (d) (a<b, c<0 ⇒ ac>bc) with a=0, b=x, c=x^{-1}. (c) uses cor-integers-even-odd
+      (a).
+  - stage: S5b
+    verdict: correct
+    by: refereeB
+    hash: e2f0986691e9
+    date: '2026-10-12'
+    model: claude-opus-5-5
+    evidence: 01:357-379 (a) uses (O4) (product of positives, fd3 03-ordered-rings:156), prp-ordered-ring-rules
+      (d) 'a<b, c<0 => ac>bc' and (e) 1>0 correctly; (c) cor-integers-even-odd (a) 'not both'; sidecar
+      ok.
+  - stage: S6
+    verdict: correct
+    by: verifier
+    hash: e2f0986691e9
+    date: '2026-10-12'
+    model: claude-opus-5-5
+    evidence: '01-groups.md:373-377: (a) the inequality step checked against fd3 prp-ordered-ring-rules
+      (d) (a=0,b=x,c=x^{-1}); (c) cor-integers-even-odd (a) applies; (d) U8 closed with all squares [1]
+      (script); (e) [2][3]=[0], so Z6\{0} is not closed (script). Worked examples: exm-groups, exm-group-nonexamples.'
+  - stage: S7r
+    verdict: correct
+    by: rereferee
+    hash: 0e16f95a4737
+    date: '2026-10-12'
+    model: claude-opus-5-5
+    evidence: 'Line 369 now gets x^{-1} > 0 from @fd3:prp-reciprocal-order (a) (fd3/src/ch02-integers-and-rationals/05-ordered-field-of-rationals.md:116,
+      ''If a > 0, then a^{-1} > 0'' in any ordered field). It applies because Q is an ordered field (@fd3:thm-rationals-ordered-field).
+      The ledger line was updated to match. Parts (b)-(e) are correct; I solved them independently: Z^x
+      = {1, -1}; 1 + 1 = 2 is not odd by '
+- key: exr-groups-b2
+  kind: exr
+  file: 01-groups.md
+  line: 377
+  hash: 79d6ea95ec7c
+  verdicts:
+  - stage: S5a
+    verdict: correct
+    by: refereeA
+    hash: 79d6ea95ec7c
+    date: '2026-10-12'
+    model: claude-opus-5-5
+    evidence: :392-394. Left cancellation (thm (4)) applied to gg=ge. The chain written out is valid.
+  - stage: S5b
+    verdict: correct
+    by: refereeB
+    hash: 79d6ea95ec7c
+    date: '2026-10-12'
+    model: claude-opus-5-5
+    evidence: 01:381-395 faded step as in the blueprint (line 109), prompt 'Name the move, then complete
+      it' present; solution names the move and completes via cancellation.
+  - stage: S6
+    verdict: correct
+    by: verifier
+    hash: 79d6ea95ec7c
+    date: '2026-10-12'
+    model: claude-opus-5-5
+    evidence: '01-groups.md:381-395: the faded blank has a single reasonable completion (cancel g on the
+      left); the written-out chain g=(g^{-1}g)g=...=e is valid. Worked example: proof of thm-group-basic-properties
+      (4).'
+- key: exr-groups-b3
+  kind: exr
+  file: 01-groups.md
+  line: 393
+  hash: d629e2d36b22
+  verdicts:
+  - stage: S5a
+    verdict: correct
+    by: refereeA
+    hash: d629e2d36b22
+    date: '2026-10-12'
+    model: claude-opus-5-5
+    evidence: ':404-414. The induction for n∈N is valid. For n<0: prp-group-power-laws (b) gives (x^k)^{-1}=x^{-k};
+      prp-group-list-product-laws (c) is applied to the list (g, h^k, g^{-1}); then thm (3) and power-laws
+      (b).'
+  - stage: S5b
+    verdict: correct
+    by: refereeB
+    hash: d629e2d36b22
+    date: '2026-10-12'
+    model: claude-opus-5-5
+    evidence: 01:397-415 n in N by induction (g^{-1}g = e); n<0 via prp-group-power-laws (b), prp-group-list-product-laws
+      (c), thm-group-basic-properties (3); correct.
+  - stage: S6
+    verdict: correct
+    by: verifier
+    hash: d629e2d36b22
+    date: '2026-10-12'
+    model: claude-opus-5-5
+    evidence: '01-groups.md:403-415: base case and induction step valid; the n<0 case correctly uses power
+      laws (b), list-product law (c) on the length-3 list (g,h^k,g^{-1}), and (h^k)^{-1}=h^{-k}. Worked
+      example: proofs of power laws (b) and (d).'
+- key: exr-groups-c1
+  kind: exr
+  file: 01-groups.md
+  line: 415
+  hash: af487f8b7544
+  verdicts:
+  - stage: S5a
+    verdict: correct
+    by: refereeA
+    hash: af487f8b7544
+    date: '2026-10-12'
+    model: claude-opus-5-5
+    evidence: :438-446. The outline matches the proof of thm (1)-(3). The marking scheme is consistent.
+  - stage: S5b
+    verdict: minor
+    by: refereeB
+    hash: af487f8b7544
+    date: '2026-10-12'
+    model: claude-opus-5-5
+    evidence: 01-groups.md:446 The marking scheme's penalty 'loses those 2 points' points at a 3-point
+      item and does not say which 2 points are lost.
+  - stage: S6
+    verdict: minor
+    by: verifier
+    hash: af487f8b7544
+    date: '2026-10-12'
+    model: claude-opus-5-5
+    evidence: 01-groups.md:446 The marking scheme rejects a correct alternative route and splits a 3-point
+      step ambiguously.
+  - stage: S7r
+    verdict: correct
+    by: rereferee
+    hash: af487f8b7544
+    date: '2026-10-12'
+    model: claude-opus-5-5
+    evidence: 'Hint 2 (line 430) now only names the first line (take two inverses b, b'' and start from
+      b = be) and no longer carries out the key substitution. The outline at line 434 now writes every
+      bracket, matching the revised theorem proof. Marking scheme (lines 436-442) totals 2+3+1+3+1 = 10.
+      The penalty is now explicit: checking one product earns 1 of the 3 points for that step. The alternative
+      route earns'
+- key: exr-groups-c2
+  kind: exr
+  file: 01-groups.md
+  line: 445
+  hash: 2a52149184f6
+  verdicts:
+  - stage: S5a
+    verdict: correct
+    by: refereeA
+    hash: 2a52149184f6
+    date: '2026-10-12'
+    model: claude-opus-5-5
+    evidence: :462-466. Line (2) correctly identified as an (N9) step. The counterexample is (f∘g)(1)=2
+      and (g∘f)(1)=3. The alternative repair via thm (5) gives y=e(ab)^{-1}.
+  - stage: S5b
+    verdict: correct
+    by: refereeB
+    hash: 2a52149184f6
+    date: '2026-10-12'
+    model: claude-opus-5-5
+    evidence: '01:449-467 true conclusion, failing line (2) only, (N9) of fd1:exm-not-allowed-catalogue
+      (an unproved general ''fact'', as fd1 06-checking-proofs:336 uses it), counterexample to the step
+      (f o g)(1)=2, (g o f)(1)=3; repair via (5) checked: y = e(ab)^{-1}.'
+  - stage: S6
+    verdict: correct
+    by: verifier
+    hash: 2a52149184f6
+    date: '2026-10-12'
+    model: claude-opus-5-5
+    evidence: '01-groups.md:449-465: flawed only at line (2), which is N9 per fd1 06-checking-proofs.md
+      (unproved general fact); lines (1) and (3) are valid; the conclusion is true; (g∘f)(1)=3≠2=(f∘g)(1),
+      confirmed by script, defeats the step; the alternative repair via thm (5) is valid.'
+- key: exr-groups-c3
+  kind: exr
+  file: 01-groups.md
+  line: 465
+  hash: c9aecf05cbed
+  verdicts:
+  - stage: S5a
+    verdict: correct
+    by: refereeA
+    hash: fe5f842276a0
+    date: '2026-10-12'
+    model: claude-opus-5-5
+    evidence: :482-490. (a) follows from prp (a) on the three-way concatenation, which allows empty lists,
+      plus commutativity; the citation of (b) is redundant. (b) is a valid induction on the number of
+      swaps. The pointer to §05 cor-adjacent-transpositions-generate exists and is used only in a closing
+      remark.
+  - stage: S5b
+    verdict: correct
+    by: refereeB
+    hash: fe5f842276a0
+    date: '2026-10-12'
+    model: claude-opus-5-5
+    evidence: 01:469-491 (a) by list laws (a),(b) with empty products e; (b) induction on the number of
+      swaps; the closing pointer to Section 3.5 matches cor-adjacent-transpositions-generate (05:149,
+      n >= 2; here r >= 2).
+  - stage: S6
+    verdict: correct
+    by: verifier
+    hash: fe5f842276a0
+    date: '2026-10-12'
+    model: claude-opus-5-5
+    evidence: '01-groups.md:469-487: (a) bracketing via list laws (a) and (b), with empty products e;
+      (b) induction on the number of swaps. Both valid.'
+  - stage: S7r
+    verdict: correct
+    by: rereferee
+    hash: bd7887847cf3
+    date: '2026-10-12'
+    model: claude-opus-5-5
+    evidence: 'I solved it first. (a): concatenating three lists (prp-group-list-product-laws (a)) brackets
+      the product as (g_1..g_{i-1})(g_i g_{i+1})(g_{i+2}..g_r), with empty products equal to e, and abelianness
+      swaps the middle pair. (b): induction on the number of swaps. The solution at lines 478-483 matches.
+      The new marking scheme (lines 488-494) totals 3+2+1+2+2 = 10, its steps match the solution, and
+      its '
+- key: def-subgroup
+  kind: def
+  file: 02-subgroups.md
+  line: 11
+  hash: 86c625b6cce3
+  verdicts:
+  - stage: S5a
+    verdict: correct
+    by: refereeA
+    hash: 86c625b6cce3
+    date: '2026-10-12'
+    model: claude-opus-5-5
+    evidence: 02:14; the restriction paragraph at 02:19 uses (G1)-(G3) and thm-group-basic-properties
+      (1),(2) (01:110-111) correctly
+  - stage: S5b
+    verdict: minor
+    by: refereeB
+    hash: 86c625b6cce3
+    date: '2026-10-12'
+    model: claude-opus-5-5
+    evidence: 02-subgroups.md:19 A meta-claim says one condition is checked in practice; the test has
+      two.
+  - stage: S7r
+    verdict: correct
+    by: rereferee
+    hash: 86c625b6cce3
+    date: '2026-10-12'
+    model: claude-opus-5-5
+    evidence: '02-subgroups.md:14-19. The definition and the restriction paragraph check out: (G1) is
+      inherited, and (G2) and (G3) hold because e and the inverses lie in H. The identity and inverses
+      are the same as in G by thm-group-basic-properties (1),(2), which state uniqueness. Earlier S5b
+      finding resolved: line 19 now says one checks ''that H is non-empty and a single combined condition'',
+      which matches the t'
+- key: thm-subgroup-test
+  kind: thm
+  file: 02-subgroups.md
+  line: 21
+  hash: 26d7c7e529fe
+  verdicts:
+  - stage: S5a
+    verdict: correct
+    by: refereeA
+    hash: 26d7c7e529fe
+    date: '2026-10-12'
+    model: claude-opus-5-5
+    evidence: '02:24; statement true, and both hypotheses (H non-empty, closure under ab^{-1}) are needed:
+      the empty set fails, and N in Z fails'
+  - stage: S5b
+    verdict: correct
+    by: refereeB
+    hash: 26d7c7e529fe
+    date: '2026-10-12'
+    model: claude-opus-5-5
+    evidence: 02:24 statement checked; the additive form at 02:33 is consistent.
+- key: proof:thm-subgroup-test
+  kind: proof
+  file: 02-subgroups.md
+  line: 27
+  hash: 58d519a62403
+  verdicts:
+  - stage: S5a
+    verdict: correct
+    by: refereeA
+    hash: 58d519a62403
+    date: '2026-10-12'
+    model: claude-opus-5-5
+    evidence: 02:28-30; h is chosen from H non-empty; a=b=h gives e; a=e gives b^{-1}; ab=a(b^{-1})^{-1}
+      by 01:112 (3), with the hypothesis applied to a and b^{-1}. No forward references.
+  - stage: S5b
+    verdict: correct
+    by: refereeB
+    hash: 58d519a62403
+    date: '2026-10-12'
+    model: claude-opus-5-5
+    evidence: '02:28-30: each step is cited; (b^{-1})^{-1} = b is thm-group-basic-properties (3) (01:112).'
+- key: exm-subgroups
+  kind: exm
+  file: 02-subgroups.md
+  line: 35
+  hash: 6e4a32cec8e3
+  verdicts:
+  - stage: S5a
+    verdict: correct
+    by: refereeA
+    hash: 4705cad9ca33
+    date: '2026-10-12'
+    model: claude-opus-5-5
+    evidence: 02:53-77; (b) uses fd3:prp-ring-algebra (b),(c) as stated; (c) uses ordered-ring-rules (d),(e)
+      correctly; (d) differences checked; (e) sigma∘tau^{-1} fixes x0; (f) uses prp-unit-circle (a) (ch01
+      05:23) as stated, and mu_n uses power laws (d),(b) with C\{0} abelian; ch01 06:180 does note mu_n
+      ⊆ T; the sidecar passes
+  - stage: S5b
+    verdict: minor
+    by: refereeB
+    hash: 4705cad9ca33
+    date: '2026-10-12'
+    model: claude-opus-5-5
+    evidence: 02-subgroups.md:67 The citation for i^2 = -1 points at a definition that does not state
+      it.
+  - stage: S8
+    verdict: minor
+    by: seam
+    hash: 4705cad9ca33
+    date: '2026-10-12'
+    model: claude-opus-5-5
+    evidence: '02-subgroups.md:61 A result from an earlier volume is proved again three times instead
+      of being cited: in an ordered field, x > 0 implies x^{-1} > 0.'
+  - stage: S7r
+    verdict: correct
+    by: rereferee
+    hash: 6e4a32cec8e3
+    date: '2026-10-12'
+    model: claude-opus-5-5
+    evidence: 'Lines 41-80 re-checked part by part. (b): prp-ring-algebra (b),(c), (F9), (F6). (c): fd3:prp-reciprocal-order
+      (a) says exactly ''a > 0 implies a^{-1} > 0'' in an ordered field (fd3 05-ordered-field-of-rationals.md),
+      so the S8 re-proof finding is resolved. (d): 6 | -6 in both cases, and [3][3] = [9] = [1] in Z/8Z.
+      (e) is correct. (f): i^2 = -1 is now cited to prp-reals-embed-complex (''i·i = ι(-1)'') t'
+- key: prp-subgroup-intersection
+  kind: prp
+  file: 02-subgroups.md
+  line: 84
+  hash: a0a1f0a37c29
+  verdicts:
+  - stage: S5a
+    verdict: minor
+    by: refereeA
+    hash: 12196dae49c9
+    date: '2026-10-12'
+    model: claude-opus-5-5
+    evidence: 02-subgroups.md:87 The hypothesis 'non-empty family' is never used, and the text admits
+      this at line 94. That breaks STYLE.md:145 ('Give each hypothesis a job (H6)').
+  - stage: S5b
+    verdict: correct
+    by: refereeB
+    hash: 12196dae49c9
+    date: '2026-10-12'
+    model: claude-opus-5-5
+    evidence: 02:87; fd2:def-family-union-intersection (b) is the intersection inside X = G.
+  - stage: S7r
+    verdict: correct
+    by: rereferee
+    hash: a0a1f0a37c29
+    date: '2026-10-12'
+    model: claude-opus-5-5
+    evidence: 'Line 87. The unused hypothesis ''non-empty family'' is gone, and the intersection is taken
+      inside G as fd2:def-family-union-intersection (b) requires (a family of subsets of X, intersection
+      cut out of X). Line 94 handles I = ∅: by def (b) the intersection is then G, a subgroup by exm-subgroups
+      (a). The S5a H6 finding is resolved.'
+- key: proof:prp-subgroup-intersection
+  kind: proof
+  file: 02-subgroups.md
+  line: 90
+  hash: 84bfe80b101e
+  verdicts:
+  - stage: S5a
+    verdict: correct
+    by: refereeA
+    hash: 6e8d42476310
+    date: '2026-10-12'
+    model: claude-opus-5-5
+    evidence: 02:91; the intersection is taken inside G (fd2 def (b) needs subsets of X=G); e lies in
+      each H_i; the test is applied to each H_i
+  - stage: S5b
+    verdict: correct
+    by: refereeB
+    hash: 6e8d42476310
+    date: '2026-10-12'
+    model: claude-opus-5-5
+    evidence: 02:91. The meta-claim at 02:94 ('does not use I ≠ ∅'; the empty intersection is G) is true
+      by fd2 def (b), which intersects inside X.
+  - stage: S7r
+    verdict: correct
+    by: rereferee
+    hash: 84bfe80b101e
+    date: '2026-10-12'
+    model: claude-opus-5-5
+    evidence: Line 91. e ∈ G and e ∈ every H_i, so e ∈ H; ab^{-1} ∈ G and ab^{-1} ∈ every H_i by thm-subgroup-test
+      (⇒) applied to H_i, so ab^{-1} ∈ H; then thm-subgroup-test (⇐). Membership in G is now stated, which
+      the 'inside G' definition needs. The proof holds for I = ∅ as well. Ledger row at line 413.
+- key: def-subgroup-generated-by-element
+  kind: def
+  file: 02-subgroups.md
+  line: 104
+  hash: 41e2c6e9f6cd
+  verdicts:
+  - stage: S5a
+    verdict: correct
+    by: refereeA
+    hash: 41e2c6e9f6cd
+    date: '2026-10-12'
+    model: claude-opus-5-5
+    evidence: 02:107-114; <n>=nZ follows from prp-group-power-laws (e) (01:244, all n,a in Z) and fd3:def-integer-linear-combinations
+  - stage: S5b
+    verdict: correct
+    by: refereeB
+    hash: 41e2c6e9f6cd
+    date: '2026-10-12'
+    model: claude-opus-5-5
+    evidence: 02:109-114; <n> = nZ follows from prp-group-power-laws (e) (01:244).
+- key: prp-subgroup-generated-by-element
+  kind: prp
+  file: 02-subgroups.md
+  line: 116
+  hash: 0d582d831567
+  verdicts:
+  - stage: S5a
+    verdict: minor
+    by: refereeA
+    hash: 0d582d831567
+    date: '2026-10-12'
+    model: claude-opus-5-5
+    evidence: 02-subgroups.md:144 k·[2] = [2k] is computed by applying fd3:thm-integers-mod-n-ring (d)
+      to the group multiple of def-group-integer-power. That clause is about the ring multiple of fd3
+      Section 2.3. The bridge between the two multiples is prp-group-power-laws (e), and it is not cited.
+  - stage: S5b
+    verdict: minor
+    by: refereeB
+    hash: 0d582d831567
+    date: '2026-10-12'
+    model: claude-opus-5-5
+    evidence: 02-subgroups.md:136 The cross-volume pointer uses a form that differs from the chapter's
+      and from STATUS's recorded form.
+  - stage: S8
+    verdict: minor
+    by: seam
+    hash: 0d582d831567
+    date: '2026-10-12'
+    model: claude-opus-5-5
+    evidence: 02-subgroups.md:136 One pointer into another volume uses a different form from every other
+      pointer in the chapter.
+  - stage: S7r
+    verdict: minor
+    by: rereferee
+    hash: 0d582d831567
+    date: '2026-10-12'
+    model: claude-opus-5-5
+    evidence: '(thm-integers-mod-prime-field) uses ''the paragraph after @def-ring-unit'' for a third
+      paragraph, ''A unit is not a zero divisor''. So the pointer sends the reader to the wrong text.
+      Fix: write ''(the paragraph "Why this definition" after @fd3:def-ring-unit)'', or argue directly:
+      [0]v = [0] ≠ [1] by fd3:prp-ring-algebra (b) and fd3:thm-integers-mod-n-ring (c). Fix the matching
+      ledger row (line 418) too.'
+  - stage: S7r
+    verdict: correct
+    by: rereferee
+    hash: 0d582d831567
+    date: '2026-10-12'
+    model: claude-opus-5-5
+    evidence: 'ltiples of [2] in Z/6Z: 0, 2, 4, 6=0. In the reduction g^n = (g^m)^q g^r = g^r, the cited
+      division with remainder and power laws (a) and (c) are right. The step (Z/7Z)^x = Z/7Z \ {[0]} now
+      cites the right fd3 paragraph (05-units-and-crt.md:52), and the six elements come from thm-integers-mod-n-ring
+      (b). The ''cyclic'' pointer is prose only. verify/ch03/prp-subgroup-generated-by-element.py prints
+      ok.'
+- key: proof:prp-subgroup-generated-by-element
+  kind: proof
+  file: 02-subgroups.md
+  line: 126
+  hash: 36ce861ffa7d
+  verdicts:
+  - stage: S5a
+    verdict: correct
+    by: refereeA
+    hash: 36ce861ffa7d
+    date: '2026-10-12'
+    model: claude-opus-5-5
+    evidence: 02:127-133; g^m(g^n)^{-1}=g^m g^{-n}=g^{m-n} by (b),(a); abelian by (a) and (F1); induction
+      on N using closure under products, then inverses by (b); every integer is ±n by fd3:prp-naturals-embed-integers
+      (c)
+  - stage: S5b
+    verdict: correct
+    by: refereeB
+    hash: 36ce861ffa7d
+    date: '2026-10-12'
+    model: claude-opus-5-5
+    evidence: '02:127-133: power laws (a), (b), F1, fd1:ax-induction and fd3:prp-naturals-embed-integers
+      (c) all match their statements.'
+  - stage: S7r
+    verdict: correct
+    by: rereferee
+    hash: 36ce861ffa7d
+    date: '2026-10-12'
+    model: claude-opus-5-5
+    evidence: 'ed again line by line. Nonempty: g = g^1. Subgroup test: g^m (g^n)^{-1} = g^m g^{-n} =
+      g^{m-n}, by power laws (b) and (a). Abelian: g^{m+n} = g^{n+m}, by (a) and (F1) in Z. Minimality:
+      g^n in H for n in N by induction (g^0 = e, g^{n+1} = g^n g), negative powers by (b) and closure
+      under inverses, and every integer is n or -n by fd3:prp-naturals-embed-integers (c). The diff does
+      not touch the proof.'
+- key: thm-subgroups-of-integers
+  kind: thm
+  file: 02-subgroups.md
+  line: 152
+  hash: 567abc1b25e3
+  verdicts:
+  - stage: S5a
+    verdict: correct
+    by: refereeA
+    hash: 567abc1b25e3
+    date: '2026-10-12'
+    model: claude-opus-5-5
+    evidence: '02:155; the statement is true. Without the subgroup hypothesis it fails: N is not nZ for
+      any n (A1(c))'
+  - stage: S5b
+    verdict: correct
+    by: refereeB
+    hash: 567abc1b25e3
+    date: '2026-10-12'
+    model: claude-opus-5-5
+    evidence: 02:155 matches fd3:thm-integer-ideals-principal (b) with 'ideal' replaced by 'subgroup'.
+- key: proof:thm-subgroups-of-integers
+  kind: proof
+  file: 02-subgroups.md
+  line: 166
+  hash: 2c25a5f2b265
+  verdicts:
+  - stage: S5a
+    verdict: correct
+    by: refereeA
+    hash: 2c25a5f2b265
+    date: '2026-10-12'
+    model: claude-opus-5-5
+    evidence: 02:167-173; cites fd3 divisibility rules (h) (exactly one of a,-a positive), prp-integer-least-element
+      (non-empty, bounded below), division-remainder (a) (n>0), divisibility rules (f) (a,b in N); each
+      says what is needed. n is chosen before a.
+  - stage: S5b
+    verdict: correct
+    by: refereeB
+    hash: 2c25a5f2b265
+    date: '2026-10-12'
+    model: claude-opus-5-5
+    evidence: '02:167-173: fd3 divisibility rules (h) and (f), prp-integer-least-element and division-remainder
+      (a) all match. The meta-claims at 02:176 are true.'
+- key: check:02-subgroups:1
+  kind: check
+  file: 02-subgroups.md
+  line: 184
+  hash: 3e743f7faed5
+  verdicts:
+  - stage: S5a
+    verdict: correct
+    by: refereeA
+    hash: 3e743f7faed5
+    date: '2026-10-12'
+    model: claude-opus-5-5
+    evidence: 02:189; 30 lies in the intersection; 15 = 2·6+3 is not a multiple of 6, by uniqueness of
+      the remainder; the only positive multiple of 15 below 30 is 15, by discreteness, which the ledger
+      records
+  - stage: S5b
+    verdict: correct
+    by: refereeB
+    hash: 3e743f7faed5
+    date: '2026-10-12'
+    model: claude-opus-5-5
+    evidence: '02:185-189: 30 = lcm(6,15); the remainder-uniqueness argument for 15 is valid; the sidecar
+      passes.'
+- key: exr-subgroups-a1
+  kind: exr
+  file: 02-subgroups.md
+  line: 196
+  hash: 4ccc6daac45d
+  verdicts:
+  - stage: S5a
+    verdict: minor
+    by: refereeA
+    hash: 1ac046a65d47
+    date: '2026-10-12'
+    model: claude-opus-5-5
+    evidence: 02-subgroups.md:213 The answer to (c), 'which step of the proof breaks', names only (⊇).
+      The first paragraph's step 'Then -a ∈ H' (line 167) is also false for H = N. Its conclusion survives
+      only because every non-zero element of N is already positive.
+  - stage: S5b
+    verdict: minor
+    by: refereeB
+    hash: 1ac046a65d47
+    date: '2026-10-12'
+    model: claude-opus-5-5
+    evidence: 02-subgroups.md:213 The answer to 'which step of the proof breaks' for H = N names only
+      (⊇); the first paragraph also asserts something false for N.
+  - stage: S6
+    verdict: correct
+    by: verifier
+    hash: 1ac046a65d47
+    date: '2026-10-12'
+    model: claude-opus-5-5
+    evidence: '02-subgroups.md:209-215: (a), (b), (d) correct (min positive element of 4Z+6Z is 2, by
+      script). (c) names only the step (⊇) as breaking, but the first paragraph''s line "Then -a ∈ H"
+      also uses inverses and is false for N. [finding refuted by skeptics]'
+  - stage: S7r
+    verdict: correct
+    by: rereferee
+    hash: 4ccc6daac45d
+    date: '2026-10-12'
+    model: claude-opus-5-5
+    evidence: 'Lines 211-214, solved independently. (a) The minimality step is in (⊆). (b) n = 2 = 6 -
+      4; 1 ∉ H by parity; 6 = 3·2 + 0. (c) N lacks inverses, and (⊇) breaks for n = 1. The added sentence
+      names the first paragraph''s false step ''-a ∈ H'' (a = 1) and says why it is harmless: a non-zero
+      element of N is positive, with a ledger row at line 426 citing fd3:thm-integers-ordered-ring (b).
+      It then says (⊇) i'
+- key: exr-subgroups-b1
+  kind: exr
+  file: 02-subgroups.md
+  line: 220
+  hash: 4f5325a19d95
+  verdicts:
+  - stage: S5a
+    verdict: correct
+    by: refereeA
+    hash: 4f5325a19d95
+    date: '2026-10-12'
+    model: claude-opus-5-5
+    evidence: 02:245-249; the order (v),(iii),(ix),(vii),(i),(vi),(ii) is a chain of dependencies; the
+      analysis of (iv) and (viii) is right
+  - stage: S5b
+    verdict: correct
+    by: refereeB
+    hash: 4f5325a19d95
+    date: '2026-10-12'
+    model: claude-opus-5-5
+    evidence: '02:245: the chain (v),(iii),(ix),(vii),(i),(vi),(ii) is forced. The analysis of distractors
+      (iv) and (viii) is correct and matches blueprint ch03.md:133.'
+  - stage: S6
+    verdict: correct
+    by: verifier
+    hash: 4f5325a19d95
+    date: '2026-10-12'
+    model: claude-opus-5-5
+    evidence: '02-subgroups.md:220-248: (v),(iii),(ix),(vii),(i),(vi),(ii) is admissible, and the chain
+      argument shows it is the only order. (iv) cannot replace (ix) because it is circular, and it cannot
+      replace (vii) because it covers only b=h. (viii) assumes closure, which is to be proved. The solution
+      concedes that (iv) after (ix) is merely redundant.'
+- key: exr-subgroups-b2
+  kind: exr
+  file: 02-subgroups.md
+  line: 252
+  hash: f9f8fcb9555d
+  verdicts:
+  - stage: S5a
+    verdict: minor
+    by: refereeA
+    hash: e326ae44d1b1
+    date: '2026-10-12'
+    model: claude-opus-5-5
+    evidence: 02-subgroups.md:277 Same missing bridge as line 144. 5·(5·[1]) = 25·[1] = [25] and k·[1]
+      = [k] use mod-n-ring (d), a statement about ring multiples, for group multiples.
+  - stage: S5b
+    verdict: minor
+    by: refereeB
+    hash: e326ae44d1b1
+    date: '2026-10-12'
+    model: claude-opus-5-5
+    evidence: '02:271-277: the arithmetic is correct and the sidecar passes. 02:277 has the same uncited
+      identification of group and ring multiples (prp-group-power-laws (e)) before applying thm-integers-mod-n-ring
+      (d).'
+  - stage: S6
+    verdict: correct
+    by: verifier
+    hash: e326ae44d1b1
+    date: '2026-10-12'
+    model: claude-opus-5-5
+    evidence: '02-subgroups.md:252-276: script: {0,4,8}, {0,3,6,9} and {0,6} are subgroups, {0,5} is not;
+      5·[5]=[1] in Z/12Z and <[5]> = Z/12Z. Worked examples: exm-subgroups (d) and the <[2]> examples.'
+  - stage: S7r
+    verdict: correct
+    by: rereferee
+    hash: f9f8fcb9555d
+    date: '2026-10-12'
+    model: claude-opus-5-5
+    evidence: 'Lines 268-277. Parts (a)-(d) re-checked: the differences mod 12 are right, and in (c) [7]
+      ∉ {[0],[5]} by uniqueness of remainders. In the final part, 5·(5·[1]) = 25·[1] uses prp-group-power-laws
+      (c) for group multiples, then (e) identifies 25·[1] with the ring multiple, then fd3:thm-integers-mod-n-ring
+      (d) gives [25], and [25] = [1] since 12 | 24. k·[1] = [k] now also cites (e). The missing-bridge'
+- key: exr-subgroups-b3
+  kind: exr
+  file: 02-subgroups.md
+  line: 280
+  hash: 0b81500df1bd
+  verdicts:
+  - stage: S5a
+    verdict: correct
+    by: refereeA
+    hash: 0b81500df1bd
+    date: '2026-10-12'
+    model: claude-opus-5-5
+    evidence: 02:287-289; aZ+bZ is a non-zero subgroup; the comparison with fd3:thm-integers-bezout (e)
+      is accurate
+  - stage: S5b
+    verdict: correct
+    by: refereeB
+    hash: 0b81500df1bd
+    date: '2026-10-12'
+    model: claude-opus-5-5
+    evidence: 02:287-289. The meta-claim (fd3 divided a and b by d in (b), then deduced (e)) was checked
+      against fd3 02-gcd-and-bezout.md, proof of thm-integers-bezout.
+  - stage: S6
+    verdict: correct
+    by: verifier
+    hash: 0b81500df1bd
+    date: '2026-10-12'
+    model: claude-opus-5-5
+    evidence: '02-subgroups.md:280-290: valid; the comparison with fd3 thm-integers-bezout (b)/(e) checked
+      against fd3 02-gcd-and-bezout.md:94 (divides a by d).'
+- key: exr-subgroups-c1
+  kind: exr
+  file: 02-subgroups.md
+  line: 294
+  hash: 345c46a6230d
+  verdicts:
+  - stage: S5a
+    verdict: correct
+    by: refereeA
+    hash: ffb7aeee0275
+    date: '2026-10-12'
+    model: claude-opus-5-5
+    evidence: 02:309-315; pigeonhole fd2 cor (a) applies to k+1 > k; 1 ≤ j-i ≤ k; the inverse is h^{j-i-1}
+      for j-i ≥ 2, and h=e for j-i=1; the uniqueness in 01:111 is used correctly
+  - stage: S5b
+    verdict: correct
+    by: refereeB
+    hash: ffb7aeee0275
+    date: '2026-10-12'
+    model: claude-opus-5-5
+    evidence: '02:309-315: fd2:def-finite uses {1..n}, so {1..k+1} has k+1 elements; pigeonhole (a) applies.
+      The index bounds 1 ≤ j-i-1 ≤ k hold, the case j-i = 1 is handled, and the sidecar passes.'
+  - stage: S6
+    verdict: correct
+    by: verifier
+    hash: ffb7aeee0275
+    date: '2026-10-12'
+    model: claude-opus-5-5
+    evidence: '02-subgroups.md:294-314: pigeonhole (fd2 cor-pigeonhole-finite-sets (a)) gives h^i=h^j;
+      e=h^{j-i} with 1≤j-i≤k; the inverse h^{j-i-1} is handled, including the case j-i=1. One reasonable
+      completion. The N discussion is correct.'
+  - stage: S7r
+    verdict: correct
+    by: rereferee
+    hash: 345c46a6230d
+    date: '2026-10-12'
+    model: claude-opus-5-5
+    evidence: 'Lines 307-324, solved independently. Pigeonhole: fd2:cor-pigeonhole-finite-sets (a), no
+      injection from k+1 elements to k. e = h^{-i}h^j = h^{j-i} by power laws (b),(a), with 1 ≤ j-i ≤
+      k. Inverse: h^{-1} = h^{j-i-1} by thm-group-basic-properties (2) (uniqueness of inverses) when j-i
+      ≥ 2, and h = e when j-i = 1. The new marking scheme has 6 steps summing to 10 (1+2+2+3+1+1) with
+      named fatal errors, '
+- key: exr-subgroups-c2
+  kind: exr
+  file: 02-subgroups.md
+  line: 327
+  hash: fb4749385e8f
+  verdicts:
+  - stage: S5a
+    verdict: correct
+    by: refereeA
+    hash: fb4749385e8f
+    date: '2026-10-12'
+    model: claude-opus-5-5
+    evidence: 02:337-346; the outline matches the proof, and the marking scheme sums to 10
+  - stage: S5b
+    verdict: correct
+    by: refereeB
+    hash: fb4749385e8f
+    date: '2026-10-12'
+    model: claude-opus-5-5
+    evidence: '02:337-346: the marking scheme totals 3+1+2+2+1+1 = 10 and matches the blueprint.'
+  - stage: S6
+    verdict: minor
+    by: verifier
+    hash: fb4749385e8f
+    date: '2026-10-12'
+    model: claude-opus-5-5
+    evidence: 02-subgroups.md:343 The marking scheme gives no mapping for the repeated-subtraction (descent)
+      route that the chapter's own Try-it-first suggests.
+  - stage: S7r
+    verdict: correct
+    by: rereferee
+    hash: fb4749385e8f
+    date: '2026-10-12'
+    model: claude-opus-5-5
+    evidence: 'Lines 346-355. The outline matches the proof of thm-subgroups-of-integers. The marking
+      scheme has 6 steps summing to 10 (3+1+2+2+1+1). The S6 finding is resolved: a line now maps the
+      descent route (strong induction on a ≥ 0 using a - n ∈ H, negative a handled through -a, minimality
+      ruling out 0 < a < n) to the division and minimality points, as STYLE §11.6 (''If there is a second
+      natural route...'')'
+- key: exr-subgroups-c3
+  kind: exr
+  file: 02-subgroups.md
+  line: 358
+  hash: 26e3c3b88ebf
+  verdicts:
+  - stage: S5a
+    verdict: correct
+    by: refereeA
+    hash: 26e3c3b88ebf
+    date: '2026-10-12'
+    model: claude-opus-5-5
+    evidence: 02:374-378; (a) both directions; (b) mn>0 by (O4) gives a non-zero subgroup, and the theorem
+      gives L; the comparison with fd3:exr-unique-factorization-b2 (dividing c by L) is accurate
+  - stage: S5b
+    verdict: correct
+    by: refereeB
+    hash: 26e3c3b88ebf
+    date: '2026-10-12'
+    model: claude-opus-5-5
+    evidence: 02:374-378. The comparison with fd3:exr-unique-factorization-b2 (dividing c by L) was checked
+      at fd3 03-unique-factorization.md:306.
+  - stage: S6
+    verdict: correct
+    by: verifier
+    hash: 26e3c3b88ebf
+    date: '2026-10-12'
+    model: claude-opus-5-5
+    evidence: '02-subgroups.md:349-381: (a), (b) valid; mn>0 by (O4); the claim that fd3 exr-unique-factorization-b2
+      divides c by L is checked at fd3 03-unique-factorization.md:313.'
+- key: def-group-homomorphism
+  kind: def
+  file: 03-homomorphisms.md
+  line: 23
+  hash: 8157de1b85d0
+  verdicts:
+  - stage: S5a
+    verdict: correct
+    by: refereeA
+    hash: 8157de1b85d0
+    date: '2026-10-12'
+    model: claude-opus-5-5
+    evidence: '03:23-31 definition matches its use. 03:35: the zero map into a field respects + and ·
+      (0=0+0, 0=0·0), and def-field-homomorphism (F4.2 04:14-16) has a separate clause φ(1)=1, so the
+      comparison is right. 03:39-40: the trivial map and id_G are checked, and id_G is bijective by fd2:thm-bijection-iff-inverse.
+      03:44-54: the product group axioms (G1)-(G3) are checked coordinatewise.'
+  - stage: S5b
+    verdict: correct
+    by: refereeB
+    hash: 8157de1b85d0
+    date: '2026-10-12'
+    model: claude-opus-5-5
+    evidence: '03:23-54 checked: the definition, the zero-map comparison with def-field-homomorphism (which
+      does have the clause phi(1)=1), the trivial and identity homomorphisms, and the product group''s
+      (G1)-(G3), all ledgered (424-426).'
+- key: exm-group-homomorphisms
+  kind: exm
+  file: 03-homomorphisms.md
+  line: 56
+  hash: c727f5b79411
+  verdicts:
+  - stage: S5a
+    verdict: minor
+    by: refereeA
+    hash: fb1f00e6796c
+    date: '2026-10-12'
+    model: claude-opus-5-5
+    evidence: 03-homomorphisms.md:97 'Part (c) is the first isomorphism of a group with itself other than
+      the identity' is false as stated. Part (c) itself shows that c_g is the identity whenever g commutes
+      with every element, e.g. every c_g in an abelian group, and c_e in any group.
+  - stage: S5b
+    verdict: minor
+    by: refereeB
+    hash: fb1f00e6796c
+    date: '2026-10-12'
+    model: claude-opus-5-5
+    evidence: 03-homomorphisms.md:90 Solution (e) writes Phi([x]_{mn} + [y]_{mn}) = ... but the map was
+      never named Phi in the example or in this section.
+  - stage: S8
+    verdict: minor
+    by: seam
+    hash: fb1f00e6796c
+    date: '2026-10-12'
+    model: claude-opus-5-5
+    evidence: 03-homomorphisms.md:97 The comment after the example says c_g is always an isomorphism other
+      than the identity. Part (c)'s own solution shows this is false when g commutes with every element.
+      The solution of (e) also uses a symbol, Φ, that the chapter never introduces.
+  - stage: S7r
+    verdict: correct
+    by: rereferee
+    hash: c727f5b79411
+    date: '2026-10-12'
+    model: claude-opus-5-5
+    evidence: '03-homomorphisms.md:56-97. All seven earlier findings are resolved. (1) The comment at
+      :97 now says c_g can differ from the identity, and differs exactly when g fails to commute with
+      some element. That matches the solution of (c) at :86, and the example is right: in the fold after
+      exm-groups (c) (01-groups.md, the paragraph after the solution of (c)), f∘g ≠ g∘f, and f h f^{-1}
+      = h would give f h ='
+- key: thm-homomorphism-basic-properties
+  kind: thm
+  file: 03-homomorphisms.md
+  line: 103
+  hash: b95e787cb996
+  verdicts:
+  - stage: S5a
+    verdict: correct
+    by: refereeA
+    hash: b95e787cb996
+    date: '2026-10-12'
+    model: claude-opus-5-5
+    evidence: 03:103-115. Every clause is true for any homomorphism, and the proof uses the hypothesis
+      throughout.
+  - stage: S5b
+    verdict: correct
+    by: refereeB
+    hash: b95e787cb996
+    date: '2026-10-12'
+    model: claude-opus-5-5
+    evidence: '03:103-115: part order (a)-(e) matches the blueprint''s binding order.'
+- key: proof:thm-homomorphism-basic-properties
+  kind: proof
+  file: 03-homomorphisms.md
+  line: 121
+  hash: a1ce81b5c8c5
+  verdicts:
+  - stage: S5a
+    verdict: correct
+    by: refereeA
+    hash: a1ce81b5c8c5
+    date: '2026-10-12'
+    model: claude-opus-5-5
+    evidence: '(a): left cancellation, thm-group-basic-properties (4). (b): uniqueness of inverses, (2).
+      (c),(e): thm-subgroup-test, whose statement is non-empty plus ab^{-1}∈H, and both hypotheses are
+      checked. (d): fd1:ax-induction with g^{n+1}=g^n g from def-group-integer-power. For n<0, a^n=(a^{-1})^m
+      in G and φ(a)^n=(φ(a)^{-1})^m in H come from the same definition. The ℕ case was proved for an arbitrary
+      a∈G,'
+  - stage: S5b
+    verdict: correct
+    by: refereeB
+    hash: a1ce81b5c8c5
+    date: '2026-10-12'
+    model: claude-opus-5-5
+    evidence: '03:121-154: cancellation (thm-group-basic-properties (4)), uniqueness of inverses (2),
+      subgroup test, induction plus def-group-integer-power for n<0 (a recorded deviation). e_H^{-1}=e_H
+      and the omega reading are both ledgered.'
+- key: check:03-homomorphisms:1
+  kind: check
+  file: 03-homomorphisms.md
+  line: 158
+  hash: e64610a63e8e
+  verdicts:
+  - stage: S5a
+    verdict: correct
+    by: refereeA
+    hash: e64610a63e8e
+    date: '2026-10-12'
+    model: claude-opus-5-5
+    evidence: '03:163 cites fd3:prp-ordered-ring-rules (f) (ab=0 ⇒ a=0 or b=0) and fd3:prp-divisibility-rules-integers
+      (g) (a|1 ⇒ a=±1). Both apply as cited: 3≠±1.'
+  - stage: S5b
+    verdict: correct
+    by: refereeB
+    hash: e64610a63e8e
+    date: '2026-10-12'
+    model: claude-opus-5-5
+    evidence: '03:158-164: prp-ordered-ring-rules (f) gives no zero divisors; prp-divisibility-rules-integers
+      (g) gives a|1 => a=+-1, so 3 does not divide 1.'
+- key: prp-homomorphism-composition-inverse
+  kind: prp
+  file: 03-homomorphisms.md
+  line: 168
+  hash: 91b1f0d3eae2
+  verdicts:
+  - stage: S5a
+    verdict: correct
+    by: refereeA
+    hash: 91b1f0d3eae2
+    date: '2026-10-12'
+    model: claude-opus-5-5
+    evidence: 03:168-178. The statements are standard and true.
+  - stage: S5b
+    verdict: correct
+    by: refereeB
+    hash: 91b1f0d3eae2
+    date: '2026-10-12'
+    model: claude-opus-5-5
+    evidence: 03:168-178 statement fine.
+- key: proof:prp-homomorphism-composition-inverse
+  kind: proof
+  file: 03-homomorphisms.md
+  line: 184
+  hash: 938b8384b6dc
+  verdicts:
+  - stage: S5a
+    verdict: correct
+    by: refereeA
+    hash: 0e82463e229a
+    date: '2026-10-12'
+    model: claude-opus-5-5
+    evidence: '(a): fd2:def-composition. (b): fd2:thm-bijection-iff-inverse gives φ^{-1} bijective, then
+      φ is injective and φ∘φ^{-1}=id_H. (c): the paragraph after the definition, (b), and fd2:thm-composition-injective-surjective
+      (c) (bijective∘bijective). Each citation says what is used.'
+  - stage: S5b
+    verdict: minor
+    by: refereeB
+    hash: 0e82463e229a
+    date: '2026-10-12'
+    model: claude-opus-5-5
+    evidence: 03-homomorphisms.md:196 The pointer 'the paragraph after @def-group-homomorphism' points
+      at the wrong block.
+  - stage: S7r
+    verdict: correct
+    by: rereferee
+    hash: 938b8384b6dc
+    date: '2026-10-12'
+    model: claude-opus-5-5
+    evidence: 03-homomorphisms.md:184-197. The pointer at :196 now reads 'the second of the two homomorphisms
+      listed after @def-group-homomorphism'. That correctly names the bullet at :40, which proves id_G
+      is bijective via fd2:thm-bijection-iff-inverse, so the earlier finding is resolved. In (a), the
+      chain follows from fd2:def-composition. In (b), the injectivity argument is valid. In (c), fd2:thm-composition-
+- key: prp-homomorphism-injective-iff-kernel-trivial
+  kind: prp
+  file: 03-homomorphisms.md
+  line: 201
+  hash: 34aa19cb879b
+  verdicts:
+  - stage: S5a
+    verdict: correct
+    by: refereeA
+    hash: 34aa19cb879b
+    date: '2026-10-12'
+    model: claude-opus-5-5
+    evidence: '03:201-205. True. The homomorphism hypothesis is needed: the shift x↦x+1 is injective,
+      yet the kernel of a non-homomorphism makes no sense in the same way.'
+  - stage: S5b
+    verdict: correct
+    by: refereeB
+    hash: 34aa19cb879b
+    date: '2026-10-12'
+    model: claude-opus-5-5
+    evidence: 03:201-205.
+- key: proof:prp-homomorphism-injective-iff-kernel-trivial
+  kind: proof
+  file: 03-homomorphisms.md
+  line: 211
+  hash: 5715fea18ca4
+  verdicts:
+  - stage: S5a
+    verdict: correct
+    by: refereeA
+    hash: 5715fea18ca4
+    date: '2026-10-12'
+    model: claude-opus-5-5
+    evidence: (⇒) uses thm (a) and injectivity. (⇐) uses the homomorphism property with thm (b), then
+      ab^{-1}=e_G gives a=(ab^{-1})b=e_G b=b by (G1)-(G3).
+  - stage: S5b
+    verdict: correct
+    by: refereeB
+    hash: 5715fea18ca4
+    date: '2026-10-12'
+    model: claude-opus-5-5
+    evidence: '03:211-219: both directions complete, citing thm (a), (b).'
+- key: check:03-homomorphisms:2
+  kind: check
+  file: 03-homomorphisms.md
+  line: 223
+  hash: 8901a0afc5fc
+  verdicts:
+  - stage: S5a
+    verdict: correct
+    by: refereeA
+    hash: 8901a0afc5fc
+    date: '2026-10-12'
+    model: claude-opus-5-5
+    evidence: 729=104·7+1. The sidecar prp-homomorphism-injective-iff-kernel-trivial.py passes. Both the
+      homomorphism (exm (b)) and the kernel criterion are cited.
+  - stage: S5b
+    verdict: correct
+    by: refereeB
+    hash: 8901a0afc5fc
+    date: '2026-10-12'
+    model: claude-opus-5-5
+    evidence: '03:228: 3^6 = 729 = 104*7+1; sidecar passes.'
+- key: exm-isomorphic-small-groups
+  kind: exm
+  file: 03-homomorphisms.md
+  line: 235
+  hash: 4185b519524d
+  verdicts:
+  - stage: S5a
+    verdict: correct
+    by: refereeA
+    hash: 868e51495eb0
+    date: '2026-10-12'
+    model: claude-opus-5-5
+    evidence: '(a): fd3:thm-integers-mod-n-ring (b), four table entries, fd3:prp-ring-algebra (c). (b):
+      independence of the representative via power laws (a),(c); the images [1],[2],[4],[3] are right.
+      (c): the paragraph after fd3:def-ring-unit says a unit is not a zero divisor; φ([2])=φ([1])^2=[1]=φ([0])
+      contradicts injectivity. (d): fd3:prp-ordered-ring-rules (f) and the kernel criterion. Sidecar exm-isomorphic'
+  - stage: S5b
+    verdict: minor
+    by: refereeB
+    hash: 868e51495eb0
+    date: '2026-10-12'
+    model: claude-opus-5-5
+    evidence: '03-homomorphisms.md:279 Meta-claim: the rotations of the square give ''a third group with
+      four elements''. The page has already shown three: Z/4Z, (Z/5Z)^x and (Z/8Z)^x.'
+  - stage: S7r
+    verdict: correct
+    by: rereferee
+    hash: 4185b519524d
+    date: '2026-10-12'
+    model: claude-opus-5-5
+    evidence: '03-homomorphisms.md:233-279. Both earlier findings are resolved. (1) :279 now reads ''another
+      group with four elements''. The pointer to Section 3.4 B3 is right: exr-permutations-and-cycles-b3
+      (c) is the isomorphism Z/4Z → ⟨ρ⟩. (2) The facts about Z/nZ are now cited. fd3:thm-integers-mod-n-ring
+      (b),(c) give the four classes and [1]≠[0] (:258, :268, :270). fd3:thm-quotient-ring-by-ideal (a)
+      gives k''-'
+- key: exr-homomorphisms-a1
+  kind: exr
+  file: 03-homomorphisms.md
+  line: 301
+  hash: 829868a4cfe9
+  verdicts:
+  - stage: S5a
+    verdict: correct
+    by: refereeA
+    hash: 598e34b1480f
+    date: '2026-10-12'
+    model: claude-opus-5-5
+    evidence: '(a)-(c) are right: 6Z∩4Z=12Z by thm-subgroups-of-integers, and the restriction argument
+      in (c) holds. (d)''s answer ''No'' holds only if the target keeps the operation +; see findings.
+      [finding refuted by skeptics]'
+  - stage: S5b
+    verdict: correct
+    by: refereeB
+    hash: 598e34b1480f
+    date: '2026-10-12'
+    model: claude-opus-5-5
+    evidence: '03:297-316: (b) 6Z ∩ 4Z = 12Z (sidecar ok); (c) restriction plus thm (e); (d) uniqueness
+      of the identity. Four parts, within STYLE §6''s 2-6.'
+  - stage: S6
+    verdict: minor
+    by: verifier
+    hash: 598e34b1480f
+    date: '2026-10-12'
+    model: claude-opus-5-5
+    evidence: 03-homomorphisms.md:304 Part (d) is ambiguous, and the official "No" marks wrong a mathematically
+      correct reading.
+  - stage: S7r
+    verdict: minor
+    by: rereferee
+    hash: 829868a4cfe9
+    date: '2026-10-12'
+    model: claude-opus-5-5
+    evidence: 'b) proves this for a+b+1 with identity −1, a different operation, and is only cited as
+      ''compare''. The identity and the homomorphism equation do hold: (a+1)∗(b+1) = a+b+1. Fix: add one
+      clause, e.g. ''(a group by the check of @exr-groups-a1 (b) with −1 for +1: identity 1, inverse 2−a)''.
+      Or note that the isomorphism transports the group structure, since ∗ is the image of + under the
+      bijection x ↦ x+1.'
+  - stage: S7r
+    verdict: correct
+    by: rereferee
+    hash: a8d36ef1ac5c
+    date: '2026-10-12'
+    model: claude-opus-5-5
+    evidence: ) with a∗b = a+b−1 has both bracketings equal to a+b+c−2, identity 1 and inverse 2−a. The
+      map x↦x+1 is a bijection with inverse x↦x−1, and (a+1)∗(b+1) = a+b+1, so the isomorphism (Z,+)→(Z,∗)
+      holds. The comparison with exr-groups-a1 (b) (identity −1, inverse −a−2, bracketings a+b+c+2) is
+      accurate. The ledger row is marked STALE only because the text changed; the diff touches no verify/ch03
+      sidecar.
+- key: exr-homomorphisms-b1
+  kind: exr
+  file: 03-homomorphisms.md
+  line: 324
+  hash: c26fa5f8ce52
+  verdicts:
+  - stage: S5a
+    verdict: correct
+    by: refereeA
+    hash: fc55ba86fdb6
+    date: '2026-10-12'
+    model: claude-opus-5-5
+    evidence: 'φ(k)=k·φ(1) by thm (d) with prp-group-power-laws (e) (k·1=k in Z). The converse is exm
+      (b). The kernels are right (2k≡0 mod 6 ⇒ k=3; 4k: 12; 5k: 30), and sidecar exr-homomorphisms-b1.py
+      passes.'
+  - stage: S5b
+    verdict: minor
+    by: refereeB
+    hash: fc55ba86fdb6
+    date: '2026-10-12'
+    model: claude-opus-5-5
+    evidence: '03-homomorphisms.md:335 The step from k·[c] = [kc] to ''the kernel is {k : 6 | kc}'' uses
+      fd3:thm-quotient-ring-by-ideal (d), with neither a citation nor a ledger line.'
+  - stage: S6
+    verdict: minor
+    by: verifier
+    hash: fc55ba86fdb6
+    date: '2026-10-12'
+    model: claude-opus-5-5
+    evidence: 03-homomorphisms.md:325 B1 has no worked example of its classification step, and its hint
+      states that step instead of naming a tool.
+  - stage: S7r
+    verdict: correct
+    by: rereferee
+    hash: c26fa5f8ce52
+    date: '2026-10-12'
+    model: claude-opus-5-5
+    evidence: '03-homomorphisms.md:324-347. Both earlier findings are resolved. (1) At :339, [kc]=[0]
+      ⇔ kc ∈ 6Z is now cited to fd3:thm-quotient-ring-by-ideal (d), and the ledger at :471 lists it. (2)
+      The hint at :329 now names a tool (thm-homomorphism-basic-properties (d) with k = k·1). The paragraph
+      after the theorem (:156) works the classification step: every homomorphism Z → G is k ↦ φ(1)^k.
+      I solved it inde'
+- key: exr-homomorphisms-b2
+  kind: exr
+  file: 03-homomorphisms.md
+  line: 349
+  hash: 6a578b8accef
+  verdicts:
+  - stage: S5a
+    verdict: correct
+    by: refereeA
+    hash: 6a578b8accef
+    date: '2026-10-12'
+    model: claude-opus-5-5
+    evidence: '(a): the kernel is {e_G} because pairs are equal coordinatewise. (b): φ([2])=2·φ([1])=([0],[0])=φ([0])
+      contradicts injectivity; the other direction is handled by prp-homomorphism-composition-inverse
+      (b).'
+  - stage: S5b
+    verdict: minor
+    by: refereeB
+    hash: 6a578b8accef
+    date: '2026-10-12'
+    model: claude-opus-5-5
+    evidence: '03:345-362: the math is correct. The title is bare: [B2].'
+  - stage: S6
+    verdict: correct
+    by: verifier
+    hash: 6a578b8accef
+    date: '2026-10-12'
+    model: claude-opus-5-5
+    evidence: '03-homomorphisms.md:345-360: (a) valid; (b) valid, and a brute force finds 0 isomorphisms
+      Z4→Z2×Z2. Worked example: exm-isomorphic-small-groups (c).'
+- key: exr-homomorphisms-b3
+  kind: exr
+  file: 03-homomorphisms.md
+  line: 368
+  hash: 9e91c6f3e483
+  verdicts:
+  - stage: S5a
+    verdict: correct
+    by: refereeA
+    hash: 9e91c6f3e483
+    date: '2026-10-12'
+    model: claude-opus-5-5
+    evidence: The sign map is total by fd3:prp-ordered-ring-rules (i). The product signs follow from (c)
+      and (d), as checked case by case. The kernel is Q_{>0}. The 2-adic remark is labelled unproved and
+      is not used; it is in fact a homomorphism, since v_2 is additive.
+  - stage: S5b
+    verdict: minor
+    by: refereeB
+    hash: 9e91c6f3e483
+    date: '2026-10-12'
+    model: claude-opus-5-5
+    evidence: '03:364-376: the sign map is correct, and the 2-adic alternative is marked not proved, with
+      nothing depending on it. The title is bare: [B3].'
+  - stage: S6
+    verdict: correct
+    by: verifier
+    hash: 9e91c6f3e483
+    date: '2026-10-12'
+    model: claude-opus-5-5
+    evidence: '03-homomorphisms.md:364-376: the sign map is well defined (total order) and multiplicative
+      by fd3 prp-ordered-ring-rules (c),(d); it is onto; kernel Q_{>0}. The 2-adic alternative is correct
+      and labelled as unproved.'
+- key: exr-homomorphisms-c1
+  kind: exr
+  file: 03-homomorphisms.md
+  line: 384
+  hash: 9deb70944775
+  verdicts:
+  - stage: S5a
+    verdict: correct
+    by: refereeA
+    hash: cb9e0ee94ee5
+    date: '2026-10-12'
+    model: claude-opus-5-5
+    evidence: '(a): the computation uvu... is right, with φ(G) from fd2:def-image. (b): (f∘g)(1)=f(1)=2
+      and (g∘f)(1)=g(2)=3. Citing exr-groups-a1 (c) from an exercise solution is allowed (STYLE l.237),
+      and the computation is redone inline anyway.'
+  - stage: S5b
+    verdict: minor
+    by: refereeB
+    hash: cb9e0ee94ee5
+    date: '2026-10-12'
+    model: claude-opus-5-5
+    evidence: 03-homomorphisms.md:396 The solution says (f∘g)(1)=2 and (g∘f)(1)=3 are 'as computed in
+      @exr-groups-a1 (c)', but that solution computes only f∘g. The closing '(both groups have six elements)'
+      rests on the later §04 count without a reference or ledger line.
+  - stage: S6
+    verdict: correct
+    by: verifier
+    hash: cb9e0ee94ee5
+    date: '2026-10-12'
+    model: claude-opus-5-5
+    evidence: '03-homomorphisms.md:380-395: (a) valid; (b) valid (script: the largest image of Z6 in S3
+      has 3 elements, consistent). g∘f(1)=3 is recomputed inline.'
+  - stage: S7r
+    verdict: correct
+    by: rereferee
+    hash: 9deb70944775
+    date: '2026-10-12'
+    model: claude-opus-5-5
+    evidence: 03-homomorphisms.md:393-409. The earlier finding is resolved. The non-commuting pair is
+      now cited to the fold after exm-groups (c) (01-groups.md). That fold computes both (f∘g)(x)=y and
+      (g∘f)(x)=z, which matches f(1)=2 and g(2)=3 here. The six-element aside is now an explicit pointer
+      to Section 3.4, where the count n! and the list of S_3's six elements appear (04-permutations-and-cycles.md:154-179
+- key: exr-homomorphisms-c2
+  kind: exr
+  file: 03-homomorphisms.md
+  line: 411
+  hash: 8d223ddb243c
+  verdicts:
+  - stage: S5a
+    verdict: correct
+    by: refereeA
+    hash: 522c7d24451f
+    date: '2026-10-12'
+    model: claude-opus-5-5
+    evidence: '(a): all three equivalences go through thm (b) and multiplication by φ(b) or φ(a)^{±1}.
+      (b): b=a(a^{-1}b), and φ(ak)=φ(a)e_H. (c): the fiber is 7+5Z=[7] by fd3:thm-quotient-ring-by-ideal
+      (a).'
+  - stage: S5b
+    verdict: minor
+    by: refereeB
+    hash: 522c7d24451f
+    date: '2026-10-12'
+    model: claude-opus-5-5
+    evidence: '03:399-421: (a)-(c) correct; the fiber of 7 is {7+5j}. The title is bare: [C2].'
+  - stage: S6
+    verdict: correct
+    by: verifier
+    hash: 522c7d24451f
+    date: '2026-10-12'
+    model: claude-opus-5-5
+    evidence: '03-homomorphisms.md:399-422: (a) all three equivalences valid; (b) both inclusions valid;
+      (c) the fiber {...,-3,2,7,12,...} is confirmed by script.'
+  - stage: S7r
+    verdict: correct
+    by: rereferee
+    hash: 8d223ddb243c
+    date: '2026-10-12'
+    model: claude-opus-5-5
+    evidence: '03-homomorphisms.md:411-441. I re-derived (a): (i)⇒(ii) and (ii)⇒(i) multiply on the right
+      by φ(b), and (i)⇔(iii) is the mirror argument with thm-homomorphism-basic-properties (b). Both inclusions
+      in (b) are right with k = a^{-1}b. In (c), the kernel 5Z comes from exm-group-homomorphisms (a),
+      and the fiber {7+5j} = [7] = [2] is correct. The new marking scheme adds to 10 (5×2), and its fatal
+      errors'
+- key: def-symmetric-group
+  kind: def
+  file: 04-permutations-and-cycles.md
+  line: 11
+  hash: 8acb99552dda
+  verdicts:
+  - stage: S5a
+    verdict: correct
+    by: refereeA
+    hash: 8acb99552dda
+    date: '2026-10-12'
+    model: claude-opus-5-5
+    evidence: 04:11-34; S_X is exm-groups (c) (01:61); support empty only for id by fd2:prp-function-equality;
+      S_0, S_1, S_2 counts correct (fd2:prp-empty-function (a), injectivity case split)
+  - stage: S5b
+    verdict: correct
+    by: refereeB
+    hash: 8acb99552dda
+    date: '2026-10-12'
+    model: claude-opus-5-5
+    evidence: '04:11-34: S_X matches exm-groups (c) (01:61); supp empty only for id cited to fd2:prp-function-equality;
+      S_0 from fd2:prp-empty-function (a); S_1, S_2 case analysis is sound; matches NOTATION row 259.'
+- key: def-cycle
+  kind: def
+  file: 04-permutations-and-cycles.md
+  line: 42
+  hash: 3382bf57a37d
+  verdicts:
+  - stage: S5a
+    verdict: correct
+    by: refereeA
+    hash: 3382bf57a37d
+    date: '2026-10-12'
+    model: claude-opus-5-5
+    evidence: 04:42-58; distinctness makes gamma a function; reversed cycle is a two-sided inverse, fd2:thm-bijection-iff-inverse;
+      supp = {i_1..i_k} uses k>=2; rotation examples checked
+  - stage: S5b
+    verdict: correct
+    by: refereeB
+    hash: 3382bf57a37d
+    date: '2026-10-12'
+    model: claude-opus-5-5
+    evidence: '04:42-60: the well-definedness, inverse (i_k ... i_1) via fd2:thm-bijection-iff-inverse,
+      and supp = entries all check out; the rotation examples are correct.'
+- key: check:04-permutations-and-cycles:1
+  kind: check
+  file: 04-permutations-and-cycles.md
+  line: 66
+  hash: 4b6e5de41acf
+  verdicts:
+  - stage: S5a
+    verdict: correct
+    by: refereeA
+    hash: 4b6e5de41acf
+    date: '2026-10-12'
+    model: claude-opus-5-5
+    evidence: 04:66-72; (2 4 1)=(1 2 4), (1 4 2) has bottom row 4 1 3 2 and is their inverse; sidecar
+      def-cycle.py ok
+  - stage: S5b
+    verdict: correct
+    by: refereeB
+    hash: 4b6e5de41acf
+    date: '2026-10-12'
+    model: claude-opus-5-5
+    evidence: '04:66-72: (2 4 1) = (1 2 4); (1 4 2) has bottom row 4 1 3 2, and it is their inverse. Checked
+      by hand.'
+- key: exm-cycle-notation
+  kind: exm
+  file: 04-permutations-and-cycles.md
+  line: 76
+  hash: ce1717d87c43
+  verdicts:
+  - stage: S5a
+    verdict: correct
+    by: refereeA
+    hash: ce1717d87c43
+    date: '2026-10-12'
+    model: claude-opus-5-5
+    evidence: 04:76-90; (1 3)(1 2)=(1 2 3), (1 2)(1 3)=(1 3 2), sigma=(1 3)(2 5 4) both orders, checked
+      pointwise; extension to S_n, n>=3 valid; warnings at 97 and 103 recomputed correctly; sidecar ok
+  - stage: S5b
+    verdict: correct
+    by: refereeB
+    hash: ce1717d87c43
+    date: '2026-10-12'
+    model: claude-opus-5-5
+    evidence: '04:76-90: (1 3)(1 2) = (1 2 3), (1 2)(1 3) = (1 3 2), and sigma = (1 3)(2 5 4) in both
+      orders. The ''not abelian for n >= 3'' sentence and the n <= 2 fold are both correct, and both warnings
+      check out.'
+- key: check:04-permutations-and-cycles:2
+  kind: check
+  file: 04-permutations-and-cycles.md
+  line: 106
+  hash: 7c80fc8dc347
+  verdicts:
+  - stage: S5a
+    verdict: correct
+    by: refereeA
+    hash: 7c80fc8dc347
+    date: '2026-10-12'
+    model: claude-opus-5-5
+    evidence: '04:106-112; (1 2 3)(1 2): 1->3, 2->2, 3->1, = (1 3)'
+  - stage: S5b
+    verdict: correct
+    by: refereeB
+    hash: 7c80fc8dc347
+    date: '2026-10-12'
+    model: claude-opus-5-5
+    evidence: '04:106-112: (1 2 3)(1 2) = (1 3) is correct.'
+- key: lem-permutations-fixing-last-point
+  kind: lem
+  file: 04-permutations-and-cycles.md
+  line: 118
+  hash: 9f2940bc8f31
+  verdicts:
+  - stage: S5a
+    verdict: correct
+    by: refereeA
+    hash: 9f2940bc8f31
+    date: '2026-10-12'
+    model: claude-opus-5-5
+    evidence: 04:118-129; S' a subgroup by exm-subgroups (e) (02:44, chosen point n+1); statement matches
+      what Section 3.5 relies on
+  - stage: S5b
+    verdict: correct
+    by: refereeB
+    hash: 9f2940bc8f31
+    date: '2026-10-12'
+    model: claude-opus-5-5
+    evidence: '04:118-129: S'' is a subgroup, by exm-subgroups (e) (02 item 5, chosen point x_0 = n+1).
+      The statement matches the blueprint and how §05 uses it (05:84, 05:95).'
+  - stage: S8
+    verdict: minor
+    by: seam
+    hash: 9f2940bc8f31
+    date: '2026-10-12'
+    model: claude-opus-5-5
+    evidence: NOTATION.md:259 The NOTATION row says the wrong place introduces ρ̄ and that it is local
+      to one proof.
+  - stage: S7r
+    verdict: correct
+    by: rereferee
+    hash: 9f2940bc8f31
+    date: '2026-10-12'
+    model: claude-opus-5-5
+    evidence: '04:118-149. Checked (a) (injectivity rules out σ(i)=n+1; surjectivity), the proof that
+      E maps into S'', the mutual inverses via fd2:prp-function-equality and fd2:thm-bijection-iff-inverse,
+      and the homomorphism step, which uses τ(i)≤n from (a). The subgroup claim is justified at 04:129
+      by exm-subgroups (e). Earlier S8 finding resolved: the S_n row of authoring/NOTATION.md:261 now
+      says ρ̄ is introduc'
+- key: proof:lem-permutations-fixing-last-point
+  kind: proof
+  file: 04-permutations-and-cycles.md
+  line: 135
+  hash: e06a6e096448
+  verdicts:
+  - stage: S5a
+    verdict: correct
+    by: refereeA
+    hash: e06a6e096448
+    date: '2026-10-12'
+    model: claude-opus-5-5
+    evidence: 04:135-149; (a) injectivity keeps values <= n, surjectivity direct; (b) E maps into S' via
+      extension of rho^{-1}, mutual inverses by fd2:prp-function-equality, homomorphism uses tau(i)<=n;
+      prp-homomorphism-composition-inverse (b) says what is cited; n=0 works
+  - stage: S5b
+    verdict: correct
+    by: refereeB
+    hash: e06a6e096448
+    date: '2026-10-12'
+    model: claude-opus-5-5
+    evidence: '04:135-149: surjectivity is direct, E lands in S'', R and E are mutual inverses, and R
+      is a homomorphism, with E an isomorphism by prp-homomorphism-composition-inverse (b) (03:175). The
+      unlabelled restriction step is ledgered (04:445).'
+- key: prp-symmetric-group-order
+  kind: prp
+  file: 04-permutations-and-cycles.md
+  line: 153
+  hash: 5cd5f9a596ad
+  verdicts:
+  - stage: S5a
+    verdict: minor
+    by: refereeA
+    hash: 5cd5f9a596ad
+    date: '2026-10-12'
+    model: claude-opus-5-5
+    evidence: 04-permutations-and-cycles.md:179 The step from 'six different permutations' to 'they are
+      all of S_3' needs the fact that a 6-element subset of a 6-element set is the whole set. The text
+      does not cite it.
+  - stage: S5b
+    verdict: minor
+    by: refereeB
+    hash: 5cd5f9a596ad
+    date: '2026-10-12'
+    model: claude-opus-5-5
+    evidence: '04-permutations-and-cycles.md:179 ''These are six different permutations, so by the proposition
+      they are all of S_3'' needs two more facts: a 6-element subset of a 6-element set is the whole set
+      (fd2:prp-subset-finite, proper subset gives k < 6), and the size of a finite set is unique (fd2:cor-finite-size-unique).
+      Neither is cited or ledgered. B1 (04:318) relies on this list.'
+  - stage: S7r
+    verdict: correct
+    by: rereferee
+    hash: 5cd5f9a596ad
+    date: '2026-10-12'
+    model: claude-opus-5-5
+    evidence: 'Statement at 04:156; aftermath at 04:179. Earlier S5a/S5b findings resolved: the step from
+      six distinct elements to all of S_3 now cites fd2:prp-subset-finite (a proper subset of a 6-element
+      set has k<6 elements; fd2 01-finite-sets.md:232) and fd2:cor-finite-size-unique (:187), which gives
+      the contradiction. The ledger line ''six distinct elements are all of S_3'' was added. B1 (04:318)
+      now rests on'
+- key: proof:prp-symmetric-group-order
+  kind: proof
+  file: 04-permutations-and-cycles.md
+  line: 163
+  hash: 7c071870616a
+  verdicts:
+  - stage: S5a
+    verdict: minor
+    by: refereeA
+    hash: 7fe6fd41dd62
+    date: '2026-10-12'
+    model: claude-opus-5-5
+    evidence: '04-permutations-and-cycles.md:176 The ''Adding up'' step is an induction on j that starts
+      at 1 and stops at n + 1, but it names no induction principle. The ledger (04:448) points to fd1:ax-induction,
+      which starts at 0. A related point at 04:174: tau(tau sigma) = sigma is credited to (G1) alone,
+      but it also needs tau tau = id and (G2).'
+  - stage: S5b
+    verdict: correct
+    by: refereeB
+    hash: 7fe6fd41dd62
+    date: '2026-10-12'
+    model: claude-opus-5-5
+    evidence: '04:163-177: base S_0 and the partition into the A_k are sound; the bijections A_k <-> A_{n+1}
+      come from tau tau = id; the adding-up induction uses fd2:prp-disjoint-union-count. The arithmetic
+      and the omega reading are ledgered (04:447-448).'
+  - stage: S7r
+    verdict: correct
+    by: rereferee
+    hash: 7c071870616a
+    date: '2026-10-12'
+    model: claude-opus-5-5
+    evidence: '04:163-177. Checked line by line. The induction on n uses fd1:ax-induction. Class A_{n+1}:
+      bijection composed via fd2:thm-composition-injective-surjective (c). Class A_k: the earlier finding
+      is resolved, since 04:174 now cites (G1), ττ=id and (G2), ''likewise for ρ''. Adding up: the earlier
+      finding is resolved, since 04:176 uses fd2:thm-induction with base 1 (fd2 02-induction-in-practice.md:11,
+      base'
+- key: prp-disjoint-cycles-commute
+  kind: prp
+  file: 04-permutations-and-cycles.md
+  line: 185
+  hash: ac9fbe2710a1
+  verdicts:
+  - stage: S5a
+    verdict: correct
+    by: refereeA
+    hash: ac9fbe2710a1
+    date: '2026-10-12'
+    model: claude-opus-5-5
+    evidence: 04:185-191; disjointness needed (dropped-hypothesis witness at 04:211 and C1)
+  - stage: S5b
+    verdict: minor
+    by: refereeB
+    hash: ac9fbe2710a1
+    date: '2026-10-12'
+    model: claude-opus-5-5
+    evidence: '04-permutations-and-cycles.md:183 This meta-claim points at the wrong observation. The
+      paragraph lists two observations: sigma came apart into loops on disjoint sets, and the order of
+      the factors did not matter. It then says ''The first is that permutations moving disjoint sets of
+      points do not interfere'', but that is the general form of the second observation (commuting). The
+      first observation bec'
+  - stage: S7r
+    verdict: correct
+    by: rereferee
+    hash: ac9fbe2710a1
+    date: '2026-10-12'
+    model: claude-opus-5-5
+    evidence: '04:183-209. Earlier S5b finding resolved: 04:183 now reads ''We start with the second:
+      permutations moving disjoint sets of points do not interfere'', which correctly matches the commuting
+      observation. The proof that σ(supp σ)=supp σ is correct in both directions, and the three-case commuting
+      argument ends with fd2:prp-function-equality. The follow-up sentence at 04:278 now claims only that
+      neighbor'
+- key: proof:prp-disjoint-cycles-commute
+  kind: proof
+  file: 04-permutations-and-cycles.md
+  line: 197
+  hash: 7e5245246827
+  verdicts:
+  - stage: S5a
+    verdict: correct
+    by: refereeA
+    hash: 7e5245246827
+    date: '2026-10-12'
+    model: claude-opus-5-5
+    evidence: 04:197-209; sigma(supp) subset supp by injectivity, reverse inclusion via sigma^{-1}; three
+      cases exhaustive since supports disjoint; Case 1 uses first part; fd2:prp-function-equality
+  - stage: S5b
+    verdict: correct
+    by: refereeB
+    hash: 7e5245246827
+    date: '2026-10-12'
+    model: claude-opus-5-5
+    evidence: '04:197-209: sigma(supp sigma) = supp sigma in both directions; the three cases are exhaustive
+      by disjointness; it closes with fd2:prp-function-equality.'
+- key: thm-disjoint-cycle-decomposition
+  kind: thm
+  file: 04-permutations-and-cycles.md
+  line: 215
+  hash: 0165441eba5a
+  verdicts:
+  - stage: S5a
+    verdict: correct
+    by: refereeA
+    hash: 0165441eba5a
+    date: '2026-10-12'
+    model: claude-opus-5-5
+    evidence: 04:215-221; statement with support clause; s=0 for id forced since cycles have non-empty
+      support
+  - stage: S5b
+    verdict: correct
+    by: refereeB
+    hash: 0165441eba5a
+    date: '2026-10-12'
+    model: claude-opus-5-5
+    evidence: '04:215-221: the statement matches the blueprint. The meta-claim that the support clause
+      is what makes the new cycle disjoint from the old ones is true of 04:252. The AL1.3 pointer has
+      the form ''*Groups*, the chapter ...'' and is covered by STATUS row 160; the title matches registry/volumes.yaml
+      and chapters.yaml.'
+- key: proof:thm-disjoint-cycle-decomposition
+  kind: proof
+  file: 04-permutations-and-cycles.md
+  line: 229
+  hash: 037f1a165ef2
+  verdicts:
+  - stage: S5a
+    verdict: correct
+    by: refereeA
+    hash: 037f1a165ef2
+    date: '2026-10-12'
+    model: claude-opus-5-5
+    evidence: 04:229-259; strong induction on m (fd1:thm-strong-induction); pigeonhole on {0..n}->{1..n}
+      (fd2:cor-pigeonhole-finite-sets (a), {0..n} count after fd2:def-finite); sigma^{-a} via prp-group-power-laws
+      (a); least r by fd3:prp-integer-least-element with lower bound 0; r>=2 since sigma^1=sigma; distinctness
+      by minimality; sigma=gamma on O; rho fixes O and complement of supp; card supp rho < m by fd2:p
+  - stage: S5b
+    verdict: correct
+    by: refereeB
+    hash: 037f1a165ef2
+    date: '2026-10-12'
+    model: claude-opus-5-5
+    evidence: '04:229-259: the strong-induction setup, pigeonhole on {0..n} -> {1..n}, cancelling with
+      sigma^{-a} by prp-group-power-laws (a), least r by fd3:prp-integer-least-element, r >= 2, distinctness,
+      sigma = gamma on O, supp rho subset supp sigma \ O, and fd2:prp-subset-finite used twice all check
+      out. Disjointness follows from the IH support clause. {0..n} having n+1 elements is ledgered (04:451).'
+- key: check:04-permutations-and-cycles:3
+  kind: check
+  file: 04-permutations-and-cycles.md
+  line: 270
+  hash: eed0b09a9315
+  verdicts:
+  - stage: S5a
+    verdict: correct
+    by: refereeA
+    hash: eed0b09a9315
+    date: '2026-10-12'
+    model: claude-opus-5-5
+    evidence: 04:270-276; bottom row 3 6 5 4 1 2 gives (1 3 5)(2 6), 4 fixed
+  - stage: S5b
+    verdict: correct
+    by: refereeB
+    hash: eed0b09a9315
+    date: '2026-10-12'
+    model: claude-opus-5-5
+    evidence: '04:270-276: the decomposition (1 3 5)(2 6), with 4 fixed, is correct.'
+- key: exr-permutations-and-cycles-a1
+  kind: exr
+  file: 04-permutations-and-cycles.md
+  line: 284
+  hash: 581e27815b30
+  verdicts:
+  - stage: S5a
+    verdict: correct
+    by: refereeA
+    hash: 9e653d67897b
+    date: '2026-10-12'
+    model: claude-opus-5-5
+    evidence: 04:284-307; (a) (1 2)(3 4), (1 4)(2 3); (b) (1 7 2 5); (c) gamma=(1 2 5), gamma^{-1}=(1
+      5 2), rho=(3 4), sigma=(1 2 5)(3 4); (d) (1 3 2) and id; all recomputed, sidecar ok
+  - stage: S5b
+    verdict: minor
+    by: refereeB
+    hash: 9e653d67897b
+    date: '2026-10-12'
+    model: claude-opus-5-5
+    evidence: 04-permutations-and-cycles.md:295 Part (d) does not say which group the computation is in,
+      unlike parts (a) and (b) (S_4, S_7).
+  - stage: S6
+    verdict: correct
+    by: verifier
+    hash: 9e653d67897b
+    date: '2026-10-12'
+    model: claude-opus-5-5
+    evidence: 04:299-307. My own script (scratchpad S6-03b/v.py) gives (1 2)(3 4) and (1 4)(2 3); the
+      inverse (1 7 2 5); sigma = (1 2 5)(3 4) with rho = (3 4); ((1 2)(2 3))^2 = (1 3 2). All match. The
+      injectivity step (apply sigma^{-a}) is named correctly, and (c) is a proof-comprehension part on
+      the key proof.
+  - stage: S7r
+    verdict: correct
+    by: rereferee
+    hash: 581e27815b30
+    date: '2026-10-12'
+    model: claude-opus-5-5
+    evidence: '04:284-307. I solved each part myself. (a) (1 2 3 4)(2 4)=(1 2)(3 4) and (2 4)(1 2 3 4)=(1
+      4)(2 3). (b) (1 7 2 5). (c) orbit 1→2→5→1, r=3, γ=(1 2 5), ρ=(3 4), σ=(1 2 5)(3 4); injectivity
+      is used at the σ^{-a} step. (d) (1 2)(2 3)=(1 2 3), its square is (1 3 2), and (1 2)^2(2 3)^2=id.
+      All match the book. Earlier finding resolved: (d) now says ''in S_3'' (04:295).'
+- key: exr-permutations-and-cycles-b1
+  kind: exr
+  file: 04-permutations-and-cycles.md
+  line: 311
+  hash: 5ea806498d07
+  verdicts:
+  - stage: S5a
+    verdict: correct
+    by: refereeA
+    hash: 5ea806498d07
+    date: '2026-10-12'
+    model: claude-opus-5-5
+    evidence: 04:311-332; all 36 table entries recomputed by hand; squares and the non-commuting witnesses
+      correct
+  - stage: S5b
+    verdict: correct
+    by: refereeB
+    hash: 5ea806498d07
+    date: '2026-10-12'
+    model: claude-opus-5-5
+    evidence: '04:320-331: I recomputed the whole table by script and it matches the table at 04:320-327.
+      Squares and centre are correct, and each non-commuting witness matches a table entry.'
+  - stage: S6
+    verdict: correct
+    by: verifier
+    hash: 5ea806498d07
+    date: '2026-10-12'
+    model: claude-opus-5-5
+    evidence: '04:317-331. I recomputed the full 6x6 table with right-to-left products and it matches
+      every entry. Squares equal to id: id, (1 2), (1 3), (2 3). All four non-commuting witnesses check
+      against the table. Worked model: exm-cycle-notation.'
+- key: exr-permutations-and-cycles-b2
+  kind: exr
+  file: 04-permutations-and-cycles.md
+  line: 334
+  hash: 237aee9ae0c5
+  verdicts:
+  - stage: S5a
+    verdict: minor
+    by: refereeA
+    hash: 7e03862f5f78
+    date: '2026-10-12'
+    model: claude-opus-5-5
+    evidence: 04-permutations-and-cycles.md:347 The solution says each t in T_j has exactly n - j one-point
+      extensions, but gives no reason. That count is the number of points of {1, ..., n} outside a j-element
+      set.
+  - stage: S5b
+    verdict: minor
+    by: refereeB
+    hash: 7e03862f5f78
+    date: '2026-10-12'
+    model: claude-opus-5-5
+    evidence: '04-permutations-and-cycles.md:351 Punctuation: the displayed equation ends with a comma,
+      and the next sentence starts with a capital letter.'
+  - stage: S6
+    verdict: minor
+    by: verifier
+    hash: 7e03862f5f78
+    date: '2026-10-12'
+    model: claude-opus-5-5
+    evidence: 04-permutations-and-cycles.md:355 The problem asks to check the formula for n=4 by listing
+      the cycles of S_4. The solution lists only the 6 transpositions. The 8 three-cycles and 6 four-cycles
+      are described, not listed. Line 351-353 also ends the display with ',' and then starts 'Dividing'
+      with a capital.
+  - stage: S8
+    verdict: correct
+    by: seam
+    hash: 7e03862f5f78
+    date: '2026-10-12'
+    model: claude-opus-5-5
+    evidence: 04:349 justifies the general rotation claim by a remark that only treats the example (1
+      2 3) [finding refuted by skeptics]
+  - stage: S7r
+    verdict: correct
+    by: rereferee
+    hash: 237aee9ae0c5
+    date: '2026-10-12'
+    model: claude-opus-5-5
+    evidence: '04:334-356. Earlier S5a finding resolved: 04:347 now justifies |C|=n−j. E has j elements
+      by distinctness; C is finite by fd2:prp-subset-finite; E∪C has j+|C| elements by fd2:prp-disjoint-union-count;
+      fd2:cor-finite-size-unique gives j+|C|=n. These are exactly the three cited labels, and the ledger
+      line was added. The punctuation finding is resolved: the display ends with ''.'' (04:351). The S6
+      findi'
+- key: exr-permutations-and-cycles-b3
+  kind: exr
+  file: 04-permutations-and-cycles.md
+  line: 358
+  hash: e17b2bf5b71f
+  verdicts:
+  - stage: S5a
+    verdict: minor
+    by: refereeA
+    hash: 3961fcee39f4
+    date: '2026-10-12'
+    model: claude-opus-5-5
+    evidence: '04-permutations-and-cycles.md:379 Part (c) uses two fd3 facts without citing them: [k]
+      = [k''] means k'' = k + 4q, and Z/4Z is exactly {[0], [1], [2], [3]} with the four classes distinct.
+      Injectivity rests on the second fact.'
+  - stage: S5b
+    verdict: minor
+    by: refereeB
+    hash: 3961fcee39f4
+    date: '2026-10-12'
+    model: claude-opus-5-5
+    evidence: 04-permutations-and-cycles.md:379 The 'Bijective' step in (c) assumes without citation that
+      Z/4Z consists of exactly the four distinct classes [0], [1], [2], [3]. The ledger line 04:458 covers
+      only k = 4q + r in (b).
+  - stage: S6
+    verdict: correct
+    by: verifier
+    hash: 3961fcee39f4
+    date: '2026-10-12'
+    model: claude-opus-5-5
+    evidence: 04:370-379. rho^2 = (1 3)(2 4), rho^3 = (1 4 3 2) and rho^4 = id all verified. Division
+      by 4 with power laws (a),(c) is correct, and so are well-definedness, the homomorphism step and
+      bijectivity (values at 1 are 1,2,3,4). Sections 3.1 (01:71) and 3.3 (03:279) both announce this
+      match.
+  - stage: S7r
+    verdict: correct
+    by: rereferee
+    hash: e17b2bf5b71f
+    date: '2026-10-12'
+    model: claude-opus-5-5
+    evidence: '04:358-380. (a) I recomputed ρ^2=(1 3)(2 4), ρ^3=(1 4 3 2) and ρ^4=id. (b) uses division
+      with remainder and power laws (a), (c). (c) earlier findings resolved: well-definedness now cites
+      fd3:def-integers-mod-n-ring (k''−k ∈ 4ℤ; quotient-rings.md:142 and the prose after it). Bijectivity
+      cites fd3:thm-integers-mod-n-ring (b) (:150; r ↦ [r] is a bijection {0,..,n−1} → ℤ/nℤ), which gives
+      exactly ''four '
+- key: exr-permutations-and-cycles-c1
+  kind: exr
+  file: 04-permutations-and-cycles.md
+  line: 384
+  hash: 8273832bf18a
+  verdicts:
+  - stage: S5a
+    verdict: correct
+    by: refereeA
+    hash: 8273832bf18a
+    date: '2026-10-12'
+    model: claude-opus-5-5
+    evidence: 04:384-402; (1 2)(2 3)=(1 2 3) != (1 3 2)=(2 3)(1 2); (1 2 3),(1 3 2) commute; (c) correctly
+      locates the failing step in Case 1; citing exercise B1 from an exercise solution is allowed (STYLE.md:237)
+  - stage: S5b
+    verdict: correct
+    by: refereeB
+    hash: 8273832bf18a
+    date: '2026-10-12'
+    model: claude-opus-5-5
+    evidence: '04:384-402: (1 2), (2 3) do not commute, matching B1''s table; (1 2 3), (1 3 2) commute;
+      (c) names the failing step in Case 1 correctly (sigma(1) = 2 is in supp tau). Citing B1 from an
+      exercise is allowed by STYLE §6.'
+  - stage: S6
+    verdict: correct
+    by: verifier
+    hash: 8273832bf18a
+    date: '2026-10-12'
+    model: claude-opus-5-5
+    evidence: 04:396-401. (1 2)(2 3) = (1 2 3) and (2 3)(1 2) = (1 3 2) verified. The pair (1 2 3), (1
+      3 2) commutes (product id). The failing step, Case 1's sigma(i) not in supp tau, is identified correctly.
+- key: exr-permutations-and-cycles-c2
+  kind: exr
+  file: 04-permutations-and-cycles.md
+  line: 404
+  hash: 3283d4370dfb
+  verdicts:
+  - stage: S5a
+    verdict: minor
+    by: refereeA
+    hash: 0c9578d312db
+    date: '2026-10-12'
+    model: claude-opus-5-5
+    evidence: 04-permutations-and-cycles.md:424 The argument that 6 is the least positive common multiple
+      of 2 and 3 skips m = 1 and m = 5. The listed checks (2 does not divide 3; 3 does not divide 2 or
+      4) rule out only 2, 3 and 4.
+  - stage: S5b
+    verdict: minor
+    by: refereeB
+    hash: 0c9578d312db
+    date: '2026-10-12'
+    model: claude-opus-5-5
+    evidence: '04-permutations-and-cycles.md:418 The cited theorem does not give what the text says it
+      gives: fd3:thm-integers-division-remainder (a) yields a remainder r in {0, ..., k-1}, not t in {1,
+      ..., k}. The text needs t = r for r ≠ 0 and t = k for r = 0, with uniqueness from the uniqueness
+      clause. The drafter flagged this in replies.md.'
+  - stage: S6
+    verdict: minor
+    by: verifier
+    hash: 0c9578d312db
+    date: '2026-10-12'
+    model: claude-opus-5-5
+    evidence: '04-permutations-and-cycles.md:430 The marking scheme awards 3 points for the converse of
+      (b) ''checked on supp sigma, on supp tau and off both''. The book''s own solution does not do this.
+      It checks sigma^m on supp sigma and off supp sigma, then gets tau^m = id algebraically. A correct
+      supports argument does no pointwise check at all: sigma^m = tau^{-m}, with supp sigma^m inside supp
+      sigma and supp t'
+  - stage: S7r
+    verdict: correct
+    by: rereferee
+    hash: 3283d4370dfb
+    date: '2026-10-12'
+    model: claude-opus-5-5
+    evidence: 04:404-446. All earlier findings resolved. (1) (d) now gives the reason 'a common multiple
+      of 2 is even, and 3∤2,4', which rules out 1–5. (2) (a) writes j−1=kq+s with 0≤s<k by fd3:thm-integers-division-remainder
+      (a), takes t=s+1, and derives uniqueness from the uniqueness of s, which is valid. (3) (b) now declares
+      'for every m ∈ ℤ_{>0}'. (4) The 3-point marking-scheme item now awards 'uses disjoin
+- key: prp-cycle-product-of-transpositions
+  kind: prp
+  file: 05-transpositions.md
+  line: 16
+  hash: d956ec27391e
+  verdicts:
+  - stage: S5a
+    verdict: correct
+    by: refereeA
+    hash: d956ec27391e
+    date: '2026-10-12'
+    model: claude-opus-5-5
+    evidence: 05:16-24 matches def-cycle (04:42-50); k>=2 and distinctness both needed for the cycles/transpositions
+      to be defined; sidecar ok
+  - stage: S5b
+    verdict: correct
+    by: refereeB
+    hash: d956ec27391e
+    date: '2026-10-12'
+    model: claude-opus-5-5
+    evidence: 05:16-24 matches def-cycle (04:42, k>=2, distinct entries); k=4 example at 05:26 checked
+      by hand; sidecar passes
+- key: proof:prp-cycle-product-of-transpositions
+  kind: proof
+  file: 05-transpositions.md
+  line: 32
+  hash: 74de514da49b
+  verdicts:
+  - stage: S5a
+    verdict: correct
+    by: refereeA
+    hash: 74de514da49b
+    date: '2026-10-12'
+    model: claude-opus-5-5
+    evidence: '05:32-49: P(k) quantifies over all lists of distinct points, so it is applied to (i_1..i_k)
+      for each fixed k+1 list; the four point cases check against def-cycle; joining (tau) with P(k)''s
+      list uses prp-group-list-product-laws (a) (01:174)'
+  - stage: S5b
+    verdict: correct
+    by: refereeB
+    hash: 74de514da49b
+    date: '2026-10-12'
+    model: claude-opus-5-5
+    evidence: '05:32-49: induction via fd2:thm-induction base 2, read on omega by fd3:cor-omega-identification
+      (b), which covers induction from a base. Pointwise cases j<k, i_k, i_{k+1}, rest are complete; concatenation
+      via prp-group-list-product-laws (a). Ledger lines 443-446 cover the uncited facts'
+- key: check:05-transpositions:1
+  kind: check
+  file: 05-transpositions.md
+  line: 53
+  hash: 1b914c0a16a8
+  verdicts:
+  - stage: S5a
+    verdict: correct
+    by: refereeA
+    hash: 1b914c0a16a8
+    date: '2026-10-12'
+    model: claude-opus-5-5
+    evidence: 05:58 (2 5 3)=(2 3)(2 5), point check right
+  - stage: S5b
+    verdict: correct
+    by: refereeB
+    hash: 1b914c0a16a8
+    date: '2026-10-12'
+    model: claude-opus-5-5
+    evidence: '05:57-59: (2 5 3) = (2 3)(2 5), checked by hand (2->5, 5->3, 3->2)'
+- key: thm-transpositions-generate
+  kind: thm
+  file: 05-transpositions.md
+  line: 65
+  hash: a6852ef74ba0
+  verdicts:
+  - stage: S5a
+    verdict: correct
+    by: refereeA
+    hash: a6852ef74ba0
+    date: '2026-10-12'
+    model: claude-opus-5-5
+    evidence: 05:68; n>=2 used in the base; dropping it, S_1={id} has no transposition and the r>=1 definition
+      (05:63) makes the statement false
+  - stage: S5b
+    verdict: minor
+    by: refereeB
+    hash: a6852ef74ba0
+    date: '2026-10-12'
+    model: claude-opus-5-5
+    evidence: 05-transpositions.md:135 The term 'generate' is used as a technical word but is never defined
+      in the chapter.
+  - stage: S7r
+    verdict: correct
+    by: rereferee
+    hash: a6852ef74ba0
+    date: '2026-10-12'
+    model: claude-opus-5-5
+    evidence: 05:63 now defines 'product of elements of T' and 'T generates S_n' (r >= 1) before the theorem,
+      and says that the theorem and the corollary are instances. The S5b finding about an undefined 'generate'
+      is resolved. Statement 05:68 matches the definition of 'product of transpositions' at 05:63.
+- key: proof:thm-transpositions-generate
+  kind: proof
+  file: 05-transpositions.md
+  line: 79
+  hash: 7f5664f2c5f7
+  verdicts:
+  - stage: S5a
+    verdict: minor
+    by: refereeA
+    hash: 632b09a43468
+    date: '2026-10-12'
+    model: claude-opus-5-5
+    evidence: '05-transpositions.md:105 The step sigma = (tau tau) sigma uses the identity axiom (G2):
+      (tau tau) sigma = id sigma = sigma. The text cites only tau tau = id, (G1) and the concatenation
+      law.'
+  - stage: S5b
+    verdict: minor
+    by: refereeB
+    hash: 632b09a43468
+    date: '2026-10-12'
+    model: claude-opus-5-5
+    evidence: 05-transpositions.md:105 The first equality sigma = (tau tau)sigma uses (G2) (id*sigma =
+      sigma), which is neither cited nor ledgered.
+  - stage: S7r
+    verdict: correct
+    by: rereferee
+    hash: 7f5664f2c5f7
+    date: '2026-10-12'
+    model: claude-opus-5-5
+    evidence: '05:105 now cites (G2), so the S5a/S5b findings are resolved. (ττ)σ = idσ = σ uses (G2),
+      the next step uses (G1), and the last uses @prp-group-list-product-laws (a). Rest checked line by
+      line. Base 05:82 is right (injectivity, fd2:prp-function-equality). Step 05:84: lem-permutations-fixing-last-point
+      (b) (04:126) gives E as the inverse of the isomorphism R, and prp-homomorphism-composition-inverse '
+- key: cor-adjacent-transpositions-generate
+  kind: cor
+  file: 05-transpositions.md
+  line: 149
+  hash: b3006af1a083
+  verdicts:
+  - stage: S5a
+    verdict: correct
+    by: refereeA
+    hash: b3006af1a083
+    date: '2026-10-12'
+    model: claude-opus-5-5
+    evidence: 05:152; n>=2 enters through thm-transpositions-generate
+  - stage: S5b
+    verdict: correct
+    by: refereeB
+    hash: b3006af1a083
+    date: '2026-10-12'
+    model: claude-opus-5-5
+    evidence: 05:149-153; n>=2 is used through the theorem
+- key: proof:cor-adjacent-transpositions-generate
+  kind: proof
+  file: 05-transpositions.md
+  line: 159
+  hash: 15abedf40e87
+  verdicts:
+  - stage: S5a
+    verdict: correct
+    by: refereeA
+    hash: 15abedf40e87
+    date: '2026-10-12'
+    model: claude-opus-5-5
+    evidence: '05:160-174: (*) checked pointwise for j-i>=2; Q(d) step uses (*) with j=i+d+1 (gap d+1>=2)
+      and Q(d) at i+1 with (i+1)+d<=n; sidecar ok'
+  - stage: S5b
+    verdict: correct
+    by: refereeB
+    hash: 15abedf40e87
+    date: '2026-10-12'
+    model: claude-opus-5-5
+    evidence: '05:159-175: sts = (i j) checked pointwise. Q(d) induction: Q(d) applies at i+1 since (i+1)+d<=n,
+      and (*) applies since j-i=d+1>=2. The example (1 4) at 05:179 checked by hand'
+- key: check:05-transpositions:2
+  kind: check
+  file: 05-transpositions.md
+  line: 183
+  hash: c1ce64b321c6
+  verdicts:
+  - stage: S5a
+    verdict: correct
+    by: refereeA
+    hash: c1ce64b321c6
+    date: '2026-10-12'
+    model: claude-opus-5-5
+    evidence: 05:188 word (3 4)(2 3)(1 2)(2 3)(3 4) checked point by point; mirror formula correct
+  - stage: S5b
+    verdict: correct
+    by: refereeB
+    hash: c1ce64b321c6
+    date: '2026-10-12'
+    model: claude-opus-5-5
+    evidence: '05:187-189: (3 4)(2 3)(1 2)(2 3)(3 4) = (1 4) checked point by point; the mirror formula
+      (i j) = (j-1 j)(i j-1)(j-1 j) is correct'
+- key: exr-transpositions-a1
+  kind: exr
+  file: 05-transpositions.md
+  line: 195
+  hash: 4750d025a020
+  verdicts:
+  - stage: S5a
+    verdict: correct
+    by: refereeA
+    hash: ba3dcb0231bc
+    date: '2026-10-12'
+    model: claude-opus-5-5
+    evidence: '05:207-221: run on (1 3 4 2) gives tau sigma=(1 3 2), tau'' sigma''=(1 2), word (2 4)(2
+      3)(1 2); the other two words also check; sidecar ok'
+  - stage: S5b
+    verdict: minor
+    by: refereeB
+    hash: ba3dcb0231bc
+    date: '2026-10-12'
+    model: claude-opus-5-5
+    evidence: 05-transpositions.md:219 Answer (c) says the lemma is used in Case 1, but the proof also
+      uses it in the Step's preamble.
+  - stage: S6
+    verdict: correct
+    by: verifier
+    hash: ba3dcb0231bc
+    date: '2026-10-12'
+    model: claude-opus-5-5
+    evidence: '05:206-221. Run checked: tau sigma = (1 3 2), tau'' sigma'' = (1 2), word (2 4)(2 3)(1
+      2) = (1 3 4 2). The alternative words (1 2)(1 4)(1 3) and (2 4)(1 2)(1 3) are also correct. The
+      answer on the use of n>=2 and the lemma''s role in Case 1 are right.'
+  - stage: S7r
+    verdict: correct
+    by: rereferee
+    hash: 4750d025a020
+    date: '2026-10-12'
+    model: claude-opus-5-5
+    evidence: '(c) at 05:219 now names both uses: lemma (b) plus prp-homomorphism-composition-inverse
+      (b) in the Step preamble (on which fact 1 rests), and lemma (a)/(b) in Case 1. This matches the
+      proof at 05:84 and 05:95, so the S5b finding is resolved. I solved (b) myself. σ(4) = 2 gives τ
+      = (2 4) and τσ = (1 3 2). Then τ'' = (2 3) and τ''σ'' = (1 2), so the word is (2 4)(2 3)(1 2), which
+      matches. The second-rou'
+- key: exr-transpositions-b1
+  kind: exr
+  file: 05-transpositions.md
+  line: 226
+  hash: 955a361c9768
+  verdicts:
+  - stage: S5a
+    verdict: correct
+    by: refereeA
+    hash: 955a361c9768
+    date: '2026-10-12'
+    model: claude-opus-5-5
+    evidence: '05:233-248: (1 2 3 4 5)=(1 2)(2 3)(3 4)(4 5) checked; 7+3=10-factor word right; sidecar
+      ok'
+  - stage: S5b
+    verdict: correct
+    by: refereeB
+    hash: 955a361c9768
+    date: '2026-10-12'
+    model: claude-opus-5-5
+    evidence: '05:233-248: (1 2)(2 3)(3 4)(4 5) = (1 2 3 4 5) checked. The ten-factor word is 7 + 3 factors,
+      from (*). Sidecar passes'
+  - stage: S6
+    verdict: correct
+    by: verifier
+    hash: 955a361c9768
+    date: '2026-10-12'
+    model: claude-opus-5-5
+    evidence: '05:232-248. (1 5)(1 4)(1 3)(1 2) and (1 2)(2 3)(3 4)(4 5) both equal (1 2 3 4 5), and the
+      10-factor adjacent word equals (1 5)(2 4), all by script. Worked model: the (1 4) unwinding at 05:177-179.'
+- key: exr-transpositions-b2
+  kind: exr
+  file: 05-transpositions.md
+  line: 251
+  hash: 9886ffcb4b0d
+  verdicts:
+  - stage: S5a
+    verdict: correct
+    by: refereeA
+    hash: 9886ffcb4b0d
+    date: '2026-10-12'
+    model: claude-opus-5-5
+    evidence: '05:264-268: rho^m(j)=j+m induction uses g^{m+1}=g^m g (def-group-integer-power) and j<n;
+      sigma^{-1}=rho^{-(i-1)} by prp-group-power-laws (b)'
+  - stage: S5b
+    verdict: correct
+    by: refereeB
+    hash: 9886ffcb4b0d
+    date: '2026-10-12'
+    model: claude-opus-5-5
+    evidence: '05:264-268: (a) checked pointwise. (b) rho^{m+1} = rho^m rho matches def-group-integer-power
+      (01:220); the condition 2+(i-1)<=n holds; prp-group-power-laws (b) gives (g^m)^{-1} = g^{-m} = (g^{-1})^m.
+      (c) correct'
+  - stage: S6
+    verdict: correct
+    by: verifier
+    hash: 9886ffcb4b0d
+    date: '2026-10-12'
+    model: claude-opus-5-5
+    evidence: 05:263-268. The conjugation formula is proved pointwise. rho^m(j) = j+m uses rho^{m+1} =
+      rho^m rho, which matches def-group-integer-power (01:225). Index bounds are fine. Script confirms
+      rho^{i-1}(1 2)rho^{-(i-1)} = (i i+1) for n<=6. (c) correctly uses power law (b).
+- key: exr-transpositions-c1
+  kind: exr
+  file: 05-transpositions.md
+  line: 273
+  hash: 715d5216deb9
+  verdicts:
+  - stage: S5a
+    verdict: correct
+    by: refereeA
+    hash: 0c72faf1b98e
+    date: '2026-10-12'
+    model: claude-opus-5-5
+    evidence: 05:280-305 follows the theorem's proof; marking scheme consistent
+  - stage: S5b
+    verdict: minor
+    by: refereeB
+    hash: 0c72faf1b98e
+    date: '2026-10-12'
+    model: claude-opus-5-5
+    evidence: 05-transpositions.md:286 The solution attributes 'extension respects products' to the lemma
+      alone, and asserts without argument that the extension carries the whole word over.
+  - stage: S6
+    verdict: minor
+    by: verifier
+    hash: 0c72faf1b98e
+    date: '2026-10-12'
+    model: claude-opus-5-5
+    evidence: '05-transpositions.md:292 The scheme covers the induction on n and the disjoint-cycle route,
+      but not a third natural proof. Induct on card supp sigma: if sigma != id, pick i with j = sigma(i)
+      != i and put tau = (i j). Then tau sigma fixes i and every point sigma fixes, so supp(tau sigma)
+      is inside supp sigma minus {i}; apply the hypothesis (or tau sigma = id gives sigma = tau), and
+      id = (1 2)(1 2).'
+  - stage: S7r
+    verdict: correct
+    by: rereferee
+    hash: 715d5216deb9
+    date: '2026-10-12'
+    model: claude-opus-5-5
+    evidence: 05:286 now says the extension is the inverse of the restriction isomorphism (lem (b)), hence
+      a homomorphism (prp-homomorphism-composition-inverse (b)). It then says the extension carries the
+      word over by induction on r using the def-group-list-product recursion, pointing to fact 1. Both
+      S5b/S6 findings on the missing argument are resolved. The third route (05:307-313) is now accepted
+      and I checked
+- key: exr-transpositions-c2
+  kind: exr
+  file: 05-transpositions.md
+  line: 316
+  hash: 5fc499d0b40e
+  verdicts:
+  - stage: S5a
+    verdict: correct
+    by: refereeA
+    hash: c172102263f3
+    date: '2026-10-12'
+    model: claude-opus-5-5
+    evidence: '05:321-338: line (4) is gamma^{-1} by prp-group-list-product-laws (c); (N9) of fd1:exm-not-allowed-catalogue
+      covers an unproved ''fact'' (fd1 catalogue entry 9)'
+  - stage: S5b
+    verdict: correct
+    by: refereeB
+    hash: c172102263f3
+    date: '2026-10-12'
+    model: claude-opus-5-5
+    evidence: '05:321-338: the failing line, the counterexample (1 2)(1 3) = (1 3 2) (exm-cycle-notation
+      04:93) and the repair are correct. (N9) of fd1:exm-not-allowed-catalogue is ''a general fact neither
+      proved nor a true school fact'' (fd1 06-checking-proofs:42). The gamma^{-1} claim follows from prp-group-list-product-laws
+      (c)'
+  - stage: S6
+    verdict: minor
+    by: verifier
+    hash: c172102263f3
+    date: '2026-10-12'
+    model: claude-opus-5-5
+    evidence: '05-transpositions.md:336 The repair item (''3: repairs the formula by reversing the factors'')
+      rewards only one repair. A different correct repair keeps the left-to-right reading and changes
+      the transpositions: gamma = (i_1 i_2)(i_2 i_3)⋯(i_{k-1} i_k), proved by the same kind of induction.
+      The scheme gives it 0 of 3 points, and its fatal-error clause (''keeps the left-to-right order and
+      changes the c'
+  - stage: S7r
+    verdict: correct
+    by: rereferee
+    hash: 5fc499d0b40e
+    date: '2026-10-12'
+    model: claude-opus-5-5
+    evidence: 'The repair item at 05:344 now accepts any correct formula with a justification, including
+      (i_1 i_2)(i_2 i_3)...(i_{k-1} i_k). I checked that formula: for (1 2)(2 3), applying (2 3) first
+      sends 1->2, 2->3, 3->1, giving (1 2 3). The fatal-error clause at 05:346 now targets only silently
+      replacing γ (e.g. by γ^{-1}). This resolves the S6 finding. The solution body is right: (1 2)(1
+      3) = (1 3 2), the '
+- key: exr-transpositions-c3
+  kind: exr
+  file: 05-transpositions.md
+  line: 349
+  hash: 85f59b1a5519
+  verdicts:
+  - stage: S5a
+    verdict: correct
+    by: refereeA
+    hash: 3c7ee1870220
+    date: '2026-10-12'
+    model: claude-opus-5-5
+    evidence: '05:351-357: conjugation formula pointwise; pi=(1 a)(2 b) sends 1->a, 2->b for 2<=a<b; inverse
+      of pi'' pi^{-1} via list laws (c)'
+  - stage: S5b
+    verdict: correct
+    by: refereeB
+    hash: 3c7ee1870220
+    date: '2026-10-12'
+    model: claude-opus-5-5
+    evidence: '05:351-357: (a) checked pointwise. (b) pi = (1 a)(2 b) for a>=2: 1->a and 2->b checked,
+      also for a=2. The final conjugation identity follows from list-product-laws (c) and thm-group-basic-properties
+      (3). The pointer to AL1.3 is in the STATUS row at line 160'
+  - stage: S6
+    verdict: minor
+    by: verifier
+    hash: 3c7ee1870220
+    date: '2026-10-12'
+    model: claude-opus-5-5
+    evidence: 05-transpositions.md:357 C3 is a (a) Prove / (b) Deduce item that a reader is likely to
+      write up in full, but its solution has no marking scheme. STYLE section 6 and section 11.6 require
+      one, and the section's other write-up C items (C1, C2) have one.
+  - stage: S7r
+    verdict: minor
+    by: rereferee
+    hash: 85f59b1a5519
+    date: '2026-10-12'
+    model: claude-opus-5-5
+    evidence: 'clause at 05:375, ''(b) uses the conjugation formula without (a) having been proved'',
+      conflicts with the item''s own wording. Part 2 says ''Deduce'', so (b) may use (a) as given. Read
+      literally, the clause also zeroes a correct deduction in (b) when (a) is missing or wrong, which
+      double-penalizes. Fix: reword it, e.g. ''asserting the formula of (a) without proof (0 for the (a)
+      items); (b) may use (a)''.'
+  - stage: S7r
+    verdict: correct
+    by: rereferee
+    hash: 63c387d68734
+    date: '2026-10-12'
+    model: claude-opus-5-5
+    evidence: -group-list-product-laws (c) (01-groups.md:164) and thm-group-basic-properties (3) at 01-groups.md:108,
+      which gives (a^{-1})^{-1}=a and (ab)^{-1}=b^{-1}a^{-1}. Both labels exist and say what is claimed.
+      The marking scheme totals 10 and fits the solution. The revised fatal clauses are consistent with
+      the 'Deduce' wording. verify/ch03/exr-transpositions-c3.py prints 'ok', an exhaustive check in S_5.
+- key: exr-transpositions-r1
+  kind: exr
+  file: 05-transpositions.md
+  line: 380
+  hash: 98874ef62dba
+  verdicts:
+  - stage: S5a
+    verdict: minor
+    by: refereeA
+    hash: 252d826039fb
+    date: '2026-10-12'
+    model: claude-opus-5-5
+    evidence: 05-transpositions.md:369 The prose points into another volume by atlas id ('F3.2's multiples').
+      The book's rule is to write '*Book title*, Chapter N' or 'Section N.M'.
+  - stage: S5b
+    verdict: minor
+    by: refereeB
+    hash: 252d826039fb
+    date: '2026-10-12'
+    model: claude-opus-5-5
+    evidence: '05-transpositions.md:369 A reader-facing sentence names a chapter by its atlas id: ''these
+      group multiples are F3.2''s multiples for k in N''.'
+  - stage: S6
+    verdict: minor
+    by: verifier
+    hash: 252d826039fb
+    date: '2026-10-12'
+    model: claude-opus-5-5
+    evidence: 05-transpositions.md:369 Reader-facing prose uses an atlas id. The task rules say a prose
+      pointer into another volume reads '*Book title*, Chapter N (or Section N.M)'; atlas ids belong to
+      bookkeeping only.
+  - stage: S7r
+    verdict: correct
+    by: rereferee
+    hash: 98874ef62dba
+    date: '2026-10-12'
+    model: claude-opus-5-5
+    evidence: 'The atlas id ''F3.2'' is gone. 05:387 now reads ''*Number Systems: From \(\nN\) to \(\nR\)*,
+      Section 2.3'', matching prp-group-power-laws (e) (01:241) and the fd4 ch02 05:9 usage. The citation
+      by position to a step inside the proof of fd3:thm-integers-mod-prime-field is replaced by an inline
+      argument (05:391), which I checked. fd2:def-prime (fd2 02:106) gives a positive divisor a ∉ {1,m}.
+      b > 0 follow'
+- key: exr-transpositions-r2
+  kind: exr
+  file: 05-transpositions.md
+  line: 400
+  hash: 0076df7d4594
+  verdicts:
+  - stage: S5a
+    verdict: correct
+    by: refereeA
+    hash: 0076df7d4594
+    date: '2026-10-12'
+    model: claude-opus-5-5
+    evidence: '05:389-403: powers of [3] mod 7 = 1,3,2,6,4,5, [3]^6=[1]; well-definedness via power laws
+      (a),(c); CRT via exm-group-homomorphisms (e); sidecar ok'
+  - stage: S5b
+    verdict: correct
+    by: refereeB
+    hash: 0076df7d4594
+    date: '2026-10-12'
+    model: claude-opus-5-5
+    evidence: '05:389-403: powers of 3 mod 7 are 1, 3, 2, 6, 4, 5, and 3^6 = 1, checked. Well-definedness
+      via power laws (a), (c); bijectivity by the list. CRT via exm-group-homomorphisms (e) (03:56) and
+      fd3:cor-coprime-iff-combination. Sidecar passes'
+  - stage: S6
+    verdict: correct
+    by: verifier
+    hash: 0076df7d4594
+    date: '2026-10-12'
+    model: claude-opus-5-5
+    evidence: 05:388-403. Powers of 3 mod 7 are 1,3,2,6,4,5,1 (script). Well-definedness, the homomorphism
+      step and bijectivity are fine. The second isomorphism comes from exm-group-homomorphisms (e) (03:90)
+      with gcd(2,3)=1. The source is named with @exm-isomorphic-small-groups.
+- key: exr-transpositions-r3
+  kind: exr
+  file: 05-transpositions.md
+  line: 424
+  hash: 91f06a6ce94a
+  verdicts:
+  - stage: S5a
+    verdict: correct
+    by: refereeA
+    hash: 91f06a6ce94a
+    date: '2026-10-12'
+    model: claude-opus-5-5
+    evidence: '05:413-421: supp(sigma tau^{-1}) is a subset of supp sigma union supp tau; finiteness by
+      fd2 lemmas; Z infinite via fd2:thm-finite-no-proper-copy'
+  - stage: S5b
+    verdict: correct
+    by: refereeB
+    hash: 91f06a6ce94a
+    date: '2026-10-12'
+    model: claude-opus-5-5
+    evidence: '05:413-421: the subgroup test, supp(sigma tau^{-1}) contained in the union, and the finiteness
+      lemmas cited correctly (fd2 01-finite-sets:203, 232). The infinite-Z argument via fd2:thm-finite-no-proper-copy
+      and prp-divisibility-rules-integers (g) is valid'
+  - stage: S6
+    verdict: correct
+    by: verifier
+    hash: 91f06a6ce94a
+    date: '2026-10-12'
+    model: claude-opus-5-5
+    evidence: 05:412-421. Subgroup test (02:24) form a b^{-1}. supp(sigma tau^{-1}) is contained in supp
+      sigma union supp tau, and finiteness follows from fd2 subset and disjoint-union counts. The infinite-support
+      example x -> x+1 on Z is valid, with Z infinite by fd2:thm-finite-no-proper-copy.
+- key: exr-transpositions-r4
+  kind: exr
+  file: 05-transpositions.md
+  line: 442
+  hash: c3bed41eee77
+  verdicts:
+  - stage: S5a
+    verdict: gap
+    by: refereeA
+    hash: e53991961e87
+    date: '2026-10-12'
+    model: claude-opus-5-5
+    evidence: 05-transpositions.md:435 The induction step says, without reason, that V' := V minus {g,
+      g^{-1}} 'again contains the inverse of each of its elements'. Nothing in the text justifies this,
+      and the induction depends on it.
+  - stage: S5b
+    verdict: correct
+    by: refereeB
+    hash: e53991961e87
+    date: '2026-10-12'
+    model: claude-opus-5-5
+    evidence: '05:431-439: the relation is an equivalence; the strong induction on j uses V'' with j-2
+      elements; parity, and |T| >= 2 by (g). Look-alikes are named, and their pointers (AL1.4, AL1.6)
+      are in the STATUS row at line 160. Sidecar passes'
+  - stage: S6
+    verdict: correct
+    by: verifier
+    hash: e53991961e87
+    date: '2026-10-12'
+    model: claude-opus-5-5
+    evidence: '05:430-439. Inverse-pairing equivalence; one-element classes are exactly g^2 = e. The strong
+      induction showing card U is even is sound: j = 2 + card V'' forces j >= 2. card T is even and >=
+      1, so >= 2. The tool is named and the look-alikes (Lagrange, Cauchy, squaring a random g) are explained,
+      as R4 requires.'
+  - stage: S7r
+    verdict: correct
+    by: rereferee
+    hash: c3bed41eee77
+    date: '2026-10-12'
+    model: claude-opus-5-5
+    evidence: '05:453 now proves that V'' is closed under inverses. For h ∈ V'', h^{-1} ∈ V. If h^{-1}
+      were in {g, g^{-1}}, then h = (h^{-1})^{-1} would be in {g^{-1}, g} by thm-group-basic-properties
+      (3) (01:108), which contradicts h ∈ V''. This resolves the S5a gap. The count j = card V'' + 2 comes
+      from the disjoint union (fd2:prp-disjoint-union-count, cor-finite-size-unique), and j - 2 < j feeds
+      strong induction '

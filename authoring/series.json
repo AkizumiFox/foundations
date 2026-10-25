@@ -156,7 +156,7 @@
   {
    "prefix": "fd4",
    "id": "F4",
-   "title": "Algebraic Preliminaries",
+   "title": "Analytic Preliminaries",
    "repo": "foundations",
    "checkout": "foundations",
    "dir": "fd4",
@@ -165,25 +165,35 @@
      "n": 1,
      "id": "F4.1",
      "title": "Complex Numbers"
-    },
+    }
+   ]
+  },
+  {
+   "prefix": "fd5",
+   "id": "F5",
+   "title": "Algebraic Preliminaries",
+   "repo": "foundations",
+   "checkout": "foundations",
+   "dir": "fd5",
+   "chapters": [
     {
-     "n": 2,
-     "id": "F4.2",
+     "n": 1,
+     "id": "F5.2",
      "title": "Fields"
     },
     {
-     "n": 3,
-     "id": "F4.3",
+     "n": 2,
+     "id": "F5.3",
      "title": "Groups, Subgroups, and Homomorphisms"
     },
     {
-     "n": 4,
-     "id": "F4.4",
+     "n": 3,
+     "id": "F5.4",
      "title": "Formal Polynomials"
     },
     {
-     "n": 5,
-     "id": "F4.5",
+     "n": 4,
+     "id": "F5.5",
      "title": "Polynomials over a Field"
     }
    ]

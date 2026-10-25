@@ -55,7 +55,7 @@ by \( u^{-1} u = 1 \) (above) and \( 1 \cdot x = x \cdot 1 = x \) ((F6), (F7)) i
 "Non-zero and not a zero divisor" does not make an element a unit. In \( \nZ \) there are no zero divisors at all (@prp-ordered-ring-rules (f)), yet \( 2 \) is not a unit, since \( 2 \nmid 1 \). The paragraph above proves only one direction: a unit is never a zero divisor. So "not a unit" must be checked against the definition, or, in \( \nZ/n\nZ \), by the next theorem.
 :::
 
-The units of a commutative ring are closed under products and inverses and contain \( 1 \): they form what *Algebraic Preliminaries*, Chapter 3 calls a group. Here we only need to find them in \( \nZ/n\nZ \).
+The units of a commutative ring are closed under products and inverses and contain \( 1 \): they form what *Algebraic Preliminaries*, Chapter 2 calls a group. Here we only need to find them in \( \nZ/n\nZ \).
 
 ## Which classes are units
 
@@ -137,7 +137,7 @@ By @thm-integers-mod-n-ring (a), \( \nZ/n\nZ \) is a commutative ring, and by @t
 Now \( [r] \ne [0] \): if \( n \mid r \), then \( n \le r \) by @prp-divisibility-rules-integers (e), since \( n, r > 0 \), against \( r < n \). In the same way \( [s] \ne [0] \). But \( [r][s] = [rs] = [n] = [0] \), by the class test. Suppose \( [r] \) were a unit. Then \( [s] = [0] \), since a unit is not a zero divisor (the paragraph after @def-ring-unit). This contradiction shows that the non-zero class \( [r] \) is not a unit, so \( \nZ/n\nZ \) is not a field. This proves the theorem.
 :::
 
-So for every prime \( p \) there is a field with exactly \( p \) elements (@thm-integers-mod-n-ring (b)). The smallest is \( \nZ/2\nZ \), whose tables are those of the two-element field of @exm-finite-ring-not-orderable with \( 0 \), \( 1 \) renamed \( [0] \), \( [1] \). *Algebraic Preliminaries*, Chapter 2 studies fields in general and gives these finite fields a name of their own.
+So for every prime \( p \) there is a field with exactly \( p \) elements (@thm-integers-mod-n-ring (b)). The smallest is \( \nZ/2\nZ \), whose tables are those of the two-element field of @exm-finite-ring-not-orderable with \( 0 \), \( 1 \) renamed \( [0] \), \( [1] \). *Algebraic Preliminaries*, Chapter 1 studies fields in general and gives these finite fields a name of their own.
 
 ::: {.remark}
 In particular \( \nZ/5\nZ \) is a field, since \( 5 \) is prime (the small-primes remark of Section 3.1). In it \( 5 \cdot [1] = [5] = [0] \) (@thm-integers-mod-n-ring (d)), so \( [1] + [1] + [1] + [1] + [1] = [0] \) with \( [1] \ne [0] \), and no order makes it an ordered field (@thm-integers-mod-n-ring (e)). Being a field does not help a finite ring to be ordered.
@@ -493,12 +493,12 @@ if \( 2(3x - 2) = 10k = 2(5k) \), cancel \( 2 \ne 0 \) (@prp-ordered-ring-rules 
 thm-units-mod-n (proof): the class test (opening paragraph) [u] = [v] iff n | u - v | thm-quotient-ring-by-ideal (a) with fd2:thm-classes-partition (b), def-integer-linear-combinations, fd2:def-divides, cited
 def-ring-unit (claim): uniqueness of the inverse, closure under products and inverses, a unit is not a zero divisor | (F5)-(F7) of def-commutative-ring-and-field, prp-ring-algebra (b); inline
 def-ring-unit (example): Z^x = {1, -1}; Q^x = Q \ {0}; units of Z/6Z; the products [2][x] | prp-divisibility-rules-integers (g), prp-ring-algebra (b), (c), thm-rationals-field, exm-integers-mod-six, cited; verify/ch03/def-ring-unit.py
-def-ring-unit (claim): (paragraph after the warning) units form a group | Algebraic Preliminaries, Chapter 3 (F4.3, prose pointer; nothing here depends on it)
+def-ring-unit (claim): (paragraph after the warning) units form a group | Algebraic Preliminaries, Chapter 2 (F5.3, prose pointer; nothing here depends on it)
 thm-units-mod-n (proof): every element of Z/nZ is a class [x] | fd2:def-quotient-set, cited
 thm-units-mod-n (claim): (quick check after exm-unit-inverse-mod-n) [3]^{-1} = [5] in Z/7Z | inline arithmetic; verify/ch03/thm-units-mod-n.py
 exm-unit-inverse-mod-n (example): Euclidean run on (60, 17), back-substitution, 17 * 53 = 901 = 15 * 60 + 1; gcd(12, 60) = 12; [12][5] = [0] | inline arithmetic; verify/ch03/exm-unit-inverse-mod-n.py
 thm-integers-mod-prime-field (proof): s > 0 from rs = n > 0; s != n by cancellation | prp-ring-algebra (b), prp-ordered-ring-rules (c), (f), cited; inline; verify/ch03/thm-integers-mod-prime-field.py (n <= 200)
-thm-integers-mod-prime-field (claim): (aftermath) Z/2Z has the tables of exm-finite-ring-not-orderable; Algebraic Preliminaries, Chapter 2 names these fields | inline comparison of tables; F4.2 prose pointer, nothing here depends on it
+thm-integers-mod-prime-field (claim): (aftermath) Z/2Z has the tables of exm-finite-ring-not-orderable; Algebraic Preliminaries, Chapter 1 names these fields | inline comparison of tables; F5.2 prose pointer, nothing here depends on it
 thm-integers-mod-prime-field (claim): (remark) 5 is prime; 5 * [1] = [0]; Z/5Z cannot be ordered | the small-primes remark of Section 3.1; thm-integers-mod-n-ring (d), (e), cited
 thm-chinese-remainder-two (proof): the identities x - a = m(bu - au), x - b = n(av - bv) | prp-ring-algebra; inline; verify/ch03/thm-chinese-remainder-two.py
 thm-chinese-remainder-two (proof): componentwise operations on Z/mZ x Z/nZ | defined in the statement; fd2:def-cartesian-product

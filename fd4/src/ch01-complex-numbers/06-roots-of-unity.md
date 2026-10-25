@@ -177,7 +177,7 @@ For \( n = 6 \), \( \omega = e^{i\pi/3} = \tfrac12 + \tfrac{\sqrt 3}{2} i \) (@e
 The six roots sum to \( 0 \): since \( \omega^3 = -1 \), we have \( \omega^{k+3} = -\omega^k \), so the roots cancel in the opposite pairs \( \{1, \omega^3\} \), \( \{\omega, \omega^4\} \), \( \{\omega^2, \omega^5\} \). In the picture, the hexagon is symmetric about its center \( 0 \). In general the sum is @prp-roots-of-unity-sum below.
 :::
 
-We write \( \mu_n \coloneqq \{ z \in \nC : z^n = 1 \} = \{ 1, \omega, \dots, \omega^{n-1} \} \) for the set of \( n \)-th roots of unity. It is a subset of \( \nT \), since each element is some \( z_k = e^{2\pi i k/n} \) (@thm-complex-nth-roots (a)). It contains \( 1 \), and it is closed under products, since \( (\zeta\eta)^n = \zeta^n \eta^n = 1 \) for \( \zeta, \eta \in \mu_n \) (@prp-power-laws-commutative-ring (c)). It is closed under inverses, since \( \zeta \cdot \zeta^{n-1} = \zeta^n = 1 \) gives \( \zeta^{-1} = \zeta^{n-1} \), a product of elements of \( \mu_n \) (for \( n = 1 \), \( \zeta^{0} = 1 \)). Chapter 3 treats \( \mu_n \), like \( \nT \), as an example of a group.
+We write \( \mu_n \coloneqq \{ z \in \nC : z^n = 1 \} = \{ 1, \omega, \dots, \omega^{n-1} \} \) for the set of \( n \)-th roots of unity. It is a subset of \( \nT \), since each element is some \( z_k = e^{2\pi i k/n} \) (@thm-complex-nth-roots (a)). It contains \( 1 \), and it is closed under products, since \( (\zeta\eta)^n = \zeta^n \eta^n = 1 \) for \( \zeta, \eta \in \mu_n \) (@prp-power-laws-commutative-ring (c)). It is closed under inverses, since \( \zeta \cdot \zeta^{n-1} = \zeta^n = 1 \) gives \( \zeta^{-1} = \zeta^{n-1} \), a product of elements of \( \mu_n \) (for \( n = 1 \), \( \zeta^{0} = 1 \)). *Algebraic Preliminaries*, Chapter 2 treats \( \mu_n \), like \( \nT \), as an example of a group.
 
 The roots of unity also describe the roots of any \( c \ne 0 \): the root \( z_0 = \sqrt[n]{\rho}\, e^{i\alpha/n} \) of @thm-complex-nth-roots satisfies \( z_k = z_0 \, \omega^k \) for \( k \in \nN \), by @thm-polar-multiplication (a) and @thm-de-moivre, since \( (\alpha + 2\pi k)/n = \alpha/n + 2\pi k/n \). So by @thm-complex-nth-roots (c) the \( n \)-th roots of \( c \) are \( z_0, z_0\omega, \dots, z_0\omega^{n-1} \): one of them times the \( n \)-th roots of unity.
 
@@ -244,12 +244,12 @@ An \( n \)-th root of \( c \) solves \( z^n - c = 0 \), a polynomial equation of
 \[
 a_n z^n + a_{n-1} z^{n-1} + \dots + a_1 z + a_0 = 0 , \qquad a_0, \dots, a_n \in \nC , \ a_n \ne 0 , \ n \ge 1 ,
 \]
-has a solution in \( \nC \). Here the left side is a **polynomial expression** \( \sum_{k=0}^{n} a_k z^k \), a finite sum; Chapter 4 makes polynomials objects in their own right. We built \( \nC \) so that one such equation, \( z^2 + 1 = 0 \), has a solution, and Section 1.4 solved every equation of degree \( 2 \). It turns out that nothing more ever needs to be added.
+has a solution in \( \nC \). Here the left side is a **polynomial expression** \( \sum_{k=0}^{n} a_k z^k \), a finite sum; *Algebraic Preliminaries*, Chapter 3 makes polynomials objects in their own right. We built \( \nC \) so that one such equation, \( z^2 + 1 = 0 \), has a solution, and Section 1.4 solved every equation of degree \( 2 \). It turns out that nothing more ever needs to be added.
 
 ::: {.remark}
 [Looking ahead]
 
-Section 5.6 proves that every such equation has a solution in \( \nC \): the Fundamental Theorem of Algebra. Its proof uses only the square roots of Section 1.4 and the completeness of \( \nR \), not polar form and not the borrowed facts about cosine and sine. With division of polynomials, Chapter 5 deduces that every complex polynomial of degree \( n \ge 1 \) is a non-zero constant times a product of \( n \) factors of the form \( z - z_j \). Nothing in Chapters 1–4 uses the theorem.
+*Algebraic Preliminaries*, Section 4.6 proves that every such equation has a solution in \( \nC \): the Fundamental Theorem of Algebra. Its proof uses only the square roots of Section 1.4 and the completeness of \( \nR \), not polar form and not the borrowed facts about cosine and sine. With division of polynomials, *Algebraic Preliminaries*, Chapter 4 deduces that every complex polynomial of degree \( n \ge 1 \) is a non-zero constant times a product of \( n \) factors of the form \( z - z_j \). Nothing in this chapter or in *Algebraic Preliminaries*, Chapters 1–3 uses the theorem.
 :::
 
 One companion fact needs no heavy machinery: when the coefficients are real, the solutions that are not real come in conjugate pairs.
@@ -268,7 +268,7 @@ Hence, if \( \sum_{k=0}^{n} a_k z_0^k = 0 \) for some \( z_0 \in \nC \), then al
 First, \( \conj{z^k} = \conj{z}^{\,k} \) for every \( k \in \nN \), by @fd1:ax-induction on \( k \): \( \conj{z^0} = \conj{1} = 1 = \conj{z}^{\,0} \), since \( 1 \) is real (@prp-modulus-of-real); and if \( \conj{z^k} = \conj{z}^{\,k} \), then \( \conj{z^{k+1}} = \conj{z^k z} = \conj{z^k}\, \conj{z} = \conj{z}^{\,k} \conj{z} = \conj{z}^{\,k+1} \), by @thm-conjugate-properties (b). Next, \( \conj{a_k} = a_k \) since \( a_k \) is real (@prp-modulus-of-real), so \( \conj{a_k z^k} = a_k \conj{z}^{\,k} \), again by @thm-conjugate-properties (b). Finally, the conjugate of a finite sum is the sum of the conjugates, by induction on the number of terms along the recursion for finite sums, with @thm-conjugate-properties (a) in the step. This proves the identity. If \( \sum a_k z_0^k = 0 \), then \( \sum a_k \conj{z_0}^{\,k} = \conj{0} = 0 \).
 :::
 
-A solution \( z_0 \) that is not real gives a **second** solution: \( \conj{z_0} \ne z_0 \), since \( z_0 = x + yi \) with \( y \ne 0 \) has \( \conj{z_0} = x - yi \), and \( -y \ne y \). For example, \( z^2 - 2z + 5 = 0 \) has the solution \( 1 + 2i \), since \( (1 + 2i)^2 - 2(1 + 2i) + 5 = (-3 + 4i) - (2 + 4i) + 5 = 0 \); so it also has the solution \( 1 - 2i \). Chapter 5 uses this to factor real polynomials into real factors of degree \( 1 \) and \( 2 \).
+A solution \( z_0 \) that is not real gives a **second** solution: \( \conj{z_0} \ne z_0 \), since \( z_0 = x + yi \) with \( y \ne 0 \) has \( \conj{z_0} = x - yi \), and \( -y \ne y \). For example, \( z^2 - 2z + 5 = 0 \) has the solution \( 1 + 2i \), since \( (1 + 2i)^2 - 2(1 + 2i) + 5 = (-3 + 4i) - (2 + 4i) + 5 = 0 \); so it also has the solution \( 1 - 2i \). *Algebraic Preliminaries*, Chapter 4 uses this to factor real polynomials into real factors of degree \( 1 \) and \( 2 \).
 
 ## Exercises
 
@@ -421,7 +421,7 @@ Write \( z_k \coloneqq e^{2\pi i k/n} \), the roots of \( c = 1 \) in @thm-compl
 \[
 f([k] + [l]) = z_{k+l} = e^{2\pi i k/n} e^{2\pi i l/n} = f([k]) \, f([l]) .
 \]
-As a check on the count, both sets have \( n \) elements (@fd3:thm-integers-mod-n-ring (b) and @thm-complex-nth-roots (c)). In the language of Chapter 3, \( f \) is an isomorphism from the additive structure of \( \nZ/n\nZ \) to the multiplicative structure of \( \mu_n \).
+As a check on the count, both sets have \( n \) elements (@fd3:thm-integers-mod-n-ring (b) and @thm-complex-nth-roots (c)). In the language of *Algebraic Preliminaries*, Chapter 2, \( f \) is an isomorphism from the additive structure of \( \nZ/n\nZ \) to the multiplicative structure of \( \mu_n \).
 :::
 
 ::: {#exr-roots-of-unity-r3}
@@ -482,8 +482,8 @@ prp-roots-of-unity-sum (proof): sum_{k=0}^{n-1} 1 = n (as n * 1 in C); omega^{mn
 prp-roots-of-unity-sum (claim): sum of cos(2 pi k/n) = sum of sin(2 pi k/n) = 0: real part of a finite sum is the sum of real parts | inline (addition in C is coordinatewise, def-complex-numbers; induction on the number of terms); verify/ch01/prp-roots-of-unity-sum.py
 prp-real-coefficients-conjugate-roots (proof): conjugate of a finite sum is the sum of conjugates | inline (induction along fd2:def-sum-product recursion, template, with thm-conjugate-properties (a))
 sec-roots-of-unity (example): (1 + 2i)^2 - 2(1 + 2i) + 5 = 0 | verify/ch01/prp-real-coefficients-conjugate-roots.py
-sec-roots-of-unity (claim): Looking ahead: Section 5.6 proves the FTA using only square roots and completeness; Chapter 5 deduces splitting into linear factors; nothing in Chapters 1-4 uses it | F4.5 (prose pointer; blueprint ch05.md thm-fundamental-theorem-algebra, cor-complex-polynomials-linear-factors); nothing here depends on it
-sec-roots-of-unity (claim): Chapter 4 makes polynomials objects; Chapter 5 factors real polynomials into real factors of degrees 1 and 2; Chapter 3 treats T and mu_n as groups | F4.4, F4.5 (prp-real-polynomial-conjugate-roots), F4.3 (exm-subgroups (f)) (prose pointers; blueprints); nothing here depends on them
+sec-roots-of-unity (claim): Looking ahead: *Algebraic Preliminaries*, Section 4.6 proves the FTA using only square roots and completeness; *Algebraic Preliminaries*, Chapter 4 deduces splitting into linear factors; nothing in this chapter or in Algebraic Preliminaries Chapters 1-3 uses it | F5.5 (prose pointer; blueprint ch05.md thm-fundamental-theorem-algebra, cor-complex-polynomials-linear-factors); nothing here depends on it
+sec-roots-of-unity (claim): *Algebraic Preliminaries*, Chapter 3 makes polynomials objects; *Algebraic Preliminaries*, Chapter 4 factors real polynomials into real factors of degrees 1 and 2; *Algebraic Preliminaries*, Chapter 2 treats T and mu_n as groups | F5.4, F5.5 (prp-real-polynomial-conjugate-roots), F5.3 (exm-subgroups (f)) (prose pointers; blueprints); nothing here depends on them
 sec-roots-of-unity (solution): Check, cube roots of unity; z^3 - 1 = (z - 1)(z^2 + z + 1) | inline; verify/ch01/exm-roots-of-unity.py
 exr-roots-of-unity-b1 (solution): z^3 = -8i values | verify/ch01/exr-roots-of-unity-b1.py
 exr-roots-of-unity-b2 (solution): z^4 = -4 values; (pi + 2 pi (k + 1))/4 = (pi + 2 pi k)/4 + pi/2 | verify/ch01/exr-roots-of-unity-b2.py
@@ -491,7 +491,7 @@ exr-roots-of-unity-b3 (solution): |zeta^n| = |zeta|^n | inline (induction with t
 exr-roots-of-unity-c2 (solution): 1/n = m gives 1 = mn | arithmetic in R; Z inside R via kappa
 exr-roots-of-unity-r1 (solution): sigma restricted to R is a map R -> R preserving +, *, 1 | inline
 exr-roots-of-unity-r1 (solution): the non-negative reals are exactly the squares, so the order of R is definable | fd3:prp-cof-square-roots (cited); fd3:prp-ordered-ring-rules (e)
-exr-roots-of-unity-r2 (claim): "isomorphism" in the language of Chapter 3 | F4.3 (prose pointer); nothing depends on it
+exr-roots-of-unity-r2 (claim): "isomorphism" in the language of *Algebraic Preliminaries*, Chapter 2 | F5.3 (prose pointer); nothing depends on it
 exr-roots-of-unity-r3 (solution): (|x| + |y|)^2 - |x + y|^2 = 2(|xy| - xy) | inline (fd3:prp-ring-algebra (d), fd3:prp-absolute-value-ordered-field (b))
 exr-roots-of-unity-r4 (solution): solutions 0, 1, -1/2 +- (sqrt 3/2) i | verify/ch01/exr-roots-of-unity-r4.py
 sec-roots-of-unity (claim): ax-cosine-sine (T1)-(T5) through def-polar-form, thm-polar-multiplication, prp-polar-form, thm-de-moivre, exm-special-angles: used by thm-complex-nth-roots, exm-roots-of-unity, prp-roots-of-unity-sum, the prose claims on mu_n = {1, omega, ..., omega^(n-1)} and mu_n subset T (after exm-roots-of-unity), z_k = z_0 omega^k, the even-n pairing and the cos/sin sums, the Check (first route), A1, B1, B2, B3 (the inverse clause, through prp-roots-of-unity-sum (a); its 1 in mu_n, closure and mu_n subset T steps use none), C1, C2, R2; lem-reals-nth-root, prp-real-coefficients-conjugate-roots, R1, R3, R4 (via the Check's angle-free route, cor-complex-quadratic-formula, and B3's angle-free mu_n subset T step) use none | AN1.10 (borrow)

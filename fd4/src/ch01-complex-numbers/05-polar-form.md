@@ -40,7 +40,7 @@ Every part is a statement about moduli, so each follows from the rules of Sectio
 (c) Since inverses are unique, \( 1/z = \conj{z} \) holds if and only if \( z \conj{z} = 1 \), that is, by @thm-conjugate-properties (c), if and only if \( \abs{z}^2 = 1 = 1^2 \). Both \( \abs{z} \) and \( 1 \) are non-negative, so by @fd3:prp-ordered-ring-rules (g) neither can be strictly smaller than the other, and \( \abs{z}^2 = 1 \) holds if and only if \( \abs{z} = 1 \).
 :::
 
-Part (b) is the picture we wanted: \( z = \abs{z} \cdot u \), a length times a direction, and both factors are forced. Part (a) says that the directions are closed under multiplication and inversion and contain \( 1 \); Chapter 3 calls a set with these properties, under an associative product, a group, and \( \nT \) is one of its first examples. Part (c) is a practical test: on the unit circle, and only there, dividing by \( z \) is the same as conjugating.
+Part (b) is the picture we wanted: \( z = \abs{z} \cdot u \), a length times a direction, and both factors are forced. Part (a) says that the directions are closed under multiplication and inversion and contain \( 1 \); *Algebraic Preliminaries*, Chapter 2 calls a set with these properties, under an associative product, a group, and \( \nT \) is one of its first examples. Part (c) is a practical test: on the unit circle, and only there, dividing by \( z \) is the same as conjugating.
 
 ::: {.check}
 Write \( z = 3 + 4i \) as \( r u \) with \( r > 0 \) and \( u \in \nT \). What is \( 1/u \)?

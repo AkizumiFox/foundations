@@ -13,7 +13,7 @@
     "deploy-domain",
     "deploy-push-url"
   ],
-  "title": "Algebraic Preliminaries",
+  "title": "Analytic Preliminaries",
   "author": "Akizumi",
   "output": {
     "html": "_build/html",
@@ -97,11 +97,7 @@
   },
   "reading-paths": [],
   "chapters": [
-    "src/ch01-complex-numbers",
-    "src/ch02-fields",
-    "src/ch03-groups-and-permutations",
-    "src/ch04-formal-polynomials",
-    "src/ch05-polynomials-over-a-field"
+    "src/ch01-complex-numbers"
   ],
   "macros": "../latex/macros.tex",
   "deploy-dir": "site",
@@ -130,9 +126,7 @@
       "prefix": "numbers"
     }
   ],
-  "mention-exempt-titles": [
-    "Equal Squares"
-  ],
+  "mention-exempt-titles": [],
   "external-books": {
     "fd1": {
       "title": "Logic and Proof",
@@ -151,6 +145,12 @@
       "short": "F3",
       "url": "https://akizumifox.github.io/math-atlas/fd3/",
       "labels": "../fd3/_build/crossref_labels.json"
+    },
+    "fd5": {
+      "title": "Algebraic Preliminaries",
+      "short": "F5",
+      "url": "https://akizumifox.github.io/math-atlas/fd5/",
+      "labels": "../fd5/_build/crossref_labels.json"
     },
     "an1": {
       "title": "Analysis on the Real Line",

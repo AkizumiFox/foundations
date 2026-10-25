@@ -1,6 +1,6 @@
 # Ideals, Quotient Rings, and the Integers Modulo n
 
-*Sets, Relations, and Cardinality*, Section 2.5 turned the school integers into a clock, \( \nZ/n \), and checked by hand that its sum and product are well defined (@fd2:prp-congruence-arithmetic). Chapter 2 made the same kind of check twice more, for \( \nZ \) and for \( \nQ \), each time through @thm-well-defined-on-classes and a computation special to the formula. This section makes the check **once**, for every commutative ring and every subset of the right kind, called an ideal. The integers modulo \( n \), now a ring, are the first example. Chapter 5 builds \( \nR \) in the same shape, from classes of Cauchy sequences of rationals that differ by a null sequence, and checks its operations there directly; *Algebraic Preliminaries*, Chapter 5 runs division with remainder, gcd and unique factorization again for polynomials over a field.
+*Sets, Relations, and Cardinality*, Section 2.5 turned the school integers into a clock, \( \nZ/n \), and checked by hand that its sum and product are well defined (@fd2:prp-congruence-arithmetic). Chapter 2 made the same kind of check twice more, for \( \nZ \) and for \( \nQ \), each time through @thm-well-defined-on-classes and a computation special to the formula. This section makes the check **once**, for every commutative ring and every subset of the right kind, called an ideal. The integers modulo \( n \), now a ring, are the first example. Chapter 5 builds \( \nR \) in the same shape, from classes of Cauchy sequences of rationals that differ by a null sequence, and checks its operations there directly; *Algebraic Preliminaries*, Chapter 4 runs division with remainder, gcd and unique factorization again for polynomials over a field.
 
 Throughout, \( R \) is a commutative ring (@def-commutative-ring-and-field), with \( a - b \coloneqq a + (-b) \).
 
@@ -369,11 +369,11 @@ The move is **least positive element, then divide**.
 
 *\( S \subseteq n\nZ \).* Let \( a \in S \). By @thm-integers-division-remainder (a), \( a = qn + r \) with \( 0 \le r < n \). Since \( qn \in S \), \( r = a - qn \in S \). If \( r > 0 \), it is a positive element of \( S \) smaller than \( n \), against the choice of \( n \). So \( r = 0 \) and \( a = qn \).
 
-Hence \( S = n\nZ \). No multiplication hypothesis was needed: closure under subtraction alone forces the multiples of \( n \), and so \( S \) is automatically an ideal. The sets \( S \) of this exercise are the subgroups of \( (\nZ, +) \), which *Algebraic Preliminaries*, Chapter 3 studies.
+Hence \( S = n\nZ \). No multiplication hypothesis was needed: closure under subtraction alone forces the multiples of \( n \), and so \( S \) is automatically an ideal. The sets \( S \) of this exercise are the subgroups of \( (\nZ, +) \), which *Algebraic Preliminaries*, Chapter 2 studies.
 :::
 
 <!-- dependency ledger
-def-ideal-commutative-ring (claim): (opening) Chapter 5 builds R from classes of rational Cauchy sequences up to a null difference, checking its operations directly; Algebraic Preliminaries Ch 5 redoes division, gcd and unique factorization for polynomials | F3.10 (prose pointer; blueprint ch05.md def-reals-cauchy-classes), F4.5 (prose pointer; math-atlas spec/06-migration.md F4.5 plan); nothing here depends on them
+def-ideal-commutative-ring (claim): (opening) Chapter 5 builds R from classes of rational Cauchy sequences up to a null difference, checking its operations directly; Algebraic Preliminaries Ch 4 redoes division, gcd and unique factorization for polynomials | F3.10 (prose pointer; blueprint ch05.md def-reals-cauchy-classes), F5.5 (prose pointer; math-atlas spec/06-migration.md F5.5 plan); nothing here depends on them
 def-ideal-commutative-ring (claim): (motivation) b - a = -(a - b), a - c = (a - b) + (b - c), ab - a'b = (a - a')b | ring axioms; proved again in thm-quotient-ring-by-ideal
 def-ideal-commutative-ring (claim): -x = (-1)x | prp-ring-algebra (c) (cited) with (F7), (F6)
 def-ideal-commutative-ring (example): nZ is an ideal; aZ + bZ is an ideal | def-integer-linear-combinations (cited); (F9), (F5)
@@ -400,5 +400,5 @@ exr-quotient-rings-c1 (solution): [n]_m = [0]_m gives n in mZ | thm-quotient-rin
 exr-quotient-rings-b1 (solution): tables of Z/4Z | numerals; verify/ch03/exr-quotient-rings-b1.py
 exr-quotient-rings-b2 (solution): 5 = 2*2 + 1 = 1*3 + 2; 4x + 6y = 2(2x + 3y); 2k = 4(-k) + 6k; 1 = (-1)*2 + 1*3; n^2 = 6m gives 2 | nn and 3 | nn | numerals and ring algebra; verify/ch03/exr-quotient-rings-b2.py
 exr-quotient-rings-c2 (solution): induction on k in N | fd1:ax-induction, read on omega through cor-omega-identification (b) as elsewhere in the chapter
-exr-quotient-rings-c2 (claim): subgroups of (Z, +) studied in Algebraic Preliminaries Ch 3 | F4.3 (prose pointer); nothing depends on it
+exr-quotient-rings-c2 (claim): subgroups of (Z, +) studied in Algebraic Preliminaries Ch 2 | F5.3 (prose pointer); nothing depends on it
 -->

@@ -320,7 +320,7 @@ Show first that \( x^2 \ge 0 \) for every \( x \), splitting on whether \( x = 0
 
 (b) If some relation \( < \) made the field an ordered field, then (a), applied to that ordered field, would forbid \( i^2 = -1 \). So no such relation exists.
 
-The complex numbers of *Algebraic Preliminaries*, Chapter 1 contain such an \( i \), so they form a field that cannot be ordered. Compare @exm-finite-ring-not-orderable, where the obstacle was \( 1 + 1 = 0 \); here it is that \( -1 \) is a square.
+The complex numbers of *Analytic Preliminaries*, Chapter 1 contain such an \( i \), so they form a field that cannot be ordered. Compare @exm-finite-ring-not-orderable, where the obstacle was \( 1 + 1 = 0 \); here it is that \( -1 \) is a square.
 
 **Marking scheme.** (10 points)
 - 4: shows \( x^2 \ge 0 \) for every \( x \) (cases \( x = 0 \), \( x \ne 0 \)), or rules out \( x = 0 \) for the \( x \) with \( x^2 = -1 \) and then shows \( x^2 > 0 \), giving the rule for each step.

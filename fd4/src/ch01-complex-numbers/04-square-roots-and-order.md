@@ -71,7 +71,7 @@ Finally, for \( z = 0 \): \( 0^2 = 0 \), and if \( u^2 = u \cdot u = 0 \), then 
 
 The answer to the prompt: \( x \) is non-negative by construction, and \( y \) is \( s \) times a non-negative number, so \( xy \) is \( s \) times a non-negative number, and \( 2xy \) must equal \( b \). If \( b > 0 \), then \( x \) and \( y \) must both be non-zero with the same sign; if \( b < 0 \), opposite signs. When \( b = 0 \) the choice of \( s \) does not matter, because then one of \( x, y \) is \( 0 \).
 
-The proposition proves what *Logic and Proof*, Section 7.1 assumed, and it is stronger: it counts the roots. It uses only the field \( \nC \), its modulus, and square roots of non-negative reals; no angle, cosine or sine appears. That matters later: Chapter 5 proves the Fundamental Theorem of Algebra using square roots in exactly this form.
+The proposition proves what *Logic and Proof*, Section 7.1 assumed, and it is stronger: it counts the roots. It uses only the field \( \nC \), its modulus, and square roots of non-negative reals; no angle, cosine or sine appears. That matters later: *Algebraic Preliminaries*, Chapter 4 proves the Fundamental Theorem of Algebra using square roots in exactly this form.
 
 ::: {#exm-complex-square-root}
 [Square Roots of \( 5 - 12i \)]
@@ -328,7 +328,7 @@ prp-complex-square-roots (proof): sqrt(p) sqrt(q) = sqrt(pq) for p, q >= 0; sqrt
 prp-complex-square-roots (proof): s^2 = 1; s|b| = b by cases on the sign of b; p >= 0 implies p/2 >= 0 in R; (r + a)/2 - (r - a)/2 = a | inline; fd3:def-absolute-value-ordered-field; p/2 > 0 for p > 0 by fd3:prp-ordered-field-halves (b), and 0/2 = 0 by fd3:prp-ring-algebra (b), cited
 prp-complex-square-roots (proof): (u - w)(u + w) = u^2 - w^2 in a commutative ring | prp-complex-arithmetic-laws with fd3:prp-ring-algebra (c); inline
 prp-complex-square-roots (proof): 2 = 1 + 1 is non-zero in C | fd3:prp-ordered-ring-rules (h) in R, prp-reals-embed-complex (injective, preserves sums), cited
-prp-complex-square-roots (claim): Chapter 5 proves the FTA from square roots in this form | prose pointer (F4.5, lem-complex-direction-negative-real-part); nothing depends on it
+prp-complex-square-roots (claim): *Algebraic Preliminaries*, Chapter 4 proves the FTA from square roots in this form | prose pointer (F5.5, lem-complex-direction-negative-real-part); nothing depends on it
 exm-complex-square-root (solution): |5 - 12i| = 13; x = 3, y = -2 | inline; verify/ch01/exm-complex-square-root.py
 prp-complex-square-roots (example): quick check, square roots of -4 and 2i | inline; verify/ch01/prp-complex-square-roots.py
 cor-complex-quadratic-formula (proof): 4a(az^2 + bz + c) = (2az + b)^2 - (b^2 - 4ac); 4 != 0 in C | prp-complex-arithmetic-laws, fd3:prp-ring-algebra (d); 4 = 4 * 1 > 0 in R by fd3:prp-ordered-ring-rules (h) and prp-reals-embed-complex

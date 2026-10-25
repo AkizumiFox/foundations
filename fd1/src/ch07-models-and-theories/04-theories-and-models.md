@@ -395,7 +395,7 @@ Show that (Dense) is independent of the strict linear order axioms.
 ::: {.remark}
 [Looking ahead]
 
-*Sets, Relations, and Cardinality*, Chapter 2 studies equivalence relations and partial orders as relations on a set, with their maximal and greatest elements; *Algebraic Preliminaries*, Chapters 2 and 3 take fields and groups as theories and study their models.
+*Sets, Relations, and Cardinality*, Chapter 2 studies equivalence relations and partial orders as relations on a set, with their maximal and greatest elements; *Algebraic Preliminaries*, Chapters 1 and 2 take fields and groups as theories and study their models.
 :::
 
 ## Exercises

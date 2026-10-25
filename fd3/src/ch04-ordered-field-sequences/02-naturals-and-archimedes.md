@@ -270,7 +270,7 @@ Applied again, the theorem shows that an interval of an Archimedean field contai
 
 ## A field that is not Archimedean
 
-Section 2.5 proved the Archimedean property of \( \nQ \) from the construction of \( \nQ \): every rational is a quotient of integers. Nothing in (F1)–(F9) and (O1)–(O4) forces it. The standard witness uses polynomials, which this volume has not built; *Algebraic Preliminaries*, Chapter 4 builds them as formal polynomials. We use the school algebra of polynomials in this one example, and say so. No proof of a numbered result in this chapter cites it; it serves only as a counterexample, in prose, warnings and exercises.
+Section 2.5 proved the Archimedean property of \( \nQ \) from the construction of \( \nQ \): every rational is a quotient of integers. Nothing in (F1)–(F9) and (O1)–(O4) forces it. The standard witness uses polynomials, which this volume has not built; *Algebraic Preliminaries*, Chapter 3 builds them as formal polynomials. We use the school algebra of polynomials in this one example, and say so. No proof of a numbered result in this chapter cites it; it serves only as a counterexample, in prose, warnings and exercises.
 
 ::: {#exm-rational-function-field}
 [A Non-Archimedean Ordered Field]
@@ -498,7 +498,7 @@ prp-integer-part-ordered-field (proof): l - 1 < l in Z | (O3) with 0 < 1 (prp-or
 thm-rationals-dense-ordered-field (proof): iota_F(m + 1) = iota_F(m) + 1_F | thm-rationals-embed-ordered-field (additive, iota_F(1) = 1_F)
 thm-rationals-dense-ordered-field (claim): Chapter 6 uses it; Chapter 5 only in an exercise (F3.10 §04 B1) | prose pointer (F3.10, F3.4); nothing here depends on it
 def-archimedean-ordered-field (claim): the constructed reals of the next chapter are Archimedean | prose pointer (F3.10); nothing here depends on it
-exm-rational-function-field (example): school polynomial algebra (degree, leading coefficient, leading coefficient of a product), Q(t) is an ordered field with the stated positive set, n.1 is the constant polynomial n | school fact; formal polynomials in F4.4 (flagged in the text; nothing in a proof depends on it)
+exm-rational-function-field (example): school polynomial algebra (degree, leading coefficient, leading coefficient of a product), Q(t) is an ordered field with the stated positive set, n.1 is the constant polynomial n | school fact; formal polynomials in F5.4 (flagged in the text; nothing in a proof depends on it)
 exm-rational-function-field (claim): density fails in Q(t) (paragraph after the warning) | school facts of the example (as above); otherwise cited
 exr-naturals-and-archimedes-a1 (solution): t + 1 > t, t^2 - n has leading coefficient 1 | (O3) with 1 > 0; school polynomial algebra (as for the example)
 exr-naturals-and-archimedes-b3 (solution): (k + 1) 2 = 2k + 2 and k + 2 <= 2k + 2 in N | thm-omega-arithmetic-laws (cited), prp-omega-order-arithmetic (a)

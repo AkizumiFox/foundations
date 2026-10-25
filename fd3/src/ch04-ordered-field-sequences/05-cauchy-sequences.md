@@ -510,7 +510,7 @@ exm-consecutive-differences-not-cauchy (example): k/(n + k + 1) <= k/(n + k) and
 exm-consecutive-differences-not-cauchy (example): sum of m - n terms each below e is below (m - n) e | prp-absolute-value-ordered-field (e) applied repeatedly; inline
 exr-cauchy-sequences-a1 (solution): least N_0 = 3 for tolerance 1/4; a_3 = -3/4; pair (2, 11) gives exactly 1/4 | verify/ch04/exr-cauchy-sequences-a1.py
 exr-cauchy-sequences-b1 (solution): (k + 1)/(k + 2) = 1 - 1/(k + 2) | field arithmetic; verify/ch04/exr-cauchy-sequences-b1.py
-exr-cauchy-sequences-b1 (solution): Q(t) remark: (n * 1) bounded by t | exm-rational-function-field (school fact; formal polynomials in F4.4); remark only, nothing depends on it
+exr-cauchy-sequences-b1 (solution): Q(t) remark: (n * 1) bounded by t | exm-rational-function-field (school fact; formal polynomials in F5.4); remark only, nothing depends on it
 exr-cauchy-sequences-b3 (solution): least N_0 = 1 for tolerance 1/2; c = 1/2, N = 1 | verify/ch04/exr-cauchy-sequences-b3.py
 exr-cauchy-sequences-c1 (solution): 3 * 1_F > 0 and e/3 + e/3 + e/3 = e | prp-naturals-in-ordered-field (b), (F5)-(F9); inline
 exr-cauchy-sequences-c3 (solution): catalogue entry (N2) | fd1:exm-not-allowed-catalogue, cited

@@ -300,7 +300,7 @@ Stetigkeit
 Zahlen
 irrationale
 und
-# fd4 (Algebraic Preliminaries), added at S4 2026-10-12
+# fd4 F4.1 and fd5 (Algebraic Preliminaries; F4.2-F4.5 moved to fd5 as F5.2-F5.5 on 2026-10-25), added at S4 2026-10-12
 Moivre
 exponentials
 quartic
@@ -345,6 +345,9 @@ asm
 ponendo
 logics
 scaffolded
+# fd4 Analytic Preliminaries preface (planned chapter titles), 2026-10-25
+Isometries
+isometries
 # fd1 Chapter 3 (F1.7, finding derivations), S4 2026-10-19
 untried
 rereading

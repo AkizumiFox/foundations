@@ -153,7 +153,7 @@ For \( a, c \in \nR \), the sum and product are those of \( \nR \) by @prp-reals
 Everything proved for an arbitrary field now holds in \( \nC \), without a new proof. From @fd3:lem-field-fraction-rules: the inverse \( z^{-1} \) is the **only** \( y \) with \( zy = 1 \), and \( (zw)^{-1} = z^{-1} w^{-1} \) for non-zero \( z, w \); fractions \( z/w \coloneqq z w^{-1} \) add and multiply by the usual rules; and \( \nC \) has **no zero divisors**: \( zw = 0 \) forces \( z = 0 \) or \( w = 0 \). By @prp-power-laws-commutative-ring (d), \( z^n \ne 0 \) whenever \( z \ne 0 \). These are the facts that the rest of the chapter uses when it cancels a non-zero factor.
 
 ::: {.remark}
-Chapter 2 collects fields as a notion with many examples, finite and infinite. This theorem is the one it cites for \( \nC \), and \( \nR \subseteq \nC \), with the closure just proved, is one of its examples of one field inside another.
+*Algebraic Preliminaries*, Chapter 1 collects fields as a notion with many examples, finite and infinite. This theorem is the one it cites for \( \nC \), and \( \nR \subseteq \nC \), with the closure just proved, is one of its examples of one field inside another.
 :::
 
 In practice, a quotient is computed by "multiplying top and bottom by the conjugate". For \( w \ne 0 \), @prp-complex-inverse gives
@@ -325,7 +325,7 @@ z^{-1} = \frac{a}{a^2 + b^2} + \frac{-b}{a^2 + b^2}\, i ,
 \]
 whose parts are quotients of rational numbers by a non-zero rational number, hence rational. So all five operations stay in \( \nQ(i) \). For example, \( (1 + 2i)^{-1} = \frac15 - \frac25 i \in \nQ(i) \).
 
-Chapter 2 calls a subset of a field a subfield when it contains \( 0 \) and \( 1 \) and has these closure properties. \( \nQ(i) \) contains \( 0 = 0 + 0i \) and \( 1 = 1 + 0i \), and it is one of the examples there.
+*Algebraic Preliminaries*, Chapter 1 calls a subset of a field a subfield when it contains \( 0 \) and \( 1 \) and has these closure properties. \( \nQ(i) \) contains \( 0 = 0 + 0i \) and \( 1 = 1 + 0i \), and it is one of the examples there.
 
 **Marking scheme.** (10 points)
 - 2: the copy of \( \nQ \) in \( \nR \) is closed under \( + \), \( \cdot \), negatives and inverses of non-zero elements, with a reason (@fd3:thm-rational-embedding (a), (c)).
@@ -350,7 +350,7 @@ thm-conjugate-properties (proof): |z||w| >= 0 | (O4) of fd3:def-ordered-ring-and
 thm-conjugate-properties (claim): z -> -conj z sends 1 to -1 and 1*1 to -1 | arithmetic; inline
 thm-conjugate-properties (claim): pointers to Section 1.3 (square the modulus, triangle inequality) and Section 1.5 (angles) | prose pointers within the chapter; nothing depends on them
 prp-complex-inverse (proof): the product 1/|z|^2 * |z|^2 = 1 computed in R equals that in C | prp-reals-embed-complex (cited)
-thm-complex-numbers-field (claim): pointer to Chapter 2 (fields; R inside C as one example of a subfield) | prose pointer; nothing depends on it
+thm-complex-numbers-field (claim): pointer to *Algebraic Preliminaries*, Chapter 1 (fields; R inside C as one example of a subfield) | prose pointer; nothing depends on it
 exm-complex-division (solution): 1/(3 + 4i) = 3/25 - (4/25)i; (5 + i)/(1 - i) = 2 + 3i | verify/ch01/exm-complex-division.py
 exm-complex-division (example): z/w = z conj(w) / |w|^2 | prp-complex-inverse, fd3:lem-field-fraction-rules (b) (cited); conj w != 0 by thm-conjugate-properties (d), (e) (cited)
 exm-complex-division (solution): the quotient is the only u with u(1 - i) = 5 + i | (F5), (F7), (F8) in C via thm-complex-numbers-field (cited); inline
@@ -363,5 +363,5 @@ exr-conjugate-and-modulus-c1 (solution): (ac - bd)^2 + (ad + bc)^2 = (a^2 + b^2)
 exr-conjugate-and-modulus-c2 (solution): Q closed in R under +, *, negatives, inverses | fd3:thm-rational-embedding (a), (c) (cited); identification q = kappa(q) of F3.10 (prose)
 exr-conjugate-and-modulus-a1 (solution): squares of reals are >= 0 | fd3:prp-ordered-ring-rules (e), fd3:prp-ring-algebra (b) (cited)
 exr-conjugate-and-modulus-c1 (solution): |z||w| >= 0; r|z|^2 = 1 in R equals that in C | (O4) of fd3:def-ordered-ring-and-field, fd3:prp-ring-algebra (b), prp-reals-embed-complex (cited)
-exr-conjugate-and-modulus-c2 (solution): pointer to Chapter 2 (subfields) | prose pointer; nothing depends on it
+exr-conjugate-and-modulus-c2 (solution): pointer to *Algebraic Preliminaries*, Chapter 1 (subfields) | prose pointer; nothing depends on it
 -->
