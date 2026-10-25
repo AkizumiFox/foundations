@@ -241,80 +241,6 @@ Deduce from @exr-infinite-sets-b2 that \( \card{\nR \setminus \nQ} = \card{\nR} 
 The set \( \nR \setminus \nQ \) is uncountable: otherwise \( \nR = (\nR \setminus \nQ) \cup \nQ \) would be a union of two countable sets (@thm-integers-rationals-countable), countable by @prp-union-two-countable, against @thm-reals-uncountable-decimal. An uncountable set is infinite, since finite sets are countable (@thm-countable-characterizations). Now apply @exr-infinite-sets-b2 with \( X \coloneqq \nR \setminus \nQ \) and \( C \coloneqq \nQ \), which is countable and disjoint from \( X \): \( \card{(\nR \setminus \nQ) \cup \nQ} = \card{\nR \setminus \nQ} \), and the left side is \( \card{\nR} \).
 :::
 
-### R. Review
-
-::: {#exr-infinite-sets-r1}
-[R1]
-
-Prove that every integer \( n \ge 1 \) is a sum of distinct powers of \( 2 \): there are an integer \( r \ge 1 \) and natural numbers \( k_1 > k_2 > \dots > k_r \) with \( n = 2^{k_1} + 2^{k_2} + \dots + 2^{k_r} \).
-:::
-
-::: {.solution}
-We use @thm-strong-induction-from-base with \( n_0 = 1 \). Let \( n \ge 1 \), and suppose every integer \( m \) with \( 1 \le m < n \) is such a sum.
-
-*The largest power of \( 2 \) not above \( n \).* The set \( T \coloneqq \{ k \in \nN : 2^k > n \} \) is non-empty, since \( 2^n \ge 1 + n > n \) by @thm-bernoulli with \( x = 1 \). By @thm-well-ordering it has a least element \( m \) (the method of @exm-method-least-element). Since \( 2^0 = 1 \le n \), \( 0 \notin T \), so \( m \ge 1 \), and \( K \coloneqq m - 1 \in \nN \) (@lem-naturals-arithmetic (c)). As \( K < m \), \( K \notin T \); so
-\[
-2^K \le n < 2^{K+1} .
-\]
-*The step.* Let \( s \coloneqq n - 2^K \), so \( 0 \le s < 2^{K+1} - 2^K = 2^K \). If \( s = 0 \), then \( n = 2^K \), a sum with \( r = 1 \). If \( s \ge 1 \), then \( s < n \), because \( 2^K \ge 1 \). By the hypothesis, \( s = 2^{k_1} + \dots + 2^{k_r} \) with \( k_1 > \dots > k_r \). Each \( 2^{k_i} \le s < 2^K \), so \( k_i < K \) (if \( k_i \ge K \), then \( 2^{k_i} \ge 2^K \) by @prp-power-laws (e)). Hence
-\[
-n = 2^K + 2^{k_1} + \dots + 2^{k_r}, \qquad K > k_1 > \dots > k_r ,
-\]
-a sum of distinct powers of \( 2 \). By @thm-strong-induction-from-base, every \( n \ge 1 \) is such a sum. For example \( 13 = 2^3 + 2^2 + 2^0 \).
-
-The base \( 1 \) is the right one: \( 0 \) is not a sum of one or more powers of \( 2 \), since each power is positive.
-:::
-
-::: {#exr-infinite-sets-r2}
-[R2]
-
-Show that \( \forall x\, \exists y\, R(x, y) \nvdash \exists y\, \forall x\, R(x, y) \) by a counter-model whose domain is \( \nN \). Say in words what the two sentences say when \( R(x, y) \) is read as "\( x < y \)".
-:::
-
-::: {.solution}
-Let \( \fM \) have domain \( \nN \) and \( R^{\fM} \coloneqq \{ (d, e) \in \nN \times \nN : d < e \} \). Both formulas are sentences, so no assignment matters.
-
-*The premise is true.* \( \forall x\, \exists y\, (x < y) \) says "every natural number has a larger one". For each \( d \in \nN \), \( e \coloneqq d + 1 \in \nN \) has \( d < e \).
-
-*The conclusion is false.* \( \exists y\, \forall x\, (x < y) \) says "some natural number is larger than every natural number". For any \( e \in \nN \), the choice \( d \coloneqq e \) gives \( d < e \) false, so no \( e \) works.
-
-So \( \fM \) is a counter-model, and \( \forall x\, \exists y\, R(x, y) \not\models \exists y\, \forall x\, R(x, y) \). By the soundness statement of *Logic and Proof*, Section 7.2 (the subsection "From counter-models to non-derivability"), a counter-model shows non-derivability: \( \forall x\, \exists y\, R(x, y) \nvdash \exists y\, \forall x\, R(x, y) \).
-
-This is the converse of @fd1:prp-exists-forall-swap with the variables renamed and the two places of \( R \) exchanged (read \( R(x, y) \) as \( R(y, x) \)), and the counter-model is the one of @fd1:exm-counter-model-swap: there the domain was \( \nZ \) and \( R \) was read as \( > \); with the roles of the variables exchanged, \( R \) read as \( < \) and the domain cut down to \( \nN \), the same witnesses work, as checked above. In the premise the larger number \( y \) is chosen after \( x \) and depends on it; the conclusion asks for one \( y \) in advance.
-:::
-
-::: {#exr-infinite-sets-r3}
-[R3]
-
-For an integer \( n \ge 1 \), how many truth functions with \( n \) inputs are there? Prove your answer.
-:::
-
-::: {.solution}
-There are \( 2^{2^n} \). A truth function with \( n \) inputs (@fd1:def-truth-function) assigns a truth value to each row \( (a_1, \dots, a_n) \); read a row as the function \( i \mapsto a_i \) on \( \{1, \dots, n\} \), and let \( L \) be the set of rows.
-
-*There are \( 2^n \) rows.* The map sending a row to \( \{ i \in \{1, \dots, n\} : a_i = \mathrm{T} \} \) is a bijection \( L \to \powerset{\{1, \dots, n\}} \) (injective and surjective by @exm-method-injectivity and @exm-method-surjectivity): a row is determined by the places where it is \( \mathrm{T} \), and every set of places arises: given \( A \subseteq \{1, \dots, n\} \), the row with \( a_i = \mathrm{T} \) for \( i \in A \) and \( a_i = \mathrm{F} \) otherwise maps to \( A \), and two rows with the same \( \mathrm{T} \)-places agree at every \( i \), since each \( a_i \) is \( \mathrm{T} \) or \( \mathrm{F} \). Since \( \{1, \dots, n\} \) has \( n \) elements, @prp-power-set-count gives \( 2^n \) subsets, so \( L \) has \( 2^n \) elements (compose the bijections).
-
-*There are \( 2^{2^n} \) truth functions.* In the same way, a truth function \( f \) is determined by the set \( \{ \rho \in L : f(\rho) = \mathrm{T} \} \subseteq L \), and every subset of \( L \) arises (the same two checks, with \( f \mapsto \{ \rho : f(\rho) = \mathrm{T} \} \) in place of the row map); so the truth functions are in bijection with \( \powerset{L} \), which has \( 2^{2^n} \) elements by @prp-power-set-count again. For \( n = 1, 2, 3 \) this gives \( 4, 16, 256 \).
-:::
-
-::: {#exr-infinite-sets-r4}
-[R4]
-
-A function \( f \colon \nN \to \nN \) is **eventually zero** if there is \( N \in \nN \) with \( f(n) = 0 \) for every \( n \ge N \). Is the set of eventually zero functions countable?
-:::
-
-::: {.solution}
-*Yes.* The tool is a **countable union of countable sets**. For \( N \in \nN \) let \( Z_N \) be the set of \( f \colon \nN \to \nN \) with \( f(n) = 0 \) for every \( n \ge N \); the set of eventually zero functions is \( Z \coloneqq \bigcup_{N \in \nN} Z_N \). Each \( Z_N \) is countable:
-
-- \( Z_0 \) has one element, the zero function, so it is countable.
-- For \( N = 1 \), \( f \mapsto f(0) \) is a bijection \( Z_1 \to \nN \): a function in \( Z_1 \) is determined by its value at \( 0 \), and every value occurs.
-- For \( N \ge 2 \), \( f \mapsto (f(0), \dots, f(N - 1)) \) is a bijection \( Z_N \to \nN \times \dots \times \nN \) (\( N \) factors), by the same reasoning and the characteristic property of tuples; the product is countable by @cor-product-countable, and so is \( Z_N \) (compose a surjection \( \nN \to \nN \times \dots \times \nN \) with the inverse bijection, @prp-countable-image).
-
-By @thm-countable-union, \( Z \) is countable. (That theorem uses @ax-choice; here it could be avoided, since each \( Z_N \) comes with an explicit listing, but the question did not ask for that.)
-
-*Why the look-alike fails.* A diagonal argument, as in @thm-binary-sequences-uncountable, builds from a list \( f_0, f_1, \dots \) of eventually zero functions the function \( g(n) \coloneqq f_n(n) + 1 \). It differs from every \( f_n \), but \( g(n) \ge 1 \) for every \( n \), so \( g \) is **not** eventually zero: it is not in \( Z \), and nothing is contradicted. A diagonal argument proves uncountability only when the diagonal object stays inside the set; this is the usual failure named in @exm-method-diagonal.
-:::
-
 <!-- dependency ledger
 thm-infinite-countable-subset (proof): the family (S) indexed by P(X) \ {empty}, union equal to X | def-indexed-family, def-family-union-intersection (F2.1 §03), used silently; ax-choice (cited)
 thm-infinite-countable-subset (proof): a singleton {x} has 1 element | def-finite (cited): the bijection 1 -> x from {1}
@@ -329,8 +255,4 @@ exr-infinite-sets-b3 (solution): a set equinumerous with a finite set is finite 
 exr-infinite-sets-b3 (solution): (0, infinity) is an interval with more than one point; n -> -n a bijection N -> {-n : n in N}, so it is infinite; a superset of it is infinite | exm-reals-open-interval (cited); inline, as in the first answer; prp-subset-finite (cited)
 exr-infinite-sets-c1 (solution): max{a, b} of two naturals exists and is >= each | prp-finite-max (F2.2 §03), used silently in the given half
 exr-infinite-sets-c1 (solution): counterexample to the plain diagonal: f_0(n) = 5 + n, f_1(n) = n give g(0) = 6, g(1) = 2 | verify/ch03/exr-infinite-sets-c1.py
-exr-infinite-sets-r1 (solution): 2^(K+1) - 2^K = 2^K; 2^K >= 1 (a positive natural number) | def-power, prp-power-laws (d), (e), lem-naturals-arithmetic (a), used silently; verify/ch03/exr-infinite-sets-r1.py
-exr-infinite-sets-r2 (solution): soundness for predicate logic (counter-model gives non-derivability) | F1.6 §02, subsection #from-counter-models-to-non-derivability (statement; proof in optional F1.6 §03); prose pointer, unlabelled statement
-exr-infinite-sets-r3 (solution): row <-> set of T-places and truth function <-> set of T-rows are bijections; equinumerous with an n-element set has n elements | inline; prp-equinumerous-properties via composition; verify/ch03/exr-infinite-sets-r3.py
-exr-infinite-sets-r4 (solution): Z_N -> N x ... x N (N factors) bijection, N >= 2 | characteristic property of tuples (F2.1 §04, def-ordered-pair)
 -->

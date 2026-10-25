@@ -424,3 +424,14 @@ unflipped
 # fd2 layout addendum (Sets and Functions), 2026-10-25
 Fibres
 fibres
+# fd2 Chapter 5 and Section 3.6 (S4)
+piecewise
+Piecewise
+gluings
+cancelled
+cancelling
+Cancelling
+factorization’s
+reachability
+exponentiate
+invertibility
