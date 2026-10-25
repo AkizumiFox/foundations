@@ -3204,7 +3204,7 @@ items:
   kind: exr
   file: 04-permutations-and-iteration.md
   line: 594
-  hash: a12b57a3e693
+  hash: 6aae09aabb79
   verdicts:
   - stage: S5a
     verdict: correct
@@ -3246,10 +3246,19 @@ items:
     evidence: 04:594-605 R1 algebra checked (f^{n+1}(x) = 2(2^n x + 2^n - 1) + 1); sidecar r1 passes;
       R4 (04:637-648) now says why the look-alike tools fail; R1/R3 slot order is fixed by the frozen
       blueprint, an author call routed to the todo
+  - stage: S8
+    verdict: correct
+    by: coordinator
+    hash: 6aae09aabb79
+    date: '2026-10-26'
+    model: claude-opus-5-5
+    evidence: '04:594-604 R1/R3 swapped per STYLE §11.5 (D7, wrap-up 2026-10-26): R1 is now the Ch4 well-definedness
+      item, text verbatim from the former R3 (S5a/S5b/S6 correct) with only the label and [R1] title changed;
+      2(x-x'') in Z, [y/2] onto, [0] and [1/2] both to [0]'
 - key: exr-permutations-and-iteration-r2
   kind: exr
   file: 04-permutations-and-iteration.md
-  line: 608
+  line: 604
   hash: 3f5d9d6bd1ad
   verdicts:
   - stage: S5a
@@ -3296,8 +3305,8 @@ items:
 - key: exr-permutations-and-iteration-r3
   kind: exr
   file: 04-permutations-and-iteration.md
-  line: 626
-  hash: 8a59898e1141
+  line: 622
+  hash: 5575e8495259
   verdicts:
   - stage: S5a
     verdict: correct
@@ -3323,6 +3332,16 @@ items:
     evidence: 04:626-634. Well-definedness via 2(x-x') in Z and thm-functions-out-of-quotient (a), surjectivity
       via [y/2], and failure of injectivity via [0] and [1/2] all agree with my solution. The source is
       hidden in the problem and named with @exm-reals-mod-integers / @exm-method-well-definedness.
+  - stage: S8
+    verdict: correct
+    by: coordinator
+    hash: 5575e8495259
+    date: '2026-10-26'
+    model: claude-opus-5-5
+    evidence: '04:626-637 R1/R3 swapped per STYLE §11.5 (D7): R3 is now the Ch2 recursion item, verbatim
+      from the former R1 (S8 correct) with only the label and [R3] title changed; algebra 2(2^n x + 2^n
+      - 1) + 1 = 2^{n+1} x + 2^{n+1} - 1; sidecar renamed verify/ch05/exr-permutations-and-iteration-r3.py,
+      passes'
 - key: exr-permutations-and-iteration-r4
   kind: exr
   file: 04-permutations-and-iteration.md

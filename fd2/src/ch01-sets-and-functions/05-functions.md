@@ -790,7 +790,7 @@ def-composition (claim): f(x) in Y, so g(f(x)) is defined and in Z | inline, fro
 exm-composition-order (example): 2x + 2 != 2x + 1 | arithmetic
 prp-empty-function (proof): empty set is a subset of every set | F2.1 §02, prose after prp-empty-set-unique (vacuous implication, cited there)
 def-surjective (claim): (the warning after it) x^2 + x + 1 = (x + 1/2)^2 + 3/4 > 0; values 0, 2, 6, 12 | school algebra (F1-F2 convention); computation inline
-def-injective (claim): negation of bounded quantifiers and of an implication | F1.8 §02 (paid): prp-bounded-quantifier-negation, prp-negated-implication, prose pointer "Logic and Proof, Chapter 6"
+def-injective (claim): negation of bounded quantifiers and of an implication | F1.8 §02 (paid): prp-bounded-quantifier-negation, prp-negated-implication, prose pointer "*Logic and Proof*, Chapter 6"
 exm-injective-surjective-first (example): dividing by 3; n >= 1 gives 3n >= 3, n <= 0 gives 3n <= 0 | school algebra and order facts (F1-F2 convention); proved in AN1.1 (order) and F2.2 (integers)
 exm-injective-surjective-first (claim): a function from a 3-element set to a 2-element set is not injective, etc. | F2.2 §05 (prose pointer "Section 2.5", pigeonhole, the principle stated in F2.1 §01's lattice-point puzzle); only the two specific cases (c), (d) are proved, by listing; nothing depends on the general claim
 exm-function-set-small (claim): Y^X has m^n elements for finite sets; subsets of X correspond to functions X -> {0, 1} | F2.2 §05 (prose pointers "the business of Section 2.5", "which Section 2.5 solves"); the correspondence is stated with its two maps, and nothing depends on either
@@ -806,7 +806,7 @@ def-function (claim): m + n in N for m, n in N (addition N x N -> N, the example
 exr-functions-b1 (solution): in (e), (-1)^n is defined, and is 1 for even n and -1 for odd n | F2.2 (promised; STATUS row "F2.1 §02, §03, §05 → F2.2", (−1)^n by prp-power-laws (b), thm-recursion); parity: thm-even-or-odd (F2.1 §01)
 def-surjective (example): the Quick check on n -> n + 1 uses n + 1 in N and n + 1 >= 1 for n in N; m - 1 in Z for m in Z | F2.2 (promised; STATUS row "F2.1 §02, §03, §05 → F2.2": m − 1 in Z by prp-integers-closed, n + 1 in N by lem-naturals-arithmetic (b); n + 1 >= 1 for n in N since n >= 0 by lem-naturals-arithmetic (a))
 exr-functions-b3 (solution): n >= 1 gives n - 1 in N; n + 1 >= 1 for n in N | F2.2 (promised; STATUS row "F2.1 §02, §03, §05 → F2.2"; n - 1 in N for n >= 1 by lem-naturals-arithmetic (c); n + 1 >= 1 since n >= 0 by (a))
-exr-functions-a1 (solution): negation laws | F1.8 §02 (paid): prp-bounded-quantifier-negation, prp-negated-implication, prose pointer "Logic and Proof, Chapter 6"
+exr-functions-a1 (solution): negation laws | F1.8 §02 (paid): prp-bounded-quantifier-negation, prp-negated-implication, prose pointer "*Logic and Proof*, Chapter 6"
 exm-not-a-function (claim): well-definedness returns for functions defined on classes | F2.5 (prose pointer "Chapter 4"); nothing depends on it
 exm-fraction-map (example): 1 + |x| >= 1 > 0; |x|/(1 + |x|) < 1; f(x) has the sign of x; |x| = x for x >= 0 and -x for x < 0; clearing denominators; |y| < 1 gives 1 - |y| > 0 | school algebra and order facts (F1-F2 convention); proved in AN1.1
 exm-fraction-map (example): the case split on the sign of y (y >= 0 or y < 0) | trichotomy of the order on R, school fact (F1-F2 convention); proved in AN1.1

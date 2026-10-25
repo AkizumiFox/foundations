@@ -594,15 +594,11 @@ If \( \sigma \) has exactly two orbits \( O \) and \( O' \), they are disjoint a
 ::: {#exr-permutations-and-iteration-r1}
 [R1]
 
-Let \( f \colon \nR \to \nR \), \( f(x) = 2x + 1 \). Prove that \( f^n(x) = 2^n x + 2^n - 1 \) for every \( n \in \nN \) and \( x \in \nR \).
+On \( \nR \), let \( x \sim y \) mean \( x - y \in \nZ \). Show that \( [x] \mapsto [2x] \) is a well-defined surjection \( \nR/{\sim} \to \nR/{\sim} \) that is not injective.
 :::
 
 ::: {.solution}
-By induction on \( n \) (@fd1:ax-induction), with the powers of @def-power. For \( n = 0 \): \( f^0(x) = x = 1 \cdot x + 1 - 1 \). If \( f^n(x) = 2^n x + 2^n - 1 \), then by @def-iterate
-\[
-f^{n+1}(x) = 2\bigl(2^n x + 2^n - 1\bigr) + 1 = 2^{n+1} x + 2^{n+1} - 1 ,
-\]
-since \( 2 \cdot 2^n = 2^n \cdot 2 = 2^{n+1} \). The method is the induction of Section 2.2 on a sequence defined by recursion (@thm-recursion).
+Here \( \sim \) is the equivalence relation of @exm-reals-mod-integers. Let \( g \colon \nR \to \nR/{\sim} \), \( g(x) \coloneqq [2x] \). If \( x \sim x' \), then \( 2x - 2x' = 2(x - x') \in \nZ \), so \( g \) is constant on classes, and @thm-functions-out-of-quotient (a) gives the function \( [x] \mapsto [2x] \) (@exm-method-factor-through-quotient). It is onto: every class \( [y] \) is the image of \( [y/2] \). It is not injective: \( [0] \mapsto [0] \) and \( [\tfrac12] \mapsto [1] = [0] \), while \( [0] \ne [\tfrac12] \) by @exm-reals-mod-integers. The method is the well-definedness check of Section 4.2 (@exm-method-well-definedness).
 :::
 
 ::: {#exr-permutations-and-iteration-r2}
@@ -626,11 +622,15 @@ which equals \( \varphi(x) \) if and only if \( \sigma(x) = x \), since \( \varp
 ::: {#exr-permutations-and-iteration-r3}
 [R3]
 
-On \( \nR \), let \( x \sim y \) mean \( x - y \in \nZ \). Show that \( [x] \mapsto [2x] \) is a well-defined surjection \( \nR/{\sim} \to \nR/{\sim} \) that is not injective.
+Let \( f \colon \nR \to \nR \), \( f(x) = 2x + 1 \). Prove that \( f^n(x) = 2^n x + 2^n - 1 \) for every \( n \in \nN \) and \( x \in \nR \).
 :::
 
 ::: {.solution}
-Here \( \sim \) is the equivalence relation of @exm-reals-mod-integers. Let \( g \colon \nR \to \nR/{\sim} \), \( g(x) \coloneqq [2x] \). If \( x \sim x' \), then \( 2x - 2x' = 2(x - x') \in \nZ \), so \( g \) is constant on classes, and @thm-functions-out-of-quotient (a) gives the function \( [x] \mapsto [2x] \) (@exm-method-factor-through-quotient). It is onto: every class \( [y] \) is the image of \( [y/2] \). It is not injective: \( [0] \mapsto [0] \) and \( [\tfrac12] \mapsto [1] = [0] \), while \( [0] \ne [\tfrac12] \) by @exm-reals-mod-integers. The method is the well-definedness check of Section 4.2 (@exm-method-well-definedness).
+By induction on \( n \) (@fd1:ax-induction), with the powers of @def-power. For \( n = 0 \): \( f^0(x) = x = 1 \cdot x + 1 - 1 \). If \( f^n(x) = 2^n x + 2^n - 1 \), then by @def-iterate
+\[
+f^{n+1}(x) = 2\bigl(2^n x + 2^n - 1\bigr) + 1 = 2^{n+1} x + 2^{n+1} - 1 ,
+\]
+since \( 2 \cdot 2^n = 2^n \cdot 2 = 2^{n+1} \). The method is the induction of Section 2.2 on a sequence defined by recursion (@thm-recursion).
 :::
 
 ::: {#exr-permutations-and-iteration-r4}
@@ -681,6 +681,6 @@ exr-permutations-and-iteration-b1 (solution): 10 = 1 mod 9; the doubling orbits 
 exr-permutations-and-iteration-b4 (solution): sigma^k(0) = k for k in Z (n -> n + 1 on Z) | induction in each direction, R arithmetic
 exr-permutations-and-iteration-c1 (solution): images of the three pieces by remainder mod 3; 3i - sigma(i) = 14p; orbits mod 14; 3^6 = 729 = 52*14 + 1 | thm-division-algorithm, prp-congruence-arithmetic (cited); arithmetic; verify/ch05/exr-permutations-and-iteration-c1.py
 exr-permutations-and-iteration-c1 (solution): images disjoint and covering, each piece injective, so bijective | exm-method-gluing step (4); def-injective, def-surjective
-exr-permutations-and-iteration-r1 (solution): 2 * 2^n = 2^{n+1}; 2(2^n x + 2^n - 1) + 1 = 2^{n+1} x + 2^{n+1} - 1 | def-power (cited), R arithmetic; verify/ch05/exr-permutations-and-iteration-r1.py
-exr-permutations-and-iteration-r3 (solution): 2(x - x') in Z; 2 * (1/2) = 1 ~ 0; y = 2 (y/2) | prp-integers-closed (a), R arithmetic
+exr-permutations-and-iteration-r1 (solution): 2(x - x') in Z; 2 * (1/2) = 1 ~ 0; y = 2 (y/2) | prp-integers-closed (a), R arithmetic
+exr-permutations-and-iteration-r3 (solution): 2 * 2^n = 2^{n+1}; 2(2^n x + 2^n - 1) + 1 = 2^{n+1} x + 2^{n+1} - 1 | def-power (cited), R arithmetic; verify/ch05/exr-permutations-and-iteration-r3.py
 -->

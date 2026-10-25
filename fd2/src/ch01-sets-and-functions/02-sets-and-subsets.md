@@ -612,7 +612,7 @@ def-subset (claim): 6k = 3(2k); 3 is not a multiple of 6; 4 is not a multiple of
 exm-subset-first-examples (example): 0 <= 1, 2 <= 3 and transitivity of <= on R | school fact (F1-F2 convention); proved in AN1.1
 exm-subset-first-examples (example): exists-E and exists-I on "6 | x" | F1.4 (promised; prose pointer "F1.4")
 exm-subset-first-examples (example): 2k is an integer when k is (Z closed under multiplication) | school fact (F1-F2 convention); proved in F2.2 (integers)
-def-subset (claim): negation of A subset B is "exists x (x in A and x notin B)" via quantifier negation and negated implication | F1.8 (paid: prp-quantifier-negation, prp-negated-implication; prose pointer "Logic and Proof, Chapter 6")
+def-subset (claim): negation of A subset B is "exists x (x in A and x notin B)" via quantifier negation and negated implication | F1.8 (paid: prp-quantifier-negation, prp-negated-implication; prose pointer "*Logic and Proof*, Chapter 6")
 def-subset (claim): the warning's catalogue entry (N1) | F1.5 (promised; prose pointer "the catalogue of F1.5")
 prp-subset-transitive (proof): forall-I with a flagged box, forall-E | F1.4 (promised; prose pointer "F1.4"; the derivation is checked with F1.4's rules)
 prp-subset-transitive (claim): levels 0, 2, 3 and the silent-step convention | F1.5 (promised; prose pointer "F1.5")
@@ -624,7 +624,7 @@ thm-russell (claim): F2.3's "no map X -> P(X) is onto" has the same shape | F2.3
 def-set-builder (claim): the working rules (W1)-(W5) and N follow from axioms; Z, Q, R are built from sets | F3.1 ((W3) for families of subsets of a set only; general (W3) -> ST.1, Replacement), F3.2, F3.10 (prose pointers; nothing depends on them)
 def-set-builder (claim): F2.3 adds a principle of choice beyond (W1)-(W6); F2.1 §06 shows where it is needed | F2.3, F2.1 §06 (prose pointers, in the fold; nothing in this section depends on them)
 def-set-builder (claim): a set written {f(a) : a in A} is an image | F2.1 §07 (prose pointer; nothing in this section depends on it)
-exr-sets-and-subsets-a1 (solution): quantifier negation and negated implication | F1.8 (paid: prp-quantifier-negation, prp-negated-implication; prose pointer "Logic and Proof, Chapter 6")
+exr-sets-and-subsets-a1 (solution): quantifier negation and negated implication | F1.8 (paid: prp-quantifier-negation, prp-negated-implication; prose pointer "*Logic and Proof*, Chapter 6")
 exr-sets-and-subsets-a1 (solution): integers with |n| >= 4 have n^2 >= 16 | school fact (F1-F2 convention)
 exr-sets-and-subsets-b1 (solution): x^2 - 3x + 2 = (x - 1)(x - 2); a product of reals is zero only if a factor is | school algebra (F1-F2 convention); proved in AN1.1
 exr-sets-and-subsets-b3 (solution): 1/2 is not an integer; integers with |x| >= 2 have x^2 >= 4; -1 is not in N; x = 4k gives x = 2(2k) with 2k an integer | school facts (F1-F2 convention); N = {0, 1, 2, ...} (NOTATION)
