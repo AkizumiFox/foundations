@@ -6,676 +6,2769 @@ items:
   file: 01-restriction-extension-and-gluing.md
   line: 27
   hash: 229bf1035164
-  verdicts: []
+  verdicts:
+  - stage: S5a
+    verdict: correct
+    by: refereeA
+    hash: 229bf1035164
+    date: '2026-10-26'
+    model: claude-opus-5-5
+    evidence: 'L27-41: (a) matches the Section 1.5 restriction (ch01/05-functions.md:158); ι_A ≠ id_A
+      unless A=X holds because a function is (G,Y); the pigeonhole use needs 3>2, which a≠b gives (cor-pigeonhole-finite-sets
+      (a))'
+  - stage: S5b
+    verdict: minor
+    by: refereeB
+    hash: 229bf1035164
+    date: '2026-10-26'
+    model: claude-opus-5-5
+    evidence: NOTATION.md:84 NOTATION credits the symbol f|_A to F2.6 §01, but it was introduced earlier.
 - key: prp-restriction-properties
   kind: prp
   file: 01-restriction-extension-and-gluing.md
   line: 45
   hash: 8282367de93a
-  verdicts: []
+  verdicts:
+  - stage: S5a
+    verdict: correct
+    by: refereeA
+    hash: 8282367de93a
+    date: '2026-10-26'
+    model: claude-opus-5-5
+    evidence: 'L45-57: all five parts true; g∘f is defined since g:Y→Z'
+  - stage: S5b
+    verdict: correct
+    by: refereeB
+    hash: 8282367de93a
+    date: '2026-10-26'
+    model: claude-opus-5-5
+    evidence: 01:45-57 all five parts true for B ⊆ A ⊆ X
 - key: proof:prp-restriction-properties
   kind: proof
   file: 01-restriction-extension-and-gluing.md
   line: 63
   hash: 3508ab93cfcf
-  verdicts: []
+  verdicts:
+  - stage: S5a
+    verdict: correct
+    by: refereeA
+    hash: 3508ab93cfcf
+    date: '2026-10-26'
+    model: claude-opus-5-5
+    evidence: 'L63-75: each part checks domain, codomain and values through prp-function-equality; (b)
+      uses B⊆A, (e) uses B⊆A and def-image'
+  - stage: S5b
+    verdict: correct
+    by: refereeB
+    hash: 3508ab93cfcf
+    date: '2026-10-26'
+    model: claude-opus-5-5
+    evidence: 01:63-75 domains/codomains checked, prp-function-equality, def-injective, def-image cited
 - key: check:01-restriction-extension-and-gluing:1
   kind: check
   file: 01-restriction-extension-and-gluing.md
   line: 79
   hash: f76e60671ea2
-  verdicts: []
+  verdicts:
+  - stage: S5a
+    verdict: correct
+    by: refereeA
+    hash: f76e60671ea2
+    date: '2026-10-26'
+    model: claude-opus-5-5
+    evidence: 'L84: x^2 maps [1,2] onto [1,4], so 0 is missed; f|_[0,∞) is injective'
+  - stage: S5b
+    verdict: correct
+    by: refereeB
+    hash: f76e60671ea2
+    date: '2026-10-26'
+    model: claude-opus-5-5
+    evidence: 01:84 f([1,2])=[1,4], 0 missed; injectivity on [0,∞) ledgered (444)
 - key: thm-gluing
   kind: thm
   file: 01-restriction-extension-and-gluing.md
   line: 91
   hash: 68a0f789ab8c
-  verdicts: []
+  verdicts:
+  - stage: S5a
+    verdict: minor
+    by: refereeA
+    hash: 68a0f789ab8c
+    date: '2026-10-26'
+    model: claude-opus-5-5
+    evidence: 01-restriction-extension-and-gluing.md:94 The statement gives the f_i one at a time ('for
+      each i ∈ I let f_i be a function'), but the proof forms G := ⋃_i G_i with def-family-union-intersection.
+      That definition needs i ↦ G_i to be a family, that is, a function I → P(X×Y) (Section 1.5 makes
+      families functions). For infinite I, choosing an f_i for each i separately is not a construction
+      the book all
+  - stage: S5b
+    verdict: minor
+    by: refereeB
+    hash: 68a0f789ab8c
+    date: '2026-10-26'
+    model: claude-opus-5-5
+    evidence: '01-restriction-extension-and-gluing.md:113 ''Each hypothesis has one job'' is false: the
+      cover is used twice.'
 - key: proof:thm-gluing
   kind: proof
   file: 01-restriction-extension-and-gluing.md
   line: 116
   hash: d3ffaca24c7e
-  verdicts: []
+  verdicts:
+  - stage: S5a
+    verdict: minor
+    by: refereeA
+    hash: d3ffaca24c7e
+    date: '2026-10-26'
+    model: claude-opus-5-5
+    evidence: '01-restriction-extension-and-gluing.md:128 The remark ''Each hypothesis is needed'' supports
+      the cover only by noting that the union graph fails (Fn1). That shows the proof''s construction
+      breaks, not that the theorem''s conclusion fails. With the cover dropped the conclusion can still
+      hold: X={1}, I=∅, Y={0} gives exactly one f.'
+  - stage: S5b
+    verdict: minor
+    by: refereeB
+    hash: d3ffaca24c7e
+    date: '2026-10-26'
+    model: claude-opus-5-5
+    evidence: 01-restriction-extension-and-gluing.md:128 'Each hypothesis is needed' is stated, but the
+      argument only shows that the union-graph construction fails. For the conclusion of the theorem the
+      claim is false in one case.
 - key: exm-method-gluing
   kind: exm
   file: 01-restriction-extension-and-gluing.md
   line: 132
   hash: 3533a60828d5
-  verdicts: []
+  verdicts:
+  - stage: S5a
+    verdict: correct
+    by: refereeA
+    hash: 3533a60828d5
+    date: '2026-10-26'
+    model: claude-opus-5-5
+    evidence: 'L135-139: the template steps match the theorem''s hypotheses'
+  - stage: S5b
+    verdict: correct
+    by: refereeB
+    hash: 3533a60828d5
+    date: '2026-10-26'
+    model: claude-opus-5-5
+    evidence: 01:132-140 template consistent with thm-gluing and exm-piecewise (c)
 - key: exm-piecewise-as-gluing
   kind: exm
   file: 01-restriction-extension-and-gluing.md
   line: 142
   hash: 6c3a5f89bc20
-  verdicts: []
+  verdicts:
+  - stage: S5a
+    verdict: correct
+    by: refereeA
+    hash: 6c3a5f89bc20
+    date: '2026-10-26'
+    model: claude-opus-5-5
+    evidence: 'L155-159: overlaps and values checked; k(1/2)=k(-1/2)=1/2; the sidecar passes'
+  - stage: S5b
+    verdict: minor
+    by: refereeB
+    hash: 6c3a5f89bc20
+    date: '2026-10-26'
+    model: claude-opus-5-5
+    evidence: 01-restriction-extension-and-gluing.md:157 The text calls r 'the function r of the hook,
+      which is not a function', which contradicts itself. Line 128 also calls it 'the function r'.
 - key: check:01-restriction-extension-and-gluing:2
   kind: check
   file: 01-restriction-extension-and-gluing.md
   line: 170
   hash: c5364efd414c
-  verdicts: []
+  verdicts:
+  - stage: S5a
+    verdict: correct
+    by: refereeA
+    hash: c5364efd414c
+    date: '2026-10-26'
+    model: claude-opus-5-5
+    evidence: 'L175: 1^2=1=2·1-1; f(-1)=1=f(1), with both points in (-∞,1]'
+  - stage: S5b
+    verdict: correct
+    by: refereeB
+    hash: c5364efd414c
+    date: '2026-10-26'
+    model: claude-opus-5-5
+    evidence: 01:175 1^2=1=2·1-1; f(-1)=1=f(1), both in first piece
 - key: def-indicator
   kind: def
   file: 01-restriction-extension-and-gluing.md
   line: 182
   hash: f8b4dc3aec49
-  verdicts: []
+  verdicts:
+  - stage: S5a
+    verdict: correct
+    by: refereeA
+    hash: f8b4dc3aec49
+    date: '2026-10-26'
+    model: claude-opus-5-5
+    evidence: 'L185-197: agrees with exm-first-functions (d) and thm-power-set-two-power (ch03/06:292);
+      recovering A from ind_A is direct'
+  - stage: S5b
+    verdict: correct
+    by: refereeB
+    hash: f8b4dc3aec49
+    date: '2026-10-26'
+    model: claude-opus-5-5
+    evidence: 01:182-197 matches exm-first-functions (d) and thm-power-set-two-power (06-cardinal-arithmetic.md:295)
 - key: prp-indicator-arithmetic
   kind: prp
   file: 01-restriction-extension-and-gluing.md
   line: 205
   hash: be27d6c47f01
-  verdicts: []
+  verdicts:
+  - stage: S5a
+    verdict: correct
+    by: refereeA
+    hash: be27d6c47f01
+    date: '2026-10-26'
+    model: claude-opus-5-5
+    evidence: 'L208-216: the formulas hold on all four rows (sidecar passes)'
+  - stage: S5b
+    verdict: correct
+    by: refereeB
+    hash: be27d6c47f01
+    date: '2026-10-26'
+    model: claude-opus-5-5
+    evidence: 01:205-217 all five formulas checked on four cases
 - key: proof:prp-indicator-arithmetic
   kind: proof
   file: 01-restriction-extension-and-gluing.md
   line: 223
   hash: 947024e144a0
-  verdicts: []
+  verdicts:
+  - stage: S5a
+    verdict: correct
+    by: refereeA
+    hash: 947024e144a0
+    date: '2026-10-26'
+    model: claude-opus-5-5
+    evidence: 'L224-242: the table is correct; (c) uses thm-set-algebra (d) (differences law, ch01/03:89)
+      with X,A,B for A,B,C, then (a) and (b); (e) both directions are fine'
+  - stage: S5b
+    verdict: correct
+    by: refereeB
+    hash: 947024e144a0
+    date: '2026-10-26'
+    model: claude-opus-5-5
+    evidence: table 01:228-233 checked row by row; (c) via thm-set-algebra (d) (03-set-operations.md:88)
+      with X for A is correct; (e) cites def-subset
 - key: check:01-restriction-extension-and-gluing:3
   kind: check
   file: 01-restriction-extension-and-gluing.md
   line: 247
   hash: a0182b82caa7
-  verdicts: []
+  verdicts:
+  - stage: S5a
+    verdict: correct
+    by: refereeA
+    hash: a0182b82caa7
+    date: '2026-10-26'
+    model: claude-opus-5-5
+    evidence: 'L252: u(1-v) is correct'
+  - stage: S5b
+    verdict: correct
+    by: refereeB
+    hash: a0182b82caa7
+    date: '2026-10-26'
+    model: claude-opus-5-5
+    evidence: 01:252 u(1-v)=u-uv
 - key: exm-symmetric-difference-associative
   kind: exm
   file: 01-restriction-extension-and-gluing.md
   line: 257
   hash: 72934b28aa72
-  verdicts: []
+  verdicts:
+  - stage: S5a
+    verdict: correct
+    by: refereeA
+    hash: 72934b28aa72
+    date: '2026-10-26'
+    model: claude-opus-5-5
+    evidence: 'L264-274: the expansion and the odd-count reading are correct; the sidecar passes'
+  - stage: S5b
+    verdict: correct
+    by: refereeB
+    hash: 72934b28aa72
+    date: '2026-10-26'
+    model: claude-opus-5-5
+    evidence: 01:267-271 expansion u+v+w-2uv-2uw-2vw+4uvw verified by hand for both sides; parity reading
+      01:274 correct
 - key: check:01-restriction-extension-and-gluing:4
   kind: check
   file: 01-restriction-extension-and-gluing.md
   line: 278
   hash: ac6e9037dc41
-  verdicts: []
+  verdicts:
+  - stage: S5a
+    verdict: correct
+    by: refereeA
+    hash: ac6e9037dc41
+    date: '2026-10-26'
+    model: claude-opus-5-5
+    evidence: 'L283: (1,0,1,0) = indicator of {1,3}'
+  - stage: S5b
+    verdict: correct
+    by: refereeB
+    hash: ac6e9037dc41
+    date: '2026-10-26'
+    model: claude-opus-5-5
+    evidence: 01:283 (1,0,1,0); A△B={1,3}
 - key: exr-restriction-extension-and-gluing-a1
   kind: exr
   file: 01-restriction-extension-and-gluing.md
   line: 290
   hash: 3f623c9f876b
-  verdicts: []
+  verdicts:
+  - stage: S5a
+    verdict: correct
+    by: refereeA
+    hash: 3f623c9f876b
+    date: '2026-10-26'
+    model: claude-opus-5-5
+    evidence: 'L302-308: image [0,4]; pigeonhole; (c) both directions use prp-empty-function (b) and gluing;
+      (d) correct'
+  - stage: S5b
+    verdict: minor
+    by: refereeB
+    hash: 3f623c9f876b
+    date: '2026-10-26'
+    model: claude-opus-5-5
+    evidence: 01-restriction-extension-and-gluing.md:306 The step 'A ⊆ X and A ≠ X, so some x_0 ∈ X is
+      not in A' is used without an @ref, and the ledger does not list it.
+  - stage: S6
+    verdict: correct
+    by: verifier
+    hash: 3f623c9f876b
+    date: '2026-10-26'
+    model: claude-opus-5-5
+    evidence: '01:290-309. I solved it first: (a) [0,4]; (b) no (pigeonhole), yes with 3->c; (c) both
+      directions match, and prp-empty-function (b) says what the solution cites; (d) (1,0,1,0) and {2,3}.
+      My script agrees.'
 - key: exr-restriction-extension-and-gluing-b1
   kind: exr
   file: 01-restriction-extension-and-gluing.md
   line: 313
   hash: 55fc7f8d7ac9
-  verdicts: []
+  verdicts:
+  - stage: S5a
+    verdict: correct
+    by: refereeA
+    hash: 55fc7f8d7ac9
+    date: '2026-10-26'
+    model: claude-opus-5-5
+    evidence: 'L320-324: overlaps {-1},{1},∅ agree; thm-image-union applies to a family of three; f(ℝ)=[0,∞);
+      preimage {±1/2}'
+  - stage: S5b
+    verdict: correct
+    by: refereeB
+    hash: 55fc7f8d7ac9
+    date: '2026-10-26'
+    model: claude-opus-5-5
+    evidence: 01:320-324 overlaps {-1},{1},∅ agree; images [1,∞),[0,1],[1,∞) via thm-image-union (family
+      form, 07:311); preimage {±1/2}
+  - stage: S6
+    verdict: correct
+    by: verifier
+    hash: 55fc7f8d7ac9
+    date: '2026-10-26'
+    model: claude-opus-5-5
+    evidence: '01:313-325. Overlaps {-1} and {1} agree at value 1. The images are [1,inf), [0,1], [1,inf),
+      so f(R)=[0,inf). The preimage of 1/4 is {-1/2,1/2}, so f is not injective. Checked with exact rationals.
+      thm-image-union is stated for families, so three pieces are covered. Worked models: exm-piecewise-as-gluing
+      and the check at line 171.'
 - key: exr-restriction-extension-and-gluing-b2
   kind: exr
   file: 01-restriction-extension-and-gluing.md
   line: 327
   hash: 1a7350c48707
-  verdicts: []
+  verdicts:
+  - stage: S5a
+    verdict: correct
+    by: refereeA
+    hash: 1a7350c48707
+    date: '2026-10-26'
+    model: claude-opus-5-5
+    evidence: 'L334-336: (⇒) via thm-image-intersection (b), whose ''if'' direction holds for injective
+      f; (⇐) the case split and the witness z∈A∩B are valid'
+  - stage: S5b
+    verdict: correct
+    by: refereeB
+    hash: 1a7350c48707
+    date: '2026-10-26'
+    model: claude-opus-5-5
+    evidence: 01:334-336 (⇒) thm-image-intersection (b) (07:378); (⇐) cross case via z ∈ A∩B correct
+  - stage: S6
+    verdict: correct
+    by: verifier
+    hash: 1a7350c48707
+    date: '2026-10-26'
+    model: claude-opus-5-5
+    evidence: '01:327-337. (=>) uses prp-restriction-properties (d) and thm-image-intersection (b), which
+      is an iff for all A, B, so it applies. (<=) handles the same-piece and cross-piece cases through
+      z in A∩B and matches my proof. Worked model: template step (4) and the Schröder–Bernstein Case 3
+      paragraph.'
 - key: exr-restriction-extension-and-gluing-b3
   kind: exr
   file: 01-restriction-extension-and-gluing.md
   line: 339
   hash: b83f39a11f68
-  verdicts: []
+  verdicts:
+  - stage: S5a
+    verdict: correct
+    by: refereeA
+    hash: b83f39a11f68
+    date: '2026-10-26'
+    model: claude-opus-5-5
+    evidence: 'L351-355: the polynomial identities with u^2=u are correct; the sidecar passes'
+  - stage: S5b
+    verdict: minor
+    by: refereeB
+    hash: b83f39a11f68
+    date: '2026-10-26'
+    model: claude-opus-5-5
+    evidence: 01-restriction-extension-and-gluing.md:353 Bare part letters in the solution clash with
+      the exercise's own part labels.
+  - stage: S6
+    verdict: correct
+    by: verifier
+    hash: b83f39a11f68
+    date: '2026-10-26'
+    model: claude-opus-5-5
+    evidence: '01:339-356. Both polynomial identities hold. I checked all 8 (u,v,w) patterns symbolically
+      and as set equalities. Worked model: exm-symmetric-difference-associative.'
 - key: exr-restriction-extension-and-gluing-b4
   kind: exr
   file: 01-restriction-extension-and-gluing.md
   line: 358
   hash: 9958ebba27e2
-  verdicts: []
+  verdicts:
+  - stage: S5a
+    verdict: correct
+    by: refereeA
+    hash: 9958ebba27e2
+    date: '2026-10-26'
+    model: claude-opus-5-5
+    evidence: 'L373-381: (a) vacuous agreement; (b) x^2 counterexample; (c) direct; (d) the cross-piece
+      case uses x/2∈ℚ, and the other order follows by symmetry; (e) f(1/2)=f(3/2)'
+  - stage: S5b
+    verdict: correct
+    by: refereeB
+    hash: 9958ebba27e2
+    date: '2026-10-26'
+    model: claude-opus-5-5
+    evidence: 01:373-381 verdicts T,F,T,T,F all right; (d) surjectivity h(y/2)=y, cross-piece contradiction
+      valid
+  - stage: S6
+    verdict: correct
+    by: verifier
+    hash: 9958ebba27e2
+    date: '2026-10-26'
+    model: claude-opus-5-5
+    evidence: 01:358-382. Verdicts are T, F, T, T, F. (b) gives the collision f(1)=f(-1). (d) proves injectivity
+      across the pieces through x/2 in Q, and surjectivity through y/2 irrational. (e) has f(1/2)=f(3/2)=1/2,
+      checked by script.
 - key: exr-restriction-extension-and-gluing-c1
   kind: exr
   file: 01-restriction-extension-and-gluing.md
   line: 386
   hash: 13ed76cb6985
-  verdicts: []
+  verdicts:
+  - stage: S5a
+    verdict: correct
+    by: refereeA
+    hash: 13ed76cb6985
+    date: '2026-10-26'
+    model: claude-opus-5-5
+    evidence: 'L393-399: γ from gluing on a disjoint cover; both round trips hold (the second by gluing
+      uniqueness); thm-bijection-iff-inverse'
+  - stage: S5b
+    verdict: minor
+    by: refereeB
+    hash: 13ed76cb6985
+    date: '2026-10-26'
+    model: claude-opus-5-5
+    evidence: 01-restriction-extension-and-gluing.md:387 The title's meta-claim 'used later' is false.
+      Nothing later in the book uses C1.
+  - stage: S6
+    verdict: minor
+    by: verifier
+    hash: 13ed76cb6985
+    date: '2026-10-26'
+    model: claude-opus-5-5
+    evidence: '01-restriction-extension-and-gluing.md:399 Three C items that a reader would write up in
+      full have no marking scheme: 5.1 C1 (bijection with two round trips), 5.1 C3 (Cantor through indicators)
+      and 5.2 C1 (an induction proof). STYLE §11.6 and DRAFTING line 33 require one for ''any C item a
+      reader is likely to write up in full''.'
 - key: exr-restriction-extension-and-gluing-c2
   kind: exr
   file: 01-restriction-extension-and-gluing.md
   line: 402
   hash: f89e1cd39211
-  verdicts: []
+  verdicts:
+  - stage: S5a
+    verdict: correct
+    by: refereeA
+    hash: f89e1cd39211
+    date: '2026-10-26'
+    model: claude-opus-5-5
+    evidence: 'L409-417: the unused hypothesis, the well-definedness failure and the concrete case at
+      x=0 are all correct'
+  - stage: S5b
+    verdict: correct
+    by: refereeB
+    hash: f89e1cd39211
+    date: '2026-10-26'
+    model: claude-opus-5-5
+    evidence: 01:409-417 diagnosis correct; exm-method-well-definedness exists (ch04 §02); marking 3+4+3=10
+  - stage: S6
+    verdict: minor
+    by: verifier
+    hash: f89e1cd39211
+    date: '2026-10-26'
+    model: claude-opus-5-5
+    evidence: 01-restriction-extension-and-gluing.md:405 The flawed argument is called a 'proposed proof
+      of @thm-gluing', but it never addresses the 'exactly one' clause. So it is flawed in a second place
+      that the solution and scheme do not mention, which breaks STYLE §11.3 ('the error sits in one line,
+      and the rest is correct').
 - key: exr-restriction-extension-and-gluing-c3
   kind: exr
   file: 01-restriction-extension-and-gluing.md
   line: 420
   hash: d30670bdf5ab
-  verdicts: []
+  verdicts:
+  - stage: S5a
+    verdict: correct
+    by: refereeA
+    hash: d30670bdf5ab
+    date: '2026-10-26'
+    model: claude-opus-5-5
+    evidence: 'L432-434: (a) 2t=1 has no solution in {0,1}; (b) ind_D=d since d is 0-1 valued; D matches
+      Cantor''s set in Section 3.3 (ch03/03:146)'
+  - stage: S5b
+    verdict: correct
+    by: refereeB
+    hash: d30670bdf5ab
+    date: '2026-10-26'
+    model: claude-opus-5-5
+    evidence: 01:432-436 2g(a)(a)=1 impossible; ind_D=d; D matches 03-diagonal-arguments.md:163; closing
+      sentence about cor-cantor-two-power accurate
+  - stage: S6
+    verdict: minor
+    by: verifier
+    hash: d30670bdf5ab
+    date: '2026-10-26'
+    model: claude-opus-5-5
+    evidence: 01:420-437. (a) 2t=1 has no solution in {0,1}, confirmed by script. (b) ind_D=d and D=f(a)
+      gives g(a)=d, so f is not surjective, which matches thm-cantor (3.3:146, 'no surjection'). The hint
+      names the tool without doing the argument. The full-proof C item has no marking scheme; see the
+      findings.
 - key: prp-fibres-partition
   kind: prp
   file: 02-fibres-and-factorization.md
   line: 34
   hash: ce9f3467a6ed
-  verdicts: []
+  verdicts:
+  - stage: S5a
+    verdict: correct
+    by: refereeA
+    hash: ce9f3467a6ed
+    date: '2026-10-26'
+    model: claude-opus-5-5
+    evidence: 'l.34-43: (a) matches exm-fibres-of-function (4.2 l.307ff) and thm-classes-partition (d);
+      (b) is equinumerosity per def-equinumerous.'
+  - stage: S5b
+    verdict: correct
+    by: refereeB
+    hash: ce9f3467a6ed
+    date: '2026-10-26'
+    model: claude-opus-5-5
+    evidence: 02:34-43; (a) matches exm-fibres-of-function (4.2:307) + thm-classes-partition (d); (b)
+      relation form card f(X)=card X/~f per def-equinumerous
 - key: proof:prp-fibres-partition
   kind: proof
   file: 02-fibres-and-factorization.md
   line: 49
   hash: 34d03bc43220
-  verdicts: []
+  verdicts:
+  - stage: S5a
+    verdict: correct
+    by: refereeA
+    hash: 34d03bc43220
+    date: '2026-10-26'
+    model: claude-opus-5-5
+    evidence: 'l.50-52: (Fn1)/(Fn2) for Phi come from (a). Surjectivity uses [a]=Phi(f(a)). Injectivity
+      is witnessed by a with f(a)=y. Every cited label says what it is used for.'
+  - stage: S5b
+    verdict: correct
+    by: refereeB
+    hash: 34d03bc43220
+    date: '2026-10-26'
+    model: claude-opus-5-5
+    evidence: 02:50-52; every step cited (def-image, exm-fibres-of-function, thm-classes-partition (d),
+      def-function, def-bijective, def-equinumerous); injectivity uses y in f(X) to get a point of the
+      fiber
 - key: check:02-fibres-and-factorization:1
   kind: check
   file: 02-fibres-and-factorization.md
   line: 57
   hash: e485aa1db7cf
-  verdicts: []
+  verdicts:
+  - stage: S5a
+    verdict: correct
+    by: refereeA
+    hash: e485aa1db7cf
+    date: '2026-10-26'
+    model: claude-opus-5-5
+    evidence: 'l.62: f(-1)=3, f(0)=0, f(1)=-1, f(2)=0, f(3)=3. The sidecar prp-fibres-partition.py passes.'
+  - stage: S5b
+    verdict: correct
+    by: refereeB
+    hash: e485aa1db7cf
+    date: '2026-10-26'
+    model: claude-opus-5-5
+    evidence: 02:58-62; f(-1)=3,f(0)=0,f(1)=-1,f(2)=0,f(3)=3 recomputed; classes {-1,3},{0,2},{1}
 - key: check:02-fibres-and-factorization:2
   kind: check
   file: 02-fibres-and-factorization.md
   line: 67
   hash: 2d147bfdb0bf
-  verdicts: []
+  verdicts:
+  - stage: S5a
+    verdict: correct
+    by: refereeA
+    hash: 2d147bfdb0bf
+    date: '2026-10-26'
+    model: claude-opus-5-5
+    evidence: 'l.72: remainders mod 3 of 1..6 checked. The sidecar passes.'
+  - stage: S5b
+    verdict: correct
+    by: refereeB
+    hash: 2d147bfdb0bf
+    date: '2026-10-26'
+    model: claude-opus-5-5
+    evidence: 02:68-72; remainders of 1..6 mod 3 give {3,6},{1,4},{2,5}; ledger 434
 - key: thm-canonical-factorization
   kind: thm
   file: 02-fibres-and-factorization.md
   line: 92
   hash: ec42d3203420
-  verdicts: []
+  verdicts:
+  - stage: S5a
+    verdict: correct
+    by: refereeA
+    hash: ec42d3203420
+    date: '2026-10-26'
+    model: claude-opus-5-5
+    evidence: 'l.95-99: the inclusion f(X)->Y is def-restriction-extension (c) with A=f(X)⊆Y. The statement
+      is true.'
+  - stage: S5b
+    verdict: minor
+    by: refereeB
+    hash: ec42d3203420
+    date: '2026-10-26'
+    model: claude-opus-5-5
+    evidence: '02-fibres-and-factorization.md:95 Notation bookkeeping: \bar f / \bar g for the induced
+      map and plain \iota for the inclusion f(X) → Y are not recorded in NOTATION.md. Its only \bar f
+      row is F5.5''s polynomial conjugate. Its \iota rows give the inclusion as \iota_A, with a subscript,
+      and say plain \iota is F3.2''s ℕ → ℤ embedding, ''not an inclusion map''. Its \sim_f row also still
+      calls \sim_f ''local'
 - key: proof:thm-canonical-factorization
   kind: proof
   file: 02-fibres-and-factorization.md
   line: 117
   hash: fc550d85d4c8
-  verdicts: []
+  verdicts:
+  - stage: S5a
+    verdict: correct
+    by: refereeA
+    hash: fc550d85d4c8
+    date: '2026-10-26'
+    model: claude-opus-5-5
+    evidence: 'l.118-134: well-definedness and injectivity are the two directions of thm-classes-partition
+      (b) with the definition of ~f. Surjectivity is by def-image, the factorization by prp-function-equality,
+      and uniqueness uses that q is onto.'
+  - stage: S5b
+    verdict: correct
+    by: refereeB
+    hash: fc550d85d4c8
+    date: '2026-10-26'
+    model: claude-opus-5-5
+    evidence: 02:118-134; well-definedness, injectivity via thm-classes-partition (b), surjectivity via
+      def-image, factorization via prp-function-equality, uniqueness via q onto; all cited
 - key: exm-fraction-map-factorization
   kind: exm
   file: 02-fibres-and-factorization.md
   line: 145
   hash: fb5ee7955361
-  verdicts: []
+  verdicts:
+  - stage: S5a
+    verdict: correct
+    by: refereeA
+    hash: fb5ee7955361
+    date: '2026-10-26'
+    model: claude-opus-5-5
+    evidence: 'l.152-156: matches exr-equivalence-relations-b1 (same domain Z×Z_{>0}). The witness (1,2)~(2,4)
+      refutes the numerator map. Recorded as school facts in the ledger. The sidecar passes.'
+  - stage: S5b
+    verdict: minor
+    by: refereeB
+    hash: fb5ee7955361
+    date: '2026-10-26'
+    model: claude-opus-5-5
+    evidence: '02-fibres-and-factorization.md:437 Ledger lines 437 and 438 name later volumes as the sources
+      of school facts: AN1.1 thm-nth-root (square roots, for ''[x] ↦ x^2 maps onto [0, ∞)'') and F3.2
+      (arithmetic of fractions). STATUS.md''s promise table has no F2.6 §02 row for them, while the comparable
+      F2.1 and F2.2 school-fact rows exist.'
 - key: check:02-fibres-and-factorization:3
   kind: check
   file: 02-fibres-and-factorization.md
   line: 159
   hash: 90323dc89579
-  verdicts: []
+  verdicts:
+  - stage: S5a
+    verdict: correct
+    by: refereeA
+    hash: 90323dc89579
+    date: '2026-10-26'
+    model: claude-opus-5-5
+    evidence: 'l.164: q(1,2)=q(2,4). f̄ is bijective by the theorem, and ι=id_Q.'
+  - stage: S5b
+    verdict: correct
+    by: refereeB
+    hash: 90323dc89579
+    date: '2026-10-26'
+    model: claude-opus-5-5
+    evidence: 02:160-165; q(1,2)=q(2,4); \bar f bijective by theorem; \iota=id_Q
 - key: thm-functions-out-of-quotient
   kind: thm
   file: 02-fibres-and-factorization.md
   line: 171
   hash: 38813e28a4ee
-  verdicts: []
+  verdicts:
+  - stage: S5a
+    verdict: correct
+    by: refereeA
+    hash: 38813e28a4ee
+    date: '2026-10-26'
+    model: claude-opus-5-5
+    evidence: 'l.174-180: every hypothesis is needed. Dropping ''constant on classes'' gives the l.205
+      counterexample [a]_12 -> [a]_24.'
+  - stage: S5b
+    verdict: correct
+    by: refereeB
+    hash: 38813e28a4ee
+    date: '2026-10-26'
+    model: claude-opus-5-5
+    evidence: '02:174-181; (a) iff and uniqueness, (b) injectivity iff g(x)=g(x'') => x~x'', (c) surjectivity
+      iff g onto: all true'
 - key: proof:thm-functions-out-of-quotient
   kind: proof
   file: 02-fibres-and-factorization.md
   line: 187
   hash: ec0ce36b0663
-  verdicts: []
+  verdicts:
+  - stage: S5a
+    verdict: correct
+    by: refereeA
+    hash: ec0ce36b0663
+    date: '2026-10-26'
+    model: claude-opus-5-5
+    evidence: 'l.188-199: (⇒) uses thm-classes-partition (b). (⇐) checks (Fn1)/(Fn2). Uniqueness uses
+      that q is onto (def-quotient-set prose). (b) and (c) translate between classes and representatives
+      correctly.'
+  - stage: S5b
+    verdict: correct
+    by: refereeB
+    hash: ec0ce36b0663
+    date: '2026-10-26'
+    model: claude-opus-5-5
+    evidence: 02:188-199; (=>) via thm-classes-partition (b); (<=) Fn1/Fn2; uniqueness via q onto (4.2
+      prose after def-quotient-set); (b),(c) translate via every class = [x]
 - key: exm-method-factor-through-quotient
   kind: exm
   file: 02-fibres-and-factorization.md
   line: 210
   hash: f491f489e82b
-  verdicts: []
+  verdicts:
+  - stage: S5a
+    verdict: correct
+    by: refereeA
+    hash: f491f489e82b
+    date: '2026-10-26'
+    model: claude-opus-5-5
+    evidence: 'l.213-217: the template agrees with the theorem.'
+  - stage: S5b
+    verdict: correct
+    by: refereeB
+    hash: f491f489e82b
+    date: '2026-10-26'
+    model: claude-opus-5-5
+    evidence: 02:213-217; three headings present; template consistent with the theorem; 'into a quotient
+      needs no check' true
 - key: exm-clock-maps
   kind: exm
   file: 02-fibres-and-factorization.md
   line: 222
   hash: f9dfdea91329
-  verdicts: []
+  verdicts:
+  - stage: S5a
+    verdict: correct
+    by: refereeA
+    hash: f9dfdea91329
+    date: '2026-10-26'
+    model: claude-opus-5-5
+    evidence: 'l.233-239: uses the remainder test (prose after prp-integers-mod-n) and prp-integers-closed
+      (c) for 2 not ≡ 0 mod 12. In (c), s∘t=t∘s=id gives a bijection by thm-bijection-iff-inverse. The
+      sidecar passes.'
+  - stage: S5b
+    verdict: minor
+    by: refereeB
+    hash: f9dfdea91329
+    date: '2026-10-26'
+    model: claude-opus-5-5
+    evidence: '02-fibres-and-factorization.md:220 Meta-claim ''Here is the method three times on the clock''
+      is false: part (b) of exm-clock-maps works out of Z/2, not the clock Z/12 defined at line 7.'
 - key: check:02-fibres-and-factorization:4
   kind: check
   file: 02-fibres-and-factorization.md
   line: 248
   hash: 849387e34874
-  verdicts: []
+  verdicts:
+  - stage: S5a
+    verdict: correct
+    by: refereeA
+    hash: 849387e34874
+    date: '2026-10-26'
+    model: claude-opus-5-5
+    evidence: 'l.253: 10k=5(2k). The pair 0,5 refutes injectivity, and surjectivity holds because q_5
+      is onto.'
+  - stage: S5b
+    verdict: correct
+    by: refereeB
+    hash: 849387e34874
+    date: '2026-10-26'
+    model: claude-opus-5-5
+    evidence: 02:249-254; 10k=5(2k); [0]_5=[5]_5 with 0!≡5 mod 10; surjective by (c); matches 4.2 B3(c)
+      at 4.2:535ff
 - key: exr-fibres-and-factorization-a1
   kind: exr
   file: 02-fibres-and-factorization.md
   line: 266
   hash: 581f7ca8e663
-  verdicts: []
+  verdicts:
+  - stage: S5a
+    verdict: correct
+    by: refereeA
+    hash: 581f7ca8e663
+    date: '2026-10-26'
+    model: claude-opus-5-5
+    evidence: 'l.277-284: the fibres and the computation 8ak+16k^2 are right. The sidecar passes.'
+  - stage: S5b
+    verdict: correct
+    by: refereeB
+    hash: 581f7ca8e663
+    date: '2026-10-26'
+    model: claude-opus-5-5
+    evidence: 02:269-285; fibers {-2,2},{0},∅; (a+4k)^2-a^2=8ak+16k^2 checked; [0]_8!=[4]_8
+  - stage: S6
+    verdict: correct
+    by: verifier
+    hash: 581f7ca8e663
+    date: '2026-10-26'
+    model: claude-opus-5-5
+    evidence: 02:266-285. (a) The fibers are {-2,2}, {0} and the empty set; the empty one is not a class
+      by thm-classes-partition (a), and (a) does say classes are non-empty. (b) matches my answer. (c)
+      gives yes/no/yes; by script, (a+4k)^2-a^2 ≡ 0 mod 8, and 4k need not be ≡ 0 mod 8.
 - key: exr-fibres-and-factorization-b1
   kind: exr
   file: 02-fibres-and-factorization.md
   line: 289
   hash: d80c7a6d3b7c
-  verdicts: []
+  verdicts:
+  - stage: S5a
+    verdict: correct
+    by: refereeA
+    hash: d80c7a6d3b7c
+    date: '2026-10-26'
+    model: claude-opus-5-5
+    evidence: 'l.296-300: fd1:thm-squares-order (x,y≥0: x≤y iff x²≤y²), applied both ways, gives |x|=|x''|.'
+  - stage: S5b
+    verdict: correct
+    by: refereeB
+    hash: d80c7a6d3b7c
+    date: '2026-10-26'
+    model: claude-opus-5-5
+    evidence: 02:292-301; fd1:thm-squares-order is x<=y iff x^2<=y^2 for x,y>=0 (fd1 04:545), used correctly
+      in both orders
+  - stage: S6
+    verdict: correct
+    by: verifier
+    hash: d80c7a6d3b7c
+    date: '2026-10-26'
+    model: claude-opus-5-5
+    evidence: '02:289-301. The classes are {-x,x} and the image is [0,inf). Well-definedness comes from
+      x^2=|x|^2. Injectivity uses fd1:thm-squares-order (x,y≥0: x≤y iff x²≤y²) in both orders, which is
+      valid. Worked models: the warning at line 140 and exm-fraction-map-factorization.'
 - key: exr-fibres-and-factorization-b2
   kind: exr
   file: 02-fibres-and-factorization.md
   line: 303
   hash: 8df3b43a0717
-  verdicts: []
+  verdicts:
+  - stage: S5a
+    verdict: correct
+    by: refereeA
+    hash: 8df3b43a0717
+    date: '2026-10-26'
+    model: claude-opus-5-5
+    evidence: 'l.310-312: (⇐) uses only that h is injective, which is enough. (⇒) h=ḡ∘f̄^{-1} is a bijection
+      by thm-composition-injective-surjective (c).'
+  - stage: S5b
+    verdict: correct
+    by: refereeB
+    hash: 8df3b43a0717
+    date: '2026-10-26'
+    model: claude-opus-5-5
+    evidence: 02:306-313; both directions sound; thm-composition-injective-surjective (c) is bijective∘bijective
+      (05-functions:510)
+  - stage: S6
+    verdict: correct
+    by: verifier
+    hash: 8df3b43a0717
+    date: '2026-10-26'
+    model: claude-opus-5-5
+    evidence: 02:303-313. (<=) uses injectivity of h. (=>) takes h = ḡ∘f̄^{-1}, a bijection by thm-composition-injective-surjective
+      (c), and h(f(x))=g(x). This matches my proof.
 - key: exr-fibres-and-factorization-b3
   kind: exr
   file: 02-fibres-and-factorization.md
   line: 315
   hash: 64e759bc39a8
-  verdicts: []
+  verdicts:
+  - stage: S5a
+    verdict: minor
+    by: refereeA
+    hash: 64e759bc39a8
+    date: '2026-10-26'
+    model: claude-opus-5-5
+    evidence: 02-fibres-and-factorization.md:324 The gloss 'each hour of the clock is sent to its quarter-day
+      position' does not describe the map [a]_12 -> [a]_4.
+  - stage: S5b
+    verdict: minor
+    by: refereeB
+    hash: 64e759bc39a8
+    date: '2026-10-26'
+    model: claude-opus-5-5
+    evidence: 02-fibres-and-factorization.md:324 The gloss 'each hour of the clock is sent to its quarter-day
+      position' does not describe [a]_12 ↦ [a]_4.
+  - stage: S6
+    verdict: minor
+    by: verifier
+    hash: 64e759bc39a8
+    date: '2026-10-26'
+    model: claude-opus-5-5
+    evidence: 02-fibres-and-factorization.md:324 'Each hour of the clock is sent to its quarter-day position'
+      misdescribes [a]_12 -> [a]_4. A quarter of a day is 6 hours (or 3 hours on the 12-hour dial), while
+      [a]_4 is the remainder of the hour mod 4, which sends 0, 4 and 8 to the same class.
 - key: exr-fibres-and-factorization-b4
   kind: exr
   file: 02-fibres-and-factorization.md
   line: 327
   hash: 1347a0a83752
-  verdicts: []
+  verdicts:
+  - stage: S5a
+    verdict: correct
+    by: refereeA
+    hash: 1347a0a83752
+    date: '2026-10-26'
+    model: claude-opus-5-5
+    evidence: 'l.342-350: (a) counterexample valid; (c) proof valid; (d) cancellation of 3 and 3∤1 via
+      thm-division-algorithm valid; (e) counterexample valid. The sidecar passes.'
+  - stage: S5b
+    verdict: minor
+    by: refereeB
+    hash: 1347a0a83752
+    date: '2026-10-26'
+    model: claude-opus-5-5
+    evidence: '02-fibres-and-factorization.md:348 The parenthetical ''Counting gives the same verdict:
+      four classes cannot fill twelve'' uses card Z/4 = 4 and card Z/12 = 12 (prp-integers-mod-n), and
+      also that no surjection goes from a 4-element set onto a 12-element set. It gives no @ref and has
+      no ledger line.'
+  - stage: S6
+    verdict: correct
+    by: verifier
+    hash: 1347a0a83752
+    date: '2026-10-26'
+    model: claude-opus-5-5
+    evidence: '02:327-351. Verdicts are F, T, T, F, F. (d): by script the image of [3a]_12 is {0,3,6,9},
+      the map is injective and well defined, and [1]_12 is missed. Counterexamples (a) and (e) are valid.'
 - key: exr-fibres-and-factorization-c1
   kind: exr
   file: 02-fibres-and-factorization.md
   line: 355
   hash: 8f2873db4dd5
-  verdicts: []
+  verdicts:
+  - stage: S5a
+    verdict: correct
+    by: refereeA
+    hash: 8f2873db4dd5
+    date: '2026-10-26'
+    model: claude-opus-5-5
+    evidence: 'l.362-366: induction on k, with n, X, f quantified inside P(k) and m fixed. Base case:
+      prp-empty-function (b) gives X=∅, and def-finite then gives n=0. The step uses prp-subset-finite,
+      prp-disjoint-union-count and cor-finite-size-unique, each with its hypotheses met.'
+  - stage: S5b
+    verdict: minor
+    by: refereeB
+    hash: 8f2873db4dd5
+    date: '2026-10-26'
+    model: claude-opus-5-5
+    evidence: 02-fibres-and-factorization.md:366 C1 is a full induction proof that a reader is likely
+      to write up, but its solution has no Marking scheme paragraph. STYLE §11.6 asks for one on every
+      exit check and on 'any C item a reader is likely to write up in full'.
+  - stage: S6
+    verdict: minor
+    by: verifier
+    hash: 8f2873db4dd5
+    date: '2026-10-26'
+    model: claude-opus-5-5
+    evidence: '02:355-369. The induction on k is sound: P(k) is quantified over all n and X, and prp-empty-function
+      (b), prp-subset-finite, prp-disjoint-union-count and cor-finite-size-unique are all applicable as
+      cited. I brute-forced k≤3, m≤2, n≤6 and found no counterexample. The full-proof C item has no marking
+      scheme; see the findings.'
 - key: exr-fibres-and-factorization-c2
   kind: exr
   file: 02-fibres-and-factorization.md
   line: 371
   hash: ab4e01c8b1f5
-  verdicts: []
+  verdicts:
+  - stage: S5a
+    verdict: correct
+    by: refereeA
+    hash: ab4e01c8b1f5
+    date: '2026-10-26'
+    model: claude-opus-5-5
+    evidence: 'l.382-386: the error is located correctly. The counterexample is q(0)=q(12) mod 12, and
+      the repair uses that q is onto.'
+  - stage: S5b
+    verdict: correct
+    by: refereeB
+    hash: ab4e01c8b1f5
+    date: '2026-10-26'
+    model: claude-opus-5-5
+    evidence: 02:376-396; true conclusion, failing line (3), counterexample q(0)=q(12) to the step, repair
+      via q onto; marking scheme sums to 10
+  - stage: S6
+    verdict: minor
+    by: verifier
+    hash: ab4e01c8b1f5
+    date: '2026-10-26'
+    model: claude-opus-5-5
+    evidence: '02-fibres-and-factorization.md:384 Line (3) has two faults: the premise ''q is injective''
+      is false, and the inference ''injective, so it can be cancelled on the right'' is invalid in general.
+      The solution''s counterexample refutes only the premise, while STYLE §11.3 asks for a counterexample
+      to the illegal step. The scheme gives 3 points only for ''the false step is the injectivity of q'',
+      so an answer '
 - key: exr-fibres-and-factorization-c3
   kind: exr
   file: 02-fibres-and-factorization.md
   line: 398
   hash: 9f778b197c03
-  verdicts: []
+  verdicts:
+  - stage: S5a
+    verdict: correct
+    by: refereeA
+    hash: 9f778b197c03
+    date: '2026-10-26'
+    model: claude-opus-5-5
+    evidence: 'l.410-417: h=ḡ∘f̄^{-1} works, uniqueness holds by def-image, and the witness pair 1,-1
+      refutes x^3.'
+  - stage: S5b
+    verdict: correct
+    by: refereeB
+    hash: 9f778b197c03
+    date: '2026-10-26'
+    model: claude-opus-5-5
+    evidence: 02:401-428; existence via \bar g∘\bar f^{-1}, uniqueness via def-image; (b) h(t)=t^2, witness
+      1,-1; marking scheme 2+2+2+2+2=10
+  - stage: S6
+    verdict: correct
+    by: verifier
+    hash: 9f778b197c03
+    date: '2026-10-26'
+    model: claude-opus-5-5
+    evidence: '02:398-428. Existence via ḡ∘f̄^{-1} and uniqueness via ''every y in f(X) is some f(x)''
+      are both correct. (b): h(t)=t² works; for x³ the pair (1,-1) gives 1=-1, a contradiction. My alternative
+      proof (the graph {(f(x),g(x))} checked for (Fn1)/(Fn2)) scores 10/10, because the ''direct proof''
+      clause covers it. The scheme totals 10 and does not reward wording.'
 - key: def-binary-operation
   kind: def
   file: 03-binary-operations.md
   line: 19
   hash: 5587fdce78ac
-  verdicts: []
+  verdicts:
+  - stage: S5a
+    verdict: correct
+    by: refereeA
+    hash: 5587fdce78ac
+    date: '2026-10-26'
+    model: claude-opus-5-5
+    evidence: 03:19-33; restriction via def-restriction-extension (ch05/01:33) to A×A⊆X×X, codomain shrunk
+      by closure, argued inline
+  - stage: S5b
+    verdict: correct
+    by: refereeB
+    hash: 5587fdce78ac
+    date: '2026-10-26'
+    model: claude-opus-5-5
+    evidence: 03:19-33; restriction step cites @def-restriction-extension, closure gives codomain A; ledger
+      line 584
 - key: exm-first-operations
   kind: exm
   file: 03-binary-operations.md
   line: 35
   hash: 560e78834c30
-  verdicts: []
+  verdicts:
+  - stage: S5a
+    verdict: correct
+    by: refereeA
+    hash: 560e78834c30
+    date: '2026-10-26'
+    model: claude-opus-5-5
+    evidence: 03:35-59; (d) matches prp-congruence-arithmetic (ch04/02:363-370); (e) the witness 1-2=-1
+      checks
+  - stage: S5b
+    verdict: correct
+    by: refereeB
+    hash: 560e78834c30
+    date: '2026-10-26'
+    model: claude-opus-5-5
+    evidence: 03:35-59; (d) cites @prp-congruence-arithmetic (4.2:370 states well-definedness); (e) arithmetic
+      in ledger 582
 - key: check:03-binary-operations:1
   kind: check
   file: 03-binary-operations.md
   line: 63
   hash: e7ac05daba29
-  verdicts: []
+  verdicts:
+  - stage: S5a
+    verdict: correct
+    by: refereeA
+    hash: e7ac05daba29
+    date: '2026-10-26'
+    model: claude-opus-5-5
+    evidence: 03:63-69; A\B⊆A⊆X; 2k+2l=2(k+l); 1+1=2 not odd
+  - stage: S5b
+    verdict: correct
+    by: refereeB
+    hash: e7ac05daba29
+    date: '2026-10-26'
+    model: claude-opus-5-5
+    evidence: 03:63-69; A\B ⊆ A, 2k+2l, 1+1=2 recorded in ledger 583
 - key: def-operation-properties
   kind: def
   file: 03-binary-operations.md
   line: 75
   hash: e76a20d6f348
-  verdicts: []
+  verdicts:
+  - stage: S5a
+    verdict: correct
+    by: refereeA
+    hash: e76a20d6f348
+    date: '2026-10-26'
+    model: claude-opus-5-5
+    evidence: 03:75-92; inverse defined relative to an identity, consistent with later use
+  - stage: S5b
+    verdict: minor
+    by: refereeB
+    hash: e76a20d6f348
+    date: '2026-10-26'
+    model: claude-opus-5-5
+    evidence: '03-binary-operations.md:88 The gloss contradicts itself: it says an identity changes nothing
+      ''from the side named'', then that an identity must change nothing from both sides.'
 - key: exm-subtraction-identity
   kind: exm
   file: 03-binary-operations.md
   line: 94
   hash: 68edb52f67df
-  verdicts: []
+  verdicts:
+  - stage: S5a
+    verdict: correct
+    by: refereeA
+    hash: 68edb52f67df
+    date: '2026-10-26'
+    model: claude-opus-5-5
+    evidence: 03:94-108; x=0 gives e=0, x=1 gives e=2; sidecar passes
+  - stage: S5b
+    verdict: correct
+    by: refereeB
+    hash: 68edb52f67df
+    date: '2026-10-26'
+    model: claude-opus-5-5
+    evidence: 03:94-108; witnesses checked, sidecar passes
 - key: check:03-binary-operations:2
   kind: check
   file: 03-binary-operations.md
   line: 112
   hash: 5c834feda0ea
-  verdicts: []
+  verdicts:
+  - stage: S5a
+    verdict: correct
+    by: refereeA
+    hash: 5c834feda0ea
+    date: '2026-10-26'
+    model: claude-opus-5-5
+    evidence: 03:117; (0*0)*4=2, 0*(0*4)=1; (e+x)/2=x forces e=x for all x
+  - stage: S5b
+    verdict: correct
+    by: refereeB
+    hash: 5c834feda0ea
+    date: '2026-10-26'
+    model: claude-opus-5-5
+    evidence: 03:112-118; (0*0)*4=2, 0*(0*4)=1; e=x for all x refuted
 - key: check:03-binary-operations:3
   kind: check
   file: 03-binary-operations.md
   line: 120
   hash: 1709ee535729
-  verdicts: []
+  verdicts:
+  - stage: S5a
+    verdict: correct
+    by: refereeA
+    hash: 1709ee535729
+    date: '2026-10-26'
+    model: claude-opus-5-5
+    evidence: 03:125; max(e,e-1)=e≠e-1 refutes every candidate e in Z
+  - stage: S5b
+    verdict: correct
+    by: refereeB
+    hash: 1709ee535729
+    date: '2026-10-26'
+    model: claude-opus-5-5
+    evidence: 03:120-126; max(e,e-1)=e≠e-1
 - key: prp-operation-identity-unique
   kind: prp
   file: 03-binary-operations.md
   line: 132
   hash: 4fada57b7a68
-  verdicts: []
+  verdicts:
+  - stage: S5a
+    verdict: correct
+    by: refereeA
+    hash: 4fada57b7a68
+    date: '2026-10-26'
+    model: claude-opus-5-5
+    evidence: 03:132-136; with only one of the two hypotheses it fails (x*y:=y, A1(c)), so both are needed
+  - stage: S5b
+    verdict: correct
+    by: refereeB
+    hash: 4fada57b7a68
+    date: '2026-10-26'
+    model: claude-opus-5-5
+    evidence: 03:132-136
 - key: proof:prp-operation-identity-unique
   kind: proof
   file: 03-binary-operations.md
   line: 152
   hash: e20bab3d556e
-  verdicts: []
+  verdicts:
+  - stage: S5a
+    verdict: correct
+    by: refereeA
+    hash: e20bab3d556e
+    date: '2026-10-26'
+    model: claude-opus-5-5
+    evidence: 03:153-155; each hypothesis used once, at x=e and at x=e'
+  - stage: S5b
+    verdict: correct
+    by: refereeB
+    hash: e20bab3d556e
+    date: '2026-10-26'
+    model: claude-opus-5-5
+    evidence: 03:152-156; uses each hypothesis once; aftermath claim at 158 (no assoc/comm used) is true
 - key: exm-method-two-ways
   kind: exm
   file: 03-binary-operations.md
   line: 162
   hash: 7f04498fa392
-  verdicts: []
+  verdicts:
+  - stage: S5a
+    verdict: correct
+    by: refereeA
+    hash: 7f04498fa392
+    date: '2026-10-26'
+    model: claude-opus-5-5
+    evidence: 03:162-170; N9 also covers begging the question (fd1 ch08/06:114)
+  - stage: S5b
+    verdict: correct
+    by: refereeB
+    hash: 7f04498fa392
+    date: '2026-10-26'
+    model: claude-opus-5-5
+    evidence: 03:162-170; 124 words (≤130); N9 = 'citing a line not available ... circular' (fd1 06-checking-proofs:85)
 - key: prp-operation-inverse-unique
   kind: prp
   file: 03-binary-operations.md
   line: 174
   hash: f3e6d8a589b7
-  verdicts: []
+  verdicts:
+  - stage: S5a
+    verdict: correct
+    by: refereeA
+    hash: f3e6d8a589b7
+    date: '2026-10-26'
+    model: claude-opus-5-5
+    evidence: 03:174-178; without associativity it fails, see exm-two-inverses
+  - stage: S5b
+    verdict: minor
+    by: refereeB
+    hash: f3e6d8a589b7
+    date: '2026-10-26'
+    model: claude-opus-5-5
+    evidence: 03-binary-operations.md:192 The terms 'left inverse' and 'right inverse' for an element
+      under an operation are used but never defined. @def-operation-properties (d) defines only two-sided
+      inverses, and 'left inverse' already means something different for functions (@def-left-right-inverse).
 - key: proof:prp-operation-inverse-unique
   kind: proof
   file: 03-binary-operations.md
   line: 184
   hash: e1bf9514e870
-  verdicts: []
+  verdicts:
+  - stage: S5a
+    verdict: minor
+    by: refereeA
+    hash: e1bf9514e870
+    date: '2026-10-26'
+    model: claude-opus-5-5
+    evidence: 03-binary-operations.md:192 In 'an element with a left inverse y and a right inverse z has
+      y = z, and that element is then an inverse', the phrase 'that element' grammatically refers back
+      to x, which says x is an inverse. The intended claim is that y (= z) is an inverse of x, so x is
+      invertible.
+  - stage: S5b
+    verdict: correct
+    by: refereeB
+    hash: e1bf9514e870
+    date: '2026-10-26'
+    model: claude-opus-5-5
+    evidence: 03:184-190; each = justified in order stated
 - key: exm-two-inverses
   kind: exm
   file: 03-binary-operations.md
   line: 196
   hash: '792065981830'
-  verdicts: []
+  verdicts:
+  - stage: S5a
+    verdict: correct
+    by: refereeA
+    hash: '792065981830'
+    date: '2026-10-26'
+    model: claude-opus-5-5
+    evidence: '03:196-218; table checked; (a*a)*b=b, a*(a*b)=a; sidecar: 23 of 27 triples associate'
+  - stage: S5b
+    verdict: correct
+    by: refereeB
+    hash: '792065981830'
+    date: '2026-10-26'
+    model: claude-opus-5-5
+    evidence: 03:196-216; table symmetric, e row/col headings, (a*a)*b=b≠a=a*(a*b); sidecar passes; line
+      218 chain-mapping y=a,x=a,z=b correct
 - key: prp-operation-inverse-rules
   kind: prp
   file: 03-binary-operations.md
   line: 222
   hash: 3ddfb1fe2d33
-  verdicts: []
+  verdicts:
+  - stage: S5a
+    verdict: correct
+    by: refereeA
+    hash: 3ddfb1fe2d33
+    date: '2026-10-26'
+    model: claude-opus-5-5
+    evidence: 03:222-232
+  - stage: S5b
+    verdict: correct
+    by: refereeB
+    hash: 3ddfb1fe2d33
+    date: '2026-10-26'
+    model: claude-opus-5-5
+    evidence: 03:222-232
 - key: proof:prp-operation-inverse-rules
   kind: proof
   file: 03-binary-operations.md
   line: 238
   hash: 20a38f9ec746
-  verdicts: []
+  verdicts:
+  - stage: S5a
+    verdict: correct
+    by: refereeA
+    hash: 20a38f9ec746
+    date: '2026-10-26'
+    model: claude-opus-5-5
+    evidence: 03:239-253; (c) regroups one step at a time; both sides checked
+  - stage: S5b
+    verdict: minor
+    by: refereeB
+    hash: 20a38f9ec746
+    date: '2026-10-26'
+    model: claude-opus-5-5
+    evidence: 03-binary-operations.md:252 The second equation of (c) moves two brackets in one step, then
+      uses x^{-1}*x = e and e*y = y in one more step. The section's method box (03:169) names a silently
+      moved bracket as the usual failure, and line 255 claims 'the display moved brackets one step at
+      a time'.
 - key: check:03-binary-operations:4
   kind: check
   file: 03-binary-operations.md
   line: 257
   hash: 1adbb2484f3f
-  verdicts: []
+  verdicts:
+  - stage: S5a
+    verdict: minor
+    by: refereeA
+    hash: 1adbb2484f3f
+    date: '2026-10-26'
+    model: claude-opus-5-5
+    evidence: 03-binary-operations.md:262 To get the second identity equation for △, the solution cites
+      commutativity of △. The text has not stated that before this point; B2 at line 452 is the first
+      place it says △ is symmetric.
+  - stage: S5b
+    verdict: correct
+    by: refereeB
+    hash: 1adbb2484f3f
+    date: '2026-10-26'
+    model: claude-opus-5-5
+    evidence: 03:257-263; identity ∅, A∪B=∅ forces A=∅, A△A=∅; ledger 588
 - key: prp-pointwise-operations
   kind: prp
   file: 03-binary-operations.md
   line: 269
   hash: b9a68a9337de
-  verdicts: []
+  verdicts:
+  - stage: S5a
+    verdict: correct
+    by: refereeA
+    hash: b9a68a9337de
+    date: '2026-10-26'
+    model: claude-opus-5-5
+    evidence: 03:269-283
+  - stage: S5b
+    verdict: correct
+    by: refereeB
+    hash: b9a68a9337de
+    date: '2026-10-26'
+    model: claude-opus-5-5
+    evidence: 03:269-283
+  - stage: S8
+    verdict: minor
+    by: seam
+    hash: b9a68a9337de
+    date: '2026-10-26'
+    model: claude-opus-5-5
+    evidence: '03-binary-operations.md:308: the warning says "f^{-1} always means the inverse function".
+      That contradicts the preimage notation f^{-1}(B), which is defined for every f (NOTATION row 80)
+      and is used in this chapter at 02:28, 02:40 and 04:639.'
 - key: proof:prp-pointwise-operations
   kind: proof
   file: 03-binary-operations.md
   line: 289
   hash: 9a4e960beaee
-  verdicts: []
+  verdicts:
+  - stage: S5a
+    verdict: correct
+    by: refereeA
+    hash: 9a4e960beaee
+    date: '2026-10-26'
+    model: claude-opus-5-5
+    evidence: 03:290-301; prp-function-equality used; (c) both directions; associativity of ∗ used for
+      uniqueness of f(x)^{-1}
+  - stage: S5b
+    verdict: correct
+    by: refereeB
+    hash: 9a4e960beaee
+    date: '2026-10-26'
+    model: claude-opus-5-5
+    evidence: 03:289-301; value-wise via @prp-function-equality; uniqueness of f(x)^{-1} cited
 - key: prp-composition-operation
   kind: prp
   file: 03-binary-operations.md
   line: 315
   hash: ed25c41e910c
-  verdicts: []
+  verdicts:
+  - stage: S5a
+    verdict: correct
+    by: refereeA
+    hash: ed25c41e910c
+    date: '2026-10-26'
+    model: claude-opus-5-5
+    evidence: 03:315-319
+  - stage: S5b
+    verdict: minor
+    by: refereeB
+    hash: ed25c41e910c
+    date: '2026-10-26'
+    model: claude-opus-5-5
+    evidence: '03-binary-operations.md:327 The text says the rule for functions is ''one case'' of @prp-operation-inverse-rules
+      (c), but that proposition covers only self-maps of a single set X. Exercise B2 of Section 1.6 has
+      f: X→Y and g: Y→Z with three possibly different sets.'
 - key: proof:prp-composition-operation
   kind: proof
   file: 03-binary-operations.md
   line: 321
   hash: 4e9018af8d95
-  verdicts: []
+  verdicts:
+  - stage: S5a
+    verdict: correct
+    by: refereeA
+    hash: 4e9018af8d95
+    date: '2026-10-26'
+    model: claude-opus-5-5
+    evidence: 03:322-325; prp-composition-associative (ch01/05:266-273) contains the identity laws; c_a∘c_b=c_a≠c_b=c_b∘c_a,
+      separated at the point a
+  - stage: S5b
+    verdict: minor
+    by: refereeB
+    hash: 4e9018af8d95
+    date: '2026-10-26'
+    model: claude-opus-5-5
+    evidence: '03-binary-operations.md:322 Wrong count: @prp-composition-associative involves four sets,
+      not three.'
 - key: check:03-binary-operations:5
   kind: check
   file: 03-binary-operations.md
   line: 329
   hash: fb78348de6c7
-  verdicts: []
+  verdicts:
+  - stage: S5a
+    verdict: correct
+    by: refereeA
+    hash: fb78348de6c7
+    date: '2026-10-26'
+    model: claude-opus-5-5
+    evidence: 03:334; (x-1)/2 and -2x-1 check
+  - stage: S5b
+    verdict: correct
+    by: refereeB
+    hash: fb78348de6c7
+    date: '2026-10-26'
+    model: claude-opus-5-5
+    evidence: 03:329-335; (x-1)/2 and -2x-1 verified by hand
 - key: prp-operation-on-quotient
   kind: prp
   file: 03-binary-operations.md
   line: 341
   hash: f639b4d70d02
-  verdicts: []
+  verdicts:
+  - stage: S5a
+    verdict: correct
+    by: refereeA
+    hash: f639b4d70d02
+    date: '2026-10-26'
+    model: claude-opus-5-5
+    evidence: 03:341-355; q is the quotient map of def-quotient-set (ch04/02:147)
+  - stage: S5b
+    verdict: correct
+    by: refereeB
+    hash: f639b4d70d02
+    date: '2026-10-26'
+    model: claude-opus-5-5
+    evidence: 03:341-355; q per NOTATION row 243 (def-quotient-set)
 - key: proof:prp-operation-on-quotient
   kind: proof
   file: 03-binary-operations.md
   line: 361
   hash: 17563352dfa5
-  verdicts: []
+  verdicts:
+  - stage: S5a
+    verdict: correct
+    by: refereeA
+    hash: 17563352dfa5
+    date: '2026-10-26'
+    model: claude-opus-5-5
+    evidence: 03:362-373; thm-classes-partition (b) is an iff (ch04/02:163), used in both directions;
+      (c) uses (b) for the identity [e]
+  - stage: S5b
+    verdict: correct
+    by: refereeB
+    hash: 17563352dfa5
+    date: '2026-10-26'
+    model: claude-opus-5-5
+    evidence: 03:361-373; @thm-classes-partition (b) is '[a]=[b] iff a~b' (4.2:163)
 - key: exr-binary-operations-a1
   kind: exr
   file: 03-binary-operations.md
   line: 383
   hash: b3e861011f3b
-  verdicts: []
+  verdicts:
+  - stage: S5a
+    verdict: minor
+    by: refereeA
+    hash: b3e861011f3b
+    date: '2026-10-26'
+    model: claude-opus-5-5
+    evidence: 03:409 writes the unbracketed y∗x∗z (then gives both readings); see the bracket finding;
+      the math is correct; sidecar passes
+  - stage: S5b
+    verdict: correct
+    by: refereeB
+    hash: b3e861011f3b
+    date: '2026-10-26'
+    model: claude-opus-5-5
+    evidence: 03:383-410; Z/3 table correct; (c) right-identity refutation uses |X|≥2; sidecar passes
+  - stage: S6
+    verdict: correct
+    by: verifier
+    hash: b3e861011f3b
+    date: '2026-10-26'
+    model: claude-opus-5-5
+    evidence: '03:383-410. I solved it myself first: (a) only subtraction on Z and division on R\{0} are
+      operations; (b) my script confirms the Z/3 table, identity [0], -[1]=[2]; (c) every element is a
+      left identity and there is no right identity (needs a second element x != e); (d) the template and
+      m = y*x*z match exm-method-two-ways.'
 - key: exr-binary-operations-b1
   kind: exr
   file: 03-binary-operations.md
   line: 414
   hash: 6b000573bb77
-  verdicts: []
+  verdicts:
+  - stage: S5a
+    verdict: correct
+    by: refereeA
+    hash: 6b000573bb77
+    date: '2026-10-26'
+    model: claude-opus-5-5
+    evidence: 03:421-438; expansions, inverse x/(x-1) and 1-x*y=(1-x)(1-y) verified; matches prp-indicator-arithmetic
+      (c); sidecar passes
+  - stage: S5b
+    verdict: minor
+    by: refereeB
+    hash: 6b000573bb77
+    date: '2026-10-26'
+    model: claude-opus-5-5
+    evidence: 03-binary-operations.md:436 On ℝ, writing x^{-1} = x/(x-1) for the inverse under the new
+      operation gives x^{-1} a second meaning on the same set, where it already means 1/x.
+  - stage: S6
+    verdict: correct
+    by: verifier
+    hash: 6b000573bb77
+    date: '2026-10-26'
+    model: claude-opus-5-5
+    evidence: 03:414-439. With exact rationals I checked associativity on 33^3 triples, the inverse x/(x-1)
+      for x != 1, and 1 - x*y = (1-x)(1-y). The proof that 1 is not invertible is right, and remark (c)
+      matches prp-indicator-arithmetic (c) (01:213). The worked example is exm-subtraction-identity plus
+      its quick checks.
 - key: exr-binary-operations-b2
   kind: exr
   file: 03-binary-operations.md
   line: 441
   hash: 787f1aadeae9
-  verdicts: []
+  verdicts:
+  - stage: S5a
+    verdict: correct
+    by: refereeA
+    hash: 787f1aadeae9
+    date: '2026-10-26'
+    model: claude-opus-5-5
+    evidence: 03:448-452; every element is its own inverse, then inverse-rules (c)
+  - stage: S5b
+    verdict: correct
+    by: refereeB
+    hash: 787f1aadeae9
+    date: '2026-10-26'
+    model: claude-opus-5-5
+    evidence: 03:448-452; (x*y)*(x*y)=e gives (x*y)^{-1}=x*y; cites exist
+  - stage: S6
+    verdict: correct
+    by: verifier
+    hash: 787f1aadeae9
+    date: '2026-10-26'
+    model: claude-opus-5-5
+    evidence: 03:441-453. x^{-1} = x because the inverse is unique, and then x*y = (x*y)^{-1} = y^{-1}*x^{-1}
+      = y*x. My route, (x*y)*(x*y) = e expanded and multiplied by x on the left and y on the right, gives
+      the same result. The check for symmetric difference cites exm-symmetric-difference-associative (01:257)
+      and the quick check A triangle A = empty.
 - key: exr-binary-operations-b3
   kind: exr
   file: 03-binary-operations.md
   line: 455
   hash: 4b75a31342a8
-  verdicts: []
+  verdicts:
+  - stage: S5a
+    verdict: correct
+    by: refereeA
+    hash: 4b75a31342a8
+    date: '2026-10-26'
+    model: claude-opus-5-5
+    evidence: 03:462-468; sidecar passes
+  - stage: S5b
+    verdict: correct
+    by: refereeB
+    hash: 4b75a31342a8
+    date: '2026-10-26'
+    model: claude-opus-5-5
+    evidence: 03:462-468; cube root ledgered (597); sidecar passes
+  - stage: S6
+    verdict: correct
+    by: verifier
+    hash: 4b75a31342a8
+    date: '2026-10-26'
+    model: claude-opus-5-5
+    evidence: 03:455-469. The cube-root inverse under composition, -x^3-1 under +, no inverse for x^2
+      under composition (g(1)=g(-1)), and no inverse under pointwise multiplication (g(0)=0) all agree
+      with my answers. The worked example is the quick check after prp-composition-operation (03:329-335).
 - key: exr-binary-operations-b4
   kind: exr
   file: 03-binary-operations.md
   line: 471
   hash: 5a0859c05579
-  verdicts: []
+  verdicts:
+  - stage: S5a
+    verdict: minor
+    by: refereeA
+    hash: 5a0859c05579
+    date: '2026-10-26'
+    model: claude-opus-5-5
+    evidence: '03:490 ''computing x^{-1}∗x∗y in two ways'' is unbracketed; the chain itself is correct,
+      with associativity at steps 2 and 4; (d): p∘s=id, (s∘p)(0)=1 checks'
+  - stage: S5b
+    verdict: correct
+    by: refereeB
+    hash: 5a0859c05579
+    date: '2026-10-26'
+    model: claude-opus-5-5
+    evidence: 03:486-497; (d) p∘s=id_N, (s∘p)(0)=1; (e) via exm-two-inverses
+  - stage: S6
+    verdict: correct
+    by: verifier
+    hash: 5a0859c05579
+    date: '2026-10-26'
+    model: claude-opus-5-5
+    evidence: '03:471-498. (a) T, (b) F, (c) T, (d) F, (e) F agree with my answers. In (d), p∘s = id_N
+      and (s∘p)(0) = 1 != 0. In (c), associativity is used at steps 2 and 4 as the solution says. (e)
+      uses exm-two-inverses, which my script checks: a*a = a*b = e.'
 - key: exr-binary-operations-c1
   kind: exr
   file: 03-binary-operations.md
   line: 502
   hash: 1c0783cb3c01
-  verdicts: []
+  verdicts:
+  - stage: S5a
+    verdict: correct
+    by: refereeA
+    hash: 1c0783cb3c01
+    date: '2026-10-26'
+    model: claude-opus-5-5
+    evidence: 03:513-520; each associativity instance checked
+  - stage: S5b
+    verdict: minor
+    by: refereeB
+    hash: 1c0783cb3c01
+    date: '2026-10-26'
+    model: claude-opus-5-5
+    evidence: 03-binary-operations.md:520 The meta-claim that the chapter writes the brackets of every
+      longer composite is contradicted inside this same section.
+  - stage: S6
+    verdict: minor
+    by: verifier
+    hash: 1c0783cb3c01
+    date: '2026-10-26'
+    model: claude-opus-5-5
+    evidence: 03-binary-operations.md:520 C1's solution says generalized associativity is not proved and
+      that 'this chapter writes the brackets of every longer composite it uses'. Section 5.4 breaks that
+      promise.
+  - stage: S8
+    verdict: minor
+    by: seam
+    hash: 1c0783cb3c01
+    date: '2026-10-26'
+    model: claude-opus-5-5
+    evidence: '03-binary-operations.md:520 says "this chapter writes the brackets of every longer composite
+      it uses". Section 5.4 does not: line 112 has σ^n∘(σ∘σ^{-1})∘σ^{-n} and line 617 has (φ^{-1}∘φ)∘σ∘(φ^{-1}∘φ),
+      both without outer brackets.'
 - key: exr-binary-operations-c2
   kind: exr
   file: 03-binary-operations.md
   line: 523
   hash: bca063d72a5e
-  verdicts: []
+  verdicts:
+  - stage: S5a
+    verdict: correct
+    by: refereeA
+    hash: bca063d72a5e
+    date: '2026-10-26'
+    model: claude-opus-5-5
+    evidence: 03:537-547; a*a=e=a*b in exm-two-inverses; N9 is the right entry (fd1 ch08/06:500, 548)
+  - stage: S5b
+    verdict: minor
+    by: refereeB
+    hash: bca063d72a5e
+    date: '2026-10-26'
+    model: claude-opus-5-5
+    evidence: 03-binary-operations.md:545 The 4-point step does not require the cancelled element x to
+      be invertible (or y, z to be its inverses). A non-associative example where x has no inverse would
+      score full marks, yet it does not show that associativity is the missing hypothesis, because cancellation
+      of a non-invertible element fails even for associative operations (0·1 = 0·2 in ℤ).
+  - stage: S6
+    verdict: minor
+    by: verifier
+    hash: bca063d72a5e
+    date: '2026-10-26'
+    model: claude-opus-5-5
+    evidence: 03-binary-operations.md:545 The 4-point item asks for a non-associative operation with identity
+      and some x with x*y = x*z, y != z. It does not require x to be invertible, so a counterexample that
+      does not defeat the step as it is used can still earn full credit.
 - key: exr-binary-operations-c3
   kind: exr
   file: 03-binary-operations.md
   line: 550
   hash: 08bb4ea48126
-  verdicts: []
+  verdicts:
+  - stage: S5a
+    verdict: correct
+    by: refereeA
+    hash: 08bb4ea48126
+    date: '2026-10-26'
+    model: claude-opus-5-5
+    evidence: 03:566-578; (a), (b) both directions use injectivity and surjectivity; (c) 1-(1-x)(1-x')=x+x'-xx';
+      sidecar passes
+  - stage: S5b
+    verdict: correct
+    by: refereeB
+    hash: 08bb4ea48126
+    date: '2026-10-26'
+    model: claude-opus-5-5
+    evidence: 03:566-578; φ=φ^{-1}, 1-(1-x)(1-x')=x+x'-xx'; φ(1)=0, φ(0)=1; sidecar passes
+  - stage: S6
+    verdict: correct
+    by: verifier
+    hash: 08bb4ea48126
+    date: '2026-10-26'
+    model: claude-opus-5-5
+    evidence: '03:550-579. (a) and both directions of (b) are complete: injectivity is used for <=, surjectivity
+      for =>. (c): phi^{-1} = phi, and my script confirms phi(phi(x)phi(y)) = x + y - xy on sample rationals.'
 - key: def-permutation
   kind: def
   file: 04-permutations-and-iteration.md
   line: 32
   hash: c41325d1630f
-  verdicts: []
+  verdicts:
+  - stage: S5a
+    verdict: correct
+    by: refereeA
+    hash: c41325d1630f
+    date: '2026-10-26'
+    model: claude-opus-5-5
+    evidence: 'line 35: S_X ⊆ X^X; the two-line table criterion (line 42) is just injective plus surjective;
+      bottom row 0,3,6,9,1,4,7,10,2,5,8,11 checked'
+  - stage: S5b
+    verdict: correct
+    by: refereeB
+    hash: c41325d1630f
+    date: '2026-10-26'
+    model: claude-opus-5-5
+    evidence: '35-42: S_X subset of X^X; two-line table claim matches def-injective/surjective (ledger
+      652); hook bottom row 0,3,6,9,1,4,7,10,2,5,8,11 rechecked against the formula at 15-20'
 - key: prp-permutations-closed
   kind: prp
   file: 04-permutations-and-iteration.md
   line: 46
   hash: 6da63c44db32
-  verdicts: []
+  verdicts:
+  - stage: S5a
+    verdict: correct
+    by: refereeA
+    hash: 6da63c44db32
+    date: '2026-10-26'
+    model: claude-opus-5-5
+    evidence: 'line 46: matches @prp-composition-operation and @def-binary-operation'
+  - stage: S5b
+    verdict: correct
+    by: refereeB
+    hash: 6da63c44db32
+    date: '2026-10-26'
+    model: claude-opus-5-5
+    evidence: 52-57; NOTATION S_X row matches; the after-note (66) cites prp-operation-inverse-rules (c),
+      which says that
 - key: proof:prp-permutations-closed
   kind: proof
   file: 04-permutations-and-iteration.md
   line: 60
   hash: f63fc72b526f
-  verdicts: []
+  verdicts:
+  - stage: S5a
+    verdict: correct
+    by: refereeA
+    hash: f63fc72b526f
+    date: '2026-10-26'
+    model: claude-opus-5-5
+    evidence: 'line 61: thm-composition-injective-surjective (c) and thm-bijection-iff-inverse applied
+      correctly to id and to σ^{-1}'
+  - stage: S5b
+    verdict: correct
+    by: refereeB
+    hash: f63fc72b526f
+    date: '2026-10-26'
+    model: claude-opus-5-5
+    evidence: '61-63: (a) thm-composition-injective-surjective (c); (b),(c) via thm-bijection-iff-inverse;
+      associativity from prp-composition-operation (03:318)'
 - key: def-iterate
   kind: def
   file: 04-permutations-and-iteration.md
   line: 70
   hash: 06eb40ea1f79
-  verdicts: []
+  verdicts:
+  - stage: S5a
+    verdict: correct
+    by: refereeA
+    hash: 06eb40ea1f79
+    date: '2026-10-26'
+    model: claude-opus-5-5
+    evidence: 'line 80: instance of thm-recursion with g(n,h)=f∘h on X^X; σ^{-0}=σ^0 and (σ^{-1})^1=σ^{-1},
+      so no clash'
+  - stage: S5b
+    verdict: correct
+    by: refereeB
+    hash: 06eb40ea1f79
+    date: '2026-10-26'
+    model: claude-opus-5-5
+    evidence: '73-80: thm-recursion (2.3:14) takes g: N x X -> X, and g(n,h)=f o h fits; sigma^{-0}=sigma^0
+      checked; the ''As Section 5.3 warned'' pointer is true (03:306)'
 - key: prp-iterate-laws
   kind: prp
   file: 04-permutations-and-iteration.md
   line: 84
   hash: 82f06430e1ee
-  verdicts: []
+  verdicts:
+  - stage: S5a
+    verdict: correct
+    by: refereeA
+    hash: 82f06430e1ee
+    date: '2026-10-26'
+    model: claude-opus-5-5
+    evidence: 'line 84: (a)-(c) true'
+  - stage: S5b
+    verdict: correct
+    by: refereeB
+    hash: 82f06430e1ee
+    date: '2026-10-26'
+    model: claude-opus-5-5
+    evidence: '90-92: (a)-(c) are well posed; n is from the header m,n in N'
 - key: proof:prp-iterate-laws
   kind: proof
   file: 04-permutations-and-iteration.md
   line: 100
   hash: b15932540fab
-  verdicts: []
+  verdicts:
+  - stage: S5a
+    verdict: correct
+    by: refereeA
+    hash: b15932540fab
+    date: '2026-10-26'
+    model: claude-opus-5-5
+    evidence: 'lines 101-124: inductions checked; base case uses the identity clause of prp-composition-associative;
+      the mixed-sign cases in the fold check out (k>=b and k<b; l>=a and l<a)'
+  - stage: S5b
+    verdict: correct
+    by: refereeB
+    hash: b15932540fab
+    date: '2026-10-26'
+    model: claude-opus-5-5
+    evidence: '101-124: base cases use the identity law, which is in prp-composition-associative (05:273);
+      all four sign cases in the fold rechecked (k>=b, k<b, l>=a, l<a); the fold is announced on the main
+      line (116)'
 - key: check:04-permutations-and-iteration:1
   kind: check
   file: 04-permutations-and-iteration.md
   line: 129
   hash: cf641acf8d17
-  verdicts: []
+  verdicts:
+  - stage: S5a
+    verdict: correct
+    by: refereeA
+    hash: cf641acf8d17
+    date: '2026-10-26'
+    model: claude-opus-5-5
+    evidence: 'line 134: induction f^n(x)=x+3n'
+  - stage: S5b
+    verdict: correct
+    by: refereeB
+    hash: cf641acf8d17
+    date: '2026-10-26'
+    model: claude-opus-5-5
+    evidence: '130-134: f^n(x)=x+3n by induction, correct'
 - key: def-orbit
   kind: def
   file: 04-permutations-and-iteration.md
   line: 143
   hash: 15d06c6e7c85
-  verdicts: []
+  verdicts:
+  - stage: S5a
+    verdict: correct
+    by: refereeA
+    hash: 15d06c6e7c85
+    date: '2026-10-26'
+    model: claude-opus-5-5
+    evidence: line 146; the non-symmetry example n+1 on ℕ is right; Section 3.4 does call h(0)=0 a fixed
+      point (ch03/04 line 295)
+  - stage: S5b
+    verdict: minor
+    by: refereeB
+    hash: 15d06c6e7c85
+    date: '2026-10-26'
+    model: claude-opus-5-5
+    evidence: 04-permutations-and-iteration.md:153 'For the hook's shuffle, O_sigma(1) = {1,3,9,5,4}'
+      is stated when only forward iterates have been computed. The orbit also contains sigma^k(1) for
+      k<0, and that these add nothing is shown only later, by prp-orbit-cycle (b) and exm-three-pile-shuffle.
 - key: thm-orbits-partition
   kind: thm
   file: 04-permutations-and-iteration.md
   line: 161
   hash: c6754c9758c9
-  verdicts: []
+  verdicts:
+  - stage: S5a
+    verdict: correct
+    by: refereeA
+    hash: c6754c9758c9
+    date: '2026-10-26'
+    model: claude-opus-5-5
+    evidence: line 164
+  - stage: S5b
+    verdict: correct
+    by: refereeB
+    hash: c6754c9758c9
+    date: '2026-10-26'
+    model: claude-opus-5-5
+    evidence: 164; the class orientation matches def-equivalence-class (4.2:99); thm-classes-partition
+      (d) is the partition clause
 - key: proof:thm-orbits-partition
   kind: proof
   file: 04-permutations-and-iteration.md
   line: 167
   hash: a0395e1908ab
-  verdicts: []
+  verdicts:
+  - stage: S5a
+    verdict: correct
+    by: refereeA
+    hash: a0395e1908ab
+    date: '2026-10-26'
+    model: claude-opus-5-5
+    evidence: 'line 168: Eq1-3 via prp-iterate-laws (c); class written in def-equivalence-class''s form
+      {y : y~x}, turned round by Eq2; thm-classes-partition (d); fixed-point clause by induction for σ
+      and σ^{-1}'
+  - stage: S5b
+    verdict: correct
+    by: refereeB
+    hash: a0395e1908ab
+    date: '2026-10-26'
+    model: claude-opus-5-5
+    evidence: '168-172: Eq1-Eq3 via prp-iterate-laws (c); the fixed-point converse is by induction both
+      ways'
 - key: check:04-permutations-and-iteration:2
   kind: check
   file: 04-permutations-and-iteration.md
   line: 177
   hash: f108c2430f58
-  verdicts: []
+  verdicts:
+  - stage: S5a
+    verdict: correct
+    by: refereeA
+    hash: f108c2430f58
+    date: '2026-10-26'
+    model: claude-opus-5-5
+    evidence: 'line 183: orbits {1,3} and {2,5,4}; sidecar passes'
+  - stage: S5b
+    verdict: correct
+    by: refereeB
+    hash: f108c2430f58
+    date: '2026-10-26'
+    model: claude-opus-5-5
+    evidence: '183: orbits {1,3} and {2,5,4}; sigma^{-1}(1)=3; no fixed point. All rechecked'
 - key: prp-orbit-cycle
   kind: prp
   file: 04-permutations-and-iteration.md
   line: 190
   hash: cf73c11fb112
-  verdicts: []
+  verdicts:
+  - stage: S5a
+    verdict: correct
+    by: refereeA
+    hash: cf73c11fb112
+    date: '2026-10-26'
+    model: claude-opus-5-5
+    evidence: 'line 190: true for finite X'
+  - stage: S5b
+    verdict: correct
+    by: refereeB
+    hash: cf73c11fb112
+    date: '2026-10-26'
+    model: claude-opus-5-5
+    evidence: '193-201: well posed'
 - key: proof:prp-orbit-cycle
   kind: proof
   file: 04-permutations-and-iteration.md
   line: 219
   hash: 16f523915271
-  verdicts: []
+  verdicts:
+  - stage: S5a
+    verdict: minor
+    by: refereeA
+    hash: 16f523915271
+    date: '2026-10-26'
+    model: claude-opus-5-5
+    evidence: '04-permutations-and-iteration.md:233 The aftermath says the hypothesis ''σ is a permutation''
+      was used once, in the cancellation. That is not accurate: part (c) and its proof also use negative
+      exponents, which need σ^{-1}.'
+  - stage: S5b
+    verdict: minor
+    by: refereeB
+    hash: 16f523915271
+    date: '2026-10-26'
+    model: claude-opus-5-5
+    evidence: '04-permutations-and-iteration.md:233 False meta-claim: ''the hypothesis "sigma is a permutation"
+      was used once, in the cancellation of sigma^i''. The proof also uses bijectivity in (c), for q<0
+      (sigma^{qk} with negative exponent, via prp-iterate-laws (c)), and in the display sigma^m = sigma^r
+      o sigma^{qk} for negative m. The statement itself (O_sigma, m in Z) needs sigma^{-1}.'
 - key: exm-method-follow-the-orbit
   kind: exm
   file: 04-permutations-and-iteration.md
   line: 235
   hash: 79223f3bddbf
-  verdicts: []
+  verdicts:
+  - stage: S5a
+    verdict: correct
+    by: refereeA
+    hash: 79223f3bddbf
+    date: '2026-10-26'
+    model: claude-opus-5-5
+    evidence: 'line 238: template matches the proofs'
+  - stage: S5b
+    verdict: correct
+    by: refereeB
+    hash: 79223f3bddbf
+    date: '2026-10-26'
+    model: claude-opus-5-5
+    evidence: '238-242: the template matches its uses in the proofs at 220 and 378'
 - key: exm-three-pile-shuffle
   kind: exm
   file: 04-permutations-and-iteration.md
   line: 247
   hash: 74b834486886
-  verdicts: []
+  verdicts:
+  - stage: S5a
+    verdict: minor
+    by: refereeA
+    hash: 74b834486886
+    date: '2026-10-26'
+    model: claude-opus-5-5
+    evidence: 04-permutations-and-iteration.md:256 The argument that 3r+p -> 4p+r maps {0,...,11} into
+      {0,...,11} proves only r <= 3. It never shows r >= 0, which is also needed for 4p+r >= 0 and for
+      (p, r) to be the quotient and remainder on division by 4.
+  - stage: S5b
+    verdict: minor
+    by: refereeB
+    hash: 74b834486886
+    date: '2026-10-26'
+    model: claude-opus-5-5
+    evidence: 04-permutations-and-iteration.md:258 The step 'so sigma(i) is the remainder of 3i on division
+      by 11' uses the uniqueness of the remainder with no reference. Ledger line 666 says the fact is
+      'recalled in prose', but the prose does not recall it.
 - key: check:04-permutations-and-iteration:3
   kind: check
   file: 04-permutations-and-iteration.md
   line: 272
   hash: 46940e9d0098
-  verdicts: []
+  verdicts:
+  - stage: S5a
+    verdict: correct
+    by: refereeA
+    hash: 46940e9d0098
+    date: '2026-10-26'
+    model: claude-opus-5-5
+    evidence: 'line 277: lengths 12 and 4'
+  - stage: S5b
+    verdict: correct
+    by: refereeB
+    hash: 46940e9d0098
+    date: '2026-10-26'
+    model: claude-opus-5-5
+    evidence: '277: length 12, and {[1],[4],[7],[10]} with length 4; well-definedness of [a+3] shown'
 - key: def-permutation-cycle
   kind: def
   file: 04-permutations-and-iteration.md
   line: 284
   hash: 1c0f0f8c9b33
-  verdicts: []
+  verdicts:
+  - stage: S5a
+    verdict: correct
+    by: refereeA
+    hash: 1c0f0f8c9b33
+    date: '2026-10-26'
+    model: claude-opus-5-5
+    evidence: 'line 287; line 290: the reversed cycle is a two-sided inverse'
+  - stage: S5b
+    verdict: minor
+    by: refereeB
+    hash: 1c0f0f8c9b33
+    date: '2026-10-26'
+    model: claude-opus-5-5
+    evidence: '04-permutations-and-iteration.md:290 ''(@exm-method-gluing, the Idea)'' points to an ''Idea''
+      that does not exist: there is no Idea block here, and the method box has Template / When to use
+      it / The usual failure. This is a leftover of the blueprint''s ''Idea citing exm-method-gluing''.'
 - key: thm-permutation-cycles
   kind: thm
   file: 04-permutations-and-iteration.md
   line: 294
   hash: 968d956691bb
-  verdicts: []
+  verdicts:
+  - stage: S5a
+    verdict: correct
+    by: refereeA
+    hash: 968d956691bb
+    date: '2026-10-26'
+    model: claude-opus-5-5
+    evidence: line 294; finiteness of the orbits shown at line 292
+  - stage: S5b
+    verdict: correct
+    by: refereeB
+    hash: 968d956691bb
+    date: '2026-10-26'
+    model: claude-opus-5-5
+    evidence: '297-305: finiteness of the orbit list is shown just before (292); \card{O_i}=k_i is a relation,
+      as NOTATION row 81 allows'
 - key: proof:thm-permutation-cycles
   kind: proof
   file: 04-permutations-and-iteration.md
   line: 312
   hash: 5d7516320230
-  verdicts: []
+  verdicts:
+  - stage: S5a
+    verdict: correct
+    by: refereeA
+    hash: 5d7516320230
+    date: '2026-10-26'
+    model: claude-opus-5-5
+    evidence: 'lines 313-327: key value checked for m<k_i-1 and m=k_i-1; induction on δ^(j) and the U_j
+      split are sound; recursion padded with id; commutation proved in the fold'
+  - stage: S5b
+    verdict: correct
+    by: refereeB
+    hash: 5d7516320230
+    date: '2026-10-26'
+    model: claude-opus-5-5
+    evidence: '313-327: key value, delta^(j) recursion via thm-recursion (step depends on n) and the U_j
+      induction all checked; the commuting fold covers all three cases'
 - key: cor-permutation-power-identity
   kind: cor
   file: 04-permutations-and-iteration.md
   line: 338
   hash: 7f63c95967dc
-  verdicts: []
+  verdicts:
+  - stage: S5a
+    verdict: correct
+    by: refereeA
+    hash: 7f63c95967dc
+    date: '2026-10-26'
+    model: claude-opus-5-5
+    evidence: line 341
+  - stage: S5b
+    verdict: correct
+    by: refereeB
+    hash: 7f63c95967dc
+    date: '2026-10-26'
+    model: claude-opus-5-5
+    evidence: '341: statement correct'
 - key: proof:cor-permutation-power-identity
   kind: proof
   file: 04-permutations-and-iteration.md
   line: 344
   hash: 4ade4025fdc0
-  verdicts: []
+  verdicts:
+  - stage: S5a
+    verdict: minor
+    by: refereeA
+    hash: 4ade4025fdc0
+    date: '2026-10-26'
+    model: claude-opus-5-5
+    evidence: 04-permutations-and-iteration.md:347 The proof uses n without introducing it.
+  - stage: S5b
+    verdict: correct
+    by: refereeB
+    hash: 4ade4025fdc0
+    date: '2026-10-26'
+    model: claude-opus-5-5
+    evidence: '345-347: product via def-sum-product, divisibility chain via prp-divides-transitive; for
+      empty X, N=1 also works'
 - key: check:04-permutations-and-iteration:4
   kind: check
   file: 04-permutations-and-iteration.md
   line: 352
   hash: 35d0438ea08e
-  verdicts: []
+  verdicts:
+  - stage: S5a
+    verdict: correct
+    by: refereeA
+    hash: 35d0438ea08e
+    date: '2026-10-26'
+    model: claude-opus-5-5
+    evidence: 'line 357: four 2-cycles and fixed points 0,3,6,9, 12 points in all; sidecar passes'
+  - stage: S5b
+    verdict: correct
+    by: refereeB
+    hash: 35d0438ea08e
+    date: '2026-10-26'
+    model: claude-opus-5-5
+    evidence: '357: four 2-cycles and fixed [0],[3],[6],[9]; 50,40,35,55,45 mod 12 rechecked'
 - key: prp-eventually-periodic
   kind: prp
   file: 04-permutations-and-iteration.md
   line: 364
   hash: f215d2fa58b9
-  verdicts: []
+  verdicts:
+  - stage: S5a
+    verdict: correct
+    by: refereeA
+    hash: f215d2fa58b9
+    date: '2026-10-26'
+    model: claude-opus-5-5
+    evidence: 'line 367: m+p=j<=n'
+  - stage: S5b
+    verdict: correct
+    by: refereeB
+    hash: f215d2fa58b9
+    date: '2026-10-26'
+    model: claude-opus-5-5
+    evidence: '367-370: well posed; m+p=j<=n'
 - key: proof:prp-eventually-periodic
   kind: proof
   file: 04-permutations-and-iteration.md
   line: 377
   hash: 1ee7130dd58c
-  verdicts: []
+  verdicts:
+  - stage: S5a
+    verdict: correct
+    by: refereeA
+    hash: 1ee7130dd58c
+    date: '2026-10-26'
+    model: claude-opus-5-5
+    evidence: 'line 378: pigeonhole, then thm-induction from base m'
+  - stage: S5b
+    verdict: correct
+    by: refereeB
+    hash: 1ee7130dd58c
+    date: '2026-10-26'
+    model: claude-opus-5-5
+    evidence: '378-381: induction from base m (thm-induction 2.2:11)'
 - key: exm-squaring-mod-eleven
   kind: exm
   file: 04-permutations-and-iteration.md
   line: 386
   hash: ccae0287d208
-  verdicts: []
+  verdicts:
+  - stage: S5a
+    verdict: gap
+    by: refereeA
+    hash: ccae0287d208
+    date: '2026-10-26'
+    model: claude-opus-5-5
+    evidence: 04-permutations-and-iteration.md:401 The 'No return' step applies @prp-eventually-periodic
+      'with these m and p', but the proposition only says some m, p exist. It also jumps from f^{l+4}=f^l
+      (l>=1) to 'every s^l([2]) with l>=1 is one of [4],[5],[3],[9]' with no further argument.
+  - stage: S5b
+    verdict: gap
+    by: refereeB
+    hash: ccae0287d208
+    date: '2026-10-26'
+    model: claude-opus-5-5
+    evidence: 04-permutations-and-iteration.md:401 The 'No return' step cites prp-eventually-periodic
+      for the specific values m=1 and p=4, but the proposition only states that some m,p exist (the pigeonhole
+      pair from its proof need not be (1,4)). Deducing that every s^l([2]) with l>=1 lies in {[4],[5],[3],[9]}
+      also needs an unstated reduction of l>=5 to 1<=l<=4.
 - key: check:04-permutations-and-iteration:5
   kind: check
   file: 04-permutations-and-iteration.md
   line: 406
   hash: 753a5f41af17
-  verdicts: []
+  verdicts:
+  - stage: S5a
+    verdict: correct
+    by: refereeA
+    hash: 753a5f41af17
+    date: '2026-10-26'
+    model: claude-opus-5-5
+    evidence: 'line 411: 0,1,2,5,5 gives m=3, p=1'
+  - stage: S5b
+    verdict: correct
+    by: refereeB
+    hash: 753a5f41af17
+    date: '2026-10-26'
+    model: claude-opus-5-5
+    evidence: '411: 0->1->2->5->5, so m=3 and p=1'
 - key: exr-permutations-and-iteration-a1
   kind: exr
   file: 04-permutations-and-iteration.md
   line: 424
   hash: 07325a7e2817
-  verdicts: []
+  verdicts:
+  - stage: S5a
+    verdict: minor
+    by: refereeA
+    hash: 07325a7e2817
+    date: '2026-10-26'
+    model: claude-opus-5-5
+    evidence: 04-permutations-and-iteration.md:443 Part (b) asks for m 'as small as possible', but the
+      solution never rules out m = 0.
+  - stage: S5b
+    verdict: correct
+    by: refereeB
+    hash: 07325a7e2817
+    date: '2026-10-26'
+    model: claude-opus-5-5
+    evidence: '435-445: tables of sigma, sigma^{-1}, sigma^2 recomputed with the right factor first; m=1,
+      p=3 is the unique p with m+p<=5; two fixed points'
+  - stage: S6
+    verdict: minor
+    by: verifier
+    hash: 07325a7e2817
+    date: '2026-10-26'
+    model: claude-opus-5-5
+    evidence: 04-permutations-and-iteration.md:443 Part (b) asks for m 'as small as possible', but the
+      solution only shows that m = 1, p = 3 works. It never excludes m = 0.
 - key: exr-permutations-and-iteration-b1
   kind: exr
   file: 04-permutations-and-iteration.md
   line: 450
   hash: '682971993741'
-  verdicts: []
+  verdicts:
+  - stage: S5a
+    verdict: correct
+    by: refereeA
+    hash: '682971993741'
+    date: '2026-10-26'
+    model: claude-opus-5-5
+    evidence: 'line 457: inverse [5a], cycles of lengths 6, 2, 1, N=6'
+  - stage: S5b
+    verdict: correct
+    by: refereeB
+    hash: '682971993741'
+    date: '2026-10-26'
+    model: claude-opus-5-5
+    evidence: '457-465: inverse [5a]; 6-cycle and 2-cycle mod 9; N=6'
+  - stage: S6
+    verdict: correct
+    by: verifier
+    hash: '682971993741'
+    date: '2026-10-26'
+    model: claude-opus-5-5
+    evidence: 04:450-466. My script confirms the cycles [0], (1 2 4 8 7 5), (3 6) and least N = 6. The
+      inverse [5a] is valid since 10 ≡ 1 mod 9. The worked examples are exm-three-pile-shuffle and the
+      [5a] on Z/12 quick check.
 - key: exr-permutations-and-iteration-b2
   kind: exr
   file: 04-permutations-and-iteration.md
   line: 468
   hash: 4f2d144e2133
-  verdicts: []
+  verdicts:
+  - stage: S5a
+    verdict: correct
+    by: refereeA
+    hash: 4f2d144e2133
+    date: '2026-10-26'
+    model: claude-opus-5-5
+    evidence: line 475
+  - stage: S5b
+    verdict: correct
+    by: refereeB
+    hash: 4f2d144e2133
+    date: '2026-10-26'
+    model: claude-opus-5-5
+    evidence: '475-478: correct'
+  - stage: S6
+    verdict: correct
+    by: verifier
+    hash: 4f2d144e2133
+    date: '2026-10-26'
+    model: claude-opus-5-5
+    evidence: 04:468-479. f^{n+1} = f^n∘f is prp-iterate-laws (a) with exponents n and 1. In the induction
+      step every bracket move is written and justified.
 - key: exr-permutations-and-iteration-b3
   kind: exr
   file: 04-permutations-and-iteration.md
   line: 481
   hash: f87cf6850f43
-  verdicts: []
+  verdicts:
+  - stage: S5a
+    verdict: correct
+    by: refereeA
+    hash: f87cf6850f43
+    date: '2026-10-26'
+    model: claude-opus-5-5
+    evidence: line 488
+  - stage: S5b
+    verdict: correct
+    by: refereeB
+    hash: f87cf6850f43
+    date: '2026-10-26'
+    model: claude-opus-5-5
+    evidence: '488: both inclusions correct'
+  - stage: S6
+    verdict: correct
+    by: verifier
+    hash: f87cf6850f43
+    date: '2026-10-26'
+    model: claude-opus-5-5
+    evidence: 04:481-489. Both inclusions use sigma∘sigma^k = sigma^{k+1} for k in Z (prp-iterate-laws
+      (c)). Finiteness is not needed and is not assumed.
 - key: exr-permutations-and-iteration-b4
   kind: exr
   file: 04-permutations-and-iteration.md
   line: 491
   hash: 6142e38523c7
-  verdicts: []
+  verdicts:
+  - stage: S5a
+    verdict: correct
+    by: refereeA
+    hash: 6142e38523c7
+    date: '2026-10-26'
+    model: claude-opus-5-5
+    evidence: 'lines 506-514: (a) T, (b) T via f^{N-1}, (c) F (swap), (d) F (n+1 on ℤ), (e) T'
+  - stage: S5b
+    verdict: correct
+    by: refereeB
+    hash: 6142e38523c7
+    date: '2026-10-26'
+    model: claude-opus-5-5
+    evidence: '506-514: (a) T, (b) T (N>=1 gives N-1 in N), (c) F, (d) F, (e) T; all justified'
+  - stage: S6
+    verdict: correct
+    by: verifier
+    hash: 6142e38523c7
+    date: '2026-10-26'
+    model: claude-opus-5-5
+    evidence: 04:491-515. (a) T, (b) T, (c) F, (d) F, (e) T agree with my answers. In (b), N-1 is in N
+      because N >= 1. In (d), Z contains N, and N is infinite (exm-hilbert-hotel, 02-05:414) together
+      with prp-subset-finite.
 - key: exr-permutations-and-iteration-c1
   kind: exr
   file: 04-permutations-and-iteration.md
   line: 519
   hash: bc8ab176a31f
-  verdicts: []
+  verdicts:
+  - stage: S5a
+    verdict: correct
+    by: refereeA
+    hash: bc8ab176a31f
+    date: '2026-10-26'
+    model: claude-opus-5-5
+    evidence: 'line 535: pieces map to the residues mod 3; ≡3i mod 14; cycles checked; 729=52·14+1; sidecar
+      passes'
+  - stage: S5b
+    verdict: correct
+    by: refereeB
+    hash: bc8ab176a31f
+    date: '2026-10-26'
+    model: claude-opus-5-5
+    evidence: '535-555: piece images, 3i - sigma(i) = 14p, fixed 0, 7, 14, both 6-cycles, 729 = 52*14+1
+      all rechecked; marking scheme sums to 10'
+  - stage: S6
+    verdict: minor
+    by: verifier
+    hash: bc8ab176a31f
+    date: '2026-10-26'
+    model: claude-opus-5-5
+    evidence: 04-permutations-and-iteration.md:554 The last scheme item requires N = 6 to come 'from the
+      orbit lengths by @cor-permutation-power-identity'. That requires the book's route and fails a correct
+      direct proof, against STYLE §11.6 ('must not require its route').
 - key: exr-permutations-and-iteration-c2
   kind: exr
   file: 04-permutations-and-iteration.md
   line: 558
   hash: e1a4961ba9f7
-  verdicts: []
+  verdicts:
+  - stage: S5a
+    verdict: correct
+    by: refereeA
+    hash: e1a4961ba9f7
+    date: '2026-10-26'
+    model: claude-opus-5-5
+    evidence: line 571
+  - stage: S5b
+    verdict: correct
+    by: refereeB
+    hash: e1a4961ba9f7
+    date: '2026-10-26'
+    model: claude-opus-5-5
+    evidence: '571-577: failing line, reason, counterexample to the step and correct conclusion all given;
+      scheme sums to 10'
+  - stage: S6
+    verdict: correct
+    by: verifier
+    hash: e1a4961ba9f7
+    date: '2026-10-26'
+    model: claude-opus-5-5
+    evidence: '04:558-578. The only flawed line is ''apply f^{-i}''; the pigeonhole step and ''take k''
+      are fine. The counterexample defeats the step: my script gives s^1([2]) = s^5([2]) = [4] while the
+      orbit is 2,4,5,3,9,4,... and never returns to 2. My alternative counterexample (constant map on
+      {0,1}, x = 0) earns full marks under the scheme.'
 - key: exr-permutations-and-iteration-c3
   kind: exr
   file: 04-permutations-and-iteration.md
   line: 580
   hash: 579628335fa3
-  verdicts: []
+  verdicts:
+  - stage: S5a
+    verdict: correct
+    by: refereeA
+    hash: 579628335fa3
+    date: '2026-10-26'
+    model: claude-opus-5-5
+    evidence: 'line 587: thm-classes-partition (b), prp-disjoint-union-count'
+  - stage: S5b
+    verdict: correct
+    by: refereeB
+    hash: 579628335fa3
+    date: '2026-10-26'
+    model: claude-opus-5-5
+    evidence: '587-589: correct, via thm-classes-partition (b) and prp-disjoint-union-count'
+  - stage: S6
+    verdict: correct
+    by: verifier
+    hash: 579628335fa3
+    date: '2026-10-26'
+    model: claude-opus-5-5
+    evidence: 04:580-590. O(y) = O(x) for y in O(x) (equivalence classes), length = size (prp-orbit-cycle
+      (b)), and the two-orbit count follows from prp-disjoint-union-count (02-05:269).
 - key: exr-permutations-and-iteration-r1
   kind: exr
   file: 04-permutations-and-iteration.md
   line: 594
   hash: a12b57a3e693
-  verdicts: []
+  verdicts:
+  - stage: S5a
+    verdict: correct
+    by: refereeA
+    hash: a12b57a3e693
+    date: '2026-10-26'
+    model: claude-opus-5-5
+    evidence: line 601
+  - stage: S5b
+    verdict: correct
+    by: refereeB
+    hash: a12b57a3e693
+    date: '2026-10-26'
+    model: claude-opus-5-5
+    evidence: '601-605: def-power is in 2.3 (powers), so the citation is right; the algebra checks'
+  - stage: S6
+    verdict: minor
+    by: verifier
+    hash: a12b57a3e693
+    date: '2026-10-26'
+    model: claude-opus-5-5
+    evidence: '04-permutations-and-iteration.md:594 The R items fill the wrong STYLE §11.5 slots: R1 must
+      take its method from the previous chapter (Chapter 4), but it reviews Chapter 2 induction/recursion.
+      The Chapter 4 item is R3.'
+  - stage: S8
+    verdict: minor
+    by: seam
+    hash: a12b57a3e693
+    date: '2026-10-26'
+    model: claude-opus-5-5
+    evidence: 04:594-647 do not follow the roles STYLE §11.5 sets. R1's method is induction on a recursive
+      sequence (Ch2, three chapters back), not the previous chapter. The previous-chapter item is R3 (Ch4).
+      R4's solution names its tool but does not say why the look-alike tools fail.
 - key: exr-permutations-and-iteration-r2
   kind: exr
   file: 04-permutations-and-iteration.md
   line: 608
   hash: 965622af6d1a
-  verdicts: []
+  verdicts:
+  - stage: S5a
+    verdict: minor
+    by: refereeA
+    hash: 965622af6d1a
+    date: '2026-10-26'
+    model: claude-opus-5-5
+    evidence: '04-permutations-and-iteration.md:615 The solution calls φ∘σ∘φ^{-1} ''a composite of bijections''
+      without showing that φ^{-1} : Y → X is bijective. @prp-permutations-closed (c) covers only the case
+      X = Y.'
+  - stage: S5b
+    verdict: correct
+    by: refereeB
+    hash: 965622af6d1a
+    date: '2026-10-26'
+    model: claude-opus-5-5
+    evidence: '615-623: round trips and the fixed-point equivalence are correct; Sections 1.5, 1.6 and
+      3.3 C2 pointers exist'
+  - stage: S6
+    verdict: minor
+    by: verifier
+    hash: 965622af6d1a
+    date: '2026-10-26'
+    model: claude-opus-5-5
+    evidence: 04-permutations-and-iteration.md:617 The round-trip computation regroups a five-factor composite
+      in one step, citing only prp-composition-associative, which is a three-factor law.
 - key: exr-permutations-and-iteration-r3
   kind: exr
   file: 04-permutations-and-iteration.md
   line: 626
   hash: 8a59898e1141
-  verdicts: []
+  verdicts:
+  - stage: S5a
+    verdict: correct
+    by: refereeA
+    hash: 8a59898e1141
+    date: '2026-10-26'
+    model: claude-opus-5-5
+    evidence: 'line 633: thm-functions-out-of-quotient (a); [1/2]->[0]'
+  - stage: S5b
+    verdict: correct
+    by: refereeB
+    hash: 8a59898e1141
+    date: '2026-10-26'
+    model: claude-opus-5-5
+    evidence: '633: thm-functions-out-of-quotient (a), surjective, [1/2] and [0] both go to [0]; the Section
+      4.2 pointer is correct'
+  - stage: S6
+    verdict: correct
+    by: verifier
+    hash: 8a59898e1141
+    date: '2026-10-26'
+    model: claude-opus-5-5
+    evidence: 04:626-634. Well-definedness via 2(x-x') in Z and thm-functions-out-of-quotient (a), surjectivity
+      via [y/2], and failure of injectivity via [0] and [1/2] all agree with my solution. The source is
+      hidden in the problem and named with @exm-reals-mod-integers / @exm-method-well-definedness.
 - key: exr-permutations-and-iteration-r4
   kind: exr
   file: 04-permutations-and-iteration.md
   line: 636
   hash: 8368209ec307
-  verdicts: []
+  verdicts:
+  - stage: S5a
+    verdict: correct
+    by: refereeA
+    hash: 8368209ec307
+    date: '2026-10-26'
+    model: claude-opus-5-5
+    evidence: line 645
+  - stage: S5b
+    verdict: minor
+    by: refereeB
+    hash: 8368209ec307
+    date: '2026-10-26'
+    model: claude-opus-5-5
+    evidence: 04-permutations-and-iteration.md:647 STYLE §11.5 (counts binding) requires the R4 solution
+      to name the tool and say why the look-alike tools fail. This solution names the tool only. Also,
+      the item whose method is from the previous chapter (Chapter 4, well-definedness) is R3, while §11.5
+      assigns that role to R1; this order was set in the frozen blueprint.
+  - stage: S6
+    verdict: minor
+    by: verifier
+    hash: 8368209ec307
+    date: '2026-10-26'
+    model: claude-opus-5-5
+    evidence: 04-permutations-and-iteration.md:643 STYLE §11.5 says R4's solution 'names the tool and
+      says why the look-alike tools fail'. The solution names the tool only as a prose pointer ('element-chasing
+      of Section 1.7') and says nothing about look-alike tools.
