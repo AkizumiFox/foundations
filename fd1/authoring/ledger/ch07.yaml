@@ -187,6 +187,13 @@ items:
       not proved before F4.1 (prp-complex-square-roots)''. The Quick check text is untouched and its maths
       is correct. The STATUS.md promise row for the C square-root fact is still missing (F003, deferred),
       so this stays minor until that row is added.'
+  - stage: S8
+    verdict: correct
+    by: coordinator
+    hash: e916223ff7a3
+    date: '2026-10-25'
+    model: claude-opus-5-5
+    evidence: STATUS row F1.6 §01 names the Quick check, prose only, paid by F4.1 prp-complex-square-roots
 - key: lem-free-coincidence
   kind: lem
   file: 01-structures-and-satisfaction.md
@@ -311,6 +318,14 @@ items:
     evidence: 02-counter-models.md:290 The retroactive list says that each reading in 6.1's translation
       table makes the right formula true and the wrong one false, so the wrong one is not derivable from
       the right one. Two of the five rows go the other way.
+  - stage: S8
+    verdict: correct
+    by: coordinator
+    hash: 15ef7893014a
+    date: '2026-10-25'
+    model: claude-opus-5-5
+    evidence: 02:290 6.1 line now says rows (c)-(e) one way, (a),(b) the other; matches delivered 6.1
+      table (S7)
 - key: exm-clause-by-clause
   kind: exm
   file: 01-structures-and-satisfaction.md
@@ -836,6 +851,14 @@ items:
     evidence: 'The procedure paragraph (02:134) and the solution text are correct. The ledger line now
       cites the correct laws and the parity source. One minor item is still open: STATUS.md:113 does not
       list F1.6 §02 among the users of the parity promise (F013, deferred to shared files).'
+  - stage: S8
+    verdict: correct
+    by: coordinator
+    hash: 194f40897f40
+    date: '2026-10-25'
+    model: claude-opus-5-5
+    evidence: ledger cites prp-quantifier-negation and standard equivalences; STATUS parity row lists
+      F1.6 §02
 - key: check:02-counter-models:4
   kind: check
   file: 02-counter-models.md
@@ -1623,6 +1646,14 @@ items:
     evidence: '03-first-order-soundness.md:14 Step 1 of the soundness proof reduces derivations to primitive
       rules. Its list was written before Chapter 6 existed and misses the one-line steps that Chapters
       6 and 7 now use: TAUT and the quantifier laws cited as derived rules.'
+  - stage: S8
+    verdict: correct
+    by: coordinator
+    hash: 1751126663b8
+    date: '2026-10-25'
+    model: claude-opus-5-5
+    evidence: 03:14 fold now covers TAUT (prp-taut-skeleton) and Section 6.2 laws as one line, flags renamed
+      (S7)
 - key: proof:thm-first-order-soundness
   kind: proof
   file: 03-first-order-soundness.md
@@ -2517,6 +2548,13 @@ items:
     model: claude-opus-5-5
     evidence: '(f) on {a}: strict order exactly ∅ (the loop breaks Irrefl); partial order exactly {(a,a)}
       (∅ fails Refl). Both correct.'
+  - stage: S8
+    verdict: correct
+    by: coordinator
+    hash: b37cae30c7f5
+    date: '2026-10-25'
+    model: claude-opus-5-5
+    evidence: sidecar now asserts the negative cases of (f); passes
 - key: exr-theories-and-models-b1
   kind: exr
   file: 04-theories-and-models.md
@@ -2805,6 +2843,13 @@ items:
     date: '2026-10-25'
     model: claude-opus-5-5
     evidence: 05:53-57 answer correct; the ℤ parity fact (evens) has no ledger line (see finding on 05:184).
+  - stage: S8
+    verdict: correct
+    by: coordinator
+    hash: 1991d2dac424
+    date: '2026-10-25'
+    model: claude-opus-5-5
+    evidence: 05 ledger block now records the Z evens fact (F2.2, STATUS parity row lists F1.6 §05)
 - key: check:05-definability-and-isomorphism:2
   kind: check
   file: 05-definability-and-isomorphism.md
@@ -3374,6 +3419,14 @@ items:
     evidence: 05-definability-and-isomorphism.md:490 The R group still has the sources it had when the
       models material followed Chapter 4. None of the R items reaches into Chapter 6, which STYLE §11.5
       requires of R1 now that Chapter 6 is the previous chapter.
+  - stage: S8
+    verdict: correct
+    by: coordinator
+    hash: f0e963a211c2
+    date: '2026-10-25'
+    model: claude-opus-5-5
+    evidence: R sources kept by frozen blueprint rule 1; STYLE 11.5 exemption recorded in STATUS deviations
+      (S7)
 - key: exr-models-r2
   kind: exr
   file: 05-definability-and-isomorphism.md
@@ -3680,6 +3733,14 @@ items:
       for incompleteness is now given (ordered field + fd3 Ch6 uniqueness + R not listable). It is correct,
       but ''it'' after the colon is ambiguous and the step ''so it would be isomorphic to R, and R could
       be listed'' is left implicit. The ledger lines are consistent. The STATUS row is deferred (F033).'
+  - stage: S8
+    verdict: correct
+    by: coordinator
+    hash: 8208f4c9f1e8
+    date: '2026-10-25'
+    model: claude-opus-5-5
+    evidence: '06:95 now states: complete listable model would be isomorphic to R (fd3 Ch6), so R listable;
+      contradiction'
 - key: check:06-limits-of-first-order-logic:3
   kind: check
   file: 06-limits-of-first-order-logic.md
@@ -3742,6 +3803,14 @@ items:
     evidence: '''(or 0 if there is none)'' covers a subset with no c-axioms. Standard below non-standard
       follows from the bounding sentences plus trichotomy, both true in N. The argument with parameters
       fixes z_i at e_i throughout, and the closed instance is in T.'
+  - stage: S8
+    verdict: correct
+    by: coordinator
+    hash: df800317a316
+    date: '2026-10-25'
+    model: claude-opus-5-5
+    evidence: 06:123 adds forall x not(x<0) to the bounding sentences, covering s = 0; trichotomy then
+      gives standard below non-standard
 - key: check:06-limits-of-first-order-logic:4
   kind: check
   file: 06-limits-of-first-order-logic.md

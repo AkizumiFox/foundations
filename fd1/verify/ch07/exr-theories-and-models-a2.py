@@ -20,6 +20,7 @@ assert all(u * 1 == u == 1 * u and u * (1 / u) == 1 and (1 / u) != 0 for u in S)
 # (f) one element
 assert irrefl("a", set()) and trans("a", set())
 assert refl("a", {("a", "a")}) and antisym("a", {("a", "a")}) and trans("a", {("a", "a")})
+assert not irrefl("a", {("a", "a")}) and not refl("a", set())
 # (g) fewest pairs added to {(a,b)} for an equivalence relation on {a,b}
 best = min((R for R in all_relations("ab") if ("a", "b") in R and refl("ab", R)
             and sym("ab", R) and trans("ab", R)), key=len)

@@ -632,6 +632,7 @@ def-definable-set (claim): the defined set does not depend on l | lem-free-coinc
 exm-definable-sets (example): a real is a square of a real iff it is non-negative | school algebra (AN1.1 thm-nth-root, prose only); verify/ch07/exm-definable-sets.py
 exm-definable-sets (example): d + d = d iff d = 0; x + z = y with z non-zero iff x < y in N; U defines {1}; the prime formula defines the primes | inline case checks; verify/ch07/exm-definable-sets.py (window 0-200, primes against a sieve)
 exm-definable-sets (claim): U(y) written with its bound variable renamed so that y is not captured | renaming of bound variables, F1.4 §02 (prose); the formula is written out
+exm-definable-sets (solution): Quick check, x = y + y in Z exactly for the even integers | definition of even; every integer is even or odd and not both, F2.2 (promised, STATUS row F1.1 §01 …)
 exm-definable-sets (solution): Quick check, every rational is y + y with y = x/2 rational | school algebra of fractions
 def-definable-set (claim): exists y phi defines the projection; forall y phi keeps the full vertical lines | (S6), (S7) of def-satisfaction (cited by name); def-definable-set
 def-definable-set (solution): Quick check, x <= y*y for all real y iff x <= 0 | school algebra (squares are non-negative, 0 is a square)
