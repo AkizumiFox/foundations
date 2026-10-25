@@ -3459,6 +3459,28 @@ items:
     evidence: 04-products-and-relations.md:586 STYLE §11.5 says an R item's solution names its source
       with @ref. R1's source is the levels of proof in *Logic and Proof*, Chapter 8 (F1.5), and the solution
       points to it only in prose. The ledger lines for R1 also still list the source as promised.
+  - stage: S7r
+    verdict: minor
+    by: rereferee
+    hash: f3c7a938cacd
+    date: '2026-10-26'
+    model: claude-opus-5-5
+    evidence: '04:586 cites @fd1:def-levels-of-proof correctly, and the levels-of-proof ledger line is
+      now correct. The derivation (04:545-575) still uses forall-E (\Ae lines 7, 9) and forall-I (\Ai,
+      lines 12, 16) with flagged boxes, and none of these carries an @ref. The ledger line that recorded
+      them was deleted rather than updated. Sibling sections keep the same fact as a ledger line (02:610,
+      02:617, 03:619, '
+  - stage: S7r
+    verdict: correct
+    by: rereferee
+    hash: f3c7a938cacd
+    date: '2026-10-26'
+    model: claude-opus-5-5
+    evidence: 'The solution''s line numbers match the derivation: lines 7–10 are the ∀E/→E steps, 2 and
+      5 are unwindings, 13 and 17 are rewindings, and the boxes are 1–17, 3–14 and 6–10. The new remark
+      is right too: lines 5–13 together with line 2 are exactly the proof of prp-subset-transitive applied
+      to S0 ⊆ A and A ⊆ B. @fd1:def-levels-of-proof and @prp-subset-transitive both resolve, and the ledger
+      lines are u'
 - key: exr-images-and-preimages-r2
   kind: exr
   file: 04-products-and-relations.md

@@ -583,7 +583,9 @@ Write the proof as plain prose, the way a mathematician would. Then say which se
 
 *The boxes.* "Suppose \( A \subseteq B \)" opens the \( \rulename{{\to}I} \) box \( \lines{1}{17} \); its closing line 18 is the silent frame of the whole proof. "Let \( S \in \powerset{A} \)" opens two boxes at once: the \( \rulename{\forall I} \) box for \( S_0 \) and the \( \rulename{{\to}I} \) box \( \lines{3}{14} \) inside it. "Let \( x \in S \)" likewise opens the \( \rulename{\forall I} \) box for \( x_0 \) and the \( \rulename{{\to}I} \) box \( \lines{6}{10} \). "Hence \( S \subseteq B \)" closes the two inner boxes (lines 11 and 12) and rewinds the definition (line 13). "This proves \( \powerset{A} \subseteq \powerset{B} \)" closes the \( S \) boxes (lines 15, 16) and rewinds (line 17).
 
-This is the passage from level 0 to level 3 of *Logic and Proof*, Section 8.3: each "let" carries a \( \rulename{\forall I} \) box together with the \( \rulename{{\to}I} \) box of a subset statement, the \( \rulename{\forall E} \) and \( \rulename{{\to}E} \) lines 7–10 become the two "since" clauses, the unwinding lines 2 and 5 go silent, line 4 becomes a "so" and line 14 a "that is", and the rewinding lines 13 and 17 are the two conclusions the prose states.
+This is the passage from level 0 to level 3 of @fd1:def-levels-of-proof (*Logic and Proof*, Section 8.3): each "let" carries a \( \rulename{\forall I} \) box together with the \( \rulename{{\to}I} \) box of a subset statement, the \( \rulename{\forall E} \) and \( \rulename{{\to}E} \) lines 7–10 become the two "since" clauses, the unwinding lines 2 and 5 go silent, line 4 becomes a "so" and line 14 a "that is", and the rewinding lines 13 and 17 are the two conclusions the prose states.
+
+Lines 5–13, with line 2, are the proof of @prp-subset-transitive, done again inside this one. A level-3 proof that may cite it is shorter: if \( S \subseteq A \), then \( S \subseteq B \) by @prp-subset-transitive, so \( S \in \powerset{B} \).
 :::
 
 ::: {#exr-images-and-preimages-r2}
@@ -694,7 +696,7 @@ exm-method-uniqueness (claim): the quick check after it, x^3 = -8 forces x = -2;
 exm-coordinates-unique (solution): from p = (a, b) and p = (a', b') infer (a, b) = (a', b') | def-rules-equality (cited after def-ordered-pair)
 exr-products-and-relations-b4 (solution): (a) solving the linear system and the check by exact arithmetic; (b) 1^2 = (-1)^2 = 1 and 1 != -1 | school algebra
 exr-products-and-relations-b4 (solution): (d), (e) membership of (a, b) and (e, e) via (*) | (*), proved in the text after def-cartesian-product
-exr-images-and-preimages-r1 (solution): levels of proof | F1.5 (promised): def-levels-of-proof (prose pointer, F1.5 §03)
-exr-images-and-preimages-r1 (solution): forall-I / forall-E rules and flagged boxes | F1.4 (promised): def-rules-universal (prose pointer)
+exr-images-and-preimages-r1 (solution): levels of proof | def-levels-of-proof (cited)
+exr-images-and-preimages-r1 (solution): the closing remark, S ⊆ A and A ⊆ B give S ⊆ B | prp-subset-transitive (F2.1 §02, cited)
 exr-images-and-preimages-r4 (solution): every set x is an element of {x}; "is a singleton" is a property usable in specification | def-set-builder (F2.1 §02, listing)
 -->
