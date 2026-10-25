@@ -1,6 +1,6 @@
 # Equivalence Relations and Partitions
 
-Section 2.4 sorted relations by four properties: reflexive, symmetric, antisymmetric and transitive (@def-relation-properties). This section studies the relations that have the first, second and fourth. They are the relations that say two things are "the same" in some respect, and each of them cuts its set into disjoint pieces of mutually "same" elements. We prove that the pieces always form a partition, and that every partition arises from exactly one such relation. Then we build the integers modulo \( n \), and meet the check that every definition on pieces needs: that it does not depend on which element names the piece. Section 1.5 promised that check for functions defined on classes; here it is.
+Section 4.1 sorted relations by four properties: reflexive, symmetric, antisymmetric and transitive (@def-relation-properties). This section studies the relations that have the first, second and fourth. They are the relations that say two things are "the same" in some respect, and each of them cuts its set into disjoint pieces of mutually "same" elements. We prove that the pieces always form a partition, and that every partition arises from exactly one such relation. Then we build the integers modulo \( n \), and meet the check that every definition on pieces needs: that it does not depend on which element names the piece. Section 1.5 promised that check for functions defined on classes; here it is, with a method for making it.
 
 ## Arithmetic on a clock
 
@@ -38,7 +38,7 @@ In words: (Eq1) says everything is the same as itself. (Eq2) says "the same" has
 \[
 \forall x, y, z \in X \ \, \bigl( (x \sim y \wedge y \sim z) \to x \sim z \bigr) .
 \]
-The symbol \( \sim \) is a letter for a relation, like \( R \) in Section 2.4; it is written between its arguments because it is read like \( = \). Nothing needs checking for well-definedness: the definition names a property of a set of pairs.
+The symbol \( \sim \) is a letter for a relation, like \( R \) in Section 4.1; it is written between its arguments because it is read like \( = \). Nothing needs checking for well-definedness: the definition names a property of a set of pairs.
 
 ::: {#exm-first-equivalences}
 [Four equivalence relations]
@@ -63,19 +63,23 @@ Check (Eq1)–(Eq3) for each relation.
 (d) Each of (Eq1)–(Eq3) begins "for every element of \( X \)", and \( X = \emptyset \) has none, so all three hold vacuously. The empty relation **is** an equivalence relation on \( \emptyset \).
 :::
 
-Part (d) is the degenerate case, and it is worth keeping: it says that the definition makes no demand on an empty set, so the theorems below hold for \( X = \emptyset \) without a separate case. On a **non-empty** set the empty relation is not an equivalence relation: (Eq1) fails at any element \( x \), since \( (x, x) \notin \emptyset \). The same set of pairs passes on one set and fails on another, because (Eq1) speaks about every element of \( X \).
-
 Part (c) is an instance of a pattern that returns later in this section, with the fibers of a function: "\( x \sim y \) when some quantity attached to \( x \) equals the same quantity attached to \( y \)". Any such relation inherits (Eq1)–(Eq3) from equality.
 
-**A non-example by minimal change.** On \( \nR \), let \( x \sim y \) mean \( x - y \in \nZ \), and let \( x \mathrel{R} y \) mean \( x - y \in \nN \). The first is an equivalence relation, as an example later in this section checks. The second changes one letter. It is still reflexive, since \( x - x = 0 \in \nN \) by (\( \nN \)0), and still transitive: if \( x - y \in \nN \) and \( y - z \in \nN \), then \( x - z = (x - y) + (y - z) \in \nN \) by @lem-naturals-arithmetic (b). But it is not symmetric: \( 1 \mathrel{R} 0 \), since \( 1 - 0 = 1 \in \nN \), while \( 0 - 1 = -1 \), and \( -1 \notin \nN \) because every natural number is \( \ge 0 \) (@lem-naturals-arithmetic (a)). The clause that fails is (Eq2). The relation \( R \) is the order \( y \le x \) restricted to pairs at integer distance; it has a direction, and sameness has none.
+::: {.second-reading title="The degenerate case and a non-example"}
+Part (d) is the degenerate case, and it is worth keeping: it says that the definition makes no demand on an empty set, so the theorems below hold for \( X = \emptyset \) without a separate case. On a **non-empty** set the empty relation is not an equivalence relation: (Eq1) fails at any element \( x \), since \( (x, x) \notin \emptyset \). The same set of pairs passes on one set and fails on another, because (Eq1) speaks about every element of \( X \).
 
+**A non-example by minimal change.** On \( \nR \), let \( x \sim y \) mean \( x - y \in \nZ \), and let \( x \mathrel{R} y \) mean \( x - y \in \nN \). The first is an equivalence relation, as an example later in this section checks. The second changes one letter. It is still reflexive, since \( x - x = 0 \in \nN \) by (\( \nN \)0), and still transitive: if \( x - y \in \nN \) and \( y - z \in \nN \), then \( x - z = (x - y) + (y - z) \in \nN \) by @lem-naturals-arithmetic (b). But it is not symmetric: \( 1 \mathrel{R} 0 \), since \( 1 - 0 = 1 \in \nN \), while \( 0 - 1 = -1 \), and \( -1 \notin \nN \) because every natural number is \( \ge 0 \) (@lem-naturals-arithmetic (a)). The clause that fails is (Eq2). The relation \( R \) is the order \( y \le x \) restricted to pairs at integer distance; it has a direction, and sameness has none.
+:::
+
+::: {.second-reading title="Why these three clauses"}
 **Why these three clauses.** Each clause has a job, and each failure has a witness.
 
-- Drop (Eq1), and an element may be the same as nothing at all. On \( \{1\} \), the empty relation is symmetric and transitive (Section 2.4's warning), and \( 1 \) is related to nothing; it would sit in no piece of the cutting.
+- Drop (Eq1), and an element may be the same as nothing at all. On \( \{1\} \), the empty relation is symmetric and transitive (Section 4.1's warning), and \( 1 \) is related to nothing; it would sit in no piece of the cutting.
 - Drop (Eq2), and the pieces overlap. The relation \( \le \) on \( \{1, 2\} \) is reflexive and transitive; the set of elements below \( 2 \) is \( \{1, 2\} \), the set below \( 1 \) is \( \{1\} \), and the two share \( 1 \) without being equal.
 - Drop (Eq3), and sameness leaks. "\( \abs{x - y} \le 1 \)" on \( \nR \) is reflexive and symmetric, and \( 0 \) is related to \( 1 \), \( 1 \) to \( 2 \), \( 2 \) to \( 3 \), and so on, while \( 0 \) is not related to \( 2 \). Every integer is linked to every other through a chain of steps of length \( 1 \), though few are related directly.
 
 The name comes from "equal value": equivalent elements are equal in whatever respect the relation measures.
+:::
 
 ::: {.warning}
 An equivalence relation is an equivalence relation **on a named set**. The relation \( \{ (1, 1), (2, 2) \} \) is equality on \( \{1, 2\} \), an equivalence relation; on \( \{1, 2, 3\} \) it is the same set of pairs and not an equivalence relation, since \( (3, 3) \) is missing and (Eq1) fails at \( 3 \). Before checking (Eq1), name the set.
@@ -125,9 +129,11 @@ Let \( X \) be a set. A **partition** of \( X \) is a set \( \sP \) of subsets o
 
 Here \( \bigcup \sP \) is the union of the set of sets \( \sP \) (@def-family-union-intersection): the set of points lying in some block. Since every block is a subset of \( X \), the union is always a subset of \( X \), and (P3) says that every \( x \in X \) lies in **some** block. With (P2), it lies in **exactly one**: if \( x \in P \) and \( x \in Q \), then \( P \cap Q \ne \emptyset \), so \( P = Q \).
 
-Examples: \( \{ \{1, 2\}, \{3\} \} \) is a partition of \( \{1, 2, 3\} \). For a non-empty \( X \), \( \{X\} \) is a partition with one block, and \( \{ \{x\} : x \in X \} \) is one with a block for each point. The even and the odd integers form a partition of \( \nZ \) with two blocks, because every integer is even or odd and not both (@thm-division-algorithm with \( n = 2 \)). For \( X = \emptyset \), the empty set of blocks \( \sP = \emptyset \) is a partition: (P1) and (P2) are vacuous, and \( \bigcup \emptyset = \emptyset \).
+Examples: \( \{ \{1, 2\}, \{3\} \} \) is a partition of \( \{1, 2, 3\} \). For a non-empty \( X \), \( \{X\} \) is a partition with one block, and \( \{ \{x\} : x \in X \} \) is one with a block for each point. The even and the odd integers form a partition of \( \nZ \) with two blocks, because every integer is even or odd and not both (@thm-even-or-odd). For \( X = \emptyset \), the empty set of blocks \( \sP = \emptyset \) is a partition: (P1) and (P2) are vacuous, and \( \bigcup \emptyset = \emptyset \).
 
+::: {.second-reading title="Non-examples by minimal change"}
 **Non-examples by minimal change.** \( \{ \{1, 2\}, \{2, 3\} \} \) covers \( \{1, 2, 3\} \) and its sets are non-empty, but \( 2 \) lies in both, so (P2) fails. \( \{ \{1, 2\}, \{3\}, \emptyset \} \) satisfies (P2) and (P3), and fails (P1). Without (P1), "the block containing \( x \)" would still be unique, but a partition could carry useless empty blocks, and the correspondence with equivalence relations below would break, since no class is empty.
+:::
 
 A partition is a set of subsets of \( X \). So is the set of all classes of an equivalence relation, and it gets its own name.
 
@@ -161,7 +167,7 @@ Let \( \sim \) be an equivalence relation on a set \( X \).
 :::
 
 ::: {.idea}
-Each property of \( \sim \) does one job. Reflexivity puts \( a \) in its own class, which gives (a) and the covering. For (b), a class is determined by any one of its elements: if \( a \sim b \), then anything the same as \( a \) is the same as \( b \), by transitivity, and the reverse needs symmetry first. For (c), a common element \( c \) of two classes has \( c \sim a \) and \( c \sim b \); symmetry turns the first around, transitivity joins the two, and (b) finishes. Then (d) is (a), (c) and the covering, read against the three clauses of @def-partition.
+Each property of \( \sim \) does one job. Reflexivity puts \( a \) in its own class, which gives (a) and the covering. For (b), a class is determined by any one of its elements: if \( a \sim b \), then anything the same as \( a \) is the same as \( b \), by transitivity, and the reverse needs symmetry first. For (c), a common element \( c \) of two classes has \( c \sim a \) and \( c \sim b \); symmetry turns the first around, transitivity joins the two, and (b) finishes. Then (d) is (a), (c) and the covering, read against the three clauses of @def-partition. (b) is a double inclusion (@exm-method-double-inclusion).
 
 *Before reading on: which property of \( \sim \) does each line use?*
 :::
@@ -186,7 +192,11 @@ Each property of \( \sim \) does one job. Reflexivity puts \( a \) in its own cl
 This proves the theorem.
 :::
 
-Part (b) is the rule we will use most. It turns a statement about classes, \( [a] = [b] \), into a statement about elements, \( a \sim b \), and back. On the clock: \( [14] = [2] \) because \( 14 - 2 = 12 \) is a multiple of \( 12 \). By (b), the quotient map \( q \) of @def-quotient-set has \( q(a) = q(b) \) exactly when \( a \sim b \). So \( q \) is injective only when every class has a single element: two different elements \( x, y \) of one class \( [c] \) have \( [x] = [c] = [y] \) by (b), so \( q(x) = q(y) \). Part (c) says that two classes are either equal or disjoint; there is no third possibility. That is what the relations of "Why these three clauses" lacked: for \( \le \), the sets \( [2] = \{1, 2\} \) and \( [1] = \{1\} \) given by the formula of @def-equivalence-class overlap and differ, and with \( a = 2 \), \( b = 1 \), \( c = 1 \) the line of (c) that fails is the one that uses (Eq2) (Exercise A1(c)).
+Part (b) is the rule we will use most. It turns a statement about classes, \( [a] = [b] \), into a statement about elements, \( a \sim b \), and back. On the clock: \( [14] = [2] \) because \( 14 - 2 = 12 \) is a multiple of \( 12 \). Part (c) says that two classes are either equal or disjoint; there is no third possibility.
+
+::: {.second-reading title="When the quotient map is injective, and what ≤ lacked"}
+By (b), the quotient map \( q \) of @def-quotient-set has \( q(a) = q(b) \) exactly when \( a \sim b \). So \( q \) is injective only when every class has a single element: two different elements \( x, y \) of one class \( [c] \) have \( [x] = [c] = [y] \) by (b), so \( q(x) = q(y) \). That is what the relations of "Why these three clauses" lacked: for \( \le \), the sets \( [2] = \{1, 2\} \) and \( [1] = \{1\} \) given by the formula of @def-equivalence-class overlap and differ, and with \( a = 2 \), \( b = 1 \), \( c = 1 \) the line of (c) that fails is the one that uses (Eq2) (Exercise A1(c)).
+:::
 
 ::: {.warning}
 A class has many names. In the quick check, \( [1] \), \( [11] \) and \( [21] \) are one set, and nothing about that set prefers \( 1 \). So any argument or definition that starts from "\( [a] \)" and then uses \( a \) itself (its size, its sign, its last digit) must be shown not to depend on which representative was chosen. "The smallest element of \( [a] \)" makes sense for the last-digit classes; "\( [a + 1] \)" as a function of the class \( [a] \) needs a proof, which the section supplies for congruences under "Operations on classes".
@@ -226,6 +236,16 @@ So every class is a block: \( [x] \) is the block containing \( x \). Conversely
 
 So the two passages undo each other. Going from \( \sim \) to \( X/{\sim} \) and back gives \( \sim \) again, by (b); going from \( \sP \) to \( \sim_{\sP} \) and back gives \( \sP \) again, by (a). An equivalence relation and a partition are two descriptions of one structure: the relation says which pairs are the same, and the partition lists the piles. This is the move *classes from a relation, a relation from classes*, and we choose whichever description makes the next step easier.
 
+**A correspondence, proved both ways.** Put this in the language of Section 1.6. Write \( \mathrm{Eq}(X) \) for the set of equivalence relations on \( X \) (a subset of \( \powerset{X \times X} \)) and \( \mathrm{Part}(X) \) for the set of partitions (a subset of \( \powerset{\powerset{X}} \)). Together with @thm-classes-partition, the theorem gives two functions, \( \Phi \colon \mathrm{Eq}(X) \to \mathrm{Part}(X) \), \( \Phi(\sim) \coloneqq X/{\sim} \) (a partition by @thm-classes-partition), and \( \Psi \colon \mathrm{Part}(X) \to \mathrm{Eq}(X) \), \( \Psi(\sP) \coloneqq {\sim_{\sP}} \) (an equivalence relation by part (a)). Part (a) says \( \Phi \circ \Psi = \id_{\mathrm{Part}(X)} \), and part (b) says \( \Psi \circ \Phi = \id_{\mathrm{Eq}(X)} \). So each is the other's two-sided inverse, and both are bijections (@thm-bijection-iff-inverse): the method of @exm-method-construct-and-verify, with both composites checked. To count the equivalence relations on a finite set, count its partitions.
+
+::: {.check}
+How many equivalence relations on \( \{1, 2, 3, 4\} \) have exactly two classes?
+:::
+
+::: {.solution}
+Seven. By the correspondence, count partitions into two blocks. Either one block is a singleton and the other has three elements, and the singleton can be chosen in four ways; or both blocks are pairs, and the pair containing \( 1 \) is fixed by its second element, chosen in three ways. So \( 4 + 3 = 7 \).
+:::
+
 The transitivity step in (a) is where (P2) does its real work (the classes part uses it again, the same way), and it is the step that a hasty proof skips. If the blocks were allowed to overlap, as in the cover \( \{ \{1, 2\}, \{2, 3\} \} \) of \( \{1, 2, 3\} \), then "lie in a common set" would relate \( 1 \) to \( 2 \) and \( 2 \) to \( 3 \) but not \( 1 \) to \( 3 \).
 
 ## Congruence modulo n
@@ -240,7 +260,7 @@ Let \( n \in \nZ_{>0} \). Integers \( a \) and \( b \) are **congruent modulo \(
 
 So \( 14 \equiv 2 \pmod{12} \), since \( 14 - 2 = 1 \cdot 12 \); \( -10 \equiv 2 \pmod{12} \), since \( -10 - 2 = (-1) \cdot 12 \); and \( 7 \not\equiv 2 \pmod{12} \), since \( 5 \) is not a multiple of \( 12 \) (the multiples \( 12k \) are \( 0 \) for \( k = 0 \), at least \( 12 \) for \( k \ge 1 \) and at most \( -12 \) for \( k \le -1 \), by discreteness, @prp-integers-closed (c)). The symbol \( \equiv \) here always carries its modulus, so it does not clash with the semantic equivalence \( \varphi \equiv \psi \) of *Logic and Proof*, Chapter 4.
 
-::: {.remark}
+::: {.second-reading title="Why n ≥ 1"}
 Why \( n \ge 1 \)? The condition makes sense for \( n = 0 \), but it says nothing new: \( 0 \mid a - b \) means \( a - b = k \cdot 0 = 0 \), so "congruence modulo \( 0 \)" is equality on \( \nZ \). Its classes would be the singletons \( \{a\} \), a copy of \( \nZ \) and not \( \nZ \) itself, and the count of classes proved below would fail. Excluding \( n = 0 \) keeps that count exact.
 :::
 
@@ -326,7 +346,11 @@ and in the same way \( [\sqrt 2] = \{ \sqrt 2 + k : k \in \nZ \} = \{ \dots, \sq
 *Three different classes.* By @thm-classes-partition (b), two classes \( [x] \) and \( [y] \) are equal exactly when \( x - y \in \nZ \). A real number \( t \) with \( 0 < t < 1 \) is not an integer: if it were, discreteness (@prp-integers-closed (c)) applied to \( 0 < t \) would give \( 1 \le t \). Now \( \tfrac12 - 0 = \tfrac12 \) lies strictly between \( 0 \) and \( 1 \), so \( [\tfrac12] \ne [0] \). Since \( \sqrt 2 \ge 0 \) and \( (\sqrt 2)^2 = 2 \), @fd1:thm-squares-order rules out \( \sqrt 2 \le 1 \) (it would give \( 2 \le 1 \)) and \( 2 \le \sqrt 2 \) (it would give \( 4 \le 2 \)), so \( 1 < \sqrt 2 < 2 \), and \( 0 < \sqrt 2 - 1 < 1 \); then \( \sqrt 2 - 1 \notin \nZ \), and therefore \( \sqrt 2 - 0 \notin \nZ \) (else \( \sqrt 2 - 1 \) would be a difference of integers), so \( [\sqrt 2] \ne [0] \). Finally, in the same way \( \sqrt 2 \le \tfrac12 \) would give \( 2 \le \tfrac14 \), and \( \tfrac32 \le \sqrt 2 \) would give \( \tfrac94 \le 2 \), so \( \tfrac12 < \sqrt 2 < \tfrac32 \), and \( 0 < \sqrt 2 - \tfrac12 < 1 \), and \( [\sqrt 2] \ne [\tfrac12] \).
 :::
 
-Picture each class as one point of a circle of circumference \( 1 \): the real line is wound around it, and two numbers land on the same point when they differ by an integer. Each class has exactly one representative in \( [0, 1) \): the class of \( \sqrt 2 \) meets \( [0, 1) \) in \( \sqrt 2 - 1 \), for instance. Proving this for every class needs the integer part of a real number, which *Analysis on the Real Line*, Chapter 1 constructs; we do not use it here. With \( \nQ \) in place of \( \nZ \), the relation "\( x - y \in \nQ \)" is again an equivalence relation on \( \nR \), and choosing one point from each of its classes is how *Measure and Integration*, Chapter 1 builds a set of real numbers that has no length.
+Picture each class as one point of a circle of circumference \( 1 \): the real line is wound around it, and two numbers land on the same point when they differ by an integer. Each class has exactly one representative in \( [0, 1) \): the class of \( \sqrt 2 \) meets \( [0, 1) \) in \( \sqrt 2 - 1 \), for instance. Proving this for every class needs the integer part of a real number, which *Analysis on the Real Line*, Chapter 1 constructs; we do not use it here.
+
+::: {.second-reading title="A set with no length"}
+With \( \nQ \) in place of \( \nZ \), the relation "\( x - y \in \nQ \)" is again an equivalence relation on \( \nR \), and choosing one point from each of its classes is how *Measure and Integration*, Chapter 1 builds a set of real numbers that has no length.
+:::
 
 ## Operations on classes
 
@@ -347,7 +371,18 @@ Hence the operations \( [a] + [b] \coloneqq [a + b] \) and \( [a][b] \coloneqq [
 :::
 
 ::: {.idea}
-The sum is direct. For the product, the difference \( ab - a'b' \) changes both factors at once; change one at a time, by adding and subtracting \( a b' \).
+[Scratch work]
+
+The rule \( [a] + [b] \coloneqq [a + b] \) reads representatives. So take two representatives of each class, \( a, a' \) and \( b, b' \), and compare the outputs. By @thm-classes-partition (b), equal classes means congruent representatives, and a congruence unwinds to a "there exists" (@def-congruence): name the multipliers, with different names.
+
+| Givens | Goal |
+|---|---|
+| \( [a] = [a'] \), \( [b] = [b'] \) | \( [a + b] = [a' + b'] \) and \( [ab] = [a'b'] \) |
+| \( a - a' = kn \), \( b - b' = ln \), with \( k, l \in \nZ \) | \( (a + b) - (a' + b') = mn \) and \( ab - a'b' = m'n \) for some \( m, m' \in \nZ \) |
+| the same | sum: \( (a - a') + (b - b') = (k + l)n \), done; product: \( ab - a'b' \) changes both factors at once, and neither given appears |
+| the same | \( ab - a'b' = (ab - ab') + (ab' - a'b') = a(b - b') + (a - a')b' \): change one factor at a time |
+
+The last row closes the gap: each bracket is a given times an integer, so \( m' = al + kb' \). The proof writes this forwards.
 :::
 
 ::: {.proof}
@@ -373,6 +408,24 @@ In the language of @def-function: the addition of \( \nZ/n \) is the function \(
 \]
 the first equality by the definition of \( + \), the second because \( 14 - 2 = 12 \). And \( [21] + [-7] = [14] = [2] \) as well, as the proposition guarantees.
 
+::: {#exm-method-well-definedness}
+[Method: checking that a definition on classes is well defined]
+
+**Template.** For a rule on \( X/{\sim} \) that reads a representative \( a \): (1) take two representatives of one class, \( a \sim a' \) (@thm-classes-partition (b)); (2) unwind \( a \sim a' \), naming any witness; (3) show the outputs equal in the codomain's sense (as classes, if it is a quotient set); (4) every class has a representative, and its value lies in the codomain (Fn1); (1)–(3) make the value unique (Fn2). To refute, give one pair \( a \sim a' \) with different outputs.
+
+**When to use it.** A definition picks one name for something that has many: operations on \( \nZ/n \), maps out of a quotient set, "write \( r \) as \( p/q \)", the size of a finite set.
+
+**The usual failure.** Checking one pair only; proving the converse, which is injectivity (@exm-method-injectivity); comparing classes as elements; an output outside the codomain.
+:::
+
+::: {.check}
+Which rules define a function: (a) \( \nZ/6 \to \nZ \), \( [a] \mapsto a^2 \); (b) \( \nZ/6 \to \nZ/3 \), \( [a]_6 \mapsto [a^2]_3 \)?
+:::
+
+::: {.solution}
+(a) No: \( [0] = [6] \), but \( 0^2 = 0 \ne 36 = 6^2 \), and the codomain \( \nZ \) compares elements, not classes. (b) Yes: if \( a - a' = 6k \) with \( k \in \nZ \), then \( a^2 - a'^2 = (a - a')(a + a') = 3 \cdot 2k(a + a') \), and \( 2k(a + a') \in \nZ \), so \( [a^2]_3 = [a'^2]_3 \).
+:::
+
 Well-definedness can fail, and the next example shows a failure next to a success, with the minimal change between them.
 
 ::: {#exm-ill-defined-class-map}
@@ -387,7 +440,31 @@ Decide whether each rule defines a function: (a) \( F \colon \nZ/6 \to \nZ/4 \),
 (b) Yes. If \( [a]_6 = [a']_6 \), then \( a - a' = 6k \) for some \( k \in \nZ \) (@thm-classes-partition (b)), so \( a - a' = 3(2k) \) with \( 2k \in \nZ \) (@prp-integers-closed (a)), and \( [a]_3 = [a']_3 \). The value does not depend on the representative. What made it work is \( 3 \mid 6 \): a multiple of \( 6 \) is a multiple of \( 3 \), while a multiple of \( 6 \), such as \( 6 \) itself, need not be a multiple of \( 4 \).
 :::
 
-The general lesson: a rule "\( [a] \mapsto \) something computed from \( a \)" defines a function on the classes exactly when equivalent representatives give the same output. The check always has the same shape: take \( a \sim a' \), and show that the outputs agree.
+That is the method of @exm-method-well-definedness, applied once with success and once with failure.
+
+The check is not special to congruences. Section 2.5 met it for the number of elements of a finite set.
+
+::: {#exm-same-size-subsets}
+[Same size, revisited]
+
+Let \( X \) be a set, and for \( A, B \in \powerset{X} \) let \( A \approx B \) mean \( \card{A} = \card{B} \) (@def-equinumerous). (a) Show that \( \approx \) is an equivalence relation on \( \powerset{X} \). (b) For \( X = \{1, 2, 3\} \), list the classes. (c) For \( X = \{1, 2, 3\} \), show that the rule sending the class of \( A \) to the number of elements of \( A \) is a well-defined function \( \powerset{X}/{\approx} \to \{0, 1, 2, 3\} \).
+:::
+
+::: {.solution}
+(a) (Eq1)–(Eq3) are @prp-equinumerous-properties (a)–(c), read for subsets of \( X \).
+
+(b) Every subset of \( \{1, 2, 3\} \) is finite with \( 0, 1, 2 \) or \( 3 \) elements (@prp-subset-finite, since \( \{1, 2, 3\} \) has \( 3 \) elements; or list the eight subsets). Two subsets with the same number \( m \) of elements are equivalent: \( \card{\{1, \dots, m\}} = \card{A} \) and \( \card{\{1, \dots, m\}} = \card{B} \) give \( \card{A} = \card{B} \) by @prp-equinumerous-properties (b) and (c). Two with different numbers are not, by (c) below. So the classes are \( \{\emptyset\} \), \( \{\{1\}, \{2\}, \{3\}\} \), \( \{\{1, 2\}, \{1, 3\}, \{2, 3\}\} \) and \( \{\{1, 2, 3\}\} \).
+
+(c) By the method of @exm-method-well-definedness: let \( A \approx A' \), and let \( A \) have \( m \) elements and \( A' \) have \( m' \). From \( \card{\{1, \dots, m'\}} = \card{A'} \) and \( \card{A'} = \card{A} \) we get that \( A \) has \( m' \) elements as well, so \( m = m' \) by @cor-finite-size-unique. Each class has a representative, and all its representatives give the same number.
+:::
+
+Part (c) rests on the well-definedness step of Section 2.5 (@cor-finite-size-unique: one set, one number) and adds a second: one class, one number. And the relation lives on \( \powerset{X} \), a set: for equinumerosity between arbitrary sets there is no set of all sets for it to be a relation on (@thm-russell), which is why Section 2.5 said only that it behaves like an equivalence relation.
+
+::: {.remark}
+[Looking ahead]
+
+The clock does not stop here. *Number Systems: From \(\nN\) to \(\nR\)*, Section 3.4 builds \( \nZ/n \) again, on the constructed integers, as a quotient ring: the check of @prp-congruence-arithmetic is made once for every ideal, and the sum and product obey the laws of a ring.
+:::
 
 ## Exercises
 
@@ -404,6 +481,7 @@ Parts (a)–(d) are about @thm-classes-partition and its proof.
 3. On \( \{1, 2, 3\} \), let \( x \sim y \) mean \( x \le y \), and define \( [a] \) by the formula of @def-equivalence-class. Show that \( [2] \) and \( [1] \) overlap without being equal, and name the line of the proof of part (c) that fails, with \( a = 2 \), \( b = 1 \).
 4. Give the idea of the proof of part (c) in two sentences.
 5. How many classes has the relation \( x^2 = y^2 \) on \( \{-2, -1, 0, 1, 2\} \)? List them.
+6. To show that a rule \( [a] \mapsto \dots \) on \( \nZ/n \) is well defined, what do you assume and what do you show?
 :::
 :::
 
@@ -417,6 +495,8 @@ Parts (a)–(d) are about @thm-classes-partition and its proof.
 (d) A common element of two classes is equivalent to both representatives, so symmetry and transitivity make the two representatives equivalent. Equivalent representatives have the same class, because each class is determined by any one of its elements.
 
 (e) Three: \( \{0\} \), \( \{-1, 1\} \) and \( \{-2, 2\} \). This is the relation \( \sim_f \) of @exm-fibres-of-function for \( f(x) = x^2 \), whose values on the set are \( 0 \), \( 1 \), \( 4 \), one class for each value.
+
+(f) Assume \( [a] = [a'] \), that is, \( a \equiv a' \pmod n \), for arbitrary \( a, a' \in \nZ \); show that the rule's outputs for \( a \) and for \( a' \) are equal (@exm-method-well-definedness).
 :::
 
 ### B. Practice
@@ -465,13 +545,39 @@ Determine which of the following rules define a function. Justify your answer.
 :::
 
 ::: {.solution}
-The check in each case: take \( [a] = [a'] \), that is, \( a \equiv a' \), and decide whether the outputs agree (@exm-ill-defined-class-map).
+The check in each case: take \( [a] = [a'] \), that is, \( a \equiv a' \), and decide whether the outputs agree (@exm-method-well-definedness).
 
 (a) Yes. If \( a \equiv a' \pmod{n} \), the product clause of @prp-congruence-arithmetic, applied to \( a \equiv a' \) twice, gives \( a \cdot a \equiv a' \cdot a' \), so \( [a^2]_n = [a'^2]_n \).
 
 (b) No. \( [0]_5 = [5]_5 \), since \( 5 - 0 = 5 \). But \( [0]_{10} \ne [5]_{10} \), since \( 5 - 0 = 5 \) is not a multiple of \( 10 \) (\( 0 < 5 < 10 \)). The input \( [0]_5 \) would get two values.
 
 (c) Yes. If \( a - a' = 10k \) with \( k \in \nZ \), then \( a - a' = 5(2k) \) with \( 2k \in \nZ \) (@prp-integers-closed (a)), so \( [a]_5 = [a']_5 \). The difference from (b) is the direction: \( 5 \mid 10 \), so a multiple of \( 10 \) is a multiple of \( 5 \), not conversely.
+:::
+
+::: {#exr-equivalence-relations-b4}
+[B4: Prove or disprove]
+
+Prove or disprove: each rule defines a function.
+
+::: {.enumerate options="label=(\alph*)"}
+1. \( \nZ/6 \times \nZ/6 \to \nZ/6 \), \( ([a], [b]) \mapsto [a - 2b] \).
+2. \( \nZ/4 \to \nZ/8 \), \( [a]_4 \mapsto [2a]_8 \).
+3. On \( \nR \), with \( x \sim y \) meaning \( x - y \in \nZ \) (@exm-reals-mod-integers), the rule \( \nR/{\sim} \to \nR/{\sim} \), \( [x] \mapsto [x^2] \).
+4. On \( \nZ \times \nZ_{>0} \), with \( (a, b) \sim (c, d) \) meaning \( ad = bc \) (an equivalence relation by Exercise B1 (a)), the rule \( [(a, b)] \mapsto [(a + b, b)] \), from the quotient set to itself.
+5. With the same relation, the rule \( [(a, b)] \mapsto [(a + 1, b + 1)] \).
+:::
+:::
+
+::: {.solution}
+(a) True. Two representatives of each argument: \( a - a' = 6k \) and \( b - b' = 6l \) with \( k, l \in \nZ \). Then \( (a - 2b) - (a' - 2b') = 6(k - 2l) \), so \( [a - 2b] = [a' - 2b'] \). (The method runs once per argument.)
+
+(b) True. If \( a - a' = 4k \), then \( 2a - 2a' = 8k \), so \( [2a]_8 = [2a']_8 \). (Compare B3 (b), where \( [a]_5 \mapsto [a]_{10} \) failed: doubling the representative doubles the difference.)
+
+(c) False. \( [\tfrac13] = [\tfrac43] \), since \( \tfrac43 - \tfrac13 = 1 \). But \( (\tfrac43)^2 - (\tfrac13)^2 = \tfrac{16}{9} - \tfrac19 = \tfrac53 \), and \( \tfrac53 \notin \nZ \): \( 0 < \tfrac53 - 1 = \tfrac23 < 1 \), and no integer lies strictly between \( 0 \) and \( 1 \) (@prp-integers-closed (c)), so \( \tfrac53 - 1 \notin \nZ \), hence \( \tfrac53 \notin \nZ \). So \( [\tfrac19] \ne [\tfrac{16}{9}] \): one class, two values.
+
+(d) True. Let \( (a, b) \sim (c, d) \), so \( ad = bc \). Then \( (a + b)d = ad + bd = bc + bd = b(c + d) \), so \( (a + b, b) \sim (c + d, d) \); and \( b, d \in \nZ_{>0} \), so the outputs lie in \( \nZ \times \nZ_{>0} \).
+
+(e) False. \( (1, 2) \sim (2, 4) \), since \( 1 \cdot 4 = 2 \cdot 2 \). The outputs are \( (2, 3) \) and \( (3, 5) \), and \( 2 \cdot 5 = 10 \ne 9 = 3 \cdot 3 \), so \( (2, 3) \not\sim (3, 5) \). (Reading the classes as fractions: (d) adds \( 1 \), and (e) adds \( 1 \) to numerator and denominator, which depends on how the fraction is written.)
 :::
 
 ### C. Going deeper
@@ -535,24 +641,24 @@ def-equivalence-relation (claim): (why these clauses) every integer is chained t
 thm-classes-partition (claim): (after it) q is injective only when every class is a singleton | thm-classes-partition (b), def-quotient-set (cited)
 exm-first-equivalences (solution): x = x is =I | def-rules-equality (F1.4 §07), named in the text
 def-equivalence-relation (claim): (non-example) x - x = 0; (x - y) + (y - z) = x - z | R arithmetic, school fact; axioms in AN1.1
-thm-classes-partition (claim): (quick check) "same last digit" on {1, ..., 30} gives ten classes of three | everyday meaning of the last digit; verify/ch07/thm-classes-partition.py
-def-partition (claim): the evens and odds partition Z | thm-division-algorithm (cited, n = 2)
+thm-classes-partition (claim): (quick check) "same last digit" on {1, ..., 30} gives ten classes of three | everyday meaning of the last digit; verify/ch04/thm-classes-partition.py
+def-partition (claim): the evens and odds partition Z | thm-even-or-odd (cited)
 def-partition (claim): the union of the empty set of sets is empty | def-family-union-intersection (cited)
 thm-classes-partition (proof): substituting equals (=E): a in [a] and [a] = [b] give a in [b] | def-rules-equality (F1.4 §07), used silently
 thm-partition-equivalence (proof): substituting equals: P = Q and z in Q give z in P | def-rules-equality (F1.4 §07), used silently
 def-congruence (claim): 5, 2 are not multiples of 12, 4: a multiple kn is 0, >= n or <= -n | prp-integers-closed (c) (cited), with kn >= n for k >= 1 by R order
 prp-congruence-equivalence (proof): -k = 0 - k; (k + l)n = kn + ln | prp-integers-closed (a) (cited); R arithmetic
 prp-integers-mod-n (proof): r = 0 * n + r | R arithmetic
-exm-reals-mod-integers (solution): 2 <= 1, 4 <= 2, 2 <= 1/4, 9/4 <= 2 are false; sqrt(2) exists and is positive; not (s <= t) gives t < s | R arithmetic and order (trichotomy), school fact; square roots, school fact (AN1.1 thm-nth-root); thm-squares-order (cited, by contraposition); verify/ch07/exm-reals-mod-integers.py
+exm-reals-mod-integers (solution): 2 <= 1, 4 <= 2, 2 <= 1/4, 9/4 <= 2 are false; sqrt(2) exists and is positive; not (s <= t) gives t < s | R arithmetic and order (trichotomy), school fact; square roots, school fact (AN1.1 thm-nth-root); thm-squares-order (cited, by contraposition); verify/ch04/exm-reals-mod-integers.py
 exm-reals-mod-integers (claim): (after it) each class meets [0, 1) exactly once; the Vitali set | AN1.1 (integer part), MT.1 (prose pointers; nothing here depends on them)
 prp-congruence-arithmetic (proof): ab - a'b' = a(b - b') + (a - a')b' | R arithmetic, school fact; axioms in AN1.1
-exm-ill-defined-class-map (solution): 6 - 2 = 4; 2 is not a multiple of 4 | arithmetic; prp-integers-closed (c) (cited); verify/ch07/exm-ill-defined-class-map.py
+exm-ill-defined-class-map (solution): 6 - 2 = 4; 2 is not a multiple of 4 | arithmetic; prp-integers-closed (c) (cited); verify/ch04/exm-ill-defined-class-map.py
 exm-ill-defined-class-map (solution): 2k in Z; 6k = 3(2k) | prp-integers-closed (a) (cited); R arithmetic
-exr-equivalence-relations-a1 (solution): numerical congruences mod 3; squares on {-2, ..., 2} | arithmetic; verify/ch07/exr-equivalence-relations-a1.py
+exr-equivalence-relations-a1 (solution): numerical congruences mod 3; squares on {-2, ..., 2} | arithmetic; verify/ch04/exr-equivalence-relations-a1.py
 exr-equivalence-relations-b1 (solution): cancellation: d(af - be) = 0 and d != 0 give af - be = 0 | R arithmetic (a product of non-zero reals is non-zero), school fact
 exr-equivalence-relations-b1 (claim): Q built as this quotient | F3.2 (prose pointer; paid by def-rationals-as-classes; nothing here depends on it)
-exr-equivalence-relations-b2 (solution): 729 = 104 * 7 + 1; 81 = 11 * 7 + 4; 96 = 6 * 16 | arithmetic; verify/ch07/exr-equivalence-relations-b2.py
-exr-equivalence-relations-b3 (solution): 5 is not a multiple of 10 | prp-integers-closed (c) (cited); verify/ch07/exr-equivalence-relations-b3.py
+exr-equivalence-relations-b2 (solution): 729 = 104 * 7 + 1; 81 = 11 * 7 + 4; 96 = 6 * 16 | arithmetic; verify/ch04/exr-equivalence-relations-b2.py
+exr-equivalence-relations-b3 (solution): 5 is not a multiple of 10 | prp-integers-closed (c) (cited); verify/ch04/exr-equivalence-relations-b3.py
 exr-equivalence-relations-b3 (solution): 2k in Z; 10k = 5(2k) | prp-integers-closed (a) (cited); R arithmetic
 exr-equivalence-relations-c2 (solution): exists-E fresh-name condition; catalogue (N4) | def-rules-existential, exm-not-allowed-catalogue (cited)
 -->

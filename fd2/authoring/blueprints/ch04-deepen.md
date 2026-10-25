@@ -311,3 +311,10 @@ Referee A (A1–A17) and referee B (B1–B10), blind. All applied; the changes a
 - **B10** (B3's solution should point at the box): 2:468's "(@exm-ill-defined-class-map)" becomes "(@exm-method-well-definedness)" (§4.2 item 15).
 
 Word budget after S2: 4.2 is expected at ≈ 4,950, which is under 5,000. If S3 measures over 5,000, the §4.2 reserve (fold 2:309, 84 words) applies. 4.1 ≈ 2,400 and 4.3 ≈ 3,570 do not change materially.
+
+## S3 deviations (recorded at S4)
+
+- 4.1: B4(a) stem adds "(reflexive on X, symmetric and transitive)"; solution labels Reflexive/Symmetric/Transitive rather than (Eq1)-(Eq3). Discreteness steps cite prp-integers-closed (c) as "k > 1 then k >= 2". Box template reads "witness of the negated form" (130 words).
+- 4.2: none in content; method box measures 140 words with title line. Main line 4,836 words (no reserve fold used).
+- 4.3: no sidecars (none listed); R3 label exr-orders-r3 kept with new content.
+- Measured main-line words to Exercises: 4.1 2,302; 4.2 4,836 (+583 folded); 4.3 3,560.

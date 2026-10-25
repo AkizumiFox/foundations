@@ -1,6 +1,6 @@
 # Properties of Relations
 
-Chapter 1 made relations into sets: a relation on a set \( X \) is a subset \( R \subseteq X \times X \), and \( x \mathrel{R} y \) means \( (x, y) \in R \) (@def-relation). It named the properties that make a relation an order or an equivalence and left them to this chapter. Equality, \( \le \), inclusion \( \subseteq \), divisibility \( \mid \), and "leaves the same remainder on division by \( 3 \)" are all relations, and they behave alike in some ways and differently in others. This section names four properties that sort them, proves the ones that divisibility has, and collects witnesses for every failure. Sections 2.5 and 2.6 then study the two combinations that matter most.
+Chapter 1 made relations into sets: a relation on a set \( X \) is a subset \( R \subseteq X \times X \), and \( x \mathrel{R} y \) means \( (x, y) \in R \) (@def-relation). It named the properties that make a relation an order or an equivalence and left them to this chapter. Equality, \( \le \), inclusion \( \subseteq \), divisibility \( \mid \), and "leaves the same remainder on division by \( 3 \)" are all relations, and they behave alike in some ways and differently in others. This section names four properties that sort them, proves the ones that divisibility has, and collects witnesses for every failure. Each property is decided by the same method: a proof for all elements when it holds, one witness when it fails. Sections 4.2 and 4.3 then study the two combinations that matter most.
 
 ## Four properties
 
@@ -64,6 +64,62 @@ Reflexive means a loop at every point. Symmetric means every arrow has a return 
 
 **Why "reflexive on \( X \)".** The other three properties mention elements only when they are related, so they depend on the set \( R \) alone. Reflexivity depends on \( X \) too. The relation \( \{(0, 0)\} \) is reflexive on \( \{0\} \), and the same set of pairs, viewed as a relation on \( \{0, 1\} \), is not reflexive on \( \{0, 1\} \), with witness \( 1 \). That is why the definition names the set.
 
+## Prove or disprove, property by property
+
+A relation given by a formula has each property or not, and nothing tells us in advance which. So the first step is to test small elements and guess; the second is a proof if the guess is "yes", and a witness, checked clause by clause, if it is "no".
+
+::: {#exm-checking-a-relation}
+[Deciding four properties]
+
+On \( \nZ \), let \( x \mathrel{R} y \) mean \( 7 \mid 3x + 4y \). Decide which of the four properties of @def-relation-properties \( R \) has.
+:::
+
+::: {.idea}
+[Scratch work]
+
+Test small elements first. \( 1 \mathrel{R} 1 \), since \( 3 + 4 = 7 \). Also \( 0 \mathrel{R} 7 \) (\( 0 + 28 = 28 \)) and \( 7 \mathrel{R} 0 \) (\( 21 + 0 = 21 \)), with \( 0 \ne 7 \): antisymmetry fails, and the pair \( 0, 7 \) is the witness. Reflexivity looks true in general: \( 3x + 4x = 7x \). Symmetry is the one to plan, since the coefficients swap places.
+
+| Givens | Goal |
+|---|---|
+| \( x \mathrel{R} y \) | \( y \mathrel{R} x \) |
+| \( 3x + 4y = 7k \), with \( k \in \nZ \) | \( 3y + 4x = 7m \) for some \( m \in \nZ \): find \( m \) |
+| \( 3x + 4y = 7k \) | \( (3y + 4x) + (3x + 4y) = 7x + 7y \), so \( 3y + 4x = 7(x + y - k) \): try \( m = x + y - k \) |
+
+The last row closes the gap: the two expressions add up to a multiple of \( 7 \), because \( 3 + 4 = 7 \). Transitivity goes the same way: adding the givens \( 3x + 4y = 7k \) and \( 3y + 4z = 7l \) gives \( 3x + 7y + 4z \), and the middle term is a multiple of \( 7 \).
+:::
+
+::: {.solution}
+*Reflexive.* For \( x \in \nZ \), \( 3x + 4x = 7x \) with \( x \in \nZ \), so \( 7 \mid 3x + 4x \).
+
+*Symmetric.* Let \( x \mathrel{R} y \), say \( 3x + 4y = 7k \) with \( k \in \nZ \). Then \( 3y + 4x = 7(x + y) - (3x + 4y) = 7(x + y - k) \), and \( x + y - k \in \nZ \) by @prp-integers-closed (a), so \( y \mathrel{R} x \).
+
+*Transitive.* Let \( x \mathrel{R} y \) and \( y \mathrel{R} z \), say \( 3x + 4y = 7k \) and \( 3y + 4z = 7l \) with \( k, l \in \nZ \). Adding, \( 3x + 7y + 4z = 7(k + l) \), so \( 3x + 4z = 7(k + l - y) \), with \( k + l - y \in \nZ \), and \( x \mathrel{R} z \).
+
+*Not antisymmetric.* \( 3 \cdot 0 + 4 \cdot 7 = 28 = 7 \cdot 4 \) and \( 3 \cdot 7 + 4 \cdot 0 = 21 = 7 \cdot 3 \), so \( 0 \mathrel{R} 7 \) and \( 7 \mathrel{R} 0 \), while \( 0 \ne 7 \).
+
+So \( R \) is reflexive, symmetric and transitive, and not antisymmetric.
+:::
+
+Three verdicts needed a proof about all integers, and one needed a single pair: that asymmetry of effort is the method.
+
+::: {#exm-method-relation-properties}
+[Method: proving or disproving a property of a relation]
+
+**Template.** To prove a property, write it as the "for all" it is (@def-relation-properties), take arbitrary elements satisfying its hypothesis, unwind the relation's definition and rewind the conclusion (@exm-method-direct-proof). To disprove it, exhibit one witness of the negated form and check each clause (@exm-method-counterexample). Record the verdicts in a table, each "no" with its witness.
+
+**When to use it.** A relation is given by a formula, a list or a picture, and the question is which properties it has: whether it is an equivalence relation, or a partial order.
+
+**The usual failure.** "Proving" a property from one example; refuting antisymmetry with a pair related one way only, which refutes symmetry instead; a witness for "not reflexive" that is not in \( X \).
+:::
+
+::: {.check}
+On \( \nZ \), let \( x \mathrel{S} y \) mean \( 7 \mid 3x + 5y \). Is \( S \) reflexive? Is it symmetric?
+:::
+
+::: {.solution}
+Neither. Not reflexive: \( 1 \mathrel{S} 1 \) would need \( 7 \mid 8 \), and \( 8 = 7k \) fails for every integer \( k \): if \( k \le 1 \), then \( 7k \le 7 \); if \( k > 1 \), then \( k \ge 2 \) by @prp-integers-closed (c), and \( 7k \ge 14 \). Not symmetric: \( 1 \mathrel{S} 5 \), since \( 3 + 25 = 28 = 7 \cdot 4 \), but \( 5 \mathrel{S} 1 \) fails, since \( 15 + 5 = 20 \) and \( 14 < 20 < 21 \), and no multiple of \( 7 \) lies strictly between \( 7 \cdot 2 \) and \( 7 \cdot 3 \), as no integer lies strictly between \( 2 \) and \( 3 \) (@prp-integers-closed (c)). With \( 3 + 5 = 8 \), the coefficients no longer add up to a multiple of \( 7 \), and the trick of the scratch work is gone.
+:::
+
 ## Divisibility
 
 Divisibility shows that the same rule can give an antisymmetric relation on one set and not on a larger one, because the larger set brings in more pairs: \( \mid \) on \( \nZ \) contains both \( (2, -2) \) and \( (-2, 2) \), which \( \mid \) on \( \nN \) does not. Recall @def-divides: for integers \( a, b \), \( a \mid b \) means \( b = ka \) for some \( k \in \nZ \).
@@ -75,13 +131,13 @@ The relation \( \mid \) is reflexive, antisymmetric and transitive on \( \nN \).
 :::
 
 ::: {.idea}
-Reflexivity and transitivity are one line each from @def-divides. For antisymmetry, \( b = ka \) and \( a = lb \) give \( a = lka \). If \( a \ne 0 \), this forces \( kl = 1 \), and for **positive** integers that means \( k = l = 1 \). On \( \nN \) the multipliers are positive, so \( b = a \); on \( \nZ \) they may both be \( -1 \).
+Reflexivity and transitivity are one line each from @def-divides. For antisymmetry, \( b = ka \) and \( a = lb \) give \( a = lka \). If \( a \ne 0 \), this forces \( kl = 1 \), and for **positive** integers that means \( k = l = 1 \). On \( \nN \) the multipliers are positive, so \( b = a \); on \( \nZ \) they may both be \( -1 \). (The method of @exm-method-relation-properties: three proofs for \( \nN \) and one witness for \( \nZ \).)
 :::
 
 ::: {.proof}
 *Reflexive.* For every integer \( a \), \( a = 1 \cdot a \), so \( a \mid a \).
 
-*Transitive.* Let \( a \mid b \) and \( b \mid c \), say \( b = ka \) and \( c = lb \) with \( k, l \in \nZ \). Then \( c = (lk)a \), and \( lk \in \nZ \) by @prp-integers-closed (a), so \( a \mid c \).
+*Transitive.* This is @prp-divides-transitive.
 
 These two arguments work for all integers, so on \( \nN \) and on \( \nZ \).
 
@@ -94,11 +150,11 @@ These two arguments work for all integers, so on \( \nN \) and on \( \nZ \).
 *Not antisymmetric on \( \nZ \).* \( -2 = (-1) \cdot 2 \) and \( 2 = (-1) \cdot (-2) \), so \( 2 \mid -2 \) and \( -2 \mid 2 \), but \( 2 \ne -2 \).
 :::
 
-The failure on \( \nZ \) is a non-example by minimal change: enlarging the set from \( \nN \) to \( \nZ \) keeps reflexivity and transitivity, and antisymmetry fails exactly because an integer and its negative divide each other. Two facts about \( (\nN, \mid) \) will matter in Section 2.6: every \( a \in \nN \) divides \( 0 \), since \( 0 = 0 \cdot a \), and \( 1 \) divides every \( a \), since \( a = a \cdot 1 \). In the divisibility relation, \( 0 \) sits above everything and \( 1 \) below everything.
+The failure on \( \nZ \) is a non-example by minimal change: enlarging the set from \( \nN \) to \( \nZ \) keeps reflexivity and transitivity, and antisymmetry fails exactly because an integer and its negative divide each other. Two facts about \( (\nN, \mid) \) will matter in Section 4.3: every \( a \in \nN \) divides \( 0 \), since \( 0 = 0 \cdot a \), and \( 1 \) divides every \( a \), since \( a = a \cdot 1 \). In the divisibility relation, \( 0 \) sits above everything and \( 1 \) below everything.
 
 ## A table of examples
 
-Here are eight relations checked against the four properties. Each "no" comes with its witness, which is how a failure is proved; each "yes" is a one-line argument given after the table.
+Here are eight relations checked against the four properties. Each "no" comes with its witness, which is how a failure is proved; each "yes" is a one-line argument given after the table. The table is the method of @exm-method-relation-properties run eight times: thirty-two verdicts, nine of them refuted by a witness.
 
 ::: {#exm-relation-table}
 [Eight relations, four properties]
@@ -145,7 +201,7 @@ Reflexive: every integer \( x \ge 2 \) has a prime factor \( p \) (@thm-prime-fa
 "Antisymmetric" is not "not symmetric". Equality is both symmetric and antisymmetric. And \( \{ (1, 2), (2, 1), (2, 3) \} \) on \( \{1, 2, 3\} \) is neither: it is not symmetric, since \( 2 \mathrel{R} 3 \) and not \( 3 \mathrel{R} 2 \); and it is not antisymmetric, since \( 1 \mathrel{R} 2 \), \( 2 \mathrel{R} 1 \) and \( 1 \ne 2 \).
 :::
 
-Two combinations of the properties organize the rest of the chapter. A relation that is reflexive, symmetric and transitive behaves like equality; Section 2.5 calls it an **equivalence relation** and shows that it cuts \( X \) into classes. A relation that is reflexive, antisymmetric and transitive behaves like \( \le \); Section 2.6 calls it a **partial order**; inclusion on \( \powerset{X} \) and divisibility on \( \nN \) are examples that are not comparisons of sizes.
+Two combinations of the properties organize the rest of the chapter. A relation that is reflexive, symmetric and transitive behaves like equality; Section 4.2 calls it an **equivalence relation** and shows that it cuts \( X \) into classes. A relation that is reflexive, antisymmetric and transitive behaves like \( \le \); Section 4.3 calls it a **partial order**; inclusion on \( \powerset{X} \) and divisibility on \( \nN \) are examples that are not comparisons of sizes.
 
 ## Exercises
 
@@ -159,6 +215,7 @@ Two combinations of the properties organize the rest of the chapter. A relation 
 2. True or false, with a witness: every antisymmetric relation fails to be symmetric.
 3. Which of the four properties does the relation "\( \abs{x - y} \le 1 \)" have on \( \nR \)?
 4. Let \( X = \{p, q\} \) with \( p \ne q \). How many relations on \( X \) are reflexive on \( X \)?
+5. To show that a relation is **not** transitive, what must you produce? To show that it **is**, what do you assume?
 :::
 :::
 
@@ -170,6 +227,8 @@ Two combinations of the properties organize the rest of the chapter. A relation 
 (c) Reflexive: \( \abs{x - x} = 0 \le 1 \). Symmetric: \( \abs{y - x} = \abs{x - y} \). Not antisymmetric: \( \abs{0 - 1} \le 1 \) both ways and \( 0 \ne 1 \). Not transitive: \( \abs{0 - 1} \le 1 \) and \( \abs{1 - 2} \le 1 \), but \( \abs{0 - 2} = 2 > 1 \). "Close to" does not pass along a chain, because small differences add up.
 
 (d) Four. A reflexive relation must contain \( (p, p) \) and \( (q, q) \). The other two pairs of \( X \times X \), \( (p, q) \) and \( (q, p) \), may each be in or out, independently, which gives \( 2 \cdot 2 = 4 \) relations: \( \{(p, p), (q, q)\} \) together with one of \( \emptyset \), \( \{(p, q)\} \), \( \{(q, p)\} \), \( \{(p, q), (q, p)\} \).
+
+(e) Three elements \( x, y, z \) with \( x \mathrel{R} y \), \( y \mathrel{R} z \) and not \( x \mathrel{R} z \) (the witness form of @def-relation-properties). To show transitivity, assume arbitrary \( x, y, z \in X \) with \( x \mathrel{R} y \) and \( y \mathrel{R} z \), and derive \( x \mathrel{R} z \) (@exm-method-relation-properties).
 :::
 
 ### B. Practice
@@ -234,6 +293,32 @@ Let \( x, y, z \in X \) with \( (x, y) \in R \cap S \) and \( (y, z) \in R \cap 
 For the union, let \( R = \{(1, 2)\} \) and \( S = \{(2, 3)\} \). Each is transitive, vacuously: in \( R \) a two-step path would need a pair starting at \( 2 \), and there is none; in \( S \) one would need a pair ending at \( 2 \). But \( R \cup S = \{ (1, 2), (2, 3) \} \) contains \( (1, 2) \) and \( (2, 3) \) and not \( (1, 3) \), so it is not transitive. The intersection keeps both relations' shortcuts; the union creates paths that neither relation contains, so neither supplies their shortcuts.
 :::
 
+::: {#exr-relations-b4}
+[B4: Prove or disprove]
+
+Prove or disprove each statement. Here \( R \) and \( S \) are relations on a set \( X \), and \( R^{-1} \) is the inverse relation (@def-relation).
+
+::: {.enumerate options="label=(\alph*)"}
+1. If \( R \) is reflexive on \( X \) and transitive, then \( R \cap R^{-1} \) is an equivalence relation on \( X \) (reflexive on \( X \), symmetric and transitive).
+2. If \( R \) and \( S \) are symmetric, then \( R \cup S \) is symmetric.
+3. If \( R \) and \( S \) are antisymmetric, then \( R \cup S \) is antisymmetric.
+4. If \( R \) is transitive, then \( R^{-1} \) is transitive.
+5. On \( \nN \), the relation "\( x + y \) is a multiple of \( 3 \)" is transitive.
+:::
+:::
+
+::: {.solution}
+(a) True. Write \( E \coloneqq R \cap R^{-1} \); so \( (x, y) \in E \) means \( x \mathrel{R} y \) and \( y \mathrel{R} x \). *Reflexive.* For \( x \in X \), \( x \mathrel{R} x \) by reflexivity, so \( (x, x) \in E \). *Symmetric.* The definition of \( E \) is symmetric in \( x \) and \( y \). *Transitive.* Let \( (x, y), (y, z) \in E \). From \( x \mathrel{R} y \) and \( y \mathrel{R} z \), transitivity gives \( x \mathrel{R} z \); from \( z \mathrel{R} y \) and \( y \mathrel{R} x \), it gives \( z \mathrel{R} x \). So \( (x, z) \in E \).
+
+(b) True. If \( (x, y) \in R \cup S \), say \( (x, y) \in R \), then \( (y, x) \in R \) by symmetry of \( R \), so \( (y, x) \in R \cup S \); likewise if \( (x, y) \in S \).
+
+(c) False. On \( X = \{1, 2\} \), \( R = \{(1, 2)\} \) and \( S = \{(2, 1)\} \) are antisymmetric (vacuously: neither relates two elements both ways), but \( R \cup S \) contains \( (1, 2) \) and \( (2, 1) \), and \( 1 \ne 2 \).
+
+(d) True. Let \( x \mathrel{R^{-1}} y \) and \( y \mathrel{R^{-1}} z \), that is, \( y \mathrel{R} x \) and \( z \mathrel{R} y \). By transitivity of \( R \), from \( z \mathrel{R} y \) and \( y \mathrel{R} x \), \( z \mathrel{R} x \), that is, \( x \mathrel{R^{-1}} z \).
+
+(e) False. Take \( x = 1 \), \( y = 2 \), \( z = 1 \): \( 1 + 2 = 3 \) and \( 2 + 1 = 3 \) are multiples of \( 3 \), but \( 1 + 1 = 2 \) is not: \( 2 = 3k \) fails for every integer \( k \), since \( k \le 0 \) gives \( 3k \le 0 \), and \( k > 0 \) gives \( k \ge 1 \) by @prp-integers-closed (c), hence \( 3k \ge 3 \). (A triple with \( x = z \) is allowed: transitivity quantifies over all \( x, y, z \).)
+:::
+
 ### C. Going deeper
 
 ::: {#exr-relations-c1}
@@ -270,7 +355,7 @@ Let \( R \) be a symmetric and transitive relation on \( X \), and let \( D \col
 
 *Symmetric and transitive on \( D \).* These are implications about related elements, and every related pair lies in \( D \times D \); so they hold on \( D \) because they hold on \( X \).
 
-This is the correct version of the false theorem in the warning: its argument proves reflexivity exactly on the set of elements for which "take \( y \) with \( x \mathrel{R} y \)" is available. Elements outside \( D \) are related to nothing, and there reflexivity fails. In the language of Section 2.5, \( R \) is an equivalence relation on \( D \).
+This is the correct version of the false theorem in the warning: its argument proves reflexivity exactly on the set of elements for which "take \( y \) with \( x \mathrel{R} y \)" is available. Elements outside \( D \) are related to nothing, and there reflexivity fails. In the language of Section 4.2, \( R \) is an equivalence relation on \( D \).
 
 **Marking scheme.** (10 points)
 - 2: shows \( R \subseteq D \times D \), using symmetry to put the second coordinate in \( D \).
@@ -284,6 +369,9 @@ Fatal errors (0 for the step): taking \( y \) with \( x \mathrel{R} y \) for an 
 def-relation-properties (claim): (the paragraph "Why reflexive on X") symmetric, antisymmetric, transitive depend only on the set R, since x R y forces x, y in X | def-relation (cited)
 prp-divides-partial-order (proof): if k <= 0 and a > 0 then ka <= 0; multiplying k > 1 by l > 0 | R order, school fact; axioms in AN1.1
 prp-divides-partial-order (proof): cancelling a != 0 from a = lka | R arithmetic, school fact
+exm-checking-a-relation (solution): 28 = 7*4, 21 = 7*3; the symmetry and transitivity identities | inline arithmetic; sidecar verify/ch04/exm-checking-a-relation.py
+exm-checking-a-relation (claim): (the Quick check after the box) 8 and 20 are not multiples of 7 | prp-integers-closed (c) (cited); sidecar verify/ch04/exm-checking-a-relation.py
+exr-relations-b4 (solution): (e) 2 is not a multiple of 3 | prp-integers-closed (c) (cited); (a) R^{-1} as in def-relation (cited); sidecar verify/ch04/exr-relations-b4.py
 exm-relation-table (solution): reflexivity of <= (x = x); antisymmetry and transitivity of <= and < on R; not 0 < 0; not 1 <= 0 | R order, school fact; axioms in AN1.1
 exm-relation-table (solution): reflexivity and transitivity of subset | def-subset (cited); transitivity of inclusion, F2.1 §01
 exm-relation-table (solution): 2 does not divide 1 (no integer strictly between 0 and 1) | prp-integers-closed (c) (cited)

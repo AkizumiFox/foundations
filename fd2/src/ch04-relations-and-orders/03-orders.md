@@ -1,10 +1,10 @@
 # Partial Orders, Maximal and Greatest Elements
 
-Section 2.5 studied the relations that behave like equality. This section studies the ones that behave like \( \le \): reflexive and transitive like an equivalence relation, but antisymmetric instead of symmetric, so that they have a direction. For numbers, "the largest element of a set" is clear. For sets under \( \subseteq \), or for natural numbers under divisibility, two elements can be **incomparable**, neither below the other, and "largest" splits into two different notions. We separate them, prove what links them, and then take a first look at least upper bounds. That is the vocabulary *Analysis on the Real Line*, Chapter 1 needs for the supremum.
+Section 4.2 studied the relations that behave like equality. This section studies the ones that behave like \( \le \): reflexive and transitive like an equivalence relation, but antisymmetric instead of symmetric, so that they have a direction. For numbers, "the largest element of a set" is clear. For sets under \( \subseteq \), or for natural numbers under divisibility, two elements can be **incomparable**, neither below the other, and "largest" splits into two different notions. We separate them, prove what links them, and then take a first look at least upper bounds. That is the vocabulary *Analysis on the Real Line*, Chapter 1 needs for the supremum.
 
 ## Partial orders
 
-Section 2.4 found three relations with the same three properties: \( \le \) on \( \nR \), \( \subseteq \) on \( \powerset{X} \) (@exm-relation-table), and \( \mid \) on \( \nN \) (@prp-divides-partial-order). Each is reflexive, antisymmetric and transitive. Each says "below" in its own sense: smaller, contained in, a divisor of. What they share is what "being below" needs, and it deserves a name, so that a fact proved once holds for all three.
+Section 4.1 found three relations with the same three properties: \( \le \) on \( \nR \), \( \subseteq \) on \( \powerset{X} \) (@exm-relation-table), and \( \mid \) on \( \nN \) (@prp-divides-partial-order). Each is reflexive, antisymmetric and transitive. Each says "below" in its own sense: smaller, contained in, a divisor of. What they share is what "being below" needs, and it deserves a name, so that a fact proved once holds for all three.
 
 *A partial order says which elements lie below which, without requiring every two to be comparable.*
 
@@ -104,11 +104,23 @@ The first result explains the article in "**the** greatest element".
 A subset \( A \) of a partially ordered set has at most one greatest element and at most one least element.
 :::
 
+::: {.idea}
+The method of @exm-method-uniqueness, uniqueness half: take two greatest elements, about which nothing else is assumed. Each is in \( A \), so each is below the other, and (PO2) closes the gap.
+:::
+
 ::: {.proof}
 Let \( g \) and \( g' \) be greatest elements of \( A \). Since \( g' \in A \) and \( g \) is greatest, \( g' \preceq g \); since \( g \in A \) and \( g' \) is greatest, \( g \preceq g' \). By (PO2), \( g = g' \). For least elements the same argument applies with the inequalities reversed.
 :::
 
 So we may speak of **the** greatest element and **the** least element of \( A \) when they exist. In \( (\nR, \le) \), the greatest element of a set is its maximum, \( \max A \), and the least element its minimum, \( \min A \). This settles a point left open in Section 1.5: the least \( q_0 \in \nZ_{>0} \) with \( r q_0 \in \nZ \) in @exm-not-a-function exists by @thm-well-ordering: the set of such \( q \) lies in \( \nZ_{>0} \subseteq \nN \), and it is non-empty, since writing \( r = p/q \) with \( q \in \nZ_{>0} \) (as the solution of (b) there notes) gives \( rq = p \in \nZ \). It is unique by the least-element half of the proposition, so the rule there names one value.
+
+::: {.check}
+Divisibility on \( \nZ \) is reflexive and transitive but not antisymmetric, so it is not a partial order. Read the formula of @def-greatest-element in \( (\nZ, \mid) \) anyway, and run the proof of @prp-greatest-unique for \( A = \{2, -2\} \): which elements of \( A \) satisfy the formula, and which line of the proof fails?
+:::
+
+::: {.solution}
+Both: \( 2 \mid 2 \), \( -2 \mid 2 \) (\( 2 = (-1)(-2) \)), \( 2 \mid -2 \) and \( -2 \mid -2 \). Every line of the proof goes through except the last, "By (PO2), \( g = g' \)": \( 2 \mid -2 \) and \( -2 \mid 2 \), yet \( 2 \ne -2 \).
+:::
 
 The second result compares the two notions.
 
@@ -126,7 +138,7 @@ The same holds for least and minimal elements.
 :::
 
 ::: {.idea}
-For (a), anything strictly above the greatest element would also be below it, and antisymmetry forbids that. For (b), a maximal element \( m \) must be compared with each \( a \in A \), and totality says it can be: either \( a \preceq m \), as wanted, or \( m \preceq a \), and then maximality forces \( a = m \).
+For (a), anything strictly above the greatest element would also be below it, and antisymmetry forbids that. For (b), a maximal element \( m \) must be compared with each \( a \in A \), and totality says it can be: either \( a \preceq m \), as wanted, or \( m \preceq a \), and then maximality forces \( a = m \). Part (a) proves a negative claim, "no element strictly above", so it starts by supposing one (@exm-method-choosing-the-form); part (b) is a proof by cases on the two outcomes of comparability (@exm-method-cases).
 :::
 
 ::: {.proof}
@@ -139,7 +151,7 @@ For least and minimal elements, apply (a) and (b) to the partial order \( \succe
 
 Part (b) uses totality once, in the case split of its second sentence, and the case split is where it fails without it. The proof of @prp-finite-max in Section 2.3 compares two elements at a time and keeps the larger. Its maximum half uses nothing about \( \le \) on \( \nR \) beyond reflexivity, transitivity and the comparability of any two elements, so it works word for word in any totally ordered set. The minimum half passes to \( -x_1, \dots, -x_n \), which needs an ordered field; in a totally ordered set, apply the maximum half to the reverse order \( \succeq \) instead, which is total by the last paragraph of the proof above. In particular the whole proposition holds in any ordered field, which is how *Analysis on the Real Line*, Chapter 1 reads it.
 
-Without totality, (b) fails, and maximal elements need not be greatest.
+Without totality, (b) fails, and maximal elements need not be greatest. Each failure is shown by a counterexample (@exm-method-counterexample).
 
 ::: {#exm-maximal-not-greatest}
 [Maximal elements that are not greatest]
@@ -194,7 +206,7 @@ Two quick consequences. If \( A \) has a greatest element \( g \), then \( g = \
 
 **Suprema of sets.** In \( (\powerset{X}, \subseteq) \), let \( A, B \subseteq X \). Then \( \sup \{A, B\} = A \cup B \). (S1): \( A \subseteq A \cup B \) and \( B \subseteq A \cup B \), and \( A \cup B \in \powerset{X} \). (S2): let \( C \in \powerset{X} \) be an upper bound, so \( A \subseteq C \) and \( B \subseteq C \); every element of \( A \cup B \) lies in \( A \) or in \( B \), hence in \( C \), so \( A \cup B \subseteq C \). The supremum \( A \cup B \) belongs to \( \{A, B\} \) only when one of the two sets contains the other; for \( \{ \{1\}, \{2\} \} \) it is \( \{1, 2\} \), which is not in the set. Exercise B1 extends this to every family of subsets, and adds the infimum.
 
-**Suprema under divisibility.** In \( (\nN, \mid) \), an upper bound of \( \{a, b\} \) is a common multiple of \( a \) and \( b \). The least upper bound turns out to be the least common multiple, and proving that it is **least in the divisibility order**, not merely the smallest number, is a job for the division algorithm.
+**Suprema under divisibility.** In \( (\nN, \mid) \), an upper bound of \( \{a, b\} \) is a common multiple of \( a \) and \( b \). The least upper bound turns out to be the least common multiple, and proving that it is **least in the divisibility order**, not merely the smallest number, is a job for the division algorithm and for the least-element method (@exm-method-least-element): the least common multiple is a least element, and a smaller common multiple would contradict it.
 
 ::: {#exm-divisibility-lcm}
 [The supremum under divisibility is the least common multiple]
@@ -231,7 +243,7 @@ A partially ordered set \( (X, \preceq) \) is **well-ordered**, and \( \preceq \
 \( (\nN, \le) \) is well-ordered: \( \le \) is total, and @thm-well-ordering supplies the least elements. \( (\nZ, \le) \) is not: \( \nZ \) itself has no least element, since for every \( n \in \nZ \) also \( n - 1 \in \nZ \) (@prp-integers-closed (a)) and \( n - 1 < n \). Nor is the set of positive rationals, which has no least element (\( q/2 < q \)). The word "non-empty" is needed because \( \emptyset \) has no least element in any order. Totality is in fact automatic: any two elements \( x, y \) form a non-empty set \( \{x, y\} \), whose least element is below the other one. Upper bounds work too: in \( (\nN, \le) \) a non-empty set bounded above has a greatest element (@cor-well-ordering-integers). Exercise C1 gives a well-ordered set that does not look like \( \nN \).
 
 ::: {.remark}
-In a general partially ordered set, one may ask: if every **chain** (a subset on which \( \preceq \) is total) has an upper bound, must there be a maximal element? For a non-empty partially ordered set the answer "yes" is Zorn's lemma, and it cannot be proved from what we have: it is equivalent to the axiom of choice, which Chapter 3 states. A later chapter of this volume states Zorn's lemma, and *Axiomatic Set Theory* proves it equivalent to the axiom of choice, together with the other equivalents, among them the claim that every set has a well-order.
+In a general partially ordered set, one may ask: if every **chain** (a subset on which \( \preceq \) is total) has an upper bound, must there be a maximal element? For a non-empty partially ordered set the answer "yes" is Zorn's lemma, and it cannot be proved from what we have: it is equivalent to the axiom of choice, which Section 3.2 states (@ax-choice). Chapter 5 states Zorn's lemma and uses it, and *Axiomatic Set Theory* proves it equivalent to the axiom of choice, together with the other equivalents, among them the claim that every set has a well-order.
 :::
 
 ## Exercises
@@ -254,7 +266,7 @@ In a general partially ordered set, one may ask: if every **chain** (a subset on
 
 \( m \) maximal: \( m \in A \wedge \neg \exists a \in A \ \, m \prec a \). Its negation: \( m \notin A \vee \exists a \in A \ \, m \prec a \), by @fd1:prp-de-morgan and @fd1:prp-double-negation. In words: \( g \) fails to be greatest if some element of \( A \) is **not below** it; \( m \) fails to be maximal if some element of \( A \) is **strictly above** it. The first failure can happen through incomparability; the second cannot.
 
-(b) False. In \( (\powerset{\{1, 2\}}, \subseteq) \), the set \( \{ \{1\}, \{2\} \} \) is finite and non-empty and has no greatest element (@exm-maximal-not-greatest (b)). What is true is that it has a **maximal** element: listed as \( \{x_1, \dots, x_n\} \), which is what "finite" will mean in Chapter 3, it has one by Exercise R4.
+(b) False. In \( (\powerset{\{1, 2\}}, \subseteq) \), the set \( \{ \{1\}, \{2\} \} \) is finite and non-empty and has no greatest element (@exm-maximal-not-greatest (b)). What is true is that it has a **maximal** element: it can be listed as \( \{x_1, \dots, x_n\} \), which is what "finite" means (@def-finite, Section 2.5), so it has one by Exercise R4.
 
 (c) Under divisibility, \( \sup \{4, 6\} = 12 \), the least common multiple (@exm-divisibility-lcm): \( 12 \) is a common multiple, and none of \( 1, \dots, 11 \) is (the multiples of \( 6 \) below \( 12 \) are \( 6 \), and \( 4 \nmid 6 \)). Under \( \le \), \( \sup \{4, 6\} = 6 \), the greatest element.
 
@@ -321,7 +333,7 @@ Let \( \preceq \) be the lexicographic order on \( \nN \times \nN \) of Exercise
 ::: {.enumerate options="label=(\alph*)"}
 1. Prove that \( \preceq \) is a partial order.
 2. Prove that \( (\nN \times \nN, \preceq) \) is well-ordered.
-3. Show that \( (1, n) \prec (2, 1) \) for every \( n \in \nN \), and that these elements \( (1, n) \) are pairwise different. In \( (\nN, \le) \), which elements lie strictly below a given \( k \in \nN \)?
+3. Show that \( (1, n) \prec (2, 1) \) for every \( n \in \nN \), and that these elements \( (1, n) \) are pairwise different. In \( (\nN, \le) \), which elements lie strictly below a given \( k \in \nN \)? Deduce that infinitely many elements lie strictly below \( (2, 1) \).
 :::
 :::
 
@@ -331,6 +343,8 @@ Let \( \preceq \) be the lexicographic order on \( \nN \times \nN \) of Exercise
 (b) Totality is A1 (d). Let \( S \subseteq \nN \times \nN \) be non-empty. The set \( F \coloneqq \{ a \in \nN : (a, b) \in S \text{ for some } b \in \nN \} \) of first coordinates is non-empty, so it has a least element \( a_0 \) (@thm-well-ordering). The set \( G \coloneqq \{ b \in \nN : (a_0, b) \in S \} \) is non-empty, since \( a_0 \in F \), so it has a least element \( b_0 \). Then \( (a_0, b_0) \in S \). Let \( (a, b) \in S \). Then \( a \in F \), so \( a_0 \le a \). If \( a_0 < a \), then \( (a_0, b_0) \preceq (a, b) \). If \( a_0 = a \), then \( b \in G \), so \( b_0 \le b \), and again \( (a_0, b_0) \preceq (a, b) \). So \( (a_0, b_0) \) is the least element of \( S \).
 
 (c) For \( n \in \nN \), \( 1 < 2 \) gives \( (1, n) \preceq (2, 1) \), and \( (1, n) \ne (2, 1) \) since \( 1 \ne 2 \); so \( (1, n) \prec (2, 1) \). For \( n \ne n' \), \( (1, n) \ne (1, n') \) by the characteristic property of pairs. So one element, \( (2, 1) \), has an element \( (1, n) \) strictly below it for each of the natural numbers \( n \), all different. In \( (\nN, \le) \), the elements strictly below \( k \) are exactly \( 0, 1, \dots, k - 1 \) (none when \( k = 0 \)), by @lem-naturals-arithmetic (a) and (e): they form a list ending at \( k - 1 \). So a well-ordered set need not look like \( \nN \): here one element has a strictly smaller element for every natural number.
+
+Let \( S \) be the set of elements strictly below \( (2, 1) \), and \( B \coloneqq \{ (1, n) : n \in \nN \} \subseteq S \). The map \( \nN \to B \), \( n \mapsto (1, n) \), is injective (just shown) and surjective, so \( \card{\nN} = \card{B} \). Suppose \( S \) were finite. Then \( B \) would have \( k \) elements for some \( k \) (@prp-subset-finite), and \( \card{\{1, \dots, k\}} = \card{B} = \card{\nN} \) (@prp-equinumerous-properties (b), (c)) would make \( \nN \) finite (@def-finite); but \( \nN \) is infinite (@exm-hilbert-hotel). So \( S \) is infinite (@def-infinite).
 :::
 
 ::: {#exr-orders-c2}
@@ -430,21 +444,11 @@ For \( A = \nN \) the statement holds: for \( a \in \nN \), \( b \coloneqq a + 1
 ::: {#exr-orders-r3}
 [R3]
 
-Call a formula **biconditional** if it is built from atoms using \( \leftrightarrow \) alone: each atom is biconditional, and if \( \varphi \) and \( \psi \) are biconditional, so is \( (\varphi \leftrightarrow \psi) \); nothing else is. Prove that every biconditional formula is true under the valuation that makes every atom true.
+Let \( X \) be a countable set and \( \sim \) an equivalence relation on \( X \). Prove that \( X/{\sim} \) is countable. Give an example with \( X \) countable, not finite, and \( X/{\sim} \) finite.
 :::
 
 ::: {.solution}
-Let \( v_{\mathrm{T}} \) be the all-T valuation. We use @fd1:thm-structural-induction with the property
-\[
-P(\varphi): \ \text{if } \varphi \text{ is biconditional, then } v_{\mathrm{T}}(\varphi) = \mathrm{T} .
-\]
-The formulas \( \bot \), \( \neg\varphi \) and \( (\varphi \circ \psi) \) with \( \circ \) one of \( \wedge, \vee, \to \) are not biconditional, so \( P \) holds for them vacuously, and the corresponding clauses of the theorem need nothing more.
-
-(i) For an atom \( p \), \( v_{\mathrm{T}}(p) = \mathrm{T} \) by the choice of \( v_{\mathrm{T}} \).
-
-(iii) for \( \circ = \leftrightarrow \): suppose \( P(\varphi) \) and \( P(\psi) \), and that \( (\varphi \leftrightarrow \psi) \) is biconditional. Then \( \varphi \) and \( \psi \) are biconditional: by unique readability (@fd1:thm-unique-readability), they are the only immediate parts, and a biconditional formula that is not an atom is built by the second clause from biconditional parts. So \( v_{\mathrm{T}}(\varphi) = \mathrm{T} = v_{\mathrm{T}}(\psi) \), and by (V6) of @fd1:def-truth-value, \( v_{\mathrm{T}}(\varphi \leftrightarrow \psi) = \mathrm{T} \), since the two parts have the same value.
-
-This covers every clause, and proves the claim. In particular no biconditional formula is equivalent to \( \neg p \), which is false under \( v_{\mathrm{T}} \): negation cannot be expressed with \( \leftrightarrow \) alone.
+The quotient map \( q \colon X \to X/{\sim} \), \( q(a) = [a] \), is surjective (@def-quotient-set and the paragraph after it). By @prp-countable-image, the image of a countable set under a function is countable, and here the image is all of \( X/{\sim} \). Example: \( X = \nZ \), countable by @thm-integers-rationals-countable, and not finite, since it contains \( \nN \), which is infinite (@exm-hilbert-hotel, @prp-subset-finite), with congruence modulo \( 2 \): \( \nZ/2 = \{[0], [1]\} \) (@prp-integers-mod-n) has two elements.
 :::
 
 ::: {#exr-orders-r4}

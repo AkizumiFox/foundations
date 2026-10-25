@@ -36,10 +36,28 @@ items:
       φ ∧ ¬ψ) gives with φ = (xRy ∧ yRx) or (xRy ∧ yRz), so no regrouping and no @prp-and-associative
       is needed. The quantifiers are pushed through by @prp-bounded-quantifier-negation (a) (09:199).
       All three earlier S5b f
+- key: exm-checking-a-relation
+  kind: exm
+  file: 01-relations.md
+  line: 71
+  hash: ed323a9fe055
+  verdicts: []
+- key: exm-method-relation-properties
+  kind: exm
+  file: 01-relations.md
+  line: 105
+  hash: 4779531b1a7b
+  verdicts: []
+- key: check:01-relations:1
+  kind: check
+  file: 01-relations.md
+  line: 115
+  hash: 20b8327d2356
+  verdicts: []
 - key: prp-divides-partial-order
   kind: prp
   file: 01-relations.md
-  line: 71
+  line: 127
   hash: 96bb0b9fe6a2
   verdicts:
   - stage: S5a
@@ -62,8 +80,8 @@ items:
 - key: proof:prp-divides-partial-order
   kind: proof
   file: 01-relations.md
-  line: 81
-  hash: 1217718deb04
+  line: 137
+  hash: ad8106fef62a
   verdicts:
   - stage: S5a
     verdict: correct
@@ -89,7 +107,7 @@ items:
 - key: exm-relation-table
   kind: exm
   file: 01-relations.md
-  line: 103
+  line: 159
   hash: 817ae8899958
   verdicts:
   - stage: S5a
@@ -122,46 +140,17 @@ items:
       287 adds ''reflexivity of <= (x = x)'', so the earlier finding is resolved. Other checks: ''Section
       6.1, after @prp-empty-set-unique'' matches 06/01-sets-and-subsets.md:269, which proves ∅ ⊆ A for
       every A. The step 2∤1 via'
-- key: check:04-relations:1
+- key: check:01-relations:2
   kind: check
   file: 01-relations.md
-  line: 132
+  line: 188
   hash: a8b7870d9dad
-  verdicts:
-  - stage: S5a
-    verdict: correct
-    by: refereeA
-    hash: a33a3a5fc554
-    date: '2026-10-11'
-    model: claude-opus-5-5
-    evidence: 04:137. Reflexivity follows from @thm-prime-factor, which covers every integer ≥2. Witnesses
-      2,4 and 2,6,3 are correct. 'The only prime dividing 2 is 2' follows from @def-prime. 2∤3 is stated
-      without reason but is the same discreteness argument as 3∤14 in @def-divides.
-  - stage: S5b
-    verdict: minor
-    by: refereeB
-    hash: a33a3a5fc554
-    date: '2026-10-11'
-    model: claude-opus-5-5
-    evidence: '04-relations.md:137 The non-transitivity witness relies on two uncited and unledgered facts:
-      ''the only prime dividing 2 is 2'' (from @def-prime with 2 prime, shown after def-prime at 02:112)
-      and ''2 ∤ 3''.'
-  - stage: S7r
-    verdict: correct
-    by: rereferee
-    hash: e47d8846f216
-    date: '2026-10-11'
-    model: claude-opus-5-5
-    evidence: '04-relations.md:137. The earlier finding is resolved. The text now argues that a prime
-      dividing 2 is a positive divisor ≥ 2, hence 2, citing ''the example after @def-prime''. That example
-      (07/02-induction-in-practice.md:113) proves the positive divisors of 2 lie in {1,2}, and @def-prime
-      requires p ≥ 2. For 2∤3, 3 = 2k gives 1<k<2, which is impossible by @prp-integers-closed (c), since
-      1<k gives k ≥ '
+  verdicts: []
 - key: exr-relations-a1
   kind: exr
   file: 01-relations.md
-  line: 154
-  hash: d652cfc219d6
+  line: 210
+  hash: 2034987a4ac8
   verdicts:
   - stage: S5a
     verdict: minor
@@ -202,7 +191,7 @@ items:
 - key: exr-relations-b1
   kind: exr
   file: 01-relations.md
-  line: 177
+  line: 236
   hash: c0325a233d88
   verdicts:
   - stage: S5a
@@ -244,7 +233,7 @@ items:
 - key: exr-relations-b2
   kind: exr
   file: 01-relations.md
-  line: 203
+  line: 262
   hash: 9cb9db1605a4
   verdicts:
   - stage: S5a
@@ -299,7 +288,7 @@ items:
 - key: exr-relations-b3
   kind: exr
   file: 01-relations.md
-  line: 225
+  line: 284
   hash: 0e04ace6338f
   verdicts:
   - stage: S5a
@@ -326,10 +315,16 @@ items:
     model: claude-opus-5-5
     evidence: '04:231-234. The intersection proof is complete. The script checks the union counterexample:
       {(1,2)} and {(2,3)} are transitive and their union is not.'
+- key: exr-relations-b4
+  kind: exr
+  file: 01-relations.md
+  line: 296
+  hash: 94fe7b24efff
+  verdicts: []
 - key: exr-relations-c1
   kind: exr
   file: 01-relations.md
-  line: 239
+  line: 324
   hash: 0b4131d20e59
   verdicts:
   - stage: S5a
@@ -361,7 +356,7 @@ items:
 - key: exr-relations-c2
   kind: exr
   file: 01-relations.md
-  line: 260
+  line: 345
   hash: fe819589950c
   verdicts:
   - stage: S5a
@@ -451,7 +446,7 @@ items:
 - key: def-equivalence-class
   kind: def
   file: 02-equivalence-relations.md
-  line: 90
+  line: 94
   hash: 748299eb1adf
   verdicts:
   - stage: S5a
@@ -469,30 +464,16 @@ items:
     date: '2026-10-11'
     model: claude-opus-5-5
     evidence: '05:93-102: set-builder, (Eq2) remark, classes for the four examples all correct.'
-- key: check:05-equivalence-relations:1
+- key: check:02-equivalence-relations:1
   kind: check
   file: 02-equivalence-relations.md
-  line: 104
+  line: 108
   hash: 6726a5b3e86d
-  verdicts:
-  - stage: S5a
-    verdict: correct
-    by: refereeA
-    hash: 6726a5b3e86d
-    date: '2026-10-11'
-    model: claude-opus-5-5
-    evidence: '05:109: ten classes of three each; the sidecar thm-classes-partition.py passes.'
-  - stage: S5b
-    verdict: correct
-    by: refereeB
-    hash: 6726a5b3e86d
-    date: '2026-10-11'
-    model: claude-opus-5-5
-    evidence: '05:105-109: ten classes {k,k+10,k+20}, three each; sidecar thm-classes-partition.py passes.'
+  verdicts: []
 - key: def-partition
   kind: def
   file: 02-equivalence-relations.md
-  line: 114
+  line: 118
   hash: e7396ceabdbe
   verdicts:
   - stage: S5a
@@ -515,7 +496,7 @@ items:
 - key: def-quotient-set
   kind: def
   file: 02-equivalence-relations.md
-  line: 134
+  line: 140
   hash: c84bf73f4885
   verdicts:
   - stage: S5a
@@ -548,7 +529,7 @@ items:
 - key: thm-classes-partition
   kind: thm
   file: 02-equivalence-relations.md
-  line: 150
+  line: 156
   hash: 11d92d14f24c
   verdicts:
   - stage: S5a
@@ -593,7 +574,7 @@ items:
 - key: proof:thm-classes-partition
   kind: proof
   file: 02-equivalence-relations.md
-  line: 169
+  line: 175
   hash: ad81c4d80be6
   verdicts:
   - stage: S5a
@@ -615,7 +596,7 @@ items:
 - key: thm-partition-equivalence
   kind: thm
   file: 02-equivalence-relations.md
-  line: 199
+  line: 209
   hash: 28f4accab79b
   verdicts:
   - stage: S5a
@@ -638,7 +619,7 @@ items:
 - key: proof:thm-partition-equivalence
   kind: proof
   file: 02-equivalence-relations.md
-  line: 215
+  line: 225
   hash: fca56b77e063
   verdicts:
   - stage: S5a
@@ -668,10 +649,16 @@ items:
       is true, since (P2) is used at 05:216 and again at 05:218. Both earlier findings are resolved. Rechecked
       the proof: (a) (Eq1) by (P3) and (Eq3) by (P2); [x] = P in both directions; X/~_P = P from the two
       inclusions, usi'
+- key: check:02-equivalence-relations:2
+  kind: check
+  file: 02-equivalence-relations.md
+  line: 241
+  hash: 418920ff98a8
+  verdicts: []
 - key: def-congruence
   kind: def
   file: 02-equivalence-relations.md
-  line: 235
+  line: 255
   hash: 3ccd9f604b7b
   verdicts:
   - stage: S5a
@@ -693,7 +680,7 @@ items:
 - key: prp-congruence-equivalence
   kind: prp
   file: 02-equivalence-relations.md
-  line: 247
+  line: 267
   hash: 33e3c8a1d87f
   verdicts:
   - stage: S5a
@@ -713,7 +700,7 @@ items:
 - key: proof:prp-congruence-equivalence
   kind: proof
   file: 02-equivalence-relations.md
-  line: 253
+  line: 273
   hash: 46e4491c5b32
   verdicts:
   - stage: S5a
@@ -733,7 +720,7 @@ items:
 - key: prp-integers-mod-n
   kind: prp
   file: 02-equivalence-relations.md
-  line: 261
+  line: 281
   hash: c7f3b4005b3e
   verdicts:
   - stage: S5a
@@ -756,7 +743,7 @@ items:
 - key: proof:prp-integers-mod-n
   kind: proof
   file: 02-equivalence-relations.md
-  line: 273
+  line: 293
   hash: a0bb934ca29d
   verdicts:
   - stage: S5a
@@ -780,7 +767,7 @@ items:
 - key: exm-fibres-of-function
   kind: exm
   file: 02-equivalence-relations.md
-  line: 287
+  line: 307
   hash: e3ed20d18a69
   verdicts:
   - stage: S5a
@@ -802,7 +789,7 @@ items:
 - key: exm-reals-mod-integers
   kind: exm
   file: 02-equivalence-relations.md
-  line: 311
+  line: 331
   hash: ded4296cee17
   verdicts:
   - stage: S5a
@@ -844,7 +831,7 @@ items:
 - key: prp-congruence-arithmetic
   kind: prp
   file: 02-equivalence-relations.md
-  line: 339
+  line: 363
   hash: 548f6dae0d0f
   verdicts:
   - stage: S5a
@@ -875,7 +862,7 @@ items:
 - key: proof:prp-congruence-arithmetic
   kind: proof
   file: 02-equivalence-relations.md
-  line: 353
+  line: 388
   hash: 229ce0dece5e
   verdicts:
   - stage: S5a
@@ -894,10 +881,22 @@ items:
     model: claude-opus-5-5
     evidence: '05:354-367: ab - a''b'' = a(b-b'') + (a-a'')b'' = (al + kb'')n is correct; well-definedness
       via thm-classes-partition (b) both ways.'
+- key: exm-method-well-definedness
+  kind: exm
+  file: 02-equivalence-relations.md
+  line: 411
+  hash: 509042883bb6
+  verdicts: []
+- key: check:02-equivalence-relations:3
+  kind: check
+  file: 02-equivalence-relations.md
+  line: 421
+  hash: 5e4d6b59cbb2
+  verdicts: []
 - key: exm-ill-defined-class-map
   kind: exm
   file: 02-equivalence-relations.md
-  line: 378
+  line: 431
   hash: 61b4b8a065b1
   verdicts:
   - stage: S5a
@@ -925,11 +924,17 @@ items:
       (05:550), so the finding is resolved. Solved it myself. (a): 0 and 6 name the same class mod 6,
       and [6]_4 = [2]_4 differs from [0]_4 because 2 is not a multiple of 4, so F is not a function. (b):
       6k = 3(2k), so G is well defined. The text agrees.'
+- key: exm-same-size-subsets
+  kind: exm
+  file: 02-equivalence-relations.md
+  line: 447
+  hash: 2685fc45bc31
+  verdicts: []
 - key: exr-equivalence-relations-a1
   kind: exr
   file: 02-equivalence-relations.md
-  line: 396
-  hash: 9aaca39869d0
+  line: 473
+  hash: 5bb9fca5bf54
   verdicts:
   - stage: S5a
     verdict: correct
@@ -959,7 +964,7 @@ items:
 - key: exr-equivalence-relations-b1
   kind: exr
   file: 02-equivalence-relations.md
-  line: 424
+  line: 504
   hash: 44dda6538d10
   verdicts:
   - stage: S5a
@@ -1000,7 +1005,7 @@ items:
 - key: exr-equivalence-relations-b2
   kind: exr
   file: 02-equivalence-relations.md
-  line: 441
+  line: 521
   hash: 958d17d4aa1c
   verdicts:
   - stage: S5a
@@ -1030,8 +1035,8 @@ items:
 - key: exr-equivalence-relations-b3
   kind: exr
   file: 02-equivalence-relations.md
-  line: 455
-  hash: ef8c01fbc4fd
+  line: 535
+  hash: 2efbedd4a2be
   verdicts:
   - stage: S5a
     verdict: correct
@@ -1067,10 +1072,16 @@ items:
       myself. (a): yes, by applying the product clause twice. (b): no, since [0]_5 = [5]_5 but 5 is not
       a multiple of 10 (0 < 5 < 10, discreteness). (c): yes, since 10k = 5(2k). All three agree with the
       text.'
+- key: exr-equivalence-relations-b4
+  kind: exr
+  file: 02-equivalence-relations.md
+  line: 557
+  hash: bc7094703a15
+  verdicts: []
 - key: exr-equivalence-relations-c1
   kind: exr
   file: 02-equivalence-relations.md
-  line: 479
+  line: 585
   hash: 76ce6a2283e7
   verdicts:
   - stage: S5a
@@ -1112,7 +1123,7 @@ items:
 - key: exr-equivalence-relations-c2
   kind: exr
   file: 02-equivalence-relations.md
-  line: 507
+  line: 613
   hash: 2b23da83b6de
   verdicts:
   - stage: S5a
@@ -1306,7 +1317,7 @@ items:
 - key: proof:prp-greatest-unique
   kind: proof
   file: 03-orders.md
-  line: 107
+  line: 111
   hash: 1f62ad5a4272
   verdicts:
   - stage: S5a
@@ -1326,10 +1337,16 @@ items:
     model: claude-opus-5-5
     evidence: 06:108 uses only the definition and (PO2). This agrees with the meta-claim at 06:42 ('uses
       (PO2) and nothing else').
+- key: check:03-orders:1
+  kind: check
+  file: 03-orders.md
+  line: 117
+  hash: 242a4802ac93
+  verdicts: []
 - key: prp-greatest-maximal
   kind: prp
   file: 03-orders.md
-  line: 115
+  line: 127
   hash: e8310bfb7a20
   verdicts:
   - stage: S5a
@@ -1373,7 +1390,7 @@ items:
 - key: proof:prp-greatest-maximal
   kind: proof
   file: 03-orders.md
-  line: 132
+  line: 144
   hash: 89de4b3de5d6
   verdicts:
   - stage: S5a
@@ -1408,7 +1425,7 @@ items:
 - key: exm-maximal-not-greatest
   kind: exm
   file: 03-orders.md
-  line: 144
+  line: 156
   hash: bb8b05c0a3ad
   verdicts:
   - stage: S5a
@@ -1439,32 +1456,16 @@ items:
       @prp-integers-closed (c) (discreteness) twice. So kn ≥ 2n ≥ 8 > 6. Restricting to positive multiples
       deals with the earlier S5a point that 0 is a multiple of everything. For no greatest element: 5∤4,
       4∤5 and 4∤6'
-- key: check:06-orders:1
+- key: check:03-orders:2
   kind: check
   file: 03-orders.md
-  line: 164
+  line: 176
   hash: b326d808c322
-  verdicts:
-  - stage: S5a
-    verdict: correct
-    by: refereeA
-    hash: b326d808c322
-    date: '2026-10-11'
-    model: claude-opus-5-5
-    evidence: 06:169. The maximal elements are the three 2-sets. There is no greatest element, by prp-greatest-maximal
-      (a).
-  - stage: S5b
-    verdict: correct
-    by: refereeB
-    hash: b326d808c322
-    date: '2026-10-11'
-    model: claude-opus-5-5
-    evidence: 06:165-170. The maximal elements are the three 2-sets. Every set with at most one element
-      lies strictly inside a 2-set. There is no greatest element.
+  verdicts: []
 - key: def-order-supremum
   kind: def
   file: 03-orders.md
-  line: 178
+  line: 190
   hash: f497a2cb1fc6
   verdicts:
   - stage: S5a
@@ -1497,7 +1498,7 @@ items:
 - key: exm-divisibility-lcm
   kind: exm
   file: 03-orders.md
-  line: 199
+  line: 211
   hash: a147bad75906
   verdicts:
   - stage: S5a
@@ -1549,7 +1550,7 @@ items:
 - key: def-well-ordered-set
   kind: def
   file: 03-orders.md
-  line: 225
+  line: 237
   hash: 119fe7edd8eb
   verdicts:
   - stage: S5a
@@ -1583,8 +1584,8 @@ items:
 - key: exr-orders-a1
   kind: exr
   file: 03-orders.md
-  line: 241
-  hash: b2042240767a
+  line: 253
+  hash: 67cff6443951
   verdicts:
   - stage: S5a
     verdict: correct
@@ -1627,7 +1628,7 @@ items:
 - key: exr-orders-b1
   kind: exr
   file: 03-orders.md
-  line: 266
+  line: 278
   hash: 6eb4750fc2de
   verdicts:
   - stage: S5a
@@ -1658,7 +1659,7 @@ items:
 - key: exr-orders-b2
   kind: exr
   file: 03-orders.md
-  line: 282
+  line: 294
   hash: 8d712238237a
   verdicts:
   - stage: S5a
@@ -1701,7 +1702,7 @@ items:
 - key: exr-orders-b3
   kind: exr
   file: 03-orders.md
-  line: 300
+  line: 312
   hash: a9cc194d6393
   verdicts:
   - stage: S5a
@@ -1731,8 +1732,8 @@ items:
 - key: exr-orders-c1
   kind: exr
   file: 03-orders.md
-  line: 316
-  hash: 36f054bbf494
+  line: 328
+  hash: ee86fca3589f
   verdicts:
   - stage: S5a
     verdict: minor
@@ -1775,7 +1776,7 @@ items:
 - key: exr-orders-c2
   kind: exr
   file: 03-orders.md
-  line: 336
+  line: 350
   hash: 053c5b69508a
   verdicts:
   - stage: S5a
@@ -1809,7 +1810,7 @@ items:
 - key: exr-orders-r1
   kind: exr
   file: 03-orders.md
-  line: 396
+  line: 410
   hash: dc3e80a8684f
   verdicts:
   - stage: S5a
@@ -1841,7 +1842,7 @@ items:
 - key: exr-orders-r2
   kind: exr
   file: 03-orders.md
-  line: 414
+  line: 428
   hash: 503c9042a84f
   verdicts:
   - stage: S5a
@@ -1883,8 +1884,8 @@ items:
 - key: exr-orders-r3
   kind: exr
   file: 03-orders.md
-  line: 430
-  hash: 4bb58d0d0fdc
+  line: 444
+  hash: 0b9ffaa30811
   verdicts:
   - stage: S5a
     verdict: correct
@@ -1915,7 +1916,7 @@ items:
 - key: exr-orders-r4
   kind: exr
   file: 03-orders.md
-  line: 450
+  line: 454
   hash: 9b8569786f05
   verdicts:
   - stage: S5a
@@ -1953,3 +1954,83 @@ items:
       of X. It derives A' = A ∪ {x_{n+1}} from {1,…,n+1} = {1,…,n} ∪ {n+1} via @lem-naturals-arithmetic
       (e), as prp-finite-max does, and ledger 500 records this. Case 1 uses m ∈ A ⊆ A' and is correct.
       Case 2 use
+- key: check:04-relations:1
+  kind: check
+  file: 01-relations.md
+  line: 132
+  hash: a8b7870d9dad
+  verdicts:
+  - stage: S5a
+    verdict: correct
+    by: refereeA
+    hash: a33a3a5fc554
+    date: '2026-10-11'
+    model: claude-opus-5-5
+    evidence: 04:137. Reflexivity follows from @thm-prime-factor, which covers every integer ≥2. Witnesses
+      2,4 and 2,6,3 are correct. 'The only prime dividing 2 is 2' follows from @def-prime. 2∤3 is stated
+      without reason but is the same discreteness argument as 3∤14 in @def-divides.
+  - stage: S5b
+    verdict: minor
+    by: refereeB
+    hash: a33a3a5fc554
+    date: '2026-10-11'
+    model: claude-opus-5-5
+    evidence: '04-relations.md:137 The non-transitivity witness relies on two uncited and unledgered facts:
+      ''the only prime dividing 2 is 2'' (from @def-prime with 2 prime, shown after def-prime at 02:112)
+      and ''2 ∤ 3''.'
+  - stage: S7r
+    verdict: correct
+    by: rereferee
+    hash: e47d8846f216
+    date: '2026-10-11'
+    model: claude-opus-5-5
+    evidence: '04-relations.md:137. The earlier finding is resolved. The text now argues that a prime
+      dividing 2 is a positive divisor ≥ 2, hence 2, citing ''the example after @def-prime''. That example
+      (07/02-induction-in-practice.md:113) proves the positive divisors of 2 lie in {1,2}, and @def-prime
+      requires p ≥ 2. For 2∤3, 3 = 2k gives 1<k<2, which is impossible by @prp-integers-closed (c), since
+      1<k gives k ≥ '
+  removed: true
+- key: check:05-equivalence-relations:1
+  kind: check
+  file: 02-equivalence-relations.md
+  line: 104
+  hash: 6726a5b3e86d
+  verdicts:
+  - stage: S5a
+    verdict: correct
+    by: refereeA
+    hash: 6726a5b3e86d
+    date: '2026-10-11'
+    model: claude-opus-5-5
+    evidence: '05:109: ten classes of three each; the sidecar thm-classes-partition.py passes.'
+  - stage: S5b
+    verdict: correct
+    by: refereeB
+    hash: 6726a5b3e86d
+    date: '2026-10-11'
+    model: claude-opus-5-5
+    evidence: '05:105-109: ten classes {k,k+10,k+20}, three each; sidecar thm-classes-partition.py passes.'
+  removed: true
+- key: check:06-orders:1
+  kind: check
+  file: 03-orders.md
+  line: 164
+  hash: b326d808c322
+  verdicts:
+  - stage: S5a
+    verdict: correct
+    by: refereeA
+    hash: b326d808c322
+    date: '2026-10-11'
+    model: claude-opus-5-5
+    evidence: 06:169. The maximal elements are the three 2-sets. There is no greatest element, by prp-greatest-maximal
+      (a).
+  - stage: S5b
+    verdict: correct
+    by: refereeB
+    hash: b326d808c322
+    date: '2026-10-11'
+    model: claude-opus-5-5
+    evidence: 06:165-170. The maximal elements are the three 2-sets. Every set with at most one element
+      lies strictly inside a 2-set. There is no greatest element.
+  removed: true
