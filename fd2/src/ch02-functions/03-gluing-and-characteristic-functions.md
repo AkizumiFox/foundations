@@ -1,18 +1,20 @@
 # Gluing and Characteristic Functions
 
-<!-- S3: rewrite per blueprint (2.3: opening frame and hook (R4: no forward pointers to Schröder–Bernstein, Cantor); R2: prp-restriction-properties cut to restriction and composition; layout §1, §4) -->
-
-Section 2.1 made a function a graph with a codomain, and Chapter 5 cuts sets into classes. This chapter builds new functions out of old ones. Here we take the three simplest constructions: cutting a function down to a smaller domain, enlarging its domain, and assembling one function from pieces defined on parts of the domain. The last of these is behind every definition "by cases", and the section ends with the functions that take only the values \( 0 \) and \( 1 \), with which an equation between sets becomes a computation with numbers.
+Section 2.1 made a function a graph with a codomain, and Section 2.2 asked what a function does to its inputs and to its codomain. This section builds new functions out of old ones by the three simplest constructions: cutting a function down to a smaller domain, enlarging its domain, and assembling one function from pieces defined on parts of the domain. The last is behind every definition "by cases". The section ends with the functions that take only the values \( 0 \) and \( 1 \), with which an equation between sets becomes a computation with numbers, and with the theorem that the subsets of \( X \) and the 0–1 functions on \( X \) correspond one to one.
 
 ## A function in two pieces
 
-The proof of the Schröder–Bernstein theorem (@thm-schroder-bernstein) defined its bijection \( h \) by one formula on a set \( C \) and by another off \( C \), and then said: each \( a \) falls under exactly one case, and in each case the value exists and is unique, so \( h \) is a function. That sentence carried the whole definition. It is worth asking what it really needed.
+School mathematics defines many functions in pieces. The sign function is
+\[
+\sgn x = \begin{cases} 1 & \text{if } x > 0, \\ 0 & \text{if } x = 0, \\ -1 & \text{if } x < 0 . \end{cases}
+\]
+Each real number falls under exactly one case, and in each case the value exists and is unique, so \( \sgn \) is a function \( \nR \to \nR \). That sentence carries the whole definition. It is worth asking what it really needed.
 
 Here is a familiar definition by cases:
 \[
 \abs{x} = \begin{cases} x & \text{if } x \ge 0, \\ -x & \text{if } x \le 0 . \end{cases}
 \]
-This time a point falls under **both** cases: \( 0 \ge 0 \) and \( 0 \le 0 \). So the sentence from Schröder–Bernstein does not apply. Is \( \abs{\cdot} \) still a function? Most readers would say yes at once, because both formulas give \( 0 \) at \( 0 \). Now try
+This time a point falls under **both** cases: \( 0 \ge 0 \) and \( 0 \le 0 \). So the sentence about \( \sgn \) does not apply. Is \( \abs{\cdot} \) still a function? Most readers would say yes at once, because both formulas give \( 0 \) at \( 0 \). Now try
 \[
 r(x) = \begin{cases} x & \text{if } x \ge 0, \\ x + 1 & \text{if } x \le 0 . \end{cases}
 \]
@@ -40,7 +42,7 @@ Let \( X \) and \( Y \) be sets and \( A \subseteq X \).
 
 In words: the restriction keeps the codomain and forgets the inputs outside \( A \). An extension is any function on the larger set that agrees with \( g \) at every point of \( A \); by @prp-function-equality, \( f|_A = g \) says exactly that \( f(a) = g(a) \) for every \( a \in A \), since both functions have domain \( A \) and codomain \( Y \). The inclusion map is the identity of \( A \) with its codomain enlarged to \( X \); it is not \( \id_A \) unless \( A = X \), because the codomains differ.
 
-The article in (b) is "**a**", not "the", and the naive expectation that an extension is determined by \( g \) fails at once. The function \( g \colon (0, 1] \to \nR \), \( g(x) = 1/x \), has an extension to \( [0, 1] \) for every choice of a value at \( 0 \): sending \( 0 \) to \( 0 \) and sending \( 0 \) to \( 5 \) give two different extensions, since they differ at \( 0 \). The formula \( 1/x \) suggests no value at all there. Nor need an extension keep a property that \( g \) has. Let \( a \ne b \), and let \( g \colon \{1, 2\} \to \{a, b\} \) send \( 1 \mapsto a \) and \( 2 \mapsto b \), a bijection. An extension to \( \{1, 2, 3\} \) with codomain \( \{a, b\} \) is a function from a set of three elements to a set of two, and by @cor-pigeonhole-finite-sets (a) no such function is injective. So the bijection \( g \) has extensions, but no injective one.
+The article in (b) is "**a**", not "the", and the naive expectation that an extension is determined by \( g \) fails at once. The function \( g \colon (0, 1] \to \nR \), \( g(x) = 1/x \), has an extension to \( [0, 1] \) for every choice of a value at \( 0 \): sending \( 0 \) to \( 0 \) and sending \( 0 \) to \( 5 \) give two different extensions, since they differ at \( 0 \). The formula \( 1/x \) suggests no value at all there. Nor need an extension keep a property that \( g \) has. Let \( a \ne b \), and let \( g \colon \{1, 2\} \to \{a, b\} \) send \( 1 \mapsto a \) and \( 2 \mapsto b \), a bijection. An extension \( f \) to \( \{1, 2, 3\} \) with codomain \( \{a, b\} \) has \( f(3) = a = f(1) \) or \( f(3) = b = f(2) \), so it is not injective. So the bijection \( g \) has extensions, but no injective one.
 
 Restriction, by contrast, is predictable. The next proposition lists what it does.
 
@@ -73,8 +75,6 @@ For (a)–(c) we use @prp-function-equality: in each part both sides have the sa
 (d) Let \( a, a' \in A \) with \( f|_A(a) = f|_A(a') \). Then \( f(a) = f(a') \), so \( a = a' \) because \( f \) is injective (@def-injective).
 :::
 
-<!-- S3 (R2): part (e) of prp-restriction-properties is cut here, to become an exercise in the images section (2.5); exercises a1 and b1 below still cite it and are rewritten at S3. Removed text, verbatim: statement "5. \( f|_A(B) = f(B) \)."; idea "Parts (d) and (e) only unwind def-injective and def-image, using \( f|_A(a) = f(a) \)."; proof "(e) By def-image, \( f|_A(B) = \{ f|_A(b) : b \in B \} = \{ f(b) : b \in B \} = f(B) \), since \( f|_A(b) = f(b) \) for every \( b \in B \subseteq A \)."; after the proof "Part (e) with \( B = A \) says that the restriction has the same image as \( f \) on \( A \): \( f|_A(A) = f(A) \)." -->
-
 Part (d) has no partner for surjectivity, and the next check asks why.
 
 ::: {.check}
@@ -82,7 +82,7 @@ Is a restriction of a surjection always surjective?
 :::
 
 ::: {.solution}
-No. The function \( f \colon \nR \to [0, \infty) \), \( f(x) = x^2 \), is surjective (every \( t \ge 0 \) is \( (\sqrt{t})^2 \)). Its restriction \( f|_{[1, 2]} \colon [1, 2] \to [0, \infty) \) has image \( f([1, 2]) = [1, 4] \), so \( 0 \) is not a value. The restriction keeps the codomain while the domain shrinks, so it can lose surjectivity. It can also gain injectivity: \( f|_{[0, \infty)} \) is injective, although \( f \) is not.
+No. The function \( f \colon \nR \to [0, \infty) \), \( f(x) = x^2 \), is surjective (every \( t \ge 0 \) is \( (\sqrt{t})^2 \)). Its restriction \( f|_{[1, 2]} \colon [1, 2] \to [0, \infty) \) takes only values \( x^2 \ge 1 \), so \( 0 \) is not a value. The restriction keeps the codomain while the domain shrinks, so it can lose surjectivity. It can also gain injectivity: \( f|_{[0, \infty)} \) is injective, although \( f \) is not.
 :::
 
 ## Gluing
@@ -135,7 +135,7 @@ The theorem is used so often that its use deserves a template. Step (4) below is
 
 **Template.** (1) Name the pieces and check that they cover the domain. (2) For each two pieces, find the overlap and check that the formulas agree on it; disjoint pieces need nothing. (3) Conclude by @thm-gluing. (4) Prove further properties piece by piece **and across pieces**: for injectivity, compare a value from one piece with a value from another.
 
-**When to use it.** Definitions by cases, piecewise formulas, a default value off a subset, constructions such as Schröder–Bernstein's.
+**When to use it.** Definitions by cases, piecewise formulas, a default value off a subset, a function given by different formulas on a subset and its complement.
 
 **The usual failure.** Checking the cover and forgetting the overlaps (a boundary point lies in two pieces); checking injectivity inside each piece only.
 :::
@@ -160,9 +160,27 @@ Decide whether each definition glues to a function \( \nR \to \nR \).
 (c) A minimal change to (b): the second piece loses the point \( 0 \). Now the pieces are disjoint and still cover \( \nR \), so step (2) has nothing to check, and they glue to a function \( k \colon \nR \to \nR \). Inside each piece \( k \) is injective (\( x = x' \) and \( x + 1 = x' + 1 \) each force \( x = x' \)). Across the pieces, step (4) finds a collision: \( k(\tfrac12) = \tfrac12 \) and \( k(-\tfrac12) = -\tfrac12 + 1 = \tfrac12 \). So \( k \) is not injective.
 :::
 
-**Back to Schröder–Bernstein.** In the proof of @thm-schroder-bernstein, the pieces were \( C \) and \( A \setminus C \): disjoint, and covering \( A \). So the definition of \( h \) is a gluing, with nothing to check in step (2), and "each \( a \) falls under exactly one case" is steps (1) and (2) at once: the pieces cover \( A \), and there is no overlap to check. The proof's Case 3 of injectivity, one point in \( C \) and one outside, is step (4)'s comparison across pieces; Cases 1 and 2 are the checks inside each piece.
+Part (c) found its collision across the pieces. Step (4) of the method box is a theorem:
 
-**Default values.** Let \( A \subseteq X \), \( g \colon A \to Y \) and \( y_0 \in Y \). "Take \( g \) on \( A \) and the value \( y_0 \) on \( X \setminus A \)" glues \( g \) with the constant function \( X \setminus A \to Y \) with value \( y_0 \): the pieces \( A \) and \( X \setminus A \) are disjoint and cover \( X \). The "Repair" in the solution of Section 4.2's @exr-countable-sets-c2 was a default-value definition of this kind, with the default \( a_0 \) on the inputs that had no value of the right kind. The indicator functions of the next subsection are default-value definitions too.
+::: {#prp-injective-across-pieces}
+[Injectivity Across Pieces]
+
+Let \( f \colon X \to Y \) and \( X = A \cup B \). Then \( f \) is injective if and only if \( f|_A \) and \( f|_B \) are injective and \( f(a) \ne f(b) \) for all \( a \in A \setminus B \) and \( b \in B \setminus A \).
+:::
+
+::: {.idea}
+Two different points either share a piece, where the restriction decides, or lie one in each piece outside the overlap, where the last condition decides. This is step (4) of @exm-method-gluing, and we prove injectivity in the contrapositive form of @def-injective (@exm-method-injectivity).
+:::
+
+::: {.proof}
+\( (\Rightarrow) \) The restrictions are injective by @prp-restriction-properties (d). For \( a \in A \setminus B \) and \( b \in B \setminus A \) we have \( a \ne b \), since \( b \in B \) and \( a \notin B \); so \( f(a) \ne f(b) \) because \( f \) is injective.
+
+\( (\Leftarrow) \) Let \( x, x' \in X \) with \( x \ne x' \). If both lie in \( A \), then \( f(x) = f|_A(x) \ne f|_A(x') = f(x') \), since \( f|_A \) is injective; likewise if both lie in \( B \). Otherwise they do not both lie in \( A \), so one of them is outside \( A \); renaming the two points if necessary, \( x \notin A \). Since \( X = A \cup B \), \( x \in B \setminus A \). Then \( x' \notin B \), for otherwise both points lie in \( B \), a case already done; so \( x' \in A \setminus B \), and \( f(x') \ne f(x) \) by hypothesis. In every case \( f(x) \ne f(x') \), so \( f \) is injective.
+:::
+
+The condition across the pieces mentions only points outside the overlap. A point of \( A \cap B \) lies in both pieces, so a collision involving it is already caught by one of the two restrictions.
+
+**Default values.** Let \( A \subseteq X \), \( g \colon A \to Y \) and \( y_0 \in Y \). "Take \( g \) on \( A \) and the value \( y_0 \) on \( X \setminus A \)" glues \( g \) with the constant function \( X \setminus A \to Y \) with value \( y_0 \): the pieces \( A \) and \( X \setminus A \) are disjoint and cover \( X \). The indicator functions of the next subsection are default-value definitions too.
 
 ::: {.warning}
 A boundary point usually lies in two pieces. "\( x^2 \) on \( (-\infty, 1] \), \( 3x \) on \( [1, \infty) \)" covers \( \nR \), and each formula is a function on its piece, but at \( 1 \) the values are \( 1 \) and \( 3 \), so nothing glues. Check every overlap, not just the cover.
@@ -191,7 +209,7 @@ Let \( X \) be a set and \( A \subseteq X \). The **indicator function** of \( A
 
 It is a default-value definition: the constant \( 1 \) on \( A \) glued with the constant \( 0 \) on \( X \setminus A \), over a disjoint cover of \( X \). The function depends on \( X \) as well as on \( A \), since \( X \) is its domain; throughout this subsection one set \( X \) is fixed and every set named is a subset of it. Two small cases: \( \ind_X \) is the constant function \( 1 \), and \( \ind_{\emptyset} \) is the constant function \( 0 \).
 
-The last subsection of this section proves that \( A \mapsto \ind_A \) is a bijection \( \powerset{X} \to \{0, 1\}^X \), with inverse \( f \mapsto \{ x \in X : f(x) = 1 \} = f^{-1}(\{1\}) \) (@thm-power-set-two-power). Only one consequence is needed here, and it can be read off directly: \( A \) is recovered from its indicator as the set of points where the value is \( 1 \). So
+The last subsection of this section proves that \( A \mapsto \ind_A \) is a bijection \( \powerset{X} \to \{0, 1\}^X \), and \( f \mapsto \{ x \in X : f(x) = 1 \} \) undoes it on both sides (@thm-power-set-two-power). Only one consequence is needed here, and it can be read off directly: \( A \) is recovered from its indicator as the set of points where the value is \( 1 \). So
 \[
 \ind_A = \ind_B \quad \text{implies} \quad A = B .
 \]
@@ -274,8 +292,6 @@ The final expression does not change when \( u, v, w \) are permuted. The right-
 
 The common value is \( 1 \) exactly when an odd number of \( u, v, w \) equal \( 1 \): with one of them equal to \( 1 \) it is \( 1 \), with two it is \( 2 - 2 = 0 \), with three \( 3 - 6 + 4 = 1 \). So both sides are the set of points lying in an odd number of \( A, B, C \). An element chase would split into eight cases, one for each pattern of memberships; the indicator computation did all eight at once.
 
-**Cantor, re-read.** The set \( D = \{ x \in X : x \notin f(x) \} \) in the proof of @thm-cantor has indicator \( \ind_D(x) = 1 - \ind_{f(x)}(x) \): it is the flipped diagonal of the proof of @thm-binary-sequences-uncountable in Section 4.3, and Section 4.3, after @thm-cantor, already joined the two arguments for \( X = \nN \). Exercise C3 runs the argument for an arbitrary set, with 0–1 functions first and subsets second.
-
 ::: {.check}
 Let \( X = \{1, 2, 3, 4\} \), \( A = \{1, 2\} \) and \( B = \{2, 3\} \). List the values \( \ind_{A \triangle B}(1), \dots, \ind_{A \triangle B}(4) \), first from the formula \( u + v - 2uv \) and then from the definition of \( \triangle \).
 :::
@@ -284,8 +300,6 @@ Let \( X = \{1, 2, 3, 4\} \), \( A = \{1, 2\} \) and \( B = \{2, 3\} \). List th
 The values of \( \ind_A \) are \( (1, 1, 0, 0) \) and those of \( \ind_B \) are \( (0, 1, 1, 0) \). The formula gives \( 1 + 0 - 0 = 1 \), \( 1 + 1 - 2 = 0 \), \( 0 + 1 - 0 = 1 \), \( 0 \): the list \( (1, 0, 1, 0) \). From the definition, \( A \triangle B = \{1\} \cup \{3\} = \{1, 3\} \), whose indicator is the same list.
 :::
 
-<!-- S3: rewrite per blueprint (2.3: thm-power-set-two-power moved here from old 3.6, to become the first fact about indicators) -->
-
 ## Subsets are 0–1 functions
 
 Section 2.1 stated, for every set, that subsets and 0–1 functions match, and gave both maps: send \( f \) to \( \{ x : f(x) = 1 \} \) and \( A \) to \( \ind_A \). Here are the two round trips, which make \( 2 \) a base like any other.
@@ -293,14 +307,18 @@ Section 2.1 stated, for every set, that subsets and 0–1 functions match, and g
 ::: {#thm-power-set-two-power}
 [Subsets and 0–1 Functions]
 
-For every set \( X \), the map \( A \mapsto \ind_A \) is a bijection \( \powerset{X} \to \{0, 1\}^X \), with inverse \( f \mapsto \{ x \in X : f(x) = 1 \} \). In particular \( \card{\powerset{X}} = \card{\{0, 1\}^X} \).
+For every set \( X \), the map \( A \mapsto \ind_A \) is a bijection \( \powerset{X} \to \{0, 1\}^X \), and \( f \mapsto \{ x \in X : f(x) = 1 \} \) undoes it on both sides: each round trip is the identity.
 :::
 
 ::: {.proof}
-For \( A \subseteq X \), \( \ind_A \in \{0, 1\}^X \) (@exm-first-functions (d)), and \( \{ x \in X : \ind_A(x) = 1 \} = A \) by the definition of \( \ind_A \). For \( f \in \{0, 1\}^X \), let \( S \coloneqq \{ x \in X : f(x) = 1 \} \). For \( x \in S \), \( \ind_S(x) = 1 = f(x) \). For \( x \in X \setminus S \), \( f(x) \ne 1 \), so \( f(x) = 0 = \ind_S(x) \). So \( \ind_S = f \) (@prp-function-equality). The first round trip makes \( A \mapsto \ind_A \) injective, since \( \ind_A = \ind_B \) gives \( A = \{ x \in X : \ind_A(x) = 1 \} = B \); the second makes it surjective. So it is a bijection (@def-bijective). <!-- S3: proof re-cut so that it no longer cites thm-bijection-iff-inverse (2.4, later); the old last sentence read "By thm-bijection-iff-inverse, \( A \mapsto \ind_A \) is a bijection." -->
+For \( A \subseteq X \), \( \ind_A \in \{0, 1\}^X \) (@exm-first-functions (d)), and \( \{ x \in X : \ind_A(x) = 1 \} = A \) by the definition of \( \ind_A \). For \( f \in \{0, 1\}^X \), let \( S \coloneqq \{ x \in X : f(x) = 1 \} \). For \( x \in S \), \( \ind_S(x) = 1 = f(x) \). For \( x \in X \setminus S \), \( f(x) \ne 1 \), so \( f(x) = 0 = \ind_S(x) \). So \( \ind_S = f \) (@prp-function-equality). The first round trip makes \( A \mapsto \ind_A \) injective, since \( \ind_A = \ind_B \) gives \( A = \{ x \in X : \ind_A(x) = 1 \} = B \); the second makes it surjective. So it is a bijection (@def-bijective).
 :::
 
-Section 4.1 (the fold after @prp-power-set-count), Section 4.3 (after @cor-powerset-naturals-uncountable) and Section 6.1 (the Quick check after @prp-card-le-surjection) quoted this correspondence; it is now a theorem to cite.
+::: {.remark}
+[Looking ahead]
+
+Chapter 4 counts the subsets of a finite set and, through this bijection, the 0–1 functions on it; with Cantor's theorem it also shows that \( \{0, 1\}^X \) is larger than \( X \).
+:::
 
 ## Exercises
 
@@ -310,17 +328,17 @@ Section 4.1 (the fold after @prp-power-set-count), Section 4.3 (after @cor-power
 [A1]
 
 ::: {.enumerate options="label=(\alph*)"}
-1. Let \( f \colon \nR \to \nR \), \( f(x) = x^2 \). What is the image of \( f|_{[-1, 2]} \)?
-2. Let \( a, b, c \) be distinct and let \( g \colon \{1, 2\} \to \{a, b\} \) send \( 1 \mapsto a \), \( 2 \mapsto b \). Does \( g \) have an injective extension to \( \{1, 2, 3\} \) with codomain \( \{a, b\} \)? With codomain \( \{a, b, c\} \)?
+1. Let \( f \colon \nR \to \nR \), \( f(x) = x^2 \). Is \( f|_{(-\infty, 0]} \) injective? Is \( f|_{[-1, 2]} \)?
+2. Let \( a, b, c \) be distinct and let \( g \colon \{1, 2\} \to \{a, b, c\} \) send \( 1 \mapsto a \), \( 2 \mapsto b \). How many extensions of \( g \) to \( \{1, 2, 3\} \) with codomain \( \{a, b, c\} \) are there, and how many of them are injective?
 3. Let \( A \subseteq X \) and \( g \colon A \to Y \). Show that \( g \) has an extension to \( X \) if and only if \( A = X \) or \( Y \ne \emptyset \).
 4. For \( X = \{1, 2, 3, 4\} \), write \( \ind_{\{1, 3\}} \) as the list of its values at \( 1, 2, 3, 4 \), and name the subset of \( X \) whose indicator has the values \( (0, 1, 1, 0) \).
 :::
 :::
 
 ::: {.solution}
-(a) By @prp-restriction-properties (e), the image is \( f([-1, 2]) \). For \( x \in [-1, 2] \), \( 0 \le x^2 \le 4 \); conversely each \( t \in [0, 4] \) is \( (\sqrt{t})^2 \) with \( \sqrt{t} \in [0, 2] \). So the image is \( [0, 4] \).
+(a) Yes. Let \( x_1, x_2 \le 0 \) with \( x_1^2 = x_2^2 \). Then \( -x_1, -x_2 \ge 0 \) and \( (-x_1)^2 = x_1^2 = x_2^2 = (-x_2)^2 \), so \( -x_1 = -x_2 \) as in @exm-square-three-ways (b), and \( x_1 = x_2 \). No: \( -1 \) and \( 1 \) lie in \( [-1, 2] \), and \( f(-1) = 1 = f(1) \).
 
-(b) No: a function from a set of three elements to a set of two elements is not injective, by @cor-pigeonhole-finite-sets (a). Yes: send \( 3 \mapsto c \); the three values \( a, b, c \) are distinct, so the extension is injective.
+(b) Three. An extension agrees with \( g \) on \( \{1, 2\} \), so by @prp-function-equality it is determined by its value at \( 3 \); and each of \( a, b, c \) gives one, by gluing \( g \) with a constant function on \( \{3\} \) (@thm-gluing; the pieces are disjoint). Only \( 3 \mapsto c \) gives an injective extension, since its three values \( a, b, c \) are distinct; \( 3 \mapsto a \) collides with \( 1 \), and \( 3 \mapsto b \) with \( 2 \).
 
 (c) \( (\Leftarrow) \) If \( A = X \), then \( g \) is an extension of itself, since \( g|_X = g \). If \( Y \ne \emptyset \), choose \( y_0 \in Y \) and glue \( g \) with the constant function \( X \setminus A \to Y \) with value \( y_0 \): the pieces \( A \) and \( X \setminus A \) are disjoint and cover \( X \), so @thm-gluing gives \( f \colon X \to Y \) with \( f|_A = g \). \( (\Rightarrow) \) Suppose \( A \ne X \) and \( Y = \emptyset \). Since \( A \subseteq X \) and \( A \ne X \), some \( x_0 \in X \) is not in \( A \); so \( X \) is non-empty, and by @prp-empty-function (b) there is no function \( X \to \emptyset \), let alone an extension of \( g \). By contraposition, an extension forces \( A = X \) or \( Y \ne \emptyset \).
 
@@ -332,27 +350,35 @@ Section 4.1 (the fold after @prp-power-set-count), Section 4.3 (after @cor-power
 ::: {#exr-restriction-extension-and-gluing-b1}
 [B1: Three pieces]
 
-Let \( f_1(x) = -x \) on \( (-\infty, -1] \), \( f_2(x) = x^2 \) on \( [-1, 1] \) and \( f_3(x) = x \) on \( [1, \infty) \), each with codomain \( \nR \). Show that they glue to a function \( f \colon \nR \to \nR \). Find \( f(\nR) \) and \( f^{-1}(\{\tfrac14\}) \), and decide whether \( f \) is injective.
+Let \( f_1(x) = -x \) on \( (-\infty, -1] \), \( f_2(x) = x^2 \) on \( [-1, 1] \) and \( f_3(x) = x \) on \( [1, \infty) \), each with codomain \( \nR \). Show that they glue to a function \( f \colon \nR \to \nR \). Find the range of \( f \) and every \( x \) with \( f(x) = \tfrac14 \), and decide whether \( f \) is injective.
 :::
 
 ::: {.solution}
 The three intervals cover \( \nR \). The overlaps are \( (-\infty, -1] \cap [-1, 1] = \{-1\} \), where \( f_1(-1) = 1 = f_2(-1) \); \( [-1, 1] \cap [1, \infty) = \{1\} \), where \( f_2(1) = 1 = f_3(1) \); and \( (-\infty, -1] \cap [1, \infty) = \emptyset \). So the pieces agree on overlaps and glue, by @thm-gluing.
 
-Since \( \nR \) is the union of the three pieces, @thm-image-union gives \( f(\nR) \) as the union of the images of the pieces, and by @prp-restriction-properties (e) the image of a piece is the image of the corresponding \( f_i \). These are \( f_1((-\infty, -1]) = [1, \infty) \), \( f_2([-1, 1]) = [0, 1] \) and \( f_3([1, \infty)) = [1, \infty) \). Hence \( f(\nR) = [0, \infty) \).
+Every \( x \in \nR \) lies in a piece, where \( f(x) = f_i(x) \); so the range of \( f \) is the union of the ranges of the \( f_i \). On \( (-\infty, -1] \), \( -x \) takes every value \( t \ge 1 \) (at \( x = -t \)) and no other; on \( [-1, 1] \), \( x^2 \) takes every value \( t \in [0, 1] \) (at \( x = \sqrt{t} \)) and no other; on \( [1, \infty) \), \( x \) takes every value \( t \ge 1 \) (at \( x = t \)) and no other. Hence the range is \( [0, \infty) \).
 
-On the first and third pieces every value is \( \ge 1 \), so a solution of \( f(x) = \tfrac14 \) lies in \( [-1, 1] \), where it solves \( x^2 = \tfrac14 \). Hence \( f^{-1}(\{\tfrac14\}) = \{ -\tfrac12, \tfrac12 \} \). Two different points have the same value, so \( f \) is not injective.
+On the first and third pieces every value is \( \ge 1 \), so a solution of \( f(x) = \tfrac14 \) lies in \( [-1, 1] \), where it solves \( x^2 = \tfrac14 \). Hence the solutions are \( -\tfrac12 \) and \( \tfrac12 \). Two different points have the same value, so \( f \) is not injective.
 :::
 
-::: {#exr-restriction-extension-and-gluing-b2}
-[B2: Injective across pieces]
+::: {#exr-restriction-extension-and-gluing-b5}
+[B2: A bijection in two pieces]
 
-Let \( f \colon X \to Y \) and \( X = A \cup B \). Prove that \( f \) is injective if and only if \( f|_A \) and \( f|_B \) are injective and \( f(A) \cap f(B) = f(A \cap B) \).
+Let \( g_1(x) = x \) on \( (-\infty, 0] \) and \( g_2(x) = x^2 \) on \( [0, \infty) \), each with codomain \( \nR \).
+
+::: {.enumerate options="label=(\alph*)"}
+1. Show that \( g_1 \) and \( g_2 \) glue to a function \( f \colon \nR \to \nR \).
+2. Prove that \( f \) is injective, using @prp-injective-across-pieces.
+3. Prove that \( f \) is surjective.
+:::
 :::
 
 ::: {.solution}
-\( (\Rightarrow) \) The restrictions are injective by @prp-restriction-properties (d), and \( f(A) \cap f(B) = f(A \cap B) \) by @thm-image-intersection (b), since \( f \) is injective.
+(a) The pieces cover \( \nR \), since every real number is \( \le 0 \) or \( \ge 0 \). They overlap in \( \{0\} \), where \( g_1(0) = 0 = 0^2 = g_2(0) \). By @thm-gluing they glue to a function \( f \colon \nR \to \nR \).
 
-\( (\Leftarrow) \) Let \( x, x' \in X \) with \( f(x) = f(x') \). If both lie in \( A \), then \( f|_A(x) = f|_A(x') \) and \( x = x' \) since \( f|_A \) is injective; likewise if both lie in \( B \). Otherwise, since \( X = A \cup B \), one lies in \( A \) and the other in \( B \); by symmetry say \( x \in A \) and \( x' \in B \). Then \( y \coloneqq f(x) = f(x') \) lies in \( f(A) \cap f(B) = f(A \cap B) \), so \( y = f(z) \) for some \( z \in A \cap B \) (@def-image). Now \( x, z \in A \) with \( f|_A(x) = y = f|_A(z) \), so \( x = z \); and \( x', z \in B \) with \( f|_B(x') = f|_B(z) \), so \( x' = z \). Hence \( x = x' \), and \( f \) is injective.
+(b) Let \( A = (-\infty, 0] \) and \( B = [0, \infty) \). Then \( f|_A = g_1 \) is injective, since \( g_1(x_1) = g_1(x_2) \) says \( x_1 = x_2 \). And \( f|_B = g_2 \) is injective: \( x_1^2 = x_2^2 \) with \( x_1, x_2 \ge 0 \) gives \( x_1 = x_2 \), as in @exm-square-three-ways (b). Across the pieces, let \( a \in A \setminus B \) and \( b \in B \setminus A \), that is \( a < 0 < b \). Then \( f(a) = a < 0 < b^2 = f(b) \), so \( f(a) \ne f(b) \). By @prp-injective-across-pieces, \( f \) is injective.
+
+(c) Let \( y \in \nR \). We argue by cases (@exm-method-cases). If \( y < 0 \), then \( y \in A \) and \( f(y) = y \). If \( y \ge 0 \), then \( \sqrt{y} \in B \) and \( f(\sqrt{y}) = (\sqrt{y})^2 = y \). So every real number is a value of \( f \), and \( f \) is a bijection.
 :::
 
 ::: {#exr-restriction-extension-and-gluing-b3}
@@ -402,16 +428,64 @@ Prove each true statement and refute each false one with a counterexample.
 
 ### C. Going deeper
 
-<!-- S3: rewrite per blueprint (2.3: C exercises to be written; old c1 moved to 4.1, c2 to 5.2, c3 to 4.5) -->
+::: {#exr-restriction-extension-and-gluing-c4}
+[C1: The complement map, transported]
+
+Let \( \Phi \colon \powerset{X} \to \{0, 1\}^X \), \( \Phi(A) = \ind_A \), a bijection by @thm-power-set-two-power, and let \( c \colon \powerset{X} \to \powerset{X} \), \( c(A) = X \setminus A \).
+
+::: {.enumerate options="label=(\alph*)"}
+1. Prove \( X \setminus (A \cap B) = (X \setminus A) \cup (X \setminus B) \) for \( A, B \subseteq X \) by computing with indicators.
+2. Show that \( \Phi(c(A)) = 1 - \Phi(A) \) for every \( A \subseteq X \), where \( 1 - f \) denotes the function \( x \mapsto 1 - f(x) \).
+3. Use (b) to show that \( c \circ c = \id_{\powerset{X}} \) without chasing elements.
+:::
+:::
+
+::: {.solution}
+(a) Fix \( x \in X \) and write \( u, v \) for the values of \( \ind_A, \ind_B \) at \( x \). By @prp-indicator-arithmetic (a) and (b), the left side has indicator value \( 1 - uv \). By (b), the sets \( X \setminus A \) and \( X \setminus B \) have indicator values \( 1 - u \) and \( 1 - v \), so by (c) the right side has
+\[
+(1 - u) + (1 - v) - (1 - u)(1 - v) = 2 - u - v - (1 - u - v + uv) = 1 - uv .
+\]
+The two sides have the same indicator, and \( \Phi \) is injective, so they are equal.
+
+(b) Both sides are functions \( X \to \{0, 1\} \). At \( x \in X \), \( \Phi(c(A))(x) = \ind_{X \setminus A}(x) = 1 - \ind_A(x) \) by @prp-indicator-arithmetic (b), which is the value of \( 1 - \Phi(A) \) at \( x \). By @prp-function-equality, \( \Phi(c(A)) = 1 - \Phi(A) \).
+
+(c) Let \( A \subseteq X \). Applying (b) to \( c(A) \) and then to \( A \),
+\[
+\Phi(c(c(A))) = 1 - \Phi(c(A)) = 1 - (1 - \Phi(A)) = \Phi(A) ,
+\]
+where the last step holds at every point because \( 1 - (1 - t) = t \) for every number \( t \). Since \( \Phi \) is injective, \( c(c(A)) = A \). Both \( c \circ c \) and \( \id_{\powerset{X}} \) are functions \( \powerset{X} \to \powerset{X} \) that agree at every \( A \), so \( c \circ c = \id_{\powerset{X}} \) (@prp-function-equality). This is the identity of @exm-structure-maps (d), recovered by a computation with numbers.
+:::
+
+::: {#exr-restriction-extension-and-gluing-c5}
+[C2: Infinitely many pieces]
+
+For each \( n \in \nZ \), let \( f_n \colon [n, n + 1) \to \nR \), \( f_n(x) = x - n \).
+
+::: {.enumerate options="label=(\alph*)"}
+1. Show that the intervals \( [n, n + 1) \) cover \( \nR \) and are pairwise disjoint, so that the \( f_n \) glue to a function \( f \colon \nR \to \nR \).
+2. Find the range of \( f \), show that \( f(x + 1) = f(x) \) for every \( x \in \nR \), and decide whether \( f \) is injective.
+3. Do the functions \( x \mapsto x - n \) on the closed intervals \( [n, n + 1] \), \( n \in \nZ \), glue to a function \( \nR \to \nR \)?
+:::
+:::
+
+::: {.solution}
+(a) *Cover.* Every \( x \in \nR \) lies in \( [\floor{x}, \floor{x} + 1) \), where \( \floor{x} \) is the integer of @exm-maps-from-calculus (b). *Disjoint.* Suppose \( x \in [n, n + 1) \cap [m, m + 1) \) with integers \( n \ne m \); since the situation is symmetric in \( n \) and \( m \), we may assume \( n < m \). Then \( n + 1 \le m \), because \( n \) and \( m \) are integers, and so \( m \le x < n + 1 \le m \), which is impossible. So no two pieces overlap, step (2) of @exm-method-gluing has nothing to check, and @thm-gluing gives \( f \).
+
+(b) The range is \( [0, 1) \). If \( x \in [n, n + 1) \), then \( 0 \le x - n < 1 \), so every value lies in \( [0, 1) \); and each \( t \in [0, 1) \) lies in the piece with \( n = 0 \), so \( f(t) = t - 0 = t \). For the shift, let \( x \in [n, n + 1) \). Then \( x + 1 \in [n + 1, n + 2) \), the piece of \( n + 1 \), so \( f(x + 1) = (x + 1) - (n + 1) = x - n = f(x) \). Hence \( f \) is not injective: \( f(0) = 0 = f(1) \).
+
+(c) No. The point \( 1 \) lies in \( [0, 1] \cap [1, 2] \), where the first formula gives \( 1 - 0 = 1 \) and the second gives \( 1 - 1 = 0 \). The functions disagree on an overlap, and no function can restrict to both, since its value at \( 1 \) would be \( 1 \) and \( 0 \).
+:::
 
 <!-- dependency ledger
 thm-power-set-two-power (proof): f(x) is 0 or 1, so f(x) != 1 gives f(x) = 0 | the codomain {0, 1}
+def-restriction-extension (claim): (hook before it) every real is > 0, = 0 or < 0, and exactly one of these | R order (trichotomy), school fact
 def-restriction-extension (claim): 1/x on (0, 1] with value 0 or 5 at 0 gives two different extensions to [0, 1] | each is a function by excluded middle on x = 0, as in exm-first-functions (d); different by prp-function-equality (cited)
-def-restriction-extension (claim): a != b makes {a, b} a two-element set, {1, 2, 3} a three-element set | def-finite (Section 4.1), used silently
+def-restriction-extension (claim): an extension f of g : {1, 2} -> {a, b} to {1, 2, 3} has f(3) = a = f(1) or f(3) = b = f(2) | f(3) is in the codomain {a, b} (def-function); f(1) = g(1) = a, f(2) = g(2) = b by f|_{1,2} = g
 thm-gluing (proof): the graph of a function f_i : A_i -> Y lies in A_i x Y; (x, y) in f iff y = f(x) | def-function, (**) of Section 2.1 (named in the proof)
 thm-gluing (proof): A_i subset X gives A_i x Y subset X x Y | def-cartesian-product, used silently
-prp-restriction-properties (claim): (quick check) x^2 maps [1, 2] onto [1, 4] and R onto [0, infinity) | school fact: square roots of non-negative reals, squaring increasing on [0, infinity) (AN1.1)
+prp-restriction-properties (claim): (quick check) x^2 >= 1 for x in [1, 2]; every t >= 0 is (sqrt t)^2 | school fact (square roots, AN1.1)
 exm-piecewise-as-gluing (solution): every real is >= 0 or <= 0; -0 = 0; -1/2 + 1 = 1/2 | R order (trichotomy) and arithmetic, school fact; verify/ch02/exm-piecewise-as-gluing.py
+prp-injective-across-pieces (proof): two points both lie in A or not; renaming x, x' (the claim is symmetric); x not in A and X = A cup B give x in B \ A | excluded middle (classical), as in exm-method-cases; def-set-operations
 exm-method-gluing (claim): (warning after it) 1^2 = 1 != 3 = 3 * 1 | arithmetic
 prp-indicator-arithmetic (proof): four-row table of memberships and values | def-set-operations, def-indicator; verify/ch02/prp-indicator-arithmetic.py
 prp-indicator-arithmetic (proof): 1 - (1 - u)(1 - v) = u + v - uv; 1 <= v <= 1 gives v = 1 | R arithmetic and order, school fact
@@ -420,11 +494,14 @@ prp-indicator-arithmetic (claim): (quick check) A \ B = A cap (X \ B) | def-set-
 exm-symmetric-difference-associative (solution): the polynomial expansions; odd-count reading | R arithmetic; verify/ch02/exm-symmetric-difference-associative.py
 exm-symmetric-difference-associative (claim): u^2 = u for u in {0, 1} | arithmetic (0^2 = 0, 1^2 = 1)
 exm-symmetric-difference-associative (claim): (quick check after it) values (1, 0, 1, 0) of ind_{A triangle B} on {1, 2, 3, 4} | verify/ch02/prp-indicator-arithmetic.py
-exr-restriction-extension-and-gluing-a1 (solution): x^2 maps [-1, 2] onto [0, 4] | school fact (square roots); verify/ch02/exr-restriction-extension-and-gluing-a1.py
-exr-restriction-extension-and-gluing-a1 (solution): {1, 2, 3} has three and {a, b} two elements; contraposition | def-finite (Section 4.1); fd1 prp-contrapositive, used silently
+exr-restriction-extension-and-gluing-a1 (solution): x1, x2 <= 0 give -x1, -x2 >= 0 and (-x)^2 = x^2; -1, 1 in [-1, 2] | R arithmetic and order, school fact; verify/ch02/exr-restriction-extension-and-gluing-a1.py
+exr-restriction-extension-and-gluing-a1 (solution): an extension to {1, 2, 3} is determined by its value at 3, each of a, b, c gives one; contraposition in (c) | prp-function-equality, thm-gluing (cited); fd1 prp-contrapositive, used silently
 exr-restriction-extension-and-gluing-a1 (solution): A subseteq X and A != X give x_0 in X \ A | def-set-equality, def-subset; fd1 prp-quantifier-negation, used silently
-exr-restriction-extension-and-gluing-b1 (solution): images of the three pieces; x^2 = 1/4 iff x = +-1/2 | school fact (square roots, monotonicity of x^2 on [0, 1]); verify/ch02/exr-restriction-extension-and-gluing-b1.py
+exr-restriction-extension-and-gluing-b1 (solution): the ranges of -x on (-inf, -1], x^2 on [-1, 1], x on [1, inf); x^2 = 1/4 iff x = +-1/2 | school fact (square roots, AN1.1; x^2 <= 1 on [-1, 1]); verify/ch02/exr-restriction-extension-and-gluing-b1.py
+exr-restriction-extension-and-gluing-b5 (solution): every real is <= 0 or >= 0, and a < 0 < b for a in A \ B, b in B \ A; b^2 > 0 for b > 0; (sqrt y)^2 = y for y >= 0 | R order (trichotomy) and arithmetic, school fact; square roots, AN1.1; verify/ch02/exr-restriction-extension-and-gluing-b5.py
 exr-restriction-extension-and-gluing-b3 (solution): polynomial identities with u^2 = u | R arithmetic; verify/ch02/exr-restriction-extension-and-gluing-b3.py
 exr-restriction-extension-and-gluing-b4 (solution): x^2 = x'^2 with x, x' of the same sign gives x = x'; Q closed under multiplication and halving | R arithmetic and order, school fact; verify/ch02/exr-restriction-extension-and-gluing-b4.py
-exm-piecewise-as-gluing (claim): (Default values paragraph after it) the Repair of 3.1 is a default-value definition | exr-countable-sets-c2 | prose pointer only; nothing here depends on it
+exr-restriction-extension-and-gluing-c4 (solution): (1 - u) + (1 - v) - (1 - u)(1 - v) = 1 - uv; 1 - (1 - t) = t | R arithmetic; verify/ch02/exr-restriction-extension-and-gluing-c4.py
+exr-restriction-extension-and-gluing-c5 (solution): every real x lies in [floor x, floor x + 1) | school fact (floor of a real, AN1.1; F3.2 prp-rational-integer-part for Q), as in exm-maps-from-calculus (b)
+exr-restriction-extension-and-gluing-c5 (solution): integers n < m give n + 1 <= m; 0 <= x - n < 1 on [n, n + 1) | Z and R order, school fact; verify/ch02/exr-restriction-extension-and-gluing-c5.py
 -->

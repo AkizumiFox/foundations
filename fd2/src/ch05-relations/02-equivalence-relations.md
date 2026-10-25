@@ -1,6 +1,6 @@
 # Equivalence Relations and Partitions
 
-Section 5.1 sorted relations by four properties: reflexive, symmetric, antisymmetric and transitive (@def-relation-properties). This section studies the relations that have the first, second and fourth. They are the relations that say two things are "the same" in some respect, and each of them cuts its set into disjoint pieces of mutually "same" elements. We prove that the pieces always form a partition, and that every partition arises from exactly one such relation. Then we build the integers modulo \( n \), and meet the check that every definition on pieces needs: that it does not depend on which element names the piece. Section 2.1 promised that check for functions defined on classes; here it is, with a method for making it.
+Section 5.1 sorted relations by four properties: reflexive, symmetric, antisymmetric and transitive (@def-relation-properties). This section studies the relations that have the first, second and fourth. They are the relations that say two things are "the same" in some respect, and each of them cuts its set into disjoint pieces of mutually "same" elements. We prove that the pieces always form a partition, and that every partition arises from exactly one such relation. Then we build the integers modulo \( n \), and meet the check that every definition on pieces needs: that it does not depend on which element names the piece. Section 2.1 promised that check for functions defined on classes; here it is, with a method for making it. Last, every function sorts its domain into the classes of "same value", its fibers, and factors through them.
 
 ## Arithmetic on a clock
 
@@ -59,16 +59,16 @@ Check (Eq1)–(Eq3) for each relation.
 (b) Every pair \( (x, y) \) with \( x, y \in X \) lies in \( X \times X \), so each of (Eq1)–(Eq3) has a conclusion of the form \( (u, v) \in X \times X \) with \( u, v \in X \), and that conclusion is true. This is the coarsest sameness: everything is the same as everything.
 
 (c) Each of (Eq1)–(Eq3) for \( \sim \) is the same property for equality, applied to the numbers \( \abs{x}, \abs{y}, \abs{z} \). For instance, (Eq3): if \( \abs{x} = \abs{y} \) and \( \abs{y} = \abs{z} \), then \( \abs{x} = \abs{z} \) by transitivity of \( = \). Here \( 3 \sim -3 \), and \( 3 \not\sim 2 \).
-
-(d) Each of (Eq1)–(Eq3) begins "for every element of \( X \)", and \( X = \emptyset \) has none, so all three hold vacuously. The empty relation **is** an equivalence relation on \( \emptyset \).
 :::
 
 Part (c) is an instance of a pattern that returns later in this section, with the fibers of a function: "\( x \sim y \) when some quantity attached to \( x \) equals the same quantity attached to \( y \)". Any such relation inherits (Eq1)–(Eq3) from equality.
 
 ::: {.second-reading title="The degenerate case and a non-example"}
+(d) Each of (Eq1)–(Eq3) begins "for every element of \( X \)", and \( X = \emptyset \) has none, so all three hold vacuously. The empty relation **is** an equivalence relation on \( \emptyset \).
+
 Part (d) is the degenerate case, and it is worth keeping: it says that the definition makes no demand on an empty set, so the theorems below hold for \( X = \emptyset \) without a separate case. On a **non-empty** set the empty relation is not an equivalence relation: (Eq1) fails at any element \( x \), since \( (x, x) \notin \emptyset \). The same set of pairs passes on one set and fails on another, because (Eq1) speaks about every element of \( X \).
 
-**A non-example by minimal change.** On \( \nR \), let \( x \sim y \) mean \( x - y \in \nZ \), and let \( x \mathrel{R} y \) mean \( x - y \in \nN \). The first is an equivalence relation, as an example later in this section checks. The second changes one letter. It is still reflexive, since \( x - x = 0 \in \nN \) by (\( \nN \)0), and still transitive: if \( x - y \in \nN \) and \( y - z \in \nN \), then \( x - z = (x - y) + (y - z) \in \nN \) by @lem-naturals-arithmetic (b). But it is not symmetric: \( 1 \mathrel{R} 0 \), since \( 1 - 0 = 1 \in \nN \), while \( 0 - 1 = -1 \), and \( -1 \notin \nN \) because every natural number is \( \ge 0 \) (@lem-naturals-arithmetic (a)). The clause that fails is (Eq2). The relation \( R \) is the order \( y \le x \) restricted to pairs at integer distance; it has a direction, and sameness has none.
+**A non-example by minimal change.** On \( \nR \), let \( x \sim y \) mean \( x - y \in \nZ \), and let \( x \mathrel{R} y \) mean \( x - y \in \nN \). The first is an equivalence relation, as the fold on the reals modulo the integers, at the end of "Congruence modulo n", checks. The second changes one letter. It is still reflexive, since \( x - x = 0 \in \nN \) by (\( \nN \)0), and still transitive: if \( x - y \in \nN \) and \( y - z \in \nN \), then \( x - z = (x - y) + (y - z) \in \nN \) by @lem-naturals-arithmetic (b). But it is not symmetric: \( 1 \mathrel{R} 0 \), since \( 1 - 0 = 1 \in \nN \), while \( 0 - 1 = -1 \), and \( -1 \notin \nN \) because every natural number is \( \ge 0 \) (@lem-naturals-arithmetic (a)). The clause that fails is (Eq2). The relation \( R \) is the order \( y \le x \) restricted to pairs at integer distance; it has a direction, and sameness has none.
 :::
 
 ::: {.second-reading title="Why these three clauses"}
@@ -147,7 +147,7 @@ X/{\sim} \coloneqq \{ C \in \powerset{X} : C = [a] \text{ for some } a \in X \} 
 The **quotient map** is \( q \colon X \to X/{\sim} \), \( q(a) \coloneqq [a] \).
 :::
 
-The quotient set is a set by specification inside \( \powerset{X} \) (@def-set-builder, @def-power-set), and it is often written \( \{ [a] : a \in X \} \). The quotient map is a function by @def-function: each \( a \in X \) has the value \( [a] \), which lies in \( X/{\sim} \), and only that value. It is **surjective**: an element of \( X/{\sim} \) is \( [a] \) for some \( a \in X \), and then it is \( q(a) \) (@def-surjective). The quotient map forgets everything about \( a \) except which class it lies in, and that is the point of it. Read "\( X/{\sim} \)" as "\( X \) with equivalent elements identified".
+The quotient set is a set by specification inside \( \powerset{X} \) (@def-set-builder, @def-power-set), and it is often written \( \{ [a] : a \in X \} \). The quotient map is a function by @def-function: each \( a \in X \) has the value \( [a] \), which lies in \( X/{\sim} \), and only that value. It is **surjective**: an element of \( X/{\sim} \) is \( [a] \) for some \( a \in X \), and then it is \( q(a) \) (@def-surjective).
 
 ## The classes form a partition
 
@@ -192,7 +192,7 @@ Each property of \( \sim \) does one job. Reflexivity puts \( a \) in its own cl
 This proves the theorem.
 :::
 
-Part (b) is the rule we will use most. It turns a statement about classes, \( [a] = [b] \), into a statement about elements, \( a \sim b \), and back. On the clock: \( [14] = [2] \) because \( 14 - 2 = 12 \) is a multiple of \( 12 \). Part (c) says that two classes are either equal or disjoint; there is no third possibility.
+Part (b) is the rule we will use most. It turns a statement about classes, \( [a] = [b] \), into a statement about elements, \( a \sim b \), and back. Part (c) says that two classes are either equal or disjoint; there is no third possibility.
 
 ::: {.second-reading title="When the quotient map is injective, and what ≤ lacked"}
 By (b), the quotient map \( q \) of @def-quotient-set has \( q(a) = q(b) \) exactly when \( a \sim b \). So \( q \) is injective only when every class has a single element: two different elements \( x, y \) of one class \( [c] \) have \( [x] = [c] = [y] \) by (b), so \( q(x) = q(y) \). That is what the relations of "Why these three clauses" lacked: for \( \le \), the sets \( [2] = \{1, 2\} \) and \( [1] = \{1\} \) given by the formula of @def-equivalence-class overlap and differ, and with \( a = 2 \), \( b = 1 \), \( c = 1 \) the line of (c) that fails is the one that uses (Eq2) (Exercise A1(c)).
@@ -236,7 +236,9 @@ So every class is a block: \( [x] \) is the block containing \( x \). Conversely
 
 So the two passages undo each other. Going from \( \sim \) to \( X/{\sim} \) and back gives \( \sim \) again, by (b); going from \( \sP \) to \( \sim_{\sP} \) and back gives \( \sP \) again, by (a). An equivalence relation and a partition are two descriptions of one structure: the relation says which pairs are the same, and the partition lists the piles. This is the move *classes from a relation, a relation from classes*, and we choose whichever description makes the next step easier.
 
+::: {.second-reading title="The correspondence as two inverse maps"}
 **A correspondence, proved both ways.** Put this in the language of Section 2.4. Write \( \mathrm{Eq}(X) \) for the set of equivalence relations on \( X \) (a subset of \( \powerset{X \times X} \)) and \( \mathrm{Part}(X) \) for the set of partitions (a subset of \( \powerset{\powerset{X}} \)). Together with @thm-classes-partition, the theorem gives two functions, \( \Phi \colon \mathrm{Eq}(X) \to \mathrm{Part}(X) \), \( \Phi(\sim) \coloneqq X/{\sim} \) (a partition by @thm-classes-partition), and \( \Psi \colon \mathrm{Part}(X) \to \mathrm{Eq}(X) \), \( \Psi(\sP) \coloneqq {\sim_{\sP}} \) (an equivalence relation by part (a)). Part (a) says \( \Phi \circ \Psi = \id_{\mathrm{Part}(X)} \), and part (b) says \( \Psi \circ \Phi = \id_{\mathrm{Eq}(X)} \). So each is the other's two-sided inverse, and both are bijections (@thm-bijection-iff-inverse): the method of @exm-method-construct-and-verify, with both composites checked. To count the equivalence relations on a finite set, count its partitions.
+:::
 
 ::: {.check}
 How many equivalence relations on \( \{1, 2, 3, 4\} \) have exactly two classes?
@@ -246,7 +248,9 @@ How many equivalence relations on \( \{1, 2, 3, 4\} \) have exactly two classes?
 Seven. By the correspondence, count partitions into two blocks. Either one block is a singleton and the other has three elements, and the singleton can be chosen in four ways; or both blocks are pairs, and the pair containing \( 1 \) is fixed by its second element, chosen in three ways. So \( 4 + 3 = 7 \).
 :::
 
+::: {.second-reading title="Where (P2) does its work"}
 The transitivity step in (a) is where (P2) does its real work (the classes part uses it again, the same way), and it is the step that a hasty proof skips. If the blocks were allowed to overlap, as in the cover \( \{ \{1, 2\}, \{2, 3\} \} \) of \( \{1, 2, 3\} \), then "lie in a common set" would relate \( 1 \) to \( 2 \) and \( 2 \) to \( 3 \) but not \( 1 \) to \( 3 \).
+:::
 
 ## Congruence modulo n
 
@@ -298,35 +302,16 @@ For uniqueness, let \( r, s \in \{0, \dots, n - 1\} \) with \( [a] = [r] \) and 
 Finally, every element of \( \nZ/n \) is \( [a] \) for some \( a \in \nZ \), hence equal to one of \( [0], \dots, [n - 1] \); and if \( [r] = [s] \) with \( r, s \in \{0, \dots, n - 1\} \), the uniqueness just proved, applied to \( a = r \), gives \( r = s \). This proves the proposition.
 :::
 
-So \( \nZ/12 \) has exactly the twelve classes \( [0], \dots, [11] \), one for each position of the hand. (The clock face writes \( 12 \) where we write \( [0] \), and \( [12] = [0] \).) The uniqueness also gives a test that is often quicker than the definition: \( a \equiv b \pmod{n} \) **if and only if** \( a \) and \( b \) leave the same remainder on division by \( n \). Indeed, if \( a \equiv b \), then \( [a] = [b] \), and the one \( r \) with \( [a] = [r] \) is also the one with \( [b] = [r] \); conversely, if both leave the remainder \( r \), then \( [a] = [r] = [b] \). With \( n = 2 \), the two classes of \( \nZ/2 \) are the even integers \( [0] \) and the odd integers \( [1] \): the partition of \( \nZ \) into evens and odds is the quotient set of congruence modulo \( 2 \).
+So \( \nZ/12 \) has exactly the twelve classes \( [0], \dots, [11] \), one for each position of the hand. (The clock face writes \( 12 \) where we write \( [0] \), and \( [12] = [0] \).) The uniqueness also gives a test that is often quicker than the definition: \( a \equiv b \pmod{n} \) **if and only if** \( a \) and \( b \) leave the same remainder on division by \( n \).
 
-## Two more sources of equivalence relations
-
-Congruence is one way to manufacture an equivalence relation. Here is the most general way, and a second example on the real line that later chapters return to.
-
-::: {#exm-fibres-of-function}
-[The fibers of a function]
-
-Let \( f \colon X \to Y \) be a function, and for \( x, y \in X \) let \( x \sim_f y \) mean \( f(x) = f(y) \). Show that \( \sim_f \) is an equivalence relation on \( X \), and describe its classes. Then show that every equivalence relation \( \sim \) on \( X \) is of this form, for a suitable function.
+::: {.second-reading title="The remainder test, proved"}
+Indeed, if \( a \equiv b \), then \( [a] = [b] \), and the one \( r \) with \( [a] = [r] \) is also the one with \( [b] = [r] \); conversely, if both leave the remainder \( r \), then \( [a] = [r] = [b] \).
 :::
 
-::: {.solution}
-(Eq1)–(Eq3) for \( \sim_f \) are the properties of equality applied to the values \( f(x), f(y), f(z) \), exactly as in @exm-first-equivalences (c): \( f(x) = f(x) \); \( f(x) = f(y) \) gives \( f(y) = f(x) \); and \( f(x) = f(y) \), \( f(y) = f(z) \) give \( f(x) = f(z) \) (@fd1:prp-equality-symmetric-transitive).
+With \( n = 2 \), the two classes of \( \nZ/2 \) are the even integers \( [0] \) and the odd integers \( [1] \): the partition of \( \nZ \) into evens and odds is the quotient set of congruence modulo \( 2 \).
 
-The class of \( a \in X \) is
-\[
-[a] = \{ x \in X : f(x) = f(a) \} = f^{-1}(\{ f(a) \}) ,
-\]
-the preimage of the one-point set \( \{f(a)\} \) (@def-preimage). Such a preimage \( f^{-1}(\{y\}) \) is called the **fiber** of \( f \) over \( y \). So the classes of \( \sim_f \) are the fibers over the points \( y \) of the range \( f(X) \). A fiber over a point outside the range is empty, and is not a class: (P1) is what excludes it.
-
-For the converse, let \( \sim \) be an equivalence relation on \( X \), and take for \( f \) the quotient map \( q \colon X \to X/{\sim} \) of @def-quotient-set. Then, for \( x, y \in X \),
-\[
-x \sim_q y \iff q(x) = q(y) \iff [x] = [y] \iff x \sim y ,
-\]
-where the last step is @thm-classes-partition (b). So \( \sim_q \) and \( \sim \) contain the same pairs, and are equal (@def-set-equality).
-:::
-
-Two instances. For \( f(x) = \abs{x} \) on \( \nR \), \( \sim_f \) is "same absolute value", and the fiber over \( 3 \) is the class \( \{-3, 3\} \). For the map \( \nZ \to \{0, 1, 2\} \) sending each integer to its remainder on division by \( 3 \) (a function by the uniqueness in @thm-division-algorithm), \( \sim_f \) is congruence modulo \( 3 \), by the remainder test above. The example says that "the same in some respect" always means "equal value of some function": an equivalence relation is the same thing as a function, up to the names of its values.
+::: {.second-reading title="The reals modulo the integers, and a set with no length"}
+Congruence identifies integers that differ by a multiple of \( n \); the same idea on the real line, with \( n = 1 \), gives an example that later chapters return to.
 
 ::: {#exm-reals-mod-integers}
 [The reals modulo the integers]
@@ -348,7 +333,6 @@ and in the same way \( [\sqrt 2] = \{ \sqrt 2 + k : k \in \nZ \} = \{ \dots, \sq
 
 Picture each class as one point of a circle of circumference \( 1 \): the real line is wound around it, and two numbers land on the same point when they differ by an integer. Each class has exactly one representative in \( [0, 1) \): the class of \( \sqrt 2 \) meets \( [0, 1) \) in \( \sqrt 2 - 1 \), for instance. Proving this for every class needs the integer part of a real number, which *Analysis on the Real Line*, Chapter 1 constructs; we do not use it here.
 
-::: {.second-reading title="A set with no length"}
 With \( \nQ \) in place of \( \nZ \), the relation "\( x - y \in \nQ \)" is again an equivalence relation on \( \nR \), and choosing one point from each of its classes is how *Measure and Integration*, Chapter 1 builds a set of real numbers that has no length.
 :::
 
@@ -402,7 +386,11 @@ and \( al + kb' \in \nZ \) by @prp-integers-closed (a). This proves both congrue
 For well-definedness, suppose \( [a] = [a'] \) and \( [b] = [b'] \). By @thm-classes-partition (b), \( a \equiv a' \) and \( b \equiv b' \), so \( a + b \equiv a' + b' \) and \( ab \equiv a'b' \) by what was just proved, and \( [a + b] = [a' + b'] \) and \( [ab] = [a'b'] \), again by @thm-classes-partition (b). So the class assigned to the pair of classes \( ([a], [b]) \) is the same whichever representatives are used.
 :::
 
-In the language of @def-function: the addition of \( \nZ/n \) is the function \( \nZ/n \times \nZ/n \to \nZ/n \) whose graph is the set of all pairs \( \bigl( ([a], [b]), [a + b] \bigr) \) with \( a, b \in \nZ \). Clause (Fn1) holds because every element of \( \nZ/n \) is a class \( [a] \); clause (Fn2) is the proposition. The clock sentence of the opening is now a true statement: in \( \nZ/12 \),
+::: {.second-reading title="Well defined means a function"}
+In the language of @def-function: the addition of \( \nZ/n \) is the function \( \nZ/n \times \nZ/n \to \nZ/n \) whose graph is the set of all pairs \( \bigl( ([a], [b]), [a + b] \bigr) \) with \( a, b \in \nZ \). Clause (Fn1) holds because every element of \( \nZ/n \) is a class \( [a] \); clause (Fn2) is the proposition.
+:::
+
+The clock sentence of the opening is now a true statement: in \( \nZ/12 \),
 \[
 [9] + [5] = [14] = [2] ,
 \]
@@ -440,9 +428,71 @@ Decide whether each rule defines a function: (a) \( F \colon \nZ/6 \to \nZ/4 \),
 (b) Yes. If \( [a]_6 = [a']_6 \), then \( a - a' = 6k \) for some \( k \in \nZ \) (@thm-classes-partition (b)), so \( a - a' = 3(2k) \) with \( 2k \in \nZ \) (@prp-integers-closed (a)), and \( [a]_3 = [a']_3 \). The value does not depend on the representative. What made it work is \( 3 \mid 6 \): a multiple of \( 6 \) is a multiple of \( 3 \), while a multiple of \( 6 \), such as \( 6 \) itself, need not be a multiple of \( 4 \).
 :::
 
-That is the method of @exm-method-well-definedness, applied once with success and once with failure.
+## The fibers of a function
 
-The check is not special to congruences. Section 4.1 met it for the number of elements of a finite set.
+Congruence is one way to manufacture an equivalence relation. Here is the most general way. A function sorts its domain: put two points in one pile when the function gives them the same value.
+
+::: {#exm-fibres-of-function}
+[The fibers of a function]
+
+Let \( f \colon X \to Y \) be a function, and for \( x, y \in X \) let \( x \sim_f y \) mean \( f(x) = f(y) \). Show that \( \sim_f \) is an equivalence relation on \( X \), and describe its classes. Then show that every equivalence relation \( \sim \) on \( X \) is of this form, for a suitable function.
+:::
+
+::: {.solution}
+(Eq1)–(Eq3) for \( \sim_f \) are the properties of equality applied to the values \( f(x), f(y), f(z) \), exactly as in @exm-first-equivalences (c): \( f(x) = f(x) \); \( f(x) = f(y) \) gives \( f(y) = f(x) \); and \( f(x) = f(y) \), \( f(y) = f(z) \) give \( f(x) = f(z) \) (@fd1:prp-equality-symmetric-transitive).
+
+The class of \( a \in X \) is
+\[
+[a] = \{ x \in X : f(x) = f(a) \} = f^{-1}(\{ f(a) \}) ,
+\]
+the preimage of the one-point set \( \{f(a)\} \) (@def-preimage). Such a preimage \( f^{-1}(\{y\}) \) is called the **fiber** of \( f \) over \( y \). So the classes of \( \sim_f \) are the fibers over the points \( y \) of the range \( f(X) \). A fiber over a point outside the range is empty, and is not a class: (P1) is what excludes it.
+
+For the converse, let \( \sim \) be an equivalence relation on \( X \), and take for \( f \) the quotient map \( q \colon X \to X/{\sim} \) of @def-quotient-set. Then, for \( x, y \in X \),
+\[
+x \sim_q y \iff q(x) = q(y) \iff [x] = [y] \iff x \sim y ,
+\]
+where the last step is @thm-classes-partition (b). So \( \sim_q \) and \( \sim \) contain the same pairs, and are equal (@def-set-equality).
+:::
+
+For the map \( \nZ \to \{0, 1, 2\} \) sending each integer to its remainder on division by \( 3 \) (a function by the uniqueness in @thm-division-algorithm), \( \sim_f \) is congruence modulo \( 3 \), by the remainder test above. The example says that "the same in some respect" always means "equal value of some function": an equivalence relation is the same thing as a function, up to the names of its values.
+
+*The fibers of a function are the piles it sorts its domain into, one pile for each value it takes.*
+
+::: {#prp-fibres-partition}
+[The Fibers of a Function]
+
+Let \( f \colon X \to Y \) be a function.
+
+::: {.enumerate options="label=(\alph*)"}
+1. The fibers \( f^{-1}(\{y\}) \) over the points \( y \in f(X) \) are exactly the classes of \( \sim_f \), and they form a partition of \( X \).
+2. The rule \( y \mapsto f^{-1}(\{y\}) \) is a bijection \( f(X) \to X/{\sim_f} \). Hence \( \card{f(X)} = \card{X/{\sim_f}} \).
+:::
+:::
+
+::: {.idea}
+For (b), every class is the fiber over the value at its representative, and different values have disjoint, non-empty fibers.
+:::
+
+::: {.proof}
+*(a)* By @exm-fibres-of-function the classes of \( \sim_f \) are the fibers over the points of \( f(X) \), and they partition \( X \) by @thm-classes-partition (d).
+
+*(b)* By (a), each \( y \in f(X) \) is sent to an element of \( X/{\sim_f} \), and to only one, so the rule is a function \( \Phi \colon f(X) \to X/{\sim_f} \) (@def-function). It is surjective: an element of \( X/{\sim_f} \) is \( [a] \) for some \( a \in X \), and \( [a] = \Phi(f(a)) \) by (a). It is injective: let \( y, y' \in f(X) \) with \( y \ne y' \), and write \( y = f(a) \) with \( a \in X \). Then \( a \in f^{-1}(\{y\}) \), while \( a \notin f^{-1}(\{y'\}) \) because \( f(a) = y \ne y' \). So \( \Phi(y) \ne \Phi(y') \), and different values have different fibers. Hence \( \Phi \) is a bijection (@def-bijective), and \( \card{f(X)} = \card{X/{\sim_f}} \) by @def-equinumerous.
+:::
+
+::: {.second-reading title="Values and piles"}
+So a function takes exactly as many values as it has fibers, in the sense of equinumerosity: the values and the piles can be paired off. The partition remembers which points share a value, and forgets only what the values are called.
+:::
+
+::: {.check}
+List the classes of \( \sim_f \) for \( f(n) = n^2 - 2n \) on \( \{-1, 0, 1, 2, 3\} \), and match each class with its value.
+:::
+
+::: {.solution}
+The values are \( f(-1) = 3 \), \( f(0) = 0 \), \( f(1) = -1 \), \( f(2) = 0 \), \( f(3) = 3 \). So the classes are \( \{-1, 3\} \) (value \( 3 \)), \( \{0, 2\} \) (value \( 0 \)) and \( \{1\} \) (value \( -1 \)): three classes for the three values in \( f(X) = \{-1, 0, 3\} \).
+:::
+
+::: {.second-reading title="Same size, revisited"}
+The check is not special to congruences. Section 4.1 met the check of well-definedness for the number of elements of a finite set.
 
 ::: {#exm-same-size-subsets}
 [Same size, revisited]
@@ -460,87 +510,12 @@ Let \( X \) be a set, and for \( A, B \in \powerset{X} \) let \( A \approx B \) 
 
 Part (c) rests on the well-definedness step of Section 4.1 (@cor-finite-size-unique: one set, one number) and adds a second: one class, one number. And the relation lives on \( \powerset{X} \), a set: for equinumerosity between arbitrary sets there is no set of all sets for it to be a relation on (@thm-russell), which is why Section 4.1 said only that it behaves like an equivalence relation.
 
-::: {.remark}
-[Looking ahead]
-
-The clock does not stop here. *Number Systems: From \(\nN\) to \(\nR\)*, Section 3.4 builds \( \nZ/n \) again, on the constructed integers, as a quotient ring: the check of @prp-congruence-arithmetic is made once for every ideal, and the sum and product obey the laws of a ring.
-:::
-
-<!-- S3: rewrite per blueprint (5.2: moved from old 5.2: fibres (prp-fibres-partition merged with exm-fibres-of-function) and the canonical factorization; the universal property is parked to ST; condense to 5,000 with folds) -->
-
-## Functions on the clock
-
-Section 5.2 built the clock \( \nZ/12 \), whose elements are the twelve hours \( [0], [1], \dots, [11] \). Some questions about an integer are really questions about its hour. "Is \( a \) even?" is one: \( 14 \) and \( 2 \) name the same hour, and both are even; \( 13 \) and \( 1 \) name the same hour, and both are odd. In general, let \( g \colon \nZ \to Y \) be a function with
-\[
-g(a) = g(a') \quad \text{whenever } 12 \mid a - a' ,
-\]
-so that \( g \) takes one value on each class modulo \( 12 \). Then \( g \) "is" a function of the hour: to compute it at an hour, pick any integer naming that hour and apply \( g \). The condition is stated for all pairs in one class at once. A condition such as \( g(a + 12) = g(a) \) for every \( a \) says the same thing in the end, but getting from it to \( g(a + 12k) = g(a) \) for every \( k \in \nZ \) takes an induction in each direction.
-
-Other functions are not functions of the hour. "Is \( a \) positive?" gives different answers at \( 2 \) and at \( -10 \), which name the same hour, so no function on \( \nZ/12 \) can answer it.
-
-There is a second way into the same idea, from the side of an arbitrary function. A function \( f \colon X \to Y \) sorts its domain: put two points in one pile when \( f \) gives them the same value. Section 5.2 met these piles as the classes of the relation \( \sim_f \) (@exm-fibres-of-function). So every function produces a quotient set of its domain.
-
-Two questions organize the section.
-
-- **(Q1)** Given an equivalence relation \( \sim \) on \( X \), when does a function on \( X \) pass to a function on \( X/{\sim} \), and is the function it passes to unique?
-- **(Q2)** What does a function look like once its domain has been sorted by value?
-
-We answer (Q2) first, because its answer contains the answer to (Q1).
-
-## The fibers of a function
-
-Recall the relation of @exm-fibres-of-function. For \( f \colon X \to Y \) and \( x, x' \in X \), \( x \sim_f x' \) means \( f(x) = f(x') \). It is an equivalence relation on \( X \), and the class of \( a \in X \) is the **fiber** of \( f \) over \( f(a) \),
-\[
-[a] = \{ x \in X : f(x) = f(a) \} = f^{-1}(\{ f(a) \}) ,
-\]
-a preimage in the sense of @def-preimage. A fiber over a point of \( Y \) that \( f \) never takes is empty, and so is not a class.
-
-*The fibers of a function are the piles it sorts its domain into, one pile for each value it takes.*
-
-::: {#prp-fibres-partition}
-[The Fibers of a Function]
-
-Let \( f \colon X \to Y \) be a function.
-
-::: {.enumerate options="label=(\alph*)"}
-1. The fibers \( f^{-1}(\{y\}) \) over the points \( y \in f(X) \) are exactly the classes of \( \sim_f \), and they form a partition of \( X \).
-2. The rule \( y \mapsto f^{-1}(\{y\}) \) is a bijection \( f(X) \to X/{\sim_f} \). Hence \( \card{f(X)} = \card{X/{\sim_f}} \).
-:::
-:::
-
-::: {.idea}
-Part (a) is already proved: @exm-fibres-of-function identified the classes with the fibers, and @thm-classes-partition says the classes partition \( X \). For (b), a fiber over a value is a class, so the rule lands in \( X/{\sim_f} \); every class is the fiber over the value at its representative, which is surjectivity; and two different values have different fibers, because a point of the first fiber is not in the second.
-:::
-
-::: {.proof}
-*(a)* Let \( y \in f(X) \), say \( y = f(a) \) with \( a \in X \) (@def-image). Then \( f^{-1}(\{y\}) = f^{-1}(\{f(a)\}) = [a] \), by the computation in @exm-fibres-of-function; so each such fiber is a class. Conversely, each class is \( [a] \) for some \( a \in X \), and \( [a] = f^{-1}(\{f(a)\}) \) with \( f(a) \in f(X) \). So the fibers over the points of \( f(X) \) are the elements of \( X/{\sim_f} \), and these form a partition of \( X \) by @thm-classes-partition (d).
-
-*(b)* By (a), each \( y \in f(X) \) is sent to an element of \( X/{\sim_f} \), and to only one, so the rule is a function \( \Phi \colon f(X) \to X/{\sim_f} \) (@def-function). It is surjective: an element of \( X/{\sim_f} \) is \( [a] \) for some \( a \in X \), and \( [a] = \Phi(f(a)) \) by (a). It is injective: let \( y, y' \in f(X) \) with \( y \ne y' \), and write \( y = f(a) \) with \( a \in X \). Then \( a \in f^{-1}(\{y\}) \), while \( a \notin f^{-1}(\{y'\}) \) because \( f(a) = y \ne y' \). So \( \Phi(y) \ne \Phi(y') \), and different values have different fibers. Hence \( \Phi \) is a bijection (@def-bijective), and \( \card{f(X)} = \card{X/{\sim_f}} \) by @def-equinumerous.
-:::
-
-So a function takes exactly as many values as it has fibers, in the sense of equinumerosity: the values and the piles can be paired off. The partition remembers which points share a value, and forgets only what the values are called.
-
-::: {.check}
-List the classes of \( \sim_f \) for \( f(n) = n^2 - 2n \) on \( \{-1, 0, 1, 2, 3\} \), and match each class with its value.
-:::
-
-::: {.solution}
-The values are \( f(-1) = 3 \), \( f(0) = 0 \), \( f(1) = -1 \), \( f(2) = 0 \), \( f(3) = 3 \). So the classes are \( \{-1, 3\} \) (value \( 3 \)), \( \{0, 2\} \) (value \( 0 \)) and \( \{1\} \) (value \( -1 \)): three classes for the three values in \( f(X) = \{-1, 0, 3\} \).
-:::
-
-The proposition explains a computation of Section 5.2. In @exm-same-size-subsets, the subsets of \( \{1, 2, 3\} \) were sorted by "same number of elements". That relation is \( \sim_f \) for the function \( f \colon \powerset{\{1, 2, 3\}} \to \{0, 1, 2, 3\} \) sending each subset to its number of elements, a function by @prp-subset-finite (every subset has some number of elements, at most \( 3 \)) and @cor-finite-size-unique (only one). Its four fibers are \( \{\emptyset\} \), the three singletons, the three pairs, and \( \{\{1, 2, 3\}\} \), and its image is all of \( \{0, 1, 2, 3\} \). Part (c) of that example, the well-defined map from classes to numbers, is the bijection of (b) read backwards.
-
-::: {.check}
-List the fibers of \( f \colon \{1, \dots, 6\} \to \{0, 1, 2\} \), where \( f(n) \) is the remainder of \( n \) on division by \( 3 \).
-:::
-
-::: {.solution}
-\( f^{-1}(\{0\}) = \{3, 6\} \), \( f^{-1}(\{1\}) = \{1, 4\} \), \( f^{-1}(\{2\}) = \{2, 5\} \). Three fibers, three values; every value is taken, so \( f(X) \) is the whole codomain.
+@prp-fibres-partition explains this example: the subsets of \( \{1, 2, 3\} \) were sorted by "same number of elements". That relation is \( \sim_f \) for the function \( f \colon \powerset{\{1, 2, 3\}} \to \{0, 1, 2, 3\} \) sending each subset to its number of elements, a function by @prp-subset-finite (every subset has some number of elements, at most \( 3 \)) and @cor-finite-size-unique (only one). Its four fibers are \( \{\emptyset\} \), the three singletons, the three pairs, and \( \{\{1, 2, 3\}\} \), and its image is all of \( \{0, 1, 2, 3\} \). Part (c) of that example, the well-defined map from classes to numbers, is the bijection of (b) read backwards.
 :::
 
 ## Every function factors
 
-Now (Q2). The quotient map \( q \colon X \to X/{\sim_f} \), \( q(x) = [x] \) (@def-quotient-set), sends each point to its fiber. The bijection of @prp-fibres-partition (b) goes from values to fibers; turn it around, and it sends the fiber \( [x] \) to the value \( f(x) \). Finally, a value of \( f \) lies in the image \( f(X) \), and the **inclusion map** \( \iota \colon f(X) \to Y \), \( \iota(y) = y \) (@def-restriction-extension), puts it back into the codomain. Composed, the three maps take \( x \) to \( [x] \), to \( f(x) \), to \( f(x) \). That is \( f \).
+What does a function look like once its domain has been sorted by value? The quotient map \( q \colon X \to X/{\sim_f} \), \( q(x) = [x] \) (@def-quotient-set), sends each point to its fiber. The bijection of @prp-fibres-partition (b) goes from values to fibers; turn it around, and it sends the fiber \( [x] \) to the value \( f(x) \). Finally, a value of \( f \) lies in the image \( f(X) \), and the **inclusion map** \( \iota \colon f(X) \to Y \), \( \iota(y) = y \) (@def-restriction-extension), puts it back into the codomain. Composed, the three maps take \( x \) to \( [x] \), to \( f(x) \), to \( f(x) \). That is \( f \).
 
 \begin{center}
 \begin{tikzpicture}[x=2.6cm, y=1cm]
@@ -566,18 +541,7 @@ It is given by \( \bar f([x]) = f(x) \), and it is a **bijection**.
 :::
 
 ::: {.idea}
-[Scratch work]
-
-The only candidate is forced. If \( \iota(\bar f(q(x))) = f(x) \), then \( \bar f([x]) = f(x) \), since \( \iota \) changes no value. So uniqueness costs nothing, and the work is to show that the forced rule is a function and a bijection. The rule \( [x] \mapsto f(x) \) reads a representative, so the first check is well-definedness, by the method of @exm-method-well-definedness. The twist is in the table's third row: injectivity is the well-definedness line read backwards.
-
-| Givens | Goal |
-|---|---|
-| \( [x] = [x'] \iff x \sim_f x' \) (@thm-classes-partition (b)), and \( x \sim_f x' \iff f(x) = f(x') \) | \( \bar f \) a function, bijective, \( f = \iota \circ \bar f \circ q \), unique |
-| \( [x] = [x'] \) | \( f(x) = f(x') \): one class, one value, (Fn2), well defined |
-| \( f(x) = f(x') \) | \( [x] = [x'] \): injective, the same equivalence read right to left |
-| \( y \in f(X) \), so \( y = f(a) \) with \( a \in X \) | \( y = \bar f([a]) \): surjective |
-
-Uniqueness: \( q \) is onto, so every class is \( [x] \) for some \( x \); a second \( \bar f' \) with \( \iota \circ \bar f' \circ q = f \) has \( \bar f'([x]) = f(x) \) at every class. The proof writes this forwards.
+The candidate is forced: \( \iota \) changes no value, so \( f = \iota \circ \bar f \circ q \) gives \( \bar f([x]) = f(x) \). The rule reads a representative, so the first check is well-definedness (@exm-method-well-definedness): \( [x] = [x'] \) gives \( f(x) = f(x') \). The same line read backwards is injectivity. Surjectivity is the definition of \( f(X) \), and uniqueness holds because \( q \) is onto.
 :::
 
 ::: {.proof}
@@ -600,10 +564,16 @@ by @def-composition. Hence \( f = \iota \circ \bar f \circ q \) by @prp-function
 where the first equality holds because \( \iota \) sends each point to itself. The two functions have the same domain and codomain, so \( \bar f' = \bar f \) by @prp-function-equality. This proves the theorem.
 :::
 
-Read the factorization from left to right: every function is a **surjection** (\( q \), onto by @def-quotient-set), followed by a **bijection** (\( \bar f \)), followed by an **injection** (\( \iota \), which sends each point to itself, so different points stay different). All the identifying is done by \( q \), all the renaming by \( \bar f \), and all the enlarging of the target by \( \iota \). The two properties of Section 2.2 sit at the two ends. The function \( f \) is injective exactly when \( q \) is: if \( f \) is injective and \( q(x) = q(x') \), then \( x \sim_f x' \) by @thm-classes-partition (b), so \( f(x) = f(x') \) and \( x = x' \); if \( q \) is injective and \( f(x) = f(x') \), then \( x \sim_f x' \), so \( q(x) = q(x') \) by @thm-classes-partition (b), and \( x = x' \). And \( f \) is surjective exactly when \( f(X) = Y \), that is, when \( \iota = \id_Y \).
+Read the factorization from left to right: every function is a **surjection** (\( q \), onto by @def-quotient-set), followed by a **bijection** (\( \bar f \)), followed by an **injection** (\( \iota \), which sends each point to itself, so different points stay different). All the identifying is done by \( q \), all the renaming by \( \bar f \), and all the enlarging of the target by \( \iota \). The two properties of Section 2.2 sit at the two ends. The function \( f \) is injective exactly when \( q \) is, and surjective exactly when \( f(X) = Y \), that is, when \( \iota = \id_Y \).
 
+::: {.second-reading title="Why f and q are injective together"}
+The function \( f \) is injective exactly when \( q \) is: if \( f \) is injective and \( q(x) = q(x') \), then \( x \sim_f x' \) by @thm-classes-partition (b), so \( f(x) = f(x') \) and \( x = x' \); if \( q \) is injective and \( f(x) = f(x') \), then \( x \sim_f x' \), so \( q(x) = q(x') \) by @thm-classes-partition (b), and \( x = x' \).
+:::
+
+::: {.second-reading title="Onto the image, not the codomain"}
 ::: {.warning}
 The middle map is a bijection onto the **image**, not onto the codomain. With target \( Y \), the rule \( [x] \mapsto f(x) \) is still a well-defined injection, but it is surjective only when \( f \) is. For \( f(x) = x^2 \) on \( \nR \), the rule \( [x] \mapsto x^2 \) maps the classes \( \{-x, x\} \) onto \( [0, \infty) \) and reaches no negative number of the codomain \( \nR \).
+:::
 :::
 
 The factorization also explains a failure from Section 2.1.
@@ -615,7 +585,7 @@ Let \( f \colon \nZ \times \nZ_{>0} \to \nQ \), \( f(a, b) \coloneqq a/b \). Des
 :::
 
 ::: {.solution}
-*The relation.* \( (a, b) \sim_f (c, d) \) means \( a/b = c/d \), and since \( b, d \ne 0 \) this holds exactly when \( ad = bc \), by the arithmetic of fractions. It is the relation of Exercise B1 in Section 5.2 (@exr-equivalence-relations-b1), now seen as the fiber relation of a function; that it is an equivalence relation is also immediate from @exm-fibres-of-function. The class of \( (1, 2) \) is the fiber over \( \tfrac12 \): the pairs \( (1, 2), (2, 4), (3, 6), \dots \), all the ways of writing one half as a fraction.
+*The relation.* \( (a, b) \sim_f (c, d) \) means \( a/b = c/d \), and since \( b, d \ne 0 \) this holds exactly when \( ad = bc \), by the arithmetic of fractions. It is the relation of Exercise B1 at the end of this section, now seen as the fiber relation of a function; that it is an equivalence relation is immediate from @exm-fibres-of-function. The class of \( (1, 2) \) is the fiber over \( \tfrac12 \): the pairs \( (1, 2), (2, 4), (3, 6), \dots \), all the ways of writing one half as a fraction.
 
 *The three maps.* The quotient map \( q \) sends a pair to its class, "the fraction \( a/b \) up to rewriting". The map \( \bar f \) sends a class to the rational number its pairs all name. And \( f \) is onto \( \nQ \), since every rational number is \( a/b \) for some \( a \in \nZ \) and \( b \in \nZ_{>0} \); so \( f(X) = \nQ \) and \( \iota = \id_\nQ \). By @thm-canonical-factorization, \( \bar f \) is a bijection from the set of classes onto \( \nQ \): a rational number "is" a class of fractions, and nothing is lost by identifying the two.
 
@@ -628,6 +598,12 @@ In @exm-fraction-map-factorization, which of \( q \), \( \bar f \), \( \iota \) 
 
 ::: {.solution}
 \( q \) is surjective, and not injective, since \( q(1, 2) = q(2, 4) \). \( \bar f \) is both, by @thm-canonical-factorization. \( \iota \) is injective, as every inclusion is; here it is \( \id_\nQ \), so it is also surjective.
+:::
+
+::: {.remark}
+[Looking ahead]
+
+The clock does not stop here. *Number Systems: From \(\nN\) to \(\nR\)*, Section 3.4 builds \( \nZ/n \) again, on the constructed integers, as a quotient ring: the check of @prp-congruence-arithmetic is made once for every ideal, and the sum and product obey the laws of a ring.
 :::
 
 ## Exercises
@@ -664,7 +640,7 @@ Parts (a)–(d) are about @thm-classes-partition and its proof.
 :::
 
 ::: {#exr-fibres-and-factorization-a1}
-[A1]
+[A2]
 
 ::: {.enumerate options="label=(\alph*)"}
 1. For \( f \colon \nR \to \nR \), \( f(x) = x^2 - 1 \), find the fibers over \( 3 \), over \( -1 \) and over \( -2 \). Which of them are classes of \( \sim_f \)?
@@ -750,6 +726,8 @@ Prove or disprove: each rule defines a function.
 3. On \( \nR \), with \( x \sim y \) meaning \( x - y \in \nZ \) (@exm-reals-mod-integers), the rule \( \nR/{\sim} \to \nR/{\sim} \), \( [x] \mapsto [x^2] \).
 4. On \( \nZ \times \nZ_{>0} \), with \( (a, b) \sim (c, d) \) meaning \( ad = bc \) (an equivalence relation by Exercise B1 (a)), the rule \( [(a, b)] \mapsto [(a + b, b)] \), from the quotient set to itself.
 5. With the same relation, the rule \( [(a, b)] \mapsto [(a + 1, b + 1)] \).
+6. With \( \sim_f \) for \( f(x) = x^2 \) on \( \nR \), the rule \( \nR/{\sim_f} \to \nR \), \( [x] \mapsto x^3 \).
+7. With the same relation, the rule \( \nR/{\sim_f} \to \nR \), \( [x] \mapsto \abs{x} \).
 :::
 :::
 
@@ -763,10 +741,14 @@ Prove or disprove: each rule defines a function.
 (d) True. Let \( (a, b) \sim (c, d) \), so \( ad = bc \). Then \( (a + b)d = ad + bd = bc + bd = b(c + d) \), so \( (a + b, b) \sim (c + d, d) \); and \( b, d \in \nZ_{>0} \), so the outputs lie in \( \nZ \times \nZ_{>0} \).
 
 (e) False. \( (1, 2) \sim (2, 4) \), since \( 1 \cdot 4 = 2 \cdot 2 \). The outputs are \( (2, 3) \) and \( (3, 5) \), and \( 2 \cdot 5 = 10 \ne 9 = 3 \cdot 3 \), so \( (2, 3) \not\sim (3, 5) \). (Reading the classes as fractions: (d) adds \( 1 \), and (e) adds \( 1 \) to numerator and denominator, which depends on how the fraction is written.)
+
+(f) False. \( [1] = [-1] \), since \( 1^2 = (-1)^2 \) (@thm-classes-partition (b)), but \( 1^3 = 1 \ne -1 = (-1)^3 \): one class, two values.
+
+(g) True. If \( [x] = [x'] \), then \( x^2 = x'^2 \), so \( \abs{x}^2 = \abs{x'}^2 \) with \( \abs{x}, \abs{x'} \ge 0 \), and two non-negative reals with equal squares are equal (@fd1:thm-squares-order). So the value does not depend on the representative: one class, one value.
 :::
 
 ::: {#exr-fibres-and-factorization-b2}
-[B2: Same fibers]
+[B5: Same fibers]
 
 Let \( f \colon X \to Y \) and \( g \colon X \to Z \) be functions. Prove that \( \sim_f = \sim_g \) if and only if there is a bijection \( h \colon f(X) \to g(X) \) with \( g(x) = h(f(x)) \) for every \( x \in X \).
 :::
@@ -832,7 +814,7 @@ Repair: replace (3) and (4) by "Since \( y \sim z \), there is a block \( Q \in 
 :::
 
 ::: {#exr-fibres-and-factorization-c1}
-[C1: Equal fibers]
+[C3: Equal fibers]
 
 Let \( k, m, n \in \nN \), let \( X \) be a set with \( n \) elements, and let \( f \colon X \to \{1, \dots, k\} \) be a function such that the fiber \( f^{-1}(\{i\}) \) has exactly \( m \) elements for every \( i \in \{1, \dots, k\} \). Prove that \( n = km \).
 :::
@@ -857,7 +839,7 @@ Fatal errors (0 for the step): induction with \( X \) fixed; applying \( P(k) \)
 :::
 
 ::: {#exr-restriction-extension-and-gluing-c2}
-[C2: Find the error]
+[C4: Find the error]
 
 Here is a proposed proof of the existence part of @thm-gluing. "Given \( x \in X \), pick \( i \) with \( x \in A_i \), and set \( f(x) \coloneqq f_i(x) \). Then \( f|_{A_i} = f_i \) for every \( i \in I \)." Which hypothesis of the theorem is never used? Where does the argument fail, and which check is missing? Is the conclusion true?
 :::
@@ -890,6 +872,7 @@ def-congruence (claim): 5, 2 are not multiples of 12, 4: a multiple kn is 0, >= 
 prp-congruence-equivalence (proof): -k = 0 - k; (k + l)n = kn + ln | prp-integers-closed (a) (cited); R arithmetic
 prp-integers-mod-n (proof): r = 0 * n + r | R arithmetic
 exm-reals-mod-integers (solution): 2 <= 1, 4 <= 2, 2 <= 1/4, 9/4 <= 2 are false; sqrt(2) exists and is positive; not (s <= t) gives t < s | R arithmetic and order (trichotomy), school fact; square roots, school fact (AN1.1 thm-nth-root); thm-squares-order (cited, by contraposition); verify/ch05/exm-reals-mod-integers.py
+exm-reals-mod-integers (claim): (now in fold F5.2-d) unchanged lines | moved verbatim; the ledger lines for this example stand
 exm-reals-mod-integers (claim): (after it) each class meets [0, 1) exactly once; the Vitali set | AN1.1 (integer part), MT.1 (prose pointers; nothing here depends on them)
 prp-congruence-arithmetic (proof): ab - a'b' = a(b - b') + (a - a')b' | R arithmetic, school fact; axioms in AN1.1
 exm-ill-defined-class-map (solution): 6 - 2 = 4; 2 is not a multiple of 4 | arithmetic; prp-integers-closed (c) (cited); verify/ch05/exm-ill-defined-class-map.py
@@ -905,12 +888,12 @@ thm-partition-equivalence (claim): (correspondence) Eq(X) subset of P(X x X), Pa
 thm-partition-equivalence (claim): (quick check) 4 + 3 = 7 two-block partitions of {1, 2, 3, 4} | arithmetic; verify/ch05/thm-partition-equivalence.py
 exm-method-well-definedness (claim): (quick check) 0 != 36; a^2 - a'^2 = (a - a')(a + a'); 2k(a + a') in Z | R arithmetic, school fact; prp-integers-closed (a) (cited)
 exm-same-size-subsets (solution): sizes 0, 1, 1, 1, 2, 2, 2, 3 of the eight subsets of {1, 2, 3}; |A'| = |A| from |A| = |A'| | arithmetic; prp-equinumerous-properties (a)-(c), prp-subset-finite, cor-finite-size-unique, thm-russell (cited); verify/ch05/exm-same-size-subsets.py
+exr-equivalence-relations-b4 (solution): (f) 1 != -1; (g) equal squares of non-negatives | thm-squares-order (F1, cited)
 exr-equivalence-relations-b4 (solution): (a-2b) - (a'-2b') = 6(k - 2l); 16/9 - 1/9 = 5/3; 2*5 != 3*3; (a+b)d = ad + bd | prp-integers-closed (a), (c) (cited); thm-classes-partition (b) (cited); R arithmetic; verify/ch05/exr-equivalence-relations-b4.py
 prp-congruence-arithmetic (claim): (Looking ahead) Z/n rebuilt as a quotient ring | F3.5 (prose pointer; paid by thm-quotient-ring-by-ideal, def-integers-mod-n-ring; nothing here depends on it)
 prp-fibres-partition (proof): the fiber over f(a) is the class [a] | exm-fibres-of-function (cited)
 prp-fibres-partition (claim): (quick check) values of n^2 - 2n on {-1, ..., 3} | arithmetic; verify/ch05/prp-fibres-partition.py
 prp-fibres-partition (claim): (same-size payoff) sizes of the eight subsets of {1, 2, 3}; "number of elements" is a function | arithmetic; prp-subset-finite, cor-finite-size-unique (cited); verify/ch05/prp-fibres-partition.py
-prp-fibres-partition (claim): (quick check) remainders of 1, ..., 6 on division by 3 | thm-division-algorithm (F2.2), arithmetic; verify/ch05/prp-fibres-partition.py
 thm-canonical-factorization (proof): the inclusion map sends each point to itself | def-restriction-extension (cited, F2.6 §03)
 thm-canonical-factorization (claim): (aftermath) f injective iff q injective | direct argument via thm-classes-partition (b) (cited)
 thm-canonical-factorization (claim): (warning) x^2 >= 0, every t >= 0 is a square | R arithmetic and order, square roots, school fact (AN1.1 thm-nth-root)

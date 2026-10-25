@@ -4,7 +4,7 @@ items:
 - key: def-function
   kind: def
   file: 01-functions-and-composition.md
-  line: 15
+  line: 13
   hash: 50dbebf09988
   verdicts:
   - stage: S5a
@@ -61,7 +61,7 @@ items:
 - key: exm-first-functions
   kind: exm
   file: 01-functions-and-composition.md
-  line: 52
+  line: 50
   hash: 3d417fce94cc
   verdicts:
   - stage: S5a
@@ -95,7 +95,7 @@ items:
 - key: exm-not-a-function
   kind: exm
   file: 01-functions-and-composition.md
-  line: 81
+  line: 79
   hash: e98c4d306a2c
   verdicts:
   - stage: S5a
@@ -130,7 +130,7 @@ items:
 - key: check:01-functions-and-composition:1
   kind: check
   file: 01-functions-and-composition.md
-  line: 108
+  line: 106
   hash: 42476039e93c
   verdicts:
   - stage: S5a
@@ -153,7 +153,7 @@ items:
 - key: prp-function-equality
   kind: prp
   file: 01-functions-and-composition.md
-  line: 120
+  line: 118
   hash: 0eb0dadff1b2
   verdicts:
   - stage: S5a
@@ -174,7 +174,7 @@ items:
 - key: proof:prp-function-equality
   kind: proof
   file: 01-functions-and-composition.md
-  line: 130
+  line: 128
   hash: a2334668e453
   verdicts:
   - stage: S5a
@@ -198,7 +198,7 @@ items:
 - key: exm-equal-functions
   kind: exm
   file: 01-functions-and-composition.md
-  line: 140
+  line: 138
   hash: ac37e5c44f29
   verdicts:
   - stage: S5a
@@ -220,7 +220,7 @@ items:
 - key: exm-function-set-small
   kind: exm
   file: 01-functions-and-composition.md
-  line: 183
+  line: 181
   hash: 7f6f3f325c03
   verdicts:
   - stage: S5a
@@ -241,7 +241,7 @@ items:
 - key: check:01-functions-and-composition:2
   kind: check
   file: 01-functions-and-composition.md
-  line: 206
+  line: 204
   hash: e1f8dc141bf3
   verdicts:
   - stage: S5a
@@ -264,7 +264,7 @@ items:
 - key: prp-empty-function
   kind: prp
   file: 01-functions-and-composition.md
-  line: 216
+  line: 214
   hash: b56b6491514f
   verdicts:
   - stage: S5a
@@ -285,7 +285,7 @@ items:
 - key: proof:prp-empty-function
   kind: proof
   file: 01-functions-and-composition.md
-  line: 225
+  line: 223
   hash: 1fffb147f163
   verdicts:
   - stage: S5a
@@ -316,10 +316,32 @@ items:
       l.660 now describes this accurately, which resolves the earlier finding. Vacuous truth of the condition
       uses @prp-vacuous-implication (ch02/01 l.154). For uniqueness, G is a subset of empty x Y, which
       is em
+- key: check:01-functions-and-composition:3
+  kind: check
+  file: 01-functions-and-composition.md
+  line: 234
+  hash: 616a8eb80c0c
+  verdicts:
+  - stage: S5a
+    verdict: correct
+    by: refereeA
+    hash: 8f322564403c
+    date: '2026-10-25'
+    model: claude-opus-5-5
+    evidence: '05-functions.md:286-292: g(f(2))=g(4)=1, f(g(2))=f(-1)=1; at 0 they give -3 and 9, so the
+      functions differ.'
+  - stage: S5b
+    verdict: correct
+    by: refereeB
+    hash: 8f322564403c
+    date: '2026-10-25'
+    model: claude-opus-5-5
+    evidence: '05:286-292: g(f(2))=g(4)=1, f(g(2))=f(-1)=1; at 0: -3 vs 9. Computed.'
+  old_key: check:05-functions:3
 - key: def-composition
   kind: def
   file: 01-functions-and-composition.md
-  line: 240
+  line: 246
   hash: 5d49152cabc9
   verdicts:
   - stage: S5a
@@ -340,7 +362,7 @@ items:
 - key: exm-composition-order
   kind: exm
   file: 01-functions-and-composition.md
-  line: 252
+  line: 258
   hash: dd1780314c06
   verdicts:
   - stage: S5a
@@ -358,10 +380,16 @@ items:
     date: '2026-10-10'
     model: claude-opus-5-5
     evidence: '04:237: 2x + 2 and 2x + 1 differ at 0 (2 ≠ 1); sidecar passes.'
+- key: exm-root-and-square
+  kind: exm
+  file: 01-functions-and-composition.md
+  line: 270
+  hash: 3f67e562dc5c
+  verdicts: []
 - key: prp-composition-associative
   kind: prp
   file: 01-functions-and-composition.md
-  line: 268
+  line: 298
   hash: 307a0816d13a
   verdicts:
   - stage: S5a
@@ -382,7 +410,7 @@ items:
 - key: proof:prp-composition-associative
   kind: proof
   file: 01-functions-and-composition.md
-  line: 278
+  line: 308
   hash: 3eceea6fbecc
   verdicts:
   - stage: S5a
@@ -401,28 +429,48 @@ items:
     model: claude-opus-5-5
     evidence: '04:255-259: def-composition is used twice per side, then prp-function-equality; the identity
       laws likewise.'
-- key: check:01-functions-and-composition:3
+- key: check:01-functions-and-composition:4
   kind: check
   file: 01-functions-and-composition.md
-  line: 288
+  line: 320
   hash: 8f322564403c
-  verdicts:
-  - stage: S5a
-    verdict: correct
-    by: refereeA
-    hash: 8f322564403c
-    date: '2026-10-25'
-    model: claude-opus-5-5
-    evidence: '05-functions.md:286-292: g(f(2))=g(4)=1, f(g(2))=f(-1)=1; at 0 they give -3 and 9, so the
-      functions differ.'
-  - stage: S5b
-    verdict: correct
-    by: refereeB
-    hash: 8f322564403c
-    date: '2026-10-25'
-    model: claude-opus-5-5
-    evidence: '05:286-292: g(f(2))=g(4)=1, f(g(2))=f(-1)=1; at 0: -3 vs 9. Computed.'
-  old_key: check:05-functions:3
+  verdicts: []
+- key: exr-functions-and-composition-a1
+  kind: exr
+  file: 01-functions-and-composition.md
+  line: 332
+  hash: 70dd5f56888b
+  verdicts: []
+- key: exr-functions-and-composition-b1
+  kind: exr
+  file: 01-functions-and-composition.md
+  line: 355
+  hash: df157e918b62
+  verdicts: []
+- key: exr-functions-and-composition-b2
+  kind: exr
+  file: 01-functions-and-composition.md
+  line: 387
+  hash: 4a7ae8e849a2
+  verdicts: []
+- key: exr-functions-and-composition-b3
+  kind: exr
+  file: 01-functions-and-composition.md
+  line: 412
+  hash: 3c2c7aa5c53c
+  verdicts: []
+- key: exr-functions-and-composition-c1
+  kind: exr
+  file: 01-functions-and-composition.md
+  line: 432
+  hash: 8cc34b56c49d
+  verdicts: []
+- key: exr-functions-and-composition-c2
+  kind: exr
+  file: 01-functions-and-composition.md
+  line: 455
+  hash: c1479586171a
+  verdicts: []
 - key: def-injective
   kind: def
   file: 02-injections-and-surjections.md
@@ -709,10 +757,94 @@ items:
     model: claude-opus-5-5
     evidence: '04:431-439: the rule tags match the derivation at 446-470. Lines 9/10 apply ∀E to 2 with
       7, 8; lines 16/17 apply ∀I over boxes 5-15 and 4-16. The 474 mapping of prose to lines is accurate.'
+- key: prp-composite-partial-converse
+  kind: prp
+  file: 02-injections-and-surjections.md
+  line: 291
+  hash: cecae3eef61f
+  verdicts: []
+- key: proof:prp-composite-partial-converse
+  kind: proof
+  file: 02-injections-and-surjections.md
+  line: 305
+  hash: 1a0d4117738d
+  verdicts: []
+- key: exm-structure-maps
+  kind: exm
+  file: 02-injections-and-surjections.md
+  line: 317
+  hash: 3aba671588c5
+  verdicts: []
+- key: check:02-injections-and-surjections:3
+  kind: check
+  file: 02-injections-and-surjections.md
+  line: 355
+  hash: 1e3c46253b74
+  verdicts: []
+- key: exm-maps-from-algebra
+  kind: exm
+  file: 02-injections-and-surjections.md
+  line: 367
+  hash: a0de31c3ca71
+  verdicts: []
+- key: prp-strictly-monotone-injective
+  kind: prp
+  file: 02-injections-and-surjections.md
+  line: 391
+  hash: 5b1e24cbfcec
+  verdicts: []
+- key: proof:prp-strictly-monotone-injective
+  kind: proof
+  file: 02-injections-and-surjections.md
+  line: 397
+  hash: 075dcba1cb56
+  verdicts: []
+- key: exm-maps-from-calculus
+  kind: exm
+  file: 02-injections-and-surjections.md
+  line: 401
+  hash: aae4ca4cb6a5
+  verdicts: []
+- key: check:02-injections-and-surjections:4
+  kind: check
+  file: 02-injections-and-surjections.md
+  line: 430
+  hash: 0c2bcd87b25c
+  verdicts: []
+- key: thm-cancellation
+  kind: thm
+  file: 02-injections-and-surjections.md
+  line: 442
+  hash: 3102870ecbdd
+  verdicts: []
+- key: proof:thm-cancellation
+  kind: proof
+  file: 02-injections-and-surjections.md
+  line: 468
+  hash: cfd67162f644
+  verdicts: []
+- key: exm-method-cancel
+  kind: exm
+  file: 02-injections-and-surjections.md
+  line: 484
+  hash: b91d02e50ef4
+  verdicts: []
+- key: exm-cancel-parity-map
+  kind: exm
+  file: 02-injections-and-surjections.md
+  line: 494
+  hash: 98a1e8e3d659
+  verdicts: []
+- key: check:02-injections-and-surjections:5
+  kind: check
+  file: 02-injections-and-surjections.md
+  line: 512
+  hash: 89696539f714
+  verdicts: []
 - key: exr-functions-a1
   kind: exr
   file: 02-injections-and-surjections.md
-  line: 295
+  line: 534
   hash: 3606f7a717bd
   verdicts:
   - stage: S5a
@@ -756,8 +888,8 @@ items:
 - key: exr-functions-b1
   kind: exr
   file: 02-injections-and-surjections.md
-  line: 327
-  hash: e1fb35d1afe3
+  line: 566
+  hash: 50b027444567
   verdicts:
   - stage: S5a
     verdict: correct
@@ -854,8 +986,8 @@ items:
 - key: exr-functions-b2
   kind: exr
   file: 02-injections-and-surjections.md
-  line: 367
-  hash: 5db49d8784ea
+  line: 600
+  hash: 097ca2eea7cd
   verdicts:
   - stage: S5a
     verdict: correct
@@ -888,7 +1020,7 @@ items:
 - key: exr-functions-b3
   kind: exr
   file: 02-injections-and-surjections.md
-  line: 399
+  line: 634
   hash: 4bdfb8262e07
   verdicts:
   - stage: S5a
@@ -918,7 +1050,7 @@ items:
 - key: exr-functions-b4
   kind: exr
   file: 02-injections-and-surjections.md
-  line: 413
+  line: 648
   hash: 5f64b64c87ac
   verdicts:
   - stage: S5a
@@ -952,11 +1084,17 @@ items:
       k in [-50,50]. (d) uses parity and thm-even-or-odd. (e) Range: (x+2)^2-4. Injectivity uses fd1:thm-squares-order
       both ways, as in exm-square-three-ways (b) (line 472). Surjectivity uses x=-2+sqrt(y+4), checked
       nume'
+- key: exr-functions-b5
+  kind: exr
+  file: 02-injections-and-surjections.md
+  line: 678
+  hash: 4c1b826b3411
+  verdicts: []
 - key: exr-functions-c1
   kind: exr
   file: 02-injections-and-surjections.md
-  line: 445
-  hash: 435387122e19
+  line: 706
+  hash: 168458b736bc
   verdicts:
   - stage: S5a
     verdict: correct
@@ -988,8 +1126,8 @@ items:
 - key: exr-functions-c2
   kind: exr
   file: 02-injections-and-surjections.md
-  line: 471
-  hash: dceb3624b04e
+  line: 735
+  hash: 06aa7b9c07e1
   verdicts:
   - stage: S5a
     verdict: correct
@@ -1018,7 +1156,7 @@ items:
 - key: def-restriction-extension
   kind: def
   file: 03-gluing-and-characteristic-functions.md
-  line: 29
+  line: 31
   hash: 229bf1035164
   verdicts:
   - stage: S5a
@@ -1047,7 +1185,7 @@ items:
 - key: prp-restriction-properties
   kind: prp
   file: 03-gluing-and-characteristic-functions.md
-  line: 47
+  line: 49
   hash: 6c8cd2f21e2a
   verdicts:
   - stage: S5a
@@ -1067,7 +1205,7 @@ items:
 - key: proof:prp-restriction-properties
   kind: proof
   file: 03-gluing-and-characteristic-functions.md
-  line: 64
+  line: 66
   hash: 7f2927ca8cfa
   verdicts:
   - stage: S5a
@@ -1089,7 +1227,7 @@ items:
   kind: check
   file: 03-gluing-and-characteristic-functions.md
   line: 80
-  hash: f76e60671ea2
+  hash: 6dfc54c01f45
   verdicts:
   - stage: S5a
     verdict: correct
@@ -1201,7 +1339,7 @@ items:
   kind: exm
   file: 03-gluing-and-characteristic-functions.md
   line: 133
-  hash: 3533a60828d5
+  hash: 7ab17dbca51f
   verdicts:
   - stage: S5a
     verdict: correct
@@ -1254,10 +1392,22 @@ items:
     model: claude-opus-5-5
     evidence: '(b) now says ''the rule r of the hook, which is not a function'': it is consistent and
       no longer self-contradictory. The ledger line to exr-countable-sets-c2 is a prose pointer.'
+- key: prp-injective-across-pieces
+  kind: prp
+  file: 03-gluing-and-characteristic-functions.md
+  line: 165
+  hash: f5ff6d888799
+  verdicts: []
+- key: proof:prp-injective-across-pieces
+  kind: proof
+  file: 03-gluing-and-characteristic-functions.md
+  line: 175
+  hash: 3cdd452de5ce
+  verdicts: []
 - key: check:03-gluing-and-characteristic-functions:2
   kind: check
   file: 03-gluing-and-characteristic-functions.md
-  line: 171
+  line: 189
   hash: c5364efd414c
   verdicts:
   - stage: S5a
@@ -1278,7 +1428,7 @@ items:
 - key: def-indicator
   kind: def
   file: 03-gluing-and-characteristic-functions.md
-  line: 183
+  line: 201
   hash: f8b4dc3aec49
   verdicts:
   - stage: S5a
@@ -1299,7 +1449,7 @@ items:
 - key: prp-indicator-arithmetic
   kind: prp
   file: 03-gluing-and-characteristic-functions.md
-  line: 206
+  line: 224
   hash: be27d6c47f01
   verdicts:
   - stage: S5a
@@ -1319,7 +1469,7 @@ items:
 - key: proof:prp-indicator-arithmetic
   kind: proof
   file: 03-gluing-and-characteristic-functions.md
-  line: 224
+  line: 242
   hash: 947024e144a0
   verdicts:
   - stage: S5a
@@ -1341,7 +1491,7 @@ items:
 - key: check:03-gluing-and-characteristic-functions:3
   kind: check
   file: 03-gluing-and-characteristic-functions.md
-  line: 248
+  line: 266
   hash: a0182b82caa7
   verdicts:
   - stage: S5a
@@ -1362,7 +1512,7 @@ items:
 - key: exm-symmetric-difference-associative
   kind: exm
   file: 03-gluing-and-characteristic-functions.md
-  line: 258
+  line: 276
   hash: 72934b28aa72
   verdicts:
   - stage: S5a
@@ -1391,7 +1541,7 @@ items:
 - key: check:03-gluing-and-characteristic-functions:4
   kind: check
   file: 03-gluing-and-characteristic-functions.md
-  line: 279
+  line: 295
   hash: ac6e9037dc41
   verdicts:
   - stage: S5a
@@ -1412,8 +1562,8 @@ items:
 - key: thm-power-set-two-power
   kind: thm
   file: 03-gluing-and-characteristic-functions.md
-  line: 293
-  hash: d91ebd1a1932
+  line: 307
+  hash: 6193ea55001d
   verdicts:
   - stage: S5a
     verdict: correct
@@ -1432,8 +1582,8 @@ items:
 - key: proof:thm-power-set-two-power
   kind: proof
   file: 03-gluing-and-characteristic-functions.md
-  line: 299
-  hash: b51a63db8c6b
+  line: 313
+  hash: 4a7bf3fbcba5
   verdicts:
   - stage: S5a
     verdict: correct
@@ -1453,8 +1603,8 @@ items:
 - key: exr-restriction-extension-and-gluing-a1
   kind: exr
   file: 03-gluing-and-characteristic-functions.md
-  line: 309
-  hash: 3f623c9f876b
+  line: 327
+  hash: 024c6715a593
   verdicts:
   - stage: S5a
     verdict: correct
@@ -1492,8 +1642,8 @@ items:
 - key: exr-restriction-extension-and-gluing-b1
   kind: exr
   file: 03-gluing-and-characteristic-functions.md
-  line: 332
-  hash: 55fc7f8d7ac9
+  line: 350
+  hash: 076c2257b7cd
   verdicts:
   - stage: S5a
     verdict: correct
@@ -1521,41 +1671,16 @@ items:
       so f(R)=[0,inf). The preimage of 1/4 is {-1/2,1/2}, so f is not injective. Checked with exact rationals.
       thm-image-union is stated for families, so three pieces are covered. Worked models: exm-piecewise-as-gluing
       and the check at line 171.'
-- key: exr-restriction-extension-and-gluing-b2
+- key: exr-restriction-extension-and-gluing-b5
   kind: exr
   file: 03-gluing-and-characteristic-functions.md
-  line: 346
-  hash: 1a7350c48707
-  verdicts:
-  - stage: S5a
-    verdict: correct
-    by: refereeA
-    hash: 1a7350c48707
-    date: '2026-10-26'
-    model: claude-opus-5-5
-    evidence: 'L334-336: (⇒) via thm-image-intersection (b), whose ''if'' direction holds for injective
-      f; (⇐) the case split and the witness z∈A∩B are valid'
-  - stage: S5b
-    verdict: correct
-    by: refereeB
-    hash: 1a7350c48707
-    date: '2026-10-26'
-    model: claude-opus-5-5
-    evidence: 01:334-336 (⇒) thm-image-intersection (b) (07:378); (⇐) cross case via z ∈ A∩B correct
-  - stage: S6
-    verdict: correct
-    by: verifier
-    hash: 1a7350c48707
-    date: '2026-10-26'
-    model: claude-opus-5-5
-    evidence: '01:327-337. (=>) uses prp-restriction-properties (d) and thm-image-intersection (b), which
-      is an iff for all A, B, so it applies. (<=) handles the same-piece and cross-piece cases through
-      z in A∩B and matches my proof. Worked model: template step (4) and the Schröder–Bernstein Case 3
-      paragraph.'
+  line: 364
+  hash: 5448a98fc165
+  verdicts: []
 - key: exr-restriction-extension-and-gluing-b3
   kind: exr
   file: 03-gluing-and-characteristic-functions.md
-  line: 358
+  line: 384
   hash: 8fd6cee52f15
   verdicts:
   - stage: S5a
@@ -1600,7 +1725,7 @@ items:
 - key: exr-restriction-extension-and-gluing-b4
   kind: exr
   file: 03-gluing-and-characteristic-functions.md
-  line: 377
+  line: 403
   hash: 9958ebba27e2
   verdicts:
   - stage: S5a
@@ -1628,6 +1753,18 @@ items:
     evidence: 01:358-382. Verdicts are T, F, T, T, F. (b) gives the collision f(1)=f(-1). (d) proves injectivity
       across the pieces through x/2 in Q, and surjectivity through y/2 irrational. (e) has f(1/2)=f(3/2)=1/2,
       checked by script.
+- key: exr-restriction-extension-and-gluing-c4
+  kind: exr
+  file: 03-gluing-and-characteristic-functions.md
+  line: 431
+  hash: 5446bb61ffd9
+  verdicts: []
+- key: exr-restriction-extension-and-gluing-c5
+  kind: exr
+  file: 03-gluing-and-characteristic-functions.md
+  line: 459
+  hash: 5c4ade2dcb85
+  verdicts: []
 - key: def-left-right-inverse
   kind: def
   file: 04-inverses.md
@@ -3322,10 +3459,47 @@ items:
       written-out version. The problem now says so and asks for tags. The solution is correct: (⊆) ∃E
       for b, then f∘g = id_Y; (⊇) g∘f = id_X, then ∃I with witness f(x) ∈ B. The statement that both equations
       of def-in'
+- key: exr-restriction-extension-and-gluing-b2
+  kind: exr
+  file: 05-images-and-preimages.md
+  line: 536
+  hash: de42caeb689d
+  verdicts:
+  - stage: S5a
+    verdict: correct
+    by: refereeA
+    hash: 1a7350c48707
+    date: '2026-10-26'
+    model: claude-opus-5-5
+    evidence: 'L334-336: (⇒) via thm-image-intersection (b), whose ''if'' direction holds for injective
+      f; (⇐) the case split and the witness z∈A∩B are valid'
+  - stage: S5b
+    verdict: correct
+    by: refereeB
+    hash: 1a7350c48707
+    date: '2026-10-26'
+    model: claude-opus-5-5
+    evidence: 01:334-336 (⇒) thm-image-intersection (b) (07:378); (⇐) cross case via z ∈ A∩B correct
+  - stage: S6
+    verdict: correct
+    by: verifier
+    hash: 1a7350c48707
+    date: '2026-10-26'
+    model: claude-opus-5-5
+    evidence: '01:327-337. (=>) uses prp-restriction-properties (d) and thm-image-intersection (b), which
+      is an iff for all A, B, so it applies. (<=) handles the same-piece and cross-piece cases through
+      z in A∩B and matches my proof. Worked model: template step (4) and the Schröder–Bernstein Case 3
+      paragraph.'
+- key: exr-images-and-preimages-b5
+  kind: exr
+  file: 05-images-and-preimages.md
+  line: 548
+  hash: 93f6e533ecfa
+  verdicts: []
 - key: exr-images-and-preimages-c1
   kind: exr
   file: 05-images-and-preimages.md
-  line: 538
+  line: 567
   hash: 0652b9507c45
   verdicts:
   - stage: S5a
@@ -3357,7 +3531,7 @@ items:
 - key: exr-images-and-preimages-c2
   kind: exr
   file: 05-images-and-preimages.md
-  line: 573
+  line: 602
   hash: b1d483b067ba
   verdicts:
   - stage: S5a
@@ -3399,7 +3573,7 @@ items:
 - key: exr-images-and-preimages-c3
   kind: exr
   file: 05-images-and-preimages.md
-  line: 597
+  line: 626
   hash: 408209abbdad
   verdicts:
   - stage: S5a
@@ -3427,6 +3601,30 @@ items:
     evidence: 06-images-and-preimages.md:566-586. (a) is a correct two-inclusion proof, including I=∅.
       (b) is the constant map on {1,2}, giving ∅ against {0}, checked. Scheme points 1+3+3+1+2=10, and
       the chain-of-equivalences route (my alternative) is mapped to the first 7 points.
+- key: exr-images-and-preimages-r5
+  kind: exr
+  file: 05-images-and-preimages.md
+  line: 659
+  hash: 90fc98e74d8d
+  verdicts: []
+- key: exr-images-and-preimages-r6
+  kind: exr
+  file: 05-images-and-preimages.md
+  line: 673
+  hash: 811c6d7c0928
+  verdicts: []
+- key: exr-images-and-preimages-r7
+  kind: exr
+  file: 05-images-and-preimages.md
+  line: 689
+  hash: f7f8b1398214
+  verdicts: []
+- key: exr-images-and-preimages-r8
+  kind: exr
+  file: 05-images-and-preimages.md
+  line: 705
+  hash: a4f343db612d
+  verdicts: []
 - key: exr-images-and-preimages-r1
   kind: exr
   file: 05-images-and-preimages.md
@@ -3483,6 +3681,7 @@ items:
       in the solution matches the derivation. The pointer ''*Logic and Proof*, Section 8.3'' has the correct
       cross-volume form. The revised closing sentence accurately describes how each def. line is rendered.
       No remaining issues.'
+  removed: true
 - key: exr-images-and-preimages-r2
   kind: exr
   file: 05-images-and-preimages.md
@@ -3514,6 +3713,7 @@ items:
     evidence: 06-images-and-preimages.md:647-666. A script reproduces all 8 rows; the columns differ at
       TTT and TFT. A=B=C={1} gives {1} vs ∅, and A=C={1}, B=∅ also gives {1} vs ∅. The @cor-refuting-row
       use matches its statement (ch03 05-soundness.md:266).
+  removed: true
 - key: exr-images-and-preimages-r3
   kind: exr
   file: 05-images-and-preimages.md
@@ -3546,6 +3746,7 @@ items:
     evidence: '06-images-and-preimages.md:674-704. The derivation is valid (LEM, ∨E, ∧I, →E, →I), and
       the set reading is correct. The classical step (LEM, line 3) is correctly identified and is necessary:
       with R=⊥ the sequent becomes ¬(P∧¬Q) ⊢ P→Q, which is not intuitionistically valid.'
+  removed: true
 - key: exr-images-and-preimages-r4
   kind: exr
   file: 05-images-and-preimages.md
@@ -3578,3 +3779,4 @@ items:
     evidence: 06-images-and-preimages.md:712-716. ⋃T exists by (W3) and the ⋃𝒮 form of def-family-union-intersection
       (02-set-operations.md:197-213), and it contains every set, which contradicts the second clause of
       thm-russell (01:322-326). The look-alike explanation is accurate. Same route as mine.
+  removed: true

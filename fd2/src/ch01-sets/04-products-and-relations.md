@@ -533,6 +533,136 @@ Fatal errors (0 for the step): testing inclusion on particular elements only (en
 A proof of \( (\Rightarrow) \) by contraposition (assume \( A \ne B \) and both nonempty, and exhibit a pair of \( A \times B \) outside \( B \times A \)) earns full marks if it finds the pair: 2 points for the witnesses and 4 for the pair and the check that it is outside \( B \times A \), in place of the two inclusions.
 :::
 
+### R. Review
+
+::: {#exr-images-and-preimages-r1}
+[R1]
+
+Here is a derivation of "if \( A \subseteq B \), then \( \powerset{A} \subseteq \powerset{B} \)". The steps "by def." unwind or rewind @def-subset and @def-power-set.
+
+```{=latex}
+\begin{center}
+$\begin{nd}
+  \open
+  \hypo {1} {A \subseteq B}
+  \have {2} {\forall x (x \in A \to x \in B)} \by{def.}{1}
+  \open[S_0]
+  \open
+  \hypo {3} {S_0 \in \powerset{A}}
+  \have {4} {S_0 \subseteq A} \by{def.}{3}
+  \have {5} {\forall x (x \in S_0 \to x \in A)} \by{def.}{4}
+  \open[x_0]
+  \open
+  \hypo {6} {x_0 \in S_0}
+  \have {7} {x_0 \in S_0 \to x_0 \in A} \Ae{5}
+  \have {8} {x_0 \in A} \ie{7,6}
+  \have {9} {x_0 \in A \to x_0 \in B} \Ae{2}
+  \have {10} {x_0 \in B} \ie{9,8}
+  \close
+  \have {11} {x_0 \in S_0 \to x_0 \in B} \ii{6-10}
+  \close
+  \have {12} {\forall x (x \in S_0 \to x \in B)} \Ai{6-11}
+  \have {13} {S_0 \subseteq B} \by{def.}{12}
+  \have {14} {S_0 \in \powerset{B}} \by{def.}{13}
+  \close
+  \have {15} {S_0 \in \powerset{A} \to S_0 \in \powerset{B}} \ii{3-14}
+  \close
+  \have {16} {\forall S (S \in \powerset{A} \to S \in \powerset{B})} \Ai{3-15}
+  \have {17} {\powerset{A} \subseteq \powerset{B}} \by{def.}{16}
+  \close
+  \have {18} {A \subseteq B \to \powerset{A} \subseteq \powerset{B}} \ii{1-17}
+\end{nd}$
+\end{center}
+```
+
+Write the proof as plain prose, the way a mathematician would. Then say which sentence of your proof carries each of the five boxes.
+:::
+
+::: {.solution}
+*Proof.* Suppose \( A \subseteq B \). Let \( S \in \powerset{A} \), so \( S \subseteq A \). Let \( x \in S \). Then \( x \in A \), since \( S \subseteq A \), and so \( x \in B \), since \( A \subseteq B \). Hence \( S \subseteq B \), that is, \( S \in \powerset{B} \). This proves \( \powerset{A} \subseteq \powerset{B} \).
+
+*The boxes.* "Suppose \( A \subseteq B \)" opens the \( \rulename{{\to}I} \) box \( \lines{1}{17} \); its closing line 18 is the silent frame of the whole proof. "Let \( S \in \powerset{A} \)" opens two boxes at once: the \( \rulename{\forall I} \) box for \( S_0 \) and the \( \rulename{{\to}I} \) box \( \lines{3}{14} \) inside it. "Let \( x \in S \)" likewise opens the \( \rulename{\forall I} \) box for \( x_0 \) and the \( \rulename{{\to}I} \) box \( \lines{6}{10} \). "Hence \( S \subseteq B \)" closes the two inner boxes (lines 11 and 12) and rewinds the definition (line 13). "This proves \( \powerset{A} \subseteq \powerset{B} \)" closes the \( S \) boxes (lines 15, 16) and rewinds (line 17).
+
+This is the passage from level 0 to level 3 of *Logic and Proof*, Section 8.3: each "let" carries a \( \rulename{\forall I} \) box together with the \( \rulename{{\to}I} \) box of a subset statement, the \( \rulename{\forall E} \) and \( \rulename{{\to}E} \) lines 7–10 become the two "since" clauses, the unwinding lines 2 and 5 go silent, line 4 becomes a "so" and line 14 a "that is", and the rewinding lines 13 and 17 are the two conclusions the prose states.
+:::
+
+::: {#exr-images-and-preimages-r2}
+[R2]
+
+Decide whether \( A \setminus (B \setminus C) = (A \setminus B) \setminus C \) for all sets \( A, B, C \), by a table of the eight possible memberships of a point \( x \) in \( A \), \( B \), \( C \). If the two sides can differ, turn a row where they differ into a counterexample.
+:::
+
+::: {.solution}
+Write \( P \), \( Q \), \( R \) for the statements \( x \in A \), \( x \in B \), \( x \in C \). By @def-set-operations, \( x \in A \setminus (B \setminus C) \) is \( P \wedge \neg(Q \wedge \neg R) \), and \( x \in (A \setminus B) \setminus C \) is \( (P \wedge \neg Q) \wedge \neg R \). The table:
+\[
+\begin{array}{ccc|cc}
+P & Q & R & P \wedge \neg (Q \wedge \neg R) & (P \wedge \neg Q) \wedge \neg R \\
+\hline
+\mathrm{T} & \mathrm{T} & \mathrm{T} & \mathrm{T} & \mathrm{F} \\
+\mathrm{T} & \mathrm{T} & \mathrm{F} & \mathrm{F} & \mathrm{F} \\
+\mathrm{T} & \mathrm{F} & \mathrm{T} & \mathrm{T} & \mathrm{F} \\
+\mathrm{T} & \mathrm{F} & \mathrm{F} & \mathrm{T} & \mathrm{T} \\
+\mathrm{F} & \mathrm{T} & \mathrm{T} & \mathrm{F} & \mathrm{F} \\
+\mathrm{F} & \mathrm{T} & \mathrm{F} & \mathrm{F} & \mathrm{F} \\
+\mathrm{F} & \mathrm{F} & \mathrm{T} & \mathrm{F} & \mathrm{F} \\
+\mathrm{F} & \mathrm{F} & \mathrm{F} & \mathrm{F} & \mathrm{F} \\
+\end{array}
+\]
+The columns differ in the first and third rows. Take the first row: put the point \( 1 \) in exactly the sets whose statement is true, all three, so \( A = B = C = \{1\} \). Then \( B \setminus C = \emptyset \), so \( A \setminus (B \setminus C) = \{1\} \); and \( A \setminus B = \emptyset \), so \( (A \setminus B) \setminus C = \emptyset \). The two sides differ, so the identity is false. (The third row gives \( A = C = \{1\} \), \( B = \emptyset \), with the same two answers.)
+
+Why a table suffices: each side's membership condition is a formula in \( P \), \( Q \), \( R \), and a row with the two columns different gives sets directly, which are then checked by computing both sides, as above. The truth tables of *Logic and Proof*, Chapter 4 add one more thing: by @fd1:cor-refuting-row, the first row shows that the sequent \( P \wedge \neg(Q \wedge \neg R) \vdash (P \wedge \neg Q) \wedge \neg R \) is not derivable, so the propositional rules cannot carry a point of the left side into the right side.
+:::
+
+::: {#exr-images-and-preimages-r3}
+[R3]
+
+Derive \( (P \wedge \neg Q) \to R \vdash P \to (Q \vee R) \). Then read the derivation as a proof that for sets \( A, B, C \), if \( A \setminus B \subseteq C \), then \( A \subseteq B \cup C \). Which step is classical?
+:::
+
+::: {.solution}
+The goal is an implication, so open a box on \( P \) with goal \( Q \vee R \). The premise can fire only on \( P \wedge \neg Q \), which needs \( \neg Q \), and nothing gives \( \neg Q \) outright. So split on \( Q \vee \neg Q \), by excluded middle (@fd1:prp-excluded-middle): in the case \( Q \) the goal is immediate, and in the case \( \neg Q \) the premise gives \( R \).
+
+```{=latex}
+\begin{center}
+$\begin{nd}
+  \hypo {1} {(P \wedge \neg Q) \to R}
+  \open
+  \hypo {2} {P}
+  \have {3} {Q \vee \neg Q} \lem{}
+  \open
+  \hypo {4} {Q}
+  \have {5} {Q \vee R} \oi{4}
+  \close
+  \open
+  \hypo {6} {\neg Q}
+  \have {7} {P \wedge \neg Q} \ai{2,6}
+  \have {8} {R} \ie{1,7}
+  \have {9} {Q \vee R} \oi{8}
+  \close
+  \have {10} {Q \vee R} \oe{3,4-5,6-9}
+  \close
+  \have {11} {P \to (Q \vee R)} \ii{2-10}
+\end{nd}$
+\end{center}
+```
+
+*As sets.* Suppose \( A \setminus B \subseteq C \), and let \( x \in A \). Take \( P \), \( Q \), \( R \) to be \( x \in A \), \( x \in B \), \( x \in C \). By @def-subset and @def-set-operations, the hypothesis at this \( x \) is \( (P \wedge \neg Q) \to R \), and the goal \( x \in B \cup C \) is \( Q \vee R \). The derivation, used as a derived rule (@fd1:def-derived-rule), gives \( P \to (Q \vee R) \), and with \( P \) it gives \( x \in B \cup C \). In prose: either \( x \in B \), and then \( x \in B \cup C \); or \( x \notin B \), and then \( x \in A \setminus B \subseteq C \), so \( x \in C \subseteq B \cup C \). Since \( x \) was arbitrary, \( A \subseteq B \cup C \).
+
+The classical step is line 3, the case split "\( x \in B \) or \( x \notin B \)" by excluded middle, which is derived with \( \rulename{RAA} \) (@fd1:def-rule-raa).
+:::
+
+::: {#exr-images-and-preimages-r4}
+[R4]
+
+Show that there is no set that contains every singleton \( \{x\} \) as an element.
+:::
+
+::: {.solution}
+Suppose \( S \) were such a set. Let \( T \coloneqq \{ s \in S : s \text{ is a singleton} \} \), a set by specification (@def-set-builder); its elements are sets, since \( S \) may also contain numbers, and those are excluded. Consider the union \( \bigcup T \) of the sets in \( T \) (@def-family-union-intersection, the form \( \bigcup \sS \) for a set \( \sS \) whose elements are sets). For every set \( x \), the singleton \( \{x\} \) lies in \( S \), hence in \( T \), and \( x \in \{x\} \); so \( x \in \bigcup T \). Thus \( \bigcup T \) is a set of which every set is an element, and @thm-russell says there is no such set. This contradiction shows that no such \( S \) exists.
+
+*The tool, and the look-alike.* The tool is Russell's theorem, @thm-russell, applied not to \( S \) but to \( \bigcup T \). Applied to \( S \) directly, it says only that \( \{ z \in S : z \notin z \} \notin S \), and that does not contradict anything: \( S \) was supposed to contain singletons, not that set. The move that makes it work is the union, which turns "contains the singleton of every set" into "contains every set". A direct diagonal construction inside \( S \) also works, but it repeats the proof of @thm-russell instead of using it.
+:::
+
 <!-- dependency ledger
 def-ordered-pair (claim): pairs can be built from sets (Kuratowski) | F3.1 (prose pointer); nothing depends on it
 def-ordered-pair (claim): (<=) of the characteristic property is =E (substitution of equals) | def-rules-equality (cited)
@@ -564,4 +694,7 @@ exm-method-uniqueness (claim): the quick check after it, x^3 = -8 forces x = -2;
 exm-coordinates-unique (solution): from p = (a, b) and p = (a', b') infer (a, b) = (a', b') | def-rules-equality (cited after def-ordered-pair)
 exr-products-and-relations-b4 (solution): (a) solving the linear system and the check by exact arithmetic; (b) 1^2 = (-1)^2 = 1 and 1 != -1 | school algebra
 exr-products-and-relations-b4 (solution): (d), (e) membership of (a, b) and (e, e) via (*) | (*), proved in the text after def-cartesian-product
+exr-images-and-preimages-r1 (solution): levels of proof | F1.5 (promised): def-levels-of-proof (prose pointer, F1.5 §03)
+exr-images-and-preimages-r1 (solution): forall-I / forall-E rules and flagged boxes | F1.4 (promised): def-rules-universal (prose pointer)
+exr-images-and-preimages-r4 (solution): every set x is an element of {x}; "is a singleton" is a property usable in specification | def-set-builder (F2.1 §02, listing)
 -->

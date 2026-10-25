@@ -3413,3 +3413,27 @@ items:
     model: claude-opus-5-5
     evidence: Only ledger 04:562 changed, and it now quotes the 04:532 pointer exactly ('*Logic and Proof*,
       Chapter 8's catalogue', entry (N1)); the solution and the marking scheme are unchanged.
+- key: exr-images-and-preimages-r1
+  kind: exr
+  file: 04-products-and-relations.md
+  line: 538
+  hash: 45a28ff4d4a4
+  verdicts: []
+- key: exr-images-and-preimages-r2
+  kind: exr
+  file: 04-products-and-relations.md
+  line: 589
+  hash: d105429cce7e
+  verdicts: []
+- key: exr-images-and-preimages-r3
+  kind: exr
+  file: 04-products-and-relations.md
+  line: 616
+  hash: ebda37a879f9
+  verdicts: []
+- key: exr-images-and-preimages-r4
+  kind: exr
+  file: 04-products-and-relations.md
+  line: 654
+  hash: faf3a07684a2
+  verdicts: []

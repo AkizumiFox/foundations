@@ -2,7 +2,8 @@
 Representatives in a window; exact Fractions for the reals-mod-integers part (c)."""
 from fractions import Fraction as F
 
-QUOTED = {"qc_bad_pair": (0, 6), "c_diff_num": 16, "c_den": 9, "e_pair": ((1, 2), (2, 4))}
+QUOTED = {"qc_bad_pair": (0, 6), "c_diff_num": 16, "c_den": 9, "e_pair": ((1, 2), (2, 4)),
+          "f_pair": (1, -1), "f_values": (1, -1)}
 
 W = range(-30, 31)
 def wd(m_in, m_out, g):
@@ -41,4 +42,16 @@ rel = lambda p, q: p[0] * q[1] == p[1] * q[0]
 assert all(rel((a + b, b), (c + d_, d_)) for (a, b) in P for (c, d_) in P if rel((a, b), (c, d_)))
 # (e) [(a,b)] -> [(a+1, b+1)] fails at (1,2) ~ (2,4)
 assert rel((1, 2), (2, 4)) and not rel((2, 3), (3, 5)) and 2 * 5 == 10 and 3 * 3 == 9
+# (f) x ~ y iff x^2 = y^2 on R; [x] -> x^3 fails at 1, -1
+a, b = QUOTED["f_pair"]
+assert a * a == b * b and (a ** 3, b ** 3) == QUOTED["f_values"] and a ** 3 != b ** 3
+# (g) [x] -> |x| is well defined: on a grid of exact rationals (and their negatives),
+# equal squares give equal absolute values; and equal squares of non-negatives are equal
+R = sorted({F(p, q) for p in range(-20, 21) for q in range(1, 7)})
+for x in R:
+    for y in R:
+        if x * x == y * y:
+            assert abs(x) == abs(y)
+        if x >= 0 and y >= 0 and x * x == y * y:
+            assert x == y
 print("exr-equivalence-relations-b4: all quoted values check")

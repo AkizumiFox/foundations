@@ -243,7 +243,7 @@ A partially ordered set \( (X, \preceq) \) is **well-ordered**, and \( \preceq \
 \( (\nN, \le) \) is well-ordered: \( \le \) is total, and @thm-well-ordering supplies the least elements. \( (\nZ, \le) \) is not: \( \nZ \) itself has no least element, since for every \( n \in \nZ \) also \( n - 1 \in \nZ \) (@prp-integers-closed (a)) and \( n - 1 < n \). Nor is the set of positive rationals, which has no least element (\( q/2 < q \)). The word "non-empty" is needed because \( \emptyset \) has no least element in any order. Totality is in fact automatic: any two elements \( x, y \) form a non-empty set \( \{x, y\} \), whose least element is below the other one. Upper bounds work too: in \( (\nN, \le) \) a non-empty set bounded above has a greatest element (@cor-well-ordering-integers). Exercise C1 gives a well-ordered set that does not look like \( \nN \).
 
 ::: {.remark}
-In a general partially ordered set, one may ask: if every **chain** (a subset on which \( \preceq \) is total) has an upper bound, must there be a maximal element? For a non-empty partially ordered set the answer "yes" is Zorn's lemma, and it cannot be proved from what we have: it is equivalent to the axiom of choice, which Section 6.1 states (@ax-choice). Chapter 6 states Zorn's lemma and uses it, and *Axiomatic Set Theory*, Chapter 4 proves it equivalent to the axiom of choice, together with the other equivalents, among them the claim that every set has a well-order.
+In a general partially ordered set, one may ask: if every **chain** (a subset on which \( \preceq \) is total) has an upper bound, must there be a maximal element? For a non-empty partially ordered set the answer "yes" is Zorn's lemma, and it cannot be proved from what we have. Chapter 6 adds the axiom of choice, states Zorn's lemma and uses it, and proves from Zorn's lemma that every set has a well-order; the proof that the axiom of choice implies Zorn's lemma is left to *Axiomatic Set Theory*, Chapter 4.
 :::
 
 ## Exercises
@@ -491,7 +491,7 @@ exm-divisibility-lcm (solution): 1..5 contain no common multiple of 2 and 3 | ar
 exm-divisibility-lcm (claim): (after it) the fact was proved before, in F2.2 §02 | exr-induction-in-practice-b3 (c) (pointer; nothing here depends on it)
 exm-divisibility-lcm (claim): {x in Q : x > 0, x^2 < 2} non-empty (1) and bounded above by 2; no rational supremum; sqrt 2 its supremum in R | R order (school fact) for the bound; AN1.1 (prose pointer; nothing here depends on it)
 def-well-ordered-set (claim): positive rationals: q/2 < q | R arithmetic
-def-well-ordered-set (claim): (remark) Zorn's lemma, axiom of choice, well-ordering theorem | F2.3 (choice stated), F2.4 (Zorn stated), ST.4 (equivalences with choice and the well-ordering theorem proved) (prose pointers; nothing depends on them)
+def-well-ordered-set (claim): (remark) Zorn's lemma, axiom of choice, well-ordering theorem | F2.4 (choice, Zorn and the well-ordering theorem; prose pointer), ST.4 (AC ⇒ Zorn); nothing depends on them
 def-well-ordered-set (claim): N bounded above has a greatest element | cor-well-ordering-integers (cited; N subset of Z)
 exr-orders-a1 (solution): multiples of 6 below 12; 4 does not divide 6 | arithmetic; verify/ch05/exr-orders-a1.py
 exr-orders-a1 (solution): finite set -> list x_1, ..., x_n | def-finite (F2.3 §01, cited)

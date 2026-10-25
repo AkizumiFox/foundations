@@ -425,7 +425,7 @@ The inclusion is proper because \( 1 \notin 2\nN \): if \( n = 0 \), then \( 2n 
 If \( \nN \) were finite, @thm-finite-no-proper-copy would forbid a bijection from \( \nN \) onto its proper subset \( 2\nN \). So \( \nN \) is infinite. Every guest still has a room, and the odd rooms are now free.
 :::
 
-The finite intuition "a proper part is smaller" fails for \( \nN \), and it fails exactly because \( \nN \) is infinite. Section 6.1 proves that it fails for **every** infinite set.
+The finite intuition "a proper part is smaller" fails for \( \nN \), and it fails exactly because \( \nN \) is infinite.
 
 ::: {.warning}
 \( A \subsetneq B \) does not make \( A \) smaller than \( B \) when \( B \) is infinite: \( 2\nN \subsetneq \nN \) and \( \card{2\nN} = \card{\nN} \). Equinumerous is not "one is a subset of the other", in either direction.
@@ -458,7 +458,7 @@ Suppose it is finite. It is non-empty, since \( 2 \) is prime, so it is \( \{p_1
 ::: {.remark}
 [Looking ahead]
 
-Chapter 5 defines equivalence relations on a set, and meets equinumerosity again as a relation that behaves like one without living on a set.
+Chapter 5 defines equivalence relations on a set, and meets equinumerosity again as a relation that behaves like one without living on a set. Section 4.5 runs the hotel's move inside any set that contains a copy of \( \nN \).
 :::
 
 ## Exercises
@@ -663,10 +663,46 @@ R \colon B^A \to B^{A'} \times B , \qquad R(f) \coloneqq (f|_{A'}, f(a)) .
 Fatal errors (0 for the step): "each of the \( m \) elements has \( n \) possible values, so \( n^m \)" with no bijection or induction; a step that applies the hypothesis to a set not shown to have \( m \) elements.
 :::
 
-<!-- S3: rewrite per blueprint (4.1: new example counting injections {1..k} -> {1..n}; exercise moved from old 5.1 below) -->
+::: {#exr-finite-sets-c3}
+[C3: Counting injections]
+
+Let \( k, n \in \nN \), and let \( I(k, n) \) be the set of injections \( \{1, \dots, k\} \to \{1, \dots, n\} \). For \( n \ge 1 \) and \( v \in \{1, \dots, n\} \), let \( s_v \colon \{1, \dots, n - 1\} \to \{1, \dots, n\} \setminus \{v\} \) send \( x \) to \( x \) if \( x < v \) and to \( x + 1 \) if \( x \ge v \). One checks that \( s_v \) is a bijection, with inverse \( t_v \) given by \( t_v(y) = y \) for \( y < v \) and \( t_v(y) = y - 1 \) for \( y > v \); you may use this.
+
+::: {.enumerate options="label=(\alph*)"}
+1. Show that \( I(k, n) = \emptyset \) if \( k > n \).
+2. Let \( k + 1 \le n \). Show that \( \varphi \mapsto \bigl(\varphi(k + 1),\ t_v \circ \varphi|_{\{1, \dots, k\}}\bigr) \), where \( v = \varphi(k + 1) \), is a bijection \( I(k + 1, n) \to \{1, \dots, n\} \times I(k, n - 1) \).
+3. Deduce that \( I(k, n) \) has \( n!/(n - k)! \) elements when \( k \le n \). How many injections \( \{1, 2\} \to \{1, 2, 3\} \) are there? List them.
+:::
+:::
+
+::: {.solution}
+[Hint 1]
+
+For (b), the inverse sends \( (v, \psi) \) to the function equal to \( s_v \circ \psi \) on \( \{1, \dots, k\} \) and to \( v \) at \( k + 1 \). To check the facts about \( s_v \) and \( t_v \) of the stem, treat \( x < v \) and \( x \ge v \) (and \( y < v \), \( y > v \)) separately; \( y - 1 \in \nN \) for \( y > v \ge 1 \).
+:::
+
+::: {.solution}
+(a) \( \{1, \dots, k\} \) has \( k \) elements and \( \{1, \dots, n\} \) has \( n < k \) (@def-finite), so there is no injection by @cor-pigeonhole-finite-sets (a).
+
+(b) Write \( \Phi(\varphi) \) for the pair. Since \( \varphi \) is injective, \( \varphi(i) \ne \varphi(k + 1) = v \) for \( i \le k \). So \( \varphi|_{\{1, \dots, k\}} \) takes values in \( \{1, \dots, n\} \setminus \{v\} \); with its codomain shrunk to \( \{1, \dots, n\} \setminus \{v\} \) (same rule, @def-function) it is still injective, and \( t_v \circ \varphi|_{\{1, \dots, k\}} \in I(k, n - 1) \), as a composite of injections (@prp-restriction-properties (d), @thm-composition-injective-surjective (a)). For \( (v, \psi) \) in the target, let \( \Psi(v, \psi) \) be \( s_v \circ \psi \) on \( \{1, \dots, k\} \) and \( v \) at \( k + 1 \). This is a function by @thm-gluing, since the two pieces are disjoint and cover \( \{1, \dots, k + 1\} \). It is injective by @prp-injective-across-pieces: \( s_v \circ \psi \) is injective, a map on one point is injective, and the values of \( s_v \) differ from \( v \). Round trips: \( \Psi(\Phi(\varphi)) \) takes the value \( v = \varphi(k + 1) \) at \( k + 1 \) and \( s_v(t_v(\varphi(i))) = \varphi(i) \) at \( i \le k \), so it is \( \varphi \) (@prp-function-equality). And \( \Phi(\Psi(v, \psi)) = (v, t_v \circ s_v \circ \psi) = (v, \psi) \). By @thm-bijection-iff-inverse, \( \Phi \) is a bijection.
+
+(c) Induction on \( k \) (@fd1:ax-induction), with the statement "for every \( n \ge k \), \( I(k, n) \) has \( n!/(n - k)! \) elements".
+
+*Base case.* \( I(0, n) \) has one element, the empty function, which is injective (@prp-empty-function (a)); and \( n!/n! = 1 \).
+
+*Step.* Let \( k + 1 \le n \). Then \( n \ge 1 \) and \( k \le n - 1 \), so \( I(k, n - 1) \) has \( (n - 1)!/(n - 1 - k)! \) elements. By (b) and @exr-finite-sets-c2 (a), \( I(k + 1, n) \) has \( n \cdot (n - 1)!/(n - 1 - k)! = n!/(n - (k + 1))! \) elements, using \( n! = (n - 1)! \, n \) (@def-sum-product) and @prp-equinumerous-properties with @cor-finite-size-unique to carry the count across \( \Phi \).
+
+So \( I(2, 3) \) has \( 3!/1! = 6 \) elements. Written as value pairs \( (\varphi(1), \varphi(2)) \), they are \( (1, 2), (1, 3), (2, 1), (2, 3), (3, 1), (3, 2) \).
+
+**Marking scheme.** (10 points)
+- 2: (a) the two sizes 1, pigeonhole 1.
+- 5: (b) the codomain shrunk and the restriction landing in \( I(k, n - 1) \) 1, \( \Psi \) by gluing 1, \( \Psi \) injective across the pieces 1, the round trips 2.
+- 3: (c) base case 1, step with @exr-finite-sets-c2 (a) 2.
+Fatal errors (0 for the step): "\( n \) choices for the first value, \( n - 1 \) for the next, …", with no bijection behind it.
+:::
 
 ::: {#exr-restriction-extension-and-gluing-c1}
-[C1: Counting extensions]
+[C4: Counting extensions]
 
 Let \( A \subseteq X \) and \( g \colon A \to Y \), and let \( E \) be the set of all extensions of \( g \) to \( X \). Show that \( f \mapsto f|_{X \setminus A} \) is a bijection from \( E \) to \( Y^{X \setminus A} \).
 :::
@@ -775,6 +811,8 @@ exr-finite-sets-b3 (solution): {1, ..., n + 1} = {1, ..., n} u {n + 1}; the unio
 exr-finite-sets-c1 (solution): phi^(-1) is a bijection; {1, ..., n + 1} = {1, ..., n} u {n + 1}, n + 1 not in {1, ..., n} | thm-bijection-iff-inverse, def-inverse-function, lem-naturals-arithmetic (e) (cited)
 exr-finite-sets-c2 (solution): mn in N; n^m in N; B^A equinumerous with {1, ..., n^(m+1)} via R | lem-naturals-arithmetic (b), prp-power-laws (d), prp-equinumerous-properties (b), (c) (cited)
 exr-finite-sets-c2 (solution): restriction f|_A' is a function A' -> B | restriction, F2.6 §01 (no label)
+exr-finite-sets-c3 (claim): s_v is a bijection with inverse t_v (stated as a fact) | lem-naturals-arithmetic (c) for y - 1 in N; verify/ch04/exr-finite-sets-c3.py
+exr-finite-sets-c3 (solution): n! = (n-1)! n; I(2,3) has 6 elements | def-sum-product (cited); exr-finite-sets-c2 (an exercise cited by an exercise); verify/ch04/exr-finite-sets-c3.py
 exr-finite-sets-r1 (solution): 4a + 6b = 2(2a + 3b); 2a + 3b in Z; 4*3 + 6*(-2) = 0; 1 = 2*0 + 1; 3n = 3n' gives n = n' | R arithmetic, school fact; prp-integers-closed (a), def-parity, thm-even-or-odd, exm-method-surjectivity, exm-method-injectivity, def-ordered-pair, thm-division-algorithm (cited)
 exr-finite-sets-r2 (solution): y = y * 1; a positive divisor of 2 is at most 2; -y + y = 0; x + (1 - x) = 1; -y in Z | R arithmetic and order, school fact; prp-integers-closed (a) (cited for 1 - x); def-divides (F2.1 §01), fd1:prp-bounded-quantifier-negation, fd1:prp-exists-forall-swap (cited)
 exr-finite-sets-r3 (solution): structural induction; truth values of atoms, not, and, or | fd1:thm-structural-induction, fd1:def-truth-value, fd1:thm-adequate-connectives (cited); the all-F and all-T valuations (F1.3 §04, named after fd1:def-valuation)

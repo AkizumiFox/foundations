@@ -1211,11 +1211,17 @@ items:
     date: '2026-10-25'
     model: claude-opus-5-5
     evidence: 'Only the ledger line changed: restriction is now sourced to F2.1 §05, which is correct.'
+- key: exr-finite-sets-c3
+  kind: exr
+  file: 01-finite-sets.md
+  line: 666
+  hash: a150238ff0bc
+  verdicts: []
 - key: exr-restriction-extension-and-gluing-c1
   kind: exr
   file: 01-finite-sets.md
-  line: 668
-  hash: 1f1b58309aa7
+  line: 704
+  hash: 2d8847b7b265
   verdicts:
   - stage: S5a
     verdict: correct
@@ -1261,7 +1267,7 @@ items:
 - key: exr-finite-sets-r1
   kind: exr
   file: 01-finite-sets.md
-  line: 692
+  line: 728
   hash: 30c0aeac08f1
   verdicts:
   - stage: S8
@@ -1276,7 +1282,7 @@ items:
 - key: exr-finite-sets-r2
   kind: exr
   file: 01-finite-sets.md
-  line: 709
+  line: 745
   hash: f74bde38a3da
   verdicts:
   - stage: S8
@@ -1291,7 +1297,7 @@ items:
 - key: exr-finite-sets-r3
   kind: exr
   file: 01-finite-sets.md
-  line: 732
+  line: 768
   hash: ba2146dd6d29
   verdicts:
   - stage: S8
@@ -2259,7 +2265,7 @@ items:
 - key: exm-five-strings-diagonal
   kind: exm
   file: 03-diagonal-arguments.md
-  line: 11
+  line: 9
   hash: 2254fb87eee9
   verdicts:
   - stage: S5a
@@ -2285,7 +2291,7 @@ items:
 - key: check:03-diagonal-arguments:1
   kind: check
   file: 03-diagonal-arguments.md
-  line: 29
+  line: 27
   hash: 7701303e5177
   verdicts:
   - stage: S5a
@@ -2307,7 +2313,7 @@ items:
 - key: thm-binary-sequences-uncountable
   kind: thm
   file: 03-diagonal-arguments.md
-  line: 65
+  line: 63
   hash: 20cd9d97499c
   verdicts:
   - stage: S5a
@@ -2328,7 +2334,7 @@ items:
 - key: proof:thm-binary-sequences-uncountable
   kind: proof
   file: 03-diagonal-arguments.md
-  line: 86
+  line: 84
   hash: 2914e2dc3eca
   verdicts:
   - stage: S5a
@@ -2352,7 +2358,7 @@ items:
 - key: exm-method-diagonal
   kind: exm
   file: 03-diagonal-arguments.md
-  line: 96
+  line: 94
   hash: 4ff5579e659f
   verdicts:
   - stage: S5a
@@ -2376,7 +2382,7 @@ items:
 - key: check:03-diagonal-arguments:2
   kind: check
   file: 03-diagonal-arguments.md
-  line: 106
+  line: 104
   hash: 8f02c6bfefb4
   verdicts:
   - stage: S5a
@@ -2398,7 +2404,7 @@ items:
 - key: check:03-diagonal-arguments:3
   kind: check
   file: 03-diagonal-arguments.md
-  line: 114
+  line: 112
   hash: 6e6465b73e7a
   verdicts:
   - stage: S5a
@@ -2420,7 +2426,7 @@ items:
 - key: exm-diagonal-outgrows-list
   kind: exm
   file: 03-diagonal-arguments.md
-  line: 126
+  line: 124
   hash: ea87362eb737
   verdicts:
   - stage: S5a
@@ -2445,7 +2451,7 @@ items:
 - key: thm-cantor
   kind: thm
   file: 03-diagonal-arguments.md
-  line: 148
+  line: 146
   hash: 8a9ea7b71bab
   verdicts:
   - stage: S5a
@@ -2467,7 +2473,7 @@ items:
 - key: proof:thm-cantor
   kind: proof
   file: 03-diagonal-arguments.md
-  line: 162
+  line: 160
   hash: 5350b05bdaa0
   verdicts:
   - stage: S5a
@@ -2491,7 +2497,7 @@ items:
 - key: cor-powerset-naturals-uncountable
   kind: cor
   file: 03-diagonal-arguments.md
-  line: 178
+  line: 176
   hash: 70a95229f124
   verdicts:
   - stage: S5a
@@ -2511,7 +2517,7 @@ items:
 - key: proof:cor-powerset-naturals-uncountable
   kind: proof
   file: 03-diagonal-arguments.md
-  line: 184
+  line: 182
   hash: 8980286e4b5b
   verdicts:
   - stage: S5a
@@ -2532,7 +2538,7 @@ items:
 - key: def-decimal-expansion
   kind: def
   file: 03-diagonal-arguments.md
-  line: 198
+  line: 196
   hash: 524f6baae6b4
   verdicts:
   - stage: S5a
@@ -2578,7 +2584,7 @@ items:
 - key: thm-reals-uncountable-decimal
   kind: thm
   file: 03-diagonal-arguments.md
-  line: 241
+  line: 239
   hash: 820af0fe836d
   verdicts:
   - stage: S5a
@@ -2613,7 +2619,7 @@ items:
 - key: proof:thm-reals-uncountable-decimal
   kind: proof
   file: 03-diagonal-arguments.md
-  line: 251
+  line: 249
   hash: df5f0a7c5566
   verdicts:
   - stage: S5a
@@ -2649,7 +2655,7 @@ items:
 - key: exr-diagonal-arguments-a1
   kind: exr
   file: 03-diagonal-arguments.md
-  line: 278
+  line: 276
   hash: ad792aacfe3c
   verdicts:
   - stage: S5a
@@ -2680,7 +2686,7 @@ items:
 - key: exr-diagonal-arguments-b1
   kind: exr
   file: 03-diagonal-arguments.md
-  line: 303
+  line: 301
   hash: 5bd6bf86843a
   verdicts:
   - stage: S5a
@@ -2710,7 +2716,7 @@ items:
 - key: exr-diagonal-arguments-b2
   kind: exr
   file: 03-diagonal-arguments.md
-  line: 315
+  line: 313
   hash: 4c5c16f1b27d
   verdicts:
   - stage: S5a
@@ -2752,7 +2758,7 @@ items:
 - key: exr-diagonal-arguments-b3
   kind: exr
   file: 03-diagonal-arguments.md
-  line: 325
+  line: 323
   hash: 57f097f81829
   verdicts:
   - stage: S5a
@@ -2798,8 +2804,8 @@ items:
 - key: exr-diagonal-arguments-b4
   kind: exr
   file: 03-diagonal-arguments.md
-  line: 341
-  hash: d2ef3235c99a
+  line: 339
+  hash: e5dddffc34d6
   verdicts:
   - stage: S5a
     verdict: correct
@@ -2863,7 +2869,7 @@ items:
 - key: exr-diagonal-arguments-c1
   kind: exr
   file: 03-diagonal-arguments.md
-  line: 369
+  line: 367
   hash: 4e6a7f663fb3
   verdicts:
   - stage: S5a
@@ -2895,7 +2901,7 @@ items:
 - key: exr-diagonal-arguments-c2
   kind: exr
   file: 03-diagonal-arguments.md
-  line: 390
+  line: 388
   hash: 2e7f3671774d
   verdicts:
   - stage: S5a
@@ -2994,10 +3000,62 @@ items:
     model: claude-opus-5-5
     evidence: 05:47-49. The identity is injective, and the composition step cites thm-composition-injective-surjective
       (a).
+- key: prp-injection-gives-surjection
+  kind: prp
+  file: 04-comparing-cardinalities.md
+  line: 56
+  hash: 48416b4b09fd
+  verdicts: []
+- key: proof:prp-injection-gives-surjection
+  kind: proof
+  file: 04-comparing-cardinalities.md
+  line: 62
+  hash: 85ee05fc2146
+  verdicts: []
+- key: check:04-comparing-cardinalities:1
+  kind: check
+  file: 04-comparing-cardinalities.md
+  line: 68
+  hash: 69e125c73130
+  verdicts:
+  - stage: S5a
+    verdict: correct
+    by: refereeA
+    hash: 3bbc043c9b2e
+    date: '2026-10-25'
+    model: claude-opus-5-5
+    evidence: '04:186-188: the two clauses do not overlap because 5 ∉ [0,1]. Values: x/2 ∈ [0,1/2] and
+      1 ∈ [0,1]. Injective within [0,1], and across the two clauses because x/2 ≤ 1/2 < 1. The inclusion
+      handles the other direction, then SB applies.'
+  - stage: S5b
+    verdict: minor
+    by: refereeB
+    hash: 3bbc043c9b2e
+    date: '2026-10-25'
+    model: claude-opus-5-5
+    evidence: 04-comparing-cardinalities.md:187 In the injectivity sentence the comparison is between
+      a point and 5, when it should be between their images.
+  - stage: S7r
+    verdict: correct
+    by: rereferee
+    hash: 42c432524315
+    date: '2026-10-25'
+    model: claude-opus-5-5
+    evidence: 'Line 187: inclusion is injective; the reverse map x->x/2, 5->1 is well defined because
+      5 is not in [0,1]. It is injective within [0,1], and its images (at most 1/2) never equal 1, the
+      image of 5. Schroder-Bernstein applies.'
+  - stage: S7r
+    verdict: correct
+    by: rereferee
+    hash: 42c432524315
+    date: '2026-10-25'
+    model: claude-opus-5-5
+    evidence: The injectivity clause now says that x/2 ≤ 1/2 < 1, the image of 5. This is correct.
+  old_key: check:04-comparing-cardinalities:2
 - key: thm-schroder-bernstein
   kind: thm
   file: 04-comparing-cardinalities.md
-  line: 60
+  line: 80
   hash: be6f47731dda
   verdicts:
   - stage: S5a
@@ -3051,7 +3109,7 @@ items:
 - key: proof:thm-schroder-bernstein
   kind: proof
   file: 04-comparing-cardinalities.md
-  line: 82
+  line: 102
   hash: c4396f118b46
   verdicts:
   - stage: S5a
@@ -3089,7 +3147,7 @@ items:
 - key: exm-method-injections-both-ways
   kind: exm
   file: 04-comparing-cardinalities.md
-  line: 150
+  line: 172
   hash: 5eeceb0dbb69
   verdicts:
   - stage: S5a
@@ -3110,50 +3168,36 @@ items:
     evidence: '04:172-180: the template matches blueprint ch03-deepen §4.4 item 3. ''the warnings after
       @def-card-le and after @exm-reals-open-interval'' points to real warnings (04:29, 04:255); this
       wording is S3 deviation 5. The x/2 failure example is correct.'
-- key: check:04-comparing-cardinalities:1
+- key: check:04-comparing-cardinalities:2
   kind: check
   file: 04-comparing-cardinalities.md
-  line: 160
+  line: 182
   hash: 42c432524315
   verdicts:
   - stage: S5a
     verdict: correct
     by: refereeA
-    hash: 3bbc043c9b2e
+    hash: 63f7568087b4
     date: '2026-10-25'
     model: claude-opus-5-5
-    evidence: '04:186-188: the two clauses do not overlap because 5 ∉ [0,1]. Values: x/2 ∈ [0,1/2] and
-      1 ∈ [0,1]. Injective within [0,1], and across the two clauses because x/2 ≤ 1/2 < 1. The inclusion
-      handles the other direction, then SB applies.'
+    evidence: '04:264: n ↦ (n,1) is injective by def-ordered-pair. Injectivity of 2^m 3^n is the statement
+      of thm-product-countable (01-countable-sets.md:227, in Section 3.1, which matches the prose). SB
+      then gives a bijection ℕ → ℕ×ℕ, which is countably infinite by def-countably-infinite (01:41, either
+      direction allowed).'
   - stage: S5b
-    verdict: minor
+    verdict: correct
     by: refereeB
-    hash: 3bbc043c9b2e
+    hash: 63f7568087b4
     date: '2026-10-25'
     model: claude-opus-5-5
-    evidence: 04-comparing-cardinalities.md:187 In the injectivity sentence the comparison is between
-      a point and 5, when it should be between their images.
-  - stage: S7r
-    verdict: correct
-    by: rereferee
-    hash: 42c432524315
-    date: '2026-10-25'
-    model: claude-opus-5-5
-    evidence: 'Line 187: inclusion is injective; the reverse map x->x/2, 5->1 is well defined because
-      5 is not in [0,1]. It is injective within [0,1], and its images (at most 1/2) never equal 1, the
-      image of 5. Schroder-Bernstein applies.'
-  - stage: S7r
-    verdict: correct
-    by: rereferee
-    hash: 42c432524315
-    date: '2026-10-25'
-    model: claude-opus-5-5
-    evidence: The injectivity clause now says that x/2 ≤ 1/2 < 1, the image of 5. This is correct.
-  old_key: check:04-comparing-cardinalities:2
+    evidence: '04:264: (n,1) is injective by def-ordered-pair, and 2^m3^n is from the proof of thm-product-countable
+      (01:230). def-countably-infinite (01:44) itself allows a bijection N → A. ''Section 3.1 showed only
+      that N×N is countable'' is true: thm-product-countable states only countability.'
+  old_key: check:04-comparing-cardinalities:3
 - key: exm-closed-open-interval
   kind: exm
   file: 04-comparing-cardinalities.md
-  line: 172
+  line: 194
   hash: 9af3c9480dfa
   verdicts:
   - stage: S5a
@@ -3211,7 +3255,7 @@ items:
 - key: exm-reals-open-interval
   kind: exm
   file: 04-comparing-cardinalities.md
-  line: 209
+  line: 231
   hash: a8a8b7bc038d
   verdicts:
   - stage: S5a
@@ -3260,36 +3304,16 @@ items:
     evidence: 04-comparing-cardinalities.md:237-249 math rechecked (t∘s=id, s∘t=id, affine maps, Schroder-Bernstein
       for general intervals); ledger 04:467 now cites verify/ch03/exm-reals-open-interval.py, which exists
       and runs clean
-- key: check:04-comparing-cardinalities:2
+- key: check:04-comparing-cardinalities:3
   kind: check
   file: 04-comparing-cardinalities.md
-  line: 237
+  line: 259
   hash: 63f7568087b4
-  verdicts:
-  - stage: S5a
-    verdict: correct
-    by: refereeA
-    hash: 63f7568087b4
-    date: '2026-10-25'
-    model: claude-opus-5-5
-    evidence: '04:264: n ↦ (n,1) is injective by def-ordered-pair. Injectivity of 2^m 3^n is the statement
-      of thm-product-countable (01-countable-sets.md:227, in Section 3.1, which matches the prose). SB
-      then gives a bijection ℕ → ℕ×ℕ, which is countably infinite by def-countably-infinite (01:41, either
-      direction allowed).'
-  - stage: S5b
-    verdict: correct
-    by: refereeB
-    hash: 63f7568087b4
-    date: '2026-10-25'
-    model: claude-opus-5-5
-    evidence: '04:264: (n,1) is injective by def-ordered-pair, and 2^m3^n is from the proof of thm-product-countable
-      (01:230). def-countably-infinite (01:44) itself allows a bijection N → A. ''Section 3.1 showed only
-      that N×N is countable'' is true: thm-product-countable states only countability.'
-  old_key: check:04-comparing-cardinalities:3
+  verdicts: []
 - key: exr-comparing-cardinalities-a1
   kind: exr
   file: 04-comparing-cardinalities.md
-  line: 255
+  line: 277
   hash: d515bbed4fbe
   verdicts:
   - stage: S5a
@@ -3321,7 +3345,7 @@ items:
 - key: exr-comparing-cardinalities-b1
   kind: exr
   file: 04-comparing-cardinalities.md
-  line: 286
+  line: 308
   hash: 6db348595218
   verdicts:
   - stage: S5a
@@ -3364,7 +3388,7 @@ items:
 - key: exr-comparing-cardinalities-b2
   kind: exr
   file: 04-comparing-cardinalities.md
-  line: 308
+  line: 330
   hash: 898dbe4a1f68
   verdicts:
   - stage: S5a
@@ -3396,7 +3420,7 @@ items:
 - key: exr-comparing-cardinalities-b3
   kind: exr
   file: 04-comparing-cardinalities.md
-  line: 322
+  line: 344
   hash: adf23f1f10f4
   verdicts:
   - stage: S5a
@@ -3437,7 +3461,7 @@ items:
 - key: exr-comparing-cardinalities-b4
   kind: exr
   file: 04-comparing-cardinalities.md
-  line: 338
+  line: 360
   hash: 780fe382c241
   verdicts:
   - stage: S5a
@@ -3489,7 +3513,7 @@ items:
 - key: exr-comparing-cardinalities-c1
   kind: exr
   file: 04-comparing-cardinalities.md
-  line: 372
+  line: 394
   hash: b04dcb9849b4
   verdicts:
   - stage: S5a
@@ -3524,7 +3548,7 @@ items:
 - key: exr-comparing-cardinalities-c2
   kind: exr
   file: 04-comparing-cardinalities.md
-  line: 416
+  line: 438
   hash: 490def46136b
   verdicts:
   - stage: S5a
@@ -3567,7 +3591,7 @@ items:
 - key: def-disjoint-union
   kind: def
   file: 05-cardinal-arithmetic.md
-  line: 21
+  line: 17
   hash: 03fb9e487030
   verdicts:
   - stage: S5a
@@ -3589,7 +3613,7 @@ items:
 - key: exm-two-copies-of-naturals
   kind: exm
   file: 05-cardinal-arithmetic.md
-  line: 33
+  line: 29
   hash: 1f0e0937542a
   verdicts:
   - stage: S5a
@@ -3611,7 +3635,7 @@ items:
 - key: check:05-cardinal-arithmetic:1
   kind: check
   file: 05-cardinal-arithmetic.md
-  line: 45
+  line: 41
   hash: d8eef416d52e
   verdicts:
   - stage: S5a
@@ -3654,10 +3678,43 @@ items:
     evidence: '06-cardinal-arithmetic.md:43-49 check unchanged and correct; F011 fixed in warning 06:52:
       (0,0)->0 with (n,1)->n+1 is one bijection {0}⊔N->N, (n,1)->n is a bijection ∅⊔N->N'
   old_key: check:06-cardinal-arithmetic:1
+- key: prp-copy-of-naturals-absorbs
+  kind: prp
+  file: 05-cardinal-arithmetic.md
+  line: 57
+  hash: e5b9c2844a40
+  verdicts: []
+- key: proof:prp-copy-of-naturals-absorbs
+  kind: proof
+  file: 05-cardinal-arithmetic.md
+  line: 72
+  hash: abce88a830a6
+  verdicts: []
+- key: check:05-cardinal-arithmetic:2
+  kind: check
+  file: 05-cardinal-arithmetic.md
+  line: 94
+  hash: 1a97f3736324
+  verdicts:
+  - stage: S5a
+    verdict: correct
+    by: refereeA
+    hash: bc653adf32fd
+    date: '2026-10-26'
+    model: claude-opus-5-5
+    evidence: 06:138 names exactly the two uses
+  - stage: S5b
+    verdict: correct
+    by: refereeB
+    hash: bc653adf32fd
+    date: '2026-10-26'
+    model: claude-opus-5-5
+    evidence: 06:138 matches the proof at 124 and 128
+  old_key: check:06-cardinal-arithmetic:2
 - key: prp-card-operations-well-defined
   kind: prp
   file: 05-cardinal-arithmetic.md
-  line: 63
+  line: 108
   hash: f2936825ecd1
   verdicts:
   - stage: S5a
@@ -3677,7 +3734,7 @@ items:
 - key: proof:prp-card-operations-well-defined
   kind: proof
   file: 05-cardinal-arithmetic.md
-  line: 79
+  line: 124
   hash: 37d32fa9753c
   verdicts:
   - stage: S5a
@@ -3699,7 +3756,7 @@ items:
 - key: prp-card-operations-monotone
   kind: prp
   file: 05-cardinal-arithmetic.md
-  line: 99
+  line: 144
   hash: 334f8520bca3
   verdicts:
   - stage: S5a
@@ -3721,7 +3778,7 @@ items:
 - key: proof:prp-card-operations-monotone
   kind: proof
   file: 05-cardinal-arithmetic.md
-  line: 115
+  line: 160
   hash: 8c64ea8dd1fe
   verdicts:
   - stage: S5a
@@ -3740,31 +3797,31 @@ items:
     model: claude-opus-5-5
     evidence: '06:114-128: F(f) is a function because v is injective, F is injective because u is; the
       parenthetical at 131 is ledgered (744, prp-empty-function (b))'
-- key: check:05-cardinal-arithmetic:2
+- key: check:05-cardinal-arithmetic:3
   kind: check
   file: 05-cardinal-arithmetic.md
-  line: 135
+  line: 180
   hash: bc653adf32fd
   verdicts:
   - stage: S5a
     verdict: correct
     by: refereeA
-    hash: bc653adf32fd
+    hash: d489447c094d
     date: '2026-10-26'
     model: claude-opus-5-5
-    evidence: 06:138 names exactly the two uses
+    evidence: 06:206; τ_5=15, τ_9=45, τ_10=55; π(7,2)=47
   - stage: S5b
     verdict: correct
     by: refereeB
-    hash: bc653adf32fd
+    hash: d489447c094d
     date: '2026-10-26'
     model: claude-opus-5-5
-    evidence: 06:138 matches the proof at 124 and 128
-  old_key: check:06-cardinal-arithmetic:2
+    evidence: '06:206: pi(3,2)=tau_5+2=17; 47=tau_9+2 gives (7,2); recomputed'
+  old_key: check:06-cardinal-arithmetic:3
 - key: exm-pairing-bijection
   kind: exm
   file: 05-cardinal-arithmetic.md
-  line: 149
+  line: 194
   hash: 950f2375d8a1
   verdicts:
   - stage: S5a
@@ -3803,8 +3860,8 @@ items:
 - key: exm-method-encode
   kind: exm
   file: 05-cardinal-arithmetic.md
-  line: 189
-  hash: 3323ef722f0c
+  line: 234
+  hash: e274a79d4caf
   verdicts:
   - stage: S5a
     verdict: correct
@@ -3821,31 +3878,31 @@ items:
     model: claude-opus-5-5
     evidence: '06:190-194: the forward mention of the interleaving (no reading at 1/11) matches 391; thm-left-inverse-iff-injective
       is correct for one round trip'
-- key: check:05-cardinal-arithmetic:3
+- key: check:05-cardinal-arithmetic:4
   kind: check
   file: 05-cardinal-arithmetic.md
-  line: 203
+  line: 248
   hash: d489447c094d
   verdicts:
   - stage: S5a
     verdict: correct
     by: refereeA
-    hash: d489447c094d
+    hash: 6e529d3f833d
     date: '2026-10-26'
     model: claude-opus-5-5
-    evidence: 06:206; τ_5=15, τ_9=45, τ_10=55; π(7,2)=47
+    evidence: 06:285; 8=8; Φ(h)=(f,g) with f(a)=1, g(b)=0, g(c)=1
   - stage: S5b
     verdict: correct
     by: refereeB
-    hash: d489447c094d
+    hash: 6e529d3f833d
     date: '2026-10-26'
     model: claude-opus-5-5
-    evidence: '06:206: pi(3,2)=tau_5+2=17; 47=tau_9+2 gives (7,2); recomputed'
-  old_key: check:06-cardinal-arithmetic:3
+    evidence: '06:285: 8 = 2*4; Phi(h) correct'
+  old_key: check:06-cardinal-arithmetic:4
 - key: thm-cardinal-laws
   kind: thm
   file: 05-cardinal-arithmetic.md
-  line: 215
+  line: 260
   hash: 2b0683d9be8c
   verdicts:
   - stage: S5a
@@ -3874,7 +3931,7 @@ items:
 - key: proof:thm-cardinal-laws
   kind: proof
   file: 05-cardinal-arithmetic.md
-  line: 242
+  line: 287
   hash: 9d3cb916269c
   verdicts:
   - stage: S5a
@@ -3897,7 +3954,7 @@ items:
 - key: exm-method-laws-by-bijection
   kind: exm
   file: 05-cardinal-arithmetic.md
-  line: 272
+  line: 317
   hash: 4eccbe63d923
   verdicts:
   - stage: S5a
@@ -3931,31 +3988,32 @@ items:
     model: claude-opus-5-5
     evidence: 'The counterexample with X={0,1}, Y=Z={0} is right: X^{Y∪Z} has 2 elements and X^Y×X^Z has
       4. It matches the B4(b) solution.'
-- key: check:05-cardinal-arithmetic:4
+- key: check:05-cardinal-arithmetic:5
   kind: check
   file: 05-cardinal-arithmetic.md
-  line: 282
+  line: 327
   hash: 6e529d3f833d
   verdicts:
   - stage: S5a
     verdict: correct
     by: refereeA
-    hash: 6e529d3f833d
+    hash: ac222d638ba9
     date: '2026-10-26'
     model: claude-opus-5-5
-    evidence: 06:285; 8=8; Φ(h)=(f,g) with f(a)=1, g(b)=0, g(c)=1
+    evidence: 06:367; SB is choice-free (04-comparing-cardinalities:166), and every map is given by a
+      rule
   - stage: S5b
     verdict: correct
     by: refereeB
-    hash: 6e529d3f833d
+    hash: ac222d638ba9
     date: '2026-10-26'
     model: claude-opus-5-5
-    evidence: '06:285: 8 = 2*4; Phi(h) correct'
-  old_key: check:06-cardinal-arithmetic:4
+    evidence: '06:367: true. S-B is choice-free (04:166); exm-reals-open-interval uses formulas and S-B'
+  old_key: check:06-cardinal-arithmetic:5
 - key: cor-cantor-two-power
   kind: cor
   file: 05-cardinal-arithmetic.md
-  line: 294
+  line: 339
   hash: 76e56a067950
   verdicts:
   - stage: S5a
@@ -3975,7 +4033,7 @@ items:
 - key: proof:cor-cantor-two-power
   kind: proof
   file: 05-cardinal-arithmetic.md
-  line: 304
+  line: 349
   hash: ef813bb1b307
   verdicts:
   - stage: S5a
@@ -3997,7 +4055,7 @@ items:
 - key: thm-reals-power-set-naturals
   kind: thm
   file: 05-cardinal-arithmetic.md
-  line: 322
+  line: 367
   hash: 45a54be9f511
   verdicts:
   - stage: S5a
@@ -4034,8 +4092,8 @@ items:
 - key: proof:thm-reals-power-set-naturals
   kind: proof
   file: 05-cardinal-arithmetic.md
-  line: 332
-  hash: 7a9761d8a1e2
+  line: 377
+  hash: 56411c4aed23
   verdicts:
   - stage: S5a
     verdict: correct
@@ -4081,32 +4139,16 @@ items:
     date: '2026-10-26'
     evidence: 06-cardinal-arithmetic.md:347 code (j,n)->10n+j; ledger line 756 renamed from (t,n)->10n+t
       to match; decoder by division by 10
-- key: check:05-cardinal-arithmetic:5
+- key: check:05-cardinal-arithmetic:6
   kind: check
   file: 05-cardinal-arithmetic.md
-  line: 352
+  line: 397
   hash: ac222d638ba9
-  verdicts:
-  - stage: S5a
-    verdict: correct
-    by: refereeA
-    hash: ac222d638ba9
-    date: '2026-10-26'
-    model: claude-opus-5-5
-    evidence: 06:367; SB is choice-free (04-comparing-cardinalities:166), and every map is given by a
-      rule
-  - stage: S5b
-    verdict: correct
-    by: refereeB
-    hash: ac222d638ba9
-    date: '2026-10-26'
-    model: claude-opus-5-5
-    evidence: '06:367: true. S-B is choice-free (04:166); exm-reals-open-interval uses formulas and S-B'
-  old_key: check:06-cardinal-arithmetic:5
+  verdicts: []
 - key: thm-plane-equinumerous-line
   kind: thm
   file: 05-cardinal-arithmetic.md
-  line: 362
+  line: 407
   hash: 09b1319cbe8a
   verdicts:
   - stage: S5a
@@ -4127,7 +4169,7 @@ items:
 - key: proof:thm-plane-equinumerous-line
   kind: proof
   file: 05-cardinal-arithmetic.md
-  line: 372
+  line: 417
   hash: 0ce3e47d08a0
   verdicts:
   - stage: S5a
@@ -4148,7 +4190,7 @@ items:
 - key: exr-cardinal-arithmetic-a1
   kind: exr
   file: 05-cardinal-arithmetic.md
-  line: 392
+  line: 435
   hash: 94d6cd0d85dc
   verdicts:
   - stage: S5a
@@ -4200,7 +4242,7 @@ items:
 - key: exr-cardinal-arithmetic-b1
   kind: exr
   file: 05-cardinal-arithmetic.md
-  line: 415
+  line: 458
   hash: f2e09d22a46f
   verdicts:
   - stage: S5a
@@ -4229,7 +4271,7 @@ items:
 - key: exr-cardinal-arithmetic-b2
   kind: exr
   file: 05-cardinal-arithmetic.md
-  line: 435
+  line: 478
   hash: 7fadc5250ef6
   verdicts:
   - stage: S5a
@@ -4257,7 +4299,7 @@ items:
 - key: exr-cardinal-arithmetic-b3
   kind: exr
   file: 05-cardinal-arithmetic.md
-  line: 452
+  line: 495
   hash: e474b187be02
   verdicts:
   - stage: S5a
@@ -4287,7 +4329,7 @@ items:
 - key: exr-cardinal-arithmetic-b4
   kind: exr
   file: 05-cardinal-arithmetic.md
-  line: 476
+  line: 519
   hash: c775fe8cc02e
   verdicts:
   - stage: S5a
@@ -4330,10 +4372,16 @@ items:
     model: claude-opus-5-5
     evidence: (a) gives explicit bijections with inverse via lem (c). (b) adds prp-card-operations-well-defined
       (c) to justify the disjoint case. (c)–(f) are unchanged and correct.
+- key: exr-cardinal-arithmetic-b5
+  kind: exr
+  file: 05-cardinal-arithmetic.md
+  line: 548
+  hash: 7ea632ddba4d
+  verdicts: []
 - key: exr-cardinal-arithmetic-c1
   kind: exr
   file: 05-cardinal-arithmetic.md
-  line: 507
+  line: 572
   hash: cd26734d287a
   verdicts:
   - stage: S5a
@@ -4380,8 +4428,8 @@ items:
 - key: exr-cardinal-arithmetic-c2
   kind: exr
   file: 05-cardinal-arithmetic.md
-  line: 547
-  hash: 381da9dc47a2
+  line: 612
+  hash: 90211621d42d
   verdicts:
   - stage: S5a
     verdict: correct
@@ -4410,7 +4458,7 @@ items:
 - key: exr-restriction-extension-and-gluing-c3
   kind: exr
   file: 05-cardinal-arithmetic.md
-  line: 573
+  line: 638
   hash: c2991b75b0cd
   verdicts:
   - stage: S5a
@@ -4458,7 +4506,7 @@ items:
 - key: exr-infinite-sets-r1
   kind: exr
   file: 05-cardinal-arithmetic.md
-  line: 600
+  line: 665
   hash: a7f26b29f42b
   verdicts:
   - stage: S5a
@@ -4520,7 +4568,7 @@ items:
 - key: exr-infinite-sets-r2
   kind: exr
   file: 05-cardinal-arithmetic.md
-  line: 622
+  line: 687
   hash: 5a0889682eaf
   verdicts:
   - stage: S5a
@@ -4570,7 +4618,7 @@ items:
 - key: exr-infinite-sets-r3
   kind: exr
   file: 05-cardinal-arithmetic.md
-  line: 640
+  line: 705
   hash: a88e4cd62989
   verdicts:
   - stage: S5a

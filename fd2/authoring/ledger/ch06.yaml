@@ -4,7 +4,7 @@ items:
 - key: ax-choice
   kind: ax
   file: 01-countable-unions-and-choice.md
-  line: 21
+  line: 19
   hash: 18b44f911789
   verdicts:
   - stage: S5a
@@ -87,7 +87,7 @@ items:
 - key: exm-method-name-the-choice
   kind: exm
   file: 01-countable-unions-and-choice.md
-  line: 66
+  line: 64
   hash: 9f9aaaa10df8
   verdicts:
   - stage: S5a
@@ -112,7 +112,7 @@ items:
 - key: check:01-countable-unions-and-choice:1
   kind: check
   file: 01-countable-unions-and-choice.md
-  line: 76
+  line: 74
   hash: d253830b7b8e
   verdicts:
   - stage: S5a
@@ -137,7 +137,7 @@ items:
 - key: exm-choice-or-rule
   kind: exm
   file: 01-countable-unions-and-choice.md
-  line: 84
+  line: 82
   hash: 254b4c76db78
   verdicts:
   - stage: S5a
@@ -165,7 +165,7 @@ items:
 - key: thm-surjection-right-inverse
   kind: thm
   file: 01-countable-unions-and-choice.md
-  line: 113
+  line: 111
   hash: 3ed13ecdf0a6
   verdicts:
   - stage: S5a
@@ -187,7 +187,7 @@ items:
 - key: proof:thm-surjection-right-inverse
   kind: proof
   file: 01-countable-unions-and-choice.md
-  line: 123
+  line: 121
   hash: c04a83ac0ca3
   verdicts:
   - stage: S5a
@@ -226,7 +226,7 @@ items:
 - key: check:01-countable-unions-and-choice:2
   kind: check
   file: 01-countable-unions-and-choice.md
-  line: 129
+  line: 127
   hash: ea23deae2176
   verdicts:
   - stage: S5a
@@ -265,7 +265,7 @@ items:
 - key: prp-card-le-surjection
   kind: prp
   file: 01-countable-unions-and-choice.md
-  line: 143
+  line: 139
   hash: 0241d61a7eda
   verdicts:
   - stage: S5a
@@ -288,8 +288,8 @@ items:
 - key: proof:prp-card-le-surjection
   kind: proof
   file: 01-countable-unions-and-choice.md
-  line: 149
-  hash: ebba443d60cf
+  line: 145
+  hash: c45965fdde04
   verdicts:
   - stage: S5a
     verdict: correct
@@ -313,8 +313,8 @@ items:
 - key: check:01-countable-unions-and-choice:3
   kind: check
   file: 01-countable-unions-and-choice.md
-  line: 157
-  hash: 0602df634d03
+  line: 153
+  hash: 882dbef1f8bd
   verdicts:
   - stage: S5a
     verdict: correct
@@ -338,7 +338,7 @@ items:
 - key: thm-countable-union
   kind: thm
   file: 01-countable-unions-and-choice.md
-  line: 169
+  line: 165
   hash: 989a8951c013
   verdicts:
   - stage: S5a
@@ -378,7 +378,7 @@ items:
 - key: proof:thm-countable-union
   kind: proof
   file: 01-countable-unions-and-choice.md
-  line: 197
+  line: 193
   hash: 408322484b19
   verdicts:
   - stage: S5a
@@ -404,7 +404,7 @@ items:
 - key: thm-infinite-countable-subset
   kind: thm
   file: 01-countable-unions-and-choice.md
-  line: 233
+  line: 225
   hash: 382e0f08d31c
   verdicts:
   - stage: S5a
@@ -426,7 +426,7 @@ items:
 - key: proof:thm-infinite-countable-subset
   kind: proof
   file: 01-countable-unions-and-choice.md
-  line: 243
+  line: 235
   hash: ee4981247900
   verdicts:
   - stage: S5a
@@ -460,7 +460,7 @@ items:
 - key: check:01-countable-unions-and-choice:4
   kind: check
   file: 01-countable-unions-and-choice.md
-  line: 285
+  line: 277
   hash: 2e347da86b3a
   verdicts:
   - stage: S5a
@@ -486,7 +486,7 @@ items:
 - key: thm-infinite-iff-proper-subset
   kind: thm
   file: 01-countable-unions-and-choice.md
-  line: 297
+  line: 289
   hash: 7d89a084844a
   verdicts:
   - stage: S5a
@@ -507,8 +507,8 @@ items:
 - key: proof:thm-infinite-iff-proper-subset
   kind: proof
   file: 01-countable-unions-and-choice.md
-  line: 307
-  hash: cfca915868d0
+  line: 299
+  hash: f72be2ec2546
   verdicts:
   - stage: S5a
     verdict: correct
@@ -532,7 +532,7 @@ items:
 - key: check:01-countable-unions-and-choice:5
   kind: check
   file: 01-countable-unions-and-choice.md
-  line: 329
+  line: 307
   hash: b2017c0bb9a2
   verdicts:
   - stage: S5a
@@ -559,8 +559,8 @@ items:
 - key: exr-countable-unions-and-choice-a1
   kind: exr
   file: 01-countable-unions-and-choice.md
-  line: 341
-  hash: c0dc08fac519
+  line: 319
+  hash: e0739657cd7a
   verdicts:
   - stage: S5a
     verdict: correct
@@ -604,42 +604,10 @@ items:
     date: '2026-10-25'
     model: claude-opus-5-5
     evidence: The ledger row now points to verify/ch03/exr-countable-unions-and-choice-a1.py, which exists.
-- key: exr-infinite-sets-a1
-  kind: exr
-  file: 01-countable-unions-and-choice.md
-  line: 367
-  hash: 0e97f65bc3e1
-  verdicts:
-  - stage: S5a
-    verdict: correct
-    by: refereeA
-    hash: 0e97f65bc3e1
-    date: '2026-10-11'
-    model: claude-opus-5-5
-    evidence: '06:124-131. (b) uses the Quick check, which is in-section and is not an exercise. (c) checked:
-      h(n)=n+1 on N and h(k)=k for k<0 is a bijection Z→Z\{0}. (d) is fine.'
-  - stage: S5b
-    verdict: correct
-    by: refereeB
-    hash: 0e97f65bc3e1
-    date: '2026-10-11'
-    model: claude-opus-5-5
-    evidence: 06:113-132. (a) matches line 20. (b) Both statements are true, and the answer points at
-      the Quick check at line 57, which comes after the warning at line 53. (c) h(n)=n+1 on N and the
-      identity on the negatives is onto Z\{0}. (d) lem-subsets-of-naturals.
-  - stage: S6
-    verdict: correct
-    by: verifier
-    hash: 0e97f65bc3e1
-    date: '2026-10-11'
-    model: claude-opus-5-5
-    evidence: 06:113-132. (a) points to the choice-function line. (b) Both parts are true. (c) For X=ℤ,
-      h(n)=n+1 on ℕ and the identity on negatives, onto ℤ\{0}. (d) No; lem-subsets-of-naturals gives the
-      rule.
 - key: exr-countable-unions-and-choice-b1
   kind: exr
   file: 01-countable-unions-and-choice.md
-  line: 390
+  line: 350
   hash: 6d253859c42d
   verdicts:
   - stage: S5a
@@ -676,7 +644,7 @@ items:
 - key: exr-countable-unions-and-choice-b2
   kind: exr
   file: 01-countable-unions-and-choice.md
-  line: 413
+  line: 373
   hash: 298859a03063
   verdicts:
   - stage: S5a
@@ -716,51 +684,11 @@ items:
       which says the number of elements is unique. The proof without choice checks out. g: N x X -> X
       with X = Seq^N fits thm-recursion. The induction claim that s_k is onto Seq_k is correct at the
       base and at the step'
-- key: exr-countable-unions-and-choice-b3
-  kind: exr
-  file: 01-countable-unions-and-choice.md
-  line: 439
-  hash: 53644efddc6c
-  verdicts:
-  - stage: S5a
-    verdict: correct
-    by: refereeA
-    hash: 2d094f263bf8
-    date: '2026-10-11'
-    model: claude-opus-5-5
-    evidence: 03:289. D subset of (QxQ)^2 is countable by cor-product-countable (a) twice plus prp-countable-subset.
-      The lines are exactly ell(D), so prp-countable-image applies. No choice is used.
-  - stage: S5b
-    verdict: minor
-    by: refereeB
-    hash: 2d094f263bf8
-    date: '2026-10-11'
-    model: claude-opus-5-5
-    evidence: 03-countable-unions-and-choice.md:289 The local symbols ℓ and D reuse Part 0 notation that
-      NOTATION.md fixes.
-  - stage: S6
-    verdict: correct
-    by: verifier
-    hash: 2d094f263bf8
-    date: '2026-10-11'
-    model: claude-opus-5-5
-    evidence: 03:282-290. D ⊆ (ℚ×ℚ)^2 is countable. ℓ(D) is the set of lines, using the ledgered school-geometry
-      fact that two points lie on exactly one line. The map is a formula, so no choice is used.
-  - stage: S7r
-    verdict: correct
-    by: rereferee
-    hash: 53644efddc6c
-    date: '2026-10-11'
-    model: claude-opus-5-5
-    evidence: 'l is renamed \mathrm{line}, so it no longer clashes with the assignment l of NOTATION.md:148.
-      D is still used as a local letter. Approved text uses D locally in the same way (ch07 03-recursion.md:106,
-      04-relations.md:263, 06-orders.md:341; ch08 02-countable-sets.md:351), so this is established practice
-      and does not break a written rule. The mathematics is correct: D is countable by cor-product-cou'
 - key: exr-countable-unions-and-choice-b4
   kind: exr
   file: 01-countable-unions-and-choice.md
-  line: 449
-  hash: a966163e34b5
+  line: 399
+  hash: 75f3f43175e8
   verdicts:
   - stage: S5a
     verdict: minor
@@ -809,44 +737,11 @@ items:
     evidence: '(d) {0} is finite, so not countably infinite: a bijection ℕ→{0} would make ℕ finite (transitivity
       in prp-equinumerous-properties), against exm-hilbert-hotel. (e) The min is justified by thm-well-ordering,
       and the pigeonhole step is intact.'
-- key: exr-infinite-sets-b1
-  kind: exr
-  file: 01-countable-unions-and-choice.md
-  line: 475
-  hash: e0fa7fae747d
-  verdicts:
-  - stage: S5a
-    verdict: correct
-    by: refereeA
-    hash: e0fa7fae747d
-    date: '2026-10-11'
-    model: claude-opus-5-5
-    evidence: '06:142-155. X\F is infinite by prp-disjoint-union-count. The pieces X\(F∪S), F and S are
-      pairwise disjoint (S⊆X\F). Under h, F goes onto {s_0..s_{k-1}} and S onto {s_m: m≥k}, and these
-      image pieces partition X\F. The case k=0 is handled.'
-  - stage: S5b
-    verdict: correct
-    by: refereeB
-    hash: e0fa7fae747d
-    date: '2026-10-11'
-    model: claude-opus-5-5
-    evidence: 06:136-155. The cases are disjoint because S ⊆ X\F. Case 2's images are s_0..s_{k-1} and
-      case 3's are s_{n+k}, so they are disjoint. k=0 is handled. The piecewise-bijection fact is ledgered
-      as inline.
-  - stage: S6
-    verdict: correct
-    by: verifier
-    hash: e0fa7fae747d
-    date: '2026-10-11'
-    model: claude-opus-5-5
-    evidence: '06:136-155. The shift bijection is correct: F goes to s_0..s_{k-1} and s_n goes to s_{n+k}.
-      I simulated it with X=ℕ, F={0,3,7}; it is injective, onto X\F, and misses F. The worked model is
-      the proof of thm-infinite-iff-proper-subset.'
 - key: exr-infinite-sets-b2
   kind: exr
   file: 01-countable-unions-and-choice.md
-  line: 496
-  hash: 197ad3180573
+  line: 430
+  hash: 74c624796bed
   verdicts:
   - stage: S5a
     verdict: minor
@@ -883,51 +778,10 @@ items:
       infinite because a bijection φ:{1..k}->S together with β:ℕ->S (which @def-countably-infinite allows
       in either direction) would make β^{-1}∘φ a bijection {1..k}->ℕ, contradicting @exm-hilbert-hotel
       (ℕ is infinite)'
-- key: exr-infinite-sets-b3
-  kind: exr
-  file: 01-countable-unions-and-choice.md
-  line: 510
-  hash: b4e77ffb76ec
-  verdicts:
-  - stage: S5a
-    verdict: minor
-    by: refereeA
-    hash: 3e938f4d7ea4
-    date: '2026-10-11'
-    model: claude-opus-5-5
-    evidence: 06-infinite-sets.md:182 The second example is given as 'another correct answer', but only
-      properties (3) and (5) are checked for it, although the exercise asks to check each property.
-  - stage: S5b
-    verdict: minor
-    by: refereeB
-    hash: 3e938f4d7ea4
-    date: '2026-10-11'
-    model: claude-opus-5-5
-    evidence: '06-infinite-sets.md:182 The second answer does not check property (5): nothing shows that
-      {-n : n in N} is infinite.'
-  - stage: S6
-    verdict: correct
-    by: verifier
-    hash: 3e938f4d7ea4
-    date: '2026-10-11'
-    model: claude-opus-5-5
-    evidence: 06:171-183. The property list is given. X=ℕ, Y=2ℕ checks out, and the odd numbers are infinite
-      by n↦2n+1. The alternative ℝ ⊇ (0,∞) also checks out.
-  - stage: S7r
-    verdict: correct
-    by: rereferee
-    hash: b4e77ffb76ec
-    date: '2026-10-11'
-    model: claude-opus-5-5
-    evidence: '06-infinite-sets.md:186. The second answer now checks every property. (1) and (2): 0 ∉
-      (0,∞). (3): @exm-reals-open-interval, whose solution (05-comparing-cardinalities.md:226) explicitly
-      covers (0,∞). (4) and (5): n↦-n is a bijection from ℕ onto {-n}, so that set is infinite by the
-      composition argument of (5) above. It is contained in (-∞,0] ⊆ ℝ, so @prp-subset-finite shows neither
-      (-∞,0] nor ℝ is'
 - key: exr-countable-unions-and-choice-c1
   kind: exr
   file: 01-countable-unions-and-choice.md
-  line: 526
+  line: 444
   hash: c6fe67935eeb
   verdicts:
   - stage: S5a
@@ -967,8 +821,8 @@ items:
 - key: exr-countable-unions-and-choice-c3
   kind: exr
   file: 01-countable-unions-and-choice.md
-  line: 547
-  hash: e1265fb9f289
+  line: 465
+  hash: c8aee6dab6d1
   verdicts:
   - stage: S5a
     verdict: correct
@@ -1007,52 +861,11 @@ items:
       (0 elements gives the empty set), the step through cor-remove-point and prp-union-two-countable,
       and the union identity. For (b): N is not finite (exm-hilbert-hotel, which deduces that N is infinite),
       and cho'
-- key: exr-infinite-sets-c1
-  kind: exr
-  file: 01-countable-unions-and-choice.md
-  line: 570
-  hash: 2e371266c040
-  verdicts:
-  - stage: S5a
-    verdict: minor
-    by: refereeA
-    hash: 00c60fa76162
-    date: '2026-10-11'
-    model: claude-opus-5-5
-    evidence: 06-infinite-sets.md:194 The recursion is described as having 'base 0', but the starting
-      value is f_0(0)+1.
-  - stage: S5b
-    verdict: minor
-    by: refereeB
-    hash: 00c60fa76162
-    date: '2026-10-11'
-    model: claude-opus-5-5
-    evidence: 06-infinite-sets.md:194 The given half describes the recursion with 'base 0', but the starting
-      value is f_0(0)+1. It also uses ≔ inside an existence claim.
-  - stage: S6
-    verdict: minor
-    by: verifier
-    hash: 00c60fa76162
-    date: '2026-10-11'
-    model: claude-opus-5-5
-    evidence: 06-infinite-sets.md:194 The given first half describes the recursion as having 'base 0',
-      but thm-recursion's starting value here is f_0(0)+1, not 0.
-  - stage: S7r
-    verdict: correct
-    by: rereferee
-    hash: 2e371266c040
-    date: '2026-10-11'
-    model: claude-opus-5-5
-    evidence: '06-infinite-sets.md:198-200. The given half now names @thm-recursion''s data exactly: set
-      ℕ, starting value f_0(0)+1, step (n,x)↦max{x,f_{n+1}(n+1)}+1 from ℕ×ℕ to ℕ. It writes = rather than
-      ≔ for the recursion''s conclusion. f(n+1)=g(n,f(n)) reproduces the displayed formula. All ''base
-      0'' and ≔ findings (S5a, S5b, S6) are resolved. I solved it first: g(n+1) >= g(n)+1, then @thm-induction
-      with base m+'
 - key: exr-infinite-sets-c2
   kind: exr
   file: 01-countable-unions-and-choice.md
-  line: 613
-  hash: 1880c2584a06
+  line: 488
+  hash: 26b61359d450
   verdicts:
   - stage: S5a
     verdict: correct
@@ -1079,10 +892,1311 @@ items:
     model: claude-opus-5-5
     evidence: 06:228-236. ℝ\ℚ is uncountable (via prp-union-two-countable and thm-reals-uncountable-decimal),
       hence infinite. B2 then applies with C=ℚ.
+- key: def-chain
+  kind: def
+  file: 02-chains-and-zorn.md
+  line: 23
+  hash: 9bb351e9111f
+  verdicts:
+  - stage: S5a
+    verdict: correct
+    by: refereeA
+    hash: 9bb351e9111f
+    date: '2026-10-25'
+    model: claude-opus-5-5
+    evidence: 01:23-35 matches def-partial-order's 'comparable'/'total' (ch04/03:22); examples checked
+      (2^m|2^n, {2,3} incomparable, empty and singleton chains by PO1); sidecar def-chain.py passes
+  - stage: S5b
+    verdict: correct
+    by: refereeB
+    hash: 9bb351e9111f
+    date: '2026-10-25'
+    model: claude-opus-5-5
+    evidence: '01:23-35 definition; examples checked: 2^m | 2^n via 2^n=2^{n-m}2^m (ledgered, sidecar
+      def-chain.py); {2,3} incomparable; empty/singleton chains by (PO1)'
+- key: check:02-chains-and-zorn:1
+  kind: check
+  file: 02-chains-and-zorn.md
+  line: 37
+  hash: 95223f638f03
+  verdicts:
+  - stage: S5a
+    verdict: correct
+    by: refereeA
+    hash: 95223f638f03
+    date: '2026-10-25'
+    model: claude-opus-5-5
+    evidence: '01:41-48: (a) {1,2},{3} incomparable; (b) 1|all, 5|25, a|0; (c) 3|6, 3|0, 6|0; (d) all
+      subsets, since <= is total'
+  - stage: S5b
+    verdict: correct
+    by: refereeB
+    hash: 95223f638f03
+    date: '2026-10-25'
+    model: claude-opus-5-5
+    evidence: 01:37-49 (a) {1,2},{3} incomparable; (b) 1|all, 5|25, a|0; (c) 3|6, 3|0, 6|0; (d) <= total
+      on R
+  old_key: check:01-chains-and-zorn:1
+- key: lem-chain-union
+  kind: lem
+  file: 02-chains-and-zorn.md
+  line: 55
+  hash: 92ac43291991
+  verdicts:
+  - stage: S5a
+    verdict: correct
+    by: refereeA
+    hash: 35256edb4e1a
+    date: '2026-10-25'
+    model: claude-opus-5-5
+    evidence: 01:58-61; restricting subset-order to a set of sets justified at 01:53 via exm-subset-order-not-total
+      (ch04/03:44); statements true
+  - stage: S5b
+    verdict: minor
+    by: refereeB
+    hash: 35256edb4e1a
+    date: '2026-10-25'
+    model: claude-opus-5-5
+    evidence: 01-chains-and-zorn.md:60 \sP gets a second meaning in fd2 (set of sets ordered by ⊆) against
+      NOTATION's \sP = a partition (F2.5 §02); Ch5's \sC, \sK (chains of sets) have no NOTATION row.
+  - stage: S7r
+    verdict: minor
+    by: rereferee
+    hash: 92ac43291991
+    date: '2026-10-25'
+    model: claude-opus-5-5
+    evidence: 'The \sP clash is fixed: the statement and the paragraph before it now use \sS, which is
+      the NOTATION.md:60 row for a set of sets. Still open: the local chains-of-sets letters \sC and \sK
+      have no NOTATION row (F006 part 2, deferred to NOTATION.md). The mathematics is correct.'
+  - stage: S7r
+    verdict: correct
+    by: rereferee
+    hash: 92ac43291991
+    date: '2026-10-25'
+    model: claude-opus-5-5
+    evidence: The only change is the rename \sP→\sS. The statement is unchanged mathematically and the
+      proof uses only \sC.
+- key: proof:lem-chain-union
+  kind: proof
+  file: 02-chains-and-zorn.md
+  line: 64
+  hash: 71a934c564df
+  verdicts:
+  - stage: S5a
+    verdict: correct
+    by: refereeA
+    hash: 71a934c564df
+    date: '2026-10-25'
+    model: claude-opus-5-5
+    evidence: '01:65-67: (a) induction with n0=1 (thm-induction), P(n) quantifies over all n-tuples, both
+      cases use PO1/PO3 correctly; (b) one ∃E per stage, chain comparability picks the larger member;
+      no dependency problem'
+  - stage: S5b
+    verdict: correct
+    by: refereeB
+    hash: 71a934c564df
+    date: '2026-10-25'
+    model: claude-opus-5-5
+    evidence: 01:64-68 induction (thm-induction, n0=1) with (PO1),(PO3) in (a); one ∃E per step in (b);
+      comparable members give the larger. Meta-claim at 01:70 true of the proof.
+- key: check:02-chains-and-zorn:2
+  kind: check
+  file: 02-chains-and-zorn.md
+  line: 72
+  hash: 02bd70654910
+  verdicts:
+  - stage: S5a
+    verdict: correct
+    by: refereeA
+    hash: 02bd70654910
+    date: '2026-10-25'
+    model: claude-opus-5-5
+    evidence: '01:76-79: (a) lem-chain-union(b) with n=2; (b) {{0},{1}} is a valid non-chain example'
+  - stage: S5b
+    verdict: correct
+    by: refereeB
+    hash: 02bd70654910
+    date: '2026-10-25'
+    model: claude-opus-5-5
+    evidence: 01:72-80 (a) by lem-chain-union (b), n=2; (b) {{0},{1}} works
+  old_key: check:01-chains-and-zorn:2
+- key: thm-zorn
+  kind: thm
+  file: 02-chains-and-zorn.md
+  line: 86
+  hash: c4073f785522
+  verdicts:
+  - stage: S5a
+    verdict: minor
+    by: refereeA
+    hash: c4073f785522
+    date: '2026-10-25'
+    model: claude-opus-5-5
+    evidence: 01-chains-and-zorn.md:92 Unprovability of Zorn's lemma is justified only by its equivalence
+      with AC; equivalence alone does not imply unprovability.
+  - stage: S5b
+    verdict: minor
+    by: refereeB
+    hash: c4073f785522
+    date: '2026-10-25'
+    model: claude-opus-5-5
+    evidence: 01-chains-and-zorn.md:92 Forward pointers of F2.4 §01 (to ST.4, the converse of thm-choice-from-zorn;
+      and to MT.1 at line 189) have no row in STATUS's promise table.
+  - stage: S8
+    verdict: minor
+    by: seam
+    hash: c4073f785522
+    date: '2026-10-25'
+    model: claude-opus-5-5
+    evidence: 01-chains-and-zorn.md:92 Pointers into the series volume ST do not use the required '*Book
+      title*, Chapter N' form, so the promise tool cannot see them.
+  - stage: S7r
+    verdict: minor
+    by: rereferee
+    hash: c4073f785522
+    date: '2026-10-25'
+    model: claude-opus-5-5
+    evidence: 'The status paragraph (01:92) now argues soundly: Zorn ⇔ AC, and AC is independent (Section
+      3.2, ch03/02:46). The open item is F004 (deferred): the forward pointers to ST.4 and MT.1 have no
+      promise row in STATUS.md.'
+  - stage: S8
+    verdict: correct
+    by: coordinator
+    hash: c4073f785522
+    date: '2026-10-25'
+    evidence: 01:92 status paragraph sound (Zorn<=>AC, AC independent, ch03/02:46); ST pointer in '*Book*,
+      Chapter N' form; sidecar thm-zorn.py passes; remaining STATUS promise rows (ST.4, MT.1) are shared-file
+      bookkeeping, shared-todo item 1
+- key: check:02-chains-and-zorn:3
+  kind: check
+  file: 02-chains-and-zorn.md
+  line: 104
+  hash: a2b99bc032d7
+  verdicts:
+  - stage: S5a
+    verdict: correct
+    by: refereeA
+    hash: a2b99bc032d7
+    date: '2026-10-25'
+    model: claude-opus-5-5
+    evidence: '01:109: only comparable pair is {1}⊆{1,3}; maximal {2},{1,3}; no greatest element'
+  - stage: S5b
+    verdict: correct
+    by: refereeB
+    hash: a2b99bc032d7
+    date: '2026-10-25'
+    model: claude-opus-5-5
+    evidence: 01:104-110 only comparable distinct pair {1}⊆{1,3}; maximal {2},{1,3}; no greatest
+  old_key: check:01-chains-and-zorn:3
+- key: exm-method-maximality
+  kind: exm
+  file: 02-chains-and-zorn.md
+  line: 122
+  hash: 89b9d6b65f5e
+  verdicts:
+  - stage: S5a
+    verdict: correct
+    by: refereeA
+    hash: 89b9d6b65f5e
+    date: '2026-10-25'
+    model: claude-opus-5-5
+    evidence: 01:162-166 template matches the proof structure; failure modes are accurate
+  - stage: S5b
+    verdict: correct
+    by: refereeB
+    hash: 89b9d6b65f5e
+    date: '2026-10-25'
+    model: claude-opus-5-5
+    evidence: 01:159-167 template matches both uses in 5.1 and those in 5.2
+  - stage: S8
+    verdict: minor
+    by: seam
+    hash: 89b9d6b65f5e
+    date: '2026-10-25'
+    model: claude-opus-5-5
+    evidence: index.md:19 Named moves entry 'Finitely many, so one member' links to @lem-chain-union,
+      which is a lemma, not a method box (STYLE §2 item 6)
+  - stage: S8
+    verdict: correct
+    by: coordinator
+    hash: 89b9d6b65f5e
+    date: '2026-10-25'
+    evidence: 01:159-167 template matches all four runs; index.md:18 Named moves now lists only @exm-method-maximality
+      (S8 seam finding gone)
+- key: exm-zorn-representatives
+  kind: exm
+  file: 02-chains-and-zorn.md
+  line: 134
+  hash: 50b984f0a483
+  verdicts:
+  - stage: S5a
+    verdict: correct
+    by: refereeA
+    hash: 50b984f0a483
+    date: '2026-10-25'
+    model: claude-opus-5-5
+    evidence: '01:184-186: chain step uses lem-chain-union(b); the case s=x uses Eq2 with def-equivalence-class
+      [a]={x : x~a} (ch04/02:94), which is correct; strictness from x∈[x]; sidecar passes'
+  - stage: S5b
+    verdict: minor
+    by: refereeB
+    hash: 50b984f0a483
+    date: '2026-10-25'
+    model: claude-opus-5-5
+    evidence: 01-chains-and-zorn.md:189 'no formula describes one' (of a set of representatives for x-y∈Q)
+      is asserted with no source and is not a theorem of ZFC.
+  - stage: S8
+    verdict: minor
+    by: seam
+    hash: 50b984f0a483
+    date: '2026-10-25'
+    model: claude-opus-5-5
+    evidence: 01-chains-and-zorn.md:189 A forward promise into another volume has no STATUS row.
+  - stage: S7r
+    verdict: minor
+    by: rereferee
+    hash: 50b984f0a483
+    date: '2026-10-25'
+    model: claude-opus-5-5
+    evidence: '''no formula for one is known'' at 01:189 is correct and consistent with the rest of the
+      chapter. Still open: the MT.1 pointer has no STATUS promise row (F004, deferred) and the blueprint
+      wording (F003 aftermath, deferred).'
+  - stage: S8
+    verdict: correct
+    by: coordinator
+    hash: 50b984f0a483
+    date: '2026-10-25'
+    evidence: 01:171-189 proof correct; 'no formula for one is known' consistent; MT pointer '*Measure
+      and Integration*, Chapter 1'; sidecar passes; STATUS row is shared-todo item 1
+- key: check:02-chains-and-zorn:4
+  kind: check
+  file: 02-chains-and-zorn.md
+  line: 162
+  hash: 56aca86433c0
+  verdicts:
+  - stage: S5a
+    verdict: minor
+    by: refereeA
+    hash: d43e0057eaaf
+    date: '2026-10-25'
+    model: claude-opus-5-5
+    evidence: 01-chains-and-zorn.md:196 The 'exactly the maximal elements' argument rules out one-element
+      sets but not ∅.
+  - stage: S5b
+    verdict: minor
+    by: refereeB
+    hash: d43e0057eaaf
+    date: '2026-10-25'
+    model: claude-opus-5-5
+    evidence: 01-chains-and-zorn.md:196 Parity facts used without @ref and missing from the dependency
+      ledger.
+  - stage: S7r
+    verdict: correct
+    by: rereferee
+    hash: a921f153e3e0
+    date: '2026-10-25'
+    model: claude-opus-5-5
+    evidence: 'Recomputed: a partial object (a set of pairwise unrelated integers) holds at most one even
+      and one odd integer, because same-parity differences are even. The two-element ones are {e,o}. Those
+      are maximal: by thm-even-or-odd a third integer has the parity of e or o. ∅ and singletons sit strictly
+      inside some {e,o}. {0,1} and {4,-7} are valid examples.'
+  - stage: S7r
+    verdict: minor
+    by: rereferee
+    hash: a921f153e3e0
+    date: '2026-10-25'
+    model: claude-opus-5-5
+    evidence: 'The solution never shows that {e,o} is itself a partial object, i.e. that e ≁ o (e − o
+      is odd, so not even, which needs ''not both even and odd''). It only shows at most one element of
+      each parity. Everything else is right: the maximal elements are the {e,o}, and ∅ and the singletons
+      lie strictly inside some {e,o}.'
+  - stage: S8
+    verdict: correct
+    by: coordinator
+    hash: 56aca86433c0
+    date: '2026-10-25'
+    evidence: '01:196 added: {e,o} is a partial object, e-o=2(a-b-1)+1 odd hence not even (thm-even-or-odd,
+      ch01/01:139), so e !~ o; rest (at most one per parity, maximality, no greatest) rechecked'
+  old_key: check:01-chains-and-zorn:4
+- key: lem-one-step-order-extension
+  kind: lem
+  file: 02-chains-and-zorn.md
+  line: 196
+  hash: 441254c80a84
+  verdicts:
+  - stage: S5a
+    verdict: correct
+    by: refereeA
+    hash: 441254c80a84
+    date: '2026-10-25'
+    model: claude-opus-5-5
+    evidence: 02:89-93. The incomparability hypothesis is used, since without it (a,b) would already be
+      in the order. The sidecar exhausts all partial orders on 4 points.
+  - stage: S5b
+    verdict: correct
+    by: refereeB
+    hash: 441254c80a84
+    date: '2026-10-25'
+    model: claude-opus-5-5
+    evidence: :86-94 statement checked; the sidecar passes on all 219 orders on 4 points.
+- key: proof:lem-one-step-order-extension
+  kind: proof
+  file: 02-chains-and-zorn.md
+  line: 210
+  hash: ce231b101047
+  verdicts:
+  - stage: S5a
+    verdict: correct
+    by: refereeA
+    hash: ce231b101047
+    date: '2026-10-25'
+    model: claude-opus-5-5
+    evidence: 02:101-107. All four old/new cases of (PO2) reduce to b⪯a, which incomparability excludes.
+      All four cases of (PO3) were checked one by one.
+  - stage: S5b
+    verdict: correct
+    by: refereeB
+    hash: ce231b101047
+    date: '2026-10-25'
+    model: claude-opus-5-5
+    evidence: ':100-108: all four (PO2) cases and all four (PO3) cases checked by hand. The new/old case
+      with (y,x) new correctly uses b ⪯ x.'
+- key: check:02-chains-and-zorn:5
+  kind: check
+  file: 02-chains-and-zorn.md
+  line: 220
+  hash: 9548afb5d5d9
+  verdicts:
+  - stage: S5a
+    verdict: correct
+    by: refereeA
+    hash: 9548afb5d5d9
+    date: '2026-10-25'
+    model: claude-opus-5-5
+    evidence: 02:115. ⊆ on P({1,2}) has 9 pairs. Adding ({1},{2}) gives 10 = 4·5/2, which is total.
+  - stage: S5b
+    verdict: correct
+    by: refereeB
+    hash: 9548afb5d5d9
+    date: '2026-10-25'
+    model: claude-opus-5-5
+    evidence: :115 four candidate pairs; only ({1},{2}) is new; the result is total.
+  old_key: check:02-using-zorn:2
+- key: thm-order-extension
+  kind: thm
+  file: 02-chains-and-zorn.md
+  line: 230
+  hash: cf57a8d171d8
+  verdicts:
+  - stage: S5a
+    verdict: correct
+    by: refereeA
+    hash: cf57a8d171d8
+    date: '2026-10-25'
+    model: claude-opus-5-5
+    evidence: 02:123. Statement matches def-partial-order's use of 'total'.
+  - stage: S5b
+    verdict: minor
+    by: refereeB
+    hash: cf57a8d171d8
+    date: '2026-10-25'
+    model: claude-opus-5-5
+    evidence: 02-using-zorn.md:126 Reader prose uses the internal volume id 'fd2'.
+  - stage: S7r
+    verdict: correct
+    by: rereferee
+    hash: cf57a8d171d8
+    date: '2026-10-25'
+    model: claude-opus-5-5
+    evidence: :126 now reads 'This book's word is "total" (@def-partial-order)', so the internal id is
+      gone from the prose.
+- key: proof:thm-order-extension
+  kind: proof
+  file: 02-chains-and-zorn.md
+  line: 242
+  hash: c64e528376a6
+  verdicts:
+  - stage: S5a
+    verdict: correct
+    by: refereeA
+    hash: c64e528376a6
+    date: '2026-10-25'
+    model: claude-opus-5-5
+    evidence: 02:133-137. The chain union contains ⪯ because the chain is non-empty. (PO2) and (PO3) go
+      through lem-chain-union (b). The lemma gives (a,b) in R but not in T, so T ≠ R. That T ⊆ R gives
+      R in P.
+  - stage: S5b
+    verdict: correct
+    by: refereeB
+    hash: c64e528376a6
+    date: '2026-10-25'
+    model: claude-opus-5-5
+    evidence: ':132-138: union of a chain contains ⪯ (non-empty chain), (PO2)/(PO3) via lem-chain-union
+      (b), lemma applied to T. Correct.'
+- key: exm-divisibility-linear-extension
+  kind: exm
+  file: 02-chains-and-zorn.md
+  line: 256
+  hash: 2ebd4c2865bc
+  verdicts:
+  - stage: S5a
+    verdict: correct
+    by: refereeA
+    hash: 2ebd4c2865bc
+    date: '2026-10-25'
+    model: claude-opus-5-5
+    evidence: 02:155-165. Verified (PO1), (PO2), (PO3) and totality case by case, plus containment of
+      divisibility using def-divides with k in ℤ (a,b>0 forces k≥1). The counterexample 2∣0 is correct.
+      Sidecar ok.
+  - stage: S5b
+    verdict: minor
+    by: refereeB
+    hash: 2ebd4c2865bc
+    date: '2026-10-25'
+    model: claude-opus-5-5
+    evidence: 02-using-zorn.md:149 The new symbol ⊑ (and the exercise-local ≤_p, ≤_l at :258) has no NOTATION.md
+      row.
+  - stage: S7r
+    verdict: minor
+    by: rereferee
+    hash: 2ebd4c2865bc
+    date: '2026-10-25'
+    model: claude-opus-5-5
+    evidence: 'The summary table now follows this example''s check, closes the order-extension subsection
+      and is introduced as ''on the main line''. The four rows match the four main-line uses. Still open,
+      and deferred: the NOTATION rows for \sqsubseteq, ≤_p and ≤_l (F019).'
+  - stage: S8
+    verdict: correct
+    by: coordinator
+    hash: 2ebd4c2865bc
+    date: '2026-10-25'
+    evidence: 02:146-168 order on N with 0 on top checked, extends divisibility; sidecar exm-divisibility-linear-extension.py
+      passes; NOTATION rows for sqsubseteq, <=_p, <=_l are shared-todo item 4
+- key: check:02-chains-and-zorn:6
+  kind: check
+  file: 02-chains-and-zorn.md
+  line: 280
+  hash: f3ca258d9c9c
+  verdicts:
+  - stage: S5a
+    verdict: correct
+    by: refereeA
+    hash: f3ca258d9c9c
+    date: '2026-10-25'
+    model: claude-opus-5-5
+    evidence: 02:175. Of the 10 pairs, divisibility relates every pair except {4,6}.
+  - stage: S5b
+    verdict: correct
+    by: refereeB
+    hash: f3ca258d9c9c
+    date: '2026-10-25'
+    model: claude-opus-5-5
+    evidence: :175 all 10 pairs enumerated; only {4,6} is ∣-incomparable.
+  old_key: check:02-using-zorn:3
+- key: exr-chains-and-zorn-a2
+  kind: exr
+  file: 02-chains-and-zorn.md
+  line: 294
+  hash: b10fab3d0ca2
+  verdicts: []
+- key: exr-chains-and-zorn-b1
+  kind: exr
+  file: 02-chains-and-zorn.md
+  line: 321
+  hash: 7ae681eae88d
+  verdicts:
+  - stage: S5a
+    verdict: correct
+    by: refereeA
+    hash: 7ae681eae88d
+    date: '2026-10-25'
+    model: claude-opus-5-5
+    evidence: '01:251: C0∈P; the union of a non-empty chain contains C0 (uses non-emptiness) and is a
+      chain by lem-chain-union(b); the maximality argument is correct'
+  - stage: S5b
+    verdict: correct
+    by: refereeB
+    hash: 7ae681eae88d
+    date: '2026-10-25'
+    model: claude-opus-5-5
+    evidence: 01:250-252 H⊇C0 uses 𝒦≠∅; comparability via lem-chain-union (b); maximality argument correct
+  - stage: S6
+    verdict: correct
+    by: verifier
+    hash: 7ae681eae88d
+    date: '2026-10-25'
+    model: claude-opus-5-5
+    evidence: '01:238-252. My solution matches: P = chains containing C0, C0 in P, union of a non-empty
+      chain is a chain by lem-chain-union (b), and a maximal element of P is a maximal chain. The hint
+      gives only the partial objects, which is a first line. Worked example: thm-choice-from-zorn and
+      exm-zorn-representatives use the same template.'
+- key: exr-chains-and-zorn-b2
+  kind: exr
+  file: 02-chains-and-zorn.md
+  line: 337
+  hash: 3fec079984bd
+  verdicts:
+  - stage: S5a
+    verdict: correct
+    by: refereeA
+    hash: 3fec079984bd
+    date: '2026-10-25'
+    model: claude-opus-5-5
+    evidence: '01:269: F∉D because F∩F=F≠∅ (uses non-empty members); D∪{F} is pairwise disjoint; strictness
+      is checked'
+  - stage: S5b
+    verdict: correct
+    by: refereeB
+    hash: 3fec079984bd
+    date: '2026-10-25'
+    model: claude-opus-5-5
+    evidence: 01:268-270 F∉D since F∩F=F≠∅; D∪{F} pairwise disjoint; strictly larger
+  - stage: S6
+    verdict: correct
+    by: verifier
+    hash: 3fec079984bd
+    date: '2026-10-25'
+    model: claude-opus-5-5
+    evidence: 01:254-270. The frame is sound, and the completion (F not in D because F∩F=F≠∅; D∪{F} pairwise
+      disjoint) is complete. The step-(4) worked example is exm-zorn-representatives.
+- key: exr-chains-and-zorn-b4
+  kind: exr
+  file: 02-chains-and-zorn.md
+  line: 355
+  hash: 820bdbfd1219
+  verdicts:
+  - stage: S5a
+    verdict: correct
+    by: refereeA
+    hash: 65bfcefffbd6
+    date: '2026-10-25'
+    model: claude-opus-5-5
+    evidence: '01:297-305: (a) counterexample valid (the empty chain is bounded by any element); (b) lem-chain-union(a)
+      plus Zorn, and Section 4.3 R4 exists (exr-orders-r4); (c) E and O are maximal and incomparable;
+      (d) uses non-empty K to show u∈Q, then PO3; (e) prp-union-two-countable and thm-reals-uncountable-decimal
+      are applied correctly'
+  - stage: S5b
+    verdict: minor
+    by: refereeB
+    hash: 65bfcefffbd6
+    date: '2026-10-25'
+    model: claude-opus-5-5
+    evidence: 01-chains-and-zorn.md:301 (c) uses 'n∉E implies n odd, so n+1∈E' (and the mirror for O)
+      without @thm-even-or-odd and without a ledger line.
+  - stage: S6
+    verdict: minor
+    by: verifier
+    hash: 65bfcefffbd6
+    date: '2026-10-25'
+    model: claude-opus-5-5
+    evidence: '01-chains-and-zorn.md:291 B4(d) needs a move with no worked example in Section 5.1: applying
+      Zorn''s lemma to the up-set {q ∈ P : p ⪯ q} and transferring maximality back to P.'
+  - stage: S7r
+    verdict: minor
+    by: rereferee
+    hash: fbd58359786e
+    date: '2026-10-25'
+    model: claude-opus-5-5
+    evidence: 'The (c) justification is now complete. The hint added to (d) breaks the STYLE.md:229 format
+      (it must be italic *Hint: ...* at the end of the problem, not a plain parenthetical). The solutions
+      to (a), (b), (d) and (e) are unchanged.'
+  - stage: S7r
+    verdict: correct
+    by: rereferee
+    hash: fbd58359786e
+    date: '2026-10-25'
+    model: claude-opus-5-5
+    evidence: The hint in (d) points to the method of the solution (Q = elements above p). (c) now justifies
+      that n ∉ E is odd by thm-even-or-odd, so n+1 ∈ E gives two consecutive numbers. (a) false, (b) true,
+      (d) true, (e) as before.
+  - stage: S8
+    verdict: correct
+    by: coordinator
+    hash: 8a594e96b15a
+    date: '2026-10-25'
+    evidence: '01:282-296 hint moved after the list as italic ''*Hint for (d): ...*'' per STYLE.md:229;
+      names tool+object only; solutions (a)-(e) rechecked, (d) at 01:305 uses Q={q: p<=q} as hinted'
+- key: exr-using-zorn-b2
+  kind: exr
+  file: 02-chains-and-zorn.md
+  line: 383
+  hash: c638bf0623f8
+  verdicts:
+  - stage: S5a
+    verdict: correct
+    by: refereeA
+    hash: e2b331b26a57
+    date: '2026-10-25'
+    model: claude-opus-5-5
+    evidence: 02:250-252. (a) uses prp-subset-finite (a proper subset has k<n elements). (b) gives 2,
+      which the sidecar confirms.
+  - stage: S5b
+    verdict: correct
+    by: refereeB
+    hash: e2b331b26a57
+    date: '2026-10-25'
+    model: claude-opus-5-5
+    evidence: ':250-252: list by size and prp-subset-finite (S ≠ A gives k<n); count of 2; sidecar passes.'
+  - stage: S6
+    verdict: correct
+    by: verifier
+    hash: e2b331b26a57
+    date: '2026-10-25'
+    model: claude-opus-5-5
+    evidence: 02:240-253. My script checks that list (a) respects ⊊. For (b) it counts 2 total extensions
+      of ⊆ on P({1,2}), matching the answer. prp-subset-finite gives k<n for a proper subset, as cited.
+- key: exr-chains-and-zorn-c1
+  kind: exr
+  file: 02-chains-and-zorn.md
+  line: 400
+  hash: 603058a87b65
+  verdicts:
+  - stage: S5a
+    verdict: correct
+    by: refereeA
+    hash: cdfbccea7fe2
+    date: '2026-10-25'
+    model: claude-opus-5-5
+    evidence: '01:321-330: identifies the missing check that the union lies in P; the finite-subsets counterexample
+      to the general inference is valid'
+  - stage: S5b
+    verdict: minor
+    by: refereeB
+    hash: cdfbccea7fe2
+    date: '2026-10-25'
+    model: claude-opus-5-5
+    evidence: 01-chains-and-zorn.md:325 Marking scheme totals 6 points; STYLE §11.6 requires 'points summing
+      to 10'.
+  - stage: S6
+    verdict: gap
+    by: verifier
+    hash: cdfbccea7fe2
+    date: '2026-10-25'
+    model: claude-opus-5-5
+    evidence: '01-chains-and-zorn.md:315 The find-the-error ''proof'' is flawed in more places than the
+      solution says: besides the unchecked union-is-a-chain step, it never checks P ≠ ∅ (Zorn needs it),
+      and it does not justify that a maximal element of P is a maximal chain of X.'
+  - stage: S7r
+    verdict: correct
+    by: rereferee
+    hash: a8ce33ff905a
+    date: '2026-10-25'
+    model: claude-opus-5-5
+    evidence: 'The ''proof'' now has exactly one illegal step: the union of a chain of chains is not shown
+      to be a chain. C_0 ∈ P and the maximal-chain transfer are both stated. The solution names exactly
+      that step, the counterexample (finite subsets of ℕ) is right, and the scheme sums to 10.'
+  - stage: S7r
+    verdict: correct
+    by: rereferee
+    hash: a8ce33ff905a
+    date: '2026-10-25'
+    model: claude-opus-5-5
+    evidence: The 'proof' now has C_0 ∈ P and the maximal-chain step, so it lacks only the check that
+      ⋃\sK is a chain, which is exactly the error the solution names. The counterexample (finite subsets
+      of ℕ) and the repair via lem-chain-union (b) are correct. The marking scheme sums to 2+3+3+2=10.
+- key: exr-chains-and-zorn-c2
+  kind: exr
+  file: 02-chains-and-zorn.md
+  line: 423
+  hash: 89edaf8e06ef
+  verdicts:
+  - stage: S5a
+    verdict: correct
+    by: refereeA
+    hash: 9f6860d53bc6
+    date: '2026-10-25'
+    model: claude-opus-5-5
+    evidence: '01:350-354: least element by thm-well-ordering, uniqueness by prp-greatest-unique (least
+      half), classes disjoint by thm-classes-partition(c); in (b) injectivity names s_x; no choice is
+      used'
+  - stage: S5b
+    verdict: minor
+    by: refereeB
+    hash: 9f6860d53bc6
+    date: '2026-10-25'
+    model: claude-opus-5-5
+    evidence: 01-chains-and-zorn.md:356 Marking scheme totals 6 points against STYLE §11.6's 10.
+  - stage: S6
+    verdict: minor
+    by: verifier
+    hash: 9f6860d53bc6
+    date: '2026-10-25'
+    model: claude-opus-5-5
+    evidence: 01-chains-and-zorn.md:358 The marking scheme pays for particular citations, so a correct
+      alternative proof loses points.
+  - stage: S7r
+    verdict: correct
+    by: rereferee
+    hash: 89edaf8e06ef
+    date: '2026-10-25'
+    model: claude-opus-5-5
+    evidence: The scheme is now 3/3/2/2 = 10, its lines name content instead of citations, and the fatal-error
+      line still covers using choice. The solution text is unchanged.
+  - stage: S7r
+    verdict: correct
+    by: rereferee
+    hash: 89edaf8e06ef
+    date: '2026-10-25'
+    model: claude-opus-5-5
+    evidence: Retitled as an exit check. (a) uses least elements via thm-well-ordering, with uniqueness
+      and 'at most once' via thm-classes-partition, and is correct. (b) via the injection j is correct.
+      (c) cites @exm-method-name-the-choice. The marking scheme sums to 3+3+2+2=10.
+- key: exr-using-zorn-c1
+  kind: exr
+  file: 02-chains-and-zorn.md
+  line: 454
+  hash: b4c9ebae5513
+  verdicts:
+  - stage: S5a
+    verdict: correct
+    by: refereeA
+    hash: b8ebebf84013
+    date: '2026-10-25'
+    model: claude-opus-5-5
+    evidence: 02:287-295. The cases are exhaustive. Case b⪯a uses (PO2) and a≠b. In the incomparable case
+      the lemma is applied with a and b exchanged, then thm-order-extension is applied to R. Marking-scheme
+      points add up to 8.
+  - stage: S5b
+    verdict: minor
+    by: refereeB
+    hash: b8ebebf84013
+    date: '2026-10-25'
+    model: claude-opus-5-5
+    evidence: 02-using-zorn.md:297 Marking schemes do not sum to 10 points.
+  - stage: S6
+    verdict: minor
+    by: verifier
+    hash: b8ebebf84013
+    date: '2026-10-25'
+    model: claude-opus-5-5
+    evidence: 02-using-zorn.md:283 Hint 1 gives the key idea (apply the lemma with a and b exchanged),
+      and the marking scheme ties 2 points to that route.
+  - stage: S7r
+    verdict: correct
+    by: rereferee
+    hash: f4cd13a42f42
+    date: '2026-10-25'
+    model: claude-opus-5-5
+    evidence: Hint 1 now names the target object (a partial order containing ⪯ and (b,a)) and does not
+      carry out the exchange. The scheme reads 1+1+2+2+2+2 = 10, and its third-from-last line accepts
+      any such partial order. The fatal error still describes the unexchanged lemma, which is consistent.
+  - stage: S7r
+    verdict: correct
+    by: rereferee
+    hash: f4cd13a42f42
+    date: '2026-10-25'
+    model: claude-opus-5-5
+    evidence: 'Now an exit check, with Hint 1 reworded so it no longer gives away the exchange. The solution
+      is correct: \sT ≠ ∅ by thm-order-extension; in the case b ⪯ a, (PO2) with a ≠ b; in the incomparable
+      case, the lemma with a and b exchanged gives (b,a) ∈ R ⊆ T, so (a,b) ∉ T. The marking scheme sums
+      to 1+1+2+2+2+2=10.'
+- key: thm-choice-from-zorn
+  kind: thm
+  file: 03-using-zorn.md
+  line: 7
+  hash: eba75cf91c31
+  verdicts:
+  - stage: S5a
+    verdict: correct
+    by: refereeA
+    hash: eba75cf91c31
+    date: '2026-10-25'
+    model: claude-opus-5-5
+    evidence: 01:125 matches the conclusion of ax-choice (ch03/02:30)
+  - stage: S5b
+    verdict: minor
+    by: refereeB
+    hash: eba75cf91c31
+    date: '2026-10-25'
+    model: claude-opus-5-5
+    evidence: 01-chains-and-zorn.md:138 Clause names (C1),(C2) introduced here make NOTATION's statement
+      that (C1)-(C3) are used only in F3.3 false.
+  - stage: S8
+    verdict: minor
+    by: seam
+    hash: eba75cf91c31
+    date: '2026-10-25'
+    model: claude-opus-5-5
+    evidence: 01-chains-and-zorn.md:138 The chapter's new notation is not recorded in NOTATION.md, and
+      it contradicts NOTATION rows.
+  - stage: S8
+    verdict: correct
+    by: coordinator
+    hash: eba75cf91c31
+    date: '2026-10-25'
+    evidence: 01:122-157 statement and proof correct; local clause names (C1),(C2) used consistently in
+      01 and 02:188; NOTATION row amendment is shared, shared-todo item 3
+- key: proof:thm-choice-from-zorn
+  kind: proof
+  file: 03-using-zorn.md
+  line: 19
+  hash: 1628f0dd2602
+  verdicts:
+  - stage: S5a
+    verdict: minor
+    by: refereeA
+    hash: 6eba99f4bd3c
+    date: '2026-10-25'
+    model: claude-opus-5-5
+    evidence: 01-chains-and-zorn.md:154 M' ∈ P needs M' ⊆ I×U, which is not stated; only (C1) and (C2)
+      are checked.
+  - stage: S5b
+    verdict: correct
+    by: refereeB
+    hash: 6eba99f4bd3c
+    date: '2026-10-25'
+    model: claude-opus-5-5
+    evidence: 01:145-155 all four steps checked; M' ⊆ I×U since x0∈A_{i0}⊆U; (C2) for M' because i0 missed;
+      I=∅ remark 01:157 correct (P={∅})
+  - stage: S7r
+    verdict: correct
+    by: rereferee
+    hash: e65fe7a6e8eb
+    date: '2026-10-25'
+    model: claude-opus-5-5
+    evidence: The maximality step now checks all three conditions for M' ∈ P (M' ⊆ I×U, (C1), (C2)), M
+      ⊊ M', and the contradiction. Everything else is unchanged and correct.
+  - stage: S7r
+    verdict: correct
+    by: rereferee
+    hash: e65fe7a6e8eb
+    date: '2026-10-25'
+    model: claude-opus-5-5
+    evidence: The proof now adds that M' ⊆ I×U because x_0 ∈ A_{i_0} ⊆ U, which closes the membership-in-P
+      step. The non-empty, chain (lem-chain-union (b), n=2), Zorn and maximality steps are all sound,
+      and (C1)/(C2) give a function with c(i) ∈ A_i.
+- key: thm-cardinal-comparability
+  kind: thm
+  file: 03-using-zorn.md
+  line: 37
+  hash: 4d40da190c25
+  verdicts:
+  - stage: S5a
+    verdict: correct
+    by: refereeA
+    hash: 4d40da190c25
+    date: '2026-10-25'
+    model: claude-opus-5-5
+    evidence: 02:12. Every hypothesis is used. lem-chain-union (b) (01:60) and thm-zorn (01:89, non-empty
+      P whose non-empty chains have upper bounds) are stated in the form the proof needs.
+  - stage: S5b
+    verdict: minor
+    by: refereeB
+    hash: 4d40da190c25
+    date: '2026-10-25'
+    model: claude-opus-5-5
+    evidence: 02-using-zorn.md:9 The 3.4 promise this theorem pays is not recorded as paid with its label,
+      and the promise's ledger still carries a stale atlas id.
+  - stage: S8
+    verdict: minor
+    by: seam
+    hash: 4d40da190c25
+    date: '2026-10-25'
+    model: claude-opus-5-5
+    evidence: STATUS.md:188 The promise bookkeeping for the chapter's main payoff is stale. Section 5.2
+      pays it, but STATUS still credits it to ST.4 and does not mark it paid.
+  - stage: S8
+    verdict: correct
+    by: coordinator
+    hash: 4d40da190c25
+    date: '2026-10-25'
+    evidence: 02:9-40 theorem and proof correct (partial matchings, chain union via lem-chain-union, maximal
+      one exhausts a side); sidecar thm-cardinal-comparability.py passes; STATUS paid-row and ch03 retag
+      are shared-todo item 2
+- key: proof:thm-cardinal-comparability
+  kind: proof
+  file: 03-using-zorn.md
+  line: 47
+  hash: a1e1a60933e4
+  verdicts:
+  - stage: S5a
+    verdict: correct
+    by: refereeA
+    hash: a1e1a60933e4
+    date: '2026-10-25'
+    model: claude-opus-5-5
+    evidence: 02:20-37. P is cut out of P(A×B) by separation. The chain step applies lem-chain-union (b)
+      with n=2. The extension step correctly derives forall-or-forall from the negated exists-and-exists.
+      Case 1 is valid by def-function (each a in exactly one pair). Case 2 is valid by def-relation, which
+      defines the inverse relation R^{-1}. The sidecar reports 13 matchings, 6 maximal.
+  - stage: S5b
+    verdict: correct
+    by: refereeB
+    hash: a1e1a60933e4
+    date: '2026-10-25'
+    model: claude-opus-5-5
+    evidence: ':19-38 checked: P ⊆ P(A×B), ∅ ∈ P, chain union via lem-chain-union (b) n=2, extension by
+      (a0,b0), the De Morgan split into Case 1/Case 2, M^{-1} via def-relation. Every unlabelled fact
+      is in the ledger at :373-376.'
+- key: cor-cardinal-trichotomy
+  kind: cor
+  file: 03-using-zorn.md
+  line: 70
+  hash: 4ac4632967e0
+  verdicts:
+  - stage: S5a
+    verdict: correct
+    by: refereeA
+    hash: 4ac4632967e0
+    date: '2026-10-25'
+    model: claude-opus-5-5
+    evidence: 02:45. Uses def-card-le, where < means ≤ and not = (ch03/04:14).
+  - stage: S5b
+    verdict: correct
+    by: refereeB
+    hash: 4ac4632967e0
+    date: '2026-10-25'
+    model: claude-opus-5-5
+    evidence: :42-46 statement matches def-card-le (ch03 04:11-15).
+- key: proof:cor-cardinal-trichotomy
+  kind: proof
+  file: 03-using-zorn.md
+  line: 76
+  hash: 98905c41394f
+  verdicts:
+  - stage: S5a
+    verdict: correct
+    by: refereeA
+    hash: 98905c41394f
+    date: '2026-10-25'
+    model: claude-opus-5-5
+    evidence: 02:49-51. All cases are covered. Symmetry comes from prp-equinumerous-properties (b). The
+      case where both < hold goes through thm-schroder-bernstein and correctly contradicts the definition
+      of <.
+  - stage: S5b
+    verdict: minor
+    by: refereeB
+    hash: 98905c41394f
+    date: '2026-10-25'
+    model: claude-opus-5-5
+    evidence: 02-using-zorn.md:54 New promise to ST (comparability implies choice) is not in STATUS's
+      promise table, and the pointer has no chapter.
+  - stage: S7r
+    verdict: minor
+    by: rereferee
+    hash: 98905c41394f
+    date: '2026-10-25'
+    model: claude-opus-5-5
+    evidence: 'The pointer at :54 now reads ''*Axiomatic Set Theory*, Chapter 4''. series.py show confirms
+      ST Ch 4 = ST.4 ''Equivalents of the Axiom of Choice''. Still open, and deferred: the STATUS promise
+      row for F2.4 §01/§02 -> ST.4 (F013).'
+  - stage: S8
+    verdict: correct
+    by: coordinator
+    hash: 98905c41394f
+    date: '2026-10-25'
+    evidence: 02:48-54 proof correct (trichotomy from comparability + Schroder-Bernstein); ST pointer
+      '*Axiomatic Set Theory*, Chapter 4' = ST.4; STATUS row shared-todo item 1
+- key: check:03-using-zorn:1
+  kind: check
+  file: 03-using-zorn.md
+  line: 84
+  hash: '481958481429'
+  verdicts:
+  - stage: S5a
+    verdict: correct
+    by: refereeA
+    hash: '481958481429'
+    date: '2026-10-25'
+    model: claude-opus-5-5
+    evidence: 02:61. Six two-pair maximal matchings; matchings of 0 or 1 pairs can be extended. Pigeonhole
+      (a) rules out Case 1, so Case 2 always occurs. Matches 5.1's example (01:9) and the sidecar.
+  - stage: S5b
+    verdict: correct
+    by: refereeB
+    hash: '481958481429'
+    date: '2026-10-25'
+    model: claude-opus-5-5
+    evidence: :61 the six maximal matchings are right; the sidecar thm-cardinal-comparability.py passes
+      (13 partial matchings, 6 maximal); cor-pigeonhole-finite-sets (a) applies correctly.
+  old_key: check:02-using-zorn:1
+- key: check:03-using-zorn:2
+  kind: check
+  file: 03-using-zorn.md
+  line: 98
+  hash: 5d4af6a94ae7
+  verdicts: []
+- key: check:03-using-zorn:3
+  kind: check
+  file: 03-using-zorn.md
+  line: 121
+  hash: 3c0f852b7f43
+  verdicts: []
+- key: thm-well-ordering-theorem
+  kind: thm
+  file: 03-using-zorn.md
+  line: 129
+  hash: fffcb6f41201
+  verdicts: []
+- key: proof:thm-well-ordering-theorem
+  kind: proof
+  file: 03-using-zorn.md
+  line: 139
+  hash: b94fa94038fa
+  verdicts: []
+- key: prp-well-ordering-gives-choice
+  kind: prp
+  file: 03-using-zorn.md
+  line: 159
+  hash: f591be11c656
+  verdicts: []
+- key: proof:prp-well-ordering-gives-choice
+  kind: proof
+  file: 03-using-zorn.md
+  line: 165
+  hash: bca06cd1d608
+  verdicts: []
+- key: check:03-using-zorn:4
+  kind: check
+  file: 03-using-zorn.md
+  line: 173
+  hash: ef86df8d0b72
+  verdicts: []
+- key: exr-using-zorn-a1
+  kind: exr
+  file: 03-using-zorn.md
+  line: 211
+  hash: bef102804874
+  verdicts:
+  - stage: S5a
+    verdict: correct
+    by: refereeA
+    hash: bcdfa692c7ac
+    date: '2026-10-25'
+    model: claude-opus-5-5
+    evidence: 02:211-217. (a) correctly locates (M1) and (M2). (c) A×B=∅, so P={∅}; Case 1 holds, and
+      Case 2 as well if B=∅.
+  - stage: S5b
+    verdict: minor
+    by: refereeB
+    hash: bcdfa692c7ac
+    date: '2026-10-25'
+    model: claude-opus-5-5
+    evidence: 02-using-zorn.md:211 A1(a)'s answer omits one place where the proof uses (M1) and (M2).
+  - stage: S6
+    verdict: minor
+    by: verifier
+    hash: bcdfa692c7ac
+    date: '2026-10-25'
+    model: claude-opus-5-5
+    evidence: '02-using-zorn.md:211 Answer (a) leaves out one place where (M1) and (M2) are used: the
+      step ''M uses up a side'', which checks that M'' = M ∪ {(a0,b0)} satisfies (M1) and (M2).'
+  - stage: S7r
+    verdict: correct
+    by: rereferee
+    hash: 1734b6c4e081
+    date: '2026-10-25'
+    model: claude-opus-5-5
+    evidence: (a) now names the 'M uses up a side' step. The proof at :33 does check (M1) and (M2) for
+      M ∪ {(a0,b0)}, and that check uses them for M on old pairs. Parts (b) to (d) are unchanged.
+  - stage: S7r
+    verdict: correct
+    by: rereferee
+    hash: 1734b6c4e081
+    date: '2026-10-25'
+    model: claude-opus-5-5
+    evidence: '(a) now also notes that the step ''M uses up a side'' uses (M1)/(M2) for M ∪ {(a_0,b_0)}.
+      This is accurate: adding an unpaired a_0 and an unpaired b_0 keeps both clauses.'
+- key: exr-using-zorn-r1
+  kind: exr
+  file: 03-using-zorn.md
+  line: 242
+  hash: 224afa3b08a6
+  verdicts:
+  - stage: S5a
+    verdict: correct
+    by: refereeA
+    hash: f22dc0dc541c
+    date: '2026-10-25'
+    model: claude-opus-5-5
+    evidence: 02:334. prp-card-le-surjection (ch03/04:59) needs A≠∅ and gives B→A, so both directions
+      are right. Both non-emptiness hypotheses are used, and A=∅≠B is a counterexample when one is dropped.
+  - stage: S5b
+    verdict: minor
+    by: refereeB
+    hash: f22dc0dc541c
+    date: '2026-10-25'
+    model: claude-opus-5-5
+    evidence: 02-using-zorn.md:327 The chapter's exit checks (R1-R2) have no marking schemes and are not
+      titled as exit checks.
+  - stage: S6
+    verdict: minor
+    by: verifier
+    hash: f22dc0dc541c
+    date: '2026-10-25'
+    model: claude-opus-5-5
+    evidence: 02-using-zorn.md:327 R1 and R2 are the chapter's exit checks, but neither has the marking
+      scheme that exit checks require.
+  - stage: S7r
+    verdict: minor
+    by: rereferee
+    hash: 814dc747d07d
+    date: '2026-10-25'
+    model: claude-opus-5-5
+    evidence: 'The marking scheme reads 3+4+3 = 10 and matches the solution''s two cases and the surjection
+      direction. Still open, and deferred to the coordinator: the blueprint (ch05-deepen.md:55,:218) and
+      index.md:9 call R1 and R2 exit checks, but STYLE:211 says exit checks are C items titled ''Exit
+      check''.'
+  - stage: S7r
+    verdict: correct
+    by: rereferee
+    hash: 814dc747d07d
+    date: '2026-10-25'
+    model: claude-opus-5-5
+    evidence: 'A marking scheme summing to 3+4+3=10 was added. The solution is correct: comparability,
+      then prp-card-le-surjection with the non-emptiness of the set being mapped onto.'
+- key: exr-using-zorn-b4
+  kind: exr
+  file: 03-using-zorn.md
+  line: 257
+  hash: 10abc9b8446b
+  verdicts: []
+- key: exr-using-zorn-b5
+  kind: exr
+  file: 03-using-zorn.md
+  line: 275
+  hash: b6481605ddef
+  verdicts: []
+- key: exr-using-zorn-b6
+  kind: exr
+  file: 03-using-zorn.md
+  line: 285
+  hash: 5e4aaf7352ad
+  verdicts: []
+- key: exr-using-zorn-c2
+  kind: exr
+  file: 03-using-zorn.md
+  line: 313
+  hash: 3fa751ed6f2c
+  verdicts:
+  - stage: S5a
+    verdict: correct
+    by: refereeA
+    hash: b42ba8f59cb4
+    date: '2026-10-25'
+    model: claude-opus-5-5
+    evidence: '02:316. Consistent with 5.1''s treatment (01:11): prp-countable-image, thm-reals-uncountable-decimal
+      and fd1 (N13) (fd1 ch08/06:69) say what is cited. Points add up to 6.'
+  - stage: S5b
+    verdict: minor
+    by: refereeB
+    hash: b42ba8f59cb4
+    date: '2026-10-25'
+    model: claude-opus-5-5
+    evidence: The solution at :316 is right and names the line, (N13), and a counterexample to the step.
+      The marking scheme at :318 totals 6 points, against STYLE §11.6 (sum to 10).
+  - stage: S6
+    verdict: minor
+    by: verifier
+    hash: b42ba8f59cb4
+    date: '2026-10-25'
+    model: claude-opus-5-5
+    evidence: 02-using-zorn.md:321 The marking scheme requires one specific counterexample and a label
+      citation, so it fails valid alternative answers.
+  - stage: S7r
+    verdict: correct
+    by: rereferee
+    hash: 62839358e08a
+    date: '2026-10-25'
+    model: claude-opus-5-5
+    evidence: The scheme reads 2+3+3+2 = 10. It pays for the failing line together with the reason (no
+      step) and accepts any counterexample that comes with the countability reason. The solution text
+      is unchanged and still earns full marks.
+  - stage: S7r
+    verdict: correct
+    by: rereferee
+    hash: 62839358e08a
+    date: '2026-10-25'
+    model: claude-opus-5-5
+    evidence: 'Only the marking scheme was rescaled, to 2+3+3+2=10. It now credits any counterexample
+      with the countability reason. The analysis is correct: N13, A=B=ℝ is uncountable, and the template
+      is the repair.'
+- key: exr-using-zorn-r2
+  kind: exr
+  file: 03-using-zorn.md
+  line: 331
+  hash: 6e2a5f960882
+  verdicts:
+  - stage: S5a
+    verdict: correct
+    by: refereeA
+    hash: ddf0afe8df96
+    date: '2026-10-25'
+    model: claude-opus-5-5
+    evidence: 02:347-349. (a) is valid. (b) applies exr-chains-and-zorn-b1 (01:241, proved from thm-zorn)
+      with C0=∅. The maximal chain is non-empty because {p} properly contains ∅. Matches the hypotheses
+      of thm-zorn.
+  - stage: S5b
+    verdict: minor
+    by: refereeB
+    hash: ddf0afe8df96
+    date: '2026-10-25'
+    model: claude-opus-5-5
+    evidence: The math at :347-349 is correct. Problem text :342 names its source ('Section 5.1, Exercise
+      B1'), against STYLE §11.5 ('The problem text never names its source chapter'). It is an exit check
+      without a marking scheme (§11.6).
+  - stage: S6
+    verdict: minor
+    by: verifier
+    hash: ddf0afe8df96
+    date: '2026-10-25'
+    model: claude-opus-5-5
+    evidence: 02:337-350. (a) and (b) are correct and complete (C≠∅ shown), and agree with mine. But R2
+      is an exit check with no marking scheme (STYLE §11.6). Its solution names its Chapter 4 source (def
+      of maximal/greatest) with no @ref, and cites B1 in prose rather than as @exr-chains-and-zorn-b1.
+  - stage: S8
+    verdict: minor
+    by: seam
+    hash: ddf0afe8df96
+    date: '2026-10-25'
+    model: claude-opus-5-5
+    evidence: 02-using-zorn.md:342 R-item problem texts name their sources, which STYLE §11.5 forbids.
+  - stage: S7r
+    verdict: minor
+    by: rereferee
+    hash: 02af306525cf
+    date: '2026-10-25'
+    model: claude-opus-5-5
+    evidence: (b) now states 'every chain lies in a maximal chain' inline, which matches exr-chains-and-zorn-b1
+      (01:238). The solution cites @exr-chains-and-zorn-b1. The scheme reads 1+1+3+2+1+2 = 10 and matches
+      the steps of (a) and (b). The exit-check designation is deferred, as for R1.
+  - stage: S7r
+    verdict: correct
+    by: rereferee
+    hash: 02af306525cf
+    date: '2026-10-25'
+    model: claude-opus-5-5
+    evidence: The problem text no longer names its source; the solution cites @exr-chains-and-zorn-b1.
+      (a) and (b) are correct (maximal chain with C_0=∅, non-empty, an upper bound, maximal by (a)). The
+      marking scheme sums to 1+1+3+2+1+2=10.
+- key: exr-using-zorn-c3
+  kind: exr
+  file: 03-using-zorn.md
+  line: 354
+  hash: c722e41a39b8
+  verdicts: []
+- key: exr-using-zorn-r4
+  kind: exr
+  file: 03-using-zorn.md
+  line: 378
+  hash: f5091c091a36
+  verdicts: []
+- key: exr-using-zorn-r5
+  kind: exr
+  file: 03-using-zorn.md
+  line: 392
+  hash: a6e7cd6212ed
+  verdicts: []
+- key: exr-using-zorn-r6
+  kind: exr
+  file: 03-using-zorn.md
+  line: 402
+  hash: bf97c67d5c73
+  verdicts: []
 - key: exr-infinite-sets-r4
   kind: exr
-  file: 01-countable-unions-and-choice.md
-  line: 625
+  file: 03-using-zorn.md
+  line: 420
   hash: 41df81bb985a
   verdicts:
   - stage: S5a
@@ -1167,507 +2281,198 @@ items:
     evidence: '05-infinite-sets.md:310-314: index letter now N throughout (Z_0, Z_1, Z_N for N>=2, N factors);
       bijection to the N-fold product, cor-product-countable, prp-countable-image, thm-countable-union
       all apply'
-- key: def-chain
-  kind: def
-  file: 02-chains-and-zorn.md
-  line: 25
-  hash: 9bb351e9111f
+- key: exr-infinite-sets-a1
+  kind: exr
+  file: 01-countable-unions-and-choice.md
+  line: 367
+  hash: 0e97f65bc3e1
   verdicts:
   - stage: S5a
     verdict: correct
     by: refereeA
-    hash: 9bb351e9111f
-    date: '2026-10-25'
+    hash: 0e97f65bc3e1
+    date: '2026-10-11'
     model: claude-opus-5-5
-    evidence: 01:23-35 matches def-partial-order's 'comparable'/'total' (ch04/03:22); examples checked
-      (2^m|2^n, {2,3} incomparable, empty and singleton chains by PO1); sidecar def-chain.py passes
+    evidence: '06:124-131. (b) uses the Quick check, which is in-section and is not an exercise. (c) checked:
+      h(n)=n+1 on N and h(k)=k for k<0 is a bijection Z→Z\{0}. (d) is fine.'
   - stage: S5b
     verdict: correct
     by: refereeB
-    hash: 9bb351e9111f
-    date: '2026-10-25'
+    hash: 0e97f65bc3e1
+    date: '2026-10-11'
     model: claude-opus-5-5
-    evidence: '01:23-35 definition; examples checked: 2^m | 2^n via 2^n=2^{n-m}2^m (ledgered, sidecar
-      def-chain.py); {2,3} incomparable; empty/singleton chains by (PO1)'
-- key: check:02-chains-and-zorn:1
-  kind: check
-  file: 02-chains-and-zorn.md
-  line: 39
-  hash: 95223f638f03
+    evidence: 06:113-132. (a) matches line 20. (b) Both statements are true, and the answer points at
+      the Quick check at line 57, which comes after the warning at line 53. (c) h(n)=n+1 on N and the
+      identity on the negatives is onto Z\{0}. (d) lem-subsets-of-naturals.
+  - stage: S6
+    verdict: correct
+    by: verifier
+    hash: 0e97f65bc3e1
+    date: '2026-10-11'
+    model: claude-opus-5-5
+    evidence: 06:113-132. (a) points to the choice-function line. (b) Both parts are true. (c) For X=ℤ,
+      h(n)=n+1 on ℕ and the identity on negatives, onto ℤ\{0}. (d) No; lem-subsets-of-naturals gives the
+      rule.
+  removed: true
+- key: exr-countable-unions-and-choice-b3
+  kind: exr
+  file: 01-countable-unions-and-choice.md
+  line: 439
+  hash: 53644efddc6c
   verdicts:
   - stage: S5a
     verdict: correct
     by: refereeA
-    hash: 95223f638f03
-    date: '2026-10-25'
+    hash: 2d094f263bf8
+    date: '2026-10-11'
     model: claude-opus-5-5
-    evidence: '01:41-48: (a) {1,2},{3} incomparable; (b) 1|all, 5|25, a|0; (c) 3|6, 3|0, 6|0; (d) all
-      subsets, since <= is total'
-  - stage: S5b
-    verdict: correct
-    by: refereeB
-    hash: 95223f638f03
-    date: '2026-10-25'
-    model: claude-opus-5-5
-    evidence: 01:37-49 (a) {1,2},{3} incomparable; (b) 1|all, 5|25, a|0; (c) 3|6, 3|0, 6|0; (d) <= total
-      on R
-  old_key: check:01-chains-and-zorn:1
-- key: lem-chain-union
-  kind: lem
-  file: 02-chains-and-zorn.md
-  line: 57
-  hash: 92ac43291991
-  verdicts:
-  - stage: S5a
-    verdict: correct
-    by: refereeA
-    hash: 35256edb4e1a
-    date: '2026-10-25'
-    model: claude-opus-5-5
-    evidence: 01:58-61; restricting subset-order to a set of sets justified at 01:53 via exm-subset-order-not-total
-      (ch04/03:44); statements true
+    evidence: 03:289. D subset of (QxQ)^2 is countable by cor-product-countable (a) twice plus prp-countable-subset.
+      The lines are exactly ell(D), so prp-countable-image applies. No choice is used.
   - stage: S5b
     verdict: minor
     by: refereeB
-    hash: 35256edb4e1a
-    date: '2026-10-25'
+    hash: 2d094f263bf8
+    date: '2026-10-11'
     model: claude-opus-5-5
-    evidence: 01-chains-and-zorn.md:60 \sP gets a second meaning in fd2 (set of sets ordered by ⊆) against
-      NOTATION's \sP = a partition (F2.5 §02); Ch5's \sC, \sK (chains of sets) have no NOTATION row.
-  - stage: S7r
-    verdict: minor
-    by: rereferee
-    hash: 92ac43291991
-    date: '2026-10-25'
+    evidence: 03-countable-unions-and-choice.md:289 The local symbols ℓ and D reuse Part 0 notation that
+      NOTATION.md fixes.
+  - stage: S6
+    verdict: correct
+    by: verifier
+    hash: 2d094f263bf8
+    date: '2026-10-11'
     model: claude-opus-5-5
-    evidence: 'The \sP clash is fixed: the statement and the paragraph before it now use \sS, which is
-      the NOTATION.md:60 row for a set of sets. Still open: the local chains-of-sets letters \sC and \sK
-      have no NOTATION row (F006 part 2, deferred to NOTATION.md). The mathematics is correct.'
+    evidence: 03:282-290. D ⊆ (ℚ×ℚ)^2 is countable. ℓ(D) is the set of lines, using the ledgered school-geometry
+      fact that two points lie on exactly one line. The map is a formula, so no choice is used.
   - stage: S7r
     verdict: correct
     by: rereferee
-    hash: 92ac43291991
-    date: '2026-10-25'
+    hash: 53644efddc6c
+    date: '2026-10-11'
     model: claude-opus-5-5
-    evidence: The only change is the rename \sP→\sS. The statement is unchanged mathematically and the
-      proof uses only \sC.
-- key: proof:lem-chain-union
-  kind: proof
-  file: 02-chains-and-zorn.md
-  line: 66
-  hash: 71a934c564df
+    evidence: 'l is renamed \mathrm{line}, so it no longer clashes with the assignment l of NOTATION.md:148.
+      D is still used as a local letter. Approved text uses D locally in the same way (ch07 03-recursion.md:106,
+      04-relations.md:263, 06-orders.md:341; ch08 02-countable-sets.md:351), so this is established practice
+      and does not break a written rule. The mathematics is correct: D is countable by cor-product-cou'
+  removed: true
+- key: exr-infinite-sets-b1
+  kind: exr
+  file: 01-countable-unions-and-choice.md
+  line: 475
+  hash: e0fa7fae747d
   verdicts:
   - stage: S5a
     verdict: correct
     by: refereeA
-    hash: 71a934c564df
-    date: '2026-10-25'
+    hash: e0fa7fae747d
+    date: '2026-10-11'
     model: claude-opus-5-5
-    evidence: '01:65-67: (a) induction with n0=1 (thm-induction), P(n) quantifies over all n-tuples, both
-      cases use PO1/PO3 correctly; (b) one ∃E per stage, chain comparability picks the larger member;
-      no dependency problem'
+    evidence: '06:142-155. X\F is infinite by prp-disjoint-union-count. The pieces X\(F∪S), F and S are
+      pairwise disjoint (S⊆X\F). Under h, F goes onto {s_0..s_{k-1}} and S onto {s_m: m≥k}, and these
+      image pieces partition X\F. The case k=0 is handled.'
   - stage: S5b
     verdict: correct
     by: refereeB
-    hash: 71a934c564df
-    date: '2026-10-25'
+    hash: e0fa7fae747d
+    date: '2026-10-11'
     model: claude-opus-5-5
-    evidence: 01:64-68 induction (thm-induction, n0=1) with (PO1),(PO3) in (a); one ∃E per step in (b);
-      comparable members give the larger. Meta-claim at 01:70 true of the proof.
-- key: check:02-chains-and-zorn:2
-  kind: check
-  file: 02-chains-and-zorn.md
-  line: 74
-  hash: 02bd70654910
-  verdicts:
-  - stage: S5a
+    evidence: 06:136-155. The cases are disjoint because S ⊆ X\F. Case 2's images are s_0..s_{k-1} and
+      case 3's are s_{n+k}, so they are disjoint. k=0 is handled. The piecewise-bijection fact is ledgered
+      as inline.
+  - stage: S6
     verdict: correct
-    by: refereeA
-    hash: 02bd70654910
-    date: '2026-10-25'
+    by: verifier
+    hash: e0fa7fae747d
+    date: '2026-10-11'
     model: claude-opus-5-5
-    evidence: '01:76-79: (a) lem-chain-union(b) with n=2; (b) {{0},{1}} is a valid non-chain example'
-  - stage: S5b
-    verdict: correct
-    by: refereeB
-    hash: 02bd70654910
-    date: '2026-10-25'
-    model: claude-opus-5-5
-    evidence: 01:72-80 (a) by lem-chain-union (b), n=2; (b) {{0},{1}} works
-  old_key: check:01-chains-and-zorn:2
-- key: thm-zorn
-  kind: thm
-  file: 02-chains-and-zorn.md
-  line: 88
-  hash: c4073f785522
+    evidence: '06:136-155. The shift bijection is correct: F goes to s_0..s_{k-1} and s_n goes to s_{n+k}.
+      I simulated it with X=ℕ, F={0,3,7}; it is injective, onto X\F, and misses F. The worked model is
+      the proof of thm-infinite-iff-proper-subset.'
+  removed: true
+- key: exr-infinite-sets-b3
+  kind: exr
+  file: 01-countable-unions-and-choice.md
+  line: 510
+  hash: b4e77ffb76ec
   verdicts:
   - stage: S5a
     verdict: minor
     by: refereeA
-    hash: c4073f785522
-    date: '2026-10-25'
+    hash: 3e938f4d7ea4
+    date: '2026-10-11'
     model: claude-opus-5-5
-    evidence: 01-chains-and-zorn.md:92 Unprovability of Zorn's lemma is justified only by its equivalence
-      with AC; equivalence alone does not imply unprovability.
+    evidence: 06-infinite-sets.md:182 The second example is given as 'another correct answer', but only
+      properties (3) and (5) are checked for it, although the exercise asks to check each property.
   - stage: S5b
     verdict: minor
     by: refereeB
-    hash: c4073f785522
-    date: '2026-10-25'
+    hash: 3e938f4d7ea4
+    date: '2026-10-11'
     model: claude-opus-5-5
-    evidence: 01-chains-and-zorn.md:92 Forward pointers of F2.4 §01 (to ST.4, the converse of thm-choice-from-zorn;
-      and to MT.1 at line 189) have no row in STATUS's promise table.
-  - stage: S8
-    verdict: minor
-    by: seam
-    hash: c4073f785522
-    date: '2026-10-25'
-    model: claude-opus-5-5
-    evidence: 01-chains-and-zorn.md:92 Pointers into the series volume ST do not use the required '*Book
-      title*, Chapter N' form, so the promise tool cannot see them.
-  - stage: S7r
-    verdict: minor
-    by: rereferee
-    hash: c4073f785522
-    date: '2026-10-25'
-    model: claude-opus-5-5
-    evidence: 'The status paragraph (01:92) now argues soundly: Zorn ⇔ AC, and AC is independent (Section
-      3.2, ch03/02:46). The open item is F004 (deferred): the forward pointers to ST.4 and MT.1 have no
-      promise row in STATUS.md.'
-  - stage: S8
+    evidence: '06-infinite-sets.md:182 The second answer does not check property (5): nothing shows that
+      {-n : n in N} is infinite.'
+  - stage: S6
     verdict: correct
-    by: coordinator
-    hash: c4073f785522
-    date: '2026-10-25'
-    evidence: 01:92 status paragraph sound (Zorn<=>AC, AC independent, ch03/02:46); ST pointer in '*Book*,
-      Chapter N' form; sidecar thm-zorn.py passes; remaining STATUS promise rows (ST.4, MT.1) are shared-file
-      bookkeeping, shared-todo item 1
-- key: check:02-chains-and-zorn:3
-  kind: check
-  file: 02-chains-and-zorn.md
-  line: 106
-  hash: a2b99bc032d7
-  verdicts:
-  - stage: S5a
-    verdict: correct
-    by: refereeA
-    hash: a2b99bc032d7
-    date: '2026-10-25'
+    by: verifier
+    hash: 3e938f4d7ea4
+    date: '2026-10-11'
     model: claude-opus-5-5
-    evidence: '01:109: only comparable pair is {1}⊆{1,3}; maximal {2},{1,3}; no greatest element'
-  - stage: S5b
-    verdict: correct
-    by: refereeB
-    hash: a2b99bc032d7
-    date: '2026-10-25'
-    model: claude-opus-5-5
-    evidence: 01:104-110 only comparable distinct pair {1}⊆{1,3}; maximal {2},{1,3}; no greatest
-  old_key: check:01-chains-and-zorn:3
-- key: exm-method-maximality
-  kind: exm
-  file: 02-chains-and-zorn.md
-  line: 124
-  hash: 89b9d6b65f5e
-  verdicts:
-  - stage: S5a
-    verdict: correct
-    by: refereeA
-    hash: 89b9d6b65f5e
-    date: '2026-10-25'
-    model: claude-opus-5-5
-    evidence: 01:162-166 template matches the proof structure; failure modes are accurate
-  - stage: S5b
-    verdict: correct
-    by: refereeB
-    hash: 89b9d6b65f5e
-    date: '2026-10-25'
-    model: claude-opus-5-5
-    evidence: 01:159-167 template matches both uses in 5.1 and those in 5.2
-  - stage: S8
-    verdict: minor
-    by: seam
-    hash: 89b9d6b65f5e
-    date: '2026-10-25'
-    model: claude-opus-5-5
-    evidence: index.md:19 Named moves entry 'Finitely many, so one member' links to @lem-chain-union,
-      which is a lemma, not a method box (STYLE §2 item 6)
-  - stage: S8
-    verdict: correct
-    by: coordinator
-    hash: 89b9d6b65f5e
-    date: '2026-10-25'
-    evidence: 01:159-167 template matches all four runs; index.md:18 Named moves now lists only @exm-method-maximality
-      (S8 seam finding gone)
-- key: exm-zorn-representatives
-  kind: exm
-  file: 02-chains-and-zorn.md
-  line: 136
-  hash: 50b984f0a483
-  verdicts:
-  - stage: S5a
-    verdict: correct
-    by: refereeA
-    hash: 50b984f0a483
-    date: '2026-10-25'
-    model: claude-opus-5-5
-    evidence: '01:184-186: chain step uses lem-chain-union(b); the case s=x uses Eq2 with def-equivalence-class
-      [a]={x : x~a} (ch04/02:94), which is correct; strictness from x∈[x]; sidecar passes'
-  - stage: S5b
-    verdict: minor
-    by: refereeB
-    hash: 50b984f0a483
-    date: '2026-10-25'
-    model: claude-opus-5-5
-    evidence: 01-chains-and-zorn.md:189 'no formula describes one' (of a set of representatives for x-y∈Q)
-      is asserted with no source and is not a theorem of ZFC.
-  - stage: S8
-    verdict: minor
-    by: seam
-    hash: 50b984f0a483
-    date: '2026-10-25'
-    model: claude-opus-5-5
-    evidence: 01-chains-and-zorn.md:189 A forward promise into another volume has no STATUS row.
-  - stage: S7r
-    verdict: minor
-    by: rereferee
-    hash: 50b984f0a483
-    date: '2026-10-25'
-    model: claude-opus-5-5
-    evidence: '''no formula for one is known'' at 01:189 is correct and consistent with the rest of the
-      chapter. Still open: the MT.1 pointer has no STATUS promise row (F004, deferred) and the blueprint
-      wording (F003 aftermath, deferred).'
-  - stage: S8
-    verdict: correct
-    by: coordinator
-    hash: 50b984f0a483
-    date: '2026-10-25'
-    evidence: 01:171-189 proof correct; 'no formula for one is known' consistent; MT pointer '*Measure
-      and Integration*, Chapter 1'; sidecar passes; STATUS row is shared-todo item 1
-- key: check:02-chains-and-zorn:4
-  kind: check
-  file: 02-chains-and-zorn.md
-  line: 156
-  hash: 56aca86433c0
-  verdicts:
-  - stage: S5a
-    verdict: minor
-    by: refereeA
-    hash: d43e0057eaaf
-    date: '2026-10-25'
-    model: claude-opus-5-5
-    evidence: 01-chains-and-zorn.md:196 The 'exactly the maximal elements' argument rules out one-element
-      sets but not ∅.
-  - stage: S5b
-    verdict: minor
-    by: refereeB
-    hash: d43e0057eaaf
-    date: '2026-10-25'
-    model: claude-opus-5-5
-    evidence: 01-chains-and-zorn.md:196 Parity facts used without @ref and missing from the dependency
-      ledger.
+    evidence: 06:171-183. The property list is given. X=ℕ, Y=2ℕ checks out, and the odd numbers are infinite
+      by n↦2n+1. The alternative ℝ ⊇ (0,∞) also checks out.
   - stage: S7r
     verdict: correct
     by: rereferee
-    hash: a921f153e3e0
-    date: '2026-10-25'
+    hash: b4e77ffb76ec
+    date: '2026-10-11'
     model: claude-opus-5-5
-    evidence: 'Recomputed: a partial object (a set of pairwise unrelated integers) holds at most one even
-      and one odd integer, because same-parity differences are even. The two-element ones are {e,o}. Those
-      are maximal: by thm-even-or-odd a third integer has the parity of e or o. ∅ and singletons sit strictly
-      inside some {e,o}. {0,1} and {4,-7} are valid examples.'
-  - stage: S7r
+    evidence: '06-infinite-sets.md:186. The second answer now checks every property. (1) and (2): 0 ∉
+      (0,∞). (3): @exm-reals-open-interval, whose solution (05-comparing-cardinalities.md:226) explicitly
+      covers (0,∞). (4) and (5): n↦-n is a bijection from ℕ onto {-n}, so that set is infinite by the
+      composition argument of (5) above. It is contained in (-∞,0] ⊆ ℝ, so @prp-subset-finite shows neither
+      (-∞,0] nor ℝ is'
+  removed: true
+- key: exr-infinite-sets-c1
+  kind: exr
+  file: 01-countable-unions-and-choice.md
+  line: 570
+  hash: 2e371266c040
+  verdicts:
+  - stage: S5a
     verdict: minor
-    by: rereferee
-    hash: a921f153e3e0
-    date: '2026-10-25'
-    model: claude-opus-5-5
-    evidence: 'The solution never shows that {e,o} is itself a partial object, i.e. that e ≁ o (e − o
-      is odd, so not even, which needs ''not both even and odd''). It only shows at most one element of
-      each parity. Everything else is right: the maximal elements are the {e,o}, and ∅ and the singletons
-      lie strictly inside some {e,o}.'
-  - stage: S8
-    verdict: correct
-    by: coordinator
-    hash: 56aca86433c0
-    date: '2026-10-25'
-    evidence: '01:196 added: {e,o} is a partial object, e-o=2(a-b-1)+1 odd hence not even (thm-even-or-odd,
-      ch01/01:139), so e !~ o; rest (at most one per parity, maximality, no greatest) rechecked'
-  old_key: check:01-chains-and-zorn:4
-- key: lem-one-step-order-extension
-  kind: lem
-  file: 02-chains-and-zorn.md
-  line: 190
-  hash: 441254c80a84
-  verdicts:
-  - stage: S5a
-    verdict: correct
     by: refereeA
-    hash: 441254c80a84
-    date: '2026-10-25'
+    hash: 00c60fa76162
+    date: '2026-10-11'
     model: claude-opus-5-5
-    evidence: 02:89-93. The incomparability hypothesis is used, since without it (a,b) would already be
-      in the order. The sidecar exhausts all partial orders on 4 points.
-  - stage: S5b
-    verdict: correct
-    by: refereeB
-    hash: 441254c80a84
-    date: '2026-10-25'
-    model: claude-opus-5-5
-    evidence: :86-94 statement checked; the sidecar passes on all 219 orders on 4 points.
-- key: proof:lem-one-step-order-extension
-  kind: proof
-  file: 02-chains-and-zorn.md
-  line: 204
-  hash: ce231b101047
-  verdicts:
-  - stage: S5a
-    verdict: correct
-    by: refereeA
-    hash: ce231b101047
-    date: '2026-10-25'
-    model: claude-opus-5-5
-    evidence: 02:101-107. All four old/new cases of (PO2) reduce to b⪯a, which incomparability excludes.
-      All four cases of (PO3) were checked one by one.
-  - stage: S5b
-    verdict: correct
-    by: refereeB
-    hash: ce231b101047
-    date: '2026-10-25'
-    model: claude-opus-5-5
-    evidence: ':100-108: all four (PO2) cases and all four (PO3) cases checked by hand. The new/old case
-      with (y,x) new correctly uses b ⪯ x.'
-- key: check:02-chains-and-zorn:5
-  kind: check
-  file: 02-chains-and-zorn.md
-  line: 214
-  hash: 9548afb5d5d9
-  verdicts:
-  - stage: S5a
-    verdict: correct
-    by: refereeA
-    hash: 9548afb5d5d9
-    date: '2026-10-25'
-    model: claude-opus-5-5
-    evidence: 02:115. ⊆ on P({1,2}) has 9 pairs. Adding ({1},{2}) gives 10 = 4·5/2, which is total.
-  - stage: S5b
-    verdict: correct
-    by: refereeB
-    hash: 9548afb5d5d9
-    date: '2026-10-25'
-    model: claude-opus-5-5
-    evidence: :115 four candidate pairs; only ({1},{2}) is new; the result is total.
-  old_key: check:02-using-zorn:2
-- key: thm-order-extension
-  kind: thm
-  file: 02-chains-and-zorn.md
-  line: 224
-  hash: cf57a8d171d8
-  verdicts:
-  - stage: S5a
-    verdict: correct
-    by: refereeA
-    hash: cf57a8d171d8
-    date: '2026-10-25'
-    model: claude-opus-5-5
-    evidence: 02:123. Statement matches def-partial-order's use of 'total'.
+    evidence: 06-infinite-sets.md:194 The recursion is described as having 'base 0', but the starting
+      value is f_0(0)+1.
   - stage: S5b
     verdict: minor
     by: refereeB
-    hash: cf57a8d171d8
-    date: '2026-10-25'
+    hash: 00c60fa76162
+    date: '2026-10-11'
     model: claude-opus-5-5
-    evidence: 02-using-zorn.md:126 Reader prose uses the internal volume id 'fd2'.
+    evidence: 06-infinite-sets.md:194 The given half describes the recursion with 'base 0', but the starting
+      value is f_0(0)+1. It also uses ≔ inside an existence claim.
+  - stage: S6
+    verdict: minor
+    by: verifier
+    hash: 00c60fa76162
+    date: '2026-10-11'
+    model: claude-opus-5-5
+    evidence: 06-infinite-sets.md:194 The given first half describes the recursion as having 'base 0',
+      but thm-recursion's starting value here is f_0(0)+1, not 0.
   - stage: S7r
     verdict: correct
     by: rereferee
-    hash: cf57a8d171d8
-    date: '2026-10-25'
+    hash: 2e371266c040
+    date: '2026-10-11'
     model: claude-opus-5-5
-    evidence: :126 now reads 'This book's word is "total" (@def-partial-order)', so the internal id is
-      gone from the prose.
-- key: proof:thm-order-extension
-  kind: proof
-  file: 02-chains-and-zorn.md
-  line: 236
-  hash: c64e528376a6
-  verdicts:
-  - stage: S5a
-    verdict: correct
-    by: refereeA
-    hash: c64e528376a6
-    date: '2026-10-25'
-    model: claude-opus-5-5
-    evidence: 02:133-137. The chain union contains ⪯ because the chain is non-empty. (PO2) and (PO3) go
-      through lem-chain-union (b). The lemma gives (a,b) in R but not in T, so T ≠ R. That T ⊆ R gives
-      R in P.
-  - stage: S5b
-    verdict: correct
-    by: refereeB
-    hash: c64e528376a6
-    date: '2026-10-25'
-    model: claude-opus-5-5
-    evidence: ':132-138: union of a chain contains ⪯ (non-empty chain), (PO2)/(PO3) via lem-chain-union
-      (b), lemma applied to T. Correct.'
-- key: exm-divisibility-linear-extension
-  kind: exm
-  file: 02-chains-and-zorn.md
-  line: 250
-  hash: 2ebd4c2865bc
-  verdicts:
-  - stage: S5a
-    verdict: correct
-    by: refereeA
-    hash: 2ebd4c2865bc
-    date: '2026-10-25'
-    model: claude-opus-5-5
-    evidence: 02:155-165. Verified (PO1), (PO2), (PO3) and totality case by case, plus containment of
-      divisibility using def-divides with k in ℤ (a,b>0 forces k≥1). The counterexample 2∣0 is correct.
-      Sidecar ok.
-  - stage: S5b
-    verdict: minor
-    by: refereeB
-    hash: 2ebd4c2865bc
-    date: '2026-10-25'
-    model: claude-opus-5-5
-    evidence: 02-using-zorn.md:149 The new symbol ⊑ (and the exercise-local ≤_p, ≤_l at :258) has no NOTATION.md
-      row.
-  - stage: S7r
-    verdict: minor
-    by: rereferee
-    hash: 2ebd4c2865bc
-    date: '2026-10-25'
-    model: claude-opus-5-5
-    evidence: 'The summary table now follows this example''s check, closes the order-extension subsection
-      and is introduced as ''on the main line''. The four rows match the four main-line uses. Still open,
-      and deferred: the NOTATION rows for \sqsubseteq, ≤_p and ≤_l (F019).'
-  - stage: S8
-    verdict: correct
-    by: coordinator
-    hash: 2ebd4c2865bc
-    date: '2026-10-25'
-    evidence: 02:146-168 order on N with 0 on top checked, extends divisibility; sidecar exm-divisibility-linear-extension.py
-      passes; NOTATION rows for sqsubseteq, <=_p, <=_l are shared-todo item 4
-- key: check:02-chains-and-zorn:6
-  kind: check
-  file: 02-chains-and-zorn.md
-  line: 274
-  hash: f3ca258d9c9c
-  verdicts:
-  - stage: S5a
-    verdict: correct
-    by: refereeA
-    hash: f3ca258d9c9c
-    date: '2026-10-25'
-    model: claude-opus-5-5
-    evidence: 02:175. Of the 10 pairs, divisibility relates every pair except {4,6}.
-  - stage: S5b
-    verdict: correct
-    by: refereeB
-    hash: f3ca258d9c9c
-    date: '2026-10-25'
-    model: claude-opus-5-5
-    evidence: :175 all 10 pairs enumerated; only {4,6} is ∣-incomparable.
-  old_key: check:02-using-zorn:3
+    evidence: '06-infinite-sets.md:198-200. The given half now names @thm-recursion''s data exactly: set
+      ℕ, starting value f_0(0)+1, step (n,x)↦max{x,f_{n+1}(n+1)}+1 from ℕ×ℕ to ℕ. It writes = rather than
+      ≔ for the recursion''s conclusion. f(n+1)=g(n,f(n)) reproduces the displayed formula. All ''base
+      0'' and ≔ findings (S5a, S5b, S6) are resolved. I solved it first: g(n+1) >= g(n)+1, then @thm-induction
+      with base m+'
+  removed: true
 - key: exr-chains-and-zorn-a1
   kind: exr
   file: 02-chains-and-zorn.md
@@ -1708,66 +2513,7 @@ items:
     evidence: '01:209-234 (a)-(d) rechecked: (c) six partial choice functions for I={1,2}, two maximal,
       no greatest; sidecar exr-chains-and-zorn-a1.py passes; the C1 issue that held it at minor is closed
       (c1 correct S7r)'
-- key: exr-chains-and-zorn-b1
-  kind: exr
-  file: 02-chains-and-zorn.md
-  line: 330
-  hash: 7ae681eae88d
-  verdicts:
-  - stage: S5a
-    verdict: correct
-    by: refereeA
-    hash: 7ae681eae88d
-    date: '2026-10-25'
-    model: claude-opus-5-5
-    evidence: '01:251: C0∈P; the union of a non-empty chain contains C0 (uses non-emptiness) and is a
-      chain by lem-chain-union(b); the maximality argument is correct'
-  - stage: S5b
-    verdict: correct
-    by: refereeB
-    hash: 7ae681eae88d
-    date: '2026-10-25'
-    model: claude-opus-5-5
-    evidence: 01:250-252 H⊇C0 uses 𝒦≠∅; comparability via lem-chain-union (b); maximality argument correct
-  - stage: S6
-    verdict: correct
-    by: verifier
-    hash: 7ae681eae88d
-    date: '2026-10-25'
-    model: claude-opus-5-5
-    evidence: '01:238-252. My solution matches: P = chains containing C0, C0 in P, union of a non-empty
-      chain is a chain by lem-chain-union (b), and a maximal element of P is a maximal chain. The hint
-      gives only the partial objects, which is a first line. Worked example: thm-choice-from-zorn and
-      exm-zorn-representatives use the same template.'
-- key: exr-chains-and-zorn-b2
-  kind: exr
-  file: 02-chains-and-zorn.md
-  line: 346
-  hash: 3fec079984bd
-  verdicts:
-  - stage: S5a
-    verdict: correct
-    by: refereeA
-    hash: 3fec079984bd
-    date: '2026-10-25'
-    model: claude-opus-5-5
-    evidence: '01:269: F∉D because F∩F=F≠∅ (uses non-empty members); D∪{F} is pairwise disjoint; strictness
-      is checked'
-  - stage: S5b
-    verdict: correct
-    by: refereeB
-    hash: 3fec079984bd
-    date: '2026-10-25'
-    model: claude-opus-5-5
-    evidence: 01:268-270 F∉D since F∩F=F≠∅; D∪{F} pairwise disjoint; strictly larger
-  - stage: S6
-    verdict: correct
-    by: verifier
-    hash: 3fec079984bd
-    date: '2026-10-25'
-    model: claude-opus-5-5
-    evidence: 01:254-270. The frame is sound, and the completion (F not in D because F∩F=F≠∅; D∪{F} pairwise
-      disjoint) is complete. The step-(4) worked example is exm-zorn-representatives.
+  removed: true
 - key: exr-chains-and-zorn-b3
   kind: exr
   file: 02-chains-and-zorn.md
@@ -1798,63 +2544,7 @@ items:
     model: claude-opus-5-5
     evidence: 01:272-280. My script finds the same three relations, the same maximal elements {(1,b)}
       and {(2,b)}, and that each uses up B. The worked model is A1(c) and the quick check at 01:104.
-- key: exr-chains-and-zorn-b4
-  kind: exr
-  file: 02-chains-and-zorn.md
-  line: 374
-  hash: 8a594e96b15a
-  verdicts:
-  - stage: S5a
-    verdict: correct
-    by: refereeA
-    hash: 65bfcefffbd6
-    date: '2026-10-25'
-    model: claude-opus-5-5
-    evidence: '01:297-305: (a) counterexample valid (the empty chain is bounded by any element); (b) lem-chain-union(a)
-      plus Zorn, and Section 4.3 R4 exists (exr-orders-r4); (c) E and O are maximal and incomparable;
-      (d) uses non-empty K to show u∈Q, then PO3; (e) prp-union-two-countable and thm-reals-uncountable-decimal
-      are applied correctly'
-  - stage: S5b
-    verdict: minor
-    by: refereeB
-    hash: 65bfcefffbd6
-    date: '2026-10-25'
-    model: claude-opus-5-5
-    evidence: 01-chains-and-zorn.md:301 (c) uses 'n∉E implies n odd, so n+1∈E' (and the mirror for O)
-      without @thm-even-or-odd and without a ledger line.
-  - stage: S6
-    verdict: minor
-    by: verifier
-    hash: 65bfcefffbd6
-    date: '2026-10-25'
-    model: claude-opus-5-5
-    evidence: '01-chains-and-zorn.md:291 B4(d) needs a move with no worked example in Section 5.1: applying
-      Zorn''s lemma to the up-set {q ∈ P : p ⪯ q} and transferring maximality back to P.'
-  - stage: S7r
-    verdict: minor
-    by: rereferee
-    hash: fbd58359786e
-    date: '2026-10-25'
-    model: claude-opus-5-5
-    evidence: 'The (c) justification is now complete. The hint added to (d) breaks the STYLE.md:229 format
-      (it must be italic *Hint: ...* at the end of the problem, not a plain parenthetical). The solutions
-      to (a), (b), (d) and (e) are unchanged.'
-  - stage: S7r
-    verdict: correct
-    by: rereferee
-    hash: fbd58359786e
-    date: '2026-10-25'
-    model: claude-opus-5-5
-    evidence: The hint in (d) points to the method of the solution (Q = elements above p). (c) now justifies
-      that n ∉ E is odd by thm-even-or-odd, so n+1 ∈ E gives two consecutive numbers. (a) false, (b) true,
-      (d) true, (e) as before.
-  - stage: S8
-    verdict: correct
-    by: coordinator
-    hash: 8a594e96b15a
-    date: '2026-10-25'
-    evidence: '01:282-296 hint moved after the list as italic ''*Hint for (d): ...*'' per STYLE.md:229;
-      names tool+object only; solutions (a)-(e) rechecked, (d) at 01:305 uses Q={q: p<=q} as hinted'
+  removed: true
 - key: exr-using-zorn-b1
   kind: exr
   file: 02-chains-and-zorn.md
@@ -1901,35 +2591,7 @@ items:
     model: claude-opus-5-5
     evidence: 'The only change is typesetting: ∃E is now \rulename{\exists E}. The completion is unchanged:
       the chain step, Zorn, adding (a_0,b_0) ∈ R, and the graph of f ⊆ R.'
-- key: exr-using-zorn-b2
-  kind: exr
-  file: 02-chains-and-zorn.md
-  line: 420
-  hash: e2b331b26a57
-  verdicts:
-  - stage: S5a
-    verdict: correct
-    by: refereeA
-    hash: e2b331b26a57
-    date: '2026-10-25'
-    model: claude-opus-5-5
-    evidence: 02:250-252. (a) uses prp-subset-finite (a proper subset has k<n elements). (b) gives 2,
-      which the sidecar confirms.
-  - stage: S5b
-    verdict: correct
-    by: refereeB
-    hash: e2b331b26a57
-    date: '2026-10-25'
-    model: claude-opus-5-5
-    evidence: ':250-252: list by size and prp-subset-finite (S ≠ A gives k<n); count of 2; sidecar passes.'
-  - stage: S6
-    verdict: correct
-    by: verifier
-    hash: e2b331b26a57
-    date: '2026-10-25'
-    model: claude-opus-5-5
-    evidence: 02:240-253. My script checks that list (a) respects ⊊. For (b) it counts 2 total extensions
-      of ⊆ on P({1,2}), matching the answer. prp-subset-finite gives k<n for a proper subset, as cited.
+  removed: true
 - key: exr-using-zorn-b3
   kind: exr
   file: 02-chains-and-zorn.md
@@ -1961,151 +2623,7 @@ items:
     evidence: 02:255-270. (a) and (b) agree with my answers. The cited exr-orders-a1 (d) (lexicographic
       order, totality) and exr-orders-c1 (a) (partial order) exist with those letters (ch04/03:253,328).
       The worked model is exm-divisibility-linear-extension.
-- key: exr-chains-and-zorn-c1
-  kind: exr
-  file: 02-chains-and-zorn.md
-  line: 454
-  hash: a8ce33ff905a
-  verdicts:
-  - stage: S5a
-    verdict: correct
-    by: refereeA
-    hash: cdfbccea7fe2
-    date: '2026-10-25'
-    model: claude-opus-5-5
-    evidence: '01:321-330: identifies the missing check that the union lies in P; the finite-subsets counterexample
-      to the general inference is valid'
-  - stage: S5b
-    verdict: minor
-    by: refereeB
-    hash: cdfbccea7fe2
-    date: '2026-10-25'
-    model: claude-opus-5-5
-    evidence: 01-chains-and-zorn.md:325 Marking scheme totals 6 points; STYLE §11.6 requires 'points summing
-      to 10'.
-  - stage: S6
-    verdict: gap
-    by: verifier
-    hash: cdfbccea7fe2
-    date: '2026-10-25'
-    model: claude-opus-5-5
-    evidence: '01-chains-and-zorn.md:315 The find-the-error ''proof'' is flawed in more places than the
-      solution says: besides the unchecked union-is-a-chain step, it never checks P ≠ ∅ (Zorn needs it),
-      and it does not justify that a maximal element of P is a maximal chain of X.'
-  - stage: S7r
-    verdict: correct
-    by: rereferee
-    hash: a8ce33ff905a
-    date: '2026-10-25'
-    model: claude-opus-5-5
-    evidence: 'The ''proof'' now has exactly one illegal step: the union of a chain of chains is not shown
-      to be a chain. C_0 ∈ P and the maximal-chain transfer are both stated. The solution names exactly
-      that step, the counterexample (finite subsets of ℕ) is right, and the scheme sums to 10.'
-  - stage: S7r
-    verdict: correct
-    by: rereferee
-    hash: a8ce33ff905a
-    date: '2026-10-25'
-    model: claude-opus-5-5
-    evidence: The 'proof' now has C_0 ∈ P and the maximal-chain step, so it lacks only the check that
-      ⋃\sK is a chain, which is exactly the error the solution names. The counterexample (finite subsets
-      of ℕ) and the repair via lem-chain-union (b) are correct. The marking scheme sums to 2+3+3+2=10.
-- key: exr-chains-and-zorn-c2
-  kind: exr
-  file: 02-chains-and-zorn.md
-  line: 477
-  hash: 89edaf8e06ef
-  verdicts:
-  - stage: S5a
-    verdict: correct
-    by: refereeA
-    hash: 9f6860d53bc6
-    date: '2026-10-25'
-    model: claude-opus-5-5
-    evidence: '01:350-354: least element by thm-well-ordering, uniqueness by prp-greatest-unique (least
-      half), classes disjoint by thm-classes-partition(c); in (b) injectivity names s_x; no choice is
-      used'
-  - stage: S5b
-    verdict: minor
-    by: refereeB
-    hash: 9f6860d53bc6
-    date: '2026-10-25'
-    model: claude-opus-5-5
-    evidence: 01-chains-and-zorn.md:356 Marking scheme totals 6 points against STYLE §11.6's 10.
-  - stage: S6
-    verdict: minor
-    by: verifier
-    hash: 9f6860d53bc6
-    date: '2026-10-25'
-    model: claude-opus-5-5
-    evidence: 01-chains-and-zorn.md:358 The marking scheme pays for particular citations, so a correct
-      alternative proof loses points.
-  - stage: S7r
-    verdict: correct
-    by: rereferee
-    hash: 89edaf8e06ef
-    date: '2026-10-25'
-    model: claude-opus-5-5
-    evidence: The scheme is now 3/3/2/2 = 10, its lines name content instead of citations, and the fatal-error
-      line still covers using choice. The solution text is unchanged.
-  - stage: S7r
-    verdict: correct
-    by: rereferee
-    hash: 89edaf8e06ef
-    date: '2026-10-25'
-    model: claude-opus-5-5
-    evidence: Retitled as an exit check. (a) uses least elements via thm-well-ordering, with uniqueness
-      and 'at most once' via thm-classes-partition, and is correct. (b) via the injection j is correct.
-      (c) cites @exm-method-name-the-choice. The marking scheme sums to 3+3+2+2=10.
-- key: exr-using-zorn-c1
-  kind: exr
-  file: 02-chains-and-zorn.md
-  line: 508
-  hash: f4cd13a42f42
-  verdicts:
-  - stage: S5a
-    verdict: correct
-    by: refereeA
-    hash: b8ebebf84013
-    date: '2026-10-25'
-    model: claude-opus-5-5
-    evidence: 02:287-295. The cases are exhaustive. Case b⪯a uses (PO2) and a≠b. In the incomparable case
-      the lemma is applied with a and b exchanged, then thm-order-extension is applied to R. Marking-scheme
-      points add up to 8.
-  - stage: S5b
-    verdict: minor
-    by: refereeB
-    hash: b8ebebf84013
-    date: '2026-10-25'
-    model: claude-opus-5-5
-    evidence: 02-using-zorn.md:297 Marking schemes do not sum to 10 points.
-  - stage: S6
-    verdict: minor
-    by: verifier
-    hash: b8ebebf84013
-    date: '2026-10-25'
-    model: claude-opus-5-5
-    evidence: 02-using-zorn.md:283 Hint 1 gives the key idea (apply the lemma with a and b exchanged),
-      and the marking scheme ties 2 points to that route.
-  - stage: S7r
-    verdict: correct
-    by: rereferee
-    hash: f4cd13a42f42
-    date: '2026-10-25'
-    model: claude-opus-5-5
-    evidence: Hint 1 now names the target object (a partial order containing ⪯ and (b,a)) and does not
-      carry out the exchange. The scheme reads 1+1+2+2+2+2 = 10, and its third-from-last line accepts
-      any such partial order. The fatal error still describes the unexchanged lemma, which is consistent.
-  - stage: S7r
-    verdict: correct
-    by: rereferee
-    hash: f4cd13a42f42
-    date: '2026-10-25'
-    model: claude-opus-5-5
-    evidence: 'Now an exit check, with Hint 1 reworded so it no longer gives away the exchange. The solution
-      is correct: \sT ≠ ∅ by thm-order-extension; in the case b ⪯ a, (PO2) with a ≠ b; in the incomparable
-      case, the lemma with a and b exchanged gives (b,a) ∈ R ⊆ T, so (a,b) ∉ T. The marking scheme sums
-      to 1+1+2+2+2+2=10.'
+  removed: true
 - key: exr-using-zorn-r3
   kind: exr
   file: 02-chains-and-zorn.md
@@ -2168,422 +2686,4 @@ items:
     evidence: 02:382 now 'This is the point of @exm-maximal-not-greatest' (label is an example); (a),(b)
       unchanged; (c) {(1,0),(1,1)} and {(2,0),(0,3)} both bases of R^2 (det 1, 6), neither contains the
       other
-- key: thm-cardinal-comparability
-  kind: thm
-  file: 03-using-zorn.md
-  line: 11
-  hash: 4d40da190c25
-  verdicts:
-  - stage: S5a
-    verdict: correct
-    by: refereeA
-    hash: 4d40da190c25
-    date: '2026-10-25'
-    model: claude-opus-5-5
-    evidence: 02:12. Every hypothesis is used. lem-chain-union (b) (01:60) and thm-zorn (01:89, non-empty
-      P whose non-empty chains have upper bounds) are stated in the form the proof needs.
-  - stage: S5b
-    verdict: minor
-    by: refereeB
-    hash: 4d40da190c25
-    date: '2026-10-25'
-    model: claude-opus-5-5
-    evidence: 02-using-zorn.md:9 The 3.4 promise this theorem pays is not recorded as paid with its label,
-      and the promise's ledger still carries a stale atlas id.
-  - stage: S8
-    verdict: minor
-    by: seam
-    hash: 4d40da190c25
-    date: '2026-10-25'
-    model: claude-opus-5-5
-    evidence: STATUS.md:188 The promise bookkeeping for the chapter's main payoff is stale. Section 5.2
-      pays it, but STATUS still credits it to ST.4 and does not mark it paid.
-  - stage: S8
-    verdict: correct
-    by: coordinator
-    hash: 4d40da190c25
-    date: '2026-10-25'
-    evidence: 02:9-40 theorem and proof correct (partial matchings, chain union via lem-chain-union, maximal
-      one exhausts a side); sidecar thm-cardinal-comparability.py passes; STATUS paid-row and ch03 retag
-      are shared-todo item 2
-- key: proof:thm-cardinal-comparability
-  kind: proof
-  file: 03-using-zorn.md
-  line: 21
-  hash: a1e1a60933e4
-  verdicts:
-  - stage: S5a
-    verdict: correct
-    by: refereeA
-    hash: a1e1a60933e4
-    date: '2026-10-25'
-    model: claude-opus-5-5
-    evidence: 02:20-37. P is cut out of P(A×B) by separation. The chain step applies lem-chain-union (b)
-      with n=2. The extension step correctly derives forall-or-forall from the negated exists-and-exists.
-      Case 1 is valid by def-function (each a in exactly one pair). Case 2 is valid by def-relation, which
-      defines the inverse relation R^{-1}. The sidecar reports 13 matchings, 6 maximal.
-  - stage: S5b
-    verdict: correct
-    by: refereeB
-    hash: a1e1a60933e4
-    date: '2026-10-25'
-    model: claude-opus-5-5
-    evidence: ':19-38 checked: P ⊆ P(A×B), ∅ ∈ P, chain union via lem-chain-union (b) n=2, extension by
-      (a0,b0), the De Morgan split into Case 1/Case 2, M^{-1} via def-relation. Every unlabelled fact
-      is in the ledger at :373-376.'
-- key: cor-cardinal-trichotomy
-  kind: cor
-  file: 03-using-zorn.md
-  line: 44
-  hash: 4ac4632967e0
-  verdicts:
-  - stage: S5a
-    verdict: correct
-    by: refereeA
-    hash: 4ac4632967e0
-    date: '2026-10-25'
-    model: claude-opus-5-5
-    evidence: 02:45. Uses def-card-le, where < means ≤ and not = (ch03/04:14).
-  - stage: S5b
-    verdict: correct
-    by: refereeB
-    hash: 4ac4632967e0
-    date: '2026-10-25'
-    model: claude-opus-5-5
-    evidence: :42-46 statement matches def-card-le (ch03 04:11-15).
-- key: proof:cor-cardinal-trichotomy
-  kind: proof
-  file: 03-using-zorn.md
-  line: 50
-  hash: 98905c41394f
-  verdicts:
-  - stage: S5a
-    verdict: correct
-    by: refereeA
-    hash: 98905c41394f
-    date: '2026-10-25'
-    model: claude-opus-5-5
-    evidence: 02:49-51. All cases are covered. Symmetry comes from prp-equinumerous-properties (b). The
-      case where both < hold goes through thm-schroder-bernstein and correctly contradicts the definition
-      of <.
-  - stage: S5b
-    verdict: minor
-    by: refereeB
-    hash: 98905c41394f
-    date: '2026-10-25'
-    model: claude-opus-5-5
-    evidence: 02-using-zorn.md:54 New promise to ST (comparability implies choice) is not in STATUS's
-      promise table, and the pointer has no chapter.
-  - stage: S7r
-    verdict: minor
-    by: rereferee
-    hash: 98905c41394f
-    date: '2026-10-25'
-    model: claude-opus-5-5
-    evidence: 'The pointer at :54 now reads ''*Axiomatic Set Theory*, Chapter 4''. series.py show confirms
-      ST Ch 4 = ST.4 ''Equivalents of the Axiom of Choice''. Still open, and deferred: the STATUS promise
-      row for F2.4 §01/§02 -> ST.4 (F013).'
-  - stage: S8
-    verdict: correct
-    by: coordinator
-    hash: 98905c41394f
-    date: '2026-10-25'
-    evidence: 02:48-54 proof correct (trichotomy from comparability + Schroder-Bernstein); ST pointer
-      '*Axiomatic Set Theory*, Chapter 4' = ST.4; STATUS row shared-todo item 1
-- key: check:03-using-zorn:1
-  kind: check
-  file: 03-using-zorn.md
-  line: 58
-  hash: '481958481429'
-  verdicts:
-  - stage: S5a
-    verdict: correct
-    by: refereeA
-    hash: '481958481429'
-    date: '2026-10-25'
-    model: claude-opus-5-5
-    evidence: 02:61. Six two-pair maximal matchings; matchings of 0 or 1 pairs can be extended. Pigeonhole
-      (a) rules out Case 1, so Case 2 always occurs. Matches 5.1's example (01:9) and the sidecar.
-  - stage: S5b
-    verdict: correct
-    by: refereeB
-    hash: '481958481429'
-    date: '2026-10-25'
-    model: claude-opus-5-5
-    evidence: :61 the six maximal matchings are right; the sidecar thm-cardinal-comparability.py passes
-      (13 partial matchings, 6 maximal); cor-pigeonhole-finite-sets (a) applies correctly.
-  old_key: check:02-using-zorn:1
-- key: thm-choice-from-zorn
-  kind: thm
-  file: 03-using-zorn.md
-  line: 70
-  hash: eba75cf91c31
-  verdicts:
-  - stage: S5a
-    verdict: correct
-    by: refereeA
-    hash: eba75cf91c31
-    date: '2026-10-25'
-    model: claude-opus-5-5
-    evidence: 01:125 matches the conclusion of ax-choice (ch03/02:30)
-  - stage: S5b
-    verdict: minor
-    by: refereeB
-    hash: eba75cf91c31
-    date: '2026-10-25'
-    model: claude-opus-5-5
-    evidence: 01-chains-and-zorn.md:138 Clause names (C1),(C2) introduced here make NOTATION's statement
-      that (C1)-(C3) are used only in F3.3 false.
-  - stage: S8
-    verdict: minor
-    by: seam
-    hash: eba75cf91c31
-    date: '2026-10-25'
-    model: claude-opus-5-5
-    evidence: 01-chains-and-zorn.md:138 The chapter's new notation is not recorded in NOTATION.md, and
-      it contradicts NOTATION rows.
-  - stage: S8
-    verdict: correct
-    by: coordinator
-    hash: eba75cf91c31
-    date: '2026-10-25'
-    evidence: 01:122-157 statement and proof correct; local clause names (C1),(C2) used consistently in
-      01 and 02:188; NOTATION row amendment is shared, shared-todo item 3
-- key: proof:thm-choice-from-zorn
-  kind: proof
-  file: 03-using-zorn.md
-  line: 93
-  hash: e65fe7a6e8eb
-  verdicts:
-  - stage: S5a
-    verdict: minor
-    by: refereeA
-    hash: 6eba99f4bd3c
-    date: '2026-10-25'
-    model: claude-opus-5-5
-    evidence: 01-chains-and-zorn.md:154 M' ∈ P needs M' ⊆ I×U, which is not stated; only (C1) and (C2)
-      are checked.
-  - stage: S5b
-    verdict: correct
-    by: refereeB
-    hash: 6eba99f4bd3c
-    date: '2026-10-25'
-    model: claude-opus-5-5
-    evidence: 01:145-155 all four steps checked; M' ⊆ I×U since x0∈A_{i0}⊆U; (C2) for M' because i0 missed;
-      I=∅ remark 01:157 correct (P={∅})
-  - stage: S7r
-    verdict: correct
-    by: rereferee
-    hash: e65fe7a6e8eb
-    date: '2026-10-25'
-    model: claude-opus-5-5
-    evidence: The maximality step now checks all three conditions for M' ∈ P (M' ⊆ I×U, (C1), (C2)), M
-      ⊊ M', and the contradiction. Everything else is unchanged and correct.
-  - stage: S7r
-    verdict: correct
-    by: rereferee
-    hash: e65fe7a6e8eb
-    date: '2026-10-25'
-    model: claude-opus-5-5
-    evidence: The proof now adds that M' ⊆ I×U because x_0 ∈ A_{i_0} ⊆ U, which closes the membership-in-P
-      step. The non-empty, chain (lem-chain-union (b), n=2), Zorn and maximality steps are all sound,
-      and (C1)/(C2) give a function with c(i) ∈ A_i.
-- key: exr-using-zorn-a1
-  kind: exr
-  file: 03-using-zorn.md
-  line: 119
-  hash: 1734b6c4e081
-  verdicts:
-  - stage: S5a
-    verdict: correct
-    by: refereeA
-    hash: bcdfa692c7ac
-    date: '2026-10-25'
-    model: claude-opus-5-5
-    evidence: 02:211-217. (a) correctly locates (M1) and (M2). (c) A×B=∅, so P={∅}; Case 1 holds, and
-      Case 2 as well if B=∅.
-  - stage: S5b
-    verdict: minor
-    by: refereeB
-    hash: bcdfa692c7ac
-    date: '2026-10-25'
-    model: claude-opus-5-5
-    evidence: 02-using-zorn.md:211 A1(a)'s answer omits one place where the proof uses (M1) and (M2).
-  - stage: S6
-    verdict: minor
-    by: verifier
-    hash: bcdfa692c7ac
-    date: '2026-10-25'
-    model: claude-opus-5-5
-    evidence: '02-using-zorn.md:211 Answer (a) leaves out one place where (M1) and (M2) are used: the
-      step ''M uses up a side'', which checks that M'' = M ∪ {(a0,b0)} satisfies (M1) and (M2).'
-  - stage: S7r
-    verdict: correct
-    by: rereferee
-    hash: 1734b6c4e081
-    date: '2026-10-25'
-    model: claude-opus-5-5
-    evidence: (a) now names the 'M uses up a side' step. The proof at :33 does check (M1) and (M2) for
-      M ∪ {(a0,b0)}, and that check uses them for M on old pairs. Parts (b) to (d) are unchanged.
-  - stage: S7r
-    verdict: correct
-    by: rereferee
-    hash: 1734b6c4e081
-    date: '2026-10-25'
-    model: claude-opus-5-5
-    evidence: '(a) now also notes that the step ''M uses up a side'' uses (M1)/(M2) for M ∪ {(a_0,b_0)}.
-      This is accurate: adding an unpaired a_0 and an unpaired b_0 keeps both clauses.'
-- key: exr-using-zorn-c2
-  kind: exr
-  file: 03-using-zorn.md
-  line: 148
-  hash: 62839358e08a
-  verdicts:
-  - stage: S5a
-    verdict: correct
-    by: refereeA
-    hash: b42ba8f59cb4
-    date: '2026-10-25'
-    model: claude-opus-5-5
-    evidence: '02:316. Consistent with 5.1''s treatment (01:11): prp-countable-image, thm-reals-uncountable-decimal
-      and fd1 (N13) (fd1 ch08/06:69) say what is cited. Points add up to 6.'
-  - stage: S5b
-    verdict: minor
-    by: refereeB
-    hash: b42ba8f59cb4
-    date: '2026-10-25'
-    model: claude-opus-5-5
-    evidence: The solution at :316 is right and names the line, (N13), and a counterexample to the step.
-      The marking scheme at :318 totals 6 points, against STYLE §11.6 (sum to 10).
-  - stage: S6
-    verdict: minor
-    by: verifier
-    hash: b42ba8f59cb4
-    date: '2026-10-25'
-    model: claude-opus-5-5
-    evidence: 02-using-zorn.md:321 The marking scheme requires one specific counterexample and a label
-      citation, so it fails valid alternative answers.
-  - stage: S7r
-    verdict: correct
-    by: rereferee
-    hash: 62839358e08a
-    date: '2026-10-25'
-    model: claude-opus-5-5
-    evidence: The scheme reads 2+3+3+2 = 10. It pays for the failing line together with the reason (no
-      step) and accepts any counterexample that comes with the countability reason. The solution text
-      is unchanged and still earns full marks.
-  - stage: S7r
-    verdict: correct
-    by: rereferee
-    hash: 62839358e08a
-    date: '2026-10-25'
-    model: claude-opus-5-5
-    evidence: 'Only the marking scheme was rescaled, to 2+3+3+2=10. It now credits any counterexample
-      with the countability reason. The analysis is correct: N13, A=B=ℝ is uncountable, and the template
-      is the repair.'
-- key: exr-using-zorn-r1
-  kind: exr
-  file: 03-using-zorn.md
-  line: 168
-  hash: 814dc747d07d
-  verdicts:
-  - stage: S5a
-    verdict: correct
-    by: refereeA
-    hash: f22dc0dc541c
-    date: '2026-10-25'
-    model: claude-opus-5-5
-    evidence: 02:334. prp-card-le-surjection (ch03/04:59) needs A≠∅ and gives B→A, so both directions
-      are right. Both non-emptiness hypotheses are used, and A=∅≠B is a counterexample when one is dropped.
-  - stage: S5b
-    verdict: minor
-    by: refereeB
-    hash: f22dc0dc541c
-    date: '2026-10-25'
-    model: claude-opus-5-5
-    evidence: 02-using-zorn.md:327 The chapter's exit checks (R1-R2) have no marking schemes and are not
-      titled as exit checks.
-  - stage: S6
-    verdict: minor
-    by: verifier
-    hash: f22dc0dc541c
-    date: '2026-10-25'
-    model: claude-opus-5-5
-    evidence: 02-using-zorn.md:327 R1 and R2 are the chapter's exit checks, but neither has the marking
-      scheme that exit checks require.
-  - stage: S7r
-    verdict: minor
-    by: rereferee
-    hash: 814dc747d07d
-    date: '2026-10-25'
-    model: claude-opus-5-5
-    evidence: 'The marking scheme reads 3+4+3 = 10 and matches the solution''s two cases and the surjection
-      direction. Still open, and deferred to the coordinator: the blueprint (ch05-deepen.md:55,:218) and
-      index.md:9 call R1 and R2 exit checks, but STYLE:211 says exit checks are C items titled ''Exit
-      check''.'
-  - stage: S7r
-    verdict: correct
-    by: rereferee
-    hash: 814dc747d07d
-    date: '2026-10-25'
-    model: claude-opus-5-5
-    evidence: 'A marking scheme summing to 3+4+3=10 was added. The solution is correct: comparability,
-      then prp-card-le-surjection with the non-emptiness of the set being mapped onto.'
-- key: exr-using-zorn-r2
-  kind: exr
-  file: 03-using-zorn.md
-  line: 183
-  hash: 02af306525cf
-  verdicts:
-  - stage: S5a
-    verdict: correct
-    by: refereeA
-    hash: ddf0afe8df96
-    date: '2026-10-25'
-    model: claude-opus-5-5
-    evidence: 02:347-349. (a) is valid. (b) applies exr-chains-and-zorn-b1 (01:241, proved from thm-zorn)
-      with C0=∅. The maximal chain is non-empty because {p} properly contains ∅. Matches the hypotheses
-      of thm-zorn.
-  - stage: S5b
-    verdict: minor
-    by: refereeB
-    hash: ddf0afe8df96
-    date: '2026-10-25'
-    model: claude-opus-5-5
-    evidence: The math at :347-349 is correct. Problem text :342 names its source ('Section 5.1, Exercise
-      B1'), against STYLE §11.5 ('The problem text never names its source chapter'). It is an exit check
-      without a marking scheme (§11.6).
-  - stage: S6
-    verdict: minor
-    by: verifier
-    hash: ddf0afe8df96
-    date: '2026-10-25'
-    model: claude-opus-5-5
-    evidence: 02:337-350. (a) and (b) are correct and complete (C≠∅ shown), and agree with mine. But R2
-      is an exit check with no marking scheme (STYLE §11.6). Its solution names its Chapter 4 source (def
-      of maximal/greatest) with no @ref, and cites B1 in prose rather than as @exr-chains-and-zorn-b1.
-  - stage: S8
-    verdict: minor
-    by: seam
-    hash: ddf0afe8df96
-    date: '2026-10-25'
-    model: claude-opus-5-5
-    evidence: 02-using-zorn.md:342 R-item problem texts name their sources, which STYLE §11.5 forbids.
-  - stage: S7r
-    verdict: minor
-    by: rereferee
-    hash: 02af306525cf
-    date: '2026-10-25'
-    model: claude-opus-5-5
-    evidence: (b) now states 'every chain lies in a maximal chain' inline, which matches exr-chains-and-zorn-b1
-      (01:238). The solution cites @exr-chains-and-zorn-b1. The scheme reads 1+1+3+2+1+2 = 10 and matches
-      the steps of (a) and (b). The exit-check designation is deferred, as for R1.
-  - stage: S7r
-    verdict: correct
-    by: rereferee
-    hash: 02af306525cf
-    date: '2026-10-25'
-    model: claude-opus-5-5
-    evidence: The problem text no longer names its source; the solution cites @exr-chains-and-zorn-b1.
-      (a) and (b) are correct (maximal chain with C_0=∅, non-empty, an upper bound, maximal by (a)). The
-      marking scheme sums to 1+1+3+2+1+2=10.
+  removed: true

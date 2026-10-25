@@ -1,8 +1,6 @@
 # The Axiom of Choice
 
-<!-- S3: rewrite per blueprint (6.1: opening frame; condense to 5,000 words plus folds; layout §1) -->
-
-Section 4.2 listed \( \nN \times \nN \), \( \nZ \) and \( \nQ \), and showed that a union of two countable sets is countable (@prp-union-two-countable). The next question is a union of **countably many** countable sets. The natural proof is short, and it contains one step that none of the rules met so far can justify. This section isolates that step, adds the principle that licenses it, the axiom of choice, and then shows how to tell a proof that needs the axiom from one that only seems to.
+Chapter 4 avoided such picks: every function it built was given by a formula, a least element, or a list fixed in advance. This chapter adds the one principle that allows such picking, the axiom of choice, and gathers the theorems that need it. Section 4.2 listed \( \nN \times \nN \), \( \nZ \) and \( \nQ \), and showed that a union of two countable sets is countable (@prp-union-two-countable). The next question is a union of **countably many** countable sets. The natural proof is short, and one of its steps cannot be justified by any rule met so far. This section isolates that step, adds the axiom that licenses it, shows how to tell a proof that needs the axiom from one that only seems to, and proves the four results this book draws from it: right inverses, comparing sizes by surjections, countable unions, and the place of \( \nN \) among the infinite sets.
 
 ## A union of countably many lists
 
@@ -35,7 +33,7 @@ In symbols, with \( Y^X \) the set of functions of Section 2.1 and \( U \coloneq
 
 In words: the hypothesis says that each set of the family has an element; the conclusion says that **one** function picks an element of every \( A_i \) at the same time. The codomain, a set by (W3), only gives \( c \) somewhere to take its values. The axiom asserts that \( c \) exists and gives no recipe for it.
 
-**Its status.** For finitely many indices the axiom adds nothing (proved below); for infinitely many it is a genuinely new principle. It can be neither proved nor refuted from the other axioms of set theory (Gödel, Cohen). Section 6.2 states its best-known equivalent, Zorn's lemma; *Axiomatic Set Theory* proves it equivalent to the axiom, together with the other equivalents such as the well-ordering theorem, and surveys the independence results. This book uses the axiom openly on the main line, among other places: here, for countable unions and right inverses, and below, for infinite subsets that can be listed; in *Analysis on the Real Line*, Chapter 1, for sup approximations (the remark below); in *Measure, Integration, and Real Analysis*, Chapter 2, for the Vitali set; in the same volume, Chapter 10, through Zorn's lemma, for the Hahn–Banach theorem; and in *Functional Analysis*, Chapter 2, for Tychonoff's theorem. Each use is flagged at its line.
+**Its status.** For finitely many indices the axiom adds nothing (proved below); for infinitely many it is a genuinely new principle. It can be neither proved nor refuted from the other axioms of set theory (Gödel, Cohen). Section 6.2 states Zorn's lemma, and Section 6.3 proves that Zorn's lemma gives the axiom and the well-ordering theorem; *Axiomatic Set Theory*, Chapter 4 proves the converse, and Chapter 5 surveys the independence results. This book uses the axiom openly on the main line, among other places: in this section, for right inverses, countable unions and infinite sets; in *Analysis on the Real Line*, Chapter 1, for sup approximations (the remark below); in *Measure, Integration, and Real Analysis*, Chapter 2, for the Vitali set; in the same volume, Chapter 10, through Zorn's lemma, for the Hahn–Banach theorem; and in *Functional Analysis*, Chapter 2, for Tychonoff's theorem. Each use is flagged at its line.
 
 ::: {.remark}
 A corollary in *Analysis on the Real Line*, Chapter 1 gives, for each \( n \ge 1 \) separately, some \( a_n \in A \) with \( a_n > \sup A - \frac1n \): one \( \rulename{\exists E} \) per \( n \), and no axiom. Forming the **sequence** \( (a_n)_{n \ge 1} \) from these is a choice function for the family \( \bigl( \{ a \in A : a > \sup A - \tfrac1n \} \bigr)_{n \in \nZ_{>0}} \), an instance of @ax-choice with the countable index set \( I = \nZ_{>0} \). *Analysis on the Real Line*, Chapter 1 flags exactly this step.
@@ -136,9 +134,7 @@ No. Each \( n \in \nN \) has the preimage \( n \), and also \( -n \) when \( n >
 
 ## Comparing sizes by surjections
 
-<!-- S3: rewrite per blueprint (6.1: prp-card-le-surjection moved here from old 3.4, as the first use of right inverses) -->
-
-Before it, one more way to read \( \le \). A countable set was defined by a surjection from \( \nN \), and @thm-countable-characterizations turned that into an injection into \( \nN \). The same exchange works for all sets, with one exception and one price.
+Right inverses give a second reading of \( \le \). Section 4.4 compared sizes by injections, and turned an injection \( A \to B \) into a surjection \( B \to A \) (@prp-injection-gives-surjection). This section supplies the converse, at the price of the axiom: the direction from a surjection to an injection uses @thm-surjection-right-inverse.
 
 ::: {#prp-card-le-surjection}
 [Injections and Surjections]
@@ -147,19 +143,19 @@ Let \( A \) and \( B \) be sets with \( A \ne \emptyset \). Then \( \card{A} \le
 :::
 
 ::: {.proof}
-\( (\Rightarrow) \) Let \( f \colon A \to B \) be an injection. Since \( A \ne \emptyset \), @thm-left-inverse-iff-injective (b) gives a left inverse \( g \colon B \to A \), so \( g \circ f = \id_A \). This says that \( f \) is a right inverse of \( g \) (@def-left-right-inverse), so \( g \) is surjective by @prp-right-inverse-surjective.
+\( (\Rightarrow) \) This half is @prp-injection-gives-surjection (Section 4.4); it uses no choice.
 
 \( (\Leftarrow) \) Let \( g \colon B \to A \) be a surjection. By @thm-surjection-right-inverse, \( g \) has a right inverse \( h \colon A \to B \), so \( g \circ h = \id_A \); **this step uses @ax-choice**, through @thm-surjection-right-inverse. Then \( g \) is a left inverse of \( h \), so \( h \) is injective by @thm-left-inverse-iff-injective (a). Hence \( \card{A} \le \card{B} \). This proves the proposition.
 :::
 
-The hypothesis \( A \ne \emptyset \) is needed for \( (\Rightarrow) \) only. For \( A = \emptyset \) and \( B = \{b\} \), the empty function is an injection \( \emptyset \to \{b\} \), but there is no function \( \{b\} \to \emptyset \) at all (@prp-empty-function (b)), let alone a surjection. The proof shows where the hypothesis enters: a left inverse \( g \colon B \to A \) must send \( b \) somewhere in \( A \). The choice in \( (\Leftarrow) \) is genuine in general, but not for \( B = \nN \): a surjection from \( \nN \) has least preimages, a rule, which is how @thm-countable-characterizations went from (i) to (ii) without the axiom.
+The hypothesis \( A \ne \emptyset \) is needed for \( (\Rightarrow) \) only, as Section 4.4 showed with \( A = \emptyset \), \( B = \{b\} \). The choice in \( (\Leftarrow) \) is genuine in general, but not for \( B = \nN \): a surjection from \( \nN \) has least preimages, a rule, which is how @thm-countable-characterizations went from (i) to (ii) without the axiom.
 
 ::: {.check}
 Is \( \card{\{0, 1\}^{\nN}} \le \card{\powerset{\nN}} \)? Give an injection, and say whether your answer needed @prp-card-le-surjection.
 :::
 
 ::: {.solution}
-Yes. Send a sequence \( a \in \{0, 1\}^{\nN} \) to the set \( \{ n \in \nN : a(n) = 1 \} \). If two sequences give the same set, they take the value \( 1 \) at the same places, and so the value \( 0 \) at the same places too; hence they are equal (@prp-function-equality), and the map is injective. No appeal to @prp-card-le-surjection is needed: the definition asks for an injection, and we wrote one down. (The map is in fact a bijection, with inverse \( S \mapsto \ind_S \); this is the correspondence of Section 2.1, recalled after @cor-powerset-naturals-uncountable.)
+Yes. Send a sequence \( a \in \{0, 1\}^{\nN} \) to the set \( \{ n \in \nN : a(n) = 1 \} \). If two sequences give the same set, they take the value \( 1 \) at the same places, and so the value \( 0 \) at the same places too; hence they are equal (@prp-function-equality), and the map is injective. No appeal to @prp-card-le-surjection is needed: the definition asks for an injection, and we wrote one down. (The map is in fact a bijection, with inverse \( S \mapsto \ind_S \), by @thm-power-set-two-power with \( X = \nN \).)
 :::
 
 ## Countable unions
@@ -220,13 +216,9 @@ Neither hypothesis can be dropped: Section 4.3 shows that \( \nR \) is not count
 **The choice is of the lists, not of preimages.** A surjection \( \nN \to A \) gives least preimages by a rule (@thm-countable-characterizations), but only once the surjection is **in hand**. In @thm-countable-union, what is missing is the surjection itself, one for each \( A_n \), and the sets \( A_n \) need not be sets of natural numbers, so no "least" is available to name one.
 :::
 
-## What choice buys for infinite sets
-
-<!-- S3: rewrite per blueprint (6.1: old 3.5 moved here and to be condensed (thm-infinite-countable-subset, thm-infinite-iff-proper-subset)) -->
-
-Section 4.4 compared sizes with injections. Here we ask where \( \nN \) sits in that comparison. Every infinite set we have met contains a copy of \( \nN \), and it is tempting to say that this must always happen by picking new elements one at a time; this section makes that picking exact. It turns out to need @ax-choice again, this time applied to a family with one set for each non-empty subset of the given set, and it gives two results: \( \nN \) is the smallest infinite size, and a set is infinite exactly when it is the same size as a proper part of itself.
-
 ## Every infinite set contains a copy of the natural numbers
+
+Every infinite set met so far contains a copy of \( \nN \), and Section 4.5 showed what such a copy does (@prp-copy-of-naturals-absorbs). Picking new elements one at a time looks like a proof that every infinite set has one; it is not one, since "one at a time" is a recursion whose step must pick a new element from every set \( X \setminus F \), \( F \) finite, at once. So the proof chooses once, on all non-empty subsets of \( X \). With @ax-choice it becomes a proof, and it gives two results: \( \nN \) is the smallest infinite size, and a set is infinite exactly when it is the same size as a proper part of itself.
 
 The question has a goal theorem: we want to show that an infinite set \( X \) has a countably infinite subset, that is, a subset equinumerous with \( \nN \) (@def-countably-infinite). Equivalently, we want an injection \( \nN \to X \): its image is then such a subset.
 
@@ -307,21 +299,7 @@ One direction is already done: Section 4.1 showed that finite sets have no prope
 ::: {.proof}
 \( (\Leftarrow) \) This is the contrapositive of @thm-finite-no-proper-copy: a finite set is not equinumerous with any proper subset, so a set that is equinumerous with one is not finite.
 
-\( (\Rightarrow) \) Let \( X \) be infinite. By @thm-infinite-countable-subset there is an injection \( n \mapsto x_n \) from \( \nN \) to \( X \); let \( S \coloneqq \{ x_n : n \in \nN \} \). Each element of \( S \) is \( x_n \) for exactly one \( n \in \nN \), by injectivity. Define \( h \colon X \to X \setminus \{x_0\} \) by
-\[
-h(x) \coloneqq
-\begin{cases}
-x_{n+1} & \text{if } x = x_n \text{ with } n \in \nN, \\
-x & \text{if } x \notin S .
-\end{cases}
-\]
-This is a function into \( X \setminus \{x_0\} \): \( x_{n+1} \ne x_0 \) because \( n + 1 \ne 0 \), and an \( x \notin S \) is not \( x_0 \).
-
-*\( h \) is injective.* Two points of \( S \): \( x_{m+1} = x_{n+1} \) gives \( m + 1 = n + 1 \), so \( m = n \). Two points outside \( S \): \( h \) is the identity there. One of each: \( h(x_n) = x_{n+1} \in S \), while \( h(x) = x \notin S \), so the values differ.
-
-*\( h \) is onto \( X \setminus \{x_0\} \).* Let \( y \in X \setminus \{x_0\} \). If \( y \notin S \), then \( y = h(y) \). If \( y \in S \), then \( y = x_m \) with \( m \ne 0 \), so \( n \coloneqq m - 1 \in \nN \) (@lem-naturals-arithmetic (c)) and \( y = x_{n+1} = h(x_n) \).
-
-So \( h \) is a bijection, and \( Y \coloneqq X \setminus \{x_0\} \) is a proper subset of \( X \), as \( x_0 \in X \setminus Y \), with \( \card{X} = \card{Y} \). This proves the theorem.
+\( (\Rightarrow) \) Let \( X \) be infinite. By @thm-infinite-countable-subset (which uses @ax-choice) there is an injection \( s \colon \nN \to X \). By @prp-copy-of-naturals-absorbs (a), \( Y \coloneqq X \setminus \{s(0)\} \) has \( \card{Y} = \card{X} \), and \( Y \) is a proper subset, as \( s(0) \in X \setminus Y \). This proves the theorem.
 :::
 
 Together with Section 4.1, this gives a characterization of "infinite" that never mentions \( \nN \) or counting: a set is infinite precisely when some proper part of it is as big as the whole. The finite intuition "a part is smaller than the whole" is exactly the property that separates finite sets from infinite ones. The direction \( (\Rightarrow) \) used @ax-choice, through @thm-infinite-countable-subset; the direction \( (\Leftarrow) \) did not.
@@ -341,14 +319,15 @@ Name a proper subset of \( \nR \) that is equinumerous with \( \nR \), and give 
 ::: {#exr-countable-unions-and-choice-a1}
 [A1]
 
-These parts are about the proof of @thm-countable-union.
+These parts are about the proofs of @thm-countable-union and @thm-infinite-countable-subset.
 
 ::: {.enumerate options="label=(\alph*)"}
-1. Which line of the proof of part (a) uses @ax-choice? What are the index set \( I \) and the sets \( A_i \) of the axiom at that line?
-2. Why does the proof introduce the set \( J \)?
-3. Run the proof on \( A_n \coloneqq \{ n, n + 1 \} \) for \( n \in \nN \), with the lists \( c(n)(m) \coloneqq n \) for odd \( m \) and \( c(n)(m) \coloneqq n + 1 \) for even \( m \). What is \( J \), and what is \( F(3, 2) \)?
-4. State the idea of the proof in two sentences.
-5. Is @ax-choice needed to show that \( \bigcup_{n \in \nN} A_n \) is countable when every \( A_n \) is a subset of \( \nN \)? Justify your answer.
+1. Which line of the proof of part (a) of @thm-countable-union uses @ax-choice? What are the index set \( I \) and the sets \( A_i \) of the axiom at that line?
+2. Why does the proof of @thm-countable-union introduce the set \( J \)?
+3. Run the proof of @thm-countable-union on \( A_n \coloneqq \{ n, n + 1 \} \) for \( n \in \nN \), with the lists \( c(n)(m) \coloneqq n \) for odd \( m \) and \( c(n)(m) \coloneqq n + 1 \) for even \( m \). What is \( J \), and what is \( F(3, 2) \)?
+4. Is @ax-choice needed to show that \( \bigcup_{n \in \nN} A_n \) is countable when every \( A_n \) is a subset of \( \nN \)? Justify your answer.
+5. Where does the proof of @thm-infinite-countable-subset use @ax-choice? Why is one \( \rulename{\exists E} \) per step not enough?
+6. The proof of @thm-infinite-iff-proper-subset passes the copy of \( \nN \) to @prp-copy-of-naturals-absorbs (a), whose proof moves each \( s(n) \) to \( s(n + 1) \) and fixes every other point. Write down the resulting bijection \( X \to X \setminus \{s(0)\} \) for \( X = \nZ \) and \( s(n) = n \) for \( n \in \nN \).
 :::
 :::
 
@@ -359,30 +338,11 @@ These parts are about the proof of @thm-countable-union.
 
 (c) Every \( A_n \) is non-empty, so \( J = \nN \). The pair \( (3, 2) \) has \( m = 2 \) even, so \( F(3, 2) = c(3)(2) = 3 + 1 = 4 \). (Each \( c(n) \) is onto \( \{n, n + 1\} \): \( c(n)(1) = n \) and \( c(n)(0) = n + 1 \).)
 
-(d) Choose, with the axiom, a list of each non-empty \( A_n \), all at once. The lists turn the countable grid \( J \times \nN \) into a surjection onto the union, so the union is countable.
+(d) No. The union is a subset of \( \nN \), so it is countable by @prp-countable-subset. (Even the proof can run without the axiom: \( h_A(m) \coloneqq m \) for \( m \in A \) and \( h_A(m) \coloneqq \min A \) otherwise (@thm-well-ordering) is a rule that maps \( \nN \) onto any non-empty \( A \subseteq \nN \).)
 
-(e) No. The union is a subset of \( \nN \), so it is countable by @prp-countable-subset. (Even the proof can run without the axiom: \( h_A(m) \coloneqq m \) for \( m \in A \) and \( h_A(m) \coloneqq \min A \) otherwise (@thm-well-ordering) is a rule that maps \( \nN \) onto any non-empty \( A \subseteq \nN \).)
-:::
+(e) At the line "By @ax-choice there is a function \( c \) with \( c(S) \in S \) for every non-empty \( S \subseteq X \)." One \( \rulename{\exists E} \) names one element of one non-empty set; that would give \( x_0 \), then \( x_1 \), and any finite number of steps. But @thm-recursion needs the step as a **function** \( g \), defined once for every stage \( F \) at once, before the sequence exists. Defining \( g \) means picking an element of \( X \setminus F \) for every such \( F \) simultaneously, and that is what the axiom provides.
 
-::: {#exr-infinite-sets-a1}
-[A1]
-
-::: {.enumerate options="label=(\alph*)"}
-1. Where does the proof of @thm-infinite-countable-subset use @ax-choice? Why is one \( \rulename{\exists E} \) per step not enough?
-2. True or false, with a reason: every infinite subset of \( \nR \) contains a countably infinite subset; every uncountable set contains an uncountable proper subset.
-3. Write down the bijection \( X \to X \setminus \{x_0\} \) of the proof of @thm-infinite-iff-proper-subset for \( X = \nZ \) and \( x_n = n \) for \( n \in \nN \).
-4. For \( X = \nN \), is choice needed to find a countably infinite subset?
-:::
-:::
-
-::: {.solution}
-(a) At the line "By @ax-choice there is a function \( c \) with \( c(S) \in S \) for every non-empty \( S \subseteq X \)." One \( \rulename{\exists E} \) names one element of one non-empty set; that would give \( x_0 \), then \( x_1 \), and any finite number of steps. But @thm-recursion needs the step as a **function** \( g \), defined once for every stage \( F \) at once, before the sequence exists. Defining \( g \) means picking an element of \( X \setminus F \) for every such \( F \) simultaneously, and that is what the axiom provides.
-
-(b) Both are true. The first is @thm-infinite-countable-subset applied to the infinite subset. For the second, let \( X \) be uncountable; then \( X \ne \emptyset \), and for \( x \in X \), \( X \setminus \{x\} \) is an uncountable proper subset, by the Quick check after the warning above.
-
-(c) \( h(n) = n + 1 \) for \( n \in \nN \), and \( h(k) = k \) for \( k < 0 \). It maps \( \nZ \) onto \( \nZ \setminus \{0\} \): a positive \( m \) is \( h(m - 1) \), and a negative \( k \) is \( h(k) \).
-
-(d) No. \( \nN \) itself is countably infinite, via \( \id_{\nN} \). (More generally, an infinite \( X \subseteq \nN \) can be listed in increasing order by @lem-subsets-of-naturals, a rule.)
+(f) \( h(n) = n + 1 \) for \( n \in \nN \), and \( h(k) = k \) for \( k < 0 \). It maps \( \nZ \) onto \( \nZ \setminus \{0\} \): a positive \( m \) is \( h(m - 1) \), and a negative \( k \) is \( h(k) \). No choice is needed here: the copy of \( \nN \) inside \( \nZ \) is given.
 :::
 
 ### B. Practice
@@ -436,18 +396,8 @@ By @thm-recursion there is a function \( k \mapsto s_k \) from \( \nN \) to \( X
 Now \( n \mapsto s_{\sigma_1(n)}(\sigma_2(n)) \) maps \( \nN \) onto \( \mathrm{Seq} \): for \( y \in \mathrm{Seq}_k \), the claim gives \( j \) with \( s_k(j) = y \), and some \( n \) has \( \sigma(n) = (k, j) \). So \( \mathrm{Seq} \) is countable. One surjection was named, and the lists \( s_k \) were defined from it by recursion: no choice is used. Either route earns full credit if the use of choice is reported correctly.
 :::
 
-::: {#exr-countable-unions-and-choice-b3}
-[B3]
-
-A **rational point** of the plane is a point of \( \nQ \times \nQ \). Prove that the set of lines in the plane that pass through two different rational points is countable. Does your proof use @ax-choice?
-:::
-
-::: {.solution}
-Let \( D \coloneqq \{ (p, q) \in (\nQ \times \nQ) \times (\nQ \times \nQ) : p \ne q \} \). The set \( \nQ \times \nQ \) is countable by @thm-integers-rationals-countable and @cor-product-countable; so is its product with itself, again by @cor-product-countable, and so is the subset \( D \) (@prp-countable-subset). For \( (p, q) \in D \), let \( \mathrm{line}(p, q) \) be the line through \( p \) and \( q \), as a subset of \( \nR^2 \): \( \mathrm{line}(p, q) \coloneqq \{ p + t(q - p) : t \in \nR \} \). Two different points lie on exactly one line (school geometry), so the lines in question form the image \( \mathrm{line}(D) \), countable by @prp-countable-image. The map \( \mathrm{line} \) is a formula, so no choice is used.
-:::
-
 ::: {#exr-countable-unions-and-choice-b4}
-[B4: Prove or disprove]
+[B3: Prove or disprove]
 
 Prove each true statement, naming each use of @ax-choice as in @exm-method-name-the-choice, and refute each false one with a concrete counterexample.
 
@@ -457,6 +407,8 @@ Prove each true statement, naming each use of @ax-choice as in @exm-method-name-
 3. Every surjection \( f \colon \nN \to Y \) has a right inverse that can be defined without @ax-choice.
 4. If \( A_n \) is countable for every \( n \in \nN \), then \( \bigcup_{n \in \nN} A_n \) is countably infinite.
 5. If \( A_n \ne \emptyset \) for every \( n \in \nN \) and \( \bigcup_{n \in \nN} A_n \) is finite, then \( A_m \cap A_n \ne \emptyset \) for some \( m \ne n \).
+6. Every infinite set \( X \) admits a surjection \( X \to \nN \).
+7. If a set \( X \) admits a surjection \( X \to \nN \), then \( X \) is countable.
 :::
 :::
 
@@ -470,31 +422,13 @@ Prove each true statement, naming each use of @ax-choice as in @exm-method-name-
 (d) **False.** Take \( A_n \coloneqq \{0\} \) for every \( n \): the union is \( \{0\} \), which is finite, hence not countably infinite: a bijection \( \nN \to \{0\} \) would make \( \nN \) finite (@prp-equinumerous-properties), against @exm-hilbert-hotel.
 
 (e) **True, with no axiom.** The set \( U \coloneqq \bigcup_{n \in \nN} A_n \) is non-empty (it contains the elements of \( A_0 \)) and finite, say with \( k \ge 1 \) elements via a bijection \( \varphi \colon \{1, \dots, k\} \to U \) (one \( \rulename{\exists E} \)). Define \( c(n) \coloneqq \varphi\bigl(\min \{ j : \varphi(j) \in A_n \}\bigr) \) (@thm-well-ordering); the set is non-empty because \( A_n \ne \emptyset \) and \( \varphi \) is onto. This is a rule, and \( c(n) \in A_n \). If \( c \) were injective, \( \nN \) would be equinumerous with \( c(\nN) \subseteq U \), which is finite (@prp-subset-finite). Then \( \nN \) would be finite (@prp-equinumerous-properties), against @exm-hilbert-hotel. So \( c(m) = c(n) \) for some \( m \ne n \), and that element lies in \( A_m \cap A_n \). This is the pigeonhole idea of @exm-method-pigeonhole, with infinitely many pigeons.
-:::
+(f) **True, using the axiom.** By @thm-infinite-countable-subset (which uses @ax-choice) there is an injection \( \nN \to X \). Since \( \nN \ne \emptyset \), @prp-injection-gives-surjection gives a surjection \( X \to \nN \); that step uses no choice. (Concretely, with the injection written \( n \mapsto x_n \): send \( x_n \) to \( n \) and every other point to \( 0 \).)
 
-::: {#exr-infinite-sets-b1}
-[B1: Removing finitely many points]
-
-Let \( X \) be infinite and let \( F \subseteq X \) be finite. Prove that \( \card{X \setminus F} = \card{X} \).
-:::
-
-::: {.solution}
-First, \( X \setminus F \) is infinite: otherwise \( X = (X \setminus F) \cup F \) would be a union of two disjoint finite sets, finite by @prp-disjoint-union-count.
-
-By @thm-infinite-countable-subset applied to \( X \setminus F \) (this uses @ax-choice), there is an injection \( n \mapsto s_n \) from \( \nN \) to \( X \setminus F \); let \( S \coloneqq \{ s_n : n \in \nN \} \). Let \( F \) have \( k \) elements, and let \( \varphi \colon \{1, \dots, k\} \to F \) be a bijection (@def-finite). No two of \( X \setminus (F \cup S) \), \( F \) and \( S \) meet, and together they make up \( X \); and \( X \setminus F \) is the union of the disjoint sets \( X \setminus (F \cup S) \) and \( S \). Define \( h \colon X \to X \setminus F \) by
-\[
-h(x) \coloneqq
-\begin{cases}
-x & \text{if } x \notin F \cup S, \\
-s_{i-1} & \text{if } x = \varphi(i), \ i \in \{1, \dots, k\}, \\
-s_{n+k} & \text{if } x = s_n, \ n \in \nN .
-\end{cases}
-\]
-Each \( x \) falls under one case, with one \( i \) or one \( n \), since \( \varphi \) and \( n \mapsto s_n \) are injective. The second case sends \( F \) bijectively onto \( \{s_0, \dots, s_{k-1}\} \), and the third sends \( S \) bijectively onto \( \{ s_m : m \ge k \} \); these two image sets are disjoint and together make up \( S \). The first case is the identity on \( X \setminus (F \cup S) \). So \( h \) is a bijection, and \( \card{X \setminus F} = \card{X} \). (For \( k = 0 \), \( F = \emptyset \) and \( h \) is the identity.)
+(g) **False.** \( x \mapsto \floor{\abs{x}} \), the integer part of \( \abs{x} \) (the \( m \in \nN \) with \( m \le \abs{x} < m + 1 \), a school fact), maps \( \nR \) onto \( \nN \) (each \( n \in \nN \) is the image of \( n \)), and \( \nR \) is uncountable (@thm-reals-uncountable-decimal). A surjection onto \( \nN \) says \( X \) is at least as big as \( \nN \), not at most.
 :::
 
 ::: {#exr-infinite-sets-b2}
-[B2: Absorbing a countable set]
+[B4: Absorbing a countable set]
 
 Let \( X \) be infinite, and let \( C \) be countable with \( C \cap X = \emptyset \). Prove that \( \card{X \cup C} = \card{X} \).
 
@@ -502,23 +436,7 @@ Let \( X \) be infinite, and let \( C \) be countable with \( C \cap X = \emptys
 :::
 
 ::: {.solution}
-By @thm-infinite-countable-subset (using @ax-choice) there is a countably infinite \( S \subseteq X \). The set \( S \cup C \) is countable by @prp-union-two-countable, and infinite, because it contains \( S \) (a subset of a finite set is finite, @prp-subset-finite), which is infinite: if \( \varphi \colon \{1, \dots, k\} \to S \) were a bijection and \( \beta \colon \nN \to S \) is a bijection given by the theorem, then \( \beta^{-1} \circ \varphi \) would be a bijection \( \{1, \dots, k\} \to \nN \) (@prp-equinumerous-properties, @thm-composition-injective-surjective), against @exm-hilbert-hotel. By @thm-countable-characterizations (iii), \( S \cup C \) is countably infinite. So \( \card{S \cup C} = \card{\nN} = \card{S} \), and @prp-equinumerous-properties gives a bijection \( \psi \colon S \cup C \to S \).
-
-Now \( X \cup C \) is the union of the disjoint sets \( X \setminus S \) and \( S \cup C \) (disjoint because \( C \cap X = \emptyset \)), and \( X \) is the union of the disjoint sets \( X \setminus S \) and \( S \). Define \( h \colon X \cup C \to X \) by \( h(x) \coloneqq x \) for \( x \in X \setminus S \) and \( h(x) \coloneqq \psi(x) \) for \( x \in S \cup C \). It is a bijection on each piece, onto the corresponding piece, so it is a bijection, and \( \card{X \cup C} = \card{X} \).
-:::
-
-::: {#exr-infinite-sets-b3}
-[B3: A big hole]
-
-Give an example of an infinite set \( X \) and a proper subset \( Y \subsetneq X \) with \( \card{Y} = \card{X} \) and \( X \setminus Y \) infinite. Check each property, and list the properties any answer must have.
-:::
-
-::: {.solution}
-*An answer must have:* (1) \( Y \subseteq X \); (2) \( Y \ne X \); (3) a bijection \( X \to Y \), or injections both ways; (4) \( X \) infinite; (5) \( X \setminus Y \) infinite. (The hole \( X \setminus Y \) in the proof of @thm-infinite-iff-proper-subset was the single point \( x_0 \); this asks for more.)
-
-*Example:* \( X = \nN \), \( Y = 2\nN \). (1), (2): \( 2\nN \subseteq \nN \) and \( 1 \notin 2\nN \). (3): \( n \mapsto 2n \) is a bijection \( \nN \to 2\nN \) (@exm-hilbert-hotel). (4): \( \nN \) is infinite (@exm-hilbert-hotel). (5): \( X \setminus Y \) is the set of odd numbers (every \( m \in \nN \) is even or odd, not both, by @thm-division-algorithm), and \( n \mapsto 2n + 1 \) is a bijection from \( \nN \) onto it; if it were finite, \( \nN \) would be finite too (compose with a bijection from \( \{1, \dots, k\} \), @thm-composition-injective-surjective), which it is not.
-
-Another correct answer: \( X = \nR \), \( Y = (0, \infty) \). (1), (2): \( (0, \infty) \subseteq \nR \) and \( 0 \notin (0, \infty) \). (3): @exm-reals-open-interval. (4), (5): \( n \mapsto -n \) is a bijection from \( \nN \) onto \( \{ -n : n \in \nN \} \), so this set is infinite, as in (5) above. It lies inside \( X \setminus Y = (-\infty, 0] \subseteq \nR \), so by @prp-subset-finite neither \( (-\infty, 0] \) nor \( \nR \) is finite.
+By @thm-infinite-countable-subset (using @ax-choice) there is an injection \( s \colon \nN \to X \); its image \( S \coloneqq s(\nN) \) is a countably infinite subset of \( X \). Now @prp-copy-of-naturals-absorbs (b) gives \( \card{X \cup C} = \card{X} \). The axiom enters only through the copy \( s \); the absorbing itself is a rule.
 :::
 
 ### C. Going deeper
@@ -545,7 +463,7 @@ Fatal errors (0 for the step): "for each \( n \) let \( f_n \) be a list of \( A
 :::
 
 ::: {#exr-countable-unions-and-choice-c3}
-[C3: Finite unions]
+[C2: Finite unions]
 
 ::: {.enumerate options="label=(\alph*)"}
 1. Prove, without @ax-choice, that for every finite set \( I \) and every family \( (A_i)_{i \in I} \) of countable sets, \( \bigcup_{i \in I} A_i \) is countable.
@@ -567,82 +485,19 @@ which is countable by @prp-union-two-countable. So \( P(n + 1) \) holds, and @fd
 (b) The induction proves the statement for each finite number \( n \) of sets, and \( \nN \) is not finite (@exm-hilbert-hotel), so no instance of \( P(n) \) is about the family \( (A_n)_{n \in \nN} \). Writing \( \bigcup_{n \in \nN} A_n \) as the union of the finite unions \( A_0 \cup \dots \cup A_k \) does not help, since that needs a list of every finite union at once, which is a choice of infinitely many lists again.
 :::
 
-::: {#exr-infinite-sets-c1}
-[C1: Increasing functions]
-
-A function \( f \colon \nN \to \nN \) is **strictly increasing** if \( f(m) < f(n) \) whenever \( m < n \). Let \( I \) be the set of strictly increasing functions \( \nN \to \nN \). Prove that \( I \) is uncountable.
-
-Below, the proof is started; the second half is blank. *Name the move, then complete it.*
-
-> Let \( n \mapsto f_n \) be any function from \( \nN \) to \( I \). By @thm-recursion, applied with the set \( \nN \), the starting value \( f_0(0) + 1 \) and the function \( (n, x) \mapsto \max\{ x, f_{n+1}(n + 1) \} + 1 \) from \( \nN \times \nN \) to \( \nN \) (a step that depends on \( n \)), there is a function \( g \colon \nN \to \nN \) with
-> \[
-> g(0) = f_0(0) + 1, \qquad g(n + 1) = \max\{ g(n), f_{n+1}(n + 1) \} + 1 .
-> \]
-> \( \underline{\hspace{8em}} \)
-:::
-
-::: {.solution}
-[Hint 1]
-
-Two things must be shown about \( g \): that it lies in \( I \), and that it differs from each \( f_n \) somewhere. Where?
-:::
-
-::: {.solution}
-[Hint 2]
-
-The second half begins: "For every \( n \in \nN \), \( g(n + 1) \ge g(n) + 1 > g(n) \)."
-:::
-
-::: {.solution}
-The move is **the diagonal**: given any list, build an object that differs from the \( n \)-th entry at the \( n \)-th place. Here the object must also stay inside \( I \), which is why \( g(n + 1) \) is pushed above \( g(n) \) as well as above \( f_{n+1}(n + 1) \).
-
-*Completion.* For every \( n \in \nN \), \( g(n + 1) = \max\{ g(n), f_{n+1}(n + 1) \} + 1 \ge g(n) + 1 > g(n) \). From this, \( g(m) < g(n) \) whenever \( m < n \), by induction on \( n \) (@thm-induction with base \( m + 1 \)): \( g(m) < g(m + 1) \), and \( g(m) < g(n) < g(n + 1) \). So \( g \in I \).
-
-Next, \( g(n) > f_n(n) \) for every \( n \in \nN \): for \( n = 0 \), \( g(0) = f_0(0) + 1 \); for \( n = k + 1 \), \( g(k + 1) \ge f_{k+1}(k + 1) + 1 \). So \( g(n) \ne f_n(n) \), and hence \( g \ne f_n \), for every \( n \in \nN \). So \( g \in I \) is not a value of \( n \mapsto f_n \), and no function \( \nN \to I \) is onto. Since \( I \ne \emptyset \) (it contains \( \id_{\nN} \)), \( I \) is not countable.
-
-**Marking scheme.** (10 points)
-- 1: names the diagonal move.
-- 4: shows \( g \) is strictly increasing: 2 for the step \( g(n) < g(n + 1) \) for every \( n \), and 2 for the passage to all \( m < n \).
-- 3: shows \( g(n) > f_n(n) \) for every \( n \), treating \( n = 0 \) and \( n = k + 1 \) separately, and concludes \( g \ne f_n \).
-- 2: concludes that no function \( \nN \to I \) is onto and, noting \( I \ne \emptyset \) (\( \id_{\nN} \in I \)), that \( I \) is not countable.
-Fatal errors (0 for the part concerned): taking \( g(n) < g(n + 1) \) alone as strict increase, with no passage to all \( m < n \); inferring \( g \ne f_n \) without exhibiting a point where they differ, or exhibiting one only for \( n \ge 1 \).
-
-The max in \( g \) is needed: the plain diagonal \( g(n) \coloneqq f_n(n) + 1 \) need not be strictly increasing (for \( f_0(n) = 5 + n \) and \( f_1(n) = n \), it gives \( g(0) = 6 > g(1) = 2 \)).
-:::
-
 ::: {#exr-infinite-sets-c2}
-[C2: The irrationals]
+[C3: The irrationals]
 
 Deduce from @exr-infinite-sets-b2 that \( \card{\nR \setminus \nQ} = \card{\nR} \).
 :::
 
 ::: {.solution}
-The set \( \nR \setminus \nQ \) is uncountable: otherwise \( \nR = (\nR \setminus \nQ) \cup \nQ \) would be a union of two countable sets (@thm-integers-rationals-countable), countable by @prp-union-two-countable, against @thm-reals-uncountable-decimal. An uncountable set is infinite, since finite sets are countable (@thm-countable-characterizations). Now apply @exr-infinite-sets-b2 with \( X \coloneqq \nR \setminus \nQ \) and \( C \coloneqq \nQ \), which is countable and disjoint from \( X \): \( \card{(\nR \setminus \nQ) \cup \nQ} = \card{\nR \setminus \nQ} \), and the left side is \( \card{\nR} \).
-:::
-
-### R. Review
-
-::: {#exr-infinite-sets-r4}
-[R4]
-
-A function \( f \colon \nN \to \nN \) is **eventually zero** if there is \( N \in \nN \) with \( f(n) = 0 \) for every \( n \ge N \). Is the set of eventually zero functions countable?
-:::
-
-::: {.solution}
-*Yes.* The tool is a **countable union of countable sets**. For \( N \in \nN \) let \( Z_N \) be the set of \( f \colon \nN \to \nN \) with \( f(n) = 0 \) for every \( n \ge N \); the set of eventually zero functions is \( Z \coloneqq \bigcup_{N \in \nN} Z_N \). Each \( Z_N \) is countable:
-
-- \( Z_0 \) has one element, the zero function, so it is countable.
-- For \( N = 1 \), \( f \mapsto f(0) \) is a bijection \( Z_1 \to \nN \): a function in \( Z_1 \) is determined by its value at \( 0 \), and every value occurs.
-- For \( N \ge 2 \), \( f \mapsto (f(0), \dots, f(N - 1)) \) is a bijection \( Z_N \to \nN \times \dots \times \nN \) (\( N \) factors), by the same reasoning and the characteristic property of tuples; the product is countable by @cor-product-countable, and so is \( Z_N \) (compose a surjection \( \nN \to \nN \times \dots \times \nN \) with the inverse bijection, @prp-countable-image).
-
-By @thm-countable-union, \( Z \) is countable. (That theorem uses @ax-choice; here it could be avoided, since each \( Z_N \) comes with an explicit listing, but the question did not ask for that.)
-
-*Why the look-alike fails.* A diagonal argument, as in @thm-binary-sequences-uncountable, builds from a list \( f_0, f_1, \dots \) of eventually zero functions the function \( g(n) \coloneqq f_n(n) + 1 \). It differs from every \( f_n \), but \( g(n) \ge 1 \) for every \( n \), so \( g \) is **not** eventually zero: it is not in \( Z \), and nothing is contradicted. A diagonal argument proves uncountability only when the diagonal object stays inside the set; this is the usual failure named in @exm-method-diagonal.
+The set \( \nR \setminus \nQ \) is uncountable: otherwise \( \nR = (\nR \setminus \nQ) \cup \nQ \) would be a union of two countable sets (@thm-integers-rationals-countable), countable by @prp-union-two-countable, against @thm-reals-uncountable-decimal. An uncountable set is infinite, since finite sets are countable (@thm-countable-characterizations). Now apply @exr-infinite-sets-b2 with \( X \coloneqq \nR \setminus \nQ \) and \( C \coloneqq \nQ \), which is countable and disjoint from \( X \): \( \card{(\nR \setminus \nQ) \cup \nQ} = \card{\nR \setminus \nQ} \), and the left side is \( \card{\nR} \). Section 4.5, Exercise B5 (a) does this without the axiom; the only new ingredient here is the copy of \( \nN \) inside \( \nR \setminus \nQ \), which @thm-infinite-countable-subset supplies (here a rule also supplies one: \( n \mapsto \sqrt2 + n \), irrational by @fd1:thm-sqrt2-irrational).
 :::
 
 <!-- dependency ledger
 ax-choice (claim): no rule makes infinitely many choices; a proof is finite | def-rules-existential (cited); F2.6 §01
-ax-choice (claim): independence (Goedel 1938, Cohen 1963); Zorn, well-ordering theorem | F2.4 (Zorn stated), ST.4 (equivalences proved), ST.5 (independence) (prose pointers)
+ax-choice (claim): independence (Goedel 1938, Cohen 1963); Zorn, well-ordering theorem | F2.4 §02 (Zorn stated), F2.4 §03 (Zorn => AC, Zorn => well-ordering, proved), ST.4 (AC => Zorn), ST.5 (independence) (prose pointers)
 ax-choice (claim): uses in F2.4 §01, AN1.1, MT.1, FA.3, FA.5 | F2.4 §01, AN1.1, MT.1, FA.3, FA.5 (prose pointers)
 ax-choice (claim): (remark) sup approximation, one exists-E per n | AN1.1 (prose pointer; flagged there)
 ax-choice (example): (0, 1) has no least element | F2.2 §01, halving as for (0, 1]
@@ -656,24 +511,22 @@ exr-countable-unions-and-choice-a1 (solution): F(3, 2) = 4 | verify/ch06/exr-cou
 exr-countable-unions-and-choice-b1 (solution): n < n + 1/2 < n + 1 | school fact; verify/ch06/exr-countable-unions-and-choice-b1.py
 exr-countable-unions-and-choice-b1 (solution): y > 0 has square roots sqrt y > 0 and -sqrt y | school fact (F1-F2 convention); proved in AN1.1
 exr-countable-unions-and-choice-b2 (solution): Seq_k in bijection with N^k | characteristic property of tuples (F2.1)
-exr-countable-unions-and-choice-b3 (solution): two points lie on exactly one line | school geometry
 exr-countable-unions-and-choice-c1 (solution): N is countable | def-countable, identity map
 exm-method-name-the-choice (example): (n + 1)^2 = n^2 + 2n + 1 exceeds n | arithmetic, school fact; verify/ch06/exr-countable-unions-and-choice-b4.py
 exm-choice-or-rule (solution): between two reals lies a rational | school fact (F1-F2 convention); proved in AN1.1
 exm-choice-or-rule (solution): the countably infinite subsets of R form a set | def-set-builder (F2.1 §02) in def-power-set (F2.1 §03)
 exr-countable-unions-and-choice-b4 (solution): (e) c(n) = phi(min{j : phi(j) in A_n}) repeats; (c) least preimage is a right inverse | verify/ch06/exr-countable-unions-and-choice-b4.py
+exr-countable-unions-and-choice-b4 (solution): (f) x_n -> n, others -> 0, is onto N | prp-injection-gives-surjection (F2.3 §04, cited); verify/ch06/exr-countable-unions-and-choice-b4.py
+exr-countable-unions-and-choice-b4 (solution): (g) floor(|x|) maps R onto N | floor function, school fact (F1-F2 convention); thm-reals-uncountable-decimal (cited); verify/ch06/exr-countable-unions-and-choice-b4.py
 thm-infinite-countable-subset (proof): the family (S) indexed by P(X) \ {empty}, union equal to X | def-indexed-family, def-family-union-intersection (F2.1 §03), used silently; ax-choice (cited)
 thm-infinite-countable-subset (proof): a singleton {x} has 1 element | def-finite (cited): the bijection 1 -> x from {1}
 thm-infinite-countable-subset (proof): F_m subset of F_(m+k), induction on k | inline (ax-induction, cited)
 thm-infinite-countable-subset (claim): (remark) AN1.1's nested-interval proof uses an explicit rule | AN1.1 §07 (prose pointer; nothing depends on it)
 thm-infinite-countable-subset (claim): (prose after the remark) the theorem is not provable without choice | set theory, stated without proof; nothing depends on it
-thm-infinite-iff-proper-subset (proof): m + 1 = n + 1 gives m = n; n + 1 != 0 | arithmetic of N (lem-naturals-arithmetic), used silently
-exr-infinite-sets-a1 (solution): the Quick check after the warning (X \ {x} uncountable) | inline in the section (Quick check solution), not an exercise
-exr-infinite-sets-b1 (solution): disjoint pieces, piecewise bijection is a bijection | inline
-exr-infinite-sets-b2 (solution): disjoint pieces, piecewise bijection is a bijection | inline (as in B1)
-exr-infinite-sets-b3 (solution): a set equinumerous with a finite set is finite | inline (compose the bijections, thm-composition-injective-surjective, cited)
-exr-infinite-sets-b3 (solution): (0, infinity) is an interval with more than one point; n -> -n a bijection N -> {-n : n in N}, so it is infinite; a superset of it is infinite | exm-reals-open-interval (cited); inline, as in the first answer; prp-subset-finite (cited)
-exr-infinite-sets-c1 (solution): max{a, b} of two naturals exists and is >= each | prp-finite-max (F2.2 §03), used silently in the given half
-exr-infinite-sets-c1 (solution): counterexample to the plain diagonal: f_0(n) = 5 + n, f_1(n) = n give g(0) = 6, g(1) = 2 | verify/ch06/exr-infinite-sets-c1.py
-exr-infinite-sets-r4 (solution): Z_N -> N x ... x N (N factors) bijection, N >= 2 | characteristic property of tuples (F2.1 §04, def-ordered-pair)
+thm-infinite-iff-proper-subset (proof): the hotel bijection X -> X \ {s(0)} | prp-copy-of-naturals-absorbs (a) (F2.3 §05, cited)
+prp-card-le-surjection (proof): (=>) half, A != empty | prp-injection-gives-surjection (F2.3 §04, cited)
+exr-infinite-sets-b2 (solution): absorbing C into the copy s(N) | prp-copy-of-naturals-absorbs (b) (F2.3 §05, cited); thm-infinite-countable-subset (cited, uses ax-choice)
+exr-infinite-sets-c2 (solution): sqrt2 + n irrational | fd1:thm-sqrt2-irrational (cited), with Q closed under subtraction (school fact); s(n) = sqrt2 + n injective by cancelling sqrt2, inline
+exr-infinite-sets-c2 (claim): Section 4.5, Exercise B5 (a) proves the same without choice | F2.3 §05 (prose pointer; nothing depends on it)
+exr-countable-unions-and-choice-a1 (solution): (f) h(n) = n + 1 on N, identity on negatives, onto Z \ {0} | inline; prp-copy-of-naturals-absorbs (a) (F2.3 §05, cited in the stem)
 -->

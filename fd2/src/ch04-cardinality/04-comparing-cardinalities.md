@@ -51,7 +51,27 @@ For all sets \( A \), \( B \), \( C \):
 
 As with equinumerosity (Section 4.1, after @prp-equinumerous-properties), comparing sizes is reflexive and transitive (@prp-card-le-preorder), but we do not call it an order: there is no set of all sets for it to be a relation on (@thm-russell). And the clause one would expect next, the analogue of \( x \le y \le x \Rightarrow x = y \) for numbers, would say "if \( \card{A} \le \card{B} \) and \( \card{B} \le \card{A} \), then \( A = B \)", which is false: \( \card{\nN} \le \card{2\nN} \) and \( \card{2\nN} \le \card{\nN} \), while \( 2\nN \ne \nN \). The right replacement for "\( A = B \)" is "\( \card{A} = \card{B} \)". That is the Schröder–Bernstein Theorem below.
 
-<!-- S3: rewrite per blueprint (4.4: the choice-free half of prp-card-le-surjection (an injection A -> B with A nonempty gives a surjection B -> A), new label at S1; prp-card-le-surjection itself moved to 6.1; R10) -->
+Exercise B4 (c) of Section 4.3 turned an injection around into a surjection; here is that move once for all, with no choice made.
+
+::: {#prp-injection-gives-surjection}
+[An Injection Gives a Surjection Back]
+
+Let \( A \) and \( B \) be sets with \( A \ne \emptyset \). If \( \card{A} \le \card{B} \), then there is a surjection \( B \to A \).
+:::
+
+::: {.proof}
+Let \( f \colon A \to B \) be an injection. Since \( A \ne \emptyset \), @thm-left-inverse-iff-injective (b) gives a left inverse \( g \colon B \to A \), so \( g \circ f = \id_A \). This says that \( f \) is a right inverse of \( g \) (@def-left-right-inverse), so \( g \) is surjective by @prp-right-inverse-surjective.
+:::
+
+The hypothesis \( A \ne \emptyset \) is needed. For \( A = \emptyset \) and \( B = \{b\} \), the empty function is an injection \( \emptyset \to \{b\} \), but there is no function \( \{b\} \to \emptyset \) at all (@prp-empty-function (b)), let alone a surjection. The converse would turn a surjection \( g \colon B \to A \) into an injection \( A \to B \) by sending each \( a \) to one of its preimages, as the least preimage did for \( B = \nN \) in Section 4.2. For an arbitrary \( B \) there is no such rule, and nothing in this chapter decides the converse. The remark at the end of the section says where it is settled.
+
+::: {.check}
+The inclusion \( \nN \to \nZ \) is an injection. Which surjection \( \nZ \to \nN \) does the proof produce if the left inverse sends every point outside the image to \( 0 \)?
+:::
+
+::: {.solution}
+\( g(n) = n \) for \( n \ge 0 \) and \( g(n) = 0 \) for \( n < 0 \). It is onto, since \( g(n) = n \) for every \( n \in \nN \), and \( g \circ \iota = \id_{\nN} \).
+:::
 
 ## The Schröder–Bernstein Theorem
 
@@ -141,7 +161,9 @@ By the two claims, \( h \colon A \to B \) is a bijection, so \( \card{A} = \card
 
 The answer to the prompt: \( g(b) \) is a value of \( g \), and \( C_0 \) consists exactly of the points of \( A \) that are **not** values of \( g \). That is what pushes the index \( n \) of Case 2 up to at least \( 1 \), so that \( g(b) \) has a predecessor \( a \in C_{n-1} \) in its chain, and \( b \) is reached by \( f \) from that predecessor.
 
-Every value of \( h \) is given by a rule, so the proof makes **no use of @ax-choice**: Step 1 is a recursion with an explicit step, and Step 2 picks the unique preimage, where there is nothing to choose. The case split "\( a \in C \) or \( a \notin C \)" is an instance of excluded middle, the classical step discussed in *Logic and Proof*, Section 8.7; nothing in the proof decides which case holds for a given \( a \), and nothing needs to.
+**The definition of \( h \) as a gluing.** In the proof above, the pieces were \( C \) and \( A \setminus C \): disjoint, and covering \( A \). So the definition of \( h \) is a gluing in the sense of @exm-method-gluing (Section 2.3), with nothing to check in its step (2), and "each \( a \) falls under exactly one case" is steps (1) and (2) at once: the pieces cover \( A \), and there is no overlap to check. The proof's Case 3 of injectivity, one point in \( C \) and one outside, is step (4)'s comparison across pieces; Cases 1 and 2 are the checks inside each piece.
+
+Every value of \( h \) is given by a rule, so nothing in the proof is chosen: Step 1 is a recursion with an explicit step, and Step 2 picks the unique preimage, where there is nothing to choose. The case split "\( a \in C \) or \( a \notin C \)" is an instance of excluded middle, the classical step discussed in *Logic and Proof*, Section 8.7; nothing in the proof decides which case holds for a given \( a \), and nothing needs to.
 
 Each hypothesis is used. Without the injection \( g \), the conclusion fails: \( \nN \to \powerset{\nN} \), \( n \mapsto \{n\} \), is an injection, and \( \card{\nN} \ne \card{\powerset{\nN}} \) by @thm-cantor. In the proof, injectivity of \( f \) is used once, in Case 1 of Step 3, and injectivity of \( g \) twice, in (F2) and in Case 2 of Step 4.
 
@@ -245,7 +267,7 @@ Give an injection \( \nN \to \nN \times \nN \) and an injection \( \nN \times \n
 ::: {.remark}
 [Looking ahead]
 
-The method needs an injection each way. Are any two sets comparable, that is, is \( \card{A} \le \card{B} \) or \( \card{B} \le \card{A} \) for all \( A \) and \( B \)? Building an injection one element at a time does not settle it: a recursion indexed by \( \nN \) reaches only countably many elements, so it cannot exhaust an uncountable set. Section 6.3 proves that the answer is yes, by Zorn's lemma, a principle equivalent to @ax-choice. Nothing in this chapter needs comparability.
+The method needs an injection each way. Are any two sets comparable, that is, is \( \card{A} \le \card{B} \) or \( \card{B} \le \card{A} \) for all \( A \) and \( B \)? Building an injection one element at a time does not settle it: a recursion indexed by \( \nN \) reaches only countably many elements, so it cannot exhaust an uncountable set. Chapter 6 adds the axiom of choice, proves with it the converse of @prp-injection-gives-surjection, and shows from Zorn's lemma that any two sets are comparable. Nothing in this chapter needs either fact.
 :::
 
 ## Exercises
@@ -439,7 +461,10 @@ def-card-le (example): {x1} = {x2} gives x1 = x2 | def-set-equality (F2.1 §02),
 prp-card-le-preorder (claim): (after it) 2N is not N, n -> 2n injective | arithmetic (1 is not even: thm-division-algorithm uniqueness)
 thm-schroder-bernstein (proof): case split a in C or a not in C | excluded middle (F1.5 §07, prose pointer; classical logic of F1.2)
 thm-schroder-bernstein (proof): g(f(S)) is a subset of A for S subset of A, so (n, S) -> g(f(S)) is a function N x P(A) -> P(A) | def-image (cited), def-power-set (F2.1 §03), used silently
-thm-schroder-bernstein (claim): ([Looking ahead] remark, end of main line) any two sets are comparable, via Zorn's lemma, Section 6.3 | F2.4 §03 (thm-cardinal-comparability; prose pointer; nothing depends on it); a recursion on N has countable image, prp-countable-image
+thm-schroder-bernstein (claim): ([Looking ahead] remark, end of main line) any two sets are comparable, Chapter 6 | F2.4 §03 (thm-cardinal-comparability; prose pointer; nothing depends on it); a recursion on N has countable image, prp-countable-image
+prp-injection-gives-surjection (claim): (Looking ahead) the converse holds with choice | F2.4 §01 (prp-card-le-surjection; prose pointer; nothing depends on it)
+prp-injection-gives-surjection (claim): (after it) the empty function {} -> {b} is injective | vacuous, prp-vacuous-implication (F1.2), used in words, as in F2.6 §04 after thm-left-inverse-iff-injective
+prp-injection-gives-surjection (claim): (Quick check) g o iota = id_N; g onto N | inline; verify/ch04/prp-injection-gives-surjection.py
 exm-closed-open-interval (solution): 1/4 <= x/2 + 1/4 <= 3/4; 1/n distinct for distinct n; 0 < 1/(n+2) <= 1/3 < 1/2 | R arithmetic and order, school fact; verify/ch04/exm-closed-open-interval.py
 exm-closed-open-interval (solution): [0,1] \ H = (0,1) \ H' | inline (0 and 1 = 1/1 lie in H; H \ {0, 1} = H')
 exm-reals-open-interval (solution): algebra of |x|/(1 + |x|) and its inverse; |y/(1-|y|)| = |y|/(1-|y|) | R arithmetic with absolute values, school fact (F2.6 §01 B3 does the same computation, not cited); verify/ch04/exm-reals-open-interval.py

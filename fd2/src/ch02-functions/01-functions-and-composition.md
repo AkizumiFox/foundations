@@ -1,8 +1,6 @@
 # Functions and Composition
 
-<!-- S3: rewrite per blueprint (2.1: opening frame, identity as unit of composition, new A/B/C exercises; layout §1) -->
-
-Section 1.4 made "the pairs a description picks out" into a set: a relation from \( A \) to \( B \) is a subset of \( A \times B \). Among its examples, the graph of squaring relates each real number to exactly one number, and the unit circle relates \( 0 \) to two numbers and \( 2 \) to none. This section gives the first kind its name, **function**, and builds the rest on it: we restrict functions, use them to make families, sequences and the set \( Y^X \) precise, compose them, and ask the two questions that the rest of the chapter turns on: does a function send different inputs to different outputs, and does it reach every point of its target?
+Chapter 1 made sets, pairs and relations precise. A relation from \( A \) to \( B \) is a subset of \( A \times B \) (@def-relation), and among the examples of Section 1.4 the graph of squaring relates each real number to exactly one number, while the unit circle relates \( 0 \) to two numbers and \( 2 \) to none. This chapter is about the first kind of relation. This section gives it its name, **function**, says when two functions are equal, uses functions to make families, sequences and the set \( Y^X \) precise, and composes them. The rest of the chapter asks what a function does to its inputs and to its codomain (Section 2.2), builds functions from pieces (Section 2.3), undoes them (Section 2.4), and applies them to whole sets (Section 2.5).
 
 ## What is a function?
 
@@ -233,6 +231,14 @@ The empty set gives the degenerate cases, and they are worth settling now, since
 In the notation \( Y^X \): the set \( Y^{\emptyset} \) has exactly one element for every \( Y \), including \( Y = \emptyset \); and \( \emptyset^X = \emptyset \) whenever \( X \) is nonempty. The empty function \( \emptyset \to Y \) returns in Section 2.4 as the witness that a hypothesis there cannot be dropped.
 :::
 
+::: {.check}
+How many elements do \( \{0, 1\}^{\emptyset} \) and \( \emptyset^{\{0\}} \) have?
+:::
+
+::: {.solution}
+The set \( \{0, 1\}^{\emptyset} \) has exactly one element, the empty function \( (\emptyset, \{0, 1\}) \), by @prp-empty-function (a). The set \( \emptyset^{\{0\}} \) has none, by @prp-empty-function (b), since \( \{0\} \) has the element \( 0 \).
+:::
+
 ## Composition
 
 Two functions can be applied one after the other when the outputs of the first are inputs of the second. Temperature in degrees Celsius, as a function of the day, followed by the conversion to degrees Fahrenheit, gives temperature in Fahrenheit as a function of the day.
@@ -257,6 +263,30 @@ Let \( f, g \colon \nR \to \nR \), \( f(x) = x + 1 \) and \( g(x) = 2x \). Compu
 
 ::: {.solution}
 By @def-composition, \( (g \circ f)(x) = g(x + 1) = 2x + 2 \) and \( (f \circ g)(x) = f(2x) = 2x + 1 \). At \( x = 0 \) the values are \( 2 \) and \( 1 \), so by @prp-function-equality \( g \circ f \ne f \circ g \). In words: "add one, then double" is not "double, then add one". (In fact the two composites differ at every \( x \), since \( 2x + 2 \ne 2x + 1 \); one point already suffices.)
+:::
+
+The next example composes two functions that look as if they cancel each other, and finds that they do so in one order only.
+
+::: {#exm-root-and-square}
+[Square root after squaring, and squaring after square root]
+
+Let \( q \colon \nR \to [0, \infty) \), \( q(x) = x^2 \), and \( r \colon [0, \infty) \to \nR \), \( r(t) = \sqrt{t} \). Which of \( r \circ q \) and \( q \circ r \) are defined? Compute them, and compare each with an identity function.
+:::
+
+::: {.solution}
+*The composite \( r \circ q \).* It is defined, since the codomain \( [0, \infty) \) of \( q \) is the domain of \( r \) (@def-composition). It is a function \( \nR \to \nR \) with
+\[
+(r \circ q)(x) = \sqrt{x^2} = \abs{x} ,
+\]
+by @exm-equal-functions (b). It is not \( \id_{\nR} \): its value at \( -1 \) is \( 1 \), and \( \id_{\nR}(-1) = -1 \).
+
+*The composite \( q \circ r \).* It is defined as well, since the codomain \( \nR \) of \( r \) is the domain of \( q \). It is a function \( [0, \infty) \to [0, \infty) \) with
+\[
+(q \circ r)(t) = \bigl(\sqrt{t}\bigr)^2 = t \qquad (t \ge 0) ,
+\]
+because \( \sqrt{t} \) is by definition a number whose square is \( t \). The functions \( q \circ r \) and \( \id_{[0, \infty)} \) have the same domain, the same codomain and the same value at every point, so \( q \circ r = \id_{[0, \infty)} \) by @prp-function-equality.
+
+So one order gives an identity function and the other does not. Applying \( r \) and then \( q \) returns every input; applying \( q \) and then \( r \) loses the sign. So \( q \) undoes \( r \), but \( r \) does not undo \( q \).
 :::
 
 ::: {.second-reading title="Composites defined in one order only"}
@@ -285,6 +315,8 @@ So the two functions agree at every point, and they are equal by @prp-function-e
 
 Because of associativity, we write \( h \circ g \circ f \) without brackets: every way of bracketing gives the same function, \( x \mapsto h(g(f(x))) \).
 
+The identity functions play for composition the part that the number \( 1 \) plays for multiplication: by the second statement of @prp-composition-associative, composing with an identity changes nothing. The analogy stops at division. A number \( a \ne 0 \) can be cancelled from \( ab = ac \); a function \( f \) can be cancelled from \( f \circ g = f \circ h \) only under a condition on \( f \). And in @exm-root-and-square, \( q \circ r = \id_{[0, \infty)} \) although \( r \circ q \ne \id_{\nR} \): one composite of two functions can be an identity while the other is not.
+
 ::: {.check}
 For \( f, g \colon \nR \to \nR \), \( f(x) = x^2 \) and \( g(x) = x - 3 \), compute \( (g \circ f)(2) \) and \( (f \circ g)(2) \).
 :::
@@ -295,13 +327,149 @@ For \( f, g \colon \nR \to \nR \), \( f(x) = x^2 \) and \( g(x) = x - 3 \), comp
 
 ## Exercises
 
-<!-- S3: rewrite per blueprint (2.1 exercise set to be written; every old 1.5 exercise moved to 2.2) -->
-
 ### A. Check your understanding
+
+::: {#exr-functions-and-composition-a1}
+[A1]
+
+::: {.enumerate options="label=(\alph*)"}
+1. Let \( X = \{1, 2, 3\} \) and let \( f \colon X \to X \) be given by \( f(1) = 2 \), \( f(2) = 3 \), \( f(3) = 3 \). Write the graph of \( f \), and list the values of \( f \circ f \) and \( f \circ f \circ f \).
+2. Which of the formulas \( 1/(x^2 + 1) \), \( \sqrt{x - 1} \), \( 1/(x^2 - 1) \) define a function \( \nR \to \nR \)? For each that does not, name a point where (Fn1) fails.
+3. Are \( f, g \colon \nZ \to \nZ \), \( f(n) = n^2 - n \) and \( g(n) = n(n - 1) \), equal? Are \( h, k \colon \{0, 1\} \to \nZ \), \( h(x) = x^2 \) and \( k(x) = x \), equal?
+4. How many elements do \( \{0\}^{\{1, 2, 3\}} \) and \( \emptyset^{\{1\}} \) have? Name them.
+:::
+:::
+
+::: {.solution}
+(a) The graph is \( \{ (1, 2), (2, 3), (3, 3) \} \). For \( f \circ f \): \( f(f(1)) = f(2) = 3 \), \( f(f(2)) = f(3) = 3 \), \( f(f(3)) = f(3) = 3 \), so \( f \circ f \) sends every point to \( 3 \). Then \( f \circ f \circ f = f \circ (f \circ f) \) sends every point to \( f(3) = 3 \): it is the constant function with value \( 3 \), and equal to \( f \circ f \).
+
+(b) The formula \( 1/(x^2 + 1) \) defines a function \( \nR \to \nR \): \( x^2 + 1 \ge 1 \), so the denominator is never \( 0 \). The formula \( \sqrt{x - 1} \) does not: at \( x = 0 \) it asks for \( \sqrt{-1} \), and no real number has square \( -1 \) (it fails at every \( x < 1 \)). The formula \( 1/(x^2 - 1) \) does not: it fails at \( 1 \) and at \( -1 \), where the denominator is \( 0 \).
+
+(c) Yes: both have domain and codomain \( \nZ \), and \( n^2 - n = n(n - 1) \) for every integer \( n \), so \( f = g \) by @prp-function-equality. Yes again: \( h(0) = 0 = k(0) \) and \( h(1) = 1 = k(1) \), so \( h \) and \( k \) agree at both points of their common domain; two rules, one function.
+
+(d) The set \( \{0\}^{\{1, 2, 3\}} \) has exactly one element, the constant function with value \( 0 \) (@exm-first-functions (c)). A function \( \{1, 2, 3\} \to \{0\} \) must send each of \( 1 \), \( 2 \), \( 3 \) to \( 0 \), so any two such functions agree at every point and are equal by @prp-function-equality. The set \( \emptyset^{\{1\}} \) has no element: a function \( \{1\} \to \emptyset \) would need a value at \( 1 \) (@prp-empty-function (b)).
+:::
 
 ### B. Practice
 
+::: {#exr-functions-and-composition-b1}
+[B1: Composites of real functions]
+
+Let \( f, g \colon \nR \to \nR \), \( f(x) = x^2 + 1 \) and \( g(x) = 2x - 3 \).
+
+::: {.enumerate options="label=(\alph*)"}
+1. Compute \( g \circ f \) and \( f \circ g \).
+2. Find every \( x \in \nR \) with \( (g \circ f)(x) = (f \circ g)(x) \).
+3. Find a function \( h \colon \nR \to \nR \) with \( h \circ g = f \), and check it.
+:::
+:::
+
+::: {.solution}
+(a) By @def-composition, \( (g \circ f)(x) = 2(x^2 + 1) - 3 = 2x^2 - 1 \) and \( (f \circ g)(x) = (2x - 3)^2 + 1 = 4x^2 - 12x + 10 \).
+
+(b) The equation \( 2x^2 - 1 = 4x^2 - 12x + 10 \) is equivalent to \( 2x^2 - 12x + 11 = 0 \). Its discriminant is \( 144 - 88 = 56 = 4 \cdot 14 \), so by the quadratic formula
+\[
+x = \frac{12 \pm 2\sqrt{14}}{4} = 3 \pm \tfrac12 \sqrt{14} .
+\]
+These two numbers are the only points where the composites agree.
+
+(c) The function \( g \) turns \( x \) into \( y = 2x - 3 \), and \( x \) is recovered as \( (y + 3)/2 \). So put
+\[
+h(y) \coloneqq \Bigl(\frac{y + 3}{2}\Bigr)^2 + 1 = \frac{y^2 + 6y + 13}{4} .
+\]
+*Check:* for every \( x \in \nR \),
+\[
+h(g(x)) = \Bigl(\frac{(2x - 3) + 3}{2}\Bigr)^2 + 1 = x^2 + 1 = f(x) ,
+\]
+and \( h \circ g \) and \( f \) both go from \( \nR \) to \( \nR \), so \( h \circ g = f \) by @prp-function-equality.
+:::
+
+::: {#exr-functions-and-composition-b2}
+[B2: A map of the plane]
+
+Let \( s \colon \nR^2 \to \nR^2 \), \( s(x, y) = (x + y, x - y) \).
+
+::: {.enumerate options="label=(\alph*)"}
+1. Show that \( (s \circ s)(x, y) = (2x, 2y) \) for all \( x, y \in \nR \).
+2. Find a function \( t \colon \nR^2 \to \nR^2 \) with \( t \circ s = \id_{\nR^2} \), and check that also \( s \circ t = \id_{\nR^2} \).
+:::
+:::
+
+::: {.solution}
+(a) \( (s \circ s)(x, y) = s(x + y, x - y) = \bigl((x + y) + (x - y), (x + y) - (x - y)\bigr) = (2x, 2y) \).
+
+(b) Part (a) suggests halving after applying \( s \). Put
+\[
+t(u, v) \coloneqq \Bigl(\frac{u + v}{2}, \frac{u - v}{2}\Bigr) .
+\]
+Then \( t(s(x, y)) = t(x + y, x - y) = (2x/2, 2y/2) = (x, y) \), and
+\[
+s(t(u, v)) = \Bigl(\frac{u + v}{2} + \frac{u - v}{2}, \frac{u + v}{2} - \frac{u - v}{2}\Bigr) = (u, v) .
+\]
+Each computation compares two pairs coordinate by coordinate (@def-ordered-pair). All four functions go from \( \nR^2 \) to \( \nR^2 \), so \( t \circ s = \id_{\nR^2} \) and \( s \circ t = \id_{\nR^2} \) by @prp-function-equality.
+:::
+
+::: {#exr-functions-and-composition-b3}
+[B3: Families and their values]
+
+::: {.enumerate options="label=(\alph*)"}
+1. Write the family \( A_n = [-1/n, 1/n] \), \( n \in \nZ_{>0} \), as a function, naming a codomain.
+2. Give two different families \( (A_i)_{i \in \nN} \) and \( (B_i)_{i \in \nN} \) of subsets of \( \nN \) with the same set of values \( \{ \emptyset, \nN \} \).
+3. Is \( i \mapsto \{i\} \) a function \( \nN \to \powerset{\nN} \)? A function \( \nN \to \nN \)?
+:::
+:::
+
+::: {.solution}
+(a) The function \( \nZ_{>0} \to \powerset{\nR} \), \( n \mapsto [-1/n, 1/n] \). Each value is a subset of \( \nR \), so it lies in \( \powerset{\nR} \).
+
+(b) Let \( A_i = \emptyset \) for even \( i \) and \( A_i = \nN \) for odd \( i \). Every \( i \in \nN \) is even or odd, and not both (@thm-even-or-odd), so each \( i \) receives exactly one value and (Fn1), (Fn2) hold. Let \( B_0 = \emptyset \) and \( B_i = \nN \) for \( i \ge 1 \). Both families have the set of values \( \{ \emptyset, \nN \} \). They differ at the index \( 2 \): \( A_2 = \emptyset \) and \( B_2 = \nN \). So they are different functions (@prp-function-equality) with the same values.
+
+(c) Yes: for each \( i \in \nN \), \( \{i\} \subseteq \nN \), so \( \{i\} \in \powerset{\nN} \). No: \( \{i\} \notin \nN \), since the elements of \( \nN \) are numbers and no number is a set (the working convention of Section 1.2). So (Fn1) fails for the codomain \( \nN \): the only candidate value at \( i \) does not lie in it.
+:::
+
 ### C. Going deeper
+
+::: {#exr-functions-and-composition-c1}
+[C1: Functions equal to their own square]
+
+In this exercise, a function \( f \colon X \to X \) with \( f \circ f = f \) is called **idempotent**.
+
+::: {.enumerate options="label=(\alph*)"}
+1. Let \( f \colon X \to X \) be idempotent. Show that \( f(y) = y \) for every \( y \) in the range of \( f \).
+2. Show that \( x \mapsto \abs{x} \) on \( \nR \) is idempotent, and that \( x \mapsto -x \) is not.
+3. Find all idempotent functions \( \{1, 2\} \to \{1, 2\} \).
+:::
+:::
+
+::: {.solution}
+(a) Let \( y \) be in the range of \( f \): \( y = f(x) \) for some \( x \in X \). Then
+\[
+f(y) = f(f(x)) = (f \circ f)(x) = f(x) = y .
+\]
+
+(b) For every real \( x \), \( \abs{x} \ge 0 \), so \( \bigl\lvert \abs{x} \bigr\rvert = \abs{x} \); the two functions \( x \mapsto \bigl\lvert \abs{x} \bigr\rvert \) and \( x \mapsto \abs{x} \) agree everywhere and are equal by @prp-function-equality. For \( m(x) = -x \): \( m(m(1)) = -(-1) = 1 \), while \( m(1) = -1 \), so \( m \circ m \ne m \).
+
+(c) A function \( \{1, 2\} \to \{1, 2\} \) is determined by its two values (@prp-function-equality), so there are four: the identity, the constant function with value \( 1 \), the constant function with value \( 2 \), and the swap \( \sigma \) with \( \sigma(1) = 2 \), \( \sigma(2) = 1 \). The identity is idempotent by @prp-composition-associative. A constant function \( c \) with value \( a \) gives \( c(c(x)) = c(a) = a = c(x) \). The swap is not: \( \sigma(\sigma(1)) = \sigma(2) = 1 \), and \( \sigma(1) = 2 \). So there are three idempotent functions.
+:::
+
+::: {#exr-functions-and-composition-c2}
+[C2: Find the error]
+
+"*Claim:* if \( f, g \colon \nR \to \nR \) and \( g \circ f = f \circ g \), then \( f = g \). *Proof:* Let \( x \in \nR \). Then \( g(f(x)) = f(g(x)) \). Cancelling the outer functions on both sides, \( f(x) = g(x) \). So \( f = g \)."
+
+Find the first wrong step, and show that the claim is false.
+:::
+
+::: {.solution}
+The first two steps are correct: \( g(f(x)) = f(g(x)) \) is the hypothesis \( g \circ f = f \circ g \) at the point \( x \). The wrong step is "cancelling the outer functions". The two sides apply **different** outer functions, \( g \) on the left and \( f \) on the right, and nothing licenses passing from an equation \( g(a) = f(b) \) to \( a = b \).
+
+The claim is false. Let \( f(x) = x + 1 \) and \( g(x) = x + 2 \). Then \( (g \circ f)(x) = (x + 1) + 2 = x + 3 \) and \( (f \circ g)(x) = (x + 2) + 1 = x + 3 \), so \( g \circ f = f \circ g \) by @prp-function-equality. But \( f(0) = 1 \ne 2 = g(0) \), so \( f \ne g \).
+
+**Marking scheme.** (6 points)
+- 2: locates the step "cancelling the outer functions" as the first wrong one.
+- 2: says why it fails: the outer functions on the two sides are different, so there is nothing to cancel.
+- 2: a counterexample with both claims checked: the two composites are equal, and \( f \) and \( g \) differ at a named point.
+:::
 
 <!-- dependency ledger
 def-function (claim): bounded exists-unique, exists! y in Y psi, abbreviates exists! y (y in Y and psi) | notation, by analogy with def-bounded-quantifier (cited); NOTATION bounded-quantifier row
@@ -322,4 +490,12 @@ exm-function-set-small (claim): Y^X has m^n elements for finite sets; subsets of
 def-function (claim): m + n in N for m, n in N (addition N x N -> N, the example after the definition; also exr-functions-b1 (b)) | F2.2 (promised; STATUS row "F2.1 §02, §03, F2.6 §01, §02 → F2.2", lem-naturals-arithmetic (b))
 exm-not-a-function (claim): well-definedness returns for functions defined on classes | F2.5 (prose pointer "Chapter 5"); nothing depends on it
 exm-function-set-small (claim): (the five-string game) there are 32 strings of five symbols 0 or 1; Chapter 4 returns to the game | 2^5 = 32 by listing (the count in general is F2.3 §01's); F2.3 (promised; prose pointer "Chapter 4 comes back to this game"); nothing depends on it
+exm-root-and-square (example): sqrt(x^2) = |x| | exm-equal-functions (b) (cited)
+exm-root-and-square (example): (sqrt t)^2 = t for t >= 0; sqrt t >= 0 exists | school fact (F1-F2 convention); proved in AN1.1
+exr-functions-and-composition-a1 (solution): x^2 + 1 >= 1; no real square is negative; n^2 - n = n(n - 1) | school algebra (F1-F2 convention)
+exr-functions-and-composition-b1 (solution): expansions; quadratic formula, discriminant 56 = 4 * 14 | school algebra (F1-F2 convention)
+exr-functions-and-composition-b2 (solution): coordinate arithmetic | school algebra (F1-F2 convention)
+exr-functions-and-composition-b3 (solution): the elements of N are numbers, not sets | F2.1 §02 working convention ("numbers are not sets"), cited by section
+exr-functions-and-composition-c1 (solution): |x| >= 0, so ||x|| = |x| | school fact (F1-F2 convention)
+exr-functions-and-composition-c2 (solution): (x + 1) + 2 = x + 3 = (x + 2) + 1 | arithmetic
 -->

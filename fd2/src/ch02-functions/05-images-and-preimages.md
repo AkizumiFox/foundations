@@ -497,7 +497,7 @@ Compute each set, and prove each equality by two inclusions or by a chain of equ
 ::: {.solution}
 (a) The image is \( \nZ_{>0} \). \( (\subseteq) \) If \( y = m - n \) with \( m > n \), then \( y \) is an integer and \( y > 0 \), so \( y \in \nZ_{>0} \). \( (\supseteq) \) Let \( k \in \nZ_{>0} \). The pair \( (k, 0) \) lies in \( \nN \times \nN \), has \( k > 0 \), and \( d(k, 0) = k \); so \( k \) is in the image. The preimage is \( d^{-1}(\{0\}) = \{ (m, n) \in \nN \times \nN : m = n \} = \{ (n, n) : n \in \nN \} \), since \( m - n = 0 \) exactly when \( m = n \).
 
-(b) By the definition of the indicator (Section 2.1), \( \ind_{[0, 1]}(x) = 1 \) for \( x \in [0, 1] \) and \( 0 \) otherwise. So \( \ind_{[0, 1]}^{-1}(\{1\}) = [0, 1] \) and \( \ind_{[0, 1]}^{-1}(\{0\}) = \nR \setminus [0, 1] \), each a chain of one equivalence. The image \( \ind_{[0, 1]}([2, 3]) = \{0\} \): every point of \( [2, 3] \) lies outside \( [0, 1] \) and is sent to \( 0 \), and \( 0 \) is hit, for instance by \( 2 \).
+(b) By the definition of the indicator (Section 2.3), \( \ind_{[0, 1]}(x) = 1 \) for \( x \in [0, 1] \) and \( 0 \) otherwise. So \( \ind_{[0, 1]}^{-1}(\{1\}) = [0, 1] \) and \( \ind_{[0, 1]}^{-1}(\{0\}) = \nR \setminus [0, 1] \), each a chain of one equivalence. The image \( \ind_{[0, 1]}([2, 3]) = \{0\} \): every point of \( [2, 3] \) lies outside \( [0, 1] \) and is sent to \( 0 \), and \( 0 \) is hit, for instance by \( 2 \).
 
 (c) Write \( g(x) = (x - 1)^2 - 1 \). The image is \( g([0, 3]) = [-1, 3] \). \( (\subseteq) \) If \( 0 \le a \le 3 \), then \( -1 \le a - 1 \le 2 \), so \( \abs{a - 1} \le 2 \), and hence \( 0 \le (a - 1)^2 = \abs{a - 1}^2 \le 4 \) by @fd1:thm-squares-order applied to \( \abs{a - 1} \) and \( 2 \), and \( -1 \le g(a) \le 3 \). \( (\supseteq) \) Let \( -1 \le y \le 3 \), and take \( a \coloneqq 1 + \sqrt{y + 1} \). Then \( 0 \le \sqrt{y + 1} \le 2 \), so \( a \in [1, 3] \subseteq [0, 3] \), and \( g(a) = (y + 1) - 1 = y \). For the preimages: \( g(x) = 0 \iff x(x - 2) = 0 \iff x \in \{0, 2\} \), so \( g^{-1}(\{0\}) = \{0, 2\} \); and \( -1 \le g(x) \le 0 \iff 0 \le (x - 1)^2 \le 1 \iff \abs{x - 1} \le 1 \iff x \in [0, 2] \), so \( g^{-1}([-1, 0]) = [0, 2] \).
 :::
@@ -531,6 +531,35 @@ Let \( f \colon X \to Y \) be a bijection, with inverse function \( f^{-1} \colo
 \( (\supseteq) \) Let \( x \in X \) with \( f(x) \in B \). Then \( g(f(x)) = x \), since \( g \circ f = \id_X \). So \( x \in g(B) \), with witness \( f(x) \in B \) \( [\rulename{\exists I}] \).
 
 Hence \( g(B) \) equals the preimage of \( B \) under \( f \): for a bijection, the two readings of \( f^{-1}(B) \) name the same set. Both equations of @def-inverse-function were used, one in each inclusion.
+:::
+
+::: {#exr-restriction-extension-and-gluing-b2}
+[B4: Injective across pieces, by images]
+
+Let \( f \colon X \to Y \) and \( X = A \cup B \). Prove that \( f \) is injective if and only if \( f|_A \) and \( f|_B \) are injective and \( f(A) \cap f(B) = f(A \cap B) \).
+:::
+
+::: {.solution}
+\( (\Rightarrow) \) The restrictions are injective by @prp-restriction-properties (d), and \( f(A) \cap f(B) = f(A \cap B) \) by @thm-image-intersection (b), since \( f \) is injective.
+
+\( (\Leftarrow) \) Let \( x, x' \in X \) with \( f(x) = f(x') \). If both lie in \( A \), then \( f|_A(x) = f|_A(x') \) and \( x = x' \) since \( f|_A \) is injective; likewise if both lie in \( B \). Otherwise, since \( X = A \cup B \), one lies in \( A \) and the other in \( B \); by symmetry say \( x \in A \) and \( x' \in B \). Then \( y \coloneqq f(x) = f(x') \) lies in \( f(A) \cap f(B) = f(A \cap B) \), so \( y = f(z) \) for some \( z \in A \cap B \) (@def-image). Now \( x, z \in A \) with \( f|_A(x) = y = f|_A(z) \), so \( x = z \); and \( x', z \in B \) with \( f|_B(x') = f|_B(z) \), so \( x' = z \). Hence \( x = x' \), and \( f \) is injective.
+:::
+
+::: {#exr-images-and-preimages-b5}
+[B5: Restriction and image]
+
+Let \( f \colon X \to Y \) and \( B \subseteq A \subseteq X \).
+
+::: {.enumerate options="label=(\alph*)"}
+1. Prove that \( f|_A(B) = f(B) \).
+2. For \( f \colon \nR \to \nR \), \( f(x) = x^2 \), find the image of \( f|_{[-1, 2]} \).
+:::
+:::
+
+::: {.solution}
+(a) By @def-image, \( f|_A(B) = \{ f|_A(b) : b \in B \} = \{ f(b) : b \in B \} = f(B) \), since \( f|_A(b) = f(b) \) for every \( b \in B \subseteq A \). With \( B = A \), this says that the restriction has the same image as \( f \) on \( A \): \( f|_A(A) = f(A) \).
+
+(b) By (a), the image is \( f([-1, 2]) \). For \( x \in [-1, 2] \), \( 0 \le x^2 \le 4 \); conversely each \( t \in [0, 4] \) is \( (\sqrt{t})^2 \) with \( \sqrt{t} \in [0, 2] \). So the image is \( [0, 4] \).
 :::
 
 ### C. Going deeper
@@ -627,132 +656,66 @@ A single chain of equivalences, each step justified, earns the first seven point
 
 ### R. Review
 
-::: {#exr-images-and-preimages-r1}
+::: {#exr-images-and-preimages-r5}
 [R1]
 
-Here is a derivation of "if \( A \subseteq B \), then \( \powerset{A} \subseteq \powerset{B} \)". The steps "by def." unwind or rewind @def-subset and @def-power-set.
-
-```{=latex}
-\begin{center}
-$\begin{nd}
-  \open
-  \hypo {1} {A \subseteq B}
-  \have {2} {\forall x (x \in A \to x \in B)} \by{def.}{1}
-  \open[S_0]
-  \open
-  \hypo {3} {S_0 \in \powerset{A}}
-  \have {4} {S_0 \subseteq A} \by{def.}{3}
-  \have {5} {\forall x (x \in S_0 \to x \in A)} \by{def.}{4}
-  \open[x_0]
-  \open
-  \hypo {6} {x_0 \in S_0}
-  \have {7} {x_0 \in S_0 \to x_0 \in A} \Ae{5}
-  \have {8} {x_0 \in A} \ie{7,6}
-  \have {9} {x_0 \in A \to x_0 \in B} \Ae{2}
-  \have {10} {x_0 \in B} \ie{9,8}
-  \close
-  \have {11} {x_0 \in S_0 \to x_0 \in B} \ii{6-10}
-  \close
-  \have {12} {\forall x (x \in S_0 \to x \in B)} \Ai{6-11}
-  \have {13} {S_0 \subseteq B} \by{def.}{12}
-  \have {14} {S_0 \in \powerset{B}} \by{def.}{13}
-  \close
-  \have {15} {S_0 \in \powerset{A} \to S_0 \in \powerset{B}} \ii{3-14}
-  \close
-  \have {16} {\forall S (S \in \powerset{A} \to S \in \powerset{B})} \Ai{3-15}
-  \have {17} {\powerset{A} \subseteq \powerset{B}} \by{def.}{16}
-  \close
-  \have {18} {A \subseteq B \to \powerset{A} \subseteq \powerset{B}} \ii{1-17}
-\end{nd}$
-\end{center}
-```
-
-Write the proof as plain prose, the way a mathematician would. Then say which sentence of your proof carries each of the five boxes.
+Let \( f \colon \nR \to \nR \) be the gluing of \( x \mapsto x \) on \( (-\infty, 0] \) and \( x \mapsto 3x \) on \( [0, \infty) \). Show that \( f \) is a bijection by giving its inverse as a gluing, and compute \( f^{-1}([-4, 9]) \).
 :::
 
 ::: {.solution}
-*Proof.* Suppose \( A \subseteq B \). Let \( S \in \powerset{A} \), so \( S \subseteq A \). Let \( x \in S \). Then \( x \in A \), since \( S \subseteq A \), and so \( x \in B \), since \( A \subseteq B \). Hence \( S \subseteq B \), that is, \( S \in \powerset{B} \). This proves \( \powerset{A} \subseteq \powerset{B} \).
+The pieces \( (-\infty, 0] \) and \( [0, \infty) \) cover \( \nR \) and overlap only in \( 0 \), where \( x \) and \( 3x \) both give \( 0 \); so \( f \) is a function by @thm-gluing. Each piece keeps the sign: \( f(x) \le 0 \) for \( x \le 0 \), and \( f(x) = 3x \ge 0 \) for \( x \ge 0 \).
 
-*The boxes.* "Suppose \( A \subseteq B \)" opens the \( \rulename{{\to}I} \) box \( \lines{1}{17} \); its closing line 18 is the silent frame of the whole proof. "Let \( S \in \powerset{A} \)" opens two boxes at once: the \( \rulename{\forall I} \) box for \( S_0 \) and the \( \rulename{{\to}I} \) box \( \lines{3}{14} \) inside it. "Let \( x \in S \)" likewise opens the \( \rulename{\forall I} \) box for \( x_0 \) and the \( \rulename{{\to}I} \) box \( \lines{6}{10} \). "Hence \( S \subseteq B \)" closes the two inner boxes (lines 11 and 12) and rewinds the definition (line 13). "This proves \( \powerset{A} \subseteq \powerset{B} \)" closes the \( S \) boxes (lines 15, 16) and rewinds (line 17).
+For the inverse, undo each piece: let \( g \colon \nR \to \nR \) be the gluing of \( y \mapsto y \) on \( (-\infty, 0] \) and \( y \mapsto y/3 \) on \( [0, \infty) \). Both formulas give \( 0 \) at \( 0 \), so @thm-gluing applies again, and \( g \) also keeps the sign. Now check both composites by cases on the sign. If \( x \le 0 \), then \( f(x) = x \le 0 \) and \( g(f(x)) = x \); if \( x \ge 0 \), then \( f(x) = 3x \ge 0 \) and \( g(f(x)) = 3x/3 = x \). If \( y \le 0 \), then \( g(y) = y \le 0 \) and \( f(g(y)) = y \); if \( y \ge 0 \), then \( g(y) = y/3 \ge 0 \) and \( f(g(y)) = 3 \cdot y/3 = y \). So \( g \circ f = \id_{\nR} \) and \( f \circ g = \id_{\nR} \) (@prp-function-equality): \( g \) is a two-sided inverse of \( f \) (@def-inverse-function), and \( f \) is bijective by @thm-bijection-iff-inverse. These are the construct-and-verify steps of @exm-method-construct-and-verify.
 
-This is the passage from level 0 to level 3 of *Logic and Proof*, Section 8.3: each "let" carries a \( \rulename{\forall I} \) box together with the \( \rulename{{\to}I} \) box of a subset statement, the \( \rulename{\forall E} \) and \( \rulename{{\to}E} \) lines 7–10 become the two "since" clauses, the unwinding lines 2 and 5 go silent, line 4 becomes a "so" and line 14 a "that is", and the rewinding lines 13 and 17 are the two conclusions the prose states.
+The preimage, by cases on the sign. For \( x \le 0 \): \( f(x) = x \in [-4, 9] \) if and only if \( -4 \le x \le 0 \). For \( x \ge 0 \): \( f(x) = 3x \in [-4, 9] \) if and only if \( 0 \le x \le 3 \). Every real number falls under one of the two cases, so \( f^{-1}([-4, 9]) = [-4, 0] \cup [0, 3] = [-4, 3] \). No monotonicity of \( f \) was used, only the two formulas. By the remark in "Two readings of the inverse symbol", this set is also \( g([-4, 9]) \), and as a check its endpoints are \( g(-4) = -4 \) and \( g(9) = 3 \).
 :::
 
-::: {#exr-images-and-preimages-r2}
+::: {#exr-images-and-preimages-r6}
 [R2]
 
-Decide whether \( A \setminus (B \setminus C) = (A \setminus B) \setminus C \) for all sets \( A, B, C \), by a table of the eight possible memberships of a point \( x \) in \( A \), \( B \), \( C \). If the two sides can differ, turn a row where they differ into a counterexample.
+Let \( f \colon X \to Y \) and \( g, h \colon Y \to Z \) with \( g \circ f = h \circ f \). Show that \( g(y) = h(y) \) for every \( y \in f(X) \), and deduce one direction of @thm-cancellation (b).
 :::
 
 ::: {.solution}
-Write \( P \), \( Q \), \( R \) for the statements \( x \in A \), \( x \in B \), \( x \in C \). By @def-set-operations, \( x \in A \setminus (B \setminus C) \) is \( P \wedge \neg(Q \wedge \neg R) \), and \( x \in (A \setminus B) \setminus C \) is \( (P \wedge \neg Q) \wedge \neg R \). The table:
+Let \( y \in f(X) \). By @def-image there is \( x \in X \) with \( y = f(x) \); name it \( x \). Then
 \[
-\begin{array}{ccc|cc}
-P & Q & R & P \wedge \neg (Q \wedge \neg R) & (P \wedge \neg Q) \wedge \neg R \\
-\hline
-\mathrm{T} & \mathrm{T} & \mathrm{T} & \mathrm{T} & \mathrm{F} \\
-\mathrm{T} & \mathrm{T} & \mathrm{F} & \mathrm{F} & \mathrm{F} \\
-\mathrm{T} & \mathrm{F} & \mathrm{T} & \mathrm{T} & \mathrm{F} \\
-\mathrm{T} & \mathrm{F} & \mathrm{F} & \mathrm{T} & \mathrm{T} \\
-\mathrm{F} & \mathrm{T} & \mathrm{T} & \mathrm{F} & \mathrm{F} \\
-\mathrm{F} & \mathrm{T} & \mathrm{F} & \mathrm{F} & \mathrm{F} \\
-\mathrm{F} & \mathrm{F} & \mathrm{T} & \mathrm{F} & \mathrm{F} \\
-\mathrm{F} & \mathrm{F} & \mathrm{F} & \mathrm{F} & \mathrm{F} \\
-\end{array}
+g(y) = g(f(x)) = (g \circ f)(x) = (h \circ f)(x) = h(f(x)) = h(y).
 \]
-The columns differ in the first and third rows. Take the first row: put the point \( 1 \) in exactly the sets whose statement is true, all three, so \( A = B = C = \{1\} \). Then \( B \setminus C = \emptyset \), so \( A \setminus (B \setminus C) = \{1\} \); and \( A \setminus B = \emptyset \), so \( (A \setminus B) \setminus C = \emptyset \). The two sides differ, so the identity is false. (The third row gives \( A = C = \{1\} \), \( B = \emptyset \), with the same two answers.)
+So \( g \) and \( h \) agree on the image of \( f \), and nothing is said about points outside it.
 
-Why a table suffices: each side's membership condition is a formula in \( P \), \( Q \), \( R \), and a row with the two columns different gives sets directly, which are then checked by computing both sides, as above. The truth tables of *Logic and Proof*, Chapter 4 add one more thing: by @fd1:cor-refuting-row, the first row shows that the sequent \( P \wedge \neg(Q \wedge \neg R) \vdash (P \wedge \neg Q) \wedge \neg R \) is not derivable, so the propositional rules cannot carry a point of the left side into the right side.
+Now suppose \( f \) is surjective. Every \( y \in Y \) is a value \( f(x) \) (@def-surjective), so \( y \in f(X) \) and \( g(y) = h(y) \), and \( g = h \) by @prp-function-equality. This is the direction \( (\Rightarrow) \) of @thm-cancellation (b): a surjection cancels on the right. The computation shows where surjectivity enters: it makes the set on which \( g \) and \( h \) are forced to agree all of \( Y \).
 :::
 
-::: {#exr-images-and-preimages-r3}
+::: {#exr-images-and-preimages-r7}
 [R3]
 
-Derive \( (P \wedge \neg Q) \to R \vdash P \to (Q \vee R) \). Then read the derivation as a proof that for sets \( A, B, C \), if \( A \setminus B \subseteq C \), then \( A \subseteq B \cup C \). Which step is classical?
+Let \( A \subseteq X \). Compute \( \ind_A^{-1}(\{1\}) \) and \( \ind_A^{-1}(\{0\}) \), and use the first to reprove that \( A \mapsto \ind_A \) is injective on \( \powerset{X} \).
 :::
 
 ::: {.solution}
-The goal is an implication, so open a box on \( P \) with goal \( Q \vee R \). The premise can fire only on \( P \wedge \neg Q \), which needs \( \neg Q \), and nothing gives \( \neg Q \) outright. So split on \( Q \vee \neg Q \), by excluded middle (@fd1:prp-excluded-middle): in the case \( Q \) the goal is immediate, and in the case \( \neg Q \) the premise gives \( R \).
+By @def-preimage and @def-indicator, for \( x \in X \): \( x \in \ind_A^{-1}(\{1\}) \) if and only if \( \ind_A(x) = 1 \) if and only if \( x \in A \). So \( \ind_A^{-1}(\{1\}) = A \), since \( A \subseteq X \). Likewise \( \ind_A(x) = 0 \) if and only if \( x \in X \setminus A \), so \( \ind_A^{-1}(\{0\}) = X \setminus A \).
 
-```{=latex}
-\begin{center}
-$\begin{nd}
-  \hypo {1} {(P \wedge \neg Q) \to R}
-  \open
-  \hypo {2} {P}
-  \have {3} {Q \vee \neg Q} \lem{}
-  \open
-  \hypo {4} {Q}
-  \have {5} {Q \vee R} \oi{4}
-  \close
-  \open
-  \hypo {6} {\neg Q}
-  \have {7} {P \wedge \neg Q} \ai{2,6}
-  \have {8} {R} \ie{1,7}
-  \have {9} {Q \vee R} \oi{8}
-  \close
-  \have {10} {Q \vee R} \oe{3,4-5,6-9}
-  \close
-  \have {11} {P \to (Q \vee R)} \ii{2-10}
-\end{nd}$
-\end{center}
-```
-
-*As sets.* Suppose \( A \setminus B \subseteq C \), and let \( x \in A \). Take \( P \), \( Q \), \( R \) to be \( x \in A \), \( x \in B \), \( x \in C \). By @def-subset and @def-set-operations, the hypothesis at this \( x \) is \( (P \wedge \neg Q) \to R \), and the goal \( x \in B \cup C \) is \( Q \vee R \). The derivation, used as a derived rule (@fd1:def-derived-rule), gives \( P \to (Q \vee R) \), and with \( P \) it gives \( x \in B \cup C \). In prose: either \( x \in B \), and then \( x \in B \cup C \); or \( x \notin B \), and then \( x \in A \setminus B \subseteq C \), so \( x \in C \subseteq B \cup C \). Since \( x \) was arbitrary, \( A \subseteq B \cup C \).
-
-The classical step is line 3, the case split "\( x \in B \) or \( x \notin B \)" by excluded middle, which is derived with \( \rulename{RAA} \) (@fd1:def-rule-raa).
+Injectivity: let \( A, B \subseteq X \) with \( \ind_A = \ind_B \). Then
+\[
+A = \ind_A^{-1}(\{1\}) = \ind_B^{-1}(\{1\}) = B .
+\]
+This is one half of @thm-power-set-two-power, where \( \{ x \in X : f(x) = 1 \} \) is the preimage \( f^{-1}(\{1\}) \) written out.
 :::
 
-::: {#exr-images-and-preimages-r4}
+::: {#exr-images-and-preimages-r8}
 [R4]
 
-Show that there is no set that contains every singleton \( \{x\} \) as an element.
+Let \( f \colon X \to Y \) and \( g \colon Y \to X \) with \( g \circ f = \id_X \). Prove that \( f(X) = \{ y \in Y : f(g(y)) = y \} \).
 :::
 
 ::: {.solution}
-Suppose \( S \) were such a set. Let \( T \coloneqq \{ s \in S : s \text{ is a singleton} \} \), a set by specification (@def-set-builder); its elements are sets, since \( S \) may also contain numbers, and those are excluded. Consider the union \( \bigcup T \) of the sets in \( T \) (@def-family-union-intersection, the form \( \bigcup \sS \) for a set \( \sS \) whose elements are sets). For every set \( x \), the singleton \( \{x\} \) lies in \( S \), hence in \( T \), and \( x \in \{x\} \); so \( x \in \bigcup T \). Thus \( \bigcup T \) is a set of which every set is an element, and @thm-russell says there is no such set. This contradiction shows that no such \( S \) exists.
+The tool is two inclusions (@prp-subset-antisymmetric), each unwinding @def-image.
 
-*The tool, and the look-alike.* The tool is Russell's theorem, @thm-russell, applied not to \( S \) but to \( \bigcup T \). Applied to \( S \) directly, it says only that \( \{ z \in S : z \notin z \} \notin S \), and that does not contradict anything: \( S \) was supposed to contain singletons, not that set. The move that makes it work is the union, which turns "contains the singleton of every set" into "contains every set". A direct diagonal construction inside \( S \) also works, but it repeats the proof of @thm-russell instead of using it.
+\( (\subseteq) \) Let \( y \in f(X) \), and name \( x \in X \) with \( y = f(x) \). Then \( f(g(y)) = f(g(f(x))) = f(x) = y \), since \( g(f(x)) = x \). So \( y \) lies in the right-hand side.
+
+\( (\supseteq) \) Let \( y \in Y \) with \( f(g(y)) = y \). Then \( y \) is the value of \( f \) at the point \( g(y) \in X \), so \( y \in f(X) \).
+
+The hypothesis \( g \circ f = \id_X \) says that \( g \) is a left inverse of \( f \) (@def-left-right-inverse), and the result says that the image of \( f \) is exactly the set of points that the round trip \( f \circ g \) fixes. The look-alike tool is @prp-image-preimage (b), \( f(f^{-1}(B)) = B \cap f(X) \): it also describes \( f(X) \), but only through preimages of sets, and it never uses \( g \), so it cannot produce the condition \( f(g(y)) = y \).
 :::
 
 <!-- dependency ledger
@@ -789,12 +752,13 @@ exr-images-and-preimages-b1 (solution): the indicator function | F2.6 §01 (ind_
 exr-images-and-preimages-c1 (solution): RAA for x_1 = x_2 | def-rule-raa (cited)
 exr-images-and-preimages-c2 (solution): fresh-name condition; catalogue (N4) | F1.4 (promised) F1.4 §06; F1.5 (promised): exm-not-allowed-catalogue (prose pointer)
 exr-images-and-preimages-c3 (solution): marking-scheme reference to catalogue (N1) | F1.5 (promised): exm-not-allowed-catalogue (prose pointer)
-exr-images-and-preimages-r1 (solution): levels of proof | F1.5 (promised): def-levels-of-proof (prose pointer, F1.5 §03)
-exr-images-and-preimages-r1 (solution): forall-I / forall-E rules and flagged boxes | F1.4 (promised): def-rules-universal (prose pointer)
-exr-images-and-preimages-r4 (solution): every set x is an element of {x}; "is a singleton" is a property usable in specification | def-set-builder (F2.1 §02, listing)
 def-preimage (claim): (quick check before exm-images-finite) squares of -1, 2; solutions of x^2 = 9 | school facts (F1-F2 convention)
 thm-preimage-operations (claim): (quick check after the empty-family paragraph) x^2 >= 0; x^2 <= 4 iff |x| <= 2 | school facts (F1-F2 convention); thm-squares-order (F1.2), as in exm-images-of-square (b)
 exm-image-two-witnesses (claim): (hunting paragraph) a failure of the inclusion needs two different preimages of one point; one-point sets are the smallest attempt | inline from def-image; exm-method-counterexample (cited)
 exm-image-two-witnesses (claim): (quick check after the hunting paragraph) {x_1} cap {x_2} = empty for x_1 != x_2; f(empty) = empty | def-set-builder / listing (F2.1 §02); def-image, as in exm-images-finite
 prp-image-preimage (claim): (quick check after the aftermath) f([1, 3]) = [1, 9]; f^{-1}([1, 9]) = [-3, -1] cup [1, 3]; f^{-1}([-4, 9]) = [-3, 3]; f([-3, 3]) = [0, 9]; f(R) = [0, infinity) | school facts (F1-F2 convention); thm-squares-order (F1.2); computed as in exm-images-of-square (a), (b)
+exr-restriction-extension-and-gluing-b2 (solution): case split "both in A, both in B, or one in each" from X = A cup B | def-set-operations (F2.1 §03), used silently
+exr-images-and-preimages-b5 (solution): x^2 maps [-1, 2] onto [0, 4] | school fact (square roots); verify/ch02/exr-images-and-preimages-b5.py
+exr-images-and-preimages-r5 (solution): sign cases (every real is <= 0 or >= 0); 3x >= 0 for x >= 0; 3 * (y/3) = y; -4 <= 3x <= 9 iff -4/3 <= x <= 3, and with x >= 0 iff 0 <= x <= 3 | school arithmetic and order (F1-F2 convention); verify/ch02/exr-images-and-preimages-r5.py
+exr-images-and-preimages-r8 (solution): two inclusions | prp-subset-antisymmetric (cited)
 -->

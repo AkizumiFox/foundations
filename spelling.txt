@@ -435,3 +435,4 @@ factorization’s
 reachability
 exponentiate
 invertibility
+Hartogs

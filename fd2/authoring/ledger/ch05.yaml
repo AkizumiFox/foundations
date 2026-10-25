@@ -652,7 +652,7 @@ items:
   kind: exm
   file: 02-equivalence-relations.md
   line: 43
-  hash: 47d315c10e3d
+  hash: 6c215e759497
   verdicts:
   - stage: S5a
     verdict: correct
@@ -906,7 +906,7 @@ items:
 - key: check:02-equivalence-relations:2
   kind: check
   file: 02-equivalence-relations.md
-  line: 241
+  line: 243
   hash: 418920ff98a8
   verdicts:
   - stage: S5a
@@ -936,7 +936,7 @@ items:
 - key: def-congruence
   kind: def
   file: 02-equivalence-relations.md
-  line: 255
+  line: 259
   hash: 3ccd9f604b7b
   verdicts:
   - stage: S5a
@@ -958,7 +958,7 @@ items:
 - key: prp-congruence-equivalence
   kind: prp
   file: 02-equivalence-relations.md
-  line: 267
+  line: 271
   hash: 33e3c8a1d87f
   verdicts:
   - stage: S5a
@@ -978,7 +978,7 @@ items:
 - key: proof:prp-congruence-equivalence
   kind: proof
   file: 02-equivalence-relations.md
-  line: 273
+  line: 277
   hash: 46e4491c5b32
   verdicts:
   - stage: S5a
@@ -998,7 +998,7 @@ items:
 - key: prp-integers-mod-n
   kind: prp
   file: 02-equivalence-relations.md
-  line: 281
+  line: 285
   hash: c7f3b4005b3e
   verdicts:
   - stage: S5a
@@ -1021,7 +1021,7 @@ items:
 - key: proof:prp-integers-mod-n
   kind: proof
   file: 02-equivalence-relations.md
-  line: 293
+  line: 297
   hash: a0bb934ca29d
   verdicts:
   - stage: S5a
@@ -1042,32 +1042,10 @@ items:
     evidence: '05:274-278: existence by thm-division-algorithm, r in N by prp-integers-closed (b), r <=
       n-1 by discreteness; uniqueness by division-algorithm uniqueness applied to r = 0n + r = kn + s;
       correct.'
-- key: exm-fibres-of-function
-  kind: exm
-  file: 02-equivalence-relations.md
-  line: 307
-  hash: e3ed20d18a69
-  verdicts:
-  - stage: S5a
-    verdict: correct
-    by: refereeA
-    hash: e3ed20d18a69
-    date: '2026-10-11'
-    model: claude-opus-5-5
-    evidence: '05:294-306: classes are the fibres over f(X); the converse is via q and thm-classes-partition
-      (b), then def-set-equality.'
-  - stage: S5b
-    verdict: correct
-    by: refereeB
-    hash: e3ed20d18a69
-    date: '2026-10-11'
-    model: claude-opus-5-5
-    evidence: '05:294-309: fibers as classes (def-preimage), converse via q and thm-classes-partition
-      (b), remainder map mod 3: all correct.'
 - key: exm-reals-mod-integers
   kind: exm
   file: 02-equivalence-relations.md
-  line: 331
+  line: 316
   hash: ded4296cee17
   verdicts:
   - stage: S5a
@@ -1109,7 +1087,7 @@ items:
 - key: prp-congruence-arithmetic
   kind: prp
   file: 02-equivalence-relations.md
-  line: 363
+  line: 347
   hash: 548f6dae0d0f
   verdicts:
   - stage: S5a
@@ -1148,7 +1126,7 @@ items:
 - key: proof:prp-congruence-arithmetic
   kind: proof
   file: 02-equivalence-relations.md
-  line: 388
+  line: 372
   hash: 229ce0dece5e
   verdicts:
   - stage: S5a
@@ -1170,7 +1148,7 @@ items:
 - key: exm-method-well-definedness
   kind: exm
   file: 02-equivalence-relations.md
-  line: 411
+  line: 399
   hash: 509042883bb6
   verdicts:
   - stage: S5a
@@ -1202,7 +1180,7 @@ items:
 - key: check:02-equivalence-relations:3
   kind: check
   file: 02-equivalence-relations.md
-  line: 421
+  line: 409
   hash: 55c013b881a2
   verdicts:
   - stage: S5a
@@ -1240,7 +1218,7 @@ items:
 - key: exm-ill-defined-class-map
   kind: exm
   file: 02-equivalence-relations.md
-  line: 431
+  line: 419
   hash: 61b4b8a065b1
   verdicts:
   - stage: S5a
@@ -1268,10 +1246,107 @@ items:
       (05:550), so the finding is resolved. Solved it myself. (a): 0 and 6 name the same class mod 6,
       and [6]_4 = [2]_4 differs from [0]_4 because 2 is not a multiple of 4, so F is not a function. (b):
       6k = 3(2k), so G is well defined. The text agrees.'
+- key: exm-fibres-of-function
+  kind: exm
+  file: 02-equivalence-relations.md
+  line: 435
+  hash: e3ed20d18a69
+  verdicts:
+  - stage: S5a
+    verdict: correct
+    by: refereeA
+    hash: e3ed20d18a69
+    date: '2026-10-11'
+    model: claude-opus-5-5
+    evidence: '05:294-306: classes are the fibres over f(X); the converse is via q and thm-classes-partition
+      (b), then def-set-equality.'
+  - stage: S5b
+    verdict: correct
+    by: refereeB
+    hash: e3ed20d18a69
+    date: '2026-10-11'
+    model: claude-opus-5-5
+    evidence: '05:294-309: fibers as classes (def-preimage), converse via q and thm-classes-partition
+      (b), remainder map mod 3: all correct.'
+- key: prp-fibres-partition
+  kind: prp
+  file: 02-equivalence-relations.md
+  line: 461
+  hash: ce9f3467a6ed
+  verdicts:
+  - stage: S5a
+    verdict: correct
+    by: refereeA
+    hash: ce9f3467a6ed
+    date: '2026-10-26'
+    model: claude-opus-5-5
+    evidence: 'l.34-43: (a) matches exm-fibres-of-function (4.2 l.307ff) and thm-classes-partition (d);
+      (b) is equinumerosity per def-equinumerous.'
+  - stage: S5b
+    verdict: correct
+    by: refereeB
+    hash: ce9f3467a6ed
+    date: '2026-10-26'
+    model: claude-opus-5-5
+    evidence: 02:34-43; (a) matches exm-fibres-of-function (4.2:307) + thm-classes-partition (d); (b)
+      relation form card f(X)=card X/~f per def-equinumerous
+  - stage: S7r
+    verdict: correct
+    by: rereferee
+    hash: ce9f3467a6ed
+    date: '2026-10-26'
+    model: claude-opus-5-5
+    evidence: 'Payoff paragraph (line 65): ''number of elements'' on P({1,2,3}) is a function by prp-subset-finite
+      (existence, k <= 3) and cor-finite-size-unique (uniqueness). The fibers and the image are correct,
+      and the ledger line matches.'
+- key: proof:prp-fibres-partition
+  kind: proof
+  file: 02-equivalence-relations.md
+  line: 476
+  hash: 20e30b212057
+  verdicts:
+  - stage: S5a
+    verdict: correct
+    by: refereeA
+    hash: 34d03bc43220
+    date: '2026-10-26'
+    model: claude-opus-5-5
+    evidence: 'l.50-52: (Fn1)/(Fn2) for Phi come from (a). Surjectivity uses [a]=Phi(f(a)). Injectivity
+      is witnessed by a with f(a)=y. Every cited label says what it is used for.'
+  - stage: S5b
+    verdict: correct
+    by: refereeB
+    hash: 34d03bc43220
+    date: '2026-10-26'
+    model: claude-opus-5-5
+    evidence: 02:50-52; every step cited (def-image, exm-fibres-of-function, thm-classes-partition (d),
+      def-function, def-bijective, def-equinumerous); injectivity uses y in f(X) to get a point of the
+      fiber
+- key: check:02-equivalence-relations:4
+  kind: check
+  file: 02-equivalence-relations.md
+  line: 486
+  hash: e485aa1db7cf
+  verdicts:
+  - stage: S5a
+    verdict: correct
+    by: refereeA
+    hash: e485aa1db7cf
+    date: '2026-10-26'
+    model: claude-opus-5-5
+    evidence: 'l.62: f(-1)=3, f(0)=0, f(1)=-1, f(2)=0, f(3)=3. The sidecar prp-fibres-partition.py passes.'
+  - stage: S5b
+    verdict: correct
+    by: refereeB
+    hash: e485aa1db7cf
+    date: '2026-10-26'
+    model: claude-opus-5-5
+    evidence: 02:58-62; f(-1)=3,f(0)=0,f(1)=-1,f(2)=0,f(3)=3 recomputed; classes {-1,3},{0,2},{1}
+  old_key: check:02-fibres-and-factorization:1
 - key: exm-same-size-subsets
   kind: exm
   file: 02-equivalence-relations.md
-  line: 447
+  line: 497
   hash: ef1074d1ca81
   verdicts:
   - stage: S5a
@@ -1318,106 +1393,10 @@ items:
     evidence: 'src/ch04-relations-and-orders/02-equivalence-relations.md:458: (c) now says ''by part (b)
       of this example''; checked symmetry (prp-equinumerous-properties (b)), transitivity ((c)), cor-finite-size-unique
       give m=m'', codomain {0,1,2,3} from (b) of the example; verify/ch04/exm-same-size-subsets.py passes'
-- key: prp-fibres-partition
-  kind: prp
-  file: 02-equivalence-relations.md
-  line: 500
-  hash: ce9f3467a6ed
-  verdicts:
-  - stage: S5a
-    verdict: correct
-    by: refereeA
-    hash: ce9f3467a6ed
-    date: '2026-10-26'
-    model: claude-opus-5-5
-    evidence: 'l.34-43: (a) matches exm-fibres-of-function (4.2 l.307ff) and thm-classes-partition (d);
-      (b) is equinumerosity per def-equinumerous.'
-  - stage: S5b
-    verdict: correct
-    by: refereeB
-    hash: ce9f3467a6ed
-    date: '2026-10-26'
-    model: claude-opus-5-5
-    evidence: 02:34-43; (a) matches exm-fibres-of-function (4.2:307) + thm-classes-partition (d); (b)
-      relation form card f(X)=card X/~f per def-equinumerous
-  - stage: S7r
-    verdict: correct
-    by: rereferee
-    hash: ce9f3467a6ed
-    date: '2026-10-26'
-    model: claude-opus-5-5
-    evidence: 'Payoff paragraph (line 65): ''number of elements'' on P({1,2,3}) is a function by prp-subset-finite
-      (existence, k <= 3) and cor-finite-size-unique (uniqueness). The fibers and the image are correct,
-      and the ledger line matches.'
-- key: proof:prp-fibres-partition
-  kind: proof
-  file: 02-equivalence-relations.md
-  line: 515
-  hash: 34d03bc43220
-  verdicts:
-  - stage: S5a
-    verdict: correct
-    by: refereeA
-    hash: 34d03bc43220
-    date: '2026-10-26'
-    model: claude-opus-5-5
-    evidence: 'l.50-52: (Fn1)/(Fn2) for Phi come from (a). Surjectivity uses [a]=Phi(f(a)). Injectivity
-      is witnessed by a with f(a)=y. Every cited label says what it is used for.'
-  - stage: S5b
-    verdict: correct
-    by: refereeB
-    hash: 34d03bc43220
-    date: '2026-10-26'
-    model: claude-opus-5-5
-    evidence: 02:50-52; every step cited (def-image, exm-fibres-of-function, thm-classes-partition (d),
-      def-function, def-bijective, def-equinumerous); injectivity uses y in f(X) to get a point of the
-      fiber
-- key: check:02-equivalence-relations:4
-  kind: check
-  file: 02-equivalence-relations.md
-  line: 523
-  hash: e485aa1db7cf
-  verdicts:
-  - stage: S5a
-    verdict: correct
-    by: refereeA
-    hash: e485aa1db7cf
-    date: '2026-10-26'
-    model: claude-opus-5-5
-    evidence: 'l.62: f(-1)=3, f(0)=0, f(1)=-1, f(2)=0, f(3)=3. The sidecar prp-fibres-partition.py passes.'
-  - stage: S5b
-    verdict: correct
-    by: refereeB
-    hash: e485aa1db7cf
-    date: '2026-10-26'
-    model: claude-opus-5-5
-    evidence: 02:58-62; f(-1)=3,f(0)=0,f(1)=-1,f(2)=0,f(3)=3 recomputed; classes {-1,3},{0,2},{1}
-  old_key: check:02-fibres-and-factorization:1
-- key: check:02-equivalence-relations:5
-  kind: check
-  file: 02-equivalence-relations.md
-  line: 533
-  hash: 2d147bfdb0bf
-  verdicts:
-  - stage: S5a
-    verdict: correct
-    by: refereeA
-    hash: 2d147bfdb0bf
-    date: '2026-10-26'
-    model: claude-opus-5-5
-    evidence: 'l.72: remainders mod 3 of 1..6 checked. The sidecar passes.'
-  - stage: S5b
-    verdict: correct
-    by: refereeB
-    hash: 2d147bfdb0bf
-    date: '2026-10-26'
-    model: claude-opus-5-5
-    evidence: 02:68-72; remainders of 1..6 mod 3 give {3,6},{1,4},{2,5}; ledger 434
-  old_key: check:02-fibres-and-factorization:2
 - key: thm-canonical-factorization
   kind: thm
   file: 02-equivalence-relations.md
-  line: 558
+  line: 533
   hash: ec42d3203420
   verdicts:
   - stage: S5a
@@ -1459,7 +1438,7 @@ items:
 - key: proof:thm-canonical-factorization
   kind: proof
   file: 02-equivalence-relations.md
-  line: 583
+  line: 547
   hash: fc550d85d4c8
   verdicts:
   - stage: S5a
@@ -1482,8 +1461,8 @@ items:
 - key: exm-fraction-map-factorization
   kind: exm
   file: 02-equivalence-relations.md
-  line: 611
-  hash: fb5ee7955361
+  line: 581
+  hash: cdaa71a0763e
   verdicts:
   - stage: S5a
     verdict: correct
@@ -1511,31 +1490,31 @@ items:
     evidence: '02:145-165 solution checked: (a,b)~(c,d) iff ad=bc, f onto Q, numerator map fails at (1,2),(2,4);
       sidecar exm-fraction-map-factorization.py passes; STATUS promise-table row is a shared-file item
       routed to the todo'
-- key: check:02-equivalence-relations:6
+- key: check:02-equivalence-relations:5
   kind: check
   file: 02-equivalence-relations.md
-  line: 625
+  line: 595
   hash: 90323dc89579
   verdicts:
   - stage: S5a
     verdict: correct
     by: refereeA
-    hash: 90323dc89579
+    hash: 2d147bfdb0bf
     date: '2026-10-26'
     model: claude-opus-5-5
-    evidence: 'l.164: q(1,2)=q(2,4). f̄ is bijective by the theorem, and ι=id_Q.'
+    evidence: 'l.72: remainders mod 3 of 1..6 checked. The sidecar passes.'
   - stage: S5b
     verdict: correct
     by: refereeB
-    hash: 90323dc89579
+    hash: 2d147bfdb0bf
     date: '2026-10-26'
     model: claude-opus-5-5
-    evidence: 02:160-165; q(1,2)=q(2,4); \bar f bijective by theorem; \iota=id_Q
-  old_key: check:02-fibres-and-factorization:3
+    evidence: 02:68-72; remainders of 1..6 mod 3 give {3,6},{1,4},{2,5}; ledger 434
+  old_key: check:02-fibres-and-factorization:2
 - key: exr-equivalence-relations-a1
   kind: exr
   file: 02-equivalence-relations.md
-  line: 637
+  line: 613
   hash: 5bb9fca5bf54
   verdicts:
   - stage: S5a
@@ -1596,8 +1575,8 @@ items:
 - key: exr-fibres-and-factorization-a1
   kind: exr
   file: 02-equivalence-relations.md
-  line: 666
-  hash: 581f7ca8e663
+  line: 642
+  hash: bf11c7706972
   verdicts:
   - stage: S5a
     verdict: correct
@@ -1625,7 +1604,7 @@ items:
 - key: exr-equivalence-relations-b1
   kind: exr
   file: 02-equivalence-relations.md
-  line: 689
+  line: 665
   hash: 44dda6538d10
   verdicts:
   - stage: S5a
@@ -1666,7 +1645,7 @@ items:
 - key: exr-equivalence-relations-b2
   kind: exr
   file: 02-equivalence-relations.md
-  line: 706
+  line: 682
   hash: 958d17d4aa1c
   verdicts:
   - stage: S5a
@@ -1696,7 +1675,7 @@ items:
 - key: exr-equivalence-relations-b3
   kind: exr
   file: 02-equivalence-relations.md
-  line: 720
+  line: 696
   hash: a0dd04820155
   verdicts:
   - stage: S5a
@@ -1779,8 +1758,8 @@ items:
 - key: exr-equivalence-relations-b4
   kind: exr
   file: 02-equivalence-relations.md
-  line: 742
-  hash: bf99fb71e72c
+  line: 718
+  hash: 82e4bbb9be46
   verdicts:
   - stage: S5a
     verdict: minor
@@ -1830,8 +1809,8 @@ items:
 - key: exr-fibres-and-factorization-b2
   kind: exr
   file: 02-equivalence-relations.md
-  line: 768
-  hash: 8df3b43a0717
+  line: 750
+  hash: eae334489b4e
   verdicts:
   - stage: S5a
     verdict: correct
@@ -1860,7 +1839,7 @@ items:
 - key: exr-equivalence-relations-c1
   kind: exr
   file: 02-equivalence-relations.md
-  line: 782
+  line: 764
   hash: 76ce6a2283e7
   verdicts:
   - stage: S5a
@@ -1902,7 +1881,7 @@ items:
 - key: exr-equivalence-relations-c2
   kind: exr
   file: 02-equivalence-relations.md
-  line: 810
+  line: 792
   hash: 2b23da83b6de
   verdicts:
   - stage: S5a
@@ -1935,8 +1914,8 @@ items:
 - key: exr-fibres-and-factorization-c1
   kind: exr
   file: 02-equivalence-relations.md
-  line: 834
-  hash: 7df8daa8f6ea
+  line: 816
+  hash: 57c3c8c85f8d
   verdicts:
   - stage: S5a
     verdict: correct
@@ -1983,8 +1962,8 @@ items:
 - key: exr-restriction-extension-and-gluing-c2
   kind: exr
   file: 02-equivalence-relations.md
-  line: 859
-  hash: 8a833f9077ff
+  line: 841
+  hash: 84128e635948
   verdicts:
   - stage: S5a
     verdict: correct
@@ -3090,3 +3069,25 @@ items:
       of X. It derives A' = A ∪ {x_{n+1}} from {1,…,n+1} = {1,…,n} ∪ {n+1} via @lem-naturals-arithmetic
       (e), as prp-finite-max does, and ledger 500 records this. Case 1 uses m ∈ A ⊆ A' and is correct.
       Case 2 use
+- key: check:02-equivalence-relations:6
+  kind: check
+  file: 02-equivalence-relations.md
+  line: 625
+  hash: 90323dc89579
+  verdicts:
+  - stage: S5a
+    verdict: correct
+    by: refereeA
+    hash: 90323dc89579
+    date: '2026-10-26'
+    model: claude-opus-5-5
+    evidence: 'l.164: q(1,2)=q(2,4). f̄ is bijective by the theorem, and ι=id_Q.'
+  - stage: S5b
+    verdict: correct
+    by: refereeB
+    hash: 90323dc89579
+    date: '2026-10-26'
+    model: claude-opus-5-5
+    evidence: 02:160-165; q(1,2)=q(2,4); \bar f bijective by theorem; \iota=id_Q
+  old_key: check:02-fibres-and-factorization:3
+  removed: true

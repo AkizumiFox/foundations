@@ -1,8 +1,6 @@
 # Zorn's Lemma and How to Use It
 
-<!-- S3: rewrite per blueprint (6.2: opening frame; thm-choice-from-zorn moved to 6.3; R14; optional basis subsection reduced to exr-using-zorn-r3; layout §1) -->
-
-Section 4.4 proved that injections both ways give a bijection, and left open whether, for any two sets, at least one injection exists. Section 5.3 ended with a question about partially ordered sets: if every chain has an upper bound, must there be a maximal element? One principle answers both questions. This section states it, Zorn's lemma, which answers the second question; explains why this volume does not prove it; and turns it into a method of proof, the maximality template, with two first uses. Section 6.3 uses the template to answer the first question.
+Section 4.4 proved that injections both ways give a bijection, and left open whether, for any two sets, at least one injection exists. Section 5.3 ended with a question about partially ordered sets: if every chain has an upper bound, must there be a maximal element? One principle answers both. This section states it, Zorn's lemma, which answers the second question; says why this volume does not prove it; turns it into a method of proof, the maximality template; and runs the template twice, for a set of representatives and for a total order containing a given partial order. Section 6.3 runs it on the first question, and on the axiom of choice itself.
 
 ## Matching two sets, one pair at a time
 
@@ -91,7 +89,7 @@ Return to the question of Section 5.3: in a partially ordered set in which every
 Let \( (P, \preceq) \) be a **non-empty** partially ordered set in which **every non-empty chain** has an upper bound in \( P \). Then \( P \) has a maximal element.
 :::
 
-We do not prove @thm-zorn. It cannot be proved from the rules of logic and the working rules for sets of Chapter 1 alone: it is equivalent to the axiom of choice (@ax-choice), which, as Section 6.1 records, can be neither proved nor refuted from the other axioms. One half of the equivalence, that Zorn's lemma implies the axiom of choice, is the first application below (@thm-choice-from-zorn). The other half, which builds a maximal element from a choice function, is proved in *Axiomatic Set Theory*, Chapter 4, together with the other equivalents. As with the axiom, we use the lemma openly and cite it at each use. Zorn (1935) put the principle in this form, which suits algebra, where the objects to be built are sets ordered by inclusion.
+We do not prove @thm-zorn. It cannot be proved from the rules of logic and the working rules for sets of Chapter 1 alone: it is equivalent to the axiom of choice (@ax-choice), which, as Section 6.1 records, can be neither proved nor refuted from the other axioms. Section 6.3 proves one half of the equivalence, that Zorn's lemma gives the axiom of choice. The other half, which builds a maximal element from a choice function, needs a recursion longer than any indexed by \( \nN \); *Axiomatic Set Theory*, Chapter 4 proves it. As with the axiom, we use the lemma openly and cite it at each use. Zorn (1935) put the principle in this form, which suits algebra, where the objects to be built are sets ordered by inclusion.
 
 **Why each hypothesis is needed.** Each of three small examples breaks one hypothesis and has no maximal element.
 
@@ -119,7 +117,7 @@ Some books ask for an upper bound of **every** chain, the empty one included. An
 
 ## The maximality template
 
-Zorn's lemma is almost always used in one pattern. Its first use proves the half of the equivalence with the axiom of choice that this volume can prove.
+Zorn's lemma is almost always used in one pattern.
 
 ::: {#exm-method-maximality}
 [Method: the maximality template]
@@ -131,7 +129,7 @@ Zorn's lemma is almost always used in one pattern. Its first use proves the half
 **The usual failure.** The union of a chain is not a partial object, because a condition mentions infinitely many pieces ("finite", "countable"); step (4) builds an object that is not strictly larger, or not in \( P \); and treating \( M \) as the greatest or the only complete object.
 :::
 
-The second use runs the template with a shorter plan.
+Here is its first run.
 
 ::: {#exm-zorn-representatives}
 [A set of representatives]
@@ -142,7 +140,15 @@ Let \( \sim \) be an equivalence relation on a set \( X \). Show that there is a
 ::: {.idea}
 [Scratch work]
 
-By the method of @exm-method-maximality. A partial object should be a set that meets each class **at most** once, so that the complete ones meet each class exactly once. "At most once" reads: \( s \sim t \) implies \( s = t \), a condition on two elements at a time, so step (2) works. For step (4), a class \( [x] \) that is missed gives the larger set \( S \cup \{x\} \), and no choice is needed, since \( x \) is already in hand.
+By the method of @exm-method-maximality. A partial object should be a set that meets each class **at most** once, so that the complete ones meet each class exactly once. "At most once" reads: \( s \sim t \) implies \( s = t \), a condition on two elements at a time, so step (2) works. For step (4), a class \( [x] \) that is missed gives the larger set \( S \cup \{x\} \), and no choice is needed, since \( x \) is already in hand. As givens and goal:
+
+| Givens | Goal |
+|---|---|
+| \( \sim \) an equivalence relation on \( X \) | \( S \subseteq X \) meeting every class in exactly one element |
+| \( P \): the \( S \subseteq X \) with \( s \sim t \Rightarrow s = t \) (each class met at most once), ordered by \( \subseteq \) | Zorn's hypotheses: \( P \ne \emptyset \), and every non-empty chain has an upper bound in \( P \) |
+| \( \emptyset \in P \); for a chain \( \sC \), try \( \bigcup \sC \): the condition mentions two elements (@lem-chain-union (b)) | a maximal \( M \in P \) meets every class |
+| \( M \) maximal; suppose the class \( [x] \) is missed | \( M \cup \{x\} \in P \), strictly larger: a contradiction (@exm-method-choosing-the-form) |
+
 :::
 
 ::: {.solution}
@@ -151,7 +157,7 @@ Let \( P \) be the set of \( S \subseteq X \) such that for all \( s, t \in S \)
 Suppose some class \( [x] \) (@def-equivalence-class) contains no element of \( M \). Then \( x \notin M \), since \( x \in [x] \) by (Eq1). And \( M \cup \{x\} \in P \): let \( s, t \in M \cup \{x\} \) with \( s \sim t \). If both lie in \( M \), then \( s = t \). If \( s = x \) and \( t \in M \), then \( t \sim x \) by (Eq2), so \( t \in [x] \cap M \), which is impossible; the case \( t = x \), \( s \in M \) is the same with the letters exchanged; and if \( s = t = x \), there is nothing to show. So \( M \subsetneq M \cup \{x\} \) in \( P \), contradicting maximality. Hence \( M \) meets every class, and by the condition defining \( P \) in at most one element: \( S \coloneqq M \) works.
 :::
 
-The axiom of choice gives the same set in one line, by choosing one element from each class; the template's advantage shows when the pieces interact, as in Section 6.3. On \( \nR \), the relation \( x \sim y \iff x - y \in \nQ \) is an equivalence relation (Section 5.2, after @exm-reals-mod-integers). A set of representatives for it inside \( [0, 1] \) is a set of real numbers that *Measure and Integration*, Chapter 1 shows has no length, and no formula for one is known.
+The axiom of choice gives the same set in one line, by choosing one element from each class; the template's advantage shows when the pieces interact, as in the next subsection. On \( \nR \), the relation \( x \sim y \iff x - y \in \nQ \) is an equivalence relation (Section 5.2, after @exm-reals-mod-integers). A set of representatives for it inside \( [0, 1] \) is a set of real numbers that *Measure and Integration*, Chapter 1 shows has no length, and no formula for one is known.
 
 ::: {.check}
 Let \( X = \nZ \) and \( m \sim n \iff m - n \) is even. Describe the partial objects of @exm-zorn-representatives that have two elements, and the maximal ones.
@@ -165,7 +171,7 @@ They are the sets \( \{e, o\} \) with \( e \) even and \( o \) odd: two even or 
 **Check that the union is a partial object.** Here is an almost-correct proof that \( \nN \) has a maximal finite subset. "Let \( P \) be the set of finite subsets of \( \nN \), ordered by \( \subseteq \). A chain has its union as an upper bound. By Zorn's lemma, \( P \) has a maximal element." The conclusion is false, by the third example after @thm-zorn. The failing line is the second: the union is an upper bound in \( \powerset{\nN} \), but it need not be finite, so it need not lie in \( P \). "Finite" is a condition on all the elements at once, and @lem-chain-union handles only finitely many.
 :::
 
-Section 6.3 applies the template twice more, first to the matching that opened this section.
+In the next run the pieces interact: one added comparison forces others.
 
 ## Extending a partial order
 
@@ -279,50 +285,35 @@ Put \( 0, 1, 4, 6, 12 \) in \( \sqsubseteq \)-order. Which two of them are compa
 \( 1 \sqsubseteq 4 \sqsubseteq 6 \sqsubseteq 12 \sqsubseteq 0 \). Every pair is comparable under \( \sqsubseteq \), which is total. Under \( \mid \): \( 1 \) divides all of them, all of them divide \( 0 \), \( 4 \mid 12 \) and \( 6 \mid 12 \). The remaining pair is \( 4 \), \( 6 \): \( 4 \sqsubseteq 6 \), but neither divides the other. So \( 4 \) and \( 6 \) are the only such pair.
 :::
 
-The four uses of the template on the main line of this chapter, side by side:
-
-| Object | Partial objects | Why unions of chains stay partial objects | Why a maximal one is complete |
-|---|---|---|---|
-| choice function (@thm-choice-from-zorn) | graphs defined on part of \( I \) | (C1), (C2) mention at most two pairs | a missed index can be added |
-| representatives (@exm-zorn-representatives) | sets meeting each class at most once | the condition mentions two elements | a missed class can be added |
-| injection (@thm-cardinal-comparability) | partial matchings | (M1), (M2) mention two pairs | if both sides have an unpaired element, they can be paired |
-| total order (@thm-order-extension) | partial orders containing \( \preceq \) | (PO2), (PO3) mention two pairs | an incomparable pair can be compared (@lem-one-step-order-extension) |
-
-## Optional: every vector space has a basis
-
-Nothing later in the book depends on this subsection. For a reader who has met vector spaces, it sketches, without proving here, how *Linear Algebra*, Section 1.8 uses the same template.
-
-A basis of a vector space \( V \) is a linearly independent set of vectors that spans \( V \). The theorem there is that every linearly independent set \( S \subseteq V \) lies in a basis. In the language of @exm-method-maximality, the partial objects are the linearly independent sets containing \( S \), ordered by \( \subseteq \); \( S \) itself is one. Independence is a condition on finitely many vectors at a time: a set is independent when no finite non-trivial combination of its vectors is \( 0 \). So a dependence among vectors of the union of a chain involves finitely many vectors, which lie in one member of the chain (@lem-chain-union (b)), and that member is independent: the union is a partial object. Zorn's lemma gives a maximal independent set \( M \). It spans \( V \), since a vector outside its span could be added to \( M \) without creating a dependence, giving a strictly larger partial object. With \( S = \emptyset \), every vector space has a basis, including \( \nR \) as a vector space over \( \nQ \), where no basis can be written down.
+Section 6.3 runs the template three times more: on the matching that opened this section, on choice functions, and on well-orders.
 
 ## Exercises
 
 ### A. Check your understanding
 
-::: {#exr-chains-and-zorn-a1}
+::: {#exr-chains-and-zorn-a2}
 [A1]
 
-These questions are about the proof of @thm-choice-from-zorn.
-
 ::: {.enumerate options="label=(\alph*)"}
-1. Where is "\( A_i \ne \emptyset \)" used, and which step fails without it?
-2. Why does the chain step need @lem-chain-union only for \( n = 2 \)?
-3. Run the proof on \( I = \{1, 2\} \), \( A_1 = \{0\} \), \( A_2 = \{5, 6\} \): list \( P \), name its maximal elements, and decide whether \( P \) has a greatest element.
-4. Which of the two hypotheses of @thm-zorn does the empty partially ordered set satisfy?
+1. Step (4) of @exm-zorn-representatives adds one point \( x \) of a class that \( M \) misses. Why is naming \( x \) a single \( \rulename{\exists E} \), and why does the proof make no other choice, although a set of representatives picks one point from each of possibly infinitely many classes?
+2. Run @exm-zorn-representatives when \( \sim \) has a single class, on \( X = \{1, 2, 3\} \): list \( P \), name its maximal elements, and decide whether \( P \) has a greatest element.
+3. @lem-one-step-order-extension asks for \( a \), \( b \) incomparable. What goes wrong with \( R \) if \( b \preceq a \) and \( a \ne b \)?
+4. Give a partially ordered set that contains an infinite chain, in which every non-empty chain has an upper bound, and which has exactly two maximal elements.
 :::
 :::
 
 ::: {.solution}
-(a) In the last step: \( x_0 \in A_{i_0} \) exists only because \( A_{i_0} \ne \emptyset \). Without it, \( M \) could miss \( i_0 \) and still be maximal, and indeed no choice function exists if some \( A_i \) is empty.
+(a) \( x \) is one element of one non-empty set, the missed class, named inside the proof by contradiction: one \( \rulename{\exists E} \) (@fd1:def-rules-existential). Every other object is defined outright: \( P \) by specification, the union of a chain, and the maximal \( M \), which @thm-zorn supplies in one step. The one point per class is picked by Zorn's lemma, as \( M \); the proof itself picks nothing more.
 
-(b) Condition (C1) mentions one pair and (C2) mentions two; no condition defining \( P \) mentions more.
-
-(c) \( U = \{0, 5, 6\} \), and
+(b) A member of \( P \) meets the one class at most once, so it has at most one element, and every set with at most one element qualifies:
 \[
-P = \bigl\{ \emptyset, \{(1, 0)\}, \{(2, 5)\}, \{(2, 6)\}, \{(1, 0), (2, 5)\}, \{(1, 0), (2, 6)\} \bigr\}.
+P = \bigl\{ \emptyset, \{1\}, \{2\}, \{3\} \bigr\}.
 \]
-The maximal elements are the last two, each the graph of a choice function. There is no greatest element: the two maximal elements are incomparable, and a greatest element would be maximal (@prp-greatest-maximal (a)), so it would be one of them and contain the other.
+The maximal elements are the three singletons. There is no greatest element: a greatest element would be maximal (@prp-greatest-maximal (a)), so it would be one of the singletons, and it would contain the other two.
 
-(d) The chain hypothesis, vacuously; not non-emptiness.
+(c) The pair \( (a, b) \) is new, since \( a \preceq a \) and \( b \preceq b \). With \( (b, a) \in {\preceq} \subseteq R \), (PO2) for \( R \) would give \( a = b \), which is false; so \( R \) is not a partial order.
+
+(d) Take two points \( a \ne b \) not in \( \nN \), and on \( \nN \cup \{a, b\} \) let \( \preceq \) consist of the usual order \( \le \) of \( \nN \), the pairs \( n \preceq a \) and \( n \preceq b \) for all \( n \in \nN \), and \( a \preceq a \), \( b \preceq b \). (PO1)–(PO3) hold: they hold inside \( \nN \), and every other pair ends at \( a \) or \( b \) (for instance \( n \le m \) and \( m \preceq a \) give \( n \preceq a \)). \( \nN \) is an infinite chain. A non-empty chain containing \( a \) does not contain \( b \), since the two are incomparable, so \( a \) bounds it; likewise for \( b \); and a chain inside \( \nN \) is bounded by \( a \). The maximal elements are \( a \) and \( b \); no \( n \) is maximal, since \( n \preceq n + 1 \) and \( n \ne n + 1 \).
 :::
 
 ### B. Practice
@@ -361,18 +352,8 @@ Here is the frame of a proof that for every set \( \sF \) of non-empty sets ther
 The move is step (4) of @exm-method-maximality: a missing piece gives a strictly larger partial object. Suppose \( F \in \sF \) meets no member of \( \sD \). Then \( F \notin \sD \): otherwise \( F \) would meet itself, as \( F \cap F = F \ne \emptyset \). And \( \sD \cup \{F\} \) is pairwise disjoint, since \( F \cap D = \emptyset \) for every \( D \in \sD \) by assumption. So \( \sD \subsetneq \sD \cup \{F\} \in P \), against the maximality of \( \sD \). The check \( F \notin \sD \) is what makes the new family strictly larger, the failure the method box warns about. Hence every member of \( \sF \) meets some member of \( \sD \).
 :::
 
-::: {#exr-chains-and-zorn-b3}
-[B3: A small poset of partial injections]
-
-Let \( A = \{1, 2\} \) and \( B = \{b\} \). List the relations \( G \subseteq A \times B \) in which each element of \( A \) and each element of \( B \) occurs in at most one pair, ordered by \( \subseteq \). Name the maximal elements. For each, is every element of \( A \) paired? Every element of \( B \)?
-:::
-
-::: {.solution}
-They are \( \emptyset \), \( \{(1, b)\} \) and \( \{(2, b)\} \); the only other subset of \( A \times B \), \( \{(1, b), (2, b)\} \), fails because \( b \) occurs twice. The maximal elements are \( \{(1, b)\} \) and \( \{(2, b)\} \). Neither pairs every element of \( A \); each pairs every element of \( B \), and read backwards it is an injection \( B \to A \). (Section 6.3 shows that this always happens: a maximal partial injection uses up one side.)
-:::
-
 ::: {#exr-chains-and-zorn-b4}
-[B4: Prove or disprove]
+[B3: Prove or disprove]
 
 Prove each true statement and refute each false one.
 
@@ -399,26 +380,8 @@ Prove each true statement and refute each false one.
 (e) False. Let \( C \subseteq \nR \) be countable. Then \( C \ne \nR \), since \( \nR \) is uncountable (@thm-reals-uncountable-decimal); for \( x \in \nR \setminus C \), the set \( C \cup \{x\} \) is countable (@prp-union-two-countable) and strictly larger. So no countable set is maximal. (By the contrapositive of Zorn's lemma, some non-empty chain of countable sets has no countable upper bound; the answer does not need one.)
 :::
 
-::: {#exr-using-zorn-b1}
-[B1: Name the move, then complete it]
-
-Let \( R \) be a relation from \( A \) to \( B \) whose domain is \( A \) (@def-relation). Prove that there is a function \( f \colon A \to B \) whose graph is contained in \( R \).
-
-Below, the proof is started; the second half is blank. *Name the move, then complete it.*
-
-> Let \( P \) be the set of \( G \subseteq R \) such that each \( a \in A \) occurs in at most one pair of \( G \), ordered by \( \subseteq \). Then \( \emptyset \in P \).
-> \( \underline{\hspace{8em}} \)
-> Hence the graph of \( f \) is contained in \( R \).
-:::
-
-::: {.solution}
-The move is the maximality template, @exm-method-maximality; steps (2) to (4) remain.
-
-*Completion.* Let \( \sC \subseteq P \) be a non-empty chain. Its union lies in \( R \), and two pairs of the union lie in one member of \( \sC \) (@lem-chain-union (b)), so an element of \( A \) occurs in at most one pair of the union. The union is in \( P \) and is an upper bound of \( \sC \). By @thm-zorn, \( P \) has a maximal element \( M \). Suppose some \( a_0 \in A \) occurs in no pair of \( M \). Since \( a_0 \) is in the domain of \( R \), there is \( b_0 \) with \( (a_0, b_0) \in R \) (one use of \( \rulename{\exists E} \)). Then \( M \cup \{ (a_0, b_0) \} \subseteq R \), \( a_0 \) occurs in it once, and it is strictly larger than \( M \): a contradiction with maximality. So each \( a \in A \) occurs in exactly one pair of \( M \), and \( M \) is the graph of a function \( f \colon A \to B \) (@def-function), with \( M \subseteq R \).
-:::
-
 ::: {#exr-using-zorn-b2}
-[B2: A total order on the subsets of a three-element set]
+[B4: A total order on the subsets of a three-element set]
 
 ::: {.enumerate options="label=(\alph*)"}
 1. Write the eight subsets of \( \{1, 2, 3\} \) in a list such that \( A \subsetneq B \) always puts \( A \) before \( B \), and prove that it does.
@@ -430,23 +393,6 @@ The move is the maximality template, @exm-method-maximality; steps (2) to (4) re
 (a) \( \emptyset, \{1\}, \{2\}, \{3\}, \{1, 2\}, \{1, 3\}, \{2, 3\}, \{1, 2, 3\} \). The list is arranged by the number of elements. If \( A \subsetneq B \), then \( A \) has fewer elements than \( B \) (@prp-subset-finite), so \( A \) comes in an earlier block of the list.
 
 (b) Two. The empty set must come first, since \( \emptyset \subseteq Y \) for every \( Y \), and \( \{1, 2\} \) last, since every \( Y \subseteq \{1, 2\} \). The sets \( \{1\} \) and \( \{2\} \) are incomparable under \( \subseteq \), so they may come in either order, and both orders work.
-:::
-
-::: {#exr-using-zorn-b3}
-[B3: A total order on the plane]
-
-On \( \nR^2 \), let \( (x_1, x_2) \le_p (y_1, y_2) \) mean \( x_1 \le y_1 \) and \( x_2 \le y_2 \); and let \( (x_1, x_2) \le_l (y_1, y_2) \) mean \( x_1 < y_1 \), or \( x_1 = y_1 \) and \( x_2 \le y_2 \).
-
-::: {.enumerate options="label=(\alph*)"}
-1. Show that \( \le_p \) is a partial order and not total.
-2. Show that \( \le_l \) is a total order containing \( \le_p \).
-:::
-:::
-
-::: {.solution}
-(a) (PO1), (PO2) and (PO3) for \( \le_p \) hold coordinate by coordinate, from the same properties of \( \le \) on \( \nR \); for (PO2), \( x_1 = y_1 \) and \( x_2 = y_2 \) give equal pairs. The points \( (0, 1) \) and \( (1, 0) \) are incomparable: \( 0 \le 1 \) but \( 1 \not\le 0 \) in the second coordinate, and the reverse in the first.
-
-(b) That \( \le_l \) is a total order is the argument of Section 5.3, Exercises A1 (d) and C1 (a), with \( \nR \) in place of \( \nN \): it uses only trichotomy and transitivity of \( \le \). Containment: if \( x_1 \le y_1 \) and \( x_2 \le y_2 \), then either \( x_1 < y_1 \), or \( x_1 = y_1 \) and \( x_2 \le y_2 \); in both cases \( (x_1, x_2) \le_l (y_1, y_2) \).
 :::
 
 ### C. Going deeper
@@ -464,7 +410,7 @@ Is the conclusion true? Does the argument prove it?
 ::: {.solution}
 The conclusion is true: it is Exercise B1.
 
-The argument does not prove it. It never checks that \( \bigcup \sK \) **is a chain**, that is, that it lies in \( P \); the upper bound in @thm-zorn must belong to \( P \). The step's general form, "the union of a chain of partial objects lies in \( P \)", is false: among the finite subsets of \( \nN \), the chain \( \{ \{0, \dots, n - 1\} : n \in \nN \} \) has union \( \nN \), which is not finite (the warning before these exercises). Here the conclusion of the step happens to be true, which is exactly why it must be proved, not assumed. The repair is the chain step of B1: two elements of \( \bigcup \sK \) lie in one member \( K \in \sK \) (@lem-chain-union (b)), which is a chain, so they are comparable.
+The argument does not prove it. It never checks that \( \bigcup \sK \) **is a chain**, that is, that it lies in \( P \); the upper bound in @thm-zorn must belong to \( P \). The step's general form, "the union of a chain of partial objects lies in \( P \)", is false: among the finite subsets of \( \nN \), the chain \( \{ \{0, \dots, n - 1\} : n \in \nN \} \) has union \( \nN \), which is not finite (the second warning of this section). Here the conclusion of the step happens to be true, which is exactly why it must be proved, not assumed. The repair is the chain step of B1: two elements of \( \bigcup \sK \) lie in one member \( K \in \sK \) (@lem-chain-union (b)), which is a chain, so they are comparable.
 
 **Marking scheme.** (10 points)
 - 2: the conclusion is true, with B1 cited.
@@ -506,7 +452,7 @@ Fatal errors (0 for the step): "choose an element of each class" in (a) or (b), 
 :::
 
 ::: {#exr-using-zorn-c1}
-[C1: Exit check: an order is the intersection of its total extensions]
+[C3: Exit check: an order is the intersection of its total extensions]
 
 Let \( \preceq \) be a partial order on a set \( X \), and let \( \sT \) be the set of total orders on \( X \) that contain \( \preceq \). Prove that \( {\preceq} = \bigcap \sT \).
 :::
@@ -538,39 +484,15 @@ In both cases \( (a, b) \notin \bigcap \sT \), so \( \bigcap \sT \subseteq {\pre
 Fatal error (0 for the case concerned): applying the lemma to \( (a, b) \) unexchanged, which puts \( (a, b) \) into the extension instead of keeping it out.
 :::
 
-### R. Review
-
-::: {#exr-using-zorn-r3}
-[R3: The basis theorem, read as a template]
-
-This item is optional and goes with the optional subsection. A set of vectors is linearly independent when no finite non-trivial combination of its vectors is \( 0 \).
-
-::: {.enumerate options="label=(\alph*)"}
-1. Which of the template's four steps uses that independence is tested on finitely many vectors at a time?
-2. Why would the template fail for the property "\( S \) is a finite independent set"?
-3. A maximal element of a partial order need not be greatest. What does this say about bases?
-:::
-:::
-
-::: {.solution}
-(a) Step (2), the chains: a dependence among vectors of the union of a chain involves finitely many vectors, all in one member (@lem-chain-union (b)), and that member is independent.
-
-(b) The union of a chain of finite sets need not be finite (the second warning of Section 6.2), so step (2) fails: the union need not be a partial object.
-
-(c) This is the point of @exm-maximal-not-greatest. Maximal independent sets need not contain one another, so a vector space can have many bases, none of them greatest. In \( \nR^2 \), \( \{ (1, 0), (1, 1) \} \) and \( \{ (2, 0), (0, 3) \} \) are both bases, and neither contains the other.
-:::
-
 <!-- dependency ledger
 lem-chain-union (claim): subset-inclusion restricted to a set of sets is a partial order | inline, by exm-subset-order-not-total and restriction of (PO1)-(PO3)
 def-chain (example): 2^n = 2^(n-m) * 2^m for m <= n | school arithmetic
 thm-zorn (claim): the set of finite subsets of N is a set | set-builder on P(N) (Chapter 1)
-thm-zorn (claim): status paragraph, Zorn's lemma equivalent to ax-choice, which is independent (Section 6.1, ax-choice status remark); converse proved in ST.4 | prose pointer to Axiomatic Set Theory; nothing depends on it
+thm-zorn (claim): status paragraph, Zorn's lemma equivalent to ax-choice, which is independent (Section 6.1, ax-choice status remark); converse proved in ST.4; Zorn => AC in F2.4 §03 (prose pointer) | prose pointer to Axiomatic Set Theory and to Section 6.3; nothing depends on it
 exm-zorn-representatives (example): a set of representatives for x - y in Q inside [0, 1] has no length | prose pointer to Measure and Integration Ch 1 (MT.1); nothing depends on it
 exm-zorn-representatives (solution): Quick check, same-parity integers have even difference; every integer is even or odd | arithmetic; thm-even-or-odd
 exr-chains-and-zorn-b4 (solution): (c) n not in E is odd, so n + 1 is even | thm-even-or-odd
 exm-zorn-representatives (example): x ~ y iff x - y in Q is an equivalence relation on R | Section 5.2 (after exm-reals-mod-integers)
-exr-chains-and-zorn-a1 (solution): the enumeration of P for I = {1, 2} | finite check
-exr-chains-and-zorn-b3 (solution): the three relations and the maximal ones | finite check
 thm-order-extension (claim): worked schedule: generated order has 11 pairs; two schedules; seven in all | finite check; verify/ch06/thm-order-extension.py
 lem-one-step-order-extension (proof): all cases of (PO2), (PO3) | inline; verify/ch06/lem-one-step-order-extension.py (all partial orders on 4 points)
 lem-one-step-order-extension (claim): (Quick check) R on P({1,2}) adds only ({1},{2}) | verify/ch06/lem-one-step-order-extension.py
@@ -578,9 +500,8 @@ thm-order-extension (proof): union of a chain of partial orders is one; maximal 
 exm-divisibility-linear-extension (solution): totality and trichotomy of <= on N; a, b > 0 and b = ka give k > 0, k >= 1, b >= a | R order and arithmetic (school facts; axioms in AN1.1); def-divides (cited); verify/ch06/exm-divisibility-linear-extension.py
 exm-divisibility-linear-extension (claim): (Quick check) order 1, 4, 6, 12, 0; only 4, 6 incomparable under divisibility | verify/ch06/exm-divisibility-linear-extension.py
 exm-divisibility-linear-extension (claim): no formula for a total extension of inclusion on P(R) is known | prose remark (nothing depends on it)
-exm-divisibility-linear-extension (claim): (optional subsection) basis theorem, R over Q has no explicit basis | LA §1.8 thm-basis-extension-general (prose pointer; nothing depends on it)
 exr-using-zorn-b2 (solution): proper subset of a finite set has fewer elements; two total extensions on P({1,2}) | prp-subset-finite (cited); verify/ch06/exr-using-zorn-b2.py
-exr-using-zorn-b3 (solution): lexicographic order total | Section 5.3 Exercises A1 (d), C1 (a) (cited), with R for N; R order (school fact)
 exr-using-zorn-c1 (solution): extension of R; exchanged lemma | thm-order-extension, lem-one-step-order-extension (cited); verify/ch06/lem-one-step-order-extension.py (intersection check on 4 points)
-exr-using-zorn-r3 (solution): bases of R^2 | linear algebra (optional item; prose only; nothing depends on it)
+exr-chains-and-zorn-a2 (solution): (b) P = {{}, {1}, {2}, {3}}; three maximal, no greatest | finite check; verify/ch06/exr-chains-and-zorn-a2.py; prp-greatest-maximal (cited)
+exr-chains-and-zorn-a2 (solution): (d) the order on N u {a, b} is a partial order, every non-empty chain bounded, exactly a, b maximal | inline (case check on pairs ending at a or b; <= on N, school fact)
 -->

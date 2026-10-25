@@ -1,6 +1,8 @@
 """exr-diagonal-arguments-b4: (a) on {0, ..., 23}, a p-periodic sequence is determined by its
 first p values, so P_p has 2^p members there, and the periodic extension of every pattern
-is p-periodic; (b) the interleaving map lands in "no two consecutive 1s" and is injective
+is p-periodic; for p <= 6, Lambda(p, F) (n -> ind_F(n mod p)) is p-periodic for every finite
+F (also F reaching past p), each p-periodic a equals Lambda(p, {r < p : a(r) = 1}), and the
+Lambda(p, F) with F within {0, ..., p - 1} are exactly the 2^p p-patterns; (b) the interleaving map lands in "no two consecutive 1s" and is injective
 (on length-8 inputs); (e) restriction to N is onto (extension by 0, on a window)."""
 import itertools
 
@@ -18,6 +20,22 @@ for p in range(1, 7):
             count += 1
             assert a == tuple(a[n % p] for n in range(12))
     assert count == 2 ** p and len(Pp) == 2 ** p
+# (a) Lambda(p, F)
+def Lam(p, F, m=M):
+    return tuple(1 if (n % p) in F else 0 for n in range(m))
+
+for p in range(1, 7):
+    pats = {tuple(w[n % p] for n in range(M)) for w in itertools.product((0, 1), repeat=p)}
+    lams = set()
+    for bits in itertools.product((0, 1), repeat=p):
+        F = {r for r in range(p) if bits[r]}
+        lams.add(Lam(p, F))
+    assert lams == pats
+    for F in [set(), {0, 7}, {3, 9, 11}, set(range(10))]:
+        a = Lam(p, F)
+        assert all(a[n + p] == a[n] for n in range(M - p))
+    for a in pats:
+        assert a == Lam(p, {r for r in range(p) if a[r] == 1})
 # (b)
 seen = set()
 for b in itertools.product((0, 1), repeat=8):

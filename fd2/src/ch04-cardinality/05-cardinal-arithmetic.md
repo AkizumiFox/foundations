@@ -1,16 +1,12 @@
 # Infinite Sets and Cardinal Arithmetic
 
-<!-- S3: rewrite per blueprint (4.5: condense to 5,000 words; choice-free infinite-set facts; thm-plane-equinumerous-line by the power law; thm-power-set-two-power moved to 2.3; layout §1) -->
-
 Section 4.1 counted finite sets, and Section 3.3 proved the laws of powers \( m^{n+k} = m^n m^k \) and \( (m^n)^k = m^{nk} \) by induction (@prp-power-laws). For finite sets these numbers count functions: \( Y^X \) has \( m^n \) elements when \( Y \) has \( m \) and \( X \) has \( n \) (Section 2.1, before @exm-function-set-small). This section asks what is left of that arithmetic when the sets are infinite and all we have are bijections.
 
 ## The plane and the line
 
 A square has two dimensions and a segment has one. Surely the plane \( \nR \times \nR \) has more points than the line? The injection \( x \mapsto (x, 0) \) gives \( \card{\nR} \le \card{\nR \times \nR} \), and it seems that the other half of the plane should be left over.
 
-A second question. Is \( \nN^{\nN} \), the set of sequences of natural numbers, bigger than \( \nR \)? A real number in \( [0, 1) \) is only a sequence of digits below \( 10 \), while a sequence in \( \nN^{\nN} \) may use any natural number at every place, so \( \nN^{\nN} \) looks bigger.
-
-Guess both answers before reading on. The plane is a product, \( \nN^{\nN} \) is a power, and the line will turn out to be a power too: a power of \( 2 \).
+Guess the answer before reading on. The plane is a product, and the line will turn out to be a power: a power of \( 2 \).
 
 ## Adding sizes: disjoint unions
 
@@ -52,6 +48,55 @@ This is the first encoding of the section: \( e \) writes a pair as one number, 
 
 ::: {.warning}
 **No subtraction.** For numbers, \( m + k = n + k \) gives \( m = n \). For sets, \( \card{\{0\} \sqcup \nN} = \card{\emptyset \sqcup \nN} \) although \( \card{\{0\}} \ne \card{\emptyset} \): the map sending \( (0, 0) \mapsto 0 \) and \( (n, 1) \mapsto n + 1 \) is a bijection \( \{0\} \sqcup \nN \to \nN \), and \( (n, 1) \mapsto n \) is a bijection \( \emptyset \sqcup \nN \to \nN \) (Exercise B4 (a) has the details). Every law below is proved by a bijection, never borrowed from the numbers.
+:::
+
+## Infinite sets without choice
+
+Section 4.1 moved every guest of Hilbert's hotel one room up (the Quick check after @exm-hilbert-hotel) and so found \( \nN \) equinumerous with the proper subset \( \nN \setminus \{0\} \). The same move works inside any set that comes with a copy of \( \nN \), that is, with an injection \( s \colon \nN \to X \): move \( s(n) \) to \( s(n + 1) \), and leave every other point where it is. The copy is given, so every value of the new map is given by a rule, and nothing is chosen. The move also absorbs a countable set added from outside.
+
+::: {#prp-copy-of-naturals-absorbs}
+[A Copy of ℕ Absorbs Countable Sets]
+
+Let \( X \) be a set, and let \( s \colon \nN \to X \) be an injection.
+
+::: {.enumerate options="label=(\alph*)"}
+1. \( \card{X \setminus \{s(0)\}} = \card{X} \).
+2. If \( C \) is countable and \( C \cap X = \emptyset \), then \( \card{X \cup C} = \card{X} \).
+:::
+:::
+
+::: {.idea}
+(a) is the hotel, run on \( S \coloneqq s(\nN) \). For (b), \( S \cup C \) is countable and infinite, hence the same size as \( S \). A bijection \( S \cup C \to S \), glued to the identity off \( S \), absorbs \( C \).
+:::
+
+::: {.proof}
+(a) Let \( x_n \coloneqq s(n) \) and \( S \coloneqq \{ x_n : n \in \nN \} \). Each element of \( S \) is \( x_n \) for exactly one \( n \in \nN \), by injectivity. Define \( h \colon X \to X \setminus \{x_0\} \) by
+\[
+h(x) \coloneqq
+\begin{cases}
+x_{n+1} & \text{if } x = x_n \text{ with } n \in \nN, \\
+x & \text{if } x \notin S .
+\end{cases}
+\]
+This is a function into \( X \setminus \{x_0\} \): \( x_{n+1} \ne x_0 \) because \( n + 1 \ne 0 \), and an \( x \notin S \) is not \( x_0 \).
+
+*\( h \) is injective.* Two points of \( S \): \( x_{m+1} = x_{n+1} \) gives \( m + 1 = n + 1 \), so \( m = n \). Two points outside \( S \): \( h \) is the identity there. One of each: \( h(x_n) = x_{n+1} \in S \), while \( h(x) = x \notin S \), so the values differ.
+
+*\( h \) is onto \( X \setminus \{x_0\} \).* Let \( y \in X \setminus \{x_0\} \). If \( y \notin S \), then \( y = h(y) \). If \( y \in S \), then \( y = x_m \) with \( m \ne 0 \), so \( n \coloneqq m - 1 \in \nN \) (@lem-naturals-arithmetic (c)) and \( y = x_{n+1} = h(x_n) \).
+
+So \( h \) is a bijection \( X \to X \setminus \{s(0)\} \), and \( \card{X \setminus \{s(0)\}} = \card{X} \).
+
+(b) The set \( S \) is countable, as the image of \( \nN \) (@prp-countable-image), so \( S \cup C \) is countable (@prp-union-two-countable). It is infinite. \( S \) is equinumerous with \( \nN \) via \( s \), and \( \nN \) is infinite (@exm-hilbert-hotel); if \( S \cup C \) were finite, so would be its subset \( S \) (@prp-subset-finite), and then \( \nN \) (@prp-equinumerous-properties, @def-finite). By @thm-countable-characterizations (iii), \( S \cup C \) is countably infinite, so there is a bijection \( \psi \colon S \cup C \to S \) (@prp-equinumerous-properties). Now \( X \cup C \) is the union of the disjoint sets \( X \setminus S \) and \( S \cup C \) (disjoint because \( C \cap X = \emptyset \)), and \( X \) is the union of the disjoint sets \( X \setminus S \) and \( S \). Let \( h \colon X \cup C \to X \) be the identity on \( X \setminus S \) and \( \psi \) on \( S \cup C \), a function by @thm-gluing. It is injective by @prp-injective-across-pieces: both pieces are injective, and a value on the first piece lies in \( X \setminus S \), a value on the second in \( S \). It is onto, since the target pieces \( X \setminus S \) and \( S \) cover \( X \) and each is hit. So \( \card{X \cup C} = \card{X} \).
+:::
+
+By @thm-finite-no-proper-copy, (a) shows again that a set with a copy of \( \nN \) is infinite. For the disjoint union just defined: in \( \nR \sqcup \nN \), the part \( \nR \times \{0\} \) has the copy \( n \mapsto (n, 0) \), and \( \nN \times \{1\} \) is countable and disjoint from it, so \( \card{\nR \sqcup \nN} = \card{\nR \times \{0\}} = \card{\nR} \). The proposition says nothing about a set that is merely known to be infinite: finding a copy of \( \nN \) inside it would mean picking new points one at a time, with no rule.
+
+::: {.check}
+For \( X = \nR \) and \( s(n) = n \), write down the bijection \( h \colon \nR \to \nR \setminus \{0\} \) of the proof of (a), and compute \( h(3) \), \( h(-3) \) and \( h(\tfrac12) \).
+:::
+
+::: {.solution}
+\( h(x) = x + 1 \) for \( x \in \nN \), and \( h(x) = x \) otherwise. So \( h(3) = 4 \), \( h(-3) = -3 \) and \( h(\tfrac12) = \tfrac12 \). No point is sent to \( 0 \), and every \( m \in \nN \setminus \{0\} \) is \( h(m - 1) \).
 :::
 
 ## Multiplying, raising to powers, and comparing
@@ -142,7 +187,7 @@ Injectivity of \( v \) makes \( F(f) \) a function: the point \( b \) with \( v(
 
 ## Encoding: the diagonals of ℕ × ℕ
 
-Section 4.2 showed \( \nN \times \nN \) countable by an injection. At the scratch work for @thm-product-countable it set aside the list along the diagonals, because writing a formula for the position of \( (m, n) \) and checking that every position is used takes real work. The Quick check before 3.4's Looking-ahead remark got \( \card{\nN \times \nN} = \card{\nN} \) from @thm-schroder-bernstein without ever seeing a bijection. Here is the work, done.
+Section 4.2 showed \( \nN \times \nN \) countable by an injection. At the scratch work for @thm-product-countable it set aside the list along the diagonals, because writing a formula for the position of \( (m, n) \) and checking that every position is used takes real work. The Quick check before the Looking-ahead remark of Section 4.4 got \( \card{\nN \times \nN} = \card{\nN} \) from @thm-schroder-bernstein without ever seeing a bijection. Here is the work, done.
 
 For \( s \in \nN \), the **triangular number** \( \tau_s \coloneqq \sum_{i=1}^{s} i \) (@def-sum-product) has \( \tau_0 = 0 \) and \( \tau_{s+1} = \tau_s + s + 1 \). It counts the points on the diagonals \( m + n = 0, 1, \dots, s - 1 \), which hold \( 1, 2, \dots, s \) points.
 
@@ -193,7 +238,7 @@ A table of the first values: \( \pi(0, 0) = 0 \), \( \pi(1, 0) = 1 \), \( \pi(0,
 
 **When to use it.** The two sets carry the same information arranged differently: two numbers in one, a pair of sequences in one sequence, a function of two variables as a function with function values.
 
-**The usual failure.** Checking one round trip only: \( \delta \circ \pi = \id \) alone shows only that \( \pi \) is injective (@thm-left-inverse-iff-injective). A decoder that is not a function, with two readings of one code or none (the interleaving of decimals, later in this section). If the decoder works on part of the target only, keep the injection and use @exm-method-injections-both-ways.
+**The usual failure.** Checking one round trip only: \( \delta \circ \pi = \id \) alone shows only that \( \pi \) is injective (@thm-left-inverse-iff-injective). A decoder that is not a function, with two readings of one code or none (reading a decimal as a code, when \( 0.0999\ldots \) and \( 0.1000\ldots \) are two codes for one number, Section 4.3). If the decoder works on part of the target only, keep the injection and use @exm-method-injections-both-ways.
 :::
 
 ::: {.warning}
@@ -289,7 +334,7 @@ Let \( X = \{0, 1\} \), \( Y = \{a\} \) and \( Z = \{b, c\} \). How many element
 
 ## Subsets are 0–1 functions
 
-<!-- S3: rewrite per blueprint (4.5: thm-power-set-two-power now in 2.3; cor-cantor-two-power cites it backwards) -->
+Section 2.3 proved that \( A \mapsto \ind_A \) is a bijection \( \powerset{X} \to \{0, 1\}^X \) (@thm-power-set-two-power). With Cantor's theorem it gives one more strict inequality.
 
 ::: {#cor-cantor-two-power}
 [No Set Is the Size of Its 0–1 Functions]
@@ -298,7 +343,7 @@ For every set \( X \), \( \card{X} < \card{\{0, 1\}^X} \).
 :::
 
 ::: {.idea}
-One injection is easy; for strictness, move a bijection over to \( \powerset{X} \) with the theorem just proved, where Cantor's theorem forbids it.
+One injection is easy; for strictness, move a bijection over to \( \powerset{X} \) with @thm-power-set-two-power, where Cantor's theorem forbids it.
 :::
 
 ::: {.proof}
@@ -338,7 +383,7 @@ Let \( T \coloneqq \{0, 1, \dots, 9\} \) and \( W \coloneqq T^{\nZ_{>0}} \), the
 
 *\( \card{\{0, 1\}^{\nN}} \le \card{[0, 1)} \).* For \( b \in \{0, 1\}^{\nN} \), let \( c_{k+1} \coloneqq b(k) \) for \( k \in \nN \): a digit sequence with digits \( 0 \) and \( 1 \) only. By (D2) it is an expansion of exactly one \( y_b \in [0, 1] \), and \( y_b \le t_1 + \frac{1}{10} \le \frac{2}{10} \) by @def-decimal-expansion at \( n = 1 \), so \( y_b \in [0, 1) \). If \( b \ne b' \), the two digit sequences differ. If also \( y_b = y_{b'} \), they would be two different expansions of one number, and by (D3) one of them would end in all \( 9 \)s; but neither contains a \( 9 \). So \( y_b \ne y_{b'} \), and \( b \mapsto y_b \) is injective.
 
-*Conclusion.* By @prp-card-le-preorder (b) and @thm-schroder-bernstein, \( \card{[0, 1)} = \card{\{0, 1\}^{\nN}} \). By @exm-reals-open-interval, \( \card{[0, 1)} = \card{\nR} \), and by @thm-power-set-two-power, \( \card{\{0, 1\}^{\nN}} = \card{\powerset{\nN}} \). Chaining with @prp-equinumerous-properties proves the theorem.
+*Conclusion.* By @prp-card-le-preorder (b) and @thm-schroder-bernstein, \( \card{[0, 1)} = \card{\{0, 1\}^{\nN}} \). By @exm-reals-open-interval, \( \card{[0, 1)} = \card{\nR} \), and by @thm-power-set-two-power (@def-equinumerous), \( \card{\{0, 1\}^{\nN}} = \card{\powerset{\nN}} \). Chaining with @prp-equinumerous-properties proves the theorem.
 :::
 
 The first step is the one of Exercise C1 of Section 4.4. What is new is the middle step, where the laws reduce the bookkeeping to the one-line code \( (j, n) \mapsto 10n + j \) in place of the set \( E(x) \) of that exercise, and the last, where the digits \( 0 \) and \( 1 \) suffice because (D3) needs only that no \( 9 \) appears. Neither step needed binary expansions of real numbers.
@@ -375,14 +420,12 @@ By @thm-reals-power-set-naturals and @prp-card-operations-well-defined (b), \( \
 
 Read through the maps, the composite on 0–1 sequences sends \( (a, b) \) to the sequence with \( a(n) \) at place \( 2n \) and \( b(n) \) at place \( 2n + 1 \): the interleaving of Exercise B3 of Section 4.4. The trouble with decimals has gone because 0–1 sequences, unlike numbers, have no double expansions. That price is paid once, in the proof of @thm-reals-power-set-naturals.
 
-<!-- S3: rewrite per blueprint (4.5: exm-interleaving-decimals, thm-baire-space-reals, cor-real-sequences parked to ST) -->
-
-So both guesses of the hook were wrong. The plane is no bigger than the line, and \( \nN^{\nN} \) is no bigger either. For every infinite set \( X \) it is in fact true that \( \card{X \times X} = \card{X} \) and \( \card{X \sqcup X} = \card{X} \); in general these cannot be proved without the axiom of choice (the first is equivalent to it), and this book does not prove them.
+So the guess of the hook was wrong: the plane is no bigger than the line. For every infinite set \( X \) it is in fact true that \( \card{X \times X} = \card{X} \), but this cannot be proved without the axiom of choice, and this book does not prove it.
 
 ::: {.remark}
 [Looking ahead]
 
-Respecting size, @prp-card-operations-well-defined, is an instance of a requirement that Section 5.2 names: a rule stated through representatives must give the same answer for all of them. There it is called well-definedness, and it is what makes functions on quotient sets possible.
+Respecting size, @prp-card-operations-well-defined, is an instance of a requirement that Section 5.2 names: a rule stated through representatives must give the same answer for all of them. There it is called well-definedness, and it is what makes functions on quotient sets possible. Chapter 6 shows, with the axiom of choice, that every infinite set has an injection from \( \nN \), so that @prp-copy-of-naturals-absorbs applies to every infinite set.
 :::
 
 ## Exercises
@@ -502,6 +545,28 @@ Prove each true statement and refute each false one with a counterexample. Here 
 (f) False. For every \( X \), \( x \mapsto \ind_{\{x\}} \) gives \( \card{X} \le \card{\{0, 1\}^X} \), so \( \card{\{0, 1\}^X} \le \card{X} \) would give \( \card{X} = \card{\{0, 1\}^X} \) by @thm-schroder-bernstein, against @cor-cantor-two-power.
 :::
 
+::: {#exr-cardinal-arithmetic-b5}
+[B5: Absorbing without choice]
+
+Use @prp-copy-of-naturals-absorbs to show:
+
+::: {.enumerate options="label=(\alph*)"}
+1. \( \card{\nR \setminus \nQ} = \card{\nR} \);
+2. \( \card{\nR \setminus \{0, 1\}} = \card{\nR} \);
+3. \( \card{\{0, 1\}^{\nN} \setminus E} = \card{\{0, 1\}^{\nN}} \), where \( E \) is the set of sequences \( b \) that are eventually zero (there is a \( K \in \nN \) with \( b(k) = 0 \) for all \( k \ge K \)).
+:::
+
+In each part, name \( X \), \( s \) and, where used, \( C \).
+:::
+
+::: {.solution}
+(a) \( X \coloneqq \nR \setminus \nQ \), \( s(n) \coloneqq \sqrt 2 + n \). Each \( s(n) \in X \): if \( \sqrt 2 + n = q \in \nQ \), then \( \sqrt 2 = q - n \in \nQ \), against @fd1:thm-sqrt2-irrational. And \( s \) is injective, by cancelling \( \sqrt 2 \). Take \( C \coloneqq \nQ \), which is countable (@thm-integers-rationals-countable) and disjoint from \( X \), with \( X \cup C = \nR \). By (b) of the proposition, \( \card{\nR} = \card{X} \), and @prp-equinumerous-properties gives the claim.
+
+(b) \( X \coloneqq \nR \setminus \{0, 1\} \), \( s(n) \coloneqq n + 2 \), injective with values in \( X \); \( C \coloneqq \{0, 1\} \), finite, hence countable (@thm-countable-characterizations), and disjoint from \( X \). Then \( X \cup C = \nR \). (Or apply (a) of the proposition twice: to \( \nR \) with \( s(n) = n \), then to \( \nR \setminus \{0\} \) with \( s(n) = n + 1 \).)
+
+(c) \( X \coloneqq \{0, 1\}^{\nN} \setminus E \), with \( s(n) \) the sequence that is \( 0 \) before place \( n \) and \( 1 \) from place \( n \) on. It is not eventually zero, so \( s(n) \in X \). Different \( n \) give sequences that differ at the smaller index, so \( s \) is injective. \( C \coloneqq E \) is countable: \( b \mapsto \{ k \in \nN : b(k) = 1 \} \) is injective (@prp-function-equality) and sends \( E \) into the finite subsets of \( \nN \) (each such set lies in some \( \{0, \dots, K - 1\} \), @prp-subset-finite), which form a countable set (@exr-countable-sets-c1); composing with an injection of that set into \( \nN \) gives an injection \( E \to \nN \) (@thm-countable-characterizations, @thm-composition-injective-surjective (a)). It is disjoint from \( X \), and \( X \cup E = \{0, 1\}^{\nN} \). (Compare Exercise C2, which meets \( E \) again.)
+:::
+
 ### C. Going deeper
 
 ::: {#exr-cardinal-arithmetic-c1}
@@ -559,14 +624,14 @@ Is the conclusion true? Where does the argument fail? What does it prove?
 
 *The error is in the first line.* \( N(b) \) is named before it is shown to exist: (N14) of @fd1:exm-not-allowed-catalogue. The sum is infinite whenever \( b \) has infinitely many \( 1 \)s, and Section 3.3 defines only finite sums (@def-sum-product); no natural number is "\( 1 + 2 + 4 + \cdots \)". The all-\( 1 \) sequence is a witness: it has no value under \( N \).
 
-*What survives.* On the sequences that are eventually \( 0 \), the sum is finite (\( \sum_{k < K} b(k) 2^k \) for any \( K \) past the last \( 1 \)), and \( N \) is defined there. It is injective once the uniqueness of binary digits is proved, which Exercise R1 below does not do (R1 gives existence only). The countability of that set follows anyway, with no binary digits: changing the codomain from \( \{0, 1\} \) to \( \nN \) injects it into the set of eventually zero functions \( \nN \to \nN \) of @exr-infinite-sets-r4, at the end of this section, which is countable; compose with an injection of that set into \( \nN \) (@thm-countable-characterizations, @thm-composition-injective-surjective (a)).
+*What survives.* On the sequences that are eventually \( 0 \), the sum is finite (\( \sum_{k < K} b(k) 2^k \) for any \( K \) past the last \( 1 \)), and \( N \) is defined there. That set is countable, and binary digits are not needed to see it. The map \( b \mapsto \{ k \in \nN : b(k) = 1 \} \) is injective, since two sequences with the same \( 1 \)-places are equal (@prp-function-equality). It sends an eventually zero sequence to a finite subset of \( \nN \) (@prp-subset-finite), and the finite subsets of \( \nN \) form a countable set (@exr-countable-sets-c1). Compose with an injection of that set into \( \nN \) (@thm-countable-characterizations, @thm-composition-injective-surjective (a)). The injectivity of \( N \) itself needs the uniqueness of binary digits, which is Step 3 of the solution of @exr-countable-sets-c1.
 
 **Marking scheme.** (10 points)
 - 2: says the conclusion is false, citing @thm-binary-sequences-uncountable.
 - 3: names the failing step, an infinite sum named as a natural number, with (N14).
 - 2: gives a witness, such as the all-\( 1 \) sequence.
 - 2: says what the argument does prove: the eventually zero sequences form a countable set.
-- 1: flags that the injectivity of \( N \) on them needs the uniqueness of binary digits, which is not proved.
+- 1: notes that the injectivity of \( N \) needs the uniqueness of binary digits (Exercise C1 of Section 4.2).
 Fatal errors (0 for the step): calling the conclusion true; locating the error in "an injection into \( \nN \) makes a set countable", which is correct.
 :::
 
@@ -656,12 +721,17 @@ def-disjoint-union (claim): every element is (a, 0) or (b, 1), not both; inclusi
 exm-two-copies-of-naturals (solution): m = 2q + r uniquely, q in N, r in {0, 1} | the claim in the proof of prp-union-two-countable (cited)
 prp-card-operations-well-defined (proof): (a) the two-part rule is a function; inverses undo it partwise | inline (unwinding after def-disjoint-union)
 prp-card-operations-monotone (claim): (non-example) if A' is empty then A is empty, an injection into the empty set has empty domain | prp-empty-function (b), used silently
+prp-copy-of-naturals-absorbs (proof): pieces disjoint and covering; the glued map is injective and onto | thm-gluing, prp-injective-across-pieces (cited)
+prp-copy-of-naturals-absorbs (claim): (Looking ahead) every infinite set has an injection from N, with choice | F2.4 §01 (thm-infinite-countable-subset; prose pointer)
+prp-copy-of-naturals-absorbs (claim): (Quick check 2) h(3) = 4, h(-3) = -3, h(1/2) = 1/2; no value 0; m = h(m - 1) | verify/ch04/prp-copy-of-naturals-absorbs.py
+prp-copy-of-naturals-absorbs (claim): (aftermath) |R sqcup N| = |R x {0}| = |R| | inline (R x {0} and N x {1} disjoint; x -> (x, 0))
+thm-plane-equinumerous-line (claim): (aftermath) |X x X| = |X| for infinite X needs choice; not proved in this book | prose pointer, nothing depends on it
 exm-pairing-bijection (solution): tau_(s+1) = tau_s + s + 1, tau_0 = 0, tau_s in N | def-sum-product (cited); thm-induction on s with lem-naturals-arithmetic (b)
 exm-pairing-bijection (solution): order and cancellation in N (tau_s + n <= tau_s + s < tau_(s+1); n = n' from tau_s + n = tau_s + n') | arithmetic and order of N (lem-naturals-arithmetic, school arithmetic of N)
-exm-pairing-bijection (solution): the values pi(0,0)..pi(0,2), delta(11) = (3, 1); Quick check 3: pi(3,2) = 17, delta(47) = (7, 2) | verify/ch04/exm-pairing-bijection.py
+exm-pairing-bijection (solution): the values pi(0,0)..pi(0,2), delta(11) = (3, 1); Quick check 4: pi(3,2) = 17, delta(47) = (7, 2) | verify/ch04/exm-pairing-bijection.py
 thm-cardinal-laws (proof): a function on Y u Z may be defined on the two tagged parts separately | inline (unwinding after def-disjoint-union)
 thm-cardinal-laws (claim): (fold) the maps of (a), (b), (c), (e) and their inverses | inline; prp-function-equality, def-ordered-pair (cited); verify/ch04/thm-cardinal-laws.py (finite instances)
-thm-cardinal-laws (claim): (Quick check 4) 8 = 8 | inline count by listing values; verify/ch04/thm-cardinal-laws.py
+thm-cardinal-laws (claim): (Quick check 5) 8 = 8 | inline count by listing values; verify/ch04/thm-cardinal-laws.py
 thm-cardinal-laws (claim): (aftermath) the finite case gives back m^(n+k) = m^n m^k, (m^n)^k = m^(nk) | Section 4.1 counts (exr-finite-sets-c2; prp-disjoint-union-count and cor-finite-size-unique for |Y sqcup Z| = n + k; prose only, nothing depends on it)
 cor-cantor-two-power (proof): ind_{x} = ind_{y} gives x = y | inline (value 1 at x only)
 thm-reals-power-set-naturals (proof): the expansion of x not ending in all 9s exists and is unique; one digit sequence names one number; y_b exists; two different expansions of one number, one ends in 9s | school facts (D1), (D2), (D3), stated in F2.3 §03 (def-decimal-expansion)
@@ -669,11 +739,14 @@ thm-reals-power-set-naturals (proof): (j, n) -> 10n + j bijection T x N -> N, de
 thm-reals-power-set-naturals (proof): n -> n + 1 is a bijection N -> Z_{>0}, inverse m -> m - 1 in N | lem-naturals-arithmetic (c)
 thm-reals-power-set-naturals (proof): y_b <= t_1 + 1/10 <= 2/10 | def-decimal-expansion (cited) at n = 1
 thm-reals-power-set-naturals (claim): (remark) the continuum hypothesis is independent of the usual axioms, if consistent | set theory, stated without proof; nothing depends on it
-thm-plane-equinumerous-line (claim): (aftermath) the composite map is the interleaving of 3.4 B3 | inline (composite of Psi of thm-cardinal-laws (d) with the map of prp-card-operations-well-defined (c) along e)
+thm-plane-equinumerous-line (claim): (aftermath) the composite map is the interleaving of 4.4 B3 | inline (composite of Psi of thm-cardinal-laws (d) with the map of prp-card-operations-well-defined (c) along e)
 exr-cardinal-arithmetic-a1 (solution): (d) first digit <= 8 gives y_b < 1 | def-decimal-expansion at n = 1
 exr-cardinal-arithmetic-b1 (solution): division by 3 and by 2 with quotient in N; E(1, 0, 1) = 4 | thm-division-algorithm (cited); verify/ch04/exr-cardinal-arithmetic-b1.py
 exr-cardinal-arithmetic-b4 (solution): finite counts 2 vs 4, 1 vs 0 functions; maps of (a) | inline listing; cor-finite-size-unique (cited); verify/ch04/exr-cardinal-arithmetic-b4.py
-exr-cardinal-arithmetic-c2 (solution): eventually zero 0-1 sequences inject into R4's set by changing the codomain | exr-infinite-sets-r4 (an exercise, cited by an exercise)
+exr-cardinal-arithmetic-c2 (solution): eventually zero sequences inject into the finite subsets of N | exr-countable-sets-c1 (an exercise cited by an exercise), prp-subset-finite (cited)
+exr-cardinal-arithmetic-b5 (solution): sqrt 2 + n irrational | thm-sqrt2-irrational (F1, cited); Q arithmetic, school fact
+exr-cardinal-arithmetic-b5 (solution): (c) eventually zero sequences inject into the finite subsets of N | exr-countable-sets-c1 (an exercise cited by an exercise), prp-subset-finite (cited)
+exr-cardinal-arithmetic-b5 (solution): (c) s(n) not eventually zero; s(m), s(n) differ at min(m, n) | verify/ch04/exr-cardinal-arithmetic-b5.py
 exr-infinite-sets-r1 (solution): 2^(K+1) - 2^K = 2^K; 2^K >= 1 (a positive natural number) | def-power, prp-power-laws (d), (e), lem-naturals-arithmetic (a), used silently; verify/ch04/exr-infinite-sets-r1.py
 exr-infinite-sets-r2 (solution): soundness for predicate logic (counter-model gives non-derivability) | F1.6 §02, subsection #from-counter-models-to-non-derivability (statement; proof in optional F1.6 §03); prose pointer, unlabelled statement
 exr-infinite-sets-r3 (solution): row <-> set of T-places and truth function <-> set of T-rows are bijections; equinumerous with an n-element set has n elements | inline; prp-equinumerous-properties via composition; verify/ch04/exr-infinite-sets-r3.py

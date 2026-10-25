@@ -1,4 +1,4 @@
-"""exr-images-and-preimages-r2 (Ch 6, Section 6.6): A \\ (B \\ C) versus (A \\ B) \\ C."""
+"""exr-images-and-preimages-r2 (Ch 1, Section 1.4; R2): A \\ (B \\ C) versus (A \\ B) \\ C."""
 from itertools import product
 QUOTED = {"differing rows (1-based)": [1, 3], "rows": 8}
 rows = list(product([True, False], repeat=3))   # T before F, last atom fastest
