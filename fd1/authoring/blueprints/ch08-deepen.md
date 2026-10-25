@@ -1,5 +1,5 @@
 <!-- hand-written -->
-# Deepening blueprint: F1.5 From Derivations to Mathematical Prose (fd1 Chapter 8), D (stage S1; revised at S2 round 1)
+# Deepening blueprint: F1.5 From Derivations to Mathematical Prose (fd1 Chapter 8), D (stage S1; revised at S2 round 1; reconciled with the delivered Chapters 2–7 and frozen at S2 round 2, 2026-10-25)
 
 **What this is.** A **delta** blueprint (stage S1) that deepens Chapter 8 of *Logic and Proof* under the final layout. It is written **on R5**. The frozen revision blueprint `ch05-revision.md` (R5, S2 passed 2026-10-12) was never drafted: `fd1/src/ch08-from-derivations-to-prose/` is still the R1 text that D2 moved and swept (commit `034a2ae`). The drafter therefore executes R5 §4.0–§4.7 **as content**, then the additions of this file, in one pass. Where this file and R5 disagree, this file wins, and every such point is listed (§2, "R5 items superseded"). The drafter needs: this file; R5 (for everything this file does not change); the current section files; `authoring/STYLE.md` (§12, with §12.8 and §12.13 as amended by D1); `DRAFTING.md` (with `\purpose`, `\taut` and the Diagrams templates of `latex/book-diagrams.sty`); and `NOTATION.md`.
 
@@ -188,7 +188,7 @@ R5's eight are created as R5 §3.2 says: `exr-connective-rhetoric-a2`, `-b3`; `e
 
 The 8.8 results carry no `.optional` class of their own: the section is the optional unit, as in 7.3 (03:3). The drafter greps again before creating each label (DRAFTING, "Labels").
 
-**Planned labels of other units that this file cites.** Each is fixed in layout §1.4. If its blueprint names it differently, S8's seam pass uses the delivered name.
+**Planned labels of other units that this file cites.** Each is fixed in layout §1.4. **All are delivered under these names and in these sections** (S2 round 2: grepped in `fd1/src/ch04–ch06`), so S8 only re-greps them.
 - `def-rule-taut` (4.8)
 - `thm-monotonicity` (4.9, second pass; cited only in a fold)
 - `thm-barber` (5.6)
@@ -302,7 +302,7 @@ R5 §4.1 is executed in full. Additions, in the order of the file:
 
 2. **Constructive dilemma** (a new row in the table of `## Disjunction and cases`, 01:130–135, after the DS row; plus one sentence appended to 01:137) [technique: LB, Hu — derived rules heard in prose; ch01-deepen §6 seam].
 
-   Row: | constructive dilemma (@exm-constructive-dilemma; a derived rule in Section 2.3) | "if \( P \) then \( R \), and if \( Q \) then \( S \); since \( P \) or \( Q \), we get \( R \) or \( S \)"; "in the first case …, in the second …, so \( R \) or \( S \)" | never the split or the two implications; the closing "so \( R \) or \( S \)" yes |
+   Row: | constructive dilemma (@exm-constructive-dilemma; the derived rule CD of Section 2.3, @exr-derived-rules-b4) | "if \( P \) then \( R \), and if \( Q \) then \( S \); since \( P \) or \( Q \), we get \( R \) or \( S \)"; "in the first case …, in the second …, so \( R \) or \( S \)" | never the split or the two implications; the closing "so \( R \) or \( S \)" yes |
 
    No sentence is appended to 01:137 (S2 round 1, budget): the row's first column cites the worked example, whose reading in Section 1.6 the row abbreviates.
 
@@ -577,7 +577,7 @@ R5 §4.4 is executed in full. Additions:
 1. **The purpose in question 1** (04:63): one sentence appended to item 1 of "How to explain a line": "In a derivation the annotation answers it: 'asm, for →I' beside an assumption names the rule that will close its box (Section 8.1)." (~25 words.)
 2. **`## Naming the unstated fact`** (new subsection, ~170 words; after `## How to explain a line`, which ends with the solution 04:87–95, and before `## Strategies of good readers`, 04:97) [technique: Ho, Hu — supplying the suppressed premise; gap-matrix rows 1.9 and 7.8; layout: "argument extraction recalled from 3.3"]. Text:
 
-   "Section 3.3 took a paragraph of argument apart into its premises, its conclusion, and the premises it left unsaid. A proof is read the same way, one line at a time. Often the second question, *where does it come from?*, has an answer the writer did not write: a fact used but not stated. Self-explaining the line means naming that fact, and the fact then turns out to be one of three things. It may be a school fact or a definition: name it. It may be an earlier result: cite it. Or it may be false, and then the line fails. Two lines that look alike:
+   "Section 3.3 turned a paragraph of argument into a sequent: its conclusion, its stated premises, and the unstated facts that close its gaps. A proof is read the same way, one line at a time. Often the second question, *where does it come from?*, has an answer the writer did not write: a fact used but not stated. Self-explaining the line means naming that fact, and the fact then turns out to be one of three things. It may be a school fact or a definition: name it. It may be an earlier result: cite it. Or it may be false, and then the line fails. Two lines that look alike:
    - 'Since \( n^2 \) is a multiple of \( 3 \), so is \( n \).' The unstated fact, 'if \( 3 \mid n^2 \), then \( 3 \mid n \)', is true. A careful proof proves it, by cases on the remainder of \( n \) on division by \( 3 \).
    - 'Since \( n^2 \) is a multiple of \( 4 \), so is \( n \).' The unstated fact, 'if \( 4 \mid n^2 \), then \( 4 \mid n \)', is false at \( n = 2 \). Chapter 1 met it as a missing premise (@exr-using-an-implication-b5).
 
@@ -889,8 +889,14 @@ R5 §4.7 is executed in full. Changes and additions:
    - The other "stated without proof" claims stay as they are. These are 07:11 (⊥E; Kripke models do not address it), 07:15's quantifier clause, 07:80 (Glivenko), the remark's quantifier failure, and the right column's quantifier rows.
 3. **Fold F8.7-c** `title="Proofs as programs, in Lean"` (new, after `## Proofs as programs`' paragraph 07:210): 07:212 and the Lean block 07:214–221, verbatim (~140 words). The warning 07:223–225 stays on the main line. This is the budget trade for item 1. The Lean passage is an instructor-type comparison (STYLE §12.0), and nothing on the main line cites it.
 4. **R1's solution** (07:462): "by part (b) of @prp-bounded-quantifier-negation and then part (a) under the \( \forall \)" → "by part (b) of @prp-bounded-quantifier-negation, and then part (a) used under the \( \forall \), as @prp-replacement of Section 6.2 allows". (Critic C2: a law used on a part under a quantifier is licensed syntactically.)
-5. **TAUT is not an intuitionistic rule** (new, S2 round 1; one sentence, ~40 words, appended to 07:9, the definition of an intuitionistic derivation): "TAUT (Section 4.8) is not among these rules: it is licensed by the completeness theorem, whose proof splits on atoms by LEM (@lem-atom-splitting), so a line justified by TAUT, on a formula or on a propositional skeleton (Section 6.3), uses RAA in the sense just defined." Paid by item 1's shorter lead.
+5. **TAUT is not an intuitionistic rule** (new, S2 round 1; one sentence, ~40 words, appended to 07:9, the definition of an intuitionistic derivation): "TAUT (Section 4.8) is not among these rules: it is licensed by @cor-derivable-iff-valid, that is, by the completeness theorem, whose proof splits on atoms by LEM (@lem-atom-splitting), so a line justified by TAUT, on a formula or on a propositional skeleton (Section 6.3), uses RAA in the sense just defined." Paid by item 1's shorter lead.
 6. **B4's census is recomputed** (S2 round 1; supersedes R5 §4.7's "its solution 07:24–28 verbatim" for part (b)). R5 moved the Quick check 07:20–28 into B4 with its solution verbatim. That text predates the deepened Chapters 3–7. Part (a) (Chapter 2) stays verbatim unless ch02-deepen's delivered Chapter 2 adds a labelled result derived with a classical rule; S3 checks. Part (b) is recomputed by the drafter against the delivered Chapters 3–7, by the same rule ("derived with RAA, directly or through ¬¬E, LEM, or a cited result that uses one of them"). It lists at least what 07:28 lists, plus @def-rule-taut's rule TAUT and @prp-taut-skeleton (Section 6.3), both licensed through @thm-completeness, and every new result of 3.x, 4.x, 5.8 and 7.4–7.6 that the delivered text flags as classical. The table of item 1 and S2a item 13 are read off the recomputed census.
+
+   **Recomputed at S2 round 2** against the delivered Chapters 2–7 (every labelled proposition, theorem, lemma and corollary whose block, proof or folds use RAA, ¬¬E, LEM or TAUT, or cite a result that does; checked by grep and by reading each hit). The drafter writes B4's solution from this list:
+   - (a) Chapter 2: **unchanged**, 07:24 verbatim. The delivered Chapter 2 has exactly the seven classical results listed there (all in 2.5); `thm-squares-order` cites only `prp-contrapositive`, and `prp-equivalence-cycle`, `lem-not-iff-own-negation` and `prp-provable-equivalence-basics` use none.
+   - (b) Chapter 3: @prp-derivable-iff-negation-inconsistent (b), direction \( (\Leftarrow) \), whose box closes by RAA (the delivered text says so). Chapter 4: @lem-atom-splitting, through LEM, and with it @thm-completeness and the direction \( (\Leftarrow) \) of @cor-derivable-iff-valid; the step TAUT of @def-rule-taut, licensed through @cor-derivable-iff-valid; and, in the optional Section 4.10, @lem-lindenbaum (its key step uses RAA, through @prp-derivable-iff-negation-inconsistent), @thm-completeness-infinite and @thm-compactness, as the paragraph after the proof of @thm-completeness-infinite says (10-compactness.md:189). Chapter 5: none (`thm-barber` cites only `lem-not-iff-own-negation`; `prp-definitional-extension`, `prp-unique-existence-use` use no classical rule). Chapter 6: 07:28's six items, unchanged (@prp-quantifier-negation (a); \( \vdash \) of @prp-negated-implication; \( \vdash \) of @prp-bounded-quantifier-negation (a); the two directions \( \dashv \) of @prp-quantifier-passage; @prp-arbitrarily-close-equal), plus @prp-taut-skeleton (Section 6.3), through @cor-derivable-iff-valid; `prp-quantifier-distribution` ("all four are derived without RAA") and `prp-replacement` (rules of Chapters 1 and 2 only) are not classical. Chapter 7: none derived; the classical theorems of 7.6 (`thm-first-order-completeness` and what rests on it) are stated without proof, so the census does not reach them, and the solution says so in one clause.
+   - Not listed, since they are statements about valuations and derive nothing: the results of 4.4, 4.5 and 4.9 (for example `prp-standard-equivalences`, `thm-monotonicity`), whose remarks mention RAA only as history. The solution adds one sentence saying this, so that a student who lists them is told why they do not count.
+   - Size: the solution grows by about 110 words; it is an exercise solution and does not count against 8.7's main-line budget.
 
 **Quick checks:** R5's four, plus the contraposition check: five in ~3,915 words, about one per 780.
 
@@ -1004,7 +1010,7 @@ R5 §4.7 is executed in full. Changes and additions:
 **Ledger lines:**
 - The table: each row read off the cited statements (prp-double-negation, prp-contrapositive, prp-contrapositive-converse, prp-de-morgan, prp-implication-as-disjunction, prp-excluded-middle, prp-not-not-excluded-middle, prp-peirce, prp-negated-implication, prp-modus-tollens, prp-disjunctive-syllogism, exm-constructive-dilemma, prp-quantifier-negation, prp-quantifier-passage, all cited). Right column, propositional rows: F1.5 §08 (later section of this chapter; optional), prose pointer, and `thm-raa-independent` for two rows. Quantifier rows: stated without proof and marked so; nothing depends on them.
 - The Glivenko sentences: the theorem stated without proof (the remark 07:79–81), extended to finite lists of premises through the conjunction of the premises (inline; RAA-free step, S2a item 13).
-- Item 5's sentence: `def-rule-taut`, F1.3 §08, and `lem-atom-splitting`, F1.3 §08, cited; `def-propositional-skeleton`, F1.8 §03, prose pointer.
+- Item 5's sentence: `def-rule-taut`, `cor-derivable-iff-valid` and `lem-atom-splitting`, F1.3 §08, cited; `def-propositional-skeleton`, F1.8 §03, prose pointer.
 - B4's recomputed census (item 6): each listed result cited, against the delivered Chapters 3–7.
 - F8.7-c: moves with its text.
 - R1's clause: `prp-replacement`, F1.8 §02, cited.
@@ -1114,7 +1120,7 @@ It is optional, and nothing outside it depends on it. 8.7's pointers to it are p
    | RAA | **fails**: its box on \( \neg\varphi \) shows only that no stage reachable from \( w \) forces \( \neg\varphi \), that is, \( w \Vdash \neg\neg\varphi \); in \( M_1 \), \( w_0 \) forces \( \neg\neg p \) and not \( p \) |
 
    The full proof is in **fold F8.8-b** `title="The proof, case by case"` (~450 words), written in 4.7's terms.
-   (S2 round 1: renumbered to match 4.7's proof of @thm-soundness, 07-soundness.md:147–217, where Step 2 is the strong induction, Step 3 the cases and Step 4 the last line.)
+   (S2 round 1: renumbered to match 4.7's proof of @thm-soundness, 07-soundness.md:200–270 as delivered (S2 round 2; S1 cited 147–217), where Step 2 is the strong induction, Step 3 the cases and Step 4 the last line.)
    - Step 1: reduce to primitive rules, as 4.7 does, since a derived rule derived without RAA unfolds into primitive rules other than RAA.
    - Step 2: the claim for every line, by strong induction on \( k \) (@thm-strong-induction): every stage forcing the context \( \Gamma_k \) of line \( k \) forces its formula \( \varphi_k \).
    - Step 3: the cases. One-step rules use the clauses at \( w \). For →I: let \( w \) force \( \Gamma_k \), and let \( w' \ge w \) force \( \varphi \). By heredity \( w' \) forces \( \Gamma_k \), so \( w' \) forces the context of the box's last line, \( \Gamma_k \) and \( \varphi \) (@lem-context-inclusion (b)). By the induction hypothesis, \( w' \Vdash \psi \). So \( w \Vdash \varphi \to \psi \) by (K5). ¬I is the same with \( \psi = \bot \): no \( w' \ge w \) can force \( \varphi \), since it would force \( \bot \); so \( w \Vdash \neg\varphi \). ↔I is two →I cases. ∨E: \( w \) forces \( \varphi \) or \( \psi \) at \( w \) itself; apply the induction hypothesis to that side's box at \( w \). ⊥E: vacuous. RAA: the case fails, as the table says.
@@ -1374,19 +1380,19 @@ R5's pointers are already in the final numbering (D2's sweep reached the frozen 
 | index What you need | "From Chapter 7, only the statement in Section 7.2 under 'From counter-models to non-derivability'" | F1.6 §02, heading `#from-counter-models-to-non-derivability` | in place (D2) |
 | index fold F5.0-a | "@thm-structural-induction and the proof of @thm-soundness" (for 8.8) | F1.3 §03, §07 | in place |
 | 8.1 purpose paragraph | "Since Section 1.4 every derivation …" | F1.1 §05 | delivered (pilot D) |
-| 8.1 disjunction row | @exm-constructive-dilemma; "a derived rule in Section 2.3" | F1.1 §07; F1.2 §03 | delivered; 2.3's derived rule per ch02-deepen (wave A) |
+| 8.1 disjunction row | @exm-constructive-dilemma; "the derived rule CD of Section 2.3", @exr-derived-rules-b4 | F1.1 §07; F1.2 §03 | delivered (CD is a derived rule in 2.3's B4 (a); S2 round 2) |
 | 8.1 cycle | @prp-equivalence-cycle, @thm-odd-iff-square-odd | F1.2 §04 | in place |
-| 8.2 rows | @prp-implication-transitive; @prp-definitional-extension, @def-definite-description ("Section 5.8") | F1.1 §05; F1.4 §08 | 5.8's labels planned (layout §1.4; ch05-deepen) |
-| 8.2 double inclusion | @exm-extensionality-logical-half; "an axiom about sets (Section 5.7)" | F1.4 §07 | planned (ch05-deepen §4.7 item 3) |
-| 8.2 fold F8.2-a | "the second-pass Section 4.9 … @thm-monotonicity" | F1.3 §09 | planned (ch04-deepen) |
-| 8.3 TAUT paragraph | @def-rule-taut ("Section 4.8"); @def-propositional-skeleton, @prp-taut-skeleton ("Section 6.3") | F1.3 §08; F1.8 §03 | planned (ch04-deepen; ch06 blueprint) |
-| 8.4 unstated fact | "Section 3.3 took a paragraph of argument apart"; @exr-using-an-implication-b5 | F1.7 §03; F1.1 §04 | 3.3 planned (ch03 blueprint, wave A); B5 delivered |
+| 8.2 rows | @prp-implication-transitive; @prp-definitional-extension, @def-definite-description ("Section 5.8") | F1.1 §05; F1.4 §08 | delivered (5.8) |
+| 8.2 double inclusion | @exm-extensionality-logical-half; "an axiom about sets (Section 5.7)" | F1.4 §07 | delivered (5.7: the example, and its paragraph "For sets, the converse is taken as an axiom") |
+| 8.2 fold F8.2-a | "the second-pass Section 4.9 … @thm-monotonicity" | F1.3 §09 | delivered (4.9; semantic, positive and negative places, as the fold says) |
+| 8.3 TAUT paragraph | @def-rule-taut ("Section 4.8"); @def-propositional-skeleton, @prp-taut-skeleton ("Section 6.3") | F1.3 §08; F1.8 §03 | delivered (4.8; 6.3) |
+| 8.4 unstated fact | "Section 3.3 turned a paragraph of argument into a sequent"; @exr-using-an-implication-b5 | F1.7 §03; F1.1 §04 | delivered (3.3's "Extracting an argument", step 3 "Name the unstated facts"); B5 delivered |
 | 8.5 generalising | "the move of ∀I (Section 5.4)" | F1.4 §04 | in place |
-| 8.6 (N12)–(N14) | @def-rule-universal-elimination; @ax-induction, @thm-strong-induction; @def-rules-existential; "Section 5.8"; @thm-barber ("Section 5.6") | F1.4 §03; F1.3 §02; F1.4 §06, §08; F1.4 §06 | `thm-barber` planned (ch05-deepen) |
+| 8.6 (N12)–(N14) | @def-rule-universal-elimination; @ax-induction, @thm-strong-induction; @def-rules-existential; "Section 5.8"; @thm-barber ("Section 5.6") | F1.4 §03; F1.3 §02; F1.4 §06, §08; F1.4 §06 | delivered (`thm-barber` in 5.6) |
 | 8.6 traditional names | "a common error of Section 1.6" | F1.1 §07 | delivered (affirming a disjunct) |
-| 8.7 R1 | @prp-replacement ("Section 6.2") | F1.8 §02 | planned (ch06 blueprint) |
+| 8.7 R1 | @prp-replacement ("Section 6.2") | F1.8 §02 | delivered (6.2; its statement covers a part under a quantifier) |
 | 8.7 → 8.8 | "the optional Section 8.8" (six prose pointers, §4.7 item 2: the table cell 07:15, the Quick check of "Excluded middle cannot be refuted", B1's solution, R3's solution, the new table's lead, B5 (d)'s parenthesis) | F1.5 §08 | this file; written in the same pass |
-| 8.7 TAUT sentence | @lem-atom-splitting, "TAUT (Section 4.8)", "Section 6.3" | F1.3 §08; F1.8 §03 | in place; TAUT planned (ch04-deepen) |
+| 8.7 TAUT sentence | @lem-atom-splitting, "TAUT (Section 4.8)", "Section 6.3" | F1.3 §08; F1.8 §03 | delivered |
 | 8.8 | @thm-raa-independent, @thm-soundness, @lem-context-inclusion, @thm-strong-induction, @thm-structural-induction, @thm-structural-recursion, @def-truth-value, @def-formula, @def-derivation, @def-derivable, @cor-derivable-iff-valid, @lem-atom-splitting, @def-rule-taut, @thm-classical-rules-interderivable, @exm-triple-negation, @prp-double-negation | F1.3, F1.2, F1.1 | in place |
 
 **Forward pointers to later volumes:** exactly R5's three Looking-ahead boxes (8.3, 8.6, 8.7). After drafting, S4 greps each section's main line and folds for `Analysis on the Real Line`, `Sets, Relations`, `Number Systems`, `later volume` and `this series` (R5 binding rule 3); the only hits allowed are the three boxes, the index's Minimum line (layout G14) and the frozen C1 stem (R5).
@@ -1401,7 +1407,27 @@ R5's pointers are already in the final numbering (D2's sweep reached the frozen 
 - F1.2 §05 (costumes).
 - F1.3 §07 (who objected to RAA).
 - F2.1 (levels; silent steps; entries (N1), (N4), (N5), (N7), with numbers unchanged).
-- F1.1 index (Minimum for fd2: "F1.5 core").
+- F1.1 index (Minimum for fd2: "F1.5 core"), and the same Minimum line in the indexes of F1.2, F1.7, F1.3, F1.4 and F1.8, and F1.6's index row ("F1.5 (Chapter 8, core)"; ch07 index:56 "Chapter 8 turns derivations into the prose of mathematics"). Paid by the chapter as a whole; 8.8 is optional, which the Minimum's "core" allows.
+- F1.3 §08 (the box at 08-completeness.md:700, "Chapter 8 names the steps a written proof passes over without comment"; STATUS row "F1.3 §08 … F1.5 (paid: 8.3 `def-silent-steps`)"): paid by `def-silent-steps`, verbatim, and by 8.3's TAUT paragraph (§4.3 item 2), which matches the convention of `def-rule-taut` (TAUT only for a step a written proof passes over). S2 round 2: S1 omitted this row.
+- F1.4 §08 (the Looking-ahead box at 08-counting-and-descriptions.md:308, "Chapter 8 collects 'we define …' and 'the …' with the other phrases"; STATUS row "F1.4 §08 → F1.5 §02"): paid by 8.2's rows "a definition" and "the" (§4.2 item 2). S2 round 2: S1 recorded it only as a layout seam.
+- F1.3 §09 (STATUS: "nothing to pay"): 4.9's note says that nothing in Chapters 5–8 uses the section. F8.2-a's prose pointer to @thm-monotonicity sits in a fold and nothing rests on it, so the note stays true.
+- F1.8 §02 (STATUS row 75, "what is at stake when `prp-quantifier-negation` (a) needs RAA"): still paid by 07:109's paragraph "Not every, and some not" and `exr-excluded-middle-b3` (both kept by R5); 8.7's table row and A2 (k) now pay it too. The ch06 02:880 pointer ("Chapter 8 … catalogues the wrong negations of this section") is (N11), unchanged.
+
+**Every prose pointer of Chapters 1–7 into Chapter 8** (S2 round 2; grep of "Chapter 8", "Section 8." and "F1.5" in `fd1/src/ch0[1-7]-*/`; eleven hits, no "Section 8.k" pointer and no citation of an entry (Nk) by number):
+| Pointer | Paid by |
+|---|---|
+| ch02 05:1120 (history of those who declined RAA; a proof by contradiction in costume) | 8.7 "A short history"; the costumes of 8.1 (kept) |
+| ch04 index:51 and 07:456 (what reductio asserts, who objected) | 8.7 `#one-extra-rule`, `#what-a-proof-provides`, "A short history" |
+| ch04 08:700 (steps passed over without comment) | 8.3 `def-silent-steps`, TAUT paragraph |
+| ch05 04:787 (the errors of 5.4 in a catalogue) | `exm-not-allowed-catalogue` (N1), (N3) (kept) |
+| ch05 07:417 ("You write" column into a full dictionary) | 8.1–8.2 dictionary tables and the rule card (R5) |
+| ch05 08:308 ("we define", "the") | 8.2's two new rows |
+| ch06 02:880 (not every/some not; wrong negations) | 8.7 07:109, B3, the table, A2 (k); (N11) |
+| ch06 02:1407 (ledger: F1.5 in the Looking-ahead box) | 8.7 table, quantifier row "stated without proof" |
+| ch06 04:347 (eleven lines become three sentences, at several levels) | 8.3 `exm-uniform-four-levels` (levels 1 and 3, F5.3-c levels 0 and 2; R5) |
+| ch07 index:56 (derivations into prose) | the chapter |
+
+Nothing is missing, so no budget is added.
 
 **Rows changed as R5 §6 lists them.** R5 names them by its row numbers of 2026-10-12; the coordinator matches them by content:
 - the AN1.1 facts row (§01 sample sentences; the clause (S2) leaves);
@@ -1424,7 +1450,7 @@ R5's pointers are already in the final numbering (D2's sweep reached the frozen 
   - layout §8, Wave 3: "5.8 → 8.2" (paid, §4.2 item 2); "4.8/6.3 → 8.3" (paid, §4.3 item 2).
   - Critic, smaller correction 3: "8.7 points to 8.8" (paid, §4.7 item 2).
   - Critic, smaller correction 6: the "we define" row (paid).
-- **Backward citations of planned labels**, for S8 to confirm against the delivered chapters: `def-rule-taut`, `thm-monotonicity`, `thm-barber`, `exm-extensionality-logical-half`, `def-definite-description`, `prp-definitional-extension`, `prp-replacement`, `def-propositional-skeleton`, `prp-taut-skeleton`; and 3.3's argument extraction (prose). If one of these chapters lands after Chapter 8 is drafted (it should not: Wave 3 follows G3), S3 writes the sentence without the `@ref` and S8 restores it.
+- **Backward citations of planned labels**, **confirmed at S2 round 2** against the delivered chapters (S8 re-greps only): `def-rule-taut`, `thm-monotonicity`, `thm-barber`, `exm-extensionality-logical-half`, `def-definite-description`, `prp-definitional-extension`, `prp-replacement`, `def-propositional-skeleton`, `prp-taut-skeleton`; and 3.3's argument extraction (prose). If one of these chapters lands after Chapter 8 is drafted (it should not: Wave 3 follows G3), S3 writes the sentence without the `@ref` and S8 restores it.
 
 ---
 
@@ -1433,7 +1459,7 @@ R5's pointers are already in the final numbering (D2's sweep reached the frozen 
 | Chapter | Holds | So Chapter 8 does not |
 |---|---|---|
 | 1 | purpose annotations introduced (1.4); the constructive dilemma worked (1.6); affirming a disjunct (1.6) | re-introduce the annotation (8.1 reads it); re-derive the dilemma (8.1 gives it a row) |
-| 2 | ¬I against RAA (2.5, its single home, ch02-revision); derived rules, with CD and MPT as derived rules (2.3); TFAE by a cycle (`prp-equivalence-cycle`, 2.4) | teach the ¬I/RAA distinction again (8.1's faces and BHK preview only, R5); re-derive the cycle lemma (8.1 cites it) |
+| 2 | ¬I against RAA (2.5, its single home, ch02-revision); derived rules, with CD and MPT used as derived rules in Exercise B4 of 2.3; TFAE by a cycle (`prp-equivalence-cycle`, 2.4) | teach the ¬I/RAA distinction again (8.1's faces and BHK preview only, R5); re-derive the cycle lemma (8.1 cites it) |
 | 3 | the search (3.1); argument extraction and suppressed premises (3.3) | teach extraction (8.4 recalls it in one sentence) |
 | 4 | soundness and completeness (4.7, 4.8); TAUT (4.8); monotonicity (4.9, second pass); structural induction and recursion (4.3) | prove soundness again (8.8's fold reuses 4.7's Steps 1–4 and redoes only the box cases); define TAUT (8.3 cites it) |
 | 5 | ∃! and "the", definitional extension (5.8); Russell (5.6); the logical half of extensionality, and the converse as an axiom about sets (5.7) | prove that a definition adds nothing (8.2 cites it); prove that no barber exists (8.6 cites it); treat set equality as logic (8.2 cites extensionality as an axiom) |
@@ -1485,7 +1511,7 @@ R5 §8's items 1–25 stand, and S2a re-runs only those this file touches (items
    - every Terms line, against its target.
 7. 8.1:
    - The purpose paragraph. Each phrase pairs with the annotation the engine prints (`latex/fitch-book.sty`'s "asm, for …"), including ↔I and the bounded ∀I.
-   - The constructive-dilemma row, against `exm-constructive-dilemma` and 2.3's derived rule as delivered by ch02-deepen.
+   - The constructive-dilemma row, against `exm-constructive-dilemma` and 2.3's `exr-derived-rules-b4` (a), where CD is used as a derived rule (checked at S2 round 2).
    - The cycle row. `exm-rhetoric-cycle` (in fold F8.1-e): the three arrows; \( n^2 = 2a + 1 \Rightarrow n^2 + 2n = 2(a + n) + 1 \); \( (2k)^2 + 2(2k) = 2(2k^2 + 2k) \); (iii) ⇒ (i) without RAA; "three implications for six". The subsection teaches the move with the fold closed (lead, row, Quick check).
    - The four-condition Quick check.
    - The Not-allowed lines and tags:
@@ -1536,7 +1562,7 @@ R5 §8's items 1–25 stand, and S2a re-runs only those this file touches (items
     - The worked search.
     - The remark: Kripke completeness, the disjunction property and quantifier models are each stated without proof.
     - The Not-allowed lines.
-    - The opening's and the Purpose line's claims: 8.7 names the laws; `thm-raa-independent` (optional, 4.x) proves the non-derivability of LEM and ¬¬E by a three-valued reading; 8.7 states the rest without proof.
+    - The opening's and the Purpose line's claims: 8.7 names the laws; `thm-raa-independent` (optional, 4.7) proves the non-derivability of LEM and ¬¬E by a three-valued reading; 8.7 states the rest without proof.
 
 **New and changed exercise answers:**
 15. 8.1 A2 (h) (the √5 opening: the box is ¬I despite "for a contradiction"), (l); B4 (new at S2 round 1): the five identities, the split on \( b \) by (E1), the two names in each case of (iii) ⇒ (i), the marking scheme, and the fatal-error tags (N4) and (N9) against §4.6 item 2's line.
@@ -1566,6 +1592,8 @@ Some sequents are **standard and forced**. 8.8 must refute the propositional rig
 
 ---
 
+**Frozen after S2 (final revision, 2026-10-25).**
+
 ## 10. Notes for S3 and S4
 
 - **One pass.** S3 executes R5 §4 and this file's §4 together, section by section, in R5's new order, with this file's insertion points (each names its neighbour in R5's order). There is no intermediate "R5-only" draft.
@@ -1578,7 +1606,7 @@ Some sequents are **standard and forced**. 8.8 must refute the propositional rig
 - **Fallbacks.**
   - 8.8's Quick-check fallback (§4.8, after item 10) is used only if `check_structure.py` flags the density.
   - The heading link of binding rule 4 is used only if the engine resolves heading ids. S4 tests it once and records the result in the S4 note.
-- **Seams (S8).** The planned labels of §6.2 against ch03, ch04-deepen, ch05-deepen and the ch06 blueprint as delivered; R5 §6's R4 seam (8.2's reprint against 6.1's derivation; F5.3-c against 6.4's).
+- **Seams (S8).** Reconciled at S2 round 2 (S2 replies, round 2): the planned labels of §6.2 are delivered; R5 §6's R4 seam holds (8.2's reprint and bracket table against 06-translation.md:374–399; level 0 of `exm-uniform-four-levels` and F5.3-c against 6.4's derivation). S8 re-greps them after drafting.
 - **The S9 packet** for Chapter 8 (layout G4) goes with the whole-volume pass. The packet names the judgment calls of this file:
   - D6, banks of 12 against the layout's 8: this file's choice, not a STYLE floor (Time ≈ 37.4 h, "about 35", against the layout's 33; banks of 8 give ≈ 33.9 h);
   - the Time line's rounding risk: 37.4 h is about 0.1 h under the 37.5 h boundary, so roughly 230 more main-line words turn "about 35" into "about 40" (§5);
@@ -1617,4 +1645,20 @@ Some sequents are **standard and forced**. 8.8 must refute the propositional rig
    - The Time line was recomputed: ≈ 37.4 h, "about 35". The rounding risk is in §5 and in the S9 packet.
 17. **D6 is a choice, not a STYLE floor** (minor). Applied (D6, §5, §10). STYLE §12.8's sizes bind rule sections, and Chapter 8 has none. Banks of 12 are this file's choice, and banks of 8 would give ≈ 33.9 h.
 18. **Bookkeeping** (minor). Applied. §6.1 lists all six 8.7 → 8.8 pointers, and the §07 → §08 row names B5 (d)'s claim. (L₃) and (L₄) are added to the F1.5 → F2.2 row.
+
+## S2 replies (round 2: reconciliation)
+
+2026-10-25: the final S2 revision, against the delivered and approved Chapters 1–7, with no re-review. Every label, section pointer and seam this file cites, and those of R5 that it keeps, was grepped in `fd1/src/ch0[1-7]-*/`.
+
+1. **Planned labels** (§3.2, §6.1, §6.2). All nine are delivered under their planned names and in their planned sections: `def-rule-taut` 4.8, `thm-monotonicity` 4.9, `thm-barber` 5.6, `exm-extensionality-logical-half` 5.7, `def-definite-description` and `prp-definitional-extension` 5.8, `prp-replacement` 6.2, `def-propositional-skeleton` and `prp-taut-skeleton` 6.3. Every other outside label cited by this file or by R5's kept text exists where cited (the (N1)–(N14) rule pointers: 1.4, 1.6, 4.2, 5.3, 5.4, 5.6, 5.8; the table's ten results of Chapters 2 and 6; the 8.8 list). §6.1's status column and §3.2 updated. The statements were checked against what this file says of them: the table's columns against the delivered statements (each says where RAA enters; `prp-quantifier-passage` names exactly \( \dashv \) in (d) and (e)); F8.2-a against `thm-monotonicity` (positive and negative places, semantic); `prp-replacement` covers a part under a quantifier (R1); `thm-structural-recursion` allows any values (8.8's set-valued recursion); `lem-context-inclusion` (b) as F8.8-b uses it. Not changed: R5's `def-supremum`, `thm-naturals-unbounded`, and this file's `thm-division-algorithm`, `lem-naturals-arithmetic` are labels of later volumes, cited as prose (STATUS rows), not `@ref`s.
+2. **Constructive dilemma** (§4.1 item 2; §6.1; §7; S2a item 7). The delivered 2.3 has no labelled derived rule CD: CD is used as a derived rule in `exr-derived-rules-b4` (a) (and MPT in its (c)). The row's first cell now reads "the derived rule CD of Section 2.3, @exr-derived-rules-b4"; §7's row 2 likewise.
+3. **The 3.3 recall** (§4.4 item 2; §6.1). Reworded to 3.3 as delivered, whose step 3 is "Name the unstated facts": "Section 3.3 turned a paragraph of argument into a sequent: its conclusion, its stated premises, and the unstated facts that close its gaps." Same length.
+4. **TAUT's licence** (§4.7 item 5 and its ledger line). The delivered `def-rule-taut` licenses TAUT through @cor-derivable-iff-valid, so item 5's sentence names it before the completeness theorem (+4 words; 8.7 expected ≈ 3,919, under 3,950).
+5. **B4's census** (§4.7 item 6; S2a item 3). Recomputed now rather than left to S3: part (a) unchanged; part (b) adds `prp-derivable-iff-negation-inconsistent` (b) (3.2, its box closes by RAA), TAUT and `prp-taut-skeleton`, and the optional 4.10's `lem-lindenbaum`, `thm-completeness-infinite`, `thm-compactness`. Chapters 5 and 7 add none (7.6's theorems are stated without proof). The semantic results of 4.4, 4.5 and 4.9 are excluded with one sentence of reason. The full list is in item 6.
+6. **F8.8-b's steps** (§4.8 item 5; round 1 reply 5). 4.7's Steps 1–4 are at 07-soundness.md:200–270 in the delivered text, not 147–217; same order and content (Step 2 strong induction on \( k \), Step 3 the cases, Step 4 the last line), so only the line pointer changes. S2a item 14: `thm-raa-independent` is 4.7, not "4.x".
+7. **R5 §6's R4 seam.** Holds, with no change. 8.2's reprint: the delivered 6.1 derivation (06-translation.md:374–399) has 16 lines, the \( \forall\varepsilon \) box 2–15 closing at 16, the \( \exists E \) box 5–14, line 4 \( \forall E \) at \( \varepsilon_0/2 \) with line 3, line 10 the inequality at \( \varepsilon_0/2 \), line 11 by arith from 10, boxes of \( n_0 \) and \( n_0 \ge N_0 \) at 7 and 9, closing at 13 and 12, \( \exists I \) at 14. R5 §4.2 item 2's abbreviations \( A \), \( B \), its bracket table and 02:13–16's line numbers all match; 6.1 names no matrices, so R5's \( A(n, \varepsilon) \), \( B(n, \varepsilon) \) stand. F5.3-c: the level-0 derivation now in 03:217–238 is line for line 6.4's derivation of `exm-uniform-implies-continuous`; R5's level-1 line numbers (7; 8, 9, 10) and A1's numbers stand. R5's "ch04 08" and "ch04 10" mean 6.1 and 6.4.
+8. **Pointers into Chapter 8** (§6.2). The eleven prose pointers of Chapters 1–7 into Chapter 8 and every STATUS row targeting F1.5 are paid by R5's kept text or this file's plan; the table is in §6.2. Three STATUS rows that S1 left out of §6.2 are now listed (F1.3 §08; F1.4 §08; the index Minimum lines and F1.6's index), plus the F1.3 §09 "nothing to pay" row, which F8.2-a's fold pointer leaves true. Nothing is missing, so nothing is added. No chapter 1–7 cites an entry (Nk) by number.
+9. **Delivered edits inside Chapter 8's current text** (no line shift since `034a2ae`; R5's and this file's line numbers stand). Two seam edits from later chapters change lines that R5 keeps verbatim: ix:11 now names "the cut rule (@lem-weakening-cut)" (it moves into fold F5.0-a verbatim, which keeps it), and 05:14's strategy 3 now reads "(Section 3.1, extended in Section 6.3)". The drafter keeps both as delivered.
+10. **§9's S2a items.** Round 1 left none open. The items that waited on delivered chapters are settled here: item 3 (census, TAUT, R1's clause), item 7 (dilemma row), item 8 (monotonicity, extensionality against 5.7, 5.8 B4 and 7.2), item 10 (3.3 recall), item 14 (recursion, 4.7's steps, `lem-context-inclusion`), item 22 (`lem-atom-splitting` is the splitting lemma B2 (g)'s note names). No new derivation was written, so `check_fitch.py` had nothing new to check.
+11. **Outside this file, for the coordinator** (not changed here): fd2's `07-gate-0.md:365` cites "*Logic and Proof*, Section 5.6 (@fd1:exm-not-allowed-catalogue)", which is Section 8.6 under the final layout.
 
