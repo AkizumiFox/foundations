@@ -588,7 +588,7 @@ exr-countable-sets-b2 (solution): 2^1 3^0 = 2, 2^0 3^0 = 1 | arithmetic, by hand
 exr-countable-sets-c1 (solution): sum of terms each at most 2^k is at most the sum of the 2^k; splitting off the last term of a finite sum; shifting the index | R order, school fact; F2.2 §03 (prose after def-sum-product, no label)
 exr-countable-sets-c1 (solution): indicator function 1_F | F2.1 §05 (example in prose)
 exr-countable-sets-c1 (solution): a non-empty finite subset of N is {x_1, ..., x_n} | remark at the end of F2.2 §05 (no label)
-exm-method-list-it (solution): (the Quick check after exm-method-list-it) n^2 + 3n in N; the inclusion into N is injective | lem-naturals-arithmetic (b); verify/ch03/exm-list-two-element-subsets.py
+exm-method-list-it (solution): (the Quick check after exm-method-list-it) n^2 + 3n in N; the inclusion into N is injective | lem-naturals-arithmetic (b); inclusion injective by definition
 exm-list-integer-combinations (solution): (m - m')/(n' - n) is rational for integers with n != n' | Q arithmetic, school fact
 exm-list-two-element-subsets (solution): trichotomy names min S and max S; n + 1 != 0; c injective | R order, school fact; verify/ch03/exm-list-two-element-subsets.py
 exr-countable-sets-b4 (solution): (a) injectivity of f -> 2^f(0) 3^f(1); (c), (d) counterexamples | verify/ch03/exr-countable-sets-b4.py

@@ -308,7 +308,7 @@ A function \( f \colon \nN \to \nN \) is **eventually zero** if there is \( N \i
 
 - \( Z_0 \) has one element, the zero function, so it is countable.
 - For \( N = 1 \), \( f \mapsto f(0) \) is a bijection \( Z_1 \to \nN \): a function in \( Z_1 \) is determined by its value at \( 0 \), and every value occurs.
-- For \( m \ge 2 \), \( f \mapsto (f(0), \dots, f(m - 1)) \) is a bijection \( Z_m \to \nN \times \dots \times \nN \) (\( m \) factors), by the same reasoning and the characteristic property of tuples; the product is countable by @cor-product-countable, and so is \( Z_m \) (compose a surjection \( \nN \to \nN \times \dots \times \nN \) with the inverse bijection, @prp-countable-image).
+- For \( N \ge 2 \), \( f \mapsto (f(0), \dots, f(N - 1)) \) is a bijection \( Z_N \to \nN \times \dots \times \nN \) (\( N \) factors), by the same reasoning and the characteristic property of tuples; the product is countable by @cor-product-countable, and so is \( Z_N \) (compose a surjection \( \nN \to \nN \times \dots \times \nN \) with the inverse bijection, @prp-countable-image).
 
 By @thm-countable-union, \( Z \) is countable. (That theorem uses @ax-choice; here it could be avoided, since each \( Z_N \) comes with an explicit listing, but the question did not ask for that.)
 
@@ -330,7 +330,7 @@ exr-infinite-sets-b3 (solution): (0, infinity) is an interval with more than one
 exr-infinite-sets-c1 (solution): max{a, b} of two naturals exists and is >= each | prp-finite-max (F2.2 §03), used silently in the given half
 exr-infinite-sets-c1 (solution): counterexample to the plain diagonal: f_0(n) = 5 + n, f_1(n) = n give g(0) = 6, g(1) = 2 | verify/ch03/exr-infinite-sets-c1.py
 exr-infinite-sets-r1 (solution): 2^(K+1) - 2^K = 2^K; 2^K >= 1 (a positive natural number) | def-power, prp-power-laws (d), (e), lem-naturals-arithmetic (a), used silently; verify/ch03/exr-infinite-sets-r1.py
-exr-infinite-sets-r2 (solution): soundness for predicate logic (counter-model gives non-derivability) | F1.7 §02, subsection #from-counter-models-to-non-derivability (statement; proof in optional F1.7 §03); prose pointer, unlabelled statement
+exr-infinite-sets-r2 (solution): soundness for predicate logic (counter-model gives non-derivability) | F1.6 §02, subsection #from-counter-models-to-non-derivability (statement; proof in optional F1.6 §03); prose pointer, unlabelled statement
 exr-infinite-sets-r3 (solution): row <-> set of T-places and truth function <-> set of T-rows are bijections; equinumerous with an n-element set has n elements | inline; prp-equinumerous-properties via composition; verify/ch03/exr-infinite-sets-r3.py
-exr-infinite-sets-r4 (solution): Z_m -> N x ... x N (m factors) bijection | characteristic property of tuples (F2.1 §04, def-ordered-pair)
+exr-infinite-sets-r4 (solution): Z_N -> N x ... x N (N factors) bijection, N >= 2 | characteristic property of tuples (F2.1 §04, def-ordered-pair)
 -->

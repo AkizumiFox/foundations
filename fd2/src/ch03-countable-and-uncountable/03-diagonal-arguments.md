@@ -474,7 +474,7 @@ exm-method-diagonal (claim): (check) the unflipped diagonal of the all-zero list
 thm-binary-sequences-uncountable (claim): (scratch work) table rows match the proof | inline
 exm-diagonal-outgrows-list (solution): max of n + 1 numbers exists; g(n) > f_k(n) for n >= k | prp-finite-max (F2.2 §03, cited); verify/ch03/exm-diagonal-outgrows-list.py
 thm-cantor (claim): (hook) R_A disagrees with each x in A about x | thm-russell (F2.1 §02, cited)
-exr-diagonal-arguments-b4 (solution): (a) periodic sequences determined by p values; P_p listed by a rule; union countable | thm-division-algorithm (F2.2 §02), prp-power-set-count (F2.2 §05), thm-countable-characterizations, thm-countable-union, prp-countable-subset, exm-choice-free-unions (cited); verify/ch03/exr-diagonal-arguments-b4.py
+exr-diagonal-arguments-b4 (solution): (a) periodic sequences determined by p values; union countable; one formula L(p,k) on Z>0 x N composed with a surjection from N lists them without choice | thm-division-algorithm (F2.2 §02), prp-power-set-count (F2.2 §05), thm-countable-characterizations, thm-countable-union, prp-countable-subset, exm-choice-free-unions (cited); verify/ch03/exr-diagonal-arguments-b4.py
 exr-diagonal-arguments-b4 (solution): (b) interleaving injection; (c) left inverse, right inverse; (d) N x N countable; (e) restriction onto | prp-function-equality, thm-left-inverse-iff-injective, prp-right-inverse-surjective (F2.1 §06), thm-product-countable, prp-countable-image (cited); verify/ch03/exr-diagonal-arguments-b4.py
 exr-diagonal-arguments-a1 (solution): D = {2} | verify/ch03/exr-diagonal-arguments-a1.py
 exr-diagonal-arguments-b2 (solution): the finite subsets of N form a countable set | exr-countable-sets-c1 (cited; an exercise may cite an earlier one)
