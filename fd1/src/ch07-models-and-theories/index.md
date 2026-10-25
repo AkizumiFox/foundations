@@ -47,13 +47,13 @@ The axioms of a partial order say that \( \le \) is reflexive, antisymmetric and
 - **Define by a formula.** (Section 7.5)
 - **An automorphism moves what cannot be defined.** (Section 7.5, second pass)
 
-**Where this goes.** *Sets, Relations, and Cardinality*, Chapter 1 develops the sets, pairs and functions that Sections 7.1 and 7.5 use in their everyday sense, and its Chapter 3 builds a counter-model by Section 7.2's procedure; Chapter 2 studies the relations of Section 7.4.
+**Where this goes.** *Sets, Relations, and Cardinality*, Chapter 1 develops the sets, pairs and functions that Sections 7.1 and 7.5 use in their everyday sense, and its Chapter 3 builds a counter-model by Section 7.2's procedure; its Chapter 2 studies the relations of Section 7.4.
 
 ## Summary
 
 A structure fixes a domain and a meaning for every symbol, an assignment fixes the free variables, and seven clauses decide every formula (@def-satisfaction); a sentence is true or false in a structure, never "true" alone. A counter-model makes the counterexample set true; by soundness for predicate logic (stated in [Section 7.2](#from-counter-models-to-non-derivability), proved in the optional Section 7.3) it rules out every derivation: the stalled searches of Chapters 5 and 6 become theorems of non-derivability, and each side condition of the quantifier rules is shown needed. A theory is a set of axioms (@def-theory); a model shows it consistent (@prp-model-shows-consistency), and two models show a sentence independent of it (@prp-model-shows-independence), as the antichain does for comparability and the triangle for commutativity. Formulas define sets (@def-definable-set), and, on the second pass, isomorphic structures satisfy the same sentences (@thm-isomorphism-invariance).
 
-Proved: the semantics, and every non-derivability result of the chapter, given the soundness statement. Stated without proof (Section 7.6): completeness, that every consistent theory has a model, and compactness. Beyond this volume: why no consistent theory whose axioms a procedure can list, and which derives the basic facts of arithmetic, decides every sentence about \( \nN \) (Gödel's incompleteness theorem, named in Section 7.6). Chapter 8 turns derivations into the prose of mathematics.
+Proved: the semantics, and every non-derivability result the chapter gets from a counter-model, given the soundness statement. Stated without proof: the undecidability of derivability (Church and Turing; Section 7.2, again in 7.6); in the optional Section 7.6, completeness (every consistent theory has a model), compactness, the Löwenheim–Skolem theorem and the decidability of monadic sentences; and, in the solution to Exercise R2 of Section 7.5, that \( P \wedge Q \) cannot be derived from its premise without \( \rulename{RAA} \) (nothing depends on it). Beyond this volume: why no consistent theory whose axioms a procedure can list, and which derives the basic facts of arithmetic, decides every sentence about \( \nN \) (Gödel's incompleteness theorem, named in Section 7.6). Chapter 8 turns derivations into the prose of mathematics.
 
 ## Terms
 

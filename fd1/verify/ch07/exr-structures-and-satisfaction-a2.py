@@ -9,7 +9,7 @@ assert not sat(ALL("x", P("P", "x")), M, {}) and not sat(P("P", "x"), M, {"x": "
 assert sat(EX("x", NOT(P("P", "x"))), M, {}) and sat(NOT(P("P", "x")), M, {"x": "b"})
 # (c) x*x + 1 at x = -2
 assert (-2) * (-2) + 1 == 5
-# (d) free variables x, z; only x matters: vary z on a small order, the verdict is unchanged
+# (d) free variables x, z; z never matters; x matters in (N, <=) but not when <= is empty
 D = [0, 1, 2]
 Mo = structure(D, pred={"<=": {(a, b) for a in D for b in D if a <= b}})
 f = AND(ALL("y", P("<=", "x", "y")), ("eq", "z", "z"))
@@ -17,6 +17,9 @@ for x in D:
     vals = {sat(f, Mo, {"x": x, "z": z, "y": 0}) for z in D}
     assert len(vals) == 1
 assert {sat(f, Mo, {"x": x, "z": 0}) for x in D} == {True, False}  # x does matter
+assert sat(f, Mo, {"x": 0, "z": 0}) and not sat(f, Mo, {"x": 1, "z": 0})  # l(x) = 0 vs 1
+Me = structure(D, pred={"<=": set()})
+assert {sat(f, Me, {"x": x, "z": z}) for x in D for z in D} == {False}  # <= empty: x does not matter
 # (e) exists x forall y (x <= y) in {0,1,2}, witness 0
 assert sat(EX("x", ALL("y", P("<=", "x", "y"))), Mo, {})
 assert sat(ALL("y", P("<=", "x", "y")), Mo, {"x": 0})

@@ -5,7 +5,7 @@ Sections 5.3 to 6.4 derived a good deal, and some searches stalled. The converse
 ::: {.remark}
 [Looking back]
 
-Section 4.4 gave each formula of Chapter 4 a truth value by recursion on the formula, one clause per connective, under a row. This section does the same for first-order formulas, with a structure and an assignment in place of a row. Clauses (S3)–(S5) below are Chapter 4's clauses word for word; (S6) and (S7), for the quantifiers, are the new ones.
+Section 4.4 gave each formula of Chapter 4 a truth value by recursion on the formula, one clause per connective, under a row. This section does the same for first-order formulas, with a structure and an assignment in place of a row. Clauses (S3)–(S5) below are Chapter 4's clauses for \( \bot \) and the connectives, read as conditions for satisfaction instead of truth under a row; (S6) and (S7), for the quantifiers, are the new ones.
 :::
 
 ## Why a row is not enough
@@ -47,7 +47,7 @@ The symbol \( = \) is not interpreted by \( \fM \): in every structure it means 
 
 In words. (M1) says what the variables range over, and insists that there is at least one object. (M2) says which object each name names; two constants may name the same object. (M3) makes each function symbol an operation that can be applied to **any** objects of the domain and always returns an object of the domain. (M4) makes each predicate symbol a relation: \( R^{\fM} \) is the set of tuples for which \( R \) "holds". A one-place predicate symbol \( P \) becomes a subset \( P^{\fM} \subseteq D \), a two-place one a set of ordered pairs, and so on. Here \( D^n \) is the set of \( n \)-tuples \( (d_1, \dots, d_n) \) of elements of \( D \); this section uses only their everyday meaning.
 
-We usually describe a structure in one line, naming the domain and the meaning of each symbol, and write "\( \fM = (\nZ, <) \)" for the structure with domain \( \nZ \) in which the symbol \( < \) means the usual order. When a symbol has its usual meaning on a familiar set, we say so and do not write \( <^{\fM} \).
+We usually describe a structure in one line, naming the domain and the meaning of each symbol, and write "\( \fM = (\nZ, <) \)" for the structure with domain \( \nZ \) in which the symbol \( < \) means the usual order. When a symbol has its usual meaning on a familiar set, we say so and do not write \( <^{\fM} \). When the domain is followed by a list of symbols, a semicolon separates the domain from the list, as in \( (\nR; 1, +, \cdot) \): each listed symbol has its usual meaning on that set, and only the listed symbols belong to the structure. With a single symbol we may also write a comma, as in \( (\nZ, <) \).
 
 **Examples**, simplest first.
 
@@ -57,7 +57,7 @@ We usually describe a structure in one line, naming the domain and the meaning o
 - *Arithmetic.* \( D = \nR \), with the constants \( 0 \) and \( 1 \) naming zero and one, the function symbols \( + \), \( \cdot \) and two-place \( - \) meaning addition, multiplication and subtraction, the one-place symbols \( - \), \( (\cdot)^2 \) and \( \abs{\cdot} \) meaning negation, squaring and absolute value, and \( < \), \( \le \), \( > \), \( \ge \) the usual order. Extended by the other familiar symbols with their usual meanings (numerals, halving, the predicates \( \in A \), division with its value at a zero denominator fixed arbitrarily as in the non-example below, and a function symbol for each sequence or function an example uses), this is the structure in which the analysis examples of Chapters 5 and 6 have been read all along.
 
 ::: {.second-reading title="A non-example, and the repair used for 1/n"}
-*Non-example by minimal change.* Take the arithmetic structure and add a one-place function symbol \( g \), meant to be read as \( x \mapsto 1/x \). This is **not** a structure: (M3) asks for a function defined at every element of \( D \), and \( 1/0 \) is not defined. Everything else in the description is fine; exactly clause (M3) fails, at the single point \( 0 \). There are two repairs. Shrink the domain to \( (0, \infty) \), where \( 1/x \) is always defined; or keep \( \nR \) and give \( g \) any value at \( 0 \), say \( g^{\fM}(0) \coloneqq 0 \). The second repair is the one this book uses for terms such as \( 1/n \): the value at \( 0 \) is fixed arbitrarily and is never looked at, because such terms are used only under a bound \( n \in \nZ_{>0} \) (as in @exr-models-c3), exactly as a sequence \( a_n \) was read in Section 5.1 as a function symbol whose values off \( \nN \) are never used.
+*Non-example by minimal change.* Take the arithmetic structure and add a one-place function symbol \( g \), meant to be read as \( x \mapsto 1/x \). This is **not** a structure: (M3) asks for a function defined at every element of \( D \), and \( 1/0 \) is not defined. Everything else in the description is fine; exactly clause (M3) fails, at the single point \( 0 \). There are two repairs. Shrink the domain to \( (0, \infty) \), where \( 1/x \) is always defined; or keep \( \nR \) and give \( g \) any value at \( 0 \), say \( g^{\fM}(0) \coloneqq 0 \). The second repair is the one this book uses for terms such as \( 1/n \): the value at \( 0 \) is fixed arbitrarily and is never looked at, because such terms are used only under a bound \( n \in \nZ_{>0} \) (as in Exercise C3 of Section 7.2), exactly as a sequence \( a_n \) was read in Section 5.1 as a function symbol whose values off \( \nN \) are never used.
 :::
 
 The domain is non-empty because of @prp-forall-implies-exists; the subsection "Why domains are non-empty" explains why.
@@ -214,7 +214,7 @@ In \( \nR \), no: at \( d = -1 \), (S7) asks for a real \( e \) with \( e \cdot 
 
 The example of \( \forall y\, (x \le y) \) above showed \( \ell \) mattering. In the first example it did not: the verdict on \( \forall x\, \exists y\, (x < y) \) was reached for "any assignment \( \ell \)". That is no accident. A sentence has no free variables (@def-sentence), and every variable it contains is bound, so every value \( \ell \) gives is overwritten by (S6) or (S7) before it is looked at. We prove the general fact, which is the first-order version of Chapter 4's @lem-coincidence: satisfaction depends only on the values of the **free** variables.
 
-Say that two assignments \( \ell \) and \( \ell' \) **agree on** a set of variables if \( \ell(y) = \ell'(y) \) for every variable \( y \) in it. We need the free variables of a formula, recursively defined in @def-free-variable: every variable occurring in an atomic formula is free there; \( \neg\varphi \) has the free variables of \( \varphi \); \( \varphi \circ \psi \), for a binary connective \( \circ \), has those of \( \varphi \) and those of \( \psi \); and \( \forall x\, \varphi \) and \( \exists x\, \varphi \) have those of \( \varphi \) other than \( x \).
+Say that two assignments \( \ell \) and \( \ell' \) **agree on** a set of variables if \( \ell(y) = \ell'(y) \) for every variable \( y \) in it. We need the free variables of a formula (@def-free-variable), in the recursive description given after that definition in Section 5.2: every variable occurring in an atomic formula is free there; \( \neg\varphi \) has the free variables of \( \varphi \); \( \varphi \circ \psi \), for a binary connective \( \circ \), has those of \( \varphi \) and those of \( \psi \); and \( \forall x\, \varphi \) and \( \exists x\, \varphi \) have those of \( \varphi \) other than \( x \).
 
 ::: {#lem-free-coincidence}
 [Free Variables Coincidence Lemma]
@@ -366,40 +366,37 @@ Nothing is lost. Statements about an empty **set** are handled by the bounded qu
 ::: {#exr-models-a1}
 [A1]
 
-Let \( \fM_{\nN} \), \( \fM_{\nZ} \), \( \fM_{\nQ} \) be the structures with domains \( \nN \), \( \nZ \), \( \nQ \), each with \( < \) the usual order. For each sentence in (a)–(d), say in which of the three structures it is true, with a witness or a failing element for each verdict.
+Let \( \fM_{\nN} \), \( \fM_{\nZ} \), \( \fM_{\nQ} \) be the structures with domains \( \nN \), \( \nZ \), \( \nQ \), each with \( < \) the usual order.
 
 ::: {.enumerate options="label=(\alph*)"}
-1. \( \forall x\, \exists y\, (x < y) \).
-2. \( \exists x\, \forall y\, \neg(y < x) \).
-3. \( \forall x\, \forall y\, \bigl( x < y \to \exists z\, (x < z \wedge z < y) \bigr) \).
-4. \( \forall x\, \exists y\, (y < x) \).
-5. True or false: if a sentence is true in some structure, it is true in every structure for its symbols.
-6. Why must the domain of a structure be non-empty? Name the derivable sequent that would otherwise fail.
-7. In @exm-clause-by-clause, which clause produces the element \( d \), and why may the same \( d \) serve for every \( e \)?
+1. For each of the sentences (i) \( \forall x\, \exists y\, (x < y) \), (ii) \( \exists x\, \forall y\, \neg(y < x) \), (iii) \( \forall x\, \forall y\, \bigl( x < y \to \exists z\, (x < z \wedge z < y) \bigr) \) and (iv) \( \forall x\, \exists y\, (y < x) \), say in which of the three structures it is true, with a witness or a failing element for each verdict.
+2. True or false: if a sentence is true in some structure, it is true in every structure for its symbols.
+3. Why must the domain of a structure be non-empty? Name the derivable sequent that would otherwise fail.
+4. In @exm-clause-by-clause, which clause produces the element \( d \), and why may the same \( d \) serve for every \( e \)?
 :::
 :::
 
 ::: {.solution}
-*(a)* True in all three: for each \( d \), take \( y = d + 1 \), which lies in the same domain and is larger.
+*(a)* (i) True in all three: for each \( d \), take \( y = d + 1 \), which lies in the same domain and is larger.
 
-*(b)* This says "there is a least element". True in \( \fM_{\nN} \), with \( x = 0 \): no natural number is below \( 0 \). False in \( \fM_{\nZ} \) and \( \fM_{\nQ} \): for any \( d \), the element \( e = d - 1 \) has \( e < d \), so (S6) fails for \( \neg(y < x) \) under \( \ell[x \mapsto d] \).
+(ii) This says "there is a least element". True in \( \fM_{\nN} \), with \( x = 0 \): no natural number is below \( 0 \). False in \( \fM_{\nZ} \) and \( \fM_{\nQ} \): for any \( d \), the element \( e = d - 1 \) has \( e < d \), so (S6) fails for \( \neg(y < x) \) under \( \ell[x \mapsto d] \).
 
-*(c)* This says "between any two elements there is a third" (density). False in \( \fM_{\nN} \) and \( \fM_{\nZ} \): at \( x = 1 \), \( y = 2 \) there is no integer strictly between. True in \( \fM_{\nQ} \): for \( d < e \) in \( \nQ \), \( z = (d + e)/2 \) is rational and \( d < z < e \).
+(iii) This says "between any two elements there is a third" (density). False in \( \fM_{\nN} \) and \( \fM_{\nZ} \): at \( x = 1 \), \( y = 2 \) there is no integer strictly between. True in \( \fM_{\nQ} \): for \( d < e \) in \( \nQ \), \( z = (d + e)/2 \) is rational and \( d < z < e \).
 
-*(d)* This says "no element is least". False in \( \fM_{\nN} \), at \( x = 0 \). True in \( \fM_{\nZ} \) and \( \fM_{\nQ} \), with \( y = d - 1 \).
+(iv) This says "no element is least". False in \( \fM_{\nN} \), at \( x = 0 \). True in \( \fM_{\nZ} \) and \( \fM_{\nQ} \), with \( y = d - 1 \).
 
 | | \( \nN \) | \( \nZ \) | \( \nQ \) |
 |---|---|---|---|
-| (a) | true | true | true |
-| (b) | true | false | false |
-| (c) | false | false | true |
-| (d) | false | true | true |
+| (i) | true | true | true |
+| (ii) | true | false | false |
+| (iii) | false | false | true |
+| (iv) | false | true | true |
 
-*(e)* False. Sentence (b) is true in \( \fM_{\nN} \) and false in \( \fM_{\nZ} \), as the table shows.
+*(b)* False. Sentence (ii) is true in \( \fM_{\nN} \) and false in \( \fM_{\nZ} \), as the table shows.
 
-*(f)* The sequent is \( \forall x\, P(x) \vdash \exists x\, P(x) \), derived in @prp-forall-implies-exists by \( \rulename{\forall E} \) at the variable \( x \) and \( \rulename{\exists I} \). In an empty domain \( \forall x\, P(x) \) would be true, with nothing to check, and \( \exists x\, P(x) \) false, with no witness; so the rules would lead from a true premise to a false conclusion. (There would also be no assignments at all.)
+*(c)* The sequent is \( \forall x\, P(x) \vdash \exists x\, P(x) \), derived in @prp-forall-implies-exists by \( \rulename{\forall E} \) at the variable \( x \) and \( \rulename{\exists I} \). In an empty domain \( \forall x\, P(x) \) would be true, with nothing to check, and \( \exists x\, P(x) \) false, with no witness; so the rules would lead from a true premise to a false conclusion. (There would also be no assignments at all.)
 
-*(g)* (S7), applied to the premise in item 2. The element \( d \) is fixed before any \( e \) is chosen, and item 2 says that \( d \) is related to **every** \( e \), by (S6); so item 6 may use \( d \) whatever \( e \) item 3 picked.
+*(d)* (S7), applied to the premise in item 2. The element \( d \) is fixed before any \( e \) is chosen, and item 2 says that \( d \) is related to **every** \( e \), by (S6); so item 6 may use \( d \) whatever \( e \) item 3 picked.
 :::
 
 ::: {#exr-structures-and-satisfaction-a2}
@@ -430,7 +427,7 @@ Each part takes a line or two. Parts (a)–(d) read a structure or a clause, (e)
 
 (c) \( (-2) \cdot (-2) + 1 = 5 \).
 
-(d) At most \( x \) and \( z \), its free variables; not \( y \). In fact only \( x \) matters, since \( z = z \) holds under every assignment: the lemma gives an upper bound, not the exact set.
+(d) At most \( x \) and \( z \), its free variables; not \( y \). Not always: \( z \) never matters, since \( z = z \) holds under every assignment, and whether \( x \) matters depends on the structure. In \( (\nN, \le) \) it does (true with \( \ell(x) = 0 \), false with \( \ell(x) = 1 \)); if \( \le^{\fM} \) is empty it does not. The lemma gives an upper bound, not the exact set.
 
 (e) Yes, with \( x = 0 \).
 
@@ -585,8 +582,8 @@ Fatal errors (0 for the part): calling (v) a non-structure because \( \sqrt{x} \
 **Marking scheme.** (10 points)
 - 4: (a), with every step's clause named, and (S6) used both to fix \( d \) and on the premise.
 - 3: (b), split on whether \( P^{\fM} = D \) (or on a failing element), with the premise used at that element.
-- 3: (c), fixing the witness first and applying the universal hypothesis at it.
-Fatal errors (0 for the part): in (a), a proof that fixes \( d \) before taking the premise's (S6), so that \( d \) is not arbitrary.
+- 3: (c), taking the premise's witness \( d \) and applying the hypothesis \( \forall x\, P(x) \) at \( d \) (in either order).
+Fatal errors (0 for the part): in (a), a proof in which \( d \) is a particular element (for example a constant's value, or an element chosen to lie in \( P^{\fM} \)) rather than an arbitrary \( d \in D \), so that the closing (S6) step for \( \forall x\, P(x) \) is unjustified.
 :::
 
 ::: {#exr-structures-and-satisfaction-c2}
@@ -631,7 +628,7 @@ def-assignment (example): values 2*2 + (-3) = 1, 2*2 + 1 = 5, -3, and 1 + 1 = 2 
 def-satisfaction (claim): satisfaction is well defined by recursion on formulas, for all assignments at once | thm-structural-recursion applied to def-first-order-formula (F1.4 §02 remark)
 def-satisfaction (example): traces of forall x exists y (x < y) in N and in {1,2,3}; forall y (x <= y) in N under l(x) = 0 and l(x) = 1; one-element domain | inline; verify/ch07/def-satisfaction.py
 def-satisfaction (solution): every real square is >= 0; sqrt(d) exists for d >= 0; a product of non-negative reals is non-negative | school algebra; AN1.1 (thm-nth-root) proves the roots, prose only
-def-satisfaction (solution): every complex number has a complex square root (polar form) | school algebra of complex numbers, stated in the solution; not proved before F4.1 (complex numbers)
+def-satisfaction (solution): every complex number has a complex square root (polar form) | school algebra of complex numbers, stated in the solution; prose only, nothing depends on it; not proved before F4.1 (prp-complex-square-roots)
 lem-free-coincidence (proof): structural induction on terms and on first-order formulas | thm-structural-induction (pattern) with the clauses of def-term and def-first-order-formula; F1.4 §02 remark
 lem-free-coincidence (proof): every variable of an atomic formula is free in it; the free variables of forall x phi are those of phi other than x | def-free-variable
 lem-free-coincidence (proof): the cases not, or, ->, <-> repeat the conjunction argument with the other clauses | inline, as in lem-coincidence
@@ -641,8 +638,8 @@ def-first-order-entailment (claim): forall x P(x) |= exists x P(x) in non-empty 
 def-first-order-entailment (claim): bounded quantifiers over the empty set, true and false | def-bounded-quantifier; inline
 exr-models-a1 (solution): witnesses and failing elements in N, Z, Q; z = (d + e)/2 is rational and strictly between | inline; verify/ch07/exr-models-a1.py
 exr-models-b2 (solution): the three-element model and the alternatives | verify/ch07/exr-models-b2.py
-exr-models-a1 (solution): (e) sentence (b) true in N and false in Z, from the A1 table | inline; verify/ch07/exr-models-a1.py
-exr-models-a1 (solution): (g) the element d comes from (S7) and serves for every e by (S6) | exm-clause-by-clause
+exr-models-a1 (solution): (b) sentence (ii) true in N and false in Z, from the A1 table | inline; verify/ch07/exr-models-a1.py
+exr-models-a1 (solution): (d) the element d comes from (S7) and serves for every e by (S6) | exm-clause-by-clause
 def-structure (claim): Hasse convention: loops and the pairs implied by chaining lines upwards are understood | inline convention; partial orders defined in F1.6 §04
 def-structure (example): Figure F's two structures and the Quick check (forall-exists true, exists-forall false) | verify/ch07/def-satisfaction.py
 def-satisfaction (claim): satisfaction as a game between challenger and defender, one move per clause | informal reading of the clauses, as F1.4 §01's game; no proof rests on it

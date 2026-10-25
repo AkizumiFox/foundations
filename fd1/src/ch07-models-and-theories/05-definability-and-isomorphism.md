@@ -59,7 +59,7 @@ In \( (\nZ; +) \), the even integers. In \( (\nQ; +) \), all of \( \nQ \): every
 
 ## \( \exists \) is a projection
 
-A formula with two free variables defines a set of pairs, and a set of pairs of reals can be drawn. In \( \nR \), the formula \( y \cdot y = x \) defines \( \{ (d, e) : e^2 = d \} \), a parabola lying on its side. The formula \( \exists y\, (y \cdot y = x) \) has the one free variable \( x \), and by (S7) it is true of \( d \) exactly when some \( e \) puts the point \( (d, e) \) on the parabola. So it defines the set of first coordinates of the points of the parabola: its **shadow** on the \( x \)-axis, \( [0, \infty) \).
+A formula with two free variables defines a set of pairs, and a set of pairs of reals can be drawn. In \( (\nR; \cdot) \), the formula \( y \cdot y = x \) defines \( \{ (d, e) : e^2 = d \} \), a parabola lying on its side. The formula \( \exists y\, (y \cdot y = x) \) has the one free variable \( x \), and by (S7) it is true of \( d \) exactly when some \( e \) puts the point \( (d, e) \) on the parabola. So it defines the set of first coordinates of the points of the parabola: its **shadow** on the \( x \)-axis, \( [0, \infty) \).
 
 ```{=latex}
 \begin{center}
@@ -84,7 +84,7 @@ In general, \( \exists y\, \varphi \) defines the **projection** of the set that
 The two readings are tied by negation. By (S4), (S6) and (S7), \( \forall y\, \varphi \) is satisfied exactly when \( \exists y\, \neg\varphi \) is not, so the set defined by \( \forall y\, \varphi \) is the complement of the projection of the complement of \( \varphi \)'s set: remove \( \varphi \)'s set from the plane, take the shadow of what is left, and keep the points of the axis that are not in that shadow.
 
 ::: {.check}
-In \( \nR \), which set does \( \forall y\, (x \le y \cdot y) \) define?
+In \( (\nR; \le, \cdot) \), which set does \( \forall y\, (x \le y \cdot y) \) define?
 :::
 
 ::: {.solution}
@@ -143,7 +143,7 @@ An isomorphism \( \fM \to \fM \) is an **automorphism** of \( \fM \). \( \fM \) 
 
 In words: \( h \) renames every element, and the renaming carries each constant to the corresponding constant, each operation to the corresponding operation, and each relation onto the corresponding relation, in both directions.
 
-Each clause is needed, and clause (iii) is needed in both directions. The identity map \( 1 \mapsto 1 \), \( 2 \mapsto 2 \), from \( \{ 1, 2 \} \) with \( R \) empty to \( \{ 1, 2 \} \) with \( R = \{ (1, 2) \} \), is a bijection, and it sends every pair in the first relation into the second, since there are none. Yet the sentence \( \exists x\, \exists y\, R(x, y) \) is false in the first structure and true in the second. The converse half of (iii) fails at \( (1, 2) \), and with it the map is not an isomorphism.
+Clause (iii) is needed in both directions. The identity map \( 1 \mapsto 1 \), \( 2 \mapsto 2 \), from \( \{ 1, 2 \} \) with \( R \) empty to \( \{ 1, 2 \} \) with \( R = \{ (1, 2) \} \), is a bijection, and it sends every pair in the first relation into the second, since there are none. Yet the sentence \( \exists x\, \exists y\, R(x, y) \) is false in the first structure and true in the second. The converse half of (iii) fails at \( (1, 2) \), and with it the map is not an isomorphism.
 
 *Examples.* \( (\nN, <) \) and the even numbers with \( < \) are isomorphic, by \( h(d) = 2d \): every even number is \( 2d \) for exactly one \( d \), and \( d < e \) if and only if \( 2d < 2e \). A finite example, with the bijection as a table:
 
@@ -181,7 +181,7 @@ where \( h \circ \ell \) gives each variable \( x \) the value \( h(\ell(x)) \).
 
 *In words: renaming the elements, consistently, changes the truth of nothing.*
 
-The theorem is most often used backwards: a sentence true in one structure and false in another shows that the two are **not** isomorphic. The sentence \( \forall x\, \exists y\, (y + y = x) \), "every element is a sum of two equal ones", is true in \( (\nR; +) \) and false in \( (\nZ; +) \) (at \( x = 1 \)), so no bijection \( \nR \to \nZ \) carries addition to addition. The converse of the theorem fails: two structures can satisfy the same sentences without being isomorphic, and the optional Section 7.6 meets such a pair.
+The theorem is most often used backwards: a sentence true in one structure and false in another shows that the two are **not** isomorphic. The sentence \( \forall x\, \exists y\, (y + y = x) \), "every element is a sum of two equal ones", is true in \( (\nQ; +) \) (take \( y = x/2 \)) and false in \( (\nZ; +) \) (at \( x = 1 \)), so no bijection \( \nQ \to \nZ \) carries addition to addition, although bijections \( \nQ \to \nZ \) exist (*Sets, Relations, and Cardinality*, Chapter 3). The converse of the theorem fails: two structures can satisfy the same sentences without being isomorphic, and the optional Section 7.6 meets such a pair.
 
 The proof is in the fold below.
 
@@ -260,7 +260,7 @@ A finite picture: the four-cycle below, with \( D = \{ a, b, c, d \} \) and \( R
 
 The rotation \( a \mapsto b \), \( b \mapsto c \), \( c \mapsto d \), \( d \mapsto a \) is a bijection that sends each arrow to an arrow and each non-arrow to a non-arrow, so it is an automorphism. Applied once, twice or three times, it moves any element to any other, so no single element is definable.
 
-A minimal change makes one element definable again. Add the loop \( (a, a) \) to \( R \). Now \( R(x, x) \) defines \( \{ a \} \), and the rotation is no longer an automorphism, since it sends the arrow \( (a, a) \) to \( (b, b) \), which is not an arrow. The method can only use the automorphisms a structure has; adding one arrow removed three of the four.
+A minimal change makes one element definable again. Add the loop \( (a, a) \) to \( R \). Now \( R(x, x) \) defines \( \{ a \} \), and the rotation is no longer an automorphism, since it sends the arrow \( (a, a) \) to \( (b, b) \), which is not an arrow. The method can only use the automorphisms a structure has; each of the three non-trivial rotations sends the loop \( (a, a) \) to a loop at \( b \), \( c \) or \( d \), so adding one arrow removed all three.
 :::
 
 ::: {.warning}
@@ -323,7 +323,7 @@ Each part takes a line or two. Parts (a)–(f) belong to the first half of the s
 3. Define the pairs with \( x \le y \) in \( (\nN; +) \).
 4. In \( (\{ 1, 2, 3 \}, <) \), which set does \( \forall y\, \neg(y < x) \) define? In \( (\nZ, <) \)?
 5. Write "\( x \) is maximal" and "\( x \) is greatest" for a partial order \( \le \).
-6. In \( \nR \), \( \varphi \) is \( x \cdot x + y \cdot y = 1 \). What does \( \exists y\, \varphi \) define?
+6. In \( (\nR; 1, +, \cdot) \), \( \varphi \) is \( x \cdot x + y \cdot y = 1 \). What does \( \exists y\, \varphi \) define?
 7. Is \( h(d) = 2d \) an isomorphism from \( (\nZ, <) \) to the even integers with \( < \)?
 8. Is \( h(d) = -d \) an automorphism of \( (\nZ, <) \)? Of \( (\nZ; +) \)?
 9. Using (h), is \( \{ 1 \} \) definable in \( (\nZ; +) \)?
@@ -622,7 +622,7 @@ Is the sentence \( \forall x\, \exists y\, (x < y) \to \exists y\, \forall x\, (
 ::: {.solution}
 *True in \( (\nN, <) \)?* No. The hypothesis \( \forall x\, \exists y\, (x < y) \) is true in \( (\nN, <) \): each \( d \) has \( d + 1 \) above it. The conclusion \( \exists y\, \forall x\, (x < y) \) is false: a candidate \( e \) fails at \( x = e \), since \( e < e \) is false. By (S5) of @def-satisfaction, an implication with a true hypothesis and a false conclusion is false.
 
-*Derivable?* No. By the soundness statement of Section 7.2, a derivable sentence is true in every structure; this one is false in \( (\nN, <) \), so no derivation exists.
+*Derivable?* No. By the soundness statement of [Section 7.2](#from-counter-models-to-non-derivability), a derivable sentence is true in every structure; this one is false in \( (\nN, <) \), so no derivation exists.
 
 *Why these tools.* A structure settles the question in two lines, while a derivation search could only fail, and a failed search proves nothing. A truth table is the wrong look-alike: it reads the sentence as \( p \to q \) with two atoms, and a refuting row for \( p \to q \) says nothing here, since the sentence \( \forall x\, P(x) \to \exists x\, P(x) \) has the same shape and is derivable (@prp-forall-implies-exists, then \( \rulename{{\to}I} \)). The soundness statement used here is proved in Section 7.3.
 :::
@@ -638,7 +638,7 @@ def-definable-set (solution): Quick check, x <= y*y for all real y iff x <= 0 | 
 exm-define-by-formula (example): maximal and greatest in the divisibility orders on {1,2,3} and {1,2,3,6}; the Quick check on {1,2,3,4,6} | verify/ch07/exm-define-by-formula.py
 exm-define-by-formula (example): sup [0,1) = 1, the element max(0, (z+1)/2) of [0,1) above z < 1; [0,1) has no greatest element, [0,1] has | school algebra of the order of R
 exm-define-by-formula (claim): a defined predicate or a constant for a proved-existing element proves nothing new | prp-definitional-extension (cited; F1.4 §08, parts (a) and (b))
-def-isomorphism-of-structures (claim): functions, bijections, inverses and composition in the everyday sense | F2.1 (promised)
+def-isomorphism-of-structures (claim): functions, bijections, inverses and composition in the everyday sense | F2.1 (paid: def-function, def-bijective, def-composition, def-inverse-function; everyday sense, prose only)
 def-isomorphism-of-structures (example): h(d) = 2d is a bijection from N onto the evens preserving <; d -> d + 1 on N preserves < and misses 0; the table of the finite example | inline; verify/ch07/exm-shift-automorphism.py (the finite example)
 thm-isomorphism-invariance (proof): induction on terms and structural induction on formulas for all assignments at once | thm-structural-recursion and structural induction as used for lem-free-coincidence (F1.6 §01); inline
 thm-isomorphism-invariance (proof): h o (l[x -> d]) = (h o l)[x -> h(d)]; h onto, so h(d) runs over all of E | inline (definition of l[x -> d], def-assignment)
@@ -646,6 +646,9 @@ cor-automorphisms-fix-definable-sets (proof): from thm-isomorphism-invariance wi
 exm-shift-automorphism (example): the shift on Z is a bijection preserving <; forall y not(y < x) defines {0} in (N, <); the rotation of the four-cycle is an automorphism and its powers move any element to any other | inline; verify/ch07/exm-shift-automorphism.py (all 24 permutations of the four-cycle)
 exm-shift-automorphism (solution): Quick check, the rotation moves {a, c} and {b, d} | verify/ch07/exm-shift-automorphism.py
 cor-automorphisms-fix-definable-sets (claim): Looking ahead, any two complete ordered fields are isomorphic | F3.4 thm-cof-uniqueness (exists; Looking ahead only, nothing rests on it)
+thm-isomorphism-invariance (example): forall x exists y (y+y=x) true in (Q;+) with y = x/2, false in (Z;+) at x = 1 (y <= 0 gives y+y <= 0, y >= 1 gives y+y >= 2) | inline case check; school arithmetic of Z
+thm-isomorphism-invariance (claim): bijections Q -> Z exist | F2.3 thm-integers-rationals-countable (exists; aside only, nothing rests on it)
+exm-definable-sets (solution): Quick check, exists y (x = y+y) defines the even integers in (Z;+) | inline (definition of even)
 exr-definability-and-isomorphism-a2 (solution): each set and map on a window or by enumeration | verify/ch07/exr-definability-and-isomorphism-a2.py
 exr-definability-and-isomorphism-b1 (solution): the five formulas | verify/ch07/exr-definability-and-isomorphism-b1.py (window)
 exr-definability-and-isomorphism-b2 (solution): every real is a cube of a real | school algebra (AN1.1 thm-nth-root, prose only); verify/ch07/exr-definability-and-isomorphism-b2.py (window)

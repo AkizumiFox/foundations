@@ -26,7 +26,7 @@ What the theorem means for this chapter is best said with its two halves side by
 
 Section 7.4's group axioms show both outcomes. They derive that the identity is unique (@prp-group-identity-unique), and that settles one claim by a derivation. They do not derive (Comm), and the triangle group of @exm-triangle-group, a model of the axioms in which (Comm) is false, settles that claim by a counter-model. Completeness says that every claim about groups is settled in one of these two ways, though it does not say which, or how long the search for either will take.
 
-The theorem says nothing about how to find the derivation or the model, and the last part of this section explains why no method finds one of them in every case.
+The theorem says nothing about how to find the derivation or the model, and the last part of this section states, without proof, that no method finds one of them in every case.
 
 ::: {.second-reading title="How the proof goes: a model made of names"}
 This is a sketch, not a proof. It follows the route of Section 4.10's proof of propositional compactness through Lindenbaum's lemma (@lem-lindenbaum).
@@ -80,7 +80,7 @@ Yes: the optional Section 4.10 proved it; this section states the first-order ve
 
 ## Large models and small ones
 
-A set can be **listed** if its elements can be written as a sequence \( d_0, d_1, d_2, \dots \) in which every element appears; \( \nN \), \( \nZ \) and \( \nQ \) can, and every finite set can. "Listed" here has its everyday meaning.
+A set can be **listed** if its elements can be written as a sequence \( d_0, d_1, d_2, \dots \) in which every element appears; \( \nN \), \( \nZ \) and \( \nQ \) can, and so can every non-empty finite set (repeat its last element forever). "Listed" here has its everyday meaning.
 
 ::: {#thm-lowenheim-skolem}
 [Löwenheim–Skolem Theorem]
@@ -92,7 +92,7 @@ This theorem is stated without proof. Two consequences show its force. First, ta
 
 So no first-order theory with an infinite model fixes the size of its models. Section 7.5 showed that isomorphic structures satisfy the same sentences; here are structures that satisfy the same sentences and are not isomorphic, since one can be listed and the other cannot.
 
-How can a listable structure satisfy every first-order sentence true in \( \nR \), when \( \nR \) is "complete": every non-empty set of reals bounded above has a supremum? The answer is the one the next two subsections give for \( \nN \). Completeness of \( \nR \) speaks of **all** sets of reals. A first-order sentence can speak only of sets defined by formulas (Section 7.5): for each formula there is a sentence "if the set this formula defines is non-empty and bounded above, it has a supremum", and each of these is true in \( \nR \). The listable model satisfies all of them, and fails the statement about all sets, which is not a first-order sentence.
+How can a listable structure satisfy every first-order sentence true in \( \nR \), when \( \nR \) is "complete": every non-empty set of reals bounded above has a supremum? The answer is the one the next two subsections give for \( \nN \). Completeness of \( \nR \) speaks of **all** sets of reals. A first-order sentence can speak only of sets defined by formulas (Section 7.5): for each formula there is a sentence "if the set this formula defines is non-empty and bounded above, it has a supremum", and each of these is true in \( \nR \). The listable model satisfies all of them, and fails the statement about all sets, which is not a first-order sentence: it is an ordered field, as \( \nR \) is, and any two complete ordered fields are isomorphic (*Number Systems: From \(\nN\) to \(\nR\)*, Chapter 6), while \( \nR \) cannot be listed.
 
 ::: {.check}
 A theory \( T \) in countably many symbols has the model \( (\nQ, <) \). Must it also have a model whose domain cannot be listed?
@@ -115,12 +115,12 @@ Let \( T \) be the set of all sentences in \( 0, S, +, \cdot, < \) that are true
 \]
 one for each \( n \in \nN \). Call the result \( T' \).
 
-*Every finite subset of \( T' \) has a model.* A finite subset contains finitely many sentences of \( T \) and finitely many axioms \( \underline{n} < c \); let \( N \) be the largest \( n \) among them. Read the symbols in \( \nN \) as usual and \( c \) as \( N + 1 \). The sentences of \( T \) do not mention \( c \), and they are true in \( \nN \); each \( \underline{n} < c \) in the subset says \( n < N + 1 \), which is true.
+*Every finite subset of \( T' \) has a model.* A finite subset contains finitely many sentences of \( T \) and finitely many axioms \( \underline{n} < c \); let \( N \) be the largest \( n \) among them (or \( 0 \) if there is none). Read the symbols in \( \nN \) as usual and \( c \) as \( N + 1 \). The sentences of \( T \) do not mention \( c \), and they are true in \( \nN \); each \( \underline{n} < c \) in the subset says \( n < N + 1 \), which is true.
 
 *So \( T' \) has a model.* By @thm-first-order-compactness there is a structure \( \fM \) in which every sentence of \( T' \) is true. In \( \fM \) every sentence true in \( \nN \) is true, and \( c^{\fM} \) is above the value in \( \fM \) of every numeral. It differs from each of them: if \( c^{\fM} \) were the value of \( \underline{n} \), the axiom \( \underline{n} < c \) would put an element below itself, while \( \forall x\, \neg(x < x) \) is true in \( \nN \), so in \( T \), so in \( \fM \).
 :::
 
-An element of \( \fM \) that is the value of no numeral is called **non-standard**; the values of numerals are the **standard** elements. \( \fM \) satisfies every first-order sentence that \( \nN \) satisfies, and still has an element that no numeral names. Its standard elements lie at the bottom: the sentences \( \forall x\, (x < \underline{n + 1} \to x = \underline{0} \vee \dots \vee x = \underline{n}) \), one for each \( n \), are true in \( \nN \) and so in \( \fM \), and they say that nothing non-standard lies below a standard element.
+An element of \( \fM \) that is the value of no numeral is called **non-standard**; the values of numerals are the **standard** elements. \( \fM \) satisfies every first-order sentence that \( \nN \) satisfies, and still has an element that no numeral names. Its standard elements lie at the bottom: the sentences \( \forall x\, (x < \underline{n + 1} \to x = \underline{0} \vee \dots \vee x = \underline{n}) \), one for each \( n \), are true in \( \nN \) and so in \( \fM \), and they say that nothing non-standard lies below a standard element; since \( \forall x\, \forall y\, (x < y \vee x = y \vee y < x) \) is also true in \( \nN \) and so in \( \fM \), every standard element lies below every non-standard one.
 
 The model \( \fM \) is not \( \nN \) under another name. In \( \nN \) itself, read as usual, no value of \( c \) works for the whole of \( T' \): if \( c \) is read as the number \( n \), the axiom \( \underline{n} < c \) says \( n < n \). Each finite part of \( T' \) is satisfied by \( \nN \), each with its own value for \( c \); the whole set is satisfied only by a structure that compactness supplies, and that structure has elements \( \nN \) lacks. Since \( \fM \) satisfies the same sentences in \( 0, S, +, \cdot, < \) as \( \nN \), no first-order sentence about arithmetic can tell the two apart; yet they are not isomorphic, since an isomorphism would send each numeral's value to the same numeral's value, and \( c^{\fM} \) to an element of \( \nN \) above every number, and there is none.
 
@@ -140,9 +140,9 @@ The **induction schema** of first-order arithmetic is one sentence for each form
 \[
 \bigl( \varphi[0/x] \wedge \forall x\, (\varphi \to \varphi[S(x)/x]) \bigr) \to \forall x\, \varphi ,
 \]
-with its other free variables, if any, bound by \( \forall \) in front. Each instance is true in \( \nN \), by induction, so each is in \( T \) and true in the model \( \fM \) of @exm-non-standard-naturals. Yet the set of standard elements of \( \fM \) contains \( 0^{\fM} \) and is closed under \( S^{\fM} \), and is not all of the domain. There is no contradiction: the schema speaks only about sets **defined by formulas** (Section 7.5), and the standard elements are not such a set.
+with its other free variables, if any, bound by \( \forall \) in front. Each instance is true in \( \nN \), by induction, so each is in \( T \) and true in the model \( \fM \) of @exm-non-standard-naturals. Yet the set of standard elements of \( \fM \) contains \( 0^{\fM} \) and is closed under \( S^{\fM} \), and is not all of the domain. There is no contradiction: the schema speaks only about sets **defined by formulas** (Section 7.5), with any other free variables fixed at elements of the domain, and the standard elements are not such a set.
 
-The argument is short. Suppose a formula \( \varphi \) with free variable \( x \) defined the standard elements in \( \fM \). By @lem-term-substitution (Section 7.3; \( 0 \) is closed, and \( S(x) \) is free for \( x \) in \( \varphi \)), \( \varphi[0/x] \) holds in \( \fM \) exactly when \( \varphi \) holds of \( 0^{\fM} \), and \( \varphi[S(x)/x] \) holds under an assignment \( \ell \) exactly when \( \varphi \) holds of \( S^{\fM}(\ell(x)) \). Then \( \varphi[0/x] \) holds in \( \fM \), since \( 0^{\fM} \) is standard, and \( \forall x\, (\varphi \to \varphi[S(x)/x]) \) holds, since the successor of a standard element is standard. The induction instance for \( \varphi \) is a sentence true in \( \nN \), so it is in \( T \) and true in \( \fM \); it gives \( \forall x\, \varphi \) in \( \fM \), so every element would be standard, against \( c^{\fM} \). (Exercise C2 reaches the same conclusion another way, by least elements.)
+The argument is short. Suppose a formula \( \varphi \), with free variable \( x \) and its other free variables \( z_1, \dots, z_k \) (if any) fixed at elements \( e_1, \dots, e_k \) of \( \fM \), defined the standard elements in \( \fM \); every assignment below sends each \( z_i \) to \( e_i \). By @lem-term-substitution (Section 7.3; \( 0 \) is closed, and \( S(x) \) is free for \( x \) in \( \varphi \)), \( \varphi[0/x] \) holds in \( \fM \) exactly when \( \varphi \) holds of \( 0^{\fM} \), and \( \varphi[S(x)/x] \) holds under an assignment \( \ell \) exactly when \( \varphi \) holds of \( S^{\fM}(\ell(x)) \). Then \( \varphi[0/x] \) holds in \( \fM \), since \( 0^{\fM} \) is standard, and \( \forall x\, (\varphi \to \varphi[S(x)/x]) \) holds, since the successor of a standard element is standard. The induction instance for \( \varphi \) is a sentence true in \( \nN \), so it is in \( T \) and true in \( \fM \); read with each \( z_i \) at \( e_i \), it gives \( \forall x\, \varphi \) in \( \fM \), so every element would be standard, against \( c^{\fM} \). (Exercise C2 reaches the same conclusion another way, by least elements.)
 
 The induction principle of Section 4.2 (@ax-induction) is stated for **every** property of natural numbers. Read in a structure, that is a statement about all subsets of the domain, not only the definable ones: it quantifies over sets, and is a **second-order** statement. Applied to the set of standard elements, it would rule out non-standard elements at once, and so a structure satisfying it, with \( 0 \) and successor read as usual, has no room for \( c^{\fM} \). First-order logic can state the schema, not the axiom; compactness is the price of its completeness.
 
@@ -252,7 +252,7 @@ Each part takes a line or two. The parts run from writing a counting sentence, t
 
 (k) Yes, by @thm-lowenheim-skolem.
 
-(l) "At least \( 3 \) and at most \( 3 \) elements" is one sentence, \( \sigma_3 \) with the "at most" sentence. "Finite" would contradict compactness (C1).
+(l) "At least \( 3 \) and at most \( 3 \) elements" is one sentence, \( \sigma_3 \) with the "at most" sentence. No theory can do it for "finite": such a theory would have a model of every finite size (the structures built in the solution of C1), so by @exr-limits-of-first-order-logic-b1 it would have an infinite model, which is not finite.
 :::
 
 ### B. Practice
@@ -270,15 +270,15 @@ Application. The axioms are (Refl), (Sym), (Trans) for \( R \) and
 \[
 \forall x\, \exists y\, \bigl( \neg(x = y) \wedge R(x, y) \wedge \forall z\, (R(x, z) \to (z = x \vee z = y)) \bigr) ,
 \]
-"each \( x \) is related to exactly one element besides itself". For each \( k \ge 1 \), a set of \( 2k \) elements split into \( k \) pairs, with \( R \) "in the same pair", is a model, so there are models with at least \( n \) elements for every \( n \). So an infinite model exists; \( \nZ \) with \( R(x, y) \) read as \( \floor{x/2} = \floor{y/2} \), which pairs \( 2m \) with \( 2m + 1 \), is one.
+"each \( x \) is related to exactly one element besides itself". For each \( k \ge 1 \), a set of \( 2k \) elements split into \( k \) pairs, with \( R \) "in the same pair", is a model, so there are models with at least \( n \) elements for every \( n \). So an infinite model exists; \( \nZ \) with \( R(x, y) \) read as "\( x \) and \( y \) lie in the same pair \( \{2m, 2m + 1\} \) for some \( m \in \nZ \)" is one.
 
-**Marking scheme.** (10 points) 3 for \( T' \) defined with the \( \sigma_n \). 3 for every finite subset having a model, with the size argument. 2 for compactness applied and the model shown infinite. 2 for the application's sentence and models. Fatal error (0 for the proof): applying compactness to \( T' \) without checking its finite subsets.
+**Marking scheme.** (10 points) 3 for \( T' \) defined by adding axioms that force infinitely many elements (the \( \sigma_n \), or distinct new constants \( c_i \), the model then cut back to \( T \)'s symbols). 3 for every finite subset having a model, with the size argument. 2 for compactness applied and the model shown infinite. 2 for the application's sentence and models. Fatal error (0 for the proof): applying compactness to \( T' \) without checking its finite subsets.
 :::
 
 ::: {#exr-limits-of-first-order-logic-b2}
 [B2: Which theorem settles it?]
 
-For each question, say which statement of this section or of Section 7.2 settles it, and answer it.
+For each question, say which statement of this section or of Section 7.2 settles it (or that none does), and answer it.
 
 ::: {.enumerate options="label=(\roman*)"}
 1. \( \models \sigma \) is known. Is \( \vdash \sigma \)?
@@ -300,7 +300,7 @@ For each question, say which statement of this section or of Section 7.2 settles
 
 (v) The monadic remark: yes.
 
-**Marking scheme.** (10 points) 2 for each part: 1 for the statement named, 1 for the answer. Fatal error (0 for (iii)): answering "yes, by completeness".
+**Marking scheme.** (10 points) 2 for each part: 1 for the statement named (in (iii), for saying that no statement settles it), 1 for the answer (in (iii), "no", with a counter-model). Fatal error (0 for (iii)): answering "yes, by completeness".
 :::
 
 ### C. Going deeper
@@ -341,7 +341,7 @@ Let \( \fM \) be the model of @exm-non-standard-naturals.
 :::
 
 ::: {.solution}
-*(a)* Rename the bound variables of \( \psi \) so that \( y \) does not occur in \( \psi \); then \( y \) is free for \( x \) in \( \psi \). The sentence is
+*(a)* Choose a variable \( y \) that does not occur in \( \psi \), free or bound; no quantifier of \( \psi \) is on \( y \), so \( y \) is free for \( x \) in \( \psi \) (@def-free-for). The sentence is
 \[
 \exists x\, \psi \to \exists x\, \bigl( \psi \wedge \forall y\, (y < x \to \neg\psi[y/x]) \bigr) ,
 \]
@@ -349,7 +349,7 @@ with any other free variables of \( \psi \) bound by \( \forall \) in front. By 
 
 *(b)* \( \neg\varphi \) is satisfied by \( c^{\fM} \), which is non-standard, so (a) gives a least \( e \) satisfying \( \neg\varphi \): a least non-standard element. \( e \ne 0^{\fM} \), since \( 0^{\fM} \) is standard; and \( \forall x\, (\neg(x = 0) \to \exists y\, (S(y) = x)) \) is true in \( \nN \), so in \( \fM \). Choose \( d \) with \( S^{\fM}(d) = e \). Then \( d < e \) in \( \fM \), since \( \forall y\, (y < S(y)) \) is true in \( \nN \). And \( d \) is non-standard: if \( d \) were the value of \( \underline{n} \), then \( e = S^{\fM}(d) \) would be the value of \( \underline{n + 1} \). So \( d \) satisfies \( \neg\varphi \) and lies below \( e \), against the choice of \( e \).
 
-**Marking scheme.** (10 points) 4 for (a): the sentence, with the renaming that makes \( y \) free for \( x \) and the reading of \( \neg\psi[y/x] \) by @lem-term-substitution, its truth in \( \nN \) by the least-number principle, and the transfer to \( \fM \) through \( T \). 4 for (b): the predecessor \( d \) obtained from a sentence true in \( \nN \), with \( d < e \) and \( d \) non-standard both argued. 2 for the contradiction named. Fatal error (0 for (a)): the least-number principle used for an arbitrary subset of \( \fM \) rather than through a sentence of \( T \).
+**Marking scheme.** (10 points) 4 for (a): the sentence, with \( y \) chosen not to occur in \( \psi \), so that it is free for \( x \), and the reading of \( \neg\psi[y/x] \) by @lem-term-substitution, its truth in \( \nN \) by the least-number principle, and the transfer to \( \fM \) through \( T \). 4 for (b): the predecessor \( d \) obtained from a sentence true in \( \nN \), with \( d < e \) and \( d \) non-standard both argued. 2 for the contradiction named. Fatal error (0 for (a)): the least-number principle used for an arbitrary subset of \( \fM \) rather than through a sentence of \( T \).
 :::
 
 <!-- dependency ledger
@@ -357,17 +357,19 @@ thm-first-order-completeness (claim): Godel's completeness theorem | stated with
 thm-first-order-completeness (claim): the two forms are equivalent (sigma = bot; T with not-sigma added) | inline; def-theory, def-model-of-theory, def-inconsistent-theory (cited); S3 of def-satisfaction for bot
 thm-first-order-completeness (claim): T |- sigma iff T with not-sigma added is inconsistent | not-E and RAA (def-rules-negation, def-rule-raa, Chapters 1-2), inline
 thm-first-order-completeness (proof): the Henkin sketch, witness axioms consistent to add, Lindenbaum extension, term model | a sketch, marked "not a proof"; nothing rests on it; lem-lindenbaum (F1.3 §10, cited) for the route
-thm-first-order-thm-first-order-compactness (claim): compactness for first-order theories | short argument from thm-first-order-completeness, inline and marked; prp-model-shows-consistency, def-inconsistent-theory (cited)
+thm-first-order-compactness (claim): compactness for first-order theories | short argument from thm-first-order-completeness, inline and marked; prp-model-shows-consistency, def-inconsistent-theory (cited)
 thm-first-order-compactness (claim): sigma_n is true exactly in structures with at least n elements | (S2), (S4), (S5), (S7) of def-satisfaction; verify/ch07/exr-limits-of-first-order-logic-a2.py (sizes 1-4)
 thm-lowenheim-skolem (claim): downward and upward Lowenheim-Skolem for countably many symbols | stated without proof, marked; nothing outside the section depends on it
-thm-lowenheim-skolem (claim): R cannot be listed | stated, not proved; F2.3 (promised)
-thm-lowenheim-skolem (claim): N, Z, Q and finite sets can be listed | everyday listing; F2.3 (promised), prose only
+thm-lowenheim-skolem (claim): R cannot be listed | stated, not proved; F2.3 (promised; STATUS row F1.6 §06, paid by thm-reals-uncountable-decimal)
+thm-lowenheim-skolem (claim): the listable model of the theory of R is an ordered field and not complete | ordered-field axioms true in R (inline); F3.4 thm-cof-uniqueness (exists, prose pointer) with R not listable (line above)
+thm-lowenheim-skolem (claim): N, Z, Q and non-empty finite sets can be listed | everyday listing, prose only; nothing depends on it
 exm-non-standard-naturals (example): every finite subset of T' is modelled by N with c read as N + 1; c differs from every numeral | inline; thm-first-order-compactness (cited)
 exm-non-standard-naturals (claim): the sentences forall x (x < n+1 -> x = 0 or ... or x = n) are true in N | school arithmetic of N
 exm-non-standard-naturals (solution): Quick check, every non-zero natural number is a successor | school arithmetic of N
 exm-non-standard-naturals (claim): each instance of the induction schema is true in N | ax-induction (F1.3 §02), applied to the property defined by phi in N
 exm-non-standard-naturals (claim): phi[0/x] and phi[S(x)/x] read in M; S(x) free for x in phi | lem-term-substitution (F1.6 §03, optional, cited by name; this section is optional too)
-exm-non-standard-naturals (claim): no formula defines the standard elements of M | inline argument from the schema instance
+exm-non-standard-naturals (claim): no formula, even with parameters, defines the standard elements of M | inline argument from the universally closed schema instance
+exm-non-standard-naturals (claim): standard elements lie below non-standard ones | the bounding sentences and trichotomy, true in N (school arithmetic of N)
 thm-first-order-completeness (claim): What can be decided, propositional validity decidable | prp-search-decides (F1.3 §06, cited)
 thm-first-order-completeness (claim): What can be decided, Church-Turing undecidability of first-order derivability; listing derivations finds one when one exists | stated without proof, marked; nothing depends on it
 thm-first-order-completeness (claim): What can be decided, monadic sentences without constants, function symbols or = decidable via the bound of 7.2's remark | stated without proof here; the bound is F1.6 §02's remark (stated there)
@@ -375,10 +377,10 @@ thm-first-order-completeness (claim): What can be decided, Godel's incompletenes
 exm-non-standard-naturals (claim): Looking ahead, (P5) and categoricity of Peano systems | F3.1 def-peano-system, thm-peano-categoricity (exist; Looking ahead only)
 exr-limits-of-first-order-logic-a2 (solution): the sentences of (a), (b) on structures of sizes 1-4 | verify/ch07/exr-limits-of-first-order-logic-a2.py
 exr-limits-of-first-order-logic-a2 (solution): forall x not(S(x) = 0) false in a one-element structure | F1.6 §02 (the three classes of sentences, in-chapter)
-exr-limits-of-first-order-logic-b1 (solution): the pairing structures of even size are models; floor(x/2) = floor(y/2) on Z | verify/ch07/exr-limits-of-first-order-logic-b1.py (sizes 2-8; Z on a window)
+exr-limits-of-first-order-logic-b1 (solution): the pairing structures of even size are models; same pair {2m, 2m+1} on Z | verify/ch07/exr-limits-of-first-order-logic-b1.py (sizes 2-8; Z on a window)
 exr-limits-of-first-order-logic-b2 (solution): (iii) the sentence of exr-models-c1 | exr-models-c1 (F1.6 §02, cited)
 exr-limits-of-first-order-logic-c1 (solution): a structure of each finite size exists for any symbols | inline (constant functions, empty relations)
-exr-limits-of-first-order-logic-c2 (solution): the least-number principle in N | F2.2 well-ordering (promised), as in F1.3 §02
-exr-limits-of-first-order-logic-c2 (solution): reading of not-psi[y/x] in M | lem-term-substitution (F1.6 §03, optional, cited)
+exr-limits-of-first-order-logic-c2 (solution): the least-number principle in N | F2.2 well-ordering (promised; STATUS row F1.6 §06, paid by thm-well-ordering), as in F1.3 §02
+exr-limits-of-first-order-logic-c2 (solution): y free for x when y does not occur in psi; reading of not-psi[y/x] in M | def-free-for (F1.4 §02, cited); lem-term-substitution (F1.6 §03, optional, cited)
 exr-limits-of-first-order-logic-c2 (solution): forall y (y < S(y)) and every non-zero element a successor are true in N | school arithmetic of N
 -->

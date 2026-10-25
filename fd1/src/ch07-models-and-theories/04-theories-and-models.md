@@ -38,7 +38,7 @@ Not the first: \( \forall x\, \neg(x < x) \) and transitivity hold, but \( \fora
 
 ## A gallery of theories
 
-Each theory below is given by its axioms, written as sentences and named, with a model and a non-model. A non-model is checked by naming the axiom that fails and where. The names in parentheses are local to this chapter; they are not the clauses (S1)–(S7) of @def-satisfaction.
+Each theory below is given by its axioms, written as sentences and named, with a model and a non-model. A non-model is checked by naming the axiom that fails and where. The names in parentheses are local to this chapter, except the field clauses (F1)–(F9), which keep their series-wide numbering; none of them is one of the clauses (S1)–(S7) of @def-satisfaction.
 
 ::: {#exm-axioms-and-models}
 [Axioms, Models and Non-models]
@@ -94,14 +94,14 @@ A model: \( (\nZ; +, 0) \), with \( \cdot \) read as \( + \) and \( e \) as \( 0
 \]
 is **not** an axiom; the next example shows why.
 
-*Fields.* Constants \( 0 \), \( 1 \) and two-place function symbols \( + \), \( \cdot \), with ten axioms:
+*Fields.* Constants \( 0 \), \( 1 \) and two-place function symbols \( + \), \( \cdot \), with ten axioms, the nine (F1)–(F9), numbered as in the field axioms used throughout this series, and \( (1 \ne 0) \):
 \[
 \begin{aligned}
-&\text{(F1)} && \forall x\, \forall y\, \forall z\, \bigl( (x + y) + z = x + (y + z) \bigr), &&\text{(F2)} && \forall x\, \forall y\, (x + y = y + x), \\
+&\text{(F1)} && \forall x\, \forall y\, (x + y = y + x), &&\text{(F2)} && \forall x\, \forall y\, \forall z\, \bigl( (x + y) + z = x + (y + z) \bigr), \\
 &\text{(F3)} && \forall x\, (x + 0 = x), &&\text{(F4)} && \forall x\, \exists y\, (x + y = 0), \\
 &\text{(F5)} && \forall x\, \forall y\, \forall z\, \bigl( (x \cdot y) \cdot z = x \cdot (y \cdot z) \bigr), &&\text{(F6)} && \forall x\, \forall y\, (x \cdot y = y \cdot x), \\
 &\text{(F7)} && \forall x\, (x \cdot 1 = x), &&\text{(F8)} && \forall x\, \bigl( \neg(x = 0) \to \exists y\, (x \cdot y = 1) \bigr), \\
-&\text{(F9)} && \forall x\, \forall y\, \forall z\, \bigl( x \cdot (y + z) = x \cdot y + x \cdot z \bigr), &&\text{(F10)} && \neg(0 = 1).
+&\text{(F9)} && \forall x\, \forall y\, \forall z\, \bigl( x \cdot (y + z) = x \cdot y + x \cdot z \bigr), &&(1 \ne 0) && \neg(0 = 1).
 \end{aligned}
 \]
 Models: \( \nQ \) and \( \nR \), with the usual operations, and the **two-element field**, with domain \( \{ 0, 1 \} \) and the tables
@@ -148,7 +148,7 @@ Models: \( \nQ \) and \( \nR \), with the usual operations, and the **two-elemen
 
 **Figure A.** Left: an equivalence relation on \( \{ a, b, c \} \), whose classes are \( \{ a, b \} \) and \( \{ c \} \). Right: the antichain on \( \{ a, b \} \).
 
-The gallery's checks are each one line long, and each names the clause of the axiom that is tested. The non-models are as instructive as the models: a non-model with every axiom but one true shows exactly what that one axiom adds.
+The non-models are as instructive as the models: a non-model with every axiom but one true shows exactly what that one axiom adds.
 
 ::: {.check}
 In the two-element field, which element is the additive inverse of \( 1 \), and which is the reciprocal of \( 1 \)? Why does the field axiom for reciprocals ask nothing of \( 0 \)?
@@ -265,7 +265,7 @@ $\begin{nd}
 Line 7 is \( \rulename{{=}E} \) with \( \varphi \) the formula \( z = e \): line 4 is \( \varphi[x_0 \cdot e / z] \), and line 6 says \( x_0 \cdot e = x_0 \), so the rule gives \( \varphi[x_0 / z] \). At line 9, \( x_0 \) appears in no premise, in no open assumption, and not in line 9.
 :::
 
-So in **every** group the identity is the only element that acts as one, by the soundness statement of [Section 7.2](#from-counter-models-to-non-derivability), without checking any group. In \( (\nZ; +, 0) \), \( 0 \) is the only number with \( d + 0 = d \) for all \( d \); in the triangle group, only the \( e \) row of the table repeats the column heads. Only (Id) was used. A theorem of a theory says something about all its models at once; that is what a theory is for.
+So in **every** group the identity is the only element that acts as one, by the soundness statement of [Section 7.2](#from-counter-models-to-non-derivability), without checking any group. In \( (\nZ; +, 0) \), \( 0 \) is the only integer \( x \) with \( d + x = d \) and \( x + d = d \) for every \( d \); in the triangle group, only the \( e \) row and the \( e \) column repeat the heads. Only (Id) was used. A theorem of a theory says something about all its models at once; that is what a theory is for.
 
 ## Consistency
 
@@ -437,7 +437,7 @@ Each part takes a line or two. The parts run from reading an axiom, through deci
 3. In the triangle table, what are \( q \cdot a \) and \( a \cdot q \)?
 4. Is \( D = \{ a, b \} \), \( R^{\fM} = \{ (a, b), (b, a) \} \) a model of the equivalence relation axioms? Which of the three hold?
 5. Is \( (\nQ \setminus \{ 0 \}; \cdot, 1) \), with the group's \( \cdot \) read as multiplication and \( e \) as \( 1 \), a model of the group axioms?
-6. Is a one-element structure a model of the strict order axioms? Of the partial order axioms?
+6. On \( D = \{ a \} \), which relations make a model of the strict order axioms? Of the partial order axioms?
 7. On \( D = \{ a, b \} \) with \( (a, b) \in R^{\fM} \), add the fewest pairs that make \( R^{\fM} \) an equivalence relation.
 8. Give a model of the dense strict linear order axioms other than \( (\nQ, <) \).
 9. True or false: if \( \sigma \) is false in some structure, then \( T \nvdash \sigma \).
@@ -458,7 +458,7 @@ Each part takes a line or two. The parts run from reading an axiom, through deci
 
 (e) Yes: multiplication is associative, \( 1 \) is an identity, and each \( d \) has the inverse \( 1/d \), again a non-zero rational.
 
-(f) Yes, with \( <^{\fM} = \emptyset \): (Irrefl) holds and (Trans) has no chain to check. Yes, with \( \le^{\fM} = \{ (a, a) \} \).
+(f) Strict order: exactly \( <^{\fM} = \emptyset \). The loop \( (a, a) \) breaks (Irrefl), and with no pairs (Trans) has no chain to check. Partial order: exactly \( \le^{\fM} = \{ (a, a) \} \); with \( \emptyset \), (Refl) fails at \( a \).
 
 (g) \( (a, a) \), \( (b, b) \) and \( (b, a) \).
 
@@ -489,7 +489,7 @@ On \( D = \{ 1, 2, 3, 4 \} \), give a relation that is:
 :::
 
 ::: {.solution}
-(i) \( R \) = the four loops together with \( (1, 2) \), \( (2, 1) \), \( (1, 3) \), \( (2, 3) \). Reflexive: the loops. Transitive: the chains \( (x, y), (y, z) \) with \( x \ne y \ne z \) are \( (1, 2), (2, 1) \), giving \( (1, 1) \); \( (2, 1), (1, 2) \), giving \( (2, 2) \); \( (1, 2), (2, 3) \), giving \( (1, 3) \); and \( (2, 1), (1, 3) \), giving \( (2, 3) \); all in \( R \), and a chain through a loop gives back its other pair. Not symmetric: \( (1, 3) \) without \( (3, 1) \). Not antisymmetric: \( (1, 2) \) and \( (2, 1) \) with \( 1 \ne 2 \).
+(i) \( R \) = the four loops together with \( (1, 2) \), \( (2, 1) \), \( (1, 3) \), \( (2, 3) \). Reflexive: the loops. Transitive: the chains \( (x, y), (y, z) \) of two non-loop pairs (\( x \ne y \) and \( y \ne z \)) are \( (1, 2), (2, 1) \), giving \( (1, 1) \); \( (2, 1), (1, 2) \), giving \( (2, 2) \); \( (1, 2), (2, 3) \), giving \( (1, 3) \); and \( (2, 1), (1, 3) \), giving \( (2, 3) \); all in \( R \), and a chain through a loop gives back its other pair. Not symmetric: \( (1, 3) \) without \( (3, 1) \). Not antisymmetric: \( (1, 2) \) and \( (2, 1) \) with \( 1 \ne 2 \).
 
 (ii) \( R = \{ (1, 1), (1, 2), (2, 1), (2, 2), (3, 3) \} \): symmetric and transitive (the classes \( \{ 1, 2 \} \) and \( \{ 3 \} \)), not reflexive at \( 4 \).
 
@@ -681,7 +681,7 @@ Let \( T \) be the theory of a strict linear order with a least element: (Irrefl
 ::: {.solution}
 *(a)* \( (\nN, <) \) is a model: no number is below itself, \( < \) is transitive, any two numbers are equal or one is below the other, and \( 0 \) is a least element. By @prp-model-shows-consistency, \( T \) is consistent.
 
-*(b)* In \( (\nN, <) \), (Dense) fails at \( 0 < 1 \). The non-negative rationals with \( < \) are a model of \( T \), with least element \( 0 \), in which (Dense) holds: between \( p < q \) lies \( (p + q)/2 \). By @prp-model-shows-independence, (Dense) is independent of \( T \).
+*(b)* In \( (\nN, <) \), (Dense) fails at \( 0 < 1 \). The non-negative rationals with \( < \) are a model of \( T \) (no rational is below itself, \( < \) is transitive, any two rationals are equal or one is below the other, and \( 0 \) is least, since no non-negative rational is below it), in which (Dense) holds: between \( p < q \) lies \( (p + q)/2 \). By @prp-model-shows-independence, (Dense) is independent of \( T \).
 
 *(c)* Written out, \( L(x_0) \) is \( \forall z\, (x_0 = z \vee x_0 < z) \). The plan: fix \( x_0 \), \( y_0 \), assume both are least, instantiate each at the other, and let a TAUT step combine the two disjunctions with (Irrefl) and (Trans) at \( x_0 \), \( y_0 \).
 
@@ -723,8 +723,8 @@ Line 14 is \( \rulename{{=}E} \) with \( \varphi \) the formula \( z = y_0 \): l
 
 **Marking scheme.** (10 points)
 - 2: (a), a model with every axiom checked.
-- 3: (b), two models, with (Dense) checked in each.
-- 4: (c), the derivation: the symmetry of \( = \) obtained by \( \rulename{{=}I} \) and \( \rulename{{=}E} \) (1), the three instances of (Trans) (1), a TAUT step whose skeleton is a tautology (1), the \( \rulename{\forall I} \) side conditions (1).
+- 3: (b), two models of \( T \) (the axioms checked for the new one), with (Dense) checked in each.
+- 4: (c), the derivation: the case \( y_0 = x_0 \) closed, by symmetry of \( = \) via \( \rulename{{=}I} \) and \( \rulename{{=}E} \) or by \( \rulename{{=}E} \) into \( x_0 < y_0 \) (1), the instance of (Trans) at \( x_0 \), \( y_0 \), \( x_0 \), reached by three \( \rulename{\forall E} \) steps (1), the cases combined, by a TAUT step whose skeleton is a tautology or by an equivalent \( \rulename{\vee E} \) and \( \rulename{\bot E} \) case analysis (1), the \( \rulename{\forall I} \) side conditions (1).
 - 1: names the axioms used.
 Fatal error (0 for (c)): a TAUT step that needs \( y_0 = x_0 \) and \( x_0 = y_0 \) to be the same letter (they are not).
 :::
@@ -737,7 +737,9 @@ exm-axioms-and-models (claim): divisibility on {1, 2, 3, 6} is a partial order, 
 exm-axioms-and-models (claim): (Q, <) is a dense strict linear order, (p + q)/2 between p < q; no integer strictly between 0 and 1 | school algebra; AN1.1 / F3.2 (promised, prose only, nothing rests on it)
 exm-axioms-and-models (claim): (Z; +, 0) is a group; (N; +, 0) fails (Inv) at 1 | school arithmetic
 exm-axioms-and-models (claim): Q and R are fields; Z fails (F8) at 2 | school algebra; F3.2 / AN1.1 (promised, prose only, nothing rests on it)
-exm-axioms-and-models (claim): the two-element field tables satisfy (F1)-(F10) | inline tables; checked by verify/ch07/exm-axioms-and-models.py
+exm-axioms-and-models (claim): the two-element field tables satisfy (F1)-(F9) and (1 != 0) | inline tables; checked by verify/ch07/exm-axioms-and-models.py
+def-model-of-theory (example): Quick check 1, in Q_{>0}, < is irreflexive and transitive, and d + 1 is positive and above d; nothing lies above 0 in ({0}, <) | school arithmetic
+exm-triangle-group (claim): addition and multiplication of numbers are commutative, so every group of numbers under them satisfies (Comm) | school arithmetic
 exm-triangle-group (claim): the table is computed from the six rearrangements; (Id), (Inv); a.r = c, r.a = b | inline computation; checked by verify/ch07/exm-triangle-group.py
 exm-triangle-group (claim): associativity, composing rearrangements of the corners is associative | fold "Why the table is associative without 216 checks" (argued inline); all 216 triples checked by verify/ch07/exm-triangle-group.py
 exm-triangle-group (claim): every two-element group is commutative | argued inline; checked by enumeration in verify/ch07/exm-triangle-group.py

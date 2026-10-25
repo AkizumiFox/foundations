@@ -1,5 +1,5 @@
 """exm-axioms-and-models (Section 7.4): every model and non-model of the gallery, on its
-stated domain or a window of Z, N, Q; the two-element field against (F1)-(F10)."""
+stated domain or a window of Z, N, Q; the two-element field against (F1)-(F9) and (1 != 0)."""
 import itertools
 import sys
 from fractions import Fraction as F
@@ -51,16 +51,16 @@ mul = lambda u, v: u * v
 assert [add(0, 0), add(0, 1), add(1, 0), add(1, 1)] == [0, 1, 1, 0]
 assert [mul(0, 0), mul(0, 1), mul(1, 0), mul(1, 1)] == [0, 0, 0, 1]
 for u, v, w in itertools.product(E, repeat=3):
-    assert add(add(u, v), w) == add(u, add(v, w))          # F1
+    assert add(add(u, v), w) == add(u, add(v, w))          # F2
     assert mul(mul(u, v), w) == mul(u, mul(v, w))          # F5
     assert mul(u, add(v, w)) == add(mul(u, v), mul(u, w))  # F9
 for u, v in itertools.product(E, repeat=2):
-    assert add(u, v) == add(v, u) and mul(u, v) == mul(v, u)  # F2, F6
+    assert add(u, v) == add(v, u) and mul(u, v) == mul(v, u)  # F1, F6
 for u in E:
     assert add(u, 0) == u and mul(u, 1) == u                   # F3, F7
     assert any(add(u, v) == 0 for v in E)                      # F4
     assert u == 0 or any(mul(u, v) == 1 for v in E)            # F8
-assert 0 != 1                                                  # F10
+assert 0 != 1                                                  # (1 != 0)
 # Z fails F8 at 2
 assert not any(QUOTED["Z_F8_fail"] * k == 1 for k in range(-100, 101))
 print("exm-axioms-and-models: all quoted values check")

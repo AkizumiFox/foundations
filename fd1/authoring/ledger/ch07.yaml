@@ -177,6 +177,16 @@ items:
     model: claude-opus-5-5
     evidence: 01-structures-and-satisfaction.md:210 The solution uses C and its polar-form square roots
       as a reason. fd1 never introduces C, and this later-volume source (F4.1) has no STATUS promise row.
+  - stage: S7r
+    verdict: minor
+    by: rereferee
+    hash: e916223ff7a3
+    date: '2026-10-25'
+    model: claude-opus-5-5
+    evidence: 'Only the ledger line at 01:631 changed: it now reads ''prose only, nothing depends on it;
+      not proved before F4.1 (prp-complex-square-roots)''. The Quick check text is untouched and its maths
+      is correct. The STATUS.md promise row for the C square-root fact is still missing (F003, deferred),
+      so this stays minor until that row is added.'
 - key: lem-free-coincidence
   kind: lem
   file: 01-structures-and-satisfaction.md
@@ -435,6 +445,25 @@ items:
     model: claude-opus-5-5
     evidence: 01-structures-and-satisfaction.md:371 The A item has 7 lettered parts, but STYLE §6 says
       the A exercise has 2-6.
+  - stage: S7r
+    verdict: correct
+    by: rereferee
+    hash: b116d549b4c9
+    date: '2026-10-25'
+    model: claude-opus-5-5
+    evidence: '01:366-400. There are now 4 parts, within STYLE §6''s 2-6. Part (a) groups sentences (i)-(iv);
+      the solution and table rows are relabelled (i)-(iv), and the content and verdicts are unchanged
+      and correct. (b) cites sentence (ii), which is true in N and false in Z. (c) and (d) are unchanged.
+      Ledger lines 641-642 are relabelled to match. exr-models-a1.py passes. Cosmetic only: its QUOTED
+      table keys ar'
+  - stage: S7r
+    verdict: correct
+    by: rereferee
+    hash: b116d549b4c9
+    date: '2026-10-25'
+    model: claude-opus-5-5
+    evidence: Re-lettered to (a)(i)-(iv), (b)-(d). The solution table, the cross-references (b) -> (ii)
+      and the ledger lines are consistent. verify/ch07/exr-models-a1.py passes.
 - key: exr-structures-and-satisfaction-a2
   kind: exr
   file: 01-structures-and-satisfaction.md
@@ -466,6 +495,25 @@ items:
     evidence: '01:405-450. I solved all 12 parts myself first, then rechecked (g) and (h) by script: for
       (g), c->a enters a; for (h), 2 and 3 are incomparable. (d) correctly notes that the lemma gives
       only an upper bound. (k) both true. (l) R={(1,2),(2,1)} works.'
+  - stage: S7r
+    verdict: correct
+    by: rereferee
+    hash: c776e8205366
+    date: '2026-10-25'
+    model: claude-opus-5-5
+    evidence: '01:430 (d). Recomputed: z = z holds under every assignment, so z never matters. In (N,
+      <=), forall y (x <= y) is true at l(x)=0 and false at l(x)=1. With <=^M empty the formula is false
+      under every assignment. ''Not always'' answers the stem''s ''Do they all matter?'' at 01:410. The
+      sidecar passes (''all quoted values check'') and now asserts the 0/1 contrast and the empty-relation
+      case. A2(c)''s (R; 1, +'
+  - stage: S7r
+    verdict: correct
+    by: rereferee
+    hash: c776e8205366
+    date: '2026-10-25'
+    model: claude-opus-5-5
+    evidence: '(d): z never matters. x matters in (N, <=) (l(x)=0 true, l(x)=1 false) and does not when
+      <= is empty. Both cases are checked in the sidecar, which passes.'
 - key: exr-structures-and-satisfaction-b1
   kind: exr
   file: 01-structures-and-satisfaction.md
@@ -590,6 +638,25 @@ items:
     model: claude-opus-5-5
     evidence: 01-structures-and-satisfaction.md:589 The fatal-error clause for (a) condemns the book's
       own correct proof.
+  - stage: S7r
+    verdict: correct
+    by: rereferee
+    hash: b093ddee758f
+    date: '2026-10-25'
+    model: claude-opus-5-5
+    evidence: 01:585-589. The new fatal error (d is a particular element, e.g. a constant's value or an
+      element chosen in P^M, not an arbitrary d in D, so the closing (S6) step is unjustified) names the
+      real mistake and no longer covers the model solution at 01:579, which fixes an arbitrary d and then
+      applies the premise's (S6). The (c) line now accepts either order and matches the solution at 01:583.
+      The model
+  - stage: S7r
+    verdict: correct
+    by: rereferee
+    hash: b093ddee758f
+    date: '2026-10-25'
+    model: claude-opus-5-5
+    evidence: 'The marking for (c) and the fatal error for (a) now match the solutions: (a) takes an arbitrary
+      d for the closing (S6); (c) uses the witness d of the premise.'
 - key: exr-structures-and-satisfaction-c2
   kind: exr
   file: 01-structures-and-satisfaction.md
@@ -760,6 +827,15 @@ items:
     model: claude-opus-5-5
     evidence: 02-counter-models.md:178 Step 1 turns the negated conclusion ¬∃x∃y(R(x,y)∧P(y)) into ∀x∀y(R(x,y)→¬P(y)).
       The ledger names prp-negated-implication for this, but that is the wrong law.
+  - stage: S7r
+    verdict: minor
+    by: rereferee
+    hash: 194f40897f40
+    date: '2026-10-25'
+    model: claude-opus-5-5
+    evidence: 'The procedure paragraph (02:134) and the solution text are correct. The ledger line now
+      cites the correct laws and the parity source. One minor item is still open: STATUS.md:113 does not
+      list F1.6 §02 among the users of the parity promise (F013, deferred to shared files).'
 - key: check:02-counter-models:4
   kind: check
   file: 02-counter-models.md
@@ -868,6 +944,16 @@ items:
     model: claude-opus-5-5
     evidence: 02-counter-models.md:257 The table caption says 'Each RIGHT step is legal and its sequent
       has no counter-model'. Two RIGHT sequents of the table do have counter-models.
+  - stage: S7r
+    verdict: correct
+    by: rereferee
+    hash: 3af3a3e68198
+    date: '2026-10-25'
+    model: claude-opus-5-5
+    evidence: The caption gives the proviso for the two RIGHT rows that use arith, and the other seven
+      RIGHT sequents are valid. The inclusions argument is restricted to sentences whose prime formulas
+      have different letters, and the general case is a pointer to optional 7.3. The fold no longer relies
+      on renaming. The ledger line matches. The frozen blueprint sentence is deferred.
 - key: check:02-counter-models:7
   kind: check
   file: 02-counter-models.md
@@ -920,6 +1006,23 @@ items:
     evidence: 02:395-420. (a)-(f) agree with mine. (b) points to the optional 7.3, which matches ruling
       C1. (c) uses exr-models-c1's sigma (no finite counter-model; not derivable). (d) uses forall x exists
       y (x<y) on N.
+  - stage: S7r
+    verdict: correct
+    by: rereferee
+    hash: 0fb1b9a62ed9
+    date: '2026-10-25'
+    model: claude-opus-5-5
+    evidence: (f) is narrowed to instances whose different prime formulas have different letters, such
+      as exm-three-classes (a). The solution's reason (S3)–(S5) computes truth exactly as a truth-table
+      row does, and that reason fits the narrowed question.
+  - stage: S7r
+    verdict: correct
+    by: rereferee
+    hash: 0fb1b9a62ed9
+    date: '2026-10-25'
+    model: claude-opus-5-5
+    evidence: Q6 is narrowed to distinct letters, which matches solution (f) and the fold at 02:362, now
+      restricted the same way.
 - key: exr-counter-models-a2
   kind: exr
   file: 02-counter-models.md
@@ -994,6 +1097,13 @@ items:
       (S5a and S5b): the solution now gives the missing step. With phi=psi=P(x), forall x (P(x)->P(x))
       is satisfied in every structure under every assignment, by (S5) and (S6). So the same structure
       with ell is a coun'
+  - stage: S7r
+    verdict: correct
+    by: rereferee
+    hash: a4f2ecea6ce1
+    date: '2026-10-25'
+    model: claude-opus-5-5
+    evidence: Title change only (', used later'). 03:256 and 03:352 come back to it.
 - key: exr-counter-models-b2
   kind: exr
   file: 02-counter-models.md
@@ -1026,6 +1136,21 @@ items:
     model: claude-opus-5-5
     evidence: 02-counter-models.md:565 The scheme gives 8 of 10 points to bare verdicts, with nothing
       for the proof by meaning or the checked counter-model that the task asks for.
+  - stage: S7r
+    verdict: correct
+    by: rereferee
+    hash: 03e21f748ec6
+    date: '2026-10-25'
+    model: claude-opus-5-5
+    evidence: The scheme now gives 1 per part only for a verdict with its justification, adds the bare
+      verdict as a fatal error, and still totals 10. The solutions are unchanged.
+  - stage: S7r
+    verdict: correct
+    by: rereferee
+    hash: 03e21f748ec6
+    date: '2026-10-25'
+    model: claude-opus-5-5
+    evidence: The marking now requires a justification for each verdict, and the fatal error matches.
 - key: exr-models-b3
   kind: exr
   file: 02-counter-models.md
@@ -1087,6 +1212,14 @@ items:
     date: '2026-10-25'
     model: claude-opus-5-5
     evidence: 02-counter-models.md:575 An exercise in Section 7.2 calls its own section 'Section 7.2'.
+  - stage: S7r
+    verdict: correct
+    by: rereferee
+    hash: 46e2d34b7349
+    date: '2026-10-25'
+    model: claude-opus-5-5
+    evidence: '''this section settled that converse above, in "What this certifies"'': the Section 5.4
+      bullet at 02:285 gives the reading over N.'
 - key: exr-counter-models-b4
   kind: exr
   file: 02-counter-models.md
@@ -1122,6 +1255,24 @@ items:
     evidence: 02-counter-models.md:661 For (a) the solution says no repair exists, but the task asks for
       a repair 'so that it reaches a correct conclusion', and (b) and (c) are repaired by changing the
       conclusion.
+  - stage: S7r
+    verdict: correct
+    by: rereferee
+    hash: 6ad4f27dc3a4
+    date: '2026-10-25'
+    model: claude-opus-5-5
+    evidence: (a) now repairs the derivation to ∀y(P(y)→∃xP(x)), using ∃I in place of the illegal ∀I.
+      The line numbers and citations are correct, check_fitch reports 0 errors, and the verify script
+      checks validity on sizes ≤3 and passes. The scheme and the ledger are consistent with this.
+  - stage: S7r
+    verdict: correct
+    by: rereferee
+    hash: 6ad4f27dc3a4
+    date: '2026-10-25'
+    model: claude-opus-5-5
+    evidence: 'Repair of (a): flagged box x_0; P(x_0) / ∃x P(x) by ∃I; then ->I and ∀I, with x_0 not in
+      the conclusion and no premises. It matches row 2 RIGHT of the table. check_fitch reports 0 errors
+      and the sidecar passes.'
 - key: exr-models-c1
   kind: exr
   file: 02-counter-models.md
@@ -1164,6 +1315,13 @@ items:
     model: claude-opus-5-5
     evidence: 02-counter-models.md:697 Exercises that later sections come back to have no ', used later'
       marker (STYLE §12.13.6).
+  - stage: S7r
+    verdict: correct
+    by: rereferee
+    hash: dcce4736ef71
+    date: '2026-10-25'
+    model: claude-opus-5-5
+    evidence: Title marker only. 06:297 and fd2 come back to it.
 - key: exr-models-c2
   kind: exr
   file: 02-counter-models.md
@@ -1206,6 +1364,13 @@ items:
       and transitivity. Irreflexivity gives distinctness, and the empty-domain remark is right. Earlier
       findings: (1) :293 now actually checks irreflexivity, transitivity and the d+1 witness for (N,<),
       so ''(as the text ch'
+  - stage: S7r
+    verdict: correct
+    by: rereferee
+    hash: 889f9f2ac185
+    date: '2026-10-25'
+    model: claude-opus-5-5
+    evidence: Title marker only.
 - key: exr-models-c3
   kind: exr
   file: 02-counter-models.md
@@ -1736,6 +1901,14 @@ items:
     model: claude-opus-5-5
     evidence: 12-first-order-soundness.md:326-332. All three counter-models re-checked by script, including
       the assignment l(x)=b in (c).
+  - stage: S7r
+    verdict: correct
+    by: rereferee
+    hash: 754a55a1f8ba
+    date: '2026-10-25'
+    model: claude-opus-5-5
+    evidence: '''nonderivability'' changed to ''non-derivability'' in the title and stem. No unhyphenated
+      instance is left in fd1/src.'
 - key: exr-first-order-soundness-c1
   kind: exr
   file: 03-first-order-soundness.md
@@ -1902,6 +2075,14 @@ items:
       Quick check 1''s facts about Q_{>0} (04:36; the symbol is NOTATION-introduced only in F3.2 §05);
       04:161 ''every group of numbers under addition or multiplication is commutative''; A2 (e)/(h) (Q
       without 0 a multiplicat'
+  - stage: S7r
+    verdict: correct
+    by: rereferee
+    hash: 5f6c5891c8c6
+    date: '2026-10-25'
+    model: claude-opus-5-5
+    evidence: It now has a ledger line, def-model-of-theory (example), sourced as school arithmetic. The
+      solution is unchanged and correct.
 - key: exm-axioms-and-models
   kind: exm
   file: 04-theories-and-models.md
@@ -1936,6 +2117,23 @@ items:
     evidence: 04-theories-and-models.md:100 The field axiom names (F1)–(F10) clash with the series' fixed
       clause names (F1)–(F9) (NOTATION, 'one symbol, one meaning'). The text's 'local to this chapter'
       disclaimer does not lift that rule.
+  - stage: S7r
+    verdict: correct
+    by: rereferee
+    hash: 8e3f96ab5a6a
+    date: '2026-10-25'
+    model: claude-opus-5-5
+    evidence: 'Only change: the false meta-sentence before check 2 (old 04:151) was deleted. The remaining
+      sentence is true, and the convention is stated at 04:41.'
+  - stage: S7r
+    verdict: correct
+    by: rereferee
+    hash: 8e3f96ab5a6a
+    date: '2026-10-25'
+    model: claude-opus-5-5
+    evidence: (F1) is commutativity and (F2) associativity, as in fd3 03-ordered-rings.md:16-27. (F3)-(F9)
+      match. (1 ≠ 0) is unnumbered, as fd3 states it. No (F10) is left anywhere and nothing outside cites
+      the clause numbers. The sidecar passes.
 - key: check:04-theories-and-models:2
   kind: check
   file: 04-theories-and-models.md
@@ -1980,6 +2178,14 @@ items:
     model: claude-opus-5-5
     evidence: '04:163-194: recomputed the whole table from the six permutations with ''first x then y''
       (script): matches every entry; a*r=c, r*a=b; two-element argument fine'
+  - stage: S7r
+    verdict: correct
+    by: rereferee
+    hash: fd19da4cf673
+    date: '2026-10-25'
+    model: claude-opus-5-5
+    evidence: A ledger line was added for the commutativity claim in the prose before the example (school
+      arithmetic). The example is unchanged.
 - key: check:04-theories-and-models:3
   kind: check
   file: 04-theories-and-models.md
@@ -2026,6 +2232,14 @@ items:
     evidence: '04-theories-and-models.md:268 The instance in Z of the theorem is misstated: ''0 is the
       only number with d + 0 = d for all d'' says nothing about uniqueness (the bound number is written
       as 0 itself).'
+  - stage: S7r
+    verdict: correct
+    by: rereferee
+    hash: 2f1df64a419e
+    date: '2026-10-25'
+    model: claude-opus-5-5
+    evidence: The follow-up prose at 04:268 now gives the Z and triangle instances with the two-sided
+      hypothesis of the stated theorem. The statement itself is unchanged.
 - key: proof:prp-group-identity-unique
   kind: proof
   file: 04-theories-and-models.md
@@ -2049,6 +2263,14 @@ items:
     model: claude-opus-5-5
     evidence: '04:242-265: =E cites equation line 6 (x0*e = x0) and line 4 = phi[x0*e/z], phi = (z = e),
       matching def-rules-equality (ch05/07:24) order; forall-I side condition stated'
+  - stage: S7r
+    verdict: correct
+    by: rereferee
+    hash: 001b197f3895
+    date: '2026-10-25'
+    model: claude-opus-5-5
+    evidence: The derivation is unchanged, and check_fitch on 04 reports 3 derivations with 0 errors.
+      The closing instances in the prose are now accurate.
 - key: def-inconsistent-theory
   kind: def
   file: 04-theories-and-models.md
@@ -2278,6 +2500,23 @@ items:
     evidence: 04:429-474. The permutation script gives q.a=c and a.q=b, and reproduces the whole triangle
       table. (d) Sym holds, Refl and Trans fail. (g) 3 pairs. (l) a partial order with exactly one comparable
       pair. (i) the counterexample with T={forall x R(x,x)} is correct. (k) the derivation of bot is correct.
+  - stage: S7r
+    verdict: correct
+    by: rereferee
+    hash: b37cae30c7f5
+    date: '2026-10-25'
+    model: claude-opus-5-5
+    evidence: (f) is reworded, and the answer is exactly the empty relation for the strict order and {(a,a)}
+      for the partial order. I recomputed it and it is right. The verify sidecar passes but checks only
+      the positive cases (see new_problems).
+  - stage: S7r
+    verdict: correct
+    by: rereferee
+    hash: b37cae30c7f5
+    date: '2026-10-25'
+    model: claude-opus-5-5
+    evidence: '(f) on {a}: strict order exactly ∅ (the loop breaks Irrefl); partial order exactly {(a,a)}
+      (∅ fails Refl). Both correct.'
 - key: exr-theories-and-models-b1
   kind: exr
   file: 04-theories-and-models.md
@@ -2310,6 +2549,22 @@ items:
     evidence: '04:478-508. Script: (i) is refl+trans, not sym, not antisym; (ii) is sym+trans, not refl,
       failing at 4; (iii) has no non-empty irreflexive, symmetric, transitive relation on domains of size
       1-3; and the argument is general. The 7.5 use is confirmed (05-definability-and-isomorphism.md:426).'
+  - stage: S7r
+    verdict: correct
+    by: rereferee
+    hash: 381764d5fe6e
+    date: '2026-10-25'
+    model: claude-opus-5-5
+    evidence: '(i): ''two non-loop pairs (x ≠ y and y ≠ z)'' is accurate, the four chains are complete
+      and their results are in R, and the sidecar passes.'
+  - stage: S7r
+    verdict: correct
+    by: rereferee
+    hash: 381764d5fe6e
+    date: '2026-10-25'
+    model: claude-opus-5-5
+    evidence: '(i) The chains of two non-loop pairs are listed completely: (1,2)(2,1), (2,1)(1,2), (1,2)(2,3),
+      (2,1)(1,3). All their results are in R.'
 - key: exr-theories-and-models-b2
   kind: exr
   file: 04-theories-and-models.md
@@ -2465,6 +2720,23 @@ items:
     evidence: 04-theories-and-models.md:727 The (c) scheme ties a point to the symmetry-of-= route and
       fails a correct proof by cases. It also says 'three instances of (Trans)' when one instance is obtained
       by three forall-E steps.
+  - stage: S7r
+    verdict: correct
+    by: rereferee
+    hash: edfc435b7d94
+    date: '2026-10-25'
+    model: claude-opus-5-5
+    evidence: (b) now checks every axiom of T for the non-negative rationals. The (c) scheme accepts the
+      alternative routes, names the single (Trans) instance at x0,y0,x0, and still totals 10 points. The
+      sidecar and check_fitch both pass.
+  - stage: S7r
+    verdict: correct
+    by: rereferee
+    hash: edfc435b7d94
+    date: '2026-10-25'
+    model: claude-opus-5-5
+    evidence: (b) checks the axioms of T for Q≥0. The marking now gives credit for the alternative routes
+      (=E into x_0<y_0; ∨E/⊥E for TAUT), and they are sound.
 - key: def-definable-set
   kind: def
   file: 05-definability-and-isomorphism.md
@@ -2556,6 +2828,21 @@ items:
       although the formula uses ≤ and ·, while the section insists 'the structure is part of the question'
       and that a formula may use only the structure's symbols (05:27); the projection paragraph 05:62
       likewise says only 'In ℝ'.
+  - stage: S7r
+    verdict: correct
+    by: rereferee
+    hash: a0a96c2a331a
+    date: '2026-10-25'
+    model: claude-opus-5-5
+    evidence: The structure is now (R;≤,·), which has the symbols the formula uses. The answer (-∞,0]
+      is unchanged and correct.
+  - stage: S7r
+    verdict: correct
+    by: rereferee
+    hash: a0a96c2a331a
+    date: '2026-10-25'
+    model: claude-opus-5-5
+    evidence: The structure is now named (R; ≤, ·). The answer x ≤ 0 is unchanged and correct.
 - key: exm-define-by-formula
   kind: exm
   file: 05-definability-and-isomorphism.md
@@ -2625,6 +2912,14 @@ items:
     evidence: 05-definability-and-isomorphism.md:146 Meta-claim 'Each clause is needed' is supported only
       for clause (iii); nothing in the section shows clause (ii) (operations) is needed, and clause (i)
       only appears later in B3(c).
+  - stage: S7r
+    verdict: correct
+    by: rereferee
+    hash: '977871745292'
+    date: '2026-10-25'
+    model: claude-opus-5-5
+    evidence: The paragraph at 146 now claims only that clause (iii) is needed in both directions, and
+      the identity-map example shows exactly that. The F2.1 ledger line is now marked paid.
 - key: thm-isomorphism-invariance
   kind: thm
   file: 05-definability-and-isomorphism.md
@@ -2649,6 +2944,15 @@ items:
       with (ℤ;+), for which the conclusion 'no bijection ℝ→ℤ carries addition to addition' is vacuous
       (no bijection ℝ→ℤ exists at all), so it does not illustrate the method; and the fact that 1 is not
       y+y in ℤ (also used in Quick check 1 for the evens) has no ledger line.
+  - stage: S7r
+    verdict: correct
+    by: rereferee
+    hash: a5ca785bab3b
+    date: '2026-10-25'
+    model: claude-opus-5-5
+    evidence: ∀x∃y(y+y=x) is true in (Q;+) with y=x/2. It is false in (Z;+) at x=1, since y≤0 gives y+y≤0
+      and y≥1 gives y+y≥2. Bijections Q→Z exist (fd2 thm-integers-rationals-countable), so the example
+      now does real work. The ledger lines are present.
 - key: proof:thm-isomorphism-invariance
   kind: proof
   file: 05-definability-and-isomorphism.md
@@ -2759,6 +3063,22 @@ items:
     evidence: 05-definability-and-isomorphism.md:263 'adding one arrow removed three of the four' presupposes
       that the directed four-cycle has exactly four automorphisms (the rotation powers) and that the looped
       version keeps only the identity; the text established only that the rotation powers are automorphisms.
+  - stage: S7r
+    verdict: correct
+    by: rereferee
+    hash: ed7a9077bba6
+    date: '2026-10-25'
+    model: claude-opus-5-5
+    evidence: The loop sentence is now correct without any automorphism count. Each non-trivial rotation
+      maps (a,a) to (b,b), (c,c) or (d,d), and none of these is an arrow.
+  - stage: S7r
+    verdict: correct
+    by: rereferee
+    hash: ed7a9077bba6
+    date: '2026-10-25'
+    model: claude-opus-5-5
+    evidence: The automorphisms of the directed 4-cycle are the four rotations. Each of the three non-trivial
+      ones moves the loop at a, so after the loop is added only the identity remains.
 - key: check:05-definability-and-isomorphism:5
   kind: check
   file: 05-definability-and-isomorphism.md
@@ -2843,6 +3163,21 @@ items:
       a window or by enumeration: (k) has 2 automorphisms, id and the swap of a and b, and exists y R(y,x)
       defines {c}. (d) gives {1} and the empty set, (f) gives [-1,1], (h) and (i) use -d. (l) is witnessed
       by ''there is a least element''.'
+  - stage: S7r
+    verdict: correct
+    by: rereferee
+    hash: c1a904e41c56
+    date: '2026-10-25'
+    model: claude-opus-5-5
+    evidence: A6 now names (R;1,+,·), the symbols of x·x+y·y=1. The answer (f) [-1,1] is unchanged and
+      correct.
+  - stage: S7r
+    verdict: correct
+    by: rereferee
+    hash: c1a904e41c56
+    date: '2026-10-25'
+    model: claude-opus-5-5
+    evidence: (f) now names the structure (R; 1, +, ·). The answer [-1,1] is unchanged.
 - key: exr-definability-and-isomorphism-b1
   kind: exr
   file: 05-definability-and-isomorphism.md
@@ -3200,6 +3535,22 @@ items:
     model: claude-opus-5-5
     evidence: 05-definability-and-isomorphism.md:625 The R4 solution names its source (Section 7.2's soundness
       statement) only in prose, with no @ref. STYLE requires an @ref.
+  - stage: S7r
+    verdict: correct
+    by: rereferee
+    hash: 962b4dd28019
+    date: '2026-10-25'
+    model: claude-opus-5-5
+    evidence: The solution now cites [Section 7.2](#from-counter-models-to-non-derivability), and the
+      anchor resolves at 02:259. The mathematics is unchanged and correct.
+  - stage: S7r
+    verdict: correct
+    by: rereferee
+    hash: 962b4dd28019
+    date: '2026-10-25'
+    model: claude-opus-5-5
+    evidence: 'The Section 7.2 pointer is now a link to #from-counter-models-to-non-derivability. The
+      content is unchanged.'
 - key: thm-first-order-completeness
   kind: thm
   file: 06-limits-of-first-order-logic.md
@@ -3224,6 +3575,14 @@ items:
     evidence: 06-limits-of-first-order-logic.md:29 The meta-claim that the last part 'explains why' no
       method finds a derivation or a counter-model overstates. That part only states Church–Turing without
       proof.
+  - stage: S7r
+    verdict: correct
+    by: rereferee
+    hash: 0de8e56a32c4
+    date: '2026-10-25'
+    model: claude-opus-5-5
+    evidence: 06:29 now says the last part 'states, without proof' that no method works in every case.
+      This matches the undecidability remark, which is stated without proof.
 - key: thm-first-order-compactness
   kind: thm
   file: 06-limits-of-first-order-logic.md
@@ -3311,6 +3670,16 @@ items:
     evidence: 06-limits-of-first-order-logic.md:95 The claim that the listable model of the theory of
       (R;0,1,+,·,<) fails completeness for all sets has no justification and no reference, and is not
       marked as stated without proof.
+  - stage: S7r
+    verdict: minor
+    by: rereferee
+    hash: 8208f4c9f1e8
+    date: '2026-10-25'
+    model: claude-opus-5-5
+    evidence: '06:83: non-empty finite sets, repeating the last element, is correct. 06:95: the reason
+      for incompleteness is now given (ordered field + fd3 Ch6 uniqueness + R not listable). It is correct,
+      but ''it'' after the colon is ambiguous and the step ''so it would be isomorphic to R, and R could
+      be listed'' is left implicit. The ledger lines are consistent. The STATUS row is deferred (F033).'
 - key: check:06-limits-of-first-order-logic:3
   kind: check
   file: 06-limits-of-first-order-logic.md
@@ -3353,6 +3722,26 @@ items:
     model: claude-opus-5-5
     evidence: 06-limits-of-first-order-logic.md:118 N is undefined when the finite subset contains no
       axiom n<c.
+  - stage: S7r
+    verdict: minor
+    by: rereferee
+    hash: df800317a316
+    date: '2026-10-25'
+    model: claude-opus-5-5
+    evidence: '06:118 handles the empty case, 06:143/145 handle parameters correctly, and the ledger matches.
+      06:123: the bounding sentences, for n in N, cover only x < n+1, i.e. standard elements at least
+      1. A non-standard e below 0^M is excluded only by forall x not(x<0) (or by transitivity with x<1),
+      which the text does not cite. So ''nothing non-standard lies below a standard element'', and with
+      it the new tri'
+  - stage: S7r
+    verdict: correct
+    by: rereferee
+    hash: df800317a316
+    date: '2026-10-25'
+    model: claude-opus-5-5
+    evidence: '''(or 0 if there is none)'' covers a subset with no c-axioms. Standard below non-standard
+      follows from the bounding sentences plus trichotomy, both true in N. The argument with parameters
+      fixes z_i at e_i throughout, and the closed instance is in T.'
 - key: check:06-limits-of-first-order-logic:4
   kind: check
   file: 06-limits-of-first-order-logic.md
@@ -3452,6 +3841,23 @@ items:
     model: claude-opus-5-5
     evidence: 06-limits-of-first-order-logic.md:255 A2(l) asks about a theory whose models are exactly
       the finite structures, but its solution cites C1, which only rules out a single sentence.
+  - stage: S7r
+    verdict: correct
+    by: rereferee
+    hash: 724cee2a8135
+    date: '2026-10-25'
+    model: claude-opus-5-5
+    evidence: '06:255 (l): a theory whose models are exactly the finite structures has models of every
+      finite size (C1''s construction), so by B1 it has an infinite model. This is valid for an infinite
+      T. The sidecar passes.'
+  - stage: S7r
+    verdict: correct
+    by: rereferee
+    hash: 724cee2a8135
+    date: '2026-10-25'
+    model: claude-opus-5-5
+    evidence: '(l): a theory whose models are exactly the finite structures has models of every finite
+      size (C1''s structures). By B1 it then has an infinite model, a contradiction. Correct.'
 - key: exr-limits-of-first-order-logic-b1
   kind: exr
   file: 06-limits-of-first-order-logic.md
@@ -3482,6 +3888,22 @@ items:
     model: claude-opus-5-5
     evidence: 06-limits-of-first-order-logic.md:275 The marking scheme ties 3 points to one route (the
       sigma_n), so a correct proof with new constants loses them.
+  - stage: S7r
+    verdict: correct
+    by: rereferee
+    hash: a2faa3c3051b
+    date: '2026-10-25'
+    model: claude-opus-5-5
+    evidence: '06:273: the same-pair {2m,2m+1} reading on Z is a model, with no floor. 06:275: the scheme
+      accepts the constants route. The sidecar passes.'
+  - stage: S7r
+    verdict: correct
+    by: rereferee
+    hash: a2faa3c3051b
+    date: '2026-10-25'
+    model: claude-opus-5-5
+    evidence: The same-pair relation {2m,2m+1} on Z is reflexive, symmetric and transitive, with classes
+      of size 2. The marking accepts the new-constant variant.
 - key: exr-limits-of-first-order-logic-b2
   kind: exr
   file: 06-limits-of-first-order-logic.md
@@ -3512,6 +3934,22 @@ items:
     model: claude-opus-5-5
     evidence: 06-limits-of-first-order-logic.md:303 The scheme's '1 for the statement named' does not
       fit part (iii), where the correct answer is that no statement settles it.
+  - stage: S7r
+    verdict: correct
+    by: rereferee
+    hash: da16ddf6029a
+    date: '2026-10-25'
+    model: claude-opus-5-5
+    evidence: 06:281 adds 'or that none does'. The 06:303 scheme fits (iii), and the counter-model is
+      from exr-models-c1.
+  - stage: S7r
+    verdict: correct
+    by: rereferee
+    hash: da16ddf6029a
+    date: '2026-10-25'
+    model: claude-opus-5-5
+    evidence: 'The stem now allows ''none does''. The marking for (iii) matches the solution: C1''s sentence
+      is false in N with successor.'
 - key: exr-limits-of-first-order-logic-c1
   kind: exr
   file: 06-limits-of-first-order-logic.md
@@ -3578,6 +4016,23 @@ items:
       satisfies not-phi, so a least e exists with e != 0^M. Its predecessor d comes from a sentence true
       in N, d<e by forall y (y<S(y)), and d is non-standard because S of a numeral is a numeral. This
       matches my proof,
+  - stage: S7r
+    verdict: correct
+    by: rereferee
+    hash: 033415f47549
+    date: '2026-10-25'
+    model: claude-opus-5-5
+    evidence: '06:344: a y that does not occur in psi has no quantifier on it, so it is free for x by
+      def-free-for (ch05 02:393). y differs from x because x occurs free in psi. The scheme at 06:352
+      matches.'
+  - stage: S7r
+    verdict: correct
+    by: rereferee
+    hash: 033415f47549
+    date: '2026-10-25'
+    model: claude-opus-5-5
+    evidence: (a) Choosing y with no occurrence in ψ makes y free for x (def-free-for). The marking and
+      ledger are updated to match.
 - key: check:index:1
   kind: check
   file: index.md

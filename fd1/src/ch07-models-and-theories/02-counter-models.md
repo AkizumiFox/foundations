@@ -131,7 +131,7 @@ Take \( D = \{ a, b \} \), \( P^{\fM} = \{ a \} \), \( Q^{\fM} = \emptyset \). T
 
 ## Finding a counter-model
 
-A counter-model is a structure that makes the **counterexample set** \( \Gamma, \neg\varphi \) (@def-counterexample-set) true. Section 4.6 searched for a row; here is the search for a structure, the named move **search for a counter-model**.
+A counter-model is a structure with an assignment under which every member of the **counterexample set** \( \Gamma, \neg\varphi \) (@def-counterexample-set) is true. Section 4.6 searched for a row; here is the search for a structure, the named move **search for a counter-model**.
 
 1. Write the counterexample set, and push each \( \neg \) inward (Section 6.2), so that every demand is visible as a \( \forall \) or an \( \exists \).
 2. Meet the **existential demands first**: each \( \exists x\, \psi \) asks for an element; try one already present, and add a new one only if every present one clashes.
@@ -254,7 +254,7 @@ Chapter 5 introduced each side condition with a step that breaks it and a readin
 | \( \rulename{\exists E} \): \( x_0 \) not in \( \exists x\, \varphi \) (5.6) | \( \forall y\, \exists x\, R(x, y) \vdash \exists z\, R(z, z) \) | \( \forall y\, \exists x\, R(x, y) \vdash \exists z\, \exists x\, R(x, z) \) | three dots, \( a \to b \to c \to a \) |
 | \( \rulename{{=}E} \): terms free for \( x \) (5.7) | \( a = y, \exists y\, (y < a) \vdash \exists y\, (y < y) \) | \( a = y, \exists z\, (z < a) \vdash \exists z\, (z < y) \), after renaming the premise | \( \nZ \), \( a \) and \( y \) both naming \( 0 \) |
 
-Each counter-model makes the WRONG sequent's premises true and its conclusion false, so, by the statement in the next subsection, no correct derivation reaches that conclusion: the side condition is not a fussy extra, it is what keeps the rule from leading from truth to falsehood. Each RIGHT step is legal and its sequent has no counter-model. Section 7.3 (optional) shows the same thing from the other side: each side condition is used in exactly one case of the soundness proof.
+Each counter-model makes the WRONG sequent's premises true and its conclusion false, so, by the statement in the next subsection, no correct derivation reaches that conclusion: the side condition is not a fussy extra, it is what keeps the rule from leading from truth to falsehood. Each RIGHT step is legal, and its sequent has no counter-model, with one proviso. The RIGHT derivations of the rows "flag in no open assumption" and "\( x_0 \) not in \( \chi \)", taken from Sections 5.4 and 5.6, use an "arith" line, which records an arithmetic fact and is not a rule. Those two sequents hold in every structure in which that fact (\( \forall x\, (x > 0 \to x + 1 > 0) \), or \( \forall x\, (x > 5 \to x + 1 > 6) \)) is true, such as \( \nN \) or \( \nZ \) with the usual meanings, and not in every structure: read \( + \) as subtraction on \( \nZ \), and \( \forall x\, (x > 0 \to x + 1 > 0) \) fails at \( 1 \). Section 7.3 (optional) shows the same thing from the other side: each side condition is used in exactly one case of the soundness proof.
 
 ## From counter-models to non-derivability {#from-counter-models-to-non-derivability}
 
@@ -287,7 +287,7 @@ A counter-model proves **non**-derivability; it never proves derivability, and a
 - Section 5.6: the three counter-worlds of the \( \rulename{\exists E} \) clauses, the converse of @prp-exists-and (picture (A)), the swap (picture (B), @exm-counter-model-swap), and the breaks of @exr-existential-elimination-b4.
 - Section 5.7: the capture in \( \rulename{{=}E} \), the two-dot counter-reading to the converse of @exm-extensionality-logical-half (the subsection "Extensionality" below), and the breaks of @exr-equality-and-uniqueness-b5.
 - Section 5.8: the one-element domain with \( 0 \in 0 \), in which any two sets without elements are equal and no set without elements exists (@exr-counting-and-descriptions-b4 (b)).
-- Section 6.1: the readings of the translation table, each making the right formula true and the wrong one false, so the wrong one is not derivable from the right one; and the converse in @exr-translation-c3 (b).
+- Section 6.1: the readings of the translation table, each separating the wrong formula from the right one. In rows (c)–(e) the right formula is true and the wrong one false, so the wrong one is not derivable from the right one; in rows (a) and (b) it is the other way round, so the right one is not derivable from the wrong one. Also the converse in @exr-translation-c3 (b).
 - Section 6.2: the converses of (c) and (d) of @prp-quantifier-distribution (6.2 read them over \( \nZ \); picture (A) and the first Quick check draw them), and the breaks of @exr-quantifier-laws-b4.
 - Section 6.3: every break of @exr-first-order-search-b1 and @exr-first-order-search-c2 (a), and the move "test the subgoal by a counter-reading".
 - Section 6.4: continuity does not give uniform continuity (@exm-square-not-uniform, as above), and the break in @exr-uniform-continuity-rule-by-rule-c3 (b).
@@ -327,7 +327,7 @@ Place each sentence in the narrowest class it belongs to.
 *(d)* False in \( \nN \), so in none of the three classes.
 :::
 
-Why the inclusions hold: a valid sentence is true in \( \nN \) because \( \nN \) is one structure; an instance of a tautology is valid because (S3)–(S5) compute a formula's truth from the truth of the prime formulas its skeleton's letters stand for, exactly as a truth table does (the first fold below gives the argument). The classes meet derivations as follows: an instance of a tautology is derivable (by \( \rulename{TAUT} \), @prp-taut-skeleton); a valid sentence need not be derivable by \( \rulename{TAUT} \) alone; and a sentence true in \( \nN \) but not valid is never derivable, by the statement of this section.
+Why the inclusions hold: a valid sentence is true in \( \nN \) because \( \nN \) is one structure; an instance of a tautology whose different prime formulas have different letters (every sentence classified here) is valid because (S3)–(S5) compute a formula's truth from the truth of the prime formulas its skeleton's letters stand for, exactly as a truth table does (the first fold below gives the argument); that every instance is valid, including those where renamed prime formulas share a letter, is shown in the optional Section 7.3. The classes meet derivations as follows: an instance of a tautology is derivable (by \( \rulename{TAUT} \), @prp-taut-skeleton); a valid sentence need not be derivable by \( \rulename{TAUT} \) alone; and a sentence true in \( \nN \) but not valid is never derivable, by the statement of this section.
 
 ```{=latex}
 \begin{center}
@@ -359,9 +359,9 @@ Valid: if \( \forall x\, (x < S(x)) \) holds in a structure, then by (S6) at \( 
 :::
 
 ::: {.second-reading title="Why an instance of a tautology is valid"}
-Let \( \sigma \) be a sentence whose skeleton is a tautology, and fix a structure \( \fM \) and an assignment \( \ell \). Give each letter of the skeleton the truth value, under \( \fM \) and \( \ell \), of the prime formula it stands for. This is one row of the skeleton's truth table. By induction on the skeleton, the skeleton's value in that row is \( \mathrm{T} \) exactly when \( \fM, \ell \models \sigma \): at a letter this is how the row was chosen, and at \( \neg \), \( \wedge \), \( \vee \), \( \to \), \( \leftrightarrow \) the clauses (S3)–(S5) compute exactly as the clauses (V1)–(V6) of @def-truth-value do. A tautology has value \( \mathrm{T} \) in every row, so \( \sigma \) is satisfied in every structure under every assignment: it is valid.
+Let \( \sigma \) be a sentence whose skeleton is a tautology and in which different prime formulas get different letters, and fix a structure \( \fM \) and an assignment \( \ell \). Give each letter of the skeleton the truth value, under \( \fM \) and \( \ell \), of the prime formula it stands for. This is one row of the skeleton's truth table. By induction on the skeleton, the skeleton's value in that row is \( \mathrm{T} \) exactly when \( \fM, \ell \models \sigma \): at a letter this is how the row was chosen, and at \( \neg \), \( \wedge \), \( \vee \), \( \to \), \( \leftrightarrow \) the clauses (S3)–(S5) compute exactly as the clauses (V1)–(V6) of @def-truth-value do. A tautology has value \( \mathrm{T} \) in every row, so \( \sigma \) is satisfied in every structure under every assignment: it is valid.
 
-When two different prime formulas share a letter (@def-propositional-skeleton gives one letter to prime formulas that differ only by renaming bound variables), this uses that renaming keeps meaning, proved in the optional Section 7.3; every sentence this section classifies gives different prime formulas different letters. The argument is about meaning and does not go through soundness.
+When two different prime formulas share a letter (@def-propositional-skeleton gives one letter to prime formulas that differ only by renaming bound variables), the same argument works, since the row above is well chosen only if the two formulas have the same truth value. They do, because renaming keeps meaning; the optional Section 7.3 proves this, and nothing in this section relies on it, since every sentence this section classifies gives different prime formulas different letters. The argument is about meaning and does not go through soundness.
 :::
 
 ::: {.second-reading title="A failed search proves nothing here, either"}
@@ -401,7 +401,7 @@ So extensionality is a fact about sets, not about logic: a theory of sets must t
 3. True or false, with a reason: if no structure with at most five elements is a counter-model to \( \Gamma \models \varphi \), then \( \Gamma \vdash \varphi \).
 4. True or false, with a reason: a structure in which the sentence \( \sigma \) is true shows \( \vdash \sigma \).
 5. Which step of the search for a counter-model comes first, and which kind of demand is met first?
-6. Give, in one sentence, the reason that every instance of a tautology is valid.
+6. Give, in one sentence, the reason that an instance of a tautology whose different prime formulas have different letters, such as (a) of @exm-three-classes, is valid.
 :::
 :::
 
@@ -469,7 +469,7 @@ Each part takes a line or two. (a)–(c) give or judge a counter-model; (d) judg
 ### B. Practice
 
 ::: {#exr-models-b1}
-[B1: Three counter-models]
+[B1: Three counter-models, used later]
 
 Give a counter-model for each of the following, and check each premise and the conclusion against @def-satisfaction.
 
@@ -562,17 +562,17 @@ A proof by meaning shows \( \Gamma \models \varphi \), not \( \Gamma \vdash \var
 
 **Marking scheme.** (10 points)
 
-- 8: 1 per verdict.
+- 8: 1 per part (a)–(h): the correct verdict with its justification, either a proof by meaning that covers every premise, or a counter-model with the premises checked true and the conclusion checked false. A bare verdict scores 0.
 - 1: the two derivations of (a) and (c), checked rule by rule (both needed).
 - 1: stating, at a failing claim, that the counter-model gives \( \Gamma \nvdash \varphi \) by the soundness statement.
 
-Fatal errors (0 for that part): a "counter-model" that falsifies a premise; a proof by meaning offered as a derivation.
+Fatal errors (0 for that part): a "counter-model" that falsifies a premise; a proof by meaning offered as a derivation; a verdict given without a justification.
 :::
 
 ::: {#exr-models-b3}
 [B3: The converse from Section 5.4]
 
-@exr-universal-introduction-b2 derived \( \forall x\, (P(x) \to Q(x)) \vdash \forall x\, \neg Q(x) \to \forall x\, \neg P(x) \), and its search for the converse stalled; Section 7.2 settles that converse with an infinite structure. Find a counter-model to
+@exr-universal-introduction-b2 derived \( \forall x\, (P(x) \to Q(x)) \vdash \forall x\, \neg Q(x) \to \forall x\, \neg P(x) \), and its search for the converse stalled; this section settled that converse above, in "What this certifies", with an infinite structure. Find a counter-model to
 \[
 \forall x\, \neg Q(x) \to \forall x\, \neg P(x) \models \forall x\, (P(x) \to Q(x))
 \]
@@ -658,7 +658,24 @@ $\begin{nd}
 :::
 
 ::: {.solution}
-*(a)* Line 3: \( x_0 \) appears in the assumption on line 1, which is open at line 3. Line 5 is a legal \( \rulename{\forall I} \): no premise, no open assumption, and \( x_0 \) is not in the conclusion. (This is the same-name nesting of Section 5.4's fold "The same error, as a false sentence", read there over \( \nZ \) with \( x > 0 \); here \( P \) is left open.) Counter-model to \( \models \forall y\, (P(y) \to \forall x\, P(x)) \): \( D = \{ a, b \} \), \( P^{\fM} = \{ a \} \). At \( y = a \), \( P(a) \) holds and \( \forall x\, P(x) \) fails at \( b \). No repair reaches this conclusion: the counter-model shows that no derivation does.
+*(a)* Line 3: \( x_0 \) appears in the assumption on line 1, which is open at line 3. Line 5 is a legal \( \rulename{\forall I} \): no premise, no open assumption, and \( x_0 \) is not in the conclusion. (This is the same-name nesting of Section 5.4's fold "The same error, as a false sentence", read there over \( \nZ \) with \( x > 0 \); here \( P \) is left open.) Counter-model to \( \models \forall y\, (P(y) \to \forall x\, P(x)) \): \( D = \{ a, b \} \), \( P^{\fM} = \{ a \} \). At \( y = a \), \( P(a) \) holds and \( \forall x\, P(x) \) fails at \( b \). No derivation reaches this conclusion: the counter-model shows it. A repair to a correct conclusion drops the inner box and uses \( \rulename{\exists I} \) in place of the illegal \( \rulename{\forall I} \):
+
+```{=latex}
+\begin{center}
+$\begin{nd}
+  \open[x_0]
+  \open
+  \hypo {1} {P(x_0)}
+  \have {2} {\exists x\, P(x)} \Ei{1}
+  \close
+  \have {3} {P(x_0) \to \exists x\, P(x)} \ii{1-2}
+  \close
+  \have {4} {\forall y\, (P(y) \to \exists x\, P(x))} \Ai{1-3}
+\end{nd}$
+\end{center}
+```
+
+This is the RIGHT entry of the second row of the side-condition table, generalized.
 
 *(b)* Line 2: in \( \varphi = \forall y\, (x = y) \) the term \( y \) is not free for \( x \), since it would be captured by \( \forall y \). Counter-model: any domain with two elements; the premise holds, and no element equals both. Repairs: \( \exists x\, \forall y\, (y = y) \) by \( \rulename{\exists I} \) from line 1, with \( x \) not in \( \varphi \); or \( z = z \) by \( \rulename{\forall E} \) at \( z \), then \( \exists x\, (x = z) \) by \( \rulename{\exists I} \).
 
@@ -685,7 +702,7 @@ $\begin{nd}
 **Marking scheme.** (10 points)
 
 - 6: (a)–(c), 1 each for the line with its condition, and 1 each for a checked counter-model.
-- 1: the repairs of (b) and (c), and the remark that (a) has none.
+- 1: the repairs of (a)–(c), and the remark that (a)'s original conclusion is unreachable.
 - 3: (d): the conclusion judged true, with the one-line derivation (1); the illegal line and its condition named (1); a counter-model to the step pattern rather than to the conclusion (1).
 
 Fatal errors (0 for the step): in (c), a counter-model with the assignment omitted, although the last line has a free variable; in (d), a claimed counter-model to the conclusion.
@@ -694,7 +711,7 @@ Fatal errors (0 for the step): in (c), a counter-model with the assignment omitt
 ### C. Going deeper
 
 ::: {#exr-models-c1}
-[C1: True in every finite model]
+[C1: True in every finite model, used later]
 
 Let \( f \) be a one-place function symbol, and let \( \sigma \) be the sentence
 \[
@@ -739,7 +756,7 @@ Fatal errors (0 for the step): in (b), a "counter-model" in which \( f^{\fM} \) 
 :::
 
 ::: {#exr-models-c2}
-[C2: A sentence with no finite model]
+[C2: A sentence with no finite model, used later]
 
 Let \( \tau \) be the conjunction of the three sentences of the text saying that \( < \) is a strict order with no largest element:
 \[
@@ -867,11 +884,11 @@ exm-counter-model-swap (solution): Z with >, the two-element identity; no one-el
 exm-counter-model-swap (example): converses of prp-exists-and and of the forall/or law; exists x P(x) |/= P(c); P(x_0) |/= forall x P(x); strict-order models Z, Q and the one-element non-model; the Quick check on the universal hypothesis | inline; verify/ch07/exm-counter-model-swap.py
 exm-counter-model-swap (example): every integer is even or odd, and not both (the Z illustrations of the two converses) | F2.2 (promised); STATUS F1.1 row, as in F1.1 §01 and F1.1 §07
 exm-counter-model-procedure (claim): the search procedure and its flowchart: a guide, no claim of termination or completeness | remark; nothing rests on it
-exm-counter-model-procedure (solution): the negated conclusion pushed inward; the structure on {a, b}; the N reading (P even, R(x, y) as y = 2x + 1) | prp-quantifier-negation, prp-negated-implication (F1.8 §02, cited by section); inline; verify/ch07/exm-counter-model-procedure.py
+exm-counter-model-procedure (solution): the negated conclusion pushed inward; the structure on {a, b}; the N reading (P even, R(x, y) as y = 2x + 1) | prp-quantifier-negation (c), twice (F1.8 §02, cited by section); then on the matrix not(R(x,y) and P(y)) == R(x,y) -> not P(y) by prp-standard-equivalences (b), (c) (F1.3 §05; derivably, prp-taut-skeleton, F1.8 §03); inline; every integer is even or odd and not both (2x + 1 is odd, not even): F2.2 (promised), STATUS F1.1 row; verify/ch07/exm-counter-model-procedure.py
 exm-small-domains (claim): the expansion is true exactly when the sentence is | inline: the expansion records the (S6)/(S7)/(S1) check over the elements, with no substitution and no new constants (lem-term-substitution is not used)
 exm-small-domains (solution): no counter-model of size 1; the size-2 counter-model, unique | inline; verify/ch07/exm-small-domains.py
 exm-small-domains (claim): the monadic bound 2^k | stated without proof and marked so; nothing depends on it
-exm-three-classes (claim): the side-condition table: each WRONG step and its counter-model, each RIGHT step legal | F1.4 §03-§07 (the delivered counterexamples, cited by section; exr-existential-introduction-c1 cited); counter-models checked by verify/ch07/exm-three-classes.py
+exm-three-classes (claim): the side-condition table: each WRONG step and its counter-model, each RIGHT step legal; each RIGHT sequent valid, the F1.4 §04 and §06 rows only together with their arith premise (forall x (x > 0 -> x + 1 > 0), forall x (x > 5 -> x + 1 > 6)), F1.6 §03 Step 1 (pointer) | F1.4 §03-§07 (the delivered counterexamples, cited by section; exr-existential-introduction-c1 cited); counter-models checked by verify/ch07/exm-three-classes.py
 def-first-order-entailment (claim): Gamma |- phi implies Gamma |= phi (soundness for predicate logic) | stated without proof in this section and marked so; proved in F1.6 §03 (optional; thm-first-order-soundness, never cited here)
 def-first-order-entailment (claim): x^2 on R is continuous and not uniformly continuous | exm-square-not-uniform (F1.8 §04), cited in prose
 def-first-order-entailment (claim): What this certifies: each listed counter-reading of F1.4 §01-F1.8 §04 | pointers to the cited labels and sections; no proof rests on them
@@ -889,7 +906,7 @@ exr-counter-models-b2 (solution): the eight verdicts, the counter-models, the de
 exr-counter-models-b2 (solution): derivations for (e), (f), (h) exist | stated, not given; each is a short exercise with the rules of F1.4 §03-§06
 exr-models-b3 (solution): the two-element counter-model | verify/ch07/exr-models-b3.py
 exr-models-b3 (solution): non-derivability from a counter-model | the soundness statement of this section (not proved here; F1.6 §03)
-exr-counter-models-b4 (solution): the broken lines, the counter-models (with the assignment in (c)), the repairs | inline; verify/ch07/exr-counter-models-b4.py; tools/check_fitch.py (the four WRONG blocks marked expect-invalid; the repair of (c) checked)
+exr-counter-models-b4 (solution): the broken lines, the counter-models (with the assignment in (c)), the repairs | inline; verify/ch07/exr-counter-models-b4.py; tools/check_fitch.py (the four WRONG blocks marked expect-invalid; the repairs of (a) and (c) checked; the repaired (a)'s conclusion valid on small structures)
 exr-models-c1 (solution): a subset of an n-element set with n elements is the whole set | school counting fact, named in the solution; F2.3 (promised) proves it
 exr-models-c1 (solution): successor on N is injective and misses 0 | inline
 exr-models-c1 (solution): non-derivability from a counter-model | the soundness statement of this section (not proved here; F1.6 §03)

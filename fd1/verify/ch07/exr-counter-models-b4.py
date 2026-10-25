@@ -7,6 +7,10 @@ from _fo_models import structure, sat, is_counter_model, all_subsets, P, ALL, EX
 Px = P("P", "x")
 # (a)
 assert not sat(ALL("y", IMP(P("P", "y"), ALL("x", Px))), structure("ab", pred={"P": {("a",)}}), {})
+# (a) repaired: forall y (P(y) -> exists x P(x)) holds on all small structures
+for n in (1, 2, 3):
+    for Ps in all_subsets(range(n)):
+        assert sat(ALL("y", IMP(P("P", "y"), EX("x", Px))), structure(range(n), pred={"P": Ps}), {})
 # (b) any two-element domain
 M2 = structure("ab")
 assert is_counter_model([ALL("y", ("eq", "y", "y"))], EX("x", ALL("y", ("eq", "x", "y"))), M2)
