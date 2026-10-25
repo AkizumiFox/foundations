@@ -672,6 +672,24 @@ items:
       empty relation on the empty set is vacuous. 05:66 meta-claim that the theorems need no separate
       case for the empty X holds for thm-classes-partition and thm-partition-equivalence (the partition
       of the empty set is the empty set of blocks).'
+  - stage: S5a
+    verdict: correct
+    by: refereeA
+    hash: 6c215e759497
+    date: '2026-10-26'
+    model: claude-opus-5-5
+    evidence: 'lines 43-72: (a) =I plus @fd1:prp-equality-symmetric-transitive; (b) every conclusion has
+      the form (u,v) in X x X with u,v in X, so it holds; (c) inherits the properties from = on |x|; (d)
+      vacuous on the empty set (second-reading). The non-example R (x-y in N) fails only (Eq2), at 1 R
+      0, and the cited lem-naturals-arithmetic (a),(b) do the work claimed.'
+  - stage: S5b
+    verdict: minor
+    by: refereeB
+    hash: 6c215e759497
+    date: '2026-10-26'
+    model: claude-opus-5-5
+    evidence: 02-equivalence-relations.md:52 Part (d) is posed on the main line, but its only answer is
+      in a second-reading fold.
 - key: def-equivalence-class
   kind: def
   file: 02-equivalence-relations.md
@@ -1084,6 +1102,14 @@ items:
       give 4 <= 2; sqrt2 <= 1/2 would give 2 <= 1/4; 3/2 <= sqrt2 would give 9/4 <= 2. Each pair has both
       terms >= 0, and trichotomy turns 'not (s <= t)' into t < s, as the ledger at 05:546 records. So
       the S5a and S5b f
+  - stage: S8
+    verdict: minor
+    by: seam
+    hash: ded4296cee17
+    date: '2026-10-26'
+    model: claude-opus-5-5
+    evidence: '02-equivalence-relations.md:336 A cross-volume pointer uses MT''s old title, and fd2 is
+      now inconsistent: 6.1 uses the new one.'
 - key: prp-congruence-arithmetic
   kind: prp
   file: 02-equivalence-relations.md
@@ -1322,6 +1348,27 @@ items:
     evidence: 02:50-52; every step cited (def-image, exm-fibres-of-function, thm-classes-partition (d),
       def-function, def-bijective, def-equinumerous); injectivity uses y in f(X) to get a point of the
       fiber
+  - stage: S5a
+    verdict: correct
+    by: refereeA
+    hash: 20e30b212057
+    date: '2026-10-26'
+    model: claude-opus-5-5
+    evidence: 'lines 476-480: (a) uses @exm-fibres-of-function ([a]=f^{-1}({f(a)}), and every fiber over
+      y=f(a) in f(X) is [a]) and @thm-classes-partition (d), which is the partition clause (line 165).
+      (b) Phi is well defined by (a); surjective via [a]=Phi(f(a)); injective because a with f(a)=y lies
+      in the fiber over y and not in the fiber over y''≠y. Every object is chosen after what it depends
+      on; uses only ear'
+  - stage: S5b
+    verdict: correct
+    by: refereeB
+    hash: 20e30b212057
+    date: '2026-10-26'
+    model: claude-opus-5-5
+    evidence: 'Lines 476-480. (a) follows from exm-fibres-of-function (class [a] = fiber over f(a)) together
+      with thm-classes-partition (d). (b): well-defined by (a); surjective via [a] = Phi(f(a)); injective
+      via the witness a in the fiber over y but not over y''. def-bijective and def-equinumerous are cited.
+      No fact is used without a ref.'
 - key: check:02-equivalence-relations:4
   kind: check
   file: 02-equivalence-relations.md
@@ -1490,6 +1537,24 @@ items:
     evidence: '02:145-165 solution checked: (a,b)~(c,d) iff ad=bc, f onto Q, numerator map fails at (1,2),(2,4);
       sidecar exm-fraction-map-factorization.py passes; STATUS promise-table row is a shared-file item
       routed to the todo'
+  - stage: S5a
+    verdict: correct
+    by: refereeA
+    hash: cdaa71a0763e
+    date: '2026-10-26'
+    model: claude-opus-5-5
+    evidence: 'lines 581-593: ~f is ad=bc (b,d>0, a school fact recorded in the ledger at line 900); it
+      is an equivalence relation by @exm-fibres-of-function, not by the exercise; f is onto Q, so iota
+      = id_Q; the numerator argument (1,2)~(2,4) but p gives 1≠2 is right, and ''none on Q'' follows through
+      the bijection f-bar. The sidecar passes.'
+  - stage: S5b
+    verdict: minor
+    by: refereeB
+    hash: cdaa71a0763e
+    date: '2026-10-26'
+    model: claude-opus-5-5
+    evidence: 02-equivalence-relations.md:592 'hence none on Q' is an unstated inference, and X is used
+      without being named.
 - key: check:02-equivalence-relations:5
   kind: check
   file: 02-equivalence-relations.md
@@ -1510,6 +1575,22 @@ items:
     date: '2026-10-26'
     model: claude-opus-5-5
     evidence: 02:68-72; remainders of 1..6 mod 3 give {3,6},{1,4},{2,5}; ledger 434
+  - stage: S5a
+    verdict: correct
+    by: refereeA
+    hash: 90323dc89579
+    date: '2026-10-26'
+    model: claude-opus-5-5
+    evidence: 'lines 595-601: q is onto (def-quotient-set) and not injective since q(1,2)=q(2,4) with
+      (1,2)≠(2,4); f-bar is a bijection by thm-canonical-factorization; iota = id_Q is bijective.'
+  - stage: S5b
+    verdict: correct
+    by: refereeB
+    hash: 90323dc89579
+    date: '2026-10-26'
+    model: claude-opus-5-5
+    evidence: 'Line 600: q is surjective and not injective (q(1,2) = q(2,4) because 1*4 = 2*2). f-bar
+      is a bijection by the theorem. iota = id_Q is injective and surjective. This matches 590.'
   old_key: check:02-fibres-and-factorization:2
 - key: exr-equivalence-relations-a1
   kind: exr
@@ -1601,6 +1682,34 @@ items:
     evidence: 02:266-285. (a) The fibers are {-2,2}, {0} and the empty set; the empty one is not a class
       by thm-classes-partition (a), and (a) does say classes are non-empty. (b) matches my answer. (c)
       gives yes/no/yes; by script, (a+4k)^2-a^2 ≡ 0 mod 8, and 4k need not be ≡ 0 mod 8.
+  - stage: S5a
+    verdict: correct
+    by: refereeA
+    hash: bf11c7706972
+    date: '2026-10-26'
+    model: claude-opus-5-5
+    evidence: 'lines 642-661: the fibers {-2,2}, {0} and the empty set are right, and the empty fiber
+      is excluded since -2 is not in f(R) and classes are non-empty (thm-classes-partition (a)); (b) X/~f,
+      f(X)={1,3}, f-bar and iota are right; (c) a''^2-a^2=8ak+16k^2=8(ak+2k^2) checks, and [0]_8≠[4]_8
+      is right. The sidecar passes.'
+  - stage: S5b
+    verdict: minor
+    by: refereeB
+    hash: bf11c7706972
+    date: '2026-10-26'
+    model: claude-opus-5-5
+    evidence: 02-equivalence-relations.md:642 The section has two A exercises, against STYLE §6. Part
+      (b) uses an unnamed X, and part (c) uses discreteness without a ref.
+  - stage: S6
+    verdict: correct
+    by: verifier
+    hash: bf11c7706972
+    date: '2026-10-26'
+    model: claude-opus-5-5
+    evidence: '02-equivalence-relations.md:653-660. Solved first: fibers {-2,2}, {0}, empty; the first
+      two are classes, the empty one is not (classes are non-empty). (b) X/~f={{a,c},{b,d}}, f(X)={1,3},
+      fbar and iota as stated. (c) mod 2: yes; mod 8: no (0 vs 4); a^2 mod 8: yes, since (a+4k)^2-a^2=8(ak+2k^2).
+      Brute-force script agrees on all parts.'
 - key: exr-equivalence-relations-b1
   kind: exr
   file: 02-equivalence-relations.md
@@ -1806,6 +1915,34 @@ items:
     model: claude-opus-5-5
     evidence: '02:576 (c): 16/9−1/9=5/3. 5/3−1=2/3 ∈ (0,1) is not an integer, so 5/3 ∉ ℤ by closure (a).
       [1/9]≠[16/9] by thm-classes-partition (b). The ledger line was added.'
+  - stage: S5a
+    verdict: correct
+    by: refereeA
+    hash: 82e4bbb9be46
+    date: '2026-10-26'
+    model: claude-opus-5-5
+    evidence: 'lines 718-748: (a) the difference is 6k-12l=6(k-2l); (b) 2a-2a''=8k; (c) 16/9-1/9=5/3,
+      which is not an integer by prp-integers-closed (c),(a); (d) (a+b)d=b(c+d), and the outputs stay
+      in Z x Z_{>0}; (e) 2*5≠3*3; (f) [1]=[-1] but 1≠-1; (g) equal squares of non-negative numbers are
+      equal, by fd1:thm-squares-order in both directions. The sidecar passes.'
+  - stage: S5b
+    verdict: minor
+    by: refereeB
+    hash: 82e4bbb9be46
+    date: '2026-10-26'
+    model: claude-opus-5-5
+    evidence: 02-equivalence-relations.md:747 Part (g) uses |x|^2 = x^2 without a ref or a ledger line.
+  - stage: S6
+    verdict: correct
+    by: verifier
+    hash: 82e4bbb9be46
+    date: '2026-10-26'
+    model: claude-opus-5-5
+    evidence: '02-equivalence-relations.md:735-747. My answers match all seven parts: a T, b T, c F, d
+      T, e F, f F, g T. Script checks: (a) and (b) are well defined; (c) 16/9-1/9=5/3, not an integer;
+      (d) (a+b)d=b(c+d) holds on all sampled related pairs, and the output stays in Z x Z>0; (e) 10 !=
+      9; (f) 1 != -1; (g) follows from thm-squares-order. Worked example present: exm-method-well-definedness
+      (line 399) and'
 - key: exr-fibres-and-factorization-b2
   kind: exr
   file: 02-equivalence-relations.md
@@ -1836,6 +1973,36 @@ items:
     model: claude-opus-5-5
     evidence: 02:303-313. (<=) uses injectivity of h. (=>) takes h = ḡ∘f̄^{-1}, a bijection by thm-composition-injective-surjective
       (c), and h(f(x))=g(x). This matches my proof.
+  - stage: S5a
+    verdict: correct
+    by: refereeA
+    hash: eae334489b4e
+    date: '2026-10-26'
+    model: claude-opus-5-5
+    evidence: 'lines 750-760: (⇐) uses that h is a function for one direction and that h is injective
+      for the other; (⇒) builds h = g-bar ∘ f-bar^{-1}. It is a bijection by thm-bijection-iff-inverse
+      and thm-composition-injective-surjective (c) (checked: 02-injections-and-surjections.md:221), and
+      h(f(x)) = g-bar([x]) = g(x). The quotient sets are equal because ~f = ~g.'
+  - stage: S5b
+    verdict: correct
+    by: refereeB
+    hash: eae334489b4e
+    date: '2026-10-26'
+    model: claude-opus-5-5
+    evidence: 'Lines 757-759. (<=) uses only that h is injective. (=>): f-bar and g-bar come from thm-canonical-factorization
+      on the common quotient set; h = g-bar o f-bar^{-1} is a bijection by thm-bijection-iff-inverse and
+      thm-composition-injective-surjective (c), which checks out (c = composite of bijections); and h(f(x))
+      = g(x). The statement is well-posed.'
+  - stage: S6
+    verdict: correct
+    by: verifier
+    hash: eae334489b4e
+    date: '2026-10-26'
+    model: claude-opus-5-5
+    evidence: '02-equivalence-relations.md:757-759. My proof: (<=) h is a function, so f-equal implies
+      g-equal, and h is injective, so g-equal implies f-equal. (=>) take h = gbar o fbar^{-1}, using thm-canonical-factorization
+      (line 533; fbar is a bijection onto f(X)). The book''s proof is the same and complete. The cited
+      labels exist: thm-composition-injective-surjective (c) is in ch02/02 at line 221. Worked exam'
 - key: exr-equivalence-relations-c1
   kind: exr
   file: 02-equivalence-relations.md
@@ -1959,6 +2126,35 @@ items:
     date: '2026-10-26'
     model: claude-opus-5-5
     evidence: Marking scheme 2/2/3/3 plus fatal errors matches the induction solution.
+  - stage: S5a
+    verdict: correct
+    by: refereeA
+    hash: 57c3c8c85f8d
+    date: '2026-10-26'
+    model: claude-opus-5-5
+    evidence: 'lines 816-839: induction on k with m fixed, and n, X, f quantified inside P(k). Base: X=∅
+      by the contrapositive of prp-empty-function (b), so n=0. Step: X'' = f^{-1}({1..k}) and F = f^{-1}({k+1})
+      are disjoint and cover X; X'' is finite by prp-subset-finite; the fibers of f'' are fibers of f
+      for i≤k; then P(k), prp-disjoint-union-count and cor-finite-size-unique. All the cited labels say
+      what is claim'
+  - stage: S5b
+    verdict: correct
+    by: refereeB
+    hash: 57c3c8c85f8d
+    date: '2026-10-26'
+    model: claude-opus-5-5
+    evidence: Lines 819-838. The statement is well-posed, including k = 0. Induction on k with X and f
+      quantified inside P(k). The base uses prp-empty-function (b) by contraposition and def-finite. The
+      step uses prp-subset-finite, the fiber identity for i <= k, prp-disjoint-union-count and cor-finite-size-unique.
+      The ledger (lem-naturals-arithmetic, F2.2 = fd2 Ch3) is correct. The marking scheme sums to 10.
+  - stage: S6
+    verdict: minor
+    by: verifier
+    hash: 57c3c8c85f8d
+    date: '2026-10-26'
+    model: claude-opus-5-5
+    evidence: 02-equivalence-relations.md:831 The C3 marking scheme only rewards the book's induction
+      on k, so a correct proof by a different route scores at most about 3/10.
 - key: exr-restriction-extension-and-gluing-c2
   kind: exr
   file: 02-equivalence-relations.md
@@ -2006,6 +2202,34 @@ items:
     model: claude-opus-5-5
     evidence: Now scoped to the existence part. The marking scheme accepts either location of the failure,
       both naming agreement on overlaps.
+  - stage: S5a
+    verdict: correct
+    by: refereeA
+    hash: 84128e635948
+    date: '2026-10-26'
+    model: claude-opus-5-5
+    evidence: 'lines 841-857: thm-gluing (ch02/03:92) has the hypotheses cover + agreement on overlaps,
+      and the proposed proof never uses agreement. The diagnosis (the value depends on the chosen index,
+      a well-definedness check) is right. The witness exm-piecewise-as-gluing (b) (ch02/03:143: values
+      0 and 1 at 0) is quoted correctly. Uses only earlier material.'
+  - stage: S5b
+    verdict: minor
+    by: refereeB
+    hash: 84128e635948
+    date: '2026-10-26'
+    model: claude-opus-5-5
+    evidence: 02-equivalence-relations.md:852 The marking-scheme list has no blank line before it, so
+      it renders as one run-on paragraph.
+  - stage: S6
+    verdict: correct
+    by: verifier
+    hash: 84128e635948
+    date: '2026-10-26'
+    model: claude-opus-5-5
+    evidence: 02-equivalence-relations.md:848-856, checked against thm-gluing (ch02/03:92). The unused
+      hypothesis is agreement on overlaps. The flaw is the choice-dependent definition of f (the well-definedness
+      check is missing), and as a result f|A_j=f_j fails at overlap points. The counterexample exm-piecewise-as-gluing
+      (b) (ch02/03:143, pieces x on [0,inf) and x+1 on (-inf,0]) really gives 0 vs 1 at x=0. The
 - key: def-partial-order
   kind: def
   file: 03-orders.md
@@ -2122,6 +2346,15 @@ items:
     model: claude-opus-5-5
     evidence: '06:76-97. The worked numbers check: {1,4,9} has greatest 9; for [0,1), (a+1)/2 lies in
       [0,1) above a (this is ledgered); the empty set has none of the four.'
+  - stage: S8
+    verdict: minor
+    by: seam
+    hash: f1ee40fdc077
+    date: '2026-10-26'
+    model: claude-opus-5-5
+    evidence: 03-orders.md:76 The chapter defines greatest and least elements and proves they are unique
+      without recalling the earlier versions it generalises. STYLE l.341 requires the spiral to be written
+      out.
 - key: def-maximal-element
   kind: def
   file: 03-orders.md
@@ -2908,6 +3141,14 @@ items:
     date: '2026-10-25'
     model: claude-opus-5-5
     evidence: The sidecar path in the ledger is now verify/ch04/exr-orders-r1.py.
+  - stage: S8
+    verdict: minor
+    by: seam
+    hash: dc3e80a8684f
+    date: '2026-10-26'
+    model: claude-opus-5-5
+    evidence: '03-orders.md:410 The R items are not in the slots STYLE §11.5 assigns: the previous-chapter
+      item is labelled r3, and r1 reaches 3 chapters back.'
 - key: exr-orders-r2
   kind: exr
   file: 03-orders.md
@@ -3028,6 +3269,14 @@ items:
     model: claude-opus-5-5
     evidence: The ledger line was added. Its labels (def-quotient-set, prp-countable-image, thm-integers-rationals-countable,
       exm-hilbert-hotel, prp-subset-finite, prp-integers-mod-n) are exactly the @refs in 03:444-453.
+  - stage: S8
+    verdict: minor
+    by: seam
+    hash: 0b9ffaa30811
+    date: '2026-10-26'
+    model: claude-opus-5-5
+    evidence: '03-orders.md:444-452: this is the previous-chapter (Ch 4) item, but it sits in the R3 slot,
+      which STYLE §11.5 reserves for the spiral / far-back item.'
 - key: exr-orders-r4
   kind: exr
   file: 03-orders.md
