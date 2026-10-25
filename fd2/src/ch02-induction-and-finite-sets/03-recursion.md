@@ -165,7 +165,7 @@ Do \( a_0 = 1 \), \( a_1 = 1 \) and \( a_{n+2} = a_{n+1} a_n \) define a sequenc
 :::
 
 ::: {.solution}
-Yes, by @cor-two-step-recursion with \( X = \nR \) and \( h(n, x, y) = yx \), a function \( \nN \times (\nR \times \nR) \to \nR \). Every term is \( 1 \): induct on the pair statement "\( a_n = 1 \) and \( a_{n+1} = 1 \)", as in the two-step example after @def-power. It holds at \( n = 0 \), and if it holds at \( n \), then \( a_{n+2} = 1 \cdot 1 = 1 \), so it holds at \( n + 1 \).
+Yes, by @cor-two-step-recursion with \( X = \nR \) and \( h(n, x, y) = yx \), a function \( \nN \times (\nR \times \nR) \to \nR \). Every term is \( 1 \): induct on the pair statement "\( a_n = 1 \) and \( a_{n+1} = 1 \)", as in the two-step example below, after @def-power. It holds at \( n = 0 \), and if it holds at \( n \), then \( a_{n+2} = 1 \cdot 1 = 1 \), so it holds at \( n + 1 \).
 :::
 
 ## Sums, products and powers
@@ -349,7 +349,7 @@ Check Bernoulli's inequality at \( x = -\tfrac12 \), \( n = 3 \), and say which 
 \( (1 - \tfrac12)^3 = \tfrac18 \), and \( 1 + 3 \cdot (-\tfrac12) = -\tfrac12 \); indeed \( \tfrac18 \ge -\tfrac12 \). The hypothesis is used in the line "since \( x \ge -1 \), we have \( 1 + x \ge 0 \)": multiplying the induction hypothesis by \( 1 + x \) keeps the direction of the inequality only because \( 1 + x \ge 0 \).
 :::
 
-The last result of this subsection is not about a recursive definition, but its induction runs over lists, and it is the fact *Analysis on the Real Line*, Chapter 1 needs about finite sets. A **maximum** of a set \( A \subseteq \nR \) is an element \( M \in A \) with \( a \le M \) for every \( a \in A \); a **minimum** is an element \( m \in A \) with \( m \le a \) for every \( a \in A \). For reals \( x_1, \dots, x_n \), we write \( \{x_1, \dots, x_n\} \coloneqq \{ x_k : k \in \{1, \dots, n\} \} \).
+The last result of this subsection is not about a recursive definition, but its induction runs over lists, and it is the fact *Analysis on the Real Line*, Chapter 1 needs about finite sets. A maximum of a set \( A \subseteq \nR \) is a greatest element of \( A \) in the sense of Section 2.1, and a minimum is a least element. For reals \( x_1, \dots, x_n \), we write \( \{x_1, \dots, x_n\} \coloneqq \{ x_k : k \in \{1, \dots, n\} \} \).
 
 ::: {#prp-finite-max}
 [Finite Sets Have a Maximum]
@@ -381,7 +381,7 @@ The base is \( 1 \), not \( 0 \): for \( n = 0 \) the set is \( \emptyset \), wh
 
 ## When the claim is too weak to carry its step
 
-Sometimes the statement we want is true, but it cannot be proved by induction as it stands: its inductive step does not go through. The cure looks paradoxical. We prove **more**. *Logic and Proof* met this cure (@fd1:exm-strengthen-the-claim) with a sum that telescopes; here the sum does not telescope, and the stronger claim has to be guessed.
+Sometimes the statement we want is true, but it cannot be proved by induction as it stands: its inductive step does not go through. The cure looks paradoxical. We prove **more**. *Logic and Proof* met this cure (@fd1:exm-strengthen-the-claim) with a sum that telescopes, where the stronger claim was an exact formula; here the sum has no closed form, and the stronger claim is an inequality with a margin.
 
 ::: {#exm-strengthen-hypothesis}
 [Proving more to prove anything]
@@ -412,7 +412,7 @@ Would "\( S_n \le 2 - \frac{1}{n + 1} \)" also carry its own step?
 :::
 
 ::: {.solution}
-No, although the statement is true (it is weaker than \( S_n \le 2 - \frac1n \)). From \( S_n \le 2 - \frac{1}{n+1} \), the step needs \( \frac{1}{(n + 1)^2} \le \frac{1}{n + 1} - \frac{1}{n + 2} = \frac{1}{(n + 1)(n + 2)} \), that is, \( (n + 1)(n + 2) \le (n + 1)^2 \), which is false for every \( n \ge 1 \). A stronger claim works only if its margin pays for the next term; this margin is too small.
+No, although the statement is true (it is weaker than \( S_n \le 2 - \frac1n \)). The hypothesis allows \( S_n = 2 - \frac{1}{n+1} \), and then \( S_{n+1} = 2 - \frac{1}{n+1} + \frac{1}{(n+1)^2} > 2 - \frac{1}{n+2} \), because \( \frac{1}{(n+1)^2} > \frac{1}{(n+1)(n+2)} = \frac{1}{n+1} - \frac{1}{n+2} \) (as \( (n+1)^2 < (n+1)(n+2) \)). A stronger claim works only if its margin pays for the next term; this margin is too small.
 :::
 
 ## Exercises
@@ -607,8 +607,8 @@ Fatal errors (0 for the step): inducting on one identity alone while using the o
 :::
 
 <!-- dependency ledger
-thm-recursion (proof): N and X are sets, so N x X and its power set are sets; a subset of N x X with a codomain is a function when (Fn1), (Fn2) hold | def-cartesian-product, def-power-set, def-function (cited); working rules of F2.1 §01
-thm-recursion (proof): restriction of a function to a subset of its domain is a function with graph G cap (A x X) | F2.1 §04, restriction (no label; prose pointer)
+thm-recursion (proof): N and X are sets, so N x X and its power set are sets; a subset of N x X with a codomain is a function when (Fn1), (Fn2) hold | def-cartesian-product, def-power-set, def-function (cited); working rules of F2.1 §02
+thm-recursion (proof): restriction of a function to a subset of its domain is a function with graph G cap (A x X) | F2.1 §05, restriction (no label; prose pointer)
 thm-recursion (proof): the notation {0, ..., n} = {k in N : k <= n} | F2.2 §01 (notation, no label; prose pointer)
 thm-recursion (proof): n + 1 > n; k + 1 >= 1 > 0; trichotomy of < on N subset R | R arithmetic and order, school fact; axioms in AN1.1
 thm-recursion (claim): (the remark after it) A_n = {k in N : k >= n}; {k : k >= n} minus {n} = {k : k > n} | inline, with lem-naturals-arithmetic (a), (e) (cited)
@@ -630,8 +630,9 @@ exr-recursion-b2 (solution): (n-1)^2 >= 9 for n >= 4 | R order, school fact
 exr-recursion-c1 (solution): m' = m/2 > 0; 2^k > 0 | R order; prp-power-laws (e) (cited)
 exr-recursion-c2 (solution): (-1)^n is 1 or -1 | the paragraph after prp-power-laws (inline, with thm-division-algorithm, prp-integers-closed (b), (c) and lem-naturals-arithmetic (a) for k in N)
 prp-power-laws (claim): (the paragraph after it) 2k + r <= -2 + 1 < 0 for k <= -1, r <= 1 | R arithmetic and order, school fact
-thm-recursion (claim): (quick check after the remark) 2x + 1 in N for x in N; values 1, 3, 7, 15 | N closed under + and * (F2.1 §01), school arithmetic
+thm-recursion (claim): (quick check after the remark) 2x + 1 in N for x in N; values 1, 3, 7, 15 | lem-naturals-arithmetic (b) (cited), school arithmetic
 cor-two-step-recursion (claim): (quick check after its proof) h(n, x, y) = yx is a function N x (R x R) -> R; 1 * 1 = 1; pair induction | R arithmetic; fd1:ax-induction (cited in the two-step example)
+def-sum-product (claim): (quick check after the warning) 1 + 1/k = (k+1)/k; prod_{k=1}^n (k+1)/k = n + 1 by induction | R arithmetic, school fact; fd1:ax-induction
 thm-bernoulli (claim): (quick check after it) (1/2)^3 = 1/8 >= -1/2 = 1 + 3(-1/2) | arithmetic, checked by hand in the text
 exm-strengthen-hypothesis (claim): (quick check after it) 1/(n+1) - 1/(n+2) = 1/((n+1)(n+2)); (n+1)(n+2) > (n+1)^2; S_n <= 2 - 1/n <= 2 - 1/(n+1) | R arithmetic and order, school fact; the example's P(n)
 -->

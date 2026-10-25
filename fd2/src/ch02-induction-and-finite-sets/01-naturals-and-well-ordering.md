@@ -256,7 +256,7 @@ Let \( S \coloneqq \{ 17 - 5k : k \in \nN, \ 5k \le 17 \} \). List \( S \), find
 :::
 
 ::: {.solution}
-The admissible \( k \) are \( 0, 1, 2, 3 \), since \( 5 \cdot 3 = 15 \le 17 < 20 = 5 \cdot 4 \). So \( S = \{17, 12, 7, 2\} \), and its least element is \( 2 \), the remainder of \( 17 \) on division by \( 5 \): \( 17 = 5 \cdot 3 + 2 \) with \( 0 \le 2 < 5 \). Section 2.2 proves that the least element of such a set is always the remainder.
+The admissible \( k \) are \( 0, 1, 2, 3 \), since \( 5 \cdot 3 = 15 \le 17 < 20 = 5 \cdot 4 \) rules out \( k \ge 4 \), and the \( k < 4 \) are \( 0, 1, 2, 3 \) (@lem-naturals-arithmetic (a), (e)). So \( S = \{17, 12, 7, 2\} \), and its least element is \( 2 \), the remainder of \( 17 \) on division by \( 5 \): \( 17 = 5 \cdot 3 + 2 \) with \( 0 \le 2 < 5 \). Section 2.2 proves that the least non-negative number of the form \( a - qn \) is always the remainder.
 :::
 
 ## Induction and well-ordering are the same principle
@@ -322,7 +322,7 @@ Does \( \{ n \in \nZ : n^2 < 30 \} \) have a least element? Which hypothesis of 
 :::
 
 ::: {.solution}
-Yes. The hypotheses to check are that the set is non-empty and that it has a lower bound in \( \nZ \). It is non-empty, since \( 0 \) is in it. And \( -6 \) is an integer lower bound: an integer \( n \le -6 \) has \( n^2 \ge 36 > 30 \), so every element \( n \) of the set has \( n > -6 \). The least element is \( -5 \): \( (-5)^2 = 25 < 30 \), and every element is \( > -6 \), hence \( \ge -5 \) by discreteness (@prp-integers-closed (c)).
+Yes. The hypotheses to check are that the set is non-empty and that it has a lower bound in \( \nZ \). It is non-empty, since \( 0 \) is in it. And \( -6 \) is an integer lower bound: an integer \( n \le -6 \) has \( -n \ge 6 > 0 \), so \( n^2 = (-n)^2 \ge 36 > 30 \), so every element \( n \) of the set has \( n > -6 \). The least element is \( -5 \): \( (-5)^2 = 25 < 30 \), and every element is \( > -6 \), hence \( \ge -5 \) by discreteness (@prp-integers-closed (c)).
 :::
 
 ::: {.second-reading title="Why the bound must be an integer"}
@@ -440,7 +440,7 @@ Prove each true statement, by the method of @exm-method-least-element where it a
 
 (c) **True.** Such a set is a non-empty subset of \( \nN \), so @thm-well-ordering gives it a least element.
 
-(d) **True.** Let \( T \) be a non-empty subset, and let \( N \coloneqq \{ n \in \nZ_{>0} : 1/n \in T \} \). Then \( N \) is a non-empty subset of \( \nN \), so it has a least element \( n_0 \) (@thm-well-ordering). Then \( 1/n_0 \in T \), and for every \( 1/n \in T \) we have \( n \in N \), so \( n \ge n_0 > 0 \) and \( 1/n \le 1/n_0 \). So \( 1/n_0 \) is a greatest element of \( T \).
+(d) **True.** Let \( T \) be a non-empty subset, and let \( N \coloneqq \{ n \in \nZ_{>0} : 1/n \in T \} \). Then \( N \subseteq \nZ_{>0} \subseteq \nN \), and \( N \) is non-empty: \( T \) has an element, which is \( 1/n \) for some \( n \in \nZ_{>0} \), and that \( n \) lies in \( N \). So \( N \) has a least element \( n_0 \) (@thm-well-ordering). Then \( 1/n_0 \in T \), and for every \( 1/n \in T \) we have \( n \in N \), so \( n \ge n_0 > 0 \) and \( 1/n \le 1/n_0 \). So \( 1/n_0 \) is a greatest element of \( T \).
 
 (e) **False.** Take the whole set. For each \( 1/n \) in it, \( 1/(n + 1) \) is in it too, and \( 1/(n + 1) < 1/n \), so no element is least.
 
@@ -546,7 +546,12 @@ cor-well-ordering-integers (claim): (the paragraph after it) a real bound must f
 thm-well-ordering (claim): (the remark after the proof) disputes over existence proofs | F1.5 §07 (prose pointer)
 thm-well-ordering (claim): (the paragraph before it) a greatest element is the maximum of F1.4 §08 | F1.4 §08 (prose pointer; the definition is restated here)
 thm-induction-iff-well-ordering (claim): (aftermath) N built from sets, Peano axioms (induction among them) proved | F3.1 (prose pointer; nothing depends on it)
-exr-naturals-and-well-ordering-a1 (solution): (e) 1/4 not in N, 1/2 - 1 < 0; Z u (Z + 1/2) has the predecessor property | R arithmetic; lem-naturals-arithmetic (a), (d), (e) (cited); verify/ch07/exr-naturals-and-well-ordering-a1.py
+exr-naturals-and-well-ordering-a1 (solution): (e) 1/4 not in N, 1/2 - 1 < 0; Z u (Z + 1/2) has the predecessor property | R arithmetic; lem-naturals-arithmetic (a), (d), (e) (cited); verify/ch02/exr-naturals-and-well-ordering-a1.py
 exr-naturals-and-well-ordering-b1 (solution): multiplying an inequality by a positive number | R order, school fact
-thm-well-ordering (claim): (the quick check) 7^2 = 49, 8^2 = 64, 10^2 = 100, n^2 <= 49 for n <= 7 | arithmetic; powers, school meaning (def-power in F2.2 §03); verify/ch07/thm-well-ordering.py
+thm-well-ordering (claim): (the quick check) 7^2 = 49, 8^2 = 64, 10^2 = 100, n^2 <= 49 for n <= 7 | arithmetic; powers, school meaning (def-power in F2.2 §03); verify/ch02/thm-well-ordering.py
+exm-no-infinite-descent (claim): (aftermath) an even q > 0 halves to q/2 in Z_{>0} with q/2 < q | prp-integers-closed (b) (cited in 2.2); R arithmetic
+exm-least-element-down-by-two (solution): m - 2 < m | R arithmetic
+exm-least-element-down-by-two (claim): (the Quick check) 5k <= 17 gives k <= 3, so k in {0, 1, 2, 3} | lem-naturals-arithmetic (a), (e) (cited); verify/ch02/exm-least-element-down-by-two.py
+cor-well-ordering-integers (claim): (the Quick check) n <= -6 gives -n >= 6 > 0 and n^2 = (-n)^2 >= 36 | R order, school fact; verify/ch02/exr-naturals-and-well-ordering-b4.py
+exr-naturals-and-well-ordering-b4 (solution): order of reciprocals (-1/n < -1/(n + 1), 1/(n + 1) < 1/n, 1/n <= 1/n0 for n >= n0 > 0); -5 < -13/3 | R arithmetic and order, school fact; verify/ch02/exr-naturals-and-well-ordering-b4.py
 -->

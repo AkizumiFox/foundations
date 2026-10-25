@@ -117,7 +117,7 @@ A set \( A \) is **infinite** if it is not finite: **for every** \( n \in \nN \)
 
 To prove a set infinite we must rule out every \( n \) at once, and for every \( n \) every candidate bijection. Nothing so far does that, not even for \( \nN \). The tool is the pigeonhole principle, and the last theorem of this section turns it into a usable test.
 
-**Shrinking the codomain.** One small device is used throughout the chapter. Let \( f \colon X \to Y \) be a function, and let \( C \subseteq Y \) contain every value \( f(x) \). The graph of \( f \) is then a subset of \( X \times C \), and with the codomain \( C \) it is a function \( X \to C \) with the same values (@def-function). We call it "\( f \) with codomain \( C \)". It is injective if and only if \( f \) is, since injectivity speaks only of values. In particular, \( f \) with codomain \( f(X) \) is surjective (@def-image). So an **injective** \( f \colon X \to Y \) is a bijection \( X \to f(X) \) once its codomain is shrunk, and \( \card{X} = \card{f(X)} \).
+**Shrinking the codomain.** One small device is used in the rest of this section and in Chapter 3. Let \( f \colon X \to Y \) be a function, and let \( C \subseteq Y \) contain every value \( f(x) \). The graph of \( f \) is then a subset of \( X \times C \), and with the codomain \( C \) it is a function \( X \to C \) with the same values (@def-function). We call it "\( f \) with codomain \( C \)". It is injective if and only if \( f \) is, since injectivity speaks only of values. In particular, \( f \) with codomain \( f(X) \) is surjective (@def-image). So an **injective** \( f \colon X \to Y \) is a bijection \( X \to f(X) \) once its codomain is shrunk, and \( \card{X} = \card{f(X)} \).
 
 ## Back to the pigeons
 
@@ -208,7 +208,7 @@ The function \( h \) in (b) is defined by a **rule**, "the least element", appli
 Two special cases settle earlier loose ends. With \( m = n + 1 \), part (a) says that a set with \( n \) elements has no \( n + 1 \) different elements: there is no injection \( \{1, \dots, n + 1\} \to A \). That is the second school fact that @fd1:exr-models-c2 took on trust. With \( m = 3 \), \( n = 2 \) in (a) and \( m = 2 \), \( n = 3 \) in (b), the corollary gives the two observations after @exm-injective-surjective-first in general.
 :::
 
-Here is a typical use of (a). Among any three integers, two have an even sum. Let \( A \) be a set of three integers, and let \( p \colon A \to \{0, 1\} \) send each \( a \) to its remainder \( r \) on division by \( 2 \) (@thm-division-algorithm), an integer with \( 0 \le r < 2 \); then \( r \in \nN \) by @prp-integers-closed (b), and \( r \le 1 \) by @lem-naturals-arithmetic (e), so \( r \in \{0, 1\} \). The set \( \{0, 1\} \) has \( 2 \) elements, so by (a), \( p \) is not injective: there are \( a \ne b \) in \( A \) with the same remainder \( r \). Writing \( a = 2q + r \) and \( b = 2q' + r \),
+Here is a typical use of (a). Among any three different integers, two have an even sum. Let \( A \) be a set of three different integers, and let \( p \colon A \to \{0, 1\} \) send each \( a \) to its remainder \( r \) on division by \( 2 \) (@thm-division-algorithm), an integer with \( 0 \le r < 2 \); then \( r \in \nN \) by @prp-integers-closed (b), and \( r \le 1 \) by @lem-naturals-arithmetic (e), so \( r \in \{0, 1\} \). The set \( \{0, 1\} \) has \( 2 \) elements, so by (a), \( p \) is not injective: there are \( a \ne b \) in \( A \) with the same remainder \( r \). Writing \( a = 2q + r \) and \( b = 2q' + r \),
 \[
 a + b = 2(q + q' + r) ,
 \]
@@ -241,11 +241,19 @@ Let \( A \) be a set of five lattice points, so \( A \) has \( 5 \) elements. Le
 The word "different" costs nothing, since a point and itself have that point as midpoint; and the four corners of a unit square (Section 1.1) show that five cannot be lowered to four.
 
 ::: {.check}
-Choose pigeons and holes: among any \( 11 \) integers, two differ by a multiple of \( 10 \).
+Choose pigeons and holes: among any \( 11 \) different integers, two differ by a multiple of \( 10 \).
 :::
 
 ::: {.solution}
-The pigeons are the \( 11 \) integers. The holes are the remainders \( 0, \dots, 9 \) on division by \( 10 \) (@thm-division-algorithm), a set with \( 10 \) elements. By @cor-pigeonhole-finite-sets (a) two of the integers, \( a \ne b \), have the same remainder \( r \): \( a = 10q + r \) and \( b = 10q' + r \), so \( a - b = 10(q - q') \).
+The pigeons are the \( 11 \) different integers. The holes are the remainders \( 0, \dots, 9 \) on division by \( 10 \) (@thm-division-algorithm), a set with \( 10 \) elements. By @cor-pigeonhole-finite-sets (a) two of the integers, \( a \ne b \), have the same remainder \( r \): \( a = 10q + r \) and \( b = 10q' + r \), so \( a - b = 10(q - q') \).
+:::
+
+::: {.check}
+Choose parts and sizes: among any \( 5 \) different elements of \( \{1, 2\} \times \{1, 2, 3\} \), three have the same first coordinate.
+:::
+
+::: {.solution}
+Let \( A \) have \( 5 \) elements and let \( A_i \) be its elements with first coordinate \( i \), for \( i = 1, 2 \); these are disjoint with union \( A \), and both are finite by @prp-subset-finite. If both had at most \( 2 \) elements, then @prp-disjoint-union-count would give \( A \) at most \( 4 \) elements, contradicting @cor-finite-size-unique. So some \( A_i \) has at least \( 3 \) elements.
 :::
 
 The next corollary is the well-definedness promised after @def-finite.
@@ -512,7 +520,7 @@ Give explicit bijections \( \nN \to \nN \setminus \{0, 1, 2\} \), \( \nN \to \{ 
 ::: {.solution}
 (a) Let \( A \) be a set of \( 6 \) integers. By @thm-division-algorithm with divisor \( 5 \), each \( a \in A \) has a unique remainder \( r(a) \), an integer with \( 0 \le r(a) < 5 \); then \( r(a) \in \nN \) by @prp-integers-closed (b), and \( r(a) \le 4 \) by discreteness, @prp-integers-closed (c), so \( r(a) \in \{0, \dots, 4\} \). This defines \( r \colon A \to \{0, \dots, 4\} \). The set \( \{0, \dots, 4\} \) has \( 5 \) elements (the third example after @def-finite). Since \( 6 > 5 \), @cor-pigeonhole-finite-sets (a) shows that \( r \) is not injective: there are \( a \ne a' \) in \( A \) with \( r(a) = r(a') \).
 
-(b) Let \( A \subseteq \{1, 2, 3\} \times \{1, 2, 3\} \) have \( 7 \) elements, and for \( i = 1, 2, 3 \) let \( A_i \coloneqq \{ (x, y) \in A : x = i \} \), the points of \( A \) in row \( i \). These sets are pairwise disjoint and their union is \( A \). Each is a subset of \( A \), so it is finite by @prp-subset-finite; say \( A_i \) has \( k_i \) elements. If every \( k_i \le 2 \), then by @prp-disjoint-union-count, applied twice, \( A = (A_1 \cup A_2) \cup A_3 \) has \( k_1 + k_2 + k_3 \le 6 \) elements, and @cor-finite-size-unique forbids \( A \) to have both that number and \( 7 \) elements. So some \( k_i \ge 3 \): three points of \( A \) lie in row \( i \). Seven is the least number that works: the six points with second coordinate \( 1 \) or \( 2 \) put exactly two in each row.
+(b) Let \( A \subseteq \{1, 2, 3\} \times \{1, 2, 3\} \) have \( 7 \) elements, and for \( i = 1, 2, 3 \) let \( A_i \coloneqq \{ (x, y) \in A : x = i \} \), the points of \( A \) in row \( i \). These sets are pairwise disjoint and their union is \( A \). Each is a subset of \( A \), so it is finite by @prp-subset-finite; say \( A_i \) has \( k_i \) elements. If every \( k_i \le 2 \), then by @prp-disjoint-union-count, applied twice, \( A = (A_1 \cup A_2) \cup A_3 \) has \( k_1 + k_2 + k_3 \le 6 \) elements, and @cor-finite-size-unique forbids \( A \) to have both that number and \( 7 \) elements. So some \( k_i > 2 \), that is \( k_i \ge 3 \) (@lem-naturals-arithmetic (e)); if \( \varphi \colon \{1, \dots, k_i\} \to A_i \) is a bijection, then \( \varphi(1), \varphi(2), \varphi(3) \) are three different points of \( A \) in row \( i \). Seven is the least number that works: the six points with second coordinate \( 1 \) or \( 2 \) put exactly two in each row.
 :::
 
 ::: {#exr-finite-sets-b3}
@@ -655,9 +663,69 @@ R \colon B^A \to B^{A'} \times B , \qquad R(f) \coloneqq (f|_{A'}, f(a)) .
 Fatal errors (0 for the step): "each of the \( m \) elements has \( n \) possible values, so \( n^m \)" with no bijection or induction; a step that applies the hypothesis to a set not shown to have \( m \) elements.
 :::
 
+### R. Review
+
+::: {#exr-finite-sets-r1}
+[R1]
+
+Decide whether each function is injective and whether it is surjective. Justify your answers.
+
+::: {.enumerate options="label=(\alph*)"}
+1. \( g \colon \nZ \times \nZ \to \nZ \), \( g(a, b) \coloneqq 2a + 3b \).
+2. \( k \colon \nZ \to \nZ \), \( k(n) \coloneqq 3n + 1 \).
+:::
+:::
+
+::: {.solution}
+*(a)* \( g \) is surjective and not injective. Surjective, by the method of @exm-method-surjectivity: given \( n \in \nZ \), the pair \( (-n, n) \in \nZ \times \nZ \) has \( g(-n, n) = -2n + 3n = n \). Not injective (@def-injective): \( g(0, 0) = 0 = 2 \cdot 3 + 3 \cdot (-2) = g(3, -2) \), and \( (0, 0) \ne (3, -2) \), since their first coordinates differ (@def-ordered-pair).
+
+*(b)* \( k \) is injective and not surjective. Injective, by the method of @exm-method-injectivity: if \( 3n + 1 = 3n' + 1 \), then \( 3n = 3n' \) and \( n = n' \). Not surjective (@def-surjective): \( 0 \) is not a value. If \( 3n + 1 = 0 \) for some \( n \in \nZ \), then \( 0 = 3n + 1 \) and \( 0 = 3 \cdot 0 + 0 \) are two divisions of \( 0 \) by \( 3 \), with remainders \( 1 \) and \( 0 \) in \( \{0, 1, 2\} \), against the uniqueness in @thm-division-algorithm.
+:::
+
+::: {#exr-finite-sets-r2}
+[R2]
+
+For a set \( X \) and a property \( R(x, y) \) of two elements of \( X \), consider the statements
+\[
+\text{(S1)} \ \ \exists x \in X \ \forall y \in X \ \, R(x, y), \qquad \text{(S2)} \ \ \forall y \in X \ \exists x \in X \ \, R(x, y).
+\]
+
+::: {.enumerate options="label=(\alph*)"}
+1. Decide (S1) and (S2) for \( R(x, y) \): "\( x \mid y \)", first with \( X = \{1, \dots, 6\} \), then with \( X = \{2, \dots, 6\} \).
+2. Decide (S1) and (S2) for \( X = \nN \) and \( R(x, y) \): "\( y < x \)".
+3. Prove that (S1) implies (S2) for every \( X \) and \( R \).
+:::
+:::
+
+::: {.solution}
+*(a)* For \( X = \{1, \dots, 6\} \) both hold: \( x = 1 \) divides every \( y \) (\( y = y \cdot 1 \)), which is (S1); and (S2) follows by (c). For \( X = \{2, \dots, 6\} \), (S2) holds with \( x \coloneqq y \), since \( y = 1 \cdot y \). (S1) fails: its negation is \( \forall x \in X \ \exists y \in X \ \, x \nmid y \) (@fd1:prp-bounded-quantifier-negation), and for \( x = 2 \) take \( y = 3 \), for \( x \in \{3, \dots, 6\} \) take \( y = 2 \), since a positive divisor of \( 2 \) is at most \( 2 \).
+
+*(b)* (S2) holds: for \( y \in \nN \), \( x \coloneqq y + 1 \in \nN \) has \( y < x \). (S1) fails: for every \( x \in \nN \), the choice \( y \coloneqq x \) gives \( \neg(x < x) \).
+
+*(c)* Suppose (S1), and let \( x_0 \in X \) be a witness: \( R(x_0, y) \) for every \( y \in X \) (\( \rulename{\exists E} \)). Let \( y \in X \). Then \( R(x_0, y) \), so \( \exists x \in X \ R(x, y) \), with witness \( x_0 \) (\( \rulename{\exists I} \)). As \( y \) was arbitrary, (S2) holds (\( \rulename{\forall I} \)). This is @fd1:prp-exists-forall-swap, with bounded quantifiers. The converse fails, by (a) for \( X = \{2, \dots, 6\} \) and by (b): one \( x \) for all \( y \) is more than one \( x \) for each \( y \).
+:::
+
+::: {#exr-finite-sets-r3}
+[R3]
+
+Let \( v \) and \( w \) be valuations such that every atom true under \( v \) is true under \( w \). Prove that every formula built from atoms with \( \wedge \) and \( \vee \) alone (no \( \neg \), \( \bot \), \( \to \) or \( \leftrightarrow \)) that is true under \( v \) is true under \( w \). Deduce that \( \neg p \) is equivalent to no such formula.
+:::
+
+::: {.solution}
+By structural induction (@fd1:thm-structural-induction), with \( P(\varphi) \): "if \( \varphi \) contains none of \( \neg \), \( \bot \), \( \to \), \( \leftrightarrow \) and \( v(\varphi) = \mathrm{T} \), then \( w(\varphi) = \mathrm{T} \)". Truth values are those of @fd1:def-truth-value.
+
+*Atoms and \( \bot \).* For an atom \( p \) with \( v(p) = \mathrm{T} \), \( w(p) = \mathrm{T} \) by the hypothesis on \( v \) and \( w \). The formula \( \bot \) contains \( \bot \), so \( P(\bot) \) holds vacuously.
+
+*Step for \( \neg \).* \( \neg\varphi \) contains \( \neg \), so \( P(\neg\varphi) \) holds vacuously.
+
+*Step for \( (\varphi \circ \psi) \).* If \( \circ \) is \( \to \) or \( \leftrightarrow \), \( P \) holds vacuously. Otherwise, if \( (\varphi \circ \psi) \) contains none of the four symbols, neither do \( \varphi \) and \( \psi \), whose symbols are among its own, so \( P(\varphi) \) and \( P(\psi) \) apply to them. For \( \circ = \wedge \): \( v(\varphi \wedge \psi) = \mathrm{T} \) gives \( v(\varphi) = v(\psi) = \mathrm{T} \), so \( w(\varphi) = w(\psi) = \mathrm{T} \), and \( w(\varphi \wedge \psi) = \mathrm{T} \). For \( \circ = \vee \): \( v(\varphi) = \mathrm{T} \) or \( v(\psi) = \mathrm{T} \), so \( w(\varphi) = \mathrm{T} \) or \( w(\psi) = \mathrm{T} \), and \( w(\varphi \vee \psi) = \mathrm{T} \).
+
+*The consequence.* Let \( v \) be the all-F valuation and \( w \) the all-T valuation; every atom true under \( v \) (there is none) is true under \( w \). Then \( v(\neg p) = \mathrm{T} \) and \( w(\neg p) = \mathrm{F} \). If \( \varphi \), built with \( \wedge \) and \( \vee \) alone, were equivalent to \( \neg p \), it would have the same value as \( \neg p \) under every valuation: \( v(\varphi) = \mathrm{T} \), hence \( w(\varphi) = \mathrm{T} \) by the first part, against \( w(\varphi) = w(\neg p) = \mathrm{F} \).
+:::
+
 <!-- dependency ledger
 def-equinumerous (example): f(x) = 2x maps [0, 1] onto [0, 2], y/2 in [0, 1] for y in [0, 2] | R arithmetic and order, school fact; axioms in AN1.1
-prp-equinumerous-properties (claim): (the remark after it and the paragraph after the remark) the union of a set of sets is a set | (W3) of F2.1 §01 (working rule, no label)
+prp-equinumerous-properties (claim): (the remark after it and the paragraph after the remark) the union of a set of sets is a set | (W3) of F2.1 §02 (working rule, no label)
 def-finite (claim): the notation {1, ..., n} = {k in N : 1 <= k <= n} and {0, ..., n} | F2.2 §01 (notation, no label)
 def-infinite (claim): (Shrinking the codomain) a graph inside X x C with codomain C is a function X -> C with the same values | def-function (cited), stated inline
 thm-pigeonhole (proof): m > n + 1 gives m - 1 > n; k <= m - 1 < m; trichotomy | R order, school fact
@@ -667,10 +735,10 @@ cor-pigeonhole-finite-sets (example): (the three-integers paragraph) a + b = 2(q
 exm-five-lattice-points (solution): remainders r, s on division by 2 lie in {0, 1} | thm-division-algorithm, prp-integers-closed (b), lem-naturals-arithmetic (e) (cited)
 cor-finite-size-unique (proof): trichotomy of < on N | R order, school fact
 prp-disjoint-union-count (proof): 1 <= k - m <= n for m < k <= m + n; m < m + j <= m + n | R order, school fact; lem-naturals-arithmetic (d), (e) (cited)
-prp-subset-finite (proof): {1, ..., n + 1} = {1, ..., n} u {n + 1}; restriction of an injective map is injective | lem-naturals-arithmetic (e) (cited); restriction, F2.1 §04 (no label)
+prp-subset-finite (proof): {1, ..., n + 1} = {1, ..., n} u {n + 1}; restriction of an injective map is injective | lem-naturals-arithmetic (e) (cited); restriction, F2.1 §05 (no label)
 prp-power-set-count (proof): 2^n, 2^(n+1) in N | prp-power-laws (d) (cited)
 prp-power-set-count (proof): (S u {a}) \ {a} = S when a is not in S; U = (U \ {a}) u {a} when a in U | set algebra, F2.1 §02; checked inline
-prp-power-set-count (claim): (the paragraph after it) S -> 1_S is a bijection P(Y) -> {0, 1}^Y with inverse f -> {y : f(y) = 1} | F2.1 §04, the correspondence after exm-function-set-small (prose, no label)
+prp-power-set-count (claim): (the paragraph after it) S -> 1_S is a bijection P(Y) -> {0, 1}^Y with inverse f -> {y : f(y) = 1} | F2.1 §05, the correspondence after exm-function-set-small (prose, no label)
 exm-hilbert-hotel (solution): 2n = 2n' implies n = n'; 2n >= 2 for n >= 1 | R arithmetic and order, school fact
 thm-finite-no-proper-copy (claim): (the second warning after exm-hilbert-hotel) x/(1 + x) maps 1/n to 1/(n + 1); y/(1 - y) inverts it; 1/n <= 1/2 for n >= 2 | R arithmetic, school fact; checked inline
 exr-finite-sets-a1 (solution): De Morgan for "not (P and Q)" | F1.2 (DM, derived rule; no label cited)
@@ -680,5 +748,8 @@ exr-finite-sets-b2 (solution): k1 + k2 + k3 <= 6 from ki <= 2 | R arithmetic
 exr-finite-sets-b3 (solution): {1, ..., n + 1} = {1, ..., n} u {n + 1}; the union over it splits accordingly | lem-naturals-arithmetic (e); def-family-union-intersection (cited)
 exr-finite-sets-c1 (solution): phi^(-1) is a bijection; {1, ..., n + 1} = {1, ..., n} u {n + 1}, n + 1 not in {1, ..., n} | thm-bijection-iff-inverse, def-inverse-function, lem-naturals-arithmetic (e) (cited)
 exr-finite-sets-c2 (solution): mn in N; n^m in N; B^A equinumerous with {1, ..., n^(m+1)} via R | lem-naturals-arithmetic (b), prp-power-laws (d), prp-equinumerous-properties (b), (c) (cited)
-exr-finite-sets-c2 (solution): restriction f|_A' is a function A' -> B | restriction, F2.1 §04 (no label)
+exr-finite-sets-c2 (solution): restriction f|_A' is a function A' -> B | restriction, F2.1 §05 (no label)
+exr-finite-sets-r1 (solution): -2n + 3n = n; 2*3 + 3*(-2) = 0; 3n = 3n' gives n = n' | R arithmetic, school fact; exm-method-surjectivity, exm-method-injectivity, def-ordered-pair, thm-division-algorithm (cited)
+exr-finite-sets-r2 (solution): y = y * 1; a positive divisor of 2 is at most 2; y < y + 1; not x < x | R arithmetic and order, school fact; def-divides (F2.1 §01), fd1:prp-bounded-quantifier-negation, fd1:prp-exists-forall-swap (cited)
+exr-finite-sets-r3 (solution): structural induction; truth values of atoms, not, and, or | fd1:thm-structural-induction, fd1:def-truth-value (cited); the all-F and all-T valuations (F1.3 §04, named after fd1:def-valuation)
 -->
