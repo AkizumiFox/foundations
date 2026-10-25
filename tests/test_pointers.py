@@ -15,7 +15,7 @@ spec.loader.exec_module(pt)
 MAP = {n: ("fd1", n, f"F1.{n}") for n in range(1, 6)}
 MAP.update({n: ("fd2", n - 5, f"F2.{n - 5}") for n in range(6, 9)})
 MAP.update({9: ("fd3", 1, "F3.1"), 11: ("an1", 1, "AN1.1"), 12: ("an1", 2, "AN1.2")})
-TITLES = {"fd1": "Logic and Proof", "fd2": "Sets, Relations, and Cardinality",
+TITLES = {"fd1": "Logic and Proof", "fd2": "Sets and Functions",
           "fd3": "Number Systems", "an1": "Analysis on the Real Line"}
 
 
@@ -39,10 +39,10 @@ class RewriteTests(unittest.TestCase):
     def test_range_across_volumes(self):
         self.assertEqual(prose("From Chapters 3–8: induction", "an1"),
                          "From *Logic and Proof*, Chapters 3–5, and "
-                         "*Sets, Relations, and Cardinality*, Chapters 1–3: induction")
+                         "*Sets and Functions*, Chapters 1–3: induction")
         # the volume's own part is named too when another volume is in the pointer
         self.assertEqual(prose("Chapters 1–6.", "fd2"),
-                         "*Logic and Proof*, Chapters 1–5, and *Sets, Relations, and Cardinality*, Chapter 1.")
+                         "*Logic and Proof*, Chapters 1–5, and *Sets and Functions*, Chapter 1.")
 
     def test_left_alone(self):
         for text in ("the linear-algebra companion, Chapter 0, whose", "\\( \\text{Chapter 11} \\)",

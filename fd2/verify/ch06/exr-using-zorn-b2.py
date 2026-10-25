@@ -1,4 +1,4 @@
-"""5.2 B2: (a) the size-ordered list of P({1,2,3}) respects proper inclusion;
+"""6.2 B2: (a) the size-ordered list of P({1,2,3}) respects proper inclusion;
 (b) exactly two total orders on P({1,2}) contain inclusion."""
 from itertools import permutations
 

@@ -308,6 +308,12 @@ def check_index(text: str):
     return fatal, advisory
 
 
+def is_stub(text: str) -> bool:
+    """A placeholder for a planned section or chapter: its only non-blank line is the `# Title`."""
+    lines = [ln for ln in text.splitlines() if ln.strip()]
+    return len(lines) == 1 and lines[0].startswith("# ")
+
+
 def find_violations(root: Path, idea_lines: int = IDEA_LINES):
     """Check every chapter file under `root` (a file, a chapter or src/).
 
@@ -321,6 +327,9 @@ def find_violations(root: Path, idea_lines: int = IDEA_LINES):
         if not re.match(r"ch\w+", f.parent.name):
             continue
         text = f.read_text(encoding="utf-8")
+        if is_stub(text):
+            advisory.append((f, 1, "stub (a title line only): in preparation; the contract applies once drafted"))
+            continue
         sections = sorted(p.name for p in f.parent.glob("[0-9]*.md"))
         last = not sections or f.name == sections[-1]
         fa, ad = check_index(text) if f.name == "index.md" else check_section(text, idea_lines, last)

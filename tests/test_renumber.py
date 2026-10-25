@@ -17,7 +17,7 @@ spec.loader.exec_module(renumber)
 
 SERIES = {"repo": "foundations", "volumes": [
     {"prefix": "fd1", "id": "F1", "title": "Logic and Proof", "repo": "foundations", "dir": "fd1"},
-    {"prefix": "fd2", "id": "F2", "title": "Sets, Relations, and Cardinality", "repo": "foundations",
+    {"prefix": "fd2", "id": "F2", "title": "Sets and Functions", "repo": "foundations",
      "dir": "fd2"},
 ]}
 MAP = {"fd1": {
@@ -99,10 +99,10 @@ class PointerTests(RenumberCase):
         self.assertIn("naming Logic and Proof", reviews[0].note)
 
     def test_a_pointer_into_an_unmapped_volume_is_not_local(self):
-        self.write("fd1/src/ch01-a/01.md", "*Sets, Relations, and Cardinality*, Chapter 5 stays; Chapter 5 moves.\n")
+        self.write("fd1/src/ch01-a/01.md", "*Sets and Functions*, Chapter 5 stays; Chapter 5 moves.\n")
         self.run_map()
         self.assertEqual(self.read("fd1/src/ch01-a/01.md"),
-                         "*Sets, Relations, and Cardinality*, Chapter 5 stays; Chapter 6 moves.\n")
+                         "*Sets and Functions*, Chapter 5 stays; Chapter 6 moves.\n")
 
     def test_question_mark_is_reported_and_kept(self):
         self.write("fd1/src/ch04-a/01.md", "As Section 4.11 shows.\n")

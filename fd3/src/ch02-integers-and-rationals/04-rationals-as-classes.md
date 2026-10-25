@@ -8,7 +8,7 @@ At school, \( \tfrac12 \), \( \tfrac24 \) and \( \tfrac36 \) are "the same numbe
 
 *A rational number is a quotient you have not computed yet: the set of all fractions that would compute to it.*
 
-Signs need a decision. The fractions \( \tfrac{1}{-2} \) and \( \tfrac{-1}{2} \) name the same number, and allowing both would put a sign in two places. We require the **denominator to be positive**, so that a sign can sit only in the numerator. This is the convention *Sets, Relations, and Cardinality*, Section 4.2 already used for its fractions, and Section 2.5 below will profit from it: there, the order of \( \nQ \) is read off a single inequality between integers. Recall that \( \nZ_{>0} = \{ n \in \nZ : n > 0 \} \), by @thm-integers-ordered-ring (b).
+Signs need a decision. The fractions \( \tfrac{1}{-2} \) and \( \tfrac{-1}{2} \) name the same number, and allowing both would put a sign in two places. We require the **denominator to be positive**, so that a sign can sit only in the numerator. This is the convention *Sets and Functions*, Section 4.2 already used for its fractions, and Section 2.5 below will profit from it: there, the order of \( \nQ \) is read off a single inequality between integers. Recall that \( \nZ_{>0} = \{ n \in \nZ : n > 0 \} \), by @thm-integers-ordered-ring (b).
 
 On \( \nZ \times \nZ_{>0} \), let \( (p, q) \sim (r, s) \) mean \( ps = rq \). We reuse the symbol \( \sim \) of Section 2.1; which relation is meant is always clear from the pairs, natural numbers there and an integer with a positive integer here.
 
@@ -61,7 +61,7 @@ In words: a rational number is a **set of pairs**, all the pairs \( (r, s) \) wi
 - The degenerate case: \( [(0, 1)] = \{ (0, s) : s \in \nZ_{>0} \} \), since \( (r, s) \sim (0, 1) \) means \( r \cdot 1 = 0 \cdot s = 0 \). Every fraction with numerator \( 0 \) lies in this one class, whatever its denominator; it will be the zero of \( \nQ \).
 - \( [(2, 3)] \) contains \( (4, 6) \) and \( (6, 9) \), since \( 2 \cdot 6 = 4 \cdot 3 \) and \( 2 \cdot 9 = 6 \cdot 3 \). It does not contain \( (-4, -6) \), which is not even an element of \( \nZ \times \nZ_{>0} \). Describing the whole class needs divisibility, which a later chapter of this volume develops on the constructed \( \nZ \).
 
-**A non-example by minimal change.** Allow the denominator \( 0 \): take \( \nZ \times \nN \) instead of \( \nZ \times \nZ_{>0} \), with the same formula. Reflexivity and symmetry survive, by the same lines. Transitivity fails, as the triple \( (1, 0) \), \( (0, 0) \), \( (1, 1) \) above shows, so there is no quotient set. *Sets, Relations, and Cardinality*, Section 4.2 met the same failure in an exercise; it is the reason denominators must be non-zero.
+**A non-example by minimal change.** Allow the denominator \( 0 \): take \( \nZ \times \nN \) instead of \( \nZ \times \nZ_{>0} \), with the same formula. Reflexivity and symmetry survive, by the same lines. Transitivity fails, as the triple \( (1, 0) \), \( (0, 0) \), \( (1, 1) \) above shows, so there is no quotient set. *Sets and Functions*, Section 4.2 met the same failure in an exercise; it is the reason denominators must be non-zero.
 
 **Why positive and not merely non-zero denominators?** Non-zero denominators would also give an equivalence relation, and, as the last example of this section shows, essentially the same set \( \nQ \). The difference appears with the order. With positive denominators, "\( [(p, q)] \) is positive" can mean "\( p > 0 \)", one inequality in \( \nZ \); with non-zero denominators, it would have to say "\( p \) and \( q \) have the same sign", and a naive comparison of two fractions breaks, as the warning at the end of this section shows.
 
@@ -77,7 +77,7 @@ Is \( (3, 4) \sim (-6, -8) \) in \( \nZ \times \nZ_{>0} \)?
 The question is malformed: \( -8 \notin \nZ_{>0} \), so \( (-6, -8) \) is not an element of \( \nZ \times \nZ_{>0} \), and \( \sim \) says nothing about it. In the variant with non-zero denominators (the last example of this section), the answer is yes: \( 3 \cdot (-8) = -24 = (-6) \cdot 4 \).
 :::
 
-This construction pays a debt. *Sets, Relations, and Cardinality*, Section 4.2 described \( \nQ \) as the quotient of \( \nZ \times \nZ_{>0} \) by cross-multiplication while \( \nZ \) was still the school integers; now \( \nZ \) is the ring of Section 2.3, and the quotient is the definition of \( \nQ \).
+This construction pays a debt. *Sets and Functions*, Section 4.2 described \( \nQ \) as the quotient of \( \nZ \times \nZ_{>0} \) by cross-multiplication while \( \nZ \) was still the school integers; now \( \nZ \) is the ring of Section 2.3, and the quotient is the definition of \( \nQ \).
 
 ## Adding and multiplying classes
 
@@ -292,7 +292,7 @@ j(p) \cdot j(q)^{-1} &= [(p, 1)] \cdot [(1, q)] \\
 \nQ = \Bigl\{ \frac{m}{n} : m \in \nZ, \ n \in \nZ_{>0} \Bigr\} .
 \end{gathered}
 \]
-The last equation is the description of \( \nQ \) that *Sets, Relations, and Cardinality*, Section 2.1 took as a definition; it is now a theorem about the constructed set. The fraction bar is division in the field \( \nQ \), and the school rules for fractions, such as \( \tfrac pq + \tfrac rs = \tfrac{ps + rq}{qs} \), are now the formulas of @def-rational-operations read through (a). The order of \( \nQ \), and the fact that \( j \) respects it, are Section 2.5's business.
+The last equation is the description of \( \nQ \) that *Sets and Functions*, Section 2.1 took as a definition; it is now a theorem about the constructed set. The fraction bar is division in the field \( \nQ \), and the school rules for fractions, such as \( \tfrac pq + \tfrac rs = \tfrac{ps + rq}{qs} \), are now the formulas of @def-rational-operations read through (a). The order of \( \nQ \), and the fact that \( j \) respects it, are Section 2.5's business.
 
 ## Other denominators
 

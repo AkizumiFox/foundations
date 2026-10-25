@@ -1,10 +1,10 @@
 # Using Zorn's Lemma
 
-Section 5.1 turned Zorn's lemma into a four-step template. This section uses it twice. The first use finishes the matching that opened Section 5.1 and answers the question Section 3.4 left open: any two sets are comparable in size. The second extends any partial order to a total one, the infinite form of putting tasks in an order that respects their prerequisites. An optional last subsection shows the same template in linear algebra.
+Section 6.1 turned Zorn's lemma into a four-step template. This section uses it twice. The first use finishes the matching that opened Section 6.1 and answers the question Section 3.4 left open: any two sets are comparable in size. The second extends any partial order to a total one, the infinite form of putting tasks in an order that respects their prerequisites. An optional last subsection shows the same template in linear algebra.
 
 ## Back to comparing sizes
 
-Section 3.4 defined \( \card{A} \le \card{B} \) as the existence of an injection \( A \to B \) (@def-card-le) and proved that injections both ways give a bijection (@thm-schroder-bernstein). It left open whether at least one of the two injections always exists. Section 5.1 tried to build one by matching elements pair by pair, and the attempt got two things right: an unfinished matching can be enlarged by one pair, and a growing family of matchings, put together, is again a matching. Those are steps (4) and (2) of the maximality template (@exm-method-maximality), and Zorn's lemma supplies the rest.
+Section 3.4 defined \( \card{A} \le \card{B} \) as the existence of an injection \( A \to B \) (@def-card-le) and proved that injections both ways give a bijection (@thm-schroder-bernstein). It left open whether at least one of the two injections always exists. Section 6.1 tried to build one by matching elements pair by pair, and the attempt got two things right: an unfinished matching can be enlarged by one pair, and a growing family of matchings, put together, is again a matching. Those are steps (4) and (2) of the maximality template (@exm-method-maximality), and Zorn's lemma supplies the rest.
 
 ::: {#thm-cardinal-comparability}
 [Any Two Sets Are Comparable]
@@ -37,7 +37,7 @@ ordered by \( \subseteq \). It is a set of subsets of \( A \times B \), so \( \s
 *Case 2: every \( b \in B \) occurs.* Consider the inverse relation \( M^{-1} = \{ (b, a) : (a, b) \in M \} \subseteq B \times A \) (@def-relation). Every \( b \in B \) occurs as a first coordinate of \( M^{-1} \), and by (M2) in exactly one pair; so \( M^{-1} \) is the graph of a function \( g \colon B \to A \). By (M1), \( g(b) = g(b') = a \) gives \( b = b' \): \( g \) is injective, and \( \card{B} \le \card{A} \).
 :::
 
-Section 5.1's "continue until one side is used up" has become step (4): a maximal matching cannot be continued, and so a side is used up. The words "and so on" never appear.
+Section 6.1's "continue until one side is used up" has become step (4): a maximal matching cannot be continued, and so a side is used up. The words "and so on" never appear.
 
 ::: {#cor-cardinal-trichotomy}
 [Trichotomy for Sizes]
@@ -58,7 +58,7 @@ Run the proof of @thm-cardinal-comparability on \( A = \{1, 2, 3\} \) and \( B =
 :::
 
 ::: {.solution}
-A partial matching has at most two pairs, since each of \( x \), \( y \) occurs at most once. The maximal elements are the six two-pair matchings \( \{ (a, x), (a', y) \} \) with \( a \ne a' \) in \( A \) (three choices of \( a \), then two of \( a' \)). A matching with fewer pairs is not maximal: it leaves some element of \( A \) and some element of \( B \) unpaired, and one more pair fits. No maximal \( M \) pairs every element of \( A \): that would be an injection \( A \to B \), impossible by @cor-pigeonhole-finite-sets (a). So Case 2 occurs every time: \( M^{-1} \) is an injection \( B \to A \). This is the finite example of Section 5.1, where the matching \( (1, x) \), \( (2, y) \) ran out of \( B \).
+A partial matching has at most two pairs, since each of \( x \), \( y \) occurs at most once. The maximal elements are the six two-pair matchings \( \{ (a, x), (a', y) \} \) with \( a \ne a' \) in \( A \) (three choices of \( a \), then two of \( a' \)). A matching with fewer pairs is not maximal: it leaves some element of \( A \) and some element of \( B \) unpaired, and one more pair fits. No maximal \( M \) pairs every element of \( A \): that would be an injection \( A \to B \), impossible by @cor-pigeonhole-finite-sets (a). So Case 2 occurs every time: \( M^{-1} \) is an injection \( B \to A \). This is the finite example of Section 6.1, where the matching \( (1, x) \), \( (2, y) \) ran out of \( B \).
 :::
 
 A maximal matching tells us which side is used up, not that the sizes differ. For \( A = B = \nN \), the identity \( \{ (n, n) : n \in \nN \} \) is a maximal matching that uses up both sides. So is \( \{ (n, n + 1) : n \in \nN \} \): it pairs every element of \( A \), and although \( 0 \in B \) is unpaired, no element of \( A \) is left to pair it with. That matching is an injection and not a bijection, although \( \card{\nN} = \card{\nN} \). The proof only promises an injection, and that is all it delivers.
@@ -351,7 +351,7 @@ By @thm-cardinal-comparability, \( \card{A} \le \card{B} \) or \( \card{B} \le \
 ::: {.solution}
 (a) Every element of \( C \) is below \( u \), so \( C \cup \{u\} \) is a chain containing \( C \); by maximality it is not larger, so \( u \in C \). Then \( u \in C \) is above every element of \( C \): it is the greatest element of \( C \). Suppose \( u \prec x \) for some \( x \in X \). For every \( c \in C \), \( c \preceq u \preceq x \), so \( C \cup \{x\} \) is a chain, and maximality gives \( x \in C \). Then \( x \preceq u \), and with \( u \preceq x \), (PO2) gives \( x = u \), contradicting \( u \prec x \). So \( u \) is maximal in \( X \).
 
-(b) Let \( P \) be a non-empty partially ordered set in which every non-empty chain has an upper bound. The empty set is a chain, so by Section 5.1, Exercise B1 (@exr-chains-and-zorn-b1) with \( C_0 = \emptyset \), \( P \) has a maximal chain \( C \). It is not empty: for \( p \in P \), \( \{p\} \) is a chain properly containing \( \emptyset \). So \( C \) has an upper bound \( u \), and \( u \) is a maximal element of \( P \) by (a). Since Exercise B1 was proved from Zorn's lemma, the two statements are equivalent.
+(b) Let \( P \) be a non-empty partially ordered set in which every non-empty chain has an upper bound. The empty set is a chain, so by Section 6.1, Exercise B1 (@exr-chains-and-zorn-b1) with \( C_0 = \emptyset \), \( P \) has a maximal chain \( C \). It is not empty: for \( p \in P \), \( \{p\} \) is a chain properly containing \( \emptyset \). So \( C \) has an upper bound \( u \), and \( u \) is a maximal element of \( P \) by (a). Since Exercise B1 was proved from Zorn's lemma, the two statements are equivalent.
 
 **Marking scheme.** (10 points)
 - 1: \( u \in C \) in (a).
@@ -377,7 +377,7 @@ This item is optional and goes with the optional subsection. A set of vectors is
 ::: {.solution}
 (a) Step (2), the chains: a dependence among vectors of the union of a chain involves finitely many vectors, all in one member (@lem-chain-union (b)), and that member is independent.
 
-(b) The union of a chain of finite sets need not be finite (the second warning of Section 5.1), so step (2) fails: the union need not be a partial object.
+(b) The union of a chain of finite sets need not be finite (the second warning of Section 6.1), so step (2) fails: the union need not be a partial object.
 
 (c) This is the point of @exm-maximal-not-greatest. Maximal independent sets need not contain one another, so a vector space can have many bases, none of them greatest. In \( \nR^2 \), \( \{ (1, 0), (1, 1) \} \) and \( \{ (2, 0), (0, 3) \} \) are both bases, and neither contains the other.
 :::
@@ -387,20 +387,20 @@ thm-cardinal-comparability (proof): P is a set of subsets of A x B; inclusion is
 thm-cardinal-comparability (proof): two pairs of a union of a chain lie in one member | lem-chain-union (b) (cited, F2.4 §01)
 thm-cardinal-comparability (proof): maximal element | thm-zorn (cited; stated without proof, F2.4 §01; proved in ST.4 (promised))
 thm-cardinal-comparability (proof): graph of a function; inverse relation | def-function, def-relation (cited, F2.1)
-thm-cardinal-comparability (claim): (Quick check) six maximal matchings of {1,2,3} and {x,y}; none pairs all of A | cor-pigeonhole-finite-sets (a) (cited); verify/ch05/thm-cardinal-comparability.py
+thm-cardinal-comparability (claim): (Quick check) six maximal matchings of {1,2,3} and {x,y}; none pairs all of A | cor-pigeonhole-finite-sets (a) (cited); verify/ch06/thm-cardinal-comparability.py
 cor-cardinal-trichotomy (proof): symmetry of equinumerosity; injections both ways | prp-equinumerous-properties (b), thm-schroder-bernstein, def-card-le (cited)
 cor-cardinal-trichotomy (claim): comparability equivalent to choice | ST.4 (prose pointer; nothing depends on it)
-thm-order-extension (claim): worked schedule: generated order has 11 pairs; two schedules; seven in all | finite check; verify/ch05/thm-order-extension.py
-lem-one-step-order-extension (proof): all cases of (PO2), (PO3) | inline; verify/ch05/lem-one-step-order-extension.py (all partial orders on 4 points)
-lem-one-step-order-extension (claim): (Quick check) R on P({1,2}) adds only ({1},{2}) | verify/ch05/lem-one-step-order-extension.py
+thm-order-extension (claim): worked schedule: generated order has 11 pairs; two schedules; seven in all | finite check; verify/ch06/thm-order-extension.py
+lem-one-step-order-extension (proof): all cases of (PO2), (PO3) | inline; verify/ch06/lem-one-step-order-extension.py (all partial orders on 4 points)
+lem-one-step-order-extension (claim): (Quick check) R on P({1,2}) adds only ({1},{2}) | verify/ch06/lem-one-step-order-extension.py
 thm-order-extension (proof): union of a chain of partial orders is one; maximal is total | lem-chain-union (b), thm-zorn, lem-one-step-order-extension (cited)
-exm-divisibility-linear-extension (solution): totality and trichotomy of <= on N; a, b > 0 and b = ka give k > 0, k >= 1, b >= a | R order and arithmetic (school facts; axioms in AN1.1); def-divides (cited); verify/ch05/exm-divisibility-linear-extension.py
-exm-divisibility-linear-extension (claim): (Quick check) order 1, 4, 6, 12, 0; only 4, 6 incomparable under divisibility | verify/ch05/exm-divisibility-linear-extension.py
+exm-divisibility-linear-extension (solution): totality and trichotomy of <= on N; a, b > 0 and b = ka give k > 0, k >= 1, b >= a | R order and arithmetic (school facts; axioms in AN1.1); def-divides (cited); verify/ch06/exm-divisibility-linear-extension.py
+exm-divisibility-linear-extension (claim): (Quick check) order 1, 4, 6, 12, 0; only 4, 6 incomparable under divisibility | verify/ch06/exm-divisibility-linear-extension.py
 exm-divisibility-linear-extension (claim): no formula for a total extension of inclusion on P(R) is known | prose remark (nothing depends on it)
 exm-divisibility-linear-extension (claim): (optional subsection) basis theorem, R over Q has no explicit basis | LA §1.8 thm-basis-extension-general (prose pointer; nothing depends on it)
-exr-using-zorn-b2 (solution): proper subset of a finite set has fewer elements; two total extensions on P({1,2}) | prp-subset-finite (cited); verify/ch05/exr-using-zorn-b2.py
+exr-using-zorn-b2 (solution): proper subset of a finite set has fewer elements; two total extensions on P({1,2}) | prp-subset-finite (cited); verify/ch06/exr-using-zorn-b2.py
 exr-using-zorn-b3 (solution): lexicographic order total | Section 4.3 Exercises A1 (d), C1 (a) (cited), with R for N; R order (school fact)
-exr-using-zorn-c1 (solution): extension of R; exchanged lemma | thm-order-extension, lem-one-step-order-extension (cited); verify/ch05/lem-one-step-order-extension.py (intersection check on 4 points)
+exr-using-zorn-c1 (solution): extension of R; exchanged lemma | thm-order-extension, lem-one-step-order-extension (cited); verify/ch06/lem-one-step-order-extension.py (intersection check on 4 points)
 exr-using-zorn-c2 (solution): N-indexed process uses countably many elements; R uncountable | prp-countable-image, thm-reals-uncountable-decimal (cited); fd1:exm-not-allowed-catalogue (N13)
 exr-using-zorn-r1 (solution): injection gives surjection back | prp-card-le-surjection (cited)
 exr-using-zorn-r2 (solution): maximal chain from a given chain | exr-chains-and-zorn-b1 (F2.4 §01, cited)

@@ -127,7 +127,7 @@ SERIES = {
     "volumes": [
         {"prefix": "fd1", "id": "F1", "title": "Logic and Proof", "repo": "demo", "dir": "fd1",
          "chapters": [{"n": 1, "id": "F1.1", "title": "A"}, {"n": 2, "id": "F1.2", "title": "B"}]},
-        {"prefix": "fd2", "id": "F2", "title": "Sets, Relations, and Cardinality", "repo": "demo",
+        {"prefix": "fd2", "id": "F2", "title": "Sets and Functions", "repo": "demo",
          "dir": "fd2", "chapters": [{"n": 1, "id": "F2.1", "title": "C"}, {"n": 2, "id": "F2.2", "title": "D"}]},
         {"prefix": "an1", "id": "AN1", "title": "Analysis on the Real Line", "repo": "other", "dir": "an1",
          "chapters": [{"n": 1, "id": "AN1.1", "title": "E"}]},
@@ -160,7 +160,7 @@ class SeriesPromiseTests(unittest.TestCase):
             d.mkdir(parents=True)
         (f1 / "01-x.md").write_text(
             "# X\n\n"
-            "*Sets, Relations, and Cardinality*, Chapter 1 defines sets.\n"   # forward, other volume
+            "*Sets and Functions*, Chapter 1 defines sets.\n"   # forward, other volume
             "Chapter 2 comes next, and Section 2.1 too.\n"                    # forward, this volume
             "*Analysis on the Real Line*, Chapter 1 has the axioms.\n"        # forward, other repo
             "*Analysis on the Real Line*, Chapter 1 again (@an1:ax-lub).\n"   # linked by prefix

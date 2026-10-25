@@ -6,7 +6,7 @@ volume names that volume the way the engine prints a reference into another book
 Proof, Theorem 4.2.1"), with the title in italics:
 
     *Logic and Proof*, Chapter 4          *Logic and Proof*, Section 4.7
-    *Logic and Proof*, Chapters 3–5, and *Sets, Relations, and Cardinality*, Chapters 1–3
+    *Logic and Proof*, Chapters 3–5, and *Sets and Functions*, Chapters 1–3
 
 A **bookkeeping pointer** is what the author and the tools read (STATUS.md, NOTATION.md,
 blueprints, dependency ledgers): the atlas chapter id, which does not change when a volume is

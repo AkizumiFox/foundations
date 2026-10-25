@@ -1,6 +1,6 @@
 # Chains and Zorn's Lemma
 
-Section 3.4 proved that injections both ways give a bijection, and left open whether, for any two sets, at least one injection exists. Section 4.3 ended with a question about partially ordered sets: if every chain has an upper bound, must there be a maximal element? One principle answers both questions. This section states it, Zorn's lemma, which answers the second question; explains why this volume does not prove it; and turns it into a method of proof, the maximality template, with two first uses. Section 5.2 uses the template to answer the first question.
+Section 3.4 proved that injections both ways give a bijection, and left open whether, for any two sets, at least one injection exists. Section 4.3 ended with a question about partially ordered sets: if every chain has an upper bound, must there be a maximal element? One principle answers both questions. This section states it, Zorn's lemma, which answers the second question; explains why this volume does not prove it; and turns it into a method of proof, the maximality template, with two first uses. Section 6.2 uses the template to answer the first question.
 
 ## Matching two sets, one pair at a time
 
@@ -14,7 +14,7 @@ Still, the attempt gets two things right, and they are the thesis of this sectio
 
 *Every unfinished matching can be enlarged by one more pair, and a growing family of matchings, put together, is again a matching.*
 
-The first half is plain: if neither side is used up, an unused \( a \) and an unused \( b \) make one more pair. The rest of the section makes "growing family" exact and supplies a principle that turns these two facts into a finished matching. We return to the matching in Section 5.2.
+The first half is plain: if neither side is used up, an unused \( a \) and an unused \( b \) make one more pair. The rest of the section makes "growing family" exact and supplies a principle that turns these two facts into a finished matching. We return to the matching in Section 6.2.
 
 ## Chains
 
@@ -186,7 +186,7 @@ Let \( P \) be the set of \( S \subseteq X \) such that for all \( s, t \in S \)
 Suppose some class \( [x] \) (@def-equivalence-class) contains no element of \( M \). Then \( x \notin M \), since \( x \in [x] \) by (Eq1). And \( M \cup \{x\} \in P \): let \( s, t \in M \cup \{x\} \) with \( s \sim t \). If both lie in \( M \), then \( s = t \). If \( s = x \) and \( t \in M \), then \( t \sim x \) by (Eq2), so \( t \in [x] \cap M \), which is impossible; the case \( t = x \), \( s \in M \) is the same with the letters exchanged; and if \( s = t = x \), there is nothing to show. So \( M \subsetneq M \cup \{x\} \) in \( P \), contradicting maximality. Hence \( M \) meets every class, and by the condition defining \( P \) in at most one element: \( S \coloneqq M \) works.
 :::
 
-The axiom of choice gives the same set in one line, by choosing one element from each class; the template's advantage shows when the pieces interact, as in Section 5.2. On \( \nR \), the relation \( x \sim y \iff x - y \in \nQ \) is an equivalence relation (Section 4.2, after @exm-reals-mod-integers). A set of representatives for it inside \( [0, 1] \) is a set of real numbers that *Measure and Integration*, Chapter 1 shows has no length, and no formula for one is known.
+The axiom of choice gives the same set in one line, by choosing one element from each class; the template's advantage shows when the pieces interact, as in Section 6.2. On \( \nR \), the relation \( x \sim y \iff x - y \in \nQ \) is an equivalence relation (Section 4.2, after @exm-reals-mod-integers). A set of representatives for it inside \( [0, 1] \) is a set of real numbers that *Measure and Integration*, Chapter 1 shows has no length, and no formula for one is known.
 
 ::: {.check}
 Let \( X = \nZ \) and \( m \sim n \iff m - n \) is even. Describe the partial objects of @exm-zorn-representatives that have two elements, and the maximal ones.
@@ -200,7 +200,7 @@ They are the sets \( \{e, o\} \) with \( e \) even and \( o \) odd: two even or 
 **Check that the union is a partial object.** Here is an almost-correct proof that \( \nN \) has a maximal finite subset. "Let \( P \) be the set of finite subsets of \( \nN \), ordered by \( \subseteq \). A chain has its union as an upper bound. By Zorn's lemma, \( P \) has a maximal element." The conclusion is false, by the third example after @thm-zorn. The failing line is the second: the union is an upper bound in \( \powerset{\nN} \), but it need not be finite, so it need not lie in \( P \). "Finite" is a condition on all the elements at once, and @lem-chain-union handles only finitely many.
 :::
 
-Section 5.2 applies the template twice more, first to the matching that opened this section.
+Section 6.2 applies the template twice more, first to the matching that opened this section.
 
 ## Exercises
 
@@ -276,7 +276,7 @@ Let \( A = \{1, 2\} \) and \( B = \{b\} \). List the relations \( G \subseteq A 
 :::
 
 ::: {.solution}
-They are \( \emptyset \), \( \{(1, b)\} \) and \( \{(2, b)\} \); the only other subset of \( A \times B \), \( \{(1, b), (2, b)\} \), fails because \( b \) occurs twice. The maximal elements are \( \{(1, b)\} \) and \( \{(2, b)\} \). Neither pairs every element of \( A \); each pairs every element of \( B \), and read backwards it is an injection \( B \to A \). (Section 5.2 shows that this always happens: a maximal partial injection uses up one side.)
+They are \( \emptyset \), \( \{(1, b)\} \) and \( \{(2, b)\} \); the only other subset of \( A \times B \), \( \{(1, b), (2, b)\} \), fails because \( b \) occurs twice. The maximal elements are \( \{(1, b)\} \) and \( \{(2, b)\} \). Neither pairs every element of \( A \); each pairs every element of \( B \), and read backwards it is an injection \( B \to A \). (Section 6.2 shows that this always happens: a maximal partial injection uses up one side.)
 :::
 
 ::: {#exr-chains-and-zorn-b4}

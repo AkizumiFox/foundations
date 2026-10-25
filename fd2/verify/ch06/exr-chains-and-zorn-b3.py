@@ -1,4 +1,4 @@
-"""Section 5.1, B3: A = {1, 2}, B = {b}. Relations G in A x B with each element of A and of B in at
+"""Section 6.1, B3: A = {1, 2}, B = {b}. Relations G in A x B with each element of A and of B in at
 most one pair: {}, {(1,b)}, {(2,b)}; maximal: {(1,b)}, {(2,b)}; each pairs all of B, none all of A.
 Also B4 (c) on a finite window: in the subsets of {0..9} with no two consecutive numbers, the evens
 and the odds are both maximal, and no element is greatest."""

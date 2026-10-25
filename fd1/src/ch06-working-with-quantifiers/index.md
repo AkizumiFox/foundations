@@ -12,7 +12,7 @@ Chapter 3 did for the connectives what this chapter does for the quantifiers. Se
 
 **Time.** About 20 hours on the core track (all of A, one B and one C per section, the exit checks); about 35 hours for everything.
 
-**Minimum before *Sets, Relations, and Cardinality*.** Chapters 1–6 and 8, core; Sections 7.1–7.2 before its Section 2.5.
+**Minimum before *Sets and Functions*.** Chapters 1–6 and 8, core; Sections 7.1–7.2 before its Section 2.5.
 
 **How to read this chapter.** Every section is on the first reading, with its folds closed. The folds hold the proofs of the bounded rules, of the replacement rule and of TAUT on the skeleton, the derivations of the distribution and passage laws, and short remarks on edge cases. They are not optional: later proofs may use them.
 
@@ -32,7 +32,7 @@ Chapter 3 did for the connectives what this chapter does for the quantifiers. Se
 - **Test the subgoal by a counter-reading.** Section 4.7's move, with quantifiers. (Section 6.3)
 - **Read the dependency off the boxes.** A witness may depend only on the flags whose boxes enclose it. (Section 6.4)
 
-**Where this goes.** *Analysis on the Real Line*, Chapter 1 proves from the real-number axioms the facts about \( \nN \) in \( \nR \) and absolute value that Sections 6.1 and 6.2 use as school facts, and it uses "not every" gives "some not" (Section 6.2) in its proof of the Archimedean property. Its Chapters 5 and 6 define continuity and uniform continuity, which Section 6.4 uses only as quantifier patterns. Picking a witness for every \( \varepsilon \) at once, as one function (Section 6.4), in general appeals to the axiom of choice, which *Sets, Relations, and Cardinality*, Chapter 3 states.
+**Where this goes.** *Analysis on the Real Line*, Chapter 1 proves from the real-number axioms the facts about \( \nN \) in \( \nR \) and absolute value that Sections 6.1 and 6.2 use as school facts, and it uses "not every" gives "some not" (Section 6.2) in its proof of the Archimedean property. Its Chapters 5 and 6 define continuity and uniform continuity, which Section 6.4 uses only as quantifier patterns. Picking a witness for every \( \varepsilon \) at once, as one function (Section 6.4), in general appeals to the axiom of choice, which *Sets and Functions*, Chapter 3 states.
 
 ## Summary
 

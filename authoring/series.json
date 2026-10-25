@@ -67,7 +67,7 @@
   {
    "prefix": "fd2",
    "id": "F2",
-   "title": "Sets, Relations, and Cardinality",
+   "title": "Sets and Functions",
    "repo": "foundations",
    "checkout": "foundations",
    "dir": "fd2",
@@ -75,7 +75,7 @@
     {
      "n": 1,
      "id": "F2.1",
-     "title": "Sets and Functions: Proofs from Definitions",
+     "title": "Proofs from Definitions: Sets and Functions",
      "ab": 6
     },
     {
@@ -98,6 +98,11 @@
     },
     {
      "n": 5,
+     "id": "F2.6",
+     "title": "Building Functions"
+    },
+    {
+     "n": 6,
      "id": "F2.4",
      "title": "Zorn's Lemma"
     }
@@ -163,8 +168,38 @@
    "chapters": [
     {
      "n": 1,
+     "id": "F4.6",
+     "title": "Inequalities, Finite Sums, and Real Powers"
+    },
+    {
+     "n": 2,
+     "id": "F4.7",
+     "title": "Real Functions and Their Graphs"
+    },
+    {
+     "n": 3,
+     "id": "F4.8",
+     "title": "Coordinates and Vectors in \\(\\nR^n\\)"
+    },
+    {
+     "n": 4,
+     "id": "F4.9",
+     "title": "Lines, Convexity, and Isometries of \\(\\nR^n\\)"
+    },
+    {
+     "n": 5,
      "id": "F4.1",
      "title": "Complex Numbers"
+    },
+    {
+     "n": 6,
+     "id": "F4.10",
+     "title": "Rotations, Angles, and the Complex Plane"
+    },
+    {
+     "n": 7,
+     "id": "F4.11",
+     "title": "Metrics and Norms"
     }
    ]
   },
@@ -201,7 +236,7 @@
   {
    "prefix": "an1",
    "id": "AN1",
-   "title": "Analysis on the Real Line",
+   "title": "Real Numbers, Metric Spaces, and Derivatives",
    "repo": "analysis",
    "checkout": "analysis-series",
    "dir": "an1",
@@ -214,60 +249,54 @@
     },
     {
      "n": 2,
+     "id": "AN1.4",
+     "title": "Open, Closed, and Compact Subsets of \\(\\nR^n\\)",
+     "ab": 14
+    },
+    {
+     "n": 3,
+     "id": "AN2.1",
+     "title": "Metric Spaces and Their Topology",
+     "ab": 24
+    },
+    {
+     "n": 4,
      "id": "AN1.2",
      "title": "Sequences, Subsequences, and Cauchy Sequences",
      "ab": 12
     },
     {
-     "n": 3,
-     "id": "AN1.3",
-     "title": "Infinite Series",
-     "ab": 13
-    },
-    {
-     "n": 4,
-     "id": "AN1.4",
-     "title": "Open, Closed, and Compact Subsets of \\(\\nR\\)",
-     "ab": 14
-    },
-    {
      "n": 5,
+     "id": "AN2.2",
+     "title": "Completeness and the Completion of a Metric Space",
+     "ab": 25
+    },
+    {
+     "n": 6,
      "id": "AN1.5",
      "title": "Limits of Functions and Continuity",
      "ab": 15
     },
     {
-     "n": 6,
+     "n": 7,
      "id": "AN1.6",
      "title": "Continuous Functions on Compact Sets and Intervals",
      "ab": 16
     },
     {
-     "n": 7,
+     "n": 8,
+     "id": "AN2.3",
+     "title": "Compactness and Connectedness in Metric Spaces",
+     "ab": 26
+    },
+    {
+     "n": 9,
      "id": "AN1.7",
      "title": "The Derivative and the Mean Value Theorem",
      "ab": 17
     },
     {
-     "n": 8,
-     "id": "AN1.8",
-     "title": "The Riemann–Darboux Integral",
-     "ab": 18
-    },
-    {
-     "n": 9,
-     "id": "AN1.9",
-     "title": "Sequences and Series of Functions",
-     "ab": 19
-    },
-    {
      "n": 10,
-     "id": "AN1.10",
-     "title": "Power Series, Taylor Series, and the Elementary Functions",
-     "ab": 20
-    },
-    {
-     "n": 11,
      "id": "AN1.11",
      "title": "The Forms of Completeness",
      "ab": 21
@@ -277,58 +306,101 @@
   {
    "prefix": "an2",
    "id": "AN2",
-   "title": "Metric and Topological Spaces",
+   "title": "Integration, Series, and Function Spaces",
    "repo": "analysis",
    "checkout": "analysis-series",
    "dir": "an2",
    "chapters": [
     {
      "n": 1,
-     "id": "AN2.1",
-     "title": "Metric Spaces, Open Sets, and Continuity",
-     "ab": 24
+     "id": "AN2.9",
+     "title": "Functions of Bounded Variation and Rectifiable Curves"
     },
     {
      "n": 2,
-     "id": "AN2.2",
-     "title": "Completeness and the Completion of a Metric Space",
-     "ab": 25
+     "id": "AN1.8",
+     "title": "The Riemann–Darboux Integral",
+     "ab": 18
     },
     {
      "n": 3,
-     "id": "AN2.3",
-     "title": "Compactness and Connectedness in Metric Spaces",
-     "ab": 26
+     "id": "AN2.10",
+     "title": "The Riemann–Stieltjes Integral"
     },
     {
      "n": 4,
+     "id": "AN1.3",
+     "title": "Infinite Series",
+     "ab": 13
+    },
+    {
+     "n": 5,
+     "id": "AN2.12",
+     "title": "Double Series, Infinite Products, and the Euler Product"
+    },
+    {
+     "n": 6,
+     "id": "AN1.9",
+     "title": "Sequences and Series of Functions",
+     "ab": 19
+    },
+    {
+     "n": 7,
+     "id": "AN1.10",
+     "title": "Power Series, Taylor Series, and the Elementary Functions",
+     "ab": 20
+    },
+    {
+     "n": 8,
+     "id": "AN2.11",
+     "title": "Integrals with a Parameter, Euler Summation, and the Gamma Function"
+    },
+    {
+     "n": 9,
+     "id": "AN2.13",
+     "title": "Summability and Tauberian Theorems"
+    },
+    {
+     "n": 10,
      "id": "AN2.4",
      "title": "Contraction Mappings and the Picard–Lindelöf Theorem",
      "ab": 27
     },
     {
-     "n": 5,
+     "n": 11,
      "id": "AN2.5",
      "title": "Equicontinuity, the Arzelà–Ascoli Theorem, and Peano's Theorem",
      "ab": 28
     },
     {
-     "n": 6,
+     "n": 12,
      "id": "AN2.6",
      "title": "Density and Category in C(K): Stone–Weierstrass and Baire",
      "ab": 29
     },
     {
-     "n": 7,
+     "n": 13,
      "id": "AN2.7",
      "title": "Topological Spaces, Products, and Compactness",
      "ab": 63
     },
     {
-     "n": 8,
+     "n": 14,
      "id": "AN2.8",
      "title": "Separation, Urysohn–Tietze, and Locally Compact Spaces",
      "ab": 64
+    },
+    {
+     "n": 15,
+     "id": "AN2.14",
+     "title": "The Gauge Integral",
+     "optional": true
+    },
+    {
+     "n": 16,
+     "id": "AN2.15",
+     "title": "A Gallery of Pathological Functions",
+     "optional": true
     }
    ]
   },
@@ -354,30 +426,344 @@
     },
     {
      "n": 3,
-     "id": "AN3.3",
-     "title": "Linear Systems, the Matrix Exponential, and the Flow",
-     "ab": 32
-    },
-    {
-     "n": 4,
      "id": "AN3.4",
      "title": "The Riemann Integral on \\(\\nR^n\\)",
      "ab": 33
     },
     {
+     "n": 4,
+     "id": "AN3.3",
+     "title": "Linear Systems, the Matrix Exponential, and the Flow",
+     "ab": 32
+    }
+   ]
+  },
+  {
+   "prefix": "ca",
+   "id": "CA",
+   "title": "Complex Analysis",
+   "repo": "analysis",
+   "checkout": "analysis-series",
+   "dir": "ca",
+   "chapters": [
+    {
+     "n": 1,
+     "id": "CA.1",
+     "title": "Holomorphic Functions and Power Series",
+     "ab": 55
+    },
+    {
+     "n": 2,
+     "id": "CA.10",
+     "title": "Möbius Transformations and the Riemann Sphere"
+    },
+    {
+     "n": 3,
+     "id": "CA.2",
+     "title": "Cauchy's Theorem and Its First Consequences",
+     "ab": 56
+    },
+    {
+     "n": 4,
+     "id": "CA.3",
+     "title": "Laurent Series, Singularities, and Residues",
+     "ab": 57
+    },
+    {
      "n": 5,
+     "id": "CA.4",
+     "title": "Winding Numbers, the Global Cauchy Theorem, and Counting Zeros",
+     "ab": 58
+    },
+    {
+     "n": 6,
+     "id": "CA.6",
+     "title": "Harmonic Functions and the Poisson Integral",
+     "ab": 60
+    },
+    {
+     "n": 7,
+     "id": "CA.5",
+     "title": "Conformal Maps, Normal Families, and the Riemann Mapping Theorem",
+     "ab": 59
+    }
+   ]
+  },
+  {
+   "prefix": "ca2",
+   "id": "CA2",
+   "title": "Complex Analysis II: Global Theory",
+   "repo": "analysis",
+   "checkout": "analysis-series",
+   "dir": "ca2",
+   "chapters": [
+    {
+     "n": 1,
+     "id": "CA.11",
+     "title": "Subharmonic Functions, Harnack, and the Perron Method",
+     "ab": 60
+    },
+    {
+     "n": 2,
+     "id": "CA.7",
+     "title": "Infinite Products and Entire Functions",
+     "ab": 61
+    },
+    {
+     "n": 3,
+     "id": "CA.12",
+     "title": "Runge's Theorem, Mittag-Leffler, and Simply Connected Regions"
+    },
+    {
+     "n": 4,
+     "id": "CA.8a",
+     "title": "Analytic Continuation and Monodromy",
+     "ab": 62
+    },
+    {
+     "n": 5,
+     "id": "CA.13",
+     "title": "The Gamma and Zeta Functions"
+    },
+    {
+     "n": 6,
+     "id": "CA.14",
+     "title": "Bloch, Landau, Schottky, and the Picard Theorems"
+    },
+    {
+     "n": 7,
+     "id": "CA.15",
+     "title": "Elliptic Functions",
+     "optional": true
+    },
+    {
+     "n": 8,
+     "id": "CA.8b",
+     "title": "Picard's Theorems via Theta Functions",
+     "ab": 62,
+     "optional": true
+    }
+   ]
+  },
+  {
+   "prefix": "am",
+   "id": "AM",
+   "title": "Analysis on Manifolds",
+   "repo": "analysis",
+   "checkout": "analysis-series",
+   "dir": "am",
+   "chapters": [
+    {
+     "n": 1,
+     "id": "AM.1",
+     "title": "Partitions of Unity, Improper Integrals, and Change of Variables"
+    },
+    {
+     "n": 2,
      "id": "AN3.5",
      "title": "Submanifolds of \\(\\nR^n\\) and Tangent Spaces"
     },
     {
-     "n": 6,
+     "n": 3,
      "id": "AN3.6",
      "title": "Differential Forms and the Exterior Derivative"
     },
     {
-     "n": 7,
+     "n": 4,
      "id": "AN3.7",
      "title": "Integration on Manifolds and Stokes' Theorem"
+    },
+    {
+     "n": 5,
+     "id": "AM.2",
+     "title": "Closed and Exact Forms: Poincaré Lemma and de Rham Cohomology of Punctured \\(\\nR^n\\)"
+    },
+    {
+     "n": 6,
+     "id": "AM.3",
+     "title": "Abstract Smooth Manifolds, Vector Fields, and Flows"
+    }
+   ]
+  },
+  {
+   "prefix": "mt",
+   "id": "MT",
+   "title": "Measure, Integration, and Real Analysis",
+   "repo": "analysis",
+   "checkout": "analysis-series",
+   "dir": "mt",
+   "chapters": [
+    {
+     "n": 1,
+     "id": "HA.9",
+     "title": "Riemann Integration and Its Failures",
+     "ab": 42
+    },
+    {
+     "n": 2,
+     "id": "MT.1",
+     "title": "Lebesgue Measure on \\(\\nR^d\\) and Measurable Functions",
+     "ab": 43
+    },
+    {
+     "n": 3,
+     "id": "MT.2",
+     "title": "The Lebesgue Integral and the Convergence Theorems",
+     "ab": 44
+    },
+    {
+     "n": 4,
+     "id": "MT.3",
+     "title": "Abstract Measure Spaces and Carathéodory's Construction",
+     "ab": 45
+    },
+    {
+     "n": 5,
+     "id": "MT.4",
+     "title": "Product Measures and the Fubini–Tonelli Theorem",
+     "ab": 46
+    },
+    {
+     "n": 6,
+     "id": "MT.5",
+     "title": "Linear Maps, Change of Variables, and Polar Coordinates",
+     "ab": 47
+    },
+    {
+     "n": 7,
+     "id": "MT.6",
+     "title": "Surfaces, Surface Measure, and the Divergence Theorem",
+     "ab": 48
+    },
+    {
+     "n": 8,
+     "id": "FA.1a",
+     "title": "Banach Spaces, Bounded Operators, and Dual Spaces",
+     "ab": 65
+    },
+    {
+     "n": 9,
+     "id": "FA.4",
+     "title": "Baire Category and the Fundamental Theorems for Operators",
+     "ab": 68
+    },
+    {
+     "n": 10,
+     "id": "FA.3",
+     "title": "The Hahn–Banach Theorems",
+     "ab": 67
+    },
+    {
+     "n": 11,
+     "id": "MT.7",
+     "title": "\\(\\Lp{p}\\) Spaces, Convolution, and Mollifiers",
+     "ab": 49
+    },
+    {
+     "n": 12,
+     "id": "MT.8",
+     "title": "Modes of Convergence, Uniform Integrability, and Weak \\(\\Lp{p}\\)",
+     "ab": 50
+    },
+    {
+     "n": 13,
+     "id": "MT.9",
+     "title": "The Maximal Function and Lebesgue Differentiation",
+     "ab": 51
+    },
+    {
+     "n": 14,
+     "id": "MT.10",
+     "title": "Bounded Variation, Absolute Continuity, and the Fundamental Theorem",
+     "ab": 52
+    },
+    {
+     "n": 15,
+     "id": "FA.6",
+     "title": "Hilbert Spaces",
+     "ab": 70
+    },
+    {
+     "n": 16,
+     "id": "MT.11",
+     "title": "Signed Measures, Radon–Nikodym, and Lebesgue Decomposition",
+     "ab": 53
+    },
+    {
+     "n": 17,
+     "id": "FA.1b",
+     "title": "The Dual of \\(\\Lp{p}\\)",
+     "ab": 65
+    },
+    {
+     "n": 18,
+     "id": "FA.9",
+     "title": "Bounded Operators on Hilbert Space"
+    },
+    {
+     "n": 19,
+     "id": "FA.7",
+     "title": "Compact Operators, the Fredholm Alternative, and the Spectral Theorem",
+     "ab": 71
+    }
+   ]
+  },
+  {
+   "prefix": "fa",
+   "id": "FA",
+   "title": "Functional Analysis",
+   "repo": "analysis",
+   "checkout": "analysis-series",
+   "dir": "fa",
+   "chapters": [
+    {
+     "n": 1,
+     "id": "FA.2",
+     "title": "Radon Measures and the Dual of \\(\\Cz{X}\\)",
+     "ab": 66
+    },
+    {
+     "n": 2,
+     "id": "FA.5",
+     "title": "Weak Topologies, Tychonoff, and Banach–Alaoglu",
+     "ab": 69
+    },
+    {
+     "n": 3,
+     "id": "FA.10",
+     "title": "Reflexivity, Uniform Convexity, and Separability"
+    },
+    {
+     "n": 4,
+     "id": "FA.11",
+     "title": "Locally Convex Spaces and Fréchet Spaces"
+    },
+    {
+     "n": 5,
+     "id": "FA.8",
+     "title": "Banach Algebras and Gelfand Theory",
+     "ab": 72
+    },
+    {
+     "n": 6,
+     "id": "FA.12",
+     "title": "The Spectral Theorem for Bounded Normal Operators"
+    },
+    {
+     "n": 7,
+     "id": "FA.13",
+     "title": "Unbounded Operators and Self-Adjointness"
+    },
+    {
+     "n": 8,
+     "id": "FA.14",
+     "title": "Fredholm Operators and the Index"
+    },
+    {
+     "n": 9,
+     "id": "CA.9",
+     "title": "Positive Harmonic Functions and the Herglotz–Nevanlinna Representation",
+     "optional": true
     }
    ]
   },
@@ -441,221 +827,8 @@
     },
     {
      "n": 9,
-     "id": "HA.9",
-     "title": "What the Riemann Integral Lacks",
-     "ab": 42
-    }
-   ]
-  },
-  {
-   "prefix": "mt",
-   "id": "MT",
-   "title": "Measure and Integration",
-   "repo": "analysis",
-   "checkout": "analysis-series",
-   "dir": "mt",
-   "chapters": [
-    {
-     "n": 1,
-     "id": "MT.1",
-     "title": "Lebesgue Measure on \\(\\nR^d\\) and Measurable Functions",
-     "ab": 43
-    },
-    {
-     "n": 2,
-     "id": "MT.2",
-     "title": "The Lebesgue Integral and the Convergence Theorems",
-     "ab": 44
-    },
-    {
-     "n": 3,
-     "id": "MT.3",
-     "title": "Abstract Measure Spaces and Carathéodory's Construction",
-     "ab": 45
-    },
-    {
-     "n": 4,
-     "id": "MT.4",
-     "title": "Product Measures and the Fubini–Tonelli Theorem",
-     "ab": 46
-    },
-    {
-     "n": 5,
-     "id": "MT.5",
-     "title": "Linear Maps, Change of Variables, and Polar Coordinates",
-     "ab": 47
-    },
-    {
-     "n": 6,
-     "id": "MT.6",
-     "title": "Surfaces, Surface Measure, and the Divergence Theorem",
-     "ab": 48
-    },
-    {
-     "n": 7,
-     "id": "MT.7",
-     "title": "\\(\\Lp{p}\\) Spaces, Convolution, and Mollifiers",
-     "ab": 49
-    },
-    {
-     "n": 8,
-     "id": "MT.8",
-     "title": "Modes of Convergence, Uniform Integrability, and Weak \\(\\Lp{p}\\)",
-     "ab": 50
-    },
-    {
-     "n": 9,
-     "id": "MT.9",
-     "title": "The Maximal Function and Lebesgue Differentiation",
-     "ab": 51
-    },
-    {
-     "n": 10,
-     "id": "MT.10",
-     "title": "Bounded Variation, Absolute Continuity, and the Fundamental Theorem",
-     "ab": 52
-    },
-    {
-     "n": 11,
-     "id": "MT.11",
-     "title": "Signed Measures, Radon–Nikodym, and Lebesgue Decomposition",
-     "ab": 53
-    }
-   ]
-  },
-  {
-   "prefix": "ca",
-   "id": "CA",
-   "title": "Complex Analysis",
-   "repo": "analysis",
-   "checkout": "analysis-series",
-   "dir": "ca",
-   "chapters": [
-    {
-     "n": 1,
-     "id": "CA.1",
-     "title": "Holomorphic Functions and Power Series",
-     "ab": 55
-    },
-    {
-     "n": 2,
-     "id": "CA.2",
-     "title": "Cauchy's Theorem and Its First Consequences",
-     "ab": 56
-    },
-    {
-     "n": 3,
-     "id": "CA.3",
-     "title": "Laurent Series, Singularities, and Residues",
-     "ab": 57
-    },
-    {
-     "n": 4,
-     "id": "CA.4",
-     "title": "Winding Numbers, the Global Cauchy Theorem, and Counting Zeros",
-     "ab": 58
-    },
-    {
-     "n": 5,
-     "id": "CA.5",
-     "title": "Conformal Maps, Normal Families, and the Riemann Mapping Theorem",
-     "ab": 59
-    },
-    {
-     "n": 6,
-     "id": "CA.6",
-     "title": "Harmonic and Subharmonic Functions",
-     "ab": 60
-    },
-    {
-     "n": 7,
-     "id": "CA.7",
-     "title": "Infinite Products and Entire Functions",
-     "ab": 61
-    },
-    {
-     "n": 8,
-     "id": "CA.8a",
-     "title": "Analytic Continuation and Monodromy",
-     "ab": 62
-    },
-    {
-     "n": 9,
-     "id": "CA.8b",
-     "title": "Picard's Theorems",
-     "ab": 62,
-     "optional": true
-    },
-    {
-     "n": 10,
-     "id": "CA.9",
-     "title": "Positive Harmonic Functions and the Herglotz–Nevanlinna Representation",
-     "optional": true
-    }
-   ]
-  },
-  {
-   "prefix": "fa",
-   "id": "FA",
-   "title": "Functional Analysis",
-   "repo": "analysis",
-   "checkout": "analysis-series",
-   "dir": "fa",
-   "chapters": [
-    {
-     "n": 1,
-     "id": "FA.1a",
-     "title": "Banach Spaces, Bounded Operators, and Dual Spaces",
-     "ab": 65
-    },
-    {
-     "n": 2,
-     "id": "FA.1b",
-     "title": "The Dual of \\(\\Lp{p}\\)",
-     "ab": 65
-    },
-    {
-     "n": 3,
-     "id": "FA.2",
-     "title": "Radon Measures and the Dual of \\(\\Cz{X}\\)",
-     "ab": 66
-    },
-    {
-     "n": 4,
-     "id": "FA.3",
-     "title": "The Hahn–Banach Theorems",
-     "ab": 67
-    },
-    {
-     "n": 5,
-     "id": "FA.4",
-     "title": "Baire Category and the Fundamental Theorems for Operators",
-     "ab": 68
-    },
-    {
-     "n": 6,
-     "id": "FA.5",
-     "title": "Weak Topologies, Tychonoff, and Banach–Alaoglu",
-     "ab": 69
-    },
-    {
-     "n": 7,
-     "id": "FA.6",
-     "title": "Hilbert Spaces",
-     "ab": 70
-    },
-    {
-     "n": 8,
-     "id": "FA.7",
-     "title": "Compact Operators, the Fredholm Alternative, and the Spectral Theorem",
-     "ab": 71
-    },
-    {
-     "n": 9,
-     "id": "FA.8",
-     "title": "Banach Algebras and Gelfand Theory",
-     "ab": 72,
-     "optional": true
+     "id": "HA.10",
+     "title": "Fourier Analysis in \\(\\Lp{1}\\) and \\(\\Lp{2}\\)"
     }
    ]
   },
@@ -687,6 +860,11 @@
      "n": 4,
      "id": "PR.4",
      "title": "Weak Convergence and Characteristic Functions"
+    },
+    {
+     "n": 5,
+     "id": "PR.5",
+     "title": "Brownian Motion"
     }
    ]
   },

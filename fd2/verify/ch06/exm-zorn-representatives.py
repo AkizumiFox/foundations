@@ -1,4 +1,4 @@
-"""Section 5.1, Quick check after exm-zorn-representatives: X = Z, m ~ n iff m - n even. The
+"""Section 6.1, Quick check after exm-zorn-representatives: X = Z, m ~ n iff m - n even. The
 two-element partial objects are exactly {e, o} (e even, o odd), and these are exactly the maximal
 ones; {0, 1} and {4, -7} are examples. Checked on the window Z cap [-8, 8]."""
 from itertools import combinations

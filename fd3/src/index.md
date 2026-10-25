@@ -2,7 +2,7 @@
 
 The two earlier volumes used numbers as familiar objects. Their arithmetic and order were school facts, named where they were used and never proved. This volume proves them. It starts from a few axioms about sets and builds the natural numbers, then the integers, the rationals and the real numbers, each out of the one before. At the end the real numbers form a complete ordered field, and any two complete ordered fields are the same up to exactly one isomorphism.
 
-**Who it is for.** The reader we have in mind has worked through *Logic and Proof* and *Sets, Relations, and Cardinality*, or has their habits from elsewhere. That means negating a quantified statement, running an induction, and checking that a rule on equivalence classes does not depend on the representative chosen. The last of these is used in almost every chapter. The chapters point back to both volumes where they use a definition or a rule, so a reader who is unsure of a step can look it up.
+**Who it is for.** The reader we have in mind has worked through *Logic and Proof* and *Sets and Functions*, or has their habits from elsewhere. That means negating a quantified statement, running an induction, and checking that a rule on equivalence classes does not depend on the representative chosen. The last of these is used in almost every chapter. The chapters point back to both volumes where they use a definition or a rule, so a reader who is unsure of a step can look it up.
 
 **What it covers.**
 

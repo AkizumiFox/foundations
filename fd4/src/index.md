@@ -2,7 +2,7 @@
 
 *Number Systems: From \(\nN\) to \(\nR\)* ended with the real numbers as a complete ordered field. *Analysis on the Real Line* starts from the axioms of such a field and proves its first limit theorems at once. This volume supplies the working tools that analysis uses on every page without stopping to prove them: inequalities and finite sums, real functions and their graphs, coordinates and vectors in \( \nR^n \), lines, convex sets and isometries, the complex numbers and the plane they form, and distances in the general form of a metric.
 
-**Who it is for.** The reader we have in mind has worked through *Logic and Proof*, *Sets, Relations, and Cardinality* and the main line of *Number Systems: From \(\nN\) to \(\nR\)*, or has their habits from elsewhere. Much of the material is familiar in outline from school; what is new is that every rule is proved from the axioms of a complete ordered field, and that nothing is used before it is proved.
+**Who it is for.** The reader we have in mind has worked through *Logic and Proof*, *Sets and Functions* and the main line of *Number Systems: From \(\nN\) to \(\nR\)*, or has their habits from elsewhere. Much of the material is familiar in outline from school; what is new is that every rule is proved from the axioms of a complete ordered field, and that nothing is used before it is proved.
 
 **What it covers.** The volume is being written. Its finished chapter is:
 

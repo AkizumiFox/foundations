@@ -15,12 +15,12 @@ The chapter states the lemma and says why it is not proved here: it is equivalen
 
 ## Named moves
 
-- **The maximality template** (@exm-method-maximality). Partial objects ordered by extension; the union of a chain is again a partial object, since each defining condition mentions finitely many elements and these lie in one member of the chain (@lem-chain-union); Zorn's lemma gives a maximal one; a maximal one is complete, since a missing piece would give a strictly larger partial object. (Section 5.1)
+- **The maximality template** (@exm-method-maximality). Partial objects ordered by extension; the union of a chain is again a partial object, since each defining condition mentions finitely many elements and these lie in one member of the chain (@lem-chain-union); Zorn's lemma gives a maximal one; a maximal one is complete, since a missing piece would give a strictly larger partial object. (Section 6.1)
 
 ## Threads
 
-- **Comparing sizes.** Section 3.4 asked whether any two sets are comparable. Section 5.1 opens with a pair-by-pair matching that does not finish, and Section 5.2 finishes it with Zorn's lemma (@thm-cardinal-comparability).
-- **Choice.** Chapter 3 stated the axiom of choice. Section 5.1 derives it from Zorn's lemma (@thm-choice-from-zorn), and *Axiomatic Set Theory*, Chapter 4 proves the converse.
+- **Comparing sizes.** Section 3.4 asked whether any two sets are comparable. Section 6.1 opens with a pair-by-pair matching that does not finish, and Section 6.2 finishes it with Zorn's lemma (@thm-cardinal-comparability).
+- **Choice.** Chapter 3 stated the axiom of choice. Section 6.1 derives it from Zorn's lemma (@thm-choice-from-zorn), and *Axiomatic Set Theory*, Chapter 4 proves the converse.
 
 ## Summary
 

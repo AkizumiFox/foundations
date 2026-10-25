@@ -1,4 +1,4 @@
-"""Section 5.1, A1 (c): I = {1, 2}, A_1 = {0}, A_2 = {5, 6}. P (graphs G in I x U with (C1), (C2))
+"""Section 6.1, A1 (c): I = {1, 2}, A_1 = {0}, A_2 = {5, 6}. P (graphs G in I x U with (C1), (C2))
 has six elements; the maximal ones are {(1,0),(2,5)} and {(1,0),(2,6)}; no greatest element."""
 from itertools import combinations
 

@@ -216,7 +216,7 @@ Powers in \( \nC \) are defined exactly as powers in an ordered field were, and 
 \[
 z^0 \coloneqq 1 , \qquad z^{n+1} \coloneqq z^n z \quad \text{for every } n \in \nN .
 \]
-This is the recursion of *Sets, Relations, and Cardinality*, Section 2.3 (@fd2:def-power), stated there for real numbers, and the same recursion as @fd3:def-naturals-in-ordered-field (b). In particular \( z^1 = 1 \cdot z = z \) and \( z^2 = z^1 z = zz \), matching the \( z^2 \) of @fd3:prp-ring-algebra (d).
+This is the recursion of *Sets and Functions*, Section 2.3 (@fd2:def-power), stated there for real numbers, and the same recursion as @fd3:def-naturals-in-ordered-field (b). In particular \( z^1 = 1 \cdot z = z \) and \( z^2 = z^1 z = zz \), matching the \( z^2 \) of @fd3:prp-ring-algebra (d).
 
 ::: {#prp-power-laws-commutative-ring}
 [Laws of Powers in a Commutative Ring]
@@ -255,7 +255,7 @@ where the third equality regroups and reorders the four factors by (F5) and (F6)
 (d) Let \( R \) be a field and \( z \ne 0 \). For \( n = 0 \): \( z^0 = 1 \ne 0 \), by the definition of a field. If \( z^n \ne 0 \), then \( z^{n+1} = z^n z \) is a product of two non-zero elements, so it is non-zero, since a field has no zero divisors (@fd3:lem-field-fraction-rules (d)).
 :::
 
-Parts (a)–(c) are the laws of *Sets, Relations, and Cardinality*, Section 2.3 (@fd2:prp-power-laws (a)–(c)), proved there for real numbers; on \( \nN = \omega \), which is not a ring, law (a) is @fd3:prp-omega-powers-parity (a), proved by the same induction. The proofs above are the same inductions, and they use only the ring axioms.
+Parts (a)–(c) are the laws of *Sets and Functions*, Section 2.3 (@fd2:prp-power-laws (a)–(c)), proved there for real numbers; on \( \nN = \omega \), which is not a ring, law (a) is @fd3:prp-omega-powers-parity (a), proved by the same induction. The proofs above are the same inductions, and they use only the ring axioms.
 
 For a real number \( a \), the power \( a^n \) is the same whether computed in \( \nR \) or in \( \nC \). Indeed \( \iota(a^0) = \iota(1) = 1 \), and if \( \iota(a^n) = \iota(a)^n \), then \( \iota(a^{n+1}) = \iota(a^n a) = \iota(a^n)\,\iota(a) = \iota(a)^{n+1} \), by @prp-reals-embed-complex; induction (@fd1:ax-induction) does the rest. So the identification of \( \nR \) with a subset of \( \nC \) is safe for powers too.
 

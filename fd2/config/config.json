@@ -13,7 +13,7 @@
     "deploy-domain",
     "deploy-push-url"
   ],
-  "title": "Sets, Relations, and Cardinality",
+  "title": "Sets and Functions",
   "author": "Akizumi",
   "output": {
     "html": "_build/html",
@@ -101,7 +101,8 @@
     "src/ch02-induction-and-finite-sets",
     "src/ch03-countable-and-uncountable",
     "src/ch04-relations-and-orders",
-    "src/ch05-zorns-lemma"
+    "src/ch05-building-functions",
+    "src/ch06-zorns-lemma"
   ],
   "macros": "../latex/macros.tex",
   "deploy-dir": "site",

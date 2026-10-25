@@ -40,7 +40,7 @@ In words: (F1)–(F4) say that addition is commutative and associative, with a n
 **Why these clauses.** No axiom says that \( ab = 0 \) forces \( a = 0 \) or \( b = 0 \): that is true in \( \nZ \) but fails in other commutative rings (the warning below), so it must be proved where it holds. The condition \( 1 \ne 0 \) is kept out of the ring axioms, so that the zero ring is a ring, and put into the field axioms, so that \( \{0\} \), where (F8) holds vacuously, is not a field.
 
 ::: {.warning}
-A commutative ring may have **zero divisors**: non-zero \( a, b \) with \( ab = 0 \). The integers modulo \( 6 \) of *Sets, Relations, and Cardinality*, Section 4.2 (built there from the school integers, with well-defined operations by @fd2:prp-congruence-arithmetic) form a commutative ring: each of (F1)–(F7) and (F9) passes from the school integers to classes through representatives, a check we do not need and do not carry out here. In this ring \( [2] \ne [0] \) and \( [3] \ne [0] \), yet \( [2][3] = [6] = [0] \). So "\( ab = 0 \), hence \( a = 0 \) or \( b = 0 \)" is not a consequence of (F1)–(F9). In an **ordered** ring it is a theorem, proved later in this section from the order axioms.
+A commutative ring may have **zero divisors**: non-zero \( a, b \) with \( ab = 0 \). The integers modulo \( 6 \) of *Sets and Functions*, Section 4.2 (built there from the school integers, with well-defined operations by @fd2:prp-congruence-arithmetic) form a commutative ring: each of (F1)–(F7) and (F9) passes from the school integers to classes through representatives, a check we do not need and do not carry out here. In this ring \( [2] \ne [0] \) and \( [3] \ne [0] \), yet \( [2][3] = [6] = [0] \). So "\( ab = 0 \), hence \( a = 0 \) or \( b = 0 \)" is not a consequence of (F1)–(F9). In an **ordered** ring it is a theorem, proved later in this section from the order axioms.
 :::
 
 ## The integers form a commutative ring
@@ -180,7 +180,7 @@ Define \( a < b \) to mean \( b - a \in P \). Then \( (R, <) \) is an ordered co
 Conversely, if \( (R, <) \) is an ordered commutative ring, then \( P \coloneqq \{ a \in R : a > 0 \} \) satisfies (P1) and (P2), and for all \( a, b \in R \), \( a < b \) holds if and only if \( b - a \in P \).
 :::
 
-The labels (P1), (P2) are local; they are not the clauses of a partition (*Sets, Relations, and Cardinality*, Section 4.2) or Peano's axioms (Chapter 1).
+The labels (P1), (P2) are local; they are not the clauses of a partition (*Sets and Functions*, Section 4.2) or Peano's axioms (Chapter 1).
 
 ::: {.idea}
 Each order axiom is a statement about one difference. (O1) is (P2) applied to \( b - a \), since \( -(b - a) = a - b \). (O2) is closure under sums, since \( (c - b) + (b - a) = c - a \). (O3) holds since \( (b + c) - (a + c) = b - a \). (O4) is closure under products. The algebra is uniqueness of negatives.
@@ -411,7 +411,7 @@ The three laws with three variables can be checked over the eight triples \( (a,
 *No order.* If \( < \) made \( R \) an ordered commutative ring, then, as \( 1 \ne 0 \), @prp-ordered-ring-rules (h) would give \( 2 \cdot 1 > 0 \). But \( 2 \cdot 1 = 1 \cdot 1 + 1 = (0 + 1) + 1 = 0 \) by the definition of multiples, and \( 0 > 0 \) is forbidden by (O1).
 :::
 
-The argument uses only \( 1 \ne 0 \) and \( n \cdot 1 = 0 \) for some \( n \ge 1 \). So **no commutative ring with \( 1 \ne 0 \) in which \( n \cdot 1 = 0 \) for some \( n \in \nN \), \( n \ge 1 \), can be ordered**. The integers modulo \( n \ge 2 \) of *Sets, Relations, and Cardinality*, Section 4.2 are such rings (their ring laws taken for granted, as in the warning after @def-commutative-ring-and-field), since \( n \cdot [1] = [n] = [0] \); a later chapter of this volume rebuilds them on the constructed \( \nZ \).
+The argument uses only \( 1 \ne 0 \) and \( n \cdot 1 = 0 \) for some \( n \ge 1 \). So **no commutative ring with \( 1 \ne 0 \) in which \( n \cdot 1 = 0 \) for some \( n \in \nN \), \( n \ge 1 \), can be ordered**. The integers modulo \( n \ge 2 \) of *Sets and Functions*, Section 4.2 are such rings (their ring laws taken for granted, as in the warning after @def-commutative-ring-and-field), since \( n \cdot [1] = [n] = [0] \); a later chapter of this volume rebuilds them on the constructed \( \nZ \).
 
 ## Exercises
 

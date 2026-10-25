@@ -1,10 +1,10 @@
 # The Recursion Theorem; Addition and Multiplication
 
-The set \( \omega \) now has a zero, a successor map and an induction theorem, and @thm-omega-peano shows that together they satisfy Peano's axioms. It has no addition yet. In *Sets, Relations, and Cardinality*, Chapter 2 the sum \( m + n \) of two natural numbers came for free, from the real numbers; in \( \omega \) a natural number is a set, and nothing we know about sets adds two of them. This section defines addition and multiplication by recursion, as school does ("\( m + (n + 1) \) is one more than \( m + n \)"), after first proving, from the axioms, that recursion defines something. Then it proves the laws of arithmetic one by one, most of them by an induction.
+The set \( \omega \) now has a zero, a successor map and an induction theorem, and @thm-omega-peano shows that together they satisfy Peano's axioms. It has no addition yet. In *Sets and Functions*, Chapter 2 the sum \( m + n \) of two natural numbers came for free, from the real numbers; in \( \omega \) a natural number is a set, and nothing we know about sets adds two of them. This section defines addition and multiplication by recursion, as school does ("\( m + (n + 1) \) is one more than \( m + n \)"), after first proving, from the axioms, that recursion defines something. Then it proves the laws of arithmetic one by one, most of them by an induction.
 
 ## Recursion on ω
 
-*Sets, Relations, and Cardinality*, Section 2.3 proved @fd2:thm-recursion: a starting value and a rule for the next value determine exactly one function on \( \nN \). That proof ran inside the familiar real numbers, where \( \nN \) is given. Its ingredients, though, were few: induction, and some facts about the sets \( \{0, \dots, n\} \) on which the partial solutions live. On \( \omega \) there is a natural replacement for \( \{0, \dots, n\} \), namely the set \( \mathrm{S}(n) = n \cup \{n\} \) itself. (The next section proves that \( \mathrm{S}(n) \) is exactly the set of \( k \in \omega \) with \( k \le n \); here we need no order, only \( \mathrm{S}(n) \) as a set.) So the proof can be repeated on \( \omega \), with one change, which we point out when we reach it.
+*Sets and Functions*, Section 2.3 proved @fd2:thm-recursion: a starting value and a rule for the next value determine exactly one function on \( \nN \). That proof ran inside the familiar real numbers, where \( \nN \) is given. Its ingredients, though, were few: induction, and some facts about the sets \( \{0, \dots, n\} \) on which the partial solutions live. On \( \omega \) there is a natural replacement for \( \{0, \dots, n\} \), namely the set \( \mathrm{S}(n) = n \cup \{n\} \) itself. (The next section proves that \( \mathrm{S}(n) \) is exactly the set of \( k \in \omega \) with \( k \le n \); here we need no order, only \( \mathrm{S}(n) \) as a set.) So the proof can be repeated on \( \omega \), with one change, which we point out when we reach it.
 
 *A starting value and a rule for the next value determine exactly one function on \( \omega \).*
 
@@ -20,7 +20,7 @@ f(0) = a \quad \text{and} \quad f\bigl(\mathrm{S}(n)\bigr) = g\bigl(n, f(n)\bigr
 This is the statement of @fd2:thm-recursion word for word, with \( \omega \) in place of \( \nN \) and \( \mathrm{S}(n) \) in place of \( n + 1 \). The set \( \omega \times X \) exists by @prp-cartesian-product-exists. As before, \( a \) is the starting value and \( g \) turns the stage \( n \) and the current value into the next value; the conclusion has an existence half and a uniqueness half.
 
 ::: {.idea}
-Uniqueness is an induction. For existence, induction cannot build \( f \), so we prove by induction that the finite pieces of \( f \) exist and are unique, and then glue them. The roadmap is that of *Sets, Relations, and Cardinality*, Section 2.3:
+Uniqueness is an induction. For existence, induction cannot build \( f \), so we prove by induction that the finite pieces of \( f \) exist and are unique, and then glue them. The roadmap is that of *Sets and Functions*, Section 2.3:
 
 ① **Uniqueness**, by @thm-omega-induction.
 
@@ -30,7 +30,7 @@ Uniqueness is an induction. For existence, induction cannot build \( f \), so we
 
 ④ **Glue:** the union of all their graphs is the graph of \( f \).
 
-The glue step of *Sets, Relations, and Cardinality*, Section 2.3 compared two indices: if \( m \le n \), the piece up to \( m \) lies inside the piece up to \( n \). We have no order on \( \omega \) yet, so at each point \( k \) where both pieces are defined we cut both down to \( \mathrm{S}(k) \): by ② and ③, each restriction is the unique partial solution up to \( k \).
+The glue step of *Sets and Functions*, Section 2.3 compared two indices: if \( m \le n \), the piece up to \( m \) lies inside the piece up to \( n \). We have no order on \( \omega \) yet, so at each point \( k \) where both pieces are defined we cut both down to \( \mathrm{S}(k) \): by ② and ③, each restriction is the unique partial solution up to \( k \).
 
 *Before reading on: where is \( \mathrm{S}(n) \notin \mathrm{S}(n) \) used?*
 :::
@@ -59,7 +59,7 @@ If \( h \) is a partial solution up to \( m \) and \( j \in \mathrm{S}(m) \), th
 :::
 
 ::: {.proofofclaim}
-Here \( j \in \omega \) by (v), and \( \mathrm{S}(j) \subseteq \mathrm{S}(m) \) by (iii), so the restriction (*Sets, Relations, and Cardinality*, Section 1.5) is a function \( \mathrm{S}(j) \to X \) with the same values as \( h \). Its value at \( 0 \) is \( h(0) = a \), since \( 0 \in \mathrm{S}(j) \) by (i). Let \( i \in \omega \) with \( \mathrm{S}(i) \in \mathrm{S}(j) \). Then \( \mathrm{S}(i) \in \mathrm{S}(m) \), because \( \mathrm{S}(j) \subseteq \mathrm{S}(m) \), and \( i \in \mathrm{S}(j) \) by (ii). So the equation at \( \mathrm{S}(i) \) is one of the equations of \( h \), and both of its sides are values at points of \( \mathrm{S}(j) \):
+Here \( j \in \omega \) by (v), and \( \mathrm{S}(j) \subseteq \mathrm{S}(m) \) by (iii), so the restriction (*Sets and Functions*, Section 1.5) is a function \( \mathrm{S}(j) \to X \) with the same values as \( h \). Its value at \( 0 \) is \( h(0) = a \), since \( 0 \in \mathrm{S}(j) \) by (i). Let \( i \in \omega \) with \( \mathrm{S}(i) \in \mathrm{S}(j) \). Then \( \mathrm{S}(i) \in \mathrm{S}(m) \), because \( \mathrm{S}(j) \subseteq \mathrm{S}(m) \), and \( i \in \mathrm{S}(j) \) by (ii). So the equation at \( \mathrm{S}(i) \) is one of the equations of \( h \), and both of its sides are values at points of \( \mathrm{S}(j) \):
 \[
 h|_{\mathrm{S}(j)}\bigl(\mathrm{S}(i)\bigr) = g\bigl(i, h(i)\bigr) = g\bigl(i, h|_{\mathrm{S}(j)}(i)\bigr) .
 \]
@@ -124,9 +124,9 @@ f\bigl(\mathrm{S}(n)\bigr) = f_{\mathrm{S}(n)}\bigl(\mathrm{S}(n)\bigr) = g\bigl
 This proves existence, and with Step 1, the theorem.
 :::
 
-The proof is that of *Sets, Relations, and Cardinality*, Section 2.3 with \( \{0, \dots, n\} \) replaced by \( \mathrm{S}(n) \), and with one departure, in (Fn2) of Step 4. There, *Sets, Relations, and Cardinality*, Section 2.3 used that two indices \( m, n \) satisfy \( m \le n \) or \( n < m \), and that \( \{0, \dots, m\} \subseteq \{0, \dots, n\} \) when \( m \le n \). On \( \omega \) those are facts about order, which the next section proves. Cutting both pieces down to \( \mathrm{S}(k) \) avoids the comparison altogether, so the recursion theorem does not have to wait for the order. In Step 3, (P4) did a quiet job: the new input \( \mathrm{S}(n) \) is the successor of \( n \) and of nothing else, so the added pair had to satisfy exactly one equation.
+The proof is that of *Sets and Functions*, Section 2.3 with \( \{0, \dots, n\} \) replaced by \( \mathrm{S}(n) \), and with one departure, in (Fn2) of Step 4. There, *Sets and Functions*, Section 2.3 used that two indices \( m, n \) satisfy \( m \le n \) or \( n < m \), and that \( \{0, \dots, m\} \subseteq \{0, \dots, n\} \) when \( m \le n \). On \( \omega \) those are facts about order, which the next section proves. Cutting both pieces down to \( \mathrm{S}(k) \) avoids the comparison altogether, so the recursion theorem does not have to wait for the order. In Step 3, (P4) did a quiet job: the new input \( \mathrm{S}(n) \) is the successor of \( n \) and of nothing else, so the added pair had to satisfy exactly one equation.
 
-As in *Sets, Relations, and Cardinality*, Section 2.3, no choice is made: each partial solution is the only one, and \( \sS \) is cut out of a power set by a condition, so no family \( n \mapsto f_n \) had to be formed first. From now on a definition "\( f(0) \coloneqq a \), \( f(\mathrm{S}(n)) \coloneqq g(n, f(n)) \)" on \( \omega \) is legitimate whenever \( a \in X \) and \( g \colon \omega \times X \to X \) is a function, and \( f \) is **defined by recursion**.
+As in *Sets and Functions*, Section 2.3, no choice is made: each partial solution is the only one, and \( \sS \) is cut out of a power set by a condition, so no family \( n \mapsto f_n \) had to be formed first. From now on a definition "\( f(0) \coloneqq a \), \( f(\mathrm{S}(n)) \coloneqq g(n, f(n)) \)" on \( \omega \) is legitimate whenever \( a \in X \) and \( g \colon \omega \times X \to X \) is a function, and \( f \) is **defined by recursion**.
 
 ::: {.remark}
 The functions \( g \) that we feed to the theorem are usually given by a formula, such as \( g(n, x) = \mathrm{S}(x) \). Such a \( g \) is a function as soon as each pair \( (n, x) \) gets exactly one value in \( X \): its graph, the set of pairs \( ((n, x), y) \in (\omega \times X) \times X \) such that \( y \) is the value the formula assigns to \( (n, x) \), is a set by (Z6) of @ax-zf-fragment inside a product (@prp-cartesian-product-exists), and (Fn1), (Fn2) say exactly that the formula gives one value in \( X \) for each pair.
@@ -210,7 +210,7 @@ and \( 0 + 2 = \mathrm{S}(0 + 1) = \mathrm{S}(\mathrm{S}(0 + 0)) = \mathrm{S}(\m
 
 ## The laws of arithmetic
 
-Every law of arithmetic that *Sets, Relations, and Cardinality*, Chapter 2 took from the real numbers must now be proved, and the only tools are the four defining equations and induction. The equations are lopsided: they say what happens when the **second** argument goes up by one, and nothing about the first. So in every induction below we fix all variables but one and induct on the variable that the recursion runs on, the second argument of \( + \) or \( \cdot \).
+Every law of arithmetic that *Sets and Functions*, Chapter 2 took from the real numbers must now be proved, and the only tools are the four defining equations and induction. The equations are lopsided: they say what happens when the **second** argument goes up by one, and nothing about the first. So in every induction below we fix all variables but one and induct on the variable that the recursion runs on, the second argument of \( + \) or \( \cdot \).
 
 ::: {#thm-omega-arithmetic-laws}
 [Laws of Arithmetic on \( \omega \)]

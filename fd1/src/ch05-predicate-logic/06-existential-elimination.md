@@ -964,7 +964,7 @@ $\begin{nd}
 Lines 4–9 are lines 2–7 of the derivation of @lem-not-iff-own-negation at the statement \( R(y_0, y_0) \), with line 3 in place of its assumption. At line 10, \( y_0 \) is not in \( \bot \), not in the existential of line 1 (its \( y \) is bound), and there is no premise; the only open assumption, line 1, does not contain \( y_0 \). This proves the theorem.
 :::
 
-Read \( R(x, y) \) as "\( y \) shaves \( x \)": nobody shaves exactly those who do not shave themselves. The old puzzle of the barber who does is answered by this theorem: there is no such barber. Read the domain as consisting of sets and \( R(x, y) \) as \( x \in y \): no set has as its elements exactly the sets that are not elements of themselves. For sets this is Russell's theorem, which *Sets, Relations, and Cardinality*, Section 1.2 proves as a theorem about sets. Neither reading was used in the proof, which holds for every \( R \); the "paradox" is eleven lines of logic, and its conclusion is that something does not exist.
+Read \( R(x, y) \) as "\( y \) shaves \( x \)": nobody shaves exactly those who do not shave themselves. The old puzzle of the barber who does is answered by this theorem: there is no such barber. Read the domain as consisting of sets and \( R(x, y) \) as \( x \in y \): no set has as its elements exactly the sets that are not elements of themselves. For sets this is Russell's theorem, which *Sets and Functions*, Section 1.2 proves as a theorem about sets. Neither reading was used in the proof, which holds for every \( R \); the "paradox" is eleven lines of logic, and its conclusion is that something does not exist.
 
 ::: {.check}
 In the proof of @thm-barber, lines 3–9 are all about \( y_0 \). Why may line 10 close the \( \rulename{\exists E} \) box?
@@ -1093,7 +1093,7 @@ In the Givens/Goal table, \( \rulename{\exists E} \) puts a witness among the Gi
 ::: {.remark}
 [Looking ahead]
 
-A derivation with \( n \) existential premises opens \( n \) boxes and names \( n \) witnesses, one choice per box. *Sets, Relations, and Cardinality*, Chapter 3 asks when infinitely many witnesses may be chosen at once, and answers with the axiom of choice.
+A derivation with \( n \) existential premises opens \( n \) boxes and names \( n \) witnesses, one choice per box. *Sets and Functions*, Chapter 3 asks when infinitely many witnesses may be chosen at once, and answers with the axiom of choice.
 :::
 
 ## Exercises

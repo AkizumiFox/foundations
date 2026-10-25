@@ -420,3 +420,7 @@ matchings
 poset
 unexchanged
 unflipped
+
+# fd2 layout addendum (Sets and Functions), 2026-10-25
+Fibres
+fibres

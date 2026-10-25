@@ -56,7 +56,7 @@ Examples:
 - \( \gcd(-5, 5) = 5 \): the common divisors of \( -5 \) and \( 5 \) are the divisors of \( 5 \) (@prp-divisibility-rules-integers (d) and @prp-ring-algebra (a)), and the greatest is \( 5 \), by @prp-divisibility-rules-integers (e).
 - \( \gcd(1, b) = 1 \) for every \( b \in \nZ \): a common divisor \( d \) divides \( 1 \), so \( d = \pm 1 \) (@prp-divisibility-rules-integers (g)), and the greater is \( 1 \).
 
-*Why the convention for \( (0, 0) \).* Every integer divides \( 0 \), so \( 0 \) and \( 0 \) have no greatest common divisor for \( \le \), and some value has to be chosen. The value \( 0 \) is the one that keeps clauses (c) and (e) of the theorem below true for \( (0, 0) \), as the remark after it shows. It also matches @fd2:exm-divisibility-lcm of *Sets, Relations, and Cardinality*, Section 4.3, where \( 0 \) is the top of \( (\nN, \mid) \), divisible by everything.
+*Why the convention for \( (0, 0) \).* Every integer divides \( 0 \), so \( 0 \) and \( 0 \) have no greatest common divisor for \( \le \), and some value has to be chosen. The value \( 0 \) is the one that keeps clauses (c) and (e) of the theorem below true for \( (0, 0) \), as the remark after it shows. It also matches @fd2:exm-divisibility-lcm of *Sets and Functions*, Section 4.3, where \( 0 \) is the top of \( (\nN, \mid) \), divisible by everything.
 
 Listing divisors one by one, as in the first example, is slow. The Euclidean algorithm below replaces the list by one division per step, and Bézout's theorem is what makes it work.
 

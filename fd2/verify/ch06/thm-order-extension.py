@@ -1,4 +1,4 @@
-"""5.2 worked schedule before lem-one-step-order-extension: tasks S, F, D, P, B with
+"""6.2 worked schedule before lem-one-step-order-extension: tasks S, F, D, P, B with
 S->D, F->D, D->B, F->P. The generated order (reflexive-transitive closure) has 11
 pairs, is a partial order; both schedules S,F,D,P,B and F,P,S,D,B contain it and
 arise from 'pick a task with no unfinished prerequisite'."""

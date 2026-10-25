@@ -60,7 +60,7 @@ From Chapters 1 and 2: the rules for every connective, derivations with their bo
 
 **Time.** About 35 hours on the core track (all of A, one B and one C per section, the exit checks); about 65 hours for everything.
 
-**Minimum before *Sets, Relations, and Cardinality*.** Chapters 1–6 and 8, core; Sections 7.1–7.2 before its Section 2.5.
+**Minimum before *Sets and Functions*.** Chapters 1–6 and 8, core; Sections 7.1–7.2 before its Section 2.5.
 
 ## Roadmap
 
@@ -86,7 +86,7 @@ From Chapters 1 and 2: the rules for every connective, derivations with their bo
 
 ## Summary
 
-A written proof is a derivation in sentences: every rule has its phrases, and "let", "suppose", "choose" and "in either case" are the boxes, spoken (Sections 8.1–8.2). The chapter named four levels of one proof (@def-levels-of-proof) and fixed by one principle which steps plain prose may leave unsaid (@def-silent-steps); a doubtful sentence is checked by expanding it to a skeleton. It gave a habit for reading (self-explanation), a procedure for writing, and, for checking, two questions and a catalogue of fourteen errors (@exm-not-allowed-catalogue). It ended with the one rule mathematicians have disputed. Without \( \rulename{RAA} \), excluded middle has no derivation (the optional @thm-raa-independent) and yet cannot be refuted (@prp-not-not-excluded-middle). An irrational power of an irrational number can be shown rational with or without a named witness (@thm-irrational-power-rational, @prp-log2-9-irrational). The optional Section 8.8 proves, with stages of knowledge, which classical laws need the rule. What is open is what the logic is for. *Sets, Relations, and Cardinality* writes its proofs at levels 2 and 3 with these tools, and its first question is what a set is.
+A written proof is a derivation in sentences: every rule has its phrases, and "let", "suppose", "choose" and "in either case" are the boxes, spoken (Sections 8.1–8.2). The chapter named four levels of one proof (@def-levels-of-proof) and fixed by one principle which steps plain prose may leave unsaid (@def-silent-steps); a doubtful sentence is checked by expanding it to a skeleton. It gave a habit for reading (self-explanation), a procedure for writing, and, for checking, two questions and a catalogue of fourteen errors (@exm-not-allowed-catalogue). It ended with the one rule mathematicians have disputed. Without \( \rulename{RAA} \), excluded middle has no derivation (the optional @thm-raa-independent) and yet cannot be refuted (@prp-not-not-excluded-middle). An irrational power of an irrational number can be shown rational with or without a named witness (@thm-irrational-power-rational, @prp-log2-9-irrational). The optional Section 8.8 proves, with stages of knowledge, which classical laws need the rule. What is open is what the logic is for. *Sets and Functions* writes its proofs at levels 2 and 3 with these tools, and its first question is what a set is.
 
 ## Terms
 

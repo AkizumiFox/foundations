@@ -600,7 +600,7 @@ Fatal errors (0 for the step): only two arrows proved; one name for both witness
 ::: {#exr-connective-rhetoric-c1}
 [C1: Euclid without the contradiction]
 
-Here is a common proof that there are infinitely many primes. It uses two facts about integers that we take as known here: every integer \( m \ge 2 \) has a prime divisor (*Sets, Relations, and Cardinality*, Chapter 2 proves it); and if an integer \( d \) divides two integers, it divides their difference (if \( u = dk \) and \( v = dl \), then \( u - v = d(k - l) \)).
+Here is a common proof that there are infinitely many primes. It uses two facts about integers that we take as known here: every integer \( m \ge 2 \) has a prime divisor (*Sets and Functions*, Chapter 2 proves it); and if an integer \( d \) divides two integers, it divides their difference (if \( u = dk \) and \( v = dl \), then \( u - v = d(k - l) \)).
 
 > Suppose, for a contradiction, that there are only finitely many primes, say \( p_1, \dots, p_k \). Let \( N \coloneqq p_1 p_2 \cdots p_k + 1 \). Then \( N \ge 2 \), so \( N \) has a prime divisor \( p \). Since \( p_1, \dots, p_k \) are all the primes, \( p = p_i \) for some \( i \). Then \( p_i \) divides both \( N \) and \( p_1 p_2 \cdots p_k \), so it divides their difference \( 1 \), which is impossible for a prime. This is a contradiction. Hence there are infinitely many primes.
 

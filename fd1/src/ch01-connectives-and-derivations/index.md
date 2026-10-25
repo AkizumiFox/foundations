@@ -26,7 +26,7 @@ This chapter builds the calculus that answers it: a proof is a chain in which ev
 
 **Time.** About 40 hours on the core track (all of A, one B and one C per section, the exit checks); about 65 hours for everything.
 
-**Minimum before *Sets, Relations, and Cardinality*.** Chapters 1–6 and 8, core; Sections 7.1–7.2 before its Section 2.5.
+**Minimum before *Sets and Functions*.** Chapters 1–6 and 8, core; Sections 7.1–7.2 before its Section 2.5.
 
 ## Roadmap
 

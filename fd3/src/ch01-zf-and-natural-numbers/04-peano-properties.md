@@ -1,6 +1,6 @@
 # The Natural Numbers Satisfy Peano's Axioms
 
-The previous section built \( \omega \) and proved induction on it (@thm-omega-induction). *Sets, Relations, and Cardinality*, Chapter 2 used two further facts about the natural numbers without a second thought: \( 0 \) is not of the form \( n + 1 \), and \( m + 1 = n + 1 \) forces \( m = n \). For the sets of this chapter neither is automatic, and the obvious argument for the second fails, as we shall see. This section proves both for natural numbers, using one property of their membership structure; it then names the list of properties we have reached, Peano's axioms, and shows that each of its last three items, (P3), (P4) and (P5), does a job that the other two cannot do.
+The previous section built \( \omega \) and proved induction on it (@thm-omega-induction). *Sets and Functions*, Chapter 2 used two further facts about the natural numbers without a second thought: \( 0 \) is not of the form \( n + 1 \), and \( m + 1 = n + 1 \) forces \( m = n \). For the sets of this chapter neither is automatic, and the obvious argument for the second fails, as we shall see. This section proves both for natural numbers, using one property of their membership structure; it then names the list of properties we have reached, Peano's axioms, and shows that each of its last three items, (P3), (P4) and (P5), does a job that the other two cannot do.
 
 ## Transitive sets
 
@@ -71,7 +71,7 @@ Both cases contradict \( n \notin n \). So \( \mathrm{S}(n) \notin \mathrm{S}(n)
 *(e)* Let \( P(n) \) be "\( n = 0 \) or \( 0 \in n \)". \( P(0) \) holds by the first alternative. Let \( n \in \omega \) with \( P(n) \). If \( n = 0 \), then \( \mathrm{S}(n) = \{0\} \), which has \( 0 \) as an element. If \( 0 \in n \), then \( 0 \in n \subseteq \mathrm{S}(n) \). Either way \( 0 \in \mathrm{S}(n) \), so \( P(\mathrm{S}(n)) \) holds. So \( P(n) \) holds for every \( n \in \omega \), and for \( n \ne 0 \) the second alternative is the claim. This proves the lemma.
 :::
 
-The step of (d) never used \( P(n) \). As with the predecessor in *Sets, Relations, and Cardinality*, Chapter 2 (@fd2:exm-predecessor-no-hypothesis), the step's conclusion was reached outright, and induction is still what guarantees that \( 0 \) and the successors are all there is. Part (b) says that the natural numbers are built only from natural numbers: unwrapping a natural number never leads outside \( \omega \). Part (c) is the fact the bad case needed.
+The step of (d) never used \( P(n) \). As with the predecessor in *Sets and Functions*, Chapter 2 (@fd2:exm-predecessor-no-hypothesis), the step's conclusion was reached outright, and induction is still what guarantees that \( 0 \) and the successors are all there is. Part (b) says that the natural numbers are built only from natural numbers: unwrapping a natural number never leads outside \( \omega \). Part (c) is the fact the bad case needed.
 
 ## Peano's axioms for the natural numbers
 
@@ -121,7 +121,7 @@ If \( \omega \in \omega \), then \( \omega \) would be a natural number \( n \) 
 
 ## Peano systems
 
-*Sets, Relations, and Cardinality*, Chapter 2 worked with a set \( \nN \) of real numbers, and this chapter with a set \( \omega \) of sets. Both come with a starting element and a step. The last section of the chapter asks whether they are "the same", and to ask it we need to say what any such structure must satisfy. The answer is the list just proved, with \( \omega \), \( 0 \) and \( \mathrm{S} \) replaced by letters.
+*Sets and Functions*, Chapter 2 worked with a set \( \nN \) of real numbers, and this chapter with a set \( \omega \) of sets. Both come with a starting element and a step. The last section of the chapter asks whether they are "the same", and to ask it we need to say what any such structure must satisfy. The answer is the list just proved, with \( \omega \), \( 0 \) and \( \mathrm{S} \) replaced by letters.
 
 *A Peano system is a set with a start and a step, where the step is one-to-one, never returns to the start, and reaches everything.*
 
@@ -226,7 +226,7 @@ So (P3) and (P4) alone cannot prevent extra elements: in (iii) the whole bottom 
 
 ## Pairs are not natural numbers
 
-*Sets, Relations, and Cardinality*, Chapter 1 adopted a working convention, stated after @fd2:def-ordered-pair: a pair is not a number. In that chapter numbers were given and pairs were postulated, and the convention said they were different kinds of object. Now both are sets: a pair is the set \( \{\{a\}, \{a, b\}\} \) of @def-kuratowski-pair, and a natural number is an element of \( \omega \). For natural numbers the convention becomes a theorem.
+*Sets and Functions*, Chapter 1 adopted a working convention, stated after @fd2:def-ordered-pair: a pair is not a number. In that chapter numbers were given and pairs were postulated, and the convention said they were different kinds of object. Now both are sets: a pair is the set \( \{\{a\}, \{a, b\}\} \) of @def-kuratowski-pair, and a natural number is an element of \( \omega \). For natural numbers the convention becomes a theorem.
 
 ::: {#prp-pair-not-natural}
 [No Pair Is a Natural Number]
@@ -242,7 +242,7 @@ Every natural number other than \( 0 \) has \( \emptyset \) as an element, by @l
 Let \( a, b \) be sets, and suppose \( (a, b) = \{\{a\}, \{a, b\}\} \in \omega \) (@def-kuratowski-pair). The pair has the element \( \{a\} \), so \( (a, b) \ne \emptyset = 0 \). By @lem-omega-transitive (e), \( 0 = \emptyset \in (a, b) \), so \( \emptyset = \{a\} \) or \( \emptyset = \{a, b\} \). Both are impossible, since \( a \in \{a\} \) and \( a \in \{a, b\} \), while \( \emptyset \) has no elements. This contradiction shows \( (a, b) \notin \omega \).
 :::
 
-So, for instance, the tagged numbers \( (n, 0) \) in the second example of a Peano system above are never natural numbers, and *Sets, Relations, and Cardinality*, Chapter 1's answer that \( ((1, 2), 3) \ne (1, (2, 3)) \) because "a pair is not a number" is borne out by @prp-pair-not-natural once the numbers \( 1 \), \( 2 \), \( 3 \) are read as elements of \( \omega \), as the later chapters of this volume read \( \nN \) (Section 1.7). The same statement for \( n \)-tuples with \( n \ge 3 \) needs a definition of \( n \)-tuples, which comes later in this chapter, together with the order on \( \omega \).
+So, for instance, the tagged numbers \( (n, 0) \) in the second example of a Peano system above are never natural numbers, and *Sets and Functions*, Chapter 1's answer that \( ((1, 2), 3) \ne (1, (2, 3)) \) because "a pair is not a number" is borne out by @prp-pair-not-natural once the numbers \( 1 \), \( 2 \), \( 3 \) are read as elements of \( \omega \), as the later chapters of this volume read \( \nN \) (Section 1.7). The same statement for \( n \)-tuples with \( n \ge 3 \) needs a definition of \( n \)-tuples, which comes later in this chapter, together with the order on \( \omega \).
 
 ::: {.warning}
 The encoding produces true statements that sound absurd. Since \( \{0\} = 1 \) and \( \{0, 1\} = 2 \),

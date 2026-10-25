@@ -144,7 +144,7 @@
       "labels": "../fd1/_build/crossref_labels.json"
     },
     "fd2": {
-      "title": "Sets, Relations, and Cardinality",
+      "title": "Sets and Functions",
       "short": "F2",
       "url": "https://akizumifox.github.io/math-atlas/fd2/",
       "labels": "../fd2/_build/crossref_labels.json"

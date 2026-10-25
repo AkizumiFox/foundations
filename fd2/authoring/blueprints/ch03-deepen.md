@@ -24,7 +24,7 @@ The layout's figures for 3.4 and 3.5 (4,200, 3,700) are the whole-file counts. B
 **Binding rules.**
 1. **No label is lost or renamed; cited content is kept.** Every label now in 01–05 stays in its file. The 16 downstream-cited labels listed above keep the content of their blocks. Exercise labels keep their names (`exr-<slug>-…`).
 2. **fd1, Chapter 1 and Chapter 2 are cited, never re-taught.** That covers ∃E (@fd1:def-rules-existential), the catalogue `@fd1:exm-not-allowed-catalogue`, the irrationality of √2 (@fd1:thm-sqrt2-irrational), the injectivity and surjectivity templates, pigeonhole and the least element. Each is recalled in a clause and linked.
-3. **No forward citation (@label) into Chapters 4–5.** The repair at 04:52 removes the one `@def-partial-order`. Pointers into later sections of this chapter and into Chapter 5 are prose only and are never reasons (STYLE §12.1, first bullet). The files have more than one per section (3.1 points to 3.2 and 3.3; 3.2 has 02:47, 02:139, 02:201); these in-chapter previews are kept as they stand, renumbered, and no new one is added except the thread hook below. The comparability hook ends 3.4's main line as a `.remark` titled `[Looking ahead]`, STYLE §12.1's form (§4.4 item 5); it is a promise row in STATUS (§6).
+3. **No forward citation (@label) into Chapters 4–6.** The repair at 04:52 removes the one `@def-partial-order`. Pointers into later sections of this chapter and into Chapter 6 are prose only and are never reasons (STYLE §12.1, first bullet). The files have more than one per section (3.1 points to 3.2 and 3.3; 3.2 has 02:47, 02:139, 02:201); these in-chapter previews are kept as they stand, renumbered, and no new one is added except the thread hook below. The comparability hook ends 3.4's main line as a `.remark` titled `[Looking ahead]`, STYLE §12.1's form (§4.4 item 5); it is a promise row in STATUS (§6).
 4. **Quick checks.** Layout §5 asks only for STYLE §5's minimum after Chapter 2. Each method section still gets one new check after its box, and 3.3 gets two because of its new opening.
 5. **Pointers.** All Chapter-3 pointer fixes are done in this chapter's S3, by hand, from the table in §4.6. That table repeats ch02-deepen §4.8's Chapter-3 rows, with a few rows added. If the Chapter 2 coordinator has already applied those rows, the drafter skips them. The S3 drafter checks with `grep -n 'Section 3\.[1-6]' src/ch03-countable-and-uncountable/*.md`.
 
@@ -44,8 +44,8 @@ The layout's figures for 3.4 and 3.5 (4,200, 3,700) are the whole-file counts. B
 - **Threads** (layout §5):
   - *The five strings*: planted in 1.5 (1/05:202) and paid by 3.3's new opening subsection `## Back to the five strings`.
   - *Russell → Cantor*: 1.2 (1/02:441) is paid by 3.3's Cantor subsection, retitled `## Back to Russell: Cantor's theorem`, which opens with a short hook paragraph.
-  - *Comparability*: 3.4 leaves it open in a `[Looking ahead]` remark at the end of its main line (replacing the remark 04:170–172), and Section 5.2 answers it.
-  - *Choice*: 1.6 (1/06:251) → 3.2 `ax-choice` → 3.5 `thm-infinite-countable-subset` → Chapter 5 (Zorn).
+  - *Comparability*: 3.4 leaves it open in a `[Looking ahead]` remark at the end of its main line (replacing the remark 04:170–172), and Section 6.2 answers it.
+  - *Choice*: 1.6 (1/06:251) → 3.2 `ax-choice` → 3.5 `thm-infinite-countable-subset` → Chapter 6 (Zorn).
   
   All four are listed in the index.
 - **Motivation before a major definition.** The chapter has four major notions: `def-countable`, `ax-choice`, `def-decimal-expansion` and `def-card-le`. All four are already motivated: 01:7–11 (the density paradox), 02:5–22 (the naive grid, then the obstacle), 03:111–115 (what 0.999… means) and 04:3–9 (the three intervals). No change.
@@ -94,9 +94,9 @@ The layout's figures for 3.4 and 3.5 (4,200, 3,700) are the whole-file counts. B
 - **Threads** (new, after Named moves), four bullets:
   - *The five strings.* "Section 1.5 plants a game: write a string of five symbols not on a given list of five. Section 3.3 opens with the rule that always works, and the same rule, run on infinitely long strings, proves that the 0–1 sequences cannot be listed."
   - *Russell to Cantor.* "Russell's theorem (Section 1.2) built a set that disagrees with each candidate on the candidate itself; Cantor's theorem (Section 3.3) is the same construction, as a theorem about sizes."
-  - *Choice.* "Section 1.6 could not build a right inverse of an arbitrary surjection; Section 3.2 adds the axiom of choice that does, Section 3.5 uses it again, and Chapter 5 states its strongest everyday form, Zorn's lemma."
-  - *Comparability.* "Section 3.4 asks whether any two sets are comparable and leaves the question open; Section 5.2 answers it."
-- **Summary** (new, ≤ 180 words). Countable means listable (@def-countable). There are three equivalent forms (@thm-countable-characterizations), and countable sets are closed under subsets, images, finite products and, with the axiom of choice, countable unions (@thm-countable-union). So ℤ, ℚ and the algebraic numbers are countable. The diagonal shows that the 0–1 sequences, ℝ and every power set are too big (@thm-binary-sequences-uncountable, @thm-reals-uncountable-decimal, @thm-cantor), and that transcendental numbers exist. Sizes compare by injections, and injections both ways give a bijection without choice (@thm-schroder-bernstein). Every infinite set contains a copy of ℕ (@thm-infinite-countable-subset, by choice) and has a proper subset of its own size. **Open:** whether any two sets are comparable (Chapter 5). **Next:** Chapter 4 studies relations, and "same size" returns there as an example.
+  - *Choice.* "Section 1.6 could not build a right inverse of an arbitrary surjection; Section 3.2 adds the axiom of choice that does, Section 3.5 uses it again, and Chapter 6 states its strongest everyday form, Zorn's lemma."
+  - *Comparability.* "Section 3.4 asks whether any two sets are comparable and leaves the question open; Section 6.2 answers it."
+- **Summary** (new, ≤ 180 words). Countable means listable (@def-countable). There are three equivalent forms (@thm-countable-characterizations), and countable sets are closed under subsets, images, finite products and, with the axiom of choice, countable unions (@thm-countable-union). So ℤ, ℚ and the algebraic numbers are countable. The diagonal shows that the 0–1 sequences, ℝ and every power set are too big (@thm-binary-sequences-uncountable, @thm-reals-uncountable-decimal, @thm-cantor), and that transcendental numbers exist. Sizes compare by injections, and injections both ways give a bijection without choice (@thm-schroder-bernstein). Every infinite set contains a copy of ℕ (@thm-infinite-countable-subset, by choice) and has a proper subset of its own size. **Open:** whether any two sets are comparable (Chapter 6). **Next:** Chapter 4 studies relations, and "same size" returns there as an example.
 - **Terms** (new, alphabetical, one line each):
   - algebraic number (02, prose definition before `thm-algebraic-countable`, linked by section);
   - at most as big as / strictly smaller (@def-card-le);
@@ -156,7 +156,7 @@ Count: +box 130 + check 95 + scratch net +90 + subsection ~420 − 42 ≈ +690 �
 
 Budget: 3,068 → ≤ 5,000 (expected ~3,700). No folds.
 
-1. **Pointers:** the 02 rows of §4.6, including 02:47: "A later chapter states its best-known equivalent, Zorn's lemma" → "Chapter 5 states its best-known equivalent, Zorn's lemma", and "in Section 3.6" → "in Section 3.5". In the same paragraph the two history sentences ("It is independent … Cohen (1963) that it cannot be proved from them.") become one line (STYLE §1): "It can be neither proved nor refuted from the other axioms of set theory (Gödel, Cohen)." The rest of 02:47 is kept.
+1. **Pointers:** the 02 rows of §4.6, including 02:47: "A later chapter states its best-known equivalent, Zorn's lemma" → "Chapter 6 states its best-known equivalent, Zorn's lemma", and "in Section 3.6" → "in Section 3.5". In the same paragraph the two history sentences ("It is independent … Cohen (1963) that it cannot be proved from them.") become one line (STYLE §1): "It can be neither proved nor refuted from the other axioms of set theory (Gödel, Cohen)." The rest of 02:47 is kept.
 2. **`exm-method-name-the-choice`** `[Method: name the choice]`, after the warning 02:69–71 (end of "When choice is not needed"). Lead: "The warning is the whole method; here it is as a checklist."
    - **Template.** At each line that produces an object for each of many indices at once, ask whether one rule names it for every index: a formula, "the least", "the unique", or one list fixed in advance. If so, define the function by specification and say that no choice is used. If not, form the family (S_i) of non-empty sets of candidates and write "**by @ax-choice** there is c with c(i) ∈ S_i" at that line, in bold.
    - **When to use it.** A proof says "for each n, let …", builds a sequence or a family of lists, or inverts a surjection.
@@ -265,7 +265,7 @@ Budget: 2,398 → ≤ 4,200 (expected ~2,680). No folds. Idea-level (layout §1)
 4. **Quick check** after the box.
    - "Show |[0, 1] ∪ {5}| = |[0, 1]| by the method."
    - *Solution:* The inclusion [0, 1] → [0, 1] ∪ {5} is injective. In the other direction, take x ↦ x/2 on [0, 1] and 5 ↦ 1. Since 5 ∉ [0, 1], the two clauses define a function into [0, 1]. It is injective, since x/2 ≤ ½ < 1. By @thm-schroder-bernstein the sets are equinumerous.
-5. **The comparability remark (04:170–172)** is removed from mid-section, and its content moves to a `::: {.remark}` titled `[Looking ahead]` at the end of 3.4's main line, just before `## Exercises` (STYLE §12.1's form; ≤ 90 words), the thread's hook: "The method needs an injection each way. Are any two sets comparable, that is, is |A| ≤ |B| or |B| ≤ |A| for all A and B? Building an injection one element at a time does not settle it: a recursion indexed by ℕ reaches only countably many elements, so it cannot exhaust an uncountable set. Section 5.2 proves that the answer is yes, by Zorn's lemma, a principle equivalent to @ax-choice. Nothing in this chapter needs comparability."
+5. **The comparability remark (04:170–172)** is removed from mid-section, and its content moves to a `::: {.remark}` titled `[Looking ahead]` at the end of 3.4's main line, just before `## Exercises` (STYLE §12.1's form; ≤ 90 words), the thread's hook: "The method needs an injection each way. Are any two sets comparable, that is, is |A| ≤ |B| or |B| ≤ |A| for all A and B? Building an injection one element at a time does not settle it: a recursion indexed by ℕ reaches only countably many elements, so it cannot exhaust an uncountable set. Section 6.2 proves that the answer is yes, by Zorn's lemma, a principle equivalent to @ax-choice. Nothing in this chapter needs comparability."
 6. **`exm-closed-open-interval`, "With the theorem" (04:185).** Before its first sentence, add the table (with the lead "Planned as in @exm-method-injections-both-ways:"):
 
    | Givens | Goal |
@@ -313,13 +313,13 @@ Section map for old-numbered text: 3.1 → 2.5, 3.2 → 3.1, 3.3 → 3.2, 3.4 �
 | 01:271 | "Exercise C2 (a) of Section 3.1" | "@exr-finite-sets-c2 (a)" |
 | 01, `exr-countable-sets-c1` solution, Step 4 (01:443) | "the remark at the end of Section 3.1" | "the remark at the end of Section 2.5" |
 | 02:3, 02:11, 02:114 | Section 3.2 | Section 3.1 |
-| 02:47 | "A later chapter states …"; "in Section 3.6" | "Chapter 5 states …"; "in Section 3.5" |
+| 02:47 | "A later chapter states …"; "in Section 3.6" | "Chapter 6 states …"; "in Section 3.5" |
 | 02:139, 02:201 | Section 3.4 | Section 3.3 |
 | 03:93 | Section 3.5 | Section 3.4 |
 | 03:195 | Section 3.3 | Section 3.2 |
 | 04:3, 04:17 | Section 3.1 | Section 2.5 |
 | 04:52 | repair | §4.4 item 2 |
-| 04:171 | "a later chapter devoted to Zorn's lemma" | replaced (§4.4 item 5, "Section 5.2") |
+| 04:171 | "a later chapter devoted to Zorn's lemma" | replaced (§4.4 item 5, "Section 6.2") |
 | 04:240 | Section 3.2 | Section 3.1 |
 | 04:335 (`exr-comparing-cardinalities-c1` stem) | Section 3.4 | Section 3.3 |
 | 05:3 | Section 3.5 | Section 3.4 |
@@ -350,9 +350,9 @@ Not edited by this chapter's drafters. Listed for the coordinator.
 - **STATUS** (coordinator):
   - Mark the 1.5 promise "Chapter 3 comes back to this game" as paid by F2.3 §03 `exm-five-strings-diagonal`.
   - Mark 1.2's Cantor pointer (1/02:441) as paid by `thm-cantor` and the subsection `## Back to Russell: Cantor's theorem`.
-  - Add a promise row: F2.3 §04 "whether any two sets are comparable" → Section 5.2 (Zorn), to be paid by ch05-deepen.
+  - Add a promise row: F2.3 §04 "whether any two sets are comparable" → Section 6.2 (Zorn), to be paid by ch05-deepen.
   - Retag any F2.3 rows that name the old 3.2–3.6 by the layout §3.2 table.
-- **ch05-deepen / Chapter 5:** 5.2 must open its comparability application as "Back to comparability", answering 04's `[Looking ahead]` remark (§4.4 item 5) and citing `def-card-le`.
+- **ch05-deepen / Chapter 6:** 5.2 must open its comparability application as "Back to comparability", answering 04's `[Looking ahead]` remark (§4.4 item 5) and citing `def-card-le`.
 - **ch02-deepen §4.6 and the Chapter-3 rows of §4.8:** superseded by §4.0 and §4.6 here. If the Chapter 2 coordinator has not applied them yet, it should leave Chapter 3's files to this chapter's S3.
 - **Preface `fd2/src/index.md`:** the Chapter 3 row of ch02-deepen §4.8 ("Countable sets, the axiom of choice, diagonal arguments and Cantor's theorem, the Schröder–Bernstein theorem, infinite sets") stands. No further change.
 - **config.json:** the chapter title, if config lists one, is "Countable and Uncountable Sets" (the volume config at line 102 lists only the directory).
@@ -413,7 +413,7 @@ Two blind referees (R1, R2). Every finding is applied unless marked "answered".
 **R1**
 1. *exm-choice-or-rule (d), forward reason (gap).* Applied: the comparison with 02 B1 (c) is dropped; (d) ends on its formula and the closing sentence stands. No reason rests on 3.3 (S2a 7).
 2. *thm-algebraic-countable Idea clause (error).* Applied: "Steps 2 and 3 are route (S) …: each union is the image of a countable grid. Step 1 only cites closure under products and subsets."
-3. *Rule 3 / comparability paragraph (minor).* Applied: rule 3 restated (no @label into Chapters 4–5; later-section pointers are prose and never reasons; the existing in-chapter previews are kept, renumbered). The comparability hook becomes a `[Looking ahead]` remark at the end of 3.4's main line (§12.1's form).
+3. *Rule 3 / comparability paragraph (minor).* Applied: rule 3 restated (no @label into Chapters 4–6; later-section pointers are prose and never reasons; the existing in-chapter previews are kept, renumbered). The comparability hook becomes a `[Looking ahead]` remark at the end of 3.4's main line (§12.1's form).
 4. *03 B4 (b) repeats 03 B2 (minor).* Applied: (b) is now "no two consecutive 1s", by the interleaving injection and (ii) ⇒ (i).
 5. *04 B4 (c) answered in the text (minor).* Applied: (c) is now "If |A| ≤ |B| and B is countable, then A is countable" (true, composite injection).
 6. *exm-list-integer-combinations title (minor).* Applied: `[Integer combinations of 1 and √2]`; infinitude uses ℕ ⊆ S directly.

@@ -97,7 +97,7 @@ The analysis volume uses route (A). The table matches each of its assumptions wi
 | \( \nR \) contains \( \nQ \) | every ordered field contains exactly one copy of \( \nQ \): @thm-rationals-embed-ordered-field; isomorphisms respect it: @prp-cof-map-fixes-rationals |
 | the least upper bound axiom | the property: @def-complete-ordered-field; a model: @thm-reals-complete-ordered-field |
 | "the" real numbers | any two models are isomorphic, by exactly one isomorphism: @thm-cof-uniqueness, @cor-cof-isomorphic-to-cauchy-reals |
-| logic and set theory | *Logic and Proof*, *Sets, Relations, and Cardinality*, and Chapter 1 of this volume |
+| logic and set theory | *Logic and Proof*, *Sets and Functions*, and Chapter 1 of this volume |
 
 Some results are proved in both volumes, from different starting points. *Analysis on the Real Line*, Chapter 1 proves from its axioms that \( \nN \) is not bounded above, that \( \nQ \) is dense in \( \nR \), and that positive numbers have square roots. Here the same three facts were proved for an arbitrary complete ordered field: @thm-cof-complete-archimedean, @thm-rationals-dense-ordered-field (which needs Archimedes, supplied by the first) and @prp-cof-square-roots. The two volumes start from different places, and neither volume's proofs cite the other's.
 

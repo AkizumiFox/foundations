@@ -262,6 +262,18 @@ class IndexAndFilesTests(unittest.TestCase):
                 self.assertEqual(cs.main([str(Path(tmp) / "src")]), 1)
             self.assertIn("02-b.md", out.getvalue())
 
+    def test_stub_is_advisory(self):
+        self.assertTrue(cs.is_stub("# Planned Section\n\n"))
+        self.assertFalse(cs.is_stub("# Planned Section\n\nOne line of prose.\n"))
+        with tempfile.TemporaryDirectory() as tmp:
+            ch = Path(tmp) / "src" / "ch05-x"
+            ch.mkdir(parents=True)
+            (ch / "index.md").write_text("# Planned Chapter\n")
+            (ch / "01-a.md").write_text("# Planned Section\n")
+            fatal, advisory = cs.find_violations(Path(tmp) / "src")
+            self.assertEqual(fatal, [])
+            self.assertEqual(len(advisory), 2)
+
 
 if __name__ == "__main__":
     unittest.main()

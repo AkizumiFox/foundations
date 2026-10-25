@@ -1,4 +1,4 @@
-"""5.2 Quick check after thm-cardinal-comparability: partial matchings between
+"""6.2 Quick check after thm-cardinal-comparability: partial matchings between
 A = {1, 2, 3} and B = {x, y}; maximal ones are the six two-pair matchings, none
 pairs all of A, each pairs all of B. Also A1 (c): A = {} gives P = {{}}."""
 from itertools import combinations

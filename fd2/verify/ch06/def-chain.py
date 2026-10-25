@@ -1,4 +1,4 @@
-"""Section 5.1, def-chain examples and Quick check: {2^n} is a chain in (N, |), {2, 3} is not;
+"""Section 6.1, def-chain examples and Quick check: {2^n} is a chain in (N, |), {2, 3} is not;
 {{1}, {1, 2}, {3}} is not a chain under inclusion; {0, 1, 5, 25} and {3, 6, 0} are chains in (N, |)."""
 from itertools import combinations
 

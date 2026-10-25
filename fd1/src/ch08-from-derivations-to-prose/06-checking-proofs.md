@@ -234,7 +234,7 @@ In Proofs B and D every sentence sounds right, and in Proof B every sentence is 
 ::: {.remark}
 [Looking ahead]
 
-From *Sets, Relations, and Cardinality*, Chapter 1 on, a warning about one of these errors cites its entry by number, as in "(N3) of the catalogue".
+From *Sets and Functions*, Chapter 1 on, a warning about one of these errors cites its entry by number, as in "(N3) of the catalogue".
 :::
 
 ## Exercises

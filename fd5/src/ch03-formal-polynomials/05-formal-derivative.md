@@ -513,7 +513,7 @@ Show that \( \nZ[x] \) and \( \nF_2[x] \) are countable, and that the set of all
 :::
 
 ::: {.solution}
-The tools are the countability results of *Sets, Relations, and Cardinality*, Chapter 3, read on \( \nN = \omega \) through @fd3:cor-omega-identification.
+The tools are the countability results of *Sets and Functions*, Chapter 3, read on \( \nN = \omega \) through @fd3:cor-omega-identification.
 
 *\( \nZ \) and \( \nF_2 \) are countable.* \( \nN \times \nN \) is countable (@fd2:thm-product-countable). The class map \( \nN \times \nN \to \nZ = (\nN \times \nN)/{\sim} \) is surjective (@fd2:def-quotient-set), so \( \nZ \) is countable by @fd2:prp-countable-image; this is the count of @fd3:exr-gaps-in-the-rationals-r2. The map \( \nN \to \nF_2 \), \( n \mapsto [n] \), is surjective, since every class is \( [0] \) or \( [1] \) (@fd3:thm-integers-mod-n-ring (b)); so \( \nF_2 \) is countable (@fd2:def-countable).
 

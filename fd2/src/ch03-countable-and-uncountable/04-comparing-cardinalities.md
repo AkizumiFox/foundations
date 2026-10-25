@@ -267,7 +267,7 @@ Give an injection \( \nN \to \nN \times \nN \) and an injection \( \nN \times \n
 ::: {.remark}
 [Looking ahead]
 
-The method needs an injection each way. Are any two sets comparable, that is, is \( \card{A} \le \card{B} \) or \( \card{B} \le \card{A} \) for all \( A \) and \( B \)? Building an injection one element at a time does not settle it: a recursion indexed by \( \nN \) reaches only countably many elements, so it cannot exhaust an uncountable set. Section 5.2 proves that the answer is yes, by Zorn's lemma, a principle equivalent to @ax-choice. Nothing in this chapter needs comparability.
+The method needs an injection each way. Are any two sets comparable, that is, is \( \card{A} \le \card{B} \) or \( \card{B} \le \card{A} \) for all \( A \) and \( B \)? Building an injection one element at a time does not settle it: a recursion indexed by \( \nN \) reaches only countably many elements, so it cannot exhaust an uncountable set. Section 6.2 proves that the answer is yes, by Zorn's lemma, a principle equivalent to @ax-choice. Nothing in this chapter needs comparability.
 :::
 
 ## Exercises
@@ -461,7 +461,7 @@ def-card-le (example): {x1} = {x2} gives x1 = x2 | def-set-equality (F2.1 §02),
 prp-card-le-preorder (claim): (after it) 2N is not N, n -> 2n injective | arithmetic (1 is not even: thm-division-algorithm uniqueness)
 thm-schroder-bernstein (proof): case split a in C or a not in C | excluded middle (F1.5 §07, prose pointer; classical logic of F1.2)
 thm-schroder-bernstein (proof): g(f(S)) is a subset of A for S subset of A, so (n, S) -> g(f(S)) is a function N x P(A) -> P(A) | def-image (cited), def-power-set (F2.1 §03), used silently
-thm-schroder-bernstein (claim): ([Looking ahead] remark, end of main line) any two sets are comparable, via Zorn's lemma, Section 5.2 | F2.4 §02 (thm-cardinal-comparability; prose pointer; nothing depends on it); a recursion on N has countable image, prp-countable-image
+thm-schroder-bernstein (claim): ([Looking ahead] remark, end of main line) any two sets are comparable, via Zorn's lemma, Section 6.2 | F2.4 §02 (thm-cardinal-comparability; prose pointer; nothing depends on it); a recursion on N has countable image, prp-countable-image
 exm-closed-open-interval (solution): 1/4 <= x/2 + 1/4 <= 3/4; 1/n distinct for distinct n; 0 < 1/(n+2) <= 1/3 < 1/2 | R arithmetic and order, school fact; verify/ch03/exm-closed-open-interval.py
 exm-closed-open-interval (solution): [0,1] \ H = (0,1) \ H' | inline (0 and 1 = 1/1 lie in H; H \ {0, 1} = H')
 exm-reals-open-interval (solution): algebra of |x|/(1 + |x|) and its inverse; |y/(1-|y|)| = |y|/(1-|y|) | R arithmetic with absolute values, school fact (F2.1 §05 B3 does the same computation, not cited); verify/ch03/exm-reals-open-interval.py

@@ -1,4 +1,4 @@
-"""Section 5.1, Quick check after thm-zorn: P = {{1}, {2}, {1, 3}} under inclusion. The only chain
+"""Section 6.1, Quick check after thm-zorn: P = {{1}, {2}, {1, 3}} under inclusion. The only chain
 with at least two elements is {{1}, {1, 3}}; every non-empty chain has an upper bound in P; the
 maximal elements are {2} and {1, 3}; no greatest element. Also B4 (a): the
 chains of {{1}, {2}} are bounded and there is no greatest element."""

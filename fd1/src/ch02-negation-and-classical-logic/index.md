@@ -8,7 +8,7 @@ Is there a rational number whose square is \( 2 \)? Is \( x^2 + 1 \) ever \( 0 \
 
 **Time.** About 30 hours on the core track (all of A, one B and one C per section, the exit checks); about 50 hours for everything.
 
-**Minimum before *Sets, Relations, and Cardinality*.** Chapters 1–6 and 8, core; Sections 7.1–7.2 before its Section 2.5.
+**Minimum before *Sets and Functions*.** Chapters 1–6 and 8, core; Sections 7.1–7.2 before its Section 2.5.
 
 ## Roadmap
 

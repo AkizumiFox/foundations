@@ -23,7 +23,7 @@ y \in \mathrm{S}(x) \iff y \in x \ \text{ or } \ y = x .
 \]
 The set \( \mathrm{S}(x) \) exists and is unique: \( \{x\} \) is the set \( \{x, x\} \) of Pairing (Z3), and \( x \cup \{x\} = \bigcup \{x, \{x\}\} \) comes from Union (Z4), both by @prp-zf-basic-sets (b), (c). Two facts are visible at once. First, \( x \in \mathrm{S}(x) \) for every \( x \). Second, \( x \subseteq \mathrm{S}(x) \): the successor keeps every old element and adds \( x \) itself, which is a new element whenever \( x \notin x \). The next section proves \( n \notin n \) for every natural number \( n \).
 
-The letter is an upright \( \mathrm{S} \). *Sets, Relations, and Cardinality*, Chapter 1 used an italic \( S \) for a set in @fd2:prp-smallest-closed-set, and we are about to use that proposition with this operation as its step; the two letters never stand for the same thing.
+The letter is an upright \( \mathrm{S} \). *Sets and Functions*, Chapter 1 used an italic \( S \) for a set in @fd2:prp-smallest-closed-set, and we are about to use that proposition with this operation as its step; the two letters never stand for the same thing.
 
 Start from \( \emptyset \) and apply \( \mathrm{S} \) repeatedly.
 
@@ -144,7 +144,7 @@ An inductive set contains the numerals, and perhaps more. To remove anything ext
 
 *The natural numbers are what every inductive set is forced to contain.*
 
-There is one obstacle. Separation (Z6) can only cut a set out of a set already given, so we need an ambient set for the natural numbers; and the smallest-closed-set construction of *Sets, Relations, and Cardinality*, Chapter 1 (@fd2:prp-smallest-closed-set) intersects a set of subsets, but the inductive sets are not handed to us as the elements of any set. So we fix one inductive set \( I \) and look only at the inductive subsets of \( I \), which do form a set, by Power set and Separation; the theorem below shows that the choice of \( I \) does not matter.
+There is one obstacle. Separation (Z6) can only cut a set out of a set already given, so we need an ambient set for the natural numbers; and the smallest-closed-set construction of *Sets and Functions*, Chapter 1 (@fd2:prp-smallest-closed-set) intersects a set of subsets, but the inductive sets are not handed to us as the elements of any set. So we fix one inductive set \( I \) and look only at the inductive subsets of \( I \), which do form a set, by Power set and Separation; the theorem below shows that the choice of \( I \) does not matter.
 
 ::: {#def-omega}
 [The set of natural numbers]
@@ -181,7 +181,7 @@ Here is what "least" means, and why the choice of \( I \) is harmless.
 :::
 
 ::: {.idea}
-Part (a) is *Sets, Relations, and Cardinality*, Chapter 1's smallest closed set, with \( I \) as the ambient set, \( \emptyset \) as the starting element and \( \mathrm{S} \) as the step: the closed subsets of \( I \) are exactly its inductive subsets, and \( \omega \) is their intersection. For (b), an inductive \( J \) need not lie inside \( I \), so we cut it down to \( \omega \cap J \), which does; then the definition of \( \omega \) applies. Part (c) is two inclusions, each an instance of (b).
+Part (a) is *Sets and Functions*, Chapter 1's smallest closed set, with \( I \) as the ambient set, \( \emptyset \) as the starting element and \( \mathrm{S} \) as the step: the closed subsets of \( I \) are exactly its inductive subsets, and \( \omega \) is their intersection. For (b), an inductive \( J \) need not lie inside \( I \), so we cut it down to \( \omega \cap J \), which does; then the definition of \( \omega \) applies. Part (c) is two inclusions, each an instance of (b).
 :::
 
 ::: {.proof}

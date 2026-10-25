@@ -1,6 +1,6 @@
 # Euclid's Lemma and the Fundamental Theorem of Arithmetic
 
-Section 3.2 gave every pair of integers, not both zero, a greatest common divisor, and wrote it as a combination \( ax + by \) (@thm-integers-bezout). This section spends that identity. Take \( 60 \). It splits as \( 2 \cdot 30 \), as \( 6 \cdot 10 \), as \( 4 \cdot 15 \), and every way of splitting it further, until no factor splits again, ends with the same primes \( 2, 2, 3, 5 \). *Sets, Relations, and Cardinality*, Section 2.2 proved, for the school integers, that every integer at least \( 2 \) has a prime factor, and set the uniqueness of the full splitting aside. Here we prove both, for the integers of Chapter 2. The key is a property of primes that the definition ("no positive divisors except \( 1 \) and itself") does not obviously give: a prime that divides a product divides one of the factors.
+Section 3.2 gave every pair of integers, not both zero, a greatest common divisor, and wrote it as a combination \( ax + by \) (@thm-integers-bezout). This section spends that identity. Take \( 60 \). It splits as \( 2 \cdot 30 \), as \( 6 \cdot 10 \), as \( 4 \cdot 15 \), and every way of splitting it further, until no factor splits again, ends with the same primes \( 2, 2, 3, 5 \). *Sets and Functions*, Section 2.2 proved, for the school integers, that every integer at least \( 2 \) has a prime factor, and set the uniqueness of the full splitting aside. Here we prove both, for the integers of Chapter 2. The key is a property of primes that the definition ("no positive divisors except \( 1 \) and itself") does not obviously give: a prime that divides a product divides one of the factors.
 
 As in Section 3.1, numerals are the natural numbers of those names, and their sums and products may be computed in \( \nN \) (@prp-naturals-embed-integers (a)).
 
@@ -124,7 +124,7 @@ The coprimality is needed: \( 4 \mid 12 \) and \( 6 \mid 12 \), but \( 24 \nmid 
 
 ## The least divisor is prime
 
-The existence half of unique factorization needs a supply of primes: every integer \( n \ge 2 \) must have a prime factor. *Sets, Relations, and Cardinality*, Section 2.2 proved this for the school integers by strong induction (@fd2:thm-prime-factor). On the constructed \( \nZ \) the least-element property gives a shorter route: the least divisor bigger than \( 1 \) is already prime.
+The existence half of unique factorization needs a supply of primes: every integer \( n \ge 2 \) must have a prime factor. *Sets and Functions*, Section 2.2 proved this for the school integers by strong induction (@fd2:thm-prime-factor). On the constructed \( \nZ \) the least-element property gives a shorter route: the least divisor bigger than \( 1 \) is already prime.
 
 ::: {#lem-least-divisor-prime}
 [The Least Divisor Is Prime]
@@ -187,7 +187,7 @@ Subtracting, \( \bigl(\prod_{i=1}^{k} p_i - \prod_{j=1}^{l-1} q_j\bigr) p_{k+1} 
 The answer to the prompt lies in the recursion of @def-prime-factorization. It peels off the **last** factor, so once the two last entries are known to be equal they can be canceled at once, leaving two shortened lists to which \( P(k) \) applies. And the comparison "largest with largest" needs only that both lists are non-decreasing. Comparing the first entries would also show \( p_1 = q_1 \), but removing a first entry shifts every index, and the recursion says nothing directly about that.
 
 ::: {.remark}
-*Sets, Relations, and Cardinality*, Section 2.2 named unique factorization as a fact it did not prove or use, and @fd2:exr-countable-sets-b2 lists, as line (vii), a step that cites it and is therefore not available there. On the constructed \( \nZ \) the fact is now proved, and Exercise R2 of Section 3.5 uses it.
+*Sets and Functions*, Section 2.2 named unique factorization as a fact it did not prove or use, and @fd2:exr-countable-sets-b2 lists, as line (vii), a step that cites it and is therefore not available there. On the constructed \( \nZ \) the fact is now proved, and Exercise R2 of Section 3.5 uses it.
 :::
 
 ::: {.warning}
@@ -200,7 +200,7 @@ gives two different factorizations into \( H \)-primes. What breaks is Euclid's 
 
 ## Lowest terms
 
-Every rational number is a fraction in many ways: \( 6/4 = 3/2 = 9/6 \). Section 2.4 found, in its Exercise C1, a least positive denominator by the least-element property, and *Sets, Relations, and Cardinality*, Section 2.2 removed common factors of \( 2 \) only (@fd2:lem-lowest-terms). With the gcd we can remove every common factor at once, and Euclid's lemma shows that the result is unique. Recall that after the identification of Section 2.4, \( p/q \coloneqq pq^{-1} \) in \( \nQ \) for \( p \in \nZ \) and \( q \in \nZ_{>0} \), and \( p/q = r/s \) holds if and only if \( ps = rq \) (@prp-integers-embed-rationals (b)).
+Every rational number is a fraction in many ways: \( 6/4 = 3/2 = 9/6 \). Section 2.4 found, in its Exercise C1, a least positive denominator by the least-element property, and *Sets and Functions*, Section 2.2 removed common factors of \( 2 \) only (@fd2:lem-lowest-terms). With the gcd we can remove every common factor at once, and Euclid's lemma shows that the result is unique. Recall that after the identification of Section 2.4, \( p/q \coloneqq pq^{-1} \) in \( \nQ \) for \( p \in \nZ \) and \( q \in \nZ_{>0} \), and \( p/q = r/s \) holds if and only if \( ps = rq \) (@prp-integers-embed-rationals (b)).
 
 ::: {#prp-rationals-lowest-terms}
 [Lowest Terms]
@@ -232,7 +232,7 @@ so \( d(px_0 + qy_0 - 1) = 0 \), and since \( d \ne 0 \), \( px_0 + qy_0 = 1 \) 
 So the least denominator \( N(x) \) of Section 2.4's Exercise C1 is the \( q \) of (a), and every other denominator of \( x \) is a multiple of it. For example \( 252/198 \) has \( \gcd(252, 198) = 18 \) (@exm-euclidean-algorithm-run), and \( 252 = 18 \cdot 14 \), \( 198 = 18 \cdot 11 \), so its lowest terms are \( 14/11 \).
 
 ::: {.remark}
-The twins in *Sets, Relations, and Cardinality*, Section 2.2 are @fd2:lem-lowest-terms, which removes only factors of \( 2 \), and @fd2:exr-induction-in-practice-c2, which asks for lowest terms in the full sense, for the school \( \nQ \). @prp-rationals-lowest-terms is the full statement, with uniqueness, for the constructed \( \nQ \).
+The twins in *Sets and Functions*, Section 2.2 are @fd2:lem-lowest-terms, which removes only factors of \( 2 \), and @fd2:exr-induction-in-practice-c2, which asks for lowest terms in the full sense, for the school \( \nQ \). @prp-rationals-lowest-terms is the full statement, with uniqueness, for the constructed \( \nQ \).
 :::
 
 ## Exercises

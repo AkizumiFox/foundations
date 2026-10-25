@@ -141,7 +141,7 @@ So \( p + h \in E \) and \( p + h > p \).
 ::: {#exm-cut-with-largest-element .optional}
 [Two candidates for one rational]
 
-Let \( E_1 \coloneqq \{ r \in \nQ : r \le 1 \} \). Show that \( E_1 \) satisfies (C1) and (C2) but not (C3), and that, with the sum of sets \( X + Y \coloneqq \{ x + y : x \in X, \ y \in Y \} \) of *Sets, Relations, and Cardinality*, Section 1.7 (@fd2:exm-sets-of-numbers-as-images),
+Let \( E_1 \coloneqq \{ r \in \nQ : r \le 1 \} \). Show that \( E_1 \) satisfies (C1) and (C2) but not (C3), and that, with the sum of sets \( X + Y \coloneqq \{ x + y : x \in X, \ y \in Y \} \) of *Sets and Functions*, Section 1.7 (@fd2:exm-sets-of-numbers-as-images),
 \[
 E_1 + D_1 = D_2 = D_1 + D_1 , \qquad \text{although } E_1 \ne D_1 .
 \]

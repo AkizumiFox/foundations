@@ -6,7 +6,7 @@ The tool is the binomial theorem. School proves it for numbers; we need it in an
 
 ## Sums and powers in a commutative ring
 
-*Sets, Relations, and Cardinality*, Chapter 2 defines finite sums, products and powers of real numbers by recursion (@fd2:def-sum-product, @fd2:def-power, both from @fd2:thm-recursion). The definitions use nothing about \( \nR \) except an addition with a \( 0 \) and a multiplication with a \( 1 \). So, read on \( \nN = \omega \) through @fd3:cor-omega-identification (b), with \( X = R \), they define in every commutative ring \( R \):
+*Sets and Functions*, Chapter 2 defines finite sums, products and powers of real numbers by recursion (@fd2:def-sum-product, @fd2:def-power, both from @fd2:thm-recursion). The definitions use nothing about \( \nR \) except an addition with a \( 0 \) and a multiplication with a \( 1 \). So, read on \( \nN = \omega \) through @fd3:cor-omega-identification (b), with \( X = R \), they define in every commutative ring \( R \):
 
 - sums \( \sum_{k=m}^{n} a_k \) of elements \( a_k \in R \), with the empty sum \( 0 \), and the three remarks after @fd2:def-sum-product: a sum depends only on the terms it adds (finite lists), **shifting the index**, and **splitting off the last term**, \( \sum_{k=m}^{n+1} a_k = \sum_{k=m}^{n} a_k + a_{n+1} \) for \( m \le n + 1 \);
 - powers \( x^0 \coloneqq 1 \), \( x^{n+1} \coloneqq x^n x \) for \( x \in R \) and \( n \in \nN \), with the laws of @fd2:prp-power-laws (a)–(c):
@@ -14,7 +14,7 @@ The tool is the binomial theorem. School proves it for numbers; we need it in an
 x^{m+n} = x^m x^n , \qquad (x^m)^n = x^{mn} , \qquad (xy)^n = x^n y^n .
 \]
 
-The proofs of those laws in *Sets, Relations, and Cardinality* use only (F1)–(F7), (F9) and induction, so they run unchanged in \( R \). We use this paragraph as a template and do not repeat it. (*Analytic Preliminaries*, Chapter 1 proves the same power laws for every commutative ring as @fd4:prp-power-laws-commutative-ring; we compare, and cite the template.) In particular \( 1^n = 1 \) for every \( n \), by induction: \( 1^0 = 1 \) and \( 1^{n+1} = 1^n \cdot 1 = 1 \).
+The proofs of those laws in *Sets and Functions* use only (F1)–(F7), (F9) and induction, so they run unchanged in \( R \). We use this paragraph as a template and do not repeat it. (*Analytic Preliminaries*, Chapter 1 proves the same power laws for every commutative ring as @fd4:prp-power-laws-commutative-ring; we compare, and cite the template.) In particular \( 1^n = 1 \) for every \( n \), by induction: \( 1^0 = 1 \) and \( 1^{n+1} = 1^n \cdot 1 = 1 \).
 
 The binomial theorem rearranges sums term by term, and the rules it needs are collected in the next lemma. The sums start at \( k = 0 \); by the definition, \( \sum_{k=0}^{0} a_k = 0 + a_0 = a_0 \).
 
