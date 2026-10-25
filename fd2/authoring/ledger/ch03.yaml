@@ -3483,3 +3483,98 @@ items:
     evidence: '04-contrapositive-and-contradiction.md:383: ''with n = 3'' replaced by ''Dividing q_i by
       3 (@thm-division-algorithm)''; no clash with the fixed n. Rest rechecked: N=3(n!-1)+2>=2, q_i>n
       via q_i | 3n!-N=1, q_i != 3, (3a+1)(3b+1)=3(..)+1; sidecar c3 passes.'
+- key: exr-contrapositive-and-contradiction-r1
+  kind: exr
+  file: 04-contrapositive-and-contradiction.md
+  line: 407
+  hash: c578157bd0de
+  verdicts:
+  - stage: S8
+    verdict: correct
+    by: coordinator
+    hash: 30c0aeac08f1
+    date: '2026-10-25'
+    model: claude-opus-5-5
+    evidence: '05-finite-sets.md:668-682: (a) replaced by g(a,b)=4a+6b (fresh data, F049): values 2(2a+3b)
+      even (prp-integers-closed (a), def-parity), 1 odd, thm-even-or-odd, so not surjective; g(3,-2)=0=g(0,0),
+      not injective. (b) unchanged. Sidecar exr-finite-sets-r1.py updated, passes.'
+  - stage: S8
+    verdict: minor
+    by: seam
+    hash: 30c0aeac08f1
+    date: '2026-10-26'
+    model: claude-opus-5-5
+    evidence: 01-finite-sets.md:726 The re-cut moved old 2.5 into 4.1 word for word, and its R. Review
+      group (exr-finite-sets-r1 to r3) came along. 4.1 is not the last section of Chapter 4, so this breaks
+      STYLE §11.5 ('last section only'). It leaves Chapter 4 with two R groups and Chapter 3 with none.
+  - stage: S8
+    verdict: correct
+    by: coordinator
+    hash: 30c0aeac08f1
+    date: '2026-10-26'
+    model: claude-opus-5-5
+    evidence: '01-finite-sets.md:730-747: math rechecked: 4a+6b=2(2a+3b) even, 1 odd, thm-even-or-odd
+      excludes both, so not onto; g(3,-2)=0=g(0,0), not injective; k injective; 3n+1=0 against uniqueness
+      in thm-division-algorithm. Seam minor is placement only (R group in 4.1, STYLE 11.5): needs a ch03
+      move, logged as shared-todo F027, not a defect of this item.'
+  - stage: S8
+    verdict: correct
+    by: coordinator
+    hash: c578157bd0de
+    date: '2026-10-26'
+    model: claude-opus-5-5
+    evidence: '04-contrapositive-and-contradiction.md:407: moved verbatim from 4.1 (exr-finite-sets-r1)
+      to the last section of Chapter 3 (STYLE 11.5, F027 seam minor resolved), label renamed only; every
+      cited label (Ch1-Ch3, fd1) precedes 3.4; R1 reaches one chapter back (Ch2 injectivity/surjectivity),
+      R2/R3 are fd1 spiral items. Math unchanged from the 2026-10-26 recheck. Sidecar renamed, passes.'
+- key: exr-contrapositive-and-contradiction-r2
+  kind: exr
+  file: 04-contrapositive-and-contradiction.md
+  line: 424
+  hash: 8821f5d0d3cb
+  verdicts:
+  - stage: S8
+    verdict: correct
+    by: coordinator
+    hash: f74bde38a3da
+    date: '2026-10-25'
+    model: claude-opus-5-5
+    evidence: '05-finite-sets.md:685-705: (b) replaced by X=Z, x+y=0 (fresh data, F049): (S2) x=-y; (S1)
+      negated, y=1-x gives x+y=1. (a) and (c) unchanged; converse remark still valid. Sidecar r2 updated,
+      passes.'
+  - stage: S8
+    verdict: correct
+    by: coordinator
+    hash: 8821f5d0d3cb
+    date: '2026-10-26'
+    model: claude-opus-5-5
+    evidence: '04-contrapositive-and-contradiction.md:424: moved verbatim from 4.1 (exr-finite-sets-r2)
+      to the last section of Chapter 3 (STYLE 11.5, F027 seam minor resolved), label renamed only; every
+      cited label (Ch1-Ch3, fd1) precedes 3.4; R1 reaches one chapter back (Ch2 injectivity/surjectivity),
+      R2/R3 are fd1 spiral items. Math unchanged from the 2026-10-26 recheck. Sidecar renamed, passes.'
+- key: exr-contrapositive-and-contradiction-r3
+  kind: exr
+  file: 04-contrapositive-and-contradiction.md
+  line: 447
+  hash: 80673585a3ae
+  verdicts:
+  - stage: S8
+    verdict: correct
+    by: coordinator
+    hash: ba2146dd6d29
+    date: '2026-10-25'
+    model: claude-opus-5-5
+    evidence: '05-finite-sets.md:708-728: structural induction rechecked (vacuous for bot/not/->/<->,
+      monotone and/or steps, all-F/all-T pair); solution now notes the consequence is a special case of
+      @fd1:thm-adequate-connectives (b) (fd1 ch04/09-normal-forms.md:471); label added to index.md What
+      you need.'
+  - stage: S8
+    verdict: correct
+    by: coordinator
+    hash: 80673585a3ae
+    date: '2026-10-26'
+    model: claude-opus-5-5
+    evidence: '04-contrapositive-and-contradiction.md:447: moved verbatim from 4.1 (exr-finite-sets-r3)
+      to the last section of Chapter 3 (STYLE 11.5, F027 seam minor resolved), label renamed only; every
+      cited label (Ch1-Ch3, fd1) precedes 3.4; R1 reaches one chapter back (Ch2 injectivity/surjectivity),
+      R2/R3 are fd1 spiral items. Math unchanged from the 2026-10-26 recheck. Sidecar renamed, passes.'

@@ -212,7 +212,7 @@ The chapter's **exit checks** are C items titled `[C1: Exit check: …]`, and th
 
 **R. Review** (last section only; §11.5). 3–4 exercises labelled `-r1` … `-r4`, each short (at most 20 minutes): one reaching one chapter back, one 3–4 chapters back, one spiral item from an earlier Part, and optionally one that gives no hint of its method. The problem never names its source; the solution does, with `@ref`.
 
-**Format.** Every exercise is `::: {#exr-<section-slug>-a1}` (then `-b1`, `-b2`, `-c1`, `-r1`, …) whose first line is a title `[A1]`, `[B2: Short name]`, `[R1]`, etc. It is followed by a `::: {.solution}` written in the typeset register (complete, not a sketch).
+**Format.** Every exercise is `::: {#exr-<section-slug>-a1}` (then `-b1`, `-b2`, `-c1`, `-r1`, …) whose first line is a title `[A1]`, `[B2: Short name]`, `[R1]`, etc. It is followed by a `::: {.solution}` written in the typeset register (complete, not a sketch). **Exercise ids are stable keys:** once a section is reviewed, its exercise labels may survive a re-cut or a move to another section or group, so an id need not match the section slug or the printed letter; only the printed title `[B5]`, `[R1]` follows the new place (fd2 six-chapter re-cut, 2026-10-26).
 
 **Parts** use a lettered list:
 

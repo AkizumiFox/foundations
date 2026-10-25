@@ -53,7 +53,7 @@ So restriction and extension stay with gluing in 2.3 instead of going to 2.1, an
 
 ### Chapter 1. Sets (F2.1), directory `ch01-sets/` (was `ch01-sets-and-functions/`)
 
-Time: about **20 h core / 28 h full** (was 40/55 for the seven-section chapter).
+Time: about **20 h core / 28 h full** (was 40/55 for the seven-section chapter). Measured after S7 (2026-10-26): **25 h core / 35 h full** (the chapter index's Time line; §10).
 
 | § | File | Title | Sources | Method boxes, scaffold | Now → target | Pipeline |
 |---|---|---|---|---|---|---|
@@ -66,7 +66,7 @@ The chapter index is rewritten: it now names four sections, and its "Next" point
 
 ### Chapter 2. Functions (F2.6), new directory `ch02-functions/`
 
-Time: about **22 h core / 30 h full**.
+Time: about **22 h core / 30 h full**. Measured after S7 (2026-10-26): **30 h core / 45 h full** (the chapter index's Time line; §10).
 
 | § | File | Title | Sources | Method boxes, scaffold | Now → target | Pipeline |
 |---|---|---|---|---|---|---|
@@ -90,7 +90,7 @@ Time: about **22 h core / 30 h full**.
 
 ### Chapter 3. Induction and Recursion (F2.2), directory `ch03-induction-and-recursion/` (was `ch02-induction-and-finite-sets/`)
 
-Time: about **22 h core / 30 h full**.
+Time: about **22 h core / 30 h full**. Measured after S7 (2026-10-26): **20 h core / 35 h full** (the chapter index's Time line; §10).
 
 | § | File | Title | Sources | Method boxes, scaffold | Now → target | Pipeline |
 |---|---|---|---|---|---|---|
@@ -103,7 +103,7 @@ The chapter index is rewritten: finite sets leave the chapter, and the title dro
 
 ### Chapter 4. Cardinality (F2.3), directory `ch04-cardinality/` (was `ch03-countable-and-uncountable/`)
 
-Time: about **30 h core / 45 h full**.
+Time: about **30 h core / 45 h full**. Measured after S7 (2026-10-26): **30 h core / 45 h full** (the chapter index's Time line; §10).
 
 | § | File | Title | Sources | Method boxes, scaffold | Now → target | Pipeline |
 |---|---|---|---|---|---|---|
@@ -115,7 +115,7 @@ Time: about **30 h core / 45 h full**.
 
 ### Chapter 5. Relations (F2.5), directory `ch05-relations/` (was `ch04-relations-and-orders/`)
 
-Time: about **22 h core / 28 h full**.
+Time: about **22 h core / 28 h full**. Measured after S7 (2026-10-26): **15 h core / 30 h full** (the chapter index's Time line; §10).
 
 | § | File | Title | Sources | Method boxes, scaffold | Now → target | Pipeline |
 |---|---|---|---|---|---|---|
@@ -125,7 +125,7 @@ Time: about **22 h core / 28 h full**.
 
 ### Chapter 6. The Axiom of Choice (F2.4), directory `ch06-axiom-of-choice/` (was `ch06-zorns-lemma/`)
 
-Time: about **16 h core / 24 h full**.
+Time: about **16 h core / 24 h full**. Measured after S7 (2026-10-26): **20 h core / 30 h full** (the chapter index's Time line; §10).
 
 | § | File | Title | Sources | Method boxes, scaffold | Now → target | Pipeline |
 |---|---|---|---|---|---|---|
@@ -363,3 +363,24 @@ These are estimates by STYLE §2's formula; each chapter's Time line is recomput
 2. **Choice used before Chapter 6.** Old 3.4's `prp-card-le-surjection` and old 3.5's two theorems (every infinite set has a countably infinite subset; infinite iff the same size as a proper subset) need the axiom of choice.
    - **Default:** move them to 6.1 as "what choice buys", so no proof uses a later axiom. 4.4 keeps the choice-free half, and 4.5 keeps the choice-free infinite-set facts.
    - **Alternative:** leave them in 4.4/4.5, with a flagged prose pointer to 6.1 in each proof. This matches the "infinite sets" wording of the approved 4.5 more literally, but puts a dependency on later material inside the book.
+
+## 10. Addendum: after S7 (fd2 wrap-up, 2026-10-26)
+
+**Time, measured.** Each chapter's Time line was recomputed by STYLE §2 after S7: reading at 15 minutes per 400 words of the whole section files (`tools/check_structure.py --words`; main line for the core track, plus the folds for the full track), plus 20–45 minutes per exercise (the midpoint, 32.5 minutes), the core track counting all of A, one B and one C per section and the exit checks, the full track every exercise; rounded to the nearest 5 hours.
+
+| Chapter | Main line + folded words | Exercises core / all | core/full h (plan in §8) |
+|---|---|---|---|
+| 1 Sets | 26,384 + 1,054 | 12 / 33 | 25/35 (20/28) |
+| 2 Functions | 33,267 + 880 | 15 / 41 | 30/45 (22/30) |
+| 3 Induction and Recursion | 25,448 + 504 | 12 / 33 | 20/35 (22/30) |
+| 4 Cardinality | 33,892 + 375 | 15 / 42 | 30/45 (30/45) |
+| 5 Relations | 20,070 + 1,667 | 9 / 28 | 15/30 (22/28) |
+| 6 The Axiom of Choice | 19,789 + 0 | 10 / 28 | 20/30 (16/24) |
+| **Total** | **158,850 + 4,480** | **73 / 205** | **140/220** (≈ 132/185) |
+
+The plan's word estimate (§8, about 141,000) counted the main line to `## Exercises`; the figures above count the whole files, exercises and solutions included, as the Time formula reads them.
+
+**R group moved from 4.1 to 3.4 (S8 seam finding F027, coordinator's wrap-up).** The structural commit carried old 2.5's `### R. Review` into 4.1 verbatim, which left Chapter 4 with two R groups and Chapter 3, whose last section is 3.4, with none (STYLE §11.5: last section only). The three items moved to the end of `ch03-induction-and-recursion/04-contrapositive-and-contradiction.md` with their ledger lines, and were relabelled to that section's slug: `exr-finite-sets-r1`, `-r2`, `-r3` → `exr-contrapositive-and-contradiction-r1`, `-r2`, `-r3` (titles `[R1]`–`[R3]` unchanged; no `@ref` to them existed). Sidecars `verify/ch04/exr-finite-sets-r1.py`, `-r2.py` → `verify/ch03/exr-contrapositive-and-contradiction-r1.py`, `-r2.py`; ledger entries moved from `authoring/ledger/ch04.yaml` to `ch03.yaml` with their verdict history, plus an S8 `correct` by the coordinator. R1 (injections and surjections) now reaches one chapter back, as §11.5 wants; R2 and R3 are the *Logic and Proof* spiral items. The Chapter 3 index already named the review exercise's fd1 labels.
+
+**Other wrap-up edits.** 4.1's fold "Subsets and functions to {0, 1}" now cites `@thm-power-set-two-power` (Section 2.3) for the correspondence (F040). The ten Chapter 6 exercises parked by the Chapter 6 blueprint (§3 "Parked") were written out to `fd2/authoring/parked/ch06-exercises.md` from `09cf1f1`, with their ledger items in `parked/ledger-parked.yaml` (`parked_file: ch06-exercises.md`). STYLE §6 now says that exercise ids are stable keys and need not match the section slug after a re-cut.
+

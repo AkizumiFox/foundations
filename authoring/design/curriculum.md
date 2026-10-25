@@ -454,7 +454,7 @@ About half the exercises annotate or build real proofs from analysis.
 | absolute value / triangle inequality | \|x + y\| ≤ \|x\| + \|y\| by trapping, in any ordered field (F3.9) | ℂ = ℝ²: modulus, triangle inequality by comparing squares, since ℂ has no order to trap in (F4.1); Euclidean norm | triangle axiom of a metric | norm axioms | Cauchy–Schwarz ⇒ triangle inequality | Minkowski |
 | convergence | ε-N; pointwise vs uniform | norm equivalence | uniform = sup metric | norm vs weak | orthogonal expansions | a.e., in measure, Lᵖ, weak*, distributional |
 | continuity | ε-δ, uniform | Fréchet | equicontinuity, Lipschitz | bounded = continuous; closed graph | adjoint | weak lower semicontinuity of the norm; translation |
-| Zorn's lemma / maximality template | choice from Zorn, any two sets comparable, every partial order extends to a total order (F2.4) | bases of any vector space (LA §1.8, `thm-basis-extension-general`) | — | Hahn–Banach (FA) | orthonormal bases of any Hilbert space | — |
+| Zorn's lemma / maximality template | choice from Zorn, representatives, any two sets comparable, every partial order extends to a total order, the well-ordering theorem (F2.4) | bases of any vector space (LA §1.8, `thm-basis-extension-general`) | — | Hahn–Banach (FA) | orthonormal bases of any Hilbert space | — |
 | density | ℚ dense (in any Archimedean field, F3.9; in the constructed ℝ, F3.10) | polynomials | Stone–Weierstrass | Hahn–Banach criterion | orthonormal basis | C_c and mollifiers |
 
 ## Evidence from mathematics education (for STYLE and exercise design)

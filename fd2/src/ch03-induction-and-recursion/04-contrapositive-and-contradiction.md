@@ -402,6 +402,68 @@ Prove that for every integer \( n \ge 1 \) there is a prime \( p > n \) with \( 
 - 1: the contradiction with remainder \( 2 \).
 :::
 
+### R. Review
+
+::: {#exr-contrapositive-and-contradiction-r1}
+[R1]
+
+Decide whether each function is injective and whether it is surjective. Justify your answers.
+
+::: {.enumerate options="label=(\alph*)"}
+1. \( g \colon \nZ \times \nZ \to \nZ \), \( g(a, b) \coloneqq 4a + 6b \).
+2. \( k \colon \nZ \to \nZ \), \( k(n) \coloneqq 3n + 1 \).
+:::
+:::
+
+::: {.solution}
+*(a)* \( g \) is neither injective nor surjective. Not surjective (@def-surjective): \( 1 \) is not a value. Every value \( g(a, b) = 2(2a + 3b) \) is even, with \( 2a + 3b \in \nZ \) by @prp-integers-closed (a) (@def-parity), while \( 1 = 2 \cdot 0 + 1 \) is odd, and no integer is both (@thm-even-or-odd). Not injective (@def-injective): \( g(3, -2) = 12 - 12 = 0 = g(0, 0) \), and \( (3, -2) \ne (0, 0) \), since their first coordinates differ (@def-ordered-pair). The method of @exm-method-surjectivity has nothing to work with here: a witness for the value \( 1 \) would be a pair with \( 4a + 6b = 1 \), and the parity argument shows there is none.
+
+*(b)* \( k \) is injective and not surjective. Injective, by the method of @exm-method-injectivity: if \( 3n + 1 = 3n' + 1 \), then \( 3n = 3n' \) and \( n = n' \). Not surjective (@def-surjective): \( 0 \) is not a value. If \( 3n + 1 = 0 \) for some \( n \in \nZ \), then \( 0 = 3n + 1 \) and \( 0 = 3 \cdot 0 + 0 \) are two divisions of \( 0 \) by \( 3 \), with remainders \( 1 \) and \( 0 \) in \( \{0, 1, 2\} \), against the uniqueness in @thm-division-algorithm.
+:::
+
+::: {#exr-contrapositive-and-contradiction-r2}
+[R2]
+
+For a set \( X \) and a property \( R(x, y) \) of two elements of \( X \), consider the statements
+\[
+\text{(S1)} \ \ \exists x \in X \ \forall y \in X \ \, R(x, y), \qquad \text{(S2)} \ \ \forall y \in X \ \exists x \in X \ \, R(x, y).
+\]
+
+::: {.enumerate options="label=(\alph*)"}
+1. Decide (S1) and (S2) for \( R(x, y) \): "\( x \mid y \)", first with \( X = \{1, \dots, 6\} \), then with \( X = \{2, \dots, 6\} \).
+2. Decide (S1) and (S2) for \( X = \nZ \) and \( R(x, y) \): "\( x + y = 0 \)".
+3. Prove that (S1) implies (S2) for every \( X \) and \( R \).
+:::
+:::
+
+::: {.solution}
+*(a)* For \( X = \{1, \dots, 6\} \) both hold: \( x = 1 \) divides every \( y \) (\( y = y \cdot 1 \)), which is (S1); and (S2) follows by (c). For \( X = \{2, \dots, 6\} \), (S2) holds with \( x \coloneqq y \), since \( y = 1 \cdot y \). (S1) fails: its negation is \( \forall x \in X \ \exists y \in X \ \, x \nmid y \) (@fd1:prp-bounded-quantifier-negation), and for \( x = 2 \) take \( y = 3 \), for \( x \in \{3, \dots, 6\} \) take \( y = 2 \), since a positive divisor of \( 2 \) is at most \( 2 \).
+
+*(b)* (S2) holds: for \( y \in \nZ \), \( x \coloneqq -y \in \nZ \) has \( x + y = 0 \). (S1) fails: its negation is \( \forall x \in \nZ \ \exists y \in \nZ \ \, x + y \ne 0 \), and for \( x \in \nZ \) the choice \( y \coloneqq 1 - x \), an integer by @prp-integers-closed (a), gives \( x + y = 1 \ne 0 \).
+
+*(c)* Suppose (S1), and let \( x_0 \in X \) be a witness: \( R(x_0, y) \) for every \( y \in X \) (\( \rulename{\exists E} \)). Let \( y \in X \). Then \( R(x_0, y) \), so \( \exists x \in X \ R(x, y) \), with witness \( x_0 \) (\( \rulename{\exists I} \)). As \( y \) was arbitrary, (S2) holds (\( \rulename{\forall I} \)). This is @fd1:prp-exists-forall-swap, with bounded quantifiers. The converse fails, by (a) for \( X = \{2, \dots, 6\} \) and by (b): one \( x \) for all \( y \) is more than one \( x \) for each \( y \).
+:::
+
+::: {#exr-contrapositive-and-contradiction-r3}
+[R3]
+
+Let \( v \) and \( w \) be valuations such that every atom true under \( v \) is true under \( w \). Prove that every formula built from atoms with \( \wedge \) and \( \vee \) alone (no \( \neg \), \( \bot \), \( \to \) or \( \leftrightarrow \)) that is true under \( v \) is true under \( w \). Deduce that \( \neg p \) is equivalent to no such formula.
+:::
+
+::: {.solution}
+By structural induction (@fd1:thm-structural-induction), with \( P(\varphi) \): "if \( \varphi \) contains none of \( \neg \), \( \bot \), \( \to \), \( \leftrightarrow \) and \( v(\varphi) = \mathrm{T} \), then \( w(\varphi) = \mathrm{T} \)". Truth values are those of @fd1:def-truth-value.
+
+*Atoms and \( \bot \).* For an atom \( p \) with \( v(p) = \mathrm{T} \), \( w(p) = \mathrm{T} \) by the hypothesis on \( v \) and \( w \). The formula \( \bot \) contains \( \bot \), so \( P(\bot) \) holds vacuously.
+
+*Step for \( \neg \).* \( \neg\varphi \) contains \( \neg \), so \( P(\neg\varphi) \) holds vacuously.
+
+*Step for \( (\varphi \circ \psi) \).* If \( \circ \) is \( \to \) or \( \leftrightarrow \), \( P \) holds vacuously. Otherwise, if \( (\varphi \circ \psi) \) contains none of the four symbols, neither do \( \varphi \) and \( \psi \), whose symbols are among its own, so \( P(\varphi) \) and \( P(\psi) \) apply to them. For \( \circ = \wedge \): \( v(\varphi \wedge \psi) = \mathrm{T} \) gives \( v(\varphi) = v(\psi) = \mathrm{T} \), so \( w(\varphi) = w(\psi) = \mathrm{T} \), and \( w(\varphi \wedge \psi) = \mathrm{T} \). For \( \circ = \vee \): \( v(\varphi) = \mathrm{T} \) or \( v(\psi) = \mathrm{T} \), so \( w(\varphi) = \mathrm{T} \) or \( w(\psi) = \mathrm{T} \), and \( w(\varphi \vee \psi) = \mathrm{T} \).
+
+*The consequence.* Let \( v \) be the all-F valuation and \( w \) the all-T valuation; every atom true under \( v \) (there is none) is true under \( w \). Then \( v(\neg p) = \mathrm{T} \) and \( w(\neg p) = \mathrm{F} \). If \( \varphi \), built with \( \wedge \) and \( \vee \) alone, were equivalent to \( \neg p \), it would have the same value as \( \neg p \) under every valuation: \( v(\varphi) = \mathrm{T} \), hence \( w(\varphi) = \mathrm{T} \) by the first part, against \( w(\varphi) = w(\neg p) = \mathrm{F} \).
+
+This consequence is a special case of @fd1:thm-adequate-connectives (b), which allows \( \to \) as well and looks only at the all-T row; here the \( \wedge \)/\( \vee \) case comes out of the stronger statement that such formulas are monotone in the valuation.
+:::
+
 <!-- dependency ledger
 prp-cube-root-two-irrational (claim): real cube roots exist and are unique; (p/q)^3 = p^3/q^3 | school facts, F1-F2 convention (as in F2.6 §04); R arithmetic
 prp-cube-root-two-irrational (proof): p^3 = 8k^3 + 12k^2 + 6k + 1 for p = 2k + 1; q^3 = 4s^3 from 8s^3 = 2q^3 | R arithmetic, school fact
@@ -417,4 +479,7 @@ exr-contrapositive-and-contradiction-c1 (solution): abs(n) <= 3 gives n^2 <= 9 |
 exr-contrapositive-and-contradiction-c2 (solution): finite products, factors commute | def-sum-product (F2.2 §03), school meaning (said in the solution)
 exr-contrapositive-and-contradiction-c2 (claim): (the problem) for primes p_1, ..., p_k, a prime factor of p_1...p_k + 1 differs from each p_i | fd1:exr-connective-rhetoric-c1 (F1.5 §01), recalled; reproved in (b)
 exr-contrapositive-and-contradiction-c2 (solution): k > 0 from P = kq, P, q > 0; q <= kq; product of n inequalities between positive reals; 1 <= 2^(2^n - 1) | R arithmetic and order, school fact; prp-power-laws (a), prp-geometric-sum (cited)
+exr-contrapositive-and-contradiction-r1 (solution): 4a + 6b = 2(2a + 3b); 2a + 3b in Z; 4*3 + 6*(-2) = 0; 1 = 2*0 + 1; 3n = 3n' gives n = n' | R arithmetic, school fact; prp-integers-closed (a), def-parity, thm-even-or-odd, exm-method-surjectivity, exm-method-injectivity, def-ordered-pair, thm-division-algorithm (cited)
+exr-contrapositive-and-contradiction-r2 (solution): y = y * 1; a positive divisor of 2 is at most 2; -y + y = 0; x + (1 - x) = 1; -y in Z | R arithmetic and order, school fact; prp-integers-closed (a) (cited for 1 - x); def-divides (F2.1 §01), fd1:prp-bounded-quantifier-negation, fd1:prp-exists-forall-swap (cited)
+exr-contrapositive-and-contradiction-r3 (solution): structural induction; truth values of atoms, not, and, or | fd1:thm-structural-induction, fd1:def-truth-value, fd1:thm-adequate-connectives (cited); the all-F and all-T valuations (F1.3 §04, named after fd1:def-valuation)
 -->

@@ -43,7 +43,7 @@
 ## 3. Labels (all new)
 
 - **5.1:** `def-restriction-extension`, `prp-restriction-properties`, `thm-gluing`, `exm-method-gluing`, `exm-piecewise-as-gluing`, `def-indicator`, `prp-indicator-arithmetic`, `exm-symmetric-difference-associative`, `exr-restriction-extension-and-gluing-a1`, `-b1`…`-b4`, `-c1`…`-c3`.
-- **5.2:** `prp-fibres-partition`, `thm-canonical-factorization`, `exm-fraction-map-factorization`, `thm-functions-out-of-quotient`, `exm-method-factor-through-quotient`, `exm-clock-maps`, `exr-fibres-and-factorization-a1`, `-b1`…`-b4`, `-c1`…`-c3`.
+- **5.2:** `prp-fibres-partition`, `thm-canonical-factorization`, `exm-fraction-map-factorization`, `thm-functions-out-of-quotient`, `exm-method-factor-through-quotient`, `exm-clock-maps`, `exr-fibres-and-factorization-a1` (now `exr-fibres-and-factorization-b1`, `[B5]` in 5.2, since the six-chapter re-cut round 2, 2026-10-26), `-b1`…`-b4`, `-c1`…`-c3`.
 - **5.3:** `def-binary-operation`, `exm-first-operations`, `def-operation-properties`, `exm-subtraction-identity`, `prp-operation-identity-unique`, `exm-method-two-ways`, `prp-operation-inverse-unique`, `exm-two-inverses`, `prp-operation-inverse-rules`, `prp-pointwise-operations`, `prp-composition-operation`, `prp-operation-on-quotient`, `exr-binary-operations-a1`, `-b1`…`-b4`, `-c1`…`-c3`.
 - **5.4:** `def-permutation`, `prp-permutations-closed`, `def-iterate`, `prp-iterate-laws`, `def-orbit`, `thm-orbits-partition`, `exm-method-follow-the-orbit`, `prp-orbit-cycle`, `def-permutation-cycle`, `thm-permutation-cycles`, `cor-permutation-power-identity`, `prp-eventually-periodic`, `exm-three-pile-shuffle`, `exm-squaring-mod-eleven`, `exr-permutations-and-iteration-a1`, `-b1`…`-b4`, `-c1`…`-c3`, `-r1`…`-r4`.
 
@@ -335,7 +335,7 @@ Exercises: 32 + R1–R4 = 36; core track 4 × (A1 + one B + one C) + R = 16. Tim
 ## 8. Notes for S3 and S4
 
 - **Order:** 3.6 lands first (5.1 cites it). Drafters: two. (i) 5.1 and 5.2; (ii) 5.3 and 5.4. The coordinator writes the index last.
-- **Sidecars** (`fd2/verify/ch05/`, new): `exm-symmetric-difference-associative.py` (all eight \( (u, v, w) \)), `exm-two-inverses.py` (all 27 triples), `exm-three-pile-shuffle.py` (12 cards), `exm-squaring-mod-eleven.py`, `exr-fibres-and-factorization-a1.py`, `exr-binary-operations-b1.py` (symbolic or exact rationals), `exr-permutations-and-iteration-b1.py`, `exr-permutations-and-iteration-c1.py` (simulate 15 cards), `exr-restriction-extension-and-gluing-b4.py`.
+- **Sidecars** (`fd2/verify/ch05/`, new): `exm-symmetric-difference-associative.py` (all eight \( (u, v, w) \)), `exm-two-inverses.py` (all 27 triples), `exm-three-pile-shuffle.py` (12 cards), `exm-squaring-mod-eleven.py`, `exr-fibres-and-factorization-a1.py` (now `exr-fibres-and-factorization-b1.py`, 2026-10-26), `exr-binary-operations-b1.py` (symbolic or exact rationals), `exr-permutations-and-iteration-b1.py`, `exr-permutations-and-iteration-c1.py` (simulate 15 cards), `exr-restriction-extension-and-gluing-b4.py`.
 - **Checkers:** `check_structure.py` (0 fatal; `--words` ≤ 5,000), `check_numbers.py`, `check_notation.py`, forward-deps, `build.py check`; `atlas.py all` after the plan-edge change.
 - **Review:** full pipeline (new chapter): S5–S8 on all four sections; S9 with the author.
 - **Open for the author (not blocking):** generalized associativity is left at four factors (5.3 C1), and the cycle decomposition is stated with one fixed (left) bracketing; uniqueness of the cycle decomposition is not proved (fd5's job).

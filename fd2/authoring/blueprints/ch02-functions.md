@@ -194,6 +194,8 @@ Main text verbatim (pointers checked: 25:3, 25:53, 25:87, 25:451 final). Exercis
 
 Layout §1 approved one added exercise for 2.5 and no change to 1.4. This blueprint departs from it: (i) 2.5 receives B4 (old 2.3 B2) and B5 and gets a new R group R5–R8 (titles R1–R4); (ii) 1.4 (`ch01-sets/04-products-and-relations.md`) receives R1–R4 verbatim, which makes 1.4 an M+ section with the S8 build check. Reason: STYLE §2 puts a chapter's R group in its last section, and old R1–R4 review Chapter 1 only. Recorded for the author with §8's calls.
 
+*Post-freeze deviations (S7 and the coordinator's round 2, 2026-10-26; recorded here for S9):* (iii) **STYLE §6, five B items in 2.5** (F020, D4): the B group of `05-images-and-preimages.md` has B1–B5 against §6's 2–4, because this blueprint adds B4 (item 1) and B5 (item 2); kept, since both are planned here and B5 is the only item that ties restriction to images; the author may cut one at S9. (iv) **STYLE §11.5, R1 slot** (F022, F035): the new R group (`exr-images-and-preimages-r5`…`-r8`, titled R1–R4) reaches Chapter 1 only through R4 (`-r8`, double inclusion, `prp-subset-antisymmetric`), and R3 uses complements; R1 (`-r5`) reviews gluing and inverses from within Chapter 2. §11.5's early-chapter rule allows items within the chapter when the book has too few earlier chapters; kept as drafted, labels and titles unchanged. If the author wants R1 to be the Chapter 1 item, the cheapest change is a display reorder (`-r8` shown as `[R1]`), as Chapter 5 did for 5.3.
+
 ### 4.6 Chapter index (`index.md`)
 
 By the coordinator after S3, in STYLE §2 order:

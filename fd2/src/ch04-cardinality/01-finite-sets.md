@@ -386,7 +386,7 @@ By @prp-disjoint-union-count, \( \powerset{A} \) has \( 2^n + 2^n = 2^n \cdot 2 
 :::
 
 ::: {.second-reading title="Subsets and functions to {0, 1}"}
-For any set \( Y \), the map \( S \mapsto \ind_S \), with inverse \( f \mapsto \{ y \in Y : f(y) = 1 \} \), is a bijection \( \powerset{Y} \to \{0, 1\}^Y \) onto the set of functions \( Y \to \{0, 1\} \) (the correspondence of Section 2.1 between subsets and indicator functions). Taking \( Y \) with \( n \) elements, a set with \( n \) elements also has exactly \( 2^n \) functions to \( \{0, 1\} \), and the two counting problems of Chapters 1 and 2 are one. Exercise C2 counts all functions between finite sets.
+For any set \( Y \), the map \( S \mapsto \ind_S \), with inverse \( f \mapsto \{ y \in Y : f(y) = 1 \} \), is a bijection \( \powerset{Y} \to \{0, 1\}^Y \) onto the set of functions \( Y \to \{0, 1\} \) (@thm-power-set-two-power, Section 2.3). Taking \( Y \) with \( n \) elements, a set with \( n \) elements also has exactly \( 2^n \) functions to \( \{0, 1\} \), and the two counting problems of Chapters 1 and 2 are one. Exercise C2 counts all functions between finite sets.
 :::
 
 ## No finite set is equinumerous with a proper subset
@@ -725,68 +725,6 @@ So \( \gamma \) is a two-sided inverse of \( \rho \), and \( \rho \) is a biject
 - 2: concludes that \( \rho \) is a bijection.
 :::
 
-### R. Review
-
-::: {#exr-finite-sets-r1}
-[R1]
-
-Decide whether each function is injective and whether it is surjective. Justify your answers.
-
-::: {.enumerate options="label=(\alph*)"}
-1. \( g \colon \nZ \times \nZ \to \nZ \), \( g(a, b) \coloneqq 4a + 6b \).
-2. \( k \colon \nZ \to \nZ \), \( k(n) \coloneqq 3n + 1 \).
-:::
-:::
-
-::: {.solution}
-*(a)* \( g \) is neither injective nor surjective. Not surjective (@def-surjective): \( 1 \) is not a value. Every value \( g(a, b) = 2(2a + 3b) \) is even, with \( 2a + 3b \in \nZ \) by @prp-integers-closed (a) (@def-parity), while \( 1 = 2 \cdot 0 + 1 \) is odd, and no integer is both (@thm-even-or-odd). Not injective (@def-injective): \( g(3, -2) = 12 - 12 = 0 = g(0, 0) \), and \( (3, -2) \ne (0, 0) \), since their first coordinates differ (@def-ordered-pair). The method of @exm-method-surjectivity has nothing to work with here: a witness for the value \( 1 \) would be a pair with \( 4a + 6b = 1 \), and the parity argument shows there is none.
-
-*(b)* \( k \) is injective and not surjective. Injective, by the method of @exm-method-injectivity: if \( 3n + 1 = 3n' + 1 \), then \( 3n = 3n' \) and \( n = n' \). Not surjective (@def-surjective): \( 0 \) is not a value. If \( 3n + 1 = 0 \) for some \( n \in \nZ \), then \( 0 = 3n + 1 \) and \( 0 = 3 \cdot 0 + 0 \) are two divisions of \( 0 \) by \( 3 \), with remainders \( 1 \) and \( 0 \) in \( \{0, 1, 2\} \), against the uniqueness in @thm-division-algorithm.
-:::
-
-::: {#exr-finite-sets-r2}
-[R2]
-
-For a set \( X \) and a property \( R(x, y) \) of two elements of \( X \), consider the statements
-\[
-\text{(S1)} \ \ \exists x \in X \ \forall y \in X \ \, R(x, y), \qquad \text{(S2)} \ \ \forall y \in X \ \exists x \in X \ \, R(x, y).
-\]
-
-::: {.enumerate options="label=(\alph*)"}
-1. Decide (S1) and (S2) for \( R(x, y) \): "\( x \mid y \)", first with \( X = \{1, \dots, 6\} \), then with \( X = \{2, \dots, 6\} \).
-2. Decide (S1) and (S2) for \( X = \nZ \) and \( R(x, y) \): "\( x + y = 0 \)".
-3. Prove that (S1) implies (S2) for every \( X \) and \( R \).
-:::
-:::
-
-::: {.solution}
-*(a)* For \( X = \{1, \dots, 6\} \) both hold: \( x = 1 \) divides every \( y \) (\( y = y \cdot 1 \)), which is (S1); and (S2) follows by (c). For \( X = \{2, \dots, 6\} \), (S2) holds with \( x \coloneqq y \), since \( y = 1 \cdot y \). (S1) fails: its negation is \( \forall x \in X \ \exists y \in X \ \, x \nmid y \) (@fd1:prp-bounded-quantifier-negation), and for \( x = 2 \) take \( y = 3 \), for \( x \in \{3, \dots, 6\} \) take \( y = 2 \), since a positive divisor of \( 2 \) is at most \( 2 \).
-
-*(b)* (S2) holds: for \( y \in \nZ \), \( x \coloneqq -y \in \nZ \) has \( x + y = 0 \). (S1) fails: its negation is \( \forall x \in \nZ \ \exists y \in \nZ \ \, x + y \ne 0 \), and for \( x \in \nZ \) the choice \( y \coloneqq 1 - x \), an integer by @prp-integers-closed (a), gives \( x + y = 1 \ne 0 \).
-
-*(c)* Suppose (S1), and let \( x_0 \in X \) be a witness: \( R(x_0, y) \) for every \( y \in X \) (\( \rulename{\exists E} \)). Let \( y \in X \). Then \( R(x_0, y) \), so \( \exists x \in X \ R(x, y) \), with witness \( x_0 \) (\( \rulename{\exists I} \)). As \( y \) was arbitrary, (S2) holds (\( \rulename{\forall I} \)). This is @fd1:prp-exists-forall-swap, with bounded quantifiers. The converse fails, by (a) for \( X = \{2, \dots, 6\} \) and by (b): one \( x \) for all \( y \) is more than one \( x \) for each \( y \).
-:::
-
-::: {#exr-finite-sets-r3}
-[R3]
-
-Let \( v \) and \( w \) be valuations such that every atom true under \( v \) is true under \( w \). Prove that every formula built from atoms with \( \wedge \) and \( \vee \) alone (no \( \neg \), \( \bot \), \( \to \) or \( \leftrightarrow \)) that is true under \( v \) is true under \( w \). Deduce that \( \neg p \) is equivalent to no such formula.
-:::
-
-::: {.solution}
-By structural induction (@fd1:thm-structural-induction), with \( P(\varphi) \): "if \( \varphi \) contains none of \( \neg \), \( \bot \), \( \to \), \( \leftrightarrow \) and \( v(\varphi) = \mathrm{T} \), then \( w(\varphi) = \mathrm{T} \)". Truth values are those of @fd1:def-truth-value.
-
-*Atoms and \( \bot \).* For an atom \( p \) with \( v(p) = \mathrm{T} \), \( w(p) = \mathrm{T} \) by the hypothesis on \( v \) and \( w \). The formula \( \bot \) contains \( \bot \), so \( P(\bot) \) holds vacuously.
-
-*Step for \( \neg \).* \( \neg\varphi \) contains \( \neg \), so \( P(\neg\varphi) \) holds vacuously.
-
-*Step for \( (\varphi \circ \psi) \).* If \( \circ \) is \( \to \) or \( \leftrightarrow \), \( P \) holds vacuously. Otherwise, if \( (\varphi \circ \psi) \) contains none of the four symbols, neither do \( \varphi \) and \( \psi \), whose symbols are among its own, so \( P(\varphi) \) and \( P(\psi) \) apply to them. For \( \circ = \wedge \): \( v(\varphi \wedge \psi) = \mathrm{T} \) gives \( v(\varphi) = v(\psi) = \mathrm{T} \), so \( w(\varphi) = w(\psi) = \mathrm{T} \), and \( w(\varphi \wedge \psi) = \mathrm{T} \). For \( \circ = \vee \): \( v(\varphi) = \mathrm{T} \) or \( v(\psi) = \mathrm{T} \), so \( w(\varphi) = \mathrm{T} \) or \( w(\psi) = \mathrm{T} \), and \( w(\varphi \vee \psi) = \mathrm{T} \).
-
-*The consequence.* Let \( v \) be the all-F valuation and \( w \) the all-T valuation; every atom true under \( v \) (there is none) is true under \( w \). Then \( v(\neg p) = \mathrm{T} \) and \( w(\neg p) = \mathrm{F} \). If \( \varphi \), built with \( \wedge \) and \( \vee \) alone, were equivalent to \( \neg p \), it would have the same value as \( \neg p \) under every valuation: \( v(\varphi) = \mathrm{T} \), hence \( w(\varphi) = \mathrm{T} \) by the first part, against \( w(\varphi) = w(\neg p) = \mathrm{F} \).
-
-This consequence is a special case of @fd1:thm-adequate-connectives (b), which allows \( \to \) as well and looks only at the all-T row; here the \( \wedge \)/\( \vee \) case comes out of the stronger statement that such formulas are monotone in the valuation.
-:::
-
 <!-- dependency ledger
 def-equinumerous (example): f(x) = 2x maps [0, 1] onto [0, 2], y/2 in [0, 1] for y in [0, 2] | R arithmetic and order, school fact; axioms in AN1.1
 prp-equinumerous-properties (claim): (the remark after it and the paragraph after the remark) the union of a set of sets is a set | (W3) of F2.1 §02 (working rule, no label)
@@ -802,7 +740,7 @@ prp-disjoint-union-count (proof): 1 <= k - m <= n for m < k <= m + n; m < m + j 
 prp-subset-finite (proof): {1, ..., n + 1} = {1, ..., n} u {n + 1}; restriction of an injective map is injective | lem-naturals-arithmetic (e) (cited); restriction, F2.6 §01 (no label; def-restriction-extension, F2.6 §03)
 prp-power-set-count (proof): 2^n, 2^(n+1) in N | prp-power-laws (d) (cited)
 prp-power-set-count (proof): (S u {a}) \ {a} = S when a is not in S; U = (U \ {a}) u {a} when a in U | set algebra, F2.1 §02; checked inline
-prp-power-set-count (claim): (the paragraph after it) S -> 1_S is a bijection P(Y) -> {0, 1}^Y with inverse f -> {y : f(y) = 1} | F2.6 §01, the correspondence after exm-function-set-small (prose, no label)
+prp-power-set-count (claim): (the paragraph after it) S -> 1_S is a bijection P(Y) -> {0, 1}^Y with inverse f -> {y : f(y) = 1} | thm-power-set-two-power (F2.6 §03, cited)
 exm-hilbert-hotel (solution): 2n = 2n' implies n = n'; 2n >= 2 for n >= 1 | R arithmetic and order, school fact
 thm-finite-no-proper-copy (claim): (the second warning after exm-hilbert-hotel) x/(1 + x) maps 1/n to 1/(n + 1); y/(1 - y) inverts it; 1/n <= 1/2 for n >= 2 | R arithmetic, school fact; checked inline
 exr-finite-sets-a1 (solution): De Morgan for "not (P and Q)" | F1.2 (DM, derived rule; no label cited)
@@ -817,7 +755,4 @@ exr-finite-sets-c3 (claim): s_v is a bijection with inverse t_v (stated as a fac
 exr-finite-sets-c3 (solution): n-1, n-k, n-1-k in N for k+1 <= n | lem-naturals-arithmetic (c), (d) (cited)
 exr-finite-sets-c3 (solution): n! = (n-1)! n; I(2,3) has 6 elements | def-sum-product (cited); exr-finite-sets-c2 (an exercise cited by an exercise); verify/ch04/exr-finite-sets-c3.py
 exr-finite-sets-c3 (solution): the count moves to any A, B with k and n elements | def-finite, thm-bijection-iff-inverse, thm-composition-injective-surjective (a), prp-composition-associative, def-inverse-function (cited)
-exr-finite-sets-r1 (solution): 4a + 6b = 2(2a + 3b); 2a + 3b in Z; 4*3 + 6*(-2) = 0; 1 = 2*0 + 1; 3n = 3n' gives n = n' | R arithmetic, school fact; prp-integers-closed (a), def-parity, thm-even-or-odd, exm-method-surjectivity, exm-method-injectivity, def-ordered-pair, thm-division-algorithm (cited)
-exr-finite-sets-r2 (solution): y = y * 1; a positive divisor of 2 is at most 2; -y + y = 0; x + (1 - x) = 1; -y in Z | R arithmetic and order, school fact; prp-integers-closed (a) (cited for 1 - x); def-divides (F2.1 §01), fd1:prp-bounded-quantifier-negation, fd1:prp-exists-forall-swap (cited)
-exr-finite-sets-r3 (solution): structural induction; truth values of atoms, not, and, or | fd1:thm-structural-induction, fd1:def-truth-value, fd1:thm-adequate-connectives (cited); the all-F and all-T valuations (F1.3 §04, named after fd1:def-valuation)
 -->

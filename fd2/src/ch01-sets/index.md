@@ -6,7 +6,7 @@ Two questions drive the chapter. The first is a puzzle of Section 1.1: *among an
 
 **What you need.** *Logic and Proof*, Chapters 1–8. From *Logic and Proof*, Chapters 1 and 2: the rules for the connectives and the derived laws used as rules, above all distributivity (@fd1:prp-distributivity), De Morgan's laws (@fd1:prp-de-morgan), an iff as two implications (@fd1:prp-iff-two-implications), the contrapositive (@fd1:prp-contrapositive), vacuous implication (@fd1:prp-vacuous-implication), and derived rules (@fd1:def-derived-rule). From *Logic and Proof*, Chapter 4: induction (@fd1:ax-induction), the standard equivalences (@fd1:prp-standard-equivalences) and completeness (@fd1:thm-completeness). From *Logic and Proof*, Chapters 5 and 6: the rules for "for every" and "there exists", bounded quantifiers (@fd1:def-bounded-quantifier) and their rules (@fd1:prp-bounded-quantifier-rules), the rules for equality (@fd1:def-rules-equality), unique existence (@fd1:def-unique-existence, @fd1:prp-unique-existence-use), and the laws for negating quantifiers. From *Logic and Proof*, Chapter 8: plain-prose proofs, the convention on which steps may be silent, and the catalogue of what is not allowed (@fd1:exm-not-allowed-catalogue). The number sets \( \nN \), \( \nZ \), \( \nQ \), \( \nR \) are used as familiar sets, with their school arithmetic and order.
 
-**Time.** About 20 hours on the core track (all of A, one B and one C per section); about 35 hours for everything.
+**Time.** About 25 hours on the core track (all of A, one B and one C per section); about 35 hours for everything.
 
 ## Roadmap
 

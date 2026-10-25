@@ -1,5 +1,6 @@
 note: Ledger items of labels parked by the fd2 six-chapter re-cut (2026-10-26, fd2/authoring/design/layout-six-chapters.md
-  §2). Verdict history kept; parked_file names the file under fd2/authoring/parked/st/ or fd5/authoring/parked/from-fd2/.
+  §2). Verdict history kept; parked_file names the file under fd2/authoring/parked/st/, fd2/authoring/parked/
+  (ch06-exercises.md) or fd5/authoring/parked/from-fd2/.
 items:
 - key: exm-choice-free-unions
   kind: exm
@@ -2898,3 +2899,419 @@ items:
     evidence: The added remarks are right. Image rules do not apply, and f(A∩C) can be strictly smaller
       than f(A)∩f(C). (f|_A)^{-1}(B) is a preimage.
   parked_file: 04-permutations-and-iteration.md
+- key: exr-infinite-sets-a1
+  kind: exr
+  file: 01-countable-unions-and-choice.md
+  line: 367
+  hash: 0e97f65bc3e1
+  verdicts:
+  - stage: S5a
+    verdict: correct
+    by: refereeA
+    hash: 0e97f65bc3e1
+    date: '2026-10-11'
+    model: claude-opus-5-5
+    evidence: '06:124-131. (b) uses the Quick check, which is in-section and is not an exercise. (c) checked:
+      h(n)=n+1 on N and h(k)=k for k<0 is a bijection Z→Z\{0}. (d) is fine.'
+  - stage: S5b
+    verdict: correct
+    by: refereeB
+    hash: 0e97f65bc3e1
+    date: '2026-10-11'
+    model: claude-opus-5-5
+    evidence: 06:113-132. (a) matches line 20. (b) Both statements are true, and the answer points at
+      the Quick check at line 57, which comes after the warning at line 53. (c) h(n)=n+1 on N and the
+      identity on the negatives is onto Z\{0}. (d) lem-subsets-of-naturals.
+  - stage: S6
+    verdict: correct
+    by: verifier
+    hash: 0e97f65bc3e1
+    date: '2026-10-11'
+    model: claude-opus-5-5
+    evidence: 06:113-132. (a) points to the choice-function line. (b) Both parts are true. (c) For X=ℤ,
+      h(n)=n+1 on ℕ and the identity on negatives, onto ℤ\{0}. (d) No; lem-subsets-of-naturals gives the
+      rule.
+  removed: true
+  parked_file: ch06-exercises.md
+- key: exr-countable-unions-and-choice-b3
+  kind: exr
+  file: 01-countable-unions-and-choice.md
+  line: 439
+  hash: 53644efddc6c
+  verdicts:
+  - stage: S5a
+    verdict: correct
+    by: refereeA
+    hash: 2d094f263bf8
+    date: '2026-10-11'
+    model: claude-opus-5-5
+    evidence: 03:289. D subset of (QxQ)^2 is countable by cor-product-countable (a) twice plus prp-countable-subset.
+      The lines are exactly ell(D), so prp-countable-image applies. No choice is used.
+  - stage: S5b
+    verdict: minor
+    by: refereeB
+    hash: 2d094f263bf8
+    date: '2026-10-11'
+    model: claude-opus-5-5
+    evidence: 03-countable-unions-and-choice.md:289 The local symbols ℓ and D reuse Part 0 notation that
+      NOTATION.md fixes.
+  - stage: S6
+    verdict: correct
+    by: verifier
+    hash: 2d094f263bf8
+    date: '2026-10-11'
+    model: claude-opus-5-5
+    evidence: 03:282-290. D ⊆ (ℚ×ℚ)^2 is countable. ℓ(D) is the set of lines, using the ledgered school-geometry
+      fact that two points lie on exactly one line. The map is a formula, so no choice is used.
+  - stage: S7r
+    verdict: correct
+    by: rereferee
+    hash: 53644efddc6c
+    date: '2026-10-11'
+    model: claude-opus-5-5
+    evidence: 'l is renamed \mathrm{line}, so it no longer clashes with the assignment l of NOTATION.md:148.
+      D is still used as a local letter. Approved text uses D locally in the same way (ch07 03-recursion.md:106,
+      04-relations.md:263, 06-orders.md:341; ch08 02-countable-sets.md:351), so this is established practice
+      and does not break a written rule. The mathematics is correct: D is countable by cor-product-cou'
+  removed: true
+  parked_file: ch06-exercises.md
+- key: exr-infinite-sets-b1
+  kind: exr
+  file: 01-countable-unions-and-choice.md
+  line: 475
+  hash: e0fa7fae747d
+  verdicts:
+  - stage: S5a
+    verdict: correct
+    by: refereeA
+    hash: e0fa7fae747d
+    date: '2026-10-11'
+    model: claude-opus-5-5
+    evidence: '06:142-155. X\F is infinite by prp-disjoint-union-count. The pieces X\(F∪S), F and S are
+      pairwise disjoint (S⊆X\F). Under h, F goes onto {s_0..s_{k-1}} and S onto {s_m: m≥k}, and these
+      image pieces partition X\F. The case k=0 is handled.'
+  - stage: S5b
+    verdict: correct
+    by: refereeB
+    hash: e0fa7fae747d
+    date: '2026-10-11'
+    model: claude-opus-5-5
+    evidence: 06:136-155. The cases are disjoint because S ⊆ X\F. Case 2's images are s_0..s_{k-1} and
+      case 3's are s_{n+k}, so they are disjoint. k=0 is handled. The piecewise-bijection fact is ledgered
+      as inline.
+  - stage: S6
+    verdict: correct
+    by: verifier
+    hash: e0fa7fae747d
+    date: '2026-10-11'
+    model: claude-opus-5-5
+    evidence: '06:136-155. The shift bijection is correct: F goes to s_0..s_{k-1} and s_n goes to s_{n+k}.
+      I simulated it with X=ℕ, F={0,3,7}; it is injective, onto X\F, and misses F. The worked model is
+      the proof of thm-infinite-iff-proper-subset.'
+  removed: true
+  parked_file: ch06-exercises.md
+- key: exr-infinite-sets-b3
+  kind: exr
+  file: 01-countable-unions-and-choice.md
+  line: 510
+  hash: b4e77ffb76ec
+  verdicts:
+  - stage: S5a
+    verdict: minor
+    by: refereeA
+    hash: 3e938f4d7ea4
+    date: '2026-10-11'
+    model: claude-opus-5-5
+    evidence: 06-infinite-sets.md:182 The second example is given as 'another correct answer', but only
+      properties (3) and (5) are checked for it, although the exercise asks to check each property.
+  - stage: S5b
+    verdict: minor
+    by: refereeB
+    hash: 3e938f4d7ea4
+    date: '2026-10-11'
+    model: claude-opus-5-5
+    evidence: '06-infinite-sets.md:182 The second answer does not check property (5): nothing shows that
+      {-n : n in N} is infinite.'
+  - stage: S6
+    verdict: correct
+    by: verifier
+    hash: 3e938f4d7ea4
+    date: '2026-10-11'
+    model: claude-opus-5-5
+    evidence: 06:171-183. The property list is given. X=ℕ, Y=2ℕ checks out, and the odd numbers are infinite
+      by n↦2n+1. The alternative ℝ ⊇ (0,∞) also checks out.
+  - stage: S7r
+    verdict: correct
+    by: rereferee
+    hash: b4e77ffb76ec
+    date: '2026-10-11'
+    model: claude-opus-5-5
+    evidence: '06-infinite-sets.md:186. The second answer now checks every property. (1) and (2): 0 ∉
+      (0,∞). (3): @exm-reals-open-interval, whose solution (05-comparing-cardinalities.md:226) explicitly
+      covers (0,∞). (4) and (5): n↦-n is a bijection from ℕ onto {-n}, so that set is infinite by the
+      composition argument of (5) above. It is contained in (-∞,0] ⊆ ℝ, so @prp-subset-finite shows neither
+      (-∞,0] nor ℝ is'
+  removed: true
+  parked_file: ch06-exercises.md
+- key: exr-infinite-sets-c1
+  kind: exr
+  file: 01-countable-unions-and-choice.md
+  line: 570
+  hash: 2e371266c040
+  verdicts:
+  - stage: S5a
+    verdict: minor
+    by: refereeA
+    hash: 00c60fa76162
+    date: '2026-10-11'
+    model: claude-opus-5-5
+    evidence: 06-infinite-sets.md:194 The recursion is described as having 'base 0', but the starting
+      value is f_0(0)+1.
+  - stage: S5b
+    verdict: minor
+    by: refereeB
+    hash: 00c60fa76162
+    date: '2026-10-11'
+    model: claude-opus-5-5
+    evidence: 06-infinite-sets.md:194 The given half describes the recursion with 'base 0', but the starting
+      value is f_0(0)+1. It also uses ≔ inside an existence claim.
+  - stage: S6
+    verdict: minor
+    by: verifier
+    hash: 00c60fa76162
+    date: '2026-10-11'
+    model: claude-opus-5-5
+    evidence: 06-infinite-sets.md:194 The given first half describes the recursion as having 'base 0',
+      but thm-recursion's starting value here is f_0(0)+1, not 0.
+  - stage: S7r
+    verdict: correct
+    by: rereferee
+    hash: 2e371266c040
+    date: '2026-10-11'
+    model: claude-opus-5-5
+    evidence: '06-infinite-sets.md:198-200. The given half now names @thm-recursion''s data exactly: set
+      ℕ, starting value f_0(0)+1, step (n,x)↦max{x,f_{n+1}(n+1)}+1 from ℕ×ℕ to ℕ. It writes = rather than
+      ≔ for the recursion''s conclusion. f(n+1)=g(n,f(n)) reproduces the displayed formula. All ''base
+      0'' and ≔ findings (S5a, S5b, S6) are resolved. I solved it first: g(n+1) >= g(n)+1, then @thm-induction
+      with base m+'
+  removed: true
+  parked_file: ch06-exercises.md
+- key: exr-chains-and-zorn-a1
+  kind: exr
+  file: 02-chains-and-zorn.md
+  line: 301
+  hash: cabfeb4e1de4
+  verdicts:
+  - stage: S5a
+    verdict: correct
+    by: refereeA
+    hash: cabfeb4e1de4
+    date: '2026-10-25'
+    model: claude-opus-5-5
+    evidence: '01:223-233: listed P has 6 elements (the pair {(2,5),(2,6)} fails C2); prp-greatest-maximal(a)
+      is cited correctly; (d) correct; sidecar passes'
+  - stage: S5b
+    verdict: correct
+    by: refereeB
+    hash: cabfeb4e1de4
+    date: '2026-10-25'
+    model: claude-opus-5-5
+    evidence: 01:209-234 (c) P has 6 elements, enumeration checked by hand (sidecar exists); (a),(b),(d)
+      correct
+  - stage: S6
+    verdict: minor
+    by: verifier
+    hash: cabfeb4e1de4
+    date: '2026-10-25'
+    model: claude-opus-5-5
+    evidence: '01:209-234. (a),(b),(d) agree with my answers. (c): my script lists the same 6 elements
+      of P, the same two maximal elements, and no greatest element. Cross-reference prp-greatest-maximal
+      (a) is valid. The A1 wording is fine; the ''minor'' verdict is only so the item is not marked clean
+      while C1 has an open find-the-error issue (see findings). The math in A1 is correct.'
+  - stage: S8
+    verdict: correct
+    by: coordinator
+    hash: cabfeb4e1de4
+    date: '2026-10-25'
+    evidence: '01:209-234 (a)-(d) rechecked: (c) six partial choice functions for I={1,2}, two maximal,
+      no greatest; sidecar exr-chains-and-zorn-a1.py passes; the C1 issue that held it at minor is closed
+      (c1 correct S7r)'
+  removed: true
+  parked_file: ch06-exercises.md
+- key: exr-chains-and-zorn-b3
+  kind: exr
+  file: 02-chains-and-zorn.md
+  line: 364
+  hash: 9f085a8af0ee
+  verdicts:
+  - stage: S5a
+    verdict: correct
+    by: refereeA
+    hash: 9f085a8af0ee
+    date: '2026-10-25'
+    model: claude-opus-5-5
+    evidence: '01:279: three relations; {(1,b),(2,b)} fails; maximal elements and the injection reading
+      are correct; sidecar passes'
+  - stage: S5b
+    verdict: correct
+    by: refereeB
+    hash: 9f085a8af0ee
+    date: '2026-10-25'
+    model: claude-opus-5-5
+    evidence: 01:278-280 three relations; {(1,b),(2,b)} excluded; maximal two; pointer to 5.2 thm-cardinal-comparability
+      true
+  - stage: S6
+    verdict: correct
+    by: verifier
+    hash: 9f085a8af0ee
+    date: '2026-10-25'
+    model: claude-opus-5-5
+    evidence: 01:272-280. My script finds the same three relations, the same maximal elements {(1,b)}
+      and {(2,b)}, and that each uses up B. The worked model is A1(c) and the quick check at 01:104.
+  removed: true
+  parked_file: ch06-exercises.md
+- key: exr-using-zorn-b1
+  kind: exr
+  file: 02-chains-and-zorn.md
+  line: 402
+  hash: 823458f97403
+  verdicts:
+  - stage: S5a
+    verdict: correct
+    by: refereeA
+    hash: f289265c3c21
+    date: '2026-10-25'
+    model: claude-opus-5-5
+    evidence: 02:237. The chain union stays inside R. The maximality step uses that 'domain' is defined
+      in def-relation (ch01/04:272), and def-function gives the conclusion.
+  - stage: S5b
+    verdict: minor
+    by: refereeB
+    hash: f289265c3c21
+    date: '2026-10-25'
+    model: claude-opus-5-5
+    evidence: 02-using-zorn.md:237 The rule name is typed as literal Unicode instead of the house macro.
+  - stage: S6
+    verdict: correct
+    by: verifier
+    hash: f289265c3c21
+    date: '2026-10-25'
+    model: claude-opus-5-5
+    evidence: 02:222-238. The blank has one reasonable completion, steps (2)-(4) of the template, and
+      the solution supplies it with the single ∃E. The worked model is thm-choice-from-zorn (01:145-155).
+      def-relation defines 'domain' (ch01/04:271ff).
+  - stage: S7r
+    verdict: correct
+    by: rereferee
+    hash: 823458f97403
+    date: '2026-10-25'
+    model: claude-opus-5-5
+    evidence: The solution now writes \( \rulename{\exists E} \), as 01:67 does. The completion is otherwise
+      unchanged.
+  - stage: S7r
+    verdict: correct
+    by: rereferee
+    hash: 823458f97403
+    date: '2026-10-25'
+    model: claude-opus-5-5
+    evidence: 'The only change is typesetting: ∃E is now \rulename{\exists E}. The completion is unchanged:
+      the chain step, Zorn, adding (a_0,b_0) ∈ R, and the graph of f ⊆ R.'
+  removed: true
+  parked_file: ch06-exercises.md
+- key: exr-using-zorn-b3
+  kind: exr
+  file: 02-chains-and-zorn.md
+  line: 435
+  hash: 4586394ac6c2
+  verdicts:
+  - stage: S5a
+    verdict: correct
+    by: refereeA
+    hash: 4586394ac6c2
+    date: '2026-10-25'
+    model: claude-opus-5-5
+    evidence: 02:267-269. The cited ch04/03 A1(d) (totality, :273) and C1(a) (partial order) carry over
+      from ℕ to ℝ unchanged. The containment argument is correct.
+  - stage: S5b
+    verdict: correct
+    by: refereeB
+    hash: 4586394ac6c2
+    date: '2026-10-25'
+    model: claude-opus-5-5
+    evidence: ':267-269: Section 4.3 A1 (d) and C1 (a) exist with those letters (ch04/03-orders.md:253,
+      328) and are about the lex order on ℕ×ℕ. The containment argument is right.'
+  - stage: S6
+    verdict: correct
+    by: verifier
+    hash: 4586394ac6c2
+    date: '2026-10-25'
+    model: claude-opus-5-5
+    evidence: 02:255-270. (a) and (b) agree with my answers. The cited exr-orders-a1 (d) (lexicographic
+      order, totality) and exr-orders-c1 (a) (partial order) exist with those letters (ch04/03:253,328).
+      The worked model is exm-divisibility-linear-extension.
+  removed: true
+  parked_file: ch06-exercises.md
+- key: exr-using-zorn-r3
+  kind: exr
+  file: 02-chains-and-zorn.md
+  line: 543
+  hash: 793fd5af0fb5
+  verdicts:
+  - stage: S5a
+    verdict: correct
+    by: refereeA
+    hash: a6b795c4081a
+    date: '2026-10-25'
+    model: claude-opus-5-5
+    evidence: 02:365-369. Optional item. The cited 'second warning of Section 5.1' (01:199) and 4.3's
+      maximal-not-greatest example (ch04/03:154-157) exist. The two bases of ℝ^2 are correct.
+  - stage: S5b
+    verdict: minor
+    by: refereeB
+    hash: a6b795c4081a
+    date: '2026-10-25'
+    model: claude-opus-5-5
+    evidence: 02-using-zorn.md:360 R problem texts name their source chapter.
+  - stage: S6
+    verdict: minor
+    by: verifier
+    hash: a6b795c4081a
+    date: '2026-10-25'
+    model: claude-opus-5-5
+    evidence: 02-using-zorn.md:360 The R3 problem text names its source chapter, and the solution does
+      not name the source with @ref.
+  - stage: S8
+    verdict: minor
+    by: seam
+    hash: a6b795c4081a
+    date: '2026-10-25'
+    model: claude-opus-5-5
+    evidence: 02-using-zorn.md:360 problem text names its source chapter ('Section 4.3 showed …'). This
+      breaks STYLE §11.5
+  - stage: S7r
+    verdict: correct
+    by: rereferee
+    hash: 50fea90d00f8
+    date: '2026-10-25'
+    model: claude-opus-5-5
+    evidence: (c) states the fact without naming a source. The solution cites @exm-maximal-not-greatest
+      (03-orders.md:156), which is about maximal elements that are not greatest. The problem text has
+      no remaining Section or Chapter references.
+  - stage: S7r
+    verdict: correct
+    by: rereferee
+    hash: 50fea90d00f8
+    date: '2026-10-25'
+    model: claude-opus-5-5
+    evidence: (c) no longer names Section 4.3 in the problem; the solution cites @exm-maximal-not-greatest.
+      The two bases of ℝ^2 are valid and incomparable. (a) and (b) are unchanged and correct.
+  - stage: S8
+    verdict: correct
+    by: coordinator
+    hash: 793fd5af0fb5
+    date: '2026-10-25'
+    evidence: 02:382 now 'This is the point of @exm-maximal-not-greatest' (label is an example); (a),(b)
+      unchanged; (c) {(1,0),(1,1)} and {(2,0),(0,3)} both bases of R^2 (det 1, 6), neither contains the
+      other
+  removed: true
+  parked_file: ch06-exercises.md
