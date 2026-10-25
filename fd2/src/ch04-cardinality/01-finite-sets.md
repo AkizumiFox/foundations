@@ -799,7 +799,7 @@ cor-pigeonhole-finite-sets (example): (the three-integers paragraph) a + b = 2(q
 exm-five-lattice-points (solution): remainders r, s on division by 2 lie in {0, 1} | thm-division-algorithm, prp-integers-closed (b), lem-naturals-arithmetic (e) (cited)
 cor-finite-size-unique (proof): trichotomy of < on N | R order, school fact
 prp-disjoint-union-count (proof): 1 <= k - m <= n for m < k <= m + n; m < m + j <= m + n | R order, school fact; lem-naturals-arithmetic (d), (e) (cited)
-prp-subset-finite (proof): {1, ..., n + 1} = {1, ..., n} u {n + 1}; restriction of an injective map is injective | lem-naturals-arithmetic (e) (cited); restriction, F2.6 §02 (no label)
+prp-subset-finite (proof): {1, ..., n + 1} = {1, ..., n} u {n + 1}; restriction of an injective map is injective | lem-naturals-arithmetic (e) (cited); restriction, F2.6 §01 (no label; def-restriction-extension, F2.6 §03)
 prp-power-set-count (proof): 2^n, 2^(n+1) in N | prp-power-laws (d) (cited)
 prp-power-set-count (proof): (S u {a}) \ {a} = S when a is not in S; U = (U \ {a}) u {a} when a in U | set algebra, F2.1 §02; checked inline
 prp-power-set-count (claim): (the paragraph after it) S -> 1_S is a bijection P(Y) -> {0, 1}^Y with inverse f -> {y : f(y) = 1} | F2.6 §01, the correspondence after exm-function-set-small (prose, no label)

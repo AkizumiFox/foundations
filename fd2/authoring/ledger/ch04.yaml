@@ -1269,8 +1269,8 @@ items:
 - key: exr-restriction-extension-and-gluing-c1
   kind: exr
   file: 01-finite-sets.md
-  line: 704
-  hash: 2d8847b7b265
+  line: 706
+  hash: b5d036cb34d4
   verdicts:
   - stage: S5a
     verdict: correct
@@ -1365,7 +1365,7 @@ items:
 - key: exr-finite-sets-r1
   kind: exr
   file: 01-finite-sets.md
-  line: 728
+  line: 730
   hash: 30c0aeac08f1
   verdicts:
   - stage: S8
@@ -1386,10 +1386,20 @@ items:
     evidence: 01-finite-sets.md:726 The re-cut moved old 2.5 into 4.1 word for word, and its R. Review
       group (exr-finite-sets-r1 to r3) came along. 4.1 is not the last section of Chapter 4, so this breaks
       STYLE §11.5 ('last section only'). It leaves Chapter 4 with two R groups and Chapter 3 with none.
+  - stage: S8
+    verdict: correct
+    by: coordinator
+    hash: 30c0aeac08f1
+    date: '2026-10-26'
+    model: claude-opus-5-5
+    evidence: '01-finite-sets.md:730-747: math rechecked: 4a+6b=2(2a+3b) even, 1 odd, thm-even-or-odd
+      excludes both, so not onto; g(3,-2)=0=g(0,0), not injective; k injective; 3n+1=0 against uniqueness
+      in thm-division-algorithm. Seam minor is placement only (R group in 4.1, STYLE 11.5): needs a ch03
+      move, logged as shared-todo F027, not a defect of this item.'
 - key: exr-finite-sets-r2
   kind: exr
   file: 01-finite-sets.md
-  line: 745
+  line: 747
   hash: f74bde38a3da
   verdicts:
   - stage: S8
@@ -1404,7 +1414,7 @@ items:
 - key: exr-finite-sets-r3
   kind: exr
   file: 01-finite-sets.md
-  line: 768
+  line: 770
   hash: ba2146dd6d29
   verdicts:
   - stage: S8
@@ -2912,7 +2922,7 @@ items:
   kind: exr
   file: 03-diagonal-arguments.md
   line: 339
-  hash: e5dddffc34d6
+  hash: eee39c84aa4b
   verdicts:
   - stage: S5a
     verdict: correct
@@ -3023,6 +3033,18 @@ items:
       in the division algorithm. F is finite as a subset of {0..p-1} (prp-subset-finite, 01:300). (b):
       the even/odd split is justified by thm-even-or-odd, as in prp-union-two-countable. (d): N is infinite
       by exm-hilbert-hotel (01:414). The math is sound. The ledger-line chapter tags are wrong (see new_problems).'
+  - stage: S8
+    verdict: correct
+    by: coordinator
+    hash: eee39c84aa4b
+    date: '2026-10-26'
+    model: claude-opus-5-5
+    evidence: '03-diagonal-arguments.md:354-362: (a) {0..p-1} has p elements via k->k-1 from {1..p} (def-finite),
+      then prp-subset-finite; periodicity by uniqueness in thm-division-algorithm; (b) unique m in N and
+      exclusivity now cited from the claim in prp-union-two-countable''s proof (02-countable-sets.md:188-194,
+      thm-division-algorithm divisor 2), not thm-even-or-odd; ledger lines :454-455 retagged (prp-subset-finite,
+      exm-hilbert-hotel F2.3 §01; def-finite added; thm-division-algorithm F2.2 §02). (c)-(e) rechecked.
+      Sidecar passes.'
 - key: exr-diagonal-arguments-c1
   kind: exr
   file: 03-diagonal-arguments.md
@@ -3216,7 +3238,7 @@ items:
   kind: check
   file: 04-comparing-cardinalities.md
   line: 68
-  hash: 69e125c73130
+  hash: 8084fef14c4e
   verdicts:
   - stage: S5a
     verdict: correct
@@ -4215,7 +4237,7 @@ items:
   kind: exm
   file: 05-cardinal-arithmetic.md
   line: 234
-  hash: e274a79d4caf
+  hash: 1302768dd363
   verdicts:
   - stage: S5a
     verdict: correct
@@ -4512,7 +4534,7 @@ items:
   kind: proof
   file: 05-cardinal-arithmetic.md
   line: 377
-  hash: 56411c4aed23
+  hash: e95fdb871b11
   verdicts:
   - stage: S5a
     verdict: correct
@@ -4849,7 +4871,7 @@ items:
   kind: exr
   file: 05-cardinal-arithmetic.md
   line: 548
-  hash: 7ea632ddba4d
+  hash: 8e3a832ccd41
   verdicts:
   - stage: S5a
     verdict: minor
@@ -4943,7 +4965,7 @@ items:
   kind: exr
   file: 05-cardinal-arithmetic.md
   line: 612
-  hash: 90211621d42d
+  hash: 1085a1b23024
   verdicts:
   - stage: S5a
     verdict: correct
@@ -5011,80 +5033,22 @@ items:
     evidence: '''What survives'' now points to exr-countable-sets-c1 for the work. The injection b ->
       {k : b(k)=1} into the finite subsets, followed by an injection into N, is correct. The marking line
       for (N14) no longer requires citing the label. Points total 2+3+2+2+1 = 10.'
-- key: exr-restriction-extension-and-gluing-c3
+- key: exr-cardinal-arithmetic-c3
   kind: exr
   file: 05-cardinal-arithmetic.md
   line: 638
-  hash: c2991b75b0cd
+  hash: 03944dc7d3bb
   verdicts:
-  - stage: S5a
+  - stage: S8
     verdict: correct
-    by: refereeA
-    hash: d30670bdf5ab
+    by: coordinator
+    hash: 03944dc7d3bb
     date: '2026-10-26'
     model: claude-opus-5-5
-    evidence: 'L432-434: (a) 2t=1 has no solution in {0,1}; (b) ind_D=d since d is 0-1 valued; D matches
-      Cantor''s set in Section 3.3 (ch03/03:146)'
-  - stage: S5b
-    verdict: correct
-    by: refereeB
-    hash: d30670bdf5ab
-    date: '2026-10-26'
-    model: claude-opus-5-5
-    evidence: 01:432-436 2g(a)(a)=1 impossible; ind_D=d; D matches 03-diagonal-arguments.md:163; closing
-      sentence about cor-cantor-two-power accurate
-  - stage: S6
-    verdict: minor
-    by: verifier
-    hash: d30670bdf5ab
-    date: '2026-10-26'
-    model: claude-opus-5-5
-    evidence: 01:420-437. (a) 2t=1 has no solution in {0,1}, confirmed by script. (b) ind_D=d and D=f(a)
-      gives g(a)=d, so f is not surjective, which matches thm-cantor (3.3:146, 'no surjection'). The hint
-      names the tool without doing the argument. The full-proof C item has no marking scheme; see the
-      findings.
-  - stage: S7r
-    verdict: correct
-    by: rereferee
-    hash: 457472c44768
-    date: '2026-10-26'
-    model: claude-opus-5-5
-    evidence: The 1/4/4/1 scheme matches the steps of the solution in (a) and (b), including 2g(a)(a)=1
-      and ind_D = d.
-  - stage: S7r
-    verdict: correct
-    by: rereferee
-    hash: 457472c44768
-    date: '2026-10-26'
-    model: claude-opus-5-5
-    evidence: Marking scheme added. d=g(a) gives g(a)(a)=1-g(a)(a), so 2g(a)(a)=1, which is impossible
-      in {0,1}. Rechecked.
-  - stage: S5a
-    verdict: correct
-    by: refereeA
-    hash: c2991b75b0cd
-    date: '2026-10-26'
-    model: claude-opus-5-5
-    evidence: '05:649-661. (a): d=g(a) gives 2g(a)(a)=1, impossible. (b): ind_D=d; D=f(a) would give g(a)=d.
-      thm-cantor (4.3) comes earlier. The label slug is kept on purpose (layout-six-chapters.md:15).'
-  - stage: S5b
-    verdict: correct
-    by: refereeB
-    hash: c2991b75b0cd
-    date: '2026-10-26'
-    model: claude-opus-5-5
-    evidence: 05:638-661. 2g(a)(a)=1 has no solution in {0,1}; ind_D=d; D is Cantor's set. Keeping the
-      label is allowed by layout-six-chapters.md:15. Moved per layout :213. The closing meta-claim about
-      cor-cantor-two-power is true. Points sum to 10.
-  - stage: S6
-    verdict: minor
-    by: verifier
-    hash: c2991b75b0cd
-    date: '2026-10-26'
-    model: claude-opus-5-5
-    evidence: 05-cardinal-arithmetic.md:638 This exercise in Section 4.5 carries a label with Section
-      2.3's slug. It looks like a leftover from the re-cut and breaks the STYLE rule that exercise labels
-      use the section's own slug.
+    evidence: '05-cardinal-arithmetic.md:638-660: relabelled from exr-restriction-extension-and-gluing-c3,
+      text unchanged; (a) d=g(a) gives 2g(a)(a)=1, impossible in {0,1}; (b) ind_D=d since d is 0-1 valued,
+      g(a)=ind_D=d contradicts (a); D={x: x notin f(x)} matches the thm-cantor proof in 4.3; ledger line
+      :756 present.'
 - key: exr-infinite-sets-r1
   kind: exr
   file: 05-cardinal-arithmetic.md

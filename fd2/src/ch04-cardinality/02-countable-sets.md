@@ -574,7 +574,7 @@ def-countable (claim): between rationals p < q lies (p + q)/2, a rational | Q ar
 def-countable (example): n -> n^2 and n -> 2n map N into N | lem-naturals-arithmetic (b) (cited elsewhere in the section)
 lem-subsets-of-naturals (proof): trichotomy; s_m <= s_n < s_(n+1) | R order, school fact
 thm-countable-characterizations (proof): a set with 0 elements is empty | F2.3 §01, examples after def-finite (inline there)
-prp-countable-subset (proof): a restriction of an injective function is injective | restriction, F2.6 §02 (no label)
+prp-countable-subset (proof): a restriction of an injective function is injective | restriction, F2.6 §01 (no label; def-restriction-extension, F2.6 §03)
 prp-union-two-countable (claim): 2q + r <= -2 + 1 < 0 for q <= -1, r <= 1 | R arithmetic and order, school fact
 prp-union-two-countable (claim): "finitely many countable sets" by induction on the number of sets | inline sentence after the proof; nothing depends on it
 thm-product-countable (proof): 3^k * 3 = 6j + 3 = 2(3j + 1) + 1; canceling a positive factor | R arithmetic, school fact
