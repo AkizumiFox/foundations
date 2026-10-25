@@ -1,4 +1,4 @@
-"""exr-models-r3 (Section 4.11): the printed derivation has 18 lines, no RAA, and its sequent
+"""exr-models-r3 (Section 7.5; moved from 7.2): the printed derivation has 18 lines, no RAA, and its sequent
 has no counter-model on structures of up to 3 elements."""
 import re
 import sys
@@ -6,7 +6,7 @@ sys.path.insert(0, "verify/ch07")
 from _fo_models import structure, is_counter_model, all_subsets, P, ALL, EX, NOT, AND, IMP
 
 QUOTED = {"lines": 18}
-src = open("src/ch07-models-and-theories/02-counter-models.md").read()
+src = open("src/ch07-models-and-theories/05-definability-and-isomorphism.md").read()
 blk = src.split("{#exr-models-r3}")[1].split("{#exr-models-r4}")[0]
 nd = blk.split(r"\begin{nd}")[1].split(r"\end{nd}")[0]
 assert len(re.findall(r"\\(hypo|have)\s*\{", nd)) == QUOTED["lines"]

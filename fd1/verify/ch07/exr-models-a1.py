@@ -1,6 +1,6 @@
 """exr-models-a1 (Section 4.11): the truth table of four sentences in (N,<), (Z,<), (Q,<),
-checked on windows with the witnesses the solution names (d + 1, d - 1, 0, (d + e)/2), plus the
-{1, 2, 3} fact used in (e)."""
+checked on windows with the witnesses the solution names (d + 1, d - 1, 0, (d + e)/2); (e) reads
+sentence (b) off the table: true in N, false in Z."""
 import sys
 from fractions import Fraction as F
 sys.path.insert(0, "verify/ch07")
@@ -27,12 +27,14 @@ for d in Q[::7]:
             assert isinstance(m, F) and d < m < e
 # (d) no least element: fails in N at 0; holds in Z, Q with d - 1
 assert not any(e < 0 for e in N)
-# (e) forall x exists y (x < y) false in {1, 2, 3}
-D3 = [1, 2, 3]
-M3 = structure(D3, pred={"<": {(a, b) for a in D3 for b in D3 if a < b}})
-assert not sat(ALL("x", EX("y", P("<", "x", "y"))), M3, {})
+# (e) sentence (b) is true in N and false in Z (checked with the witnesses above, and on finite
+#     windows as a sanity check: a window of N has least element 0)
+b = EX("x", ALL("y", ("not", P("<", "y", "x"))))
+Nw = list(range(0, 20))
+assert sat(b, structure(Nw, pred={"<": {(a, c) for a in Nw for c in Nw if a < c}}), {})
 tab = {"a": (True, True, True), "b": (True, False, False), "c": (False, False, True),
        "d": (False, True, True)}
+assert tab["b"][0] and not tab["b"][1]
 for k, v in tab.items():
     assert QUOTED["table"][k] == tuple("true" if b else "false" for b in v)
 print("exr-models-a1: all quoted values check")

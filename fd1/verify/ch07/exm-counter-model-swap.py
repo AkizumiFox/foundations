@@ -1,4 +1,5 @@
-"""exm-counter-model-swap and the counter-models after it (Section 4.11): the swap on Z (window)
+"""Figure 7.2-M (the three pictures and their two Quick checks), exm-counter-model-swap and the
+counter-models after it (Section 7.2): the swap on Z (window)
 and on {a, b}; no one-element counter-model; converses of prp-exists-and and of the forall/or
 law; exists x P(x) |/= P(c); P(x0) |/= forall x P(x) in Z with l(x0) = 2; the strict-order models
 Z and Q (windows) and the one-element non-model; the Quick check model for
@@ -67,5 +68,18 @@ for R in all_relations(["a"], 2):
 # Quick check: D = {a, b}, P = {a}, Q = empty
 Mq = structure(["a", "b"], pred={"P": {("a",)}, "Q": set()})
 assert is_counter_model([IMP(ALL("x", Px), ALL("x", Qx))], ALL("x", IMP(Px, Qx)), Mq)
+# Figure 7.2-M, panel (B): R is the whole order >, the transitive closure of the drawn arrows
+# n + 1 -> n; on a window of Z the closure of the drawn arrows is exactly >.
+Wb = list(range(-12, 13))
+arrows = {(n + 1, n) for n in Wb if n + 1 in Wb}
+clo = set(arrows)
+while True:
+    new = {(x, z) for (x, y) in clo for (y2, z) in clo if y == y2} - clo
+    if not new:
+        break
+    clo |= new
+assert clo == {(x, y) for x in Wb for y in Wb if x > y}
+# panel (C) Quick check: (S7) at d = b, (S1) b in P
+assert sat(P("P", "x"), Mc, {"x": "b"}) and sat(EX("x", P("P", "x")), Mc, {})
 assert QUOTED["elements needed"] == 2
 print("exm-counter-model-swap: all quoted values check")

@@ -1,7 +1,9 @@
 """def-satisfaction and the text around it (Section 4.11): term values in the arithmetic
 structure on R; the trace of forall x exists y (x < y) in N and in {1, 2, 3}; forall y (x <= y)
 in N under l(x) = 0 and l(x) = 1; the one-element structure; the Quick check on
-forall x exists y (y * y = x) in R, [0, oo), C."""
+forall x exists y (y * y = x) in R, [0, oo), C. Section 7.1 additions: Figure F's two structures
+and its Quick check; the game Quick check; A2 (g); the drinker sentence on every structure with
+one one-place predicate on 1-4 elements."""
 import cmath
 import itertools
 import sys
@@ -59,3 +61,52 @@ for z in [complex(a, b) for a, b in itertools.product(range(-3, 4), repeat=2)]:
     w = cmath.sqrt(z)
     assert abs(w * w - z) < 1e-9
 print("def-satisfaction: all quoted values check")
+
+# --- Section 7.1 additions -------------------------------------------------------------
+from _fo_models import IMP, AND, OR, all_subsets
+
+# Figure F, left: D = {a, b, c}, P = {a}, R = {(a,b), (b,b), (c,a)}
+FL = structure("abc", pred={"P": {("a",)}, "R": {("a", "b"), ("b", "b"), ("c", "a")}})
+assert sat(ALL("x", EX("y", P("R", "x", "y"))), FL, {})           # every dot has an arrow out
+assert not sat(EX("y", ALL("x", P("R", "x", "y"))), FL, {})       # no dot receives from all three
+recv = {e: {d for d in "abc" if (d, e) in FL["pred"]["R"]} for e in "abc"}
+assert recv == {"a": {"c"}, "b": {"a", "b"}, "c": set()}           # b none from c; a none from a, b; c none
+# A2 (g): forall x (P(x) -> exists y R(y, x)) true, via c -> a
+assert sat(ALL("x", IMP(P("P", "x"), EX("y", P("R", "y", "x")))), FL, {})
+
+# Figure F, right: divisibility on {1, 2, 3, 6}; the Hasse lines are exactly the covering pairs
+DR = [1, 2, 3, 6]
+div = {(x, y) for x in DR for y in DR if y % x == 0}
+cover = {(x, y) for (x, y) in div if x != y and not any(z not in (x, y) and (x, z) in div
+                                                      and (z, y) in div for z in DR)}
+assert cover == {(1, 2), (1, 3), (2, 6), (3, 6)}
+assert (1, 6) in div and (1, 6) not in cover                       # 1 <= 6 by chaining 1, 2, 6
+# it is a partial order in the text's sense
+assert all((x, x) in div for x in DR)
+assert all((x, z) in div for (x, y) in div for (y2, z) in div if y == y2)
+assert not any((x, y) in div and (y, x) in div and x != y for x in DR for y in DR)
+
+# game Quick check: exists y forall x (x <= y)
+s_game = EX("y", ALL("x", P("<=", "x", "y")))
+D3 = [1, 2, 3]
+assert sat(s_game, structure(D3, pred={"<=": le(D3)}), {})
+assert all(x <= 3 for x in D3)
+# on N: whatever e the defender names, the challenger's x = e + 1 has not (x <= e)
+assert all(not (e + 1 <= e) for e in range(0, 10001))
+# the trace's game on {1,2,3}: the challenge d = 3 has no answer
+assert [d for d in D3 if not any(d < e for e in D3)] == [3]
+
+# drinker sentence exists x (P(x) -> forall y P(y)) true in every structure on 1-4 elements
+drinker = EX("x", IMP(P("P", "x"), ALL("y", P("P", "y"))))
+for n in range(1, 5):
+    D = list(range(n))
+    for Ps in all_subsets(D):
+        M = structure(D, pred={"P": Ps})
+        assert sat(drinker, M, {})
+        # the witness the two cases name: any d if P = D, else a d outside P
+        if len(Ps) == n:
+            assert all(sat(IMP(P("P", "x"), ALL("y", P("P", "y"))), M, {"x": d}) for d in D)
+        else:
+            d = next(d for d in D if (d,) not in Ps)
+            assert sat(IMP(P("P", "x"), ALL("y", P("P", "y"))), M, {"x": d})
+print("def-satisfaction (7.1 additions): all quoted values check")

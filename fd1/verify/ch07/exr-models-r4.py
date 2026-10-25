@@ -1,4 +1,4 @@
-"""exr-models-r4 (Section 4.11): in (N, <) the hypothesis forall x exists y (x < y) holds
+"""exr-models-r4 (Section 7.5; moved from 7.2): in (N, <) the hypothesis forall x exists y (x < y) holds
 (witness d + 1) and the conclusion exists y forall x (x < y) fails (at x = e); window check.
 The propositional skeleton p -> q is refutable while forall x P -> exists x P is valid on small
 structures (the look-alike)."""

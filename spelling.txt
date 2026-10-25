@@ -384,3 +384,26 @@ calc
 subcontraries
 propositionally
 instantiations
+# fd1 Chapter 7 (F1.6, models and theories), ch07-deepen S3 2026-10-25
+Hasse
+drinker
+Turing
+uninterpreted
+alikes
+antichain
+Refl
+Irrefl
+Antisym
+Tri
+Conn
+Assoc
+Inv
+Comm
+Löwenheim
+Skolem
+definable
+undefinable
+monadic
+undecidability
+Definability
+Dually
