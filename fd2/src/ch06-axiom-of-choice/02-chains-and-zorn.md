@@ -157,7 +157,7 @@ Let \( P \) be the set of \( S \subseteq X \) such that for all \( s, t \in S \)
 Suppose some class \( [x] \) (@def-equivalence-class) contains no element of \( M \). Then \( x \notin M \), since \( x \in [x] \) by (Eq1). And \( M \cup \{x\} \in P \): let \( s, t \in M \cup \{x\} \) with \( s \sim t \). If both lie in \( M \), then \( s = t \). If \( s = x \) and \( t \in M \), then \( t \sim x \) by (Eq2), so \( t \in [x] \cap M \), which is impossible; the case \( t = x \), \( s \in M \) is the same with the letters exchanged; and if \( s = t = x \), there is nothing to show. So \( M \subsetneq M \cup \{x\} \) in \( P \), contradicting maximality. Hence \( M \) meets every class, and by the condition defining \( P \) in at most one element: \( S \coloneqq M \) works.
 :::
 
-The axiom of choice gives the same set in one line, by choosing one element from each class; the template's advantage shows when the pieces interact, as in the next subsection. On \( \nR \), the relation \( x \sim y \iff x - y \in \nQ \) is an equivalence relation (Section 5.2, after @exm-reals-mod-integers). A set of representatives for it inside \( [0, 1] \) is a set of real numbers that *Measure and Integration*, Chapter 1 shows has no length, and no formula for one is known.
+The axiom of choice gives the same set in one line, by choosing one element from each class; the template's advantage shows when the pieces interact, as in the next subsection. On \( \nR \), the relation \( x \sim y \iff x - y \in \nQ \) is an equivalence relation (Section 5.2, after @exm-reals-mod-integers). A set of representatives for it inside \( [0, 1] \) is a set of real numbers that *Measure, Integration, and Real Analysis*, Chapter 2 shows has no length, and no formula for one is known.
 
 ::: {.check}
 Let \( X = \nZ \) and \( m \sim n \iff m - n \) is even. Describe the partial objects of @exm-zorn-representatives that have two elements, and the maximal ones.
@@ -303,7 +303,7 @@ Section 6.3 runs the template three times more: on the matching that opened this
 :::
 
 ::: {.solution}
-(a) \( x \) is one element of one non-empty set, the missed class, named inside the proof by contradiction: one \( \rulename{\exists E} \) (@fd1:def-rules-existential). Every other object is defined outright: \( P \) by specification, the union of a chain, and the maximal \( M \), which @thm-zorn supplies in one step. The one point per class is picked by Zorn's lemma, as \( M \); the proof itself picks nothing more.
+(a) \( x \) is one element of one non-empty set, the missed class, named inside the proof by contradiction: one \( \rulename{\exists E} \) (@fd1:def-rules-existential). \( P \) is defined by specification and the union of a chain is defined outright; the maximal \( M \) is named by one \( \rulename{\exists E} \) from the conclusion of @thm-zorn. The one point per class is picked by Zorn's lemma, as \( M \); the proof itself picks nothing more.
 
 (b) A member of \( P \) meets the one class at most once, so it has at most one element, and every set with at most one element qualifies:
 \[
@@ -313,7 +313,7 @@ The maximal elements are the three singletons. There is no greatest element: a g
 
 (c) The pair \( (a, b) \) is new, since \( a \preceq a \) and \( b \preceq b \). With \( (b, a) \in {\preceq} \subseteq R \), (PO2) for \( R \) would give \( a = b \), which is false; so \( R \) is not a partial order.
 
-(d) Take two points \( a \ne b \) not in \( \nN \), and on \( \nN \cup \{a, b\} \) let \( \preceq \) consist of the usual order \( \le \) of \( \nN \), the pairs \( n \preceq a \) and \( n \preceq b \) for all \( n \in \nN \), and \( a \preceq a \), \( b \preceq b \). (PO1)–(PO3) hold: they hold inside \( \nN \), and every other pair ends at \( a \) or \( b \) (for instance \( n \le m \) and \( m \preceq a \) give \( n \preceq a \)). \( \nN \) is an infinite chain. A non-empty chain containing \( a \) does not contain \( b \), since the two are incomparable, so \( a \) bounds it; likewise for \( b \); and a chain inside \( \nN \) is bounded by \( a \). The maximal elements are \( a \) and \( b \); no \( n \) is maximal, since \( n \preceq n + 1 \) and \( n \ne n + 1 \).
+(d) Take \( a \coloneqq -1 \) and \( b \coloneqq -2 \), integers not in \( \nN \), and on \( \nN \cup \{a, b\} \) let \( \preceq \) consist of the usual order \( \le \) of \( \nN \), the pairs \( n \preceq a \) and \( n \preceq b \) for all \( n \in \nN \), and \( a \preceq a \), \( b \preceq b \). (PO1)–(PO3) hold: they hold inside \( \nN \), and every other pair ends at \( a \) or \( b \) (for instance \( n \le m \) and \( m \preceq a \) give \( n \preceq a \)). \( \nN \) is an infinite chain. A non-empty chain containing \( a \) does not contain \( b \), since the two are incomparable, so \( a \) bounds it; likewise for \( b \); and a chain inside \( \nN \) is bounded by \( a \). The maximal elements are \( a \) and \( b \); no \( n \) is maximal, since \( n \preceq n + 1 \) and \( n \ne n + 1 \).
 :::
 
 ### B. Practice
@@ -369,13 +369,13 @@ Prove each true statement and refute each false one.
 :::
 
 ::: {.solution}
-(a) False. Take \( P = \{ \{1\}, \{2\} \} \) under \( \subseteq \). Its chains are \( \emptyset \), \( \{\{1\}\} \) and \( \{\{2\}\} \), each with an upper bound in \( P \). But \( P \) has no greatest element, since \( \{1\} \) and \( \{2\} \) are incomparable.
+(a) False. Take \( P = \{ \{1\}, \{2\} \} \) under \( \subseteq \). Its chains are \( \emptyset \) (any element of \( P \) bounds it, @def-order-bounds), \( \{\{1\}\} \) and \( \{\{2\}\} \), each with an upper bound in \( P \). But \( P \) has no greatest element, since \( \{1\} \) and \( \{2\} \) are incomparable.
 
 (b) True. Let \( P \) be non-empty and finite, and let \( C \) be a non-empty chain of \( P \). Then \( C \) is finite (@prp-subset-finite); list it as \( x_1, \dots, x_n \) with \( n \ge 1 \). By @lem-chain-union (a), one \( x_k \) is above all of them, an upper bound of \( C \) in \( P \). By @thm-zorn, \( P \) has a maximal element. (Section 5.3, Exercise R4 proves this without Zorn's lemma, by induction.)
 
 (c) False. The set \( E \) of even numbers and the set \( O \) of odd numbers both contain no two consecutive numbers. A greatest element \( G \) would contain \( E \) and \( O \), so \( 0, 1 \in G \), which are consecutive. (In fact \( E \) and \( O \) are both maximal: adding any \( n \notin E \) to \( E \) puts \( n \) and \( n + 1 \) in it (\( n \) is odd by @thm-even-or-odd, so \( n + 1 \) is even), and adding any \( n \notin O \) to \( O \) does the same. So Zorn's lemma, if applied here, gives a maximal element, never a greatest one, as the warning after @thm-zorn says.)
 
-(d) True. Let \( p \in P \), and let \( Q \coloneqq \{ q \in P : p \preceq q \} \), ordered by \( \preceq \); then \( p \in Q \). A non-empty chain \( \sK \) of \( Q \) is a chain of \( P \), so it has an upper bound \( u \in P \); for any \( c \in \sK \), \( p \preceq c \preceq u \), so \( u \in Q \) by (PO3). By @thm-zorn, \( Q \) has a maximal element \( m \), and \( p \preceq m \). If \( m \prec q \) for some \( q \in P \), then \( p \preceq q \) by (PO3), so \( q \in Q \), against the maximality of \( m \) in \( Q \). So \( m \) is maximal in \( P \).
+(d) True. Let \( p \in P \), and let \( Q \coloneqq \{ q \in P : p \preceq q \} \), ordered by \( \preceq \); then \( p \in Q \). A non-empty chain \( C \) of \( Q \) is a chain of \( P \), so it has an upper bound \( u \in P \); for any \( c \in C \), \( p \preceq c \preceq u \), so \( u \in Q \) by (PO3). By @thm-zorn, \( Q \) has a maximal element \( m \), and \( p \preceq m \). If \( m \prec q \) for some \( q \in P \), then \( p \preceq q \) by (PO3), so \( q \in Q \), against the maximality of \( m \) in \( Q \). So \( m \) is maximal in \( P \).
 
 (e) False. Let \( C \subseteq \nR \) be countable. Then \( C \ne \nR \), since \( \nR \) is uncountable (@thm-reals-uncountable-decimal); for \( x \in \nR \setminus C \), the set \( C \cup \{x\} \) is countable (@prp-union-two-countable) and strictly larger. So no countable set is maximal. (By the contrapositive of Zorn's lemma, some non-empty chain of countable sets has no countable upper bound; the answer does not need one.)
 :::
@@ -392,7 +392,7 @@ Prove each true statement and refute each false one.
 ::: {.solution}
 (a) \( \emptyset, \{1\}, \{2\}, \{3\}, \{1, 2\}, \{1, 3\}, \{2, 3\}, \{1, 2, 3\} \). The list is arranged by the number of elements. If \( A \subsetneq B \), then \( A \) has fewer elements than \( B \) (@prp-subset-finite), so \( A \) comes in an earlier block of the list.
 
-(b) Two. The empty set must come first, since \( \emptyset \subseteq Y \) for every \( Y \), and \( \{1, 2\} \) last, since every \( Y \subseteq \{1, 2\} \). The sets \( \{1\} \) and \( \{2\} \) are incomparable under \( \subseteq \), so they may come in either order, and both orders work.
+(b) Two. The empty set must come first, since \( \emptyset \subseteq Y \) for every \( Y \), and \( \{1, 2\} \) last, since every \( Y \subseteq \{1, 2\} \). The sets \( \{1\} \) and \( \{2\} \) are incomparable under \( \subseteq \), so they may come in either order. In each list \( \emptyset \) comes first and \( \{1, 2\} \) last, so every pair of \( \subseteq \) (the pairs \( (\emptyset, Y) \), \( (Y, \{1, 2\}) \) and \( (Y, Y) \)) appears in list order. A list of the four sets defines a total order, and different lists give different orders, so there are exactly two.
 :::
 
 ### C. Going deeper
@@ -410,12 +410,12 @@ Is the conclusion true? Does the argument prove it?
 ::: {.solution}
 The conclusion is true: it is Exercise B1.
 
-The argument does not prove it. It never checks that \( \bigcup \sK \) **is a chain**, that is, that it lies in \( P \); the upper bound in @thm-zorn must belong to \( P \). The step's general form, "the union of a chain of partial objects lies in \( P \)", is false: among the finite subsets of \( \nN \), the chain \( \{ \{0, \dots, n - 1\} : n \in \nN \} \) has union \( \nN \), which is not finite (the second warning of this section). Here the conclusion of the step happens to be true, which is exactly why it must be proved, not assumed. The repair is the chain step of B1: two elements of \( \bigcup \sK \) lie in one member \( K \in \sK \) (@lem-chain-union (b)), which is a chain, so they are comparable.
+The argument does not prove it. It never checks that \( \bigcup \sK \) lies in \( P \), in particular that it **is a chain** (that it contains \( C_0 \) is immediate, since \( \sK \) is non-empty); the upper bound in @thm-zorn must belong to \( P \). The step's general form, "the union of a chain of partial objects lies in \( P \)", is false: among the finite subsets of \( \nN \), the chain \( \{ \{0, \dots, n - 1\} : n \in \nN \} \) has union \( \nN \), which is not finite (the second warning of this section). Here the conclusion of the step happens to be true, which is exactly why it must be proved, not assumed. The repair is the chain step of B1: two elements of \( \bigcup \sK \) lie in one member \( K \in \sK \) (@lem-chain-union (b)), which is a chain, so they are comparable.
 
 **Marking scheme.** (10 points)
 - 2: the conclusion is true, with B1 cited.
 - 3: the missing check named: \( \bigcup \sK \in P \).
-- 3: a counterexample to the general inference "the union of a chain of partial objects lies in \( P \)" (in any partially ordered set), with the remark that here the step's conclusion is true but unproved.
+- 3: explains why the upper bound must belong to \( P \) (Zorn's hypothesis); a counterexample to the general inference "the union of a chain of partial objects lies in \( P \)" is one way to do so.
 - 2: the repair via @lem-chain-union.
 Fatal errors (0 for the step): calling the conclusion false; "repairing" the proof by assuming that a union of chains is always a chain.
 :::
@@ -489,8 +489,9 @@ lem-chain-union (claim): subset-inclusion restricted to a set of sets is a parti
 def-chain (example): 2^n = 2^(n-m) * 2^m for m <= n | school arithmetic
 thm-zorn (claim): the set of finite subsets of N is a set | set-builder on P(N) (Chapter 1)
 thm-zorn (claim): status paragraph, Zorn's lemma equivalent to ax-choice, which is independent (Section 6.1, ax-choice status remark); converse proved in ST.4; Zorn => AC in F2.4 §03 (prose pointer) | prose pointer to Axiomatic Set Theory and to Section 6.3; nothing depends on it
-exm-zorn-representatives (example): a set of representatives for x - y in Q inside [0, 1] has no length | prose pointer to Measure and Integration Ch 1 (MT.1); nothing depends on it
+exm-zorn-representatives (example): a set of representatives for x - y in Q inside [0, 1] has no length | prose pointer to Measure, Integration, and Real Analysis Ch 2 (MT.1); nothing depends on it
 exm-zorn-representatives (solution): Quick check, same-parity integers have even difference; every integer is even or odd | arithmetic; thm-even-or-odd
+exr-chains-and-zorn-b4 (solution): (a) any element of P bounds the empty chain | def-order-bounds
 exr-chains-and-zorn-b4 (solution): (c) n not in E is odd, so n + 1 is even | thm-even-or-odd
 exm-zorn-representatives (example): x ~ y iff x - y in Q is an equivalence relation on R | Section 5.2 (after exm-reals-mod-integers)
 thm-order-extension (claim): worked schedule: generated order has 11 pairs; two schedules; seven in all | finite check; verify/ch06/thm-order-extension.py

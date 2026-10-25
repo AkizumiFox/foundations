@@ -1,6 +1,6 @@
 # The Axiom of Choice
 
-Chapter 4 avoided such picks: every function it built was given by a formula, a least element, or a list fixed in advance. This chapter adds the one principle that allows such picking, the axiom of choice, and gathers the theorems that need it. Section 4.2 listed \( \nN \times \nN \), \( \nZ \) and \( \nQ \), and showed that a union of two countable sets is countable (@prp-union-two-countable). The next question is a union of **countably many** countable sets. The natural proof is short, and one of its steps cannot be justified by any rule met so far. This section isolates that step, adds the axiom that licenses it, shows how to tell a proof that needs the axiom from one that only seems to, and proves the four results this book draws from it: right inverses, comparing sizes by surjections, countable unions, and the place of \( \nN \) among the infinite sets.
+Chapter 4 avoided picking one element from each of infinitely many sets: every function it built was given by a formula, a least element, or a list fixed in advance. This chapter adds the one principle that allows such picking, the axiom of choice, and gathers the theorems that need it. Section 4.2 listed \( \nN \times \nN \), \( \nZ \) and \( \nQ \), and showed that a union of two countable sets is countable (@prp-union-two-countable). The next question is a union of **countably many** countable sets. The natural proof is short, and one of its steps cannot be justified by any rule met so far. This section isolates that step, adds the axiom that licenses it, shows how to tell a proof that needs the axiom from one that only seems to, and proves the four results this book draws from it: right inverses, comparing sizes by surjections, countable unions, and the place of \( \nN \) among the infinite sets.
 
 ## A union of countably many lists
 
@@ -319,7 +319,7 @@ Name a proper subset of \( \nR \) that is equinumerous with \( \nR \), and give 
 ::: {#exr-countable-unions-and-choice-a1}
 [A1]
 
-These parts are about the proofs of @thm-countable-union and @thm-infinite-countable-subset.
+These parts are about the proofs of @thm-countable-union, @thm-infinite-countable-subset and @thm-infinite-iff-proper-subset.
 
 ::: {.enumerate options="label=(\alph*)"}
 1. Which line of the proof of part (a) of @thm-countable-union uses @ax-choice? What are the index set \( I \) and the sets \( A_i \) of the axiom at that line?
@@ -419,9 +419,10 @@ Prove each true statement, naming each use of @ax-choice as in @exm-method-name-
 
 (c) **True.** For \( y \in Y \), the set \( f^{-1}(\{y\}) \subseteq \nN \) is non-empty, since \( f \) is onto, so \( g(y) \coloneqq \min f^{-1}(\{y\}) \) exists by @thm-well-ordering. This is a rule, and \( f(g(y)) = y \).
 
-(d) **False.** Take \( A_n \coloneqq \{0\} \) for every \( n \): the union is \( \{0\} \), which is finite, hence not countably infinite: a bijection \( \nN \to \{0\} \) would make \( \nN \) finite (@prp-equinumerous-properties), against @exm-hilbert-hotel.
+(d) **False.** Take \( A_n \coloneqq \{0\} \) for every \( n \): the union is \( \{0\} \), which is finite, hence not countably infinite: a bijection \( \nN \to \{0\} \) would make \( \nN \) finite (@prp-equinumerous-properties, @def-finite), against @exm-hilbert-hotel.
 
-(e) **True, with no axiom.** The set \( U \coloneqq \bigcup_{n \in \nN} A_n \) is non-empty (it contains the elements of \( A_0 \)) and finite, say with \( k \ge 1 \) elements via a bijection \( \varphi \colon \{1, \dots, k\} \to U \) (one \( \rulename{\exists E} \)). Define \( c(n) \coloneqq \varphi\bigl(\min \{ j : \varphi(j) \in A_n \}\bigr) \) (@thm-well-ordering); the set is non-empty because \( A_n \ne \emptyset \) and \( \varphi \) is onto. This is a rule, and \( c(n) \in A_n \). If \( c \) were injective, \( \nN \) would be equinumerous with \( c(\nN) \subseteq U \), which is finite (@prp-subset-finite). Then \( \nN \) would be finite (@prp-equinumerous-properties), against @exm-hilbert-hotel. So \( c(m) = c(n) \) for some \( m \ne n \), and that element lies in \( A_m \cap A_n \). This is the pigeonhole idea of @exm-method-pigeonhole, with infinitely many pigeons.
+(e) **True, with no axiom.** The set \( U \coloneqq \bigcup_{n \in \nN} A_n \) is non-empty (it contains the elements of \( A_0 \)) and finite, say with \( k \ge 1 \) elements via a bijection \( \varphi \colon \{1, \dots, k\} \to U \) (one \( \rulename{\exists E} \)). Define \( c(n) \coloneqq \varphi\bigl(\min \{ j : \varphi(j) \in A_n \}\bigr) \) (@thm-well-ordering); the set is non-empty because \( A_n \ne \emptyset \) and \( \varphi \) is onto. This is a rule, and \( c(n) \in A_n \). If \( c \) were injective, \( \nN \) would be equinumerous with \( c(\nN) \subseteq U \), which is finite (@prp-subset-finite). Then \( \nN \) would be finite (@prp-equinumerous-properties, @def-finite), against @exm-hilbert-hotel. So \( c(m) = c(n) \) for some \( m \ne n \), and that element lies in \( A_m \cap A_n \). This is the pigeonhole idea of @exm-method-pigeonhole, with infinitely many pigeons.
+
 (f) **True, using the axiom.** By @thm-infinite-countable-subset (which uses @ax-choice) there is an injection \( \nN \to X \). Since \( \nN \ne \emptyset \), @prp-injection-gives-surjection gives a surjection \( X \to \nN \); that step uses no choice. (Concretely, with the injection written \( n \mapsto x_n \): send \( x_n \) to \( n \) and every other point to \( 0 \).)
 
 (g) **False.** \( x \mapsto \floor{\abs{x}} \), the integer part of \( \abs{x} \) (the \( m \in \nN \) with \( m \le \abs{x} < m + 1 \), a school fact), maps \( \nR \) onto \( \nN \) (each \( n \in \nN \) is the image of \( n \)), and \( \nR \) is uncountable (@thm-reals-uncountable-decimal). A surjection onto \( \nN \) says \( X \) is at least as big as \( \nN \), not at most.
@@ -474,25 +475,34 @@ Fatal errors (0 for the step): "for each \( n \) let \( f_n \) be a list of \( A
 ::: {.solution}
 (a) We use @fd1:ax-induction on the number of elements of \( I \). Let \( P(n) \) be: "for every set \( I \) with \( n \) elements and every family \( (A_i)_{i \in I} \) of countable sets, \( \bigcup_{i \in I} A_i \) is countable".
 
-*Base case.* A set \( I \) with \( 0 \) elements is empty, so \( \bigcup_{i \in I} A_i = \emptyset \), which is countable.
+*Base case.* A set \( I \) with \( 0 \) elements is the image of a bijection from \( \{1, \dots, 0\} = \emptyset \) (@def-finite), so it is empty and \( \bigcup_{i \in I} A_i = \emptyset \), which is countable.
 
-*Inductive step.* Assume \( P(n) \), and let \( I \) have \( n + 1 \) elements and \( (A_i)_{i \in I} \) be a family of countable sets. Since \( n + 1 \ge 1 \), \( I \ne \emptyset \); pick \( i_0 \in I \). Then \( I' \coloneqq I \setminus \{i_0\} \) has \( n \) elements (@cor-remove-point), so \( B \coloneqq \bigcup_{i \in I'} A_i \) is countable by \( P(n) \), applied to the family \( (A_i)_{i \in I'} \). Since \( I = I' \cup \{i_0\} \), an element lies in some \( A_i \) with \( i \in I \) exactly when it lies in \( B \) or in \( A_{i_0} \), so
+*Inductive step.* Assume \( P(n) \), and let \( I \) have \( n + 1 \) elements and \( (A_i)_{i \in I} \) be a family of countable sets. A bijection \( \{1, \dots, n + 1\} \to I \) (@def-finite) has a value at \( 1 \), so \( I \ne \emptyset \); pick \( i_0 \in I \). Then \( I' \coloneqq I \setminus \{i_0\} \) has \( n \) elements (@cor-remove-point), so \( B \coloneqq \bigcup_{i \in I'} A_i \) is countable by \( P(n) \), applied to the family \( (A_i)_{i \in I'} \). Since \( I = I' \cup \{i_0\} \), an element lies in some \( A_i \) with \( i \in I \) exactly when it lies in \( B \) or in \( A_{i_0} \), so
 \[
 \bigcup_{i \in I} A_i = B \cup A_{i_0} ,
 \]
 which is countable by @prp-union-two-countable. So \( P(n + 1) \) holds, and @fd1:ax-induction gives \( P(n) \) for every \( n \). Each step makes finitely many \( \rulename{\exists E} \)'s, so no choice is used.
 
 (b) The induction proves the statement for each finite number \( n \) of sets, and \( \nN \) is not finite (@exm-hilbert-hotel), so no instance of \( P(n) \) is about the family \( (A_n)_{n \in \nN} \). Writing \( \bigcup_{n \in \nN} A_n \) as the union of the finite unions \( A_0 \cup \dots \cup A_k \) does not help, since that needs a list of every finite union at once, which is a choice of infinitely many lists again.
+
+**Marking scheme.** (10 points)
+- 2: states \( P(n) \), quantified over all sets \( I \) with \( n \) elements and all families of countable sets.
+- 1: base case.
+- 2: shows \( I \ne \emptyset \), picks \( i_0 \) and shows that \( I \setminus \{i_0\} \) has \( n \) elements (@cor-remove-point).
+- 2: proves \( \bigcup_{i \in I} A_i = B \cup A_{i_0} \).
+- 1: applies \( P(n) \) and @prp-union-two-countable to conclude.
+- 2: part (b), in two sentences.
+Fatal error (0 for the step): an induction that "reaches" \( n = \nN \), or that treats \( \nN \) as a finite index set.
 :::
 
 ::: {#exr-infinite-sets-c2}
-[C3: The irrationals]
+[C3: Removing a countable set]
 
-Deduce from @exr-infinite-sets-b2 that \( \card{\nR \setminus \nQ} = \card{\nR} \).
+Let \( X \) be uncountable and let \( C \subseteq X \) be countable. Deduce from @exr-infinite-sets-b2 that \( \card{X \setminus C} = \card{X} \).
 :::
 
 ::: {.solution}
-The set \( \nR \setminus \nQ \) is uncountable: otherwise \( \nR = (\nR \setminus \nQ) \cup \nQ \) would be a union of two countable sets (@thm-integers-rationals-countable), countable by @prp-union-two-countable, against @thm-reals-uncountable-decimal. An uncountable set is infinite, since finite sets are countable (@thm-countable-characterizations). Now apply @exr-infinite-sets-b2 with \( X \coloneqq \nR \setminus \nQ \) and \( C \coloneqq \nQ \), which is countable and disjoint from \( X \): \( \card{(\nR \setminus \nQ) \cup \nQ} = \card{\nR \setminus \nQ} \), and the left side is \( \card{\nR} \). Section 4.5, Exercise B5 (a) does this without the axiom; the only new ingredient here is the copy of \( \nN \) inside \( \nR \setminus \nQ \), which @thm-infinite-countable-subset supplies (here a rule also supplies one: \( n \mapsto \sqrt2 + n \), irrational by @fd1:thm-sqrt2-irrational).
+The set \( X \setminus C \) is uncountable: otherwise \( X = (X \setminus C) \cup C \) would be a union of two countable sets, countable by @prp-union-two-countable, against the choice of \( X \). An uncountable set is infinite, since finite sets are countable (@thm-countable-characterizations). Now apply @exr-infinite-sets-b2 with \( X \setminus C \) in the role of \( X \) and \( C \) as the countable set, which is disjoint from \( X \setminus C \): \( \card{(X \setminus C) \cup C} = \card{X \setminus C} \), and the left side is \( \card{X} \) because \( C \subseteq X \). Here \( X \setminus C \) is given by no formula, so no explicit copy of \( \nN \) in it is available; the copy comes from @thm-infinite-countable-subset, which uses @ax-choice. For \( X = \nR \) and \( C = \nQ \) (@thm-integers-rationals-countable, @thm-reals-uncountable-decimal) this is \( \card{\nR \setminus \nQ} = \card{\nR} \), which Section 4.5, Exercise B5 (a) proves without the axiom, using the explicit copy \( n \mapsto \sqrt2 + n \).
 :::
 
 <!-- dependency ledger
@@ -526,7 +536,8 @@ thm-infinite-countable-subset (claim): (prose after the remark) the theorem is n
 thm-infinite-iff-proper-subset (proof): the hotel bijection X -> X \ {s(0)} | prp-copy-of-naturals-absorbs (a) (F2.3 §05, cited)
 prp-card-le-surjection (proof): (=>) half, A != empty | prp-injection-gives-surjection (F2.3 §04, cited)
 exr-infinite-sets-b2 (solution): absorbing C into the copy s(N) | prp-copy-of-naturals-absorbs (b) (F2.3 §05, cited); thm-infinite-countable-subset (cited, uses ax-choice)
-exr-infinite-sets-c2 (solution): sqrt2 + n irrational | fd1:thm-sqrt2-irrational (cited), with Q closed under subtraction (school fact); s(n) = sqrt2 + n injective by cancelling sqrt2, inline
+exr-infinite-sets-c2 (solution): X \ C uncountable, hence infinite | prp-union-two-countable (cited), thm-countable-characterizations (cited)
+exr-countable-unions-and-choice-c3 (solution): 0 elements gives empty; n + 1 elements gives non-empty; cor-remove-point; union of I = I' + {i_0} | def-finite (F2.3 §01, cited); cor-remove-point (cited); inline
 exr-infinite-sets-c2 (claim): Section 4.5, Exercise B5 (a) proves the same without choice | F2.3 §05 (prose pointer; nothing depends on it)
 exr-countable-unions-and-choice-a1 (solution): (f) h(n) = n + 1 on N, identity on negatives, onto Z \ {0} | inline; prp-copy-of-naturals-absorbs (a) (F2.3 §05, cited in the stem)
 -->

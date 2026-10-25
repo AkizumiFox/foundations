@@ -689,6 +689,22 @@ items:
     evidence: '01:319-353. My answers matched the book''s for (a)-(f). Script: c(3)(2)=4 and each c(n)
       maps onto {n,n+1}; J=N. (d) prp-countable-subset is the right citation and the rule h_A is onto
       A. (f) h is a bijection Z -> Z\{0}, which matches the proof of prp-copy-of-naturals-absorbs (a).'
+  - stage: S7r
+    verdict: correct
+    by: rereferee
+    hash: 673729a1cf42
+    date: '2026-10-26'
+    model: claude-opus-5-5
+    evidence: Lead at 01:322 now names @thm-countable-union, @thm-infinite-countable-subset and @thm-infinite-iff-proper-subset.
+      That matches part (f), which is about the proof of thm-infinite-iff-proper-subset.
+  - stage: S7r
+    verdict: correct
+    by: rereferee
+    hash: 673729a1cf42
+    date: '2026-10-26'
+    model: claude-opus-5-5
+    evidence: 'The statement now includes thm-infinite-iff-proper-subset, which part (f) covers. Check
+      of (f): h(n)=n+1 on N and h(k)=k for k<0 maps Z onto Z\{0}.'
 - key: exr-countable-unions-and-choice-b1
   kind: exr
   file: 01-countable-unions-and-choice.md
@@ -847,6 +863,25 @@ items:
     model: claude-opus-5-5
     evidence: 01-countable-unions-and-choice.md:425 There is no blank line between part (e) and part (f)
       of the solution, so in Markdown (f) is rendered inside (e)'s paragraph.
+  - stage: S7r
+    verdict: correct
+    by: rereferee
+    hash: 038c7fdade29
+    date: '2026-10-26'
+    model: claude-opus-5-5
+    evidence: '(d) and (e) now cite (@prp-equinumerous-properties, @def-finite) for ''N equinumerous with
+      a finite set => N finite'', the same pattern as prp-copy-of-naturals-absorbs (b). A blank line now
+      separates (e) and (f), so (f) is its own paragraph. The (e) argument is unchanged and still correct:
+      least index via well-ordering, then pigeonhole through prp-subset-finite.'
+  - stage: S7r
+    verdict: correct
+    by: rereferee
+    hash: 038c7fdade29
+    date: '2026-10-26'
+    model: claude-opus-5-5
+    evidence: '(d) and (e) now cite def-finite next to prp-equinumerous-properties for ''N would be finite''.
+      The pigeonhole rule c(n)=phi(min{j: phi(j) in A_n}) is valid, and the remaining parts are unchanged
+      and correct.'
 - key: exr-infinite-sets-b2
   kind: exr
   file: 01-countable-unions-and-choice.md
@@ -1024,6 +1059,25 @@ items:
     model: claude-opus-5-5
     evidence: 01-countable-unions-and-choice.md:485 C2 is a write-up C item (a full induction proof),
       but its solution has no **Marking scheme.** paragraph.
+  - stage: S7r
+    verdict: correct
+    by: rereferee
+    hash: fd6252a67644
+    date: '2026-10-26'
+    model: claude-opus-5-5
+    evidence: The base case and inductive step now give the def-finite reasons, matching def-finite's
+      remarks at ch04 01:90-99. cor-remove-point (ch04 01:353) fits the n+1 / remove-a-point step exactly.
+      The marking scheme adds up to 2+1+2+2+1+2 = 10 and has a fatal-error line. The new ledger line cites
+      def-finite as F2.3 §01, which is consistent with series.py (Ch 4 = F2.3).
+  - stage: S7r
+    verdict: correct
+    by: rereferee
+    hash: fd6252a67644
+    date: '2026-10-26'
+    model: claude-opus-5-5
+    evidence: The base case is now justified from def-finite (a bijection from the empty set), and I !=
+      empty comes from the value of a bijection at 1. The marking scheme totals 2+1+2+2+1+2 = 10, with
+      a sensible fatal error.
 - key: exr-infinite-sets-c2
   kind: exr
   file: 01-countable-unions-and-choice.md
@@ -1083,6 +1137,25 @@ items:
     evidence: 01-countable-unions-and-choice.md:495 C3 repeats Section 4.5 Exercise B5 (a) exactly (same
       X = R\Q, same C = Q, same conclusion). It is also an easier, choice-using version of an earlier
       B item, so it adds no depth as a 'Going deeper' item.
+  - stage: S7r
+    verdict: correct
+    by: rereferee
+    hash: 15de7d962c1b
+    date: '2026-10-26'
+    model: claude-opus-5-5
+    evidence: 'New stem: X uncountable, C ⊆ X countable, so |X\C| = |X| via exr-infinite-sets-b2. Solution:
+      X\C is uncountable (otherwise X = (X\C) ∪ C would be countable by prp-union-two-countable), hence
+      infinite (thm-countable-characterizations). C is disjoint from X\C, and (X\C) ∪ C = X because C
+      ⊆ X. B4''s hypotheses (X infinite, C countable, disjoint) all hold. Choice enters through thm-infinite-countable-s'
+  - stage: S7r
+    verdict: correct
+    by: rereferee
+    hash: 15de7d962c1b
+    date: '2026-10-26'
+    model: claude-opus-5-5
+    evidence: 'The general version (X uncountable, C countable) is correct: X\C is uncountable by prp-union-two-countable,
+      hence infinite, and B4 (exr-infinite-sets-b2) applies with disjoint C. The pointer to Section 4.5,
+      Exercise B5 (a) (ch04/05:549, sqrt2 + n) is accurate.'
 - key: def-chain
   kind: def
   file: 02-chains-and-zorn.md
@@ -1625,6 +1698,25 @@ items:
       is no greatest element. (c): (a,b) and (b,a) are both in R, so (PO2) forces a=b, a contradiction.
       (d): I checked the poset on N∪{a,b}. Its pairs ending at a or b keep (PO3), every non-empty chain
       is bounded by a or b, and the maximal elements are exactly a and b. (a) is accurate.'
+  - stage: S7r
+    verdict: correct
+    by: rereferee
+    hash: 94c39c89a29b
+    date: '2026-10-26'
+    model: claude-opus-5-5
+    evidence: (a) now says M is named by one ∃E from thm-zorn's existential conclusion, which matches
+      the solution at :155 ('By @thm-zorn, take a maximal M ∈ P'). (d) names a := -1 and b := -2. These
+      are distinct integers outside ℕ, and ℤ is available as a familiar set (ch01 index 'What you need').
+      The construction and the check of (PO1)–(PO3) are unchanged and still correct.
+  - stage: S7r
+    verdict: correct
+    by: rereferee
+    hash: 94c39c89a29b
+    date: '2026-10-26'
+    model: claude-opus-5-5
+    evidence: (a) now says that M is named by one ∃E from Zorn's conclusion. (d) uses concrete a=-1 and
+      b=-2 outside N; (PO1)–(PO3) hold, every non-empty chain is bounded, and the maximal elements are
+      exactly a and b.
 - key: exr-chains-and-zorn-b1
   kind: exr
   file: 02-chains-and-zorn.md
@@ -1771,6 +1863,24 @@ items:
       N=40). (d): Q is non-empty, and u∈Q needs a non-empty chain, which the proof has; m is maximal in
       P. (b): Section 5.3 R4 exists (ch05/03:455). The hint for (d) names the object and does not carry
       out the key s'
+  - stage: S7r
+    verdict: correct
+    by: rereferee
+    hash: aa53e3f30b52
+    date: '2026-10-26'
+    model: claude-opus-5-5
+    evidence: '(a) now cites def-order-bounds for the empty chain. The def''s follow-up text (ch05 03-orders)
+      says every element is an upper bound of ∅, and P ≠ ∅, so the bound exists. The ledger line was added
+      at :494. In (d) the chain is renamed C, matching def-chain''s convention. The argument is unchanged:
+      p ⪯ c ⪯ u gives u ∈ Q by (PO3).'
+  - stage: S7r
+    verdict: correct
+    by: rereferee
+    hash: aa53e3f30b52
+    date: '2026-10-26'
+    model: claude-opus-5-5
+    evidence: (a) now says that the empty chain is bounded by any element (def-order-bounds). (d) renames
+      the chain C, with no notation clash. All parts are correct.
 - key: exr-using-zorn-b2
   kind: exr
   file: 02-chains-and-zorn.md
@@ -1825,6 +1935,23 @@ items:
     evidence: '02:383-397. Script: listing by size respects every proper inclusion, and P({1,2}) has exactly
       2 total orders containing ⊆. (a) correctly cites the strict part of prp-subset-finite (ch04/01:303).
       Worked models are in the section: the lem-one-step quick check on P({1,2}) and the schedules example.'
+  - stage: S7r
+    verdict: correct
+    by: rereferee
+    hash: c0d557c67ed9
+    date: '2026-10-26'
+    model: claude-opus-5-5
+    evidence: (b) now checks all nine ⊆ pairs. (∅,Y), (Y,{1,2}) and (Y,Y) cover every one, and both lists
+      respect them. It says that lists of the four sets correspond injectively to total orders, so the
+      answer is two. One sentence repeats the 'first/last' point a little, which is harmless.
+  - stage: S7r
+    verdict: correct
+    by: rereferee
+    hash: c0d557c67ed9
+    date: '2026-10-26'
+    model: claude-opus-5-5
+    evidence: (b) now shows that each of the two lists contains every pair of ⊆, and that different lists
+      give different total orders, so the count is exactly 2.
 - key: exr-chains-and-zorn-c1
   kind: exr
   file: 02-chains-and-zorn.md
@@ -1901,6 +2028,25 @@ items:
     evidence: 02-chains-and-zorn.md:418 The marking scheme gives 3 of 10 points for a counterexample to
       the general inference 'the union of a chain of partial objects lies in P', together with a fixed
       remark. The question does not ask for either, so a complete correct answer is capped at 7/10.
+  - stage: S7r
+    verdict: correct
+    by: rereferee
+    hash: b732ab3effb7
+    date: '2026-10-26'
+    model: claude-opus-5-5
+    evidence: 'The solution now separates ''lies in P'' from ''is a chain''. C_0 ⊆ ⋃K holds because some
+      K ∈ K contains C_0, using K non-empty. The marking scheme now gives a complete answer 2+3+3+2 =
+      10: the 3-point line rewards explaining why the bound must lie in P, and the counterexample is optional.
+      The required remark is gone.'
+  - stage: S7r
+    verdict: correct
+    by: rereferee
+    hash: b732ab3effb7
+    date: '2026-10-26'
+    model: claude-opus-5-5
+    evidence: The gap is identified as the missing check that ⋃𝒦 ∈ P, in particular that it is a chain;
+      containing C0 follows because 𝒦 is non-empty. The marking scheme totals 2+3+3+2 = 10 and matches
+      the solution.
 - key: exr-chains-and-zorn-c2
   kind: exr
   file: 02-chains-and-zorn.md
@@ -2120,6 +2266,15 @@ items:
     evidence: '03-using-zorn.md:19-29: P is a set (ledger :439), the empty function covers the base case,
       lem-chain-union (b) with n=2 handles the chain step, the one-pair extension contradicts maximality,
       and def-function gives the function. Every fact is cited or ledgered.'
+  - stage: S7r
+    verdict: correct
+    by: rereferee
+    hash: 1628f0dd2602
+    date: '2026-10-26'
+    model: claude-opus-5-5
+    evidence: 'The remark after the proof (:31) is now accurate: only the last step uses that A_{i_0}
+      is non-empty, and the other steps follow the template with (C1), (C2) as the conditions. The ledger
+      source is now (F2.1).'
 - key: thm-cardinal-comparability
   kind: thm
   file: 03-using-zorn.md
@@ -2183,6 +2338,14 @@ items:
     evidence: ':19-38 checked: P ⊆ P(A×B), ∅ ∈ P, chain union via lem-chain-union (b) n=2, extension by
       (a0,b0), the De Morgan split into Case 1/Case 2, M^{-1} via def-relation. Every unlabelled fact
       is in the ledger at :373-376.'
+  - stage: S7r
+    verdict: correct
+    by: rereferee
+    hash: a1e1a60933e4
+    date: '2026-10-26'
+    model: claude-opus-5-5
+    evidence: 'Only the ledger lines changed: F2.4 §02 for lem-chain-union, def-function (F2.6), def-relation
+      (F2.1). All three verified.'
 - key: cor-cardinal-trichotomy
   kind: cor
   file: 03-using-zorn.md
@@ -2341,6 +2504,22 @@ items:
     evidence: 03-using-zorn.md:132 Section 6.3 writes general well-orders on arbitrary sets as ≤ (and
       ≥, <), which breaks the NOTATION rule that ≤ keeps its meaning on numbers and \preceq is the general
       partial order.
+  - stage: S7r
+    verdict: minor
+    by: rereferee
+    hash: 4f157170ee9b
+    date: '2026-10-26'
+    model: claude-opus-5-5
+    evidence: The prose at :113 is now a pointer to C3 rather than a claim resting on it. The earlier
+      minor verdict from S8 is not affected by this diff.
+  - stage: S7r
+    verdict: correct
+    by: rereferee
+    hash: 4f157170ee9b
+    date: '2026-10-26'
+    model: claude-opus-5-5
+    evidence: The statement uses \preceq, which matches def-well-ordered-set (ch05/03:240), whose definition
+      includes totality.
 - key: proof:thm-well-ordering-theorem
   kind: proof
   file: 03-using-zorn.md
@@ -2375,6 +2554,14 @@ items:
     model: claude-opus-5-5
     evidence: 03-using-zorn.md:155 The text says the well-order on Z comes from 'the first Quick check',
       but it is the second Quick check of the section.
+  - stage: S7r
+    verdict: minor
+    by: rereferee
+    hash: b94fa94038fa
+    date: '2026-10-26'
+    model: claude-opus-5-5
+    evidence: :155 now names \preceq_{\nZ}, so the reference is correct. The earlier S8 minor verdict
+      stands; the diff adds no new issue beyond the vague 'after the hook'.
 - key: prp-well-ordering-gives-choice
   kind: prp
   file: 03-using-zorn.md
@@ -2405,6 +2592,14 @@ items:
     model: claude-opus-5-5
     evidence: '03-using-zorn.md:195 The pointer into the linear-algebra companion is prose only, with
       no @la: label, although STYLE §10 says to cite LA with @la:<label> and the label exists.'
+  - stage: S7r
+    verdict: correct
+    by: rereferee
+    hash: 361572e4ccd4
+    date: '2026-10-26'
+    model: claude-opus-5-5
+    evidence: The statement uses \preceq-least, the proof (unchanged) uses it consistently, and the closing
+      paragraph has the correct @la pointer.
 - key: proof:prp-well-ordering-gives-choice
   kind: proof
   file: 03-using-zorn.md
@@ -2457,6 +2652,23 @@ items:
     model: claude-opus-5-5
     evidence: 03-using-zorn.md:174 The check points to the well-order on Z 'of the first Quick check of
       this section', but that well-order is in the second Quick check.
+  - stage: S7r
+    verdict: correct
+    by: rereferee
+    hash: 86b93902d773
+    date: '2026-10-26'
+    model: claude-opus-5-5
+    evidence: ':174 names \preceq_{\nZ}. Answers recomputed: {n : n^2 > 10} = {|n| ≥ 4}, least |n| is
+      4 and -4 is in the set, so c picks -4. For {n > 10}, least |n| is 11 and -11 is not in the set,
+      so c picks 11.'
+  - stage: S7r
+    verdict: correct
+    by: rereferee
+    hash: 86b93902d773
+    date: '2026-10-26'
+    model: claude-opus-5-5
+    evidence: The check names \preceq_{\nZ} and its Quick check; the answers -4 and 11 are recomputed
+      and correct.
 - key: exr-using-zorn-a1
   kind: exr
   file: 03-using-zorn.md
@@ -2643,6 +2855,14 @@ items:
     date: '2026-10-26'
     model: claude-opus-5-5
     evidence: 03:261 uses ≤ for a well-order on an arbitrary Y (NOTATION.md:250).
+  - stage: S7r
+    verdict: correct
+    by: rereferee
+    hash: 6861c7f0e566
+    date: '2026-10-26'
+    model: claude-opus-5-5
+    evidence: (a) uses \preceq_Y on Y and the pulled-back \preceq on X; (PO2) uses injectivity, and least
+      elements come from j(S). (b) uses (N, <=) correctly.
 - key: exr-using-zorn-b5
   kind: exr
   file: 03-using-zorn.md
@@ -2682,6 +2902,14 @@ items:
     date: '2026-10-26'
     model: claude-opus-5-5
     evidence: 03:282 says 'Well-order X by ≤' for an arbitrary X (NOTATION.md:250).
+  - stage: S7r
+    verdict: correct
+    by: rereferee
+    hash: 44f939eb8a41
+    date: '2026-10-26'
+    model: claude-opus-5-5
+    evidence: The well-order is written \preceq; least preimages give the right inverse, and the citations
+      are unchanged.
 - key: exr-using-zorn-b6
   kind: exr
   file: 03-using-zorn.md
@@ -2723,6 +2951,23 @@ items:
     model: claude-opus-5-5
     evidence: 03:292 and the (a) solution at 03:300 use ≤ and ≥ for a general well-order or total order
       (NOTATION.md:250).
+  - stage: S7r
+    verdict: correct
+    by: rereferee
+    hash: 5bc3082a6bf7
+    date: '2026-10-26'
+    model: claude-opus-5-5
+    evidence: (a) now justifies that \ge is a partial order (PO1-PO3 inherited from \le). lem-chain-union
+      (a) on the finite chain S gives the least element. The ledger is updated.
+  - stage: S7r
+    verdict: correct
+    by: rereferee
+    hash: 5bc3082a6bf7
+    date: '2026-10-26'
+    model: claude-opus-5-5
+    evidence: (a) names the total order \preceq and checks that its reverse \succeq is a partial order
+      before applying lem-chain-union (a). (b) uses \preceq. (c) and (e) keep the usual orders on N, and
+      (d) uses \sqsubseteq.
 - key: exr-using-zorn-c2
   kind: exr
   file: 03-using-zorn.md
@@ -2797,6 +3042,22 @@ items:
     evidence: 03-using-zorn.md:327 The scheme ties the counterexample marks to 'the countability reason'.
       A correct answer that refutes the step 'the process ends' with any two infinite sets gets nothing,
       even though the solution itself says the process 'has no last step in general'.
+  - stage: S7r
+    verdict: correct
+    by: rereferee
+    hash: e21fae1300a2
+    date: '2026-10-26'
+    model: claude-opus-5-5
+    evidence: The scheme is split 2+1 (:327-328) and the total is 10. The solution text is unchanged and
+      remains correct.
+  - stage: S7r
+    verdict: correct
+    by: rereferee
+    hash: e21fae1300a2
+    date: '2026-10-26'
+    model: claude-opus-5-5
+    evidence: 'The marking scheme is reworked (2+3+2+1+2 = 10) and now matches the solution: a case where
+      no step exhausts a side, plus the countability reason for R.'
 - key: exr-using-zorn-r2
   kind: exr
   file: 03-using-zorn.md
@@ -2883,6 +3144,24 @@ items:
     evidence: 03-using-zorn.md:343 Part (b) gets the maximal chain by citing Exercise B1. B1 was proved
       from Zorn's lemma, so read literally the deduction of Zorn is circular. The exercise asks for a
       deduction from the *statement* 'every chain lies in a maximal chain'.
+  - stage: S7r
+    verdict: correct
+    by: rereferee
+    hash: b253a0d3a6c0
+    date: '2026-10-26'
+    model: claude-opus-5-5
+    evidence: '(b) uses B1''s statement as the hypothesis with C_0 = ∅ (:344). C \ne \emptyset holds via
+      {p}, the upper bound comes from the Zorn hypothesis (non-empty chain), and (a) gives maximality.
+      The scheme accepts a start from ∅ or {p}. One wording point: the ''X'' of (a) is the ''P'' of (b),
+      and the solution applies (a) correctly.'
+  - stage: S7r
+    verdict: correct
+    by: rereferee
+    hash: b253a0d3a6c0
+    date: '2026-10-26'
+    model: claude-opus-5-5
+    evidence: (b) applies the hypothesis, as stated in Section 6.2 Exercise B1, with C0 = ∅. The marking
+      scheme totals 1+1+3+2+1+2 = 10 and also accepts starting from {p}.
 - key: exr-using-zorn-c3
   kind: exr
   file: 03-using-zorn.md
@@ -2914,6 +3193,22 @@ items:
     model: claude-opus-5-5
     evidence: 03-using-zorn.md:373 The fatal-error clause gives 0 to a valid proof of (E2) in (⇐) that
       never mentions totality.
+  - stage: S7r
+    verdict: correct
+    by: rereferee
+    hash: d2b8328eb3c4
+    date: '2026-10-26'
+    model: claude-opus-5-5
+    evidence: The solution is unchanged and correct. The scheme now credits either way of comparing a
+      and b, and the fatal error is narrowed appropriately; the total is 10.
+  - stage: S7r
+    verdict: correct
+    by: rereferee
+    hash: d2b8328eb3c4
+    date: '2026-10-26'
+    model: claude-opus-5-5
+    evidence: The marking scheme now accepts any comparison of a and b (totality of S, or the least element
+      of {a, b}), and the fatal error is adjusted to match. The total is 3+2+1+4 = 10.
 - key: exr-using-zorn-r4
   kind: exr
   file: 03-using-zorn.md
@@ -2982,6 +3277,13 @@ items:
     date: '2026-10-26'
     model: claude-opus-5-5
     evidence: 03:395 says 'Let ≤ be a well-order on X, with strict part <' for an arbitrary X (NOTATION.md:250).
+  - stage: S7r
+    verdict: correct
+    by: rereferee
+    hash: 51b3b8682915
+    date: '2026-10-26'
+    model: claude-opus-5-5
+    evidence: Stated with \preceq and strict part \prec. The minimal-element argument on s(N) is correct.
 - key: exr-using-zorn-r6
   kind: exr
   file: 03-using-zorn.md
@@ -3021,6 +3323,24 @@ items:
     model: claude-opus-5-5
     evidence: 03:405-417 write '(X, ≤) is well-ordered' for a general X (NOTATION.md:250). The part about
       (Z, ≤) is fine.
+  - stage: S7r
+    verdict: minor
+    by: rereferee
+    hash: 34b5ef6bbc9e
+    date: '2026-10-26'
+    model: claude-opus-5-5
+    evidence: 'The mathematics is now complete: the conjunction with totality and the disjunctive negation
+      follow def-well-ordered-set (5.3:240). The punctuation of ''Its negation, the second alternative,
+      (@fd1:...) is'' is awkward (a stray comma before the parenthetical citation).'
+  - stage: S7r
+    verdict: minor
+    by: rereferee
+    hash: 34b5ef6bbc9e
+    date: '2026-10-26'
+    model: claude-opus-5-5
+    evidence: 'The math is correct: def-well-ordered-set includes totality, the negation is split into
+      two alternatives, and the Z case uses the usual <=. One punctuation slip: ''Its negation, the second
+      alternative, (@fd1:prp-bounded-quantifier-negation, ...) is'' has a stray comma before the parenthesis.'
 - key: exr-infinite-sets-r4
   kind: exr
   file: 03-using-zorn.md

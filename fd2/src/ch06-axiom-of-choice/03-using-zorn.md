@@ -28,7 +28,7 @@ Let \( U \) and \( P \) be as in the Idea. Then \( P \subseteq \powerset{I \time
 *\( M \) is defined everywhere:* suppose some \( i_0 \in I \) has no pair \( (i_0, x) \in M \). Since \( A_{i_0} \ne \emptyset \), take \( x_0 \in A_{i_0} \), and let \( M' \coloneqq M \cup \{(i_0, x_0)\} \). Then \( M' \subseteq I \times U \), since \( i_0 \in I \) and \( x_0 \in A_{i_0} \subseteq U \); \( M' \) satisfies (C1), and it satisfies (C2), because the only pair of \( M' \) with first coordinate \( i_0 \) is \( (i_0, x_0) \). So \( M' \in P \), \( M \subseteq M' \), and \( M \ne M' \), as \( (i_0, x_0) \notin M \); this contradicts the maximality of \( M \). Hence for every \( i \in I \) there is a pair \( (i, x) \in M \), and by (C2) exactly one. By @def-function, \( M \) is the graph of a function \( c \colon I \to U \), and \( c(i) \in A_i \) by (C1).
 :::
 
-If \( I = \emptyset \), then \( P = \{\emptyset\} \), and the proof produces the empty function, which is correct. Of the proof's four steps, only the last is about choice functions; the first three are the template's (@exm-method-maximality), and so is the shape of the last.
+If \( I = \emptyset \), then \( P = \{\emptyset\} \), and the proof produces the empty function, which is correct. Of the proof's four steps, only the last uses that the \( A_i \) are non-empty; the other three follow the template (@exm-method-maximality), with (C1) and (C2) as the conditions.
 
 ## Back to comparing sizes
 
@@ -110,7 +110,7 @@ The same idea works for every countable set. An injection \( j \colon X \to \nN 
 - (E1) \( A \subseteq B \) and \( R \subseteq S \), and
 - (E2) \( a \mathrel{S} b \) for every \( a \in A \) and every \( b \in B \setminus A \):
 
-\( S \) keeps the order of \( R \) and puts every new element **above** all of \( A \). Equivalently, \( A \) is an **initial segment** of \( (B, S) \): everything of \( B \) below an element of \( A \) lies in \( A \), and \( S \) agrees with \( R \) on \( A \) (Exercise C3). Let \( P \) be the set of partial objects; it is a set, since \( P \subseteq \powerset{X} \times \powerset{X \times X} \) (@def-set-builder, @def-power-set). Then \( \trianglelefteq \) is a partial order on \( P \). It is reflexive, since for \( (A, R) \trianglelefteq (A, R) \) the set \( A \setminus A \) is empty and (E2) holds vacuously. It is antisymmetric, since (E1) both ways gives \( A = B \) and \( R = S \). It is transitive: let \( (A, R) \trianglelefteq (B, S) \trianglelefteq (C, T) \). (E1) for \( (A, R) \) and \( (C, T) \) follows from the two inclusions. For (E2), let \( a \in A \) and \( c \in C \setminus A \). Either \( c \in B \setminus A \), so \( a \mathrel{S} c \), and \( a \mathrel{T} c \) by \( S \subseteq T \); or \( c \in C \setminus B \), so \( a \mathrel{T} c \) by (E2) for \( (B, S) \trianglelefteq (C, T) \), as \( a \in B \).
+\( S \) keeps the order of \( R \) and puts every new element **above** all of \( A \). Exercise C3 shows that this says \( A \) is an **initial segment** of \( (B, S) \): everything of \( B \) below an element of \( A \) lies in \( A \), and \( S \) agrees with \( R \) on \( A \). Let \( P \) be the set of partial objects; it is a set, since \( P \subseteq \powerset{X} \times \powerset{X \times X} \) (@def-set-builder, @def-power-set). Then \( \trianglelefteq \) is a partial order on \( P \). It is reflexive, since for \( (A, R) \trianglelefteq (A, R) \) the set \( A \setminus A \) is empty and (E2) holds vacuously. It is antisymmetric, since (E1) both ways gives \( A = B \) and \( R = S \). It is transitive: let \( (A, R) \trianglelefteq (B, S) \trianglelefteq (C, T) \). (E1) for \( (A, R) \) and \( (C, T) \) follows from the two inclusions. For (E2), let \( a \in A \) and \( c \in C \setminus A \). Either \( c \in B \setminus A \), so \( a \mathrel{S} c \), and \( a \mathrel{T} c \) by \( S \subseteq T \); or \( c \in C \setminus B \), so \( a \mathrel{T} c \) by (E2) for \( (B, S) \trianglelefteq (C, T) \), as \( a \in B \).
 
 Why not order the partial objects by inclusion alone, as the method box does? Inclusion alone is not enough; the warning below shows why.
 
@@ -129,7 +129,7 @@ Only for \( m = n \). For \( m < n \), (E1) holds, and (E2) fails at \( b = -n \
 ::: {#thm-well-ordering-theorem}
 [The Well-Ordering Theorem]
 
-Every set \( X \) carries a well-order: there is a partial order \( \le \) on \( X \) such that \( (X, \le) \) is well-ordered (@def-well-ordered-set).
+Every set \( X \) carries a well-order: there is a partial order \( \preceq \) on \( X \) such that \( (X, \preceq) \) is well-ordered (@def-well-ordered-set).
 :::
 
 ::: {.idea}
@@ -152,14 +152,14 @@ Let \( P \) and \( \trianglelefteq \) be as above.
 *Complete.* Suppose \( M \ne X \), and take \( x \in X \setminus M \) (one \( \rulename{\exists E} \)). Put \( M' \coloneqq M \cup \{x\} \) and \( R' \coloneqq R_M \cup \{ (a, x) : a \in M' \} \). Then \( R' \) is a well-order on \( M' \). The new pairs all end at \( x \), and \( (x, x) \) is the only pair of \( R' \) that starts at \( x \); so (PO1)–(PO3) and totality reduce to those of \( R_M \) together with "everything is below \( x \)". A non-empty \( S \subseteq M' \) has as least element the \( R_M \)-least element of \( S \cap M \) if that set is non-empty, and \( x \) if \( S = \{x\} \). (E1) holds for \( (M, R_M) \) and \( (M', R') \), and so does (E2), since \( M' \setminus M = \{x\} \) and \( a \mathrel{R'} x \) for every \( a \in M \). So \( (M, R_M) \trianglelefteq (M', R') \), and \( x \notin M \) makes the two different, against the maximality of \( (M, R_M) \). Hence \( M = X \), and \( R_M \) is a well-order on \( X \).
 :::
 
-The proof never says which well-order it found, and there are many: on \( \nZ \), the order of the first Quick check and its mirror image (\( k \) before \( -k \)) are two. For \( \nN \) the usual order is one, and \( \le \) on \( \nR \) is not; the theorem gives \( \nR \) a well-order for which no formula is known.
+The proof never says which well-order it found, and there are many: on \( \nZ \), the order \( \preceq_{\nZ} \) of the Quick check "Find a well-order on \( \nZ \)" and its mirror image (\( k \) before \( -k \)) are two. For \( \nN \) the usual order is one, and \( \le \) on \( \nR \) is not; the theorem gives \( \nR \) a well-order for which no formula is known.
 
 ## Well-orders give choice
 
 ::: {#prp-well-ordering-gives-choice}
 [Well-Orders Give Choice]
 
-Let \( (A_i)_{i \in I} \) be a family of **non-empty** sets, and let \( \le \) be a well-order on \( U \coloneqq \bigcup_{i \in I} A_i \). Then \( c(i) \coloneqq \) the \( \le \)-least element of \( A_i \) defines a choice function \( c \colon I \to U \), with no appeal to @ax-choice.
+Let \( (A_i)_{i \in I} \) be a family of **non-empty** sets, and let \( \preceq \) be a well-order on \( U \coloneqq \bigcup_{i \in I} A_i \). Then \( c(i) \coloneqq \) the \( \preceq \)-least element of \( A_i \) defines a choice function \( c \colon I \to U \), with no appeal to @ax-choice.
 :::
 
 ::: {.proof}
@@ -171,7 +171,7 @@ Each hypothesis is needed. Without "non-empty" there is no least element of \( A
 With @thm-well-ordering-theorem this is a second road from Zorn's lemma to the axiom of choice: Zorn gives a well-order of \( \bigcup_{i \in I} A_i \), and the well-order gives the choice function by a rule. The axiom has not disappeared. It is hidden in the well-order, which for an arbitrary set only Zorn's lemma (or the axiom) supplies; for a countable set an injection into \( \nN \) gives one by a rule (Exercise B2).
 
 ::: {.check}
-With the well-order on \( \nZ \) of the first Quick check of this section, which element does \( c \) pick from \( \{ n \in \nZ : n^2 > 10 \} \)? From \( \{ n \in \nZ : n > 10 \} \)?
+With the well-order \( \preceq_{\nZ} \) on \( \nZ \) of the Quick check "Find a well-order on \( \nZ \)", which element does \( c \) pick from \( \{ n \in \nZ : n^2 > 10 \} \)? From \( \{ n \in \nZ : n > 10 \} \)?
 :::
 
 ::: {.solution}
@@ -192,7 +192,7 @@ The implications between the forms of choice met in this chapter, and where each
 | axiom of choice \( \Rightarrow \) Zorn's lemma | *Axiomatic Set Theory*, Chapter 4 |
 | comparability \( \Rightarrow \) every set can be well-ordered | *Axiomatic Set Theory*, Chapter 4 (Hartogs) |
 
-Once the last two rows are proved, all five statements are equivalent. This book takes the axiom and Zorn's lemma as given, uses whichever form fits the problem, and flags each use. *Linear Algebra*, Section 1.8 runs the template once more, with independent sets as partial objects, to extend every independent set to a basis.
+Once the last two rows are proved, all five statements are equivalent. This book takes the axiom and Zorn's lemma as given, uses whichever form fits the problem, and flags each use. *Linear Algebra*, Section 1.8 (@la:thm-basis-extension-general) runs the template once more, with independent sets as partial objects, to extend every independent set to a basis.
 
 The runs of the template in this chapter, side by side:
 
@@ -258,14 +258,14 @@ By @thm-cardinal-comparability, \( \card{A} \le \card{B} \) or \( \card{B} \le \
 [B2: Well-orders without Zorn]
 
 ::: {.enumerate options="label=(\alph*)"}
-1. Let \( j \colon X \to Y \) be injective and let \( \le \) be a well-order on \( Y \). Show that "\( x \preceq x' \) when \( j(x) \le j(x') \)" is a well-order on \( X \).
+1. Let \( j \colon X \to Y \) be injective and let \( \preceq_Y \) be a well-order on \( Y \). Show that "\( x \preceq x' \) when \( j(x) \preceq_Y j(x') \)" is a well-order on \( X \).
 2. Deduce, without Zorn's lemma or @ax-choice, that every countable set has a well-order.
 3. Deduce that \( \nQ \) has a well-order.
 :::
 :::
 
 ::: {.solution}
-(a) (PO1), (PO3) and totality for \( \preceq \) come from those of \( \le \), applied to the images. (PO2): \( x \preceq x' \) and \( x' \preceq x \) give \( j(x) \le j(x') \le j(x) \), so \( j(x) = j(x') \), and \( x = x' \) by injectivity. For \( \emptyset \ne S \subseteq X \), the image \( j(S) \) is a non-empty subset of \( Y \) and has a least element \( j(s_0) \) with \( s_0 \in S \); then \( j(s_0) \le j(s) \), that is \( s_0 \preceq s \), for every \( s \in S \).
+(a) (PO1), (PO3) and totality for \( \preceq \) come from those of \( \preceq_Y \), applied to the images. (PO2): \( x \preceq x' \) and \( x' \preceq x \) give \( j(x) \preceq_Y j(x') \preceq_Y j(x) \), so \( j(x) = j(x') \), and \( x = x' \) by injectivity. For \( \emptyset \ne S \subseteq X \), the image \( j(S) \) is a non-empty subset of \( Y \) and has a least element \( j(s_0) \) with \( s_0 \in S \); then \( j(s_0) \preceq_Y j(s) \), that is \( s_0 \preceq s \), for every \( s \in S \).
 
 (b) A countable \( X \) has an injection \( X \to \nN \) (@thm-countable-characterizations, (i) \( \Rightarrow \) (ii), a rule), and \( (\nN, \le) \) is well-ordered (@thm-well-ordering); apply (a). One injection is named by one \( \rulename{\exists E} \). (This is the route of Section 6.2, Exercise C2 (b), where an injection into \( \nN \) picked representatives; here it picks a whole order.)
 
@@ -279,7 +279,7 @@ Let \( f \colon X \to Y \) be surjective. Using @thm-well-ordering-theorem, defi
 :::
 
 ::: {.solution}
-Well-order \( X \) by \( \le \) (@thm-well-ordering-theorem). For \( y \in Y \), the preimage \( f^{-1}(\{y\}) \) (@def-preimage) is non-empty, since \( f \) is onto, so it has a least element \( g(y) \), and only one (@prp-greatest-unique). So \( g \colon Y \to X \) is defined by specification, and \( f(g(y)) = y \) for every \( y \in Y \). This is @thm-surjection-right-inverse. The choice has moved into the well-order, which came from @thm-zorn; @prp-well-ordering-gives-choice with \( I = Y \) and \( A_y = f^{-1}(\{y\}) \) is the same argument.
+Well-order \( X \) by \( \preceq \) (@thm-well-ordering-theorem). For \( y \in Y \), the preimage \( f^{-1}(\{y\}) \) (@def-preimage) is non-empty, since \( f \) is onto, so it has a least element \( g(y) \), and only one (@prp-greatest-unique). So \( g \colon Y \to X \) is defined by specification, and \( f(g(y)) = y \) for every \( y \in Y \). This is @thm-surjection-right-inverse. The choice has moved into the well-order, which came from @thm-zorn; @prp-well-ordering-gives-choice with \( I = Y \) and \( A_y = f^{-1}(\{y\}) \) is the same argument.
 :::
 
 ::: {#exr-using-zorn-b6}
@@ -289,7 +289,7 @@ Prove each true statement and refute each false one.
 
 ::: {.enumerate options="label=(\alph*)"}
 1. Every total order on a finite set is a well-order.
-2. If \( \le \) is a well-order on \( X \) and \( Y \subseteq X \), then \( \le \) restricted to \( Y \) is a well-order on \( Y \).
+2. If \( \preceq \) is a well-order on \( X \) and \( Y \subseteq X \), then \( \preceq \) restricted to \( Y \) is a well-order on \( Y \).
 3. \( \ge \) is a well-order on \( \nN \).
 4. A well-ordered set with a greatest element is finite.
 5. In a well-ordered set, every non-empty subset has a greatest element.
@@ -297,7 +297,7 @@ Prove each true statement and refute each false one.
 :::
 
 ::: {.solution}
-(a) **True.** A non-empty subset \( S \) is finite (@prp-subset-finite); list it as \( x_1, \dots, x_n \), \( n \ge 1 \). The reverse relation \( \ge \) is a partial order and \( S \) is a chain for it, so @lem-chain-union (a) gives an \( x_k \) with \( x_j \ge x_k \) for all \( j \): the least element. (On \( \emptyset \) there is no non-empty subset, so the condition holds vacuously.)
+(a) **True.** A non-empty subset \( S \) is finite (@prp-subset-finite); list it as \( x_1, \dots, x_n \), \( n \ge 1 \). Let \( \preceq \) be the total order. The reverse relation \( \succeq \) is a partial order (it satisfies (PO1)–(PO3) because \( \preceq \) does) and \( S \) is a chain for it, so @lem-chain-union (a) gives an \( x_k \) with \( x_j \succeq x_k \) for all \( j \): the least element. (On \( \emptyset \) there is no non-empty subset, so the condition holds vacuously.)
 
 (b) **True.** Restriction keeps (PO1)–(PO3) and totality, which are statements about all elements, and a non-empty subset of \( Y \) is a non-empty subset of \( X \); its least element lies in it, hence in \( Y \).
 
@@ -324,7 +324,8 @@ The conclusion is true: it is @thm-cardinal-comparability. The argument does not
 **Marking scheme.** (10 points)
 - 2: the conclusion is true, with a citation.
 - 3: the failing line ("and so on \( \dots \) runs out") identified, with the reason that it has no step.
-- 3: a counterexample to the step "the process ends" (for example \( A = B = \nR \)), with the countability reason.
+- 2: a case where no step exhausts a side (for example any infinite \( A \), \( B \)).
+- 1: why even the whole \( \nN \)-indexed process cannot exhaust \( \nR \) (countability).
 - 2: the repair by the maximality template.
 :::
 
@@ -340,14 +341,14 @@ The conclusion is true: it is @thm-cardinal-comparability. The argument does not
 ::: {.solution}
 (a) Every element of \( C \) is below \( u \), so \( C \cup \{u\} \) is a chain containing \( C \); by maximality it is not larger, so \( u \in C \). Then \( u \in C \) is above every element of \( C \): it is the greatest element of \( C \). Suppose \( u \prec x \) for some \( x \in X \). For every \( c \in C \), \( c \preceq u \preceq x \), so \( C \cup \{x\} \) is a chain, and maximality gives \( x \in C \). Then \( x \preceq u \), and with \( u \preceq x \), (PO2) gives \( x = u \), contradicting \( u \prec x \). So \( u \) is maximal in \( X \).
 
-(b) Let \( P \) be a non-empty partially ordered set in which every non-empty chain has an upper bound. The empty set is a chain, so by Section 6.2, Exercise B1 (@exr-chains-and-zorn-b1) with \( C_0 = \emptyset \), \( P \) has a maximal chain \( C \). It is not empty: for \( p \in P \), \( \{p\} \) is a chain properly containing \( \emptyset \). So \( C \) has an upper bound \( u \), and \( u \) is a maximal element of \( P \) by (a). Since Exercise B1 was proved from Zorn's lemma, the two statements are equivalent.
+(b) Let \( P \) be a non-empty partially ordered set in which every non-empty chain has an upper bound. The empty set is a chain, so by the hypothesis (the statement of Section 6.2, Exercise B1, @exr-chains-and-zorn-b1, applied with \( C_0 = \emptyset \)), \( P \) has a maximal chain \( C \). It is not empty: for \( p \in P \), \( \{p\} \) is a chain properly containing \( \emptyset \). So \( C \) has an upper bound \( u \), and \( u \) is a maximal element of \( P \) by (a). Since Exercise B1 was proved from Zorn's lemma, the two statements are equivalent.
 
 **Marking scheme.** (10 points)
 - 1: \( u \in C \) in (a).
 - 1: \( u \) is the greatest element of \( C \).
 - 3: \( u \) is maximal in \( X \), using (PO2).
-- 2: a maximal chain \( C \) from Exercise B1 with \( C_0 = \emptyset \).
-- 1: \( C \ne \emptyset \).
+- 2: a maximal chain \( C \) from the hypothesis (starting from \( \emptyset \) or from \( \{p\} \)).
+- 1: \( C \ne \emptyset \) (immediate if the chain was started from \( \{p\} \)).
 - 2: an upper bound of \( C \), and the conclusion.
 :::
 
@@ -369,8 +370,8 @@ Let \( (A, R) \) and \( (B, S) \) be partial objects of the proof of @thm-well-o
 - 3: (i) in \( (\Rightarrow) \): 1 for \( R \subseteq S \cap (A \times A) \), 2 for the reverse inclusion by totality of \( R \) and antisymmetry of \( S \).
 - 2: (ii) in \( (\Rightarrow) \), with (E2) and antisymmetry.
 - 1: (E1) in \( (\Leftarrow) \).
-- 4: (E2) in \( (\Leftarrow) \): 2 for using totality of \( S \), 2 for excluding \( b \mathrel{S} a \) by (ii).
-- Fatal errors (0 for the part): proving only \( R \subseteq S \cap (A \times A) \) for (i); in \( (\Leftarrow) \), concluding \( a \mathrel{S} b \) without totality of \( S \).
+- 4: (E2) in \( (\Leftarrow) \): 2 for comparing \( a \) and \( b \) (totality of \( S \), or the least element of \( \{a, b\} \)), 2 for excluding \( b \mathrel{S} a \) by (ii).
+- Fatal errors (0 for the part): proving only \( R \subseteq S \cap (A \times A) \) for (i); in \( (\Leftarrow) \), concluding \( a \mathrel{S} b \) with no comparison of \( a \) and \( b \) at all.
 :::
 
 ### R. Review
@@ -392,29 +393,29 @@ There is no least element: it would divide \( 2 \) and \( 3 \), so it would be \
 ::: {#exr-using-zorn-r5}
 [R2]
 
-Let \( \le \) be a well-order on \( X \), with strict part \( < \). Show that there is no function \( s \colon \nN \to X \) with \( s(n + 1) < s(n) \) for every \( n \in \nN \).
+Let \( \preceq \) be a well-order on \( X \), with strict part \( \prec \). Show that there is no function \( s \colon \nN \to X \) with \( s(n + 1) \prec s(n) \) for every \( n \in \nN \).
 :::
 
 ::: {.solution}
-Suppose there were one. The image \( s(\nN) \) is non-empty, so it has a least element, of the form \( s(k) \) for some \( k \in \nN \). But \( s(k + 1) \in s(\nN) \) and \( s(k + 1) < s(k) \), against the minimality of \( s(k) \). The tool is the least-element argument of @exm-no-infinite-descent, with the well-order of \( X \) in place of \( \le \) on \( \nN \).
+Suppose there were one. The image \( s(\nN) \) is non-empty, so it has a least element, of the form \( s(k) \) for some \( k \in \nN \). But \( s(k + 1) \in s(\nN) \) and \( s(k + 1) \prec s(k) \), against the minimality of \( s(k) \). The tool is the least-element argument of @exm-no-infinite-descent, with the well-order of \( X \) in place of \( \le \) on \( \nN \).
 :::
 
 ::: {#exr-using-zorn-r6}
 [R3]
 
-Write the statement "\( (X, \le) \) is well-ordered" with quantifiers, negate it into positive form, and use the negation to show that \( (\nZ, \le) \) is not well-ordered.
+Write the statement "\( (X, \preceq) \) is well-ordered" with quantifiers, negate it into positive form, and use the negation to show that \( (\nZ, \le) \) is not well-ordered.
 :::
 
 ::: {.solution}
-Beyond \( \le \) being a total order, well-ordered says
+By @def-well-ordered-set, well-ordered says that \( \preceq \) is total and that the following least-element clause holds; the negation is therefore \( \preceq \) not total, or the negated clause. The clause is
 \[
-\forall S \, \bigl( S \subseteq X \wedge S \ne \emptyset \to \exists m \in S \; \forall s \in S \; m \le s \bigr).
+\forall S \, \bigl( S \subseteq X \wedge S \ne \emptyset \to \exists m \in S \; \forall s \in S \; m \preceq s \bigr).
 \]
-Its negation (@fd1:prp-bounded-quantifier-negation, as in @fd1:exm-negating-definitions) is
+Its negation, the second alternative, (@fd1:prp-bounded-quantifier-negation, as in @fd1:exm-negating-definitions) is
 \[
-\exists S \, \bigl( S \subseteq X \wedge S \ne \emptyset \wedge \forall m \in S \; \exists s \in S \; s < m \bigr),
+\exists S \, \bigl( S \subseteq X \wedge S \ne \emptyset \wedge \forall m \in S \; \exists s \in S \; s \prec m \bigr),
 \]
-where \( s < m \) stands for "not \( m \le s \)", which for a total order means \( s \le m \) and \( s \ne m \). For \( \nZ \), take \( S \coloneqq \nZ \): for each \( m \in \nZ \), \( s \coloneqq m - 1 \in S \) has \( s < m \). Since \( \le \) on \( \nZ \) is a total order, it is the least-element condition that fails.
+where \( s \prec m \) stands for "not \( m \preceq s \)", which for a total order means \( s \preceq m \) and \( s \ne m \). For \( \nZ \) with \( \preceq \) the usual \( \le \), take \( S \coloneqq \nZ \): for each \( m \in \nZ \), \( s \coloneqq m - 1 \in S \) has \( s < m \). Since \( \le \) on \( \nZ \) is a total order, it is the least-element condition that fails.
 :::
 
 ::: {#exr-infinite-sets-r4}
@@ -436,11 +437,11 @@ By @thm-countable-union, \( Z \) is countable. (That theorem uses @ax-choice; he
 :::
 
 <!-- dependency ledger
-thm-choice-from-zorn (proof): P(I x U) and P are sets | power set and set-builder (Chapter 1)
-thm-cardinal-comparability (proof): P is a set of subsets of A x B; inclusion is a partial order on it | power set and set-builder (F2.1); inclusion on a set of sets as in 5.1 before lem-chain-union
+thm-choice-from-zorn (proof): P(I x U) and P are sets | power set and set-builder (F2.1)
+thm-cardinal-comparability (proof): P is a set of subsets of A x B; inclusion is a partial order on it | power set and set-builder (F2.1); inclusion on a set of sets as in F2.4 §02 before lem-chain-union
 thm-cardinal-comparability (proof): two pairs of a union of a chain lie in one member | lem-chain-union (b) (cited, F2.4 §02)
 thm-cardinal-comparability (proof): maximal element | thm-zorn (cited; stated without proof, F2.4 §02; proved in ST.4 (promised))
-thm-cardinal-comparability (proof): graph of a function; inverse relation | def-function, def-relation (cited, F2.1)
+thm-cardinal-comparability (proof): graph of a function; inverse relation | def-function (F2.6), def-relation (F2.1) (cited)
 thm-cardinal-comparability (claim): (Quick check) six maximal matchings of {1,2,3} and {x,y}; none pairs all of A | cor-pigeonhole-finite-sets (a) (cited); verify/ch06/thm-cardinal-comparability.py
 cor-cardinal-trichotomy (proof): symmetry of equinumerosity; injections both ways | prp-equinumerous-properties (b), thm-schroder-bernstein, def-card-le (cited)
 cor-cardinal-trichotomy (claim): comparability equivalent to choice | ST.4 (prose pointer; nothing depends on it)
@@ -464,12 +465,12 @@ prp-well-ordering-gives-choice (claim): (0, 1/n) has no least element (x/2 < x) 
 prp-well-ordering-gives-choice (claim): (Quick check) c picks -4 from {n : n^2 > 10} and 11 from {n : n > 10} | arithmetic; verify/ch06/thm-well-ordering-theorem.py
 prp-well-ordering-gives-choice (claim): (closing table) AC implies Zorn; comparability implies well-ordering (Hartogs) | ST.4 (prose pointers; nothing depends on them)
 prp-well-ordering-gives-choice (claim): (closing table) AC equivalent to right inverses | thm-surjection-right-inverse and the projection remark after it (F2.4 §01)
-prp-well-ordering-gives-choice (claim): (closing paragraph) basis extension by the template | LA §1.8 (prose pointer; nothing depends on it)
+prp-well-ordering-gives-choice (claim): (closing paragraph) basis extension by the template | LA §1.8, la:thm-basis-extension-general (cross-volume pointer; nothing depends on it)
 exr-using-zorn-a1 (solution): (c) the one use of A_i non-empty | inline (moved with exr-chains-and-zorn-a1 (a))
 exr-using-zorn-a1 (solution): (e) five partial objects on {1, 2}, two maximal | finite check; verify/ch06/thm-well-ordering-theorem.py
 exr-using-zorn-b4 (solution): injection into N from a countable set; Q countable | thm-countable-characterizations, thm-well-ordering, thm-integers-rationals-countable (cited)
 exr-using-zorn-b5 (solution): least preimage gives a right inverse | thm-well-ordering-theorem, prp-greatest-unique, def-preimage (cited)
-exr-using-zorn-b6 (solution): (a) least element by lem-chain-union (a) on the reverse order; (d) the order of exm-divisibility-linear-extension is a well-order with greatest element 0; (c) g + 1 > g | lem-chain-union, prp-subset-finite, thm-well-ordering (cited); verify/ch06/exr-using-zorn-b6.py
+exr-using-zorn-b6 (solution): (a) the reverse order is a partial order (PO1)-(PO3 inherited); least element by lem-chain-union (a) on the reverse order; (d) the order of exm-divisibility-linear-extension is a well-order with greatest element 0; (c) g + 1 > g | lem-chain-union, prp-subset-finite, thm-well-ordering (cited); verify/ch06/exr-using-zorn-b6.py
 exr-using-zorn-r4 (solution): maximal elements 16, ..., 30; no greatest; no least | prp-divides-partial-order, prp-greatest-maximal (cited); finite check; verify/ch06/exr-using-zorn-r4.py
 exr-using-zorn-r5 (solution): least element of the image | def-well-ordered-set; exm-no-infinite-descent (cited)
 exr-using-zorn-r6 (solution): negation of the well-order condition; m - 1 < m in Z | fd1:prp-bounded-quantifier-negation, fd1:exm-negating-definitions (cited); arithmetic of Z
