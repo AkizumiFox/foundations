@@ -652,7 +652,7 @@ items:
   kind: exm
   file: 02-equivalence-relations.md
   line: 43
-  hash: 6c215e759497
+  hash: 80f1757cb8e5
   verdicts:
   - stage: S5a
     verdict: correct
@@ -712,7 +712,7 @@ items:
 - key: def-equivalence-class
   kind: def
   file: 02-equivalence-relations.md
-  line: 94
+  line: 93
   hash: 748299eb1adf
   verdicts:
   - stage: S5a
@@ -741,7 +741,7 @@ items:
 - key: check:02-equivalence-relations:1
   kind: check
   file: 02-equivalence-relations.md
-  line: 108
+  line: 107
   hash: 6726a5b3e86d
   verdicts:
   - stage: S5a
@@ -764,7 +764,7 @@ items:
 - key: def-partition
   kind: def
   file: 02-equivalence-relations.md
-  line: 118
+  line: 117
   hash: e7396ceabdbe
   verdicts:
   - stage: S5a
@@ -787,7 +787,7 @@ items:
 - key: def-quotient-set
   kind: def
   file: 02-equivalence-relations.md
-  line: 140
+  line: 139
   hash: c84bf73f4885
   verdicts:
   - stage: S5a
@@ -820,7 +820,7 @@ items:
 - key: thm-classes-partition
   kind: thm
   file: 02-equivalence-relations.md
-  line: 156
+  line: 155
   hash: 11d92d14f24c
   verdicts:
   - stage: S5a
@@ -865,7 +865,7 @@ items:
 - key: proof:thm-classes-partition
   kind: proof
   file: 02-equivalence-relations.md
-  line: 175
+  line: 174
   hash: ad81c4d80be6
   verdicts:
   - stage: S5a
@@ -887,7 +887,7 @@ items:
 - key: thm-partition-equivalence
   kind: thm
   file: 02-equivalence-relations.md
-  line: 209
+  line: 208
   hash: 28f4accab79b
   verdicts:
   - stage: S5a
@@ -918,7 +918,7 @@ items:
 - key: proof:thm-partition-equivalence
   kind: proof
   file: 02-equivalence-relations.md
-  line: 225
+  line: 224
   hash: fca56b77e063
   verdicts:
   - stage: S5a
@@ -951,7 +951,7 @@ items:
 - key: check:02-equivalence-relations:2
   kind: check
   file: 02-equivalence-relations.md
-  line: 243
+  line: 242
   hash: 418920ff98a8
   verdicts:
   - stage: S5a
@@ -981,7 +981,7 @@ items:
 - key: def-congruence
   kind: def
   file: 02-equivalence-relations.md
-  line: 259
+  line: 258
   hash: 3ccd9f604b7b
   verdicts:
   - stage: S5a
@@ -1003,7 +1003,7 @@ items:
 - key: prp-congruence-equivalence
   kind: prp
   file: 02-equivalence-relations.md
-  line: 271
+  line: 270
   hash: 33e3c8a1d87f
   verdicts:
   - stage: S5a
@@ -1023,7 +1023,7 @@ items:
 - key: proof:prp-congruence-equivalence
   kind: proof
   file: 02-equivalence-relations.md
-  line: 277
+  line: 276
   hash: 46e4491c5b32
   verdicts:
   - stage: S5a
@@ -1043,7 +1043,7 @@ items:
 - key: prp-integers-mod-n
   kind: prp
   file: 02-equivalence-relations.md
-  line: 285
+  line: 284
   hash: c7f3b4005b3e
   verdicts:
   - stage: S5a
@@ -1066,7 +1066,7 @@ items:
 - key: proof:prp-integers-mod-n
   kind: proof
   file: 02-equivalence-relations.md
-  line: 297
+  line: 296
   hash: a0bb934ca29d
   verdicts:
   - stage: S5a
@@ -1090,7 +1090,7 @@ items:
 - key: exm-reals-mod-integers
   kind: exm
   file: 02-equivalence-relations.md
-  line: 316
+  line: 315
   hash: ded4296cee17
   verdicts:
   - stage: S5a
@@ -1137,10 +1137,20 @@ items:
     model: claude-opus-5-5
     evidence: '02-equivalence-relations.md:336 A cross-volume pointer uses MT''s old title, and fd2 is
       now inconsistent: 6.1 uses the new one.'
+  - stage: S8
+    verdict: correct
+    by: coordinator
+    hash: ded4296cee17
+    date: '2026-10-26'
+    model: claude-opus-5-5
+    evidence: '02-equivalence-relations.md:335: S8 seam minor resolved: MT pointer uses the new title
+      and now says Chapter 2 (MIRA ch 2 = MT.1 measures; ch 1 is HA.9 Riemann, spec/08 D4), matching 6.2
+      (ch06 02-chains-and-zorn.md:160). Example''s (Eq1)-(Eq3) and three-classes argument unchanged and
+      correct.'
 - key: prp-congruence-arithmetic
   kind: prp
   file: 02-equivalence-relations.md
-  line: 347
+  line: 346
   hash: 548f6dae0d0f
   verdicts:
   - stage: S5a
@@ -1179,7 +1189,7 @@ items:
 - key: proof:prp-congruence-arithmetic
   kind: proof
   file: 02-equivalence-relations.md
-  line: 372
+  line: 371
   hash: 229ce0dece5e
   verdicts:
   - stage: S5a
@@ -1201,7 +1211,7 @@ items:
 - key: exm-method-well-definedness
   kind: exm
   file: 02-equivalence-relations.md
-  line: 399
+  line: 398
   hash: 509042883bb6
   verdicts:
   - stage: S5a
@@ -1233,7 +1243,7 @@ items:
 - key: check:02-equivalence-relations:3
   kind: check
   file: 02-equivalence-relations.md
-  line: 409
+  line: 408
   hash: 55c013b881a2
   verdicts:
   - stage: S5a
@@ -1271,7 +1281,7 @@ items:
 - key: exm-ill-defined-class-map
   kind: exm
   file: 02-equivalence-relations.md
-  line: 419
+  line: 418
   hash: 61b4b8a065b1
   verdicts:
   - stage: S5a
@@ -1302,7 +1312,7 @@ items:
 - key: exm-fibres-of-function
   kind: exm
   file: 02-equivalence-relations.md
-  line: 435
+  line: 434
   hash: e3ed20d18a69
   verdicts:
   - stage: S5a
@@ -1324,7 +1334,7 @@ items:
 - key: prp-fibres-partition
   kind: prp
   file: 02-equivalence-relations.md
-  line: 461
+  line: 460
   hash: ce9f3467a6ed
   verdicts:
   - stage: S5a
@@ -1355,7 +1365,7 @@ items:
 - key: proof:prp-fibres-partition
   kind: proof
   file: 02-equivalence-relations.md
-  line: 476
+  line: 475
   hash: 20e30b212057
   verdicts:
   - stage: S5a
@@ -1399,7 +1409,7 @@ items:
 - key: check:02-equivalence-relations:4
   kind: check
   file: 02-equivalence-relations.md
-  line: 486
+  line: 485
   hash: e485aa1db7cf
   verdicts:
   - stage: S5a
@@ -1420,7 +1430,7 @@ items:
 - key: exm-same-size-subsets
   kind: exm
   file: 02-equivalence-relations.md
-  line: 497
+  line: 496
   hash: ef1074d1ca81
   verdicts:
   - stage: S5a
@@ -1470,7 +1480,7 @@ items:
 - key: thm-canonical-factorization
   kind: thm
   file: 02-equivalence-relations.md
-  line: 533
+  line: 532
   hash: ec42d3203420
   verdicts:
   - stage: S5a
@@ -1512,7 +1522,7 @@ items:
 - key: proof:thm-canonical-factorization
   kind: proof
   file: 02-equivalence-relations.md
-  line: 547
+  line: 546
   hash: fc550d85d4c8
   verdicts:
   - stage: S5a
@@ -1540,11 +1550,19 @@ items:
     model: claude-opus-5-5
     evidence: 'Only the ledger line changed: def-restriction-extension is now cited as F2.2 §03. It is
       defined at fd2/src/ch02-functions/03-gluing-and-characteristic-functions.md:31, which matches.'
+  - stage: S8
+    verdict: correct
+    by: coordinator
+    hash: fc550d85d4c8
+    date: '2026-10-26'
+    model: claude-opus-5-5
+    evidence: '02-equivalence-relations.md:899: ledger tag fixed to the re-cut mapping: def-restriction-extension
+      is in ch02-functions/03 = F2.6 §03 (was F2.2 §03); proof text unchanged.'
 - key: exm-fraction-map-factorization
   kind: exm
   file: 02-equivalence-relations.md
-  line: 581
-  hash: cdaa71a0763e
+  line: 580
+  hash: c3721b1d5059
   verdicts:
   - stage: S5a
     verdict: correct
@@ -1611,7 +1629,7 @@ items:
 - key: check:02-equivalence-relations:5
   kind: check
   file: 02-equivalence-relations.md
-  line: 595
+  line: 594
   hash: 90323dc89579
   verdicts:
   - stage: S5a
@@ -1648,7 +1666,7 @@ items:
 - key: exr-equivalence-relations-a1
   kind: exr
   file: 02-equivalence-relations.md
-  line: 613
+  line: 612
   hash: 5bb9fca5bf54
   verdicts:
   - stage: S5a
@@ -1706,85 +1724,10 @@ items:
       Eq2 and Eq3, which matches the proof. (b) The differences 7-4=3, 7-10=-3, 4-7=-3, 4-10=-6 were computed
       by script. (c) [2]={1,2} and [1]={1}. With c=1, the line 'By (Eq2), a~c' would need 2<=1, which
       is false. Th
-- key: exr-fibres-and-factorization-a1
-  kind: exr
-  file: 02-equivalence-relations.md
-  line: 642
-  hash: bf11c7706972
-  verdicts:
-  - stage: S5a
-    verdict: correct
-    by: refereeA
-    hash: 581f7ca8e663
-    date: '2026-10-26'
-    model: claude-opus-5-5
-    evidence: 'l.277-284: the fibres and the computation 8ak+16k^2 are right. The sidecar passes.'
-  - stage: S5b
-    verdict: correct
-    by: refereeB
-    hash: 581f7ca8e663
-    date: '2026-10-26'
-    model: claude-opus-5-5
-    evidence: 02:269-285; fibers {-2,2},{0},∅; (a+4k)^2-a^2=8ak+16k^2 checked; [0]_8!=[4]_8
-  - stage: S6
-    verdict: correct
-    by: verifier
-    hash: 581f7ca8e663
-    date: '2026-10-26'
-    model: claude-opus-5-5
-    evidence: 02:266-285. (a) The fibers are {-2,2}, {0} and the empty set; the empty one is not a class
-      by thm-classes-partition (a), and (a) does say classes are non-empty. (b) matches my answer. (c)
-      gives yes/no/yes; by script, (a+4k)^2-a^2 ≡ 0 mod 8, and 4k need not be ≡ 0 mod 8.
-  - stage: S5a
-    verdict: correct
-    by: refereeA
-    hash: bf11c7706972
-    date: '2026-10-26'
-    model: claude-opus-5-5
-    evidence: 'lines 642-661: the fibers {-2,2}, {0} and the empty set are right, and the empty fiber
-      is excluded since -2 is not in f(R) and classes are non-empty (thm-classes-partition (a)); (b) X/~f,
-      f(X)={1,3}, f-bar and iota are right; (c) a''^2-a^2=8ak+16k^2=8(ak+2k^2) checks, and [0]_8≠[4]_8
-      is right. The sidecar passes.'
-  - stage: S5b
-    verdict: minor
-    by: refereeB
-    hash: bf11c7706972
-    date: '2026-10-26'
-    model: claude-opus-5-5
-    evidence: 02-equivalence-relations.md:642 The section has two A exercises, against STYLE §6. Part
-      (b) uses an unnamed X, and part (c) uses discreteness without a ref.
-  - stage: S6
-    verdict: correct
-    by: verifier
-    hash: bf11c7706972
-    date: '2026-10-26'
-    model: claude-opus-5-5
-    evidence: '02-equivalence-relations.md:653-660. Solved first: fibers {-2,2}, {0}, empty; the first
-      two are classes, the empty one is not (classes are non-empty). (b) X/~f={{a,c},{b,d}}, f(X)={1,3},
-      fbar and iota as stated. (c) mod 2: yes; mod 8: no (0 vs 4); a^2 mod 8: yes, since (a+4k)^2-a^2=8(ak+2k^2).
-      Brute-force script agrees on all parts.'
-  - stage: S7r
-    verdict: correct
-    by: rereferee
-    hash: cc4468d2c1de
-    date: '2026-10-26'
-    model: claude-opus-5-5
-    evidence: (b) now names X = {a,b,c,d}. In (c), [0]_8 != [4]_8 cites @prp-integers-closed (c) (discreteness,
-      ch03-induction-and-recursion/01:113), as elsewhere in the section, and ledger line 903 matches.
-      The STYLE §6 two-A-items issue was deferred (F003).
-  - stage: S7r
-    verdict: correct
-    by: rereferee
-    hash: cc4468d2c1de
-    date: '2026-10-26'
-    model: claude-opus-5-5
-    evidence: '(b) now names X. In (c), 4 − 0 = 4 = 8j would need an integer j with 0 < j < 1, which prp-integers-closed
-      (c) rules out (discreteness: m < n ⇒ m+1 ≤ n). The citation is right, and the ledger line at :903
-      was updated to match. (a) and (b) are unchanged and correct.'
 - key: exr-equivalence-relations-b1
   kind: exr
   file: 02-equivalence-relations.md
-  line: 665
+  line: 643
   hash: 44dda6538d10
   verdicts:
   - stage: S5a
@@ -1825,7 +1768,7 @@ items:
 - key: exr-equivalence-relations-b2
   kind: exr
   file: 02-equivalence-relations.md
-  line: 682
+  line: 660
   hash: 958d17d4aa1c
   verdicts:
   - stage: S5a
@@ -1855,7 +1798,7 @@ items:
 - key: exr-equivalence-relations-b3
   kind: exr
   file: 02-equivalence-relations.md
-  line: 696
+  line: 674
   hash: a0dd04820155
   verdicts:
   - stage: S5a
@@ -1938,7 +1881,7 @@ items:
 - key: exr-equivalence-relations-b4
   kind: exr
   file: 02-equivalence-relations.md
-  line: 718
+  line: 696
   hash: 82e4bbb9be46
   verdicts:
   - stage: S5a
@@ -2022,11 +1965,28 @@ items:
     model: claude-opus-5-5
     evidence: 'Only the ledger line changed: it adds ''|x|^2 = x^2 since |x| = x or -x | R arithmetic,
       school fact'', which covers the step in (g).'
+- key: exr-fibres-and-factorization-b1
+  kind: exr
+  file: 02-equivalence-relations.md
+  line: 728
+  hash: cc2141bb17cf
+  verdicts:
+  - stage: S8
+    verdict: correct
+    by: coordinator
+    hash: cc2141bb17cf
+    date: '2026-10-26'
+    model: claude-opus-5-5
+    evidence: '02-equivalence-relations.md:728-756: former A2 moved verbatim to group B as [B5] (STYLE
+      §6: one A exercise). Rechecked: fibers of x^2-1 over 3,-1,-2 are {-2,2},{0},empty; only non-empty
+      fibers are classes; X/~f={{a,c},{b,d}}, f(X)={1,3}, iota not onto (2 missed); mod 4: [a]_2 yes,
+      [a]_8 no (0 vs 4, prp-integers-closed (c)), [a^2]_8 yes (8ak+16k^2). Sidecar verify/ch05/exr-fibres-and-factorization-b1.py
+      passes; ledger line updated.'
 - key: exr-fibres-and-factorization-b2
   kind: exr
   file: 02-equivalence-relations.md
-  line: 750
-  hash: eae334489b4e
+  line: 749
+  hash: c691274d43a0
   verdicts:
   - stage: S5a
     verdict: correct
@@ -2082,10 +2042,19 @@ items:
       g-equal, and h is injective, so g-equal implies f-equal. (=>) take h = gbar o fbar^{-1}, using thm-canonical-factorization
       (line 533; fbar is a bijection onto f(X)). The book''s proof is the same and complete. The cited
       labels exist: thm-composition-injective-surjective (c) is in ch02/02 at line 221. Worked exam'
+  - stage: S8
+    verdict: correct
+    by: coordinator
+    hash: c691274d43a0
+    date: '2026-10-26'
+    model: claude-opus-5-5
+    evidence: '02-equivalence-relations.md:750: only the display tag changed, [B5]->[B6: Same fibers];
+      statement and both directions of the proof unchanged and correct (h injective gives the converse;
+      h = gbar o fbar^-1 via thm-canonical-factorization).'
 - key: exr-equivalence-relations-c1
   kind: exr
   file: 02-equivalence-relations.md
-  line: 764
+  line: 763
   hash: 76ce6a2283e7
   verdicts:
   - stage: S5a
@@ -2127,7 +2096,7 @@ items:
 - key: exr-equivalence-relations-c2
   kind: exr
   file: 02-equivalence-relations.md
-  line: 792
+  line: 791
   hash: 2b23da83b6de
   verdicts:
   - stage: S5a
@@ -2160,8 +2129,8 @@ items:
 - key: exr-fibres-and-factorization-c1
   kind: exr
   file: 02-equivalence-relations.md
-  line: 816
-  hash: 57c3c8c85f8d
+  line: 815
+  hash: 961bb02ff0fd
   verdicts:
   - stage: S5a
     verdict: correct
@@ -2254,11 +2223,20 @@ items:
       sound: per-fibre bijections onto {1..m} give a bijection X → {1..k}×{1..m}, then exr-finite-sets-c2
       (a) (ch04 01-finite-sets.md:617) and cor-finite-size-unique apply. However, :836 spells it ''fibre''
       twice, while the chapter''s prose (and the index glossary at :48) uses ''fiber''. Write ''fiber''.'
+  - stage: S8
+    verdict: correct
+    by: coordinator
+    hash: 961bb02ff0fd
+    date: '2026-10-26'
+    model: claude-opus-5-5
+    evidence: '02-equivalence-relations.md:836: ''fibre/fibres'' now ''fiber/fibers'' (STYLE American
+      spelling), the S7r minor. Alternative-route marking line rechecked: per-fiber bijections give X
+      -> {1..k}x{1..m}, exr-finite-sets-c2 (a) and cor-finite-size-unique give km; points 4+3+3=10.'
 - key: exr-restriction-extension-and-gluing-c2
   kind: exr
   file: 02-equivalence-relations.md
   line: 841
-  hash: 84128e635948
+  hash: 4cb935314ccc
   verdicts:
   - stage: S5a
     verdict: correct
@@ -2470,6 +2448,16 @@ items:
     evidence: 03-orders.md:76 The chapter defines greatest and least elements and proves they are unique
       without recalling the earlier versions it generalises. STYLE l.341 requires the spiral to be written
       out.
+  - stage: S8
+    verdict: correct
+    by: coordinator
+    hash: f1ee40fdc077
+    date: '2026-10-26'
+    model: claude-opus-5-5
+    evidence: '03-orders.md:3: S8 seam minor (spiral, STYLE l.341) resolved: the opening frame now recalls
+      Section 3.1''s least/greatest elements of real sets with @thm-well-ordering and says what survives
+      (uniqueness) and what changes (greatest may fail where maximal exists). Definition 03-orders.md:76-81
+      unchanged and correct; 03:116 still ties it to fd1 5.8 max.'
 - key: def-maximal-element
   kind: def
   file: 03-orders.md
@@ -3210,107 +3198,11 @@ items:
       line; neither executes r∈D plus minimality. The scheme sums to 10 and passes both the book''s proof
       and my alternative, which runs (d) via the least positive element of the set of integer combinations
       of upper '
-- key: exr-orders-r1
-  kind: exr
-  file: 03-orders.md
-  line: 410
-  hash: dc3e80a8684f
-  verdicts:
-  - stage: S5a
-    verdict: correct
-    by: refereeA
-    hash: dc3e80a8684f
-    date: '2026-10-11'
-    model: claude-opus-5-5
-    evidence: 06:405-411. f([-3,1])=[-4,5], f^{-1}([-3,0])=[-4,-3]∪[-1,0], f(ℝ)=[-4,∞) and both sides
-      [-4,0] all recomputed. prp-image-preimage (b) is cited correctly. The sidecar passes.
-  - stage: S5b
-    verdict: correct
-    by: refereeB
-    hash: dc3e80a8684f
-    date: '2026-10-11'
-    model: claude-opus-5-5
-    evidence: 06:405-411. f([-3,1])=[-4,5]; f^{-1}([-3,0])=[-4,-3]∪[-1,0]; f(R)=[-4,∞); both sides equal
-      [-4,0], as prp-image-preimage (b) says. The sidecar passes, and the square roots are ledgered under
-      the school-fact convention.
-  - stage: S6
-    verdict: correct
-    by: verifier
-    hash: dc3e80a8684f
-    date: '2026-10-11'
-    model: claude-opus-5-5
-    evidence: '06:402-411. Script sampling: f([-3,1])=[-4,5], f^{-1}([-3,0])=[-4,-3]∪[-1,0], f^{-1}([-5,0])=[-4,0],
-      whose image is [-4,0] = [-5,0]∩[-4,∞). The problem hides its source (Ch 6), and the solution cites
-      @prp-image-preimage (b).'
-  - stage: S7r
-    verdict: correct
-    by: rereferee
-    hash: dc3e80a8684f
-    date: '2026-10-25'
-    model: claude-opus-5-5
-    evidence: Only the ledger sidecar path changed, to verify/ch04/exr-orders-r1.py.
-  - stage: S7r
-    verdict: correct
-    by: rereferee
-    hash: dc3e80a8684f
-    date: '2026-10-25'
-    model: claude-opus-5-5
-    evidence: The sidecar path in the ledger is now verify/ch04/exr-orders-r1.py.
-  - stage: S8
-    verdict: minor
-    by: seam
-    hash: dc3e80a8684f
-    date: '2026-10-26'
-    model: claude-opus-5-5
-    evidence: '03-orders.md:410 The R items are not in the slots STYLE §11.5 assigns: the previous-chapter
-      item is labelled r3, and r1 reaches 3 chapters back.'
-- key: exr-orders-r2
-  kind: exr
-  file: 03-orders.md
-  line: 428
-  hash: 503c9042a84f
-  verdicts:
-  - stage: S5a
-    verdict: correct
-    by: refereeA
-    hash: 2013841a6836
-    date: '2026-10-11'
-    model: claude-opus-5-5
-    evidence: '06:421-427. prp-bounded-quantifier-negation (a) then (b) is applied correctly. N11 does
-      include ''a bound negated instead of a quantifier'' (05/06-checking-proofs: entry 11). The witnesses
-      are right.'
-  - stage: S5b
-    verdict: minor
-    by: refereeB
-    hash: 2013841a6836
-    date: '2026-10-11'
-    model: claude-opus-5-5
-    evidence: 06-orders.md:427 The facts n+1 ∈ N and n < n+1 are used without an @ref or a ledger line,
-      here and in the warning at 06:161.
-  - stage: S6
-    verdict: correct
-    by: verifier
-    hash: 2013841a6836
-    date: '2026-10-11'
-    model: claude-opus-5-5
-    evidence: 06:420-427. The negation via bounded-quantifier-negation (a), then (b), is correct, and
-      totality turns ¬(a<b) into b≤a. N satisfies the statement and {1..5} its negation (a=5). The source
-      is cited with @ref.
-  - stage: S7r
-    verdict: correct
-    by: rereferee
-    hash: 503c9042a84f
-    date: '2026-10-11'
-    model: claude-opus-5-5
-    evidence: 06:421-427. The negation is ¬∀∃ → ∃¬∃ → ∃∀¬ by prp-bounded-quantifier-negation (a) then
-      (b), which matches ch04-09. ¬(a<b) is b≤a by totality. (N11) exists in exm-not-allowed-catalogue
-      (ch05-06). a+1 ∈ N now cites (NS), and a < a+1 is ledgered at 497. Witness a = 5 is correct. The
-      earlier finding is resolved.
 - key: exr-orders-r3
   kind: exr
   file: 03-orders.md
-  line: 444
-  hash: 0b9ffaa30811
+  line: 410
+  hash: a943f5e47299
   verdicts:
   - stage: S5a
     verdict: correct
@@ -3392,6 +3284,129 @@ items:
     model: claude-opus-5-5
     evidence: '03-orders.md:444-452: this is the previous-chapter (Ch 4) item, but it sits in the R3 slot,
       which STYLE §11.5 reserves for the spiral / far-back item.'
+  - stage: S8
+    verdict: correct
+    by: coordinator
+    hash: a943f5e47299
+    date: '2026-10-26'
+    model: claude-opus-5-5
+    evidence: '03-orders.md:410-418: F017 resolved without renaming labels: display reordered so the previous-chapter
+      item (Ch 4, prp-countable-image) is [R1], per STYLE §11.5. Solution unchanged: q surjective, countable
+      image, Z countable not finite, Z/2 two classes. No text cites R1-R3 by number (grep fd2/src).'
+- key: exr-orders-r1
+  kind: exr
+  file: 03-orders.md
+  line: 420
+  hash: 6e195a6cd000
+  verdicts:
+  - stage: S5a
+    verdict: correct
+    by: refereeA
+    hash: dc3e80a8684f
+    date: '2026-10-11'
+    model: claude-opus-5-5
+    evidence: 06:405-411. f([-3,1])=[-4,5], f^{-1}([-3,0])=[-4,-3]∪[-1,0], f(ℝ)=[-4,∞) and both sides
+      [-4,0] all recomputed. prp-image-preimage (b) is cited correctly. The sidecar passes.
+  - stage: S5b
+    verdict: correct
+    by: refereeB
+    hash: dc3e80a8684f
+    date: '2026-10-11'
+    model: claude-opus-5-5
+    evidence: 06:405-411. f([-3,1])=[-4,5]; f^{-1}([-3,0])=[-4,-3]∪[-1,0]; f(R)=[-4,∞); both sides equal
+      [-4,0], as prp-image-preimage (b) says. The sidecar passes, and the square roots are ledgered under
+      the school-fact convention.
+  - stage: S6
+    verdict: correct
+    by: verifier
+    hash: dc3e80a8684f
+    date: '2026-10-11'
+    model: claude-opus-5-5
+    evidence: '06:402-411. Script sampling: f([-3,1])=[-4,5], f^{-1}([-3,0])=[-4,-3]∪[-1,0], f^{-1}([-5,0])=[-4,0],
+      whose image is [-4,0] = [-5,0]∩[-4,∞). The problem hides its source (Ch 6), and the solution cites
+      @prp-image-preimage (b).'
+  - stage: S7r
+    verdict: correct
+    by: rereferee
+    hash: dc3e80a8684f
+    date: '2026-10-25'
+    model: claude-opus-5-5
+    evidence: Only the ledger sidecar path changed, to verify/ch04/exr-orders-r1.py.
+  - stage: S7r
+    verdict: correct
+    by: rereferee
+    hash: dc3e80a8684f
+    date: '2026-10-25'
+    model: claude-opus-5-5
+    evidence: The sidecar path in the ledger is now verify/ch04/exr-orders-r1.py.
+  - stage: S8
+    verdict: minor
+    by: seam
+    hash: dc3e80a8684f
+    date: '2026-10-26'
+    model: claude-opus-5-5
+    evidence: '03-orders.md:410 The R items are not in the slots STYLE §11.5 assigns: the previous-chapter
+      item is labelled r3, and r1 reaches 3 chapters back.'
+  - stage: S8
+    verdict: correct
+    by: coordinator
+    hash: 6e195a6cd000
+    date: '2026-10-26'
+    model: claude-opus-5-5
+    evidence: '03-orders.md:420-436: now [R2] (Section 2.5 images/preimages, three chapters back, STYLE
+      §11.5 R2). Text unchanged and correct: f=(x+2)^2-4, f([-3,1])=[-4,5], f^-1([-3,0])=[-4,-3]u[-1,0],
+      f(R)=[-4,inf), both sides [-4,0]; sidecar verify/ch05/exr-orders-r1.py passes.'
+- key: exr-orders-r2
+  kind: exr
+  file: 03-orders.md
+  line: 438
+  hash: 0d0d934a4c29
+  verdicts:
+  - stage: S5a
+    verdict: correct
+    by: refereeA
+    hash: 2013841a6836
+    date: '2026-10-11'
+    model: claude-opus-5-5
+    evidence: '06:421-427. prp-bounded-quantifier-negation (a) then (b) is applied correctly. N11 does
+      include ''a bound negated instead of a quantifier'' (05/06-checking-proofs: entry 11). The witnesses
+      are right.'
+  - stage: S5b
+    verdict: minor
+    by: refereeB
+    hash: 2013841a6836
+    date: '2026-10-11'
+    model: claude-opus-5-5
+    evidence: 06-orders.md:427 The facts n+1 ∈ N and n < n+1 are used without an @ref or a ledger line,
+      here and in the warning at 06:161.
+  - stage: S6
+    verdict: correct
+    by: verifier
+    hash: 2013841a6836
+    date: '2026-10-11'
+    model: claude-opus-5-5
+    evidence: 06:420-427. The negation via bounded-quantifier-negation (a), then (b), is correct, and
+      totality turns ¬(a<b) into b≤a. N satisfies the statement and {1..5} its negation (a=5). The source
+      is cited with @ref.
+  - stage: S7r
+    verdict: correct
+    by: rereferee
+    hash: 503c9042a84f
+    date: '2026-10-11'
+    model: claude-opus-5-5
+    evidence: 06:421-427. The negation is ¬∀∃ → ∃¬∃ → ∃∀¬ by prp-bounded-quantifier-negation (a) then
+      (b), which matches ch04-09. ¬(a<b) is b≤a by totality. (N11) exists in exm-not-allowed-catalogue
+      (ch05-06). a+1 ∈ N now cites (NS), and a < a+1 is ledgered at 497. Witness a = 5 is correct. The
+      earlier finding is resolved.
+  - stage: S8
+    verdict: correct
+    by: coordinator
+    hash: 0d0d934a4c29
+    date: '2026-10-26'
+    model: claude-opus-5-5
+    evidence: '03-orders.md:438-452: now [R3] (fd1 spiral item, STYLE §11.5 R3). Text unchanged: negation
+      via fd1:prp-bounded-quantifier-negation (a),(b), totality turns not(a<b) into b<=a; N satisfies
+      the statement, {1..5} its negation with a=5.'
 - key: exr-orders-r4
   kind: exr
   file: 03-orders.md
@@ -3433,25 +3448,3 @@ items:
       of X. It derives A' = A ∪ {x_{n+1}} from {1,…,n+1} = {1,…,n} ∪ {n+1} via @lem-naturals-arithmetic
       (e), as prp-finite-max does, and ledger 500 records this. Case 1 uses m ∈ A ⊆ A' and is correct.
       Case 2 use
-- key: check:02-equivalence-relations:6
-  kind: check
-  file: 02-equivalence-relations.md
-  line: 625
-  hash: 90323dc89579
-  verdicts:
-  - stage: S5a
-    verdict: correct
-    by: refereeA
-    hash: 90323dc89579
-    date: '2026-10-26'
-    model: claude-opus-5-5
-    evidence: 'l.164: q(1,2)=q(2,4). f̄ is bijective by the theorem, and ι=id_Q.'
-  - stage: S5b
-    verdict: correct
-    by: refereeB
-    hash: 90323dc89579
-    date: '2026-10-26'
-    model: claude-opus-5-5
-    evidence: 02:160-165; q(1,2)=q(2,4); \bar f bijective by theorem; \iota=id_Q
-  old_key: check:02-fibres-and-factorization:3
-  removed: true

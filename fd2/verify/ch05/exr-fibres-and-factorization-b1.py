@@ -1,4 +1,4 @@
-"""exr-fibres-and-factorization-a1.
+"""exr-fibres-and-factorization-b1.
 (a) fibers of x^2 - 1 over 3, -1, -2: {-2, 2}, {0}, empty.
 (b) f: a,c -> 1; b,d -> 3: classes {a,c},{b,d}; image {1,3}.
 (c) mod-4 classes: [a]_2 yes, [a]_8 no (0 vs 4), [a^2]_8 yes; (a+4k)^2 - a^2 = 8(ak + 2k^2)."""
@@ -28,4 +28,4 @@ assert res == QUOTED["c"]
 assert 0 % 8 != 4 % 8
 assert all((a + 4 * k) ** 2 - a**2 == 8 * (a * k + 2 * k**2)
            for a in range(-30, 31) for k in range(-30, 31))  # degree-2 identity, 61x61 points
-print("exr-fibres-and-factorization-a1: all quoted values check")
+print("exr-fibres-and-factorization-b1: all quoted values check")

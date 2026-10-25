@@ -332,7 +332,7 @@ and in the same way \( [\sqrt 2] = \{ \sqrt 2 + k : k \in \nZ \} = \{ \dots, \sq
 
 Picture each class as one point of a circle of circumference \( 1 \): the real line is wound around it, and two numbers land on the same point when they differ by an integer. Each class has exactly one representative in \( [0, 1) \): the class of \( \sqrt 2 \) meets \( [0, 1) \) in \( \sqrt 2 - 1 \), for instance. Proving this for every class needs the integer part of a real number, which *Analysis on the Real Line*, Chapter 1 constructs; we do not use it here.
 
-With \( \nQ \) in place of \( \nZ \), the relation "\( x - y \in \nQ \)" is again an equivalence relation on \( \nR \), and choosing one point from each of its classes is how *Measure, Integration, and Real Analysis*, Chapter 1 builds a set of real numbers that has no length.
+With \( \nQ \) in place of \( \nZ \), the relation "\( x - y \in \nQ \)" is again an equivalence relation on \( \nR \), and choosing one point from each of its classes is how *Measure, Integration, and Real Analysis*, Chapter 2 builds a set of real numbers that has no length.
 :::
 
 ## Operations on classes
@@ -638,27 +638,6 @@ Parts (a)–(d) are about @thm-classes-partition and its proof.
 (f) Assume \( [a] = [a'] \), that is, \( a \equiv a' \pmod n \), for arbitrary \( a, a' \in \nZ \); show that the rule's outputs for \( a \) and for \( a' \) are equal (@exm-method-well-definedness).
 :::
 
-::: {#exr-fibres-and-factorization-a1}
-[A2]
-
-::: {.enumerate options="label=(\alph*)"}
-1. For \( f \colon \nR \to \nR \), \( f(x) = x^2 - 1 \), find the fibers over \( 3 \), over \( -1 \) and over \( -2 \). Which of them are classes of \( \sim_f \)?
-2. Let \( X = \{a, b, c, d\} \) and \( f \colon X \to \{1, 2, 3\} \) send \( a \) and \( c \) to \( 1 \), and \( b \) and \( d \) to \( 3 \). Write down \( X/{\sim_f} \), \( f(X) \), \( \bar f \) and \( \iota \) of @thm-canonical-factorization.
-3. Which of the functions \( a \mapsto [a]_2 \), \( a \mapsto [a]_8 \) and \( a \mapsto [a^2]_8 \), from \( \nZ \), are constant on the classes of congruence modulo \( 4 \)?
-:::
-:::
-
-::: {.solution}
-(a) \( x^2 - 1 = 3 \) means \( x^2 = 4 \), so the fiber over \( 3 \) is \( \{-2, 2\} \). \( x^2 - 1 = -1 \) means \( x^2 = 0 \), so the fiber over \( -1 \) is \( \{0\} \). \( x^2 - 1 = -2 \) would need \( x^2 = -1 \), and no real square is negative, so the fiber over \( -2 \) is \( \emptyset \). The first two are classes, since \( 3 = f(2) \) and \( -1 = f(0) \) lie in \( f(\nR) \); the empty fiber is not a class, because \( -2 \notin f(\nR) \) and every class is non-empty (@thm-classes-partition (a)).
-
-(b) The fibers over the values are \( \{a, c\} \) and \( \{b, d\} \), so \( X/{\sim_f} = \{ \{a, c\}, \{b, d\} \} \). The image is \( f(X) = \{1, 3\} \). The bijection is \( \bar f(\{a, c\}) = 1 \), \( \bar f(\{b, d\}) = 3 \), and \( \iota \colon \{1, 3\} \to \{1, 2, 3\} \) sends \( 1 \mapsto 1 \) and \( 3 \mapsto 3 \). The value \( 2 \) is in the codomain but outside the image, which is why \( \iota \) is not surjective.
-
-(c) Let \( a' = a + 4k \) with \( k \in \nZ \), the general element of the class of \( a \) modulo \( 4 \).
-\( a \mapsto [a]_2 \): yes, since \( a' - a = 4k = 2(2k) \).
-\( a \mapsto [a]_8 \): no. \( 0 \equiv 4 \pmod 4 \), but \( [0]_8 \ne [4]_8 \), since \( 4 - 0 = 4 \) lies strictly between \( 0 \) and \( 8 \) (@prp-integers-closed (c)).
-\( a \mapsto [a^2]_8 \): yes, since \( a'^2 - a^2 = 8ak + 16k^2 = 8(ak + 2k^2) \), with \( ak + 2k^2 \in \nZ \).
-:::
-
 ### B. Practice
 
 ::: {#exr-equivalence-relations-b1}
@@ -746,8 +725,29 @@ Prove or disprove: each rule defines a function.
 (g) True. If \( [x] = [x'] \), then \( x^2 = x'^2 \), so \( \abs{x}^2 = \abs{x'}^2 \) with \( \abs{x}, \abs{x'} \ge 0 \), and two non-negative reals with equal squares are equal (@fd1:thm-squares-order). So the value does not depend on the representative: one class, one value.
 :::
 
+::: {#exr-fibres-and-factorization-b1}
+[B5: Fibers and the factorization by hand]
+
+::: {.enumerate options="label=(\alph*)"}
+1. For \( f \colon \nR \to \nR \), \( f(x) = x^2 - 1 \), find the fibers over \( 3 \), over \( -1 \) and over \( -2 \). Which of them are classes of \( \sim_f \)?
+2. Let \( X = \{a, b, c, d\} \) and \( f \colon X \to \{1, 2, 3\} \) send \( a \) and \( c \) to \( 1 \), and \( b \) and \( d \) to \( 3 \). Write down \( X/{\sim_f} \), \( f(X) \), \( \bar f \) and \( \iota \) of @thm-canonical-factorization.
+3. Which of the functions \( a \mapsto [a]_2 \), \( a \mapsto [a]_8 \) and \( a \mapsto [a^2]_8 \), from \( \nZ \), are constant on the classes of congruence modulo \( 4 \)?
+:::
+:::
+
+::: {.solution}
+(a) \( x^2 - 1 = 3 \) means \( x^2 = 4 \), so the fiber over \( 3 \) is \( \{-2, 2\} \). \( x^2 - 1 = -1 \) means \( x^2 = 0 \), so the fiber over \( -1 \) is \( \{0\} \). \( x^2 - 1 = -2 \) would need \( x^2 = -1 \), and no real square is negative, so the fiber over \( -2 \) is \( \emptyset \). The first two are classes, since \( 3 = f(2) \) and \( -1 = f(0) \) lie in \( f(\nR) \); the empty fiber is not a class, because \( -2 \notin f(\nR) \) and every class is non-empty (@thm-classes-partition (a)).
+
+(b) The fibers over the values are \( \{a, c\} \) and \( \{b, d\} \), so \( X/{\sim_f} = \{ \{a, c\}, \{b, d\} \} \). The image is \( f(X) = \{1, 3\} \). The bijection is \( \bar f(\{a, c\}) = 1 \), \( \bar f(\{b, d\}) = 3 \), and \( \iota \colon \{1, 3\} \to \{1, 2, 3\} \) sends \( 1 \mapsto 1 \) and \( 3 \mapsto 3 \). The value \( 2 \) is in the codomain but outside the image, which is why \( \iota \) is not surjective.
+
+(c) Let \( a' = a + 4k \) with \( k \in \nZ \), the general element of the class of \( a \) modulo \( 4 \).
+\( a \mapsto [a]_2 \): yes, since \( a' - a = 4k = 2(2k) \).
+\( a \mapsto [a]_8 \): no. \( 0 \equiv 4 \pmod 4 \), but \( [0]_8 \ne [4]_8 \), since \( 4 - 0 = 4 \) lies strictly between \( 0 \) and \( 8 \) (@prp-integers-closed (c)).
+\( a \mapsto [a^2]_8 \): yes, since \( a'^2 - a^2 = 8ak + 16k^2 = 8(ak + 2k^2) \), with \( ak + 2k^2 \in \nZ \).
+:::
+
 ::: {#exr-fibres-and-factorization-b2}
-[B5: Same fibers]
+[B6: Same fibers]
 
 Let \( f \colon X \to Y \) and \( g \colon X \to Z \) be functions. Prove that \( \sim_f = \sim_g \) if and only if there is a bijection \( h \colon f(X) \to g(X) \) with \( g(x) = h(f(x)) \) for every \( x \in X \).
 :::
@@ -833,7 +833,7 @@ The statement says that a function whose fibers all have one size cuts \( X \) i
 - 2: the base case \( k = 0 \): \( X = \emptyset \) and \( n = 0 \).
 - 3: the step: \( X' \) and \( F \) are disjoint with union \( X \), the fibers of \( f' \) are fibers of \( f \), and \( j = km \).
 - 3: the conclusion by @prp-disjoint-union-count and @cor-finite-size-unique.
-- Alternative route, full marks: a bijection \( X \to \{1, \dots, k\} \times \{1, \dots, m\} \) built from one bijection per fibre (4), with injectivity and surjectivity by disjoint fibres (3), and the count \( km \) by @exr-finite-sets-c2 (a) with @cor-finite-size-unique (3).
+- Alternative route, full marks: a bijection \( X \to \{1, \dots, k\} \times \{1, \dots, m\} \) built from one bijection per fiber (4), with injectivity and surjectivity by disjoint fibers (3), and the count \( km \) by @exr-finite-sets-c2 (a) with @cor-finite-size-unique (3).
 
 Fatal errors (0 for the step): induction with \( X \) fixed; applying \( P(k) \) to a function whose fibers were not shown to have \( m \) elements.
 :::
@@ -896,11 +896,11 @@ prp-congruence-arithmetic (claim): (Looking ahead) Z/n rebuilt as a quotient rin
 prp-fibres-partition (proof): the fiber over f(a) is the class [a] | exm-fibres-of-function (cited)
 prp-fibres-partition (claim): (quick check) values of n^2 - 2n on {-1, ..., 3} | arithmetic; verify/ch05/prp-fibres-partition.py
 prp-fibres-partition (claim): (same-size payoff) sizes of the eight subsets of {1, 2, 3}; "number of elements" is a function | arithmetic; prp-subset-finite, cor-finite-size-unique (cited); verify/ch05/prp-fibres-partition.py
-thm-canonical-factorization (proof): the inclusion map sends each point to itself | def-restriction-extension (cited, F2.2 §03)
+thm-canonical-factorization (proof): the inclusion map sends each point to itself | def-restriction-extension (cited, F2.6 §03)
 thm-canonical-factorization (claim): (aftermath) f injective iff q injective | direct argument via thm-classes-partition (b) (cited)
 thm-canonical-factorization (claim): (warning) x^2 >= 0, every t >= 0 is a square | R arithmetic and order, square roots, school fact (AN1.1 thm-nth-root)
 exm-fraction-map-factorization (solution): a/b = c/d iff ad = bc for b, d != 0; every rational is a/b with b > 0 | arithmetic of fractions, school fact (Q built in F3.2); verify/ch05/exm-fraction-map-factorization.py
-exr-fibres-and-factorization-a1 (solution): fibers of x^2 - 1; no real square is negative; 8ak + 16k^2 = 8(ak + 2k^2); 4 not a multiple of 8 | R arithmetic and order, school fact; prp-integers-closed (c) (cited); verify/ch05/exr-fibres-and-factorization-a1.py
+exr-fibres-and-factorization-b1 (solution): fibers of x^2 - 1; no real square is negative; 8ak + 16k^2 = 8(ak + 2k^2); 4 not a multiple of 8 | R arithmetic and order, school fact; prp-integers-closed (c) (cited); verify/ch05/exr-fibres-and-factorization-b1.py
 exr-fibres-and-factorization-c1 (solution): f(x) <= k or f(x) = k + 1, not both, for f(x) in {1, ..., k + 1}; km + m = (k + 1)m | lem-naturals-arithmetic (F2.2), arithmetic
 exr-fibres-and-factorization-c1 (solution): 1 is in {1, ..., n} for n >= 1 | lem-naturals-arithmetic (F2.2), with def-finite
 -->

@@ -1,6 +1,6 @@
 # Partial Orders, Maximal and Greatest Elements
 
-Section 5.2 studied the relations that behave like equality. This section studies the ones that behave like \( \le \): reflexive and transitive like an equivalence relation, but antisymmetric instead of symmetric, so that they have a direction. For numbers, "the largest element of a set" is clear. For sets under \( \subseteq \), or for natural numbers under divisibility, two elements can be **incomparable**, neither below the other, and "largest" splits into two different notions. We separate them, prove what links them, and then take a first look at least upper bounds. That is the vocabulary *Analysis on the Real Line*, Chapter 1 needs for the supremum.
+Section 5.2 studied the relations that behave like equality. This section studies the ones that behave like \( \le \): reflexive and transitive like an equivalence relation, but antisymmetric instead of symmetric, so that they have a direction. For numbers, "the largest element of a set" is clear. For sets under \( \subseteq \), or for natural numbers under divisibility, two elements can be **incomparable**, neither below the other, and "largest" splits into two different notions. Section 3.1 defined the least and greatest elements of a set of real numbers, just before @thm-well-ordering. Here the same two words are defined for any partial order: uniqueness survives, but a greatest element may fail to exist where a maximal one does. We separate them, prove what links them, and then take a first look at least upper bounds. That is the vocabulary *Analysis on the Real Line*, Chapter 1 needs for the supremum.
 
 ## Partial orders
 
@@ -407,8 +407,18 @@ Fatal errors (0 for the step): concluding \( d \mid a \) from \( d \le a \); in 
 
 ### R. Review
 
-::: {#exr-orders-r1}
+::: {#exr-orders-r3}
 [R1]
+
+Let \( X \) be a countable set and \( \sim \) an equivalence relation on \( X \). Prove that \( X/{\sim} \) is countable. Give an example with \( X \) countable, not finite, and \( X/{\sim} \) finite.
+:::
+
+::: {.solution}
+The quotient map \( q \colon X \to X/{\sim} \), \( q(a) = [a] \), is surjective (@def-quotient-set and the paragraph after it). By @prp-countable-image, the image of a countable set under a function is countable, and here the image is all of \( X/{\sim} \). Example: \( X = \nZ \), countable by @thm-integers-rationals-countable, and not finite, since it contains \( \nN \), which is infinite (@exm-hilbert-hotel, @prp-subset-finite), with congruence modulo \( 2 \): \( \nZ/2 = \{[0], [1]\} \) (@prp-integers-mod-n) has two elements.
+:::
+
+::: {#exr-orders-r1}
+[R2]
 
 Let \( f \colon \nR \to \nR \), \( f(x) = x^2 + 4x \). Compute \( f([-3, 1]) \) and \( f^{-1}([-3, 0]) \). Then compute \( f(\nR) \), and check that \( f(f^{-1}([-5, 0])) = [-5, 0] \cap f(\nR) \) by computing both sides.
 :::
@@ -426,7 +436,7 @@ Complete the square: \( f(x) = (x + 2)^2 - 4 \). We use, as school facts, that s
 :::
 
 ::: {#exr-orders-r2}
-[R2]
+[R3]
 
 Write in symbols, with bounded quantifiers, the statement "every element of \( A \) has an element of \( A \) strictly above it", for a set \( A \subseteq \nR \) ordered by \( \le \). Write its negation with no \( \neg \) in front of a quantifier, and decide which of the two holds for \( A = \nN \) and for \( A = \{1, \dots, 5\} \).
 :::
@@ -439,16 +449,6 @@ The statement is \( \forall a \in A \ \exists b \in A \ \, a < b \). By @fd1:prp
 and since \( \le \) is total on \( \nR \), \( \neg (a < b) \) is \( b \le a \): the negation is \( \exists a \in A \ \forall b \in A \ \, b \le a \), "\( A \) has a greatest element". Passing the \( \neg \) through the quantifiers turns each \( \forall \) into \( \exists \) and each \( \exists \) into \( \forall \), and leaves the bounds \( a \in A \), \( b \in A \) untouched; negating the bound instead is entry (N11) of @fd1:exm-not-allowed-catalogue.
 
 For \( A = \nN \) the statement holds: for \( a \in \nN \), \( b \coloneqq a + 1 \in \nN \) by (\( \nN \)S), and \( a < a + 1 \). For \( A = \{1, \dots, 5\} \) the negation holds, with \( a = 5 \): every \( b \in A \) has \( b \le 5 \).
-:::
-
-::: {#exr-orders-r3}
-[R3]
-
-Let \( X \) be a countable set and \( \sim \) an equivalence relation on \( X \). Prove that \( X/{\sim} \) is countable. Give an example with \( X \) countable, not finite, and \( X/{\sim} \) finite.
-:::
-
-::: {.solution}
-The quotient map \( q \colon X \to X/{\sim} \), \( q(a) = [a] \), is surjective (@def-quotient-set and the paragraph after it). By @prp-countable-image, the image of a countable set under a function is countable, and here the image is all of \( X/{\sim} \). Example: \( X = \nZ \), countable by @thm-integers-rationals-countable, and not finite, since it contains \( \nN \), which is infinite (@exm-hilbert-hotel, @prp-subset-finite), with congruence modulo \( 2 \): \( \nZ/2 = \{[0], [1]\} \) (@prp-integers-mod-n) has two elements.
 :::
 
 ::: {#exr-orders-r4}
