@@ -1,6 +1,6 @@
 # Binary Operations
 
-Sections 5.1 and 5.2 built new functions from old ones by cutting, gluing and factoring. This section looks at functions of a special shape: functions that take two elements of a set and return a third element of the same set, such as \( + \) on \( \nZ \), \( \cup \) on \( \powerset{X} \) and \( \circ \) on the functions from a set to itself. We name the properties such an operation may have, one at a time, and ask what each property buys on its own. The answers are short proofs by one method, computing a single expression in two ways, and they work at once for numbers, for sets, for functions and for the hours of the clock.
+Sections 5.1 and 5.2 built new functions from old ones by cutting, gluing and factoring. This section looks at functions of a special shape: functions that take two elements of a set and return a third element of the same set, such as \( + \) on \( \nZ \), \( \cup \) on \( \powerset{X} \) and \( \circ \) on the functions from a set to itself. We name the properties such an operation may have, one at a time, and ask what each property buys on its own. The central answers, uniqueness of identities and of inverses, are short proofs by one method, computing a single expression in two ways; the rest are proved by checking candidates. All of them work at once for numbers, for sets, for functions and for the hours of the clock.
 
 ## Brackets
 
@@ -85,7 +85,7 @@ Let \( \ast \) be an operation on a set \( X \).
 :::
 :::
 
-In words: associativity says brackets may be moved; commutativity says the two inputs may be swapped. An identity is an element that changes nothing, from the side named; an identity must change nothing from **both** sides and must do so for **every** element. An inverse of \( x \) undoes \( x \), again from both sides, and it is defined only relative to an identity. Clause (d) says "an inverse", not "the inverse": nothing in the definition says there is only one.
+In words: associativity says brackets may be moved; commutativity says the two inputs may be swapped. A left or right identity is an element that changes nothing, from the side named; an identity must change nothing from **both** sides and must do so for **every** element. An inverse of \( x \) undoes \( x \), again from both sides, and it is defined only relative to an identity. Clause (d) says "an inverse", not "the inverse": nothing in the definition says there is only one.
 
 For \( + \) on \( \nZ \), all four hold: \( + \) is associative and commutative, \( 0 \) is an identity, and \( -x \) is an inverse of \( x \). For \( \cdot \) on \( \nZ \), \( 1 \) is an identity, and only \( 1 \) and \( -1 \) are invertible. For \( \cup \) on \( \powerset{X} \), \( \emptyset \) is an identity, since \( \emptyset \cup A = A = A \cup \emptyset \).
 
@@ -178,7 +178,7 @@ Let \( \ast \) be an associative operation on a set \( X \) with identity \( e \
 :::
 
 ::: {.idea}
-As in @exm-method-two-ways. The expression is \( m = y \ast x \ast z \): read with the first two letters grouped, it is \( e \ast z = z \); read with the last two grouped, it is \( y \ast e = y \). Associativity is exactly the license to read it both ways.
+As in @exm-method-two-ways. The expression is \( m = (y \ast x) \ast z \), which is also \( y \ast (x \ast z) \) by associativity: bracketed as written it is \( e \ast z = z \), and regrouped it is \( y \ast e = y \). Associativity is exactly the license to read it both ways.
 :::
 
 ::: {.proof}
@@ -189,7 +189,7 @@ y = y \ast e = y \ast (x \ast z) = (y \ast x) \ast z = e \ast z = z .
 If \( y \) and \( z \) are both inverses of \( x \), then in particular \( y \ast x = e \) and \( x \ast z = e \), so \( y = z \). This proves the proposition.
 :::
 
-For an associative operation with identity, the inverse of an invertible \( x \) is therefore unique, and we write it \( x^{-1} \). For an operation written \( + \), the inverse is written \( -x \) instead. The proposition is a little stronger than uniqueness: an element with a **left** inverse \( y \) and a **right** inverse \( z \) has \( y = z \), and that element is then an inverse. This is the same computation as @prp-inverse-unique for functions, now done for any associative operation.
+For an associative operation with identity, the inverse of an invertible \( x \) is therefore unique, and we write it \( x^{-1} \). For an operation written \( + \), the inverse is written \( -x \) instead. The proposition is a little stronger than uniqueness: an element \( x \) with some \( y \) such that \( y \ast x = e \) and some \( z \) such that \( x \ast z = e \) has \( y = z \), and then \( y \) is an inverse of \( x \), so \( x \) is invertible. This is the same computation as @prp-inverse-unique for functions, now done for any associative operation.
 
 Without associativity the conclusion can fail, and a three-element table shows it.
 
@@ -249,7 +249,7 @@ In each part we show that the candidate is an inverse by checking both equations
 &= x \ast (e \ast x^{-1}) = x \ast x^{-1} = e .
 \end{aligned}
 \]
-In the same way, \( (y^{-1} \ast x^{-1}) \ast (x \ast y) = y^{-1} \ast \bigl((x^{-1} \ast x) \ast y\bigr) = y^{-1} \ast y = e \). This proves the proposition.
+In the same way, \( (y^{-1} \ast x^{-1}) \ast (x \ast y) = y^{-1} \ast \bigl(x^{-1} \ast (x \ast y)\bigr) = y^{-1} \ast \bigl((x^{-1} \ast x) \ast y\bigr) = y^{-1} \ast (e \ast y) = y^{-1} \ast y = e \). This proves the proposition.
 :::
 
 In (c) the order reverses: to undo "first \( x \), then \( y \)", one undoes \( y \) first. The display moved brackets one step at a time; Exercise C1 shows that for four factors every bracketing gives the same element.
@@ -259,7 +259,7 @@ Which elements of \( \powerset{X} \) are invertible under \( \cup \)? Which are 
 :::
 
 ::: {.solution}
-Both operations have identity \( \emptyset \): \( A \cup \emptyset = A \), and \( A \triangle \emptyset = (A \setminus \emptyset) \cup (\emptyset \setminus A) = A \), with commutativity for the other side. Under \( \cup \), if \( A \cup B = \emptyset \), then \( A \subseteq A \cup B = \emptyset \), so \( A = \emptyset \): only \( \emptyset \) is invertible. Under \( \triangle \), \( A \triangle A = (A \setminus A) \cup (A \setminus A) = \emptyset \), so every \( A \) is invertible and is its own inverse.
+Both operations have identity \( \emptyset \): \( A \cup \emptyset = A \), and \( A \triangle \emptyset = (A \setminus \emptyset) \cup (\emptyset \setminus A) = A \) and \( \emptyset \triangle A = (\emptyset \setminus A) \cup (A \setminus \emptyset) = A \). Under \( \cup \), if \( A \cup B = \emptyset \), then \( A \subseteq A \cup B = \emptyset \), so \( A = \emptyset \): only \( \emptyset \) is invertible. Under \( \triangle \), \( A \triangle A = (A \setminus A) \cup (A \setminus A) = \emptyset \), so every \( A \) is invertible and is its own inverse.
 :::
 
 ## Operations on functions
@@ -305,7 +305,7 @@ Part (c) needs every value to be invertible, not just most of them. On \( \nR^{\
 ::: {.warning}
 [Iterate or product?]
 
-On \( \nR^{\nR} \) the symbol \( f^2 \) could mean two different functions: the pointwise product \( x \mapsto f(x) \cdot f(x) \), or the composite \( f \circ f \). For \( f(x) = x + 1 \) the first is \( x \mapsto (x + 1)^2 \) and the second is \( x \mapsto x + 2 \). In this book \( f^n \) always means the \( n \)-th iterate \( f \circ \dots \circ f \), defined in Section 5.4. A pointwise product is written \( f \cdot g \), and a pointwise power is written out, \( x \mapsto f(x)^n \). For the same reason \( f^{-1} \) always means the inverse function; the inverse of \( f \) under pointwise \( \cdot \), when it exists, is written \( x \mapsto 1/f(x) \).
+On \( \nR^{\nR} \) the symbol \( f^2 \) could mean two different functions: the pointwise product \( x \mapsto f(x) \cdot f(x) \), or the composite \( f \circ f \). For \( f(x) = x + 1 \) the first is \( x \mapsto (x + 1)^2 \) and the second is \( x \mapsto x + 2 \). In this book \( f^n \) always means the \( n \)-th iterate, \( f \) composed with itself \( n \) times, defined in Section 5.4. A pointwise product is written \( f \cdot g \), and a pointwise power is written out, \( x \mapsto f(x)^n \). For the same reason \( f^{-1} \) always means the inverse function; the inverse of \( f \) under pointwise \( \cdot \), when it exists, is written \( x \mapsto 1/f(x) \).
 :::
 
 Indicators are a first instance. The set \( \{0, 1\} \) is closed under multiplication of numbers, so \( \cdot \) is an operation on \( \{0, 1\} \), and pointwise multiplication is an operation on \( \{0, 1\}^X \). By @prp-indicator-arithmetic (a), \( \ind_A \cdot \ind_B = \ind_{A \cap B} \): on indicators, the pointwise product **is** intersection. The identity of pointwise \( \cdot \) is the constant function \( c_1 \), which is \( \ind_X \), matching \( X \cap A = A \) for \( A \subseteq X \).
@@ -319,12 +319,12 @@ Let \( X \) be a set. Composition \( (g, f) \mapsto g \circ f \) is an associati
 :::
 
 ::: {.proof}
-Associativity and \( f \circ \id_X = f = \id_X \circ f \) are @prp-composition-associative, with all three sets equal to \( X \). Under \( \circ \), an inverse of \( f \) in the sense of @def-operation-properties (d) is a \( g \in X^X \) with \( f \circ g = \id_X = g \circ f \), which is exactly a two-sided inverse of \( f \) in the sense of @def-inverse-function. By @thm-bijection-iff-inverse, \( f \) has one if and only if \( f \) is bijective, and it is then the inverse function \( f^{-1} \), which is unique by @prp-inverse-unique.
+Associativity and \( f \circ \id_X = f = \id_X \circ f \) are @prp-composition-associative, with all four sets equal to \( X \). Under \( \circ \), an inverse of \( f \) in the sense of @def-operation-properties (d) is a \( g \in X^X \) with \( f \circ g = \id_X = g \circ f \), which is exactly a two-sided inverse of \( f \) in the sense of @def-inverse-function. By @thm-bijection-iff-inverse, \( f \) has one if and only if \( f \) is bijective, and it is then the inverse function \( f^{-1} \), which is unique by @prp-inverse-unique.
 
 Now let \( a, b \in X \) with \( a \ne b \), and let \( c_a, c_b \in X^X \) be the constant functions with values \( a \) and \( b \). For every \( x \in X \), \( (c_a \circ c_b)(x) = c_a(b) = a \) and \( (c_b \circ c_a)(x) = c_b(a) = b \). So \( c_a \circ c_b = c_a \) and \( c_b \circ c_a = c_b \), and these differ, since their values at \( a \) differ (@prp-function-equality). This proves the proposition.
 :::
 
-So the invertible elements of \( X^X \) under composition are exactly the bijections from \( X \) to itself, the subject of Section 5.4. For them, @prp-operation-inverse-rules (c) says \( (g \circ f)^{-1} = f^{-1} \circ g^{-1} \). That rule appeared as Exercise B2 of Section 1.6 (@exr-inverses-b2); here it is proved once, for every associative operation, and the rule for functions is one case of it.
+So the invertible elements of \( X^X \) under composition are exactly the bijections from \( X \) to itself, the subject of Section 5.4. For them, @prp-operation-inverse-rules (c) says \( (g \circ f)^{-1} = f^{-1} \circ g^{-1} \). That rule appeared as Exercise B2 of Section 1.6 (@exr-inverses-b2); here it is proved once, for every associative operation, and the rule for bijections of a set to itself is one case of it (Exercise B2 of Section 1.6 allows three different sets).
 
 ::: {.check}
 In \( \nR^{\nR} \), find the inverse of \( f(x) = 2x + 1 \) under composition, and its inverse under pointwise \( + \).
@@ -406,7 +406,7 @@ The row and column of \( [0] \) repeat the headings, so \( [0] \) is the identit
 
 (c) Every \( e \in X \) is a left identity, since \( e \ast y = y \) for every \( y \). No element is a right identity: for \( e \in X \), pick \( x \in X \) with \( x \ne e \) (there is one, since \( X \) has at least two elements); then \( x \ast e = e \ne x \). So left identities need not be unique when there is no right identity; @prp-operation-identity-unique needs one of each.
 
-(d) To prove \( a = b \) for objects known only through equations, find one expression that the equations about \( a \) reduce to \( a \) and those about \( b \) reduce to \( b \), and write \( a = \dots = m = \dots = b \) with a reason at each step (@exm-method-two-ways). In @prp-operation-inverse-unique the expression is \( y \ast x \ast z \), read as \( (y \ast x) \ast z = z \) and as \( y \ast (x \ast z) = y \).
+(d) To prove \( a = b \) for objects known only through equations, find one expression that the equations about \( a \) reduce to \( a \) and those about \( b \) reduce to \( b \), and write \( a = \dots = m = \dots = b \) with a reason at each step (@exm-method-two-ways). In @prp-operation-inverse-unique the expression is \( (y \ast x) \ast z \), which equals \( z \) as written and, regrouped as \( y \ast (x \ast z) \), equals \( y \).
 :::
 
 ### B. Practice
@@ -433,7 +433,7 @@ The two results agree, so \( \ast \) is associative. (Both are unchanged by any 
 
 *Identity.* \( 0 \ast x = 0 + x - 0 = x \), and \( x \ast 0 = x \) by commutativity; so \( 0 \) is the identity, unique by @prp-operation-identity-unique.
 
-*Inverses.* We need \( y \) with \( x + y - xy = 0 \) (the other side follows by commutativity), that is, \( y(1 - x) = -x \). If \( x \ne 1 \), this has the solution \( y = x/(x - 1) \): indeed \( x + \tfrac{x}{x - 1} - \tfrac{x^2}{x - 1} = \tfrac{x(x - 1) + x - x^2}{x - 1} = 0 \). If \( x = 1 \), then \( 1 \ast y = 1 + y - y = 1 \ne 0 \) for every \( y \), so \( 1 \) has no inverse. So every \( x \ne 1 \) is invertible, with \( x^{-1} = x/(x - 1) \), and \( 1 \) is not.
+*Inverses.* We need \( y \) with \( x + y - xy = 0 \) (the other side follows by commutativity), that is, \( y(1 - x) = -x \). If \( x \ne 1 \), this has the solution \( y = x/(x - 1) \): indeed \( x + \tfrac{x}{x - 1} - \tfrac{x^2}{x - 1} = \tfrac{x(x - 1) + x - x^2}{x - 1} = 0 \). If \( x = 1 \), then \( 1 \ast y = 1 + y - y = 1 \ne 0 \) for every \( y \), so \( 1 \) has no inverse. So every \( x \ne 1 \) is invertible, with inverse \( x/(x - 1) \) under \( \ast \), and \( 1 \) is not.
 
 *A remark.* \( 1 - x \ast y = (1 - x)(1 - y) \). For \( u, v \in \{0, 1\} \), \( u \ast v = u + v - uv \) is the indicator rule for a union, @prp-indicator-arithmetic (c): \( \ind_{A \cup B}(x) = \ind_A(x) \ast \ind_B(x) \).
 :::
@@ -487,7 +487,7 @@ Prove or disprove each statement. Throughout, \( \ast \) is an operation on a se
 
 (b) False. For \( x \ast y \coloneqq y \) on \( X = \{1, 2\} \), both \( 1 \) and \( 2 \) are left identities, as in Exercise A1 (c).
 
-(c) True, by computing \( x^{-1} \ast x \ast y \) in two ways (@exm-method-two-ways), with associativity at the second and fourth steps:
+(c) True, by computing \( (x^{-1} \ast x) \ast y \), regrouped as \( x^{-1} \ast (x \ast y) \), in two ways (@exm-method-two-ways), with associativity at the second and fourth steps:
 \[
 y = (x^{-1} \ast x) \ast y = x^{-1} \ast (x \ast y) = x^{-1} \ast (x \ast z) = (x^{-1} \ast x) \ast z = z .
 \]
@@ -517,7 +517,7 @@ We show that each equals \( ((ab)c)d \). Each step is one use of associativity, 
 - \( a((bc)d) = (a(bc))d \): associativity with \( x = a \), \( y = bc \), \( z = d \); and \( (a(bc))d = ((ab)c)d \) by the first item.
 - \( a(b(cd)) = (ab)(cd) \): associativity with \( x = a \), \( y = b \), \( z = cd \); and \( (ab)(cd) = ((ab)c)d \) by the second item.
 
-So all five bracketings are equal. That every bracketing of any finite number of factors gives the same element is true as well; its proof is an induction on the number of factors, not carried out here, and this chapter writes the brackets of every longer composite it uses.
+So all five bracketings are equal. That every bracketing of any finite number of factors gives the same element is true as well; its proof is an induction on the number of factors, not carried out here, and this chapter regroups longer composites only by repeated use of the three-factor law.
 :::
 
 ::: {#exr-binary-operations-c2}
@@ -542,9 +542,9 @@ Let \( \ast \) be an operation on a set \( X \) with identity \( e \). A student
 
 - 3: names line (3) as the step that fails.
 - 3: names associativity as the hidden hypothesis, and says where cancellation uses it.
-- 4: gives an operation with identity, not associative, and an element \( x \) with \( x \ast y = x \ast z \) and \( y \ne z \), each equation checked.
+- 4: gives an operation with identity, not associative, and an **invertible** element \( x \) with \( x \ast y = x \ast z \) and \( y \ne z \) (for instance \( y, z \) two inverses of \( x \)), each equation checked.
 
-A different counterexample to cancellation earns the 4 points if its table is given and the failure of associativity is shown. Fatal errors (0 for the step): naming line (2) or line (4); a counterexample that is associative, or that has no identity.
+A different counterexample to cancellation earns the 4 points if its table is given and the failure of associativity is shown. Fatal errors (0 for the step): naming line (2) or line (4); a counterexample that is associative, or that has no identity, or whose element \( x \) is not invertible.
 :::
 
 ::: {#exr-binary-operations-c3}
@@ -597,6 +597,8 @@ exr-binary-operations-b1 (solution): polynomial expansion; inverse x/(x - 1); 1 
 exr-binary-operations-b3 (solution): real cube roots exist, cube root of x^3 is x | school fact (NOTATION sqrt[n] row: F2.1 §05-§06 use real cube roots as a school fact); verify/ch05/exr-binary-operations-b3.py
 exr-binary-operations-b3 (solution): 0 * y = 0 != 1 in R | R arithmetic, school fact
 exr-binary-operations-b4 (solution): n + 1 >= 1 and p(n + 1) = n; s(0) = 1 | arithmetic; the successor map of Section 1.6 (quick check after exm-left-inverses-small-sets), named in prose, not a reason
+prp-pointwise-operations (claim): the warning that f^n means the iterate | F2.6 §04 def-iterate (prose pointer, same chapter; paid)
+prp-composition-operation (claim): bijections X to X are the subject of Section 5.4 | F2.6 §04 (prose pointer, same chapter; paid)
 exr-binary-operations-c1 (claim): generalized associativity for n factors | not proved here; nothing depends on it (said in the solution); verify/ch05/exr-binary-operations-c1.py checks the five bracketings on a sample associative operation
 exr-binary-operations-c3 (solution): 1 - (1 - x) = x; 1 - (1 - x)(1 - x') = x + x' - xx' | R arithmetic, school fact; verify/ch05/exr-binary-operations-c3.py
 -->

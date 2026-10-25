@@ -150,7 +150,7 @@ O_\sigma(x) \coloneqq \{ \sigma^k(x) : k \in \nZ \} .
 For an arbitrary function \( f \colon X \to X \), the **forward orbit** of \( x \) is \( \{ f^n(x) : n \in \nN \} \). A **fixed point** of \( f \) is an \( x \in X \) with \( f(x) = x \).
 :::
 
-In words: the orbit collects every point reached from \( x \) by applying \( \sigma \) or \( \sigma^{-1} \) any number of times; the forward orbit uses \( f \) only, so it makes sense for every self-map. For a permutation, the forward orbit of \( x \) is contained in \( O_\sigma(x) \), since \( \nN \subseteq \nZ \); on a finite set the two are equal, as the next subsection proves. A fixed point is a point the map does not move, the sense in which Section 3.4 called \( 0 \) a fixed point of a bijection. For the hook's shuffle, \( O_\sigma(1) = \{1, 3, 9, 5, 4\} \), and \( 0 \) and \( 11 \) are the fixed points.
+In words: the orbit collects every point reached from \( x \) by applying \( \sigma \) or \( \sigma^{-1} \) any number of times; the forward orbit uses \( f \) only, so it makes sense for every self-map. For a permutation, the forward orbit of \( x \) is contained in \( O_\sigma(x) \), since \( \nN \subseteq \nZ \); on a finite set the two are equal, as the next subsection proves. A fixed point is a point the map does not move, the sense in which Section 3.4 called \( 0 \) a fixed point of a bijection. For the hook's shuffle, \( O_\sigma(1) = \{1, 3, 9, 5, 4\} \): since \( \sigma^5(1) = 1 \), the negative powers give nothing new (\( \sigma^{-1}(1) = \sigma^4(1) \), and so on; @prp-orbit-cycle proves this in general), and \( 0 \) and \( 11 \) are the fixed points.
 
 ::: {.warning}
 Forward orbits need not cut a set into pieces. For \( f(n) = n + 1 \) on \( \nN \), the forward orbit of \( 0 \) is \( \nN \) and that of \( 1 \) is \( \{ n \in \nN : n \ge 1 \} \): they overlap and are not equal. Only orbits of a **permutation**, with \( k \) running over \( \nZ \), are guaranteed to be disjoint or equal.
@@ -230,7 +230,7 @@ If \( r = 0 \), this is \( x \). If \( 1 \le r < k \), then \( \sigma^r(x) \ne x
 (b) The display shows that every point \( \sigma^m(x) \) of the orbit is one of \( \sigma^0(x), \dots, \sigma^{k-1}(x) \); conversely each of these lies in the orbit. By (a), \( \{1, \dots, k\} \to O_\sigma(x) \), \( j \mapsto \sigma^{j-1}(x) \), is injective, and it is onto by what was just shown; so \( O_\sigma(x) \) has \( k \) elements (@def-finite).
 :::
 
-Two things to take from the proof. The forward orbit already contains \( x, \sigma(x), \dots, \sigma^{k-1}(x) \), so on a finite set it equals the orbit: walking forwards reaches every point that walking backwards does. And the hypothesis "\( \sigma \) is a permutation" was used once, in the cancellation of \( \sigma^i \); the last subsection shows what goes wrong without it. The argument is a method in its own right.
+Two things to take from the proof. The forward orbit already contains \( x, \sigma(x), \dots, \sigma^{k-1}(x) \), so on a finite set it equals the orbit: walking forwards reaches every point that walking backwards does. And in the existence of a return, the hypothesis "\( \sigma \) is a permutation" was used once, in the cancellation of \( \sigma^i \); the rest of the proof needs negative powers only because the orbit is defined with them. The last subsection shows what goes wrong without it. The argument is a method in its own right.
 
 ::: {#exm-method-follow-the-orbit}
 [Method: follow an orbit]
@@ -253,9 +253,9 @@ Let \( \sigma \) be the shuffle of twelve cards in three piles of four. Show tha
 ::: {.solution}
 *A formula.* Write \( i = 4p + r \) with \( 0 \le r < 4 \) (@thm-division-algorithm); for \( 0 \le i \le 11 \), \( p \in \{0, 1, 2\} \) is the pile and \( r \) the place in it. The card is dealt in round \( r \) (counting from \( 0 \)), after the \( p \) cards of that round from the earlier piles, so \( \sigma(i) = 3r + p \); the three cases of the hook are \( p = 0, 1, 2 \).
 
-*A permutation.* Every \( j \in \{0, \dots, 11\} \) is \( 3r + p \) for exactly one pair with \( 0 \le p < 3 \), by @thm-division-algorithm, and then \( r \le 3 \) because \( 3r \le j \le 11 \). So \( 3r + p \mapsto 4p + r \) is a function \( \{0, \dots, 11\} \to \{0, \dots, 11\} \), and it undoes \( \sigma \) on both sides. By @thm-bijection-iff-inverse, \( \sigma \in S_X \) for \( X = \{0, \dots, 11\} \).
+*A permutation.* Every \( j \in \{0, \dots, 11\} \) is \( 3r + p \) for exactly one pair with \( 0 \le p < 3 \), by @thm-division-algorithm, and then \( 0 \le r \le 3 \), because \( -3 < j - p = 3r \le 11 \). So \( 3r + p \mapsto 4p + r \) is a function \( \{0, \dots, 11\} \to \{0, \dots, 11\} \), and it undoes \( \sigma \) on both sides. By @thm-bijection-iff-inverse, \( \sigma \in S_X \) for \( X = \{0, \dots, 11\} \).
 
-*Arithmetic modulo \( 11 \).* \( 3i - \sigma(i) = 12p + 3r - 3r - p = 11p \), so \( \sigma(i) \equiv 3i \pmod{11} \). For \( i \le 10 \), \( \sigma(i) \ne 11 \), since \( 3r + p = 11 \) forces \( r = 3 \), \( p = 2 \), that is \( i = 11 \). So for \( i \le 10 \), \( \sigma(i) \) is the remainder of \( 3i \) on division by \( 11 \), and \( \sigma(11) = 11 \).
+*Arithmetic modulo \( 11 \).* \( 3i - \sigma(i) = 12p + 3r - 3r - p = 11p \), so \( \sigma(i) \equiv 3i \pmod{11} \). For \( i \le 10 \), \( \sigma(i) \ne 11 \), since \( 3r + p = 11 \) forces \( r = 3 \), \( p = 2 \), that is \( i = 11 \). So for \( i \le 10 \), \( 3i = 11p + \sigma(i) \) with \( 0 \le \sigma(i) < 11 \), and \( \sigma(i) \) is the remainder of \( 3i \) on division by \( 11 \) by the uniqueness in @thm-division-algorithm; and \( \sigma(11) = 11 \).
 
 *Orbits.* Follow each orbit (@exm-method-follow-the-orbit), reducing modulo \( 11 \):
 \[
@@ -287,7 +287,7 @@ The hook's shuffle moves \( 1, 3, 9, 5, 4 \) round in a ring, moves \( 2, 6, 7, 
 Let \( X \) be a set, \( k \ge 2 \), and \( x_1, \dots, x_k \in X \) **distinct**. The **cycle** \( (x_1\ x_2\ \cdots\ x_k) \) is the function \( X \to X \) that sends \( x_j \mapsto x_{j+1} \) for \( 1 \le j < k \), sends \( x_k \mapsto x_1 \), and sends every other point of \( X \) to itself. Two cycles are **disjoint** if their sets of entries are disjoint.
 :::
 
-The cycle is defined by gluing (@exm-method-gluing, the Idea): the pieces \( \{x_1, \dots, x_k\} \) and its complement are disjoint and cover \( X \), so there are no overlaps to check. On the first piece the rule reads the index \( j \) of a point, and distinctness makes that index unique. On the second piece the rule is the identity. A cycle is a permutation: \( (x_k\ \cdots\ x_2\ x_1) \) sends \( x_{j+1} \mapsto x_j \) and \( x_1 \mapsto x_k \), so composing it with \( (x_1\ \cdots\ x_k) \) in either order fixes each \( x_j \), and it fixes each point off the entries since both factors do. By @thm-bijection-iff-inverse the cycle is bijective, with inverse the reversed cycle. The same cycle has \( k \) names: \( (1\ 3\ 9\ 5\ 4) = (3\ 9\ 5\ 4\ 1) \), since both send each entry to the next one round the ring.
+The cycle is defined by gluing (@exm-method-gluing): the pieces \( \{x_1, \dots, x_k\} \) and its complement are disjoint and cover \( X \), so there are no overlaps to check. On the first piece the rule reads the index \( j \) of a point, and distinctness makes that index unique. On the second piece the rule is the identity. A cycle is a permutation: \( (x_k\ \cdots\ x_2\ x_1) \) sends \( x_{j+1} \mapsto x_j \) and \( x_1 \mapsto x_k \), so composing it with \( (x_1\ \cdots\ x_k) \) in either order fixes each \( x_j \), and it fixes each point off the entries since both factors do. By @thm-bijection-iff-inverse the cycle is bijective, with inverse the reversed cycle. The same cycle has \( k \) names: \( (1\ 3\ 9\ 5\ 4) = (3\ 9\ 5\ 4\ 1) \), since both send each entry to the next one round the ring.
 
 The theorem below says that every permutation of a finite set is built from its orbits in this way: one cycle for each orbit with at least two points. Before stating it, note that such orbits are finitely many. Let \( X \) have \( n \) elements via a bijection \( \varphi \colon \{1, \dots, n\} \to X \). Send each orbit \( O \) to the least \( i \) with \( \varphi(i) \in O \) (@thm-well-ordering). Distinct orbits are disjoint (@thm-orbits-partition), so they get distinct indices, and the orbits are in bijection with a subset of \( \{1, \dots, n\} \), which is finite (@prp-subset-finite).
 
@@ -327,7 +327,7 @@ For \( j = r \): a point \( y \) outside \( U_r \) lies in an orbit with fewer t
 Let \( i \ne j \) and \( y \in X \). If \( y \in O_i \), then \( \gamma_j(y) = y \), so \( \gamma_i(\gamma_j(y)) = \gamma_i(y) = \sigma(y) \); and \( \gamma_i(y) = \sigma(y) \in O_i \) is fixed by \( \gamma_j \), so \( \gamma_j(\gamma_i(y)) = \sigma(y) \). If \( y \in O_j \), the same two lines with \( i \) and \( j \) exchanged give \( \sigma(y) \) on both sides. If \( y \) lies in neither, both cycles fix it, and both composites give \( y \). So \( \gamma_i \circ \gamma_j = \gamma_j \circ \gamma_i \) by @prp-function-equality. For \( i = j \) there is nothing to prove.
 :::
 
-From now on we write \( \gamma\delta \) for \( \gamma \circ \delta \), the right factor applied first, the convention of *Algebraic Preliminaries*. Two examples. The three-pile shuffle of @exm-three-pile-shuffle is
+From now on we write \( \gamma\delta \) for \( \gamma \circ \delta \), the right factor applied first, the convention of *Algebraic Preliminaries*, Chapter 2. Two examples. The three-pile shuffle of @exm-three-pile-shuffle is
 \[
 \sigma = (1\ 3\ 9\ 5\ 4)(2\ 6\ 7\ 10\ 8) ,
 \]
@@ -344,7 +344,7 @@ Let \( X \) be a finite set and \( \sigma \in S_X \). For an integer \( N \ge 1 
 ::: {.proof}
 By @prp-function-equality, \( \sigma^N = \id_X \) means \( \sigma^N(x) = x \) for every \( x \in X \), and by @prp-orbit-cycle (c) that holds exactly when the length \( k_x \) of \( O_\sigma(x) \) divides \( N \) for every \( x \). This proves the equivalence.
 
-For existence, let \( \varphi \colon \{1, \dots, n\} \to X \) be a bijection (@def-finite), and let \( N \coloneqq \prod_{i=1}^{n} k_{\varphi(i)} \) (@def-sum-product). Each factor is an integer \( \ge 1 \), so \( N \) is an integer \( \ge 1 \). Write \( P_j \coloneqq \prod_{i=1}^{j} k_{\varphi(i)} \). For a fixed \( i \le n \), \( k_{\varphi(i)} \mid P_j \) for every \( j \) with \( i \le j \le n \), by induction on \( j \): \( P_i = P_{i-1} \, k_{\varphi(i)} \), and \( P_j \mid P_{j+1} = P_j \, k_{\varphi(j+1)} \), so @prp-divides-transitive carries the divisibility from \( P_j \) to \( P_{j+1} \). Hence \( k_x \mid P_n = N \) for every \( x = \varphi(i) \in X \), and \( \sigma^N = \id_X \) by the first part.
+For existence, let \( X \) have \( n \) elements, and let \( \varphi \colon \{1, \dots, n\} \to X \) be a bijection (@def-finite), and let \( N \coloneqq \prod_{i=1}^{n} k_{\varphi(i)} \) (@def-sum-product). Each factor is an integer \( \ge 1 \), so \( N \) is an integer \( \ge 1 \). Write \( P_j \coloneqq \prod_{i=1}^{j} k_{\varphi(i)} \). For a fixed \( i \le n \), \( k_{\varphi(i)} \mid P_j \) for every \( j \) with \( i \le j \le n \), by induction on \( j \): \( P_i = P_{i-1} \, k_{\varphi(i)} \), and \( P_j \mid P_{j+1} = P_j \, k_{\varphi(j+1)} \), so @prp-divides-transitive carries the divisibility from \( P_j \) to \( P_{j+1} \). Hence \( k_x \mid P_n = N \) for every \( x = \varphi(i) \in X \), and \( \sigma^N = \id_X \) by the first part.
 :::
 
 The **least** such \( N \) is the least positive common multiple of the orbit lengths: by the corollary, \( N \) works exactly when it is a common multiple of all of them. For two distinct lengths \( a \) and \( b \), that least common multiple is the one found in @exm-divisibility-lcm. For the three-pile shuffle the lengths are \( 1, 1, 5, 5 \), and the answer is \( 5 \), as the hook found by hand.
@@ -381,7 +381,7 @@ f^{l + 1 + p}(x) = f\bigl(f^{l+p}(x)\bigr) = f\bigl(f^l(x)\bigr) = f^{l+1}(x) .
 \]
 :::
 
-The forward orbit of \( x \) is thus a **tail** \( x, f(x), \dots, f^{m-1}(x) \) followed by a **cycle** that repeats with period \( p \). For a permutation the tail is empty, by @prp-orbit-cycle. Without injectivity it need not be.
+The forward orbit of \( x \) is thus a **tail** \( x, f(x), \dots, f^{m-1}(x) \) followed by a **cycle** that repeats with period \( p \). For a permutation the tail can be taken empty: \( m = 0 \) and \( p = k \), the length of \( O_\sigma(x) \), work, by @prp-orbit-cycle (c). Without injectivity it need not be.
 
 ::: {#exm-squaring-mod-eleven}
 [Squaring on an eleven-hour clock]
@@ -398,7 +398,7 @@ Let \( s \colon \nZ/11 \to \nZ/11 \), \( s([a]) \coloneqq [a^2] \). Show that \(
 \]
 using \( 16 - 11 = 5 \), \( 25 - 22 = 3 \), \( 81 - 77 = 4 \). So \( s^5([2]) = [4] = s^1([2]) \), with \( s^1([2]), \dots, s^4([2]) \) distinct: the tail is \( [2] \), and the cycle is \( [4], [5], [3], [9] \), so \( m = 1 \) and \( p = 4 \).
 
-*No return.* By @prp-eventually-periodic with these \( m \) and \( p \), every \( s^l([2]) \) with \( l \ge 1 \) is one of \( [4], [5], [3], [9] \), so it is never \( [2] \). The reason is the failure of injectivity: \( s([2]) = [4] = s([9]) \), with \( [2] \ne [9] \). The point \( [4] \) has two arrows coming in, from \( [2] \) and from \( [9] \); the cycle comes back to \( [4] \) through \( [9] \), and never needs \( [2] \) again.
+*No return.* The set \( C = \{[4], [5], [3], [9]\} \) contains \( s([2]) = [4] \), and the computation above shows that \( s \) maps \( C \) into \( C \) (\( [4] \mapsto [5] \mapsto [3] \mapsto [9] \mapsto [4] \)). So by induction on \( l \ge 1 \) (@thm-induction, @def-iterate), every \( s^l([2]) \) with \( l \ge 1 \) lies in \( C \), and none of them is \( [2] \). This is the tail-and-cycle shape that @prp-eventually-periodic predicts. The reason is the failure of injectivity: \( s([2]) = [4] = s([9]) \), with \( [2] \ne [9] \). The point \( [4] \) has two arrows coming in, from \( [2] \) and from \( [9] \); the cycle comes back to \( [4] \) through \( [9] \), and never needs \( [2] \) again.
 :::
 
 The example is the usual failure of @exm-method-follow-the-orbit in action: from \( s([2]) = s([9]) \) one may not cancel \( s \) to conclude \( [2] = [9] \).
@@ -414,7 +414,7 @@ Follow the forward orbit of \( [0] \) under \( [a] \mapsto [a^2 + 1] \) on \( \n
 ::: {.remark}
 [Looking ahead]
 
-*Algebraic Preliminaries*, Chapter 2 gives a name, group, to a set with an associative operation that has an identity and inverses, as \( \circ \) on \( S_X \) does by @prp-permutations-closed, and studies \( S_X \) as its first example.
+*Algebraic Preliminaries*, Chapter 2 gives a name, group, to a set with an associative operation that has an identity and inverses, as \( \circ \) on \( S_X \) does by @prp-permutations-closed, and studies \( S_X \) among its examples.
 :::
 
 ## Exercises
@@ -440,7 +440,7 @@ Follow the forward orbit of \( [0] \) under \( [a] \mapsto [a^2 + 1] \) on \( \n
 \]
 The table of \( \sigma^{-1} \) is that of \( \sigma \) read from bottom to top; \( \sigma^{-1} = (1\ 4)(2\ 5\ 3) \) and \( \sigma^2 = (2\ 5\ 3) \), since the swap \( (1\ 4) \) applied twice is the identity.
 
-(b) The forward orbit is \( 1, 2, 3, 4, 2, \dots \): \( f^4(1) = 2 = f^1(1) \), with \( f^0(1), \dots, f^3(1) \) distinct. So \( m = 1 \), \( p = 3 \).
+(b) The forward orbit is \( 1, 2, 3, 4, 2, \dots \): \( f^4(1) = 2 = f^1(1) \), with \( f^0(1), \dots, f^3(1) \) distinct. So \( m = 1 \), \( p = 3 \) work. And \( m = 0 \) is impossible: \( f \) maps \( \{2, 3, 4\} \) into itself and \( f(1) = 2 \), so by induction \( f^l(1) \in \{2, 3, 4\} \) for every \( l \ge 1 \), and \( f^p(1) \ne 1 = f^0(1) \) for every \( p \ge 1 \).
 
 (c) Two: positions \( 0 \) and \( 11 \) (@exm-three-pile-shuffle).
 :::
@@ -551,7 +551,7 @@ These account for \( 3 + 6 + 6 = 15 \) positions, so \( \sigma = (1\ 3\ 9\ 13\ 1
 - 2: proves \( \sigma \) bijective, including the check across pieces (or by an explicit inverse).
 - 2: reduces \( \sigma \) to multiplication by \( 3 \) modulo \( 14 \) on \( \{0, \dots, 13\} \) with \( 14 \) fixed, or follows the orbits directly from the three formulas.
 - 3: finds the two \( 6 \)-cycles and the fixed points \( 0, 7, 14 \), with the arithmetic shown.
-- 3: concludes \( N = 6 \) from the orbit lengths by @cor-permutation-power-identity, including why no smaller \( N \) works.
+- 3: concludes \( N = 6 \) and shows that no smaller \( N \) works, either from the orbit lengths by @cor-permutation-power-identity or directly (\( 3^6 \equiv 1 \pmod{14} \) and \( \sigma^k(1) \ne 1 \) for \( 1 \le k \le 5 \)).
 Fatal errors (0 for the step): claiming bijectivity from injectivity of each piece alone; taking \( N \) as the sum, rather than a common multiple, of the orbit lengths.
 :::
 
@@ -612,11 +612,11 @@ Let \( \varphi \colon X \to Y \) be a bijection. Show that \( \sigma \mapsto \va
 :::
 
 ::: {.solution}
-For \( \sigma \in S_X \), \( \varphi \circ \sigma \circ \varphi^{-1} \colon Y \to Y \) is a composite of bijections, so it lies in \( S_Y \) (@thm-composition-injective-surjective (c)); so the rule is a function \( c \colon S_X \to S_Y \). In the same way \( d(\tau) \coloneqq \varphi^{-1} \circ \tau \circ \varphi \) defines \( d \colon S_Y \to S_X \). By @prp-composition-associative and \( \varphi^{-1} \circ \varphi = \id_X \), \( \varphi \circ \varphi^{-1} = \id_Y \) (@def-inverse-function),
+For \( \sigma \in S_X \), \( \varphi \circ \sigma \circ \varphi^{-1} \colon Y \to Y \) is a composite of bijections (\( \varphi^{-1} \) is bijective by @thm-bijection-iff-inverse, since \( \varphi \) is a two-sided inverse of it, @def-inverse-function), so it lies in \( S_Y \) (@thm-composition-injective-surjective (c)); so the rule is a function \( c \colon S_X \to S_Y \). In the same way \( d(\tau) \coloneqq \varphi^{-1} \circ \tau \circ \varphi \) defines \( d \colon S_Y \to S_X \). By @prp-composition-associative and \( \varphi^{-1} \circ \varphi = \id_X \), \( \varphi \circ \varphi^{-1} = \id_Y \) (@def-inverse-function),
 \[
-d(c(\sigma)) = (\varphi^{-1} \circ \varphi) \circ \sigma \circ (\varphi^{-1} \circ \varphi) = \sigma ,
+d(c(\sigma)) = \varphi^{-1} \circ \bigl((\varphi \circ \sigma) \circ \varphi^{-1}\bigr) \circ \varphi = \bigl(\varphi^{-1} \circ (\varphi \circ \sigma)\bigr) \circ (\varphi^{-1} \circ \varphi) = \bigl((\varphi^{-1} \circ \varphi) \circ \sigma\bigr) \circ \id_X = \sigma ,
 \]
-and likewise \( c(d(\tau)) = \tau \). So \( c \) has a two-sided inverse and is bijective (@thm-bijection-iff-inverse). For the fixed points,
+with @prp-composition-associative at each regrouping, and likewise \( c(d(\tau)) = \tau \). So \( c \) has a two-sided inverse and is bijective (@thm-bijection-iff-inverse). For the fixed points,
 \[
 c(\sigma)(\varphi(x)) = \varphi\bigl(\sigma(\varphi^{-1}(\varphi(x)))\bigr) = \varphi(\sigma(x)) ,
 \]
@@ -644,7 +644,7 @@ For every \( a \), by @def-preimage applied to \( f|_A \colon A \to Y \) and to 
 \[
 a \in (f|_A)^{-1}(B) \iff a \in A \wedge f(a) \in B \iff a \in A \cap f^{-1}(B) ,
 \]
-where the second step uses \( A \subseteq X \). The two sets have the same elements, so they are equal. This is the element-chasing of Section 1.7 applied to a function built in Section 5.1.
+where the second step uses \( A \subseteq X \). The two sets have the same elements, so they are equal. This is the element-chasing of Section 1.7 applied to a function built in Section 5.1. The tool is the preimage definition (@def-preimage), tested pointwise. The look-alike tools fail: image rules such as @prp-restriction-properties compare images, not preimages, and \( f(A \cap C) \) can be strictly smaller than \( f(A) \cap f(C) \); and \( (f|_A)^{-1} \) here is a preimage, not an inverse function, which \( f|_A \) need not have.
 :::
 
 <!-- dependency ledger
@@ -663,7 +663,7 @@ prp-orbit-cycle (proof): {1, ..., n + 1} has n + 1 elements | def-finite with th
 prp-orbit-cycle (proof): (q + 1)k = k + qk; -q > 0 for q < 0 | R arithmetic
 prp-orbit-cycle (proof): r = 0 iff k | m, by uniqueness of (q, r) | thm-division-algorithm (cited), def-divides
 exm-three-pile-shuffle (solution): division by 4 and by 3 gives the pile/place formula; 3i - sigma(i) = 11p; 3r + p = 11 only for (r, p) = (3, 2); orbits mod 11; 3^5 = 243 = 22*11 + 1 | thm-division-algorithm (cited); arithmetic; verify/ch05/exm-three-pile-shuffle.py
-exm-three-pile-shuffle (solution): the remainder of 3i is the unique r in {0..10} with r = 3i mod 11 | prp-integers-mod-n (4.2, the remainder test), recalled in prose
+exm-three-pile-shuffle (solution): the remainder of 3i is the unique r in {0..10} with r = 3i mod 11 | thm-division-algorithm (uniqueness, cited inline)
 exm-method-follow-the-orbit (claim): (quick check) t^m([1]) = [1 + m]; [a] -> [a + 3] well defined, inverse [a - 3]; orbit [1],[4],[7],[10] | induction, def-congruence; arithmetic; verify/ch05/exm-method-follow-the-orbit.py
 def-permutation-cycle (claim): a cycle is well defined (distinct entries give a unique index) and the reversed cycle is its inverse | inline, gluing as in exm-method-gluing (5.1 thm-gluing)
 thm-permutation-cycles (claim): finitely many orbits (least index map into {1..n}) | thm-well-ordering, thm-orbits-partition, prp-subset-finite (cited); a subset of {1..n} with r elements gives a list O_1..O_r by composing bijections, def-finite

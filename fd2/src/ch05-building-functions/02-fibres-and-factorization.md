@@ -62,7 +62,7 @@ List the classes of \( \sim_f \) for \( f(n) = n^2 - 2n \) on \( \{-1, 0, 1, 2, 
 The values are \( f(-1) = 3 \), \( f(0) = 0 \), \( f(1) = -1 \), \( f(2) = 0 \), \( f(3) = 3 \). So the classes are \( \{-1, 3\} \) (value \( 3 \)), \( \{0, 2\} \) (value \( 0 \)) and \( \{1\} \) (value \( -1 \)): three classes for the three values in \( f(X) = \{-1, 0, 3\} \).
 :::
 
-The proposition explains a computation of Section 4.2. In @exm-same-size-subsets, the subsets of \( \{1, 2, 3\} \) were sorted by "same number of elements". That relation is \( \sim_f \) for the function \( f \colon \powerset{\{1, 2, 3\}} \to \{0, 1, 2, 3\} \) sending each subset to its number of elements, a function by @cor-finite-size-unique. Its four fibers are \( \{\emptyset\} \), the three singletons, the three pairs, and \( \{\{1, 2, 3\}\} \), and its image is all of \( \{0, 1, 2, 3\} \). Part (c) of that example, the well-defined map from classes to numbers, is the bijection of (b) read backwards.
+The proposition explains a computation of Section 4.2. In @exm-same-size-subsets, the subsets of \( \{1, 2, 3\} \) were sorted by "same number of elements". That relation is \( \sim_f \) for the function \( f \colon \powerset{\{1, 2, 3\}} \to \{0, 1, 2, 3\} \) sending each subset to its number of elements, a function by @prp-subset-finite (every subset has some number of elements, at most \( 3 \)) and @cor-finite-size-unique (only one). Its four fibers are \( \{\emptyset\} \), the three singletons, the three pairs, and \( \{\{1, 2, 3\}\} \), and its image is all of \( \{0, 1, 2, 3\} \). Part (c) of that example, the well-defined map from classes to numbers, is the bijection of (b) read backwards.
 
 ::: {.check}
 List the fibers of \( f \colon \{1, \dots, 6\} \to \{0, 1, 2\} \), where \( f(n) \) is the remainder of \( n \) on division by \( 3 \).
@@ -134,7 +134,7 @@ by @def-composition. Hence \( f = \iota \circ \bar f \circ q \) by @prp-function
 where the first equality holds because \( \iota \) sends each point to itself. The two functions have the same domain and codomain, so \( \bar f' = \bar f \) by @prp-function-equality. This proves the theorem.
 :::
 
-Read the factorization from left to right: every function is a **surjection** (\( q \), onto by @def-quotient-set), followed by a **bijection** (\( \bar f \)), followed by an **injection** (\( \iota \), which sends each point to itself, so different points stay different). All the identifying is done by \( q \), all the renaming by \( \bar f \), and all the enlarging of the target by \( \iota \). The two properties of Section 1.5 sit at the two ends. The function \( f \) is injective exactly when \( q \) is, that is, when every fiber is a single point (the second reading after @thm-classes-partition): if \( f \) is injective and \( q(x) = q(x') \), then \( f(x) = f(x') \) and \( x = x' \); if \( q \) is injective and \( f(x) = f(x') \), then \( q(x) = q(x') \) and \( x = x' \). And \( f \) is surjective exactly when \( f(X) = Y \), that is, when \( \iota = \id_Y \).
+Read the factorization from left to right: every function is a **surjection** (\( q \), onto by @def-quotient-set), followed by a **bijection** (\( \bar f \)), followed by an **injection** (\( \iota \), which sends each point to itself, so different points stay different). All the identifying is done by \( q \), all the renaming by \( \bar f \), and all the enlarging of the target by \( \iota \). The two properties of Section 1.5 sit at the two ends. The function \( f \) is injective exactly when \( q \) is: if \( f \) is injective and \( q(x) = q(x') \), then \( f(x) = f(x') \) and \( x = x' \); if \( q \) is injective and \( f(x) = f(x') \), then \( q(x) = q(x') \) and \( x = x' \). And \( f \) is surjective exactly when \( f(X) = Y \), that is, when \( \iota = \id_Y \).
 
 ::: {.warning}
 The middle map is a bijection onto the **image**, not onto the codomain. With target \( Y \), the rule \( [x] \mapsto f(x) \) is still a well-defined injection, but it is surjective only when \( f \) is. For \( f(x) = x^2 \) on \( \nR \), the rule \( [x] \mapsto x^2 \) maps the classes \( \{-x, x\} \) onto \( [0, \infty) \) and reaches no negative number of the codomain \( \nR \).
@@ -217,7 +217,7 @@ The theorem turns the check of @exm-method-well-definedness into a complete meth
 **The usual failure.** Proving (4)'s converse condition instead of (2); a \( g \) not defined on all of \( X \); running the check for a map **into** a quotient, which needs none: compose with \( q \).
 :::
 
-Here is the method three times on the clock. As in Section 4.2, the subscript in \( [a]_n \) names the modulus: it is the class of \( a \) in \( \nZ/n \).
+Here is the method three times, twice on the clock and once on \( \nZ/2 \). As in Section 4.2, the subscript in \( [a]_n \) names the modulus: it is the class of \( a \) in \( \nZ/n \).
 
 ::: {#exm-clock-maps}
 [Maps out of the clock]
@@ -321,7 +321,7 @@ Let \( \sim \) and \( \approx \) be equivalence relations on a set \( X \) such 
 ::: {.solution}
 Apply @thm-functions-out-of-quotient to the relation \( \sim \) and to \( g \coloneqq q_\approx \colon X \to X/{\approx} \), the quotient map of \( \approx \). It is constant on \( \sim \)-classes: if \( x \sim x' \), then \( x \approx x' \) by hypothesis, so \( [x]_\approx = [x']_\approx \) by @thm-classes-partition (b). By part (a), \( [x]_\sim \mapsto [x]_\approx \) is a function, and by part (c) it is surjective, since \( q_\approx \) is onto (@def-quotient-set).
 
-For \( \nZ/12 \to \nZ/4 \), the hypothesis is: \( 12 \mid a - a' \) implies \( 4 \mid a - a' \). This holds by @prp-divides-transitive, since \( 4 \mid 12 \) (\( 12 = 3 \cdot 4 \)). So \( [a]_{12} \mapsto [a]_4 \) is a well-defined surjection: each hour of the clock is sent to its quarter-day position.
+For \( \nZ/12 \to \nZ/4 \), the hypothesis is: \( 12 \mid a - a' \) implies \( 4 \mid a - a' \). This holds by @prp-divides-transitive, since \( 4 \mid 12 \) (\( 12 = 3 \cdot 4 \)). So \( [a]_{12} \mapsto [a]_4 \) is a well-defined surjection: each hour is sent to its position within a block of four hours (\( 0 \), \( 4 \) and \( 8 \) go to \( [0]_4 \)).
 :::
 
 ::: {#exr-fibres-and-factorization-b4}
@@ -345,7 +345,7 @@ Prove or disprove each statement.
 
 (c) **True.** If \( x \sim_f x' \), then \( f(x) = f(x') \), so \( x = x' \) by injectivity; hence \( [x] = \{x\} \) for every \( x \). The quotient map \( q \) is injective: \( q(x) = q(x') \) gives \( x \sim_f x' \) by @thm-classes-partition (b), so \( x = x' \). And \( q \) is onto by @def-quotient-set.
 
-(d) **False.** Let \( g(a) \coloneqq [3a]_{12} \). It is constant on classes modulo \( 4 \): if \( a - a' = 4k \), then \( 3a - 3a' = 12k \). The induced map is injective by @thm-functions-out-of-quotient (b): if \( [3a]_{12} = [3a']_{12} \), then \( 3(a - a') = 12k \) for some \( k \in \nZ \), so \( a - a' = 4k \) after cancelling \( 3 \). But it is not surjective, so by part (c) of the theorem, look for a class that \( g \) misses. If \( [1]_{12} = [3a]_{12} \), then \( 1 - 3a = 12k \) for some \( k \in \nZ \), so \( 1 = 3(a + 4k) \) and \( 3 \mid 1 \). That is impossible: \( 1 = 0 \cdot 3 + 1 \) with \( 0 \le 1 < 3 \), so by the uniqueness in @thm-division-algorithm the remainder of \( 1 \) on division by \( 3 \) is \( 1 \), not \( 0 \). So \( [1]_{12} \) is missed. (Counting gives the same verdict: four classes cannot fill twelve.)
+(d) **False.** Let \( g(a) \coloneqq [3a]_{12} \). It is constant on classes modulo \( 4 \): if \( a - a' = 4k \), then \( 3a - 3a' = 12k \). The induced map is injective by @thm-functions-out-of-quotient (b): if \( [3a]_{12} = [3a']_{12} \), then \( 3(a - a') = 12k \) for some \( k \in \nZ \), so \( a - a' = 4k \) after cancelling \( 3 \). But it is not surjective, so by part (c) of the theorem, look for a class that \( g \) misses. If \( [1]_{12} = [3a]_{12} \), then \( 1 - 3a = 12k \) for some \( k \in \nZ \), so \( 1 = 3(a + 4k) \) and \( 3 \mid 1 \). That is impossible: \( 1 = 0 \cdot 3 + 1 \) with \( 0 \le 1 < 3 \), so by the uniqueness in @thm-division-algorithm the remainder of \( 1 \) on division by \( 3 \) is \( 1 \), not \( 0 \). So \( [1]_{12} \) is missed.
 
 (e) **False.** Take \( X = Y = \nR \), \( f = \id_\nR \) and \( g(x) = 2x \). Both are injective, so \( \sim_f \) and \( \sim_g \) are both equality on \( \nR \), but \( f(1) = 1 \ne 2 = g(1) \). Equal fiber relations make the functions differ only by a renaming of values, which is Exercise B2.
 :::
@@ -366,6 +366,15 @@ For \( k \in \nN \), let \( P(k) \) be the statement: for every \( n \in \nN \),
 *Inductive step.* Suppose \( P(k) \), and let \( X \) have \( n \) elements and \( f \colon X \to \{1, \dots, k + 1\} \) have every fiber of \( m \) elements. Put \( X' \coloneqq f^{-1}(\{1, \dots, k\}) \) and \( F \coloneqq f^{-1}(\{k + 1\}) \). Every \( x \in X \) has \( f(x) \le k \) or \( f(x) = k + 1 \), and not both, so \( X = X' \cup F \) and \( X' \cap F = \emptyset \). By @prp-subset-finite, \( X' \) has \( j \) elements for some \( j \in \nN \). Let \( f' \colon X' \to \{1, \dots, k\} \), \( f'(x) \coloneqq f(x) \); this is a function, because \( f(x) \in \{1, \dots, k\} \) for \( x \in X' \). For \( i \le k \), its fiber is \( f'^{-1}(\{i\}) = \{ x \in X' : f(x) = i \} = f^{-1}(\{i\}) \), since every \( x \) with \( f(x) = i \) lies in \( X' \); so it has \( m \) elements. By \( P(k) \), \( j = km \). The fiber \( F \) has \( m \) elements by hypothesis, so @prp-disjoint-union-count gives that \( X = X' \cup F \) has \( km + m = (k + 1)m \) elements. Since \( X \) also has \( n \) elements, \( n = (k + 1)m \) by @cor-finite-size-unique. This proves \( P(k + 1) \).
 
 The statement says that a function whose fibers all have one size cuts \( X \) into equal piles, so the size of \( X \) is the number of piles times the pile size. With fibers of different sizes the same induction gives the sum of the fiber sizes.
+
+**Marking scheme.** (10 points)
+
+- 2: states the induction hypothesis with \( X \) and \( f \) quantified inside it.
+- 2: the base case \( k = 0 \): \( X = \emptyset \) and \( n = 0 \).
+- 3: the step: \( X' \) and \( F \) are disjoint with union \( X \), the fibers of \( f' \) are fibers of \( f \), and \( j = km \).
+- 3: the conclusion by @prp-disjoint-union-count and @cor-finite-size-unique.
+
+Fatal errors (0 for the step): induction with \( X \) fixed; applying \( P(k) \) to a function whose fibers were not shown to have \( m \) elements.
 :::
 
 ::: {#exr-fibres-and-factorization-c2}
@@ -379,16 +388,16 @@ Is the conclusion true? Which line fails, and why? Give a counterexample to the 
 :::
 
 ::: {.solution}
-The conclusion is true: it is the uniqueness clause, proved in the text. Lines (1) and (2) are correct. Line (3) fails: \( q \) is injective only when every class is a single point (the second reading after @thm-classes-partition), which the theorem does not assume.
+The conclusion is true: it is the uniqueness clause, proved in the text. Lines (1) and (2) are correct. Line (3) fails twice. First, \( q \) is injective only when every class is a single point (the second reading after @thm-classes-partition), which the theorem does not assume. Second, even an injective map need not be cancellable on the right.
 
-*Counterexample to the step.* For congruence modulo \( 12 \) on \( \nZ \), \( q(0) = [0] = [12] = q(12) \) with \( 0 \ne 12 \), so \( q \) is not injective, and the claim "\( q \) is injective" is false in the very case the clock needs.
+*Counterexample to the step.* For congruence modulo \( 12 \) on \( \nZ \), \( q(0) = [0] = [12] = q(12) \) with \( 0 \ne 12 \), so \( q \) is not injective, and the claim "\( q \) is injective" is false in the very case the clock needs. *Counterexample to the inference.* The inclusion \( \iota \colon \{0\} \to \{0, 1\} \) is injective; let \( u = \id_{\{0, 1\}} \) and \( v \) be the constant function \( 0 \). Then \( u \circ \iota = v \circ \iota \) but \( u \ne v \).
 
 *Repair.* What cancels \( q \) on the right is that \( q \) is **onto**. Replace (3) by: "Let \( C \in X/{\sim} \). Since \( q \) is surjective (@def-quotient-set), \( C = q(x) \) for some \( x \in X \), and then \( \bar g(C) = \bar g(q(x)) = h(q(x)) = h(C) \) by (2). The two functions have the same domain and codomain, so \( \bar g = h \) by @prp-function-equality." Injectivity of \( q \) would let one cancel \( q \) on the **left**, in \( q \circ u = q \circ v \), which is a different situation.
 
 **Marking scheme.** (10 points)
 
 - 2: says the conclusion is true.
-- 3: identifies line (3), and says that the false step is the injectivity of \( q \).
+- 3: identifies line (3), and says either that \( q \) need not be injective or that injectivity does not license cancelling on the right (surjectivity does).
 - 2: gives a concrete non-injective quotient map, such as \( q(0) = q(12) \) modulo \( 12 \).
 - 3: repairs the proof by surjectivity of \( q \): every class is \( q(x) \), where both functions take the value \( g(x) \).
 
@@ -430,10 +439,10 @@ A direct proof that defines \( h(y) \coloneqq g(x) \) for any \( x \) with \( f(
 <!-- dependency ledger
 prp-fibres-partition (proof): the fiber over f(a) is the class [a] | exm-fibres-of-function (cited)
 prp-fibres-partition (claim): (quick check) values of n^2 - 2n on {-1, ..., 3} | arithmetic; verify/ch05/prp-fibres-partition.py
-prp-fibres-partition (claim): (same-size payoff) sizes of the eight subsets of {1, 2, 3}; "number of elements" is a function | arithmetic; cor-finite-size-unique (cited); verify/ch05/prp-fibres-partition.py
+prp-fibres-partition (claim): (same-size payoff) sizes of the eight subsets of {1, 2, 3}; "number of elements" is a function | arithmetic; prp-subset-finite, cor-finite-size-unique (cited); verify/ch05/prp-fibres-partition.py
 prp-fibres-partition (claim): (quick check) remainders of 1, ..., 6 on division by 3 | thm-division-algorithm (F2.2), arithmetic; verify/ch05/prp-fibres-partition.py
 thm-canonical-factorization (proof): the inclusion map sends each point to itself | def-restriction-extension (cited, F2.6 §01)
-thm-canonical-factorization (claim): (aftermath) f injective iff every fiber is a single point | thm-classes-partition (b), its second reading (cited)
+thm-canonical-factorization (claim): (aftermath) f injective iff q injective | direct argument via thm-classes-partition (b) (cited)
 thm-canonical-factorization (claim): (warning) x^2 >= 0, every t >= 0 is a square | R arithmetic and order, square roots, school fact (AN1.1 thm-nth-root)
 exm-fraction-map-factorization (solution): a/b = c/d iff ad = bc for b, d != 0; every rational is a/b with b > 0 | arithmetic of fractions, school fact (Q built in F3.2); verify/ch05/exm-fraction-map-factorization.py
 exm-clock-maps (solution): remainder test a = a' (mod n) iff same remainder | prose after prp-integers-mod-n (F2.5 §02), recalled with a pointer

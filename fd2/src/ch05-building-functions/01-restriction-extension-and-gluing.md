@@ -86,12 +86,12 @@ No. The function \( f \colon \nR \to [0, \infty) \), \( f(x) = x^2 \), is surjec
 
 ## Gluing
 
-Restriction takes a function apart: it hands us the pieces \( f|_{A_i} \) on the parts \( A_i \) of the domain. Gluing is the reverse. We are given functions on the parts and want one function on the whole set. The hook showed the two ways this can go wrong: a point may lie in no part, and a point may lie in two parts whose formulas disagree there.
+Restriction takes a function apart: it hands us the pieces \( f|_{A_i} \) on the parts \( A_i \) of the domain. Gluing is the reverse. We are given functions on the parts and want one function on the whole set. The hook named the two ways this can go wrong: a point may lie in no part, and a point may lie in two parts whose formulas disagree there. Only the second failure appeared there; the first is easy to picture.
 
 ::: {#thm-gluing}
 [Gluing Functions]
 
-Let \( (A_i)_{i \in I} \) be a family of subsets of a set \( X \) with \( \bigcup_{i \in I} A_i = X \), and for each \( i \in I \) let \( f_i \colon A_i \to Y \) be a function. Suppose the \( f_i \) **agree on overlaps**:
+Let \( (A_i)_{i \in I} \) be a family of subsets of a set \( X \) with \( \bigcup_{i \in I} A_i = X \), and let \( (f_i)_{i \in I} \) be a family of functions \( f_i \colon A_i \to Y \). Suppose the \( f_i \) **agree on overlaps**:
 \[
 f_i(x) = f_j(x) \quad \text{for all } i, j \in I \text{ and every } x \in A_i \cap A_j .
 \]
@@ -110,7 +110,7 @@ A function is a graph satisfying (Fn1) and (Fn2), together with a codomain (@def
 | \( x \in X \), so \( x \in A_i \) for some \( i \) (the cover) | (Fn1): \( (x, f_i(x)) \in G_i \subseteq G \) |
 | \( (x, y) \in G_i \), \( (x, y') \in G_j \); so \( y = f_i(x) \), \( y' = f_j(x) \) and \( x \in A_i \cap A_j \) | (Fn2): \( y = y' \); this is the gap, and agreement on overlaps closes it |
 
-Each hypothesis has one job: the cover gives (Fn1), agreement gives (Fn2). Uniqueness is easier: two functions with the right restrictions both take the value \( f_i(x) \) at a point \( x \in A_i \).
+In the existence part each hypothesis has one job: the cover gives (Fn1), agreement gives (Fn2). Uniqueness is easier: two functions with the right restrictions both take the value \( f_i(x) \) at a point \( x \in A_i \).
 :::
 
 ::: {.proof}
@@ -125,7 +125,7 @@ So \( f \coloneqq (G, Y) \) is a function \( X \to Y \). Let \( i \in I \). Both
 *Uniqueness.* Let \( g \colon X \to Y \) also satisfy \( g|_{A_i} = f_i \) for every \( i \in I \). Let \( x \in X \), and choose \( i \) with \( x \in A_i \). Then \( g(x) = g|_{A_i}(x) = f_i(x) = f|_{A_i}(x) = f(x) \). By @prp-function-equality, \( g = f \). This proves the theorem.
 :::
 
-In the existence part, the proof used the cover only for (Fn1) and agreement only for (Fn2). Each hypothesis is needed: if a point \( x \) lies in no \( A_i \), the union graph has no pair with first coordinate \( x \), and (Fn1) fails; the function \( r \) of the hook shows two pieces that cover \( \nR \) and disagree at \( 0 \), where (Fn2) fails.
+In the existence part, the proof used the cover only for (Fn1) and agreement only for (Fn2). Each hypothesis is needed. If a point \( x \) lies in no \( A_i \), the union graph has no pair with first coordinate \( x \), and (Fn1) fails; the theorem fails too, as soon as \( Y \) has two elements: for \( X = \{0, 1\} \), \( A_1 = \{0\} \) and \( f_1(0) = 0 \), both ways of choosing the value at \( 1 \) give a function \( f \) with \( f|_{A_1} = f_1 \), so "exactly one" fails. The rule \( r \) of the hook shows two pieces that cover \( \nR \) and disagree at \( 0 \), where (Fn2) fails.
 
 The theorem is used so often that its use deserves a template. Step (4) below is the one most often forgotten.
 
@@ -154,7 +154,7 @@ Decide whether each definition glues to a function \( \nR \to \nR \).
 ::: {.solution}
 (a) Step (1): the pieces cover \( \nR \), since every real number is \( \ge 0 \) or \( \le 0 \). Step (2): the overlap is \( \{0\} \), where the formulas give \( 0 \) and \( -0 = 0 \). They agree, so by @thm-gluing there is exactly one function with these restrictions: the absolute value \( \abs{\cdot} \).
 
-(b) The pieces cover \( \nR \) and overlap in \( \{0\} \), where the values are \( 0 \) and \( 1 \). Agreement fails, so the hypothesis of @thm-gluing fails; and no function can have both restrictions, since its value at \( 0 \) would be \( 0 \) and \( 1 \). This is the function \( r \) of the hook, which is not a function.
+(b) The pieces cover \( \nR \) and overlap in \( \{0\} \), where the values are \( 0 \) and \( 1 \). Agreement fails, so the hypothesis of @thm-gluing fails; and no function can have both restrictions, since its value at \( 0 \) would be \( 0 \) and \( 1 \). This is the rule \( r \) of the hook, which is not a function.
 
 (c) A minimal change to (b): the second piece loses the point \( 0 \). Now the pieces are disjoint and still cover \( \nR \), so step (2) has nothing to check, and they glue to a function \( k \colon \nR \to \nR \). Inside each piece \( k \) is injective (\( x = x' \) and \( x + 1 = x' + 1 \) each force \( x = x' \)). Across the pieces, step (4) finds a collision: \( k(\tfrac12) = \tfrac12 \) and \( k(-\tfrac12) = -\tfrac12 + 1 = \tfrac12 \). So \( k \) is not injective.
 :::
@@ -273,7 +273,7 @@ The final expression does not change when \( u, v, w \) are permuted. The right-
 
 The common value is \( 1 \) exactly when an odd number of \( u, v, w \) equal \( 1 \): with one of them equal to \( 1 \) it is \( 1 \), with two it is \( 2 - 2 = 0 \), with three \( 3 - 6 + 4 = 1 \). So both sides are the set of points lying in an odd number of \( A, B, C \). An element chase would split into eight cases, one for each pattern of memberships; the indicator computation did all eight at once.
 
-**Cantor, re-read.** The set \( D = \{ x \in X : x \notin f(x) \} \) in the proof of @thm-cantor has indicator \( \ind_D(x) = 1 - \ind_{f(x)}(x) \): it is the flipped diagonal of the proof of @thm-binary-sequences-uncountable in Section 3.3, and Section 3.6's @cor-cantor-two-power already joined the two arguments. Exercise C3 runs the argument for an arbitrary set, with 0–1 functions first and subsets second.
+**Cantor, re-read.** The set \( D = \{ x \in X : x \notin f(x) \} \) in the proof of @thm-cantor has indicator \( \ind_D(x) = 1 - \ind_{f(x)}(x) \): it is the flipped diagonal of the proof of @thm-binary-sequences-uncountable in Section 3.3, and Section 3.3, after @thm-cantor, already joined the two arguments for \( X = \nN \). Exercise C3 runs the argument for an arbitrary set, with 0–1 functions first and subsets second.
 
 ::: {.check}
 Let \( X = \{1, 2, 3, 4\} \), \( A = \{1, 2\} \) and \( B = \{2, 3\} \). List the values \( \ind_{A \triangle B}(1), \dots, \ind_{A \triangle B}(4) \), first from the formula \( u + v - 2uv \) and then from the definition of \( \triangle \).
@@ -350,9 +350,9 @@ Let \( A, B, C \subseteq X \). Prove by computing with indicators:
 ::: {.solution}
 Fix \( x \in X \) and write \( u, v, w \) for the values of \( \ind_A, \ind_B, \ind_C \) at \( x \). For any \( S \subseteq X \), \( A \setminus S = A \cap (X \setminus S) \), so @prp-indicator-arithmetic (a), (b) give \( \ind_{A \setminus S}(x) = u(1 - \ind_S(x)) \).
 
-(a) By (c), \( \ind_{B \cup C}(x) = v + w - vw \), so the left side has indicator value \( u(1 - v - w + vw) = u(1 - v)(1 - w) \). The right side has, by (a), \( u(1 - v) \cdot u(1 - w) = u^2 (1 - v)(1 - w) = u(1 - v)(1 - w) \), using \( u^2 = u \). The indicators agree at every \( x \), so the sets are equal.
+(a) By @prp-indicator-arithmetic (c), \( \ind_{B \cup C}(x) = v + w - vw \), so the left side has indicator value \( u(1 - v - w + vw) = u(1 - v)(1 - w) \). The right side has, by @prp-indicator-arithmetic (a), \( u(1 - v) \cdot u(1 - w) = u^2 (1 - v)(1 - w) = u(1 - v)(1 - w) \), using \( u^2 = u \). The indicators agree at every \( x \), so the sets are equal.
 
-(b) By (a) and (d), the left side has \( u(v + w - 2vw) = uv + uw - 2uvw \). The sets \( A \cap B \) and \( A \cap C \) have indicator values \( uv \) and \( uw \), so by (d) the right side has \( uv + uw - 2(uv)(uw) = uv + uw - 2u^2 vw = uv + uw - 2uvw \). The indicators agree, so the sets are equal.
+(b) By @prp-indicator-arithmetic (a) and (d), the left side has \( u(v + w - 2vw) = uv + uw - 2uvw \). The sets \( A \cap B \) and \( A \cap C \) have indicator values \( uv \) and \( uw \), so by @prp-indicator-arithmetic (d) the right side has \( uv + uw - 2(uv)(uw) = uv + uw - 2u^2 vw = uv + uw - 2uvw \). The indicators agree, so the sets are equal.
 :::
 
 ::: {#exr-restriction-extension-and-gluing-b4}
@@ -384,7 +384,7 @@ Prove each true statement and refute each false one with a counterexample.
 ### C. Going deeper
 
 ::: {#exr-restriction-extension-and-gluing-c1}
-[C1: Counting extensions, used later]
+[C1: Counting extensions]
 
 Let \( A \subseteq X \) and \( g \colon A \to Y \), and let \( E \) be the set of all extensions of \( g \) to \( X \). Show that \( f \mapsto f|_{X \setminus A} \) is a bijection from \( E \) to \( Y^{X \setminus A} \).
 :::
@@ -397,12 +397,18 @@ Write \( \rho(f) \coloneqq f|_{X \setminus A} \), a function \( E \to Y^{X \setm
 *Round trip on \( E \).* Let \( f \in E \). Both \( f \) and \( \gamma(\rho(f)) \) restrict to \( g \) on \( A \) and to \( f|_{X \setminus A} \) on \( X \setminus A \). By the uniqueness in @thm-gluing, \( \gamma(\rho(f)) = f \).
 
 So \( \gamma \) is a two-sided inverse of \( \rho \), and \( \rho \) is a bijection by @thm-bijection-iff-inverse. In words: an extension of \( g \) is the same thing as an arbitrary choice of values off \( A \). For finite sets this counts the extensions: if \( X \setminus A \) has \( m \) elements and \( Y \) has \( n \), there are as many extensions as functions from an \( m \)-element set to an \( n \)-element set.
+
+**Marking scheme.** (10 points)
+- 3: defines \( \gamma \) by gluing, checking the pieces cover and are disjoint.
+- 2: \( \rho(\gamma(k)) = k \).
+- 3: \( \gamma(\rho(f)) = f \) by uniqueness in @thm-gluing.
+- 2: concludes that \( \rho \) is a bijection.
 :::
 
 ::: {#exr-restriction-extension-and-gluing-c2}
 [C2: Find the error]
 
-Here is a proposed proof of @thm-gluing. "Given \( x \in X \), pick \( i \) with \( x \in A_i \), and set \( f(x) \coloneqq f_i(x) \). Then \( f|_{A_i} = f_i \) for every \( i \in I \)." Which hypothesis of the theorem is never used? Where does the argument fail, and which check is missing? Is the conclusion true?
+Here is a proposed proof of the existence part of @thm-gluing. "Given \( x \in X \), pick \( i \) with \( x \in A_i \), and set \( f(x) \coloneqq f_i(x) \). Then \( f|_{A_i} = f_i \) for every \( i \in I \)." Which hypothesis of the theorem is never used? Where does the argument fail, and which check is missing? Is the conclusion true?
 :::
 
 ::: {.solution}
@@ -412,7 +418,7 @@ Agreement on overlaps is never used. The failure is in the definition of \( f \)
 
 **Marking scheme.** (10 points)
 - 3: names agreement on overlaps as the unused hypothesis.
-- 4: locates the error in the definition of \( f \): the value depends on the choice of \( i \), so a well-definedness check is missing.
+- 4: locates the failure either in the definition of \( f \) (the value depends on the choice of \( i \), so a well-definedness check is missing) or in the claim \( f|_{A_j} = f_j \) at a point of \( A_i \cap A_j \) where another index was picked, and says that agreement on overlaps is what is missing.
 - 3: gives a concrete case where the choice matters and \( f|_{A_j} = f_j \) fails.
 Fatal errors (0 for the step): claiming the conclusion is false; locating the error in the cover (every \( x \) does lie in some \( A_i \)).
 :::
@@ -432,6 +438,12 @@ Let \( X \) be a set and \( g \colon X \to \{0, 1\}^X \) a function. Define \( d
 (a) Since \( g(x)(x) \in \{0, 1\} \), also \( d(x) \in \{0, 1\} \), so \( d \in \{0, 1\}^X \). Suppose \( d = g(a) \) for some \( a \in X \). Then \( d(a) = g(a)(a) \), and by the definition of \( d \), \( d(a) = 1 - g(a)(a) \). Hence \( 2 g(a)(a) = 1 \), which is impossible for \( g(a)(a) \in \{0, 1\} \). So \( d \) is not a value of \( g \).
 
 (b) Let \( f \colon X \to \powerset{X} \) be a function, and put \( g(x) \coloneqq \ind_{f(x)} \in \{0, 1\}^X \). Let \( D \coloneqq \{ x \in X : d(x) = 1 \} \). Since \( d \) takes only the values \( 0 \) and \( 1 \), \( \ind_D = d \). If \( D = f(a) \) for some \( a \in X \), then \( g(a) = \ind_{f(a)} = \ind_D = d \), against (a). So \( D \) is not a value of \( f \), and \( f \) is not surjective. Unwinding, \( d(x) = 1 \) exactly when \( \ind_{f(x)}(x) = 0 \), so \( D = \{ x \in X : x \notin f(x) \} \), the set of the proof in Section 3.3.
+
+**Marking scheme.** (10 points)
+- 1: checks that \( d \in \{0, 1\}^X \).
+- 4: assumes \( d = g(a) \) and reaches the contradiction \( 2 g(a)(a) = 1 \).
+- 4: shows \( \ind_D = d \) and transfers the argument to \( f \) via \( g(x) = \ind_{f(x)} \).
+- 1: concludes that \( f \) is not surjective.
 
 Section 3.6's @cor-cantor-two-power went the other way, from Cantor's theorem to 0–1 functions; here the argument about 0–1 functions comes first, and the statement about subsets follows from it.
 :::
@@ -453,9 +465,10 @@ exm-symmetric-difference-associative (claim): u^2 = u for u in {0, 1} | arithmet
 exm-symmetric-difference-associative (claim): (quick check after it) values (1, 0, 1, 0) of ind_{A triangle B} on {1, 2, 3, 4} | verify/ch05/prp-indicator-arithmetic.py
 exr-restriction-extension-and-gluing-a1 (solution): x^2 maps [-1, 2] onto [0, 4] | school fact (square roots); verify/ch05/exr-restriction-extension-and-gluing-a1.py
 exr-restriction-extension-and-gluing-a1 (solution): {1, 2, 3} has three and {a, b} two elements; contraposition | def-finite (Section 2.5); fd1 prp-contrapositive, used silently
+exr-restriction-extension-and-gluing-a1 (solution): A subseteq X and A != X give x_0 in X \ A | def-set-equality, def-subset; fd1 prp-quantifier-negation, used silently
 exr-restriction-extension-and-gluing-b1 (solution): images of the three pieces; x^2 = 1/4 iff x = +-1/2 | school fact (square roots, monotonicity of x^2 on [0, 1]); verify/ch05/exr-restriction-extension-and-gluing-b1.py
 exr-restriction-extension-and-gluing-b3 (solution): polynomial identities with u^2 = u | R arithmetic; verify/ch05/exr-restriction-extension-and-gluing-b3.py
 exr-restriction-extension-and-gluing-b4 (solution): x^2 = x'^2 with x, x' of the same sign gives x = x'; Q closed under multiplication and halving | R arithmetic and order, school fact; verify/ch05/exr-restriction-extension-and-gluing-b4.py
 exr-restriction-extension-and-gluing-c3 (solution): 2t = 1 has no solution t in {0, 1} | arithmetic
-exr-countable-sets-c2 (claim): default-value repair | prose pointer only; nothing here depends on it
+exm-piecewise-as-gluing (claim): (Default values paragraph after it) the Repair of 3.1 is a default-value definition | exr-countable-sets-c2 | prose pointer only; nothing here depends on it
 -->
