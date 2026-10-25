@@ -1216,7 +1216,34 @@ items:
   file: 01-finite-sets.md
   line: 666
   hash: a150238ff0bc
-  verdicts: []
+  verdicts:
+  - stage: S5a
+    verdict: minor
+    by: refereeA
+    hash: a150238ff0bc
+    date: '2026-10-26'
+    model: claude-opus-5-5
+    evidence: 01-finite-sets.md:691 The base case cites prp-empty-function (a) for the injectivity of
+      the empty function. That result only says the empty function exists and is unique. Injectivity holds
+      vacuously by def-injective.
+  - stage: S5b
+    verdict: minor
+    by: refereeB
+    hash: a150238ff0bc
+    date: '2026-10-26'
+    model: claude-opus-5-5
+    evidence: 01-finite-sets.md:685 Psi is glued by @thm-gluing from s_v o psi and the constant v. These
+      pieces have different codomains, but thm-gluing needs one common codomain Y.
+  - stage: S6
+    verdict: minor
+    by: verifier
+    hash: a150238ff0bc
+    date: '2026-10-26'
+    model: claude-opus-5-5
+    evidence: 01-finite-sets.md:687 Psi(v,psi) is glued from s_v∘psi, whose codomain is {1..n}\{v}, and
+      the constant v at k+1. thm-gluing needs all pieces to share the codomain Y={1..n}, so the codomain
+      of s_v∘psi must be enlarged first. The solution spells out the matching codomain shrink for Phi
+      but never mentions this enlargement.
 - key: exr-restriction-extension-and-gluing-c1
   kind: exr
   file: 01-finite-sets.md
@@ -1264,6 +1291,37 @@ items:
     model: claude-opus-5-5
     evidence: Marking scheme added (3/2/3/2) matching gamma by gluing, rho∘gamma, gamma∘rho by gluing
       uniqueness, and the bijection. 'used later' dropped from the title.
+  - stage: S5a
+    verdict: correct
+    by: refereeA
+    hash: 2d8847b7b265
+    date: '2026-10-26'
+    model: claude-opus-5-5
+    evidence: '01-finite-sets.md:704-724. Per def-restriction-extension, E is the set of f: X -> Y with
+      f|_A = g, so rho(f) lies in Y^{X\A}. thm-gluing applies to A and X\A: they cover X because A is
+      a subset of X, and overlap agreement holds vacuously. Its existence gives gamma(k) in E with rho(gamma(k))
+      = k. Its uniqueness gives gamma(rho(f)) = f, because both restrict to g and to f|_{X\A}. thm-bijection-iff-i'
+  - stage: S5b
+    verdict: correct
+    by: refereeB
+    hash: 2d8847b7b265
+    date: '2026-10-26'
+    model: claude-opus-5-5
+    evidence: 01-finite-sets.md:704-728. Gluing on the disjoint cover A, X\A gives gamma. Both round trips
+      hold, the second by gluing uniqueness, and thm-bijection-iff-inverse closes the proof. The label
+      number differs from the title C4, as ch02 blueprint L24 allows. The 3/2/3/2 marking scheme matches
+      the solution.
+  - stage: S6
+    verdict: minor
+    by: verifier
+    hash: 2d8847b7b265
+    date: '2026-10-26'
+    model: claude-opus-5-5
+    evidence: 01-finite-sets.md:721 The marking scheme follows only the two-sided-inverse route. A correct
+      proof that shows rho injective directly (two extensions agree on A because both equal g, and agree
+      off A by hypothesis, so they are equal by @prp-function-equality) and surjective via gluing never
+      proves 'gamma(rho(f)) = f by uniqueness in @thm-gluing'. Read literally, the scheme would cost it
+      3 of 10 poin
 - key: exr-finite-sets-r1
   kind: exr
   file: 01-finite-sets.md
@@ -1279,6 +1337,15 @@ items:
     evidence: '05-finite-sets.md:668-682: (a) replaced by g(a,b)=4a+6b (fresh data, F049): values 2(2a+3b)
       even (prp-integers-closed (a), def-parity), 1 odd, thm-even-or-odd, so not surjective; g(3,-2)=0=g(0,0),
       not injective. (b) unchanged. Sidecar exr-finite-sets-r1.py updated, passes.'
+  - stage: S8
+    verdict: minor
+    by: seam
+    hash: 30c0aeac08f1
+    date: '2026-10-26'
+    model: claude-opus-5-5
+    evidence: 01-finite-sets.md:726 The re-cut moved old 2.5 into 4.1 word for word, and its R. Review
+      group (exr-finite-sets-r1 to r3) came along. 4.1 is not the last section of Chapter 4, so this breaks
+      STYLE §11.5 ('last section only'). It leaves Chapter 4 with two R groups and Chapter 3 with none.
 - key: exr-finite-sets-r2
   kind: exr
   file: 01-finite-sets.md
@@ -2866,6 +2933,35 @@ items:
     evidence: 03-diagonal-arguments.md:371 (a) uses L(p,k) on Z>0 x N composed with a surjection from
       N (exm-choice-free-unions); ledger 03:477 reworded to match; citations unchanged; verify/ch03/exr-diagonal-arguments-b4.py
       runs clean
+  - stage: S5a
+    verdict: minor
+    by: refereeA
+    hash: e5dddffc34d6
+    date: '2026-10-26'
+    model: claude-opus-5-5
+    evidence: 03-diagonal-arguments.md:369 The counterexample in (d) needs X to satisfy the statement's
+      hypothesis 'X is infinite', but the solution takes X = ℕ and never says or cites that ℕ is infinite.
+  - stage: S5b
+    verdict: minor
+    by: refereeB
+    hash: e5dddffc34d6
+    date: '2026-10-26'
+    model: claude-opus-5-5
+    evidence: 03-diagonal-arguments.md:356 Solution (b) defines a(2n) := b(n), a(2n+1) := 0 and argues
+      that 'of two consecutive places one is odd'. It does not cite the fact that every natural number
+      is 2m or 2m+1 for exactly one m in N. Without that fact, a is not shown to be a well-defined function
+      on N.
+  - stage: S6
+    verdict: correct
+    by: verifier
+    hash: e5dddffc34d6
+    date: '2026-10-26'
+    model: claude-opus-5-5
+    evidence: 03-diagonal-arguments.md:339-363. My verdicts F,T,T,F,T match the book's. (a) Every periodic
+      sequence is Lambda(p,F), and each Lambda(p,F) is periodic because n and n+p have the same remainder.
+      The domain Z_{>0} x (finite subsets) is countable (exr-countable-sets-c1, prp-countable-subset,
+      cor-product-countable), so the image is countable (prp-countable-image). The argument 'q>=0' is
+      right, since q
 - key: exr-diagonal-arguments-c1
   kind: exr
   file: 03-diagonal-arguments.md
@@ -3005,13 +3101,56 @@ items:
   file: 04-comparing-cardinalities.md
   line: 56
   hash: 48416b4b09fd
-  verdicts: []
+  verdicts:
+  - stage: S5a
+    verdict: correct
+    by: refereeA
+    hash: 48416b4b09fd
+    date: '2026-10-26'
+    model: claude-opus-5-5
+    evidence: 04-comparing-cardinalities.md:56-60. The hypothesis A≠∅ is needed (the counterexample at
+      line 66 works, using prp-empty-function (b) at ch02/01:221) and it is used in the proof. The prose
+      pointer to Exercise B4 (c) of Section 4.3 is accurate (03-diagonal-arguments.md:358 makes the same
+      left-inverse/right-inverse move). The forward pointer to Chapter 6 for the converse is a remark
+      that nothing depe
+  - stage: S5b
+    verdict: correct
+    by: refereeB
+    hash: 48416b4b09fd
+    date: '2026-10-26'
+    model: claude-opus-5-5
+    evidence: '04:56-60. The statement matches what the proof gives. The surrounding meta-claims hold:
+      ''Exercise B4 (c) of Section 4.3 turned an injection around into a surjection'' matches 03-diagonal-arguments.md:358.
+      ''as the least preimage did for B = N in Section 4.2'' matches 02-countable-sets.md:106,125. ''nothing
+      in this chapter decides the converse'': 05-cardinal-arithmetic.md has no such result. The forward'
 - key: proof:prp-injection-gives-surjection
   kind: proof
   file: 04-comparing-cardinalities.md
   line: 62
   hash: 85ee05fc2146
-  verdicts: []
+  verdicts:
+  - stage: S5a
+    verdict: correct
+    by: refereeA
+    hash: 85ee05fc2146
+    date: '2026-10-26'
+    model: claude-opus-5-5
+    evidence: 'Line 63. thm-left-inverse-iff-injective (b) (ch02/04-inverses.md:94-104) needs X≠∅ and
+      f injective, and both hypotheses are available here. g∘f=id_A is exactly def-left-right-inverse
+      (b) with the roles swapped, so f is a right inverse of g. prp-right-inverse-surjective (ch02/04:209)
+      has no side hypotheses. All three are earlier material (fd2 Ch2). No choice is used: x0 is fixed
+      by a single ∃E insi'
+  - stage: S5b
+    verdict: correct
+    by: refereeB
+    hash: 85ee05fc2146
+    date: '2026-10-26'
+    model: claude-opus-5-5
+    evidence: '04:63. thm-left-inverse-iff-injective (b) (ch02/04:94) has the hypotheses X != empty and
+      f injective, which are supplied here. The step ''g o f = id_A says f is a right inverse of g'' is
+      def-left-right-inverse (b) applied with g: B->A and f: A->B. prp-right-inverse-surjective (ch02/04:209)
+      then gives g onto. Every fact used is cited. ''with no choice made'' (04:54) holds: the proof of
+      (b) uses one fix'
 - key: check:04-comparing-cardinalities:1
   kind: check
   file: 04-comparing-cardinalities.md
@@ -3051,6 +3190,22 @@ items:
     date: '2026-10-25'
     model: claude-opus-5-5
     evidence: The injectivity clause now says that x/2 ≤ 1/2 < 1, the image of 5. This is correct.
+  - stage: S5a
+    verdict: minor
+    by: refereeA
+    hash: 69e125c73130
+    date: '2026-10-26'
+    model: claude-opus-5-5
+    evidence: 04-comparing-cardinalities.md:73 The solution uses the symbol ι, but the check never introduces
+      it.
+  - stage: S5b
+    verdict: minor
+    by: refereeB
+    hash: 69e125c73130
+    date: '2026-10-26'
+    model: claude-opus-5-5
+    evidence: 04-comparing-cardinalities.md:73 The solution uses the symbol iota without introducing it.
+      The check statement says only 'The inclusion N -> Z'.
   old_key: check:04-comparing-cardinalities:2
 - key: thm-schroder-bernstein
   kind: thm
@@ -3193,6 +3348,25 @@ items:
     evidence: '04:264: (n,1) is injective by def-ordered-pair, and 2^m3^n is from the proof of thm-product-countable
       (01:230). def-countably-infinite (01:44) itself allows a bijection N → A. ''Section 3.1 showed only
       that N×N is countable'' is true: thm-product-countable states only countability.'
+  - stage: S5a
+    verdict: correct
+    by: refereeA
+    hash: 42c432524315
+    date: '2026-10-26'
+    model: claude-opus-5-5
+    evidence: Lines 182-188. The inclusion is injective. The map 5↦1, x↦x/2 is well defined because 5∉[0,1],
+      and it lands in [0,1]. It is injective within [0,1], and across the two pieces because x/2≤1/2<1.
+      Schröder–Bernstein applies with both hypotheses met.
+  - stage: S5b
+    verdict: correct
+    by: refereeB
+    hash: 42c432524315
+    date: '2026-10-26'
+    model: claude-opus-5-5
+    evidence: '04:182-188. x -> x/2 on [0,1] lands in [0,1/2], and 5 -> 1. The two clauses do not overlap
+      because 5 is not in [0,1]. The map is injective because x/2 <= 1/2 < 1. The solution follows the
+      method box (04:175): inclusion one way, squeeze the other way, each checked separately, then cite
+      the theorem. The order facts are in ledger line 480.'
   old_key: check:04-comparing-cardinalities:3
 - key: exm-closed-open-interval
   kind: exm
@@ -3309,7 +3483,28 @@ items:
   file: 04-comparing-cardinalities.md
   line: 259
   hash: 63f7568087b4
-  verdicts: []
+  verdicts:
+  - stage: S5a
+    verdict: correct
+    by: refereeA
+    hash: 63f7568087b4
+    date: '2026-10-26'
+    model: claude-opus-5-5
+    evidence: Lines 259-265. n↦(n,1) is injective by the characteristic property in def-ordered-pair (ch01/04:16-19).
+      (m,n)↦2^m3^n is injective by thm-product-countable (02-countable-sets.md:230-259). The conclusion
+      card ℕ = card ℕ×ℕ is exactly def-countably-infinite (02:44). The remark that Section 4.2 stated
+      only countability matches the statement of thm-product-countable.
+  - stage: S5b
+    verdict: correct
+    by: refereeB
+    hash: 63f7568087b4
+    date: '2026-10-26'
+    model: claude-opus-5-5
+    evidence: '04:259-265. n -> (n,1) is injective by the characteristic property, which is stated inside
+      def-ordered-pair (ch01/04:13-18). 2^m 3^n is the injection proved in thm-product-countable (02:227-258).
+      The conclusion matches def-countably-infinite (02:41). The meta-claim ''Section 4.2 showed only
+      that N x N is countable'' holds: thm-product-countable states only countability, and the diagonal
+      listing at 0'
 - key: exr-comparing-cardinalities-a1
   kind: exr
   file: 04-comparing-cardinalities.md
@@ -3683,13 +3878,47 @@ items:
   file: 05-cardinal-arithmetic.md
   line: 57
   hash: e5b9c2844a40
-  verdicts: []
+  verdicts:
+  - stage: S5a
+    verdict: correct
+    by: refereeA
+    hash: e5b9c2844a40
+    date: '2026-10-26'
+    model: claude-opus-5-5
+    evidence: '05:57-66. Both hypotheses are needed: if s is not injective (X={0}, s constant, C={1})
+      or C is uncountable, the claim fails. C∩X=∅ is used for disjointness at 89 and costs no generality.'
+  - stage: S5b
+    verdict: correct
+    by: refereeB
+    hash: e5b9c2844a40
+    date: '2026-10-26'
+    model: claude-opus-5-5
+    evidence: 05:57-66. Matches blueprint ch04-ch05-revisions.md §4.4 item 3. Both parts are true, and
+      every hypothesis is used ((b) uses C∩X=∅ at 89 to make the pieces disjoint).
 - key: proof:prp-copy-of-naturals-absorbs
   kind: proof
   file: 05-cardinal-arithmetic.md
   line: 72
   hash: abce88a830a6
-  verdicts: []
+  verdicts:
+  - stage: S5a
+    verdict: correct
+    by: refereeA
+    hash: abce88a830a6
+    date: '2026-10-26'
+    model: claude-opus-5-5
+    evidence: 05:73-89. (a) h is well defined because s is injective; the onto step uses lem-naturals-arithmetic
+      (c). (b) S∪C is countable (prp-countable-image, prp-union-two-countable) and infinite (exm-hilbert-hotel,
+      prp-subset-finite), so it is countably infinite by thm-countable-characterizations (iii), which
+      gives psi. The pieces X\S and S∪C are disjoint, which meets thm-gluing's overlap condition. Injecti
+  - stage: S5b
+    verdict: minor
+    by: refereeB
+    hash: abce88a830a6
+    date: '2026-10-26'
+    model: claude-opus-5-5
+    evidence: '05-cardinal-arithmetic.md:81 Proof (a) uses two facts about ℕ with no @ref and no ledger
+      line: n+1≠0 (line 81) and the cancellation m+1=n+1 ⇒ m=n (line 83).'
 - key: check:05-cardinal-arithmetic:2
   kind: check
   file: 05-cardinal-arithmetic.md
@@ -3710,6 +3939,22 @@ items:
     date: '2026-10-26'
     model: claude-opus-5-5
     evidence: 06:138 matches the proof at 124 and 128
+  - stage: S5a
+    verdict: correct
+    by: refereeA
+    hash: 1a97f3736324
+    date: '2026-10-26'
+    model: claude-opus-5-5
+    evidence: 05:94-100. With x_n = n, h(n) = n+1 and h is the identity elsewhere, so h(3)=4, h(-3)=-3,
+      h(1/2)=1/2.
+  - stage: S5b
+    verdict: correct
+    by: refereeB
+    hash: 1a97f3736324
+    date: '2026-10-26'
+    model: claude-opus-5-5
+    evidence: 05:94-100. h(x)=x+1 on ℕ and the identity elsewhere. h(3)=4, h(-3)=-3, h(1/2)=1/2. Sidecar
+      verify/ch04/prp-copy-of-naturals-absorbs.py asserts these values.
   old_key: check:06-cardinal-arithmetic:2
 - key: prp-card-operations-well-defined
   kind: prp
@@ -3817,6 +4062,21 @@ items:
     date: '2026-10-26'
     model: claude-opus-5-5
     evidence: '06:206: pi(3,2)=tau_5+2=17; 47=tau_9+2 gives (7,2); recomputed'
+  - stage: S5a
+    verdict: correct
+    by: refereeA
+    hash: bc653adf32fd
+    date: '2026-10-26'
+    model: claude-opus-5-5
+    evidence: 05:180-186 matches the proof at 171 (v injective makes F(f) a function) and at 175 (u injective
+      makes F injective).
+  - stage: S5b
+    verdict: correct
+    by: refereeB
+    hash: bc653adf32fd
+    date: '2026-10-26'
+    model: claude-opus-5-5
+    evidence: 05:180-186. Matches the proof at 171 (v injective ⇒ b unique) and 175 (u injective ⇒ f(b)=g(b)).
   old_key: check:06-cardinal-arithmetic:3
 - key: exm-pairing-bijection
   kind: exm
@@ -3878,6 +4138,23 @@ items:
     model: claude-opus-5-5
     evidence: '06:190-194: the forward mention of the interleaving (no reading at 1/11) matches 391; thm-left-inverse-iff-injective
       is correct for one round trip'
+  - stage: S5a
+    verdict: correct
+    by: refereeA
+    hash: e274a79d4caf
+    date: '2026-10-26'
+    model: claude-opus-5-5
+    evidence: 05:234-242. thm-left-inverse-iff-injective (a) supports the one-round-trip warning. The
+      0.0999.../0.1000... example matches (D3) of 4.3.
+  - stage: S5b
+    verdict: minor
+    by: refereeB
+    hash: e274a79d4caf
+    date: '2026-10-26'
+    model: claude-opus-5-5
+    evidence: 05-cardinal-arithmetic.md:241 The decimal example illustrates the wrong failure. It is offered
+      as a decoder with 'two readings of one code', but its wording makes the digit strings the codes,
+      and then it is the encoder that has two values.
 - key: check:05-cardinal-arithmetic:4
   kind: check
   file: 05-cardinal-arithmetic.md
@@ -3898,6 +4175,22 @@ items:
     date: '2026-10-26'
     model: claude-opus-5-5
     evidence: '06:285: 8 = 2*4; Phi(h) correct'
+  - stage: S5a
+    verdict: correct
+    by: refereeA
+    hash: d489447c094d
+    date: '2026-10-26'
+    model: claude-opus-5-5
+    evidence: 05:248-254. tau_5=15 gives pi(3,2)=17. tau_9=45 <= 47 < 55=tau_10 gives delta(47)=(7,2).
+      verify/ch04/exm-pairing-bijection.py prints ok.
+  - stage: S5b
+    verdict: correct
+    by: refereeB
+    hash: d489447c094d
+    date: '2026-10-26'
+    model: claude-opus-5-5
+    evidence: 05:253. τ5=15, so π(3,2)=17. τ9=45≤47<55=τ10, so 47=τ9+2 and δ(47)=(7,2). Ledger 731 names
+      the sidecar.
   old_key: check:06-cardinal-arithmetic:4
 - key: thm-cardinal-laws
   kind: thm
@@ -4009,6 +4302,21 @@ items:
     date: '2026-10-26'
     model: claude-opus-5-5
     evidence: '06:367: true. S-B is choice-free (04:166); exm-reals-open-interval uses formulas and S-B'
+  - stage: S5a
+    verdict: correct
+    by: refereeA
+    hash: 6e529d3f833d
+    date: '2026-10-26'
+    model: claude-opus-5-5
+    evidence: 05:327-333. Both sides have 2^3 = 2·4 = 8 elements. Phi(h) = (h∘iota_Y, h∘iota_Z) gives
+      f(a)=1, g(b)=0, g(c)=1.
+  - stage: S5b
+    verdict: correct
+    by: refereeB
+    hash: 6e529d3f833d
+    date: '2026-10-26'
+    model: claude-opus-5-5
+    evidence: 05:332. 2^3=8 = 2·4. Φ(h)=(f,g) with f(a)=1, g(b)=0, g(c)=1, which matches h.
   old_key: check:06-cardinal-arithmetic:5
 - key: cor-cantor-two-power
   kind: cor
@@ -4139,12 +4447,48 @@ items:
     date: '2026-10-26'
     evidence: 06-cardinal-arithmetic.md:347 code (j,n)->10n+j; ledger line 756 renamed from (t,n)->10n+t
       to match; decoder by division by 10
+  - stage: S5a
+    verdict: correct
+    by: refereeA
+    hash: 56411c4aed23
+    date: '2026-10-26'
+    model: claude-opus-5-5
+    evidence: '05:377-387, checked against def-decimal-expansion and (D1)-(D3) at 03:196-226. Step 1:
+      (D1) gives existence, (D3) uniqueness, (D2) injectivity. Step 2: prp-card-operations-monotone (c)
+      applies with A''={0,1}^T non-empty; thm-cardinal-laws (f) with X={0,1}, Y=T, Z=N; 10n+j is decoded
+      by thm-division-algorithm. Step 3: t_1=c_1/10<=1/10, so y_b<=2/10<1, and no digit 9 so (D3) gives
+      injectivity. Conclu'
+  - stage: S5b
+    verdict: minor
+    by: refereeB
+    hash: 56411c4aed23
+    date: '2026-10-26'
+    model: claude-opus-5-5
+    evidence: 05-cardinal-arithmetic.md:382 The proof cites the method of exm-method-encode for the code
+      (j, n) ↦ 10n + j but omits its step (4), checking both round trips. The section's own 'usual failure'
+      warns against exactly this omission.
 - key: check:05-cardinal-arithmetic:6
   kind: check
   file: 05-cardinal-arithmetic.md
   line: 397
   hash: ac222d638ba9
-  verdicts: []
+  verdicts:
+  - stage: S5a
+    verdict: correct
+    by: refereeA
+    hash: ac222d638ba9
+    date: '2026-10-26'
+    model: claude-opus-5-5
+    evidence: '05:397-403. Every map is a rule: the expansion is fixed by (D1) and (D3), and SB is choice-free
+      in 4.4.'
+  - stage: S5b
+    verdict: correct
+    by: refereeB
+    hash: ac222d638ba9
+    date: '2026-10-26'
+    model: claude-opus-5-5
+    evidence: 05:402. 04:166 states that Schröder–Bernstein picks nothing. (D1)/(D3) give the expansion
+      by a rule, and every other map is explicit.
 - key: thm-plane-equinumerous-line
   kind: thm
   file: 05-cardinal-arithmetic.md
@@ -4377,7 +4721,31 @@ items:
   file: 05-cardinal-arithmetic.md
   line: 548
   hash: 7ea632ddba4d
-  verdicts: []
+  verdicts:
+  - stage: S5a
+    verdict: minor
+    by: refereeA
+    hash: 7ea632ddba4d
+    date: '2026-10-26'
+    model: claude-opus-5-5
+    evidence: 05-cardinal-arithmetic.md:719 The dependency ledger has no lines for the new B5, C2 and
+      C3 solutions, though they use facts with no @ref (STYLE §9).
+  - stage: S5b
+    verdict: minor
+    by: refereeB
+    hash: 7ea632ddba4d
+    date: '2026-10-26'
+    model: claude-opus-5-5
+    evidence: 05-cardinal-arithmetic.md:548 With B5, group B has five exercises, which breaks STYLE §6's
+      count of 2–4.
+  - stage: S6
+    verdict: minor
+    by: verifier
+    hash: 7ea632ddba4d
+    date: '2026-10-26'
+    model: claude-opus-5-5
+    evidence: 05-cardinal-arithmetic.md:565 Part (b) of the solution never states its conclusion. It ends
+      at 'Then X ∪ C = R' without applying the proposition or the symmetry step that part (a) spells out.
 - key: exr-cardinal-arithmetic-c1
   kind: exr
   file: 05-cardinal-arithmetic.md
@@ -4455,6 +4823,31 @@ items:
       is (N14) at fd1 06-checking-proofs:93. The all-1 sequence is a witness to it. The second line''s
       unproved uniqueness of binary digits is the only other weak spot, and the solution flags it and
       gives it 1 point. The rescue through R4 by changing the codomain is valid.'
+  - stage: S5a
+    verdict: minor
+    by: refereeA
+    hash: 90211621d42d
+    date: '2026-10-26'
+    model: claude-opus-5-5
+    evidence: 05-cardinal-arithmetic.md:627 The solution says the countability of the eventually-zero
+      sequences needs no binary digits, but the result it cites is proved with binary digits.
+  - stage: S5b
+    verdict: correct
+    by: refereeB
+    hash: 90211621d42d
+    date: '2026-10-26'
+    model: claude-opus-5-5
+    evidence: 05:612-636. (N14) is 'object named before shown to exist' (fd1 06-checking-proofs.md:93).
+      def-sum-product is in Section 3.3. Step 3 of exr-countable-sets-c1 is binary uniqueness (02:520).
+      The marking scheme's 'Exercise C1 of Section 4.2' agrees. Points sum to 10.
+  - stage: S6
+    verdict: minor
+    by: verifier
+    hash: 90211621d42d
+    date: '2026-10-26'
+    model: claude-opus-5-5
+    evidence: 05-cardinal-arithmetic.md:631 The 3-point line of the marking scheme makes citing the catalogue
+      label (N14) part of the requirement. That rewards wording, not finding the error.
 - key: exr-restriction-extension-and-gluing-c3
   kind: exr
   file: 05-cardinal-arithmetic.md
@@ -4503,6 +4896,32 @@ items:
     model: claude-opus-5-5
     evidence: Marking scheme added. d=g(a) gives g(a)(a)=1-g(a)(a), so 2g(a)(a)=1, which is impossible
       in {0,1}. Rechecked.
+  - stage: S5a
+    verdict: correct
+    by: refereeA
+    hash: c2991b75b0cd
+    date: '2026-10-26'
+    model: claude-opus-5-5
+    evidence: '05:649-661. (a): d=g(a) gives 2g(a)(a)=1, impossible. (b): ind_D=d; D=f(a) would give g(a)=d.
+      thm-cantor (4.3) comes earlier. The label slug is kept on purpose (layout-six-chapters.md:15).'
+  - stage: S5b
+    verdict: correct
+    by: refereeB
+    hash: c2991b75b0cd
+    date: '2026-10-26'
+    model: claude-opus-5-5
+    evidence: 05:638-661. 2g(a)(a)=1 has no solution in {0,1}; ind_D=d; D is Cantor's set. Keeping the
+      label is allowed by layout-six-chapters.md:15. Moved per layout :213. The closing meta-claim about
+      cor-cantor-two-power is true. Points sum to 10.
+  - stage: S6
+    verdict: minor
+    by: verifier
+    hash: c2991b75b0cd
+    date: '2026-10-26'
+    model: claude-opus-5-5
+    evidence: 05-cardinal-arithmetic.md:638 This exercise in Section 4.5 carries a label with Section
+      2.3's slug. It looks like a leftover from the re-cut and breaks the STYLE rule that exercise labels
+      use the section's own slug.
 - key: exr-infinite-sets-r1
   kind: exr
   file: 05-cardinal-arithmetic.md
