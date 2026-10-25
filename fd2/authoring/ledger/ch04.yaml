@@ -60,6 +60,25 @@ items:
     evidence: 01-relations.md:96 The transitivity step says k + l - y is in Z with no reason given and
       no ledger line. The symmetry step two lines earlier cites @prp-integers-closed (a) for the same
       kind of fact.
+  - stage: S7r
+    verdict: correct
+    by: rereferee
+    hash: ed323a9fe055
+    date: '2026-10-25'
+    model: claude-opus-5-5
+    evidence: 'Reflexive, symmetric and transitive are all proved, and each integer-closure step cites
+      prp-integers-closed (a). Recomputed: 3x+4y=7k and 3y+4z=7l add to 3x+7y+4z=7(k+l), so 3x+4z=7(k+l-y).
+      The witness checks: 0 R 7 since 28=7*4, and 7 R 0 since 21=7*3. The verdict table matches the proofs,
+      and its column order matches exm-relation-table.'
+  - stage: S7r
+    verdict: correct
+    by: rereferee
+    hash: ed323a9fe055
+    date: '2026-10-25'
+    model: claude-opus-5-5
+    evidence: '01:96 now cites prp-integers-closed (a) for k + l − y ∈ ℤ (this was the S5b issue). Checked
+      the verdict table at 01:100-102: (0,7) witnesses non-antisymmetry, since 3·0+4·7=28 and 3·7+4·0=21
+      are both multiples of 7 and 0≠7. Reflexivity: 3x+4x=7x.'
 - key: exm-method-relation-properties
   kind: exm
   file: 01-relations.md
@@ -213,6 +232,23 @@ items:
       287 adds ''reflexivity of <= (x = x)'', so the earlier finding is resolved. Other checks: ''Section
       6.1, after @prp-empty-set-unique'' matches 06/01-sets-and-subsets.md:269, which proves ∅ ⊆ A for
       every A. The step 2∤1 via'
+  - stage: S7r
+    verdict: correct
+    by: rereferee
+    hash: 817ae8899958
+    date: '2026-10-25'
+    model: claude-opus-5-5
+    evidence: The diff changes only this item's ledger lines. Subset transitivity now cites prp-subset-transitive,
+      which matches line 181. The new Quick-check ledger line correctly records def-prime and prp-integers-closed
+      (c).
+  - stage: S7r
+    verdict: correct
+    by: rereferee
+    hash: 817ae8899958
+    date: '2026-10-25'
+    model: claude-opus-5-5
+    evidence: 'Ledger only: lines 378 and 381 now name prp-subset-transitive (cited) and def-prime with
+      the Section 1.1 example. Both match the text.'
 - key: check:01-relations:2
   kind: check
   file: 01-relations.md
@@ -245,6 +281,25 @@ items:
     evidence: 01-relations.md:193 A fact is credited to the wrong place. 'A prime dividing 2 is 2' is
       credited to an example in Section 2.2's divisibility subsection, and that example is about something
       else.
+  - stage: S7r
+    verdict: correct
+    by: rereferee
+    hash: be2f613aef22
+    date: '2026-10-25'
+    model: claude-opus-5-5
+    evidence: Reflexive by thm-prime-factor. Symmetric because the condition is order-free. Not antisymmetric,
+      witness 2,4. Not transitive, witness 2 C 6 C 3. That 2 and 3 share no prime factor now rests on
+      2 being prime (def-prime and the example at fd2 1.1:64) and on 3=2k giving 1<k<2 (prp-integers-closed
+      (c)). Both are correct and ledgered.
+  - stage: S7r
+    verdict: correct
+    by: rereferee
+    hash: be2f613aef22
+    date: '2026-10-25'
+    model: claude-opus-5-5
+    evidence: '01:195: ''2 is prime (Section 1.1, after @def-prime)''. A prime is ≥2, so a prime dividing
+      2 is a positive divisor of 2 other than 1, hence 2. 2∤3 by 1<k<2 (prp-integers-closed (c)). Ledger
+      line 381 matches.'
 - key: exr-relations-a1
   kind: exr
   file: 01-relations.md
@@ -316,6 +371,22 @@ items:
       False, witnessed by equality or the empty relation. (c) The relation is reflexive and symmetric,
       not antisymmetric (0,1) and not transitive (0,1,2); a script check found it non-transitive on -3..3.
       (d) A script bru
+  - stage: S7r
+    verdict: correct
+    by: rereferee
+    hash: 38d9df6f2d66
+    date: '2026-10-25'
+    model: claude-opus-5-5
+    evidence: In (e), 'not necessarily distinct' matches the witness form of def-relation-properties and
+      B4(e). Parts (a)-(d) are unchanged; (d) has 4 = 2*2 relations.
+  - stage: S7r
+    verdict: correct
+    by: rereferee
+    hash: 38d9df6f2d66
+    date: '2026-10-25'
+    model: claude-opus-5-5
+    evidence: '01:233 (e): the non-transitivity witness is now ''x, y, z (not necessarily distinct)''.
+      This is right, because a witness such as x R y, y R x, not x R x needs repeated elements.'
 - key: exr-relations-b1
   kind: exr
   file: 01-relations.md
@@ -791,6 +862,14 @@ items:
     evidence: 'Idea 05:212 says ''(b) is @thm-classes-partition (b) in disguise'', but the proof of (b)
       (05:222) never uses thm-classes-partition (b): it argues from def-equivalence-class, (Eq2) and (Eq3).
       [finding refuted by skeptics]'
+  - stage: S7r
+    verdict: correct
+    by: rereferee
+    hash: 28f4accab79b
+    date: '2026-10-25'
+    model: claude-opus-5-5
+    evidence: 'Ledger lines added: the two-block partitions of {1,2,3,4} number 4 (1+3) + 3 (2+2) = 7,
+      with a sidecar. Eq(X) and Part(X) are formed by specification.'
 - key: proof:thm-partition-equivalence
   kind: proof
   file: 02-equivalence-relations.md
@@ -846,6 +925,14 @@ items:
     model: claude-opus-5-5
     evidence: 02-equivalence-relations.md:241 The dependency ledger has no line for the second Quick check,
       and none for the 'A correspondence, proved both ways' paragraph.
+  - stage: S7r
+    verdict: correct
+    by: rereferee
+    hash: 418920ff98a8
+    date: '2026-10-25'
+    model: claude-opus-5-5
+    evidence: The text is unchanged and the count 4+3=7 is right. The ledger now has the correspondence
+      row and the quick-check row with the sidecar, which asserts 7 and passes.
 - key: def-congruence
   kind: def
   file: 02-equivalence-relations.md
@@ -1050,6 +1137,14 @@ items:
       ch06 04-functions.md:79-84, which is in Section 6.4, so the misquote is fixed. Proof checked: (a+b)-(a''+b'')
       = (k+l)n, and ab - a''b'' = a(b-b'') + (a-a'')b'' = (al + kb'')n. Integer closure comes from prp-integers-closed
       (a). Well-definedness goes through thm-classes-partition (b) in both directions. All correct.'
+  - stage: S7r
+    verdict: correct
+    by: rereferee
+    hash: 548f6dae0d0f
+    date: '2026-10-25'
+    model: claude-opus-5-5
+    evidence: The ledger line for the Looking-ahead pointer to F3.5 was added. Its payers exist in fd3
+      04-quotient-rings.md.
 - key: proof:prp-congruence-arithmetic
   kind: proof
   file: 02-equivalence-relations.md
@@ -1096,6 +1191,14 @@ items:
       matching def-function (ch01/05:31-32). The cited exm-method-injectivity exists (ch01/05:364). It
       has the three bold lead-ins. Roughly 125 prose words once math delimiters are removed, so within
       the 130-word limit.'
+  - stage: S7r
+    verdict: correct
+    by: rereferee
+    hash: 509042883bb6
+    date: '2026-10-25'
+    model: claude-opus-5-5
+    evidence: 'Ledger line added for the quick check: 0≠36 and the factorisation, with the closure citation.
+      It matches 02:426.'
 - key: check:02-equivalence-relations:3
   kind: check
   file: 02-equivalence-relations.md
@@ -1118,6 +1221,22 @@ items:
     model: claude-opus-5-5
     evidence: 02-equivalence-relations.md:426 The solution uses 2k(a + a') ∈ Z and the factorisation a^2
       - a'^2 = (a - a')(a + a') with no @ref and no ledger line.
+  - stage: S7r
+    verdict: correct
+    by: rereferee
+    hash: 55c013b881a2
+    date: '2026-10-25'
+    model: claude-opus-5-5
+    evidence: '02:426: 0 != 36 refutes (a). In (b), a-a''=6k gives a^2-a''^2=(a-a'')(a+a'')=3*2k(a+a''),
+      and 2k(a+a'') in Z by prp-integers-closed (a). The ledger row is present.'
+  - stage: S7r
+    verdict: correct
+    by: rereferee
+    hash: 55c013b881a2
+    date: '2026-10-25'
+    model: claude-opus-5-5
+    evidence: '02:426 (b): a²−a''²=(a−a'')(a+a'')=3·2k(a+a''), and 2k(a+a'') ∈ ℤ now cites prp-integers-closed
+      (a). (a): the counterexample [0]=[6] with 0≠36 is right.'
 - key: exm-ill-defined-class-map
   kind: exm
   file: 02-equivalence-relations.md
@@ -1172,6 +1291,25 @@ items:
     evidence: 02-equivalence-relations.md:458 Part (c) uses symmetry and transitivity of equinumerosity
       without citing them. It also skips the method's step (4) check that the value lies in the codomain
       {0,1,2,3}.
+  - stage: S7r
+    verdict: minor
+    by: rereferee
+    hash: 3be09600914b
+    date: '2026-10-25'
+    model: claude-opus-5-5
+    evidence: 'The math in (c) is now complete: symmetry (b), transitivity (c), cor-finite-size-unique,
+      and the codomain {0,1,2,3}. But in ''its number lies in {0,1,2,3} by (b)'', the ''(b)'' comes right
+      after ''part (c) of that proposition'', so it reads as prp-equinumerous-properties (b) when it means
+      part (b) of this example.'
+  - stage: S7r
+    verdict: correct
+    by: rereferee
+    hash: 3be09600914b
+    date: '2026-10-25'
+    model: claude-opus-5-5
+    evidence: 02:458 (c) now uses symmetry (prp-equinumerous-properties (b)), then transitivity (c) with
+      card{1..m'}=card A', so A has m' elements, and m=m' by cor-finite-size-unique. The range {0,1,2,3}
+      comes from (b). Ledger line 667 matches.
 - key: exr-equivalence-relations-a1
   kind: exr
   file: 02-equivalence-relations.md
@@ -1371,6 +1509,22 @@ items:
       A script checked representatives in -60..60. (a) holds for n=1..12. (b) fails at 0,5. (c) holds.
       The counterexample [0]_5=[5]_5 with [0]_10≠[5]_10 defeats (b). The B-type worked example is exm-ill-defined-class-map
       (02:431), which runs the same pattern with Z/6 to Z/4 and Z/6 to Z/3.'
+  - stage: S7r
+    verdict: correct
+    by: rereferee
+    hash: a0dd04820155
+    date: '2026-10-25'
+    model: claude-opus-5-5
+    evidence: '(b): [0]_5=[5]_5. 5 is not a multiple of 10, since 10k is 0, >=10 or <=-10 by discreteness
+      (prp-integers-closed (c)), which is cited now. (a) and (c) are unchanged and correct.'
+  - stage: S7r
+    verdict: correct
+    by: rereferee
+    hash: a0dd04820155
+    date: '2026-10-25'
+    model: claude-opus-5-5
+    evidence: '02:552 (b): [0]_5=[5]_5 but [0]_10≠[5]_10, since 5 is not a multiple of 10 (0<5<10 and
+      prp-integers-closed (c)).'
 - key: exr-equivalence-relations-b4
   kind: exr
   file: 02-equivalence-relations.md
@@ -1405,6 +1559,23 @@ items:
       defined from Z/4 to Z/8. (c) 4/3-1/3=1 and 16/9-1/9=5/3, which is not an integer. (d) (a+b)d=b(c+d)
       holds on all pairs with |a|<=8 and 1<=b<=8, and the solution also checks the codomain condition
       b>0. (e) (1,2)~'
+  - stage: S7r
+    verdict: correct
+    by: rereferee
+    hash: bf99fb71e72c
+    date: '2026-10-25'
+    model: claude-opus-5-5
+    evidence: '(c): 1/3 ~ 4/3. 16/9 - 1/9 = 5/3, and 0 < 2/3 < 1 shows 5/3 - 1 is not in Z, hence 5/3
+      is not in Z by closure (a), cited now. So [1/9] != [16/9] by thm-classes-partition (b). The ledger
+      row and sidecar are present, and the sidecar passes.'
+  - stage: S7r
+    verdict: correct
+    by: rereferee
+    hash: bf99fb71e72c
+    date: '2026-10-25'
+    model: claude-opus-5-5
+    evidence: '02:576 (c): 16/9−1/9=5/3. 5/3−1=2/3 ∈ (0,1) is not an integer, so 5/3 ∉ ℤ by closure (a).
+      [1/9]≠[16/9] by thm-classes-partition (b). The ledger line was added.'
 - key: exr-equivalence-relations-c1
   kind: exr
   file: 02-equivalence-relations.md
@@ -1545,6 +1716,13 @@ items:
       is ∅ or X. The empty-set fact now cites 'Section 6.1, after @prp-empty-set-unique'. ch06-01:269
       does prove ∅ ⊆ A for every A right after that proposition. The earlier S5b/S8 miscitation of def-empty-set
       is reso
+  - stage: S7r
+    verdict: correct
+    by: rereferee
+    hash: 2da8c7d1de66
+    date: '2026-10-25'
+    model: claude-opus-5-5
+    evidence: The ledger now places def-subset in F2.1 §02, which is correct after the F2.1 re-cut.
 - key: def-order-bounds
   kind: def
   file: 03-orders.md
@@ -1641,6 +1819,13 @@ items:
       now gives non-emptiness: r = p/q with q ∈ Z>0, so rq = p ∈ Z. This matches ch06-04:91 (solution
       of (b), Fn1 sentence), and ledger 480 records it. The earlier finding about the missing non-emptiness
       hypothesis is resolved.'
+  - stage: S7r
+    verdict: correct
+    by: rereferee
+    hash: 21a90a32eff5
+    date: '2026-10-25'
+    model: claude-opus-5-5
+    evidence: The ledger now places exm-not-a-function in F2.1 §05 (05-functions.md).
 - key: proof:prp-greatest-unique
   kind: proof
   file: 03-orders.md
@@ -1801,6 +1986,21 @@ items:
       @prp-integers-closed (c) (discreteness) twice. So kn ≥ 2n ≥ 8 > 6. Restricting to positive multiples
       deals with the earlier S5a point that 0 is a multiple of everything. For no greatest element: 5∤4,
       4∤5 and 4∤6'
+  - stage: S7r
+    verdict: correct
+    by: rereferee
+    hash: bb8b05c0a3ad
+    date: '2026-10-25'
+    model: claude-opus-5-5
+    evidence: Only the ledger sidecar path changed, to verify/ch04/exm-maximal-not-greatest.py, and that
+      file exists.
+  - stage: S7r
+    verdict: correct
+    by: rereferee
+    hash: bb8b05c0a3ad
+    date: '2026-10-25'
+    model: claude-opus-5-5
+    evidence: The sidecar path in the ledger is now verify/ch04.
 - key: check:03-orders:2
   kind: check
   file: 03-orders.md
@@ -1919,6 +2119,23 @@ items:
     model: claude-opus-5-5
     evidence: 03-orders.md:229 The text treats '2 | n and 3 | n imply 6 | n' as proved here for the first
       time and credits it only to Section 1.3's school fact. It was already proved in Section 2.2.
+  - stage: S7r
+    verdict: correct
+    by: rereferee
+    hash: a147bad75906
+    date: '2026-10-25'
+    model: claude-opus-5-5
+    evidence: Only the ledger sidecar path changed, to verify/ch04/exm-divisibility-lcm.py. The text is
+      unchanged.
+  - stage: S7r
+    verdict: correct
+    by: rereferee
+    hash: a147bad75906
+    date: '2026-10-25'
+    model: claude-opus-5-5
+    evidence: '03:219: s−qt ∈ ℤ now cites prp-integers-closed (a) (this was the S7r issue). 03:229 now
+      calls the instance a second proof and credits @exr-induction-in-practice-b3 (c), which proves 2|n
+      ∧ 3|n ⇒ 6|n (ch02 02:384). Checked L=6 and the multiples below 6. Ledger line 491 was added.'
 - key: def-well-ordered-set
   kind: def
   file: 03-orders.md
@@ -1962,6 +2179,15 @@ items:
     evidence: 03-orders.md:246 A pointer into another volume gives only the book title, with no chapter.
       The rule requires '*Book title*, Chapter N'. Because the pointer has no chapter number, promises.py
       does not track it.
+  - stage: S7r
+    verdict: correct
+    by: rereferee
+    hash: 119fe7edd8eb
+    date: '2026-10-25'
+    model: claude-opus-5-5
+    evidence: '03:246: the remark now reads ''*Axiomatic Set Theory*, Chapter 4'', and the STATUS row
+      → ST.4 exists. The examples (ℕ, ℤ, positive rationals) and ''totality is automatic'' are unchanged
+      and correct.'
 - key: exr-orders-a1
   kind: exr
   file: 03-orders.md
@@ -2031,6 +2257,24 @@ items:
     model: claude-opus-5-5
     evidence: '03-orders.md:270 The parenthetical in A1(c), ''the multiples of 6 below 12 are 6'', is
       false as written: 0 is also a multiple of 6 below 12, and 0 is a common multiple of 4 and 6 in N.'
+  - stage: S7r
+    verdict: correct
+    by: rereferee
+    hash: eb6e9b42aa39
+    date: '2026-10-25'
+    model: claude-opus-5-5
+    evidence: '(c) is now accurate: the positive multiples of 6 in 1..11 are {6} and 4 does not divide
+      6, so 12 is the least common multiple. The ledger has no stale F2.3 line and the sidecar path is
+      verify/ch04/exr-orders-a1.py. (b) cites @def-finite, Section 2.5, correctly.'
+  - stage: S7r
+    verdict: correct
+    by: rereferee
+    hash: eb6e9b42aa39
+    date: '2026-10-25'
+    model: claude-opus-5-5
+    evidence: '03:271 (c): the positive multiples of 6 below 12 are just 6, and 4∤6, so sup{4,6}=12 under
+      divisibility. 03:269 cites @def-finite (Section 2.5), which matches the ledger ''def-finite (F2.2
+      §05, cited)''. The sidecar path is verify/ch04.'
 - key: exr-orders-b1
   kind: exr
   file: 03-orders.md
@@ -2210,6 +2454,25 @@ items:
       strictly below (2,1). The infinitude argument is complete. Assuming S finite, prp-subset-finite
       makes B finite, then prp-equinumerous-properties (b),(c) and def-finite make N finite, which contradicts
       exm-hilbe'
+  - stage: S7r
+    verdict: correct
+    by: rereferee
+    hash: fa0e68097ab2
+    date: '2026-10-25'
+    model: claude-opus-5-5
+    evidence: (c) cites lem-naturals-arithmetic (a), (c), (e), which is enough for 'elements strictly
+      below k are 0..k-1'. The infinitude argument cites prp-subset-finite, prp-equinumerous-properties
+      (b), (c), def-finite, exm-hilbert-hotel and def-infinite, and the new ledger line records all of
+      them.
+  - stage: S7r
+    verdict: correct
+    by: rereferee
+    hash: fa0e68097ab2
+    date: '2026-10-25'
+    model: claude-opus-5-5
+    evidence: 03:345 now cites lem-naturals-arithmetic (a), (c) and (e). (c) gives k−1 ∈ ℕ for k≠0, and
+      (e) gives no element between n and n+1, so the elements below k are 0..k−1. The new ledger line
+      lists the cited labels, and all of them are present.
 - key: exr-orders-c2
   kind: exr
   file: 03-orders.md
@@ -2276,6 +2539,20 @@ items:
     evidence: '06:402-411. Script sampling: f([-3,1])=[-4,5], f^{-1}([-3,0])=[-4,-3]∪[-1,0], f^{-1}([-5,0])=[-4,0],
       whose image is [-4,0] = [-5,0]∩[-4,∞). The problem hides its source (Ch 6), and the solution cites
       @prp-image-preimage (b).'
+  - stage: S7r
+    verdict: correct
+    by: rereferee
+    hash: dc3e80a8684f
+    date: '2026-10-25'
+    model: claude-opus-5-5
+    evidence: Only the ledger sidecar path changed, to verify/ch04/exr-orders-r1.py.
+  - stage: S7r
+    verdict: correct
+    by: rereferee
+    hash: dc3e80a8684f
+    date: '2026-10-25'
+    model: claude-opus-5-5
+    evidence: The sidecar path in the ledger is now verify/ch04/exr-orders-r1.py.
 - key: exr-orders-r2
   kind: exr
   file: 03-orders.md
@@ -2379,6 +2656,23 @@ items:
       is stated for surjective f, so it applies directly, and def-countable covers the finite case. The
       example Z mod 2 is valid: Z is infinite by the contrapositive of prp-subset-finite with N ⊆ Z, and
       prp-integer'
+  - stage: S7r
+    verdict: correct
+    by: rereferee
+    hash: 0b9ffaa30811
+    date: '2026-10-25'
+    model: claude-opus-5-5
+    evidence: 'A ledger line was added that covers every step of the solution at :451 with existing labels.
+      The solution text is unchanged and correct: q is surjective, prp-countable-image applies, Z is countable
+      and not finite, and Z/2 has two classes.'
+  - stage: S7r
+    verdict: correct
+    by: rereferee
+    hash: 0b9ffaa30811
+    date: '2026-10-25'
+    model: claude-opus-5-5
+    evidence: The ledger line was added. Its labels (def-quotient-set, prp-countable-image, thm-integers-rationals-countable,
+      exm-hilbert-hotel, prp-subset-finite, prp-integers-mod-n) are exactly the @refs in 03:444-453.
 - key: exr-orders-r4
   kind: exr
   file: 03-orders.md

@@ -226,7 +226,7 @@ Now \( L = \sup \{a, b\} \). (S1): \( a \mid L \) and \( b \mid L \), since \( L
 *The instance.* For \( a = 2 \), \( b = 3 \): \( 6 \in M \), and none of \( 1, 2, 3, 4, 5 \) is a multiple of both \( 2 \) and \( 3 \) (\( 1, 3, 5 \) are odd, and \( 2, 4 \) lie strictly between consecutive multiples of \( 3 \)). So \( L = 6 \), and every integer \( n \) with \( 2 \mid n \) and \( 3 \mid n \) has \( 6 \mid n \), by the second paragraph with \( c = n \).
 :::
 
-The instance proves the fact that Section 1.3 used as a school fact: an integer divisible by \( 2 \) and by \( 3 \) is divisible by \( 6 \). It also shows the two orders on \( \nN \) disagreeing: \( \sup \{4, 6\} \) is \( 12 \) under divisibility and \( 6 \) under \( \le \).
+The instance gives a second proof, through the least common multiple, of the fact that Section 1.3 used as a school fact and Section 2.2 proved in Exercise B3 (c) (@exr-induction-in-practice-b3): an integer divisible by \( 2 \) and by \( 3 \) is divisible by \( 6 \). It also shows the two orders on \( \nN \) disagreeing: \( \sup \{4, 6\} \) is \( 12 \) under divisibility and \( 6 \) under \( \le \).
 
 **A supremum that does not exist.** In \( (\nQ, \le) \), the set \( \{ x \in \nQ : x > 0, \ x^2 < 2 \} \) is non-empty and bounded above (by \( 2 \), for instance: a rational \( x > 2 \) has \( x^2 > 4 \)). It has **no** least upper bound in \( \nQ \). We do not prove this here. *Analysis on the Real Line*, Chapter 1 proves it, and then takes the existence of suprema in \( \nR \) as its axiom: the supremum of *Analysis on the Real Line*, Chapter 1, defined in an ordered field, is @def-order-supremum for the order \( \le \) of that field; *Analysis on the Real Line*, Chapter 1 uses it in \( \nQ \) and in \( \nR \). The ambient set decides: the same set has a supremum in \( (\nR, \le) \), namely \( \sqrt 2 \).
 
@@ -243,7 +243,7 @@ A partially ordered set \( (X, \preceq) \) is **well-ordered**, and \( \preceq \
 \( (\nN, \le) \) is well-ordered: \( \le \) is total, and @thm-well-ordering supplies the least elements. \( (\nZ, \le) \) is not: \( \nZ \) itself has no least element, since for every \( n \in \nZ \) also \( n - 1 \in \nZ \) (@prp-integers-closed (a)) and \( n - 1 < n \). Nor is the set of positive rationals, which has no least element (\( q/2 < q \)). The word "non-empty" is needed because \( \emptyset \) has no least element in any order. Totality is in fact automatic: any two elements \( x, y \) form a non-empty set \( \{x, y\} \), whose least element is below the other one. Upper bounds work too: in \( (\nN, \le) \) a non-empty set bounded above has a greatest element (@cor-well-ordering-integers). Exercise C1 gives a well-ordered set that does not look like \( \nN \).
 
 ::: {.remark}
-In a general partially ordered set, one may ask: if every **chain** (a subset on which \( \preceq \) is total) has an upper bound, must there be a maximal element? For a non-empty partially ordered set the answer "yes" is Zorn's lemma, and it cannot be proved from what we have: it is equivalent to the axiom of choice, which Section 3.2 states (@ax-choice). Chapter 5 states Zorn's lemma and uses it, and *Axiomatic Set Theory* proves it equivalent to the axiom of choice, together with the other equivalents, among them the claim that every set has a well-order.
+In a general partially ordered set, one may ask: if every **chain** (a subset on which \( \preceq \) is total) has an upper bound, must there be a maximal element? For a non-empty partially ordered set the answer "yes" is Zorn's lemma, and it cannot be proved from what we have: it is equivalent to the axiom of choice, which Section 3.2 states (@ax-choice). Chapter 5 states Zorn's lemma and uses it, and *Axiomatic Set Theory*, Chapter 4 proves it equivalent to the axiom of choice, together with the other equivalents, among them the claim that every set has a well-order.
 :::
 
 ## Exercises
@@ -268,7 +268,7 @@ In a general partially ordered set, one may ask: if every **chain** (a subset on
 
 (b) False. In \( (\powerset{\{1, 2\}}, \subseteq) \), the set \( \{ \{1\}, \{2\} \} \) is finite and non-empty and has no greatest element (@exm-maximal-not-greatest (b)). What is true is that it has a **maximal** element: it can be listed as \( \{x_1, \dots, x_n\} \), which is what "finite" means (@def-finite, Section 2.5), so it has one by Exercise R4.
 
-(c) Under divisibility, \( \sup \{4, 6\} = 12 \), the least common multiple (@exm-divisibility-lcm): \( 12 \) is a common multiple, and none of \( 1, \dots, 11 \) is (the multiples of \( 6 \) below \( 12 \) are \( 6 \), and \( 4 \nmid 6 \)). Under \( \le \), \( \sup \{4, 6\} = 6 \), the greatest element.
+(c) Under divisibility, \( \sup \{4, 6\} = 12 \), the least common multiple (@exm-divisibility-lcm): \( 12 \) is a common multiple, and none of \( 1, \dots, 11 \) is (the positive multiples of \( 6 \) below \( 12 \) are just \( 6 \), and \( 4 \nmid 6 \)). Under \( \le \), \( \sup \{4, 6\} = 6 \), the greatest element.
 
 (d) Yes. Let \( (a, b), (c, d) \in \nN \times \nN \). If \( a < c \), then \( (a, b) \preceq (c, d) \); if \( c < a \), then \( (c, d) \preceq (a, b) \); if \( a = c \), then \( b \le d \) or \( d \le b \), by totality of \( \le \), and the pairs are comparable. By trichotomy these cases cover everything.
 :::
@@ -342,7 +342,7 @@ Let \( \preceq \) be the lexicographic order on \( \nN \times \nN \) of Exercise
 
 (b) Totality is A1 (d). Let \( S \subseteq \nN \times \nN \) be non-empty. The set \( F \coloneqq \{ a \in \nN : (a, b) \in S \text{ for some } b \in \nN \} \) of first coordinates is non-empty, so it has a least element \( a_0 \) (@thm-well-ordering). The set \( G \coloneqq \{ b \in \nN : (a_0, b) \in S \} \) is non-empty, since \( a_0 \in F \), so it has a least element \( b_0 \). Then \( (a_0, b_0) \in S \). Let \( (a, b) \in S \). Then \( a \in F \), so \( a_0 \le a \). If \( a_0 < a \), then \( (a_0, b_0) \preceq (a, b) \). If \( a_0 = a \), then \( b \in G \), so \( b_0 \le b \), and again \( (a_0, b_0) \preceq (a, b) \). So \( (a_0, b_0) \) is the least element of \( S \).
 
-(c) For \( n \in \nN \), \( 1 < 2 \) gives \( (1, n) \preceq (2, 1) \), and \( (1, n) \ne (2, 1) \) since \( 1 \ne 2 \); so \( (1, n) \prec (2, 1) \). For \( n \ne n' \), \( (1, n) \ne (1, n') \) by the characteristic property of pairs. So one element, \( (2, 1) \), has an element \( (1, n) \) strictly below it for each of the natural numbers \( n \), all different. In \( (\nN, \le) \), the elements strictly below \( k \) are exactly \( 0, 1, \dots, k - 1 \) (none when \( k = 0 \)), by @lem-naturals-arithmetic (a) and (e): they form a list ending at \( k - 1 \). So a well-ordered set need not look like \( \nN \): here one element has a strictly smaller element for every natural number.
+(c) For \( n \in \nN \), \( 1 < 2 \) gives \( (1, n) \preceq (2, 1) \), and \( (1, n) \ne (2, 1) \) since \( 1 \ne 2 \); so \( (1, n) \prec (2, 1) \). For \( n \ne n' \), \( (1, n) \ne (1, n') \) by the characteristic property of pairs. So one element, \( (2, 1) \), has an element \( (1, n) \) strictly below it for each of the natural numbers \( n \), all different. In \( (\nN, \le) \), the elements strictly below \( k \) are exactly \( 0, 1, \dots, k - 1 \) (none when \( k = 0 \)), by @lem-naturals-arithmetic (a), (c) and (e): they form a list ending at \( k - 1 \). So a well-ordered set need not look like \( \nN \): here one element has a strictly smaller element for every natural number.
 
 Let \( S \) be the set of elements strictly below \( (2, 1) \), and \( B \coloneqq \{ (1, n) : n \in \nN \} \subseteq S \). The map \( \nN \to B \), \( n \mapsto (1, n) \), is injective (just shown) and surjective, so \( \card{\nN} = \card{B} \). Suppose \( S \) were finite. Then \( B \) would have \( k \) elements for some \( k \) (@prp-subset-finite), and \( \card{\{1, \dots, k\}} = \card{B} = \card{\nN} \) (@prp-equinumerous-properties (b), (c)) would make \( \nN \) finite (@def-finite); but \( \nN \) is infinite (@exm-hilbert-hotel). So \( S \) is infinite (@def-infinite).
 :::
@@ -477,29 +477,32 @@ In either case \( A' \) has a maximal element, so \( P(n + 1) \) holds, and @thm
 def-partial-order (claim): strict part irreflexive and transitive | inline (the paragraph after the definition)
 def-partial-order (claim): (examples) <= on R is a total order; restricting to N, Z keeps the properties | R order, school fact; axioms in AN1.1
 def-partial-order (claim): (examples) 2 does not divide 3 and 3 does not divide 2 | arithmetic (division algorithm remainders 1 and 2); thm-division-algorithm uniqueness
-exm-subset-order-not-total (solution): A subset of A | def-subset (F2.1 §01), used silently
+exm-subset-order-not-total (solution): A subset of A | def-subset (F2.1 §02), used silently
 def-greatest-element (claim): (a + 1)/2 in [0, 1) and above a | R arithmetic and order, school fact
 prp-greatest-maximal (proof): the reverse order is a partial order, total when the order is; its strict part is the reverse of the strict part; maximal/greatest for the reverse order = minimal/least for the order | inline in the proof; written out in full in exr-orders-b3
 prp-greatest-maximal (claim): (after it) the maximum half of the proof of prp-finite-max uses only reflexivity, transitivity and comparability; the minimum half via the reverse order (negation needs an ordered field) | prp-finite-max (F2.2 §03; meta-claim about its proof, checked against the blueprint's route "base {x1}, step max{M, x_(n+1)}"); the reverse order as in the proof of prp-greatest-maximal
-prp-greatest-unique (claim): (after it) some q in Z_{>0} has rq in Z | exm-not-a-function (F2.1 §04, solution of (b), clause (Fn1))
+prp-greatest-unique (claim): (after it) some q in Z_{>0} has rq in Z | exm-not-a-function (F2.1 §05, solution of (b), clause (Fn1))
 prp-greatest-maximal (claim): AN1.1 reads prp-finite-max in an ordered field | AN1.1 (prose pointer)
-exm-maximal-not-greatest (solution): kn > 0 and n > 0 give k > 0; k >= 2 gives kn >= 2n; 5 does not divide 4 etc. | R order, school fact; axioms in AN1.1; prp-integers-closed (c) (cited); arithmetic; verify/ch07/exm-maximal-not-greatest.py
+exm-maximal-not-greatest (solution): kn > 0 and n > 0 give k > 0; k >= 2 gives kn >= 2n; 5 does not divide 4 etc. | R order, school fact; axioms in AN1.1; prp-integers-closed (c) (cited); arithmetic; verify/ch04/exm-maximal-not-greatest.py
 exm-maximal-not-greatest (claim): (warning after it) n + 1 in N and n < n + 1 | (NS) (F2.2 §01, cited); R arithmetic
 exm-divisibility-lcm (solution): a(s - qt) = as - qat | R arithmetic
 exm-divisibility-lcm (solution): product of positive reals is positive; ab = ba | R arithmetic and order, school fact; axioms in AN1.1
-exm-divisibility-lcm (solution): 1..5 contain no common multiple of 2 and 3 | arithmetic; verify/ch07/exm-divisibility-lcm.py
+exm-divisibility-lcm (solution): 1..5 contain no common multiple of 2 and 3 | arithmetic; verify/ch04/exm-divisibility-lcm.py
+exm-divisibility-lcm (claim): (after it) the fact was proved before, in F2.2 §02 | exr-induction-in-practice-b3 (c) (pointer; nothing here depends on it)
 exm-divisibility-lcm (claim): {x in Q : x > 0, x^2 < 2} non-empty (1) and bounded above by 2; no rational supremum; sqrt 2 its supremum in R | R order (school fact) for the bound; AN1.1 (prose pointer; nothing here depends on it)
 def-well-ordered-set (claim): positive rationals: q/2 < q | R arithmetic
 def-well-ordered-set (claim): (remark) Zorn's lemma, axiom of choice, well-ordering theorem | F2.3 (choice stated), F2.4 (Zorn stated), ST.4 (equivalences with choice and the well-ordering theorem proved) (prose pointers; nothing depends on them)
 def-well-ordered-set (claim): N bounded above has a greatest element | cor-well-ordering-integers (cited; N subset of Z)
-exr-orders-a1 (solution): multiples of 6 below 12; 4 does not divide 6 | arithmetic; verify/ch07/exr-orders-a1.py
-exr-orders-a1 (solution): finite set -> list x_1, ..., x_n | F2.3 (prose pointer; F2.3's definition of finite)
+exr-orders-a1 (solution): multiples of 6 below 12; 4 does not divide 6 | arithmetic; verify/ch04/exr-orders-a1.py
+exr-orders-a1 (solution): finite set -> list x_1, ..., x_n | def-finite (F2.2 §05, cited)
 exr-orders-a1 (solution): trichotomy and totality of <= on N | R order, school fact; axioms in AN1.1
-exr-orders-c1 (solution): trichotomy; a < c <= e gives a < e; characteristic property of pairs | R order; def-ordered-pair (F2.1 §03)
+exr-orders-c1 (solution): trichotomy; a < c <= e gives a < e; characteristic property of pairs | R order; def-ordered-pair (F2.1 §04)
+exr-orders-c1 (solution): elements strictly below k in N are 0..k-1; B equinumerous with N, not finite, so S infinite | lem-naturals-arithmetic (a), (c), (e) (cited); prp-subset-finite, prp-equinumerous-properties, def-finite (F2.2 §05), exm-hilbert-hotel, def-infinite (cited)
 exr-orders-c2 (solution): k <= 0 and c + 1 > 0 give k(c + 1) <= 0; k >= 1 and c + 1 > 0 give k(c + 1) >= c + 1 | R order, school fact; axioms in AN1.1
 exr-orders-c2 (solution): 0 | c means c = k * 0 = 0 | R arithmetic
 exr-orders-r2 (solution): a + 1 in N | (NS) (F2.2 §01, cited); R arithmetic for a < a + 1
-exr-orders-r1 (solution): square roots; completing the square; sign cases of |x + 2| | school facts (F1-F2 convention); square roots proved in AN1.1; thm-squares-order (cited); verify/ch07/exr-orders-r1.py
+exr-orders-r1 (solution): square roots; completing the square; sign cases of |x + 2| | school facts (F1-F2 convention); square roots proved in AN1.1; thm-squares-order (cited); verify/ch04/exr-orders-r1.py
+exr-orders-r3 (solution): quotient map surjective; image of countable set countable; Z countable and infinite; Z/2 has two classes | def-quotient-set paragraph, prp-countable-image, thm-integers-rationals-countable, exm-hilbert-hotel, prp-subset-finite, prp-integers-mod-n (cited)
 exr-orders-r4 (solution): strict part transitive | inline in the text after def-partial-order
 exr-orders-r4 (solution): {x_1, ..., x_n} for elements of any set; {x_1..x_(n+1)} = {x_1..x_n} u {x_(n+1)} | notation of F2.2 §03 (before prp-finite-max), extended; lem-naturals-arithmetic (e) (cited), as in prp-finite-max
 -->

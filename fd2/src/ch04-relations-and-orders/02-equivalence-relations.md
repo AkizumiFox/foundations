@@ -423,7 +423,7 @@ Which rules define a function: (a) \( \nZ/6 \to \nZ \), \( [a] \mapsto a^2 \); (
 :::
 
 ::: {.solution}
-(a) No: \( [0] = [6] \), but \( 0^2 = 0 \ne 36 = 6^2 \), and the codomain \( \nZ \) compares elements, not classes. (b) Yes: if \( a - a' = 6k \) with \( k \in \nZ \), then \( a^2 - a'^2 = (a - a')(a + a') = 3 \cdot 2k(a + a') \), and \( 2k(a + a') \in \nZ \), so \( [a^2]_3 = [a'^2]_3 \).
+(a) No: \( [0] = [6] \), but \( 0^2 = 0 \ne 36 = 6^2 \), and the codomain \( \nZ \) compares elements, not classes. (b) Yes: if \( a - a' = 6k \) with \( k \in \nZ \), then \( a^2 - a'^2 = (a - a')(a + a') = 3 \cdot 2k(a + a') \), and \( 2k(a + a') \in \nZ \) (@prp-integers-closed (a)), so \( [a^2]_3 = [a'^2]_3 \).
 :::
 
 Well-definedness can fail, and the next example shows a failure next to a success, with the minimal change between them.
@@ -455,7 +455,7 @@ Let \( X \) be a set, and for \( A, B \in \powerset{X} \) let \( A \approx B \) 
 
 (b) Every subset of \( \{1, 2, 3\} \) is finite with \( 0, 1, 2 \) or \( 3 \) elements (@prp-subset-finite, since \( \{1, 2, 3\} \) has \( 3 \) elements; or list the eight subsets). Two subsets with the same number \( m \) of elements are equivalent: \( \card{\{1, \dots, m\}} = \card{A} \) and \( \card{\{1, \dots, m\}} = \card{B} \) give \( \card{A} = \card{B} \) by @prp-equinumerous-properties (b) and (c). Two with different numbers are not, by (c) below. So the classes are \( \{\emptyset\} \), \( \{\{1\}, \{2\}, \{3\}\} \), \( \{\{1, 2\}, \{1, 3\}, \{2, 3\}\} \) and \( \{\{1, 2, 3\}\} \).
 
-(c) By the method of @exm-method-well-definedness: let \( A \approx A' \), and let \( A \) have \( m \) elements and \( A' \) have \( m' \). From \( \card{\{1, \dots, m'\}} = \card{A'} \) and \( \card{A'} = \card{A} \) we get that \( A \) has \( m' \) elements as well, so \( m = m' \) by @cor-finite-size-unique. Each class has a representative, and all its representatives give the same number.
+(c) By the method of @exm-method-well-definedness: let \( A \approx A' \), and let \( A \) have \( m \) elements and \( A' \) have \( m' \). From \( \card{A} = \card{A'} \) we get \( \card{A'} = \card{A} \) (@prp-equinumerous-properties (b)); with \( \card{\{1, \dots, m'\}} = \card{A'} \), part (c) of that proposition gives that \( A \) has \( m' \) elements as well, so \( m = m' \) by @cor-finite-size-unique. Each class has a representative, its number lies in \( \{0, 1, 2, 3\} \) by (b), and all its representatives give the same number.
 :::
 
 Part (c) rests on the well-definedness step of Section 2.5 (@cor-finite-size-unique: one set, one number) and adds a second: one class, one number. And the relation lives on \( \powerset{X} \), a set: for equinumerosity between arbitrary sets there is no set of all sets for it to be a relation on (@thm-russell), which is why Section 2.5 said only that it behaves like an equivalence relation.
@@ -549,7 +549,7 @@ The check in each case: take \( [a] = [a'] \), that is, \( a \equiv a' \), and d
 
 (a) Yes. If \( a \equiv a' \pmod{n} \), the product clause of @prp-congruence-arithmetic, applied to \( a \equiv a' \) twice, gives \( a \cdot a \equiv a' \cdot a' \), so \( [a^2]_n = [a'^2]_n \).
 
-(b) No. \( [0]_5 = [5]_5 \), since \( 5 - 0 = 5 \). But \( [0]_{10} \ne [5]_{10} \), since \( 5 - 0 = 5 \) is not a multiple of \( 10 \) (\( 0 < 5 < 10 \)). The input \( [0]_5 \) would get two values.
+(b) No. \( [0]_5 = [5]_5 \), since \( 5 - 0 = 5 \). But \( [0]_{10} \ne [5]_{10} \), since \( 5 - 0 = 5 \) is not a multiple of \( 10 \) (\( 0 < 5 < 10 \), and the multiples of \( 10 \) are \( 0 \), at least \( 10 \), or at most \( -10 \); @prp-integers-closed (c)). The input \( [0]_5 \) would get two values.
 
 (c) Yes. If \( a - a' = 10k \) with \( k \in \nZ \), then \( a - a' = 5(2k) \) with \( 2k \in \nZ \) (@prp-integers-closed (a)), so \( [a]_5 = [a']_5 \). The difference from (b) is the direction: \( 5 \mid 10 \), so a multiple of \( 10 \) is a multiple of \( 5 \), not conversely.
 :::
@@ -573,7 +573,7 @@ Prove or disprove: each rule defines a function.
 
 (b) True. If \( a - a' = 4k \), then \( 2a - 2a' = 8k \), so \( [2a]_8 = [2a']_8 \). (Compare B3 (b), where \( [a]_5 \mapsto [a]_{10} \) failed: doubling the representative doubles the difference.)
 
-(c) False. \( [\tfrac13] = [\tfrac43] \), since \( \tfrac43 - \tfrac13 = 1 \). But \( (\tfrac43)^2 - (\tfrac13)^2 = \tfrac{16}{9} - \tfrac19 = \tfrac53 \), and \( \tfrac53 \notin \nZ \): \( 0 < \tfrac53 - 1 = \tfrac23 < 1 \), and no integer lies strictly between \( 0 \) and \( 1 \) (@prp-integers-closed (c)), so \( \tfrac53 - 1 \notin \nZ \), hence \( \tfrac53 \notin \nZ \). So \( [\tfrac19] \ne [\tfrac{16}{9}] \): one class, two values.
+(c) False. \( [\tfrac13] = [\tfrac43] \), since \( \tfrac43 - \tfrac13 = 1 \). But \( (\tfrac43)^2 - (\tfrac13)^2 = \tfrac{16}{9} - \tfrac19 = \tfrac53 \), and \( \tfrac53 \notin \nZ \): \( 0 < \tfrac53 - 1 = \tfrac23 < 1 \), and no integer lies strictly between \( 0 \) and \( 1 \) (@prp-integers-closed (c)), so \( \tfrac53 - 1 \notin \nZ \), hence \( \tfrac53 \notin \nZ \) (else \( \tfrac53 - 1 \in \nZ \) by @prp-integers-closed (a)). So \( [\tfrac19] \ne [\tfrac{16}{9}] \) by @thm-classes-partition (b): one class, two values.
 
 (d) True. Let \( (a, b) \sim (c, d) \), so \( ad = bc \). Then \( (a + b)d = ad + bd = bc + bd = b(c + d) \), so \( (a + b, b) \sim (c + d, d) \); and \( b, d \in \nZ_{>0} \), so the outputs lie in \( \nZ \times \nZ_{>0} \).
 
@@ -661,4 +661,10 @@ exr-equivalence-relations-b2 (solution): 729 = 104 * 7 + 1; 81 = 11 * 7 + 4; 96 
 exr-equivalence-relations-b3 (solution): 5 is not a multiple of 10 | prp-integers-closed (c) (cited); verify/ch04/exr-equivalence-relations-b3.py
 exr-equivalence-relations-b3 (solution): 2k in Z; 10k = 5(2k) | prp-integers-closed (a) (cited); R arithmetic
 exr-equivalence-relations-c2 (solution): exists-E fresh-name condition; catalogue (N4) | def-rules-existential, exm-not-allowed-catalogue (cited)
+thm-partition-equivalence (claim): (correspondence) Eq(X) subset of P(X x X), Part(X) subset of P(P(X)) by specification | def-set-builder, def-power-set (cited); thm-bijection-iff-inverse (cited)
+thm-partition-equivalence (claim): (quick check) 4 + 3 = 7 two-block partitions of {1, 2, 3, 4} | arithmetic; verify/ch04/thm-partition-equivalence.py
+exm-method-well-definedness (claim): (quick check) 0 != 36; a^2 - a'^2 = (a - a')(a + a'); 2k(a + a') in Z | R arithmetic, school fact; prp-integers-closed (a) (cited)
+exm-same-size-subsets (solution): sizes 0, 1, 1, 1, 2, 2, 2, 3 of the eight subsets of {1, 2, 3}; |A'| = |A| from |A| = |A'| | arithmetic; prp-equinumerous-properties (a)-(c), prp-subset-finite, cor-finite-size-unique, thm-russell (cited); verify/ch04/exm-same-size-subsets.py
+exr-equivalence-relations-b4 (solution): (a-2b) - (a'-2b') = 6(k - 2l); 16/9 - 1/9 = 5/3; 2*5 != 3*3; (a+b)d = ad + bd | prp-integers-closed (a), (c) (cited); thm-classes-partition (b) (cited); R arithmetic; verify/ch04/exr-equivalence-relations-b4.py
+prp-congruence-arithmetic (claim): (Looking ahead) Z/n rebuilt as a quotient ring | F3.5 (prose pointer; paid by thm-quotient-ring-by-ideal, def-integers-mod-n-ring; nothing here depends on it)
 -->

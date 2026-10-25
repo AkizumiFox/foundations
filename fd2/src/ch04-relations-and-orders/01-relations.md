@@ -93,11 +93,13 @@ The last row closes the gap: the two expressions add up to a multiple of \( 7 \)
 
 *Symmetric.* Let \( x \mathrel{R} y \), say \( 3x + 4y = 7k \) with \( k \in \nZ \). Then \( 3y + 4x = 7(x + y) - (3x + 4y) = 7(x + y - k) \), and \( x + y - k \in \nZ \) by @prp-integers-closed (a), so \( y \mathrel{R} x \).
 
-*Transitive.* Let \( x \mathrel{R} y \) and \( y \mathrel{R} z \), say \( 3x + 4y = 7k \) and \( 3y + 4z = 7l \) with \( k, l \in \nZ \). Adding, \( 3x + 7y + 4z = 7(k + l) \), so \( 3x + 4z = 7(k + l - y) \), with \( k + l - y \in \nZ \), and \( x \mathrel{R} z \).
+*Transitive.* Let \( x \mathrel{R} y \) and \( y \mathrel{R} z \), say \( 3x + 4y = 7k \) and \( 3y + 4z = 7l \) with \( k, l \in \nZ \). Adding, \( 3x + 7y + 4z = 7(k + l) \), so \( 3x + 4z = 7(k + l - y) \), with \( k + l - y \in \nZ \) (@prp-integers-closed (a)), and \( x \mathrel{R} z \).
 
 *Not antisymmetric.* \( 3 \cdot 0 + 4 \cdot 7 = 28 = 7 \cdot 4 \) and \( 3 \cdot 7 + 4 \cdot 0 = 21 = 7 \cdot 3 \), so \( 0 \mathrel{R} 7 \) and \( 7 \mathrel{R} 0 \), while \( 0 \ne 7 \).
 
-So \( R \) is reflexive, symmetric and transitive, and not antisymmetric.
+| reflexive | symmetric | antisymmetric | transitive |
+|---|---|---|---|
+| yes | yes | no: \( 0, 7 \) | yes |
 :::
 
 Three verdicts needed a proof about all integers, and one needed a single pair: that asymmetry of effort is the method.
@@ -190,7 +192,7 @@ On the set \( \{2, 3, 4, \dots\} \) of integers \( \ge 2 \), let \( x \mathrel{C
 :::
 
 ::: {.solution}
-Reflexive: every integer \( x \ge 2 \) has a prime factor \( p \) (@thm-prime-factor), and \( p \) divides \( x \) and \( x \). Symmetric: the condition "\( p \mid x \) and \( p \mid y \)" does not depend on the order of \( x \) and \( y \). Not antisymmetric: \( 2 \mathrel{C} 4 \) and \( 4 \mathrel{C} 2 \) (both divisible by \( 2 \)), and \( 2 \ne 4 \). Not transitive: \( 2 \mathrel{C} 6 \) (common factor \( 2 \)) and \( 6 \mathrel{C} 3 \) (common factor \( 3 \)), but \( 2 \) and \( 3 \) have no common prime factor, since a prime dividing \( 2 \) is a positive divisor of \( 2 \) that is at least \( 2 \), hence is \( 2 \) (the example in Section 2.2's subsection on divisibility), and \( 2 \nmid 3 \): \( 3 = 2k \) would give \( 1 < k < 2 \), and no integer lies there (@prp-integers-closed (c)). Sharing a factor with a middle element does not pass along, because the shared factor may change.
+Reflexive: every integer \( x \ge 2 \) has a prime factor \( p \) (@thm-prime-factor), and \( p \) divides \( x \) and \( x \). Symmetric: the condition "\( p \mid x \) and \( p \mid y \)" does not depend on the order of \( x \) and \( y \). Not antisymmetric: \( 2 \mathrel{C} 4 \) and \( 4 \mathrel{C} 2 \) (both divisible by \( 2 \)), and \( 2 \ne 4 \). Not transitive: \( 2 \mathrel{C} 6 \) (common factor \( 2 \)) and \( 6 \mathrel{C} 3 \) (common factor \( 3 \)), but \( 2 \) and \( 3 \) have no common prime factor, since \( 2 \) is prime (Section 1.1, after @def-prime), so a prime dividing \( 2 \), being a positive divisor of \( 2 \) other than \( 1 \), is \( 2 \); and \( 2 \nmid 3 \): \( 3 = 2k \) would give \( 1 < k < 2 \), and no integer lies there (@prp-integers-closed (c)). Sharing a factor with a middle element does not pass along, because the shared factor may change.
 :::
 
 ::: {.warning}
@@ -228,7 +230,7 @@ Two combinations of the properties organize the rest of the chapter. A relation 
 
 (d) Four. A reflexive relation must contain \( (p, p) \) and \( (q, q) \). The other two pairs of \( X \times X \), \( (p, q) \) and \( (q, p) \), may each be in or out, independently, which gives \( 2 \cdot 2 = 4 \) relations: \( \{(p, p), (q, q)\} \) together with one of \( \emptyset \), \( \{(p, q)\} \), \( \{(q, p)\} \), \( \{(p, q), (q, p)\} \).
 
-(e) Three elements \( x, y, z \) with \( x \mathrel{R} y \), \( y \mathrel{R} z \) and not \( x \mathrel{R} z \) (the witness form of @def-relation-properties). To show transitivity, assume arbitrary \( x, y, z \in X \) with \( x \mathrel{R} y \) and \( y \mathrel{R} z \), and derive \( x \mathrel{R} z \) (@exm-method-relation-properties).
+(e) Elements \( x, y, z \) (not necessarily distinct) with \( x \mathrel{R} y \), \( y \mathrel{R} z \) and not \( x \mathrel{R} z \) (the witness form of @def-relation-properties). To show transitivity, assume arbitrary \( x, y, z \in X \) with \( x \mathrel{R} y \) and \( y \mathrel{R} z \), and derive \( x \mathrel{R} z \) (@exm-method-relation-properties).
 :::
 
 ### B. Practice
@@ -373,9 +375,10 @@ exm-checking-a-relation (solution): 28 = 7*4, 21 = 7*3; the symmetry and transit
 exm-checking-a-relation (claim): (the Quick check after the box) 8 and 20 are not multiples of 7 | prp-integers-closed (c) (cited); sidecar verify/ch04/exm-checking-a-relation.py
 exr-relations-b4 (solution): (e) 2 is not a multiple of 3 | prp-integers-closed (c) (cited); (a) R^{-1} as in def-relation (cited); sidecar verify/ch04/exr-relations-b4.py
 exm-relation-table (solution): reflexivity of <= (x = x); antisymmetry and transitivity of <= and < on R; not 0 < 0; not 1 <= 0 | R order, school fact; axioms in AN1.1
-exm-relation-table (solution): reflexivity and transitivity of subset | def-subset (cited); transitivity of inclusion, F2.1 §01
+exm-relation-table (solution): reflexivity and transitivity of subset | def-subset (cited); prp-subset-transitive (cited)
 exm-relation-table (solution): 2 does not divide 1 (no integer strictly between 0 and 1) | prp-integers-closed (c) (cited)
 exm-relation-table (claim): (the degenerate cases) the full relation X x X is antisymmetric only if X has at most one element | inline (two different elements are related both ways)
+exm-relation-table (solution): (the Quick check on common prime factors) the only prime dividing 2 is 2; 3 = 2k gives 1 < k < 2 | def-prime (cited), 2 prime as in the example after def-prime (fd2 1.1); prp-integers-closed (c) (cited)
 exr-relations-b1 (solution): cancellation in R; y^2 > 0 for y != 0; product of positives is positive | R arithmetic and order, school fact
 exr-relations-b1 (solution): x = x + 2 is impossible | R arithmetic, school fact
 exr-relations-b2 (solution): the list of two-step paths in R is complete | inline, by listing the pairs of R
