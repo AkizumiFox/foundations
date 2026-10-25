@@ -1,4 +1,4 @@
-"""thm-composition-injective-surjective, and exercises B2, C1, C2 of Ch 6 Section 6.4:
+"""thm-composition-injective-surjective, and exercises B2, C1, C2 of Section 2.2:
 brute force over all functions between sets of sizes 0..3."""
 import sys
 sys.path.insert(0, "verify/ch01")

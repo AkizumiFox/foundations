@@ -1,4 +1,4 @@
-"""exr-inverses-b3 (Ch 6, Section 6.5): h(x) = x/(1-|x|) on (-1,1) and k(y) = y/(1+|y|)."""
+"""exr-inverses-b3 (Section 2.4): h(x) = x/(1-|x|) on (-1,1) and k(y) = y/(1+|y|)."""
 from fractions import Fraction as F
 QUOTED = {"h": "x/(1 - \\abs{x})", "k": "y/(1 + \\abs{y})"}
 h = lambda x: x / (1 - abs(x))

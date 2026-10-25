@@ -1,4 +1,4 @@
-"""exm-image-two-witnesses (Ch 6, Section 6.6): squaring, A = {-1}, B = {1}."""
+"""exm-image-two-witnesses (Section 2.5): squaring, A = {-1}, B = {1}."""
 QUOTED = {"f(A) and f(B)": [1], "A": -1}
 f = lambda x: x * x
 A, B = {-1}, {1}

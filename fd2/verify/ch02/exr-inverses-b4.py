@@ -1,4 +1,4 @@
-"""exr-inverses-b4 (Section 1.6) and the section's new quick checks: verdicts and witnesses."""
+"""exr-inverses-b4 (Section 2.4) and the section's new quick checks: verdicts and witnesses."""
 from itertools import product
 from fractions import Fraction as F
 QUOTED = {"(a) shift": 3, "(b) smallest value": 3, "(c) g at m < 3": 0, "(e) verdict": False,

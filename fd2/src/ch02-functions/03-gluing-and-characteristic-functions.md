@@ -128,7 +128,7 @@ So \( f \coloneqq (G, Y) \) is a function \( X \to Y \). Let \( i \in I \). Both
 
 In the existence part, the proof used the cover only for (Fn1) and agreement only for (Fn2). Each hypothesis is needed. If a point \( x \) lies in no \( A_i \), the union graph has no pair with first coordinate \( x \), and (Fn1) fails; the theorem fails too: for \( X = Y = \{0, 1\} \), \( A_1 = \{0\} \) and \( f_1(0) = 0 \), both ways of choosing the value at \( 1 \) give a function \( f \) with \( f|_{A_1} = f_1 \), so "exactly one" fails. The rule \( r \) of the hook shows two pieces that cover \( \nR \) and disagree at \( 0 \), where (Fn2) fails.
 
-The theorem is used so often that its use deserves a template. Step (4) is the step that Example (c) below turns on.
+The theorem is used so often that its use deserves a template. Step (4) is the step that part (c) of @exm-piecewise-as-gluing below turns on.
 
 ::: {#exm-method-gluing}
 [Method: define a function by gluing]

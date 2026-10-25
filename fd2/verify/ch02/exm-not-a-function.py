@@ -1,4 +1,4 @@
-"""exm-not-a-function (Ch 6 Section 6.4): the circle at x = 0 and x = 2; 1/2 = 2/4."""
+"""exm-not-a-function (Section 2.1): the circle at x = 0 and x = 2; 1/2 = 2/4."""
 from fractions import Fraction as F
 
 QUOTED = {"y^2 at x = 2": -3, "numerators of 1/2": (1, 2)}

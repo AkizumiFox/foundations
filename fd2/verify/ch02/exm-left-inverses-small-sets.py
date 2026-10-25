@@ -1,4 +1,4 @@
-"""exm-left-inverses-small-sets (Ch 6, Section 6.5): inclusion e: {1,2} -> {1,2,3}, g, constant c."""
+"""exm-left-inverses-small-sets (Section 2.4): inclusion e: {1,2} -> {1,2,3}, g, constant c."""
 from itertools import product
 QUOTED = {"e(g(3))": 2, "g(3)": 2}
 e = {1: 1, 2: 2}

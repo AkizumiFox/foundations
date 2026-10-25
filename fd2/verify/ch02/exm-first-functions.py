@@ -1,4 +1,4 @@
-"""exm-first-functions and the quick check after exm-not-a-function (Ch 6 Section 6.4):
+"""exm-first-functions and the quick check after exm-not-a-function (Section 2.1):
 the listed graphs satisfy (Fn1)/(Fn2) or fail the named clause; indicator ranges."""
 import sys
 sys.path.insert(0, "verify/ch01")

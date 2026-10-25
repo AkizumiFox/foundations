@@ -1,4 +1,4 @@
-"""exm-function-set-small (Ch 6 Section 6.4): {0,1}^{1,2} has four elements, each an indicator.
+"""exm-function-set-small (Section 2.1): {0,1}^{1,2} has four elements, each an indicator.
 Also the five-string game and the Quick check after it (moved from exm-fraction-map.py with
 the re-cut): the indicator of {1, 4} in {1,...,5} is 10010, the value of 01100 at 2 is 1,
 and there are 32 strings of length 5."""

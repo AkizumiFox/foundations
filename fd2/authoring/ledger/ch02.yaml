@@ -396,6 +396,13 @@ items:
     date: '2026-10-10'
     model: claude-opus-5-5
     evidence: '04:237: 2x + 2 and 2x + 1 differ at 0 (2 ≠ 1); sidecar passes.'
+  - stage: S8
+    verdict: correct
+    by: coordinator
+    hash: dd1780314c06
+    date: '2026-10-26'
+    evidence: 01-functions-and-composition.md:498 ledger line for the h o g = f Quick check re-keyed to
+      prp-composition-associative; exm-composition-order body unchanged, sidecar passes
 - key: exm-root-and-square
   kind: exm
   file: 01-functions-and-composition.md
@@ -445,6 +452,13 @@ items:
     date: '2026-10-10'
     model: claude-opus-5-5
     evidence: '04:247-251: the statement is standard and the hypotheses are minimal.'
+  - stage: S8
+    verdict: correct
+    by: coordinator
+    hash: 307a0816d13a
+    date: '2026-10-26'
+    evidence: 01-functions-and-composition.md:298-326 proof rechecked; ledger line 498 now keys the Quick
+      check after it (h(y)=2y+1, h(g(x))=2x+3), checked in verify/ch02/exm-composition-order.py
 - key: proof:prp-composition-associative
   kind: proof
   file: 01-functions-and-composition.md
@@ -471,7 +485,7 @@ items:
   kind: check
   file: 01-functions-and-composition.md
   line: 320
-  hash: 8f322564403c
+  hash: 5db7912613ab
   verdicts:
   - stage: S5a
     verdict: correct
@@ -505,10 +519,23 @@ items:
     model: claude-opus-5-5
     evidence: 'New check: h(y) = 2(y-1)+3 = 2y+1; h(g(x)) = 2(x+1)+1 = 2x+3 = f(x); equality by prp-function-equality.
       Ledger line present.'
+- key: check:01-functions-and-composition:5
+  kind: check
+  file: 01-functions-and-composition.md
+  line: 328
+  hash: 8f322564403c
+  verdicts:
+  - stage: S8
+    verdict: correct
+    by: coordinator
+    hash: 8f322564403c
+    date: '2026-10-26'
+    evidence: '01-functions-and-composition.md:328-333: (g o f)(2)=g(4)=1, (f o g)(2)=f(-1)=1; at 0: -3
+      vs 9; checked in verify/ch02/exm-composition-order.py'
 - key: exr-functions-and-composition-a1
   kind: exr
   file: 01-functions-and-composition.md
-  line: 332
+  line: 340
   hash: 70dd5f56888b
   verdicts:
   - stage: S5a
@@ -544,7 +571,7 @@ items:
 - key: exr-functions-and-composition-b1
   kind: exr
   file: 01-functions-and-composition.md
-  line: 355
+  line: 363
   hash: df157e918b62
   verdicts:
   - stage: S5a
@@ -574,11 +601,20 @@ items:
     evidence: 01-functions-and-composition.md:363 B1(c) asks the reader to construct h with h∘g=f, and
       no worked example in §2.1 shows how to construct a factor of a composite. This breaks the PIPELINE
       S6 rule that every B-type task has a worked example in the section.
+  - stage: S8
+    verdict: correct
+    by: coordinator
+    hash: df157e918b62
+    date: '2026-10-26'
+    evidence: 'S6 ''no worked example'' rejected: 01-functions-and-composition.md:320-326 Quick check
+      after prp-composition-associative works h with h o g = f in full (invert g, substitute, verify by
+      prp-function-equality), the exact pattern of B1(c); B1 math rechecked (2x^2-1, 4x^2-12x+10, x=3±sqrt(14)/2,
+      h(y)=(y^2+6y+13)/4)'
 - key: exr-functions-and-composition-b2
   kind: exr
   file: 01-functions-and-composition.md
-  line: 387
-  hash: 4a7ae8e849a2
+  line: 395
+  hash: 7ac836f7ef20
   verdicts:
   - stage: S5a
     verdict: correct
@@ -623,7 +659,7 @@ items:
 - key: exr-functions-and-composition-b3
   kind: exr
   file: 01-functions-and-composition.md
-  line: 412
+  line: 420
   hash: 3c2c7aa5c53c
   verdicts:
   - stage: S5a
@@ -657,7 +693,7 @@ items:
 - key: exr-functions-and-composition-c1
   kind: exr
   file: 01-functions-and-composition.md
-  line: 432
+  line: 440
   hash: 8cc34b56c49d
   verdicts:
   - stage: S5a
@@ -690,8 +726,8 @@ items:
 - key: exr-functions-and-composition-c2
   kind: exr
   file: 01-functions-and-composition.md
-  line: 455
-  hash: c1479586171a
+  line: 463
+  hash: 30280b8ccadc
   verdicts:
   - stage: S5a
     verdict: correct
@@ -1061,6 +1097,14 @@ items:
     model: claude-opus-5-5
     evidence: 02-injections-and-surjections.md:311 Section 2.4 re-proves results that the new proposition
       in 2.2 already gives, and 2.2's pointer 'Section 2.4 builds on this' is not honoured.
+  - stage: S8
+    verdict: correct
+    by: coordinator
+    hash: cecae3eef61f
+    date: '2026-10-26'
+    evidence: 02-injections-and-surjections.md:311 now says Section 2.4 proves the id_X case again as
+      thm-left-inverse-iff-injective (a); 04-inverses.md:158 and :221 acknowledge prp-composite-partial-converse
+      (a),(b); seam resolved; proof 02:303-307 rechecked
 - key: proof:prp-composite-partial-converse
   kind: proof
   file: 02-injections-and-surjections.md
@@ -1098,7 +1142,7 @@ items:
   kind: exm
   file: 02-injections-and-surjections.md
   line: 317
-  hash: 3aba671588c5
+  hash: bbfcf0266753
   verdicts:
   - stage: S5a
     verdict: minor
@@ -1168,7 +1212,7 @@ items:
   kind: exm
   file: 02-injections-and-surjections.md
   line: 367
-  hash: a0de31c3ca71
+  hash: 4be9d519d607
   verdicts:
   - stage: S5a
     verdict: minor
@@ -1207,6 +1251,14 @@ items:
     model: claude-opus-5-5
     evidence: '(c) injectivity: the case r ≠ r'' is reduced to (0,1) by symmetry, and then 2q = 2q''+1
       contradicts thm-even-or-odd. Surjectivity follows from thm-even-or-odd.'
+  - stage: S8
+    verdict: correct
+    by: coordinator
+    hash: 4be9d519d607
+    date: '2026-10-26'
+    evidence: 02-injections-and-surjections.md:384 (c) now gives r, r' in {0,1} as the reason only (0,1),(1,0)
+      remain (@exm-method-cases) and uses symmetry only for WLOG r=0, r'=1; 2q=2q'+1 even and odd excluded
+      by thm-even-or-odd; (a),(b) rechecked; sidecar exm-maps-from-algebra.py passes
 - key: prp-strictly-monotone-injective
   kind: prp
   file: 02-injections-and-surjections.md
@@ -1273,6 +1325,14 @@ items:
     model: claude-opus-5-5
     evidence: 02-injections-and-surjections.md:408 Floor is introduced for real arguments in F2.6 §02,
       but NOTATION.md still records its first definition as F3.2 §05, for rationals only.
+  - stage: S8
+    verdict: correct
+    by: coordinator
+    hash: aae4ca4cb6a5
+    date: '2026-10-26'
+    evidence: 02-injections-and-surjections.md:401-415 floor on R, cube roots, D map rechecked; section
+      text correct; the NOTATION.md floor first-use note is a shared-file item (shared-todo F005), not
+      a defect of the section
 - key: check:02-injections-and-surjections:4
   kind: check
   file: 02-injections-and-surjections.md
@@ -1749,7 +1809,7 @@ items:
   kind: exr
   file: 02-injections-and-surjections.md
   line: 706
-  hash: 168458b736bc
+  hash: 313c1d74b428
   verdicts:
   - stage: S5a
     verdict: correct
@@ -1823,7 +1883,7 @@ items:
   kind: exr
   file: 02-injections-and-surjections.md
   line: 735
-  hash: 06aa7b9c07e1
+  hash: a4e7362fdb10
   verdicts:
   - stage: S5a
     verdict: correct
@@ -1999,7 +2059,7 @@ items:
   kind: check
   file: 03-gluing-and-characteristic-functions.md
   line: 80
-  hash: 6dfc54c01f45
+  hash: dbecc55b73c4
   verdicts:
   - stage: S5a
     verdict: correct
@@ -2186,6 +2246,13 @@ items:
     evidence: 'The lead sentence at 03:131 can now be checked, but it says ''Example (c) below''. No example
       is numbered (c): the thing meant is part (c) of exm-piecewise-as-gluing. The box itself is unchanged
       and correct.'
+  - stage: S8
+    verdict: correct
+    by: coordinator
+    hash: 7ab17dbca51f
+    date: '2026-10-26'
+    evidence: 03-gluing-and-characteristic-functions.md:131 now reads 'part (c) of @exm-piecewise-as-gluing
+      below'; 03:163 part (c) turns on step (4); box 133-141 matches thm-gluing
 - key: exm-piecewise-as-gluing
   kind: exm
   file: 03-gluing-and-characteristic-functions.md
@@ -2468,6 +2535,14 @@ items:
     model: claude-opus-5-5
     evidence: 03-gluing-and-characteristic-functions.md:320 The Looking-ahead remark is a forward pointer
       to Chapter 4 (F2.3) with no row in STATUS's promise table.
+  - stage: S8
+    verdict: correct
+    by: coordinator
+    hash: 6193ea55001d
+    date: '2026-10-26'
+    evidence: 03-gluing-and-characteristic-functions.md:307-320 both maps well defined and mutually inverse;
+      Looking-ahead pointer to Chapter 4 (F2.3) is prose; its STATUS promise row is a shared-file item
+      (shared-todo F013)
 - key: proof:thm-power-set-two-power
   kind: proof
   file: 03-gluing-and-characteristic-functions.md
@@ -2747,7 +2822,7 @@ items:
   kind: exr
   file: 03-gluing-and-characteristic-functions.md
   line: 431
-  hash: 5446bb61ffd9
+  hash: 12d2c6b79ed8
   verdicts:
   - stage: S5a
     verdict: correct
@@ -2993,7 +3068,7 @@ items:
 - key: exm-method-construct-and-verify
   kind: exm
   file: 04-inverses.md
-  line: 167
+  line: 169
   hash: a25e255fdd26
   verdicts:
   - stage: S5a
@@ -3035,7 +3110,7 @@ items:
 - key: check:04-inverses:2
   kind: check
   file: 04-inverses.md
-  line: 177
+  line: 179
   hash: 8e9097a43430
   verdicts:
   - stage: S5a
@@ -3078,7 +3153,7 @@ items:
 - key: exm-left-inverse-construction
   kind: exm
   file: 04-inverses.md
-  line: 187
+  line: 189
   hash: 9c2c19e30d10
   verdicts:
   - stage: S5a
@@ -3099,7 +3174,7 @@ items:
 - key: prp-right-inverse-surjective
   kind: prp
   file: 04-inverses.md
-  line: 209
+  line: 211
   hash: 2724195b95b6
   verdicts:
   - stage: S5a
@@ -3131,7 +3206,7 @@ items:
 - key: proof:prp-right-inverse-surjective
   kind: proof
   file: 04-inverses.md
-  line: 215
+  line: 217
   hash: 54b6630a5e84
   verdicts:
   - stage: S5a
@@ -3161,7 +3236,7 @@ items:
 - key: exm-right-inverses-finite
   kind: exm
   file: 04-inverses.md
-  line: 223
+  line: 227
   hash: b1f24ac3dee8
   verdicts:
   - stage: S5a
@@ -3181,7 +3256,7 @@ items:
 - key: prp-inverse-unique
   kind: prp
   file: 04-inverses.md
-  line: 257
+  line: 261
   hash: 79f11c83b184
   verdicts:
   - stage: S5a
@@ -3202,7 +3277,7 @@ items:
 - key: proof:prp-inverse-unique
   kind: proof
   file: 04-inverses.md
-  line: 267
+  line: 271
   hash: f63980805b70
   verdicts:
   - stage: S5a
@@ -3245,7 +3320,7 @@ items:
 - key: def-inverse-function
   kind: def
   file: 04-inverses.md
-  line: 278
+  line: 282
   hash: 9a7913c7e175
   verdicts:
   - stage: S5a
@@ -3287,7 +3362,7 @@ items:
 - key: exm-two-sided-inverses
   kind: exm
   file: 04-inverses.md
-  line: 296
+  line: 300
   hash: 338cc23bb3db
   verdicts:
   - stage: S5a
@@ -3309,7 +3384,7 @@ items:
 - key: check:04-inverses:3
   kind: check
   file: 04-inverses.md
-  line: 330
+  line: 334
   hash: 27c4c8218125
   verdicts:
   - stage: S5a
@@ -3332,7 +3407,7 @@ items:
 - key: thm-bijection-iff-inverse
   kind: thm
   file: 04-inverses.md
-  line: 340
+  line: 344
   hash: ca116b882c55
   verdicts:
   - stage: S5a
@@ -3353,7 +3428,7 @@ items:
 - key: proof:thm-bijection-iff-inverse
   kind: proof
   file: 04-inverses.md
-  line: 352
+  line: 356
   hash: 71283e1a30d4
   verdicts:
   - stage: S5a
@@ -3387,7 +3462,7 @@ items:
 - key: check:04-inverses:4
   kind: check
   file: 04-inverses.md
-  line: 364
+  line: 368
   hash: 2460bbbbdc74
   verdicts:
   - stage: S5a
@@ -3411,7 +3486,7 @@ items:
 - key: check:04-inverses:5
   kind: check
   file: 04-inverses.md
-  line: 386
+  line: 390
   hash: 39ba61d81f66
   verdicts:
   - stage: S5a
@@ -3437,7 +3512,7 @@ items:
 - key: exr-inverses-a1
   kind: exr
   file: 04-inverses.md
-  line: 408
+  line: 412
   hash: adf647ea19aa
   verdicts:
   - stage: S5a
@@ -3469,7 +3544,7 @@ items:
 - key: exr-inverses-b1
   kind: exr
   file: 04-inverses.md
-  line: 436
+  line: 440
   hash: c795d36d7163
   verdicts:
   - stage: S5a
@@ -3500,7 +3575,7 @@ items:
 - key: exr-inverses-b2
   kind: exr
   file: 04-inverses.md
-  line: 451
+  line: 455
   hash: 7d1d91f7834c
   verdicts:
   - stage: S5a
@@ -3550,7 +3625,7 @@ items:
 - key: exr-inverses-b3
   kind: exr
   file: 04-inverses.md
-  line: 476
+  line: 480
   hash: 1a13fcd2f4d9
   verdicts:
   - stage: S5a
@@ -3581,7 +3656,7 @@ items:
 - key: exr-inverses-b4
   kind: exr
   file: 04-inverses.md
-  line: 509
+  line: 513
   hash: b625091156c9
   verdicts:
   - stage: S5a
@@ -3623,7 +3698,7 @@ items:
 - key: exr-inverses-c1
   kind: exr
   file: 04-inverses.md
-  line: 537
+  line: 541
   hash: f7bbf1414d07
   verdicts:
   - stage: S5a
@@ -3665,7 +3740,7 @@ items:
 - key: exr-inverses-c2
   kind: exr
   file: 04-inverses.md
-  line: 578
+  line: 582
   hash: 11dc618e8dc4
   verdicts:
   - stage: S5a
@@ -4760,11 +4835,20 @@ items:
     model: claude-opus-5-5
     evidence: 05-images-and-preimages.md:657 The chapter's R group reaches back only within Chapter 2.
       STYLE 11.5 asks R1 to take its method from the previous chapter, and Chapter 2 has one (Sets).
+  - stage: S8
+    verdict: correct
+    by: coordinator
+    hash: 90fc98e74d8d
+    date: '2026-10-26'
+    evidence: '05-images-and-preimages.md:659-671 gluing inverse and f^{-1}([-4,9])=[-4,3] rechecked,
+      sidecar passes; S8 ''R group reaches back only within Chapter 2'' rejected: R4 (05:705-717) uses
+      a Chapter 1 method, double inclusion via prp-subset-antisymmetric (ch01 §02), and R3 uses complements
+      (ch01 §03); R-slot order vs STYLE 11.5 is a blueprint note (shared-todo F022/F035)'
 - key: exr-images-and-preimages-r6
   kind: exr
   file: 05-images-and-preimages.md
   line: 673
-  hash: 811c6d7c0928
+  hash: 382883e53489
   verdicts:
   - stage: S5a
     verdict: correct
@@ -4880,158 +4964,3 @@ items:
     evidence: 05:705-719. Both inclusions are right ((subseteq) uses g(f(x))=x; (supseteq) has witness
       g(y)). The source is hidden in the statement and named in the solution (@def-left-right-inverse,
       @prp-subset-antisymmetric), and @prp-image-preimage (b) is quoted correctly (05:415).
-- key: exr-images-and-preimages-r1
-  kind: exr
-  file: 05-images-and-preimages.md
-  line: 630
-  hash: 45a28ff4d4a4
-  verdicts:
-  - stage: S5a
-    verdict: correct
-    by: refereeA
-    hash: 3ba4a7cda594
-    date: '2026-10-10'
-    model: claude-opus-5-5
-    evidence: 'L597-627: every rule citation checks. The eigenvariables x_0 and S_0 do not occur in the
-      open hypotheses (lines 1 and 3) or in the conclusions. ∀I at 12 cites box 6-11 and at 16 cites box
-      3-15. The five boxes are correctly matched to sentences.'
-  - stage: S5b
-    verdict: minor
-    by: refereeB
-    hash: 3ba4a7cda594
-    date: '2026-10-10'
-    model: claude-opus-5-5
-    evidence: The prose proof and the five-box map at 06:634-638 match the derivation. Ledger 744-745
-      name `ch05 (promised)` def-levels-of-proof and `ch04 (promised)` def-rules-universal, neither of
-      which is in STATUS (F1). The solution cannot name its source with @ref as §11.5 requires.
-  - stage: S6
-    verdict: correct
-    by: verifier
-    hash: 3ba4a7cda594
-    date: '2026-10-10'
-    model: claude-opus-5-5
-    evidence: 06-images-and-preimages.md:633-639. The prose proof matches mine, and the five boxes (→I
-      1-17, ∀I S0 3-15, →I 3-14, ∀I x0 6-11, →I 6-10) are correctly assigned. The source is the undelivered
-      ch05 (Section 5.3), named by a prose pointer, which is acceptable because no ch05 label exists in
-      src.
-  - stage: S7r
-    verdict: minor
-    by: rereferee
-    hash: 165690cca0aa
-    date: '2026-10-12'
-    model: claude-opus-5-5
-    evidence: 'he prose states outright: ''Hence S ⊆ B'' and ''This proves P(A) ⊆ P(B)''. The boxes paragraph
-      at line 642 itself calls line 13 something the sentence ''rewinds''. Only lines 2 and 5 are silent,
-      and only line 14 is a ''that is''. Suggested fix: ''the unwinding lines 2 and 5 go silent, line
-      4 becomes a "so" and line 14 a "that is", and the rewinding lines 13 and 17 are the two conclusions
-      the prose states.'''
-  - stage: S7r
-    verdict: correct
-    by: rereferee
-    hash: 45a28ff4d4a4
-    date: '2026-10-12'
-    model: claude-opus-5-5
-    evidence: ' valid level-3 rendering: each box-opening is spoken (''Suppose'', two ''Let''s), and the
-      →E steps that rely on the hypotheses appear as ''since S ⊆ A'' and ''since A ⊆ B''. The box map
-      in the solution matches the derivation. The pointer ''*Logic and Proof*, Section 8.3'' has the correct
-      cross-volume form. The revised closing sentence accurately describes how each def. line is rendered.
-      No remaining issues.'
-  removed: true
-- key: exr-images-and-preimages-r2
-  kind: exr
-  file: 05-images-and-preimages.md
-  line: 681
-  hash: d105429cce7e
-  verdicts:
-  - stage: S5a
-    verdict: correct
-    by: refereeA
-    hash: d105429cce7e
-    date: '2026-10-10'
-    model: claude-opus-5-5
-    evidence: 'L650-663: all 8 rows recomputed. The columns differ exactly in rows TTT and TFT. Both counterexamples
-      check. cor-refuting-row (ch03 05:266) is applied to the pattern, as ch03 itself explains.'
-  - stage: S5b
-    verdict: correct
-    by: refereeB
-    hash: d105429cce7e
-    date: '2026-10-10'
-    model: claude-opus-5-5
-    evidence: 'I recomputed all 8 rows: they differ in rows TTT and TFT, as stated. The counterexamples
-      check, and cor-refuting-row (ch03/05:266) says what is used.'
-  - stage: S6
-    verdict: correct
-    by: verifier
-    hash: d105429cce7e
-    date: '2026-10-10'
-    model: claude-opus-5-5
-    evidence: 06-images-and-preimages.md:647-666. A script reproduces all 8 rows; the columns differ at
-      TTT and TFT. A=B=C={1} gives {1} vs ∅, and A=C={1}, B=∅ also gives {1} vs ∅. The @cor-refuting-row
-      use matches its statement (ch03 05-soundness.md:266).
-  removed: true
-- key: exr-images-and-preimages-r3
-  kind: exr
-  file: 05-images-and-preimages.md
-  line: 708
-  hash: ebda37a879f9
-  verdicts:
-  - stage: S5a
-    verdict: correct
-    by: refereeA
-    hash: ebda37a879f9
-    date: '2026-10-10'
-    model: claude-opus-5-5
-    evidence: 'L680-697: LEM line, ∨I, ∧I 2,6, →E 1,7, ∨E 3,4-5,6-9, →I 2-10 are all valid. The set reading
-      uses def-derived-rule (ch02 03:100) with uniform substitution. The classical step is identified
-      correctly.'
-  - stage: S5b
-    verdict: correct
-    by: refereeB
-    hash: ebda37a879f9
-    date: '2026-10-10'
-    model: claude-opus-5-5
-    evidence: '06:680-703: the derivation is valid and LEM is line 3. prp-excluded-middle uses RAA at
-      line 8 (ch02/05:252).'
-  - stage: S6
-    verdict: correct
-    by: verifier
-    hash: ebda37a879f9
-    date: '2026-10-10'
-    model: claude-opus-5-5
-    evidence: '06-images-and-preimages.md:674-704. The derivation is valid (LEM, ∨E, ∧I, →E, →I), and
-      the set reading is correct. The classical step (LEM, line 3) is correctly identified and is necessary:
-      with R=⊥ the sequent becomes ¬(P∧¬Q) ⊢ P→Q, which is not intuitionistically valid.'
-  removed: true
-- key: exr-images-and-preimages-r4
-  kind: exr
-  file: 05-images-and-preimages.md
-  line: 746
-  hash: faf3a07684a2
-  verdicts:
-  - stage: S5a
-    verdict: correct
-    by: refereeA
-    hash: faf3a07684a2
-    date: '2026-10-10'
-    model: claude-opus-5-5
-    evidence: 'L713: T is by specification, and ⋃T is allowed for a set of sets by def-family-union-intersection
-      (02:197 last clause). Every set x lies in {x}∈T, so ⋃T contains every set, which contradicts the
-      second clause of thm-russell (01:322).'
-  - stage: S5b
-    verdict: correct
-    by: refereeB
-    hash: faf3a07684a2
-    date: '2026-10-10'
-    model: claude-opus-5-5
-    evidence: thm-russell (01:322-325) states both 'R_A ∉ A' and 'no set of all sets', matching the solution's
-      use and its look-alike remark. The ⋃𝒮 form is in def-family-union-intersection (02:212).
-  - stage: S6
-    verdict: correct
-    by: verifier
-    hash: faf3a07684a2
-    date: '2026-10-10'
-    model: claude-opus-5-5
-    evidence: 06-images-and-preimages.md:712-716. ⋃T exists by (W3) and the ⋃𝒮 form of def-family-union-intersection
-      (02-set-operations.md:197-213), and it contains every set, which contradicts the second clause of
-      thm-russell (01:322-326). The look-alike explanation is accurate. Same route as mine.
-  removed: true

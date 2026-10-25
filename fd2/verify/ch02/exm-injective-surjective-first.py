@@ -1,4 +1,4 @@
-"""exm-injective-surjective-first (Ch 6 Section 6.4)."""
+"""exm-injective-surjective-first (Section 2.2)."""
 from fractions import Fraction as F
 
 QUOTED = {"preimage formula check": True, "witness for 3n": 1}

@@ -1,4 +1,4 @@
-"""exr-inverses-c2 (Ch 6, Section 6.5): uniqueness of left inverses; left inverses of f(k) = 2k, {1,2} -> {1,2,3,4}."""
+"""exr-inverses-c2 (Section 2.4): uniqueness of left inverses; left inverses of f(k) = 2k, {1,2} -> {1,2,3,4}."""
 from itertools import product
 QUOTED = {"count": 4, "2^2": 4,
           "list": [(1, 1, 1, 2), (1, 1, 2, 2), (2, 1, 1, 2), (2, 1, 2, 2)]}

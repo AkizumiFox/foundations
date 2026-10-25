@@ -496,7 +496,7 @@ exm-equal-functions (example): (x + 1)^2 - 2x - 1 = x^2; |x| >= 0 and |x|^2 = x^
 prp-function-equality (proof): domain = set of first coordinates of the graph | inline, in the paraphrase of def-function
 def-composition (claim): f(x) in Y, so g(f(x)) is defined and in Z | inline, from (**) in def-function's paraphrase
 exm-composition-order (example): 2x + 2 != 2x + 1 | arithmetic
-exm-composition-order (claim): the Quick check on h with h o g = f: y - 1 recovers x from y = x + 1; 2(x + 1) + 1 = 2x + 3 | school algebra (F1-F2 convention)
+prp-composition-associative (claim): the Quick check after it (h with h o g = f): y - 1 recovers x from y = x + 1; 2(x + 1) + 1 = 2x + 3 | school algebra (F1-F2 convention)
 prp-empty-function (proof): empty set is a subset of every set | F2.1 §02, prose after prp-empty-set-unique (vacuous implication, cited there)
 exm-function-set-small (claim): Y^X has m^n elements for finite sets; subsets of X correspond to functions X -> {0, 1} | F2.3 §01 (prose pointers "the business of Section 4.1", "which Section 4.1 solves"); the correspondence is stated with its two maps, and nothing depends on either
 def-function (claim): m + n in N for m, n in N (addition N x N -> N, the example after the definition) | F2.2 (promised; STATUS row "F2.1 §02, §03, F2.6 §01 → F2.2", lem-naturals-arithmetic (b))

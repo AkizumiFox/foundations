@@ -1,4 +1,4 @@
-"""exm-right-inverses-finite (Ch 6, Section 6.5): parity map q: {1,2,3,4} -> {0,1}."""
+"""exm-right-inverses-finite (Section 2.4): parity map q: {1,2,3,4} -> {0,1}."""
 from itertools import product
 QUOTED = {"number of right inverses": 4,
           "the list (k(0), k(1))": [(2, 1), (2, 3), (4, 1), (4, 3)]}

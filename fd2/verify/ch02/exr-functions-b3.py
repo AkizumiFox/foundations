@@ -1,4 +1,4 @@
-"""exr-functions-b3 (Ch 6 Section 6.4): s(0) = 0, s(n) = n - 1; t(n) = n + 1 (N = {0, 1, ...})."""
+"""exr-functions-b3 (Section 2.2): s(0) = 0, s(n) = n - 1; t(n) = n + 1 (N = {0, 1, ...})."""
 
 QUOTED = {"s(0) = s(1)": 0}
 

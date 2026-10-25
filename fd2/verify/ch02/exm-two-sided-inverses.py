@@ -1,4 +1,4 @@
-"""exm-two-sided-inverses (Ch 6, Section 6.5): 3x - 2, 1/x, x|x| and their inverses."""
+"""exm-two-sided-inverses (Section 2.4): 3x - 2, 1/x, x|x| and their inverses."""
 from fractions import Fraction as F
 import math
 QUOTED = {"a(x)": "3x - 2", "a inverse": "(y + 2)/3"}

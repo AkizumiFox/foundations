@@ -1,4 +1,4 @@
-"""exr-inverses-b1 (Ch 6, Section 6.5): count left inverses of f(k)=k and right inverses of g."""
+"""exr-inverses-b1 (Section 2.4): count left inverses of f(k)=k and right inverses of g."""
 from itertools import product
 QUOTED = {"left inverses of f": 2, "right inverses of g": 2}
 f = {1: 1, 2: 2}

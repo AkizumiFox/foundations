@@ -1,4 +1,4 @@
-"""def-preimage and the other new quick checks of Section 1.7 (squaring on R; constant map), checked on fine rational grids."""
+"""def-preimage and the other new quick checks of Section 2.5 (squaring on R; constant map), checked on fine rational grids."""
 from fractions import Fraction as F
 QUOTED = {"f({-1,2})": [1, 4], "pre {9}": [-3, 3], "pre [-1,4]": [-2, 2], "f([1,3])": [1, 9],
           "pre [1,9]": [-3, -1, 1, 3], "pre [-4,9]": [-3, 3, -4, 9], "f([-3,3])": [0, 9]}

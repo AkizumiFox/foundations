@@ -1,4 +1,4 @@
-"""exr-functions-a1 (Ch 6 Section 6.4): R1-R3; 9 functions {1,2} -> {a,b,c}, 6 injective."""
+"""exr-functions-a1 (Section 2.2): R1-R3; 9 functions {1,2} -> {a,b,c}, 6 injective."""
 import sys
 sys.path.insert(0, "verify/ch01")
 from _sets import functions, injective, is_function

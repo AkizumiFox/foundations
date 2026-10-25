@@ -1,4 +1,4 @@
-"""The example after the two-readings remark (Ch 6, Section 6.6): a(x) = 3x - 2, B = [1,4]."""
+"""The example after the two-readings remark (Section 2.5): a(x) = 3x - 2, B = [1,4]."""
 from fractions import Fraction as F
 QUOTED = {"preimage": [1, 2], "B": [1, 4]}
 a = lambda x: 3 * x - 2

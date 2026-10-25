@@ -1,4 +1,4 @@
-"""exr-images-and-preimages-c3 (b) (Ch 6, Section 6.6): constant map {1,2} -> {0}."""
+"""exr-images-and-preimages-c3 (b) (Section 2.5): constant map {1,2} -> {0}."""
 QUOTED = {"A": [1], "B": [2], "value": 0}
 f = {1: 0, 2: 0}
 img = lambda S: {f[s] for s in S}

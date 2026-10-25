@@ -1,4 +1,4 @@
-"""The warning after def-surjective (Ch 6 Section 6.4): x^2 + x hits 0, 2, 6, 12 at 0, 1, 2, 3,
+"""The warning after def-surjective (Section 2.2): x^2 + x hits 0, 2, 6, 12 at 0, 1, 2, 3,
 and never -1, since x^2 + x + 1 = (x + 1/2)^2 + 3/4."""
 from fractions import Fraction as F
 

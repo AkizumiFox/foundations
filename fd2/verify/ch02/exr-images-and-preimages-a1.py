@@ -1,4 +1,4 @@
-"""exr-images-and-preimages-a1 (b) (Ch 6, Section 6.6): squaring, B1 = [0,4], B2 = [1,9]."""
+"""exr-images-and-preimages-a1 (b) (Section 2.5): squaring, B1 = [0,4], B2 = [1,9]."""
 from fractions import Fraction as F
 QUOTED = {"B1": [0, 4], "B2": [1, 9], "f^{-1}(B2) endpoints": [-3, -1, 1, 3]}
 xs = [F(k, 100) for k in range(-500, 501)]

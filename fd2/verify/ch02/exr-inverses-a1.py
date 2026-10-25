@@ -1,4 +1,4 @@
-"""exr-inverses-a1 (c) (Ch 6, Section 6.5): f(k) = k + 1 on {1,2,3} -> {1,2,3,4}, x_0 = 3."""
+"""exr-inverses-a1 (c) (Section 2.4): f(k) = k + 1 on {1,2,3} -> {1,2,3,4}, x_0 = 3."""
 QUOTED = {"g(2)": 1, "g(3)": 2, "g(4)": 3, "g(1)": 3}
 X, Y, x0 = [1, 2, 3], [1, 2, 3, 4], 3
 f = {k: k + 1 for k in X}

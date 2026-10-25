@@ -1,4 +1,4 @@
-"""exm-images-of-square (Ch 6, Section 6.6) and the quick check after it: squaring on R."""
+"""exm-images-of-square (Section 2.5) and the quick check after it: squaring on R."""
 from fractions import Fraction as F
 QUOTED = {"f([-1,2]) = [0, c]": 4, "preimage of [1,4] endpoints": [-2, -1, 1, 2],
           "check: preimage of {4}": [-2, 2]}

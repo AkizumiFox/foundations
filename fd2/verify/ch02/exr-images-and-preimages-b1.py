@@ -1,4 +1,4 @@
-"""exr-images-and-preimages-b1 (Ch 6, Section 6.6): m - n, the indicator of [0,1], x^2 - 2x."""
+"""exr-images-and-preimages-b1 (Section 2.5): m - n, the indicator of [0,1], x^2 - 2x."""
 from fractions import Fraction as F
 import math
 QUOTED = {"g([0,3])": [-1, 3], "g^{-1}({0})": [0, 2], "g^{-1}([-1,0])": [0, 2]}

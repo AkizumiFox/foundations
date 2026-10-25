@@ -1,4 +1,4 @@
-"""exm-left-inverse-construction (Ch 6, Section 6.5): f: {1,2} -> {a,b,c}, 1->a, 2->c."""
+"""exm-left-inverse-construction (Section 2.4): f: {1,2} -> {a,b,c}, 1->a, 2->c."""
 from itertools import product
 QUOTED = {"number of left inverses": 2, "x_0 = 1 gives g(b)": 1, "x_0 = 2 gives g'(b)": 2}
 X, Y = [1, 2], ["a", "b", "c"]

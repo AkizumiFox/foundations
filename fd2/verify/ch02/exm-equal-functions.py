@@ -1,4 +1,4 @@
-"""exm-equal-functions (Ch 6 Section 6.4): (x+1)^2 - 2x - 1 = x^2 and sqrt(x^2) = |x|,
+"""exm-equal-functions (Section 2.1): (x+1)^2 - 2x - 1 = x^2 and sqrt(x^2) = |x|,
 checked on rational sample points (the first as a polynomial identity: degree 2, more
 than three points)."""
 from fractions import Fraction as F

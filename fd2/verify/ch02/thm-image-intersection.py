@@ -1,4 +1,4 @@
-"""The opening question of Ch 6, Section 6.6 (the witness for thm-image-intersection):
+"""The opening question of Section 2.5 (the witness for thm-image-intersection):
 squaring, A = [-1,0], B = [0,1]; preimages of C = [0,1], D = [1,4]."""
 from fractions import Fraction as F
 QUOTED = {"A": [-1, 0], "B": [0, 1], "D": [1, 4]}

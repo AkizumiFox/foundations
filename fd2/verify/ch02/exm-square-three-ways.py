@@ -1,4 +1,4 @@
-"""exm-square-three-ways (Ch 6 Section 6.4): witnesses 1, -1 against injectivity, -1 against
+"""exm-square-three-ways (Section 2.2): witnesses 1, -1 against injectivity, -1 against
 surjectivity; injectivity on [0, oo) checked on a grid."""
 from fractions import Fraction as F
 
