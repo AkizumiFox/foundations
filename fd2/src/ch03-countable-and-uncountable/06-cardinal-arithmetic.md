@@ -49,7 +49,7 @@ This is the first encoding of the section: \( e \) writes a pair as one number, 
 :::
 
 ::: {.warning}
-**No subtraction.** For numbers, \( m + k = n + k \) gives \( m = n \). For sets, \( \card{\{0\} \sqcup \nN} = \card{\emptyset \sqcup \nN} \) although \( \card{\{0\}} \ne \card{\emptyset} \) (Exercise B4 (a)). Every law below is proved by a bijection, never borrowed from the numbers.
+**No subtraction.** For numbers, \( m + k = n + k \) gives \( m = n \). For sets, \( \card{\{0\} \sqcup \nN} = \card{\emptyset \sqcup \nN} \) although \( \card{\{0\}} \ne \card{\emptyset} \): the maps \( (0, 0) \mapsto 0 \), \( (n, 1) \mapsto n + 1 \) and \( (n, 1) \mapsto n \) are bijections onto \( \nN \) (Exercise B4 (a) has the details). Every law below is proved by a bijection, never borrowed from the numbers.
 :::
 
 ## Multiplying, raising to powers, and comparing
@@ -179,7 +179,7 @@ For every \( k \in \nN \) there are \( s, n \in \nN \) with \( n \le s \) and \(
 a contradiction. So \( s = s' \), and then \( n = n' \).
 :::
 
-*The bijection.* \( \pi(m, n) \in \nN \), since \( \tau_{m+n} \in \nN \) (@lem-naturals-arithmetic (b)). For \( k \in \nN \), write \( k = \tau_s + n \) by the claim and set \( \delta(k) \coloneqq (s - n, n) \), where \( s - n \in \nN \) because \( n \le s \) (@lem-naturals-arithmetic (d)); the uniqueness in the claim makes \( \delta \) a function. Then \( \pi(\delta(k)) = \tau_{(s - n) + n} + n = \tau_s + n = k \). And \( \delta(\pi(m, n)) = (m, n) \), by the uniqueness applied to \( k = \tau_{m+n} + n \), where \( s = m + n \ge n \). By @thm-bijection-iff-inverse, \( \pi \) is a bijection.
+*The bijection.* \( \pi(m, n) \in \nN \), since \( \tau_{m+n} \in \nN \), by @thm-induction on \( s \) from \( \tau_0 = 0 \) and \( \tau_{s+1} = \tau_s + s + 1 \) with @lem-naturals-arithmetic (b). For \( k \in \nN \), write \( k = \tau_s + n \) by the claim and set \( \delta(k) \coloneqq (s - n, n) \), where \( s - n \in \nN \) because \( n \le s \) (@lem-naturals-arithmetic (d)); the uniqueness in the claim makes \( \delta \) a function. Then \( \pi(\delta(k)) = \tau_{(s - n) + n} + n = \tau_s + n = k \). And \( \delta(\pi(m, n)) = (m, n) \), by the uniqueness applied to \( k = \tau_{m+n} + n \), where \( s = m + n \ge n \). By @thm-bijection-iff-inverse, \( \pi \) is a bijection.
 
 A table of the first values: \( \pi(0, 0) = 0 \), \( \pi(1, 0) = 1 \), \( \pi(0, 1) = 2 \), \( \pi(2, 0) = 3 \), \( \pi(1, 1) = 4 \), \( \pi(0, 2) = 5 \). Decoding \( 11 \): \( \tau_4 = 10 \le 11 < 15 = \tau_5 \), so \( 11 = \tau_4 + 1 \) and \( \delta(11) = (3, 1) \).
 :::
@@ -274,7 +274,7 @@ Law (f) is called **currying**: a function of two variables becomes a function w
 
 **When to use it.** A law familiar from numbers, such as \( m^{n+k} = m^n m^k \), is claimed for sets of any size; or a size is to be computed by rewriting a set step by step.
 
-**The usual failure.** Computing with symbols, as in "\( \card{X}^{\card{Y} + \card{Z}} = \card{X}^{\card{Y}} \card{X}^{\card{Z}} \)", when no number \( \card{X} \) exists and the step is the law itself: (N9) of @fd1:exm-not-allowed-catalogue. Dropping the tags: with \( \cup \) in place of \( \sqcup \) the law fails (Exercise B4 (b)).
+**The usual failure.** Computing with symbols, as in "\( \card{X}^{\card{Y} + \card{Z}} = \card{X}^{\card{Y}} \card{X}^{\card{Z}} \)", when no number \( \card{X} \) exists and the step is the law itself: (N9) of @fd1:exm-not-allowed-catalogue. Dropping the tags: with \( \cup \) in place of \( \sqcup \) the law fails: for \( X = \{0, 1\} \) and \( Y = Z = \{0\} \), \( X^{Y \cup Z} \) has \( 2 \) elements and \( X^Y \times X^Z \) has \( 4 \) (Exercise B4 (b)).
 :::
 
 ::: {.check}
@@ -340,18 +340,18 @@ Injections both ways (@exm-method-injections-both-ways). Into the 0–1 sequence
 :::
 
 ::: {.proof}
-Let \( T \coloneqq \{0, 1, \dots, 9\} \) and \( D \coloneqq T^{\nZ_{>0}} \), the set of digit sequences (@def-decimal-expansion).
+Let \( T \coloneqq \{0, 1, \dots, 9\} \) and \( W \coloneqq T^{\nZ_{>0}} \), the set of digit sequences (@def-decimal-expansion).
 
-*\( \card{[0, 1)} \le \card{D} \).* This is the step of the proof of @thm-reals-uncountable-decimal. Send \( x \) to its expansion not ending in all \( 9 \)s: one exists by (D1), and only one by (D3), so the rule is a function and no choice is made. It is injective, since a digit sequence is an expansion of only one number, by (D2).
+*\( \card{[0, 1)} \le \card{W} \).* This is the step of the proof of @thm-reals-uncountable-decimal. Send \( x \) to its expansion not ending in all \( 9 \)s: one exists by (D1), and only one by (D3), so the rule is a function and no choice is made. It is injective, since a digit sequence is an expansion of only one number, by (D2).
 
-*\( \card{D} \le \card{\{0, 1\}^{\nN}} \).* The map \( n \mapsto n + 1 \) is a bijection \( \nN \to \nZ_{>0} \), so \( \card{D} = \card{T^{\nN}} \) (@prp-card-operations-well-defined (c)). The map \( t \mapsto \ind_{\{t\}} \) injects \( T \) into \( \{0, 1\}^T \), so \( \card{T^{\nN}} \le \card{(\{0, 1\}^T)^{\nN}} \) (@prp-card-operations-monotone (c), as \( \{0, 1\}^T \ne \emptyset \)), and this is \( \card{\{0, 1\}^{T \times \nN}} \) by @thm-cardinal-laws (f). A pair \( (t, n) \) is recorded by one number, by the method of @exm-method-encode: the code \( (t, n) \mapsto 10n + t \) is a bijection \( T \times \nN \to \nN \), whose decoder takes quotient and remainder on division by \( 10 \) (@thm-division-algorithm, with the quotient in \( \nN \) as in the claim in the proof of @prp-union-two-countable). So \( \card{\{0, 1\}^{T \times \nN}} = \card{\{0, 1\}^{\nN}} \) (@prp-card-operations-well-defined (c)). Composing the maps gives an injection \( D \to \{0, 1\}^{\nN} \) (@thm-composition-injective-surjective (a)).
+*\( \card{W} \le \card{\{0, 1\}^{\nN}} \).* The map \( n \mapsto n + 1 \) is a bijection \( \nN \to \nZ_{>0} \) (inverse \( m \mapsto m - 1 \), @lem-naturals-arithmetic (c)), so \( \card{W} = \card{T^{\nN}} \) (@prp-card-operations-well-defined (c)). The map \( j \mapsto \ind_{\{j\}} \) injects \( T \) into \( \{0, 1\}^T \), so \( \card{T^{\nN}} \le \card{(\{0, 1\}^T)^{\nN}} \) (@prp-card-operations-monotone (c), as \( \{0, 1\}^T \ne \emptyset \)), and this is \( \card{\{0, 1\}^{T \times \nN}} \) by @thm-cardinal-laws (f). A pair \( (j, n) \) is recorded by one number, by the method of @exm-method-encode: the code \( (j, n) \mapsto 10n + j \) is a bijection \( T \times \nN \to \nN \), whose decoder takes quotient and remainder on division by \( 10 \) (@thm-division-algorithm, with the quotient in \( \nN \) as in the claim in the proof of @prp-union-two-countable). So \( \card{\{0, 1\}^{T \times \nN}} = \card{\{0, 1\}^{\nN}} \) (@prp-card-operations-well-defined (c)). Composing the maps gives an injection \( W \to \{0, 1\}^{\nN} \) (@thm-composition-injective-surjective (a)).
 
-*\( \card{\{0, 1\}^{\nN}} \le \card{[0, 1)} \).* For \( b \in \{0, 1\}^{\nN} \), let \( e_{k+1} \coloneqq b(k) \) for \( k \in \nN \): a digit sequence with digits \( 0 \) and \( 1 \) only. By (D2) it is an expansion of exactly one \( y_b \in [0, 1] \), and \( y_b \le t_1 + \frac{1}{10} \le \frac{2}{10} \) by @def-decimal-expansion at \( n = 1 \), so \( y_b \in [0, 1) \). If \( b \ne b' \), the two digit sequences differ. If also \( y_b = y_{b'} \), they would be two different expansions of one number, and by (D3) one of them would end in all \( 9 \)s; but neither contains a \( 9 \). So \( y_b \ne y_{b'} \), and \( b \mapsto y_b \) is injective.
+*\( \card{\{0, 1\}^{\nN}} \le \card{[0, 1)} \).* For \( b \in \{0, 1\}^{\nN} \), let \( c_{k+1} \coloneqq b(k) \) for \( k \in \nN \): a digit sequence with digits \( 0 \) and \( 1 \) only. By (D2) it is an expansion of exactly one \( y_b \in [0, 1] \), and \( y_b \le t_1 + \frac{1}{10} \le \frac{2}{10} \) by @def-decimal-expansion at \( n = 1 \), so \( y_b \in [0, 1) \). If \( b \ne b' \), the two digit sequences differ. If also \( y_b = y_{b'} \), they would be two different expansions of one number, and by (D3) one of them would end in all \( 9 \)s; but neither contains a \( 9 \). So \( y_b \ne y_{b'} \), and \( b \mapsto y_b \) is injective.
 
 *Conclusion.* By @prp-card-le-preorder (b) and @thm-schroder-bernstein, \( \card{[0, 1)} = \card{\{0, 1\}^{\nN}} \). By @exm-reals-open-interval, \( \card{[0, 1)} = \card{\nR} \), and by @thm-power-set-two-power, \( \card{\{0, 1\}^{\nN}} = \card{\powerset{\nN}} \). Chaining with @prp-equinumerous-properties proves the theorem.
 :::
 
-The first step is the one of Exercise C1 of Section 3.4. What is new is the middle step, where the laws replace that exercise's hand-built code \( 10k + d_k \), and the last, where the digits \( 0 \) and \( 1 \) suffice because (D3) needs only that no \( 9 \) appears. Neither step needed binary expansions of real numbers.
+The first step is the one of Exercise C1 of Section 3.4. What is new is the middle step, where the laws reduce the bookkeeping to the one-line code \( (j, n) \mapsto 10n + j \) in place of the set \( E(x) \) of that exercise, and the last, where the digits \( 0 \) and \( 1 \) suffice because (D3) needs only that no \( 9 \) appears. Neither step needed binary expansions of real numbers.
 
 ::: {.remark}
 [Notation in other books]
@@ -420,10 +420,10 @@ By the method of @exm-method-laws-by-bijection, with injections both ways: a 0�
 :::
 
 ::: {.proof}
-Send \( b \in \{0, 1\}^{\nN} \) to the same rule with codomain \( \nN \). This map is injective: two sequences with the same image have the same value at every point, so they are equal (@prp-function-equality). In the other direction, \( n \mapsto \ind_{\{n\}} \) is an injection \( \nN \to \{0, 1\}^{\nN} \), so \( \card{\nN^{\nN}} \le \card{(\{0, 1\}^{\nN})^{\nN}} \) (@prp-card-operations-monotone (c)). This is \( \card{\{0, 1\}^{\nN \times \nN}} \) (@thm-cardinal-laws (f)), and that is \( \card{\{0, 1\}^{\nN}} \) by @exm-pairing-bijection and @prp-card-operations-well-defined (c). By @prp-card-le-preorder (b) and @thm-schroder-bernstein, \( \card{\nN^{\nN}} = \card{\{0, 1\}^{\nN}} \), which is \( \card{\nR} \) by @thm-reals-power-set-naturals.
+Send \( b \in \{0, 1\}^{\nN} \) to the same rule with codomain \( \nN \). This map is injective: two sequences with the same image have the same value at every point, so they are equal (@prp-function-equality). In the other direction, \( n \mapsto \ind_{\{n\}} \) is an injection \( \nN \to \{0, 1\}^{\nN} \), so \( \card{\nN^{\nN}} \le \card{(\{0, 1\}^{\nN})^{\nN}} \) (@prp-card-operations-monotone (c), as \( \{0, 1\}^{\nN} \ne \emptyset \)). This is \( \card{\{0, 1\}^{\nN \times \nN}} \) (@thm-cardinal-laws (f)), and that is \( \card{\{0, 1\}^{\nN}} \) by @exm-pairing-bijection and @prp-card-operations-well-defined (c). By @prp-card-le-preorder (b) and @thm-schroder-bernstein, \( \card{\nN^{\nN}} = \card{\{0, 1\}^{\nN}} \), which is \( \card{\nR} \) by @thm-reals-power-set-naturals.
 :::
 
-Exercise B4 (d) of Section 3.4 reached the same equality through graphs and \( \powerset{\nN \times \nN} \).
+Exercise B4 (d) of Section 3.4 reached the equality \( \card{\nN^{\nN}} = \card{\{0, 1\}^{\nN}} \) through graphs and \( \powerset{\nN \times \nN} \).
 
 ::: {#cor-real-sequences}
 [Sequences of Real Numbers]
@@ -439,7 +439,7 @@ In one chain,
 &= \card{\{0, 1\}^{\nN}} = \card{\nR} ,
 \end{aligned}
 \]
-by @prp-card-operations-well-defined (c) with @thm-reals-power-set-naturals, then @thm-cardinal-laws (f), then @exm-pairing-bijection with @prp-card-operations-well-defined (c), and @thm-reals-power-set-naturals again, chained by @prp-equinumerous-properties. No appeal to @thm-schroder-bernstein is needed.
+by @prp-card-operations-well-defined (c) with @thm-reals-power-set-naturals, then @thm-cardinal-laws (f), then @exm-pairing-bijection with @prp-card-operations-well-defined (c), and @thm-reals-power-set-naturals again, chained by @prp-equinumerous-properties. No further appeal to @thm-schroder-bernstein is needed beyond the one inside @thm-reals-power-set-naturals.
 :::
 
 So both guesses of the hook were wrong. The plane is no bigger than the line, and \( \nN^{\nN} \) is no bigger either. For every infinite set \( X \) it is in fact true that \( \card{X \times X} = \card{X} \) and \( \card{X \sqcup X} = \card{X} \); in general these cannot be proved without the axiom of choice (the first is equivalent to it), and this book does not prove them.
@@ -469,7 +469,7 @@ Respecting size, @prp-card-operations-well-defined, is an instance of a requirem
 1. True or false, for every set \( A \): \( \card{\emptyset \sqcup A} = \card{A} \); \( \emptyset \times A = \emptyset \); \( A^{\emptyset} \) has exactly one element; \( \emptyset^A = \emptyset \).
 2. Under the bijection of @thm-cardinal-laws (f) with \( X = Y = \{0, 1\} \) and \( Z = \{0\} \), which element of \( (X^Y)^Z \) corresponds to \( h(y, z) \coloneqq y \)?
 3. Give an injection \( \nR \sqcup \nN \to \nR \).
-4. The proof of @thm-reals-power-set-naturals reads a 0–1 sequence as decimal digits \( 0 \) and \( 1 \). Which other pairs of digits would serve as well, by the same appeal to (D3)? Why does the pair \( 0 \) and \( 9 \) not follow from (D3) alone?
+4. The proof of @thm-reals-power-set-naturals reads a 0–1 sequence as decimal digits \( 0 \) and \( 1 \). Which other pairs of digits give an injection into \( [0, 1) \) in the same way? Why does the pair \( 0 \) and \( 9 \) not follow from (D3) alone?
 :::
 :::
 
@@ -564,7 +564,7 @@ Prove each true statement and refute each false one with a counterexample. Here 
 ::: {.solution}
 (a) False. Take \( A = \{0\} \), \( B = \emptyset \), \( C = \nN \). The map \( (0, 0) \mapsto 0 \), \( (n, 1) \mapsto n + 1 \) is a bijection \( \{0\} \sqcup \nN \to \nN \), with inverse \( 0 \mapsto (0, 0) \) and \( m \mapsto (m - 1, 1) \) for \( m \ge 1 \) (@lem-naturals-arithmetic (c)). And \( (n, 1) \mapsto n \) is a bijection \( \emptyset \sqcup \nN = \nN \times \{1\} \to \nN \). So both sides are the size of \( \nN \), while \( \card{\{0\}} \ne \card{\emptyset} \).
 
-(b) False. Take \( X = \{0, 1\} \) and \( Y = Z = \{0\} \). Then \( Y \cup Z = \{0\} \), and \( X^{Y \cup Z} \) has \( 2 \) elements, while \( X^Y \times X^Z \) has \( 2 \cdot 2 = 4 \). Finite sets with different numbers of elements are not equinumerous (@cor-finite-size-unique). The statement is true when \( Y \cap Z = \emptyset \), by Quick check 1 (c) and @thm-cardinal-laws (d).
+(b) False. Take \( X = \{0, 1\} \) and \( Y = Z = \{0\} \). Then \( Y \cup Z = \{0\} \), and \( X^{Y \cup Z} \) has \( 2 \) elements, while \( X^Y \times X^Z \) has \( 2 \cdot 2 = 4 \). Finite sets with different numbers of elements are not equinumerous (@cor-finite-size-unique). The statement is true when \( Y \cap Z = \emptyset \), by Quick check 1 (c) with @prp-card-operations-well-defined (c), and @thm-cardinal-laws (d).
 
 (c) False. Take \( X = \emptyset \), \( Y = \emptyset \), \( Y' = \{0\} \): this is the non-example after @prp-card-operations-monotone. It is true when \( X \ne \emptyset \), by @prp-card-operations-monotone (c).
 
@@ -605,7 +605,7 @@ Let \( \beta \colon \nR \to \{0, 1\}^{\nN} \) be a bijection (@thm-reals-power-s
 \]
 by @prp-card-operations-well-defined (c) with \( \beta \) and \( \id_{\nR} \); then @thm-cardinal-laws (f) with \( Y = \nN \), \( Z = \nR \); then @exr-cardinal-arithmetic-b3 (a) with @prp-card-operations-well-defined (c), now in the exponent; then @thm-power-set-two-power; chained by @prp-equinumerous-properties.
 
-For the second part, let \( \Theta \colon \nR^{\nR} \to \powerset{\nR} \) be a bijection. If \( s \colon \nR \to \nR^{\nR} \) were onto, then \( \Theta \circ s \colon \nR \to \powerset{\nR} \) would be onto (@thm-composition-injective-surjective (b)), against @thm-cantor. So there are more functions \( \nR \to \nR \) than real numbers.
+For the second part, let \( \Theta \colon \nR^{\nR} \to \powerset{\nR} \) be a bijection. If \( s \colon \nR \to \nR^{\nR} \) were onto, then \( \Theta \circ s \colon \nR \to \powerset{\nR} \) would be onto (@thm-composition-injective-surjective (b)), against @thm-cantor. Since \( x \mapsto c_x \), where \( c_x(t) \coloneqq x \) for all \( t \), is an injection \( \nR \to \nR^{\nR} \) (evaluate at \( 0 \)), and a bijection would be a surjection, \( \card{\nR} < \card{\nR^{\nR}} \) (@def-card-le): there are more functions \( \nR \to \nR \) than real numbers.
 
 **Marking scheme.** (10 points)
 - 2: replaces the base \( \nR \) by \( \{0, 1\}^{\nN} \), citing the bijection and @prp-card-operations-well-defined (c).
@@ -613,6 +613,7 @@ For the second part, let \( \Theta \colon \nR^{\nR} \to \powerset{\nR} \) be a b
 - 2: uses \( \card{\nN \times \nR} = \card{\nR} \) together with respecting size in the exponent.
 - 1: passes from \( \{0, 1\}^{\nR} \) to \( \powerset{\nR} \).
 - 2: rules out a surjection by composing with the bijection and citing @thm-cantor.
+Any other complete route (for example graphs into \( \powerset{\nR \times \nR} \), an injection \( \powerset{\nR} \to \nR^{\nR} \) and @thm-schroder-bernstein) earns the 8 points of the first part, split between the two injections.
 Fatal errors (0 for the step): computing with symbols as if sizes were numbers ("\( \mathfrak c^{\mathfrak c} = 2^{\aleph_0 \mathfrak c} \)") with no bijection behind each step.
 :::
 
@@ -653,7 +654,7 @@ Let \( B \) be the set of bijections \( \nN \to \nN \). Exercise C2 of Section 3
 
 *Down.* For \( b \in \{0, 1\}^{\nN} \), let \( \sigma_b \colon \nN \to \nN \) swap \( 2n \) and \( 2n + 1 \) when \( b(n) = 1 \), and fix them when \( b(n) = 0 \); this is a function, since each \( m \in \nN \) is \( 2n \) or \( 2n + 1 \) for exactly one \( n \). It is its own inverse, so \( \sigma_b \in B \) (@thm-bijection-iff-inverse). The map \( b \mapsto \sigma_b \) is injective, since \( b(n) = 1 \) exactly when \( \sigma_b(2n) = 2n + 1 \). This is the construction of @exr-diagonal-arguments-c2.
 
-By @thm-schroder-bernstein, \( \card{B} = \card{\{0, 1\}^{\nN}} \), and this is \( \card{\nR} \) by @thm-reals-power-set-naturals.
+Composing the *Up* injection with a bijection \( \nR \to \{0, 1\}^{\nN} \) (@thm-reals-power-set-naturals) gives \( \card{B} \le \card{\{0, 1\}^{\nN}} \) (@prp-card-le-preorder (b)); by @thm-schroder-bernstein, \( \card{B} = \card{\{0, 1\}^{\nN}} \), and this is \( \card{\nR} \) by @thm-reals-power-set-naturals.
 
 **Marking scheme.** (10 points)
 - 3: shows \( \card{B} \le \card{\nR} \), through \( B \subseteq \nN^{\nN} \) and @thm-baire-space-reals.
@@ -742,17 +743,18 @@ def-disjoint-union (claim): every element is (a, 0) or (b, 1), not both; inclusi
 exm-two-copies-of-naturals (solution): m = 2q + r uniquely, q in N, r in {0, 1} | the claim in the proof of prp-union-two-countable (cited)
 prp-card-operations-well-defined (proof): (a) the two-part rule is a function; inverses undo it partwise | inline (unwinding after def-disjoint-union)
 prp-card-operations-monotone (claim): (non-example) if A' is empty then A is empty, an injection into the empty set has empty domain | prp-empty-function (b), used silently
-exm-pairing-bijection (solution): tau_(s+1) = tau_s + s + 1, tau_0 = 0, tau_s in N | def-sum-product (cited); lem-naturals-arithmetic (b) by induction on s, used silently
+exm-pairing-bijection (solution): tau_(s+1) = tau_s + s + 1, tau_0 = 0, tau_s in N | def-sum-product (cited); thm-induction on s with lem-naturals-arithmetic (b)
 exm-pairing-bijection (solution): order and cancellation in N (tau_s + n <= tau_s + s < tau_(s+1); n = n' from tau_s + n = tau_s + n') | arithmetic and order of N (lem-naturals-arithmetic, school arithmetic of N)
 exm-pairing-bijection (solution): the values pi(0,0)..pi(0,2), delta(11) = (3, 1); Quick check 3: pi(3,2) = 17, delta(47) = (7, 2) | verify/ch03/exm-pairing-bijection.py
 thm-cardinal-laws (proof): a function on Y u Z may be defined on the two tagged parts separately | inline (unwinding after def-disjoint-union)
 thm-cardinal-laws (claim): (fold) the maps of (a), (b), (c), (e) and their inverses | inline; prp-function-equality, def-ordered-pair (cited); verify/ch03/thm-cardinal-laws.py (finite instances)
 thm-cardinal-laws (claim): (Quick check 4) 8 = 8 | inline count by listing values; verify/ch03/thm-cardinal-laws.py
-thm-cardinal-laws (claim): (aftermath) the finite case gives back m^(n+k) = m^n m^k, (m^n)^k = m^(nk) | Section 2.5 counts (exr-finite-sets-c2, prose only; nothing depends on it)
+thm-cardinal-laws (claim): (aftermath) the finite case gives back m^(n+k) = m^n m^k, (m^n)^k = m^(nk) | Section 2.5 counts (exr-finite-sets-c2; prp-disjoint-union-count and cor-finite-size-unique for |Y sqcup Z| = n + k; prose only, nothing depends on it)
 thm-power-set-two-power (proof): f(x) is 0 or 1, so f(x) != 1 gives f(x) = 0 | the codomain {0, 1}
 cor-cantor-two-power (proof): ind_{x} = ind_{y} gives x = y | inline (value 1 at x only)
 thm-reals-power-set-naturals (proof): the expansion of x not ending in all 9s exists and is unique; one digit sequence names one number; y_b exists; two different expansions of one number, one ends in 9s | school facts (D1), (D2), (D3), stated in F2.3 §03 (def-decimal-expansion)
 thm-reals-power-set-naturals (proof): (t, n) -> 10n + t bijection T x N -> N, decoder by division by 10 with quotient in N | thm-division-algorithm (cited), as in the claim in the proof of prp-union-two-countable; verify/ch03/exr-comparing-cardinalities-c1.py checks the same decoding
+thm-reals-power-set-naturals (proof): n -> n + 1 is a bijection N -> Z_{>0}, inverse m -> m - 1 in N | lem-naturals-arithmetic (c)
 thm-reals-power-set-naturals (proof): y_b <= t_1 + 1/10 <= 2/10 | def-decimal-expansion (cited) at n = 1
 thm-reals-power-set-naturals (claim): (remark) the continuum hypothesis is independent of the usual axioms, if consistent | set theory, stated without proof; nothing depends on it
 exm-interleaving-decimals (solution): t_n <= (1 - 10^-(n-1)) + 8 * 10^-n; termwise comparison of finite sums | prp-geometric-sum (cited); induction on n via def-sum-product and the order of R; verify/ch03/exm-interleaving-decimals.py

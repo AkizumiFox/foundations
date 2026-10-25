@@ -1025,6 +1025,15 @@ items:
       6, for Tychonoff's theorem" and "*Measure and Integration*, Chapter 1, for the Vitali set" do not
       match the series map (Atlas v2, already applied). STATUS row 194 and the section's own ledger line
       468 already n
+  - stage: S7r
+    verdict: correct
+    by: rereferee
+    hash: 18b44f911789
+    date: '2026-10-26'
+    model: claude-opus-5-5
+    evidence: 'In the ''Its status'' paragraph (02:47), the chapter pointers match the series map: mt
+      Ch 2 = MT.1 (Vitali), mt Ch 10 = FA.3 (Hahn–Banach), fa Ch 2 = FA.5 (Tychonoff). The MT title is
+      current. The AN1 title is left for deferred F022.'
 - key: exm-method-name-the-choice
   kind: exm
   file: 02-countable-unions-and-choice.md
@@ -3611,6 +3620,23 @@ items:
     date: '2026-10-26'
     model: claude-opus-5-5
     evidence: '06:48: (a) 3 vs 2 elements, (b) empty x {0} is empty, (c) cases disjoint; all correct'
+  - stage: S7r
+    verdict: minor
+    by: rereferee
+    hash: d8eef416d52e
+    date: '2026-10-26'
+    model: claude-opus-5-5
+    evidence: The check and its solution are unchanged and correct. The 'No subtraction' warning after
+      it (line 52) now gives the maps inline, but its wording calls three rules 'bijections onto ℕ' when
+      the first two together make one map {0}⊔ℕ→ℕ (see F011).
+  - stage: S7r
+    verdict: correct
+    by: rereferee
+    hash: d8eef416d52e
+    date: '2026-10-26'
+    model: claude-opus-5-5
+    evidence: 'The check and its solution are unchanged. The ''No subtraction'' warning after it gives
+      correct bijections: (0,0)↦0 with (n,1)↦n+1 maps {0}⊔ℕ→ℕ, and (n,1)↦n maps ∅⊔ℕ→ℕ.'
 - key: prp-card-operations-well-defined
   kind: prp
   file: 06-cardinal-arithmetic.md
@@ -3739,6 +3765,23 @@ items:
     model: claude-opus-5-5
     evidence: '06:168-184: existence by induction and uniqueness (tau_s+s < tau_{s+1} <= tau_{s''}) checked;
       table and delta(11)=(3,1) recomputed; verify/ch03/exm-pairing-bijection.py runs ok'
+  - stage: S7r
+    verdict: correct
+    by: rereferee
+    hash: 950f2375d8a1
+    date: '2026-10-26'
+    model: claude-opus-5-5
+    evidence: 'Line 182: τ_{m+n}∈ℕ now comes from thm-induction on s using τ_0=0, τ_{s+1}=τ_s+s+1 (stated
+      at line 145) and lem-naturals-arithmetic (b). The ledger line is updated to match.'
+  - stage: S7r
+    verdict: correct
+    by: rereferee
+    hash: 950f2375d8a1
+    date: '2026-10-26'
+    model: claude-opus-5-5
+    evidence: τ_{m+n}∈ℕ is now justified by thm-induction on s from τ_0=0 and τ_{s+1}=τ_s+s+1 with lem-naturals-arithmetic
+      (b). The claim's existence and uniqueness, δ, both round trips and the decoding δ(11)=(3,1) check
+      out (τ_4=10, τ_5=15).
 - key: exm-method-encode
   kind: exm
   file: 06-cardinal-arithmetic.md
@@ -3845,6 +3888,22 @@ items:
     model: claude-opus-5-5
     evidence: '06:273-277: (N9) of fd1:exm-not-allowed-catalogue is ''citing a line that is not available''
       (fd1 06:85), which fits'
+  - stage: S7r
+    verdict: correct
+    by: rereferee
+    hash: 4eccbe63d923
+    date: '2026-10-26'
+    model: claude-opus-5-5
+    evidence: 'Line 277 now gives the count inline. For X={0,1}, Y=Z={0}: X^{Y∪Z}=X^{0} has 2 elements
+      and X^Y×X^Z has 4, so the ∪ version of the law fails without relying on B4 (b).'
+  - stage: S7r
+    verdict: correct
+    by: rereferee
+    hash: 4eccbe63d923
+    date: '2026-10-26'
+    model: claude-opus-5-5
+    evidence: 'The counterexample with X={0,1}, Y=Z={0} is right: X^{Y∪Z} has 2 elements and X^Y×X^Z has
+      4. It matches the B4(b) solution.'
 - key: check:06-cardinal-arithmetic:4
   kind: check
   file: 06-cardinal-arithmetic.md
@@ -3969,6 +4028,22 @@ items:
     model: claude-opus-5-5
     evidence: '06-cardinal-arithmetic.md:354 False meta-claim: the middle step does not ''replace that
       exercise''s hand-built code 10k + d_k''.'
+  - stage: S7r
+    verdict: correct
+    by: rereferee
+    hash: 45a54be9f511
+    date: '2026-10-26'
+    model: claude-opus-5-5
+    evidence: Line 354 now describes the one-line code (j,n)↦10n+j as replacing the set E(x)={10k+d_k}
+      of 3.4 C1, which matches 04-comparing-cardinalities.md:400.
+  - stage: S7r
+    verdict: correct
+    by: rereferee
+    hash: 45a54be9f511
+    date: '2026-10-26'
+    model: claude-opus-5-5
+    evidence: The statement is unchanged. The proof that follows is sound, and the paragraph after it
+      now names the code (j,n)↦10n+j in place of E(x) from 3.4 C1 (04:400). That comparison is accurate.
 - key: proof:thm-reals-power-set-naturals
   kind: proof
   file: 06-cardinal-arithmetic.md
@@ -3992,6 +4067,26 @@ items:
     model: claude-opus-5-5
     evidence: 06-cardinal-arithmetic.md:343 Symbols get a second meaning within the section, against the
       STYLE §9 checklist.
+  - stage: S7r
+    verdict: correct
+    by: rereferee
+    hash: 7a9761d8a1e2
+    date: '2026-10-26'
+    model: claude-opus-5-5
+    evidence: The renames D→W, t→j and e→c remove the clashes with Cantor's D, with t_n of def-decimal-expansion
+      and with the encoder e, so t_1 at line 349 is now unambiguously the partial sum of c. The inverse
+      m↦m−1 lies in ℕ by lem-naturals-arithmetic (c), since m≥1. The monotone (c) side condition was already
+      checked.
+  - stage: S7r
+    verdict: correct
+    by: rereferee
+    hash: 7a9761d8a1e2
+    date: '2026-10-26'
+    model: claude-opus-5-5
+    evidence: The renames D→W and t→j avoid clashing with the (D1)–(D3) labels and with t_n of def-decimal-expansion,
+      and e→c avoids clashing with e from exm-two-copies-of-naturals. Every use is consistent. n↦n+1 has
+      inverse m↦m−1 by lem (c). 10n+j decodes by the division algorithm. y_b ≤ t_1+1/10 ≤ 2/10 holds with
+      t_1=c_1/10. The (D3) argument for injectivity is valid, and S-B finishes.
 - key: check:06-cardinal-arithmetic:5
   kind: check
   file: 06-cardinal-arithmetic.md
@@ -4097,6 +4192,21 @@ items:
     date: '2026-10-26'
     model: claude-opus-5-5
     evidence: 06-cardinal-arithmetic.md:426 Imprecise meta-claim 'reached the same equality'.
+  - stage: S7r
+    verdict: correct
+    by: rereferee
+    hash: 17d33c7cc549
+    date: '2026-10-26'
+    model: claude-opus-5-5
+    evidence: The meta-remark at line 426 now names the equality that B4 (d) actually proves.
+  - stage: S7r
+    verdict: correct
+    by: rereferee
+    hash: 17d33c7cc549
+    date: '2026-10-26'
+    model: claude-opus-5-5
+    evidence: The statement is unchanged. The sentence after the proof now spells out the equality that
+      3.4 B4(d) reached, |ℕ^ℕ|=|{0,1}^ℕ|.
 - key: proof:thm-baire-space-reals
   kind: proof
   file: 06-cardinal-arithmetic.md
@@ -4119,6 +4229,22 @@ items:
     model: claude-opus-5-5
     evidence: '06:423: injections both ways; monotone (c) applies with A'' = {0,1}^N nonempty; laws (f)
       and exm-pairing-bijection'
+  - stage: S7r
+    verdict: correct
+    by: rereferee
+    hash: b686d6fa67b8
+    date: '2026-10-26'
+    model: claude-opus-5-5
+    evidence: Line 423 now checks the A'≠∅ hypothesis of prp-card-operations-monotone (c) ({0,1}^ℕ≠∅).
+      Line 426 now states correctly that 3.4 B4 (d) reached |ℕ^ℕ|=|{0,1}^ℕ|.
+  - stage: S7r
+    verdict: correct
+    by: rereferee
+    hash: b686d6fa67b8
+    date: '2026-10-26'
+    model: claude-opus-5-5
+    evidence: It now adds the side condition {0,1}^ℕ≠∅ that prp-card-operations-monotone (c) needs. The
+      chain through cardinal law (f), exm-pairing-bijection and S-B is valid.
 - key: cor-real-sequences
   kind: cor
   file: 06-cardinal-arithmetic.md
@@ -4160,6 +4286,22 @@ items:
     model: claude-opus-5-5
     evidence: 06-cardinal-arithmetic.md:442 Misleading meta-claim 'No appeal to @thm-schroder-bernstein
       is needed'.
+  - stage: S7r
+    verdict: correct
+    by: rereferee
+    hash: faf4d41faf50
+    date: '2026-10-26'
+    model: claude-opus-5-5
+    evidence: 'Line 442: ''No further appeal ... beyond the one inside thm-reals-power-set-naturals''
+      is accurate, since the chain uses only equalities plus that theorem.'
+  - stage: S7r
+    verdict: correct
+    by: rereferee
+    hash: faf4d41faf50
+    date: '2026-10-26'
+    model: claude-opus-5-5
+    evidence: The chain of equalities is valid. The closing sentence now says correctly that the only
+      use of S-B is the one inside thm-reals-power-set-naturals.
 - key: check:06-cardinal-arithmetic:6
   kind: check
   file: 06-cardinal-arithmetic.md
@@ -4214,6 +4356,24 @@ items:
       g(0)=id; my script agrees. (c) The images (-1,1) and [1,∞) do not meet. (d) Checked against the
       (D3) wording at 03:226: with {0,9} both tail shapes are possible, so (D3) alone does not settle
       injectivity. Pa'
+  - stage: S7r
+    verdict: correct
+    by: rereferee
+    hash: 94d6cd0d85dc
+    date: '2026-10-26'
+    model: claude-opus-5-5
+    evidence: Quick check 4 now asks which pairs give an injection into [0,1) 'in the same way'. The solution's
+      answer (pairs missing 9) fits, and its note on pairs missing 0 says explicitly that the target must
+      be widened to [0,1], so it does not claim those pairs answer the question.
+  - stage: S7r
+    verdict: correct
+    by: rereferee
+    hash: 94d6cd0d85dc
+    date: '2026-10-26'
+    model: claude-opus-5-5
+    evidence: The reworded (d) asks which pairs give an injection into [0,1) in the same way. The solution
+      answers that pairs missing 9 work, that pairs with 9 need [0,1] because all 9s goes to 1, and why
+      0/9 is not decided by (D3) alone. This is correct.
 - key: exr-cardinal-arithmetic-b1
   kind: exr
   file: 06-cardinal-arithmetic.md
@@ -4331,6 +4491,22 @@ items:
     model: claude-opus-5-5
     evidence: 06-cardinal-arithmetic.md:567 The remark 'true when Y∩Z=∅, by Quick check 1 (c) and @thm-cardinal-laws
       (d)' leaves out the step that moves the size change into the exponent.
+  - stage: S7r
+    verdict: correct
+    by: rereferee
+    hash: c775fe8cc02e
+    date: '2026-10-26'
+    model: claude-opus-5-5
+    evidence: 'Line 567: the disjoint case now cites Quick check 1 (c) with prp-card-operations-well-defined
+      (c) for the exponent and thm-cardinal-laws (d).'
+  - stage: S7r
+    verdict: correct
+    by: rereferee
+    hash: c775fe8cc02e
+    date: '2026-10-26'
+    model: claude-opus-5-5
+    evidence: (a) gives explicit bijections with inverse via lem (c). (b) adds prp-card-operations-well-defined
+      (c) to justify the disjoint case. (c)–(f) are unchanged and correct.
 - key: exr-cardinal-arithmetic-c1
   kind: exr
   file: 06-cardinal-arithmetic.md
@@ -4360,6 +4536,24 @@ items:
     model: claude-opus-5-5
     evidence: 06-cardinal-arithmetic.md:608 The closing sentence 'So there are more functions R → R than
       real numbers' asserts |R| < |R^R|, but only 'no surjection' was proved; the ≤ half is never stated.
+  - stage: S7r
+    verdict: correct
+    by: rereferee
+    hash: cd26734d287a
+    date: '2026-10-26'
+    model: claude-opus-5-5
+    evidence: x↦c_x is injective (evaluate at 0), and a bijection would be onto, which Cantor rules out.
+      With def-card-le (04:14) this gives |ℝ|<|ℝ^ℝ|. The new marking line gives full credit to other complete
+      routes, and its 8 points match 2+3+2+1.
+  - stage: S7r
+    verdict: correct
+    by: rereferee
+    hash: cd26734d287a
+    date: '2026-10-26'
+    model: claude-opus-5-5
+    evidence: 'The second part now proves |ℝ|<|ℝ^ℝ|: the constant maps are injective (evaluate at 0),
+      and there is no surjection by Cantor. The new alternative-route line awards the 8 points of the
+      first part, which matches the bullets 2+3+2+1=8.'
 - key: exr-cardinal-arithmetic-c2
   kind: exr
   file: 06-cardinal-arithmetic.md
@@ -4419,6 +4613,22 @@ items:
     model: claude-opus-5-5
     evidence: 06-cardinal-arithmetic.md:656 Schröder-Bernstein is applied to B and {0,1}^N, but the 'Up'
       paragraph built an injection B → R, not B → {0,1}^N.
+  - stage: S7r
+    verdict: correct
+    by: rereferee
+    hash: 8109ae76f79c
+    date: '2026-10-26'
+    model: claude-opus-5-5
+    evidence: Line 656 composes the Up injection B→ℝ with a bijection ℝ→{0,1}^ℕ, giving |B|≤|{0,1}^ℕ|
+      by transitivity (prp-card-le-preorder (b)). With Down, Schröder–Bernstein applies to B and {0,1}^ℕ.
+  - stage: S7r
+    verdict: correct
+    by: rereferee
+    hash: 8109ae76f79c
+    date: '2026-10-26'
+    model: claude-opus-5-5
+    evidence: The step |B|≤|{0,1}^ℕ| is now stated by composing Up with a bijection ℝ→{0,1}^ℕ (prp-card-le-preorder
+      (b)) before S-B is applied. Up, Down and the conclusion are valid.
 - key: exr-infinite-sets-r1
   kind: exr
   file: 06-cardinal-arithmetic.md
