@@ -40,7 +40,7 @@ Let \( X \) and \( Y \) be sets and \( A \subseteq X \).
 :::
 :::
 
-In words: the restriction keeps the codomain and forgets the inputs outside \( A \). An extension is any function on the larger set that agrees with \( g \) at every point of \( A \); by @prp-function-equality, \( f|_A = g \) says exactly that \( f(a) = g(a) \) for every \( a \in A \), since both functions have domain \( A \) and codomain \( Y \). The inclusion map is the identity of \( A \) with its codomain enlarged to \( X \); it is not \( \id_A \) unless \( A = X \), because the codomains differ.
+In words: the restriction keeps the codomain and forgets the inputs outside \( A \). An extension is any function on the larger set that agrees with \( g \) at every point of \( A \); by @prp-function-equality, \( f|_A = g \) says exactly that \( f(a) = g(a) \) for every \( a \in A \), since both functions have domain \( A \) and codomain \( Y \). The inclusion map is the map of @exm-structure-maps (a), now given the name \( \iota_A \): the identity of \( A \) with its codomain enlarged to \( X \); it is not \( \id_A \) unless \( A = X \), because the codomains differ.
 
 The article in (b) is "**a**", not "the", and the naive expectation that an extension is determined by \( g \) fails at once. The function \( g \colon (0, 1] \to \nR \), \( g(x) = 1/x \), has an extension to \( [0, 1] \) for every choice of a value at \( 0 \): sending \( 0 \) to \( 0 \) and sending \( 0 \) to \( 5 \) give two different extensions, since they differ at \( 0 \). The formula \( 1/x \) suggests no value at all there. Nor need an extension keep a property that \( g \) has. Let \( a \ne b \), and let \( g \colon \{1, 2\} \to \{a, b\} \) send \( 1 \mapsto a \) and \( 2 \mapsto b \), a bijection. An extension \( f \) to \( \{1, 2, 3\} \) with codomain \( \{a, b\} \) has \( f(3) = a = f(1) \) or \( f(3) = b = f(2) \), so it is not injective. So the bijection \( g \) has extensions, but no injective one.
 
@@ -82,7 +82,7 @@ Is a restriction of a surjection always surjective?
 :::
 
 ::: {.solution}
-No. The function \( f \colon \nR \to [0, \infty) \), \( f(x) = x^2 \), is surjective (every \( t \ge 0 \) is \( (\sqrt{t})^2 \)). Its restriction \( f|_{[1, 2]} \colon [1, 2] \to [0, \infty) \) takes only values \( x^2 \ge 1 \), so \( 0 \) is not a value. The restriction keeps the codomain while the domain shrinks, so it can lose surjectivity. It can also gain injectivity: \( f|_{[0, \infty)} \) is injective, although \( f \) is not.
+No. The function \( f \colon \nR \to [0, \infty) \), \( f(x) = x^2 \), is surjective (every \( t \ge 0 \) is \( (\sqrt{t})^2 \)). Its restriction \( f|_{[1, 2]} \colon [1, 2] \to [0, \infty) \) takes only values \( x^2 \ge 1 \), so \( 0 \) is not a value. The restriction keeps the codomain while the domain shrinks, so it can lose surjectivity. It can also gain injectivity: \( f|_{[0, \infty)} \) is injective, by @exm-square-three-ways (b), although \( f \) is not, since \( f(-1) = 1 = f(1) \).
 :::
 
 ## Gluing
@@ -128,7 +128,7 @@ So \( f \coloneqq (G, Y) \) is a function \( X \to Y \). Let \( i \in I \). Both
 
 In the existence part, the proof used the cover only for (Fn1) and agreement only for (Fn2). Each hypothesis is needed. If a point \( x \) lies in no \( A_i \), the union graph has no pair with first coordinate \( x \), and (Fn1) fails; the theorem fails too: for \( X = Y = \{0, 1\} \), \( A_1 = \{0\} \) and \( f_1(0) = 0 \), both ways of choosing the value at \( 1 \) give a function \( f \) with \( f|_{A_1} = f_1 \), so "exactly one" fails. The rule \( r \) of the hook shows two pieces that cover \( \nR \) and disagree at \( 0 \), where (Fn2) fails.
 
-The theorem is used so often that its use deserves a template. Step (4) below is the one most often forgotten.
+The theorem is used so often that its use deserves a template. Step (4) is the step that Example (c) below turns on.
 
 ::: {#exm-method-gluing}
 [Method: define a function by gluing]
@@ -160,7 +160,7 @@ Decide whether each definition glues to a function \( \nR \to \nR \).
 (c) A minimal change to (b): the second piece loses the point \( 0 \). Now the pieces are disjoint and still cover \( \nR \), so step (2) has nothing to check, and they glue to a function \( k \colon \nR \to \nR \). Inside each piece \( k \) is injective (\( x = x' \) and \( x + 1 = x' + 1 \) each force \( x = x' \)). Across the pieces, step (4) finds a collision: \( k(\tfrac12) = \tfrac12 \) and \( k(-\tfrac12) = -\tfrac12 + 1 = \tfrac12 \). So \( k \) is not injective.
 :::
 
-Part (c) found its collision across the pieces. Step (4) of the method box is a theorem:
+Part (c) found its collision across the pieces. Step (4) of the method box, for injectivity, is a proposition:
 
 ::: {#prp-injective-across-pieces}
 [Injectivity Across Pieces]
@@ -169,7 +169,7 @@ Let \( f \colon X \to Y \) and \( X = A \cup B \). Then \( f \) is injective if 
 :::
 
 ::: {.idea}
-Two different points either share a piece, where the restriction decides, or lie one in each piece outside the overlap, where the last condition decides. This is step (4) of @exm-method-gluing, and we prove injectivity in the contrapositive form of @def-injective (@exm-method-injectivity).
+Two different points either share a piece, where the restriction decides, or lie one in each piece outside the overlap, where the last condition decides. This is step (4) of @exm-method-gluing, and we prove injectivity in the contrapositive form given after @def-injective (justified by @fd1:prp-contrapositive-converse).
 :::
 
 ::: {.proof}
@@ -435,13 +435,13 @@ Let \( \Phi \colon \powerset{X} \to \{0, 1\}^X \), \( \Phi(A) = \ind_A \), a bij
 
 ::: {.enumerate options="label=(\alph*)"}
 1. Prove \( X \setminus (A \cap B) = (X \setminus A) \cup (X \setminus B) \) for \( A, B \subseteq X \) by computing with indicators.
-2. Show that \( \Phi(c(A)) = 1 - \Phi(A) \) for every \( A \subseteq X \), where \( 1 - f \) denotes the function \( x \mapsto 1 - f(x) \).
+2. Show that \( \Phi(c(A)) = 1 - \Phi(A) \) for every \( A \subseteq X \), where \( 1 - f \in \{0, 1\}^X \) denotes the function \( x \mapsto 1 - f(x) \) (its values are \( 1 - 0 = 1 \) and \( 1 - 1 = 0 \)).
 3. Use (b) to show that \( c \circ c = \id_{\powerset{X}} \) without chasing elements.
 :::
 :::
 
 ::: {.solution}
-(a) Fix \( x \in X \) and write \( u, v \) for the values of \( \ind_A, \ind_B \) at \( x \). By @prp-indicator-arithmetic (a) and (b), the left side has indicator value \( 1 - uv \). By (b), the sets \( X \setminus A \) and \( X \setminus B \) have indicator values \( 1 - u \) and \( 1 - v \), so by (c) the right side has
+(a) Fix \( x \in X \) and write \( u, v \) for the values of \( \ind_A, \ind_B \) at \( x \). By @prp-indicator-arithmetic (a) and (b), the left side has indicator value \( 1 - uv \). By @prp-indicator-arithmetic (b), the sets \( X \setminus A \) and \( X \setminus B \) have indicator values \( 1 - u \) and \( 1 - v \), so by @prp-indicator-arithmetic (c) the right side has
 \[
 (1 - u) + (1 - v) - (1 - u)(1 - v) = 2 - u - v - (1 - u - v + uv) = 1 - uv .
 \]
@@ -477,12 +477,14 @@ For each \( n \in \nZ \), let \( f_n \colon [n, n + 1) \to \nR \), \( f_n(x) = x
 :::
 
 <!-- dependency ledger
+def-restriction-extension (claim): (paragraph after it) the inclusion map iota_A is the inclusion map of exm-structure-maps (a) | exm-structure-maps (F2.6 §02, cited); same rule a -> a, same domain and codomain
 thm-power-set-two-power (proof): f(x) is 0 or 1, so f(x) != 1 gives f(x) = 0 | the codomain {0, 1}
 def-restriction-extension (claim): (hook before it) every real is > 0, = 0 or < 0, and exactly one of these | R order (trichotomy), school fact
 def-restriction-extension (claim): 1/x on (0, 1] with value 0 or 5 at 0 gives two different extensions to [0, 1] | each is a function by excluded middle on x = 0, as in exm-first-functions (d); different by prp-function-equality (cited)
 def-restriction-extension (claim): an extension f of g : {1, 2} -> {a, b} to {1, 2, 3} has f(3) = a = f(1) or f(3) = b = f(2) | f(3) is in the codomain {a, b} (def-function); f(1) = g(1) = a, f(2) = g(2) = b by f|_{1,2} = g
 thm-gluing (proof): the graph of a function f_i : A_i -> Y lies in A_i x Y; (x, y) in f iff y = f(x) | def-function, (**) of Section 2.1 (named in the proof)
 thm-gluing (proof): A_i subset X gives A_i x Y subset X x Y | def-cartesian-product, used silently
+prp-restriction-properties (claim): (quick check) f|_{[0, inf)} injective by exm-square-three-ways (b); f(-1) = 1 = f(1) | cited, arithmetic
 prp-restriction-properties (claim): (quick check) x^2 >= 1 for x in [1, 2]; every t >= 0 is (sqrt t)^2 | school fact (square roots, AN1.1)
 exm-piecewise-as-gluing (solution): every real is >= 0 or <= 0; -0 = 0; -1/2 + 1 = 1/2 | R order (trichotomy) and arithmetic, school fact; verify/ch02/exm-piecewise-as-gluing.py
 prp-injective-across-pieces (proof): two points both lie in A or not; renaming x, x' (the claim is symmetric); x not in A and X = A cup B give x in B \ A | excluded middle (classical), as in exm-method-cases; def-set-operations

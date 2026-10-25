@@ -84,7 +84,7 @@ The two computations differ in shape. For the image we ran through the points of
 
 The example also contains a non-example by minimal change. The sets \( \{1\} \) and \( \{5\} \) are both one-point subsets of \( Y \). The first has a two-point preimage; change \( 1 \) to \( 5 \) and the preimage becomes empty, because \( 5 \) lies outside the range. The preimage of a non-empty set can be empty. What fails is the existence of a point of \( X \) sent into the set.
 
-Why is the preimage defined for **every** function, when \( f^{-1} \) as a function exists only for bijections? Because the question "which inputs land in \( B \)?" makes sense for any \( f \): its answer may be empty, or contain many points, and neither is a problem for a set. The function \( f^{-1} \) of Section 2.4 asks for more: exactly one input for each output. This is why analysis states its definitions with preimages. "The preimage of every open set is open" makes sense for every function; *Metric and Topological Spaces*, Chapter 1 uses it to characterize continuity.
+Why is the preimage defined for **every** function, when \( f^{-1} \) as a function exists only for bijections? Because the question "which inputs land in \( B \)?" makes sense for any \( f \): its answer may be empty, or contain many points, and neither is a problem for a set. The function \( f^{-1} \) of Section 2.4 asks for more: exactly one input for each output. This is why analysis states its definitions with preimages. "The preimage of every open set is open" makes sense for every function; *Analysis on the Real Line*, Chapter 3 uses it to characterize continuity.
 
 ::: {.warning}
 The preimage \( f^{-1}(B) \) does not presuppose that \( f \) is invertible. For the squaring map on \( \nR \), which has no inverse function, \( f^{-1}(\{4\}) = \{-2, 2\} \) is a perfectly good set. What the symbol does **not** give is a value "\( f^{-1}(4) \)": that would be a point, and there are two candidates.
@@ -275,7 +275,7 @@ For \( f(x) = x^2 \) on \( \nR \), compute \( f^{-1}([-1, 4]) \) and \( f^{-1}((
 \( f^{-1}([-1, 4]) = [-2, 2] \): since \( x^2 \ge 0 \ge -1 \) always, the condition is \( x^2 \le 4 \), that is \( \abs{x} \le 2 \). \( f^{-1}((-\infty, 0)) = \emptyset \): no square is negative.
 :::
 
-Preimages also behave well under composition, with the order reversed. We will need this in *Metric and Topological Spaces*, Chapter 1, to show that composites of continuous maps are continuous.
+Preimages also behave well under composition, with the order reversed. We will need this in *Analysis on the Real Line*, Chapter 3, to show that composites of continuous maps are continuous.
 
 ::: {#prp-preimage-composition}
 [Preimage under a Composite]
@@ -673,7 +673,7 @@ The preimage, by cases on the sign. For \( x \le 0 \): \( f(x) = x \in [-4, 9] \
 ::: {#exr-images-and-preimages-r6}
 [R2]
 
-Let \( f \colon X \to Y \) and \( g, h \colon Y \to Z \) with \( g \circ f = h \circ f \). Show that \( g(y) = h(y) \) for every \( y \in f(X) \), and deduce one direction of @thm-cancellation (b).
+Let \( f \colon X \to Y \) and \( g, h \colon Y \to Z \) with \( g \circ f = h \circ f \). Show that \( g(y) = h(y) \) for every \( y \in f(X) \), and deduce that if \( f \) is surjective, then \( g = h \).
 :::
 
 ::: {.solution}

@@ -96,7 +96,7 @@ N \coloneqq \{ (r, p) \in \nQ \times \nZ : \exists q \in \nZ_{>0} \ \ r = p/q \}
 ::: {.second-reading title="Why each clause, and why a codomain"}
 **Why this definition.** Each clause has a job, and dropping one lets in the failures of @exm-not-a-function. Without (Fn1), a "function" could be undefined at some inputs, like \( 1/x \) at \( 0 \); then \( f(x) \) would not name anything, and statements "for every \( x \in X \)" about \( f(x) \) would lose their meaning. Without (Fn2), \( f(x) \) would not name **one** thing, and \( f(\tfrac12) \) in part (b) would be both \( 1 \) and \( 2 \). The graph replaces the rule because two rules can describe one function, and sets are compared by their elements.
 
-Why is the codomain part of the data? A relation is a set, so if a function were only its graph, two functions with the same graph would be equal (@def-set-equality), whatever target was declared. The graph of \( x \mapsto x^2 \) as a function \( [0, \infty) \to \nR \) is the same set as its graph as a function \( [0, \infty) \to [0, \infty) \). But these should be different functions, because the second reaches every point of its target and the first does not: this is the property called surjectivity below, and an example later in this section shows it changing with the codomain. Recording the codomain in the pair \( (G, Y) \) keeps the two apart. Many books take the same convention, some without saying so.
+Why is the codomain part of the data? A relation is a set, so if a function were only its graph, two functions with the same graph would be equal (@def-set-equality), whatever target was declared. The graph of \( x \mapsto x^2 \) as a function \( [0, \infty) \to \nR \) is the same set as its graph as a function \( [0, \infty) \to [0, \infty) \). But these should be different functions, because the second reaches every point of its target and the first does not: this is the property called surjectivity in Section 2.2, and @exm-square-three-ways there shows it changing with the codomain. Recording the codomain in the pair \( (G, Y) \) keeps the two apart. Many books take the same convention, some without saying so.
 :::
 
 ::: {.warning}
@@ -318,6 +318,14 @@ Because of associativity, we write \( h \circ g \circ f \) without brackets: eve
 The identity functions play for composition the part that the number \( 1 \) plays for multiplication: by the second statement of @prp-composition-associative, composing with an identity changes nothing. The analogy stops at division. A number \( a \ne 0 \) can be cancelled from \( ab = ac \); a function \( f \) can be cancelled from \( f \circ g = f \circ h \) only under a condition on \( f \). And in @exm-root-and-square, \( q \circ r = \id_{[0, \infty)} \) although \( r \circ q \ne \id_{\nR} \): one composite of two functions can be an identity while the other is not.
 
 ::: {.check}
+Find \( h \colon \nR \to \nR \) with \( h \circ g = f \), for \( f(x) = 2x + 3 \) and \( g(x) = x + 1 \).
+:::
+
+::: {.solution}
+The function \( g \) turns \( x \) into \( y = x + 1 \), and \( x \) is recovered as \( y - 1 \). So put \( h(y) \coloneqq 2(y - 1) + 3 = 2y + 1 \). Check: \( h(g(x)) = 2(x + 1) + 1 = 2x + 3 = f(x) \) for every \( x \), so \( h \circ g = f \) by @prp-function-equality.
+:::
+
+::: {.check}
 For \( f, g \colon \nR \to \nR \), \( f(x) = x^2 \) and \( g(x) = x - 3 \), compute \( (g \circ f)(2) \) and \( (f \circ g)(2) \).
 :::
 
@@ -391,7 +399,7 @@ Let \( s \colon \nR^2 \to \nR^2 \), \( s(x, y) = (x + y, x - y) \).
 
 ::: {.enumerate options="label=(\alph*)"}
 1. Show that \( (s \circ s)(x, y) = (2x, 2y) \) for all \( x, y \in \nR \).
-2. Find a function \( t \colon \nR^2 \to \nR^2 \) with \( t \circ s = \id_{\nR^2} \), and check that also \( s \circ t = \id_{\nR^2} \).
+2. Find a function \( t \colon \nR^2 \to \nR^2 \) with \( t \circ s = \id_{\nR^2} \), and check that also \( s \circ t = \id_{\nR^2} \). (Hint: solve \( u = x + y \), \( v = x - y \) for \( x \) and \( y \).)
 :::
 :::
 
@@ -465,13 +473,16 @@ The first two steps are correct: \( g(f(x)) = f(g(x)) \) is the hypothesis \( g 
 
 The claim is false. Let \( f(x) = x + 1 \) and \( g(x) = x + 2 \). Then \( (g \circ f)(x) = (x + 1) + 2 = x + 3 \) and \( (f \circ g)(x) = (x + 2) + 1 = x + 3 \), so \( g \circ f = f \circ g \) by @prp-function-equality. But \( f(0) = 1 \ne 2 = g(0) \), so \( f \ne g \).
 
-**Marking scheme.** (6 points)
-- 2: locates the step "cancelling the outer functions" as the first wrong one.
-- 2: says why it fails: the outer functions on the two sides are different, so there is nothing to cancel.
-- 2: a counterexample with both claims checked: the two composites are equal, and \( f \) and \( g \) differ at a named point.
+**Marking scheme.** (10 points)
+- 3: locates the step "cancelling the outer functions" as the first wrong one.
+- 3: says why it fails: the outer functions on the two sides are different, so from \( g(a) = f(b) \) one cannot conclude \( a = b \).
+- 4: a counterexample with both claims checked: the two composites are equal, and \( f \) and \( g \) differ at a named point.
+
+Fatal errors (0 for the step): blaming the step \( g(f(x)) = f(g(x)) \); a counterexample in which \( f \circ g \ne g \circ f \).
 :::
 
 <!-- dependency ledger
+def-function (claim): (second-reading fold) x -> x^2 onto [0, infinity) reaches every point of its target, into R does not | forward pointer to exm-square-three-ways (F2.6 §02, cited in a fold); nothing depends on it
 def-function (claim): bounded exists-unique, exists! y in Y psi, abbreviates exists! y (y in Y and psi) | notation, by analogy with def-bounded-quantifier (cited); NOTATION bounded-quantifier row
 def-function (claim): exists-unique splits into existence (Fn1) and uniqueness (Fn2) | def-unique-existence, prp-unique-existence-use (cited)
 def-function (claim): (**) uses substituting equals (=E) | def-rules-equality (cited)
@@ -485,9 +496,10 @@ exm-equal-functions (example): (x + 1)^2 - 2x - 1 = x^2; |x| >= 0 and |x|^2 = x^
 prp-function-equality (proof): domain = set of first coordinates of the graph | inline, in the paraphrase of def-function
 def-composition (claim): f(x) in Y, so g(f(x)) is defined and in Z | inline, from (**) in def-function's paraphrase
 exm-composition-order (example): 2x + 2 != 2x + 1 | arithmetic
+exm-composition-order (claim): the Quick check on h with h o g = f: y - 1 recovers x from y = x + 1; 2(x + 1) + 1 = 2x + 3 | school algebra (F1-F2 convention)
 prp-empty-function (proof): empty set is a subset of every set | F2.1 §02, prose after prp-empty-set-unique (vacuous implication, cited there)
 exm-function-set-small (claim): Y^X has m^n elements for finite sets; subsets of X correspond to functions X -> {0, 1} | F2.3 §01 (prose pointers "the business of Section 4.1", "which Section 4.1 solves"); the correspondence is stated with its two maps, and nothing depends on either
-def-function (claim): m + n in N for m, n in N (addition N x N -> N, the example after the definition; also exr-functions-b1 (b)) | F2.2 (promised; STATUS row "F2.1 §02, §03, F2.6 §01, §02 → F2.2", lem-naturals-arithmetic (b))
+def-function (claim): m + n in N for m, n in N (addition N x N -> N, the example after the definition) | F2.2 (promised; STATUS row "F2.1 §02, §03, F2.6 §01 → F2.2", lem-naturals-arithmetic (b))
 exm-not-a-function (claim): well-definedness returns for functions defined on classes | F2.5 (prose pointer "Chapter 5"); nothing depends on it
 exm-function-set-small (claim): (the five-string game) there are 32 strings of five symbols 0 or 1; Chapter 4 returns to the game | 2^5 = 32 by listing (the count in general is F2.3 §01's); F2.3 (promised; prose pointer "Chapter 4 comes back to this game"); nothing depends on it
 exm-root-and-square (example): sqrt(x^2) = |x| | exm-equal-functions (b) (cited)

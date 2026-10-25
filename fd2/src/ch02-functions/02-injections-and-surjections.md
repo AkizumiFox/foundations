@@ -308,7 +308,7 @@ For (a), equal values of \( f \) stay equal after \( g \) is applied, and then t
 (b) Let \( z \in Z \). Since \( g \circ f \) is surjective, there is \( x \in X \) with \( (g \circ f)(x) = z \). Let \( y \coloneqq f(x) \), an element of \( Y \). Then \( g(y) = g(f(x)) = (g \circ f)(x) = z \), by @def-composition. So \( z \) has a preimage under \( g \), namely \( y \). Since \( z \) was arbitrary, \( g \) is surjective.
 :::
 
-Section 2.4 builds on this: a function \( f \) with a function \( g \) such that \( g \circ f = \id_X \) is forced to be injective.
+In particular, if \( g \circ f = \id_X \), then \( f \) is injective by (a), since \( \id_X \) is; Section 2.4 proves this again as @thm-left-inverse-iff-injective (a).
 
 ## Structure maps
 
@@ -345,7 +345,7 @@ Let \( X \) and \( Y \) be sets, and \( A \subseteq X \). Decide whether each of
 &\quad\iff x \in S && \text{[} S \subseteq X \text{]}
 \end{aligned}
 \]
-The second line is De Morgan (d), (c) (@fd1:prp-de-morgan) applied to the second conjunct, together with \( \neg\neg(x \in S) \dashv\vdash x \in S \) (@fd1:prp-double-negation); from left to right both steps use \( \rulename{RAA} \). In the third line, from left to right, the disjunct \( x \notin X \) clashes with the conjunct \( x \in X \), so disjunctive syllogism (@fd1:prp-disjunctive-syllogism) leaves \( x \in S \); from right to left, \( \rulename{\vee I} \) puts the disjunct back. In the last line, from right to left, \( x \in S \) gives \( x \in X \) because \( S \subseteq X \). By @def-set-equality, \( X \setminus (X \setminus S) = S \).
+The step tagged De Morgan uses De Morgan (d), (c) (@fd1:prp-de-morgan) applied to the second conjunct, together with \( \neg\neg(x \in S) \dashv\vdash x \in S \) (@fd1:prp-double-negation); from left to right both steps use \( \rulename{RAA} \). In the step that drops the disjunct, from left to right, the disjunct \( x \notin X \) clashes with the conjunct \( x \in X \), so disjunctive syllogism (@fd1:prp-disjunctive-syllogism) leaves \( x \in S \); from right to left, \( \rulename{\vee I} \) puts the disjunct back. In the last step, from right to left, \( x \in S \) gives \( x \in X \) because \( S \subseteq X \). By @def-set-equality, \( X \setminus (X \setminus S) = S \).
 
 Now \( c \) is injective: if \( c(S) = c(T) \), then \( S = c(c(S)) = c(c(T)) = T \). And \( c \) is surjective: each \( T \subseteq X \) is the value of \( c \) at \( c(T) \), since \( c(c(T)) = T \).
 
@@ -381,7 +381,7 @@ Decide whether each map is injective and whether it is surjective.
 
 (b) *Surjective:* each \( k \in \nN \) is the value at \( (k, 1) \). *Not injective:* \( (1, 2) \ne (2, 1) \) (@def-ordered-pair), and both are sent to \( 2 \). Any formula symmetric in \( m \) and \( n \) fails injectivity in the same way; the sum \( (m, n) \mapsto m + n \) is Exercise B1 (b).
 
-(c) *Surjective:* by @thm-even-or-odd, every \( n \in \nZ \) is \( 2k \) or \( 2k + 1 \) for some \( k \in \nZ \), that is, \( \varphi(k, 0) \) or \( \varphi(k, 1) \). *Injective:* let \( 2q + r = 2q' + r' \). If \( r = r' \), then \( 2q = 2q' \), so \( q = q' \), and the pairs are equal (@def-ordered-pair). If \( r \ne r' \), then, since the equation is symmetric in the two pairs, we may assume \( r = 0 \) and \( r' = 1 \) (@exm-method-cases); now \( 2q = 2q' + 1 \) is an integer that is both even and odd, which @thm-even-or-odd excludes. So \( \varphi \) is a bijection.
+(c) *Surjective:* by @thm-even-or-odd, every \( n \in \nZ \) is \( 2k \) or \( 2k + 1 \) for some \( k \in \nZ \), that is, \( \varphi(k, 0) \) or \( \varphi(k, 1) \). *Injective:* let \( 2q + r = 2q' + r' \). If \( r = r' \), then \( 2q = 2q' \), so \( q = q' \), and the pairs are equal (@def-ordered-pair). If \( r \ne r' \), then, since the equation is symmetric in the two pairs, the cases \( (r, r') = (0, 1) \) and \( (1, 0) \) remain (@exm-method-cases), and they are the same argument with the pairs exchanged, so we may assume \( r = 0 \) and \( r' = 1 \); now \( 2q = 2q' + 1 \) is an integer that is both even and odd, which @thm-even-or-odd excludes. So \( \varphi \) is a bijection.
 
 So "every integer is even or odd, and not both" is exactly the statement that \( \varphi \) is a bijection: "even or odd" is surjectivity, and "not both" is injectivity.
 :::
@@ -724,9 +724,9 @@ so \( x_1 = x_2 \), since \( g \circ f \) is injective. Hence \( y_1 = f(x_1) = 
 (b) Take the example before @prp-composite-partial-converse: \( f \colon \{1\} \to \{1, 2\} \), \( f(1) = 1 \), and \( g \colon \{1, 2\} \to \{1\} \), \( g(1) = g(2) = 1 \). Then \( g \circ f \colon \{1\} \to \{1\} \) is injective, because its domain has only one element: if \( x_1, x_2 \in \{1\} \), then \( x_1 = 1 = x_2 \). And \( g \) is not injective: \( g(1) = g(2) \) with \( 1 \ne 2 \). The hypothesis of (a) that fails is the surjectivity of \( f \): \( 2 \) is not a value of \( f \).
 
 **Marking scheme.** (10 points)
-- 2: fixes arbitrary \( y_1, y_2 \in Y \) with \( g(y_1) = g(y_2) \) and states the goal \( y_1 = y_2 \).
+- 2: fixes arbitrary \( y_1, y_2 \in Y \) with \( g(y_1) = g(y_2) \) and states the goal \( y_1 = y_2 \) (or, for a contrapositive proof, fixes \( y_1 \ne y_2 \) and aims for \( g(y_1) \ne g(y_2) \)).
 - 3: names preimages \( x_1 \), \( x_2 \) under \( f \), with fresh and different names, by the surjectivity of \( f \).
-- 3: rewrites \( g(y_1) = g(y_2) \) as an equation of values of \( g \circ f \), invokes the injectivity of \( g \circ f \), and returns to \( y_1 = y_2 \) through \( f \).
+- 3: rewrites \( g(y_1) = g(y_2) \) as an equation of values of \( g \circ f \), invokes the injectivity of \( g \circ f \) (in contrapositive form, if the proof is contrapositive), and returns to \( y_1 = y_2 \) through \( f \).
 - 2: an example with explicit sets and functions, both claims checked (\( g \circ f \) injective; two different points with the same value under \( g \)), and the failing hypothesis named.
 
 Fatal errors (0 for the step): assuming \( g \) is injective; one name for both preimages, so that \( y_1 = f(x) = y_2 \) is assumed from the start (entry (N4) of *Logic and Proof*, Chapter 8's catalogue); starting from \( y_1 = y_2 \) and deriving \( g(y_1) = g(y_2) \) (the converse, entry (N5)).
@@ -744,7 +744,7 @@ Fatal errors (0 for the step): assuming \( g \) is injective; one name for both 
 ::: {.solution}
 (a) Let \( f(n) = n + 1 \), and let \( g(0) = 0 \) and \( g(m) = m - 1 \) for \( m \ge 1 \); both are functions \( \nN \to \nN \), since \( m - 1 \in \nN \) for \( m \ge 1 \). Then \( g(f(n)) = (n + 1) - 1 = n \), since \( n + 1 \ge 1 \); so \( g \circ f = \id_{\nN} \) (@prp-function-equality), which is bijective. But \( f \) misses \( 0 \), since \( n + 1 \ge 1 \), so \( f \) is not surjective; and \( g(0) = 0 = g(1) \), so \( g \) is not injective.
 
-(b) Suppose \( g \circ f \) is bijective and \( f \) is surjective. Since \( g \circ f \) is injective, \( f \) is injective by @prp-composite-partial-converse (a); with the hypothesis, \( f \) is bijective. Since \( g \circ f \) is surjective, \( g \) is surjective by @prp-composite-partial-converse (b). Since \( g \circ f \) is injective and \( f \) is surjective, \( g \) is injective by @exr-functions-c1 (a). So \( g \) is bijective too.
+(b) Suppose \( g \circ f \) is bijective and \( f \) is surjective. Since \( g \circ f \) is injective, \( f \) is injective by @prp-composite-partial-converse (a); with the hypothesis, \( f \) is bijective. Since \( g \circ f \) is surjective, \( g \) is surjective by @prp-composite-partial-converse (b). Since \( g \circ f \) is injective and \( f \) is surjective, \( g \) is injective: for \( y_1, y_2 \in Y \) with \( g(y_1) = g(y_2) \), choose \( x_1, x_2 \in X \) with \( f(x_1) = y_1 \) and \( f(x_2) = y_2 \); then \( (g \circ f)(x_1) = (g \circ f)(x_2) \), so \( x_1 = x_2 \), and \( y_1 = y_2 \). So \( g \) is bijective too.
 :::
 
 <!-- dependency ledger
@@ -760,10 +760,10 @@ thm-composition-injective-surjective (claim): closing lines of ->I and forall-I 
 exr-functions-b1 (solution): parity (1 is odd, 2n even, not both) | thm-even-or-odd (F2.1 §01)
 exr-functions-b1 (solution): (c) n <= 1 gives n^3 <= 1, n >= 2 gives n^3 >= 8, every integer is <= 1 or >= 2; a function strictly increasing on R is strictly increasing on Z | school order facts on Z (F1-F2 convention); proved in AN1.1 and F2.2
 exr-functions-b1 (solution): (d) for x/sqrt(1+x^2): sqrt increasing on [0, inf), sqrt(x^2) = |x|, sqrt(1/t) = 1/sqrt(t) for t > 0 | school algebra (F1-F2 convention); proved in AN1.1
-exr-functions-b1 (solution): 0 in N and 0 + k = k | school arithmetic of N; F2.2 (promised; STATUS row "F2.1 §02, §03, F2.6 §02 → F2.2", ℕ closed under + and · by lem-naturals-arithmetic (b); 0 + k = k as in AN1.1)
-exr-functions-b1 (solution): in (e), (-1)^n is defined, and is 1 for even n and -1 for odd n | F2.2 (promised; STATUS row "F2.1 §02, §03, F2.6 §02 → F2.2", (−1)^n by prp-power-laws (b), thm-recursion); parity: thm-even-or-odd (F2.1 §01)
-def-surjective (example): the Quick check on n -> n + 1 uses n + 1 in N and n + 1 >= 1 for n in N; m - 1 in Z for m in Z | F2.2 (promised; STATUS row "F2.1 §02, §03, F2.6 §02 → F2.2": m − 1 in Z by prp-integers-closed, n + 1 in N by lem-naturals-arithmetic (b); n + 1 >= 1 for n in N since n >= 0 by lem-naturals-arithmetic (a))
-exr-functions-b3 (solution): n >= 1 gives n - 1 in N; n + 1 >= 1 for n in N | F2.2 (promised; STATUS row "F2.1 §02, §03, F2.6 §02 → F2.2"; n - 1 in N for n >= 1 by lem-naturals-arithmetic (c); n + 1 >= 1 since n >= 0 by (a))
+exr-functions-b1 (solution): 0 in N and 0 + k = k | school arithmetic of N; F2.2 (promised; STATUS re-cut row "F2.6 → F2.2", ℕ closed under + and · by lem-naturals-arithmetic (b); 0 + k = k as in AN1.1)
+exr-functions-b1 (solution): in (e), (-1)^n is defined, and is 1 for even n and -1 for odd n | F2.2 (promised; STATUS re-cut row "F2.6 → F2.2", (−1)^n by prp-power-laws (b), thm-recursion); parity: thm-even-or-odd (F2.1 §01)
+def-surjective (example): the Quick check on n -> n + 1 uses n + 1 in N and n + 1 >= 1 for n in N; m - 1 in Z for m in Z | F2.2 (promised; STATUS re-cut row "F2.6 → F2.2": m − 1 in Z by prp-integers-closed, n + 1 in N by lem-naturals-arithmetic (b); n + 1 >= 1 for n in N since n >= 0 by lem-naturals-arithmetic (a))
+exr-functions-b3 (solution): n >= 1 gives n - 1 in N; n + 1 >= 1 for n in N | F2.2 (promised; STATUS re-cut row "F2.6 → F2.2"; n - 1 in N for n >= 1 by lem-naturals-arithmetic (c); n + 1 >= 1 since n >= 0 by (a))
 exr-functions-a1 (solution): negation laws | F1.8 §02 (paid): prp-bounded-quantifier-negation, prp-negated-implication, prose pointer "*Logic and Proof*, Chapter 6"
 exm-fraction-map (example): 1 + |x| >= 1 > 0; |x|/(1 + |x|) < 1; f(x) has the sign of x; |x| = x for x >= 0 and -x for x < 0; clearing denominators; |y| < 1 gives 1 - |y| > 0 | school algebra and order facts (F1-F2 convention); proved in AN1.1
 exm-fraction-map (example): the case split on the sign of y (y >= 0 or y < 0) | trichotomy of the order on R, school fact (F1-F2 convention); proved in AN1.1
@@ -772,8 +772,10 @@ exr-functions-b4 (solution): (b) x^3 - y^3 = (x - y)(x^2 + xy + y^2) and the com
 exr-functions-b4 (solution): (c), (d) integer arithmetic; 2(m + 2n) is even (m + 2n in Z) | school arithmetic (closure of Z under + and ·, F1-F2 convention); thm-even-or-odd (cited) for "not both"
 exr-functions-b4 (solution): (e) (x + 2)^2 >= 0; sqrt(y + 4) exists and is >= 0 for y >= -4 | school fact (F1-F2 convention); proved in AN1.1; thm-squares-order (cited)
 prp-composite-partial-converse (proof): (a) applying g to both sides of f(x1) = f(x2): a function gives equal outputs at equal inputs | (Fn2) of def-function (substitution of equals); as in the old C1 solution
+prp-composite-partial-converse (proof): (b) f(x) in Y | (**) in def-function's paraphrase (every value lies in the codomain)
 prp-composite-partial-converse (claim): the lead's example: g o f = id_{1}, g(1) = g(2), 2 not a value of f | computation inline; prp-function-equality for g o f = id_{1} (one point)
 exm-structure-maps (solution): (a) "X subset of A and A subset of X give A = X" | prp-subset-antisymmetric (F2.1 §02)
+exm-structure-maps (solution): (b) split on whether Y has an element and whether X has one | classical (LEM), as in the case splits of F2.1
 exm-structure-maps (solution): (c) "at most one element": X = empty or X = {x}, so X x X is empty or {(x, x)} | prp-product-set-laws (empty factor); def-cartesian-product; case split on whether X has two different points (classical, LEM)
 exm-structure-maps (solution): (d) chain: De Morgan (d) and double negation (b) use RAA; disjunctive syllogism; vee-I; and-E | cited inline (fd1:prp-de-morgan, fd1:prp-double-negation, fd1:prp-disjunctive-syllogism), classical, as in exm-method-chain-of-iff
 exm-structure-maps (claim): (the projection Quick check) case split "Y has at most one element or two different points" | classical (LEM), as in the case splits of F2.1
@@ -793,5 +795,5 @@ exm-cancel-parity-map (claim): (the Quick check after it) 2t1 + 1 = 2t2 + 1 give
 exr-functions-b2 (solution): (v) uses def-composition to read (g o f)(x) as g(f(x)); g(y) in Z since g maps into Z | (**) in def-function's paraphrase (every value lies in the codomain)
 exr-functions-b5 (solution): (b) m/2 and (m - 1)/2 are natural numbers for even and odd m in N; 2n/2 = n | school arithmetic of N (F1-F2 convention); thm-even-or-odd (cited) for "exactly one case"
 exr-functions-b5 (solution): (d) |x^2| = x^2 since x^2 >= 0 | school fact (F1-F2 convention)
-exr-functions-c2 (solution): (a) m - 1 in N for m >= 1; n + 1 >= 1 for n in N; (n + 1) - 1 = n | F2.2 (promised; STATUS row "F2.1 §02, §03, F2.6 §02 → F2.2"; lem-naturals-arithmetic (a), (c))
+exr-functions-c2 (solution): (a) m - 1 in N for m >= 1; n + 1 >= 1 for n in N; (n + 1) - 1 = n | F2.2 (promised; STATUS re-cut row "F2.6 → F2.2"; lem-naturals-arithmetic (a), (c))
 -->

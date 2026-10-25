@@ -489,6 +489,22 @@ items:
     model: claude-opus-5-5
     evidence: '01:320-326: g(f(2)) = g(4) = 1 and f(g(2)) = f(-1) = 1; at 0, g(f(0)) = -3 and f(g(0))
       = 9, which is correct.'
+  - stage: S7r
+    verdict: correct
+    by: rereferee
+    hash: 5db7912613ab
+    date: '2026-10-26'
+    model: claude-opus-5-5
+    evidence: 'New check at 01:320: h(y) := 2(y−1)+3 = 2y+1; h(g(x)) = 2(x+1)+1 = 2x+3 = f(x) for all
+      x. The domain and codomain are both ℝ, so prp-function-equality applies. Correct and self-contained.'
+  - stage: S7r
+    verdict: correct
+    by: rereferee
+    hash: 5db7912613ab
+    date: '2026-10-26'
+    model: claude-opus-5-5
+    evidence: 'New check: h(y) = 2(y-1)+3 = 2y+1; h(g(x)) = 2(x+1)+1 = 2x+3 = f(x); equality by prp-function-equality.
+      Ledger line present.'
 - key: exr-functions-and-composition-a1
   kind: exr
   file: 01-functions-and-composition.md
@@ -588,6 +604,22 @@ items:
     model: claude-opus-5-5
     evidence: 01-functions-and-composition.md:395 B2(b) asks the reader to find t with t∘s=id on ℝ^2 and
       to check s∘t=id. This construction has no worked example in §2.1.
+  - stage: S7r
+    verdict: correct
+    by: rereferee
+    hash: 7ac836f7ef20
+    date: '2026-10-26'
+    model: claude-opus-5-5
+    evidence: The hint added to (b) is accurate. Solving gives x = (u+v)/2, y = (u−v)/2, which is the
+      t in the solution, and the solution's checks of t∘s and s∘t are unchanged.
+  - stage: S7r
+    verdict: correct
+    by: rereferee
+    hash: 7ac836f7ef20
+    date: '2026-10-26'
+    model: claude-opus-5-5
+    evidence: The added hint (solve u = x+y, v = x-y) is consistent with t(u,v) = ((u+v)/2, (u-v)/2).
+      Both composites recompute to the identity.
 - key: exr-functions-and-composition-b3
   kind: exr
   file: 01-functions-and-composition.md
@@ -688,6 +720,23 @@ items:
       The counterexample f=x+1, g=x+2 defeats that step at x=0: g(f(0))=3=f(g(0)) but f(0)≠g(0). My alternative
       counterexample (f=id, g(x)=x^2) earns full marks under the scheme. The chapter also meets the true-conclusion
       requirement, through exr-images-and-preimages-c2 in §2.5.'
+  - stage: S7r
+    verdict: correct
+    by: rereferee
+    hash: 30280b8ccadc
+    date: '2026-10-26'
+    model: claude-opus-5-5
+    evidence: 'The counterexample is unchanged and correct: f = x+1, g = x+2, both composites x+3, f(0)
+      = 1 ≠ 2 = g(0). The marking scheme is now 3+3+4 = 10 with fatal errors named, per STYLE §11.6. Its
+      reason ''from g(a) = f(b) one cannot conclude a = b'' is accurate.'
+  - stage: S7r
+    verdict: correct
+    by: rereferee
+    hash: 30280b8ccadc
+    date: '2026-10-26'
+    model: claude-opus-5-5
+    evidence: The marking scheme totals 3+3+4 = 10, and the fatal errors are sensible. The counterexample
+      f = x+1, g = x+2 commutes and f(0) = 1 ≠ 2 = g(0).
 - key: def-injective
   kind: def
   file: 02-injections-and-surjections.md
@@ -733,6 +782,14 @@ items:
     model: claude-opus-5-5
     evidence: '04:308-323: warning values f(0..3) = 0, 2, 6, 12 are right, and x^2 + x + 1 = (x + 1/2)^2
       + 3/4 > 0.'
+  - stage: S7r
+    verdict: correct
+    by: rereferee
+    hash: a8907283d759
+    date: '2026-10-26'
+    model: claude-opus-5-5
+    evidence: Only the ledger citation for the n+1 Quick check changed, to the existing STATUS row 'F2.6
+      → F2.2'.
 - key: def-bijective
   kind: def
   file: 02-injections-and-surjections.md
@@ -1027,6 +1084,16 @@ items:
     model: claude-opus-5-5
     evidence: 02-injections-and-surjections.md:308 Part (b) uses f(x) ∈ Y (every value lies in the codomain)
       without an @ref or a ledger line.
+  - stage: S7r
+    verdict: correct
+    by: rereferee
+    hash: 1a0d4117738d
+    date: '2026-10-26'
+    model: claude-opus-5-5
+    evidence: 'Proofs of (a) and (b) are unchanged and valid. The new ledger line for f(x) ∈ Y (b) cites
+      (**) of def-function. The new sentence at L311 can be checked on the page: g∘f = id_X is injective,
+      so (a) gives f injective. thm-left-inverse-iff-injective (a) in 04-inverses.md:94 is exactly ''left
+      inverse ⇒ injective''.'
 - key: exm-structure-maps
   kind: exm
   file: 02-injections-and-surjections.md
@@ -1058,6 +1125,23 @@ items:
     model: claude-opus-5-5
     evidence: 03-gluing-and-characteristic-functions.md:39 The inclusion map is defined twice, in 2.2
       and again in 2.3, and the second definition does not mention the first.
+  - stage: S7r
+    verdict: correct
+    by: rereferee
+    hash: bbfcf0266753
+    date: '2026-10-26'
+    model: claude-opus-5-5
+    evidence: '(d): the prose now names the steps by their display tags (De Morgan; drop the disjunct;
+      last step S ⊆ X), and each description matches its tagged line. (b): the case split on Y and X is
+      now in the ledger as classical (LEM). The mathematics in (a)-(d) is unchanged and correct.'
+  - stage: S7r
+    verdict: correct
+    by: rereferee
+    hash: bbfcf0266753
+    date: '2026-10-26'
+    model: claude-opus-5-5
+    evidence: The (d) prose now refers to the derivation's step tags ('De Morgan; double negation', 'drop
+      the disjunct', 'S ⊆ X'), which match the aligned chain at 02:339-345. The (a) solution is unchanged.
 - key: check:02-injections-and-surjections:3
   kind: check
   file: 02-injections-and-surjections.md
@@ -1106,6 +1190,23 @@ items:
       (k,1), (1,2), (2,1) are right. (c) uses thm-even-or-odd for both halves, and the WLOG is licensed
       by exm-method-cases (fd2 1.1). The meta-claim at 365 (coefficient, theorem of Chapter 1, order property)
       matches (a), (c) and the calculus (a).
+  - stage: S7r
+    verdict: minor
+    by: rereferee
+    hash: 4801cae4e859
+    date: '2026-10-26'
+    model: claude-opus-5-5
+    evidence: 'L384: the mathematics is correct, and the exm-method-cases citation now sits on the two
+      remaining cases. But ''since the equation is symmetric in the two pairs'' is still given as the
+      reason those cases remain; the real reason is r, r'' ∈ {0,1} with r ≠ r'' (F003 not fully fixed).'
+  - stage: S7r
+    verdict: correct
+    by: rereferee
+    hash: 4801cae4e859
+    date: '2026-10-26'
+    model: claude-opus-5-5
+    evidence: '(c) injectivity: the case r ≠ r'' is reduced to (0,1) by symmetry, and then 2q = 2q''+1
+      contradicts thm-even-or-odd. Surjectivity follows from thm-even-or-odd.'
 - key: prp-strictly-monotone-injective
   kind: prp
   file: 02-injections-and-surjections.md
@@ -1470,6 +1571,14 @@ items:
     evidence: '02:566-598. I agree with all five verdicts. A script checked 3/4→3/5, the symbolic inverse
       of (d), and that n+(-1)^n permutes ℕ. In (e), 1 maps to 0, which is not in ℤ_{>0}, so the planted
       failure is real. Worked examples exist: exm-fraction-map, exm-maps-from-calculus and exm-not-a-function.'
+  - stage: S7r
+    verdict: correct
+    by: rereferee
+    hash: 50b027444567
+    date: '2026-10-26'
+    model: claude-opus-5-5
+    evidence: Only the ledger citations changed, to the existing STATUS re-cut row 'F2.6 → F2.2' (STATUS:259,
+      which pays lem-naturals-arithmetic and the school facts named in ledger lines).
 - key: exr-functions-b2
   kind: exr
   file: 02-injections-and-surjections.md
@@ -1560,6 +1669,14 @@ items:
     evidence: '04-functions.md:594-600. s(n)=max(n-1,0) gives [0,0,1,2,3]: surjective, not injective.
       t(n)=n+1 is injective and misses 0. The answer-property list lets a different correct example be
       graded. The worked type is the quick check at line 403.'
+  - stage: S7r
+    verdict: correct
+    by: rereferee
+    hash: 4bdfb8262e07
+    date: '2026-10-26'
+    model: claude-opus-5-5
+    evidence: Only the ledger citation changed, to the existing STATUS row 'F2.6 → F2.2'; lem-naturals-arithmetic
+      (a) and (c) are the cited facts.
 - key: exr-functions-b4
   kind: exr
   file: 02-injections-and-surjections.md
@@ -1685,6 +1802,23 @@ items:
     model: claude-opus-5-5
     evidence: 02-injections-and-surjections.md:722 The marking scheme rewards one proof shape only. A
       correct contrapositive proof would lose 5 of the 8 points for part (a).
+  - stage: S7r
+    verdict: correct
+    by: rereferee
+    hash: 313c1d74b428
+    date: '2026-10-26'
+    model: claude-opus-5-5
+    evidence: The solution is unchanged and valid. The marking scheme's first and third items now also
+      accept a contrapositive proof, and the 2+3+3+2 = 10 points are unchanged.
+  - stage: S7r
+    verdict: correct
+    by: rereferee
+    hash: 313c1d74b428
+    date: '2026-10-26'
+    model: claude-opus-5-5
+    evidence: 'The marking scheme now also admits a contrapositive proof. The solution is unchanged and
+      correct: preimages are named by surjectivity, injectivity of g∘f is used, and the example fails
+      on the surjectivity of f.'
 - key: exr-functions-c2
   kind: exr
   file: 02-injections-and-surjections.md
@@ -1741,6 +1875,24 @@ items:
     evidence: '02:735-751. (a): with f=n+1 and g the predecessor (0 sent to 0), g∘f=id, f misses 0, and
       g(0)=g(1). (b) correctly chains prp-composite-partial-converse (a)/(b) with exr-functions-c1 (a),
       and the cited labels match 02:291-299.'
+  - stage: S7r
+    verdict: correct
+    by: rereferee
+    hash: a4e7362fdb10
+    date: '2026-10-26'
+    model: claude-opus-5-5
+    evidence: '(b) now gives the injectivity argument for g inline: pick preimages x1, x2 under the surjective
+      f; then (g∘f)(x1) = g(y1) = g(y2) = (g∘f)(x2), so x1 = x2 and y1 = y2. It no longer rests on Exercise
+      C1. (a) is unchanged and correct: g(f(n)) = n, f misses 0, g(0) = g(1). The ledger now cites STATUS
+      row ''F2.6 → F2.2'' (STATUS:259), which exists.'
+  - stage: S7r
+    verdict: correct
+    by: rereferee
+    hash: a4e7362fdb10
+    date: '2026-10-26'
+    model: claude-opus-5-5
+    evidence: (b) now proves g injective inline (the same argument as C1 (a)) instead of citing an exercise,
+      and the argument is correct. Ledger STATUS-row names were updated.
 - key: def-restriction-extension
   kind: def
   file: 03-gluing-and-characteristic-functions.md
@@ -1887,6 +2039,24 @@ items:
     model: claude-opus-5-5
     evidence: 03-gluing-and-characteristic-functions.md:85 The claim that f|_{[0,∞)} is injective is asserted
       without a reason or @ref, and the dependency ledger has no line for it.
+  - stage: S7r
+    verdict: correct
+    by: rereferee
+    hash: dbecc55b73c4
+    date: '2026-10-26'
+    model: claude-opus-5-5
+    evidence: '03:85: both the injectivity of f|_{[0,inf)} (by @exm-square-three-ways (b), and injectivity
+      does not depend on the codomain) and the failure f(-1) = 1 = f(1) now have reasons. The loss of
+      surjectivity on [1,2] is unchanged and correct. The ledger line was added.'
+  - stage: S7r
+    verdict: correct
+    by: rereferee
+    hash: dbecc55b73c4
+    date: '2026-10-26'
+    model: claude-opus-5-5
+    evidence: 'f(-1) = 1 = f(1) shows f is not injective. Injectivity of f|_[0,∞) is cited to exm-square-three-ways
+      (b) (q2: [0,∞)→ℝ); injectivity does not depend on the codomain, so the citation is valid ((c) would
+      match the codomain exactly). A ledger line was added.'
   old_key: check:01-restriction-extension-and-gluing:1
 - key: thm-gluing
   kind: thm
@@ -2007,6 +2177,15 @@ items:
     evidence: 03-gluing-and-characteristic-functions.md:131 The meta-claim 'Step (4) below is the one
       most often forgotten' cannot be checked on the page and sits awkwardly with the box's own 'usual
       failure', which puts step (2) first.
+  - stage: S7r
+    verdict: minor
+    by: rereferee
+    hash: 7ab17dbca51f
+    date: '2026-10-26'
+    model: claude-opus-5-5
+    evidence: 'The lead sentence at 03:131 can now be checked, but it says ''Example (c) below''. No example
+      is numbered (c): the thing meant is part (c) of exm-piecewise-as-gluing. The box itself is unchanged
+      and correct.'
 - key: exm-piecewise-as-gluing
   kind: exm
   file: 03-gluing-and-characteristic-functions.md
@@ -2067,6 +2246,15 @@ items:
     model: claude-opus-5-5
     evidence: 03-gluing-and-characteristic-functions.md:163 The lead calls the result a theorem, but it
       is a proposition (prp-).
+  - stage: S7r
+    verdict: correct
+    by: rereferee
+    hash: f5ff6d888799
+    date: '2026-10-26'
+    model: claude-opus-5-5
+    evidence: 03:163 says 'proposition', which matches the label. The idea at 03:172 cites the contrapositive
+      form after @def-injective together with @fd1:prp-contrapositive-converse (fd1 05-reductio:214),
+      which is what the (Leftarrow) proof uses.
 - key: proof:prp-injective-across-pieces
   kind: proof
   file: 03-gluing-and-characteristic-functions.md
@@ -2587,6 +2775,23 @@ items:
     model: claude-opus-5-5
     evidence: 03-gluing-and-characteristic-functions.md:446 In the solution to part (a), the bare '(b)'
       and '(c)' refer to prp-indicator-arithmetic but read as this exercise's own parts (b) and (c).
+  - stage: S7r
+    verdict: correct
+    by: rereferee
+    hash: 12d2c6b79ed8
+    date: '2026-10-26'
+    model: claude-opus-5-5
+    evidence: The solution to (a) cites @prp-indicator-arithmetic (b) and (c) in full. I rechecked (1-u)+(1-v)-(1-u)(1-v)
+      = 1-uv. The stem now declares 1 - f in {0,1}^X, which is consistent with 'Both sides are functions
+      X -> {0,1}' in (b).
+  - stage: S7r
+    verdict: correct
+    by: rereferee
+    hash: 12d2c6b79ed8
+    date: '2026-10-26'
+    model: claude-opus-5-5
+    evidence: (b) now states 1 - f ∈ {0,1}^X with its values. (a) now cites prp-indicator-arithmetic (b),
+      (c) explicitly; the computation (1-u)+(1-v)-(1-u)(1-v) = 1-uv checks.
 - key: exr-restriction-extension-and-gluing-c5
   kind: exr
   file: 03-gluing-and-characteristic-functions.md
@@ -4592,6 +4797,24 @@ items:
     date: '2026-10-26'
     model: claude-opus-5-5
     evidence: 05-images-and-preimages.md:676 R2's problem text names its source, which STYLE 11.5 forbids.
+  - stage: S7r
+    verdict: correct
+    by: rereferee
+    hash: 382883e53489
+    date: '2026-10-26'
+    model: claude-opus-5-5
+    evidence: 'The problem (05:676) no longer names its source. The solution (05:679-687) proves g = h
+      on f(X) from def-image and then extends to all of Y using def-surjective and prp-function-equality.
+      It cites @thm-cancellation (b) (=>), which is right: surjective implies right-cancellable, as at
+      02:449. The derivation''s chain of equalities is valid.'
+  - stage: S7r
+    verdict: correct
+    by: rereferee
+    hash: 382883e53489
+    date: '2026-10-26'
+    model: claude-opus-5-5
+    evidence: The problem text no longer names its source. The solution proves agreement on f(X), deduces
+      g = h for surjective f, and cites thm-cancellation (b) (⇒) only in the solution.
 - key: exr-images-and-preimages-r7
   kind: exr
   file: 05-images-and-preimages.md

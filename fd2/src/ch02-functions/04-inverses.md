@@ -155,6 +155,8 @@ So \( g \colon Y \to X \) is a function, and \( g(y) = x \) means \( (y, x) \in 
 The last sentence of the theorem combines (a) and (b). This proves the theorem.
 :::
 
+Part (a) is also @prp-composite-partial-converse (a), since \( g \circ f = \id_X \) and \( \id_X \) is injective, and the proof above is that proof with \( g \circ f = \id_X \) put in.
+
 Look at where each hypothesis did its work. Injectivity was used once, in the uniqueness step: it is what makes "**the** preimage of \( y \)" a single point. The hypothesis \( X \ne \emptyset \) was used once, in the first line of (b), to have a point \( x_0 \) for the second alternative. The case split on \( y \in f(X) \) used excluded middle, a classical step: the proof does not tell us, for a given \( y \), which case we are in.
 
 Neither hypothesis of (b) can be dropped.
@@ -215,6 +217,8 @@ Let \( f \colon X \to Y \) be a function. If \( f \) has a right inverse, then \
 ::: {.proof}
 Let \( g \colon Y \to X \) be a right inverse of \( f \), and let \( y \in Y \). By @def-left-right-inverse (b), \( f(g(y)) = y \). So \( x \coloneqq g(y) \) is an element of \( X \) with \( f(x) = y \) \( [\rulename{\exists I}] \). Since \( y \) was arbitrary, \( f \) is surjective by @def-surjective.
 :::
+
+This is also @prp-composite-partial-converse (b), since \( f \circ g = \id_Y \) and \( \id_Y \) is surjective.
 
 The proof names its witness, as in @exm-method-surjectivity, with the right inverse supplying \( x \coloneqq g(y) \): the right inverse **is** a rule that hands us, for each \( y \), a preimage \( g(y) \). No hypothesis on \( X \) or \( Y \) is needed. If \( Y = \emptyset \), then \( f \) is surjective vacuously; and \( X = \emptyset \) as well, since there is no function from a non-empty set to \( \emptyset \) (@prp-empty-function).
 
@@ -634,6 +638,8 @@ thm-left-inverse-iff-injective (proof): exactly one = existence (Fn1) plus uniqu
 thm-left-inverse-iff-injective (proof): the mixed case is contradictory (y in f(X) and y not in f(X)) | def-rules-negation (not-E), then bot-E; F1.2, used silently per the silent-steps convention (F1.5 promised)
 thm-left-inverse-iff-injective (proof): equal inputs give equal outputs for a function g | def-function (cited): exists! gives uniqueness of the value
 thm-left-inverse-iff-injective (claim): the empty function is injective vacuously | prp-vacuous-implication (F1.2), used in words
+thm-left-inverse-iff-injective (claim): (paragraph after the proof) (a) is prp-composite-partial-converse (a) with g o f = id_X; id_X is injective | prp-composite-partial-converse (F2.6 §02, cited); id_X injective: def-injective, immediate
+prp-right-inverse-surjective (claim): (paragraph after the proof) it is prp-composite-partial-converse (b) with f o g = id_Y; id_Y is surjective | prp-composite-partial-converse (F2.6 §02, cited); id_Y surjective: def-surjective, immediate
 prp-right-inverse-surjective (proof): exists-I with witness g(y) | F1.4 (fd1 Section 5.6): def-rules-existential (prose pointer)
 prp-right-inverse-surjective (claim): (open-question subsection) sqrt(y) >= 0 and (sqrt y)^2 = y for y >= 0 | school fact (F1-F2 convention); proved in AN1.1 (thm-nth-root)
 prp-right-inverse-surjective (claim): (open-question subsection) a proof is finite, so it contains finitely many exists-E | informal remark about derivations (def-derivation, F1.1), no result depends on it
