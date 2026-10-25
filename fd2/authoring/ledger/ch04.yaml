@@ -82,7 +82,7 @@ items:
 - key: exm-method-relation-properties
   kind: exm
   file: 01-relations.md
-  line: 105
+  line: 107
   hash: 4779531b1a7b
   verdicts:
   - stage: S5a
@@ -105,7 +105,7 @@ items:
 - key: check:01-relations:1
   kind: check
   file: 01-relations.md
-  line: 115
+  line: 117
   hash: 20b8327d2356
   verdicts:
   - stage: S5a
@@ -130,7 +130,7 @@ items:
 - key: prp-divides-partial-order
   kind: prp
   file: 01-relations.md
-  line: 127
+  line: 129
   hash: 96bb0b9fe6a2
   verdicts:
   - stage: S5a
@@ -153,7 +153,7 @@ items:
 - key: proof:prp-divides-partial-order
   kind: proof
   file: 01-relations.md
-  line: 137
+  line: 139
   hash: ad8106fef62a
   verdicts:
   - stage: S5a
@@ -199,7 +199,7 @@ items:
 - key: exm-relation-table
   kind: exm
   file: 01-relations.md
-  line: 159
+  line: 161
   hash: 817ae8899958
   verdicts:
   - stage: S5a
@@ -252,8 +252,8 @@ items:
 - key: check:01-relations:2
   kind: check
   file: 01-relations.md
-  line: 188
-  hash: a8b7870d9dad
+  line: 190
+  hash: be2f613aef22
   verdicts:
   - stage: S5a
     verdict: minor
@@ -303,8 +303,8 @@ items:
 - key: exr-relations-a1
   kind: exr
   file: 01-relations.md
-  line: 210
-  hash: 2034987a4ac8
+  line: 212
+  hash: 38d9df6f2d66
   verdicts:
   - stage: S5a
     verdict: minor
@@ -390,7 +390,7 @@ items:
 - key: exr-relations-b1
   kind: exr
   file: 01-relations.md
-  line: 236
+  line: 238
   hash: c0325a233d88
   verdicts:
   - stage: S5a
@@ -432,7 +432,7 @@ items:
 - key: exr-relations-b2
   kind: exr
   file: 01-relations.md
-  line: 262
+  line: 264
   hash: 9cb9db1605a4
   verdicts:
   - stage: S5a
@@ -487,7 +487,7 @@ items:
 - key: exr-relations-b3
   kind: exr
   file: 01-relations.md
-  line: 284
+  line: 286
   hash: 0e04ace6338f
   verdicts:
   - stage: S5a
@@ -517,7 +517,7 @@ items:
 - key: exr-relations-b4
   kind: exr
   file: 01-relations.md
-  line: 296
+  line: 298
   hash: 94fe7b24efff
   verdicts:
   - stage: S5a
@@ -553,7 +553,7 @@ items:
 - key: exr-relations-c1
   kind: exr
   file: 01-relations.md
-  line: 324
+  line: 326
   hash: 0b4131d20e59
   verdicts:
   - stage: S5a
@@ -585,7 +585,7 @@ items:
 - key: exr-relations-c2
   kind: exr
   file: 01-relations.md
-  line: 345
+  line: 347
   hash: fe819589950c
   verdicts:
   - stage: S5a
@@ -1203,7 +1203,7 @@ items:
   kind: check
   file: 02-equivalence-relations.md
   line: 421
-  hash: 5e4d6b59cbb2
+  hash: 55c013b881a2
   verdicts:
   - stage: S5a
     verdict: minor
@@ -1272,7 +1272,7 @@ items:
   kind: exm
   file: 02-equivalence-relations.md
   line: 447
-  hash: 2685fc45bc31
+  hash: ef1074d1ca81
   verdicts:
   - stage: S5a
     verdict: minor
@@ -1310,6 +1310,14 @@ items:
     evidence: 02:458 (c) now uses symmetry (prp-equinumerous-properties (b)), then transitivity (c) with
       card{1..m'}=card A', so A has m' elements, and m=m' by cor-finite-size-unique. The range {0,1,2,3}
       comes from (b). Ledger line 667 matches.
+  - stage: S8
+    verdict: correct
+    by: coordinator
+    hash: ef1074d1ca81
+    date: '2026-10-25'
+    evidence: 'src/ch04-relations-and-orders/02-equivalence-relations.md:458: (c) now says ''by part (b)
+      of this example''; checked symmetry (prp-equinumerous-properties (b)), transitivity ((c)), cor-finite-size-unique
+      give m=m'', codomain {0,1,2,3} from (b) of the example; verify/ch04/exm-same-size-subsets.py passes'
 - key: exr-equivalence-relations-a1
   kind: exr
   file: 02-equivalence-relations.md
@@ -1446,7 +1454,7 @@ items:
   kind: exr
   file: 02-equivalence-relations.md
   line: 535
-  hash: 2efbedd4a2be
+  hash: a0dd04820155
   verdicts:
   - stage: S5a
     verdict: correct
@@ -1529,7 +1537,7 @@ items:
   kind: exr
   file: 02-equivalence-relations.md
   line: 557
-  hash: bc7094703a15
+  hash: bf99fb71e72c
   verdicts:
   - stage: S5a
     verdict: minor
@@ -2192,7 +2200,7 @@ items:
   kind: exr
   file: 03-orders.md
   line: 253
-  hash: 67cff6443951
+  hash: eb6e9b42aa39
   verdicts:
   - stage: S5a
     verdict: correct
@@ -2383,7 +2391,7 @@ items:
   kind: exr
   file: 03-orders.md
   line: 328
-  hash: ee86fca3589f
+  hash: fa0e68097ab2
   verdicts:
   - stage: S5a
     verdict: minor
@@ -2714,83 +2722,3 @@ items:
       of X. It derives A' = A ∪ {x_{n+1}} from {1,…,n+1} = {1,…,n} ∪ {n+1} via @lem-naturals-arithmetic
       (e), as prp-finite-max does, and ledger 500 records this. Case 1 uses m ∈ A ⊆ A' and is correct.
       Case 2 use
-- key: check:04-relations:1
-  kind: check
-  file: 01-relations.md
-  line: 132
-  hash: a8b7870d9dad
-  verdicts:
-  - stage: S5a
-    verdict: correct
-    by: refereeA
-    hash: a33a3a5fc554
-    date: '2026-10-11'
-    model: claude-opus-5-5
-    evidence: 04:137. Reflexivity follows from @thm-prime-factor, which covers every integer ≥2. Witnesses
-      2,4 and 2,6,3 are correct. 'The only prime dividing 2 is 2' follows from @def-prime. 2∤3 is stated
-      without reason but is the same discreteness argument as 3∤14 in @def-divides.
-  - stage: S5b
-    verdict: minor
-    by: refereeB
-    hash: a33a3a5fc554
-    date: '2026-10-11'
-    model: claude-opus-5-5
-    evidence: '04-relations.md:137 The non-transitivity witness relies on two uncited and unledgered facts:
-      ''the only prime dividing 2 is 2'' (from @def-prime with 2 prime, shown after def-prime at 02:112)
-      and ''2 ∤ 3''.'
-  - stage: S7r
-    verdict: correct
-    by: rereferee
-    hash: e47d8846f216
-    date: '2026-10-11'
-    model: claude-opus-5-5
-    evidence: '04-relations.md:137. The earlier finding is resolved. The text now argues that a prime
-      dividing 2 is a positive divisor ≥ 2, hence 2, citing ''the example after @def-prime''. That example
-      (07/02-induction-in-practice.md:113) proves the positive divisors of 2 lie in {1,2}, and @def-prime
-      requires p ≥ 2. For 2∤3, 3 = 2k gives 1<k<2, which is impossible by @prp-integers-closed (c), since
-      1<k gives k ≥ '
-  removed: true
-- key: check:05-equivalence-relations:1
-  kind: check
-  file: 02-equivalence-relations.md
-  line: 104
-  hash: 6726a5b3e86d
-  verdicts:
-  - stage: S5a
-    verdict: correct
-    by: refereeA
-    hash: 6726a5b3e86d
-    date: '2026-10-11'
-    model: claude-opus-5-5
-    evidence: '05:109: ten classes of three each; the sidecar thm-classes-partition.py passes.'
-  - stage: S5b
-    verdict: correct
-    by: refereeB
-    hash: 6726a5b3e86d
-    date: '2026-10-11'
-    model: claude-opus-5-5
-    evidence: '05:105-109: ten classes {k,k+10,k+20}, three each; sidecar thm-classes-partition.py passes.'
-  removed: true
-- key: check:06-orders:1
-  kind: check
-  file: 03-orders.md
-  line: 164
-  hash: b326d808c322
-  verdicts:
-  - stage: S5a
-    verdict: correct
-    by: refereeA
-    hash: b326d808c322
-    date: '2026-10-11'
-    model: claude-opus-5-5
-    evidence: 06:169. The maximal elements are the three 2-sets. There is no greatest element, by prp-greatest-maximal
-      (a).
-  - stage: S5b
-    verdict: correct
-    by: refereeB
-    hash: b326d808c322
-    date: '2026-10-11'
-    model: claude-opus-5-5
-    evidence: 06:165-170. The maximal elements are the three 2-sets. Every set with at most one element
-      lies strictly inside a 2-set. There is no greatest element.
-  removed: true
