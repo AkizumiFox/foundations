@@ -1,10 +1,40 @@
 # Diagonal Arguments: Uncountable Sets and Cantor's Theorem
 
-Every infinite set met so far has turned out to be countable: \( \nN \), \( \nZ \), \( \nQ \), finite products of countable sets, countable unions of them (@thm-countable-union), and even the algebraic numbers (@thm-algebraic-countable). Is every infinite set countable? This section shows that the answer is no, by one argument used three times. Given any list, it builds an object that the list misses. The argument proves that the set of 0–1 sequences is uncountable, that no set can be mapped onto the set of its subsets (Cantor's theorem), and, with decimals, that \( \nR \) is uncountable.
+Every infinite set met so far has turned out to be countable: \( \nN \), \( \nZ \), \( \nQ \), finite products of countable sets, countable unions of them (@thm-countable-union), and even the algebraic numbers (@thm-algebraic-countable). Is every infinite set countable? This section shows that the answer is no, by one argument, which starts from the game of Section 1.5 and is then used three times. Given any list, it builds an object that the list misses. The argument proves that the set of 0–1 sequences is uncountable, that no set can be mapped onto the set of its subsets (Cantor's theorem), and, with decimals, that \( \nR \) is uncountable.
+
+## Back to the five strings
+
+Section 1.5 left a game open: one player lists five strings of five symbols \( 0 \) or \( 1 \), and the other must write a string that is not on the list. Searching all \( 32 \) strings works; a rule is better.
+
+::: {#exm-five-strings-diagonal}
+[Back to the five strings]
+
+Find a rule that, from any list \( s_1, \dots, s_5 \) of strings of five symbols \( 0 \) or \( 1 \), builds a string not on the list. Run it on \( 00000 \), \( 11111 \), \( 01010 \), \( 10101 \), \( 00111 \), and prove that it always works.
+:::
+
+::: {.solution}
+Let the new string \( g \) have, as its \( k \)-th symbol, the flip of the \( k \)-th symbol of the \( k \)-th string:
+\[
+g(k) \coloneqq 1 - s_k(k) \qquad (k = 1, \dots, 5)
+\]
+(strings are functions \( \{1, \dots, 5\} \to \{0, 1\} \), Section 1.5). On the given list, the symbols \( s_1(1), \dots, s_5(5) \) are \( 0, 1, 0, 0, 1 \), so \( g = 10110 \). It differs from \( 00000 \) in place \( 1 \), from \( 11111 \) in place \( 2 \), from \( 01010 \) in place \( 3 \), from \( 10101 \) in place \( 4 \) and from \( 00111 \) in place \( 5 \).
+
+For any list: for each \( k \), \( g(k) \ne s_k(k) \), since \( 1 - b \ne b \) for \( b \in \{0, 1\} \). So \( g \ne s_k \) (@prp-function-equality), for \( k = 1, \dots, 5 \). The \( k \)-th step looks only at the \( k \)-th string, in its own place \( k \).
+:::
+
+The rule never used the number \( 32 \). It used one place for each string on the list. Give the strings infinitely many places, indexed by \( \nN \), and let the list be infinite too, and the same rule still applies.
+
+::: {.check}
+Can the rule handle a list of six strings of five symbols? Does that contradict anything?
+:::
+
+::: {.solution}
+No. The sixth string has no sixth place to be flipped in. Nothing is contradicted: a list of \( 32 \) strings may contain every string. The rule needs as many places as strings, and in the next subsection both are indexed by \( \nN \).
+:::
 
 ## A sequence that is not on the list
 
-Recall from Section 1.5 that \( \{0, 1\}^{\nN} \) is the set of all functions \( \nN \to \{0, 1\} \): the sequences of zeros and ones, indexed from \( 0 \). It is infinite, and it looks no bigger than \( \nN \times \nN \), which is countable. To show that it is **not** countable we must show, by @def-countable, that it is non-empty and that **no** function \( f \colon \nN \to \{0, 1\}^{\nN} \) is onto. So we take an arbitrary list \( f(0), f(1), f(2), \dots \) of sequences and look for a sequence that is not on it.
+Recall from Section 1.5 that \( \{0, 1\}^{\nN} \) is the set of all functions \( \nN \to \{0, 1\} \): the sequences of zeros and ones, indexed from \( 0 \). These are the strings of the game with places indexed by \( \nN \). It is infinite, and it looks no bigger than \( \nN \times \nN \), which is countable. To show that it is **not** countable we must show, by @def-countable, that it is non-empty and that **no** function \( f \colon \nN \to \{0, 1\}^{\nN} \) is onto. So we take an arbitrary list \( f(0), f(1), f(2), \dots \) of sequences and look for a sequence that is not on it.
 
 Write the list as a table: row \( n \) is the sequence \( f(n) \), and the entry in row \( n \) and column \( k \) is the number \( f(n)(k) \). Here is the start of one such table, with the entries in places \( (0, 0), (1, 1), (2, 2), (3, 3) \) boxed:
 
@@ -36,6 +66,21 @@ The boxed entries run down the **diagonal** of the table. The bottom row \( g \)
 The set \( \{0, 1\}^{\nN} \) of all sequences of zeros and ones is uncountable.
 :::
 
+::: {.idea}
+[Scratch work]
+
+By @def-countable, "uncountable" has two parts: the set is non-empty, and no map from \( \nN \) onto it exists. The second is a statement about **every** \( f \), so take \( f \) arbitrary and look for a sequence it misses. As givens and goal:
+
+| Givens | Goal |
+|---|---|
+| \( f \colon \nN \to \{0, 1\}^{\nN} \) arbitrary | \( f \) is not onto; and \( \{0, 1\}^{\nN} \ne \emptyset \) |
+| — | some \( g \in \{0, 1\}^{\nN} \) with \( g \ne f(n) \) for every \( n \) |
+| \( g \ne f(n) \) as soon as \( g \) and \( f(n) \) differ at one place (@prp-function-equality) | pick the place for each \( n \): place \( n \), as in the game |
+| gap: \( g(n) \ne f(n)(n) \) for every \( n \) | closed by \( g(n) \coloneqq 1 - f(n)(n) \) |
+
+The proof writes this forwards.
+:::
+
 ::: {.proof}
 Let \( f \colon \nN \to \{0, 1\}^{\nN} \) be any function. Define \( g \colon \nN \to \{0, 1\} \) by
 \[
@@ -44,9 +89,25 @@ g(n) \coloneqq 1 - f(n)(n) \qquad (n \in \nN) ;
 its values lie in \( \{0, 1\} \), since \( 1 - 0 = 1 \) and \( 1 - 1 = 0 \). So \( g \in \{0, 1\}^{\nN} \). For every \( n \in \nN \), \( g(n) \ne f(n)(n) \), since no \( b \in \{0, 1\} \) has \( 1 - b = b \). Hence \( g \ne f(n) \): if \( g = f(n) \), then \( g(n) = f(n)(n) \), which is false; the two functions differ at place \( n \) [\( \rulename{{=}E} \), \( \rulename{\neg I} \); @prp-function-equality]. So \( g \) is not a value of \( f \), and \( f \) is not surjective. Since \( f \) was arbitrary, no function \( \nN \to \{0, 1\}^{\nN} \) is surjective. The set \( \{0, 1\}^{\nN} \) is non-empty, since it contains the zero sequence. By @def-countable, \( \{0, 1\}^{\nN} \) is not countable.
 :::
 
-This is the move of the section, and it has a name.
+This is the move of the section.
 
-**The diagonal.** *Given any list, build an object that differs from the \( n \)-th entry at the \( n \)-th place.* The new object is not on the list, because it disagrees with every entry somewhere, and the place of disagreement is chosen by the entry's own position.
+::: {#exm-method-diagonal}
+[Method: the diagonal]
+
+**Template.** To show that no map from \( I \) onto \( X \) exists (for "uncountable": \( I = \nN \), and check \( X \ne \emptyset \)), let \( f \colon I \to X \) be arbitrary. Build \( d \in X \) whose entry at \( i \) differs from the entry of \( f(i) \) at \( i \), for every \( i \in I \). Then \( d \ne f(i) \) for each \( i \), so \( f \) is not onto. Since \( f \) was arbitrary, no such map exists.
+
+**When to use it.** The elements of \( X \) are themselves functions or subsets on the index set of the list: sequences, digit strings, subsets of \( I \).
+
+**The usual failure.** A \( d \) that falls outside \( X \) (a decimal ending in \( 9 \)s, met below; a sequence of the wrong kind). A difference at place \( i \) that is not a real difference (two expansions of one number). Running the construction on one list only (the warning below).
+:::
+
+::: {.check}
+Would the unflipped diagonal, \( g(n) \coloneqq f(n)(n) \), do? Test it on the list whose every entry is the zero sequence.
+:::
+
+::: {.solution}
+No. There \( g \) is the zero sequence, which is \( f(0) \). The new object must differ from the \( n \)-th entry at place \( n \), for every \( n \).
+:::
 
 ::: {.check}
 Run the proof on the list \( f(n) \coloneqq \ind_{\{n\}} \), the sequence with a \( 1 \) in place \( n \) and \( 0 \) elsewhere. What is \( g \)? Is it on the list?
@@ -60,7 +121,25 @@ Here \( f(n)(n) = \ind_{\{n\}}(n) = 1 \) for every \( n \), so \( g(n) = 1 - 1 =
 **The diagonal object depends on the list.** "The diagonal sequence" is not one sequence: each list has its own, and a different list may well contain the \( g \) built from this one (the list \( g, f(0), f(1), \dots \) does). And the conclusion "uncountable" needs the list to be **arbitrary**. Running the construction on one list, or on a few, shows only that those lists miss something; concluding "so no list works" from them is the error (N1) of @fd1:exm-not-allowed-catalogue. The proof above starts from "let \( f \) be **any** function", and that is what makes its conclusion universal.
 :::
 
-## Cantor's theorem
+::: {#exm-diagonal-outgrows-list}
+[A function that outgrows a list]
+
+Let \( f_0, f_1, f_2, \dots \) be any list of functions \( \nN \to \nN \). Find \( g \colon \nN \to \nN \) such that, for every \( k \in \nN \), \( g(n) > f_k(n) \) for every \( n \ge k \).
+:::
+
+::: {.solution}
+*Idea.* The flipped diagonal beats \( f_n \) at place \( n \) only. To beat \( f_k \) from place \( k \) on, let place \( n \) beat \( f_0, \dots, f_n \) at once: finitely many, so a maximum exists.
+
+Let
+\[
+g(n) \coloneqq \max \{ f_0(n), \dots, f_n(n) \} + 1 \qquad (n \in \nN) .
+\]
+The set is \( \{x_1, \dots, x_{n+1}\} \) with \( x_{k+1} \coloneqq f_k(n) \), so the maximum exists by @prp-finite-max; it is one of the \( x_j \), so \( g(n) \in \nN \). For \( k \in \nN \) and \( n \ge k \), \( f_k(n) \) is one of the numbers in the set, so \( f_k(n) \le \max \{ f_0(n), \dots, f_n(n) \} < g(n) \). The example asks more of \( g \) than a diagonal does, and each step still looks at finitely many entries at one place.
+:::
+
+## Back to Russell: Cantor's theorem
+
+Section 1.2 proved Russell's theorem (@thm-russell): the set \( R_A \) disagrees with each candidate \( x \in A \) about \( x \) itself, so it is not in \( A \). Here the same disagreement becomes a theorem about sizes.
 
 The table had a row for each \( n \in \nN \) and a column for each place \( k \in \nN \). Nothing about the diagonal needs the rows and the columns to be indexed by \( \nN \): it needs only that they are indexed by the **same** set. A subset \( S \) of a set \( X \) is a row with one entry for each \( x \in X \), "in" or "out", the values of \( \ind_S \). So the argument applies to any set and the set of its subsets.
 
@@ -73,7 +152,7 @@ Let \( X \) be a set. Then there is **no** surjection \( X \to \powerset{X} \).
 *Try it first (ten minutes): given a function \( f \colon X \to \powerset{X} \), which subset of \( X \) could be missed by \( f \)? Try \( X = \{1, 2, 3\} \) with a function of your own first.*
 
 ::: {.idea}
-The first attempts look for a subset that is "too big" or "too small" to be a value, such as \( X \) itself or \( \emptyset \), and fail: \( f \) may well take both values. Size is the wrong idea. A set \( D \) differs from \( f(x) \) as soon as the two disagree about **one** element, and the only element we know anything about in connection with \( f(x) \) is \( x \) itself. So we make \( D \) disagree with \( f(x) \) at \( x \): put \( x \) into \( D \) exactly when \( x \notin f(x) \). This is the diagonal of the table, flipped.
+The first attempts look for a subset that is "too big" or "too small" to be a value, such as \( X \) itself or \( \emptyset \), and fail: \( f \) may well take both values. Size is the wrong idea. A set \( D \) differs from \( f(x) \) as soon as the two disagree about **one** element, and the only element we know anything about in connection with \( f(x) \) is \( x \) itself. So we make \( D \) disagree with \( f(x) \) at \( x \): put \( x \) into \( D \) exactly when \( x \notin f(x) \). This is the diagonal of the table, flipped. It is the method of @exm-method-diagonal, with the rows and the places both indexed by \( X \).
 
 *Before reading on: where is surjectivity used?*
 :::
@@ -90,7 +169,7 @@ Surjectivity was used once, to obtain \( d \); everything else holds for every f
 
 (i) *Russell's theorem is the same argument.* In @thm-russell, the set \( R_A = \{ x \in A : x \notin x \} \) is the set \( D \) built from the rule \( f(x) \coloneqq x \): each \( x \in A \) is tested against itself. The proof that \( D \) differs from every \( f(x) \) becomes the proof that \( R_A \) differs from every element of \( A \), that is, \( R_A \notin A \). (The rule \( x \mapsto x \) need not map into \( \powerset{A} \), but the argument never used that \( f(x) \subseteq X \), only the test "\( x \in f(x) \)".)
 
-(ii) *The power set is strictly bigger.* The map \( x \mapsto \{x\} \) is an injection \( X \to \powerset{X} \), since \( \{x\} = \{y\} \) gives \( x = y \). So \( \powerset{X} \) has at least as many elements as \( X \), in the sense that \( X \) is in bijection with a subset of it, and by the theorem it is not equinumerous with \( X \), since a bijection would be a surjection. Section 3.5 names this relation: \( X \) is strictly smaller than \( \powerset{X} \).
+(ii) *The power set is strictly bigger.* The map \( x \mapsto \{x\} \) is an injection \( X \to \powerset{X} \), since \( \{x\} = \{y\} \) gives \( x = y \). So \( \powerset{X} \) has at least as many elements as \( X \), in the sense that \( X \) is in bijection with a subset of it, and by the theorem it is not equinumerous with \( X \), since a bijection would be a surjection. Section 3.4 names this relation: \( X \) is strictly smaller than \( \powerset{X} \).
 
 (iii) *There is no largest size.* \( \nN \), \( \powerset{\nN} \), \( \powerset{\powerset{\nN}} \), …: each set in this sequence is strictly bigger than the one before.
 
@@ -192,7 +271,7 @@ Finally, if \( \nR \) were countable, its subset \( [0, 1) \) would be countable
 
 ## Transcendental numbers
 
-A real number that is not algebraic is called **transcendental**. Section 3.3 showed that the set \( \mathrm{Alg} \) of algebraic numbers is countable (@thm-algebraic-countable).
+A real number that is not algebraic is called **transcendental**. Section 3.2 showed that the set \( \mathrm{Alg} \) of algebraic numbers is countable (@thm-algebraic-countable).
 
 ::: {#cor-transcendental-exist}
 [Transcendental Numbers Exist]
@@ -273,6 +352,32 @@ We use @prp-geometric-sum with \( r = \frac{1}{10} \), after taking the constant
 \( x = \frac12 \). Example 2 after @def-decimal-expansion checks that \( 0.5000\ldots \) and \( 0.4999\ldots \) are expansions. There are no others: if three different expansions existed, two of them would both end in all \( 9 \)s or both not; but by (D3), of two different expansions of one number, one ends in all \( 9 \)s and the other in all \( 0 \)s, and a sequence ending in all \( 0 \)s does not end in all \( 9 \)s (from some place on, its digits would be both \( 0 \) and \( 9 \)). Answer: exactly these two, which illustrate (D3); the first is the one (D1) promises.
 
 \( x = 1 \). The all-nine sequence is an expansion (Example 3). Conversely, let \( (d_k) \) be an expansion of \( 1 \), and suppose \( d_m \le 8 \) for some \( m \). Since every digit is at most \( 9 \), \( t_m \le \sum_{k=1}^{m} 9 \cdot 10^{-k} - 10^{-m} = 1 - 2 \cdot 10^{-m} \), so \( t_m + 10^{-m} \le 1 - 10^{-m} < 1 \), against the definition. So every digit is \( 9 \). Answer: \( 0.999\ldots \) only. The all-nine sequence is an expansion of \( 1 \), an instance of the existence half of (D2). Here (D3) has no second expansion to compare. The case also shows why (D1) is stated for \( [0, 1) \) only: the one expansion of \( 1 \) ends in all \( 9 \)s.
+:::
+
+::: {#exr-diagonal-arguments-b4}
+[B4: Prove or disprove]
+
+Prove each true statement, and show each false one false.
+
+::: {.enumerate options="label=(\alph*)"}
+1. The set of periodic 0–1 sequences, those \( a \in \{0, 1\}^{\nN} \) with some \( p \ge 1 \) such that \( a(n + p) = a(n) \) for every \( n \in \nN \), is uncountable.
+2. The set of 0–1 sequences with no two consecutive \( 1 \)s is uncountable.
+3. For every set \( X \) there is no injection \( \powerset{X} \to X \).
+4. If \( X \) is infinite, there is no surjection \( X \to X \times X \).
+5. The set of all functions \( \nZ \to \{0, 1\} \) is uncountable.
+:::
+:::
+
+::: {.solution}
+(a) **False:** the set is countable. For \( p \in \nZ_{>0} \) let \( P_p \) be the set of sequences \( a \) with \( a(n + p) = a(n) \) for every \( n \in \nN \). For \( a \in P_p \), \( a(qp + r) = a(r) \) for all \( q \in \nN \) and \( 0 \le r < p \), by induction on \( q \). Every \( n \in \nN \) is \( qp + r \) for such \( q \) and \( r \) (@thm-division-algorithm; \( q \ge 0 \) since \( n \ge 0 \) and \( r < p \)). So \( a \) is determined by \( a(0), \dots, a(p - 1) \), and \( a \mapsto a|_{\{0, \dots, p-1\}} \) is an injection of \( P_p \) into the set of functions \( \{0, \dots, p - 1\} \to \{0, 1\} \), which is finite, with \( 2^p \) elements (@prp-power-set-count, through indicator functions). A finite set injects into \( \nN \) (@thm-countable-characterizations, (iii) ⇒ (ii)); composing, \( P_p \) injects into \( \nN \), so \( P_p \) is countable ((ii) ⇒ (i)). The set of periodic sequences is \( \bigcup_{p \in \nZ_{>0}} P_p \), countable by @thm-countable-union (b), since \( \nZ_{>0} \subseteq \nN \) is countable (@prp-countable-subset). No choice is involved: each pattern \( w \colon \{0, \dots, p - 1\} \to \{0, 1\} \) gives the sequence \( n \mapsto w(r) \), \( r \) the remainder of \( n \) on division by \( p \), so each \( P_p \) is listed by a rule (order the \( 2^p \) patterns lexicographically), and the union is listed without @ax-choice, as in @exm-choice-free-unions. The diagonal fails here because the flipped diagonal of a list of periodic sequences need not be periodic: the first usual failure of @exm-method-diagonal.
+
+(b) **True.** Send \( b \in \{0, 1\}^{\nN} \) to the sequence \( a \) with \( a(2n) \coloneqq b(n) \) and \( a(2n + 1) \coloneqq 0 \). Every odd place of \( a \) is \( 0 \), and of two consecutive places one is odd, so \( a \) has no two consecutive \( 1 \)s. The map is injective, since \( b \) is read back from the even places (@prp-function-equality). If the set were countable, composing with an injection of it into \( \nN \) (@thm-countable-characterizations, (i) ⇒ (ii)) would give an injection \( \{0, 1\}^{\nN} \to \nN \), so \( \{0, 1\}^{\nN} \) would be countable ((ii) ⇒ (i)), against @thm-binary-sequences-uncountable.
+
+(c) **True.** Let \( i \colon \powerset{X} \to X \) be injective. Since \( \emptyset \in \powerset{X} \), the domain is non-empty, so \( i \) has a left inverse \( r \colon X \to \powerset{X} \) (@thm-left-inverse-iff-injective (b)). The equation \( r \circ i = \id_{\powerset{X}} \) says that \( i \) is a right inverse of \( r \), so \( r \) is surjective (@prp-right-inverse-surjective), against @thm-cantor.
+
+(d) **False.** Take \( X = \nN \). The set \( \nN \times \nN \) is countable (@thm-product-countable) and non-empty, so @def-countable gives a surjection \( \nN \to \nN \times \nN \).
+
+(e) **True.** Restriction \( a \mapsto a|_{\nN} \) maps \( \{0, 1\}^{\nZ} \) onto \( \{0, 1\}^{\nN} \): a given \( b \in \{0, 1\}^{\nN} \) is the restriction of its extension by \( 0 \) on the negative integers. If \( \{0, 1\}^{\nZ} \) were countable, its image \( \{0, 1\}^{\nN} \) would be countable (@prp-countable-image), against @thm-binary-sequences-uncountable.
 :::
 
 ### C. Going deeper
@@ -363,6 +468,14 @@ cor-transcendental-exist (proof): the empty set is countable | def-countable (F2
 cor-transcendental-exist (proof): a set that is not empty has an element | def-empty-set, prp-empty-set-unique (F2.1); prp-quantifier-negation (a) and not-not-E (classical step, flagged)
 cor-transcendental-exist (claim): (remark) F1.5 §07 comparison | thm-irrational-power-rational, prp-log2-9-irrational (optional; pointer in a remark only)
 cor-transcendental-exist (claim): (remark) pi is transcendental | not proved and not used (a remark only)
+exm-five-strings-diagonal (solution): diagonal 0, 1, 0, 0, 1 of the 1.5 list; g = 10110 differs from s_k in place k; any list | verify/ch03/exm-five-strings-diagonal.py; prp-function-equality (cited)
+exm-five-strings-diagonal (claim): (check) a list of 32 strings may contain every string | 2^5 = 32 (prp-power-set-count, F2.2 §05), used silently
+exm-method-diagonal (claim): (check) the unflipped diagonal of the all-zero list is f(0) | inline
+thm-binary-sequences-uncountable (claim): (scratch work) table rows match the proof | inline
+exm-diagonal-outgrows-list (solution): max of n + 1 numbers exists; g(n) > f_k(n) for n >= k | prp-finite-max (F2.2 §03, cited); verify/ch03/exm-diagonal-outgrows-list.py
+thm-cantor (claim): (hook) R_A disagrees with each x in A about x | thm-russell (F2.1 §02, cited)
+exr-diagonal-arguments-b4 (solution): (a) periodic sequences determined by p values; P_p listed by a rule; union countable | thm-division-algorithm (F2.2 §02), prp-power-set-count (F2.2 §05), thm-countable-characterizations, thm-countable-union, prp-countable-subset, exm-choice-free-unions (cited); verify/ch03/exr-diagonal-arguments-b4.py
+exr-diagonal-arguments-b4 (solution): (b) interleaving injection; (c) left inverse, right inverse; (d) N x N countable; (e) restriction onto | prp-function-equality, thm-left-inverse-iff-injective, prp-right-inverse-surjective (F2.1 §06), thm-product-countable, prp-countable-image (cited); verify/ch03/exr-diagonal-arguments-b4.py
 exr-diagonal-arguments-a1 (solution): D = {2} | verify/ch08/exr-diagonal-arguments-a1.py
 exr-diagonal-arguments-b2 (solution): the finite subsets of N form a countable set | exr-countable-sets-c1 (cited; an exercise may cite an earlier one)
 exr-diagonal-arguments-b2 (solution): every subset of N is finite or infinite | prp-excluded-middle (cited), def-infinite

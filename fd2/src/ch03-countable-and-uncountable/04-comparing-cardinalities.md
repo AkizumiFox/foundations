@@ -1,6 +1,6 @@
 # Comparing Sizes: the Schröder–Bernstein Theorem
 
-We have \( (0, 1) \subseteq [0, 1] \subseteq \nR \). Are the three sets the same size? Section 3.1 made "same size" mean "there is a bijection", and for these sets a bijection is fiddly to write down: \( [0, 1] \) has two endpoints that \( (0, 1) \) lacks, and \( \nR \) is unbounded. An **injection**, on the other hand, is easy in both directions: the inclusion goes one way, and squeezing \( [0, 1] \) into the middle of \( (0, 1) \) goes the other. This section turns injections into a way of comparing sizes, and proves the theorem that makes the comparison useful: injections both ways give a bijection.
+We have \( (0, 1) \subseteq [0, 1] \subseteq \nR \). Are the three sets the same size? Section 2.5 made "same size" mean "there is a bijection", and for these sets a bijection is fiddly to write down: \( [0, 1] \) has two endpoints that \( (0, 1) \) lacks, and \( \nR \) is unbounded. An **injection**, on the other hand, is easy in both directions: the inclusion goes one way, and squeezing \( [0, 1] \) into the middle of \( (0, 1) \) goes the other. This section turns injections into a way of comparing sizes, and proves the theorem that makes the comparison useful: injections both ways give a bijection.
 
 ## Comparing sizes with injections
 
@@ -14,7 +14,7 @@ An injection \( A \to B \) places a copy of \( A \) inside \( B \): distinct ele
 Let \( A \) and \( B \) be sets. We write \( \card{A} \le \card{B} \), and say that **\( A \) is at most as big as \( B \)**, if **there exists** an injection \( A \to B \). We write \( \card{A} < \card{B} \), and say that **\( A \) is strictly smaller than \( B \)**, if \( \card{A} \le \card{B} \) and **not** \( \card{A} = \card{B} \): there is an injection \( A \to B \), and there is **no** bijection \( A \to B \).
 :::
 
-In words: "\( \le \)" asks for one injection, of our choosing. "\( < \)" asks for an injection **and** rules out every bijection, which is a statement about all functions \( A \to B \) at once. As with \( \card{A} = \card{B} \) in Section 3.1 (@def-equinumerous), the symbols \( \card{A} \le \card{B} \) and \( \card{A} < \card{B} \) are **relations between the sets** \( A \) and \( B \). No object \( \card{A} \) is defined for an infinite set, and nothing here compares two numbers.
+In words: "\( \le \)" asks for one injection, of our choosing. "\( < \)" asks for an injection **and** rules out every bijection, which is a statement about all functions \( A \to B \) at once. As with \( \card{A} = \card{B} \) in Section 2.5 (@def-equinumerous), the symbols \( \card{A} \le \card{B} \) and \( \card{A} < \card{B} \) are **relations between the sets** \( A \) and \( B \). No object \( \card{A} \) is defined for an infinite set, and nothing here compares two numbers.
 
 **Examples.**
 
@@ -49,7 +49,7 @@ For all sets \( A \), \( B \), \( C \):
 (b) Let \( f \colon A \to B \) and \( g \colon B \to C \) be injections. Then \( g \circ f \colon A \to C \) is injective by @thm-composition-injective-surjective (a). This proves the proposition.
 :::
 
-As with equinumerosity (Section 3.1, after @prp-equinumerous-properties), we do not call this a partial order: there is no set of all sets for it to be a relation on (@thm-russell). And antisymmetry, the clause (PO2) of @def-partial-order, would say "if \( \card{A} \le \card{B} \) and \( \card{B} \le \card{A} \), then \( A = B \)", which is false: \( \card{\nN} \le \card{2\nN} \) and \( \card{2\nN} \le \card{\nN} \), while \( 2\nN \ne \nN \). The right replacement for "\( A = B \)" is "\( \card{A} = \card{B} \)". That is the Schröder–Bernstein Theorem below.
+As with equinumerosity (Section 2.5, after @prp-equinumerous-properties), comparing sizes is reflexive and transitive (@prp-card-le-preorder), but we do not call it an order: there is no set of all sets for it to be a relation on (@thm-russell). And the clause one would expect next, the analogue of \( x \le y \le x \Rightarrow x = y \) for numbers, would say "if \( \card{A} \le \card{B} \) and \( \card{B} \le \card{A} \), then \( A = B \)", which is false: \( \card{\nN} \le \card{2\nN} \) and \( \card{2\nN} \le \card{\nN} \), while \( 2\nN \ne \nN \). The right replacement for "\( A = B \)" is "\( \card{A} = \card{B} \)". That is the Schröder–Bernstein Theorem below.
 
 Before it, one more way to read \( \le \). A countable set was defined by a surjection from \( \nN \), and @thm-countable-characterizations turned that into an injection into \( \nN \). The same exchange works for all sets, with one exception and one price.
 
@@ -167,8 +167,24 @@ Every value of \( h \) is given by a rule, so the proof makes **no use of @ax-ch
 
 Each hypothesis is used. Without the injection \( g \), the conclusion fails: \( \nN \to \powerset{\nN} \), \( n \mapsto \{n\} \), is an injection, and \( \card{\nN} \ne \card{\powerset{\nN}} \) by @thm-cantor. In the proof, injectivity of \( f \) is used once, in Case 1 of Step 3, and injectivity of \( g \) twice, in (F2) and in Case 2 of Step 4.
 
-::: {.remark}
-The theorem needs both \( \card{A} \le \card{B} \) and \( \card{B} \le \card{A} \); are any two sets comparable, that is, is it true that \( \card{A} \le \card{B} \) or \( \card{B} \le \card{A} \) for all \( A \) and \( B \)? The answer is yes, but the proof needs Zorn's lemma, a principle equivalent to @ax-choice; a later chapter devoted to Zorn's lemma states it, and the companion volume on set theory proves it from the axiom. This chapter does not prove comparability, and nothing in it needs it.
+In practice the theorem is used as a method.
+
+::: {#exm-method-injections-both-ways}
+[Method: injections both ways]
+
+**Template.** To show \( \card{A} = \card{B} \), write an injection \( f \colon A \to B \) and an injection \( g \colon B \to A \), check each one separately, and cite @thm-schroder-bernstein. Often one map is an inclusion and the other squeezes \( B \) into a part of \( A \). Do not hunt for the bijection: the theorem builds it.
+
+**When to use it.** \( A \) and \( B \) differ by "a little" (endpoints, a countable piece, a factor), so that a bijection would need cases; or \( A \) sits inside \( B \), and \( B \) fits back into \( A \).
+
+**The usual failure.** Two injections in the same direction. One injection that is not onto, read as strictness or as a bijection (the warnings after @def-card-le and after @exm-reals-open-interval). A squeeze whose values leave the target: \( x \mapsto x/2 \) sends \( [0, 1] \) into \( [0, \frac12] \) and hits \( 0 \notin (0, 1) \).
+:::
+
+::: {.check}
+Show \( \card{[0, 1] \cup \{5\}} = \card{[0, 1]} \) by the method.
+:::
+
+::: {.solution}
+The inclusion \( [0, 1] \to [0, 1] \cup \{5\} \) is injective. In the other direction, send \( x \in [0, 1] \) to \( x/2 \) and \( 5 \) to \( 1 \). Since \( 5 \notin [0, 1] \), the two clauses define a function into \( [0, 1] \). It is injective: two points of \( [0, 1] \) with \( x/2 = y/2 \) are equal, and a point of \( [0, 1] \) never meets \( 5 \), since \( x/2 \le \frac12 < 1 \). By @thm-schroder-bernstein the sets are equinumerous.
 :::
 
 ## Intervals of real numbers
@@ -182,7 +198,15 @@ Show that \( \card{[0, 1]} = \card{(0, 1)} \): first with @thm-schroder-bernstei
 :::
 
 ::: {.solution}
-*With the theorem.* The inclusion \( (0, 1) \to [0, 1] \) is an injection. In the other direction let \( u(x) \coloneqq x/2 + 1/4 \) for \( x \in [0, 1] \). If \( 0 \le x \le 1 \), then \( 1/4 \le u(x) \le 3/4 \), so \( u(x) \in (0, 1) \), and \( u \) is a function \( [0, 1] \to (0, 1) \). It is injective: \( x/2 + 1/4 = y/2 + 1/4 \) gives \( x = y \). By @thm-schroder-bernstein, \( \card{[0, 1]} = \card{(0, 1)} \).
+*With the theorem.* Planned as in @exm-method-injections-both-ways:
+
+| Givens | Goal |
+|---|---|
+| \( (0, 1) \subseteq [0, 1] \) | \( \card{[0, 1]} = \card{(0, 1)} \) |
+| the inclusion \( (0, 1) \to [0, 1] \), injective | an injection \( [0, 1] \to (0, 1) \) |
+| gap: squeeze \( [0, 1] \) into a closed interval inside \( (0, 1) \) | \( u(x) \coloneqq x/2 + 1/4 \), with values in \( [\frac14, \frac34] \) |
+
+The inclusion \( (0, 1) \to [0, 1] \) is an injection. In the other direction let \( u(x) \coloneqq x/2 + 1/4 \) for \( x \in [0, 1] \). If \( 0 \le x \le 1 \), then \( 1/4 \le u(x) \le 3/4 \), so \( u(x) \in (0, 1) \), and \( u \) is a function \( [0, 1] \to (0, 1) \). It is injective: \( x/2 + 1/4 = y/2 + 1/4 \) gives \( x = y \). By @thm-schroder-bernstein, \( \card{[0, 1]} = \card{(0, 1)} \).
 
 *A bijection.* The two extra points \( 0 \) and \( 1 \) are absorbed by a Hilbert's hotel (@exm-hilbert-hotel) run on the points \( 1, \frac12, \frac13, \dots \). Define \( \varphi \colon [0, 1] \to (0, 1) \) by
 \[
@@ -223,7 +247,7 @@ By @thm-bijection-iff-inverse, \( s \) is a bijection \( \nR \to (-1, 1) \). For
 
 *Open intervals.* The map \( y \mapsto (y + 1)/2 \) is a bijection \( (-1, 1) \to (0, 1) \), with inverse \( u \mapsto 2u - 1 \). For \( c < d \), the map \( u \mapsto c + (d - c)u \) is a bijection \( (0, 1) \to (c, d) \), with inverse \( v \mapsto (v - c)/(d - c) \), since \( d - c > 0 \). Composing the three bijections (@thm-composition-injective-surjective (c)) gives a bijection \( \nR \to (c, d) \), so \( \card{(c, d)} = \card{\nR} \).
 
-*Every interval with more than one point.* Let \( I \) be an interval (bounded or not, with or without its endpoints) containing two points \( c < d \). An interval contains every number between two of its points, so \( (c, d) \subseteq I \subseteq \nR \). The inclusion is an injection \( (c, d) \to I \). In the other direction, let \( \beta \colon \nR \to (c, d) \) be the bijection just built; then \( \beta \) restricted to \( I \) is an injection \( I \to (c, d) \). By @thm-schroder-bernstein, \( \card{I} = \card{(c, d)} \), and \( \card{(c, d)} = \card{\nR} \), so \( \card{I} = \card{\nR} \) by @prp-equinumerous-properties. This covers \( [0, 1] \), \( [0, 1) \), \( (0, \infty) \), \( [5, \infty) \) and \( \nR \) itself at once.
+*Every interval with more than one point.* Let \( I \) be an interval (bounded or not, with or without its endpoints) containing two points \( c < d \). An interval contains every number between two of its points, so \( (c, d) \subseteq I \subseteq \nR \). The inclusion is an injection \( (c, d) \to I \). In the other direction, let \( \beta \colon \nR \to (c, d) \) be the bijection just built; then \( \beta \) restricted to \( I \) is an injection \( I \to (c, d) \). By the method of @exm-method-injections-both-ways (@thm-schroder-bernstein), \( \card{I} = \card{(c, d)} \), and \( \card{(c, d)} = \card{\nR} \), so \( \card{I} = \card{\nR} \) by @prp-equinumerous-properties. This covers \( [0, 1] \), \( [0, 1) \), \( (0, \infty) \), \( [5, \infty) \) and \( \nR \) itself at once.
 :::
 
 In particular every interval with more than one point is uncountable: it is equinumerous with \( \nR \), which is uncountable by @thm-reals-uncountable-decimal, and a set equinumerous with a countable set is countable (compose a surjection from \( \nN \) with the bijection, @prp-countable-image).
@@ -237,7 +261,13 @@ Give an injection \( \nN \to \nN \times \nN \) and an injection \( \nN \times \n
 :::
 
 ::: {.solution}
-\( n \mapsto (n, 1) \) is injective, by the characteristic property of pairs (@def-ordered-pair). \( (m, n) \mapsto 2^m 3^n \) is injective, as shown in the proof of @thm-product-countable. So \( \card{\nN} = \card{\nN \times \nN} \), and \( \nN \times \nN \) is countably infinite (@def-countably-infinite). Section 3.2 showed only that \( \nN \times \nN \) is countable; the theorem gives a bijection with \( \nN \) directly, with no listing at all.
+\( n \mapsto (n, 1) \) is injective, by the characteristic property of pairs (@def-ordered-pair). \( (m, n) \mapsto 2^m 3^n \) is injective, as shown in the proof of @thm-product-countable. So \( \card{\nN} = \card{\nN \times \nN} \), and \( \nN \times \nN \) is countably infinite (@def-countably-infinite). Section 3.1 showed only that \( \nN \times \nN \) is countable; the theorem gives a bijection with \( \nN \) directly, with no listing at all.
+:::
+
+::: {.remark}
+[Looking ahead]
+
+The method needs an injection each way. Are any two sets comparable, that is, is \( \card{A} \le \card{B} \) or \( \card{B} \le \card{A} \) for all \( A \) and \( B \)? Building an injection one element at a time does not settle it: a recursion indexed by \( \nN \) reaches only countably many elements, so it cannot exhaust an uncountable set. Section 5.2 proves that the answer is yes, by Zorn's lemma, a principle equivalent to @ax-choice. Nothing in this chapter needs comparability.
 :::
 
 ## Exercises
@@ -327,12 +357,44 @@ c(2n) \coloneqq a(n), \qquad c(2n + 1) \coloneqq b(n) \qquad (n \in \nN).
 Define \( \Psi \colon \{0, 1\}^{\nN} \to \{0, 1\}^{\nN} \times \{0, 1\}^{\nN} \) by \( \Psi(c) \coloneqq (a, b) \) with \( a(n) \coloneqq c(2n) \) and \( b(n) \coloneqq c(2n + 1) \). Then \( \Psi(\Phi(a, b)) = (a, b) \): its coordinates \( n \mapsto c(2n) = a(n) \) and \( n \mapsto c(2n + 1) = b(n) \) are \( a \) and \( b \) by @prp-function-equality, so the pairs are equal (@def-ordered-pair). And \( \Phi(\Psi(c)) \) agrees with \( c \) at every even place \( 2n \) and every odd place \( 2n + 1 \), which are all the places, so \( \Phi(\Psi(c)) = c \) (@prp-function-equality). By @thm-bijection-iff-inverse, \( \Phi \) is a bijection.
 :::
 
+::: {#exr-comparing-cardinalities-b4}
+[B4: Prove or disprove]
+
+Prove each true statement and refute each false one with a counterexample. Here \( A \), \( B \), \( C \) are sets.
+
+::: {.enumerate options="label=(\alph*)"}
+1. \( \card{\nZ} < \card{\nQ} \).
+2. If \( \card{A} < \card{B} \) and \( \card{B} \le \card{C} \), then \( \card{A} < \card{C} \).
+3. If \( \card{A} \le \card{B} \) and \( B \) is countable, then \( A \) is countable.
+4. \( \card{\{0, 1\}^{\nN}} = \card{\nN^{\nN}} \), where \( \nN^{\nN} \) is the set of functions \( \nN \to \nN \).
+5. If \( A \subseteq B \) and \( \card{B} \le \card{A} \), then \( \card{A} = \card{B} \).
+:::
+:::
+
+::: {.solution}
+(a) False. Both sets are countably infinite (@thm-integers-rationals-countable), so \( \card{\nZ} = \card{\nN} = \card{\nQ} \) by @prp-equinumerous-properties, and there is a bijection \( \nZ \to \nQ \). So "not \( \card{\nZ} = \card{\nQ} \)" fails.
+
+(b) True. First, \( \card{A} \le \card{C} \) by @prp-card-le-preorder (b). Suppose, for a contradiction, that there is a bijection \( \varphi \colon A \to C \), and let \( k \colon B \to C \) be an injection. Then \( \varphi^{-1} \circ k \colon B \to A \) is injective (@thm-composition-injective-surjective (a); \( \varphi^{-1} \) is a bijection by @thm-bijection-iff-inverse), so \( \card{B} \le \card{A} \). With \( \card{A} \le \card{B} \), @thm-schroder-bernstein gives \( \card{A} = \card{B} \), against \( \card{A} < \card{B} \). So there is no bijection \( A \to C \), and \( \card{A} < \card{C} \).
+
+(c) True. Let \( f \colon A \to B \) be an injection. As \( B \) is countable, there is an injection \( j \colon B \to \nN \) (@thm-countable-characterizations, (i) \( \Rightarrow \) (ii)). The composite \( j \circ f \colon A \to \nN \) is injective (@thm-composition-injective-surjective (a)), so \( A \) is countable by (ii) \( \Rightarrow \) (i).
+
+(d) True, by the method of @exm-method-injections-both-ways. *Into \( \nN^{\nN} \):* send \( a \in \{0, 1\}^{\nN} \) to the same rule read with codomain \( \nN \). Two sequences with the same image have the same values, so they are equal (@prp-function-equality). *Back:* in three injective steps.
+
+- \( f \mapsto \Gamma_f \), the graph of \( f \), is an injection \( \nN^{\nN} \to \powerset{\nN \times \nN} \): equal graphs give equal values, so equal functions (@prp-function-equality).
+- With the injection \( p(m, n) \coloneqq 2^m 3^n \) from the proof of @thm-product-countable, \( S \mapsto p(S) \) is an injection \( \powerset{\nN \times \nN} \to \powerset{\nN} \). If \( p(S) = p(T) \) and \( x \in S \), then \( p(x) \in p(T) \), so \( p(x) = p(y) \) for some \( y \in T \), and \( x = y \in T \). So \( S \subseteq T \), and \( T \subseteq S \) in the same way.
+- \( S \mapsto \ind_S \) is an injection \( \powerset{\nN} \to \{0, 1\}^{\nN} \): \( \ind_S = \ind_T \) says that \( n \in S \) exactly when \( n \in T \).
+
+The composite of the three is an injection \( \nN^{\nN} \to \{0, 1\}^{\nN} \) (@prp-card-le-preorder (b)), and @thm-schroder-bernstein gives the equality.
+
+(e) True. The inclusion \( A \to B \) gives \( \card{A} \le \card{B} \), and @thm-schroder-bernstein applies.
+:::
+
 ### C. Going deeper
 
 ::: {#exr-comparing-cardinalities-c1}
 [C1: The real line and the subsets of \( \nN \)]
 
-Prove that \( \card{\nR} = \card{\powerset{\nN}} \), using the decimal facts (D1)–(D3) of Section 3.4.
+Prove that \( \card{\nR} = \card{\powerset{\nN}} \), using the decimal facts (D1)–(D3) of Section 3.3.
 
 ::: {.enumerate options="label=(\alph*)"}
 1. For \( x \in [0, 1) \) let \( d_1 d_2 \ldots \) be its decimal expansion that does not end in all \( 9 \)s, and let \( E(x) \coloneqq \{ 10k + d_k : k \in \nZ_{>0} \} \). Show that \( E \) is a well-defined injection \( [0, 1) \to \powerset{\nN} \).
@@ -399,7 +461,7 @@ def-card-le (example): {x1} = {x2} gives x1 = x2 | def-set-equality (F2.1 §01),
 prp-card-le-preorder (claim): (after it) 2N is not N, n -> 2n injective | arithmetic (1 is not even: thm-division-algorithm uniqueness)
 thm-schroder-bernstein (proof): case split a in C or a not in C | excluded middle (F1.5 §07, prose pointer; classical logic of F1.2)
 thm-schroder-bernstein (proof): g(f(S)) is a subset of A for S subset of A, so (n, S) -> g(f(S)) is a function N x P(A) -> P(A) | def-image (cited), def-power-set (F2.1 §02), used silently
-thm-schroder-bernstein (claim): (remark) any two sets are comparable, via Zorn's lemma; Zorn stated in F2.4, proved from choice in ST.4 | F2.4, ST.4 (prose pointers; nothing depends on them)
+thm-schroder-bernstein (claim): ([Looking ahead] remark, end of main line) any two sets are comparable, via Zorn's lemma, Section 5.2 | F2.5 §02 (prose pointer; nothing depends on it); a recursion on N has countable image, prp-countable-image
 exm-closed-open-interval (solution): 1/4 <= x/2 + 1/4 <= 3/4; 1/n distinct for distinct n; 0 < 1/(n+2) <= 1/3 < 1/2 | R arithmetic and order, school fact; verify/ch08/exm-closed-open-interval.py
 exm-closed-open-interval (solution): [0,1] \ H = (0,1) \ H' | inline (0 and 1 = 1/1 lie in H; H \ {0, 1} = H')
 exm-reals-open-interval (solution): algebra of |x|/(1 + |x|) and its inverse; |y/(1-|y|)| = |y|/(1-|y|) | R arithmetic with absolute values, school fact (F2.1 §05 B3 does the same computation, not cited); verify/ch08/exm-reals-open-interval.py
@@ -412,4 +474,7 @@ exr-comparing-cardinalities-b2 (solution): x -> 3x bijection (0,1) -> (0,3) | R 
 exr-comparing-cardinalities-c1 (solution): uses (D1), (D2), (D3) | school facts (D1)-(D3), stated in F2.3 §04 (def-decimal-expansion)
 exr-comparing-cardinalities-c1 (solution): y_S <= t_1 + 1/10 <= 3/10 | def-decimal-expansion (cited) with n = 1; verify/ch08/exr-comparing-cardinalities-c1.py
 exr-comparing-cardinalities-c2 (solution): 9/10 not in [1/4, 3/4] | R order, school fact
+exm-method-injections-both-ways (example): x/2 at most 1/2, below 1, for x in [0,1]; 5 not in [0,1] | R order, school fact
+exr-comparing-cardinalities-b4 (solution): S -> p(S) injective on subsets of N x N | inline from injectivity of p; verify/ch03/exr-comparing-cardinalities-b4.py
+exr-comparing-cardinalities-b4 (solution): graph determines the function | prp-function-equality (cited)
 -->

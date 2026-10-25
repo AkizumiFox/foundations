@@ -1,6 +1,6 @@
 # Infinite Sets
 
-Section 3.5 compared sizes with injections. Here we ask where \( \nN \) sits in that comparison. Every infinite set we have met contains a copy of \( \nN \), and it is tempting to say that this must always happen by picking new elements one at a time; this section makes that picking exact. It turns out to need @ax-choice again, this time applied to a family with one set for each non-empty subset of the given set, and it gives two results: \( \nN \) is the smallest infinite size, and a set is infinite exactly when it is the same size as a proper part of itself.
+Section 3.4 compared sizes with injections. Here we ask where \( \nN \) sits in that comparison. Every infinite set we have met contains a copy of \( \nN \), and it is tempting to say that this must always happen by picking new elements one at a time; this section makes that picking exact. It turns out to need @ax-choice again, this time applied to a family with one set for each non-empty subset of the given set, and it gives two results: \( \nN \) is the smallest infinite size, and a set is infinite exactly when it is the same size as a proper part of itself.
 
 ## Every infinite set contains a copy of the natural numbers
 
@@ -68,7 +68,7 @@ Let \( X \) be uncountable. Is \( X \setminus \{x\} \) uncountable for every \( 
 
 ## Infinite sets are the same size as a proper part
 
-Section 3.1 proved that a finite set is never equinumerous with a proper subset (@thm-finite-no-proper-copy), and @exm-hilbert-hotel showed \( \nN \) doing exactly that. With @thm-infinite-countable-subset, the hotel can be built inside any infinite set: run it on the copy of \( \nN \), and leave everything else alone.
+Section 2.5 proved that a finite set is never equinumerous with a proper subset (@thm-finite-no-proper-copy), and @exm-hilbert-hotel showed \( \nN \) doing exactly that. With @thm-infinite-countable-subset, the hotel can be built inside any infinite set: run it on the copy of \( \nN \), and leave everything else alone.
 
 ::: {#thm-infinite-iff-proper-subset}
 [Infinite Sets and Proper Subsets]
@@ -77,7 +77,7 @@ A set \( X \) is infinite if and only if \( \card{X} = \card{Y} \) for some prop
 :::
 
 ::: {.idea}
-One direction is already done: Section 3.1 showed that finite sets have no proper subset of their own size. For the other, take the copy \( x_0, x_1, x_2, \dots \) of \( \nN \) inside \( X \) and move every guest one room up, \( x_n \mapsto x_{n+1} \), as \( n \mapsto n + 1 \) does in the Quick check after @exm-hilbert-hotel. Room \( x_0 \) is vacated, and every point outside the copy stays where it is.
+One direction is already done: Section 2.5 showed that finite sets have no proper subset of their own size. For the other, take the copy \( x_0, x_1, x_2, \dots \) of \( \nN \) inside \( X \) and move every guest one room up, \( x_n \mapsto x_{n+1} \), as \( n \mapsto n + 1 \) does in the Quick check after @exm-hilbert-hotel. Room \( x_0 \) is vacated, and every point outside the copy stays where it is.
 :::
 
 ::: {.proof}
@@ -100,7 +100,7 @@ This is a function into \( X \setminus \{x_0\} \): \( x_{n+1} \ne x_0 \) because
 So \( h \) is a bijection, and \( Y \coloneqq X \setminus \{x_0\} \) is a proper subset of \( X \), as \( x_0 \in X \setminus Y \), with \( \card{X} = \card{Y} \). This proves the theorem.
 :::
 
-Together with Section 3.1, this gives a characterization of "infinite" that never mentions \( \nN \) or counting: a set is infinite precisely when some proper part of it is as big as the whole. The finite intuition "a part is smaller than the whole" is exactly the property that separates finite sets from infinite ones. The direction \( (\Rightarrow) \) used @ax-choice, through @thm-infinite-countable-subset; the direction \( (\Leftarrow) \) did not.
+Together with Section 2.5, this gives a characterization of "infinite" that never mentions \( \nN \) or counting: a set is infinite precisely when some proper part of it is as big as the whole. The finite intuition "a part is smaller than the whole" is exactly the property that separates finite sets from infinite ones. The direction \( (\Rightarrow) \) used @ax-choice, through @thm-infinite-countable-subset; the direction \( (\Leftarrow) \) did not.
 
 ::: {.check}
 Name a proper subset of \( \nR \) that is equinumerous with \( \nR \), and give a bijection.
@@ -252,7 +252,7 @@ Prove that every integer \( n \ge 1 \) is a sum of distinct powers of \( 2 \): t
 ::: {.solution}
 We use @thm-strong-induction-from-base with \( n_0 = 1 \). Let \( n \ge 1 \), and suppose every integer \( m \) with \( 1 \le m < n \) is such a sum.
 
-*The largest power of \( 2 \) not above \( n \).* The set \( T \coloneqq \{ k \in \nN : 2^k > n \} \) is non-empty, since \( 2^n \ge 1 + n > n \) by @thm-bernoulli with \( x = 1 \). By @thm-well-ordering it has a least element \( m \). Since \( 2^0 = 1 \le n \), \( 0 \notin T \), so \( m \ge 1 \), and \( K \coloneqq m - 1 \in \nN \) (@lem-naturals-arithmetic (c)). As \( K < m \), \( K \notin T \); so
+*The largest power of \( 2 \) not above \( n \).* The set \( T \coloneqq \{ k \in \nN : 2^k > n \} \) is non-empty, since \( 2^n \ge 1 + n > n \) by @thm-bernoulli with \( x = 1 \). By @thm-well-ordering it has a least element \( m \) (the method of @exm-method-least-element). Since \( 2^0 = 1 \le n \), \( 0 \notin T \), so \( m \ge 1 \), and \( K \coloneqq m - 1 \in \nN \) (@lem-naturals-arithmetic (c)). As \( K < m \), \( K \notin T \); so
 \[
 2^K \le n < 2^{K+1} .
 \]
@@ -292,7 +292,7 @@ For an integer \( n \ge 1 \), how many truth functions with \( n \) inputs are t
 ::: {.solution}
 There are \( 2^{2^n} \). A truth function with \( n \) inputs (@fd1:def-truth-function) assigns a truth value to each row \( (a_1, \dots, a_n) \); read a row as the function \( i \mapsto a_i \) on \( \{1, \dots, n\} \), and let \( L \) be the set of rows.
 
-*There are \( 2^n \) rows.* The map sending a row to \( \{ i \in \{1, \dots, n\} : a_i = \mathrm{T} \} \) is a bijection \( L \to \powerset{\{1, \dots, n\}} \): a row is determined by the places where it is \( \mathrm{T} \), and every set of places arises. Since \( \{1, \dots, n\} \) has \( n \) elements, @prp-power-set-count gives \( 2^n \) subsets, so \( L \) has \( 2^n \) elements (compose the bijections).
+*There are \( 2^n \) rows.* The map sending a row to \( \{ i \in \{1, \dots, n\} : a_i = \mathrm{T} \} \) is a bijection \( L \to \powerset{\{1, \dots, n\}} \) (injective and surjective by @exm-method-injectivity and @exm-method-surjectivity): a row is determined by the places where it is \( \mathrm{T} \), and every set of places arises. Since \( \{1, \dots, n\} \) has \( n \) elements, @prp-power-set-count gives \( 2^n \) subsets, so \( L \) has \( 2^n \) elements (compose the bijections).
 
 *There are \( 2^{2^n} \) truth functions.* In the same way, a truth function \( f \) is determined by the set \( \{ \rho \in L : f(\rho) = \mathrm{T} \} \subseteq L \), and every subset of \( L \) arises; so the truth functions are in bijection with \( \powerset{L} \), which has \( 2^{2^n} \) elements by @prp-power-set-count again. For \( n = 1, 2, 3 \) this gives \( 4, 16, 256 \).
 :::
@@ -312,7 +312,7 @@ A function \( f \colon \nN \to \nN \) is **eventually zero** if there is \( N \i
 
 By @thm-countable-union, \( Z \) is countable. (That theorem uses @ax-choice; here it could be avoided, since each \( Z_N \) comes with an explicit listing, but the question did not ask for that.)
 
-*Why the look-alike fails.* A diagonal argument, as in @thm-binary-sequences-uncountable, builds from a list \( f_0, f_1, \dots \) of eventually zero functions the function \( g(n) \coloneqq f_n(n) + 1 \). It differs from every \( f_n \), but \( g(n) \ge 1 \) for every \( n \), so \( g \) is **not** eventually zero: it is not in \( Z \), and nothing is contradicted. A diagonal argument proves uncountability only when the diagonal object stays inside the set.
+*Why the look-alike fails.* A diagonal argument, as in @thm-binary-sequences-uncountable, builds from a list \( f_0, f_1, \dots \) of eventually zero functions the function \( g(n) \coloneqq f_n(n) + 1 \). It differs from every \( f_n \), but \( g(n) \ge 1 \) for every \( n \), so \( g \) is **not** eventually zero: it is not in \( Z \), and nothing is contradicted. A diagonal argument proves uncountability only when the diagonal object stays inside the set; this is the usual failure named in @exm-method-diagonal.
 :::
 
 <!-- dependency ledger
