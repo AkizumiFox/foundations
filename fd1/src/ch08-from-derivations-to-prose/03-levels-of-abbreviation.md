@@ -151,7 +151,7 @@ The following are **never silent**:
 
 The eighth and ninth items of the first list, for instance, say this: after "choose \( N \) such that \( \abs{a_n - L} < \varepsilon \) for every \( n \ge N \)", applying that line to a particular \( n \ge N \) needs no comment.
 
-**Silent steps and truth tables.** Section 4.8 named the step that a truth table licenses, TAUT (@def-rule-taut). Section 6.3 let it act on the propositional skeleton of a first-order line, where every atomic and every quantified part counts as a letter (@def-propositional-skeleton, @prp-taut-skeleton). Most items of the first list are TAUT steps: \( \rulename{\wedge I} \) with both conjuncts displayed, \( \rulename{\wedge E} \), \( \rulename{R} \), \( \rulename{\vee I} \), \( \rulename{\bot E} \) once the contradiction is stated, \( \rulename{DS} \), the exchange of the members of a disjunction or conjunction, \( \rulename{{\leftrightarrow}E} \) with a definition, and \( \rulename{{\to}E} \) on a line of the proof. A reader can check each of them by a truth table on the skeleton. The quantifier and equality items, \( \rulename{\forall E} \) at the obvious term and \( \rulename{{=}I} \) and \( \rulename{{=}E} \) inside chains, are not TAUT steps: they are silent because the sentence that uses them forces them. TAUT never licenses a first-order law. On the skeleton, \( \forall x\, \forall y\, R(x, y) \) and \( \forall y\, \forall x\, R(x, y) \) are two different letters, so passing from one to the other is a derivation with the quantifier rules, not a TAUT step. From Section 4.8 on, a level-1 line that compresses propositional steps inside one box may cite TAUT with its lines, in place of the names of its rules.
+**Silent steps and truth tables.** Section 4.8 named the step that a truth table licenses, TAUT (@def-rule-taut). Section 6.3 let it act on the propositional skeleton of a first-order line, where every atomic and every quantified part counts as a letter (@def-propositional-skeleton, @prp-taut-skeleton). Most items of the first list are TAUT steps: \( \rulename{\wedge I} \) with both conjuncts displayed, \( \rulename{\wedge E} \), \( \rulename{R} \), \( \rulename{\vee I} \), \( \rulename{\bot E} \) once the contradiction is stated, \( \rulename{DS} \), the exchange of the members of a disjunction or conjunction, \( \rulename{{\leftrightarrow}E} \) with a definition, and \( \rulename{{\to}E} \) on a line of the proof. A reader can check each of them by a truth table on the skeleton. The quantifier and equality items, \( \rulename{\forall E} \) at the obvious term and \( \rulename{{=}I} \) and \( \rulename{{=}E} \) inside chains, are not TAUT steps: they are silent because the sentence that uses them forces them. TAUT never licenses a first-order law. On the skeleton, \( \forall x\, \forall y\, R(x, y) \) and \( \forall y\, \forall x\, R(x, y) \) are two different letters, so passing from one to the other is a derivation with the quantifier rules, not a TAUT step. From Section 6.3 on, a level-1 line that compresses propositional steps inside one box may cite TAUT with its lines, in place of the names of its rules.
 
 ::: {.warning}
 **Level 3 is not level 0 with steps missing at random.** A proof that skips the reason a case split is exhaustive, or chooses \( \delta \) without saying what it depends on, or uses a lemma without naming it, is not "written at level 3": it has a gap, because those steps are in the never-silent list. Conversely, a proof that omits "since \( \varepsilon \) was arbitrary" has no gap. When you judge whether a written proof is complete, judge it against @def-silent-steps, not against your sense of what is obvious.
@@ -313,7 +313,7 @@ Write the proof of @exm-uniform-implies-continuous, that a function uniformly co
 :::
 
 ::: {.solution}
-**Level 1.** Every line of the full derivation of @exm-uniform-implies-continuous opens or closes a box, or is cited by a closing line, except one stretch inside the box of \( \delta_0 \), which becomes line 7.
+**Level 1.** Every line of the full derivation of @exm-uniform-implies-continuous other than the premise opens or closes a box, or is cited by a closing line, except one stretch inside the box of \( \delta_0 \), which becomes line 7.
 
 ```{=latex}
 \begin{center}
@@ -423,7 +423,7 @@ Section 8.2 read "it suffices to show \( \varphi \)" as a step that replaces the
 | \( 1/(n + 1) < \varepsilon \) | \( a_n - 2 = -1/(n + 1) \), so \( \abs{a_n - 2} = 1/(n + 1) \) |
 | \( n + 1 > 1/\varepsilon \) | for positive numbers, taking reciprocals reverses \( < \) |
 | \( N > 1/\varepsilon \) | \( n \ge N \) gives \( n + 1 > N \) |
-| — | choose such an \( N \in \nN \) (the school fact of @exm-rhetoric-existential); it depends on \( \varepsilon \) |
+| — | choose an integer \( N > 1/\varepsilon \) (the school fact of @exm-rhetoric-existential); since \( 1/\varepsilon > 0 \), \( N > 0 \), so \( N \in \nN \); it depends on \( \varepsilon \) |
 
 Each reason is an implication that points **up**: the row implies the row above it. Read from the bottom, (a) is the proof "Since \( (x - 3)^2 \ge 0 \), \( x^2 - 6x + 10 = (x - 3)^2 + 1 \ge 1 > 0 \)." Read the same way, (b) is "Let \( \varepsilon > 0 \), and choose \( N \in \nN \) with \( N > 1/\varepsilon \). For \( n \ge N \), \( \abs{a_n - 2} = 1/(n + 1) < 1/N < \varepsilon \)." In (b) the constant is found at the bottom of the column, last, and written in the proof's first sentence, as step 5 of Section 8.5 will require.
 :::
@@ -433,7 +433,7 @@ In column (b), which row introduces a constant, and which reason needs \( \varep
 :::
 
 ::: {.solution}
-The bottom row introduces \( N \), chosen from the school fact at \( 1/\varepsilon \), so it depends on \( \varepsilon \). The reciprocal row needs \( \varepsilon > 0 \): \( 1/\varepsilon \) must exist and be positive for "\( n + 1 > 1/\varepsilon \) gives \( 1/(n + 1) < \varepsilon \)".
+The bottom row introduces \( N \), chosen from the school fact at \( 1/\varepsilon \), so it depends on \( \varepsilon \). The reciprocal row needs \( \varepsilon > 0 \): \( 1/\varepsilon \) must exist and be positive for "\( n + 1 > 1/\varepsilon \) gives \( 1/(n + 1) < \varepsilon \)". The bottom row uses it too: \( 1/\varepsilon \) must be defined, and an integer above \( 1/\varepsilon \) lies in \( \nN \) because \( 1/\varepsilon > 0 \).
 :::
 
 ## Expand to check
@@ -546,8 +546,8 @@ Each part takes a line or two. (a) names a level; (b)–(f) decide whether a ste
 5. May "in particular \( x > 0 \)", after "since \( 0 < x < 1 \)", be left out?
 6. May the split "\( x \ge 0 \) or \( x < 0 \), and every real \( x \) is one or the other" be left out?
 7. A skeleton has the line "\( \abs{f(x) - f(y)} < \varepsilon \), arith". Is the proof finished?
-8. A text says "Let \( r \) be rational. Then \( p \) is even." Which never-silent step is missing?
-9. From Section 4.8 on, may the level-1 line \( x_0 > 0 \), citing the line \( x_0 > 0 \wedge y_0 > 0 \), be justified TAUT?
+8. A text says "Let \( r \) be rational. Then \( p \) is even." Name two never-silent steps that are missing.
+9. From Section 6.3 on, may the level-1 line \( x_0 > 0 \), citing the line \( x_0 > 0 \wedge y_0 > 0 \), be justified TAUT?
 10. May the line \( \forall y\, \forall x\, R(x, y) \), citing \( \forall x\, \forall y\, R(x, y) \), be justified TAUT?
 11. A column for "\( 2^{n+1} > n + 1 \), given \( 2^n > n \) and \( n \ge 1 \)" has the first row "it suffices to show \( 2^n + 2^n > n + 1 \)". What is that row's reason, and what row could come next?
 12. In an "it suffices to show" column, which row is proved outright, with no further reduction?
@@ -569,11 +569,11 @@ Each part takes a line or two. (a) names a level; (b)–(f) decide whether a ste
 
 (g) No: a skeleton is a plan, and every arith line must be expanded (the warning "A skeleton is not a finished proof").
 
-(h) The choice of \( p \) (\( \rulename{\exists E} \) with a fresh name): \( p \) appears from nowhere.
+(h) The choice of \( p \) (\( \rulename{\exists E} \) with a fresh name, citing (L)): \( p \) appears from nowhere. Also missing: the assumption \( r^2 = 2 \), the opening of \( \rulename{\neg I} \), and the citation of @thm-square-even-implies-even that licenses "\( p \) is even".
 
-(i) Yes. On the skeleton it is \( P \wedge Q \vdash P \), true in every row: it is \( \rulename{\wedge E} \).
+(i) Yes. On the skeleton (@prp-taut-skeleton) it is \( P \wedge Q \models P \), true in every row: it is \( \rulename{\wedge E} \).
 
-(j) No. On the skeleton the two lines are different letters, and \( P \vdash Q \) fails in a row. The step needs \( \rulename{\forall E} \) twice and \( \rulename{\forall I} \) twice.
+(j) No. On the skeleton the two lines are different letters, and \( P \models Q \) fails in a row (\( P \) true, \( Q \) false). The step needs \( \rulename{\forall E} \) twice and \( \rulename{\forall I} \) twice.
 
 (k) \( 2^{n+1} = 2 \cdot 2^n = 2^n + 2^n \) (\( \rulename{{=}E} \)). Next: "it suffices to show \( 2^n \ge 1 \)", because then \( 2^n + 2^n > n + 2^n \ge n + 1 \) by the hypothesis \( 2^n > n \).
 
@@ -903,12 +903,12 @@ def-levels-of-proof (example): [the opening "One short proof, four texts"] (2k +
 def-levels-of-proof (example): [the opening] the skeleton (7 lines) and full derivation (8 lines); side conditions at the exists-E and forall-I lines (k_0 not in line 5/6, n_0 in no premise) | def-rules-existential, def-rules-universal (F1.4, cited by name); checked on the page and by the derivation checker
 def-levels-of-proof (claim): f(x) = 3x + 1 is uniformly continuous on R with delta = eps/3, since |(3x+1)-(3y+1)| = 3|x-y| | inline (school algebra)
 def-levels-of-proof (claim): [fold "Levels already on the page"] the derivation after thm-sqrt2-irrational in F1.2 §02 fixes r, p, q and leaves out the two quantifier steps (choosing p, q and m), as the paragraph after it says | thm-sqrt2-irrational (F1.2 §02, cited), read on the page
-def-levels-of-proof (claim): Looking ahead: from AN1.1 on proofs are written at level 3 in plain prose, rule tags only where the rule is itself the point; F2.1-F2.3 (Sets, Relations, and Cardinality, Chapters 1-3) may tag some proofs at level 2 | STYLE section 10 (book convention); STATUS rows 106-107; Looking-ahead box only, nothing rests on it
+def-levels-of-proof (claim): Looking ahead: from AN1.1 on proofs are written at level 3 in plain prose, rule tags only where the rule is itself the point; F2.1-F2.3 (Sets, Relations, and Cardinality, Chapters 1-3) may tag some proofs at level 2 | STYLE section 10 (book convention); the two STATUS rows for F1.5 §03, index; Looking-ahead box only, nothing rests on it
 def-levels-of-proof (claim): F1.5 §05 turns level 1 into a procedure; F1.5 §04 reconstructs it when reading | this chapter (sections 04, 05; prose pointers, nothing rests on them)
 def-silent-steps (claim): [before the table] Section 8.1 stated the principle | F1.5 §01 (drafted in parallel from the same frozen blueprint; prose pointer within the chapter)
 def-silent-steps (claim): the six-row table gives common entries of def-silent-steps and says no more than it | def-silent-steps (on the page)
 def-silent-steps (claim): the eighth and ninth items (forall-E at the obvious term; to-E on a line of the proof) license applying the property of a chosen N at a particular n >= N | def-silent-steps (on the page)
-def-silent-steps (claim): [TAUT paragraph] and-I, and-E, R, or-I, bot-E, DS, the exchange, iff-E with a definition, to-E on a line of the proof are valid on the propositional skeleton; forall-E, =I, =E are not TAUT steps; forall x forall y R and forall y forall x R are two letters on the skeleton; a level-1 line may cite TAUT from Section 4.8 on | def-rule-taut (F1.3 §08), def-propositional-skeleton and prp-taut-skeleton (F1.8 §03), cited; NOTATION.md's TAUT entry (never a licence for a first-order validity)
+def-silent-steps (claim): [TAUT paragraph] and-I, and-E, R, or-I, bot-E, DS, the exchange, iff-E with a definition, to-E on a line of the proof are valid on the propositional skeleton; forall-E, =I, =E are not TAUT steps; forall x forall y R and forall y forall x R are two letters on the skeleton; a level-1 line may cite TAUT from Section 6.3 on | def-rule-taut (F1.3 §08), def-propositional-skeleton and prp-taut-skeleton (F1.8 §03), cited; NOTATION.md's TAUT entry (never a licence for a first-order validity)
 def-silent-steps (example): [fold "The two lists against the principle"] x in (0, 1) unwinds to 0 < x and x < 1 | definition of an open interval (school fact)
 exm-sqrt2-four-levels (example): premise 1 follows from (L): r = p/q with q != 0 gives p = r q; q = 0 forces p = 0, both even; L(r, p, q) abbreviates its matrix | (L) of F1.2 §02 (stated there and taken as known; its proof is promised there to F2.2); school algebra
 exm-sqrt2-four-levels (example): premise 2 is thm-square-even-implies-even written as a formula | thm-square-even-implies-even (cited)
@@ -924,7 +924,7 @@ exm-suffices-column (claim): step 5 of Section 8.5 asks for the constant in the 
 exm-suffices-column (claim): [subsection "Expand to check", easy expansion] line 6 is no legal forall-I: box 2-5 still open; a new forall-I box flagged x_0 breaks the side condition (x_0 in line 2); A = {-1, 1} makes the premise true and the conclusion false | def-rules-universal (cited); F1.5 §06 catalogue (N3) (prose pointer within the chapter, nothing rests on it); checked by verify/ch08/exm-suffices-column.py
 exm-suffices-column (claim): [subsection "Expand to check", harder expansion] the line forall-I over x_0 inside the box of delta_0 breaks the side condition; it is the first blocked line of exm-converse-fails; x^2 on R refutes the conclusion | def-rules-universal, exm-converse-fails, exm-square-not-uniform (cited); F1.5 §06 catalogue (prose pointer, nothing rests on it)
 exr-levels-of-abbreviation-a1 (solution): (e) a contradiction alone does not say which open assumption it refutes | def-rules-negation (F1.2); def-silent-steps
-exr-levels-of-abbreviation-a2 (solution): (i) P and Q |= P; (j) P |= Q fails at P true, Q false; (k) 2^(n+1) = 2^n + 2^n, and 2^n >= 1 with 2^n > n gives 2^n + 2^n > n + 1 | def-rule-taut, prp-taut-skeleton (cited); school algebra; checked by verify/ch08/exr-levels-of-abbreviation-a2.py
+exr-levels-of-abbreviation-a2 (solution): (i) P and Q |= P; (j) P |= Q fails at P true, Q false; (k) 2^(n+1) = 2^n + 2^n, and 2^n >= 1 with 2^n > n gives 2^n + 2^n > n + 1 | def-rule-taut, prp-taut-skeleton (cited); school algebra, including the power law 2^(n+1) = 2 * 2^n (def-power, F2.2); checked by verify/ch08/exr-levels-of-abbreviation-a2.py
 exr-levels-of-abbreviation-b1 (solution): 0 <= y for every y in N; y <= y | order on N (school fact); checked by verify/ch08/exr-levels-of-abbreviation-b1.py
 exr-levels-of-abbreviation-b2 (solution): (2k + 1)^2 - 1 = 4k(k + 1); k(k + 1) = 2 j(2j + 1) or 2 (2j + 1)(j + 1); 4 (2i) = 8i; the skeleton has 22 lines | school algebra; checked by verify/ch08/exr-levels-of-abbreviation-b2.py
 exr-levels-of-abbreviation-b2 (solution): (E1) every integer is even or odd | (E1) of F1.2 §01 (school fact, stated there)

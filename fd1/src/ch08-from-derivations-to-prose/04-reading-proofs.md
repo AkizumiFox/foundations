@@ -179,7 +179,7 @@ Classify each explanation as one that **justifies** its line or one that **parap
 ::: {#exr-reading-proofs-a2}
 [A2: Drill]
 
-Answer each part in a phrase. (a) and (b) ask whether an explanation justifies or paraphrases; (c) and (d) which of the four questions is at work; (e) and (f) what kind of line it is; (g)–(i) name the unstated fact; (j)–(l) are about the habits of good readers.
+Answer each part in a phrase. (a) and (b) ask whether an explanation justifies or paraphrases; (c) and (d) which of the four questions is at work; (e) and (f) what kind of line it is; (g)–(i) name the unstated fact; (k) locates a hypothesis; (j) and (l) are about the habits of good readers.
 
 ::: {.enumerate options="label=(\alph*)"}
 1. A line: "Since \( n \) is even, \( n^2 \) is even." An explanation: "With \( n = 2k \), \( n^2 = 2(2k^2) \), and \( 2k^2 \) is an integer." Does it justify or paraphrase?
@@ -308,7 +308,7 @@ Here is a proof.
 - (4) A product of a non-negative and a positive number is non-negative, applied to (2) and (3), then (1) substituted (\( \rulename{{=}E} \)).
 - (5) Adding \( 3x \) to both sides keeps the inequality.
 
-*(b)* Line (3), and only there.
+*(b)* Line (3), and only there: \( x \ge 0 \) gives \( x + 2 \ge 2 > 0 \), which line (4) needs as the positive factor.
 
 *(c)* \( c = -2 \). For \( x \ge -2 \), line (3) becomes "\( x + 2 \ge 0 \)", and line (4) uses "a product of two non-negative numbers is non-negative"; every other line stands. Below \( -2 \) the claim is false. At \( x = -3 \): \( (-3)^3 + 2 = -25 \), while \( 3x = -9 \), and \( -25 \ge -9 \) fails. (For every \( x < -2 \), \( (x - 1)^2 > 0 \) and \( x + 2 < 0 \), so the product is negative.)
 
@@ -348,7 +348,7 @@ Line (5) uses one named result and two lines of (3). Which?
 :::
 
 ::: {.solution}
-*(1)* Two openings: the \( \rulename{{\to}I} \) box with the two hypotheses, and inside it a box on \( L \ne M \), that is, \( \neg(L = M) \); the goal \( L = M \) is positive, so this is an \( \rulename{RAA} \) box. *(2)* A constant, defined from \( L \) and \( M \). It is positive because \( L \ne M \) gives \( \abs{L - M} > 0 \): the one use of the assumption. *(3)* The definition of \( a_n \to L \) applied at \( \varepsilon \) (\( \rulename{\forall E} \) at a term that is not the obvious one, with its bound \( \varepsilon > 0 \) from (2)), then \( \rulename{\exists E} \) with the fresh name \( N_1 \); the same for \( M \), with a second fresh name \( N_2 \) (one name for both would be (N4) of Section 8.6). *(4)* A constant: the larger of two natural numbers, so \( n \ge N_1 \) and \( n \ge N_2 \). *(5)* The triangle inequality (@exm-triangle-inequality-cases), with \( \abs{L - a_n} = \abs{a_n - L} \); then the two bounds of (3) at this \( n \) (\( \rulename{\forall E} \) at \( n \), \( \rulename{{\to}E} \) with \( n \ge N_1 \) and with \( n \ge N_2 \)); then \( \varepsilon + \varepsilon = \abs{L - M} \) by (2). *(6)* The clash: \( \abs{L - M} < \abs{L - M} \) against the fact that no number is less than itself (\( \rulename{\neg E} \)). The line does not mention \( N_1 \) or \( N_2 \), so the two \( \rulename{\exists E} \) boxes close on it. *(7)* \( \rulename{RAA} \): the box assumed \( \neg(L = M) \) and the line written after it is \( L = M \). The closing of the \( \rulename{{\to}I} \) box is silent. The assumption is used once, at (2), and it does work there, so the proof is not in costume; Section 8.2 proved the same claim without opening this box (@exm-rhetoric-equality).
+*(1)* Two openings: the \( \rulename{{\to}I} \) box with the two hypotheses, and inside it a box on \( L \ne M \), that is, \( \neg(L = M) \); the goal \( L = M \) is positive, so this is an \( \rulename{RAA} \) box. *(2)* A constant, defined from \( L \) and \( M \). It is positive because \( L \ne M \) gives \( \abs{L - M} > 0 \): the one use of the assumption. *(3)* The definition of \( a_n \to L \) (as in @exm-negating-definitions (a)) applied at \( \varepsilon \) (\( \rulename{\forall E} \) at a term that is not the obvious one, with its bound \( \varepsilon > 0 \) from (2)), then \( \rulename{\exists E} \) with the fresh name \( N_1 \); the same for \( M \), with a second fresh name \( N_2 \) (one name for both would be (N4) of Section 8.6). *(4)* A constant: the larger of two natural numbers, so \( n \ge N_1 \) and \( n \ge N_2 \). *(5)* The triangle inequality (@exm-triangle-inequality-cases), with \( \abs{L - a_n} = \abs{a_n - L} \); then the two bounds of (3) at this \( n \) (\( \rulename{\forall E} \) at \( n \), \( \rulename{{\to}E} \) with \( n \ge N_1 \) and with \( n \ge N_2 \)); then \( \varepsilon + \varepsilon = \abs{L - M} \) by (2). *(6)* The clash: \( \abs{L - M} < \abs{L - M} \) against the fact that no number is less than itself (\( \rulename{\neg E} \)). The line does not mention \( N_1 \) or \( N_2 \), so the two \( \rulename{\exists E} \) boxes close on it. *(7)* \( \rulename{RAA} \): the box assumed \( \neg(L = M) \) and the line written after it is \( L = M \). The closing of the \( \rulename{{\to}I} \) box is silent. The assumption is used once, at (2), and it does work there, so the proof is not in costume; Section 8.2 proved the same claim without opening this box (@exm-rhetoric-equality).
 
 **Marking scheme.** (10 points)
 - 2: (1) and (7), the two boxes and \( \rulename{RAA} \) as the closing rule (not \( \rulename{\neg I} \)).
@@ -399,6 +399,7 @@ Start with step 2. Which result supplies \( p \vee \neg p \), what is substitute
 - 1: step 5 named as \( \rulename{\vee E} \) with its three citations.
 - 3: the verification paragraph explained against @def-derivation: availability by the scope rule, schemas unchanged, each box ending in \( \psi \) as its own line.
 - 2: an idea in two sentences that names both the case split on \( p \vee \neg p \) and the transplanting of \( D \) and \( E \) into the two boxes.
+
 Fatal errors (0 for the step): explanations that restate the steps without naming what they use; calling the case split \( \rulename{\neg I} \) or \( \rulename{RAA} \).
 :::
 
@@ -423,6 +424,6 @@ exr-reading-proofs-a2 (solution): n = 2k gives n^2 = 2(2k^2); u^2 - v^2 = (u - v
 exr-reading-proofs-a2 (solution): (j), (l) refer to the warning "Self-explanation is not re-reading" and strategy 1 "Try it first" | on the page
 exr-reading-proofs-b1 (solution): [plain-words main solution] the same warrants as the folded rule-by-rule solution; Section 6.2's recipe | exm-negating-definitions (c) (cited); school order facts
 exr-reading-proofs-b3 (solution): (x - 1)^2 (x + 2) = x^3 - 3x + 2; squares >= 0; x >= 0 gives x + 2 >= 2 > 0; non-negative times positive (or times non-negative) is non-negative; c = -2; at x = -3, x^3 + 2 = -25 < -9 = 3x; for x < -2 the product (x - 1)^2 (x + 2) is negative | school algebra and order facts; checked by verify/ch08/exr-reading-proofs-b3.py
-exr-reading-proofs-c1 (solution): max of two naturals is >= each; no number is less than itself; eps + eps = |L - M| for eps = |L - M|/2; L != M gives |L - M| > 0 | school facts; exm-triangle-inequality-cases, exm-rhetoric-equality (cited); F1.5 §06's (N4) (prose pointer within the chapter, nothing rests on it)
+exr-reading-proofs-c1 (solution): max of two naturals is >= each; no number is less than itself; eps + eps = |L - M| for eps = |L - M|/2; L != M gives |L - M| > 0 | school facts; exm-triangle-inequality-cases, exm-rhetoric-equality, the definition of a_n -> L = exm-negating-definitions (a) (cited); F1.5 §06's (N4) (prose pointer within the chapter, nothing rests on it)
 exr-reading-proofs-c2 (solution): reading of the proof of lem-atom-splitting | lem-atom-splitting, def-derivation, prp-excluded-middle, def-derived-rule, def-rules-disjunction, lem-weakening-cut (cited)
 -->

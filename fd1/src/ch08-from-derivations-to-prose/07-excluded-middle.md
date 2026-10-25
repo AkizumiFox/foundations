@@ -149,7 +149,7 @@ An attempt that starts from \( P \vee \neg P \) stalls at once: \( \rulename{\ve
 :::
 
 ::: {.proof}
-The derivation is:
+Exercise B1 (a) of Section 3.2 (@exr-four-kinds-of-task-b1) derived this already, inside a conjunction; here is that derivation again, read for what it does not use. The derivation is:
 
 ```{=latex}
 \begin{center}
@@ -196,7 +196,7 @@ Does @prp-not-not-excluded-middle show that \( P \vee \neg P \) is derivable wit
 :::
 
 ::: {.solution}
-No. It derives \( \neg\neg(P \vee \neg P) \); writing \( P \vee \neg P \) after the same box needs \( \rulename{RAA} \), and Chapter 4's optional theorem in Section 4.7 shows that no derivation without \( \rulename{RAA} \) reaches it, as does the optional Section 8.8.
+No. It derives \( \neg\neg(P \vee \neg P) \); writing \( P \vee \neg P \) after the same box needs \( \rulename{RAA} \), and Chapter 4's optional theorem in Section 4.7 shows that for a letter \( p \) no derivation without \( \rulename{RAA} \) reaches \( p \vee \neg p \), as does the optional Section 8.8.
 :::
 
 ## Which laws survive without RAA {#laws-without-raa}
@@ -360,7 +360,7 @@ Answer each in a line. (a)–(d) ask whether a derivation avoids \( \rulename{RA
 
 (j) True. It uses some of the rules of Chapters 1–7 and no others, so it is a derivation, and soundness applies to it.
 
-(k) Not in general: that step is @prp-quantifier-negation (a), derived with \( \rulename{RAA} \) and in the right column of the table. She asks for the element.
+(k) Not in general: that step is @prp-bounded-quantifier-negation (a), the bounded form of @prp-quantifier-negation (a), derived with \( \rulename{RAA} \) and in the right column of the table. She asks for the element.
 
 (l) The first line, the \( \rulename{LEM} \) split on "\( s \) is rational". Not the conclusion: the second proof in "Irrational powers, with and without a witness" proves it with a named witness, \( (\sqrt 2, \log_2 9) \), and no classical rule.
 :::
@@ -406,7 +406,7 @@ $\begin{nd}
 \end{center}
 ```
 
-Lines 1, 2, 3, and 8 are assumptions. Line 4 repeats line 2 into the box of line 3, since \( \rulename{{\to}I} \) needs \( P \) as a line of that box itself. Line 9 is \( \rulename{\neg E} \) on \( \neg P \) (line 7) and its negation \( \neg\neg P \) (line 8). Every box closes by \( \rulename{{\to}I} \) or \( \rulename{\neg I} \), so no \( \rulename{RAA} \) is used. Unlike the derivation of the proposition in this section, this one uses \( \rulename{\bot E} \), at line 10. The sequent \( \vdash \neg\neg P \to P \) itself has no derivation without \( \rulename{RAA} \) (the optional Section 8.8 proves it with a two-stage model); its double negation has one.
+Lines 1, 2, 3, and 8 are assumptions. Line 4 repeats line 2 into the box of line 3, since \( \rulename{{\to}I} \) needs \( P \) as a line of that box itself. Line 9 is \( \rulename{\neg E} \) on \( \neg P \) (line 7) and its negation \( \neg\neg P \) (line 8). Every box closes by \( \rulename{{\to}I} \) or \( \rulename{\neg I} \), so no \( \rulename{RAA} \) is used. Unlike the derivation of the proposition in this section, this one uses \( \rulename{\bot E} \), at line 10. For a letter \( p \), the sequent \( \vdash \neg\neg p \to p \) itself has no derivation without \( \rulename{RAA} \) (the optional Section 8.8 proves it with a two-stage model); its double negation has one.
 :::
 
 ::: {#exr-excluded-middle-b2}
@@ -445,7 +445,7 @@ No witness appears because no \( \rulename{\exists I} \) produces the conclusion
 ::: {#exr-excluded-middle-b4}
 [B4: Census of the classical results]
 
-(a) Which labeled results of Chapter 2 (propositions and theorems) were derived with \( \rulename{RAA} \), directly or through \( \rulename{\neg\neg E} \), \( \rulename{LEM} \), or a cited result that uses one of them? (b) The same question for Chapters 3 to 7.
+(a) Which labeled results of Chapter 2 (propositions and theorems) were derived with \( \rulename{RAA} \), directly or through \( \rulename{\neg\neg E} \), \( \rulename{LEM} \), or a cited result that uses one of them? (b) The same question for Chapters 3 to 7, counting lemmas, corollaries, and the step TAUT of @def-rule-taut as well.
 :::
 
 ::: {.solution}
@@ -470,7 +470,7 @@ Derive each without \( \rulename{RAA} \), \( \rulename{\neg\neg E} \), \( \rulen
 :::
 
 ::: {.solution}
-(a) The goal is a negation, so a \( \rulename{\neg I} \) box on \( \neg(\neg P \vee \neg Q) \). That assumption clashes with any disjunction \( \neg P \vee \neg Q \), so we manufacture a side, as in the derivation of \( \neg\neg(P \vee \neg P) \) in Section 8.7, twice:
+(a) The goal is a negation, so a \( \rulename{\neg I} \) box on \( \neg(\neg P \vee \neg Q) \). That assumption clashes with any disjunction \( \neg P \vee \neg Q \), so we manufacture a side, as in the derivation of \( \neg\neg(P \vee \neg P) \) in this section, twice:
 
 ```{=latex}
 \begin{center}
@@ -694,7 +694,7 @@ Now let \( A = (0, 1) \) and let \( m \in (0, 1) \). Take \( a \coloneqq (m + 1)
 \[
 a - m = \frac{1 - m}{2} > 0 \quad \text{and} \quad 1 - a = \frac{1 - m}{2} > 0,
 \]
-since \( m < 1 \), so \( m < a < 1 \); with \( m > 0 \) this gives \( 0 < a < 1 \). So \( a \in (0, 1) \) and \( a > m \). Since \( m \in (0, 1) \) was arbitrary, the positive form holds for \( (0, 1) \), and by the interderivability above, \( (0, 1) \) has no maximum. The directions used to go back from the positive form, \( \dashv \) in (a) and in (b), are derived without \( \rulename{RAA} \), and \( a > m \) gives \( \neg(a \le m) \) by trichotomy; so this half of the argument uses no classical step beyond the order axioms.
+since \( m < 1 \), so \( m < a < 1 \); with \( m > 0 \) this gives \( 0 < a < 1 \). So \( a \in (0, 1) \) and \( a > m \). Since \( m \in (0, 1) \) was arbitrary, the positive form holds for \( (0, 1) \), and by the interderivability above, \( (0, 1) \) has no maximum. Going back from the positive form needs no classical step, but not by the route through @prp-replacement, which uses both directions of (a). Go directly instead. Fix \( m \) with \( m \in A \), as the flagged name of a \( \rulename{\forall I} \) box. The positive form gives \( \exists a \in A \; (a > m) \) by \( \rulename{\forall E} \) and \( \rulename{{\to}E} \); inside an \( \rulename{\exists E} \) box, \( a > m \) gives \( \neg(a \le m) \) by trichotomy, and \( \rulename{\exists I} \) gives \( \exists a \in A \; \neg(a \le m) \). The direction \( \dashv \) of (a) gives \( \neg\forall a \in A \; (a \le m) \), and \( \rulename{{\to}I} \) and \( \rulename{\forall I} \) give \( \forall m \in A \; \neg\forall a \in A \; (a \le m) \). The direction \( \dashv \) of (b) then gives \( \neg\exists m \in A \; \forall a \in A \; (a \le m) \). Both directions \( \dashv \) are derived without \( \rulename{RAA} \), so this half of the argument uses no classical step beyond the order axioms.
 :::
 
 ::: {#exr-excluded-middle-r2}
@@ -810,6 +810,7 @@ In each case \( n^3 - n = 3j \) for the integer \( j \) in brackets, so \( 3 \mi
 <!-- dependency ledger
 excluded-middle-opening (claim): the proof of thm-irrational-power-rational is correct by the rules of this book | inline (the proof on the page, every step tagged)
 prp-not-not-excluded-middle (claim): Glivenko's theorem (classical propositional theorems become intuitionistically derivable under a double negation) and its failure with quantifiers (not-not-forall-x (phi or not phi)) | stated without proof and marked so; the result is optional and nothing depends on the remark
+prp-not-not-excluded-middle (proof): the same derivation appears in F1.7 §02 | exr-four-kinds-of-task-b1 (cited; a pointer to earlier work, the proof on the page is complete)
 prp-not-not-excluded-middle (claim): Brouwer's analysis refutes "every real is 0 or not 0" under extra axioms | stated without proof in a warning; nothing depends on it
 thm-irrational-power-rational (proof): sqrt 2 exists; sqrt2^sqrt2 is a positive real; (x^y)^z = x^(yz) for x > 0; sqrt2 * sqrt2 = 2; sqrt2^2 = 2 | school facts (square roots: AN1.1 (promised); real exponents: AN1.10 (promised)); the result is optional and nothing depends on it
 thm-irrational-power-rational (claim): Gelfond-Schneider: sqrt2^sqrt2 is transcendental | stated without proof in a remark, marked so; nothing depends on it

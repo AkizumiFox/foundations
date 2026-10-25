@@ -50,7 +50,7 @@ Let \( A \) and \( B \) be sets of real numbers with \( A \subseteq B \). Prove 
 | the same, and \( a_0 \in A \) (\( \rulename{\forall I} \), \( a_0 \) fresh) | \( a_0 \le M_0 \) |
 | the same, and \( a_0 \in B \) (\( \rulename{\forall E} \) at \( a_0 \)) | \( a_0 \le M_0 \) ✓ (\( \rulename{\forall E} \) at \( a_0 \)) |
 
-Each row is one move of steps 3 and 4; the table's last row is where the search ends.
+The second row is step 2; each later row is one move of steps 3 and 4; the table's last row is where the search ends.
 
 *Step 3: the skeleton.* The goal is an existential, so it is postponed: no witness is in sight yet. The assumption "\( B \) is bounded above" (line 2) is an existential, so its \( \rulename{\exists E} \) box opens at once, with a fresh name \( M_0 \) and the assumption \( \forall b \in B \; (b \le M_0) \); the box's last line is the goal.
 
@@ -144,7 +144,7 @@ A handful of conventions make a proof checkable. Each is a rule of Chapters 1–
 - **Announce the skeleton.** "We prove the contrapositive", "by induction on \( n \)", "we consider two cases", "suppose, for a contradiction, that …". An announcement tells the reader which box is opening, and so what its last line must be.
 - **Name every object when it is introduced,** by "let" (an arbitrary object, \( \rulename{\forall I} \)), "choose" (a witness, \( \rulename{\exists E} \), with a fresh name), or "let … \( \coloneqq \) …" (a constant, the witness of \( \rulename{\exists I} \)), and say what a chosen object depends on.
 - **One claim per sentence.** A sentence carries one line, or a short chain of lines joined by "so", each step of which the reader can name. Two unrelated claims joined by "and" hide which one is used later.
-- **End with what was shown.** The last sentence of a proof is the last line of the derivation, outside every box. If it is not the statement to be proved, the reader should be told how the two are related.
+- **End with what was shown.** The last sentence of a proof states the goal, or the last line before only closings that @def-silent-steps lets be silent. If it is not the statement to be proved, the reader should be told how the two are related.
 - **Label displayed claims that will be cited,** \( (\ast) \) or (1), and cite them by the label. A citation is a line number in prose.
 
 None of these is a matter of style. An object used without being introduced is a line citing nothing, and an announcement that does not match its box (assuming the conclusion of an implication) proves the converse; these are entries (N9) and (N5) of the catalogue in Section 8.6.
@@ -160,7 +160,7 @@ Here is a short proof. Label each sentence with the rule it uses.
 
 > **Claim.** For a real number \( x \), if \( \abs{x - 1} < 1 \), then \( x > 0 \).
 >
-> *Proof.* (1) Assume \( \abs{x - 1} < 1 \). (2) Either \( x \ge 1 \) or \( x < 1 \). (3) Suppose first that \( x \ge 1 \). (4) Then \( x \ge 1 > 0 \). (5) Suppose instead that \( x < 1 \). (6) Then \( x - 1 < 0 \), so \( \abs{x - 1} = 1 - x \). (7) Hence \( 1 - x < 1 \), that is, \( x > 0 \). (8) In either case \( x > 0 \), which proves the claim.
+> *Proof.* (1) Assume \( \abs{x - 1} < 1 \). (2) Every real number is at least \( 1 \) or below it, so either \( x \ge 1 \) or \( x < 1 \). (3) Suppose first that \( x \ge 1 \). (4) Then \( x \ge 1 > 0 \). (5) Suppose instead that \( x < 1 \). (6) Then \( x - 1 < 0 \), so \( \abs{x - 1} = 1 - x \). (7) Hence \( 1 - x < 1 \), that is, \( x > 0 \). (8) In either case \( x > 0 \), which proves the claim.
 :::
 
 ::: {.solution}
@@ -247,7 +247,7 @@ Here are two proofs that one of \( 17 \), \( 18 \), \( 19 \) is a multiple of \(
 ::: {.solution}
 (P1) does not generalize: it uses a fact about \( 18 \) alone. (P2) does, once its one particular fact, \( 17 = 3 \cdot 5 + 2 \), is replaced by what every integer has: \( n = 3k \), \( n = 3k + 1 \) or \( n = 3k + 2 \) for an integer \( k \), a school fact.
 
-> Let \( n \) be an integer [assumption for \( \rulename{\forall I} \)], and choose such a \( k \) [\( \rulename{\exists E} \)]. If \( n = 3k \), \( n \) is a multiple of \( 3 \). If \( n = 3k + 1 \), then \( n + 2 = 3(k + 1) \). If \( n = 3k + 2 \), then \( n + 1 = 3(k + 1) \). In every case one of the three is a multiple of \( 3 \) [\( \rulename{\vee E} \)]. Since \( n \) was arbitrary, this holds for every integer [\( \rulename{\forall I} \)].
+> Let \( n \) be an integer [assumption for \( \rulename{\forall I} \)]. Dividing by \( 3 \), there is an integer \( k \) with \( n = 3k \), \( n = 3k + 1 \) or \( n = 3k + 2 \); choose such a \( k \) [\( \rulename{\exists E} \)]. If \( n = 3k \), \( n \) is a multiple of \( 3 \). If \( n = 3k + 1 \), then \( n + 2 = 3(k + 1) \). If \( n = 3k + 2 \), then \( n + 1 = 3(k + 1) \). In every case one of the three is a multiple of \( 3 \) [\( \rulename{\vee E} \)]. Since \( n \) was arbitrary, this holds for every integer [\( \rulename{\forall I} \)].
 
 (P2) was the third case, with \( k = 5 \).
 
@@ -306,7 +306,7 @@ Here is a proof.
 ::: {#exr-writing-proofs-a2}
 [A2: Drill]
 
-Answer each part in a line. The parts follow the procedure: (a)–(b) symbols and unwinding, (c)–(d) the skeleton, (e) the order on the page, (f)–(i) the conventions, (j)–(k) generalizing, (l) the Givens/Goal table.
+Answer each part in a line. The parts follow the procedure: (a)–(b) symbols and unwinding, (c)–(d) the skeleton, (e) the order on the page, (f), (g), (i) the conventions, (h) the search and the page, (j)–(k) generalizing, (l) the Givens/Goal table.
 
 ::: {.enumerate options="label=(\alph*)"}
 1. Write in symbols, with every quantifier and bound: "the square of every odd integer is odd" (domain \( \nZ \)).
@@ -554,7 +554,7 @@ Two proofs that \( 6 \) divides \( 7^3 - 7 = 336 \):
 ::: {.solution}
 *(a)* (P2) generalizes; (P1) computes with \( 7 \) and says nothing about another \( n \).
 
-*(b)* Let \( n \) be an integer. Then \( n^3 - n = (n - 1)\, n\, (n + 1) \), a product of three consecutive integers. By @exm-generalise-proof, applied to \( n - 1 \), one of \( n - 1 \), \( n \), \( n + 1 \) is a multiple of \( 3 \), so \( 3 \mid n^3 - n \). By (E1), \( n \) is even or odd; if odd, \( n - 1 \) is even. So one factor is even, and \( 2 \mid n^3 - n \). Since \( 2 \) and \( 3 \) divide it, so does \( 6 \) (by @exr-quantifier-rhetoric-b3, the inclusion \( \supseteq \): if \( m = 2a = 3b \), then \( b = 2(a - b) \) and \( m = 6(a - b) \)).
+*(b)* Let \( n \) be an integer. Then \( n^3 - n = (n - 1)\, n\, (n + 1) \), a product of three consecutive integers. By @exm-generalise-proof, applied to \( n - 1 \), one of \( n - 1 \), \( n \), \( n + 1 \) is a multiple of \( 3 \), so \( 3 \mid n^3 - n \) (a product with a factor divisible by \( d \) is divisible by \( d \): if \( a = dc \), then \( ab = d(cb) \)). By (E1), \( n \) is even or odd: if \( n \) is even, the factor \( n \) is even; if odd, \( n - 1 \) is even. So one factor is even, and \( 2 \mid n^3 - n \). Since \( 2 \) and \( 3 \) divide it, so does \( 6 \) (by @exr-quantifier-rhetoric-b3, the inclusion \( \supseteq \): if \( m = 2a = 3b \), then \( b = 2(a - b) \) and \( m = 6(a - b) \)).
 
 *(c)* "If \( 2 \mid m \) and \( 3 \mid m \), then \( 6 \mid m \)", the fact of @exr-quantifier-rhetoric-b3.
 
@@ -678,7 +678,7 @@ The lemma is "if \( 3 \mid n^2 \), then \( 3 \mid n \)". Split on the remainder 
 ::: {.solution}
 [Hint 2]
 
-For (b), is \( 4 \) the square of a rational number?
+Let \( r \) be rational, and suppose \( r^2 = 3 \). By \( (\mathrm{L}_3) \), write \( r = p/q \) with integers \( p \), \( q \), not both multiples of \( 3 \).
 :::
 
 ::: {.solution}
@@ -691,7 +691,7 @@ For (b), is \( 4 \) the square of a rational number?
 *(c)* A generalization keeps the skeleton (the boxes, the choices, the clash) and every line that used only properties shared by the new object; it must prove again each line that used a property of the old one, here the lemma.
 
 **Marking scheme.** (10 points)
-- 3: (a) the lemma, by the three cases, with the clash justified.
+- 3: (a) the lemma proved (by the residues mod 3, or cited from a proved result such as Euclid's lemma), with the clash justified.
 - 2: (a) the rest of the proof, with \( (\mathrm{L}_3) \) and the lemma used twice.
 - 2: (b) the failing line named, with the counterexample \( n = 2 \).
 - 1: (b) why a line must fail (\( \sqrt 4 = 2 \) is rational).
@@ -728,12 +728,12 @@ exm-generalise-proof (solution): every integer n is 3k, 3k + 1 or 3k + 2 for an 
 exm-generalise-proof (solution): 18 = 3 * 6; 17 = 3 * 5 + 2; 3k + 1 + 2 = 3(k + 1); 3k + 2 + 1 = 3(k + 1); one of n, n + 1, n + 2 is a multiple of 3 | school algebra; checked by verify/ch08/exm-generalise-proof.py
 exm-generalise-proof (claim): (the lead) a fresh name and the side condition of forall-I | F1.4 §04 (prose pointer, "Section 5.4")
 exm-generalise-proof (claim): (the Quick check on 7^2 - 1) 7^2 - 1 = 48 = 8 * 6; (2k + 1)^2 - 1 = 4k(k + 1); one of k, k + 1 is even | school algebra; (E1) of F1.2 §01; exr-levels-of-abbreviation-b2 (within the chapter, a pointer; nothing rests on it); checked by verify/ch08/exm-generalise-proof.py
-exr-writing-proofs-a2 (solution): (i) x - 1 > 0 and x - 3 < 0 on (1, 3), so (x - 1)(x - 3) < 0; (a)-(b), (l) translations | school algebra; F1.8 §01's translation patterns; checked by verify/ch08/exr-writing-proofs-a2.py
+exr-writing-proofs-a2 (solution): (i) x - 1 > 0 and x - 3 < 0 on (1, 3), so (x - 1)(x - 3) < 0; (a)-(b), (l) translations | school algebra; F1.4 §06 (the fold "A bounded sequence, rule by rule"; the source of (b)'s unwinding); checked by verify/ch08/exr-writing-proofs-a2.py
 exr-writing-proofs-a2 (solution): (g) an object used without introduction is (N9) | F1.5 §06 (prose pointer; the section's conventions paragraph says the same)
 exr-writing-proofs-b4 (solution): n^3 - n = (n - 1) n (n + 1); 336 = 6 * 56 = 6 * 7 * 8; 6 | n^3 - n | school algebra; checked by verify/ch08/exr-writing-proofs-b4.py
-exr-writing-proofs-b4 (solution): one of n - 1, n, n + 1 is a multiple of 3; 2 | m and 3 | m give 6 | m (m = 2a = 3b gives b = 2(a - b), m = 6(a - b)) | exm-generalise-proof (cited); exr-quantifier-rhetoric-b3 (an earlier exercise, cited by a later one, as the exercise rules of STYLE allow; the step is also proved inline)
+exr-writing-proofs-b4 (solution): one of n - 1, n, n + 1 is a multiple of 3; 2 | m and 3 | m give 6 | m (m = 2a = 3b gives b = 2(a - b), m = 6(a - b)) | school algebra (d | a gives d | ab; ℤ closed under · by prp-integers-closed, F2.2, promised); exm-generalise-proof (cited); exr-quantifier-rhetoric-b3 (an earlier exercise, cited by a later one, as the exercise rules of STYLE allow; the step is also proved inline)
 exr-writing-proofs-b4 (solution): every integer is even or odd | (E1) of F1.2 §01
-exr-writing-proofs-c3 (solution): (L_3) and (L_4), every rational number is p/q with q != 0 and p, q not both multiples of 3 (resp. 4) | school facts stated in the item, as (L) is in F1.2 §02; F2.2 (promised)
+exr-writing-proofs-c3 (solution): (L_3) and (L_4), every rational number is p/q with q != 0 and p, q not both multiples of 3 (resp. 4) | school facts stated in the item, as (L) is in F1.2 §02; F3.5 (promised): prp-rationals-lowest-terms (a), gcd(p, q) = 1
 exr-writing-proofs-c3 (solution): n = 3k, 3k + 1 or 3k + 2; (3k + 1)^2 = 3(3k^2 + 2k) + 1; (3k + 2)^2 = 3(3k^2 + 4k + 1) + 1; no integer is 1/3; 4 | 2^2 and not 4 | 2; 4 = (2/1)^2 | school algebra; F2.2 (promised): thm-division-algorithm, lem-naturals-arithmetic (e) ("nothing between 0 and 1"); checked by verify/ch08/exr-writing-proofs-c3.py
 exr-writing-proofs-c3 (solution): licensed lines from true premises reach no false conclusion | thm-soundness (cited); F1.6 §02's statement under "From counter-models to non-derivability" (prose; its proof in F1.6 §03, optional, not cited)
 exr-writing-proofs-c3 (example): the level-3 proof of sqrt 2's irrationality and (L) | exm-sqrt2-four-levels, thm-sqrt2-irrational, thm-square-even-implies-even (cited)

@@ -1,6 +1,6 @@
 # The Quantifier Rules in Prose
 
-Section 8.1 read the connective rules in the sentences of written proofs. The statements of analysis, though, are made of "for every" and "there exists", and most of the words in an analysis proof carry a quantifier rule: "let", "fix", "choose", "take", "will do". This section completes the dictionary with the rows for the quantifiers, equality and unique existence, and for the three patterns that are not single rules but are written as if they were: induction, the lemma ("it suffices to show"), and symmetry ("without loss of generality"). It also makes exact one habit of analysis prose, the parenthesis "(depending on \( \varepsilon \))".
+Section 8.1 read the connective rules in the sentences of written proofs. The statements of analysis, though, are made of "for every" and "there exists", and most of the words in an analysis proof carry a quantifier rule: "let", "fix", "choose", "take", "will do". This section completes the dictionary with the rows for the quantifiers, equality and unique existence, for definitions, "the" and double inclusion, and for the patterns that are not single rules but are written as if they were: the lemma ("it suffices to show") and its two "stronger" cases, induction, and symmetry ("without loss of generality"). It also makes exact one habit of analysis prose, the parenthesis "(depending on \( \varepsilon \))".
 
 ## Three sentences, three rules
 
@@ -191,7 +191,7 @@ Let \( (a_n) \) be a sequence of real numbers with \( a_n \to L \) and \( a_n \t
 :::
 
 ::: {.solution}
-Let \( \varepsilon > 0 \) [\( \rulename{\forall I} \), opening]. Then \( \varepsilon/2 > 0 \), so, applying the definition of \( a_n \to L \) with \( \varepsilon/2 \) in place of \( \varepsilon \) [\( \rulename{\forall E} \)], we may choose \( N_1 \in \nN \) (depending on \( \varepsilon \)) such that \( \abs{a_n - L} < \varepsilon/2 \) for every \( n \ge N_1 \) [\( \rulename{\exists E} \), fresh name \( N_1 \)]. Likewise, from \( a_n \to M \), choose \( N_2 \in \nN \) (depending on \( \varepsilon \)) such that \( \abs{a_n - M} < \varepsilon/2 \) for every \( n \ge N_2 \) [\( \rulename{\forall E} \), \( \rulename{\exists E} \), fresh name \( N_2 \)]. Let \( n \coloneqq \max\{N_1, N_2\} \). Then \( n \ge N_1 \) and \( n \ge N_2 \), so both bounds apply at \( n \) [\( \rulename{\forall E} \) at \( n \), twice, with \( \rulename{{\to}E} \)], and
+Let \( \varepsilon > 0 \) [\( \rulename{\forall I} \), opening]. Then \( \varepsilon/2 > 0 \), so, applying the definition of \( a_n \to L \) with \( \varepsilon/2 \) in place of \( \varepsilon \) [\( \rulename{\forall E} \)], we may choose \( N_1 \in \nN \) (depending on \( \varepsilon \)) such that \( \abs{a_n - L} < \varepsilon/2 \) for every \( n \ge N_1 \) [\( \rulename{\exists E} \), fresh name \( N_1 \)]. Likewise, from \( a_n \to M \), choose \( N_2 \in \nN \) (depending on \( \varepsilon \)) such that \( \abs{a_n - M} < \varepsilon/2 \) for every \( n \ge N_2 \) [\( \rulename{\forall E} \), \( \rulename{\exists E} \), fresh name \( N_2 \)]. Let \( n \coloneqq \max\{N_1, N_2\} \). Then \( n \in \nN \), \( n \ge N_1 \) and \( n \ge N_2 \), so both bounds apply at \( n \) [\( \rulename{\forall E} \) at \( n \), twice, with \( \rulename{{\to}E} \)], and
 \[
 \begin{aligned}
 \abs{L - M} &= \abs{(L - a_n) + (a_n - M)} \\
@@ -400,7 +400,7 @@ Each sentence below might appear in a proof, and each is wrong. The tag names th
 - "Some \( x \in A \) has \( f(x) > 0 \). Let \( x \in A \); then \( f(x) > 0 \)." The witness of an existential is *chosen* ("choose \( x \in A \) with \( f(x) > 0 \)", \( \rulename{\exists E} \) with a fresh name). Written with "let", the second sentence claims \( f(x) > 0 \) for every \( x \in A \): (N3).
 - "Choose \( N \) with \( \abs{a_n - L} < \varepsilon/2 \) for \( n \ge N \), and \( N \) with \( \abs{b_n - M} < \varepsilon/2 \) for \( n \ge N \)." One name for two witnesses: (N4).
 - "Let \( L \) be the limit of \( (a_n) \)", in a proof that has not shown that \( (a_n) \) converges: (N14).
-- "Let \( \varepsilon > 0 \). Then \( \abs{a_n - L} < \varepsilon \) for every \( n \ge N \), as required", where no sentence says what \( N \) is. The witness of \( \rulename{\exists I} \), with what it depends on, is never silent.
+- "Let \( \varepsilon > 0 \). Then \( \abs{a_n - L} < \varepsilon \) for every \( n \ge N \), as required", where no sentence says what \( N \) is. The witness of \( \rulename{\exists I} \), with what it depends on, is never silent (@def-silent-steps, Section 8.3).
 :::
 
 ## Exercises
@@ -435,7 +435,7 @@ Let \( (a_n) \) be a sequence of real numbers and \( L \) a real number. Here is
 ::: {#exr-quantifier-rhetoric-a2}
 [A2: Drill]
 
-Each part takes a line or two. The first parts ask which rule a phrase carries and whether it may be silent; the later ones ask for a judgment or a sentence.
+Each part takes a line or two. Most parts ask which rule a phrase carries, whether it may be silent, or for a judgment or a sentence.
 
 ::: {.enumerate options="label=(\alph*)"}
 1. "Fix \( \varepsilon > 0 \)." Which rule, and may it be silent?
@@ -534,14 +534,14 @@ Let \( A \coloneqq \{ n \in \nZ : 6 \mid n \} \) and \( B \coloneqq \{ n \in \nZ
 ::: {.solution}
 - \( (\subseteq) \) Let \( n \in A \) [\( \rulename{\forall I} \)], and choose \( k \) with \( n = 6k \) [\( \rulename{\exists E} \), \( k \) fresh]. Then \( n = 2(3k) \) and \( n = 3(2k) \), so \( 2 \mid n \) and \( 3 \mid n \), with the witnesses \( 3k \) and \( 2k \) [\( \rulename{\exists I} \) twice, \( \rulename{\wedge I} \)]; so \( n \in B \).
 - \( (\supseteq) \) Let \( n \in B \) [\( \rulename{\forall I} \)]. Choose \( a \) with \( n = 2a \) and \( b \) with \( n = 3b \) [\( \rulename{\exists E} \) twice, two fresh names: one name for both would be (N4)]. Then \( b = 3b - 2b = n - 2b = 2a - 2b = 2(a - b) \), so \( n = 3b = 6(a - b) \), and \( 6 \mid n \) with the witness \( a - b \) [\( \rulename{\exists I} \)]; so \( n \in A \).
-- So \( A = B \).
+- So every integer \( n \) has \( n \in A \leftrightarrow n \in B \) [\( \rulename{{\leftrightarrow}I} \) inside \( \rulename{\forall I} \)], and by extensionality \( A = B \).
 
 The two \( \rulename{\exists E} \) boxes of \( (\supseteq) \) close on "\( n \in A \)", which mentions neither \( a \) nor \( b \).
 
 **Marking scheme.** (10 points)
 - 2: \( (\subseteq) \), with \( k \) chosen and both witnesses written.
 - 4: \( (\supseteq) \): two choices with distinct names (1); the computation \( b = 2(a - b) \), or another valid route to an integer \( c \) with \( n = 6c \) (2); the witness named (1).
-- 2: the double-inclusion frame: both inclusions, each opened by "let \( n \in \dots \)", and the conclusion \( A = B \).
+- 2: the double-inclusion frame: both inclusions, each opened by "let \( n \in \dots \)", and the conclusion \( A = B \) by extensionality, cited.
 - 2: the tags: \( \rulename{\forall I} \), \( \rulename{\exists E} \) with fresh names, \( \rulename{\exists I} \).
 
 Fatal errors (0 for the step): one name for both witnesses; "\( 2 \mid n \) and \( 3 \mid n \), so \( 6 \mid n \)" asserted without an argument (N9).
@@ -619,7 +619,7 @@ exm-rhetoric-universal (solution): |c - c| = 0 < eps | arithmetic
 exm-rhetoric-existential (solution): for every real u there is an integer N > u | school fact stated in the solution (follows from the axioms for the real numbers; AN1.1 thm-naturals-unbounded, no volume named)
 exm-rhetoric-existential (solution): 1/eps > 0; N > 1/eps > 0 gives 1/N < eps; n >= N gives 0 < 1/n <= 1/N; eps = 0.03, N = 34 | school algebra; verify/ch08/exm-rhetoric-existential.py
 exm-rhetoric-existential (claim): the definition read with N, n in Z_{>0} | exm-translate-limit (a) (Section 6.1's definition; named in the solution)
-exm-rhetoric-equality (solution): |u + v| <= |u| + |v|; |-u| = |u|; max{N1, N2} >= N1, N2 | exm-triangle-inequality-cases (cited); school facts
+exm-rhetoric-equality (solution): |u + v| <= |u| + |v|; |-u| = |u|; max{N1, N2} in N; max{N1, N2} >= N1, N2 | exm-triangle-inequality-cases (cited); school facts
 exm-rhetoric-equality (solution): |L - M| < eps for all eps > 0 gives L = M | prp-arbitrarily-close-equal (cited)
 exm-rhetoric-equality (claim): |x - 2| < 1 gives 3 < x + 2 < 5, |x^2 - 4| <= 5|x - 2|; 2x + 3 = 7 iff x = 2 | school algebra; exm-abs-product-cases; verify/ch08/exm-rhetoric-equality.py
 quantifier-rhetoric-definitions (claim): a definition proves nothing new (fold F8.2-c); "the" needs existence and uniqueness; uniqueness of limits is exm-rhetoric-equality | prp-definitional-extension, def-definite-description (F1.4 §08, cited); exm-rhetoric-equality (cited)
@@ -640,7 +640,7 @@ exr-quantifier-rhetoric-a2 (solution): (i) the swap of a, b changes max{a, b} >=
 exr-quantifier-rhetoric-b1 (solution): the witnesses M + 1, -y, 1 - y, |x - y|; 1 + delta^2/4 | exm-square-not-uniform (cited); school algebra; verify/ch08/exr-quantifier-rhetoric-b1.py
 exr-quantifier-rhetoric-b2 (solution): 5^0 = 1, 5^(n+1) = 5 * 5^n | powers, school meaning; F2.2 (promised): def-power
 exr-quantifier-rhetoric-b2 (solution): 5^(n+1) - 1 = 5(5^n - 1) + 4 = 4(5k + 1); integers closed under + and * | school algebra; F2.2 (promised): prp-integers-closed; verify/ch08/exr-quantifier-rhetoric-b2.py
-exr-quantifier-rhetoric-b3 (solution): n = 6k gives n = 2(3k) = 3(2k); 2a = 3b gives b = 2(a - b) and n = 6(a - b); A = B | school algebra; verify/ch08/exr-quantifier-rhetoric-b3.py
+exr-quantifier-rhetoric-b3 (solution): n = 6k gives n = 2(3k) = 3(2k); 2a = 3b gives b = 2(a - b) and n = 6(a - b); A = B | school algebra; F2.2 (promised): prp-integers-closed; verify/ch08/exr-quantifier-rhetoric-b3.py
 exr-quantifier-rhetoric-c1 (solution): max, min of two reals; x >= y, x >= 0 give x^2 >= xy; x = -1, y = -2 | school algebra; trichotomy; verify/ch08/exr-quantifier-rhetoric-c1.py
 exr-quantifier-rhetoric-c2 (solution): an integer beyond 1/x | school fact of exm-rhetoric-existential; verify/ch08/exr-quantifier-rhetoric-c2.py
 exr-quantifier-rhetoric-c2 (solution): the other answer, x^2 continuous but not uniformly continuous on R | exm-square-not-uniform (cited)

@@ -4,7 +4,7 @@ Chapters 1–7 built a calculus in which every step of a proof is one rule appli
 
 ## The rule card
 
-Here is every rule of the book on one card: its shape, the words that carry it in a written proof, and whether plain prose may leave it out. The last column is explained in the next subsection; Section 8.2 gives the quantifier rows their examples.
+Here is every primitive rule of the book, with the classical and derived rules most used in prose, on one card: its shape, the words that carry it in a written proof, and whether plain prose may leave it out. The last column is explained in the next subsection; Section 8.2 gives the quantifier rows their examples.
 
 | Rule | Shape | You write | Silent in plain prose? |
 |---|---|---|---|
@@ -113,7 +113,7 @@ Which word of the paragraph tells the reader that line 5 is an assumption and no
 :::
 
 ::: {.solution}
-The word "were" (with "if"): "if \( n^2 \) were odd" supposes something in order to refute it, which is the opening of a \( \rulename{\neg I} \) box. With "is", the sentence "\( n^2 \) is odd, so it is both even and odd" would assert \( T \) as a claim rather than an assumption: it would sit, unjustified, directly in the box of line 4, where it is in fact false (\( n^2 \) is even there), and the proof would be wrong.
+The word "were" (with "if"): "if \( n^2 \) were odd" supposes something in order to refute it, which is the opening of a \( \rulename{\neg I} \) box. With "is", the sentence "\( n^2 \) is odd, so it is both even and odd" would assert "\( n^2 \) is odd" as a claim rather than an assumption: it would sit, unjustified, directly in the box of line 4, where it is in fact false (\( n^2 \) is even there), and the proof would be wrong.
 :::
 
 ## How to read the dictionary
@@ -251,7 +251,7 @@ Why tell \( \rulename{RAA} \) from \( \rulename{\neg I} \) at all? Some mathemat
 In analysis, \( \rulename{RAA} \) is the proof of @prp-arbitrarily-close-equal: "suppose, for a contradiction, that \( a \ne b \); then \( \abs{a - b} > 0 \), so the hypothesis gives \( \abs{a - b} < \abs{a - b} \), a contradiction; hence \( a = b \)". The box assumes \( \neg(a = b) \) and concludes \( a = b \), so it is genuine \( \rulename{RAA} \); \( \rulename{\neg I} \) would give only \( \neg\neg(a = b) \). \( \rulename{LEM} \) is a split such as "either the sequence has infinitely many terms in the left half of the interval, or it does not", a step of the bisection proof of the Bolzano–Weierstrass theorem. That split is genuinely non-constructive: nobody can decide in general which case holds. Section 8.7 explains why that matters, and a proof that makes such a step says so in one clause. A split such as "\( x \ge 0 \) or \( x < 0 \)" is also excluded middle in logical form, but it is an instance of the trichotomy of the order of \( \nR \), one of the axioms for the real numbers, and it is never flagged.
 
 ::: {#exm-rhetoric-contradiction}
-[One proof by contradiction, read three ways]
+[One proof by contradiction, read two ways]
 
 Let \( a \) and \( b \) be real numbers with \( a \le b + \varepsilon \) for every \( \varepsilon > 0 \). Prove that \( a \le b \), first by \( \rulename{RAA} \); then rewrite the proof as a case split.
 :::
@@ -263,13 +263,13 @@ The box assumes \( a > b \), which is \( \neg(a \le b) \) by the order fact of S
 
 *By cases.* By trichotomy, \( a \le b \) or \( a > b \) [\( \rulename{\vee E} \)]. In the first case we are done. In the second, the lines of the box above reach \( a \le b \) against \( a > b \), so this case cannot occur, and in it \( a \le b \) [\( \rulename{\neg E} \), \( \rulename{\bot E} \)]. In either case \( a \le b \).
 
-The two proofs share their mathematics, the instance \( \varepsilon = (a - b)/2 \), and differ only in how the classical step is written: as \( \rulename{RAA} \), or as a split on trichotomy, which over \( \nR \) is an axiom, so neither is flagged. The fold below writes the same box closed by \( \rulename{\neg I} \) and followed by \( \rulename{\neg\neg E} \).
+The two proofs share their mathematics, the instance \( \varepsilon = (a - b)/2 \), and differ only in how the classical step is written: as \( \rulename{RAA} \), or as a split on trichotomy, which over \( \nR \) is an axiom, so neither is flagged: \( a > b \) is \( \neg(a \le b) \) by trichotomy, so \( \rulename{RAA} \) adds nothing beyond that axiom. The fold below writes the same box closed by \( \rulename{\neg I} \) and followed by \( \rulename{\neg\neg E} \).
 :::
 
 ::: {.second-reading title="The same proof by ¬I and ¬¬E"}
 *By \( \rulename{\neg I} \) and \( \rulename{\neg\neg E} \).* Close the same box with "hence \( a > b \) is impossible" [\( \rulename{\neg I} \)], the line \( \neg(a > b) \), which is \( \neg\neg(a \le b) \) under the same reading of \( a > b \) as \( \neg(a \le b) \); then "so \( a \le b \) must hold" [\( \rulename{\neg\neg E} \)]. The two steps do what \( \rulename{RAA} \) did in one, and show that the box itself uses no classical rule.
 
-The three proofs share their mathematics, the instance \( \varepsilon = (a - b)/2 \), and differ only in how the classical step is written: as \( \rulename{RAA} \), as \( \rulename{\neg\neg E} \), or as a case split. All three also read \( a > b \) as \( \neg(a \le b) \) by the order fact of Section 2.1, itself an instance of trichotomy; read the other way, that fact gives \( a \le b \) from \( \neg(a > b) \) directly, so the first two put an excluded-middle step on top of it. Over \( \nR \) trichotomy is an axiom, so no step here is flagged.
+With this third version the proofs differ only in how the classical step is written: as \( \rulename{RAA} \), as \( \rulename{\neg\neg E} \), or as a case split. All three also read \( a > b \) as \( \neg(a \le b) \) by the order fact of Section 2.1, itself an instance of trichotomy; read the other way, that fact gives \( a \le b \) from \( \neg(a > b) \) directly, so the first two put an excluded-middle step on top of it. Over \( \nR \) trichotomy is an axiom, so no step here is flagged.
 :::
 
 ## The biconditional
@@ -342,7 +342,7 @@ No. (ii), (iii) and (iv) are shown equivalent, but nothing leads back to (i): (i
 
 ## The three faces of "by contradiction"
 
-"Proof by contradiction" is used in practice for three different arguments. Each opens a box and finds \( \bot \) inside it; they differ in what the box assumes and what the proof concludes. Only face (i) is free of a classical step.
+"Proof by contradiction" is used in practice for three different arguments. Each opens a box and finds \( \bot \) inside it; they differ in what the box assumes and what the proof concludes. Only face (i) is always free of a classical step.
 
 | Face | The box assumes | The proof concludes | Last step | A tiny example |
 |---|---|---|---|---|
@@ -580,14 +580,15 @@ By @prp-equivalence-cycle, three implications suffice.
 - (iii) \( \Rightarrow \) (i), the closing arrow: Suppose \( a \) and \( b \) are both even or both odd [assumption for \( \rulename{{\to}I} \)]. There are two cases [\( \rulename{\vee E} \)].
   - Both even: choose \( s \) and \( t \) with \( a = 2s \) and \( b = 2t \) [\( \rulename{\exists E} \) twice, two fresh names]. Then \( a + b = 2(s + t) \) [\( \rulename{\exists I} \), witness \( s + t \)].
   - Both odd: choose \( s \) and \( t \) with \( a = 2s + 1 \) and \( b = 2t + 1 \) [\( \rulename{\exists E} \) twice]. Then \( a + b = 2(s + t + 1) \) [\( \rulename{\exists I} \), witness \( s + t + 1 \)].
-  - In either case \( a + b \) is even [\( \rulename{\vee E} \), closing; silent at level 3].
+  - In either case \( a + b \) is even [\( \rulename{\vee E} \), closing; may be silent in plain prose].
 
 The closing arrow is (iii) \( \Rightarrow \) (i). Its logic is a two-case \( \rulename{\vee E} \), each case with two \( \rulename{\exists E} \) boxes under distinct names and one \( \rulename{\exists I} \); no \( \rulename{RAA} \) is used. (The names \( s \), \( t \) may be reused in the second case: sibling boxes may share a name, as (N4) of Section 8.6 notes.)
 
 **Marking scheme.** (10 points)
-- 2: (i) \( \Rightarrow \) (ii), with \( k \) chosen and the witness \( k - b \).
-- 3: (ii) \( \Rightarrow \) (iii): the split on \( b \), with (E1) named (1); the witness \( j + m \) in each case (2).
-- 3: (iii) \( \Rightarrow \) (i): the two cases (1); two distinct names in each case (1); the witnesses (1).
+Points are given per role, and a correct proof by another cycle earns the same points for the corresponding arrows.
+- 2: an arrow proved by one \( \rulename{\exists E} \) and one \( \rulename{\exists I} \) (here (i) \( \Rightarrow \) (ii), with \( k \) chosen and the witness \( k - b \)).
+- 3: an arrow from a parity hypothesis, by a split with (E1) named (1) and a witness in each case (2) (here (ii) \( \Rightarrow \) (iii), witness \( j + m \)).
+- 3: an arrow from (iii): the two cases (1); two distinct names in each case (1); the witnesses (1).
 - 1: the cycle named, with @prp-equivalence-cycle or the sentence that three implications suffice, and the closing arrow identified.
 - 1: the last sentence says what was shown.
 

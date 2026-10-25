@@ -96,6 +96,23 @@ items:
     model: claude-opus-5-5
     evidence: 01-connective-rhetoric.md:116 The solution uses the symbol T, which is undefined in this
       section.
+  - stage: S7r
+    verdict: correct
+    by: rereferee
+    hash: f4285b5e7af2
+    date: '2026-10-25'
+    model: claude-opus-5-5
+    evidence: '01:116 solution: ''were'' marks the ¬I assumption. Asserting ''n^2 is odd'' with ''is''
+      would put an unjustified false line directly in line 4''s box. This is consistent with the derivation
+      at 01:85-107, and no undefined symbols remain.'
+  - stage: S7r
+    verdict: correct
+    by: rereferee
+    hash: f4285b5e7af2
+    date: '2026-10-25'
+    model: claude-opus-5-5
+    evidence: The solution now quotes the asserted sentence '"n^2 is odd"' where it had the stray T. The
+      reasoning about the box of line 4 is unchanged and correct.
 - key: exm-rhetoric-conjunction
   kind: exm
   file: 01-connective-rhetoric.md
@@ -260,6 +277,25 @@ items:
     evidence: 01-connective-rhetoric.md:254 The title promises three readings, but the example (statement
       and solution) gives two. The third is in an optional fold, and the fold repeats the closing sentence
       of the example.
+  - stage: S7r
+    verdict: correct
+    by: rereferee
+    hash: 5858d04dc922
+    date: '2026-10-25'
+    model: claude-opus-5-5
+    evidence: '01:253-273: the title ''read two ways'' matches the RAA and by-cases proofs. The RAA proof
+      checks out: ε=(a−b)/2>0, so a≤b+(a−b)/2, i.e. 2a≤a+b, so a≤b, which clashes with a>b. The case split
+      is ∨E on trichotomy, with ¬E and ⊥E closing the second case. The reason no step is flagged is now
+      given in the body. The fold''s ¬I then ¬¬E version is correct and consistent with the body.'
+  - stage: S7r
+    verdict: correct
+    by: rereferee
+    hash: 5858d04dc922
+    date: '2026-10-25'
+    model: claude-opus-5-5
+    evidence: 'Retitled ''read two ways'', which matches the two proofs in the body. The fold''s third
+      version is introduced as ''With this third version''. The trichotomy remark is accurate: a > b is
+      ¬(a ≤ b) by trichotomy.'
 - key: exm-rhetoric-biconditional
   kind: exm
   file: 01-connective-rhetoric.md
@@ -702,6 +738,24 @@ items:
     evidence: 01-connective-rhetoric.md:587 The marking scheme only fits the solution's own cycle (i)⇒(ii)⇒(iii)⇒(i).
       The problem leaves the cycle to the solver ('Say which arrow closes the cycle'), so a correct proof
       by another cycle cannot be graded against it.
+  - stage: S7r
+    verdict: correct
+    by: rereferee
+    hash: db86411ec3f8
+    date: '2026-10-25'
+    model: claude-opus-5-5
+    evidence: '01:567-596: the algebra checks: a−b=2(k−b), a=2(j+m) or 2(j+m)+1, a+b=2(s+t) or 2(s+t+1).
+      The closing arrow is (iii)⇒(i), with tags ∨E, ∃E twice and ∃I, and the closing ∨E tag now uses ''plain
+      prose''. The marking scheme is per role, covers every cycle, and totals 10.'
+  - stage: S7r
+    verdict: correct
+    by: rereferee
+    hash: db86411ec3f8
+    date: '2026-10-25'
+    model: claude-opus-5-5
+    evidence: The marking scheme is now per role, so other cycles earn the same points. The point totals
+      still sum to 10 (2+3+3+1+1). The closing ∨E is tagged 'may be silent in plain prose', which is consistent
+      with def-silent-steps.
 - key: exr-connective-rhetoric-c1
   kind: exr
   file: 01-connective-rhetoric.md
@@ -974,6 +1028,21 @@ items:
     evidence: 02-quantifier-rhetoric.md:194 The bounded ∀E at n = max{N1, N2} needs the line n ∈ ℕ, which
       is neither written nor in the ledger. The section's own existential example insists that the bound
       of a bounded rule be checked as a line (line 159).
+  - stage: S7r
+    verdict: correct
+    by: rereferee
+    hash: fad754f3bb7a
+    date: '2026-10-25'
+    model: claude-opus-5-5
+    evidence: n := max{N1, N2} is now checked in ℕ, together with n ≥ N1 and n ≥ N2, before the two bounded
+      ∀E steps. The ledger records max ∈ ℕ. The rest of the solution is unchanged and sound.
+  - stage: S7r
+    verdict: correct
+    by: rereferee
+    hash: fad754f3bb7a
+    date: '2026-10-25'
+    model: claude-opus-5-5
+    evidence: Adds n = max{N1, N2} ∈ ℕ, which ∀E at n needs. The ledger line is updated to match.
 - key: exm-rhetoric-double-inclusion
   kind: exm
   file: 02-quantifier-rhetoric.md
@@ -1175,6 +1244,22 @@ items:
     evidence: 02:435-482. All 12 parts agree with my answers. (h) ∀N∃n≥N a_n≤0. (i) WLOG is illegitimate
       because the statement is not symmetric. (k) ↔I inside ∀I plus extensionality cited, consistent with
       02:218-220. (l) existence and uniqueness.
+  - stage: S7r
+    verdict: correct
+    by: rereferee
+    hash: ccb091577f19
+    date: '2026-10-25'
+    model: claude-opus-5-5
+    evidence: The preamble now describes the parts accurately and claims no order. Parts (a)-(l) and their
+      solutions are unchanged and correct.
+  - stage: S7r
+    verdict: correct
+    by: rereferee
+    hash: ccb091577f19
+    date: '2026-10-25'
+    model: claude-opus-5-5
+    evidence: The intro sentence was reworded to describe the parts accurately. No mathematical content
+      changed.
 - key: exr-quantifier-rhetoric-b1
   kind: exr
   file: 02-quantifier-rhetoric.md
@@ -1286,6 +1371,24 @@ items:
     evidence: 02-quantifier-rhetoric.md:541 The solution ends 'So A = B' without citing extensionality.
       The same section says that appeal is never silent, and the marking scheme's 'conclusion A = B' line
       does not ask for it either.
+  - stage: S7r
+    verdict: correct
+    by: rereferee
+    hash: f41e298a854f
+    date: '2026-10-25'
+    model: claude-opus-5-5
+    evidence: The solution now closes with ↔I inside ∀I and an explicit appeal to extensionality, as 02:218-220
+      require. The scheme asks for that citation and still totals 10 points (2+4+2+2). The ledger cites
+      prp-integers-closed (promised) for the integer witnesses 3k, 2k and a−b. The computation b = 2(a−b),
+      n = 6(a−b) is unchanged and correct.
+  - stage: S7r
+    verdict: correct
+    by: rereferee
+    hash: f41e298a854f
+    date: '2026-10-25'
+    model: claude-opus-5-5
+    evidence: 'The conclusion is now reached through ↔I inside ∀I and extensionality, with the rubric
+      matching. Ledger: F2.2 prp-integers-closed is added. b = 2(a − b) and n = 6(a − b) are correct.'
 - key: exr-quantifier-rhetoric-c1
   kind: exr
   file: 02-quantifier-rhetoric.md
@@ -1460,6 +1563,14 @@ items:
       of routine logic be compressed under its rule names, so the uniform-continuity level-1 line 7 ('forall
       E, exists I') and the Expand-to-check line 4 ('forall E twice') obey it. The claims about Section
       2.2 hold
+  - stage: S7r
+    verdict: correct
+    by: rereferee
+    hash: 6e4cbd7fbeb5
+    date: '2026-10-25'
+    model: claude-opus-5-5
+    evidence: Only the ledger line changed. It now names the STATUS rows by content ('the two STATUS rows
+      for F1.5 §03, index') instead of using stale line numbers.
 - key: def-silent-steps
   kind: def
   file: 03-levels-of-abbreviation.md
@@ -1511,6 +1622,15 @@ items:
       at 03:53, 03:55 and 03:56 (NOTATION.md:142). Cited labels exm-disjunction-first-derivations, prp-and-commutes,
       prp-double-negation, prp-de-morgan, prp-quantifier-negation and prp-bounded-quantifier-negation
       are used as stated. Leftover outside this section: ch05/04:39 still has bare \rulename{=I}/\rulename{=E}.'
+  - stage: S7r
+    verdict: correct
+    by: rereferee
+    hash: e8572e46621e
+    date: '2026-10-25'
+    model: claude-opus-5-5
+    evidence: TAUT paragraph (03:154) now reads 'From Section 6.3 on', which matches its own earlier sentence
+      and NOTATION's TAUT entry (over the skeleton from F1.8 §03 = ch06/03, where prp-taut-skeleton is
+      at :196). The ledger line was updated to match.
 - key: check:03-levels-of-abbreviation:2
   kind: check
   file: 03-levels-of-abbreviation.md
@@ -1684,6 +1804,21 @@ items:
     model: claude-opus-5-5
     evidence: 03-levels-of-abbreviation.md:316 The 'every line' claim is false for the premise. Line 1
       of the full derivation neither opens nor closes a box, and no closing line cites it.
+  - stage: S7r
+    verdict: correct
+    by: rereferee
+    hash: 15d7d04349f5
+    date: '2026-10-25'
+    model: claude-opus-5-5
+    evidence: Level 1 now says 'other than the premise', which agrees with level 0 (line 1 is the premise
+      and is cited only by the ∀E line 4) and with the fold's wording at 03:375.
+  - stage: S7r
+    verdict: correct
+    by: rereferee
+    hash: 15d7d04349f5
+    date: '2026-10-25'
+    model: claude-opus-5-5
+    evidence: Level 1 now excludes the premise ('other than the premise'), which is accurate.
 - key: check:03-levels-of-abbreviation:5
   kind: check
   file: 03-levels-of-abbreviation.md
@@ -1731,6 +1866,23 @@ items:
       the row above. The read-back proofs are right (1/(n+1) < 1/N needs N>0, which follows from N>1/ε>0).
       The 8.2 pointer matches 02:265 and the step-5 pointer matches 05:16. Matches the delta blueprint
       §4.3 item 3.
+  - stage: S7r
+    verdict: correct
+    by: rereferee
+    hash: 9a5e1c345294
+    date: '2026-10-25'
+    model: claude-opus-5-5
+    evidence: The bottom row now takes an integer N > 1/ε from the school fact of exm-rhetoric-existential
+      and derives N > 0, so N ∈ ℕ, from 1/ε > 0. This mirrors 02:157 and covers the 1/N used in the read-off
+      proof at 03:428.
+  - stage: S7r
+    verdict: correct
+    by: rereferee
+    hash: 9a5e1c345294
+    date: '2026-10-25'
+    model: claude-opus-5-5
+    evidence: The bottom row now chooses an integer N > 1/ε and derives N ∈ ℕ from 1/ε > 0. This is correct
+      and consistent with the summary sentence.
 - key: check:03-levels-of-abbreviation:6
   kind: check
   file: 03-levels-of-abbreviation.md
@@ -1753,6 +1905,21 @@ items:
     model: claude-opus-5-5
     evidence: 03-levels-of-abbreviation.md:436 The answer names only the reciprocal row as needing ε>0.
       The bottom row (choose N ∈ ℕ with N > 1/ε) needs it as well.
+  - stage: S7r
+    verdict: correct
+    by: rereferee
+    hash: c092c2b02a7c
+    date: '2026-10-25'
+    model: claude-opus-5-5
+    evidence: The solution now says that the bottom row also needs ε > 0, because 1/ε must be defined
+      and positive for the integer above it to lie in ℕ. This is consistent with the revised column.
+  - stage: S7r
+    verdict: correct
+    by: rereferee
+    hash: c092c2b02a7c
+    date: '2026-10-25'
+    model: claude-opus-5-5
+    evidence: Adds that the bottom row also needs ε > 0 (1/ε must be defined, and N ∈ ℕ). Correct.
 - key: exr-levels-of-abbreviation-a1
   kind: exr
   file: 03-levels-of-abbreviation.md
@@ -1850,6 +2017,26 @@ items:
     model: claude-opus-5-5
     evidence: 03-levels-of-abbreviation.md:549 Part (h) asks for a single missing never-silent step, but
       the text 'Let r be rational. Then p is even.' omits several, so the answer is not unique.
+  - stage: S7r
+    verdict: correct
+    by: rereferee
+    hash: d71f1c2f461f
+    date: '2026-10-25'
+    model: claude-opus-5-5
+    evidence: (h) now asks for two missing steps. The solution gives the choice of p (∃E, fresh name,
+      citing (L)), the assumption r^2=2 that opens ¬I, and the citation of thm-square-even-implies-even
+      (ch02/01:426). All three are on the never-silent list. (i) is dated from Section 6.3 and cites prp-taut-skeleton.
+      (i) and (j) use ⊨, and the counter-row P true, Q false is correct. The (k) ledger line names def-pow
+  - stage: S7r
+    verdict: correct
+    by: rereferee
+    hash: d71f1c2f461f
+    date: '2026-10-25'
+    model: claude-opus-5-5
+    evidence: (h) asks for two missing never-silent steps, and the solution names the ∃E choice citing
+      (L), the ¬I opening on r^2 = 2, and the citation of thm-square-even-implies-even. (i)/(j) use ⊨
+      on the skeleton with @prp-taut-skeleton, and (j) gives the row P true, Q false. 'From Section 6.3
+      on' is correct.
 - key: exr-levels-of-abbreviation-b1
   kind: exr
   file: 03-levels-of-abbreviation.md
@@ -2309,6 +2496,23 @@ items:
     model: claude-opus-5-5
     evidence: 04:179-224. All 12 phrase answers agree with mine and with the four questions (04:61-66),
       the warning (04:78) and strategy 1 (04:134).
+  - stage: S7r
+    verdict: correct
+    by: rereferee
+    hash: bb5454fd8e04
+    date: '2026-10-25'
+    model: claude-opus-5-5
+    evidence: The stem at 04:182 now groups (k) by itself as locating a hypothesis, which fits the question
+      at 04:195 and its answer at 04:221 (x < 0 gives x ≠ 0 and the sign of 1/x). (j) and (l) are answered
+      by the re-reading warning and by 'Try it first', as the stem now says. The rest is unchanged.
+  - stage: S7r
+    verdict: correct
+    by: rereferee
+    hash: bb5454fd8e04
+    date: '2026-10-25'
+    model: claude-opus-5-5
+    evidence: The parts guide was corrected so that (k) locates a hypothesis and (j), (l) are about habits.
+      No other change.
 - key: exr-reading-proofs-b1
   kind: exr
   file: 04-reading-proofs.md
@@ -2455,6 +2659,24 @@ items:
     evidence: '04:286-322. The identity (x-1)^2(x+2)=x^3-3x+2 was verified. The solution set of x^3+2≥3x
       is x≥-2 (sympy), so the least c is -2. At x=-3: -25<-9. Only line (3) uses x≥0. The scheme accepts
       an alternative wording.'
+  - stage: S7r
+    verdict: correct
+    by: rereferee
+    hash: 0122ff55b71e
+    date: '2026-10-25'
+    model: claude-opus-5-5
+    evidence: 'The solution to (b) at 04:311 now says how the hypothesis enters: x ≥ 0 gives x+2 ≥ 2 >
+      0. This matches (a)(3) and (a)(4), where (4) is ''non-negative times positive''. It also meets the
+      marking scheme''s ''(b) line (3), with how x ≥ 0 enters''. The (c) answer c = -2 is unchanged and
+      correct: at x = -3, -25 < -9.'
+  - stage: S7r
+    verdict: correct
+    by: rereferee
+    hash: 0122ff55b71e
+    date: '2026-10-25'
+    model: claude-opus-5-5
+    evidence: '(b) now gives the reason: x ≥ 0 gives x + 2 ≥ 2 > 0, the positive factor that line (4)
+      needs. Correct.'
 - key: exr-reading-proofs-c1
   kind: exr
   file: 04-reading-proofs.md
@@ -2491,6 +2713,16 @@ items:
       at (2), two fresh names, the triangle inequality, the clash, and RAA at (7). The ∃E boxes close
       because line (6) mentions neither N1 nor N2. The hints name what is needed without executing it.
       exm-rhetoric-equality (02:187) proves the claim without an RAA box of its own.'
+  - stage: S7r
+    verdict: correct
+    by: rereferee
+    hash: 8c58fd968cce
+    date: '2026-10-25'
+    model: claude-opus-5-5
+    evidence: Line (3) of the solution (04:351) now cites @exm-negating-definitions (a). That example
+      (ch06/02:368) states a_n → L as ∀ε>0 ∃N∈ℕ ∀n∈ℕ (n≥N → |a_n−L|<ε), which is the form behind the ∀E/∃E/→E
+      reading in (3) and (5). The ledger line at 04:427 now records it as cited. The other citations (exm-triangle-inequality-cases,
+      exm-rhetoric-equality) are unchanged.
 - key: exr-reading-proofs-c2
   kind: exr
   file: 04-reading-proofs.md
@@ -2561,6 +2793,15 @@ items:
       paragraph match the proof clause by clause: (D1) premises first, (D3) repetition, scope rule, schemas
       as in lem-weakening-cut, ∨E with the box endings. The two-sentence idea is accurate and the hints
       are proper rungs.'
+  - stage: S7r
+    verdict: correct
+    by: rereferee
+    hash: 960ace086c57
+    date: '2026-10-25'
+    model: claude-opus-5-5
+    evidence: The only change is a blank line before 'Fatal errors' at 04:402, so that sentence is now
+      its own paragraph and does not continue the last bullet. B3 and C1 already have this layout. Nothing
+      in the content changed.
 - key: check:05-writing-proofs:1
   kind: check
   file: 05-writing-proofs.md
@@ -2637,6 +2878,23 @@ items:
     model: claude-opus-5-5
     evidence: 05-writing-proofs.md:108 'Read the scratch column from the bottom up and it is the page'
       is false for the table it describes.
+  - stage: S7r
+    verdict: minor
+    by: rereferee
+    hash: d0f12dc764b4
+    date: '2026-10-25'
+    model: claude-opus-5-5
+    evidence: 'The F032 fix is correct (l.53). F031 is still open: l.108 says without qualification that
+      the reversed scratch column ''is the page'', which is false for the table above it (M is at scratch
+      line 2 but in page sentence 1). Steps 1-7, the derivation and level 3 are otherwise sound.'
+  - stage: S7r
+    verdict: correct
+    by: rereferee
+    hash: d0f12dc764b4
+    date: '2026-10-25'
+    model: claude-opus-5-5
+    evidence: The table description now says the second row is step 2 and the later rows are moves of
+      steps 3 and 4. Accurate.
 - key: check:05-writing-proofs:2
   kind: check
   file: 05-writing-proofs.md
@@ -2730,6 +2988,23 @@ items:
     model: claude-opus-5-5
     evidence: 05-writing-proofs.md:180 The solution says the proof leaves out nothing that must be written,
       but the case split at (2) gives no reason the cases exhaust.
+  - stage: S7r
+    verdict: correct
+    by: rereferee
+    hash: 600b2426524a
+    date: '2026-10-25'
+    model: claude-opus-5-5
+    evidence: '(2) now states the disjunction with its reason. The solution table (row (2): ''states the
+      disjunction the split needs'') and both claims that nothing never-silent is missing (l.180, l.197)
+      now hold. The labels of (1)-(8) are right.'
+  - stage: S7r
+    verdict: correct
+    by: rereferee
+    hash: 600b2426524a
+    date: '2026-10-25'
+    model: claude-opus-5-5
+    evidence: Sentence (2) now states the split's reason ('every real number is at least 1 or below it').
+      The case analysis is correct.
 - key: exm-write-from-derivation
   kind: exm
   file: 05-writing-proofs.md
@@ -2805,6 +3080,23 @@ items:
     evidence: '05:241-255: n+2=3(k+1) when n=3k+1 and n+1=3(k+1) when n=3k+2. (P2) is case 3 with k=5.
       The ledger row (05:727) promises the 3k/3k+1/3k+2 fact to F2.2 thm-division-algorithm, matching
       the STATUS F1.5 row (STATUS.md:156).'
+  - stage: S7r
+    verdict: correct
+    by: rereferee
+    hash: 99365af31575
+    date: '2026-10-25'
+    model: claude-opus-5-5
+    evidence: The quoted proof states the division into 3k, 3k+1, 3k+2 and then chooses k by ∃E. The cases
+      give n, n+2=3(k+1), n+1=3(k+1), which is ∨E and then ∀I. The ledger row for the school fact (thm-division-algorithm,
+      F2.2) is present.
+  - stage: S7r
+    verdict: correct
+    by: rereferee
+    hash: 99365af31575
+    date: '2026-10-25'
+    model: claude-opus-5-5
+    evidence: The generalized proof now states the division by 3 before the ∃E choice of k, so 'such a
+      k' has an antecedent. The cases n+2 = 3(k+1) and n+1 = 3(k+1) are correct.
 - key: check:05-writing-proofs:4
   kind: check
   file: 05-writing-proofs.md
@@ -2901,6 +3193,22 @@ items:
       the symbols, (b) the unwinding, (c) the first and last line of the box, (e) constant before x, (i)
       the sign argument on (1,3), (j) multiples of 4, (l) the next Givens/Goal row matches exm-subset-bounded-above''s
       table.'
+  - stage: S7r
+    verdict: correct
+    by: rereferee
+    hash: 75843aafa316
+    date: '2026-10-25'
+    model: claude-opus-5-5
+    evidence: 'The stem grouping matches the solutions: (h) is answered by step 4, and (f), (g), (i) by
+      the conventions. (b) cites Section 5.6 = F1.4 §06, and the ledger now matches. Answers (a)-(l) checked.'
+  - stage: S7r
+    verdict: correct
+    by: rereferee
+    hash: 75843aafa316
+    date: '2026-10-25'
+    model: claude-opus-5-5
+    evidence: The parts guide was corrected ((h) is the search and the page). The ledger now points to
+      F1.4 §06's fold as the source of (b).
 - key: exr-writing-proofs-b1
   kind: exr
   file: 05-writing-proofs.md
@@ -3055,6 +3363,23 @@ items:
       b=2(a-b), m=6(a-b) checks, and it matches exr-quantifier-rhetoric-b3 (02:539). exm-generalise-proof
       applied to n-1 is valid. The worked example is exm-generalise-proof. My alternative (3 | product
       by the three residues, inline) earns full marks.'
+  - stage: S7r
+    verdict: correct
+    by: rereferee
+    hash: 0b85a7c69e68
+    date: '2026-10-25'
+    model: claude-opus-5-5
+    evidence: 'n^3-n=(n-1)n(n+1). The 3-case cites exm-generalise-proof at n-1, and the parity split now
+      has both cases. d|a gives d|ab is stated with its proof. The 6 | m step is right: m=2a=3b gives
+      b=2(a-b) and m=6(a-b). The ledger rows cover every fact.'
+  - stage: S7r
+    verdict: correct
+    by: rereferee
+    hash: 0b85a7c69e68
+    date: '2026-10-25'
+    model: claude-opus-5-5
+    evidence: Adds d | a ⇒ d | ab and the even case for n, so the parity argument is complete. The 6 |
+      m step (b = 2(a − b)) is correct. The ledger is updated with prp-integers-closed.
 - key: exr-writing-proofs-c1
   kind: exr
   file: 05-writing-proofs.md
@@ -3181,6 +3506,15 @@ items:
     evidence: 'STATUS.md:156 F1.5 → F2.2 arithmetic row: the facts (L₃)/(L₄) used in 8.5 C3 are left ''Open'',
       aimed at F2.2, whose delivered text proves only (L). The well-ordering item is paid ''by whatever
       label F2.2 gives it'', even though that label exists.'
+  - stage: S7r
+    verdict: minor
+    by: rereferee
+    hash: 4d76a8889ca5
+    date: '2026-10-25'
+    model: claude-opus-5-5
+    evidence: 'Hint 2 is now the first line. The lemma (residues 3k+1, 3k+2 squared, then 3j+1≠3t), the
+      main proof and (b) at n=2 with 4=(2/1)^2 are all correct. Leftover: the widened scheme line keeps
+      ''with the clash justified'', which only fits the residues route (see new_problems).'
 - key: check:06-checking-proofs:1
   kind: check
   file: 06-checking-proofs.md
@@ -3270,6 +3604,14 @@ items:
     model: claude-opus-5-5
     evidence: 06-checking-proofs.md:43 The fold is titled 'Two notes on the second column', but its second
       note is about the first column, so the title is false for half its content.
+  - stage: S7r
+    verdict: correct
+    by: rereferee
+    hash: e085c648c906
+    date: '2026-10-25'
+    model: claude-opus-5-5
+    evidence: The only touched text is the fold title, now 'Two notes on the two columns', which correctly
+      covers its soundness note (second column) and its truth note (first column). The ledger line matches.
 - key: check:06-checking-proofs:2
   kind: check
   file: 06-checking-proofs.md
@@ -3534,6 +3876,23 @@ items:
     model: claude-opus-5-5
     evidence: '06:259-270. Entries N1, N3, N5, N11(a), N6, N8 agree with mine. Counterexamples check:
       A={0,1} with f(x)=x defeats (b); n=4 defeats (e); x=0 defeats (f).'
+  - stage: S7r
+    verdict: correct
+    by: rereferee
+    hash: 022c75074210
+    date: '2026-10-25'
+    model: claude-opus-5-5
+    evidence: '(d) now opens the RAA box with x<0 for the goal x>0. That is (N11)(a): the negation is
+      x<=0, x=0 is never examined, and ¬I gives only x>=0. The other parts are unchanged. The ledger and
+      sidecar are consistent (0 is neither >0 nor <0).'
+  - stage: S7r
+    verdict: correct
+    by: rereferee
+    hash: 022c75074210
+    date: '2026-10-25'
+    model: claude-opus-5-5
+    evidence: Item 4 is now 'prove x > 0, suppose x < 0'. The solution states correctly that ¬(x > 0)
+      is x ≤ 0, that the case x = 0 is never examined, and that ¬I gives only x ≥ 0. The ledger is updated.
 - key: exr-checking-proofs-a2
   kind: exr
   file: 06-checking-proofs.md
@@ -3566,6 +3925,23 @@ items:
     evidence: 06-checking-proofs.md:317 (l) says a single TAUT line writes the step 'from Section 4.8
       on'. The premises contain first-order atoms (x > 0), and TAUT on such lines is licensed only on
       the propositional skeleton, from Section 6.3 on.
+  - stage: S7r
+    verdict: correct
+    by: rereferee
+    hash: 1e8e6663e77a
+    date: '2026-10-25'
+    model: claude-opus-5-5
+    evidence: (i) now names (N12) and notes the (N9) step, and the counterexample x=y=3 gives 6 ≠ 0. (l)
+      now licenses one TAUT line from Section 6.3 on the propositional skeleton (@prp-taut-skeleton, ch06/03:196),
+      which is accurate. The ledger was updated.
+  - stage: S7r
+    verdict: correct
+    by: rereferee
+    hash: 1e8e6663e77a
+    date: '2026-10-25'
+    model: claude-opus-5-5
+    evidence: (i) also flags the citation of the unavailable line x ≠ y. (l) dates TAUT on the skeleton
+      from Section 6.3 with @prp-taut-skeleton. The ledger line is updated.
 - key: exr-checking-proofs-b1
   kind: exr
   file: 06-checking-proofs.md
@@ -3868,6 +4244,24 @@ items:
     model: claude-opus-5-5
     evidence: 06-checking-proofs.md:556 A Review group sits in 8.6, which is not the chapter's last section,
       and the problem text names its sources. Both go against STYLE §11.5.
+  - stage: S7r
+    verdict: correct
+    by: rereferee
+    hash: 1a0324e09c0a
+    date: '2026-10-25'
+    model: claude-opus-5-5
+    evidence: The stem no longer names its sources. The solution cites @exm-not-allowed-catalogue, @def-rules-universal
+      (Section 5.4) and @thm-square-even-implies-even, and (E1) is stated in ch02/01 just before that
+      theorem. The algebra in (b) is unchanged and was already checked by the sidecar.
+  - stage: S7r
+    verdict: correct
+    by: rereferee
+    hash: 1a0324e09c0a
+    date: '2026-10-25'
+    model: claude-opus-5-5
+    evidence: The problem text no longer names its sources. The solution cites @exm-not-allowed-catalogue,
+      @def-rules-universal (Section 5.4) and (E1) of Section 2.1 before @thm-square-even-implies-even.
+      The R placement is recorded in STATUS (a).
 - key: thm-irrational-power-rational
   kind: thm
   file: 07-excluded-middle.md
@@ -4102,6 +4496,14 @@ items:
     evidence: '07:51-70. Eight lines checked against prp-excluded-middle (ch02 05:240-256): lines 1-7
       match line for line. The only rules are ¬I (5, 8), ∨I (3, 6) and ¬E (4, 7). There is no ⊥E or RAA,
       as the statement claims'
+  - stage: S7r
+    verdict: correct
+    by: rereferee
+    hash: a90714ae8f3d
+    date: '2026-10-25'
+    model: claude-opus-5-5
+    evidence: 'The citation of @exr-four-kinds-of-task-b1 is accurate: its lines 6–13 are the same derivation.
+      The derivation (lines 1–8, ∨I, ¬E, ¬I) is unchanged and correct.'
 - key: check:07-excluded-middle:4
   kind: check
   file: 07-excluded-middle.md
@@ -4124,6 +4526,22 @@ items:
     model: claude-opus-5-5
     evidence: '07:194-200: thm-raa-independent is in ch04 07-soundness.md (Section 4.7) and states that
       |- p or not p has no RAA-free derivation; 08-kripke-models.md:221 refutes it at w0 of M1.'
+  - stage: S7r
+    verdict: correct
+    by: rereferee
+    hash: ff9fb290d938
+    date: '2026-10-25'
+    model: claude-opus-5-5
+    evidence: The solution correctly says that @prp-not-not-excluded-middle derives only ¬¬(P∨¬P). The
+      independence claim is now limited to a letter p, as in thm-raa-independent (ch04/07:1024) and Section
+      8.8.
+  - stage: S7r
+    verdict: correct
+    by: rereferee
+    hash: ff9fb290d938
+    date: '2026-10-25'
+    model: claude-opus-5-5
+    evidence: Now restricted to a letter p, which matches the scope of thm-raa-independent.
 - key: check:07-excluded-middle:5
   kind: check
   file: 07-excluded-middle.md
@@ -4222,6 +4640,23 @@ items:
     model: claude-opus-5-5
     evidence: 07-excluded-middle.md:363 (k) is about a bounded quantifier ('not every element of A … some
       element of A'), but the solution cites the unbounded law.
+  - stage: S7r
+    verdict: correct
+    by: rereferee
+    hash: 247113c2024f
+    date: '2026-10-25'
+    model: claude-opus-5-5
+    evidence: (k) cites the bounded law, @prp-bounded-quantifier-negation (a), whose ⊢ is derived with
+      RAA (ch06/02:211). It is the bounded form of the right-column row at line 216. The other answers
+      are unchanged.
+  - stage: S7r
+    verdict: correct
+    by: rereferee
+    hash: 247113c2024f
+    date: '2026-10-25'
+    model: claude-opus-5-5
+    evidence: (k) now cites @prp-bounded-quantifier-negation (a), whose ⊢ direction is derived with RAA
+      (ch06 02:205), as the bounded form of the table's @prp-quantifier-negation (a).
 - key: exr-excluded-middle-b1
   kind: exr
   file: 07-excluded-middle.md
@@ -4291,6 +4726,22 @@ items:
     evidence: '07:378-409. I derived it independently and got the same 13-line derivation: the ¬I box,
       the inner box on P giving ¬P, then a box on ¬¬P with ⊥E. No RAA. The worked example is prp-not-not-excluded-middle.
       The hint names a tool and does not execute the idea.'
+  - stage: S7r
+    verdict: correct
+    by: rereferee
+    hash: cc4d8a489074
+    date: '2026-10-25'
+    model: claude-opus-5-5
+    evidence: The derivation and line references are unchanged. The final remark now says correctly that
+      ⊢ ¬¬p → p has no RAA-free derivation for a letter p (Section 8.8).
+  - stage: S7r
+    verdict: correct
+    by: rereferee
+    hash: cc4d8a489074
+    date: '2026-10-25'
+    model: claude-opus-5-5
+    evidence: The non-derivability of ¬¬p → p is stated for a letter p, which is what the two-stage model
+      of 8.8 refutes.
 - key: exr-excluded-middle-b2
   kind: exr
   file: 07-excluded-middle.md
@@ -4429,6 +4880,23 @@ items:
       cor-derivable-iff-valid, TAUT, Lindenbaum chain), ch6 (quantifier-negation (a), negated-implication
       ⊢, bounded (a) ⊢, passage ⊣ (d), (e), arbitrarily-close-equal, taut-skeleton) and ch5/ch7 'none'
       al
+  - stage: S7r
+    verdict: correct
+    by: rereferee
+    hash: e8fb99ee049e
+    date: '2026-10-25'
+    model: claude-opus-5-5
+    evidence: 'Stem (b) now names lemmas, corollaries and TAUT, so it matches the solution''s list (lem-atom-splitting,
+      cor-derivable-iff-valid, def-rule-taut, lem-lindenbaum). Stem (a)''s ''propositions and theorems''
+      leaves out nothing: Chapter 2''s two lemmas are RAA-free.'
+  - stage: S7r
+    verdict: correct
+    by: rereferee
+    hash: e8fb99ee049e
+    date: '2026-10-25'
+    model: claude-opus-5-5
+    evidence: (b) now asks to count lemmas, corollaries and TAUT. This matches the solution, which lists
+      lem-atom-splitting and the like.
 - key: exr-excluded-middle-b5
   kind: exr
   file: 07-excluded-middle.md
@@ -4461,6 +4929,20 @@ items:
       row assignments in (d) are right: De Morgan (d), impl-as-disjunction (b), double-negation (b). The
       parenthesis about 8.8 C1 (b) is borne out: my Kripke checker confirms M7 refutes it. TAUT is excluded
       per C2.'
+  - stage: S7r
+    verdict: correct
+    by: rereferee
+    hash: 24d8f371d8f2
+    date: '2026-10-25'
+    model: claude-opus-5-5
+    evidence: The only change is 'in this section' in place of 'in Section 8.7'. The derivation is unchanged.
+  - stage: S7r
+    verdict: correct
+    by: rereferee
+    hash: 24d8f371d8f2
+    date: '2026-10-25'
+    model: claude-opus-5-5
+    evidence: The in-section pointer now reads 'in this section'. The content is unchanged.
 - key: exr-excluded-middle-c1
   kind: exr
   file: 07-excluded-middle.md
@@ -4598,6 +5080,25 @@ items:
     model: claude-opus-5-5
     evidence: '07-excluded-middle.md:670 Under the final numbering, the R group does not follow the spacing
       that STYLE §11.5 requires: R1 should come from the previous chapter and R2 from 3-4 chapters back.'
+  - stage: S7r
+    verdict: correct
+    by: rereferee
+    hash: 18f5b501e9ab
+    date: '2026-10-25'
+    model: claude-opus-5-5
+    evidence: The positive form and the (0,1) witness (m+1)/2 are unchanged and correct. The route back
+      is now a direct derivation that avoids RAA (flagged m ∈ A; ∀E/→E; ∃E box with ¬(a≤m) from the order
+      axioms, then ∃I; ⊣ of (a); →I/∀I; ⊣ of (b)), and both ⊣ directions are RAA-free per ch06/02:211-212.
+      It is explicitly kept apart from the @prp-replacement route, which needs the full biconditional.
+  - stage: S7r
+    verdict: correct
+    by: rereferee
+    hash: 18f5b501e9ab
+    date: '2026-10-25'
+    model: claude-opus-5-5
+    evidence: The direct return route is valid. ∀I box on m ∈ A, ∀E and →E give ∃a∈A (a > m). Inside ∃E,
+      trichotomy gives ¬(a ≤ m), then ∃I. The ⊣ direction of (a), then →I and ∀I, then the ⊣ direction
+      of (b) follow, and both ⊣ directions are RAA-free per prp-bounded-quantifier-negation.
 - key: exr-excluded-middle-r2
   kind: exr
   file: 07-excluded-middle.md
@@ -4926,6 +5427,23 @@ items:
       table lead at 07:204) say a sequent has 'no derivation without RAA'. The proof covers only derivations
       in the propositional rules. 8.7 defines a derivation without RAA to include the quantifier and equality
       rules, and says separately that those rules do not change the verdict, stated without proof.
+  - stage: S7r
+    verdict: correct
+    by: rereferee
+    hash: 36cb20d6047e
+    date: '2026-10-25'
+    model: claude-opus-5-5
+    evidence: l.132 now limits the derivation's lines, and the cited results' derivations, to @def-formula,
+      so the propositional-rule table and Step 3 cover every case.
+  - stage: S7r
+    verdict: correct
+    by: rereferee
+    hash: 36cb20d6047e
+    date: '2026-10-25'
+    model: claude-opus-5-5
+    evidence: The hypothesis now restricts the lines to formulas of @def-formula and excludes cited results
+      that use non-formula lines. This closes the earlier gap about first-order lines. R now has its own
+      table row (the cited line itself).
 - key: proof:thm-kripke-soundness
   kind: proof
   file: 08-kripke-models.md
@@ -4949,6 +5467,24 @@ items:
     model: claude-opus-5-5
     evidence: '08-kripke-models.md:156 R (repetition) is said to follow from (K3)/(K4) at w. It uses no
       clause: the line repeats a cited line, so the induction hypothesis gives it directly.'
+  - stage: S7r
+    verdict: correct
+    by: rereferee
+    hash: f125fec7da9c
+    date: '2026-10-25'
+    model: claude-opus-5-5
+    evidence: Step 1 reduces to the propositional primitive rules (Chapters 1 and 2). R is now justified
+      directly by the hypothesis for the cited line, and the table row matches. The cases are complete
+      for ∧, ∨, →, ¬, ↔, ⊥E and R.
+  - stage: S7r
+    verdict: correct
+    by: rereferee
+    hash: f125fec7da9c
+    date: '2026-10-25'
+    model: claude-opus-5-5
+    evidence: Step 1 now reduces to the propositional primitive rules of Chapters 1–2 minus RAA, which
+      matches the hypothesis. In Step 3, R is the hypothesis for the cited line. The other cases are unchanged
+      and correct.
 - key: cor-kripke-countermodel
   kind: cor
   file: 08-kripke-models.md
@@ -4969,6 +5505,22 @@ items:
     date: '2026-10-25'
     model: claude-opus-5-5
     evidence: '08:166-170: follows from the theorem; the scope caveat is filed under thm-kripke-soundness'
+  - stage: S7r
+    verdict: minor
+    by: rereferee
+    hash: 10abd5db0f10
+    date: '2026-10-25'
+    model: claude-opus-5-5
+    evidence: The statement says 'in the propositional rules' but does not require the lines to be in
+      @def-formula, which the theorem its proof cites now requires. See F050.
+  - stage: S7r
+    verdict: correct
+    by: rereferee
+    hash: 10abd5db0f10
+    date: '2026-10-25'
+    model: claude-opus-5-5
+    evidence: '''in the propositional rules'' matches the scope of the theorem. The table paragraph states
+      without proof that the quantifier rules do not change this.'
 - key: proof:cor-kripke-countermodel
   kind: proof
   file: 08-kripke-models.md
@@ -5033,6 +5585,15 @@ items:
     model: claude-opus-5-5
     evidence: '08:186-213: both refutations rechecked by the checker; prp-de-morgan (d) is in Section
       2.5 (05-reductio-and-classical-rules.md:406); cor-derivable-iff-valid gives the tautology'
+  - stage: S7r
+    verdict: correct
+    by: rereferee
+    hash: adc8b791c8cd
+    date: '2026-10-25'
+    model: claude-opus-5-5
+    evidence: 'The text that follows it (table caveat l.230, Remark l.253, Warning l.266) is now accurate,
+      apart from the l.230 scope inherited from the corollary (F050). The Warning''s third misreading
+      is now false as intended: in M2, w0 forces neither p nor q.'
 - key: exr-kripke-models-a1
   kind: exr
   file: 08-kripke-models.md
@@ -5156,6 +5717,20 @@ items:
     evidence: '08:392-513. The four derivations are valid and RAA-free, and no model with up to 3 stages
       refutes (a), (b), (d), (f). My checker confirms the countermodels: (c) at w0 of M2, (e) at w0 of
       M1, (g) at w0 of M3. The scheme sums to 10.'
+  - stage: S7r
+    verdict: correct
+    by: rereferee
+    hash: bfcb0b99b2f0
+    date: '2026-10-25'
+    model: claude-opus-5-5
+    evidence: The look-alike note now pairs (c) with (a), and replacing ∧ by ∨ in (a) gives (c) exactly.
+  - stage: S7r
+    verdict: correct
+    by: rereferee
+    hash: bfcb0b99b2f0
+    date: '2026-10-25'
+    model: claude-opus-5-5
+    evidence: The look-alike sentence now says (c) is (a)'s look-alike with ∨ for ∧. The rest is unchanged.
 - key: exr-kripke-models-c1
   kind: exr
   file: 08-kripke-models.md
@@ -5189,6 +5764,23 @@ items:
     model: claude-opus-5-5
     evidence: 08-kripke-models.md:567 The scheme for (a) gives 2 of 5 points to building p→q by ⊥E in
       the case ¬p. A correct alternative that gets p in that case another way fails it.
+  - stage: S7r
+    verdict: correct
+    by: rereferee
+    hash: 95788b841ca0
+    date: '2026-10-25'
+    model: claude-opus-5-5
+    evidence: 'The (K5) step at w0 is now explicit and correct: w0 is reachable from itself, forces Peirce''s
+      law and does not force p∨¬p. The marking scheme accepts the alternative through B2 (d), (p→q)→p
+      ⊢ ¬¬p, followed by ¬E and ⊥E, or through B5 (c), (P∨¬P)→(¬¬P→P). Both are RAA-free.'
+  - stage: S7r
+    verdict: correct
+    by: rereferee
+    hash: 95788b841ca0
+    date: '2026-10-25'
+    model: claude-opus-5-5
+    evidence: 'The refutation now applies (K5) explicitly: w0 is reachable from itself, forces Peirce
+      and does not force p ∨ ¬p, so it does not force the implication. The rubric allows the ¬¬p route.'
 - key: exr-kripke-models-c2
   kind: exr
   file: 08-kripke-models.md
@@ -5220,3 +5812,20 @@ items:
     evidence: 08-kripke-models.md:588 The scheme pays only for the direct clause-by-clause proof. The
       complete proof by @thm-kripke-soundness, which the solution itself gives as 'the comparison', would
       score about 1 of 10.
+  - stage: S7r
+    verdict: minor
+    by: rereferee
+    hash: ee46ac7ab85f
+    date: '2026-10-25'
+    model: claude-opus-5-5
+    evidence: The second-route line cites @prp-double-negation (a) 'with φ for P', which yields φ ⊢ ¬¬φ.
+      The route needs ¬φ for P (see F065).
+  - stage: S7r
+    verdict: correct
+    by: rereferee
+    hash: ee46ac7ab85f
+    date: '2026-10-25'
+    model: claude-opus-5-5
+    evidence: The added second route by @thm-kripke-soundness, applied to the RAA-free derivations of
+      exm-triple-negation and prp-double-negation (a), is valid. The point allocation is consistent (9
+      + 1).

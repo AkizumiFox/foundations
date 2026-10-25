@@ -1,6 +1,6 @@
 # Stages of Knowledge: Kripke Models
 
-This section is optional, and nothing outside it depends on it. Section 8.7 named several classical laws that have no derivation without \( \rulename{RAA} \). For two of them, excluded middle and double-negation elimination, Chapter 4's optional @thm-raa-independent gave a proof by a three-valued reading; for the rest it stated the fact without proof. Truth tables cannot show it: every row makes \( p \vee \neg p \) true. Here is a reading that covers them all. A statement is not true or false once and for all, but *known* or *not yet known* at a stage of an inquiry that grows. The rules without \( \rulename{RAA} \) are sound for this reading, and \( \rulename{RAA} \) is not; two or three stages then suffice to show which laws need it.
+This section is optional, and nothing outside it depends on it. Section 8.7 named several classical laws that have no derivation without \( \rulename{RAA} \). For two of them, excluded middle and double-negation elimination, Chapter 4's optional @thm-raa-independent gave a proof by a three-valued reading; for the rest, Section 8.7 states the fact and points here. Truth tables cannot show it: every row makes \( p \vee \neg p \) true. Here is a reading that covers them all. A statement is not true or false once and for all, but *known* or *not yet known* at a stage of an inquiry that grows. The rules without \( \rulename{RAA} \) are sound for this reading, and \( \rulename{RAA} \) is not; two or three stages then suffice to show which laws need it.
 
 ## Stages of knowledge
 
@@ -129,7 +129,7 @@ A stage \( w \) forces \( \neg\varphi \), and \( w' \) is reachable from \( w \)
 ::: {#thm-kripke-soundness}
 [Soundness without RAA]
 
-Let \( \Gamma \) be a list of formulas and \( \psi \) a formula. If \( \Gamma \vdash \psi \) by a derivation in which no line uses \( \rulename{RAA} \) or TAUT, nor a derived rule or cited result whose derivation uses one of them, then every stage of every Kripke model that forces every formula of \( \Gamma \) forces \( \psi \).
+Let \( \Gamma \) be a list of formulas and \( \psi \) a formula. If \( \Gamma \vdash \psi \) by a derivation every line of which is a formula of @def-formula, in which no line uses \( \rulename{RAA} \) or TAUT, nor a derived rule or cited result whose derivation uses one of them or a line outside @def-formula, then every stage of every Kripke model that forces every formula of \( \Gamma \) forces \( \psi \).
 :::
 
 *In words: a derivation without \( \rulename{RAA} \) never leads from what a stage knows to what it does not know.*
@@ -140,7 +140,8 @@ The proof is Chapter 4's proof of @thm-soundness, Steps 1–4, with "every valua
 
 | Rule | Why its case holds at a stage \( w \) that forces the context |
 |---|---|
-| \( \rulename{\wedge I} \), \( \rulename{\wedge E} \), \( \rulename{\vee I} \), \( \rulename{R} \), \( \rulename{{\leftrightarrow}E} \) | the clause (K3), (K4) or (K7) at \( w \) itself, with (K5) at \( w' = w \) for \( \rulename{{\leftrightarrow}E} \) |
+| \( \rulename{R} \) | the cited line itself, forced at \( w \) |
+| \( \rulename{\wedge I} \), \( \rulename{\wedge E} \), \( \rulename{\vee I} \), \( \rulename{{\leftrightarrow}E} \) | the clause (K3), (K4) or (K7) at \( w \) itself, with (K5) at \( w' = w \) for \( \rulename{{\leftrightarrow}E} \) |
 | \( \rulename{{\to}E} \), \( \rulename{\neg E} \) | (K5) or (K6), applied at \( w' = w \), which is reachable from \( w \); for \( \rulename{\neg E} \) no stage forces both cited lines, so there is nothing to show |
 | \( \rulename{\bot E} \) | no stage forces \( \bot \), so there is nothing to show |
 | \( \rulename{\vee E} \) | \( w \) forces one side, by (K4); the box of that side ends in its last line, forced at \( w \) |
@@ -149,11 +150,11 @@ The proof is Chapter 4's proof of @thm-soundness, Steps 1–4, with "every valua
 
 ::: {.second-reading title="The proof, case by case"}
 ::: {.proof}
-**Step 1 (reduction to primitive rules).** As in Step 1 of the proof of @thm-soundness, a derived rule or cited result derived without \( \rulename{RAA} \) and TAUT abbreviates a pasted derivation in the primitive rules other than \( \rulename{RAA} \). So fix a derivation of \( \psi \) whose premises all belong to \( \Gamma \) and which uses only those rules, with lines \( 1, \dots, n \); let \( \varphi_k \) be the formula on line \( k \) and \( \Gamma_k \) its context.
+**Step 1 (reduction to primitive rules).** As in Step 1 of the proof of @thm-soundness, a derived rule or cited result derived without \( \rulename{RAA} \) and TAUT abbreviates a pasted derivation in the propositional primitive rules (Chapters 1 and 2) other than \( \rulename{RAA} \). So fix a derivation of \( \psi \) whose premises all belong to \( \Gamma \) and which uses only those rules, with lines \( 1, \dots, n \); let \( \varphi_k \) be the formula on line \( k \) and \( \Gamma_k \) its context.
 
 **Step 2 (the induction).** For \( k \in \nN \), let \( S(k) \) be the statement: *if \( 1 \le k \le n \), then every stage of every Kripke model that forces every formula of \( \Gamma_k \) forces \( \varphi_k \).* We prove \( S(k) \) for every \( k \) by @thm-strong-induction. Let \( 1 \le k \le n \) (otherwise there is nothing to prove), assume \( S(j) \) for every \( j < k \), and let \( w \) force every formula of \( \Gamma_k \). Every line and box that line \( k \) cites lies before it (@def-derivation), so the induction hypothesis holds for each cited line and for the last line of each cited box.
 
-**Step 3 (the cases).** *Premises and assumptions:* \( \varphi_k \) belongs to \( \Gamma_k \), so \( w \) forces it. *One-step rules:* a cited line \( i \) is available at line \( k \), so \( \Gamma_i \subseteq \Gamma_k \) (@lem-context-inclusion (a)), and the hypothesis gives \( w \Vdash \varphi_i \). Then \( \rulename{R} \), \( \rulename{\wedge I} \), \( \rulename{\wedge E} \) and \( \rulename{\vee I} \) follow from (K3) and (K4) at \( w \). For \( \rulename{{\to}E} \), \( w \Vdash \varphi \to \psi \) and \( w \Vdash \varphi \), and (K5) with \( w' = w \) gives \( w \Vdash \psi \); \( \rulename{{\leftrightarrow}E} \) is the same after (K7). For \( \rulename{\neg E} \), \( w \Vdash \neg\varphi \) would say by (K6) that \( w \), reachable from itself, does not force \( \varphi \), against \( w \Vdash \varphi \); so no stage forces \( \Gamma_k \), and there is nothing to show. For \( \rulename{\bot E} \), \( w \Vdash \bot \) is impossible by (K2), and again there is nothing to show.
+**Step 3 (the cases).** *Premises and assumptions:* \( \varphi_k \) belongs to \( \Gamma_k \), so \( w \) forces it. *One-step rules:* a cited line \( i \) is available at line \( k \), so \( \Gamma_i \subseteq \Gamma_k \) (@lem-context-inclusion (a)), and the hypothesis gives \( w \Vdash \varphi_i \). Then \( \rulename{R} \) is the hypothesis for the cited line, and \( \rulename{\wedge I} \), \( \rulename{\wedge E} \) and \( \rulename{\vee I} \) follow from (K3) and (K4) at \( w \). For \( \rulename{{\to}E} \), \( w \Vdash \varphi \to \psi \) and \( w \Vdash \varphi \), and (K5) with \( w' = w \) gives \( w \Vdash \psi \); \( \rulename{{\leftrightarrow}E} \) is the same after (K7). For \( \rulename{\neg E} \), \( w \Vdash \neg\varphi \) would say by (K6) that \( w \), reachable from itself, does not force \( \varphi \), against \( w \Vdash \varphi \); so no stage forces \( \Gamma_k \), and there is nothing to show. For \( \rulename{\bot E} \), \( w \Vdash \bot \) is impossible by (K2), and again there is nothing to show.
 
 *Box rules:* if line \( k \) cites the box from line \( a \) to line \( b \), then \( \Gamma_b = \Gamma_k, \varphi_a \) (@lem-context-inclusion (b)), so the hypothesis for line \( b \) says that every stage forcing \( \Gamma_k \) and \( \varphi_a \) forces \( \varphi_b \). For \( \rulename{{\to}I} \), line \( k \) is \( \varphi \to \psi \). Let \( w' \) be reachable from \( w \) with \( w' \Vdash \varphi \). By @lem-heredity, \( w' \) forces every formula of \( \Gamma_k \), so it forces \( \Gamma_k \) and \( \varphi \), and hence \( \psi \). So \( w \Vdash \varphi \to \psi \) by (K5). \( \rulename{\neg I} \) is the same with \( \psi = \bot \): a stage \( w' \) reachable from \( w \) that forced \( \varphi \) would force \( \bot \), against (K2), so none does, and \( w \Vdash \neg\varphi \) by (K6). \( \rulename{{\leftrightarrow}I} \) is two cases of \( \rulename{{\to}I} \), joined by (K7). For \( \rulename{\vee E} \), \( w \Vdash \varphi \vee \psi \) by the hypothesis for the cited line, so \( w \) forces \( \varphi \) or \( \psi \) (K4); if \( \varphi \), then \( w \) forces \( \Gamma_k \) and \( \varphi \), and the first box gives \( w \Vdash \chi \); if \( \psi \), the second box does. For \( \rulename{RAA} \) the case fails, as the table says, and no derivation here uses it.
 
@@ -166,7 +167,7 @@ So \( S(k) \) holds, and by @thm-strong-induction every line \( k \) satisfies i
 ::: {#cor-kripke-countermodel}
 [Kripke Countermodel]
 
-If some stage of some Kripke model refutes \( \Gamma \vdash \psi \), then \( \Gamma \vdash \psi \) has no derivation without \( \rulename{RAA} \).
+If some stage of some Kripke model refutes \( \Gamma \vdash \psi \), then \( \Gamma \vdash \psi \) has no derivation without \( \rulename{RAA} \) in the propositional rules.
 :::
 
 ::: {.proof}
@@ -226,7 +227,7 @@ Here is the propositional right column of the table in Section 8.7, "Which laws 
 | \( \neg q \to \neg p \vdash p \to q \) | \( w_0 \) of \( M_4 \): no stage forces \( \neg q \), so \( w_0 \Vdash \neg q \to \neg p \); \( w_0 \) forces \( p \) and not \( q \) |
 | \( \vdash (p \to q) \vee (q \to p) \); \( \neg(p \wedge q) \vdash \neg p \vee \neg q \) | \( w_0 \) of \( M_2 \) (@exm-three-stage-model) |
 
-With @cor-kripke-countermodel, each row proves that the sequent has no derivation without \( \rulename{RAA} \). This covers every propositional entry of Section 8.7's right column, and the claims stated without proof in its Exercises B1 and R3.
+With @cor-kripke-countermodel, each row proves that the sequent has no derivation without \( \rulename{RAA} \) in the propositional rules; that the rules for \( \forall \), \( \exists \) and \( = \) do not change this is stated without proof (Section 8.7). This covers every propositional entry of Section 8.7's right column, and the claims stated without proof in its Exercises B1 and R3.
 
 ## Searching for a countermodel
 
@@ -249,7 +250,7 @@ The search is a guide, not a decision procedure as stated here.
 Three facts, stated without proof.
 
 - The converse of @thm-kripke-soundness holds: a sequent forced at every stage of every Kripke model that forces its premises has a derivation without \( \rulename{RAA} \). This is completeness for this semantics.
-- From it follows the **disjunction property**: if \( \vdash \varphi \vee \psi \) without \( \rulename{RAA} \), then \( \vdash \varphi \) or \( \vdash \psi \) without \( \rulename{RAA} \), the BHK clause for "or" made a theorem about derivations.
+- From it, by placing a new first stage below two countermodels, follows the **disjunction property**: if \( \vdash \varphi \vee \psi \) without \( \rulename{RAA} \), then \( \vdash \varphi \) or \( \vdash \psi \) without \( \rulename{RAA} \), the BHK clause for "or" made a theorem about derivations.
 - Kripke models extend to the quantifiers, with a domain at each stage that may grow. In them \( \neg\forall x\, \varphi \vdash \exists x\, \neg\varphi \) and the two passage directions of Section 8.7's table can be refuted.
 
 Nothing in this book depends on these facts.
@@ -262,7 +263,7 @@ Each sentence below is wrong; the tag names the clause it misreads.
 
 - "\( w \nVdash p \), so \( w \Vdash \neg p \)": (K6) looks at every stage reachable from \( w \); in \( M_1 \), \( w_0 \) forces neither \( p \) nor \( \neg p \).
 - "\( w \Vdash \varphi \to \psi \), because \( w \nVdash \varphi \)": (K5) looks at every later stage, not only at \( w \).
-- "\( w \Vdash \varphi \vee \psi \), because every later stage forces \( \varphi \) or \( \psi \)": (K4) is decided at \( w \) itself; in \( M_2 \), every stage reachable from \( w_0 \) other than \( w_0 \) forces \( p \) or \( q \), and \( w_0 \) forces neither.
+- "\( w \Vdash \varphi \vee \psi \), because every stage reachable from \( w \), other than \( w \) itself, forces \( \varphi \) or \( \psi \)": (K4) is decided at \( w \) itself; in \( M_2 \), every stage reachable from \( w_0 \) other than \( w_0 \) forces \( p \) or \( q \), and \( w_0 \) forces neither.
 - "A picture with \( p \) known at \( w_0 \) and not at a later \( w_1 \)": it is not a Kripke model, since a known letter stays known (@def-kripke-model).
 :::
 
@@ -503,7 +504,7 @@ $\begin{nd}
 
 (g) **Break**, at \( w_0 \) of \( M_3 \) (stages \( w_0 \to w_1 \), nothing known at \( w_0 \), \( p \) and \( q \) known at \( w_1 \)). The only stage forcing \( p \) is \( w_1 \), which forces \( q \), so \( w_0 \Vdash p \to q \). No stage forces \( \neg p \), since both reach \( w_1 \), which forces \( p \); so \( w_0 \Vdash \neg p \to q \) with nothing to check. Hence \( w_0 \) forces the conjunction (K3), and \( w_0 \nVdash q \).
 
-The look-alikes: (a) and (b) are converses, and both derivable. (c) is (b)'s look-alike with \( \vee \) for \( \wedge \), and it breaks. (e) is (d)'s look-alike and breaks: from \( \neg p \to p \) one derives only \( \neg\neg p \) (a box on \( \neg p \), then \( \rulename{{\to}E} \), \( \rulename{\neg E} \) and \( \rulename{\neg I} \)). (g) is (f)'s look-alike: a proof by cases on \( p \) and \( \neg p \) with no disjunction to split, which needs \( p \vee \neg p \). It is the pattern of @lem-atom-splitting (Section 4.8) with no further premises, which is why completeness, and with it TAUT, rests on \( \rulename{LEM} \).
+The look-alikes: (a) and (b) are converses, and both derivable. (c) is (a)'s look-alike with \( \vee \) for \( \wedge \), and it breaks. (e) is (d)'s look-alike and breaks: from \( \neg p \to p \) one derives only \( \neg\neg p \) (a box on \( \neg p \), then \( \rulename{{\to}E} \), \( \rulename{\neg E} \) and \( \rulename{\neg I} \)). (g) is (f)'s look-alike: a proof by cases on \( p \) and \( \neg p \) with no disjunction to split, which needs \( p \vee \neg p \). It is the pattern of @lem-atom-splitting (Section 4.8) with no further premises, which is why completeness, and with it TAUT, rests on \( \rulename{LEM} \).
 
 **Marking scheme.** (10 points)
 - 6: the four derivations, 1.5 each.
@@ -558,13 +559,13 @@ $\begin{nd}
 (b) **Refute**, at \( w_0 \) of the fork \( M_7 \): stages \( w_0 \to w_1 \) and \( w_0 \to w_2 \), with \( p \) known at \( w_1 \) only, and \( q \) known nowhere.
 
 - At \( w_2 \) no stage reachable forces \( p \), so \( w_2 \Vdash p \to q \), and \( w_2 \nVdash p \). So \( w_2 \nVdash (p \to q) \to p \), and neither does \( w_0 \), which reaches \( w_2 \). \( w_1 \) forces \( p \), hence \( (p \to q) \to p \). The only stage forcing \( (p \to q) \to p \) is \( w_1 \), and it forces \( p \): so \( w_0 \Vdash ((p \to q) \to p) \to p \) (K5).
-- \( w_0 \nVdash p \), and \( w_0 \nVdash \neg p \) because of \( w_1 \). So \( w_0 \nVdash p \vee \neg p \), and \( w_0 \) refutes the claim; by @cor-kripke-countermodel it has no derivation without \( \rulename{RAA} \).
+- \( w_0 \nVdash p \), and \( w_0 \nVdash \neg p \) because of \( w_1 \). So \( w_0 \nVdash p \vee \neg p \). Since \( w_0 \) is reachable from itself, forces \( ((p \to q) \to p) \to p \) and does not force \( p \vee \neg p \), (K5) gives \( w_0 \nVdash \bigl( ((p \to q) \to p) \to p \bigr) \to (p \vee \neg p) \), so \( w_0 \) refutes the claim; by @cor-kripke-countermodel it has no derivation without \( \rulename{RAA} \).
 - \( M_1 \) would not do: there no stage forces \( p \to q \), so \( w_0 \) forces \( (p \to q) \to p \) and not \( p \), and so does not force Peirce's law; the only stage that does, \( w_1 \), forces \( p \vee \neg p \). So the second branch is needed.
 
 (c) @thm-classical-rules-interderivable compares rules, which act on every statement at once. Instance by instance the three differ: one instance of excluded middle gives Peirce's law (a) and double-negation elimination (@exr-excluded-middle-b5 (c)) for that letter, while that instance of Peirce's law does not give the instance of excluded middle back (b).
 
 **Marking scheme.** (10 points)
-- 5: (a). The \( \rulename{\vee E} \) on the premise, with both cases inside the box of line 2 (2); the case \( \neg p \) building \( p \to q \) by \( \rulename{\bot E} \) (2); the closing \( \rulename{{\to}I} \) (1).
+- 5: (a). The \( \rulename{\vee E} \) on the premise, with both cases inside the box of line 2 (2); the case \( \neg p \) reaching \( p \) without \( \rulename{RAA} \) (2), for instance by building \( p \to q \) with \( \rulename{\bot E} \), or via \( \neg\neg p \) as in B2 (d) (citing B2 (d) and @exr-excluded-middle-b5 (c) is allowed); the closing \( \rulename{{\to}I} \) (1).
 - 4: (b). A model whose stage forces \( ((p \to q) \to p) \to p \) and not \( p \vee \neg p \), every clause checked.
 - 1: (c).
 
@@ -588,18 +589,19 @@ The comparison: @exm-triple-negation derives \( \neg\neg\neg P \vdash \neg P \) 
 - 4: \( (\Leftarrow) \), with heredity and reflexivity named.
 - 5: \( (\Rightarrow) \), with heredity of \( \varphi \) used to get \( w' \Vdash \neg\neg\varphi \).
 - 1: the comparison.
+- Second route: both directions from @thm-kripke-soundness, applied to the derivations without \( \rulename{RAA} \) of @exm-triple-negation and @prp-double-negation (a) with \( \varphi \) for \( P \), earn the 9 points for the two directions; the 1 point for the comparison then goes to naming where the direct proof uses heredity.
 
 Fatal errors (0 for the step): "not forced, so the negation is forced"; heredity used without being cited.
 :::
 
 <!-- dependency ledger
-kripke-models-opening (claim): Section 8.7 names the laws; thm-raa-independent proves the non-derivability of LEM and not-not-E by a three-valued reading; 8.7 states the rest without proof; every row makes p or not p true | F1.5 §07 (earlier section, prose); thm-raa-independent (optional, cited in prose only); def-truth-value (inline)
+kripke-models-opening (claim): Section 8.7 names the laws; thm-raa-independent proves the non-derivability of LEM and not-not-E by a three-valued reading; 8.7 states the rest and points to this section; every row makes p or not p true | F1.5 §07 (earlier section, prose); thm-raa-independent (optional, cited in prose only); def-truth-value (inline)
 def-forcing (claim): the recursion defines, for each formula, the set of stages forcing it | thm-structural-recursion (cited; its values may be sets of stages)
 def-forcing (claim): with one stage, forcing is Chapter 4's truth | def-truth-value (cited); inline comparison of (K5), (K6) with (V5), (V2)
 def-forcing (claim): a refuting stage is the counterexample set read at a stage | def-counterexample-set, F1.1 §01 (prose pointer); inline
 exm-two-stage-model (solution): w0 does not force p, not p, p or not p, not-not p -> p; w0 forces not-not p | inline; verify/ch08/def-kripke-model.py
 lem-heredity (proof): structural induction on formulas | thm-structural-induction (cited); def-formula (cited)
-thm-kripke-soundness (proof): Steps 1-4 of the proof of thm-soundness, with stages for valuations; derived rules abbreviate primitive ones | thm-soundness (cited), lem-context-inclusion (a), (b) (cited), def-derivation, def-derivable (cited), thm-strong-induction (cited), lem-heredity (cited)
+thm-kripke-soundness (proof): Steps 1-4 of the proof of thm-soundness, with stages for valuations; derived rules abbreviate propositional primitive ones; lines restricted to def-formula | def-formula (cited), thm-soundness (cited), lem-context-inclusion (a), (b) (cited), def-derivation, def-derivable (cited), thm-strong-induction (cited), lem-heredity (cited)
 thm-kripke-soundness (claim): TAUT is licensed by completeness, whose proof uses LEM | def-rule-taut, F1.3 §08 (prose pointer "Section 4.8"); F1.5 §07's sentence on TAUT (earlier section, prose pointer)
 thm-kripke-soundness (claim): the rule table, row by row | inline (each row is the matching case of the folded proof)
 cor-kripke-countermodel (proof): inline not-I | thm-kripke-soundness (cited)

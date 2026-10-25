@@ -40,7 +40,7 @@ The two columns, as a procedure for one line:
 
 A "no" in the first column marks a line to look at first; only the second column decides. The silent steps are those of @def-silent-steps.
 
-::: {.second-reading title="Two notes on the second column"}
+::: {.second-reading title="Two notes on the two columns"}
 The same holds for derivations with quantifiers and equality, by the soundness statement for predicate logic in Section 7.2 ("From counter-models to non-derivability").
 
 (Proof C's "\( 1 \) is even" is true given its box's assumption.)
@@ -250,7 +250,7 @@ Each line below comes from a proof. Name the catalogue entry of @exm-not-allowed
 1. "We checked \( 3^n > n^2 \) for \( n = 0, 1, 2, 3, 4 \), so it holds for every \( n \in \nN \)."
 2. "By hypothesis some \( x \in A \) has \( f(x) = 0 \); fix such an \( x \). Since \( x \) was arbitrary, \( f(x) = 0 \) for every \( x \in A \)."
 3. "To prove that \( f(x_1) = f(x_2) \) implies \( x_1 = x_2 \), suppose \( x_1 = x_2 \); then \( f(x_1) = f(x_2) \)."
-4. "To prove \( x \ge 0 \), suppose, for a contradiction, that \( x \le 0 \)."
+4. "To prove \( x > 0 \), suppose, for a contradiction, that \( x < 0 \)."
 5. "If \( n \) is divisible by \( 6 \), then \( n \) is even. Since \( n \) is even, \( n \) is divisible by \( 6 \)."
 6. "Every real \( x \) satisfies \( x > 0 \) or \( x < 0 \); we consider the two cases."
 :::
@@ -263,7 +263,7 @@ Each line below comes from a proof. Name the catalogue entry of @exm-not-allowed
 
 *(c)* (N5): the \( \rulename{{\to}I} \) box opens with the conclusion, so it proves the converse, which every function satisfies.
 
-*(d)* (N11) (part (a)): the negation of \( x \ge 0 \) is \( x < 0 \), not \( x \le 0 \), so \( \rulename{RAA} \) cannot close this box with \( x \ge 0 \). Closed by \( \rulename{\neg I} \) it proves \( x > 0 \), more than the goal, so it closes only if the hypotheses exclude \( x = 0 \).
+*(d)* (N11) (part (a)): the negation of \( x > 0 \) is \( x \le 0 \), not \( x < 0 \), so \( \rulename{RAA} \) cannot close this box with \( x > 0 \); the case \( x = 0 \) is never examined, and \( \rulename{\neg I} \) on the box gives only \( x \ge 0 \).
 
 *(e)* (N6), affirming the consequent. No rule licenses it, so it breaks @def-derivation: \( P \to Q \) with \( Q \) gives no \( P \). Here \( n = 4 \) is even and not divisible by \( 6 \).
 
@@ -308,13 +308,13 @@ Name the entry of @exm-not-allowed-catalogue that each line commits, if any, and
 
 (h) (N5); the claim is true, but the proof proves the converse.
 
-(i) (N12); false: \( x = y = 3 \) gives \( x + y = 6 \).
+(i) (N12) (the "since" also cites the unavailable line \( x \ne y \), an (N9) step); false: \( x = y = 3 \) gives \( x + y = 6 \).
 
 (j) (N13); true. The step "if \( a_n = 2 \), then \( a_{n+1} = 4 - 2 = 2 \)" is one line, and the proof must write it, as the step of an induction.
 
 (k) (N14). The presupposed premise, that such an integer exists, is false, and so is the conclusion that an integer lies strictly between \( 1 \) and \( 2 \).
 
-(l) No entry. No primitive rule writes the step in one line: at level 0 it is \( \rulename{\wedge E} \) twice and \( \rulename{{\to}E} \) twice. From Section 4.8 on, a single TAUT line citing both premises also writes it (Section 8.3). Either way it is a matter of level, not an error.
+(l) No entry. No primitive rule writes the step in one line: at level 0 it is \( \rulename{\wedge E} \) twice and \( \rulename{{\to}E} \) twice. From Section 6.3 on, a single TAUT line on the propositional skeleton (@prp-taut-skeleton), citing both premises, also writes it (Section 8.3). Either way it is a matter of level, not an error.
 :::
 
 ### B. Practice
@@ -558,7 +558,7 @@ For (4), "\( \rulename{{\to}E} \) without its antecedent \( x \ne 0 \)" is also 
 ::: {#exr-checking-proofs-r1}
 [R1: A dialogue]
 
-This item reviews (E1) of Section 2.1, \( \rulename{\forall I} \) of Section 5.4 and (N1). Two students discuss a claim.
+Two students discuss a claim.
 
 > **Ana:** For every integer \( n \), \( n^2 + n \) is even.
 >
@@ -583,13 +583,13 @@ This item reviews (E1) of Section 2.1, \( \rulename{\forall I} \) of Section 5.4
 :::
 
 ::: {.solution}
-*(a)* (N1): two instances, then "always".
+*(a)* (N1) of @exm-not-allowed-catalogue: two instances, then "always".
 
 *(b)* "Let \( n \) be an integer [\( \rulename{\forall I} \)]. Then \( n^2 + n = n(n + 1) \) [algebra]. By (E1), \( n \) is even or odd [\( \rulename{\vee E} \), with the reason the cases exhaust]. If \( n \) is even, say \( n = 2k \) [\( \rulename{\exists E} \)], then \( n(n + 1) = 2\bigl(k(n + 1)\bigr) \) is even [\( \rulename{\exists I} \), witness \( k(n + 1) \)]. If \( n \) is odd, say \( n = 2k + 1 \), then \( n + 1 = 2(k + 1) \), and \( n(n + 1) = 2\bigl(n(k + 1)\bigr) \) is even [\( \rulename{\exists E} \), \( \rulename{\exists I} \)]. In either case \( n^2 + n \) is even [\( \rulename{\vee E} \), closing; silent at level 3]."
 
-*(c)* No. The box of \( n \) assumed only that \( n \) is an integer, and no line used more, so \( \rulename{\forall I} \) gives the claim for every integer: \( n \) is in no premise, and the conclusion is about the bound variable. A proof that used \( n > 0 \) would have had to assume it in the box.
+*(c)* No. The box of \( n \) assumed only that \( n \) is an integer, and no line used more, so \( \rulename{\forall I} \) (@def-rules-universal, Section 5.4) gives the claim for every integer: \( n \) is in no premise, and the conclusion is about the bound variable. A proof that used \( n > 0 \) would have had to assume it in the box.
 
-*(d)* (E1), "every integer is even or odd", stated in Section 2.1 as a school fact.
+*(d)* (E1), "every integer is even or odd", stated in Section 2.1 as a school fact, before @thm-square-even-implies-even.
 :::
 
 <!-- dependency ledger
@@ -606,7 +606,7 @@ exm-verify-cases (solution): (x - 1)(x - 2) = x^2 - 3x + 2; a product of two rea
 exm-verify-converse (solution): n = 2k gives n^2 = 2(2k^2); the row P false, Q true refutes P -> Q |- Q -> P; x = -2 for the converse of x > 1 -> x^2 > 1 | inline row (def-truth-value); cor-refuting-row (cited); checked by verify/ch08/exm-verify-converse.py
 exm-verify-negation (solution): 1 is odd; no integer is both even and odd; m^2 - k is an integer; 2 != 0 | school arithmetic (F2.2 promised in STATUS: even or odd, not both); checked by verify/ch08/exm-verify-negation.py
 exm-verify-scope (solution): multiplying by a positive number keeps >; x^2 - x + 1 = (x - 1/2)^2 + 3/4 > 0; at x = 1/2, x^2 < x | school algebra; checked by verify/ch08/exm-verify-scope.py
-exr-checking-proofs-a1 (solution): 3^n > n^2 for n = 0..4; A = {0, 1}, f(x) = x; n = 4 even, not divisible by 6; not(x >= 0) iff x < 0; P -> Q with Q gives no P | arithmetic; trichotomy; def-derivation (cited); checked by verify/ch08/exr-checking-proofs-a1.py
+exr-checking-proofs-a1 (solution): 3^n > n^2 for n = 0..4; A = {0, 1}, f(x) = x; n = 4 even, not divisible by 6; not(x > 0) iff x <= 0, not(x < 0) iff x >= 0; P -> Q with Q gives no P | arithmetic; trichotomy; def-derivation (cited); checked by verify/ch08/exr-checking-proofs-a1.py
 exr-checking-proofs-b1 (solution): (2k + 1) + (2l + 1) = 2(k + l + 1); x > 1 gives x^2 > x; x^2 > 1 gives not(x^2 < 1); x >= 1 gives x^2 >= x >= 1; x = 1; not(x < 1) iff x >= 1 | school algebra; trichotomy; checked by verify/ch08/exr-checking-proofs-b1.py
 exr-checking-proofs-b2 (solution): x = 1, y = -1 gives |x| + |y| = 2, |x + y| = 0; lines (3), (4) correct in their cases | arithmetic, school algebra of absolute value; exm-triangle-inequality-cases (cited) for the inequality; checked by verify/ch08/exr-checking-proofs-b2.py
 exr-checking-proofs-c1 (solution): -|u| <= u; |u| < r gives u > -r; f(a) - f(a)/2 = f(a)/2 > 0; f(x) <= 0 gives |f(x) - f(a)| >= f(a) > f(a)/2 | school algebra of absolute value; checked by verify/ch08/exr-checking-proofs-c1.py
@@ -616,21 +616,21 @@ exr-checking-proofs-c3 (solution): n = 4k = 2(2k), n = 6k = 2(3k); m = 2k, n = 2
 exm-not-allowed-catalogue (claim): (the 2x2 table) n = 2k gives n^2 = 2(2k^2); forall-E at 1/2 of "x >= 1 or x <= 0" gives a false line that follows; x = -2 has x < 1 and x^2 = 4 | arithmetic; Proof B's line (5) (this section); checked by verify/ch08/exm-not-allowed-catalogue.py
 exm-not-allowed-catalogue (claim): (the paragraph after the 2x2 table) a line that follows and is false rests on a false line | thm-soundness (cited); the same statement as the ledger's first line
 exm-not-allowed-catalogue (claim): (the flowchart and its caption) a line written by a chain of rules and silent steps is licensed at its level; only a line no chain writes fails | def-derivation, def-levels-of-proof, def-silent-steps (cited or within the chapter)
-exm-not-allowed-catalogue (claim): (fold "Two notes on the second column") the same for quantifiers and equality | F1.6 §02's statement under "From counter-models to non-derivability" (prose; its proof in F1.6 §03, optional, not cited)
+exm-not-allowed-catalogue (claim): (fold "Two notes on the two columns") the same for quantifiers and equality | F1.6 §02's statement under "From counter-models to non-derivability" (prose; its proof in F1.6 §03, optional, not cited)
 exm-not-allowed-catalogue (claim): the families table | a regrouping, read off the entries
 exm-not-allowed-catalogue (example): (N11)(a) 0 < x < 3 gives x^2 < 9; x^2 > 9 and x > 0 give x > 3; x = 3 has x^2 = 9 | school algebra; checked by verify/ch08/exm-not-allowed-catalogue.py
 exm-not-allowed-catalogue (example): (N12) 2 and 3 are the roots of x^2 - 5x + 6; a = b = 2 gives a + b = 4; forall-E may put one term for two variables | def-rule-universal-elimination (cited); arithmetic; checked by verify/ch08/exm-not-allowed-catalogue.py
 exm-not-allowed-catalogue (example): (N13) the step of an induction must be a line | ax-induction, thm-strong-induction (cited); {1/n : n in Z>0} has no least element since 1/(n + 1) < 1/n; checked by verify/ch08/exm-not-allowed-catalogue.py
 exm-not-allowed-catalogue (example): (N14) exists-E needs a line exists x phi; "the" needs existence and uniqueness; N largest gives N + 1 <= N | def-rules-existential (cited); F1.4 §08's definite description (prose pointer, "Section 5.8"); arithmetic
-exm-not-allowed-catalogue (claim): (fold F8.6-b) a strictly decreasing list in N from a_1 has at most a_1 + 1 terms (stated, not used as a reason); the least positive integer with m^2 > 50 is 8 (7^2 = 49, 8^2 = 64), its existence a premise named in the fold | F2.2 (promised): well-ordering of N; checked by verify/ch08/exm-not-allowed-catalogue.py
+exm-not-allowed-catalogue (claim): (fold F8.6-b) a strictly decreasing list in N from a_1 has at most a_1 + 1 terms (stated, not used as a reason); the least positive integer with m^2 > 50 is 8 (7^2 = 49, 8^2 = 64), its existence a premise named in the fold | F2.2 (promised): well-ordering of N, thm-well-ordering; checked by verify/ch08/exm-not-allowed-catalogue.py
 exm-not-allowed-catalogue (claim): (fold F8.6-b) no barber shaves exactly those who do not shave themselves | thm-barber (cited)
 exm-not-allowed-catalogue (claim): (the valid-but-improper paragraph) forall a forall b phi to forall b forall a phi is forall-E twice and forall-I twice, and no TAUT step; a^2 + b^2 >= 2ab | def-levels-of-proof (within the chapter); F1.5 §03's TAUT paragraph (prose pointer, "Section 8.3"); (a - b)^2 >= 0, school algebra
 exm-not-allowed-catalogue (claim): (fold F8.6-c) the traditional names against the entries; affirming a disjunct | a regrouping, read off the entries; F1.1 §07 (prose pointer, "Section 1.6")
 exm-not-allowed-catalogue (claim): (the family Quick check) n = 3 has n^2 = n + 6; n = 0 does not | arithmetic; checked by verify/ch08/exm-not-allowed-catalogue.py
 exr-checking-proofs-a2 (solution): (a) n(n + 1) even; (c) x = 1, y = 3; (d) n = 2; (e) (2k)^3 - 2k = 2(4k^3 - k), n^3 - n = (n - 1)n(n + 1); (f) x = 0; (g) |x| >= -1 for every x; (i) x = y = 3; (j) a_n = 2 for every n >= 1; (k) no integer squares to 2 | school algebra; checked by verify/ch08/exr-checking-proofs-a2.py
-exr-checking-proofs-a2 (solution): (l) the step is wedge-E twice and to-E twice at level 0, or one TAUT line from Section 4.8 on | def-rule-taut (F1.3 §08, prose pointer); F1.5 §03's TAUT paragraph (prose pointer, "Section 8.3")
+exr-checking-proofs-a2 (solution): (l) the step is wedge-E twice and to-E twice at level 0, or one TAUT line on the propositional skeleton from Section 6.3 on | def-rule-taut (F1.3 §08, prose pointer); prp-taut-skeleton (F1.8 §03, cited); F1.5 §03's TAUT paragraph (prose pointer, "Section 8.3")
 exr-checking-proofs-b3 (solution): (i) (2k + 1)(2l + 1) = 2(2kl + k + l) + 1; (ii) (a - b)(a + b) = a^2 - b^2, a product of reals is 0 only if a factor is; (iii) m = n = 0; (iv) every n in [2, 500] is a product of primes; (v) 1 + 1 + 1 = 3, x^2 + x + 1 = (x + 1/2)^2 + 3/4 > 0 | school algebra; thm-strong-induction (cited); checked by verify/ch08/exr-checking-proofs-b3.py
 exr-checking-proofs-r1 (solution): n^2 + n = n(n + 1); 2k(2k + 1) = 2(k(2k + 1)); (2k + 1) + 1 = 2(k + 1); n^2 + n even for every integer n | school algebra; checked by verify/ch08/exr-checking-proofs-r1.py
-exr-checking-proofs-r1 (solution): every integer is even or odd | (E1) of F1.2 §01 (school fact, stated there)
-exr-checking-proofs-r1 (solution): the box of n assumes only that n is an integer, so forall-I gives every integer | F1.4 §04's side condition of forall-I (prose pointer, "Section 5.4")
+exr-checking-proofs-r1 (solution): every integer is even or odd | (E1) of F1.2 §01 (school fact, stated there; pointer via thm-square-even-implies-even, cited)
+exr-checking-proofs-r1 (solution): the box of n assumes only that n is an integer, so forall-I gives every integer | def-rules-universal (F1.4 §04, cited)
 -->
