@@ -1,7 +1,7 @@
 <!-- hand-written -->
-# Deepening blueprint: F2.3 Countable and Uncountable Sets (fd2 Chapter 3), stage S1
+# Deepening blueprint: F2.3 Countable and Uncountable Sets (fd2 Chapter 3), stage S2
 
-**Status: S1, 2026-10-25.** Next: S2 (blind referees), then S2a, then S3.
+**Status: S2 applied, frozen, 2026-10-25.** Two blind referees (round 1), all findings applied or answered (end of file). Next: S2a, then S3.
 
 **What this is.** The S1 blueprint for fd2 Chapter 3 under the binding layout `fd2/authoring/design/layout-final.md` (option C; §1 Ch3 rows, §2, §3, §5, §7). A drafter executes it with this file, the current `fd2/src/ch03-countable-and-uncountable/` files, `authoring/STYLE.md` (§1 "House manner from fd2 on", §2 item 6, §4 item 3, §5, §11, §12.0, §12.5, §12.13.4, §12.14), `DRAFTING.md` and `NOTATION.md`. Format: `ch01-deepen.md` (frozen), leaner. All five sections are **moved** sections (layout §7): they get the new devices, pointer fixes and the one internal repair, and nothing else is rewritten. The changes are kept in proportion to that.
 
@@ -17,14 +17,14 @@
 | 04 | 2,398 | 4,214 | 4,200 |
 | 05 | 1,448 | 3,709 | 3,700 |
 
-The layout's figures for 3.4 and 3.5 (4,200, 3,700) are the whole-file counts. This blueprint reads every budget as main line to Exercises, as Chapters 1 and 2 do. Every section stays well under 5,000 without folds, so **no fold is planned** (STYLE §12.0: folding is not a way to grow a section).
+The layout's figures for 3.4 and 3.5 (4,200, 3,700) are the whole-file counts. Both files already exceed those figures. This blueprint reads every budget as main line to Exercises, as Chapters 1 and 2 do, and lists the reading for the author (§8, item 3). Every section stays well under 5,000 without folds, so **no fold is planned** (STYLE §12.0: folding is not a way to grow a section).
 
 **Inputs.** Layout §1 (rows 3.1–3.5), §3.2 (downstream-cited labels: 3.1 `cor-product-countable`, `def-countable`, `exr-countable-sets-b2`, `lem-subsets-of-naturals`, `prp-countable-image`, `prp-countable-subset`, `prp-union-two-countable`, `thm-countable-characterizations`, `thm-integers-rationals-countable`, `thm-product-countable`; 3.2 `ax-choice`, `thm-algebraic-countable`, `thm-countable-union`; 3.3 `thm-binary-sequences-uncountable`; 3.4 `def-card-le`, `prp-card-le-surjection`), §3.2's internal repair, §3.3, §5 (devices, threads), §7. The frozen `ch02-deepen.md` supplies Chapter 2's boxes, which are cited here and never re-taught: `exm-method-least-element` (2.1), `exm-method-induction-step` (2.2), `exm-method-choosing-the-form`, `exm-method-smallest-counterexample` (2.4), `exm-method-pigeonhole` (2.5). From Chapter 1: `exm-method-injectivity`, `exm-method-surjectivity`, `exm-method-construct-and-verify`, `exm-method-counterexample`. The Cummings long-form skill is used for its moves only: motivation before a major definition, scratch work kept apart from the proof, hooks and payoffs. There are no footnotes, no jokes, no history beyond one line, and no first person. *Proofs* (Cummings) was read for technique only. None of its countability or Cantor exercises, examples or wording is used. Every new example, item and answer below is the book's own. The old blueprint `ch03.md` fixed what is kept: the key proofs (`thm-countable-characterizations`, `thm-countable-union`, `thm-cantor`, `thm-schroder-bernstein`); the faded diagonal triple (worked `thm-binary-sequences-uncountable`, 03 B1 with the last step blank, 03 C1); the two Try-it-firsts (`thm-product-countable`, `thm-cantor`); the find-the-error items 01 C2 and 04 C2; the exit checks 02 C1 and 03 C1; and R1–R4.
 
 **Binding rules.**
 1. **No label is lost or renamed; cited content is kept.** Every label now in 01–05 stays in its file. The 16 downstream-cited labels listed above keep the content of their blocks. Exercise labels keep their names (`exr-<slug>-…`).
 2. **fd1, Chapter 1 and Chapter 2 are cited, never re-taught.** That covers ∃E (@fd1:def-rules-existential), the catalogue `@fd1:exm-not-allowed-catalogue`, the irrationality of √2 (@fd1:thm-sqrt2-irrational), the injectivity and surjectivity templates, pigeonhole and the least element. Each is recalled in a clause and linked.
-3. **No forward citation into Chapters 4–5.** The repair at 04:52 removes the one `@def-partial-order`. The Zorn pointers (02:47, 04:170–172) are prose: "Chapter 5", "Section 5.2". That is one forward pointer per section (STYLE §12.1). The comparability pointer is a promise row in STATUS (§6).
+3. **No forward citation (@label) into Chapters 4–5.** The repair at 04:52 removes the one `@def-partial-order`. Pointers into later sections of this chapter and into Chapter 5 are prose only and are never reasons (STYLE §12.1, first bullet). The files have more than one per section (3.1 points to 3.2 and 3.3; 3.2 has 02:47, 02:139, 02:201); these in-chapter previews are kept as they stand, renumbered, and no new one is added except the thread hook below. The comparability hook ends 3.4's main line as a `.remark` titled `[Looking ahead]`, STYLE §12.1's form (§4.4 item 5); it is a promise row in STATUS (§6).
 4. **Quick checks.** Layout §5 asks only for STYLE §5's minimum after Chapter 2. Each method section still gets one new check after its box, and 3.3 gets two because of its new opening.
 5. **Pointers.** All Chapter-3 pointer fixes are done in this chapter's S3, by hand, from the table in §4.6. That table repeats ch02-deepen §4.8's Chapter-3 rows, with a few rows added. If the Chapter 2 coordinator has already applied those rows, the drafter skips them. The S3 drafter checks with `grep -n 'Section 3\.[1-6]' src/ch03-countable-and-uncountable/*.md`.
 
@@ -32,7 +32,7 @@ The layout's figures for 3.4 and 3.5 (4,200, 3,700) are the whole-file counts. T
 
 ## 1. Devices as applied
 
-- **Method boxes** (STYLE §2 item 6): four. Each is `::: {#exm-method-<slug>}` titled `[Method: …]`, with the bold lead-ins **Template.**, **When to use it.** and **The usual failure.**, and each is ≤ 130 words. They are `list-it` (3.1), `name-the-choice` (3.2), `diagonal` (3.3) and `injections-both-ways` (3.4), and each is linked from the index's Named moves. Three of them replace an existing named-move paragraph (01:127, 03:47–49) or the old index's Named moves (ix:22–25).
+- **Method boxes** (STYLE §2 item 6): four. Each is `::: {#exm-method-<slug>}` titled `[Method: …]`, with the bold lead-ins **Template.**, **When to use it.** and **The usual failure.**, and each is ≤ 130 words of box text (the drafts below are ≤ 120; blueprint line pointers in them are not printed). They are `list-it` (3.1), `name-the-choice` (3.2), `diagonal` (3.3) and `injections-both-ways` (3.4), and each is linked from the index's Named moves. Three of them replace an existing named-move paragraph (01:127, 03:47–49) or the old index's Named moves (ix:22–25).
 - **`[Scratch work]` ideas** (`::: {.idea}` titled `[Scratch work]`, ≤ 20 lines), one at each full box's first full appearance: `thm-product-countable` (3.1, replacing 01:217–219), `thm-countable-union` (3.2, replacing 02:113–117 and keeping its "Before reading on"), and `thm-binary-sequences-uncountable` (3.3, new; the theorem has no Idea now). 3.4 is Idea-level (layout §1), so it gets no scratch work.
 - **Givens/Goal tables in prose form** (§12.5): one inside each of those three scratch works, plus one short table at the start of the "With the theorem" part of `exm-closed-open-interval` (3.4). In each, the last row shows the gap.
 - **Prove or disprove** (§12.13.4): 01 B4, 02 B4, 03 B4, 04 B4. Verdicts are withheld in the stem. Solutions give the verdict first. 3.5 is not a method section and gets none.
@@ -43,8 +43,8 @@ The layout's figures for 3.4 and 3.5 (4,200, 3,700) are the whole-file counts. T
   - *Injections both ways* is Idea-level in 3.4: box, one table, the two existing interval examples, and a back-reference in `exm-reals-open-interval`.
 - **Threads** (layout §5):
   - *The five strings*: planted in 1.5 (1/05:202) and paid by 3.3's new opening subsection `## Back to the five strings`.
-  - *Russell → Cantor*: 1.2 (1/02:441) is paid by a bold "**Back to Russell.**" paragraph opening 3.3's Cantor subsection.
-  - *Comparability*: 3.4 leaves it open, as a bold-lead-in paragraph replacing the remark 04:170–172, and Section 5.2 answers it.
+  - *Russell → Cantor*: 1.2 (1/02:441) is paid by 3.3's Cantor subsection, retitled `## Back to Russell: Cantor's theorem`, which opens with a short hook paragraph.
+  - *Comparability*: 3.4 leaves it open in a `[Looking ahead]` remark at the end of its main line (replacing the remark 04:170–172), and Section 5.2 answers it.
   - *Choice*: 1.6 (1/06:251) → 3.2 `ax-choice` → 3.5 `thm-infinite-countable-subset` → Chapter 5 (Zorn).
   
   All four are listed in the index.
@@ -57,8 +57,8 @@ The layout's figures for 3.4 and 3.5 (4,200, 3,700) are the whole-file counts. T
 | index | `index.md` | — | retitle; story; What you need; Time; Roadmap; Named moves (4 boxes); Threads; Summary; Terms (§4.0) |
 | 3.1 | `01-countable-sets.md` | 3,610 → ≤ 5,000 (~4,250) | box; scratch work with table; subsection "Listing in practice" with 2 examples; 1 check; B4; pointers |
 | 3.2 | `02-countable-unions-and-choice.md` | 3,068 → ≤ 5,000 (~3,700) | box; `exm-choice-or-rule`; scratch work with table; 1 check; Idea clause; B4; pointers |
-| 3.3 | `03-diagonal-arguments.md` | 2,960 → ≤ 5,000 (~3,950) | opening subsection with `exm-five-strings-diagonal` and 1 check; scratch work with table; box; 1 check; `exm-diagonal-outgrows-list`; "Back to Russell"; Idea clause; B4; pointers |
-| 3.4 | `04-comparing-cardinalities.md` | 2,398 → ≤ 4,200 (~2,680) | internal repair; box; table; comparability paragraph; 1 check; back-reference; B4; pointers |
+| 3.3 | `03-diagonal-arguments.md` | 2,960 → ≤ 5,000 (~3,950) | opening subsection with `exm-five-strings-diagonal` and 1 check; scratch work with table; box; 1 check; `exm-diagonal-outgrows-list`; retitled Cantor subsection with Russell hook; Idea clause; B4; pointers |
+| 3.4 | `04-comparing-cardinalities.md` | 2,398 → ≤ 4,200 (~2,680) | internal repair; box; table; `[Looking ahead]` remark; 1 check; back-reference; B4; pointers |
 | 3.5 | `05-infinite-sets.md` | 1,448 → ≤ 3,700 (~1,450) | pointers; two clauses in R solutions |
 
 ## 3. Labels
@@ -114,12 +114,12 @@ Budget: 3,610 → ≤ 5,000 (expected ~4,250). No folds.
 
 1. **Pointers:** the 01 rows of §4.6.
 2. **01:127 is replaced** (42 words) by one lead sentence, "Which form to use is the first decision in every countability proof:", followed by **`exm-method-list-it`** `[Method: list it]`.
-   - **Template.** To show that A is countable, give one of two maps and check it. *(S)* A surjection f: ℕ → A, or from a set already known to be countable (@prp-countable-image): check that every a ∈ A is a value. Repetitions are free. *(I)* An injection A → ℕ, or into a set already known to be countable (compose with its injection into ℕ): check that equal values come from equal elements. Then cite @thm-countable-characterizations. Route (S) needs A ≠ ∅ (or the case A = ∅ split off); route (I) needs no case.
-   - **When to use it.** (S) when A is given as "all objects of the form φ(m, n, …)": list the parameters. (I) when each element carries a code that can be read back (two exponents, a least and a largest element), above all when a parametrization would leave A or repeat awkwardly.
-   - **The usual failure.** A list that runs through an infinite block before the next (@exm-rows-first-listing). A formula whose values leave A. An "injection" whose injectivity is never checked. Concluding "uncountable" from one failed list (01:35).
+   - **Template.** To show that A is countable, give one of two maps and check it. *(S)* A surjection onto A from ℕ or from a countable set: check that every a ∈ A is a value (repetitions are free; split off A = ∅), then cite @def-countable or @prp-countable-image. *(I)* An injection of A into ℕ or into a countable set: check that equal values come from equal elements, then cite @thm-countable-characterizations, (ii) ⇒ (i).
+   - **When to use it.** (S) when A is "all objects of the form φ(m, n, …)": list the parameters. (I) when each element carries a code that can be read back, above all when a parametrization would leave A.
+   - **The usual failure.** A list that runs through an infinite block before the next (@exm-rows-first-listing). An "injection" whose injectivity is never checked. (Concluding "uncountable" from one failed list is already the warning at 01:35.)
 3. **Quick check** after the box.
-   - "Which route of the method would you take for (a) the set of numbers n² + 3n with n ∈ ℕ; (b) the set of three-element subsets of ℕ?"
-   - *Solution:* (a) (S): the set is the image of n ↦ n² + 3n, so @prp-countable-image applies and nothing is left to check. (b) (I): send {a, b, c} with a < b < c to the triple (a, b, c) ∈ ℕ³. The triple is named by a rule (least, middle, largest element), and the set is recovered from it, so the map is injective. ℕ³ is countable (@cor-product-countable (b)), so composing with an injection ℕ³ → ℕ finishes. A surjection from ℕ³, (a, b, c) ↦ {a, b, c}, leaves the set whenever two coordinates agree.
+   - "Which route of the method would you take for (a) the set of numbers n² + 3n with n ∈ ℕ; (b) the set of pairs (q, n) ∈ ℚ × ℕ with q·n ∈ ℤ?"
+   - *Solution:* (a) (S): the set is the image of n ↦ n² + 3n, so @prp-countable-image applies and nothing is left to check. (b) (I): the inclusion into ℚ × ℕ is an injection with nothing to check, and ℚ × ℕ is countable (@thm-integers-rationals-countable, @cor-product-countable (a)); this is @prp-countable-subset. No parametrization of the set is needed.
 4. **`thm-product-countable`.** The Try-it-first (01:215) is kept. The Idea 01:217–219 (~150 words) is replaced by a **`[Scratch work]`** idea (≤ 18 lines). It keeps the old Idea's content in order: the rows-first list fails; the diagonal list works but is costly to write down; route (I) of @exm-method-list-it is cheaper; the code 2^m 3^n; parity, not unique factorization, reads it back. Insert the table after "an injection only has to be a code":
 
    | Givens | Goal |
@@ -131,8 +131,8 @@ Budget: 3,610 → ≤ 5,000 (expected ~4,250). No folds.
 
    The proof is unchanged.
 5. **New subsection `## Listing in practice`**, after 01:302 (end of the section, before `## Exercises`). Lead (one sentence): "Two more uses of @exm-method-list-it, one by each route."
-   - **`exm-list-integer-combinations`** `[A set of irrational-looking numbers]`. "Let S ≔ {m + n√2 : m, n ∈ ℤ}. Show that S is countably infinite."
-     - *Solution:* "Route (S). The map ℤ × ℤ → S, (m, n) ↦ m + n√2, is onto by the definition of S, and ℤ × ℤ is countable (@thm-integers-rationals-countable, @cor-product-countable (a)). So S is countable by @prp-countable-image. It is infinite: ℤ ⊆ S (take n = 0), ℤ ⊇ ℕ is infinite (@exm-hilbert-hotel, @prp-subset-finite), so S is not finite by @prp-subset-finite. By @thm-countable-characterizations, (i) ⇒ (iii), S is countably infinite."
+   - **`exm-list-integer-combinations`** `[Integer combinations of 1 and √2]`. "Let S ≔ {m + n√2 : m, n ∈ ℤ}. Show that S is countably infinite."
+     - *Solution:* "Route (S). The map ℤ × ℤ → S, (m, n) ↦ m + n√2, is onto by the definition of S, and ℤ × ℤ is countable (@thm-integers-rationals-countable, @cor-product-countable (a)). So S is countable by @prp-countable-image. It is infinite: ℕ ⊆ S (take n = 0 and m ∈ ℕ), and ℕ is infinite (@exm-hilbert-hotel), so S is not finite by @prp-subset-finite. By @thm-countable-characterizations, (i) ⇒ (iii), S is countably infinite."
      - *Aftermath (≤ 55 words):* "Route (I) would need the map to be injective. If m + n√2 = m′ + n′√2 with n ≠ n′, then √2 = (m − m′)/(n′ − n) would be rational, against @fd1:thm-sqrt2-irrational. So route (I) works here, but it costs a theorem. Route (S) never asks whether two parameter pairs give the same number."
    - **`exm-list-two-element-subsets`** `[Coding the two-element subsets of ℕ]`. "Let P₂ be the set of subsets of ℕ with exactly two elements. Show that P₂ is countably infinite."
      - *Scratch (two sentences, in the solution):* "Route (S) from ℕ × ℕ, (m, n) ↦ {m, n}, leaves P₂ when m = n, the usual failure of the box. Route (I) needs a code from which S can be read back, and a two-element set has a least and a largest element."
@@ -156,14 +156,14 @@ Count: +box 130 + check 95 + scratch net +90 + subsection ~420 − 42 ≈ +690 �
 
 Budget: 3,068 → ≤ 5,000 (expected ~3,700). No folds.
 
-1. **Pointers:** the 02 rows of §4.6, including 02:47: "A later chapter states its best-known equivalent, Zorn's lemma" → "Chapter 5 states its best-known equivalent, Zorn's lemma", and "in Section 3.6" → "in Section 3.5".
+1. **Pointers:** the 02 rows of §4.6, including 02:47: "A later chapter states its best-known equivalent, Zorn's lemma" → "Chapter 5 states its best-known equivalent, Zorn's lemma", and "in Section 3.6" → "in Section 3.5". In the same paragraph the two history sentences ("It is independent … Cohen (1963) that it cannot be proved from them.") become one line (STYLE §1): "It can be neither proved nor refuted from the other axioms of set theory (Gödel, Cohen)." The rest of 02:47 is kept.
 2. **`exm-method-name-the-choice`** `[Method: name the choice]`, after the warning 02:69–71 (end of "When choice is not needed"). Lead: "The warning is the whole method; here it is as a checklist."
-   - **Template.** At every line that produces an object for each of many indices at once, ask whether one rule names it for every index: a formula, "the least", "the unique", or a single list fixed in advance. If so, define the function by specification and say that no choice is used. If the only source is "for each i there exists …" over an infinite index set, form the family (S_i) of sets of candidates, discard the indices with S_i = ∅, and write "**by @ax-choice** there is c with c(i) ∈ S_i" at that line, in bold.
-   - **When to use it.** Whenever a proof says "for each n, let …", builds a sequence or a family of lists, or inverts a surjection.
-   - **The usual failure.** An unflagged "for each n, choose" (the opening of this section). Flagging a single ∃E, or a rule, as a use of the axiom. Forgetting the empty sets, so that the axiom's hypothesis fails (02:59).
+   - **Template.** At each line that produces an object for each of many indices at once, ask whether one rule names it for every index: a formula, "the least", "the unique", or one list fixed in advance. If so, define the function by specification and say that no choice is used. If not, form the family (S_i) of non-empty sets of candidates and write "**by @ax-choice** there is c with c(i) ∈ S_i" at that line, in bold.
+   - **When to use it.** A proof says "for each n, let …", builds a sequence or a family of lists, or inverts a surjection.
+   - **The usual failure.** An unflagged "for each n, choose". Flagging a single ∃E, or a rule, as a use of the axiom. An empty S_i left in the family, so that the axiom's hypothesis fails (02:59).
 3. **Quick check** after the box.
-   - "A proof says: 'For each n ∈ ℕ the set {k ∈ ℕ : k² > n} is non-empty; choose k_n in it.' Does the proof use @ax-choice? Rewrite the line so that it plainly does not."
-   - *Solution:* No. The least element (@thm-well-ordering) names k_n, and so does the formula k_n ≔ n + 1, since (n + 1)² = n² + 2n + 1 > n. Either rewrite defines n ↦ k_n by specification.
+   - "A proof says: 'For each n ∈ ℕ the set {k ∈ ℕ : k² > n} is non-empty; choose k_n in it.' Does this line need @ax-choice? Rewrite it so that it plainly does not."
+   - *Solution:* No: it need not. The least element (@thm-well-ordering) names k_n, and so does the formula k_n ≔ n + 1, since (n + 1)² = n² + 2n + 1 > n. Either rewrite defines n ↦ k_n by specification.
 4. **`exm-choice-or-rule`** `[Choice or a rule?]`, after the check and before `## Right inverses`. This is the method's first worked example, and `exm-choice-free-unions` (02:149–165) is its second. The parts avoid 02 B1's intervals (n, n + 1), subsets of ℕ, subsets of ℝ and square roots. "Which of the following needs @ax-choice?"
    - (a) A function sending each non-empty finite set of reals to one of its elements.
    - (b) A function sending each open interval (a, b) of reals, a < b, to a rational number in it.
@@ -173,7 +173,7 @@ Budget: 3,068 → ≤ 5,000 (expected ~3,700). No folds.
      - (a) No: S ↦ max S, by @prp-finite-max.
      - (b) No, once one list of ℚ is fixed. Take a surjection q: ℕ → ℚ (@thm-integers-rationals-countable, one ∃E). Between two reals lies a rational (a school fact; *Analysis on the Real Line*, Chapter 1 proves it), so {n ∈ ℕ : a < q(n) < b} is non-empty, and q of its least element (@thm-well-ordering) is named by a rule.
      - (c) Yes, as far as this book is concerned. Each A has bijections ℕ → A (@def-countably-infinite), but no rule names one for an arbitrary A. The family (S_A) of sets of bijections, indexed by the countably infinite subsets of ℝ, consists of non-empty sets, and @ax-choice gives the function.
-     - (d) No: with the same fixed q, a_n ≔ q(min{k ∈ ℕ : q(k) ∈ A_n}). Compare 02 B1 (c): a set of reals has no least index in any list, because ℝ has no list (Section 3.3).
+     - (d) No: with the same fixed q, a_n ≔ q(min{k ∈ ℕ : q(k) ∈ A_n}). (No comparison with 02 B1 (c) is printed: it would rest on 3.3.)
      - Closing sentence: "One fixed list turns 'pick an element' into 'take the first one on the list', and that is a rule."
 5. **`thm-surjection-right-inverse`, Idea (02:83–85).** Add the last sentence: "This is the method of @exm-method-name-the-choice: for an arbitrary f no rule names a preimage, so the line is flagged."
 6. **`thm-countable-union`.** The Idea 02:113–117 is replaced by a **`[Scratch work]`** idea (≤ 20 lines). It keeps ①–③ and the "Before reading on" line. The table:
@@ -186,7 +186,7 @@ Budget: 3,068 → ≤ 5,000 (expected ~3,700). No folds.
    | gap: from "∀n ∃ a list" to "∃ one function giving a list for every n" | closed by @ax-choice on (S_n)_{n∈J}, the only flagged line |
 
    The proof is unchanged.
-7. **`thm-algebraic-countable`, Idea (02:187–189).** Add: "Each countability step is route (S) of @exm-method-list-it."
+7. **`thm-algebraic-countable`, Idea (02:187–189).** Add: "Steps 2 and 3 are route (S) of @exm-method-list-it: each union is the image of a countable grid. Step 1 only cites closure under products and subsets."
 8. **B4** `[B4: Prove or disprove]`.
    - (a) If A_n is finite for every n ∈ ℕ, then ⋃_{n∈ℕ} A_n is countable.
    - (b) If A_n is finite for every n ∈ ℕ, then ⋃_{n∈ℕ} A_n is finite.
@@ -207,7 +207,8 @@ Count: box 130 + check 75 + example ~330 + clauses 40 + scratch net +90 ≈ +665
 Budget: 2,960 → ≤ 5,000 (expected ~3,950). No folds.
 
 1. **Pointers:** the 03 rows of §4.6.
-2. **New first subsection `## Back to the five strings`**, between 03:3 and 03:5. Lead (≤ 40 words): "Section 1.5 left a game open: one player lists five strings of five symbols 0 or 1, and the other must write a string that is not on the list. Searching all 32 strings works; a rule is better." Then:
+2. **03:3** (frame paragraph): "by one argument used three times" → "by one argument, which starts from the game of Section 1.5 and is then used three times". The list of the three uses is kept.
+   **New first subsection `## Back to the five strings`**, between 03:3 and 03:5. Lead (≤ 40 words): "Section 1.5 left a game open: one player lists five strings of five symbols 0 or 1, and the other must write a string that is not on the list. Searching all 32 strings works; a rule is better." Then:
    - **`exm-five-strings-diagonal`** `[Back to the five strings]`. "Find a rule that, from any list s₁, …, s₅ of strings of five symbols 0 or 1, builds a string not on the list. Run it on 00000, 11111, 01010, 10101, 00111, and prove that it always works."
    - *Solution:* "Let the new string g have, as its k-th symbol, the flip of the k-th symbol of the k-th string: g(k) ≔ 1 − s_k(k) for k = 1, …, 5 (strings are functions {1, …, 5} → {0, 1}, Section 1.5). On the list, the symbols s₁(1), …, s₅(5) are 0, 1, 0, 0, 1, so g = 10110. It differs from 00000 in place 1, from 11111 in place 2, from 01010 in place 3, from 10101 in place 4 and from 00111 in place 5. For any list: for each k, g(k) ≠ s_k(k), since 1 − b ≠ b for b ∈ {0, 1}. So g ≠ s_k (@prp-function-equality), for k = 1, …, 5. The k-th step looks only at the k-th string, in its own place k."
    - *Aftermath (≤ 45 words):* "The rule never used the number 32. It used one place for each string on the list. Give the strings infinitely many places, indexed by ℕ, and let the list be infinite too, and the same rule still applies."
@@ -232,19 +233,19 @@ Budget: 2,960 → ≤ 5,000 (expected ~3,950). No folds.
    - *Solution:* No. There g is the zero sequence, which is f(0). The new object must differ from the n-th entry at place n, for every n.
 7. **`exm-diagonal-outgrows-list`** `[A function that outgrows a list]`, after the warning 03:59–61 (end of the first subsection). "Let f₀, f₁, f₂, … be any list of functions ℕ → ℕ. Find g: ℕ → ℕ such that, for every k ∈ ℕ, g(n) > f_k(n) for every n ≥ k."
    - *Idea line (in the solution):* "The flipped diagonal beats f_n at place n only. To beat f_k from place k on, let place n beat f₀, …, f_n at once: finitely many, so a maximum exists."
-   - *Solution:* "Let g(n) ≔ max{f₀(n), …, f_n(n)} + 1. The set is {x₁, …, x_{n+1}} with x_{k+1} ≔ f_k(n), so the maximum exists by @prp-finite-max, and g(n) ∈ ℕ. For k ∈ ℕ and n ≥ k, f_k(n) is one of the numbers in the set, so f_k(n) ≤ max < g(n). In particular g(k) > f_k(k), so g ≠ f_k for every k (@prp-function-equality), and g is not on the list. The diagonal is the case n = k; the example asks more of g, and still uses only one place per step."
-   - It does not settle 03 B1's blank: B1 asks for the last step of a different g, and the example's verification is not that step.
-8. **Cantor subsection, "Back to Russell."** Before 03:65, add a bold-lead-in paragraph (≤ 85 words): "**Back to Russell.** Section 1.2 met the first contradiction about sets. For any set A, R_A = {x ∈ A : x ∉ x} is not an element of A (@thm-russell), because it disagrees with each candidate x about x itself. That was a diagonal before the name: rows and places both indexed by A, the entry 'is x an element of y', the diagonal flipped. Its payoff is a theorem about sizes." 03:65 is kept. 03:91 (consequence (i)) is kept as it stands: it is the precise statement the paragraph announces.
+   - *Solution:* "Let g(n) ≔ max{f₀(n), …, f_n(n)} + 1. The set is {x₁, …, x_{n+1}} with x_{k+1} ≔ f_k(n), so the maximum exists by @prp-finite-max, and g(n) ∈ ℕ. For k ∈ ℕ and n ≥ k, f_k(n) is one of the numbers in the set, so f_k(n) ≤ max < g(n). The example asks more of g than a diagonal does, and each step still looks at finitely many entries at one place."
+   - The text never states that g differs from each f_k, nor that g is off the list: that inference is 03 B1's blank, which stays the reader's.
+8. **Cantor subsection, the Russell payoff.** Retitle 03:63 `## Cantor's theorem` → `## Back to Russell: Cantor's theorem` (layout §5: each thread is paid by a "Back to …" subsection). Before 03:65, add one hook paragraph (≤ 45 words), no bold lead-in: "Section 1.2 proved Russell's theorem (@thm-russell): the set R_A disagrees with each candidate x ∈ A about x itself, so it is not in A. Here the same disagreement becomes a theorem about sizes." 03:65 is kept. 03:91 (consequence (i)) is kept as it stands and makes the precise identification; the hook does not repeat it.
 9. **`thm-cantor`, Idea (03:76).** Append: "It is the method of @exm-method-diagonal, with the rows and the places both indexed by X."
 10. **B4** `[B4: Prove or disprove]`.
     - (a) The set of periodic 0–1 sequences, those a ∈ {0, 1}^ℕ with some p ≥ 1 such that a(n + p) = a(n) for every n ∈ ℕ, is uncountable.
-    - (b) The set of 0–1 sequences that are not periodic is uncountable.
+    - (b) The set of 0–1 sequences with no two consecutive 1s is uncountable.
     - (c) For every set X there is no injection 𝒫(X) → X.
     - (d) If X is infinite, there is no surjection X → X × X.
     - (e) The set of all functions ℤ → {0, 1} is uncountable.
     - *Solution:*
-      - (a) False: the set is countable. Let P_p be the set of sequences with period p ≥ 1. For a ∈ P_p, a(qp + r) = a(r) for all q ∈ ℕ and 0 ≤ r < p, by induction on q. Every n ∈ ℕ is qp + r for such q and r (@thm-division-algorithm). So a is determined by a(0), …, a(p − 1), and a ↦ a|_{{0,…,p−1}} is an injection of P_p into the finite set of functions {0, …, p − 1} → {0, 1} (2^p elements, @prp-power-set-count via indicators). So P_p is countable, and the set of periodic sequences, ⋃_{p∈ℤ_{>0}} P_p, is countable by @thm-countable-union (b). The diagonal fails here because the flipped diagonal of a list of periodic sequences need not be periodic: the usual failure of @exm-method-diagonal.
-      - (b) True. Otherwise {0, 1}^ℕ would be the union of two countable sets, (a) and its complement, and so countable (@prp-union-two-countable), against @thm-binary-sequences-uncountable.
+      - (a) False: the set is countable. Let P_p be the set of sequences with period p ≥ 1. For a ∈ P_p, a(qp + r) = a(r) for all q ∈ ℕ and 0 ≤ r < p, by induction on q. Every n ∈ ℕ is qp + r for such q and r (@thm-division-algorithm). So a is determined by a(0), …, a(p − 1), and a ↦ a|_{{0,…,p−1}} is an injection of P_p into the finite set of functions {0, …, p − 1} → {0, 1} (2^p elements, @prp-power-set-count via indicators). So P_p is countable, and the set of periodic sequences, ⋃_{p∈ℤ_{>0}} P_p, is countable by @thm-countable-union (b). No choice is involved: each P_p is listed by a rule (order the 2^p patterns lexicographically), so the union is listed without @ax-choice, as in @exm-choice-free-unions. The diagonal fails here because the flipped diagonal of a list of periodic sequences need not be periodic: the usual failure of @exm-method-diagonal.
+      - (b) True. b ↦ a with a(2n) ≔ b(n) and a(2n + 1) ≔ 0 sends {0, 1}^ℕ into the set (every odd place is 0, so no two consecutive places are both 1), and it is injective (b is read back from the even places, @prp-function-equality). If the set were countable, composing with its injection into ℕ would give an injection {0, 1}^ℕ → ℕ, so {0, 1}^ℕ would be countable (@thm-countable-characterizations, (ii) ⇒ (i)), against @thm-binary-sequences-uncountable.
       - (c) True. Let i: 𝒫(X) → X be injective. Since 𝒫(X) ∋ ∅ is non-empty, i has a left inverse r: X → 𝒫(X) (@thm-left-inverse-iff-injective (b)). r ∘ i = id says that i is a right inverse of r, so r is surjective (@prp-right-inverse-surjective), against @thm-cantor.
       - (d) False. X = ℕ: ℕ × ℕ is countable (@thm-product-countable) and non-empty, so @def-countable gives a surjection ℕ → ℕ × ℕ.
       - (e) True. Restriction a ↦ a|_ℕ maps {0, 1}^ℤ onto {0, 1}^ℕ: a given b extends by 0 on the negative integers. If {0, 1}^ℤ were countable, its image {0, 1}^ℕ would be countable (@prp-countable-image), against @thm-binary-sequences-uncountable.
@@ -263,8 +264,8 @@ Budget: 2,398 → ≤ 4,200 (expected ~2,680). No folds. Idea-level (layout §1)
    - **The usual failure.** Two injections in the same direction. One injection that is not onto, read as strictness or as a bijection (the warning 04:30, 04:232). A squeeze whose values leave the target (x ↦ x/2 sends [0, 1] into [0, ½] and hits 0 ∉ (0, 1)).
 4. **Quick check** after the box.
    - "Show |[0, 1] ∪ {5}| = |[0, 1]| by the method."
-   - *Solution:* The inclusion [0, 1] → [0, 1] ∪ {5} is injective. In the other direction, x ↦ x/2 on [0, 1] and 5 ↦ 1 is injective, since x/2 ≤ ½ < 1. By @thm-schroder-bernstein the sets are equinumerous.
-5. **The comparability remark (04:170–172)** is replaced by a bold-lead-in paragraph (≤ 90 words), the thread's hook: "**A question left open.** The method needs an injection each way. Are any two sets comparable, that is, is |A| ≤ |B| or |B| ≤ |A| for all A and B? Building an injection one element at a time does not settle it: a recursion indexed by ℕ reaches only countably many elements, so it cannot exhaust an uncountable set. Section 5.2 proves that the answer is yes, by Zorn's lemma, a principle equivalent to @ax-choice. Nothing in this chapter needs comparability."
+   - *Solution:* The inclusion [0, 1] → [0, 1] ∪ {5} is injective. In the other direction, take x ↦ x/2 on [0, 1] and 5 ↦ 1. Since 5 ∉ [0, 1], the two clauses define a function into [0, 1]. It is injective, since x/2 ≤ ½ < 1. By @thm-schroder-bernstein the sets are equinumerous.
+5. **The comparability remark (04:170–172)** is removed from mid-section, and its content moves to a `::: {.remark}` titled `[Looking ahead]` at the end of 3.4's main line, just before `## Exercises` (STYLE §12.1's form; ≤ 90 words), the thread's hook: "The method needs an injection each way. Are any two sets comparable, that is, is |A| ≤ |B| or |B| ≤ |A| for all A and B? Building an injection one element at a time does not settle it: a recursion indexed by ℕ reaches only countably many elements, so it cannot exhaust an uncountable set. Section 5.2 proves that the answer is yes, by Zorn's lemma, a principle equivalent to @ax-choice. Nothing in this chapter needs comparability."
 6. **`exm-closed-open-interval`, "With the theorem" (04:185).** Before its first sentence, add the table (with the lead "Planned as in @exm-method-injections-both-ways:"):
 
    | Givens | Goal |
@@ -278,17 +279,17 @@ Budget: 2,398 → ≤ 4,200 (expected ~2,680). No folds. Idea-level (layout §1)
 8. **B4** `[B4: Prove or disprove]`.
    - (a) |ℤ| < |ℚ|.
    - (b) If |A| < |B| and |B| ≤ |C|, then |A| < |C|.
-   - (c) If some injection A → B is not surjective, then |A| < |B|.
+   - (c) If |A| ≤ |B| and B is countable, then A is countable.
    - (d) |{0, 1}^ℕ| = |ℕ^ℕ|, where ℕ^ℕ is the set of functions ℕ → ℕ.
    - (e) If A ⊆ B and |B| ≤ |A|, then |A| = |B|.
    - *Solution:*
      - (a) False. Both are countably infinite (@thm-integers-rationals-countable), so |ℤ| = |ℕ| = |ℚ| (@prp-equinumerous-properties), and there is a bijection ℤ → ℚ.
      - (b) True. |A| ≤ |C| by @prp-card-le-preorder (b). Suppose there were a bijection φ: A → C. Composing an injection B → C with φ⁻¹ gives |B| ≤ |A|. With |A| ≤ |B|, @thm-schroder-bernstein gives |A| = |B|, against |A| < |B|.
-     - (c) False. n ↦ n + 1 is an injection ℕ → ℕ that misses 0, and |ℕ| = |ℕ|.
+     - (c) True. Compose the injection A → B with an injection B → ℕ (@thm-countable-characterizations, (i) ⇒ (ii)); the composite is injective, and (ii) ⇒ (i) gives A countable.
      - (d) True, by the method. *Into ℕ^ℕ:* a ↦ a, read with codomain ℕ, is injective (same values). *Back:* f ↦ its graph Γ_f ⊆ ℕ × ℕ is injective into 𝒫(ℕ × ℕ) (@prp-function-equality). S ↦ p(S), the image under the injective p(m, n) = 2^m 3^n of @thm-product-countable, is injective 𝒫(ℕ × ℕ) → 𝒫(ℕ): if p(S) = p(T) and x ∈ S, then p(x) = p(y) for some y ∈ T, so x = y ∈ T, and symmetrically. S ↦ 𝟙_S is injective 𝒫(ℕ) → {0, 1}^ℕ. Compose the three (@prp-card-le-preorder (b)) and apply @thm-schroder-bernstein.
      - (e) True. The inclusion gives |A| ≤ |B|, and @thm-schroder-bernstein applies.
 
-Count: box 125 + check 60 + paragraph net +20 + table 60 + clause 5 ≈ +270 → ~2,670.
+Count: box 120 + check 70 + remark net +20 + table 60 + clause 5 ≈ +270 → ~2,670.
 
 ### 4.5 Section 3.5: Infinite Sets (`05`)
 
@@ -297,7 +298,7 @@ Terse (layout §1). Main line unchanged except pointers (~1,450).
 1. **Pointers:** the 05 rows of §4.6.
 2. **`exr-infinite-sets-r1`, solution.** After "By @thm-well-ordering it has a least element \( m \).", add "(the method of @exm-method-least-element)". The solution text is otherwise kept.
 3. **`exr-infinite-sets-r4`, solution, "Why the look-alike fails".** The last sentence becomes: "A diagonal argument proves uncountability only when the diagonal object stays inside the set; this is the usual failure named in @exm-method-diagonal."
-4. **R items, coverage check (no change).** R1 reaches back to Chapter 2 (strong induction, least element), R2 and R3 to *Logic and Proof* (counter-models, truth functions, with 2.5's power-set count), and R4 within Chapter 3. Layout §1's "R items reach back over Ch1–3 and fd1" is met. Chapter 1 is reached through R3's bijections and R4's functions. No problem text names its source (STYLE §11.5); none does now.
+4. **R items, coverage check (no change).** R1 reaches back to Chapter 2 (strong induction, least element), R2 and R3 to *Logic and Proof* (counter-models, truth functions, with 2.5's power-set count), and R4 within Chapter 3. Layout §1's "R items reach back over Ch1–3 and fd1" is met. To reach Chapter 1 by method, not only vocabulary: in `exr-infinite-sets-r3`'s solution, the sentence that checks the bijection L → 𝒫({1, …, n}) gains the clause "(injective and surjective by @exm-method-injectivity and @exm-method-surjectivity)". If R3's solution has no such check, the drafter adds the clause where the bijection is asserted. No problem text names its source (STYLE §11.5); none does now.
 
 ### 4.6 Pointers inside the chapter (S3 drafter, by hand)
 
@@ -340,7 +341,7 @@ Section map for old-numbered text: 3.1 → 2.5, 3.2 → 3.1, 3.3 → 3.2, 3.4 �
 | 3.5 | 1,448 | 3,700 | ~1,450 | 0 |
 | total | 13,484 | 22,900 | ~16,055 | 0 |
 
-**Exercises.** Four new B4s; the chapter goes from 35 to 39 exercises. The core track is all A, one B and one C per section, and the exit checks: about 16 items. The new main line (~16,050 words to Exercises; about 26,900 for the whole files with exercises, which is what `check_structure.py --words` reads) and the 39 exercises put the formula near **25 h core and 30–35 h full**. The coordinator recomputes with `check_structure.py --words` after S3. If the full track comes out above layout §2's 30 h, the coordinator reports the figure to the author as a departure rather than writing 30, as Chapter 1 did.
+**Exercises.** Four new B4s; the chapter goes from 35 to 39 exercises. The core track is all A, one B and one C per section, and the exit checks: about 16 items. The current index reads 30 h core and 40 h full, at 24,372 whole-file words and 35 exercises (about 45 min per exercise on the full track). After S3 the files hold about 27,500–28,000 words (main line +2,570, the four B4 solutions about +1,000, small clauses) and 39 exercises, four of them five-part. At the index's rates that projects **about 30 h core and 45 h full**. The Time can only rise. The coordinator recomputes with `check_structure.py --words` and the index's per-exercise rate after S3 and reports the full-track overrun against layout §2's 25/30 to the author as a departure (§8 item 2), as Chapter 1 did.
 
 ## 6. Pointers, promises, edits outside the chapter
 
@@ -348,10 +349,10 @@ Not edited by this chapter's drafters. Listed for the coordinator.
 
 - **STATUS** (coordinator):
   - Mark the 1.5 promise "Chapter 3 comes back to this game" as paid by F2.3 §03 `exm-five-strings-diagonal`.
-  - Mark 1.2's Cantor pointer (1/02:441) as paid by `thm-cantor` and the "Back to Russell" paragraph.
+  - Mark 1.2's Cantor pointer (1/02:441) as paid by `thm-cantor` and the subsection `## Back to Russell: Cantor's theorem`.
   - Add a promise row: F2.3 §04 "whether any two sets are comparable" → Section 5.2 (Zorn), to be paid by ch05-deepen.
   - Retag any F2.3 rows that name the old 3.2–3.6 by the layout §3.2 table.
-- **ch05-deepen / Chapter 5:** 5.2 must open its comparability application as "Back to comparability", answering 04's paragraph (§4.4 item 5) and citing `def-card-le`.
+- **ch05-deepen / Chapter 5:** 5.2 must open its comparability application as "Back to comparability", answering 04's `[Looking ahead]` remark (§4.4 item 5) and citing `def-card-le`.
 - **ch02-deepen §4.6 and the Chapter-3 rows of §4.8:** superseded by §4.0 and §4.6 here. If the Chapter 2 coordinator has not applied them yet, it should leave Chapter 3's files to this chapter's S3.
 - **Preface `fd2/src/index.md`:** the Chapter 3 row of ch02-deepen §4.8 ("Countable sets, the axiom of choice, diagonal arguments and Cantor's theorem, the Schröder–Bernstein theorem, infinite sets") stands. No further change.
 - **config.json:** the chapter title, if config lists one, is "Countable and Uncountable Sets" (the volume config at line 102 lists only the directory).
@@ -360,26 +361,28 @@ Not edited by this chapter's drafters. Listed for the coordinator.
 
 ## 7. S2a: claims to verify
 
-1. 3.1 Quick check: n² + 3n is an image; the three-element-subset map into ℕ³ is injective, and the surjection from ℕ³ leaves the set.
+1. 3.1 Quick check: n² + 3n is an image; the pairs (q, n) form a subset of the countable ℚ × ℕ.
 2. 3.1 scratch work and table match the unchanged proof of `thm-product-countable` (parity claim, monotonicity of 3^k).
-3. `exm-list-integer-combinations`: the surjection; ℤ ⊆ S; the aftermath's use of @fd1:thm-sqrt2-irrational (that label proves √2 irrational).
+3. `exm-list-integer-combinations`: the surjection; ℕ ⊆ S; the aftermath's use of @fd1:thm-sqrt2-irrational (that label proves √2 irrational).
 4. `exm-list-two-element-subsets`: min and max named by a rule; injectivity through p; n ↦ {0, n + 1} injective; the infinitude argument cites only 2.5 results.
 5. 01 B4 (a)–(e), especially (b) (finite image ⇒ ℕ finite) and (d) (A = ∅).
 6. 3.2 Quick check: (n + 1)² > n.
-7. `exm-choice-or-rule`: (a) via @prp-finite-max; (b) density of ℚ is a school fact, and the least index is a rule once q is fixed by one ∃E; (c) the family's index set (countably infinite subsets of ℝ) is a set (specification in 𝒫(ℝ)), and its members are non-empty; (d) the least index in A_n; no overlap with 02 B1.
+7. `exm-choice-or-rule`: (a) via @prp-finite-max; (b) density of ℚ is a school fact, and the least index is a rule once q is fixed by one ∃E; (c) the family's index set (countably infinite subsets of ℝ) is a set (specification in 𝒫(ℝ)), and its members are non-empty; (d) the least index in A_n; no overlap with 02 B1; no reason rests on 3.3.
 8. 3.2 scratch-work table agrees with the proof's lines (J, S_n, F, the one bold line).
 9. 02 B4 (a)–(e); (e)'s c is a rule, and "ℕ equinumerous with a subset of a finite set ⇒ ℕ finite".
-10. `exm-five-strings-diagonal`: diagonal 01001, flip 10110, the five differing places; it agrees with 1/05:202's list and with Chapter 1's Quick check (10010, diagonal 01001, flip 10110).
+10. `exm-five-strings-diagonal`: diagonal 01001, flip 10110, the five differing places; it agrees with 1/05:202's list, and differs from Chapter 1's Quick check answer 10010 (1/05:209, an unrelated indicator of {1, 4}), so 1.5 does not give the diagonal away.
 11. The six-strings Quick check.
 12. 3.3 scratch work: the table rows; non-emptiness is in the proof.
 13. The unflipped-diagonal Quick check (the zero list).
-14. `exm-diagonal-outgrows-list`: @prp-finite-max applies to n + 1 reals; g(n) > f_k(n) for n ≥ k; B1's blank is not answered.
-15. The "Back to Russell" paragraph agrees with `thm-russell`'s statement and 03:91.
-16. 03 B4: (a) periodicity ⇒ determined by the first p values (division algorithm, induction on q), and the union over p; (c) left inverse needs a non-empty domain, 𝒫(X) ∋ ∅; (e) the restriction is onto.
+14. `exm-diagonal-outgrows-list`: @prp-finite-max applies to n + 1 numbers; g(n) > f_k(n) for n ≥ k; the example's text never states g ≠ f_k or that g is off the list (B1's blank).
+15. The Russell hook paragraph agrees with `thm-russell`'s statement and does not repeat 03:91.
+16. 03 B4: (a) periodicity ⇒ determined by the first p values (division algorithm, induction on q), and the union over p listed by a rule; (b) the interleaving map lands in the set and is injective; (c) left inverse needs a non-empty domain, 𝒫(X) ∋ ∅; (e) the restriction is onto.
 17. 3.4 repair: no `@def-partial-order` or "(PO2)" remains, and the analogy sentence is true.
-18. The 3.4 Quick check (x/2 ≤ ½ < 1); the comparability paragraph's claim (the image of ℕ under any map is countable, @prp-countable-image).
-19. 04 B4: (b) the composite and Schröder–Bernstein; (d) injectivity of S ↦ p(S); (a) and (c).
+18. The 3.4 Quick check (5 ∉ [0, 1]; x/2 ≤ ½ < 1); the `[Looking ahead]` remark's claim (the image of ℕ under any map is countable, @prp-countable-image).
+19. 04 B4: (b) the composite and Schröder–Bernstein; (c) the composite injection; (d) injectivity of S ↦ p(S); (a).
 20. Every row of §4.6 by grep after S3: no "Section 3.6", and no "Section 3.1" meaning finite sets.
+
+**Frozen after S2 (2026-10-25).**
 
 ## 8. Notes for S3 and S4
 
@@ -400,4 +403,37 @@ Not edited by this chapter's drafters. Listed for the coordinator.
 - **Review (lean workflow, layout §7):** every Chapter 3 section is a moved section, so S8 and a changed-only blind review. The boxes, scratch work, tables, new examples, B4s, checks, the 04:52 repair and the pointer edits count as changes. No section runs the full pipeline.
 - **Open for the author** (none blocking):
   1. 3.4 is a method section (it introduces a box) at layout level "Idea". It gets the box, one Givens/Goal table and a Prove-or-disprove item, but no `[Scratch work]`. STYLE §12.14's four devices are met except the scratch idea, which the layout's level excludes.
-  2. The full-track Time may come out above 30 h (§5).
+  2. The Time projects to about 30 h core and 45 h full, above layout §2's 25/30 (§5).
+  3. 3.4 and 3.5 already exceed the layout's whole-file figures (4,214 > 4,200; 3,709 > 3,700). The blueprint reads all budgets as main line to Exercises, as Chapters 1–2 did.
+
+## S2 replies (round 1)
+
+Two blind referees (R1, R2). Every finding is applied unless marked "answered".
+
+**R1**
+1. *exm-choice-or-rule (d), forward reason (gap).* Applied: the comparison with 02 B1 (c) is dropped; (d) ends on its formula and the closing sentence stands. No reason rests on 3.3 (S2a 7).
+2. *thm-algebraic-countable Idea clause (error).* Applied: "Steps 2 and 3 are route (S) …: each union is the image of a countable grid. Step 1 only cites closure under products and subsets."
+3. *Rule 3 / comparability paragraph (minor).* Applied: rule 3 restated (no @label into Chapters 4–5; later-section pointers are prose and never reasons; the existing in-chapter previews are kept, renumbered). The comparability hook becomes a `[Looking ahead]` remark at the end of 3.4's main line (§12.1's form).
+4. *03 B4 (b) repeats 03 B2 (minor).* Applied: (b) is now "no two consecutive 1s", by the interleaving injection and (ii) ⇒ (i).
+5. *04 B4 (c) answered in the text (minor).* Applied: (c) is now "If |A| ≤ |B| and B is countable, then A is countable" (true, composite injection).
+6. *exm-list-integer-combinations title (minor).* Applied: `[Integer combinations of 1 and √2]`; infinitude uses ℕ ⊆ S directly.
+7. *Quick check wording (minor).* Applied: "Does this line need @ax-choice?"; "No: it need not."
+8. *list-it Template citation (minor).* Applied: (S) cites @def-countable or @prp-countable-image; (I) cites (ii) ⇒ (i).
+9. *[0,1] ∪ {5} check (minor).* Applied: "Since 5 ∉ [0, 1], the two clauses define a function into [0, 1]."
+10. *"first contradiction" (minor).* Applied: the hook says "proved Russell's theorem".
+11. *S2a 10 misreads 1.5's check (minor).* Applied: 10010 is recorded as an unrelated indicator that differs from the diagonal.
+12. *Whole-file vs main-line budgets (minor).* Applied: §8 "Open for the author" item 3; the word-count paragraph says so.
+
+**R2**
+1. *exm-choice-or-rule (d) (gap).* Applied, as R1.1.
+2. *Forward-pointer count; Looking-ahead form (gap).* Applied, as R1.3. The true state is recorded in rule 3; 02:139 and 02:201 are kept as in-chapter previews (renumbered to 3.3), carrying no reason.
+3. *exm-diagonal-outgrows-list gives away 03 B1 (gap).* Applied, fix (1): the "In particular … not on the list" sentence is removed; the text never states g ≠ f_k. S2a 14 checks this.
+4. *Time projection (gap).* Applied: §5 projects about 30 h core / 45 h full from the index's rates, whole-file words about 27,500–28,000; the overrun against layout §2 goes to the author (§8 item 2).
+5. *Box word caps (minor).* Applied: list-it and name-the-choice cut to ≤ 120 words; list-it keeps two failures (01:35 named as the existing warning); name-the-choice merges the empty-set point into the failure line.
+6. *Quick check (b) duplicates the second example (minor).* Applied: (b) is now the pairs (q, n) ∈ ℚ × ℕ with q·n ∈ ℤ (a subset, by inclusion). `exm-list-two-element-subsets` keeps its data; its overlap with 01 B1 (b) is answered: B1 (b) is ordered pairs by a surjection-style listing, the example codes unordered sets by an injection.
+7. *Russell payoff not a "Back to …" subsection; says it twice (minor).* Applied: the subsection is retitled `## Back to Russell: Cantor's theorem`; the hook is cut to two sentences and leaves the identification to 03:91.
+8. *03:3 frame (minor).* Applied: §4.3 item 2 edits 03:3 to name the game of Section 1.5.
+9. *02:47 history (minor).* Applied: the two Gödel/Cohen sentences become one line.
+10. *S2a 10 (minor).* Applied, as R1.11.
+11. *03 B4 (a) unflagged choice (minor).* Applied: one sentence says each P_p is listed by a rule, so no @ax-choice, as in @exm-choice-free-unions.
+12. *R items reach Chapter 1 only by vocabulary (minor).* Applied: R3's solution gains a clause naming @exm-method-injectivity and @exm-method-surjectivity (§4.5 item 4).
