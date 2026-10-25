@@ -23,6 +23,13 @@ items:
     date: '2026-10-26'
     model: claude-opus-5-5
     evidence: NOTATION.md:84 NOTATION credits the symbol f|_A to F2.6 §01, but it was introduced earlier.
+  - stage: S8
+    verdict: correct
+    by: coordinator
+    hash: 229bf1035164
+    date: '2026-10-26'
+    evidence: 01:27-41 statement and its uses checked; the only open point is the NOTATION.md locator
+      for f|_A (shared file, routed to the coordinator todo), not a defect in Chapter 5
 - key: prp-restriction-properties
   kind: prp
   file: 01-restriction-extension-and-gluing.md
@@ -96,7 +103,7 @@ items:
   kind: thm
   file: 01-restriction-extension-and-gluing.md
   line: 91
-  hash: 68a0f789ab8c
+  hash: 279d737754d0
   verdicts:
   - stage: S5a
     verdict: minor
@@ -167,6 +174,14 @@ items:
     evidence: 'The L128 remark now shows that the theorem''s conclusion fails without the cover: X={0,1},
       A_1={0}, two extensions. Y is not named, but f_1(0)=0 and ''both ways'' assume Y={0,1}. ''the rule
       r'' is fixed.'
+  - stage: S8
+    verdict: correct
+    by: coordinator
+    hash: d3ffaca24c7e
+    date: '2026-10-26'
+    evidence: '01:115-128 proof re-read: cover gives (Fn1), agreement (Fn2), uniqueness by prp-function-equality;
+      L128 remark now names X = Y = {0,1}, A_1 = {0}, f_1(0) = 0, giving two extensions, so the cover
+      is needed; rule r fixed'
 - key: exm-method-gluing
   kind: exm
   file: 01-restriction-extension-and-gluing.md
@@ -191,7 +206,7 @@ items:
   kind: exm
   file: 01-restriction-extension-and-gluing.md
   line: 142
-  hash: 6c3a5f89bc20
+  hash: 0fd72a314ab8
   verdicts:
   - stage: S5a
     verdict: correct
@@ -482,7 +497,7 @@ items:
   kind: exr
   file: 01-restriction-extension-and-gluing.md
   line: 339
-  hash: b83f39a11f68
+  hash: 8fd6cee52f15
   verdicts:
   - stage: S5a
     verdict: correct
@@ -558,7 +573,7 @@ items:
   kind: exr
   file: 01-restriction-extension-and-gluing.md
   line: 386
-  hash: 13ed76cb6985
+  hash: 1f1b58309aa7
   verdicts:
   - stage: S5a
     verdict: correct
@@ -604,8 +619,8 @@ items:
 - key: exr-restriction-extension-and-gluing-c2
   kind: exr
   file: 01-restriction-extension-and-gluing.md
-  line: 402
-  hash: f89e1cd39211
+  line: 408
+  hash: 8a833f9077ff
   verdicts:
   - stage: S5a
     verdict: correct
@@ -651,8 +666,8 @@ items:
 - key: exr-restriction-extension-and-gluing-c3
   kind: exr
   file: 01-restriction-extension-and-gluing.md
-  line: 420
-  hash: d30670bdf5ab
+  line: 426
+  hash: 457472c44768
   verdicts:
   - stage: S5a
     verdict: correct
@@ -824,6 +839,14 @@ items:
     evidence: The aftermath argument f injective <=> q injective is correct and complete. Its rewritten
       ledger line says 'thm-classes-partition (b) (cited)', but the prose no longer cites it. Both directions
       silently use q(x) = q(x') <=> x ~_f x'. The NOTATION item F018 is still deferred.
+  - stage: S8
+    verdict: correct
+    by: coordinator
+    hash: ec42d3203420
+    date: '2026-10-26'
+    evidence: 02:92-137 theorem and proof checked; aftermath f injective iff q injective now cites thm-classes-partition
+      (b) in both directions (02:137), matching ledger line 02:445; NOTATION rows for bar f and iota routed
+      to shared todo
 - key: proof:thm-canonical-factorization
   kind: proof
   file: 02-fibres-and-factorization.md
@@ -871,6 +894,14 @@ items:
       of school facts: AN1.1 thm-nth-root (square roots, for ''[x] ↦ x^2 maps onto [0, ∞)'') and F3.2
       (arithmetic of fractions). STATUS.md''s promise table has no F2.6 §02 row for them, while the comparable
       F2.1 and F2.2 school-fact rows exist.'
+  - stage: S8
+    verdict: correct
+    by: coordinator
+    hash: fb5ee7955361
+    date: '2026-10-26'
+    evidence: '02:145-165 solution checked: (a,b)~(c,d) iff ad=bc, f onto Q, numerator map fails at (1,2),(2,4);
+      sidecar exm-fraction-map-factorization.py passes; STATUS promise-table row is a shared-file item
+      routed to the todo'
 - key: check:02-fibres-and-factorization:3
   kind: check
   file: 02-fibres-and-factorization.md
@@ -1110,7 +1141,7 @@ items:
   kind: exr
   file: 02-fibres-and-factorization.md
   line: 315
-  hash: 64e759bc39a8
+  hash: 32929b537d04
   verdicts:
   - stage: S5a
     verdict: minor
@@ -1157,7 +1188,7 @@ items:
   kind: exr
   file: 02-fibres-and-factorization.md
   line: 327
-  hash: 1347a0a83752
+  hash: 9356b5d5b011
   verdicts:
   - stage: S5a
     verdict: correct
@@ -1206,7 +1237,7 @@ items:
   kind: exr
   file: 02-fibres-and-factorization.md
   line: 355
-  hash: 8f2873db4dd5
+  hash: 7df8daa8f6ea
   verdicts:
   - stage: S5a
     verdict: correct
@@ -1253,8 +1284,8 @@ items:
 - key: exr-fibres-and-factorization-c2
   kind: exr
   file: 02-fibres-and-factorization.md
-  line: 371
-  hash: ab4e01c8b1f5
+  line: 380
+  hash: 48c1e9f89dc9
   verdicts:
   - stage: S5a
     verdict: correct
@@ -1300,10 +1331,18 @@ items:
     model: claude-opus-5-5
     evidence: 'Second failure added (injective maps need not be right-cancellable). Counterexample rechecked:
       iota:{0}->{0,1}, u=id, v=const 0 gives u∘iota = v∘iota and u ≠ v.'
+  - stage: S8
+    verdict: correct
+    by: coordinator
+    hash: 48c1e9f89dc9
+    date: '2026-10-26'
+    evidence: '02:381-400 re-read after rewording 02:391 (''even for an injective map p, u o p = v o p
+      need not give u = v''), which the counterexample iota: {0} -> {0,1}, u = id, v = const 0 witnesses;
+      repair via q onto is correct'
 - key: exr-fibres-and-factorization-c3
   kind: exr
   file: 02-fibres-and-factorization.md
-  line: 398
+  line: 407
   hash: 9f778b197c03
   verdicts:
   - stage: S5a
@@ -1575,6 +1614,13 @@ items:
     model: claude-opus-5-5
     evidence: The idea box now uses the bracketed (y*x)*z and is correct. The deferred F028 (no NOTATION
       row for x^{-1} and -x) is still open, so the item stays minor.
+  - stage: S8
+    verdict: correct
+    by: coordinator
+    hash: f3e6d8a589b7
+    date: '2026-10-26'
+    evidence: 03:174-192 statement, idea box (bracketed (y*x)*z) and proof checked; x^{-1}, -x are defined
+      in the prose at 03:192; the missing NOTATION row (F028) is shared and routed to the todo
 - key: proof:prp-operation-inverse-unique
   kind: proof
   file: 03-binary-operations.md
@@ -1651,7 +1697,7 @@ items:
   kind: proof
   file: 03-binary-operations.md
   line: 238
-  hash: 20a38f9ec746
+  hash: 2f95d7dbf236
   verdicts:
   - stage: S5a
     verdict: correct
@@ -1689,7 +1735,7 @@ items:
   kind: check
   file: 03-binary-operations.md
   line: 257
-  hash: 1adbb2484f3f
+  hash: ba6718f814c5
   verdicts:
   - stage: S5a
     verdict: minor
@@ -1752,6 +1798,14 @@ items:
     evidence: '03-binary-operations.md:308: the warning says "f^{-1} always means the inverse function".
       That contradicts the preimage notation f^{-1}(B), which is defined for every f (NOTATION row 80)
       and is used in this chapter at 02:28, 02:40 and 04:639.'
+  - stage: S8
+    verdict: correct
+    by: coordinator
+    hash: b9a68a9337de
+    date: '2026-10-26'
+    evidence: 03:269-309 parts (a)-(c) checked; warning at 03:308 now says f^{-1} standing alone is the
+      inverse function while f^{-1}(B) stays the preimage of def-preimage, removing the clash with 02:28,
+      02:40, 04:639
 - key: proof:prp-pointwise-operations
   kind: proof
   file: 03-binary-operations.md
@@ -1814,7 +1868,7 @@ items:
   kind: proof
   file: 03-binary-operations.md
   line: 321
-  hash: 4e9018af8d95
+  hash: 15da476bfa08
   verdicts:
   - stage: S5a
     verdict: correct
@@ -1912,7 +1966,7 @@ items:
   kind: exr
   file: 03-binary-operations.md
   line: 383
-  hash: b3e861011f3b
+  hash: 5f5bbc16fd4d
   verdicts:
   - stage: S5a
     verdict: minor
@@ -1958,7 +2012,7 @@ items:
   kind: exr
   file: 03-binary-operations.md
   line: 414
-  hash: 6b000573bb77
+  hash: cde517168f38
   verdicts:
   - stage: S5a
     verdict: correct
@@ -2065,7 +2119,7 @@ items:
   kind: exr
   file: 03-binary-operations.md
   line: 471
-  hash: 5a0859c05579
+  hash: de16c0848ad4
   verdicts:
   - stage: S5a
     verdict: minor
@@ -2110,7 +2164,7 @@ items:
   kind: exr
   file: 03-binary-operations.md
   line: 502
-  hash: 1c0783cb3c01
+  hash: 06758133157e
   verdicts:
   - stage: S5a
     verdict: correct
@@ -2165,7 +2219,7 @@ items:
   kind: exr
   file: 03-binary-operations.md
   line: 523
-  hash: bca063d72a5e
+  hash: 91008fab5c4a
   verdicts:
   - stage: S5a
     verdict: correct
@@ -2561,7 +2615,7 @@ items:
   kind: exm
   file: 04-permutations-and-iteration.md
   line: 247
-  hash: 74b834486886
+  hash: 745cafe3d7c6
   verdicts:
   - stage: S5a
     verdict: minor
@@ -2722,7 +2776,7 @@ items:
   kind: proof
   file: 04-permutations-and-iteration.md
   line: 344
-  hash: 4ade4025fdc0
+  hash: e5ec58d78318
   verdicts:
   - stage: S5a
     verdict: minor
@@ -2825,7 +2879,7 @@ items:
   kind: exm
   file: 04-permutations-and-iteration.md
   line: 386
-  hash: ccae0287d208
+  hash: 8040658a108f
   verdicts:
   - stage: S5a
     verdict: gap
@@ -2886,7 +2940,7 @@ items:
   kind: exr
   file: 04-permutations-and-iteration.md
   line: 424
-  hash: 07325a7e2817
+  hash: 4ef62df79509
   verdicts:
   - stage: S5a
     verdict: minor
@@ -3045,7 +3099,7 @@ items:
   kind: exr
   file: 04-permutations-and-iteration.md
   line: 519
-  hash: bc8ab176a31f
+  hash: b47489b6aff0
   verdicts:
   - stage: S5a
     verdict: correct
@@ -3184,11 +3238,19 @@ items:
     evidence: 04:594-647 do not follow the roles STYLE §11.5 sets. R1's method is induction on a recursive
       sequence (Ch2, three chapters back), not the previous chapter. The previous-chapter item is R3 (Ch4).
       R4's solution names its tool but does not say why the look-alike tools fail.
+  - stage: S8
+    verdict: correct
+    by: coordinator
+    hash: a12b57a3e693
+    date: '2026-10-26'
+    evidence: 04:594-605 R1 algebra checked (f^{n+1}(x) = 2(2^n x + 2^n - 1) + 1); sidecar r1 passes;
+      R4 (04:637-648) now says why the look-alike tools fail; R1/R3 slot order is fixed by the frozen
+      blueprint, an author call routed to the todo
 - key: exr-permutations-and-iteration-r2
   kind: exr
   file: 04-permutations-and-iteration.md
   line: 608
-  hash: 965622af6d1a
+  hash: 3f5d9d6bd1ad
   verdicts:
   - stage: S5a
     verdict: minor
@@ -3265,7 +3327,7 @@ items:
   kind: exr
   file: 04-permutations-and-iteration.md
   line: 636
-  hash: 8368209ec307
+  hash: 76cd5fa737be
   verdicts:
   - stage: S5a
     verdict: correct

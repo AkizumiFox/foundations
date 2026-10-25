@@ -125,7 +125,7 @@ So \( f \coloneqq (G, Y) \) is a function \( X \to Y \). Let \( i \in I \). Both
 *Uniqueness.* Let \( g \colon X \to Y \) also satisfy \( g|_{A_i} = f_i \) for every \( i \in I \). Let \( x \in X \), and choose \( i \) with \( x \in A_i \). Then \( g(x) = g|_{A_i}(x) = f_i(x) = f|_{A_i}(x) = f(x) \). By @prp-function-equality, \( g = f \). This proves the theorem.
 :::
 
-In the existence part, the proof used the cover only for (Fn1) and agreement only for (Fn2). Each hypothesis is needed. If a point \( x \) lies in no \( A_i \), the union graph has no pair with first coordinate \( x \), and (Fn1) fails; the theorem fails too, as soon as \( Y \) has two elements: for \( X = \{0, 1\} \), \( A_1 = \{0\} \) and \( f_1(0) = 0 \), both ways of choosing the value at \( 1 \) give a function \( f \) with \( f|_{A_1} = f_1 \), so "exactly one" fails. The rule \( r \) of the hook shows two pieces that cover \( \nR \) and disagree at \( 0 \), where (Fn2) fails.
+In the existence part, the proof used the cover only for (Fn1) and agreement only for (Fn2). Each hypothesis is needed. If a point \( x \) lies in no \( A_i \), the union graph has no pair with first coordinate \( x \), and (Fn1) fails; the theorem fails too: for \( X = Y = \{0, 1\} \), \( A_1 = \{0\} \) and \( f_1(0) = 0 \), both ways of choosing the value at \( 1 \) give a function \( f \) with \( f|_{A_1} = f_1 \), so "exactly one" fails. The rule \( r \) of the hook shows two pieces that cover \( \nR \) and disagree at \( 0 \), where (Fn2) fails.
 
 The theorem is used so often that its use deserves a template. Step (4) below is the one most often forgotten.
 

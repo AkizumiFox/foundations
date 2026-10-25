@@ -134,7 +134,7 @@ by @def-composition. Hence \( f = \iota \circ \bar f \circ q \) by @prp-function
 where the first equality holds because \( \iota \) sends each point to itself. The two functions have the same domain and codomain, so \( \bar f' = \bar f \) by @prp-function-equality. This proves the theorem.
 :::
 
-Read the factorization from left to right: every function is a **surjection** (\( q \), onto by @def-quotient-set), followed by a **bijection** (\( \bar f \)), followed by an **injection** (\( \iota \), which sends each point to itself, so different points stay different). All the identifying is done by \( q \), all the renaming by \( \bar f \), and all the enlarging of the target by \( \iota \). The two properties of Section 1.5 sit at the two ends. The function \( f \) is injective exactly when \( q \) is: if \( f \) is injective and \( q(x) = q(x') \), then \( f(x) = f(x') \) and \( x = x' \); if \( q \) is injective and \( f(x) = f(x') \), then \( q(x) = q(x') \) and \( x = x' \). And \( f \) is surjective exactly when \( f(X) = Y \), that is, when \( \iota = \id_Y \).
+Read the factorization from left to right: every function is a **surjection** (\( q \), onto by @def-quotient-set), followed by a **bijection** (\( \bar f \)), followed by an **injection** (\( \iota \), which sends each point to itself, so different points stay different). All the identifying is done by \( q \), all the renaming by \( \bar f \), and all the enlarging of the target by \( \iota \). The two properties of Section 1.5 sit at the two ends. The function \( f \) is injective exactly when \( q \) is: if \( f \) is injective and \( q(x) = q(x') \), then \( x \sim_f x' \) by @thm-classes-partition (b), so \( f(x) = f(x') \) and \( x = x' \); if \( q \) is injective and \( f(x) = f(x') \), then \( x \sim_f x' \), so \( q(x) = q(x') \) by @thm-classes-partition (b), and \( x = x' \). And \( f \) is surjective exactly when \( f(X) = Y \), that is, when \( \iota = \id_Y \).
 
 ::: {.warning}
 The middle map is a bijection onto the **image**, not onto the codomain. With target \( Y \), the rule \( [x] \mapsto f(x) \) is still a well-defined injection, but it is surjective only when \( f \) is. For \( f(x) = x^2 \) on \( \nR \), the rule \( [x] \mapsto x^2 \) maps the classes \( \{-x, x\} \) onto \( [0, \infty) \) and reaches no negative number of the codomain \( \nR \).
@@ -181,7 +181,7 @@ Let \( \sim \) be an equivalence relation on a set \( X \), let \( q \colon X \t
 :::
 
 ::: {.idea}
-This is the canonical factorization's argument with \( \sim \) in place of \( \sim_f \) (@exm-method-well-definedness for the existence, \( q \) onto for the uniqueness). The new part is the forward direction of (a): if \( \bar g \) exists, equivalent points have one class, so \( g = \bar g \circ q \) gives them one value. For (b) and (c), translate statements about classes into statements about representatives with @thm-classes-partition (b).
+This is the argument of @thm-canonical-factorization with \( \sim \) in place of \( \sim_f \) (@exm-method-well-definedness for the existence, \( q \) onto for the uniqueness). The new part is the forward direction of (a): if \( \bar g \) exists, equivalent points have one class, so \( g = \bar g \circ q \) gives them one value. For (b) and (c), translate statements about classes into statements about representatives with @thm-classes-partition (b).
 :::
 
 ::: {.proof}
@@ -388,7 +388,7 @@ Is the conclusion true? Which line fails, and why? Give a counterexample to the 
 :::
 
 ::: {.solution}
-The conclusion is true: it is the uniqueness clause, proved in the text. Lines (1) and (2) are correct. Line (3) fails twice. First, \( q \) is injective only when every class is a single point (the second reading after @thm-classes-partition), which the theorem does not assume. Second, even an injective map need not be cancellable on the right.
+The conclusion is true: it is the uniqueness clause, proved in the text. Lines (1) and (2) are correct. Line (3) fails twice. First, \( q \) is injective only when every class is a single point (the second reading after @thm-classes-partition), which the theorem does not assume. Second, even for an injective map \( p \), \( u \circ p = v \circ p \) need not give \( u = v \).
 
 *Counterexample to the step.* For congruence modulo \( 12 \) on \( \nZ \), \( q(0) = [0] = [12] = q(12) \) with \( 0 \ne 12 \), so \( q \) is not injective, and the claim "\( q \) is injective" is false in the very case the clock needs. *Counterexample to the inference.* The inclusion \( \iota \colon \{0\} \to \{0, 1\} \) is injective; let \( u = \id_{\{0, 1\}} \) and \( v \) be the constant function \( 0 \). Then \( u \circ \iota = v \circ \iota \) but \( u \ne v \).
 
