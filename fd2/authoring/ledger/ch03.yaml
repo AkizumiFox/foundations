@@ -163,10 +163,22 @@ items:
       then g∘h = id_A and thm-left-inverse-iff-injective (a). (ii)=>(iii): lem-subsets-of-naturals; the
       inverse is now cited to prp-equinumerous-properties (b), whose proof (01-finite-sets.md) shows that
       f^{-1} is a bijection, and the composite to thm-composition-injective-surjective (c); the countably'
+- key: exm-method-list-it
+  kind: exm
+  file: 01-countable-sets.md
+  line: 129
+  hash: 31b4bdd41887
+  verdicts: []
+- key: check:01-countable-sets:1
+  kind: check
+  file: 01-countable-sets.md
+  line: 139
+  hash: 31bb2cf351ed
+  verdicts: []
 - key: prp-countable-subset
   kind: prp
   file: 01-countable-sets.md
-  line: 133
+  line: 151
   hash: 510bac694aba
   verdicts:
   - stage: S5a
@@ -186,7 +198,7 @@ items:
 - key: proof:prp-countable-subset
   kind: proof
   file: 01-countable-sets.md
-  line: 139
+  line: 157
   hash: b66132e1efee
   verdicts:
   - stage: S5a
@@ -206,7 +218,7 @@ items:
 - key: prp-countable-image
   kind: prp
   file: 01-countable-sets.md
-  line: 143
+  line: 161
   hash: 00244397229b
   verdicts:
   - stage: S5a
@@ -226,7 +238,7 @@ items:
 - key: proof:prp-countable-image
   kind: proof
   file: 01-countable-sets.md
-  line: 149
+  line: 167
   hash: c7bb251cb609
   verdicts:
   - stage: S5a
@@ -248,7 +260,7 @@ items:
 - key: prp-union-two-countable
   kind: prp
   file: 01-countable-sets.md
-  line: 155
+  line: 173
   hash: b225d3958a0f
   verdicts:
   - stage: S5a
@@ -268,7 +280,7 @@ items:
 - key: proof:prp-union-two-countable
   kind: proof
   file: 01-countable-sets.md
-  line: 165
+  line: 183
   hash: 842c04c5812b
   verdicts:
   - stage: S5a
@@ -291,7 +303,7 @@ items:
 - key: exm-rows-first-listing
   kind: exm
   file: 01-countable-sets.md
-  line: 189
+  line: 207
   hash: ef4abb6e5c2e
   verdicts:
   - stage: S5a
@@ -312,7 +324,7 @@ items:
 - key: thm-product-countable
   kind: thm
   file: 01-countable-sets.md
-  line: 209
+  line: 227
   hash: 43471f451e59
   verdicts:
   - stage: S5a
@@ -332,7 +344,7 @@ items:
 - key: proof:thm-product-countable
   kind: proof
   file: 01-countable-sets.md
-  line: 221
+  line: 250
   hash: 993a346bc037
   verdicts:
   - stage: S5a
@@ -357,7 +369,7 @@ items:
 - key: cor-product-countable
   kind: cor
   file: 01-countable-sets.md
-  line: 241
+  line: 270
   hash: 574846896c7c
   verdicts:
   - stage: S5a
@@ -378,7 +390,7 @@ items:
 - key: proof:cor-product-countable
   kind: proof
   file: 01-countable-sets.md
-  line: 254
+  line: 283
   hash: 9c7b316458c7
   verdicts:
   - stage: S5a
@@ -409,43 +421,16 @@ items:
       functions, which is true when exactly one factor is empty (i or j may be non-empty, but the domain
       A×B is empty). The S5a/S5b empty-case findings are resolved. :261 now says the map 'is a function,
       since a k-tup
-- key: check:02-countable-sets:1
+- key: check:01-countable-sets:2
   kind: check
   file: 01-countable-sets.md
-  line: 266
-  hash: acd73886ae2c
-  verdicts:
-  - stage: S5a
-    verdict: minor
-    by: refereeA
-    hash: 74fc0d77968b
-    date: '2026-10-11'
-    model: claude-opus-5-5
-    evidence: '02-countable-sets.md:299 ''(It is in fact finite: Exercise C2 of Section 8.1 counts it.)''
-      The cited exercise does not count L^5.'
-  - stage: S5b
-    verdict: minor
-    by: refereeB
-    hash: 74fc0d77968b
-    date: '2026-10-11'
-    model: claude-opus-5-5
-    evidence: '02-countable-sets.md:299 ''Exercise C2 of Section 8.1 counts it'' is not true of the page:
-      C2 counts A x B and B^A, not the set L^5 of 5-tuples.'
-  - stage: S7r
-    verdict: correct
-    by: rereferee
-    hash: acd73886ae2c
-    date: '2026-10-11'
-    model: claude-opus-5-5
-    evidence: 'The check (:266-272) now sits right after cor-product-countable and its remark, as STYLE
-      §5 requires (:179), so the placement finding is resolved. I solved it myself: L has 26 elements,
-      so it is countable by (iii)=>(i), and L^5 is countable by cor-product-countable (b) with k=5, which
-      agrees with the solution. The parenthetical now names Exercise C2 (a) of Section 8.1 (01-finite-sets.md:484,
-      ''A×B '
+  line: 295
+  hash: 504844455f52
+  verdicts: []
 - key: thm-integers-rationals-countable
   kind: thm
   file: 01-countable-sets.md
-  line: 280
+  line: 309
   hash: cdecb44f29a4
   verdicts:
   - stage: S5a
@@ -465,7 +450,7 @@ items:
 - key: proof:thm-integers-rationals-countable
   kind: proof
   file: 01-countable-sets.md
-  line: 290
+  line: 319
   hash: 9ccad1570deb
   verdicts:
   - stage: S5a
@@ -497,10 +482,22 @@ items:
       split k >= 0 against -(k+1) <= -1, then the same-parity cases. Surjectivity: n != 0, then lem-naturals-arithmetic
       (c). Q: Z_{>0} ⊆ N is countable by prp-countable-subset; then cor-product-countable (a) and prp-countable-image.
       Infinite: N ⊆ Q, exm-hilbert-hotel and prp-subset-finite, then (i)=>(iii). All lab'
+- key: exm-list-integer-combinations
+  kind: exm
+  file: 01-countable-sets.md
+  line: 337
+  hash: e7f8c62c6f26
+  verdicts: []
+- key: exm-list-two-element-subsets
+  kind: exm
+  file: 01-countable-sets.md
+  line: 349
+  hash: 650ce7d8bb22
+  verdicts: []
 - key: exr-countable-sets-a1
   kind: exr
   file: 01-countable-sets.md
-  line: 308
+  line: 365
   hash: dfab47c7031a
   verdicts:
   - stage: S5a
@@ -530,7 +527,7 @@ items:
 - key: exr-countable-sets-b1
   kind: exr
   file: 01-countable-sets.md
-  line: 331
+  line: 388
   hash: 53ee689205a4
   verdicts:
   - stage: S5a
@@ -560,8 +557,8 @@ items:
 - key: exr-countable-sets-b2
   kind: exr
   file: 01-countable-sets.md
-  line: 354
-  hash: ddf878358348
+  line: 411
+  hash: 147fe11653a4
   verdicts:
   - stage: S5a
     verdict: correct
@@ -617,7 +614,7 @@ items:
 - key: exr-countable-sets-b3
   kind: exr
   file: 01-countable-sets.md
-  line: 380
+  line: 437
   hash: e41eec4f10b3
   verdicts:
   - stage: S5a
@@ -644,10 +641,16 @@ items:
     evidence: 02:380-396. s(2q+r) = (q,r) is a bijection; the script checked s(0..3) and surjectivity
       onto [0,10)×{0,1}. The property list fits the answer space, and the alternative s' qualifies. The
       worked example is z in thm-integers-rationals-countable.
+- key: exr-countable-sets-b4
+  kind: exr
+  file: 01-countable-sets.md
+  line: 455
+  hash: fbc7a214f9c1
+  verdicts: []
 - key: exr-countable-sets-c1
   kind: exr
   file: 01-countable-sets.md
-  line: 400
+  line: 483
   hash: 27388e9686c3
   verdicts:
   - stage: S5a
@@ -691,7 +694,7 @@ items:
 - key: exr-countable-sets-c2
   kind: exr
   file: 01-countable-sets.md
-  line: 456
+  line: 539
   hash: be848a088ba5
   verdicts:
   - stage: S5a
@@ -775,10 +778,28 @@ items:
       forming (a_n) as a choice function for ({a in A : a > sup A - 1/n})_n. The warning correctly separates
       least preimages of a surjection already in hand from choosing the surjections themselves. I found
       no defects.'
+- key: exm-method-name-the-choice
+  kind: exm
+  file: 02-countable-unions-and-choice.md
+  line: 75
+  hash: 9f9aaaa10df8
+  verdicts: []
+- key: check:02-countable-unions-and-choice:1
+  kind: check
+  file: 02-countable-unions-and-choice.md
+  line: 85
+  hash: d253830b7b8e
+  verdicts: []
+- key: exm-choice-or-rule
+  kind: exm
+  file: 02-countable-unions-and-choice.md
+  line: 93
+  hash: 254b4c76db78
+  verdicts: []
 - key: thm-surjection-right-inverse
   kind: thm
   file: 02-countable-unions-and-choice.md
-  line: 77
+  line: 122
   hash: 3ed13ecdf0a6
   verdicts:
   - stage: S5a
@@ -800,7 +821,7 @@ items:
 - key: proof:thm-surjection-right-inverse
   kind: proof
   file: 02-countable-unions-and-choice.md
-  line: 87
+  line: 132
   hash: bf89e497abdd
   verdicts:
   - stage: S5a
@@ -821,32 +842,16 @@ items:
     model: claude-opus-5-5
     evidence: 03:88 steps are sound. 'So f∘g = id_Y' uses prp-function-equality (Ch 6) and '⋃P_y ⊆ X'
       uses def-family-union-intersection. Neither is cited or ledgered. [finding refuted by skeptics]
-- key: check:03-countable-unions-and-choice:1
+- key: check:02-countable-unions-and-choice:2
   kind: check
   file: 02-countable-unions-and-choice.md
-  line: 93
+  line: 138
   hash: 338f418708d3
-  verdicts:
-  - stage: S5a
-    verdict: correct
-    by: refereeA
-    hash: 338f418708d3
-    date: '2026-10-11'
-    model: claude-opus-5-5
-    evidence: 03:94-99. g(n)=n gives |g(n)|=n, and g is defined by a formula. (Saying 'preimages n and
-      -n' is loose at n=0, where there is only one preimage, but nothing depends on it.)
-  - stage: S5b
-    verdict: correct
-    by: refereeB
-    hash: 338f418708d3
-    date: '2026-10-11'
-    model: claude-opus-5-5
-    evidence: '03:93-99: g(n) = n gives f(g(n)) = |n| = n. The right inverse is given by a rule, as the
-      blueprint asks.'
+  verdicts: []
 - key: thm-countable-union
   kind: thm
   file: 02-countable-unions-and-choice.md
-  line: 105
+  line: 150
   hash: 989a8951c013
   verdicts:
   - stage: S5a
@@ -879,7 +884,7 @@ items:
 - key: proof:thm-countable-union
   kind: proof
   file: 02-countable-unions-and-choice.md
-  line: 119
+  line: 178
   hash: 408322484b19
   verdicts:
   - stage: S5a
@@ -905,8 +910,8 @@ items:
 - key: exm-choice-free-unions
   kind: exm
   file: 02-countable-unions-and-choice.md
-  line: 149
-  hash: 6b144da7e9c9
+  line: 208
+  hash: 7cafc426d932
   verdicts:
   - stage: S5a
     verdict: gap
@@ -951,7 +956,7 @@ items:
 - key: thm-algebraic-countable
   kind: thm
   file: 02-countable-unions-and-choice.md
-  line: 181
+  line: 240
   hash: fd13a725b6ad
   verdicts:
   - stage: S5a
@@ -975,7 +980,7 @@ items:
 - key: proof:thm-algebraic-countable
   kind: proof
   file: 02-countable-unions-and-choice.md
-  line: 191
+  line: 250
   hash: 8ece87dbb69d
   verdicts:
   - stage: S5a
@@ -999,7 +1004,7 @@ items:
 - key: exr-countable-unions-and-choice-a1
   kind: exr
   file: 02-countable-unions-and-choice.md
-  line: 207
+  line: 266
   hash: c0dc08fac519
   verdicts:
   - stage: S5a
@@ -1040,7 +1045,7 @@ items:
 - key: exr-countable-unions-and-choice-b1
   kind: exr
   file: 02-countable-unions-and-choice.md
-  line: 235
+  line: 294
   hash: 6d253859c42d
   verdicts:
   - stage: S5a
@@ -1070,7 +1075,7 @@ items:
 - key: exr-countable-unions-and-choice-b2
   kind: exr
   file: 02-countable-unions-and-choice.md
-  line: 258
+  line: 317
   hash: 298859a03063
   verdicts:
   - stage: S5a
@@ -1113,7 +1118,7 @@ items:
 - key: exr-countable-unions-and-choice-b3
   kind: exr
   file: 02-countable-unions-and-choice.md
-  line: 284
+  line: 343
   hash: 53644efddc6c
   verdicts:
   - stage: S5a
@@ -1150,10 +1155,16 @@ items:
       D is still used as a local letter. Approved text uses D locally in the same way (ch07 03-recursion.md:106,
       04-relations.md:263, 06-orders.md:341; ch08 02-countable-sets.md:351), so this is established practice
       and does not break a written rule. The mathematics is correct: D is countable by cor-product-cou'
+- key: exr-countable-unions-and-choice-b4
+  kind: exr
+  file: 02-countable-unions-and-choice.md
+  line: 353
+  hash: f592c193b83f
+  verdicts: []
 - key: exr-countable-unions-and-choice-c1
   kind: exr
   file: 02-countable-unions-and-choice.md
-  line: 296
+  line: 381
   hash: c6fe67935eeb
   verdicts:
   - stage: S5a
@@ -1193,7 +1204,7 @@ items:
 - key: exr-countable-unions-and-choice-c2
   kind: exr
   file: 02-countable-unions-and-choice.md
-  line: 317
+  line: 402
   hash: 54a4e35cda44
   verdicts:
   - stage: S5a
@@ -1227,7 +1238,7 @@ items:
 - key: exr-countable-unions-and-choice-c3
   kind: exr
   file: 02-countable-unions-and-choice.md
-  line: 357
+  line: 442
   hash: e1265fb9f289
   verdicts:
   - stage: S5a
@@ -1267,10 +1278,22 @@ items:
       (0 elements gives the empty set), the step through cor-remove-point and prp-union-two-countable,
       and the union identity. For (b): N is not finite (exm-hilbert-hotel, which deduces that N is infinite),
       and cho'
+- key: exm-five-strings-diagonal
+  kind: exm
+  file: 03-diagonal-arguments.md
+  line: 9
+  hash: 2254fb87eee9
+  verdicts: []
+- key: check:03-diagonal-arguments:1
+  kind: check
+  file: 03-diagonal-arguments.md
+  line: 27
+  hash: 7701303e5177
+  verdicts: []
 - key: thm-binary-sequences-uncountable
   kind: thm
   file: 03-diagonal-arguments.md
-  line: 33
+  line: 63
   hash: 20cd9d97499c
   verdicts:
   - stage: S5a
@@ -1291,7 +1314,7 @@ items:
 - key: proof:thm-binary-sequences-uncountable
   kind: proof
   file: 03-diagonal-arguments.md
-  line: 39
+  line: 84
   hash: 2914e2dc3eca
   verdicts:
   - stage: S5a
@@ -1312,31 +1335,34 @@ items:
     evidence: 04:39-45. Both clauses of def-countable are handled (non-empty because of the zero sequence;
       no surjection). The fact that 1-b lies in {0,1} and differs from b is ledgered at line 342. The
       rule tags are present.
-- key: check:04-diagonal-arguments:1
+- key: exm-method-diagonal
+  kind: exm
+  file: 03-diagonal-arguments.md
+  line: 94
+  hash: 4ff5579e659f
+  verdicts: []
+- key: check:03-diagonal-arguments:2
   kind: check
   file: 03-diagonal-arguments.md
-  line: 51
+  line: 104
+  hash: 8f02c6bfefb4
+  verdicts: []
+- key: check:03-diagonal-arguments:3
+  kind: check
+  file: 03-diagonal-arguments.md
+  line: 112
   hash: 6e6465b73e7a
-  verdicts:
-  - stage: S5a
-    verdict: correct
-    by: refereeA
-    hash: 6e6465b73e7a
-    date: '2026-10-11'
-    model: claude-opus-5-5
-    evidence: 04:51-57. ind_{n}(n)=1, so g is the zero sequence, and every f(n) has a 1 in place n. Correct.
-  - stage: S5b
-    verdict: correct
-    by: refereeB
-    hash: 6e6465b73e7a
-    date: '2026-10-11'
-    model: claude-opus-5-5
-    evidence: 04:51-57. f(n)(n) = 1 for every n, so g is the zero sequence, and it is not on the list.
-      The solution is a sibling block, as STYLE §5 requires.
+  verdicts: []
+- key: exm-diagonal-outgrows-list
+  kind: exm
+  file: 03-diagonal-arguments.md
+  line: 124
+  hash: ea87362eb737
+  verdicts: []
 - key: thm-cantor
   kind: thm
   file: 03-diagonal-arguments.md
-  line: 67
+  line: 146
   hash: 8a9ea7b71bab
   verdicts:
   - stage: S5a
@@ -1358,7 +1384,7 @@ items:
 - key: proof:thm-cantor
   kind: proof
   file: 03-diagonal-arguments.md
-  line: 81
+  line: 160
   hash: 5350b05bdaa0
   verdicts:
   - stage: S5a
@@ -1382,7 +1408,7 @@ items:
 - key: cor-powerset-naturals-uncountable
   kind: cor
   file: 03-diagonal-arguments.md
-  line: 97
+  line: 176
   hash: 70a95229f124
   verdicts:
   - stage: S5a
@@ -1402,7 +1428,7 @@ items:
 - key: proof:cor-powerset-naturals-uncountable
   kind: proof
   file: 03-diagonal-arguments.md
-  line: 103
+  line: 182
   hash: 8980286e4b5b
   verdicts:
   - stage: S5a
@@ -1423,7 +1449,7 @@ items:
 - key: def-decimal-expansion
   kind: def
   file: 03-diagonal-arguments.md
-  line: 117
+  line: 196
   hash: 524f6baae6b4
   verdicts:
   - stage: S5a
@@ -1469,7 +1495,7 @@ items:
 - key: thm-reals-uncountable-decimal
   kind: thm
   file: 03-diagonal-arguments.md
-  line: 160
+  line: 239
   hash: 820af0fe836d
   verdicts:
   - stage: S5a
@@ -1504,7 +1530,7 @@ items:
 - key: proof:thm-reals-uncountable-decimal
   kind: proof
   file: 03-diagonal-arguments.md
-  line: 170
+  line: 249
   hash: df5f0a7c5566
   verdicts:
   - stage: S5a
@@ -1540,7 +1566,7 @@ items:
 - key: cor-transcendental-exist
   kind: cor
   file: 03-diagonal-arguments.md
-  line: 197
+  line: 276
   hash: 497e2826fc68
   verdicts:
   - stage: S5a
@@ -1584,8 +1610,8 @@ items:
 - key: proof:cor-transcendental-exist
   kind: proof
   file: 03-diagonal-arguments.md
-  line: 203
-  hash: d57b10f07403
+  line: 282
+  hash: 11f3faaa5ea2
   verdicts:
   - stage: S5a
     verdict: correct
@@ -1630,7 +1656,7 @@ items:
 - key: exr-diagonal-arguments-a1
   kind: exr
   file: 03-diagonal-arguments.md
-  line: 215
+  line: 294
   hash: ad792aacfe3c
   verdicts:
   - stage: S5a
@@ -1661,7 +1687,7 @@ items:
 - key: exr-diagonal-arguments-b1
   kind: exr
   file: 03-diagonal-arguments.md
-  line: 240
+  line: 319
   hash: 5bd6bf86843a
   verdicts:
   - stage: S5a
@@ -1691,7 +1717,7 @@ items:
 - key: exr-diagonal-arguments-b2
   kind: exr
   file: 03-diagonal-arguments.md
-  line: 252
+  line: 331
   hash: 4c5c16f1b27d
   verdicts:
   - stage: S5a
@@ -1733,7 +1759,7 @@ items:
 - key: exr-diagonal-arguments-b3
   kind: exr
   file: 03-diagonal-arguments.md
-  line: 262
+  line: 341
   hash: 57f097f81829
   verdicts:
   - stage: S5a
@@ -1776,10 +1802,16 @@ items:
       by def-power, and with r = 1/10 and 1-r = 9/10 it gives (1/9)(1-10^{-n}). For 1/3: t_n = 1/3 - (1/3)10^{-n}
       and t_n+10^{-n} = 1/3 + (2/3)10^{-n}, so the sequence is an expansion, and it is the only one by
       the :154 consequence. For 1/2 (:273): the both-end-in-9s case is now closed, because a sequence '
+- key: exr-diagonal-arguments-b4
+  kind: exr
+  file: 03-diagonal-arguments.md
+  line: 357
+  hash: 893e81f02062
+  verdicts: []
 - key: exr-diagonal-arguments-c1
   kind: exr
   file: 03-diagonal-arguments.md
-  line: 280
+  line: 385
   hash: 4e6a7f663fb3
   verdicts:
   - stage: S5a
@@ -1811,7 +1843,7 @@ items:
 - key: exr-diagonal-arguments-c2
   kind: exr
   file: 03-diagonal-arguments.md
-  line: 301
+  line: 406
   hash: 2e7f3671774d
   verdicts:
   - stage: S5a
@@ -1958,39 +1990,12 @@ items:
     evidence: 05:63-65. thm-left-inverse-iff-injective (b) needs X≠∅ (ch06 05:101), and that is used.
       prp-right-inverse-surjective and thm-surjection-right-inverse (03:77) match, and the choice step
       is flagged.
-- key: check:05-comparing-cardinalities:1
+- key: check:04-comparing-cardinalities:1
   kind: check
   file: 04-comparing-cardinalities.md
   line: 70
   hash: 0602df634d03
-  verdicts:
-  - stage: S5a
-    verdict: minor
-    by: refereeA
-    hash: 1f39111be88b
-    date: '2026-10-11'
-    model: claude-opus-5-5
-    evidence: 05-comparing-cardinalities.md:75 The solution credits the bijection P(N)↔{0,1}^N to @cor-powerset-naturals-uncountable,
-      but that corollary only states that P(N) is uncountable.
-  - stage: S5b
-    verdict: minor
-    by: refereeB
-    hash: 1f39111be88b
-    date: '2026-10-11'
-    model: claude-opus-5-5
-    evidence: 05-comparing-cardinalities.md:75 The bijection S ↦ ind_S is credited to @cor-powerset-naturals-uncountable,
-      which does not state it.
-  - stage: S7r
-    verdict: correct
-    by: rereferee
-    hash: 0602df634d03
-    date: '2026-10-11'
-    model: claude-opus-5-5
-    evidence: '05-comparing-cardinalities.md:74-75. The injection a -> {n : a(n)=1} is injective: equal
-      sets mean a and a'' agree at every 1, and so at every 0, because values lie in {0,1}; prp-function-equality
-      (06/04-functions.md:116) gives a = a''. The earlier finding is resolved: the bijection with inverse
-      S -> ind_S is now credited to ''the correspondence of Section 6.4'' (06/04-functions.md:193 states
-      it), ''re'
+  verdicts: []
 - key: thm-schroder-bernstein
   kind: thm
   file: 04-comparing-cardinalities.md
@@ -2083,11 +2088,23 @@ items:
       != 0 gives n-1 in N) yields k. def-image (ch06/06) gives b'' in f(C_k) with g(b'')=g(b) and a in
       C_k with f(a)=b''. g injective gives b=f(a)=h(a). The proof is complete, and every cited label exists
       with the form used.'
+- key: exm-method-injections-both-ways
+  kind: exm
+  file: 04-comparing-cardinalities.md
+  line: 172
+  hash: 5eeceb0dbb69
+  verdicts: []
+- key: check:04-comparing-cardinalities:2
+  kind: check
+  file: 04-comparing-cardinalities.md
+  line: 182
+  hash: 3bbc043c9b2e
+  verdicts: []
 - key: exm-closed-open-interval
   kind: exm
   file: 04-comparing-cardinalities.md
-  line: 178
-  hash: 57ac416ed00e
+  line: 194
+  hash: b977904dc4f8
   verdicts:
   - stage: S5a
     verdict: correct
@@ -2109,8 +2126,8 @@ items:
 - key: exm-reals-open-interval
   kind: exm
   file: 04-comparing-cardinalities.md
-  line: 207
-  hash: b19364c72fce
+  line: 231
+  hash: a8a8b7bc038d
   verdicts:
   - stage: S5a
     verdict: correct
@@ -2131,43 +2148,16 @@ items:
     evidence: 05:207-229. The algebra for both inverses is right, and s(-3)=-3/4. The interval-convexity
       fact is ledgered. The uncountability corollary correctly uses thm-reals-uncountable-decimal and
       prp-countable-image. The sidecar passes.
-- key: check:05-comparing-cardinalities:2
+- key: check:04-comparing-cardinalities:3
   kind: check
   file: 04-comparing-cardinalities.md
-  line: 235
+  line: 259
   hash: 63f7568087b4
-  verdicts:
-  - stage: S5a
-    verdict: minor
-    by: refereeA
-    hash: 80319f43fbdf
-    date: '2026-10-11'
-    model: claude-opus-5-5
-    evidence: 05-comparing-cardinalities.md:240 'We knew this already from Section 8.2' overstates what
-      Section 8.2 proved, and the step from |N| = |N×N| to 'countably infinite' skips symmetry.
-  - stage: S5b
-    verdict: minor
-    by: refereeB
-    hash: 80319f43fbdf
-    date: '2026-10-11'
-    model: claude-opus-5-5
-    evidence: '05-comparing-cardinalities.md:240 ''N×N is countably infinite. We knew this already from
-      Section 8.2'' is false: Section 8.2 shows only that N×N is countable.'
-  - stage: S7r
-    verdict: correct
-    by: rereferee
-    hash: 63f7568087b4
-    date: '2026-10-11'
-    model: claude-opus-5-5
-    evidence: 'Line 240. n -> (n,1) is injective by the characteristic property, now cited (@def-ordered-pair,
-      06/03:13). 2^m 3^n is injective (thm-product-countable, 02-countable-sets.md:212). SB gives |N|
-      = |N x N|. def-countably-infinite (02-countable-sets.md:44) explicitly allows a bijection N -> A
-      as the equivalent form, so no unstated symmetry step remains. The new sentence ''Section 8.2 showed
-      only that N '
+  verdicts: []
 - key: exr-comparing-cardinalities-a1
   kind: exr
   file: 04-comparing-cardinalities.md
-  line: 247
+  line: 277
   hash: d515bbed4fbe
   verdicts:
   - stage: S5a
@@ -2199,7 +2189,7 @@ items:
 - key: exr-comparing-cardinalities-b1
   kind: exr
   file: 04-comparing-cardinalities.md
-  line: 278
+  line: 308
   hash: 6db348595218
   verdicts:
   - stage: S5a
@@ -2242,7 +2232,7 @@ items:
 - key: exr-comparing-cardinalities-b2
   kind: exr
   file: 04-comparing-cardinalities.md
-  line: 300
+  line: 330
   hash: 898dbe4a1f68
   verdicts:
   - stage: S5a
@@ -2274,7 +2264,7 @@ items:
 - key: exr-comparing-cardinalities-b3
   kind: exr
   file: 04-comparing-cardinalities.md
-  line: 314
+  line: 344
   hash: adf23f1f10f4
   verdicts:
   - stage: S5a
@@ -2312,10 +2302,16 @@ items:
       The earlier finding is resolved: for Psi(Phi(a,b)) = (a,b), the coordinates n -> c(2n) = a(n) and
       n -> c(2n+1) = b(n) are now identified with a and b by prp-function-equality (06/04:116; same domain
       N and codomain {0,1}), and the pairs are equal by @def-ordered-pair. Phi(Psi(c)) = c holds by'
+- key: exr-comparing-cardinalities-b4
+  kind: exr
+  file: 04-comparing-cardinalities.md
+  line: 360
+  hash: 63e84957f167
+  verdicts: []
 - key: exr-comparing-cardinalities-c1
   kind: exr
   file: 04-comparing-cardinalities.md
-  line: 332
+  line: 394
   hash: b04dcb9849b4
   verdicts:
   - stage: S5a
@@ -2350,7 +2346,7 @@ items:
 - key: exr-comparing-cardinalities-c2
   kind: exr
   file: 04-comparing-cardinalities.md
-  line: 376
+  line: 438
   hash: 490def46136b
   verdicts:
   - stage: S5a
@@ -2446,28 +2442,12 @@ items:
       is the union, really does give c: P(X)\{∅} -> X. The S5a/S5b codomain finding is resolved. Line
       26: g is well defined, and @thm-recursion is applied with X:=P(X), a:=∅ and g: ℕ×P(X)->P(X), which
       matches the '
-- key: check:06-infinite-sets:1
+- key: check:05-infinite-sets:1
   kind: check
   file: 05-infinite-sets.md
   line: 61
   hash: 2e347da86b3a
-  verdicts:
-  - stage: S5a
-    verdict: correct
-    by: refereeA
-    hash: 2e347da86b3a
-    date: '2026-10-11'
-    model: claude-opus-5-5
-    evidence: 06:57-63. ∅ is countable by def-countable. X=(X\{x})∪{x}, and prp-union-two-countable applies,
-      since {x} is finite and so countable.
-  - stage: S5b
-    verdict: correct
-    by: refereeB
-    hash: 2e347da86b3a
-    date: '2026-10-11'
-    model: claude-opus-5-5
-    evidence: 06:57-63. Emptiness comes from def-countable's first clause (02:13), and the union from
-      prp-union-two-countable (02:155).
+  verdicts: []
 - key: thm-infinite-iff-proper-subset
   kind: thm
   file: 05-infinite-sets.md
@@ -2514,28 +2494,12 @@ items:
     evidence: 06:80-97. (<=) is the contrapositive of thm-finite-no-proper-copy (01:308). h is well defined
       by injectivity, and injectivity and surjectivity are checked case by case. lem (c) is cited for
       m-1. (The idea block's wrong pointer to the hotel is reported separately under key ''.)
-- key: check:06-infinite-sets:2
+- key: check:05-infinite-sets:2
   kind: check
   file: 05-infinite-sets.md
   line: 105
   hash: b2017c0bb9a2
-  verdicts:
-  - stage: S5a
-    verdict: correct
-    by: refereeA
-    hash: b2017c0bb9a2
-    date: '2026-10-11'
-    model: claude-opus-5-5
-    evidence: '06:101-107. exm-reals-open-interval (05:207-226) gives s: R→(-1,1) and covers every interval
-      with more than one point, including unbounded ones.'
-  - stage: S5b
-    verdict: correct
-    by: refereeB
-    hash: b2017c0bb9a2
-    date: '2026-10-11'
-    model: claude-opus-5-5
-    evidence: 06:101-107. Matches exm-reals-open-interval (05:207), including its last paragraph on intervals
-      with more than one point.
+  verdicts: []
 - key: exr-infinite-sets-a1
   kind: exr
   file: 05-infinite-sets.md
@@ -2759,7 +2723,7 @@ items:
   kind: exr
   file: 05-infinite-sets.md
   line: 246
-  hash: 3265a39df183
+  hash: a7f26b29f42b
   verdicts:
   - stage: S5a
     verdict: correct
@@ -2835,7 +2799,7 @@ items:
   kind: exr
   file: 05-infinite-sets.md
   line: 286
-  hash: 19d9405b7263
+  hash: d930ad9524f4
   verdicts:
   - stage: S5a
     verdict: correct
@@ -2867,7 +2831,7 @@ items:
   kind: exr
   file: 05-infinite-sets.md
   line: 300
-  hash: 2f4d4a063dc6
+  hash: 279a5fd8634b
   verdicts:
   - stage: S5a
     verdict: correct
@@ -2895,3 +2859,196 @@ items:
     evidence: '06:294-310. Yes, the set is countable: Z_N has one element, or bijects with ℕ, or with
       ℕ^N, and thm-countable-union finishes. The solution names the tool and explains why the diagonal
       look-alike fails (g(n)≥1, so g is not eventually zero). The problem gives no hint of its method.'
+- key: check:02-countable-sets:1
+  kind: check
+  file: 01-countable-sets.md
+  line: 266
+  hash: acd73886ae2c
+  verdicts:
+  - stage: S5a
+    verdict: minor
+    by: refereeA
+    hash: 74fc0d77968b
+    date: '2026-10-11'
+    model: claude-opus-5-5
+    evidence: '02-countable-sets.md:299 ''(It is in fact finite: Exercise C2 of Section 8.1 counts it.)''
+      The cited exercise does not count L^5.'
+  - stage: S5b
+    verdict: minor
+    by: refereeB
+    hash: 74fc0d77968b
+    date: '2026-10-11'
+    model: claude-opus-5-5
+    evidence: '02-countable-sets.md:299 ''Exercise C2 of Section 8.1 counts it'' is not true of the page:
+      C2 counts A x B and B^A, not the set L^5 of 5-tuples.'
+  - stage: S7r
+    verdict: correct
+    by: rereferee
+    hash: acd73886ae2c
+    date: '2026-10-11'
+    model: claude-opus-5-5
+    evidence: 'The check (:266-272) now sits right after cor-product-countable and its remark, as STYLE
+      §5 requires (:179), so the placement finding is resolved. I solved it myself: L has 26 elements,
+      so it is countable by (iii)=>(i), and L^5 is countable by cor-product-countable (b) with k=5, which
+      agrees with the solution. The parenthetical now names Exercise C2 (a) of Section 8.1 (01-finite-sets.md:484,
+      ''A×B '
+  removed: true
+- key: check:03-countable-unions-and-choice:1
+  kind: check
+  file: 02-countable-unions-and-choice.md
+  line: 93
+  hash: 338f418708d3
+  verdicts:
+  - stage: S5a
+    verdict: correct
+    by: refereeA
+    hash: 338f418708d3
+    date: '2026-10-11'
+    model: claude-opus-5-5
+    evidence: 03:94-99. g(n)=n gives |g(n)|=n, and g is defined by a formula. (Saying 'preimages n and
+      -n' is loose at n=0, where there is only one preimage, but nothing depends on it.)
+  - stage: S5b
+    verdict: correct
+    by: refereeB
+    hash: 338f418708d3
+    date: '2026-10-11'
+    model: claude-opus-5-5
+    evidence: '03:93-99: g(n) = n gives f(g(n)) = |n| = n. The right inverse is given by a rule, as the
+      blueprint asks.'
+  removed: true
+- key: check:04-diagonal-arguments:1
+  kind: check
+  file: 03-diagonal-arguments.md
+  line: 51
+  hash: 6e6465b73e7a
+  verdicts:
+  - stage: S5a
+    verdict: correct
+    by: refereeA
+    hash: 6e6465b73e7a
+    date: '2026-10-11'
+    model: claude-opus-5-5
+    evidence: 04:51-57. ind_{n}(n)=1, so g is the zero sequence, and every f(n) has a 1 in place n. Correct.
+  - stage: S5b
+    verdict: correct
+    by: refereeB
+    hash: 6e6465b73e7a
+    date: '2026-10-11'
+    model: claude-opus-5-5
+    evidence: 04:51-57. f(n)(n) = 1 for every n, so g is the zero sequence, and it is not on the list.
+      The solution is a sibling block, as STYLE §5 requires.
+  removed: true
+- key: check:05-comparing-cardinalities:1
+  kind: check
+  file: 04-comparing-cardinalities.md
+  line: 70
+  hash: 0602df634d03
+  verdicts:
+  - stage: S5a
+    verdict: minor
+    by: refereeA
+    hash: 1f39111be88b
+    date: '2026-10-11'
+    model: claude-opus-5-5
+    evidence: 05-comparing-cardinalities.md:75 The solution credits the bijection P(N)↔{0,1}^N to @cor-powerset-naturals-uncountable,
+      but that corollary only states that P(N) is uncountable.
+  - stage: S5b
+    verdict: minor
+    by: refereeB
+    hash: 1f39111be88b
+    date: '2026-10-11'
+    model: claude-opus-5-5
+    evidence: 05-comparing-cardinalities.md:75 The bijection S ↦ ind_S is credited to @cor-powerset-naturals-uncountable,
+      which does not state it.
+  - stage: S7r
+    verdict: correct
+    by: rereferee
+    hash: 0602df634d03
+    date: '2026-10-11'
+    model: claude-opus-5-5
+    evidence: '05-comparing-cardinalities.md:74-75. The injection a -> {n : a(n)=1} is injective: equal
+      sets mean a and a'' agree at every 1, and so at every 0, because values lie in {0,1}; prp-function-equality
+      (06/04-functions.md:116) gives a = a''. The earlier finding is resolved: the bijection with inverse
+      S -> ind_S is now credited to ''the correspondence of Section 6.4'' (06/04-functions.md:193 states
+      it), ''re'
+  removed: true
+- key: check:05-comparing-cardinalities:2
+  kind: check
+  file: 04-comparing-cardinalities.md
+  line: 235
+  hash: 63f7568087b4
+  verdicts:
+  - stage: S5a
+    verdict: minor
+    by: refereeA
+    hash: 80319f43fbdf
+    date: '2026-10-11'
+    model: claude-opus-5-5
+    evidence: 05-comparing-cardinalities.md:240 'We knew this already from Section 8.2' overstates what
+      Section 8.2 proved, and the step from |N| = |N×N| to 'countably infinite' skips symmetry.
+  - stage: S5b
+    verdict: minor
+    by: refereeB
+    hash: 80319f43fbdf
+    date: '2026-10-11'
+    model: claude-opus-5-5
+    evidence: '05-comparing-cardinalities.md:240 ''N×N is countably infinite. We knew this already from
+      Section 8.2'' is false: Section 8.2 shows only that N×N is countable.'
+  - stage: S7r
+    verdict: correct
+    by: rereferee
+    hash: 63f7568087b4
+    date: '2026-10-11'
+    model: claude-opus-5-5
+    evidence: 'Line 240. n -> (n,1) is injective by the characteristic property, now cited (@def-ordered-pair,
+      06/03:13). 2^m 3^n is injective (thm-product-countable, 02-countable-sets.md:212). SB gives |N|
+      = |N x N|. def-countably-infinite (02-countable-sets.md:44) explicitly allows a bijection N -> A
+      as the equivalent form, so no unstated symmetry step remains. The new sentence ''Section 8.2 showed
+      only that N '
+  removed: true
+- key: check:06-infinite-sets:1
+  kind: check
+  file: 05-infinite-sets.md
+  line: 61
+  hash: 2e347da86b3a
+  verdicts:
+  - stage: S5a
+    verdict: correct
+    by: refereeA
+    hash: 2e347da86b3a
+    date: '2026-10-11'
+    model: claude-opus-5-5
+    evidence: 06:57-63. ∅ is countable by def-countable. X=(X\{x})∪{x}, and prp-union-two-countable applies,
+      since {x} is finite and so countable.
+  - stage: S5b
+    verdict: correct
+    by: refereeB
+    hash: 2e347da86b3a
+    date: '2026-10-11'
+    model: claude-opus-5-5
+    evidence: 06:57-63. Emptiness comes from def-countable's first clause (02:13), and the union from
+      prp-union-two-countable (02:155).
+  removed: true
+- key: check:06-infinite-sets:2
+  kind: check
+  file: 05-infinite-sets.md
+  line: 105
+  hash: b2017c0bb9a2
+  verdicts:
+  - stage: S5a
+    verdict: correct
+    by: refereeA
+    hash: b2017c0bb9a2
+    date: '2026-10-11'
+    model: claude-opus-5-5
+    evidence: '06:101-107. exm-reals-open-interval (05:207-226) gives s: R→(-1,1) and covers every interval
+      with more than one point, including unbounded ones.'
+  - stage: S5b
+    verdict: correct
+    by: refereeB
+    hash: b2017c0bb9a2
+    date: '2026-10-11'
+    model: claude-opus-5-5
+    evidence: 06:101-107. Matches exm-reals-open-interval (05:207), including its last paragraph on intervals
+      with more than one point.
+  removed: true

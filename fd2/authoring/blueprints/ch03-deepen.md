@@ -437,3 +437,12 @@ Two blind referees (R1, R2). Every finding is applied unless marked "answered".
 10. *S2a 10 (minor).* Applied, as R1.11.
 11. *03 B4 (a) unflagged choice (minor).* Applied: one sentence says each P_p is listed by a rule, so no @ax-choice, as in @exm-choice-free-unions.
 12. *R items reach Chapter 1 only by vocabulary (minor).* Applied: R3's solution gains a clause naming @exm-method-injectivity and @exm-method-surjectivity (§4.5 item 4).
+
+## 9. S3 deviations (recorded at S4)
+
+1. Box wording trimmed to the 130-word cap (list-it: drops the "one failed list" parenthetical, adds "composing if needed" to route (I)).
+2. 3.1 Quick check (b) uses ℚ × ℕ countable, proved later in the section; its solution says so.
+3. `exm-choice-or-rule` (d) and 3.2 B4 (e) state why their "min" set is non-empty; 3.1 B4 (a) cites @thm-composition-injective-surjective (a); 3.3 B4 (a)/(b) make cited steps explicit.
+4. New example titles use math markup instead of Unicode.
+5. 3.4 box prints line pointers as "the warnings after @def-card-le and after @exm-reals-open-interval".
+6. Time measured at 30 h core / 45 h full, above layout §2 (25/30): for the author (§8 item 2).
