@@ -415,3 +415,8 @@ TFAE
 Kripke
 countermodel
 countermodels
+# fd2 re-cut (Chapters 3 and 5)
+matchings
+poset
+unexchanged
+unflipped
