@@ -3637,6 +3637,13 @@ items:
     model: claude-opus-5-5
     evidence: 'The check and its solution are unchanged. The ''No subtraction'' warning after it gives
       correct bijections: (0,0)↦0 with (n,1)↦n+1 maps {0}⊔ℕ→ℕ, and (n,1)↦n maps ∅⊔ℕ→ℕ.'
+  - stage: S8
+    verdict: correct
+    by: coordinator
+    hash: d8eef416d52e
+    date: '2026-10-26'
+    evidence: '06-cardinal-arithmetic.md:43-49 check unchanged and correct; F011 fixed in warning 06:52:
+      (0,0)->0 with (n,1)->n+1 is one bijection {0}⊔N->N, (n,1)->n is a bijection ∅⊔N->N'
 - key: prp-card-operations-well-defined
   kind: prp
   file: 06-cardinal-arithmetic.md
@@ -3844,6 +3851,14 @@ items:
     model: claude-opus-5-5
     evidence: 06-cardinal-arithmetic.md:268 The dependency ledger line for the finite-case aftermath is
       incomplete.
+  - stage: S8
+    verdict: correct
+    by: coordinator
+    hash: 2b0683d9be8c
+    date: '2026-10-26'
+    evidence: '06-cardinal-arithmetic.md:268 and ledger line 752: aftermath m^(n+k)=m^n m^k, (m^n)^k=m^(nk)
+      now cites exr-finite-sets-c2 (products and functions, 05-finite-sets.md:617), prp-disjoint-union-count,
+      cor-finite-size-unique; complete; laws 213-226 true for arbitrary sets'
 - key: proof:thm-cardinal-laws
   kind: proof
   file: 06-cardinal-arithmetic.md
@@ -3871,7 +3886,7 @@ items:
   kind: exm
   file: 06-cardinal-arithmetic.md
   line: 270
-  hash: b2d9273b1890
+  hash: 4eccbe63d923
   verdicts:
   - stage: S5a
     verdict: correct
@@ -4048,7 +4063,7 @@ items:
   kind: proof
   file: 06-cardinal-arithmetic.md
   line: 342
-  hash: d9f36dd2f5c1
+  hash: 7a9761d8a1e2
   verdicts:
   - stage: S5a
     verdict: correct
@@ -4087,6 +4102,13 @@ items:
       and e→c avoids clashing with e from exm-two-copies-of-naturals. Every use is consistent. n↦n+1 has
       inverse m↦m−1 by lem (c). 10n+j decodes by the division algorithm. y_b ≤ t_1+1/10 ≤ 2/10 holds with
       t_1=c_1/10. The (D3) argument for injectivity is valid, and S-B finishes.
+  - stage: S8
+    verdict: correct
+    by: coordinator
+    hash: 7a9761d8a1e2
+    date: '2026-10-26'
+    evidence: 06-cardinal-arithmetic.md:347 code (j,n)->10n+j; ledger line 756 renamed from (t,n)->10n+t
+      to match; decoder by division by 10
 - key: check:06-cardinal-arithmetic:5
   kind: check
   file: 06-cardinal-arithmetic.md
@@ -4211,7 +4233,7 @@ items:
   kind: proof
   file: 06-cardinal-arithmetic.md
   line: 422
-  hash: 3141d84a8bac
+  hash: b686d6fa67b8
   verdicts:
   - stage: S5a
     verdict: minor
@@ -4269,7 +4291,7 @@ items:
   kind: proof
   file: 06-cardinal-arithmetic.md
   line: 434
-  hash: 43fd8cc16f27
+  hash: faf4d41faf50
   verdicts:
   - stage: S5a
     verdict: correct
@@ -4326,7 +4348,7 @@ items:
   kind: exr
   file: 06-cardinal-arithmetic.md
   line: 465
-  hash: 9c15015bf3be
+  hash: 94d6cd0d85dc
   verdicts:
   - stage: S5a
     verdict: correct
@@ -4465,7 +4487,7 @@ items:
   kind: exr
   file: 06-cardinal-arithmetic.md
   line: 549
-  hash: 795fff8df031
+  hash: c775fe8cc02e
   verdicts:
   - stage: S5a
     verdict: minor
@@ -4557,7 +4579,7 @@ items:
 - key: exr-cardinal-arithmetic-c2
   kind: exr
   file: 06-cardinal-arithmetic.md
-  line: 619
+  line: 620
   hash: 381da9dc47a2
   verdicts:
   - stage: S5a
@@ -4587,8 +4609,8 @@ items:
 - key: exr-cardinal-arithmetic-c3
   kind: exr
   file: 06-cardinal-arithmetic.md
-  line: 645
-  hash: 2589972d3906
+  line: 646
+  hash: 8109ae76f79c
   verdicts:
   - stage: S5a
     verdict: correct
@@ -4632,7 +4654,7 @@ items:
 - key: exr-infinite-sets-r1
   kind: exr
   file: 06-cardinal-arithmetic.md
-  line: 668
+  line: 669
   hash: a7f26b29f42b
   verdicts:
   - stage: S5a
@@ -4694,7 +4716,7 @@ items:
 - key: exr-infinite-sets-r2
   kind: exr
   file: 06-cardinal-arithmetic.md
-  line: 690
+  line: 691
   hash: 5a0889682eaf
   verdicts:
   - stage: S5a
@@ -4744,7 +4766,7 @@ items:
 - key: exr-infinite-sets-r3
   kind: exr
   file: 06-cardinal-arithmetic.md
-  line: 708
+  line: 709
   hash: a88e4cd62989
   verdicts:
   - stage: S5a
@@ -4822,7 +4844,7 @@ items:
 - key: exr-infinite-sets-r4
   kind: exr
   file: 06-cardinal-arithmetic.md
-  line: 722
+  line: 723
   hash: 41df81bb985a
   verdicts:
   - stage: S5a

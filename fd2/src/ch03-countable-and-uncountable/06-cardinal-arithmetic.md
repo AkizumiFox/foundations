@@ -49,7 +49,7 @@ This is the first encoding of the section: \( e \) writes a pair as one number, 
 :::
 
 ::: {.warning}
-**No subtraction.** For numbers, \( m + k = n + k \) gives \( m = n \). For sets, \( \card{\{0\} \sqcup \nN} = \card{\emptyset \sqcup \nN} \) although \( \card{\{0\}} \ne \card{\emptyset} \): the maps \( (0, 0) \mapsto 0 \), \( (n, 1) \mapsto n + 1 \) and \( (n, 1) \mapsto n \) are bijections onto \( \nN \) (Exercise B4 (a) has the details). Every law below is proved by a bijection, never borrowed from the numbers.
+**No subtraction.** For numbers, \( m + k = n + k \) gives \( m = n \). For sets, \( \card{\{0\} \sqcup \nN} = \card{\emptyset \sqcup \nN} \) although \( \card{\{0\}} \ne \card{\emptyset} \): the map sending \( (0, 0) \mapsto 0 \) and \( (n, 1) \mapsto n + 1 \) is a bijection \( \{0\} \sqcup \nN \to \nN \), and \( (n, 1) \mapsto n \) is a bijection \( \emptyset \sqcup \nN \to \nN \) (Exercise B4 (a) has the details). Every law below is proved by a bijection, never borrowed from the numbers.
 :::
 
 ## Multiplying, raising to powers, and comparing
@@ -753,7 +753,7 @@ thm-cardinal-laws (claim): (aftermath) the finite case gives back m^(n+k) = m^n 
 thm-power-set-two-power (proof): f(x) is 0 or 1, so f(x) != 1 gives f(x) = 0 | the codomain {0, 1}
 cor-cantor-two-power (proof): ind_{x} = ind_{y} gives x = y | inline (value 1 at x only)
 thm-reals-power-set-naturals (proof): the expansion of x not ending in all 9s exists and is unique; one digit sequence names one number; y_b exists; two different expansions of one number, one ends in 9s | school facts (D1), (D2), (D3), stated in F2.3 §03 (def-decimal-expansion)
-thm-reals-power-set-naturals (proof): (t, n) -> 10n + t bijection T x N -> N, decoder by division by 10 with quotient in N | thm-division-algorithm (cited), as in the claim in the proof of prp-union-two-countable; verify/ch03/exr-comparing-cardinalities-c1.py checks the same decoding
+thm-reals-power-set-naturals (proof): (j, n) -> 10n + j bijection T x N -> N, decoder by division by 10 with quotient in N | thm-division-algorithm (cited), as in the claim in the proof of prp-union-two-countable; verify/ch03/exr-comparing-cardinalities-c1.py checks the same decoding
 thm-reals-power-set-naturals (proof): n -> n + 1 is a bijection N -> Z_{>0}, inverse m -> m - 1 in N | lem-naturals-arithmetic (c)
 thm-reals-power-set-naturals (proof): y_b <= t_1 + 1/10 <= 2/10 | def-decimal-expansion (cited) at n = 1
 thm-reals-power-set-naturals (claim): (remark) the continuum hypothesis is independent of the usual axioms, if consistent | set theory, stated without proof; nothing depends on it
