@@ -259,25 +259,102 @@ items:
   file: 01-naturals-and-well-ordering.md
   line: 200
   hash: a8262a4ae600
-  verdicts: []
+  verdicts:
+  - stage: S5a
+    verdict: correct
+    by: refereeA
+    hash: a8262a4ae600
+    date: '2026-10-25'
+    model: claude-opus-5-5
+    evidence: '01:221 Suppose such an f exists, V=f(N) (def-image, fd2 1.7:23) is a subset of N and non-empty
+      because f(0) is in V. thm-well-ordering gives the least element f(m) with m in N (by def-image).
+      m+1 is in N by (NS), so f(m+1) is in V and f(m+1)<f(m), which contradicts leastness. Order of choices:
+      f, then V, then m; f(m+1) depends only on m. The hypothesis on f is used once. The pointer at 01:224
+      to '''
+  - stage: S5b
+    verdict: minor
+    by: refereeB
+    hash: a8262a4ae600
+    date: '2026-10-25'
+    model: claude-opus-5-5
+    evidence: '01:200-224. Statement, scratch-work table and solution are correct. V=f(N) is non-empty
+      (f(0)), cited @def-image and @thm-well-ordering, (NS) gives m+1 in N. The pointer at 224 (''Section
+      2.2 ... lemma on lowest terms'') is right: lem-lowest-terms is at 02:205 and uses well-ordering.
+      The only problem: the aftermath at 224 relies on ''an even q>0 halves to a positive integer q/2<q'',
+      which is not cited'
 - key: exm-method-least-element
   kind: exm
   file: 01-naturals-and-well-ordering.md
   line: 228
   hash: c4956ada5cb2
-  verdicts: []
+  verdicts:
+  - stage: S5a
+    verdict: correct
+    by: refereeA
+    hash: c4956ada5cb2
+    date: '2026-10-25'
+    model: claude-opus-5-5
+    evidence: 01:231-235 The template matches thm-well-ordering (non-empty subset of N) and cor-well-ordering-integers
+      (non-empty, integer lower bound, 01:307). The forward reference is to a result later in the same
+      section. The failure list matches the warning at 01:185.
+  - stage: S5b
+    verdict: correct
+    by: refereeB
+    hash: c4956ada5cb2
+    date: '2026-10-25'
+    model: claude-opus-5-5
+    evidence: '01:228-236. Template steps (1)-(4) match the blueprint (ch02-deepen.md:101-104). exm-no-infinite-descent
+      (steps 1-4, first form of (4)) and exm-least-element-down-by-two follow it. The meta-claim ''recurs
+      throughout the book'' (226) holds: 02:171, 02:203, 04:169 and 05:190 cite it.'
 - key: exm-least-element-down-by-two
   kind: exm
   file: 01-naturals-and-well-ordering.md
   line: 238
   hash: 68035c20af7c
-  verdicts: []
+  verdicts:
+  - stage: S5a
+    verdict: correct
+    by: refereeA
+    hash: 68035c20af7c
+    date: '2026-10-25'
+    model: claude-opus-5-5
+    evidence: 01:249 Non-emptiness feeds thm-well-ordering. If m>=2, the hypothesis puts m-2 in S, which
+      contradicts leastness. From m<2 we get m<=1 by lem-naturals-arithmetic (e) (no k with 1<k<2), then
+      m in {0,1} by (a). Dropping 'non-empty' (S empty) breaks the conclusion, so the hypothesis is needed.
+      The sidecar checks 20000 random downward-closed sets.
+  - stage: S5b
+    verdict: correct
+    by: refereeB
+    hash: 68035c20af7c
+    date: '2026-10-25'
+    model: claude-opus-5-5
+    evidence: '01:238-252. With m least: if m>=2, then m-2 is in S and m-2<m, a contradiction. So m<2,
+      then m<=1 by (e) (n=1) and m in {0,1} by (a). The meta-claim at 252 (''never asks whether m-2 is
+      natural'') is true of the solution. The Idea''s ''ending in the second form of step (4)'' is accurate.
+      Sidecar verify/ch02/exm-least-element-down-by-two.py checks it.'
 - key: check:01-naturals-and-well-ordering:4
   kind: check
   file: 01-naturals-and-well-ordering.md
   line: 254
   hash: 705ac7f89d19
-  verdicts: []
+  verdicts:
+  - stage: S5a
+    verdict: correct
+    by: refereeA
+    hash: 705ac7f89d19
+    date: '2026-10-25'
+    model: claude-opus-5-5
+    evidence: 01:259 The admissible k are 0..3, since 15<=17<20, so S={17,12,7,2} with minimum 2 = 17
+      mod 5. The pointer to 2.2 matches thm-division-algorithm (02:157), whose proof takes the least non-negative
+      a-qn. The sidecar asserts these values.
+  - stage: S5b
+    verdict: minor
+    by: refereeB
+    hash: 705ac7f89d19
+    date: '2026-10-25'
+    model: claude-opus-5-5
+    evidence: 01-naturals-and-well-ordering.md:259 'Section 2.2 proves that the least element of such
+      a set is always the remainder' overstates what 2.2 proves.
 - key: thm-induction-iff-well-ordering
   kind: thm
   file: 01-naturals-and-well-ordering.md
@@ -422,7 +499,24 @@ items:
   file: 01-naturals-and-well-ordering.md
   line: 320
   hash: c6d3a1d9160c
-  verdicts: []
+  verdicts:
+  - stage: S5a
+    verdict: correct
+    by: refereeA
+    hash: c6d3a1d9160c
+    date: '2026-10-25'
+    model: claude-opus-5-5
+    evidence: 01:325 The set is non-empty (0 is in it). For n<=-6 we get n^2=(-n)^2>=36>30, so every element
+      is >-6 and -6 is an integer lower bound. Elements are >=-5 by prp-integers-closed (c) (01:113),
+      and (-5)^2=25<30, so the least element is -5. The sidecar checks this over [-100,100].
+  - stage: S5b
+    verdict: minor
+    by: refereeB
+    hash: c6d3a1d9160c
+    date: '2026-10-25'
+    model: claude-opus-5-5
+    evidence: 01-naturals-and-well-ordering.md:325 'An integer n <= -6 has n^2 >= 36' is used without
+      @ref and is not ledgered.
 - key: exr-naturals-and-well-ordering-a1
   kind: exr
   file: 01-naturals-and-well-ordering.md
@@ -582,7 +676,36 @@ items:
   file: 01-naturals-and-well-ordering.md
   line: 421
   hash: e7e2f5696934
-  verdicts: []
+  verdicts:
+  - stage: S5a
+    verdict: correct
+    by: refereeA
+    hash: e7e2f5696934
+    date: '2026-10-25'
+    model: claude-opus-5-5
+    evidence: '01:437-449 (a) Z with n-1 (prp-integers-closed (a)) is a valid counterexample. (b) -1/n<-1/(n+1)<0
+      is valid. (c) The set is a subset of N, so thm-well-ordering applies. (d) N={n in Z>0 : 1/n in T}
+      is contained in N by prp-integers-closed (b) and is non-empty. Its least element n0 gives 1/n<=1/n0
+      because n>=n0>0, so 1/n0 is greatest. (e) 1/(n+1)<1/n is valid. (f) -5=-15/3<-13/3, so cor-well-orderin'
+  - stage: S5b
+    verdict: minor
+    by: refereeB
+    hash: e7e2f5696934
+    date: '2026-10-25'
+    model: claude-opus-5-5
+    evidence: 01-naturals-and-well-ordering.md:443 In (d), N is said to be non-empty without a reason,
+      while the method box's step (2) asks for a non-empty set to be shown non-empty 'by giving an element'.
+  - stage: S6
+    verdict: correct
+    by: verifier
+    hash: e7e2f5696934
+    date: '2026-10-25'
+    model: claude-opus-5-5
+    evidence: '01-naturals-and-well-ordering.md:421-450. I solved it before reading the solution and got
+      (a) F via Z, (b) F via {-1/n}, (c) T, (d) T, (e) F via the whole set, (f) T. That matches all six.
+      The solution''s witnesses check out: -1/n < -1/(n+1) and 1/(n+1) < 1/n. For (f), -5 < -13/3 is an
+      integer lower bound, which is exactly what cor-well-ordering-integers (line 307) needs. In (d),
+      passing to N and u'
 - key: exr-naturals-and-well-ordering-c1
   kind: exr
   file: 01-naturals-and-well-ordering.md
@@ -788,25 +911,91 @@ items:
   file: 02-induction-in-practice.md
   line: 93
   hash: 3dfb674e492d
-  verdicts: []
+  verdicts:
+  - stage: S5a
+    verdict: minor
+    by: refereeA
+    hash: 3dfb674e492d
+    date: '2026-10-25'
+    model: claude-opus-5-5
+    evidence: 02-induction-in-practice.md:96 Template step (5) sets the base at 'the first n from which
+      steps (2)-(4) work', which gives the wrong base when the step works earlier than the claim is true
+      or asserted.
+  - stage: S5b
+    verdict: minor
+    by: refereeB
+    hash: 3dfb674e492d
+    date: '2026-10-25'
+    model: claude-opus-5-5
+    evidence: '02-induction-in-practice.md:96 Template step (5), ''Choose the base: the first n from which
+      steps (2)-(4) work'', and the aftermath at :135, ''The base is where the step starts working, not
+      where the claim starts being true'', are stated as general rules. The section''s own exercises break
+      them.'
 - key: check:02-induction-in-practice:2
   kind: check
   file: 02-induction-in-practice.md
   line: 103
   hash: 3cf31e8670f9
-  verdicts: []
+  verdicts:
+  - stage: S5a
+    verdict: correct
+    by: refereeA
+    hash: 3cf31e8670f9
+    date: '2026-10-25'
+    model: claude-opus-5-5
+    evidence: 'line 108: 9*9^n-4*4^n = 9(9^n-4^n)+5*4^n, then 5(9k+4^n); verified algebraically.'
+  - stage: S5b
+    verdict: correct
+    by: refereeB
+    hash: 3cf31e8670f9
+    date: '2026-10-25'
+    model: claude-opus-5-5
+    evidence: ':103-108 checked: 9^{n+1}-4^{n+1}=9(9^n-4^n)+5*4^n=5(9k+4^n). This is the template''s move
+      (take 9 out and pay back).'
 - key: exm-choosing-the-base
   kind: exm
   file: 02-induction-in-practice.md
   line: 113
   hash: edd57ecdb6e6
-  verdicts: []
+  verdicts:
+  - stage: S5a
+    verdict: correct
+    by: refereeA
+    hash: edd57ecdb6e6
+    date: '2026-10-25'
+    model: claude-opus-5-5
+    evidence: 'lines 120-135: small cases 1>=0, 3>=1, 9>=8; base 27>=27; chain 2n^3>=6n^2 (n>=3), 3n^2>=9n
+      (n>=3), 9n>=3n+1; (n+1)^3 expansion correct; 3*2^3=24<27 correct; sidecar passes.'
+  - stage: S5b
+    verdict: correct
+    by: refereeB
+    hash: edd57ecdb6e6
+    date: '2026-10-25'
+    model: claude-opus-5-5
+    evidence: ':113-133 checked: 3n^3>=(n+1)^3 fails exactly at n=0,1,2 (0<1, 3<8, 24<27). The chain 2n^3>=6n^2>=3n^2+9n>=3n^2+3n+1
+      holds for n>=3. The small cases are right, and the ledger line and sidecar are present.'
 - key: check:02-induction-in-practice:3
   kind: check
   file: 02-induction-in-practice.md
   line: 137
   hash: 2d214229ca0f
-  verdicts: []
+  verdicts:
+  - stage: S5a
+    verdict: correct
+    by: refereeA
+    hash: 2d214229ca0f
+    date: '2026-10-25'
+    model: claude-opus-5-5
+    evidence: 'line 142: 3n^3 vs (n+1)^3 is 0<1, 3<8, 24<27 for n=0,1,2 and holds for n>=3 by the display
+      at 128-130.'
+  - stage: S5b
+    verdict: correct
+    by: refereeB
+    hash: 2d214229ca0f
+    date: '2026-10-25'
+    model: claude-opus-5-5
+    evidence: ':137-143 checked: 0<1, 3<8, 24<27, and there are three unproved transitions 0->1, 1->2,
+      2->3.'
 - key: thm-division-algorithm
   kind: thm
   file: 02-induction-in-practice.md
@@ -1024,7 +1213,23 @@ items:
   file: 02-induction-in-practice.md
   line: 311
   hash: bff9a537596d
-  verdicts: []
+  verdicts:
+  - stage: S5a
+    verdict: correct
+    by: refereeA
+    hash: bff9a537596d
+    date: '2026-10-25'
+    model: claude-opus-5-5
+    evidence: 'line 316: 2n^2>=(n+1)^2 iff n^2-2n-1>=0, true for n>=3, false at 0,1,2; 16<=16; 9>8 at
+      n=3.'
+  - stage: S5b
+    verdict: minor
+    by: refereeB
+    hash: bff9a537596d
+    date: '2026-10-25'
+    model: claude-opus-5-5
+    evidence: 02-induction-in-practice.md:316 The parenthesis '(named after @exm-all-equal-induction)'
+      is garbled. Read as written, 'named after' means an eponym, and the warning is not at that example.
 - key: exr-induction-in-practice-a1
   kind: exr
   file: 02-induction-in-practice.md
@@ -1060,6 +1265,35 @@ items:
       base cases 12,13,14 are right; 7^n-1 is divisible by 6. In (a)(iv), (n'',m) is a smaller solution
       because m<n. (c) n=2. In find-the-error (d), the only flaw is the transition 0->1, which uses a^{-1};
       transitions from n>=1 are valid. Verified.'
+  - stage: S5a
+    verdict: correct
+    by: refereeA
+    hash: 3efec0dafa7b
+    date: '2026-10-25'
+    model: claude-opus-5-5
+    evidence: 'lines 335-341: 7^{n+1}-1=7(7^n-1)+6; 2^n>n^2 fails at 2,3,4 (4,8,16 vs 4,9,16); 12,13,14
+      decompositions; (iv) descent (m,n)->(n'',m) with m<n since n^2=2m^2>m^2; (d) the 0->1 transition
+      uses a^{-1}, outside k in N, k<=0. Sidecar passes.'
+  - stage: S5b
+    verdict: minor
+    by: refereeB
+    hash: 3efec0dafa7b
+    date: '2026-10-25'
+    model: claude-opus-5-5
+    evidence: 02-induction-in-practice.md:335 In (a)(iv) the new pair (n', m) is called a solution, but
+      the text never shows n' > 0. The step m < n is inferred from n^2 > m^2 with no stated positivity
+      and no ledger line.
+  - stage: S6
+    verdict: correct
+    by: verifier
+    hash: 3efec0dafa7b
+    date: '2026-10-25'
+    model: claude-opus-5-5
+    evidence: '02-induction-in-practice.md:323-342. (a) My answers matched: (i) induction from 0, (ii)
+      base 5, (iii) strong induction with base cases 12/13/14, (iv) smallest counterexample. A script
+      confirms 2^n>n^2 fails exactly at n=2,3,4 and that every n>=12 is 3a+7b. In (iv), (n'',m) is a new
+      solution with second entry m<n. (b) The negation and the description of a smallest counterexample
+      are correct. (c) n=2'
 - key: exr-induction-in-practice-b1
   kind: exr
   file: 02-induction-in-practice.md
@@ -1089,6 +1323,30 @@ items:
     model: claude-opus-5-5
     evidence: 02:301-307. 6(6^n-1)+5=5(6k+1). Script confirms 5 | 6^n-1 for n<50. The worked example is
       3 | 4^n-1 at 02:100-104.
+  - stage: S5a
+    verdict: correct
+    by: refereeA
+    hash: fcff6a927174
+    date: '2026-10-25'
+    model: claude-opus-5-5
+    evidence: 'line 355: (n+1)^3+2(n+1) = n^3+2n+3n^2+3n+3; checked by expansion; sidecar passes.'
+  - stage: S5b
+    verdict: minor
+    by: refereeB
+    hash: fcff6a927174
+    date: '2026-10-25'
+    model: claude-opus-5-5
+    evidence: '02-induction-in-practice.md:357 The meta-sentence ''The step is the box''s move without
+      powers'' is false as written: the expression n^3 + 2n contains the power n^3.'
+  - stage: S6
+    verdict: minor
+    by: verifier
+    hash: fcff6a927174
+    date: '2026-10-25'
+    model: claude-opus-5-5
+    evidence: 02-induction-in-practice.md:357 The solution's closing sentence refers to 'the box's move',
+      but no box in the section holds a move. In this section 'box' means a ->I or RAA box (lines 38,
+      233, 308). The scratch work is an .idea block with a table, and the method is exm-method-induction-step.
 - key: exr-induction-in-practice-b2
   kind: exr
   file: 02-induction-in-practice.md
@@ -1133,6 +1391,35 @@ items:
       7.3. The earlier S5b finding is resolved, and the ledger line (''said in the item'') is now true.
       I solved the blank myself: concatenate the factorizations of a and b to get m=ab as a product of
       primes, which co'
+  - stage: S5a
+    verdict: minor
+    by: refereeA
+    hash: c323be1ea852
+    date: '2026-10-25'
+    model: claude-opus-5-5
+    evidence: 02-induction-in-practice.md:371 The solution describes the contradiction as 'a smaller failure
+      is impossible, as in @lem-lowest-terms', but B2 gets its contradiction differently.
+  - stage: S5b
+    verdict: minor
+    by: refereeB
+    hash: c323be1ea852
+    date: '2026-10-25'
+    model: claude-opus-5-5
+    evidence: '02-induction-in-practice.md:371 The solution misdescribes the blank: ''the blank is the
+      contradiction: a smaller failure is impossible, as in the proof of @lem-lowest-terms''. The blank
+      does not produce a smaller failure. It shows that m itself is not a failure, unlike lem-lowest-terms,
+      which produces m'' < m in F.'
+  - stage: S6
+    verdict: correct
+    by: verifier
+    hash: c323be1ea852
+    date: '2026-10-25'
+    model: claude-opus-5-5
+    evidence: '02-induction-in-practice.md:360-375. I completed the blank as ''m = ab is a product of
+      primes, contradicting m in F'' before reading the solution, and it matches. The move is named ''smallest
+      counterexample'', the term introduced at line 203. The worked example is lem-lowest-terms (line
+      205). The blank has one reasonable completion. The given part is sound: b<2b needs b>0, which holds,
+      and it agrees w'
 - key: exr-induction-in-practice-b3
   kind: exr
   file: 02-induction-in-practice.md
@@ -1181,7 +1468,34 @@ items:
   file: 02-induction-in-practice.md
   line: 398
   hash: 6fa7a305339f
-  verdicts: []
+  verdicts:
+  - stage: S5a
+    verdict: minor
+    by: refereeA
+    hash: 6fa7a305339f
+    date: '2026-10-25'
+    model: claude-opus-5-5
+    evidence: 02-induction-in-practice.md:434 The parenthetical 'the base is chosen where the claim starts'
+      contradicts the section's own rule (line 135).
+  - stage: S5b
+    verdict: minor
+    by: refereeB
+    hash: 6fa7a305339f
+    date: '2026-10-25'
+    model: claude-opus-5-5
+    evidence: 02-induction-in-practice.md:428 Solution (d) calls 11 - 7b 'the remainder', against the
+      section's own warning on what 'the remainder' means.
+  - stage: S6
+    verdict: correct
+    by: verifier
+    hash: 6fa7a305339f
+    date: '2026-10-25'
+    model: claude-opus-5-5
+    evidence: '02-induction-in-practice.md:398-437. My verdicts were T/F/T/F/T/F, matching the book. A
+      script (scratchpad s5/work/S6-02a/c.py) confirms: (a) holds for n<500; (b) fails only at n=9 for
+      9<=n<300 (512<729); (c) the closed form holds; (d) the only failure for n>=10 is 11; (e) fails only
+      at n=0,1; (f) 65=5*13 at n=8, with 5, 17 and 37 prime. Algebra check: (n+1)(3n+2)/2+3n+4 = (n+2)(3n+5)/2.
+      The step '
 - key: exr-induction-in-practice-c1
   kind: exr
   file: 02-induction-in-practice.md
@@ -1362,6 +1676,22 @@ items:
     date: '2026-10-11'
     model: claude-opus-5-5
     evidence: :212-222. 2·3/2·4/3·5/4 = 5. The general telescoping induction is correct.
+  - stage: S5a
+    verdict: correct
+    by: refereeA
+    hash: 536b0b67728e
+    date: '2026-10-25'
+    model: claude-opus-5-5
+    evidence: '03-recursion.md:99-105. With a=1, g(n,x)=2x+1: f(1)=3, f(2)=7, f(3)=15, which matches the
+      listed terms. g maps N x N to N, so thm-recursion applies with X=N; X=R also works.'
+  - stage: S5b
+    verdict: minor
+    by: refereeB
+    hash: 536b0b67728e
+    date: '2026-10-25'
+    model: claude-opus-5-5
+    evidence: 03-recursion.md:633 Ledger row for the first Quick check names the wrong source for the
+      closure of N under + and *.
 - key: cor-recursion-from-base
   kind: cor
   file: 03-recursion.md
@@ -1477,7 +1807,24 @@ items:
   file: 03-recursion.md
   line: 163
   hash: 0e1089583498
-  verdicts: []
+  verdicts:
+  - stage: S5a
+    verdict: correct
+    by: refereeA
+    hash: 0e1089583498
+    date: '2026-10-25'
+    model: claude-opus-5-5
+    evidence: '03-recursion.md:163-169. h(n,a_n,a_{n+1}) = a_{n+1}a_n = yx, so h is the right function
+      N x (R x R) -> R and cor-two-step-recursion applies. The pair induction is valid: Q(n) gives a_{n+1}=1
+      and a_{n+2}=1*1=1. The two-step example it points to does come after def-power (line 218).'
+  - stage: S5b
+    verdict: minor
+    by: refereeB
+    hash: 0e1089583498
+    date: '2026-10-25'
+    model: claude-opus-5-5
+    evidence: 03-recursion.md:168 The check solution sends the reader to the 'two-step example after @def-power'
+      as a model, but that example comes later (:218), and the pointer does not say so.
 - key: def-sum-product
   kind: def
   file: 03-recursion.md
@@ -1532,7 +1879,23 @@ items:
   file: 03-recursion.md
   line: 228
   hash: c9d2db8cee57
-  verdicts: []
+  verdicts:
+  - stage: S5a
+    verdict: correct
+    by: refereeA
+    hash: c9d2db8cee57
+    date: '2026-10-25'
+    model: claude-opus-5-5
+    evidence: '03-recursion.md:228-238. (2/1)(3/2)(4/3)(5/4) = 5. The general induction is correct: the
+      base is the empty product 1 = 0+1, and the step is (n+1)(n+2)/(n+1) = n+2, using the product clause
+      of def-sum-product with a_k = (k+1)/k defined for k >= 1.'
+  - stage: S5b
+    verdict: minor
+    by: refereeB
+    hash: c9d2db8cee57
+    date: '2026-10-25'
+    model: claude-opus-5-5
+    evidence: 03-recursion.md:237 The telescoping-product Quick check has no row in the dependency ledger.
 - key: prp-power-laws
   kind: prp
   file: 03-recursion.md
@@ -1750,7 +2113,24 @@ items:
   file: 03-recursion.md
   line: 344
   hash: 76df9ef48cbb
-  verdicts: []
+  verdicts:
+  - stage: S5a
+    verdict: correct
+    by: refereeA
+    hash: 76df9ef48cbb
+    date: '2026-10-25'
+    model: claude-opus-5-5
+    evidence: 03-recursion.md:344-350. (1/2)^3 = 1/8 and 1 + 3(-1/2) = -1/2, so 1/8 >= -1/2 holds. The
+      line it names matches proof:thm-bernoulli at line 332.
+  - stage: S5b
+    verdict: correct
+    by: refereeB
+    hash: 76df9ef48cbb
+    date: '2026-10-25'
+    model: claude-opus-5-5
+    evidence: '03-recursion.md:344-350: (1/2)^3 = 1/8 >= -1/2 = 1 + 3(-1/2), asserted in thm-bernoulli.py,
+      which passes. The quoted line matches the proof at :332 (''Since x >= -1, we have 1 + x >= 0'').
+      Ledger row :635 is present.'
 - key: prp-finite-max
   kind: prp
   file: 03-recursion.md
@@ -1851,7 +2231,27 @@ items:
   file: 03-recursion.md
   line: 410
   hash: d396551500b0
-  verdicts: []
+  verdicts:
+  - stage: S5a
+    verdict: minor
+    by: refereeA
+    hash: d396551500b0
+    date: '2026-10-25'
+    model: claude-opus-5-5
+    evidence: '03-recursion.md:415 The solution says the step ''needs'' 1/(n+1)^2 <= 1/((n+1)(n+2)) and
+      shows that this inequality is false. That only shows one route through the step fails. To show the
+      claim does not carry its own step, the solution must show that the hypothesis alone is too weak:
+      some value of S_n allowed by the hypothesis leads to S_{n+1} > 2 - 1/(n+2). The direct attempt at
+      line 393 makes exac'
+  - stage: S5b
+    verdict: correct
+    by: refereeB
+    hash: d396551500b0
+    date: '2026-10-25'
+    model: claude-opus-5-5
+    evidence: '03-recursion.md:410-416: 1/(n+1) - 1/(n+2) = 1/((n+1)(n+2)), and (n+1)(n+2) <= (n+1)^2
+      fails for every n >= 0. The claim S_n <= 2 - 1/(n+1) is true and weaker than P(n). exm-strengthen-hypothesis.py
+      asserts all of this and passes. Ledger row :636 is present.'
 - key: exr-recursion-a1
   kind: exr
   file: 03-recursion.md
@@ -2093,127 +2493,565 @@ items:
   file: 04-contrapositive-and-contradiction.md
   line: 9
   hash: 7e71f6a3af91
-  verdicts: []
+  verdicts:
+  - stage: S5a
+    verdict: correct
+    by: refereeA
+    hash: 7e71f6a3af91
+    date: '2026-10-25'
+    model: claude-opus-5-5
+    evidence: '04:32-36: the contrapositive''s hypothesis is reduced to r=1 by uniqueness in thm-division-algorithm
+      (02:160) and De Morgan; (3q+1)^2+(3q+1)+1=3(3q^2+3q+1) checks.'
+  - stage: S5b
+    verdict: minor
+    by: refereeB
+    hash: 7e71f6a3af91
+    date: '2026-10-25'
+    model: claude-opus-5-5
+    evidence: 04-contrapositive-and-contradiction.md:32 r ∈ {0,1,2} is attributed to @thm-division-algorithm
+      alone. The theorem gives only 0 <= r < 3; getting {0,1,2} also needs discreteness.
 - key: check:04-contrapositive-and-contradiction:1
   kind: check
   file: 04-contrapositive-and-contradiction.md
   line: 41
   hash: e2fe6fdd1f62
-  verdicts: []
+  verdicts:
+  - stage: S5a
+    verdict: correct
+    by: refereeA
+    hash: e2fe6fdd1f62
+    date: '2026-10-25'
+    model: claude-opus-5-5
+    evidence: '04:46: the contrapositive is simplified by the r in {0,1,2} reduction from 04:20; the negation
+      is the correct exists-and form, and it is false by the example.'
+  - stage: S5b
+    verdict: correct
+    by: refereeB
+    hash: e2fe6fdd1f62
+    date: '2026-10-25'
+    model: claude-opus-5-5
+    evidence: '04:46: the contrapositive and the negation (exists n with 3∤n^2+n+1 and remainder 1) are
+      both formed correctly.'
 - key: exm-method-choosing-the-form
   kind: exm
   file: 04-contrapositive-and-contradiction.md
   line: 51
   hash: cff570845e6e
-  verdicts: []
+  verdicts:
+  - stage: S5a
+    verdict: correct
+    by: refereeA
+    hash: cff570845e6e
+    date: '2026-10-25'
+    model: claude-opus-5-5
+    evidence: '04:54-58: the template matches fd1 Section 8.1''s three faces (fd1 ch08/01:343-365); the
+      cited costume labels exist (fd1 ch08/01:379,397).'
+  - stage: S5b
+    verdict: correct
+    by: refereeB
+    hash: cff570845e6e
+    date: '2026-10-25'
+    model: claude-opus-5-5
+    evidence: '04:54-58 follows the blueprint. Cited labels exist: fd1 prp-de-morgan, exm-costume-direct,
+      exm-costume-contrapositive. The box is under 130 words.'
 - key: check:04-contrapositive-and-contradiction:2
   kind: check
   file: 04-contrapositive-and-contradiction.md
   line: 61
   hash: 6df0e2e6ccf0
-  verdicts: []
+  verdicts:
+  - stage: S5a
+    verdict: correct
+    by: refereeA
+    hash: 6df0e2e6ccf0
+    date: '2026-10-25'
+    model: claude-opus-5-5
+    evidence: '04:72: (a) the contrapositive is right; (b) face (i), with the |n|<=1 / |n|>=2 split from
+      discreteness; (c) the direct injectivity argument is valid.'
+  - stage: S5b
+    verdict: correct
+    by: refereeB
+    hash: 6df0e2e6ccf0
+    date: '2026-10-25'
+    model: claude-opus-5-5
+    evidence: 04:72 (a), (b) and (c) are correct. The ledger at 04:393 covers the order facts in (b).
+      exm-method-injectivity exists (fd2 1.5:364).
 - key: thm-primes-infinite
   kind: thm
   file: 04-contrapositive-and-contradiction.md
   line: 79
   hash: aec80884c37b
-  verdicts: []
+  verdicts:
+  - stage: S5a
+    verdict: correct
+    by: refereeA
+    hash: aec80884c37b
+    date: '2026-10-25'
+    model: claude-opus-5-5
+    evidence: '04:82: true as stated for n in N (n=0 gives 2).'
+  - stage: S5b
+    verdict: correct
+    by: refereeB
+    hash: aec80884c37b
+    date: '2026-10-25'
+    model: claude-opus-5-5
+    evidence: 04:82 is well-posed. Section 2.5:443-447 pays the Looking-ahead remark at 04:110 (def-infinite,
+      and an exercise that uses thm-primes-infinite).
 - key: proof:thm-primes-infinite
   kind: proof
   file: 04-contrapositive-and-contradiction.md
   line: 89
   hash: 7a57ee5c1702
-  verdicts: []
+  verdicts:
+  - stage: S5a
+    verdict: correct
+    by: refereeA
+    hash: 7a57ee5c1702
+    date: '2026-10-25'
+    model: claude-opus-5-5
+    evidence: '04:90-92: Step 1 inducts on def-sum-product''s clauses (03:182,185). The k<=n or k=n+1
+      split is lem-naturals-arithmetic (e) (01:52). N>=2 makes thm-prime-factor apply. p|1 follows from
+      exm-divides-combination (x=1,y=-1). k>0 because p>0; trichotomy closes the case.'
+  - stage: S5b
+    verdict: minor
+    by: refereeB
+    hash: 7a57ee5c1702
+    date: '2026-10-25'
+    model: claude-opus-5-5
+    evidence: '04-contrapositive-and-contradiction.md:92 The step ''By Step 1, N >= 2'' uses an unlisted
+      fact: a positive integer is >= 1.'
 - key: check:04-contrapositive-and-contradiction:3
   kind: check
   file: 04-contrapositive-and-contradiction.md
   line: 99
   hash: 2bdb8231d6c1
-  verdicts: []
+  verdicts:
+  - stage: S5a
+    verdict: correct
+    by: refereeA
+    hash: 2bdb8231d6c1
+    date: '2026-10-25'
+    model: claude-opus-5-5
+    evidence: '04:104: 5!+1=121=11^2 and 11>5.'
+  - stage: S5b
+    verdict: correct
+    by: refereeB
+    hash: 2bdb8231d6c1
+    date: '2026-10-25'
+    model: claude-opus-5-5
+    evidence: '04:104: 5!+1 = 121 = 11*11. Asserted in verify/ch02/thm-primes-infinite.py:22.'
 - key: prp-cube-root-two-irrational
   kind: prp
   file: 04-contrapositive-and-contradiction.md
   line: 117
   hash: ba7f41965a57
-  verdicts: []
+  verdicts:
+  - stage: S5a
+    verdict: correct
+    by: refereeA
+    hash: ba7f41965a57
+    date: '2026-10-25'
+    model: claude-opus-5-5
+    evidence: '04:120: existence and uniqueness of the real cube root are a school fact, as in Section
+      1.6 (ch01/06-inverses.md:335,391).'
+  - stage: S5b
+    verdict: correct
+    by: refereeB
+    hash: ba7f41965a57
+    date: '2026-10-25'
+    model: claude-opus-5-5
+    evidence: 04:115 gives the school-fact convention, matching Section 1.6:391 and NOTATION's entry for
+      the n-th root.
 - key: proof:prp-cube-root-two-irrational
   kind: proof
   file: 04-contrapositive-and-contradiction.md
   line: 127
   hash: b45fb06222da
-  verdicts: []
+  verdicts:
+  - stage: S5a
+    verdict: correct
+    by: refereeA
+    hash: b45fb06222da
+    date: '2026-10-25'
+    model: claude-opus-5-5
+    evidence: '04:128-134: the parity lemma is a valid contrapositive via thm-even-or-odd. lem-lowest-terms
+      (02:208) gives q>0, not both even. p^3=2q^3 gives p=2s and then q^3=2(2s^3); the lemma is applied
+      to q as well. The proof closes by negation introduction.'
+  - stage: S5b
+    verdict: minor
+    by: refereeB
+    hash: b45fb06222da
+    date: '2026-10-25'
+    model: claude-opus-5-5
+    evidence: The proof at 04:128-134 is correct. But 04:137 says 'The proof is face (i), with no RAA'
+      and in the next sentence says the inner step 'rests on @fd1:prp-contrapositive-converse'. That result
+      is proved by an RAA box (fd1 2.5:214ff), so the proof as written does contain an RAA.
 - key: check:04-contrapositive-and-contradiction:4
   kind: check
   file: 04-contrapositive-and-contradiction.md
   line: 139
   hash: 387dec82295f
-  verdicts: []
+  verdicts:
+  - stage: S5a
+    verdict: correct
+    by: refereeA
+    hash: 387dec82295f
+    date: '2026-10-25'
+    model: claude-opus-5-5
+    evidence: '04:144: for p^3=3q^3, p has the parity of q, so the case ''q odd'' leaves ''not both even''
+      intact. Exercise C2 of 2.2 (02:490) does state ''no common divisor d>=2''.'
+  - stage: S5b
+    verdict: correct
+    by: refereeB
+    hash: 387dec82295f
+    date: '2026-10-25'
+    model: claude-opus-5-5
+    evidence: '04:144: with q odd, p^3 = 3q^3 is odd, so p is odd. Exercise C2 of Section 2.2 (2.2:487)
+      gives ''no common divisor d >= 2''.'
 - key: exm-method-smallest-counterexample
   kind: exm
   file: 04-contrapositive-and-contradiction.md
   line: 166
   hash: 0488d8ce15ff
-  verdicts: []
+  verdicts:
+  - stage: S5a
+    verdict: correct
+    by: refereeA
+    hash: 0488d8ce15ff
+    date: '2026-10-25'
+    model: claude-opus-5-5
+    evidence: '04:149-169: cor-well-ordering-integers (01:307) has exactly the ''non-empty with integer
+      lower bound'' hypothesis used. The match with thm-strong-induction-from-base (02:45) is correct.'
+  - stage: S5b
+    verdict: correct
+    by: refereeB
+    hash: 0488d8ce15ff
+    date: '2026-10-25'
+    model: claude-opus-5-5
+    evidence: 04:169-173 matches the blueprint. Its worked examples lem-lowest-terms and exm-three-power-factor
+      exist, and the second one checks the smaller object is positive, as the box advises.
 - key: exm-three-power-factor
   kind: exm
   file: 04-contrapositive-and-contradiction.md
   line: 176
   hash: 9f76ae043613
-  verdicts: []
+  verdicts:
+  - stage: S5a
+    verdict: correct
+    by: refereeA
+    hash: 9f76ae043613
+    date: '2026-10-25'
+    model: claude-opus-5-5
+    evidence: '04:195: F is a subset of Z_{>0}, which is a subset of N, so thm-well-ordering applies.
+      Both cases are handled, and 3^{a+1}=3^a*3 by def-power (03:206). Positivity is used: n=0 fails (0=3^a
+      b forces b=0, and 3|0).'
+  - stage: S5b
+    verdict: minor
+    by: refereeB
+    hash: 9f76ae043613
+    date: '2026-10-25'
+    model: claude-opus-5-5
+    evidence: 04-contrapositive-and-contradiction.md:195 The step from m' > 0 to m' ∉ F needs m' to be
+      a positive integer, and no source is given for that.
+  - stage: S8
+    verdict: minor
+    by: seam
+    hash: 9f76ae043613
+    date: '2026-10-25'
+    model: claude-opus-5-5
+    evidence: '04-contrapositive-and-contradiction.md:176 The worked example of the smallest-counterexample
+      method is Exercise C1 of Section 2.3 with 3 in place of 2: the same statement shape, the same two
+      cases and the same contradiction. It is presented as new and does not mention that the reader has
+      just proved the case of 2.'
 - key: check:04-contrapositive-and-contradiction:5
   kind: check
   file: 04-contrapositive-and-contradiction.md
   line: 198
   hash: b3c52165fc50
-  verdicts: []
+  verdicts:
+  - stage: S5a
+    verdict: correct
+    by: refereeA
+    hash: b3c52165fc50
+    date: '2026-10-25'
+    model: claude-opus-5-5
+    evidence: '04:203: 54=27*2 and 45=9*5; the leastness argument is right.'
+  - stage: S5b
+    verdict: correct
+    by: refereeB
+    hash: b3c52165fc50
+    date: '2026-10-25'
+    model: claude-opus-5-5
+    evidence: '04:203: 54 = 27*2 and 45 = 9*5. Asserted in verify/ch02/exm-three-power-factor.py:13.'
 - key: exr-contrapositive-and-contradiction-a1
   kind: exr
   file: 04-contrapositive-and-contradiction.md
   line: 216
   hash: 92db2ccc83ef
-  verdicts: []
+  verdicts:
+  - stage: S5a
+    verdict: correct
+    by: refereeA
+    hash: 92db2ccc83ef
+    date: '2026-10-25'
+    model: claude-opus-5-5
+    evidence: '04:228-234: the converse is refuted by 9. The contrapositive and negation forms are correct.
+      721=7*103, and 721 mod 2,3,5 = 1. The face-(i) classification matches fd1 8.1.'
+  - stage: S5b
+    verdict: correct
+    by: refereeB
+    hash: 92db2ccc83ef
+    date: '2026-10-25'
+    model: claude-opus-5-5
+    evidence: 04:228-234. Converse, contrapositive and negation are correct. 721 = 7*103, and 720 = 2*360
+      = 3*240 = 5*144. fd1:thm-odd-iff-square-odd and exm-method-double-inclusion exist.
+  - stage: S6
+    verdict: correct
+    by: verifier
+    hash: 92db2ccc83ef
+    date: '2026-10-25'
+    model: claude-opus-5-5
+    evidence: '04:227-235. (a): converse fails at 9 (and at 1); the contrapositive and the negation are
+      right, and so are their truth values. (b): the forms and first sentences match my own; (i) correctly
+      points to the no-common-divisor form of fd2 2.2 C2 (02-induction-in-practice.md:487). (c): my script
+      gives 6!+1=721=7*103, not divisible by 2, 3 or 5, so the least prime factor is 7>6. (d): face (i),
+      and the wi'
+  - stage: S8
+    verdict: minor
+    by: seam
+    hash: 92db2ccc83ef
+    date: '2026-10-25'
+    model: claude-opus-5-5
+    evidence: '04:223/234 (d) makes the same point as @fd1:exr-connective-rhetoric-c1 (a)/(d): face (i),
+      and the witness-naming rewrite. fd1 is not cited.'
 - key: exr-contrapositive-and-contradiction-b1
   kind: exr
   file: 04-contrapositive-and-contradiction.md
   line: 239
   hash: 317cb4b0563f
-  verdicts: []
+  verdicts:
+  - stage: S5a
+    verdict: correct
+    by: refereeA
+    hash: 317cb4b0563f
+    date: '2026-10-25'
+    model: claude-opus-5-5
+    evidence: '04:251-253: both contrapositives are negated correctly by De Morgan; (x-4)(x+2)<=0 holds
+      on [-2,4].'
+  - stage: S5b
+    verdict: correct
+    by: refereeB
+    hash: 317cb4b0563f
+    date: '2026-10-25'
+    model: claude-opus-5-5
+    evidence: 04:251-253. Both contrapositives are negated correctly, and (x-4)(x+2) = x^2-2x-8 <= 0 on
+      [-2,4].
+  - stage: S6
+    verdict: correct
+    by: verifier
+    hash: 317cb4b0563f
+    date: '2026-10-25'
+    model: claude-opus-5-5
+    evidence: '04:250-254. (a) and (b) are contrapositives, and both De Morgan negations are correct.
+      (b): from (x-4)(x+2)<=0 with x-4<=0 and x+2>=0 we get x^2<=2x+8; a script sweep of x over [-10,10]
+      finds no counterexample. Worked example in the section: exm-contrapositive-mod-three.'
 - key: exr-contrapositive-and-contradiction-b2
   kind: exr
   file: 04-contrapositive-and-contradiction.md
   line: 256
   hash: 61caa31408fb
-  verdicts: []
+  verdicts:
+  - stage: S5a
+    verdict: correct
+    by: refereeA
+    hash: 61caa31408fb
+    date: '2026-10-25'
+    model: claude-opus-5-5
+    evidence: '04:268-270: (a) checks all three parity cases of p^2=pq+q^2. (b) An odd m gives m^2=8t+1
+      (exr-induction-in-practice-b3(b), allowed in an exercise by STYLE:239), which leads to 2(t-n)=1.'
+  - stage: S5b
+    verdict: correct
+    by: refereeB
+    hash: 61caa31408fb
+    date: '2026-10-25'
+    model: claude-opus-5-5
+    evidence: '04:268: all three parity cases checked. 04:270: m^2 = 8t+1 = 8n+5 gives 2(t-n) = 1, a contradiction.'
+  - stage: S6
+    verdict: correct
+    by: verifier
+    hash: 61caa31408fb
+    date: '2026-10-25'
+    model: claude-opus-5-5
+    evidence: '04:267-270. (a): from lem-lowest-terms we get p^2=pq+q^2, and all three parity cases are
+      handled correctly; my script finds no solution with |p|<400, q<200. (b): m odd gives m^2=8t+1 by
+      02:389 (exr-induction-in-practice-b3 (b) proves x^2=8t+1), which leads to 2(t-n)=1. Worked examples:
+      prp-cube-root-two-irrational and thm-primes-infinite.'
 - key: exr-contrapositive-and-contradiction-b3
   kind: exr
   file: 04-contrapositive-and-contradiction.md
   line: 273
   hash: 6c8570ae36de
-  verdicts: []
+  verdicts:
+  - stage: S5a
+    verdict: correct
+    by: refereeA
+    hash: 6c8570ae36de
+    date: '2026-10-25'
+    model: claude-opus-5-5
+    evidence: '04:284: m-1 is in [1,m), so m-1<2^{m-1}. Discreteness gives m<=2^{m-1}. 2^{m-1}<2^m by
+      def-power and prp-power-laws (d),(e) (03:253-254).'
+  - stage: S5b
+    verdict: correct
+    by: refereeB
+    hash: 6c8570ae36de
+    date: '2026-10-25'
+    model: claude-opus-5-5
+    evidence: '04:284: m-1 < 2^{m-1}, so m <= 2^{m-1} < 2^m. prp-power-laws (d) and (e) are cited correctly.'
+  - stage: S6
+    verdict: correct
+    by: verifier
+    hash: 6c8570ae36de
+    date: '2026-10-25'
+    model: claude-opus-5-5
+    evidence: '04:283. The blank has only one reasonable completion: m-1 is not in F (the stem gives 1<=m-1<m),
+      so m-1<2^{m-1}; discreteness gives m<=2^{m-1}<2^m. The cited prp-power-laws (d) and (e) exist (03-recursion.md:244),
+      and the move is named correctly. Script: n<2^n holds for 1<=n<200. Worked example: exm-three-power-factor.'
 - key: exr-contrapositive-and-contradiction-b4
   kind: exr
   file: 04-contrapositive-and-contradiction.md
   line: 287
   hash: 0e36f793a335
-  verdicts: []
+  verdicts:
+  - stage: S5a
+    verdict: minor
+    by: refereeA
+    hash: 0e36f793a335
+    date: '2026-10-25'
+    model: claude-opus-5-5
+    evidence: '04-contrapositive-and-contradiction.md:311 In (e), the case ''both odd'' concludes that
+      the product is odd with no reason given. odd*odd=odd is no labelled result: it is proved only in
+      passing inside B2(a)''s solution.'
+  - stage: S5b
+    verdict: minor
+    by: refereeB
+    hash: 0e36f793a335
+    date: '2026-10-25'
+    model: claude-opus-5-5
+    evidence: 04-contrapositive-and-contradiction.md:311 The solution of (e) uses 'odd times odd is odd'
+      with no reference, and cites @exm-parity-of-sums (a fact about sums) for the parity of a difference.
+  - stage: S6
+    verdict: minor
+    by: verifier
+    hash: 0e36f793a335
+    date: '2026-10-25'
+    model: claude-opus-5-5
+    evidence: '04-contrapositive-and-contradiction.md:311 In (e), ''If both are odd, the product is odd''
+      is used without justification. No named result says odd times odd is odd: B2 (a) proves it inline,
+      and fd1:thm-odd-iff-square-odd covers only squares.'
 - key: exr-contrapositive-and-contradiction-c1
   kind: exr
   file: 04-contrapositive-and-contradiction.md
   line: 320
   hash: 211100ecbcc4
-  verdicts: []
+  verdicts:
+  - stage: S5a
+    verdict: correct
+    by: refereeA
+    hash: 211100ecbcc4
+    date: '2026-10-25'
+    model: claude-opus-5-5
+    evidence: '04:339-341: A is a costume (fd1:exm-costume-direct). B''s line (2) is N11(a) (fd1 ch08/06:88)
+      and line (3) is N7 (06:83). The corrected proof via prp-integers-closed (c) (01:111) is valid.'
+  - stage: S5b
+    verdict: correct
+    by: refereeB
+    hash: 211100ecbcc4
+    date: '2026-10-25'
+    model: claude-opus-5-5
+    evidence: '04:339-349. Entries N7 and N11 match fd1 8.6:66-68. The points total 2+1+3+1+1+2 = 10.
+      The proofs are the forms the method recommends: direct for A, contrapositive for B.'
+  - stage: S6
+    verdict: minor
+    by: verifier
+    hash: 211100ecbcc4
+    date: '2026-10-25'
+    model: claude-opus-5-5
+    evidence: 04-contrapositive-and-contradiction.md:346 The scheme gives 3 points for naming the catalogue
+      code (N11) and no points for the questions the item asks first ('is the conclusion true?' for A
+      and B).
 - key: exr-contrapositive-and-contradiction-c2
   kind: exr
   file: 04-contrapositive-and-contradiction.md
   line: 352
   hash: 003f2b291610
-  verdicts: []
+  verdicts:
+  - stage: S5a
+    verdict: correct
+    by: refereeA
+    hash: 003f2b291610
+    date: '2026-10-25'
+    model: claude-opus-5-5
+    evidence: '04:362-364: P>=3 because k>=1 (the hypothesis is used). The argument p=p_i, so p|1, is
+      correct. 16=2^4 and 15=3*5.'
+  - stage: S5b
+    verdict: correct
+    by: refereeB
+    hash: 003f2b291610
+    date: '2026-10-25'
+    model: claude-opus-5-5
+    evidence: 04:362-371. 16 = 2^4 and 15 = 3*5. The marking scheme totals 8.
+  - stage: S6
+    verdict: minor
+    by: verifier
+    hash: 003f2b291610
+    date: '2026-10-25'
+    model: claude-opus-5-5
+    evidence: 04-contrapositive-and-contradiction.md:369 The marking scheme fails a correct alternative
+      proof of (a).
+  - stage: S8
+    verdict: minor
+    by: seam
+    hash: 003f2b291610
+    date: '2026-10-25'
+    model: claude-opus-5-5
+    evidence: 04-contrapositive-and-contradiction.md:356 C2 (a) re-proves, without citation, a result
+      already proved in an earlier volume. fd1's exercise C1 of Section 8.1 already asks for and proves
+      'for every finite list p_1, …, p_k of primes, with k ≥ 1, there is a prime not in the list', by
+      the same P = p_1⋯p_k + 1 argument. A1 (d) repeats that exercise's (a)/(d) analysis. The subsection
+      'Infinitely many pr
 - key: exr-contrapositive-and-contradiction-c3
   kind: exr
   file: 04-contrapositive-and-contradiction.md
   line: 374
   hash: 6e225ecc138f
-  verdicts: []
+  verdicts:
+  - stage: S5a
+    verdict: minor
+    by: refereeA
+    hash: 6e225ecc138f
+    date: '2026-10-25'
+    model: claude-opus-5-5
+    evidence: 04-contrapositive-and-contradiction.md:383 Two steps are left unstated. q_i | 3*n! - N needs
+      q_i | N, which the solution never states (C2's solution at line 362 does justify the analogous step).
+      The cited result for the difference is missing. The letter k is used both for the number of prime
+      factors and for the statement's p=3k+2.
+  - stage: S5b
+    verdict: minor
+    by: refereeB
+    hash: 6e225ecc138f
+    date: '2026-10-25'
+    model: claude-opus-5-5
+    evidence: 04-contrapositive-and-contradiction.md:383 The step that splits each prime factor into the
+      forms 3t, 3t+1 or 3t+2 is not justified, and C3 has no ledger line.
+  - stage: S6
+    verdict: minor
+    by: verifier
+    hash: 6e225ecc138f
+    date: '2026-10-25'
+    model: claude-opus-5-5
+    evidence: 04-contrapositive-and-contradiction.md:383 C3 is a full write-up proof but its solution
+      has no **Marking scheme.** paragraph, which STYLE §11.6 and DRAFTING:33 require for write-up C items.
+      C1 and C2 in the same group have one.
 - key: def-equinumerous
   kind: def
   file: 05-finite-sets.md
@@ -2242,7 +3080,26 @@ items:
   file: 05-finite-sets.md
   line: 31
   hash: 92c9846af4ab
-  verdicts: []
+  verdicts:
+  - stage: S5a
+    verdict: correct
+    by: refereeA
+    hash: 92c9846af4ab
+    date: '2026-10-25'
+    model: claude-opus-5-5
+    evidence: '05-finite-sets.md:31-37: (a) the only map from ∅ to {∅} has no values, so it is not surjective;
+      (b) a one-element codomain forces 1 and 2 to the same value, so no map is injective; (c) the set
+      is empty and the empty function is a bijection. Each answer deals with every function, as def-equinumerous
+      requires.'
+  - stage: S5b
+    verdict: correct
+    by: refereeB
+    hash: 92c9846af4ab
+    date: '2026-10-25'
+    model: claude-opus-5-5
+    evidence: '05:31-37: (a) the empty function is not onto {∅}; (b) a one-element codomain forces 1 and
+      2 to the same value; (c) the set is empty and the empty function is a bijection. All three answers
+      are right and argued from def-equinumerous.'
 - key: prp-equinumerous-properties
   kind: prp
   file: 05-finite-sets.md
@@ -2316,7 +3173,24 @@ items:
   file: 05-finite-sets.md
   line: 104
   hash: c8370491982b
-  verdicts: []
+  verdicts:
+  - stage: S5a
+    verdict: correct
+    by: refereeA
+    hash: c8370491982b
+    date: '2026-10-25'
+    model: claude-opus-5-5
+    evidence: '05-finite-sets.md:109: k+2 is in ℕ (lem-naturals-arithmetic (b)) and 3≤k+2≤7. m−2 is in
+      ℕ by (d), which needs 2≤m and m≥3 gives it. The two maps undo each other, so thm-bijection-iff-inverse
+      applies.'
+  - stage: S5b
+    verdict: correct
+    by: refereeB
+    hash: c8370491982b
+    date: '2026-10-25'
+    model: claude-opus-5-5
+    evidence: '05:104-110: k↦k+2 maps {1..5} into {3..7}; m−2∈ℕ by lem-naturals-arithmetic (d) (m≥2, checked
+      against 01:51); inverse via thm-bijection-iff-inverse.'
 - key: def-infinite
   kind: def
   file: 05-finite-sets.md
@@ -2487,19 +3361,76 @@ items:
   file: 05-finite-sets.md
   line: 217
   hash: effb3b0357d2
-  verdicts: []
+  verdicts:
+  - stage: S5a
+    verdict: correct
+    by: refereeA
+    hash: effb3b0357d2
+    date: '2026-10-25'
+    model: claude-opus-5-5
+    evidence: '05-finite-sets.md:220-224: step (3) is exactly cor-pigeonhole-finite-sets (a), which needs
+      A with m elements, B with n elements and m>n; the template''s step (1) asks for both counts. The
+      failure list matches the hypotheses.'
+  - stage: S5b
+    verdict: correct
+    by: refereeB
+    hash: effb3b0357d2
+    date: '2026-10-25'
+    model: claude-opus-5-5
+    evidence: '05:217-225: the template, when-to-use and usual-failure lead-ins follow STYLE §2 item 6
+      and blueprint §4.5. Step (3) cites cor-pigeonhole-finite-sets (a) correctly. Linked from index.md:27
+      Named moves.'
 - key: exm-five-lattice-points
   kind: exm
   file: 05-finite-sets.md
   line: 227
   hash: 2af632e893d0
-  verdicts: []
+  verdicts:
+  - stage: S5a
+    verdict: correct
+    by: refereeA
+    hash: 2af632e893d0
+    date: '2026-10-25'
+    model: claude-opus-5-5
+    evidence: '05-finite-sets.md:238: B={0,1}² has 4 elements; the values lie in B by the division algorithm,
+      prp-integers-closed (b) and lem (e), as in the line-211 paragraph. 5>4 gives two different points
+      with equal remainders, so the coordinates have the same parity, and exm-lattice-midpoint (fd2 ch01,
+      ''same parity pattern ⇒ lattice midpoint'') applies. (Q1) at ch01:13 is the same claim.'
+  - stage: S5b
+    verdict: minor
+    by: refereeB
+    hash: 2af632e893d0
+    date: '2026-10-25'
+    model: claude-opus-5-5
+    evidence: '05:238 says ''same remainders. Then a and c have the same parity'' but gives no reason
+      (remainder 0 means a=2q, which is even; remainder 1 means a=2q+1, which is odd). The ledger line
+      667 covers only r,s∈{0,1}. The math is fine: exm-lattice-midpoint (1.1:303) takes ''same parity
+      pattern'' as its hypothesis.'
 - key: check:05-finite-sets:3
   kind: check
   file: 05-finite-sets.md
   line: 243
   hash: 296a34c01caf
-  verdicts: []
+  verdicts:
+  - stage: S5a
+    verdict: minor
+    by: refereeA
+    hash: 296a34c01caf
+    date: '2026-10-25'
+    model: claude-opus-5-5
+    evidence: 05-finite-sets.md:244 The Quick check says 'any 11 integers' with no 'different', yet the
+      solution uses the 11 integers as an 11-element pigeon set.
+  - stage: S5b
+    verdict: minor
+    by: refereeB
+    hash: 296a34c01caf
+    date: '2026-10-25'
+    model: claude-opus-5-5
+    evidence: '05:244 says ''among any 11 integers'', without ''different''. The method box''s usual failure
+      (05:224) warns that ''a list with repeats is not a set with N elements'', yet the solution (05:248)
+      treats the 11 integers as an 11-element set with a≠b. It also asserts without reason that the remainders
+      lie in {0,…,9} and that this set has 10 elements; the five-point example justifies the same step
+      ''as in the '
 - key: cor-finite-size-unique
   kind: cor
   file: 05-finite-sets.md
@@ -2634,7 +3565,23 @@ items:
   file: 05-finite-sets.md
   line: 334
   hash: 4970798cd512
-  verdicts: []
+  verdicts:
+  - stage: S5a
+    verdict: correct
+    by: refereeA
+    hash: 4970798cd512
+    date: '2026-10-25'
+    model: claude-opus-5-5
+    evidence: '05-finite-sets.md:339: if S≠{1,…,7}, prp-subset-finite gives S k<7 elements, and cor-finite-size-unique
+      rules out S also having 7. Both cited results say exactly that.'
+  - stage: S5b
+    verdict: correct
+    by: refereeB
+    hash: 4970798cd512
+    date: '2026-10-25'
+    model: claude-opus-5-5
+    evidence: '05:334-340: prp-subset-finite gives k<7 if S≠{1..7}, and cor-finite-size-unique rules out
+      having both k and 7 elements.'
 - key: cor-remove-point
   kind: cor
   file: 05-finite-sets.md
@@ -2812,13 +3759,49 @@ items:
   file: 05-finite-sets.md
   line: 430
   hash: 89a537e526a3
-  verdicts: []
+  verdicts:
+  - stage: S5a
+    verdict: correct
+    by: refereeA
+    hash: 89a537e526a3
+    date: '2026-10-25'
+    model: claude-opus-5-5
+    evidence: '05-finite-sets.md:435: n+1≥1, so n+1≠0. The inverse m↦m−1 is in ℕ by lem (c). The two maps
+      undo each other, so thm-bijection-iff-inverse applies. 0∉ℕ∖{0} makes the subset proper, and thm-finite-no-proper-copy
+      applies.'
+  - stage: S5b
+    verdict: correct
+    by: refereeB
+    hash: 89a537e526a3
+    date: '2026-10-25'
+    model: claude-opus-5-5
+    evidence: '05:430-436: the inverse m↦m−1 is in ℕ by lem-naturals-arithmetic (c); it is a bijection
+      by thm-bijection-iff-inverse; ℕ is infinite by thm-finite-no-proper-copy. This matches the forward
+      mention at 05:29.'
 - key: check:05-finite-sets:6
   kind: check
   file: 05-finite-sets.md
   line: 442
   hash: 45bf6c0b2acf
-  verdicts: []
+  verdicts:
+  - stage: S5a
+    verdict: correct
+    by: refereeA
+    hash: 45bf6c0b2acf
+    date: '2026-10-25'
+    model: claude-opus-5-5
+    evidence: '05-finite-sets.md:447: the set is non-empty, so n≥1 and the set is the list p_1,…,p_n (def-finite).
+      prp-finite-max (n≥1, reals) gives a maximum M, which is a prime and so in ℕ. thm-primes-infinite
+      (''for every n∈ℕ there is a prime p>n'') gives p>M with p in the set, a contradiction.'
+  - stage: S5b
+    verdict: correct
+    by: refereeB
+    hash: 45bf6c0b2acf
+    date: '2026-10-25'
+    model: claude-opus-5-5
+    evidence: '05:442-448: the set is non-empty, so n≥1 as prp-finite-max needs (03:354, ''integer n≥1,
+      reals x_1..x_n''). Its maximum M is a prime, hence in ℕ, so thm-primes-infinite (04:79, ''for every
+      n∈ℕ a prime p>n'') applies. This pays 2.4''s Looking ahead (04:110).'
 - key: exr-finite-sets-a1
   kind: exr
   file: 05-finite-sets.md
@@ -2927,6 +3910,34 @@ items:
       {0,...,4} has 5 elements by the third example after def-finite (n = 4). Then cor-pigeonhole (a)
       applies with 6 > 5. Ledger :552 is added, so the S5b finding is resolved. (b): p(x) = min{x, 9−x}
       lands in {1,...,4'
+  - stage: S5a
+    verdict: minor
+    by: refereeA
+    hash: d149708d5e8f
+    date: '2026-10-25'
+    model: claude-opus-5-5
+    evidence: 05-finite-sets.md:515 The solution goes from 'A_i has k_i ≥ 3 elements' to 'three points
+      of A lie in row i' without saying why a set with at least 3 elements contains three different points.
+  - stage: S5b
+    verdict: minor
+    by: refereeB
+    hash: d149708d5e8f
+    date: '2026-10-25'
+    model: claude-opus-5-5
+    evidence: '05:515: from ''not every k_i≤2'' the solution passes to ''some k_i≥3'' and then to ''three
+      points of A lie in row i''. Two steps are unjustified and not in the ledger: k_i>2 ⇒ k_i≥3 (lem-naturals-arithmetic
+      (e)), and an A_i with k_i≥3 elements containing three different points (φ_i(1), φ_i(2), φ_i(3),
+      different by injectivity). Part (a) and the sharpness example with six points are correct.'
+  - stage: S6
+    verdict: minor
+    by: verifier
+    hash: d149708d5e8f
+    date: '2026-10-25'
+    model: claude-opus-5-5
+    evidence: 05-finite-sets.md:509 Part (b) is a generalized-pigeonhole count (if each of 3 parts has
+      at most 2 elements, the union has at most 6, by @prp-disjoint-union-count). Section 2.5 has no worked
+      example of this move; its pigeonhole examples all conclude non-injectivity through cor-pigeonhole-finite-sets
+      (a). Only the hint carries the method, so the B-type task has no worked example.
 - key: exr-finite-sets-b3
   kind: exr
   file: 05-finite-sets.md
@@ -2962,7 +3973,37 @@ items:
   file: 05-finite-sets.md
   line: 538
   hash: 2c32aaa863b8
-  verdicts: []
+  verdicts:
+  - stage: S5a
+    verdict: correct
+    by: refereeA
+    hash: 2c32aaa863b8
+    date: '2026-10-25'
+    model: claude-opus-5-5
+    evidence: '05-finite-sets.md:554-566: (a) 0,…,11 have pairwise differences with 1≤|d|≤11. (b) parity
+      is a function by thm-even-or-odd, and exm-parity-of-sums (a) finishes. (c) is checked for {0,1}³
+      with C3 of Section 1.1 (ch01:511). (d) ⌊(k+1)/2⌋ for k=1..8 gives 1,1,2,2,3,3,4,4. (e) 2³=8>7. (f)
+      the image of the injection has n elements, then the paragraph at :332 applies.'
+  - stage: S5b
+    verdict: minor
+    by: refereeB
+    hash: 2c32aaa863b8
+    date: '2026-10-25'
+    model: claude-opus-5-5
+    evidence: '05:566 says ''Each true item is the method of @exm-method-pigeonhole with the holes named'',
+      but the proof of (f) at 05:564 uses no pigeonhole: it uses the codomain shrink, prp-subset-finite
+      and the paragraph at 05:332. Also, 05:564 calls that paragraph ''the remark after @prp-subset-finite'',
+      but it is plain prose, not a remark block. Verdicts (a)-(f) all checked: (d) ⌊(k+1)/2⌋ gives 1,1,2,2,3,3,4,4.'
+  - stage: S6
+    verdict: correct
+    by: verifier
+    hash: 2c32aaa863b8
+    date: '2026-10-25'
+    model: claude-opus-5-5
+    evidence: '05:552-566. Confirmed by script. (a): 0..11 have no two differing by a multiple of 12.
+      (b): every 3-set has a pair with even sum. (c): {0,1}^3 pairs always have a non-integer midpoint
+      coordinate. (d): floor((k+1)/2) gives 1,1,2,2,3,3,4,4. (e): 8>7. (f): follows from the remark after
+      prp-subset-finite (05:334). Worked example: exm-method-pigeonhole and the Quick checks.'
 - key: exr-finite-sets-c1
   kind: exr
   file: 05-finite-sets.md
