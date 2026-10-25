@@ -697,6 +697,7 @@ exm-coordinates-unique (solution): from p = (a, b) and p = (a', b') infer (a, b)
 exr-products-and-relations-b4 (solution): (a) solving the linear system and the check by exact arithmetic; (b) 1^2 = (-1)^2 = 1 and 1 != -1 | school algebra
 exr-products-and-relations-b4 (solution): (d), (e) membership of (a, b) and (e, e) via (*) | (*), proved in the text after def-cartesian-product
 exr-images-and-preimages-r1 (solution): levels of proof | def-levels-of-proof (cited)
+exr-images-and-preimages-r1 (solution): forall-I / forall-E rules and the flagged S_0 and x_0 boxes (derivation lines 7, 9, 12, 16, read in the solution's box-by-box account) | F1.4 (paid): def-rules-universal; uncited here; the rules are named with their *Logic and Proof*, Chapter 5 source in F2.1 §02 after def-subset, and index.md "What you need" names *Logic and Proof*, Chapters 5 and 6
 exr-images-and-preimages-r1 (solution): the closing remark, S ⊆ A and A ⊆ B give S ⊆ B | prp-subset-transitive (F2.1 §02, cited)
 exr-images-and-preimages-r4 (solution): every set x is an element of {x}; "is a singleton" is a property usable in specification | def-set-builder (F2.1 §02, listing)
 -->

@@ -620,9 +620,9 @@ prp-subset-transitive (claim): F2.1 §03 tags one more proof rule by rule | F2.1
 prp-subset-antisymmetric (proof): "let x be arbitrary ... since x was arbitrary" is forall-I | F1.4 (promised; prose pointer)
 exm-set-builder-small (example): an integer with |x| >= 3 has x^2 >= 9; the integers with |x| <= 2 are -2..2; x^2 >= 0 for real x | school fact (F1-F2 convention); proved in AN1.1 (order) and F2.2 (integers)
 thm-russell (proof): forall-E on the specification premise | F1.4 (promised; prose pointer); the derivation is checked with F1.4's rules
-thm-russell (claim): F2.3's "no map X -> P(X) is onto" has the same shape | F2.3 (prose pointer; nothing depends on it)
+thm-russell (claim): Chapter 4's "no map X -> P(X) is onto" has the same shape | F2.3 (prose pointer "Chapter 4"; nothing depends on it)
 def-set-builder (claim): the working rules (W1)-(W5) and N follow from axioms; Z, Q, R are built from sets | F3.1 ((W3) for families of subsets of a set only; general (W3) -> ST.1, Replacement), F3.2, F3.10 (prose pointers; nothing depends on them)
-def-set-builder (claim): F2.3 adds a principle of choice beyond (W1)-(W6); F2.6 §04 shows where it is needed | F2.3, F2.6 §04 (prose pointers, in the fold; nothing in this section depends on them)
+def-set-builder (claim): Chapter 6 adds a principle of choice beyond (W1)-(W6); Section 2.4 shows where it is first needed | F2.4, F2.6 §04 (prose pointers "Chapter 6", "Section 2.4", in the fold; nothing in this section depends on them)
 def-set-builder (claim): a set written {f(a) : a in A} is an image | F2.6 §05 (prose pointer; nothing in this section depends on it)
 exr-sets-and-subsets-a1 (solution): quantifier negation and negated implication | F1.8 (paid: prp-quantifier-negation, prp-negated-implication; prose pointer "*Logic and Proof*, Chapter 6")
 exr-sets-and-subsets-a1 (solution): integers with |n| >= 4 have n^2 >= 16 | school fact (F1-F2 convention)
