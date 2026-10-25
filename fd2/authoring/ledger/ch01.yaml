@@ -6,175 +6,703 @@ items:
   file: 01-proofs-from-definitions.md
   line: 24
   hash: 545ee78f9541
-  verdicts: []
+  verdicts:
+  - stage: S5a
+    verdict: correct
+    by: refereeA
+    hash: 545ee78f9541
+    date: '2026-10-25'
+    model: claude-opus-5-5
+    evidence: 01:27 standard existential definition; 01:30 cites @fd1:exm-sum-of-evens (fd1 ch05/06:816),
+      which writes even as ∃k(n=2·k)
+  - stage: S5b
+    verdict: minor
+    by: refereeB
+    hash: 545ee78f9541
+    date: '2026-10-25'
+    model: claude-opus-5-5
+    evidence: 01-proofs-from-definitions.md:30 The claim that Logic and Proof wrote 'n is even' as ∃k
+      (n = 2k) 'once' is false.
+  - stage: S8
+    verdict: minor
+    by: seam
+    hash: 545ee78f9541
+    date: '2026-10-25'
+    model: claude-opus-5-5
+    evidence: '01-proofs-from-definitions.md:30 The text says fd1 wrote "n is even" as ∃k(n = 2k) "once".
+      That is false: fd1 writes this form in several places.'
 - key: def-divides
   kind: def
   file: 01-proofs-from-definitions.md
   line: 34
   hash: cd48e257af48
-  verdicts: []
+  verdicts:
+  - stage: S5a
+    verdict: correct
+    by: refereeA
+    hash: cd48e257af48
+    date: '2026-10-25'
+    model: claude-opus-5-5
+    evidence: 01:37 is the same text as the old 2.2 block (git b1ee652~ 02-induction-in-practice.md:93),
+      as the blueprint requires; 01:32 motivation via 0/0 is sound
+  - stage: S5b
+    verdict: correct
+    by: refereeB
+    hash: cd48e257af48
+    date: '2026-10-25'
+    model: claude-opus-5-5
+    evidence: :37 matches the blueprint's verbatim move; :54's examples (3|12, -3|12, a|0, 0|0, 1|b, b|b)
+      checked.
+  - stage: S8
+    verdict: minor
+    by: seam
+    hash: cd48e257af48
+    date: '2026-10-25'
+    model: claude-opus-5-5
+    evidence: 01-proofs-from-definitions.md:54 The symbol a ∤ b is used in 1.1 (scratch table 262-264,
+      solution 268, B4(b) 423) but never introduced. NOTATION.md:85 credits its introduction to F2.1 §01.
 - key: check:01-proofs-from-definitions:1
   kind: check
   file: 01-proofs-from-definitions.md
   line: 40
   hash: c0d714171cf7
-  verdicts: []
+  verdicts:
+  - stage: S5a
+    verdict: correct
+    by: refereeA
+    hash: c0d714171cf7
+    date: '2026-10-25'
+    model: claude-opus-5-5
+    evidence: '01:45-51: k≤-2 ⇒ -4k≥8, k≥-1 ⇒ -4k≤4 together cover ℤ; 0·k=0≠5; -7=2(-4)+1; 12k∉{3} by
+      k≥1 / k≤0'
+  - stage: S5b
+    verdict: correct
+    by: refereeB
+    hash: c0d714171cf7
+    date: '2026-10-25'
+    model: claude-opus-5-5
+    evidence: :45-51 all four answers checked; the bounds for k<=-2 / k>=-1 and k>=1 / k<=0 are right
+      and are in the ledger at :531.
 - key: def-prime
   kind: def
   file: 01-proofs-from-definitions.md
   line: 58
   hash: 5f9b6b250ccc
-  verdicts: []
+  verdicts:
+  - stage: S5a
+    verdict: correct
+    by: refereeA
+    hash: 5f9b6b250ccc
+    date: '2026-10-25'
+    model: claude-opus-5-5
+    evidence: '01:61 same text as the old block; 01:64: trial division for 7, and 1 fails p≥2'
+  - stage: S5b
+    verdict: correct
+    by: refereeB
+    hash: 5f9b6b250ccc
+    date: '2026-10-25'
+    model: claude-opus-5-5
+    evidence: :61. The examples at :64 hold (7 prime by trial division, 9, 15 and 1 not); the ledger has
+      them at :532.
 - key: prp-divides-transitive
   kind: prp
   file: 01-proofs-from-definitions.md
   line: 70
   hash: 0c736ee4f94c
-  verdicts: []
+  verdicts:
+  - stage: S5a
+    verdict: correct
+    by: refereeA
+    hash: 0c736ee4f94c
+    date: '2026-10-25'
+    model: claude-opus-5-5
+    evidence: '01:73; both hypotheses needed (a=2,b=4,c=1 drops b|c: 2∤1)'
+  - stage: S5b
+    verdict: correct
+    by: refereeB
+    hash: 0c736ee4f94c
+    date: '2026-10-25'
+    model: claude-opus-5-5
+    evidence: :73 is true, and the scratch table :81-85 follows the blueprint.
 - key: proof:prp-divides-transitive
   kind: proof
   file: 01-proofs-from-definitions.md
   line: 90
   hash: b027a8bb7e4e
-  verdicts: []
+  verdicts:
+  - stage: S5a
+    verdict: correct
+    by: refereeA
+    hash: b027a8bb7e4e
+    date: '2026-10-25'
+    model: claude-opus-5-5
+    evidence: 01:91 two separate witnesses k,l (∃E twice, different names), witness lk named and checked
+      to be in ℤ (school closure fact, in the ledger); scratch-work table 01:81-85 matches
+  - stage: S5b
+    verdict: minor
+    by: refereeB
+    hash: b027a8bb7e4e
+    date: '2026-10-25'
+    model: claude-opus-5-5
+    evidence: 01-proofs-from-definitions.md:94 The meta-claim 'The proof used nothing but the definition
+      of divisibility' is false.
 - key: exm-method-direct-proof
   kind: exm
   file: 01-proofs-from-definitions.md
   line: 96
   hash: 37197924089e
-  verdicts: []
+  verdicts:
+  - stage: S5a
+    verdict: correct
+    by: refereeA
+    hash: 37197924089e
+    date: '2026-10-25'
+    model: claude-opus-5-5
+    evidence: 01:99-103; (N4) and (N9) match fd1 exm-not-allowed-catalogue entries 4 and 9
+  - stage: S5b
+    verdict: correct
+    by: refereeB
+    hash: 37197924089e
+    date: '2026-10-25'
+    model: claude-opus-5-5
+    evidence: :99-103 has three lead-ins. N4 and N9 match the fd1 catalogue entries (06-checking-proofs.md).
 - key: exm-divides-combination
   kind: exm
   file: 01-proofs-from-definitions.md
   line: 106
   hash: cad154e087a7
-  verdicts: []
+  verdicts:
+  - stage: S5a
+    verdict: correct
+    by: refereeA
+    hash: cad154e087a7
+    date: '2026-10-25'
+    model: claude-opus-5-5
+    evidence: 01:115-119 k,l are fixed before x,y are used, and kx+ly ∈ ℤ; the special cases at 01:122
+      are correct
+  - stage: S5b
+    verdict: correct
+    by: refereeB
+    hash: cad154e087a7
+    date: '2026-10-25'
+    model: claude-opus-5-5
+    evidence: :115-119 is correct. The special cases at :122 are right, and fd1:exm-sum-of-evens is the
+      even+even derivation.
 - key: check:01-proofs-from-definitions:2
   kind: check
   file: 01-proofs-from-definitions.md
   line: 124
   hash: 2ad9750fc168
-  verdicts: []
+  verdicts:
+  - stage: S5a
+    verdict: correct
+    by: refereeA
+    hash: 2ad9750fc168
+    date: '2026-10-25'
+    model: claude-opus-5-5
+    evidence: 01:129 a=1,b=2,c=6 forces k=2 and k=3
+  - stage: S5b
+    verdict: correct
+    by: refereeB
+    hash: 2ad9750fc168
+    date: '2026-10-25'
+    model: claude-opus-5-5
+    evidence: At :129, a=1, b=2, c=6 forces k=2 and k=3. Correct.
 - key: thm-even-or-odd
   kind: thm
   file: 01-proofs-from-definitions.md
   line: 136
   hash: be41242abe8f
-  verdicts: []
+  verdicts:
+  - stage: S5a
+    verdict: correct
+    by: refereeA
+    hash: be41242abe8f
+    date: '2026-10-25'
+    model: claude-opus-5-5
+    evidence: 01:139 true; both halves are proved
+  - stage: S5b
+    verdict: correct
+    by: refereeB
+    hash: be41242abe8f
+    date: '2026-10-25'
+    model: claude-opus-5-5
+    evidence: The statement at :139 is true. Scratch :145-153 cites fd1:ax-induction and fd1:def-rules-disjunction,
+      and both labels exist.
 - key: proof:thm-even-or-odd
   kind: proof
   file: 01-proofs-from-definitions.md
   line: 156
   hash: 292cfcf897c3
-  verdicts: []
+  verdicts:
+  - stage: S5a
+    verdict: correct
+    by: refereeA
+    hash: 292cfcf897c3
+    date: '2026-10-25'
+    model: claude-opus-5-5
+    evidence: '01:157 induction on ℕ with ∨E in the step; 01:159 negatives: -(2k+1)=2(-k-1)+1; 01:161
+      2c=1 is impossible because c≥1 or c≤0 (school fact in the ledger); ¬I is cited. The case count in
+      the following prose is wrong (see the A1 finding)'
+  - stage: S5b
+    verdict: minor
+    by: refereeB
+    hash: 292cfcf897c3
+    date: '2026-10-25'
+    model: claude-opus-5-5
+    evidence: '01-proofs-from-definitions.md:164 The meta-claim ''The proof has three case splits'' is
+      false: the proof has four.'
 - key: exm-method-cases
   kind: exm
   file: 01-proofs-from-definitions.md
   line: 166
   hash: 90e3eee35ee9
-  verdicts: []
+  verdicts:
+  - stage: S5a
+    verdict: correct
+    by: refereeA
+    hash: 90e3eee35ee9
+    date: '2026-10-25'
+    model: claude-opus-5-5
+    evidence: 01:169-173; (N7)/(N8) match the fd1 catalogue; @fd1:prp-excluded-middle exists (ch02/05:284)
+  - stage: S5b
+    verdict: correct
+    by: refereeB
+    hash: 90e3eee35ee9
+    date: '2026-10-25'
+    model: claude-opus-5-5
+    evidence: :169-173. fd1:prp-excluded-middle exists, and N7 (missing case) and N8 (cases that do not
+      exhaust) match the catalogue.
 - key: exm-cubes-plus-five-n
   kind: exm
   file: 01-proofs-from-definitions.md
   line: 176
   hash: ef201510221e
-  verdicts: []
+  verdicts:
+  - stage: S5a
+    verdict: correct
+    by: refereeA
+    hash: ef201510221e
+    date: '2026-10-25'
+    model: claude-opus-5-5
+    evidence: '01:189-193: 8k^3+12k^2+6k+1+10k+5 = 2(4k^3+6k^2+8k+3); sidecar passes'
+  - stage: S5b
+    verdict: correct
+    by: refereeB
+    hash: ef201510221e
+    date: '2026-10-25'
+    model: claude-opus-5-5
+    evidence: 'Expansions at :189-193 checked: (2k+1)^3+5(2k+1) = 8k^3+12k^2+16k+6.'
 - key: check:01-proofs-from-definitions:3
   kind: check
   file: 01-proofs-from-definitions.md
   line: 199
   hash: e248fe99655b
-  verdicts: []
+  verdicts:
+  - stage: S5a
+    verdict: correct
+    by: refereeA
+    hash: e248fe99655b
+    date: '2026-10-25'
+    model: claude-opus-5-5
+    evidence: 01:204 the cases are exhaustive by thm-even-or-odd
+  - stage: S5b
+    verdict: correct
+    by: refereeB
+    hash: e248fe99655b
+    date: '2026-10-25'
+    model: claude-opus-5-5
+    evidence: :204 is correct.
 - key: exm-parity-of-sums
   kind: exm
   file: 01-proofs-from-definitions.md
   line: 211
   hash: 5b35751eb692
-  verdicts: []
+  verdicts:
+  - stage: S5a
+    verdict: correct
+    by: refereeA
+    hash: 5b35751eb692
+    date: '2026-10-25'
+    model: claude-opus-5-5
+    evidence: '01:222: (a) case 1 uses exm-divides-combination with a=2 (''even'' = ''2|n'', 01:54). (b)
+      the WLOG is licensed: the statement and ''opposite parity'' are symmetric, which matches fd1 Section
+      8.2 (02-quantifier-rhetoric.md:317) and exm-rhetoric-induction (b)'
+  - stage: S5b
+    verdict: correct
+    by: refereeB
+    hash: 5b35751eb692
+    date: '2026-10-25'
+    model: claude-opus-5-5
+    evidence: :222-224 is correct. The WLOG at :224 is licensed by the symmetry it states. The 'Section
+      8.2' pointer at :209 is right (fd1 ch08/02-quantifier-rhetoric holds exm-rhetoric-induction (b)
+      and the WLOG subsection).
 - key: exm-refute-2p-plus-1
   kind: exm
   file: 01-proofs-from-definitions.md
   line: 235
   hash: 3ee663a587d4
-  verdicts: []
+  verdicts:
+  - stage: S5a
+    verdict: correct
+    by: refereeA
+    hash: 3ee663a587d4
+    date: '2026-10-25'
+    model: claude-opus-5-5
+    evidence: 01:242 p=7 is prime, and 15=3·5 is not prime by def-prime
+  - stage: S5b
+    verdict: correct
+    by: refereeB
+    hash: 3ee663a587d4
+    date: '2026-10-25'
+    model: claude-opus-5-5
+    evidence: At :242, 15 = 3·5 and 3 ∉ {1,15}. N1 is 'verifying instances and concluding for all'. Correct.
 - key: exm-refute-product-of-divisors
   kind: exm
   file: 01-proofs-from-definitions.md
   line: 249
   hash: d60c8c72fb90
-  verdicts: []
+  verdicts:
+  - stage: S5a
+    verdict: correct
+    by: refereeA
+    hash: d60c8c72fb90
+    date: '2026-10-25'
+    model: claude-opus-5-5
+    evidence: 01:268 a=b=c=2, 4∤2 by the k≥1 / k≤0 bound; the fd3 Ch3 pointer at 01:271 is the allowed
+      preview, and fd3 ch03 (02-gcd-and-bezout) covers coprime divisors
+  - stage: S5b
+    verdict: minor
+    by: refereeB
+    hash: d60c8c72fb90
+    date: '2026-10-25'
+    model: claude-opus-5-5
+    evidence: 01-proofs-from-definitions.md:271 The prose pointer into a later volume ('for coprime a
+      and b the statement is true, a fact Number Systems, Chapter 3 proves') has no row in STATUS's promise
+      table. The scratch work at :258 also asserts the coprime case for (2,3) ('6 divides each of them')
+      with no ledger line.
 - key: exm-method-counterexample
   kind: exm
   file: 01-proofs-from-definitions.md
   line: 273
   hash: 90bf66d8f064
-  verdicts: []
+  verdicts:
+  - stage: S5a
+    verdict: correct
+    by: refereeA
+    hash: 90bf66d8f064
+    date: '2026-10-25'
+    model: claude-opus-5-5
+    evidence: '01:276-280 consistent with fd1 (N1); existence example 01:283: 2^3+1=9=3·3'
+  - stage: S5b
+    verdict: correct
+    by: refereeB
+    hash: 90bf66d8f064
+    date: '2026-10-25'
+    model: claude-opus-5-5
+    evidence: :276-280. The existence line at :283 is right (9 = 3·3).
 - key: check:01-proofs-from-definitions:4
   kind: check
   file: 01-proofs-from-definitions.md
   line: 285
   hash: ddc81a875b14
-  verdicts: []
+  verdicts:
+  - stage: S5a
+    verdict: correct
+    by: refereeA
+    hash: ddc81a875b14
+    date: '2026-10-25'
+    model: claude-opus-5-5
+    evidence: '01:290: 5 and 23 are prime'
+  - stage: S5b
+    verdict: correct
+    by: refereeB
+    hash: ddc81a875b14
+    date: '2026-10-25'
+    model: claude-opus-5-5
+    evidence: At :290, 5 and 23 are prime.
 - key: exm-lattice-midpoint
   kind: exm
   file: 01-proofs-from-definitions.md
   line: 303
   hash: cba728ecfdae
-  verdicts: []
+  verdicts:
+  - stage: S5a
+    verdict: correct
+    by: refereeA
+    hash: cba728ecfdae
+    date: '2026-10-25'
+    model: claude-opus-5-5
+    evidence: 01:310 coordinatewise exm-parity-of-sums (a); the six midpoints at 01:297 all check out
+  - stage: S5b
+    verdict: correct
+    by: refereeB
+    hash: cba728ecfdae
+    date: '2026-10-25'
+    model: claude-opus-5-5
+    evidence: The six midpoints at :297 are verified pair by pair. The proof at :310 cites exm-parity-of-sums
+      (a), and the ledger has it at :535.
 - key: check:01-proofs-from-definitions:5
   kind: check
   file: 01-proofs-from-definitions.md
   line: 313
   hash: 8268bd2b3b10
-  verdicts: []
+  verdicts:
+  - stage: S5a
+    verdict: correct
+    by: refereeA
+    hash: 8268bd2b3b10
+    date: '2026-10-25'
+    model: claude-opus-5-5
+    evidence: 01:318 (-3,8) is odd-even, (1,0) is odd-even, midpoint (-1,4)
+  - stage: S5b
+    verdict: correct
+    by: refereeB
+    hash: 8268bd2b3b10
+    date: '2026-10-25'
+    model: claude-opus-5-5
+    evidence: At :318, (-3,8) is odd-even and (1,0) has the same pattern; the midpoint is (-1,4).
 - key: exr-proofs-from-definitions-a1
   kind: exr
   file: 01-proofs-from-definitions.md
   line: 333
   hash: e30bc9907b09
-  verdicts: []
+  verdicts:
+  - stage: S5a
+    verdict: minor
+    by: refereeA
+    hash: e30bc9907b09
+    date: '2026-10-25'
+    model: claude-opus-5-5
+    evidence: '01-proofs-from-definitions.md:351 The prose after thm-even-or-odd and A1(d) say the proof
+      of thm-even-or-odd has three case splits. It has four: the n<0 branch splits again on whether -n
+      is even or odd. The A1(d) answer lists only three, so a student who names all four is marked against
+      the key.'
+  - stage: S5b
+    verdict: minor
+    by: refereeB
+    hash: e30bc9907b09
+    date: '2026-10-25'
+    model: claude-opus-5-5
+    evidence: 01-proofs-from-definitions.md:340 A1(d) asks for 'the three case splits' of thm-even-or-odd,
+      and the solution at :351 lists three, leaving out the split on -n even / -n odd (:159).
+  - stage: S6
+    verdict: correct
+    by: verifier
+    hash: e30bc9907b09
+    date: '2026-10-25'
+    model: claude-opus-5-5
+    evidence: 01:333-352. Answered all parts myself before reading the solution and got the same answers;
+      my script agrees (-1 odd, 7|0, not 0|7, 4 is a multiple of 4 but not of 8). Part (d) is the proof-comprehension
+      part about thm-even-or-odd that the rules require, and it names the three case splits with their
+      exhaustiveness reasons.
 - key: exr-proofs-from-definitions-b1
   kind: exr
   file: 01-proofs-from-definitions.md
   line: 356
   hash: 962bb3877beb
-  verdicts: []
+  verdicts:
+  - stage: S5a
+    verdict: correct
+    by: refereeA
+    hash: 962bb3877beb
+    date: '2026-10-25'
+    model: claude-opus-5-5
+    evidence: 01:368-370 witnesses k^2 and kl, with two names
+  - stage: S5b
+    verdict: correct
+    by: refereeB
+    hash: 962bb3877beb
+    date: '2026-10-25'
+    model: claude-opus-5-5
+    evidence: :368-370. Both are correct.
+  - stage: S6
+    verdict: correct
+    by: verifier
+    hash: 962bb3877beb
+    date: '2026-10-25'
+    model: claude-opus-5-5
+    evidence: '01:356-370. Witnesses k^2 and kl, with two distinct names. Brute force over [-8,8]^4 finds
+      no failure. Worked examples: prp-divides-transitive and exm-divides-combination.'
 - key: exr-proofs-from-definitions-b2
   kind: exr
   file: 01-proofs-from-definitions.md
   line: 373
   hash: 373a8c61a6a0
-  verdicts: []
+  verdicts:
+  - stage: S5a
+    verdict: correct
+    by: refereeA
+    hash: 373a8c61a6a0
+    date: '2026-10-25'
+    model: claude-opus-5-5
+    evidence: 01:380 (2k+1)^2-1=4(k^2+k)
+  - stage: S5b
+    verdict: correct
+    by: refereeB
+    hash: 373a8c61a6a0
+    date: '2026-10-25'
+    model: claude-opus-5-5
+    evidence: :380, where (2k+1)^2-1 = 4(k^2+k).
+  - stage: S6
+    verdict: correct
+    by: verifier
+    hash: 373a8c61a6a0
+    date: '2026-10-25'
+    model: claude-opus-5-5
+    evidence: '01:373-380. Even/odd cases give 4k^2 and 4(k^2+k); checked for n in [-60,60]. Worked example:
+      exm-cubes-plus-five-n.'
 - key: exr-proofs-from-definitions-b3
   kind: exr
   file: 01-proofs-from-definitions.md
   line: 383
   hash: bc5d6c2b4732
-  verdicts: []
+  verdicts:
+  - stage: S5a
+    verdict: correct
+    by: refereeA
+    hash: bc5d6c2b4732
+    date: '2026-10-25'
+    model: claude-opus-5-5
+    evidence: 01:398-402 the symmetry holds; 4k^2+4l^2+4l+1 = 2(2k^2+2l^2+2l)+1
+  - stage: S5b
+    verdict: correct
+    by: refereeB
+    hash: bc5d6c2b4732
+    date: '2026-10-25'
+    model: claude-opus-5-5
+    evidence: At :398-402 the expansion is right and the symmetry license is stated.
+  - stage: S6
+    verdict: correct
+    by: verifier
+    hash: bc5d6c2b4732
+    date: '2026-10-25'
+    model: claude-opus-5-5
+    evidence: '01:383-402. The algebra 4k^2+4l^2+4l+1 = 2(2k^2+2l^2+2l)+1 is right and the WLOG is licensed
+      by the stated symmetry. The blank has one reasonable completion up to swapping m and n. Worked example:
+      exm-parity-of-sums (b).'
 - key: exr-proofs-from-definitions-b4
   kind: exr
   file: 01-proofs-from-definitions.md
   line: 405
   hash: 162f6c36073a
-  verdicts: []
+  verdicts:
+  - stage: S5a
+    verdict: correct
+    by: refereeA
+    hash: 162f6c36073a
+    date: '2026-10-25'
+    model: claude-opus-5-5
+    evidence: 01:421-435 all six verdicts are right; (c) case 2 n^2(n^2+1)=(2j+1)(2j+2); (e) n=6>5, 6|12;
+      sidecar passes
+  - stage: S5b
+    verdict: correct
+    by: refereeB
+    hash: 162f6c36073a
+    date: '2026-10-25'
+    model: claude-opus-5-5
+    evidence: 'Verdicts checked: (a)T, (b)F with a=2,b=c=1, (c)T (both cases expanded), (d)F, (e)T with
+      n=6, (f)F with m=2,n=1. The stem withholds the verdicts.'
+  - stage: S6
+    verdict: minor
+    by: verifier
+    hash: 162f6c36073a
+    date: '2026-10-25'
+    model: claude-opus-5-5
+    evidence: 01-proofs-from-definitions.md:422 Solution (c) never says that its brackets are integers,
+      which is the clause the section's own method box calls "the usual failure".
 - key: exr-proofs-from-definitions-c1
   kind: exr
   file: 01-proofs-from-definitions.md
   line: 440
   hash: '740077615403'
-  verdicts: []
+  verdicts:
+  - stage: S5a
+    verdict: minor
+    by: refereeA
+    hash: '740077615403'
+    date: '2026-10-25'
+    model: claude-opus-5-5
+    evidence: 01-proofs-from-definitions.md:467 In the alternative justification, the case closed by ⊥E
+      is the 3∤a case, not 'the first case'. Under the natural ordering 3|a ∨ 3∤a that is the second disjunct,
+      and the 3|a case needs no ⊥E.
+  - stage: S5b
+    verdict: correct
+    by: refereeB
+    hash: '740077615403'
+    date: '2026-10-25'
+    model: claude-opus-5-5
+    evidence: '(a) negatives: -(3k+1)=3(-k-1)+2 and -(3k+2)=3(-k-1)+1 hold, and the uniqueness bound is
+      right. (b) the squares are right. (c) both cases on b are covered and the symmetry is licensed.
+      The marking scheme sums to 10.'
+  - stage: S6
+    verdict: minor
+    by: verifier
+    hash: '740077615403'
+    date: '2026-10-25'
+    model: claude-opus-5-5
+    evidence: 01-proofs-from-definitions.md:474 The C1 marking scheme takes a point from a valid proof
+      of (c) that needs no symmetry argument.
 - key: exr-proofs-from-definitions-c2
   kind: exr
   file: 01-proofs-from-definitions.md
   line: 481
   hash: bc53d3c9b667
-  verdicts: []
+  verdicts:
+  - stage: S5a
+    verdict: correct
+    by: refereeA
+    hash: bc53d3c9b667
+    date: '2026-10-25'
+    model: claude-opus-5-5
+    evidence: 01:492-496 @fd1:thm-odd-iff-square-odd exists (ch02/04:523); (N5) matches the catalogue;
+      the converse fails at n=-1; the correct proof closes the even case by ⊥E
+  - stage: S5b
+    verdict: correct
+    by: refereeB
+    hash: bc53d3c9b667
+    date: '2026-10-25'
+    model: claude-opus-5-5
+    evidence: fd1:thm-odd-iff-square-odd exists, and N5 is 'proving the converse'. The counterexample
+      to the step (n=-1) is right and the corrected proof is complete. The marking scheme sums to 6.
+  - stage: S6
+    verdict: minor
+    by: verifier
+    hash: bc53d3c9b667
+    date: '2026-10-25'
+    model: claude-opus-5-5
+    evidence: '01-proofs-from-definitions.md:497 The marking scheme gives 3 of its 6 points for things
+      the problem never asks for: a false instance of the illegal pattern, and a correct proof.'
 - key: exr-proofs-from-definitions-c3
   kind: exr
   file: 01-proofs-from-definitions.md
   line: 506
   hash: d2de0228035d
-  verdicts: []
+  verdicts:
+  - stage: S5a
+    verdict: correct
+    by: refereeA
+    hash: d2de0228035d
+    date: '2026-10-25'
+    model: claude-opus-5-5
+    evidence: 01:519-523 eight {0,1}^3 points, coordinatewise parity, 2^3 patterns; pigeonhole is named,
+      not used as a reason
+  - stage: S5b
+    verdict: correct
+    by: refereeB
+    hash: d2de0228035d
+    date: '2026-10-25'
+    model: claude-opus-5-5
+    evidence: (a) the {0,1}^3 points work. (b) cites exm-lattice-midpoint and exm-parity-of-sums (a).
+      (c) 2^3=8 patterns, so pigeonhole applies.
+  - stage: S6
+    verdict: correct
+    by: verifier
+    hash: d2de0228035d
+    date: '2026-10-25'
+    model: claude-opus-5-5
+    evidence: 01:506-524. The 8 points of {0,1}^3 pairwise have some odd coordinate sum (checked by script).
+      (b) is correct coordinate by coordinate; (c) pigeonhole with 2^3 patterns is right.
 - key: def-set-equality
   kind: def
   file: 02-sets-and-subsets.md
@@ -214,7 +742,23 @@ items:
   file: 02-sets-and-subsets.md
   line: 57
   hash: b88472b99c1b
-  verdicts: []
+  verdicts:
+  - stage: S5a
+    verdict: correct
+    by: refereeA
+    hash: b88472b99c1b
+    date: '2026-10-25'
+    model: claude-opus-5-5
+    evidence: '02:57-63: first two sets have elements 1,2,3; 2 ∉ {1,{2},3} since 2≠1,2≠3, 2≠{2} by the
+      numbers-are-not-sets convention (02:33); def-set-equality applied correctly.'
+  - stage: S5b
+    verdict: correct
+    by: refereeB
+    hash: b88472b99c1b
+    date: '2026-10-25'
+    model: claude-opus-5-5
+    evidence: '02:57-63: the first two sets have elements 1,2,3; the witness 2 is not in {1,{2},3}, since
+      2≠1, 2≠3, and 2≠{2} by the numbers-are-not-sets convention (02:33). Cites def-set-equality.'
 - key: def-subset
   kind: def
   file: 02-sets-and-subsets.md
@@ -253,13 +797,47 @@ items:
   file: 02-sets-and-subsets.md
   line: 91
   hash: d78c4b2b2017
-  verdicts: []
+  verdicts:
+  - stage: S5a
+    verdict: correct
+    by: refereeA
+    hash: d78c4b2b2017
+    date: '2026-10-25'
+    model: claude-opus-5-5
+    evidence: 02:91-99 matches blueprint ch01-deepen 4.2 item 3; (N1) hasty generalization and (N5) converse
+      confirmed at fd1/src/ch08-from-derivations-to-prose/06-checking-proofs.md:63,65,182; 'second warning
+      below' is 02:150, which shows N1.
+  - stage: S5b
+    verdict: correct
+    by: refereeB
+    hash: d78c4b2b2017
+    date: '2026-10-25'
+    model: claude-opus-5-5
+    evidence: 02:91-99 matches blueprint §4.2 item 3. (N1) is a 'for all' error and (N5) is the converse
+      error, as in fd1 ch08/06:63-65 and :182. 'The second warning below' is 02:149, which is the instance-checking
+      warning.
 - key: check:02-sets-and-subsets:2
   kind: check
   file: 02-sets-and-subsets.md
   line: 101
   hash: 1524ea866053
-  verdicts: []
+  verdicts:
+  - stage: S5a
+    verdict: correct
+    by: refereeA
+    hash: 1524ea866053
+    date: '2026-10-25'
+    model: claude-opus-5-5
+    evidence: '02:101-107: def-divides (01:34, b=ka) gives n=4k, n=2(2k), 2k∈Z; alternative via prp-divides-transitive
+      (01:70) with 2|4 and 4|n is valid and earlier material.'
+  - stage: S5b
+    verdict: correct
+    by: refereeB
+    hash: 1524ea866053
+    date: '2026-10-25'
+    model: claude-opus-5-5
+    evidence: '02:101-107: n=4k gives n=2(2k), which fits def-divides (b=ka, commutativity left silent).
+      The alternative citation prp-divides-transitive with a=2, b=4, c=n is valid. Ledger 633 covers 2k∈Z.'
 - key: exm-subset-first-examples
   kind: exm
   file: 02-sets-and-subsets.md
@@ -293,6 +871,24 @@ items:
       →I box. Both S5b findings are resolved. Ledger lines 01:525-528 now cover 6k = 3(2k), ℤ being closed
       under ·, and the order facts, sourced to Ch 7 / Ch 11 as school facts (STATUS row 87, row 90). The
       order
+  - stage: S5a
+    verdict: correct
+    by: refereeA
+    hash: fc473c20c502
+    date: '2026-10-25'
+    model: claude-opus-5-5
+    evidence: '02:111-127: (a) transitivity of ≤; (b) ∃E with fresh k, ∃I with witness 2k, uses @def-divides
+      per blueprint item 2; (c) one-line →I box. Quantifier order: x arbitrary, k chosen after x and depends
+      on x; fine.'
+  - stage: S5b
+    verdict: correct
+    by: refereeB
+    hash: fc473c20c502
+    date: '2026-10-25'
+    model: claude-opus-5-5
+    evidence: '02:111-127: (a) is order transitivity (ledger 612). (b) uses ∃E/∃I with a fresh k (ledger
+      613/614), cites @def-divides per blueprint item 2, and the prose pointer ''Logic and Proof, Chapter
+      5'' is F1.4. (c) is the one-line →I box.'
 - key: prp-subset-antisymmetric
   kind: prp
   file: 02-sets-and-subsets.md
@@ -340,13 +936,44 @@ items:
   file: 02-sets-and-subsets.md
   line: 175
   hash: 2d5cc61c4d03
-  verdicts: []
+  verdicts:
+  - stage: S5a
+    verdict: minor
+    by: refereeA
+    hash: 2d5cc61c4d03
+    date: '2026-10-25'
+    model: claude-opus-5-5
+    evidence: 02-sets-and-subsets.md:180 The method box uses the empty set and the fact ∅ ⊆ S before either
+      is introduced.
+  - stage: S5b
+    verdict: minor
+    by: refereeB
+    hash: 2d5cc61c4d03
+    date: '2026-10-25'
+    model: claude-opus-5-5
+    evidence: '02-sets-and-subsets.md:180 The method box gives as a reason a fact, and a symbol, that
+      the section has not yet established: ''∅ ⊆ S always holds''.'
 - key: check:02-sets-and-subsets:3
   kind: check
   file: 02-sets-and-subsets.md
   line: 185
   hash: 48d718a40196
-  verdicts: []
+  verdicts:
+  - stage: S5a
+    verdict: correct
+    by: refereeA
+    hash: 48d718a40196
+    date: '2026-10-25'
+    model: claude-opus-5-5
+    evidence: '02:185-191: (⊆) via (x-1)(x+1)=0 and zero-product (school fact, ledger 02:634); (⊇) two
+      checks. Correct.'
+  - stage: S5b
+    verdict: correct
+    by: refereeB
+    hash: 48d718a40196
+    date: '2026-10-25'
+    model: claude-opus-5-5
+    evidence: '02:185-191: (⊆) factors to (x-1)(x+1)=0 and (⊇) is two checks. Ledger 634 covers both.'
 - key: prp-subset-transitive
   kind: prp
   file: 02-sets-and-subsets.md
@@ -403,12 +1030,48 @@ items:
     evidence: '01:177-199. The Fitch lines check: ∀E 1 and 2, →E (4,3) and (6,5), →I 3-7, ∀I over the
       flagged box 3-8. The prose tags match the derivation. The level-3 silent-step claim at 01:203 matches
       the ch05 blueprint def-silent-steps.'
+  - stage: S5a
+    verdict: correct
+    by: refereeA
+    hash: 58d0f3d8148d
+    date: '2026-10-25'
+    model: claude-opus-5-5
+    evidence: '02:217-219: x arbitrary in A; A⊆B at x gives x∈B (∀E,→E); B⊆C at x gives x∈C; both hypotheses
+      used. Fold derivation 02:228-242: ∀E lines 4,6 instantiate at flagged x0, →E 5,7 cite correct lines,
+      →I 3-7, ∀I 3-8 with x0 fresh (not in premises or conclusion). Dropping either hypothesis: A={1},B=∅...
+      counterexamples exist (A={1},B={1},C=∅ fails without B⊆C).'
+  - stage: S5b
+    verdict: correct
+    by: refereeB
+    hash: 58d0f3d8148d
+    date: '2026-10-25'
+    model: claude-opus-5-5
+    evidence: '02:217-219 is the level-3 proof from blueprint item 5. It uses only def-subset, by ∀E at
+      x twice. The Givens/Goal table at 02:208-212 matches the blueprint. The fold derivation at 02:228-242
+      is equivalent, and its ''one more fully tagged proof, in Section 1.3'' claim holds: 03-set-operations
+      has proofs tagged step by step.'
 - key: check:02-sets-and-subsets:4
   kind: check
   file: 02-sets-and-subsets.md
   line: 255
   hash: 97cdaf2ab955
-  verdicts: []
+  verdicts:
+  - stage: S5a
+    verdict: correct
+    by: refereeA
+    hash: 97cdaf2ab955
+    date: '2026-10-25'
+    model: claude-opus-5-5
+    evidence: '02:255-261: A={1,2},B={1,2,3},C={1,3}: A⊆B, C⊆B true; witnesses 3 (B⊄A), 2 (A⊄C), 3 (C⊄A),
+      2 (B⊄C) all verified by hand.'
+  - stage: S5b
+    verdict: correct
+    by: refereeB
+    hash: 97cdaf2ab955
+    date: '2026-10-25'
+    model: claude-opus-5-5
+    evidence: '02:255-261: A={1,2}, B={1,2,3}, C={1,3}. A⊆B and C⊆B are true; B⊄A (3), A⊄C (2), C⊄A (3),
+      B⊄C (2). All verified.'
 - key: def-set-builder
   kind: def
   file: 02-sets-and-subsets.md
@@ -524,7 +1187,23 @@ items:
   file: 02-sets-and-subsets.md
   line: 327
   hash: 42ed3fcb04e7
-  verdicts: []
+  verdicts:
+  - stage: S5a
+    verdict: correct
+    by: refereeA
+    hash: 42ed3fcb04e7
+    date: '2026-10-25'
+    model: claude-opus-5-5
+    evidence: '02:327-341: (a) ∅⊆A at A=∅; (b) ∅ has no elements; (c) ∅ differs from the one-element sets;
+      {∅} vs {{∅}} distinguished by ∅ ∈ {∅}, ∅ ∉ {{∅}} since ∅ ≠ {∅}. Correct.'
+  - stage: S5b
+    verdict: correct
+    by: refereeB
+    hash: 42ed3fcb04e7
+    date: '2026-10-25'
+    model: claude-opus-5-5
+    evidence: '02:327-341: (a) holds by ∅⊆A (02:323), proved before the check. (b) holds. (c) none are
+      equal, with witness ∅∈{∅} and ∅∉{{∅}}.'
 - key: exm-set-builder-small
   kind: exm
   file: 02-sets-and-subsets.md
@@ -559,6 +1238,24 @@ items:
       ∅ ⊆ every set; this is correct. Part (b) is now laid out as two labeled (⊆)/(⊇) paragraphs, following
       the 01:157 rule. The intro now reads 'The next worked example' (01:291). Both parts of the S5b finding
       are res
+  - stage: S5a
+    verdict: correct
+    by: refereeA
+    hash: 03f54ffb45cb
+    date: '2026-10-25'
+    model: claude-opus-5-5
+    evidence: '02:347-370: (a) |x|≥3 ⇒ x²≥9>5 contradiction, integers with |x|≤2 listed; (⊇) five cases;
+      (b) x²≥0 contradiction, ⊥E; (⊇) ∅ ⊆ every set (02:323, earlier). Scratch line matches blueprint
+      item 8; verify/ch01/exm-set-builder-small.py present.'
+  - stage: S5b
+    verdict: correct
+    by: refereeB
+    hash: 03f54ffb45cb
+    date: '2026-10-25'
+    model: claude-opus-5-5
+    evidence: '02:347-370: the scratch guess paragraph follows blueprint item 8. (⊆) and (⊇) are labelled
+      and follow the method box''s advice; ledger 621 covers |x|≥3 ⇒ x²≥9 and x²≥0. In (b), ⊥E is cited
+      and ∅⊆S comes from 02:323. ''The second warning above'' in fold 02:373 resolves to 02:149.'
 - key: thm-russell
   kind: thm
   file: 02-sets-and-subsets.md
@@ -749,7 +1446,36 @@ items:
   file: 02-sets-and-subsets.md
   line: 525
   hash: 3dbe0f9a7a20
-  verdicts: []
+  verdicts:
+  - stage: S5a
+    verdict: correct
+    by: refereeA
+    hash: 3dbe0f9a7a20
+    date: '2026-10-25'
+    model: claude-opus-5-5
+    evidence: '02:525-549: (a) re-indexing k±1 both ways; (b) 4 in left, 4=8k impossible; (c) x³-x=x(x-1)(x+1);
+      (d) A=C=∅,B={1} satisfies hypotheses and A⊆C; (e) transitivity then antisymmetry. Sidecar verify/ch01/exr-sets-and-subsets-b4.py
+      runs and passes. Matches blueprint item 11.'
+  - stage: S5b
+    verdict: correct
+    by: refereeB
+    hash: 3dbe0f9a7a20
+    date: '2026-10-25'
+    model: claude-opus-5-5
+    evidence: '02:525-549: the stem withholds the verdicts (§12.13.4). (a) is true by re-indexing both
+      ways. (b) is false with witness 4, and the k≥1 / k≤0 argument is correct. (c) is true: x(x-1)(x+1).
+      (d) is false with A=C=∅, B={1}. (e) is true by transitivity plus antisymmetry. Ledger lines 636-637
+      are present, and the sidecar verify/ch01/exr-sets-and-subsets-b4.py exists.'
+  - stage: S6
+    verdict: correct
+    by: verifier
+    hash: 3dbe0f9a7a20
+    date: '2026-10-25'
+    model: claude-opus-5-5
+    evidence: '02:525-547. a T, b F (witness 4), c T, d F (A=C=empty, B={1}), e T. Brute force over Z
+      in [-200,200] and over all subsets of {1,2,3} agrees. Worked examples: exm-subset-first-examples,
+      exm-set-builder-small, and the refuting-an-inclusion rule at 02:137. prp-subset-transitive and prp-subset-antisymmetric
+      exist.'
 - key: exr-sets-and-subsets-c1
   kind: exr
   file: 02-sets-and-subsets.md
@@ -858,12 +1584,39 @@ items:
       at 27 against thm-russell (01:322). The examples at 31-34 are correct ([0,2]\[1,3]=[0,1), A∩∅=∅,
       ∅ as identity). The warning at 45 is true: A\B and B\A are disjoint, so they are equal iff both
       are empty iff A=B. School facts at 33 are ledgered (485, 487).'
+  - stage: S8
+    verdict: minor
+    by: seam
+    hash: 945dfc05c72f
+    date: '2026-10-25'
+    model: claude-opus-5-5
+    evidence: 03-set-operations.md:609 A result proved earlier in the chapter is credited to the wrong
+      place. The ledger calls "ℤ minus the evens is the odd integers" a school fact that F2.2 proves,
+      but 1.1 now proves it (thm-even-or-odd, the "not both" half plus existence). The blueprint's ledger
+      re-key list (§6) covered 05 and 06 and missed this line.
 - key: check:03-set-operations:1
   kind: check
   file: 03-set-operations.md
   line: 48
   hash: 345247e8a15e
-  verdicts: []
+  verdicts:
+  - stage: S5a
+    verdict: correct
+    by: refereeA
+    hash: 345247e8a15e
+    date: '2026-10-25'
+    model: claude-opus-5-5
+    evidence: '03:48-54: A∪B={1,2,3,4,6}, A∩B={2}, X∖(A∪B)={5}, X∖A={4,5,6}, X∖B={1,3,5}, intersection
+      {5}. All recomputed and correct.'
+  - stage: S5b
+    verdict: correct
+    by: refereeB
+    hash: 345247e8a15e
+    date: '2026-10-25'
+    model: claude-opus-5-5
+    evidence: '03:48-54 recomputed: A∪B={1,2,3,4,6}, A∩B={2}, X∖(A∪B)={5}, X∖A={4,5,6}, X∖B={1,3,5}, intersection
+      {5}. The pointer to ''proved for arbitrary families later in this section'' is thm-de-morgan-families
+      (03:360).'
 - key: thm-set-algebra
   kind: thm
   file: 03-set-operations.md
@@ -934,30 +1687,115 @@ items:
       (ch02/03:100) licenses replacing the letters; the ledger records the first-order statements. I recomputed
       the truth table for (d) in all 8 rows: columns 4 and 5 agree, and so do columns 6 and 7. Clause
       mappi'
+  - stage: S5a
+    verdict: minor
+    by: refereeA
+    hash: f32deb1fb9ae
+    date: '2026-10-25'
+    model: claude-opus-5-5
+    evidence: 03-set-operations.md:97 The uniform argument uses a sequent obtained from completeness as
+      a derived rule, but def-derived-rule licenses only sequents 'already derived earlier in the book'.
+  - stage: S5b
+    verdict: correct
+    by: refereeB
+    hash: f32deb1fb9ae
+    date: '2026-10-25'
+    model: claude-opus-5-5
+    evidence: '03:97 clause letters checked against fd1 prp-standard-equivalences (ch04/05:206): (f) commutativity,
+      (h) associativity, (g) distributivity. The truth table at 03:101-112 was recomputed row by row:
+      columns 4=5 and 6=7. def-semantic-equivalence, thm-completeness, def-derived-rule and def-set-equality
+      all exist. The proof ends at ''This proves all eight laws.'' as blueprint §4.3 item 2 requires.'
 - key: exm-method-chain-of-iff
   kind: exm
   file: 03-set-operations.md
   line: 140
   hash: 4ed695c87300
-  verdicts: []
+  verdicts:
+  - stage: S5a
+    verdict: gap
+    by: refereeA
+    hash: 4ed695c87300
+    date: '2026-10-25'
+    model: claude-opus-5-5
+    evidence: '03-set-operations.md:143 The method box''s licence for the chain is not enough: the steps
+      replace a subformula inside a larger formula, and transitivity of ⊣⊢ does not license that.'
+  - stage: S5b
+    verdict: gap
+    by: refereeB
+    hash: 4ed695c87300
+    date: '2026-10-25'
+    model: claude-opus-5-5
+    evidence: 03-set-operations.md:143 The template's justification (transitivity of ⊣⊢) does not cover
+      chain steps that apply an equivalence to part of a formula. Every worked chain in the section has
+      such steps. The template also turns the chain into ↔ without the clause that does that.
 - key: exm-difference-chain
   kind: exm
   file: 03-set-operations.md
   line: 150
   hash: 11c1c8b3cb82
-  verdicts: []
+  verdicts:
+  - stage: S5a
+    verdict: minor
+    by: refereeA
+    hash: 11c1c8b3cb82
+    date: '2026-10-25'
+    model: claude-opus-5-5
+    evidence: 03-set-operations.md:182 The solution's justification does not name the step that applies
+      De Morgan inside a conjunction.
+  - stage: S5b
+    verdict: minor
+    by: refereeB
+    hash: 11c1c8b3cb82
+    date: '2026-10-25'
+    model: claude-opus-5-5
+    evidence: '03:171-182: the chain and the scratch table are correct (verify/ch01/exm-difference-chain.py
+      passes; regrouping matches prp-and-associative''s direction; De Morgan (a),(b) need no RAA). The
+      De Morgan and ''definition'' steps act inside a conjunct and cite only prp-de-morgan / def-set-operations,
+      which inherits the method box''s missing replacement step.'
 - key: check:03-set-operations:2
   kind: check
   file: 03-set-operations.md
   line: 185
   hash: 5860be77f2db
-  verdicts: []
+  verdicts:
+  - stage: S5a
+    verdict: correct
+    by: refereeA
+    hash: 5860be77f2db
+    date: '2026-10-25'
+    model: claude-opus-5-5
+    evidence: '03:186-191. A={1,2}, B={1}, C={2}: B∩C=∅, so the right side is {1,2} and the left side
+      is {2}∖{2}=∅. The failing step is correctly identified as De Morgan, since ¬(q∧r) gives ¬q∨¬r.'
+  - stage: S5b
+    verdict: correct
+    by: refereeB
+    hash: 5860be77f2db
+    date: '2026-10-25'
+    model: claude-opus-5-5
+    evidence: '03:186-190: A={1,2}, B={1}, C={2}: (A∖B)∖C={2}∖{2}=∅ and A∖(B∩C)=A∖∅={1,2}. The failing
+      step is the De Morgan line, since ¬(q∧r)≡¬q∨¬r. This matches blueprint §4.3 item 6.'
 - key: check:03-set-operations:3
   kind: check
   file: 03-set-operations.md
   line: 196
   hash: 21ba4a1881a4
-  verdicts: []
+  verdicts:
+  - stage: S5a
+    verdict: correct
+    by: refereeA
+    hash: 21ba4a1881a4
+    date: '2026-10-25'
+    model: claude-opus-5-5
+    evidence: 03:197-202. p∧(p∨q)≡p holds in all four rows. It is indeed not a clause of fd1:prp-standard-equivalences
+      (I checked the clause list (a)-(h)). The direct argument ∧E, then ∨I+∧I, is right.
+  - stage: S5b
+    verdict: correct
+    by: refereeB
+    hash: 21ba4a1881a4
+    date: '2026-10-25'
+    model: claude-opus-5-5
+    evidence: '03:197-201: p∧(p∨q)≡p is not among clauses (a)-(h) of fd1 prp-standard-equivalences (ch04/05:206-217,
+      no absorption clause). The two-row argument and the direct ∧E / ∨I+∧I derivations are correct.'
 - key: def-power-set
   kind: def
   file: 03-set-operations.md
@@ -1163,7 +2001,24 @@ items:
   file: 03-set-operations.md
   line: 348
   hash: f10f4057725c
-  verdicts: []
+  verdicts:
+  - stage: S5a
+    verdict: correct
+    by: refereeA
+    hash: f10f4057725c
+    date: '2026-10-25'
+    model: claude-opus-5-5
+    evidence: 03:349-354. Union [0,2] (each member ⊆[0,2], and [0,2] is the member at t=2). Intersection
+      [0,1] ([0,1] ⊆ each member, and [0,1] is the member at t=1). Correct.
+  - stage: S5b
+    verdict: correct
+    by: refereeB
+    hash: f10f4057725c
+    date: '2026-10-25'
+    model: claude-opus-5-5
+    evidence: '03:349-353: the union is [0,2] (every member ⊆[0,2], and [0,2] is the member at t=2). The
+      intersection is [0,1] ([0,1]⊆[0,t] for t≥1, and it is the member at t=1). The general remark is
+      true.'
 - key: thm-de-morgan-families
   kind: thm
   file: 03-set-operations.md
@@ -1245,7 +2100,23 @@ items:
   file: 03-set-operations.md
   line: 407
   hash: ad00c9593cb1
-  verdicts: []
+  verdicts:
+  - stage: S5a
+    verdict: correct
+    by: refereeA
+    hash: ad00c9593cb1
+    date: '2026-10-25'
+    model: claude-opus-5-5
+    evidence: 03:408-413. For I={1}, ⋃=⋂=[0,1] (the ⋂ is taken inside ℝ), and both laws give ℝ∖[0,1].
+      Correct.
+  - stage: S5b
+    verdict: correct
+    by: refereeB
+    hash: ad00c9593cb1
+    date: '2026-10-25'
+    model: claude-opus-5-5
+    evidence: '03:408-412: one-member family, union = intersection = [0,1]. Both sides of both laws are
+      ℝ∖[0,1]. Matches blueprint §4.3 item 6.'
 - key: exr-set-operations-a1
   kind: exr
   file: 03-set-operations.md
@@ -1394,7 +2265,32 @@ items:
   file: 03-set-operations.md
   line: 503
   hash: c86156a04143
-  verdicts: []
+  verdicts:
+  - stage: S5a
+    verdict: minor
+    by: refereeA
+    hash: c86156a04143
+    date: '2026-10-25'
+    model: claude-opus-5-5
+    evidence: 03-set-operations.md:524 In (c), the distributivity step needs a commutativity step that
+      is not named; the method box asks for every step to be named.
+  - stage: S5b
+    verdict: minor
+    by: refereeB
+    hash: c86156a04143
+    date: '2026-10-25'
+    model: claude-opus-5-5
+    evidence: '03-set-operations.md:520 The B4 chains contain unnamed steps, against the method box (03:143:
+      each step ''with its name on the line'') that the exercise tells the reader to follow.'
+  - stage: S6
+    verdict: correct
+    by: verifier
+    hash: c86156a04143
+    date: '2026-10-25'
+    model: claude-opus-5-5
+    evidence: '03:503-531. Brute force over all 512 triples of subsets of {1,2,3}: a T, b F, c T, d F,
+      e T, and both counterexamples check. The De Morgan clauses (d)/(c) as cited match fd1 prp-de-morgan,
+      the note that (=>) is classical is right, and exm-difference-chain is the worked chain example.'
 - key: exr-set-operations-c1
   kind: exr
   file: 03-set-operations.md
@@ -1550,24 +2446,94 @@ items:
     model: claude-opus-5-5
     evidence: '03:35-41: x=2, y=1 solves x+y=3, x−y=1, and the converse is checked. (1,2)≠(2,1) by ¬I
       from 1≠2. Sidecar passes.'
+  - stage: S5a
+    verdict: correct
+    by: refereeA
+    hash: df615b3717df
+    date: '2026-10-25'
+    model: claude-opus-5-5
+    evidence: '04:35-41: Uniqueness by def-ordered-pair (=>), then add/subtract gives x=2,y=1; Existence
+      by direct check; (1,2)!=(2,1) by not-I from 1=2. Matches blueprint 4.4 item 1; verify/ch01/exm-pair-equations.py
+      checks values.'
+  - stage: S5b
+    verdict: correct
+    by: refereeB
+    hash: df615b3717df
+    date: '2026-10-25'
+    model: claude-opus-5-5
+    evidence: 04:28-42 matches blueprint §4.4 item 1 (Uniqueness/Existence tags added, words and order
+      kept); x=2,y=1 checked; (1,2)!=(2,1) by (=>) and ¬I; the school-algebra step is in ledger 04:544.
+      The misplaced t^2>=0 ledger line is reported under check:2.
 - key: exm-method-uniqueness
   kind: exm
   file: 04-products-and-relations.md
   line: 48
   hash: a7d9de794f63
-  verdicts: []
+  verdicts:
+  - stage: S5a
+    verdict: correct
+    by: refereeA
+    hash: a7d9de794f63
+    date: '2026-10-25'
+    model: claude-opus-5-5
+    evidence: '04:48-56: cited @fd1:def-unique-existence and @fd1:prp-unique-existence-use (fd1 ch05 §08
+      lines 11, 84) state exists-and-at-most-one exactly as the Template uses it; (N14) is the ''a "the"
+      needs its object'' entry of @fd1:exm-not-allowed-catalogue (06-checking-proofs.md:69); @prp-empty-set-unique
+      exists (02:313). Text matches blueprint.'
+  - stage: S5b
+    verdict: correct
+    by: refereeB
+    hash: a7d9de794f63
+    date: '2026-10-25'
+    model: claude-opus-5-5
+    evidence: 04:48-56 matches the blueprint's text word for word; 127 prose words, under the 130 cap;
+      @fd1:def-unique-existence and @fd1:prp-unique-existence-use exist (fd1 ch05 §08); (N14) is the 'a
+      "the" needs its object' entry of @fd1:exm-not-allowed-catalogue (fd1 ch08 §06:69,115); @prp-empty-set-unique
+      exists.
 - key: check:04-products-and-relations:1
   kind: check
   file: 04-products-and-relations.md
   line: 58
   hash: 542d876069c3
-  verdicts: []
+  verdicts:
+  - stage: S5a
+    verdict: correct
+    by: refereeA
+    hash: 542d876069c3
+    date: '2026-10-25'
+    model: claude-opus-5-5
+    evidence: '04:58-64: x^3=-8 gives x=-2 (unique real cube root, school fact per ledger 563), (-2)^2=4;
+      second: x=3 forced, 9!=4, so no solution. Both halves correctly attributed.'
+  - stage: S5b
+    verdict: correct
+    by: refereeB
+    hash: 542d876069c3
+    date: '2026-10-25'
+    model: claude-opus-5-5
+    evidence: '04:58-64: x^3=-8 gives x=-2 and (-2)^2=4; (x^2,x)=(4,3) forces x=3, but 9!=4. That a real
+      number has only one real cube root is in ledger 04:563 and STATUS row 158 (AN1.1). The sidecar exr-products-and-relations-b4.py
+      asserts both answers.'
 - key: check:04-products-and-relations:2
   kind: check
   file: 04-products-and-relations.md
   line: 72
   hash: 86f0ac76da2f
-  verdicts: []
+  verdicts:
+  - stage: S5a
+    verdict: correct
+    by: refereeA
+    hash: 86f0ac76da2f
+    date: '2026-10-25'
+    model: claude-opus-5-5
+    evidence: '04:72-78: pair equation iff t^2=1 and t=-1, so t=-1; set equation: -1 must equal t^2 or
+      t, t^2>=0 forces t=-1, and t=-1 works. (t,1)=(1,t) iff t=1; {t,1}={1,t} always. Verified by sidecar.'
+  - stage: S5b
+    verdict: minor
+    by: refereeB
+    hash: 86f0ac76da2f
+    date: '2026-10-25'
+    model: claude-opus-5-5
+    evidence: 04-products-and-relations.md:545 A ledger line names the wrong block for the fact it records.
 - key: def-cartesian-product
   kind: def
   file: 04-products-and-relations.md
@@ -1608,13 +2574,47 @@ items:
   file: 04-products-and-relations.md
   line: 110
   hash: 94013ef291b2
-  verdicts: []
+  verdicts:
+  - stage: S5a
+    verdict: correct
+    by: refereeA
+    hash: 94013ef291b2
+    date: '2026-10-25'
+    model: claude-opus-5-5
+    evidence: '04:110-132: existence by exists-E on def-cartesian-product membership; uniqueness: a'',b''
+      introduced after a,b, (a,b)=p=(a'',b'') by =E, then def-ordered-pair (=>). Joint uniqueness implies
+      uniqueness of each coordinate; Givens/Goal table matches blueprint. Hypotheses a''∈A, b''∈B are
+      not needed for uniqueness (harmless).'
+  - stage: S5b
+    verdict: correct
+    by: refereeB
+    hash: 94013ef291b2
+    date: '2026-10-25'
+    model: claude-opus-5-5
+    evidence: '04:110-132 follows blueprint item 3: the statement, the Givens/Goal table as given, the
+      solution, and the one-sentence aftermath at 04:134. Existence is ∃E on the definition; uniqueness
+      is =E then (=>). The =E step is in ledger 04:564.'
 - key: check:04-products-and-relations:3
   kind: check
   file: 04-products-and-relations.md
   line: 136
   hash: 33c0b11e64d2
-  verdicts: []
+  verdicts:
+  - stage: S5a
+    verdict: correct
+    by: refereeA
+    hash: 33c0b11e64d2
+    date: '2026-10-25'
+    model: claude-opus-5-5
+    evidence: '04:136-142: attribution matches the solution at 04:131.'
+  - stage: S5b
+    verdict: correct
+    by: refereeB
+    hash: 33c0b11e64d2
+    date: '2026-10-25'
+    model: claude-opus-5-5
+    evidence: '04:136-142: existence uses def-cartesian-product and uniqueness uses def-ordered-pair,
+      which matches the solution at 04:131.'
 - key: exm-small-products
   kind: exm
   file: 04-products-and-relations.md
@@ -1666,7 +2666,23 @@ items:
   file: 04-products-and-relations.md
   line: 170
   hash: a0d75ff6d567
-  verdicts: []
+  verdicts:
+  - stage: S5a
+    verdict: correct
+    by: refereeA
+    hash: a0d75ff6d567
+    date: '2026-10-25'
+    model: claude-opus-5-5
+    evidence: '04:170-176: 2x3=6 pairs listed correctly; (1,1)∉{1}×∅ by (*) since 1∉∅ would be needed
+      for the second coordinate.'
+  - stage: S5b
+    verdict: correct
+    by: refereeB
+    hash: a0d75ff6d567
+    date: '2026-10-25'
+    model: claude-opus-5-5
+    evidence: '04:170-176: the six pairs are listed correctly, and (1,1) is not in {1}×∅ because (*) would
+      need 1∈∅.'
 - key: prp-product-set-laws
   kind: prp
   file: 04-products-and-relations.md
@@ -1807,7 +2823,23 @@ items:
   file: 04-products-and-relations.md
   line: 331
   hash: cad28ef992f1
-  verdicts: []
+  verdicts:
+  - stage: S5a
+    verdict: correct
+    by: refereeA
+    hash: cad28ef992f1
+    date: '2026-10-25'
+    model: claude-opus-5-5
+    evidence: '04:331-337: L={(1,2),(1,3),(2,3)} reversed gives {(2,1),(3,1),(3,2)} = ''>'' on {1,2,3};
+      dom L^{-1}={2,3}=ran L, ran L^{-1}={1,2}=dom L.'
+  - stage: S5b
+    verdict: correct
+    by: refereeB
+    hash: cad28ef992f1
+    date: '2026-10-25'
+    model: claude-opus-5-5
+    evidence: '04:331-337: L^{-1}={(2,1),(3,1),(3,2)} is the relation >. Its domain {2,3} is the range
+      of L and its range {1,2} is the domain of L, matching 04:303.'
 - key: exr-products-and-relations-a1
   kind: exr
   file: 04-products-and-relations.md
@@ -1977,7 +3009,38 @@ items:
   file: 04-products-and-relations.md
   line: 433
   hash: 637fc5bbe9c4
-  verdicts: []
+  verdicts:
+  - stage: S5a
+    verdict: correct
+    by: refereeA
+    hash: 637fc5bbe9c4
+    date: '2026-10-25'
+    model: claude-opus-5-5
+    evidence: '04:433-461: (a) 7x=2a+b, y=(3b-a)/7, both checks recomputed exactly (6a+3b-3b+a=7a; 2a+b+6b-2a=7b);
+      (b) a=1 gives (1,0),(-1,0), distinct by 1!=-1; (c) A=∅ gives both products ∅ (mirror ∅ law); (d)
+      hypothesis ''A has an element'' used to form (a,b), symmetric inclusion, antisymmetry; (e) ∅×∅=∅,
+      and e∈E gives (e,e)∈∅, so E=∅ by prp-empty-set-unique. Matches blueprint 4.4 item 6.'
+  - stage: S5b
+    verdict: correct
+    by: refereeB
+    hash: 637fc5bbe9c4
+    date: '2026-10-25'
+    model: claude-opus-5-5
+    evidence: '04:433-461: the stem withholds the verdicts and each solution gives its verdict first (§12.13.4).
+      (a) x=(2a+b)/7, y=(3b-a)/7, checked by hand: 3x-y=a and x+2y=b. (b) witnesses (1,0) and (-1,0).
+      (c) A=∅. (d) uses an element of A. (e) existence by the ∅ law, uniqueness via (e,e). The sidecar
+      runs and passes. Matches blueprint item 6.'
+  - stage: S6
+    verdict: correct
+    by: verifier
+    hash: 637fc5bbe9c4
+    date: '2026-10-25'
+    model: claude-opus-5-5
+    evidence: '04-products-and-relations.md:433-462. I solved it independently first. (a) det 7, x=(2a+b)/7,
+      y=(3b-a)/7; my script checks both halves on an 11x11 grid. (b) has the counterexample (1,0),(-1,0).
+      (c) A=∅: the mirror law ∅×B=∅ of prp-product-set-laws (line 186) covers it. (d) is the element argument
+      with a∈A plus prp-subset-antisymmetric. (e) gives existence by the ∅ law and uniqueness by (e,e)
+      and p'
 - key: exr-products-and-relations-c1
   kind: exr
   file: 04-products-and-relations.md
@@ -2176,7 +3239,23 @@ items:
   file: 05-functions.md
   line: 106
   hash: 42476039e93c
-  verdicts: []
+  verdicts:
+  - stage: S5a
+    verdict: correct
+    by: refereeA
+    hash: 42476039e93c
+    date: '2026-10-25'
+    model: claude-opus-5-5
+    evidence: '05-functions.md:106-112: first relation is the constant 2; second lacks 3 (Fn1); third
+      gives 2 both 1 and 3 (Fn2). All three verdicts are right.'
+  - stage: S5b
+    verdict: correct
+    by: refereeB
+    hash: 42476039e93c
+    date: '2026-10-25'
+    model: claude-opus-5-5
+    evidence: '05:106-112: {(1,2),(2,2),(3,2)} constant 2; second misses 3 (Fn1); third gives 2 two outputs
+      1,3 (Fn2). Checked.'
 - key: prp-function-equality
   kind: prp
   file: 05-functions.md
@@ -2270,7 +3349,23 @@ items:
   file: 05-functions.md
   line: 204
   hash: e1f8dc141bf3
-  verdicts: []
+  verdicts:
+  - stage: S5a
+    verdict: correct
+    by: refereeA
+    hash: e1f8dc141bf3
+    date: '2026-10-25'
+    model: claude-opus-5-5
+    evidence: '05-functions.md:204-210: ind_{1,4} on {1..5} = 10010; the second symbol of 01100 is 1.
+      This matches blueprint §4.5 item 6.'
+  - stage: S5b
+    verdict: correct
+    by: refereeB
+    hash: e1f8dc141bf3
+    date: '2026-10-25'
+    model: claude-opus-5-5
+    evidence: '05:204-210: ind_{1,4} on {1..5} = 10010; 01100 at 2 = 1. Matches blueprint 4.5 item 6,
+      not the game''s diagonal 01001 or its flip 10110.'
 - key: prp-empty-function
   kind: prp
   file: 05-functions.md
@@ -2416,7 +3511,22 @@ items:
   file: 05-functions.md
   line: 286
   hash: 8f322564403c
-  verdicts: []
+  verdicts:
+  - stage: S5a
+    verdict: correct
+    by: refereeA
+    hash: 8f322564403c
+    date: '2026-10-25'
+    model: claude-opus-5-5
+    evidence: '05-functions.md:286-292: g(f(2))=g(4)=1, f(g(2))=f(-1)=1; at 0 they give -3 and 9, so the
+      functions differ.'
+  - stage: S5b
+    verdict: correct
+    by: refereeB
+    hash: 8f322564403c
+    date: '2026-10-25'
+    model: claude-opus-5-5
+    evidence: '05:286-292: g(f(2))=g(4)=1, f(g(2))=f(-1)=1; at 0: -3 vs 9. Computed.'
 - key: def-injective
   kind: def
   file: 05-functions.md
@@ -2489,25 +3599,97 @@ items:
   file: 05-functions.md
   line: 364
   hash: 35f09d91a7d3
-  verdicts: []
+  verdicts:
+  - stage: S5a
+    verdict: correct
+    by: refereeA
+    hash: 35f09d91a7d3
+    date: '2026-10-25'
+    model: claude-opus-5-5
+    evidence: '05-functions.md:364-372: the template follows def-injective. The (N5) entry exists in @fd1:exm-not-allowed-catalogue
+      (fd1 ch08/06:65,182: the converse error), and the squaring warning is at line 494, below the box
+      as stated. The box matches blueprint §4.5 item 2.'
+  - stage: S5b
+    verdict: correct
+    by: refereeB
+    hash: 35f09d91a7d3
+    date: '2026-10-25'
+    model: claude-opus-5-5
+    evidence: '05:364-372: matches blueprint 4.5 item 2; ''paragraph after the definition'' = 05:315;
+      (N5) is the implication-error entry of fd1 ch08/06 (line 65, 182); ''a warning below'' = 05:494-496.
+      About 78 words with math counted as one token, under 130.'
 - key: exm-method-surjectivity
   kind: exm
   file: 05-functions.md
   line: 374
   hash: 17bbd39387d6
-  verdicts: []
+  verdicts:
+  - stage: S5a
+    verdict: correct
+    by: refereeA
+    hash: 17bbd39387d6
+    date: '2026-10-25'
+    model: claude-opus-5-5
+    evidence: '05-functions.md:374-382: forward template with the check that x is in X. The (N1) entry
+      is hasty generalization (fd1 ch08/06:110), and the warning after def-surjective is at line 344.'
+  - stage: S5b
+    verdict: correct
+    by: refereeB
+    hash: 17bbd39387d6
+    date: '2026-10-25'
+    model: claude-opus-5-5
+    evidence: '05:374-382: matches blueprint; (N1) = hasty generalization (fd1 06-checking-proofs:110);
+      ''the warning after @def-surjective'' = 05:344-346. About 91 words, under 130.'
 - key: exm-fraction-map
   kind: exm
   file: 05-functions.md
   line: 386
   hash: 0d959b33c26c
-  verdicts: []
+  verdicts:
+  - stage: S5a
+    verdict: correct
+    by: refereeA
+    hash: 0d959b33c26c
+    date: '2026-10-25'
+    model: claude-opus-5-5
+    evidence: '05-functions.md:386-424. Function: 1+|x|>0 and |x|/(1+|x|)<1. Injective: f(x) has the sign
+      of x, so x1 and x2 are both >=0 or both <0, and clearing denominators gives x1=x2 in each case.
+      Surjective: x=y/(1-|y|), so |x|=|y|/(1-|y|), 1+|x|=1/(1-|y|), and f(x)=y. The backward algebra for
+      each sign in the scratch work checks, and both answers equal y/(1-|y|). The sidecar exm-fraction-map.py
+      passes.'
+  - stage: S5b
+    verdict: correct
+    by: refereeB
+    hash: 0d959b33c26c
+    date: '2026-10-25'
+    model: claude-opus-5-5
+    evidence: '05:386-426: checked y=x/(1+x) gives x=y/(1-y); y=x/(1-x) gives x=y/(1+y); both are y/(1-|y|);
+      |x|=|y|/(1-|y|) so 1+|x|=1/(1-|y|) and f(x)=x(1-|y|)=y; the injectivity cases clear denominators
+      correctly. The Givens/Goal table is in the scratch idea, not in the proof (STYLE 12.5). @exm-method-cases
+      is in 01-proofs-from-definitions. Ledger 811-812 covers the order facts. The aftermath at 426 is
+      accura'
 - key: check:05-functions:4
   kind: check
   file: 05-functions.md
   line: 428
   hash: fca609663e24
-  verdicts: []
+  verdicts:
+  - stage: S5a
+    verdict: correct
+    by: refereeA
+    hash: fca609663e24
+    date: '2026-10-25'
+    model: claude-opus-5-5
+    evidence: '05-functions.md:428-434: 5n1=5n2 gives n1=n2; 5n=2 is impossible since n>=1 gives 5n>=5
+      and n<=0 gives 5n<=0. The fact that every integer is >=1 or <=0 is recorded in ledger line 813.'
+  - stage: S5b
+    verdict: correct
+    by: refereeB
+    hash: fca609663e24
+    date: '2026-10-25'
+    model: claude-opus-5-5
+    evidence: '05:428-434: matches blueprint; 5n=2 has no integer solution by n>=1 or n<=0; ledger 813
+      covers it.'
 - key: exm-injective-surjective-first
   kind: exm
   file: 05-functions.md
@@ -2557,7 +3739,23 @@ items:
   file: 05-functions.md
   line: 498
   hash: fb3cd0f98e10
-  verdicts: []
+  verdicts:
+  - stage: S5a
+    verdict: correct
+    by: refereeA
+    hash: fb3cd0f98e10
+    date: '2026-10-25'
+    model: claude-opus-5-5
+    evidence: '05-functions.md:498-504: on N the value 0 is missed since n+1>=1; on Z, m-1 is a preimage
+      of m; both maps are injective.'
+  - stage: S5b
+    verdict: minor
+    by: refereeB
+    hash: fb3cd0f98e10
+    date: '2026-10-25'
+    model: claude-opus-5-5
+    evidence: 05-functions.md:807 The dependency-ledger line for the n ↦ n+1 Quick check cites STATUS
+      promise rows by names that no longer exist in STATUS.md.
 - key: thm-composition-injective-surjective
   kind: thm
   file: 05-functions.md
@@ -2701,6 +3899,34 @@ items:
       0. (c) The factorization and the case split x2 != 0 / x2 = 0 are valid, so the map is a bijection.
       NOTATION l.72 now defines \sqrt[3]{a} for a<0 and names Ch 6 §04 as its first use, so the S8 cube-root
       finding '
+  - stage: S5a
+    verdict: minor
+    by: refereeA
+    hash: f321ddc6cc7c
+    date: '2026-10-25'
+    model: claude-opus-5-5
+    evidence: 05-functions.md:631 B1(a) relies on 'no integer is both even and odd' with no citation.
+      The section's own ledger (line 802) and blueprint §4.5/S4 note (line 465) key this step to thm-even-or-odd
+      (F2.1 §01), and B4(d) cites it inline.
+  - stage: S5b
+    verdict: minor
+    by: refereeB
+    hash: f321ddc6cc7c
+    date: '2026-10-25'
+    model: claude-opus-5-5
+    evidence: 05-functions.md:804 Ledger lines 804-806 and 808 (B1 (b), (e); B3; addition N×N→N) point
+      to STATUS rows that are absent from STATUS.md.
+  - stage: S6
+    verdict: correct
+    by: verifier
+    hash: f321ddc6cc7c
+    date: '2026-10-25'
+    model: claude-opus-5-5
+    evidence: 05-functions.md:616-650. (a) witness 1 plus thm-even-or-odd, which includes 'no integer
+      is both' (01:136-139). (b) uses (1,2),(2,1) and the preimage (0,k). (c) The case split on x2=0 /
+      x2≠0 is valid. The cube root is a declared school fact (ledger line 803). (d) The range check, the
+      sign-and-square injectivity argument and the surjectivity computation are right; the numbers 3/4→3/5
+      check by script
 - key: exr-functions-b2
   kind: exr
   file: 05-functions.md
@@ -2770,7 +3996,38 @@ items:
   file: 05-functions.md
   line: 702
   hash: 5f64b64c87ac
-  verdicts: []
+  verdicts:
+  - stage: S5a
+    verdict: correct
+    by: refereeA
+    hash: 5f64b64c87ac
+    date: '2026-10-25'
+    model: claude-opus-5-5
+    evidence: '05-functions.md:716-730: (a) 0 and -1 both map to 0. (b) x^2+xy+y^2+2=(x+y/2)^2+3y^2/4+2>=2.
+      (c) (-k,k) maps to k. (d) 2(m+2n) is even, citing @thm-even-or-odd. (e) range >=-4; injectivity
+      by thm-squares-order used twice on bases >=0; x=-2+sqrt(y+4)>=-2 maps to y. This matches the blueprint
+      B4, and the sidecar passes.'
+  - stage: S5b
+    verdict: correct
+    by: refereeB
+    hash: 5f64b64c87ac
+    date: '2026-10-25'
+    model: claude-opus-5-5
+    evidence: '05:702-730: (a) 0 and −1 both go to 0; (b) (x−y)(x^2+xy+y^2+2) with the factor >=2; (c)
+      (−k,k) gives k; (d) parity via @thm-even-or-odd; (e) range check, thm-squares-order, x=−2+sqrt(y+4)>=−2.
+      Verdicts are withheld in the stem and each solution states its verdict first (STYLE 12.13.4). Matches
+      blueprint 4.5 item 7.'
+  - stage: S6
+    verdict: correct
+    by: verifier
+    hash: 5f64b64c87ac
+    date: '2026-10-25'
+    model: claude-opus-5-5
+    evidence: '05-functions.md:702-730. (a) uses 0 and -1. (b) The factor x^2+xy+y^2+2 ≥ 2 by completing
+      the square; a script sample confirms the function is monotone. (c) preimage (-k,k), checked for
+      k in [-50,50]. (d) uses parity and thm-even-or-odd. (e) Range: (x+2)^2-4. Injectivity uses fd1:thm-squares-order
+      both ways, as in exm-square-three-ways (b) (line 472). Surjectivity uses x=-2+sqrt(y+4), checked
+      nume'
 - key: exr-functions-c1
   kind: exr
   file: 05-functions.md
@@ -2883,7 +4140,22 @@ items:
   file: 06-inverses.md
   line: 76
   hash: 2e38d74cbb07
-  verdicts: []
+  verdicts:
+  - stage: S5a
+    verdict: correct
+    by: refereeA
+    hash: 2e38d74cbb07
+    date: '2026-10-25'
+    model: claude-opus-5-5
+    evidence: '06:80-82: p is defined on all of ℕ (m=0 or m≥1) and takes values in ℕ; p(s(n))=n since
+      n+1≥1. The ''no right inverse'' argument at y=0 (k(0)+1=0 has no solution in ℕ) is valid.'
+  - stage: S5b
+    verdict: minor
+    by: refereeB
+    hash: 2e38d74cbb07
+    date: '2026-10-25'
+    model: claude-opus-5-5
+    evidence: 06-inverses.md:627 The ledger gives its source as a STATUS promise row that does not exist.
 - key: thm-left-inverse-iff-injective
   kind: thm
   file: 06-inverses.md
@@ -2963,13 +4235,59 @@ items:
   file: 06-inverses.md
   line: 167
   hash: a25e255fdd26
-  verdicts: []
+  verdicts:
+  - stage: S5a
+    verdict: correct
+    by: refereeA
+    hash: a25e255fdd26
+    date: '2026-10-25'
+    model: claude-opus-5-5
+    evidence: '06:167-175: three lead-ins present, under 130 words. The (N14) citation matches fd1 06-checking-proofs.md:69,98
+      ("a ''the'' needs its object"). @exm-not-a-function (b) (05:92) is the case where the value depends
+      on how the input is written, as claimed. Placed after the proof, as blueprint §4.6 item 3 requires.'
+  - stage: S5b
+    verdict: minor
+    by: refereeB
+    hash: a25e255fdd26
+    date: '2026-10-25'
+    model: claude-opus-5-5
+    evidence: 06-inverses.md:165 The sentence introducing the method box says the pattern serves 'whenever
+      something is claimed to exist'. The same section shows that it does not.
+  - stage: S8
+    verdict: minor
+    by: seam
+    hash: a25e255fdd26
+    date: '2026-10-25'
+    model: claude-opus-5-5
+    evidence: '06-inverses.md:167 The construct-and-verify box is never cited, so index:23 ("each section
+      that introduces one cites it from then on") and STYLE §2 item 6 ("later sections cite it instead
+      of re-explaining") do not hold for it. Several passages that build an object and then verify it
+      go uncited: the (⇒) construction in thm-bijection-iff-inverse (06:357), exm-left-inverse-construction
+      (06:187), the '
 - key: check:06-inverses:2
   kind: check
   file: 06-inverses.md
   line: 177
   hash: 61ae882d049e
-  verdicts: []
+  verdicts:
+  - stage: S5a
+    verdict: correct
+    by: refereeA
+    hash: 61ae882d049e
+    date: '2026-10-25'
+    model: claude-opus-5-5
+    evidence: '06:182: g is well defined because of thm-even-or-odd (01:136). An odd m=2k+1≥0 has k≥0,
+      so (m-1)/2∈ℕ (def-parity 01:27, as in the dependency ledger line 645). s(n)=2n+1 is odd with k=n,
+      so g(s(n))=n. Even m are never values (not both even and odd), so the values there are free. Matches
+      blueprint 4.6 line 394.'
+  - stage: S5b
+    verdict: minor
+    by: refereeB
+    hash: 61ae882d049e
+    date: '2026-10-25'
+    model: claude-opus-5-5
+    evidence: 06-inverses.md:178 In this section the letter s names three different maps. Two of them
+      are ℕ → ℕ maps in Quick checks 100 lines apart.
 - key: exm-left-inverse-construction
   kind: exm
   file: 06-inverses.md
@@ -3198,7 +4516,23 @@ items:
   file: 06-inverses.md
   line: 330
   hash: 27c4c8218125
-  verdicts: []
+  verdicts:
+  - stage: S5a
+    verdict: correct
+    by: refereeA
+    hash: 27c4c8218125
+    date: '2026-10-25'
+    model: claude-opus-5-5
+    evidence: '06:335: f(g(y))=y uses (cbrt t)^3=t. g(f(x))=cbrt(x^3)=x uses the uniqueness of the real
+      cube root, which the text states. Both composites are checked, so g=f^{-1} by def-inverse-function.'
+  - stage: S5b
+    verdict: correct
+    by: refereeB
+    hash: 27c4c8218125
+    date: '2026-10-25'
+    model: claude-opus-5-5
+    evidence: '06:330-336: g(y)=cbrt((y+5)/2); f(g(y))=y; g(f(x))=cbrt(x^3)=x uses uniqueness of the real
+      cube root, which is stated as a school fact. Ledger 06:647 covers it. Matches blueprint item 5.'
 - key: thm-bijection-iff-inverse
   kind: thm
   file: 06-inverses.md
@@ -3259,13 +4593,49 @@ items:
   file: 06-inverses.md
   line: 364
   hash: 2460bbbbdc74
-  verdicts: []
+  verdicts:
+  - stage: S5a
+    verdict: correct
+    by: refereeA
+    hash: 2460bbbbdc74
+    date: '2026-10-25'
+    model: claude-opus-5-5
+    evidence: '06:369: for a bijection, ''exactly one preimage'' follows from def-surjective and def-injective.
+      This correctly explains why neither x_0 nor the excluded-middle split is needed, and it matches
+      the (⇒) proof at 06:355-361.'
+  - stage: S5b
+    verdict: correct
+    by: refereeB
+    hash: 2460bbbbdc74
+    date: '2026-10-25'
+    model: claude-opus-5-5
+    evidence: '06:364-370: a bijection gives each y exactly one preimage (def-bijective, def-injective,
+      def-surjective), so g(y) is forced. Ledger 06:646 covers it. Matches blueprint.'
 - key: check:06-inverses:5
   kind: check
   file: 06-inverses.md
   line: 384
   hash: 39ba61d81f66
-  verdicts: []
+  verdicts:
+  - stage: S5a
+    verdict: correct
+    by: refereeA
+    hash: 39ba61d81f66
+    date: '2026-10-25'
+    model: claude-opus-5-5
+    evidence: '06:389: the cube-root inverse is checked both ways. Injectivity of q_2 is cited correctly
+      to @exm-square-three-ways (b) (05:479). -1 is not a square, so q_2 is not surjective, and thm-bijection-iff-inverse
+      (⇒ contrapositive) rules out a two-sided inverse. The left inverse sqrt / 0 works: sqrt(x^2)=x for
+      x≥0, and the domain is non-empty.'
+  - stage: S5b
+    verdict: correct
+    by: refereeB
+    hash: 39ba61d81f66
+    date: '2026-10-25'
+    model: claude-opus-5-5
+    evidence: '06:384-390: @exm-square-three-ways (b) is q2:[0,inf)->R (05:472-480), and it settles injectivity.
+      -1 has no preimage. The left inverse sqrt(y) for y>=0 and 0 for y<0 lands in [0,inf) and gives sqrt(x^2)=x
+      for x>=0. Cube-root facts are in ledger 06:643/636/640.'
 - key: exr-inverses-a1
   kind: exr
   file: 06-inverses.md
@@ -3415,7 +4785,35 @@ items:
   file: 06-inverses.md
   line: 507
   hash: b625091156c9
-  verdicts: []
+  verdicts:
+  - stage: S5a
+    verdict: correct
+    by: refereeA
+    hash: b625091156c9
+    date: '2026-10-25'
+    model: claude-opus-5-5
+    evidence: '06:507-531: the stem withholds verdicts and each solution leads with its verdict (§12.13.4).
+      (a) Both composites are checked. (b) 0 is not a value, so prp-right-inverse-surjective gives no
+      right inverse. (c) g is defined on all of ℕ by trichotomy, maps into ℕ, and g(f(n))=n. (d) The contradiction
+      argument uses only earlier results of the section (thm (a), thm-bijection-iff-inverse, prp-inverse-uni'
+  - stage: S5b
+    verdict: minor
+    by: refereeB
+    hash: b625091156c9
+    date: '2026-10-25'
+    model: claude-opus-5-5
+    evidence: 06-inverses.md:648 B4's ledger line cites the same nonexistent STATUS row for m ≥ 3 ⇒ m
+      − 3 ∈ ℕ and n + 3 ≥ 3.
+  - stage: S6
+    verdict: correct
+    by: verifier
+    hash: b625091156c9
+    date: '2026-10-25'
+    model: claude-opus-5-5
+    evidence: '06-inverses.md:507-532. (a) g(n)=n-3 works both ways. (b) 0 is not a value, so by prp-right-inverse-surjective
+      (line 209) there is no right inverse. (c) The piecewise g is well-defined; script checks g(n+3)=n
+      for n<1000. The worked models are exm-left-inverses-small-sets (line 77, successor) and exm-method-construct-and-verify
+      (line 167). (d) uses thm-left-inverse-iff-injective (a) (no hypothesis '
 - key: exr-inverses-c1
   kind: exr
   file: 06-inverses.md
@@ -3590,7 +4988,23 @@ items:
   file: 07-images-and-preimages.md
   line: 57
   hash: 8b3addc8d459
-  verdicts: []
+  verdicts:
+  - stage: S5a
+    verdict: correct
+    by: refereeA
+    hash: 8b3addc8d459
+    date: '2026-10-25'
+    model: claude-opus-5-5
+    evidence: '07:57-63: (-1)^2=1, 2^2=4 so f({-1,2})={1,4}; x^2=9 iff x=±3. It uses {9} where blueprint
+      §4.7 has {4}, which keeps it from repeating the warning at 07:90 that uses {4}. The maths is right.'
+  - stage: S5b
+    verdict: correct
+    by: refereeB
+    hash: 8b3addc8d459
+    date: '2026-10-25'
+    model: claude-opus-5-5
+    evidence: '07:57-63: f({-1,2})={1,4}, f^{-1}({9})={-3,3}; checked. It moves the blueprint''s {4} to
+      {9} so it does not repeat the warning at 07:90, which is fine. Ledger row 07:795 covers it.'
 - key: exm-images-finite
   kind: exm
   file: 07-images-and-preimages.md
@@ -3668,7 +5082,26 @@ items:
   file: 07-images-and-preimages.md
   line: 141
   hash: 88eef6430ef4
-  verdicts: []
+  verdicts:
+  - stage: S5a
+    verdict: correct
+    by: refereeA
+    hash: 88eef6430ef4
+    date: '2026-10-25'
+    model: claude-opus-5-5
+    evidence: '07:141-147: f^{-1}({4})={-2,2}; f^{-1}([-4,-1])=∅ because x^2≥0>-1; f^{-1}([-1,1])=[-1,1]
+      (|x|≤1), f([-1,1])=[0,1] by the argument of exm-images-of-square (a). This matches the statement
+      at 07:406.'
+  - stage: S5b
+    verdict: correct
+    by: refereeB
+    hash: 88eef6430ef4
+    date: '2026-10-25'
+    model: claude-opus-5-5
+    evidence: '07:141-147: f^{-1}({4})={-2,2}; f^{-1}([-4,-1])=∅ since x^2>=0>-1; f^{-1}([-1,1])=[-1,1]
+      and f([-1,1])=[0,1], which is a subset of [-1,1]. The text at 07:406 (''the quick check after it'')
+      points to this check correctly. Its facts are the same as those of exm-images-of-square (ledger
+      764/765, thm-squares-order).'
 - key: exm-sets-of-numbers-as-images
   kind: exm
   file: 07-images-and-preimages.md
@@ -3753,7 +5186,23 @@ items:
   file: 07-images-and-preimages.md
   line: 270
   hash: a720edb4ec2c
-  verdicts: []
+  verdicts:
+  - stage: S5a
+    verdict: correct
+    by: refereeA
+    hash: a720edb4ec2c
+    date: '2026-10-25'
+    model: claude-opus-5-5
+    evidence: '07:270-276: x^2≥0≥-1 always, so the condition reduces to x^2≤4 ⇔ |x|≤2 (fd1:thm-squares-order),
+      giving [-2,2]; no square is negative, so f^{-1}((-∞,0))=∅. Matches blueprint §4.7.'
+  - stage: S5b
+    verdict: correct
+    by: refereeB
+    hash: a720edb4ec2c
+    date: '2026-10-25'
+    model: claude-opus-5-5
+    evidence: '07:270-276: x^2>=0>=-1, so f^{-1}([-1,4])={x: x^2<=4}=[-2,2]; f^{-1}((-inf,0))=∅. Ledger
+      07:796. The ray notation (-∞,0) is already used in the approved 03:27.'
 - key: prp-preimage-composition
   kind: prp
   file: 07-images-and-preimages.md
@@ -3900,7 +5349,24 @@ items:
   file: 07-images-and-preimages.md
   line: 357
   hash: 700353e7e12a
-  verdicts: []
+  verdicts:
+  - stage: S5a
+    verdict: correct
+    by: refereeA
+    hash: 700353e7e12a
+    date: '2026-10-25'
+    model: claude-opus-5-5
+    evidence: '07:357-363: x1≠x2 gives {x1}∩{x2}=∅ and c(∅)=∅ (as in exm-images-finite); c({xi})={y0},
+      so the intersection is {y0}. The hypotheses x1≠x2 and that x1, x2 are points of X are both stated
+      and both used. Matches the blueprint.'
+  - stage: S5b
+    verdict: correct
+    by: refereeB
+    hash: 700353e7e12a
+    date: '2026-10-25'
+    model: claude-opus-5-5
+    evidence: '07:357-363: x1≠x2 gives {x1}∩{x2}=∅, so c(∅)=∅, while c({x1})∩c({x2})={y0}. Constant function:
+      05:59. Ledger 07:798. The local letter c also names the constant map in 06:86, which is consistent.'
 - key: thm-image-intersection
   kind: thm
   file: 07-images-and-preimages.md
@@ -4047,7 +5513,25 @@ items:
   file: 07-images-and-preimages.md
   line: 437
   hash: 1b83d15ee6c0
-  verdicts: []
+  verdicts:
+  - stage: S5a
+    verdict: correct
+    by: refereeA
+    hash: 1b83d15ee6c0
+    date: '2026-10-25'
+    model: claude-opus-5-5
+    evidence: '07:437-443: f([1,3])=[1,9] (monotone on nonnegatives); f^{-1}([1,9])=[-3,-1]∪[1,3]; f^{-1}([-4,9])=[-3,3];
+      f([-3,3])=[0,9]=[-4,9]∩[0,∞), which agrees with prp-image-preimage (b), using f(ℝ)=[0,∞) from the
+      square-root fact at 07:111. It differs from the blueprint''s version (f^{-1}(f([0,1]))), which would
+      have repeated exm-images-of-square (d). The maths is right.'
+  - stage: S5b
+    verdict: correct
+    by: refereeB
+    hash: 1b83d15ee6c0
+    date: '2026-10-25'
+    model: claude-opus-5-5
+    evidence: '07:437-443: f([1,3])=[1,9]; f^{-1}([1,9])=[-3,-1]∪[1,3], which contains [1,3]; f^{-1}([-4,9])=[-3,3];
+      f([-3,3])=[0,9]=[-4,9]∩[0,∞), which agrees with prp-image-preimage (b). All checked. Ledger 07:799.'
 - key: exr-images-and-preimages-a1
   kind: exr
   file: 07-images-and-preimages.md
