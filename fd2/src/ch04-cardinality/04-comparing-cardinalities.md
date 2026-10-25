@@ -66,7 +66,7 @@ Let \( f \colon A \to B \) be an injection. Since \( A \ne \emptyset \), @thm-le
 The hypothesis \( A \ne \emptyset \) is needed. For \( A = \emptyset \) and \( B = \{b\} \), the empty function is an injection \( \emptyset \to \{b\} \), but there is no function \( \{b\} \to \emptyset \) at all (@prp-empty-function (b)), let alone a surjection. The converse would turn a surjection \( g \colon B \to A \) into an injection \( A \to B \) by sending each \( a \) to one of its preimages, as the least preimage did for \( B = \nN \) in Section 4.2. For an arbitrary \( B \) there is no such rule, and nothing in this chapter decides the converse. The remark at the end of the section says where it is settled.
 
 ::: {.check}
-The inclusion \( \nN \to \nZ \) is an injection. Which surjection \( \nZ \to \nN \) does the proof produce if the left inverse sends every point outside the image to \( 0 \)?
+The inclusion \( \iota \colon \nN \to \nZ \) is an injection. Which surjection \( \nZ \to \nN \) does the proof produce if the left inverse sends every point outside the image to \( 0 \)?
 :::
 
 ::: {.solution}

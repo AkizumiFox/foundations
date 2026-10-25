@@ -1244,6 +1244,28 @@ items:
       the constant v at k+1. thm-gluing needs all pieces to share the codomain Y={1..n}, so the codomain
       of s_v∘psi must be enlarged first. The solution spells out the matching codomain shrink for Phi
       but never mentions this enlargement.
+  - stage: S7r
+    verdict: correct
+    by: rereferee
+    hash: a150238ff0bc
+    date: '2026-10-26'
+    model: claude-opus-5-5
+    evidence: 'Base case (L691) now says {1..0}=∅, cites prp-empty-function (a) only for existence/uniqueness,
+      and gets injectivity vacuously from def-injective. Psi (L687) enlarges the codomain of s_v∘psi to
+      {1..n} by def-function before thm-gluing. The round trip Phi(Psi) shrinks it back to {1..n}\{v},
+      where t_v applies. Step: n-1∈ℕ by lem-naturals-arithmetic (c) since n≥1. n-k and n-1-k∈ℕ by (d),
+      since k≤n an'
+  - stage: S7r
+    verdict: correct
+    by: rereferee
+    hash: a150238ff0bc
+    date: '2026-10-26'
+    model: claude-opus-5-5
+    evidence: '(b): the codomains are now explicitly enlarged and shrunk back, so both round trips are
+      complete. (c): the base case covers the empty domain with prp-empty-function (a) and def-injective
+      (vacuous). The step''s n-1, n-k, n-1-k lie in N by lem-naturals-arithmetic (c), (d), which say exactly
+      that. n*(n-1)!/(n-1-k)! = n!/(n-(k+1))! holds. I(2,3) = 6 with the correct six pairs. The new transfer
+      paragrap'
 - key: exr-restriction-extension-and-gluing-c1
   kind: exr
   file: 01-finite-sets.md
@@ -1322,6 +1344,24 @@ items:
       off A by hypothesis, so they are equal by @prp-function-equality) and surjective via gluing never
       proves 'gamma(rho(f)) = f by uniqueness in @thm-gluing'. Read literally, the scheme would cost it
       3 of 10 poin
+  - stage: S7r
+    verdict: correct
+    by: rereferee
+    hash: b5d036cb34d4
+    date: '2026-10-26'
+    model: claude-opus-5-5
+    evidence: 'The marking scheme (L720-722) now labels the lines by surjectivity and injectivity and
+      accepts the direct injectivity route by prp-function-equality: two extensions agree on A because
+      both equal g. Points still total 3+2+3+2=10. The solution text is unchanged and correct.'
+  - stage: S7r
+    verdict: correct
+    by: rereferee
+    hash: b5d036cb34d4
+    date: '2026-10-26'
+    model: claude-opus-5-5
+    evidence: 'Only the marking scheme changed: ''rho surjective (rho(gamma(k)) = k)'' and ''rho injective
+      ... or directly via prp-function-equality''. Both are accurate descriptions of the two round trips.
+      Points total 3+2+3+2 = 10.'
 - key: exr-finite-sets-r1
   kind: exr
   file: 01-finite-sets.md
@@ -2962,6 +3002,27 @@ items:
       The domain Z_{>0} x (finite subsets) is countable (exr-countable-sets-c1, prp-countable-subset,
       cor-product-countable), so the image is countable (prp-countable-image). The argument 'q>=0' is
       right, since q
+  - stage: S7r
+    verdict: minor
+    by: rereferee
+    hash: 252f71d3f4fe
+    date: '2026-10-26'
+    model: claude-opus-5-5
+    evidence: 'All five answers are correct. (a) periodicity is now justified by uniqueness in the division
+      algorithm. (d) now cites exm-hilbert-hotel for ''N is infinite''. Remaining gaps: in (b), thm-even-or-odd
+      is cited for ''exactly one m in N'', which it does not give (it gives k in Z, and the uniqueness
+      comes from the division algorithm in the claim inside prp-union-two-countable''s proof). In (a),
+      prp-subset-f'
+  - stage: S7r
+    verdict: correct
+    by: rereferee
+    hash: 252f71d3f4fe
+    date: '2026-10-26'
+    model: claude-opus-5-5
+    evidence: '(a): Lambda(p,F) has period p because n+p = (q+1)p + r has the same remainder by uniqueness
+      in the division algorithm. F is finite as a subset of {0..p-1} (prp-subset-finite, 01:300). (b):
+      the even/odd split is justified by thm-even-or-odd, as in prp-union-two-countable. (d): N is infinite
+      by exm-hilbert-hotel (01:414). The math is sound. The ledger-line chapter tags are wrong (see new_problems).'
 - key: exr-diagonal-arguments-c1
   kind: exr
   file: 03-diagonal-arguments.md
@@ -3206,6 +3267,23 @@ items:
     model: claude-opus-5-5
     evidence: 04-comparing-cardinalities.md:73 The solution uses the symbol iota without introducing it.
       The check statement says only 'The inclusion N -> Z'.
+  - stage: S7r
+    verdict: correct
+    by: rereferee
+    hash: 8084fef14c4e
+    date: '2026-10-26'
+    model: claude-opus-5-5
+    evidence: 'Line 69 now binds ι as the inclusion ℕ→ℤ, so the solution''s g∘ι = id_ℕ (line 73) is well-typed.
+      The answer still checks out: the left inverse is g(n)=n for n≥0 and g(n)=0 for n<0, which is onto
+      because g(n)=n for every n∈ℕ. The ι at line 23 belongs to a separate passage and does not clash.'
+  - stage: S7r
+    verdict: correct
+    by: rereferee
+    hash: 8084fef14c4e
+    date: '2026-10-26'
+    model: claude-opus-5-5
+    evidence: The check now names the inclusion iota, which the solution's 'g o iota = id_N' uses. g(n)
+      = n for n >= 0 and 0 for n < 0 is onto and is a left inverse of iota.
   old_key: check:04-comparing-cardinalities:2
 - key: thm-schroder-bernstein
   kind: thm
@@ -3919,6 +3997,22 @@ items:
     model: claude-opus-5-5
     evidence: '05-cardinal-arithmetic.md:81 Proof (a) uses two facts about ℕ with no @ref and no ledger
       line: n+1≠0 (line 81) and the cancellation m+1=n+1 ⇒ m=n (line 83).'
+  - stage: S7r
+    verdict: correct
+    by: rereferee
+    hash: abce88a830a6
+    date: '2026-10-26'
+    model: claude-opus-5-5
+    evidence: The proof text is unchanged and sound. The new ledger line covers n+1 != 0 and the cancellation
+      m+1=n+1 => m=n (lines 81-83).
+  - stage: S7r
+    verdict: correct
+    by: rereferee
+    hash: abce88a830a6
+    date: '2026-10-26'
+    model: claude-opus-5-5
+    evidence: 'Only a dependency-ledger line was added: n+1 != 0, and m+1 = n+1 gives m = n, by the arithmetic
+      of N. The proof text is unchanged and the ledger line is accurate.'
 - key: check:05-cardinal-arithmetic:2
   kind: check
   file: 05-cardinal-arithmetic.md
@@ -4155,6 +4249,23 @@ items:
     evidence: 05-cardinal-arithmetic.md:241 The decimal example illustrates the wrong failure. It is offered
       as a decoder with 'two readings of one code', but its wording makes the digit strings the codes,
       and then it is the encoder that has two values.
+  - stage: S7r
+    verdict: correct
+    by: rereferee
+    hash: 1302768dd363
+    date: '2026-10-26'
+    model: claude-opus-5-5
+    evidence: The usual-failure example (line 241) now describes the number-to-digit-sequence decoder,
+      with two readings of 1/10. Section 4.3 is the correct pointer.
+  - stage: S7r
+    verdict: correct
+    by: rereferee
+    hash: 1302768dd363
+    date: '2026-10-26'
+    model: claude-opus-5-5
+    evidence: '''Usual failure'' now reads: reading a number as a code for its digit sequence, 1/10 has
+      the two readings 0.0999... and 0.1000.... That is an accurate example of a decoder that is not a
+      function (D3, Section 4.3).'
 - key: check:05-cardinal-arithmetic:4
   kind: check
   file: 05-cardinal-arithmetic.md
@@ -4467,6 +4578,24 @@ items:
     evidence: 05-cardinal-arithmetic.md:382 The proof cites the method of exm-method-encode for the code
       (j, n) ↦ 10n + j but omits its step (4), checking both round trips. The section's own 'usual failure'
       warns against exactly this omission.
+  - stage: S7r
+    verdict: correct
+    by: rereferee
+    hash: e95fdb871b11
+    date: '2026-10-26'
+    model: claude-opus-5-5
+    evidence: The round trips are justified by the uniqueness in the division algorithm plus thm-bijection-iff-inverse.
+      The bound y_b <= c_1/10 + 1/10 <= 2/10 < 1 follows from def-decimal-expansion at n=1 with t_1 =
+      c_1/10. The rest is unchanged and sound.
+  - stage: S7r
+    verdict: correct
+    by: rereferee
+    hash: e95fdb871b11
+    date: '2026-10-26'
+    model: claude-opus-5-5
+    evidence: (j,n) -> 10n+j is a bijection T x N -> N. Both round trips follow from uniqueness in the
+      division algorithm, and thm-bijection-iff-inverse applies. y_b <= c_1/10 + 1/10 <= 2/10 by def-decimal-expansion
+      at n=1 with t_1 = c_1/10 and c_1 in {0,1}, so y_b is in [0,1). The rest is unchanged.
 - key: check:05-cardinal-arithmetic:6
   kind: check
   file: 05-cardinal-arithmetic.md
@@ -4746,6 +4875,23 @@ items:
     model: claude-opus-5-5
     evidence: 05-cardinal-arithmetic.md:565 Part (b) of the solution never states its conclusion. It ends
       at 'Then X ∪ C = R' without applying the proposition or the symmetry step that part (a) spells out.
+  - stage: S7r
+    verdict: minor
+    by: rereferee
+    hash: 8e3a832ccd41
+    date: '2026-10-26'
+    model: claude-opus-5-5
+    evidence: 'Part (b) is now complete and the ledger line for q - n in Q was added. Only F017 remains,
+      deferred: group B has 5 items against STYLE §6''s 2-4.'
+  - stage: S7r
+    verdict: correct
+    by: rereferee
+    hash: 8e3a832ccd41
+    date: '2026-10-26'
+    model: claude-opus-5-5
+    evidence: (b) now ends with X u C = R, so (b) of the proposition with prp-equinumerous-properties
+      gives |R \ {0,1}| = |R|. C = {0,1} is countable and disjoint from X, and s(n) = n+2 is injective
+      into X. The new ledger line 'q - n in Q' is fine.
 - key: exr-cardinal-arithmetic-c1
   kind: exr
   file: 05-cardinal-arithmetic.md
@@ -4848,6 +4994,23 @@ items:
     model: claude-opus-5-5
     evidence: 05-cardinal-arithmetic.md:631 The 3-point line of the marking scheme makes citing the catalogue
       label (N14) part of the requirement. That rewards wording, not finding the error.
+  - stage: S7r
+    verdict: correct
+    by: rereferee
+    hash: 1085a1b23024
+    date: '2026-10-26'
+    model: claude-opus-5-5
+    evidence: The misleading 'binary digits are not needed' is gone. The marking scheme no longer requires
+      citing (N14). The ledger now records the dependency on Step 2 of exr-countable-sets-c1.
+  - stage: S7r
+    verdict: correct
+    by: rereferee
+    hash: 1085a1b23024
+    date: '2026-10-26'
+    model: claude-opus-5-5
+    evidence: '''What survives'' now points to exr-countable-sets-c1 for the work. The injection b ->
+      {k : b(k)=1} into the finite subsets, followed by an injection into N, is correct. The marking line
+      for (N14) no longer requires citing the label. Points total 2+3+2+2+1 = 10.'
 - key: exr-restriction-extension-and-gluing-c3
   kind: exr
   file: 05-cardinal-arithmetic.md
