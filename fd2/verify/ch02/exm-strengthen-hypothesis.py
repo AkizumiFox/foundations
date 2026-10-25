@@ -12,4 +12,12 @@ for n in range(1, 400):
     # a value allowed by "S_n < 2" from which the next sum exceeds 2
     T = 2 - Fr(1, 2 * (n + 1) ** 2)
     assert T < 2 and T + Fr(1, (n + 1) ** 2) > 2
+# quick check: S_n <= 2 - 1/(n+1) is true, but its step inequality fails for every n >= 1
+S = Fr(0)
+for n in range(1, 400):
+    S += Fr(1, n * n)
+    assert S <= 2 - Fr(1, n + 1)
+    assert Fr(1, n + 1) - Fr(1, n + 2) == Fr(1, (n + 1) * (n + 2))
+    assert not (Fr(1, (n + 1) ** 2) <= Fr(1, (n + 1) * (n + 2)))
+    assert (n + 1) * (n + 2) > (n + 1) ** 2
 print("ok")

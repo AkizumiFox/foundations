@@ -254,10 +254,34 @@ items:
     model: claude-opus-5-5
     evidence: '188-194: 7^2=49≤50 and 8^2=64>50, so the least element is 8. Sidecar thm-well-ordering.py
       and ledger line 439 cover it.'
+- key: exm-no-infinite-descent
+  kind: exm
+  file: 01-naturals-and-well-ordering.md
+  line: 200
+  hash: a8262a4ae600
+  verdicts: []
+- key: exm-method-least-element
+  kind: exm
+  file: 01-naturals-and-well-ordering.md
+  line: 228
+  hash: c4956ada5cb2
+  verdicts: []
+- key: exm-least-element-down-by-two
+  kind: exm
+  file: 01-naturals-and-well-ordering.md
+  line: 238
+  hash: 68035c20af7c
+  verdicts: []
+- key: check:01-naturals-and-well-ordering:4
+  kind: check
+  file: 01-naturals-and-well-ordering.md
+  line: 254
+  hash: 705ac7f89d19
+  verdicts: []
 - key: thm-induction-iff-well-ordering
   kind: thm
   file: 01-naturals-and-well-ordering.md
-  line: 206
+  line: 272
   hash: 8170c625a62d
   verdicts:
   - stage: S5a
@@ -301,7 +325,7 @@ items:
 - key: proof:thm-induction-iff-well-ordering
   kind: proof
   file: 01-naturals-and-well-ordering.md
-  line: 216
+  line: 282
   hash: d0c36a5d8951
   verdicts:
   - stage: S5a
@@ -334,7 +358,7 @@ items:
 - key: cor-well-ordering-integers
   kind: cor
   file: 01-naturals-and-well-ordering.md
-  line: 236
+  line: 304
   hash: 0a66c9ba4eb7
   verdicts:
   - stage: S5a
@@ -374,7 +398,7 @@ items:
 - key: proof:cor-well-ordering-integers
   kind: proof
   file: 01-naturals-and-well-ordering.md
-  line: 246
+  line: 314
   hash: f81e1ae523b9
   verdicts:
   - stage: S5a
@@ -393,10 +417,16 @@ items:
     model: claude-opus-5-5
     evidence: 246-250. The shift uses prp-integers-closed (a) and (b), then @thm-well-ordering. The reflection
       is correct. The order facts are on ledger line 431.
+- key: check:01-naturals-and-well-ordering:5
+  kind: check
+  file: 01-naturals-and-well-ordering.md
+  line: 320
+  hash: c6d3a1d9160c
+  verdicts: []
 - key: exr-naturals-and-well-ordering-a1
   kind: exr
   file: 01-naturals-and-well-ordering.md
-  line: 258
+  line: 336
   hash: 72aee7f94bd1
   verdicts:
   - stage: S5a
@@ -450,7 +480,7 @@ items:
 - key: exr-naturals-and-well-ordering-b1
   kind: exr
   file: 01-naturals-and-well-ordering.md
-  line: 290
+  line: 368
   hash: 84e727ea249e
   verdicts:
   - stage: S5a
@@ -479,7 +509,7 @@ items:
 - key: exr-naturals-and-well-ordering-b2
   kind: exr
   file: 01-naturals-and-well-ordering.md
-  line: 307
+  line: 385
   hash: 1c432b883111
   verdicts:
   - stage: S5a
@@ -520,7 +550,7 @@ items:
 - key: exr-naturals-and-well-ordering-b3
   kind: exr
   file: 01-naturals-and-well-ordering.md
-  line: 331
+  line: 409
   hash: 4b6339b92d02
   verdicts:
   - stage: S5a
@@ -547,10 +577,16 @@ items:
     evidence: 01:339-341. My proof uses T={b-s}, prp-integers-closed (a),(b) and thm-well-ordering, the
       same route as the book. The proof of cor-well-ordering-integers at 01:247 is the worked example.
       The hint names the object.
+- key: exr-naturals-and-well-ordering-b4
+  kind: exr
+  file: 01-naturals-and-well-ordering.md
+  line: 421
+  hash: e7e2f5696934
+  verdicts: []
 - key: exr-naturals-and-well-ordering-c1
   kind: exr
   file: 01-naturals-and-well-ordering.md
-  line: 345
+  line: 454
   hash: c78721a61a28
   verdicts:
   - stage: S5a
@@ -593,7 +629,7 @@ items:
 - key: exr-naturals-and-well-ordering-c2
   kind: exr
   file: 01-naturals-and-well-ordering.md
-  line: 390
+  line: 499
   hash: e042abbd9129
   verdicts:
   - stage: S5a
@@ -747,10 +783,34 @@ items:
     model: claude-opus-5-5
     evidence: '02:59-66: 24=10+14, 25, 26=5+21, 27=20+7, 28=28 all correct; 23-7b in {23,16,9,2}, none
       divisible by 5; sidecar thm-strong-induction-from-base.py passes.'
+- key: exm-method-induction-step
+  kind: exm
+  file: 02-induction-in-practice.md
+  line: 93
+  hash: 3dfb674e492d
+  verdicts: []
+- key: check:02-induction-in-practice:2
+  kind: check
+  file: 02-induction-in-practice.md
+  line: 103
+  hash: 3cf31e8670f9
+  verdicts: []
+- key: exm-choosing-the-base
+  kind: exm
+  file: 02-induction-in-practice.md
+  line: 113
+  hash: edd57ecdb6e6
+  verdicts: []
+- key: check:02-induction-in-practice:3
+  kind: check
+  file: 02-induction-in-practice.md
+  line: 137
+  hash: 2d214229ca0f
+  verdicts: []
 - key: thm-division-algorithm
   kind: thm
   file: 02-induction-in-practice.md
-  line: 104
+  line: 157
   hash: 1b8549ad663a
   verdicts:
   - stage: S5a
@@ -773,7 +833,7 @@ items:
 - key: proof:thm-division-algorithm
   kind: proof
   file: 02-induction-in-practice.md
-  line: 121
+  line: 174
   hash: dc364bbf8451
   verdicts:
   - stage: S5a
@@ -800,7 +860,7 @@ items:
 - key: lem-lowest-terms
   kind: lem
   file: 02-induction-in-practice.md
-  line: 152
+  line: 205
   hash: 362b8d26ca94
   verdicts:
   - stage: S5a
@@ -835,7 +895,7 @@ items:
 - key: proof:lem-lowest-terms
   kind: proof
   file: 02-induction-in-practice.md
-  line: 162
+  line: 215
   hash: 063068aea7a6
   verdicts:
   - stage: S5a
@@ -870,7 +930,7 @@ items:
 - key: thm-prime-factor
   kind: thm
   file: 02-induction-in-practice.md
-  line: 182
+  line: 235
   hash: 9c49cfdb0ac2
   verdicts:
   - stage: S5a
@@ -903,7 +963,7 @@ items:
 - key: proof:thm-prime-factor
   kind: proof
   file: 02-induction-in-practice.md
-  line: 192
+  line: 245
   hash: 5a0c4e302a48
   verdicts:
   - stage: S5a
@@ -936,7 +996,7 @@ items:
 - key: exm-all-equal-induction
   kind: exm
   file: 02-induction-in-practice.md
-  line: 208
+  line: 261
   hash: bc4224e40ab3
   verdicts:
   - stage: S5a
@@ -959,11 +1019,17 @@ items:
       P(1) true, P(2) false; P(n)=>P(n+1) for n>=2 vacuously true); (N9) at ch05 06-checking-proofs.md:28
       covers a ''general fact'' that is false; ch03:124 warning''s promise ''fails ... at its very first
       step, from 1 to 2'' matches.'
+- key: check:02-induction-in-practice:4
+  kind: check
+  file: 02-induction-in-practice.md
+  line: 311
+  hash: bff9a537596d
+  verdicts: []
 - key: exr-induction-in-practice-a1
   kind: exr
   file: 02-induction-in-practice.md
-  line: 260
-  hash: de2461cd41cf
+  line: 323
+  hash: 3efec0dafa7b
   verdicts:
   - stage: S5a
     verdict: correct
@@ -997,8 +1063,8 @@ items:
 - key: exr-induction-in-practice-b1
   kind: exr
   file: 02-induction-in-practice.md
-  line: 283
-  hash: 8c3c14cc3922
+  line: 346
+  hash: fcff6a927174
   verdicts:
   - stage: S5a
     verdict: correct
@@ -1026,8 +1092,8 @@ items:
 - key: exr-induction-in-practice-b2
   kind: exr
   file: 02-induction-in-practice.md
-  line: 297
-  hash: 7a3990a8773d
+  line: 360
+  hash: c323be1ea852
   verdicts:
   - stage: S5a
     verdict: correct
@@ -1070,7 +1136,7 @@ items:
 - key: exr-induction-in-practice-b3
   kind: exr
   file: 02-induction-in-practice.md
-  line: 315
+  line: 378
   hash: 78cc350a7d66
   verdicts:
   - stage: S5a
@@ -1110,10 +1176,16 @@ items:
       divisor, not a sequence of steps, so the STYLE §6 finding is resolved. I checked the solutions myself.
       (a) 17=5*3+2 and -17=5*(-4)+3, unique by the theorem. (b) x^2=4k(k+1)+1, and k(k+1)=2t in both parity
       cases, so x^2=8t+1 and uniqueness gives remainder 1. (c) n=2a with a=3q+r gives n=6q+2r; then 2r=3(s-2q),
+- key: exr-induction-in-practice-b4
+  kind: exr
+  file: 02-induction-in-practice.md
+  line: 398
+  hash: 6fa7a305339f
+  verdicts: []
 - key: exr-induction-in-practice-c1
   kind: exr
   file: 02-induction-in-practice.md
-  line: 337
+  line: 441
   hash: f6bf800a2112
   verdicts:
   - stage: S5a
@@ -1161,7 +1233,7 @@ items:
 - key: exr-induction-in-practice-c2
   kind: exr
   file: 02-induction-in-practice.md
-  line: 383
+  line: 487
   hash: abe9b3a54e2a
   verdicts:
   - stage: S5a
@@ -1192,7 +1264,7 @@ items:
 - key: exr-induction-in-practice-c3
   kind: exr
   file: 02-induction-in-practice.md
-  line: 417
+  line: 521
   hash: 38afabed8b13
   verdicts:
   - stage: S5a
@@ -1270,10 +1342,30 @@ items:
       follows from the Claim''s uniqueness. The meta-claims at :93 hold: the base is used in Step 1 and
       Step 2, and no choice is made. The remark at :96 also checks out: A_n = {k≥n}, and the Ch 6 §02
       promise ex'
+- key: check:03-recursion:1
+  kind: check
+  file: 03-recursion.md
+  line: 99
+  hash: 536b0b67728e
+  verdicts:
+  - stage: S5a
+    verdict: correct
+    by: refereeA
+    hash: c9d2db8cee57
+    date: '2026-10-11'
+    model: claude-opus-5-5
+    evidence: 03:212-222. 2/1·3/2·4/3·5/4=5. The induction (n+1)(n+2)/(n+1)=n+2 is valid.
+  - stage: S5b
+    verdict: correct
+    by: refereeB
+    hash: c9d2db8cee57
+    date: '2026-10-11'
+    model: claude-opus-5-5
+    evidence: :212-222. 2·3/2·4/3·5/4 = 5. The general telescoping induction is correct.
 - key: cor-recursion-from-base
   kind: cor
   file: 03-recursion.md
-  line: 103
+  line: 111
   hash: 09e9ab405d91
   verdicts:
   - stage: S5a
@@ -1293,7 +1385,7 @@ items:
 - key: proof:cor-recursion-from-base
   kind: proof
   file: 03-recursion.md
-  line: 113
+  line: 121
   hash: 0781898d362e
   verdicts:
   - stage: S5a
@@ -1327,7 +1419,7 @@ items:
 - key: cor-two-step-recursion
   kind: cor
   file: 03-recursion.md
-  line: 126
+  line: 134
   hash: 94a5a231898e
   verdicts:
   - stage: S5a
@@ -1359,7 +1451,7 @@ items:
 - key: proof:cor-two-step-recursion
   kind: proof
   file: 03-recursion.md
-  line: 139
+  line: 147
   hash: e8d0c6fce2d6
   verdicts:
   - stage: S5a
@@ -1380,10 +1472,16 @@ items:
     model: claude-opus-5-5
     evidence: :139-153. The pair recursion G(n,(x,y)) = (y,h(n,x,y)), the characteristic property and
       the uniqueness via p' all check.
+- key: check:03-recursion:2
+  kind: check
+  file: 03-recursion.md
+  line: 163
+  hash: 0e1089583498
+  verdicts: []
 - key: def-sum-product
   kind: def
   file: 03-recursion.md
-  line: 159
+  line: 175
   hash: af4211c6cb19
   verdicts:
   - stage: S5a
@@ -1408,7 +1506,7 @@ items:
 - key: def-power
   kind: def
   file: 03-recursion.md
-  line: 185
+  line: 201
   hash: e98dc686b972
   verdicts:
   - stage: S5a
@@ -1429,30 +1527,16 @@ items:
     evidence: ':191-206. u^n = ∏u holds by uniqueness. The √2 sequence checks: g maps (0,∞) into itself,
       a_2 = 17/12, and (17/12)^2 = 2 + 1/144. The Ch 11 roots and Ch 12 pointers are in STATUS rows 106
       and 110.'
-- key: check:03-recursion:1
+- key: check:03-recursion:3
   kind: check
   file: 03-recursion.md
-  line: 212
+  line: 228
   hash: c9d2db8cee57
-  verdicts:
-  - stage: S5a
-    verdict: correct
-    by: refereeA
-    hash: c9d2db8cee57
-    date: '2026-10-11'
-    model: claude-opus-5-5
-    evidence: 03:212-222. 2/1·3/2·4/3·5/4=5. The induction (n+1)(n+2)/(n+1)=n+2 is valid.
-  - stage: S5b
-    verdict: correct
-    by: refereeB
-    hash: c9d2db8cee57
-    date: '2026-10-11'
-    model: claude-opus-5-5
-    evidence: :212-222. 2·3/2·4/3·5/4 = 5. The general telescoping induction is correct.
+  verdicts: []
 - key: prp-power-laws
   kind: prp
   file: 03-recursion.md
-  line: 228
+  line: 244
   hash: 9f06a81e8072
   verdicts:
   - stage: S5a
@@ -1494,7 +1578,7 @@ items:
 - key: proof:prp-power-laws
   kind: proof
   file: 03-recursion.md
-  line: 246
+  line: 262
   hash: dc3eaf2da476
   verdicts:
   - stage: S5a
@@ -1529,7 +1613,7 @@ items:
 - key: prp-sum-first-n
   kind: prp
   file: 03-recursion.md
-  line: 266
+  line: 282
   hash: 62cdc4cf702d
   verdicts:
   - stage: S5a
@@ -1549,7 +1633,7 @@ items:
 - key: proof:prp-sum-first-n
   kind: proof
   file: 03-recursion.md
-  line: 272
+  line: 288
   hash: a24373556f61
   verdicts:
   - stage: S5a
@@ -1569,7 +1653,7 @@ items:
 - key: prp-geometric-sum
   kind: prp
   file: 03-recursion.md
-  line: 280
+  line: 296
   hash: f1ebfa52573a
   verdicts:
   - stage: S5a
@@ -1590,7 +1674,7 @@ items:
 - key: proof:prp-geometric-sum
   kind: proof
   file: 03-recursion.md
-  line: 289
+  line: 305
   hash: 6ff142f87b40
   verdicts:
   - stage: S5a
@@ -1621,7 +1705,7 @@ items:
 - key: thm-bernoulli
   kind: thm
   file: 03-recursion.md
-  line: 305
+  line: 321
   hash: 5b74ec53afbb
   verdicts:
   - stage: S5a
@@ -1643,7 +1727,7 @@ items:
 - key: proof:thm-bernoulli
   kind: proof
   file: 03-recursion.md
-  line: 315
+  line: 331
   hash: 10acc484de4e
   verdicts:
   - stage: S5a
@@ -1661,10 +1745,16 @@ items:
     date: '2026-10-11'
     model: claude-opus-5-5
     evidence: :315-324. The expansion (1+nx)(1+x) checks, and the nx²≥0 fact is ledgered at :592.
+- key: check:03-recursion:4
+  kind: check
+  file: 03-recursion.md
+  line: 344
+  hash: 76df9ef48cbb
+  verdicts: []
 - key: prp-finite-max
   kind: prp
   file: 03-recursion.md
-  line: 330
+  line: 354
   hash: 66bff93a94a7
   verdicts:
   - stage: S5a
@@ -1685,7 +1775,7 @@ items:
 - key: proof:prp-finite-max
   kind: proof
   file: 03-recursion.md
-  line: 340
+  line: 364
   hash: 04a389e21bb9
   verdicts:
   - stage: S5a
@@ -1718,7 +1808,7 @@ items:
 - key: exm-strengthen-hypothesis
   kind: exm
   file: 03-recursion.md
-  line: 362
+  line: 386
   hash: 53c49b360642
   verdicts:
   - stage: S5a
@@ -1756,10 +1846,16 @@ items:
       more" (@exm-strengthen-hypothesis)'' (565). So a reader can match the index entry to the text, and
       the S8 finding is resolved. The solution checks. The failure witness gives 2 - 1/(2(n+1)^2) + 1/(n+1)^2
       = 2 + 1/(2(n+1)^'
+- key: check:03-recursion:5
+  kind: check
+  file: 03-recursion.md
+  line: 410
+  hash: d396551500b0
+  verdicts: []
 - key: exr-recursion-a1
   kind: exr
   file: 03-recursion.md
-  line: 390
+  line: 422
   hash: 9f66a362165e
   verdicts:
   - stage: S5a
@@ -1790,7 +1886,7 @@ items:
 - key: exr-recursion-b1
   kind: exr
   file: 03-recursion.md
-  line: 418
+  line: 450
   hash: 84259b65e804
   verdicts:
   - stage: S5a
@@ -1818,7 +1914,7 @@ items:
 - key: exr-recursion-b2
   kind: exr
   file: 03-recursion.md
-  line: 436
+  line: 468
   hash: 302e3c885080
   verdicts:
   - stage: S5a
@@ -1848,7 +1944,7 @@ items:
 - key: exr-recursion-b3
   kind: exr
   file: 03-recursion.md
-  line: 454
+  line: 486
   hash: 955f9ae54f0f
   verdicts:
   - stage: S5a
@@ -1876,7 +1972,7 @@ items:
 - key: exr-recursion-c1
   kind: exr
   file: 03-recursion.md
-  line: 470
+  line: 502
   hash: 157e9b8e2728
   verdicts:
   - stage: S5a
@@ -1919,7 +2015,7 @@ items:
 - key: exr-recursion-c2
   kind: exr
   file: 03-recursion.md
-  line: 500
+  line: 532
   hash: c5570d759fdb
   verdicts:
   - stage: S5a
@@ -1952,7 +2048,7 @@ items:
 - key: exr-recursion-c3
   kind: exr
   file: 03-recursion.md
-  line: 518
+  line: 550
   hash: 1a3837a5ff4f
   verdicts:
   - stage: S5a
@@ -1992,6 +2088,966 @@ items:
       on one identity does not supply. The prose at 384 and 565 is qualified the same way and notes that
       a two-step induction works. The solution checks line by line (547-563): F_{2n+3} = F_{n+2}^2 + F_{n+1}^2
       and F_{2n+'
+- key: exm-contrapositive-mod-three
+  kind: exm
+  file: 04-contrapositive-and-contradiction.md
+  line: 9
+  hash: 7e71f6a3af91
+  verdicts: []
+- key: check:04-contrapositive-and-contradiction:1
+  kind: check
+  file: 04-contrapositive-and-contradiction.md
+  line: 41
+  hash: e2fe6fdd1f62
+  verdicts: []
+- key: exm-method-choosing-the-form
+  kind: exm
+  file: 04-contrapositive-and-contradiction.md
+  line: 51
+  hash: cff570845e6e
+  verdicts: []
+- key: check:04-contrapositive-and-contradiction:2
+  kind: check
+  file: 04-contrapositive-and-contradiction.md
+  line: 61
+  hash: 6df0e2e6ccf0
+  verdicts: []
+- key: thm-primes-infinite
+  kind: thm
+  file: 04-contrapositive-and-contradiction.md
+  line: 79
+  hash: aec80884c37b
+  verdicts: []
+- key: proof:thm-primes-infinite
+  kind: proof
+  file: 04-contrapositive-and-contradiction.md
+  line: 89
+  hash: 7a57ee5c1702
+  verdicts: []
+- key: check:04-contrapositive-and-contradiction:3
+  kind: check
+  file: 04-contrapositive-and-contradiction.md
+  line: 99
+  hash: 2bdb8231d6c1
+  verdicts: []
+- key: prp-cube-root-two-irrational
+  kind: prp
+  file: 04-contrapositive-and-contradiction.md
+  line: 117
+  hash: ba7f41965a57
+  verdicts: []
+- key: proof:prp-cube-root-two-irrational
+  kind: proof
+  file: 04-contrapositive-and-contradiction.md
+  line: 127
+  hash: b45fb06222da
+  verdicts: []
+- key: check:04-contrapositive-and-contradiction:4
+  kind: check
+  file: 04-contrapositive-and-contradiction.md
+  line: 139
+  hash: 387dec82295f
+  verdicts: []
+- key: exm-method-smallest-counterexample
+  kind: exm
+  file: 04-contrapositive-and-contradiction.md
+  line: 166
+  hash: 0488d8ce15ff
+  verdicts: []
+- key: exm-three-power-factor
+  kind: exm
+  file: 04-contrapositive-and-contradiction.md
+  line: 176
+  hash: 9f76ae043613
+  verdicts: []
+- key: check:04-contrapositive-and-contradiction:5
+  kind: check
+  file: 04-contrapositive-and-contradiction.md
+  line: 198
+  hash: b3c52165fc50
+  verdicts: []
+- key: exr-contrapositive-and-contradiction-a1
+  kind: exr
+  file: 04-contrapositive-and-contradiction.md
+  line: 216
+  hash: 92db2ccc83ef
+  verdicts: []
+- key: exr-contrapositive-and-contradiction-b1
+  kind: exr
+  file: 04-contrapositive-and-contradiction.md
+  line: 239
+  hash: 317cb4b0563f
+  verdicts: []
+- key: exr-contrapositive-and-contradiction-b2
+  kind: exr
+  file: 04-contrapositive-and-contradiction.md
+  line: 256
+  hash: 61caa31408fb
+  verdicts: []
+- key: exr-contrapositive-and-contradiction-b3
+  kind: exr
+  file: 04-contrapositive-and-contradiction.md
+  line: 273
+  hash: 6c8570ae36de
+  verdicts: []
+- key: exr-contrapositive-and-contradiction-b4
+  kind: exr
+  file: 04-contrapositive-and-contradiction.md
+  line: 287
+  hash: 0e36f793a335
+  verdicts: []
+- key: exr-contrapositive-and-contradiction-c1
+  kind: exr
+  file: 04-contrapositive-and-contradiction.md
+  line: 320
+  hash: 211100ecbcc4
+  verdicts: []
+- key: exr-contrapositive-and-contradiction-c2
+  kind: exr
+  file: 04-contrapositive-and-contradiction.md
+  line: 352
+  hash: 003f2b291610
+  verdicts: []
+- key: exr-contrapositive-and-contradiction-c3
+  kind: exr
+  file: 04-contrapositive-and-contradiction.md
+  line: 374
+  hash: 6e225ecc138f
+  verdicts: []
+- key: def-equinumerous
+  kind: def
+  file: 05-finite-sets.md
+  line: 13
+  hash: 0e848211743a
+  verdicts:
+  - stage: S5a
+    verdict: correct
+    by: refereeA
+    hash: 0e848211743a
+    date: '2026-10-11'
+    model: claude-opus-5-5
+    evidence: 01:13-37 definition and examples checked; [0,1]->[0,2] inverse y/2 verified; empty-set converse
+      uses prp-empty-function (b) correctly; non-example quantifies over all g
+  - stage: S5b
+    verdict: correct
+    by: refereeB
+    hash: 0e848211743a
+    date: '2026-10-11'
+    model: claude-opus-5-5
+    evidence: '01-finite-sets.md:13-37. The definition, the four examples (the empty function via prp-empty-function
+      (a)/(b), [0,1] to [0,2] with inverse y/2) and the non-example (every g: {a,b,c} to {1,2} fails injectivity)
+      all check out.'
+- key: check:05-finite-sets:1
+  kind: check
+  file: 05-finite-sets.md
+  line: 31
+  hash: 92c9846af4ab
+  verdicts: []
+- key: prp-equinumerous-properties
+  kind: prp
+  file: 05-finite-sets.md
+  line: 49
+  hash: 70125ec520dd
+  verdicts:
+  - stage: S5a
+    verdict: correct
+    by: refereeA
+    hash: 70125ec520dd
+    date: '2026-10-11'
+    model: claude-opus-5-5
+    evidence: 01:41-51 statement fine; remark 01:64 uses (W3) union + thm-russell ('no set of which every
+      set is an element') correctly
+  - stage: S5b
+    verdict: correct
+    by: refereeB
+    hash: 70125ec520dd
+    date: '2026-10-11'
+    model: claude-opus-5-5
+    evidence: :41-51 statement. The paragraph at :61 (not an equivalence relation on a set, citing thm-russell)
+      matches def-equivalence-relation (ch07/05:19-25). The remark at :64 ((W3) family union plus thm-russell
+      'no set of which every set is an element') is sound. Its length is a separate finding with key ''.
+- key: proof:prp-equinumerous-properties
+  kind: proof
+  file: 05-finite-sets.md
+  line: 61
+  hash: 511c3dbdc0e9
+  verdicts:
+  - stage: S5a
+    verdict: correct
+    by: refereeA
+    hash: 511c3dbdc0e9
+    date: '2026-10-11'
+    model: claude-opus-5-5
+    evidence: '01:54-58: (b) uses symmetry of def-inverse-function + thm-bijection-iff-inverse both directions;
+      (c) thm-composition-injective-surjective (c)'
+  - stage: S5b
+    verdict: correct
+    by: refereeB
+    hash: 511c3dbdc0e9
+    date: '2026-10-11'
+    model: claude-opus-5-5
+    evidence: :53-59. (a) uses the identity; (b) uses thm-bijection-iff-inverse twice with def-inverse-function;
+      (c) uses thm-composition-injective-surjective (c), whose statement at ch06/04:415 matches.
+- key: def-finite
+  kind: def
+  file: 05-finite-sets.md
+  line: 87
+  hash: 51dcf03623e7
+  verdicts:
+  - stage: S5a
+    verdict: correct
+    by: refereeA
+    hash: 51dcf03623e7
+    date: '2026-10-11'
+    model: claude-opus-5-5
+    evidence: 01:75-90; {0,...,n} is defined in ch07/01:34; k->k-1 with lem-naturals-arithmetic (c), inverse
+      j->j+1 checked
+  - stage: S5b
+    verdict: correct
+    by: refereeB
+    hash: 51dcf03623e7
+    date: '2026-10-11'
+    model: claude-opus-5-5
+    evidence: :75-90. The {1,...,n} and {0,...,n} notation matches ch07/01. The 0-element examples are
+      right. For {0,...,n}, k-1 is in N by lem-naturals-arithmetic (c). The well-definedness gap is flagged
+      at :83 and paid at :183-195.
+- key: check:05-finite-sets:2
+  kind: check
+  file: 05-finite-sets.md
+  line: 104
+  hash: c8370491982b
+  verdicts: []
+- key: def-infinite
+  kind: def
+  file: 05-finite-sets.md
+  line: 112
+  hash: 8971cf14f0c4
+  verdicts:
+  - stage: S5a
+    verdict: correct
+    by: refereeA
+    hash: 8971cf14f0c4
+    date: '2026-10-11'
+    model: claude-opus-5-5
+    evidence: 01:92-100; 'Shrinking the codomain' paragraph correct per def-function (graph in X x C)
+  - stage: S5b
+    verdict: correct
+    by: refereeB
+    hash: 8971cf14f0c4
+    date: '2026-10-11'
+    model: claude-opus-5-5
+    evidence: :92-100. It is the negation of def-finite. The 'Shrinking the codomain' paragraph is correct
+      (it cites def-function and def-image) and is used later, at 02:82, 02:150 and 03:88.
+- key: thm-pigeonhole
+  kind: thm
+  file: 05-finite-sets.md
+  line: 126
+  hash: de45bc8cf894
+  verdicts:
+  - stage: S5a
+    verdict: correct
+    by: refereeA
+    hash: de45bc8cf894
+    date: '2026-10-11'
+    model: claude-opus-5-5
+    evidence: '01:106-110; dropping m>n: identity {1..n}->{1..n} is injective, so hypothesis is needed
+      and used (base case m>0, step m>n+1)'
+  - stage: S5b
+    verdict: minor
+    by: refereeB
+    hash: de45bc8cf894
+    date: '2026-10-11'
+    model: claude-opus-5-5
+    evidence: '01-finite-sets.md:104 False meta-claim: ''In Chapter 6 we checked by hand that a function
+      from a three-element set to a two-element set cannot be injective (@exm-injective-surjective-first
+      (c))''.'
+  - stage: S8
+    verdict: minor
+    by: seam
+    hash: de45bc8cf894
+    date: '2026-10-11'
+    model: claude-opus-5-5
+    evidence: 01-finite-sets.md:104 Wrong attribution of what Chapter 6 did. The text says 'In Chapter
+      6 we checked by hand that a function from a three-element set to a two-element set cannot be injective
+      (@exm-injective-surjective-first (c))'. Part (c) checks one particular function. The general statement
+      is only asserted, not checked, in the paragraph after the example.
+  - stage: S7r
+    verdict: correct
+    by: rereferee
+    hash: de45bc8cf894
+    date: '2026-10-11'
+    model: claude-opus-5-5
+    evidence: '01-finite-sets.md:106 now says Chapter 6 found one non-injective function (@exm-injective-surjective-first
+      (c)) and ''observed without proof that none can be''. That matches ch06 04-functions.md:368-372:
+      (c) checks one h, and the paragraph after it asserts the general fact without proof. The S5b and
+      S8 findings are resolved. The statement at :111 is correct.'
+- key: proof:thm-pigeonhole
+  kind: proof
+  file: 05-finite-sets.md
+  line: 148
+  hash: 52dcdf006f04
+  verdicts:
+  - stage: S5a
+    verdict: correct
+    by: refereeA
+    hash: 52dcdf006f04
+    date: '2026-10-11'
+    model: claude-opus-5-5
+    evidence: '01:116-141: P(n) quantifies over m inside, as needed for use at m-1; base uses lem (a)
+      and prp-empty-function (b); Case 1 lem (e); Case 2 sigma injective, sigma(i)!=j since j<=m-1<m when
+      i=j, g=f o sigma avoids n+1 by injectivity of f; m-1 in N by lem (c), m-1>n. Sidecar thm-pigeonhole.py
+      passes'
+  - stage: S5b
+    verdict: correct
+    by: refereeB
+    hash: 52dcdf006f04
+    date: '2026-10-11'
+    model: claude-opus-5-5
+    evidence: :116-142. P(n) quantifies m inside. In the base case m>=1 gives a non-empty domain, so prp-empty-function
+      (b) applies. In Case 1, f(i)<=n follows by (e). In Case 2, sigma is injective and misses j; g=f∘sigma
+      avoids n+1, and P(n) is applied at m-1. The idea's 'move pigeon j to the hole of pigeon m' matches
+      g(j)=f(m). The school order facts are in the ledger (:531-532). The sidecar thm-pigeonhole.py
+- key: cor-pigeonhole-finite-sets
+  kind: cor
+  file: 05-finite-sets.md
+  line: 178
+  hash: 7ccba4379074
+  verdicts:
+  - stage: S5a
+    verdict: correct
+    by: refereeA
+    hash: 7ccba4379074
+    date: '2026-10-11'
+    model: claude-opus-5-5
+    evidence: '01:146-155 statement; (b) with m=0<n: no surjection from empty set onto nonempty B holds'
+  - stage: S5b
+    verdict: minor
+    by: refereeB
+    hash: 7ccba4379074
+    date: '2026-10-11'
+    model: claude-opus-5-5
+    evidence: '01-finite-sets.md:177 In the three-integers example, ''p: A → {0, 1}'' and ''which is even''
+      use facts about Z that Chapter 7 proved as prp-integers-closed, but the ledger attributes them to
+      ''R arithmetic, school fact''.'
+  - stage: S8
+    verdict: minor
+    by: seam
+    hash: 7ccba4379074
+    date: '2026-10-11'
+    model: claude-opus-5-5
+    evidence: 01-finite-sets.md:175 The sentence 'With m = 3, n = 2 and m = 2, n = 3, it gives the two
+      observations after @exm-injective-surjective-first' has 'it' referring back to 'part (a)'. The case
+      m = 2, n = 3 (no surjection) is part (b).
+  - stage: S7r
+    verdict: correct
+    by: rereferee
+    hash: 7ccba4379074
+    date: '2026-10-11'
+    model: claude-opus-5-5
+    evidence: Line 177 now reads 'With m = 3, n = 2 in (a) and m = 2, n = 3 in (b)', so the S8 finding
+      is resolved. I checked the exr-models-c2 claim against 11-models.md:487 and ledger :717, and it
+      is accurate. In the three-integers paragraph (:179-183), r is in N by prp-integers-closed (b) and
+      r <= 1 by lem-naturals-arithmetic (e). The paragraph also cites q+q'+r in Z (prp-integers-closed
+      (a)), and ledger :54
+- key: proof:cor-pigeonhole-finite-sets
+  kind: proof
+  file: 05-finite-sets.md
+  line: 193
+  hash: 6dd49ecf7d6a
+  verdicts:
+  - stage: S5a
+    verdict: minor
+    by: refereeA
+    hash: 60aa858c61b4
+    date: '2026-10-11'
+    model: claude-opus-5-5
+    evidence: 01-finite-sets.md:162 The citation for 'psi^{-1} is a bijection' points to the wrong result.
+  - stage: S5b
+    verdict: minor
+    by: refereeB
+    hash: 60aa858c61b4
+    date: '2026-10-11'
+    model: claude-opus-5-5
+    evidence: 01-finite-sets.md:162 The section cites the statement of prp-equinumerous-properties (b)
+      for the fact that the specific inverse map is a bijection, but the statement only asserts that some
+      bijection B to A exists.
+  - stage: S7r
+    verdict: correct
+    by: rereferee
+    hash: 6dd49ecf7d6a
+    date: '2026-10-11'
+    model: claude-opus-5-5
+    evidence: 'Line 164 now proves that psi^{-1} is a bijection directly: psi is a two-sided inverse of
+      psi^{-1} (def-inverse-function, 05-inverses.md:241, whose symmetry remark is at :253), and thm-bijection-iff-inverse
+      (:295) then gives the bijection. It no longer cites prp-equinumerous-properties (b), so the S5a
+      and S5b findings are resolved. In (a), the triple composite is injective by thm-composition (a).
+      I'
+- key: exm-method-pigeonhole
+  kind: exm
+  file: 05-finite-sets.md
+  line: 217
+  hash: effb3b0357d2
+  verdicts: []
+- key: exm-five-lattice-points
+  kind: exm
+  file: 05-finite-sets.md
+  line: 227
+  hash: 2af632e893d0
+  verdicts: []
+- key: check:05-finite-sets:3
+  kind: check
+  file: 05-finite-sets.md
+  line: 243
+  hash: 296a34c01caf
+  verdicts: []
+- key: cor-finite-size-unique
+  kind: cor
+  file: 05-finite-sets.md
+  line: 253
+  hash: 365223cc680f
+  verdicts:
+  - stage: S5a
+    verdict: correct
+    by: refereeA
+    hash: 365223cc680f
+    date: '2026-10-11'
+    model: claude-opus-5-5
+    evidence: 01:185-189
+  - stage: S5b
+    verdict: correct
+    by: refereeB
+    hash: 365223cc680f
+    date: '2026-10-11'
+    model: claude-opus-5-5
+    evidence: :185-189.
+- key: proof:cor-finite-size-unique
+  kind: proof
+  file: 05-finite-sets.md
+  line: 259
+  hash: 6c1acc88ca99
+  verdicts:
+  - stage: S5a
+    verdict: minor
+    by: refereeA
+    hash: 6c1acc88ca99
+    date: '2026-10-11'
+    model: claude-opus-5-5
+    evidence: '01:192: injectivity of psi^{-1} needs psi^{-1} bijective (psi is its inverse); cited only
+      as thm-bijection-iff-inverse, acceptable but compressed. Logic and trichotomy fine'
+  - stage: S5b
+    verdict: correct
+    by: refereeB
+    hash: 6c1acc88ca99
+    date: '2026-10-11'
+    model: claude-opus-5-5
+    evidence: :192. psi^{-1}∘phi is injective (thm-bijection-iff-inverse, thm-composition (a)), which
+      contradicts thm-pigeonhole. Trichotomy is in the ledger (:534).
+- key: prp-disjoint-union-count
+  kind: prp
+  file: 05-finite-sets.md
+  line: 269
+  hash: 4140f115f2ad
+  verdicts:
+  - stage: S5a
+    verdict: correct
+    by: refereeA
+    hash: 4140f115f2ad
+    date: '2026-10-11'
+    model: claude-opus-5-5
+    evidence: '01:201-205; dropping disjointness: A=B={1} gives 1 != 2 elements; hypothesis used at 01:221'
+  - stage: S5b
+    verdict: correct
+    by: refereeB
+    hash: 4140f115f2ad
+    date: '2026-10-11'
+    model: claude-opus-5-5
+    evidence: ':201-205. The meta-claim at :199 (''uses nothing else from this section'') holds: the proof
+      uses only def-finite and Chapter 7.'
+- key: proof:prp-disjoint-union-count
+  kind: proof
+  file: 05-finite-sets.md
+  line: 279
+  hash: 50115fc140af
+  verdicts:
+  - stage: S5a
+    verdict: correct
+    by: refereeA
+    hash: 50115fc140af
+    date: '2026-10-11'
+    model: claude-opus-5-5
+    evidence: '01:212-225: k>m gives m+1<=k (lem (e)), k-m in N (lem (d)); chi injective in all three
+      cases; surjective via k=m+j'
+  - stage: S5b
+    verdict: correct
+    by: refereeB
+    hash: 50115fc140af
+    date: '2026-10-11'
+    model: claude-opus-5-5
+    evidence: :211-226. chi is well defined (k-m lies in {1..n} by lem (d),(e)). Injectivity has all three
+      cases, using disjointness. Surjectivity uses k=m+j. The ledger line is at :535.
+- key: prp-subset-finite
+  kind: prp
+  file: 05-finite-sets.md
+  line: 300
+  hash: b61091b72523
+  verdicts:
+  - stage: S5a
+    verdict: correct
+    by: refereeA
+    hash: b61091b72523
+    date: '2026-10-11'
+    model: claude-opus-5-5
+    evidence: 01:230-234
+  - stage: S5b
+    verdict: correct
+    by: refereeB
+    hash: b61091b72523
+    date: '2026-10-11'
+    model: claude-opus-5-5
+    evidence: ':230-234. The meta-claim at :228 (''cites nothing proved later'') holds: the proof uses
+      only prp-disjoint-union-count, which comes earlier.'
+- key: proof:prp-subset-finite
+  kind: proof
+  file: 05-finite-sets.md
+  line: 310
+  hash: bdc1946c2188
+  verdicts:
+  - stage: S5a
+    verdict: correct
+    by: refereeA
+    hash: bdc1946c2188
+    date: '2026-10-11'
+    model: claude-opus-5-5
+    evidence: '01:241-259: A=A'' u {a} via lem (e), a notin A'' by injectivity; case a in S: j taken from
+      the same instance of P(n) so ''j<n by P(n)'' is justified; S cap A'' = A'' would give S=A. Uses
+      only prp-disjoint-union-count (earlier)'
+  - stage: S5b
+    verdict: correct
+    by: refereeB
+    hash: bdc1946c2188
+    date: '2026-10-11'
+    model: claude-opus-5-5
+    evidence: :240-260. A' has n elements (the ledger notes the restriction), A=A'∪{a}, and a∉A'. Both
+      cases, including the strict clause, are correct. The base case uses the 0-element example at :87.
+- key: check:05-finite-sets:4
+  kind: check
+  file: 05-finite-sets.md
+  line: 334
+  hash: 4970798cd512
+  verdicts: []
+- key: cor-remove-point
+  kind: cor
+  file: 05-finite-sets.md
+  line: 342
+  hash: 240f08b8b551
+  verdicts:
+  - stage: S5a
+    verdict: correct
+    by: refereeA
+    hash: 240f08b8b551
+    date: '2026-10-11'
+    model: claude-opus-5-5
+    evidence: 01:264-268
+  - stage: S5b
+    verdict: correct
+    by: refereeB
+    hash: 240f08b8b551
+    date: '2026-10-11'
+    model: claude-opus-5-5
+    evidence: :264-268. The meta-claim at :274 ('every later induction on the number of elements' uses
+      it on an arbitrary A) checks against 03:65, 03:366 and C2 in this section. The induction at 06:28
+      builds F_n and is not an induction over arbitrary n-element sets.
+- key: proof:cor-remove-point
+  kind: proof
+  file: 05-finite-sets.md
+  line: 348
+  hash: 209943f88ad6
+  verdicts:
+  - stage: S5a
+    verdict: correct
+    by: refereeA
+    hash: 209943f88ad6
+    date: '2026-10-11'
+    model: claude-opus-5-5
+    evidence: '01:271: prp-subset-finite, prp-disjoint-union-count, cor-finite-size-unique; k+1=n+1 gives
+      k=n'
+  - stage: S5b
+    verdict: correct
+    by: refereeB
+    hash: 209943f88ad6
+    date: '2026-10-11'
+    model: claude-opus-5-5
+    evidence: :270-272. A proper subset has k<n+1 elements; the disjoint union gives k+1; uniqueness gives
+      k=n.
+- key: prp-power-set-count
+  kind: prp
+  file: 05-finite-sets.md
+  line: 354
+  hash: 53204555eb13
+  verdicts:
+  - stage: S5a
+    verdict: correct
+    by: refereeA
+    hash: 53204555eb13
+    date: '2026-10-11'
+    model: claude-opus-5-5
+    evidence: 01:276-280; sidecar prp-power-set-count.py passes
+  - stage: S5b
+    verdict: minor
+    by: refereeB
+    hash: 53204555eb13
+    date: '2026-10-11'
+    model: claude-opus-5-5
+    evidence: '01-finite-sets.md:302 Notation clash: the paragraph after the proof rebinds A and X. The
+      function A ↦ ind_A takes A to range over subsets of a generic X, immediately after a proof in which
+      A is the (n+1)-element set and X := A∖{a}.'
+  - stage: S7r
+    verdict: correct
+    by: rereferee
+    hash: 53204555eb13
+    date: '2026-10-11'
+    model: claude-opus-5-5
+    evidence: The paragraph after the proof (:304) now uses Y and S (S ↦ ind_S, P(Y) → {0,1}^Y), so it
+      no longer rebinds A and X and the notation clash is resolved. The correspondence it cites is at
+      ch06 04-functions.md:193 (Section 6.4). \ind matches NOTATION.md:70.
+- key: proof:prp-power-set-count
+  kind: proof
+  file: 05-finite-sets.md
+  line: 364
+  hash: 60c0acd45a34
+  verdicts:
+  - stage: S5a
+    verdict: minor
+    by: refereeA
+    hash: e879c2a32c20
+    date: '2026-10-11'
+    model: claude-opus-5-5
+    evidence: 01-finite-sets.md:299 prp-disjoint-union-count requires its two counts to be natural numbers,
+      and the text does not check this for 2^n.
+  - stage: S5b
+    verdict: minor
+    by: refereeB
+    hash: e879c2a32c20
+    date: '2026-10-11'
+    model: claude-opus-5-5
+    evidence: 01-finite-sets.md:297 The proof says P(X) and T 'have 2^n elements' without noting 2^n ∈
+      N, which def-finite requires (n ∈ N). The same issue occurs with n^m and mn in exercise C2.
+  - stage: S7r
+    verdict: correct
+    by: rereferee
+    hash: 60c0acd45a34
+    date: '2026-10-11'
+    model: claude-opus-5-5
+    evidence: Line 291 now notes that 2^n and 2^{n+1} are in N by prp-power-laws (d) (03-recursion.md:228,
+      'if u in N then u^n in N'), with ledger :545, so the S5a and S5b findings are resolved. I checked
+      the base case P(∅) = {∅}. Removing a uses cor-remove-point on an arbitrary A. I checked the disjointness
+      and covering of P(A) = P(X) ∪ T, and the bijection P(X) → T by injectivity via (S∪{a})∖{a} = S.
+      Composin
+- key: thm-finite-no-proper-copy
+  kind: thm
+  file: 05-finite-sets.md
+  line: 388
+  hash: ee9a0f3dbf41
+  verdicts:
+  - stage: S5a
+    verdict: correct
+    by: refereeA
+    hash: ee9a0f3dbf41
+    date: '2026-10-11'
+    model: claude-opus-5-5
+    evidence: '01:308-312; dropping ''finite'': N and 2N'
+  - stage: S5b
+    verdict: correct
+    by: refereeB
+    hash: ee9a0f3dbf41
+    date: '2026-10-11'
+    model: claude-opus-5-5
+    evidence: :308-312.
+- key: proof:thm-finite-no-proper-copy
+  kind: proof
+  file: 05-finite-sets.md
+  line: 394
+  hash: c1b469157f65
+  verdicts:
+  - stage: S5a
+    verdict: correct
+    by: refereeA
+    hash: c1b469157f65
+    date: '2026-10-11'
+    model: claude-opus-5-5
+    evidence: '01:315: prp-subset-finite gives k<n, g o phi bijection gives n elements, cor-finite-size-unique
+      gives k=n, contradiction'
+  - stage: S5b
+    verdict: correct
+    by: refereeB
+    hash: c1b469157f65
+    date: '2026-10-11'
+    model: claude-opus-5-5
+    evidence: :314-316. It uses prp-subset-finite (k<n), composition (c) and cor-finite-size-unique.
+- key: exm-hilbert-hotel
+  kind: exm
+  file: 05-finite-sets.md
+  line: 406
+  hash: 0542aba7a3b5
+  verdicts:
+  - stage: S5a
+    verdict: correct
+    by: refereeA
+    hash: 0542aba7a3b5
+    date: '2026-10-11'
+    model: claude-opus-5-5
+    evidence: '01:324-336: d bijective, 1 notin 2N via lem (a), conclusion via thm-finite-no-proper-copy.
+      Warning 01:341: x/(1+x) maps 1/n to 1/(n+1), y/(1-y) inverts, 1 notin {1/n: n>=2}; checked'
+  - stage: S5b
+    verdict: correct
+    by: refereeB
+    hash: 0542aba7a3b5
+    date: '2026-10-11'
+    model: claude-opus-5-5
+    evidence: :324-336. d(n)=2n is a bijection onto 2N, 2N ⊆ N by lem (b), and 1∉2N by the case split
+      with lem (a). The ledger line is at :539. The pointer at :338 to Section 8.6 is paid by thm-infinite-iff-proper-subset
+      (06:69).
+- key: check:05-finite-sets:5
+  kind: check
+  file: 05-finite-sets.md
+  line: 430
+  hash: 89a537e526a3
+  verdicts: []
+- key: check:05-finite-sets:6
+  kind: check
+  file: 05-finite-sets.md
+  line: 442
+  hash: 45bf6c0b2acf
+  verdicts: []
+- key: exr-finite-sets-a1
+  kind: exr
+  file: 05-finite-sets.md
+  line: 460
+  hash: d6bb729a2ba5
+  verdicts:
+  - stage: S5a
+    verdict: correct
+    by: refereeA
+    hash: d6bb729a2ba5
+    date: '2026-10-11'
+    model: claude-opus-5-5
+    evidence: '01:372-382: negation via prp-bounded-quantifier-negation (b) and De Morgan; (b) counterexample
+      empty set in N; (c),(d) correct'
+  - stage: S5b
+    verdict: correct
+    by: refereeB
+    hash: d6bb729a2ba5
+    date: '2026-10-11'
+    model: claude-opus-5-5
+    evidence: :360-383. (a) The negation via prp-bounded-quantifier-negation plus De Morgan is in the
+      ledger (:541). (b) The emptyset counterexample is right, and so is the use of prp-subset-finite.
+      (c) The answer 0 follows from thm-pigeonhole. (d) The answer follows from cor-pigeonhole-finite-sets
+      (a).
+  - stage: S6
+    verdict: correct
+    by: verifier
+    hash: d6bb729a2ba5
+    date: '2026-10-11'
+    model: claude-opus-5-5
+    evidence: '01:360-383. I solved all parts first. (a) The negation matches def-infinite. (b) The first
+      statement is false (∅ ⊆ ℕ), the second is true by prp-subset-finite. (c) 0: my brute force over
+      {1,2}^3 finds 0 injections. (d) matches cor-pigeonhole-finite-sets (a). §01 holds no key proof (blueprint:
+      key proofs are in §03, §04, §05), so no comprehension part is required.'
+- key: exr-finite-sets-b1
+  kind: exr
+  file: 05-finite-sets.md
+  line: 487
+  hash: f3ff87942d3a
+  verdicts:
+  - stage: S5a
+    verdict: correct
+    by: refereeA
+    hash: f3ff87942d3a
+    date: '2026-10-11'
+    model: claude-opus-5-5
+    evidence: '01:394-398: N\{0,1,2} = {m>=3} via lem (a),(e); inverses m-3, m-5 via lem (d); (m-1)/2.
+      Sidecar passes'
+  - stage: S5b
+    verdict: correct
+    by: refereeB
+    hash: f3ff87942d3a
+    date: '2026-10-11'
+    model: claude-opus-5-5
+    evidence: :387-399. Each of the three bijections has its inverse written out; m ≥ 3 is derived via
+      lem (a),(e). The sidecar exr-finite-sets-b1.py passes.
+  - stage: S6
+    verdict: correct
+    by: verifier
+    hash: f3ff87942d3a
+    date: '2026-10-11'
+    model: claude-opus-5-5
+    evidence: 01:387-399. The maps are n+3, n+5 and 2n+1, with inverses m-3, m-5 and (m-1)/2. ℕ∖{0,1,2}
+      = {m ≥ 3} is proved, and the script checked it on a range. The worked example is exm-hilbert-hotel
+      together with the Quick check at 01:344-350.
+- key: exr-finite-sets-b2
+  kind: exr
+  file: 05-finite-sets.md
+  line: 501
+  hash: d149708d5e8f
+  verdicts:
+  - stage: S5a
+    verdict: correct
+    by: refereeA
+    hash: 908b9570c068
+    date: '2026-10-11'
+    model: claude-opus-5-5
+    evidence: '01:413-415: {0..4} has 5 elements (third example after def-finite); p(x)=min{x,9-x} in
+      {1..4}, same pair gives x+y=9 since c != 9-c; sidecar passes'
+  - stage: S5b
+    verdict: minor
+    by: refereeB
+    hash: 908b9570c068
+    date: '2026-10-11'
+    model: claude-opus-5-5
+    evidence: 01-finite-sets.md:413 The solution of B2(a) asserts r(a) ∈ {0, ..., 4} directly from the
+      division algorithm, without justification or a ledger line.
+  - stage: S6
+    verdict: correct
+    by: verifier
+    hash: 908b9570c068
+    date: '2026-10-11'
+    model: claude-opus-5-5
+    evidence: 01:401-416. (a) The remainder map goes to {0..4}, then cor-pigeonhole (a). The script checked
+      every 6-subset of [-20,20]. (b) p(x)=min{x,9-x}; the script checked that all 56 five-element subsets
+      of {1..8} contain a pair with sum 9, that {1,2,3,4} has no such pair, and that p maps into {1..4}.
+      The worked example is the three-integers paragraph at 01:177-181.
+  - stage: S7r
+    verdict: correct
+    by: rereferee
+    hash: 79e7183e2ffd
+    date: '2026-10-11'
+    model: claude-opus-5-5
+    evidence: 'I solved both parts independently and they agree. (a), at :419: the remainder r(a) is in
+      N by prp-integers-closed (b), and r(a) <= 4 by discreteness (prp-integers-closed (c), ch07 01:102).
+      {0,...,4} has 5 elements by the third example after def-finite (n = 4). Then cor-pigeonhole (a)
+      applies with 6 > 5. Ledger :552 is added, so the S5b finding is resolved. (b): p(x) = min{x, 9−x}
+      lands in {1,...,4'
+- key: exr-finite-sets-b3
+  kind: exr
+  file: 05-finite-sets.md
+  line: 518
+  hash: 8458fd4fad1c
+  verdicts:
+  - stage: S5a
+    verdict: correct
+    by: refereeA
+    hash: 8458fd4fad1c
+    date: '2026-10-11'
+    model: claude-opus-5-5
+    evidence: '01:425-435: empty union, U_{n+1}=U_n u (A_{n+1}\U_n) disjoint, prp-subset-finite, prp-disjoint-union-count'
+  - stage: S5b
+    verdict: correct
+    by: refereeB
+    hash: 8458fd4fad1c
+    date: '2026-10-11'
+    model: claude-opus-5-5
+    evidence: :418-436. The empty union is ∅ via def-family-union-intersection. The step splits off A_{n+1}∖U_n
+      as a disjoint piece. The ledger line is at :544.
+  - stage: S6
+    verdict: correct
+    by: verifier
+    hash: 8458fd4fad1c
+    date: '2026-10-11'
+    model: claude-opus-5-5
+    evidence: 01:418-436. The induction runs from the empty family. The union U_n ∪ (A_{n+1}∖U_n) is disjoint,
+      and the counts follow from prp-subset-finite and prp-disjoint-union-count. My own proof matched.
+      The induction pattern is worked in prp-subset-finite and prp-power-set-count.
+- key: exr-finite-sets-b4
+  kind: exr
+  file: 05-finite-sets.md
+  line: 538
+  hash: 2c32aaa863b8
+  verdicts: []
+- key: exr-finite-sets-c1
+  kind: exr
+  file: 05-finite-sets.md
+  line: 571
+  hash: 22eb3017810e
+  verdicts:
+  - stage: S5a
+    verdict: minor
+    by: refereeA
+    hash: 22eb3017810e
+    date: '2026-10-11'
+    model: claude-opus-5-5
+    evidence: 01-finite-sets.md:471 The marking scheme gives full credit to a base case n = 1, which leaves
+      the claim at n = 0 unproved.
+  - stage: S5b
+    verdict: minor
+    by: refereeB
+    hash: 22eb3017810e
+    date: '2026-10-11'
+    model: claude-opus-5-5
+    evidence: 01-finite-sets.md:455 Hint 2 of C1 gives the key step of (⇒) rather than the first line
+      of the proof, against STYLE §11.7 ('rung 2 gives the first line of the proof. Neither executes the
+      key idea').
+  - stage: S6
+    verdict: minor
+    by: verifier
+    hash: 22eb3017810e
+    date: '2026-10-11'
+    model: claude-opus-5-5
+    evidence: 01-finite-sets.md:470 The (⇐) scheme line awards its 2 points for a route ('composes with
+      a bijection to contradict thm-pigeonhole') rather than for the step.
+  - stage: S7r
+    verdict: correct
+    by: rereferee
+    hash: 22eb3017810e
+    date: '2026-10-11'
+    model: claude-opus-5-5
+    evidence: 'I solved it independently and it agrees. (⇐), at :465: phi^{-1} is shown to be a bijection
+      via def-inverse-function and thm-bijection-iff-inverse before thm-composition (a) is used, so the
+      S5a finding is resolved. (⇒): the base case is the empty function (prp-empty-function (a)). The
+      step shrinks the codomain to F, gets F ≠ A because A is infinite, extends the injection and checks
+      injectivity. The'
+- key: exr-finite-sets-c2
+  kind: exr
+  file: 05-finite-sets.md
+  line: 609
+  hash: 604e1a184cd1
+  verdicts:
+  - stage: S5a
+    verdict: minor
+    by: refereeA
+    hash: 604e1a184cd1
+    date: '2026-10-11'
+    model: claude-opus-5-5
+    evidence: 01-finite-sets.md:513 The bijection R^{-1} is attributed to prp-equinumerous-properties
+      (b), which does not supply it.
+  - stage: S5b
+    verdict: minor
+    by: refereeB
+    hash: 604e1a184cd1
+    date: '2026-10-11'
+    model: claude-opus-5-5
+    evidence: The math is correct (:503-515). Applying (a) to B^{A'}, which has n^m elements, and stating
+      'mn elements' both need n^m, mn ∈ N (prp-power-laws (d), lem (b)), which are not cited. :513 cites
+      prp-equinumerous-properties (b) for 'the bijection R^{-1}', the same issue as at :162. The marking
+      scheme sums to 10.
+  - stage: S6
+    verdict: minor
+    by: verifier
+    hash: 604e1a184cd1
+    date: '2026-10-11'
+    model: claude-opus-5-5
+    evidence: 01-finite-sets.md:518 The marking scheme requires the induction route for (a). A natural
+      direct proof of (a) loses up to 4 points.
+  - stage: S7r
+    verdict: correct
+    by: rereferee
+    hash: 604e1a184cd1
+    date: '2026-10-11'
+    model: claude-opus-5-5
+    evidence: '(b), at :519: R^{-1} is gone. The text now goes from |B^A| = |B^{A''}×B| (R is a bijection)
+      and |{1..n^{m+1}}| = |B^{A''}×B| to the result via prp-equinumerous-properties (b) and (c), which
+      supply exactly this, so the S5a finding is resolved. mn in N comes from lem-naturals-arithmetic
+      (b) and n^m in N from prp-power-laws (d). Applying (a) to the sets B^{A''} and B is valid. I checked
+      n^m·n = n^{m+1},'
 - key: def-divides
   kind: def
   file: 02-induction-in-practice.md
@@ -2050,563 +3106,6 @@ items:
       prove or use''. I grepped src/ch07-* for factori[sz]ation and the only hit is this sentence, so
       the claim is true and can'
   removed: true
-- key: def-equinumerous
-  kind: def
-  file: 05-finite-sets.md
-  line: 13
-  hash: 0e848211743a
-  verdicts:
-  - stage: S5a
-    verdict: correct
-    by: refereeA
-    hash: 0e848211743a
-    date: '2026-10-11'
-    model: claude-opus-5-5
-    evidence: 01:13-37 definition and examples checked; [0,1]->[0,2] inverse y/2 verified; empty-set converse
-      uses prp-empty-function (b) correctly; non-example quantifies over all g
-  - stage: S5b
-    verdict: correct
-    by: refereeB
-    hash: 0e848211743a
-    date: '2026-10-11'
-    model: claude-opus-5-5
-    evidence: '01-finite-sets.md:13-37. The definition, the four examples (the empty function via prp-empty-function
-      (a)/(b), [0,1] to [0,2] with inverse y/2) and the non-example (every g: {a,b,c} to {1,2} fails injectivity)
-      all check out.'
-- key: prp-equinumerous-properties
-  kind: prp
-  file: 05-finite-sets.md
-  line: 41
-  hash: 70125ec520dd
-  verdicts:
-  - stage: S5a
-    verdict: correct
-    by: refereeA
-    hash: 70125ec520dd
-    date: '2026-10-11'
-    model: claude-opus-5-5
-    evidence: 01:41-51 statement fine; remark 01:64 uses (W3) union + thm-russell ('no set of which every
-      set is an element') correctly
-  - stage: S5b
-    verdict: correct
-    by: refereeB
-    hash: 70125ec520dd
-    date: '2026-10-11'
-    model: claude-opus-5-5
-    evidence: :41-51 statement. The paragraph at :61 (not an equivalence relation on a set, citing thm-russell)
-      matches def-equivalence-relation (ch07/05:19-25). The remark at :64 ((W3) family union plus thm-russell
-      'no set of which every set is an element') is sound. Its length is a separate finding with key ''.
-- key: proof:prp-equinumerous-properties
-  kind: proof
-  file: 05-finite-sets.md
-  line: 53
-  hash: 511c3dbdc0e9
-  verdicts:
-  - stage: S5a
-    verdict: correct
-    by: refereeA
-    hash: 511c3dbdc0e9
-    date: '2026-10-11'
-    model: claude-opus-5-5
-    evidence: '01:54-58: (b) uses symmetry of def-inverse-function + thm-bijection-iff-inverse both directions;
-      (c) thm-composition-injective-surjective (c)'
-  - stage: S5b
-    verdict: correct
-    by: refereeB
-    hash: 511c3dbdc0e9
-    date: '2026-10-11'
-    model: claude-opus-5-5
-    evidence: :53-59. (a) uses the identity; (b) uses thm-bijection-iff-inverse twice with def-inverse-function;
-      (c) uses thm-composition-injective-surjective (c), whose statement at ch06/04:415 matches.
-- key: def-finite
-  kind: def
-  file: 05-finite-sets.md
-  line: 77
-  hash: 51dcf03623e7
-  verdicts:
-  - stage: S5a
-    verdict: correct
-    by: refereeA
-    hash: 51dcf03623e7
-    date: '2026-10-11'
-    model: claude-opus-5-5
-    evidence: 01:75-90; {0,...,n} is defined in ch07/01:34; k->k-1 with lem-naturals-arithmetic (c), inverse
-      j->j+1 checked
-  - stage: S5b
-    verdict: correct
-    by: refereeB
-    hash: 51dcf03623e7
-    date: '2026-10-11'
-    model: claude-opus-5-5
-    evidence: :75-90. The {1,...,n} and {0,...,n} notation matches ch07/01. The 0-element examples are
-      right. For {0,...,n}, k-1 is in N by lem-naturals-arithmetic (c). The well-definedness gap is flagged
-      at :83 and paid at :183-195.
-- key: def-infinite
-  kind: def
-  file: 05-finite-sets.md
-  line: 94
-  hash: 8971cf14f0c4
-  verdicts:
-  - stage: S5a
-    verdict: correct
-    by: refereeA
-    hash: 8971cf14f0c4
-    date: '2026-10-11'
-    model: claude-opus-5-5
-    evidence: 01:92-100; 'Shrinking the codomain' paragraph correct per def-function (graph in X x C)
-  - stage: S5b
-    verdict: correct
-    by: refereeB
-    hash: 8971cf14f0c4
-    date: '2026-10-11'
-    model: claude-opus-5-5
-    evidence: :92-100. It is the negation of def-finite. The 'Shrinking the codomain' paragraph is correct
-      (it cites def-function and def-image) and is used later, at 02:82, 02:150 and 03:88.
-- key: thm-pigeonhole
-  kind: thm
-  file: 05-finite-sets.md
-  line: 108
-  hash: de45bc8cf894
-  verdicts:
-  - stage: S5a
-    verdict: correct
-    by: refereeA
-    hash: de45bc8cf894
-    date: '2026-10-11'
-    model: claude-opus-5-5
-    evidence: '01:106-110; dropping m>n: identity {1..n}->{1..n} is injective, so hypothesis is needed
-      and used (base case m>0, step m>n+1)'
-  - stage: S5b
-    verdict: minor
-    by: refereeB
-    hash: de45bc8cf894
-    date: '2026-10-11'
-    model: claude-opus-5-5
-    evidence: '01-finite-sets.md:104 False meta-claim: ''In Chapter 6 we checked by hand that a function
-      from a three-element set to a two-element set cannot be injective (@exm-injective-surjective-first
-      (c))''.'
-  - stage: S8
-    verdict: minor
-    by: seam
-    hash: de45bc8cf894
-    date: '2026-10-11'
-    model: claude-opus-5-5
-    evidence: 01-finite-sets.md:104 Wrong attribution of what Chapter 6 did. The text says 'In Chapter
-      6 we checked by hand that a function from a three-element set to a two-element set cannot be injective
-      (@exm-injective-surjective-first (c))'. Part (c) checks one particular function. The general statement
-      is only asserted, not checked, in the paragraph after the example.
-  - stage: S7r
-    verdict: correct
-    by: rereferee
-    hash: de45bc8cf894
-    date: '2026-10-11'
-    model: claude-opus-5-5
-    evidence: '01-finite-sets.md:106 now says Chapter 6 found one non-injective function (@exm-injective-surjective-first
-      (c)) and ''observed without proof that none can be''. That matches ch06 04-functions.md:368-372:
-      (c) checks one h, and the paragraph after it asserts the general fact without proof. The S5b and
-      S8 findings are resolved. The statement at :111 is correct.'
-- key: proof:thm-pigeonhole
-  kind: proof
-  file: 05-finite-sets.md
-  line: 118
-  hash: 52dcdf006f04
-  verdicts:
-  - stage: S5a
-    verdict: correct
-    by: refereeA
-    hash: 52dcdf006f04
-    date: '2026-10-11'
-    model: claude-opus-5-5
-    evidence: '01:116-141: P(n) quantifies over m inside, as needed for use at m-1; base uses lem (a)
-      and prp-empty-function (b); Case 1 lem (e); Case 2 sigma injective, sigma(i)!=j since j<=m-1<m when
-      i=j, g=f o sigma avoids n+1 by injectivity of f; m-1 in N by lem (c), m-1>n. Sidecar thm-pigeonhole.py
-      passes'
-  - stage: S5b
-    verdict: correct
-    by: refereeB
-    hash: 52dcdf006f04
-    date: '2026-10-11'
-    model: claude-opus-5-5
-    evidence: :116-142. P(n) quantifies m inside. In the base case m>=1 gives a non-empty domain, so prp-empty-function
-      (b) applies. In Case 1, f(i)<=n follows by (e). In Case 2, sigma is injective and misses j; g=f∘sigma
-      avoids n+1, and P(n) is applied at m-1. The idea's 'move pigeon j to the hole of pigeon m' matches
-      g(j)=f(m). The school order facts are in the ledger (:531-532). The sidecar thm-pigeonhole.py
-- key: cor-pigeonhole-finite-sets
-  kind: cor
-  file: 05-finite-sets.md
-  line: 148
-  hash: 7ccba4379074
-  verdicts:
-  - stage: S5a
-    verdict: correct
-    by: refereeA
-    hash: 7ccba4379074
-    date: '2026-10-11'
-    model: claude-opus-5-5
-    evidence: '01:146-155 statement; (b) with m=0<n: no surjection from empty set onto nonempty B holds'
-  - stage: S5b
-    verdict: minor
-    by: refereeB
-    hash: 7ccba4379074
-    date: '2026-10-11'
-    model: claude-opus-5-5
-    evidence: '01-finite-sets.md:177 In the three-integers example, ''p: A → {0, 1}'' and ''which is even''
-      use facts about Z that Chapter 7 proved as prp-integers-closed, but the ledger attributes them to
-      ''R arithmetic, school fact''.'
-  - stage: S8
-    verdict: minor
-    by: seam
-    hash: 7ccba4379074
-    date: '2026-10-11'
-    model: claude-opus-5-5
-    evidence: 01-finite-sets.md:175 The sentence 'With m = 3, n = 2 and m = 2, n = 3, it gives the two
-      observations after @exm-injective-surjective-first' has 'it' referring back to 'part (a)'. The case
-      m = 2, n = 3 (no surjection) is part (b).
-  - stage: S7r
-    verdict: correct
-    by: rereferee
-    hash: 7ccba4379074
-    date: '2026-10-11'
-    model: claude-opus-5-5
-    evidence: Line 177 now reads 'With m = 3, n = 2 in (a) and m = 2, n = 3 in (b)', so the S8 finding
-      is resolved. I checked the exr-models-c2 claim against 11-models.md:487 and ledger :717, and it
-      is accurate. In the three-integers paragraph (:179-183), r is in N by prp-integers-closed (b) and
-      r <= 1 by lem-naturals-arithmetic (e). The paragraph also cites q+q'+r in Z (prp-integers-closed
-      (a)), and ledger :54
-- key: proof:cor-pigeonhole-finite-sets
-  kind: proof
-  file: 05-finite-sets.md
-  line: 163
-  hash: 6dd49ecf7d6a
-  verdicts:
-  - stage: S5a
-    verdict: minor
-    by: refereeA
-    hash: 60aa858c61b4
-    date: '2026-10-11'
-    model: claude-opus-5-5
-    evidence: 01-finite-sets.md:162 The citation for 'psi^{-1} is a bijection' points to the wrong result.
-  - stage: S5b
-    verdict: minor
-    by: refereeB
-    hash: 60aa858c61b4
-    date: '2026-10-11'
-    model: claude-opus-5-5
-    evidence: 01-finite-sets.md:162 The section cites the statement of prp-equinumerous-properties (b)
-      for the fact that the specific inverse map is a bijection, but the statement only asserts that some
-      bijection B to A exists.
-  - stage: S7r
-    verdict: correct
-    by: rereferee
-    hash: 6dd49ecf7d6a
-    date: '2026-10-11'
-    model: claude-opus-5-5
-    evidence: 'Line 164 now proves that psi^{-1} is a bijection directly: psi is a two-sided inverse of
-      psi^{-1} (def-inverse-function, 05-inverses.md:241, whose symmetry remark is at :253), and thm-bijection-iff-inverse
-      (:295) then gives the bijection. It no longer cites prp-equinumerous-properties (b), so the S5a
-      and S5b findings are resolved. In (a), the triple composite is injective by thm-composition (a).
-      I'
-- key: cor-finite-size-unique
-  kind: cor
-  file: 05-finite-sets.md
-  line: 187
-  hash: 365223cc680f
-  verdicts:
-  - stage: S5a
-    verdict: correct
-    by: refereeA
-    hash: 365223cc680f
-    date: '2026-10-11'
-    model: claude-opus-5-5
-    evidence: 01:185-189
-  - stage: S5b
-    verdict: correct
-    by: refereeB
-    hash: 365223cc680f
-    date: '2026-10-11'
-    model: claude-opus-5-5
-    evidence: :185-189.
-- key: proof:cor-finite-size-unique
-  kind: proof
-  file: 05-finite-sets.md
-  line: 193
-  hash: 6c1acc88ca99
-  verdicts:
-  - stage: S5a
-    verdict: minor
-    by: refereeA
-    hash: 6c1acc88ca99
-    date: '2026-10-11'
-    model: claude-opus-5-5
-    evidence: '01:192: injectivity of psi^{-1} needs psi^{-1} bijective (psi is its inverse); cited only
-      as thm-bijection-iff-inverse, acceptable but compressed. Logic and trichotomy fine'
-  - stage: S5b
-    verdict: correct
-    by: refereeB
-    hash: 6c1acc88ca99
-    date: '2026-10-11'
-    model: claude-opus-5-5
-    evidence: :192. psi^{-1}∘phi is injective (thm-bijection-iff-inverse, thm-composition (a)), which
-      contradicts thm-pigeonhole. Trichotomy is in the ledger (:534).
-- key: prp-disjoint-union-count
-  kind: prp
-  file: 05-finite-sets.md
-  line: 203
-  hash: 4140f115f2ad
-  verdicts:
-  - stage: S5a
-    verdict: correct
-    by: refereeA
-    hash: 4140f115f2ad
-    date: '2026-10-11'
-    model: claude-opus-5-5
-    evidence: '01:201-205; dropping disjointness: A=B={1} gives 1 != 2 elements; hypothesis used at 01:221'
-  - stage: S5b
-    verdict: correct
-    by: refereeB
-    hash: 4140f115f2ad
-    date: '2026-10-11'
-    model: claude-opus-5-5
-    evidence: ':201-205. The meta-claim at :199 (''uses nothing else from this section'') holds: the proof
-      uses only def-finite and Chapter 7.'
-- key: proof:prp-disjoint-union-count
-  kind: proof
-  file: 05-finite-sets.md
-  line: 213
-  hash: 50115fc140af
-  verdicts:
-  - stage: S5a
-    verdict: correct
-    by: refereeA
-    hash: 50115fc140af
-    date: '2026-10-11'
-    model: claude-opus-5-5
-    evidence: '01:212-225: k>m gives m+1<=k (lem (e)), k-m in N (lem (d)); chi injective in all three
-      cases; surjective via k=m+j'
-  - stage: S5b
-    verdict: correct
-    by: refereeB
-    hash: 50115fc140af
-    date: '2026-10-11'
-    model: claude-opus-5-5
-    evidence: :211-226. chi is well defined (k-m lies in {1..n} by lem (d),(e)). Injectivity has all three
-      cases, using disjointness. Surjectivity uses k=m+j. The ledger line is at :535.
-- key: prp-subset-finite
-  kind: prp
-  file: 05-finite-sets.md
-  line: 232
-  hash: b61091b72523
-  verdicts:
-  - stage: S5a
-    verdict: correct
-    by: refereeA
-    hash: b61091b72523
-    date: '2026-10-11'
-    model: claude-opus-5-5
-    evidence: 01:230-234
-  - stage: S5b
-    verdict: correct
-    by: refereeB
-    hash: b61091b72523
-    date: '2026-10-11'
-    model: claude-opus-5-5
-    evidence: ':230-234. The meta-claim at :228 (''cites nothing proved later'') holds: the proof uses
-      only prp-disjoint-union-count, which comes earlier.'
-- key: proof:prp-subset-finite
-  kind: proof
-  file: 05-finite-sets.md
-  line: 242
-  hash: bdc1946c2188
-  verdicts:
-  - stage: S5a
-    verdict: correct
-    by: refereeA
-    hash: bdc1946c2188
-    date: '2026-10-11'
-    model: claude-opus-5-5
-    evidence: '01:241-259: A=A'' u {a} via lem (e), a notin A'' by injectivity; case a in S: j taken from
-      the same instance of P(n) so ''j<n by P(n)'' is justified; S cap A'' = A'' would give S=A. Uses
-      only prp-disjoint-union-count (earlier)'
-  - stage: S5b
-    verdict: correct
-    by: refereeB
-    hash: bdc1946c2188
-    date: '2026-10-11'
-    model: claude-opus-5-5
-    evidence: :240-260. A' has n elements (the ledger notes the restriction), A=A'∪{a}, and a∉A'. Both
-      cases, including the strict clause, are correct. The base case uses the 0-element example at :87.
-- key: cor-remove-point
-  kind: cor
-  file: 05-finite-sets.md
-  line: 266
-  hash: 240f08b8b551
-  verdicts:
-  - stage: S5a
-    verdict: correct
-    by: refereeA
-    hash: 240f08b8b551
-    date: '2026-10-11'
-    model: claude-opus-5-5
-    evidence: 01:264-268
-  - stage: S5b
-    verdict: correct
-    by: refereeB
-    hash: 240f08b8b551
-    date: '2026-10-11'
-    model: claude-opus-5-5
-    evidence: :264-268. The meta-claim at :274 ('every later induction on the number of elements' uses
-      it on an arbitrary A) checks against 03:65, 03:366 and C2 in this section. The induction at 06:28
-      builds F_n and is not an induction over arbitrary n-element sets.
-- key: proof:cor-remove-point
-  kind: proof
-  file: 05-finite-sets.md
-  line: 272
-  hash: 209943f88ad6
-  verdicts:
-  - stage: S5a
-    verdict: correct
-    by: refereeA
-    hash: 209943f88ad6
-    date: '2026-10-11'
-    model: claude-opus-5-5
-    evidence: '01:271: prp-subset-finite, prp-disjoint-union-count, cor-finite-size-unique; k+1=n+1 gives
-      k=n'
-  - stage: S5b
-    verdict: correct
-    by: refereeB
-    hash: 209943f88ad6
-    date: '2026-10-11'
-    model: claude-opus-5-5
-    evidence: :270-272. A proper subset has k<n+1 elements; the disjoint union gives k+1; uniqueness gives
-      k=n.
-- key: prp-power-set-count
-  kind: prp
-  file: 05-finite-sets.md
-  line: 278
-  hash: 53204555eb13
-  verdicts:
-  - stage: S5a
-    verdict: correct
-    by: refereeA
-    hash: 53204555eb13
-    date: '2026-10-11'
-    model: claude-opus-5-5
-    evidence: 01:276-280; sidecar prp-power-set-count.py passes
-  - stage: S5b
-    verdict: minor
-    by: refereeB
-    hash: 53204555eb13
-    date: '2026-10-11'
-    model: claude-opus-5-5
-    evidence: '01-finite-sets.md:302 Notation clash: the paragraph after the proof rebinds A and X. The
-      function A ↦ ind_A takes A to range over subsets of a generic X, immediately after a proof in which
-      A is the (n+1)-element set and X := A∖{a}.'
-  - stage: S7r
-    verdict: correct
-    by: rereferee
-    hash: 53204555eb13
-    date: '2026-10-11'
-    model: claude-opus-5-5
-    evidence: The paragraph after the proof (:304) now uses Y and S (S ↦ ind_S, P(Y) → {0,1}^Y), so it
-      no longer rebinds A and X and the notation clash is resolved. The correspondence it cites is at
-      ch06 04-functions.md:193 (Section 6.4). \ind matches NOTATION.md:70.
-- key: proof:prp-power-set-count
-  kind: proof
-  file: 05-finite-sets.md
-  line: 288
-  hash: 60c0acd45a34
-  verdicts:
-  - stage: S5a
-    verdict: minor
-    by: refereeA
-    hash: e879c2a32c20
-    date: '2026-10-11'
-    model: claude-opus-5-5
-    evidence: 01-finite-sets.md:299 prp-disjoint-union-count requires its two counts to be natural numbers,
-      and the text does not check this for 2^n.
-  - stage: S5b
-    verdict: minor
-    by: refereeB
-    hash: e879c2a32c20
-    date: '2026-10-11'
-    model: claude-opus-5-5
-    evidence: 01-finite-sets.md:297 The proof says P(X) and T 'have 2^n elements' without noting 2^n ∈
-      N, which def-finite requires (n ∈ N). The same issue occurs with n^m and mn in exercise C2.
-  - stage: S7r
-    verdict: correct
-    by: rereferee
-    hash: 60c0acd45a34
-    date: '2026-10-11'
-    model: claude-opus-5-5
-    evidence: Line 291 now notes that 2^n and 2^{n+1} are in N by prp-power-laws (d) (03-recursion.md:228,
-      'if u in N then u^n in N'), with ledger :545, so the S5a and S5b findings are resolved. I checked
-      the base case P(∅) = {∅}. Removing a uses cor-remove-point on an arbitrary A. I checked the disjointness
-      and covering of P(A) = P(X) ∪ T, and the bijection P(X) → T by injectivity via (S∪{a})∖{a} = S.
-      Composin
-- key: thm-finite-no-proper-copy
-  kind: thm
-  file: 05-finite-sets.md
-  line: 310
-  hash: ee9a0f3dbf41
-  verdicts:
-  - stage: S5a
-    verdict: correct
-    by: refereeA
-    hash: ee9a0f3dbf41
-    date: '2026-10-11'
-    model: claude-opus-5-5
-    evidence: '01:308-312; dropping ''finite'': N and 2N'
-  - stage: S5b
-    verdict: correct
-    by: refereeB
-    hash: ee9a0f3dbf41
-    date: '2026-10-11'
-    model: claude-opus-5-5
-    evidence: :308-312.
-- key: proof:thm-finite-no-proper-copy
-  kind: proof
-  file: 05-finite-sets.md
-  line: 316
-  hash: c1b469157f65
-  verdicts:
-  - stage: S5a
-    verdict: correct
-    by: refereeA
-    hash: c1b469157f65
-    date: '2026-10-11'
-    model: claude-opus-5-5
-    evidence: '01:315: prp-subset-finite gives k<n, g o phi bijection gives n elements, cor-finite-size-unique
-      gives k=n, contradiction'
-  - stage: S5b
-    verdict: correct
-    by: refereeB
-    hash: c1b469157f65
-    date: '2026-10-11'
-    model: claude-opus-5-5
-    evidence: :314-316. It uses prp-subset-finite (k<n), composition (c) and cor-finite-size-unique.
-- key: exm-hilbert-hotel
-  kind: exm
-  file: 05-finite-sets.md
-  line: 326
-  hash: 0542aba7a3b5
-  verdicts:
-  - stage: S5a
-    verdict: correct
-    by: refereeA
-    hash: 0542aba7a3b5
-    date: '2026-10-11'
-    model: claude-opus-5-5
-    evidence: '01:324-336: d bijective, 1 notin 2N via lem (a), conclusion via thm-finite-no-proper-copy.
-      Warning 01:341: x/(1+x) maps 1/n to 1/(n+1), y/(1-y) inverts, 1 notin {1/n: n>=2}; checked'
-  - stage: S5b
-    verdict: correct
-    by: refereeB
-    hash: 0542aba7a3b5
-    date: '2026-10-11'
-    model: claude-opus-5-5
-    evidence: :324-336. d(n)=2n is a bijection onto 2N, 2N ⊆ N by lem (b), and 1∉2N by the case split
-      with lem (a). The ledger line is at :539. The pointer at :338 to Section 8.6 is paid by thm-infinite-iff-proper-subset
-      (06:69).
 - key: check:01-finite-sets:1
   kind: check
   file: 05-finite-sets.md
@@ -2627,226 +3126,4 @@ items:
     date: '2026-10-11'
     model: claude-opus-5-5
     evidence: :344-350. n+1 ≥ 1, the inverse m-1 is in N by lem (c), and N∖{0}=Z_{>0} by the ch07/01 definition.
-- key: exr-finite-sets-a1
-  kind: exr
-  file: 05-finite-sets.md
-  line: 366
-  hash: d6bb729a2ba5
-  verdicts:
-  - stage: S5a
-    verdict: correct
-    by: refereeA
-    hash: d6bb729a2ba5
-    date: '2026-10-11'
-    model: claude-opus-5-5
-    evidence: '01:372-382: negation via prp-bounded-quantifier-negation (b) and De Morgan; (b) counterexample
-      empty set in N; (c),(d) correct'
-  - stage: S5b
-    verdict: correct
-    by: refereeB
-    hash: d6bb729a2ba5
-    date: '2026-10-11'
-    model: claude-opus-5-5
-    evidence: :360-383. (a) The negation via prp-bounded-quantifier-negation plus De Morgan is in the
-      ledger (:541). (b) The emptyset counterexample is right, and so is the use of prp-subset-finite.
-      (c) The answer 0 follows from thm-pigeonhole. (d) The answer follows from cor-pigeonhole-finite-sets
-      (a).
-  - stage: S6
-    verdict: correct
-    by: verifier
-    hash: d6bb729a2ba5
-    date: '2026-10-11'
-    model: claude-opus-5-5
-    evidence: '01:360-383. I solved all parts first. (a) The negation matches def-infinite. (b) The first
-      statement is false (∅ ⊆ ℕ), the second is true by prp-subset-finite. (c) 0: my brute force over
-      {1,2}^3 finds 0 injections. (d) matches cor-pigeonhole-finite-sets (a). §01 holds no key proof (blueprint:
-      key proofs are in §03, §04, §05), so no comprehension part is required.'
-- key: exr-finite-sets-b1
-  kind: exr
-  file: 05-finite-sets.md
-  line: 393
-  hash: f3ff87942d3a
-  verdicts:
-  - stage: S5a
-    verdict: correct
-    by: refereeA
-    hash: f3ff87942d3a
-    date: '2026-10-11'
-    model: claude-opus-5-5
-    evidence: '01:394-398: N\{0,1,2} = {m>=3} via lem (a),(e); inverses m-3, m-5 via lem (d); (m-1)/2.
-      Sidecar passes'
-  - stage: S5b
-    verdict: correct
-    by: refereeB
-    hash: f3ff87942d3a
-    date: '2026-10-11'
-    model: claude-opus-5-5
-    evidence: :387-399. Each of the three bijections has its inverse written out; m ≥ 3 is derived via
-      lem (a),(e). The sidecar exr-finite-sets-b1.py passes.
-  - stage: S6
-    verdict: correct
-    by: verifier
-    hash: f3ff87942d3a
-    date: '2026-10-11'
-    model: claude-opus-5-5
-    evidence: 01:387-399. The maps are n+3, n+5 and 2n+1, with inverses m-3, m-5 and (m-1)/2. ℕ∖{0,1,2}
-      = {m ≥ 3} is proved, and the script checked it on a range. The worked example is exm-hilbert-hotel
-      together with the Quick check at 01:344-350.
-- key: exr-finite-sets-b2
-  kind: exr
-  file: 05-finite-sets.md
-  line: 407
-  hash: 79e7183e2ffd
-  verdicts:
-  - stage: S5a
-    verdict: correct
-    by: refereeA
-    hash: 908b9570c068
-    date: '2026-10-11'
-    model: claude-opus-5-5
-    evidence: '01:413-415: {0..4} has 5 elements (third example after def-finite); p(x)=min{x,9-x} in
-      {1..4}, same pair gives x+y=9 since c != 9-c; sidecar passes'
-  - stage: S5b
-    verdict: minor
-    by: refereeB
-    hash: 908b9570c068
-    date: '2026-10-11'
-    model: claude-opus-5-5
-    evidence: 01-finite-sets.md:413 The solution of B2(a) asserts r(a) ∈ {0, ..., 4} directly from the
-      division algorithm, without justification or a ledger line.
-  - stage: S6
-    verdict: correct
-    by: verifier
-    hash: 908b9570c068
-    date: '2026-10-11'
-    model: claude-opus-5-5
-    evidence: 01:401-416. (a) The remainder map goes to {0..4}, then cor-pigeonhole (a). The script checked
-      every 6-subset of [-20,20]. (b) p(x)=min{x,9-x}; the script checked that all 56 five-element subsets
-      of {1..8} contain a pair with sum 9, that {1,2,3,4} has no such pair, and that p maps into {1..4}.
-      The worked example is the three-integers paragraph at 01:177-181.
-  - stage: S7r
-    verdict: correct
-    by: rereferee
-    hash: 79e7183e2ffd
-    date: '2026-10-11'
-    model: claude-opus-5-5
-    evidence: 'I solved both parts independently and they agree. (a), at :419: the remainder r(a) is in
-      N by prp-integers-closed (b), and r(a) <= 4 by discreteness (prp-integers-closed (c), ch07 01:102).
-      {0,...,4} has 5 elements by the third example after def-finite (n = 4). Then cor-pigeonhole (a)
-      applies with 6 > 5. Ledger :552 is added, so the S5b finding is resolved. (b): p(x) = min{x, 9−x}
-      lands in {1,...,4'
-- key: exr-finite-sets-b3
-  kind: exr
-  file: 05-finite-sets.md
-  line: 424
-  hash: 8458fd4fad1c
-  verdicts:
-  - stage: S5a
-    verdict: correct
-    by: refereeA
-    hash: 8458fd4fad1c
-    date: '2026-10-11'
-    model: claude-opus-5-5
-    evidence: '01:425-435: empty union, U_{n+1}=U_n u (A_{n+1}\U_n) disjoint, prp-subset-finite, prp-disjoint-union-count'
-  - stage: S5b
-    verdict: correct
-    by: refereeB
-    hash: 8458fd4fad1c
-    date: '2026-10-11'
-    model: claude-opus-5-5
-    evidence: :418-436. The empty union is ∅ via def-family-union-intersection. The step splits off A_{n+1}∖U_n
-      as a disjoint piece. The ledger line is at :544.
-  - stage: S6
-    verdict: correct
-    by: verifier
-    hash: 8458fd4fad1c
-    date: '2026-10-11'
-    model: claude-opus-5-5
-    evidence: 01:418-436. The induction runs from the empty family. The union U_n ∪ (A_{n+1}∖U_n) is disjoint,
-      and the counts follow from prp-subset-finite and prp-disjoint-union-count. My own proof matched.
-      The induction pattern is worked in prp-subset-finite and prp-power-set-count.
-- key: exr-finite-sets-c1
-  kind: exr
-  file: 05-finite-sets.md
-  line: 446
-  hash: 22eb3017810e
-  verdicts:
-  - stage: S5a
-    verdict: minor
-    by: refereeA
-    hash: 22eb3017810e
-    date: '2026-10-11'
-    model: claude-opus-5-5
-    evidence: 01-finite-sets.md:471 The marking scheme gives full credit to a base case n = 1, which leaves
-      the claim at n = 0 unproved.
-  - stage: S5b
-    verdict: minor
-    by: refereeB
-    hash: 22eb3017810e
-    date: '2026-10-11'
-    model: claude-opus-5-5
-    evidence: 01-finite-sets.md:455 Hint 2 of C1 gives the key step of (⇒) rather than the first line
-      of the proof, against STYLE §11.7 ('rung 2 gives the first line of the proof. Neither executes the
-      key idea').
-  - stage: S6
-    verdict: minor
-    by: verifier
-    hash: 22eb3017810e
-    date: '2026-10-11'
-    model: claude-opus-5-5
-    evidence: 01-finite-sets.md:470 The (⇐) scheme line awards its 2 points for a route ('composes with
-      a bijection to contradict thm-pigeonhole') rather than for the step.
-  - stage: S7r
-    verdict: correct
-    by: rereferee
-    hash: 22eb3017810e
-    date: '2026-10-11'
-    model: claude-opus-5-5
-    evidence: 'I solved it independently and it agrees. (⇐), at :465: phi^{-1} is shown to be a bijection
-      via def-inverse-function and thm-bijection-iff-inverse before thm-composition (a) is used, so the
-      S5a finding is resolved. (⇒): the base case is the empty function (prp-empty-function (a)). The
-      step shrinks the codomain to F, gets F ≠ A because A is infinite, extends the injection and checks
-      injectivity. The'
-- key: exr-finite-sets-c2
-  kind: exr
-  file: 05-finite-sets.md
-  line: 484
-  hash: 604e1a184cd1
-  verdicts:
-  - stage: S5a
-    verdict: minor
-    by: refereeA
-    hash: 604e1a184cd1
-    date: '2026-10-11'
-    model: claude-opus-5-5
-    evidence: 01-finite-sets.md:513 The bijection R^{-1} is attributed to prp-equinumerous-properties
-      (b), which does not supply it.
-  - stage: S5b
-    verdict: minor
-    by: refereeB
-    hash: 604e1a184cd1
-    date: '2026-10-11'
-    model: claude-opus-5-5
-    evidence: The math is correct (:503-515). Applying (a) to B^{A'}, which has n^m elements, and stating
-      'mn elements' both need n^m, mn ∈ N (prp-power-laws (d), lem (b)), which are not cited. :513 cites
-      prp-equinumerous-properties (b) for 'the bijection R^{-1}', the same issue as at :162. The marking
-      scheme sums to 10.
-  - stage: S6
-    verdict: minor
-    by: verifier
-    hash: 604e1a184cd1
-    date: '2026-10-11'
-    model: claude-opus-5-5
-    evidence: 01-finite-sets.md:518 The marking scheme requires the induction route for (a). A natural
-      direct proof of (a) loses up to 4 points.
-  - stage: S7r
-    verdict: correct
-    by: rereferee
-    hash: 604e1a184cd1
-    date: '2026-10-11'
-    model: claude-opus-5-5
-    evidence: '(b), at :519: R^{-1} is gone. The text now goes from |B^A| = |B^{A''}×B| (R is a bijection)
-      and |{1..n^{m+1}}| = |B^{A''}×B| to the result via prp-equinumerous-properties (b) and (c), which
-      supply exactly this, so the S5a finding is resolved. mn in N comes from lem-naturals-arithmetic
-      (b) and n^m in N from prp-power-laws (d). Applying (a) to the sets B^{A''} and B is valid. I checked
-      n^m·n = n^{m+1},'
+  removed: true

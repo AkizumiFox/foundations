@@ -33,7 +33,7 @@ Two pieces of notation will save words later. For \( n \in \nN \),
 \[
 \{1, \dots, n\} \coloneqq \{ k \in \nN : 1 \le k \le n \} , \qquad \{0, \dots, n\} \coloneqq \{ k \in \nN : k \le n \} .
 \]
-So \( \{1, \dots, 0\} = \emptyset \), since no \( k \) has \( 1 \le k \le 0 \). We do not write \( [n] \) for these sets: square brackets will mean an equivalence class in Section 2.5.
+So \( \{1, \dots, 0\} = \emptyset \), since no \( k \) has \( 1 \le k \le 0 \). We do not write \( [n] \) for these sets: square brackets will mean an equivalence class in Section 4.2.
 
 ## The arithmetic of the natural numbers
 
@@ -193,6 +193,72 @@ Does \( \{ n \in \nN : n^2 > 50 \} \) have a least element? If so, which?
 Yes. The set is non-empty, since \( 10^2 = 100 > 50 \), and it is a subset of \( \nN \), so @thm-well-ordering applies. The least element is \( 8 \): \( 8^2 = 64 > 50 \), while \( 7^2 = 49 \le 50 \), and for \( n \le 7 \) we have \( n^2 \le 49 \). The theorem promised a least element; finding it took a search from below.
 :::
 
+## The least element as a tool
+
+Well-ordering is used in two ways. The proof of @thm-induction-iff-well-ordering below uses it to compare principles; most proofs use it as a tool. They name a set of natural numbers, take its least element, and use the one thing a least element offers: nothing in the set lies below it. Here is the halving question that opened the subsection on well-ordering, answered that way.
+
+::: {#exm-no-infinite-descent}
+[No endless descent in the natural numbers]
+
+Show that there is no function \( f \colon \nN \to \nN \) with \( f(n + 1) < f(n) \) for every \( n \in \nN \).
+:::
+
+::: {.idea}
+[Scratch work]
+
+The goal is a negation, so we suppose that such an \( f \) exists and aim for a contradiction (\( \rulename{\neg I} \)). A direct attempt stalls at once: \( f \) is arbitrary, and there is nothing to compute. Well-ordering needs a set of natural numbers, and the question is which set has a least element worth having. The domain does not help: its least element is \( 0 \), which says nothing about \( f \). The values do: in \( V \coloneqq f(\nN) = \{ f(n) : n \in \nN \} \), a least value would be undercut by the value after it.
+
+| Givens | Goal |
+|---|---|
+| \( f \colon \nN \to \nN \), \( f(n + 1) < f(n) \) for every \( n \) | a contradiction |
+| \( V \coloneqq f(\nN) \subseteq \nN \), and \( f(0) \in V \) | a least element of \( V \), and an element of \( V \) below it |
+| \( f(m) \) least in \( V \) (@thm-well-ordering) | \( f(m + 1) \in V \) and \( f(m + 1) < f(m) \): the gap is closed |
+
+The hypothesis on \( f \) is used once, at the one place where it bites: just after the least value.
+:::
+
+::: {.solution}
+Suppose \( f \) is such a function, and let \( V \coloneqq f(\nN) \) (@def-image). Then \( V \subseteq \nN \), and \( V \ne \emptyset \) since \( f(0) \in V \). By @thm-well-ordering, \( V \) has a least element, say \( f(m) \) with \( m \in \nN \). Now \( m + 1 \in \nN \) by (\( \nN \)S), so \( f(m + 1) \in V \), and \( f(m + 1) < f(m) \) by hypothesis, contradicting the choice of \( f(m) \). So no such \( f \) exists.
+:::
+
+Repeated halving of a fraction \( p/q \) with \( q > 0 \) and both entries even would give such a function, \( n \mapsto \) the (positive) denominator after \( n \) halvings, if the halving never stopped. So it stops. Section 2.2 writes this argument out as a proof, in its lemma on lowest terms.
+
+The example follows a pattern that recurs throughout the book, and it is worth fixing as a method.
+
+::: {#exm-method-least-element}
+[Method: the least element]
+
+**Template.** (1) Name a set \( S \) whose least element would help: the failures, the values, the candidates. (2) Show that \( S \) is a non-empty subset of \( \nN \), by giving an element; or a non-empty set of integers with an integer lower bound. (3) Take its least element \( m \) (@thm-well-ordering; for integers, @cor-well-ordering-integers below). (4) Use leastness: produce an element of \( S \) below \( m \), a contradiction; or conclude what \( m \) must be.
+
+**When to use it.** A process that must stop; a quantity that can always be made smaller; the first time something happens; an object chosen to be extreme.
+
+**The usual failure.** Taking "the least element" of a set not shown to be non-empty, or of a set of rationals, or of a set of integers with no integer lower bound (the warning above); and forgetting to check that the smaller element lies in \( S \) again.
+:::
+
+::: {#exm-least-element-down-by-two}
+[Going down by two]
+
+Let \( S \subseteq \nN \) be non-empty, and suppose \( s - 2 \in S \) for every \( s \in S \) with \( s \ge 2 \). Show that \( 0 \in S \) or \( 1 \in S \).
+:::
+
+::: {.idea}
+By the method of @exm-method-least-element, ending in the second form of its step (4): the least element of \( S \) itself must be \( 0 \) or \( 1 \).
+:::
+
+::: {.solution}
+Since \( S \) is a non-empty subset of \( \nN \), it has a least element \( m \) (@thm-well-ordering). If \( m \ge 2 \), then \( m - 2 \in S \) by hypothesis, and \( m - 2 < m \), contradicting the choice of \( m \). So \( m < 2 \), that is, \( m \le 1 \) by @lem-naturals-arithmetic (e); and \( m = 0 \) or \( m \ge 1 \) by (a), so \( m \in \{0, 1\} \). Hence \( 0 \in S \) or \( 1 \in S \).
+:::
+
+The proof never asks whether \( m - 2 \) is a natural number: the hypothesis puts it in \( S \), and \( S \subseteq \nN \).
+
+::: {.check}
+Let \( S \coloneqq \{ 17 - 5k : k \in \nN, \ 5k \le 17 \} \). List \( S \), find its least element, and say what that element has to do with dividing \( 17 \) by \( 5 \).
+:::
+
+::: {.solution}
+The admissible \( k \) are \( 0, 1, 2, 3 \), since \( 5 \cdot 3 = 15 \le 17 < 20 = 5 \cdot 4 \). So \( S = \{17, 12, 7, 2\} \), and its least element is \( 2 \), the remainder of \( 17 \) on division by \( 5 \): \( 17 = 5 \cdot 3 + 2 \) with \( 0 \le 2 < 5 \). Section 2.2 proves that the least element of such a set is always the remainder.
+:::
+
 ## Induction and well-ordering are the same principle
 
 The proof of @thm-well-ordering derived well-ordering from induction. The derivation also runs the other way, and the cleanest way to say so is to ask which sets of numbers satisfy which principle. For a set \( X \subseteq \nR \), consider three structural properties:
@@ -210,7 +276,7 @@ Let \( X \subseteq \nR \) contain \( 0 \), be closed under \( n \mapsto n + 1 \)
 :::
 
 ::: {.idea}
-\( (\Rightarrow) \) A set \( X \) with the induction property and the first two properties must be \( \nN \) itself: \( \nN \) sits inside \( X \) by @fd1:ax-induction, and the induction property of \( X \), applied to the subset \( \nN \), forces equality. Then @thm-well-ordering applies. \( (\Leftarrow) \) Take \( S \) as in the induction property and suppose \( S \ne X \); the least element \( m \) of \( X \setminus S \) is then a smallest failure; the number \( m - 1 \) just below it is not a failure, so it lies in \( S \), and closure passes that success up to \( m = (m - 1) + 1 \), a contradiction. *Before reading on: in \( (\Leftarrow) \), which of the three hypotheses on \( X \) gives \( m - 1 \in X \), and which two are not used at all?*
+\( (\Rightarrow) \) A set \( X \) with the induction property and the first two properties must be \( \nN \) itself: \( \nN \) sits inside \( X \) by @fd1:ax-induction, and the induction property of \( X \), applied to the subset \( \nN \), forces equality. Then @thm-well-ordering applies. \( (\Leftarrow) \) Take \( S \) as in the induction property and suppose \( S \ne X \); the least element \( m \) of \( X \setminus S \) is then a smallest failure (the method of @exm-method-least-element, applied to the set \( X \setminus S \) of failures, with the least-element property of \( X \) in place of @thm-well-ordering); the number \( m - 1 \) just below it is not a failure, so it lies in \( S \), and closure passes that success up to \( m = (m - 1) + 1 \), a contradiction. *Before reading on: in \( (\Leftarrow) \), which of the three hypotheses on \( X \) gives \( m - 1 \in X \), and which two are not used at all?*
 :::
 
 ::: {.proof}
@@ -219,6 +285,7 @@ Let \( X \subseteq \nR \) contain \( 0 \), be closed under \( n \mapsto n + 1 \)
 \( (\Leftarrow) \) Suppose \( X \) has the least-element property. Let \( S \subseteq X \) contain \( 0 \) and be closed under \( n \mapsto n + 1 \). Suppose \( S \ne X \). Then \( X \setminus S \) is non-empty: if it were empty, every element of \( X \) would lie in \( S \), so \( X \subseteq S \), and with \( S \subseteq X \) this would give \( S = X \) by @prp-subset-antisymmetric. So \( X \setminus S \) has a least element \( m \). We have \( m \ne 0 \), since \( 0 \in S \). So \( m - 1 \in X \), by the predecessor property. Since \( m - 1 < m \) and \( m \) is least in \( X \setminus S \), \( m - 1 \notin X \setminus S \), that is, \( m - 1 \in S \). Hence \( m = (m - 1) + 1 \in S \) by the closure of \( S \), which contradicts \( m \in X \setminus S \). So \( S = X \), and \( X \) has the induction property. This proves the theorem.
 :::
 
+::: {.second-reading title="Each hypothesis has a job"}
 Each hypothesis on \( X \) has a job, and dropping any one of them breaks the theorem. Each witness below names the direction that fails and the step of the proof it blocks.
 
 - **Drop the predecessor property; \( (\Leftarrow) \) fails.** Let \( X \coloneqq \nN \cup \{ n + \tfrac12 : n \in \nN \} \). It contains \( 0 \) and is closed, since \( (n + \tfrac12) + 1 = (n + 1) + \tfrac12 \). It has the least-element property: for non-empty \( T \subseteq X \), compare a least element of \( T \cap \nN \) with \( \tfrac12 \) plus a least element of \( \{ t - \tfrac12 : t \in T \setminus \nN \} \), each of the two sets, when non-empty, being a subset of \( \nN \); the smaller of the candidates is least in \( T \) (Exercise C2 asks for the details). But \( S \coloneqq \nN \) contains \( 0 \), is closed, and is not \( X \), since \( \tfrac12 \notin \nN \) by @lem-naturals-arithmetic (e). The proof of \( (\Leftarrow) \) breaks at "\( m - 1 \in X \)": here \( m = \tfrac12 \) is least in \( X \setminus S \), and \( m \ne 0 \), but \( m - 1 = -\tfrac12 \notin X \).
@@ -226,8 +293,9 @@ Each hypothesis on \( X \) has a job, and dropping any one of them breaks the th
 - **Drop \( 0 \in X \); \( (\Rightarrow) \) fails.** Let \( X \coloneqq \{ k + \tfrac12 : k \in \nZ \} \). It is closed, and it has the predecessor property, since \( (k + \tfrac12) \pm 1 = (k \pm 1) + \tfrac12 \) with \( k \pm 1 \in \nZ \) by @prp-integers-closed (a). Its induction property holds vacuously, because \( 0 \notin X \), so no subset of \( X \) contains \( 0 \). (Indeed \( 0 = k + \tfrac12 \) would need \( k = -\tfrac12 \in \nZ \), and then \( \tfrac12 = -k \in \nZ \) by @prp-integers-closed (a), which discreteness rules out, as shown above.) And \( X \) has no least element, since \( (k - 1) + \tfrac12 < k + \tfrac12 \). The proof of \( (\Rightarrow) \) breaks at "\( \nN \subseteq X \) by @fd1:ax-induction": the property "\( n \in X \)" has no base case, since \( 0 \notin X \).
 
 In the last two witnesses the induction property is not false but vacuous. That is why the theorem uses plain closure of \( S \). Under a "closure relative to \( X \)" reading (\( n + 1 \in S \) only when \( n + 1 \in X \)), the set \( S = \{0\} \) would qualify in the closure witness, the induction property would fail there, and the witness would no longer separate the two properties.
+:::
 
-So the slogan "induction and well-ordering are the same principle" means exactly @thm-induction-iff-well-ordering: for a set of numbers with \( 0 \), closure and predecessors, either principle implies the other. So *Logic and Proof*, Chapter 4 could have taken, alongside (\( \nN \)0) and (\( \nN \)S), the predecessor property and well-ordering as its axioms, and proved induction from them by the \( (\Leftarrow) \) half of @thm-induction-iff-well-ordering. The first witness above shows that the predecessor property cannot be left out, and with induction gone it could no longer be proved as @lem-naturals-arithmetic (c) was. *Number Systems: From \(\nN\) to \(\nR\)*, Chapter 1 builds \( \nN \) from sets and proves the Peano axioms, induction among them, there.
+So the slogan "induction and well-ordering are the same principle" means exactly @thm-induction-iff-well-ordering: for a set of numbers with \( 0 \), closure and predecessors, either principle implies the other. So *Logic and Proof*, Chapter 4 could have taken, alongside (\( \nN \)0) and (\( \nN \)S), the predecessor property and well-ordering as its axioms, and proved induction from them by the \( (\Leftarrow) \) half of @thm-induction-iff-well-ordering. The first witness in the fold above shows that the predecessor property cannot be left out, and with induction gone it could no longer be proved as @lem-naturals-arithmetic (c) was. *Number Systems: From \(\nN\) to \(\nR\)*, Chapter 1 builds \( \nN \) from sets and proves the Peano axioms, induction among them, there.
 
 ## Sets of integers
 
@@ -249,7 +317,17 @@ Slide \( S \) to the right by \( -b \), so that its lower bound lands on \( 0 \)
 *Upper bound.* Let \( -S \coloneqq \{ -s : s \in S \} \). It is a non-empty set of integers (negatives of integers are integers, by the definition of \( \nZ \) and @prp-integers-closed (a)), and \( -b \) is an integer lower bound for it, since \( s \le b \) gives \( -b \le -s \). By the first half, \( -S \) has a least element \( -m \) with \( m \in S \). For every \( s \in S \), \( -m \le -s \), so \( s \le m \): \( m \) is a greatest element of \( S \). This proves the corollary.
 :::
 
+::: {.check}
+Does \( \{ n \in \nZ : n^2 < 30 \} \) have a least element? Which hypothesis of @cor-well-ordering-integers do you check, and how?
+:::
+
+::: {.solution}
+Yes. The hypotheses to check are that the set is non-empty and that it has a lower bound in \( \nZ \). It is non-empty, since \( 0 \) is in it. And \( -6 \) is an integer lower bound: an integer \( n \le -6 \) has \( n^2 \ge 36 > 30 \), so every element \( n \) of the set has \( n > -6 \). The least element is \( -5 \): \( (-5)^2 = 25 < 30 \), and every element is \( > -6 \), hence \( \ge -5 \) by discreteness (@prp-integers-closed (c)).
+:::
+
+::: {.second-reading title="Why the bound must be an integer"}
 The bound must be an integer, or at least have an integer below it. Given a set of integers bounded below by the real number \( -\tfrac{7}{2} \), we would first replace \( -\tfrac72 \) by the integer \( -4 \), and that step, for an arbitrary real bound, is the Archimedean property of *Analysis on the Real Line*, Chapter 1, whose integer-part lemma in Section 1.6 does exactly this. In an ordered field without the Archimedean property, a set of integers can be bounded below and have no least element (in the field \( \nR(x) \) of *Analysis on the Real Line*, Chapter 1's example of a non-Archimedean field, every \( n \in \nN \) has \( n < x \), so the set \( \{ -n : n \in \nN \} \) is bounded below by \( -x \), and it has no least element, since \( -(n + 1) < -n \)), so this chapter, which has no Archimedean property, proves the corollary with an integer bound, and *Analysis on the Real Line*, Chapter 1 supplies the rest.
+:::
 
 ## Exercises
 
@@ -340,6 +418,37 @@ Prove the second half of @cor-well-ordering-integers directly from @thm-well-ord
 Let \( T \coloneqq \{ b - s : s \in S \} \). For \( s \in S \), \( b - s \) is an integer by @prp-integers-closed (a), and \( b - s \ge 0 \) because \( s \le b \); so \( b - s \in \nN \) by @prp-integers-closed (b). Thus \( T \) is a non-empty subset of \( \nN \), and by @thm-well-ordering it has a least element, of the form \( b - s_0 \) with \( s_0 \in S \). For every \( s \in S \), \( b - s_0 \le b - s \), so \( s \le s_0 \). Hence \( s_0 \) is a greatest element of \( S \).
 :::
 
+::: {#exr-naturals-and-well-ordering-b4}
+[B4: Prove or disprove]
+
+Prove each true statement, by the method of @exm-method-least-element where it applies, and refute each false one with a concrete counterexample.
+
+::: {.enumerate options="label=(\alph*)"}
+1. Every non-empty set of integers has a least element.
+2. Every non-empty set of negative rational numbers has a greatest element.
+3. Every non-empty set of even natural numbers has a least element.
+4. Every non-empty subset of \( \{ 1/n : n \in \nZ_{>0} \} \) has a greatest element.
+5. Every non-empty subset of \( \{ 1/n : n \in \nZ_{>0} \} \) has a least element.
+6. If \( S \subseteq \nZ \) is non-empty and \( s \ge -\tfrac{13}{3} \) for every \( s \in S \), then \( S \) has a least element.
+:::
+:::
+
+::: {.solution}
+(a) **False.** Take \( \nZ \) itself. For every \( n \in \nZ \), also \( n - 1 \in \nZ \) by @prp-integers-closed (a), and \( n - 1 < n \), so no element is least.
+
+(b) **False.** Take \( \{ -1/n : n \in \nZ_{>0} \} \), a non-empty set of negative rationals. For each \( -1/n \) in it, \( -1/(n + 1) \) is in it too, and \( -1/n < -1/(n + 1) \), so no element is greatest.
+
+(c) **True.** Such a set is a non-empty subset of \( \nN \), so @thm-well-ordering gives it a least element.
+
+(d) **True.** Let \( T \) be a non-empty subset, and let \( N \coloneqq \{ n \in \nZ_{>0} : 1/n \in T \} \). Then \( N \) is a non-empty subset of \( \nN \), so it has a least element \( n_0 \) (@thm-well-ordering). Then \( 1/n_0 \in T \), and for every \( 1/n \in T \) we have \( n \in N \), so \( n \ge n_0 > 0 \) and \( 1/n \le 1/n_0 \). So \( 1/n_0 \) is a greatest element of \( T \).
+
+(e) **False.** Take the whole set. For each \( 1/n \) in it, \( 1/(n + 1) \) is in it too, and \( 1/(n + 1) < 1/n \), so no element is least.
+
+(f) **True.** The integer \( -5 \) is a lower bound of \( S \), since \( -5 < -\tfrac{13}{3} \le s \) for every \( s \in S \). So @cor-well-ordering-integers applies.
+
+Items (c), (d) and (f) are well-ordering, sometimes after a change of view: (c) is a subset of \( \nN \) as it stands, (f) needs its bound \( -\tfrac{13}{3} \) replaced by the integer \( -5 \), and (d) passes from \( 1/n \) to \( n \), where "greatest" becomes "least". The false items are the warning after @thm-well-ordering in three costumes.
+:::
+
 ### C. Going deeper
 
 ::: {#exr-naturals-and-well-ordering-c1}
@@ -374,7 +483,7 @@ Since \( u \in S \) and \( s \le u \) for every \( s \in S \), \( u \) is a grea
 
 *(b)* \( S = \nN \) is non-empty and has no greatest element: for every \( n \in \nN \), also \( n + 1 \in \nN \) by (\( \nN \)S), and \( n + 1 > n \). In the proof, \( U \) is then empty, and @thm-well-ordering has nothing to apply to.
 
-The number \( u \) of (a) is the **least upper bound** of \( S \) among natural numbers, and the proof shows that it lies in \( S \). Section 2.6 defines least upper bounds in any partially ordered set, and *Analysis on the Real Line*, Chapter 1 is about sets of real numbers whose least upper bound, when it exists, need **not** lie in the set.
+The number \( u \) of (a) is the **least upper bound** of \( S \) among natural numbers, and the proof shows that it lies in \( S \). Section 4.3 defines least upper bounds in any partially ordered set, and *Analysis on the Real Line*, Chapter 1 is about sets of real numbers whose least upper bound, when it exists, need **not** lie in the set.
 
 **Marking scheme.** (10 points)
 - 2: defines the set of upper bounds in \( \nN \), shows it is non-empty, and takes its least element by @thm-well-ordering.

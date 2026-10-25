@@ -1,10 +1,10 @@
 # Equinumerous Sets and Finite Sets
 
-Chapter 1 made functions exact and sorted them into injective, surjective and bijective ones. Chapter 2 put the natural numbers on firm ground: their arithmetic, well-ordering, induction from any base and definition by recursion. This chapter asks how large a set is. For a finite set we count. For \( \nN \), \( \nQ \) or \( \nR \) counting gives no answer, and the question "are there more rational numbers than natural numbers?" needs a meaning before it can have an answer. This section gives "the same size" its meaning, a pairing, and then proves the facts about finite sets on which counting rests, starting with the pigeonhole principle.
+Section 1.1 left a puzzle half solved: among any five lattice points, two have a lattice point as midpoint, provided that five objects in four boxes always put two in one box. That principle sounds too obvious to need proof, but it is a statement about every finite collection, and "finite" has no definition yet. Section 1.6 supplied the tool: a bijection pairs the elements of two sets one for one. This section makes "the same size" mean "there is a bijection", defines finite sets by pairing with \( \{1, \dots, n\} \), proves the pigeonhole principle and comes back to the five points, and then proves the facts about finite sets on which counting rests. Whether \( \nQ \) is larger than \( \nN \) is the question of Chapter 3.
 
 ## Same size without counting
 
-So far we have compared functions; now we compare sets. The everyday word is "as many as", and we can check it without knowing any numbers. Put two piles of coins on a table, and take one coin from each pile at a time, setting the two aside as a pair. If both piles run out at the same moment, they had the same number of coins. We know this before counting either pile, and a child who cannot count past ten can do it with piles of a thousand.
+So far we have compared functions; now we compare sets. The everyday word is "as many as", and we can check it without knowing any numbers. Put two piles of coins on a table, and take one coin from each pile at a time, setting the two aside as a pair. If both piles run out at the same moment, they had the same number of coins. We know this before counting either pile, and a child who cannot count past ten can do it with piles of a thousand. Section 1.6 proved that the bijections are exactly the maps with a two-sided inverse (@thm-bijection-iff-inverse), and said that such a pairing is how this book says "the same size".
 
 The pairing is a function from the first pile to the second. Different coins are paired with different coins, so it is injective; every coin of the second pile is used, so it is surjective. Pairing makes sense for any two sets, finite or not, and that is the definition.
 
@@ -19,7 +19,7 @@ Let \( A \) and \( B \) be sets. We say that \( A \) and \( B \) are **equinumer
 \]
 :::
 
-In words: the definition asks for **one** bijection, and it does not care which. Injectivity says that no two elements of \( A \) are paired with the same element of \( B \); surjectivity says that no element of \( B \) is left over. The statement \( \card{A} = \card{B} \) is read as a whole, "\( A \) and \( B \) are equinumerous". It is a relation between two sets. We do not define an object \( \card{A} \), "the size of \( A \)", standing alone, and a remark below explains why the obvious candidate is not available. For finite sets, the definition of a finite set below gives \( \card{A} \) a meaning as a natural number, and the two uses agree.
+In words: the definition asks for **one** bijection, and it does not care which. Injectivity says that no two elements of \( A \) are paired with the same element of \( B \); surjectivity says that no element of \( B \) is left over. The statement \( \card{A} = \card{B} \) is read as a whole, "\( A \) and \( B \) are equinumerous". It is a relation between two sets. We do not define an object \( \card{A} \), "the size of \( A \)", standing alone, and a second-reading fold below explains why the obvious candidate is not available. For finite sets, the definition of a finite set below gives \( \card{A} \) a meaning as a natural number, and the two uses agree.
 
 Here are four examples, the degenerate one first.
 
@@ -27,6 +27,14 @@ Here are four examples, the degenerate one first.
 - *Three letters and three numbers.* Let \( a, b, c \) be three different letters. The function \( \{a, b, c\} \to \{1, 2, 3\} \) with \( a \mapsto 1 \), \( b \mapsto 2 \), \( c \mapsto 3 \) sends different letters to different numbers and reaches each of \( 1, 2, 3 \). So \( \card{\{a, b, c\}} = \card{\{1, 2, 3\}} \).
 - *Two intervals of different lengths.* The function \( f \colon [0, 1] \to [0, 2] \), \( f(x) = 2x \), has the inverse \( y \mapsto y/2 \), since \( y/2 \in [0, 1] \) for \( y \in [0, 2] \), \( f(y/2) = y \) and \( f(x)/2 = x \). By @thm-bijection-iff-inverse it is a bijection, so \( \card{[0, 1]} = \card{[0, 2]} \). Length and size are different things.
 - *The natural numbers and the positive integers.* The function \( \nN \to \nZ_{>0} \), \( n \mapsto n + 1 \), is a bijection. It is the Quick check near the end of this section, where it shows that \( \nN \) is infinite.
+
+::: {.check}
+Decide, from @def-equinumerous: (a) \( \card{\emptyset} = \card{\{\emptyset\}} \)? (b) \( \card{\{1, 2\}} = \card{\{\{1, 2\}\}} \)? (c) \( \card{\{ x \in \nR : x^2 = -1 \}} = \card{\emptyset} \)?
+:::
+
+::: {.solution}
+(a) No. The set \( \{\emptyset\} \) has the element \( \emptyset \), and a function \( \emptyset \to \{\emptyset\} \) has no values, so it is not surjective. (b) No. The set \( \{\{1, 2\}\} \) has one element, so every function \( \{1, 2\} \to \{\{1, 2\}\} \) sends \( 1 \) and \( 2 \) to it and is not injective. (c) Yes. The set \( \{ x \in \nR : x^2 = -1 \} \) is empty, and the empty function \( \emptyset \to \emptyset \) is a bijection.
+:::
 
 **A non-example by a minimal change.** Shrink \( \{1, 2, 3\} \) to \( \{1, 2\} \). There is no bijection \( \{a, b, c\} \to \{1, 2\} \). Let \( g \) be any function \( \{a, b, c\} \to \{1, 2\} \). If \( g(a) = g(b) \), then \( g \) is not injective. Otherwise \( g(a) \) and \( g(b) \) are \( 1 \) and \( 2 \) in some order, and \( g(c) \), which is \( 1 \) or \( 2 \), equals one of them. In every case two different letters share a value. So the clause that fails is injectivity, and it fails for **every** function, which is what "not equinumerous" requires. Surjectivity can hold: \( a \mapsto 1 \), \( b \mapsto 2 \), \( c \mapsto 2 \) reaches both numbers.
 
@@ -36,7 +44,7 @@ To show that two sets are **not** equinumerous, one map is never enough. The map
 
 **Why this definition.** To count a set is to pair it with \( \{1, \dots, n\} \): saying "one, two, three" while pointing at the coins is a bijection from \( \{1, 2, 3\} \) onto the pile. So the definition does not replace counting; it isolates the part of counting that still makes sense when the set is infinite. Each clause has a job. Without injectivity, the surjection \( \{1, 2, 3\} \to \{1\} \) would make a three-element set as large as a one-element set. Without surjectivity, the inclusion \( \{1\} \to \{1, 2, 3\} \) would do the same in the other direction.
 
-The first result says that equinumerosity behaves like an equivalence relation.
+The first result says that equinumerosity behaves like equality: reflexive, symmetric and transitive.
 
 ::: {#prp-equinumerous-properties}
 [Equinumerosity Is Reflexive, Symmetric and Transitive]
@@ -58,13 +66,15 @@ For all sets \( A \), \( B \) and \( C \):
 *(c)* If \( f \colon A \to B \) and \( g \colon B \to C \) are bijections, then \( g \circ f \colon A \to C \) is a bijection by @thm-composition-injective-surjective (c). This proves the proposition.
 :::
 
-Clauses (a)–(c) have the form of (Eq1)–(Eq3) of @def-equivalence-relation, and yet we do not call equinumerosity an equivalence relation. An equivalence relation in Chapter 2 is a relation **on a set** \( X \), a subset of \( X \times X \). Equinumerosity relates any two sets whatever, and there is no set of all sets for it to live on (@thm-russell). That is also why the book reserves the symbol \( \sim \) for equivalence relations and writes \( \card{A} = \card{B} \) here.
+Clauses (a)–(c) say that equinumerosity behaves like an equivalence relation: reflexive, symmetric and transitive, as equality is. We do not call it one. Chapter 4 makes "equivalence relation" precise for relations **on a set** \( X \), subsets of \( X \times X \); equinumerosity relates any two sets whatever, and there is no set of all sets for it to live on (@thm-russell). That is also why the book writes \( \card{A} = \card{B} \) here and keeps the symbol \( \sim \) for later.
 
+::: {.second-reading title="Why |A| is not an object"}
 ::: {.remark}
 Why not define \( \card{A} \) as "the collection of all sets equinumerous with \( A \)"? Because that collection is in general not a set. The next paragraph proves this for \( A = \{0\} \).
 :::
 
 Take \( A = \{0\} \). Every singleton \( \{x\} \) is equinumerous with \( \{0\} \), by \( 0 \mapsto x \). If the singletons formed a set \( \sS \), its union \( \bigcup \sS \) would be a set by (W3) of Section 1.2, and every object \( x \) would be an element of it, since \( x \in \{x\} \in \sS \). That is a set of which every set is an element, which @thm-russell rules out.
+:::
 
 ## Finite sets
 
@@ -91,6 +101,14 @@ Examples:
 - For \( n \in \nN \), \( \{0, \dots, n\} \) has \( n + 1 \) elements: \( k \mapsto k - 1 \) maps \( \{1, \dots, n + 1\} \) to \( \{0, \dots, n\} \), because \( k - 1 \in \nN \) for \( k \ne 0 \) (@lem-naturals-arithmetic (c)) and \( k - 1 \le n \). It has the inverse \( j \mapsto j + 1 \), so it is a bijection (@thm-bijection-iff-inverse).
 - The three-letter set \( \{a, b, c\} \) has \( 3 \) elements, by the inverse of the bijection of the second example after @def-equinumerous.
 
+::: {.check}
+How many elements does \( \{ n \in \nN : 3 \le n \le 7 \} \) have? Give the bijection.
+:::
+
+::: {.solution}
+Five, by \( k \mapsto k + 2 \) from \( \{1, \dots, 5\} \): for \( 1 \le k \le 5 \), \( 3 \le k + 2 \le 7 \). Its inverse is \( m \mapsto m - 2 \), which lies in \( \{1, \dots, 5\} \) for \( 3 \le m \le 7 \), since \( m - 2 \in \nN \) by @lem-naturals-arithmetic (d). The two maps undo each other, so the first is a bijection (@thm-bijection-iff-inverse).
+:::
+
 ::: {#def-infinite}
 [Infinite Set]
 
@@ -101,9 +119,9 @@ To prove a set infinite we must rule out every \( n \) at once, and for every \(
 
 **Shrinking the codomain.** One small device is used throughout the chapter. Let \( f \colon X \to Y \) be a function, and let \( C \subseteq Y \) contain every value \( f(x) \). The graph of \( f \) is then a subset of \( X \times C \), and with the codomain \( C \) it is a function \( X \to C \) with the same values (@def-function). We call it "\( f \) with codomain \( C \)". It is injective if and only if \( f \) is, since injectivity speaks only of values. In particular, \( f \) with codomain \( f(X) \) is surjective (@def-image). So an **injective** \( f \colon X \to Y \) is a bijection \( X \to f(X) \) once its codomain is shrunk, and \( \card{X} = \card{f(X)} \).
 
-## The pigeonhole principle
+## Back to the pigeons
 
-If more pigeons than holes fly into a dovecote, some hole gets two pigeons. In Chapter 1 we found one function from a three-element set to a two-element set that is not injective (@exm-injective-surjective-first (c)), and observed without proof that none can be. Here is the general fact, for the standard sets \( \{1, \dots, m\} \) and \( \{1, \dots, n\} \).
+Section 1.1 reduced its question (Q1) to one step: five points, each with one of four parity patterns, put two points on one pattern. In the language of functions, sending each point to its pattern is a map from a five-element set to a four-element set, and the step says that it is not injective. Chapter 1 also found one function from a three-element set to a two-element set that is not injective (@exm-injective-surjective-first (c)), and observed without proof that none can be. Here is the general fact, for the standard sets \( \{1, \dots, m\} \) and \( \{1, \dots, n\} \).
 
 ::: {#thm-pigeonhole}
 [Pigeonhole Principle]
@@ -112,7 +130,19 @@ Let \( m, n \in \nN \) with \( m > n \). Then there is **no** injection \( \{1, 
 :::
 
 ::: {.idea}
-Induct on the number \( n \) of holes. In the step there are \( n + 1 \) holes, and we look at the last one. If no pigeon sits in hole \( n + 1 \), all the pigeons sit in \( n \) holes, and the hypothesis applies at once. If pigeon \( j \) sits there, there is only one, by injectivity. Move pigeon \( j \) to the hole of pigeon \( m \), and send pigeon \( m \) away. That leaves \( m - 1 \) pigeons in \( n \) holes, still one to a hole, and \( m - 1 > n \). The hypothesis is used at \( m - 1 \), not at \( m \), so the property we induct on must say "for every \( m \)". *Before reading on: self-explain the construction of the injection \( g \) in Case 2: why are its values in \( \{1, \dots, n\} \), and why is it injective?*
+[Scratch work]
+
+Induct on the number \( n \) of holes. In the step there are \( n + 1 \) holes, and we look at the last one. If no pigeon sits in hole \( n + 1 \), all the pigeons sit in \( n \) holes, and the hypothesis applies at once. If pigeon \( j \) sits there, there is only one, by injectivity. Move pigeon \( j \) to the hole of pigeon \( m \), and send pigeon \( m \) away. That leaves \( m - 1 \) pigeons in \( n \) holes, still one to a hole, and \( m - 1 > n \). The hypothesis is used at \( m - 1 \), not at \( m \), so the property we induct on must say "for every \( m \)".
+
+On scrap paper, with \( n = 1 \) and \( m = 3 \): three pigeons in two holes; if hole \( 2 \) is empty, all three sit in hole \( 1 \); if pigeon \( 2 \) sits in hole \( 2 \), move it to pigeon \( 3 \)'s place and send pigeon \( 3 \) away. As givens and goal, inside the step:
+
+| Givens | Goal |
+|---|---|
+| \( P(n) \); \( m > n + 1 \); \( f \colon \{1, \dots, m\} \to \{1, \dots, n + 1\} \) injective | a contradiction |
+| Case 1: \( n + 1 \) is no value of \( f \) | \( f \) with codomain \( \{1, \dots, n\} \) is injective, \( m > n \): against \( P(n) \) |
+| Case 2: \( f(j) = n + 1 \) | an injection \( \{1, \dots, m - 1\} \to \{1, \dots, n\} \), with \( m - 1 > n \): \( g \coloneqq f \circ \sigma \) |
+
+*Before reading on: self-explain the construction of the injection \( g \) in Case 2: why are its values in \( \{1, \dots, n\} \), and why is it injective?*
 :::
 
 ::: {.proof}
@@ -157,7 +187,7 @@ Let \( m, n \in \nN \), let \( A \) have \( m \) elements, and let \( B \) have 
 :::
 
 ::: {.idea}
-For (a), the bijections of @def-finite turn an injection \( A \to B \) into an injection \( \{1, \dots, m\} \to \{1, \dots, n\} \), which @thm-pigeonhole forbids. For (b), a surjection \( g \colon A \to B \) has a right inverse \( h \), and \( h \) is an injection \( B \to A \), forbidden by (a). The right inverse is built by a rule: send \( b \) to the element of \( A \) with the **smallest** number among those that \( g \) sends to \( b \).
+For (a), the bijections of @def-finite turn an injection \( A \to B \) into an injection \( \{1, \dots, m\} \to \{1, \dots, n\} \), which @thm-pigeonhole forbids. For (b), a surjection \( g \colon A \to B \) has a right inverse \( h \), and \( h \) is an injection \( B \to A \), forbidden by (a). The right inverse is built by a rule: send \( b \) to the element of \( A \) with the **smallest** number among those that \( g \) sends to \( b \) (a least element, @exm-method-least-element).
 :::
 
 ::: {.proof}
@@ -172,15 +202,51 @@ S_b \coloneqq \{ i \in \{1, \dots, m\} : g(\varphi(i)) = b \} .
 It is non-empty: since \( g \) is onto, \( b = g(a) \) for some \( a \in A \), and \( a = \varphi(i) \) for some \( i \), since \( \varphi \) is onto. By @thm-well-ordering, \( S_b \) has a least element. Define \( h \colon B \to A \) by \( h(b) \coloneqq \varphi(\min S_b) \). Then \( g(h(b)) = b \) for every \( b \in B \), because \( \min S_b \in S_b \). So \( g \circ h = \id_B \): the function \( g \) is a left inverse of \( h \), and \( h \) is injective by @thm-left-inverse-iff-injective (a). Now \( h \) is an injection from the \( n \)-element set \( B \) to the \( m \)-element set \( A \), with \( n > m \), which contradicts (a). This proves the corollary.
 :::
 
-The function \( h \) in (b) is defined by a **rule**, "the least element", applied to each \( b \) at once, so its existence needs nothing beyond specification. Section 3.3 meets surjections for which no such rule is available, and there the book adds a new principle.
+The function \( h \) in (b) is defined by a **rule**, "the least element", applied to each \( b \) at once, so its existence needs nothing beyond specification. Section 3.2 meets surjections for which no such rule is available, and there the book adds a new principle.
 
+::: {.second-reading title="Two loose ends from Chapter 1 and *Logic and Proof*"}
 Two special cases settle earlier loose ends. With \( m = n + 1 \), part (a) says that a set with \( n \) elements has no \( n + 1 \) different elements: there is no injection \( \{1, \dots, n + 1\} \to A \). That is the second school fact that @fd1:exr-models-c2 took on trust. With \( m = 3 \), \( n = 2 \) in (a) and \( m = 2 \), \( n = 3 \) in (b), the corollary gives the two observations after @exm-injective-surjective-first in general.
+:::
 
 Here is a typical use of (a). Among any three integers, two have an even sum. Let \( A \) be a set of three integers, and let \( p \colon A \to \{0, 1\} \) send each \( a \) to its remainder \( r \) on division by \( 2 \) (@thm-division-algorithm), an integer with \( 0 \le r < 2 \); then \( r \in \nN \) by @prp-integers-closed (b), and \( r \le 1 \) by @lem-naturals-arithmetic (e), so \( r \in \{0, 1\} \). The set \( \{0, 1\} \) has \( 2 \) elements, so by (a), \( p \) is not injective: there are \( a \ne b \) in \( A \) with the same remainder \( r \). Writing \( a = 2q + r \) and \( b = 2q' + r \),
 \[
 a + b = 2(q + q' + r) ,
 \]
 which is even, since \( q + q' + r \in \nZ \) (@prp-integers-closed (a)). The pigeons are the integers and the holes are the remainders; the whole skill is choosing the holes.
+
+::: {#exm-method-pigeonhole}
+[Method: the pigeonhole principle]
+
+**Template.** (1) Choose the pigeons, a set \( A \) whose number of elements you know, and the holes, a set \( B \) with fewer. (2) Define \( p \colon A \to B \), "the hole of a pigeon", and check that its values lie in \( B \). (3) By @cor-pigeonhole-finite-sets (a), \( p \) is not injective: two different pigeons \( a \ne a' \) share a hole. (4) Translate "same hole" back into the property you want.
+
+**When to use it.** The claim says "among any \( N \) objects, two have …", or "some value is taken twice", and \( N \) exceeds the number of possible values.
+
+**The usual failure.** Holes for which sharing a hole does not give the property: choose the holes by what two pigeons should share. Pigeons that need not be different: a list with repeats is not a set with \( N \) elements. Claiming to know which two pigeons share a hole.
+:::
+
+::: {#exm-five-lattice-points}
+[Back to the five lattice points]
+
+Show that among any five different lattice points, two have a lattice point as midpoint.
+:::
+
+::: {.idea}
+The pigeons are the points and the holes are the parity patterns (@exm-method-pigeonhole).
+:::
+
+::: {.solution}
+Let \( A \) be a set of five lattice points, so \( A \) has \( 5 \) elements. Let \( B \coloneqq \{0, 1\} \times \{0, 1\} \), which has the \( 4 \) elements \( (0, 0) \), \( (0, 1) \), \( (1, 0) \), \( (1, 1) \) (number them \( 1 \) to \( 4 \)). Send \( (a, b) \in A \) to \( (r, s) \), where \( r \) and \( s \) are the remainders of \( a \) and \( b \) on division by \( 2 \) (@thm-division-algorithm); \( r, s \in \{0, 1\} \) as in the three-integers paragraph above, so the values lie in \( B \). Since \( 5 > 4 \), @cor-pigeonhole-finite-sets (a) gives two different points \( (a, b) \ne (c, d) \) in \( A \) with the same remainders. Then \( a \) and \( c \) have the same parity, and so do \( b \) and \( d \), so their midpoint is a lattice point by @exm-lattice-midpoint. This answers (Q1) of Section 1.1: yes.
+:::
+
+The word "different" costs nothing, since a point and itself have that point as midpoint; and the four corners of a unit square (Section 1.1) show that five cannot be lowered to four.
+
+::: {.check}
+Choose pigeons and holes: among any \( 11 \) integers, two differ by a multiple of \( 10 \).
+:::
+
+::: {.solution}
+The pigeons are the \( 11 \) integers. The holes are the remainders \( 0, \dots, 9 \) on division by \( 10 \) (@thm-division-algorithm), a set with \( 10 \) elements. By @cor-pigeonhole-finite-sets (a) two of the integers, \( a \ne b \), have the same remainder \( r \): \( a = 10q + r \) and \( b = 10q' + r \), so \( a - b = 10(q - q') \).
+:::
 
 The next corollary is the well-definedness promised after @def-finite.
 
@@ -227,7 +293,9 @@ Let \( \varphi \colon \{1, \dots, m\} \to A \) and \( \psi \colon \{1, \dots, n\
 So \( \chi \) is a bijection, and \( A \cup B \) has \( m + n \) elements.
 :::
 
+::: {.second-reading title="Why the step does not remove a point"}
 Now subsets. The proof is an induction on the size of the whole set, and it must be set up with care: the step peels off one element, and the obvious way to say "peel off one element" is the corollary after it, on removing a point. But that corollary is proved **from** this proposition. So the step peels off \( \varphi(n + 1) \) by restricting the bijection \( \varphi \) directly, and cites nothing proved later.
+:::
 
 ::: {#prp-subset-finite}
 [Subsets of Finite Sets]
@@ -262,6 +330,14 @@ In both cases \( P(n + 1) \) holds. By @fd1:ax-induction, \( P(n) \) holds for e
 :::
 
 Read contrapositively, with @cor-finite-size-unique: a subset of an \( n \)-element set that itself has \( n \) elements is the whole set. (If \( S \ne A \), its number of elements is \( k < n \), and by uniqueness it is not \( n \).) That is the first school fact that @fd1:exr-models-c1 took on trust.
+
+::: {.check}
+A set \( S \subseteq \{1, \dots, 7\} \) has \( 7 \) elements. What is \( S \), and which results say so?
+:::
+
+::: {.solution}
+\( S = \{1, \dots, 7\} \). If \( S \ne \{1, \dots, 7\} \), then @prp-subset-finite gives \( S \) some number \( k < 7 \) of elements, and @cor-finite-size-unique forbids \( S \) to have both \( k \) and \( 7 \) elements.
+:::
 
 ::: {#cor-remove-point}
 [Removing a Point]
@@ -301,7 +377,9 @@ the image of \( \powerset{X} \) under \( S \mapsto S \cup \{a\} \), a function \
 By @prp-disjoint-union-count, \( \powerset{A} \) has \( 2^n + 2^n = 2^n \cdot 2 = 2^{n+1} \) elements (@def-power). By @fd1:ax-induction, the claim holds for every \( n \in \nN \).
 :::
 
+::: {.second-reading title="Subsets and functions to {0, 1}"}
 For any set \( Y \), the map \( S \mapsto \ind_S \), with inverse \( f \mapsto \{ y \in Y : f(y) = 1 \} \), is a bijection \( \powerset{Y} \to \{0, 1\}^Y \) onto the set of functions \( Y \to \{0, 1\} \) (the correspondence of Section 1.5 between subsets and indicator functions). Taking \( Y \) with \( n \) elements, a set with \( n \) elements also has exactly \( 2^n \) functions to \( \{0, 1\} \), and the two counting problems of Chapter 1 are one. Exercise C2 counts all functions between finite sets.
+:::
 
 ## No finite set is equinumerous with a proper subset
 
@@ -316,6 +394,8 @@ Let \( A \) be a finite set and \( B \subsetneq A \). Then \( A \) and \( B \) a
 ::: {.proof}
 Let \( A \) have \( n \) elements, with a bijection \( \varphi \colon \{1, \dots, n\} \to A \). By @prp-subset-finite, \( B \) has \( k \) elements for some \( k < n \), since \( B \ne A \). Suppose \( g \colon A \to B \) were a bijection. Then \( g \circ \varphi \colon \{1, \dots, n\} \to B \) is a bijection (@thm-composition-injective-surjective (c)), so \( B \) also has \( n \) elements, and @cor-finite-size-unique gives \( k = n \). This contradicts \( k < n \).
 :::
+
+**Contradiction at scale.** The proof never computes with \( g \). It supposes the bijection, hands it to two theorems already proved, and lets them disagree about the number of elements of \( B \). The claim is a negation, "no bijection", so this is face (i), chosen by @exm-method-choosing-the-form; but the clash is between results, not between two lines. The proofs of @thm-pigeonhole and @cor-finite-size-unique have the same shape inside them.
 
 Turned around, the theorem is a test for infinity: **a set that is equinumerous with a proper subset of itself is infinite.** Here is its first use. For the even natural numbers we write
 \[
@@ -337,7 +417,7 @@ The inclusion is proper because \( 1 \notin 2\nN \): if \( n = 0 \), then \( 2n 
 If \( \nN \) were finite, @thm-finite-no-proper-copy would forbid a bijection from \( \nN \) onto its proper subset \( 2\nN \). So \( \nN \) is infinite. Every guest still has a room, and the odd rooms are now free.
 :::
 
-The finite intuition "a proper part is smaller" fails for \( \nN \), and it fails exactly because \( \nN \) is infinite. Section 3.6 proves that it fails for **every** infinite set.
+The finite intuition "a proper part is smaller" fails for \( \nN \), and it fails exactly because \( \nN \) is infinite. Section 3.5 proves that it fails for **every** infinite set.
 
 ::: {.warning}
 \( A \subsetneq B \) does not make \( A \) smaller than \( B \) when \( B \) is infinite: \( 2\nN \subsetneq \nN \) and \( \card{2\nN} = \card{\nN} \). Equinumerous is not "one is a subset of the other", in either direction.
@@ -357,6 +437,20 @@ Yes. Its values lie in \( \nN \setminus \{0\} \), since \( n + 1 \ge 1 \). Its i
 
 ::: {.remark}
 By @def-finite, a non-empty finite set \( A \) with \( n \) elements is \( \{x_1, \dots, x_n\} \), with \( x_k \coloneqq \varphi(k) \). So when its elements are real numbers it has a maximum and a minimum, by @prp-finite-max. Section 2.3 announced this passage from a finite set to a list.
+:::
+
+::: {.check}
+Show that the set of primes is infinite.
+:::
+
+::: {.solution}
+Suppose it is finite. It is non-empty, since \( 2 \) is prime, so it is \( \{p_1, \dots, p_n\} \) with \( n \ge 1 \) (@def-finite and the remark above), and it has a maximum \( M \) (@prp-finite-max). By @thm-primes-infinite there is a prime \( p > M \). That prime lies in the set and exceeds its maximum, a contradiction.
+:::
+
+::: {.remark}
+[Looking ahead]
+
+Chapter 4 defines equivalence relations on a set, and meets equinumerosity again as a relation that behaves like one without living on a set.
 :::
 
 ## Exercises
@@ -409,16 +503,16 @@ Give explicit bijections \( \nN \to \nN \setminus \{0, 1, 2\} \), \( \nN \to \{ 
 
 ::: {.enumerate options="label=(\alph*)"}
 1. Prove that among any \( 6 \) different integers, two have the same remainder on division by \( 5 \).
-2. Prove that among any \( 5 \) different elements of \( \{1, \dots, 8\} \), two have sum \( 9 \).
+2. Prove that among any \( 7 \) different points of \( \{1, 2, 3\} \times \{1, 2, 3\} \), three lie in one row, that is, have the same first coordinate.
 :::
 
-*Hint: in (b), group \( \{1, \dots, 8\} \) into pairs.*
+*Hint: in (b), the rows are the holes; how many points can a row take if no row takes three?*
 :::
 
 ::: {.solution}
 (a) Let \( A \) be a set of \( 6 \) integers. By @thm-division-algorithm with divisor \( 5 \), each \( a \in A \) has a unique remainder \( r(a) \), an integer with \( 0 \le r(a) < 5 \); then \( r(a) \in \nN \) by @prp-integers-closed (b), and \( r(a) \le 4 \) by discreteness, @prp-integers-closed (c), so \( r(a) \in \{0, \dots, 4\} \). This defines \( r \colon A \to \{0, \dots, 4\} \). The set \( \{0, \dots, 4\} \) has \( 5 \) elements (the third example after @def-finite). Since \( 6 > 5 \), @cor-pigeonhole-finite-sets (a) shows that \( r \) is not injective: there are \( a \ne a' \) in \( A \) with \( r(a) = r(a') \).
 
-(b) Let \( A \subseteq \{1, \dots, 8\} \) have \( 5 \) elements. The holes are the four pairs \( \{1, 8\} \), \( \{2, 7\} \), \( \{3, 6\} \), \( \{4, 5\} \), each of the form \( \{x, 9 - x\} \). Define \( p \colon A \to \{1, 2, 3, 4\} \) by \( p(x) \coloneqq \min\{x, 9 - x\} \), the smaller element of the pair containing \( x \); for \( 1 \le x \le 8 \) this lies in \( \{1, 2, 3, 4\} \), since \( x \le 4 \) or \( 9 - x \le 4 \). The codomain has \( 4 \) elements and \( 5 > 4 \), so by @cor-pigeonhole-finite-sets (a) there are \( x \ne y \) in \( A \) with \( p(x) = p(y) \). Then \( x \) and \( y \) lie in the same pair \( \{c, 9 - c\} \), where \( c = p(x) \), and being different they are its two elements, so \( x + y = 9 \). Five is the least number that works: \( \{1, 2, 3, 4\} \) has \( 4 \) elements, and no two of them sum to \( 9 \), since their largest sum is \( 3 + 4 = 7 \).
+(b) Let \( A \subseteq \{1, 2, 3\} \times \{1, 2, 3\} \) have \( 7 \) elements, and for \( i = 1, 2, 3 \) let \( A_i \coloneqq \{ (x, y) \in A : x = i \} \), the points of \( A \) in row \( i \). These sets are pairwise disjoint and their union is \( A \). Each is a subset of \( A \), so it is finite by @prp-subset-finite; say \( A_i \) has \( k_i \) elements. If every \( k_i \le 2 \), then by @prp-disjoint-union-count, applied twice, \( A = (A_1 \cup A_2) \cup A_3 \) has \( k_1 + k_2 + k_3 \le 6 \) elements, and @cor-finite-size-unique forbids \( A \) to have both that number and \( 7 \) elements. So some \( k_i \ge 3 \): three points of \( A \) lie in row \( i \). Seven is the least number that works: the six points with second coordinate \( 1 \) or \( 2 \) put exactly two in each row.
 :::
 
 ::: {#exr-finite-sets-b3}
@@ -439,6 +533,37 @@ U_{n+1} = U_n \cup (A_{n+1} \setminus U_n) ,
 a disjoint union. The set \( A_{n+1} \setminus U_n \) is a subset of the finite set \( A_{n+1} \), so it is finite by @prp-subset-finite; say it has \( q \) elements. By @prp-disjoint-union-count, \( U_{n+1} \) has \( p + q \) elements. By @fd1:ax-induction, \( P(n) \) holds for every \( n \).
 
 The detour through \( A_{n+1} \setminus U_n \) is needed because @prp-disjoint-union-count is about **disjoint** sets, and \( U_n \) and \( A_{n+1} \) may overlap.
+:::
+
+::: {#exr-finite-sets-b4}
+[B4: Prove or disprove]
+
+Prove each true statement and refute each false one with a counterexample.
+
+::: {.enumerate options="label=(\alph*)"}
+1. Among any \( 12 \) different integers, two differ by a multiple of \( 12 \).
+2. Among any \( 3 \) different integers, two have an even sum.
+3. Among any \( 5 \) different lattice points of space (points of \( \nZ^3 \)), two have a lattice point as midpoint.
+4. If \( A \) has \( 8 \) elements and \( f \colon A \to \{1, 2, 3, 4\} \), then some value of \( f \) is taken at least \( 3 \) times.
+5. No function from the set of subsets of \( \{1, 2, 3\} \) to \( \{1, \dots, 7\} \) is injective.
+6. Every injection \( \{1, \dots, n\} \to \{1, \dots, n\} \) is surjective.
+:::
+:::
+
+::: {.solution}
+(a) **False.** Take \( 0, 1, \dots, 11 \). Any two of them differ by an integer \( d \) with \( 1 \le \lvert d \rvert \le 11 \), which is not a multiple of \( 12 \). Thirteen integers would do, by the argument of the Quick check on \( 11 \) integers.
+
+(b) **True.** The pigeons are the three integers and the holes are the two parities (@thm-even-or-odd), a set with \( 2 \) elements. Since \( 3 > 2 \), two of the integers have the same parity (@cor-pigeonhole-finite-sets (a)), and their sum is even (@exm-parity-of-sums).
+
+(c) **False.** Take five of the eight points with all coordinates in \( \{0, 1\} \) (Exercise C3 of Section 1.1). Two different ones differ in some coordinate, where one has \( 0 \) and the other \( 1 \); the sum there is \( 1 \), so that coordinate of the midpoint is \( \tfrac12 \).
+
+(d) **False.** Take \( A = \{1, \dots, 8\} \) and \( f(k) \coloneqq \) the integer part of \( (k + 1)/2 \), with values \( 1, 1, 2, 2, 3, 3, 4, 4 \): each value is taken exactly twice. Nine elements would force some value three times, as in Exercise B2 (b).
+
+(e) **True.** The set of subsets of \( \{1, 2, 3\} \) has \( 2^3 = 8 \) elements (@prp-power-set-count), and \( 8 > 7 \), so @cor-pigeonhole-finite-sets (a) applies.
+
+(f) **True.** Let \( f \) be such an injection. With its codomain shrunk to its image, \( f \) is a bijection, so \( f(\{1, \dots, n\}) \) has \( n \) elements. It is a subset of \( \{1, \dots, n\} \), so it is all of it, by the remark after @prp-subset-finite; that is, \( f \) is surjective.
+
+Three are true, (b), (e) and (f), and three are false. Each true item is the method of @exm-method-pigeonhole with the holes named; each false one either has too few pigeons or holes that do not give the property.
 :::
 
 ### C. Going deeper
@@ -470,7 +595,7 @@ For \( (\Rightarrow) \): let \( P(n) \) be "there is an injection \( \{1, \dots,
 
 *Step.* Suppose \( P(n) \), and let \( f \colon \{1, \dots, n\} \to A \) be an injection. With its codomain shrunk to its image \( F \coloneqq f(\{1, \dots, n\}) \), it is a bijection, so \( F \) has \( n \) elements. Since \( A \) is infinite, \( F \ne A \); and \( F \subseteq A \), so there is some \( a \in A \setminus F \). Define \( g \colon \{1, \dots, n + 1\} \to A \) by \( g(k) \coloneqq f(k) \) for \( k \le n \) and \( g(n + 1) \coloneqq a \); this is a function because \( \{1, \dots, n + 1\} = \{1, \dots, n\} \cup \{n + 1\} \) and \( n + 1 \notin \{1, \dots, n\} \) (@lem-naturals-arithmetic (e)). It is injective: two inputs \( \le n \) are separated by \( f \), and \( g(n + 1) = a \notin F \) differs from every \( g(k) \) with \( k \le n \). So \( P(n + 1) \) holds. By @fd1:ax-induction, \( P(n) \) holds for every \( n \).
 
-*No infinitely many choices are made.* The step uses two existence statements, \( P(n) \) and "\( A \setminus F \ne \emptyset \)", and names one witness for each: one \( \rulename{\exists E} \) each, inside the proof of the single implication \( P(n) \Rightarrow P(n + 1) \). Its conclusion, \( P(n + 1) \), is again an existence statement, so the witnesses never leave the step. Induction then gives \( P(n) \) for each \( n \) **separately**: for each \( n \) **some** injection exists, and different \( n \) may use unrelated ones. Gluing the steps into one injection \( \nN \to A \), with a new point picked at every stage, would require all the picks at once, with no rule saying which point to pick. That is a different statement; Section 3.6 proves it with the principle of choice of Section 3.3.
+*No infinitely many choices are made.* The step uses two existence statements, \( P(n) \) and "\( A \setminus F \ne \emptyset \)", and names one witness for each: one \( \rulename{\exists E} \) each, inside the proof of the single implication \( P(n) \Rightarrow P(n + 1) \). Its conclusion, \( P(n + 1) \), is again an existence statement, so the witnesses never leave the step. Induction then gives \( P(n) \) for each \( n \) **separately**: for each \( n \) **some** injection exists, and different \( n \) may use unrelated ones. Gluing the steps into one injection \( \nN \to A \), with a new point picked at every stage, would require all the picks at once, with no rule saying which point to pick. That is a different statement; Section 3.5 proves it with the principle of choice of Section 3.2.
 
 **Marking scheme.** (10 points)
 - 2: \( (\Leftarrow) \) supposes \( A \) has \( m \) elements and uses the hypothesis at \( n = m + 1 \) to contradict the pigeonhole principle (@thm-pigeonhole or @cor-pigeonhole-finite-sets (a)).
@@ -539,6 +664,7 @@ thm-pigeonhole (proof): m > n + 1 gives m - 1 > n; k <= m - 1 < m; trichotomy | 
 thm-pigeonhole (proof): {1, ..., m - 1} is a subset of {1, ..., m} | definition of {1, ..., n} (F2.2 §01) and R order
 cor-pigeonhole-finite-sets (example): (the three-integers paragraph) r in {0, 1}; q + q' + r in Z | thm-division-algorithm, prp-integers-closed (a), (b), lem-naturals-arithmetic (e) (cited)
 cor-pigeonhole-finite-sets (example): (the three-integers paragraph) a + b = 2(q + q' + r), r + r = 2r | R arithmetic, school fact
+exm-five-lattice-points (solution): remainders r, s on division by 2 lie in {0, 1} | thm-division-algorithm, prp-integers-closed (b), lem-naturals-arithmetic (e) (cited)
 cor-finite-size-unique (proof): trichotomy of < on N | R order, school fact
 prp-disjoint-union-count (proof): 1 <= k - m <= n for m < k <= m + n; m < m + j <= m + n | R order, school fact; lem-naturals-arithmetic (d), (e) (cited)
 prp-subset-finite (proof): {1, ..., n + 1} = {1, ..., n} u {n + 1}; restriction of an injective map is injective | lem-naturals-arithmetic (e) (cited); restriction, F2.1 §04 (no label)
@@ -550,7 +676,7 @@ thm-finite-no-proper-copy (claim): (the second warning after exm-hilbert-hotel) 
 exr-finite-sets-a1 (solution): De Morgan for "not (P and Q)" | F1.2 (DM, derived rule; no label cited)
 exr-finite-sets-b1 (solution): (m - 1)/2 = n for m = 2n + 1; 2n + 1 = 2n' + 1 gives n = n' | R arithmetic, school fact
 exr-finite-sets-b2 (solution): remainder r(a) in {0, ..., 4} | thm-division-algorithm, prp-integers-closed (b), (c) (cited)
-exr-finite-sets-b2 (solution): min{x, 9 - x} <= 4 for 1 <= x <= 8; 3 + 4 = 7 | R arithmetic, school fact
+exr-finite-sets-b2 (solution): k1 + k2 + k3 <= 6 from ki <= 2 | R arithmetic
 exr-finite-sets-b3 (solution): {1, ..., n + 1} = {1, ..., n} u {n + 1}; the union over it splits accordingly | lem-naturals-arithmetic (e); def-family-union-intersection (cited)
 exr-finite-sets-c1 (solution): phi^(-1) is a bijection; {1, ..., n + 1} = {1, ..., n} u {n + 1}, n + 1 not in {1, ..., n} | thm-bijection-iff-inverse, def-inverse-function, lem-naturals-arithmetic (e) (cited)
 exr-finite-sets-c2 (solution): mn in N; n^m in N; B^A equinumerous with {1, ..., n^(m+1)} via R | lem-naturals-arithmetic (b), prp-power-laws (d), prp-equinumerous-properties (b), (c) (cited)

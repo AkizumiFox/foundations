@@ -8,4 +8,9 @@ assert a[:5] == QUOTED["first"]
 assert all(a[n] == 2**n + 1 for n in range(len(a)))
 # the step algebra: 3(2^(n+1)+1) - 2(2^n+1) = 2^(n+2)+1
 assert all(3 * (2**(n + 1) + 1) - 2 * (2**n + 1) == 2**(n + 2) + 1 for n in range(60))
+# quick check: a0 = a1 = 1, a_{n+2} = a_{n+1} a_n is constantly 1
+_a = [1, 1]
+for _n in range(50):
+    _a.append(_a[-1] * _a[-2])
+assert all(v == 1 for v in _a)
 print("ok")

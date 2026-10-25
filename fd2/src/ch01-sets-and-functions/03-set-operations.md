@@ -606,7 +606,7 @@ Here is a "proof" that \( (A \cup B) \cap (A \cup C) \subseteq A \cup (B \cap C)
 :::
 
 <!-- dependency ledger
-def-set-operations (claim): an integer divisible by 2 and by 3 is divisible by 6; Z minus the evens is the odd integers | Z minus the evens: thm-even-or-odd (F2.1 §01); divisible by 2 and 3 => by 6: school fact (F1-F2 convention), F2.2 proves it (exm-divisibility-lcm)
+def-set-operations (claim): an integer divisible by 2 and by 3 is divisible by 6; Z minus the evens is the odd integers | Z minus the evens: thm-even-or-odd (F2.1 §01); divisible by 2 and 3 => by 6: school fact (F1-F2 convention), F2.2 §02 proves it (exr-induction-in-practice-b3 (c))
 def-set-operations (claim): no complement without an ambient set (the set of everything outside A joined with A would contain every set) | thm-russell, one-line argument inline
 def-set-operations (example): interval computations [0,2] union [1,3] = [0,3] etc. | school order facts (F1-F2 convention); proved in AN1.1
 thm-set-algebra (proof): letters of a derived sequent replaced by membership statements x in A (first-order atomic statements) | def-derived-rule; statements with variables are F1.4's (prose pointer)

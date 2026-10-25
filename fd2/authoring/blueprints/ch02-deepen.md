@@ -459,3 +459,7 @@ Two blind referees (R1: 16 findings; R2: 15). All resolved here; no second round
   1. (Recorded as a deviation from layout §5, §6 STATUS note (2), not an open question.) "Back to the pigeons" is the heading of 2.5's pigeonhole subsection, after `def-finite`; the section *opens* on the hook in its first paragraph. Putting `thm-pigeonhole` first is possible (its proof needs no definition of "finite") but would contradict 1.1's approved Looking-ahead ("from a precise definition of 'finite'").
   2. `thm-primes-infinite` is stated as "for every n ∈ ℕ there is a prime p > n" (via n! + 1), since "infinite" is defined only in 2.5; the list form is Exercise C2, and the set form is 2.5's Quick check.
   3. 2.2 keeps the phrase "smallest counterexample" with a one-sentence definition, so that its A1, B2, C3 and 2.3's C1 need no change; the method box is 2.4's.
+
+- *Deviation (S3, 2026-10-25):* 2.4 quick check (c) names x_1, x_2 and finishes the one-line argument; the scratch work of `exm-three-power-factor` is prose followed by the table; |n| is written `\abs{n}`.
+- *Deviation (S3, 2026-10-25):* index Terms "least element", "greatest element", "maximum/minimum" have no definition block and point to the prose before `thm-well-ordering` and `prp-finite-max`. Main-line words (fold-excluded for 2.5): 2.1 4,406; 2.2 3,892; 2.3 4,081; 2.4 2,195 (below the 3,500 expected, nothing omitted); 2.5 4,801 (+219 folded). Time: 30 h core, 40 h full.
+- *Deviation (S3, 2026-10-25):* `tools/check_forward_deps.py` does not exist; the forward-dependency check of §8 was not run.

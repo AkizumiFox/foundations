@@ -10,4 +10,6 @@ for num in range(-4, 41):
 for n in range(10):
     for x in [Fr(-1), Fr(-1, 2), Fr(3)]:
         assert (1 + n * x) * (1 + x) == 1 + (n + 1) * x + n * x * x
+# quick check: x = -1/2, n = 3
+assert (1 + Fr(-1, 2)) ** 3 == Fr(1, 8) and 1 + 3 * Fr(-1, 2) == Fr(-1, 2) and Fr(1, 8) >= Fr(-1, 2)
 print("ok")

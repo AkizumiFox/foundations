@@ -96,6 +96,14 @@ The starting value was used in both halves: Step 1 needs \( f(0) = f'(0) \) as i
 Because the rule may depend on \( n \), the theorem also covers constructions in which the step uses outside data indexed by \( n \). *Analysis on the Real Line*, Chapter 1 builds closed intervals \( I_{n+1} \) from \( I_n \) and the \( (n{+}1) \)-st number of a given list in exactly this way, with no choice principle involved. The values may be sets as well as numbers. With \( X = \powerset{\nN} \), \( A_0 \coloneqq \nN \) and \( A_{n+1} \coloneqq A_n \setminus \{n\} \) define a sequence of sets of the kind Section 1.3 promised, and an induction that follows the same two clauses shows \( A_n = \{ k \in \nN : k \ge n \} \): the base is @lem-naturals-arithmetic (a), and the step removes \( n \) from \( \{ k : k \ge n \} \), leaving \( \{ k : k > n \} = \{ k : k \ge n + 1 \} \) by @lem-naturals-arithmetic (e).
 :::
 
+::: {.check}
+Name \( X \), \( a \) and \( g \) for the sequence \( 1, 3, 7, 15, \dots \), in which each term is twice the previous one plus one.
+:::
+
+::: {.solution}
+\( X = \nN \) (or \( \nR \)), \( a = 1 \) and \( g(n, x) = 2x + 1 \); the rule does not use \( n \). Since \( 2x + 1 \in \nN \) for \( x \in \nN \), \( g \) is a function \( \nN \times X \to X \), so @thm-recursion applies. The clauses give \( f(1) = 2 \cdot 1 + 1 = 3 \), \( f(2) = 7 \), \( f(3) = 15 \), as listed.
+:::
+
 ## Starting elsewhere, looking two steps back
 
 Two variants come up constantly. Sequences are often indexed from \( 1 \), as in Section 1.5, and some recursions use the two previous values. Both reduce to the theorem.
@@ -150,6 +158,14 @@ For uniqueness, let \( f' \) satisfy the three equations, and let \( p'(n) \colo
 p'(n + 1) = \bigl(f'(n + 1), \ h(n, f'(n), f'(n + 1))\bigr) = G\bigl(n, p'(n)\bigr) ,
 \]
 so \( p' = p \) by the uniqueness in @thm-recursion, and \( f'(n) = p_1(n) = f(n) \) for every \( n \). By @prp-function-equality, \( f' = f \).
+:::
+
+::: {.check}
+Do \( a_0 = 1 \), \( a_1 = 1 \) and \( a_{n+2} = a_{n+1} a_n \) define a sequence of reals? What is it?
+:::
+
+::: {.solution}
+Yes, by @cor-two-step-recursion with \( X = \nR \) and \( h(n, x, y) = yx \), a function \( \nN \times (\nR \times \nR) \to \nR \). Every term is \( 1 \): induct on the pair statement "\( a_n = 1 \) and \( a_{n+1} = 1 \)", as in the two-step example after @def-power. It holds at \( n = 0 \), and if it holds at \( n \), then \( a_{n+2} = 1 \cdot 1 = 1 \), so it holds at \( n + 1 \).
 :::
 
 ## Sums, products and powers
@@ -223,7 +239,7 @@ Each numerator cancels the next denominator: the product **telescopes**. In gene
 
 ## Recursion, then induction
 
-A function defined by recursion is studied by induction, and the induction follows the clauses of the definition: the base case uses the starting value, the step uses the rule. The laws of powers are the first example.
+A function defined by recursion is studied by induction, and the induction follows the clauses of the definition: the base case uses the starting value, the step uses the rule. The laws of powers are the first example. In the terms of @exm-method-induction-step, the recursion says where \( P(n) \) sits inside \( P(n + 1) \): in the last term split off, or the last factor.
 
 ::: {#prp-power-laws}
 [Laws of Powers]
@@ -309,7 +325,7 @@ Let \( x \in \nR \) with \( x \ge -1 \). Then \( (1 + x)^n \ge 1 + nx \) for eve
 :::
 
 ::: {.idea}
-Induct on \( n \). To pass from \( n \) to \( n + 1 \), multiply the induction hypothesis by \( 1 + x \); the product \( (1 + nx)(1 + x) = 1 + (n + 1)x + nx^2 \) is at least \( 1 + (n + 1)x \), because the extra term \( nx^2 \) is non-negative. Multiplying an inequality by \( 1 + x \) keeps its direction only if \( 1 + x \ge 0 \), and that is what \( x \ge -1 \) says.
+Induct on \( n \). To pass from \( n \) to \( n + 1 \), multiply the induction hypothesis by \( 1 + x \); the product \( (1 + nx)(1 + x) = 1 + (n + 1)x + nx^2 \) is at least \( 1 + (n + 1)x \), because the extra term \( nx^2 \) is non-negative. Multiplying an inequality by \( 1 + x \) keeps its direction only if \( 1 + x \ge 0 \), and that is what \( x \ge -1 \) says. (This is the method of @exm-method-induction-step: \( (1 + x)^n \) is the first factor of \( (1 + x)^{n+1} \).)
 :::
 
 ::: {.proof}
@@ -324,6 +340,14 @@ where the first equation is @def-power and the last step uses \( nx^2 \ge 0 \), 
 :::
 
 The hypothesis \( x \ge -1 \) appears in the proof once, in the sentence "since \( x \ge -1 \), we have \( 1 + x \ge 0 \)", and it cannot simply be dropped: for \( x = -4 \) and \( n = 3 \), \( (1 + x)^3 = (-3)^3 = -27 \), while \( 1 + 3x = -11 \), and \( -27 < -11 \). Exercise C2 below shows that the statement can survive at some \( x < -1 \) even though the proof does not.
+
+::: {.check}
+Check Bernoulli's inequality at \( x = -\tfrac12 \), \( n = 3 \), and say which line of the proof uses \( x \ge -1 \).
+:::
+
+::: {.solution}
+\( (1 - \tfrac12)^3 = \tfrac18 \), and \( 1 + 3 \cdot (-\tfrac12) = -\tfrac12 \); indeed \( \tfrac18 \ge -\tfrac12 \). The hypothesis is used in the line "since \( x \ge -1 \), we have \( 1 + x \ge 0 \)": multiplying the induction hypothesis by \( 1 + x \) keeps the direction of the inequality only because \( 1 + x \ge 0 \).
+:::
 
 The last result of this subsection is not about a recursive definition, but its induction runs over lists, and it is the fact *Analysis on the Real Line*, Chapter 1 needs about finite sets. A **maximum** of a set \( A \subseteq \nR \) is an element \( M \in A \) with \( a \le M \) for every \( a \in A \); a **minimum** is an element \( m \in A \) with \( m \le a \) for every \( a \in A \). For reals \( x_1, \dots, x_n \), we write \( \{x_1, \dots, x_n\} \coloneqq \{ x_k : k \in \{1, \dots, n\} \} \).
 
@@ -353,11 +377,11 @@ In both cases \( P(n + 1) \) holds. By @thm-induction, \( P(n) \) holds for ever
 For the minimum, apply the result to \( -x_1, \dots, -x_n \): if \( -x_j \) is a maximum of \( \{-x_1, \dots, -x_n\} \), then \( -x_k \le -x_j \), that is \( x_j \le x_k \), for every \( k \), so \( x_j \) is a minimum of \( \{x_1, \dots, x_n\} \).
 :::
 
-The base is \( 1 \), not \( 0 \): for \( n = 0 \) the set is \( \emptyset \), which has neither a maximum nor a minimum, since both must be elements. The proof used only order properties of \( \le \): any two elements are comparable (trichotomy), \( \le \) is reflexive and transitive, and \( x \mapsto -x \) reverses \( \le \). All of these hold in any ordered field, so the proof works word for word there; that is the setting in which *Analysis on the Real Line*, Chapter 1 uses it. Passing from a finite **set** to a list \( x_1, \dots, x_n \) that enumerates it is what "finite" will mean in Chapter 3.
+The base is \( 1 \), not \( 0 \): for \( n = 0 \) the set is \( \emptyset \), which has neither a maximum nor a minimum, since both must be elements. The proof used only order properties of \( \le \): any two elements are comparable (trichotomy), \( \le \) is reflexive and transitive, and \( x \mapsto -x \) reverses \( \le \). All of these hold in any ordered field, so the proof works word for word there; that is the setting in which *Analysis on the Real Line*, Chapter 1 uses it. Passing from a finite **set** to a list \( x_1, \dots, x_n \) that enumerates it is what "finite" means in Section 2.5.
 
 ## When the claim is too weak to carry its step
 
-Sometimes the statement we want is true, but it cannot be proved by induction as it stands: its inductive step does not go through. The cure looks paradoxical. We prove **more**.
+Sometimes the statement we want is true, but it cannot be proved by induction as it stands: its inductive step does not go through. The cure looks paradoxical. We prove **more**. *Logic and Proof* met this cure (@fd1:exm-strengthen-the-claim) with a sum that telescopes; here the sum does not telescope, and the stronger claim has to be guessed.
 
 ::: {#exm-strengthen-hypothesis}
 [Proving more to prove anything]
@@ -382,6 +406,14 @@ By @thm-induction, \( S_n \le 2 - \frac1n < 2 \) for every \( n \ge 1 \).
 :::
 
 The stronger statement carries its own step because its hypothesis says **how far** below \( 2 \) the sum is, and that margin pays for the next term. When a step fails, ask what the hypothesis would need to say, and prove that instead. Exercise C3 below uses it twice over, proving two identities together because neither carries its own one-step induction.
+
+::: {.check}
+Would "\( S_n \le 2 - \frac{1}{n + 1} \)" also carry its own step?
+:::
+
+::: {.solution}
+No, although the statement is true (it is weaker than \( S_n \le 2 - \frac1n \)). From \( S_n \le 2 - \frac{1}{n+1} \), the step needs \( \frac{1}{(n + 1)^2} \le \frac{1}{n + 1} - \frac{1}{n + 2} = \frac{1}{(n + 1)(n + 2)} \), that is, \( (n + 1)(n + 2) \le (n + 1)^2 \), which is false for every \( n \ge 1 \). A stronger claim works only if its margin pays for the next term; this margin is too small.
+:::
 
 ## Exercises
 
@@ -592,10 +624,14 @@ prp-sum-first-n (proof): algebra n(n+1)/2 + (n+1) = (n+1)(n+2)/2 | R arithmetic,
 prp-geometric-sum (proof): algebra of fractions with 1 - r != 0; (n+1) - 1 = n | R arithmetic, school fact
 thm-bernoulli (proof): x^2 >= 0; multiplying by a non-negative number keeps <= | R order, school fact; axioms in AN1.1
 prp-finite-max (proof): trichotomy (totality), reflexivity and transitivity of <= on R; -x_k <= -x_j iff x_j <= x_k; {1, ..., n+1} = {1, ..., n} u {n+1} | R order, school fact; lem-naturals-arithmetic (e) (cited)
-prp-finite-max (claim): finite set -> list x_1, ..., x_n is F2.3's definition of finite | F2.3 (prose pointer; nothing depends on it)
+prp-finite-max (claim): finite set -> list x_1, ..., x_n is F2.2 §05's definition of finite | F2.2 §05 (prose pointer; nothing depends on it)
 exm-strengthen-hypothesis (solution): n(n+1) <= (n+1)^2 and reciprocals reverse <= for positives | R order, school fact
 exr-recursion-b2 (solution): (n-1)^2 >= 9 for n >= 4 | R order, school fact
 exr-recursion-c1 (solution): m' = m/2 > 0; 2^k > 0 | R order; prp-power-laws (e) (cited)
 exr-recursion-c2 (solution): (-1)^n is 1 or -1 | the paragraph after prp-power-laws (inline, with thm-division-algorithm, prp-integers-closed (b), (c) and lem-naturals-arithmetic (a) for k in N)
 prp-power-laws (claim): (the paragraph after it) 2k + r <= -2 + 1 < 0 for k <= -1, r <= 1 | R arithmetic and order, school fact
+thm-recursion (claim): (quick check after the remark) 2x + 1 in N for x in N; values 1, 3, 7, 15 | N closed under + and * (F2.1 §01), school arithmetic
+cor-two-step-recursion (claim): (quick check after its proof) h(n, x, y) = yx is a function N x (R x R) -> R; 1 * 1 = 1; pair induction | R arithmetic; fd1:ax-induction (cited in the two-step example)
+thm-bernoulli (claim): (quick check after it) (1/2)^3 = 1/8 >= -1/2 = 1 + 3(-1/2) | arithmetic, checked by hand in the text
+exm-strengthen-hypothesis (claim): (quick check after it) 1/(n+1) - 1/(n+2) = 1/((n+1)(n+2)); (n+1)(n+2) > (n+1)^2; S_n <= 2 - 1/n <= 2 - 1/(n+1) | R arithmetic and order, school fact; the example's P(n)
 -->
