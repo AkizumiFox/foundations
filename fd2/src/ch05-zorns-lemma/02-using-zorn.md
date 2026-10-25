@@ -51,7 +51,7 @@ For all sets \( A \) and \( B \), exactly one of \( \card{A} < \card{B} \), \( \
 *At most one.* \( \card{A} < \card{B} \) excludes \( \card{A} = \card{B} \) by @def-card-le. \( \card{B} < \card{A} \) excludes \( \card{B} = \card{A} \), and therefore \( \card{A} = \card{B} \), by symmetry (@prp-equinumerous-properties (b)). Finally, \( \card{A} < \card{B} \) and \( \card{B} < \card{A} \) together give injections \( A \to B \) and \( B \to A \), so \( \card{A} = \card{B} \) by @thm-schroder-bernstein, contradicting \( \card{A} < \card{B} \).
 :::
 
-Comparability is itself equivalent to the axiom of choice, a fact proved in *Axiomatic Set Theory*: this book needed choice for it, and no proof can avoid it.
+Comparability is itself equivalent to the axiom of choice, a fact proved in *Axiomatic Set Theory*, Chapter 4: this book needed choice for it, and no proof can avoid it.
 
 ::: {.check}
 Run the proof of @thm-cardinal-comparability on \( A = \{1, 2, 3\} \) and \( B = \{x, y\} \): describe the maximal elements of \( P \), and say which case of the proof occurs.
@@ -123,7 +123,7 @@ The lemma adds one comparison. The template adds them all at once.
 Let \( \preceq \) be a partial order on a set \( X \). Then there is a total order \( T \) on \( X \) with \( {\preceq} \subseteq T \).
 :::
 
-Here fd2's word is "total" (@def-partial-order); "linear order" is a common synonym, and \( T \) is then called a linear extension of \( \preceq \).
+This book's word is "total" (@def-partial-order); "linear order" is a common synonym, and \( T \) is then called a linear extension of \( \preceq \).
 
 ::: {.idea}
 By the method of @exm-method-maximality. The partial objects are the partial orders on \( X \) containing \( \preceq \). The union of a chain of them is one, since (PO2) and (PO3) each mention two pairs. A maximal one is total, because @lem-one-step-order-extension enlarges any partial order that has an incomparable pair.
@@ -175,13 +175,7 @@ Put \( 0, 1, 4, 6, 12 \) in \( \sqsubseteq \)-order. Which two of them are compa
 \( 1 \sqsubseteq 4 \sqsubseteq 6 \sqsubseteq 12 \sqsubseteq 0 \). Every pair is comparable under \( \sqsubseteq \), which is total. Under \( \mid \): \( 1 \) divides all of them, all of them divide \( 0 \), \( 4 \mid 12 \) and \( 6 \mid 12 \). The remaining pair is \( 4 \), \( 6 \): \( 4 \sqsubseteq 6 \), but neither divides the other. So \( 4 \) and \( 6 \) are the only such pair.
 :::
 
-## Optional: every vector space has a basis
-
-Nothing later in the book depends on this subsection, and it proves nothing. It describes, for a reader who has met vector spaces, how *Linear Algebra*, Section 1.8 uses the same template.
-
-A basis of a vector space \( V \) is a linearly independent set of vectors that spans \( V \). The theorem there is that every linearly independent set \( S \subseteq V \) lies in a basis. In the language of @exm-method-maximality, the partial objects are the linearly independent sets containing \( S \), ordered by \( \subseteq \); \( S \) itself is one. Independence is a condition on finitely many vectors at a time: a set is independent when no finite non-trivial combination of its vectors is \( 0 \). So a dependence among vectors of the union of a chain involves finitely many vectors, which lie in one member of the chain (@lem-chain-union (b)), and that member is independent: the union is a partial object. Zorn's lemma gives a maximal independent set \( M \). It spans \( V \), since a vector outside its span could be added to \( M \) without creating a dependence, giving a strictly larger partial object. With \( S = \emptyset \), every vector space has a basis, including \( \nR \) as a vector space over \( \nQ \), where no basis can be written down.
-
-The four uses of the template in this chapter, side by side:
+The four uses of the template on the main line of this chapter, side by side:
 
 | Object | Partial objects | Why unions of chains stay partial objects | Why a maximal one is complete |
 |---|---|---|---|
@@ -189,6 +183,12 @@ The four uses of the template in this chapter, side by side:
 | representatives (@exm-zorn-representatives) | sets meeting each class at most once | the condition mentions two elements | a missed class can be added |
 | injection (@thm-cardinal-comparability) | partial matchings | (M1), (M2) mention two pairs | if both sides have an unpaired element, they can be paired |
 | total order (@thm-order-extension) | partial orders containing \( \preceq \) | (PO2), (PO3) mention two pairs | an incomparable pair can be compared (@lem-one-step-order-extension) |
+
+## Optional: every vector space has a basis
+
+Nothing later in the book depends on this subsection. It sketches, without proving here, for a reader who has met vector spaces, how *Linear Algebra*, Section 1.8 uses the same template.
+
+A basis of a vector space \( V \) is a linearly independent set of vectors that spans \( V \). The theorem there is that every linearly independent set \( S \subseteq V \) lies in a basis. In the language of @exm-method-maximality, the partial objects are the linearly independent sets containing \( S \), ordered by \( \subseteq \); \( S \) itself is one. Independence is a condition on finitely many vectors at a time: a set is independent when no finite non-trivial combination of its vectors is \( 0 \). So a dependence among vectors of the union of a chain involves finitely many vectors, which lie in one member of the chain (@lem-chain-union (b)), and that member is independent: the union is a partial object. Zorn's lemma gives a maximal independent set \( M \). It spans \( V \), since a vector outside its span could be added to \( M \) without creating a dependence, giving a strictly larger partial object. With \( S = \emptyset \), every vector space has a basis, including \( \nR \) as a vector space over \( \nQ \), where no basis can be written down.
 
 ## Exercises
 
@@ -208,7 +208,7 @@ These questions are about the proof of @thm-cardinal-comparability.
 :::
 
 ::: {.solution}
-(a) The chain step uses both, to show that the union of a chain lies in \( P \). Case 1 uses (M1) to get a function \( A \to B \) and (M2) for its injectivity; Case 2 uses (M2) to get a function \( B \to A \) and (M1) for its injectivity.
+(a) The chain step uses both, to show that the union of a chain lies in \( P \). The step "\( M \) uses up a side" uses both for \( M \), to see that \( M \cup \{ (a_0, b_0) \} \) still satisfies them. Case 1 uses (M1) to get a function \( A \to B \) and (M2) for its injectivity; Case 2 uses (M2) to get a function \( B \to A \) and (M1) for its injectivity.
 
 (b) Then the pair \( (a, b) \) can be added: \( M \cup \{ (a, b) \} \) satisfies (M1) and (M2) and is strictly larger, so \( M \) is not maximal.
 
@@ -234,7 +234,7 @@ Below, the proof is started; the second half is blank. *Name the move, then comp
 ::: {.solution}
 The move is the maximality template, @exm-method-maximality; steps (2) to (4) remain.
 
-*Completion.* Let \( \sC \subseteq P \) be a non-empty chain. Its union lies in \( R \), and two pairs of the union lie in one member of \( \sC \) (@lem-chain-union (b)), so an element of \( A \) occurs in at most one pair of the union. The union is in \( P \) and is an upper bound of \( \sC \). By @thm-zorn, \( P \) has a maximal element \( M \). Suppose some \( a_0 \in A \) occurs in no pair of \( M \). Since \( a_0 \) is in the domain of \( R \), there is \( b_0 \) with \( (a_0, b_0) \in R \) (one use of ∃E). Then \( M \cup \{ (a_0, b_0) \} \subseteq R \), \( a_0 \) occurs in it once, and it is strictly larger than \( M \): a contradiction with maximality. So each \( a \in A \) occurs in exactly one pair of \( M \), and \( M \) is the graph of a function \( f \colon A \to B \) (@def-function), with \( M \subseteq R \).
+*Completion.* Let \( \sC \subseteq P \) be a non-empty chain. Its union lies in \( R \), and two pairs of the union lie in one member of \( \sC \) (@lem-chain-union (b)), so an element of \( A \) occurs in at most one pair of the union. The union is in \( P \) and is an upper bound of \( \sC \). By @thm-zorn, \( P \) has a maximal element \( M \). Suppose some \( a_0 \in A \) occurs in no pair of \( M \). Since \( a_0 \) is in the domain of \( R \), there is \( b_0 \) with \( (a_0, b_0) \in R \) (one use of \( \rulename{\exists E} \)). Then \( M \cup \{ (a_0, b_0) \} \subseteq R \), \( a_0 \) occurs in it once, and it is strictly larger than \( M \): a contradiction with maximality. So each \( a \in A \) occurs in exactly one pair of \( M \), and \( M \) is the graph of a function \( f \colon A \to B \) (@def-function), with \( M \subseteq R \).
 :::
 
 ::: {#exr-using-zorn-b2}
@@ -272,7 +272,7 @@ On \( \nR^2 \), let \( (x_1, x_2) \le_p (y_1, y_2) \) mean \( x_1 \le y_1 \) and
 ### C. Going deeper
 
 ::: {#exr-using-zorn-c1}
-[C1: An order is the intersection of its total extensions]
+[C1: Exit check: an order is the intersection of its total extensions]
 
 Let \( \preceq \) be a partial order on a set \( X \), and let \( \sT \) be the set of total orders on \( X \) that contain \( \preceq \). Prove that \( {\preceq} = \bigcap \sT \).
 :::
@@ -280,7 +280,7 @@ Let \( \preceq \) be a partial order on a set \( X \), and let \( \sT \) be the 
 ::: {.solution}
 [Hint 1]
 
-For a pair \( (a, b) \) not in \( \preceq \), you need one \( T \in \sT \) without it. If \( a \) and \( b \) are incomparable, use @lem-one-step-order-extension with the roles of \( a \) and \( b \) exchanged.
+For a pair \( (a, b) \) not in \( \preceq \), you need one \( T \in \sT \) without it. If \( a \) and \( b \) are incomparable, find a partial order containing \( \preceq \) and the pair \( (b, a) \).
 :::
 
 ::: {.solution}
@@ -294,13 +294,13 @@ Let \( (a, b) \in X \times X \) with \( (a, b) \notin {\preceq} \). Then \( a \n
 
 In both cases \( (a, b) \notin \bigcap \sT \), so \( \bigcap \sT \subseteq {\preceq} \).
 
-**Marking scheme.** (8 points)
+**Marking scheme.** (10 points)
 - 1: \( \sT \ne \emptyset \), cited from @thm-order-extension.
 - 1: \( {\preceq} \subseteq \bigcap \sT \).
-- 1: the two cases are exhaustive, because \( a \preceq b \) fails.
+- 2: the two cases are exhaustive, because \( a \preceq b \) fails.
 - 2: the case \( b \preceq a \), with (PO2) and \( a \ne b \).
-- 2: the lemma applied with \( a \) and \( b \) exchanged.
-- 1: the extension of \( R \) to a total order and the conclusion.
+- 2: a partial order containing \( \preceq \) and \( (b, a) \) (for example, the lemma with \( a \) and \( b \) exchanged).
+- 2: the extension of \( R \) to a total order and the conclusion.
 Fatal error (0 for the case concerned): applying the lemma to \( (a, b) \) unexchanged, which puts \( (a, b) \) into the extension instead of keeping it out.
 :::
 
@@ -315,11 +315,11 @@ Is the conclusion true? Does the argument prove it?
 ::: {.solution}
 The conclusion is true: it is @thm-cardinal-comparability. The argument does not prove it. It fails at "and so on … when one set runs out", the gap that (N13) of @fd1:exm-not-allowed-catalogue flags: an "and so on" needs its step, and here the process has no last step in general. Indexed by \( \nN \), it uses a countable set of elements of each side (@prp-countable-image), and for \( A = B = \nR \) neither side runs out, since \( \nR \) is uncountable (@thm-reals-uncountable-decimal). That is a counterexample to the step "the process ends". The argument also makes infinitely many choices with no rule (Section 3.2). The repair is the proof by the template, in which "cannot be continued" replaces "runs out".
 
-**Marking scheme.** (6 points)
-- 1: the conclusion is true, with a citation.
-- 2: the failing line identified, with (N13).
-- 2: the counterexample \( A = B = \nR \) to the step "the process ends".
-- 1: the repair by the maximality template.
+**Marking scheme.** (10 points)
+- 2: the conclusion is true, with a citation.
+- 3: the failing line ("and so on \( \dots \) runs out") identified, with the reason that it has no step.
+- 3: a counterexample to the step "the process ends" (for example \( A = B = \nR \)), with the countability reason.
+- 2: the repair by the maximality template.
 :::
 
 ### R. Review
@@ -332,6 +332,11 @@ Let \( A \) and \( B \) be non-empty sets. Prove that there is a surjection \( A
 
 ::: {.solution}
 By @thm-cardinal-comparability, \( \card{A} \le \card{B} \) or \( \card{B} \le \card{A} \). In the first case, since \( A \ne \emptyset \), @prp-card-le-surjection gives a surjection \( B \to A \). In the second, since \( B \ne \emptyset \), the same proposition with the roles exchanged gives a surjection \( A \to B \).
+
+**Marking scheme.** (10 points)
+- 3: comparability cited, with the two cases.
+- 4: in the first case, a surjection \( B \to A \) from @prp-card-le-surjection, with \( A \ne \emptyset \) used and the direction correct.
+- 3: the second case, with the roles exchanged and \( B \ne \emptyset \) used.
 :::
 
 ::: {#exr-using-zorn-r2}
@@ -339,14 +344,22 @@ By @thm-cardinal-comparability, \( \card{A} \le \card{B} \) or \( \card{B} \le \
 
 ::: {.enumerate options="label=(\alph*)"}
 1. Let \( C \) be a maximal chain of a partially ordered set \( (X, \preceq) \): a chain contained properly in no chain. Let \( u \) be an upper bound of \( C \) in \( X \). Show that \( u \in C \), that \( u \) is the greatest element of \( C \), and that \( u \) is a maximal element of \( X \).
-2. Deduce @thm-zorn from the statement of Section 5.1, Exercise B1 (@exr-chains-and-zorn-b1).
+2. Deduce @thm-zorn from the statement that every chain lies in a maximal chain.
 :::
 :::
 
 ::: {.solution}
 (a) Every element of \( C \) is below \( u \), so \( C \cup \{u\} \) is a chain containing \( C \); by maximality it is not larger, so \( u \in C \). Then \( u \in C \) is above every element of \( C \): it is the greatest element of \( C \). Suppose \( u \prec x \) for some \( x \in X \). For every \( c \in C \), \( c \preceq u \preceq x \), so \( C \cup \{x\} \) is a chain, and maximality gives \( x \in C \). Then \( x \preceq u \), and with \( u \preceq x \), (PO2) gives \( x = u \), contradicting \( u \prec x \). So \( u \) is maximal in \( X \).
 
-(b) Let \( P \) be a non-empty partially ordered set in which every non-empty chain has an upper bound. The empty set is a chain, so by Exercise B1 with \( C_0 = \emptyset \), \( P \) has a maximal chain \( C \). It is not empty: for \( p \in P \), \( \{p\} \) is a chain properly containing \( \emptyset \). So \( C \) has an upper bound \( u \), and \( u \) is a maximal element of \( P \) by (a). Since Exercise B1 was proved from Zorn's lemma, the two statements are equivalent.
+(b) Let \( P \) be a non-empty partially ordered set in which every non-empty chain has an upper bound. The empty set is a chain, so by Section 5.1, Exercise B1 (@exr-chains-and-zorn-b1) with \( C_0 = \emptyset \), \( P \) has a maximal chain \( C \). It is not empty: for \( p \in P \), \( \{p\} \) is a chain properly containing \( \emptyset \). So \( C \) has an upper bound \( u \), and \( u \) is a maximal element of \( P \) by (a). Since Exercise B1 was proved from Zorn's lemma, the two statements are equivalent.
+
+**Marking scheme.** (10 points)
+- 1: \( u \in C \) in (a).
+- 1: \( u \) is the greatest element of \( C \).
+- 3: \( u \) is maximal in \( X \), using (PO2).
+- 2: a maximal chain \( C \) from Exercise B1 with \( C_0 = \emptyset \).
+- 1: \( C \ne \emptyset \).
+- 2: an upper bound of \( C \), and the conclusion.
 :::
 
 ::: {#exr-using-zorn-r3}
@@ -357,7 +370,7 @@ This item is optional and goes with the optional subsection. A set of vectors is
 ::: {.enumerate options="label=(\alph*)"}
 1. Which of the template's four steps uses that independence is tested on finitely many vectors at a time?
 2. Why would the template fail for the property "\( S \) is a finite independent set"?
-3. Section 4.3 showed that a maximal element need not be greatest. What does this say about bases?
+3. A maximal element of a partial order need not be greatest. What does this say about bases?
 :::
 :::
 
@@ -366,7 +379,7 @@ This item is optional and goes with the optional subsection. A set of vectors is
 
 (b) The union of a chain of finite sets need not be finite (the second warning of Section 5.1), so step (2) fails: the union need not be a partial object.
 
-(c) Maximal independent sets need not contain one another, so a vector space can have many bases, none of them greatest. In \( \nR^2 \), \( \{ (1, 0), (1, 1) \} \) and \( \{ (2, 0), (0, 3) \} \) are both bases, and neither contains the other.
+(c) This is the warning of @exm-maximal-not-greatest. Maximal independent sets need not contain one another, so a vector space can have many bases, none of them greatest. In \( \nR^2 \), \( \{ (1, 0), (1, 1) \} \) and \( \{ (2, 0), (0, 3) \} \) are both bases, and neither contains the other.
 :::
 
 <!-- dependency ledger
