@@ -501,6 +501,12 @@ These stay as they are: 02:245, 02:381, 03:191, 05:93 ("well-ordering, proved in
 - **Review (lean workflow):** 1.1, 1.2 and 1.5 run the full pipeline (layout §7). 1.3, 1.4, 1.6 and 1.7 get a changed-only blind review: the boxes, scratch work, tables, B4s, checks and folds count as changes.
 - **Open for the author:** none blocking. Two calls were made here. First, (Q1) is left "yes, once pigeonhole is proved" rather than proved, since layout §5 says nothing is proved from pigeonhole in 1.1. Second, parity of products appears only in exercises (1.1 B4 (f)), not as a labelled result. Third (for the author, not blocking): the full-track Time will probably come out near 60 h rather than layout §2's 50 (§5); the coordinator reports the recomputed figure.
 
+**S3 coordinator notes (2026-10-25; for S4 and for layout §3.3's end-of-re-cut pointer sweep).**
+- renumber.py (binding rule 5) ran after S3, on fd2 `src/` only, with 01, 04, 05 and F2.2's `02-induction-in-practice.md` excluded (already in final numbering); recorded in STATUS (Blueprint deviations). The sweep must not repeat the map on fd2 `src/`.
+- **For the sweep (not edited; fd1, fd3, fd4 are outside this chapter's S3):** the renumber hits in fd1 `ch05-predicate-logic/06-existential-elimination.md`; fd3 `ch01-zf-and-natural-numbers/` (01, 02, 05, 06, index), `ch07-reals-dedekind-cuts/` (01:144, 03:20, index:7), `authoring/ledger/ch07.yaml:920`; the by-hand reviews in fd3 `ch03…/01-division-with-remainder.md:137`, `ch04…/index.md:7`, `ch06…/index.md:7`, fd4 `ch01-complex-numbers/index.md:7`; STATUS's F1.4 row and its "Not fixed: fd3" table (fd2 Sections 1.1–1.6 → 1.2–1.7); fd3 `ch03…/index.md:7` ("Chapters 1 and 2 proved …" and the two twins of §6); every fd3/fd4 "Section 2.2" that means divides or prime → Section 1.1.
+- **For ch02-deepen:** 22:3 and 22:151–154 (§4.8, even-or-odd now proved in 1.1).
+- **For S4:** the claim-ledger verdict of `exr-functions-b1` is stale: its part (d) was changed at S3 from \( x/(1 + \abs{x}) \) (now the worked example `exm-fraction-map`) to \( x/\sqrt{1 + x^2} \), solution and sidecar updated. 03:233's "Chapter 3" (§4.9, the 03:175 row) was fixed by the coordinator. Measured 1.1 main line is 2,766 words to `## Exercises` (4,460 is the whole file). Time: 40 h core, 55 h full (30,596 main + 1,872 folded words; 54 exercises, 25 on the core track; per-exercise rates calibrated on the old index's 35/45 h); the full track departs from layout §2's 50 h, for the author.
+
 ## S2 replies (round 1)
 
 Two blind referees (A: 15 findings, B: 16). Every finding is applied; none is rejected. Where the two overlap, one reply covers both.
@@ -540,3 +546,5 @@ Two blind referees (A: 15 findings, B: 16). Every finding is applied; none is re
 15. *1.3 has one worked chain (minor).* Applied, first option: the 03:316 unwinding in the Idea of thm-de-morgan-families is set as a second, short chain (≤ 45 words; key proof unchanged; 1.3 ≈ 4,840).
 16. *1.4 B4 (a) shares a shape with Cummings ch. 8 (minor).* Applied: (3x − y, x + 2y) = (a, b), with x = (2a + b)/7 and y = (3b − a)/7 checked both ways.
 
+
+*Deviation (S3, 2026-10-25):* S4 found no mechanical failures beyond the spelling "labelled" (now "labeled"). Ledger init 1/2 gave no 'no longer in the source' entries for def-divides/def-prime. check_structure counts the whole file: 01 under 5,000, 02-07 above (6.4k-8.1k including exercises); main line to `## Exercises` is 2,766 / 4,662 / 4,665 / 4,267 / 4,887 / 4,620 / 4,729. Unrecorded promises rose 22 to 41, mostly pointers in the new index.

@@ -61,7 +61,7 @@ We check the clauses of @def-function for \( G_{n+1} \) on \( \{0, \dots, n + 1\
 
 It is a partial solution up to \( n + 1 \). Its value at \( 0 \) is \( f_n(0) = a \). Let \( k \in \nN \) with \( k + 1 \le n + 1 \), so \( k \le n \). If \( k < n \), then \( k + 1 \le n \) by @lem-naturals-arithmetic (e), and \( f_{n+1}(k + 1) = f_n(k + 1) = g(k, f_n(k)) = g(k, f_{n+1}(k)) \), because \( f_n \) is a partial solution. If \( k = n \), then \( f_{n+1}(n + 1) = g(n, f_n(n)) = g(n, f_{n+1}(n)) \) by the choice of the added pair.
 
-It is the only one. Let \( h \) be a partial solution up to \( n + 1 \). Its restriction \( h|_{\{0, \dots, n\}} \) (Section 1.4) is a partial solution up to \( n \), because the conditions on it are among the conditions on \( h \). By the induction hypothesis it is \( f_n \). So \( h(k) = f_n(k) = f_{n+1}(k) \) for \( k \le n \), and
+It is the only one. Let \( h \) be a partial solution up to \( n + 1 \). Its restriction \( h|_{\{0, \dots, n\}} \) (Section 1.5) is a partial solution up to \( n \), because the conditions on it are among the conditions on \( h \). By the induction hypothesis it is \( f_n \). So \( h(k) = f_n(k) = f_{n+1}(k) \) for \( k \le n \), and
 \[
 h(n + 1) = g\bigl(n, h(n)\bigr) = g\bigl(n, f_n(n)\bigr) = f_{n+1}(n + 1) .
 \]
@@ -93,12 +93,12 @@ where the middle equation holds because \( f_{n+1} \) is a partial solution. Thi
 The starting value was used in both halves: Step 1 needs \( f(0) = f'(0) \) as its base case, and Step 2 needs it to fix the first partial solution. The set \( \sS \) is cut out of a power set by a condition, so no family \( n \mapsto f_n \) had to be formed before the union was taken. No choice is made anywhere: at every stage the claim leaves exactly one candidate. From now on, a definition of the form "\( f(0) \coloneqq a \), \( f(n + 1) \coloneqq g(n, f(n)) \)" is legitimate whenever \( a \in X \) and \( g \) is a function \( \nN \times X \to X \), and we say that \( f \) is **defined by recursion**.
 
 ::: {.remark}
-Because the rule may depend on \( n \), the theorem also covers constructions in which the step uses outside data indexed by \( n \). *Analysis on the Real Line*, Chapter 1 builds closed intervals \( I_{n+1} \) from \( I_n \) and the \( (n{+}1) \)-st number of a given list in exactly this way, with no choice principle involved. The values may be sets as well as numbers. With \( X = \powerset{\nN} \), \( A_0 \coloneqq \nN \) and \( A_{n+1} \coloneqq A_n \setminus \{n\} \) define a sequence of sets of the kind Section 1.2 promised, and an induction that follows the same two clauses shows \( A_n = \{ k \in \nN : k \ge n \} \): the base is @lem-naturals-arithmetic (a), and the step removes \( n \) from \( \{ k : k \ge n \} \), leaving \( \{ k : k > n \} = \{ k : k \ge n + 1 \} \) by @lem-naturals-arithmetic (e).
+Because the rule may depend on \( n \), the theorem also covers constructions in which the step uses outside data indexed by \( n \). *Analysis on the Real Line*, Chapter 1 builds closed intervals \( I_{n+1} \) from \( I_n \) and the \( (n{+}1) \)-st number of a given list in exactly this way, with no choice principle involved. The values may be sets as well as numbers. With \( X = \powerset{\nN} \), \( A_0 \coloneqq \nN \) and \( A_{n+1} \coloneqq A_n \setminus \{n\} \) define a sequence of sets of the kind Section 1.3 promised, and an induction that follows the same two clauses shows \( A_n = \{ k \in \nN : k \ge n \} \): the base is @lem-naturals-arithmetic (a), and the step removes \( n \) from \( \{ k : k \ge n \} \), leaving \( \{ k : k > n \} = \{ k : k \ge n + 1 \} \) by @lem-naturals-arithmetic (e).
 :::
 
 ## Starting elsewhere, looking two steps back
 
-Two variants come up constantly. Sequences are often indexed from \( 1 \), as in Section 1.4, and some recursions use the two previous values. Both reduce to the theorem.
+Two variants come up constantly. Sequences are often indexed from \( 1 \), as in Section 1.5, and some recursions use the two previous values. Both reduce to the theorem.
 
 ::: {#cor-recursion-from-base}
 [Recursion from a Base]

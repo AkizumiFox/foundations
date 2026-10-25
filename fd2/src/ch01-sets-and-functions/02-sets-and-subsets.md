@@ -1,6 +1,6 @@
 # Sets, Subsets and Russell's Paradox
 
-*Logic and Proof*, Chapters 1 to 8 built the grammar of mathematical statements: the connectives, the quantifiers, and the prose that carries their rules. The statements themselves have so far been about numbers, and occasionally about "collections" taken in their everyday sense. Analysis talks about collections all the time: the set of upper bounds of a set of numbers, the set of points where a function is positive, the set of all formulas. This section says what a set is allowed to be, what it means for one set to lie inside another, and how sets are described. One new notion carries the weight, the **subset**; the rest is the vocabulary it needs.
+Section 1.1 proved statements about integers straight from their definitions. Analysis needs the same for collections, and it talks about collections all the time: the set of upper bounds of a set of numbers, the set of points where a function is positive, the set of all formulas. This section says what a set is allowed to be, what it means for one set to lie inside another, and how sets are described. One new notion carries the weight, the **subset**; the rest is the vocabulary it needs.
 
 We begin with the simplest possible idea of a set, and we will see it fail.
 
@@ -50,7 +50,7 @@ Sets with finitely many elements can be written by **listing** their elements be
 - **Repetition does not matter.** \( \{1, 1, 2\} = \{1, 2\} \). An object \( x \) belongs to the left side exactly when \( x = 1 \) or \( x = 1 \) or \( x = 2 \), and to the right side exactly when \( x = 1 \) or \( x = 2 \); the two conditions are equivalent, since "\( x = 1 \) or \( x = 1 \)" says no more than "\( x = 1 \)".
 - **Order does not matter.** \( \{1, 2\} = \{2, 1\} \). Here the two conditions are "\( x = 1 \) or \( x = 2 \)" and "\( x = 2 \) or \( x = 1 \)", which are equivalent because \( \vee \) commutes (@fd1:exm-disjunction-first-derivations).
 
-Order and repetition are exactly what a list has and a set does not. When order matters we will need a different object, the ordered pair of Section 1.3.
+Order and repetition are exactly what a list has and a set does not. When order matters we will need a different object, the ordered pair of Section 1.4.
 
 A set with one element, \( \{a\} \), is a **singleton**. A singleton and its element are different things: \( \{1\} \) is a set, and \( 1 \) is a number, so \( 1 \ne \{1\} \) by our convention. For sets the difference is just as real. The set \( \{\nN\} \) has exactly one element, namely \( \nN \), while \( \nN \) has infinitely many; so they differ, by extensionality, as \( 2 \in \nN \) and \( 2 \notin \{\nN\} \).
 
@@ -84,18 +84,36 @@ We also say that \( A \) is **contained in** \( B \), or that \( B \) **contains
 
 In words, clause by clause. The quantifier \( \forall x \) ranges over every object whatsoever, not over the elements of \( A \) only; the implication \( x \in A \to x \in B \) restricts attention to the elements of \( A \), and says nothing about objects outside \( A \). With the bounded notation of @fd1:def-bounded-quantifier, the same condition is \( \forall x \in A\ (x \in B) \): "for every \( x \) in \( A \), \( x \) is in \( B \)". The symbol \( \subseteq \) allows equality, as \( \le \) does for numbers; the symbol \( \subsetneq \) excludes it, as \( < \) does. This book never writes \( \subset \), which some books use for \( \subseteq \) and others for \( \subsetneq \).
 
-The definition is a \( \forall \) around an \( \to \), and its rules are the rules of those two symbols. To **prove** \( A \subseteq B \), we prove the \( \forall \) statement: by the rule \( \rulename{\forall I} \) of *Logic and Proof*, Chapter 5 we open a box for an arbitrary \( x \) (in prose, "let \( x \) be arbitrary"), and inside it we prove \( x \in A \to x \in B \) by \( \rulename{{\to}I} \) (@fd1:def-rules-implication): assume \( x \in A \) and reach \( x \in B \). The two openings are always written together, as "let \( x \in A \)". To **use** \( A \subseteq B \), we apply \( \rulename{\forall E} \) (*Logic and Proof*, Chapter 5) at the element we care about, and then \( \rulename{{\to}E} \): from \( A \subseteq B \) and \( a \in A \), conclude \( a \in B \). This gives the chapter's first named move.
+The definition is a \( \forall \) around an \( \to \), and its rules are the rules of those two symbols. To **prove** \( A \subseteq B \), we prove the \( \forall \) statement: by the rule \( \rulename{\forall I} \) of *Logic and Proof*, Chapter 5 we open a box for an arbitrary \( x \) (in prose, "let \( x \) be arbitrary"), and inside it we prove \( x \in A \to x \in B \) by \( \rulename{{\to}I} \) (@fd1:def-rules-implication): assume \( x \in A \) and reach \( x \in B \). The two openings are always written together, as "let \( x \in A \)". To **use** \( A \subseteq B \), we apply \( \rulename{\forall E} \) (*Logic and Proof*, Chapter 5) at the element we care about, and then \( \rulename{{\to}E} \): from \( A \subseteq B \) and \( a \in A \), conclude \( a \in B \). This gives the first named move about sets.
 
-*To show \( A \subseteq B \), take an arbitrary element of \( A \) and show that it lies in \( B \).*
+We call this move **element-chasing**:
 
-We call this **element-chasing**: we follow one element from \( A \) to \( B \), unwinding the definition of \( A \) to find out what we know about it, and rewinding the definition of \( B \) to see what we must show. Here is the move three times: two ordinary inclusions, then the degenerate one. In each, the first sentence is the pair of openings, \( \rulename{\forall I} \) and \( \rulename{{\to}I} \), and the rest reaches \( x \in B \).
+::: {#exm-method-element-chasing}
+[Method: element-chasing]
+
+**Template.** Begin "Let \( x \in A \)." Unwind the definition of \( A \) to see what is known about \( x \). Rewind the definition of \( B \) to see what must be shown, and reach it. End "Hence \( x \in B \); since \( x \) was arbitrary, \( A \subseteq B \)."
+
+**When to use it.** The goal is an inclusion \( A \subseteq B \), or any statement of the shape \( \forall x\, (x \in A \to \dots) \).
+
+**The usual failure.** Checking some elements of \( A \) and stopping, entry (N1) of @fd1:exm-not-allowed-catalogue (the second warning below shows it). Starting from \( x \in B \) instead, which proves the converse inclusion, entry (N5). Choosing a particular \( x \), such as \( x = 0 \), where an arbitrary one is needed.
+:::
+
+::: {.check}
+Write the first and the last sentence of an element-chasing proof that \( \{ n \in \nZ : 4 \mid n \} \subseteq \{ n \in \nZ : 2 \mid n \} \). Then fill in the middle.
+:::
+
+::: {.solution}
+First: "Let \( n \in \nZ \) with \( 4 \mid n \)." Last: "Since \( n \) was arbitrary, the inclusion holds." Middle: by @def-divides, \( n = 4k \) for some \( k \in \nZ \). Then \( n = 2(2k) \) with \( 2k \in \nZ \), so \( 2 \mid n \). (Or cite @prp-divides-transitive with \( 2 \mid 4 \).)
+:::
+
+Here is the move three times: two ordinary inclusions, then the degenerate one. In each, the first sentence is the pair of openings, \( \rulename{\forall I} \) and \( \rulename{{\to}I} \), and the rest reaches \( x \in B \).
 
 ::: {#exm-subset-first-examples}
 [Three inclusions]
 
 ::: {.enumerate options="label=(\alph*)"}
 1. Show that \( [1, 2] \subseteq [0, 3] \).
-2. Let \( S \) be the set of integer multiples of \( 6 \) and \( T \) the set of integer multiples of \( 3 \), as above. Show that \( S \subseteq T \). Here \( d \mid n \), "\( d \) divides \( n \)", means that \( n = dk \) for some integer \( k \), so \( S \) consists of the integers \( x \) with \( 6 \mid x \), and \( T \) of those with \( 3 \mid x \).
+2. Let \( S \) be the set of integer multiples of \( 6 \) and \( T \) the set of integer multiples of \( 3 \), as above. Show that \( S \subseteq T \). By @def-divides, \( S \) consists of the integers \( x \) with \( 6 \mid x \), and \( T \) of those with \( 3 \mid x \).
 3. Let \( A \) be any set. Show that \( A \subseteq A \).
 :::
 :::
@@ -124,7 +142,9 @@ A \not\subseteq B \quad\text{means}\quad \exists x\, (x \in A \wedge x \notin B)
 **Element or subset?** The symbols \( \in \) and \( \subseteq \) relate different things. \( x \in A \) says that \( x \) is one of the objects collected in \( A \); \( B \subseteq A \) says that every object collected in \( B \) is also collected in \( A \). For example \( 1 \in \{1\} \) and \( \{1\} \subseteq \{1\} \), but \( \{1\} \notin \{1\} \): the only element of \( \{1\} \) is the number \( 1 \), which is not the set \( \{1\} \). And "\( 1 \subseteq \{1\} \)" is not a comparison worth making: \( 1 \) is a number, not a set, so the definition of \( \subseteq \) does not apply to it. Before writing either symbol, ask whether the thing on the left is **one of the objects** in the set on the right, or a **collection** of such objects.
 :::
 
+::: {.second-reading title="An element and a subset at once"}
 Sometimes a set is both an element and a subset of the same set. In \( C = \{1, \{1\}\} \), the set \( \{1\} \) is an element (it is listed) and also a subset (its only element, \( 1 \), is listed too). Change one entry: in \( \{1, 2\} \), the set \( \{1\} \) is still a subset, but it is no longer an element, since the two elements are the numbers \( 1 \) and \( 2 \). Whether \( \{1\} \in D \) and whether \( \{1\} \subseteq D \) are two separate questions, and each is answered by looking at the elements of \( D \).
+:::
 
 ::: {.warning}
 **Checking some elements proves nothing about all of them.** To prove \( A \subseteq B \), checking that a few elements of \( A \) lie in \( B \) is not enough, however many are checked. "The integers \( 0, 12, 24 \) and \( -12 \) are multiples of \( 4 \) and of \( 3 \)" does not prove that the set of multiples of \( 4 \) is a subset of the set of multiples of \( 3 \), and that inclusion is false (\( 4 \) is a witness). The error is entry (N1) of the catalogue of *Logic and Proof*, Chapter 8: verifying instances and concluding a \( \forall \). The rule \( \rulename{\forall I} \) needs an **arbitrary** element, one about which nothing is known except that it lies in \( A \).
@@ -152,13 +172,27 @@ Unwind all three definitions. \( A = B \) is \( \forall x\, (x \in A \leftrighta
 
 The name of the proposition in words is **antisymmetry** of \( \subseteq \): as for \( \le \) on numbers, \( A \subseteq B \) and \( B \subseteq A \) together force equality. It licenses the move that proves almost every set identity in this chapter.
 
-*To show \( A = B \), show \( A \subseteq B \) and \( B \subseteq A \): two element-chases, one in each direction.*
+::: {#exm-method-double-inclusion}
+[Method: two inclusions]
 
-A proof of this kind is written in two paragraphs, labeled \( (\subseteq) \) and \( (\supseteq) \), exactly as a proof of an "if and only if" is written in two paragraphs labeled \( (\Rightarrow) \) and \( (\Leftarrow) \) (*Logic and Proof*, Section 2.4). The two paragraphs are two separate boxes: neither may use the other's assumption.
+**Template.** To prove \( A = B \), write two paragraphs, labeled \( (\subseteq) \) and \( (\supseteq) \), each an element-chase (@exm-method-element-chasing). The two paragraphs are separate boxes: neither uses the other's assumption. To compute a set, first guess it from small cases, then prove the guess this way.
 
-### Transitivity, rule by rule
+**When to use it.** A set equality that no known law gives at once. For "\( S = \emptyset \)", only \( (\subseteq) \) needs work, since \( \emptyset \subseteq S \) always holds.
 
-The second payoff is that inclusions chain, as \( \le \) does. Its proof is the first element-chase of the chapter written with every rule named, and we give it at two levels: first as a derivation, then as prose in which each sentence carries its rule in brackets. (These are levels 0 and 2 of *Logic and Proof*, Chapter 8; from here on the book writes level-3 prose; after one more fully tagged proof, in Section 1.2, brackets appear only on the step a proof is about.)
+**The usual failure.** Proving one inclusion only, or using the assumption of the \( (\subseteq) \) paragraph inside the \( (\supseteq) \) paragraph. *Logic and Proof* wrote such a proof in prose (@fd1:exm-rhetoric-double-inclusion).
+:::
+
+::: {.check}
+To prove \( \{ x \in \nR : x^2 = 1 \} = \{-1, 1\} \), which inclusion needs algebra, and which only a check?
+:::
+
+::: {.solution}
+\( (\subseteq) \) needs algebra: \( x^2 = 1 \) gives \( (x - 1)(x + 1) = 0 \), so \( x = 1 \) or \( x = -1 \). \( (\supseteq) \) checks two cases: \( 1^2 = 1 \) and \( (-1)^2 = 1 \).
+:::
+
+### Inclusions chain
+
+The second payoff is that inclusions chain, as \( \le \) does.
 
 ::: {#prp-subset-transitive}
 [Inclusion Is Transitive]
@@ -167,10 +201,26 @@ For all sets \( A \), \( B \), and \( C \), if \( A \subseteq B \) and \( B \sub
 :::
 
 ::: {.idea}
-The goal \( A \subseteq C \) is a \( \forall \) around an \( \to \), so the goal-directed moves open two boxes: a box for an arbitrary \( x_0 \), and inside it a box on \( x_0 \in A \). The new goal is \( x_0 \in C \). Each hypothesis is a \( \forall \) around an \( \to \) too, and we use each at \( x_0 \): the first carries \( x_0 \) from \( A \) into \( B \), the second from \( B \) into \( C \).
+[Scratch work]
+
+The goal \( A \subseteq C \) is a \( \forall \) around an \( \to \), so the method of @exm-method-element-chasing applies: let \( x \in A \), and we must reach \( x \in C \). Each hypothesis is a \( \forall \) around an \( \to \) too, and we use each at the same \( x \). The table records the search, one move per row.
+
+| Givens | Goal |
+|---|---|
+| \( A \subseteq B \), \( B \subseteq C \) | \( A \subseteq C \) |
+| \( A \subseteq B \), \( B \subseteq C \), \( x \in A \) (\( x \) arbitrary) | \( x \in C \) |
+| …, \( x \in B \) (by \( A \subseteq B \) at \( x \)) | \( x \in C \): gap closed by \( B \subseteq C \) at \( x \) |
+
+The first hypothesis carries \( x \) from \( A \) into \( B \), the second from \( B \) into \( C \), and nothing else is needed.
 :::
 
 ::: {.proof}
+Let \( x \in A \). Since \( A \subseteq B \), \( x \in B \); since \( B \subseteq C \), \( x \in C \). Since \( x \) was arbitrary, \( A \subseteq C \).
+:::
+
+::: {.second-reading title="Transitivity, rule by rule"}
+The proof above is level-3 prose. Here is the same proof at two lower levels: first as a derivation, then as prose in which each sentence carries its rule in brackets. (These are levels 0 and 2 of *Logic and Proof*, Chapter 8; from here on the book writes level-3 prose; after one more fully tagged proof, in Section 1.3, brackets appear only on the step a proof is about.)
+
 Unwound by @def-subset, the hypotheses are \( \forall x\, (x \in A \to x \in B) \) and \( \forall x\, (x \in B \to x \in C) \), and the goal is \( \forall x\, (x \in A \to x \in C) \). The following is a derivation of the goal from the hypotheses. The outer box, flagged \( x_0 \), is the box of \( \rulename{\forall I} \) (*Logic and Proof*, Chapter 5); it has no assumption line.
 
 ```{=latex}
@@ -198,9 +248,9 @@ The same proof in prose, with each step's rule in brackets:
 > Suppose \( A \subseteq B \) and \( B \subseteq C \). Let \( x \) be arbitrary [\( \rulename{\forall I} \), opening], and suppose \( x \in A \) [\( \rulename{{\to}I} \), opening]. Since \( A \subseteq B \), in particular \( x \in A \to x \in B \) [\( \rulename{\forall E} \)], so \( x \in B \) [\( \rulename{{\to}E} \)]. Since \( B \subseteq C \), in particular \( x \in B \to x \in C \) [\( \rulename{\forall E} \)], so \( x \in C \) [\( \rulename{{\to}E} \)]. Hence \( x \in A \to x \in C \) [\( \rulename{{\to}I} \), closing], and since \( x \) was arbitrary, \( A \subseteq C \) [\( \rulename{\forall I} \), closing].
 
 This proves the proposition.
-:::
 
 At level 3, the prose a mathematician writes, the same proof is one line: *let \( x \in A \); then \( x \in B \) since \( A \subseteq B \), and \( x \in C \) since \( B \subseteq C \).* The silent steps are those *Logic and Proof*, Chapter 8's convention allows: the two instances of \( \rulename{\forall E} \) at the obvious term \( x \), and the two closing sentences. What may never be silent is the opening "let \( x \in A \)", and the two citations, "since \( A \subseteq B \)" and "since \( B \subseteq C \)".
+:::
 
 ::: {.check}
 Let \( A = \{1, 2\} \), \( B = \{1, 2, 3\} \), and \( C = \{1, 3\} \). Which of the six statements \( A \subseteq B \), \( B \subseteq A \), \( A \subseteq C \), \( C \subseteq A \), \( B \subseteq C \), \( C \subseteq B \) are true? For each false one, name a witness.
@@ -227,7 +277,7 @@ y \in \{ x \in A : P(x) \} \iff y \in A \text{ and } P(y).
 \]
 :::
 
-The notation is read "the set of \( x \) in \( A \) such that \( P(x) \)"; the colon is read "such that" (the book never writes a bar here, so that a bar stays free for divisibility and absolute value). The letter \( x \) is a bound variable, like the \( x \) of \( \forall x \): \( \{ x \in A : P(x) \} \) and \( \{ t \in A : P(t) \} \) are the same set. The set \( A \) is the **ambient set** of the description, and every set-builder in this book has one, named or fixed by the context; a set written \( \{ f(a) : a \in A \} \) is the image of \( A \) under \( f \) (Section 1.6), and any other set the book defines is shown to exist by (W1)–(W6) where it is introduced. By @def-set-equality, the equivalence in the definition determines the set completely, so "the" set is justified.
+The notation is read "the set of \( x \) in \( A \) such that \( P(x) \)"; the colon is read "such that" (the book never writes a bar here, so that a bar stays free for divisibility and absolute value). The letter \( x \) is a bound variable, like the \( x \) of \( \forall x \): \( \{ x \in A : P(x) \} \) and \( \{ t \in A : P(t) \} \) are the same set. The set \( A \) is the **ambient set** of the description, and every set-builder in this book has one, named or fixed by the context; a set written \( \{ f(a) : a \in A \} \) is the image of \( A \) under \( f \) (Section 1.7), and any other set the book defines is shown to exist by (W1)–(W6) where it is introduced. By @def-set-equality, the equivalence in the definition determines the set completely, so "the" set is justified.
 
 In the language of the rules: to show that \( y \) belongs to \( \{ x \in A : P(x) \} \), show \( y \in A \) and \( P(y) \); from \( y \in \{ x \in A : P(x) \} \), conclude both. Each is one \( \rulename{{\leftrightarrow}E} \) (@fd1:def-rules-biconditional) with the definition, followed or preceded by \( \rulename{\wedge I} \) or \( \rulename{\wedge E} \) (@fd1:def-rules-conjunction); at level 3 all of these are silent, and a proof simply writes "by definition" or nothing at all.
 
@@ -236,17 +286,21 @@ Specification is one of a short list of **working rules** that say which sets ex
 ::: {.enumerate options="label=(W\arabic*)"}
 1. **Specification.** For a set \( A \) and a property \( P \), \( \{ x \in A : P(x) \} \) is a set (@def-set-builder).
 2. **Listing.** Any finitely many objects \( a_1, \dots, a_n \) form a set \( \{ a_1, \dots, a_n \} \), whose elements are exactly \( a_1, \dots, a_n \).
-3. **Unions.** For sets \( A \) and \( B \), there is a set whose elements are exactly the objects lying in \( A \) or in \( B \); more generally, for a family of sets indexed by a set, there is a set whose elements are exactly the objects lying in at least one member of the family (Section 1.2).
-4. **Power sets.** For a set \( X \), the subsets of \( X \) form a set (Section 1.2).
-5. **Products.** For sets \( A \) and \( B \), the ordered pairs \( (a, b) \) with \( a \in A \) and \( b \in B \) form a set; more generally, for a set \( X \) and \( n \in \nN \) with \( n \ge 2 \), the \( n \)-tuples \( (x_1, \dots, x_n) \) with every \( x_k \in X \) form a set (Section 1.3).
+3. **Unions.** For sets \( A \) and \( B \), there is a set whose elements are exactly the objects lying in \( A \) or in \( B \); more generally, for a family of sets indexed by a set, there is a set whose elements are exactly the objects lying in at least one member of the family (Section 1.3).
+4. **Power sets.** For a set \( X \), the subsets of \( X \) form a set (Section 1.3).
+5. **Products.** For sets \( A \) and \( B \), the ordered pairs \( (a, b) \) with \( a \in A \) and \( b \in B \) form a set; more generally, for a set \( X \) and \( n \in \nN \) with \( n \ge 2 \), the \( n \)-tuples \( (x_1, \dots, x_n) \) with every \( x_k \in X \) form a set (Section 1.4).
 6. **Numbers.** \( \nN \), \( \nZ \), \( \nQ \), and \( \nR \) are sets.
 :::
 
-These rules are enough for everything the book does with sets until Chapter 3, which adds one more: a principle for making infinitely many choices at once (Section 1.5 shows where it is first needed). They are not axioms in the formal sense, and we do not try to derive them from fewer principles; *Number Systems: From \(\nN\) to \(\nR\)*, Chapter 1 states the axioms of set theory behind them and shows how (W1)–(W5) and the set \( \nN \) follow from them, (W3) only for families of subsets of one given set (a family with no such ambient set needs a further axiom, which *Axiomatic Set Theory* adds), and *Number Systems: From \(\nN\) to \(\nR\)*, Chapters 2 and 5 build \( \nZ \), \( \nQ \) and \( \nR \), which completes (W6). What matters here is what is **missing** from the list: there is no rule that collects all objects with a property, without an ambient set. The end of this section shows that such a rule would be contradictory.
+What matters here is what is **missing** from the list: there is no rule that collects all objects with a property, without an ambient set. The end of this section shows that such a rule would be contradictory.
+
+::: {.second-reading title="Where the working rules come from"}
+These rules are enough for everything the book does with sets until Chapter 3, which adds one more: a principle for making infinitely many choices at once (Section 1.6 shows where it is first needed). They are not axioms in the formal sense, and we do not try to derive them from fewer principles; *Number Systems: From \(\nN\) to \(\nR\)*, Chapter 1 states the axioms of set theory behind them and shows how (W1)–(W5) and the set \( \nN \) follow from them, (W3) only for families of subsets of one given set (a family with no such ambient set needs a further axiom, which *Axiomatic Set Theory* adds), and *Number Systems: From \(\nN\) to \(\nR\)*, Chapters 2 and 5 build \( \nZ \), \( \nQ \) and \( \nR \), which completes (W6).
+:::
 
 ## The empty set
 
-Among all sets, one is special: the set with nothing in it. It turns up constantly: as the set of real solutions of \( x^2 = -1 \), as the intersection of two sets with nothing in common (Section 1.2), as the domain of a function with no inputs (Section 1.4). Without it, "the set of solutions" would not always name a set.
+Among all sets, one is special: the set with nothing in it. It turns up constantly: as the set of real solutions of \( x^2 = -1 \), as the intersection of two sets with nothing in common (Section 1.3), as the domain of a function with no inputs (Section 1.5). Without it, "the set of solutions" would not always name a set.
 
 ::: {#def-empty-set}
 [Empty Set]
@@ -300,7 +354,7 @@ The next worked example shows how a set-builder is computed: we guess the answer
 :::
 
 ::: {.solution}
-(a) Write \( S \) for the left side. Squaring the integers near \( 0 \) suggests the guess: \( 0^2 = 0 \), \( (\pm 1)^2 = 1 \), \( (\pm 2)^2 = 4 \) are below \( 5 \), and \( (\pm 3)^2 = 9 \) is not.
+(a) Write \( S \) for the left side. *Scratch:* the squares of \( 0 \), \( \pm 1 \), \( \pm 2 \) are below \( 5 \) and \( (\pm 3)^2 = 9 \) is not, so guess \( S = \{-2, \dots, 2\} \). Then prove the guess by the method of @exm-method-double-inclusion; \( (\subseteq) \) is the inclusion that needs an argument.
 
 \( (\subseteq) \) Let \( x \in S \). Then \( x \in \nZ \) and \( x^2 < 5 \), by @def-set-builder. We claim \( \abs{x} \le 2 \). Otherwise \( \abs{x} \ge 3 \), since \( x \) is an integer, and then \( x^2 = \abs{x}^2 \ge 9 > 5 \), which contradicts \( x^2 < 5 \). So \( \abs{x} \le 2 \), and the integers with \( \abs{x} \le 2 \) are \( -2, -1, 0, 1, 2 \). Hence \( x \in \{-2, -1, 0, 1, 2\} \).
 
@@ -315,7 +369,9 @@ By @prp-subset-antisymmetric, \( S = \{-2, -1, 0, 1, 2\} \).
 By @prp-subset-antisymmetric, the set is \( \emptyset \). A set-builder with an impossible property is a legitimate description of \( \emptyset \).
 :::
 
-Two remarks on the example. In (a), the \( (\supseteq) \) direction is a proof by cases over a finite list, which is legitimate: the five cases exhaust the set, because the list says exactly which elements it has. That is quite different from the error of the second warning above, where finitely many cases were checked for an infinite set. In (b), the \( (\supseteq) \) direction is free, and only \( (\subseteq) \) needs an argument. For "\( S = \emptyset \)" this is always so: the claim amounts to "\( S \) has no elements".
+::: {.second-reading title="A finite list of cases is a proof"}
+Two remarks on the example. In (a), the \( (\supseteq) \) direction is a proof by cases over a finite list, which is legitimate (the method of @exm-method-cases): the five cases exhaust the set, because the list says exactly which elements it has. That is quite different from the error of the second warning above, where finitely many cases were checked for an infinite set. In (b), the \( (\supseteq) \) direction is free, and only \( (\subseteq) \) needs an argument. For "\( S = \emptyset \)" this is always so: the claim amounts to "\( S \) has no elements".
+:::
 
 ## Russell's paradox as a theorem
 
@@ -349,6 +405,7 @@ Suppose \( R \in A \), for \( \rulename{\neg I} \). We first show \( R \notin R 
 For the second claim, suppose \( U \) were a set of which every set is an element. By the first claim with \( A = U \), the set \( R_U \) is not an element of \( U \); but \( R_U \) is a set, so it is an element of \( U \). This contradiction shows that no such \( U \) exists.
 :::
 
+::: {.second-reading title="Russell's theorem as a derivation"}
 Here is the first part of the proof as a derivation, with \( (\ast) \) as its premise, written as the universal statement it is, and \( R \) for \( R_A \):
 
 ```{=latex}
@@ -375,8 +432,11 @@ $\begin{nd}
 ```
 
 Every rule in it is one of \( \rulename{\forall E} \), \( \rulename{{\leftrightarrow}E} \), \( \rulename{\wedge E} \), \( \rulename{\wedge I} \), \( \rulename{\neg E} \), and \( \rulename{\neg I} \). There is **no** \( \rulename{RAA} \), and no excluded middle: the inner box (lines 4–7) refutes one answer outright instead of splitting into two answers. This is worth noticing. The paradox is not an artifact of classical logic, and cannot be escaped by giving up a classical rule; it is a genuine contradiction in the naive rule, and the only repair is to change which sets exist.
+:::
 
 **What the theorem says about sets.** Read with \( A \) arbitrary, the theorem says that **no set contains everything**: for every set \( A \) we have produced a set, \( R_A \), outside it. The naive rule "any property defines a set" is exactly specification **without** the phrase "\( x \in A \)", and the theorem shows that the phrase cannot be dropped: with \( A \) ranging over "everything", \( R_A \) would be the paradoxical \( R \). This is why every set-builder in this book has an ambient set, and why (W1)–(W6) contain no "set of all sets". When we want "all objects with a property", we first say where to look.
+
+**Russell's theorem: contradiction about sets.** @thm-russell proves a negative statement, \( R_A \notin A \), by the shape of the "not both" half of @thm-even-or-odd: suppose the statement to be refuted, \( R_A \in A \), and derive a contradiction; \( \rulename{\neg I} \) (@fd1:def-rules-negation) then gives its negation, which is the goal. So the proof needs neither \( \rulename{RAA} \) nor excluded middle, as the derivation in the fold after the proof shows.
 
 The argument has a shape that will return: a set built from \( A \) so that it disagrees with each candidate on the candidate itself. Chapter 3 proves by the same shape of argument that no function from a set \( X \) to the set of its subsets reaches every subset.
 
@@ -462,6 +522,32 @@ For each pair, determine whether the two sets are equal. Justify your answer: pr
 (d) Not equal. The first set is \( \{-1, 0, 1\} \): an integer with \( \abs{x} \ge 2 \) has \( x^2 \ge 4 \), and \( (-1)^2 = 1 \), \( 0^2 = 0 \), \( 1^2 = 1 \) are below \( 2 \). The second set is \( \{0, 1\} \), since \( \nN \) starts at \( 0 \). The witness \( -1 \) lies in the first set and not in the second (\( -1 \notin \nN \)).
 :::
 
+::: {#exr-sets-and-subsets-b4}
+[B4: Prove or disprove]
+
+Prove each true statement, by two inclusions where it is an equality, and refute each false one with a concrete counterexample.
+
+::: {.enumerate options="label=(\alph*)"}
+1. \( \{ n \in \nZ : n = 2k + 1 \text{ for some } k \in \nZ \} = \{ n \in \nZ : n = 2k - 1 \text{ for some } k \in \nZ \} \).
+2. \( \{ n \in \nZ : 2 \mid n \text{ and } 4 \mid n \} = \{ n \in \nZ : 8 \mid n \} \).
+3. \( \{ x \in \nR : x^3 = x \} = \{-1, 0, 1\} \).
+4. For all sets \( A \), \( B \), \( C \): if \( A \subseteq B \) and \( B \not\subseteq C \), then \( A \not\subseteq C \).
+5. For all sets \( A \), \( B \), \( C \): if \( A \subseteq B \), \( B \subseteq C \) and \( C \subseteq A \), then \( A = C \).
+:::
+:::
+
+::: {.solution}
+(a) **True.** \( (\subseteq) \) Let \( n = 2k + 1 \) with \( k \in \nZ \). Then \( n = 2(k + 1) - 1 \), and \( k + 1 \in \nZ \), so \( n \) lies in the right set. \( (\supseteq) \) Let \( n = 2k - 1 \) with \( k \in \nZ \). Then \( n = 2(k - 1) + 1 \), and \( k - 1 \in \nZ \), so \( n \) lies in the left set. Each direction re-indexes the witness; both sets are the odd integers.
+
+(b) **False.** The integer \( 4 \) lies in the left set, since \( 4 = 2 \cdot 2 \) and \( 4 = 4 \cdot 1 \). It does not lie in the right set: \( 4 = 8k \) has no integer solution \( k \), because \( k \ge 1 \) gives \( 8k \ge 8 \) and \( k \le 0 \) gives \( 8k \le 0 \). (The left set is the set of multiples of \( 4 \).)
+
+(c) **True.** For real \( x \), \( x^3 - x = x(x - 1)(x + 1) \). \( (\subseteq) \) If \( x^3 = x \), this product is \( 0 \), so one factor is \( 0 \), and \( x \in \{0, 1, -1\} \). \( (\supseteq) \) \( 0^3 = 0 \), \( 1^3 = 1 \) and \( (-1)^3 = -1 \).
+
+(d) **False.** Take \( A = C = \emptyset \) and \( B = \{1\} \). Then \( A \subseteq B \), and \( B \not\subseteq C \) with the witness \( 1 \); but \( A \subseteq C \), since \( \emptyset \subseteq \emptyset \).
+
+(e) **True.** From \( A \subseteq B \) and \( B \subseteq C \), @prp-subset-transitive gives \( A \subseteq C \). Together with the hypothesis \( C \subseteq A \), @prp-subset-antisymmetric gives \( A = C \).
+:::
+
 ### C. Going deeper
 
 ::: {#exr-sets-and-subsets-c1}
@@ -530,18 +616,23 @@ def-subset (claim): negation of A subset B is "exists x (x in A and x notin B)" 
 def-subset (claim): the warning's catalogue entry (N1) | F1.5 (promised; prose pointer "the catalogue of F1.5")
 prp-subset-transitive (proof): forall-I with a flagged box, forall-E | F1.4 (promised; prose pointer "F1.4"; the derivation is checked with F1.4's rules)
 prp-subset-transitive (claim): levels 0, 2, 3 and the silent-step convention | F1.5 (promised; prose pointer "F1.5")
-prp-subset-transitive (claim): F2.1 §02 tags one more proof rule by rule | F2.1 §02 (prose pointer; nothing depends on it)
+prp-subset-transitive (claim): F2.1 §03 tags one more proof rule by rule | F2.1 §03 (prose pointer, in the fold; nothing depends on it)
 prp-subset-antisymmetric (proof): "let x be arbitrary ... since x was arbitrary" is forall-I | F1.4 (promised; prose pointer)
 exm-set-builder-small (example): an integer with |x| >= 3 has x^2 >= 9; the integers with |x| <= 2 are -2..2; x^2 >= 0 for real x | school fact (F1-F2 convention); proved in AN1.1 (order) and F2.2 (integers)
 thm-russell (proof): forall-E on the specification premise | F1.4 (promised; prose pointer); the derivation is checked with F1.4's rules
 thm-russell (claim): F2.3's "no map X -> P(X) is onto" has the same shape | F2.3 (prose pointer; nothing depends on it)
 def-set-builder (claim): the working rules (W1)-(W5) and N follow from axioms; Z, Q, R are built from sets | F3.1 ((W3) for families of subsets of a set only; general (W3) -> ST.1, Replacement), F3.2, F3.10 (prose pointers; nothing depends on them)
-def-set-builder (claim): F2.3 adds a principle of choice beyond (W1)-(W6); F2.1 §05 shows where it is needed | F2.3, F2.1 §05 (prose pointers; nothing in this section depends on them)
-def-set-builder (claim): a set written {f(a) : a in A} is an image | F2.1 §06 (prose pointer; nothing in this section depends on it)
+def-set-builder (claim): F2.3 adds a principle of choice beyond (W1)-(W6); F2.1 §06 shows where it is needed | F2.3, F2.1 §06 (prose pointers, in the fold; nothing in this section depends on them)
+def-set-builder (claim): a set written {f(a) : a in A} is an image | F2.1 §07 (prose pointer; nothing in this section depends on it)
 exr-sets-and-subsets-a1 (solution): quantifier negation and negated implication | F1.4 (promised; prose pointer)
 exr-sets-and-subsets-a1 (solution): integers with |n| >= 4 have n^2 >= 16 | school fact (F1-F2 convention)
 exr-sets-and-subsets-b1 (solution): x^2 - 3x + 2 = (x - 1)(x - 2); a product of reals is zero only if a factor is | school algebra (F1-F2 convention); proved in AN1.1
 exr-sets-and-subsets-b3 (solution): 1/2 is not an integer; integers with |x| >= 2 have x^2 >= 4; -1 is not in N; x = 4k gives x = 2(2k) with 2k an integer | school facts (F1-F2 convention); N = {0, 1, 2, ...} (NOTATION)
 exr-sets-and-subsets-b3 (solution): x^2 - 4 = (x - 2)(x + 2); a product of reals is zero only if a factor is | school algebra (F1-F2 convention); proved in AN1.1
 exr-sets-and-subsets-c1 (solution): A+ exists by (W2) and (W3) | working rules stated in this section
+exm-method-element-chasing (solution): (the quick check after it) n = 4k gives n = 2(2k) with 2k an integer | school fact (F1-F2 convention); proved in F2.2 (integers)
+exm-method-double-inclusion (solution): (the quick check after it) x^2 = 1 gives (x - 1)(x + 1) = 0; a product of reals is zero only if a factor is; 1^2 = (-1)^2 = 1 | school algebra (F1-F2 convention); proved in AN1.1
+thm-russell (claim): the lead-in says the "not both" half of thm-even-or-odd has the same shape (suppose, derive a contradiction, neg-I) | thm-even-or-odd (F2.1 §01, cited); def-rules-negation (cited)
+exr-sets-and-subsets-b4 (solution): k + 1 and k - 1 are integers; 4 = 8k has no integer solution (k >= 1 gives 8k >= 8, k <= 0 gives 8k <= 0) | school facts (F1-F2 convention); proved in F2.2 (integers)
+exr-sets-and-subsets-b4 (solution): x^3 - x = x(x - 1)(x + 1); a product of reals is zero only if a factor is | school algebra (F1-F2 convention); proved in AN1.1; verify/ch01/exr-sets-and-subsets-b4.py
 -->

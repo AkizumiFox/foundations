@@ -236,7 +236,7 @@ The theorem passes to products of any countable sets. Chapter 1 defines \( X^n \
 \[
 A_1 \times \dots \times A_k \coloneqq \{ x \in U^k : x = (x_1, \dots, x_k) \text{ with } x_i \in A_i \text{ for every } i \} ,
 \]
-the \( k \)-tuples whose \( i \)-th coordinate lies in \( A_i \). It is a set by (W3), (W5) and (W1) of Section 1.1. For \( k = 2 \) it is \( A_1 \times A_2 \) of @def-cartesian-product, a pair being a \( 2 \)-tuple, and if every \( A_i \) is the same set \( X \), it is \( X^k \).
+the \( k \)-tuples whose \( i \)-th coordinate lies in \( A_i \). It is a set by (W3), (W5) and (W1) of Section 1.2. For \( k = 2 \) it is \( A_1 \times A_2 \) of @def-cartesian-product, a pair being a \( 2 \)-tuple, and if every \( A_i \) is the same set \( X \), it is \( X^k \).
 
 ::: {#cor-product-countable}
 [Products of Countable Sets]
@@ -258,10 +258,10 @@ For two factors, injections \( A \to \nN \) and \( B \to \nN \) turn \( A \times
 \[
 \bigl( (a_1, \dots, a_k), a_{k+1} \bigr) \mapsto (a_1, \dots, a_{k+1})
 \]
-is a function, since a \( k \)-tuple determines its coordinates (Section 1.3), and it sends \( (A_1 \times \dots \times A_k) \times A_{k+1} \) onto \( A_1 \times \dots \times A_{k+1} \): a \( (k + 1) \)-tuple with \( x_i \in A_i \) is the image of \( ((x_1, \dots, x_k), x_{k+1}) \). By the hypothesis, \( A_1 \times \dots \times A_k \) is countable, so the domain is countable by (a), and the \( (k + 1) \)-fold product is countable by @prp-countable-image. By @thm-induction the statement holds for every \( k \ge 2 \).
+is a function, since a \( k \)-tuple determines its coordinates (Section 1.4), and it sends \( (A_1 \times \dots \times A_k) \times A_{k+1} \) onto \( A_1 \times \dots \times A_{k+1} \): a \( (k + 1) \)-tuple with \( x_i \in A_i \) is the image of \( ((x_1, \dots, x_k), x_{k+1}) \). By the hypothesis, \( A_1 \times \dots \times A_k \) is countable, so the domain is countable by (a), and the \( (k + 1) \)-fold product is countable by @prp-countable-image. By @thm-induction the statement holds for every \( k \ge 2 \).
 :::
 
-The map in the step is in fact a bijection, by the characteristic property of tuples (Section 1.3). The proof uses that property only to see that the map is well defined, and of the map it uses only that it is onto; injectivity is never needed. Tuples of different lengths are different objects, and the book has no \( 1 \)-tuples, so the corollary starts at \( k = 2 \); a single countable set needs no corollary.
+The map in the step is in fact a bijection, by the characteristic property of tuples (Section 1.4). The proof uses that property only to see that the map is well defined, and of the map it uses only that it is onto; injectivity is never needed. Tuples of different lengths are different objects, and the book has no \( 1 \)-tuples, so the corollary starts at \( k = 2 \); a single countable set needs no corollary.
 
 ::: {.check}
 Let \( L \) be the set of the \( 26 \) letters a–z. Is the set of all strings of exactly \( 5 \) letters, that is \( L^5 \), countable? Which results do you use?
@@ -374,7 +374,7 @@ The order is (ii), (v), (viii), (i), (ix), (iv), (vi). No other order is admissi
 
 Line (iii) reverses the parities. The left side \( 2^{m - m'} 3^n \) has a factor \( 2 \) because \( m - m' \ge 1 \), so it is even; the right side \( 3^{n'} \) is odd. A line asserting the opposite is false: for \( m = 1 \), \( m' = 0 \), \( n = n' = 0 \), the left side is \( 2 \) and the right side is \( 1 \).
 
-Line (vii) would end the proof at once, but it cites unique factorization into primes, which the book has neither proved nor taken as a school fact: Section 2.2 sets it aside as a fact it does not prove or use (after @def-prime), and the idea before @thm-product-countable declines to cite it. So (vii) cites a line that is not available, (N9) of @fd1:exm-not-allowed-catalogue. The theorem is true, and the conclusion of (vii) is true; the error is in the citation, which is exactly why the proof in the text goes through parity instead.
+Line (vii) would end the proof at once, but it cites unique factorization into primes, which the book has neither proved nor taken as a school fact: Section 2.2 sets it aside as a fact it does not prove or use, and the idea before @thm-product-countable declines to cite it. So (vii) cites a line that is not available, (N9) of @fd1:exm-not-allowed-catalogue. The theorem is true, and the conclusion of (vii) is true; the error is in the citation, which is exactly why the proof in the text goes through parity instead.
 :::
 
 ::: {#exr-countable-sets-b3}

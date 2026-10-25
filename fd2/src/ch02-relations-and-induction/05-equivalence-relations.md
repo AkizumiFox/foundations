@@ -1,6 +1,6 @@
 # Equivalence Relations and Partitions
 
-Section 2.4 sorted relations by four properties: reflexive, symmetric, antisymmetric and transitive (@def-relation-properties). This section studies the relations that have the first, second and fourth. They are the relations that say two things are "the same" in some respect, and each of them cuts its set into disjoint pieces of mutually "same" elements. We prove that the pieces always form a partition, and that every partition arises from exactly one such relation. Then we build the integers modulo \( n \), and meet the check that every definition on pieces needs: that it does not depend on which element names the piece. Section 1.4 promised that check for functions defined on classes; here it is.
+Section 2.4 sorted relations by four properties: reflexive, symmetric, antisymmetric and transitive (@def-relation-properties). This section studies the relations that have the first, second and fourth. They are the relations that say two things are "the same" in some respect, and each of them cuts its set into disjoint pieces of mutually "same" elements. We prove that the pieces always form a partition, and that every partition arises from exactly one such relation. Then we build the integers modulo \( n \), and meet the check that every definition on pieces needs: that it does not depend on which element names the piece. Section 1.5 promised that check for functions defined on classes; here it is.
 
 ## Arithmetic on a clock
 
@@ -334,7 +334,7 @@ Now the second check of the clock. To add hours we want to define
 \[
 [a] + [b] \coloneqq [a + b] \qquad \text{in } \nZ/n .
 \]
-The right-hand side is computed from the representatives \( a \) and \( b \). If another pair of representatives of the same two classes gave a different class, the "definition" would assign two answers to one input, and @def-function forbids that: a function gives each input **exactly one** value. So the definition is legitimate only if the answer does not depend on the representatives. That property is called **well-definedness**, and it was met in Section 1.4, where "write a rational number as \( p/q \), then send it to its numerator \( p \)" failed to be a function (@exm-not-a-function).
+The right-hand side is computed from the representatives \( a \) and \( b \). If another pair of representatives of the same two classes gave a different class, the "definition" would assign two answers to one input, and @def-function forbids that: a function gives each input **exactly one** value. So the definition is legitimate only if the answer does not depend on the representatives. That property is called **well-definedness**, and it was met in Section 1.5, where "write a rational number as \( p/q \), then send it to its numerator \( p \)" failed to be a function (@exm-not-a-function).
 
 ::: {#prp-congruence-arithmetic}
 [Congruence Respects Sums and Products]

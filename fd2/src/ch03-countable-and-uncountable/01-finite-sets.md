@@ -64,7 +64,7 @@ Clauses (a)–(c) have the form of (Eq1)–(Eq3) of @def-equivalence-relation, a
 Why not define \( \card{A} \) as "the collection of all sets equinumerous with \( A \)"? Because that collection is in general not a set. The next paragraph proves this for \( A = \{0\} \).
 :::
 
-Take \( A = \{0\} \). Every singleton \( \{x\} \) is equinumerous with \( \{0\} \), by \( 0 \mapsto x \). If the singletons formed a set \( \sS \), its union \( \bigcup \sS \) would be a set by (W3) of Section 1.1, and every object \( x \) would be an element of it, since \( x \in \{x\} \in \sS \). That is a set of which every set is an element, which @thm-russell rules out.
+Take \( A = \{0\} \). Every singleton \( \{x\} \) is equinumerous with \( \{0\} \), by \( 0 \mapsto x \). If the singletons formed a set \( \sS \), its union \( \bigcup \sS \) would be a set by (W3) of Section 1.2, and every object \( x \) would be an element of it, since \( x \in \{x\} \in \sS \). That is a set of which every set is an element, which @thm-russell rules out.
 
 ## Finite sets
 
@@ -301,7 +301,7 @@ the image of \( \powerset{X} \) under \( S \mapsto S \cup \{a\} \), a function \
 By @prp-disjoint-union-count, \( \powerset{A} \) has \( 2^n + 2^n = 2^n \cdot 2 = 2^{n+1} \) elements (@def-power). By @fd1:ax-induction, the claim holds for every \( n \in \nN \).
 :::
 
-For any set \( Y \), the map \( S \mapsto \ind_S \), with inverse \( f \mapsto \{ y \in Y : f(y) = 1 \} \), is a bijection \( \powerset{Y} \to \{0, 1\}^Y \) onto the set of functions \( Y \to \{0, 1\} \) (the correspondence of Section 1.4 between subsets and indicator functions). Taking \( Y \) with \( n \) elements, a set with \( n \) elements also has exactly \( 2^n \) functions to \( \{0, 1\} \), and the two counting problems of Chapter 1 are one. Exercise C2 counts all functions between finite sets.
+For any set \( Y \), the map \( S \mapsto \ind_S \), with inverse \( f \mapsto \{ y \in Y : f(y) = 1 \} \), is a bijection \( \powerset{Y} \to \{0, 1\}^Y \) onto the set of functions \( Y \to \{0, 1\} \) (the correspondence of Section 1.5 between subsets and indicator functions). Taking \( Y \) with \( n \) elements, a set with \( n \) elements also has exactly \( 2^n \) functions to \( \{0, 1\} \), and the two counting problems of Chapter 1 are one. Exercise C2 counts all functions between finite sets.
 
 ## No finite set is equinumerous with a proper subset
 

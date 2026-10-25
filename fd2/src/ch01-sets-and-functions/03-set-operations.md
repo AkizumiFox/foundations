@@ -1,6 +1,6 @@
 # Unions, Intersections, Complements and Families
 
-Section 1.1 said what sets are, when two of them are equal, and when one lies inside another. It gave us ways to describe a single set, by listing or by a property cut out of an ambient set. This section makes new sets from old ones. Each connective of *Logic and Proof*, Chapter 1 gives a set operation: "or" gives the union, "and" gives the intersection, "and not" gives the difference. That observation is the thesis of the chapter: *the laws of sets are the laws of logic, read through membership*. We state it, prove the standard laws of set algebra from it, and then take the step analysis needs constantly, from two sets to a whole family of them, where "or" becomes "there exists" and "and" becomes "for all".
+Section 1.2 said what sets are, when two of them are equal, and when one lies inside another. It gave us ways to describe a single set, by listing or by a property cut out of an ambient set. This section makes new sets from old ones. Each connective of *Logic and Proof*, Chapter 1 gives a set operation: "or" gives the union, "and" gives the intersection, "and not" gives the difference. That observation is the thesis of the chapter: *the laws of sets are the laws of logic, read through membership*. We state it, prove the standard laws of set algebra from it, and then take the step analysis needs constantly, from two sets to a whole family of them, where "or" becomes "there exists" and "and" becomes "for all".
 
 ## Union, intersection and difference
 
@@ -22,7 +22,7 @@ Let \( A \) and \( B \) be sets.
 Sets \( A \) and \( B \) are **disjoint** if \( A \cap B = \emptyset \). If \( A \subseteq X \), the difference \( X \setminus A \) is called the **complement of \( A \) in \( X \)**.
 :::
 
-In words, clause by clause. The union exists by the working rule (W3) of Section 1.1; it is not cut out of an ambient set, since its elements come from two sets at once. The intersection and the difference **are** cut out of an ambient set, namely \( A \), so they exist by specification (W1), and the description \( \{ x \in A : \dots \} \) names its ambient set as Section 1.1 requires. The "or" of the union is inclusive, as \( \vee \) always is: an object in both sets is in the union. "Disjoint" means "no common element".
+In words, clause by clause. The union exists by the working rule (W3) of Section 1.2; it is not cut out of an ambient set, since its elements come from two sets at once. The intersection and the difference **are** cut out of an ambient set, namely \( A \), so they exist by specification (W1), and the description \( \{ x \in A : \dots \} \) names its ambient set as Section 1.2 requires. The "or" of the union is inclusive, as \( \vee \) always is: an object in both sets is in the union. "Disjoint" means "no common element".
 
 The complement is always written \( X \setminus A \), with the ambient set \( X \) named. Many books write \( A^c \) and leave \( X \) to the reader, and a reader who guesses \( X \) wrongly gets a different set: the complement of \( [0, 1] \) in \( [0, 2] \) is \( (1, 2] \), and in \( \nR \) it is \( (-\infty, 0) \cup (1, \infty) \). There is no "complement of \( A \)" on its own: by Russell's theorem (@thm-russell) there is no set of everything outside \( A \) (such a set, joined with \( A \), would contain every set). So this book never writes \( A^c \).
 
@@ -55,7 +55,7 @@ Let \( X = \{1, 2, 3, 4, 5, 6\} \), \( A = \{1, 2, 3\} \), and \( B = \{2, 4, 6\
 
 ## Laws of sets are laws of logic
 
-Unwinding the three definitions turns every question about \( \cup \), \( \cap \), and \( \setminus \) into a question about \( \vee \), \( \wedge \), and \( \neg \). Here is the dictionary, with the notions of Section 1.1 included.
+Unwinding the three definitions turns every question about \( \cup \), \( \cap \), and \( \setminus \) into a question about \( \vee \), \( \wedge \), and \( \neg \). Here is the dictionary, with the notions of Section 1.2 included.
 
 | On sets | Unwound through membership | Logic |
 |---|---|---|
@@ -90,7 +90,7 @@ For all sets \( A \), \( B \), and \( C \):
 :::
 
 ::: {.idea}
-Each law is a propositional equivalence under \( \forall x \). *Logic and Proof*, Chapter 4 gives a uniform license for all of them at once: an equivalence that holds in every row of a truth table is derivable in both directions, by completeness, and a derived sequent may be used with its letters replaced by any statements. So one argument covers every law, and the table after the proof names, for each law, the equivalence it comes from. We also write out two laws in full, as element-chases, so that the reader sees what the uniform argument does: the first distributive law, and the second difference law, the one law whose element-chase needs a classical rule (the uniform argument uses one for every law, inside the proof of @fd1:thm-completeness).
+Each law is a propositional equivalence under \( \forall x \). *Logic and Proof*, Chapter 4 gives a uniform license for all of them at once: an equivalence that holds in every row of a truth table is derivable in both directions, by completeness, and a derived sequent may be used with its letters replaced by any statements. So one argument covers every law, and the table after the proof names, for each law, the equivalence it comes from. Two of the laws are written out as element-chases in the fold after the proof, and the chain-of-equivalences method below is how a reader proves a new law by hand.
 :::
 
 ::: {.proof}
@@ -112,11 +112,14 @@ p & q & r & p \wedge \neg(q \vee r) & (p \wedge \neg q) \wedge (p \wedge \neg r)
 \end{array}
 \]
 The fourth and fifth columns agree in every row, and so do the sixth and seventh. This proves all eight laws.
+:::
+
+::: {.second-reading title="Two laws by element-chasing, and where each law comes from"}
+Here are two of the laws as element-chases.
 
 *The first distributive law, in full.* \( (\subseteq) \) Let \( x \in A \cap (B \cup C) \). Then \( x \in A \) and \( x \in B \cup C \), that is, \( x \in A \) and (\( x \in B \) or \( x \in C \)). By @fd1:prp-distributivity, with \( P \), \( Q \), \( R \) replaced by \( x \in A \), \( x \in B \), \( x \in C \), we get (\( x \in A \) and \( x \in B \)) or (\( x \in A \) and \( x \in C \)); that is, \( x \in A \cap B \) or \( x \in A \cap C \), so \( x \in (A \cap B) \cup (A \cap C) \). \( (\supseteq) \) The same chain read backwards, using the second sequent of @fd1:prp-distributivity. By @prp-subset-antisymmetric the two sets are equal.
 
 *The second difference law, in full.* \( (\subseteq) \) Let \( x \in A \setminus (B \cap C) \). Then \( x \in A \) and \( \neg(x \in B \wedge x \in C) \). By @fd1:prp-de-morgan (d), \( x \notin B \) or \( x \notin C \) [\( \rulename{RAA} \), inside (d)]. So \( x \in A \) and (\( x \notin B \) or \( x \notin C \)), and by @fd1:prp-distributivity, (\( x \in A \) and \( x \notin B \)) or (\( x \in A \) and \( x \notin C \)); that is, \( x \in (A \setminus B) \cup (A \setminus C) \). \( (\supseteq) \) Let \( x \in (A \setminus B) \cup (A \setminus C) \). By the second sequent of @fd1:prp-distributivity, \( x \in A \) and (\( x \notin B \) or \( x \notin C \)). By @fd1:prp-de-morgan (c), \( \neg(x \in B \wedge x \in C) \), so \( x \notin B \cap C \), and \( x \in A \setminus (B \cap C) \). By @prp-subset-antisymmetric the two sets are equal.
-:::
 
 Each law is a propositional equivalence, and the table records where each comes from: the clause of @fd1:prp-standard-equivalences, and the derivations of *Logic and Proof*, Chapters 1 and 2, where they exist, that prove one or both directions directly.
 
@@ -132,6 +135,61 @@ Each law is a propositional equivalence, and the table records where each comes 
 | \( A \setminus (B \cap C) = (A \setminus B) \cup (A \setminus C) \) | (b), then (g) | @fd1:prp-de-morgan (c), (d); @fd1:prp-distributivity |
 
 The two difference laws look alike, but their element-chases are not alike. The first needs De Morgan's laws (a) and (b), which *Logic and Proof*, Section 2.5 derives without \( \rulename{RAA} \), followed by regrouping the conjunction \( x \in A \wedge (x \notin B \wedge x \notin C) \) into \( (x \in A \wedge x \notin B) \wedge (x \in A \wedge x \notin C) \), which takes only \( \rulename{\wedge E} \) and \( \rulename{\wedge I} \). The second needs De Morgan (d) in its \( (\subseteq) \) direction, and (d) is the one of the four De Morgan laws that *Logic and Proof*, Section 2.5 derives with \( \rulename{RAA} \); its \( (\supseteq) \) direction uses (c), derived without it. Knowing that \( x \) is not in both \( B \) and \( C \) does not by itself tell us which of the two it misses; De Morgan (d) supplies the answer "one of them", and it is the classical rule that supplies it.
+:::
+
+::: {#exm-method-chain-of-iff}
+[Method: a chain of equivalences]
+
+**Template.** For \( L = R \): let \( x \) be arbitrary, and write \( x \in L \iff \dots \iff x \in R \), one step per line. Each step either unwinds a definition (@def-set-operations) or applies a propositional equivalence to membership statements, with its name on the line. Since \( \dashv\vdash \) is used like \( = \) (@fd1:prp-provable-equivalence-basics (b)), the chain gives \( x \in L \leftrightarrow x \in R \), and @def-set-equality finishes.
+
+**When to use it.** Identities built from \( \cup \), \( \cap \), \( \setminus \) and families, where every step is reversible.
+
+**The usual failure.** A step that holds in one direction only, written as \( \iff \): for example \( x \in A \implies x \in A \cup B \). When a chain will not close, look for a small witness instead (@exm-method-counterexample); a membership table finds one.
+:::
+
+::: {#exm-difference-chain}
+[A law by a chain]
+
+Show that \( (A \setminus B) \setminus C = A \setminus (B \cup C) \) for all sets \( A \), \( B \), \( C \).
+:::
+
+::: {.idea}
+[Scratch work]
+
+Work from both ends. Unwind the left side as far as the definitions go, then the right side, and see what is left between them.
+
+| Givens | Goal |
+|---|---|
+| \( x \) arbitrary | \( x \in (A \setminus B) \setminus C \iff x \in A \setminus (B \cup C) \) |
+| left unwound: \( x \in A \wedge x \notin B \wedge x \notin C \) | right unwound: \( x \in A \wedge \neg(x \in B \vee x \in C) \) |
+| gap: \( x \notin B \wedge x \notin C \iff \neg(x \in B \vee x \in C) \) | closed by De Morgan (a), (b) (@fd1:prp-de-morgan) |
+
+The gap is a propositional law with \( x \in B \) and \( x \in C \) in the places of \( P \) and \( Q \), so the chain will close.
+:::
+
+::: {.solution}
+Let \( x \) be arbitrary. Then
+\[
+\begin{aligned}
+&x \in (A \setminus B) \setminus C \\
+&\quad\iff (x \in A \wedge x \notin B) \wedge x \notin C && \text{[definition of } \setminus \text{, twice]} \\
+&\quad\iff x \in A \wedge (x \notin B \wedge x \notin C) && \text{[regrouping } \wedge \text{]} \\
+&\quad\iff x \in A \wedge \neg(x \in B \vee x \in C) && \text{[De Morgan (a), (b)]} \\
+&\quad\iff x \in A \wedge x \notin B \cup C && \text{[definition of } \cup \text{]} \\
+&\quad\iff x \in A \setminus (B \cup C) && \text{[definition of } \setminus \text{]}
+\end{aligned}
+\]
+The definitions are those of @def-set-operations, the regrouping is @fd1:prp-and-associative from left to right and takes only \( \rulename{\wedge E} \) and \( \rulename{\wedge I} \) from right to left, and De Morgan (a), (b) are @fd1:prp-de-morgan, with \( x \in B \), \( x \in C \) for \( P \), \( Q \). By @def-set-equality the two sets are equal. No step needs \( \rulename{RAA} \).
+:::
+
+::: {.check}
+Which step of the chain fails if \( B \cup C \) is replaced by \( B \cap C \)? Show with a small witness that \( (A \setminus B) \setminus C = A \setminus (B \cap C) \) can fail.
+:::
+
+::: {.solution}
+The De Morgan step. De Morgan's laws give \( \neg(q \wedge r) \iff \neg q \vee \neg r \), not \( \neg q \wedge \neg r \). Take \( A = \{1, 2\} \), \( B = \{1\} \), \( C = \{2\} \): then \( B \cap C = \emptyset \), so the right side is \( \{1, 2\} \), while the left side is \( \{2\} \setminus \{2\} = \emptyset \).
+:::
+
 
 The laws let us calculate with sets as with numbers, but more symmetrically: each of \( \cup \) and \( \cap \) distributes over the other, whereas \( \times \) distributes over \( + \) and not conversely. They also let us drop brackets: by associativity, \( A \cup B \cup C \) and \( A \cap B \cap C \) are unambiguous.
 
@@ -156,7 +214,7 @@ S \in \powerset{X} \iff S \subseteq X .
 \]
 :::
 
-The set exists by the working rule (W4) of Section 1.1. Its elements are sets, and "\( S \in \powerset{X} \)" is just another way of writing "\( S \subseteq X \)". Two elements are always present: \( \emptyset \in \powerset{X} \), because the empty set is a subset of every set, and \( X \in \powerset{X} \), because \( X \subseteq X \).
+The set exists by the working rule (W4) of Section 1.2. Its elements are sets, and "\( S \in \powerset{X} \)" is just another way of writing "\( S \subseteq X \)". Two elements are always present: \( \emptyset \in \powerset{X} \), because the empty set is a subset of every set, and \( X \in \powerset{X} \), because \( X \subseteq X \).
 
 ::: {#exm-power-set-small}
 [Small power sets]
@@ -172,7 +230,7 @@ Compute \( \powerset{\emptyset} \), \( \powerset{\{\emptyset\}} \), and \( \powe
 *\( \powerset{\{1, 2\}} = \{\emptyset, \{1\}, \{2\}, \{1, 2\}\} \).* Let \( S \subseteq \{1, 2\} \). A subset of \( \{1, 2\} \) is determined by which of \( 1 \) and \( 2 \) it contains, by @def-set-equality, and for each of the two there are two cases, \( 1 \in S \) or \( 1 \notin S \), and \( 2 \in S \) or \( 2 \notin S \). The four combinations give \( S = \{1, 2\} \), \( \{1\} \), \( \{2\} \), \( \emptyset \). All four are subsets of \( \{1, 2\} \). So \( \powerset{\{1, 2\}} \) has exactly four elements.
 :::
 
-In each case the number of subsets is a power of two: \( 1 \), \( 2 \), \( 4 \), for sets with \( 0 \), \( 1 \), \( 2 \) elements, because each element is independently in or out. That a set with \( n \) elements has exactly \( 2^n \) subsets is proved in Chapter 3, where counting is made exact. The name "power set" comes from this count.
+In each case the number of subsets is a power of two: \( 1 \), \( 2 \), \( 4 \), for sets with \( 0 \), \( 1 \), \( 2 \) elements, because each element is independently in or out. That a set with \( n \) elements has exactly \( 2^n \) subsets is proved in Section 2.5, where counting is made exact. The name "power set" comes from this count.
 
 ::: {.warning}
 **The elements of \( \powerset{X} \) are subsets, not elements, of \( X \).** For \( X = \{1, 2\} \): \( 1 \in X \) but \( 1 \notin \powerset{X} \), since \( 1 \) is a number, not a subset; whereas \( \{1\} \in \powerset{X} \) and \( \{1\} \notin X \). The correct translations are \( a \in X \iff \{a\} \in \powerset{X} \), and \( S \subseteq X \iff S \in \powerset{X} \).
@@ -188,7 +246,7 @@ Analysis rarely stops at two or three sets. It intersects all the intervals \( (
 Let \( I \) be a set. A **family of sets indexed by \( I \)**, written \( (A_i)_{i \in I} \), assigns to **each** \( i \in I \) a set \( A_i \). The set \( I \) is the **index set**, and \( A_i \) is the **member** of the family with index \( i \). If \( X \) is a set with \( A_i \subseteq X \) for every \( i \in I \), we speak of a **family of subsets of \( X \)**.
 :::
 
-Here "assigns" is used in its everyday sense. Section 1.4 makes it exact for a family of subsets of a set \( X \): such a family is a function \( I \to \powerset{X} \), \( i \mapsto A_i \), whose value at \( i \) is written \( A_i \). The parentheses follow the book's rule that ordered or indexed things go in parentheses; the family \( (A_i)_{i \in I} \) knows which set has which index, and two indices may carry the same set. Examples: for \( I = \{1, 2\} \) the family is just a pair of sets \( A_1, A_2 \); for \( I = (0, \infty) \) and \( A_t = (-t, t) \) it is a family of intervals, one for each positive real \( t \); for \( I = \nN \) it is a sequence of sets \( A_0, A_1, A_2, \dots \) (indexed from \( 0 \); the sequences of real numbers in Section 1.4 are indexed from \( 1 \)), which Chapter 2 treats as a sequence defined by recursion and Chapter 3 uses to form countable unions.
+Here "assigns" is used in its everyday sense. Section 1.5 makes it exact for a family of subsets of a set \( X \): such a family is a function \( I \to \powerset{X} \), \( i \mapsto A_i \), whose value at \( i \) is written \( A_i \). The parentheses follow the book's rule that ordered or indexed things go in parentheses; the family \( (A_i)_{i \in I} \) knows which set has which index, and two indices may carry the same set. Examples: for \( I = \{1, 2\} \) the family is just a pair of sets \( A_1, A_2 \); for \( I = (0, \infty) \) and \( A_t = (-t, t) \) it is a family of intervals, one for each positive real \( t \); for \( I = \nN \) it is a sequence of sets \( A_0, A_1, A_2, \dots \) (indexed from \( 0 \); the sequences of real numbers in Section 1.5 are indexed from \( 1 \)), which Chapter 2 treats as a sequence defined by recursion and Chapter 3 uses to form countable unions.
 
 "Or" becomes "for some index", and "and" becomes "for every index".
 
@@ -213,7 +271,7 @@ x \in \bigcup_{i \in I} A_i \iff \exists i \in I\ (x \in A_i).
 For a set \( \sS \) whose elements are sets, \( \bigcup \sS \coloneqq \bigcup_{A \in \sS} A \); and for a **non-empty** set \( \sS \subseteq \powerset{X} \), \( \bigcap \sS \coloneqq \bigcap_{A \in \sS} A \). In both, the family is indexed by \( \sS \) itself, the member with index \( A \) being \( A \).
 :::
 
-In words, clause by clause. The union exists by (W3), like the union of two sets; when all \( A_i \subseteq X \), it may also be written \( \{ x \in X : \exists i \in I\ (x \in A_i) \} \), since then every element of the union lies in \( X \), and this form names its ambient set as Section 1.1 requires. The intersection is cut out of \( X \) by specification. The last sentence covers sets of sets that come with no index: \( \bigcap \sS \) is the set of objects lying in every set that belongs to \( \sS \). For example, *Analysis on the Real Line*, Chapter 1 defines \( \nN \) inside \( \nR \) as \( \bigcap \sS \), where \( \sS \) is the set of all subsets of \( \nR \) that contain \( 0 \) and are closed under \( x \mapsto x + 1 \); \( \sS \) is non-empty because \( \nR \) itself belongs to it.
+In words, clause by clause. The union exists by (W3), like the union of two sets; when all \( A_i \subseteq X \), it may also be written \( \{ x \in X : \exists i \in I\ (x \in A_i) \} \), since then every element of the union lies in \( X \), and this form names its ambient set as Section 1.2 requires. The intersection is cut out of \( X \) by specification. The last sentence covers sets of sets that come with no index: \( \bigcap \sS \) is the set of objects lying in every set that belongs to \( \sS \). For example, *Analysis on the Real Line*, Chapter 1 defines \( \nN \) inside \( \nR \) as \( \bigcap \sS \), where \( \sS \) is the set of all subsets of \( \nR \) that contain \( 0 \) and are closed under \( x \mapsto x + 1 \); \( \sS \) is non-empty because \( \nR \) itself belongs to it.
 
 With two sets the new definitions give the old ones back. For \( I = \{1, 2\} \), "\( \exists i \in \{1, 2\} \) with \( x \in A_i \)" says "\( x \in A_1 \) or \( x \in A_2 \)", since an \( i \in \{1, 2\} \) is \( 1 \) or \( 2 \); so \( \bigcup_{i \in \{1, 2\}} A_i = A_1 \cup A_2 \), and likewise \( \bigcap_{i \in \{1, 2\}} A_i = A_1 \cap A_2 \). The dictionary gains two rows:
 
@@ -313,7 +371,17 @@ X \setminus \bigcap_{i \in I} A_i = \bigcup_{i \in I} (X \setminus A_i) .
 All intersections here are taken inside \( X \); the family \( (X \setminus A_i)_{i \in I} \) is again a family of subsets of \( X \), so both sides make sense.
 
 ::: {.idea}
-Unwind both sides of each law through membership, for an element \( x \in X \). In the first law, the left side says \( \neg\exists i \in I\ (x \in A_i) \), and the right side says \( \forall i \in I\ \neg(x \in A_i) \). In the second, the left side says \( \neg\forall i \in I\ (x \in A_i) \), and the right side says \( \exists i \in I\ \neg(x \in A_i) \). So each law is a quantifier negation law, and each inclusion is one of its directions. We write the first law out rule by rule, since it is the chapter's model element-chase for families, and the second at level 3, tagging only the step it is about.
+Element-chasing (@exm-method-element-chasing), with "or" and "and" replaced by "for some index" and "for every index". Unwind both sides of each law through membership. The first law is then a chain (@exm-method-chain-of-iff):
+\[
+\begin{aligned}
+&x \in X \setminus \textstyle\bigcup_{i \in I} A_i \\
+&\quad\iff x \in X \wedge \neg\exists i \in I\ (x \in A_i) && \text{[definitions]} \\
+&\quad\iff x \in X \wedge \forall i \in I\ (x \notin A_i) && \text{[quantifier negation]} \\
+&\quad\iff x \in X \wedge \forall i \in I\ (x \in X \setminus A_i) && \text{[using } x \in X \text{]} \\
+&\quad\iff x \in \textstyle\bigcap_{i \in I} (X \setminus A_i) && \text{[definition of } \bigcap \text{]}
+\end{aligned}
+\]
+The definitions are @def-set-operations and @def-family-union-intersection, and the second step is @fd1:prp-bounded-quantifier-negation (b). In the second law, the left side says \( \neg\forall i \in I\ (x \in A_i) \), and the right side says \( \exists i \in I\ \neg(x \in A_i) \). So each law is a quantifier negation law, and each inclusion is one of its directions. We write the first law out rule by rule, since it is the chapter's model element-chase for families, and the second at level 3, tagging only the step it is about.
 
 *Before reading on: which law of *Logic and Proof*, Chapter 6 turns "not in every \( A_i \)" into "outside some \( A_i \)", and which of its directions is classical?*
 :::
@@ -335,6 +403,14 @@ By @prp-subset-antisymmetric, the second law holds. This proves the theorem.
 The answer to the prompt: the bounded quantifier negation law of *Logic and Proof*, Chapter 6 turns \( \neg\forall i \in I \) into \( \exists i \in I\ \neg \), and that direction is classical because it rests on the unbounded law \( \neg\forall x\, \varphi \vdash \exists x\, \neg\varphi \), which needs \( \rulename{RAA} \). It is used once, in the \( (\subseteq) \) half of the second law. The first law and the \( (\supseteq) \) half of the second use no classical rule: they are the directions of quantifier negation that *Logic and Proof*, Chapter 6 derives without \( \rulename{RAA} \). The pattern is the one met in the difference laws of @thm-set-algebra, which are the case \( I = \{1, 2\} \), \( X = A \), \( A_1 = A \cap B \), \( A_2 = A \cap C \) (replacing \( B \) and \( C \) by \( A \cap B \) and \( A \cap C \) changes neither side): "not in every member" does not by itself name the member it misses.
 
 **The empty family.** The theorem was stated for every index set, and the conventions of @def-family-union-intersection are what make that true. For \( I = \emptyset \), the first law reads \( X \setminus \emptyset = X \), since the empty union is \( \emptyset \) and the empty intersection is \( X \); and the second reads \( X \setminus X = \emptyset \), since the empty intersection is \( X \) and the empty union is \( \emptyset \). Both are true. Had the empty intersection been defined as anything other than \( X \), the laws would have needed the hypothesis \( I \ne \emptyset \).
+
+::: {.check}
+For \( X = \nR \) and the family indexed by \( I = \{1\} \) with \( A_1 = [0, 1] \), what are \( \bigcup_{i \in I} A_i \) and \( \bigcap_{i \in I} A_i \)? What are the two sides of each of De Morgan's laws?
+:::
+
+::: {.solution}
+Both are \( [0, 1] \): an \( x \) lies in \( A_i \) for some \( i \in \{1\} \), or for every \( i \in \{1\} \), exactly when \( x \in A_1 \). First law: \( X \setminus \bigcup_{i \in I} A_i = \nR \setminus [0, 1] \), and \( \bigcap_{i \in I} (X \setminus A_i) = X \setminus A_1 = \nR \setminus [0, 1] \). Second law: \( X \setminus \bigcap_{i \in I} A_i = \nR \setminus [0, 1] = \bigcup_{i \in I} (X \setminus A_i) \). A one-member family is its member, and both laws say \( \nR \setminus [0, 1] = \nR \setminus [0, 1] \).
+:::
 
 ::: {.warning}
 **De Morgan swapped the wrong way.** "The complement of a union is the union of the complements" is false. Take \( X = \{1, 2\} \), \( A_1 = \{1\} \), \( A_2 = \{2\} \). Then \( X \setminus (A_1 \cup A_2) = X \setminus X = \emptyset \), but \( (X \setminus A_1) \cup (X \setminus A_2) = \{2\} \cup \{1\} = \{1, 2\} \). Complementing turns \( \cup \) into \( \cap \) and \( \cap \) into \( \cup \), just as negation turns \( \exists \) into \( \forall \) and \( \vee \) into \( \wedge \); nothing stays the same.
@@ -424,6 +500,36 @@ Take \( A = \{1\} \), \( B = \emptyset \), \( C = \{1\} \). Then \( A \cup B = \
 So an answer is correct exactly when some element lies in exactly one of \( B \), \( C \), and every such element lies in \( A \). The union with \( A \) "hides" the difference between \( B \) and \( C \); the lesson is that \( \cup \) cannot be canceled.
 :::
 
+::: {#exr-set-operations-b4}
+[B4: Prove or disprove]
+
+For all sets \( A \), \( B \), \( C \), decide which of these hold. Prove each true one by a chain of equivalences (@exm-method-chain-of-iff), and refute each false one with a concrete counterexample.
+
+::: {.enumerate options="label=(\alph*)"}
+1. \( A \setminus (A \setminus B) = A \cap B \).
+2. \( (A \cup B) \setminus B = A \).
+3. \( (A \cup B) \setminus B = A \setminus B \).
+4. \( A \cup (B \setminus C) = (A \cup B) \setminus C \).
+5. \( A \cap (B \setminus C) = (A \cap B) \setminus C \).
+:::
+:::
+
+::: {.solution}
+Throughout, \( x \) is arbitrary, and \( p \), \( q \), \( r \) stand for \( x \in A \), \( x \in B \), \( x \in C \).
+
+(a) **True.** \( x \in A \setminus (A \setminus B) \iff p \wedge \neg(p \wedge \neg q) \). By De Morgan (d) and (c) (@fd1:prp-de-morgan) and double negation, this is \( \iff p \wedge (\neg p \vee q) \); the direction \( (\Rightarrow) \) is classical, since it uses (d) and removes a double negation. By distributivity (@fd1:prp-distributivity) it is \( \iff (p \wedge \neg p) \vee (p \wedge q) \), and since the first disjunct is impossible, \( \iff p \wedge q \), that is, \( x \in A \cap B \).
+
+(b) **False.** Take \( A = B = \{1\} \). Then \( (A \cup B) \setminus B = \{1\} \setminus \{1\} = \emptyset \), while \( A = \{1\} \).
+
+(c) **True.** \( x \in (A \cup B) \setminus B \iff (p \vee q) \wedge \neg q \iff (p \wedge \neg q) \vee (q \wedge \neg q) \), by distributivity, \( \iff p \wedge \neg q \), since the second disjunct is impossible; that is, \( x \in A \setminus B \).
+
+(d) **False.** Take \( A = C = \{1\} \) and \( B = \emptyset \). Then \( A \cup (B \setminus C) = \{1\} \cup \emptyset = \{1\} \), while \( (A \cup B) \setminus C = \{1\} \setminus \{1\} = \emptyset \).
+
+(e) **True.** \( x \in A \cap (B \setminus C) \iff p \wedge (q \wedge \neg r) \iff (p \wedge q) \wedge \neg r \), by regrouping \( \wedge \) (associativity), that is, \( x \in (A \cap B) \setminus C \).
+
+In each true case the chain ends with \( x \in L \iff x \in R \) for arbitrary \( x \), and @def-set-equality gives \( L = R \). The false ones (b) and (d) are the minimal changes of (c) and (e): (b) forgets that the elements of \( A \cap B \) are removed, and (d) forgets that \( C \) is removed from \( A \) too.
+:::
+
 ### C. Going deeper
 
 ::: {#exr-set-operations-c1}
@@ -508,10 +614,10 @@ thm-set-algebra (proof): "let x be arbitrary ... since x was arbitrary" is foral
 thm-set-algebra (claim): prp-de-morgan (a)-(c) derived without RAA, (d) with it | F1.2 section 2.5 (checked on the page there)
 thm-set-algebra (claim): truth table for (d) | computed inline (checked table)
 def-power-set (claim): a set with n elements has 2^n subsets | F2.3 (prose pointer; nothing depends on it)
-def-power-set (claim): the empty set is a subset of every set | F2.1 §01 (prose after prp-empty-set-unique: def-subset with prp-vacuous-implication)
-exm-power-set-small (example): the empty set is a subset of the empty set | F2.1 §01 (prose after prp-empty-set-unique: def-subset with prp-vacuous-implication)
+def-power-set (claim): the empty set is a subset of every set | F2.1 §02 (prose after prp-empty-set-unique: def-subset with prp-vacuous-implication)
+exm-power-set-small (example): the empty set is a subset of the empty set | F2.1 §02 (prose after prp-empty-set-unique: def-subset with prp-vacuous-implication)
 exm-power-set-small (example): excluded middle on membership | prp-excluded-middle (cited)
-def-indexed-family (claim): a family of subsets of X is a function I -> P(X), i -> A_i | F2.1 §04 (prose pointer, same chapter; nothing depends on it)
+def-indexed-family (claim): a family of subsets of X is a function I -> P(X), i -> A_i | F2.1 §05 (prose pointer, same chapter; nothing depends on it)
 def-indexed-family (claim): sequences of sets by recursion; countable unions | F2.2, F2.3 (prose pointers; nothing depends on them)
 def-family-union-intersection (claim): vacuous truth of forall over an empty index set | F1.4 (promised; prose pointer)
 def-family-union-intersection (claim): AN1.1 defines N as the intersection of all subsets of R containing 0 and closed under x -> x + 1 | AN1.1 (prose pointer; the set-level construction is done here)
@@ -530,6 +636,11 @@ exr-set-operations-a1 (solution): bounded quantifier negation (not-forall over I
 exr-set-operations-b2 (solution): order facts on R (|x| + 1 > x, 1/(2x) > 0, 4x/3 > x for x > 0) | school fact (F1-F2 convention); proved in AN1.1
 exr-set-operations-b3 (solution): from B != C to an odd one out, by the classical direction of quantifier negation (not-forall to exists-not) and not(P<->Q) giving exactly one of P, Q; the forward half of the A-cup characterization by contrapositive; the converse splits on x in C | F1.4 (promised; prose pointer); prp-contrapositive-converse; prp-excluded-middle (cited)
 exr-set-operations-c1 (solution): classical quantifier negation and the law for negated implications to obtain witnesses a, b | F1.4 (promised; prose pointer)
-exr-set-operations-c1 (solution): the empty set is a subset of every set | F2.1 §01 (prose after prp-empty-set-unique: def-subset with prp-vacuous-implication)
+exr-set-operations-c1 (solution): the empty set is a subset of every set | F2.1 §02 (prose after prp-empty-set-unique: def-subset with prp-vacuous-implication)
 exr-set-operations-c2 (solution): catalogue entry (N7) | F1.5 (promised; prose pointer "the catalogue of F1.5")
+thm-set-algebra (claim): the Idea says two laws are written out in the fold after the proof | the fold "Two laws by element-chasing, and where each law comes from" (on the page)
+exm-difference-chain (solution): regrouping (p and q) and r into p and (q and r) and back | prp-and-associative (cited) one way; and-E, and-I the other (inline)
+exm-difference-chain (solution): (the quick check after it) A = {1, 2}, B = {1}, C = {2}: (A - B) - C is empty, A - (B cap C) = {1, 2} | computed inline; verify/ch01/exm-difference-chain.py
+thm-de-morgan-families (claim): the Idea's chain step "x in X and forall i (x notin A_i) iff x in X and forall i (x in X - A_i)" uses the conjunct x in X inside the quantifier | inline (forall-E, and-I, forall-I and back by and-E); holds for every I, including the empty one
+exr-set-operations-b4 (solution): De Morgan (c), (d), double negation, distributivity and associativity read through membership; classical steps in (a) named | prp-de-morgan, prp-distributivity (cited); double negation elimination is classical (F1.2 section 2.5); verify/ch01/exr-set-operations-b4.py
 -->

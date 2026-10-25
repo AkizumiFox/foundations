@@ -19,11 +19,11 @@ For a non-empty \( A_n \), "\( A_n \) is countable" says that **there exists** a
 
 Two escape routes fail. *Recursion* (@thm-recursion) defines a function on all of \( \nN \) at once, but from a rule \( g \) given in advance, each value determined by the previous one. The list of \( A_{n+1} \) is not determined by the list of \( A_n \), and a rule producing a list of every \( A_{n+1} \) would already be the missing object. *Induction* on \( k \), with @prp-union-two-countable at each step, proves "for every \( k \), \( A_0 \cup \dots \cup A_k \) is countable" (Exercise C3 writes it out), but that is a statement about each \( k \) separately; nothing makes the lists for different \( k \) fit together.
 
-Section 1.5 met the same wall: a right inverse of a surjection must pick a preimage of **every** point at once, and the rules could do that only for finitely many points, or when a rule names the preimage.
+Section 1.6 met the same wall: a right inverse of a surjection must pick a preimage of **every** point at once, and the rules could do that only for finitely many points, or when a rule names the preimage.
 
 ## The axiom of choice
 
-None of the working rules (W1)–(W6) of Section 1.1 forms a set out of infinitely many arbitrary picks. The principle we add is the simplest statement that does.
+None of the working rules (W1)–(W6) of Section 1.2 forms a set out of infinitely many arbitrary picks. The principle we add is the simplest statement that does.
 
 *From any family of non-empty sets, one may pick one element from each set, all at once.*
 
@@ -37,7 +37,7 @@ c \colon I \to \bigcup_{i \in I} A_i \quad \text{with} \quad c(i) \in A_i \ \tex
 Such a function \( c \) is called a **choice function** for the family.
 :::
 
-In symbols, with \( Y^X \) the set of functions of Section 1.4 and \( U \coloneqq \bigcup_{i \in I} A_i \):
+In symbols, with \( Y^X \) the set of functions of Section 1.5 and \( U \coloneqq \bigcup_{i \in I} A_i \):
 \[
 \forall i \in I \ (A_i \ne \emptyset) \ \to \ \exists c \in U^{I} \ \ \forall i \in I \ \ c(i) \in A_i .
 \]
@@ -72,7 +72,7 @@ Two kinds of construction look like choice and are not; telling them apart from 
 
 ## Right inverses
 
-The first consequence settles the question Section 1.5 left open. By @prp-right-inverse-surjective, a function with a right inverse is surjective; the converse is where choice enters.
+The first consequence settles the question Section 1.6 left open. By @prp-right-inverse-surjective, a function with a right inverse is surjective; the converse is where choice enters.
 
 ::: {#thm-surjection-right-inverse}
 [Surjections Have Right Inverses]
@@ -125,7 +125,7 @@ Suppose \( J \ne \emptyset \). For \( n \in J \), let
 \[
 S_n \coloneqq \{ h \in A_n^{\nN} : h \text{ is surjective} \} ,
 \]
-the set of surjections \( \nN \to A_n \) (@def-set-builder, with \( A_n^{\nN} \) the set of functions of Section 1.4). Since \( A_n \) is countable and non-empty, \( S_n \ne \emptyset \) (@def-countable). **By @ax-choice**, applied to the family \( (S_n)_{n \in J} \), there is a function \( c \colon J \to \bigcup_{n \in J} S_n \) with \( c(n) \in S_n \) for every \( n \in J \). This is the only line of the proof that uses the axiom.
+the set of surjections \( \nN \to A_n \) (@def-set-builder, with \( A_n^{\nN} \) the set of functions of Section 1.5). Since \( A_n \) is countable and non-empty, \( S_n \ne \emptyset \) (@def-countable). **By @ax-choice**, applied to the family \( (S_n)_{n \in J} \), there is a function \( c \colon J \to \bigcup_{n \in J} S_n \) with \( c(n) \in S_n \) for every \( n \in J \). This is the only line of the proof that uses the axiom.
 
 Define \( F \colon J \times \nN \to U \) by \( F(n, m) \coloneqq c(n)(m) \). It takes values in \( U \): \( c(n) \) maps into \( A_n \subseteq U \). It is surjective: let \( x \in U \); then \( x \in A_n \) for some \( n \in \nN \) (@def-family-union-intersection), so \( A_n \ne \emptyset \) and \( n \in J \); since \( c(n) \) is a surjection onto \( A_n \), there is \( m \in \nN \) with \( c(n)(m) = x \), that is, \( F(n, m) = x \).
 
@@ -384,7 +384,7 @@ ax-choice (claim): uses in F2.3 §06, AN1.1, MT.1, FA.3, FA.5 | F2.3 §06, AN1.1
 ax-choice (claim): (remark) sup approximation, one exists-E per n | AN1.1 (prose pointer; flagged there)
 ax-choice (example): (0, 1) has no least element | F2.2 §01, halving as for (0, 1]
 ax-choice (claim): positive reals have non-negative square roots | school fact (F1-F2 convention); proved in AN1.1
-ax-choice (example): 0 | k iff k = 0 | def-divides (F2.2), silent
+ax-choice (example): 0 | k iff k = 0 | def-divides (F2.1 §01), silent
 ax-choice (claim): (finite case) 0 elements gives empty; n + 1 elements gives non-empty | def-finite (F2.3 §01)
 thm-surjection-right-inverse (claim): equivalence with the axiom | inline sketch; ST.4 (prose pointer)
 thm-countable-union (proof): N is countable | def-countable, identity map

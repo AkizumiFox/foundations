@@ -72,7 +72,7 @@ Is \( \card{\{0, 1\}^{\nN}} \le \card{\powerset{\nN}} \)? Give an injection, and
 :::
 
 ::: {.solution}
-Yes. Send a sequence \( a \in \{0, 1\}^{\nN} \) to the set \( \{ n \in \nN : a(n) = 1 \} \). If two sequences give the same set, they take the value \( 1 \) at the same places, and so the value \( 0 \) at the same places too; hence they are equal (@prp-function-equality), and the map is injective. No appeal to @prp-card-le-surjection is needed: the definition asks for an injection, and we wrote one down. (The map is in fact a bijection, with inverse \( S \mapsto \ind_S \); this is the correspondence of Section 1.4, recalled after @cor-powerset-naturals-uncountable.)
+Yes. Send a sequence \( a \in \{0, 1\}^{\nN} \) to the set \( \{ n \in \nN : a(n) = 1 \} \). If two sequences give the same set, they take the value \( 1 \) at the same places, and so the value \( 0 \) at the same places too; hence they are equal (@prp-function-equality), and the map is injective. No appeal to @prp-card-le-surjection is needed: the definition asks for an injection, and we wrote one down. (The map is in fact a bijection, with inverse \( S \mapsto \ind_S \); this is the correspondence of Section 1.5, recalled after @cor-powerset-naturals-uncountable.)
 :::
 
 ## The Schröder–Bernstein Theorem

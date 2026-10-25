@@ -85,15 +85,9 @@ The method is strong induction with an \( \rulename{RAA} \) box drawn around it.
 
 ## Divisibility and the division algorithm
 
-The first uses of the method are about divisibility, and here is the vocabulary.
+The first uses of the method are about divisibility.
 
-::: {#def-divides}
-[Divisibility]
-
-Let \( a, b \in \nZ \). We say that \( a \) **divides** \( b \), written \( a \mid b \), if **there exists** \( k \in \nZ \) with \( b = ka \). Then \( a \) is a **divisor** of \( b \), and \( b \) is a **multiple** of \( a \).
-:::
-
-So \( 3 \mid 12 \), with \( k = 4 \), and \( -3 \mid 12 \), with \( k = -4 \). Every integer \( a \) divides \( 0 \), with \( k = 0 \); this is the degenerate case, and it shows that "\( a \mid b \)" is a statement, not the number \( b/a \): \( 0 \mid 0 \) is true, while \( 0/0 \) is not defined. Also \( 1 \mid b \) and \( b \mid b \) for every integer \( b \), and "\( n \) is even" is "\( 2 \mid n \)". If \( a \mid b \) and \( b \mid c \), then \( a \mid c \): from \( b = ka \) and \( c = lb \) we get \( c = (lk)a \), with \( lk \in \nZ \) by @prp-integers-closed (a).
+Divisibility and primes were defined in Section 1.1: for integers \( a \) and \( b \), \( a \mid b \) means \( b = ka \) for some \( k \in \nZ \) (@def-divides), and a prime is an integer \( p \ge 2 \) whose only positive divisors are \( 1 \) and \( p \) (@def-prime); divisibility is transitive (@prp-divides-transitive). For instance, \( 3 \mid 12 \), with \( k = 4 \).
 
 Change \( 12 \) to \( 14 \): \( 3 \nmid 14 \). The witness \( k \) would have to be \( 14/3 \), and \( 4 < 14/3 < 5 \), so \( 14/3 \) is not an integer, by the discreteness clause of @prp-integers-closed. The clause that fails is "\( k \in \nZ \)": the equation \( 14 = k \cdot 3 \) has a real solution, just not an integer one.
 
@@ -103,13 +97,7 @@ Divisibility claims about powers are a staple of induction, because the step usu
 \]
 and \( 4k + 1 \in \nZ \). By @fd1:ax-induction, the claim holds for every \( n \in \nN \).
 
-::: {#def-prime}
-[Prime Number]
-
-An integer \( p \) is **prime** if \( p \ge 2 \) and the only **positive** divisors of \( p \) are \( 1 \) and \( p \). A **prime factor** of an integer \( n \) is a prime \( p \) with \( p \mid n \).
-:::
-
-For example, \( 2 \) is prime. Let \( d > 0 \) divide \( 2 \), say \( 2 = kd \) with \( k \in \nZ \). Then \( k > 0 \), so \( k \ge 1 \) by @prp-integers-closed (b), and \( d \le kd = 2 \); by discreteness \( d \in \{1, 2\} \). The same argument shows that \( 3 \) and \( 7 \) are prime, once the candidates \( d = 2 \) (and \( d = 2, \dots, 6 \) for \( 7 \)) are ruled out as \( 3 \nmid 14 \) was. Non-examples: \( 9 \) is not prime, since \( 9 = 3 \cdot 3 \) gives the positive divisor \( 3 \notin \{1, 9\} \); and \( 1 \) is not prime, though its only positive divisor is \( 1 \), because the definition demands \( p \ge 2 \). The clause \( p \ge 2 \) keeps \( 1 \) out so that factorizations into primes can be unique, a fact this chapter does not prove or use: Exercise B2 below is about existence only.
+Recall @def-prime. For example, \( 2 \) is prime. Let \( d > 0 \) divide \( 2 \), say \( 2 = kd \) with \( k \in \nZ \). Then \( k > 0 \), so \( k \ge 1 \) by @prp-integers-closed (b), and \( d \le kd = 2 \); by discreteness \( d \in \{1, 2\} \). The same argument shows that \( 3 \) and \( 7 \) are prime, once the candidates \( d = 2 \) (and \( d = 2, \dots, 6 \) for \( 7 \)) are ruled out as \( 3 \nmid 14 \) was. Non-examples: \( 9 \) is not prime, since \( 9 = 3 \cdot 3 \) gives the positive divisor \( 3 \notin \{1, 9\} \); and \( 1 \) is not prime, though its only positive divisor is \( 1 \), because the definition demands \( p \ge 2 \). The clause \( p \ge 2 \) keeps \( 1 \) out so that factorizations into primes can be unique, a fact this chapter does not prove or use: Exercise B2 below is about existence only.
 
 Every integer, divided by a positive integer \( n \), leaves a remainder between \( 0 \) and \( n - 1 \). This is school arithmetic, and it is the tool behind "even or odd".
 
@@ -281,7 +269,7 @@ The induction hypothesis is "\( P(n) \)" for one fixed but arbitrary \( n \): th
 :::
 
 ::: {.solution}
-*(a)* (i) Ordinary induction from \( 0 \): the step factors out one copy of \( 7 \), as in the example \( 3 \mid 4^n - 1 \) after @def-divides. (ii) Induction from base \( 5 \) (@thm-induction): the claim fails at \( n = 2, 3, 4 \), so it cannot start at \( 0 \), and the step \( 2^{n+1} = 2 \cdot 2^n > 2n^2 \ge (n + 1)^2 \) works for \( n \ge 5 \). (iii) Strong induction from base \( 12 \) with three base cases \( 12 = 3 \cdot 4 \), \( 13 = 3 \cdot 2 + 7 \), \( 14 = 7 \cdot 2 \): the step reaches back three, from \( n \) to \( n - 3 \). (iv) A smallest counterexample: in a solution \( (m, n) \) with least \( n \), \( n^2 \) is even, so \( n = 2n' \) is even (@fd1:thm-square-even-implies-even), and then \( m^2 = 2n'^2 \), so \( (n', m) \) is a solution whose second entry \( m \) is smaller than \( n \), since \( n^2 = 2m^2 > m^2 \). (Strong induction would also do; the forms are interchangeable, and the answers above name the natural fit.)
+*(a)* (i) Ordinary induction from \( 0 \): the step factors out one copy of \( 7 \), as in the example \( 3 \mid 4^n - 1 \) in the subsection on divisibility. (ii) Induction from base \( 5 \) (@thm-induction): the claim fails at \( n = 2, 3, 4 \), so it cannot start at \( 0 \), and the step \( 2^{n+1} = 2 \cdot 2^n > 2n^2 \ge (n + 1)^2 \) works for \( n \ge 5 \). (iii) Strong induction from base \( 12 \) with three base cases \( 12 = 3 \cdot 4 \), \( 13 = 3 \cdot 2 + 7 \), \( 14 = 7 \cdot 2 \): the step reaches back three, from \( n \) to \( n - 3 \). (iv) A smallest counterexample: in a solution \( (m, n) \) with least \( n \), \( n^2 \) is even, so \( n = 2n' \) is even (@fd1:thm-square-even-implies-even), and then \( m^2 = 2n'^2 \), so \( (n', m) \) is a solution whose second entry \( m \) is smaller than \( n \), since \( n^2 = 2m^2 > m^2 \). (Strong induction would also do; the forms are interchangeable, and the answers above name the natural fit.)
 
 *(b)* The negation is: there is an integer \( n \ge 2 \) with no prime factor. A smallest counterexample would be an integer \( m \ge 2 \) with no prime factor such that every integer \( k \) with \( 2 \le k < m \) has one.
 
@@ -447,9 +435,9 @@ A strong induction on the denominator earns the same points step for step. Fatal
 <!-- dependency ledger
 thm-induction (proof): n0 + k >= n0 from k >= 0; n + 1 = n0 + (k + 1) | R arithmetic and order, school fact; axioms in AN1.1
 thm-strong-induction-from-base (proof): n0 <= k < n0 + j gives 0 <= k - n0 < j | R arithmetic and order, school fact; axioms in AN1.1
-def-divides (example): 4 < 14/3 < 5; c = lb = (lk)a | R arithmetic, school fact
-def-divides (example): 4^0 = 1, 4^(n+1) = 4^n * 4, 4^n an integer (the example 3 | 4^n - 1) | powers, school meaning; def-power in F2.2 §03
-def-prime (example): k > 0 from 2 = kd and d > 0; d <= kd | R arithmetic and order, school fact
+def-divides (example): (this section's subsection on divisibility, 3 does not divide 14) 4 < 14/3 < 5 | R arithmetic, school fact
+def-divides (example): (this section's subsection on divisibility) 4^0 = 1, 4^(n+1) = 4^n * 4, 4^n an integer (the example 3 | 4^n - 1) | powers, school meaning; def-power in F2.2 §03
+def-prime (example): (after "Recall def-prime") k > 0 from 2 = kd and d > 0; d <= kd | R arithmetic and order, school fact
 thm-division-algorithm (proof): a(1 - n) >= 0 for a < 0, n >= 1; r - n < r for n > 0; k > 0 from kn > 0, n > 0; cancellation qn = q'n, n != 0 | R arithmetic and order, school fact; axioms in AN1.1
 thm-division-algorithm (proof): "by symmetry" for the exchange of (q, r) and (q', r') | exm-rhetoric-induction (b) (F1.5, the conditions for a legitimate symmetry); stated inline
 thm-division-algorithm (claim): (aftermath) even and odd defined as 2k and 2k + 1 | F1.1 §01, F1.2 §01 (definitions recalled there)

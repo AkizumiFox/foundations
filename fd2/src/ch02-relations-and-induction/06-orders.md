@@ -52,7 +52,7 @@ Let \( X \) be a set. Show that \( \subseteq \) is a partial order on \( \powers
 
 *Total exactly when \( X \) has at most one element.* Suppose \( X \) has two different elements \( a \ne b \). Then \( \{a\}, \{b\} \in \powerset{X} \), and \( \{a\} \not\subseteq \{b\} \), since \( a \in \{a\} \) and \( a \notin \{b\} \); likewise \( \{b\} \not\subseteq \{a\} \). So \( \{a\} \) and \( \{b\} \) are incomparable, and \( \subseteq \) is not total. For \( X = \{1, 2\} \), the incomparable pair is \( \{1\} \), \( \{2\} \).
 
-Conversely, suppose any two elements of \( X \) are equal. Let \( A \subseteq X \). If \( A \ne \emptyset \), take \( a \in A \); then every \( x \in X \) equals \( a \), so \( x \in A \), and \( A = X \). So every subset of \( X \) is \( \emptyset \) or \( X \). Any two of these are comparable, since \( \emptyset \subseteq X \) (Section 1.1, after @prp-empty-set-unique) and each is a subset of itself. So \( \subseteq \) is total on \( \powerset{X} \).
+Conversely, suppose any two elements of \( X \) are equal. Let \( A \subseteq X \). If \( A \ne \emptyset \), take \( a \in A \); then every \( x \in X \) equals \( a \), so \( x \in A \), and \( A = X \). So every subset of \( X \) is \( \emptyset \) or \( X \). Any two of these are comparable, since \( \emptyset \subseteq X \) (Section 1.2, after @prp-empty-set-unique) and each is a subset of itself. So \( \subseteq \) is total on \( \powerset{X} \).
 :::
 
 ::: {.warning}
@@ -108,7 +108,7 @@ A subset \( A \) of a partially ordered set has at most one greatest element and
 Let \( g \) and \( g' \) be greatest elements of \( A \). Since \( g' \in A \) and \( g \) is greatest, \( g' \preceq g \); since \( g \in A \) and \( g' \) is greatest, \( g \preceq g' \). By (PO2), \( g = g' \). For least elements the same argument applies with the inequalities reversed.
 :::
 
-So we may speak of **the** greatest element and **the** least element of \( A \) when they exist. In \( (\nR, \le) \), the greatest element of a set is its maximum, \( \max A \), and the least element its minimum, \( \min A \). This settles a point left open in Section 1.4: the least \( q_0 \in \nZ_{>0} \) with \( r q_0 \in \nZ \) in @exm-not-a-function exists by @thm-well-ordering: the set of such \( q \) lies in \( \nZ_{>0} \subseteq \nN \), and it is non-empty, since writing \( r = p/q \) with \( q \in \nZ_{>0} \) (as the solution of (b) there notes) gives \( rq = p \in \nZ \). It is unique by the least-element half of the proposition, so the rule there names one value.
+So we may speak of **the** greatest element and **the** least element of \( A \) when they exist. In \( (\nR, \le) \), the greatest element of a set is its maximum, \( \max A \), and the least element its minimum, \( \min A \). This settles a point left open in Section 1.5: the least \( q_0 \in \nZ_{>0} \) with \( r q_0 \in \nZ \) in @exm-not-a-function exists by @thm-well-ordering: the set of such \( q \) lies in \( \nZ_{>0} \subseteq \nN \), and it is non-empty, since writing \( r = p/q \) with \( q \in \nZ_{>0} \) (as the solution of (b) there notes) gives \( rq = p \in \nZ \). It is unique by the least-element half of the proposition, so the rule there names one value.
 
 The second result compares the two notions.
 
@@ -214,7 +214,7 @@ Now \( L = \sup \{a, b\} \). (S1): \( a \mid L \) and \( b \mid L \), since \( L
 *The instance.* For \( a = 2 \), \( b = 3 \): \( 6 \in M \), and none of \( 1, 2, 3, 4, 5 \) is a multiple of both \( 2 \) and \( 3 \) (\( 1, 3, 5 \) are odd, and \( 2, 4 \) lie strictly between consecutive multiples of \( 3 \)). So \( L = 6 \), and every integer \( n \) with \( 2 \mid n \) and \( 3 \mid n \) has \( 6 \mid n \), by the second paragraph with \( c = n \).
 :::
 
-The instance proves the fact that Section 1.2 used as a school fact: an integer divisible by \( 2 \) and by \( 3 \) is divisible by \( 6 \). It also shows the two orders on \( \nN \) disagreeing: \( \sup \{4, 6\} \) is \( 12 \) under divisibility and \( 6 \) under \( \le \).
+The instance proves the fact that Section 1.3 used as a school fact: an integer divisible by \( 2 \) and by \( 3 \) is divisible by \( 6 \). It also shows the two orders on \( \nN \) disagreeing: \( \sup \{4, 6\} \) is \( 12 \) under divisibility and \( 6 \) under \( \le \).
 
 **A supremum that does not exist.** In \( (\nQ, \le) \), the set \( \{ x \in \nQ : x > 0, \ x^2 < 2 \} \) is non-empty and bounded above (by \( 2 \), for instance: a rational \( x > 2 \) has \( x^2 > 4 \)). It has **no** least upper bound in \( \nQ \). We do not prove this here. *Analysis on the Real Line*, Chapter 1 proves it, and then takes the existence of suprema in \( \nR \) as its axiom: the supremum of *Analysis on the Real Line*, Chapter 1, defined in an ordered field, is @def-order-supremum for the order \( \le \) of that field; *Analysis on the Real Line*, Chapter 1 uses it in \( \nQ \) and in \( \nR \). The ambient set decides: the same set has a supremum in \( (\nR, \le) \), namely \( \sqrt 2 \).
 
@@ -286,7 +286,7 @@ Give an example of a partially ordered set that has exactly two maximal elements
 :::
 
 ::: {.solution}
-*An example.* \( X = \{ \emptyset, \{1\}, \{2\} \} \) ordered by \( \subseteq \). It is a partial order, as a subset of \( (\powerset{\{1, 2\}}, \subseteq) \). The least element is \( \emptyset \), since \( \emptyset \subseteq A \) for every \( A \in X \) (Section 1.1, after @prp-empty-set-unique). The maximal elements are \( \{1\} \) and \( \{2\} \): neither is strictly contained in an element of \( X \). And \( \emptyset \) is not maximal, since \( \emptyset \subsetneq \{1\} \). So there are exactly two. Another answer: \( \{1, 2, 3\} \) under divisibility, with least element \( 1 \) and maximal elements \( 2 \), \( 3 \).
+*An example.* \( X = \{ \emptyset, \{1\}, \{2\} \} \) ordered by \( \subseteq \). It is a partial order, as a subset of \( (\powerset{\{1, 2\}}, \subseteq) \). The least element is \( \emptyset \), since \( \emptyset \subseteq A \) for every \( A \in X \) (Section 1.2, after @prp-empty-set-unique). The maximal elements are \( \{1\} \) and \( \{2\} \): neither is strictly contained in an element of \( X \). And \( \emptyset \) is not maximal, since \( \emptyset \subsetneq \{1\} \). So there are exactly two. Another answer: \( \{1, 2, 3\} \) under divisibility, with least element \( 1 \) and maximal elements \( 2 \), \( 3 \).
 
 *What every answer must have.* Let \( l \) be the least element and \( m_1 \ne m_2 \) the maximal elements.
 

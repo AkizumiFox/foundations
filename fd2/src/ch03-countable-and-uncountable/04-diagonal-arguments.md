@@ -4,7 +4,7 @@ Every infinite set met so far has turned out to be countable: \( \nN \), \( \nZ 
 
 ## A sequence that is not on the list
 
-Recall from Section 1.4 that \( \{0, 1\}^{\nN} \) is the set of all functions \( \nN \to \{0, 1\} \): the sequences of zeros and ones, indexed from \( 0 \). It is infinite, and it looks no bigger than \( \nN \times \nN \), which is countable. To show that it is **not** countable we must show, by @def-countable, that it is non-empty and that **no** function \( f \colon \nN \to \{0, 1\}^{\nN} \) is onto. So we take an arbitrary list \( f(0), f(1), f(2), \dots \) of sequences and look for a sequence that is not on it.
+Recall from Section 1.5 that \( \{0, 1\}^{\nN} \) is the set of all functions \( \nN \to \{0, 1\} \): the sequences of zeros and ones, indexed from \( 0 \). It is infinite, and it looks no bigger than \( \nN \times \nN \), which is countable. To show that it is **not** countable we must show, by @def-countable, that it is non-empty and that **no** function \( f \colon \nN \to \{0, 1\}^{\nN} \) is onto. So we take an arbitrary list \( f(0), f(1), f(2), \dots \) of sequences and look for a sequence that is not on it.
 
 Write the list as a table: row \( n \) is the sequence \( f(n) \), and the entry in row \( n \) and column \( k \) is the number \( f(n)(k) \). Here is the start of one such table, with the entries in places \( (0, 0), (1, 1), (2, 2), (3, 3) \) boxed:
 
@@ -104,7 +104,7 @@ The power set \( \powerset{\nN} \) is uncountable.
 The set \( \powerset{\nN} \) is non-empty, since \( \emptyset \in \powerset{\nN} \), and by @thm-cantor with \( X = \nN \) there is no surjection \( \nN \to \powerset{\nN} \). By @def-countable, \( \powerset{\nN} \) is not countable.
 :::
 
-The two diagonal proofs are one. By the correspondence of Section 1.4, \( S \mapsto \ind_S \) is a bijection \( \powerset{\nN} \to \{0, 1\}^{\nN} \), with inverse \( b \mapsto \{ n \in \nN : b(n) = 1 \} \) (@thm-bijection-iff-inverse). Given \( f \colon \nN \to \powerset{\nN} \), the sequence \( g(n) = 1 - \ind_{f(n)}(n) \) of @thm-binary-sequences-uncountable is \( 1 \) exactly when \( n \notin f(n) \), so \( g = \ind_D \) for the set \( D \) of Cantor's proof.
+The two diagonal proofs are one. By the correspondence of Section 1.5, \( S \mapsto \ind_S \) is a bijection \( \powerset{\nN} \to \{0, 1\}^{\nN} \), with inverse \( b \mapsto \{ n \in \nN : b(n) = 1 \} \) (@thm-bijection-iff-inverse). Given \( f \colon \nN \to \powerset{\nN} \), the sequence \( g(n) = 1 - \ind_{f(n)}(n) \) of @thm-binary-sequences-uncountable is \( 1 \) exactly when \( n \notin f(n) \), so \( g = \ind_D \) for the set \( D \) of Cantor's proof.
 
 ## Decimal expansions
 
