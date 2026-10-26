@@ -38,6 +38,14 @@ items:
       correct. chi(0)=chi(0)+chi(0) gives chi(0)=0; 0<1 and strict increase give chi(1)>0; chi(1)=chi(1*1)=chi(1)^2
       with chi(1)!=0 gives chi(1)=1 by cancellation. The claim that prp-cof-map-fixes-rationals, thm-cof-field-automorphism-identity
       and the remark after its proof assume sums, products and the unit but no
+  - stage: S7r
+    verdict: correct
+    by: rereferee
+    hash: a3946667ef3c
+    date: '2026-10-26'
+    model: claude-opus-5-5
+    evidence: 01:41 'meets a map of Q(sqrt 2)' is a prose pointer with no proof claim. The rest of the
+      item is unchanged.
 - key: check:01-completeness-and-archimedes:1
   kind: check
   file: 01-completeness-and-archimedes.md
@@ -226,6 +234,24 @@ items:
     model: claude-opus-5-5
     evidence: 01-completeness-and-archimedes.md:99 The step from b ≤ ι_F(-n) to -b ≥ n·1_F uses ι_F(-n)
       = -ι_F(n) without justification.
+  - stage: S7r
+    verdict: correct
+    by: rereferee
+    hash: 436b0713375b
+    date: '2026-10-26'
+    model: claude-opus-5-5
+    evidence: '01:99: k = -n gives b <= iota_F(-n) = -iota_F(n) (additivity, prp-ring-algebra (a)). Then
+      -b >= n*1_F (prp-ordered-ring-rules (a)), which contradicts thm-cof-complete-archimedean. The warning
+      at 01:103 points to an1 Ch 10 = AN1.11, which is correct. The ledger lists prp-ring-algebra (a).'
+  - stage: S7r
+    verdict: correct
+    by: rereferee
+    hash: 436b0713375b
+    date: '2026-10-26'
+    model: claude-opus-5-5
+    evidence: b <= iota_F(-n) = -iota_F(n) uses prp-ring-algebra (a) through additivity. Then -b >= n*1_F
+      by prp-ordered-ring-rules (a), against thm-cof-complete-archimedean. The warning's 'Chapter 10'
+      is the current an1 number.
 - key: exm-cof-sup-one-minus-reciprocals
   kind: exm
   file: 01-completeness-and-archimedes.md
@@ -260,6 +286,24 @@ items:
     model: claude-opus-5-5
     evidence: '01-completeness-and-archimedes.md:121 The solution uses two facts without saying so: that
       ι_F preserves negatives, and that ε = 1_F - b is positive.'
+  - stage: S7r
+    verdict: correct
+    by: rereferee
+    hash: 2f75d472d315
+    date: '2026-10-26'
+    model: claude-opus-5-5
+    evidence: '01:121: epsilon = 1_F - b > 0 by ordered-ring rule (a). Then prp-archimedean-reciprocal
+      gives N. iota_F preserves negatives and inverses, so iota_F(1 - 1/N) = 1_F - 1/(N 1_F) > b. This
+      contradicts the upper bound, so sup = 1_F. The ledger covers every step.'
+  - stage: S7r
+    verdict: correct
+    by: rereferee
+    hash: 2f75d472d315
+    date: '2026-10-26'
+    model: claude-opus-5-5
+    evidence: 1_F - b > 0 follows from b < 1_F by prp-ordered-ring-rules (a). iota_F(1 - 1/N) = 1_F -
+      1/(N 1_F) uses negatives (prp-ring-algebra (a)) and inverses (lem-field-fraction-rules (a)). The
+      ledger lines match.
 - key: def-cof-rationals-below
   kind: def
   file: 01-completeness-and-archimedes.md
@@ -536,6 +580,23 @@ items:
     evidence: '01-completeness-and-archimedes.md:303 The forward meta-claim about Section 6.3 is false
       as worded: Section 6.3 never shows a real number between the rationals below it and those above
       it.'
+  - stage: S7r
+    verdict: correct
+    by: rereferee
+    hash: 2d5af9d8bfcd
+    date: '2026-10-26'
+    model: claude-opus-5-5
+    evidence: The only change is 01:303. Its forward pointer now matches 03:112 (Q_F(x) is a Dedekind
+      cut). The proof is unchanged.
+  - stage: S7r
+    verdict: correct
+    by: rereferee
+    hash: 2d5af9d8bfcd
+    date: '2026-10-26'
+    model: claude-opus-5-5
+    evidence: '(a) is sup A with (S1)/(S2). (b): epsilon = |c - c''| and |c - c''| <= b - a by prp-absolute-value-ordered-field
+      (d). The new closing pointer is true: 03:112 shows the rationals below an element form a Dedekind
+      cut.'
 - key: check:01-completeness-and-archimedes:4
   kind: check
   file: 01-completeness-and-archimedes.md
@@ -729,6 +790,23 @@ items:
       The citations check out: prp-ordered-ring-rules (g) is ''a,b>=0: a<b iff a^2<b^2'' (fd3 ch02/04:182),
       and the uniqueness clause is in prp-cof-square-roots. My script confirms x^2+x = a for x = sqrt(a+1/4)-1/2
       at '
+  - stage: S7r
+    verdict: correct
+    by: rereferee
+    hash: d32d85db831f
+    date: '2026-10-26'
+    model: claude-opus-5-5
+    evidence: (a) r > 0 gives -r < 0 by prp-ordered-ring-rules (a), so r != -r. The b < 0 case uses (-b)^2
+      = b^2 (ring algebra) and uniqueness. The ledger now cites (a) and prp-ring-algebra in place of the
+      unused (e). Parts (b) to (e) are unchanged.
+  - stage: S7r
+    verdict: correct
+    by: rereferee
+    hash: d32d85db831f
+    date: '2026-10-26'
+    model: claude-opus-5-5
+    evidence: '(a): r > 0 > -r by prp-ordered-ring-rules (a), and (-b)^2 = b^2. (b)-(e) are unchanged
+      and correct. The ledger now cites rules (a) and prp-ring-algebra in place of (e).'
 - key: exr-completeness-and-archimedes-c1
   kind: exr
   file: 01-completeness-and-archimedes.md
@@ -1025,6 +1103,16 @@ items:
       is resolved by the new remark at 02:170-172. The Q case checked out: R is Archimedean (thm-constructed-reals-archimedean,
       ch05/04:77); exm-sqrt2-class gives r^2=2 (ch05/04:211); a map fixing Q would put a square root of
       2 in Q, which contradicts thm-no-rational-square-two. The Q(t) case checked out: t > n*'
+  - stage: S7r
+    verdict: correct
+    by: rereferee
+    hash: 106a58a6fb54
+    date: '2026-10-26'
+    model: claude-opus-5-5
+    evidence: The diff changes only the pointer in the Idea block (line 111, inside this item's span from
+      95 to 115). The pointer now names the subsection at lines 7-13, where the record identity Q_L(phi(x))
+      = Q_F(x) is derived from prp-cof-map-fixes-rationals. The statement and (star) are untouched and
+      match how the Idea block uses them.
 - key: proof:thm-cof-embedding-into-complete
   kind: proof
   file: 02-measuring-by-rationals.md
@@ -1060,6 +1148,14 @@ items:
       (a) with -(-x)=x; the ledger now records iota_F(-n)=-(n*1_F) at 355. Step 2 both inclusions are
       valid; (supseteq) uses leastness and totality. Step 3 uses the rational-element example after def-cof-rationals-below
       (ch06/01). Step 4 is fine. Steps 5 and 6: the lemma chains are valid, and the product lemma '
+  - stage: S7r
+    verdict: correct
+    by: rereferee
+    hash: cd0739a1b868
+    date: '2026-10-26'
+    model: claude-opus-5-5
+    evidence: '02:108: the idea block now points to ''## What the map must be'' (02:7), which does derive
+      Q_L(phi(x)) = Q_F(x).'
 - key: check:02-measuring-by-rationals:3
   kind: check
   file: 02-measuring-by-rationals.md
@@ -1501,6 +1597,26 @@ items:
       = Q_R(x) one also needs the cut model to be complete and Q_M(c) = c for each cut c. Both are proved
       in Axiomatic Set Theory (ST.1, thm-dedekind-same-reals (c)), and the text does not say they come
       from there.
+  - stage: S7r
+    verdict: correct
+    by: rereferee
+    hash: e15f9facdf62
+    date: '2026-10-26'
+    model: claude-opus-5-5
+    evidence: 'phi(r)^2 = iota_M(2) and phi(r) > phi(0) = 0, both by prp-cof-map-fixes-rationals, so phi(r)
+      is the unique nonnegative root by prp-cof-square-roots. Q_M(phi(r)) = Q_R(r) by (star). The four
+      cut properties are argued inline. The cut-model identification is now (prose pointer to ST.1: Q_M(c)
+      = c) + (star) => phi(y) = Q_R(y), which is valid, and the ledger rows match.'
+  - stage: S7r
+    verdict: correct
+    by: rereferee
+    hash: e15f9facdf62
+    date: '2026-10-26'
+    model: claude-opus-5-5
+    evidence: 'phi(0) = 0 is now justified by prp-cof-map-fixes-rationals. The cut paragraph: the cut
+      model has rationals below c equal to the elements of c (parked thm-dedekind-same-reals (c), ST.1),
+      and (star) gives Q_M(copy of y) = Q_R(y), so the copy is the cut Q_R(y). The argument is sound and
+      labelled as a prose pointer.'
 - key: cor-cof-order-automorphism-identity
   kind: cor
   file: 03-the-uniqueness-theorem.md
@@ -1626,6 +1742,14 @@ items:
       prp-ordered-ring-rules (e) is ''a ≠ 0 ⇒ a^2 > 0''. Step 2: (a) is ''a < b iff b - a > 0'', and prp-ring-algebra
       (a) is uniqueness of negatives. Step 3: the uniqueness clause, with Archimedean F and complete F.
       Every step is cited or ledgered (03:344-345).'
+  - stage: S7r
+    verdict: correct
+    by: rereferee
+    hash: f198319459db
+    date: '2026-10-26'
+    model: claude-opus-5-5
+    evidence: The remark at 03:176 now says F5.2 'meets' Q(sqrt 2) with its conjugation. That is a prose
+      pointer only, and nothing depends on it.
 - key: exm-cof-limits-carried-across
   kind: exm
   file: 03-the-uniqueness-theorem.md
@@ -2093,6 +2217,25 @@ items:
     evidence: '03-the-uniqueness-theorem.md:481 One marking-scheme line is muddled: it asks which clause
       of the supremum ''(S1)'' uses, but (S1) is itself a clause. Step (2) is also given in the problem,
       so the reader does not have to supply it.'
+  - stage: S7r
+    verdict: correct
+    by: rereferee
+    hash: 7407970df300
+    date: '2026-10-26'
+    model: claude-opus-5-5
+    evidence: Step (2) is a blank, solved by s - eps < s plus leastness. Step (3) gets a_N <= a_n by induction
+      and prp-omega-order-arithmetic (a), then the squeeze with prp-absolute-value-ordered-field (d).
+      Part (b) is unchanged. The marking scheme totals 10 and its first line is coherent. The sidecar
+      is unaffected because no numbers changed.
+  - stage: S7r
+    verdict: correct
+    by: rereferee
+    hash: 7407970df300
+    date: '2026-10-26'
+    model: claude-opus-5-5
+    evidence: 'Step (2) is now left to the student, and the solution supplies it: s - eps is not an upper
+      bound, by leastness (S2). The marking scheme is 2+2+2+2+2 = 10. (3) uses thm-omega-induction and
+      prp-omega-order-arithmetic (a) correctly. The ledger line for (2) was added.'
 - key: exr-the-uniqueness-theorem-r1
   kind: exr
   file: 03-the-uniqueness-theorem.md
@@ -2191,3 +2334,21 @@ items:
       of iota_F and p^2 = 2. (c): z = iota(q) + sqrt2/N lies strictly between, by the choice 1/N < (y
       - iota(q))/sqrt2 and sqrt2 > 0. If z = iota(p), then sqrt2 = iota(N(p-q)), against (b). Complete.
       The source is hidden and named in the solution.'
+  - stage: S7r
+    verdict: correct
+    by: rereferee
+    hash: b61ca48974f4
+    date: '2026-10-26'
+    model: claude-opus-5-5
+    evidence: '(a) The constructed Q is countable by ch03 R2 (exr-gaps-in-the-rationals-r2, read: it proves
+      exactly this through fd2 Chapter 4 results), and its image is countable by fd2:prp-countable-image.
+      The school-rationals theorem is explicitly not used, and the ledger row is added. (b) and (c) are
+      unchanged.'
+  - stage: S7r
+    verdict: correct
+    by: rereferee
+    hash: b61ca48974f4
+    date: '2026-10-26'
+    model: claude-opus-5-5
+    evidence: (a) now rests on exr-gaps-in-the-rationals-r2 (ch03 03:438, which proves the constructed
+      Q countable) plus fd2:prp-countable-image. (b) and (c) are unchanged. The ledger line was added.

@@ -105,11 +105,11 @@ Let \( M \) be any complete ordered field (for instance the one *Axiomatic Set T
 :::
 
 ::: {.solution}
-*The image of \( r \).* Since \( \varphi \) is multiplicative and fixes the rationals (@prp-cof-map-fixes-rationals), \( \varphi(r)^2 = \varphi(r^2) = \varphi(\iota_{\nR}(2)) = \iota_M(2) \). Since \( \varphi \) is strictly increasing and \( r > 0 \), \( \varphi(r) > \varphi(0) = 0 \). By @prp-cof-square-roots in the complete field \( M \), there is exactly one \( b \ge 0 \) in \( M \) with \( b^2 = \iota_M(2) \). So \( \varphi(r) \) is that \( b \): the square root of \( 2 \) in \( M \), however \( M \) was built.
+*The image of \( r \).* Since \( \varphi \) is multiplicative and fixes the rationals (@prp-cof-map-fixes-rationals), \( \varphi(r)^2 = \varphi(r^2) = \varphi(\iota_{\nR}(2)) = \iota_M(2) \). Since \( \varphi \) is strictly increasing and \( r > 0 \), \( \varphi(r) > \varphi(0) = 0 \) (\( \varphi \) fixes the rational \( 0 \), @prp-cof-map-fixes-rationals). By @prp-cof-square-roots in the complete field \( M \), there is exactly one \( b \ge 0 \) in \( M \) with \( b^2 = \iota_M(2) \). So \( \varphi(r) \) is that \( b \): the square root of \( 2 \) in \( M \), however \( M \) was built.
 
 *The rationals below it.* By \( (\star) \) of @thm-cof-embedding-into-complete, \( \nQ_M(\varphi(r)) = \nQ_{\nR}(r) \). By @exm-cof-rationals-below-sqrt2 this is the set of rationals \( q \) with \( q < 0 \), or with \( q \ge 0 \) and \( q^2 < 2 \). The same set of rationals sits below \( \sqrt 2 \) in both models.
 
-The set \( \nQ_F(x) \) of an element \( x \) of an Archimedean ordered field \( F \) always has four properties. It is non-empty: some \( n \in \nN \) has \( -x < n \cdot 1_F \), so \( -n \in \nQ_F(x) \). It is not all of \( \nQ \): some \( m \) has \( x < m \cdot 1_F \), so \( m \notin \nQ_F(x) \). It is closed downward (Section 6.1). It has no largest element: for \( q \in \nQ_F(x) \), density (@thm-rationals-dense-ordered-field) gives \( p \in \nQ \) with \( \iota_F(q) < \iota_F(p) < x \). A set of rationals with these four properties is called a **Dedekind cut**. *Axiomatic Set Theory* takes the cuts themselves as the real numbers; by @thm-cof-uniqueness the result is one more copy of \( \nR \), and in it the copy of \( x \) is the cut \( \nQ_{\nR}(x) \).
+The set \( \nQ_F(x) \) of an element \( x \) of an Archimedean ordered field \( F \) always has four properties. It is non-empty: some \( n \in \nN \) has \( -x < n \cdot 1_F \), so \( -n \in \nQ_F(x) \). It is not all of \( \nQ \): some \( m \) has \( x < m \cdot 1_F \), so \( m \notin \nQ_F(x) \). It is closed downward (Section 6.1). It has no largest element: for \( q \in \nQ_F(x) \), density (@thm-rationals-dense-ordered-field) gives \( p \in \nQ \) with \( \iota_F(q) < \iota_F(p) < x \). A set of rationals with these four properties is called a **Dedekind cut**. *Axiomatic Set Theory*, Chapter 1 takes the cuts themselves as the real numbers, proves that they form a complete ordered field, and shows that there the rationals below a cut \( c \) are exactly the elements of \( c \). By @thm-cof-uniqueness that field is one more copy of \( \nR \); by \( (\star) \) the copy of a real number \( y \) has the same rationals below it as \( y \), so the copy of \( y \) is the cut \( \nQ_{\nR}(y) \).
 :::
 
 ## Automorphisms
@@ -173,7 +173,7 @@ The answer to the prompt: only the first line of Step 1, "there is \( b \) with 
 Completeness entered twice: it supplied square roots in Step 1, and, through @thm-cof-complete-archimedean, the Archimedean property that the uniqueness clause in Step 3 needs (by the remark after its proof in Section 6.2, an Archimedean target suffices there).
 
 ::: {.remark}
-**What each hypothesis buys.** Without the order condition, a bijection that respects sums, products and \( 1 \) can reverse signs: *Algebraic Preliminaries*, Chapter 2 shows that \( \nQ(\sqrt 2) \), an Archimedean field that is not complete, has one exchanging \( \sqrt 2 \) and \( -\sqrt 2 \). The theorem above shows that this cannot happen in a complete ordered field. Without the Archimedean property, an order-preserving automorphism can move elements: in \( \nQ(t) \) of @exm-rational-function-field, \( t \mapsto t + 1 \) keeps degrees and leading coefficients (school polynomial algebra, as flagged there). And \( \nQ \) has only the identity (Exercise B1), although it is not complete: there is nothing besides rationals to move.
+**What each hypothesis buys.** Without the order condition, a bijection that respects sums, products and \( 1 \) can reverse signs: *Algebraic Preliminaries*, Chapter 2 meets \( \nQ(\sqrt 2) \), an Archimedean field that is not complete, which has one exchanging \( \sqrt 2 \) and \( -\sqrt 2 \). The theorem above shows that this cannot happen in a complete ordered field. Without the Archimedean property, an order-preserving automorphism can move elements: in \( \nQ(t) \) of @exm-rational-function-field, \( t \mapsto t + 1 \) keeps degrees and leading coefficients (school polynomial algebra, as flagged there). And \( \nQ \) has only the identity (Exercise B1), although it is not complete: there is nothing besides rationals to move.
 :::
 
 ::: {.second-reading title="Maps that ignore the order"}
@@ -463,7 +463,7 @@ Fatal errors (0 for the item): declaring the conclusion false.
 
 ::: {.enumerate options="label=(\arabic*)"}
 1. \( S \) is non-empty and bounded above, so \( s \coloneqq \sup S \) exists.
-2. Let \( \varepsilon \in F_{>0} \). Since \( s - \varepsilon < s \), \( s - \varepsilon \) is not an upper bound of \( S \), so \( a_N > s - \varepsilon \) for some \( N \in \nN \).
+2. Let \( \varepsilon \in F_{>0} \). Find \( N \in \nN \) with \( a_N > s - \varepsilon \).
 3. *Name the move, then complete it:* show \( \abs{a_n - s} < \varepsilon \) for every \( n \ge N \), and conclude.
 :::
 
@@ -473,14 +473,17 @@ Fatal errors (0 for the item): declaring the conclusion false.
 ::: {.solution}
 The move is **construct a point as a supremum** (@exm-method-point-as-supremum): the limit is built as \( \sup S \); (S1) puts every term below it, and leastness, in (2), puts a term above \( s - \varepsilon \).
 
-(a) (3) Let \( n \ge N \). By induction on \( i \) (@thm-omega-induction), \( a_N \le a_{N+i} \), and \( n = N + i \) for some \( i \) (@prp-omega-order-arithmetic (a)); so \( a_N \le a_n \). Also \( a_n \le s \) by (S1). Hence \( s - \varepsilon < a_N \le a_n \le s < s + \varepsilon \), and \( \abs{a_n - s} < \varepsilon \) (@prp-absolute-value-ordered-field (d)). Since \( \varepsilon \) was arbitrary and \( N \) depends only on \( \varepsilon \), \( a_n \to s \).
+(a) (2) Since \( s - \varepsilon < s \) and \( s \) is the least upper bound, \( s - \varepsilon \) is not an upper bound of \( S \), so \( a_N > s - \varepsilon \) for some \( N \in \nN \).
+
+(3) Let \( n \ge N \). By induction on \( i \) (@thm-omega-induction), \( a_N \le a_{N+i} \), and \( n = N + i \) for some \( i \) (@prp-omega-order-arithmetic (a)); so \( a_N \le a_n \). Also \( a_n \le s \) by (S1). Hence \( s - \varepsilon < a_N \le a_n \le s < s + \varepsilon \), and \( \abs{a_n - s} < \varepsilon \) (@prp-absolute-value-ordered-field (d)). Since \( \varepsilon \) was arbitrary and \( N \) depends only on \( \varepsilon \), \( a_n \to s \).
 
 (b) By @thm-sqrt2-cauchy-no-rational-limit, \( x_m \le x_n \) for \( m \ge n \) and \( x_n > 1 \); so \( -x_n \le -x_m \) for \( m \ge n \) (increasing) and \( -x_n < -1 \) (bounded above). If \( -x_n \to L \) in \( \nQ \), then \( x_n \to -L \) (@thm-limit-laws-ordered-field (b), with \( c = -1 \)), against the same theorem.
 
 **Marking scheme.** (10 points)
-- 2: names the move and says which clause of the supremum each of (S1) and step (2) uses.
-- 3: proves \( a_N \le a_n \) for \( n \ge N \) (induction, or monotonicity stated with a reason).
-- 3: the squeeze \( s - \varepsilon < a_n \le s \) and the absolute value.
+- 2: names the move (construct a point as a supremum) and says that every term lies below \( s \) by (S1) while step (2) uses leastness (S2).
+- 2: step (2): \( s - \varepsilon \) is not an upper bound, so some \( a_N \) exceeds it.
+- 2: proves \( a_N \le a_n \) for \( n \ge N \) (induction, or monotonicity stated with a reason).
+- 2: the squeeze \( s - \varepsilon < a_n \le s \) and the absolute value.
 - 2: (b) increasing, bounded above, and no limit, through the limit law.
 Fatal errors (0 for the step): assuming \( s \in S \); choosing \( N \) after \( n \).
 :::
@@ -541,7 +544,7 @@ Let \( F \) be a complete ordered field.
 :::
 
 ::: {.solution}
-(a) \( \nQ \) is countable (@fd2:thm-integers-rationals-countable), and \( \iota_F(\nQ) \) is its image under \( \iota_F \) (@fd2:prp-countable-image).
+(a) The set \( \nQ \) built in Chapter 3 is countable; that is review exercise R2 of Section 3.3 (the countability results of *Sets and Functions*, Chapter 4, applied to \( \nZ = (\nN \times \nN)/{\sim} \) and \( \nQ \); @fd2:thm-integers-rationals-countable is about the school rationals and is not used). \( \iota_F(\nQ) \) is the image of \( \nQ \) under \( \iota_F \), so it is countable (@fd2:prp-countable-image).
 
 (b) If \( \sqrt 2 = \iota_F(p) \), then \( \iota_F(p^2) = \iota_F(p)^2 = 2 \cdot 1_F = \iota_F(2) \) (@thm-rationals-embed-ordered-field), and \( \iota_F \) is injective, so \( p^2 = 2 \), against @thm-no-rational-square-two.
 
@@ -561,7 +564,8 @@ thm-cof-uniqueness (claim): a direct proof that phi is onto | exr-measuring-by-r
 cor-cof-isomorphic-to-cauchy-reals (claim): iota_Q = id_Q | uniqueness clause of thm-rationals-embed-ordered-field, cited inline
 cor-cof-isomorphic-to-cauchy-reals (claim): cong is an equivalence relation; injectivity of chi gives additivity of chi^{-1} | inline (second-reading fold)
 exm-cof-two-models (example): Q_F(x) non-empty and not all of Q (Archimedean property applied to -x and x, iota_F(-n) = -n 1_F), closed downward (Section 6.1, transitivity of <), no largest element (density) | def-archimedean-ordered-field, thm-rationals-dense-ordered-field; inline
-exm-cof-two-models (example): Dedekind cuts as the real numbers of Axiomatic Set Theory, and the copy of x is Q_R(x) | prose pointer to the set-theory volume; the identification is (star) of thm-cof-embedding-into-complete for the isomorphism of thm-cof-uniqueness; nothing depends on it
+exm-cof-two-models (solution): phi(0) = 0 | prp-cof-map-fixes-rationals, cited
+exm-cof-two-models (example): Dedekind cuts as the real numbers of Axiomatic Set Theory, a complete ordered field in which the rationals below a cut c are the elements of c; the copy of y is Q_R(y) | prose pointer to Axiomatic Set Theory, Chapter 1 (STATUS promise ST.1, thm-dedekind-same-reals (c)) for the cut model; then (star) of thm-cof-embedding-into-complete for the isomorphism of thm-cof-uniqueness; nothing depends on it
 thm-cof-field-automorphism-identity (proof): sigma(0) = 0 and sigma(-c) = -sigma(c) from additivity | inline; uniqueness of negatives prp-ring-algebra (a)
 thm-cof-field-automorphism-identity (proof): 0 != 1 in a field | def-commutative-ring-and-field (field: 1 != 0), cited
 thm-cof-field-automorphism-identity (proof): the uniqueness clause of thm-cof-embedding-into-complete needs only an Archimedean target | remark after the proof of thm-cof-embedding-into-complete (Section 6.2), cited by prose pointer
@@ -590,11 +594,13 @@ exr-the-uniqueness-theorem-b2 (solution): iota_R keeps every supremum that exist
 exr-axioms-or-model-b2 (solution): (T1)-(T3), (T5) as in exm-cof-limits-carried-across | inline in this section
 exr-the-uniqueness-theorem-c2 (solution): counterexample x = 0, y = 2, q = 1 | verify/ch06/exr-the-uniqueness-theorem-c2.py
 exr-the-uniqueness-theorem-c2 (solution): sup(A + B) = sup A + sup B in a complete ordered field | not proved in this book; named only as the gap; nothing depends on it
+exr-the-uniqueness-theorem-c3 (solution): (2) s - eps not an upper bound, so a_N > s - eps | leastness (S2) of the supremum; inline
 exr-the-uniqueness-theorem-c3 (solution): a_N <= a_{N+i} by induction on i; n = N + i | thm-omega-induction, prp-omega-order-arithmetic (a), cited; verify/ch06/exr-the-uniqueness-theorem-c3.py
 exr-the-uniqueness-theorem-c3 (solution): s - eps < a_n <= s gives |a_n - s| < eps | prp-absolute-value-ordered-field (d), cited
 exr-the-uniqueness-theorem-c3 (solution): (b) -x_n increasing, < -1; no limit via c = -1 | thm-sqrt2-cauchy-no-rational-limit, thm-limit-laws-ordered-field (b), cited; verify/ch06/exr-the-uniqueness-theorem-c3.py
 exr-the-uniqueness-theorem-r1 (solution): q_n - 1 = -1/(n + 2); (q_n - 1) null | exm-first-sequences-ordered-field (c); verify/ch06/exr-the-uniqueness-theorem-r1.py
 exr-the-uniqueness-theorem-r2 (solution): (a), (b) respect ~; (c) fails at (1, 2) ~ (2, 4), 8 != 6 | prp-rational-pairs-equivalence; verify/ch06/exr-the-uniqueness-theorem-r2.py
+exr-the-uniqueness-theorem-r3 (solution): (a) constructed Q countable; image under iota_F countable | exr-gaps-in-the-rationals-r2 (prose pointer); fd2:prp-countable-image (citing rule group (i))
 exr-the-uniqueness-theorem-r3 (solution): iota_F injective and preserves sums, products; iota_F(N(p - q)) = (N 1_F)(iota_F(p) - iota_F(q)) | thm-rationals-embed-ordered-field, cited; verify/ch06/exr-the-uniqueness-theorem-r3.py
 exr-the-uniqueness-theorem-r3 (solution): sqrt 2 > 0; iota_F(q) < z < y | prp-cof-square-roots (b >= 0, b^2 = 2 != 0), prp-archimedean-reciprocal, prp-reciprocal-order; inline; verify/ch06/exr-the-uniqueness-theorem-r3.py
 -->

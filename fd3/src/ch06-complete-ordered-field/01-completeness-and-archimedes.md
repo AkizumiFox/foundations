@@ -38,7 +38,7 @@ Two consequences come free. A strictly increasing map is injective: if \( a \ne 
 The zero map \( \chi(a) \coloneqq 0_L \) preserves sums and products, since \( 0 + 0 = 0 \) and \( 0 \cdot 0 = 0 \). It fails the unit clause, because \( 1_L \ne 0_L \) in a field, and it fails strict increase. In @def-cof-order-preserving-map the unit clause in fact follows from the other three: additivity gives \( \chi(0) = \chi(0) + \chi(0) \), so \( \chi(0) = 0 \); strict increase then gives \( \chi(1) > \chi(0) = 0 \); and \( \chi(1) = \chi(1)^2 \) with \( \chi(1) \ne 0 \) forces \( \chi(1) = 1 \). It is stated anyway because @prp-cof-map-fixes-rationals, @thm-cof-field-automorphism-identity and the remark after its proof assume sums, products and the unit but no order. Without the unit hypothesis, the zero map would be a counterexample to each of them.
 :::
 
-**Why this definition.** Preserving sums, products and the unit is what makes \( \chi \) a dictionary for the field operations; strict increase makes it a dictionary for the order. *Algebraic Preliminaries*, Chapter 2 shows a map of \( \nQ(\sqrt 2) \) to itself that respects sums, products and the unit but sends a positive element to a negative one, so the order clause does not follow from the others in general. Section 6.3 shows that for complete ordered fields it does.
+**Why this definition.** Preserving sums, products and the unit is what makes \( \chi \) a dictionary for the field operations; strict increase makes it a dictionary for the order. *Algebraic Preliminaries*, Chapter 2 meets a map of \( \nQ(\sqrt 2) \) to itself that respects sums, products and the unit but sends a positive element to a negative one, so the order clause does not follow from the others in general. Section 6.3 shows that for complete ordered fields it does.
 
 ::: {.check}
 Which clauses of @def-cof-order-preserving-map does the map \( \chi \colon \nQ \to \nQ \), \( \chi(x) \coloneqq -x \), satisfy?
@@ -96,11 +96,11 @@ In a complete ordered field \( F \), is \( \iota_F(\nZ) \) bounded below?
 :::
 
 ::: {.solution}
-No. If \( b \le \iota_F(k) \) for every \( k \in \nZ \), then \( -b \ge \iota_F(n) = n \cdot 1_F \) for every \( n \in \nN \), taking \( k = -n \); so \( -b \) bounds \( \iota_F(\nN) \) above, against @thm-cof-complete-archimedean.
+No. If \( b \le \iota_F(k) \) for every \( k \in \nZ \), then \( b \le \iota_F(-n) = -\iota_F(n) \) for every \( n \in \nN \), taking \( k = -n \) (\( \iota_F \) preserves sums, hence negatives, @prp-ring-algebra (a)), so \( -b \ge \iota_F(n) = n \cdot 1_F \) (@prp-ordered-ring-rules (a)); so \( -b \) bounds \( \iota_F(\nN) \) above, against @thm-cof-complete-archimedean.
 :::
 
 ::: {.warning}
-Completeness here is about **subsets**, not sequences. In this chapter "complete" is the supremum property of @def-complete-ordered-field, and the theorem above shows that it brings the Archimedean property with it. Do not replace it by Cauchy-completeness in the proofs below: a Cauchy-complete ordered field need not be Archimedean, a fact this book does not prove and *Analysis on the Real Line*, Chapter 11 returns to.
+Completeness here is about **subsets**, not sequences. In this chapter "complete" is the supremum property of @def-complete-ordered-field, and the theorem above shows that it brings the Archimedean property with it. Do not replace it by Cauchy-completeness in the proofs below: a Cauchy-complete ordered field need not be Archimedean, a fact this book does not prove and *Analysis on the Real Line*, Chapter 10 returns to.
 :::
 
 Every complete ordered field therefore has the consequences of the Archimedean property that Chapter 4 proved. The one we use most is density (@thm-rationals-dense-ordered-field): in an Archimedean ordered field \( F \), for all \( x < y \) there is \( q \in \nQ \) with \( x < \iota_F(q) < y \). We cite it, not reprove it; Section 6.2 uses it in two fields at once.
@@ -118,7 +118,7 @@ Let \( A \coloneqq \{ \iota_F(1 - 1/n) : n \in \nZ_{>0} \} \).
 
 *Upper bound.* For \( n \in \nZ_{>0} \), \( 1/n > 0 \) in \( \nQ \), so \( 1 - 1/n < 1 \), and \( \iota_F(1 - 1/n) < \iota_F(1) = 1_F \) because \( \iota_F \) is strictly increasing (@thm-rationals-embed-ordered-field). So \( 1_F \) is an upper bound of \( A \).
 
-*Least.* Let \( b \) be an upper bound of \( A \) and suppose \( b < 1_F \). By @thm-cof-complete-archimedean and @prp-archimedean-reciprocal (with \( \varepsilon \coloneqq 1_F - b \)) some \( N \in \nZ_{>0} \) has \( 1/(N \cdot 1_F) < 1_F - b \). Since \( \iota_F \) preserves sums and products, hence inverses (@lem-field-fraction-rules (a)), and \( \iota_F(N) = N \cdot 1_F \),
+*Least.* Let \( b \) be an upper bound of \( A \) and suppose \( b < 1_F \). By @thm-cof-complete-archimedean and @prp-archimedean-reciprocal (with \( \varepsilon \coloneqq 1_F - b > 0 \), by @prp-ordered-ring-rules (a)) some \( N \in \nZ_{>0} \) has \( 1/(N \cdot 1_F) < 1_F - b \). Since \( \iota_F \) preserves sums, hence negatives (@prp-ring-algebra (a)), and products, hence inverses (@lem-field-fraction-rules (a)), and \( \iota_F(N) = N \cdot 1_F \),
 \[
 \iota_F(1 - 1/N) = 1_F - \frac{1}{N \cdot 1_F} > b :
 \]
@@ -300,7 +300,7 @@ Let \( F \) be a complete ordered field, and let \( A, B \subseteq F \) be non-e
 :::
 :::
 
-No equation had to be refuted case by case here: (S1) and (S2) gave the two inequalities directly. Section 6.3 meets the same picture again: a real number sits between the rationals below it and those above it.
+No equation had to be refuted case by case here: (S1) and (S2) gave the two inequalities directly. Section 6.3 meets a related picture: the rationals below a real number form a Dedekind cut.
 
 ::: {.check}
 In \( \nQ \), let \( A \coloneqq \{ p \in \nQ : p^2 < 2 \} \) and \( B \coloneqq \{ p \in \nQ : p > 0,\ p^2 > 2 \} \). Every element of \( A \) is below every element of \( B \). Is there a rational \( c \) with \( a \le c \le b \) for all \( a \in A \), \( b \in B \)?
@@ -388,7 +388,7 @@ Prove each true statement and refute each false one. Throughout, \( F \) is a co
 :::
 
 ::: {.solution}
-(a) **True.** Let \( r \coloneqq \sqrt a \) (@prp-cof-square-roots). Then \( r \ne 0 \), since \( a \ne 0 \); so \( r > 0 > -r \) and \( r \ne -r \), and both square to \( a \). Conversely, let \( b^2 = a \). If \( b \ge 0 \), then \( b = r \) by the uniqueness clause. If \( b < 0 \), then \( -b > 0 \) and \( (-b)^2 = b^2 = a \), so \( -b = r \) and \( b = -r \). So the two elements are \( r \) and \( -r \).
+(a) **True.** Let \( r \coloneqq \sqrt a \) (@prp-cof-square-roots). Then \( r \ne 0 \), since \( a \ne 0 \); so \( r > 0 > -r \) (@prp-ordered-ring-rules (a)) and \( r \ne -r \), and both square to \( a \). Conversely, let \( b^2 = a \). If \( b \ge 0 \), then \( b = r \) by the uniqueness clause. If \( b < 0 \), then \( -b > 0 \) and \( (-b)^2 = b^2 = a \), so \( -b = r \) and \( b = -r \). So the two elements are \( r \) and \( -r \).
 
 (b) **False.** \( \nQ \) is Archimedean (@thm-rationals-archimedean), and \( 2 \) has no square root in it (@thm-no-rational-square-two).
 
@@ -446,9 +446,9 @@ def-cof-order-preserving-map (claim): the unit clause follows from additivity, m
 def-cof-order-preserving-map (claim): pointers to Algebraic Preliminaries, Chapter 2 (conjugation of Q(sqrt 2)) and to Section 6.3 | prose pointers; nothing depends on them
 thm-cof-complete-archimedean (proof): "not an upper bound" gives n with n * 1_F > s - 1, and n * 1_F > x for each x once iota_F(N) is not bounded above | totality (prp-ordered-field-halves (a)), fd1:prp-bounded-quantifier-negation (a); inline
 thm-cof-complete-archimedean (proof): s - 1 < s; (s - 1) + 1 = s | (O3), field arithmetic; inline
-exm-cof-sup-one-minus-reciprocals (solution): iota_F(1 - 1/n) < 1_F; iota_F(1/N) = 1/(N * 1_F); iota_F(1 - 1/N) = 1_F - 1/(N * 1_F) | thm-rationals-embed-ordered-field (sums, products, strictly increasing, iota_F(n) = n * 1_F), lem-field-fraction-rules (a); inline
-exm-cof-sup-one-minus-reciprocals (solution): some 1/(N * 1_F) < 1_F - b for b < 1_F; then 1_F - 1/(N * 1_F) > b | thm-cof-complete-archimedean, prp-archimedean-reciprocal, (O3), totality (prp-ordered-field-halves (a)), fd2:def-order-supremum
-thm-cof-complete-archimedean (solution): iota_F(Z) is not bounded below (k = -n gives -b >= n * 1_F) | thm-cof-complete-archimedean, prp-ordered-ring-rules (a); inline
+exm-cof-sup-one-minus-reciprocals (solution): iota_F(1 - 1/n) < 1_F; iota_F(1/N) = 1/(N * 1_F); iota_F(1 - 1/N) = 1_F - 1/(N * 1_F) | thm-rationals-embed-ordered-field (sums, products, strictly increasing, iota_F(n) = n * 1_F), lem-field-fraction-rules (a), prp-ring-algebra (a) (negatives); inline
+exm-cof-sup-one-minus-reciprocals (solution): some 1/(N * 1_F) < 1_F - b for b < 1_F; then 1_F - 1/(N * 1_F) > b | thm-cof-complete-archimedean, prp-archimedean-reciprocal, prp-ordered-ring-rules (a) (1_F - b > 0), (O3), totality (prp-ordered-field-halves (a)), fd2:def-order-supremum
+thm-cof-complete-archimedean (solution): iota_F(Z) is not bounded below (k = -n gives -b >= n * 1_F) | thm-cof-complete-archimedean, prp-ordered-ring-rules (a), prp-ring-algebra (a) (iota_F(-n) = -iota_F(n)); inline
 exm-cof-sup-one-minus-reciprocals (claim): the same answer holds in any Archimedean field such as Q | the solution uses completeness only through thm-cof-complete-archimedean; thm-rationals-archimedean; remark, nothing depends on it
 thm-cof-complete-archimedean (claim): Q(t) is not Archimedean | exm-rational-function-field (school polynomial algebra, flagged there); counterexample only
 thm-cof-complete-archimedean (claim): Cauchy-complete need not imply Archimedean | stated without proof (AN1.11 returns to it); nothing depends on it
@@ -469,7 +469,7 @@ exr-completeness-and-archimedes-a1 (solution): admissible order (v)(iii)(viii)(v
 exr-completeness-and-archimedes-a1 (solution): sup of the negative elements is 0 | first example after def-complete-ordered-field
 exr-completeness-and-archimedes-b1 (solution): iota_F(1/n) = 1/(n * 1_F) | thm-rationals-embed-ordered-field (products, iota_F(n) = n * 1_F), lem-field-fraction-rules (a); inline
 exr-completeness-and-archimedes-b1 (solution): some 1/(N * 1_F) < c for c > 0 | thm-cof-complete-archimedean, prp-archimedean-reciprocal
-exr-completeness-and-archimedes-b3 (solution): (a) r != -r, both square to a, b < 0 gives -b = r | prp-cof-square-roots (uniqueness), prp-ordered-ring-rules (e); verify/ch06/exr-completeness-and-archimedes-b3.py
+exr-completeness-and-archimedes-b3 (solution): (a) r != -r, both square to a, b < 0 gives -b = r | prp-cof-square-roots (uniqueness), prp-ordered-ring-rules (a), prp-ring-algebra; verify/ch06/exr-completeness-and-archimedes-b3.py
 exr-completeness-and-archimedes-b3 (solution): (b) Q Archimedean without sqrt 2 | thm-rationals-archimedean, thm-no-rational-square-two
 exr-completeness-and-archimedes-b3 (solution): (c), (e) sup{1 - 1/n} = 1 not attained; sup S <= c | exm-cof-sup-one-minus-reciprocals, fd2:def-order-supremum (S2)
 exr-completeness-and-archimedes-b3 (solution): (d) (x + 1/2)^2 - 1/4 = x^2 + x; sqrt(a + 1/4) > 1/2 | field arithmetic, prp-cof-square-roots, prp-ordered-ring-rules (g); verify/ch06/exr-completeness-and-archimedes-b3.py
