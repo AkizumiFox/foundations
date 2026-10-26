@@ -1,76 +1,73 @@
 <!-- hand-written -->
-# Blueprint: Ch10 (F4.9) Lines, Convexity, and Isometries, absorbing F4.10, merged *Preliminaries for Analysis and Algebra*, stage S1
+# Blueprint: Ch10 (F4.9) Lines, Hyperplanes, and Convex Sets, merged *Preliminaries for Analysis and Algebra*
 
-**Status: S1, 2026-10-26.** Next: S2, S2a (§8), S3. Supersedes `f4-9.md`. No F4.10 draft existed; §5.5 plans it from scratch.
+**Frozen after S2 (2026-10-26).** Next: S2a (§8), S3. Supersedes `f4-9.md`. S2 round 1 cut the S1 plan to three sections (replies at the end); the S1 plans of the dropped Sections 10.4 (isometries of ℝⁿ) and 10.5 (rotations, the group E, arguments, oriented angle) stay in git history (commit `a347ec8`, this file) for the blueprints that receive them (§6).
 
-**Authority.** The author's answers (2026-10-26) to `fd4/authoring/design/merge-proposal.md`: fd4 kept, fd5 retired, F5.x ids kept; title *Preliminaries for Analysis and Algebra*; F4.11 to AN1; book cut to about 257 / 326 h, so **the classification of isometries leaves this chapter** (§6) and C items are reduced. Proposal §3.3–§3.4: F4.10's rotations, arguments and isometries of ℂ join F4.9; F4.10's id retires. Earlier direction: moderate difficulty, proof methods in practice.
+**Authority.** The author's answers (2026-10-26) to `fd4/authoring/design/merge-proposal.md`: fd4 kept, fd5 retired, F5.x ids kept; title *Preliminaries for Analysis and Algebra*; F4.11 to AN1; Q4 **(b)**, book cut to about 257 / 326 h. Option (b) as written in proposal §3.5 item 2: "F4.9 的等距分類（§04–§06）移到 GEO 或 LA3，F4.9 只留直線、超平面、最近點與凸集：約 −14／−20。代價：F4.10 吸收的旋轉內容要另找地方（CA.1 開頭）". **This blueprint follows that text literally** (S2 ruling, reply 1): Ch10 keeps lines, segments, hyperplanes, nearest points and convex sets; all isometry material, and F4.10's rotations, arguments and oriented angle, leave the book (§6). F4.10's id retires into F4.9 (proposal §3.4) with no content kept here. Earlier direction: moderate difficulty, proof methods in practice.
 
-**Directory.** `fd4/src/ch10-lines-convexity-isometries/` (slug from proposal §3.3). Prose pointers: "Section 10.k" in the chapter; "Chapter 3" (F4.1, Complex Numbers), "Chapter 5" (F5.3, Groups), "Chapter 9" (F4.8, Coordinates and Vectors) as same-book pointers; other books by title. Sidecars `fd4/verify/ch10/`, ledger `fd4/authoring/ledger/ch10.yaml`.
+**Directory.** `fd4/src/ch10-lines-hyperplanes-convex-sets/` (new slug, replacing proposal §3.3's `ch10-lines-convexity-isometries/`; coordinator records it, §6). Prose pointers: "Section 10.k" in the chapter; "Chapter 1" (F4.6), "Chapter 3" (F4.1), "Chapter 6" (F5.4), "Chapter 9" (F4.8) as same-book pointers; other books by title. Sidecars `fd4/verify/ch10/`, ledger `fd4/authoring/ledger/ch10.yaml`.
 
-**Title.** `# Lines, Convexity, and Isometries` (§10.5 works in ℂ; registry title updated by the coordinator, §6).
+**Title.** `# Lines, Hyperplanes, and Convex Sets` (registry title updated by the coordinator, §6).
 
-**Level reference** (coverage only): Lang *Basic Mathematics* ch. 6, 10, 12; Apostol *Calculus* I ch. 13. Every example, item and answer is the book's own; nothing from `~/book`.
+**Level reference** (coverage only): Lang *Basic Mathematics* ch. 6, 10; Apostol *Calculus* I ch. 13. Every example, item and answer is the book's own; nothing from `~/book`.
 
-**Purpose.** Give analysis the geometry of ℝⁿ it cites; say geometric notions with distances, so that isometries keep segments, lines and convexity; in the plane, read Chapter 3's multiplication as rotations and reflections, with their group, arguments, the principal argument and oriented angles (paying Chapter 9's cos∠ promise).
+**Purpose.** Give analysis the geometry of ℝⁿ it cites (lines, segments, hyperplanes, distances to them, spheres, balls, convex sets and hulls), and say "between" with distances alone, the form that later carries over to metric spaces.
 
 **Binding rules.**
-1. **No linear algebra.** No span, basis, dimension, matrix, determinant. The classification "every isometry of ℝⁿ is x ↦ Ax + b with orthonormal columns", and its plane case "every isometry of ℂ is az + b or a z̄ + b", are **stated once in a Looking-ahead box (§5.5) and not proved**; linearity of an isometry fixing 0 is not proved either.
-2. **Trigonometry only through Chapter 3.** §§10.1–10.4 use no cos, sin, π. §10.5 uses (T1)–(T5) of `@ax-cosine-sine` only through Chapter 3's polar form and its results, and names the fact used each time, as Chapter 3 does. No radians, no limits, no continuity ("jump" is said with two values, §5.5).
-3. **No re-proof.** Chapter 9 owns inner product, norm, Cauchy–Schwarz, the triangle inequality **with its equality case**, Pythagoras, polarization, projection with the closest-point theorem, and the cosine of an angle; Chapter 3 owns ℂ, conjugation, modulus, 𝕋, polar form, n-th roots; Chapter 5 owns groups, subgroups, symmetric groups, homomorphisms. Each is recalled in a clause and cited.
+1. **No linear algebra.** No span, basis, dimension, matrix, determinant.
+2. **No trigonometry.** No cos, sin, π, angles; no limits, no continuity.
+3. **No re-proof.** Chapter 9 owns inner product, norm, Cauchy–Schwarz, the triangle inequality **with its equality case**, Pythagoras, polarization, projection with the closest-point theorem, the coordinate bounds, and ℝ² = ℂ (`prp-plane-is-complex-plane`); Chapter 1 owns the finite-sum rules. Each is recalled in a clause and cited.
 4. **No topology.** "Open ball", "closed ball" are names (§10.3); one prose sentence points to *Real Numbers, Metric Spaces, and Derivatives* (AN1), which now also holds the metrics-and-norms material (former F4.11).
-5. **House manner** (STYLE §1, §2 item 6, §12.5, §12.13.4, §12.14): motivation first, scratch work apart from proofs, method boxes (Template / When to use it / The usual failure, ≤ 130 words each), prose Givens/Goal tables, one Prove-or-disprove B item per method section (verdict first in the answer); moderate difficulty; no footnotes, jokes, history or first person. Quick checks about one per 800–1,000 words.
-6. **Fewer C items.** One C item per section (the exit check, with marking scheme). §10.5 is an application section: no B4, R group of two.
+5. **House manner** (STYLE §1, §2 item 6, §12.5, §12.13.4, §12.14): motivation first, scratch work apart from proofs, method boxes (Template / When to use it / The usual failure, ≤ 130 words each), prose Givens/Goal tables, one Prove-or-disprove B item per method section (verdict first in the answer); at least one warning and one non-example per section (named in each section plan); moderate difficulty; no footnotes, jokes, history or first person. Quick checks about one per 800–1,000 words.
+6. **Fewer C items.** One C item per section (the exit check, with marking scheme).
 
 ---
 
 ## 1. Devices as applied
 
-- **Method boxes (4)**, `::: {#exm-method-<slug>}` titled `[Method: …]`, linked from Named moves: `exm-method-parametrize`, `exm-method-equality-case` (§10.1), `exm-method-two-point-test` (§10.3), `exm-method-distances-only` (§10.4). **Reused:** Chapter 9's `exm-method-expand-the-square`, Idea level in `prp-perpendicular-bisector` and `prp-reflection-properties` (a), terse in `prp-isometry-preserves-inner-product`.
-- **Non-box moves:** "Peel off the last point" (§10.3), "Reduce to the origin" (§10.4), "Turn the plane with a unit complex number" (§10.5).
-- **Scratch work** at first appearances, with Givens/Goal table where marked: `exm-two-lines-in-space`, `thm-betweenness` (table), `prp-balls-convex` (table), `thm-isometry-preserves-segments` (table), `prp-reflection-in-line-complex`.
-- **Fading.** Parametrize: full §10.1, Idea `prp-line-meets-sphere`. Equality case: full §10.1, Idea §10.3 B3. Two-point test: full §10.3, terse `cor-isometry-convex-image`. Distances only: full §10.4, Idea §10.4 B4 (c).
-- **Prove or disprove:** B4 in §§10.1–10.4. **Try it first:** before `thm-isometry-preserves-segments`. **Motivation first:** `def-line-rn`, `def-convex-set-rn`, `def-isometry-rn`, `def-principal-argument`.
-- **Threads** (index list): (1) *Must a distance-preserving map be onto?* planted §10.4, paid for ℝ (§10.4 C1) and for the maps az + b, a z̄ + b (`prp-complex-isometry-group`), in general by the Looking-ahead box; (2) *betweenness by distances*, §10.1 → §10.4, its failure for other distances (§10.3 B3) → AN1; (3) *convex and star-shaped sets* → AN2.3, CA, AM (prose); (4) *arguments are not unique* → AN2 (principal logarithm), CA (branches).
+- **Method boxes (3)**, `::: {#exm-method-<slug>}` titled `[Method: …]`, linked from Named moves: `exm-method-parametrize`, `exm-method-equality-case` (§10.1), `exm-method-two-point-test` (§10.3). **Reused:** Chapter 9's `exm-method-expand-the-square`, Idea level in `prp-perpendicular-bisector`.
+- **Non-box move:** "Peel off the last point" (§10.3).
+- **Scratch work** at first appearances, with Givens/Goal table where marked: `exm-two-lines-in-space`, `thm-betweenness` (table), `prp-balls-convex` (table).
+- **Fading.** Parametrize: full §10.1, Idea `prp-line-meets-sphere`. Equality case: full §10.1, Idea §10.3 B3. Two-point test: full §10.3 (`prp-balls-convex`), Idea §10.3 B2, terse in the alternative route of R2.
+- **Prove or disprove:** B4 in §§10.1–10.3. **Try it first:** before `thm-convex-hull-combinations-rn`. **Motivation first:** `def-line-rn`, `def-hyperplane-rn`, `def-convex-set-rn`.
+- **Warnings:** §10.1 "Equal distances do not make a midpoint"; §10.2 "A hyperplane has many normal vectors, and a = 0 gives none"; §10.3 "Midpoints are not enough" (ℚ²).
+- **Threads** (index list): (1) *betweenness by distances*, §10.1 (`thm-betweenness`) → its failure for other distances (§10.3 B3 aftermath) → AN1 (metric spaces) and GEO (distance-preserving maps keep segments), prose; (2) *convex and star-shaped sets* → AN2.3, CA, AM (prose).
 
 ## 2. Section map, budgets, hours
 
 | § | File | Budget | Expected |
 |---|---|---|---|
 | 10.1 | `01-lines-and-segments.md` | ≤ 5,000 | ~3,600 |
-| 10.2 | `02-hyperplanes-and-nearest-points.md` | ≤ 5,000 | ~3,300 |
-| 10.3 | `03-convex-sets-and-hulls.md` | ≤ 5,000 | ~3,400 |
-| 10.4 | `04-isometries-of-rn.md` | ≤ 5,000 | ~3,300 |
-| 10.5 | `05-rotations-and-the-complex-plane.md` | ≤ 5,000 | ~3,900 |
+| 10.2 | `02-hyperplanes-and-nearest-points.md` | ≤ 5,000 | ~3,400 |
+| 10.3 | `03-convex-sets-and-hulls.md` | ≤ 5,000 | ~3,600 |
 
-Expected main line ~17,500 words; folds ~600. **Time** (index): "about 18 hours on the core track and about 22 hours for everything", recomputed with `check_structure.py --words` after S3. Derivation, consistent with the approved 257 / 326 h book total: proposal §3.3 row 10 (32 / 45, with F4.10 absorbed) − classification (14 / 20, proposal §3.5 item 2) − C-item cut (0 / 3) = **18 / 22**.
+Expected main line ~10,600 words; folds ~300. **Time** (index): "about 10 hours on the core track and about 20 hours for everything", recomputed with `check_structure.py --words` after S3.
+
+**Derivation** (STYLE §2 item 4, `research-reader.md` B1; not from the proposal's estimates). Reading at 15 min per 400 words: core 10,600 words ≈ 6.6 h, full 10,900 ≈ 6.8 h. Exercises at 20 min (A), 35 min (B), 40 min (C), 20 min (R): core = 6 A + 3 B + 3 C = 345 min ≈ 5.8 h; full = 6 A + 12 B + 3 C + 3 R = 720 min = 12 h. Unrounded **12.4 / 18.8 h**, rounded to the nearest 5 as STYLE requires: **10 / 20**. Book total: proposal row 10 was 32 / 45 with F4.10 absorbed; option (b) removes 14 / 20 and the C-item cut, leaving at most 18 / 22 for this chapter in the 257 / 326 total. At 12.4 / 18.8 the chapter sits about 6 / 3 h under that allowance, so the book stays within 257 / 326 (about 251 / 323 by this chapter's change alone).
 
 ## 3. Labels
 
-All new; grepped 2026-10-26 against `foundations/fd*/src`, `linear-algebra/src`, `linear-algebra-split`, `analysis-series`: no collision in any src. Blueprint overlaps resolved as pointers (§6): `def-principal-argument` (an2), `def-star-shaped` (am), `def-ball-rn` (f4-11). Slugs `convex-sets-and-hulls`, `isometries-of-rn` avoid LA's `exr-convex-sets-*`.
+All new; grepped 2026-10-26 against `foundations/fd*/src`, `linear-algebra/src`, `linear-algebra-split`, `analysis-series`: no collision in any src. Blueprint overlaps resolved as pointers (§6): `def-star-shaped` (am), `def-ball-rn` (f4-11). Slug `convex-sets-and-hulls` avoids LA's `exr-convex-sets-*`.
 
 - **10.1:** `def-line-rn`, `prp-line-parametrizations`, `prp-line-through-two-points`, `def-collinear`, `exm-two-lines-in-space`, `exm-method-parametrize`, `def-segment-rn`, `lem-subsegment`, `thm-betweenness`, `exm-method-equality-case`, `cor-point-pinned-on-segment`; `exr-lines-and-segments-a1`, `-a2`, `-b1`…`-b4`, `-c1`.
 - **10.2:** `def-hyperplane-rn`, `prp-hyperplane-normals`, `exm-lines-in-the-plane`, `prp-perpendicular-bisector`, `prp-nearest-point-on-line`, `prp-nearest-point-on-hyperplane`, `def-sphere-rn`, `prp-line-meets-sphere`, `prp-segment-crosses-hyperplane`; `exr-hyperplanes-and-nearest-points-a1`, `-a2`, `-b1`…`-b4`, `-c1`.
-- **10.3:** `def-convex-set-rn`, `def-ball-rn`, `exm-method-two-point-test`, `prp-balls-convex`, `prp-convex-examples`, `prp-convex-operations`, `def-convex-combination-rn`, `thm-convex-contains-combinations`, `def-convex-hull-rn`, `thm-convex-hull-combinations-rn`, `exm-triangle-as-hull`, `def-star-shaped`, `exm-star-not-convex`; `exr-convex-sets-and-hulls-a1`, `-a2`, `-b1`…`-b4`, `-c1`.
-- **10.4:** `def-isometry-rn`, `exm-isometry-examples`, `def-reflection-hyperplane`, `prp-reflection-properties`, `prp-isometry-composition`, `prp-isometry-reduce-to-origin`, `prp-isometry-preserves-inner-product`, `exm-method-distances-only`, `thm-isometry-preserves-segments`, `cor-isometry-convex-image`; `exr-isometries-of-rn-a1`, `-a2`, `-b1`…`-b4`, `-c1`.
-- **10.5:** `lem-complex-plane-inner-product`, `prp-complex-plane-isometries`, `def-rotation-about-point`, `prp-reflection-in-line-complex`, `thm-two-reflections-rotation`, `prp-complex-isometry-group`, `def-argument-set`, `prp-argument-of-product`, `def-principal-argument`, `exm-principal-argument-not-additive`, `thm-angle-in-the-plane`; `exr-rotations-and-the-complex-plane-a1`, `-a2`, `-b1`…`-b3`, `-c1`, `-r1`, `-r2`.
+- **10.3:** `def-convex-set-rn`, `def-ball-rn`, `exm-method-two-point-test`, `prp-balls-convex`, `prp-convex-examples`, `prp-convex-operations`, `def-convex-combination-rn`, `thm-convex-contains-combinations`, `def-convex-hull-rn`, `thm-convex-hull-combinations-rn`, `exm-triangle-as-hull`, `def-star-shaped`, `exm-star-not-convex`; `exr-convex-sets-and-hulls-a1`, `-a2`, `-b1`…`-b4`, `-c1`, `-r1`…`-r3`.
 
-**Key proofs** (STYLE §11.2): `thm-betweenness`, `thm-isometry-preserves-segments`, `thm-convex-hull-combinations-rn`, `prp-complex-isometry-group`.
+**Key proofs** (STYLE §11.2; comprehension parts in §10.1 A2 (b), §10.3 A2 (b)): `thm-betweenness`, `thm-convex-hull-combinations-rn`.
 
 ## 4. Allowed prerequisites (every label cited)
 
-- **fd2** (exist at HEAD, grepped): `@fd2:def-injective`, `@fd2:def-surjective`, `@fd2:def-inverse-function`, `@fd2:thm-bijection-iff-inverse`, `@fd2:def-family-union-intersection`, `@fd2:prp-smallest-closed-set` (pattern), `@fd2:thm-induction`.
-- **fd3** (exist at HEAD; item letters re-checked at S2a, fd3 is being re-cut): `@fd3:prp-ordered-ring-rules` ((b) adding, (e) squares positive, (f) no zero divisors, (g) 0 ≤ a < b ⇔ a² < b²), `@fd3:prp-ordered-field-halves`, `@fd3:prp-absolute-value-ordered-field`, `@fd3:prp-cof-square-roots` with `@fd3:thm-reals-complete-ordered-field`, `@fd3:def-complete-ordered-field` (§10.3 C1), `@fd3:thm-cof-complete-archimedean` and `@fd3:prp-integer-part-ordered-field` (§10.5, principal argument).
-- **Same book, Chapter 3 (F4.1; now `fd4/src/ch01-complex-numbers/`, grepped):** `@def-complex-numbers`, `@def-conjugate-modulus`, `@thm-conjugate-properties`, `@prp-complex-square-roots`, `@prp-unit-circle`, `@ax-cosine-sine`, `@def-polar-form`, `@thm-polar-multiplication`, `@prp-polar-form`, `@exm-special-angles`, `@thm-complex-nth-roots`.
-- **Same book, Chapter 5 (F5.3; now `fd5/src/ch03-groups-and-permutations/`, grepped):** `@def-group`, `@def-symmetric-group`, `@thm-subgroup-test`, `@def-group-homomorphism`, `@prp-homomorphism-injective-iff-kernel-trivial`.
-- **Same book, Chapter 9 (F4.8; labels from `f4-8.md` §Labels, provisional, S2a 1):** `def-vector-operations-rn`, `def-norm-rn`, `prp-norm-basic-rn`, `def-distance-rn`, `exm-method-expand-the-square`, `prp-pythagoras-rn`, `prp-polarization-rn`, `thm-triangle-inequality-rn`, `def-projection-rn`, `thm-projection-closest-point`, `def-angle-cosine-rn`.
-- **Same book, Chapter 1 (F4.6):** no blueprint yet; this chapter cites nothing from it by label (re-indexing a finite sum and completing a square are done inline in one line each). S2a 6.
+- **fd2** (exist at HEAD, grepped): `@fd2:def-family-union-intersection`, `@fd2:prp-smallest-closed-set` (pattern), `@fd2:thm-induction`.
+- **fd3** (grepped in the working tree 2026-10-26 while fd3 is being re-cut; item letters re-checked at S2a): `@fd3:prp-ordered-ring-rules` ((b) adding, (e) squares positive, (f) no zero divisors, (g) 0 ≤ a, b: a < b ⇔ a² < b², (i) total order), `@fd3:prp-ordered-field-halves` ((d) products of comparisons), `@fd3:prp-absolute-value-ordered-field` ((d) |x| ≤ r ⇔ −r ≤ x ≤ r), `@fd3:prp-cof-square-roots` with `@fd3:thm-reals-complete-ordered-field`, `@fd3:def-complete-ordered-field` (§10.3 C1), `@fd3:thm-no-rational-square-two` (§10.3 warning).
+- **Same book, Chapter 1 (F4.6; `merged-ch01-f46.md`, S1, labels moved or new there):** `@lem-ring-finite-sums` (b) (constants through sums), `@prp-sum-reindex` (b) (splitting), both in `thm-convex-hull-combinations-rn`. Square roots stay with `@fd3:prp-cof-square-roots`; completing a square is not needed (`prp-line-meets-sphere` goes through the projection formula).
+- **Same book, Chapter 3 (F4.1; now `fd4/src/ch01-complex-numbers/`, grepped):** `@thm-conjugate-properties` (d), `@prp-unit-circle` (a); R3 only.
+- **Same book, Chapter 6 (F5.4; now `fd5/src/ch04-formal-polynomials/04-evaluation-and-substitution.md`, grepped):** `@thm-evaluation-respects-operations`; R2 only.
+- **Same book, Chapter 9 (F4.8; labels from the frozen `merged-ch09-f48.md`, which supersedes `f4-8.md`; checked at S2 with the content used):** `def-vector-operations-rn`, `def-norm-rn`, `prp-norm-basic-rn` ((b) ‖cx‖ = |c|‖x‖), `def-distance-rn`, `exm-method-expand-the-square`, `prp-pythagoras-rn`, `thm-triangle-inequality-rn` ((a) with equality iff x = 0 or y = cx, c ≥ 0), `def-projection-rn`, `thm-projection-closest-point` ((a), (b)), `prp-norm-coordinate-bounds` ((a), (b); R1), `prp-plane-is-complex-plane` ((c); R3).
 - **Never:** an1/an2/ca/am, la*, geo; later chapters. Prose pointers by title only.
 
-**Notation** (`NOTATION.md` rows, coordinator at S3; macros `\inner`, `\norm`, `\abs`, `\conj`, `\nT` exist):
+**Notation** (`NOTATION.md` rows, coordinator at S3; macros `\inner`, `\norm`, `\abs` exist):
 - p + ℝv, the line (`def-line-rn`); [p, q] the segment (`def-segment-rn`), **clash** with intervals: for n = 1 and p ≤ q it is the interval [p, q], for p > q the interval [q, p]; written only for declared points of ℝⁿ.
 - H_{a,c} = {x : ⟨a, x⟩ = c}, a ≠ 0 (`def-hyperplane-rn`); S(c, r) sphere; B(c, r), B̄(c, r) balls (amend the metric-space row: Euclidean case first here, general case AN1); `\operatorname{conv} S`.
-- τ_b translation, ρ_{a,c} reflection in H_{a,c} (§10.4); σ_u(z) ≔ u² z̄ for u ∈ 𝕋, local to §10.5 (restated where used).
-- `\arg z` ⊆ ℝ, a **set** (`def-argument-set`); `\operatorname{Arg} z` ∈ (−π, π] (`def-principal-argument`). Amend the `\cos\angle(x, y)` row: "the promise to F4.10 is paid in F4.9 §05 (`thm-angle-in-the-plane`)".
 
 ---
 
@@ -78,14 +75,14 @@ All new; grepped 2026-10-26 against `foundations/fd*/src`, `linear-algebra/src`,
 
 ### 5.0 `index.md`
 
-- **Story** (~150 words): what the distance alone determines (lines, segments, hyperplanes, spheres, balls, convex sets); "between" is a statement about distances, so isometries keep segments, lines and convex sets; in the plane, turning is multiplying by a unit complex number and these maps form a group; arguments are sets, and choosing one number per point breaks "arguments add", a first sign of branches.
-- **What you need.** Chapter 9; Chapter 3, Sections 3.2, 3.4, 3.5; Chapter 5, Sections 5.1–5.3 (§10.5 only); *Number Systems* and *Sets and Functions* as in §4.
-- **Borrowed results.** Box **No new borrowed facts.**: Sections 10.1–10.4 use no cosine, sine or π; Section 10.5 uses (T1)–(T5) only through Chapter 3's polar form.
+- **Story** (~130 words): what the distance alone determines (lines, segments, hyperplanes, spheres, balls); "between" is a statement about distances (`thm-betweenness`); one linear equation cuts out a hyperplane, and distances to it have a formula; convex sets are those closed under segments, and the hull of a set is the set of its convex combinations. Analysis uses all of these from its first chapters.
+- **What you need.** Chapter 9; Chapter 1, Section 1.1 (finite sums); for the review items only, Chapter 3, Sections 3.2 and 3.5, and Chapter 6, Section 6.4; *Number Systems* and *Sets and Functions* as in §4.
+- **Borrowed results.** Box **No new borrowed facts.**: the chapter uses no cosine, sine or π.
 - **Time** as §2. **Roadmap**: one bullet per section, naming its main result. **Named moves**, **Threads**: §1.
 
 ### 5.1 Section 10.1: Lines and Segments (`01-lines-and-segments.md`)
 
-**Budget** ≤ 5,000 (~3,600). One fold (p = q in `cor-point-pinned-on-segment`). Three Quick checks, one warning, one notation remark.
+**Budget** ≤ 5,000 (~3,600). One fold (p = q in `cor-point-pinned-on-segment`). Three Quick checks, one notation remark. **Warning:** "Equal distances do not make a midpoint" (`## Between by distances` item 6). **Non-example:** the Quick check after `lem-subsegment` ((2, 0, 1) is not on the segment), and the skew pair in `exm-two-lines-in-space`.
 
 **Opening (~100).** In ℝ² a line is ax + by = c; in ℝ³ one equation gives a plane: {x₁ + x₂ + x₃ = 1} contains (1, 0, 0), (0, 1, 0), (0, 0, 1), which lie on no common line (shown after the definition: the line through the first two is (1, 0, 0) + ℝ(−1, 1, 0), third coordinate always 0). A line has one degree of freedom: one parameter.
 
@@ -105,7 +102,7 @@ All new; grepped 2026-10-26 against `foundations/fd*/src`, `linear-algebra/src`,
 **`## Segments` (~600).**
 1. **`def-segment-rn`**: [p, q] ≔ {(1 − t)p + tq : t ∈ [0, 1]}; midpoint (p + q)/2. Remarks: (1 − t)p + tq = p + t(q − p); [p, q] = [q, p]; [p, p] = {p}.
 2. **Notation remark** `**Segments and intervals.**` (the clash, §4).
-3. **`lem-subsegment`**: x, y ∈ [p, q] ⇒ [x, y] ⊆ [p, q]. *Proof.* x = p + s(q − p), y = p + u(q − p); (1 − t)x + ty = p + ((1 − t)s + tu)(q − p) with 0 ≤ (1 − t)s + tu ≤ 1 (`@fd3:prp-ordered-field-halves`, `@fd3:prp-ordered-ring-rules` (b)).
+3. **`lem-subsegment`**: x, y ∈ [p, q] ⇒ [x, y] ⊆ [p, q]. *Proof.* x = p + s(q − p), y = p + u(q − p); (1 − t)x + ty = p + ((1 − t)s + tu)(q − p) with 0 ≤ (1 − t)s + tu ≤ (1 − t)·1 + t·1 = 1: products of comparisons of non-negative numbers by `@fd3:prp-ordered-field-halves` (d), sums by `@fd3:prp-ordered-ring-rules` (b).
 4. **Quick check.** Is (2, 0, 1) on [(1, −1, 2), (3, 0, 0)]? *Solution:* no; (1, 1, −1) is not a multiple of (2, 1, −2) (first coordinates force 1/2, second 1).
 
 **`## Between by distances` (~1,400).**
@@ -120,7 +117,7 @@ All new; grepped 2026-10-26 against `foundations/fd*/src`, `linear-algebra/src`,
      | u = 0, or w = cu with c ≥ 0 (Chapter 9) | u = 0: t = 0. w = cu: q − p = (1 + c)u, t = 1/(1 + c) ∈ (0, 1] |
 
    - *Proof.* (⇒, moreover) x − p = t(q − p), q − x = (1 − t)(q − p), norms by `prp-norm-basic-rn` (b) with t, 1 − t ≥ 0; they add to ‖p − q‖. (⇐) as in the table, citing `thm-triangle-inequality-rn` (a); 1 + c ≥ 1 > 0, so 0 < 1/(1 + c) ≤ 1.
-   - Aftermath: the right side mentions only distances; Section 10.4 uses exactly this.
+   - Aftermath: the right side mentions only distances. That is the form which survives when ℝⁿ is replaced by a set with a distance (*Real Numbers, Metric Spaces, and Derivatives*), and it is why distance-preserving maps keep segments (*Affine and Projective Geometry*); both prose, by title (thread 1).
 3. **`exm-method-equality-case`** `[Method: use the equality case]`. *Template.* A known inequality A ≤ B holds with A = B. Recall its exact equality condition (usually: vectors are non-negative multiples of each other), write it with a named multiplier, solve. *When.* A sum of distances equals a distance; Cauchy–Schwarz is sharp; "extreme case" questions. *Usual failure.* Dropping the sign (c ≥ 0 separates [p, q] from the rest of the line) or the case u = 0.
 4. **`cor-point-pinned-on-segment`** `[A Point Is Pinned by Its Distances to the Ends]`: if s, r ≥ 0 and s + r = ‖p − q‖, exactly one x has ‖p − x‖ = s, ‖x − q‖ = r; for p ≠ q it is p + (s/‖p − q‖)(q − p). *Proof.* That point works (moreover clause, t = s/‖p − q‖). Any such x lies on [p, q] by the theorem, x = (1 − t′)p + t′q, and s = t′‖p − q‖ fixes t′, hence x. p = q in the fold.
 5. **Quick check.** The midpoint is the only point at distance ‖p − q‖/2 from both ends. *Solution:* s = r = ‖p − q‖/2.
@@ -128,7 +125,7 @@ All new; grepped 2026-10-26 against `foundations/fd*/src`, `linear-algebra/src`,
 
 **Exercises.**
 - **A1.** (a) Parametrize the line through (1, −1, 2) and (3, 0, 0); is (5, 1, −2) on it? (b) The midpoint of the segment between them. *Answers:* (a) (1, −1, 2) + ℝ(2, 1, −2); yes, t = 2. (b) (2, −1/2, 1).
-- **A2.** Show (1, 2), (3, 5), (7, 11) are collinear and find which lies between the others. *Answer:* (6, 9) = 3(2, 3): parameters 0, 1, 3 on (1, 2) + ℝ(2, 3); (3, 5) = (1, 2) + (1/3)((7, 11) − (1, 2)), so (3, 5) is between.
+- **A2.** (a) Show (1, 2), (3, 5), (7, 11) are collinear and find which lies between the others. (b) *(Proof comprehension, key proof `thm-betweenness`.)* In the (⇐) direction, where is c ≥ 0 used? Take p = 0, q = (1, 0), x = (2, 0): which hypothesis of the theorem fails, and what does the equality case give? *Answer:* (a) (6, 9) = 3(2, 3): parameters 0, 1, 3 on (1, 2) + ℝ(2, 3); (3, 5) = (1, 2) + (1/3)((7, 11) − (1, 2)), so (3, 5) is between. (b) c ≥ 0 makes 1 + c > 0, so t = 1/(1 + c) is defined and lies in (0, 1]. For x = (2, 0): ‖p − x‖ + ‖x − q‖ = 3 ≠ 1 = ‖p − q‖; with u = x − p = (2, 0), w = q − x = (−1, 0) = −½u, the multiplier is negative, so the equality case does not apply.
 - **B1.** For v ≠ 0 and a < b: p + tv ∈ [p + av, p + bv] iff a ≤ t ≤ b. *Answer:* (⇐) s ≔ (t − a)/(b − a) ∈ [0, 1] gives (1 − s)(p + av) + s(p + bv) = p + tv. (⇒) p + tv = p + ((1 − s)a + sb)v, s ∈ [0, 1]; parameters are unique, so t = a + s(b − a) ∈ [a, b].
 - **B2.** In ℝ², v, v′ ≠ 0. (a) v′ is a multiple of v iff v₁v′₂ − v₂v′₁ = 0. (b) If not, p + ℝv and p′ + ℝv′ meet in exactly one point. *Answer:* (a) (⇒) substitute. (⇐) if v₁ ≠ 0, λ ≔ v′₁/v₁ gives λv₂ = v₁v′₂/v₁ = v′₂; if v₁ = 0 then v₂ ≠ 0 and λ ≔ v′₂/v₂ works. (b) With d ≔ p′ − p, p + sv = p′ + tv′ is sv₁ − tv′₁ = d₁, sv₂ − tv′₂ = d₂; D ≔ v₁v′₂ − v₂v′₁ ≠ 0; eliminating, sD = d₁v′₂ − d₂v′₁, tD = d₁v₂ − d₂v₁; so at most one solution, and substitution shows it is one. (Sidecar.)
 - **B3.** Show ℝ(1, 0, 0) and (0, 1, 0) + ℝ(0, 0, 1) are skew. *Answer:* (s, 0, 0) = (0, 1, t) fails in the second coordinate; (1, 0, 0) = λ(0, 0, 1) fails in the first.
@@ -137,19 +134,21 @@ All new; grepped 2026-10-26 against `foundations/fd*/src`, `linear-algebra/src`,
 
 ### 5.2 Section 10.2: Hyperplanes and Nearest Points (`02-hyperplanes-and-nearest-points.md`)
 
-**Budget** ≤ 5,000 (~3,300). Three Quick checks. Uses Chapter 9's expand-the-square at Idea level; counts as a method section for the B4 rule (the move in a new setting).
+**Budget** ≤ 5,000 (~3,400). Three Quick checks. Uses Chapter 9's expand-the-square at Idea level; counts as a method section for the B4 rule (the move in a new setting). **Warning:** "A hyperplane has many normal vectors, and a = 0 gives none" (after `prp-hyperplane-normals`). **Non-example:** in ℝ³ a hyperplane is not a line (aftermath of `exm-lines-in-the-plane`, using the §10.1 opening).
 
 **Opening (~80).** One linear equation cuts out a hyperplane; distances to it have a formula, and expanding a square linearizes distance conditions.
 
-**`## Hyperplanes` (~1,000).**
+**`## Hyperplanes` (~1,100).**
 1. **`def-hyperplane-rn`**: for a ≠ 0, c ∈ ℝ, H_{a,c} ≔ {x : ⟨a, x⟩ = c}; a is a **normal vector**; {⟨a, x⟩ ≤ c}, {≥ c} closed half-spaces, < and > open half-spaces. Sentence: p₀ ≔ (c/‖a‖²)a ∈ H_{a,c}, and x ∈ H_{a,c} iff x − p₀ ⊥ a.
 2. **`prp-hyperplane-normals`**: H_{a,c} = H_{a′,c′} iff (a′, c′) = (λa, λc), λ ≠ 0. *Proof.* (⇐) clear. (⇒) ⟨a′, p₀ + w⟩ = c′ for all w ⊥ a; w = 0 gives ⟨a′, p₀⟩ = c′, so ⟨a′, w⟩ = 0 for all w ⊥ a. Take w ≔ a′ − proj_a a′, ⊥ a by `thm-projection-closest-point` (a); then ‖w‖² = ⟨a′, w⟩ − μ⟨a, w⟩ = 0 with μ = ⟨a′, a⟩/‖a‖², so a′ = μa, μ ≠ 0, c′ = μc.
-3. **`exm-lines-in-the-plane`** `[Lines of ℝ² Are Its Hyperplanes]`: (a) in ℝ², H_{a,c} = p₀ + ℝ(−a₂, a₁); (b) p + ℝv = H_{a,c} with a = (−v₂, v₁), c = ⟨a, p⟩. *Solution.* (a) ⊇: ⟨a, (−a₂, a₁)⟩ = 0. ⊆: w ≔ x − p₀ has a₁w₁ + a₂w₂ = 0, and w = t(−a₂, a₁) with t ≔ (a₁w₂ − a₂w₁)/‖a‖² (check coordinates using a₂w₂ = −a₁w₁). (b) ⟨a, v⟩ = 0 gives ⊆; (a) and `prp-line-parametrizations` give equality. Aftermath: in ℝ³ a hyperplane is not a line (§10.1 opening).
-4. **Quick check.** The line through (1, 3), (4, −1) as an equation. *Solution:* normal (4, 3): 4x + 3y = 13.
+3. **Warning** `**A hyperplane has many normal vectors, and a = 0 gives none.**` H_{(1,1),1} = H_{(2,2),2} = H_{(−1,−1),−1}: "the normal" means "a normal", fixed only up to a non-zero factor (`prp-hyperplane-normals`); a formula using a normal (distance, nearest point, below) must give the same answer for λa, λc, and it does. For a = 0, {x : ⟨0, x⟩ = c} is ∅ (c ≠ 0) or ℝⁿ (c = 0), neither a hyperplane; this is why the definition demands a ≠ 0.
+4. **`exm-lines-in-the-plane`** `[Lines of ℝ² Are Its Hyperplanes]`: (a) in ℝ², H_{a,c} = p₀ + ℝ(−a₂, a₁); (b) p + ℝv = H_{a,c} with a = (−v₂, v₁), c = ⟨a, p⟩. *Solution.* (a) ⊇: ⟨a, (−a₂, a₁)⟩ = 0. ⊆: w ≔ x − p₀ has a₁w₁ + a₂w₂ = 0, and w = t(−a₂, a₁) with t ≔ (a₁w₂ − a₂w₁)/‖a‖² (check coordinates using a₂w₂ = −a₁w₁). (b) ⟨a, v⟩ = 0 gives ⊆; (a) and `prp-line-parametrizations` give equality. Aftermath: in ℝ³ a hyperplane is not a line (§10.1 opening).
+5. **Quick check.** The line through (1, 3), (4, −1) as an equation. *Solution:* normal (4, 3): 4x + 3y = 13.
 
 **`## Equidistant points` (~600).**
-1. **`prp-perpendicular-bisector`**: for p ≠ q, {x : ‖x − p‖ = ‖x − q‖} = H_{q−p, c}, c = (‖q‖² − ‖p‖²)/2; it contains (p + q)/2; and ‖x − p‖ < ‖x − q‖ iff ⟨q − p, x⟩ < c. *Proof* (Idea citing `exm-method-expand-the-square`): square (non-negative sides, `@fd3:prp-ordered-ring-rules` (g)), expand; ‖x − p‖² − ‖x − q‖² = 2⟨q − p, x⟩ − (‖q‖² − ‖p‖²).
-2. **Quick check.** Points of ℝ² equidistant from (0, 0) and (2, 4). *Solution:* x₁ + 2x₂ = 5.
+1. Lead (one sentence, prose recall, not a reason): Chapter 9, Section 9.4, Exercise B3 found the equation of the equidistant set; here it is named as a hyperplane and the two sides are read off.
+2. **`prp-perpendicular-bisector`**: for p ≠ q, {x : ‖x − p‖ = ‖x − q‖} = H_{q−p, c}, c = (‖q‖² − ‖p‖²)/2; it contains (p + q)/2; and ‖x − p‖ < ‖x − q‖ iff ⟨q − p, x⟩ < c. *Idea* (one line, citing `exm-method-expand-the-square`): compare squares instead of norms; the squares of the two norms differ by a linear expression in x. *Proof.* For non-negative a, b: a < b iff a² < b² (`@fd3:prp-ordered-ring-rules` (g)), and by totality (item (i)) also a = b iff a² = b². Expanding, ‖x − p‖² − ‖x − q‖² = 2⟨q − p, x⟩ − (‖q‖² − ‖p‖²); so equality of the norms is ⟨q − p, x⟩ = c, a hyperplane since q − p ≠ 0, and the strict inequality is the open half-space ⟨q − p, x⟩ < c. The midpoint: ⟨q − p, (p + q)/2⟩ = (‖q‖² − ‖p‖²)/2.
+3. **Quick check.** Points of ℝ² equidistant from (0, 0) and (2, 4). *Solution:* x₁ + 2x₂ = 5.
 
 **`## Nearest points` (~900).**
 1. **`prp-nearest-point-on-line`**: for L = p + ℝv and x, with t₀ ≔ ⟨x − p, v⟩/‖v‖², m ≔ p + t₀v: ‖x − (p + tv)‖² = ‖x − m‖² + (t − t₀)²‖v‖², x − m ⊥ v; m is the unique nearest point of L. *Proof* (terse): `thm-projection-closest-point` applied to x − p and v (Chapter 9 did lines through 0; translate).
@@ -168,11 +167,11 @@ All new; grepped 2026-10-26 against `foundations/fd*/src`, `linear-algebra/src`,
 - **B2.** Where does ℝ(1, 2, 2) meet S((3, 0, 0), 3)? *Answer:* 9t² − 6t + 9 = 9: t = 0, 2/3; points 0 and (2/3, 4/3, 4/3).
 - **B3.** For m ∈ S(c, r), v ≠ 0: m + ℝv meets S(c, r) only at m iff ⟨m − c, v⟩ = 0. *Answer:* ‖m + tv − c‖² = r² + 2t⟨m − c, v⟩ + t²‖v‖² = r² iff t(2⟨m − c, v⟩ + t‖v‖²) = 0; the only root is 0 iff ⟨m − c, v⟩ = 0.
 - **B4** (prove or disprove). (a) H_{a,c} ∩ H_{a,c′} = ∅ for c ≠ c′. (b) Any two distinct hyperplanes of ℝ³ meet. (c) For n ≥ 2 the only point equidistant from p ≠ q is the midpoint. (d) ⟨a, p⟩ < c and ⟨a, q⟩ < c ⇒ [p, q] misses H_{a,c}. (e) The distance from 0 to H_{a,c} is |c|. *Answers:* (a) true. (b) false: x₁ = 0, x₁ = 1. (c) false: for (±1, 0), all (0, y). (d) true: (1 − t)⟨a, p⟩ + t⟨a, q⟩ < c. (e) false: a = (2, 0), c = 2 gives 1.
-- **C1** (exit check). Three non-collinear points of ℝ² lie on exactly one circle. *Answer:* a centre lies on the bisectors of p, q and of q, r, lines with normals q − p, r − q (`prp-perpendicular-bisector`, `exm-lines-in-the-plane`); these are not multiples (else r is on the line pq), so by §10.1 B2 (b) the bisectors meet in exactly one z; ρ ≔ ‖z − p‖ = ‖z − q‖ = ‖z − r‖ > 0; any circle through the three has centre on both bisectors, so it is S(z, ρ). Stem example: (0, 0), (4, 0), (0, 2): centre (2, 1), radius √5. *Marking scheme* (5): bisector reduction (1); normals not parallel (1); unique intersection (1); circle exists (1); uniqueness (1).
+- **C1** (exit check). Three non-collinear points of ℝ² lie on exactly one circle. *Answer:* a centre lies on the bisectors of p, q and of q, r, hyperplanes with normals q − p, r − q (`prp-perpendicular-bisector`). By `exm-lines-in-the-plane` (a) they are lines whose directions come from the normals by (a₁, a₂) ↦ (−a₂, a₁), and two such directions are multiples of each other iff the normals are. The normals are not multiples (if r − q = λ(q − p), r lies on the line through p and q), so Section 10.1's B2 (b) applies: the bisectors meet in exactly one z; ρ ≔ ‖z − p‖ = ‖z − q‖ = ‖z − r‖ > 0; any circle through the three has centre on both bisectors, so it is S(z, ρ). Stem example: (0, 0), (4, 0), (0, 2): centre (2, 1), radius √5. *Marking scheme* (5): bisector reduction (1); normals not parallel, carried to the directions (1); unique intersection (1); circle exists (1); uniqueness (1).
 
 ### 5.3 Section 10.3: Convex Sets and Hulls (`03-convex-sets-and-hulls.md`)
 
-**Budget** ≤ 5,000 (~3,400). One fold (λ_{k+1} = 1 in the induction). Three Quick checks.
+**Budget** ≤ 5,000 (~3,600). One fold (λ_{k+1} = 1 in the induction). Three Quick checks, one Try-it-first. The chapter's last section, so it carries the **R group** (STYLE §11.5). **Warning:** "Midpoints are not enough" (after the two-point-test box). **Non-examples:** the annulus and the axes (opening Quick check), `exm-star-not-convex`.
 
 **Opening (~250).** Analysis moves between points along segments (mean value theorem, connectedness, Cauchy's theorem). **Weird-examples Quick check** before the definition: which of a disc, an annulus 1 ≤ ‖x‖ ≤ 2, a line, two points, ∅, the union of the axes contain the segment between any two of their points? *Solution:* disc yes (below); annulus no ((±3/2, 0), midpoint 0); line yes; two points no; ∅ yes (nothing to check); axes no ((1, 0), (0, 1)).
 
@@ -182,7 +181,8 @@ All new; grepped 2026-10-26 against `foundations/fd*/src`, `linear-algebra/src`,
 3. **`prp-balls-convex`**.
    - **`[Scratch work]`** with table: Givens ‖p − c‖ < r, ‖q − c‖ < r, t ∈ [0, 1]; Goal ‖(1 − t)p + tq − c‖ < r; row 2: write c = (1 − t)c + tc, the vector is (1 − t)(p − c) + t(q − c); gap closed by the triangle inequality and homogeneity.
    - *Proof.* ‖(1 − t)(p − c) + t(q − c)‖ ≤ (1 − t)‖p − c‖ + t‖q − c‖ < (1 − t)r + tr = r (one of the weights is positive; if t = 0 or 1, immediate). Closed ball with ≤.
-4. **`exm-method-two-point-test`** `[Method: the two-point test]`. *Template.* Take p, q ∈ C, t ∈ [0, 1]; write the condition for p and q; split the vector or sum for (1 − t)p + tq as (1 − t)(…) + t(…); conclude by the triangle inequality or linearity. *When.* Proving convexity from a definition. *Usual failure.* Checking only t = 1/2 (§10.3 B4 (e)); allowing t outside [0, 1].
+4. **`exm-method-two-point-test`** `[Method: the two-point test]`. *Template.* Take p, q ∈ C, t ∈ [0, 1]; write the condition for p and q; split the vector or sum for (1 − t)p + tq as (1 − t)(…) + t(…); conclude by the triangle inequality or linearity. *When.* Proving convexity from a definition. *Usual failure.* Checking only t = 1/2 (the warning below); allowing t outside [0, 1].
+5. **Warning** `**Midpoints are not enough.**` ℚ² ⊆ ℝ² contains the midpoint ((a + c)/2, (b + d)/2) of any two of its points, but it is not convex: (√2/2, 0) = (1 − t)(0, 0) + t(1, 0) with t ≔ √2/2. Here √2 exists by `@fd3:prp-cof-square-roots` (with `@fd3:thm-reals-complete-ordered-field`); 1 < 2 < 4 gives 1 < √2 < 2 (`@fd3:prp-ordered-ring-rules` (g)), so t ∈ [0, 1]; and t ∉ ℚ, since otherwise √2 = 2t ∈ ℚ, against `@fd3:thm-no-rational-square-two`. So the point lies on [(0, 0), (1, 0)] but not in ℚ².
 
 **`## Examples and operations` (~700).**
 1. **`prp-convex-examples`**: lines, segments, hyperplanes, half-spaces are convex. *Proof* (terse): (1 − t)(p + sv) + t(p + uv) = p + ((1 − t)s + tu)v; `lem-subsegment`; ⟨a, (1 − t)x + ty⟩ = (1 − t)⟨a, x⟩ + t⟨a, y⟩.
@@ -193,8 +193,9 @@ All new; grepped 2026-10-26 against `foundations/fd*/src`, `linear-algebra/src`,
 1. **`def-convex-combination-rn`**: Σλ_ip_i with λ_i ≥ 0, Σλ_i = 1 (k ≥ 1); k = 2 gives [p₁, p₂].
 2. **`thm-convex-contains-combinations`**: a convex set contains every convex combination of its points. *Proof* by induction on k (`@fd2:thm-induction`), move "peel off the last point": scratch (≤ 6 lines): convexity speaks about two points, so split one off. If λ_{k+1} ≠ 1, s ≔ 1 − λ_{k+1} > 0 and Σ_{i≤k+1}λ_ip_i = s·Σ_{i≤k}(λ_i/s)p_i + λ_{k+1}p_{k+1}, a point of a segment between two points of C. λ_{k+1} = 1 in the fold.
 3. **`def-convex-hull-rn`**: conv S ≔ intersection of all convex sets containing S; the smallest such (pattern of `@fd2:prp-smallest-closed-set`; ℝⁿ is one, so the family is non-empty).
-4. **`thm-convex-hull-combinations-rn`** (key proof): conv S = K, the set of convex combinations of finitely many points of S. *Proof.* K ⊆ conv S by 2. K ⊇ S and K is convex: (1 − t)Σλ_ip_i + tΣμ_jq_j is a combination of the joined list with weights (1 − t)λ_i, tμ_j, summing to 1; so conv S ⊆ K.
-5. **`exm-triangle-as-hull`**: conv{p₁, p₂, p₃} is the filled triangle. (1, 1) is in the hull of (0, 0), (3, 0), (0, 3) (weights 1/3 each); (2, 2) is not (3λ₂ = 3λ₃ = 2 forces λ₂ + λ₃ = 4/3 > 1).
+4. **Try it first** (ten minutes): "Describe conv{p, q, r} without the word *intersection*." Folded answer leads into the theorem: the segments [p, q], [q, r], [r, p] are not enough (their union is not convex); points of [x, r] with x ∈ [p, q] are.
+5. **`thm-convex-hull-combinations-rn`** (key proof): conv S = K, the set of convex combinations of finitely many points of S. *Proof.* K ⊆ conv S by 2. K ⊇ S and K is convex: (1 − t)Σλ_ip_i + tΣμ_jq_j is a combination of the joined list with weights (1 − t)λ_i, tμ_j (constants through sums by `@lem-ring-finite-sums` (b)); the sum over the joined list splits into the two sums (`@prp-sum-reindex` (b)), so the weights sum to (1 − t) + t = 1; hence conv S ⊆ K.
+6. **`exm-triangle-as-hull`**: conv{p₁, p₂, p₃} is the filled triangle. (1, 1) is in the hull of (0, 0), (3, 0), (0, 3) (weights 1/3 each); (2, 2) is not (3λ₂ = 3λ₃ = 2 forces λ₂ + λ₃ = 4/3 > 1).
 
 **`## Star-shaped sets` (~350).**
 1. **`def-star-shaped`**: S is star-shaped about c ∈ S if [c, x] ⊆ S for every x ∈ S. A non-empty convex set is star-shaped about each of its points.
@@ -202,120 +203,76 @@ All new; grepped 2026-10-26 against `foundations/fd*/src`, `linear-algebra/src`,
 
 **Exercises.**
 - **A1.** Convex or not: (a) {y ≥ x²}; (b) {y ≤ x²}; (c) ℤ²; (d) {1 ≤ ‖x‖ ≤ 2} ⊆ ℝ². *Answers:* (a) yes (B1); (b) no: (±1, 1), midpoint (0, 1); (c) no: midpoint (1/2, 0); (d) no: (±3/2, 0).
-- **A2.** Is (1, 2) in conv{(0, 0), (3, 0), (0, 3)}? *Answer:* yes, (1/3)(3, 0) + (2/3)(0, 3).
+- **A2.** (a) Is (1, 2) in conv{(0, 0), (3, 0), (0, 3)}? (b) *(Proof comprehension, key proof `thm-convex-hull-combinations-rn`.)* Which half of the proof uses `thm-convex-contains-combinations`, and why is the family of convex sets containing S non-empty? *Answer:* (a) yes, (1/3)(3, 0) + (2/3)(0, 3). (b) K ⊆ conv S: conv S is convex and contains S, so it contains every convex combination of points of S. The family contains ℝⁿ.
 - **B1.** Prove A1 (a). *Answer:* (1 − t)b + td ≥ (1 − t)a² + tc² = ((1 − t)a + tc)² + t(1 − t)(a − c)² ≥ ((1 − t)a + tc)² (identity by expanding; sidecar).
 - **B2.** C, D convex ⇒ C + D convex. *Answer:* (1 − t)(x + y) + t(x′ + y′) = ((1 − t)x + tx′) + ((1 − t)y + ty′).
 - **B3** (strict convexity; Idea citing `exm-method-equality-case`). For p ≠ q in S(c, r) and 0 < t < 1, ‖(1 − t)p + tq − c‖ < r. *Answer:* ≤ r by the triangle inequality; equality gives, by the equality case with u = (1 − t)(p − c) ≠ 0, t(q − c) = λ(1 − t)(p − c), λ ≥ 0, so q − c = μ(p − c), μ ≥ 0; equal norms force μ = 1, q = p. Aftermath: for the square {max(|x₁|, |x₂|) ≤ 1} the analogue fails (its edge contains [(1, −1), (1, 1)]); AN1 returns to this (prose).
-- **B4** (prove or disprove). (a) A union of two convex sets is convex. (b) The complement of a convex subset of ℝ² is convex. (c) conv(S ∪ T) = conv S ∪ conv T. (d) {x : ‖x − p‖ ≤ ‖x − q‖} is convex. (e) A set containing the midpoint of any two of its points is convex. *Answers:* (a) false (`prp-convex-operations` (c)). (b) false: complement of B̄(0, 1), (±2, 0). (c) false: S = {p}, T = {q}. (d) true: a closed half-space (`prp-perpendicular-bisector`; ℝⁿ if p = q). (e) false: ℚ² ⊆ ℝ² contains midpoints of its points, but [(0, 0), (1, 0)] contains (√2/2, 0) ∉ ℚ² (`@fd3:thm-no-rational-square-two`, √2 from `@fd3:prp-cof-square-roots`).
-- **C1** (exit check). A non-empty convex C ⊆ ℝ is an interval: with α ≔ inf C (or −∞), β ≔ sup C (or +∞), (α, β) ⊆ C ⊆ [α, β] ∩ ℝ. *Answer:* for α < x < β there are a, b ∈ C with a < x < b (x is neither a lower nor an upper bound; `@fd3:def-complete-ordered-field` for inf and sup), and x ∈ [a, b] ⊆ C; the second inclusion is the definition of inf and sup. *Marking scheme* (4): inf/sup or infinite cases (1); a, b found (1); segment = interval for n = 1 (1); conclusion (1).
+- **B4** (prove or disprove). (a) A union of two convex sets is convex. (b) The complement of a convex subset of ℝ² is convex. (c) conv(S ∪ T) = conv S ∪ conv T. (d) {x : ‖x − p‖ ≤ ‖x − q‖} is convex. (e) If C is convex and λ, μ ≥ 0, then λC + μC = (λ + μ)C. *Answers:* (a) false (`prp-convex-operations` (c)). (b) false: complement of B̄(0, 1), (±2, 0). (c) false: S = {p}, T = {q}, p ≠ q: the midpoint is in neither hull of a point. (d) true: a closed half-space (`prp-perpendicular-bisector` with totality for ≤; ℝⁿ if p = q). (e) true: ⊇ since (λ + μ)c = λc + μc; ⊆: for λ + μ > 0, λx + μy = (λ + μ)((λ/(λ + μ))x + (μ/(λ + μ))y), a point of (λ + μ)C by convexity; for λ = μ = 0 both sides are {0} if C ≠ ∅ and ∅ if C = ∅.
+- **C1** (exit check). A non-empty convex C ⊆ ℝ is an interval: with α ≔ inf C (or −∞), β ≔ sup C (or +∞), (α, β) ⊆ C ⊆ [α, β] ∩ ℝ. *Answer:* sup C exists when C is bounded above (`@fd3:def-complete-ordered-field`, with `@fd3:thm-reals-complete-ordered-field`); if C is bounded below, −C ≔ {−c : c ∈ C} is bounded above, and −sup(−C) is a lower bound of C that every lower bound c′ satisfies c′ ≤ −sup(−C) (as −c′ is an upper bound of −C): so inf C = −sup(−C) (derived here in two lines, not cited). For α < x < β there are a, b ∈ C with a < x < b (x is neither a lower nor an upper bound), and x ∈ [a, b] ⊆ C; the second inclusion is the definition of inf and sup. *Marking scheme* (4): inf/sup or infinite cases, inf via −sup(−C) (1); a, b found (1); segment = interval for n = 1 (1); conclusion (1).
 
-### 5.4 Section 10.4: Isometries of ℝⁿ (`04-isometries-of-rn.md`)
-
-**Budget** ≤ 5,000 (~3,300). One fold (t < 0 in `thm-isometry-preserves-segments` (b)). Three Quick checks, one Try-it-first.
-
-**Opening: the hook (~200).** Translations, reflections and turns keep distances. Which other maps do? Must a map keeping all distances be **onto**, or could it squeeze ℝⁿ into part of itself, as x ↦ x + 1 squeezes [0, ∞) into [1, ∞)? This section collects what distances alone force.
-
-**`## Definition and examples` (~900).**
-1. **`def-isometry-rn`**: f: ℝⁿ → ℝⁿ with ‖f(x) − f(y)‖ = ‖x − y‖ for all x, y. Not assumed onto.
-2. **Quick check** (weird candidates): x ↦ −x (yes); x ↦ 2x (no); on ℝ, x ↦ |x| (no: ±1); (x₁, x₂) ↦ (x₂, x₁) (yes); constant maps (no).
-3. **`exm-isometry-examples`**: translations τ_b(x) ≔ x + b; permuting coordinates; changing signs of coordinates (‖·‖² is a sum of squares, unchanged by reordering or signs).
-4. **`def-reflection-hyperplane`**: ρ_{a,c}(x) ≔ x − 2((⟨a, x⟩ − c)/‖a‖²)a. Prose: ρ_{a,c}(x) = 2x* − x with x* the nearest point (`prp-nearest-point-on-hyperplane`).
-5. **`prp-reflection-properties`**: (a) ρ_{a,c} is an isometry; (b) ρ_{a,c} ∘ ρ_{a,c} = id, so it is a bijection, its own inverse (`@fd2:thm-bijection-iff-inverse`); (c) its fixed points are exactly H_{a,c}; (d) for p ≠ q, the reflection in the bisector of `prp-perpendicular-bisector` exchanges p and q. *Proof.* (a) Idea citing `exm-method-expand-the-square`: w = x − y, μ = ⟨a, w⟩/‖a‖², ‖w − 2μa‖² = ‖w‖² − 4μ⟨a, w⟩ + 4μ²‖a‖² = ‖w‖². (b) ⟨a, ρ(x)⟩ − c = −(⟨a, x⟩ − c). (c) correction term 0 iff ⟨a, x⟩ = c. (d) a = q − p, ⟨a, p⟩ − c = −‖q − p‖²/2, so ρ(p) = p + a = q; ρ(q) = p by (b).
-
-**`## Composites and the origin` (~600).**
-1. **`prp-isometry-composition`**: (a) composites of isometries are isometries; (b) isometries are injective; (c) the inverse of a bijective isometry is an isometry.
-2. **`prp-isometry-reduce-to-origin`**: g ≔ τ_{−f(0)} ∘ f is an isometry fixing 0 and f = τ_{f(0)} ∘ g (move "reduce to the origin").
-3. **`prp-isometry-preserves-inner-product`**: if f(0) = 0, then ‖f(x)‖ = ‖x‖ and ⟨f(x), f(y)⟩ = ⟨x, y⟩. *Proof* (terse): ‖f(x)‖ = ‖f(x) − f(0)‖; `prp-polarization-rn` (b) expresses ⟨x, y⟩ by ‖x‖, ‖y‖, ‖x − y‖. One sentence: from here the linear algebra volumes show f is linear (Looking-ahead box, §10.5).
-
-**`## What distances force` (~1,300).**
-1. **`exm-method-distances-only`** `[Method: describe it by distances alone]`. *Template.* Find a description of the objects that mentions only distances between points; apply f; the images satisfy the same description. *When.* Midpoints, segments, spheres, balls, bisectors under isometries; later, anything defined by a metric (AN1). *Usual failure.* Using a description with a parameter or a sum p + tv and claiming f respects it: that is what must be proved.
-2. **Try it first:** "Show that an isometry maps the midpoint of [p, q] to the midpoint of [f(p), f(q)]." Folded answer: the midpoint is the only point at distance ‖p − q‖/2 from both ends (`cor-point-pinned-on-segment`), and f keeps all three distances.
-3. **`thm-isometry-preserves-segments`** (key proof): (a) f((1 − t)p + tq) = (1 − t)f(p) + tf(q) for t ∈ [0, 1]; so f([p, q]) = [f(p), f(q)] and midpoints go to midpoints. (b) f(p + tv) = f(p) + t(f(p + v) − f(p)) for all t ∈ ℝ; for v ≠ 0, f maps p + ℝv onto the line f(p) + ℝ(f(p + v) − f(p)).
-   - **`[Scratch work]`** with table:
-
-     | Givens | Goal |
-     |---|---|
-     | x = (1 − t)p + tq; f keeps distances | f(x) = (1 − t)f(p) + tf(q) |
-     | ‖p − x‖ = t‖p − q‖, ‖x − q‖ = (1 − t)‖p − q‖ (`thm-betweenness`) | f(x) is at distances t‖f(p) − f(q)‖, (1 − t)‖f(p) − f(q)‖ from f(p), f(q) |
-     | the same with f applied | `cor-point-pinned-on-segment`: that point is f(p) + t(f(q) − f(p)) |
-
-   - *Proof.* (a) as in the table (p = q trivial); onto [f(p), f(q)] by reading the formula backwards. (b) t ∈ [0, 1]: (a) with q = p + v. t > 1: p + v = (1 − 1/t)p + (1/t)(p + tv), apply (a), solve. t < 0 (fold): p = (1 − s)(p + tv) + s(p + v), s = −t/(1 − t) ∈ (0, 1), apply (a), solve using 1/(1 − s) = 1 − t, s/(1 − s) = −t. Lines: f(p + v) ≠ f(p) by injectivity.
-4. **`cor-isometry-convex-image`** (terse, two-point test): f(C) convex for convex C; f(B(c, r)) ⊆ B(f(c), r), f(S(c, r)) ⊆ S(f(c), r). "⊆" cannot yet be "=": that needs onto (thread 1).
-5. **Quick check.** f(0, 0) = (1, 1), f(2, 0) = (1, 3): f(1, 0)? f(3, 0)? *Solution:* (1, 2); (1, 1) + 3((1, 2) − (1, 1)) = (1, 4).
-
-**Exercises.**
-- **A1.** Isometries of ℝ²? (a) (x, y) ↦ (y + 1, x − 2); (b) (x, 2y); (c) (x, x + y); (d) ((3x − 4y)/5, (4x + 3y)/5); (e) (|x|, y). *Answers:* (a) yes; (b) no, (0, 0), (0, 1) → distance 2; (c) no, (1, 0) → (1, 1), distance √2; (d) yes: the map is additive and ((3u − 4w)² + (4u + 3w)²)/25 = u² + w² (§10.5 identifies it as multiplication by (3 + 4i)/5); (e) no, (±1, 0).
-- **A2.** The reflection of ℝ³ in x₁ + x₂ + x₃ = 3 and the image of 0. *Answer:* ρ(x) = x − (2/3)(x₁ + x₂ + x₃ − 3)(1, 1, 1); ρ(0) = (2, 2, 2).
-- **B1.** An isometry fixing p ≠ q fixes the whole line through them. *Answer:* `thm-isometry-preserves-segments` (b), v = q − p.
-- **B2.** The reflection exchanging (1, 0, 0) and (0, 1, 0). *Answer:* `prp-reflection-properties` (d): a = (−1, 1, 0), c = 0, ρ(x) = (x₂, x₁, x₃).
-- **B3** (faded: last step blank in the hint). ρ_{a,c′} ∘ ρ_{a,c} is the translation by 2((c′ − c)/‖a‖²)a. *Hint given:* ⟨a, ρ_{a,c}(x)⟩ = 2c − ⟨a, x⟩; "*name the move, then complete it*". *Answer:* x − 2((⟨a, x⟩ − c)/‖a‖²)a − 2((2c − ⟨a, x⟩ − c′)/‖a‖²)a = x + 2((c′ − c)/‖a‖²)a.
-- **B4** (prove or disprove). (a) Isometries map midpoints to midpoints. (b) A map sending every segment onto a segment is an isometry. (c) An isometry of ℝ² fixing three non-collinear points is the identity. (d) The composite of two reflections is a reflection. (e) An isometry of ℝ maps [a, b] onto an interval. *Answers:* (a) true. (b) false: x ↦ 2x. (c) true: if f(z) = w ≠ z, the three fixed points are equidistant from z and w, so lie on one bisector, a line. (d) false: B3 with c ≠ c′ gives a translation without fixed points, while a reflection fixes a hyperplane. (e) true: (a) of the theorem with n = 1.
-- **C1** (exit check; thread 1 for n = 1). Every isometry of ℝ is x ↦ x + b or x ↦ −x + b; hence every isometry of ℝ is a bijection. *Answer:* b ≔ f(0), g ≔ f − b fixes 0 and |g(x)| = |x|, so g(x) = ±x (`@fd3:prp-absolute-value-ordered-field`); ε ≔ g(1) ∈ {1, −1}. If g(x) = −εx for some x ≠ 0, then |g(x) − g(1)| = |−εx − ε| = |x + 1| must equal |x − 1|, forcing x = 0 (square both sides: 4x = 0): contradiction. So g(x) = εx, f(x) = εx + b, with inverse y ↦ ε(y − b). *Marking scheme* (5): reduction (1); g(x) = ±x (1); ε (1); mixed sign excluded (1); bijectivity (1).
-
-### 5.5 Section 10.5: Rotations and the Complex Plane (`05-rotations-and-the-complex-plane.md`)
-
-**Budget** ≤ 5,000 (~3,900). Application section (terse scaffolding; no B4; R group). Three Quick checks, one Looking-ahead box.
-
-**Opening (~150).** Chapter 3 proved "multiply the lengths, add the angles". As maps of the plane: multiplying by a unit complex number turns the plane about 0, conjugation reflects it. This section makes that precise with Section 10.4's isometries, collects these maps into a group, and shows that picking one argument per point costs the rule that arguments add.
-
-**`## The plane as ℂ` (~500).**
-1. Prose: ℂ = ℝ² as sets (`@def-complex-numbers`); addition is vector addition (`def-vector-operations-rn`); |z − w| = ‖z − w‖ = d(z, w) (`@def-conjugate-modulus`, `def-norm-rn`: the same formula). So an isometry of ℝ² is a map f: ℂ → ℂ with |f(z) − f(w)| = |z − w|.
-2. **`lem-complex-plane-inner-product`**: for z = a + bi, w = c + di, z̄w = (ac + bd) + (ad − bc)i; so Re(z̄w) = ⟨z, w⟩ and Im(z̄w) = ad − bc. *Proof.* Multiply out.
-3. **Quick check.** z = 1 + 2i, w = 3 − i: ⟨z, w⟩ = 1; z̄w = (1 − 2i)(3 − i) = 1 − 7i. ✓
-
-**`## Rotations and reflections` (~1,300).**
-1. **`prp-complex-plane-isometries`**: for a ∈ 𝕋, b ∈ ℂ, f(z) ≔ az + b and g(z) ≔ a z̄ + b are isometries of ℂ and bijections, with inverses z ↦ ā(z − b) and z ↦ a z̄ − a b̄, of the same two forms. *Proof.* |f(z) − f(w)| = |a||z − w| and |g(z) − g(w)| = |a||conj(z − w)| (`@thm-conjugate-properties` (a), (b), (d)); inverses by substitution, ā = a⁻¹ (`@prp-unit-circle` (a)).
-2. **`def-rotation-about-point`**: for c ∈ ℂ, u ∈ 𝕋, the **rotation about c by u** is z ↦ c + u(z − c). If u = e^{iθ} (`@prp-polar-form` (a)), it is the rotation by angle θ; the angle is determined only up to 2πℤ (`@prp-polar-form` (b)). Picture in words via `@thm-polar-multiplication` (c): z − c = re^{iφ} goes to re^{i(φ + θ)}.
-3. **Quick check.** A1 (d) of Section 10.4 is z ↦ ((3 + 4i)/5)z: (3 + 4i)/5 ∈ 𝕋 and ((3 + 4i)/5)(x + iy) = ((3x − 4y) + (4x + 3y)i)/5.
-4. **`[Scratch work]`** (≤ 8 lines): a reflection in the line ℝu (u ∈ 𝕋) should fix u, send iu to −iu; z ↦ z̄ does this for u = 1; turn by ū, conjugate, turn back by u: u·conj(ūz) = u² z̄.
-5. **`prp-reflection-in-line-complex`**: for u ∈ 𝕋, the line ℝu through 0 is H_{iu,0}, and ρ_{iu,0}(z) = u² z̄ ≕ σ_u(z). *Proof.* ⟨iu, u⟩ = Re(conj(iu)u) = Re(−i) = 0 (lemma), so ℝu ⊆ H_{iu,0}, equal by `exm-lines-in-the-plane`. ‖iu‖ = 1, ⟨iu, z⟩ = Re(−iūz) = Im(ūz). Write ūz = s + ti; then z = u(s + ti) and ρ(z) = z − 2t·iu = u(s − ti) = u·conj(ūz) = u² z̄.
-6. **`thm-two-reflections-rotation`**: for u, v ∈ 𝕋: (a) σ_v ∘ σ_u is the rotation about 0 by (vū)²; with u = e^{iα}, v = e^{iβ}, by angle 2(β − α); (b) every rotation about 0 is a composite of two reflections in lines through 0. *Proof.* (a) v² conj(u² z̄) = v²ū²z (`@thm-conjugate-properties`); polar form by `@thm-polar-multiplication`. (b) for w ∈ 𝕋 choose v with v² = w (`@prp-complex-square-roots`; |v|² = |w| = 1); then σ_v ∘ σ_1 is z ↦ wz.
-
-**`## A group of isometries` (~700).**
-1. **`prp-complex-isometry-group`** (key proof): let E be the set of maps z ↦ az + b and z ↦ a z̄ + b (a ∈ 𝕋, b ∈ ℂ). (a) E is a subgroup of the symmetric group S_ℂ (`@def-symmetric-group`), and E⁺ ≔ {z ↦ az + b} is a subgroup of E. (b) Each f ∈ E determines its form: b = f(0), a = f(1) − f(0), and f is of the first kind iff f(i) − f(0) = ai. (c) u ↦ (z ↦ uz) is an injective homomorphism (𝕋, ·) → E⁺ (`@def-group-homomorphism`, `@prp-homomorphism-injective-iff-kernel-trivial`). *Proof.* (a) `@thm-subgroup-test`: E ≠ ∅ (identity); E ⊆ S_ℂ by `prp-complex-plane-isometries`; composites, e.g. (a z̄ + b)∘(a′ z̄ + b′) = aā′z + a b̄′ + b, stay in E with coefficients in 𝕋 (`@prp-unit-circle` (a)), and E⁺ is closed too; inverses by `prp-complex-plane-isometries`. (b) evaluate at 0, 1, i; for the second kind f(i) − f(0) = −ai ≠ ai. (c) uu′ composes to (uu′)z; kernel {1}.
-2. The first kind are **direct**, the second **opposite**; well defined by (b).
-3. **Looking-ahead box** `[Looking ahead: every isometry]` (≤ 120 words): "Every isometry of the plane belongs to E, and every isometry of ℝⁿ has the form x ↦ Ax + b where the columns of the array A are orthonormal; in particular every isometry is onto. The proof starts from `prp-isometry-preserves-inner-product` and shows linearity; it belongs to *Inner Products and Spectral Theory*, and *Affine and Projective Geometry* lists the plane isometries." (Home: coordinator, §6.)
-
-**`## Arguments` (~800).**
-1. **`def-argument-set`** (motivation: `@def-polar-form` says "**an** argument"): for z ≠ 0, arg z ≔ {θ ∈ ℝ : z = |z|e^{iθ}}. By `@prp-polar-form`, arg z = θ₀ + 2πℤ for any θ₀ ∈ arg z.
-2. **Quick check.** arg i = π/2 + 2πℤ; arg(−1) = π + 2πℤ; arg(1 + i) = π/4 + 2πℤ (`@exm-special-angles`).
-3. **`prp-argument-of-product`**: for z, w ≠ 0, arg(zw) = arg z + arg w ≔ {θ + φ}; arg z̄ = arg(1/z) = −arg z. *Proof.* ⊇ by `@thm-polar-multiplication` (c). ⊆: for ψ ∈ arg(zw) and θ ∈ arg z, w = zw/z = |w|e^{i(ψ − θ)} (`@thm-polar-multiplication` (a), (b)), so ψ − θ ∈ arg w. Conjugates: conj(e^{iθ}) = e^{−iθ}; 1/z = z̄/|z|².
-4. **`def-principal-argument`** (motivation: one number per z is wanted): Arg z ≔ the unique element of arg z in (−π, π]. Existence and uniqueness: for θ ∈ arg z, put x ≔ (θ + π)/(2π); ℝ is Archimedean (`@fd3:thm-cof-complete-archimedean`), so by `@fd3:prp-integer-part-ordered-field` there is one m ∈ ℤ with m ≤ −x < m + 1; k ≔ −m − 1 is the only integer with k < x ≤ k + 1, that is with θ − 2πk ∈ (−π, π]. Two elements of arg z in (−π, π] differ by 2πj with |2πj| < 2π, so j = 0.
-5. **`exm-principal-argument-not-additive`**: Arg(−1) = π, Arg i = π/2, Arg((−1)i) = Arg(−i) = −π/2 ≠ 3π/2. And two nearby points: Arg(−1 + i) = 3π/4, Arg(−1 − i) = −3π/4 (e^{i3π/4} = i e^{iπ/4} = (−1 + i)/√2). No choice of one argument per point both keeps "arguments add" and avoids such a jump across the negative real axis: prose pointer to the principal logarithm (*Integration, Series, and Function Spaces*) and branches (*Complex Analysis*).
-
-**`## Angles in the plane` (~450).**
-1. **`thm-angle-in-the-plane`**: for z, w ∈ ℂ∖{0} and θ ∈ arg(z̄w) = arg w − arg z: (a) cos∠(z, w) = cos θ and Im(z̄w) = |z||w| sin θ; (b) for every rotation f(ζ) = uζ + b, arg(conj(f(z) − f(0)) (f(w) − f(0))) = arg(z̄w); for σ_v it is −arg(z̄w). *Proof.* (a) |z̄w| = |z||w|, so z̄w = |z||w|e^{iθ}; real and imaginary parts, `lem-complex-plane-inner-product`, `def-angle-cosine-rn`. (b) conj(uz)(uw) = |u|²z̄w = z̄w; conj(v²z̄)(v²w̄) = z w̄ = conj(z̄w), and `prp-argument-of-product`.
-2. Aftermath: θ is the **oriented angle from z to w** (Chapter 9's promise paid); rotations keep it, reflections reverse it.
-
-**Exercises.**
-- **A1.** The rotation about 1 + i by i; the images of 0 and 2. *Answer:* z ↦ (1 + i) + i(z − 1 − i); 0 ↦ 2, 2 ↦ 2 + 2i (both at distance √2 from 1 + i, as before).
-- **A2.** Arg of −√3 + i, −2, 1 − i, and of the products (−2)(1 − i), (−√3 + i)(−2). *Answer:* 5π/6 (−√3 + i = 2e^{iπ}e^{−iπ/6}, `@exm-special-angles`); π; −π/4; Arg(−2 + 2i) = 3π/4 = π + (−π/4); Arg(2√3 − 2i) = −π/6, while 5π/6 + π = 11π/6 differs from it by 2π.
-- **B1.** The reflection in the line c + ℝu (u ∈ 𝕋) is z ↦ c + u² conj(z − c). Find the reflection in the vertical line through 1. *Answer:* that line is H_{iu,⟨iu,c⟩}, and from `def-reflection-hyperplane`, ρ_{a,⟨a,c⟩}(z) = c + ρ_{a,0}(z − c); then `prp-reflection-in-line-complex`. With c = 1, u = i: z ↦ 1 − conj(z − 1) = 2 − z̄ (0 ↦ 2 ✓).
-- **B2.** The composite of the rotations about c by u and about c′ by u′ is a rotation about some point by uu′ if uu′ ≠ 1, and the translation by (1 − u′)(c′ − c) if uu′ = 1. Two half-turns give the translation by 2(c′ − c). *Answer:* the composite is z ↦ uu′z + K, K = c′ + u′(c − c′) − uu′c. If uu′ ≠ 1, d ≔ K/(1 − uu′) satisfies K = d(1 − uu′), so the map is z ↦ d + uu′(z − d). If uu′ = 1, K = c′ + u′c − u′c′ − c = (1 − u′)(c′ − c). u = u′ = −1: 2(c′ − c).
-- **B3.** The oriented angle from 1 + i to i, and from i to 1 + i; check cos∠ directly. *Answer:* conj(1 + i)·i = 1 + i = √2e^{iπ/4}: π/4 (mod 2π); the reverse is −π/4 by `prp-argument-of-product`; ⟨(1, 1), (0, 1)⟩/√2 = 1/√2 = cos(π/4) (`@exm-special-angles`).
-- **C1** (exit check). Let g(z) = a z̄ + b, a ∈ 𝕋. (a) g has a fixed point iff a b̄ + b = 0. (b) If g(c) = c, then g is the reflection in c + ℝv for any v ∈ 𝕋 with v² = a. (c) Does z ↦ z̄ + 1 have one? *Answer:* (a) if g(c) = c then b = c − a c̄, so a b̄ = a c̄ − c (aā = 1) and a b̄ + b = 0; conversely g(b/2) = a b̄/2 + b = b/2. (b) b = c − a c̄ gives g(z) = c + a conj(z − c); v exists by `@prp-complex-square-roots` (|v|² = 1); B1. (c) no: a b̄ + b = 2 (a glide reflection, named only). *Marking scheme* (5): each direction of (a) (1 + 1); rewriting g about c (1); v ∈ 𝕋 (1); (c) (1).
-- **R1.** Let n ≥ 1, ω ≔ e^{2πi/n}. The 2n maps z ↦ ω^k z and z ↦ ω^k z̄ (0 ≤ k < n) are distinct, map μ_n onto μ_n, and form a subgroup of E. *Answer:* (ω^kζ)^n = 1; ζ̄ = ζ⁻¹ ∈ μ_n (μ_n ⊆ 𝕋, `@prp-unit-circle` (a)); onto, since the inverses ω^{−k}z and ω^k z̄ are of the same forms; distinct by `prp-complex-isometry-group` (b) and `@thm-complex-nth-roots` (c); closure: ω^k conj(ω^l z̄) = ω^{k−l}z (ω̄ = ω⁻¹), and the other products likewise; subgroup test. (Prose: the symmetries of the regular n-gon, studied in *Groups*.)
-- **R2.** Arg z̄ = −Arg z iff z is not a negative real. *Answer:* −Arg z ∈ arg z̄ (`prp-argument-of-product`) and lies in [−π, π); it lies in (−π, π] iff Arg z ≠ π, iff z ≠ −|z|, i.e. z is not a negative real.
+- **R1** (one chapter back; Chapter 9). Let Q ≔ {x ∈ ℝⁿ : |x_k| ≤ 1 for every k}. Show that Q is convex and that B̄(0, 1) ⊆ Q ⊆ B̄(0, √n). *Answer:* |x_k| ≤ 1 iff ⟨e_k, x⟩ ≤ 1 and ⟨−e_k, x⟩ ≤ 1 (`@fd3:prp-absolute-value-ordered-field` (d)), so Q is the intersection of 2n closed half-spaces (`prp-convex-examples`, `prp-convex-operations` (a)). ‖x‖ ≤ 1 gives |x_k| ≤ ‖x‖ ≤ 1 (`prp-norm-coordinate-bounds` (a)); x ∈ Q gives max_k |x_k| ≤ 1, so ‖x‖ ≤ √n (`prp-norm-coordinate-bounds` (b)). (Prose in the solution: the two inclusions are the ones AN1 uses to compare balls and boxes.)
+- **R2** (four chapters back; Chapter 6; no hint of method). Identify a + bx + cx² ∈ ℝ[x] with (a, b, c) ∈ ℝ³. Show that the set P of these polynomials f with f(t) ≥ 0 for every t ∈ [0, 1] is convex. *Answer:* for fixed t, evaluation respects sums and real multiples (`@thm-evaluation-respects-operations`), so f(t) = ⟨(1, t, t²), (a, b, c)⟩ and {f : f(t) ≥ 0} is a closed half-space with normal (1, t, t²) ≠ 0; P is the intersection of these half-spaces over t ∈ [0, 1] (`prp-convex-operations` (a)). (Two-point test directly also works: ((1 − s)f + sg)(t) = (1 − s)f(t) + sg(t) ≥ 0.)
+- **R3** (spiral; Chapter 3). For c ∈ ℂ, r > 0 and u ∈ 𝕋, show that D ≔ {z ∈ ℂ : |z − c| < r} is convex as a subset of ℝ², and that z ↦ uz maps D onto {z : |z − uc| < r}. *Answer:* |z − c| = ‖z − c‖ (`prp-plane-is-complex-plane` (c)), so D = B(c, r), convex by `prp-balls-convex`. |uz − uc| = |u||z − c| = |z − c| (`@thm-conjugate-properties` (d)), so the image lies in the second disc; onto: for |w − uc| < r, z ≔ ūw has uz = w (`@prp-unit-circle` (a)) and |z − c| = |ū||w − uc| < r. (Prose: turning the plane by a unit complex number is the subject of the opening of *Complex Analysis*.)
 
 ---
 
-## 6. Pointers and promises (coordinator; S1 touches no src, config, ledger or registry)
+## 6. Pointers and promises (coordinator; this blueprint touches no src, config, ledger or registry)
 
-- **Registry:** F4.9 title "Lines, Convexity, and Isometries"; plan-edges F4.9 `s: [F4.8, F4.1]`, `see: [F5.3]` (or `s`, coordinator's call); F4.10 → F4.9 (proposal §4.1; CA.1, AN1.10, apostol-ma follow). chapter-constraints: F4.9 rule rewritten (no classification; only `prp-isometry-preserves-inner-product`, rest in the Looking-ahead box), F4.10's rule folded in minus "classify". Promise row: classification to LA3 (plane list GEO); coordinator fixes the home.
-- **Downstream:** AN2 ch07 cites `@fd4:def-principal-argument` instead of redefining Arg; AM ch05 cites `@fd4:def-star-shaped`; AN1 (metric spaces, former F4.11) cites `@fd4:def-ball-rn` and picks up thread 2.
-- **Chapter 9 blueprint:** its §05 C3 is the (⇐) half of `thm-betweenness` (replace or point forward); its "F4.10 proves cos∠ = cos θ" → `thm-angle-in-the-plane`.
+- **Registry:** F4.9 title "Lines, Hyperplanes, and Convex Sets", directory slug `ch10-lines-hyperplanes-convex-sets`; plan-edges F4.9 `s: [F4.8, F4.6]`, `see: [F4.1, F5.4]` (review items only; coordinator's call), **not** `s: [F4.8, F4.1]` as proposal §4 has it. F4.10 → F4.9 rename stays (proposal §4.1), but CA.1's and AN1.10's F4.10 edges should point to their new homes below rather than to F4.9. chapter-constraints: F4.9's isometry rule is withdrawn (proposal §3.5 item 2: "chapter-constraints 的「不用線代」規則要撤"); F4.10's rule moves with its material. exam-targets apostol-ma (F4.10 lines 103, 108, 110): re-point to the new homes, not to F4.9.
+- **Rehoming of the S1 Sections 10.4–10.5** (plans in commit `a347ec8`; reviewers' S2 fixes for them listed so the receiving blueprint can apply them):
+  - Isometries of ℝⁿ (`def-isometry-rn`, reflections ρ_{a,c}, `thm-isometry-preserves-segments`, the classification, ℝ² read as ℂ, `thm-two-reflections-rotation`, the group E): **GEO** (*Affine and Projective Geometry*) for the plane list and the segment-preserving theorem, **LA3** (*Inner Products and Spectral Theory*) for x ↦ Ax + b. Fixes to carry: `thm-angle-in-the-plane` (b) should say "direct isometry f(ζ) = uζ + b (u ∈ 𝕋)"; the two-rotations exercise must state the order of composition; `prp-complex-isometry-group` cites `@exm-groups` (c) for S_ℂ and Chapter 5's 𝕋-subgroup example; the dihedral item cites `@thm-complex-nth-roots` (b) for distinctness; ℝ's isometry exit check cites absolute value (b) and ring rules (f).
+  - Rotations as multiplication by u ∈ 𝕋, `def-argument-set`, `prp-argument-of-product`, the oriented angle: **CA.1 opening** (proposal's stated cost of option (b)). `def-principal-argument`: **AN2 ch07** (which already planned Arg) or CA.1, coordinator's call. Fixes to carry: the non-additivity argument is algebraic (A(1) = 2A(1) gives A(1) = 0, then 4A(i) = A(1) = 0, so A(i) = 0 ∉ arg i), with no "jump" language; existence of Arg on the main line by a one-sentence Idea, the integer-part computation in a fold; Re(z̄w) = ⟨z, w⟩ cited from `@fd4:prp-plane-is-complex-plane` (b), only Im(z̄w) = ad − bc new.
+- **Chapter 9 blueprint (frozen, `merged-ch09-f48.md`) must be amended by the coordinator** to match this cut (its S2 round aligned it with this file's S1 version): change 3 and the Looking-ahead box `[Looking ahead: the angle itself]` (line 210) should send θ for n = 2 to *Complex Analysis* (CA.1) and drop "Section 10.5 (`thm-angle-in-the-plane`)"; the exports table rows for `prp-polarization-rn` (Ch10 §10.4), `prp-plane-is-complex-plane` (Ch10 §10.5) and `def-angle-cosine-rn` (Ch10 §10.5) should name Ch10 §10.3 R3 for `prp-plane-is-complex-plane` and drop the other Ch10 entries; its S2a item 15 and the Opened item asking Ch10 to adopt `prp-plane-is-complex-plane` (b) close as "Ch10 cites (c) in R3; §10.5 left the book". Ch9's §9.4 B3 stays as is; this chapter recalls it in prose before `prp-perpendicular-bisector`.
+- **NOTATION.md:** no rows for τ_b, ρ_{a,c}, σ_u, arg, Arg; the `\cos\angle(x, y)` row is **not** amended by this chapter.
+- **Downstream:** AM ch05 cites `@fd4:def-star-shaped`; AN1 (metric spaces, former F4.11) cites `@fd4:def-ball-rn` and picks up thread 1; AN2 ch07 keeps its own Arg unless the coordinator homes `def-principal-argument` elsewhere.
 
 ## 7. Notes for S3
 
-Sidecars: §10.1 B2; §10.3 B1; §10.5 A1, A2, B2, `lem-complex-plane-inner-product`, `prp-reflection-in-line-complex`, R1 for n = 4, 6. Ledger lines for each (T_k) use in §10.5, as Chapter 3 does.
+Sidecars: §10.1 B2, A2 (b); §10.2 A1, A2, B1, B2, C1 stem example; §10.3 B1, `exm-triangle-as-hull`, B4 (e).
 
 ## 8. S2a: claims to verify
 
-1. Chapter 9 labels (§4) against the frozen F4.8 blueprint or src, with the content used: `thm-triangle-inequality-rn` (a) equality case "u = 0 or w = cu, c ≥ 0"; `thm-projection-closest-point` (a), (b); `prp-polarization-rn` (b); `def-angle-cosine-rn`; `prp-norm-basic-rn` (b).
-2. Chapter 9 §05 C3 duplicate (§6).
-3. fd3 labels and item letters after the fd3 re-cut (§4 list; `prp-integer-part-ordered-field` with the ℤ ⊆ ℝ identification).
-4. fd2 labels after the fd2 re-cut (all exist at HEAD 2026-10-26).
-5. Same-book labels after the structural move, with the item letters cited (Chapter 3, Chapter 5).
-6. Chapter 1 (F4.6), once blueprinted: cite re-indexing or completing the square by label?
-7. Label uniqueness re-grep at S3, including new src of Chapters 1, 8, 9.
-8. Hours after S3 by `check_structure.py --words`; if over 18 / 22, trim `prp-segment-crosses-hyperplane` or R1 first.
+1. Chapter 9 labels (§4) against `merged-ch09-f48.md` (checked at S2: all exist with the content used) and again against Ch9 src once drafted.
+2. fd3 labels and item letters after the fd3 re-cut (§4 list; especially ring rules (g), (i), halves (d), absolute value (d)).
+3. fd2 labels after the fd2 re-cut (all exist at HEAD 2026-10-26).
+4. Chapter 1 labels `lem-ring-finite-sums` (b), `prp-sum-reindex` (b) against Ch1 src once drafted (item letters as in `merged-ch01-f46.md`).
+5. Same-book labels for the review items: Chapter 3 (`thm-conjugate-properties` (d), `prp-unit-circle` (a)), Chapter 6 (`thm-evaluation-respects-operations`), after the structural move.
+6. Label uniqueness re-grep at S3, including new src of Chapters 1, 8, 9.
+7. Hours after S3 by `check_structure.py --words`; if over 15 / 20 unrounded, trim `prp-segment-crosses-hyperplane` or R3 first.
+8. Coordinator: the Chapter 9 amendment of §6 is made before Ch9 or Ch10 goes to S3.
+
+---
+
+## S2 replies (round 1)
+
+Two blind reviews (R-A, R-B). Every finding is applied or answered below.
+
+**R-A**
+1. *Error, scope vs approved option.* **Applied.** Ch10 is cut to Sections 10.1–10.3, title "Lines, Hyperplanes, and Convex Sets". 10.4 and 10.5 move to GEO/LA3 and CA.1 (AN2 ch07 for Arg); §6 lists the homes. Threads 1 and 4 are removed, and so are the Chapter 5 dependence and the old promise that Ch9 would be amended toward 10.5. The Authority line quotes the approved text. The coordinator's relayed wording ("isometry classification moves") is read as shorthand for that option, not as a new scope, so no question goes to the author. Hours are recomputed from word counts (§2). Ch9/Ch10 agreement: at the time of this round, the frozen Ch9 (`d1da300`) had been aligned with this file's S1 version and points to §10.5. §6 and S2a 8 ask the coordinator to amend Ch9 before S3 (I may edit only this file).
+2. *Gap, re-proof of the Ch9 inner-product identity.* **Applied by removal.** `lem-complex-plane-inner-product` left with §10.5. The citation fix (`prp-plane-is-complex-plane` (b), new part only Im) is passed to the receiving blueprint (§6). R3 cites `prp-plane-is-complex-plane` (c), which is in §4.
+3. *Gap, stale Ch9 references.* **Applied.** §4 points at `merged-ch09-f48.md`, and the eleven labels plus `prp-norm-coordinate-bounds` and `prp-plane-is-complex-plane` were checked. The §05 C3 remark and the old S2a item 2 are deleted. `prp-perpendicular-bisector` now has a one-sentence prose recall of Section 9.4 B3, a one-line Idea, and a short proof that names the hyperplane reading and the strict half-space.
+4. *Gap, Arg non-additivity sentence.* **Answered: section removed.** The corrected algebraic argument is recorded in §6 for CA.1/AN2.
+5. *Minor, Ch5/Ch3 prerequisites in §10.5.* **Answered: section removed.** The fixes (`@exm-groups` (c), the 𝕋-subgroup example, Section 3.6, de Moivre before nth roots) are in §6. "What you need" no longer lists Chapter 5.
+6. *Minor, "rotation" for uζ + b.* **Answered: removed.** The fix ("direct isometry") is in §6.
+7. *Minor, B2 order of composition.* **Answered: removed.** The fix is in §6.
+8. *Minor, §10.3 B4 (e) fd3 label.* **Applied.** The ℚ² example is now the §10.3 warning (R-B 6). It cites `@fd3:thm-no-rational-square-two` (added to §4) and spells out 1 < √2 < 2 by ring rules (g), so t = √2/2 ∈ [0, 1], and t ∈ ℚ ⇒ √2 = 2t ∈ ℚ. B4 (e) is replaced by λC + μC = (λ + μ)C (true).
+9. *Minor, loose citations.* **Applied** for `lem-subsegment` (halves (d), ring rules (b)) and for `prp-perpendicular-bisector` (equality of non-negative quantities from (g) with totality (i)). The §10.4 C1 item left with its section; its fix is in §6.
+10. *Minor, inf in §10.3 C1.* **Applied.** The answer derives inf C = −sup(−C) in two lines and cites `def-complete-ordered-field` only for sup. It does not cite fd3's exercise.
+11. *Minor, §10.2 C1 conversion.* **Applied.** The answer passes from normals to directions by `exm-lines-in-the-plane` (a) and notes that the multiples correspond; the marking scheme follows.
+12. *Minor, Chapter 1 line.* **Applied.** `merged-ch01-f46.md` was checked. `thm-convex-hull-combinations-rn` cites `@lem-ring-finite-sums` (b) and `@prp-sum-reindex` (b). Square roots stay with fd3, and no completing of squares is needed. The old S2a 6 is closed.
+13. *Minor, core/full gap.* **Applied.** Hours are recomputed from word counts and exercise counts (§2): 12.4 / 18.8 unrounded, 10 / 20 rounded. With three sections and an R group, the full track is now about 1.5 times the core.
+
+**R-B**
+1. *Error, scope and hours.* **Applied**, as R-A 1. Retitled, registry row, Looking-ahead box, threads 1 and 4 dropped; thread 2 (now 1) ends in a prose pointer to AN1/GEO in the aftermath of `thm-betweenness`. Hours by the research-reader formula, placed inside 257 / 326 (§2). The 14 / 20 figure is no longer used as the derivation.
+2. *Error, conflict with Ch9 on θ.* **Applied on this side.** `thm-angle-in-the-plane` and the NOTATION amendment are removed, and so is the §6 bullet that edited Ch9's "F4.10 proves cos∠ = cos θ". The frozen Ch9 now points to Section 10.5 (its S2 followed this file's S1), so §6 lists the exact Ch9 lines that must change in the same round. This is coordinator work, and S2a 8 tracks it.
+3. *Gap, lemma re-proves Ch9.* **Applied by removal**, as R-A 2.
+4. *Minor, f4-8.md source.* **Applied**, as R-A 3.
+5. *Minor, §05 C3 / §9.4 B3.* **Applied.** The C3 bullet and its S2a item are deleted. The bisector proposition recalls B3 in prose, gives a one-line Idea and proves only the hyperplane reading and the strict half-space. Ch9's B3 stays as a forward-pointing exercise.
+6. *Gap, warnings per section.* **Applied.** Each section plan names its warning and its non-example: §10.1 equal distances; §10.2 normals not unique, a = 0; §10.3 midpoint-convex is not convex (ℚ², promoted from B4 (e), which now holds a different item). §1 lists them.
+7. *Minor, "What you need".* **Applied.** Chapter 5 is dropped. Chapter 3 (Sections 3.2, 3.5) and Chapter 6 (Section 6.4) are listed for the review items only, and Chapter 1, Section 1.1 for sums. The plan-edges proposal becomes `s: [F4.8, F4.6]`, `see: [F4.1, F5.4]` (§6). The Chapter 1 line is updated (R-A 12).
+8. *Minor, R1 (b) vs (c).* **Answered: removed.** The fix is in §6.
+9. *Minor, Arg existence bookkeeping.* **Answered: removed.** The fold instruction is in §6 for its new home.
+
+**Added in this round (STYLE requirements that the cut exposed):** §10.3 is now the chapter's last section, so it gets an R group: R1 Ch9 (cube between two balls), R2 Ch6 (non-negative quadratics on [0, 1], no hint), R3 Ch3 spiral (discs and turning by u ∈ 𝕋). Proof-comprehension parts are added to §10.1 A2 and §10.3 A2 for the two key proofs. The Try-it-first moves from the old §10.4 to `thm-convex-hull-combinations-rn`.
+
+**Open:** the Chapter 9 amendment (§6, S2a 8); the homes of the rehomed material (GEO / LA3 / CA.1 / AN2 ch07) and the plan-edges, chapter-constraints and exam-targets edits (coordinator); fd3 item letters after the re-cut (S2a 2).
