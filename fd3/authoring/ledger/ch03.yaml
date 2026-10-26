@@ -109,6 +109,21 @@ items:
     model: claude-opus-5-5
     evidence: 04:72-78. (-6,-8) is not in Z x Z_{>0}. In the variant, 3*(-8)=-24=(-6)*4. This matches
       the blueprint ch02.md Check.
+  - stage: S5a
+    verdict: correct
+    by: refereeA
+    hash: 6c2686afd98a
+    date: '2026-10-26'
+    model: claude-opus-5-5
+    evidence: 'line 72-78: -8 is not in Z_{>0}, so (-6,-8) is not in the domain of ~; the answer is right.'
+  - stage: S5b
+    verdict: correct
+    by: refereeB
+    hash: 6c2686afd98a
+    date: '2026-10-26'
+    model: claude-opus-5-5
+    evidence: '01-rationals-as-classes.md:72-78: -8 is not in Z_{>0}, so the question is malformed, as
+      the solution says; no facts used.'
 - key: def-rational-operations
   kind: def
   file: 01-rationals-as-classes.md
@@ -175,6 +190,27 @@ items:
     evidence: '04:118-152. All four one-argument identities expand correctly: (pq'')s^2+rqq''s and pqss''+(rs'')q^2.
       Negation goes through prp-ring-algebra (c). One wording slip: 04:151 calls @thm-well-defined-on-classes
       ''that lemma'', but it is a theorem. Not a defect.'
+  - stage: S5a
+    verdict: correct
+    by: refereeA
+    hash: 79812c626125
+    date: '2026-10-26'
+    model: claude-opus-5-5
+    evidence: 'lines 116-138: multiplication (pr)(q''s)=(pq'')(rs)=(p''q)(rs)=(p''r)(qs) is right; addition
+      expansions (pq'')s^2+rqq''s and (p''q)s^2+rqq''s are right by (F9),(F5),(F6); the symmetry step
+      g(x,y)=g(y,x)~g(y'',x)=g(x,y'') applies the first-argument case with generic pairs, so the quantifiers
+      are fine; negation uses prp-ring-algebra (c). The hypotheses of thm-well-defined-on-classes (a)/(b)
+      match (Y=X, the sa'
+  - stage: S5b
+    verdict: correct
+    by: refereeB
+    hash: 79812c626125
+    date: '2026-10-26'
+    model: claude-opus-5-5
+    evidence: 'Lines 116-138: computations check out ((ps+rq)(q''s)=(pq'')s^2+rqq''s, (p''s+rq'')(qs)=(p''q)s^2+rqq''s).
+      The symmetry step g(x,y)=g(y,x)~g(y'',x)=g(x,y'') matches the one-argument-at-a-time hypotheses
+      of thm-well-defined-on-classes (b) (ch02/02:24-31). Negation uses prp-ring-algebra (c) (ch02/03:140).
+      That g maps into X is shown at line 97. Ledger rows 527-528 cover (F1), (F5), (F6), (F9).'
 - key: check:01-rationals-as-classes:2
   kind: check
   file: 01-rationals-as-classes.md
@@ -196,6 +232,23 @@ items:
     date: '2026-10-12'
     model: claude-opus-5-5
     evidence: 04:237-243. 1*3+1*2=5 and 2*3=6. (-3)(-4)=12 and 4*3=12.
+  - stage: S5a
+    verdict: correct
+    by: refereeA
+    hash: 86843dece86f
+    date: '2026-10-26'
+    model: claude-opus-5-5
+    evidence: 'line 145: (a) [(p,q)]+[(1,1)]=[(p+q,q)] by def-rational-operations with (F7), so the rule
+      is the well-defined map x -> x+1; (b) (1,2)~(2,4), but 1*5=5 and 2*3=6, so (1,3) is not related
+      to (2,5).'
+  - stage: S5b
+    verdict: correct
+    by: refereeB
+    hash: 86843dece86f
+    date: '2026-10-26'
+    model: claude-opus-5-5
+    evidence: 'Lines 140-146: [(p,q)]+[(1,1)]=[(p+q,q)] by def-rational-operations with (F7). For (b),
+      1*5=5 and 2*3=6, so (1,3) and (2,5) are not related. Ledger row 529.'
 - key: exm-ill-defined-fraction-sum
   kind: exm
   file: 01-rationals-as-classes.md
@@ -298,7 +351,23 @@ items:
   file: 01-rationals-as-classes.md
   line: 232
   hash: 2bb303b7b5ac
-  verdicts: []
+  verdicts:
+  - stage: S5a
+    verdict: correct
+    by: refereeA
+    hash: 2bb303b7b5ac
+    date: '2026-10-26'
+    model: claude-opus-5-5
+    evidence: 'line 237: 1*3+1*2=5 over 6; p=-3<0 gives inverse [(-q,-p)]=[(-4,3)] by thm-rationals-field;
+      (-3)(-4)=12 and 4*3=12, and (12,12)~(1,1).'
+  - stage: S5b
+    verdict: correct
+    by: refereeB
+    hash: 2bb303b7b5ac
+    date: '2026-10-26'
+    model: claude-opus-5-5
+    evidence: 'Lines 232-238: 1*3+1*2=5 and 2*3=6. The numerator -3 is negative, so the inverse is [(-q,-p)]=[(-4,3)]
+      by thm-rationals-field. (-3)(-4)=12=4*3 and 12*1=1*12.'
 - key: prp-integers-embed-rationals
   kind: prp
   file: 01-rationals-as-classes.md
@@ -348,7 +417,23 @@ items:
   file: 01-rationals-as-classes.md
   line: 291
   hash: a8531d1c7a5b
-  verdicts: []
+  verdicts:
+  - stage: S5a
+    verdict: correct
+    by: refereeA
+    hash: a8531d1c7a5b
+    date: '2026-10-26'
+    model: claude-opus-5-5
+    evidence: 'line 296: [(m,1)]=[(1,2)] means 2m=1; cor-integers-even-odd (a) says 1=2*0+1 is not of
+      the form 2k. 1/2=[(1,2)] by prp-integers-embed-rationals (a).'
+  - stage: S5b
+    verdict: correct
+    by: refereeB
+    hash: a8531d1c7a5b
+    date: '2026-10-26'
+    model: claude-opus-5-5
+    evidence: 'Lines 291-297: [(m,1)]=[(1,2)] means 2m=1. cor-integers-even-odd (a) (ch02/05:155) excludes
+      this because 1=2*0+1. The Quick check ''Is Z a field?'' exists at ch02/04:276. Ledger row 532.'
 - key: exr-rationals-as-classes-a1
   kind: exr
   file: 01-rationals-as-classes.md
@@ -440,12 +525,69 @@ items:
     evidence: '04:390-422. Faded proof with the last half blank. The only reasonable completion is the
       second-argument identity (ps+rq)(qs'')=pqss''+(rs'')q^2, then joining by transitivity. The solution
       does this and names the move. Worked example: the proof of prp-rational-operations-well-defined.'
+  - stage: S5a
+    verdict: minor
+    by: refereeA
+    hash: 532cbea29fbc
+    date: '2026-10-26'
+    model: claude-opus-5-5
+    evidence: 01-rationals-as-classes.md:392 The solution calls the joined statement g(x,y) ~ g(x',y')
+      'the conclusion' of thm-well-defined-on-classes (b). That theorem's conclusion is that a unique
+      function G on classes exists; the joined relation is a step inside its proof.
+  - stage: S5b
+    verdict: minor
+    by: refereeB
+    hash: 532cbea29fbc
+    date: '2026-10-26'
+    model: claude-opus-5-5
+    evidence: 01-rationals-as-classes.md:392 The solution says the join step is 'exactly the hypotheses,
+      and the conclusion' of thm-well-defined-on-classes (b), but the conclusion of (b) is the existence
+      of exactly one G, not the relation obtained by changing both arguments.
+  - stage: S6
+    verdict: correct
+    by: verifier
+    hash: 532cbea29fbc
+    date: '2026-10-26'
+    model: claude-opus-5-5
+    evidence: '01:363-393. I wrote the second-argument change first: (ps+rq)(qs'') = pqss'' + (rs'')q^2
+      = pqss'' + (r''s)q^2 = (ps''+r''q)(qs), and it matches line 386-387. I checked the identity on 2000
+      random pairs (r'',s'') = (kr,ks) and it held every time. The join by transitivity gives exactly
+      the two one-argument hypotheses of thm-well-defined-on-classes (b) (ch02/02:24-31). The faded blank
+      has only one reasonable '
 - key: exr-rationals-as-classes-b3
   kind: exr
   file: 01-rationals-as-classes.md
   line: 395
   hash: 64da6bb99eb6
-  verdicts: []
+  verdicts:
+  - stage: S5a
+    verdict: correct
+    by: refereeA
+    hash: 64da6bb99eb6
+    date: '2026-10-26'
+    model: claude-opus-5-5
+    evidence: 'lines 409-422: (a) 2q=q+q>0 by prp-ordered-ring-rules (b); (p+2q)(2q'')=2pq''+4qq'' and
+      (p''+2q'')(2q)=2p''q+4qq''; [(p,2q)]+[(1,1)]=[(p+2q,2q)]. (b) 1*4=4 is not 2*1=2. (c) uses the zero
+      criterion of thm-rationals-field plus prp-ordered-ring-rules (f). (d) 1=2s is impossible by cor-integers-even-odd
+      (a). Sidecar passes.'
+  - stage: S5b
+    verdict: minor
+    by: refereeB
+    hash: 64da6bb99eb6
+    date: '2026-10-26'
+    model: claude-opus-5-5
+    evidence: 01-rationals-as-classes.md:409 In (a), the step from 2q > 0 to membership of (p+2q, 2q)
+      in Z x Z_{>0} is made without citing thm-integers-ordered-ring (b).
+  - stage: S6
+    verdict: correct
+    by: verifier
+    hash: 64da6bb99eb6
+    date: '2026-10-26'
+    model: claude-opus-5-5
+    evidence: '01:408-423. My verdicts are T/F/T/F and they agree with the book. (a): cross products 2pq''+4qq''
+      = 2p''q+4qq'', confirmed by brute force over |p|<=12, 1<=q<=12. The remark [(p,2q)]+[(1,1)] = [(p+2q,2q)]
+      checks against def-rational-operations. (b): 1*2 = 2*1 but 1*4 != 2*1, checked. (c): the zero criterion
+      of thm-rationals-field plus prp-ordered-ring-rules (f) settles it. (d): 1 = 2s has no solution, '
 - key: exr-rationals-as-classes-c1
   kind: exr
   file: 01-rationals-as-classes.md
@@ -530,7 +672,35 @@ items:
   file: 01-rationals-as-classes.md
   line: 500
   hash: 935890458bb0
-  verdicts: []
+  verdicts:
+  - stage: S5a
+    verdict: minor
+    by: refereeA
+    hash: 935890458bb0
+    date: '2026-10-26'
+    model: claude-opus-5-5
+    evidence: 01-rationals-as-classes.md:513 Applying thm-well-defined-on-classes (a) needs a function
+      f from Z x Z_{>0} to Y. The solution never checks that the inclusion lands in Y, i.e. that q in
+      Z_{>0} gives q != 0.
+  - stage: S5b
+    verdict: minor
+    by: refereeB
+    hash: 935890458bb0
+    date: '2026-10-26'
+    model: claude-opus-5-5
+    evidence: '01-rationals-as-classes.md:517 Surjectivity leaves two steps implicit: (-p,-q) lies in
+      Z x Z_{>0}, and (p,q) ≈ (-p,-q) makes the two ≈-classes equal.'
+  - stage: S6
+    verdict: correct
+    by: verifier
+    hash: 935890458bb0
+    date: '2026-10-26'
+    model: claude-opus-5-5
+    evidence: '01:510-520. The equivalence proof (Eq3) uses only that the middle s is non-zero (01:42),
+      so dropping that line is valid. thm-well-defined-on-classes (a) allows f: X -> Y with two different
+      relations (ch02/02:20-23), so applying it to the inclusion is legitimate. Injectivity and surjectivity
+      are correct: p(-q) = (-p)q, and I checked (p,q) ≈ (-p,-q) by brute force over Y with |p|,|q|<=6.
+      Per recut-c'
 - key: def-rational-order
   kind: def
   file: 02-ordered-field-of-rationals.md
@@ -705,6 +875,22 @@ items:
     model: claude-opus-5-5
     evidence: 05:156-162. 1/3+1/2 = [(1*2+1*3, 6)] = 5/6, and 5/6*1/2 = 5/12. Then 12<15 and 10<12. The
       sidecar thm-rationals-ordered-field.py asserts these values.
+  - stage: S5a
+    verdict: correct
+    by: refereeA
+    hash: 4b88b6114e6e
+    date: '2026-10-26'
+    model: claude-opus-5-5
+    evidence: 'line 139: with a=-1, b=1, 1/a=-1 because (-1)(-1)=1 and inverses are unique; -1<1; the
+      hypothesis 0<a fails, so prp-reciprocal-order (b) does not apply.'
+  - stage: S5b
+    verdict: correct
+    by: refereeB
+    hash: 4b88b6114e6e
+    date: '2026-10-26'
+    model: claude-opus-5-5
+    evidence: '02:134-140: a=-1, b=1 gives 1/a=-1<1=1/b; the hypothesis 0<a fails. 1/(-1)=-1 uses uniqueness
+      of inverses, which ledger line 488 records (Section 2.3).'
 - key: check:02-ordered-field-of-rationals:3
   kind: check
   file: 02-ordered-field-of-rationals.md
@@ -739,6 +925,22 @@ items:
       ⇔ 1000<3n, so the least n is 334. Both match the solution. Earlier S5a finding resolved: the text
       now says ''drop the fraction'' gives floor(x) for x≥0 but not for negative non-integers such as
       -7/3. That i'
+  - stage: S5a
+    verdict: correct
+    by: refereeA
+    hash: 75df49cc64be
+    date: '2026-10-26'
+    model: claude-opus-5-5
+    evidence: 'line 163: 1/3+1/2=[(1*2+1*3,6)]=5/6, and (5/6)(1/2)=5/12. The comparison formula with p=1,q=3,r=5,s=12
+      gives 12<15, and with p=5,q=12,r=1,s=2 gives 10<12.'
+  - stage: S5b
+    verdict: correct
+    by: refereeB
+    hash: 75df49cc64be
+    date: '2026-10-26'
+    model: claude-opus-5-5
+    evidence: '02:158-164: 1/3+1/2=[(1*2+1*3,6)]=5/6, midpoint 5/12; 12<15 and 10<12 match the comparison
+      formula. Sidecar thm-rationals-ordered-field.py asserts these values and passes.'
 - key: thm-rationals-archimedean
   kind: thm
   file: 02-ordered-field-of-rationals.md
@@ -829,6 +1031,16 @@ items:
       the m≥n tail splits m=n / n<m. Earlier S5b finding resolved: line 211 now says ''Here ε is a rational
       number, because the real numbers have not yet been constructed'', which is true at this point in
       the book and makes'
+  - stage: S8
+    verdict: minor
+    by: seam
+    hash: b0233e8be6c6
+    date: '2026-10-26'
+    model: claude-opus-5-5
+    evidence: '02-ordered-field-of-rationals.md:210 An earlier result is proved again: the proof of the
+      corollary re-derives that inverses are unique and that 1/(1/ε) = ε. The same chapter cites Section
+      2.3 for this fact. prp-reciprocal-order (a), at 02:121, likewise re-derives that a^{-1} ≠ 0, which
+      is the Quick check of Section 2.3.'
 - key: proof:cor-rationals-archimedean-epsilon
   kind: proof
   file: 02-ordered-field-of-rationals.md
@@ -903,7 +1115,23 @@ items:
   file: 02-ordered-field-of-rationals.md
   line: 239
   hash: 671cc5c54d8a
-  verdicts: []
+  verdicts:
+  - stage: S5a
+    verdict: correct
+    by: refereeA
+    hash: 671cc5c54d8a
+    date: '2026-10-26'
+    model: claude-opus-5-5
+    evidence: 'line 244: -9<=-7 and -7<-6 give floor(-7/3)=-3. Line 246: the comparison formula with p=1,q=n,r=3,s=1000
+      gives 1000<3n, so the least n is 334 (3*333=999, 3*334=1002).'
+  - stage: S5b
+    verdict: correct
+    by: refereeB
+    hash: 671cc5c54d8a
+    date: '2026-10-26'
+    model: claude-opus-5-5
+    evidence: '02:239-247: floor(-7/3)=-3 from -9<=-7 and -7<-6. 1/n<3/1000 iff 1000<3n, so the least
+      n is 334 (999<1000<1002). Sidecar prp-rational-integer-part.py asserts these values and passes.'
 - key: exr-ordered-field-of-rationals-a1
   kind: exr
   file: 02-ordered-field-of-rationals.md
@@ -948,6 +1176,31 @@ items:
       non-example after @def-rational-order (line 34) for the two verdicts, and the warning after @exm-fractions-nonzero-denominators
       for ps<rq. (b) is correct. (c) -10 < -9, so -3/5 is larger. This is correct. (e) The swapped version
       and its negation via @fd1:prp-bounded-quantifier-negation are correct; that label ex'
+  - stage: S5a
+    verdict: minor
+    by: refereeA
+    hash: fdde69368f78
+    date: '2026-10-26'
+    model: claude-opus-5-5
+    evidence: 02-ordered-field-of-rationals.md:268 The solution to (a) cites the same non-example twice
+      in one sentence.
+  - stage: S5b
+    verdict: minor
+    by: refereeB
+    hash: fdde69368f78
+    date: '2026-10-26'
+    model: claude-opus-5-5
+    evidence: 02-ordered-field-of-rationals.md:268 Part (a) of the A1 solution cites the same non-example
+      twice in one sentence.
+  - stage: S6
+    verdict: minor
+    by: verifier
+    hash: fdde69368f78
+    date: '2026-10-26'
+    model: claude-opus-5-5
+    evidence: 02-ordered-field-of-rationals.md:268 A1 (a) cites the same non-example twice in one sentence.
+      This is probably left over from the re-cut swapping "as the warning after @exm-fractions-nonzero-denominators
+      shows" for "as the non-example after @def-rational-order shows".
 - key: exr-ordered-field-of-rationals-b2
   kind: exr
   file: 02-ordered-field-of-rationals.md
@@ -979,6 +1232,34 @@ items:
     evidence: '05:299-312. (a) applies cor-rationals-archimedean-epsilon once, with eps=b-a. (b): script
       gives least n=7 and a+1/7=10/21; the checks 21<30 and 20<21 hold. Worked example: the Quick check
       ''least n with 1/n<3/1000''.'
+  - stage: S5a
+    verdict: correct
+    by: refereeA
+    hash: 21e2d983d552
+    date: '2026-10-26'
+    model: claude-opus-5-5
+    evidence: 'line 295: eps=b-a>0 by prp-ordered-ring-rules (a) (checked, it says a<b iff b-a>0); 1/m>0
+      by prp-reciprocal-order (a); then (O3). Line 297: 1/n<1/6 iff 6<n; 1/3+1/7=10/21; 21<30 and 20<21;
+      for n=6 the sum equals 1/2.'
+  - stage: S5b
+    verdict: correct
+    by: refereeB
+    hash: 21e2d983d552
+    date: '2026-10-26'
+    model: claude-opus-5-5
+    evidence: '02:285-298: (a) eps=b-a with the corollary''s every-m clause and reciprocal positivity.
+      (b) 1/n<1/6 iff 6<n gives n=7, 1/3+1/7=10/21, 21<30 and 20<21, and n=6 gives exactly b. Sidecar
+      b2.py passes.'
+  - stage: S6
+    verdict: correct
+    by: verifier
+    hash: 21e2d983d552
+    date: '2026-10-26'
+    model: claude-opus-5-5
+    evidence: '02:294-298. (a): eps = b-a > 0 by prp-ordered-ring-rules (a). The corollary''s every-m>=n
+      clause covers the second claim. The inequality 1/m > 0 holds by prp-reciprocal-order (a). (b): 1/n
+      < 1/6 iff n > 6, so the least n is 7, and a+1/7 = 10/21. My script confirms the least n is 7, that
+      every n>=7 works, and the value 10/21. The n=6 boundary remark is also right.'
 - key: exr-ordered-field-of-rationals-b3
   kind: exr
   file: 02-ordered-field-of-rationals.md
@@ -1021,18 +1302,98 @@ items:
     evidence: '05:314-329. I recomputed all eight comparisons: 21≤22, 22<28, -28≤-22, -22<-21, 0≤0<1,
       -100≤-1, -1<0. The floors are 3, -4, 0, -1, all right. Earlier S5b finding resolved: line 328 now
       names ''the first two'' and gives floor(22/7)=3 vs floor(-22/7)=-4≠-3, which is correct.'
+  - stage: S5a
+    verdict: correct
+    by: refereeA
+    hash: ba22b091e8bd
+    date: '2026-10-26'
+    model: claude-opus-5-5
+    evidence: 'lines 309-312: all eight integer comparisons are right (21<=22, 22<28, -28<=-22, -22<-21,
+      -100<=-1, -1<0), and floor(-x)!=-floor(x) is correctly illustrated.'
+  - stage: S5b
+    verdict: correct
+    by: refereeB
+    hash: ba22b091e8bd
+    date: '2026-10-26'
+    model: claude-opus-5-5
+    evidence: '02:300-315: I checked all eight comparisons (21<=22, 22<28, -28<=-22, -22<-21, 0<=0<1,
+      -100<=-1, -1<0). floor(-x)!=-floor(x) is shown by 3 and -4. Sidecar passes.'
+  - stage: S6
+    verdict: correct
+    by: verifier
+    hash: ba22b091e8bd
+    date: '2026-10-26'
+    model: claude-opus-5-5
+    evidence: 02:306-315. I got floor values 3, -4, 0, -1, and so does math.floor on Fractions. Each pair
+      of defining inequalities checks via the cross products listed (21<=22<28, -28<=-22<-21, -100<=-1<0).
+      The worked example is the Quick check floor(-7/3) at 02:240-247.
 - key: exr-ordered-field-of-rationals-b4
   kind: exr
   file: 02-ordered-field-of-rationals.md
   line: 317
   hash: 44736d52b23a
-  verdicts: []
+  verdicts:
+  - stage: S5a
+    verdict: correct
+    by: refereeA
+    hash: 44736d52b23a
+    date: '2026-10-26'
+    model: claude-opus-5-5
+    evidence: 'line 324: prp-ordered-ring-rules (b) with c=d=qn gives qn<=a<qn+n. Multiplying by n^{-1}>0
+      (prp-reciprocal-order (a)) and using uniqueness in prp-rational-integer-part gives q=floor(a/n).
+      Transfer from Z to Q is by thm-rationals-ordered-field (b).'
+  - stage: S5b
+    verdict: correct
+    by: refereeB
+    hash: 44736d52b23a
+    date: '2026-10-26'
+    model: claude-opus-5-5
+    evidence: '02:317-333: 0<=r<n plus qn (prp-ordered-ring-rules (b)) gives qn<=a<qn+n. Multiplying by
+      n^{-1}>0 gives q<=a/n<q+1, and uniqueness in prp-rational-integer-part finishes. Ledger lines 489-490
+      cover the field steps and the move from Z into Q.'
+  - stage: S6
+    verdict: correct
+    by: verifier
+    hash: 44736d52b23a
+    date: '2026-10-26'
+    model: claude-opus-5-5
+    evidence: 02:323-333. qn <= a < qn+n comes from prp-ordered-ring-rules (b) with c=d=qn. Multiplying
+      by n^{-1} > 0 and then using uniqueness in prp-rational-integer-part gives q = floor(a/n). A brute
+      force over |a|<50 and 1<=n<12 confirms a//n == floor(a/n) and that the remainder formula holds.
 - key: exr-ordered-field-of-rationals-b5
   kind: exr
   file: 02-ordered-field-of-rationals.md
   line: 335
   hash: aa43faaa2e30
-  verdicts: []
+  verdicts:
+  - stage: S5a
+    verdict: correct
+    by: refereeA
+    hash: aa43faaa2e30
+    date: '2026-10-26'
+    model: claude-opus-5-5
+    evidence: (a) x=1/2, y=1 gives 1>1/2, a valid counterexample. (b) n=max(n1,n2) with n>=n2>0 works.
+      (c) S={x:1<x} with the midpoint (1+x)/2 is a valid counterexample. (d) (O3) plus uniqueness of the
+      integer part.
+  - stage: S5b
+    verdict: correct
+    by: refereeB
+    hash: aa43faaa2e30
+    date: '2026-10-26'
+    model: claude-opus-5-5
+    evidence: '02:335-356: (a) x=1/2, y=1 gives 1>1/2, so false. (b) n=max(n1,n2) uses the corollary''s
+      m>=n clause and is correct. (c) S={x>1} with the midpoint has no least element, so false. (d) is
+      correct by uniqueness. Ledger lines 491-493 are present.'
+  - stage: S6
+    verdict: correct
+    by: verifier
+    hash: aa43faaa2e30
+    date: '2026-10-26'
+    model: claude-opus-5-5
+    evidence: '02:348-356. My verdicts are F/T/F/T and they agree with the book. (a): x=1/2, y=1 gives
+      1 > 1/2, checked. (b): taking the larger of n1 and n2 works because of the corollary''s every-m
+      clause. (c): S = {x > 1}, and the midpoint (1+x)/2 gives an element of S below any x in S. (d):
+      uniqueness of the integer part. Brute force over |p|<30, 1<=q<15 confirms floor(x+1) = floor(x)+1.'
 - key: exr-ordered-field-of-rationals-c1
   kind: exr
   file: 02-ordered-field-of-rationals.md
@@ -1156,7 +1517,35 @@ items:
   file: 02-ordered-field-of-rationals.md
   line: 447
   hash: 60ffa402b7ff
-  verdicts: []
+  verdicts:
+  - stage: S5a
+    verdict: correct
+    by: refereeA
+    hash: 60ffa402b7ff
+    date: '2026-10-26'
+    model: claude-opus-5-5
+    evidence: 'lines 454-464: multiplying q<=a/n<q+1 by n>0 gives qn<=a<qn+n, then subtracting qn gives
+      0<=r<n. The n<0 remark (n<r<=0) is computed correctly. Not circular: thm-integers-division-remainder
+      (F3.2 §05) is proved independently, and prp-rational-integer-part uses prp-integer-least-element,
+      not division.'
+  - stage: S5b
+    verdict: minor
+    by: refereeB
+    hash: 60ffa402b7ff
+    date: '2026-10-26'
+    model: claude-opus-5-5
+    evidence: 02-ordered-field-of-rationals.md:464 C4 asks for a proof the reader writes up in full, yet
+      its solution has no Marking scheme. STYLE section 11.6 and the section 9 checklist require one for
+      such C items, and the neighbouring C1-C3 have one.
+  - stage: S6
+    verdict: correct
+    by: verifier
+    hash: 60ffa402b7ff
+    date: '2026-10-26'
+    model: claude-opus-5-5
+    evidence: '02:453-465. Multiplying q <= a/n < q+1 by n > 0 gives qn <= a < qn+n, and subtracting qn
+      finishes. The remark for n<0 (n < r <= 0) is right: brute force over |a|<40, -10<=n<0 confirms it.
+      Per recut-ch03.md item 17, the missing marking scheme is an approved call.'
 - key: thm-no-rational-square-two
   kind: thm
   file: 03-gaps-in-the-rationals.md
@@ -1267,6 +1656,24 @@ items:
       (thm-rationals-ordered-field (a)). The bound argument x>b>0 gives x^2>b^2 by (g) with both sides
       >=0. 17/12=t(3/2): (9/4+2)/3=17/12. 4/3 fails: 16/9<2 since 16<18. Witness 7/5 is in A (49<50),
       and 7/5>4/3 (21>20). All verified.'
+  - stage: S5a
+    verdict: correct
+    by: refereeA
+    hash: ffcb39ebb748
+    date: '2026-10-26'
+    model: claude-opus-5-5
+    evidence: 'lines 50-56: with p=2,q=1, 2q<=p holds (p=2q), so p''=0, q''=1=q, and p''^2-2q''^2=0-2=-2.
+      The step q<p still succeeds (4q^2<=q^2 would give 3q^2<=0), so the failing step is correctly named
+      as p<2q.'
+  - stage: S5b
+    verdict: correct
+    by: refereeB
+    hash: ffcb39ebb748
+    date: '2026-10-26'
+    model: claude-opus-5-5
+    evidence: '03:50-56. With p=2, q=1: the step q<p still works (4q^2<=q^2 is impossible), the step p<2q
+      fails because p=2q, p''=0, q''=1 is not below q, and p''^2-2q''^2=0-2=-2. The identity (2q-p)^2-2(p-q)^2=2q^2-p^2
+      holds for any p, q, so -2 is right.'
 - key: thm-rationals-gap-sqrt2
   kind: thm
   file: 03-gaps-in-the-rationals.md
@@ -1316,18 +1723,72 @@ items:
       of t(s) and u(s) uses reciprocal-order (a) and (O4). Case 1 contradicts (S1) and Case 2 contradicts
       (S2). Clause (b)'s same-upper-bounds argument is correct, and the theorem is cited exactly once
       (meta-claim at 06:81 is true).
+  - stage: S5a
+    verdict: correct
+    by: refereeA
+    hash: f494577a8bd0
+    date: '2026-10-26'
+    model: claude-opus-5-5
+    evidence: 'lines 99-128: bound 2 via prp-ordered-ring-rules (g) with 0<=2<x. s^2+2>0 by (e) and strict
+      (b); t and u are positive by prp-reciprocal-order (a) and (O4). I recomputed all four eq-newton-identities.
+      s>=1 comes from (S1) with 1 in A; trichotomy uses thm-no-rational-square-two. Case 1 contradicts
+      (S1), and Case 2 shows t(s) is an upper bound and contradicts (S2) via (g) with 0<t(s)<x. In (b)
+      the up'
+  - stage: S5b
+    verdict: correct
+    by: refereeB
+    hash: f494577a8bd0
+    date: '2026-10-26'
+    model: claude-opus-5-5
+    evidence: 03:99-128. Bound 2 via (g); positivity of t, u via prp-reciprocal-order (a) and (O4); the
+      four identities hold (cleared by hand in the fold 03:116); Case 1 and Case 2 are sound; (b) shows
+      A and A+ have the same upper bounds, and (S1)/(S2) depend only on that set. Every unreferenced fact
+      is in the ledger (03:511-514).
 - key: check:03-gaps-in-the-rationals:2
   kind: check
   file: 03-gaps-in-the-rationals.md
   line: 130
   hash: 51315509544f
-  verdicts: []
+  verdicts:
+  - stage: S5a
+    verdict: correct
+    by: refereeA
+    hash: 51315509544f
+    date: '2026-10-26'
+    model: claude-opus-5-5
+    evidence: 'lines 130-136: u(1/2)=2/(9/4)=8/9 and t(3)=11/6 (Fraction recomputation). Also 64/81<2,
+      8/9>1/2, 121>72 and 11/6<3; each case refutes s as stated.'
+  - stage: S5b
+    verdict: correct
+    by: refereeB
+    hash: 51315509544f
+    date: '2026-10-26'
+    model: claude-opus-5-5
+    evidence: 03:130-136. u(1/2)=2/(9/4)=8/9, 64/81<2; t(3)=11/6, 121>72. Checked with Fractions.
 - key: check:03-gaps-in-the-rationals:3
   kind: check
   file: 03-gaps-in-the-rationals.md
   line: 144
   hash: f40350a52969
-  verdicts: []
+  verdicts:
+  - stage: S5a
+    verdict: correct
+    by: refereeA
+    hash: f40350a52969
+    date: '2026-10-26'
+    model: claude-opus-5-5
+    evidence: 'lines 144-150: (S1) holds via (g). For (S2), w=max(v,1)<3/2 and c is the midpoint, so 1<=w<c<3/2,
+      c>0, c^2<9/4 by (g) and c>v. The failing step is correctly identified as the excluded case s^2 =
+      target.'
+  - stage: S5b
+    verdict: minor
+    by: refereeB
+    hash: f40350a52969
+    date: '2026-10-26'
+    model: claude-opus-5-5
+    evidence: 03-gaps-in-the-rationals.md:149 The answer to the Quick check uses the midpoint fact ('c
+      the midpoint of w and 3/2; then ... c < 3/2', with c > w) without pointing to it; C2's solution
+      at 03:380 does point to it.
 - key: exm-newton-rationals-sqrt2
   kind: exm
   file: 03-gaps-in-the-rationals.md
@@ -1354,12 +1815,48 @@ items:
       (ii) 4x_n^2>8 leads to strict <. (iii) is correct. Recomputed x0..x4 = 2, 3/2, 17/12, 577/408, 665857/470832
       and e_n = 2, 1/4, 1/144, 1/166464; the decimals 1.41667 and 1.414216 are right. The forward pointers
       at 06:177 and 06:187 are in STATUS rows 115 and 116.
+  - stage: S5a
+    verdict: correct
+    by: refereeA
+    hash: 899b427e97a0
+    date: '2026-10-26'
+    model: claude-opus-5-5
+    evidence: 'lines 156-190: fd2:thm-recursion needs g: N x X -> X. With X=Q>0 and g(n,s)=t(s) this holds
+      because t maps Q>0 into Q>0. It is applied on N via cor-omega-identification (b). (i) is an induction
+      using the first identity and e_n != 0. (ii) is strict, from 4x_n^2>8 with prp-reciprocal-order (b)
+      and (c). (iii) follows from the second identity. I recomputed x_1..x_3=3/2, 17/12, 577/408, e_n=2,
+      1/4, 1/1'
+  - stage: S5b
+    verdict: minor
+    by: refereeB
+    hash: 899b427e97a0
+    date: '2026-10-26'
+    model: claude-opus-5-5
+    evidence: 03-gaps-in-the-rationals.md:181 The text cites 'the first two identities of @eq-newton-identities'
+      for both (i) and (iii), but each step uses only one of them.
 - key: check:03-gaps-in-the-rationals:4
   kind: check
   file: 03-gaps-in-the-rationals.md
   line: 203
   hash: 7932f1c79932
-  verdicts: []
+  verdicts:
+  - stage: S5a
+    verdict: correct
+    by: refereeA
+    hash: 7932f1c79932
+    date: '2026-10-26'
+    model: claude-opus-5-5
+    evidence: 'lines 203-211: 9>8 and 289>288 via the comparison formula of thm-rationals-ordered-field
+      (a). The bounding argument via (g) holds. 16<18, 49<50 and 21>20 are correct, so 7/5 in A refutes
+      4/3.'
+  - stage: S5b
+    verdict: correct
+    by: refereeB
+    hash: 7932f1c79932
+    date: '2026-10-26'
+    model: claude-opus-5-5
+    evidence: '03:203-211: 9>8, 289>288, 16<18, 49<50 and 21>20 are all right. The bounding argument via
+      (g) is sound.'
 - key: exr-gaps-in-the-rationals-a1
   kind: exr
   file: 03-gaps-in-the-rationals.md
@@ -1440,7 +1937,36 @@ items:
   file: 03-gaps-in-the-rationals.md
   line: 286
   hash: c035a0808dde
-  verdicts: []
+  verdicts:
+  - stage: S5a
+    verdict: correct
+    by: refereeA
+    hash: c035a0808dde
+    date: '2026-10-26'
+    model: claude-opus-5-5
+    evidence: 'lines 286-307: (a) y=x/2 gives y^2=2. (b) the counterexample 1, -2 is valid and correctly
+      blames the sign hypotheses of (g). (c) prp-reciprocal-order (b) with 0<2<s^2, then (c) with 4>0.
+      (d) 7/5+1/10=3/2 and 9/4>2. The sidecar prints ok.'
+  - stage: S5b
+    verdict: correct
+    by: refereeB
+    hash: c035a0808dde
+    date: '2026-10-26'
+    model: claude-opus-5-5
+    evidence: '03:286-307: (a) y=x/2 gives y^2=2; (b) the counterexample 1, -2 works; (c) uses reciprocal-order
+      (b) and (c) correctly; (d) 7/5+1/10=3/2 and 9/4>2. The parenthetical about 2/s and u(s) is true,
+      since u(s)=2/t(s)>2/s when t(s)<s.'
+  - stage: S6
+    verdict: minor
+    by: verifier
+    hash: c035a0808dde
+    date: '2026-10-26'
+    model: claude-opus-5-5
+    evidence: '03-gaps-in-the-rationals.md:286-307. I solved all four parts myself first and got the same
+      answers: (a) true, since x/2 would square to 2; (b) false, with x=1, y=-2; (c) true, by prp-reciprocal-order
+      (b) applied to 0<2<s^2 and then multiplying by 4; (d) false, since 7/5+1/10=3/2 and 9/4>2 (my script
+      agrees). Every citation matches the cited statement. The worked examples needed for a B item are
+      in'
 - key: exr-gaps-in-the-rationals-b3
   kind: exr
   file: 03-gaps-in-the-rationals.md
@@ -1470,6 +1996,33 @@ items:
     model: claude-opus-5-5
     evidence: '06:272-290. Script: x_4=665857/470832; 665857^2 - 2*470832^2 = 1, so e_4=1/221682772224;
       4*166464*332929 = 221682772224 matches (ii). Worked example: exm-newton-rationals-sqrt2.'
+  - stage: S5a
+    verdict: correct
+    by: refereeA
+    hash: cc9141cf357f
+    date: '2026-10-26'
+    model: claude-opus-5-5
+    evidence: 'lines 309-325: recomputed x_4=665857/470832, 665857^2=443365544449, 470832^2=221682772224,
+      e_4=1/221682772224, and 4*166464*332929=221682772224. x_4<x_3 follows from (iii). The sidecar prints
+      ok.'
+  - stage: S5b
+    verdict: correct
+    by: refereeB
+    hash: cc9141cf357f
+    date: '2026-10-26'
+    model: claude-opus-5-5
+    evidence: '03:309-325: verified numerically that 2*577*408=470832, x_4=665857/470832, 665857^2-2*470832^2=1
+      and 4*166464*332929=221682772224. The pointer ''Quick check after the table'' correctly names 03:203.'
+  - stage: S6
+    verdict: correct
+    by: verifier
+    hash: cc9141cf357f
+    date: '2026-10-26'
+    model: claude-opus-5-5
+    evidence: '03-gaps-in-the-rationals.md:309-325. My own Fraction iteration gives x4=665857/470832 and
+      e4=1/221682772224, and 665857^2-2*470832^2=1. The check via (ii) also matches: e3^2/(4 x3^2) gives
+      the same value, and 4*166464*332929=221682772224. x4<x3 holds. The worked example for this B item
+      is exm-newton-rationals-sqrt2, which computes x1..x3.'
 - key: exr-gaps-in-the-rationals-c1
   kind: exr
   file: 03-gaps-in-the-rationals.md
@@ -1501,6 +2054,32 @@ items:
     evidence: '06:292-318. Exit check. Descent: q<p<2q, and p''^2-2q''^2=2q^2-p^2 (script). Identities
       for t and u verified symbolically. Scheme sums to 10, maps a parity route, and gives an alternative
       with explicit s+h full credit.'
+  - stage: S5a
+    verdict: correct
+    by: refereeA
+    hash: 3e4bd6eafa4c
+    date: '2026-10-26'
+    model: claude-opus-5-5
+    evidence: 'lines 329-355: the descent repeats the theorem''s least-denominator proof (q<p<2q, p''=2q-p,
+      q''=p-q, identity). The two cases use eq-newton-identities with s>0. The marking scheme totals 4+1+2+2+1=10,
+      and the parity route is via cor-integers-even-odd (a).'
+  - stage: S5b
+    verdict: correct
+    by: refereeB
+    hash: 3e4bd6eafa4c
+    date: '2026-10-26'
+    model: claude-opus-5-5
+    evidence: '03:329-355: the descent, the bound and the two cases are complete. The marking scheme sums
+      to 4+1+2+2+1=10. The title [C1: Exit check: ...] follows STYLE.'
+  - stage: S6
+    verdict: minor
+    by: verifier
+    hash: 3e4bd6eafa4c
+    date: '2026-10-26'
+    model: claude-opus-5-5
+    evidence: 03-gaps-in-the-rationals.md:350 The marking scheme gives 1 point for showing A is bounded
+      above and non-empty, but the problem does not ask for boundedness. A complete proof without it loses
+      a point.
 - key: exr-gaps-in-the-rationals-c2
   kind: exr
   file: 03-gaps-in-the-rationals.md
@@ -1540,7 +2119,33 @@ items:
   file: 03-gaps-in-the-rationals.md
   line: 422
   hash: 033a74045035
-  verdicts: []
+  verdicts:
+  - stage: S5a
+    verdict: correct
+    by: refereeA
+    hash: 033a74045035
+    date: '2026-10-26'
+    model: claude-opus-5-5
+    evidence: 'lines 422-436: thm-well-defined-on-classes (a) with X=Y=NxN fits. Positivity can be read
+      on any representative (the paragraph after def-integer-order), and x=0 iff a=b. So b<=a iff d<=c,
+      and in both cases f(a,b)~f(c,d). Negation swaps the pair, so the map is |x|.'
+  - stage: S5b
+    verdict: correct
+    by: refereeB
+    hash: 033a74045035
+    date: '2026-10-26'
+    model: claude-opus-5-5
+    evidence: '03:422-436: thm-well-defined-on-classes (a) with X=Y=NxN matches its statement (02-well-defined-operations:17).
+      Positivity on any representative is the paragraph after def-integer-order (04-ordered-rings:89-96).
+      (a,b)~(0,0) iff a=b. \abs is in NOTATION (F1.1).'
+  - stage: S6
+    verdict: minor
+    by: verifier
+    hash: 033a74045035
+    date: '2026-10-26'
+    model: claude-opus-5-5
+    evidence: 03-gaps-in-the-rationals.md:422 Exercise ids do not match their displayed numbers, and one
+      R id is outside the range STYLE allows.
 - key: exr-gaps-in-the-rationals-r2
   kind: exr
   file: 03-gaps-in-the-rationals.md
@@ -1586,6 +2191,33 @@ items:
       (a) in R exercises only and excludes (b) (finding resolved). The fd2 labels check out: prp-countable-subset,
       prp-countable-image (surjection case), def-quotient-set and cor-product-countable (a) all say what
       i'
+  - stage: S5a
+    verdict: correct
+    by: refereeA
+    hash: 992057ad269b
+    date: '2026-10-26'
+    model: claude-opus-5-5
+    evidence: 'lines 438-454: def-countable allows any surjection from N, so the quotient-map surjections
+      suffice with fd2:prp-countable-image. fd2:thm-product-countable and cor-product-countable (a) are
+      group (ii) results of the citing rule (ch01/04-categoricity.md:257), which may be cited in review
+      (R) exercises, and this is one. prp-countable-subset and prp-countable-image are in group (i).'
+  - stage: S5b
+    verdict: correct
+    by: refereeB
+    hash: 992057ad269b
+    date: '2026-10-26'
+    model: claude-opus-5-5
+    evidence: '03:438-454: every fd2 label exists (thm-product-countable, cor-product-countable, prp-countable-subset,
+      prp-countable-image, def-quotient-set, thm-integers-rationals-countable in fd2 ch04/ch05). The surjections
+      and the subset argument are sound.'
+  - stage: S6
+    verdict: minor
+    by: verifier
+    hash: 992057ad269b
+    date: '2026-10-26'
+    model: claude-opus-5-5
+    evidence: 03-gaps-in-the-rationals.md:445 The solution cites the wrong result as the reason the fd2
+      countability results apply to the constructed N.
 - key: exr-gaps-in-the-rationals-r3
   kind: exr
   file: 03-gaps-in-the-rationals.md
@@ -1671,6 +2303,31 @@ items:
       x>0 by (e),(c); p even, so q^3=2(2m^3) after canceling via (f); q even, so m^3=2l^3 with l<q. Correct.
       I recomputed the expansion (2q-p)^3-2(p-q)^3 = -3p^3+12p^2q-18pq^2+10q^3. The wording now says ''this
       identity '
+  - stage: S5a
+    verdict: correct
+    by: refereeA
+    hash: c555c8c51835
+    date: '2026-10-26'
+    model: claude-opus-5-5
+    evidence: 'lines 480-501: x>0 via (e) and (c). p is not odd because an odd cube is odd and cor-integers-even-odd
+      (a) says not both, so p=2m with m>0. Canceling 2 and then 8 via (f) gives q=2l and m^3=2l^3 with
+      l<q, contradicting minimality. The cube expansion (2q-p)^3-2(p-q)^3=-3p^3+12p^2q-18pq^2+10q^3 is
+      verified by hand. The sidecar prints ok.'
+  - stage: S5b
+    verdict: correct
+    by: refereeB
+    hash: c555c8c51835
+    date: '2026-10-26'
+    model: claude-opus-5-5
+    evidence: '03:480-501: the sign argument, the parity descent (cancellation via (f)) and l<q are sound.
+      Verified (2m+1)^3=2(4m^3+6m^2+3m)+1 and (2q-p)^3-2(p-q)^3=-3p^3+12p^2q-18pq^2+10q^3.'
+  - stage: S6
+    verdict: minor
+    by: verifier
+    hash: c555c8c51835
+    date: '2026-10-26'
+    model: claude-opus-5-5
+    evidence: 03-gaps-in-the-rationals.md:9 The section prose gives away R4's method.
 - key: exm-fractions-nonzero-denominators
   kind: exm
   file: 01-rationals-as-classes.md
