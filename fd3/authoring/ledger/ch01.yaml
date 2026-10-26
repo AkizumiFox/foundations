@@ -108,7 +108,7 @@ items:
   kind: exm
   file: 01-peano-axioms.md
   line: 104
-  hash: 9c6c8fc781d2
+  hash: ca6af4134a28
   verdicts:
   - stage: S5a
     verdict: correct
@@ -386,7 +386,7 @@ items:
   kind: check
   file: 01-peano-axioms.md
   line: 252
-  hash: 1f22803430b9
+  hash: 35482f422e9b
   verdicts:
   - stage: S5a
     verdict: correct
@@ -519,7 +519,7 @@ items:
   kind: exr
   file: 01-peano-axioms.md
   line: 297
-  hash: c8f215212221
+  hash: 29ab44e2ad50
   verdicts:
   - stage: S5a
     verdict: correct
@@ -1229,7 +1229,7 @@ items:
   kind: exm
   file: 02-recursion-and-arithmetic.md
   line: 196
-  hash: 21d652c5b6c9
+  hash: b97806d3b41b
   verdicts:
   - stage: S5a
     verdict: correct
@@ -1301,7 +1301,7 @@ items:
   kind: check
   file: 02-recursion-and-arithmetic.md
   line: 262
-  hash: 19d0a44c5abb
+  hash: 56726f201d6a
   verdicts:
   - stage: S5a
     verdict: correct
@@ -1606,7 +1606,7 @@ items:
   kind: exr
   file: 02-recursion-and-arithmetic.md
   line: 424
-  hash: 0276417f60db
+  hash: 92167c2ab30c
   verdicts:
   - stage: S5a
     verdict: correct
@@ -1656,6 +1656,17 @@ items:
     model: claude-opus-5-5
     evidence: 02-recursion-and-arithmetic.md:424 The 'last half blank' faded item is answered in full
       by the Quick check just before the exercises.
+  - stage: S8
+    verdict: correct
+    by: coordinator
+    hash: 92167c2ab30c
+    date: '2026-10-26'
+    model: claude-opus-5-5
+    evidence: '02-recursion-and-arithmetic.md:424-447 The S6 overlap (the Quick check at 02:262 now asks
+      about (d), not (g)) is gone; the remaining overlap with the fold table row (g) at 02:250 is named
+      in the statement, which asks the full-track reader to write the step without looking and justify
+      each equality. Solution rechecked: Def (b) with first factor km, IH, (d) right to left, Def; base
+      uses x*0=0 three times.'
 - key: exr-recursion-and-arithmetic-c3
   kind: exr
   file: 02-recursion-and-arithmetic.md
@@ -1827,7 +1838,7 @@ items:
   kind: proof
   file: 03-order-and-well-ordering.md
   line: 49
-  hash: 6ee13ff48d88
+  hash: 73bf1d3331bd
   verdicts:
   - stage: S5a
     verdict: correct
@@ -1983,7 +1994,7 @@ items:
   kind: proof
   file: 03-order-and-well-ordering.md
   line: 113
-  hash: 155ca34ef5a7
+  hash: 8f60d7267845
   verdicts:
   - stage: S5a
     verdict: correct
@@ -2247,6 +2258,16 @@ items:
     model: claude-opus-5-5
     evidence: 03-order-and-well-ordering.md:195 The forward pointers to fd3 Chapter 4 (F3.9) have no row
       in STATUS's promise table.
+  - stage: S8
+    verdict: correct
+    by: coordinator
+    hash: b962e655358b
+    date: '2026-10-26'
+    model: claude-opus-5-5
+    evidence: 03-order-and-well-ordering.md:211-224 Statement and idea rechecked; forward pointers at
+      03:195 and 03:226 to Chapter 4 are correct (prp-omega-powers-parity is cited in ch04 02-naturals-and-archimedes.md
+      and 06-a-cauchy-sequence-without-a-limit.md). The missing STATUS promise row is a shared-file item,
+      logged in shared-todo, not a defect of the item.
 - key: proof:prp-omega-powers-parity
   kind: proof
   file: 03-order-and-well-ordering.md
@@ -2555,7 +2576,7 @@ items:
   kind: exr
   file: 03-order-and-well-ordering.md
   line: 357
-  hash: 341b2f87d6a1
+  hash: 0e159434b8d6
   verdicts:
   - stage: S5a
     verdict: correct
@@ -2767,7 +2788,7 @@ items:
   kind: check
   file: 04-categoricity.md
   line: 107
-  hash: d28f10d9c1ab
+  hash: f8885c4e9e30
   moved_from: check:07-categoricity:1
   verdicts:
   - stage: S5a
@@ -2931,7 +2952,7 @@ items:
   kind: check
   file: 04-categoricity.md
   line: 190
-  hash: 9f779edf27fb
+  hash: 741af726a767
   verdicts:
   - stage: S5a
     verdict: minor
@@ -2967,6 +2988,15 @@ items:
     model: claude-opus-5-5
     evidence: 'Rechecked: x⊕y := x+j with y = S(j) gives x⊕1 = x+0 = x and x⊕S(y) = x+S(j) = S(x+j) =
       S(x⊕y). Then 3⊕4 = 3+3 = 6, φ(2) = 3, φ(3) = 4 and φ(5) = 6.'
+  - stage: S8
+    verdict: correct
+    by: coordinator
+    hash: 741af726a767
+    date: '2026-10-26'
+    model: claude-opus-5-5
+    evidence: '04-categoricity.md:195 solution now shows x+j in N\{0}: x+0=x!=0 and x+S(k)=S(x+k)!=0 by
+      (P3), so the witness is an operation on M; it satisfies x(+)1=x and x(+)S(y)=S(x(+)y) by def-omega-arithmetic
+      (a); 3(+)4=6=phi(5) recomputed.'
 - key: cor-omega-identification
   kind: cor
   file: 04-categoricity.md
@@ -3039,6 +3069,16 @@ items:
     model: claude-opus-5-5
     evidence: The statement is unchanged and correct. The lead-in at 04:200 calls recursion and fd2:lem-naturals-arithmetic
       'assumed', but Sets and Functions, Chapter 3 proves them (see F019).
+  - stage: S8
+    verdict: correct
+    by: coordinator
+    hash: 6abcb8ff2426
+    date: '2026-10-26'
+    model: claude-opus-5-5
+    evidence: '04-categoricity.md:200 lead-in fixed: Logic and Proof Ch4 assumed induction/recursion/arithmetic,
+      Sets and Functions Ch3 proved them inside R (fd2 thm-recursion 03-recursion.md:11, lem-naturals-arithmetic
+      01-naturals-and-well-ordering.md:42); (b),(c) are those facts proved on N from ax-natural-numbers
+      alone. Statement 04:202 unchanged and correct.'
 - key: proof:cor-omega-identification
   kind: proof
   file: 04-categoricity.md
@@ -3278,7 +3318,7 @@ items:
   kind: exr
   file: 04-categoricity.md
   line: 327
-  hash: a1e56b20f05a
+  hash: 365962c12487
   verdicts:
   - stage: S5a
     verdict: minor
@@ -3325,6 +3365,15 @@ items:
     evidence: '(b): (n+1)(n+1) = (n+1)n+(n+1) [Def (b)] = (n·n+n)+(n+1) [(e)] = ((n·n+n)+n)+1 [(c)] =
       (n·n+(n+n))+1 [(c)]. That is two uses of associativity, but the text at 04:349 now says ''three
       times''; the old ''twice'' was right. (d) was renamed to step h, which is fine.'
+  - stage: S8
+    verdict: correct
+    by: coordinator
+    hash: 365962c12487
+    date: '2026-10-26'
+    model: claude-opus-5-5
+    evidence: '04-categoricity.md:349 restored ''associativity (c) twice'': chain (n+1)(n+1)=(n+1)n+(n+1)
+      [Def b] =(n*n+n)+(n+1) [(e)] =((n*n+n)+n)+1 [(c)] =(n*n+(n+n))+1 [(c)]; 2n=(1+1)n=1*n+n=n+n by (e).
+      (a),(c),(d) unchanged and right; sidecar verify/ch01/exr-categoricity-b3.py passes.'
 - key: exr-categoricity-c1
   kind: exr
   file: 04-categoricity.md
@@ -3535,7 +3584,7 @@ items:
   kind: exr
   file: 05-where-n-comes-from.md
   line: 118
-  hash: 145d062f9e65
+  hash: 83b488f9db01
   verdicts:
   - stage: S5a
     verdict: correct
@@ -3585,7 +3634,7 @@ items:
   kind: exr
   file: 05-where-n-comes-from.md
   line: 136
-  hash: 88b43e9015ae
+  hash: ac1d5a94b6d5
   verdicts:
   - stage: S5a
     verdict: minor
@@ -3634,7 +3683,7 @@ items:
   kind: exr
   file: 05-where-n-comes-from.md
   line: 152
-  hash: 901ad0586a23
+  hash: f11accc6b5b8
   verdicts:
   - stage: S5a
     verdict: correct
@@ -3685,7 +3734,7 @@ items:
   kind: exr
   file: 05-where-n-comes-from.md
   line: 174
-  hash: fffa2cef55ac
+  hash: 5fce876eef83
   verdicts:
   - stage: S5a
     verdict: correct
@@ -3773,7 +3822,7 @@ items:
   kind: exr
   file: 05-where-n-comes-from.md
   line: 184
-  hash: f442664b7704
+  hash: ad6d1199ae19
   verdicts:
   - stage: S5a
     verdict: correct
@@ -3923,93 +3972,3 @@ items:
     model: claude-opus-5-5
     evidence: Only the ledger line f(1) = S(0) = 1 (def-omega-arithmetic (c)) changed. The solution is
       unchanged and correct.
-- key: proof:thm-omega-arithmetic-laws
-  kind: proof
-  file: 02-recursion-and-arithmetic.md
-  line: 237
-  hash: a8e11c7acd87
-  verdicts:
-  - stage: S5a
-    verdict: minor
-    by: refereeA
-    hash: 1c34f1391871
-    date: '2026-10-11'
-    model: claude-opus-5-5
-    evidence: 05-recursion-and-arithmetic.md:230 The opening sentence says every clause is proved by induction.
-      The table itself proves two clauses with no induction.
-  - stage: S5b
-    verdict: minor
-    by: refereeB
-    hash: 1c34f1391871
-    date: '2026-10-11'
-    model: claude-opus-5-5
-    evidence: 05-recursion-and-arithmetic.md:230 The meta-claim 'Each clause is proved by @thm-omega-induction
-      (b)' is false for three parts.
-  - stage: S7r
-    verdict: minor
-    by: rereferee
-    hash: a8e11c7acd87
-    date: '2026-10-11'
-    model: claude-opus-5-5
-    evidence: 'opening at 05:3: ''Then it proves the laws of arithmetic one by one, each by an induction.''
-      Per the proof''s own first sentence, n·1=n, 1·n=n and (n+k)m=nm+km are not proved by induction.
-      This breaks STYLE §5/§9 (meta-claims must be true of the page). Fix: change 05:3 to ''... one by
-      one, most of them by an induction'' or ''... each from the defining equations by induction or from
-      laws already proved''.'
-  - stage: S7r
-    verdict: correct
-    by: rereferee
-    hash: a8e11c7acd87
-    date: '2026-10-11'
-    model: claude-opus-5-5
-    evidence: ', Def, (c), Def. The no-induction rows are right: n·1 = n·0+n = 0+n = n, and 1·n = (0+1)n
-      = 0·n+n = n by Def, (a) and the first two parts of (e). (n+k)m = nm+km comes from (f) and (d). In
-      (c) in full (05:236-247), each equality uses Def as stated. The Uses column respects row order.
-      The opening meta-claim at 05:3, ''most of them by an induction'', now agrees with the proof''s first
-      sentence (05:234).'
-  removed: true
-- key: exr-categoricity-r4
-  kind: exr
-  file: 04-categoricity.md
-  line: 395
-  hash: 55ac60b4f551
-  verdicts:
-  - stage: S5a
-    verdict: correct
-    by: refereeA
-    hash: 3fd94fa29f6b
-    date: '2026-10-11'
-    model: claude-opus-5-5
-    evidence: '07:400-406: ⋃S(x)=⋃x∪x. For n∈ω, ⋃n⊆n by transitivity, so ⋃S(n)=n, and ⋃n is the predecessor.
-      For x={1}: ⋃S(x)={0,1}=2≠x. The equivalence ''⋃S(x)=x iff x is transitive'' is correct. The sidecar
-      passes.'
-  - stage: S5b
-    verdict: correct
-    by: refereeB
-    hash: 3fd94fa29f6b
-    date: '2026-10-11'
-    model: claude-opus-5-5
-    evidence: 07:399-407. ⋃S(x)=⋃x∪x; ⋃S(n)=n by lem-omega-transitive (a); ⋃0=0 and ⋃S(k)=k; x={1} gives
-      ⋃S(x)={0,1}=2≠x. 'Equal iff transitive' is correct, and the sidecar passes.
-  - stage: S6
-    verdict: minor
-    by: verifier
-    hash: 3fd94fa29f6b
-    date: '2026-10-11'
-    model: claude-opus-5-5
-    evidence: 07-categoricity.md:406 STYLE §11.5 requires the R4 (no-hint) solution to name the tool and
-      say why the look-alike tools fail. The solution names transitivity, but its 'look-alike' paragraph
-      is about a false statement (⋃S(x)=x for all x), and it concedes that the obvious look-alike tool,
-      induction on n, works.
-  - stage: S7r
-    verdict: correct
-    by: rereferee
-    hash: 55ac60b4f551
-    date: '2026-10-11'
-    model: claude-opus-5-5
-    evidence: 'The look-alike paragraph (line 406) now names the general identity, union of S(x) = (union
-      of x) u x, as the look-alike tool. It says why that tool alone fails: it gives union of S(x) = x
-      exactly when x is transitive, and the witness {1} shows this can fail. It also says that induction
-      on n is no way around transitivity, because union of S(n) = n is equivalent to n being transitive,
-      so the inducti'
-  removed: true

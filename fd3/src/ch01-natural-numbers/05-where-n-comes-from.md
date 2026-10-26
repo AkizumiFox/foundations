@@ -4,9 +4,9 @@ Section 1.1 assumed one thing: that a Peano system exists (@ax-natural-numbers).
 
 ## Sets as the raw material
 
-*Sets and Functions* used sets as a working language. Its Section 1.2 stated a short list of working rules (W1)–(W6) that say which sets exist: a set may be cut out of a given set by a property (@fd2:def-set-builder), finitely many objects may be listed, sets have unions, the subsets of a set form a set (@fd2:def-power-set), pairs from two sets form a product, and the number sets are sets. It did not derive these rules from more basic principles, and it took numbers and pairs as given objects. It never asked whether everything else is a set too.
+*Sets and Functions* used sets as a working language. Its Section 1.2 stated a short list of working rules (W1)–(W6) that say which sets exist: a set may be cut out of a given set by a property (@fd2:def-set-builder), finitely many objects may be listed, sets have unions, the subsets of a set form a set (@fd2:def-power-set), pairs from two sets form a product, and the number sets are sets. It did not derive these rules from more basic principles, and it took numbers and pairs as given objects. Two questions were left open: where these rules come from, and whether everything else, numbers and pairs included, is a set too.
 
-Set theory asks both questions and answers them with a list of axioms. The construction below uses seven of them, each of which can be said in one line:
+Set theory answers both questions with a list of axioms. The construction below uses seven of them, each of which can be said in one line:
 
 - **Extensionality.** Two sets with the same elements are equal (@fd2:def-set-equality, now an axiom).
 - **Empty set.** There is a set with no elements, written \( \emptyset \).

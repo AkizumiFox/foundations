@@ -428,7 +428,7 @@ Prove that \( (km)n = k(mn) \) for all \( k, m, n \in \nN \). The first half is 
 
 > Fix \( k, m \in \nN \) and induct on \( n \). Base case: \( (km) \cdot 0 = 0 = k \cdot 0 = k(m \cdot 0) \). Inductive step: \( \underline{\hspace{10em}} \)
 
-You may use (a)–(f) of @thm-omega-arithmetic-laws.
+You may use (a)–(f) of @thm-omega-arithmetic-laws. If you read the fold after its proof, the last row of the table compresses this step into one line; write it out without looking, and give the reason for each equality.
 :::
 
 ::: {.solution}
