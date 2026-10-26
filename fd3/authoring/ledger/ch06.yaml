@@ -170,6 +170,26 @@ items:
       is not an upper bound (fd1:prp-bounded-quantifier-negation (a)), and totality gives n.1_F>s-1_F.
       Then (n+1).1_F=n.1_F+1_F>s by def-naturals-in-ordered-field (a) and (O3), which contradicts s being
       an upper bound. So iota_F(N) is unbounded, and for each x some n.1_F>x, which is def-archimedean-ordered-field.
+  - stage: S5a
+    verdict: correct
+    by: refereeA
+    hash: 2816d73af5fd
+    date: '2026-10-26'
+    model: claude-opus-5-5
+    evidence: '01:87. Order of choices: suppose there is a bound; take s = sup (non-empty because of 0·1_F;
+      completeness); s−1 is not an upper bound, so some n has n·1_F > s−1 (fd1:prp-bounded-quantifier-negation
+      (a) plus totality); then (n+1)·1_F = n·1_F + 1_F > s (def-naturals-in-ordered-field (a), (O3)).
+      n is chosen after s. The last step (not bounded above, so every x lies below some n·1_F) matches
+      def-archi'
+  - stage: S5b
+    verdict: correct
+    by: refereeB
+    hash: 2816d73af5fd
+    date: '2026-10-26'
+    model: claude-opus-5-5
+    evidence: '01:87. Every step is cited: non-empty via 0·1_F, sup by completeness, fd1:prp-bounded-quantifier-negation
+      (a) with totality, def-naturals-in-ordered-field (a) ((n+1)·1_F = n·1_F + 1_F) plus (O3). The last
+      line matches def-archimedean-ordered-field (n ∈ ℕ). The ledger lines 447-448 cover it.'
 - key: check:01-completeness-and-archimedes:2
   kind: check
   file: 01-completeness-and-archimedes.md
@@ -190,6 +210,22 @@ items:
     date: '2026-10-12'
     model: claude-opus-5-5
     evidence: '01:148-154: Q_F(iota_F(3/2)) = {q < 3/2}, and 3/2 is excluded by (O1).'
+  - stage: S5a
+    verdict: correct
+    by: refereeA
+    hash: 83741fb55478
+    date: '2026-10-26'
+    model: claude-opus-5-5
+    evidence: 01:99. b ≤ ι_F(−n) = −n·1_F gives −b ≥ n·1_F (prp-ordered-ring-rules (a); ι_F additive).
+      Taking x = −b in the Archimedean property gives −b < n·1_F ≤ −b, a contradiction.
+  - stage: S5b
+    verdict: minor
+    by: refereeB
+    hash: 83741fb55478
+    date: '2026-10-26'
+    model: claude-opus-5-5
+    evidence: 01-completeness-and-archimedes.md:99 The step from b ≤ ι_F(-n) to -b ≥ n·1_F uses ι_F(-n)
+      = -ι_F(n) without justification.
 - key: exm-cof-sup-one-minus-reciprocals
   kind: exm
   file: 01-completeness-and-archimedes.md
@@ -206,6 +242,24 @@ items:
       which is def-archimedean-ordered-field there) the same argument gives sup = 1. All five cited labels
       exist and state what is used. The three new ledger lines match the steps. No numeric constants,
       so no sidecar is needed. Cosmetic only: line 124 has text on the same line as the closing \].'
+  - stage: S5a
+    verdict: correct
+    by: refereeA
+    hash: 86e995d690b5
+    date: '2026-10-26'
+    model: claude-opus-5-5
+    evidence: '01:119-125. Upper bound: ι_F is strictly increasing. Least: ε = 1_F − b > 0, and prp-archimedean-reciprocal
+      applied at n = N gives 1/(N·1_F) < ε. ι_F(1−1/N) = 1_F − 1/(N·1_F) by additivity and uniqueness
+      of inverses (lem-field-fraction-rules (a)), and this is > b. Totality gives the conclusion (S2).
+      N depends only on b.'
+  - stage: S5b
+    verdict: minor
+    by: refereeB
+    hash: 86e995d690b5
+    date: '2026-10-26'
+    model: claude-opus-5-5
+    evidence: '01-completeness-and-archimedes.md:121 The solution uses two facts without saying so: that
+      ι_F preserves negatives, and that ε = 1_F - b is positive.'
 - key: def-cof-rationals-below
   kind: def
   file: 01-completeness-and-archimedes.md
@@ -251,12 +305,45 @@ items:
     evidence: '01:129-144: uses prp-ordered-ring-rules (g) (for a, b >= 0, a < b iff a^2 < b^2) and thm-rational-embedding
       (a), (b), (d) correctly. The sidecar passes. The remark at 01:146 (-2 is not in A, so A is not closed
       downward) is right.'
+  - stage: S5a
+    verdict: correct
+    by: refereeA
+    hash: 103f325af77b
+    date: '2026-10-26'
+    model: claude-opus-5-5
+    evidence: '01:166-170. When q<0, κ(q)<0<r (exm-sqrt2-class gives r>0, r²=2). When q≥0, κ(q)≥0 and
+      r>0, so prp-ordered-ring-rules (g) applies with both sides non-negative. κ(q²)=κ(q)², κ(2)=2, and
+      order reflection come from thm-rational-embedding (a) and (b). Line 174: −2 ∉ {x²<2} while 0 is
+      in it, so that set is not closed downward, as claimed.'
+  - stage: S5b
+    verdict: correct
+    by: refereeB
+    hash: 103f325af77b
+    date: '2026-10-26'
+    model: claude-opus-5-5
+    evidence: 01:166-170. prp-ordered-ring-rules (g) is the iff for a, b ≥ 0 (checked at fd3/src/ch02-integers/04-ordered-rings.md:182).
+      thm-rational-embedding (a), (b), (d) are used correctly. Line 174 is right that the Section 3.3
+      set (ch03/03, thm-rationals-gap-sqrt2) contains -2 and so is not closed downward.
 - key: check:01-completeness-and-archimedes:3
   kind: check
   file: 01-completeness-and-archimedes.md
   line: 176
   hash: 0cc047678bd6
-  verdicts: []
+  verdicts:
+  - stage: S5a
+    verdict: correct
+    by: refereeA
+    hash: 0cc047678bd6
+    date: '2026-10-26'
+    model: claude-opus-5-5
+    evidence: 01:181. Follows from the rational-element example (01:151) and (O1).
+  - stage: S5b
+    verdict: correct
+    by: refereeB
+    hash: 0cc047678bd6
+    date: '2026-10-26'
+    model: claude-opus-5-5
+    evidence: 01:177-182. This is the first example applied with r = 3/2, and 3/2 is excluded by (O1).
 - key: lem-cof-rationals-separate
   kind: lem
   file: 01-completeness-and-archimedes.md
@@ -379,24 +466,100 @@ items:
       = (s^2+a)/(2s) checks, and it is positive by the same reasons since s^2+a>0. (s-h)^2 = s^2-2sh+h^2
       = a+h^2 > a, because h != 0. The upper-bound argument via prp-ordered-ring-rules (g) (03-ordered-rings.md:318:
       for'
+  - stage: S5a
+    verdict: correct
+    by: refereeA
+    hash: 8ecbd6dc19fb
+    date: '2026-10-26'
+    model: claude-opus-5-5
+    evidence: '01:244-267. Bound a+1: y > a+1 > 1 gives y² > y (rule (c) with 1<y, c=y>0), and y > a.
+      s ≥ 0 because 0 ∈ S (S1). Case s²<a: h>0; h² ≤ h because 0<h≤1; (s+h)² ≤ s²+h(2s+1) ≤ s²+(a−s²)/2
+      < a (halves (b)); s+h ∈ S lies above s. Case s²>a: s>0; s−h = (s²+a)/(2s) > 0 (the algebra checks);
+      (s−h)² = a+h² > a; y > s−h gives y² > (s−h)² by (g), with both sides non-negative, so s−h is a smaller
+      upper bound.'
+  - stage: S5b
+    verdict: correct
+    by: refereeB
+    hash: 8ecbd6dc19fb
+    date: '2026-10-26'
+    model: claude-opus-5-5
+    evidence: 01:244-268. The bound a+1 uses (c) with 1 < y. h > 0 by prp-reciprocal-order (a) and (O4).
+      The chain (s+h)^2 ≤ s^2 + (a-s^2)/2 < a uses prp-ordered-field-halves (b). s - h = (s^2+a)/(2s)
+      and (s-h)^2 = a + h^2 check by algebra. The upper-bound step uses (g) with y > s-h > 0. Uniqueness
+      uses (f), the zero-divisor rule. The ledger matches.
 - key: exm-method-point-as-supremum
   kind: exm
   file: 01-completeness-and-archimedes.md
   line: 274
   hash: 7431fff82ae9
-  verdicts: []
+  verdicts:
+  - stage: S5a
+    verdict: correct
+    by: refereeA
+    hash: 7431fff82ae9
+    date: '2026-10-26'
+    model: claude-opus-5-5
+    evidence: '01:277-281. The template''s (S1)/(S2) use matches fd2:def-order-supremum. The forward pointers
+      exist: 6.2 defines φ(x) as sup_L (02:100) and cites this method (02:111), and Exercise C3 of 6.3
+      (03:459) is bounded increasing sequences.'
+  - stage: S5b
+    verdict: correct
+    by: refereeB
+    hash: 7431fff82ae9
+    date: '2026-10-26'
+    model: claude-opus-5-5
+    evidence: '01:277-281. The pointers hold: φ(x) is a supremum in Section 6.2 (02:100), Exercise C3
+      of Section 6.3 is about bounded increasing sequences and its solution names this move (03:459-474),
+      and fd2:exm-method-construct-and-verify exists (fd2 ch02/04).'
 - key: exm-cof-separating-element
   kind: exm
   file: 01-completeness-and-archimedes.md
   line: 284
   hash: 2d5af9d8bfcd
-  verdicts: []
+  verdicts:
+  - stage: S5a
+    verdict: correct
+    by: refereeA
+    hash: 2d5af9d8bfcd
+    date: '2026-10-26'
+    model: claude-opus-5-5
+    evidence: 01:296-299. (a) A non-empty; B non-empty supplies the bound b_0; c = sup A; (S1) and (S2)
+      give a ≤ c ≤ b. Both non-emptiness hypotheses are used. (b) ε = |c−c'| > 0 (abs (a)); a ≤ c, c'
+      ≤ b gives −(b−a) ≤ c−c' ≤ b−a; prp-absolute-value-ordered-field (d) gives |c−c'| ≤ b−a < ε, a contradiction.
+      a and b are chosen after ε, as they should be.
+  - stage: S5b
+    verdict: minor
+    by: refereeB
+    hash: 2d5af9d8bfcd
+    date: '2026-10-26'
+    model: claude-opus-5-5
+    evidence: '01-completeness-and-archimedes.md:303 The forward meta-claim about Section 6.3 is false
+      as worded: Section 6.3 never shows a real number between the rationals below it and those above
+      it.'
 - key: check:01-completeness-and-archimedes:4
   kind: check
   file: 01-completeness-and-archimedes.md
   line: 305
   hash: 5b8e14c2be17
-  verdicts: []
+  verdicts:
+  - stage: S5a
+    verdict: correct
+    by: refereeA
+    hash: 5b8e14c2be17
+    date: '2026-10-26'
+    model: claude-opus-5-5
+    evidence: 01:310. c is an upper bound of A. Any rational upper bound u has u ≥ 1 (1 ∈ A), u² ≠ 2 (thm-no-rational-square-two),
+      and u² < 2 would put u in A as its maximum, hence its supremum; so u ∈ B and c ≤ u. Then c would
+      be sup A in Q, contradicting thm-rationals-gap-sqrt2 (a). The argument is valid.
+  - stage: S5b
+    verdict: correct
+    by: refereeB
+    hash: 5b8e14c2be17
+    date: '2026-10-26'
+    model: claude-opus-5-5
+    evidence: 01:310. A rational upper bound u satisfies u ≥ 1 > 0, u^2 ≠ 2 by thm-no-rational-square-two,
+      and u^2 < 2 would make u the maximum, hence the supremum. So u ∈ B, a separating c would be sup
+      A, and that contradicts thm-rationals-gap-sqrt2 (a).
 - key: exr-completeness-and-archimedes-a1
   kind: exr
   file: 01-completeness-and-archimedes.md
@@ -537,7 +700,35 @@ items:
   file: 01-completeness-and-archimedes.md
   line: 376
   hash: 02bf436743bd
-  verdicts: []
+  verdicts:
+  - stage: S5a
+    verdict: correct
+    by: refereeA
+    hash: 02bf436743bd
+    date: '2026-10-26'
+    model: claude-opus-5-5
+    evidence: 01:391-399. (a) r ≠ 0 since r² = a ≠ 0, so r ≠ −r; the converse uses the uniqueness clause
+      on b or −b. (b) Q is a counterexample. (c) and (e) use S = {1−1/n} with sup 1 not attained; S is
+      non-empty, as (e) requires. (d) x = √(a+1/4) − 1/2 satisfies x²+x = a, and x > 0 by (g) with both
+      sides non-negative. Every part checks.
+  - stage: S5b
+    verdict: minor
+    by: refereeB
+    hash: 02bf436743bd
+    date: '2026-10-26'
+    model: claude-opus-5-5
+    evidence: 01-completeness-and-archimedes.md:472 Ledger line 472 cites the wrong rule for B3 (a).
+  - stage: S6
+    verdict: correct
+    by: verifier
+    hash: 02bf436743bd
+    date: '2026-10-26'
+    model: claude-opus-5-5
+    evidence: '01:376-399. I solved all five parts before reading the solution and got the same verdicts:
+      (a) true, (b) false (Q), (c) false ({1-1/n}), (d) true (x = sqrt(a+1/4) - 1/2), (e) false (c = 1).
+      The citations check out: prp-ordered-ring-rules (g) is ''a,b>=0: a<b iff a^2<b^2'' (fd3 ch02/04:182),
+      and the uniqueness clause is in prp-cof-square-roots. My script confirms x^2+x = a for x = sqrt(a+1/4)-1/2
+      at '
 - key: exr-completeness-and-archimedes-c1
   kind: exr
   file: 01-completeness-and-archimedes.md
@@ -611,6 +802,14 @@ items:
       thm-cof-complete-archimedean. The revised marking item at 01:335 now accepts any correct repair
       that uses that s is least without assuming s is in the set, and gives two routes. I checked the
       second route. If iot
+  - stage: S8
+    verdict: minor
+    by: seam
+    hash: 4142ac9d796f
+    date: '2026-10-26'
+    model: claude-opus-5-5
+    evidence: 01:429 re-proves sup{1-1/n}=1 in R by hand instead of citing exm-cof-sup-one-minus-reciprocals
+      (01:110), already proved for every complete F
 - key: check:02-measuring-by-rationals:1
   kind: check
   file: 02-measuring-by-rationals.md
@@ -633,6 +832,26 @@ items:
     model: claude-opus-5-5
     evidence: 02:75-81. q = 1 < 5/4 = a + b. The conditions r < 3/4 and 1 - r < 1/2 give 1/2 < r < 3/4,
       and r = 2/3 works. The values are asserted in verify/ch06/lem-cof-below-sum.py.
+  - stage: S5a
+    verdict: correct
+    by: refereeA
+    hash: 671c115056a0
+    date: '2026-10-26'
+    model: claude-opus-5-5
+    evidence: 'lines 19-25: prp-cof-map-fixes-rationals (01-completeness-and-archimedes.md:53) needs only
+      sums, products and the unit, all of which an order-preserving field map Q -> L has. iota_Q = id
+      is stated at ch04/02-naturals-and-archimedes.md:180. So phi(1/2) = iota_L(1/2), and iota_L preserves
+      and reflects order, which gives {q : q < 1/2}.'
+  - stage: S5b
+    verdict: correct
+    by: refereeB
+    hash: 671c115056a0
+    date: '2026-10-26'
+    model: claude-opus-5-5
+    evidence: 02-measuring-by-rationals.md:19-25. phi(1/2)=iota_L(1/2) follows from prp-cof-map-fixes-rationals
+      (01-completeness-and-archimedes.md:53) with iota_Q = id_Q, and iota_L preserves and reflects order
+      (the remark after def-cof-order-preserving-map). The answer {q < 1/2} is right and needs no Archimedean
+      hypothesis on L. Ledger line 357 covers the facts used.
 - key: lem-cof-below-sum
   kind: lem
   file: 02-measuring-by-rationals.md
@@ -755,6 +974,24 @@ items:
       theorem gives exactly one order-preserving field map F->F. id_F is one: it is the first example
       after def-cof-order-preserving-map (ch06/01, ''The identity''). Hence phi=id_F. \id_F matches the
       NOTATION.md row `\id_X`, so the switch from \mathrm{id} is correct.'
+  - stage: S5a
+    verdict: correct
+    by: refereeA
+    hash: c161802c964d
+    date: '2026-10-26'
+    model: claude-opus-5-5
+    evidence: 'lines 83-89: with a = 3/4, b = 1/2 and q = 1, q < a + b = 5/4. The conditions r < 3/4 and
+      1 - r < 1/2 give 1/2 < r < 3/4, and r = 2/3 satisfies both (1/3 < 1/2). This is the open gap (q
+      - b, a), as the proof of lem-cof-below-sum predicts.'
+  - stage: S5b
+    verdict: correct
+    by: refereeB
+    hash: c161802c964d
+    date: '2026-10-26'
+    model: claude-opus-5-5
+    evidence: Lines 83-89. q=1 < a+b=5/4. The conditions r<3/4 and 1-r<1/2 together mean 1/2<r<3/4, and
+      r=2/3 gives 1/3<1/2. The gap (q-b, a) = (1/2, 3/4) is the one the proof at line 50 uses. verify/ch06/lem-cof-below-sum.py
+      asserts these values, and ledger line 360 lists it.
 - key: thm-cof-embedding-into-complete
   kind: thm
   file: 02-measuring-by-rationals.md
@@ -828,7 +1065,26 @@ items:
   file: 02-measuring-by-rationals.md
   line: 186
   hash: 753450c30c4a
-  verdicts: []
+  verdicts:
+  - stage: S5a
+    verdict: correct
+    by: refereeA
+    hash: 753450c30c4a
+    date: '2026-10-26'
+    model: claude-opus-5-5
+    evidence: 'lines 186-192: F is complete, so it is Archimedean by thm-cof-complete-archimedean; the
+      theorem''s hypotheses then hold with L = F. id_F is the first example after def-cof-order-preserving-map
+      (01-completeness-and-archimedes.md:30). By the uniqueness clause, phi = id_F.'
+  - stage: S5b
+    verdict: correct
+    by: refereeB
+    hash: 753450c30c4a
+    date: '2026-10-26'
+    model: claude-opus-5-5
+    evidence: 'Lines 186-192. The uniqueness clause applies because F is Archimedean (thm-cof-complete-archimedean)
+      and complete. id_F is the first example after def-cof-order-preserving-map (01:31). The meta-claim
+      ''This is the argument Section 6.3 builds on'' holds: 03-the-uniqueness-theorem.md:38 uses it for
+      psi∘phi = id_F, and cor-cof-order-automorphism-identity at 03:127 uses it too.'
 - key: exr-measuring-by-rationals-a1
   kind: exr
   file: 02-measuring-by-rationals.md
@@ -1225,6 +1481,26 @@ items:
       Chapter 7 (F3.3) forward claims at 03:110 and 03:118 are prose only, ledgered (03:342) and in STATUS's
       promise table (row 'F3.4 §01, §03, §05, index', citing 03:110 and 03:118). The four cut properties
       of ℚ_
+  - stage: S5a
+    verdict: minor
+    by: refereeA
+    hash: bed1d3596c4d
+    date: '2026-10-26'
+    model: claude-opus-5-5
+    evidence: 03-the-uniqueness-theorem.md:112 The claim that in the Dedekind-cut model 'the copy of x
+      is the cut Q_R(x)' does not follow from (star). The dependency ledger (line 564) nevertheless says
+      the identification is (star) for the isomorphism of thm-cof-uniqueness.
+  - stage: S5b
+    verdict: minor
+    by: refereeB
+    hash: bed1d3596c4d
+    date: '2026-10-26'
+    model: claude-opus-5-5
+    evidence: 03-the-uniqueness-theorem.md:112 The text attributes the identification 'the copy of x is
+      the cut Q_R(x)' to thm-cof-uniqueness alone. (star) only gives Q_M(phi(x)) = Q_R(x). To get phi(x)
+      = Q_R(x) one also needs the cut model to be complete and Q_M(c) = c for each cut c. Both are proved
+      in Axiomatic Set Theory (ST.1, thm-dedekind-same-reals (c)), and the text does not say they come
+      from there.
 - key: cor-cof-order-automorphism-identity
   kind: cor
   file: 03-the-uniqueness-theorem.md
@@ -1355,7 +1631,26 @@ items:
   file: 03-the-uniqueness-theorem.md
   line: 201
   hash: fafb72602103
-  verdicts: []
+  verdicts:
+  - stage: S5a
+    verdict: correct
+    by: refereeA
+    hash: fafb72602103
+    date: '2026-10-26'
+    model: claude-opus-5-5
+    evidence: 'Lines 208-212: eps'' = phi^{-1}(eps) is fixed before N, and N depends only on eps''. The
+      equality |phi(a_n)-phi(a)| = phi(|a_n-a|) follows from (T1) and (T3), and < from (T2). The converse
+      uses (T5); the forward proof used only (T1)-(T3) and bijectivity. This matches def-sequence-limit-ordered-field
+      (03-limits.md:47).'
+  - stage: S5b
+    verdict: correct
+    by: refereeB
+    hash: fafb72602103
+    date: '2026-10-26'
+    model: claude-opus-5-5
+    evidence: '03:208-212: eps'' > 0 by (T1)+(T2); |phi(a_n)-phi(a)| = phi(|a_n-a|) by (T1),(T3); strict
+      < by (T2); converse by (T5). The pointer to Exercise B3 of Section 5.4 is checked: exr-rationals-inside-the-reals-b3
+      exists at 5.4:236.'
 - key: check:03-the-uniqueness-theorem:2
   kind: check
   file: 03-the-uniqueness-theorem.md
@@ -1391,12 +1686,49 @@ items:
       from sigma(s)sigma(s^{-1}) = 1. Then sigma(r) = sigma(s)^2 > 0 (prp-ordered-ring-rules (e)), and
       uniqueness in prp-cof-square-roots gives sigma(r) = r. Earlier S5a/S5b findings resolved: the solution
       no lo'
+  - stage: S5a
+    verdict: correct
+    by: refereeA
+    hash: 822fe9738542
+    date: '2026-10-26'
+    model: claude-opus-5-5
+    evidence: 'Line 224: def-naturals-in-ordered-field (b) gives x^0 = 1_F and x^{k+1} = x^k x, so x^3
+      = ((1x)x)x. phi(1) = 1 and multiplicativity then give phi(x^3) = phi(x)^3, and additivity gives
+      phi(x+1) = y + 1.'
+  - stage: S5b
+    verdict: correct
+    by: refereeB
+    hash: 822fe9738542
+    date: '2026-10-26'
+    model: claude-opus-5-5
+    evidence: '03:224: def-naturals-in-ordered-field (b) gives x^0=1_F, x^{k+1}=x^k x, so x^3=((1x)x)x.
+      phi respects 1 and products, so phi(x^3)=phi(x)^3.'
 - key: exm-cof-zero-empty-set
   kind: exm
   file: 03-the-uniqueness-theorem.md
   line: 229
   hash: e65cd14a87c2
-  verdicts: []
+  verdicts:
+  - stage: S5a
+    verdict: correct
+    by: refereeA
+    hash: e65cd14a87c2
+    date: '2026-10-26'
+    model: claude-opus-5-5
+    evidence: 'Line 236: every class [a] contains a, so the empty set is not in R and beta is a bijection
+      onto X. The transported operations make beta an isomorphism. The completeness transfer on line 247
+      is correct in both directions: beta(s) is an upper bound, and it is least by pulling an upper bound
+      back through beta^{-1}.'
+  - stage: S5b
+    verdict: correct
+    by: refereeB
+    hash: e65cd14a87c2
+    date: '2026-10-26'
+    model: claude-opus-5-5
+    evidence: '03:236-247: no element of the Cauchy R is empty (each class contains its representative),
+      so beta is a bijection. Transport of structure is checked axiom by axiom; the numbering (F1)-(F9),
+      1 != 0 and (O1)-(O4) matches def-commutative-ring-and-field and def-ordered-ring-and-field. The
+      sup argument is correct.'
 - key: exr-the-uniqueness-theorem-a1
   kind: exr
   file: 03-the-uniqueness-theorem.md
@@ -1448,12 +1780,79 @@ items:
       the 6.2 remark at 02 Remark 1, so it is ''the same use again''. This matches 03:57 and resolves
       the S8 finding. 03:57 is likewise consistent. (b) and (c) are right; in (c) psi fails first, and
       Q/R is a valid instanc'
+  - stage: S5a
+    verdict: correct
+    by: refereeA
+    hash: fd73cdc0a9cb
+    date: '2026-10-26'
+    model: claude-opus-5-5
+    evidence: '(f) matches the hypotheses of prp-cof-map-fixes-rationals (ch06/01:56: additive, multiplicative,
+      chi(1) = 1, no order condition). (g) is fine: r > 0 gives a root s, s != 0, sigma(s) != 0 through
+      s^{-1}, so sigma(r) = sigma(s)^2 > 0 by prp-ordered-ring-rules (e), and the uniqueness in prp-cof-square-roots
+      gives sigma(r) = r. (a), (c) and (d) agree with the proof, including the remark about an Archi'
+  - stage: S5b
+    verdict: correct
+    by: refereeB
+    hash: fd73cdc0a9cb
+    date: '2026-10-26'
+    model: claude-opus-5-5
+    evidence: '03:310-322. (f) matches the hypotheses of prp-cof-map-fixes-rationals (01:53) and the uniqueness
+      clause of thm-rationals-embed-ordered-field. (g): s=sqrt r exists since r>0, sigma(s) != 0, sigma(r)=sigma(s)^2>0
+      by prp-ordered-ring-rules (e), and uniqueness in prp-cof-square-roots gives sigma(r)=r. (a), (c),
+      (d) agree with the 6.2 remark at 02:174.'
+  - stage: S6
+    verdict: correct
+    by: verifier
+    hash: fd73cdc0a9cb
+    date: '2026-10-26'
+    model: claude-opus-5-5
+    evidence: '03:293-323. (a) and (d) match the remark that the uniqueness clause needs only an Archimedean
+      target. (c) correctly names the construction of psi. (f): prp-cof-map-fixes-rationals assumes only
+      +, ., 1 (01:56), as claimed. (g) repeats Step 1 for s = sqrt(r) and then uses uniqueness of the
+      non-negative root. It is complete and does not quote the theorem.'
 - key: exr-axioms-or-model-a1
   kind: exr
   file: 03-the-uniqueness-theorem.md
   line: 325
   hash: 7c084b1d0d7e
-  verdicts: []
+  verdicts:
+  - stage: S5a
+    verdict: correct
+    by: refereeA
+    hash: 7c084b1d0d7e
+    date: '2026-10-26'
+    model: claude-opus-5-5
+    evidence: '(i): uses (T2), (T4) and the uniqueness of square roots; the side computation goes 5+2bc
+      > 9 iff bc > 2 iff 6 > 4, by prp-ordered-ring-rules (g), whose hypotheses a, b >= 0 hold (the sidecar
+      prints ok). (iii) uses fd2:thm-countable-characterizations (i)<=>(ii), with an injection composed
+      with a bijection. (ii), (b) and (c) are consistent with the text.'
+  - stage: S5b
+    verdict: correct
+    by: refereeB
+    hash: 7c084b1d0d7e
+    date: '2026-10-26'
+    model: claude-opus-5-5
+    evidence: '03:338-346. (i): (b+c)^2=5+2bc and bc=sqrt 6. prp-ordered-ring-rules (g) is the nonnegative
+      squares rule (ch02/04:170), and the sidecar exists. (iii): fd2:thm-countable-characterizations is
+      in citing-rule group (i), so it may be cited anywhere.'
+  - stage: S6
+    verdict: correct
+    by: verifier
+    hash: 7c084b1d0d7e
+    date: '2026-10-26'
+    model: claude-opus-5-5
+    evidence: '03:325-347. (i): transferring the roots by (T2), (T4) and root uniqueness is sound. The
+      side computation (b+c)^2 = 5+2bc and bc = sqrt6 > 2 iff 6 > 4 is right; my script gives 3.146 >
+      3 and 5+2sqrt6 = 9.899 > 9. (ii) relies on exm-cof-zero-empty-set. (iii) uses fd2:thm-countable-characterizations
+      (ii), which matches fd2 ch04/02:96. (b) and (c) agree with the text.'
+  - stage: S8
+    verdict: minor
+    by: seam
+    hash: 7c084b1d0d7e
+    date: '2026-10-26'
+    model: claude-opus-5-5
+    evidence: 03-the-uniqueness-theorem.md:325 label slug 'axioms-or-model' (parked old §05) in section
+      'the-uniqueness-theorem', titled [A2]; violates STYLE.md:215
 - key: exr-the-uniqueness-theorem-b1
   kind: exr
   file: 03-the-uniqueness-theorem.md
@@ -1535,7 +1934,41 @@ items:
   file: 03-the-uniqueness-theorem.md
   line: 379
   hash: 2a7420b90ec8
-  verdicts: []
+  verdicts:
+  - stage: S5a
+    verdict: correct
+    by: refereeA
+    hash: 2a7420b90ec8
+    date: '2026-10-26'
+    model: claude-opus-5-5
+    evidence: 'Lines 386-392: eps'' > 0 by reflection of order, N is chosen after eps, and the absolute-value
+      step is correct by (T1)-(T3). The converse uses (T5) and phi^{-1}(phi(a_n)) = a_n. This matches
+      def-cauchy-sequence-ordered-field (05-cauchy-sequences.md:18).'
+  - stage: S5b
+    verdict: correct
+    by: refereeB
+    hash: 2a7420b90ec8
+    date: '2026-10-26'
+    model: claude-opus-5-5
+    evidence: '03:386-392 mirrors the limit example: eps'' > 0 by order reflection; (T1),(T3),(T2); converse
+      by (T5).'
+  - stage: S6
+    verdict: correct
+    by: verifier
+    hash: 2a7420b90ec8
+    date: '2026-10-26'
+    model: claude-opus-5-5
+    evidence: 03:379-393. My eps' = phi^{-1}(eps) proof is the same as the book's. It matches def-cauchy-sequence-ordered-field
+      (fd3 ch04/05:18), and the backward direction follows from (T5). The worked example for this B task
+      is exm-cof-limits-carried-across (03:201).
+  - stage: S8
+    verdict: minor
+    by: seam
+    hash: 2a7420b90ec8
+    date: '2026-10-26'
+    model: claude-opus-5-5
+    evidence: 03-the-uniqueness-theorem.md:379 label exr-axioms-or-model-b2 titled [B3]; slug and number
+      both off (STYLE.md:215)
 - key: exr-the-uniqueness-theorem-c1
   kind: exr
   file: 03-the-uniqueness-theorem.md
@@ -1630,22 +2063,131 @@ items:
   file: 03-the-uniqueness-theorem.md
   line: 459
   hash: 5a7edb0e98d8
-  verdicts: []
+  verdicts:
+  - stage: S5a
+    verdict: correct
+    by: refereeA
+    hash: 5a7edb0e98d8
+    date: '2026-10-26'
+    model: claude-opus-5-5
+    evidence: '(a): S is non-empty because a_0 is in S. N is chosen before n. a_N <= a_n by thm-omega-induction
+      and prp-omega-order-arithmetic (a), and prp-absolute-value-ordered-field (d) (|x| < r iff -r < x
+      < r) applies after subtracting s. (b): thm-sqrt2-cauchy-no-rational-limit gives x_m <= x_n for m
+      >= n and x_n > 1, so (-x_n) is increasing and bounded above by -1. thm-limit-laws-ordered-field
+      (b) with c = '
+  - stage: S5b
+    verdict: minor
+    by: refereeB
+    hash: 5a7edb0e98d8
+    date: '2026-10-26'
+    model: claude-opus-5-5
+    evidence: '03-the-uniqueness-theorem.md:466 The fading has not tapered: C3, planned as the ''last
+      half blank'' item of the faded triple, gives step (2) and leaves only the last step blank. That
+      is the same level as 6.2 B2.'
+  - stage: S6
+    verdict: minor
+    by: verifier
+    hash: 5a7edb0e98d8
+    date: '2026-10-26'
+    model: claude-opus-5-5
+    evidence: '03-the-uniqueness-theorem.md:481 One marking-scheme line is muddled: it asks which clause
+      of the supremum ''(S1)'' uses, but (S1) is itself a clause. Step (2) is also given in the problem,
+      so the reader does not have to supply it.'
 - key: exr-the-uniqueness-theorem-r1
   kind: exr
   file: 03-the-uniqueness-theorem.md
   line: 490
   hash: b6b554d717ba
-  verdicts: []
+  verdicts:
+  - stage: S5a
+    verdict: correct
+    by: refereeA
+    hash: b6b554d717ba
+    date: '2026-10-26'
+    model: claude-opus-5-5
+    evidence: exm-first-sequences-ordered-field (c) (03-limits.md:85) gives q_n -> 1, so (q_n) is Cauchy.
+      q_n - 1 is null by def-null-sequence-ordered-field, so (q_n) ~ (1)_n by def-cauchy-equivalent (ch05/01:104),
+      and kappa(1) = [(1)_n]. lem-termwise-order gives only <=. The sidecar prints ok.
+  - stage: S5b
+    verdict: correct
+    by: refereeB
+    hash: b6b554d717ba
+    date: '2026-10-26'
+    model: claude-opus-5-5
+    evidence: '03:502-504: exm-first-sequences-ordered-field (c) is exactly (n+1)/(n+2) in Q. prp-convergent-cauchy-ordered-field
+      and def-cauchy-equivalent (''null'') match, and lem-termwise-order (5.3:245) gives <=.'
+  - stage: S6
+    verdict: correct
+    by: verifier
+    hash: b6b554d717ba
+    date: '2026-10-26'
+    model: claude-opus-5-5
+    evidence: 03:490-505. exm-first-sequences-ordered-field (c) is exactly (n+1)/(n+2) (ch04/03:75). lem-termwise-order
+      (ch05/03:248) gives <=. My script checks 1 - q_n = 1/(n+2). The item hides its source and the solution
+      names it with @ref.
 - key: exr-the-uniqueness-theorem-r2
   kind: exr
   file: 03-the-uniqueness-theorem.md
   line: 507
   hash: 35dd1b34e7a8
-  verdicts: []
+  verdicts:
+  - stage: S5a
+    verdict: correct
+    by: refereeA
+    hash: 35dd1b34e7a8
+    date: '2026-10-26'
+    model: claude-opus-5-5
+    evidence: '(a): q^2 > 0, and ps = rq implies p^2 s^2 = r^2 q^2. (b): (p+q)s = (r+s)q. (c): (1,2) ~
+      (2,4), but 2*4 = 8 != 6 = 3*2. All verified; the sidecar prints ok.'
+  - stage: S5b
+    verdict: correct
+    by: refereeB
+    hash: 35dd1b34e7a8
+    date: '2026-10-26'
+    model: claude-opus-5-5
+    evidence: '03:510-528: Q=(Z x Z_{>0})/~ matches def-rationals-as-classes. (a),(b) are well defined.
+      For (c), (1,2)~(2,4) maps to (2,2) and (3,4), and 2*4=8 != 6=3*2.'
+  - stage: S6
+    verdict: correct
+    by: verifier
+    hash: 35dd1b34e7a8
+    date: '2026-10-26'
+    model: claude-opus-5-5
+    evidence: 03:507-529. A brute-force check over pairs with |p| <= 6, 1 <= q <= 6 finds 0 violations
+      for (a) and (b), and the images equal x^2 and x+1. For (c) it finds 130 violations; the book's example
+      (1,2)~(2,4) but (2,2)!~(3,4) (8 != 6) is verified. The source is hidden in the statement and named
+      in the solution.
 - key: exr-the-uniqueness-theorem-r3
   kind: exr
   file: 03-the-uniqueness-theorem.md
   line: 531
   hash: c70fc6f8eb5e
-  verdicts: []
+  verdicts:
+  - stage: S5a
+    verdict: correct
+    by: refereeA
+    hash: c70fc6f8eb5e
+    date: '2026-10-26'
+    model: claude-opus-5-5
+    evidence: '(a) uses fd2:prp-countable-image (any function). (b) uses the injectivity of iota_F together
+      with thm-no-rational-square-two. (c): prp-archimedean-reciprocal is applied at n = N to eps = (y
+      - iota(q))/sqrt2 > 0. Then iota(q) < z < y, and z rational would give sqrt2 = iota_F(N(p-q)), against
+      (b). The sidecar prints ok.'
+  - stage: S5b
+    verdict: gap
+    by: refereeB
+    hash: c70fc6f8eb5e
+    date: '2026-10-26'
+    model: claude-opus-5-5
+    evidence: 03-the-uniqueness-theorem.md:544 R3(a) proves that the constructed Q is countable by citing
+      fd2's theorem about the school rationals. The book's citing rule forbids this.
+  - stage: S6
+    verdict: correct
+    by: verifier
+    hash: c70fc6f8eb5e
+    date: '2026-10-26'
+    model: claude-opus-5-5
+    evidence: '03:531-553. (a): fd2:prp-countable-image (fd2 ch04/02:164) applies. (b) uses injectivity
+      of iota_F and p^2 = 2. (c): z = iota(q) + sqrt2/N lies strictly between, by the choice 1/N < (y
+      - iota(q))/sqrt2 and sqrt2 > 0. If z = iota(p), then sqrt2 = iota(N(p-q)), against (b). Complete.
+      The source is hidden and named in the solution.'
