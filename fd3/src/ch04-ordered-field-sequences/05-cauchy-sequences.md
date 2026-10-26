@@ -80,7 +80,7 @@ Let \( \varepsilon \in F_{>0} \). Since \( a_n \to a \), there is \( N \in \nN \
 so \( (a_n) \) is Cauchy.
 :::
 
-The converse is the question of the chapter. In \( \nQ \) it fails (Section 4.6); Chapter 5 builds a field in which it holds.
+The converse is the question of the chapter. In \( \nQ \) it fails (Section 4.6). Chapter 5 builds the field \( \nR \), and *Analysis on the Real Line*, Chapter 4 proves that it holds there.
 
 ::: {.check}
 Is the sequence \( \bigl( (-1)^n/(n + 1) \bigr)_{n \in \nN} \) Cauchy in \( \nQ \)? Answer without estimating \( \abs{a_m - a_n} \).

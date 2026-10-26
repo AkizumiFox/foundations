@@ -117,7 +117,7 @@ About half the exercises annotate or build real proofs from analysis.
 - **Set theory.** List the ZF axioms and use them to build ℕ, either as von Neumann ordinals or by assuming Peano. No metamathematics.
 - **Choice.** Stated here and flagged where it is used later: countable unions, the Vitali set, Hahn–Banach, Tychonoff.
 - **ℤ and ℚ.** Built as equivalence classes. Prove a few representative cases in full and leave the rest to exercises.
-- **ℝ.** Built from Cauchy sequences of rationals (F3.10); Dedekind cuts are an optional second construction (F3.3), which gives the least upper bound property directly and is identified with F3.10's ℝ through the uniqueness theorem (F3.4).
+- **ℝ.** Built from Cauchy sequences of rationals (F3.10); Dedekind cuts are a second construction (ST.1, *Axiomatic Set Theory*; the old F3.3 is parked there), which gives the least upper bound property directly and is identified with F3.10's ℝ through the uniqueness theorem (F3.4).
 - **Closing theorem.** A complete ordered field is unique up to isomorphism.
 
 ---
@@ -450,12 +450,13 @@ About half the exercises annotate or build real proofs from analysis.
 | Concept | ℝ | ℝⁿ | metric / C(K) | normed / Banach | Hilbert | Lᵖ / weak* |
 |---|---|---|---|---|---|---|
 | compact | Heine–Borel, BW | closed and bounded | complete + totally bounded; Arzelà–Ascoli | unit ball compact iff finite-dimensional; compact operators | bounded ⇒ weakly convergent subsequence | Alaoglu; Kolmogorov–Riesz; Rellich |
-| complete | supremum in a partially ordered set, (S1)–(S2), with the (ℝ, ≤) case named for AN1.1 (F2.5 §03, `def-order-supremum`); forms of LUB; ℝ built from Cauchy sequences of rationals, Cauchy-complete + Archimedean ⇒ LUB (F3.10); LUB as a union of cuts (F3.3, optional); square roots as suprema (F3.4, `@fd3:prp-cof-square-roots`), n-th roots as suprema (F4.1, `lem-reals-nth-root`) | coordinatewise | C(K); Baire; contraction; completion of a metric space, ℝ as the completion of ℚ (AN2.2, returning to F3.10) | ℓᵖ; quotients; completion | Riesz–Fischer | Lᵖ complete; Riemann space incomplete |
+| complete | supremum in a partially ordered set, (S1)–(S2), with the (ℝ, ≤) case named for AN1.1 (F2.5 §03, `def-order-supremum`); forms of LUB; ℚ not complete: {x ∈ ℚ : x² < 2} bounded with no rational supremum (F3.11 §03, `thm-rationals-gap-sqrt2`); ℝ built from Cauchy sequences of rationals, LUB by bisection with rational ends (F3.10); Cauchy-complete + Archimedean ⇒ LUB (AN1.11); LUB as a union of cuts (ST.1, *Axiomatic Set Theory*); square roots as suprema (F3.4, `@fd3:prp-cof-square-roots`), n-th roots as suprema (F4.1, `lem-reals-nth-root`) | coordinatewise | C(K); Baire; contraction; completion of a metric space, ℝ as the completion of ℚ (AN2.2, returning to F3.10) | ℓᵖ; quotients; completion | Riesz–Fischer | Lᵖ complete; Riemann space incomplete |
 | absolute value / triangle inequality | \|x + y\| ≤ \|x\| + \|y\| by trapping, in any ordered field (F3.9) | ℂ = ℝ²: modulus, triangle inequality by comparing squares, since ℂ has no order to trap in (F4.1); Euclidean norm | triangle axiom of a metric | norm axioms | Cauchy–Schwarz ⇒ triangle inequality | Minkowski |
 | convergence | ε-N; pointwise vs uniform | norm equivalence | uniform = sup metric | norm vs weak | orthogonal expansions | a.e., in measure, Lᵖ, weak*, distributional |
 | continuity | ε-δ, uniform | Fréchet | equicontinuity, Lipschitz | bounded = continuous; closed graph | adjoint | weak lower semicontinuity of the norm; translation |
 | Zorn's lemma / maximality template | choice from Zorn, representatives, any two sets comparable, every partial order extends to a total order, the well-ordering theorem (F2.4) | bases of any vector space (LA §1.8, `thm-basis-extension-general`) | — | Hahn–Banach (FA) | orthonormal bases of any Hilbert space | — |
-| density | ℚ dense (in any Archimedean field, F3.9; in the constructed ℝ, F3.10) | polynomials | Stone–Weierstrass | Hahn–Banach criterion | orthonormal basis | C_c and mollifiers |
+| density | midpoints in ℚ; ℚ Archimedean from the construction (F3.11 §02, `thm-rationals-archimedean`); ℚ dense (in any Archimedean field, F3.9; in the constructed ℝ, F3.10) | polynomials | Stone–Weierstrass | Hahn–Banach criterion | orthonormal basis | C_c and mollifiers |
+| parity / divisibility | school ℤ (F1.2 `thm-square-even-implies-even`, F2.1 `thm-even-or-odd`) → constructed ℤ (F3.2 `cor-integers-even-odd`) → ℤ/nℤ (F5.1) | — | — | — | — | — |
 
 ## Evidence from mathematics education (for STYLE and exercise design)
 - **Concept image vs concept definition** (Tall & Vinner 1981). Every definition gets a counterexample that challenges the image it tends to create.

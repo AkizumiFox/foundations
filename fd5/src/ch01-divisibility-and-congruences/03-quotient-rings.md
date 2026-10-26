@@ -224,7 +224,7 @@ For \( \nZ/5\nZ \) the same method gives
 No product of non-zero classes is \( [0] \), and every non-zero class has a partner with product \( [1] \): \( [1][1] = [1] \), \( [2][3] = [6] = [1] \), \( [4][4] = [16] = [1] \). Moreover \( 5 \cdot [1] = [0] \) by @thm-integers-mod-n-ring (d), so \( \nZ/5\nZ \) cannot be ordered, by (e).
 :::
 
-The classes with a partner of product \( [1] \) are the **units** of Section 1.4, which finds them for every \( n \) and shows that for a prime \( n \), as for \( 5 \), every non-zero class is one. *Number Systems*, Chapter 6 uses the ring \( \nZ/5\nZ \), with \( 5 \cdot [1] = [0] \), as a field that no order can fit.
+The classes with a partner of product \( [1] \) are the **units** of Section 1.4, which finds them for every \( n \) and shows that for a prime \( n \), as for \( 5 \), every non-zero class is one. *Number Systems*, Section 2.4 shows that no commutative ring with \( 1 \ne 0 \) and \( n \cdot 1 = 0 \) for some \( n \ge 1 \) can be ordered; so \( \nZ/5\nZ \), with \( 5 \cdot [1] = [0] \), is a field that no order can fit.
 
 ::: {.check}
 In \( \nZ/12\nZ \), compute \( [7] + [8] \) and \( [7][8] \), each as \( [r] \) with \( 0 \le r \le 11 \). How many elements has \( \nZ/1\nZ \)?
