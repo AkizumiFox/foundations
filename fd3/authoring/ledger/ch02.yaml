@@ -135,7 +135,7 @@ items:
   kind: exm
   file: 01-integers-as-classes.md
   line: 107
-  hash: 1428958e350e
+  hash: 2086904a0fb7
   verdicts:
   - stage: S5a
     verdict: minor
@@ -525,7 +525,7 @@ items:
   kind: proof
   file: 02-well-defined-operations.md
   line: 42
-  hash: 076366f817fe
+  hash: c94a4293c745
   verdicts:
   - stage: S5a
     verdict: correct
@@ -853,7 +853,7 @@ items:
   kind: check
   file: 02-well-defined-operations.md
   line: 270
-  hash: 01d43b419582
+  hash: 877669eec6a1
   verdicts:
   - stage: S5a
     verdict: correct
@@ -1254,7 +1254,7 @@ items:
   kind: check
   file: 03-commutative-rings.md
   line: 122
-  hash: f4b3225b280e
+  hash: 380a9b360f88
   moved_from: check:03-ordered-rings:1
   verdicts:
   - stage: S5a
@@ -1364,7 +1364,7 @@ items:
   kind: exm
   file: 03-commutative-rings.md
   line: 172
-  hash: 38314c29832b
+  hash: 6581375170b2
   verdicts:
   - stage: S5a
     verdict: correct
@@ -1453,7 +1453,7 @@ items:
   kind: exr
   file: 03-commutative-rings.md
   line: 204
-  hash: 01f0d6312ae0
+  hash: 2f19740c6cd5
   verdicts:
   - stage: S5a
     verdict: minor
@@ -1534,7 +1534,7 @@ items:
   kind: exr
   file: 03-commutative-rings.md
   line: 254
-  hash: f91a68f2ad29
+  hash: 87a1aeb21f88
   verdicts:
   - stage: S5a
     verdict: minor
@@ -1835,7 +1835,7 @@ items:
   kind: proof
   file: 04-ordered-rings.md
   line: 203
-  hash: 926bf4c05d26
+  hash: 6abd62c96ebc
   verdicts:
   - stage: S5a
     verdict: correct
@@ -1931,7 +1931,7 @@ items:
   kind: check
   file: 04-ordered-rings.md
   line: 267
-  hash: 70947db2ff12
+  hash: 95871d25bcd1
   verdicts:
   - stage: S5a
     verdict: correct
@@ -1971,7 +1971,7 @@ items:
   kind: check
   file: 04-ordered-rings.md
   line: 275
-  hash: f11883b96749
+  hash: c1e6d5390590
   verdicts:
   - stage: S5a
     verdict: correct
@@ -2535,7 +2535,7 @@ items:
   kind: proof
   file: 05-division-with-remainder.md
   line: 101
-  hash: 41800524fab7
+  hash: 4d609edcedd9
   verdicts:
   - stage: S5a
     verdict: minor
@@ -2823,7 +2823,7 @@ items:
   kind: exr
   file: 05-division-with-remainder.md
   line: 239
-  hash: 08596efdf525
+  hash: 5bc9bfb28b83
   verdicts:
   - stage: S5a
     verdict: correct
@@ -2909,7 +2909,7 @@ items:
   kind: exr
   file: 05-division-with-remainder.md
   line: 300
-  hash: 0ed267dfb879
+  hash: 9a70104c1c4f
   verdicts:
   - stage: S5a
     verdict: correct
@@ -2967,7 +2967,7 @@ items:
   kind: exr
   file: 05-division-with-remainder.md
   line: 322
-  hash: 53c547b17944
+  hash: d62fe47518e8
   verdicts:
   - stage: S5a
     verdict: correct
@@ -3023,35 +3023,3 @@ items:
     model: claude-opus-5-5
     evidence: '3 > 0 by thm-integers-ordered-ring (b) before division by 3. The cases r = 1, 2: (3q+1)²
       = 3(3q²+2q)+1 and (3q+2)² = 3(3q²+4q+1)+1. Both are correct, and the sidecar runs.'
-- key: exr-division-with-remainder-c1
-  kind: exr
-  file: 05-division-with-remainder.md
-  line: 255
-  hash: f2b0357d8836
-  verdicts:
-  - stage: S5a
-    verdict: correct
-    by: refereeA
-    hash: f2b0357d8836
-    date: '2026-10-12'
-    model: claude-opus-5-5
-    evidence: '01:257-275. q<=a/n<q+1 multiplied by n>0 gives qn<=a<qn+n. Subtracting qn and transferring
-      back to Z by thm-rationals-ordered-field (b) is sound. The n<0 remark is correct: qn>=a>qn+n gives
-      n<r<=0.'
-  - stage: S5b
-    verdict: correct
-    by: refereeB
-    hash: f2b0357d8836
-    date: '2026-10-12'
-    model: claude-opus-5-5
-    evidence: '01:264-274: multiplying q ≤ a/n < q+1 by n > 0, then subtracting qn, and the n < 0 reversal
-      n < r ≤ 0 are all correct; the statement is well-posed.'
-  - stage: S6
-    verdict: correct
-    by: verifier
-    hash: f2b0357d8836
-    date: '2026-10-12'
-    model: claude-opus-5-5
-    evidence: 01:263-275. q<=a/n<q+1 multiplied by n>0, transferred back to Z by thm-rationals-ordered-field
-      (b). The use of n>0 is named; the n<0 aside (n<r<=0) is correct.
-  removed: true
