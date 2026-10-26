@@ -458,7 +458,7 @@ Let \( n \ge N_0 \). As \( n, n_0 \ge N_0 \), \( -\varepsilon/2 < a_n - a_{n_0} 
 - 2: obtains \( n_0 \ge N_0 \) with \( \abs{a_{n_0}} \ge \varepsilon \) from the negation applied **at** \( N_0 \).
 - 3: derives a one-signed bound \( a_n \ge c \) or \( a_n \le -c \), with some \( c \in F_{>0} \) (for example \( c = \varepsilon - \delta \)), for every \( n \ge N_0 \), in both sign cases.
 - 1: names \( c \) and \( N \) and concludes.
-A proof by contraposition (assume neither alternative holds for any \( c, N \); show the sequence null using the Cauchy condition at tolerance \( \varepsilon/2 \) and terms of each sign beyond \( N_0 \)) earns the same points, step for step: 2 for the negated conclusion, 2 for the Cauchy threshold, 2 for choosing the witnesses beyond \( N_0 \), 3 for the two-sided bound, 1 for concluding. A complete proof by contradiction likewise earns the same \( 2 + 2 + 2 + 3 + 1 \).
+A proof by contraposition (assume neither alternative holds for any \( c, N \); show the sequence null using the Cauchy condition at tolerance \( \varepsilon/2 \) and, beyond \( N_0 \), a term below \( \varepsilon/2 \) and a term above \( -\varepsilon/2 \)) earns the same points, step for step: 2 for the negated conclusion, 2 for the Cauchy threshold, 2 for choosing the witnesses beyond \( N_0 \), 3 for the two-sided bound, 1 for concluding. A complete proof by contradiction likewise earns the same \( 2 + 2 + 2 + 3 + 1 \).
 Fatal errors (0 for the step): an \( n_0 \) not known to satisfy \( n_0 \ge N_0 \), or "\( \abs{a_n} \ge \varepsilon \) for all large \( n \)" read off "not null" alone.
 :::
 
