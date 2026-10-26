@@ -4,7 +4,7 @@ items:
 - key: lem-field-fraction-rules
   kind: lem
   file: 01-rules-and-absolute-value.md
-  line: 21
+  line: 19
   hash: c8b27b2dadc4
   verdicts:
   - stage: S5a
@@ -27,8 +27,8 @@ items:
 - key: proof:lem-field-fraction-rules
   kind: proof
   file: 01-rules-and-absolute-value.md
-  line: 38
-  hash: ecbeef5994aa
+  line: 36
+  hash: ad9b89d46a96
   verdicts:
   - stage: S5a
     verdict: correct
@@ -50,7 +50,7 @@ items:
 - key: prp-ordered-field-halves
   kind: prp
   file: 01-rules-and-absolute-value.md
-  line: 75
+  line: 73
   hash: 0507f2dee094
   verdicts:
   - stage: S5a
@@ -82,8 +82,8 @@ items:
 - key: proof:prp-ordered-field-halves
   kind: proof
   file: 01-rules-and-absolute-value.md
-  line: 96
-  hash: 709a73435103
+  line: 94
+  hash: 1b59fa1db6ff
   verdicts:
   - stage: S5a
     verdict: minor
@@ -115,7 +115,7 @@ items:
 - key: def-absolute-value-ordered-field
   kind: def
   file: 01-rules-and-absolute-value.md
-  line: 125
+  line: 123
   hash: 4dc6750d083a
   verdicts:
   - stage: S5a
@@ -190,7 +190,7 @@ items:
   kind: proof
   file: 01-rules-and-absolute-value.md
   line: 164
-  hash: b0d4b418558f
+  hash: d46eb5b87e69
   verdicts:
   - stage: S5a
     verdict: minor
@@ -241,10 +241,16 @@ items:
     model: claude-opus-5-5
     evidence: 01:194-200. The first answer follows from (c) and (f) with transitivity. The counterexample
       a=0, b=1 gives 1 <= -1, which is false. The solution is a sibling block.
+- key: check:01-rules-and-absolute-value:2
+  kind: check
+  file: 01-rules-and-absolute-value.md
+  line: 204
+  hash: 5caa8d065aa8
+  verdicts: []
 - key: exr-rules-and-absolute-value-a1
   kind: exr
   file: 01-rules-and-absolute-value.md
-  line: 214
+  line: 218
   hash: 3d727ffea7d4
   verdicts:
   - stage: S5a
@@ -276,7 +282,7 @@ items:
 - key: exr-rules-and-absolute-value-b1
   kind: exr
   file: 01-rules-and-absolute-value.md
-  line: 239
+  line: 243
   hash: c17e22232935
   verdicts:
   - stage: S5a
@@ -304,43 +310,10 @@ items:
     evidence: 01:250-254. (a) goes ac<bc<=bd with b>0 from 0<=a<b. (b) applies halves (c) to the reciprocals
       and then (b^{-1})^{-1}=b. Matches my proof. Worked examples for this move are the proofs of halves
       (c) and (d), 01:106-108.
-- key: exr-rules-and-absolute-value-b2
-  kind: exr
-  file: 01-rules-and-absolute-value.md
-  line: 258
-  hash: 6f4c7019bb67
-  verdicts:
-  - stage: S5a
-    verdict: correct
-    by: refereeA
-    hash: 6f4c7019bb67
-    date: '2026-10-12'
-    model: claude-opus-5-5
-    evidence: 01:256-276. The numerals come from F3.2 multiples via sum law (h), and both directions are
-      reversible. The identities -5+3=-2, (-2)/2=-1 and 8=4*2, so 8/2=4, all hold. The answer -1<x<4 is
-      confirmed by the sidecar.
-  - stage: S5b
-    verdict: correct
-    by: refereeB
-    hash: 6f4c7019bb67
-    date: '2026-10-12'
-    model: claude-opus-5-5
-    evidence: 01:256-276. The numerals are justified by the sum law (h). The steps of adding 3 and multiplying
-      by 1/2 are stated as reversible. -5+3=-2 and 8/2=4 via 4(1+1) are correct. The answer -1<x<4 matches
-      the sidecar check.
-  - stage: S6
-    verdict: correct
-    by: verifier
-    hash: 6f4c7019bb67
-    date: '2026-10-12'
-    model: claude-opus-5-5
-    evidence: '01:262-276. The answer -1<x<4 matches mine and was checked on a 1/500 grid from -8 to 12
-      by script. The endpoint x=4 gives exactly 5. The numerals are justified by the sum law (h). Worked
-      example: 01:192 (|x-1/2|<1/4).'
 - key: exr-rules-and-absolute-value-b3
   kind: exr
   file: 01-rules-and-absolute-value.md
-  line: 280
+  line: 262
   hash: a3c9cd34c0f1
   verdicts:
   - stage: S5a
@@ -370,7 +343,7 @@ items:
 - key: exr-rules-and-absolute-value-c1
   kind: exr
   file: 01-rules-and-absolute-value.md
-  line: 299
+  line: 281
   hash: 4ca433754460
   verdicts:
   - stage: S5a
@@ -414,7 +387,7 @@ items:
 - key: exr-rules-and-absolute-value-c2
   kind: exr
   file: 01-rules-and-absolute-value.md
-  line: 335
+  line: 317
   hash: eb16ddde8dc5
   verdicts:
   - stage: S5a
@@ -444,7 +417,7 @@ items:
 - key: def-naturals-in-ordered-field
   kind: def
   file: 02-naturals-and-archimedes.md
-  line: 11
+  line: 9
   hash: 4e471ebd2d0f
   verdicts:
   - stage: S5a
@@ -512,7 +485,7 @@ items:
   kind: proof
   file: 02-naturals-and-archimedes.md
   line: 51
-  hash: e2432268c916
+  hash: 887f967d4d0a
   verdicts:
   - stage: S5a
     verdict: correct
@@ -545,10 +518,33 @@ items:
       equality holds. (b) (h) needs 1≠0, which the proof states. Trichotomy comes from thm-omega-order
       (a) and injectivity from (O1). The new clause ''1_F > 0 by @prp-ordered-ring-rules (e)'' is right:
       (e) says ''If 1≠0,'
+- key: check:02-naturals-and-archimedes:1
+  kind: check
+  file: 02-naturals-and-archimedes.md
+  line: 82
+  hash: 71de1c71ede6
+  verdicts:
+  - stage: S5a
+    verdict: correct
+    by: refereeA
+    hash: 617ffc6b0bb7
+    date: '2026-10-12'
+    model: claude-opus-5-5
+    evidence: '02:208-216: 113·3 = 339 < 355 < 452 = 113·4, so n = 4. 1/n < 7/500 iff 500 < 7n, so the
+      least n is 72 (7·71 = 497, 7·72 = 504). Sidecar def-archimedean-ordered-field.py ran ok.'
+  - stage: S5b
+    verdict: correct
+    by: refereeB
+    hash: 617ffc6b0bb7
+    date: '2026-10-12'
+    model: claude-opus-5-5
+    evidence: '02:208-216: 113·3 = 339 < 355 < 452 gives n = 4. 7·71 = 497 < 500 < 504 gives n = 72. The
+      comparison formula is applied with the right orientation. The sidecar def-archimedean-ordered-field.py
+      runs ok.'
 - key: thm-rationals-embed-ordered-field
   kind: thm
   file: 02-naturals-and-archimedes.md
-  line: 84
+  line: 96
   hash: c152a3fd9ed4
   verdicts:
   - stage: S5a
@@ -569,8 +565,8 @@ items:
 - key: proof:thm-rationals-embed-ordered-field
   kind: proof
   file: 02-naturals-and-archimedes.md
-  line: 101
-  hash: bdbd9f8a5ab7
+  line: 168
+  hash: d22ad23fe050
   verdicts:
   - stage: S5a
     verdict: correct
@@ -604,7 +600,7 @@ items:
 - key: def-archimedean-ordered-field
   kind: def
   file: 02-naturals-and-archimedes.md
-  line: 174
+  line: 192
   hash: ce5b27160f15
   verdicts:
   - stage: S5a
@@ -627,7 +623,7 @@ items:
 - key: prp-archimedean-reciprocal
   kind: prp
   file: 02-naturals-and-archimedes.md
-  line: 191
+  line: 209
   hash: 1905ff32b937
   verdicts:
   - stage: S5a
@@ -649,8 +645,8 @@ items:
 - key: proof:prp-archimedean-reciprocal
   kind: proof
   file: 02-naturals-and-archimedes.md
-  line: 200
-  hash: b30fbeaa7b2a
+  line: 218
+  hash: 175cf2fa56be
   verdicts:
   - stage: S5a
     verdict: correct
@@ -669,33 +665,16 @@ items:
     model: claude-opus-5-5
     evidence: '02:198-204: N ≠ 0 since 0·1_F = 0 < 1/ε. Then prp-naturals (b) or equality, prp-reciprocal-order
       (b), and lem-field-fraction-rules (a) for (ε^{-1})^{-1} = ε.'
-- key: check:02-naturals-and-archimedes:1
+- key: check:02-naturals-and-archimedes:2
   kind: check
   file: 02-naturals-and-archimedes.md
-  line: 210
+  line: 227
   hash: 617ffc6b0bb7
-  verdicts:
-  - stage: S5a
-    verdict: correct
-    by: refereeA
-    hash: 617ffc6b0bb7
-    date: '2026-10-12'
-    model: claude-opus-5-5
-    evidence: '02:208-216: 113·3 = 339 < 355 < 452 = 113·4, so n = 4. 1/n < 7/500 iff 500 < 7n, so the
-      least n is 72 (7·71 = 497, 7·72 = 504). Sidecar def-archimedean-ordered-field.py ran ok.'
-  - stage: S5b
-    verdict: correct
-    by: refereeB
-    hash: 617ffc6b0bb7
-    date: '2026-10-12'
-    model: claude-opus-5-5
-    evidence: '02:208-216: 113·3 = 339 < 355 < 452 gives n = 4. 7·71 = 497 < 500 < 504 gives n = 72. The
-      comparison formula is applied with the right orientation. The sidecar def-archimedean-ordered-field.py
-      runs ok.'
+  verdicts: []
 - key: prp-integer-part-ordered-field
   kind: prp
   file: 02-naturals-and-archimedes.md
-  line: 224
+  line: 241
   hash: 7c56c2757a67
   verdicts:
   - stage: S5a
@@ -727,7 +706,7 @@ items:
 - key: proof:prp-integer-part-ordered-field
   kind: proof
   file: 02-naturals-and-archimedes.md
-  line: 237
+  line: 254
   hash: fe4206641610
   verdicts:
   - stage: S5a
@@ -753,7 +732,7 @@ items:
 - key: thm-rationals-dense-ordered-field
   kind: thm
   file: 02-naturals-and-archimedes.md
-  line: 253
+  line: 270
   hash: 69065deabf0d
   verdicts:
   - stage: S5a
@@ -774,8 +753,8 @@ items:
 - key: proof:thm-rationals-dense-ordered-field
   kind: proof
   file: 02-naturals-and-archimedes.md
-  line: 263
-  hash: 16ea90eefd83
+  line: 280
+  hash: 49f58fb187dd
   verdicts:
   - stage: S5a
     verdict: correct
@@ -808,7 +787,7 @@ items:
 - key: exm-rational-function-field
   kind: exm
   file: 02-naturals-and-archimedes.md
-  line: 277
+  line: 294
   hash: a2bd8dd2d1b2
   verdicts:
   - stage: S5a
@@ -841,8 +820,8 @@ items:
 - key: exr-naturals-and-archimedes-a1
   kind: exr
   file: 02-naturals-and-archimedes.md
-  line: 303
-  hash: c9047406edf0
+  line: 324
+  hash: 39e74e899492
   verdicts:
   - stage: S5a
     verdict: correct
@@ -872,7 +851,7 @@ items:
 - key: exr-naturals-and-archimedes-b1
   kind: exr
   file: 02-naturals-and-archimedes.md
-  line: 329
+  line: 350
   hash: 868896645d84
   verdicts:
   - stage: S5a
@@ -901,8 +880,8 @@ items:
 - key: exr-naturals-and-archimedes-b2
   kind: exr
   file: 02-naturals-and-archimedes.md
-  line: 339
-  hash: 63b83895f1b6
+  line: 360
+  hash: 1ff09e56aba7
   verdicts:
   - stage: S5a
     verdict: minor
@@ -943,7 +922,7 @@ items:
 - key: exr-naturals-and-archimedes-b3
   kind: exr
   file: 02-naturals-and-archimedes.md
-  line: 354
+  line: 375
   hash: 218da0c95886
   verdicts:
   - stage: S5a
@@ -977,7 +956,7 @@ items:
 - key: exr-naturals-and-archimedes-c1
   kind: exr
   file: 02-naturals-and-archimedes.md
-  line: 387
+  line: 408
   hash: 42fedc44f99e
   verdicts:
   - stage: S5a
@@ -1032,8 +1011,8 @@ items:
 - key: exr-naturals-and-archimedes-c2
   kind: exr
   file: 02-naturals-and-archimedes.md
-  line: 429
-  hash: fcc108396c53
+  line: 449
+  hash: a57545dbf2c4
   verdicts:
   - stage: S5a
     verdict: correct
@@ -1073,53 +1052,10 @@ items:
       (a) t is an upper bound by the example. (b) The failing step is the representation x=p/q. ι(p)/ι(q)
       = ι(p/q), and t = ι(r) < ι(n) = n·1 would contradict (a). The claim that the rest of the proof of
       thm-ra'
-- key: exr-naturals-and-archimedes-c3
-  kind: exr
-  file: 02-naturals-and-archimedes.md
-  line: 452
-  hash: f6d5b8d1c164
-  verdicts:
-  - stage: S5a
-    verdict: correct
-    by: refereeA
-    hash: f6d5b8d1c164
-    date: '2026-10-12'
-    model: claude-opus-5-5
-    evidence: 02:468-474. prp-order-from-positives gives the converse direction (ch02/03:181), so P satisfies
-      P1 and P2 and ≺ is determined by P. ℤ_{>0} ⊆ P by prp-ordered-ring-rules (h) in (ℚ,≺); ℚ_{>0} ⊆
-      P by prp-reciprocal-order (a) in (ℚ,≺) and P1; P ⊆ ℚ_{>0} by P2. def-rational-order is a legitimate
-      F3.2 label.
-  - stage: S5b
-    verdict: correct
-    by: refereeB
-    hash: f6d5b8d1c164
-    date: '2026-10-12'
-    model: claude-opus-5-5
-    evidence: '02:449-482: the solution correctly uses the converse half of prp-order-from-positives,
-      prp-ordered-ring-rules (h) and prp-reciprocal-order (a) in (Q, ≺), and (P1)/(P2). The marking scheme
-      sums to 10.'
-  - stage: S6
-    verdict: minor
-    by: verifier
-    hash: f6d5b8d1c164
-    date: '2026-10-12'
-    model: claude-opus-5-5
-    evidence: 02-naturals-and-archimedes.md:476 The marking scheme gives almost no credit to a short correct
-      proof through the uniqueness of the embedding, because every item is tied to the positive-set route.
-  - stage: S7r
-    verdict: correct
-    by: rereferee
-    hash: f6d5b8d1c164
-    date: '2026-10-12'
-    model: claude-opus-5-5
-    evidence: 'The S6 finding is resolved. Line 482 adds full credit for the route through @thm-rationals-embed-ordered-field
-      with F=(Q,≺): 4 points for ι_F = id by uniqueness (the defining equations do not mention the order),
-      6 points for reading off the order. I checked that this route is valid: ι_F strictly increasing
-      gives x<y ⇒ x≺y, and order reflection gives the converse, so ≺ is <. The positive-set soluti'
 - key: def-sequence-ordered-field
   kind: def
   file: 03-limits.md
-  line: 13
+  line: 11
   hash: f988dcbb8aac
   verdicts:
   - stage: S5a
@@ -1153,7 +1089,7 @@ items:
 - key: def-sequence-limit-ordered-field
   kind: def
   file: 03-limits.md
-  line: 42
+  line: 44
   hash: 4c026131ee24
   verdicts:
   - stage: S5a
@@ -1237,7 +1173,7 @@ items:
 - key: def-null-sequence-ordered-field
   kind: def
   file: 03-limits.md
-  line: 121
+  line: 123
   hash: 22aa344a2039
   verdicts:
   - stage: S5a
@@ -1265,7 +1201,7 @@ items:
 - key: def-bounded-sequence-ordered-field
   kind: def
   file: 03-limits.md
-  line: 127
+  line: 129
   hash: 038a3246cfbe
   verdicts:
   - stage: S5a
@@ -1294,10 +1230,34 @@ items:
       for every x in Q there is n in N with x < n), and ledger 421 records it. |n| = n because n >= 0.
       The other examples are right: |c|+1 > 0 (ledger 422), and (-1)^n is bounded by 1 and not null by
       exm (d). Finding resolved.'
+- key: exm-limit-from-definition
+  kind: exm
+  file: 03-limits.md
+  line: 141
+  hash: 5c0ccc693f93
+  verdicts: []
+- key: exm-method-limit-from-definition
+  kind: exm
+  file: 03-limits.md
+  line: 182
+  hash: 611b05a5dfb4
+  verdicts: []
+- key: exm-limit-alternating-numerator
+  kind: exm
+  file: 03-limits.md
+  line: 192
+  hash: aa9bf3aa3810
+  verdicts: []
+- key: check:03-limits:2
+  kind: check
+  file: 03-limits.md
+  line: 212
+  hash: ea0a1a82f9eb
+  verdicts: []
 - key: prp-reciprocals-null-iff-archimedean
   kind: prp
   file: 03-limits.md
-  line: 139
+  line: 224
   hash: 04a9f23b260f
   verdicts:
   - stage: S5a
@@ -1330,7 +1290,7 @@ items:
 - key: proof:prp-reciprocals-null-iff-archimedean
   kind: proof
   file: 03-limits.md
-  line: 149
+  line: 234
   hash: 1960a5cbce8d
   verdicts:
   - stage: S5a
@@ -1364,7 +1324,7 @@ items:
 - key: prp-tail-change-ordered-field
   kind: prp
   file: 03-limits.md
-  line: 173
+  line: 258
   hash: a1571089dd17
   verdicts:
   - stage: S5a
@@ -1385,8 +1345,8 @@ items:
 - key: proof:prp-tail-change-ordered-field
   kind: proof
   file: 03-limits.md
-  line: 188
-  hash: 72ee5d4b5851
+  line: 273
+  hash: 955aa9454187
   verdicts:
   - stage: S5a
     verdict: correct
@@ -1410,7 +1370,7 @@ items:
 - key: prp-limit-null-shift-ordered-field
   kind: prp
   file: 03-limits.md
-  line: 206
+  line: 293
   hash: 65ea1b1f6fd3
   verdicts:
   - stage: S5a
@@ -1430,7 +1390,7 @@ items:
 - key: proof:prp-limit-null-shift-ordered-field
   kind: proof
   file: 03-limits.md
-  line: 212
+  line: 299
   hash: 53bb2659e96f
   verdicts:
   - stage: S5a
@@ -1450,7 +1410,7 @@ items:
 - key: thm-limit-unique-ordered-field
   kind: thm
   file: 03-limits.md
-  line: 220
+  line: 307
   hash: b87c05b1ddac
   verdicts:
   - stage: S5a
@@ -1471,8 +1431,8 @@ items:
 - key: proof:thm-limit-unique-ordered-field
   kind: proof
   file: 03-limits.md
-  line: 232
-  hash: a27ab56e5402
+  line: 319
+  hash: 03d6b41f059b
   verdicts:
   - stage: S5a
     verdict: correct
@@ -1496,7 +1456,7 @@ items:
 - key: prp-convergent-bounded-ordered-field
   kind: prp
   file: 03-limits.md
-  line: 254
+  line: 337
   hash: 2ced4fc463fd
   verdicts:
   - stage: S5a
@@ -1516,7 +1476,7 @@ items:
 - key: proof:prp-convergent-bounded-ordered-field
   kind: proof
   file: 03-limits.md
-  line: 264
+  line: 347
   hash: 8a5f6f49526e
   verdicts:
   - stage: S5a
@@ -1550,8 +1510,8 @@ items:
 - key: exr-limits-a1
   kind: exr
   file: 03-limits.md
-  line: 282
-  hash: 3a38c78f7e4e
+  line: 365
+  hash: 44be270b794c
   verdicts:
   - stage: S5a
     verdict: minor
@@ -1592,8 +1552,8 @@ items:
 - key: exr-limits-b1
   kind: exr
   file: 03-limits.md
-  line: 305
-  hash: 8c4384dde8fd
+  line: 388
+  hash: 1b71d7ccc1a7
   verdicts:
   - stage: S5a
     verdict: minor
@@ -1647,7 +1607,7 @@ items:
 - key: exr-limits-b2
   kind: exr
   file: 03-limits.md
-  line: 331
+  line: 409
   hash: 8a76b7387864
   verdicts:
   - stage: S5a
@@ -1677,7 +1637,7 @@ items:
 - key: exr-limits-b3
   kind: exr
   file: 03-limits.md
-  line: 349
+  line: 427
   hash: 3ccbb75e83d7
   verdicts:
   - stage: S5a
@@ -1716,10 +1676,16 @@ items:
       The divergence argument with eps = 1/2 gives 1 < 1. The Q part points to the non-example. On the
       STATUS half of the old finding: §03 opens no prose pointer to F4.4. Its ledger lines 424/425/433
       are flagged school-fac'
+- key: exr-limits-b4
+  kind: exr
+  file: 03-limits.md
+  line: 445
+  hash: b5a88c940a1c
+  verdicts: []
 - key: exr-limits-c1
   kind: exr
   file: 03-limits.md
-  line: 369
+  line: 476
   hash: d9374d3302a3
   verdicts:
   - stage: S5a
@@ -1750,8 +1716,8 @@ items:
 - key: exr-limits-c2
   kind: exr
   file: 03-limits.md
-  line: 388
-  hash: a04775bffa95
+  line: 495
+  hash: 4f50e8c4415d
   verdicts:
   - stage: S5a
     verdict: correct
@@ -1793,7 +1759,7 @@ items:
 - key: prp-null-times-bounded-ordered-field
   kind: prp
   file: 04-limit-laws.md
-  line: 13
+  line: 11
   hash: 465b752f902d
   verdicts:
   - stage: S5a
@@ -1815,8 +1781,8 @@ items:
 - key: proof:prp-null-times-bounded-ordered-field
   kind: proof
   file: 04-limit-laws.md
-  line: 19
-  hash: b379e0350fa8
+  line: 17
+  hash: bd223ac8c510
   verdicts:
   - stage: S5a
     verdict: correct
@@ -1839,7 +1805,7 @@ items:
 - key: lem-limit-bounded-away-ordered-field
   kind: lem
   file: 04-limit-laws.md
-  line: 31
+  line: 29
   hash: 5fd64bd33967
   verdicts:
   - stage: S5a
@@ -1872,7 +1838,7 @@ items:
 - key: proof:lem-limit-bounded-away-ordered-field
   kind: proof
   file: 04-limit-laws.md
-  line: 37
+  line: 35
   hash: 0817cec98e4e
   verdicts:
   - stage: S5a
@@ -1906,7 +1872,7 @@ items:
 - key: thm-limit-laws-ordered-field
   kind: thm
   file: 04-limit-laws.md
-  line: 49
+  line: 47
   hash: 1d15e163916c
   verdicts:
   - stage: S5a
@@ -1928,8 +1894,8 @@ items:
 - key: proof:thm-limit-laws-ordered-field
   kind: proof
   file: 04-limit-laws.md
-  line: 70
-  hash: 11ce8785a9cc
+  line: 68
+  hash: 35f44b918da6
   verdicts:
   - stage: S5a
     verdict: correct
@@ -1974,7 +1940,7 @@ items:
 - key: check:04-limit-laws:1
   kind: check
   file: 04-limit-laws.md
-  line: 123
+  line: 118
   hash: b453c2e703e2
   verdicts:
   - stage: S5a
@@ -2007,7 +1973,7 @@ items:
 - key: prp-limit-preserves-order-ordered-field
   kind: prp
   file: 04-limit-laws.md
-  line: 139
+  line: 134
   hash: 9937ff712806
   verdicts:
   - stage: S5a
@@ -2030,8 +1996,8 @@ items:
 - key: proof:prp-limit-preserves-order-ordered-field
   kind: proof
   file: 04-limit-laws.md
-  line: 155
-  hash: bbc9d1d0cb93
+  line: 150
+  hash: 20b601320423
   verdicts:
   - stage: S5a
     verdict: correct
@@ -2061,10 +2027,16 @@ items:
       b+eps > b_n, with the algebra displayed at :173 and ledgered, and the contradiction then uses (O1).
       (b) applies (a) with the constant sequence (exm (a)). (c): the strict and weak chain gives |c_n-a|<eps
       by (d). Th'
+- key: check:04-limit-laws:2
+  kind: check
+  file: 04-limit-laws.md
+  line: 176
+  hash: c572ad546430
+  verdicts: []
 - key: exr-limit-laws-a1
   kind: exr
   file: 04-limit-laws.md
-  line: 185
+  line: 188
   hash: f00db2e38660
   verdicts:
   - stage: S5a
@@ -2096,7 +2068,7 @@ items:
 - key: exr-limit-laws-b1
   kind: exr
   file: 04-limit-laws.md
-  line: 213
+  line: 216
   hash: 118b889cd2fb
   verdicts:
   - stage: S5a
@@ -2136,7 +2108,7 @@ items:
 - key: exr-limit-laws-b2
   kind: exr
   file: 04-limit-laws.md
-  line: 239
+  line: 242
   hash: c54fc9a5b57a
   verdicts:
   - stage: S5a
@@ -2169,7 +2141,7 @@ items:
 - key: exr-limit-laws-b3
   kind: exr
   file: 04-limit-laws.md
-  line: 269
+  line: 272
   hash: 311202c991f7
   verdicts:
   - stage: S5a
@@ -2199,8 +2171,8 @@ items:
 - key: exr-limit-laws-c1
   kind: exr
   file: 04-limit-laws.md
-  line: 293
-  hash: 77055f782ccf
+  line: 296
+  hash: f64a8e99c0ef
   verdicts:
   - stage: S5a
     verdict: minor
@@ -2241,7 +2213,7 @@ items:
 - key: exr-limit-laws-c2
   kind: exr
   file: 04-limit-laws.md
-  line: 327
+  line: 330
   hash: 5f92b75fad28
   verdicts:
   - stage: S5a
@@ -2284,7 +2256,7 @@ items:
 - key: def-cauchy-sequence-ordered-field
   kind: def
   file: 05-cauchy-sequences.md
-  line: 17
+  line: 15
   hash: d28211bbe31b
   verdicts:
   - stage: S5a
@@ -2341,7 +2313,7 @@ items:
   kind: proof
   file: 05-cauchy-sequences.md
   line: 75
-  hash: 5740f95ef87a
+  hash: 4c0c4d83839a
   verdicts:
   - stage: S5a
     verdict: correct
@@ -2364,7 +2336,7 @@ items:
   kind: check
   file: 05-cauchy-sequences.md
   line: 85
-  hash: 4b6ec5711b11
+  hash: 8f50747cd7cf
   verdicts:
   - stage: S5a
     verdict: correct
@@ -2409,7 +2381,7 @@ items:
   kind: proof
   file: 05-cauchy-sequences.md
   line: 105
-  hash: b6a1bb48d4cc
+  hash: 9fbbadff7041
   verdicts:
   - stage: S5a
     verdict: correct
@@ -2455,7 +2427,7 @@ items:
   kind: proof
   file: 05-cauchy-sequences.md
   line: 139
-  hash: 67a39b6e36cc
+  hash: 38e453d8ff36
   verdicts:
   - stage: S5a
     verdict: correct
@@ -2500,7 +2472,7 @@ items:
 - key: thm-cauchy-not-null-sign
   kind: thm
   file: 05-cauchy-sequences.md
-  line: 184
+  line: 179
   hash: 721dd4860bf4
   verdicts:
   - stage: S5a
@@ -2524,8 +2496,8 @@ items:
 - key: proof:thm-cauchy-not-null-sign
   kind: proof
   file: 05-cauchy-sequences.md
-  line: 204
-  hash: 528c730663c8
+  line: 199
+  hash: df92144cb453
   verdicts:
   - stage: S5a
     verdict: correct
@@ -2558,10 +2530,16 @@ items:
       laws, which exist in fd1/src/ch04-predicate-logic/09-quantifier-laws.md, with (O1). The split of
       the absolute value (:208) is by def-absolute-value-ordered-field and ordered-ring-rules (a). The
       two-sided b'
+- key: check:05-cauchy-sequences:2
+  kind: check
+  file: 05-cauchy-sequences.md
+  line: 226
+  hash: d54cff3dd9f2
+  verdicts: []
 - key: prp-sign-stable-ordered-field
   kind: prp
   file: 05-cauchy-sequences.md
-  line: 235
+  line: 238
   hash: 0de23305f0fa
   verdicts:
   - stage: S5a
@@ -2583,8 +2561,8 @@ items:
 - key: proof:prp-sign-stable-ordered-field
   kind: proof
   file: 05-cauchy-sequences.md
-  line: 241
-  hash: 6a1406535f50
+  line: 244
+  hash: 8faf0ba328ee
   verdicts:
   - stage: S5a
     verdict: correct
@@ -2615,7 +2593,7 @@ items:
 - key: prp-cauchy-reciprocal-ordered-field
   kind: prp
   file: 05-cauchy-sequences.md
-  line: 251
+  line: 254
   hash: b269690a182c
   verdicts:
   - stage: S5a
@@ -2637,8 +2615,8 @@ items:
 - key: proof:prp-cauchy-reciprocal-ordered-field
   kind: proof
   file: 05-cauchy-sequences.md
-  line: 265
-  hash: d738c1eb8f7f
+  line: 268
+  hash: bad5a4a22aa4
   verdicts:
   - stage: S5a
     verdict: correct
@@ -2672,8 +2650,8 @@ items:
 - key: exm-consecutive-differences-not-cauchy
   kind: exm
   file: 05-cauchy-sequences.md
-  line: 291
-  hash: eb9cbc82bc15
+  line: 294
+  hash: 9f8eaf6fbb1e
   verdicts:
   - stage: S5a
     verdict: correct
@@ -2720,8 +2698,8 @@ items:
 - key: exr-cauchy-sequences-a1
   kind: exr
   file: 05-cauchy-sequences.md
-  line: 330
-  hash: 8173fdbd8d5a
+  line: 333
+  hash: 882ab6a81983
   verdicts:
   - stage: S5a
     verdict: correct
@@ -2886,7 +2864,7 @@ items:
   kind: exr
   file: 05-cauchy-sequences.md
   line: 438
-  hash: 8f7690307098
+  hash: 0a4b399bea36
   verdicts:
   - stage: S5a
     verdict: correct
@@ -2972,7 +2950,7 @@ items:
 - key: thm-sqrt2-cauchy-no-rational-limit
   kind: thm
   file: 06-a-cauchy-sequence-without-a-limit.md
-  line: 36
+  line: 34
   hash: faaf495564eb
   verdicts:
   - stage: S5a
@@ -2998,8 +2976,8 @@ items:
 - key: proof:thm-sqrt2-cauchy-no-rational-limit
   kind: proof
   file: 06-a-cauchy-sequence-without-a-limit.md
-  line: 50
-  hash: f3efc4c6fcd7
+  line: 48
+  hash: a6410cbbbae2
   verdicts:
   - stage: S5a
     verdict: minor
@@ -3032,7 +3010,7 @@ items:
 - key: check:06-a-cauchy-sequence-without-a-limit:1
   kind: check
   file: 06-a-cauchy-sequence-without-a-limit.md
-  line: 100
+  line: 98
   hash: f51db8bba462
   verdicts:
   - stage: S5a
@@ -3051,10 +3029,16 @@ items:
     model: claude-opus-5-5
     evidence: '06:98-104: upper bound 2 comes from (iv) with n=0, lower bound 1 from (iii). The remark
       that x_m > 2/x_1 = 4/3 for m >= 1 follows from the (vi) argument, and x_0 = 2 > 4/3.'
+- key: check:06-a-cauchy-sequence-without-a-limit:2
+  kind: check
+  file: 06-a-cauchy-sequence-without-a-limit.md
+  line: 106
+  hash: 1faca1364dda
+  verdicts: []
 - key: exr-a-cauchy-sequence-without-a-limit-a1
   kind: exr
   file: 06-a-cauchy-sequence-without-a-limit.md
-  line: 124
+  line: 130
   hash: 42ad2b54a43e
   verdicts:
   - stage: S5a
@@ -3086,7 +3070,7 @@ items:
 - key: exr-a-cauchy-sequence-without-a-limit-b1
   kind: exr
   file: 06-a-cauchy-sequence-without-a-limit.md
-  line: 156
+  line: 162
   hash: 0298a0cb076c
   verdicts:
   - stage: S5a
@@ -3129,7 +3113,7 @@ items:
 - key: exr-a-cauchy-sequence-without-a-limit-b2
   kind: exr
   file: 06-a-cauchy-sequence-without-a-limit.md
-  line: 172
+  line: 178
   hash: 20b080487efd
   verdicts:
   - stage: S5a
@@ -3181,7 +3165,7 @@ items:
 - key: exr-a-cauchy-sequence-without-a-limit-c1
   kind: exr
   file: 06-a-cauchy-sequence-without-a-limit.md
-  line: 190
+  line: 196
   hash: 0f8dc0aa8245
   verdicts:
   - stage: S5a
@@ -3225,7 +3209,7 @@ items:
 - key: exr-a-cauchy-sequence-without-a-limit-c2
   kind: exr
   file: 06-a-cauchy-sequence-without-a-limit.md
-  line: 259
+  line: 265
   hash: c851a693cbb2
   verdicts:
   - stage: S5a
@@ -3258,8 +3242,8 @@ items:
 - key: exr-a-cauchy-sequence-without-a-limit-r1
   kind: exr
   file: 06-a-cauchy-sequence-without-a-limit.md
-  line: 279
-  hash: b229f254e34f
+  line: 285
+  hash: 761880cc8d3f
   verdicts:
   - stage: S5a
     verdict: gap
@@ -3315,7 +3299,7 @@ items:
 - key: exr-a-cauchy-sequence-without-a-limit-r2
   kind: exr
   file: 06-a-cauchy-sequence-without-a-limit.md
-  line: 301
+  line: 295
   hash: 26dc14235c35
   verdicts:
   - stage: S5a
@@ -3367,8 +3351,8 @@ items:
 - key: exr-a-cauchy-sequence-without-a-limit-r3
   kind: exr
   file: 06-a-cauchy-sequence-without-a-limit.md
-  line: 323
-  hash: 39a3ce841109
+  line: 317
+  hash: 46550b580e9e
   verdicts:
   - stage: S5a
     verdict: correct
@@ -3422,7 +3406,7 @@ items:
 - key: exr-a-cauchy-sequence-without-a-limit-r4
   kind: exr
   file: 06-a-cauchy-sequence-without-a-limit.md
-  line: 350
+  line: 344
   hash: d1e5e4ac1691
   verdicts:
   - stage: S5a
@@ -3453,3 +3437,81 @@ items:
     evidence: 06:356-366. I answered Yes independently by the same factorization. lem-limit-bounded-away
       with b=2 gives a_n^2>1, so a_n>1 and |a_n-a_m|<=|a_n^2-a_m^2|/2. (a_n^2) is Cauchy. The look-alike
       tools are discussed, and the source is hidden in the problem text.
+- key: exr-rules-and-absolute-value-b2
+  kind: exr
+  file: 01-rules-and-absolute-value.md
+  line: 258
+  hash: 6f4c7019bb67
+  verdicts:
+  - stage: S5a
+    verdict: correct
+    by: refereeA
+    hash: 6f4c7019bb67
+    date: '2026-10-12'
+    model: claude-opus-5-5
+    evidence: 01:256-276. The numerals come from F3.2 multiples via sum law (h), and both directions are
+      reversible. The identities -5+3=-2, (-2)/2=-1 and 8=4*2, so 8/2=4, all hold. The answer -1<x<4 is
+      confirmed by the sidecar.
+  - stage: S5b
+    verdict: correct
+    by: refereeB
+    hash: 6f4c7019bb67
+    date: '2026-10-12'
+    model: claude-opus-5-5
+    evidence: 01:256-276. The numerals are justified by the sum law (h). The steps of adding 3 and multiplying
+      by 1/2 are stated as reversible. -5+3=-2 and 8/2=4 via 4(1+1) are correct. The answer -1<x<4 matches
+      the sidecar check.
+  - stage: S6
+    verdict: correct
+    by: verifier
+    hash: 6f4c7019bb67
+    date: '2026-10-12'
+    model: claude-opus-5-5
+    evidence: '01:262-276. The answer -1<x<4 matches mine and was checked on a 1/500 grid from -8 to 12
+      by script. The endpoint x=4 gives exactly 5. The numerals are justified by the sum law (h). Worked
+      example: 01:192 (|x-1/2|<1/4).'
+  removed: true
+- key: exr-naturals-and-archimedes-c3
+  kind: exr
+  file: 02-naturals-and-archimedes.md
+  line: 452
+  hash: f6d5b8d1c164
+  verdicts:
+  - stage: S5a
+    verdict: correct
+    by: refereeA
+    hash: f6d5b8d1c164
+    date: '2026-10-12'
+    model: claude-opus-5-5
+    evidence: 02:468-474. prp-order-from-positives gives the converse direction (ch02/03:181), so P satisfies
+      P1 and P2 and ≺ is determined by P. ℤ_{>0} ⊆ P by prp-ordered-ring-rules (h) in (ℚ,≺); ℚ_{>0} ⊆
+      P by prp-reciprocal-order (a) in (ℚ,≺) and P1; P ⊆ ℚ_{>0} by P2. def-rational-order is a legitimate
+      F3.2 label.
+  - stage: S5b
+    verdict: correct
+    by: refereeB
+    hash: f6d5b8d1c164
+    date: '2026-10-12'
+    model: claude-opus-5-5
+    evidence: '02:449-482: the solution correctly uses the converse half of prp-order-from-positives,
+      prp-ordered-ring-rules (h) and prp-reciprocal-order (a) in (Q, ≺), and (P1)/(P2). The marking scheme
+      sums to 10.'
+  - stage: S6
+    verdict: minor
+    by: verifier
+    hash: f6d5b8d1c164
+    date: '2026-10-12'
+    model: claude-opus-5-5
+    evidence: 02-naturals-and-archimedes.md:476 The marking scheme gives almost no credit to a short correct
+      proof through the uniqueness of the embedding, because every item is tied to the positive-set route.
+  - stage: S7r
+    verdict: correct
+    by: rereferee
+    hash: f6d5b8d1c164
+    date: '2026-10-12'
+    model: claude-opus-5-5
+    evidence: 'The S6 finding is resolved. Line 482 adds full credit for the route through @thm-rationals-embed-ordered-field
+      with F=(Q,≺): 4 points for ι_F = id by uniqueness (the defining equations do not mention the order),
+      6 points for reading off the order. I checked that this route is valid: ι_F strictly increasing
+      gives x<y ⇒ x≺y, and order reflection gives the converse, so ≺ is <. The positive-set soluti'
+  removed: true

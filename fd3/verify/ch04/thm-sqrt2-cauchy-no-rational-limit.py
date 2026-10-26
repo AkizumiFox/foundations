@@ -1,7 +1,8 @@
 """thm-sqrt2-cauchy-no-rational-limit: x_0..x_3 = 2, 3/2, 17/12, 577/408; e_0..e_3 = 2, 1/4, 1/144, 1/166464;
 e_n <= 1/(4n) for n >= 1 (checked exactly for n <= 9) with e_2 <= 1/8, e_3 <= 1/12; x_n > 1; decreasing;
 (vi) 0 <= x_n - x_m <= e_n/x_n <= e_n <= 1/(4n) for m >= n >= 1; integer facts 4(n+1) <= 128n,
-n + 1 <= 4n (n >= 1); e_n/32 <= 1/(128 n) chain; Cauchy threshold: 1/(4k) <= 1/(4N) <= 1/N."""
+n + 1 <= 4n (n >= 1); e_n/32 <= 1/(128 n) chain; Cauchy threshold: 1/(4k) <= 1/(4N) <= 1/N.
+Quick check: eps = 1/100, least N in Z_{>0} with 1/N < eps is 101 (with 1/(4N) < eps it would be 26)."""
 from fractions import Fraction as F
 QUOTED = {"x": [F(2), F(3, 2), F(17, 12), F(577, 408)],
           "e": [F(2), F(1, 4), F(1, 144), F(1, 166464)],
@@ -34,4 +35,7 @@ for n in range(1, 10000):
 for N in range(1, 200):
     for k in range(N, N + 50):
         assert F(1, 4*k) <= F(1, 4*N) <= F(1, N)
+eps = F(1, 100)
+assert min(N for N in range(1, 1000) if F(1, N) < eps) == 101
+assert min(N for N in range(1, 1000) if F(1, 4*N) < eps) == 26 < 101
 print("ok")

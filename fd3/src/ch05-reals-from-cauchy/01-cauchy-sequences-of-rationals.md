@@ -1,7 +1,5 @@
 # Sequences That Should Converge
 
-<!-- S3: style revision per S1 change list (layout-proposal.md §3, 5.1, pipeline S): shrink the truncation construction to a sketch or an exercise. -->
-
 Chapter 4 ended with a rational sequence that is Cauchy in \( \nQ \) and converges to no rational (@thm-sqrt2-cauchy-no-rational-limit). Its terms crowd around a place where \( \nQ \) has a hole. This chapter builds the number that belongs in the hole, and the first step is to notice that many different sequences crowd around the same hole. This section sets up the raw material, the set \( \sC \) of Cauchy sequences of rationals, and the relation that will decide when two of them aim at the same number: their difference dies out. Nothing about real numbers is assumed. Every tolerance, bound and threshold in this section is a rational number.
 
 ## Two sequences aimed at one hole
@@ -22,16 +20,18 @@ From (NS1) and (NS2), \( 0 < x_n^2 - 2 \le 1/(4n) \) for every \( n \ge 1 \). At
 
 The second sequence approaches the hole from below, by decimal truncation. To define it inside \( \nQ \), without the school decimals, we need powers of ten.
 
-**Powers of ten.** For \( k \in \nN \), \( 10^k \) is the power in the ordered field \( \nQ \) of @def-naturals-in-ordered-field (b): \( 10^0 = 1 \) and \( 10^{k+1} = 10^k \cdot 10 \). (Here \( 10 = 10 \cdot 1_{\nQ} \), by the identification \( \nN \subseteq \nZ \subseteq \nQ \) of Chapters 2 and 3 and @prp-naturals-in-ordered-field (d).) Two facts about it are used below, both by induction (@fd1:ax-induction, read on \( \nN = \omega \) through @cor-omega-identification (b)) with base \( P(0) \).
-
-- \( 10^k \in \nZ \). Base: \( 10^0 = 1 \in \nZ \). Step: if \( 10^k \in \nZ \), then \( 10^{k+1} = 10^k \cdot 10 \) is a product of two integers, and products of integers computed in \( \nQ \) are integers (@prp-integers-embed-rationals: \( j(m) j(n) = j(mn) \)).
-- \( 10^k \ge k + 1 \). Base: \( 10^0 = 1 = 0 + 1 \). Step: suppose \( 10^k \ge y \), where \( y \coloneqq k + 1 \). Then \( y \ge 1 \) (@prp-naturals-in-ordered-field (b)), and multiplying by \( 10 > 0 \) gives \( 10^{k+1} = 10^k \cdot 10 \ge 10y \) (by @prp-ordered-ring-rules (c) if \( 10^k > y \); trivially if \( 10^k = y \)). Moreover \( 10y - (y + 1) = 9y - 1 \ge 9 - 1 > 0 \). So \( 10^{k+1} > y + 1 = k + 2 \), where \( (k + 1) + 1 = k + 2 \) is arithmetic in \( \nN \) (@thm-omega-arithmetic-laws), carried into \( \nQ \) by the sum law of @prp-naturals-in-ordered-field (a).
-
-In particular \( 10^k \ge 1 > 0 \), so \( 1/10^k > 0 \) (@prp-reciprocal-order (a)), and @prp-ordered-field-halves (c), applied to \( 0 < k + 1 \le 10^k \), gives \( 1/10^k \le 1/(k + 1) \). Together,
+**Powers of ten.** For \( k \in \nN \), \( 10^k \) is the power in the ordered field \( \nQ \) of @def-naturals-in-ordered-field (b), with \( 10^0 = 1 \) and \( 10^{k+1} = 10^k \cdot 10 \). (Here \( 10 = 10 \cdot 1_{\nQ} \), by the identification \( \nN \subseteq \nZ \subseteq \nQ \) of Chapters 2 and 3 and @prp-naturals-in-ordered-field (d).) Two inductions, in the fold below, show that \( 10^k \in \nZ \) and \( 10^k \ge k + 1 \). In particular \( 10^k \ge 1 > 0 \), so \( 1/10^k > 0 \) (@prp-reciprocal-order (a)), and @prp-ordered-field-halves (c), applied to \( 0 < k + 1 \le 10^k \), gives \( 1/10^k \le 1/(k + 1) \). Together,
 \[
 0 < \frac{1}{10^k} \le \frac{1}{k + 1} \qquad (k \in \nN) .
 \]{#eq-ten-power-reciprocal}
 The inequality is not strict at \( k = 0 \), where both sides are \( 1 \). We write \( 1/10^k \) throughout; negative powers have not been defined.
+
+::: {.second-reading title="Two facts about powers of ten"}
+Both are proved by induction (@fd1:ax-induction, read on \( \nN \) through @cor-omega-identification (b)) with base \( P(0) \).
+
+- **\( 10^k \in \nZ \).** Base: \( 10^0 = 1 \in \nZ \). Step: if \( 10^k \in \nZ \), then \( 10^{k+1} = 10^k \cdot 10 \) is a product of two integers, and products of integers computed in \( \nQ \) are integers (@prp-integers-embed-rationals: \( j(m) j(n) = j(mn) \)).
+- **\( 10^k \ge k + 1 \).** Base: \( 10^0 = 1 = 0 + 1 \). Step: suppose \( 10^k \ge y \), where \( y \coloneqq k + 1 \). Then \( y \ge 1 \) (@prp-naturals-in-ordered-field (b)), and multiplying by \( 10 > 0 \) gives \( 10^{k+1} = 10^k \cdot 10 \ge 10y \) (by @prp-ordered-ring-rules (c) if \( 10^k > y \); trivially if \( 10^k = y \)). Moreover \( 10y - (y + 1) = 9y - 1 \ge 9 - 1 > 0 \). So \( 10^{k+1} > y + 1 = k + 2 \), where \( (k + 1) + 1 = k + 2 \) is arithmetic in \( \nN \) (@thm-omega-arithmetic-laws), carried into \( \nQ \) by the sum law of @prp-naturals-in-ordered-field (a).
+:::
 
 **The truncations.** For \( k \in \nN \), let \( m_k \) be the **largest** natural number \( m \) with
 \[
@@ -39,11 +39,15 @@ m^2 \le 2 \cdot (10^k)^2 ,
 \]
 and let \( d_k \coloneqq m_k / 10^k \). In school terms, \( d_k \) is \( \sqrt 2 \) cut off after \( k \) decimal places; but the definition mentions only integers and the rational \( 10^k \).
 
-That such a largest \( m \) exists, and is unique, is a fact about sets of integers. Let
+That such a largest \( m \) exists, and is unique, is a fact about sets of integers (@prp-integer-least-element), checked in the fold below. Because exactly one number is described for each \( k \), \( k \mapsto d_k \) is a function \( \nN \to \nQ \) (@fd2:def-function), with no choices made.
+
+::: {.second-reading title="Why the largest *m* exists"}
+Let
 \[
 S_k \coloneqq \{ m \in \nZ : m \ge 0 \text{ and } m^2 > 2 \cdot (10^k)^2 \} .
 \]
-It is bounded below by \( 0 \), and it is non-empty: \( 2 \cdot 10^k \) is a non-negative integer, and \( (2 \cdot 10^k)^2 = 4 (10^k)^2 > 2 (10^k)^2 \) because \( (10^k)^2 > 0 \). By @prp-integer-least-element, \( S_k \) has a least element \( m^\ast \). Since \( 0^2 = 0 \le 2 (10^k)^2 \), \( 0 \notin S_k \), so \( m^\ast \ge 1 \) by discreteness (@thm-integers-ordered-ring (c)), hence \( m_k \coloneqq m^\ast - 1 \ge 0 \) is a natural number (@thm-integers-ordered-ring (b)). It is not in \( S_k \), being smaller than the least element, so \( m_k^2 \le 2 (10^k)^2 \). Every natural number \( m > m_k \) satisfies \( m \ge m^\ast \) (discreteness again), so \( m^2 \ge (m^\ast)^2 > 2 (10^k)^2 \) (by @prp-ordered-ring-rules (g) if \( m > m^\ast \); trivially if \( m = m^\ast \)). So \( m_k \) is the largest natural number with \( m^2 \le 2 (10^k)^2 \), and there is exactly one. Because the description singles out one number for each \( k \), the rule \( k \mapsto d_k \) is a function \( \nN \to \nQ \) (@fd2:def-function), with no choices made.
+It is bounded below by \( 0 \), and it is non-empty: \( 2 \cdot 10^k \) is a non-negative integer, and \( (2 \cdot 10^k)^2 = 4 (10^k)^2 > 2 (10^k)^2 \) because \( (10^k)^2 > 0 \). By @prp-integer-least-element, \( S_k \) has a least element \( m^\ast \). Since \( 0^2 = 0 \le 2 (10^k)^2 \), \( 0 \notin S_k \), so \( m^\ast \ge 1 \) by discreteness (@thm-integers-ordered-ring (c)), hence \( m_k \coloneqq m^\ast - 1 \ge 0 \) is a natural number (@thm-integers-ordered-ring (b)). It is not in \( S_k \), being smaller than the least element, so \( m_k^2 \le 2 (10^k)^2 \). Every natural number \( m > m_k \) satisfies \( m \ge m^\ast \) (discreteness again), so \( m^2 \ge (m^\ast)^2 > 2 (10^k)^2 \) (by @prp-ordered-ring-rules (g) if \( m > m^\ast \); trivially if \( m = m^\ast \)). So \( m_k \) is the largest natural number with \( m^2 \le 2 (10^k)^2 \), and there is exactly one.
+:::
 
 The first values are:
 \[
@@ -147,7 +151,7 @@ so \( a - c = (a - b) + (b - c) \), a sum of two null sequences. By the sum rule
 This proves that \( \sim \) is an equivalence relation on \( \sC \).
 :::
 
-The answer to the prompt: transitivity uses the sum rule of the limit laws, @thm-limit-laws-ordered-field (a), and the triangle inequality is inside its proof, where \( \abs{(a_n - b_n) + (b_n - c_n)} \le \abs{a_n - b_n} + \abs{b_n - c_n} \) splits the tolerance into two halves. Written out directly: given \( \varepsilon \), take thresholds for \( a - b \) and \( b - c \) with tolerance \( \varepsilon/2 \), and their maximum serves \( a - c \).
+The answer to the prompt: transitivity uses the sum rule of the limit laws, @thm-limit-laws-ordered-field (a), and the triangle inequality is inside its proof, where \( \abs{(a_n - b_n) + (b_n - c_n)} \le \abs{a_n - b_n} + \abs{b_n - c_n} \) splits the tolerance into two halves. Written out directly: give \( a - b \) and \( b - c \) the tolerance \( \varepsilon/2 \) each, and take the larger threshold.
 
 By @fd2:thm-classes-partition, \( \sC \) now falls apart into disjoint classes, and two Cauchy sequences lie in the same class exactly when their difference is null. Section 5.2 takes these classes as the real numbers.
 
@@ -155,14 +159,22 @@ By @fd2:thm-classes-partition, \( \sC \) now falls apart into disjoint classes, 
 
 The two sequences of the hook are the first test of the definition.
 
-::: {#exm-truncations-equivalent}
-[The Truncations and the Newton Sequence Are Equivalent]
+**Three facts about the truncations.** The solution below rests on three properties of \( (d_k) \), proved in the fold that follows. For all \( k \in \nN \):
 
-Show that \( (d_k) \) is non-decreasing, that \( (d_k) \in \sC \), and that \( (d_k) \sim (x_k) \).
+::: {.enumerate options="label=(T\arabic*)"}
+1. \( (d_k) \) is non-decreasing: \( d_k \le d_j \) whenever \( j \ge k \); in particular \( d_k \ge d_0 = 1 \).
+
+2. \( d_k \le d_j < d_k + 1/10^k \) whenever \( j \ge k \), so that, with @eq-ten-power-reciprocal,
+
+   \[
+   0 \le d_j - d_k < \frac{1}{10^k} \le \frac{1}{k + 1} \qquad (j \ge k) .
+   \]{#eq-truncation-cauchy-bound}
+
+3. \( 0 \le 2 - d_k^2 < 5/10^k \).
 :::
 
-::: {.solution}
-*Step 1: \( (d_k) \) is non-decreasing.* Let \( k \in \nN \). By the choice of \( m_k \) and the defining equation \( 10^{k+1} = 10^k \cdot 10 \),
+::: {.second-reading title="Proofs of the three facts"}
+**(T1): \( (d_k) \) is non-decreasing.** Let \( k \in \nN \). By the choice of \( m_k \) and the defining equation \( 10^{k+1} = 10^k \cdot 10 \),
 \[
 (10 m_k)^2 = 100 \, m_k^2 \le 200 \, (10^k)^2 = 2 \, (10^k \cdot 10)^2 = 2 \, (10^{k+1})^2 .
 \]
@@ -172,36 +184,45 @@ d_{k+1} = \frac{m_{k+1}}{10^{k+1}} \ge \frac{10 m_k}{10^k \cdot 10} = \frac{m_k}
 \]
 By @fd1:ax-induction on \( i \), with base \( P(0) \) (\( d_k \le d_k \)) and the step just proved, \( d_k \le d_{k+i} \) for every \( i \in \nN \). Every \( j \ge k \) is \( k + i \) for some \( i \in \nN \) (@prp-omega-order-arithmetic (a)), so \( d_k \le d_j \) whenever \( j \ge k \). In particular \( d_k \ge d_0 = 1 \) for every \( k \) (\( m_0 = 1 \), since \( 1^2 \le 2 < 2^2 \)). No law of exponents was used, only the defining equation of \( 10^{k+1} \).
 
-*Step 2: \( d_k \le d_j < d_k + 1/10^k \) for \( j \ge k \), and \( (d_k) \in \sC \).* The lower bound is Step 1. For the upper bound, \( m_j^2 \le 2 (10^j)^2 \) gives \( d_j^2 \le 2 \). Since \( m_k + 1 > m_k \), the maximality of \( m_k \) gives \( (m_k + 1)^2 > 2 (10^k)^2 \), that is,
+**(T2): \( d_k \le d_j < d_k + 1/10^k \) for \( j \ge k \).** The lower bound is (T1). For the upper bound, \( m_j^2 \le 2 (10^j)^2 \) gives \( d_j^2 \le 2 \). Since \( m_k + 1 > m_k \), the maximality of \( m_k \) gives \( (m_k + 1)^2 > 2 (10^k)^2 \), that is,
 \[
 \Bigl( d_k + \frac{1}{10^k} \Bigr)^2 = \frac{(m_k + 1)^2}{(10^k)^2} > 2 .
 \]
 If we had \( d_j \ge d_k + 1/10^k \), then, both sides being non-negative, \( d_j^2 \ge (d_k + 1/10^k)^2 > 2 \) (@prp-ordered-ring-rules (g)), against \( d_j^2 \le 2 \). By trichotomy, \( d_j < d_k + 1/10^k \). With @eq-ten-power-reciprocal,
 \[
 0 \le d_j - d_k < \frac{1}{10^k} \le \frac{1}{k + 1} \qquad (j \ge k) .
-\]{#eq-truncation-cauchy-bound}
-Now let \( \varepsilon \in \nQ_{>0} \). By @cor-rationals-archimedean-epsilon there is \( n_\varepsilon \in \nZ_{>0} \) with \( 1/m < \varepsilon \) for every integer \( m \ge n_\varepsilon \). Let \( N \coloneqq n_\varepsilon \), which depends on \( \varepsilon \) only. For \( j, k \ge N \), say with \( j \ge k \) (the other case is symmetric, as \( \abs{d_j - d_k} = \abs{d_k - d_j} \)), @eq-truncation-cauchy-bound gives \( \abs{d_j - d_k} < 1/(k + 1) < \varepsilon \), since \( k + 1 > N \). So \( (d_k) \in \sC \).
+\]
 
-*Step 3: \( 0 \le 2 - d_k^2 < 5/10^k \).* The first inequality is \( d_k^2 \le 2 \). For the second, expand the display of Step 2 (@prp-ring-algebra (d)):
+**(T3): \( 0 \le 2 - d_k^2 < 5/10^k \).** The first inequality is \( d_k^2 \le 2 \). For the second, expand the first display in the proof of (T2) (@prp-ring-algebra (d)):
 \[
 2 < d_k^2 + \frac{2 d_k}{10^k} + \frac{1}{10^k} \cdot \frac{1}{10^k} .
 \]
 Here \( d_k < 2 \), since \( 0 \le d_k \) and \( d_k^2 \le 2 < 4 = 2^2 \) (@prp-ordered-ring-rules (g)); and \( (1/10^k)(1/10^k) \le 1/10^k \), since \( 0 < 1/10^k \le 1 \) by @eq-ten-power-reciprocal. Multiplying \( d_k < 2 \) by \( 2/10^k > 0 \) (@prp-ordered-ring-rules (c)) and adding the two bounds (@prp-ordered-ring-rules (b)), \( 2 - d_k^2 < 4/10^k + 1/10^k = 5/10^k \).
+:::
 
-*Step 4: \( (d_k) \sim (x_k) \).* Let \( k \ge 1 \). By (NS2), \( x_k > 1 \), and \( d_k \ge 1 \) by Step 1, so \( x_k + d_k \ge 1 \). Since \( \abs{x_k - d_k} \ge 0 \), @prp-ordered-field-halves (d) gives
+::: {#exm-truncations-equivalent}
+[The Truncations and the Newton Sequence Are Equivalent]
+
+Show that \( (d_k) \) is non-decreasing, that \( (d_k) \in \sC \), and that \( (d_k) \sim (x_k) \).
+:::
+
+::: {.solution}
+*\( (d_k) \) is non-decreasing, and in \( \sC \).* The first claim is (T1), and \( (d_k) \in \sC \) by (T2). Now let \( \varepsilon \in \nQ_{>0} \). By @cor-rationals-archimedean-epsilon there is \( n_\varepsilon \in \nZ_{>0} \) with \( 1/m < \varepsilon \) for every integer \( m \ge n_\varepsilon \). Let \( N \coloneqq n_\varepsilon \), which depends on \( \varepsilon \) only. For \( j, k \ge N \), say with \( j \ge k \) (the other case is symmetric, as \( \abs{d_j - d_k} = \abs{d_k - d_j} \)), @eq-truncation-cauchy-bound gives \( \abs{d_j - d_k} < 1/(k + 1) < \varepsilon \), since \( k + 1 > N \). So \( (d_k) \in \sC \).
+
+*\( (d_k) \sim (x_k) \).* Let \( k \ge 1 \). By (NS2), \( x_k > 1 \), and \( d_k \ge 1 \) by (T1), so \( x_k + d_k \ge 1 \). Since \( \abs{x_k - d_k} \ge 0 \), @prp-ordered-field-halves (d) gives
 \[
 \begin{aligned}
 \abs{x_k - d_k} &\le \abs{x_k - d_k} (x_k + d_k) = \abs{x_k^2 - d_k^2} \\
 &\le \abs{x_k^2 - 2} + \abs{2 - d_k^2} \le \frac{1}{4k} + \frac{5}{10^k} ,
 \end{aligned}
 \]
-by @prp-absolute-value-ordered-field (b) and (e), the bound \( 0 < x_k^2 - 2 \le 1/(4k) \) from (NS1)–(NS2), and Step 3. Since \( 4k - (k + 1) = 3k - 1 > 0 \), \( 1/(4k) \le 1/(k + 1) \) (@prp-ordered-field-halves (c)). Define, for **every** \( k \in \nN \),
+by @prp-absolute-value-ordered-field (b) and (e), the bound \( 0 < x_k^2 - 2 \le 1/(4k) \) from (NS1)–(NS2), and (T3). Since \( 4k - (k + 1) = 3k - 1 > 0 \), \( 1/(4k) \le 1/(k + 1) \) (@prp-ordered-field-halves (c)). Define, for **every** \( k \in \nN \),
 \[
 u_k \coloneqq \frac{1}{k + 1} + \frac{5}{10^k} .
 \]
-Then \( -u_k \le x_k - d_k \le u_k \) for every \( k \ge 1 \) (@prp-absolute-value-ordered-field (d)). The sequence \( (u_k) \) is null: \( (1/(k + 1)) \) is null (@exm-first-sequences-ordered-field (b)); \( (1/10^k) \) is null by the squeeze @prp-limit-preserves-order-ordered-field (c) between \( (0)_k \) and \( (1/(k + 1)) \), using @eq-ten-power-reciprocal; \( (5/10^k) \) is null by @thm-limit-laws-ordered-field (b) with \( c = 5 \); and the sum of two null sequences is null (@thm-limit-laws-ordered-field (a)). So \( (-u_k) \) is null too, by (b) with \( c = -1 \). The squeeze @prp-limit-preserves-order-ordered-field (c), with \( N_0 = 1 \), lower sequence \( (-u_k) \) and upper sequence \( (u_k) \), shows that \( (x_k - d_k) \) is null. Both sequences are in \( \sC \) (by (NS3) and Step 2), so \( (x_k) \sim (d_k) \), and \( (d_k) \sim (x_k) \) by symmetry.
+Then \( -u_k \le x_k - d_k \le u_k \) for every \( k \ge 1 \) (@prp-absolute-value-ordered-field (d)). The sequence \( (u_k) \) is null: \( (1/(k + 1)) \) is null (@exm-first-sequences-ordered-field (b)); \( (1/10^k) \) is null by the squeeze @prp-limit-preserves-order-ordered-field (c) between \( (0)_k \) and \( (1/(k + 1)) \), using @eq-ten-power-reciprocal; \( (5/10^k) \) is null by @thm-limit-laws-ordered-field (b) with \( c = 5 \); and the sum of two null sequences is null (@thm-limit-laws-ordered-field (a)). So \( (-u_k) \) is null too, by (b) with \( c = -1 \). The squeeze @prp-limit-preserves-order-ordered-field (c), with \( N_0 = 1 \), lower sequence \( (-u_k) \) and upper sequence \( (u_k) \), shows that \( (x_k - d_k) \) is null. Both sequences are in \( \sC \) (by (NS3) and (T2)), so \( (x_k) \sim (d_k) \), and \( (d_k) \sim (x_k) \) by symmetry.
 
-The bound of Step 4 is crude but honest: at \( k = 1 \) it gives \( \abs{x_1 - d_1} \le 1/4 + 5/10 = 3/4 \), while in fact \( x_1 - d_1 = 3/2 - 7/5 = 1/10 \).
+The bound \( \abs{x_k - d_k} \le 1/(4k) + 5/10^k \) is crude but honest: at \( k = 1 \) it gives \( \abs{x_1 - d_1} \le 1/4 + 5/10 = 3/4 \), while in fact \( x_1 - d_1 = 3/2 - 7/5 = 1/10 \).
 :::
 
 The upper sequence \( (u_k) \) is defined for every \( k \), including \( k = 0 \), where \( 1/(4k) \) is not; the squeeze only needs the inequality from \( N_0 = 1 \) on. One consequence is worth recording at once: **\( (d_k) \) has no limit in \( \nQ \) either.** If \( d_k \to L \in \nQ \), then \( x_k = d_k + (x_k - d_k) \to L + 0 = L \) by the sum rule, against (NS3). So the truncations, like the Newton sequence, are Cauchy and aim at nothing in \( \nQ \), and @exm-truncations-equivalent says they aim at the same nothing.
@@ -371,16 +392,16 @@ The hypothesis of (b) is that the sequences agree at **infinitely many** indices
 
 **Marking scheme.** (10 points)
 
-- 2: proves \( n_k \ge k \) for every \( k \), justifying the passage from \( n_{k+1} > n_k \ge k \) (or, by a least counterexample, from \( n_k > n_{k-1} \ge k - 1 \)) to the next whole number.
+- 2: proves \( n_k \ge k \) for every \( k \), justifying the passage from \( n_{k+1} > n_k \ge k \) to the next whole number.
 - 3: shows \( (a_{n_k}) \in \sC \), with one threshold that serves all \( j, k \ge N \) and with \( n_j, n_k \ge N \) justified from \( n_k \ge k \).
 - 3: shows \( (a_{n_k} - a_k)_k \) is null by applying the Cauchy condition to the pair \( (n_k, k) \).
 - 2: deduces (b) by symmetry and transitivity of \( \sim \).
 
-Fatal errors (0 for the step): using a limit of \( a \) in \( \nQ \); a threshold that depends on \( k \).
+Fatal error (0 for the step): a threshold that depends on \( k \).
 :::
 
 <!-- dependency ledger
-exm-truncations-equivalent (claim): N = omega and the identification N in Z in Q, so that 10 = 10 * 1_Q and k + 1 is rational | cor-omega-identification (b), prp-naturals-in-ordered-field (d), F3.2 identification remarks (cited)
+exm-truncations-equivalent (claim): the identification N in Z in Q, so that 10 = 10 * 1_Q and k + 1 is rational | cor-omega-identification (b), prp-naturals-in-ordered-field (d), F3.2 identification remarks (cited)
 exm-truncations-equivalent (claim): (k + 1) + 1 = k + 2 and 1 <= k + 1 in N | thm-omega-arithmetic-laws (cited), thm-omega-order (d); carried into Q by prp-naturals-in-ordered-field (a), (b)
 exm-truncations-equivalent (claim): 10^k in Z and 10^k >= k + 1, by induction | inline, fd1:ax-induction (cited); 9y - 1 >= 8 > 0 for y >= 1 by prp-ordered-ring-rules (b), (c)
 exm-truncations-equivalent (claim): existence and uniqueness of m_k, the largest natural number with m^2 <= 2 (10^k)^2 | inline, prp-integer-least-element and thm-integers-ordered-ring (b), (c) (cited); (10^k)^2 > 0 from 10^k >= 1; m >= m* gives m^2 >= (m*)^2 by prp-ordered-ring-rules (g) (cited) with the case m = m*
@@ -390,15 +411,15 @@ def-cauchy-equivalent (claim): a convergent pair with a common limit has null di
 def-cauchy-equivalent (claim): conversely, a -> L, b -> L' and a - b null give L = L' | thm-limit-laws-ordered-field (b), thm-limit-unique-ordered-field (cited)
 def-cauchy-equivalent (claim): (non-example) 1 + 1/(n + 1) is in C | thm-cauchy-algebra-ordered-field (a), (b) (cited)
 prp-cauchy-equivalent-relation (proof): b_n - a_n = -(a_n - b_n); -0 = 0, 0 + 0 = 0 | (F1)-(F4) and uniqueness of negatives, prp-ring-algebra (a) (cited); field axioms of Q
-exm-truncations-equivalent (solution): (10 m)^2 = 100 m^2 and 100 * 2 (10^k)^2 = 2 (10^k * 10)^2; m_{k+1}/(10^k 10) rearranged | field arithmetic in Q (thm-rationals-ordered-field, prp-ring-algebra); defining equation of 10^{k+1}; no exponent law
-exm-truncations-equivalent (solution): every j >= k is k + i | prp-omega-order-arithmetic (a) (cited)
-exm-truncations-equivalent (solution): m_0 = 1, d_0 = 1 | 1 <= 2 < 4; verify/ch05/exm-truncations-equivalent.py
-exm-truncations-equivalent (solution): a <= b with a, b >= 0 gives a^2 <= b^2 | prp-ordered-ring-rules (g) (cited) with the case a = b
+exm-truncations-equivalent (claim): (T1) (10 m)^2 = 100 m^2 and 100 * 2 (10^k)^2 = 2 (10^k * 10)^2; m_{k+1}/(10^k 10) rearranged | field arithmetic in Q (thm-rationals-ordered-field, prp-ring-algebra); defining equation of 10^{k+1}; no exponent law
+exm-truncations-equivalent (claim): (T1) every j >= k is k + i | prp-omega-order-arithmetic (a) (cited)
+exm-truncations-equivalent (claim): (T1) m_0 = 1, d_0 = 1 | 1 <= 2 < 4; verify/ch05/exm-truncations-equivalent.py
+exm-truncations-equivalent (claim): (T2), (T3) a <= b with a, b >= 0 gives a^2 <= b^2 | prp-ordered-ring-rules (g) (cited) with the case a = b
 exm-truncations-equivalent (claim): 10^k >= y gives 10^{k+1} >= 10y; 1/10^k > 0 | prp-ordered-ring-rules (c) (cited) with the case 10^k = y; prp-reciprocal-order (a) (cited)
-exm-truncations-equivalent (solution): 10 m_k <= m_{k+1} divided by 10^{k+1} | prp-reciprocal-order (a), prp-ordered-ring-rules (c) (cited) with the equal case
-exm-truncations-equivalent (solution): d < 2 and h > 0 give 2dh < 4h; adding h * h <= h | prp-ordered-ring-rules (c), (b) (cited)
-exm-truncations-equivalent (solution): (d + h)^2 = d^2 + 2dh + h^2 | prp-ring-algebra (d) (cited)
-exm-truncations-equivalent (solution): 0 <= x <= 1 gives x * x <= x | prp-ordered-field-halves (d) (cited) with (x, 1)
+exm-truncations-equivalent (claim): (T1) 10 m_k <= m_{k+1} divided by 10^{k+1} | prp-reciprocal-order (a), prp-ordered-ring-rules (c) (cited) with the equal case
+exm-truncations-equivalent (claim): (T3) d < 2 and h > 0 give 2dh < 4h; adding h * h <= h | prp-ordered-ring-rules (c), (b) (cited)
+exm-truncations-equivalent (claim): (T3) (d + h)^2 = d^2 + 2dh + h^2 | prp-ring-algebra (d) (cited)
+exm-truncations-equivalent (claim): (T3) 0 <= x <= 1 gives x * x <= x | prp-ordered-field-halves (d) (cited) with (x, 1)
 exm-truncations-equivalent (solution): 4k >= k + 1 for k >= 1 | inline, 3k - 1 > 0
 exm-truncations-equivalent (solution): |x - d| (x + d) = |x^2 - d^2| | prp-absolute-value-ordered-field (b) (cited), |x + d| = x + d as x + d > 0
 exm-truncations-equivalent (solution): numerical check at k = 1 (3/4 and 1/10) | verify/ch05/exm-truncations-equivalent.py

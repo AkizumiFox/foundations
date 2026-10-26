@@ -1,7 +1,5 @@
 # Well-Definedness, and the Arithmetic of the Integers
 
-<!-- S3: style revision per S1 change list (layout-proposal.md §3, 2.2, pipeline S): thm-well-defined-on-classes (a) points back to fd2's induced map, (b)(c) with a new method box (provisional exm-method-one-argument-at-a-time); Idea pointer to @fd2:exm-method-well-definedness. -->
-
 Section 2.1 built \( \nZ \) as the set of classes of \( \sim \) on \( \nN \times \nN \), and gave each integer a normal form (@prp-integer-normal-form). The integers cannot yet be added. Every operation on classes will be defined by a formula on representatives, and *Sets and Functions*, Section 5.2 showed what can go wrong: a formula that gives two answers for one class (@fd2:exm-ill-defined-class-map). This section proves, once and for all, the lemma that says when such a formula defines a function. It then uses the lemma for the sum, product and negative of integers, and finds a copy of \( \nN \) inside \( \nZ \).
 
 ## Definitions through representatives
@@ -35,10 +33,10 @@ Then there is **exactly one** function \( G \colon (X/{\sim}) \times (X/{\sim}) 
 :::
 :::
 
-In words: (a) says that a map on elements that respects the two relations passes to a map on classes; (b) says that a binary operation that respects \( \sim \) **in each argument separately** passes to an operation on classes; (c) says that a property that respects \( \sim \) can be asked of a class, and the answer is the answer for any of its representatives. Clause (a) will give the negative of an integer, (b) its sum and product, and (c) the positive integers in Section 2.3.
+In words: (a) says that a map on elements that respects the two relations passes to a map on classes; (b) says that a binary operation that respects \( \sim \) **in each argument separately** passes to an operation on classes; (c) says that a property that respects \( \sim \) can be asked of a class, and the answer is the answer for any of its representatives. Clause (a) will give the negative of an integer, (b) its sum and product, and (c) the positive integers in Section 2.4.
 
 ::: {.idea}
-A function is a graph with **exactly one** output for each input (@fd2:def-function). The obvious graph is the set of all pairs \( ([x], [f(x)]) \). It has at least one output for each class, because every class is some \( [x] \). The only danger is two outputs for one class, coming from two representatives \( x \) and \( x' \) of it; @fd2:thm-classes-partition (b) turns "same class" into \( x \sim x' \), the hypothesis turns that into \( f(x) \approx f(x') \), and @fd2:thm-classes-partition (b) turns it back into "same output". For (b) the same plan works, once the two one-argument hypotheses are chained into one statement about both arguments by transitivity.
+Clause (a) is @fd2:exm-method-well-definedness turned into a theorem: steps (1)–(3) of that method are its hypothesis, and step (4) is the graph built below. A function is a graph with **exactly one** output for each input (@fd2:def-function). The obvious graph is the set of all pairs \( ([x], [f(x)]) \). It has at least one output for each class, because every class is some \( [x] \). The only danger is two outputs for one class, coming from two representatives \( x \) and \( x' \) of it; @fd2:thm-classes-partition (b) turns "same class" into \( x \sim x' \), the hypothesis turns that into \( f(x) \approx f(x') \), and @fd2:thm-classes-partition (b) turns it back into "same output". For (b) the same plan works, once the two one-argument hypotheses are chained into one statement about both arguments by transitivity.
 :::
 
 ::: {.proof}
@@ -56,7 +54,11 @@ g(x, y) \sim g(x', y) \quad \text{and} \quad g(x', y) \sim g(x', y') ,
 \]
 by the first hypothesis (with \( y \) fixed) and the second (with \( x' \) fixed). By transitivity, (Eq3) of @fd2:def-equivalence-relation, \( g(x, y) \sim g(x', y') \).
 
+The rest is the proof of (a) with pairs of classes in place of classes: the graph of all \( (([x], [y]), [g(x, y)]) \) has an output for each pair of classes, and only one, by the paragraph above, @fd2:def-ordered-pair (equal pairs of classes have equal entries) and @fd2:thm-classes-partition (b); so it defines a function \( G \), and \( G \) is unique as in (a) (@fd2:prp-function-equality).
+
+::: {.second-reading title="The graph of G, checked as in (a)"}
 Now let \( G_G \) be the set of \( (P, E) \in \bigl((X/{\sim}) \times (X/{\sim})\bigr) \times (X/{\sim}) \) such that \( P = ([x], [y]) \) and \( E = [g(x, y)] \) for some \( x, y \in X \), a set by specification. (Fn1): an element of \( (X/{\sim}) \times (X/{\sim}) \) is a pair \( (C, D) \) of classes (@fd2:def-cartesian-product), and \( C = [x] \), \( D = [y] \) for some \( x, y \in X \) (@fd2:def-quotient-set); then \( ((C, D), [g(x, y)]) \in G_G \). (Fn2): suppose \( (P, E) \) and \( (P, E') \) lie in \( G_G \), with \( P = ([x], [y]) \), \( E = [g(x, y)] \), and \( P = ([x'], [y']) \), \( E' = [g(x', y')] \). From \( ([x], [y]) = ([x'], [y']) \) the characteristic property of pairs (@fd2:def-ordered-pair) gives \( [x] = [x'] \) and \( [y] = [y'] \), so \( x \sim x' \) and \( y \sim y' \) by @fd2:thm-classes-partition (b). By the first paragraph, \( g(x, y) \sim g(x', y') \), so \( E = E' \) by @fd2:thm-classes-partition (b). So \( G_G \), with codomain \( X/{\sim} \), defines a function \( G \) with \( G([x], [y]) = [g(x, y)] \). Uniqueness is as in (a), by @fd2:prp-function-equality.
+:::
 
 *(c)* \( (\Leftarrow) \) If \( x \in S \), then \( [x] \in \bar S \) by the definition of \( \bar S \). \( (\Rightarrow) \) If \( [x] \in \bar S \), then \( [x] = [x'] \) for some \( x' \in S \). By @fd2:thm-classes-partition (b), \( x \sim x' \), so \( x' \sim x \) by (Eq2). The hypothesis, applied to \( x' \sim x \) and \( x' \in S \), gives \( x \in S \).
 
@@ -97,9 +99,25 @@ The **sum** \( + \colon \nZ \times \nZ \to \nZ \) and **product** \( \cdot \colo
 
 In words: to add integers, add representatives coordinatewise; to multiply, use the cross formula; to negate, swap the coordinates. All the arithmetic on the right happens in \( \nN \), where it is always possible. The definition is legitimate only if the hypotheses of @thm-well-defined-on-classes hold for the three maps on pairs; the next proposition checks them, and until then the three formulas are rules, not yet functions.
 
-The move used in the proof is the one this chapter is built on.
+The proof below uses the move this chapter is built on, after @fd2:exm-method-well-definedness:
 
-**Check on representatives, one argument at a time.** To show that \( [x] \ast [y] \coloneqq [g(x, y)] \) is well defined, change \( x \) to an equivalent \( x' \) with \( y \) fixed, then change \( y \) to an equivalent \( y' \) with \( x' \) fixed. Each change is a computation at the level below, in \( \nN \) here; @thm-well-defined-on-classes (b) joins the two by transitivity.
+::: {#exm-method-one-argument-at-a-time}
+[Method: check on representatives, one argument at a time]
+
+**Template.** To show that \( [x] \ast [y] \coloneqq [g(x, y)] \) is well defined: (1) fix \( y \), take \( x \sim x' \), and derive \( g(x, y) \sim g(x', y) \) from the one equation that \( x \sim x' \) unwinds to; (2) fix \( x' \), take \( y \sim y' \), and derive \( g(x', y) \sim g(x', y') \); if \( g(x, y) = g(y, x) \) always, (2) is (1) with the roles exchanged; (3) conclude by @thm-well-defined-on-classes (b). A rule on single classes needs only (1), and then clause (a).
+
+**When to use it.** Every operation on a quotient given by a formula on representatives: the sum and product of \( \nZ \), and every later quotient built the same way.
+
+**The usual failure.** Checking one numerical instance; using a law of \( \nZ \) to check an operation of \( \nZ \) (the computation stays in \( \nN \)); claiming symmetry for a formula that lacks it, such as \( [(a + d, \ b + c)] \).
+:::
+
+::: {.check}
+Does \( [(a, b)] \mapsto [(a + a, \ b)] \) define a function \( \nZ \to \nZ \)?
+:::
+
+::: {.solution}
+No. \( (0, 0) \sim (1, 1) \), since \( 0 + 1 = 0 + 1 \), but the outputs are \( (0 + 0, 0) = (0, 0) \) and \( (1 + 1, 1) = (2, 1) \), and \( (0, 0) \not\sim (2, 1) \), since \( 0 + 1 \ne 0 + 2 \). In school terms the rule computes \( 2a - b \), which is not a function of \( a - b \).
+:::
 
 ::: {#prp-integer-operations-well-defined}
 [The Operations on Integers Are Well Defined]
@@ -108,9 +126,20 @@ The maps \( g_+ \) and \( g_\cdot \) of @def-integer-operations satisfy the hypo
 :::
 
 ::: {.idea}
-Each hypothesis is an equation in \( \nN \) to be derived from another. The given equation is the cross-sum equation for \( (a, b) \sim (a', b') \); the target is the cross-sum equation for the two outputs. For the sum, adding \( c + d \) to both sides of the given equation and rearranging is enough. For the product, the target has \( c \) and \( d \) in every term, so we multiply the given equation by \( c \), and separately by \( d \), and add the results; the rest is rearranging. Both formulas are unchanged when the two input pairs are swapped, so the second argument costs nothing.
+[Scratch work]
 
-*Before reading on: why may we change one argument at a time, rather than both at once?*
+The sum is one line; the product is the real check. Take the first argument (step (1) of the box):
+
+| Givens | Goal |
+|---|---|
+| \( (a, b) \sim (a', b') \); \( (c, d) \) fixed | \( g_\cdot((a, b), (c, d)) \sim g_\cdot((a', b'), (c, d)) \) |
+| \( a + b' = b + a' \) | \( (ac + bd) + (a'd + b'c) = (ad + bc) + (a'c + b'd) \) |
+| every term of the goal contains \( c \) or \( d \); the given contains neither | multiply the given by \( c \), and, read from right to left, by \( d \) |
+| \( ac + b'c = bc + a'c \) and \( bd + a'd = ad + b'd \) | add the two and regroup: the goal |
+
+Both formulas are unchanged when the two input pairs are exchanged, so step (2) comes free.
+
+*Before reading on: which hypothesis of @thm-well-defined-on-classes (b) does this table check?*
 :::
 
 ::: {.proof}
@@ -151,7 +180,7 @@ for \( g = g_+ \) and \( g = g_\cdot \). This is the second hypothesis of @thm-w
 By @thm-well-defined-on-classes (b) and (a), the three rules define functions \( \nZ \times \nZ \to \nZ \), \( \nZ \times \nZ \to \nZ \) and \( \nZ \to \nZ \), as claimed.
 :::
 
-The answer to the prompt is the first paragraph of the proof of @thm-well-defined-on-classes (b): two one-argument changes, \( g(x, y) \sim g(x', y) \) and \( g(x', y) \sim g(x', y') \), are joined by transitivity of \( \sim \). Changing both at once is also possible, but the computation then mixes four equations in eight unknowns; one argument at a time keeps each computation to a single hypothesis.
+The table checks the first hypothesis of @thm-well-defined-on-classes (b), \( g(x, y) \sim g(x', y) \), for the product; symmetry gives the second, and the first paragraph of that proof joins the two by transitivity of \( \sim \). Changing both at once is also possible, but the computation then mixes four equations in eight unknowns; one argument at a time keeps each computation to a single hypothesis.
 
 ## Rules that fail
 
@@ -185,7 +214,7 @@ by @thm-omega-arithmetic-laws (b), (c), which is \( (a + 1, b) \sim (a' + 1, b')
 
 ## The natural numbers inside the integers
 
-The integers were built to contain the natural numbers and more. They do not literally contain them: the natural number \( 0 \) is the empty set (@def-omega-arithmetic (c)), while every integer is a non-empty class (@fd2:thm-classes-partition (a)), so \( 0 \notin \nZ \). What \( \nZ \) contains is a **copy** of \( \nN \), the classes in normal form \( [(n, 0)] \), and the copy has the same arithmetic.
+The integers were built to contain the natural numbers and more. What \( \nZ \) contains is a **copy** of \( \nN \): the classes in normal form \( [(n, 0)] \), each a set of pairs. Whether a natural number \( n \) is itself an element of \( \nZ \) depends on what the elements of a Peano system are, which the axioms leave open (Section 1.5); the copy is all we use, and it has the same arithmetic.
 
 ::: {#prp-naturals-embed-integers}
 [The Natural Numbers Embed in the Integers]
@@ -226,13 +255,13 @@ by @thm-omega-arithmetic-laws (e) (\( 1 \cdot n = n \), \( 0 \cdot n = 0 \)) and
 *(c)* \( (\supseteq) \) Both sets on the right consist of integers. \( (\subseteq) \) Let \( x \in \nZ \). By @prp-integer-normal-form (a), \( x = [(k, 0)] \) or \( x = [(0, k)] \) for some \( k \in \nN \). In the first case \( x = \iota(k) \). In the second, \( x = [(0, k)] = -[(k, 0)] = -\iota(k) \) by @def-integer-operations. So \( x \) lies in the right side.
 :::
 
-**Identification.** From now on we write \( n \) for \( \iota(n) \) and regard \( \nN \) as a subset of \( \nZ \). This is a convenient abuse of notation, and (a) makes it honest: because \( \iota \) is injective, different natural numbers stay different; because \( \iota \) preserves \( + \) and \( \cdot \), a sum or product of natural numbers is the same whether computed in \( \nN \) or in \( \nZ \). One could rebuild \( \nZ \) so that it contains \( \nN \) literally, by putting each \( n \) in place of \( \iota(n) \), but nothing later needs it. The order of \( \nN \) is matched to an order on \( \nZ \) in Section 2.3.
+**Identification.** From now on we write \( n \) for \( \iota(n) \) and regard \( \nN \) as a subset of \( \nZ \). This is a convenient abuse of notation, and (a) makes it honest: because \( \iota \) is injective, different natural numbers stay different; because \( \iota \) preserves \( + \) and \( \cdot \), a sum or product of natural numbers is the same whether computed in \( \nN \) or in \( \nZ \). One could rebuild \( \nZ \) so that it contains \( \nN \) literally, by putting each \( n \) in place of \( \iota(n) \), but nothing later needs it. The order of \( \nN \) is matched to an order on \( \nZ \) in Section 2.4.
 
 With this convention, (b) reads \( [(a, b)] = a + (-b) \): the pair \( (a, b) \) records the difference it was meant to record. The notation \( a - b \) is defined in Section 2.3, where \( x - y \coloneqq x + (-y) \) is set up in every ring at once. Clause (c) reads
 \[
 \nZ = \nN \cup \{ -n : n \in \nN \} ,
 \]
-which is word for word the definition of the integers in *Sets and Functions*, Section 3.1. There it was a definition inside the familiar real numbers; here it is a theorem about a set built from \( \omega \). The positive integers keep the definition of *Sets and Functions*, Section 3.1,
+which is word for word the definition of the integers in *Sets and Functions*, Section 3.1. There it was a definition inside the familiar real numbers; here it is a theorem about a set built from \( \nN \). The positive integers keep the definition of *Sets and Functions*, Section 3.1,
 \[
 \nZ_{>0} \coloneqq \{ n \in \nN : n \ne 0 \} ,
 \]
@@ -246,7 +275,7 @@ Compute \( [(2, 5)] \cdot [(4, 1)] \) from @def-integer-operations, and write th
 \( [(2, 5)] \cdot [(4, 1)] = [(2 \cdot 4 + 5 \cdot 1, \ 2 \cdot 1 + 5 \cdot 4)] = [(13, 22)] \). By @prp-integer-normal-form (a): \( 5 = 2 + 3 \), so \( [(2, 5)] = [(0, 3)] = -3 \); \( 4 = 1 + 3 \), so \( [(4, 1)] = [(3, 0)] = 3 \); and \( 22 = 13 + 9 \), so \( [(13, 22)] = [(0, 9)] = -9 \). So the product of \( -3 \) and \( 3 \) is \( -9 \), as school predicts; here it is a computation in \( \nN \), not a rule of signs.
 :::
 
-The integers now have a sum, a product and a negative, each a function on classes, and they contain a copy of \( \nN \) with its arithmetic. Section 2.3 checks that these operations obey the usual laws, by reducing each law to a law of \( \nN \), and defines the order.
+The integers now have a sum, a product and a negative, each a function on classes, and they contain a copy of \( \nN \) with its arithmetic. Section 2.3 checks that these operations obey the usual laws, by reducing each law to a law of \( \nN \); Section 2.4 orders \( \nZ \).
 
 ## Exercises
 
@@ -325,6 +354,43 @@ which is \( (2a, 2b) \sim (2a', 2b') \); @thm-well-defined-on-classes (a) applie
 (c) No. \( [(0, 1)] = [(1, 2)] \), since \( 0 + 2 = 1 + 1 \). The rule gives \( [(0, 1)] \) for the first representative and \( [(1, 4)] \) for the second, and \( (0, 1) \not\sim (1, 4) \), since \( 0 + 4 = 4 \ne 2 = 1 + 1 \).
 :::
 
+::: {#exr-well-defined-operations-b3}
+[B3: Prove or disprove]
+
+Prove or disprove that each rule defines a function.
+
+::: {.enumerate options="label=(\alph*)"}
+1. \( \nZ \times \nZ \to \nZ \), \( ([(a, b)], [(c, d)]) \mapsto [(a + d, \ b + c)] \).
+2. \( \nZ \to \nZ \), \( [(a, b)] \mapsto [(b, \ a + b)] \).
+3. \( \nZ \times \nZ \to \nZ \), \( ([(a, b)], [(c, d)]) \mapsto [(ad, \ bc)] \).
+4. \( \nZ \to \nZ \), \( [(a, b)] \mapsto [(a \cdot a + b \cdot b, \ a \cdot b + b \cdot a)] \).
+:::
+:::
+
+::: {.solution}
+(a) **True.** The formula is not symmetric in the two input pairs, so both steps of @exm-method-one-argument-at-a-time are needed. *First argument:* if \( a + b' = b + a' \), then
+\[
+\begin{aligned}
+(a + d) + (b' + c) &= (a + b') + (c + d) \\
+&= (b + a') + (c + d) = (b + c) + (a' + d) ,
+\end{aligned}
+\]
+which is \( (a + d, b + c) \sim (a' + d, b' + c) \). *Second argument:* if \( c + d' = d + c' \), then
+\[
+\begin{aligned}
+(a + d) + (b + c') &= (a + b) + (d + c') \\
+&= (a + b) + (c + d') = (b + c) + (a + d') ,
+\end{aligned}
+\]
+which is \( (a + d, b + c) \sim (a + d', b + c') \). The rearrangements are by @thm-omega-arithmetic-laws (b), (c), and @thm-well-defined-on-classes (b) concludes. The rule is \( (x, y) \mapsto x + (-y) \), since \( [(a, b)] + [(d, c)] = [(a + d, \ b + c)] \).
+
+(b) **False.** \( (0, 0) \sim (1, 1) \), but the outputs are \( (0, 0 + 0) = (0, 0) \) and \( (1, 1 + 1) = (1, 2) \), and \( (0, 0) \not\sim (1, 2) \), since \( 0 + 2 \ne 0 + 1 \). The heuristic predicts the failure: \( b - (a + b) = -a \) depends on \( a \), not on \( a - b \) alone.
+
+(c) **False.** \( (1, 0) \sim (2, 1) \), since \( 1 + 1 = 0 + 2 \). With \( (c, d) = (0, 1) \) in the second argument, the outputs are \( (1 \cdot 1, \ 0 \cdot 0) = (1, 0) \) and \( (2 \cdot 1, \ 1 \cdot 0) = (2, 0) \), and \( (1, 0) \not\sim (2, 0) \), since \( 1 + 0 \ne 0 + 2 \).
+
+(d) **True.** The output is \( g_\cdot(x, x) \) for \( x = (a, b) \). If \( x \sim x' \), then \( g_\cdot(x, x) \sim g_\cdot(x', x) \) and \( g_\cdot(x', x) \sim g_\cdot(x', x') \), by the two hypotheses checked in @prp-integer-operations-well-defined; transitivity, (Eq3) of @prp-integer-pairs-equivalence, joins them, and @thm-well-defined-on-classes (a) applies. The rule is \( x \mapsto x \cdot x \).
+:::
+
 ### C. Going deeper
 
 ::: {#exr-well-defined-operations-c1}
@@ -384,12 +450,15 @@ def-integer-operations (claim): (heuristic) school identities for (a - b) + (c -
 prp-integer-operations-well-defined (proof): rearrangements of sums of four terms, and multiplying an equation by c | thm-omega-arithmetic-laws (cited) and substitution of equals; verify/ch02/prp-integer-operations-well-defined.py
 exm-ill-defined-first-coordinate (solution): 0 + 3 = 2 + 1; 0 != 1 | numeral arithmetic by def-omega-arithmetic; distinct numerals; verify/ch02/exm-ill-defined-first-coordinate.py
 def-integer-operations (claim): (warning) 1 + 1 = 0 + 2; 1 + 2 != 0 + 2; [(0, 1)] * [(0, 1)] under the twisted rule | numeral arithmetic; verify/ch02/def-integer-operations.py
-prp-naturals-embed-integers (claim): (identification) 0 is the empty set and not an integer | def-omega-arithmetic (c), thm-classes-partition (a) (cited)
+prp-naturals-embed-integers (claim): (identification) whether n is an element of Z is left open; Z contains a copy of N | no claim to check; F3.1 §05 (prose pointer, Section 1.5; nothing here depends on it)
 prp-naturals-embed-integers (claim): (identification) Z>0 recalled from F2.2 §01; 5 + x = 3 solved by -2 | F2.2 §01 definition (recalled in prose); prp-integer-normal-form (a) (cited); verify/ch02/prp-naturals-embed-integers.py
-prp-naturals-embed-integers (claim): order on Z matches order on N | F3.2 §03 (prose pointer, paid by thm-integers-ordered-ring (a); nothing here depends on it)
+prp-naturals-embed-integers (claim): order on Z matches order on N | F3.2 §04 (prose pointer, paid by thm-integers-ordered-ring (a); nothing here depends on it)
 prp-naturals-embed-integers (claim): a - b := a + (-b) | F3.2 §03 (prose pointer, paid by def-commutative-ring-and-field; nothing here depends on it)
+prp-naturals-embed-integers (claim): (closing) Section 2.4 orders Z | F3.2 §04 (prose pointer, paid by def-integer-order; nothing here depends on it)
 def-integer-operations (claim): (check) [(2, 5)] * [(4, 1)] = [(13, 22)] = -9 | numeral arithmetic; verify/ch02/def-integer-operations.py
 exr-well-defined-operations-a1 (solution): numerical run of the key proof | numeral arithmetic; verify/ch02/exr-well-defined-operations-a1.py
 exr-well-defined-operations-b2 (solution): 2n = n + n; counterexample values | def-omega-arithmetic (c), thm-omega-arithmetic-laws (d), (e) (cited); verify/ch02/exr-well-defined-operations-b2.py
+exm-method-one-argument-at-a-time (claim): (quick check) 0 + 1 = 0 + 1; 0 + 1 != 0 + 2; outputs (0, 0), (2, 1) | numeral arithmetic by def-omega-arithmetic; distinct numerals; verify/ch02/exm-method-one-argument-at-a-time.py
+exr-well-defined-operations-b3 (solution): rearrangements of four-term sums; counterexample values (0, 0) ~ (1, 1), (1, 0) ~ (2, 1) | thm-omega-arithmetic-laws (b), (c) (cited); numeral arithmetic; verify/ch02/exr-well-defined-operations-b3.py
 exr-well-defined-operations-c1 (solution): 1 ~ 2, 5 not ~ 0 | definition of the example relation; verify/ch02/exr-well-defined-operations-c1.py
 -->

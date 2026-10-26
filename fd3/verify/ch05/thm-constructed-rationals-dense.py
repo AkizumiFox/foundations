@@ -1,4 +1,5 @@
-"""thm-constructed-rationals-dense: with q = (a_N + b_N)/2,
+"""thm-constructed-rationals-dense: the direct density proof now lives in the solution of
+exr-rationals-inside-the-reals-c3 (a) (Section 5.4); this script checks the values quoted there. With q = (a_N + b_N)/2,
 q - a_n = (a_N - a_n) + (b_N - a_N)/2 and b_n - q = (b_n - b_N) + (b_N - a_N)/2;
 -delta/4 + delta/2 = delta/4. Checked as identities on random rationals, and the bound on samples."""
 from fractions import Fraction as F

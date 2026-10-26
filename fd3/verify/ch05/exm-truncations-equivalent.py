@@ -1,5 +1,5 @@
 """exm-truncations-equivalent and the hook of Section 5.1: the truncations d_k = m_k/10^k,
-the Newton sequence, and the bounds used in Steps 1-4."""
+the Newton sequence, and the bounds (T1)-(T3) and the bound in the solution."""
 from fractions import Fraction as F
 
 QUOTED = {

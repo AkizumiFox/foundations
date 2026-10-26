@@ -140,7 +140,7 @@ Now \( [r] \ne [0] \): if \( n \mid r \), then \( n \le r \) by @fd3:prp-divisib
 So for every prime \( p \) there is a field with exactly \( p \) elements (@thm-integers-mod-n-ring (b)). The smallest is \( \nZ/2\nZ \), whose tables are those of the two-element field of @fd3:exm-finite-ring-not-orderable with \( 0 \), \( 1 \) renamed \( [0] \), \( [1] \). Chapter 2 studies fields in general and gives these finite fields a name of their own.
 
 ::: {.remark}
-In particular \( \nZ/5\nZ \) is a field, since \( 5 \) is prime (the small-primes remark of *Number Systems*, Section 2.5). In it \( 5 \cdot [1] = [5] = [0] \) (@thm-integers-mod-n-ring (d)), so \( [1] + [1] + [1] + [1] + [1] = [0] \) with \( [1] \ne [0] \), and no order makes it an ordered field (@thm-integers-mod-n-ring (e)). Being a field does not help a finite ring to be ordered.
+In particular \( \nZ/5\nZ \) is a field, since \( 5 \) is prime (the small-primes remark of Section 1.2). In it \( 5 \cdot [1] = [5] = [0] \) (@thm-integers-mod-n-ring (d)), so \( [1] + [1] + [1] + [1] + [1] = [0] \) with \( [1] \ne [0] \), and no order makes it an ordered field (@thm-integers-mod-n-ring (e)). Being a field does not help a finite ring to be ordered.
 :::
 
 ::: {.warning}
@@ -415,7 +415,7 @@ x_2 = 7 \cdot 7 \cdot (-2) + 3 \cdot 15 \cdot 1 = -98 + 45 = -53 ,
 \]
 and the solutions are the \( x \equiv -53 \pmod{105} \), that is, the class \( 52 + 105\nZ \).
 
-Check: \( 52 = 17 \cdot 3 + 1 = 10 \cdot 5 + 2 = 7 \cdot 7 + 3 \). (Coprimality of \( 3 \) and \( 5 \), and of \( 15 \) and \( 7 \), also follows from the small-primes remark of *Number Systems*, Section 2.5 with @cor-prime-divides-product (a).) The "if and only if" in the first step is what allows replacing two congruences by one; with "if" alone, the second step could lose solutions.
+Check: \( 52 = 17 \cdot 3 + 1 = 10 \cdot 5 + 2 = 7 \cdot 7 + 3 \). (Coprimality of \( 3 \) and \( 5 \), and of \( 15 \) and \( 7 \), also follows from the small-primes remark of Section 1.2 with @cor-prime-divides-product (a).) The "if and only if" in the first step is what allows replacing two congruences by one; with "if" alone, the second step could lose solutions.
 :::
 
 ### R. Review
@@ -448,7 +448,7 @@ Let \( m, n, m', n' \in \nN \) with \( 2^m 3^n = 2^{m'} 3^{n'} \). Prove that \(
 ::: {.solution}
 The tool is unique factorization, @thm-fundamental-arithmetic. The powers are those of \( \nN = \omega \) (@fd3:prp-omega-powers-parity), carried into \( \nZ \), which preserves products (@fd3:prp-naturals-embed-integers); \( b^0 = 1 \) and \( b^{j+1} = b^j \cdot b \).
 
-*A factorization.* For \( m, n \in \nN \), let \( L_{m,n} \) be the list of length \( m + n \) whose first \( m \) entries are \( 2 \) and whose last \( n \) entries are \( 3 \). Its entries are prime, by the small-primes remark of *Number Systems*, Section 2.5, and it is non-decreasing, since \( 2 \le 3 \). Its product is \( 2^m 3^n \). Indeed, with \( P_j \) the product of the first \( j \) entries, the recursion of @def-prime-factorization and induction on \( j \le m \) give \( P_j = 2^j \) (\( P_0 = 1 = 2^0 \); \( P_{j+1} = P_j \cdot 2 = 2^{j+1} \)), and then induction on \( i \le n \) gives \( P_{m+i} = 2^m 3^i \). So \( L_{m,n} \) is a prime factorization of \( 2^m 3^n \), which is positive, being a product of positive integers (@fd3:prp-ordered-ring-rules (c)).
+*A factorization.* For \( m, n \in \nN \), let \( L_{m,n} \) be the list of length \( m + n \) whose first \( m \) entries are \( 2 \) and whose last \( n \) entries are \( 3 \). Its entries are prime, by the small-primes remark of Section 1.2, and it is non-decreasing, since \( 2 \le 3 \). Its product is \( 2^m 3^n \). Indeed, with \( P_j \) the product of the first \( j \) entries, the recursion of @def-prime-factorization and induction on \( j \le m \) give \( P_j = 2^j \) (\( P_0 = 1 = 2^0 \); \( P_{j+1} = P_j \cdot 2 = 2^{j+1} \)), and then induction on \( i \le n \) gives \( P_{m+i} = 2^m 3^i \). So \( L_{m,n} \) is a prime factorization of \( 2^m 3^n \), which is positive, being a product of positive integers (@fd3:prp-ordered-ring-rules (c)).
 
 *Uniqueness.* If \( 2^m 3^n = 2^{m'} 3^{n'} \), then \( L_{m,n} \) and \( L_{m',n'} \) are prime factorizations of the same positive integer, so they are equal (@thm-fundamental-arithmetic): \( m + n = m' + n' \), with equal entries. Suppose \( m < m' \). Then the entry of index \( m' \) is \( 2 \) in \( L_{m',n'} \), and in \( L_{m,n} \) it is \( 3 \), since \( m < m' \le m + n \): a contradiction. Exchanging the two lists rules out \( m' < m \). So \( m = m' \), and then \( n = n' \) by canceling \( m \) in \( m + n = m' + n' \).
 
@@ -499,7 +499,7 @@ thm-units-mod-n (claim): (quick check after exm-unit-inverse-mod-n) [3]^{-1} = [
 exm-unit-inverse-mod-n (example): Euclidean run on (60, 17), back-substitution, 17 * 53 = 901 = 15 * 60 + 1; gcd(12, 60) = 12; [12][5] = [0] | inline arithmetic; verify/ch03/exm-unit-inverse-mod-n.py
 thm-integers-mod-prime-field (proof): s > 0 from rs = n > 0; s != n by cancellation | fd3:prp-ring-algebra (b), fd3:prp-ordered-ring-rules (c), (f), cited; inline; verify/ch03/thm-integers-mod-prime-field.py (n <= 200)
 thm-integers-mod-prime-field (claim): (aftermath) Z/2Z has the tables of fd3:exm-finite-ring-not-orderable; Chapter 2 names these fields | inline comparison of tables; F5.2 prose pointer, nothing here depends on it
-thm-integers-mod-prime-field (claim): (remark) 5 is prime; 5 * [1] = [0]; Z/5Z cannot be ordered | the small-primes remark of *Number Systems*, Section 2.5; thm-integers-mod-n-ring (d), (e), cited
+thm-integers-mod-prime-field (claim): (remark) 5 is prime; 5 * [1] = [0]; Z/5Z cannot be ordered | the small-primes remark of Section 1.2; thm-integers-mod-n-ring (d), (e), cited
 thm-chinese-remainder-two (proof): the identities x - a = m(bu - au), x - b = n(av - bv) | fd3:prp-ring-algebra; inline; verify/ch03/thm-chinese-remainder-two.py
 thm-chinese-remainder-two (proof): componentwise operations on Z/mZ x Z/nZ | defined in the statement; fd2:def-cartesian-product
 thm-chinese-remainder-two (claim): (aftermath) the componentwise product of two commutative rings is a commutative ring | each axiom is an equation, checked in each coordinate; inline, not used in any proof

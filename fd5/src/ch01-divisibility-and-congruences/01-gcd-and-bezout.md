@@ -52,7 +52,7 @@ In words: among all integers dividing both \( a \) and \( b \), take the largest
 
 Examples:
 
-- \( \gcd(4, 6) = 2 \). A positive common divisor \( d \) satisfies \( d \le 4 \), by @fd3:prp-divisibility-rules-integers (e), and \( d \ge 1 \), so \( d \in \{1, 2, 3, 4\} \) by discreteness (@fd3:thm-integers-ordered-ring (c)), as in the small-primes remark of *Number Systems*, Section 2.5. Now \( 4 \nmid 6 \) and \( 3 \nmid 4 \), because \( 6 = 1 \cdot 4 + 2 \) and \( 4 = 1 \cdot 3 + 1 \) have non-zero remainders (the divisibility test after @fd3:thm-integers-division-remainder), while \( 2 \) divides both. So the greatest common divisor is \( 2 \).
+- \( \gcd(4, 6) = 2 \). A positive common divisor \( d \) satisfies \( d \le 4 \), by @fd3:prp-divisibility-rules-integers (e), and \( d \ge 1 \), so \( d \in \{1, 2, 3, 4\} \) by discreteness (@fd3:thm-integers-ordered-ring (c)), applied repeatedly. Now \( 4 \nmid 6 \) and \( 3 \nmid 4 \), because \( 6 = 1 \cdot 4 + 2 \) and \( 4 = 1 \cdot 3 + 1 \) have non-zero remainders (the divisibility test after @fd3:thm-integers-division-remainder), while \( 2 \) divides both. So the greatest common divisor is \( 2 \).
 - \( \gcd(-5, 5) = 5 \): the common divisors of \( -5 \) and \( 5 \) are the divisors of \( 5 \) (@fd3:prp-divisibility-rules-integers (d) and @fd3:prp-ring-algebra (a)), and the greatest is \( 5 \), by @fd3:prp-divisibility-rules-integers (e).
 - \( \gcd(1, b) = 1 \) for every \( b \in \nZ \): a common divisor \( d \) divides \( 1 \), so \( d = \pm 1 \) (@fd3:prp-divisibility-rules-integers (g)), and the greater is \( 1 \).
 

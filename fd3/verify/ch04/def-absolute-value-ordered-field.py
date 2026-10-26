@@ -1,4 +1,4 @@
-"""def-absolute-value-ordered-field: the examples, the non-example, and the worked example after the proposition."""
+"""def-absolute-value-ordered-field: the examples, the non-example (fold), the worked example after the proposition, and the second Quick check."""
 from fractions import Fraction as F
 
 QUOTED = {
@@ -27,4 +27,15 @@ for k in range(-200, 201):
     assert (abs(x - F(1, 2)) < F(1, 4)) == (F(1, 4) < x < F(3, 4))
 sq = lambda x: x * x
 assert (sq(1 + 1), sq(1) + sq(1)) == QUOTED["square_nonexample"]
+# second Quick check: |x - 1| < 2 and |x + 1| < 2 iff -1 < x < 1
+QUOTED["qc_single"] = ((F(-1), F(3)), (F(-3), F(1)))
+QUOTED["qc_both"] = (F(-1), F(1))
+assert (1 - 2, 1 + 2) == QUOTED["qc_single"][0]
+assert (-1 - 2, -1 + 2) == QUOTED["qc_single"][1]
+lo = max(QUOTED["qc_single"][0][0], QUOTED["qc_single"][1][0])
+hi = min(QUOTED["qc_single"][0][1], QUOTED["qc_single"][1][1])
+assert (lo, hi) == QUOTED["qc_both"]
+for k in range(-800, 801):
+    x = F(k, 200)
+    assert ((abs(x - 1) < 2) and (abs(x + 1) < 2)) == (F(-1) < x < F(1))
 print("ok")

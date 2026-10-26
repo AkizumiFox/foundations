@@ -1,12 +1,59 @@
 # Peano's Axioms and Induction
 
-<!-- S3: rewrite per blueprint (layout-proposal.md §3, 1.1, pipeline F). New opening: why the reader needs axioms for ℕ now (to build ℝ we cannot start from the ℕ inside ℝ). Kept verbatim below from old 1.4 (def-peano-system, exm-peano-axioms-independent, exercises) and old 1.3 (thm-omega-induction, to be restated as a theorem about a Peano system); unique predecessor to be added (label named at S1). The old 1.4 opening paragraph follows; it describes ω and is to be replaced. -->
+*Sets and Functions*, Chapter 3 took the natural numbers as a subset \( \nN \) of the familiar real numbers, and borrowed the arithmetic of \( \nR \) whenever it was convenient. This volume builds the integers, the rationals and the real numbers. If we started from the \( \nN \) inside \( \nR \), the real numbers would rest on the real numbers. So we need \( \nN \) on its own. We make one assumption: there is a set with a start and a step that obey three rules. This section shows that each rule is needed, proves induction in the form we use, and proves that every natural number except \( 0 \) has exactly one predecessor.
 
-The previous section built \( \omega \) and proved induction on it (@thm-omega-induction). *Sets and Functions*, Chapter 3 used two further facts about the natural numbers without a second thought: \( 0 \) is not of the form \( n + 1 \), and \( m + 1 = n + 1 \) forces \( m = n \). For the sets of this chapter neither is automatic, and the obvious argument for the second fails, as we shall see. This section proves both for natural numbers, using one property of their membership structure; it then names the list of properties we have reached, Peano's axioms, and shows that each of its last three items, (P3), (P4) and (P5), does a job that the other two cannot do.
+## What counting needs
 
-## Peano systems
+Two descriptions of \( \nN \) come to mind at once, and neither will do.
 
-*Sets and Functions*, Chapter 3 worked with a set \( \nN \) of real numbers, and this chapter with a set \( \omega \) of sets. Both come with a starting element and a step. The last section of the chapter asks whether they are "the same", and to ask it we need to say what any such structure must satisfy. The answer is the list just proved, with \( \omega \), \( 0 \) and \( \mathrm{S} \) replaced by letters.
+The first is \( \nN = \{0, 1, 2, 3, \dots\} \). It names four elements and then writes three dots, and the dots carry all the content. They say "keep going one at a time, and nothing else", and to say what that means is exactly the job of a definition of \( \nN \).
+
+The second is more careful: \( \nN \) is the smallest subset of \( \nR \) that contains \( 0 \) and is closed under \( x \mapsto x + 1 \). A smallest such subset exists, by @fd2:prp-smallest-closed-set with start \( 0 \) and step \( x \mapsto x + 1 \), and the set form of @fd1:ax-induction shows that it is the \( \nN \) of *Sets and Functions*. Either way the description needs \( \nR \). Since \( \nR \) is where this volume is going, it cannot be where \( \nN \) comes from.
+
+So we describe \( \nN \) by what counting has to do, not by where its elements live. Counting needs
+
+- (P1) a **start**: an element where counting begins;
+- (P2) a **step**: a rule sending each element to a next element of the same set.
+
+That is a set \( M \), an element \( e \in M \), and a function \( s \colon M \to M \). A start and a step are not enough, and here are three ways they fail to count. In each picture an arrow goes from \( x \) to \( s(x) \).
+
+**A loop.** Let \( M \coloneqq \{p, q, r\} \), start at \( p \), and step \( p \mapsto q \mapsto r \mapsto p \).
+
+```{=latex}
+\begin{center}
+\begin{tikzpicture}[structure]
+  \node[elt, label=below:$p$] (p) at (0,0) {};
+  \node[elt, label=above:$q$] (q) at (1.6,1.2) {};
+  \node[elt, label=below:$r$] (r) at (3.2,0) {};
+  \draw[rel] (p) -- (q);
+  \draw[rel] (q) -- (r);
+  \draw[rel] (r) -- (p);
+\end{tikzpicture}
+\end{center}
+```
+
+Counting comes back to its start: three steps after \( p \) we are at \( p \) again, as on a clock.
+
+**A merge.** Let \( M \coloneqq \{p, q, r\} \) again, start at \( p \), and step \( p \mapsto q \mapsto r \mapsto q \).
+
+```{=latex}
+\begin{center}
+\begin{tikzpicture}[structure]
+  \node[elt, label=below:$p$] (p) at (0,0) {};
+  \node[elt, label=below:$q$] (q) at (1.6,0) {};
+  \node[elt, label=below:$r$] (r) at (3.2,0) {};
+  \draw[rel] (p) -- (q);
+  \draw[rel] (q) to[bend left] (r);
+  \draw[rel] (r) to[bend left] (q);
+\end{tikzpicture}
+\end{center}
+```
+
+Counting never returns to \( p \), but two different elements, \( p \) and \( r \), step to the same \( q \). After \( r \) the count repeats \( q \), and runs in a circle from there.
+
+**An extra row.** Take the counting numbers, and beside them a second copy with its own step, which the start never reaches. Every element still has one next element, no two elements step to the same one, and nothing steps back to the start. Yet starting at the start and stepping, we never meet the second copy. Counting cannot see those elements, and a description of the natural numbers must exclude them.
+
+Each failure is ruled out by one clause: the step never returns to the start; the step never sends two elements to the same one; and nothing is there that steps from the start cannot reach. The last clause needs care, since "reached by steps" is the three dots again. The way around it is the one @fd2:prp-smallest-closed-set takes: speak of subsets. A subset that contains the start and is closed under the step contains everything the steps reach. If the only such subset is the whole set, nothing is left over.
 
 *A Peano system is a set with a start and a step, where the step is one-to-one, never returns to the start, and reaches everything.*
 
@@ -20,12 +67,37 @@ A **Peano system** \( (M, e, s) \) consists of a set \( M \), an element \( e \i
 - (P5) **every** subset \( A \subseteq M \) with \( e \in A \) and \( s(x) \in A \) for every \( x \in A \) is equal to \( M \).
 :::
 
-In words: (P1) and (P2) are built into the data, since \( e \in M \) and \( s \) maps \( M \) into \( M \). (P3) says the step never leads back to the start. (P4) says two different elements never step to the same element. (P5) is induction for \( M \): a subset that contains the start and is closed under the step is everything, so every element of \( M \) is reached from \( e \) by steps. We write \( (M, e, s) \) and not \( (N, e, s) \), so that the letter never suggests \( \nN \). The notation \( (M, e, s) \) lists the three pieces of data; it is not a set built from them (if one object is wanted, take the pair \( ((M, e), s) \) of @def-kuratowski-pair).
+In words: (P1) and (P2) are built into the data, since \( e \in M \) and \( s \) maps \( M \) into \( M \). (P3) says the step never leads back to the start. (P4) says two different elements never step to the same element. (P5) is induction for \( M \): a subset that contains the start and is closed under the step is everything, so every element of \( M \) is reached from \( e \) by steps. We write \( (M, e, s) \) and not \( (N, e, s) \), so that the letter never suggests \( \nN \). The notation \( (M, e, s) \) lists the three pieces of data; it is not a set built from them (if one object is wanted, take the pair \( ((M, e), s) \) of @fd2:def-ordered-pair).
 
-The first example is the one we have, and the second shows that the elements need not be numbers.
+The merge breaks (P4), since \( s(p) = q = s(r) \) with \( p \ne r \). The extra row breaks (P5): the first copy contains the start, is closed under the step, and is not everything. The loop is the subject of the first Quick check.
 
-- \( (\omega, 0, \mathrm{S}) \) is a Peano system, by @thm-omega-peano: \( \mathrm{S} \colon \omega \to \omega \) is a function, and (P3)–(P5) are those of the theorem.
-- **Tagged numbers.** Let \( M \coloneqq \omega \times \{0\} \), a set by @prp-cartesian-product-exists, let \( e \coloneqq (0, 0) \), and let \( s(n, 0) \coloneqq (\mathrm{S}(n), 0) \). Every element of \( M \) is \( (n, 0) \) for exactly one \( n \in \omega \) (@thm-kuratowski-pair), so \( s \) is well defined, and its graph is a set by (Z6) inside \( M \times M \). (P3): \( (\mathrm{S}(n), 0) = (0, 0) \) would give \( \mathrm{S}(n) = 0 \) by @thm-kuratowski-pair, against (P3) for \( \omega \). (P4): \( (\mathrm{S}(m), 0) = (\mathrm{S}(n), 0) \) gives \( \mathrm{S}(m) = \mathrm{S}(n) \), so \( m = n \) by (P4) for \( \omega \). (P5): let \( A \subseteq M \) contain \( e \) and be closed under \( s \). The set \( B \coloneqq \{ n \in \omega : (n, 0) \in A \} \) has \( 0 \) as an element and is closed under \( \mathrm{S} \), so \( B = \omega \) by @thm-omega-induction (a), and \( A = M \). Here \( e = (0, 0) = \{\{0\}\} \) is not \( \emptyset \), and no element of \( M \) is a natural number, as we shall see at the end of the section.
+::: {.check}
+For the loop (\( M = \{p, q, r\} \), \( e = p \), \( s(p) = q \), \( s(q) = r \), \( s(r) = p \)), which of (P3), (P4), (P5) fail?
+:::
+
+::: {.solution}
+Only (P3): \( s(r) = p = e \). (P4) holds, since the three values \( s(p) = q \), \( s(q) = r \), \( s(r) = p \) are different. (P5) holds: a subset containing \( p \) and closed under \( s \) contains \( s(p) = q \), then \( s(q) = r \), so it is \( M \).
+:::
+
+## The one assumption
+
+The natural numbers are to be a Peano system. That is the whole of what we assume about them.
+
+::: {#ax-natural-numbers}
+[The Natural Numbers]
+
+There is a Peano system.
+:::
+
+We fix one Peano system for the rest of the volume and write it \( (\nN, 0, \mathrm{S}) \). Its elements are the **natural numbers**, \( 0 \) is **zero**, and \( \mathrm{S}(n) \) is the **successor** of \( n \). Spelled out, \( \nN \) is a set, \( 0 \in \nN \), \( \mathrm{S} \colon \nN \to \nN \) is a function, and:
+
+- (P3) \( \mathrm{S}(n) \ne 0 \) for every \( n \in \nN \);
+- (P4) \( \mathrm{S}(m) = \mathrm{S}(n) \) implies \( m = n \);
+- (P5) every \( A \subseteq \nN \) that contains \( 0 \) and is closed under \( \mathrm{S} \) is \( \nN \).
+
+Why believe the assumption? If the school real numbers are trusted, the \( \nN \) of *Sets and Functions*, with start \( 0 \) and step \( x \mapsto x + 1 \), is a Peano system; Section 1.4 checks this. And *Axiomatic Set Theory* builds a Peano system from sets alone, assuming nothing about numbers; Section 1.5 describes how. Which Peano system we fix does not matter: Section 1.4 proves that any two are copies of each other, matched by exactly one bijection that sends start to start and step to step.
+
+From here on, every fact about \( \nN \) is proved from @ax-natural-numbers. We do not borrow the order, the subtraction or the arithmetic of \( \nR \). Addition and multiplication are not defined yet; Section 1.2 defines them. Even the numeral \( 1 \) is not available until then, and the element after \( 0 \) is written \( \mathrm{S}(0) \).
 
 Why these three clauses and no others? Each one does work that the other two cannot do: for each clause there is a structure satisfying the other two and failing it.
 
@@ -37,14 +109,7 @@ Show that each of the following structures \( (M, e, s) \), with \( s \colon M \
 ::: {.enumerate options="label=(\roman*)"}
 1. \( M \coloneqq \{0\} \), \( e \coloneqq 0 \), \( s(0) \coloneqq 0 \).
 2. \( M \coloneqq \{0, 1\} \), \( e \coloneqq 0 \), \( s(0) \coloneqq 1 \), \( s(1) \coloneqq 1 \).
-3. (**The natural numbers beside a two-sided chain.**) \( M \coloneqq \omega \times 3 \), whose elements are the pairs \( (n, i) \) with \( n \in \omega \) and \( i \in 3 = \{0, 1, 2\} \); \( e \coloneqq (0, 0) \); and
-\[
-\begin{aligned}
-s(n, 0) &\coloneqq (\mathrm{S}(n), 0) , & s(n, 1) &\coloneqq (\mathrm{S}(n), 1) , \\
-s(0, 2) &\coloneqq (0, 1) , & s(\mathrm{S}(k), 2) &\coloneqq (k, 2) ,
-\end{aligned}
-\]
-for \( n, k \in \omega \).
+3. (**Two copies of \( \nN \).**) Let \( a \ne b \) be two objects, \( M \coloneqq \nN \times \{a, b\} \), \( e \coloneqq (0, a) \), and \( s(n, t) \coloneqq (\mathrm{S}(n), t) \) for \( n \in \nN \) and \( t \in \{a, b\} \).
 :::
 :::
 
@@ -53,22 +118,13 @@ for \( n, k \in \omega \).
 
 (ii) **Fails (P4)**: \( s(0) = s(1) \) with \( 0 \ne 1 \). (P3) holds: both values are \( 1 \ne 0 = e \). (P5) holds: if \( A \subseteq \{0, 1\} \) has \( 0 \) as an element and is closed under \( s \), then \( s(0) = 1 \in A \), so \( A = \{0, 1\} \).
 
-(iii) First, \( s \) is a function \( M \to M \). Each element of \( M \) is \( (n, i) \) for exactly one \( n \in \omega \) and one \( i \in 3 \), by @thm-kuratowski-pair. For \( i = 2 \), the first coordinate is \( 0 \) or \( \mathrm{S}(k) \) with \( k \in \omega \) (@lem-omega-transitive (d)); never both, by (P3) for \( \omega \); and the \( k \) is unique, by (P4) for \( \omega \). So exactly one line of the definition applies to each element, and it names one value. The values lie in \( M \), since \( \mathrm{S}(n), 0, k \in \omega \). The graph is a set by (Z6) inside \( M \times M \).
+(iii) First, \( s \) is a function \( M \to M \). Each element of \( M \) is \( (n, t) \) for exactly one \( n \in \nN \) and one \( t \in \{a, b\} \), by @fd2:def-ordered-pair, so the formula names one value; and \( (\mathrm{S}(n), t) \in M \), since \( \mathrm{S} \) maps \( \nN \) into \( \nN \).
 
-To check (P3) and (P4), sort the values by their second coordinates, which are \( 0 \), \( 1 \) and \( 2 \), three different sets (@exm-von-neumann-numerals):
-\[
-\begin{aligned}
-&\text{second coordinate } 0 : && s(n, 0) = (\mathrm{S}(n), 0) , \\
-&\text{second coordinate } 1 : && s(n, 1) = (\mathrm{S}(n), 1) \ \text{ and } \ s(0, 2) = (0, 1) , \\
-&\text{second coordinate } 2 : && s(\mathrm{S}(k), 2) = (k, 2) .
-\end{aligned}
-\]
+**(P3) holds.** If \( s(n, t) = (0, a) \), then \( (\mathrm{S}(n), t) = (0, a) \) gives \( \mathrm{S}(n) = 0 \) (@fd2:def-ordered-pair), against (P3) for \( \nN \).
 
-**(P3) holds.** A value equal to \( e = (0, 0) \) would have second coordinate \( 0 \), so it would be \( (\mathrm{S}(n), 0) \) with \( \mathrm{S}(n) = 0 \), against (P3) for \( \omega \).
+**(P4) holds.** If \( s(n, t) = s(n', t') \), then \( (\mathrm{S}(n), t) = (\mathrm{S}(n'), t') \) gives \( t = t' \) and \( \mathrm{S}(n) = \mathrm{S}(n') \), so \( n = n' \) by (P4) for \( \nN \). Hence \( (n, t) = (n', t') \).
 
-**(P4) holds.** Suppose \( s(x) = s(x') \). The two values have the same second coordinate, so they come from the same row of the display. In the first row, \( (\mathrm{S}(n), 0) = (\mathrm{S}(n'), 0) \) gives \( n = n' \) by @thm-kuratowski-pair and (P4) for \( \omega \). In the third row, \( (k, 2) = (k', 2) \) gives \( k = k' \), so \( \mathrm{S}(k) = \mathrm{S}(k') \). In the second row, \( (\mathrm{S}(n), 1) \ne (0, 1) \) because \( \mathrm{S}(n) \ne 0 \); so either both values are of the form \( (\mathrm{S}(n), 1) \), and \( n = n' \) as before, or both are \( (0, 1) \), and both inputs are \( (0, 2) \). In every case \( x = x' \).
-
-**(P5) fails.** Let \( A \coloneqq \omega \times \{0\} \), a subset of \( M \) (@prp-cartesian-product-exists). It contains \( e = (0, 0) \), and it is closed under \( s \), since \( s(n, 0) = (\mathrm{S}(n), 0) \in A \). But \( (0, 1) \in M \) is not in \( A \), because its second coordinate \( 1 \) is not \( 0 \). So \( A \ne M \).
+**(P5) fails.** Let \( A \coloneqq \nN \times \{a\} \). It contains \( e = (0, a) \), and it is closed under \( s \), since \( s(n, a) = (\mathrm{S}(n), a) \in A \). But \( (0, b) \in M \) is not in \( A \), because its second coordinate is \( b \ne a \). So \( A \ne M \).
 :::
 
 The picture shows (iii), with an arrow from each element to its image under \( s \).
@@ -76,85 +132,140 @@ The picture shows (iii), with an arrow from each element to its image under \( s
 ```{=latex}
 \begin{center}
 \begin{tikzpicture}[scale=0.85, every node/.style={font=\small}]
-  \node (a0) at (0,1.5) {$(0,0)$};
-  \node (a1) at (1.4,1.5) {$(1,0)$};
-  \node (a2) at (2.8,1.5) {$(2,0)$};
-  \node (a3) at (4.2,1.5) {$(3,0)$};
-  \node (ad) at (5.6,1.5) {$\cdots$};
+  \node (a0) at (0,1.5) {$(0,a)$};
+  \node (a1) at (2.4,1.5) {$(\mathrm{S}(0),a)$};
+  \node (a2) at (5.4,1.5) {$(\mathrm{S}(\mathrm{S}(0)),a)$};
+  \node (ad) at (7.6,1.5) {$\cdots$};
   \draw[->] (a0) -- (a1);
   \draw[->] (a1) -- (a2);
-  \draw[->] (a2) -- (a3);
-  \draw[->] (a3) -- (ad);
+  \draw[->] (a2) -- (ad);
   \node[above] at (a0.north) {$e$};
-  \node (bd) at (0,0) {$\cdots$};
-  \node (b2) at (1.4,0) {$(2,2)$};
-  \node (b1) at (2.8,0) {$(1,2)$};
-  \node (b0) at (4.2,0) {$(0,2)$};
-  \node (c0) at (5.6,0) {$(0,1)$};
-  \node (c1) at (7.0,0) {$(1,1)$};
-  \node (c2) at (8.4,0) {$(2,1)$};
-  \node (cd) at (9.8,0) {$\cdots$};
-  \draw[->] (bd) -- (b2);
-  \draw[->] (b2) -- (b1);
-  \draw[->] (b1) -- (b0);
-  \draw[->] (b0) -- (c0);
-  \draw[->] (c0) -- (c1);
-  \draw[->] (c1) -- (c2);
-  \draw[->] (c2) -- (cd);
+  \node (b0) at (0,0) {$(0,b)$};
+  \node (b1) at (2.4,0) {$(\mathrm{S}(0),b)$};
+  \node (b2) at (5.4,0) {$(\mathrm{S}(\mathrm{S}(0)),b)$};
+  \node (bd) at (7.6,0) {$\cdots$};
+  \draw[->] (b0) -- (b1);
+  \draw[->] (b1) -- (b2);
+  \draw[->] (b2) -- (bd);
 \end{tikzpicture}
 \end{center}
 ```
 
-The top row is a copy of \( \omega \), starting at \( e \). The bottom row is a chain running forever in both directions: read \( (n, 1) \) as "\( n \)" and \( (k, 2) \) as "\( -(k + 1) \)", and \( s \) adds one everywhere, with \( (0, 2) \), playing \( -1 \), stepping to \( (0, 1) \), playing \( 0 \). Every element has exactly one arrow out and at most one arrow in, which is (P4); only \( e \) has no arrow in, which is (P3). What fails is that the bottom row cannot be reached from \( e \). Induction, (P5), is the clause that says "nothing else".
+This is the extra row of the start of the section. The element \( (0, b) \) has no arrow coming in, and it is not \( e \). The top row is a copy of \( \nN \), and so is the bottom row; but the bottom row cannot be reached from \( e \). (P3) and (P4) cannot prevent this, and (P5) is the clause that says "nothing else".
 
-So (P3) and (P4) alone cannot prevent extra elements: in (iii) the whole bottom row is extra. That is why the definition of \( \omega \) needed "least", and why induction is part of the list.
+(P5) speaks of **every** subset of \( M \), and that is what lets it exclude every kind of extra row. A first-order induction schema speaks only of subsets defined by formulas, and *Logic and Proof*, Section 7.6 showed (@fd1:exm-non-standard-naturals) that the sentences true in \( \nN \) also hold in a structure with an element beyond every numeral; its closing remark promised the comparison made here. Exercise C2 builds an extra row in which, unlike \( (0, b) \) above, every element has an arrow coming in.
 
-<!-- S3: moved verbatim from old 1.3; restate (a) and (b) for a Peano system (M, e, s), where (b) is (P5) read as a property; the proof below is the ω proof and is replaced. -->
+## Induction in the form we use
 
-::: {.warning}
-"An inductive set is the set of natural numbers" is **false** in general. @thm-omega-least-inductive gives \( \omega \subseteq J \) for an inductive \( J \), and nothing more. The set-theory volume of this series, using the axiom of Replacement (not part of this chapter), builds the inductive set \( \omega \cup \{ \omega, \mathrm{S}(\omega), \mathrm{S}(\mathrm{S}(\omega)), \dots \} \); it contains \( \omega \) itself as an element, and the next section shows that \( \omega \notin \omega \). Axiom (Z7) does not say that its \( I \) is not a set of this kind. What distinguishes \( \omega \) among inductive sets is "least", and every argument about natural numbers must go through \( \omega \), not through an arbitrary inductive set.
-:::
-
-## Induction on the natural numbers
-
-Leastness has an immediate consequence. To show that every natural number belongs to some set \( A \), it is enough to show that \( A \) is inductive, since then \( \omega \subseteq A \).
+(P5) is induction, stated about subsets of a Peano system. For \( \nN \) we record it in the two forms the rest of the volume cites: a set form, and a form about properties.
 
 ::: {#thm-omega-induction}
-[Induction on \( \omega \)]
+[Induction on \( \nN \)]
 
 ::: {.enumerate options="label=(\alph*)"}
-1. (Set form.) Let \( A \subseteq \omega \). If \( 0 \in A \), and \( \mathrm{S}(n) \in A \) for every \( n \in A \), then \( A = \omega \).
-2. (Property form.) Let \( P(n) \) be a property, that is, a formula of the first-order language with \( \in \) and \( = \), possibly with other variables as parameters. If \( P(0) \) holds and, **for every** \( n \in \omega \), \( P(n) \) implies \( P(\mathrm{S}(n)) \), then \( P(n) \) holds **for every** \( n \in \omega \).
+1. (Set form.) Let \( A \subseteq \nN \). If \( 0 \in A \), and \( \mathrm{S}(n) \in A \) for every \( n \in A \), then \( A = \nN \).
+2. (Property form.) Let \( P(n) \) be a property of natural numbers, possibly with other variables as parameters. If \( P(0) \) holds and, **for every** \( n \in \nN \), \( P(n) \) implies \( P(\mathrm{S}(n)) \), then \( P(n) \) holds **for every** \( n \in \nN \).
 :::
 :::
 
 ::: {.proof}
-*(a)* The hypotheses say that \( A \) is inductive. By @thm-omega-least-inductive (b), \( \omega \subseteq A \). With \( A \subseteq \omega \), @fd2:prp-subset-antisymmetric gives \( A = \omega \).
+*(a)* This is (P5) of @def-peano-system for the Peano system \( (\nN, 0, \mathrm{S}) \) of @ax-natural-numbers.
 
-*(b)* Let \( A \coloneqq \{ n \in \omega : P(n) \} \), a set by (Z6). Then \( 0 \in A \), because \( 0 \in \omega \) by @thm-omega-least-inductive (a) and \( P(0) \) holds. Let \( n \in A \). Then \( n \in \omega \) and \( P(n) \), so \( P(\mathrm{S}(n)) \) by hypothesis, and \( \mathrm{S}(n) \in \omega \) because \( \omega \) is inductive; hence \( \mathrm{S}(n) \in A \). By (a), \( A = \omega \), which says that \( P(n) \) holds for every \( n \in \omega \).
+*(b)* Let \( A \coloneqq \{ n \in \nN : P(n) \} \) (@fd2:def-set-builder). Then \( 0 \in A \), because \( P(0) \) holds. Let \( n \in A \). Then \( P(n) \), so \( P(\mathrm{S}(n)) \) by hypothesis, and \( \mathrm{S}(n) \in \nN \) because \( \mathrm{S} \) maps \( \nN \) into \( \nN \); hence \( \mathrm{S}(n) \in A \). By (a), \( A = \nN \), which says that \( P(n) \) holds for every \( n \in \nN \).
 :::
 
-Compare part (b) with the principle of induction, @fd1:ax-induction. Read with \( \omega \) in place of \( \nN \), and with \( \mathrm{S}(n) \) in place of \( n + 1 \), the two statements are the same; and once addition is defined, later in this chapter, \( n + 1 \) will be \( \mathrm{S}(n) \). The difference lies in their status. In *Logic and Proof*, Chapter 4, induction was an axiom, a basic property of \( \nN \) taken on trust. Here it is a **theorem**, proved from the seven axioms (Z1)–(Z7) about sets, and the proof is three lines long because all the work went into the definition of \( \omega \): the natural numbers were defined as what every inductive set contains, and induction says exactly that.
+Compare part (b) with the principle of induction, @fd1:ax-induction. Read with \( \mathrm{S}(n) \) in place of \( n + 1 \), the two statements are the same, and Section 1.2 shows that \( n + 1 = \mathrm{S}(n) \) once addition is defined. The difference lies in their status. In *Logic and Proof*, Chapter 4, induction was taken on trust, for an \( \nN \) that came with the school arithmetic attached. Here (P5) is part of the one assumption, and arithmetic is not assumed at all: Section 1.2 builds it, and proves its laws by this theorem.
 
-The proof of (b) is the model for the inductions in the rest of this chapter.
-
-**Show the set is inductive.** To prove \( P(n) \) for every \( n \in \omega \), form \( \{ n \in \omega : P(n) \} \) and show that it has \( 0 \) as an element and is closed under \( \mathrm{S} \).
-
-Here is the move once, on a statement about the shape of natural numbers: **every \( n \in \omega \) is \( 0 \), or is \( 1 \), or has \( 1 \) as an element**. Let \( A \coloneqq \{ n \in \omega : n = 0 \text{ or } n = 1 \text{ or } 1 \in n \} \), a set by (Z6). Then \( 0 \in A \) by the first alternative. Let \( n \in A \); there are three cases. If \( n = 0 \), then \( \mathrm{S}(n) = 1 \), which satisfies the second alternative. If \( n = 1 \), then \( \mathrm{S}(n) = 2 = \{0, 1\} \), which has \( 1 \) as an element. If \( 1 \in n \), then \( 1 \in n \subseteq \mathrm{S}(n) \). In every case \( \mathrm{S}(n) \in A \), since also \( \mathrm{S}(n) \in \omega \) because \( \omega \) is inductive (@thm-omega-least-inductive (a)). By @thm-omega-induction (a), \( A = \omega \).
-
-Two features of this small proof recur. The property carried along is a disjunction, because "\( 1 \in n \)" alone is false at \( n = 0 \) and \( n = 1 \), and an induction can only carry a property that holds at the start. And the step is a case split along the disjunction, with one case for each alternative; dropping a case would be the error (N7) of @fd1:exm-not-allowed-catalogue.
+::: {.warning}
+**Both halves of the hypothesis are needed.** The set \( \nN \setminus \{0\} \) is closed under \( \mathrm{S} \), by (P3), and it is not \( \nN \). The set \( \{0\} \) contains \( 0 \) and is not closed under \( \mathrm{S} \), since \( \mathrm{S}(0) \ne 0 \).
+:::
 
 ::: {.check}
-In the proof just given, which case of the step produces the first natural number that satisfies the third alternative "\( 1 \in n \)", and which number is it?
+Let \( P(n) \) be "\( n = 0 \)". Does the base case hold? Does the step hold? What does @thm-omega-induction (b) conclude?
 :::
 
 ::: {.solution}
-The case \( n = 1 \). It produces \( \mathrm{S}(1) = 2 = \{0, 1\} \), which has \( 1 \) as an element. Neither \( 0 \) nor \( 1 \) has \( 1 \) as an element (\( 0 \) has no elements, and the only element of \( 1 \) is \( 0 \ne 1 \)), so \( 2 \) is the first. From then on the third case passes "\( 1 \in n \)" to \( \mathrm{S}(n) \), because \( n \subseteq \mathrm{S}(n) \).
+The base case holds: \( P(0) \) says \( 0 = 0 \). The step fails at \( n = 0 \): \( P(0) \) holds, while \( P(\mathrm{S}(0)) \) says \( \mathrm{S}(0) = 0 \), which is false by (P3). So the theorem concludes nothing, and indeed \( P \) fails at \( \mathrm{S}(0) \).
 :::
 
-The next section uses the move five times in a row, to show that \( \omega \) satisfies Peano's axioms.
+## Every natural number except 0 has one predecessor
 
-With Peano's axioms in hand, the next section proves the recursion theorem on \( \omega \) and uses it to define addition and multiplication.
+*Sets and Functions* used that \( n - 1 \in \nN \) for every natural number \( n \ne 0 \) (@fd2:lem-naturals-arithmetic (c)), with the subtraction done in \( \nR \). Our \( \nN \) has no subtraction. Yet Sections 1.2–1.4 split, again and again, into the cases "\( n = 0 \)" and "\( n = \mathrm{S}(k) \) for some \( k \)". For that we need every \( n \ne 0 \) to be a successor, and of exactly one \( k \). The fact holds in every Peano system, and we prove it there, because Section 1.4 uses it for systems other than \( \nN \).
+
+::: {#prp-peano-predecessor}
+[Predecessors in a Peano System]
+
+Let \( (M, e, s) \) be a Peano system.
+
+::: {.enumerate options="label=(\alph*)"}
+1. For every \( x \in M \) with \( x \ne e \) there is **exactly one** \( y \in M \) with \( s(y) = x \).
+2. \( s(x) \ne x \) for every \( x \in M \).
+:::
+:::
+
+::: {.idea}
+[Scratch work]
+
+For (a), "at most one" is (P4): if \( s(y) = x = s(y') \), then \( y = y' \). "At least one" is the real question. Of the three clauses, only (P5) tells us anything about **all** elements of \( M \), and (P5) speaks of subsets. So we must choose a subset \( A \) of \( M \) and show \( A = M \). That choice is the new point. Inside an abstract \( M \) nothing can be computed: there is no subtraction that would produce \( y \) from \( x \).
+
+The first candidate is the set of values of \( s \), \( \{ z \in M : z = s(y) \text{ for some } y \in M \} \). It fails at the start, since \( e \) is not a value, by (P3). The cure is the shape of @fd2:lem-naturals-arithmetic (c): carry "\( z = e \) or …".
+
+| Givens | Goal |
+|---|---|
+| \( (M, e, s) \) a Peano system; \( x \in M \), \( x \ne e \) | some \( y \in M \) with \( s(y) = x \) |
+| \( A \coloneqq \{ z \in M : z = e \text{ or } z = s(y) \text{ for some } y \in M \} \) | \( A = M \); then \( x \in A \) and \( x \ne e \) give \( y \) |
+| (P5) for \( A \) | \( e \in A \); and \( z \in A \Rightarrow s(z) \in A \), since \( s(z) \) is a value of \( s \) |
+
+The step never uses \( z \in A \), as in @fd2:exm-predecessor-no-hypothesis.
+:::
+
+::: {.idea}
+Both parts apply (P5) to a subset chosen for the purpose: (a) to \( e \) together with the values of \( s \), and (b) to the set where \( s(x) \ne x \). In (b), unlike (a), the step uses its hypothesis, through (P4).
+:::
+
+::: {.proof}
+*(a)* Let \( x \in M \) with \( x \ne e \). *At most one:* if \( s(y) = x \) and \( s(y') = x \), then \( y = y' \) by (P4). *At least one:* let
+\[
+A \coloneqq \{ z \in M : z = e \text{ or } z = s(y) \text{ for some } y \in M \}
+\]
+(@fd2:def-set-builder). Then \( e \in A \), by the first alternative. Let \( z \in A \). Then \( s(z) \in M \) is the value of \( s \) at \( z \), so \( s(z) \in A \), by the second alternative with \( y \coloneqq z \). By (P5), \( A = M \). Hence \( x \in A \); since \( x \ne e \), the second alternative holds, and \( x = s(y) \) for some \( y \in M \).
+
+*(b)* Let \( A' \coloneqq \{ x \in M : s(x) \ne x \} \). Then \( e \in A' \), since \( s(e) \ne e \) by (P3). Let \( x \in A' \), so that \( s(x) \ne x \). If \( s(s(x)) = s(x) \), then (P4), applied to the inputs \( s(x) \) and \( x \), gives \( s(x) = x \), a contradiction. So \( s(s(x)) \ne s(x) \), that is, \( s(x) \in A' \). By (P5), \( A' = M \). This proves the proposition.
+:::
+
+For \( \nN \), part (a) says that every natural number \( n \ne 0 \) is \( \mathrm{S}(k) \) for exactly one \( k \in \nN \); this \( k \) is the **predecessor** of \( n \). Part (b) says that no natural number is its own successor.
+
+The two proofs make the same move with one difference. In (a) the closure step proves \( s(z) \in A \) outright, whatever \( z \) is; in (b) it needs \( x \in A' \), and (P4) turns the hypothesis \( s(x) \ne x \) into the conclusion \( s(s(x)) \ne s(x) \). The move has a name.
+
+::: {#exm-method-closed-subset}
+[Method: induction through a closed subset]
+
+**Template.** (1) Name \( A \coloneqq \{ x \in M : P(x) \} \). (2) Show \( e \in A \). (3) Take \( x \in A \) and show \( s(x) \in A \), using \( P(x) \) if needed. (4) Conclude \( A = M \) by (P5). If \( P \) fails at \( e \), carry "\( x = e \) or \( P(x) \)" (the shape of @fd2:lem-naturals-arithmetic (c)).
+
+**When to use it.** A statement about every element of a Peano system whose elements are not known one by one: an abstract \( (M, e, s) \), the image of a map out of \( \nN \), a set of pairs.
+
+**The usual failure.** A property false at \( e \). Closure checked only for elements of a special form (\( x = s(y) \)), forgetting \( e \). (P5) applied to a set that is not a subset of \( M \).
+:::
+
+On \( \nN \) the method is @thm-omega-induction (b), and @fd2:exm-method-induction-step still finds \( P(n) \) inside \( P(\mathrm{S}(n)) \) in the step; the box adds the choice of the set.
+
+::: {.check}
+In structure (ii) of @exm-peano-axioms-independent, which element has two predecessors, and which conclusions of @prp-peano-predecessor fail?
+:::
+
+::: {.solution}
+The element \( 1 \): \( s(0) = 1 = s(1) \). So "exactly one" in (a) fails at \( x = 1 \), because (P4) fails; and (b) fails at \( x = 1 \), since \( s(1) = 1 \).
+:::
+
+::: {.check}
+Does the loop (\( e = p \), \( s(p) = q \), \( s(q) = r \), \( s(r) = p \)) satisfy the conclusion of @prp-peano-predecessor (a)? What does the answer say about a converse?
+:::
+
+::: {.solution}
+Yes. Every element, \( e \) included, has exactly one element stepping to it: \( r \) to \( p \), \( p \) to \( q \), \( q \) to \( r \). Yet the loop is not a Peano system, since it fails (P3). So the conclusion of (a) does not give back the axioms; Exercise C2 shows that it does not even together with (P3) and (P4).
+:::
+
+The next section uses (P3), (P4) and (P5) once each to prove that a function on \( \nN \) can be defined by recursion, and then defines addition and multiplication.
 
 ## Exercises
 
@@ -165,20 +276,20 @@ With Peano's axioms in hand, the next section proves the recursion theorem on \(
 
 ::: {.enumerate options="label=(\alph*)"}
 1. For each of the three structures in @exm-peano-axioms-independent, which of (P3), (P4), (P5) fails?
-2. In the proof of (P4) in @thm-omega-peano, where is @lem-omega-transitive (a) used, and where is (c)?
-3. Is \( \omega \cup \{\omega\} \) inductive? Justify your answer.
-4. Is \( \{0, 1, \{1\}\} \) a transitive set? Is it an element of \( \omega \)?
+2. In the proof of @prp-peano-predecessor (a), which axiom gives at least one \( y \), and which gives at most one?
+3. Is \( \nN \setminus \{0\} \) closed under \( \mathrm{S} \)? Is it \( \nN \)? Which hypothesis of @thm-omega-induction (a) fails for it?
+4. True or false: in a Peano system \( (M, e, s) \), the function \( s \) is a bijection \( M \to M \).
 :::
 :::
 
 ::: {.solution}
 (a) (i) fails (P3); (ii) fails (P4); (iii) fails (P5). Each satisfies the other two (@exm-peano-axioms-independent).
 
-(b) Part (a) is used to pass from \( n \in m \) to \( n \subseteq m \): \( m \) is a natural number, hence a transitive set. Part (c) is used at the end: the argument reaches \( m \in m \), and (c) says \( m \notin m \), which gives the contradiction.
+(b) At least one comes from (P5), applied to the set \( A \) of elements that are \( e \) or a value of \( s \). At most one is (P4).
 
-(c) No. The set \( \omega \cup \{\omega\} = \mathrm{S}(\omega) \) has \( \emptyset \) as an element and is closed under \( \mathrm{S} \) on its elements from \( \omega \), but \( \mathrm{S}(\omega) \) itself is not an element of \( \omega \cup \{\omega\} \). First, \( \mathrm{S}(\omega) \ne \omega \): \( \omega \in \mathrm{S}(\omega) \), while \( \omega \notin \omega \) (the Quick check after @thm-omega-peano). Second, \( \mathrm{S}(\omega) \notin \omega \): otherwise \( \mathrm{S}(\omega) \subseteq \omega \) because \( \omega \) is transitive (@lem-omega-transitive (b)), and \( \omega \in \mathrm{S}(\omega) \) would give \( \omega \in \omega \). So the closure clause fails at the element \( \omega \).
+(c) Yes: for \( n \in \nN \setminus \{0\} \), \( \mathrm{S}(n) \in \nN \) and \( \mathrm{S}(n) \ne 0 \) by (P3). No: \( 0 \in \nN \) is not in it. The hypothesis that fails is \( 0 \in A \).
 
-(d) It is transitive: \( 0 = \emptyset \) is a subset of every set; \( 1 = \{0\} \) is a subset, since \( 0 \) is listed; \( \{1\} \) is a subset, since \( 1 \) is listed. It is not an element of \( \omega \): by @lem-omega-transitive (b), every element of a natural number is a natural number, and \( \{1\} \) is not one. Indeed \( \{1\} \ne 0 \), and if \( \{1\} = \mathrm{S}(k) = k \cup \{k\} \) with \( k \in \omega \), then \( k \in \{1\} \), so \( k = 1 \), and \( \mathrm{S}(1) = \{0, 1\} \ne \{1\} \) since \( 0 \notin \{1\} \); this contradicts @lem-omega-transitive (d). So being transitive does not make a set a natural number.
+(d) False. The function \( s \) is injective, by (P4), but not surjective: \( e \) is not a value of \( s \), by (P3) (@fd2:def-surjective).
 :::
 
 ### B. Practice
@@ -186,53 +297,75 @@ With Peano's axioms in hand, the next section proves the recursion theorem on \(
 ::: {#exr-peano-properties-b1}
 [B1: Put the proof in order]
 
-Let \( m, n \in \omega \). The following lines contain a proof that **if \( \mathrm{S}(m) = \mathrm{S}(n) \), then \( m = n \)**, shuffled, together with two lines that do not belong. Write the seven correct lines in an order that makes a proof, say which other orders are also admissible, and say why each of the other two lines fails.
+Let \( (M, e, s) \) be a Peano system. The following lines contain a proof that **\( s(s(x)) \ne x \) for every \( x \in M \)**, shuffled, together with two lines that do not belong. Write the six correct lines in an order that makes a proof, say which other orders are also admissible, and say why each of the other two lines fails.
 
-(i) So \( m \in n \subseteq m \), that is, \( m \in m \).
+(i) Let \( x \in A \); we show \( s(x) \in A \).
 
-(ii) Suppose \( \mathrm{S}(m) = \mathrm{S}(n) \).
+(ii) Let \( A \coloneqq \{ x \in M : s(s(x)) \ne x \} \).
 
-(iii) We have \( m \cup \{m\} = n \cup \{n\} \), so \( m = n \) by canceling \( {\cup}\{\cdot\} \) on both sides.
+(iii) Then \( s(s(x)) = x \) by (P4), contradicting \( x \in A \).
 
-(iv) Since \( n \in \mathrm{S}(n) = \mathrm{S}(m) \), we have \( n \in m \) or \( n = m \).
+(iv) \( e \in A \), since \( s(s(e)) \) is a value of \( s \), so it is not \( e \), by (P3).
 
-(v) Suppose \( m \ne n \); then \( m \in n \) and \( n \in m \).
+(v) Suppose \( s(s(s(x))) = s(x) \).
 
-(vi) This contradicts \( m \notin m \) (@lem-omega-transitive (c)); so \( m = n \).
+(vi) So \( s(s(s(x))) \ne s(x) \), that is, \( s(x) \in A \); by (P5), \( A = M \).
 
-(vii) From \( m \in n \) and \( n \in m \) we get \( m = n \), since \( \in \) is antisymmetric.
+(vii) Since \( s \) is a bijection, write \( x = s(y) \) and apply the hypothesis to \( y \).
 
-(viii) Since \( m \) is transitive (@lem-omega-transitive (a)) and \( n \in m \), we have \( n \subseteq m \).
-
-(ix) Since \( m \in \mathrm{S}(m) = \mathrm{S}(n) \), we have \( m \in n \) or \( m = n \).
+(viii) Since \( s(s(e)) \ne e \), and every element is reached from \( e \) by steps, \( s(s(x)) \ne x \) for every \( x \).
 :::
 
 ::: {.solution}
-An admissible order is (ii), (ix), (iv), (v), (viii), (i), (vi):
+An admissible order is (ii), (iv), (i), (v), (iii), (vi):
 
-> Suppose \( \mathrm{S}(m) = \mathrm{S}(n) \). Since \( m \in \mathrm{S}(m) = \mathrm{S}(n) \), we have \( m \in n \) or \( m = n \). Since \( n \in \mathrm{S}(n) = \mathrm{S}(m) \), we have \( n \in m \) or \( n = m \). Suppose \( m \ne n \); then \( m \in n \) and \( n \in m \). Since \( m \) is transitive and \( n \in m \), we have \( n \subseteq m \). So \( m \in n \subseteq m \), that is, \( m \in m \). This contradicts \( m \notin m \); so \( m = n \).
+> Let \( A \coloneqq \{ x \in M : s(s(x)) \ne x \} \). Then \( e \in A \), since \( s(s(e)) \) is a value of \( s \), so it is not \( e \), by (P3). Let \( x \in A \); we show \( s(x) \in A \). Suppose \( s(s(s(x))) = s(x) \). Then \( s(s(x)) = x \) by (P4), contradicting \( x \in A \). So \( s(s(s(x))) \ne s(x) \), that is, \( s(x) \in A \); by (P5), \( A = M \).
 
-The only other admissible order exchanges (ix) and (iv), which use only (ii) and not each other. Everything else is forced: (v) needs both (ix) and (iv) to reduce each disjunction to its first alternative; (viii) needs the \( n \in m \) of (v); (i) needs the \( m \in n \) of (v) and the inclusion of (viii); (vi) closes the \( \rulename{RAA} \) box opened by (v), whose assumption is \( m \ne n \), the negation of the goal (@fd1:def-rule-raa).
+Line (ii) comes first, since every other line mentions \( A \). Lines (i), (v), (iii), (vi) come in that order: (i) opens the closure step, (v) opens a supposition, (iii) applies (P4) to the inputs \( s(s(x)) \) and \( x \) and reaches a contradiction, and (vi) closes the supposition and applies (P5), which needs both \( e \in A \) and the closure step. So (iv) may stand anywhere after (ii) and before (vi); stating the base case first, as above, is the convention.
 
-The distractor (iii) cancels where no cancellation law exists. For sets in general, \( x \cup \{y\} = x' \cup \{y'\} \) does not give \( y = y' \): \( \{1\} \cup \{0\} = \{0\} \cup \{1\} \) with \( 0 \ne 1 \). For natural numbers the conclusion \( m = n \) happens to be true, but that is the statement being proved, not a reason for it.
-
-The distractor (vii) cites a "fact" that is not available. No result so far says that \( m \in n \) and \( n \in m \) cannot both hold, and for natural numbers that is exactly what lines (viii), (i) and (vi) establish. Citing it is the circular step (N9) of @fd1:exm-not-allowed-catalogue: the line uses, as a reason, what the proof is there to show.
+Line (vii) cites a false fact: \( s \) is not surjective, since \( e \) is not a value, by (P3). Citing an unavailable "fact" is (N9) of @fd1:exm-not-allowed-catalogue. Line (viii) is an "and so on" with nothing behind it: "every element is reached from \( e \) by steps" is (P5) only if the step from \( x \) to \( s(x) \) is proved, and line (viii) never proves it. That is (N13).
 :::
 
 ::: {#exr-peano-properties-b2}
 [B2: Two steps at a time]
 
-Let \( d \coloneqq \mathrm{S} \circ \mathrm{S} \colon \omega \to \omega \) (@fd2:def-composition), so that \( d(n) = \mathrm{S}(\mathrm{S}(n)) \). Show that \( (\omega, 0, d) \) satisfies (P3) and (P4) of @def-peano-system, and that it does not satisfy (P5).
+Let \( d \coloneqq \mathrm{S} \circ \mathrm{S} \colon \nN \to \nN \) (@fd2:def-composition), so that \( d(n) = \mathrm{S}(\mathrm{S}(n)) \). Show that \( (\nN, 0, d) \) satisfies (P3) and (P4) of @def-peano-system, and that it does not satisfy (P5).
 
-*Hint: look at the set \( \omega \setminus \{1\} \).*
+*Hint: look at the set \( \nN \setminus \{\mathrm{S}(0)\} \).*
 :::
 
 ::: {.solution}
-(P3): for \( n \in \omega \), \( d(n) = \mathrm{S}(\mathrm{S}(n)) \ne 0 \) by (P3) of @thm-omega-peano, applied to \( \mathrm{S}(n) \in \omega \).
+(P3): for \( n \in \nN \), \( d(n) = \mathrm{S}(\mathrm{S}(n)) \ne 0 \) by (P3) for \( \nN \), applied to \( \mathrm{S}(n) \in \nN \).
 
-(P4): if \( d(m) = d(n) \), then \( \mathrm{S}(\mathrm{S}(m)) = \mathrm{S}(\mathrm{S}(n)) \), so \( \mathrm{S}(m) = \mathrm{S}(n) \) by (P4) of @thm-omega-peano, and then \( m = n \) by (P4) again. (Equivalently: \( d \) is a composite of two injections, so it is injective by @fd2:thm-composition-injective-surjective (a).)
+(P4): if \( d(m) = d(n) \), then \( \mathrm{S}(\mathrm{S}(m)) = \mathrm{S}(\mathrm{S}(n)) \), so \( \mathrm{S}(m) = \mathrm{S}(n) \) by (P4) for \( \nN \), and then \( m = n \) by (P4) again. (Equivalently: \( d \) is a composite of two injections, so it is injective by @fd2:thm-composition-injective-surjective (a).)
 
-(P5) fails. Let \( A \coloneqq \omega \setminus \{1\} \). It contains \( 0 \), since \( 0 \ne 1 \). It is closed under \( d \): let \( n \in A \); then \( d(n) \in \omega \), and \( d(n) \ne 1 \), because \( \mathrm{S}(\mathrm{S}(n)) = 1 = \mathrm{S}(0) \) would give \( \mathrm{S}(n) = 0 \) by (P4), against (P3). But \( A \ne \omega \), since \( 1 \in \omega \) and \( 1 \notin A \). So a subset of \( \omega \) with \( 0 \) as an element and closed under \( d \) need not be all of \( \omega \). The step \( d \) skips \( 1 \), and starting from \( 0 \) it reaches only the "even" numbers.
+(P5) fails. Let \( A \coloneqq \nN \setminus \{\mathrm{S}(0)\} \). It contains \( 0 \), since \( 0 \ne \mathrm{S}(0) \) by (P3). It is closed under \( d \): let \( n \in A \); then \( d(n) \in \nN \), and \( d(n) \ne \mathrm{S}(0) \), because \( \mathrm{S}(\mathrm{S}(n)) = \mathrm{S}(0) \) would give \( \mathrm{S}(n) = 0 \) by (P4), against (P3). But \( A \ne \nN \), since \( \mathrm{S}(0) \in \nN \) and \( \mathrm{S}(0) \notin A \). So a subset of \( \nN \) with \( 0 \) as an element and closed under \( d \) need not be all of \( \nN \). The step \( d \) skips \( \mathrm{S}(0) \), and starting from \( 0 \) it meets only \( 0 \), \( \mathrm{S}(\mathrm{S}(0)) \), \( \mathrm{S}(\mathrm{S}(\mathrm{S}(\mathrm{S}(0)))) \), …: every second number.
+:::
+
+::: {#exr-peano-properties-b3}
+[B3: Prove or disprove]
+
+Let \( (M, e, s) \) be a Peano system. Prove or disprove each statement.
+
+::: {.enumerate options="label=(\alph*)"}
+1. If \( A \subseteq M \) contains \( s(e) \) and is closed under \( s \), then \( A \cup \{e\} = M \).
+2. If \( A \subseteq M \) is non-empty and closed under \( s \), then \( A = M \).
+3. Every \( x \ne e \) in \( M \) is \( s(y) \) for some \( y \in M \) with \( y \ne x \).
+4. If \( f \colon M \to M \) satisfies \( f(e) = e \) and \( f(s(x)) = s(f(x)) \) for every \( x \in M \), then \( f = \id_M \).
+5. Every \( x \in M \) is \( e \) or \( s(s(y)) \) for some \( y \in M \).
+:::
+:::
+
+::: {.solution}
+(a) **True.** The set \( A \cup \{e\} \) is a subset of \( M \) containing \( e \). It is closed under \( s \): for \( x = e \), \( s(e) \in A \) by hypothesis; for \( x \in A \), \( s(x) \in A \) by closure. By (P5), \( A \cup \{e\} = M \).
+
+(b) **False.** Let \( A \coloneqq M \setminus \{e\} \). It contains \( s(e) \), since \( s(e) \ne e \) by (P3), so it is non-empty. It is closed under \( s \), since no value of \( s \) is \( e \), by (P3). It misses \( e \), so \( A \ne M \).
+
+(c) **True.** Let \( x \ne e \). By @prp-peano-predecessor (a) there is \( y \in M \) with \( s(y) = x \). If \( y = x \), then \( s(x) = x \), against @prp-peano-predecessor (b). So \( y \ne x \).
+
+(d) **True**, by @exm-method-closed-subset. Let \( A \coloneqq \{ x \in M : f(x) = x \} \). Then \( e \in A \), since \( f(e) = e \). If \( x \in A \), then \( f(s(x)) = s(f(x)) = s(x) \), so \( s(x) \in A \). By (P5), \( A = M \). So \( f \) and \( \id_M \) have the same domain, the same codomain and the same value at every \( x \in M \), and \( f = \id_M \) by @fd2:prp-function-equality.
+
+(e) **False.** Take \( x \coloneqq s(e) \). It is not \( e \), by (P3). If \( s(e) = s(s(y)) \) for some \( y \in M \), then \( e = s(y) \) by (P4), against (P3). So \( s(e) \) is neither \( e \) nor of the form \( s(s(y)) \).
 :::
 
 ### C. Going deeper
@@ -240,79 +373,85 @@ Let \( d \coloneqq \mathrm{S} \circ \mathrm{S} \colon \omega \to \omega \) (@fd2
 ::: {#exr-peano-properties-c1}
 [C1: A Peano system with a different start]
 
-Give an example of a Peano system \( (M, e, s) \) with \( M \subseteq \omega \) and \( e \ne 0 \). Check every clause of @def-peano-system.
+Give an example of a Peano system \( (M, e, s) \) with \( M \subseteq \nN \) and \( e \ne 0 \). Check every clause of @def-peano-system.
 :::
 
 ::: {.solution}
-Any correct answer has: a set \( M \subseteq \omega \); an element \( e \in M \) with \( e \ne 0 \); a function \( s \colon M \to M \), so that every value lies in \( M \); and the three clauses (P3), (P4), (P5) for these data.
+Any correct answer has: a set \( M \subseteq \nN \); an element \( e \in M \) with \( e \ne 0 \); a function \( s \colon M \to M \), so that every value lies in \( M \); and the three clauses (P3), (P4), (P5) for these data.
 
-Take \( M \coloneqq \omega \setminus \{0\} \), \( e \coloneqq 1 \), and \( s(n) \coloneqq \mathrm{S}(n) \) for \( n \in M \).
+Take \( M \coloneqq \nN \setminus \{0\} \), \( e \coloneqq \mathrm{S}(0) \), and \( s(n) \coloneqq \mathrm{S}(n) \) for \( n \in M \).
 
-- **The data.** \( 1 \in M \), since \( 1 \in \omega \) and \( 1 \ne 0 \). For \( n \in M \), \( \mathrm{S}(n) \in \omega \) by (P2) and \( \mathrm{S}(n) \ne 0 \) by (P3) of @thm-omega-peano, so \( \mathrm{S}(n) \in M \). The graph \( \{ (n, \mathrm{S}(n)) : n \in M \} \) is a set by (Z6) inside \( M \times M \). (Fn1) holds, since \( (n, \mathrm{S}(n)) \) is in the graph for each \( n \in M \); (Fn2) holds as in the proof of @thm-omega-peano, by @thm-kuratowski-pair. So \( s \colon M \to M \) is a function (@fd2:def-function).
-- **(P3).** If \( s(n) = 1 \) for some \( n \in M \), then \( \mathrm{S}(n) = \mathrm{S}(0) \), so \( n = 0 \) by (P4) for \( \omega \); but \( 0 \notin M \).
-- **(P4).** If \( \mathrm{S}(m) = \mathrm{S}(n) \) with \( m, n \in M \), then \( m = n \) by (P4) for \( \omega \).
-- **(P5).** Let \( A \subseteq M \) with \( 1 \in A \) and \( \mathrm{S}(n) \in A \) for every \( n \in A \). The set \( A' \coloneqq A \cup \{0\} \subseteq \omega \) is inductive: \( 0 \in A' \); \( \mathrm{S}(0) = 1 \in A \subseteq A' \); and for \( n \in A \), \( \mathrm{S}(n) \in A \subseteq A' \). By @thm-omega-induction (a), \( A' = \omega \). Every \( n \in M \) lies in \( A' \) and is not \( 0 \), so \( n \in A \). Hence \( A = M \).
+- **The data.** \( \mathrm{S}(0) \in M \), since \( \mathrm{S}(0) \in \nN \) and \( \mathrm{S}(0) \ne 0 \) by (P3) for \( \nN \). For \( n \in M \), \( \mathrm{S}(n) \in \nN \) since \( \mathrm{S} \) maps \( \nN \) into \( \nN \), and \( \mathrm{S}(n) \ne 0 \) by (P3) for \( \nN \), so \( \mathrm{S}(n) \in M \). So \( s \colon M \to M \) is a function, since \( \mathrm{S} \) is one and its values on \( M \) lie in \( M \) (@fd2:def-function).
+- **(P3).** If \( s(n) = \mathrm{S}(0) \) for some \( n \in M \), then \( \mathrm{S}(n) = \mathrm{S}(0) \), so \( n = 0 \) by (P4) for \( \nN \); but \( 0 \notin M \).
+- **(P4).** If \( \mathrm{S}(m) = \mathrm{S}(n) \) with \( m, n \in M \), then \( m = n \) by (P4) for \( \nN \).
+- **(P5).** Let \( A \subseteq M \) with \( \mathrm{S}(0) \in A \) and \( \mathrm{S}(n) \in A \) for every \( n \in A \). The set \( A' \coloneqq A \cup \{0\} \subseteq \nN \) contains \( 0 \) and is closed under \( \mathrm{S} \): \( \mathrm{S}(0) \in A \subseteq A' \); and for \( n \in A \), \( \mathrm{S}(n) \in A \subseteq A' \). By @thm-omega-induction (a), \( A' = \nN \). Every \( n \in M \) lies in \( A' \) and is not \( 0 \), so \( n \in A \). Hence \( A = M \).
 
-Other answers can be checked against the four properties at the start. For instance, \( M \coloneqq \omega \setminus \{0, 1\} \), \( e \coloneqq 2 \), \( s(n) \coloneqq \mathrm{S}(n) \) also works, by the same argument with \( \{0, 1\} \) added in (P5).
+Other answers can be checked against the four properties at the start. For instance, \( M \coloneqq \nN \setminus \{0, \mathrm{S}(0)\} \), \( e \coloneqq \mathrm{S}(\mathrm{S}(0)) \), \( s(n) \coloneqq \mathrm{S}(n) \) also works, by the same argument with \( \{0, \mathrm{S}(0)\} \) added in (P5).
 :::
 
 ::: {#exr-peano-properties-c2}
-[C2: Closed subsets of the chain]
+[C2: Every element but one is a successor, used later]
 
-Let \( (M, e, s) \) be the structure (iii) of @exm-peano-axioms-independent. Call \( A \subseteq M \) **good** if \( e \in A \) and \( s(x) \in A \) for every \( x \in A \).
-
-::: {.enumerate options="label=(\alph*)"}
-1. Show that every good set contains \( \omega \times \{0\} \).
-2. Show that each of the following sets is good, where \( m, k \in \omega \):
+Let \( a, b, c \) be three different objects, \( M \coloneqq \nN \times \{a, b, c\} \), \( e \coloneqq (0, a) \), and, for \( n, k \in \nN \),
 \[
 \begin{aligned}
-G_0 &\coloneqq \omega \times \{0\} , \qquad G_\infty \coloneqq M , \\
-R_m &\coloneqq G_0 \cup \{ (n, 1) : n \in \omega, \ m \in \mathrm{S}(n) \} , \\
-L_k &\coloneqq G_0 \cup (\omega \times \{1\}) \cup \{ (j, 2) : j \in \mathrm{S}(k) \} .
+s(n, a) &\coloneqq (\mathrm{S}(n), a) , & s(n, b) &\coloneqq (\mathrm{S}(n), b) , \\
+s(0, c) &\coloneqq (0, b) , & s(\mathrm{S}(k), c) &\coloneqq (k, c) .
 \end{aligned}
 \]
-3. Show that a good set that contains \( (k, 2) \) contains \( L_k \).
+
+::: {.enumerate options="label=(\alph*)"}
+1. Explain why \( s \) is a function \( M \to M \).
+2. Show that \( (M, e, s) \) satisfies (P3) and (P4).
+3. Show that every \( x \in M \) with \( x \ne e \) is a value of \( s \).
+4. Show that \( (M, e, s) \) fails (P5).
+5. Which conclusions of @prp-peano-predecessor hold in \( (M, e, s) \)?
 :::
 :::
 
 ::: {.solution}
 [Hint 1]
 
-For (a), apply induction to the set of \( n \in \omega \) with \( (n, 0) \in A \). For (c), the arrows of the bottom row point toward \( (0, 1) \): from \( (\mathrm{S}(k), 2) \) the step goes to \( (k, 2) \).
+For (a), apply @prp-peano-predecessor (a) to \( \nN \).
 :::
 
 ::: {.solution}
 [Hint 2]
 
-For (c), prove by induction on \( k \in \omega \) the property: "for every good \( A \), if \( (k, 2) \in A \), then \( L_k \subseteq A \)".
+For (d), try the set \( \nN \times \{a\} \).
 :::
 
 ::: {.solution}
-(a) Let \( A \) be good, and let \( B \coloneqq \{ n \in \omega : (n, 0) \in A \} \). Then \( 0 \in B \), because \( (0, 0) = e \in A \); and if \( n \in B \), then \( (\mathrm{S}(n), 0) = s(n, 0) \in A \), so \( \mathrm{S}(n) \in B \). By @thm-omega-induction (a), \( B = \omega \), so \( \omega \times \{0\} \subseteq A \).
+(a) Each element of \( M \) is \( (n, t) \) for exactly one \( n \in \nN \) and one \( t \in \{a, b, c\} \) (@fd2:def-ordered-pair). For \( t = a \) and \( t = b \), one formula applies and names one value. For \( t = c \), the first coordinate is \( 0 \) or \( \mathrm{S}(k) \) for some \( k \in \nN \), by @prp-peano-predecessor (a) for \( \nN \); never both, by (P3) for \( \nN \); and the \( k \) is unique. So exactly one line of the definition applies to each element, and it names one value. The values lie in \( M \), since \( \mathrm{S}(n), 0, k \in \nN \).
 
-(b) All four sets contain \( e = (0, 0) \in G_0 \). Closure is checked element by element, using the definition of \( s \).
+(b) Sort the values by their second coordinates (@fd2:def-ordered-pair):
+\[
+\begin{aligned}
+&\text{second coordinate } a : && s(n, a) = (\mathrm{S}(n), a) , \\
+&\text{second coordinate } b : && s(n, b) = (\mathrm{S}(n), b) \ \text{ and } \ s(0, c) = (0, b) , \\
+&\text{second coordinate } c : && s(\mathrm{S}(k), c) = (k, c) .
+\end{aligned}
+\]
 
-- \( G_0 \): \( s(n, 0) = (\mathrm{S}(n), 0) \in G_0 \).
-- \( G_\infty = M \): \( s \) maps \( M \) into \( M \).
-- \( R_m \): elements of \( G_0 \) are handled as before. If \( (n, 1) \in R_m \) with \( m \in \mathrm{S}(n) \), then \( s(n, 1) = (\mathrm{S}(n), 1) \), and \( m \in \mathrm{S}(n) \subseteq \mathrm{S}(\mathrm{S}(n)) \); so \( s(n, 1) \in R_m \).
-- \( L_k \): elements of \( G_0 \) as before; \( s(n, 1) = (\mathrm{S}(n), 1) \in \omega \times \{1\} \). Every \( j \in \mathrm{S}(k) \) lies in \( \omega \), since \( \mathrm{S}(k) \in \omega \) by (P2) of @thm-omega-peano and \( \omega \) is transitive (@lem-omega-transitive (b)); so \( L_k \subseteq M \). For \( (j, 2) \) with \( j \in \mathrm{S}(k) \): if \( j = 0 \), then \( s(0, 2) = (0, 1) \in L_k \); if \( j = \mathrm{S}(i) \) with \( i \in \omega \) (@lem-omega-transitive (d)), then \( s(j, 2) = (i, 2) \), and \( i \in \mathrm{S}(i) = j \in \mathrm{S}(k) \), so \( i \in \mathrm{S}(k) \) because \( \mathrm{S}(k) \) is transitive (@lem-omega-transitive (a)); hence \( (i, 2) \in L_k \).
+**(P3) holds.** A value equal to \( e = (0, a) \) would have second coordinate \( a \), so it would be \( (\mathrm{S}(n), a) \) with \( \mathrm{S}(n) = 0 \), against (P3) for \( \nN \).
 
-(c) We prove by @thm-omega-induction (b) the property \( P(k) \): "for every good \( A \), if \( (k, 2) \in A \), then \( L_k \subseteq A \)".
+**(P4) holds.** Suppose \( s(x) = s(x') \). The two values have the same second coordinate, so they come from the same row of the display. In the first row, \( (\mathrm{S}(n), a) = (\mathrm{S}(n'), a) \) gives \( n = n' \) by (P4) for \( \nN \). In the third row, \( (k, c) = (k', c) \) gives \( k = k' \), so \( \mathrm{S}(k) = \mathrm{S}(k') \). In the second row, \( (\mathrm{S}(n), b) \ne (0, b) \) because \( \mathrm{S}(n) \ne 0 \); so either both values are of the form \( (\mathrm{S}(n), b) \), and \( n = n' \) as before, or both are \( (0, b) \), and both inputs are \( (0, c) \). In every case \( x = x' \).
 
-*Base.* Let \( A \) be good with \( (0, 2) \in A \). Then \( (0, 1) = s(0, 2) \in A \). The set \( \{ n \in \omega : (n, 1) \in A \} \) has \( 0 \) as an element and is closed under \( \mathrm{S} \), since \( s(n, 1) = (\mathrm{S}(n), 1) \); so it is \( \omega \) by @thm-omega-induction (a), and \( \omega \times \{1\} \subseteq A \). With (a) and \( \mathrm{S}(0) = \{0\} \), this gives \( L_0 \subseteq A \).
+(c) Let \( x = (m, t) \ne e \). If \( t = a \), then \( m \ne 0 \), so \( m = \mathrm{S}(n) \) for some \( n \) (@prp-peano-predecessor (a) for \( \nN \)), and \( x = s(n, a) \). If \( t = b \), then \( x = (0, b) = s(0, c) \), or \( m = \mathrm{S}(n) \) and \( x = s(n, b) \). If \( t = c \), then \( x = (m, c) = s(\mathrm{S}(m), c) \).
 
-*Step.* Let \( k \in \omega \) with \( P(k) \), and let \( A \) be good with \( (\mathrm{S}(k), 2) \in A \). Then \( (k, 2) = s(\mathrm{S}(k), 2) \in A \), so \( L_k \subseteq A \) by \( P(k) \). Now \( L_{\mathrm{S}(k)} = L_k \cup \{ (\mathrm{S}(k), 2) \} \), because \( j \in \mathrm{S}(\mathrm{S}(k)) \) means \( j \in \mathrm{S}(k) \) or \( j = \mathrm{S}(k) \). Both parts lie in \( A \), so \( L_{\mathrm{S}(k)} \subseteq A \), which is \( P(\mathrm{S}(k)) \).
+(d) The set \( \nN \times \{a\} \) contains \( e \), is closed under \( s \), since \( s(n, a) = (\mathrm{S}(n), a) \), and misses \( (0, b) \), since \( b \ne a \). So it is a subset of \( M \) containing \( e \), closed under \( s \), and not equal to \( M \).
 
-So the good sets include \( G_0 \), the sets \( R_m \) (whose part in the bottom row starts at \( (m, 1) \) and runs to the right), the sets \( L_k \) (whose part in the bottom row starts at \( (k, 2) \)), and \( M \). Read on the two-sided chain, these are the empty part, the rays starting at some point, and the whole chain. That they are **all** the good sets is also true, but the proof needs a least element of a non-empty set of natural numbers, which comes later in this chapter with the order on \( \omega \). Part (c) already shows that a good set containing every \( (k, 2) \) contains every \( L_k \), hence all of \( M \). Every good set other than \( M \) is a witness to the failure of (P5).
+(e) Both. Part (a) of @prp-peano-predecessor holds: a predecessor exists by (c), and it is unique by (P4), proved in (b). Part (b) holds: \( (\mathrm{S}(n), a) \ne (n, a) \) and \( (\mathrm{S}(n), b) \ne (n, b) \), since \( \mathrm{S}(n) \ne n \) in \( \nN \) (@prp-peano-predecessor (b)); \( s(0, c) = (0, b) \ne (0, c) \), since \( b \ne c \); and \( s(\mathrm{S}(k), c) = (k, c) \ne (\mathrm{S}(k), c) \), since \( k \ne \mathrm{S}(k) \). So neither conclusion of the proposition gives back (P5), even together with (P3) and (P4).
+
+The picture to keep in mind: the elements with second coordinate \( a \) form a copy of \( \nN \), starting at \( e \). The elements with second coordinates \( b \) and \( c \) form one chain running forever in both directions. Read \( (n, b) \) as "\( n \)" and \( (k, c) \) as "\( -(k + 1) \)": the step moves one place to the right everywhere, with \( (0, c) \), playing \( -1 \), stepping to \( (0, b) \), playing \( 0 \). Every element of the chain has an arrow coming in, and none of it is reached from \( e \).
 :::
 
 <!-- dependency ledger
-def-peano-system (example): (tagged numbers) the graph of s is a set by (Z6) inside M x M | prp-cartesian-product-exists (cited)
-exm-peano-axioms-independent (solution): 0, 1, 2 are three different sets, and 3 = {0, 1, 2} | exm-von-neumann-numerals (cited)
-exm-peano-axioms-independent (claim): (the paragraph after the picture) reading (k, 2) as -(k + 1) | prose reading only; no integer arithmetic is used in any proof
-exr-peano-properties-a1 (solution): (d) 0 not in {1} since 0 != 1 | exm-von-neumann-numerals (cited)
-exr-peano-properties-c2 (solution): every good set is one of G_0, R_m, L_k, M | needs thm-omega-well-ordering, later in this chapter (stated, not proved here; nothing depends on it)
-thm-omega-induction (claim): (the remark after it) n + 1 = S(n) once addition is defined | def-omega-arithmetic (a), with 1 := S(0) from (c); the paragraph "The successor is plus one" after it, later in this chapter (prose pointer; nothing in this section depends on it)
-thm-omega-induction (example): (the worked move) 2 = {0, 1}, 1 != 0 | exm-von-neumann-numerals (cited)
-thm-omega-induction (example): (the worked move) S(n) in omega | thm-omega-least-inductive (a) (cited)
+ax-natural-numbers (claim): if the school reals are trusted, the N of Sets and Functions is a Peano system | F3.1 §04 cor-omega-identification (a) (prose pointer "Section 1.4 checks this"; not a reason)
+ax-natural-numbers (claim): Axiomatic Set Theory builds a Peano system from sets | ST.1, described in F3.1 §05 (prose pointer; nothing here depends on it)
+ax-natural-numbers (claim): any two Peano systems are matched by exactly one bijection respecting start and step | F3.1 §04 thm-peano-categoricity (prose pointer; nothing here depends on it)
+thm-omega-induction (claim): (the paragraph after it) n + 1 = S(n) once addition is defined | F3.1 §02 def-omega-arithmetic (c) (prose pointer; nothing in this section depends on it)
+exm-peano-axioms-independent (claim): (the paragraph after the picture) the sentences true in N hold in a structure with a non-standard element; a first-order schema speaks only of definable subsets | fd1:exm-non-standard-naturals (cited) and the Looking ahead closing F1.7 §06 (prose only)
+exr-peano-properties-b2 (solution): d reaches only every second number | prose description only; parity is defined in F3.1 §03 and nothing uses this sentence
+exr-peano-properties-c2 (solution): reading (k, c) as -(k + 1) | prose reading only; no integer arithmetic is used in any proof
 -->

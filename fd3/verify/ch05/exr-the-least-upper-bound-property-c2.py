@@ -1,4 +1,4 @@
-"""exr-the-least-upper-bound-property-c2: bisection in Q on A = {q : q^2 < 2}, a_0 = 1, M = 2, l_0 = 0, D = 2;
+"""exr-the-least-upper-bound-property-c2: bisection in Q on A = {q : q^2 < 2}, (l_0, u_0) = (0, 2), D = 2;
 l_k^2 < 2 <= u_k^2 (indeed > 2), u_k - l_k = D/2^k, l_k non-decreasing, u_k non-increasing;
 h = min(1, (2 - u^2)/(2(2u + 1))) gives (u + h)^2 <= u^2 + (2u + 1)h <= u^2 + (2 - u^2)/2 < 2 for 0 <= u, u^2 < 2."""
 from fractions import Fraction as F

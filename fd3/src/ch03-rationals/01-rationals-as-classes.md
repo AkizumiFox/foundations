@@ -1,10 +1,10 @@
 # The Rationals as Classes of Fractions
 
-<!-- S3: style revision per S1 change list (layout-proposal.md §3, 3.1, pipeline S): the same construction a second time, Idea pointers to the boxes of Sections 2.2 and 2.3; exm-fractions-nonzero-denominators becomes a B/C exercise (label kept). -->
-
-Section 2.3 made \( \nZ \) an ordered commutative ring and showed, in a Quick check, that \( \nZ \) is not a field, because \( 2x = 1 \) has no solution in it. This section repairs that defect the way Section 2.1 repaired the missing subtraction in \( \nN \). There, a pair \( (a, b) \) recorded "\( a - b \)" without performing it; here a pair \( (p, q) \) records "\( p \) divided by \( q \)" without performing it. We define \( \nQ \) as a set of classes of such pairs, give it addition and multiplication through representatives, check that they are well defined, and prove that \( \nQ \) is a field containing a copy of \( \nZ \).
+Chapter 2 built \( \nZ \) and made it an ordered commutative ring, but not a field: \( 2x = 1 \) has no solution in \( \nZ \) (Quick check in Section 2.4). This section repairs that defect with the move of Section 2.1, used a second time. There a pair \( (a, b) \) recorded "\( a - b \)" without performing it; here a pair \( (p, q) \) records "\( p \) divided by \( q \)" without performing it. We define \( \nQ \) as a set of classes of such pairs, give it addition and multiplication through representatives, check that they are well defined, and prove that \( \nQ \) is a field containing a copy of \( \nZ \).
 
 ## Fractions as pairs
+
+*Before reading on.* The pairs \( (1, 2) \) and \( (2, 4) \) are different elements of \( \nZ \times \nZ_{>0} \), yet both should name one half. Which condition on two pairs \( (p, q) \) and \( (r, s) \) says "same quotient", using only operations that \( \nZ \) already has?
 
 At school, \( \tfrac12 \), \( \tfrac24 \) and \( \tfrac36 \) are "the same number", and the test for sameness is cross-multiplication: \( \tfrac pq = \tfrac rs \) when \( ps = rq \). The test is the useful part. It mentions only multiplication of integers, which we have, and not division, which we do not. So we keep the test and let a rational number **be** what the equivalent fractions have in common: the class of all of them.
 
@@ -42,7 +42,7 @@ Let \( (p, q), (r, s), (t, u) \in \nZ \times \nZ_{>0} \). All computations are i
 Hence \( (pu - tq)s = (pu)s - (tq)s = 0 \), by (F9) and @prp-ring-algebra (c). Since \( s \in \nZ_{>0} \), \( s > 0 \), so \( s \ne 0 \) by (O1). By @prp-ordered-ring-rules (f), \( pu - tq = 0 \), that is, \( pu = tq \). So \( (p, q) \sim (t, u) \). This proves the proposition.
 :::
 
-The hypothesis that denominators are non-zero is used once, for the **middle** pair \( (r, s) \), and it is needed there. On \( \nZ \times \nN \), with the same formula, \( (1, 0) \sim (0, 0) \) (since \( 1 \cdot 0 = 0 \cdot 0 \)) and \( (0, 0) \sim (1, 1) \) (since \( 0 \cdot 1 = 1 \cdot 0 \)), but \( (1, 0) \not\sim (1, 1) \) (since \( 1 \cdot 1 \ne 1 \cdot 0 \)). The pair \( (0, 0) \) is related to everything, and transitivity collapses through it.
+The hypothesis that denominators are non-zero is used once, for the **middle** pair \( (r, s) \), and it is needed there. On \( \nZ \times \nN \), with the same formula, \( (1, 0) \sim (0, 0) \) (since \( 1 \cdot 0 = 0 \cdot 0 \)) and \( (0, 0) \sim (1, 1) \) (since \( 0 \cdot 1 = 1 \cdot 0 \)), but \( (1, 0) \not\sim (1, 1) \) (since \( 1 \cdot 1 \ne 1 \cdot 0 \)). The pair \( (0, 0) \) is related to everything, and transitivity collapses through it. *Sets and Functions*, Section 5.2 met the same failure in an exercise; it is why denominators must be non-zero.
 
 ::: {#def-rationals-as-classes}
 [The Rational Numbers]
@@ -61,11 +61,9 @@ In words: a rational number is a **set of pairs**, all the pairs \( (r, s) \) wi
 - \( [(1, 2)] = \{ (k, 2k) : k \in \nZ_{>0} \} \). Indeed, \( (r, s) \sim (1, 2) \) means \( 2r = s \). Then \( 2r > 0 \), and \( r \le 0 \) would give \( 2r = r + r \le 0 \) (@prp-ordered-ring-rules (b)), so \( r > 0 \). Conversely each \( (k, 2k) \) with \( k > 0 \) has \( 2k > 0 \) and \( k \cdot 2 = 2k \cdot 1 \). Its elements with denominator at most \( 6 \) are \( (1, 2) \), \( (2, 4) \), \( (3, 6) \).
 - \( [(-2, 1)] = \{ (-2s, s) : s \in \nZ_{>0} \} \), since \( (r, s) \sim (-2, 1) \) means \( r = -2s \). This is the class that will be the integer \( -2 \).
 - The degenerate case: \( [(0, 1)] = \{ (0, s) : s \in \nZ_{>0} \} \), since \( (r, s) \sim (0, 1) \) means \( r \cdot 1 = 0 \cdot s = 0 \). Every fraction with numerator \( 0 \) lies in this one class, whatever its denominator; it will be the zero of \( \nQ \).
-- \( [(2, 3)] \) contains \( (4, 6) \) and \( (6, 9) \), since \( 2 \cdot 6 = 4 \cdot 3 \) and \( 2 \cdot 9 = 6 \cdot 3 \). It does not contain \( (-4, -6) \), which is not even an element of \( \nZ \times \nZ_{>0} \). Describing the whole class needs divisibility, which a later chapter of this volume develops on the constructed \( \nZ \).
+- \( [(2, 3)] \) contains \( (4, 6) \) and \( (6, 9) \), since \( 2 \cdot 6 = 4 \cdot 3 \) and \( 2 \cdot 9 = 6 \cdot 3 \). It does not contain \( (-4, -6) \), which is not even an element of \( \nZ \times \nZ_{>0} \). Describing the whole class needs lowest terms, proved in *Algebraic Preliminaries*, Chapter 1.
 
-**A non-example by minimal change.** Allow the denominator \( 0 \): take \( \nZ \times \nN \) instead of \( \nZ \times \nZ_{>0} \), with the same formula. Reflexivity and symmetry survive, by the same lines. Transitivity fails, as the triple \( (1, 0) \), \( (0, 0) \), \( (1, 1) \) above shows, so there is no quotient set. *Sets and Functions*, Section 5.2 met the same failure in an exercise; it is the reason denominators must be non-zero.
-
-**Why positive and not merely non-zero denominators?** Non-zero denominators would also give an equivalence relation, and, as the last example of this section shows, essentially the same set \( \nQ \). The difference appears with the order. With positive denominators, "\( [(p, q)] \) is positive" can mean "\( p > 0 \)", one inequality in \( \nZ \); with non-zero denominators, it would have to say "\( p \) and \( q \) have the same sign", and a naive comparison of two fractions breaks, as the warning at the end of this section shows.
+**Why positive denominators?** Non-zero denominators of either sign give the same set \( \nQ \) (Exercise C3). The difference appears with the order: with positive denominators, "\( [(p, q)] \) is positive" can mean "\( p > 0 \)", one inequality in \( \nZ \); Section 3.2 shows what breaks otherwise.
 
 ::: {.warning}
 Do not read \( [(p, q)] \) as the number \( p/q \). There is no division in \( \nZ \), and \( \nQ \) has no multiplication yet, so "\( p/q \)" means nothing at this point. The class is a set of pairs, and any statement made with one representative, such as "the denominator of \( [(1, 2)] \) is \( 2 \)", must be checked against all of them (here it fails: \( (2, 4) \) is also in the class). The fraction notation becomes honest once \( \nZ \) is placed inside \( \nQ \), in @prp-integers-embed-rationals and the identification that follows it.
@@ -76,10 +74,8 @@ Is \( (3, 4) \sim (-6, -8) \) in \( \nZ \times \nZ_{>0} \)?
 :::
 
 ::: {.solution}
-The question is malformed: \( -8 \notin \nZ_{>0} \), so \( (-6, -8) \) is not an element of \( \nZ \times \nZ_{>0} \), and \( \sim \) says nothing about it. In the variant with non-zero denominators (the last example of this section), the answer is yes: \( 3 \cdot (-8) = -24 = (-6) \cdot 4 \).
+The question is malformed: \( -8 \notin \nZ_{>0} \), so \( (-6, -8) \) is not an element of \( \nZ \times \nZ_{>0} \), and \( \sim \) says nothing about it.
 :::
-
-This construction pays a debt. *Sets and Functions*, Section 5.2 described \( \nQ \) as the quotient of \( \nZ \times \nZ_{>0} \) by cross-multiplication while \( \nZ \) was still the school integers; now \( \nZ \) is the ring of Section 2.3, and the quotient is the definition of \( \nQ \).
 
 ## Adding and multiplying classes
 
@@ -114,7 +110,7 @@ from \( X \times X \) to \( X \) satisfy the hypotheses of @thm-well-defined-on-
 :::
 
 ::: {.idea}
-This is the move of Section 2.2, **check on representatives, one argument at a time**. Change the first pair to an equivalent one with the second fixed, then the second with the first fixed; @thm-well-defined-on-classes (b) joins the two changes by transitivity. Each change is one identity in \( \nZ \): expand both cross-products and use the hypothesis \( pq' = p'q \) (or \( rs' = r's \)) once.
+This is @fd2:exm-method-well-definedness, run one argument at a time as in Section 2.2: by @thm-well-defined-on-classes (b), it suffices to change one pair with the other fixed. Each change is one identity in \( \nZ \) that uses the hypothesis \( pq' = p'q \) once. Both formulas are symmetric in the two pairs, so the second argument costs nothing.
 :::
 
 ::: {.proof}
@@ -123,11 +119,6 @@ All computations are in the commutative ring \( \nZ \) (@thm-integers-commutativ
 *Multiplication, first argument.* Let \( (p, q) \sim (p', q') \), so \( pq' = p'q \), and let \( (r, s) \in X \). We need \( (pr, qs) \sim (p'r, q's) \), that is, \( (pr)(q's) = (p'r)(qs) \). Indeed
 \[
 (pr)(q's) = (pq')(rs) = (p'q)(rs) = (p'r)(qs) .
-\]
-
-*Multiplication, second argument.* Let \( (r, s) \sim (r', s') \), so \( rs' = r's \), and let \( (p, q) \in X \). We need \( (pr)(qs') = (pr')(qs) \). Indeed
-\[
-(pr)(qs') = (pq)(rs') = (pq)(r's) = (pr')(qs) .
 \]
 
 *Addition, first argument.* Let \( pq' = p'q \). We need \( (ps + rq, qs) \sim (p's + rq', q's) \), that is, \( (ps + rq)(q's) = (p's + rq')(qs) \). By (F9),
@@ -139,18 +130,19 @@ All computations are in the commutative ring \( \nZ \) (@thm-integers-commutativ
 \]
 and the right-hand sides are equal because \( pq' = p'q \).
 
-*Addition, second argument.* Let \( rs' = r's \). We need \( (ps + rq, qs) \sim (ps' + r'q, qs') \), that is, \( (ps + rq)(qs') = (ps' + r'q)(qs) \). By (F9),
-\[
-\begin{aligned}
-(ps + rq)(qs') &= pqss' + (rs')q^2 , \\
-(ps' + r'q)(qs) &= pqss' + (r's)q^2 ,
-\end{aligned}
-\]
-and the right-hand sides are equal because \( rs' = r's \).
+*Second argument, by symmetry.* For pairs \( x, y \in X \), \( g_+(y, x) = g_+(x, y) \) and \( g_\cdot(y, x) = g_\cdot(x, y) \) as pairs, by (F1) and (F6) in \( \nZ \): for instance \( (rq + ps, \ sq) = (ps + rq, \ qs) \). So if \( y \sim y' \), the first-argument case, applied with the pair \( y \) in first place, gives \( g(x, y) = g(y, x) \sim g(y', x) = g(x, y') \), for \( g = g_+ \) and \( g = g_\cdot \).
 
 *Negation.* If \( pq' = p'q \), then \( (-p)q' = -(pq') = -(p'q) = (-p')q \) by @prp-ring-algebra (c), so \( (-p, q) \sim (-p', q') \).
 
 So \( g_+ \) and \( g_\cdot \) satisfy the hypotheses of @thm-well-defined-on-classes (b): for a change of both arguments, \( g(x, y) \sim g(x', y) \sim g(x', y') \), and transitivity joins the two steps, which is what the proof of that lemma does. By its conclusion, there is exactly one function \( \nQ \times \nQ \to \nQ \) with \( [x] + [y] = [g_+(x, y)] \), and likewise for \( \cdot \). By @thm-well-defined-on-classes (a), \( -[(p, q)] \coloneqq [(-p, q)] \) is a function \( \nQ \to \nQ \). This proves the proposition.
+:::
+
+::: {.check}
+Which rules define a function \( \nQ \to \nQ \): (a) \( [(p, q)] \mapsto [(p + q, \ q)] \); (b) \( [(p, q)] \mapsto [(p, \ q + 1)] \)?
+:::
+
+::: {.solution}
+(a) Yes: it is \( x \mapsto x + 1 \), since \( [(p, q)] + [(1, 1)] = [(p \cdot 1 + 1 \cdot q, \ q \cdot 1)] = [(p + q, \ q)] \) by @def-rational-operations. (b) No: \( [(1, 2)] = [(2, 4)] \), but \( (1, 3) \not\sim (2, 5) \), as \( 1 \cdot 5 \ne 2 \cdot 3 \).
 :::
 
 Not every formula in representatives passes this test, and the failures are instructive.
@@ -179,7 +171,7 @@ p^2 (q')^2 = (pq')^2 = (p'q)^2 = (p')^2 q^2 ,
 by (F5), (F6), so \( (p^2, q^2) \sim (p'^2, q'^2) \), and @thm-well-defined-on-classes (a) applies. The function is \( x \mapsto x \cdot x \), since \( [(p, q)] \cdot [(p, q)] = [(p^2, q^2)] \) by @def-rational-operations.
 :::
 
-The tempting argument for (a) runs: "a rational number \( x \) **is** \( p/q \), so \( p \) and \( q \) are determined by \( x \), and so is \( p + q \)". Its conclusion is false, and the flaw is the word "is": \( (p, q) \) is **a** representative of \( x \), and \( (2p, 2q) \) is another, just as legitimate. A rule defined through representatives is a function on classes only when every representative gives the same value, and that has to be proved, as in (c).
+The tempting argument for (a), "\( x \) is \( p/q \), so \( p \) and \( q \) are determined by \( x \)", fails at the word "is": \( (p, q) \) is **a** representative, and \( (2p, 2q) \) is another. A rule through representatives is a function only once every representative is shown to give the same value, as in (c).
 
 ## The rationals form a field
 
@@ -235,7 +227,7 @@ If \( p < 0 \), then \( -p > 0 \) by @prp-ordered-ring-rules (a), so \( (-q, -p)
 by @prp-ring-algebra (c) and \( (-(pq)) \cdot 1 = 1 \cdot (-(pq)) \). By (O1), one of the two cases occurs. So every non-zero element has an inverse, and \( \nQ \) is a field. This proves the theorem.
 :::
 
-Six rows of the table are "equal" and two, (F4) and (F9), are "related"; the second needs the scaling observation because the sum formula multiplies the denominators \( qs \) and \( qu \), so their common factor \( q \) appears twice. The case split in (F8) is the price of the convention: the obvious inverse \( [(q, p)] \) of a negative \( [(p, q)] \) is not a class at all, since its "denominator" \( p \) is negative, and we must move the sign to the numerator.
+Two rows, (F4) and (F9), are "related" rather than "equal"; (F9) needs the scaling observation because the sum multiplies the denominators \( qs \) and \( qu \). The case split in (F8) is the price of positive denominators: \( [(q, p)] \) is not a class when \( p < 0 \).
 
 ::: {.check}
 Compute \( [(1, 2)] + [(1, 3)] \) and \( [(-3, 4)]^{-1} \), and check the second answer by multiplying.
@@ -287,7 +279,7 @@ j(p) \cdot j(q)^{-1} &= [(p, 1)] \cdot [(1, q)] \\
 (c) Each \( j(m)/j(n) \) lies in \( \nQ \), and every element of \( \nQ \) has this form by (b). This proves the proposition.
 :::
 
-**Identification.** From now on we write \( m \) for \( j(m) \), as Section 2.2 wrote \( n \) for \( \iota(n) \), and regard \( \nZ \) as a subset of \( \nQ \); together with Section 2.2, \( \nN \subseteq \nZ \subseteq \nQ \). This is a convenient abuse, made honest by \( j \): it is injective and carries \( 0 \), \( 1 \), \( + \), \( \cdot \) and \( - \) of \( \nZ \) to those of \( \nQ \), so a computation with integers gives the same result read in \( \nZ \) or in \( \nQ \). (One could replace \( j(\nZ) \) by \( \nZ \) itself inside \( \nQ \), but nothing needs it.) With this convention, (a)–(c) read:
+**Identification.** From now on we write \( m \) for \( j(m) \), as Section 2.2 wrote \( n \) for \( \iota(n) \), and regard \( \nZ \) as a subset of \( \nQ \); together with Section 2.2, \( \nN \subseteq \nZ \subseteq \nQ \). This is a convenient abuse, made honest by \( j \): it is injective and carries \( 0 \), \( 1 \), \( + \), \( \cdot \) and \( - \) of \( \nZ \) to those of \( \nQ \), so a computation with integers gives the same result read in \( \nZ \) or in \( \nQ \). With this convention, (a)–(c) read:
 \[
 \begin{gathered}
 [(p, q)] = \frac{p}{q} , \qquad \frac{p}{q} = \frac{r}{s} \iff ps = rq , \\
@@ -296,34 +288,12 @@ j(p) \cdot j(q)^{-1} &= [(p, 1)] \cdot [(1, q)] \\
 \]
 The last equation is the description of \( \nQ \) that *Sets and Functions*, Section 3.1 took as a definition; it is now a theorem about the constructed set. The fraction bar is division in the field \( \nQ \), and the school rules for fractions, such as \( \tfrac pq + \tfrac rs = \tfrac{ps + rq}{qs} \), are now the formulas of @def-rational-operations read through (a). The order of \( \nQ \), and the fact that \( j \) respects it, are Section 3.2's business.
 
-## Other denominators
-
-The convention of positive denominators was a choice. The next example shows that the other natural choice gives the same set of rational numbers, and where it would cost us.
-
-::: {#exm-fractions-nonzero-denominators}
-[Non-zero denominators give the same rationals]
-
-Let \( Y \coloneqq \nZ \times (\nZ \setminus \{0\}) \), and for \( (p, q), (r, s) \in Y \) let \( (p, q) \approx (r, s) \) mean \( ps = rq \). Show that \( \approx \) is an equivalence relation on \( Y \), and that
-\[
-I \colon \nQ \to Y/{\approx} , \qquad I\bigl([(p, q)]\bigr) \coloneqq [(p, q)]_{\approx} ,
-\]
-is a well-defined bijection.
+::: {.check}
+Is \( j \) surjective? Decide whether \( 1/2 \in j(\nZ) \).
 :::
 
 ::: {.solution}
-*Equivalence relation.* The proof of @prp-rational-pairs-equivalence works on \( Y \) with two changes: the pairs are taken in \( Y \) instead of \( \nZ \times \nZ_{>0} \), and the line deriving \( s \ne 0 \) from \( s > 0 \) is dropped, since in \( Y \) the middle denominator \( s \) is non-zero by definition. That is the only property of the denominators the proof uses.
-
-*Well defined.* Apply @thm-well-defined-on-classes (a) to the inclusion \( (p, q) \mapsto (p, q) \) from \( \nZ \times \nZ_{>0} \) to \( Y \): if \( (p, q) \sim (p', q') \), then \( pq' = p'q \), which says \( (p, q) \approx (p', q') \).
-
-*Injective.* If \( [(p, q)]_{\approx} = [(p', q')]_{\approx} \), then \( (p, q) \approx (p', q') \) by @fd2:thm-classes-partition (b), so \( pq' = p'q \), so \( (p, q) \sim (p', q') \) and \( [(p, q)] = [(p', q')] \).
-
-*Surjective.* Let \( [(p, q)]_{\approx} \in Y/{\approx} \), with \( q \ne 0 \). By (O1), \( q > 0 \) or \( q < 0 \). If \( q > 0 \), the class is \( I([(p, q)]) \). If \( q < 0 \), then \( -q > 0 \) (@prp-ordered-ring-rules (a)), and \( (p, q) \approx (-p, -q) \), since \( p(-q) = -(pq) = (-p)q \) by @prp-ring-algebra (c); so the class is \( I([(-p, -q)]) \).
-
-So \( I \) is a bijection: the two constructions have "the same" rational numbers, matched by \( I \).
-:::
-
-::: {.warning}
-The rule "\( [(p, q)]_{\approx} < [(r, s)]_{\approx} \) if and only if \( ps < rq \)" is **not** well defined on \( Y/{\approx} \). Compare \( (0, 1) \) with \( (1, 1) \): \( 0 \cdot 1 < 1 \cdot 1 \), that is, \( 0 < 1 \), true. Now replace \( (1, 1) \) by the equivalent \( (-1, -1) \): the rule asks whether \( 0 \cdot (-1) < (-1) \cdot 1 \), that is, \( 0 < -1 \), which is false. Multiplying an inequality by a negative denominator reverses it (@prp-ordered-ring-rules (d)), so the rule's verdict depends on the representative. With positive denominators this cannot happen, which is why @def-rationals-as-classes uses them.
+No. If \( [(m, 1)] = [(1, 2)] \), then \( 2m = 1 \) in \( \nZ \), which is impossible: \( 1 = 2 \cdot 0 + 1 \) is odd, so it is not of the form \( 2m \) (@cor-integers-even-odd (a); it is also the Quick check "Is \( \nZ \) a field?" of Section 2.4). So \( 1/2 \notin j(\nZ) \): \( \nZ \) is a proper subset of \( \nQ \).
 :::
 
 ## Exercises
@@ -393,7 +363,7 @@ by the same laws. The pairs are equal, so \( (x + y) + z = x + (y + z) \).
 ::: {#exr-rationals-as-classes-b2}
 [B2: Addition is well defined]
 
-Prove, without looking back at @prp-rational-operations-well-defined, that the addition of @def-rational-operations is well defined. The first half is done for you.
+Prove directly, by computing both changes and without the symmetry argument of @prp-rational-operations-well-defined, that the addition of @def-rational-operations is well defined. The first half is done for you.
 
 *Change the first argument.* Let \( (p, q) \sim (p', q') \), that is, \( pq' = p'q \), and fix \( (r, s) \). Then
 \[
@@ -422,6 +392,36 @@ so \( (ps + rq, qs) \sim (ps' + r'q, qs') \).
 *Join.* Let \( (p, q) \sim (p', q') \) and \( (r, s) \sim (r', s') \). Write \( g \) for the sum formula on representatives. The first step, with \( (r, s) \) fixed, gives \( g((p, q), (r, s)) \sim g((p', q'), (r, s)) \); the second, with \( (p', q') \) fixed, gives \( g((p', q'), (r, s)) \sim g((p', q'), (r', s')) \). By transitivity (@prp-rational-pairs-equivalence), \( g((p, q), (r, s)) \sim g((p', q'), (r', s')) \), so the classes \( [g((p, q), (r, s))] \) and \( [g((p', q'), (r', s'))] \) are equal (@fd2:thm-classes-partition (b)). These are exactly the hypotheses, and the conclusion, of @thm-well-defined-on-classes (b), which then gives addition as a function \( \nQ \times \nQ \to \nQ \).
 :::
 
+::: {#exr-rationals-as-classes-b3}
+[B3: Prove or disprove]
+
+Prove or disprove each statement.
+
+::: {.enumerate options="label=(\alph*)"}
+1. The rule \( [(p, q)] \mapsto [(p + 2q, \ 2q)] \) defines a function \( \nQ \to \nQ \).
+2. The rule \( [(p, q)] \mapsto [(p, \ q^2)] \) defines a function \( \nQ \to \nQ \).
+3. If \( x, y \in \nQ \) and \( xy = 0 \), then \( x = 0 \) or \( y = 0 \).
+4. Every non-zero rational number has a representative with numerator \( 1 \).
+:::
+:::
+
+::: {.solution}
+(a) **True.** Since \( q > 0 \), \( 2q = q + q > 0 \) (@prp-ordered-ring-rules (b)), so \( (p + 2q, 2q) \in \nZ \times \nZ_{>0} \). By @thm-well-defined-on-classes (a) it suffices that \( (p, q) \sim (p', q') \) gives \( (p + 2q, 2q) \sim (p' + 2q', 2q') \). By (F5), (F6), (F9) in \( \nZ \),
+\[
+\begin{aligned}
+(p + 2q)(2q') &= 2pq' + 4qq' , \\
+(p' + 2q')(2q) &= 2p'q + 4qq' ,
+\end{aligned}
+\]
+and the right-hand sides are equal since \( pq' = p'q \). (The function is \( x \mapsto [(p, 2q)] + [(1, 1)] \), half of \( x \) plus one, by @def-rational-operations.)
+
+(b) **False.** \( [(1, 1)] = [(2, 2)] \), since \( 1 \cdot 2 = 2 \cdot 1 \), but the rule gives \( [(1, 1)] \) for one representative and \( [(2, 4)] \) for the other, and \( (1, 1) \not\sim (2, 4) \) because \( 1 \cdot 4 \ne 2 \cdot 1 \).
+
+(c) **True.** Let \( x = [(p, q)] \) and \( y = [(r, s)] \). Then \( xy = [(pr, qs)] \), and by @thm-rationals-field this class is zero only if \( pr = 0 \). So \( p = 0 \) or \( r = 0 \) by @prp-ordered-ring-rules (f) in \( \nZ \), that is, \( x = 0 \) or \( y = 0 \), again by @thm-rationals-field. (The statement holds in every field: if \( x \ne 0 \), multiply \( xy = 0 \) by \( x^{-1} \).)
+
+(d) **False.** Take \( 2 = [(2, 1)] \). If \( (1, s) \sim (2, 1) \) with \( s \in \nZ_{>0} \), then \( 1 \cdot 1 = 2s \), and \( 2s = 1 \) has no solution in \( \nZ \) (@cor-integers-even-odd (a), as in the Quick check after the Identification). So no representative of \( 2 \) has numerator \( 1 \).
+:::
+
 ### C. Going deeper
 
 ::: {#exr-rationals-as-classes-c1}
@@ -437,7 +437,7 @@ so \( (ps + rq, qs) \sim (ps' + r'q, qs') \).
 ::: {.solution}
 [Hint 1]
 
-For (b), fix \( x \) and look at the set of all denominators of representatives of \( x \). Which result of Section 2.3 gives a least element?
+For (b), fix \( x \) and look at the set of all denominators of representatives of \( x \). Which result of Section 2.4 gives a least element?
 :::
 
 ::: {.solution}
@@ -468,7 +468,7 @@ Since \( 1 \) is the only element of \( \nZ_{>0} \) below \( 2 \) (discreteness)
 - 2: (b) gets a least element from @prp-integer-least-element, with the lower bound named.
 - 2: (b) explains why this defines exactly one function (one value per class; any such function has those values).
 - 2: (c) shows \( 4p = 6 \) has no integer solution and exhibits \( (3, 2) \).
-Fatal errors (0 for the step): defining \( N([(p, q)]) \) as "\( q \) divided by a common factor" (divisibility is not available, and the formula uses a representative); in (c), "\( 4p = 6 \) has no solution since \( p = 3/2 \)" (uses division in \( \nQ \) to decide a question about \( \nZ \) without the discreteness argument).
+Fatal errors (0 for the step): defining \( N([(p, q)]) \) as "\( q \) divided by a common factor" (the formula uses a representative, and lowest terms come only in *Algebraic Preliminaries*, Chapter 1); in (c), "\( 4p = 6 \) has no solution since \( p = 3/2 \)" (uses division in \( \nQ \) to decide a question about \( \nZ \) without the discreteness argument).
 :::
 
 ::: {#exr-rationals-as-classes-c2}
@@ -497,14 +497,47 @@ The conclusion is **true**: it is @prp-rational-operations-well-defined. The pro
 Fatal errors (0 for the step): declaring the conclusion false; blaming line (1) or (2), which only restate the hypothesis.
 :::
 
+::: {#exr-rationals-as-classes-c3}
+[C3: Non-zero denominators]
+
+Let \( Y \coloneqq \nZ \times (\nZ \setminus \{0\}) \), and for \( (p, q), (r, s) \in Y \) let \( (p, q) \approx (r, s) \) mean \( ps = rq \). Show that \( \approx \) is an equivalence relation on \( Y \), and that
+\[
+I \colon \nQ \to Y/{\approx} , \qquad I\bigl([(p, q)]\bigr) \coloneqq [(p, q)]_{\approx} ,
+\]
+is a well-defined bijection.
+:::
+
+::: {.solution}
+*Equivalence relation.* The proof of @prp-rational-pairs-equivalence works on \( Y \) with two changes: the pairs are taken in \( Y \) instead of \( \nZ \times \nZ_{>0} \), and the line deriving \( s \ne 0 \) from \( s > 0 \) is dropped, since in \( Y \) the middle denominator \( s \) is non-zero by definition. That is the only property of the denominators the proof uses.
+
+*Well defined.* Apply @thm-well-defined-on-classes (a) to the inclusion \( (p, q) \mapsto (p, q) \) from \( \nZ \times \nZ_{>0} \) to \( Y \): if \( (p, q) \sim (p', q') \), then \( pq' = p'q \), which says \( (p, q) \approx (p', q') \).
+
+*Injective.* If \( [(p, q)]_{\approx} = [(p', q')]_{\approx} \), then \( (p, q) \approx (p', q') \) by @fd2:thm-classes-partition (b), so \( pq' = p'q \), so \( (p, q) \sim (p', q') \) and \( [(p, q)] = [(p', q')] \).
+
+*Surjective.* Let \( [(p, q)]_{\approx} \in Y/{\approx} \), with \( q \ne 0 \). By (O1), \( q > 0 \) or \( q < 0 \). If \( q > 0 \), the class is \( I([(p, q)]) \). If \( q < 0 \), then \( -q > 0 \) (@prp-ordered-ring-rules (a)), and \( (p, q) \approx (-p, -q) \), since \( p(-q) = -(pq) = (-p)q \) by @prp-ring-algebra (c); so the class is \( I([(-p, -q)]) \).
+
+So \( I \) is a bijection: the two constructions have "the same" rational numbers, matched by \( I \).
+:::
 <!-- dependency ledger
 prp-rational-pairs-equivalence (proof): s in Z_{>0} gives s > 0, hence s != 0 | thm-integers-ordered-ring (b) (recalled before the statement) and (O1)
+prp-rational-pairs-equivalence (claim): aftermath, F2.5 §02 met the transitivity failure for Z x N | F2.5 §02, exercise B1 (b) (prose comparison only; nothing depends on it)
 def-rationals-as-classes (example): (r, s) ~ (1, 2) forces r > 0 | prp-ordered-ring-rules (b) (cited) and 2r = r + r by (F9), (F7)
-def-rationals-as-classes (example): F2.5 §02 met the transitivity failure for Z x N | F2.5 §02, exercise B1 (b) (prose comparison only; nothing depends on it)
+def-rationals-as-classes (example): describing the whole class [(2, 3)] needs lowest terms | F5.1, prp-rationals-lowest-terms (prose pointer to Algebraic Preliminaries, Chapter 1; nothing depends on it)
+def-rationals-as-classes (claim): "Why positive denominators?", non-zero denominators give the same set; the order breaks without positivity | exr-rationals-as-classes-c3 and Section 3.2 (prose pointers within the chapter; nothing depends on them)
 prp-rational-operations-well-defined (proof): reordering products and sums in Z | thm-integers-commutative-ring (F1), (F2), (F5), (F6), (F9) (cited at the start of the proof)
+prp-rational-operations-well-defined (proof): second argument by symmetry, g_+(y, x) = g_+(x, y) and g_.(y, x) = g_.(x, y) as pairs | (F1) for ps + rq = rq + ps, (F6) for qs = sq and pr = rp, in Z (thm-integers-commutative-ring)
+prp-rational-operations-well-defined (solution): Quick check after the proof, [(p, q)] + [(1, 1)] = [(p + q, q)]; q + 1 > 0; 1 . 5 != 2 . 3 | def-rational-operations with (F7) in Z; computed in N (thm-integers-ordered-ring (a))
 thm-rationals-field (proof): scaling (p, q) ~ (kp, kq), with kq in Z_{>0} | inline (stated before the theorem); (O4) and thm-integers-ordered-ring (b) for kq > 0
 prp-integers-embed-rationals (proof): the inverse of a non-zero element of a field is unique | F3.2 §03, the paragraph after prp-ring-algebra (inline there; no label)
+prp-integers-embed-rationals (solution): Quick check after the Identification, 2m = 1 has no solution in Z, since 1 = 2 . 0 + 1 is odd | cor-integers-even-odd (a) (F3.2 §05, cited)
+exr-rationals-as-classes-b3 (solution): (a) 2q = q + q > 0; the cross-products (p + 2q)(2q') = 2pq' + 4qq' and (p' + 2q')(2q) = 2p'q + 4qq' | prp-ordered-ring-rules (b) (cited); (F5), (F6), (F9) in Z (cited)
+exr-rationals-as-classes-b3 (solution): (a), parenthesis, [(p, 2q)] + [(1, 1)] = [(p + 2q, 2q)], and [(p, 2q)] = x . [(1, 2)] is half of x | def-rational-operations (cited); remark only, nothing depends on it
+exr-rationals-as-classes-b3 (solution): (b), (d) 1 . 2 = 2 . 1, 1 . 4 != 2 . 1, 1 . 1 = 2s | computed in N (thm-integers-ordered-ring (a))
+exr-rationals-as-classes-b3 (solution): (c) xy = 0 iff pr = 0; no zero divisors in Z; the field remark (multiply by x^{-1}) | thm-rationals-field (zero criterion, cited), prp-ordered-ring-rules (f) (cited); def-commutative-ring-and-field (F5), (F8) for the remark
+exr-rationals-as-classes-b3 (solution): (d) 2s = 1 has no solution in Z | cor-integers-even-odd (a) (F3.2 §05, cited)
 exr-rationals-as-classes-c1 (solution): (p, q) in x implies x = [(p, q)] | fd2:def-quotient-set, fd2:def-equivalence-class, fd2:thm-classes-partition (b) (cited)
 exr-rationals-as-classes-c1 (solution): elements of Z_{>0} are >= 0, so 0 is a lower bound; 1 is the only element of Z_{>0} below 2 | thm-integers-ordered-ring (b), (c) (cited)
 exr-rationals-as-classes-c1 (solution): 4 < 6 < 8 in Z | thm-integers-ordered-ring (a) (order of N extended), computed in N
+exr-rationals-as-classes-c1 (solution): marking scheme, lowest terms come only later | F5.1 (prose pointer to Algebraic Preliminaries, Chapter 1; nothing depends on it)
+exr-rationals-as-classes-c3 (solution): the proof of prp-rational-pairs-equivalence uses of the denominators only that the middle one is non-zero | prp-rational-pairs-equivalence (proof, cited); (O1) for the case split q > 0 or q < 0
 -->

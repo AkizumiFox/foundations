@@ -2,7 +2,7 @@
 the clearing-denominator computations quoted; t(s) < s and t(s)^2 > 2 when s^2 > 2; u(s) > s
 and u(s)^2 < 2 when s^2 < 2; 2 bounds A (x > 2 gives x^2 > 4)."""
 from fractions import Fraction as F
-QUOTED = {}
+QUOTED = {"u(1/2)": F(8, 9), "u(1/2)^2": F(64, 81), "t(3)": F(11, 6), "t(3)^2": F(121, 36)}
 t = lambda s: (s*s + 2) / (2*s)
 u = lambda s: 4*s / (s*s + 2)
 S = [F(a, b) for a in range(1, 60) for b in range(1, 30)]
@@ -25,4 +25,18 @@ for s in S:
 for x in S:
     if x > 2:
         assert x*x > 4 > 2
+# Quick check after the proof: u(1/2), t(3)
+assert u(F(1, 2)) == 2 / F(9, 4) == QUOTED["u(1/2)"]
+assert QUOTED["u(1/2)"]**2 == QUOTED["u(1/2)^2"] < 2 and QUOTED["u(1/2)"] > F(1, 2)
+assert t(F(3)) == QUOTED["t(3)"] and QUOTED["t(3)"]**2 == QUOTED["t(3)^2"] > 2 and 121 > 72
+assert QUOTED["t(3)"] < 3
+# Quick check after the warning: 3/2 = sup {x : x^2 < 9/4}; (S1) and the midpoint argument for (S2)
+L = F(9, 4); s0 = F(3, 2)
+for x in S:
+    if x > s0:
+        assert x*x > L
+for v in [F(a, b) for a in range(-30, 30) for b in range(1, 20)]:
+    if v < s0:
+        w = max(v, F(1)); c = (w + s0) / 2
+        assert 0 < c < s0 and c*c < L and c > w >= v
 print("ok")

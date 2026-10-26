@@ -4,7 +4,7 @@ items:
 - key: def-cof-order-preserving-map
   kind: def
   file: 01-completeness-and-archimedes.md
-  line: 17
+  line: 15
   hash: a3946667ef3c
   verdicts:
   - stage: S5a
@@ -41,7 +41,7 @@ items:
 - key: check:01-completeness-and-archimedes:1
   kind: check
   file: 01-completeness-and-archimedes.md
-  line: 45
+  line: 43
   hash: 2267b4406a49
   verdicts:
   - stage: S5a
@@ -63,7 +63,7 @@ items:
 - key: prp-cof-map-fixes-rationals
   kind: prp
   file: 01-completeness-and-archimedes.md
-  line: 55
+  line: 53
   hash: 8f85e47c4a1d
   verdicts:
   - stage: S5a
@@ -86,7 +86,7 @@ items:
 - key: proof:prp-cof-map-fixes-rationals
   kind: proof
   file: 01-completeness-and-archimedes.md
-  line: 64
+  line: 62
   hash: ce657b1ca9d9
   verdicts:
   - stage: S5a
@@ -108,7 +108,7 @@ items:
 - key: thm-cof-complete-archimedean
   kind: thm
   file: 01-completeness-and-archimedes.md
-  line: 78
+  line: 76
   hash: 0ad784ea4b6f
   verdicts:
   - stage: S5a
@@ -129,8 +129,8 @@ items:
 - key: proof:thm-cof-complete-archimedean
   kind: proof
   file: 01-completeness-and-archimedes.md
-  line: 88
-  hash: 0ec1999debdf
+  line: 86
+  hash: 2816d73af5fd
   verdicts:
   - stage: S5a
     verdict: minor
@@ -170,11 +170,31 @@ items:
       is not an upper bound (fd1:prp-bounded-quantifier-negation (a)), and totality gives n.1_F>s-1_F.
       Then (n+1).1_F=n.1_F+1_F>s by def-naturals-in-ordered-field (a) and (O3), which contradicts s being
       an upper bound. So iota_F(N) is unbounded, and for each x some n.1_F>x, which is def-archimedean-ordered-field.
+- key: check:01-completeness-and-archimedes:2
+  kind: check
+  file: 01-completeness-and-archimedes.md
+  line: 94
+  hash: 83741fb55478
+  verdicts:
+  - stage: S5a
+    verdict: correct
+    by: refereeA
+    hash: 0cc047678bd6
+    date: '2026-10-12'
+    model: claude-opus-5-5
+    evidence: '01:148-154: follows from the first example and (O1)'
+  - stage: S5b
+    verdict: correct
+    by: refereeB
+    hash: 0cc047678bd6
+    date: '2026-10-12'
+    model: claude-opus-5-5
+    evidence: '01:148-154: Q_F(iota_F(3/2)) = {q < 3/2}, and 3/2 is excluded by (O1).'
 - key: exm-cof-sup-one-minus-reciprocals
   kind: exm
   file: 01-completeness-and-archimedes.md
-  line: 113
-  hash: 2214aea683e8
+  line: 110
+  hash: 86e995d690b5
   verdicts:
   - stage: S7r
     verdict: correct
@@ -189,7 +209,7 @@ items:
 - key: def-cof-rationals-below
   kind: def
   file: 01-completeness-and-archimedes.md
-  line: 138
+  line: 136
   hash: 25c7d578213a
   verdicts:
   - stage: S5a
@@ -211,8 +231,8 @@ items:
 - key: exm-cof-rationals-below-sqrt2
   kind: exm
   file: 01-completeness-and-archimedes.md
-  line: 155
-  hash: 4137b4f92f50
+  line: 153
+  hash: 103f325af77b
   verdicts:
   - stage: S5a
     verdict: correct
@@ -231,30 +251,16 @@ items:
     evidence: '01:129-144: uses prp-ordered-ring-rules (g) (for a, b >= 0, a < b iff a^2 < b^2) and thm-rational-embedding
       (a), (b), (d) correctly. The sidecar passes. The remark at 01:146 (-2 is not in A, so A is not closed
       downward) is right.'
-- key: check:01-completeness-and-archimedes:2
+- key: check:01-completeness-and-archimedes:3
   kind: check
   file: 01-completeness-and-archimedes.md
-  line: 174
+  line: 176
   hash: 0cc047678bd6
-  verdicts:
-  - stage: S5a
-    verdict: correct
-    by: refereeA
-    hash: 0cc047678bd6
-    date: '2026-10-12'
-    model: claude-opus-5-5
-    evidence: '01:148-154: follows from the first example and (O1)'
-  - stage: S5b
-    verdict: correct
-    by: refereeB
-    hash: 0cc047678bd6
-    date: '2026-10-12'
-    model: claude-opus-5-5
-    evidence: '01:148-154: Q_F(iota_F(3/2)) = {q < 3/2}, and 3/2 is excluded by (O1).'
+  verdicts: []
 - key: lem-cof-rationals-separate
   kind: lem
   file: 01-completeness-and-archimedes.md
-  line: 184
+  line: 186
   hash: 11e0b0216d58
   verdicts:
   - stage: S5a
@@ -296,7 +302,7 @@ items:
 - key: proof:lem-cof-rationals-separate
   kind: proof
   file: 01-completeness-and-archimedes.md
-  line: 194
+  line: 196
   hash: c11755223551
   verdicts:
   - stage: S5a
@@ -318,7 +324,7 @@ items:
 - key: prp-cof-square-roots
   kind: prp
   file: 01-completeness-and-archimedes.md
-  line: 212
+  line: 214
   hash: 1647c45dad95
   verdicts:
   - stage: S5a
@@ -341,8 +347,8 @@ items:
 - key: proof:prp-cof-square-roots
   kind: proof
   file: 01-completeness-and-archimedes.md
-  line: 230
-  hash: 9667eff88fa1
+  line: 243
+  hash: 8ecbd6dc19fb
   verdicts:
   - stage: S5a
     verdict: correct
@@ -373,10 +379,28 @@ items:
       = (s^2+a)/(2s) checks, and it is positive by the same reasons since s^2+a>0. (s-h)^2 = s^2-2sh+h^2
       = a+h^2 > a, because h != 0. The upper-bound argument via prp-ordered-ring-rules (g) (03-ordered-rings.md:318:
       for'
+- key: exm-method-point-as-supremum
+  kind: exm
+  file: 01-completeness-and-archimedes.md
+  line: 274
+  hash: 7431fff82ae9
+  verdicts: []
+- key: exm-cof-separating-element
+  kind: exm
+  file: 01-completeness-and-archimedes.md
+  line: 284
+  hash: 2d5af9d8bfcd
+  verdicts: []
+- key: check:01-completeness-and-archimedes:4
+  kind: check
+  file: 01-completeness-and-archimedes.md
+  line: 305
+  hash: 5b8e14c2be17
+  verdicts: []
 - key: exr-completeness-and-archimedes-a1
   kind: exr
   file: 01-completeness-and-archimedes.md
-  line: 265
+  line: 317
   hash: b33351893b38
   verdicts:
   - stage: S5a
@@ -420,7 +444,7 @@ items:
 - key: exr-completeness-and-archimedes-b1
   kind: exr
   file: 01-completeness-and-archimedes.md
-  line: 298
+  line: 350
   hash: 6548db2d6fcd
   verdicts:
   - stage: S5a
@@ -472,7 +496,7 @@ items:
 - key: exr-completeness-and-archimedes-b2
   kind: exr
   file: 01-completeness-and-archimedes.md
-  line: 310
+  line: 362
   hash: a0b0d0d398eb
   verdicts:
   - stage: S5a
@@ -508,10 +532,16 @@ items:
       Upper bound: q in Q_F(x) means iota_F(q)<x. Least: if u<x, thm-rationals-dense-ordered-field gives
       q with u<iota_F(q)<x, so q is in Q_F(x) and iota_F(q)>u, a contradiction. Totality then gives x<=u.
       The remark that no completeness was used is correct, since F is only assumed Archimedean.'
+- key: exr-completeness-and-archimedes-b3
+  kind: exr
+  file: 01-completeness-and-archimedes.md
+  line: 376
+  hash: 02bf436743bd
+  verdicts: []
 - key: exr-completeness-and-archimedes-c1
   kind: exr
   file: 01-completeness-and-archimedes.md
-  line: 326
+  line: 404
   hash: 636d9177c540
   verdicts:
   - stage: S5a
@@ -541,7 +571,7 @@ items:
 - key: exr-completeness-and-archimedes-c2
   kind: exr
   file: 01-completeness-and-archimedes.md
-  line: 338
+  line: 416
   hash: 4142ac9d796f
   verdicts:
   - stage: S5a
@@ -581,10 +611,32 @@ items:
       thm-cof-complete-archimedean. The revised marking item at 01:335 now accepts any correct repair
       that uses that s is least without assuming s is in the set, and gives two routes. I checked the
       second route. If iot
+- key: check:02-measuring-by-rationals:1
+  kind: check
+  file: 02-measuring-by-rationals.md
+  line: 19
+  hash: 671c115056a0
+  verdicts:
+  - stage: S5a
+    verdict: correct
+    by: refereeA
+    hash: c161802c964d
+    date: '2026-10-12'
+    model: claude-opus-5-5
+    evidence: 02:75-81. r<3/4 and 1-r<1/2 give 1/2<r<3/4, and r=2/3 works. The sidecar lem-cof-below-sum.py
+      passes.
+  - stage: S5b
+    verdict: correct
+    by: refereeB
+    hash: c161802c964d
+    date: '2026-10-12'
+    model: claude-opus-5-5
+    evidence: 02:75-81. q = 1 < 5/4 = a + b. The conditions r < 3/4 and 1 - r < 1/2 give 1/2 < r < 3/4,
+      and r = 2/3 works. The values are asserted in verify/ch06/lem-cof-below-sum.py.
 - key: lem-cof-below-sum
   kind: lem
   file: 02-measuring-by-rationals.md
-  line: 25
+  line: 31
   hash: 9a623c73cf8d
   verdicts:
   - stage: S5a
@@ -606,8 +658,8 @@ items:
 - key: proof:lem-cof-below-sum
   kind: proof
   file: 02-measuring-by-rationals.md
-  line: 39
-  hash: 7f8e3c035e87
+  line: 45
+  hash: b041a1763d20
   verdicts:
   - stage: S5a
     verdict: correct
@@ -629,7 +681,7 @@ items:
 - key: lem-cof-below-product
   kind: lem
   file: 02-measuring-by-rationals.md
-  line: 49
+  line: 55
   hash: aa765fd94b40
   verdicts:
   - stage: S5a
@@ -651,8 +703,8 @@ items:
 - key: proof:lem-cof-below-product
   kind: proof
   file: 02-measuring-by-rationals.md
-  line: 66
-  hash: 9425e018ae77
+  line: 72
+  hash: 1f2490126a67
   verdicts:
   - stage: S5a
     verdict: correct
@@ -671,32 +723,42 @@ items:
     model: claude-opus-5-5
     evidence: 02:64-73. Uses prp-ordered-ring-rules (c), prp-reciprocal-order (a), (O4), and reflection
       by iota_F (from 6.1:7 and thm-rationals-embed-ordered-field). The quotient step is ledgered (02:338).
-- key: check:02-measuring-by-rationals:1
+- key: check:02-measuring-by-rationals:2
   kind: check
   file: 02-measuring-by-rationals.md
-  line: 77
+  line: 83
   hash: c161802c964d
   verdicts:
   - stage: S5a
     verdict: correct
     by: refereeA
-    hash: c161802c964d
+    hash: c632b9fd9e49
     date: '2026-10-12'
     model: claude-opus-5-5
-    evidence: 02:75-81. r<3/4 and 1-r<1/2 give 1/2<r<3/4, and r=2/3 works. The sidecar lem-cof-below-sum.py
-      passes.
+    evidence: 02:174-180. F is Archimedean by thm-cof-complete-archimedean, id_F is an order-preserving
+      field map, and uniqueness finishes.
   - stage: S5b
     verdict: correct
     by: refereeB
-    hash: c161802c964d
+    hash: c632b9fd9e49
     date: '2026-10-12'
     model: claude-opus-5-5
-    evidence: 02:75-81. q = 1 < 5/4 = a + b. The conditions r < 3/4 and 1 - r < 1/2 give 1/2 < r < 3/4,
-      and r = 2/3 works. The values are asserted in verify/ch06/lem-cof-below-sum.py.
+    evidence: 02:174-180. F is Archimedean by thm-cof-complete-archimedean. id_F is the first example
+      after def-cof-order-preserving-map (01:31). Uniqueness then gives phi = id_F.
+  - stage: S7r
+    verdict: correct
+    by: rereferee
+    hash: 753450c30c4a
+    date: '2026-10-12'
+    model: claude-opus-5-5
+    evidence: '02:178-184. With L=F complete, F is Archimedean (thm-cof-complete-archimedean), so the
+      theorem gives exactly one order-preserving field map F->F. id_F is one: it is the first example
+      after def-cof-order-preserving-map (ch06/01, ''The identity''). Hence phi=id_F. \id_F matches the
+      NOTATION.md row `\id_X`, so the switch from \mathrm{id} is correct.'
 - key: thm-cof-embedding-into-complete
   kind: thm
   file: 02-measuring-by-rationals.md
-  line: 89
+  line: 95
   hash: 106a58a6fb54
   verdicts:
   - stage: S5a
@@ -729,8 +791,8 @@ items:
 - key: proof:thm-cof-embedding-into-complete
   kind: proof
   file: 02-measuring-by-rationals.md
-  line: 110
-  hash: e47925739ab0
+  line: 116
+  hash: cd0739a1b868
   verdicts:
   - stage: S5a
     verdict: correct
@@ -761,42 +823,16 @@ items:
       (a) with -(-x)=x; the ledger now records iota_F(-n)=-(n*1_F) at 355. Step 2 both inclusions are
       valid; (supseteq) uses leastness and totality. Step 3 uses the rational-element example after def-cof-rationals-below
       (ch06/01). Step 4 is fine. Steps 5 and 6: the lemma chains are valid, and the product lemma '
-- key: check:02-measuring-by-rationals:2
+- key: check:02-measuring-by-rationals:3
   kind: check
   file: 02-measuring-by-rationals.md
-  line: 180
+  line: 186
   hash: 753450c30c4a
-  verdicts:
-  - stage: S5a
-    verdict: correct
-    by: refereeA
-    hash: c632b9fd9e49
-    date: '2026-10-12'
-    model: claude-opus-5-5
-    evidence: 02:174-180. F is Archimedean by thm-cof-complete-archimedean, id_F is an order-preserving
-      field map, and uniqueness finishes.
-  - stage: S5b
-    verdict: correct
-    by: refereeB
-    hash: c632b9fd9e49
-    date: '2026-10-12'
-    model: claude-opus-5-5
-    evidence: 02:174-180. F is Archimedean by thm-cof-complete-archimedean. id_F is the first example
-      after def-cof-order-preserving-map (01:31). Uniqueness then gives phi = id_F.
-  - stage: S7r
-    verdict: correct
-    by: rereferee
-    hash: 753450c30c4a
-    date: '2026-10-12'
-    model: claude-opus-5-5
-    evidence: '02:178-184. With L=F complete, F is Archimedean (thm-cof-complete-archimedean), so the
-      theorem gives exactly one order-preserving field map F->F. id_F is one: it is the first example
-      after def-cof-order-preserving-map (ch06/01, ''The identity''). Hence phi=id_F. \id_F matches the
-      NOTATION.md row `\id_X`, so the switch from \mathrm{id} is correct.'
+  verdicts: []
 - key: exr-measuring-by-rationals-a1
   kind: exr
   file: 02-measuring-by-rationals.md
-  line: 192
+  line: 198
   hash: b0261b7d0aea
   verdicts:
   - stage: S5a
@@ -849,7 +885,7 @@ items:
 - key: exr-measuring-by-rationals-b1
   kind: exr
   file: 02-measuring-by-rationals.md
-  line: 217
+  line: 223
   hash: f92a361da5ba
   verdicts:
   - stage: S5a
@@ -890,7 +926,7 @@ items:
 - key: exr-measuring-by-rationals-b2
   kind: exr
   file: 02-measuring-by-rationals.md
-  line: 235
+  line: 241
   hash: dd35ae5581a5
   verdicts:
   - stage: S5a
@@ -936,7 +972,7 @@ items:
 - key: exr-measuring-by-rationals-c1
   kind: exr
   file: 02-measuring-by-rationals.md
-  line: 267
+  line: 273
   hash: 0c2bd4bca5a7
   verdicts:
   - stage: S5a
@@ -982,7 +1018,7 @@ items:
 - key: exr-measuring-by-rationals-c2
   kind: exr
   file: 02-measuring-by-rationals.md
-  line: 302
+  line: 308
   hash: 9b0fc3033b5b
   verdicts:
   - stage: S5a
@@ -1025,7 +1061,7 @@ items:
 - key: thm-cof-uniqueness
   kind: thm
   file: 03-the-uniqueness-theorem.md
-  line: 13
+  line: 9
   hash: 6f1544d5bd71
   verdicts:
   - stage: S5a
@@ -1058,7 +1094,7 @@ items:
 - key: proof:thm-cof-uniqueness
   kind: proof
   file: 03-the-uniqueness-theorem.md
-  line: 27
+  line: 23
   hash: 59dc618b7f0b
   verdicts:
   - stage: S5a
@@ -1086,7 +1122,7 @@ items:
 - key: check:03-the-uniqueness-theorem:1
   kind: check
   file: 03-the-uniqueness-theorem.md
-  line: 51
+  line: 47
   hash: 4fe5465616cd
   verdicts:
   - stage: S5a
@@ -1107,7 +1143,7 @@ items:
 - key: cor-cof-isomorphic-to-cauchy-reals
   kind: cor
   file: 03-the-uniqueness-theorem.md
-  line: 81
+  line: 75
   hash: f876b42b1edb
   verdicts:
   - stage: S5a
@@ -1141,7 +1177,7 @@ items:
 - key: proof:cor-cof-isomorphic-to-cauchy-reals
   kind: proof
   file: 03-the-uniqueness-theorem.md
-  line: 87
+  line: 81
   hash: 997d7f91096f
   verdicts:
   - stage: S5a
@@ -1165,8 +1201,8 @@ items:
 - key: exm-cof-two-models
   kind: exm
   file: 03-the-uniqueness-theorem.md
-  line: 109
-  hash: 3ebcdfb541cf
+  line: 101
+  hash: bed1d3596c4d
   verdicts:
   - stage: S5a
     verdict: correct
@@ -1192,7 +1228,7 @@ items:
 - key: cor-cof-order-automorphism-identity
   kind: cor
   file: 03-the-uniqueness-theorem.md
-  line: 131
+  line: 119
   hash: 53e1d71e7c41
   verdicts:
   - stage: S5a
@@ -1223,7 +1259,7 @@ items:
 - key: proof:cor-cof-order-automorphism-identity
   kind: proof
   file: 03-the-uniqueness-theorem.md
-  line: 137
+  line: 125
   hash: de82e748992f
   verdicts:
   - stage: S5a
@@ -1246,7 +1282,7 @@ items:
 - key: thm-cof-field-automorphism-identity
   kind: thm
   file: 03-the-uniqueness-theorem.md
-  line: 143
+  line: 131
   hash: ddff2dd89c3f
   verdicts:
   - stage: S5a
@@ -1290,7 +1326,7 @@ items:
 - key: proof:thm-cof-field-automorphism-identity
   kind: proof
   file: 03-the-uniqueness-theorem.md
-  line: 165
+  line: 151
   hash: f198319459db
   verdicts:
   - stage: S5a
@@ -1314,11 +1350,17 @@ items:
       prp-ordered-ring-rules (e) is ''a ≠ 0 ⇒ a^2 > 0''. Step 2: (a) is ''a < b iff b - a > 0'', and prp-ring-algebra
       (a) is uniqueness of negatives. Step 3: the uniqueness clause, with Archimedean F and complete F.
       Every step is cited or ledgered (03:344-345).'
+- key: exm-cof-limits-carried-across
+  kind: exm
+  file: 03-the-uniqueness-theorem.md
+  line: 201
+  hash: fafb72602103
+  verdicts: []
 - key: check:03-the-uniqueness-theorem:2
   kind: check
   file: 03-the-uniqueness-theorem.md
-  line: 193
-  hash: f1a5ec3612f9
+  line: 219
+  hash: 822fe9738542
   verdicts:
   - stage: S5a
     verdict: minor
@@ -1349,11 +1391,17 @@ items:
       from sigma(s)sigma(s^{-1}) = 1. Then sigma(r) = sigma(s)^2 > 0 (prp-ordered-ring-rules (e)), and
       uniqueness in prp-cof-square-roots gives sigma(r) = r. Earlier S5a/S5b findings resolved: the solution
       no lo'
+- key: exm-cof-zero-empty-set
+  kind: exm
+  file: 03-the-uniqueness-theorem.md
+  line: 229
+  hash: e65cd14a87c2
+  verdicts: []
 - key: exr-the-uniqueness-theorem-a1
   kind: exr
   file: 03-the-uniqueness-theorem.md
-  line: 205
-  hash: 230c5afb3680
+  line: 293
+  hash: fd73cdc0a9cb
   verdicts:
   - stage: S5a
     verdict: correct
@@ -1400,10 +1448,16 @@ items:
       the 6.2 remark at 02 Remark 1, so it is ''the same use again''. This matches 03:57 and resolves
       the S8 finding. 03:57 is likewise consistent. (b) and (c) are right; in (c) psi fails first, and
       Q/R is a valid instanc'
+- key: exr-axioms-or-model-a1
+  kind: exr
+  file: 03-the-uniqueness-theorem.md
+  line: 325
+  hash: 7c084b1d0d7e
+  verdicts: []
 - key: exr-the-uniqueness-theorem-b1
   kind: exr
   file: 03-the-uniqueness-theorem.md
-  line: 236
+  line: 351
   hash: 2a8317e8b3fe
   verdicts:
   - stage: S5a
@@ -1435,7 +1489,7 @@ items:
 - key: exr-the-uniqueness-theorem-b2
   kind: exr
   file: 03-the-uniqueness-theorem.md
-  line: 248
+  line: 363
   hash: c19b82ab7d39
   verdicts:
   - stage: S5a
@@ -1476,10 +1530,16 @@ items:
       The earlier error (iota_R as a sup-breaking example) is resolved: the example is now iota_{Q(t)}
       with A = {1 - 1/n}. Checked: sup A = 1 in Q. 1 - 1/t is an upper bound of the image because 1/t
       < 1/(n·1), and it is'
+- key: exr-axioms-or-model-b2
+  kind: exr
+  file: 03-the-uniqueness-theorem.md
+  line: 379
+  hash: 2a7420b90ec8
+  verdicts: []
 - key: exr-the-uniqueness-theorem-c1
   kind: exr
   file: 03-the-uniqueness-theorem.md
-  line: 266
+  line: 397
   hash: 74ab40db3a05
   verdicts:
   - stage: S5a
@@ -1524,7 +1584,7 @@ items:
 - key: exr-the-uniqueness-theorem-c2
   kind: exr
   file: 03-the-uniqueness-theorem.md
-  line: 291
+  line: 422
   hash: 07c38d83ad31
   verdicts:
   - stage: S5a
@@ -1565,3 +1625,27 @@ items:
       asserts it. The second gap (6), the sum-of-suprema rule, is correct. A grep of fd2/src and fd3/src
       finds no proof of it, so ''this book has not proved it'' holds. ''Route of 6.2 chosen to avoid it''
       matches 02:19. The repair is correct: lem-cof-below-sum in F and in L (L is Archimedean'
+- key: exr-the-uniqueness-theorem-c3
+  kind: exr
+  file: 03-the-uniqueness-theorem.md
+  line: 459
+  hash: 5a7edb0e98d8
+  verdicts: []
+- key: exr-the-uniqueness-theorem-r1
+  kind: exr
+  file: 03-the-uniqueness-theorem.md
+  line: 490
+  hash: b6b554d717ba
+  verdicts: []
+- key: exr-the-uniqueness-theorem-r2
+  kind: exr
+  file: 03-the-uniqueness-theorem.md
+  line: 507
+  hash: 35dd1b34e7a8
+  verdicts: []
+- key: exr-the-uniqueness-theorem-r3
+  kind: exr
+  file: 03-the-uniqueness-theorem.md
+  line: 531
+  hash: c70fc6f8eb5e
+  verdicts: []

@@ -4,7 +4,7 @@ items:
 - key: def-integers-as-classes
   kind: def
   file: 01-integers-as-classes.md
-  line: 38
+  line: 36
   hash: e5a52ad0364b
   verdicts:
   - stage: S5a
@@ -37,7 +37,7 @@ items:
 - key: prp-integer-pairs-equivalence
   kind: prp
   file: 01-integers-as-classes.md
-  line: 61
+  line: 59
   hash: 716ae87baa5f
   verdicts:
   - stage: S5a
@@ -57,7 +57,7 @@ items:
 - key: proof:prp-integer-pairs-equivalence
   kind: proof
   file: 01-integers-as-classes.md
-  line: 73
+  line: 71
   hash: 8949825a7c58
   verdicts:
   - stage: S5a
@@ -90,11 +90,33 @@ items:
       (b). Both false claims from the S5b error are gone. The prompt at :68 now asks why cancellation
       is ''more direct''. The remark at :91 is accurate. c+d <= (c+d)+(a+f) holds by (a) and Law (b).
       Reading off '
+- key: check:01-integers-as-classes:1
+  kind: check
+  file: 01-integers-as-classes.md
+  line: 95
+  hash: 6257befe3e32
+  verdicts:
+  - stage: S5a
+    verdict: correct
+    by: refereeA
+    hash: 0d447ab29f3a
+    date: '2026-10-12'
+    model: claude-opus-5-5
+    evidence: '01:203: 2+15=17=7+10; 2+10=12 != 22=7+15; normal forms [(0,5)] and [(5,0)] distinct by
+      uniqueness in prp-integer-normal-form (a).'
+  - stage: S5b
+    verdict: correct
+    by: refereeB
+    hash: 0d447ab29f3a
+    date: '2026-10-12'
+    model: claude-opus-5-5
+    evidence: 'Line 203: 2+15 = 17 = 7+10; 2+10 = 12 is not 22 = 7+15; [(0,5)] differs from [(5,0)] by
+      the uniqueness in prp-integer-normal-form (a). All correct.'
 - key: exm-integer-pair-classes
   kind: exm
   file: 01-integers-as-classes.md
-  line: 101
-  hash: 26e3a5b219b1
+  line: 107
+  hash: 1428958e350e
   verdicts:
   - stage: S5a
     verdict: minor
@@ -128,7 +150,7 @@ items:
 - key: prp-integer-normal-form
   kind: prp
   file: 01-integers-as-classes.md
-  line: 164
+  line: 168
   hash: dacb30988122
   verdicts:
   - stage: S5a
@@ -150,7 +172,7 @@ items:
 - key: proof:prp-integer-normal-form
   kind: proof
   file: 01-integers-as-classes.md
-  line: 180
+  line: 184
   hash: a590c4f6e924
   verdicts:
   - stage: S5a
@@ -182,32 +204,22 @@ items:
       fd2:thm-classes-partition (b) says [a]=[b] iff a~b, as used. In (a), trichotomy plus prp-omega-order-arithmetic
       (a) gives exactly one case, and each bullet''s cross-sum equation is right: a+0 = b+k for (k,0);
       a+0 = b+0; a+k = b+0 for (0,k). def (a) is now cited in bullets 1 and 3. For uniqueness, k+l = '
-- key: check:01-integers-as-classes:1
+- key: check:01-integers-as-classes:2
   kind: check
   file: 01-integers-as-classes.md
   line: 204
+  hash: e316691a8602
+  verdicts: []
+- key: check:01-integers-as-classes:3
+  kind: check
+  file: 01-integers-as-classes.md
+  line: 216
   hash: 0d447ab29f3a
-  verdicts:
-  - stage: S5a
-    verdict: correct
-    by: refereeA
-    hash: 0d447ab29f3a
-    date: '2026-10-12'
-    model: claude-opus-5-5
-    evidence: '01:203: 2+15=17=7+10; 2+10=12 != 22=7+15; normal forms [(0,5)] and [(5,0)] distinct by
-      uniqueness in prp-integer-normal-form (a).'
-  - stage: S5b
-    verdict: correct
-    by: refereeB
-    hash: 0d447ab29f3a
-    date: '2026-10-12'
-    model: claude-opus-5-5
-    evidence: 'Line 203: 2+15 = 17 = 7+10; 2+10 = 12 is not 22 = 7+15; [(0,5)] differs from [(5,0)] by
-      the uniqueness in prp-integer-normal-form (a). All correct.'
+  verdicts: []
 - key: exr-integers-as-classes-a1
   kind: exr
   file: 01-integers-as-classes.md
-  line: 218
+  line: 230
   hash: d6d7dde34849
   verdicts:
   - stage: S5a
@@ -250,7 +262,7 @@ items:
 - key: exr-integers-as-classes-b1
   kind: exr
   file: 01-integers-as-classes.md
-  line: 241
+  line: 253
   hash: ffc2cb42c23b
   verdicts:
   - stage: S5a
@@ -287,7 +299,7 @@ items:
 - key: exr-integers-as-classes-b2
   kind: exr
   file: 01-integers-as-classes.md
-  line: 269
+  line: 281
   hash: 6e34d51a5107
   verdicts:
   - stage: S5a
@@ -329,7 +341,7 @@ items:
 - key: exr-integers-as-classes-c1
   kind: exr
   file: 01-integers-as-classes.md
-  line: 289
+  line: 301
   hash: 448565ef81d1
   verdicts:
   - stage: S5a
@@ -373,7 +385,7 @@ items:
 - key: thm-well-defined-on-classes
   kind: thm
   file: 02-well-defined-operations.md
-  line: 19
+  line: 17
   hash: eab07d1c0877
   verdicts:
   - stage: S5a
@@ -408,8 +420,8 @@ items:
 - key: proof:thm-well-defined-on-classes
   kind: proof
   file: 02-well-defined-operations.md
-  line: 44
-  hash: c53867f92d3c
+  line: 42
+  hash: 076366f817fe
   verdicts:
   - stage: S5a
     verdict: correct
@@ -435,7 +447,7 @@ items:
 - key: def-integer-operations
   kind: def
   file: 02-well-defined-operations.md
-  line: 84
+  line: 86
   hash: 634a8496a8e4
   verdicts:
   - stage: S5a
@@ -467,10 +479,38 @@ items:
       label needs no silent-use ledger line. Formulas lines 88-90 checked. Warning line 181: (1,0)~(2,1)
       since 1+1=0+2. Outputs (1,0) and (2,2), and 1+2 != 0+2. The twisted rule gives [(0,1)]*[(0,1)] =
       [(0,1)] and is m'
+- key: exm-method-one-argument-at-a-time
+  kind: exm
+  file: 02-well-defined-operations.md
+  line: 104
+  hash: 6996f056b00c
+  verdicts: []
+- key: check:02-well-defined-operations:1
+  kind: check
+  file: 02-well-defined-operations.md
+  line: 114
+  hash: 0e736bbf3c38
+  verdicts:
+  - stage: S5a
+    verdict: correct
+    by: refereeA
+    hash: 01d43b419582
+    date: '2026-10-12'
+    model: claude-opus-5-5
+    evidence: '02:239-245. 2·4+5·1=13 and 2·1+5·4=22. Normal forms: 5=2+3, 4=1+3, 22=13+9, so the product
+      is −3·3=−9. Sidecar def-integer-operations.py: OK.'
+  - stage: S5b
+    verdict: correct
+    by: refereeB
+    hash: 01d43b419582
+    date: '2026-10-12'
+    model: claude-opus-5-5
+    evidence: '240-245: [(2*4+5*1, 2*1+5*4)]=[(13,22)]; 22=13+9 gives -9; [(2,5)]=-3; [(4,1)]=3. Verified
+      by hand and by the sidecar verify/ch02/def-integer-operations.py (OK).'
 - key: prp-integer-operations-well-defined
   kind: prp
   file: 02-well-defined-operations.md
-  line: 104
+  line: 122
   hash: b8691f2690b9
   verdicts:
   - stage: S5a
@@ -491,7 +531,7 @@ items:
 - key: proof:prp-integer-operations-well-defined
   kind: proof
   file: 02-well-defined-operations.md
-  line: 116
+  line: 145
   hash: 8b993b632a25
   verdicts:
   - stage: S5a
@@ -538,7 +578,7 @@ items:
 - key: exm-ill-defined-first-coordinate
   kind: exm
   file: 02-well-defined-operations.md
-  line: 160
+  line: 189
   hash: c1b2ff73f7e3
   verdicts:
   - stage: S5a
@@ -575,7 +615,7 @@ items:
 - key: prp-naturals-embed-integers
   kind: prp
   file: 02-well-defined-operations.md
-  line: 190
+  line: 219
   hash: df3d7b1a484d
   verdicts:
   - stage: S5a
@@ -607,7 +647,7 @@ items:
 - key: proof:prp-naturals-embed-integers
   kind: proof
   file: 02-well-defined-operations.md
-  line: 209
+  line: 238
   hash: c999002af9b4
   verdicts:
   - stage: S5a
@@ -630,32 +670,16 @@ items:
     evidence: '207-225: the cross formula with (m,0),(n,0) gives (mn+0*0, m*0+0*n). Citations def-omega-arithmetic
       (a),(b) and thm-omega-arithmetic-laws (a),(e) match 05-recursion-and-arithmetic.md:149-157, 221-225.
       (c) uses prp-integer-normal-form (a) correctly.'
-- key: check:02-well-defined-operations:1
+- key: check:02-well-defined-operations:2
   kind: check
   file: 02-well-defined-operations.md
-  line: 241
+  line: 270
   hash: 01d43b419582
-  verdicts:
-  - stage: S5a
-    verdict: correct
-    by: refereeA
-    hash: 01d43b419582
-    date: '2026-10-12'
-    model: claude-opus-5-5
-    evidence: '02:239-245. 2·4+5·1=13 and 2·1+5·4=22. Normal forms: 5=2+3, 4=1+3, 22=13+9, so the product
-      is −3·3=−9. Sidecar def-integer-operations.py: OK.'
-  - stage: S5b
-    verdict: correct
-    by: refereeB
-    hash: 01d43b419582
-    date: '2026-10-12'
-    model: claude-opus-5-5
-    evidence: '240-245: [(2*4+5*1, 2*1+5*4)]=[(13,22)]; 22=13+9 gives -9; [(2,5)]=-3; [(4,1)]=3. Verified
-      by hand and by the sidecar verify/ch02/def-integer-operations.py (OK).'
+  verdicts: []
 - key: exr-well-defined-operations-a1
   kind: exr
   file: 02-well-defined-operations.md
-  line: 255
+  line: 284
   hash: 18d903e27d46
   verdicts:
   - stage: S5a
@@ -697,7 +721,7 @@ items:
 - key: exr-well-defined-operations-b1
   kind: exr
   file: 02-well-defined-operations.md
-  line: 287
+  line: 316
   hash: b2a0bd803089
   verdicts:
   - stage: S5a
@@ -740,7 +764,7 @@ items:
 - key: exr-well-defined-operations-b2
   kind: exr
   file: 02-well-defined-operations.md
-  line: 304
+  line: 333
   hash: 1271f3193cfc
   verdicts:
   - stage: S5a
@@ -780,10 +804,16 @@ items:
       n+n now cites 1+1=2 from def-omega-arithmetic (c), which that clause states explicitly, and the
       ledger line was updated. Earlier finding resolved. (c): [(0,1)]=[(1,2)] since 0+2=1+1; outputs (0,1)
       and (1,4); 0+4=4 != 2=1+1.'
+- key: exr-well-defined-operations-b3
+  kind: exr
+  file: 02-well-defined-operations.md
+  line: 357
+  hash: cb8a8cc89d37
+  verdicts: []
 - key: exr-well-defined-operations-c1
   kind: exr
   file: 02-well-defined-operations.md
-  line: 330
+  line: 396
   hash: 740359aefee9
   verdicts:
   - stage: S5a
@@ -819,7 +849,7 @@ items:
 - key: exr-well-defined-operations-c2
   kind: exr
   file: 02-well-defined-operations.md
-  line: 361
+  line: 427
   hash: 68ddd7eb542c
   verdicts:
   - stage: S5a
@@ -849,7 +879,7 @@ items:
 - key: def-commutative-ring-and-field
   kind: def
   file: 03-commutative-rings.md
-  line: 14
+  line: 11
   hash: f8fdda87bc4f
   verdicts:
   - stage: S5a
@@ -893,7 +923,7 @@ items:
 - key: thm-integers-commutative-ring
   kind: thm
   file: 03-commutative-rings.md
-  line: 53
+  line: 50
   hash: 47d83497d866
   verdicts:
   - stage: S5a
@@ -913,7 +943,7 @@ items:
 - key: proof:thm-integers-commutative-ring
   kind: proof
   file: 03-commutative-rings.md
-  line: 63
+  line: 71
   hash: fd5e8229e121
   verdicts:
   - stage: S5a
@@ -935,10 +965,37 @@ items:
     evidence: '03:63-90: I recomputed every table row and both (F5) expansions (ace+adf+bcf+bde / acf+ade+bce+bdf).
       1 != 0 follows from prp-integer-normal-form (b) and thm-omega-order (a),(d). ''Seven of the eight
       rows end in equal'' (03:93) is true. The sidecar passes.'
+- key: exm-method-reduce-to-level-below
+  kind: exm
+  file: 03-commutative-rings.md
+  line: 108
+  hash: b25d7ff6fe1d
+  verdicts: []
+- key: check:03-commutative-rings:1
+  kind: check
+  file: 03-commutative-rings.md
+  line: 122
+  hash: f4b3225b280e
+  moved_from: check:03-ordered-rings:1
+  verdicts:
+  - stage: S5a
+    verdict: correct
+    by: refereeA
+    hash: 6a652895a1e1
+    date: '2026-10-12'
+    model: claude-opus-5-5
+    evidence: '03-ordered-rings.md:238-240: [(2,4)]+[(10,7)]=[(12,11)], and 11<12. That is -3<-2.'
+  - stage: S5b
+    verdict: correct
+    by: refereeB
+    hash: 6a652895a1e1
+    date: '2026-10-12'
+    model: claude-opus-5-5
+    evidence: '03:239: [(2,4)]+[(10,7)] = [(12,11)], and 11<12, so -3 < -2. The sidecar asserts this.'
 - key: prp-ring-algebra
   kind: prp
   file: 03-commutative-rings.md
-  line: 104
+  line: 132
   hash: 9961404a815f
   verdicts:
   - stage: S5a
@@ -970,7 +1027,7 @@ items:
 - key: proof:prp-ring-algebra
   kind: proof
   file: 03-commutative-rings.md
-  line: 121
+  line: 149
   hash: f38d4c7906d9
   verdicts:
   - stage: S5a
@@ -991,10 +1048,98 @@ items:
     evidence: '03:119-136: I checked each chain step by step: uniqueness of 0, 1 and -a, z=z+z => z=0,
       the defining-equation argument for (c), and the expansion in (d). The uniqueness-of-inverses paragraph
       at 03:139 is also correct.'
+- key: exm-integer-laws-two-routes
+  kind: exm
+  file: 03-commutative-rings.md
+  line: 172
+  hash: 38314c29832b
+  verdicts: []
+- key: check:03-commutative-rings:2
+  kind: check
+  file: 03-commutative-rings.md
+  line: 192
+  hash: 6701bd7304d4
+  moved_from: check:03-ordered-rings:2
+  verdicts:
+  - stage: S5a
+    verdict: correct
+    by: refereeA
+    hash: bb4fd7d197da
+    date: '2026-10-12'
+    model: claude-opus-5-5
+    evidence: 03-ordered-rings.md:371-373. If x≤0, then x+x≤0<1. If x>0, then x≥1 by discreteness, so
+      x+x≥2>1. (O1) excludes 2x=1 in both cases.
+  - stage: S5b
+    verdict: minor
+    by: refereeB
+    hash: bb4fd7d197da
+    date: '2026-10-12'
+    model: claude-opus-5-5
+    evidence: 03-ordered-rings.md:372 The check solution re-defines the symbol 2 and uses 2x = x + x without
+      justification.
+  - stage: S7r
+    verdict: correct
+    by: rereferee
+    hash: f11883b96749
+    date: '2026-10-12'
+    model: claude-opus-5-5
+    evidence: 'In :365 the symbol 2 is no longer redefined: the solution works with 1+1. It also justifies
+      (1+1)x = x(1+1) = x + x by (F6), (F9) and (F7), and records this at ledger :548. I solved it myself:
+      x <= 0 gives x+x <= 0 < 1 by rules (b) and (e). x > 0 gives x >= 1 by discreteness (thm-integers-ordered-ring
+      (c) with (O1)), so x+x >= 1+1 > 1. Both contradict (O1). This matches the text. The earlier findi'
+- key: exr-commutative-rings-a1
+  kind: exr
+  file: 03-commutative-rings.md
+  line: 204
+  hash: 01f0d6312ae0
+  verdicts: []
+- key: exr-ordered-rings-b1
+  kind: exr
+  file: 03-commutative-rings.md
+  line: 238
+  hash: 3fd80bad4912
+  verdicts:
+  - stage: S5a
+    verdict: correct
+    by: refereeA
+    hash: 3fd80bad4912
+    date: '2026-10-12'
+    model: claude-opus-5-5
+    evidence: 03-ordered-rings.md:452-466. The (F9), (F4) and (F6) computations match def-integer-operations
+      and def-integers-as-classes. The sidecar passes.
+  - stage: S5b
+    verdict: correct
+    by: refereeB
+    hash: 3fd80bad4912
+    date: '2026-10-12'
+    model: claude-opus-5-5
+    evidence: '03:459-465: the (F9), (F4) and (F6) verifications match the table rows and name Laws (b),(c),(d),(f)
+      correctly. The sidecar passes.'
+  - stage: S6
+    verdict: correct
+    by: verifier
+    hash: 3fd80bad4912
+    date: '2026-10-12'
+    model: claude-opus-5-5
+    evidence: 03:452-466. The (F9), (F4) and (F6) coordinates are correct. Law letters (b) comm+, (c)
+      assoc+, (d) distributivity, (f) comm· match thm-omega-arithmetic-laws. The worked example is the
+      table in thm-integers-commutative-ring.
+- key: exr-commutative-rings-b2
+  kind: exr
+  file: 03-commutative-rings.md
+  line: 254
+  hash: f91a68f2ad29
+  verdicts: []
+- key: exr-commutative-rings-c1
+  kind: exr
+  file: 03-commutative-rings.md
+  line: 283
+  hash: 3f3384009312
+  verdicts: []
 - key: def-ordered-ring-and-field
   kind: def
-  file: 03-commutative-rings.md
-  line: 150
+  file: 04-ordered-rings.md
+  line: 11
   hash: 9feb5d6b6c22
   verdicts:
   - stage: S5a
@@ -1034,8 +1179,8 @@ items:
       negative and non-negative (hyphenated) are defined at :159.
 - key: prp-order-from-positives
   kind: prp
-  file: 03-commutative-rings.md
-  line: 171
+  file: 04-ordered-rings.md
+  line: 32
   hash: 9b1339435c5c
   verdicts:
   - stage: S5a
@@ -1056,8 +1201,8 @@ items:
       in the blueprint.'
 - key: proof:prp-order-from-positives
   kind: proof
-  file: 03-commutative-rings.md
-  line: 192
+  file: 04-ordered-rings.md
+  line: 53
   hash: 1a54c96daeb5
   verdicts:
   - stage: S5a
@@ -1081,8 +1226,8 @@ items:
       inline identities.'
 - key: def-integer-order
   kind: def
-  file: 03-commutative-rings.md
-  line: 219
+  file: 04-ordered-rings.md
+  line: 80
   hash: 10ad5b9e56a9
   verdicts:
   - stage: S5a
@@ -1102,31 +1247,16 @@ items:
     model: claude-opus-5-5
     evidence: '03:219-232: well-definedness goes through thm-well-defined-on-classes (c) with a=b+k. The
       examples ([(9,4)], 0 not in P_Z) check, and so does the def-integer-order.py sidecar.'
-- key: check:03-commutative-rings:1
+- key: check:04-ordered-rings:1
   kind: check
-  file: 03-commutative-rings.md
-  line: 237
+  file: 04-ordered-rings.md
+  line: 98
   hash: 6a652895a1e1
-  moved_from: check:03-ordered-rings:1
-  verdicts:
-  - stage: S5a
-    verdict: correct
-    by: refereeA
-    hash: 6a652895a1e1
-    date: '2026-10-12'
-    model: claude-opus-5-5
-    evidence: '03-ordered-rings.md:238-240: [(2,4)]+[(10,7)]=[(12,11)], and 11<12. That is -3<-2.'
-  - stage: S5b
-    verdict: correct
-    by: refereeB
-    hash: 6a652895a1e1
-    date: '2026-10-12'
-    model: claude-opus-5-5
-    evidence: '03:239: [(2,4)]+[(10,7)] = [(12,11)], and 11<12, so -3 < -2. The sidecar asserts this.'
+  verdicts: []
 - key: thm-integers-ordered-ring
   kind: thm
-  file: 03-commutative-rings.md
-  line: 247
+  file: 04-ordered-rings.md
+  line: 108
   hash: 8c9772fa5621
   verdicts:
   - stage: S5a
@@ -1146,8 +1276,8 @@ items:
       not redefined.'
 - key: proof:thm-integers-ordered-ring
   kind: proof
-  file: 03-commutative-rings.md
-  line: 263
+  file: 04-ordered-rings.md
+  line: 124
   hash: 0d07c6a8f36e
   verdicts:
   - stage: S5a
@@ -1171,8 +1301,8 @@ items:
       needs the equality case, which is trivial.'
 - key: prp-ordered-ring-rules
   kind: prp
-  file: 03-commutative-rings.md
-  line: 309
+  file: 04-ordered-rings.md
+  line: 170
   hash: 5252ea439ec9
   verdicts:
   - stage: S5a
@@ -1193,8 +1323,8 @@ items:
       sit exactly where the zero ring needs them (03:361).'
 - key: proof:prp-ordered-ring-rules
   kind: proof
-  file: 03-commutative-rings.md
-  line: 331
+  file: 04-ordered-rings.md
+  line: 203
   hash: 926bf4c05d26
   verdicts:
   - stage: S5a
@@ -1228,43 +1358,34 @@ items:
       (F6) and ring-algebra (c). (d) applies (c) with -c and then (a). (f) uses -0 = 0 from the proof
       of prp-order-from-positives. The rewritten (h) is right: the base case uses def-omega-arithmetic
       (a), (F3) and 0*a = 0'
-- key: check:03-commutative-rings:2
+- key: exm-method-one-positive-element
+  kind: exm
+  file: 04-ordered-rings.md
+  line: 231
+  hash: 23a2d5230dd4
+  verdicts: []
+- key: exm-product-of-inequalities
+  kind: exm
+  file: 04-ordered-rings.md
+  line: 247
+  hash: 7acbcc6c8bf8
+  verdicts: []
+- key: check:04-ordered-rings:2
   kind: check
-  file: 03-commutative-rings.md
-  line: 363
+  file: 04-ordered-rings.md
+  line: 267
+  hash: 70947db2ff12
+  verdicts: []
+- key: check:04-ordered-rings:3
+  kind: check
+  file: 04-ordered-rings.md
+  line: 275
   hash: f11883b96749
-  moved_from: check:03-ordered-rings:2
-  verdicts:
-  - stage: S5a
-    verdict: correct
-    by: refereeA
-    hash: bb4fd7d197da
-    date: '2026-10-12'
-    model: claude-opus-5-5
-    evidence: 03-ordered-rings.md:371-373. If x≤0, then x+x≤0<1. If x>0, then x≥1 by discreteness, so
-      x+x≥2>1. (O1) excludes 2x=1 in both cases.
-  - stage: S5b
-    verdict: minor
-    by: refereeB
-    hash: bb4fd7d197da
-    date: '2026-10-12'
-    model: claude-opus-5-5
-    evidence: 03-ordered-rings.md:372 The check solution re-defines the symbol 2 and uses 2x = x + x without
-      justification.
-  - stage: S7r
-    verdict: correct
-    by: rereferee
-    hash: f11883b96749
-    date: '2026-10-12'
-    model: claude-opus-5-5
-    evidence: 'In :365 the symbol 2 is no longer redefined: the solution works with 1+1. It also justifies
-      (1+1)x = x(1+1) = x + x by (F6), (F9) and (F7), and records this at ledger :548. I solved it myself:
-      x <= 0 gives x+x <= 0 < 1 by rules (b) and (e). x > 0 gives x >= 1 by discreteness (thm-integers-ordered-ring
-      (c) with (O1)), so x+x >= 1+1 > 1. Both contradict (O1). This matches the text. The earlier findi'
+  verdicts: []
 - key: prp-integer-least-element
   kind: prp
-  file: 03-commutative-rings.md
-  line: 375
+  file: 04-ordered-rings.md
+  line: 287
   hash: faab45a80999
   verdicts:
   - stage: S5a
@@ -1284,8 +1405,8 @@ items:
     evidence: '03:382: true, and both hypotheses are shown necessary at 03:391.'
 - key: proof:prp-integer-least-element
   kind: proof
-  file: 03-commutative-rings.md
-  line: 381
+  file: 04-ordered-rings.md
+  line: 297
   hash: 7569f08e2ec3
   verdicts:
   - stage: S5a
@@ -1318,8 +1439,8 @@ items:
       w
 - key: exm-finite-ring-not-orderable
   kind: exm
-  file: 03-commutative-rings.md
-  line: 389
+  file: 04-ordered-rings.md
+  line: 305
   hash: 3a5950abd838
   verdicts:
   - stage: S5a
@@ -1363,9 +1484,9 @@ items:
       passes.
 - key: exr-ordered-rings-a1
   kind: exr
-  file: 03-commutative-rings.md
-  line: 423
-  hash: a4fb8f2324fd
+  file: 04-ordered-rings.md
+  line: 339
+  hash: c845158e8554
   verdicts:
   - stage: S5a
     verdict: correct
@@ -1405,42 +1526,11 @@ items:
       I solved it myself: (1) rules (c) with c = b > 0; (2) ring-algebra (b) and (F6); (3) rules (e),
       with a, b != 0 by (O1); (4) rules (b) strict, then (F3); (5) (O2). This matches. (b) is true by
       (f), and (c) is false bec'
-- key: exr-ordered-rings-b1
-  kind: exr
-  file: 03-commutative-rings.md
-  line: 448
-  hash: 3fd80bad4912
-  verdicts:
-  - stage: S5a
-    verdict: correct
-    by: refereeA
-    hash: 3fd80bad4912
-    date: '2026-10-12'
-    model: claude-opus-5-5
-    evidence: 03-ordered-rings.md:452-466. The (F9), (F4) and (F6) computations match def-integer-operations
-      and def-integers-as-classes. The sidecar passes.
-  - stage: S5b
-    verdict: correct
-    by: refereeB
-    hash: 3fd80bad4912
-    date: '2026-10-12'
-    model: claude-opus-5-5
-    evidence: '03:459-465: the (F9), (F4) and (F6) verifications match the table rows and name Laws (b),(c),(d),(f)
-      correctly. The sidecar passes.'
-  - stage: S6
-    verdict: correct
-    by: verifier
-    hash: 3fd80bad4912
-    date: '2026-10-12'
-    model: claude-opus-5-5
-    evidence: 03:452-466. The (F9), (F4) and (F6) coordinates are correct. Law letters (b) comm+, (c)
-      assoc+, (d) distributivity, (f) comm· match thm-omega-arithmetic-laws. The worked example is the
-      table in thm-integers-commutative-ring.
 - key: exr-ordered-rings-b2
   kind: exr
-  file: 03-commutative-rings.md
-  line: 464
-  hash: 696ff3b21214
+  file: 04-ordered-rings.md
+  line: 364
+  hash: c165b86221c6
   verdicts:
   - stage: S5a
     verdict: minor
@@ -1479,10 +1569,16 @@ items:
       (m+k = n+k implies m = n), and gets a' < b' from (a). The citation of thm-well-defined-on-classes
       (c) fits that label's statement. The (P2) part and the product counterexample [(0,1)][(0,1)] = [(1,0)]
       are cor
+- key: exr-ordered-rings-b3
+  kind: exr
+  file: 04-ordered-rings.md
+  line: 382
+  hash: 21e950f2f704
+  verdicts: []
 - key: exr-ordered-rings-c1
   kind: exr
-  file: 03-commutative-rings.md
-  line: 484
+  file: 04-ordered-rings.md
+  line: 410
   hash: 9696e0dcb9a2
   verdicts:
   - stage: S5a
@@ -1527,7 +1623,7 @@ items:
 - key: prp-divisibility-rules-integers
   kind: prp
   file: 05-division-with-remainder.md
-  line: 27
+  line: 21
   hash: ef812e6d0d8f
   verdicts:
   - stage: S5a
@@ -1571,8 +1667,8 @@ items:
 - key: proof:prp-divisibility-rules-integers
   kind: proof
   file: 05-division-with-remainder.md
-  line: 48
-  hash: baa3ae37e6cc
+  line: 42
+  hash: 06e161635b76
   verdicts:
   - stage: S5a
     verdict: correct
@@ -1617,7 +1713,7 @@ items:
 - key: check:05-division-with-remainder:1
   kind: check
   file: 05-division-with-remainder.md
-  line: 74
+  line: 70
   hash: 409faac203d3
   moved_from: check:01-division-with-remainder:1
   verdicts:
@@ -1638,8 +1734,8 @@ items:
 - key: thm-integers-division-remainder
   kind: thm
   file: 05-division-with-remainder.md
-  line: 86
-  hash: 3fa3d6943374
+  line: 82
+  hash: 3211ee2940c9
   verdicts:
   - stage: S5a
     verdict: correct
@@ -1671,8 +1767,8 @@ items:
 - key: proof:thm-integers-division-remainder
   kind: proof
   file: 05-division-with-remainder.md
-  line: 106
-  hash: 1017eeb6f1a1
+  line: 101
+  hash: 41800524fab7
   verdicts:
   - stage: S5a
     verdict: minor
@@ -1716,8 +1812,8 @@ items:
 - key: check:05-division-with-remainder:2
   kind: check
   file: 05-division-with-remainder.md
-  line: 137
-  hash: ae8259795dcb
+  line: 135
+  hash: 98e753ba20ee
   moved_from: check:01-division-with-remainder:2
   verdicts:
   - stage: S5a
@@ -1738,7 +1834,7 @@ items:
 - key: cor-integers-even-odd
   kind: cor
   file: 05-division-with-remainder.md
-  line: 153
+  line: 151
   hash: 17740010e5c4
   verdicts:
   - stage: S5a
@@ -1780,7 +1876,7 @@ items:
 - key: proof:cor-integers-even-odd
   kind: proof
   file: 05-division-with-remainder.md
-  line: 166
+  line: 164
   hash: 4ae0dd203a81
   verdicts:
   - stage: S5a
@@ -1803,7 +1899,7 @@ items:
 - key: exr-division-with-remainder-a1
   kind: exr
   file: 05-division-with-remainder.md
-  line: 202
+  line: 186
   hash: 81039af7383d
   verdicts:
   - stage: S5a
@@ -1834,7 +1930,7 @@ items:
 - key: exr-division-with-remainder-b1
   kind: exr
   file: 05-division-with-remainder.md
-  line: 225
+  line: 209
   hash: 08d74a5e2e4d
   verdicts:
   - stage: S5a
@@ -1865,7 +1961,7 @@ items:
 - key: exr-division-with-remainder-b2
   kind: exr
   file: 05-division-with-remainder.md
-  line: 239
+  line: 223
   hash: d28f5616e776
   verdicts:
   - stage: S5a
@@ -1894,6 +1990,30 @@ items:
     model: claude-opus-5-5
     evidence: '01:247-253. At least one by remainder cases; at most one via 3 | j-i in {1,2} and rule
       (e). Matches my proof; brute force for a in [-100,100) passes. Worked pattern: cor-integers-even-odd.'
+- key: exr-division-with-remainder-c2
+  kind: exr
+  file: 05-division-with-remainder.md
+  line: 239
+  hash: 08596efdf525
+  verdicts: []
+- key: exr-division-with-remainder-r1
+  kind: exr
+  file: 05-division-with-remainder.md
+  line: 277
+  hash: 33fd3829127d
+  verdicts: []
+- key: exr-division-with-remainder-r2
+  kind: exr
+  file: 05-division-with-remainder.md
+  line: 300
+  hash: 0ed267dfb879
+  verdicts: []
+- key: exr-division-with-remainder-r3
+  kind: exr
+  file: 05-division-with-remainder.md
+  line: 322
+  hash: 53c547b17944
+  verdicts: []
 - key: exr-division-with-remainder-c1
   kind: exr
   file: 05-division-with-remainder.md
@@ -1925,3 +2045,4 @@ items:
     model: claude-opus-5-5
     evidence: 01:263-275. q<=a/n<q+1 multiplied by n>0, transferred back to Z by thm-rationals-ordered-field
       (b). The use of n>0 is named; the n<0 aside (n<r<=0) is correct.
+  removed: true

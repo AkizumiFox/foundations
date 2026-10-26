@@ -1,12 +1,10 @@
 # The Rationals inside an Ordered Field; the Archimedean Property
 
-<!-- S3: style revision per S1 change list (layout-proposal.md §3, 4.2, pipeline S): Steps 1–3 of thm-rationals-embed-ordered-field go into a second-reading fold (statement, Idea and the uniqueness step stay); C3 (the order of ℚ is unique) moves to Chapter 6 or is deleted. -->
-
 In an ordered field \( F \) we can form \( 1 \), \( 1 + 1 \), \( 1 + 1 + 1 \), and so on. They look like the natural numbers \( 1, 2, 3, \dots \), but they are elements of \( F \), and two questions need answers before the next section can use them as thresholds. Do they behave like natural numbers, adding, multiplying and comparing as \( \nN \) does? And does every element of \( F \) lie below one of them? For \( \nQ \), Section 3.2 answered the second question with yes (@thm-rationals-archimedean). This section answers the first for every ordered field, and goes further: a whole copy of \( \nQ \) sits inside \( F \), in exactly one way. The second question has the answer no in general. Fields where the answer is yes are called **Archimedean**, and in them every element has an integer part and the rationals are dense.
 
 ## The natural numbers in an ordered field
 
-Section 2.3 defined, in any commutative ring \( R \) and for any \( a \in R \), the multiples \( n \cdot a \) for \( n \in \nN \) (just before @prp-ordered-ring-rules): \( 0 \cdot a = 0 \) and \( (n + 1) \cdot a = n \cdot a + a \). With \( a = 1 \) they are the elements \( 0, 1, 1 + 1, \dots \) of the opening paragraph. We give them a name, together with powers, which this chapter needs for estimates such as \( 2^k \ge k + 1 \).
+Section 2.4 defined, in any commutative ring \( R \) and for any \( a \in R \), the multiples \( n \cdot a \) for \( n \in \nN \) (just before @prp-ordered-ring-rules): \( 0 \cdot a = 0 \) and \( (n + 1) \cdot a = n \cdot a + a \). With \( a = 1 \) they are the elements \( 0, 1, 1 + 1, \dots \) of the opening paragraph. We give them a name, together with powers, which this chapter needs for estimates such as \( 2^k \ge k + 1 \).
 
 ::: {#def-naturals-in-ordered-field}
 [Natural Numbers and Powers in an Ordered Field]
@@ -14,7 +12,7 @@ Section 2.3 defined, in any commutative ring \( R \) and for any \( a \in R \), 
 Let \( F \) be an ordered field, with unit element \( 1_F \).
 
 ::: {.enumerate options="label=(\alph*)"}
-1. For \( n \in \nN \), \( n \cdot 1_F \in F \) is the multiple of \( 1_F \) of Section 2.3: the map \( \nN \to F \), \( n \mapsto n \cdot 1_F \), is the unique function with
+1. For \( n \in \nN \), \( n \cdot 1_F \in F \) is the multiple of \( 1_F \) of Section 2.4: the map \( \nN \to F \), \( n \mapsto n \cdot 1_F \), is the unique function with
 \[
 0 \cdot 1_F = 0 , \qquad (n + 1) \cdot 1_F = n \cdot 1_F + 1_F \quad \text{for every } n \in \nN .
 \]
@@ -29,7 +27,9 @@ The subscript in \( 1_F \) is there because two fields will often be in play, \(
 
 **Examples.** \( 1 \cdot 1_F = 0 \cdot 1_F + 1_F = 0 + 1_F = 1_F \), and \( 2 \cdot 1_F = 1_F + 1_F \), the element written \( 2 \) in Section 4.1. Also \( x^1 = 1_F x = x \) and \( x^2 = x x \), which is the square of @prp-ring-algebra (d). The degenerate case: \( 0 \cdot 1_F = 0 \), and \( 0^0 = 1_F \) by the first equation, a convention the recursion imposes and nothing below questions.
 
-**A non-example by minimal change.** Keep the field axioms and drop the order. In the two-element field of @exm-finite-ring-not-orderable, the same recursion gives \( 2 \cdot 1 = 1 + 1 = 0 = 0 \cdot 1 \). So the map \( n \mapsto n \cdot 1 \) is not injective there, and the elements \( 0 \cdot 1, 1 \cdot 1, 2 \cdot 1, \dots \) are not a copy of \( \nN \). The next proposition shows that the order axioms prevent this.
+::: {.second-reading title="Without the order, the copy of ℕ collapses"}
+Keep the field axioms and drop the order. In the two-element field of @exm-finite-ring-not-orderable, the same recursion gives \( 2 \cdot 1 = 1 + 1 = 0 = 0 \cdot 1 \). So the map \( n \mapsto n \cdot 1 \) is not injective there, and the elements \( 0 \cdot 1, 1 \cdot 1, 2 \cdot 1, \dots \) are not a copy of \( \nN \). The next proposition shows that the order axioms prevent this.
+:::
 
 ::: {#prp-naturals-in-ordered-field}
 [The Natural Numbers inside an Ordered Field]
@@ -49,14 +49,14 @@ The sum law in (a) and part (b) are rules for multiples (@prp-ordered-ring-rules
 :::
 
 ::: {.proof}
-(a) The sum law is @prp-ordered-ring-rules (h) with \( R = F \) and \( a = 1_F \). For the product law, fix \( m \) and use @fd1:ax-induction (through @cor-omega-identification (b)) on \( n \), for \( P(n) \): "\( (mn) \cdot 1_F = (m \cdot 1_F)(n \cdot 1_F) \)". *Base:* \( m \cdot 0 = 0 \) by @def-omega-arithmetic (b), so the left side is \( 0 \cdot 1_F = 0 \), and the right side is \( (m \cdot 1_F) \cdot 0 = 0 \) by @prp-ring-algebra (b). *Step:* assume \( P(n) \). By @def-omega-arithmetic (b) and (c), \( m(n + 1) = mn + m \). Hence
+(a) The sum law is @prp-ordered-ring-rules (h) with \( R = F \) and \( a = 1_F \). For the product law, fix \( m \) and use @fd1:ax-induction (through @cor-omega-identification (b)) on \( n \), for \( P(n) \): "\( (mn) \cdot 1_F = (m \cdot 1_F)(n \cdot 1_F) \)". *Base:* \( m \cdot 0 = 0 \) by @def-omega-arithmetic (b), so the left side is \( 0 \cdot 1_F = 0 \), and the right side is \( (m \cdot 1_F) \cdot 0 = 0 \). *Step:* assume \( P(n) \). By @def-omega-arithmetic (b) and (c), \( m(n + 1) = mn + m \). Hence
 \[
 \begin{aligned}
 \bigl(m(n + 1)\bigr) \cdot 1_F &= (mn) \cdot 1_F + m \cdot 1_F = (m \cdot 1_F)(n \cdot 1_F) + (m \cdot 1_F) 1_F \\
 &= (m \cdot 1_F)(n \cdot 1_F + 1_F) = (m \cdot 1_F)\bigl((n + 1) \cdot 1_F\bigr) ,
 \end{aligned}
 \]
-by the sum law, \( P(n) \) with (F7), (F9), and the recursion of (a) in @def-naturals-in-ordered-field. So \( P(n + 1) \) holds, and \( P(n) \) holds for every \( n \).
+by the sum law, \( P(n) \), distributivity, and the recursion of (a) in @def-naturals-in-ordered-field. So \( P(n + 1) \) holds, and \( P(n) \) holds for every \( n \).
 
 (b) Since \( 1_F \ne 0 \) in a field, @prp-ordered-ring-rules (h) gives \( m \cdot 1_F < n \cdot 1_F \) whenever \( m < n \). If \( m \ne n \), then \( m < n \) or \( n < m \) by trichotomy in \( \nN \) (@thm-omega-order (a)), so \( m \cdot 1_F \ne n \cdot 1_F \) by (O1): the map is injective. Finally \( 1 \cdot 1_F = 1_F \) (the examples above), and for \( n > 1 \), \( 1_F = 1 \cdot 1_F < n \cdot 1_F \); so \( n \cdot 1_F \ge 1_F \) for every \( n \ge 1 \), and \( 1_F > 0 \) by @prp-ordered-ring-rules (e).
 
@@ -66,6 +66,10 @@ by the sum law, \( P(n) \) with (F7), (F9), and the recursion of (a) in @def-nat
 \]
 by the product law of (a), the hypothesis, and @def-naturals-in-ordered-field (b). The special case is \( n = 2 \), with \( 2 \cdot 1_F = 1_F + 1_F \).
 
+Part (d) is proved in the fold below.
+:::
+
+::: {.second-reading title="Part (d): the two copies of ℕ in ℚ agree"}
 (d) Let \( f(n) \coloneqq j(\iota(n)) \in \nQ \). The zero and one of \( \nZ \) are \( \iota(0) \) and \( \iota(1) \) (@thm-integers-commutative-ring), and \( j \) sends them to the zero and one of \( \nQ \) (@prp-integers-embed-rationals). So \( f(0) = 0 \), and, since \( \iota \) and \( j \) preserve sums (@prp-naturals-embed-integers (a), @prp-integers-embed-rationals),
 \[
 f(n + 1) = j\bigl(\iota(n) + \iota(1)\bigr) = j(\iota(n)) + j(\iota(1)) = f(n) + 1_{\nQ} .
@@ -73,7 +77,15 @@ f(n + 1) = j\bigl(\iota(n) + \iota(1)\bigr) = j(\iota(n)) + j(\iota(1)) = f(n) +
 So \( f \) and \( n \mapsto n \cdot 1_{\nQ} \) both satisfy the recursion of @def-naturals-in-ordered-field (a) with \( F = \nQ \), and by the uniqueness in @fd2:thm-recursion (through @cor-omega-identification (b)) they are equal. This proves the proposition.
 :::
 
-So the order axioms do what the non-example above lacked: by (b), the elements \( n \cdot 1_F \) are all different and increase with \( n \), and by (a) they add and multiply as natural numbers do. In \( \nQ \), (d) says that nothing new has happened: \( n \cdot 1_{\nQ} \) is \( n \). When only one field is in play, we will sometimes write \( n \) for \( n \cdot 1_F \) in a general ordered field too; the statements of this section keep \( n \cdot 1_F \), because there the difference between \( n \in \nN \) and its image in \( F \) is the point.
+So the order axioms do what the two-element field of the fold above lacks: by (b), the elements \( n \cdot 1_F \) are all different and increase with \( n \), and by (a) they add and multiply as natural numbers do. In \( \nQ \), (d) says that nothing new has happened: \( n \cdot 1_{\nQ} \) is \( n \). When only one field is in play, we will sometimes write \( n \) for \( n \cdot 1_F \) in a general ordered field too; the statements of this section keep \( n \cdot 1_F \), because there the difference between \( n \in \nN \) and its image in \( F \) is the point.
+
+::: {.check}
+In an ordered field \( F \), write \( (3 \cdot 1_F)(4 \cdot 1_F) - 5 \cdot 1_F \) as a single multiple of \( 1_F \), and say why it is not \( 0 \).
+:::
+
+::: {.solution}
+By the product law of @prp-naturals-in-ordered-field (a), \( (3 \cdot 1_F)(4 \cdot 1_F) = 12 \cdot 1_F \), and by the sum law \( 12 \cdot 1_F = 7 \cdot 1_F + 5 \cdot 1_F \), since \( 12 = 7 + 5 \) in \( \nN \). So the element is \( 7 \cdot 1_F \), and \( 7 \cdot 1_F \ge 1_F > 0 \) by part (b).
+:::
 
 ## A copy of the rationals in every ordered field
 
@@ -95,10 +107,16 @@ It satisfies \( \iota_F(n) = n \cdot 1_F \) for every \( n \in \nN \). It is inj
 :::
 
 ::: {.idea}
-Uniqueness tells us how to build \( \iota_F \). A map respecting \( 1 \) and \( + \) must send \( n = 1 + \dots + 1 \) to \( n \cdot 1_F \); respecting negatives, it must send \( -n \) to \( -(n \cdot 1_F) \); and respecting products, it must send \( p/q \) to \( (p \cdot 1_F)(q \cdot 1_F)^{-1} \). So we take that formula as the definition, and the work is to check it. **Step roadmap.** ① Extend \( n \mapsto n \cdot 1_F \) to \( \nZ \) and check that it respects \( + \), \( \cdot \) and negation. ② Define \( \iota_F \) on fractions and check that the value does not depend on the fraction chosen. ③ Check \( + \) and \( \cdot \) with the fraction rules. ④ Check the order. ⑤ Uniqueness: run the opening argument as a proof.
+Uniqueness tells us how to build \( \iota_F \). A map respecting \( 1 \) and \( + \) must send \( n = 1 + \dots + 1 \) to \( n \cdot 1_F \); respecting negatives, it must send \( -n \) to \( -(n \cdot 1_F) \); and respecting products, it must send \( p/q \) to \( (p \cdot 1_F)(q \cdot 1_F)^{-1} \). So we take that formula as the definition, and the work is to check it. **Step roadmap.** ① Extend \( n \mapsto n \cdot 1_F \) to \( \nZ \) and check that it respects \( + \), \( \cdot \) and negation. ② Define \( \iota_F \) on fractions and check that the value does not depend on the fraction chosen. ③ Check \( + \) and \( \cdot \) with the fraction rules (①–③ are in the fold below). ④ Check the order. ⑤ Uniqueness: run the opening argument as a proof.
 :::
 
-::: {.proof}
+**The map.** By @prp-integers-embed-rationals (b), every \( x \in \nQ \) is \( p/q \) with \( p \in \nZ \) and \( q \in \nZ_{>0} \). Extend \( n \mapsto n \cdot 1_F \) to \( \nZ \) by \( (-n) \cdot 1_F \coloneqq -(n \cdot 1_F) \), and set
+\[
+\iota_F\Bigl(\frac{p}{q}\Bigr) \coloneqq (p \cdot 1_F)(q \cdot 1_F)^{-1} = \frac{p \cdot 1_F}{q \cdot 1_F} .
+\]
+Here \( q \ge 1 \), so \( q \cdot 1_F \ge 1_F > 0 \) (@prp-naturals-in-ordered-field (b)), and the inverse exists. Steps 1–3 check that this is a well-defined map respecting \( 1 \), \( + \) and \( \cdot \).
+
+::: {.second-reading title="Steps 1–3: the integers, the fractions, sums and products"}
 **Step 1: the integers.** By @prp-naturals-embed-integers (c), read through the identification \( \nN \subseteq \nZ \), every \( m \in \nZ \) is \( n \) or \( -n \) for some \( n \in \nN \). Define
 \[
 m \cdot 1_F \coloneqq
@@ -131,11 +149,7 @@ by @prp-naturals-in-ordered-field (a). If \( n < n' \), then \( n' = n + k \), \
 \]
 by negation, @prp-naturals-in-ordered-field (a), and @prp-ring-algebra (c) in \( F \). The two remaining sign patterns are the same with signs: \( (-n)(-n') = nn' \) in \( \nZ \) and \( \bigl(-(n \cdot 1_F)\bigr)\bigl(-(n' \cdot 1_F)\bigr) = (n \cdot 1_F)(n' \cdot 1_F) \) in \( F \), both by @prp-ring-algebra (c), and \( m = n \), \( m' = -n' \) follows from the case written out by (F6).
 
-**Step 2: the definition on \( \nQ \).** By @prp-integers-embed-rationals (b), every \( x \in \nQ \) is \( p/q \) for some \( p \in \nZ \) and \( q \in \nZ_{>0} \). Since \( q \in \nZ_{>0} \), that is, \( q \in \nN \) and \( q \ne 0 \), we have \( q \ge 1 \) (@thm-omega-order (d)), and @prp-naturals-in-ordered-field (b) gives \( q \cdot 1_F \ge 1_F > 0 \), so \( q \cdot 1_F \ne 0 \). Define
-\[
-\iota_F\Bigl(\frac{p}{q}\Bigr) \coloneqq (p \cdot 1_F)(q \cdot 1_F)^{-1} = \frac{p \cdot 1_F}{q \cdot 1_F} .
-\]
-The value does not depend on the fraction chosen: if \( p/q = r/s \) with \( r \in \nZ \) and \( s \in \nZ_{>0} \), then \( ps = rq \) (@prp-integers-embed-rationals (b)), so \( (p \cdot 1_F)(s \cdot 1_F) = (r \cdot 1_F)(q \cdot 1_F) \) by the product rule of Step 1. Multiplying both sides by \( (q \cdot 1_F)^{-1} (s \cdot 1_F)^{-1} \) and using (F5), (F6), (F8) gives \( (p \cdot 1_F)(q \cdot 1_F)^{-1} = (r \cdot 1_F)(s \cdot 1_F)^{-1} \). So \( \iota_F \) is a function \( \nQ \to F \). For \( m \in \nZ \), \( m = m/1 \), so \( \iota_F(m) = (m \cdot 1_F)(1_F)^{-1} = m \cdot 1_F \); in particular \( \iota_F(n) = n \cdot 1_F \) for \( n \in \nN \), and \( \iota_F(1) = 1_F \).
+**Step 2: the definition on \( \nQ \).** As above, \( q \cdot 1_F \ne 0 \). Define \( \iota_F \) with the formula of the paragraph above. The value does not depend on the fraction chosen: if \( p/q = r/s \) with \( r \in \nZ \) and \( s \in \nZ_{>0} \), then \( ps = rq \) (@prp-integers-embed-rationals (b)), so \( (p \cdot 1_F)(s \cdot 1_F) = (r \cdot 1_F)(q \cdot 1_F) \) by the product rule of Step 1. Multiplying both sides by \( (q \cdot 1_F)^{-1} (s \cdot 1_F)^{-1} \) and using (F5), (F6), (F8) gives \( (p \cdot 1_F)(q \cdot 1_F)^{-1} = (r \cdot 1_F)(s \cdot 1_F)^{-1} \). So \( \iota_F \) is a function \( \nQ \to F \). For \( m \in \nZ \), \( m = m/1 \), so \( \iota_F(m) = (m \cdot 1_F)(1_F)^{-1} = m \cdot 1_F \); in particular \( \iota_F(n) = n \cdot 1_F \) for \( n \in \nN \), and \( \iota_F(1) = 1_F \).
 
 **Step 3: sums and products.** Let \( x = p/q \) and \( y = r/s \) as in Step 2. In the field \( \nQ \), @lem-field-fraction-rules (b) gives
 \[
@@ -149,17 +163,21 @@ with \( qs \in \nZ_{>0} \) by (O4) in \( \nZ \). By the definition, Step 1, and 
 \end{aligned}
 \]
 and in the same way \( \iota_F(xy) = \dfrac{(p \cdot 1_F)(r \cdot 1_F)}{(q \cdot 1_F)(s \cdot 1_F)} = \iota_F(x)\, \iota_F(y) \).
+:::
 
-**Step 4: order.** Let \( x < y \) in \( \nQ \). Then \( y - x > 0 \), and writing \( y - x = p/q \) with \( q \in \nZ_{>0} \), the comparison formula (@thm-rationals-ordered-field (a)) gives \( p > 0 \), so \( p \in \nZ_{>0} \) (@thm-integers-ordered-ring (b)). By @prp-naturals-in-ordered-field (b), \( p \cdot 1_F > 0 \) and \( q \cdot 1_F > 0 \); by @prp-reciprocal-order (a) and (O4), \( \iota_F(y - x) > 0 \). By Step 3, \( \iota_F(y) = \iota_F(x) + \iota_F(y - x) > \iota_F(x) \), using (O3). So \( \iota_F \) is strictly increasing. If \( x \ne y \), then \( x < y \) or \( y < x \), and the images differ by (O1): \( \iota_F \) is injective. If \( \iota_F(x) < \iota_F(y) \), then neither \( x = y \) nor \( y < x \) can hold, since they would give \( \iota_F(x) = \iota_F(y) \) or \( \iota_F(y) < \iota_F(x) \), against (O1); so \( x < y \) by trichotomy.
+::: {.proof}
+Steps 1–3 (the fold above) show that \( \iota_F \) is well defined, satisfies the three equations, and \( \iota_F(n) = n \cdot 1_F \) for \( n \in \nN \).
 
-**Step 5: uniqueness.** Let \( \psi \colon \nQ \to F \) satisfy the three equations of the statement. Then \( \psi(0) = \psi(0 + 0) = \psi(0) + \psi(0) \), and adding \( -\psi(0) \) gives \( \psi(0) = 0 \). By @fd1:ax-induction (through @cor-omega-identification (b)), \( \psi(n) = n \cdot 1_F \) for every \( n \in \nN \): the base is \( \psi(0) = 0 = 0 \cdot 1_F \), and \( \psi(n + 1) = \psi(n) + \psi(1) = n \cdot 1_F + 1_F = (n + 1) \cdot 1_F \). For \( x \in \nQ \), \( \psi(x) + \psi(-x) = \psi(0) = 0 \), so \( \psi(-x) = -\psi(x) \) by @prp-ring-algebra (a); hence \( \psi(m) = m \cdot 1_F \) for every \( m \in \nZ \). For \( q \in \nZ_{>0} \), \( \psi(q)\, \psi(q^{-1}) = \psi(1) = 1_F \), so \( \psi(q^{-1}) = (q \cdot 1_F)^{-1} \) by @lem-field-fraction-rules (a). Finally \( p/q = p q^{-1} \) (@prp-integers-embed-rationals (a)), so
+**Step 4: order.** Let \( x < y \) in \( \nQ \). Then \( y - x > 0 \), and writing \( y - x = p/q \) with \( q \in \nZ_{>0} \), the comparison formula (@thm-rationals-ordered-field (a)) gives \( p > 0 \), so \( p \in \nZ_{>0} \) (@thm-integers-ordered-ring (b)). By @prp-naturals-in-ordered-field (b), \( p \cdot 1_F > 0 \) and \( q \cdot 1_F > 0 \); by @prp-reciprocal-order (a) and (O4), \( \iota_F(y - x) > 0 \). By Step 3, \( \iota_F(y) = \iota_F(x) + \iota_F(y - x) > \iota_F(x) \). So \( \iota_F \) is strictly increasing. If \( x \ne y \), then \( x < y \) or \( y < x \), and the images differ by (O1): \( \iota_F \) is injective. If \( \iota_F(x) < \iota_F(y) \), then neither \( x = y \) nor \( y < x \) can hold, since they would give \( \iota_F(x) = \iota_F(y) \) or \( \iota_F(y) < \iota_F(x) \), against (O1); so \( x < y \) by trichotomy.
+
+**Step 5: uniqueness.** Let \( \psi \colon \nQ \to F \) satisfy the three equations of the statement. Then \( \psi(0) = \psi(0 + 0) = \psi(0) + \psi(0) \), and adding \( -\psi(0) \) gives \( \psi(0) = 0 \). By @fd1:ax-induction (through @cor-omega-identification (b)), \( \psi(n) = n \cdot 1_F \) for every \( n \in \nN \): the base is \( \psi(0) = 0 = 0 \cdot 1_F \), and \( \psi(n + 1) = \psi(n) + \psi(1) = n \cdot 1_F + 1_F = (n + 1) \cdot 1_F \). For \( x \in \nQ \), \( \psi(x) + \psi(-x) = \psi(0) = 0 \), so \( \psi(-x) = -\psi(x) \); hence \( \psi(m) = m \cdot 1_F \) for every \( m \in \nZ \). For \( q \in \nZ_{>0} \), \( \psi(q)\, \psi(q^{-1}) = \psi(1) = 1_F \), so \( \psi(q^{-1}) = (q \cdot 1_F)^{-1} \) by @lem-field-fraction-rules (a). Finally \( p/q = p q^{-1} \) (@prp-integers-embed-rationals (a)), so
 \[
 \psi\Bigl(\frac{p}{q}\Bigr) = \psi(p)\, \psi(q^{-1}) = (p \cdot 1_F)(q \cdot 1_F)^{-1} = \iota_F\Bigl(\frac{p}{q}\Bigr) .
 \]
 So \( \psi = \iota_F \). This proves the theorem.
 :::
 
-For \( F = \nQ \), the identity map of \( \nQ \) satisfies the three equations, so by uniqueness \( \iota_{\nQ} \) is the identity. In general \( \iota_F \) is the map of Step 2, and it carries \( \nQ \) onto a copy inside \( F \) that adds, multiplies and compares as \( \nQ \) does. So "\( \nQ \subseteq F \)" is an honest abuse of notation, as \( \nN \subseteq \nZ \subseteq \nQ \) was in Chapters 2 and 3, and where only one field is in play we write \( q \) for \( \iota_F(q) \). The statements below keep \( \iota_F \) visible.
+For \( F = \nQ \) the identity satisfies the three equations, so \( \iota_{\nQ} = \mathrm{id} \). In general we may read "\( \nQ \subseteq F \)", as \( \nN \subseteq \nZ \subseteq \nQ \) was read in Chapters 2 and 3; the statements below keep \( \iota_F \) visible.
 
 ::: {.remark}
 Uniqueness has a consequence that later chapters of this volume use when comparing two ordered fields. Let \( L \) be another ordered field and \( \chi \colon F \to L \) a map with \( \chi(1_F) = 1_L \) that respects \( + \) and \( \cdot \). Then \( \chi \circ \iota_F \colon \nQ \to L \) satisfies the three equations of the theorem, so \( \chi \circ \iota_F = \iota_L \): such a map fixes the rationals.
@@ -184,7 +202,7 @@ In words: whatever element of \( F \) we pick, some natural number, read in \( F
 
 **Examples.** \( \nQ \) is Archimedean: this is @thm-rationals-archimedean, by @prp-naturals-in-ordered-field (d). The constructed real numbers of the next chapter are Archimedean too (proved there). A non-example, \( \nQ(t) \), comes at the end of this section: there the element \( t \) lies above every \( n \cdot 1 \).
 
-**Why the name.** Archimedes used, as an axiom about lengths, that a smaller length laid off often enough exceeds any larger one. That is Exercise B1: in an Archimedean field, for \( y > 0 \) and any \( x \), some multiple \( (n \cdot 1_F) y \) exceeds \( x \). The definition is the case \( y = 1_F \).
+The name recalls the ancient axiom about lengths that Exercise B1 states: some multiple \( (n \cdot 1_F) y \) of any \( y > 0 \) exceeds any given \( x \).
 
 The form in which the next section uses the property is about reciprocals, as in @cor-rationals-archimedean-epsilon, now in an arbitrary Archimedean ordered field.
 
@@ -200,9 +218,8 @@ In an Archimedean ordered field \( F \), **for every** \( \varepsilon \in F_{>0}
 ::: {.proof}
 Let \( \varepsilon \in F_{>0} \). Then \( 1/\varepsilon > 0 \) by @prp-reciprocal-order (a). By @def-archimedean-ordered-field there is \( N \in \nN \) with \( 1/\varepsilon < N \cdot 1_F \); it depends on \( \varepsilon \). Then \( N \ne 0 \), since \( 0 \cdot 1_F = 0 < 1/\varepsilon \), so \( N \in \nZ_{>0} \). Let \( n \ge N \). Then \( n \cdot 1_F \ge N \cdot 1_F \) (@prp-naturals-in-ordered-field (b), or equality), so \( 0 < 1/\varepsilon < n \cdot 1_F \), and @prp-reciprocal-order (b) gives
 \[
-\frac{1}{n \cdot 1_F} < \frac{1}{1/\varepsilon} = \varepsilon ,
+\frac{1}{n \cdot 1_F} < \frac{1}{1/\varepsilon} = \varepsilon .
 \]
-where \( 1/(1/\varepsilon) = (\varepsilon^{-1})^{-1} = \varepsilon \) by @lem-field-fraction-rules (a).
 :::
 
 The order of the quantifiers is as in Section 3.2: \( \varepsilon \) first, then \( N \), depending on \( \varepsilon \), and then **every** \( n \ge N \) at once. That last clause is what Section 4.3 will call "eventually".
@@ -261,11 +278,11 @@ Look for \( q \) with denominator \( n \): we need an integer \( k \) with \( n 
 :::
 
 ::: {.proof}
-Since \( y - x > 0 \), @prp-archimedean-reciprocal gives \( n \in \nZ_{>0} \) with \( 1/(n \cdot 1_F) < y - x \). Let \( c \coloneqq n \cdot 1_F \), which is positive (@prp-naturals-in-ordered-field (b)). Multiplying by \( c \) (@prp-ordered-ring-rules (c)) gives \( 1_F < c(y - x) = c y - c x \), by (F9) and @prp-ring-algebra (c); adding \( c x \) by (O3), \( c x + 1_F < c y \). Let \( m \) be the integer part of \( c x \) (@prp-integer-part-ordered-field), so that \( \iota_F(m) \le c x < \iota_F(m + 1) \). Then
+Since \( y - x > 0 \), @prp-archimedean-reciprocal gives \( n \in \nZ_{>0} \) with \( 1/(n \cdot 1_F) < y - x \). Let \( c \coloneqq n \cdot 1_F \), which is positive (@prp-naturals-in-ordered-field (b)). Multiplying by \( c > 0 \) (@prp-ordered-ring-rules (c)) gives \( 1_F < c(y - x) = c y - c x \), and adding \( c x \), \( c x + 1_F < c y \). Let \( m \) be the integer part of \( c x \) (@prp-integer-part-ordered-field), so that \( \iota_F(m) \le c x < \iota_F(m + 1) \). Then
 \[
 c x < \iota_F(m + 1) = \iota_F(m) + 1_F \le c x + 1_F < c y ,
 \]
-by @thm-rationals-embed-ordered-field and @prp-ordered-ring-rules (b). Multiplying by \( c^{-1} > 0 \) (@prp-reciprocal-order (a), @prp-ordered-ring-rules (c)) gives \( x < \iota_F(m + 1) c^{-1} < y \). Let \( q \coloneqq (m + 1)/n \in \nQ \). Since \( c = \iota_F(n) \) and \( \iota_F \) respects products, \( \iota_F(q)\, c = \iota_F(m + 1) \), so \( \iota_F(q) = \iota_F(m + 1) c^{-1} \), and \( x < \iota_F(q) < y \).
+by @thm-rationals-embed-ordered-field. Multiplying by \( c^{-1} > 0 \) (@prp-reciprocal-order (a)) gives \( x < \iota_F(m + 1) c^{-1} < y \). Let \( q \coloneqq (m + 1)/n \in \nQ \). Since \( c = \iota_F(n) \) and \( \iota_F \) respects products, \( \iota_F(q)\, c = \iota_F(m + 1) \), so \( \iota_F(q) = \iota_F(m + 1) c^{-1} \), and \( x < \iota_F(q) < y \).
 :::
 
 Applied again, the theorem shows that an interval of an Archimedean field contains infinitely many rationals (Exercise C1). Chapter 6 uses the theorem with \( F \) a field of real numbers; Chapter 5 uses it only in an exercise.
@@ -294,7 +311,11 @@ whose numerator has leading coefficient \( 1 \) and whose denominator \( n t \) 
 The Archimedean property does not follow from the ordered-field axioms: \( \nQ(t) \) satisfies (F1)–(F9) and (O1)–(O4) and fails it. So in a general ordered field the move "take \( \varepsilon = 1/n \)" does not reach every \( \varepsilon \): in \( \nQ(t) \), the tolerance \( \varepsilon = 1/t \) is below every \( 1/n \). Each later use of "\( 1/n \) eventually drops below \( \varepsilon \)" must name the Archimedean property.
 :::
 
-The density theorem fails in \( \nQ(t) \) too, so its hypothesis is needed. There \( 0 < 1/t \), and no rational lies strictly between them. Suppose \( q \in \nQ \) had \( 0 < \iota_{\nQ(t)}(q) < 1/t \), with \( \iota_{\nQ(t)} \) the embedding of @thm-rationals-embed-ordered-field. Then \( q > 0 \), because \( \iota_{\nQ(t)} \) reflects order. By @prp-reciprocal-order (b) and @lem-field-fraction-rules (a), \( t = 1/(1/t) < 1/\iota_{\nQ(t)}(q) = \iota_{\nQ(t)}(1/q) \). By @thm-rationals-archimedean, \( 1/q < n \) for some \( n \in \nN \), so \( \iota_{\nQ(t)}(1/q) < \iota_{\nQ(t)}(n) = n \cdot 1 \), and \( t < n \cdot 1 \), against the example.
+The density theorem needs its hypothesis: in \( \nQ(t) \) no rational lies strictly between \( 0 \) and \( 1/t \).
+
+::: {.second-reading title="Why no rational lies between 0 and 1/t"}
+Suppose \( q \in \nQ \) had \( 0 < \iota_{\nQ(t)}(q) < 1/t \), with \( \iota_{\nQ(t)} \) the embedding of @thm-rationals-embed-ordered-field. Then \( q > 0 \), because \( \iota_{\nQ(t)} \) reflects order. By @prp-reciprocal-order (b) and @lem-field-fraction-rules (a), \( t = 1/(1/t) < 1/\iota_{\nQ(t)}(q) = \iota_{\nQ(t)}(1/q) \). By @thm-rationals-archimedean, \( 1/q < n \) for some \( n \in \nN \), so \( \iota_{\nQ(t)}(1/q) < \iota_{\nQ(t)}(n) = n \cdot 1 \), and \( t < n \cdot 1 \), against the example.
+:::
 
 ## Exercises
 
@@ -317,7 +338,7 @@ The density theorem fails in \( \nQ(t) \) too, so its hypothesis is needed. Ther
 \exists x \in F \ \ \forall n \in \nN \ \ n \cdot 1_F \le x .
 \]
 
-(b) \( t \), as in @exm-rational-function-field, and \( t + 1 \), since \( t + 1 > t > n \cdot 1 \). Also \( t^2 \): \( t^2 - n \cdot 1 = (t^2 - n)/1 \) has leading coefficients \( 1 \) and \( 1 \).
+(b) \( t \), as in @exm-rational-function-field, and \( t + 1 \), since \( t + 1 > t > n \cdot 1 \).
 
 (c) No. By @prp-naturals-in-ordered-field (b), \( n \cdot 1_F \ge 1_F > 0 \) for \( n \ge 1 \). (The two-element field of @exm-finite-ring-not-orderable has \( 2 \cdot 1 = 0 \), and it cannot be ordered.)
 
@@ -346,7 +367,7 @@ Since \( y > 0 \), \( y^{-1} > 0 \) (@prp-reciprocal-order (a)). By @def-archime
 :::
 
 ::: {.solution}
-(a) Suppose, for \( \rulename{RAA} \) (@fd1:def-rule-raa), that \( x \ne 0 \). Then \( x > 0 \), since \( x \ge 0 \). By @prp-archimedean-reciprocal with \( \varepsilon \coloneqq x \), there is \( N \in \nZ_{>0} \) with \( 1/(N \cdot 1_F) < x \). The hypothesis with \( n = N \ge 1 \) gives \( x < 1/(N \cdot 1_F) \). By (O2), \( x < x \), against (O1). So \( x = 0 \).
+(a) Suppose, for a contradiction, that \( x \ne 0 \). Then \( x > 0 \), since \( x \ge 0 \). By @prp-archimedean-reciprocal with \( \varepsilon \coloneqq x \), there is \( N \in \nZ_{>0} \) with \( 1/(N \cdot 1_F) < x \). The hypothesis with \( n = N \ge 1 \) gives \( x < 1/(N \cdot 1_F) \). By (O2), \( x < x \), against (O1). So \( x = 0 \).
 
 (b) \( x = 1/t \): by @exm-rational-function-field, \( 0 < 1/t < 1/(n \cdot 1) \) for every \( n \ge 1 \), and \( 1/t \ne 0 \). So part (a) fails without the Archimedean hypothesis.
 :::
@@ -420,7 +441,6 @@ Since \( k + 1 > 1 > 0 \), \( 0 < 1/(k + 1) < 1 \) (@prp-reciprocal-order), so \
 - 2: (a) obtains two rationals \( r < s \) inside the interval, by density twice, with \( r < s \) justified (order reflected).
 - 2: (a) exhibits infinitely many distinct rationals between \( r \) and \( s \) (any explicit injective family, or an induction producing one more each time), each checked to lie strictly between.
 - 2: (a) concludes that \( S \) is infinite from an injection, citing a finiteness result (pigeonhole or subsets of finite sets).
-- Second route for (a), same 6 points: 2 for a largest element of a finite non-empty \( S \) (@fd2:prp-finite-max), 2 for density above it, 2 for the contradiction.
 - 2: (b) applies the integer part to \( (n \cdot 1_F) x \).
 - 2: (b) divides by \( n \cdot 1_F > 0 \) and identifies the bounds as \( \iota_F(q) \), \( \iota_F(q + 1/n) \).
 Fatal errors (0 for the step): using density in an arbitrary ordered field (the Archimedean hypothesis must be named); "infinitely many because the construction never stops" with no finiteness argument; dividing by \( n \cdot 1_F \) without its sign.
@@ -443,46 +463,9 @@ In \( \nQ(t) \) (@exm-rational-function-field):
 (b) The first step: "write \( x = p/q \) with \( p \in \nZ \) and \( q \in \nZ_{>0} \)". The rest of the proof (the case split on the sign of \( p \), discreteness of \( \nZ \), the comparison formula) works for any element of the form \( \iota_F(p)/\iota_F(q) \) of an ordered field \( F \), in particular of \( \nQ(t) \). But \( t \) is not of this form. Indeed, \( \iota_{\nQ(t)}(p)/\iota_{\nQ(t)}(q) = \iota_{\nQ(t)}(p/q) \) by @thm-rationals-embed-ordered-field; if \( t = \iota_{\nQ(t)}(r) \) with \( r \in \nQ \), then @thm-rationals-archimedean gives \( n \in \nN \) with \( r < n \), so \( t = \iota_{\nQ(t)}(r) < \iota_{\nQ(t)}(n) = n \cdot 1 \), against (a). So \( t \) is not the image of any rational, and the proof has nothing to start from.
 
 **Marking scheme.** (10 points)
-- 3: (a) exhibits an upper bound and justifies it from the positive set of \( \nQ(t) \).
-- 3: (b) names the representation \( x = p/q \) with integers \( p, q \) as the step that fails.
-- 4: (b) proves that \( t \) is not \( \iota_{\nQ(t)}(r) \) for any rational \( r \), using the Archimedean property of \( \nQ \) and that \( \iota_{\nQ(t)} \) is strictly increasing.
-Fatal errors (0 for the step): naming the comparison formula or discreteness as the failing step (both hold for images of rationals); asserting that \( t \) "is not a fraction" without proof.
-:::
-
-::: {#exr-naturals-and-archimedes-c3}
-[C3: The order of the rationals is the only one]
-
-Prove that the usual order of \( \nQ \) (@def-rational-order) is the only relation \( < \) on \( \nQ \) that makes \( \nQ \), with its usual operations, an ordered field.
-:::
-
-::: {.solution}
-[Hint 1]
-
-Which elements must be positive in any such order? Start with \( 1 \), then \( n \cdot 1 \), then \( p/q \).
-:::
-
-::: {.solution}
-[Hint 2]
-
-By @prp-order-from-positives, an order on a commutative ring is determined by its set of positive elements. Let \( P \) be the positive set of an order \( \prec \) making \( \nQ \) an ordered field; show \( P = \nQ_{>0} \).
-:::
-
-::: {.solution}
-Let \( \prec \) be a relation making \( \nQ \) an ordered field, and \( P \coloneqq \{ x \in \nQ : 0 \prec x \} \). By @prp-order-from-positives, \( P \) satisfies (P1) and (P2), and \( x \prec y \) holds if and only if \( y - x \in P \). The usual order has positive set \( \nQ_{>0} \) (@thm-rationals-ordered-field) and is described by \( \nQ_{>0} \) in the same way. So it suffices to prove \( P = \nQ_{>0} \).
-
-The multiples \( n \cdot 1_{\nQ} \) are defined by the recursion of @def-naturals-in-ordered-field (a), which uses only addition, so they do not depend on the order; by @prp-naturals-in-ordered-field (d), \( n \cdot 1_{\nQ} = n \). Applying @prp-ordered-ring-rules (h) to the ordered field \( (\nQ, \prec) \), in which \( 1 \ne 0 \), gives \( 0 \prec n \) for every \( n \in \nZ_{>0} \): so \( \nZ_{>0} \subseteq P \).
-
-Let \( x \in \nQ_{>0} \). Then \( x = p/q \) with \( p, q \in \nZ_{>0} \) (@prp-integers-embed-rationals (b) and the comparison formula, @thm-rationals-ordered-field (a)), so \( x = p \cdot q^{-1} \). Here \( p, q \in P \), so \( q^{-1} \in P \) by @prp-reciprocal-order (a) applied in \( (\nQ, \prec) \), and \( x \in P \) by (P1). Hence \( \nQ_{>0} \subseteq P \).
-
-Conversely, let \( x \in P \). Then \( x \ne 0 \) by (P2). If \( x \notin \nQ_{>0} \), then \( x < 0 \) in the usual order, so \( -x \in \nQ_{>0} \subseteq P \); but then both \( x \) and \( -x \) lie in \( P \), against (P2). So \( x \in \nQ_{>0} \), and \( P = \nQ_{>0} \). Hence \( \prec \) is the usual order.
-
-**Marking scheme.** (10 points)
-- 2: reduces the claim to the positive sets, citing @prp-order-from-positives.
-- 2: shows every positive integer is positive for the new order, noting that \( n \cdot 1 \) does not depend on the order.
-- 3: shows every usual-positive \( p/q \) is in \( P \), via inverses and products.
-- 3: shows \( P \subseteq \nQ_{>0} \) by (P2).
-- Route through @thm-rationals-embed-ordered-field for \( F = (\nQ, \prec) \), same 10 points: 4 for \( \iota_F = \mathrm{id} \) by uniqueness (the equations ignore the order), 6 for reading off the order.
-Fatal errors (0 for the step): assuming \( 1 \succ 0 \) without \( 1 \ne 0 \) or a rule; using the usual order's comparison formula to compare elements in the new order.
+- 6: (a), and naming the representation \( x = p/q \) as the step that fails.
+- 4: (b) proves that \( t \) is not the image of a rational.
+Fatal errors (0 for the step): blaming the comparison formula or discreteness.
 :::
 
 <!-- dependency ledger
@@ -492,7 +475,7 @@ prp-naturals-in-ordered-field (proof): n + 1 = S(n) and m S(n) = mn + m on omega
 prp-naturals-in-ordered-field (proof): the zero and one of Q are j(0), j(1) | prp-integers-embed-rationals (j(0) = 0, j(1) = 1; cited)
 thm-rationals-embed-ordered-field (proof): naturals are distinct as integers (identification) | prp-naturals-embed-integers (a), injectivity (identification; not cited)
 thm-rationals-embed-ordered-field (proof): (n' + k) - n' = k in Z; -(n + n') = (-n) + (-n') | prp-naturals-embed-integers (a) (iota preserves +), prp-ring-algebra (a) (uniqueness of negatives); inline
-thm-rationals-embed-ordered-field (proof): Z_{>0} is a subset of N, and q >= 1 | definition of Z_{>0} (F3.2 §02; identification); thm-omega-order (d) (cited)
+thm-rationals-embed-ordered-field (proof): Z_{>0} is a subset of N, and q >= 1 | definition of Z_{>0} (F3.2 §02; identification); thm-omega-order (d) (the map paragraph says "q >= 1" without the citation)
 thm-rationals-embed-ordered-field (proof): q s in Z_{>0} for q, s in Z_{>0} | (O4) in Z with thm-integers-ordered-ring (b)
 thm-rationals-embed-ordered-field (proof): p/q = j(p)/j(q), so lem-field-fraction-rules applies in Q | prp-integers-embed-rationals (a) (cited in Step 5)
 prp-integer-part-ordered-field (proof): iota_F(-n') = -iota_F(n') | thm-rationals-embed-ordered-field, Step 5 argument (psi(-x) = -psi(x)), pointed to in the proof
@@ -501,12 +484,12 @@ thm-rationals-dense-ordered-field (proof): iota_F(m + 1) = iota_F(m) + 1_F | thm
 thm-rationals-dense-ordered-field (claim): Chapter 6 uses it; Chapter 5 only in an exercise (F3.10 §04 B1) | prose pointer (F3.10, F3.4); nothing here depends on it
 def-archimedean-ordered-field (claim): the constructed reals of the next chapter are Archimedean | prose pointer (F3.10); nothing here depends on it
 exm-rational-function-field (example): school polynomial algebra (degree, leading coefficient, leading coefficient of a product), Q(t) is an ordered field with the stated positive set, n.1 is the constant polynomial n | school fact; formal polynomials in F5.4 (flagged in the text; nothing in a proof depends on it)
-exm-rational-function-field (claim): density fails in Q(t) (paragraph after the warning) | school facts of the example (as above); otherwise cited
-exr-naturals-and-archimedes-a1 (solution): t + 1 > t, t^2 - n has leading coefficient 1 | (O3) with 1 > 0; school polynomial algebra (as for the example)
+exm-rational-function-field (claim): density fails in Q(t) (sentence after the warning and its fold) | school facts of the example (as above); otherwise cited
+exr-naturals-and-archimedes-a1 (solution): t + 1 > t | (O3) with 1 > 0
 exr-naturals-and-archimedes-b3 (solution): (k + 1) 2 = 2k + 2 and k + 2 <= 2k + 2 in N | thm-omega-arithmetic-laws (cited), prp-omega-order-arithmetic (a)
 exr-naturals-and-archimedes-b3 (solution): 1/6, 64/3, floor 21, 11/32 and the comparisons | verify/ch04/exr-naturals-and-archimedes-b3.py
 exr-naturals-and-archimedes-c1 (solution): {1, ..., m + 1} has m + 1 elements | fd2 def-finite (identity bijection), run on omega by cor-omega-identification
 exr-naturals-and-archimedes-c2 (solution): the rest of the proof of thm-rationals-archimedean works for images iota_F(p)/iota_F(q) | inline claim (the proof uses only the representation, discreteness of Z and the comparison formula, as F3.2 remarks after it)
-exr-naturals-and-archimedes-c3 (solution): n.1 is defined by + alone, independent of the order | def-naturals-in-ordered-field (a) (cited)
 def-archimedean-ordered-field (solution): the Quick check, 355 < 452, 339 < 355, 497 < 500 < 504 | verify/ch04/def-archimedean-ordered-field.py
+prp-naturals-in-ordered-field (solution): the Quick check, 12 = 7 + 5, 7.1_F >= 1_F | prp-naturals-in-ordered-field (a), (b); verify/ch04/prp-naturals-in-ordered-field.py
 -->

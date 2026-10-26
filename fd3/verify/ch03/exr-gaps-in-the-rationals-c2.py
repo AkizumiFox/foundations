@@ -4,7 +4,7 @@ the witness n = 5, k = 2, q = 10, p = 28 (nq - kp = -6); k with k^2 <= n < (k+1)
 least element of T; A_n has a rational sup exactly for perfect squares (sup = k), on n <= 50
 (the 'no sup' side is checked via: no rational square root with small denominators)."""
 from fractions import Fraction as F
-QUOTED = {"witness": (5, 2, 10, 28, -6)}
+QUOTED = {"witness": (5, 2, 10, 28)}
 R = range(-4, 5)
 for n in R:
     for k in R:
@@ -12,7 +12,7 @@ for n in R:
             for q in R:
                 assert (n*q - k*p)**2 - n*(p - k*q)**2 == (k*k - n)*(p*p - n*q*q)
                 assert q*(n*q - k*p) == p*(p - k*q) - (p*p - n*q*q)
-n_, k_, q_, p_, d_ = QUOTED["witness"]
+n_, k_, q_, p_ = QUOTED["witness"]; d_ = -6
 assert k_*q_ < p_ < (k_ + 1)*q_ and n_*q_ - k_*p_ == d_
 for n in range(1, 30):
     tt = lambda s: (s*s + n) / (2*s)

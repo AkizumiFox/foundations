@@ -1,87 +1,80 @@
-"""prp-omega-order-arithmetic and the Quick check before it: 3 < 5, 5 = {0,1,2,3,4},
-5 - 2 = 3 (unique j); clauses (a)-(f) on numerals 0..7.
-
-Sets are frozensets; numerals are von Neumann numerals."""
+"""prp-omega-order-arithmetic, clauses (a)-(g) on 0..9, the remark after it (5 - 2 = 3, n - 0 = n), and the Quick check (3 + 2 = 5, n <= n + 1, not n + 1 <= n)."""
 from functools import lru_cache
 
-E = frozenset()
-_NUM = [E]                 # canonical (interned) numerals, so comparisons stay cheap
-_IDX = {id(E): 0}
+# A model of the Peano system (N, 0, S): Python ints with S(n) = n + 1 used ONLY
+# as the successor; + and * are defined by the recursion equations of
+# def-omega-arithmetic, and <= by def-omega-order (n = m + j for some j).
 
 
-def _raw_S(x):
-    return x | frozenset([x])
+def S(n):
+    return n + 1
 
 
-def num(n):
-    while len(_NUM) <= n:
-        y = _raw_S(_NUM[-1])
-        _IDX[id(y)] = len(_NUM)
-        _NUM.append(y)
-    return _NUM[n]
-
-
-def S(x):
-    """Successor x u {x}; returns the interned numeral when x is one."""
-    if id(x) in _IDX:
-        return num(_IDX[id(x)] + 1)
-    return _raw_S(x)
-
-
-def val(x):
-    """The integer named by a numeral."""
-    n = _IDX.get(id(x))
-    assert n is not None and x is num(n), "not an interned numeral"
-    return n
-
-
-def pred(x):
-    """The k with S(k) = x, for a numeral x != 0."""
-    n = val(x)
+def pred(n):
     assert n > 0
-    return num(n - 1)
+    return n - 1
 
 
 @lru_cache(maxsize=None)
 def add(m, n):
     # m + 0 = m; m + S(k) = S(m + k)
-    if n == E:
-        return m
-    return S(add(m, pred(n)))
+    return m if n == 0 else S(add(m, pred(n)))
 
 
 @lru_cache(maxsize=None)
 def mul(m, n):
     # m * 0 = 0; m * S(k) = m * k + m
-    if n == E:
-        return E
-    return add(mul(m, pred(n)), m)
+    return 0 if n == 0 else add(mul(m, pred(n)), m)
 
 
-def pair(a, b):
-    return frozenset([frozenset([a]), frozenset([a, b])])
+def pw(b, n):
+    # b^0 = 1; b^(n+1) = b^n * b
+    return 1 if n == 0 else mul(pw(b, pred(n)), b)
 
-QUOTED = {"5-2": 3}
-assert num(3) in num(5) and num(5) == frozenset(num(i) for i in range(5))
-js = [j for j in range(8) if add(num(2), num(j)) == num(5)]
-assert js == [QUOTED["5-2"]]
-R = [num(i) for i in range(8)]
-lt = lambda x, y: x in y
+
+def witnesses(m, n):
+    """All j with n = m + j (def-omega-order); the search runs over j <= n + 1,
+    which covers every candidate since m + j is reached from j by m steps."""
+    return [j for j in range(n + 2) if add(m, j) == n]
+
+
+def le(m, n):
+    return len(witnesses(m, n)) > 0
+
+
+def lt(m, n):
+    return le(m, n) and m != n
+
+
+def upto(n, lo=0, bound=60):
+    """{k : lo <= k <= n}, computed from le."""
+    return frozenset(k for k in range(bound) if le(lo, k) and le(k, n))
+
+QUOTED = {"5-2": 3, "5-3": 2, "j_n_n+1": 1}
+assert witnesses(2, 5) == [QUOTED["5-2"]]
+assert witnesses(3, 5) == [QUOTED["5-3"]] and add(3, 2) == 5
+R = range(10)
+for n in range(25):
+    assert witnesses(n, S(n)) == [QUOTED["j_n_n+1"]]
+    assert not le(S(n), n)
+    assert witnesses(0, n) == [n]                                  # n - 0 = n
 for m in R:
     for n in R:
-        js = [j for j in R if add(m, j) == n]
-        assert (len(js) == 1) == (lt(m, n) or m == n) and len(js) <= 1     # (a)
-        if lt(m, n):
-            assert js[0] != E
+        js = witnesses(m, n)
+        assert len(js) <= 1                                        # (a) uniqueness
+        assert lt(m, n) == (len(js) == 1 and js[0] != 0)           # (a) strict case
+        if mul(m, n) == 0:
+            assert m == 0 or n == 0                                # (d)
         for k in R:
             if add(m, k) == add(n, k):
-                assert m == n                                              # (b)
+                assert m == n                                      # (b)
             if lt(m, n):
-                assert lt(add(m, k), add(n, k))                            # (c)
-                if k != E:
-                    assert lt(mul(m, k), mul(n, k))                        # (e)
-            if k != E and mul(m, k) == mul(n, k):
-                assert m == n                                              # (f)
-        if mul(m, n) == E:
-            assert m == E or n == E                                        # (d)
+                assert lt(add(m, k), add(n, k))                    # (c)
+                if k != 0:
+                    assert lt(mul(m, k), mul(n, k))                # (e)
+            if k != 0 and mul(m, k) == mul(n, k):
+                assert m == n                                      # (f)
+# (g) for a sample property: P(n) = "n*n >= 2n", base b = 2
+P_ = lambda n: le(add(n, n), mul(n, n))
+assert all(P_(n) for n in range(2, 30))
 print("ok")

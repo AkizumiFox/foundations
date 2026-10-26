@@ -1,5 +1,7 @@
-"""prp-rational-operations-well-defined (Section 10.4): the four one-argument identities and
-negation. Each 'after substituting the hypothesis' step is checked by writing the hypothesis
+"""prp-rational-operations-well-defined (Section 3.1): the first-argument identities, the
+symmetry g(y, x) = g(x, y) used for the second argument, negation, and the Quick check after
+the proof ([(p, q)] + [(1, 1)] = [(p + q, q)]; (1, 3) not ~ (2, 5)). The second-argument
+identities are kept as a cross-check (they are B2's solution). Each 'after substituting the hypothesis' step is checked by writing the hypothesis
 as a difference: e.g. (ps + rq)(q's) - (p's + rq')(qs) = (pq' - p'q) s^2."""
 # --- exact multivariate polynomials over Z (self-contained; no CAS needed) ---
 class P:
@@ -78,4 +80,15 @@ assert (p*s2 + r2*q)*(q*s) == p*q*s*s2 + (r2*s)*q*q
 assert (p*s + r*q)*(q*s2) - (p*s2 + r2*q)*(q*s) == (r*s2 - r2*s)*q*q
 # negation
 assert (-p)*q2 - (-p2)*q == -(p*q2 - p2*q)
+# symmetry: g_+(y, x) = g_+(x, y) and g_.(y, x) = g_.(x, y) as pairs
+gplus = lambda x, y: (x[0]*y[1] + y[0]*x[1], x[1]*y[1])
+gdot = lambda x, y: (x[0]*y[0], x[1]*y[1])
+X, Y = (p, q), (r, s)
+assert gplus(Y, X) == gplus(X, Y) and gdot(Y, X) == gdot(X, Y)
+# Quick check after the proof
+one = (P.c(1), P.c(1))
+assert gplus(X, one) == (p + q, q)
+QUOTED = {"check_b": ((1, 3), (2, 5))}
+a, b = QUOTED["check_b"]
+assert (1 * 4 == 2 * 2) and a == (1, 2 + 1) and b == (2, 4 + 1) and a[0] * b[1] != b[0] * a[1]
 print("prp-rational-operations-well-defined: all quoted values check")

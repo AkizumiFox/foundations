@@ -4,7 +4,7 @@ items:
 - key: def-peano-system
   kind: def
   file: 01-peano-axioms.md
-  line: 13
+  line: 60
   hash: bb07ce838a54
   verdicts:
   - stage: S5a
@@ -35,11 +35,39 @@ items:
       a set built from them. If one object is wanted, it is the pair ((M, e), s) of def-kuratowski-pair,
       which is available here because M, e and s are all sets. The S5b finding (a ''triple'' before n-tuples
       exist) is resolve'
+- key: check:01-peano-axioms:1
+  kind: check
+  file: 01-peano-axioms.md
+  line: 74
+  hash: 45859b321d22
+  moved_from: check:03-the-set-omega:2
+  verdicts:
+  - stage: S5a
+    verdict: correct
+    by: refereeA
+    hash: 690eb39902ae
+    date: '2026-10-11'
+    model: claude-opus-5-5
+    evidence: '03:239: S(1) = 2 = {0,1} ∋ 1, and 1 ∉ 0, 1 ∉ 1 (since 0 ≠ 1). Correct.'
+  - stage: S5b
+    verdict: correct
+    by: refereeB
+    hash: 690eb39902ae
+    date: '2026-10-11'
+    model: claude-opus-5-5
+    evidence: '03:235-240: case n = 1 gives 2 = {0,1}. Neither 0 nor 1 contains 1, which is justified.
+      Sidecar asserts that the first such numeral is 2.'
+- key: ax-natural-numbers
+  kind: ax
+  file: 01-peano-axioms.md
+  line: 86
+  hash: e83fb7df2039
+  verdicts: []
 - key: exm-peano-axioms-independent
   kind: exm
   file: 01-peano-axioms.md
-  line: 32
-  hash: 0e8a1f8fda0e
+  line: 104
+  hash: 9c6c8fc781d2
   verdicts:
   - stage: S5a
     verdict: correct
@@ -74,8 +102,8 @@ items:
 - key: thm-omega-induction
   kind: thm
   file: 01-peano-axioms.md
-  line: 122
-  hash: e082d84fa664
+  line: 162
+  hash: 21f56557845e
   verdicts:
   - stage: S5a
     verdict: correct
@@ -107,8 +135,8 @@ items:
 - key: proof:thm-omega-induction
   kind: proof
   file: 01-peano-axioms.md
-  line: 131
-  hash: 3c3fc5dddffb
+  line: 171
+  hash: 2fd9582a05d5
   verdicts:
   - stage: S5a
     verdict: correct
@@ -128,33 +156,47 @@ items:
     model: claude-opus-5-5
     evidence: '03:219-221: (a) A is inductive, then thm (b), then prp-subset-antisymmetric. (b) A by (Z6),
       0 ∈ ω by (a), closure because ω is inductive. Every step is cited.'
-- key: check:01-peano-axioms:1
+- key: check:01-peano-axioms:2
   kind: check
   file: 01-peano-axioms.md
-  line: 147
-  hash: 690eb39902ae
-  moved_from: check:03-the-set-omega:2
-  verdicts:
-  - stage: S5a
-    verdict: correct
-    by: refereeA
-    hash: 690eb39902ae
-    date: '2026-10-11'
-    model: claude-opus-5-5
-    evidence: '03:239: S(1) = 2 = {0,1} ∋ 1, and 1 ∉ 0, 1 ∉ 1 (since 0 ≠ 1). Correct.'
-  - stage: S5b
-    verdict: correct
-    by: refereeB
-    hash: 690eb39902ae
-    date: '2026-10-11'
-    model: claude-opus-5-5
-    evidence: '03:235-240: case n = 1 gives 2 = {0,1}. Neither 0 nor 1 contains 1, which is justified.
-      Sidecar asserts that the first such numeral is 2.'
+  line: 183
+  hash: bc662609d910
+  verdicts: []
+- key: prp-peano-predecessor
+  kind: prp
+  file: 01-peano-axioms.md
+  line: 195
+  hash: 48c962f12ba6
+  verdicts: []
+- key: proof:prp-peano-predecessor
+  kind: proof
+  file: 01-peano-axioms.md
+  line: 226
+  hash: 74de0dfd3416
+  verdicts: []
+- key: exm-method-closed-subset
+  kind: exm
+  file: 01-peano-axioms.md
+  line: 240
+  hash: 17222ea5db31
+  verdicts: []
+- key: check:01-peano-axioms:3
+  kind: check
+  file: 01-peano-axioms.md
+  line: 252
+  hash: 1f22803430b9
+  verdicts: []
+- key: check:01-peano-axioms:4
+  kind: check
+  file: 01-peano-axioms.md
+  line: 260
+  hash: 349c734aae2e
+  verdicts: []
 - key: exr-peano-properties-a1
   kind: exr
   file: 01-peano-axioms.md
-  line: 163
-  hash: 9f485c8d8e80
+  line: 274
+  hash: ed1a0883cb37
   verdicts:
   - stage: S5a
     verdict: correct
@@ -186,8 +228,8 @@ items:
 - key: exr-peano-properties-b1
   kind: exr
   file: 01-peano-axioms.md
-  line: 186
-  hash: 061f0fb872e0
+  line: 297
+  hash: c8f215212221
   verdicts:
   - stage: S5a
     verdict: correct
@@ -229,8 +271,8 @@ items:
 - key: exr-peano-properties-b2
   kind: exr
   file: 01-peano-axioms.md
-  line: 222
-  hash: db36f757f74f
+  line: 329
+  hash: e83235c45e3c
   verdicts:
   - stage: S5a
     verdict: correct
@@ -258,11 +300,17 @@ items:
     evidence: '04:328-334. (P3) and (P4) follow from (P3) and (P4) for ω applied twice. (P5) fails on
       ω∖{1}, because S(S(n))=1=S(0) would give S(n)=0. My script confirms on a truncation. The hint names
       the object, not a step. Worked model: exm-peano-axioms-independent.'
+- key: exr-peano-properties-b3
+  kind: exr
+  file: 01-peano-axioms.md
+  line: 345
+  hash: d8b49da93579
+  verdicts: []
 - key: exr-peano-properties-c1
   kind: exr
   file: 01-peano-axioms.md
-  line: 240
-  hash: 22320cb26a30
+  line: 373
+  hash: e58b2748be3f
   verdicts:
   - stage: S5a
     verdict: correct
@@ -304,8 +352,8 @@ items:
 - key: exr-peano-properties-c2
   kind: exr
   file: 01-peano-axioms.md
-  line: 259
-  hash: 00ea15a77ab3
+  line: 392
+  hash: 349458df53d5
   verdicts:
   - stage: S5a
     verdict: minor
@@ -338,8 +386,8 @@ items:
 - key: thm-omega-recursion
   kind: thm
   file: 02-recursion-and-arithmetic.md
-  line: 13
-  hash: 7c56918c4ecc
+  line: 9
+  hash: 0ea3fddf2cf8
   verdicts:
   - stage: S5a
     verdict: correct
@@ -385,8 +433,8 @@ items:
 - key: proof:thm-omega-recursion
   kind: proof
   file: 02-recursion-and-arithmetic.md
-  line: 40
-  hash: 10d5c158d190
+  line: 38
+  hash: 6ef565ca4bed
   verdicts:
   - stage: S5a
     verdict: correct
@@ -418,11 +466,40 @@ items:
       solution up to k''. This matches (*) at 05:101-104 and Step 4 (Fn2) at 05:114-118, and no longer
       calls S(k) ''the part where both are defined''. I re-checked the proof line by line. Step 0 (i)–(v)
       cite lem-omega-transi'
+- key: check:02-recursion-and-arithmetic:1
+  kind: check
+  file: 02-recursion-and-arithmetic.md
+  line: 66
+  hash: ac955545e320
+  moved_from: check:05-recursion-and-arithmetic:1
+  verdicts:
+  - stage: S5a
+    verdict: correct
+    by: refereeA
+    hash: d3652b946e49
+    date: '2026-10-11'
+    model: claude-opus-5-5
+    evidence: 05:193-202. 2+2 = S(2+1) = S(S(2+0)) = S(S(2)) = S(3) = 4 uses (a) three times. 2·2 = (2·0+2)+2
+      = (0+2)+2, with 0+2=2 from (a). Both checked by hand.
+  - stage: S5b
+    verdict: correct
+    by: refereeB
+    hash: d3652b946e49
+    date: '2026-10-11'
+    model: claude-opus-5-5
+    evidence: '05:196-202: 2+2 = S(2+1) = S(S(2+0)) = S(S(2)) = 4 uses (a) three times. 2·2 = (0+2)+2,
+      with 0+2 = 2 by unwinding, gives 4. Both are right.'
+- key: check:02-recursion-and-arithmetic:2
+  kind: check
+  file: 02-recursion-and-arithmetic.md
+  line: 74
+  hash: d93cd1d15d3b
+  verdicts: []
 - key: def-omega-arithmetic
   kind: def
   file: 02-recursion-and-arithmetic.md
-  line: 147
-  hash: fcf971e634ba
+  line: 92
+  hash: 375d3f4a2321
   verdicts:
   - stage: S5a
     verdict: minor
@@ -465,8 +542,8 @@ items:
 - key: cor-omega-successor-cancellation
   kind: cor
   file: 02-recursion-and-arithmetic.md
-  line: 187
-  hash: 02bd0a070857
+  line: 132
+  hash: 9b60e9bc5bc4
   verdicts:
   - stage: S5a
     verdict: correct
@@ -487,8 +564,8 @@ items:
 - key: proof:cor-omega-successor-cancellation
   kind: proof
   file: 02-recursion-and-arithmetic.md
-  line: 193
-  hash: 2465ad2d4e9a
+  line: 138
+  hash: 211c1061614f
   verdicts:
   - stage: S5a
     verdict: minor
@@ -516,34 +593,17 @@ items:
       and (c) at 05:155 states exactly 'for every n in omega, n+1 = S(n)', proved at 05:163-166 before
       the corollary. The first claim is then (P4) of thm-omega-peano (04:80) and the second is (P3). Both
       are correct.
-- key: check:02-recursion-and-arithmetic:1
+- key: check:02-recursion-and-arithmetic:3
   kind: check
   file: 02-recursion-and-arithmetic.md
-  line: 197
+  line: 142
   hash: d3652b946e49
-  moved_from: check:05-recursion-and-arithmetic:1
-  verdicts:
-  - stage: S5a
-    verdict: correct
-    by: refereeA
-    hash: d3652b946e49
-    date: '2026-10-11'
-    model: claude-opus-5-5
-    evidence: 05:193-202. 2+2 = S(2+1) = S(S(2+0)) = S(S(2)) = S(3) = 4 uses (a) three times. 2·2 = (2·0+2)+2
-      = (0+2)+2, with 0+2=2 from (a). Both checked by hand.
-  - stage: S5b
-    verdict: correct
-    by: refereeB
-    hash: d3652b946e49
-    date: '2026-10-11'
-    model: claude-opus-5-5
-    evidence: '05:196-202: 2+2 = S(2+1) = S(S(2+0)) = S(S(2)) = 4 uses (a) three times. 2·2 = (0+2)+2,
-      with 0+2 = 2 by unwinding, gives 4. Both are right.'
+  verdicts: []
 - key: thm-omega-arithmetic-laws
   kind: thm
   file: 02-recursion-and-arithmetic.md
-  line: 217
-  hash: cb2a23d4af04
+  line: 178
+  hash: ebb70cf8673a
   verdicts:
   - stage: S5a
     verdict: correct
@@ -561,55 +621,29 @@ items:
     model: claude-opus-5-5
     evidence: '05:212-221 covers (ℕ1) of ch10.md:24 in full: assoc/comm of + and ·, distributivity, 0+n
       = n, 1·n = n, 0·n = 0.'
-- key: proof:thm-omega-arithmetic-laws
+- key: exm-method-induct-on-recursion-variable
+  kind: exm
+  file: 02-recursion-and-arithmetic.md
+  line: 196
+  hash: 21d652c5b6c9
+  verdicts: []
+- key: proof:exm-method-induct-on-recursion-variable
   kind: proof
   file: 02-recursion-and-arithmetic.md
-  line: 237
-  hash: a8e11c7acd87
-  verdicts:
-  - stage: S5a
-    verdict: minor
-    by: refereeA
-    hash: 1c34f1391871
-    date: '2026-10-11'
-    model: claude-opus-5-5
-    evidence: 05-recursion-and-arithmetic.md:230 The opening sentence says every clause is proved by induction.
-      The table itself proves two clauses with no induction.
-  - stage: S5b
-    verdict: minor
-    by: refereeB
-    hash: 1c34f1391871
-    date: '2026-10-11'
-    model: claude-opus-5-5
-    evidence: 05-recursion-and-arithmetic.md:230 The meta-claim 'Each clause is proved by @thm-omega-induction
-      (b)' is false for three parts.
-  - stage: S7r
-    verdict: minor
-    by: rereferee
-    hash: a8e11c7acd87
-    date: '2026-10-11'
-    model: claude-opus-5-5
-    evidence: 'opening at 05:3: ''Then it proves the laws of arithmetic one by one, each by an induction.''
-      Per the proof''s own first sentence, n·1=n, 1·n=n and (n+k)m=nm+km are not proved by induction.
-      This breaks STYLE §5/§9 (meta-claims must be true of the page). Fix: change 05:3 to ''... one by
-      one, most of them by an induction'' or ''... each from the defining equations by induction or from
-      laws already proved''.'
-  - stage: S7r
-    verdict: correct
-    by: rereferee
-    hash: a8e11c7acd87
-    date: '2026-10-11'
-    model: claude-opus-5-5
-    evidence: ', Def, (c), Def. The no-induction rows are right: n·1 = n·0+n = 0+n = n, and 1·n = (0+1)n
-      = 0·n+n = n by Def, (a) and the first two parts of (e). (n+k)m = nm+km comes from (f) and (d). In
-      (c) in full (05:236-247), each equality uses Def as stated. The Uses column respects row order.
-      The opening meta-claim at 05:3, ''most of them by an induction'', now agrees with the proof''s first
-      sentence (05:234).'
+  line: 210
+  hash: 11a80f76c989
+  verdicts: []
+- key: check:02-recursion-and-arithmetic:4
+  kind: check
+  file: 02-recursion-and-arithmetic.md
+  line: 262
+  hash: 19d0a44c5abb
+  verdicts: []
 - key: exr-recursion-and-arithmetic-a1
   kind: exr
   file: 02-recursion-and-arithmetic.md
-  line: 284
-  hash: f32cc3d1bb72
+  line: 278
+  hash: e7f5136b24df
   verdicts:
   - stage: S5a
     verdict: correct
@@ -650,7 +684,7 @@ items:
 - key: exr-recursion-and-arithmetic-b1
   kind: exr
   file: 02-recursion-and-arithmetic.md
-  line: 309
+  line: 301
   hash: d73344b1c169
   verdicts:
   - stage: S5a
@@ -681,8 +715,8 @@ items:
 - key: exr-recursion-and-arithmetic-b2
   kind: exr
   file: 02-recursion-and-arithmetic.md
-  line: 333
-  hash: 50ec43f3f819
+  line: 325
+  hash: 56947d0152b1
   verdicts:
   - stage: S5a
     verdict: correct
@@ -709,11 +743,17 @@ items:
     evidence: 05:325-346. The completion (mn+mk)+m = mn+(mk+m) = mn+m(k+1) (by (c), then Def) is the only
       reasonable one and it is correct. But it is printed verbatim in table row (d) at 05:253, so the
       faded blank can be copied (see finding). [finding refuted by skeptics]
+- key: exr-recursion-and-arithmetic-b3
+  kind: exr
+  file: 02-recursion-and-arithmetic.md
+  line: 348
+  hash: f60fef1a4d74
+  verdicts: []
 - key: exr-recursion-and-arithmetic-c1
   kind: exr
   file: 02-recursion-and-arithmetic.md
-  line: 358
-  hash: 3bcd07bc7f45
+  line: 380
+  hash: f2546ae1b2b3
   verdicts:
   - stage: S5a
     verdict: correct
@@ -755,8 +795,8 @@ items:
 - key: exr-recursion-and-arithmetic-c2
   kind: exr
   file: 02-recursion-and-arithmetic.md
-  line: 402
-  hash: e7c6209db773
+  line: 424
+  hash: 0276417f60db
   verdicts:
   - stage: S5a
     verdict: correct
@@ -786,8 +826,8 @@ items:
 - key: exr-recursion-and-arithmetic-c3
   kind: exr
   file: 02-recursion-and-arithmetic.md
-  line: 427
-  hash: 1f000bcee885
+  line: 449
+  hash: b82226762d93
   verdicts:
   - stage: S5a
     verdict: correct
@@ -819,8 +859,8 @@ items:
 - key: def-omega-order
   kind: def
   file: 03-order-and-well-ordering.md
-  line: 13
-  hash: 7ad3762454a2
+  line: 11
+  hash: 2fc6716fb5ab
   verdicts:
   - stage: S5a
     verdict: correct
@@ -837,150 +877,11 @@ items:
     model: claude-opus-5-5
     evidence: 06:11-15 matches blueprint ch09.md:181; the examples and non-example at :17 are correct
       (2∈4, 4∉2; 0<n by lem-omega-transitive (e)).
-- key: thm-omega-order
-  kind: thm
-  file: 03-order-and-well-ordering.md
-  line: 23
-  hash: 52c1381a3c4c
-  verdicts:
-  - stage: S5a
-    verdict: correct
-    by: refereeA
-    hash: 52c1381a3c4c
-    date: '2026-10-11'
-    model: claude-opus-5-5
-    evidence: 06:25-29 match blueprint ch09.md:182 and the downstream needs (ℕ3), (ℕ5) in ch10.md:26,28;
-      F3.10's 1 ≤ k+1 is covered by (d) with (P3) (prose at 06:65).
-  - stage: S5b
-    verdict: correct
-    by: refereeB
-    hash: 52c1381a3c4c
-    date: '2026-10-11'
-    model: claude-opus-5-5
-    evidence: '06:21-31: clauses (a)-(e) say exactly what the blueprint needs (:182) and what ch10.md''s
-      (ℕ3) and (ℕ5) need (ch10.md:26,28). The notations {0,…,n} and {1,…,n} agree with NOTATION row 79.'
-- key: proof:thm-omega-order
-  kind: proof
-  file: 03-order-and-well-ordering.md
-  line: 39
-  hash: f5617b96b0c3
-  verdicts:
-  - stage: S5a
-    verdict: correct
-    by: refereeA
-    hash: e02be577a1c2
-    date: '2026-10-11'
-    model: claude-opus-5-5
-    evidence: 06:38-62. Irreflexivity uses lem-omega-transitive (c) and transitivity uses (a). The Claim
-      is an induction on n with m universally quantified inside the property. In the trichotomy step,
-      n∈m gives S(n)∈S(m)=m∪{m} through the Claim. (b) comes from def-set-successor; (c) from lem (b);
-      (d) from lem (d), (e) and the Claim; (e) from (b), (d) and (P3). Every m, k is introduced before
-      use, and no step de
-  - stage: S5b
-    verdict: minor
-    by: refereeB
-    hash: e02be577a1c2
-    date: '2026-10-11'
-    model: claude-opus-5-5
-    evidence: 06-order-on-omega.md:58 The proof uses S(n) ∈ ω without a reference, and the ledger has
-      no line for it.
-  - stage: S7r
-    verdict: correct
-    by: rereferee
-    hash: f5617b96b0c3
-    date: '2026-10-11'
-    model: claude-opus-5-5
-    evidence: '06:38-62. The S5b finding is resolved: line 58 now cites (P2) of @thm-omega-peano (04:80,
-      item 2 says S(n) ∈ ω), so no ledger line is needed. Checked every step again. The claim''s induction
-      (45) is right, and S(n) ⊆ S(S(n)) is ledgered (413). Trichotomy base uses lem-omega-transitive (e),
-      and the step uses the claim. Uniqueness uses irreflexivity and transitivity. (b) and (c) use lem
-      (b), the tran'
-- key: thm-omega-well-ordering
-  kind: thm
-  file: 03-order-and-well-ordering.md
-  line: 77
-  hash: bf473d87852b
-  verdicts:
-  - stage: S5a
-    verdict: correct
-    by: refereeA
-    hash: bf473d87852b
-    date: '2026-10-11'
-    model: claude-opus-5-5
-    evidence: 06:78 matches blueprint :184 and (ℕ6). Dropping 'non-empty' fails at A=∅, and the proof
-      uses the hypothesis at 06:96.
-  - stage: S5b
-    verdict: minor
-    by: refereeB
-    hash: bf473d87852b
-    date: '2026-10-11'
-    model: claude-opus-5-5
-    evidence: 06-order-on-omega.md:78 Nothing in the section shows what fails for this major theorem when
-      a hypothesis is dropped, which STYLE §9's checklist requires.
-  - stage: S7r
-    verdict: correct
-    by: rereferee
-    hash: bf473d87852b
-    date: '2026-10-11'
-    model: claude-opus-5-5
-    evidence: '06:78, plus the new paragraph at 06:103. The S5b finding is resolved: both hypotheses are
-      shown to be needed. With A = ∅ there is no least element. For A not a subset of ω, take {0,{1}}
-      = {∅,{{∅}}}. Then ∅ ∉ {{∅}}, because its only element is {∅} ≠ ∅, and {{∅}} ∉ ∅. The two sets are
-      distinct, so neither is ≤ the other and there is no least element. That is correct. The pointer
-      to the warning after'
-- key: proof:thm-omega-well-ordering
-  kind: proof
-  file: 03-order-and-well-ordering.md
-  line: 87
-  hash: 055321a660fc
-  verdicts:
-  - stage: S5a
-    verdict: correct
-    by: refereeA
-    hash: 055321a660fc
-    date: '2026-10-11'
-    model: claude-opus-5-5
-    evidence: 06:86-98. B⊆ω is a set by (Z6). The step S(n)∩A={n}∩A; if n∈A, every x∈A has x∉n, so n≤x
-      by trichotomy (A⊆ω), which contradicts the supposition. Then B=ω by thm-omega-induction (a), a∈S(a)∩A
-      gives the contradiction, and RAA closes the existential goal. Uniqueness uses transitivity and irreflexivity.
-  - stage: S5b
-    verdict: correct
-    by: refereeB
-    hash: 055321a660fc
-    date: '2026-10-11'
-    model: claude-opus-5-5
-    evidence: '06:86-98: B is a set by (Z6) and B ⊆ ω, so thm-omega-induction (a) applies. The step S(n)∩A
-      = {n}∩A and the least-element contradiction are valid. The RAA framing (:96, :101) is accurate,
-      and uniqueness follows by irreflexivity and transitivity.'
-- key: check:03-order-and-well-ordering:1
-  kind: check
-  file: 03-order-and-well-ordering.md
-  line: 107
-  hash: d9843455a150
-  moved_from: check:06-order-on-omega:1
-  verdicts:
-  - stage: S5a
-    verdict: correct
-    by: refereeA
-    hash: d9843455a150
-    date: '2026-10-11'
-    model: claude-opus-5-5
-    evidence: 06:108. 3∈4⊆5. 2+3=S(2+2)=S(4)=5 by def-omega-arithmetic (a) and the §05 check. The pointer
-      to uniqueness in the next proposition is a remark, not a proof step.
-  - stage: S5b
-    verdict: correct
-    by: refereeB
-    hash: d9843455a150
-    date: '2026-10-11'
-    model: claude-opus-5-5
-    evidence: '06:104-108: 3∈4⊆5. 2+3 = S(2+2) = S(4) = 5 by def-omega-arithmetic (a), using 2+2 = 4 from
-      §05''s check. Uniqueness is cited forward to prp-omega-order-arithmetic (a), which does not depend
-      on the check.'
 - key: prp-omega-order-arithmetic
   kind: prp
   file: 03-order-and-well-ordering.md
-  line: 119
-  hash: 5a434764f1cc
+  line: 29
+  hash: 50a29843f15e
   verdicts:
   - stage: S5a
     verdict: correct
@@ -1023,8 +924,8 @@ items:
 - key: proof:prp-omega-order-arithmetic
   kind: proof
   file: 03-order-and-well-ordering.md
-  line: 139
-  hash: 40928c20208f
+  line: 49
+  hash: 6ee13ff48d88
   verdicts:
   - stage: S5a
     verdict: correct
@@ -1065,11 +966,168 @@ items:
       (e), irreflexivity and trichotomy. In (g), Q(i)=P(b+i), b+i≥b by (a), (b+i)+1=b+(i+1), @thm-omega-induction
       (b), and n≥b gives n=b+i by (a). There are no gaps and no circularity, since (b) is proved before
       (a).
+- key: check:03-order-and-well-ordering:1
+  kind: check
+  file: 03-order-and-well-ordering.md
+  line: 85
+  hash: ff74c6e54d2c
+  moved_from: check:06-order-on-omega:1
+  verdicts:
+  - stage: S5a
+    verdict: correct
+    by: refereeA
+    hash: d9843455a150
+    date: '2026-10-11'
+    model: claude-opus-5-5
+    evidence: 06:108. 3∈4⊆5. 2+3=S(2+2)=S(4)=5 by def-omega-arithmetic (a) and the §05 check. The pointer
+      to uniqueness in the next proposition is a remark, not a proof step.
+  - stage: S5b
+    verdict: correct
+    by: refereeB
+    hash: d9843455a150
+    date: '2026-10-11'
+    model: claude-opus-5-5
+    evidence: '06:104-108: 3∈4⊆5. 2+3 = S(2+2) = S(4) = 5 by def-omega-arithmetic (a), using 2+2 = 4 from
+      §05''s check. Uniqueness is cited forward to prp-omega-order-arithmetic (a), which does not depend
+      on the check.'
+- key: thm-omega-order
+  kind: thm
+  file: 03-order-and-well-ordering.md
+  line: 97
+  hash: 0cfc7cdd9d8f
+  verdicts:
+  - stage: S5a
+    verdict: correct
+    by: refereeA
+    hash: 52c1381a3c4c
+    date: '2026-10-11'
+    model: claude-opus-5-5
+    evidence: 06:25-29 match blueprint ch09.md:182 and the downstream needs (ℕ3), (ℕ5) in ch10.md:26,28;
+      F3.10's 1 ≤ k+1 is covered by (d) with (P3) (prose at 06:65).
+  - stage: S5b
+    verdict: correct
+    by: refereeB
+    hash: 52c1381a3c4c
+    date: '2026-10-11'
+    model: claude-opus-5-5
+    evidence: '06:21-31: clauses (a)-(e) say exactly what the blueprint needs (:182) and what ch10.md''s
+      (ℕ3) and (ℕ5) need (ch10.md:26,28). The notations {0,…,n} and {1,…,n} agree with NOTATION row 79.'
+- key: proof:thm-omega-order
+  kind: proof
+  file: 03-order-and-well-ordering.md
+  line: 113
+  hash: 155ca34ef5a7
+  verdicts:
+  - stage: S5a
+    verdict: correct
+    by: refereeA
+    hash: e02be577a1c2
+    date: '2026-10-11'
+    model: claude-opus-5-5
+    evidence: 06:38-62. Irreflexivity uses lem-omega-transitive (c) and transitivity uses (a). The Claim
+      is an induction on n with m universally quantified inside the property. In the trichotomy step,
+      n∈m gives S(n)∈S(m)=m∪{m} through the Claim. (b) comes from def-set-successor; (c) from lem (b);
+      (d) from lem (d), (e) and the Claim; (e) from (b), (d) and (P3). Every m, k is introduced before
+      use, and no step de
+  - stage: S5b
+    verdict: minor
+    by: refereeB
+    hash: e02be577a1c2
+    date: '2026-10-11'
+    model: claude-opus-5-5
+    evidence: 06-order-on-omega.md:58 The proof uses S(n) ∈ ω without a reference, and the ledger has
+      no line for it.
+  - stage: S7r
+    verdict: correct
+    by: rereferee
+    hash: f5617b96b0c3
+    date: '2026-10-11'
+    model: claude-opus-5-5
+    evidence: '06:38-62. The S5b finding is resolved: line 58 now cites (P2) of @thm-omega-peano (04:80,
+      item 2 says S(n) ∈ ω), so no ledger line is needed. Checked every step again. The claim''s induction
+      (45) is right, and S(n) ⊆ S(S(n)) is ledgered (413). Trichotomy base uses lem-omega-transitive (e),
+      and the step uses the claim. Uniqueness uses irreflexivity and transitivity. (b) and (c) use lem
+      (b), the tran'
+- key: check:03-order-and-well-ordering:2
+  kind: check
+  file: 03-order-and-well-ordering.md
+  line: 139
+  hash: 0ee4ca2880f0
+  verdicts: []
+- key: thm-omega-well-ordering
+  kind: thm
+  file: 03-order-and-well-ordering.md
+  line: 155
+  hash: f5d75ae81bfa
+  verdicts:
+  - stage: S5a
+    verdict: correct
+    by: refereeA
+    hash: bf473d87852b
+    date: '2026-10-11'
+    model: claude-opus-5-5
+    evidence: 06:78 matches blueprint :184 and (ℕ6). Dropping 'non-empty' fails at A=∅, and the proof
+      uses the hypothesis at 06:96.
+  - stage: S5b
+    verdict: minor
+    by: refereeB
+    hash: bf473d87852b
+    date: '2026-10-11'
+    model: claude-opus-5-5
+    evidence: 06-order-on-omega.md:78 Nothing in the section shows what fails for this major theorem when
+      a hypothesis is dropped, which STYLE §9's checklist requires.
+  - stage: S7r
+    verdict: correct
+    by: rereferee
+    hash: bf473d87852b
+    date: '2026-10-11'
+    model: claude-opus-5-5
+    evidence: '06:78, plus the new paragraph at 06:103. The S5b finding is resolved: both hypotheses are
+      shown to be needed. With A = ∅ there is no least element. For A not a subset of ω, take {0,{1}}
+      = {∅,{{∅}}}. Then ∅ ∉ {{∅}}, because its only element is {∅} ≠ ∅, and {{∅}} ∉ ∅. The two sets are
+      distinct, so neither is ≤ the other and there is no least element. That is correct. The pointer
+      to the warning after'
+- key: proof:thm-omega-well-ordering
+  kind: proof
+  file: 03-order-and-well-ordering.md
+  line: 165
+  hash: 3b14e6c06b08
+  verdicts:
+  - stage: S5a
+    verdict: correct
+    by: refereeA
+    hash: 055321a660fc
+    date: '2026-10-11'
+    model: claude-opus-5-5
+    evidence: 06:86-98. B⊆ω is a set by (Z6). The step S(n)∩A={n}∩A; if n∈A, every x∈A has x∉n, so n≤x
+      by trichotomy (A⊆ω), which contradicts the supposition. Then B=ω by thm-omega-induction (a), a∈S(a)∩A
+      gives the contradiction, and RAA closes the existential goal. Uniqueness uses transitivity and irreflexivity.
+  - stage: S5b
+    verdict: correct
+    by: refereeB
+    hash: 055321a660fc
+    date: '2026-10-11'
+    model: claude-opus-5-5
+    evidence: '06:86-98: B is a set by (Z6) and B ⊆ ω, so thm-omega-induction (a) applies. The step S(n)∩A
+      = {n}∩A and the least-element contradiction are valid. The RAA framing (:96, :101) is accurate,
+      and uniqueness follows by irreflexivity and transitivity.'
+- key: check:03-order-and-well-ordering:3
+  kind: check
+  file: 03-order-and-well-ordering.md
+  line: 185
+  hash: 80bd0fcf7bf6
+  verdicts: []
+- key: check:03-order-and-well-ordering:4
+  kind: check
+  file: 03-order-and-well-ordering.md
+  line: 203
+  hash: a794aa5f6c1c
+  verdicts: []
 - key: prp-omega-powers-parity
   kind: prp
   file: 03-order-and-well-ordering.md
-  line: 187
-  hash: 68d61cd22073
+  line: 211
+  hash: b962e655358b
   verdicts:
   - stage: S5a
     verdict: correct
@@ -1094,8 +1152,8 @@ items:
 - key: proof:prp-omega-powers-parity
   kind: proof
   file: 03-order-and-well-ordering.md
-  line: 204
-  hash: 433afc6e4138
+  line: 229
+  hash: 4e40c08cd59b
   verdicts:
   - stage: S5a
     verdict: correct
@@ -1119,8 +1177,8 @@ items:
 - key: exr-order-on-omega-a1
   kind: exr
   file: 03-order-and-well-ordering.md
-  line: 245
-  hash: 1e43a9c442dd
+  line: 271
+  hash: f7d48984ebab
   verdicts:
   - stage: S5a
     verdict: minor
@@ -1163,8 +1221,8 @@ items:
 - key: exr-order-on-omega-b1
   kind: exr
   file: 03-order-and-well-ordering.md
-  line: 268
-  hash: 8454254a9d6d
+  line: 294
+  hash: 2cb4f1c71698
   verdicts:
   - stage: S5a
     verdict: minor
@@ -1205,8 +1263,8 @@ items:
 - key: exr-order-on-omega-b2
   kind: exr
   file: 03-order-and-well-ordering.md
-  line: 282
-  hash: a2039035aa3c
+  line: 308
+  hash: 46e9009a248c
   verdicts:
   - stage: S5a
     verdict: correct
@@ -1235,8 +1293,8 @@ items:
 - key: exr-order-on-omega-c1
   kind: exr
   file: 03-order-and-well-ordering.md
-  line: 300
-  hash: a4b59f787fb7
+  line: 326
+  hash: f1fa333eb020
   verdicts:
   - stage: S5a
     verdict: correct
@@ -1269,8 +1327,8 @@ items:
 - key: exr-order-on-omega-c2
   kind: exr
   file: 03-order-and-well-ordering.md
-  line: 331
-  hash: a49735e1d7e6
+  line: 357
+  hash: 341b2f87d6a1
   verdicts:
   - stage: S5a
     verdict: correct
@@ -1316,8 +1374,8 @@ items:
 - key: thm-peano-categoricity
   kind: thm
   file: 04-categoricity.md
-  line: 31
-  hash: 4874a5af391c
+  line: 29
+  hash: 9b48a79f1630
   verdicts:
   - stage: S5a
     verdict: correct
@@ -1341,8 +1399,8 @@ items:
 - key: proof:thm-peano-categoricity
   kind: proof
   file: 04-categoricity.md
-  line: 59
-  hash: 77f41a35a6e9
+  line: 66
+  hash: e0d29c357561
   verdicts:
   - stage: S5a
     verdict: minor
@@ -1371,11 +1429,17 @@ items:
       are symmetric, and the remark after that definition says so outright, so phi is an inverse of phi^{-1}.
       thm-bijection-iff-inverse (<=) then makes phi^{-1} bijective, and thm-composition-injective-surjective
       (c) makes psi bijective. Ledger line 413 records this step. Both S5a and S5b findi
+- key: exm-method-build-by-recursion
+  kind: exm
+  file: 04-categoricity.md
+  line: 95
+  hash: 2af4002a7af8
+  verdicts: []
 - key: check:04-categoricity:1
   kind: check
   file: 04-categoricity.md
-  line: 98
-  hash: 6e02ffdfb7d0
+  line: 107
+  hash: d28f10d9c1ab
   moved_from: check:07-categoricity:1
   verdicts:
   - stage: S5a
@@ -1394,11 +1458,17 @@ items:
     model: claude-opus-5-5
     evidence: 07:96-102. φ(n)=S(n) maps ω into ω∖{0} by (P3), sends 0 to 1 and satisfies the recursion,
       so φ(3)=4 by uniqueness. The step-by-step values are correct.
+- key: check:04-categoricity:2
+  kind: check
+  file: 04-categoricity.md
+  line: 127
+  hash: f8f9d834b02f
+  verdicts: []
 - key: prp-isomorphism-preserves-arithmetic
   kind: prp
   file: 04-categoricity.md
-  line: 110
-  hash: 590fc9352297
+  line: 139
+  hash: def2be363f8b
   verdicts:
   - stage: S5a
     verdict: correct
@@ -1430,8 +1500,8 @@ items:
 - key: proof:prp-isomorphism-preserves-arithmetic
   kind: proof
   file: 04-categoricity.md
-  line: 133
-  hash: 8e8db7923ffb
+  line: 162
+  hash: d09b1da5083b
   verdicts:
   - stage: S5a
     verdict: correct
@@ -1451,11 +1521,17 @@ items:
     evidence: 07:131-155. The (a) and (b) inductions use def-omega-arithmetic (a), (b), the equation of
       φ and the four hypotheses, each cited. Both directions of (c) use prp-omega-order-arithmetic (a)
       with injectivity and surjectivity from thm (b).
+- key: check:04-categoricity:3
+  kind: check
+  file: 04-categoricity.md
+  line: 190
+  hash: 9f779edf27fb
+  verdicts: []
 - key: cor-omega-identification
   kind: cor
   file: 04-categoricity.md
-  line: 165
-  hash: 783342e68106
+  line: 202
+  hash: 6abcb8ff2426
   verdicts:
   - stage: S5a
     verdict: minor
@@ -1499,8 +1575,8 @@ items:
 - key: proof:cor-omega-identification
   kind: proof
   file: 04-categoricity.md
-  line: 185
-  hash: be1fc3f4f8dc
+  line: 222
+  hash: d2a76be10202
   verdicts:
   - stage: S5a
     verdict: correct
@@ -1545,8 +1621,8 @@ items:
 - key: exr-categoricity-a1
   kind: exr
   file: 04-categoricity.md
-  line: 245
-  hash: 5ba3123ba1c3
+  line: 268
+  hash: a47d4ab65fdc
   verdicts:
   - stage: S5a
     verdict: correct
@@ -1578,8 +1654,8 @@ items:
 - key: exr-categoricity-b1
   kind: exr
   file: 04-categoricity.md
-  line: 270
-  hash: 15986a580077
+  line: 293
+  hash: 3f419c028617
   verdicts:
   - stage: S5a
     verdict: correct
@@ -1610,8 +1686,8 @@ items:
 - key: exr-categoricity-b2
   kind: exr
   file: 04-categoricity.md
-  line: 284
-  hash: 81f00d9e6710
+  line: 307
+  hash: d76210fb8c3d
   verdicts:
   - stage: S5a
     verdict: correct
@@ -1636,11 +1712,17 @@ items:
     model: claude-opus-5-5
     evidence: '07:282-300. φ(3)=((0+1)+1)+1=3. The unwinding 2·3=((0+2)+2)+2=6 matches my script (2·3=6).
       Worked example: the check computing φ(3) at 07:122-128.'
+- key: exr-categoricity-b3
+  kind: exr
+  file: 04-categoricity.md
+  line: 327
+  hash: a1e56b20f05a
+  verdicts: []
 - key: exr-categoricity-c1
   kind: exr
   file: 04-categoricity.md
-  line: 306
-  hash: 24aaf3dc5336
+  line: 362
+  hash: 4934e82f206f
   verdicts:
   - stage: S5a
     verdict: correct
@@ -1682,8 +1764,8 @@ items:
 - key: exr-categoricity-c2
   kind: exr
   file: 04-categoricity.md
-  line: 337
-  hash: e95569e4099b
+  line: 393
+  hash: b5f98163f005
   verdicts:
   - stage: S5a
     verdict: correct
@@ -1711,11 +1793,47 @@ items:
     evidence: '07:335-349. I solved it independently: T={f((k,2))} has a least element t=f((k0,2)), while
       u=f((S(k0),2)) satisfies t=S(u) and so u<t, a contradiction. This matches the book. The structure
       matches exm-peano-axioms-independent (iii) (04 file). The remark that f(e)=0 is unused is correct.'
+- key: check:05-where-n-comes-from:1
+  kind: check
+  file: 05-where-n-comes-from.md
+  line: 43
+  hash: 5a535334c2b3
+  verdicts: []
+- key: check:05-where-n-comes-from:2
+  kind: check
+  file: 05-where-n-comes-from.md
+  line: 83
+  hash: b28e729ab4d0
+  verdicts: []
+- key: exr-where-n-comes-from-a1
+  kind: exr
+  file: 05-where-n-comes-from.md
+  line: 95
+  hash: 9a5bed212c22
+  verdicts: []
+- key: exr-where-n-comes-from-b1
+  kind: exr
+  file: 05-where-n-comes-from.md
+  line: 118
+  hash: 145d062f9e65
+  verdicts: []
+- key: exr-where-n-comes-from-b2
+  kind: exr
+  file: 05-where-n-comes-from.md
+  line: 136
+  hash: 88b43e9015ae
+  verdicts: []
+- key: exr-where-n-comes-from-c1
+  kind: exr
+  file: 05-where-n-comes-from.md
+  line: 152
+  hash: 901ad0586a23
+  verdicts: []
 - key: exr-categoricity-r1
   kind: exr
-  file: 04-categoricity.md
-  line: 355
-  hash: 5db8d74f1166
+  file: 05-where-n-comes-from.md
+  line: 174
+  hash: fffa2cef55ac
   verdicts:
   - stage: S5a
     verdict: correct
@@ -1755,9 +1873,9 @@ items:
       (d) makes it onto, the sub'
 - key: exr-categoricity-r2
   kind: exr
-  file: 04-categoricity.md
-  line: 365
-  hash: a2c0706ed67a
+  file: 05-where-n-comes-from.md
+  line: 184
+  hash: f442664b7704
   verdicts:
   - stage: S5a
     verdict: correct
@@ -1787,9 +1905,9 @@ items:
       the source is hidden and named with @ref.
 - key: exr-categoricity-r3
   kind: exr
-  file: 04-categoricity.md
-  line: 383
-  hash: 3aa6a8753383
+  file: 05-where-n-comes-from.md
+  line: 202
+  hash: fc878da71bf5
   verdicts:
   - stage: S5a
     verdict: correct
@@ -1825,6 +1943,51 @@ items:
       S(x) = x u {x}, and the text after it says ''x in S(x) for every x''. Ledger line 427 records the
       step. The S5b finding is resolved. The solution is correct: f(1) = S(f(1)) contradicts lem-omega-transitive
       (c). M satisfies P3 and P5 and fails P4. The comparison with thm-unique-readability is accurate.'
+- key: proof:thm-omega-arithmetic-laws
+  kind: proof
+  file: 02-recursion-and-arithmetic.md
+  line: 237
+  hash: a8e11c7acd87
+  verdicts:
+  - stage: S5a
+    verdict: minor
+    by: refereeA
+    hash: 1c34f1391871
+    date: '2026-10-11'
+    model: claude-opus-5-5
+    evidence: 05-recursion-and-arithmetic.md:230 The opening sentence says every clause is proved by induction.
+      The table itself proves two clauses with no induction.
+  - stage: S5b
+    verdict: minor
+    by: refereeB
+    hash: 1c34f1391871
+    date: '2026-10-11'
+    model: claude-opus-5-5
+    evidence: 05-recursion-and-arithmetic.md:230 The meta-claim 'Each clause is proved by @thm-omega-induction
+      (b)' is false for three parts.
+  - stage: S7r
+    verdict: minor
+    by: rereferee
+    hash: a8e11c7acd87
+    date: '2026-10-11'
+    model: claude-opus-5-5
+    evidence: 'opening at 05:3: ''Then it proves the laws of arithmetic one by one, each by an induction.''
+      Per the proof''s own first sentence, n·1=n, 1·n=n and (n+k)m=nm+km are not proved by induction.
+      This breaks STYLE §5/§9 (meta-claims must be true of the page). Fix: change 05:3 to ''... one by
+      one, most of them by an induction'' or ''... each from the defining equations by induction or from
+      laws already proved''.'
+  - stage: S7r
+    verdict: correct
+    by: rereferee
+    hash: a8e11c7acd87
+    date: '2026-10-11'
+    model: claude-opus-5-5
+    evidence: ', Def, (c), Def. The no-induction rows are right: n·1 = n·0+n = 0+n = n, and 1·n = (0+1)n
+      = 0·n+n = n by Def, (a) and the first two parts of (e). (n+k)m = nm+km comes from (f) and (d). In
+      (c) in full (05:236-247), each equality uses Def as stated. The Uses column respects row order.
+      The opening meta-claim at 05:3, ''most of them by an induction'', now agrees with the proof''s first
+      sentence (05:234).'
+  removed: true
 - key: exr-categoricity-r4
   kind: exr
   file: 04-categoricity.md
@@ -1869,3 +2032,4 @@ items:
       exactly when x is transitive, and the witness {1} shows this can fail. It also says that induction
       on n is no way around transitivity, because union of S(n) = n is equivalent to n being transitive,
       so the inducti'
+  removed: true

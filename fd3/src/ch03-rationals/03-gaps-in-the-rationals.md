@@ -1,14 +1,12 @@
 # The Gaps in the Rationals
 
-<!-- S3: style revision per S1 change list (layout-proposal.md §3, 3.3, pipeline S): Idea pointer to @fd2:exm-method-smallest-counterexample; trim the exercises (exr-gaps-in-the-rationals-r2 stays); this chapter's R group stays here. -->
-
 The rationals now have everything Section 3.2 asked of them: they form an ordered field (@thm-rationals-ordered-field), every rational lies below a natural number (@thm-rationals-archimedean), and no two rationals are neighbors, since their midpoint lies between them. Is anything missing? School geometry suggests an answer. The diagonal of a square with side \( 1 \) has a length whose square is \( 2 \), and no fraction seems to measure it. That picture is motivation only. This section proves the two facts behind it from the construction: no rational squares to \( 2 \), and the set of rationals whose square is below \( 2 \) has no least upper bound in \( \nQ \). We also build a sequence of rationals that closes in on the gap from above without ever landing in it. A later chapter of this volume fills the gap.
 
 ## No rational squares to two
 
-Throughout, \( x^2 \coloneqq x \cdot x \) and \( 2 \coloneqq 1 + 1 \), with \( 4 = 2 \cdot 2 \) and so on; by the identifications of Sections 2.2 and 3.1 these are the natural numbers of the same names. Their sums and products may be computed in \( \nN \), since the maps \( \iota \) and \( j \) preserve \( + \) and \( \cdot \) (@prp-naturals-embed-integers, @prp-integers-embed-rationals), and so may their comparisons (@thm-integers-ordered-ring (a), @thm-rationals-ordered-field (b)).
+Throughout, \( x^2 \coloneqq x \cdot x \), and \( 2 \coloneqq 1 + 1 \), \( 4 = 2 \cdot 2 \) and so on are the natural numbers of these names, read in \( \nQ \) through the identifications of Sections 2.2 and 3.1; their sums, products and comparisons may be computed in \( \nN \) (@prp-naturals-embed-integers, @prp-integers-embed-rationals, @thm-integers-ordered-ring (a), @thm-rationals-ordered-field (b)).
 
-*Logic and Proof*, Chapter 2 proved that "\( \sqrt 2 \) is irrational" (@fd1:thm-sqrt2-irrational), about the school rationals, by parity: an argument about even and odd integers. Parity is available here too, from @prp-omega-powers-parity (d) for positive integers or from the integer part (@prp-rational-integer-part; see Exercise R4). We prove the statement for the constructed \( \nQ \) by a different route, one that needs only the order and the least-element property of \( \nZ \), and that adapts to other non-squares (Exercise C2).
+*Logic and Proof*, Chapter 2 proved by parity that \( \sqrt 2 \) is irrational (@fd1:thm-sqrt2-irrational), for the school rationals. Parity is available for the constructed \( \nZ \) too (@cor-integers-even-odd), and Exercise R4 uses it. Here we take a route that needs only the order and the least elements of \( \nZ \), and that adapts to other non-squares (Exercise C2).
 
 ::: {#thm-no-rational-square-two}
 [No Rational Squares to Two]
@@ -17,7 +15,7 @@ There is no \( x \in \nQ \) with \( x^2 = 2 \).
 :::
 
 ::: {.idea}
-Work backwards from a supposed square root \( x = p/q \). From \( x^2 = 2 \) we get \( 2 - x = x^2 - x = x(x - 1) \), so
+Work backwards from a supposed square root \( x = p/q \). This is the smallest-counterexample method (@fd2:exm-method-smallest-counterexample) run on denominators, as in @fd2:lem-lowest-terms; here no lowest terms are needed, only a least denominator. From \( x^2 = 2 \) we get \( 2 - x = x^2 - x = x(x - 1) \), so
 \[
 x = \frac{2 - x}{x - 1} = \frac{2 - p/q}{p/q - 1} = \frac{2q - p}{p - q} .
 \]
@@ -49,8 +47,12 @@ So \( p'^2 = 2q'^2 \) with \( p' \in \nZ_{>0} \), that is, \( q' \in D \). But \
 
 The answer to the prompt: \( q' = p - q > 0 \) because \( q < p \), and \( q' < q \) because \( p < 2q \). These are the two inequalities "\( 1 < x < 2 \)" of the Idea, written for integers. The hypothesis \( p^2 = 2q^2 \) is used in each of the three steps, and the minimality of \( q \) only once, in the final contradiction.
 
-::: {.remark}
-The proof assumes \( x^2 = 2 \), reaches a contradiction, and concludes \( \neg(\exists x \in \nQ \; x^2 = 2) \): its last step is \( \rulename{\neg I} \) (@fd1:def-rules-negation), not RAA (@fd1:def-rule-raa), since what is refuted is the assumption and the conclusion is its negation. The steps "\( q < p \)" and "\( p < 2q \)" refute \( p \le q \) and \( 2q \le p \) and then read the remaining case off trichotomy.
+::: {.check}
+Run the descent on \( p = 2 \), \( q = 1 \), a pair with \( p^2 = 4q^2 \). Which step fails, and why must it?
+:::
+
+::: {.solution}
+The step \( p < 2q \) fails: \( 2q \le p \) now gives \( 4q^2 \le p^2 = 4q^2 \), no contradiction, and indeed \( p = 2q \). Then \( p' = 2q - p = 0 \) is not positive and \( q' = p - q = 1 \) is not below \( q \) (and \( p'^2 - 2q'^2 = -2 \)). A descent must fail here, since \( 2^2 = 4 \).
 :::
 
 ## The set below the gap
@@ -74,13 +76,24 @@ A \coloneqq \{ x \in \nQ : x^2 < 2 \} , \qquad A^+ \coloneqq \{ x \in A : x > 0 
 *Try it first (ten minutes): a rational \( s > 0 \) is offered as \( \sup A \). Find a rational that proves the offer wrong, once in the case \( s^2 < 2 \) and once in the case \( s^2 > 2 \).*
 
 ::: {.idea}
+[Scratch work]
+
+Suppose a rational \( s \) is the supremum. Unwind what that gives and what would refute it.
+
+| Givens | Goal |
+|---|---|
+| \( s \) is a supremum of \( A \): (S1) and (S2) | a contradiction |
+| \( 1 \in A \), so \( s \ge 1 > 0 \); \( s^2 \ne 2 \) by @thm-no-rational-square-two | split by trichotomy: \( s^2 < 2 \) or \( s^2 > 2 \) |
+| \( s^2 < 2 \) | an element of \( A \) above \( s \), against (S1) |
+| \( s^2 > 2 \) | an upper bound of \( A \) below \( s \), against (S2) |
+
 If \( s^2 < 2 \), we need an element of \( A \) above \( s \). The obvious try is \( s + h \) with \( h > 0 \) small, but \( (s + h)^2 = s^2 + 2sh + h^2 \) has an \( h^2 \) in it, and taming that needs a separate size estimate on \( h \). If \( s^2 > 2 \), we need a smaller upper bound, and a guess \( s - h \) runs into the same algebra.
 
 A cleaner idea finds the new rational in one formula. If \( s^2 > 2 \), then \( 2/s < s \) and \( (2/s)^2 = 4/s^2 < 2 \): the gap lies between \( 2/s \) and \( s \). Their average
 \[
 t(s) \coloneqq \frac{1}{2}\Bigl( s + \frac{2}{s} \Bigr) = \frac{s^2 + 2}{2s}
 \]
-is smaller than \( s \), and its square is still above \( 2 \); that is the smaller upper bound. If \( s^2 < 2 \), apply the same trick from the other side: \( t(s) \) overshoots, so \( u(s) \coloneqq 2/t(s) = 4s/(s^2 + 2) \) undershoots, and it lands above \( s \). Each claim is an identity in the field \( \nQ \), checked by clearing denominators. The proof uses @thm-no-rational-square-two exactly once, to rule out the third case \( s^2 = 2 \).
+is smaller than \( s \), and its square is still above \( 2 \); that is the smaller upper bound. If \( s^2 < 2 \), apply the same trick from the other side: \( t(s) \) overshoots, so \( u(s) \coloneqq 2/t(s) = 4s/(s^2 + 2) \) undershoots, and it lands above \( s \). Each claim is an identity in the field \( \nQ \), checked by clearing denominators.
 :::
 
 ::: {.proof}
@@ -97,7 +110,11 @@ t(s)^2 - 2 &= \frac{(s^2 - 2)^2}{4s^2} , & s - t(s) &= \frac{s^2 - 2}{2s} , \\
 u(s) - s &= \frac{s(2 - s^2)}{s^2 + 2} , & 2 - u(s)^2 &= \frac{2(s^2 - 2)^2}{(s^2 + 2)^2} .
 \end{aligned}
 \]{#eq-newton-identities}
-Each identity is checked by multiplying both sides by its denominator, which is non-zero, so that the multiplication can be undone with the inverse. For the first, \( 2s \cdot t(s) = s^2 + 2 \), so \( 4s^2 (t(s)^2 - 2) = (s^2 + 2)^2 - 8s^2 = s^4 - 4s^2 + 4 = (s^2 - 2)^2 \). For the second, \( 2s(s - t(s)) = 2s^2 - (s^2 + 2) = s^2 - 2 \). For the third, \( (s^2 + 2)(u(s) - s) = 4s - s^3 - 2s = s(2 - s^2) \). For the fourth, \( (s^2 + 2)^2 (2 - u(s)^2) = 2(s^2 + 2)^2 - 16s^2 = 2(s^2 - 2)^2 \).
+Each identity is checked by clearing its non-zero denominator.
+
+::: {.second-reading title="Checking the four identities"}
+Multiply both sides of each identity by its denominator, which is non-zero, so that the multiplication can be undone with the inverse. For the first, \( 2s \cdot t(s) = s^2 + 2 \), so \( 4s^2 (t(s)^2 - 2) = (s^2 + 2)^2 - 8s^2 = s^4 - 4s^2 + 4 = (s^2 - 2)^2 \). For the second, \( 2s(s - t(s)) = 2s^2 - (s^2 + 2) = s^2 - 2 \). For the third, \( (s^2 + 2)(u(s) - s) = 4s - s^3 - 2s = s(2 - s^2) \). For the fourth, \( (s^2 + 2)^2 (2 - u(s)^2) = 2(s^2 + 2)^2 - 16s^2 = 2(s^2 - 2)^2 \).
+:::
 
 *No supremum.* Suppose, for a contradiction, that \( s \in \nQ \) is a supremum of \( A \). By (S1) and \( 1 \in A \), \( s \ge 1 > 0 \), so \( s \in \nQ_{>0} \). By @thm-no-rational-square-two, \( s^2 \ne 2 \), so by (O1), \( s^2 < 2 \) or \( s^2 > 2 \). In both cases \( s^2 - 2 \ne 0 \), so \( (s^2 - 2)^2 > 0 \) by @prp-ordered-ring-rules (e).
 
@@ -107,19 +124,29 @@ Each identity is checked by multiplying both sides by its denominator, which is 
 
 Both cases are impossible, so \( A \) has no supremum in \( \nQ \).
 
-(b) Since \( A^+ \subseteq A \), every upper bound of \( A \) is an upper bound of \( A^+ \). Conversely, let \( u \) be an upper bound of \( A^+ \). Since \( 1 > 0 \) and \( 1^2 < 2 \), \( 1 \in A^+ \), so \( u \ge 1 > 0 \). Let \( x \in A \). If \( x > 0 \), then \( x \in A^+ \) and \( x \le u \). Otherwise \( x \le 0 < u \) (@prp-ordered-ring-rules (i)). So \( u \) is an upper bound of \( A \).
-
-Conditions (S1) and (S2) for a set mention only the set of its upper bounds: (S1) says that \( s \) is one, and (S2) that it lies below all of them. So \( s \) is a supremum of \( A^+ \) if and only if it is a supremum of \( A \), and by (a), \( A^+ \) has none. It is non-empty, since \( 1 \in A^+ \), and bounded above, by \( 2 \).
+(b) Every upper bound of \( A \) bounds \( A^+ \subseteq A \). Conversely, if \( u \) bounds \( A^+ \), then \( u \ge 1 > 0 \), since \( 1 \in A^+ \); and an \( x \in A \) is either positive, so \( x \in A^+ \) and \( x \le u \), or \( x \le 0 < u \). So \( A \) and \( A^+ \) have the same upper bounds. Conditions (S1) and (S2) mention only the set of upper bounds, so by (a), \( A^+ \) has no supremum. It contains \( 1 \) and is bounded above by \( 2 \).
 :::
 
-The set \( A^+ \) is the set of *Sets and Functions*, Section 5.3, so clause (b) is the statement left unproved there. The two descriptions differ only by the non-positive elements of \( A \), which lie below every upper bound anyway.
-
-::: {.remark}
-*Analysis on the Real Line*, Chapter 1 proves the same conclusion for \( A^+ \) in \( \nQ \), as part of its motivation for the axioms of the real numbers, and then shows that \( A^+ \) does have a supremum in the real numbers. That is the sense of "gap": a bounded set of rationals whose least upper bound, if it is anywhere, is not a rational.
+::: {.check}
+Compute \( u(1/2) \) and \( t(3) \), and say what each refutes.
 :::
+
+::: {.solution}
+\( u(1/2) = 2/(9/4) = 8/9 \), and \( (8/9)^2 = 64/81 < 2 \), so \( 8/9 \in A \) lies above \( 1/2 \): \( 1/2 \) is not an upper bound. \( t(3) = 11/6 \), and \( (11/6)^2 = 121/36 > 2 \) (\( 121 > 72 \)), so \( 11/6 \) is an upper bound below \( 3 \): \( 3 \) is not the least.
+:::
+
+The set \( A^+ \) is the set of *Sets and Functions*, Section 5.3, so (b) is the statement left unproved there. *Analysis on the Real Line*, Chapter 1 proves it again and then shows that \( A^+ \) has a supremum in the real numbers: that is the sense of "gap".
 
 ::: {.warning}
 "\( A \) has no supremum in \( \nQ \), so \( A \) is unbounded" mixes up the two conditions a supremum needs. \( A \) is bounded above, by \( 2 \) for instance; what fails is (S2): among the rational upper bounds there is no least one, because every upper bound \( s \) is beaten by the smaller upper bound \( t(s) \).
+:::
+
+::: {.check}
+In \( \nQ \), is \( 3/2 \) the supremum of \( \{ x \in \nQ : x^2 < 9/4 \} \)? Which step of the proof of (a) fails for this set?
+:::
+
+::: {.solution}
+Yes. (S1): \( x > 3/2 > 0 \) gives \( x^2 > 9/4 \) (@prp-ordered-ring-rules (g)), so every element of the set is at most \( 3/2 \). (S2): if \( v < 3/2 \) bounded the set, let \( w \) be the larger of \( v \) and \( 1 \), and \( c \) the midpoint of \( w \) and \( 3/2 \); then \( 0 < c < 3/2 \), so \( c^2 < 9/4 \) and \( c \) is in the set, and \( c > w \ge v \). The step that fails is "\( s^2 \ne 2 \)": here \( s^2 = 9/4 \) is the target value, the third case of the trichotomy, which neither \( t \) nor \( u \) refutes.
 :::
 
 ## A rational sequence aimed at the gap
@@ -141,14 +168,9 @@ Compute \( x_0, \dots, x_3 \) and \( e_0, \dots, e_3 \).
 :::
 
 ::: {.solution}
-*The sequence.* For \( s \in \nQ_{>0} \), \( s^2 + 2 > 0 \) and \( 2s > 0 \), so \( t(s) \in \nQ_{>0} \) by (O4) and @prp-reciprocal-order (a): \( t \) maps \( \nQ_{>0} \) to \( \nQ_{>0} \). The recursion theorem (@fd2:thm-recursion, read on \( \nN = \omega \) as @thm-omega-recursion by @cor-omega-identification (b)), with \( X = \nQ_{>0} \), starting value \( 2 \) and \( g(n, s) \coloneqq t(s) \), gives exactly one function \( n \mapsto x_n \) from \( \nN \) to \( \nQ_{>0} \) with \( x_0 = 2 \) and \( x_{n+1} = t(x_n) \). So every \( x_n \) is a positive rational, with no further argument.
+*The sequence.* For \( s \in \nQ_{>0} \), \( s^2 + 2 > 0 \) and \( 2s > 0 \), so \( t(s) \in \nQ_{>0} \) by (O4) and @prp-reciprocal-order (a): \( t \) maps \( \nQ_{>0} \) to \( \nQ_{>0} \). The recursion theorem (@fd2:thm-recursion, which holds on \( \nN \) by @cor-omega-identification (b)), with \( X = \nQ_{>0} \), starting value \( 2 \) and \( g(n, s) \coloneqq t(s) \), gives exactly one function \( n \mapsto x_n \) from \( \nN \) to \( \nQ_{>0} \) with \( x_0 = 2 \) and \( x_{n+1} = t(x_n) \). So every \( x_n \) is a positive rational, with no further argument.
 
-*Two identities.* For \( s \in \nQ_{>0} \), \( 2s \cdot t(s) = s^2 + 2 \). Hence \( 4s^2 (t(s)^2 - 2) = (s^2 + 2)^2 - 8s^2 = (s^2 - 2)^2 \) and \( 2s (s - t(s)) = 2s^2 - s^2 - 2 = s^2 - 2 \). Multiplying by the inverses of \( 4s^2 \ne 0 \) and \( 2s \ne 0 \),
-\[
-t(s)^2 - 2 = \frac{(s^2 - 2)^2}{4s^2} , \qquad s - t(s) = \frac{s^2 - 2}{2s} .
-\]{#eq-newton-step}
-
-*(i).* We use @fd1:ax-induction (read on \( \omega \) as @thm-omega-induction (b), by @cor-omega-identification (b)) for \( P(n) \): \( e_n > 0 \). Base \( P(0) \): \( e_0 = 2^2 - 2 = 2 > 0 \). Step: suppose \( e_n > 0 \). By @eq-newton-step with \( s = x_n \),
+*(i).* We use @fd1:ax-induction (on \( \nN \) by @cor-omega-identification (b)) for \( P(n) \): \( e_n > 0 \). Base \( P(0) \): \( e_0 = 2^2 - 2 = 2 > 0 \). Step: suppose \( e_n > 0 \). By the first two identities of @eq-newton-identities with \( s = x_n \),
 \[
 e_{n+1} = t(x_n)^2 - 2 = \frac{e_n^2}{4x_n^2} .
 \]
@@ -156,7 +178,7 @@ Here \( e_n^2 > 0 \) by @prp-ordered-ring-rules (e), since \( e_n \ne 0 \), and 
 
 *(ii).* The equation was just shown, for every \( n \). By (i), \( x_n^2 > 2 \), so \( 4x_n^2 > 4 \cdot 2 = 8 \) by @prp-ordered-ring-rules (c). From \( 0 < 8 < 4x_n^2 \), @prp-reciprocal-order (b) gives \( 1/(4x_n^2) < 1/8 \), and multiplying by \( e_n^2 > 0 \) (@prp-ordered-ring-rules (c)) gives \( e_{n+1} < e_n^2/8 \); in particular \( e_{n+1} \le e_n^2/8 \).
 
-*(iii).* By @eq-newton-step with \( s = x_n \), \( x_n - x_{n+1} = e_n/(2x_n) \), a product of the positive elements \( e_n \) and \( 1/(2x_n) \); so it is positive, and \( x_{n+1} < x_n \) by @prp-ordered-ring-rules (a).
+*(iii).* By the first two identities of @eq-newton-identities with \( s = x_n \), \( x_n - x_{n+1} = e_n/(2x_n) \), a product of the positive elements \( e_n \) and \( 1/(2x_n) \); so it is positive, and \( x_{n+1} < x_n \) by @prp-ordered-ring-rules (a).
 
 *The first terms.* By the definition of \( t \),
 \[
@@ -176,19 +198,19 @@ For orientation only (decimals are not part of this volume's toolkit), here are 
 | \( 2 \) | \( 17/12 \) | \( 1/144 \) | \( 1.41667 \) |
 | \( 3 \) | \( 577/408 \) | \( 1/166464 \) | \( 1.414216 \) |
 
-The terms decrease, every one of them is an upper bound of \( A \) (a positive rational whose square exceeds \( 2 \), as in Case 2 of the proof above), and by (ii) the error is roughly squared at each step: after three steps, \( e_3 = 1/166464 \) is already below \( 1/100000 \). The terms crowd together. Yet no rational \( L \) can be "the number they approach", for if they approached \( L \), their squares would approach \( L^2 \), and the errors \( e_n \) force \( L^2 = 2 \), which @thm-no-rational-square-two forbids. This paragraph is a picture, not a proof: limits in \( \nQ \) have not been defined. A later chapter of this volume defines them, with \( \varepsilon \in \nQ_{>0} \), and proves that this sequence is Cauchy in \( \nQ \) yet has no limit in \( \nQ \), citing (i)–(iii) from this example.
+The terms decrease, each is an upper bound of \( A \) (Case 2 of the proof above), and by (ii) the error is roughly squared at each step: \( e_3 = 1/166464 \). Yet no rational \( L \) can be "the number they approach": the squares would approach \( L^2 \), the errors force \( L^2 = 2 \), and @thm-no-rational-square-two forbids that. This is a picture, not a proof, since limits in \( \nQ \) are not defined yet. Chapter 4 defines them, with \( \varepsilon \in \nQ_{>0} \), and proves that this sequence is Cauchy in \( \nQ \) with no limit in \( \nQ \), citing (i)–(iii).
 
 ::: {.check}
 Is \( 3/2 \) an upper bound of \( A = \{ x \in \nQ : x^2 < 2 \} \)? Is \( 17/12 \)? Is \( 4/3 \)?
 :::
 
 ::: {.solution}
-The first two are. Each is positive, and \( (3/2)^2 = 9/4 > 2 \) because \( 9 > 8 \), while \( (17/12)^2 = 289/144 > 2 \) because \( 289 > 288 \) (the comparison formula, @thm-rationals-ordered-field (a)). A positive rational \( b \) with \( b^2 > 2 \) bounds \( A \): if \( x \in A \) had \( x > b \), then \( x^2 > b^2 > 2 \) by @prp-ordered-ring-rules (g), against \( x^2 < 2 \). (These are \( x_1 \) and \( x_2 \) of @exm-newton-rationals-sqrt2, and \( 17/12 = t(3/2) \) is the smaller upper bound that Case 2 of the proof of @thm-rationals-gap-sqrt2 produces from \( s = 3/2 \).)
+The first two are. Each is positive, and \( (3/2)^2 = 9/4 > 2 \) because \( 9 > 8 \), while \( (17/12)^2 = 289/144 > 2 \) because \( 289 > 288 \) (the comparison formula, @thm-rationals-ordered-field (a)). A positive rational \( b \) with \( b^2 > 2 \) bounds \( A \): if \( x \in A \) had \( x > b \), then \( x^2 > b^2 > 2 \) by @prp-ordered-ring-rules (g), against \( x^2 < 2 \).
 
 But \( 4/3 \) is not, although it is positive: \( (4/3)^2 = 16/9 < 2 \) because \( 16 < 18 \), so the hypothesis \( b^2 > 2 \) fails, and indeed \( 7/5 \in A \), as \( (7/5)^2 = 49/25 < 2 \) (\( 49 < 50 \)), while \( 7/5 > 4/3 \) (\( 21 > 20 \)).
 :::
 
-This chapter built two number systems by one method. From \( \nN \) to \( \nZ \): pairs \( (a, b) \), identified when \( a + d = b + c \), so that subtraction becomes possible. From \( \nZ \) to \( \nQ \): pairs \( (p, q) \) with \( q > 0 \), identified when \( ps = rq \), so that division becomes possible. Each time an operation was defined on representatives and checked to be well defined (@thm-well-defined-on-classes), and each axiom was reduced to the level below. The third step, from \( \nQ \) to the real numbers, takes the same route in a later chapter of this volume: the representatives are sequences of rationals like the one above, identified when their difference tends to \( 0 \), so that the gap found in this section, and every other gap of \( \nQ \), is filled.
+Chapters 2 and 3 built two number systems by one method. From \( \nN \) to \( \nZ \): pairs \( (a, b) \), identified when \( a + d = b + c \), so that subtraction becomes possible. From \( \nZ \) to \( \nQ \): pairs \( (p, q) \) with \( q > 0 \), identified when \( ps = rq \), so that division becomes possible. Chapter 5 takes the third step, from \( \nQ \) to the real numbers, by the same route: the representatives are sequences of rationals like the one above, identified when their difference tends to \( 0 \).
 
 ## Exercises
 
@@ -261,16 +283,27 @@ Lines (x) and (vi) may be exchanged, since neither uses the other. Otherwise the
 *Line (iii) fails.* Its conclusion is false: from \( p^2 = 2q^2 \) and \( q > 0 \) we get \( p^2 > q^2 \), hence \( q < p \) by @prp-ordered-ring-rules (g), the opposite of (iii). It also clashes with (x).
 :::
 
-::: {#exr-gaps-in-the-rationals-b2}
-[B2]
+::: {#exr-gaps-in-the-rationals-b4}
+[B2: Prove or disprove]
 
-Let \( A \coloneqq \{ x \in \nQ : x^2 < 2 \} \) and \( A^+ \coloneqq \{ x \in \nQ : x > 0, \ x^2 < 2 \} \). Without looking back, prove that \( A \) and \( A^+ \) have the same upper bounds in \( \nQ \), and deduce from @thm-rationals-gap-sqrt2 (a) that \( A^+ \) has no supremum in \( \nQ \).
+Prove or disprove each statement.
+
+::: {.enumerate options="label=(\alph*)"}
+1. There is no \( x \in \nQ \) with \( x^2 = 8 \).
+2. For all \( x, y \in \nQ \), if \( x^2 < y^2 \), then \( x < y \).
+3. If \( s \in \nQ \), \( s > 0 \) and \( s^2 > 2 \), then \( (2/s)^2 < 2 \).
+4. If \( s \in \nQ \), \( s > 0 \) and \( s^2 < 2 \), then \( (s + 1/10)^2 < 2 \).
+:::
 :::
 
 ::: {.solution}
-\( (\subseteq) \) for upper bounds: if \( u \) bounds \( A \), it bounds the subset \( A^+ \subseteq A \). Conversely, let \( u \) bound \( A^+ \). Since \( 1 > 0 \) and \( 1^2 = 1 < 2 \), \( 1 \in A^+ \), so \( 1 \le u \) and \( u > 0 \). Let \( x \in A \). If \( x > 0 \), then \( x \in A^+ \), so \( x \le u \). If \( x \le 0 \), then \( x \le 0 < u \). So \( u \) bounds \( A \).
+(a) **True.** If \( x^2 = 8 \), then \( y \coloneqq x/2 \) has \( y^2 = x^2/4 = 2 \) (@def-rational-operations), against @thm-no-rational-square-two.
 
-Now suppose \( s \) were a supremum of \( A^+ \). Then \( s \) is an upper bound of \( A^+ \), hence of \( A \) (S1), and \( s \le u \) for every upper bound \( u \) of \( A^+ \), which are exactly the upper bounds of \( A \) (S2). So \( s \) would be a supremum of \( A \), which @thm-rationals-gap-sqrt2 (a) excludes. Hence \( A^+ \) has no supremum in \( \nQ \).
+(b) **False:** \( x = 1 \), \( y = -2 \) give \( x^2 = 1 < 4 = y^2 \), but \( 1 > -2 \). (Rule (g) of @prp-ordered-ring-rules needs \( 0 \le x \) and \( 0 \le y \).)
+
+(c) **True.** \( (2/s)^2 = 4/s^2 \). From \( s^2 > 2 > 0 \), @prp-reciprocal-order (b) gives \( 1/s^2 < 1/2 \), and multiplying by \( 4 > 0 \) (@prp-ordered-ring-rules (c)) gives \( 4/s^2 < 2 \). (So the map \( s \mapsto 2/s \) carries upper bounds of \( A^+ \) into \( A^+ \); the proof's \( u(s) \) improves on it.)
+
+(d) **False:** \( s = 7/5 \) has \( s^2 = 49/25 < 2 \) (\( 49 < 50 \)), but \( s + 1/10 = 3/2 \) and \( (3/2)^2 = 9/4 > 2 \) (\( 9 > 8 \)). A fixed step can overshoot; the proof's \( u(s) \) is chosen from \( s \).
 :::
 
 ::: {#exr-gaps-in-the-rationals-b3}
@@ -288,7 +321,7 @@ Then \( 665857^2 = 443365544449 \) and \( 470832^2 = 221682772224 \), and \( 443
 \[
 e_4 = \frac{1}{221682772224} .
 \]
-By (ii), \( e_4 = e_3^2/(4x_3^2) = 1/(166464 \cdot 4 \cdot 332929) \), and \( 4 \cdot 166464 \cdot 332929 = 221682772224 \), which agrees. Since \( x_4 > 0 \) and \( e_4 > 0 \), \( x_4 \) bounds the set (the argument of the Quick check), and \( x_4 < x_3 \) by (iii).
+By (ii), \( e_4 = e_3^2/(4x_3^2) = 1/(166464 \cdot 4 \cdot 332929) \), and \( 4 \cdot 166464 \cdot 332929 = 221682772224 \), which agrees. Since \( x_4 > 0 \) and \( e_4 > 0 \), \( x_4 \) bounds the set (the argument of the Quick check after the table), and \( x_4 < x_3 \) by (iii).
 :::
 
 ### C. Going deeper
@@ -306,19 +339,19 @@ Prove that no rational number squares to \( 2 \), and that the set \( \{ x \in \
 
 *No supremum.* Suppose \( s \in \nQ \) is a supremum of \( A \). As \( 1 \in A \), \( s \ge 1 > 0 \), and \( s^2 \ne 2 \) by the first part.
 
-If \( s^2 < 2 \), let \( u \coloneqq 4s/(s^2 + 2) \in \nQ_{>0} \). Clearing denominators, \( u - s = s(2 - s^2)/(s^2 + 2) > 0 \) and \( 2 - u^2 = 2(s^2 - 2)^2/(s^2 + 2)^2 > 0 \). So \( u \in A \) and \( u > s \): \( s \) is not an upper bound.
+If \( s^2 < 2 \), let \( u \coloneqq 4s/(s^2 + 2) \in \nQ_{>0} \). By the third and fourth identities of @eq-newton-identities, \( u - s > 0 \) and \( 2 - u^2 > 0 \). So \( u \in A \) and \( u > s \): \( s \) is not an upper bound.
 
-If \( s^2 > 2 \), let \( t \coloneqq (s^2 + 2)/(2s) \in \nQ_{>0} \). Clearing denominators, \( t^2 - 2 = (s^2 - 2)^2/(4s^2) > 0 \) and \( s - t = (s^2 - 2)/(2s) > 0 \). So \( t^2 > 2 \), and \( t \) bounds \( A \) (an \( x \in A \) with \( x > t > 0 \) would have \( x^2 > t^2 > 2 \)); and \( t < s \). So \( s \) is not the least upper bound.
+If \( s^2 > 2 \), let \( t \coloneqq (s^2 + 2)/(2s) \in \nQ_{>0} \). By the first and second identities of @eq-newton-identities, \( t^2 - 2 > 0 \) and \( s - t > 0 \). So \( t^2 > 2 \), and \( t \) bounds \( A \) (an \( x \in A \) with \( x > t > 0 \) would have \( x^2 > t^2 > 2 \)); and \( t < s \). So \( s \) is not the least upper bound.
 
 By trichotomy one of the two cases holds, and each contradicts the choice of \( s \). So \( A \) has no supremum in \( \nQ \).
 
 **Marking scheme.** (10 points)
-- 4: no rational squares to \( 2 \): sets up a least denominator, or any other correct route (1); proves the key inequalities \( q < p < 2q \), or the parity step of another route (2); reaches the contradiction (1).
+- 4: no rational squares to \( 2 \): a least denominator, or another correct route (1); \( q < p < 2q \), or the parity step (2); the contradiction (1).
 - 1: shows that \( A \) is bounded above, with an explicit upper bound, and non-empty.
 - 2: the case \( s^2 < 2 \): an explicit element of \( A \) larger than \( s \), with both properties verified.
 - 2: the case \( s^2 > 2 \): an explicit smaller rational, verified to be an upper bound of \( A \).
 - 1: concludes by trichotomy, with \( s^2 = 2 \) excluded by the first part.
-Fatal errors (0 for the step): assuming that \( \sqrt 2 \) exists (in \( \nQ \) or in a larger field) and comparing \( s \) with it; "\( s^2 < 2 \), so \( s + \varepsilon \in A \) for small \( \varepsilon \)" with no \( \varepsilon \) exhibited and checked. A second route for the first part, by parity (every integer is \( 2m \) or \( 2m + 1 \), with \( m = \floor{a/2} \) from @prp-rational-integer-part, and not both), earns the same 4 points: 1 for the least denominator, 2 for "\( p \) even, then \( q \) even", 1 for the contradiction.
+Fatal errors (0 for the step): assuming that \( \sqrt 2 \) exists (in \( \nQ \) or in a larger field) and comparing \( s \) with it; "\( s^2 < 2 \), so \( s + \varepsilon \in A \) for small \( \varepsilon \)" with no \( \varepsilon \) exhibited and checked. A correct parity route (every integer is \( 2m \) or \( 2m + 1 \), and not both, @cor-integers-even-odd (a)) earns the same 4 points.
 :::
 
 ::: {#exr-gaps-in-the-rationals-c2}
@@ -356,25 +389,23 @@ Then \( 0 < q' < q \). For \( p' \), expand:
 \[
 q \cdot p' = nq^2 - kpq = p^2 - kpq = p(p - kq) > 0
 \]
-by (O4); since \( q > 0 \), \( p' \le 0 \) would give \( q p' \le 0 \) (@prp-ordered-ring-rules (c)), so \( p' > 0 \). (The bounds alone do not give this: for \( n = 5 \), \( k = 2 \), \( q = 10 \), \( p = 28 \), we have \( kq < p < (k + 1)q \), but \( nq - kp = -6 \). It is \( p^2 = nq^2 \) that forces the sign.) Finally, expanding,
+by (O4); since \( q > 0 \), \( p' \le 0 \) would give \( q p' \le 0 \) (@prp-ordered-ring-rules (c)), so \( p' > 0 \). Finally, expanding,
 \[
 p'^2 - n q'^2 = (k^2 - n)(p^2 - nq^2) = 0 ,
 \]
 so \( q' \) is a smaller admissible denominator, a contradiction.
 
-(ii) *No supremum.* The proof of @thm-rationals-gap-sqrt2 (a) goes through with \( n \) in place of \( 2 \), using (i) where it used @thm-no-rational-square-two. The set \( A_n \) contains \( 1 \) and is bounded above by \( n \) (if \( x > n \ge 1 \), then \( x^2 > n^2 \ge n \)). For \( s \in \nQ_{>0} \), let
+(ii) *No supremum.* The proof of @thm-rationals-gap-sqrt2 (a) goes through with \( n \) in place of \( 2 \), using (i) where it used @thm-no-rational-square-two, and \( A_n \) contains \( 1 \) and is bounded above by \( n \). For \( s \in \nQ_{>0} \), let
 \[
 t(s) \coloneqq \frac{s^2 + n}{2s} , \qquad u(s) \coloneqq \frac{2ns}{s^2 + n} .
 \]
-Clearing denominators as before,
+Clearing denominators as before gives the four identities
 \[
 \begin{aligned}
 t(s)^2 - n &= \frac{(s^2 - n)^2}{4s^2} , & s - t(s) &= \frac{s^2 - n}{2s} , \\
 u(s) - s &= \frac{s(n - s^2)}{s^2 + n} , & n - u(s)^2 &= \frac{n(s^2 - n)^2}{(s^2 + n)^2} .
 \end{aligned}
 \]
-A supremum \( s \) would satisfy \( s \ge 1 > 0 \) and \( s^2 \ne n \) by (i). If \( s^2 < n \), then \( u(s) \in A_n \) and \( u(s) > s \); if \( s^2 > n \), then \( t(s) \) is an upper bound of \( A_n \) with \( t(s) < s \). Either way \( s \) is not the supremum.
-
 So \( A_n \) has a supremum in \( \nQ \) exactly when \( n \) is the square of a natural number.
 
 **Marking scheme.** (10 points)
@@ -383,27 +414,25 @@ So \( A_n \) has a supremum in \( \nQ \) exactly when \( n \) is the square of a
 - 3: the case \( k^2 < n \): no rational squares to \( n \), by a descent with a least denominator (or another correct route), including a proof that the new numerator is positive.
 - 2: the two maps (or any explicit rationals) and the two cases, as in the proof for \( 2 \).
 - 1: states the answer: exactly the squares of natural numbers.
-Fatal errors (0 for the step): using a square root of \( n \), or the floor of one, as if it existed; deducing \( nq - kp > 0 \) from \( kq < p < (k + 1)q \) alone.
+Fatal errors (0 for the step): using a square root of \( n \), or the floor of one, as if it existed; deducing \( nq - kp > 0 \) from \( kq < p < (k + 1)q \) alone, which fails for \( n = 5 \), \( k = 2 \), \( q = 10 \), \( p = 28 \).
 :::
 
 ### R. Review
 
-::: {#exr-gaps-in-the-rationals-r1}
+::: {#exr-gaps-in-the-rationals-r5}
 [R1]
 
-Prove, by induction on \( m \), that for all \( m, n \in \nN \): if \( m + n = m \), then \( n = 0 \). Use only the equations of addition (\( m + 0 = m \), \( m + (n + 1) = (m + n) + 1 \), \( 0 + n = n \), \( (m + 1) + n = (m + n) + 1 \)) and the fact that \( k + 1 = l + 1 \) implies \( k = l \). Do not use cancellation or any fact about the order: cancellation gives the claim in one line (\( m + n = m + 0 \)), and it is itself proved from the facts this exercise asks you to use.
+Recall that an integer is a class \( [(a, b)] \) of pairs of natural numbers, with \( (a, b) \sim (c, d) \) if and only if \( a + d = b + c \). For \( (a, b) \in \nN \times \nN \), let \( f(a, b) \coloneqq (a, b) \) if \( b \le a \), and \( f(a, b) \coloneqq (b, a) \) if \( a < b \). Does \( [(a, b)] \mapsto [f(a, b)] \) define a function \( \nZ \to \nZ \)? Prove your answer, and say which integer it assigns to \( x \ge 0 \) and to \( x < 0 \).
 :::
 
 ::: {.solution}
-We use @thm-omega-induction (b) (the form of @fd1:ax-induction on \( \omega = \nN \), by @cor-omega-identification (b)) on \( m \), for the property \( P(m) \): "for every \( n \in \nN \), if \( m + n = m \), then \( n = 0 \)". Keeping "for every \( n \)" inside \( P(m) \) lets the step use the hypothesis for the same \( n \).
+**Yes.** By @thm-well-defined-on-classes (a), with \( X = Y = \nN \times \nN \), it suffices to show that \( (a, b) \sim (c, d) \) implies \( f(a, b) \sim f(c, d) \) (the representative check, @fd2:exm-method-well-definedness). Let \( a + d = b + c \), and \( x \coloneqq [(a, b)] = [(c, d)] \).
 
-*Base \( P(0) \).* Let \( 0 + n = 0 \). Since \( 0 + n = n \) (@thm-omega-arithmetic-laws (a)), \( n = 0 \).
+*The cases match.* \( x \in P_{\nZ} \) if and only if \( b < a \), whichever representative is used (the well-definedness paragraph after @def-integer-order), and \( x = 0 \) if and only if \( a = b \), since \( (a, b) \sim (0, 0) \) means \( a = b \). So \( b \le a \iff (x \in P_{\nZ} \text{ or } x = 0) \iff d \le c \).
 
-*Step.* Assume \( P(m) \), and let \( (m + 1) + n = m + 1 \). By @thm-omega-arithmetic-laws (a), \( (m + 1) + n = (m + n) + 1 \), so \( (m + n) + 1 = m + 1 \). By @cor-omega-successor-cancellation, \( m + n = m \). By \( P(m) \), \( n = 0 \). This proves \( P(m + 1) \).
+Hence either \( b \le a \) and \( d \le c \), and then \( f(a, b) = (a, b) \sim (c, d) = f(c, d) \); or \( a < b \) and \( c < d \), and then \( f(a, b) = (b, a) \), \( f(c, d) = (d, c) \), and \( b + c = a + d \) says \( (b, a) \sim (d, c) \).
 
-By induction, \( P(m) \) holds for every \( m \in \nN \).
-
-Cancellation (@prp-omega-order-arithmetic (b)) and the order facts are deliberately not used: each gives a one-line proof, and cancellation is itself proved by peeling off one successor at a time with @cor-omega-successor-cancellation, the move of the step above.
+Since \( x \ge 0 \) if and only if \( b \le a \), and \( -[(a, b)] = [(b, a)] \) (@def-integer-operations), the function sends \( x \) to \( x \) if \( x \ge 0 \) and to \( -x \) if \( x < 0 \): it is the familiar \( x \mapsto \abs{x} \).
 :::
 
 ::: {#exr-gaps-in-the-rationals-r2}
@@ -413,7 +442,7 @@ Show that the set \( \nQ \), as constructed in this chapter, is countable.
 :::
 
 ::: {.solution}
-The tools are the results on countable sets of *Sets and Functions*, Chapter 4, read on \( \nN = \omega \) through the dictionary of Section 1.4 (@cor-omega-identification and the table after it).
+The tools are the results on countable sets of *Sets and Functions*, Chapter 4, which apply to \( \nN \) by @cor-omega-identification.
 
 *\( \nZ \) is countable.* \( \nN \times \nN \) is countable (@fd2:thm-product-countable). The map \( a \mapsto [a] \), from \( \nN \times \nN \) to \( \nZ = (\nN \times \nN)/{\sim} \), is surjective, since every class is the class of each of its elements (@fd2:def-quotient-set). By @fd2:prp-countable-image, \( \nZ \) is countable.
 
@@ -421,7 +450,7 @@ The tools are the results on countable sets of *Sets and Functions*, Chapter 4, 
 
 *\( \nQ \) is countable.* The map \( (p, q) \mapsto [(p, q)] \), from \( \nZ \times \nZ_{>0} \) to \( \nQ \), is surjective (@fd2:def-quotient-set), so \( \nQ \) is countable by @fd2:prp-countable-image.
 
-(Section 1.4 lets a review exercise cite @fd2:thm-product-countable and @fd2:cor-product-countable (a), which run on \( \omega \) through @prp-omega-powers-parity.) The conclusion is @fd2:thm-integers-rationals-countable for the constructed \( \nQ \); that theorem, about the school rationals, is not used.
+The conclusion is @fd2:thm-integers-rationals-countable for the constructed \( \nQ \); that theorem, about the school rationals, is not used.
 :::
 
 ::: {#exr-gaps-in-the-rationals-r3}
@@ -455,9 +484,9 @@ Is there a rational number \( x \) with \( x^3 = 2 \), where \( x^3 \coloneqq x^
 :::
 
 ::: {.solution}
-**No.** The tool is descent on the denominator, as in @thm-no-rational-square-two, but run with parity, which @prp-rational-integer-part supplies.
+**No.** The tool is descent on the denominator, as in @thm-no-rational-square-two, run with parity.
 
-*Parity.* For every \( a \in \nZ \) there is \( m \in \nZ \) with \( a = 2m \) or \( a = 2m + 1 \), and not both forms occur. Indeed, let \( m \coloneqq \floor{a/2} \) (@prp-rational-integer-part): \( m \le a/2 < m + 1 \), so \( 2m \le a < 2m + 2 \) (@prp-ordered-ring-rules (c)). The integer \( r \coloneqq a - 2m \) has \( 0 \le r < 2 \); if \( r > 0 \), then \( r \ge 1 \), and if \( r > 1 \), then \( r \ge 2 \), by discreteness (@thm-integers-ordered-ring (c)); so \( r = 0 \) or \( r = 1 \). If \( 2m = 2m' + 1 \), then \( d \coloneqq m - m' \) has \( 2d = 1 \); but \( d \le 0 \) gives \( 2d \le 0 \), and \( d \ge 1 \) gives \( 2d \ge 2 \), and by discreteness one of these holds. Moreover an odd cube is odd:
+*Parity.* Every integer is \( 2m \) or \( 2m + 1 \) for some \( m \in \nZ \), and not both (@cor-integers-even-odd (a)). An odd cube is odd:
 \[
 (2m + 1)^3 = 2(4m^3 + 6m^2 + 3m) + 1 .
 \]
@@ -472,32 +501,41 @@ which is not a constant multiple of \( p^3 - 2q^3 \) (it has a \( p^2 q \) term)
 :::
 
 <!-- dependency ledger
-thm-no-rational-square-two (proof): 2 = 1 + 1 > 0 and 4 = 2 * 2; numerals compared in N | prp-ordered-ring-rules (b), (e); omega arithmetic (def-omega-arithmetic) carried into Q by prp-naturals-embed-integers and prp-integers-embed-rationals
-thm-no-rational-square-two (proof): (a/b)^2 = a^2/b^2 for b in Z_{>0} | def-rational-operations (product of classes), cited
-thm-no-rational-square-two (proof): p <= q with 0 <= p gives p^2 <= q^2 (the <= form of (g)) | prp-ordered-ring-rules (g) and the equality case; inline
-thm-no-rational-square-two (proof): expansion (2q - p)^2 = 4q^2 - 4pq + p^2 and 2(p - q)^2 = 2p^2 - 4pq + 2q^2 | prp-ring-algebra (c), (d), cited; verify/ch02/thm-no-rational-square-two.py
-thm-no-rational-square-two (claim): school proof of the same statement by parity in F1.2; parity available here from F3.1 or the integer part | thm-sqrt2-irrational (prose comparison only); prp-omega-powers-parity (d), prp-rational-integer-part (prose pointers; nothing depends on them)
-thm-rationals-gap-sqrt2 (proof): the four identities (eq-newton-identities), by clearing denominators | thm-rationals-field (F8: multiplying by a non-zero element is undone by its inverse), prp-ring-algebra; inline; verify/ch02/thm-rationals-gap-sqrt2.py
-thm-rationals-gap-sqrt2 (proof): z/w := z w^{-1}; a quotient of positives is positive | def-commutative-ring-and-field; prp-reciprocal-order (a) and (O4), cited
-thm-rationals-gap-sqrt2 (proof): (S1), (S2) depend only on the set of upper bounds | def-order-supremum, cited; inline
-thm-rationals-gap-sqrt2 (claim): (remark) the same set has a supremum in R; AN1.1 proves the rational statement | AN1.1 (prose pointer; nothing here depends on it)
-exm-newton-rationals-sqrt2 (example): the sequence as a function N -> Q_{>0} | thm-recursion read on omega (thm-omega-recursion, via cor-omega-identification (b)), cited
-exm-newton-rationals-sqrt2 (example): induction for (i) | ax-induction read on omega (thm-omega-induction (b), via cor-omega-identification (b)), cited
-exm-newton-rationals-sqrt2 (example): values x_1..x_3, e_0..e_3, 577^2 = 332929, 408^2 = 166464, 144 * 1156 = 166464 | inline arithmetic; verify/ch02/exm-newton-rationals-sqrt2.py
-exm-newton-rationals-sqrt2 (claim): (paragraph after the table) school decimals; "the squares approach L^2"; Cauchy and no rational limit | for orientation only, marked; a later chapter of this volume (F3.9, prose pointer; nothing here depends on it)
-exm-newton-rationals-sqrt2 (claim): (closing paragraph) R from sequences of rationals identified when their difference tends to 0 | a later chapter of this volume (F3.10, prose pointer)
-exr-gaps-in-the-rationals-a1 (solution): values t(3/2) = 17/12, u(7/5) = 140/99, 140^2 = 19600, 2 * 99^2 = 19602 | verify/ch02/exr-gaps-in-the-rationals-a1.py
-exr-gaps-in-the-rationals-a1 (solution): in any ordered field the identities and t(r) = u(r) = r for r^2 = 2 | field arithmetic, as in the proof; inline
-exr-gaps-in-the-rationals-b1 (solution): at most one positive x with x^2 = 2 | prp-ordered-ring-rules (g), (O1), cited
-exr-gaps-in-the-rationals-b1 (claim): exercise line (viii), least q among the pairs | prp-integer-least-element, cited
-exr-gaps-in-the-rationals-b3 (solution): x_4 = 665857/470832, e_4 = 1/221682772224 and the products checking (ii) | inline arithmetic; verify/ch02/exr-gaps-in-the-rationals-b3.py
-exr-gaps-in-the-rationals-c1 (solution): second route by parity | as in exr-gaps-in-the-rationals-r4's solution (prp-rational-integer-part); marking-scheme note only
-exr-gaps-in-the-rationals-c2 (solution): (n + 1)^2 >= n + 1 > n; n^2 >= n for n >= 1 | prp-ordered-ring-rules (c); inline
-exr-gaps-in-the-rationals-c2 (solution): identities (k^2 - n)(p^2 - n q^2), q(nq - kp) = p(p - kq) - (p^2 - nq^2), the four general maps; the witness n = 5, k = 2, q = 10, p = 28 | verify/ch02/exr-gaps-in-the-rationals-c2.py
-exr-gaps-in-the-rationals-c2 (solution): l >= 1 and l - 1 in N | thm-integers-ordered-ring (c), (b), (O3), cited
-exr-gaps-in-the-rationals-c2 (solution): midpoint of w and k lies strictly between | midpoint paragraph of F3.11 §02
-exr-gaps-in-the-rationals-r1 (solution): recursive equations of + and successor cancellation | def-omega-arithmetic (a), thm-omega-arithmetic-laws (a), cor-omega-successor-cancellation, cited
-exr-gaps-in-the-rationals-r2 (solution): F2.3 results on omega; group (ii) citations allowed in an R item | cor-omega-identification and the citing rule after it (F3.1 §04), cited
-exr-gaps-in-the-rationals-r4 (solution): cube expansions (2m + 1)^3 and (2q - p)^3 - 2(p - q)^3 | prp-ring-algebra; verify/ch02/exr-gaps-in-the-rationals-r4.py
-exr-gaps-in-the-rationals-r4 (solution): canceling a non-zero factor (2c = 2d gives c = d) | prp-ordered-ring-rules (f) applied to 2(c - d) = 0; inline
+thm-no-rational-square-two (proof): 2 = 1 + 1 > 0, 4 = 2 * 2, numerals compared in N | prp-ordered-ring-rules (b), (e); def-omega-arithmetic carried into Q by prp-naturals-embed-integers, prp-integers-embed-rationals
+thm-no-rational-square-two (proof): (a/b)^2 = a^2/b^2 | def-rational-operations
+thm-no-rational-square-two (proof): 0 <= p <= q gives p^2 <= q^2 | prp-ordered-ring-rules (g) and the equality case
+thm-no-rational-square-two (proof): (2q - p)^2 and 2(p - q)^2 expanded | prp-ring-algebra (c), (d); verify/ch03/thm-no-rational-square-two.py
+thm-no-rational-square-two (claim): parity proof for school rationals; parity for the constructed Z | fd1 thm-sqrt2-irrational (comparison only); cor-integers-even-odd (F3.2 §05), pointer, nothing depends on it
+thm-no-rational-square-two (idea): descent = smallest counterexample | fd2 exm-method-smallest-counterexample, lem-lowest-terms (comparison)
+thm-no-rational-square-two (claim): check p = 2, q = 1: p' = 0, q' = 1, p'^2 - 2q'^2 = -2 | arithmetic; verify/ch03/thm-no-rational-square-two.py
+thm-rationals-gap-sqrt2 (idea): scratch-work table, s >= 1 > 0, trichotomy | thm-no-rational-square-two, def-order-supremum
+thm-rationals-gap-sqrt2 (proof): eq-newton-identities by clearing denominators (fold) | thm-rationals-field (F8), prp-ring-algebra; verify/ch03/thm-rationals-gap-sqrt2.py
+thm-rationals-gap-sqrt2 (proof): quotient of positives is positive | def-commutative-ring-and-field; prp-reciprocal-order (a), (O4)
+thm-rationals-gap-sqrt2 (proof): (S1), (S2) depend only on the upper bounds | def-order-supremum
+thm-rationals-gap-sqrt2 (claim): check u(1/2) = 8/9, t(3) = 11/6 and comparisons | comparison formula (thm-rationals-ordered-field (a)); verify/ch03/thm-rationals-gap-sqrt2.py
+thm-rationals-gap-sqrt2 (claim): A+ has a supremum in R; AN1.1 reproves (b) | AN1.1, pointer, nothing depends on it
+thm-rationals-gap-sqrt2 (claim): check 3/2 = sup { x : x^2 < 9/4 } | prp-ordered-ring-rules (g), (i); midpoint paragraph of F3.11 §02; verify/ch03/thm-rationals-gap-sqrt2.py
+exm-newton-rationals-sqrt2 (example): the sequence N -> Q_{>0} | fd2 thm-recursion via cor-omega-identification (b)
+exm-newton-rationals-sqrt2 (example): induction for (i) | fd1 ax-induction via cor-omega-identification (b)
+exm-newton-rationals-sqrt2 (example): (i), (iii) | eq-newton-identities (s in Q_{>0}), first two
+exm-newton-rationals-sqrt2 (example): x_1..x_3, e_0..e_3 and products | verify/ch03/exm-newton-rationals-sqrt2.py
+exm-newton-rationals-sqrt2 (claim): decimals; limit picture; Cauchy, no rational limit | marked as orientation; Chapter 4 (F3.9 §06), pointer, nothing depends on it
+exm-newton-rationals-sqrt2 (claim): closing paragraph, R from rational sequences | Chapter 5 (F3.10), pointer
+exr-gaps-in-the-rationals-a1 (solution): t(3/2), u(7/5) and comparisons | verify/ch03/exr-gaps-in-the-rationals-a1.py
+exr-gaps-in-the-rationals-a1 (solution): identities and t(r) = u(r) = r in any ordered field | field arithmetic as in the proof
+exr-gaps-in-the-rationals-b1 (solution): at most one positive square root of 2 | prp-ordered-ring-rules (g), (O1)
+exr-gaps-in-the-rationals-b1 (claim): line (viii), least q | prp-integer-least-element
+exr-gaps-in-the-rationals-b4 (solution): (a)-(d) | def-rational-operations, thm-no-rational-square-two, prp-reciprocal-order (b), prp-ordered-ring-rules (c), (g); verify/ch03/exr-gaps-in-the-rationals-b4.py
+exr-gaps-in-the-rationals-b3 (solution): x_4, e_4 and the check of (ii) | verify/ch03/exr-gaps-in-the-rationals-b3.py
+exr-gaps-in-the-rationals-c1 (solution): the two cases | eq-newton-identities
+exr-gaps-in-the-rationals-c1 (solution): parity route (marking scheme) | cor-integers-even-odd (a) (F3.2 §05)
+exr-gaps-in-the-rationals-c2 (solution): (n + 1)^2 > n; A_n bounded by n | prp-ordered-ring-rules (c)
+exr-gaps-in-the-rationals-c2 (solution): descent identities, general maps; witness n = 5, k = 2, q = 10, p = 28 in the marking scheme | verify/ch03/exr-gaps-in-the-rationals-c2.py
+exr-gaps-in-the-rationals-c2 (solution): l >= 1, l - 1 in N | thm-integers-ordered-ring (c), (b), (O3)
+exr-gaps-in-the-rationals-c2 (solution): midpoint strictly between | midpoint paragraph of F3.11 §02
+exr-gaps-in-the-rationals-r5 (solution): positivity on any representative; x = 0 iff a = b; negation swaps | paragraph after def-integer-order, def-integer-operations, thm-well-defined-on-classes (a); verify/ch03/exr-gaps-in-the-rationals-r5.py
+exr-gaps-in-the-rationals-r2 (solution): countability results on N | fd2 thm-product-countable, cor-product-countable, prp-countable-subset, prp-countable-image via cor-omega-identification
+exr-gaps-in-the-rationals-r4 (solution): parity | cor-integers-even-odd (a) (F3.2 §05)
+exr-gaps-in-the-rationals-r4 (solution): cube expansions | prp-ring-algebra; verify/ch03/exr-gaps-in-the-rationals-r4.py
+exr-gaps-in-the-rationals-r4 (solution): canceling 2 | prp-ordered-ring-rules (f) on 2(c - d) = 0
 -->

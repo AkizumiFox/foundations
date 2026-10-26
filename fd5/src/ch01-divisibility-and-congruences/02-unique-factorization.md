@@ -36,6 +36,23 @@ To say that a factorization is unique, we must first say what a factorization is
 
 Products of lists are defined by the recursion of @fd2:def-sum-product. That definition was made for sequences of real numbers, and we use it as a pattern, as group (iii) of the citing rule of *Number Systems*, Section 1.4 allows, with the ordered field \( \nQ \) (@fd3:thm-rationals-ordered-field) in place of \( \nR \). A product of integers is an integer (@fd3:prp-integers-embed-rationals), so the products of lists below lie in \( \nZ \); the paragraph "Why the product exists" below checks directly that the recursion runs in \( \nZ \).
 
+## Small primes
+
+Later arguments need to know that a few small integers are prime in the constructed \( \nZ \). *Sets and Functions*, Section 1.1 checked some of these after @fd2:def-prime, for the school integers; that check is not a proof about the ring of *Number Systems*, Chapter 2, so we redo it here.
+
+::: {.remark}
+**The small-primes remark.** The integers \( 2 \), \( 3 \), \( 5 \) and \( 7 \) are prime in \( \nZ \). Let \( p \in \{2, 3, 5, 7\} \). Then \( p \ge 2 \). Let \( d \) be a positive divisor of \( p \). Then \( 1 \le d \) by discreteness (@fd3:thm-integers-ordered-ring (c)) and \( d \le p \) by @fd3:prp-divisibility-rules-integers (e), so \( d \) is one of \( 1, 2, \dots, p \): applying discreteness repeatedly (if \( d \ne 1 \) then \( 2 \le d \); if \( d \ne 2 \) then \( 3 \le d \); and so on up to \( p \)) leaves no other value. Each \( d \) with \( 1 < d < p \) leaves a non-zero remainder:
+\[
+\begin{aligned}
+3 &= 1 \cdot 2 + 1, \qquad 5 = 2 \cdot 2 + 1 = 1 \cdot 3 + 2 = 1 \cdot 4 + 1, \\
+7 &= 3 \cdot 2 + 1 = 2 \cdot 3 + 1 = 1 \cdot 4 + 3 = 1 \cdot 5 + 2 = 1 \cdot 6 + 1 .
+\end{aligned}
+\]
+(For \( p = 2 \) there is no such \( d \).) So \( d \nmid p \) for these \( d \), by the divisibility test after @fd3:thm-integers-division-remainder: \( p = kd \) would give \( p = kd + 0 \), a second division of \( p \) by \( d \), with remainder \( 0 \), against the uniqueness in @fd3:thm-integers-division-remainder (a). Hence the positive divisors of \( p \) are \( 1 \) and \( p \), and \( p \) is prime.
+:::
+
+The later sections of this chapter cite this paragraph as "the small-primes remark". The same procedure decides, for any given \( p \ge 2 \), whether \( p \) is prime; the remark after @lem-least-divisor-prime shortens it.
+
 ::: {#def-prime-factorization}
 [List, Product of a List, Prime Factorization]
 
@@ -54,7 +71,7 @@ In words: a list is a finite sequence of integers, possibly empty; its product s
 
 **Examples.**
 
-- \( (2, 2, 3, 5) \) is a prime factorization of \( 60 \). Its entries are prime by the small-primes remark of *Number Systems*, Section 2.5; it is non-decreasing; and the recursion gives the products \( 1, 2, 4, 12, 60 \).
+- \( (2, 2, 3, 5) \) is a prime factorization of \( 60 \). Its entries are prime by the small-primes remark above; it is non-decreasing; and the recursion gives the products \( 1, 2, 4, 12, 60 \).
 - \( (5) \) is a prime factorization of \( 5 \), with products \( 1, 5 \). A prime \( p \) has the one-entry factorization \( (p) \).
 - The degenerate case: the empty list is a prime factorization of \( 1 \). Its product is \( 1 \) by the first clause of the recursion, and the conditions "every entry is prime" and "non-decreasing" hold vacuously. Without this case the number \( 1 \) would have no factorization, and the theorem below would fail for \( n = 1 \); its existence proof uses this case to rule out \( n = 1 \).
 
@@ -67,7 +84,7 @@ Find the prime factorization of \( 360 \), and check each clause of @def-prime-f
 :::
 
 ::: {.solution}
-\( (2, 2, 2, 3, 3, 5) \). Its entries are prime by the small-primes remark of *Number Systems*, Section 2.5. It is non-decreasing. Its products, by the recursion, are \( 1, 2, 4, 8, 24, 72, 360 \). By the theorem below there is no other.
+\( (2, 2, 2, 3, 3, 5) \). Its entries are prime by the small-primes remark above. It is non-decreasing. Its products, by the recursion, are \( 1, 2, 4, 8, 24, 72, 360 \). By the theorem below there is no other.
 :::
 
 ## Primes dividing products
@@ -139,7 +156,7 @@ Suppose \( p \) were not prime. Since \( p \ge 2 \), the clause of @fd2:def-prim
 :::
 
 ::: {.remark}
-This is @fd2:thm-prime-factor on the constructed \( \nZ \), proved by a least element instead of strong induction. It also shortens the primality test of *Number Systems*, Section 2.5's small-primes remark. If \( p \ge 2 \) is not prime, its least divisor \( e \ge 2 \) is prime by the lemma, so it is not \( p \) itself, and \( p = ef \) with \( f \in \nZ \); then \( f > 0 \) (as \( e, p > 0 \)), \( f \ne 1 \), so \( f \ge 2 \) and \( f \mid p \), and therefore \( e \le f \) by the choice of \( e \). Multiplying by \( e > 0 \) gives \( e \cdot e \le ef = p \) (@fd3:prp-ordered-ring-rules (c), or equality if \( e = f \)). So to prove \( p \ge 2 \) prime it is enough to check that **no** \( d \) with \( d \ge 2 \) and \( d \cdot d \le p \) divides \( p \). For \( 11 \) only \( d = 2, 3 \) need checking, since \( 4 \cdot 4 = 16 > 11 \).
+This is @fd2:thm-prime-factor on the constructed \( \nZ \), proved by a least element instead of strong induction. It also shortens the primality test of the small-primes remark above. If \( p \ge 2 \) is not prime, its least divisor \( e \ge 2 \) is prime by the lemma, so it is not \( p \) itself, and \( p = ef \) with \( f \in \nZ \); then \( f > 0 \) (as \( e, p > 0 \)), \( f \ne 1 \), so \( f \ge 2 \) and \( f \mid p \), and therefore \( e \le f \) by the choice of \( e \). Multiplying by \( e > 0 \) gives \( e \cdot e \le ef = p \) (@fd3:prp-ordered-ring-rules (c), or equality if \( e = f \)). So to prove \( p \ge 2 \) prime it is enough to check that **no** \( d \) with \( d \ge 2 \) and \( d \cdot d \le p \) divides \( p \). For \( 11 \) only \( d = 2, 3 \) need checking, since \( 4 \cdot 4 = 16 > 11 \).
 :::
 
 ## The fundamental theorem
@@ -332,7 +349,7 @@ Find the prime factorizations of \( 1001 \) and of \( 2^{10} - 1 \), proving tha
 :::
 
 ::: {.solution}
-*Factorizations.* \( 1001 = 7 \cdot 143 = 7 \cdot 11 \cdot 13 \), and \( 2^{10} - 1 = 1024 - 1 = 1023 = 3 \cdot 341 = 3 \cdot 11 \cdot 31 \). So the prime factorizations are \( (7, 11, 13) \) and \( (3, 11, 31) \), both non-decreasing, once the entries are known to be prime. The primes \( 3 \) and \( 7 \) are covered by the small-primes remark of *Number Systems*, Section 2.5. For \( 11 \), \( 13 \) and \( 31 \) we use the remark after @lem-least-divisor-prime: it suffices that no \( d \ge 2 \) with \( d \cdot d \le p \) divides \( p \).
+*Factorizations.* \( 1001 = 7 \cdot 143 = 7 \cdot 11 \cdot 13 \), and \( 2^{10} - 1 = 1024 - 1 = 1023 = 3 \cdot 341 = 3 \cdot 11 \cdot 31 \). So the prime factorizations are \( (7, 11, 13) \) and \( (3, 11, 31) \), both non-decreasing, once the entries are known to be prime. The primes \( 3 \) and \( 7 \) are covered by the small-primes remark above. For \( 11 \), \( 13 \) and \( 31 \) we use the remark after @lem-least-divisor-prime: it suffices that no \( d \ge 2 \) with \( d \cdot d \le p \) divides \( p \).
 
 - \( p = 11 \) and \( p = 13 \): \( d \in \{2, 3\} \), since \( d \ge 4 \) gives \( d \cdot d \ge 16 \). The divisions \( 11 = 5 \cdot 2 + 1 = 3 \cdot 3 + 2 \) and \( 13 = 6 \cdot 2 + 1 = 4 \cdot 3 + 1 \) leave non-zero remainders.
 - \( p = 31 \): \( d \in \{2, 3, 4, 5\} \), since \( d \ge 6 \) gives \( d \cdot d \ge 36 \). The divisions \( 31 = 15 \cdot 2 + 1 = 10 \cdot 3 + 1 = 7 \cdot 4 + 3 = 6 \cdot 5 + 1 \) leave non-zero remainders.
@@ -430,7 +447,7 @@ thm-euclid-lemma-integers (proof): c = c * 1 = c(ax + by) = a(cx) + (bc)y, rearr
 thm-euclid-lemma-integers (claim): (aftermath) 4 | 12, 6 = 1*4 + 2, gcd(4, 2) = 2 | numerals; fd3:thm-integers-division-remainder (a) (cited); gcd(4, 2) = 2 from def-integer-gcd: 2 is a common divisor, a positive common divisor of 2 is <= 2 (fd3:prp-divisibility-rules-integers (e)); verify/ch03/thm-euclid-lemma-integers.py
 def-prime-factorization (claim): products of lists by fd2:def-sum-product used as a pattern; its recursive clause and the proof of its "Finite lists" remark use only fd2:thm-recursion, fd1:ax-induction on omega and the multiplication of the target set, so they run with X = Z (an ordered commutative ring, F3.2); equivalently read in Q containing Z, closed under * (fd3:prp-integers-embed-rationals); the general-index part (fd2:prp-integers-closed) is not used | the "Why the product exists" paragraph (fd2:thm-recursion with X = Z), stated in the text; group (iii) of the F3.1 citing rule (*Number Systems*, Section 1.4) with F = Q (fd3:thm-rationals-ordered-field), and products of integers stay in Z (fd3:prp-integers-embed-rationals), both cited in the text; blueprint ch03.md template ledger line
 def-prime-factorization (claim): the extension pbar with pbar_i = 1 for i > k is a function on Z>0 | definition by cases on i <= k (fd3:thm-integers-ordered-ring (a), order of N), inline
-def-prime-factorization (example): (2, 2, 3, 5) products 1, 2, 4, 12, 60; non-examples (2, 3, 2, 5), (2, 2, 15); 15 = 3 * 5 not prime | small-primes remark of *Number Systems*, Section 2.5 (by name); numerals; verify/ch03/def-prime-factorization.py
+def-prime-factorization (example): (2, 2, 3, 5) products 1, 2, 4, 12, 60; non-examples (2, 3, 2, 5), (2, 2, 15); 15 = 3 * 5 not prime | small-primes remark above (by name); numerals; verify/ch03/def-prime-factorization.py
 def-prime-factorization (claim): (why) 60 has twelve orderings of (2, 2, 3, 5) | counting 4!/2! = 12, stated as motivation, nothing depends on it; verify/ch03/def-prime-factorization.py
 def-prime-factorization (claim): (check) 360 = (2, 2, 2, 3, 3, 5), products 1, 2, 4, 8, 24, 72, 360 | small-primes remark (by name); numerals; verify/ch03/def-prime-factorization.py
 cor-prime-divides-product (proof): p >= 2 > 0, so (p, a) != (0, 0) and p is positive | 0 < 1 < 2 by fd3:prp-ordered-ring-rules (e) and (O3), transitivity (O2); used silently

@@ -302,7 +302,7 @@ Part (b) gives a second way to invert in \( \nF_p \), besides the Euclidean algo
 :::
 
 ::: {.solution}
-(i) \( 7 \) is prime (the small-primes remark of *Number Systems: From \(\nN\) to \(\nR\)*, Section 2.5) and \( 3 \ne 0 \) in \( \nF_7 \), so \( 3^6 = 1 \) by @thm-fermat-little (b). Since \( 100 = 16 \cdot 6 + 4 \), the power laws give \( 3^{100} = (3^6)^{16} \, 3^4 = 1 \cdot 81 \), and \( 81 = 11 \cdot 7 + 4 \). So \( 3^{100} = 4 \) in \( \nF_7 \).
+(i) \( 7 \) is prime (the small-primes remark of Section 1.2) and \( 3 \ne 0 \) in \( \nF_7 \), so \( 3^6 = 1 \) by @thm-fermat-little (b). Since \( 100 = 16 \cdot 6 + 4 \), the power laws give \( 3^{100} = (3^6)^{16} \, 3^4 = 1 \cdot 81 \), and \( 81 = 11 \cdot 7 + 4 \). So \( 3^{100} = 4 \) in \( \nF_7 \).
 
 (ii) \( 101 \) is prime: by the remark after @lem-least-divisor-prime it suffices that no \( d \) with \( 2 \le d \) and \( d \cdot d \le 101 \), that is \( 2 \le d \le 10 \), divides \( 101 \), and the remainders of \( 101 \) on division by \( 2, 3, \dots, 10 \) are \( 1, 2, 1, 1, 5, 3, 5, 2, 1 \). Since \( 2 \ne 0 \) in \( \nF_{101} \), @thm-fermat-little (b) gives \( 2^{100} = 2^{101 - 1} = 1 \). No multiplication was needed.
 
@@ -530,7 +530,7 @@ thm-fermat-little (proof): [a]^n = [a^n] by induction; [u] = [v] iff p | u - v |
 thm-fermat-little (claim): (after the proof) 2^4 - 2 = 14 and 2^3 - 1 = 7 are not multiples of 4; 4 does not divide 2 | verify/ch02/thm-fermat-little.py
 thm-fermat-little (claim): (after the proof) a^{q(p-1)+r} = (a^{p-1})^q a^r | fd2:prp-power-laws (a), (b) under the template line; inline
 thm-fermat-little (claim): Chapter 4 gives another proof of (b) | F5.4 blueprint, section 04 C4 (prose pointer; nothing depends on it)
-exm-frobenius-computations (example): 7, 101, 31 prime; 100 = 16 * 6 + 4; 81 = 4 in F7; repeated squares of 7 in F31; 31 = 4 * 7 + 3 | small-primes remark (F3.2 §05); remark after lem-least-divisor-prime; verify/ch02/exm-frobenius-computations.py
+exm-frobenius-computations (example): 7, 101, 31 prime; 100 = 16 * 6 + 4; 81 = 4 in F7; repeated squares of 7 in F31; 31 = 4 * 7 + 3 | small-primes remark (F5.1 §02); remark after lem-least-divisor-prime; verify/ch02/exm-frobenius-computations.py
 thm-fermat-little (claim): (check) 2^6 = 1 in F7; 3^5 = 243 = 1 in F11 | verify/ch02/thm-fermat-little.py
 exr-frobenius-and-fermat-a1 (solution): rows 5 and 6 | verify/ch02/exr-frobenius-and-fermat-a1.py
 exr-frobenius-and-fermat-b1 (solution): 13 prime; 5^38 = 12, 5^{-1} = 8 in F13 | remark after lem-least-divisor-prime; verify/ch02/exr-frobenius-and-fermat-b1.py

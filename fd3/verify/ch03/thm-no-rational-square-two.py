@@ -3,7 +3,7 @@ expansions quoted; the inequalities q < p < 2q follow from p^2 = 2q^2 (checked o
 pairs with p^2 close to 2q^2, where the descent's hypotheses are tested numerically); no
 p, q <= 2000 with p^2 = 2q^2.  Polynomial identities: degree 2 in two variables, checked on
 a 9 x 9 grid (enough points to determine the polynomial)."""
-QUOTED = {"identity": "2q^2 - p^2"}
+QUOTED = {"identity": "2q^2 - p^2", "check_p_q": (2, 1), "check_pp_qq": (0, 1), "check_value": -2}
 for p in range(-4, 5):
     for q in range(-4, 5):
         assert (2*q - p)**2 == 4*q*q - 4*p*q + p*p
@@ -20,4 +20,12 @@ for p in range(1, 400):
             assert q < p < 2*q
             pp, qq = 2*q - p, p - q
             assert 0 < qq < q and pp > 0 and pp*pp - 2*qq*qq == -(p*p - 2*q*q)
+# Quick check after the prompt answer: p = 2, q = 1 (p^2 = 4q^2)
+p, q = QUOTED["check_p_q"]
+assert p*p == 4*q*q
+assert not (p < 2*q) and 4*q*q <= p*p   # the step p < 2q fails; 2q <= p gives no contradiction
+assert (2*q - p, p - q) == QUOTED["check_pp_qq"]
+pp, qq = QUOTED["check_pp_qq"]
+assert not (pp > 0) and not (qq < q)
+assert pp*pp - 2*qq*qq == QUOTED["check_value"]
 print("ok")

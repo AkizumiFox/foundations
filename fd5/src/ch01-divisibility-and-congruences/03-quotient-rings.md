@@ -318,7 +318,7 @@ For each subset of \( \nZ \) below, decide whether it is an ideal of \( \nZ \). 
 
 (d) Yes: the ideal \( 0\nZ \), or directly as in the examples after @def-ideal-commutative-ring.
 
-(e) Yes: the set is \( 6\nZ \). If \( n = 6k \), then \( n^2 = 6(6k^2) \). Conversely, let \( 6 \mid n^2 \), say \( n^2 = 6m \). Then \( n \cdot n = 2(3m) = 3(2m) \), so \( 2 \mid nn \) and \( 3 \mid nn \). Since \( 2 \) and \( 3 \) are prime (the small-primes remark of *Number Systems*, Section 2.5), @cor-prime-divides-product (b) gives \( 2 \mid n \) and \( 3 \mid n \). As \( 1 = (-1) \cdot 2 + 1 \cdot 3 \), \( \gcd(2, 3) = 1 \) (@cor-coprime-iff-combination), so \( 6 = 2 \cdot 3 \mid n \) by @prp-coprime-divisors-product. Hence the set equals \( 6\nZ \), an ideal by @thm-integer-ideals-principal (a).
+(e) Yes: the set is \( 6\nZ \). If \( n = 6k \), then \( n^2 = 6(6k^2) \). Conversely, let \( 6 \mid n^2 \), say \( n^2 = 6m \). Then \( n \cdot n = 2(3m) = 3(2m) \), so \( 2 \mid nn \) and \( 3 \mid nn \). Since \( 2 \) and \( 3 \) are prime (the small-primes remark of Section 1.2), @cor-prime-divides-product (b) gives \( 2 \mid n \) and \( 3 \mid n \). As \( 1 = (-1) \cdot 2 + 1 \cdot 3 \), \( \gcd(2, 3) = 1 \) (@cor-coprime-iff-combination), so \( 6 = 2 \cdot 3 \mid n \) by @prp-coprime-divisors-product. Hence the set equals \( 6\nZ \), an ideal by @thm-integer-ideals-principal (a).
 :::
 
 ### C. Going deeper
