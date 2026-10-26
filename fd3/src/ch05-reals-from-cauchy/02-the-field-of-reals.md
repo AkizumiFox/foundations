@@ -77,7 +77,7 @@ Let \( a, a', b, b' \in \sC \) with \( a \sim a' \) and \( b \sim b' \); so \( a
 
 *Sum.* For every \( n \), \( (a_n + b_n) - (a'_n + b'_n) = (a_n - a'_n) + (b_n - b'_n) \), by the field axioms of \( \nQ \). So \( (a + b) - (a' + b') \) is the sum of two null sequences, which is null by @thm-limit-laws-ordered-field (a). Hence \( a + b \sim a' + b' \).
 
-*Negative.* For every \( n \), \( (-a_n) - (-a'_n) = -(a_n - a'_n) \) (@prp-ring-algebra (c)). So \( (-a) - (-a') = -(a - a') \), which is null by @thm-limit-laws-ordered-field (b). Hence \( -a \sim -a' \).
+*Negative.* For every \( n \), \( (-a_n) - (-a'_n) = (-a_n) + a'_n = -(a_n - a'_n) \) (@prp-ring-algebra (a), (c): the negative of a difference is the difference of the negatives, reversed). So \( (-a) - (-a') = -(a - a') \), which is null by @thm-limit-laws-ordered-field (b). Hence \( -a \sim -a' \).
 
 *Product.* For every \( n \), by the field axioms of \( \nQ \),
 \[
@@ -112,7 +112,7 @@ Two moves. A law for termwise operations is an equation between functions on \( 
 :::
 
 ::: {.proof}
-By @thm-cauchy-algebra-ordered-field, the termwise sum and product of two members of \( \sC \), the termwise negative of a member, and the constants \( (0)_n \), \( (1)_n \) lie in \( \sC \); so \( + \) and \( \cdot \) are functions \( \sC \times \sC \to \sC \). Each of (F1)–(F7) and (F9) asserts an equality of sequences, that is, of functions \( \nN \to \nQ \), so it holds if and only if it holds at every index \( n \) (@fd2:prp-function-equality). At the index \( n \) it is the same clause in \( \nQ \), with \( a_n, b_n, c_n \) in place of \( a, b, c \), and \( \nQ \) is a field (@thm-rationals-ordered-field). For example, (F9) at \( n \) reads \( a_n (b_n + c_n) = a_n b_n + a_n c_n \), and (F4) reads \( a_n + (-a_n) = 0 \).
+By @thm-cauchy-algebra-ordered-field, the termwise sum and product of two members of \( \sC \), the termwise negative of a member, and the constants \( (0)_n \), \( (1)_n \) lie in \( \sC \); so \( + \) and \( \cdot \) are functions \( \sC \times \sC \to \sC \). With the witnesses \( (0)_n \), \( -a \) and \( (1)_n \) for (F3), (F4) and (F7), each of (F1)–(F7) and (F9) asserts an equality of sequences, that is, of functions \( \nN \to \nQ \), so it holds if and only if it holds at every index \( n \) (@fd2:prp-function-equality). At the index \( n \) it is the same clause in \( \nQ \), with \( a_n, b_n, c_n \) in place of \( a, b, c \), and \( \nQ \) is a field (@thm-rationals-ordered-field). For example, (F9) at \( n \) reads \( a_n (b_n + c_n) = a_n b_n + a_n c_n \), and (F4) reads \( a_n + (-a_n) = 0 \).
 :::
 
 Every element of \( \nR \) is some \( [a] \) (@fd2:def-quotient-set), so let \( a, b, c \in \sC \). By @def-reals-operations, applied once for each operation on each side, \( ([a] + [b]) + [c] = [(a + b) + c] \) and \( [a] + ([b] + [c]) = [a + (b + c)] \); the sequences agree by (F2) in \( \sC \) (the claim), so the classes are equal. Distributivity goes the same way:
@@ -122,7 +122,7 @@ Every element of \( \nR \) is some \( [a] \) (@fd2:def-quotient-set), so let \( 
 &= [ab + ac] = [ab] + [ac] = [a][b] + [a][c] ,
 \end{aligned}
 \]
-where the step from the first line to the second is (F9) in \( \sC \). For (F4): \( [a] + (-[a]) = [a + (-a)] = [(0)_n] = 0_{\nR} \), so the additive inverse of \( [a] \) is \( -[a] \). Every other clause of (F1)–(F7) and (F9) is proved in the same way: move to representatives, use the clause in \( \sC \), move back. Only the first move needed an argument, and @thm-reals-operations-well-defined supplied it.
+where the step from the first line to the second is (F9) in \( \sC \). For (F4): \( [a] + (-[a]) = [a + (-a)] = [(0)_n] = 0_{\nR} \), so the additive inverse of \( [a] \) is \( -[a] \). Every other clause of (F1)–(F7) and (F9) is proved in the same way: move to representatives, use the clause in \( \sC \), move back. Both moves are @def-reals-operations; what made them legitimate is @thm-reals-operations-well-defined, which turned the rules into functions on \( \nR \).
 
 Finally, \( 0_{\nR} \ne 1_{\nR} \): otherwise \( (1)_n \sim (0)_n \) (@fd2:thm-classes-partition (b)), that is, \( (1)_n \) is null; but for \( \varepsilon = 1/2 \) every term has \( \abs{1 - 0} = 1 \ge 1/2 \). This proves the theorem.
 :::
@@ -207,7 +207,7 @@ By @def-reals-operations, with \( x - y \coloneqq x + (-y) \) in the ring \( \nR
 \[
 \Bigl( 2 + \frac{1}{n + 1} \Bigr) x_n - 2 d_n = \Bigl( 2 + \frac{1}{n + 1} \Bigr) (x_n - d_n) + \frac{1}{n + 1} \, d_n .
 \]
-Multipliers: \( \abs{2 + 1/(n + 1)} \le 3 \), since \( 0 < 1/(n + 1) \le 1 \); and \( \abs{d_n} \le 2 \), since \( 1 \le d_n < 2 \) ((T1) and (T3) before @exm-truncations-equivalent). So the first summand is null (null times bounded by \( 3 \)) and the second is null (null times bounded by \( 2 \)).
+Multipliers: \( \abs{2 + 1/(n + 1)} \le 3 \), since \( 0 < 1/(n + 1) \le 1 \); and \( \abs{d_n} \le 2 \), since \( 1 = d_0 \le d_n \) by (T1), and \( d_n^2 \le 2 < 4 \) by (T3), so \( d_n < 2 \) (@prp-ordered-ring-rules (g)); (T1) and (T3) are those before @exm-truncations-equivalent. So the first summand is null (null times bounded by \( 3 \)) and the second is null (null times bounded by \( 2 \)).
 
 (d) Changing both factors of a product at once is split into two changes, one factor at a time, by adding and subtracting a mixed term. Each change is a null sequence times a bounded one, because Cauchy sequences are bounded, so each is null, and so is their sum.
 :::
@@ -221,7 +221,7 @@ Directly from @def-reals-operations and @thm-well-defined-on-classes, prove that
 :::
 
 ::: {.solution}
-*Well defined.* \( -a \in \sC \) for \( a \in \sC \) (@thm-cauchy-algebra-ordered-field (b)). Let \( a \sim a' \). For every \( n \), \( (-a_n) - (-a'_n) = -(a_n - a'_n) \) (@prp-ring-algebra (c)), and \( (-(a_n - a'_n))_n \) is null because \( a - a' \) is (@thm-limit-laws-ordered-field (b)). So \( -a \sim -a' \), and @thm-well-defined-on-classes (a) gives a function \( \nR \to \nR \).
+*Well defined.* \( -a \in \sC \) for \( a \in \sC \) (@thm-cauchy-algebra-ordered-field (b)). Let \( a \sim a' \). For every \( n \), \( (-a_n) - (-a'_n) = (-a_n) + a'_n = -(a_n - a'_n) \) (@prp-ring-algebra (a), (c): the negative of a difference is the difference of the negatives, reversed), and \( (-(a_n - a'_n))_n \) is null because \( a - a' \) is (@thm-limit-laws-ordered-field (b)). So \( -a \sim -a' \), and @thm-well-defined-on-classes (a) gives a function \( \nR \to \nR \).
 
 *Inverse.* \( [a] + (-[a]) = [a] + [-a] = [a + (-a)] = [(a_n + (-a_n))_n] = [(0)_n] = 0_{\nR} \), by @def-reals-operations and (F4) in \( \nQ \) at each index.
 
@@ -284,7 +284,7 @@ State precisely what must be proved for the rule \( [a][b] \coloneqq [ab] \) to 
 :::
 
 ::: {.solution}
-*What must be shown.* (i) For \( a, b \in \sC \), the termwise product \( ab \) is in \( \sC \), so that \( [ab] \) is a real number. (ii) If \( a \sim a' \) and \( b \sim b' \), then \( ab \sim a'b' \). By @thm-well-defined-on-classes (b), (i) and (ii) give exactly one function \( \nR \times \nR \to \nR \) with \( ([a], [b]) \mapsto [ab] \); without (ii), one pair of classes could receive two values, and (Fn2) of @fd2:def-function would fail.
+*What must be shown.* (i) For \( a, b \in \sC \), the termwise product \( ab \) is in \( \sC \), so that \( [ab] \) is a real number. (ii) If \( a \sim a' \) and \( b \sim b' \), then \( ab \sim a'b' \). Taking \( b' = b \) and then \( a' = a \) in (ii), with \( b \sim b \) and \( a \sim a \) by reflexivity, gives the two one-argument hypotheses of @thm-well-defined-on-classes (b). By that theorem, (i) and (ii) give exactly one function \( \nR \times \nR \to \nR \) with \( ([a], [b]) \mapsto [ab] \); without (ii), one pair of classes could receive two values, and (Fn2) of @fd2:def-function would fail.
 
 *(i) Bound, then shrink.* Let \( a, b \in \sC \). Both are bounded (@prp-cauchy-bounded-ordered-field); let \( M \in \nQ_{>0} \) be a bound for both (the larger of the two bounds). For all \( m, n \),
 \[
@@ -293,7 +293,7 @@ State precisely what must be proved for the rule \( [a][b] \coloneqq [ab] \) to 
 &\le M \abs{b_m - b_n} + M \abs{a_m - a_n} ,
 \end{aligned}
 \]
-by @prp-absolute-value-ordered-field (b), (e). Let \( \varepsilon \in \nQ_{>0} \), and let \( N \) be a threshold with tolerance \( \varepsilon/(2M) \) for both \( a \) and \( b \). For \( m, n \ge N \), the right side is less than \( M \cdot \varepsilon/(2M) + M \cdot \varepsilon/(2M) = \varepsilon \). So \( ab \in \sC \). (This is @thm-cauchy-algebra-ordered-field (c), which may be cited instead.)
+by @prp-absolute-value-ordered-field (b), (e) and @prp-ordered-field-halves (d). Let \( \varepsilon \in \nQ_{>0} \), and let \( N \) be a threshold with tolerance \( \varepsilon/(2M) \) for both \( a \) and \( b \). For \( m, n \ge N \), the right side is less than \( M \cdot \varepsilon/(2M) + M \cdot \varepsilon/(2M) = \varepsilon \) (@prp-ordered-ring-rules (b), (c), as \( M > 0 \)). So \( ab \in \sC \). 
 
 *(ii) The add-and-subtract decomposition.* For every \( n \),
 \[
@@ -304,7 +304,7 @@ The multipliers \( a \) and \( b' \) are in \( \sC \), hence bounded (@prp-cauch
 **Marking scheme.** (10 points)
 
 - 2: states what must be shown (the product lies in \( \sC \); equivalent inputs give equivalent outputs) and why this makes the rule a function.
-- 2: proves \( ab \in \sC \), by "bound, then shrink" with the threshold's dependence on \( \varepsilon \) and \( M \) clear, or by citing @thm-cauchy-algebra-ordered-field (c).
+- 2: proves \( ab \in \sC \), by "bound, then shrink" with the threshold's dependence on \( \varepsilon \) and \( M \) clear.
 - 2: the add-and-subtract decomposition, or any identity writing \( a_n b_n - a'_n b'_n \) as a sum of (null) \( \times \) (sequence) terms.
 - 2: boundedness of the two multipliers, justified by "Cauchy implies bounded".
 - 2: concludes with null \( \times \) bounded is null and null \( + \) null is null.
@@ -317,16 +317,25 @@ A proof that changes one factor at a time (first \( ab \sim a'b \), then \( a'b 
 
 ::: {.enumerate options="label=(\alph*)"}
 1. Let \( a \) be a sequence of rationals such that \( (a_n^2)_n \) is null. Prove that \( a \) is null.
-2. Deduce, using only @def-reals-operations and (a), and not @thm-reals-field, that for \( x \in \nR \), \( x^2 = 0_{\nR} \) implies \( x = 0_{\nR} \).
+2. Deduce, without @thm-reals-field (that is, without inverses), that for \( x \in \nR \), \( x^2 = 0_{\nR} \) implies \( x = 0_{\nR} \).
 :::
 :::
 
 ::: {.solution}
-(a) Let \( \varepsilon \in \nQ_{>0} \). Then \( \varepsilon^2 \in \nQ_{>0} \), so there is \( N \) with \( \abs{a_n^2} < \varepsilon^2 \) for every \( n \ge N \). For such \( n \), \( \abs{a_n}^2 = a_n^2 = \abs{a_n^2} < \varepsilon^2 \) (@prp-absolute-value-ordered-field (b), and \( a_n^2 \ge 0 \)), and \( \abs{a_n} \ge 0 \), \( \varepsilon > 0 \); so \( \abs{a_n} < \varepsilon \) by @prp-ordered-ring-rules (g). The threshold for \( \varepsilon \) is the threshold of \( (a_n^2) \) for \( \varepsilon^2 \). So \( a \) is null.
+(a) Let \( \varepsilon \in \nQ_{>0} \). Then \( \varepsilon^2 \in \nQ_{>0} \), so there is \( N \) with \( \abs{a_n^2} < \varepsilon^2 \) for every \( n \ge N \). For such \( n \), \( \abs{a_n}^2 = a_n^2 = \abs{a_n^2} < \varepsilon^2 \) (@prp-absolute-value-ordered-field (b), and \( a_n^2 \ge 0 \) by @prp-ordered-ring-rules (e), or \( a_n = 0 \)), and \( \abs{a_n} \ge 0 \), \( \varepsilon > 0 \); so \( \abs{a_n} < \varepsilon \) by @prp-ordered-ring-rules (g). The threshold for \( \varepsilon \) is the threshold of \( (a_n^2) \) for \( \varepsilon^2 \). So \( a \) is null.
 
 (b) Let \( x = [a] \) with \( a \in \sC \). Then \( x^2 = [a][a] = [(a_n^2)_n] \) by @def-reals-operations. If \( x^2 = 0_{\nR} = [(0)_n] \), then \( (a_n^2)_n \sim (0)_n \) (@fd2:thm-classes-partition (b)), that is, \( (a_n^2)_n \) is null. By (a), \( a \) is null, so \( a \sim (0)_n \) and \( x = 0_{\nR} \).
 
 In a field this also follows from inverses: if \( x \ne 0_{\nR} \), then \( x = x^{-1} x^2 = x^{-1} 0_{\nR} = 0_{\nR} \), a contradiction. The direct proof shows the fact is already visible in the representatives, before any inverse exists. Exercise B3 is the companion fact for products: there the termwise statement fails in \( \sC \), and only the classes behave.
+
+**Marking scheme.** (10 points)
+
+- 3: chooses the tolerance \( \varepsilon^2 \) for \( (a_n^2) \) and states the threshold.
+- 3: \( \abs{a_n}^2 = \abs{a_n^2} \) and the step from squares to \( \abs{a_n} < \varepsilon \) by @prp-ordered-ring-rules (g), with the nonnegativity hypotheses.
+- 2: (b), moving from \( x^2 = 0_{\nR} \) to \( (a_n^2) \) null via @def-reals-operations.
+- 2: concludes \( x = 0_{\nR} \).
+
+Fatal error: using \( x^{-1} \), which does not exist yet.
 :::
 
 <!-- dependency ledger
@@ -344,11 +353,11 @@ exm-termwise-reciprocal-ill-defined (solution): (0, 1, 1, 1, ...) is in C (thres
 exm-termwise-reciprocal-ill-defined (solution): 0 * y = y * 0 = 0 in a commutative ring | (F6), prp-ring-algebra (b) (cited)
 def-reals-operations (claim): (check) (1 + 1/(n + 1)) - 1 = 1/(n + 1) is null, so the first factor is 1_R | exm-first-sequences-ordered-field (b) (cited)
 def-reals-operations (claim): (check) (1 + 1/(n + 1)) * 2 - 2 = 2/(n + 1) | field arithmetic; verify/ch05/exm-termwise-reciprocal-ill-defined.py
-exr-the-field-of-reals-a1 (solution): bounds 3 and 2 for the multipliers; the split in the run | (T1) and (T3) before exm-truncations-equivalent (cited); verify/ch05/exr-the-field-of-reals-a1.py
+exr-the-field-of-reals-a1 (solution): bounds 3 and 2 for the multipliers; the split in the run | (T1) and (T3) before exm-truncations-equivalent, prp-ordered-ring-rules (g) (cited); verify/ch05/exr-the-field-of-reals-a1.py
 exr-the-field-of-reals-b2 (solution): case analysis for |max(x, y) - max(x', y')| | inline; verify/ch05/exr-the-field-of-reals-b2.py
 exr-the-field-of-reals-b2 (solution): ||t| - 0| = |t - 0| | prp-absolute-value-ordered-field (a), (b); inline
 exr-the-field-of-reals-b3 (solution): (1, 0, 0, ...) and (0, 1, 1, ...) are in C, products 0 | exm-finite-change-equivalent (a) (cited); verify/ch05/exr-the-field-of-reals-b3.py
 exr-the-field-of-reals-b3 (solution): (b), (c) | def-reals-operations, thm-reals-field, lem-field-fraction-rules (d), prp-tail-change-ordered-field (a) (cited)
 exr-the-field-of-reals-a1 (solution): (1/(n + 1)) is null in Q; a, a' in C | exm-first-sequences-ordered-field (b), thm-cauchy-algebra-ordered-field (a), (b) (cited)
-exr-the-field-of-reals-c1 (solution): M * e/(2M) + M * e/(2M) = e | field arithmetic, prp-ordered-field-halves (b)
+exr-the-field-of-reals-c1 (solution): M * e/(2M) + M * e/(2M) = e | field arithmetic, prp-ordered-field-halves (b), (d), prp-ordered-ring-rules (b), (c)
 -->

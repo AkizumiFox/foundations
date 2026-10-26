@@ -170,14 +170,14 @@ There is none, and @thm-constructed-rationals-dense does not apply. The two sequ
 
 ::: {.enumerate options="label=(\alph*)"}
 1. Show that \( \kappa(q^k) = \kappa(q)^k \) for every \( q \in \nQ \) and \( k \in \nN \), the powers being those of @def-naturals-in-ordered-field in \( \nQ \) and in \( \nR \).
-2. Let \( r \) be as in @exm-sqrt2-class. Find the integer parts of \( r \) and of \( 10r \), and justify each from the terms \( d_k \): use \( d_1 = 7/5 \), \( d_2 = 141/100 \), and the bounds of @exm-truncations-equivalent.
+2. Let \( r \) be as in @exm-sqrt2-class. Find the integer parts of \( r \) and of \( 10r \), and justify each from the terms \( d_k \): use \( d_1 = 7/5 \), \( d_2 = 141/100 \), and the bounds (T1) and (T2) stated before @exm-truncations-equivalent.
 3. True or false: if \( a \in \sC \), \( q \in \nQ \) and \( a_n < q \) for every \( n \), then \( [a] < q \). Give a reason or a counterexample.
 4. Is \( \kappa \colon \nQ \to \nR \) surjective?
 :::
 :::
 
 ::: {.solution}
-(a) By @fd1:ax-induction on \( k \), with base \( P(0) \). Base: \( \kappa(q^0) = \kappa(1) = 1_{\nR} = \kappa(q)^0 \), by @def-naturals-in-ordered-field (b) in \( \nQ \) and in \( \nR \) and @thm-rational-embedding (a). Step: if \( \kappa(q^k) = \kappa(q)^k \), then
+(a) By induction on \( k \) (@fd1:ax-induction, read on \( \nN \) through @cor-omega-identification (b)), applied to the property "\( \kappa(q^k) = \kappa(q)^k \)". Base: \( \kappa(q^0) = \kappa(1) = 1_{\nR} = \kappa(q)^0 \), by @def-naturals-in-ordered-field (b) in \( \nQ \) and in \( \nR \) and @thm-rational-embedding (a). Step: if \( \kappa(q^k) = \kappa(q)^k \), then
 \[
 \kappa(q^{k+1}) = \kappa(q^k q) = \kappa(q^k) \, \kappa(q) = \kappa(q)^k \, \kappa(q) = \kappa(q)^{k+1} ,
 \]
@@ -242,7 +242,7 @@ Let \( a \in \sC \). We prove that \( \kappa(a_k) \to [a] \) in \( \nR \): **a C
 1. so \( \abs{[a] - a_k} = [(\abs{a_m - a_k})_m] \), by @exr-ordering-the-reals-c1 (b);
 2. since \( a \in \sC \), fix \( N \) with \( \abs{a_m - a_k} < 1/(2n) \) for all \( m, k \ge N \);
 3. its terms are \( < 1/(2n) \) for \( m \ge N \), so \( \abs{[a] - a_k} < 1/(2n) \);
-4. \( 1/(2n) < 1/n \); take \( K = N \);
+4. so \( \abs{[a] - a_k} \le 1/(2n) < 1/n \), and \( K = N \) serves;
 5. let \( k \ge N \);
 6. let \( n \in \nZ_{>0} \); by @exr-rationals-inside-the-reals-b1 (b), it suffices to find \( K \) with \( \abs{[a] - a_k} < 1/n \) for every \( k \ge K \), since \( \abs{a_k - [a]} = \abs{[a] - a_k} \) (@prp-absolute-value-ordered-field (b));
 7. \( [a] - a_k \) is represented by \( (a_m - a_k)_m \);
@@ -254,7 +254,7 @@ Let \( a \in \sC \). We prove that \( \kappa(a_k) \to [a] \) in \( \nR \): **a C
 ::: {.solution}
 *Order:* (vi), (ii), (v), (vii), (i), (ix), (iv). No other order is admissible: line (ii) introduces \( N \), which line (v) needs; line (v) fixes the \( k \) that lines (vii), (i) and (ix) are about; line (i) rewrites the class that line (vii) names; line (ix) bounds that class; and line (iv) concludes from line (ix), so it comes last.
 
-*Line (iii)* uses the strict version of @lem-termwise-order, which is false: termwise \( < \) passes to classes only as \( \le \) (@exm-strict-termwise-order-fails). That is why the proof aims at \( 1/(2n) \) and then uses \( 1/(2n) < 1/n \).
+*Line (iii)* uses the strict version of @lem-termwise-order, which is false: termwise \( < \) passes to classes only as \( \le \) (@exm-strict-termwise-order-fails). Concretely, for \( a_m = 1/2 - 1/(m+2) \), \( n = 1 \) and \( k = 0 \), every term \( \abs{a_m - a_0} \) is \( < 1/2 \), yet \( \abs{[a] - a_0} = 1/2 \). That is why the proof aims at \( 1/(2n) \) and then uses \( 1/(2n) < 1/n \).
 
 *Line (viii)* claims a threshold \( N_k \) for every \( k \), and the Cauchy property does not supply one for an early \( k \): \( a_k \) can be far from all later terms. For \( a = (5, 0, 0, \dots) \in \sC \), \( n = 1 \) and \( k = 0 \), \( \abs{a_m - a_0} = 5 \) for every \( m \ge 1 \), so no \( N_0 \) exists. The Cauchy property gives \( \abs{a_m - a_k} < 1/(2n) \) only when both \( m \) and \( k \) are at least one \( N \), which is why line (v) takes \( k \ge N \). (If line (viii) did hold for every \( k \), the remaining lines would give the bound for every \( k \), so it is the claim that is unjustified, not the dependence on \( k \).)
 
@@ -332,7 +332,7 @@ Fix \( \delta \) and \( N_1 \) with \( b_n - a_n \ge \delta \) for \( n \ge N_1 
 ::: {.solution}
 (a) Write \( x = [a] \) and \( y = [b] \) with \( a, b \in \sC \). By @def-reals-order, \( y - x = [b - a] \in P \), so \( b - a \) is positive (@prp-positivity-well-defined). Fix \( \delta \in \nQ_{>0} \) and \( N_1 \in \nN \) with
 \[
-b_n - a_n \ge \delta \quad \text{for every } n \ge N_1
+b_n - a_n \ge \delta \quad \text{for every } n \ge N_1 .
 \]
 Then \( \delta/4 = (\delta/2)/2 \in \nQ_{>0} \) (@prp-ordered-field-halves (b), twice). Since \( a \) and \( b \) are Cauchy in \( \nQ \), fix \( N_2 \) with \( \abs{a_m - a_n} < \delta/4 \) for all \( m, n \ge N_2 \), and \( N_3 \) with \( \abs{b_m - b_n} < \delta/4 \) for all \( m, n \ge N_3 \). Let
 \[
@@ -357,7 +357,7 @@ The rational \( q \) depends on the representatives \( a, b \) and on the consta
 
 **Marking scheme.** (10 points)
 - 2: the margin \( \delta \) from positivity of \( b - a \), named before any index.
-- 3: Cauchy thresholds at the tolerance \( \delta/4 \), and one \( N \) beyond all three thresholds.
+- 3: Cauchy thresholds at a tolerance small enough for the estimates (relative to \( \delta \)), and one \( N \) beyond every threshold used.
 - 3: both estimates \( q - a_n > \delta/4 \) and \( b_n - q > \delta/4 \) for every \( n \ge N \).
 - 2: the estimates read as positivity of two representatives, of \( \kappa(q) - x \) and \( y - \kappa(q) \).
 Fatal errors (0 for the step): a midpoint of \( a_n \) and \( b_n \) with \( n \) varying; \( q \) compared only with \( a_N \) and \( b_N \), not with every later term.

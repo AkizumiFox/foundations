@@ -182,6 +182,27 @@ items:
     evidence: 01-cauchy-sequences-of-rationals.md:200 In the proof of (T3), the step (1/10^k)(1/10^k)
       <= 1/10^k has no @ref. The dependency ledger says this source is cited, but the text does not cite
       it.
+  - stage: S7r
+    verdict: correct
+    by: rereferee
+    hash: ab84fdcfd221
+    date: '2026-10-26'
+    model: claude-opus-5-5
+    evidence: I checked the three revised steps against the cited statements. prp-ordered-field-halves
+      (d) (fd3 4.1) is used with 0<=1/10^k<=1/10^k and 0<=1/10^k<=1. prp-ordered-ring-rules (b) and (e)
+      (fd3 2.4) give x+d > 2 > 1. prp-ring-algebra (c) plus distributivity give the difference of squares.
+      The rest of the solution (the squeeze with N_0=1, the null u_k) is unchanged and still sound. The
+      added ledger l
+  - stage: S7r
+    verdict: correct
+    by: rereferee
+    hash: ab84fdcfd221
+    date: '2026-10-26'
+    model: claude-opus-5-5
+    evidence: '01:197: prp-ordered-field-halves (d) applied with (1/10^k,1/10^k) and (1/10^k,1) gives
+      (1/10^k)^2 <= 1/10^k. 01:212: x_k + d_k > 1+1 > 1 follows from rules (b) and (e). 01:219: the difference
+      of squares follows by distributivity and prp-ring-algebra (c), and |x_k+d_k| = x_k+d_k because the
+      sum is positive. The ledger lines were updated.'
 - key: exm-finite-change-equivalent
   kind: exm
   file: 01-cauchy-sequences-of-rationals.md
@@ -534,6 +555,23 @@ items:
       of -a_n is -a. The product step uses prp-cauchy-bounded and prp-null-times-bounded, whose hypotheses
       match. The function step gets the one-argument hypotheses by reflexivity, as ledger line 346 records.
       The sidecar runs ok. (M'' at 02:86 is introduced and never used, which is harmless.)'
+  - stage: S7r
+    verdict: minor
+    by: rereferee
+    hash: c68293992e40
+    date: '2026-10-26'
+    model: claude-opus-5-5
+    evidence: 'Line 80, Negative step: the parenthetical ''the negative of a difference is the difference
+      of the negatives, reversed'' is incorrect (see F036). The Sum and Product steps are unchanged and
+      correct.'
+  - stage: S7r
+    verdict: correct
+    by: rereferee
+    hash: c68293992e40
+    date: '2026-10-26'
+    model: claude-opus-5-5
+    evidence: '02:77: (-a_n)-(-a''_n) = -a_n + a''_n = -(a_n-a''_n) follows from ring-algebra (a) (-(-x)=x)
+      and (c) with distributivity. The gloss is informal but true.'
 - key: thm-reals-commutative-ring
   kind: thm
   file: 02-the-field-of-reals.md
@@ -601,6 +639,23 @@ items:
     model: claude-opus-5-5
     evidence: 02-the-field-of-reals.md:125 The meta-claim 'Only the first move needed an argument' is
       not accurate as written.
+  - stage: S7r
+    verdict: correct
+    by: rereferee
+    hash: 2c585bfdad1e
+    date: '2026-10-26'
+    model: claude-opus-5-5
+    evidence: Witnesses (0)_n, -a, (1)_n are now named for (F3), (F4), (F7) at line 115. The closing remark
+      at line 125 now credits both moves to def-reals-operations, legitimised by thm-reals-operations-well-defined.
+  - stage: S7r
+    verdict: correct
+    by: rereferee
+    hash: 2c585bfdad1e
+    date: '2026-10-26'
+    model: claude-opus-5-5
+    evidence: 02:112 names the witnesses (0)_n, -a and (1)_n for (F3), (F4) and (F7), so each clause becomes
+      an equality of sequences. 02:122 credits both moves to def-reals-operations and their legitimacy
+      to thm-reals-operations-well-defined. The proof is termwise and has no F5.1 dependency.
 - key: thm-reals-field
   kind: thm
   file: 02-the-field-of-reals.md
@@ -822,6 +877,22 @@ items:
     model: claude-opus-5-5
     evidence: 02-the-field-of-reals.md:206 The bound d_n<2 is credited to (T1) and (T3), but (T3) gives
       only d_n^2<=2. The step from that to d_n<2 is missing.
+  - stage: S7r
+    verdict: correct
+    by: rereferee
+    hash: acead9f45083
+    date: '2026-10-26'
+    model: claude-opus-5-5
+    evidence: 1 = d_0 <= d_n by (T1) (01:165,185). d_n^2 <= 2 < 4 by (T3). With d_n >= 0 and 2 >= 0, prp-ordered-ring-rules
+      (g) gives d_n < 2, so |d_n| <= 2. The ledger line was updated.
+  - stage: S7r
+    verdict: correct
+    by: rereferee
+    hash: acead9f45083
+    date: '2026-10-26'
+    model: claude-opus-5-5
+    evidence: '|d_n| <= 2: 1 = d_0 <= d_n by (T1), and d_n^2 <= 2 < 4 gives d_n < 2 by ordered-ring-rules
+      (g), since both sides are non-negative. The ledger was updated.'
 - key: exr-the-field-of-reals-b1
   kind: exr
   file: 02-the-field-of-reals.md
@@ -877,6 +948,22 @@ items:
     model: claude-opus-5-5
     evidence: 02-the-field-of-reals.md:224 The identity (-a_n) - (-a'_n) = -(a_n - a'_n) is cited to prp-ring-algebra
       (c), which does not state it.
+  - stage: S7r
+    verdict: minor
+    by: rereferee
+    hash: 8428244e429e
+    date: '2026-10-26'
+    model: claude-opus-5-5
+    evidence: Line 224 carries the same inaccurate gloss 'difference of the negatives, reversed'. The
+      step (-a_n)+a'_n = -(a_n - a'_n) is not justified (F036).
+  - stage: S7r
+    verdict: correct
+    by: rereferee
+    hash: 8428244e429e
+    date: '2026-10-26'
+    model: claude-opus-5-5
+    evidence: The negative well-definedness argument is the same as in the proof and is correct. thm-well-defined-on-classes
+      (a) is applied correctly.
 - key: exr-the-field-of-reals-b2
   kind: exr
   file: 02-the-field-of-reals.md
@@ -1053,6 +1140,26 @@ items:
     model: claude-opus-5-5
     evidence: 02-the-field-of-reals.md:282 The statement requires a proof of ab in C, but the solution
       and the marking scheme give full credit for citing thm-cauchy-algebra-ordered-field (c).
+  - stage: S7r
+    verdict: correct
+    by: rereferee
+    hash: bf1dc8b48d59
+    date: '2026-10-26'
+    model: claude-opus-5-5
+    evidence: The reduction of (ii) to the one-argument hypotheses of thm-well-defined-on-classes (b)
+      by reflexivity is now explicit. prp-ordered-field-halves (d) (0<=|a_m|<=M, 0<=|b_m-b_n|) and prp-ordered-ring-rules
+      (b), (c) with M>0 cover the inequalities. The 'may be cited' escape was removed from both the solution
+      and the scheme, matching the statement. The ledger line was updated.
+  - stage: S7r
+    verdict: correct
+    by: rereferee
+    hash: bf1dc8b48d59
+    date: '2026-10-26'
+    model: claude-opus-5-5
+    evidence: 'The (ii) to two-hypotheses reduction is right: take b''=b, then a''=a, using reflexivity,
+      which gives exactly the hypotheses of thm-well-defined-on-classes (b). The bound |a_m b_m - a_n
+      b_n| <= M|..| + M|..| now cites ordered-field-halves (d), and the final strict sum cites rules (b)
+      and (c) with M>0. Removing the ''may cite instead'' option is consistent with the marking scheme.'
 - key: exr-the-field-of-reals-c2
   kind: exr
   file: 02-the-field-of-reals.md
@@ -1110,6 +1217,23 @@ items:
     model: claude-opus-5-5
     evidence: 02-the-field-of-reals.md:315 C2 is an epsilon-N proof a reader will write up in full, but
       its solution has no Marking scheme paragraph.
+  - stage: S7r
+    verdict: correct
+    by: rereferee
+    hash: 11531123fb98
+    date: '2026-10-26'
+    model: claude-opus-5-5
+    evidence: '(b) is reworded to ''without thm-reals-field (that is, without inverses)'', which the solution
+      respects. In (a), a_n^2 >= 0 now cites prp-ordered-ring-rules (e) or a_n = 0. A 10-point marking
+      scheme (3/3/2/2, fatal error: x^{-1}) was added, per STYLE.md.'
+  - stage: S7r
+    verdict: correct
+    by: rereferee
+    hash: 11531123fb98
+    date: '2026-10-26'
+    model: claude-opus-5-5
+    evidence: (b) is restated as 'without inverses'. (a) adds a_n^2 >= 0 via rules (e), or a_n=0. The
+      new 10-point marking scheme adds up (3+3+2+2) and names the fatal error of using x^{-1}.
 - key: exm-strict-termwise-order-fails
   kind: exm
   file: 03-ordering-the-reals.md
@@ -1250,6 +1374,23 @@ items:
       tolerance delta/2; prp-absolute-value-ordered-field (d) gives -delta/2 < a'_n - a_n, and adding
       a_n is ledgered (03:492). a'_n > delta/2 gives a'_n >= delta/2. The max is ledgered (03:493). The
       remark at 03:125 matches prp-sign-stable-ordered-field (c/2 margin).
+  - stage: S7r
+    verdict: correct
+    by: rereferee
+    hash: 9e6331d13c5a
+    date: '2026-10-26'
+    model: claude-opus-5-5
+    evidence: 03:122. The chain -delta/2 < a'_n - a_n, so a'_n > a_n - delta/2 >= delta - delta/2 = delta/2,
+      is fully cited (abs (d), ring rules (b), halves (b)). The margin delta/2 and threshold max{N, N''}
+      are valid.
+  - stage: S7r
+    verdict: correct
+    by: rereferee
+    hash: 9e6331d13c5a
+    date: '2026-10-26'
+    model: claude-opus-5-5
+    evidence: '03:119: -delta/2 < a''_n - a_n by abs (d), so a''_n > a_n - delta/2 >= delta - delta/2
+      = delta/2. Rules (b) and halves (b) are cited.'
 - key: exm-method-margin-before-index
   kind: exm
   file: 03-ordering-the-reals.md
@@ -1281,6 +1422,22 @@ items:
     model: claude-opus-5-5
     evidence: '03-ordering-the-reals.md:132 The template has two goals: b positive, or [a] < [b]. Its
       step (3) says ''check b_n >= delta beyond it'', which is the wrong check for the second goal.'
+  - stage: S7r
+    verdict: correct
+    by: rereferee
+    hash: 63bdb4181c29
+    date: '2026-10-26'
+    model: claude-opus-5-5
+    evidence: 03:132. Step (1) is now consistent with exm-margin-then-index. Step (3) checks b or b -
+      a, as def-reals-order requires.
+  - stage: S7r
+    verdict: correct
+    by: rereferee
+    hash: 63bdb4181c29
+    date: '2026-10-26'
+    model: claude-opus-5-5
+    evidence: Template step (3) now checks the target sequence (b, or b - a when the goal is [a]<[b]).
+      Step (1) is reworded so that it allows a fraction of a limit value. Both are correct.
 - key: thm-reals-positive-cone
   kind: thm
   file: 03-ordering-the-reals.md
@@ -1354,6 +1511,22 @@ items:
       two alternatives), prp-ordered-ring-rules (a) and (b), prp-ordered-field-halves (d) (0<=a<=b, 0<=c<=d
       gives ac<=bd), (O4), and def-reals-operations for -[a]=[-a], [a+b], [ab]. The max is ledgered (03:484).
       All three ''at most one'' pairs are excluded.'
+  - stage: S7r
+    verdict: correct
+    by: rereferee
+    hash: 9abcdb1aa854
+    date: '2026-10-26'
+    model: claude-opus-5-5
+    evidence: 03:169 and 03:175. Negating a non-strict inequality is now cited with 'in each case of <='
+      (rules (a), plus the trivial equality case). The rest is unchanged and correct.
+  - stage: S7r
+    verdict: correct
+    by: rereferee
+    hash: 9abcdb1aa854
+    date: '2026-10-26'
+    model: claude-opus-5-5
+    evidence: The only changes add 'in each case of <=' to the rules (a) citations for -a_n >= c and delta
+      <= a_n <= -delta'. Both are sound.
 - key: def-reals-order
   kind: def
   file: 03-ordering-the-reals.md
@@ -1446,6 +1619,22 @@ items:
     evidence: 03:216-239. 2n+1=2(n+3)-5; a_n-1=(n-2)/(n+3); >=1/2 iff n>=7; a_6-1=4/9; a_n-1<1; a_n-1>0
       iff n>=3. All asserted in verify/ch05/exm-margin-then-index.py. The shift by 2 is prp-tail-change-ordered-field
       (b), and C-membership is thm-cauchy-algebra (a), (b). Margin before index, as the method requires.
+  - stage: S7r
+    verdict: correct
+    by: rereferee
+    hash: 7e9798804c55
+    date: '2026-10-26'
+    model: claude-opus-5-5
+    evidence: 03:232. Multiplying by 2(n+3) > 0 is cited as rules (c) plus the equality case. 2(n-2) >=
+      n+3 iff n >= 7 is correct.
+  - stage: S7r
+    verdict: correct
+    by: rereferee
+    hash: 7e9798804c55
+    date: '2026-10-26'
+    model: claude-opus-5-5
+    evidence: 03:229 adds 'with equality as the other case' to the multiplication step. The arithmetic
+      is unchanged.
 - key: lem-termwise-order
   kind: lem
   file: 03-ordering-the-reals.md
@@ -1509,6 +1698,22 @@ items:
     evidence: 03:255-257. a-b is positive via prp-positivity-well-defined. At n=max{N,N0}, a_n-b_n>=delta>0
       and a_n-b_n<=0, a contradiction. Then (O1) in R (thm-reals-ordered-field, proved before the lemma)
       gives [a]<=[b]. No circularity.
+  - stage: S7r
+    verdict: correct
+    by: rereferee
+    hash: 523c241952cd
+    date: '2026-10-26'
+    model: claude-opus-5-5
+    evidence: 03:256. a_n <= b_n gives a_n - b_n <= 0 by rules (a) in each case of <=. The contradiction
+      with a_n - b_n >= delta > 0 stands.
+  - stage: S7r
+    verdict: correct
+    by: rereferee
+    hash: 523c241952cd
+    date: '2026-10-26'
+    model: claude-opus-5-5
+    evidence: '03:253: a_n <= b_n gives a_n - b_n <= 0 by rules (a), now with ''in each case of <=''.
+      The contradiction with delta > 0 stands.'
 - key: check:03-ordering-the-reals:2
   kind: check
   file: 03-ordering-the-reals.md
@@ -1611,6 +1816,22 @@ items:
     evidence: 03:279-306. (a) delta=1/2, N=1. (c) d_1=7/5, delta=2/5, N=1, and a_0=0; these values were
       checked with my script. (d) (-1)^n is not Cauchy. (e) prp-ordered-ring-rules (e) is in Chapter 2
       (ch02/04:170) and gives 1>0. (f) is right. Everything matches my solution.
+  - stage: S7r
+    verdict: correct
+    by: rereferee
+    hash: ab806b8691ac
+    date: '2026-10-26'
+    model: claude-opus-5-5
+    evidence: 03:299. 'Non-decreasing' now cites (T1) at 01:177. d_1 = 7/5 (14^2 = 196 <= 200 < 225),
+      so a_k >= 2/5 for k >= 1, and a_0 = 0. The ledger matches.
+  - stage: S7r
+    verdict: correct
+    by: rereferee
+    hash: ab806b8691ac
+    date: '2026-10-26'
+    model: claude-opus-5-5
+    evidence: The non-decreasing claim now cites (T1) at 01:177, which states exactly that. d_1 = 7/5
+      is correct (196 <= 200 < 225).
 - key: exr-ordering-the-reals-b1
   kind: exr
   file: 03-ordering-the-reals.md
@@ -1670,6 +1891,24 @@ items:
       by prp-ordered-ring-rules (g). The answers delta_b=2/5, N_b=0, N=1 and margins 9/10 and 1/5 were
       checked with my script, and a+b>=9/10, ab>=1/5 hold for n=1..8. The worked example is the proof
       of thm-reals-positive-cone (ii). The hint names a tool, which is acceptable.
+  - stage: S7r
+    verdict: correct
+    by: rereferee
+    hash: 52a5b1100344
+    date: '2026-10-26'
+    model: claude-opus-5-5
+    evidence: 03:319. b in C via thm-sqrt2-cauchy-no-rational-limit and thm-cauchy-algebra (a), (b). 7/5
+      < x_n by rules (g), so b_n > 2/5. Margins 1/2 + 2/5 = 9/10 and (1/2)(2/5) = 1/5, threshold 1, all
+      correct.
+  - stage: S7r
+    verdict: correct
+    by: rereferee
+    hash: 52a5b1100344
+    date: '2026-10-26'
+    model: claude-opus-5-5
+    evidence: 'It adds b in C: (x_n) is in C by thm-sqrt2-cauchy-no-rational-limit, and a constant difference
+      is handled by cauchy-algebra (a), (b). The margins 9/10 and 1/5 and the threshold 1 are unchanged
+      and correct.'
 - key: exr-ordering-the-reals-b2
   kind: exr
   file: 03-ordering-the-reals.md
@@ -2270,6 +2509,24 @@ items:
     evidence: 04:180-194. (a) induction checked. (b) my script gives d_1=7/5, d_2=141/100, 7/5<=d_j<71/50
       for j>=2, 71/50<2, 10*71/50=71/5<15, so the integer parts are 1 and 14. (c) the counterexample q-1/(n+1)
       works. (d) uses exm-sqrt2-class. All agree with my own solutions.
+  - stage: S7r
+    verdict: correct
+    by: rereferee
+    hash: 3f42560c65a3
+    date: '2026-10-26'
+    model: claude-opus-5-5
+    evidence: (b) statement now names (T1)/(T2) 'stated before @exm-truncations-equivalent' (01:177, 01:187
+      precede the example at 01:203). (a) now cites @fd1:ax-induction read on N through @cor-omega-identification
+      (b) (label exists, ch01/04:202), with the property stated explicitly, so the undefined P(0) is gone.
+      Base and step computations are unchanged and correct.
+  - stage: S7r
+    verdict: correct
+    by: rereferee
+    hash: 3f42560c65a3
+    date: '2026-10-26'
+    model: claude-opus-5-5
+    evidence: The statement now points to (T1) and (T2) before exm-truncations-equivalent (01:177 and
+      01:187), which are the bounds the solution uses.
 - key: exr-rationals-inside-the-reals-b1
   kind: exr
   file: 04-rationals-inside-the-reals.md
@@ -2485,6 +2742,26 @@ items:
       (iv) concludes from line (ix), so it comes last') does not hold for line (iv) as written. Line (iv)
       reads only '1/(2n) < 1/n; take K = N' and refers to nothing in (ix). So the order (vi),(ii),(iv),(v),(vii),(i),(ix),
       which picks K=N first and then verifies, is also a readable proof. Also, no line states the f
+  - stage: S7r
+    verdict: correct
+    by: rereferee
+    hash: a9e789812dc0
+    date: '2026-10-26'
+    model: claude-opus-5-5
+    evidence: 'Line (iv) now reads ''so |[a]-a_k| <= 1/(2n) < 1/n, and K = N serves'', so it depends on
+      (ix). The order (vi),(ii),(v),(vii),(i),(ix),(iv) is therefore the only one, as the solution claims.
+      Checked the (iii) counterexample: a_m = 1/2 - 1/(m+2) is Cauchy, with a_0 = 0 and every |a_m - a_0|
+      = 1/2 - 1/(m+2) < 1/2, so N = 0 fits line (ii) with n = 1. Since a - (1/2) = (-1/(m+2)) is null,
+      [a] = 1/2 and |'
+  - stage: S7r
+    verdict: correct
+    by: rereferee
+    hash: a9e789812dc0
+    date: '2026-10-26'
+    model: claude-opus-5-5
+    evidence: 'Line (iv) now concludes from (ix): <= 1/(2n) < 1/n. The order (vi),(ii),(v),(vii),(i),(ix),(iv)
+      is still valid. Counterexample to (iii): a_m = 1/2 - 1/(m+2), n=1, k=0. Each |a_m - a_0| = 1/2 -
+      1/(m+2) < 1/2, yet [a] - a_0 = 1/2. This is correct.'
 - key: exr-rationals-inside-the-reals-c1
   kind: exr
   file: 04-rationals-inside-the-reals.md
@@ -2620,6 +2897,16 @@ items:
       docks a correct alternative proof. Example: q := a_N + δ/2 with only a''s threshold at δ/4. Then
       q - a_n = (a_N - a_n) + δ/2 > δ/4, and b_n - q = (b_n - a_n) + (a_n - a_N) - δ/2 > δ - δ/4 - δ/2
       = δ/4, using t'
+  - stage: S7r
+    verdict: correct
+    by: rereferee
+    hash: 2ffe096b14cb
+    date: '2026-10-26'
+    model: claude-opus-5-5
+    evidence: The display fixing delta and N_1 now ends with ' .'. The marking line now reads 'Cauchy
+      thresholds at a tolerance small enough for the estimates (relative to delta), and one N beyond every
+      threshold used', so it no longer docks the delta/3 route or the two-threshold route. The rest of
+      the solution and scheme are unchanged and consistent with it.
 - key: def-complete-ordered-field
   kind: def
   file: 05-the-least-upper-bound-property.md
@@ -2876,6 +3163,23 @@ items:
     model: claude-opus-5-5
     evidence: '05-the-least-upper-bound-property.md:173 False meta-claim: ''This start is not one that
       Step 1 produces.'''
+  - stage: S7r
+    verdict: correct
+    by: rereferee
+    hash: 8f038ff44265
+    date: '2026-10-26'
+    model: claude-opus-5-5
+    evidence: Line 173 now reads 'This start was not obtained by Step 1; by the remark after the proof,
+      it is allowed.' The remark at line 169 says the bisection may start from any rational pair (not
+      an upper bound, upper bound). 0 is not an upper bound since 1 is in A, and 2 is one.
+  - stage: S7r
+    verdict: correct
+    by: rereferee
+    hash: 8f038ff44265
+    date: '2026-10-26'
+    model: claude-opus-5-5
+    evidence: Only the wording changed ('was not obtained by Step 1'). The pairs (0,2),(1,2),(1,3/2),(5/4,3/2)
+      and u_3 - l_3 = 1/4 = 2/2^3 check out.
 - key: exm-bisection-square-root-two
   kind: exm
   file: 05-the-least-upper-bound-property.md
@@ -2950,6 +3254,24 @@ items:
     date: '2026-10-26'
     model: claude-opus-5-5
     evidence: 05-the-least-upper-bound-property.md:219 The list of objects the proof fixes is incomplete.
+  - stage: S7r
+    verdict: correct
+    by: rereferee
+    hash: 76cbde5ae10e
+    date: '2026-10-26'
+    model: claude-opus-5-5
+    evidence: Line 219 now lists Step 3's n (line 147, 'there is n') and Step 5's a in A (line 151). Step
+      4's a is universally quantified, so leaving it out is right. The paragraph at line 235 (likely in
+      this item's range) now points to an1 Ch5 (= AN2.2 completion), fd4 Ch5 (= F4.1 Complex Numbers)
+      and 'this volume's Chapter 1' (= ch01-natural-numbers), all of which match series.py show and config.json:158.
+  - stage: S7r
+    verdict: correct
+    by: rereferee
+    hash: 76cbde5ae10e
+    date: '2026-10-26'
+    model: claude-opus-5-5
+    evidence: 05:219 now lists the n of Step 3 (for the given epsilon) and the a in A of Step 5 among
+      the finitely many fixed objects. This matches Steps 3 and 5 at 05:147 and 05:151.
 - key: exr-the-least-upper-bound-property-a1
   kind: exr
   file: 05-the-least-upper-bound-property.md
@@ -3142,6 +3464,24 @@ items:
     evidence: '05:321: (c) proves again that a greatest element is the supremum. This is the first of
       fd2''s ''Two quick consequences'' after @fd2:def-order-supremum, and the solution does not cite
       it.'
+  - stage: S7r
+    verdict: correct
+    by: rereferee
+    hash: 1e495640b531
+    date: '2026-10-26'
+    model: claude-opus-5-5
+    evidence: '(e) at line 325: (-1/2, 3/2) satisfies Step 1''s constraints for a_0=0, M=1 (-1<-1/2<0,
+      1<3/2<2). With c=1/2 not in A, (l_1,u_1)=(-1/2,1/2), so s<=1/2<1=sup A. The counterexample is unchanged
+      and valid.'
+  - stage: S7r
+    verdict: correct
+    by: rereferee
+    hash: 1e495640b531
+    date: '2026-10-26'
+    model: claude-opus-5-5
+    evidence: '(c) cites the fd2 paragraph after def-order-supremum, which does state that a greatest
+      element is sup. (e): -1 < -1/2 < 0 and 1 < 3/2 < 2, so the start is allowed by Step 1 for a_0=0,
+      M=1. The midpoint 1/2 is not in A, so (l_1,u_1) = (-1/2,1/2) and s <= 1/2 < 1. This is correct.'
 - key: exr-the-least-upper-bound-property-c1
   kind: exr
   file: 05-the-least-upper-bound-property.md
@@ -3213,6 +3553,16 @@ items:
       (@exr-rationals-inside-the-reals-b3): if s < a then eventually u_k < a, against (I1). It gets no
       credit under the wording. Also, part (c)''s demand to name which field''s Archimedean property is
       used gets only half '
+  - stage: S7r
+    verdict: correct
+    by: rereferee
+    hash: 32e6e2cc3833
+    date: '2026-10-26'
+    model: claude-opus-5-5
+    evidence: Hint 2 (line 354) now gives only a first-line suggestion. The Archimedean-lines answer (line
+      366) adds density for Steps 4-5 via thm-constructed-rationals-dense, consistent with the prose at
+      line 156. The marking scheme's (S1) item is route-neutral and the R-Archimedean naming is now scored.
+      The points still total 10.
 - key: exr-the-least-upper-bound-property-c2
   kind: exr
   file: 05-the-least-upper-bound-property.md
@@ -3279,6 +3629,21 @@ items:
     evidence: '05:403-427. Checked: (a), (b) via 0<=u_k-s<D/2^k, and (c) h=min{1,(2-u^2)/(2(2u+1))}. My
       script gives (u+h)^2<2 on 5000 random u with u^2<2, and l_k^2<2<=u_k^2 for 30 bisection steps. The
       limit argument L^2=2 and the conclusion in (d) are correct. The marking scheme accepts my alternative.'
+  - stage: S7r
+    verdict: correct
+    by: rereferee
+    hash: f5db0a585289
+    date: '2026-10-26'
+    model: claude-opus-5-5
+    evidence: Hint 1 (line 393) now names (S1), which the solution at line ~405 uses for 'l_k < a <= s'.
+  - stage: S7r
+    verdict: correct
+    by: rereferee
+    hash: f5db0a585289
+    date: '2026-10-26'
+    model: claude-opus-5-5
+    evidence: Hint 1 now lists (S1) as well. The solution (b) does use (S1), through a <= s, to get l_k
+      < s. The hint is accurate.
 - key: exr-the-least-upper-bound-property-r1
   kind: exr
   file: 05-the-least-upper-bound-property.md
@@ -3455,6 +3820,23 @@ items:
     evidence: 05-the-least-upper-bound-property.md:504 The solution asserts that n = (integer part of
       2/(x-L)) + 1 is a positive integer without the one-line reason. It is needed so that 1/n is defined
       and prp-reciprocal-order applies.
+  - stage: S7r
+    verdict: minor
+    by: rereferee
+    hash: b3f18bb9abb7
+    date: '2026-10-26'
+    model: claude-opus-5-5
+    evidence: Line 504 adds a correct positivity argument for n, but its name p clashes with p = integer
+      part of x from line 502.
+  - stage: S7r
+    verdict: minor
+    by: rereferee
+    hash: b3f18bb9abb7
+    date: '2026-10-26'
+    model: claude-opus-5-5
+    evidence: The added justification that n >= 1 is correct (0 < 2/(x-L) < p+1 gives p >= 0), and the
+      display L < x - 2/n < (m-1)/n <= x - 1/n < x checks out. However, it rebinds p ('with p the integer
+      part') while p already names the integer part of x in *Start* (05:503). Rename it, e.g. p'.
 - key: prp-reals-absolute-value-termwise
   kind: prp
   file: 03-ordering-the-reals.md

@@ -197,7 +197,7 @@ If we had \( d_j \ge d_k + 1/10^k \), then, both sides being non-negative, \( d_
 \[
 2 < d_k^2 + \frac{2 d_k}{10^k} + \frac{1}{10^k} \cdot \frac{1}{10^k} .
 \]
-Here \( d_k < 2 \), since \( 0 \le d_k \) and \( d_k^2 \le 2 < 4 = 2^2 \) (@prp-ordered-ring-rules (g)); and \( (1/10^k)(1/10^k) \le 1/10^k \), since \( 0 < 1/10^k \le 1 \) by @eq-ten-power-reciprocal. Multiplying \( d_k < 2 \) by \( 2/10^k > 0 \) (@prp-ordered-ring-rules (c)) and adding the two bounds (@prp-ordered-ring-rules (b)), \( 2 - d_k^2 < 4/10^k + 1/10^k = 5/10^k \).
+Here \( d_k < 2 \), since \( 0 \le d_k \) and \( d_k^2 \le 2 < 4 = 2^2 \) (@prp-ordered-ring-rules (g)); and \( (1/10^k)(1/10^k) \le 1/10^k \), since \( 0 < 1/10^k \le 1 \) by @eq-ten-power-reciprocal, so that @prp-ordered-field-halves (d) applies with \( 0 \le 1/10^k \le 1/10^k \) and \( 0 \le 1/10^k \le 1 \). Multiplying \( d_k < 2 \) by \( 2/10^k > 0 \) (@prp-ordered-ring-rules (c)) and adding the two bounds (@prp-ordered-ring-rules (b)), \( 2 - d_k^2 < 4/10^k + 1/10^k = 5/10^k \).
 :::
 
 ::: {#exm-truncations-equivalent}
@@ -209,14 +209,14 @@ Show that \( (d_k) \) is non-decreasing, that \( (d_k) \in \sC \), and that \( (
 ::: {.solution}
 *\( (d_k) \) is non-decreasing, and in \( \sC \).* The first claim is (T1), and \( (d_k) \in \sC \) by (T2). Now let \( \varepsilon \in \nQ_{>0} \). By @cor-rationals-archimedean-epsilon there is \( n_\varepsilon \in \nZ_{>0} \) with \( 1/m < \varepsilon \) for every integer \( m \ge n_\varepsilon \). Let \( N \coloneqq n_\varepsilon \), which depends on \( \varepsilon \) only. For \( j, k \ge N \), say with \( j \ge k \) (the other case is symmetric, as \( \abs{d_j - d_k} = \abs{d_k - d_j} \)), @eq-truncation-cauchy-bound gives \( \abs{d_j - d_k} < 1/(k + 1) < \varepsilon \), since \( k + 1 > N \). So \( (d_k) \in \sC \).
 
-*\( (d_k) \sim (x_k) \).* Let \( k \ge 1 \). By (NS2), \( x_k > 1 \), and \( d_k \ge 1 \) by (T1), so \( x_k + d_k \ge 1 \). Since \( \abs{x_k - d_k} \ge 0 \), @prp-ordered-field-halves (d) gives
+*\( (d_k) \sim (x_k) \).* Let \( k \ge 1 \). By (NS2), \( x_k > 1 \), and \( d_k \ge 1 \) by (T1), so \( x_k + d_k > 1 + 1 > 1 + 0 = 1 \) (@prp-ordered-ring-rules (b), with \( 1 > 0 \) by (e)). Since \( \abs{x_k - d_k} \ge 0 \), @prp-ordered-field-halves (d) gives
 \[
 \begin{aligned}
 \abs{x_k - d_k} &\le \abs{x_k - d_k} (x_k + d_k) = \abs{x_k^2 - d_k^2} \\
 &\le \abs{x_k^2 - 2} + \abs{2 - d_k^2} \le \frac{1}{4k} + \frac{5}{10^k} ,
 \end{aligned}
 \]
-by @prp-absolute-value-ordered-field (b) and (e), the bound \( 0 < x_k^2 - 2 \le 1/(4k) \) from (NS1)–(NS2), and (T3). Since \( 4k - (k + 1) = 3k - 1 > 0 \), \( 1/(4k) \le 1/(k + 1) \) (@prp-ordered-field-halves (c)). Define, for **every** \( k \in \nN \),
+by @prp-absolute-value-ordered-field (b) and (e) (with \( (x_k - d_k)(x_k + d_k) = x_k^2 - d_k^2 \) by distributivity and @prp-ring-algebra (c), and \( \abs{x_k + d_k} = x_k + d_k \) as \( x_k + d_k > 1 > 0 \)), the bound \( 0 < x_k^2 - 2 \le 1/(4k) \) from (NS1)–(NS2), and (T3). Since \( 4k - (k + 1) = 3k - 1 > 0 \), \( 1/(4k) \le 1/(k + 1) \) (@prp-ordered-field-halves (c)). Define, for **every** \( k \in \nN \),
 \[
 u_k \coloneqq \frac{1}{k + 1} + \frac{5}{10^k} .
 \]
@@ -419,8 +419,10 @@ exm-truncations-equivalent (claim): 10^k >= y gives 10^{k+1} >= 10y; 1/10^k > 0 
 exm-truncations-equivalent (claim): (T1) 10 m_k <= m_{k+1} divided by 10^{k+1} | prp-reciprocal-order (a), prp-ordered-ring-rules (c) (cited) with the equal case
 exm-truncations-equivalent (claim): (T3) d < 2 and h > 0 give 2dh < 4h; adding h * h <= h | prp-ordered-ring-rules (c), (b) (cited)
 exm-truncations-equivalent (claim): (T3) (d + h)^2 = d^2 + 2dh + h^2 | prp-ring-algebra (d) (cited)
-exm-truncations-equivalent (claim): (T3) 0 <= x <= 1 gives x * x <= x | prp-ordered-field-halves (d) (cited) with (x, 1)
+exm-truncations-equivalent (claim): (T3) 0 <= x <= 1 gives x * x <= x | prp-ordered-field-halves (d) (cited) with (x, x) and (1/10^k, 1)
 exm-truncations-equivalent (solution): 4k >= k + 1 for k >= 1 | inline, 3k - 1 > 0
+exm-truncations-equivalent (solution): x + d > 1 from x > 1, d >= 1 | prp-ordered-ring-rules (b), (e) (cited)
+exm-truncations-equivalent (solution): (x - d)(x + d) = x^2 - d^2 | (F5)-(F9) distributivity, prp-ring-algebra (c) (cited)
 exm-truncations-equivalent (solution): |x - d| (x + d) = |x^2 - d^2| | prp-absolute-value-ordered-field (b) (cited), |x + d| = x + d as x + d > 0
 exm-truncations-equivalent (solution): numerical check at k = 1 (3/4 and 1/10) | verify/ch05/exm-truncations-equivalent.py
 exm-truncations-equivalent (claim): (d_k) has no limit in Q | thm-limit-laws-ordered-field (a), thm-sqrt2-cauchy-no-rational-limit (cited)

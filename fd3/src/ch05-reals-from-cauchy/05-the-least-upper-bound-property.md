@@ -1,6 +1,6 @@
 # Least Upper Bounds
 
-Section 5.4 made \( \nR \) an Archimedean ordered field with \( \nQ \) dense in it. *Analysis on the Real Line*, Chapter 1 starts from a property of sets: every non-empty set of real numbers that is bounded above has a least upper bound. In \( \nQ \) it fails (@thm-rationals-gap-sqrt2). This section names the property for an arbitrary ordered field and proves that the constructed \( \nR \) has it. The proof halves intervals with rational ends. Their right ends form a Cauchy sequence of rationals, which is a real number by definition, and that number is the least upper bound. The sequence form of completeness, that every Cauchy sequence of reals converges, is proved from this one in *Analysis on the Real Line*.
+Section 5.4 made \( \nR \) an Archimedean ordered field with \( \nQ \) dense in it. *Analysis on the Real Line*, Chapter 1 starts from a property of sets: every non-empty set of real numbers that is bounded above has a least upper bound. In \( \nQ \) it fails (@thm-rationals-gap-sqrt2). This section names the property for an arbitrary ordered field and proves that the constructed \( \nR \) has it. The proof halves intervals with rational ends. Their right ends form a Cauchy sequence of rationals, which is a real number by definition, and that number is the least upper bound. The sequence form of completeness, that every Cauchy sequence of reals converges, is proved from this one in *Analysis on the Real Line*, Chapter 4.
 
 Throughout, \( F \) is an ordered field (@def-ordered-ring-and-field). Its order \( \le \) is a total order (@prp-ordered-field-halves (a)), so the words "upper bound", "bounded above" and "supremum" of *Sets and Functions*, Section 5.3 apply to subsets of \( F \) (@fd2:def-order-bounds, @fd2:def-order-supremum). When \( F = \nR \), we keep the identification of Section 5.4, writing \( q \) for \( \kappa(q) \).
 
@@ -25,7 +25,7 @@ An ordered field in which every Cauchy sequence (@def-cauchy-sequence-ordered-fi
 
 In words: the hypothesis asks for a set with at least one element and at least one upper bound in \( F \); the conclusion asks for an element \( s \) of \( F \) that is an upper bound, clause (S1), and lies below every upper bound, clause (S2). The supremum need not belong to \( A \).
 
-**Well-definedness.** A set has at most one supremum: if \( s \) and \( s' \) both are, then (S2) for each, with the other as the upper bound, gives \( s \le s' \) and \( s' \le s \), so \( s = s' \) by antisymmetry. So "the supremum of \( A \)", written \( \sup A \), names one element when it exists.
+**Well-definedness.** A set has at most one supremum, since a supremum is a least element of the set of upper bounds (*Sets and Functions*, Section 5.3, the remark after @fd2:def-order-supremum, by @fd2:prp-greatest-unique). So "the supremum of \( A \)", written \( \sup A \), names one element when it exists.
 
 **Examples.**
 
@@ -36,7 +36,7 @@ In words: the hypothesis asks for a set with at least one element and at least o
 *The constructed reals.* \( \nR \) is complete; this is the main theorem of the section.
 
 ::: {.second-reading title="A degenerate case, and non-examples by minimal change"}
-*A singleton.* \( \sup \{a\} = a \), in every ordered field. This degenerate case matters below: a set may be bounded above by its own element.
+*A singleton.* \( \sup \{a\} = a \), in every ordered field, since a greatest element is the supremum (the same remark of *Sets and Functions*, Section 5.3). This degenerate case matters below: a set may be bounded above by its own element.
 
 Drop "non-empty": the empty set is bounded above by every element of \( F \), so its upper bounds are all of \( F \), and \( F \) has no least element (\( x - 1 < x \)). Drop "bounded above": \( F \) itself has no upper bound (\( x < x + 1 \)), so no supremum. With either clause removed, no ordered field at all would be complete.
 :::
@@ -170,7 +170,7 @@ Steps 2–5 use only that \( l_0 \) and \( u_0 \) are rational, that \( l_0 \) i
 :::
 
 ::: {.check}
-Run Step 2 on \( A \coloneqq \{ q \in \nQ : q^2 < 2 \} \), viewed as a subset of \( \nR \), from \( l_0 = 0 \), \( u_0 = 2 \) (\( 0 \) is not an upper bound, as \( 1 \in A \); \( 2 \) is one). List \( (l_k, u_k) \) for \( k = 0, 1, 2, 3 \). This start is not one that Step 1 produces; by the remark after the proof, it is allowed.
+Run Step 2 on \( A \coloneqq \{ q \in \nQ : q^2 < 2 \} \), viewed as a subset of \( \nR \), from \( l_0 = 0 \), \( u_0 = 2 \) (\( 0 \) is not an upper bound, as \( 1 \in A \); \( 2 \) is one). List \( (l_k, u_k) \) for \( k = 0, 1, 2, 3 \). This start was not obtained by Step 1; by the remark after the proof, it is allowed.
 :::
 
 ::: {.solution}
@@ -216,7 +216,7 @@ A proof about a sequence \( (x_k) \) in \( \nR \) says: "for each \( k \), pick 
 ::: {.solution}
 Each \( x_k \) is a class, a non-empty subset of \( \sC \) (@fd2:def-equivalence-class). The family \( (x_k)_{k \in \nN} \) is a family of non-empty sets indexed by \( \nN \), and "pick \( a^{(k)} \in x_k \) for each \( k \)" asks for a function \( c \colon \nN \to \sC \) with \( c(k) \in x_k \) for every \( k \): a choice function for the family. Its existence, with no rule given, is what @fd2:ax-choice provides. Fixing one object would give one representative of one \( x_k \); it cannot give infinitely many in one step.
 
-The proof of @thm-reals-complete-ordered-field fixes finitely many objects, one at a time: \( a_0 \), \( M \), \( l_0 \), \( u_0 \), and in Steps 4 and 5 one \( q \), \( \delta \), \( N \). Each is fixed once and is ordinary logic. The infinitely many ends \( l_k \), \( u_k \) are not picked: the recursion theorem defines them from a rule, which applies a test, "is \( c \) an upper bound?", to a point it has already computed. So @fd2:ax-choice is not used. A proof that needs infinitely many objects must name the rule that gives them, or say that the axiom of choice is used and where (@fd2:exm-method-name-the-choice).
+The proof of @thm-reals-complete-ordered-field fixes finitely many objects, one at a time: \( a_0 \), \( M \), \( l_0 \), \( u_0 \); in Step 3, for the given \( \varepsilon \), one \( n \); and in Steps 4 and 5 one \( q \), \( \delta \), \( N \) (and in Step 5 one \( a \in A \)). Each is fixed once and is ordinary logic. The infinitely many ends \( l_k \), \( u_k \) are not picked: the recursion theorem defines them from a rule, which applies a test, "is \( c \) an upper bound?", to a point it has already computed. So @fd2:ax-choice is not used. A proof that needs infinitely many objects must name the rule that gives them, or say that the axiom of choice is used and where (@fd2:exm-method-name-the-choice).
 :::
 
 ## What we built, and what comes next
@@ -232,7 +232,7 @@ The table collects what the chapter proved about \( \nR \), beside the status of
 
 The first two rows are shared; the last two are what the construction was for.
 
-Several chapters build on this one. Chapter 6 proves that any two complete ordered fields are isomorphic, by exactly one order-preserving field isomorphism; so "the" real numbers are well defined, and no theorem about them depends on how they were built. *Axiomatic Set Theory* builds a second complete ordered field from Dedekind cuts. *Analysis on the Real Line*, Chapter 1 starts from the axioms of a complete ordered field; the theorem above gives those axioms a model, so they cannot contradict each other unless the theory that supplies \( \nN \) and sets already does (Chapter 1 takes \( \nN \) as a Peano system; *Axiomatic Set Theory* builds it from axioms for sets). *Analytic Preliminaries*, Chapter 1 builds the complex numbers on this \( \nR \). And *Metric and Topological Spaces*, Chapter 2 runs the construction of this chapter for an arbitrary metric space, as its completion.
+Several chapters build on this one. Chapter 6 proves that any two complete ordered fields are isomorphic, by exactly one order-preserving field isomorphism; so "the" real numbers are well defined, and no theorem about them depends on how they were built. *Axiomatic Set Theory* builds a second complete ordered field from Dedekind cuts. *Analysis on the Real Line*, Chapter 1 starts from the axioms of a complete ordered field; the theorem above gives those axioms a model, so they cannot contradict each other unless the theory that supplies \( \nN \) and sets already does (this volume's Chapter 1 takes \( \nN \) as a Peano system; *Axiomatic Set Theory* builds it from axioms for sets). *Analytic Preliminaries*, Chapter 5 builds the complex numbers on this \( \nR \). And *Analysis on the Real Line*, Chapter 5 runs the construction of this chapter for an arbitrary metric space, as its completion.
 
 ## Exercises
 
@@ -318,11 +318,11 @@ Let \( A \subseteq \nR \) be non-empty and bounded above, and let \( (l_k, u_k) 
 
 (b) **False.** For \( A = \{ x \in \nR : x < 0 \} \), \( s = \sup A = 0 \notin A \) (the example of the negative elements after @def-complete-ordered-field).
 
-(c) **True.** The element \( m \) is an upper bound, and every upper bound \( u \) has \( u \ge m \), since \( m \in A \). So \( m = \sup A \), and \( s = \sup A \) by the theorem's proof; a set has at most one supremum, so \( s = m \).
+(c) **True.** A greatest element is the supremum (*Sets and Functions*, Section 5.3, the remark after @fd2:def-order-supremum), so \( m = \sup A \), and \( s = \sup A \) by the theorem's proof; a set has at most one supremum, so \( s = m \).
 
 (d) **False.** For \( A = \{0\} \), (I2) says that \( l_k \) is not an upper bound of \( \{0\} \), that is, \( l_k < 0 \); so \( l_k \notin A \) for every \( k \).
 
-(e) **False.** The changed rule still halves the interval and keeps \( l_{k+1}, u_{k+1} \) between \( l_k \) and \( u_k \), so Steps 2 and 3 still give a real number \( s = [(u_k)] \). Take \( A = \{0, 1\} \), with the start that Step 1 gives for \( a_0 = 0 \), \( M = 1 \): \( l_0 = -1/2 \), \( u_0 = 3/2 \). The midpoint \( c = 1/2 \) is not in \( A \), so \( (l_1, u_1) = (-1/2, 1/2) \). From then on every end lies in \( [l_1, u_1] \), so \( u_k \le 1/2 \) for every \( k \ge 1 \), and the new \( s \le 1/2 < 1 = \sup A \) (@lem-termwise-order). The test must be the invariant itself.
+(e) **False.** The changed rule still halves the interval and keeps \( l_{k+1}, u_{k+1} \) between \( l_k \) and \( u_k \), so Steps 2 and 3 still give a real number \( s = [(u_k)] \). Take \( A = \{0, 1\} \), with the start \( l_0 = -1/2 \), \( u_0 = 3/2 \), one that Step 1 allows for \( a_0 = 0 \), \( M = 1 \) (\( -1 < -1/2 < 0 \), \( 1 < 3/2 < 2 \)). The midpoint \( c = 1/2 \) is not in \( A \), so \( (l_1, u_1) = (-1/2, 1/2) \). From then on every end lies in \( [l_1, u_1] \), so \( u_k \le 1/2 \) for every \( k \ge 1 \), and the new \( s \le 1/2 < 1 = \sup A \) (@lem-termwise-order). The test must be the invariant itself.
 :::
 
 ### C. Going deeper
@@ -351,7 +351,7 @@ Least elements of sets of integers (Chapter 2), and integer parts in \( \nR \).
 ::: {.solution}
 [Hint 2]
 
-For (a): with \( M \) an upper bound and \( p \) the integer part of \( 2^k M \), \( p + 1 \in U_k \); and every \( m \in U_k \) satisfies \( m \ge 2^k a_0 \) for a fixed \( a_0 \in A \).
+For (a): fix \( a_0 \in A \) and an upper bound \( M \), and look at the integer parts of \( 2^k M \) and \( 2^k a_0 \).
 :::
 
 ::: {.solution}
@@ -363,13 +363,13 @@ Integer parts exist in \( \nR \) by @prp-integer-part-ordered-field with \( F = 
 
 (c) By (b), \( \abs{u_j - u_k} = u_k - u_j < 1/2^k \) for \( j \ge k \), and \( (1/2^k)_k \) is null in \( \nQ \), as in Step 3 of the proof of @thm-reals-complete-ordered-field (Archimedes in \( \nQ \)). So \( (u_k) \in \sC \). With \( l_k \coloneqq u_k - 1/2^k \in \nQ \): \( (l_k) \in \sC \) and \( (l_k) \sim (u_k) \), \( l_k \) is not an upper bound and \( u_k \) is one. Steps 4 and 5 of the proof used nothing else, so they apply word for word, and \( s = \sup A \).
 
-Archimedean lines: the integer parts in (a), for \( \nR \); \( 1/2^k \to 0 \) in (c), for \( \nQ \).
+Archimedean lines: the integer parts in (a), for \( \nR \); \( 1/2^k \to 0 \) in (c), for \( \nQ \); and the rationals \( q \) of Steps 4 and 5, reused in (c), come from density (@thm-constructed-rationals-dense), that is, from the Archimedean property of \( \nR \).
 
 **Marking scheme.** (10 points)
 - 2: (a), \( U_k \) non-empty and bounded below, each with a reason.
 - 2: (b), \( u_{k+1} \le u_k \), and "\( u_k - 1/2^k \) is not an upper bound" from leastness.
-- 2: \( (u_k) \in \sC \), with the Archimedean property named.
-- 2: (S1), by a rational between \( s \) and a larger element of \( A \).
+- 2: \( (u_k) \in \sC \), with the Archimedean property of \( \nQ \) named (and that of \( \nR \) for the integer parts in (a)).
+- 2: (S1), from (I1) and the fact that \( s \) is the class (or limit) of the \( u_k \).
 - 2: (S2), through \( (l_k) \sim (u_k) \).
 Fatal errors (0 for the step): "choose an upper bound \( m/2^k \)" with no least element (no rule); \( s \in A \) asserted.
 :::
@@ -390,7 +390,7 @@ Run the bisection of Step 2 inside \( F = \nQ \), on \( A \coloneqq \{ q \in \nQ
 ::: {.solution}
 [Hint 1]
 
-For (b), compare \( s \) with \( u_k \) and with \( l_k \), using (I1), (I2) and (S2). For (c), the left ends are below some element of \( A \).
+For (b), compare \( s \) with \( u_k \) and with \( l_k \), using (I1), (I2), (S1) and (S2). For (c), the left ends are below some element of \( A \).
 :::
 
 ::: {.solution}
@@ -501,7 +501,7 @@ Let \( x \in \nR \). Prove that there is a **strictly increasing** sequence \( (
 
 *Start.* Let \( p \) be the integer part of \( x \), and \( q_0 \coloneqq p - 1 \). Then \( q_0 < p \le x \), so \( q_0 \in X \).
 
-*Step.* For \( k \in \nN \) and \( q \in X \), let \( L \coloneqq \max\{q, x - 1/(k + 1)\} \), a real number with \( L < x \). Let \( n \) be the integer part of \( 2/(x - L) \), plus \( 1 \): a positive integer with \( n > 2/(x - L) \), so \( 2/n < x - L \) (@prp-reciprocal-order (b)). Let \( m \) be the integer part of \( n x \), and put \( g(k, q) \coloneqq (m - 1)/n \). From \( m \le nx < m + 1 \), dividing by \( n \),
+*Step.* For \( k \in \nN \) and \( q \in X \), let \( L \coloneqq \max\{q, x - 1/(k + 1)\} \), a real number with \( L < x \). Let \( n \) be the integer part of \( 2/(x - L) \), plus \( 1 \): a positive integer (with \( p \) the integer part, \( 0 < 2/(x - L) < p + 1 \) gives \( p + 1 > 0 \), so \( p \ge 0 \) and \( n = p + 1 \ge 1 \)) with \( n > 2/(x - L) \), so \( 2/n < x - L \) (@prp-reciprocal-order (b)). Let \( m \) be the integer part of \( n x \), and put \( g(k, q) \coloneqq (m - 1)/n \). From \( m \le nx < m + 1 \), dividing by \( n \),
 \[
 L < x - \frac{2}{n} < \frac{m - 1}{n} \le x - \frac{1}{n} < x .
 \]
@@ -514,7 +514,7 @@ So \( g(k, q) \in X \), and \( g \colon \nN \times X \to X \) is a function: eac
 
 <!-- dependency ledger
 def-complete-ordered-field (example): sup of {x < 0} is 0 in every ordered field; x < x/2 < 0 for x < 0 | prp-ordered-field-halves (b); inline
-def-complete-ordered-field (claim): a set has at most one supremum | antisymmetry of <= (fd2:def-partial-order (PO2), prp-ordered-field-halves (a)); inline
+def-complete-ordered-field (claim): a set has at most one supremum | remark after fd2:def-order-supremum (fd2:prp-greatest-unique), cited
 lem-power-two-bound (proof): 0 + 1 = 1 and 1 + 1 = 2 in N; k + 1 >= 1 | def-omega-arithmetic (c), thm-omega-order (d), cited (the blueprint's "F3.1 (promised)" source: F3.1 is now approved)
 lem-power-two-bound (proof): y(1 + 1) = y + y | (F9), (F7) of def-commutative-ring-and-field
 thm-reals-complete-ordered-field (proof): Step 1: rationals l_0 in (a_0 - 1, a_0) and u_0 in (M, M + 1) | thm-constructed-rationals-dense, cited; a_0 - 1 < a_0 < ... by (O3) in R; inline
@@ -536,7 +536,7 @@ exm-representatives-need-choice (example): a class is a non-empty subset of C | 
 exr-the-least-upper-bound-property-a1 (solution): density is proved from the Archimedean property of R | thm-constructed-rationals-dense (its proof in 5.4 uses thm-constructed-reals-archimedean)
 exr-the-least-upper-bound-property-b2 (solution): 1/(N + 1) < 1/N | prp-reciprocal-order (b); prp-archimedean-reciprocal with thm-constructed-reals-archimedean, cited
 exr-the-least-upper-bound-property-b3 (solution): (e) run on A = {0, 1} from (-1/2, 3/2): (l_1, u_1) = (-1/2, 1/2), then u_k <= 1/2 | inline; verify/ch05/exr-the-least-upper-bound-property-b3.py
-exr-the-least-upper-bound-property-b3 (solution): (c) uniqueness of the supremum; (d) l_k not an upper bound of {0} means l_k < 0 | well-definedness paragraph after def-complete-ordered-field; totality (prp-ordered-field-halves (a))
+exr-the-least-upper-bound-property-b3 (solution): (c) a greatest element is the supremum (remark after fd2:def-order-supremum, cited), uniqueness of the supremum; (d) l_k not an upper bound of {0} means l_k < 0 | well-definedness paragraph after def-complete-ordered-field; totality (prp-ordered-field-halves (a))
 exr-the-least-upper-bound-property-c1 (solution): (a) p + 1 in U_k, lower bound p' (integer parts); M < (p + 1)/2^k | prp-integer-part-ordered-field (F = R, thm-constructed-reals-archimedean), prp-ordered-ring-rules (c), thm-rational-embedding (b), prp-integer-least-element, cited
 exr-the-least-upper-bound-property-c1 (solution): (b) 2m_k/2^{k+1} = m_k/2^k; u_j <= u_k by induction; anything above an upper bound is one | def-naturals-in-ordered-field (b), fd1:ax-induction, prp-omega-order-arithmetic (a), transitivity of <=; inline
 exr-the-least-upper-bound-property-c1 (solution): (c) (1/2^k) null in Q; Steps 4 and 5 apply | Step 3 of the proof (D = 1), cited by step; verify/ch05/thm-reals-complete-ordered-field.py (dyadic run)

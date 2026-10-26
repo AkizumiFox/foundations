@@ -119,7 +119,7 @@ The goal is an existence statement whose first quantifier is a margin. Name it f
 :::
 
 ::: {.proof}
-Fix \( \delta \in \nQ_{>0} \) and \( N \in \nN \) with \( a_n \ge \delta \) for every \( n \ge N \). Then \( \delta/2 \in \nQ_{>0} \) (@prp-ordered-field-halves (b)). Since \( a' - a \) is null, fix \( N'' \) with \( \abs{a'_n - a_n} < \delta/2 \) for every \( n \ge N'' \), and let \( N' \coloneqq \max\{N, N''\} \). For \( n \ge N' \), @prp-absolute-value-ordered-field (d) gives \( a'_n > a_n - \delta/2 \ge \delta/2 \). So \( a' \) is positive, with margin \( \delta/2 \) and threshold \( N' \).
+Fix \( \delta \in \nQ_{>0} \) and \( N \in \nN \) with \( a_n \ge \delta \) for every \( n \ge N \). Then \( \delta/2 \in \nQ_{>0} \) (@prp-ordered-field-halves (b)). Since \( a' - a \) is null, fix \( N'' \) with \( \abs{a'_n - a_n} < \delta/2 \) for every \( n \ge N'' \), and let \( N' \coloneqq \max\{N, N''\} \). For \( n \ge N' \), @prp-absolute-value-ordered-field (d) gives \( -\delta/2 < a'_n - a_n \), so \( a'_n > a_n - \delta/2 \ge \delta - \delta/2 = \delta/2 \) (@prp-ordered-ring-rules (b), @prp-ordered-field-halves (b)). So \( a' \) is positive, with margin \( \delta/2 \) and threshold \( N' \).
 :::
 
 This is @prp-sign-stable-ordered-field with \( F = \nQ \), written out because its order of choices is the method of this section.
@@ -129,7 +129,7 @@ The margin halves, and that is harmless: the definition asks only for **some** m
 ::: {#exm-method-margin-before-index}
 [Method: name the margin before the index]
 
-**Template.** To prove that \( b \in \sC \) is positive, or that \( [a] < [b] \): (1) name a margin \( \delta \in \nQ_{>0} \) from data that do not depend on \( n \): a given margin, a fraction of it, or a value the terms visibly approach; (2) only then ask the given sequences (Cauchy, null, positive) for thresholds at tolerances computed from \( \delta \); (3) take the largest of these finitely many thresholds and check \( b_n \ge \delta \) beyond it.
+**Template.** To prove that \( b \in \sC \) is positive, or that \( [a] < [b] \): (1) name a margin \( \delta \in \nQ_{>0} \) from data that do not depend on \( n \): a given margin, or a fraction (such as half) of a given margin or of a positive value the terms visibly approach; (2) only then ask the given sequences (Cauchy, null, positive) for thresholds at tolerances computed from \( \delta \); (3) take the largest of these finitely many thresholds and check that the terms of the sequence to be shown positive (\( b \), or \( b - a \) for \( [a] < [b] \)) are \( \ge \delta \) beyond it.
 
 **When to use it.** Whenever the goal reads \( \exists \delta \ \exists N \ \forall n \ge N \ \ldots \): positivity, a strict inequality between classes, a bound that must hold beyond one index.
 
@@ -166,13 +166,13 @@ For (i), "at least one" is the sign theorem of Chapter 4: a Cauchy sequence that
 ::: {.proof}
 Let \( x \in \nR \), and write \( x = [a] \) with \( a \in \sC \).
 
-(i), *at least one.* Suppose first that \( a \) is null. Termwise \( a - (0)_n = a \), so \( a \sim (0)_n \) and \( x = [(0)_n] = 0_{\nR} \). Suppose next that \( a \) is not null. By @thm-cauchy-not-null-sign with \( F = \nQ \), there are \( c \in \nQ_{>0} \) and \( N \in \nN \) such that either \( a_n \ge c \) for every \( n \ge N \), or \( a_n \le -c \) for every \( n \ge N \); fix them. In the first case \( a \) is positive, so \( x \in P \). In the second case \( -a_n \ge c \) for every \( n \ge N \) (@prp-ordered-ring-rules (a)), so \( -a \) is positive and \( -x = [-a] \in P \).
+(i), *at least one.* Suppose first that \( a \) is null. Termwise \( a - (0)_n = a \), so \( a \sim (0)_n \) and \( x = [(0)_n] = 0_{\nR} \). Suppose next that \( a \) is not null. By @thm-cauchy-not-null-sign with \( F = \nQ \), there are \( c \in \nQ_{>0} \) and \( N \in \nN \) such that either \( a_n \ge c \) for every \( n \ge N \), or \( a_n \le -c \) for every \( n \ge N \); fix them. In the first case \( a \) is positive, so \( x \in P \). In the second case \( -a_n \ge c \) for every \( n \ge N \) (@prp-ordered-ring-rules (a), in each case of \( \le \)), so \( -a \) is positive and \( -x = [-a] \in P \).
 
 (i), *at most one.* We exclude the three pairs.
 
 - \( x \in P \) and \( x = 0_{\nR} \). Then \( (0)_n \) is a representative of \( x \), so it is positive, since every representative of an element of \( P \) is: some \( \delta \in \nQ_{>0} \) has \( 0 \ge \delta \). This contradicts \( \delta > 0 \) by (O1) in \( \nQ \).
 - \( -x \in P \) and \( x = 0_{\nR} \). Then \( -x = [-(0)_n] = [(0)_n] = 0_{\nR} \), and the previous case, applied to \( -x \), excludes this.
-- \( x \in P \) and \( -x \in P \). Then \( a \) and \( -a \) are both positive: \( a_n \ge \delta \) for \( n \ge N \) and \( -a_n \ge \delta' \) for \( n \ge N' \), with \( \delta, \delta' \in \nQ_{>0} \). At \( n \coloneqq \max\{N, N'\} \), \( \delta \le a_n \le -\delta' \) (@prp-ordered-ring-rules (a)), so \( 0 < \delta \le -\delta' < 0 \), against (O1) in \( \nQ \).
+- \( x \in P \) and \( -x \in P \). Then \( a \) and \( -a \) are both positive: \( a_n \ge \delta \) for \( n \ge N \) and \( -a_n \ge \delta' \) for \( n \ge N' \), with \( \delta, \delta' \in \nQ_{>0} \). At \( n \coloneqq \max\{N, N'\} \), \( \delta \le a_n \le -\delta' \) (@prp-ordered-ring-rules (a), in each case of \( \le \)), so \( 0 < \delta \le -\delta' < 0 \), against (O1) in \( \nQ \).
 
 (ii) Let \( x, y \in P \), and write \( x = [a] \), \( y = [b] \). Both \( a \) and \( b \) are positive: there are \( \delta_a, \delta_b \in \nQ_{>0} \) and \( N_a, N_b \in \nN \) with \( a_n \ge \delta_a \) for \( n \ge N_a \) and \( b_n \ge \delta_b \) for \( n \ge N_b \). Let \( N \coloneqq \max\{N_a, N_b\} \) and \( n \ge N \). Adding the two inequalities (@prp-ordered-ring-rules (b)),
 \[
@@ -229,7 +229,7 @@ a_n - 1 = \frac{n - 2}{n + 3} = 1 - \frac{5}{n + 3} .
 
 *Margin first.* These terms approach \( 1 \), so we aim at half of it, \( \delta \coloneqq 1/2 \), before naming any index.
 
-*Then the index.* Multiplying by \( 2(n + 3) > 0 \), or by its reciprocal (@prp-ordered-ring-rules (c)),
+*Then the index.* Multiplying by \( 2(n + 3) > 0 \), or by its reciprocal (@prp-ordered-ring-rules (c), with equality as the other case),
 \[
 \frac{n - 2}{n + 3} \ge \frac{1}{2} \iff 2(n - 2) \ge n + 3 \iff n \ge 7 .
 \]
@@ -253,7 +253,7 @@ Suppose instead that \( [b] < [a] \). Then \( a - b \) is positive, so from some
 :::
 
 ::: {.proof}
-Suppose that \( [b] < [a] \). By @def-reals-order, \( [a] - [b] = [a - b] \in P \), so \( a - b \) is positive, since every representative of an element of \( P \) is (@prp-positivity-well-defined). Fix \( \delta \in \nQ_{>0} \) and \( N \in \nN \) with \( a_n - b_n \ge \delta \) for every \( n \ge N \). Let \( n \coloneqq \max\{N, N_0\} \). Then \( a_n - b_n \ge \delta > 0 \). But \( n \ge N_0 \), so \( a_n \le b_n \), that is, \( a_n - b_n \le 0 \) (@prp-ordered-ring-rules (a)). These contradict (O1) in \( \nQ \). Hence \( [b] < [a] \) is false. By (O1) in the ordered field \( \nR \) (@thm-reals-ordered-field), \( [a] < [b] \) or \( [a] = [b] \); that is, \( [a] \le [b] \).
+Suppose that \( [b] < [a] \). By @def-reals-order, \( [a] - [b] = [a - b] \in P \), so \( a - b \) is positive, since every representative of an element of \( P \) is (@prp-positivity-well-defined). Fix \( \delta \in \nQ_{>0} \) and \( N \in \nN \) with \( a_n - b_n \ge \delta \) for every \( n \ge N \). Let \( n \coloneqq \max\{N, N_0\} \). Then \( a_n - b_n \ge \delta > 0 \). But \( n \ge N_0 \), so \( a_n \le b_n \), that is, \( a_n - b_n \le 0 \) (@prp-ordered-ring-rules (a), in each case of \( \le \)). These contradict (O1) in \( \nQ \). Hence \( [b] < [a] \) is false. By (O1) in the ordered field \( \nR \) (@thm-reals-ordered-field), \( [a] < [b] \) or \( [a] = [b] \); that is, \( [a] \le [b] \).
 :::
 
 ::: {.warning}
@@ -296,7 +296,7 @@ In parts (a)–(d), decide for each sequence whether it is in \( \sC \) and whet
 
 (b) In \( \sC \), being null, and not positive: this is the non-example after @def-positive-cauchy-sequence.
 
-(c) In \( \sC \), as the difference of \( (d_k) \in \sC \) (@exm-truncations-equivalent) and a constant, and positive. The first truncations are \( d_0 = 1 \) and \( d_1 = 7/5 \) (\( 14 \) is the largest natural number whose square is at most \( 2 \cdot 10^2 = 200 \)), and \( (d_k) \) is non-decreasing (@exm-truncations-equivalent). So \( d_k \ge d_1 = 7/5 \) for every \( k \ge 1 \), and \( a_k \ge 2/5 \). So \( \delta = 2/5 \), \( N = 1 \) work. (\( N = 0 \) fails for every \( \delta > 0 \): \( a_0 = 0 \).)
+(c) In \( \sC \), as the difference of \( (d_k) \in \sC \) (@exm-truncations-equivalent) and a constant, and positive. The first truncations are \( d_0 = 1 \) and \( d_1 = 7/5 \) (\( 14 \) is the largest natural number whose square is at most \( 2 \cdot 10^2 = 200 \)), and \( (d_k) \) is non-decreasing ((T1), stated before @exm-truncations-equivalent). So \( d_k \ge d_1 = 7/5 \) for every \( k \ge 1 \), and \( a_k \ge 2/5 \). So \( \delta = 2/5 \), \( N = 1 \) work. (\( N = 0 \) fails for every \( \delta > 0 \): \( a_0 = 0 \).)
 
 (d) Not in \( \sC \): for every \( N \), the indices \( N \) and \( N + 1 \) give terms differing by \( 2 \), so the tolerance \( 1 \) has no threshold. The question "positive?" does not arise; the definition applies only to members of \( \sC \).
 
@@ -316,7 +316,7 @@ Let \( a_n = 1 - 1/(n + 1) \) and \( b_n = x_n - 1 \), with \( (x_n) \) the Newt
 :::
 
 ::: {.solution}
-*The example.* For \( a \), Exercise A1 (a) gives \( \delta_a = 1/2 \), \( N_a = 1 \). For \( b \): \( x_n > 0 \) and \( x_n^2 > 2 \) for every \( n \) (@exm-newton-rationals-sqrt2), while \( (7/5)^2 = 49/25 < 2 \). Both \( 7/5 \) and \( x_n \) are \( \ge 0 \), so @prp-ordered-ring-rules (g) turns \( (7/5)^2 < x_n^2 \) into \( 7/5 < x_n \). Hence \( b_n = x_n - 1 > 2/5 \) for every \( n \), and \( \delta_b = 2/5 \), \( N_b = 0 \) work. The proof then gives the threshold \( N = \max\{1, 0\} = 1 \), the margin \( 1/2 + 2/5 = 9/10 \) for \( a + b \), and the margin \( (1/2)(2/5) = 1/5 \) for \( ab \).
+*The example.* For \( a \), Exercise A1 (a) gives \( \delta_a = 1/2 \), \( N_a = 1 \). For \( b \): \( x_n > 0 \) and \( x_n^2 > 2 \) for every \( n \) (@exm-newton-rationals-sqrt2), while \( (7/5)^2 = 49/25 < 2 \). Both \( 7/5 \) and \( x_n \) are \( \ge 0 \), so @prp-ordered-ring-rules (g) turns \( (7/5)^2 < x_n^2 \) into \( 7/5 < x_n \). Here \( b \) is in \( \sC \), as the difference of \( (x_n) \), which is in \( \sC \) by @thm-sqrt2-cauchy-no-rational-limit, and a constant (@thm-cauchy-algebra-ordered-field (a), (b)). Hence \( b_n = x_n - 1 > 2/5 \) for every \( n \), and \( \delta_b = 2/5 \), \( N_b = 0 \) work. The proof then gives the threshold \( N = \max\{1, 0\} = 1 \), the margin \( 1/2 + 2/5 = 9/10 \) for \( a + b \), and the margin \( (1/2)(2/5) = 1/5 \) for \( ab \).
 :::
 
 ::: {#exr-ordering-the-reals-b2}
@@ -498,9 +498,9 @@ exr-ordering-the-reals-b4 (solution): (b) b = (-1, 1, 1, ...) agrees with (1)_n 
 exr-ordering-the-reals-b4 (solution): (c) [a - b] = [a] - [b] != 0_R when [a] != [b] | def-reals-operations; a field: x - y = 0 iff x = y (thm-reals-field); inline
 exr-ordering-the-reals-b4 (solution): (d) n >= K gives n + 1 > K, so 1/(n + 1) < delta/2; delta - delta/2 = delta/2 | cor-rationals-archimedean-epsilon, cited; prp-ordered-field-halves (b); thm-omega-order (a) for max; verify/ch05/exr-ordering-the-reals-b4.py
 exr-ordering-the-reals-b4 (solution): (e) (0)_n not positive: 0 >= delta fails for delta > 0 | (O1) in Q; inline
-exr-ordering-the-reals-a1 (solution): d_0 = 1, d_1 = 7/5 (14^2 = 196 <= 200 < 225); (d_k) non-decreasing | exm-truncations-equivalent, cited; verify/ch05/exr-ordering-the-reals-a1.py
+exr-ordering-the-reals-a1 (solution): d_0 = 1, d_1 = 7/5 (14^2 = 196 <= 200 < 225); (d_k) non-decreasing | (T1) before exm-truncations-equivalent, cited; verify/ch05/exr-ordering-the-reals-a1.py
 exr-ordering-the-reals-a1 (solution): ((-1)^n) not Cauchy: indices N, N + 1 give terms differing by 2 | inline
-exr-ordering-the-reals-b1 (solution): (7/5)^2 = 49/25 < 2; margins 9/10 and 1/5, threshold 1 | prp-ordered-ring-rules (g), cited; verify/ch05/exr-ordering-the-reals-b1.py
+exr-ordering-the-reals-b1 (solution): (7/5)^2 = 49/25 < 2; margins 9/10 and 1/5, threshold 1 | prp-ordered-ring-rules (g); b in C: thm-sqrt2-cauchy-no-rational-limit, thm-cauchy-algebra-ordered-field (a), (b), cited; verify/ch05/exr-ordering-the-reals-b1.py
 exr-ordering-the-reals-b3 (solution): 0 < 1/(n + 2) < 1 | prp-reciprocal-order (b), cited; verify/ch05/exr-ordering-the-reals-b3.py
 exr-ordering-the-reals-c1 (solution): (|e_n|) null iff (e_n) null | def-null-sequence-ordered-field with ||e_n| - 0| = |e_n - 0|; inline
 exr-ordering-the-reals-c2 (solution): catalogue entry (N2) | fd1:exm-not-allowed-catalogue, cited
