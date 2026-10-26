@@ -514,7 +514,7 @@ is a well-defined bijection.
 
 *Injective.* If \( [(p, q)]_{\approx} = [(p', q')]_{\approx} \), then \( (p, q) \approx (p', q') \) by @fd2:thm-classes-partition (b), so \( pq' = p'q \), so \( (p, q) \sim (p', q') \) and \( [(p, q)] = [(p', q')] \).
 
-*Surjective.* Let \( [(p, q)]_{\approx} \in Y/{\approx} \), with \( q \ne 0 \). By (O1), \( q > 0 \) or \( q < 0 \). If \( q > 0 \), the class is \( I([(p, q)]) \). If \( q < 0 \), then \( -q > 0 \) (@prp-ordered-ring-rules (a)), so \( (-p, -q) \in \nZ \times \nZ_{>0} \) and \( -q \in \nZ_{>0} \) by @thm-integers-ordered-ring (b), and \( (p, q) \approx (-p, -q) \), since \( p(-q) = -(pq) = (-p)q \) by @prp-ring-algebra (c); so \( [(p, q)]_{\approx} = [(-p, -q)]_{\approx} \) by @fd2:thm-classes-partition (b), and the class is \( I([(-p, -q)]) \).
+*Surjective.* Let \( [(p, q)]_{\approx} \in Y/{\approx} \), with \( q \ne 0 \). By (O1), \( q > 0 \) or \( q < 0 \). If \( q > 0 \), the class is \( I([(p, q)]) \). If \( q < 0 \), then \( -q > 0 \) (@prp-ordered-ring-rules (a)), so \( -q \in \nZ_{>0} \) by @thm-integers-ordered-ring (b), and \( (-p, -q) \in \nZ \times \nZ_{>0} \); and \( (p, q) \approx (-p, -q) \), since \( p(-q) = -(pq) = (-p)q \) by @prp-ring-algebra (c); so \( [(p, q)]_{\approx} = [(-p, -q)]_{\approx} \) by @fd2:thm-classes-partition (b), and the class is \( I([(-p, -q)]) \).
 
 So \( I \) is a bijection: the two constructions have "the same" rational numbers, matched by \( I \).
 :::

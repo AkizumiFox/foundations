@@ -469,6 +469,7 @@ The hypothesis \( n > 0 \) is used when multiplying by \( n \): for \( n < 0 \),
 - 2: subtracts \( qn \) to get \( 0 \le a - qn < n \).
 - 1: moves the inequalities back to \( \nZ \) for the integer \( r = a - qn \).
 - 2: says where \( n > 0 \) is used, with the reversed inequalities when \( n < 0 \).
+Fatal errors (0 for the step): using the existence half of @thm-integers-division-remainder or its least-element proof (circular here); multiplying the inequalities by \( n \) without using \( n > 0 \).
 :::
 
 <!-- dependency ledger
