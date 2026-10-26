@@ -202,7 +202,7 @@ items:
   kind: check
   file: 01-completeness-and-archimedes.md
   line: 94
-  hash: 83741fb55478
+  hash: 436b0713375b
   verdicts:
   - stage: S5a
     verdict: correct
@@ -256,7 +256,7 @@ items:
   kind: exm
   file: 01-completeness-and-archimedes.md
   line: 110
-  hash: 86e995d690b5
+  hash: 2f75d472d315
   verdicts:
   - stage: S7r
     verdict: correct
@@ -760,7 +760,7 @@ items:
   kind: exr
   file: 01-completeness-and-archimedes.md
   line: 376
-  hash: 02bf436743bd
+  hash: d32d85db831f
   verdicts:
   - stage: S5a
     verdict: correct
@@ -841,7 +841,7 @@ items:
   kind: exr
   file: 01-completeness-and-archimedes.md
   line: 416
-  hash: 4142ac9d796f
+  hash: 7b763072dc2b
   verdicts:
   - stage: S5a
     verdict: correct
@@ -888,6 +888,16 @@ items:
     model: claude-opus-5-5
     evidence: 01:429 re-proves sup{1-1/n}=1 in R by hand instead of citing exm-cof-sup-one-minus-reciprocals
       (01:110), already proved for every complete F
+  - stage: S8
+    verdict: correct
+    by: coordinator
+    hash: 7b763072dc2b
+    date: '2026-10-26'
+    model: claude-opus-5-5
+    evidence: '01:416-437, ledger 01:477: counterexample now cites exm-cof-sup-one-minus-reciprocals (01:110,
+      proved for every complete F) with F = R by thm-reals-complete-ordered-field, reading 1-1/n as iota_R(1-1/n);
+      1 not in A since elements < 1. No circularity: thm-cof-complete-archimedean is proved at 01:76 before
+      the exercise. Rest of solution and marking scheme unchanged and correct.'
 - key: check:02-measuring-by-rationals:1
   kind: check
   file: 02-measuring-by-rationals.md
@@ -975,6 +985,15 @@ items:
     model: claude-opus-5-5
     evidence: 02:37-43. prp-ordered-ring-rules (a) and (b) are used as stated in fd3 ch02/03:306. Density
       is cited as @thm-rationals-dense-ordered-field. iota_F preserving differences is ledgered (02:337).
+  - stage: S8
+    verdict: correct
+    by: coordinator
+    hash: b041a1763d20
+    date: '2026-10-26'
+    model: claude-opus-5-5
+    evidence: '02:43-51: (<=) addition of strict inequalities by prp-ordered-ring-rules (b); (=>) q<a+b
+      gives q-b<a by rule (a), density (thm-rationals-dense-ordered-field) gives rational r in (q-b, a),
+      then q-r<b; iota_F preserves differences. Correct.'
 - key: lem-cof-below-product
   kind: lem
   file: 02-measuring-by-rationals.md
@@ -1020,6 +1039,16 @@ items:
     model: claude-opus-5-5
     evidence: 02:64-73. Uses prp-ordered-ring-rules (c), prp-reciprocal-order (a), (O4), and reflection
       by iota_F (from 6.1:7 and thm-rationals-embed-ordered-field). The quotient step is ledgered (02:338).
+  - stage: S8
+    verdict: correct
+    by: coordinator
+    hash: 1f2490126a67
+    date: '2026-10-26'
+    model: claude-opus-5-5
+    evidence: '02:70-80 (fold): q<=0 case by (O4); (<=) two applications of prp-ordered-ring-rules (c)
+      with q/r>0 (prp-reciprocal-order (a), stated for any ordered field at ch03/02:105); (=>) multiply
+      by b^{-1}>0 to get 0<q/b<a, density gives r, r>0 since iota_F reflects order, then q<rb and q/r<b.
+      Correct.'
 - key: check:02-measuring-by-rationals:2
   kind: check
   file: 02-measuring-by-rationals.md
@@ -1554,7 +1583,7 @@ items:
   kind: exm
   file: 03-the-uniqueness-theorem.md
   line: 101
-  hash: bed1d3596c4d
+  hash: e15f9facdf62
   verdicts:
   - stage: S5a
     verdict: correct
@@ -1977,6 +2006,16 @@ items:
     model: claude-opus-5-5
     evidence: 03-the-uniqueness-theorem.md:325 label slug 'axioms-or-model' (parked old §05) in section
       'the-uniqueness-theorem', titled [A2]; violates STYLE.md:215
+  - stage: S8
+    verdict: correct
+    by: coordinator
+    hash: 7c084b1d0d7e
+    date: '2026-10-26'
+    model: claude-opus-5-5
+    evidence: '03:325 seam minor rejected: STYLE.md:215 says exercise ids are stable keys that may survive
+      a re-cut, so the id need not match the section slug or printed letter; only the title [A2] follows
+      the place, and it does. Content verified at S6 (03:325-347; verify/ch06/exr-axioms-or-model-a1.py
+      passes).'
 - key: exr-the-uniqueness-theorem-b1
   kind: exr
   file: 03-the-uniqueness-theorem.md
@@ -2093,6 +2132,15 @@ items:
     model: claude-opus-5-5
     evidence: 03-the-uniqueness-theorem.md:379 label exr-axioms-or-model-b2 titled [B3]; slug and number
       both off (STYLE.md:215)
+  - stage: S8
+    verdict: correct
+    by: coordinator
+    hash: 2a7420b90ec8
+    date: '2026-10-26'
+    model: claude-opus-5-5
+    evidence: '03:379 seam minor rejected: STYLE.md:215 (exercise ids are stable keys; the printed title
+      [B3] follows the new place, the id need not). Content verified at S6 (03:379-393, eps'' = phi^{-1}(eps),
+      backward direction by (T5)).'
 - key: exr-the-uniqueness-theorem-c1
   kind: exr
   file: 03-the-uniqueness-theorem.md
@@ -2186,7 +2234,7 @@ items:
   kind: exr
   file: 03-the-uniqueness-theorem.md
   line: 459
-  hash: 5a7edb0e98d8
+  hash: 7407970df300
   verdicts:
   - stage: S5a
     verdict: correct
@@ -2239,7 +2287,7 @@ items:
 - key: exr-the-uniqueness-theorem-r1
   kind: exr
   file: 03-the-uniqueness-theorem.md
-  line: 490
+  line: 493
   hash: b6b554d717ba
   verdicts:
   - stage: S5a
@@ -2271,7 +2319,7 @@ items:
 - key: exr-the-uniqueness-theorem-r2
   kind: exr
   file: 03-the-uniqueness-theorem.md
-  line: 507
+  line: 510
   hash: 35dd1b34e7a8
   verdicts:
   - stage: S5a
@@ -2303,8 +2351,8 @@ items:
 - key: exr-the-uniqueness-theorem-r3
   kind: exr
   file: 03-the-uniqueness-theorem.md
-  line: 531
-  hash: c70fc6f8eb5e
+  line: 534
+  hash: b61ca48974f4
   verdicts:
   - stage: S5a
     verdict: correct

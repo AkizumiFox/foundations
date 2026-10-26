@@ -426,7 +426,7 @@ Is the conclusion true? Find the line that fails, give a counterexample to that 
 ::: {.solution}
 The conclusion is true: it is @thm-cof-complete-archimedean.
 
-The illegal step is "the least upper bound of a set is its largest element". A supremum is an upper bound that lies below every other upper bound (@fd2:def-order-supremum); nothing says it belongs to the set. Counterexample to the step: in the constructed \( \nR \), \( A \coloneqq \{ 1 - 1/n : n \in \nZ_{>0} \} \) has supremum \( 1 \), and \( 1 \notin A \). Indeed every element is \( < 1 \); and if \( b < 1 \), Archimedes in \( \nR \) (@thm-constructed-reals-archimedean, with @prp-archimedean-reciprocal) gives \( n \in \nZ_{>0} \) with \( 1/n < 1 - b \), so \( 1 - 1/n > b \) and \( b \) is not an upper bound. So the step fails for this set, though the theorem's conclusion is not affected.
+The illegal step is "the least upper bound of a set is its largest element". A supremum is an upper bound that lies below every other upper bound (@fd2:def-order-supremum); nothing says it belongs to the set. Counterexample to the step: in the constructed \( \nR \), \( A \coloneqq \{ 1 - 1/n : n \in \nZ_{>0} \} \) has supremum \( 1 \) by @exm-cof-sup-one-minus-reciprocals, with \( F = \nR \) (a complete ordered field, @thm-reals-complete-ordered-field) and \( 1 - 1/n \) read as \( \iota_{\nR}(1 - 1/n) \), and \( 1 \notin A \), since every element is \( < 1 \). So the step fails for this set, though the theorem's conclusion is not affected.
 
 Repair: replace the second and third sentences by the argument of the proof of @thm-cof-complete-archimedean. Since \( s - 1 < s \), \( s - 1 \) is not an upper bound, so \( \iota_F(n) > s - 1 \) for some \( n \); then \( \iota_F(n + 1) = \iota_F(n) + 1 > s \), against \( s \) being an upper bound. The repair uses that \( s \) is **least** only through "\( s - 1 \) is not an upper bound", which hands us an element of the set just below \( s \), not \( s \) itself.
 
@@ -474,5 +474,5 @@ exr-completeness-and-archimedes-b3 (solution): (b) Q Archimedean without sqrt 2 
 exr-completeness-and-archimedes-b3 (solution): (c), (e) sup{1 - 1/n} = 1 not attained; sup S <= c | exm-cof-sup-one-minus-reciprocals, fd2:def-order-supremum (S2)
 exr-completeness-and-archimedes-b3 (solution): (d) (x + 1/2)^2 - 1/4 = x^2 + x; sqrt(a + 1/4) > 1/2 | field arithmetic, prp-cof-square-roots, prp-ordered-ring-rules (g); verify/ch06/exr-completeness-and-archimedes-b3.py
 exr-completeness-and-archimedes-c1 (solution): an injection F -> P(Q) means |F| <= |P(Q)| | fd2 Chapter 4 (prose only, no proof uses it)
-exr-completeness-and-archimedes-c2 (solution): sup{1 - 1/n : n >= 1} = 1 in R, not attained | thm-constructed-reals-archimedean, prp-archimedean-reciprocal; inline
+exr-completeness-and-archimedes-c2 (solution): sup{1 - 1/n : n >= 1} = 1 in R, not attained | exm-cof-sup-one-minus-reciprocals with F = R (thm-reals-complete-ordered-field)
 -->
