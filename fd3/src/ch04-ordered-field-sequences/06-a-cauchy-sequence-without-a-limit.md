@@ -60,27 +60,27 @@ e_{n+1} \le \frac{e_n \cdot e_n}{8} \le \frac{e_n}{8} \cdot \frac{1}{4} = \frac{
 \]
 where the last step is @prp-ordered-field-halves (c), since \( 0 < 4n + 4 \le 128 n \) for \( n \ge 1 \). This is \( P(k + 1) \).
 
-*(vi) For \( m \ge n \ge 1 \): \( 0 \le x_n - x_m \le 1/(4n) \).* By (iv), \( x_m \le x_n \), so \( x_n - x_m \ge 0 \). By (i), \( x_m^2 > 2 \); multiplying by \( 1/x_m > 0 \) (@prp-reciprocal-order (a), @prp-ordered-ring-rules (c)) gives \( x_m > 2/x_m \). From \( 0 < x_m \le x_n \), @prp-ordered-field-halves (c) gives \( 1/x_n \le 1/x_m \), so \( 2/x_n \le 2/x_m < x_m \) (@prp-ordered-field-halves (d)). Hence
+*(vi) For \( m \ge n \ge 1 \): \( 0 \le x_n - x_m \le 1/(4n) \).* By (iv), \( x_m \le x_n \), so \( x_n - x_m \ge 0 \). By (i), \( x_m^2 > 2 \); multiplying by \( 1/x_m > 0 \) (@prp-reciprocal-order (a), @prp-ordered-ring-rules (c)) gives \( x_m > 2/x_m \). From \( 0 < x_m \le x_n \), @prp-ordered-field-halves (c) gives \( 1/x_n \le 1/x_m \), so \( 2/x_n \le 2/x_m < x_m \) (@prp-ordered-field-halves (d)). Hence, by negation and addition (@prp-ordered-ring-rules (a), (b)),
 \[
 x_n - x_m \le x_n - \frac{2}{x_n} = \frac{x_n^2 - 2}{x_n} = \frac{e_n}{x_n} \le e_n \le \frac{1}{4n} .
 \]
-Here \( e_n/x_n \le e_n \) because \( 0 < 1 < x_n \) by (iii), so \( 1/x_n < 1 \) (@prp-reciprocal-order (b)), and \( e_n > 0 \); the last step is (v).
+Here \( e_n/x_n \le e_n \) because \( 0 < 1 < x_n \) by (iii), so \( 1/x_n < 1 \) (@prp-reciprocal-order (b)), and \( e_n > 0 \), so multiplying by \( e_n \) preserves the inequality (@prp-ordered-ring-rules (c)); the last step is (v).
 
 *Cauchy.* Let \( \varepsilon \in \nQ_{>0} \). By @cor-rationals-archimedean-epsilon there is \( N \in \nZ_{>0} \) with \( 1/N < \varepsilon \); it depends only on \( \varepsilon \). Let \( m, n \ge N \), and let \( k \coloneqq \min\{m, n\} \ge N \ge 1 \) and \( l \coloneqq \max\{m, n\} \). By (vi) with the pair \( l \ge k \),
 \[
 \abs{x_m - x_n} = x_k - x_l \le \frac{1}{4k} \le \frac{1}{4N} \le \frac{1}{N} < \varepsilon ,
 \]
-where \( 1/(4k) \le 1/(4N) \le 1/N \) is @prp-ordered-field-halves (c) applied to \( N \le 4N \le 4k \). So \( (x_n) \) is Cauchy in \( \nQ \).
+where the equality holds because \( x_k - x_l \ge 0 \) by (vi), so \( \abs{x_k - x_l} = x_k - x_l \) by the definition of the absolute value, and \( \abs{x_m - x_n} = \abs{x_k - x_l} \) since \( \abs{-y} = \abs{y} \) (@prp-absolute-value-ordered-field (b)), and \( 1/(4k) \le 1/(4N) \le 1/N \) is @prp-ordered-field-halves (c) applied to \( N \le 4N \le 4k \). So \( (x_n) \) is Cauchy in \( \nQ \).
 
 *No rational limit.* Suppose, for a contradiction, that \( x_n \to L \) for some \( L \in \nQ \). By the product law, @thm-limit-laws-ordered-field (c), applied with both sequences equal to \( (x_n) \), \( x_n^2 \to L^2 \).
 
-Next, \( (e_n) \) is null. We use the squeeze, @prp-limit-preserves-order-ordered-field (c), with \( N_0 = 1 \), the lower sequence constantly \( 0 \) (which tends to \( 0 \)) and the upper sequence \( (1/(n + 1))_{n \in \nN} \). The upper sequence is defined for every \( n \in \nN \), and it is null in \( \nQ \) by @prp-archimedean-reciprocal, as in @exm-first-sequences-ordered-field. For \( n \ge 1 \) we have \( n + 1 \le 4n \) (as \( 1 \le 3n \)), so by (i), (v) and @prp-ordered-field-halves (c),
+Next, \( (e_n) \) is null. We use the squeeze, @prp-limit-preserves-order-ordered-field (c), with \( N_0 = 1 \), the lower sequence constantly \( 0 \) (which tends to \( 0 \), @exm-first-sequences-ordered-field (a)) and the upper sequence \( (1/(n + 1))_{n \in \nN} \). The upper sequence is defined for every \( n \in \nN \), and it is null in \( \nQ \) by @prp-archimedean-reciprocal, as in @exm-first-sequences-ordered-field. For \( n \ge 1 \) we have \( n + 1 \le 4n \) (as \( 1 \le 3n \)), so by (i), (v) and @prp-ordered-field-halves (c),
 \[
 0 < e_n \le \frac{1}{4n} \le \frac{1}{n + 1} \qquad (n \ge 1) .
 \]
 (At \( n = 0 \) the middle term is undefined and \( e_0 = 2 \); the squeeze needs the inequalities only from \( N_0 = 1 \) on.) So \( e_n \to 0 \).
 
-Then \( x_n^2 = 2 + e_n \) for every \( n \), and the sum law, @thm-limit-laws-ordered-field (a), with the constant sequence \( 2 \) gives \( x_n^2 \to 2 + 0 = 2 \). The sequence \( (x_n^2) \) therefore tends to \( L^2 \) and to \( 2 \), and by @thm-limit-unique-ordered-field, \( L^2 = 2 \). This contradicts @thm-no-rational-square-two. Hence no \( L \in \nQ \) has \( x_n \to L \).
+Then \( x_n^2 = 2 + e_n \) for every \( n \), and the sum law, @thm-limit-laws-ordered-field (a), with the constant sequence \( 2 \) (@exm-first-sequences-ordered-field (a)) gives \( x_n^2 \to 2 + 0 = 2 \). The sequence \( (x_n^2) \) therefore tends to \( L^2 \) and to \( 2 \), and by @thm-limit-unique-ordered-field, \( L^2 = 2 \). This contradicts @thm-no-rational-square-two. Hence no \( L \in \nQ \) has \( x_n \to L \).
 :::
 
 The answer to the prompt: the product law, @thm-limit-laws-ordered-field (c), applied to \( a_n = b_n = x_n \). It is the only step that uses the hypothesis \( x_n \to L \); the rest of the second half is about \( e_n \), which we control without any limit, and then uniqueness compares the two limits of \( (x_n^2) \).
@@ -119,9 +119,9 @@ Looking back over the chapter, three familiar tools of real analysis are absent,
 - **No supremum.** No result uses the supremum of a subset of \( F \) (@fd2:def-order-supremum), so nothing here rests on a least upper bound property.
 - **No monotone convergence theorem, and no Bolzano–Weierstrass theorem.** Neither is stated or used.
 
-In \( \nQ \) each of the three would fail. A least upper bound property fails by Section 3.3: the set of rationals with square below \( 2 \) is non-empty and bounded above, with no rational supremum. A monotone convergence theorem fails by the sequence of this section: \( (x_n) \) is decreasing (clause (iv) of the proof), bounded (the Quick check above) and Cauchy, and it has no limit in \( \nQ \). And so does Bolzano–Weierstrass, which would give the bounded sequence \( (x_n) \) a subsequence converging in \( \nQ \). Indeed, let \( n_0 < n_1 < n_2 < \cdots \) be indices and suppose \( x_{n_k} \to L \in \nQ \) as \( k \to \infty \). By induction, \( n_k \ge k \) for every \( k \) (if \( n_k \ge k \), then \( n_{k+1} > n_k \ge k \), so \( n_{k+1} \ge k + 1 \)). So for \( k \ge 1 \), \( 0 < e_{n_k} \le 1/(4n_k) \le 1/(4k) \le 1/(k + 1) \), and the argument of the proof, run on the sequence \( (x_{n_k})_{k \in \nN} \), gives \( L^2 = 2 \) again.
+In \( \nQ \) each of the three would fail. A least upper bound property fails by Section 3.3: the set of rationals with square below \( 2 \) is non-empty and bounded above, with no rational supremum (@thm-rationals-gap-sqrt2 (a)). A monotone convergence theorem fails by the sequence of this section: \( (x_n) \) is decreasing (clause (iv) of the proof), bounded (the Quick check above) and Cauchy, and it has no limit in \( \nQ \). And so does Bolzano–Weierstrass, which would give the bounded sequence \( (x_n) \) a subsequence converging in \( \nQ \). Indeed, let \( n_0 < n_1 < n_2 < \cdots \) be indices and suppose \( x_{n_k} \to L \in \nQ \) as \( k \to \infty \). By induction, \( n_k \ge k \) for every \( k \) (if \( n_k \ge k \), then \( n_{k+1} > n_k \ge k \), so \( n_{k+1} \ge k + 1 \)). So for \( k \ge 1 \), \( 0 < e_{n_k} \le 1/(4n_k) \le 1/(4k) \le 1/(k + 1) \), and the argument of the proof, run on the sequence \( (x_{n_k})_{k \in \nN} \), gives \( L^2 = 2 \) again.
 
-The reader who knows real analysis will have met all three as theorems about \( \nR \). They are true there because of an axiom about \( \nR \), completeness, that no ordered field satisfies automatically, and this chapter never assumed it. Chapter 5 builds, from Cauchy sequences of rationals, a field in which every Cauchy sequence converges, and proves that in it every non-empty subset that is bounded above has a supremum: a complete ordered field. Chapter 6 proves that any two complete ordered fields are copies of each other, by exactly one order-preserving field isomorphism. *Analysis on the Real Line*, Chapter 1 takes the axioms of a complete ordered field as its starting point, and its Chapter 2 revisits this chapter's sequences, now in \( \nR \).
+The reader who knows real analysis will have met all three as theorems about \( \nR \). They are true there because of an axiom about \( \nR \), completeness, that no ordered field satisfies automatically, and this chapter never assumed it. Chapter 5 builds, from Cauchy sequences of rationals, a field in which every Cauchy sequence converges, and proves that in it every non-empty subset that is bounded above has a supremum: a complete ordered field. Chapter 6 proves that any two complete ordered fields are copies of each other, by exactly one order-preserving field isomorphism. *Real Numbers, Metric Spaces, and Derivatives*, Chapter 1 takes the axioms of a complete ordered field as its starting point, and its Chapter 4 revisits this chapter's sequences, now in \( \nR \).
 
 ## Exercises
 
@@ -285,11 +285,21 @@ The terms are the same in both fields; what changed is the set of tolerances. \(
 ::: {#exr-a-cauchy-sequence-without-a-limit-r1}
 [R1]
 
-Let \( \sC \) be the set of Cauchy sequences in \( \nQ \) and \( \sN \) the set of null sequences in \( \nQ \). Prove that \( \sN \subseteq \sC \), that \( (y_n + z_n) \in \sN \) whenever \( (y_n), (z_n) \in \sN \), and that \( (r_n z_n) \in \sN \) whenever \( (r_n) \in \sC \) and \( (z_n) \in \sN \).
+Let \( x \in \nQ \). Prove that there is a sequence \( (k_n) \) of integers such that \( k_n/(n + 1) \le x \) for every \( n \in \nN \) and \( k_n/(n + 1) \to x \) in \( \nQ \).
 :::
 
 ::: {.solution}
-\( \sN \subseteq \sC \) by @thm-cauchy-algebra-ordered-field (a). If \( y_n \to 0 \) and \( z_n \to 0 \), then \( y_n + z_n \to 0 + 0 = 0 \) by @thm-limit-laws-ordered-field (a). If \( (r_n) \in \sC \), it has a bound \( M \in \nQ_{>0} \) (@prp-cauchy-bounded-ordered-field), so \( (z_n r_n) \) is null by @prp-null-times-bounded-ordered-field, and \( r_n z_n = z_n r_n \). Chapter 5 uses these two closure properties when it adds and multiplies classes.
+The tool is the integer part of a rational (@prp-rational-integer-part). For \( n \in \nN \), the rational \( (n + 1)x \) has exactly one integer \( k_n \) with
+\[
+k_n \le (n + 1)x < k_n + 1 ,
+\]
+so \( n \mapsto k_n \coloneqq \floor{(n + 1)x} \) is a sequence of integers; uniqueness makes it a definition, with no choices. Multiplying by \( 1/(n + 1) > 0 \) (@prp-reciprocal-order (a), @prp-ordered-ring-rules (c); the case of equality is trivial) gives
+\[
+\frac{k_n}{n + 1} \le x < \frac{k_n}{n + 1} + \frac{1}{n + 1} ,
+\]
+which is the first claim. Adding \( -k_n/(n + 1) \) (@prp-ordered-ring-rules (b)), \( 0 \le x - k_n/(n + 1) < 1/(n + 1) \), so \( \abs{k_n/(n + 1) - x} = x - k_n/(n + 1) < 1/(n + 1) \) (@def-absolute-value-ordered-field, @prp-absolute-value-ordered-field (b)). Let \( \varepsilon \in \nQ_{>0} \). Since \( 1/(n + 1) \to 0 \) in \( \nQ \) (@exm-first-sequences-ordered-field (b)), there is \( N \in \nN \) with \( 1/(n + 1) < \varepsilon \) for every \( n \ge N \), and then \( \abs{k_n/(n + 1) - x} < \varepsilon \) for every \( n \ge N \). So \( k_n/(n + 1) \to x \).
+
+The same proof runs in any Archimedean ordered field, with @prp-integer-part-ordered-field in place of the integer part of a rational and @prp-reciprocals-null-iff-archimedean for \( 1/(n + 1) \to 0 \).
 :::
 
 ::: {#exr-a-cauchy-sequence-without-a-limit-r2}
@@ -367,11 +377,12 @@ thm-sqrt2-cauchy-no-rational-limit (proof): every m >= n in N is n + k | prp-ome
 thm-sqrt2-cauchy-no-rational-limit (proof): induction for (iv), (v) | fd1:ax-induction via cor-omega-identification (b), cited
 thm-sqrt2-cauchy-no-rational-limit (proof): 4(n + 1) <= 128 n and n + 1 <= 4n for n >= 1; 4 <= 4n; N <= 4N <= 4k | inline arithmetic in N, carried into Q by prp-naturals-in-ordered-field (b); verify/ch04/thm-sqrt2-cauchy-no-rational-limit.py
 thm-sqrt2-cauchy-no-rational-limit (proof): x_n - 2/x_n = (x_n^2 - 2)/x_n | lem-field-fraction-rules (b); inline
-thm-sqrt2-cauchy-no-rational-limit (proof): constant sequence 2 tends to 2; constant 0 tends to 0 | exm-first-sequences-ordered-field, cited
+thm-sqrt2-cauchy-no-rational-limit (proof): constant sequence 2 tends to 2; constant 0 tends to 0 | exm-first-sequences-ordered-field (a), cited
+thm-sqrt2-cauchy-no-rational-limit (proof): order steps in (vi) and the Cauchy step: negation and addition, multiplying by e_n > 0, |-y| = |y| and |y| = y for y >= 0 | prp-ordered-ring-rules (a), (b), (c); prp-absolute-value-ordered-field (b), cited
 thm-sqrt2-cauchy-no-rational-limit (example): values x_0..x_3, e_0..e_3 and e_n <= 1/(4n) for n = 1, 2, 3 | exm-newton-rationals-sqrt2; verify/ch04/thm-sqrt2-cauchy-no-rational-limit.py
-thm-sqrt2-cauchy-no-rational-limit (claim): Section 3.3: {x in Q : x^2 < 2} has no rational supremum | F3.2 section 06 (thm-rationals-gap-sqrt2), prose pointer only, not used in a proof
+thm-sqrt2-cauchy-no-rational-limit (claim): Section 3.3: {x in Q : x^2 < 2} has no rational supremum | F3.11 section 03 (thm-rationals-gap-sqrt2 (a)), cited, not used in a proof
 thm-sqrt2-cauchy-no-rational-limit (claim): subsequence n_k >= k by induction; e_{n_k} <= 1/(4k) <= 1/(k + 1) | inline (discreteness of N, thm-omega-order); argument of the proof rerun
-thm-sqrt2-cauchy-no-rational-limit (claim): closing paragraph, the complete ordered field, its uniqueness, the analysis volume | F3.10, F3.4, AN1.1 and AN1.2 (prose pointers; nothing depends on them)
+thm-sqrt2-cauchy-no-rational-limit (claim): closing paragraph, the complete ordered field, its uniqueness, the analysis volume | F3.10, F3.4, AN1.1 and AN1.2 (its Chapters 1 and 4; prose pointers; nothing depends on them)
 thm-sqrt2-cauchy-no-rational-limit (solution): the Quick check, 1/N < 1/100 gives least N = 101 | cor-rationals-archimedean-epsilon; inline
 exr-a-cauchy-sequence-without-a-limit-a1 (solution): x_2 - x_3 = 1/408, e_2/x_2 = 1/204 | verify/ch04/exr-a-cauchy-sequence-without-a-limit-a1.py
 exr-a-cauchy-sequence-without-a-limit-b2 (solution): 2^{k+1} = 2^k + 2^k and 2^k >= 1 | prp-omega-powers-parity (powers in N, Section 1.3, defined by thm-omega-recursion); omega arithmetic; inline; verify/ch04/exr-a-cauchy-sequence-without-a-limit-b2.py
@@ -380,7 +391,9 @@ exr-a-cauchy-sequence-without-a-limit-c1 (solution): identities for u(s) = (s^2 
 exr-a-cauchy-sequence-without-a-limit-c1 (solution): (a) follows the route of thm-no-rational-square-two | prp-integer-least-element, prp-ordered-ring-rules (e), (g), cited
 exr-a-cauchy-sequence-without-a-limit-c2 (solution): Q(t) ordered by leading coefficients; t > k * 1 for every k in N | exm-rational-function-field (school fact; formal polynomials in F5.4); exercise only, nothing depends on it
 exr-a-cauchy-sequence-without-a-limit-c2 (solution): 1/(N + 1) - 1/(N + 2) = 1/((N + 1)(N + 2)) | lem-field-fraction-rules (c); verify/ch04/exr-a-cauchy-sequence-without-a-limit-c2.py
-exr-a-cauchy-sequence-without-a-limit-r1 (solution): N in C, N closed under +, r.z in N for r in C, z in N | thm-cauchy-algebra-ordered-field (a), thm-limit-laws-ordered-field (a), prp-cauchy-bounded-ordered-field, prp-null-times-bounded-ordered-field, cited
+exr-a-cauchy-sequence-without-a-limit-r1 (solution): k_n = floor((n + 1)x), k_n/(n + 1) <= x < k_n/(n + 1) + 1/(n + 1) | prp-rational-integer-part, prp-reciprocal-order (a), prp-ordered-ring-rules (b), (c), cited
+exr-a-cauchy-sequence-without-a-limit-r1 (solution): |k_n/(n + 1) - x| < 1/(n + 1) -> 0 | def-absolute-value-ordered-field, prp-absolute-value-ordered-field (b), exm-first-sequences-ordered-field (b), cited
+exr-a-cauchy-sequence-without-a-limit-r1 (solution): remark, the same proof in an Archimedean field | prp-integer-part-ordered-field, prp-reciprocals-null-iff-archimedean, statement only
 exr-a-cauchy-sequence-without-a-limit-r2 (solution): r_1 = 3/2, r_2 = 7/4; 1 <= r_n < 2 and r_n < r_{n+1}; r_{n+1} - r_n = 1 - r_n/2 | fd2:thm-recursion and fd1:ax-induction via cor-omega-identification (b), cited; verify/ch04/exr-a-cauchy-sequence-without-a-limit-r2.py
 exr-a-cauchy-sequence-without-a-limit-r3 (solution): (-1)^n in {1, -1}, (-1)^{n+1} = -(-1)^n and |a_n| = 1/(n + 1) | prp-ring-algebra (c), prp-absolute-value-ordered-field (b); inline induction
 exr-a-cauchy-sequence-without-a-limit-r3 (solution): negation of "eventually keeps one sign" | fd1:prp-bounded-quantifier-negation, fd1:prp-de-morgan (a), (b), fd1:prp-negated-implication, prp-ordered-field-halves (a), cited

@@ -63,6 +63,22 @@ items:
     model: claude-opus-5-5
     evidence: 01-rules-and-absolute-value.md:39 The display ends with a comma but is followed by a new
       sentence.
+  - stage: S7r
+    verdict: correct
+    by: rereferee
+    hash: d57b5d212f27
+    date: '2026-10-26'
+    model: claude-opus-5-5
+    evidence: (a) chain y=1·y=(b^{-1}b)y=b^{-1}(by)=b^{-1}·1=b^{-1} is valid, and the display now ends
+      with a full stop. b^{-1}≠0, (b^{-1})^{-1}=b and (bd)^{-1}=b^{-1}d^{-1} all follow by uniqueness,
+      with prp-ring-algebra (b) cited correctly. No other text changed.
+  - stage: S7r
+    verdict: correct
+    by: rereferee
+    hash: d57b5d212f27
+    date: '2026-10-26'
+    model: claude-opus-5-5
+    evidence: 'Punctuation only: the display now ends with ''.'' instead of '',''.'
 - key: prp-ordered-field-halves
   kind: prp
   file: 01-rules-and-absolute-value.md
@@ -271,6 +287,22 @@ items:
     date: '2026-10-26'
     model: claude-opus-5-5
     evidence: 01-rules-and-absolute-value.md:185 Proof (f) cites (O3) for adding -|y| to a weak inequality.
+  - stage: S7r
+    verdict: correct
+    by: rereferee
+    hash: fd9f6ac3a9d1
+    date: '2026-10-26'
+    model: claude-opus-5-5
+    evidence: '(f): |x|≤|x-y|+|y| from (e). Adding -|y| gives |x|-|y|≤|x-y|, now cited as (O3) (or equality),
+      which is valid for a weak inequality. The symmetric bound, the negation via prp-ordered-ring-rules
+      (a) and the conclusion through (d) are all sound. Parts (a)–(e) are unchanged.'
+  - stage: S7r
+    verdict: correct
+    by: rereferee
+    hash: fd9f6ac3a9d1
+    date: '2026-10-26'
+    model: claude-opus-5-5
+    evidence: In (f), '(O3) (or equality)' now covers the non-strict case. The rest of the proof is unchanged.
 - key: check:01-rules-and-absolute-value:1
   kind: check
   file: 01-rules-and-absolute-value.md
@@ -606,6 +638,24 @@ items:
       The product-law induction uses def-omega-arithmetic (b),(c), the sum law and (F9). (b) uses (h)
       and (e) with 1_F != 0. (c) uses the product law and def (b). (d): j(0)=0, j(1)=1 and the additivity
       of iota/j (prp-integers-embed-rationals, prp-naturals-embed-integers (a)), then uniqueness in fd2:thm-recursion'
+  - stage: S7r
+    verdict: correct
+    by: rereferee
+    hash: e2f14042fb6b
+    date: '2026-10-26'
+    model: claude-opus-5-5
+    evidence: The base case now cites prp-ring-algebra (b) for (m·1_F)·0 = 0. The rest is unchanged and
+      cited. The prose at line 80 that follows the proof now points to exm-finite-ring-not-orderable,
+      which is the two-element field of the fold at line 30.
+  - stage: S7r
+    verdict: correct
+    by: rereferee
+    hash: e2f14042fb6b
+    date: '2026-10-26'
+    model: claude-opus-5-5
+    evidence: The base case (m·1_F)·0 = 0 now cites prp-ring-algebra (b), the a·0 = 0 rule as it is used
+      in §01. The follow-up prose points to @exm-finite-ring-not-orderable, which line 31 uses in the
+      fold before the proposition.
 - key: check:02-naturals-and-archimedes:1
   kind: check
   file: 02-naturals-and-archimedes.md
@@ -909,6 +959,14 @@ items:
     date: '2026-10-12'
     model: claude-opus-5-5
     evidence: '02:251-255: true, and its hypothesis is shown necessary at 02:295.'
+  - stage: S7r
+    verdict: correct
+    by: rereferee
+    hash: 69065deabf0d
+    date: '2026-10-26'
+    model: claude-opus-5-5
+    evidence: The statement is unchanged. The dependency-ledger claim line now reads 'Chapters 5 and 6
+      use it (F3.10 §04, thm-constructed-rationals-dense; F3.4)', which matches the actual uses.
 - key: proof:thm-rationals-dense-ordered-field
   kind: proof
   file: 02-naturals-and-archimedes.md
@@ -963,6 +1021,14 @@ items:
       by c uses prp-ordered-ring-rules (c), the integer part of cx comes from prp-integer-part-ordered-field,
       and iota_F(m+1)=iota_F(m)+1_F holds by additivity. Multiplying by c^{-1}>0 uses prp-reciprocal-order
       (a), and iota_F(q)c = iota_F(m+1) holds because iota_F respects products.
+  - stage: S7r
+    verdict: correct
+    by: rereferee
+    hash: 49f58fb187dd
+    date: '2026-10-26'
+    model: claude-opus-5-5
+    evidence: 'The sentence after the proof (line 288) is now accurate: ch05/04:114 uses the theorem with
+      F = R, and ch06 (01:106, 01:371, 02:50, etc.) uses it in complete ordered fields.'
 - key: exm-rational-function-field
   kind: exm
   file: 02-naturals-and-archimedes.md
@@ -1315,6 +1381,22 @@ items:
     evidence: 02-naturals-and-archimedes.md:467 The marking scheme gives 6 points jointly to part (a),
       which is one line, and to naming the failing step of (b). Part (a) gets no points of its own, and
       there is no way to grade a reader who does only one of the two.
+  - stage: S7r
+    verdict: correct
+    by: rereferee
+    hash: d198f3da13cc
+    date: '2026-10-26'
+    model: claude-opus-5-5
+    evidence: The solution is unchanged and correct. The marking scheme is now 2+3+3+2 = 10 over 4 key
+      steps that follow the solution, and the fatal-error line is kept.
+  - stage: S7r
+    verdict: correct
+    by: rereferee
+    hash: d198f3da13cc
+    date: '2026-10-26'
+    model: claude-opus-5-5
+    evidence: 'The marking scheme now matches the solution: (a) 2, the step that fails 3, t = iota(r)
+      < n·1 via thm-rationals-archimedean 3, the contradiction 2, for a total of 10.'
 - key: def-sequence-ordered-field
   kind: def
   file: 03-limits.md
@@ -1720,6 +1802,15 @@ items:
     evidence: 03-limits.md:535 The dependency-ledger source for the finite maximum in F puts the 'any
       ordered field' remark in fd2 Section 3.3. The remark is actually in fd2 Section 5.3, which is what
       the prose at :281 says.
+  - stage: S7r
+    verdict: correct
+    by: rereferee
+    hash: 955aa9454187
+    date: '2026-10-26'
+    model: claude-opus-5-5
+    evidence: Ledger source for the finite maximum in F now cites fd2:prp-finite-max (Section 3.3) and
+      the ordered-field remark in fd2 Section 5.3 (03-orders.md:152 'the whole proposition holds in any
+      ordered field'), consistent with prose at :281.
 - key: prp-limit-null-shift-ordered-field
   kind: prp
   file: 03-limits.md
@@ -1878,6 +1969,14 @@ items:
       the proof works in any totally ordered set, and the whole proposition holds in any ordered field.
       Ledger 427 is added. The N = 0 case is handled separately. M >= |a|+1 >= 1 > 0. The two ranges n
       < N and n >= '
+  - stage: S7r
+    verdict: correct
+    by: rereferee
+    hash: 8a5f6f49526e
+    date: '2026-10-26'
+    model: claude-opus-5-5
+    evidence: Proof handles N = 0 separately, M >= |a|+1 > 0, covers n < N and n >= N; ledger source now
+      correctly locates the Section 5.3 remark.
 - key: exr-limits-a1
   kind: exr
   file: 03-limits.md
@@ -1945,6 +2044,22 @@ items:
     evidence: '03:365-385. (a) uses bounded negation (a), (b), (a), then negated implication. (b) ''eventually
       constant'' is right. (c) My script: |a_n - 2| = 1/(n+1), least N = 50, and n = 49 gives exactly
       1/50.'
+  - stage: S7r
+    verdict: correct
+    by: rereferee
+    hash: d27620177698
+    date: '2026-10-26'
+    model: claude-opus-5-5
+    evidence: '(b) solution: forward direction via eps := |a_n - a| and (O1) is sound; converse now correctly
+      limited to a_n = a for n >= N; (1/(n+1)) example and (c) N = 50 unchanged and correct.'
+  - stage: S7r
+    verdict: correct
+    by: rereferee
+    hash: d27620177698
+    date: '2026-10-26'
+    model: claude-opus-5-5
+    evidence: The converse in (b) is restated for a sequence with a_n = a for every n >= N, with |a_n
+      - a| = |0| = 0 < eps. This is correct.
 - key: exr-limits-b1
   kind: exr
   file: 03-limits.md
@@ -2237,6 +2352,22 @@ items:
     evidence: 03-limits.md:521 The repair line requires 'a finite maximum'. A correct repair with M =
       |a_0| + ... + |a_{N-1}| + |a| + 1, which a reader may write when the finite maximum is not to hand,
       earns 0 for this line. The scheme rewards a particular form over correctness.
+  - stage: S7r
+    verdict: correct
+    by: rereferee
+    hash: 611fe8d70220
+    date: '2026-10-26'
+    model: claude-opus-5-5
+    evidence: Solution identifies line (3), counterexample a_0 = 5, a_n = 0 checks; repair matches proof
+      of prp-convergent-bounded-ordered-field; rubric repair line now accepts max or sum bound, both valid.
+  - stage: S7r
+    verdict: correct
+    by: rereferee
+    hash: 611fe8d70220
+    date: '2026-10-26'
+    model: claude-opus-5-5
+    evidence: The repair step now accepts either a finite maximum or a finite sum of |a_0|, ..., |a_{N-1}|
+      and |a| + 1. Both are valid bounds.
 - key: prp-null-times-bounded-ordered-field
   kind: prp
   file: 04-limit-laws.md
@@ -2301,6 +2432,21 @@ items:
     model: claude-opus-5-5
     evidence: 04-limit-laws.md:22 One step of the proof names no reason, which goes against the STYLE
       §9 rule 'every step names its reason'.
+  - stage: S7r
+    verdict: correct
+    by: rereferee
+    hash: 8c3a1ff16571
+    date: '2026-10-26'
+    model: claude-opus-5-5
+    evidence: Line 22 now cites @prp-ordered-ring-rules (c) (a<b, c>0 => ac<bc) for multiplying |a_n|<eps/M
+      by M>0. Every step of the proof now names its reason.
+  - stage: S7r
+    verdict: correct
+    by: rereferee
+    hash: 8c3a1ff16571
+    date: '2026-10-26'
+    model: claude-opus-5-5
+    evidence: Multiplying by M > 0 now cites prp-ordered-ring-rules (c). This is correct.
 - key: lem-limit-bounded-away-ordered-field
   kind: lem
   file: 04-limit-laws.md
@@ -2454,6 +2600,27 @@ items:
     model: claude-opus-5-5
     evidence: 04-limit-laws.md:83 The proof says the tolerances eps/(2M) and eps/(2(|b|+1)) are positive
       without a reason, and the ledger does not cover it.
+  - stage: S7r
+    verdict: correct
+    by: rereferee
+    hash: e932936bda29
+    date: '2026-10-26'
+    model: claude-opus-5-5
+    evidence: 'Line 83: the positivity of the tolerances cites halves (b) (2>0), (O4) and reciprocal-order
+      (a). The dependence sentence is now accurate (N_1 on eps and M, N_2 on eps and b). Line 91: |b|<=|b|+1
+      and adding the strict estimates both cite ring-rules (b), and 0<1 comes from ring-rules (e), which
+      is in the ledger. Line 101: |b|^2>0 cites ring-rules (e), then (O4) and halves (b). The new ledger
+      line co'
+  - stage: S7r
+    verdict: correct
+    by: rereferee
+    hash: e932936bda29
+    date: '2026-10-26'
+    model: claude-opus-5-5
+    evidence: The positivity of eps/(2M), eps/(2(|b|+1)) and eps|b|^2/2 is now justified (halves (b),
+      (O4), reciprocal-order (a), ordered-ring-rules (e)). The dependence of N_1 on (eps, M) and of N_2
+      on (eps, b) is stated correctly, and adding the two estimates cites rule (b). The new ledger line
+      matches.
 - key: check:04-limit-laws:1
   kind: check
   file: 04-limit-laws.md
@@ -2793,6 +2960,25 @@ items:
       has no counterpart on that route. (2) Line 1 requires a bound for (|a_n|). The mirror proof, a_n
       b_n - ab = b_n(a_n - a) + a(b_n - b) with a bound for (|b_n|), is equally correct but does not match
       th
+  - stage: S7r
+    verdict: correct
+    by: rereferee
+    hash: ed7f303737aa
+    date: '2026-10-26'
+    model: claude-opus-5-5
+    evidence: The solution's dependence sentence is corrected. In the marking scheme, line 1 now accepts
+      a bound for either factor sequence, and line 3 asks for independence from n with the accurate dependence.
+      The null-times-bounded route has a 2/2/3/2/1 split (total 10) that matches the problem's allowed
+      tools (prp-null-times-bounded-ordered-field, prp-limit-null-shift-ordered-field), and it handles
+      b=0 throu
+  - stage: S7r
+    verdict: correct
+    by: rereferee
+    hash: ed7f303737aa
+    date: '2026-10-26'
+    model: claude-opus-5-5
+    evidence: The scheme's dependence wording now matches the solution. The null-times-bounded alternative
+      is broken down as 2+2+3+2+1 = 10, which agrees with the main scheme.
 - key: exr-limit-laws-c2
   kind: exr
   file: 04-limit-laws.md
@@ -3220,6 +3406,24 @@ items:
     model: claude-opus-5-5
     evidence: 05-cauchy-sequences.md:231 The step 'For n >= 7, n + 1 >= 8, so 4/(n + 1) <= 1/2' uses reciprocal
       order (1/(n+1) <= 1/8 from 0 < 8 <= n+1) without an @ref, and the ledger does not list it.
+  - stage: S7r
+    verdict: correct
+    by: rereferee
+    hash: cf5e7887689f
+    date: '2026-10-26'
+    model: claude-opus-5-5
+    evidence: '05:231: a_n = 1 - 4/(n+1). For n >= 7, 0 < 1/(n+1) <= 1/8 by prp-reciprocal-order (b),
+      or by equality at n = 7, so a_n >= 1/2; a_6 = 3/7 < 1/2. The c = 1/5, N = 4 alternative holds too:
+      a_4 = 1/5. The citations are complete.'
+  - stage: S7r
+    verdict: correct
+    by: rereferee
+    hash: cf5e7887689f
+    date: '2026-10-26'
+    model: claude-opus-5-5
+    evidence: From n+1 >= 8 we get 0 < 1/(n+1) <= 1/8 by prp-reciprocal-order (b) (equality at n = 7),
+      so 4/(n+1) <= 1/2 and a_n >= 1/2. Also a_6 = 3/7 < 1/2, and the alternative pair gives a_4 = 1/5.
+      All of this checks. The ledger now cites lem-field-fraction-rules (b) and prp-reciprocal-order (b).
 - key: prp-sign-stable-ordered-field
   kind: prp
   file: 05-cauchy-sequences.md
@@ -3491,6 +3695,22 @@ items:
       gives a_n > 0, so no positive c comes out; the solution says this correctly. (c) The quoted line
       matches the proof text at 05:~205. (d) Checked with my own script (scratchpad s5/work/S6:04b/a1.py).
       For n>=1, |a
+  - stage: S7r
+    verdict: correct
+    by: rereferee
+    hash: 2d7e903890ec
+    date: '2026-10-26'
+    model: claude-opus-5-5
+    evidence: 'Solution (b) at 05:349 is now accurate: tolerance eps yields only a_n > 0, which does not
+      exclude terms approaching 0, and any delta < eps leaves a positive margin.'
+  - stage: S7r
+    verdict: correct
+    by: rereferee
+    hash: 2d7e903890ec
+    date: '2026-10-26'
+    model: claude-opus-5-5
+    evidence: '(b) is reworded: the estimate a_n > 0 alone does not rule out terms approaching 0. This
+      is accurate.'
 - key: exr-cauchy-sequences-b1
   kind: exr
   file: 05-cauchy-sequences.md
@@ -3694,6 +3914,23 @@ items:
       contrapositive proof fails the first and third point lines. The parenthetical '(with c = ε − δ)'
       also marks down a direct proof that uses any smaller valid c. This goes against READING.md:119 ('schemes
       are written to award steps, not wording, so that a different correct proof can pass').
+  - stage: S7r
+    verdict: minor
+    by: rereferee
+    hash: ffde80bbe0f8
+    date: '2026-10-26'
+    model: claude-opus-5-5
+    evidence: The proof and point list are correct, and the contradiction clause is present. The contraposition
+      clause at 05:461 says 'terms of each sign beyond N_0'; the witnesses are actually a term < eps/2
+      and a term > -eps/2, with no sign condition.
+  - stage: S7r
+    verdict: correct
+    by: rereferee
+    hash: ffde80bbe0f8
+    date: '2026-10-26'
+    model: claude-opus-5-5
+    evidence: Scheme step 3 now allows any c in F_{>0} (for example eps - delta). The credit for contraposition
+      or contradiction routes adds up to 2+2+2+3+1 = 10, which matches the main scheme.
 - key: exr-cauchy-sequences-c3
   kind: exr
   file: 05-cauchy-sequences.md
@@ -3773,6 +4010,25 @@ items:
     model: claude-opus-5-5
     evidence: '06-a-cauchy-sequence-without-a-limit.md:124 The pointer into the analysis volume gives
       the wrong chapter: AN1''s sequences chapter is Chapter 4 (AN1.2), not Chapter 2.'
+  - stage: S7r
+    verdict: correct
+    by: rereferee
+    hash: faaf495564eb
+    date: '2026-10-26'
+    model: claude-opus-5-5
+    evidence: 'The statement at 06:34-38 is unchanged. The S8 seam issue at 06:124 is resolved: the pointer
+      now names *Real Numbers, Metric Spaces, and Derivatives*, with Chapter 1 = AN1.1 and Chapter 4 =
+      AN1.2 (sequences), as series.py show confirms. The ledger claim line is updated to AN1.1 and AN1.2
+      (its Chapters 1 and 4).'
+  - stage: S7r
+    verdict: correct
+    by: rereferee
+    hash: faaf495564eb
+    date: '2026-10-26'
+    model: claude-opus-5-5
+    evidence: The statement is unchanged. The prose after it now cites @thm-rationals-gap-sqrt2 (a) correctly
+      (ch03/03:71) and gives the right analysis-volume chapter (its Chapter 4 = AN1.2). The ledger lines
+      are updated to F3.11 section 03 and 'its Chapters 1 and 4'.
 - key: proof:thm-sqrt2-cauchy-no-rational-limit
   kind: proof
   file: 06-a-cauchy-sequence-without-a-limit.md
@@ -3826,6 +4082,26 @@ items:
     model: claude-opus-5-5
     evidence: 06-a-cauchy-sequence-without-a-limit.md:77 The proof cites no source for the convergence
       of the constant sequences 0 and 2, yet the dependency ledger marks this fact as 'cited'.
+  - stage: S7r
+    verdict: correct
+    by: rereferee
+    hash: 0c72c28b0213
+    date: '2026-10-26'
+    model: claude-opus-5-5
+    evidence: '06:63-83. Every step that was changed now carries an accurate citation: prp-ordered-ring-rules
+      (a),(b) for negation plus addition in (vi); (c), strict, for multiplying 1/x_n < 1 by e_n > 0; def-absolute-value-ordered-field
+      and prp-absolute-value-ordered-field (b) for |x_m - x_n| = x_k - x_l; exm-first-sequences-ordered-field
+      (a) for the constant sequences 0 and 2. The mathematics is unchanged and '
+  - stage: S7r
+    verdict: correct
+    by: rereferee
+    hash: 0c72c28b0213
+    date: '2026-10-26'
+    model: claude-opus-5-5
+    evidence: 'The added citations are right: prp-ordered-ring-rules (a),(b) for the step x_n - x_m <=
+      x_n - 2/x_n, (c) for multiplying by e_n > 0, and exm-first-sequences-ordered-field (a) for the constant
+      sequences. The Cauchy-step equality |x_m - x_n| = |x_k - x_l| = x_k - x_l is now justified by the
+      definition of the absolute value together with prp-absolute-value-ordered-field (b).'
 - key: check:06-a-cauchy-sequence-without-a-limit:1
   kind: check
   file: 06-a-cauchy-sequence-without-a-limit.md
@@ -4172,6 +4448,16 @@ items:
     evidence: '06-a-cauchy-sequence-without-a-limit.md:295 R1 does not meet STYLE §11.5 (''R1: one item
       whose method comes from the previous chapter''). Its whole method comes from Chapter 4, not from
       Chapter 3.'
+  - stage: S7r
+    verdict: correct
+    by: rereferee
+    hash: 8d0762c91dcc
+    date: '2026-10-26'
+    model: claude-opus-5-5
+    evidence: 'New R1: for x in Q, k_n = floor((n+1)x). The proof that k_n/(n+1) <= x < k_n/(n+1) + 1/(n+1)
+      and |k_n/(n+1) - x| < 1/(n+1) -> 0 is complete, and every citation matches its label''s content
+      (prp-rational-integer-part, prp-reciprocal-order (a), prp-ordered-ring-rules (b),(c), def-absolute-value-ordered-field,
+      prp-absolute-value-ordered-field (b), exm-first-sequences-ordered-field (b)). The Archimedea'
 - key: exr-a-cauchy-sequence-without-a-limit-r2
   kind: exr
   file: 06-a-cauchy-sequence-without-a-limit.md

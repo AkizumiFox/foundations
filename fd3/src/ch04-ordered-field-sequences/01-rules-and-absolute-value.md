@@ -36,7 +36,7 @@ Everything rests on one move from Section 2.3: to identify an element, show it s
 ::: {.proof}
 (a) Suppose \( by = 1 \). Then
 \[
-y = 1 \cdot y = (b^{-1} b) y = b^{-1} (b y) = b^{-1} \cdot 1 = b^{-1} ,
+y = 1 \cdot y = (b^{-1} b) y = b^{-1} (b y) = b^{-1} \cdot 1 = b^{-1} .
 \]
 This is the uniqueness argument of @prp-ring-algebra (a), run with multiplication. Next, \( b^{-1} \ne 0 \): otherwise \( 1 = b b^{-1} = b \cdot 0 = 0 \) by @prp-ring-algebra (b), against \( 1 \ne 0 \). So \( (b^{-1})^{-1} \) exists, and since \( b^{-1} b = b b^{-1} = 1 \), the element \( b \) satisfies its defining equation; uniqueness gives \( (b^{-1})^{-1} = b \). Now
 \[
@@ -182,7 +182,7 @@ Parts (a)–(d) are case checks on the sign of \( x \) (and of \( y \)). The tri
 \]
 the left end because \( -(u + v) = (-u) + (-v) \). By (d) with \( r \coloneqq \abs{x} + \abs{y} \), \( \abs{x + y} \le \abs{x} + \abs{y} \). For the second form, apply the first to \( x - z = (x - y) + (y - z) \).
 
-(f) By (e), \( \abs{x} = \abs{(x - y) + y} \le \abs{x - y} + \abs{y} \), so \( \abs{x} - \abs{y} \le \abs{x - y} \) by (O3). Exchanging \( x \) and \( y \), and using \( \abs{y - x} = \abs{-(x - y)} = \abs{x - y} \) from (b), gives \( \abs{y} - \abs{x} \le \abs{x - y} \). So \( -\abs{x - y} \le -(\abs{y} - \abs{x}) \) by @prp-ordered-ring-rules (a) (or equality), and \( -(\abs{y} - \abs{x}) = \abs{x} - \abs{y} \), since \( -(u + v) = (-u) + (-v) \); that is, \( -\abs{x - y} \le \abs{x} - \abs{y} \). By (d), \( \bigl| \abs{x} - \abs{y} \bigr| \le \abs{x - y} \). This proves the proposition.
+(f) By (e), \( \abs{x} = \abs{(x - y) + y} \le \abs{x - y} + \abs{y} \), so \( \abs{x} - \abs{y} \le \abs{x - y} \) by (O3) (or equality). Exchanging \( x \) and \( y \), and using \( \abs{y - x} = \abs{-(x - y)} = \abs{x - y} \) from (b), gives \( \abs{y} - \abs{x} \le \abs{x - y} \). So \( -\abs{x - y} \le -(\abs{y} - \abs{x}) \) by @prp-ordered-ring-rules (a) (or equality), and \( -(\abs{y} - \abs{x}) = \abs{x} - \abs{y} \), since \( -(u + v) = (-u) + (-v) \); that is, \( -\abs{x - y} \le \abs{x} - \abs{y} \). By (d), \( \bigl| \abs{x} - \abs{y} \bigr| \le \abs{x - y} \). This proves the proposition.
 :::
 
 The form of (d) that the rest of the chapter uses is about a distance. Apply the strict half of (d) to \( x - a \) with \( r = \varepsilon \), and add \( a \) throughout; adding \( -a \) goes back, so the step is reversible:

@@ -378,7 +378,7 @@ The bound \( M \) depends on the whole sequence, through \( a \), \( N \) and th
 \exists \varepsilon \in F_{>0} \ \ \forall N \in \nN \ \ \exists n \in \nN \ \ \bigl( n \ge N \wedge \abs{a_n - a} \ge \varepsilon \bigr) .
 \]
 
-(b) It says that \( a_n = a \) for every \( n \ge N \): the sequence is eventually constant, equal to \( a \). Indeed, fix \( n \ge N \). Then \( \abs{a_n - a} < \varepsilon \) for every \( \varepsilon \in F_{>0} \). If \( a_n \ne a \), then \( \varepsilon \coloneqq \abs{a_n - a} \) is in \( F_{>0} \) (@prp-absolute-value-ordered-field (a)) and gives \( \abs{a_n - a} < \abs{a_n - a} \), against (O1); so \( a_n = a \). Conversely, an eventually constant sequence satisfies the formula, since \( \abs{0} = 0 < \varepsilon \). The sequence \( (1/(n + 1)) \) does not satisfy it: no term equals \( 0 \). It converges to \( 0 \), but its \( N \) must depend on \( \varepsilon \). The quantifier order is the whole difference.
+(b) It says that \( a_n = a \) for every \( n \ge N \): the sequence is eventually constant, equal to \( a \). Indeed, fix \( n \ge N \). Then \( \abs{a_n - a} < \varepsilon \) for every \( \varepsilon \in F_{>0} \). If \( a_n \ne a \), then \( \varepsilon \coloneqq \abs{a_n - a} \) is in \( F_{>0} \) (@prp-absolute-value-ordered-field (a)) and gives \( \abs{a_n - a} < \abs{a_n - a} \), against (O1); so \( a_n = a \). Conversely, a sequence with \( a_n = a \) for every \( n \ge N \) satisfies the formula, since \( \abs{a_n - a} = \abs{0} = 0 < \varepsilon \). The sequence \( (1/(n + 1)) \) does not satisfy it: no term equals \( 0 \). It converges to \( 0 \), but its \( N \) must depend on \( \varepsilon \). The quantifier order is the whole difference.
 
 (c) \( a_n - 2 = \bigl( 2n + 1 - 2(n + 1) \bigr)/(n + 1) = -1/(n + 1) \), so \( \abs{a_n - 2} = 1/(n + 1) \). By the comparison formula, \( 1/(n + 1) < 1/50 \) if and only if \( n + 1 > 50 \), that is, \( n \ge 50 \). So \( N = 50 \) works, and every \( N \le 49 \) fails at \( n = 49 \) (which is \( \ge N \)), where \( \abs{a_{49} - 2} = 1/50 \). The least \( N \) is \( 50 \).
 :::
@@ -513,7 +513,7 @@ The conclusion is **true**: it is @prp-convergent-bounded-ordered-field. The arg
 - 2: says that the conclusion is true and the argument is not correct.
 - 3: names line (3) and the use of \( \abs{a_n - a} < 1 \) for \( n < N \), where the hypothesis does not apply.
 - 3: gives a convergent sequence and a legitimate \( N \) for which the step's inequality fails at some \( n < N \), and checks it.
-- 2: repairs the argument with a finite maximum over the terms before \( N \).
+- 2: repairs the argument by a bound that also covers the finitely many terms before \( N \) (a finite maximum, or a finite sum of \( \abs{a_0}, \dots, \abs{a_{N-1}} \) and \( \abs{a} + 1 \)).
 Fatal errors (0 for the step): declaring the conclusion false; offering a counterexample to the conclusion; blaming the triangle inequality.
 :::
 
@@ -532,8 +532,8 @@ def-bounded-sequence-ordered-field (example): |c| + 1 > 0 | prp-absolute-value-o
 prp-reciprocals-null-iff-archimedean (proof): negation of def-archimedean-ordered-field; not(x < n 1_F) iff x >= n 1_F | fd1:prp-bounded-quantifier-negation (cited), prp-ordered-field-halves (a)
 prp-reciprocals-null-iff-archimedean (claim): Q(t) is not Archimedean (t > n 1 for every n) | exm-rational-function-field: school fact; formal polynomials in F5.4 (flagged; nothing in fd3 depends on it, and no proof here cites it)
 prp-reciprocals-null-iff-archimedean (claim): (the fold after it, "Rational tolerances are not enough in Q(t)") 1/(n+1) in Q(t) is iota(1/(n+1)) (iota respects products, iota(1) = 1), and 1/(n+1) < q eventually in Q, carried over by iota | thm-rationals-embed-ordered-field, exm-first-sequences-ordered-field (b) (cited); Q(t) as above, school fact; formal polynomials in F5.4
-prp-tail-change-ordered-field (proof): finite maximum of elements of F | fd2:prp-finite-max (stated for reals; its proof works in any ordered field, fd2 Section 3.3, prose remark after prp-greatest-maximal)
-prp-convergent-bounded-ordered-field (proof): finite maximum of elements of F | fd2:prp-finite-max (stated for reals; its proof works in any ordered field, fd2 Section 3.3, prose remark after prp-greatest-maximal), as in prp-tail-change-ordered-field (proof)
+prp-tail-change-ordered-field (proof): finite maximum of elements of F | fd2:prp-finite-max (Section 3.3, stated for reals; its proof works in any ordered field by the prose remark after prp-greatest-maximal, fd2 Section 5.3)
+prp-convergent-bounded-ordered-field (proof): finite maximum of elements of F | fd2:prp-finite-max (Section 3.3, stated for reals; its proof works in any ordered field by the prose remark after prp-greatest-maximal, fd2 Section 5.3), as in prp-tail-change-ordered-field (proof)
 prp-tail-change-ordered-field (proof): n >= N gives n + k >= N; n >= N + k gives n = m + k with m >= N | prp-omega-order-arithmetic (a), (c) (cited)
 exm-limit-from-definition (solution): the distance 1/(2(2n^2 + 3)) and 4n^2 - n + 5 >= 3n + 5 for n >= 1, = 5 at n = 0; hence 1/(2(2n^2 + 3)) <= 1/(n + 1) for every n | verify/ch04/exm-limit-from-definition.py
 exm-method-limit-from-definition (claim): with N = max{N', n0}, every n >= N has n >= n0 and n + 1 >= N', so |a_n - a| <= C/(n + 1) < C (eps/C) = eps | thm-omega-order (a) for the maximum; multiplying 1/(n + 1) < eps/C by C > 0, prp-ordered-ring-rules; verify/ch04/exm-limit-alternating-numerator.py (instance C = 3, n0 = 0)

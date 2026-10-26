@@ -228,7 +228,7 @@ For \( a_n = (n - 3)/(n + 1) \) in \( \nQ \), which alternative of @thm-cauchy-n
 :::
 
 ::: {.solution}
-\( a_n = 1 - 4/(n + 1) \). For \( n \ge 7 \), \( n + 1 \ge 8 \), so \( 4/(n + 1) \le 1/2 \) and \( a_n \ge 1/2 \): the first alternative, with \( c = 1/2 \), \( N = 7 \). (At \( n = 6 \), \( a_6 = 3/7 < 1/2 \), so this \( N \) is least for this \( c \); other pairs, such as \( c = 1/5 \), \( N = 4 \), work too.)
+\( a_n = 1 - 4/(n + 1) \). For \( n \ge 7 \), \( n + 1 \ge 8 \), so \( 0 < 1/(n + 1) \le 1/8 \) (@prp-reciprocal-order (b), or equality at \( n = 7 \)), hence \( 4/(n + 1) \le 1/2 \) and \( a_n \ge 1/2 \): the first alternative, with \( c = 1/2 \), \( N = 7 \). (At \( n = 6 \), \( a_6 = 3/7 < 1/2 \), so this \( N \) is least for this \( c \); other pairs, such as \( c = 1/5 \), \( N = 4 \), work too.)
 :::
 
 ## Sign stability and reciprocals
@@ -346,7 +346,7 @@ These questions are about @thm-cauchy-not-null-sign and its proof.
 ::: {.solution}
 (a) \( \exists \varepsilon \in F_{>0} \ \forall N \in \nN \ \exists n \in \nN \ (n \ge N \wedge \abs{a_n} \ge \varepsilon) \): one tolerance and, beyond every threshold, some term at least that far from \( 0 \).
 
-(b) With tolerance \( \varepsilon \), Case 1 would give only \( a_n > a_{n_0} - \varepsilon \ge \varepsilon - \varepsilon = 0 \): every later term is positive, but no positive \( c \) with \( a_n \ge c \) comes out, and the terms might still approach \( 0 \). Any tolerance strictly smaller than \( \varepsilon \) leaves a positive margin; \( \varepsilon/2 \) is the simplest.
+(b) With tolerance \( \varepsilon \), Case 1 would give only \( a_n > a_{n_0} - \varepsilon \ge \varepsilon - \varepsilon = 0 \): every later term is positive, but no positive \( c \) with \( a_n \ge c \) comes out, and the estimate \( a_n > 0 \) alone does not rule out terms approaching \( 0 \). Any tolerance strictly smaller than \( \varepsilon \) leaves a positive margin; \( \varepsilon/2 \) is the simplest.
 
 (c) In the line "since both \( n \) and \( n_0 \) are \( \ge N_0 \), \( \abs{a_n - a_{n_0}} < \varepsilon/2 \)": the Cauchy estimate holds only for pairs of indices beyond \( N_0 \). It is the reason \( N_0 \) is chosen first and the negation is applied **at** \( N_0 \).
 
@@ -456,8 +456,9 @@ Let \( n \ge N_0 \). As \( n, n_0 \ge N_0 \), \( -\varepsilon/2 < a_n - a_{n_0} 
 - 2: negates "null" correctly, with the quantifiers in order, and fixes one \( \varepsilon \).
 - 2: applies the Cauchy condition with a fixed tolerance \( \delta \) such that \( 0 < \delta < \varepsilon \) (for example \( \delta = \varepsilon/2 \)) to get \( N_0 \).
 - 2: obtains \( n_0 \ge N_0 \) with \( \abs{a_{n_0}} \ge \varepsilon \) from the negation applied **at** \( N_0 \).
-- 3: derives the one-signed bound (with \( c = \varepsilon - \delta \)) for every \( n \ge N_0 \), in both sign cases.
+- 3: derives a one-signed bound \( a_n \ge c \) or \( a_n \le -c \), with some \( c \in F_{>0} \) (for example \( c = \varepsilon - \delta \)), for every \( n \ge N_0 \), in both sign cases.
 - 1: names \( c \) and \( N \) and concludes.
+A proof by contraposition (assume neither alternative holds for any \( c, N \); show the sequence null using the Cauchy condition at tolerance \( \varepsilon/2 \) and terms of each sign beyond \( N_0 \)) earns the same points, step for step: 2 for the negated conclusion, 2 for the Cauchy threshold, 2 for choosing the witnesses beyond \( N_0 \), 3 for the two-sided bound, 1 for concluding. A complete proof by contradiction likewise earns the same \( 2 + 2 + 2 + 3 + 1 \).
 Fatal errors (0 for the step): an \( n_0 \) not known to satisfy \( n_0 \ge N_0 \), or "\( \abs{a_n} \ge \varepsilon \) for all large \( n \)" read off "not null" alone.
 :::
 
@@ -505,7 +506,7 @@ thm-cauchy-not-null-sign (proof): |a_n - 0| = |a_n| (a - 0 = a); not(x < e) iff 
 thm-cauchy-not-null-sign (proof): e - e/2 = e/2 | prp-ordered-field-halves (b); citation rule of Section 4.1
 thm-cauchy-not-null-sign (claim): |(-1)^n| = 1 | induction with prp-absolute-value-ordered-field (b); inline
 thm-cauchy-not-null-sign (claim): in Q, some n >= N has 1/(n + 1) < c | cor-rationals-archimedean-epsilon, cited
-thm-cauchy-not-null-sign (solution): the Quick check, a_n = 1 - 4/(n + 1), c = 1/2, N = 7 | lem-field-fraction-rules (b); verify/ch04/thm-cauchy-not-null-sign.py (new)
+thm-cauchy-not-null-sign (solution): the Quick check, a_n = 1 - 4/(n + 1), c = 1/2, N = 7 | lem-field-fraction-rules (b), prp-reciprocal-order (b); verify/ch04/thm-cauchy-not-null-sign.py (new)
 prp-cauchy-reciprocal-ordered-field (proof): 1/b - 1/d = (d - b)/(bd) | lem-field-fraction-rules (c), cited; verify/ch04/prp-cauchy-reciprocal-ordered-field.py
 prp-cauchy-reciprocal-ordered-field (proof): non-strict product bound | prp-ordered-field-halves (d), cited
 prp-cauchy-reciprocal-ordered-field (claim): n + 1 is unbounded in Q | thm-rationals-archimedean, cited

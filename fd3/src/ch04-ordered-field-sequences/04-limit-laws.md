@@ -19,7 +19,7 @@ Let \( \varepsilon \in F_{>0} \). Then \( \varepsilon/M \in F_{>0} \) (@prp-reci
 \[
 \abs{a_n b_n - 0} = \abs{a_n} \abs{b_n} \le \abs{a_n} M < \frac{\varepsilon}{M} \, M = \varepsilon ,
 \]
-where the first inequality multiplies \( \abs{b_n} \le M \) by \( \abs{a_n} \ge 0 \) (@prp-ordered-field-halves (d)), and the second multiplies \( \abs{a_n} < \varepsilon/M \) by \( M > 0 \).
+where the first inequality multiplies \( \abs{b_n} \le M \) by \( \abs{a_n} \ge 0 \) (@prp-ordered-field-halves (d)), and the second multiplies \( \abs{a_n} < \varepsilon/M \) by \( M > 0 \) (@prp-ordered-ring-rules (c)).
 :::
 
 For instance, \( \bigl( (-1)^n/(n + 1) \bigr) \) is null in \( \nQ \): it is \( 1/(n + 1) \), null by @exm-first-sequences-ordered-field (b), times \( (-1)^n \), bounded by \( 1 \). The bound \( M \) is fixed before \( \varepsilon \) and enters the tolerance \( \varepsilon/M \). That is the pattern of the product law below.
@@ -80,7 +80,7 @@ The factors \( b_n - b \) and \( a_n - a \) can be made small, but \( a_n \) can
 \]
 multiplying by \( \abs{c} > 0 \) (@prp-ordered-ring-rules (c)). With \( c = -1 \), and \( (-1) x = -x \) (@prp-ring-algebra (c)), this gives \( -a_n \to -a \). Then (a), applied to \( (a_n) \) and \( (-b_n) \), gives \( a_n - b_n = a_n + (-b_n) \to a + (-b) = a - b \).
 
-(c) By @prp-convergent-bounded-ordered-field there is \( M \in F_{>0} \) with \( \abs{a_n} \le M \) for every \( n \in \nN \). We fix this \( M \) now; it depends on the sequence \( (a_n) \) only. Now let \( \varepsilon \in F_{>0} \). Since \( M > 0 \) and \( \abs{b} + 1 \ge 1 > 0 \), the tolerances \( \varepsilon/(2M) \) and \( \varepsilon/(2(\abs{b} + 1)) \) are positive. Since \( b_n \to b \), choose \( N_1 \) with \( \abs{b_n - b} < \varepsilon/(2M) \) for every \( n \ge N_1 \). Since \( a_n \to a \), choose \( N_2 \) with \( \abs{a_n - a} < \varepsilon/(2(\abs{b} + 1)) \) for every \( n \ge N_2 \). Both depend only on \( \varepsilon \), \( M \) and \( b \). Let \( N \coloneqq \max\{N_1, N_2\} \), and let \( n \ge N \). Using the identity of the Idea, the triangle inequality and the product rule (@prp-absolute-value-ordered-field (e), (b)),
+(c) By @prp-convergent-bounded-ordered-field there is \( M \in F_{>0} \) with \( \abs{a_n} \le M \) for every \( n \in \nN \). We fix this \( M \) now; it depends on the sequence \( (a_n) \) only. Now let \( \varepsilon \in F_{>0} \). Since \( M > 0 \) and \( \abs{b} + 1 \ge 1 > 0 \), the tolerances \( \varepsilon/(2M) \) and \( \varepsilon/(2(\abs{b} + 1)) \) are positive (@prp-ordered-field-halves (b), (O4), @prp-reciprocal-order (a)). Since \( b_n \to b \), choose \( N_1 \) with \( \abs{b_n - b} < \varepsilon/(2M) \) for every \( n \ge N_1 \). Since \( a_n \to a \), choose \( N_2 \) with \( \abs{a_n - a} < \varepsilon/(2(\abs{b} + 1)) \) for every \( n \ge N_2 \). \( N_1 \) depends on \( \varepsilon \) and \( M \), \( N_2 \) on \( \varepsilon \) and \( b \) (and both on the given sequences); neither depends on \( n \). Let \( N \coloneqq \max\{N_1, N_2\} \), and let \( n \ge N \). Using the identity of the Idea, the triangle inequality and the product rule (@prp-absolute-value-ordered-field (e), (b)),
 \[
 \begin{aligned}
 \abs{a_n b_n - ab} &\le \abs{a_n} \abs{b_n - b} + \abs{b} \abs{a_n - a} \\
@@ -88,7 +88,7 @@ multiplying by \( \abs{c} > 0 \) (@prp-ordered-ring-rules (c)). With \( c = -1 \
 &< M \, \frac{\varepsilon}{2M} + (\abs{b} + 1) \, \frac{\varepsilon}{2(\abs{b} + 1)} = \frac{\varepsilon}{2} + \frac{\varepsilon}{2} = \varepsilon .
 \end{aligned}
 \]
-The second line uses @prp-ordered-field-halves (d), all factors being non-negative; the third multiplies the two estimates by the positive elements \( M \) and \( \abs{b} + 1 \). So \( a_n b_n \to ab \).
+The second line uses @prp-ordered-field-halves (d), all factors being non-negative (and \( \abs{b} \le \abs{b} + 1 \), by @prp-ordered-ring-rules (b)); the third multiplies the two estimates by the positive elements \( M \) and \( \abs{b} + 1 \) and adds them (@prp-ordered-ring-rules (b)). So \( a_n b_n \to ab \).
 
 (d) First we show \( 1/b_n \to 1/b \). By @lem-limit-bounded-away-ordered-field there is \( N_0 \) with \( \abs{b_n} > \abs{b}/2 \) for every \( n \ge N_0 \). For such \( n \), @lem-field-fraction-rules (c) and @prp-absolute-value-ordered-field (b) give
 \[
@@ -98,7 +98,7 @@ Multiplying \( \abs{b_n} > \abs{b}/2 \) by \( \abs{b} > 0 \) gives \( \abs{b_n}\
 \[
 \Bigl\lvert \frac{1}{b_n} - \frac{1}{b} \Bigr\rvert \le \frac{2}{\abs{b}^2} \, \abs{b_n - b} \qquad (n \ge N_0) .
 \]
-Now let \( \varepsilon \in F_{>0} \). Then \( \varepsilon \abs{b}^2/2 \in F_{>0} \); choose \( N_1 \) with \( \abs{b_n - b} < \varepsilon \abs{b}^2/2 \) for every \( n \ge N_1 \), and let \( N \coloneqq \max\{N_0, N_1\} \). For \( n \ge N \), the last display and multiplication of \( \abs{b_n - b} < \varepsilon \abs{b}^2/2 \) by \( 2/\abs{b}^2 > 0 \) gives \( \abs{1/b_n - 1/b} < (2/\abs{b}^2)(\varepsilon \abs{b}^2/2) = \varepsilon \). So \( 1/b_n \to 1/b \). Finally \( a_n/b_n = a_n \cdot (1/b_n) \), and (c) gives \( a_n/b_n \to a \cdot (1/b) = a/b \). This proves the theorem.
+Now let \( \varepsilon \in F_{>0} \). Then \( \varepsilon \abs{b}^2/2 \in F_{>0} \) (\( \abs{b}^2 > 0 \) by @prp-ordered-ring-rules (e), then (O4) and @prp-ordered-field-halves (b)); choose \( N_1 \) with \( \abs{b_n - b} < \varepsilon \abs{b}^2/2 \) for every \( n \ge N_1 \), and let \( N \coloneqq \max\{N_0, N_1\} \). For \( n \ge N \), the last display and multiplication of \( \abs{b_n - b} < \varepsilon \abs{b}^2/2 \) by \( 2/\abs{b}^2 > 0 \) gives \( \abs{1/b_n - 1/b} < (2/\abs{b}^2)(\varepsilon \abs{b}^2/2) = \varepsilon \). So \( 1/b_n \to 1/b \). Finally \( a_n/b_n = a_n \cdot (1/b_n) \), and (c) gives \( a_n/b_n \to a \cdot (1/b) = a/b \). This proves the theorem.
 :::
 
 The answer to the prompt: the tolerance \( \varepsilon/(2M) \) contains \( M \), so \( M \) must exist before that tolerance is written down. And \( M \) must not depend on \( n \): it has to bound \( \abs{a_n} \) for **every** \( n \ge N \) at once, including indices not yet chosen. That is why it comes from @prp-convergent-bounded-ordered-field, a single bound for the whole sequence, and not from "\( \abs{a_n} \) is some element of \( F \)". The \( + 1 \) in \( \abs{b} + 1 \) is there because \( b \) may be \( 0 \), and \( \varepsilon/(2\abs{b}) \) would then mean nothing.
@@ -302,7 +302,7 @@ Prove, from @def-sequence-limit-ordered-field, that if \( a_n \to a \) and \( b_
 ::: {.solution}
 By @prp-convergent-bounded-ordered-field there is \( M \in F_{>0} \) with \( \abs{a_n} \le M \) for every \( n \in \nN \). It depends only on \( (a_n) \), and we fix it before any tolerance is named.
 
-Let \( \varepsilon \in F_{>0} \). Since \( \abs{b} + 1 \ge 1 > 0 \), both \( \varepsilon/(2M) \) and \( \varepsilon/(2(\abs{b} + 1)) \) lie in \( F_{>0} \). By \( b_n \to b \) there is \( N_1 \) with \( \abs{b_n - b} < \varepsilon/(2M) \) for every \( n \ge N_1 \); by \( a_n \to a \) there is \( N_2 \) with \( \abs{a_n - a} < \varepsilon/(2(\abs{b} + 1)) \) for every \( n \ge N_2 \). These depend only on \( \varepsilon \), \( M \) and \( b \). Let \( N \coloneqq \max\{N_1, N_2\} \).
+Let \( \varepsilon \in F_{>0} \). Since \( \abs{b} + 1 \ge 1 > 0 \), both \( \varepsilon/(2M) \) and \( \varepsilon/(2(\abs{b} + 1)) \) lie in \( F_{>0} \). By \( b_n \to b \) there is \( N_1 \) with \( \abs{b_n - b} < \varepsilon/(2M) \) for every \( n \ge N_1 \); by \( a_n \to a \) there is \( N_2 \) with \( \abs{a_n - a} < \varepsilon/(2(\abs{b} + 1)) \) for every \( n \ge N_2 \). \( N_1 \) depends on \( \varepsilon \) and \( M \), \( N_2 \) on \( \varepsilon \) and \( b \) (and both on the given sequences); neither depends on \( n \). Let \( N \coloneqq \max\{N_1, N_2\} \).
 
 Let \( n \ge N \). Since
 \[
@@ -319,12 +319,12 @@ the triangle inequality and \( \abs{xy} = \abs{x}\abs{y} \) give
 where the second line uses \( 0 \le \abs{a_n} \le M \) and \( 0 \le \abs{b} \le \abs{b} + 1 \) (@prp-ordered-field-halves (d)), and the third multiplies the two estimates by \( M > 0 \) and \( \abs{b} + 1 > 0 \). So for every \( \varepsilon \in F_{>0} \) there is \( N \in \nN \) with \( \abs{a_n b_n - ab} < \varepsilon \) for every \( n \ge N \): \( a_n b_n \to ab \).
 
 **Marking scheme.** (10 points)
-- 2: fixes a bound \( M \in F_{>0} \) for \( (\abs{a_n}) \), justified (convergent sequences are bounded), before \( \varepsilon \).
+- 2: fixes a bound \( M \in F_{>0} \) for one of the two factor sequences (say \( (\abs{a_n}) \); the mirror decomposition with \( (\abs{b_n}) \) is equally good), justified (convergent sequences are bounded), before \( \varepsilon \).
 - 2: writes \( a_n b_n - ab \) as a sum of two terms, each with a factor tending to \( 0 \).
-- 3: chooses \( N_1 \), \( N_2 \) depending only on \( \varepsilon \), \( M \) and \( b \), with the case \( b = 0 \) handled, and \( N \) as their maximum.
+- 3: chooses \( N_1 \), \( N_2 \) independent of \( n \) (\( N_1 \) from \( \varepsilon \) and \( M \), \( N_2 \) from \( \varepsilon \) and \( b \)), with the case \( b = 0 \) handled, and \( N \) as their maximum.
 - 2: carries out the estimate with the triangle inequality and the product rule for \( \abs{\cdot} \).
 - 1: concludes with the quantifiers in the order \( \forall \varepsilon \, \exists N \, \forall n \ge N \).
-Fatal errors (0 for the step): a threshold or tolerance that depends on \( n \); the bound "\( \abs{a_n} \le \abs{a} + 1 \) for every \( n \)" without the finite part for \( n < N \); dividing by \( \abs{b} \) without \( b \ne 0 \). A route through @prp-null-times-bounded-ordered-field earns the same points, provided the sum of two null sequences is proved from the definition. Citing @thm-limit-laws-ordered-field for the sum or for \( b(a_n - a) \) gets 0 for that step. A three-term route (\( a_n b_n - ab = (a_n - a)(b_n - b) + a(b_n - b) + b(a_n - a) \), with a tolerance such as \( \delta = \min\{1, \varepsilon/(1 + \abs{a} + \abs{b})\} \) chosen from \( \varepsilon \), \( a \) and \( b \) only) earns the same points: decomposition 2; the choice of \( \delta \), independent of \( n \) and with \( \delta \le 1 \) controlling the product term (in place of the bound \( M \)), 2; a threshold \( N \) for both sequences at tolerance \( \delta \) (the case \( a = 0 \) or \( b = 0 \) covered by the \( 1 \) in the denominator) 3; the estimate 2; conclusion 1.
+Fatal errors (0 for the step): a threshold or tolerance that depends on \( n \); the bound "\( \abs{a_n} \le \abs{a} + 1 \) for every \( n \)" without the finite part for \( n < N \); dividing by \( \abs{b} \) without \( b \ne 0 \). A route through @prp-null-times-bounded-ordered-field earns the same points, split as: bound fixed, 2; decomposition into two terms, 2; each product null by @prp-null-times-bounded-ordered-field (the constant factor bounded by \( \abs{b} + 1 \), or by \( \abs{b} \) with \( b = 0 \) handled separately), 3; sum of two null sequences proved from the definition, 2; null shift (@prp-limit-null-shift-ordered-field) to conclude, 1. Citing @thm-limit-laws-ordered-field for the sum or for \( b(a_n - a) \) gets 0 for that step. A three-term route (\( a_n b_n - ab = (a_n - a)(b_n - b) + a(b_n - b) + b(a_n - a) \), with a tolerance such as \( \delta = \min\{1, \varepsilon/(1 + \abs{a} + \abs{b})\} \) chosen from \( \varepsilon \), \( a \) and \( b \) only) earns the same points: decomposition 2; the choice of \( \delta \), independent of \( n \) and with \( \delta \le 1 \) controlling the product term (in place of the bound \( M \)), 2; a threshold \( N \) for both sequences at tolerance \( \delta \) (the case \( a = 0 \) or \( b = 0 \) covered by the \( 1 \) in the denominator) 3; the estimate 2; conclusion 1.
 :::
 
 ::: {#exr-limit-laws-c2}
@@ -375,6 +375,7 @@ thm-limit-laws-ordered-field (proof): (also the Idea) a_n b_n - ab = a_n (b_n - 
 thm-limit-laws-ordered-field (proof): c a_n - c a = c (a_n - a) and (-1) x = -x | (F9), prp-ring-algebra (c)
 thm-limit-laws-ordered-field (proof): |c| (eps/|c|) = eps | (F5), (F8) of def-commutative-ring-and-field; lem-field-fraction-rules
 thm-limit-laws-ordered-field (proof): M (eps/(2M)) = eps/2, (|b| + 1) (eps/(2(|b| + 1))) = eps/2 | lem-field-fraction-rules (a), (b); verify/ch04/thm-limit-laws-ordered-field.py
+thm-limit-laws-ordered-field (proof): eps/(2M), eps/(2(|b|+1)), eps |b|^2/2 in F_{>0}; |b| <= |b| + 1; adding two strict estimates | prp-ordered-field-halves (b), (O4), prp-reciprocal-order (a); prp-ordered-ring-rules (b), (e)
 thm-limit-laws-ordered-field (proof): |b| >= 0 gives |b| + 1 >= 1 > 0 | prp-absolute-value-ordered-field (a), prp-ordered-ring-rules (b), (e)
 thm-limit-laws-ordered-field (proof): 1/(|b|^2/2) = 2/|b|^2 and (2/|b|^2)(eps |b|^2/2) = eps; |b|^2 > 0 | lem-field-fraction-rules (a), (b); prp-ordered-ring-rules (e); verify/ch04/thm-limit-laws-ordered-field.py
 thm-limit-laws-ordered-field (proof): a_n/b_n = a_n (1/b_n) and a (1/b) = a/b | def-commutative-ring-and-field (a/b := a b^{-1}), (F7)

@@ -49,7 +49,7 @@ The sum law in (a) and part (b) are rules for multiples (@prp-ordered-ring-rules
 :::
 
 ::: {.proof}
-(a) The sum law is @prp-ordered-ring-rules (h) with \( R = F \) and \( a = 1_F \). For the product law, fix \( m \) and use @fd1:ax-induction (through @cor-omega-identification (b)) on \( n \), for \( P(n) \): "\( (mn) \cdot 1_F = (m \cdot 1_F)(n \cdot 1_F) \)". *Base:* \( m \cdot 0 = 0 \) by @def-omega-arithmetic (b), so the left side is \( 0 \cdot 1_F = 0 \), and the right side is \( (m \cdot 1_F) \cdot 0 = 0 \). *Step:* assume \( P(n) \). By @def-omega-arithmetic (b) and (c), \( m(n + 1) = mn + m \). Hence
+(a) The sum law is @prp-ordered-ring-rules (h) with \( R = F \) and \( a = 1_F \). For the product law, fix \( m \) and use @fd1:ax-induction (through @cor-omega-identification (b)) on \( n \), for \( P(n) \): "\( (mn) \cdot 1_F = (m \cdot 1_F)(n \cdot 1_F) \)". *Base:* \( m \cdot 0 = 0 \) by @def-omega-arithmetic (b), so the left side is \( 0 \cdot 1_F = 0 \), and the right side is \( (m \cdot 1_F) \cdot 0 = 0 \) by @prp-ring-algebra (b). *Step:* assume \( P(n) \). By @def-omega-arithmetic (b) and (c), \( m(n + 1) = mn + m \). Hence
 \[
 \begin{aligned}
 \bigl(m(n + 1)\bigr) \cdot 1_F &= (mn) \cdot 1_F + m \cdot 1_F = (m \cdot 1_F)(n \cdot 1_F) + (m \cdot 1_F) 1_F \\
@@ -77,7 +77,7 @@ f(n + 1) = j\bigl(\iota(n) + \iota(1)\bigr) = j(\iota(n)) + j(\iota(1)) = f(n) +
 So \( f \) and \( n \mapsto n \cdot 1_{\nQ} \) both satisfy the recursion of @def-naturals-in-ordered-field (a) with \( F = \nQ \), and by the uniqueness in @fd2:thm-recursion (through @cor-omega-identification (b)) they are equal. This proves the proposition.
 :::
 
-So the order axioms do what the two-element field of the fold above lacks: by (b), the elements \( n \cdot 1_F \) are all different and increase with \( n \), and by (a) they add and multiply as natural numbers do. In \( \nQ \), (d) says that nothing new has happened: \( n \cdot 1_{\nQ} \) is \( n \). When only one field is in play, we will sometimes write \( n \) for \( n \cdot 1_F \) in a general ordered field too; the statements of this section keep \( n \cdot 1_F \), because there the difference between \( n \in \nN \) and its image in \( F \) is the point.
+So the order axioms do what the two-element field of @exm-finite-ring-not-orderable (the fold before the proposition) lacks: by (b), the elements \( n \cdot 1_F \) are all different and increase with \( n \), and by (a) they add and multiply as natural numbers do. In \( \nQ \), (d) says that nothing new has happened: \( n \cdot 1_{\nQ} \) is \( n \). When only one field is in play, we will sometimes write \( n \) for \( n \cdot 1_F \) in a general ordered field too; the statements of this section keep \( n \cdot 1_F \), because there the difference between \( n \in \nN \) and its image in \( F \) is the point.
 
 ::: {.check}
 In an ordered field \( F \), write \( (3 \cdot 1_F)(4 \cdot 1_F) - 5 \cdot 1_F \) as a single multiple of \( 1_F \), and say why it is not \( 0 \).
@@ -285,7 +285,7 @@ c x < \iota_F(m + 1) = \iota_F(m) + 1_F \le c x + 1_F < c y ,
 by @thm-rationals-embed-ordered-field. Multiplying by \( c^{-1} > 0 \) (@prp-reciprocal-order (a)) gives \( x < \iota_F(m + 1) c^{-1} < y \). Let \( q \coloneqq (m + 1)/n \in \nQ \). Since \( c = \iota_F(n) \) and \( \iota_F \) respects products, \( \iota_F(q)\, c = \iota_F(m + 1) \), so \( \iota_F(q) = \iota_F(m + 1) c^{-1} \), and \( x < \iota_F(q) < y \).
 :::
 
-Applied again, the theorem shows that an interval of an Archimedean field contains infinitely many rationals (Exercise C1). Chapter 6 uses the theorem with \( F \) a field of real numbers; Chapter 5 uses it only in an exercise.
+Applied again, the theorem shows that an interval of an Archimedean field contains infinitely many rationals (Exercise C1). Chapters 5 and 6 use the theorem with \( F \) a field of real numbers (Section 5.4 for the constructed reals).
 
 ## A field that is not Archimedean
 
@@ -463,8 +463,10 @@ In \( \nQ(t) \) (@exm-rational-function-field):
 (b) The first step: "write \( x = p/q \) with \( p \in \nZ \) and \( q \in \nZ_{>0} \)". The rest of the proof (the case split on the sign of \( p \), discreteness of \( \nZ \), the comparison formula) works for any element of the form \( \iota_F(p)/\iota_F(q) \) of an ordered field \( F \), in particular of \( \nQ(t) \). But \( t \) is not of this form. Indeed, \( \iota_{\nQ(t)}(p)/\iota_{\nQ(t)}(q) = \iota_{\nQ(t)}(p/q) \) by @thm-rationals-embed-ordered-field; if \( t = \iota_{\nQ(t)}(r) \) with \( r \in \nQ \), then @thm-rationals-archimedean gives \( n \in \nN \) with \( r < n \), so \( t = \iota_{\nQ(t)}(r) < \iota_{\nQ(t)}(n) = n \cdot 1 \), against (a). So \( t \) is not the image of any rational, and the proof has nothing to start from.
 
 **Marking scheme.** (10 points)
-- 6: (a), and naming the representation \( x = p/q \) as the step that fails.
-- 4: (b) proves that \( t \) is not the image of a rational.
+- 2: (a), \( t \) is an upper bound, cited.
+- 3: (b) names the representation \( x = p/q \) as the step that fails.
+- 3: (b) shows that \( t = \iota(r) \) would give \( t < n \cdot 1 \) by @thm-rationals-archimedean.
+- 2: (b) the contradiction with (a).
 Fatal errors (0 for the step): blaming the comparison formula or discreteness.
 :::
 
@@ -481,7 +483,7 @@ thm-rationals-embed-ordered-field (proof): p/q = j(p)/j(q), so lem-field-fractio
 prp-integer-part-ordered-field (proof): iota_F(-n') = -iota_F(n') | thm-rationals-embed-ordered-field, Step 5 argument (psi(-x) = -psi(x)), pointed to in the proof
 prp-integer-part-ordered-field (proof): l - 1 < l in Z | (O3) with 0 < 1 (prp-ordered-ring-rules (e)); inline
 thm-rationals-dense-ordered-field (proof): iota_F(m + 1) = iota_F(m) + 1_F | thm-rationals-embed-ordered-field (additive, iota_F(1) = 1_F)
-thm-rationals-dense-ordered-field (claim): Chapter 6 uses it; Chapter 5 only in an exercise (F3.10 §04 B1) | prose pointer (F3.10, F3.4); nothing here depends on it
+thm-rationals-dense-ordered-field (claim): Chapters 5 and 6 use it (F3.10 §04, thm-constructed-rationals-dense; F3.4) | prose pointer (F3.10, F3.4); nothing here depends on it
 def-archimedean-ordered-field (claim): the constructed reals of the next chapter are Archimedean | prose pointer (F3.10); nothing here depends on it
 exm-rational-function-field (example): school polynomial algebra (degree, leading coefficient, leading coefficient of a product), Q(t) is an ordered field with the stated positive set, n.1 is the constant polynomial n | school fact; formal polynomials in F5.4 (flagged in the text; nothing in a proof depends on it)
 exm-rational-function-field (claim): density fails in Q(t) (sentence after the warning and its fold) | school facts of the example (as above); otherwise cited
