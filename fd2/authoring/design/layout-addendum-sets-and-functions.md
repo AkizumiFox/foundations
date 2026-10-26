@@ -31,7 +31,7 @@ Because 3.6 becomes the last section of Chapter 3, the chapter's R group (STYLE 
 
 House rules for both additions: method boxes, `[Scratch work]` at a method's first appearance, Givens/Goal tables in method sections, one *Prove or disprove* B item per method section, Quick checks, at most 5,000 main-line words per section; Cummings' structural moves (the hook before the definition, the naive attempt, the almost-correct proof); no footnote jokes, no history beyond one carrying line, no first-person persona.
 
-**fd5.** *Algebraic Preliminaries*, Chapter 2 (groups and permutations) will later cite 5.3–5.4 for permutations, composition and cycles instead of teaching them again. Only noted here; fd5 text is not edited in this pass. fd5 already defines `def-symmetric-group`, `def-cycle` and `thm-disjoint-cycle-decomposition`; S1 for Chapter 5 picks fd2 labels that do not collide (atlas `labels defined in two books`), or plans fd5's switch to `@fd2:` citations as a later fd5 revision.
+**fd5.** *Algebraic Preliminaries*, Chapter 3 (groups and permutations) will later cite 5.3–5.4 for permutations, composition and cycles instead of teaching them again. Only noted here; fd5 text is not edited in this pass. fd5 already defines `def-symmetric-group`, `def-cycle` and `thm-disjoint-cycle-decomposition`; S1 for Chapter 5 picks fd2 labels that do not collide (atlas `labels defined in two books`), or plans fd5's switch to `@fd2:` citations as a later fd5 revision.
 
 **(d) Zorn's lemma moves from Chapter 5 to Chapter 6.** Atlas id F2.4 unchanged. Done in the structural commit (§3).
 

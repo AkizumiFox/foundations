@@ -1,5 +1,7 @@
 # The Rationals Inside the Reals
 
+<!-- S3: rewrite per blueprint (layout-proposal.md §3, 5.4, pipeline F): density in one line (@thm-rationals-dense-ordered-field plus Archimedes), the direct proof becomes an exercise; cor-rational-epsilon-suffices and thm-terms-converge-to-class become exercises (labels kept). -->
+
 Section 5.3 made \( \nR \) an ordered field. We built it to enlarge \( \nQ \), but so far \( \nQ \) is not inside it: a rational number is a class of pairs of integers, and a real number is a class of Cauchy sequences. This section places a copy of \( \nQ \) in \( \nR \) and shows how the copy sits there. It is preserved by all the operations and the order; it is spread through \( \nR \) without gaps, so that between any two real numbers there is a rational one; and every real number is the limit of rationals. Along the way we prove that \( \nR \) is Archimedean and that rational tolerances suffice for limits in \( \nR \). At the end we meet the number that Chapter 4 promised: a positive real whose square is \( 2 \).
 
 Notation is as in Section 5.3: \( \sC \) is the set of Cauchy sequences of rationals, \( [a] \) is the class of \( a \in \sC \), \( (q)_n \) is the constant sequence with value \( q \), \( P = \nR_{>0} \) is the set of positive reals, and \( x < y \) means \( y - x \in P \) (@def-reals-order). By @thm-reals-ordered-field, the results of Chapters 2 and 4 for an arbitrary ordered field apply with \( F = \nR \); we say "in \( \nR \)" where the context does not make the field clear.

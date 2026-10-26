@@ -71,7 +71,7 @@ Finally, for \( z = 0 \): \( 0^2 = 0 \), and if \( u^2 = u \cdot u = 0 \), then 
 
 The answer to the prompt: \( x \) is non-negative by construction, and \( y \) is \( s \) times a non-negative number, so \( xy \) is \( s \) times a non-negative number, and \( 2xy \) must equal \( b \). If \( b > 0 \), then \( x \) and \( y \) must both be non-zero with the same sign; if \( b < 0 \), opposite signs. When \( b = 0 \) the choice of \( s \) does not matter, because then one of \( x, y \) is \( 0 \).
 
-The proposition proves what *Logic and Proof*, Section 7.1 assumed, and it is stronger: it counts the roots. It uses only the field \( \nC \), its modulus, and square roots of non-negative reals; no angle, cosine or sine appears. That matters later: *Algebraic Preliminaries*, Chapter 4 proves the Fundamental Theorem of Algebra using square roots in exactly this form.
+The proposition proves what *Logic and Proof*, Section 7.1 assumed, and it is stronger: it counts the roots. It uses only the field \( \nC \), its modulus, and square roots of non-negative reals; no angle, cosine or sine appears. That matters later: *Algebraic Preliminaries*, Chapter 5 proves the Fundamental Theorem of Algebra using square roots in exactly this form.
 
 ::: {#exm-complex-square-root}
 [Square Roots of \( 5 - 12i \)]
@@ -154,7 +154,7 @@ Suppose \( < \) is a relation on \( \nC \) with which \( \nC \) is an ordered fi
 The proof never asks whether \( i > 0 \) or \( i < 0 \): part (e) covers both at once. It also never assumes that the hypothetical order agrees with the order of \( \nR \) on real numbers. It concludes \( 1 > 0 \) and \( -1 > 0 \) in whatever order is supposed, and that is the contradiction.
 
 ::: {.remark}
-*Number Systems: From \(\nN\) to \(\nR\)*, Chapter 4 showed, in an exercise (@fd3:exr-rules-and-absolute-value-c1), that a field containing a square root of \( -1 \) cannot be ordered, and named the complex numbers as such a field; the proposition proves that fact for \( \nC \) on its own. Compare @fd3:exm-finite-ring-not-orderable and @fd3:thm-integers-mod-n-ring (e): there the obstacle to an order is \( n \cdot 1 = 0 \) for some \( n \ge 1 \). That obstacle is absent here, since \( n \cdot 1 \) in \( \nC \) is \( \iota(n \cdot 1) \), the image of the real number \( n \cdot 1 > 0 \) of \( \nR \) (@fd3:prp-ordered-ring-rules (h)), which is non-zero as \( \iota \) is injective. (The identity \( n \cdot 1 = \iota(n \cdot 1) \) is proved by @fd1:ax-induction on \( n \), as for powers in Section 1.1: \( 0 \cdot 1 = 0 = \iota(0) \), and if \( n \cdot 1 = \iota(n \cdot 1) \), then \( (n + 1) \cdot 1 = \iota(n \cdot 1) + \iota(1) = \iota((n + 1) \cdot 1) \) by @prp-reals-embed-complex.) The obstacle in \( \nC \) is \( i^2 = -1 \) instead.
+*Number Systems: From \(\nN\) to \(\nR\)*, Chapter 4 showed, in an exercise (@fd3:exr-rules-and-absolute-value-c1), that a field containing a square root of \( -1 \) cannot be ordered, and named the complex numbers as such a field; the proposition proves that fact for \( \nC \) on its own. Compare @fd3:exm-finite-ring-not-orderable, and the integers modulo \( 3 \) of Exercise C2 below: there the obstacle to an order is \( n \cdot 1 = 0 \) for some \( n \ge 1 \). That obstacle is absent here, since \( n \cdot 1 \) in \( \nC \) is \( \iota(n \cdot 1) \), the image of the real number \( n \cdot 1 > 0 \) of \( \nR \) (@fd3:prp-ordered-ring-rules (h)), which is non-zero as \( \iota \) is injective. (The identity \( n \cdot 1 = \iota(n \cdot 1) \) is proved by @fd1:ax-induction on \( n \), as for powers in Section 1.1: \( 0 \cdot 1 = 0 = \iota(0) \), and if \( n \cdot 1 = \iota(n \cdot 1) \), then \( (n + 1) \cdot 1 = \iota(n \cdot 1) + \iota(1) = \iota((n + 1) \cdot 1) \) by @prp-reals-embed-complex.) The obstacle in \( \nC \) is \( i^2 = -1 \) instead.
 :::
 
 ::: {.warning}
@@ -319,7 +319,7 @@ In an ordered field, which elements can be squares? For (c), list the squares of
 
 (b) The argument uses only that \( -1 \) is a square in \( \nC \), and that is a property of the field, not of any named element. It does not matter that the formula of @prp-complex-square-roots, applied to \( -1 \), happens to produce \( i \) (\( a = -1 \), \( b = 0 \), \( r = 1 \): \( x = 0 \), \( y = 1 \)). The same argument shows that no field in which \( -1 \) is a square can be ordered; in particular no field in which **every** element is a square.
 
-(c) No. The ring \( \nZ/3\nZ \) is a commutative ring with \( [1] \ne [0] \) (@fd3:thm-integers-mod-n-ring (a), (c)), and no relation makes it an ordered commutative ring (@fd3:thm-integers-mod-n-ring (e)). Its three elements are \( [0], [1], [2] \) (part (b) there), with squares \( [0]^2 = [0] \), \( [1]^2 = [1] \), \( [2]^2 = [4] = [1] \). So the squares are \( [0] \) and \( [1] \), while \( -[1] = [2] \). Hence \( -1 \) is not a square in \( \nZ/3\nZ \), and yet the ring cannot be ordered: the obstacle there is \( 3 \cdot [1] = [0] \), not a square root of \( -1 \).
+(c) No. The ring \( \nZ/3\nZ \) has the class operations \( [a] + [b] = [a + b] \) and \( [a][b] = [ab] \), well defined by @fd2:prp-congruence-arithmetic, and each law of a commutative ring holds because it holds for representatives in \( \nZ \). Its three elements are \( [0], [1], [2] \), pairwise different (@fd2:prp-integers-mod-n), so \( [1] \ne [0] \). No relation makes it an ordered commutative ring: in an ordered commutative ring with \( 1 \ne 0 \), \( 1 > 0 \) (@fd3:prp-ordered-ring-rules (e)), so \( 1 + 1 + 1 > 0 \) (@fd3:prp-ordered-ring-rules (b)), while here \( [1] + [1] + [1] = [3] = [0] \). with squares \( [0]^2 = [0] \), \( [1]^2 = [1] \), \( [2]^2 = [4] = [1] \). So the squares are \( [0] \) and \( [1] \), while \( -[1] = [2] \). Hence \( -1 \) is not a square in \( \nZ/3\nZ \), and yet the ring cannot be ordered: the obstacle there is \( 3 \cdot [1] = [0] \), not a square root of \( -1 \).
 :::
 
 <!-- dependency ledger
@@ -328,7 +328,7 @@ prp-complex-square-roots (proof): sqrt(p) sqrt(q) = sqrt(pq) for p, q >= 0; sqrt
 prp-complex-square-roots (proof): s^2 = 1; s|b| = b by cases on the sign of b; p >= 0 implies p/2 >= 0 in R; (r + a)/2 - (r - a)/2 = a | inline; fd3:def-absolute-value-ordered-field; p/2 > 0 for p > 0 by fd3:prp-ordered-field-halves (b), and 0/2 = 0 by fd3:prp-ring-algebra (b), cited
 prp-complex-square-roots (proof): (u - w)(u + w) = u^2 - w^2 in a commutative ring | prp-complex-arithmetic-laws with fd3:prp-ring-algebra (c); inline
 prp-complex-square-roots (proof): 2 = 1 + 1 is non-zero in C | fd3:prp-ordered-ring-rules (h) in R, prp-reals-embed-complex (injective, preserves sums), cited
-prp-complex-square-roots (claim): *Algebraic Preliminaries*, Chapter 4 proves the FTA from square roots in this form | prose pointer (F5.5, lem-complex-direction-negative-real-part); nothing depends on it
+prp-complex-square-roots (claim): *Algebraic Preliminaries*, Chapter 5 proves the FTA from square roots in this form | prose pointer (F5.5, lem-complex-direction-negative-real-part); nothing depends on it
 exm-complex-square-root (solution): |5 - 12i| = 13; x = 3, y = -2 | inline; verify/ch01/exm-complex-square-root.py
 prp-complex-square-roots (example): quick check, square roots of -4 and 2i | inline; verify/ch01/prp-complex-square-roots.py
 cor-complex-quadratic-formula (proof): 4a(az^2 + bz + c) = (2az + b)^2 - (b^2 - 4ac); 4 != 0 in C | prp-complex-arithmetic-laws, fd3:prp-ring-algebra (d); 4 = 4 * 1 > 0 in R by fd3:prp-ordered-ring-rules (h) and prp-reals-embed-complex
@@ -341,5 +341,5 @@ exr-square-roots-and-order-a1 (solution): run of the formula on -4 | verify/ch01
 exr-square-roots-and-order-b1 (solution): roots +-(1 + 2i); solutions 2i, -2 - 2i | verify/ch01/exr-square-roots-and-order-b1.py
 exr-square-roots-and-order-b3 (solution): d = i sqrt(4ac - b^2), d^2 = b^2 - 4ac; example z^2 - 2z + 5 | inline; verify/ch01/exr-square-roots-and-order-b3.py
 exr-square-roots-and-order-c2 (solution): -1 != 0 in a field | fd3:prp-ring-algebra (a); inline
-exr-square-roots-and-order-c2 (solution): squares in Z/3Z are [0], [1]; -[1] = [2] | fd3:def-integers-mod-n-ring (class arithmetic, [4] = [1]); inline; verify/ch01/exr-square-roots-and-order-c2.py
+exr-square-roots-and-order-c2 (solution): squares in Z/3Z are [0], [1]; -[1] = [2] | fd2:prp-congruence-arithmetic (class arithmetic, [4] = [1]); fd2:prp-integers-mod-n (three classes); [1] + [1] + [1] = [0] against fd3:prp-ordered-ring-rules (b), (e); inline; verify/ch01/exr-square-roots-and-order-c2.py
 -->

@@ -26,8 +26,8 @@ The first two are method boxes; Chapters 1–4's boxes are cited where they are 
 ## Threads
 
 - **Same size.** The bijections of Section 2.4 say when two sets have the same size; Section 4.1 makes this a definition (@def-equinumerous); Section 5.2 meets it as an equivalence relation on the subsets of one set (@exm-same-size-subsets), and explains why it is not one on all sets.
-- **The clock.** The arithmetic of \( \nZ/n \) in Section 5.2 returns in *Number Systems: From \(\nN\) to \(\nR\)*, Section 3.4, where \( \nZ/n \) becomes a ring.
-- **Fractions.** Section 2.1 found that "send \( p/q \) to \( p \)" is not a function (@exm-not-a-function). Section 5.2 locates the failure with the factorization (@exm-fraction-map-factorization), and *Number Systems: From \(\nN\) to \(\nR\)*, Chapter 2 builds \( \nQ \) as these classes.
+- **The clock.** The arithmetic of \( \nZ/n \) in Section 5.2 returns in *Algebraic Preliminaries*, Section 1.3, where \( \nZ/n \) becomes a ring.
+- **Fractions.** Section 2.1 found that "send \( p/q \) to \( p \)" is not a function (@exm-not-a-function). Section 5.2 locates the failure with the factorization (@exm-fraction-map-factorization), and *Number Systems: From \(\nN\) to \(\nR\)*, Chapter 3 builds \( \nQ \) as these classes.
 - **Maximal elements and chains.** Section 5.3 ends by asking when a partially ordered set must have a maximal element; Chapter 6 answers with Zorn's lemma.
 
 ## Summary

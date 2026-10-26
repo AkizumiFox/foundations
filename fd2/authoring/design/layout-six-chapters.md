@@ -164,7 +164,7 @@ Every label cited from outside fd2 either stays in fd2 (most of them only change
 
 | Leaving label | Cited at | Repair |
 |---|---|---|
-| `thm-algebraic-countable` | `fd5/src/ch03-formal-polynomials/05-formal-derivative.md` L526 ("The same count … is the proof of @fd2:thm-algebraic-countable.") | Rewrite it as "The same count, with the polynomials written as integer tuples, shows that the algebraic numbers are countable (by @fd2:cor-product-countable and @fd2:thm-countable-union)". This is a one-sentence fd5 edit with a changed-only review. |
+| `thm-algebraic-countable` | `fd5/src/ch04-formal-polynomials/05-formal-derivative.md` L526 ("The same count … is the proof of @fd2:thm-algebraic-countable.") | Rewrite it as "The same count, with the polynomials written as integer tuples, shows that the algebraic numbers are countable (by @fd2:cor-product-countable and @fd2:thm-countable-union)". This is a one-sentence fd5 edit with a changed-only review. |
 | `thm-algebraic-countable` | `fd5/authoring/blueprints/ch03.md` L25, L209, L312 | blueprint record: add a deviation note; no tool reads it |
 
 The labels that **stay in fd2 but change chapter** are listed in §3. The ones cited downstream are: `ax-choice` (fd3 1.1, 1.7, Ch5; an1), `thm-countable-union` (an1, fd5), `thm-surjection-right-inverse` (la1), `prp-card-le-surjection` (2), `thm-infinite-countable-subset` (an1) and `thm-zorn` (la1). They all resolve unchanged; only their atlas chapter changes (F2.3 → F2.4 for the choice labels, §6).

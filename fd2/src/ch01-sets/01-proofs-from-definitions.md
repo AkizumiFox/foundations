@@ -268,7 +268,7 @@ Try small \( a \) and \( b \). For \( a = 2 \), \( b = 3 \), the \( c \) with \(
 False. Take \( a = b = c = 2 \). Then \( 2 = 1 \cdot 2 \), so \( a \mid c \) and \( b \mid c \). But \( ab = 4 \), and \( 4 \nmid 2 \): if \( 2 = 4k \) with \( k \in \nZ \), then \( k \ge 1 \) gives \( 4k \ge 4 \) and \( k \le 0 \) gives \( 4k \le 0 \), so \( 4k \ne 2 \).
 :::
 
-The search failed while \( a \) and \( b \) had no common factor greater than \( 1 \), and that is no accident: for coprime \( a \) and \( b \) the statement is true, a fact *Number Systems*, Chapter 3 proves.
+The search failed while \( a \) and \( b \) had no common factor greater than \( 1 \), and that is no accident: for coprime \( a \) and \( b \) the statement is true, a fact *Algebraic Preliminaries*, Chapter 1 proves.
 
 ::: {#exm-method-counterexample}
 [Method: disproof by counterexample, proof by example]

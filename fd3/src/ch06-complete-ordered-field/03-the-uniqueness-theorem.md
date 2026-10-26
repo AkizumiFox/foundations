@@ -1,5 +1,7 @@
 # Two Complete Ordered Fields, One Isomorphism
 
+<!-- S3: rewrite per blueprint (layout-proposal.md §3, 6.3, pipeline F). Absorb old 6.5 compressed to about 1,500 words (source kept verbatim in authoring/parked/from-6.5-axioms-or-model.md): the AN1 comparison table, the 'zero = ∅' example, 'limits carry across the isomorphism', the transfer argument citing @fd1:thm-isomorphism-invariance; close on 'assume the axioms or build a model'. Rewrite exm-cof-two-models without Chapter 7 (the rationals below x satisfy four properties; a set with them is a Dedekind cut, in the set-theory volume). The ℚ(√2) conjugation keeps one sentence pointing to fd5; the comparison table shrinks to a remark. -->
+
 Section 6.2 measured an element of an Archimedean ordered field \( F \) by the rationals below it and used the measurement to build a map into a complete ordered field \( L \): by @thm-cof-embedding-into-complete there is **exactly one** order-preserving field map \( \varphi \colon F \to L \), and it keeps the rationals below each element, \( \nQ_L(\varphi(x)) = \nQ_F(x) \) (property \( (\star) \) of that theorem). This section takes both fields complete. Then maps run in both directions, and the word "exactly" turns them into inverses of each other without a single computation. The result is the theorem the chapter is named for: any two complete ordered fields are copies of each other, by one isomorphism and no other. The section ends with automorphisms: the only map of a complete ordered field to itself that respects sums, products and \( 1 \) is the identity, even when the map is asked neither to respect the order nor to be onto.
 
 Throughout, "order-preserving field map" has the meaning of @def-cof-order-preserving-map: a map \( \chi \colon F \to L \) between ordered fields with \( \chi(a + b) = \chi(a) + \chi(b) \), \( \chi(ab) = \chi(a) \chi(b) \), \( \chi(1) = 1 \), and \( a < b \Rightarrow \chi(a) < \chi(b) \) for all \( a, b \in F \). Such a map also **reflects** order: if \( \chi(a) < \chi(b) \), then \( a < b \), since \( a = b \) would give \( \chi(a) = \chi(b) \) and \( b < a \) would give \( \chi(b) < \chi(a) \), both excluded by trichotomy (O1) in \( L \).
@@ -86,10 +88,10 @@ Let \( F \) be a complete ordered field, and let \( \nR \) be the field of Chapt
 By @thm-reals-complete-ordered-field, \( \nR \) is a complete ordered field. Apply @thm-cof-uniqueness with \( L = \nR \).
 :::
 
-So "the real numbers" names one ordered field up to a unique relabeling. Informally, a statement about a complete ordered field that speaks only of its sums, products and order is true in \( F \) exactly when it is true in \( \nR \), since the isomorphism carries one situation to the other. Section 6.5 explains this pattern and why we do not state it as a theorem; nothing here depends on it.
+So "the real numbers" names one ordered field up to a unique relabeling. Informally, a statement about a complete ordered field that speaks only of its sums, products and order is true in \( F \) exactly when it is true in \( \nR \), since the isomorphism carries one situation to the other. Section 6.3 explains this pattern and why we do not state it as a theorem; nothing here depends on it.
 
 ::: {.remark}
-On any set \( \mathcal S \) of ordered fields, \( \cong \) is an equivalence relation (@fd2:def-equivalence-relation): it is reflexive, symmetric and transitive. No proof in this section uses its symmetry or transitivity; the remark records that the word "isomorphic" behaves as the word "equal" suggests. Section 6.5 uses the symmetric clause: the inverse of the isomorphism of @thm-cof-uniqueness is again one.
+On any set \( \mathcal S \) of ordered fields, \( \cong \) is an equivalence relation (@fd2:def-equivalence-relation): it is reflexive, symmetric and transitive. No proof in this section uses its symmetry or transitivity; the remark records that the word "isomorphic" behaves as the word "equal" suggests. Section 6.3 uses the symmetric clause: the inverse of the isomorphism of @thm-cof-uniqueness is again one.
 :::
 
 ::: {.second-reading title="Why isomorphism is an equivalence relation"}
@@ -330,14 +332,14 @@ thm-cof-uniqueness (claim): the uniqueness clause with F on both sides needs onl
 thm-cof-uniqueness (claim): the image of iota_R misses r with r^2 = 2 | exm-sqrt2-class (r != q for every q in Q), cited
 cor-cof-isomorphic-to-cauchy-reals (claim): iota_Q = id_Q | uniqueness clause of thm-rationals-embed-ordered-field, cited inline
 cor-cof-isomorphic-to-cauchy-reals (claim): cong is an equivalence relation; injectivity of chi gives additivity of chi^{-1} | inline (second-reading fold)
-exm-cof-two-models (example): the four properties of a Dedekind cut, and the isomorphism of Chapter 7 sends x to Q_F(x) | prose pointer to F3.3 (optional); nothing depends on it
+exm-cof-two-models (example): the four properties of a Dedekind cut, and the isomorphism of Chapter 7 sends x to Q_F(x) | prose pointer to ST.1 (optional); nothing depends on it
 exm-cof-two-models (example): Q_F(x) is non-empty, not all of Q, closed downward, with no largest element (F Archimedean) | def-archimedean-ordered-field, thm-rationals-dense-ordered-field; inline
 thm-cof-field-automorphism-identity (proof): sigma(0) = 0 and sigma(-c) = -sigma(c) from additivity | inline; uniqueness of negatives prp-ring-algebra (a)
 thm-cof-field-automorphism-identity (proof): 0 != 1 in a field | def-commutative-ring-and-field (field: 1 != 0), cited
 thm-cof-field-automorphism-identity (claim): Q(sqrt 2) is Archimedean, sqrt 2 is not a square in it, and the conjugation exchanging ±sqrt 2 sends sqrt 2 to a negative element | prose pointer to Section 6.4; nothing depends on it
 thm-cof-field-automorphism-identity (proof): the uniqueness clause of thm-cof-embedding-into-complete needs only an Archimedean target | remark after the proof of thm-cof-embedding-into-complete (Section 6.2), cited by prose pointer
 thm-cof-field-automorphism-identity (claim): an ordered field in which every positive element is a square need not be Archimedean, and such a field can have an order-preserving automorphism other than the identity | not proved here; marked so in the text ('we do not construct such a field here'); nothing depends on it
-cor-cof-isomorphic-to-cauchy-reals (claim): a statement in +, ·, < has the same truth value in F and R | marked informal, not stated as a theorem; prose pointer to Section 6.5 (sec-axioms-or-model); nothing depends on it
+cor-cof-isomorphic-to-cauchy-reals (claim): a statement in +, ·, < has the same truth value in F and R | marked informal, not stated as a theorem; prose pointer to Section 6.3 (sec-axioms-or-model); nothing depends on it
 exr-the-uniqueness-theorem-b2 (solution): a <= s gives phi(a) <= phi(s) | strict increase or equality; inline
 exr-the-uniqueness-theorem-b2 (solution): in Q(t), 1 - 1/t is an upper bound of {1 - 1/n} below 1 | exm-rational-function-field (0 < 1/t < 1/(n·1); school polynomial algebra, flagged there); counterexample only, nothing depends on it
 exr-the-uniqueness-theorem-b2 (solution): iota_R keeps every supremum that exists in Q | inline parenthetical; density thm-rationals-dense-ordered-field in the Archimedean R (thm-constructed-reals-archimedean); nothing depends on it

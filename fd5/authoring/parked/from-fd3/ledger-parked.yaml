@@ -1,0 +1,273 @@
+note: Ledger items of the ℚ(√2) group of fd3's old Section 6.4, parked in fd5 by the fd3 re-cut (2026-10-26,
+  fd3/authoring/design/layout-proposal.md §4.2). Verdict history kept; parked_file names the file under
+  fd5/authoring/parked/from-fd3/.
+items:
+- key: def-cof-sqrt2-field
+  kind: def
+  file: 04-two-non-examples.md
+  line: 254
+  hash: a100e0a74f84
+  verdicts:
+  - stage: S5a
+    verdict: correct
+    by: refereeA
+    hash: a100e0a74f84
+    date: '2026-10-12'
+    model: claude-opus-5-5
+    evidence: '252-260: sqrt2 is the unique r >= 0 from prp-cof-square-roots (a >= 0 hypothesis met).
+      It equals exm-sqrt2-class''s r (r > 0, r^2 = 2) by uniqueness.'
+  - stage: S5b
+    verdict: correct
+    by: refereeB
+    hash: a100e0a74f84
+    date: '2026-10-12'
+    model: claude-opus-5-5
+    evidence: 04:252-261. √2 comes from prp-cof-square-roots and equals exm-sqrt2-class's r by uniqueness
+      (r > 0, r^2 = 2).
+  parked_file: fd5/authoring/parked/from-fd3/from-6.4-q-sqrt2.md
+  old_dir: ch06-complete-ordered-field
+- key: prp-cof-sqrt2-field-archimedean
+  kind: prp
+  file: 04-two-non-examples.md
+  line: 263
+  hash: 18289b80be87
+  verdicts:
+  - stage: S5a
+    verdict: correct
+    by: refereeA
+    hash: 18289b80be87
+    date: '2026-10-12'
+    model: claude-opus-5-5
+    evidence: '267-272: statements checked. The inverse formula is verified by sidecar.'
+  - stage: S5b
+    verdict: correct
+    by: refereeB
+    hash: 18289b80be87
+    date: '2026-10-12'
+    model: claude-opus-5-5
+    evidence: 04:263-274. The inverse formula is verified, and a^2 - 2b^2 != 0 follows from thm-no-rational-square-two.
+  parked_file: fd5/authoring/parked/from-fd3/from-6.4-q-sqrt2.md
+  old_dir: ch06-complete-ordered-field
+- key: proof:prp-cof-sqrt2-field-archimedean
+  kind: proof
+  file: 04-two-non-examples.md
+  line: 280
+  hash: 40f749a1c7d6
+  verdicts:
+  - stage: S5a
+    verdict: correct
+    by: refereeA
+    hash: 40f749a1c7d6
+    date: '2026-10-12'
+    model: claude-opus-5-5
+    evidence: '281-289: (a) iota_R is injective, then thm-no-rational-square-two. (b) a^2 - 2b^2 != 0
+      in both cases. (c) the universal axioms are inherited, and existence is covered by closure; n*1
+      is common to both fields and R is Archimedean.'
+  - stage: S5b
+    verdict: correct
+    by: refereeB
+    hash: 40f749a1c7d6
+    date: '2026-10-12'
+    model: claude-opus-5-5
+    evidence: 04:280-290. (a) uses injectivity of ι_R. (c) inherits the universal axioms and uses closure
+      for the existential ones (F3, F4, F7, F8). Archimedes comes via thm-cof-complete-archimedean in
+      R.
+  parked_file: fd5/authoring/parked/from-fd3/from-6.4-q-sqrt2.md
+  old_dir: ch06-complete-ordered-field
+- key: prp-cof-sqrt2-field-incomplete
+  kind: prp
+  file: 04-two-non-examples.md
+  line: 294
+  hash: f3a95ea33ba7
+  verdicts:
+  - stage: S5a
+    verdict: correct
+    by: refereeA
+    hash: f3a95ea33ba7
+    date: '2026-10-12'
+    model: claude-opus-5-5
+    evidence: '297: 3 has no square root; the conclusion follows from prp-cof-square-roots (complete,
+      a >= 0).'
+  - stage: S5b
+    verdict: minor
+    by: refereeB
+    hash: f3a95ea33ba7
+    date: '2026-10-12'
+    model: claude-opus-5-5
+    evidence: 04-two-non-examples.md:596 Ledger line for the √3 supremum remark is false bookkeeping.
+  - stage: S7r
+    verdict: correct
+    by: rereferee
+    hash: f3a95ea33ba7
+    date: '2026-10-12'
+    model: claude-opus-5-5
+    evidence: 'The ledger finding is resolved: the supremum claim now has a proof, in the fold at 04:347-349.
+      The ledger line at 04:600 now names the cited labels and no longer says "nothing depends on it".
+      I checked the fold. For the upper bound: y≥0 and y²<3=(√3)² give y<√3 by prp-ordered-ring-rules
+      (g) ("a,b≥0: a<b iff a²<b²", ch02/03:313). For leastness: thm-rationals-dense-ordered-field (Archimedean
+      F; ch04'
+  parked_file: fd5/authoring/parked/from-fd3/from-6.4-q-sqrt2.md
+  old_dir: ch06-complete-ordered-field
+- key: proof:prp-cof-sqrt2-field-incomplete
+  kind: proof
+  file: 04-two-non-examples.md
+  line: 311
+  hash: eca0afe805bc
+  verdicts:
+  - stage: S5a
+    verdict: correct
+    by: refereeA
+    hash: e22e0666017e
+    date: '2026-10-12'
+    model: claude-opus-5-5
+    evidence: '312-329 descent claim: kv < u and u < (k+1)v via rules (g),(c),(e); 0 < v'' < v; ku < nv
+      by cancellation. Identity (k^2-n)(u^2-nv^2) checked by hand and by sidecar. Least element via prp-integer-least-element.'
+  - stage: S5b
+    verdict: minor
+    by: refereeB
+    hash: e22e0666017e
+    date: '2026-10-12'
+    model: claude-opus-5-5
+    evidence: '04-two-non-examples.md:307 The symbol x gets a second meaning: the descent claim and its
+      Idea use x for a rational number, while x is fixed in this section as [id/1] ∈ R(x).'
+  - stage: S7r
+    verdict: correct
+    by: rereferee
+    hash: eca0afe805bc
+    date: '2026-10-12'
+    model: claude-opus-5-5
+    evidence: The notation finding is resolved. The rational would-be root is now y throughout the Idea
+      (04:301), the claim (04:307) and the folded proof (04:312). x keeps its meaning [id/1]. I checked
+      the descent line by line. kv<u and u<(k+1)v use prp-ordered-ring-rules (c), (e), (g). 0<v'<v holds.
+      ku<nv follows from kuv<u²=nv². The identity u'²−nv'²=(k²−n)(u²−nv²) expands correctly, so v'∈D with
+      v'<v contrad
+  parked_file: fd5/authoring/parked/from-fd3/from-6.4-q-sqrt2.md
+  old_dir: ch06-complete-ordered-field
+- key: proof:prp-cof-sqrt2-field-incomplete#2
+  kind: proof
+  file: 04-two-non-examples.md
+  line: 333
+  hash: eeac0ed1796b
+  verdicts:
+  - stage: S5a
+    verdict: correct
+    by: refereeA
+    hash: eeac0ed1796b
+    date: '2026-10-12'
+    model: claude-opus-5-5
+    evidence: '334-342: 1<3<4 and 4<6<9. Unique representation gives 2ab = 0 and a^2 + 2b^2 = 3; then
+      a = 0 or b = 0; (2b)^2 = 6. Completeness would give a square root by prp-cof-square-roots.'
+  - stage: S5b
+    verdict: correct
+    by: refereeB
+    hash: eeac0ed1796b
+    date: '2026-10-12'
+    model: claude-opus-5-5
+    evidence: 04:333-343. 1<3<4 and 4<6<9. 2ab = 0 gives a = 0 or b = 0 (prp-ordered-ring-rules (f), 2
+      != 0). 2b^2 = 3 gives (2b)^2 = 6. prp-cof-square-roots applies to a = 3 >= 0.
+  parked_file: fd5/authoring/parked/from-fd3/from-6.4-q-sqrt2.md
+  old_dir: ch06-complete-ordered-field
+- key: check:04-two-non-examples:3
+  kind: check
+  file: 04-two-non-examples.md
+  line: 351
+  hash: 0dbf86ec8e8f
+  verdicts:
+  - stage: S5a
+    verdict: minor
+    by: refereeA
+    hash: 12f84e08cc41
+    date: '2026-10-12'
+    model: claude-opus-5-5
+    evidence: 04-two-non-examples.md:352 The solution says there is no k with k^2 < 4 < (k+1)^2 but checks
+      only k = 1 and k = 2. Its illustration 'v' = u - 2v = 0' uses k = 2, which does not satisfy the
+      hypothesis.
+  - stage: S5b
+    verdict: minor
+    by: refereeB
+    hash: 12f84e08cc41
+    date: '2026-10-12'
+    model: claude-opus-5-5
+    evidence: 04-two-non-examples.md:352 The solution asserts no k works but checks only k = 1 and k =
+      2.
+  - stage: S7r
+    verdict: correct
+    by: rereferee
+    hash: 0dbf86ec8e8f
+    date: '2026-10-12'
+    model: claude-opus-5-5
+    evidence: 'Both earlier findings are resolved. 04:356 now argues for every k: for k≥2, k²≥4, so k²<4
+      forces k≤1, and then (k+1)²≤4. I solved it independently and the answer agrees. The k=2 illustration
+      is now marked as the "natural choice ... for which k²<n fails", and gives v''=u−2v=0 at y=2. That
+      is correct and no longer presented as satisfying the hypothesis.'
+  parked_file: fd5/authoring/parked/from-fd3/from-6.4-q-sqrt2.md
+  old_dir: ch06-complete-ordered-field
+- key: exm-cof-sqrt2-conjugation
+  kind: exm
+  file: 04-two-non-examples.md
+  line: 361
+  hash: 7eebf4969b13
+  verdicts:
+  - stage: S5a
+    verdict: gap
+    by: refereeA
+    hash: b065512fac03
+    date: '2026-10-12'
+    model: claude-opus-5-5
+    evidence: 04-two-non-examples.md:376 "Every other line of that proof is valid in Q(sqrt 2), which
+      is Archimedean." This is false. Step 3 of the proof of thm-cof-field-automorphism-identity also
+      fails in Q(sqrt 2).
+  - stage: S5b
+    verdict: minor
+    by: refereeB
+    hash: b065512fac03
+    date: '2026-10-12'
+    model: claude-opus-5-5
+    evidence: 04-two-non-examples.md:376 "Every other line of that proof is valid in Q(√2), which is Archimedean"
+      is false. Step 3 also fails in Q(√2) as written.
+  - stage: S7r
+    verdict: correct
+    by: rereferee
+    hash: 7eebf4969b13
+    date: '2026-10-12'
+    model: claude-opus-5-5
+    evidence: The S5a/S5b finding is resolved. 04:380 now handles each step separately, and I checked
+      each against the proof of thm-cof-field-automorphism-identity (ch06/03:157-182). The Step 1 quote
+      "there is b ∈ F with b ≥ 0 and b² = a" matches verbatim. Step 2 uses only ring and order rules.
+      Step 3 cites completeness for the Archimedean property and for the target. The replacement argument
+      for Step 3 is vali
+  parked_file: fd5/authoring/parked/from-fd3/from-6.4-q-sqrt2.md
+  old_dir: ch06-complete-ordered-field
+- key: exr-two-non-examples-b2
+  kind: exr
+  file: 04-two-non-examples.md
+  line: 470
+  hash: b0209fbc43a3
+  verdicts:
+  - stage: S5a
+    verdict: correct
+    by: refereeA
+    hash: b0209fbc43a3
+    date: '2026-10-12'
+    model: claude-opus-5-5
+    evidence: '473-475: 4<5<9 and 9<10<16 apply the claim; 2ab = 0, a^2 + 2b^2 = 5, (2b)^2 = 10.'
+  - stage: S5b
+    verdict: correct
+    by: refereeB
+    hash: b0209fbc43a3
+    date: '2026-10-12'
+    model: claude-opus-5-5
+    evidence: 04:466-476. 4<5<9 and 9<10<16. 2b^2 = 5 gives (2b)^2 = 10. Unique representation is cited.
+      Sidecar checks (5,2) and (10,3).
+  - stage: S6
+    verdict: correct
+    by: verifier
+    hash: b0209fbc43a3
+    date: '2026-10-12'
+    model: claude-opus-5-5
+    evidence: '04:473-475. The brackets 4<5<9 (k=2) and 9<10<16 (k=3) hold. My script checks the descent
+      identity u''^2-nv''^2=(k^2-n)(u^2-nv^2) on 2000 random integer tuples, and that 5 and 10 are not
+      rational squares. From a^2+2b^2=5 and 2ab=0, the case b=0 gives a^2=5 and the case a=0 gives (2b)^2=10.
+      Both are excluded, so the solution is complete. Worked example: prp-cof-sqrt2-field-incomplete (04:333-343).'
+  parked_file: fd5/authoring/parked/from-fd3/from-6.4-q-sqrt2.md
+  old_dir: ch06-complete-ordered-field

@@ -1,6 +1,8 @@
 # The Rationals inside an Ordered Field; the Archimedean Property
 
-In an ordered field \( F \) we can form \( 1 \), \( 1 + 1 \), \( 1 + 1 + 1 \), and so on. They look like the natural numbers \( 1, 2, 3, \dots \), but they are elements of \( F \), and two questions need answers before the next section can use them as thresholds. Do they behave like natural numbers, adding, multiplying and comparing as \( \nN \) does? And does every element of \( F \) lie below one of them? For \( \nQ \), Section 2.5 answered the second question with yes (@thm-rationals-archimedean). This section answers the first for every ordered field, and goes further: a whole copy of \( \nQ \) sits inside \( F \), in exactly one way. The second question has the answer no in general. Fields where the answer is yes are called **Archimedean**, and in them every element has an integer part and the rationals are dense.
+<!-- S3: style revision per S1 change list (layout-proposal.md §3, 4.2, pipeline S): Steps 1–3 of thm-rationals-embed-ordered-field go into a second-reading fold (statement, Idea and the uniqueness step stay); C3 (the order of ℚ is unique) moves to Chapter 6 or is deleted. -->
+
+In an ordered field \( F \) we can form \( 1 \), \( 1 + 1 \), \( 1 + 1 + 1 \), and so on. They look like the natural numbers \( 1, 2, 3, \dots \), but they are elements of \( F \), and two questions need answers before the next section can use them as thresholds. Do they behave like natural numbers, adding, multiplying and comparing as \( \nN \) does? And does every element of \( F \) lie below one of them? For \( \nQ \), Section 3.2 answered the second question with yes (@thm-rationals-archimedean). This section answers the first for every ordered field, and goes further: a whole copy of \( \nQ \) sits inside \( F \), in exactly one way. The second question has the answer no in general. Fields where the answer is yes are called **Archimedean**, and in them every element has an integer part and the rationals are dense.
 
 ## The natural numbers in an ordered field
 
@@ -23,7 +25,7 @@ x^0 \coloneqq 1_F , \qquad x^{k+1} \coloneqq x^k x \quad \text{for every } k \in
 :::
 :::
 
-The subscript in \( 1_F \) is there because two fields will often be in play, \( F \) and \( \nQ \), each with its own \( 1 \); where only one field is in play the subscript is dropped. For natural numbers \( n, k \), the power \( n^k \in \nN \) is the one of Section 1.6, defined (just before @prp-omega-powers-parity) by the same recursion with \( X = \nN \): \( n^0 = 1 \) and \( n^{k+1} = n^k n \). So \( 2^k \) may mean a natural number or an element of \( F \); part (c) of the next proposition says the two readings match.
+The subscript in \( 1_F \) is there because two fields will often be in play, \( F \) and \( \nQ \), each with its own \( 1 \); where only one field is in play the subscript is dropped. For natural numbers \( n, k \), the power \( n^k \in \nN \) is the one of Section 1.3, defined (just before @prp-omega-powers-parity) by the same recursion with \( X = \nN \): \( n^0 = 1 \) and \( n^{k+1} = n^k n \). So \( 2^k \) may mean a natural number or an element of \( F \); part (c) of the next proposition says the two readings match.
 
 **Examples.** \( 1 \cdot 1_F = 0 \cdot 1_F + 1_F = 0 + 1_F = 1_F \), and \( 2 \cdot 1_F = 1_F + 1_F \), the element written \( 2 \) in Section 4.1. Also \( x^1 = 1_F x = x \) and \( x^2 = x x \), which is the square of @prp-ring-algebra (d). The degenerate case: \( 0 \cdot 1_F = 0 \), and \( 0^0 = 1_F \) by the first equation, a convention the recursion imposes and nothing below questions.
 
@@ -157,7 +159,7 @@ and in the same way \( \iota_F(xy) = \dfrac{(p \cdot 1_F)(r \cdot 1_F)}{(q \cdot
 So \( \psi = \iota_F \). This proves the theorem.
 :::
 
-For \( F = \nQ \), the identity map of \( \nQ \) satisfies the three equations, so by uniqueness \( \iota_{\nQ} \) is the identity. In general \( \iota_F \) is the map of Step 2, and it carries \( \nQ \) onto a copy inside \( F \) that adds, multiplies and compares as \( \nQ \) does. So "\( \nQ \subseteq F \)" is an honest abuse of notation, as \( \nN \subseteq \nZ \subseteq \nQ \) was in Chapter 2, and where only one field is in play we write \( q \) for \( \iota_F(q) \). The statements below keep \( \iota_F \) visible.
+For \( F = \nQ \), the identity map of \( \nQ \) satisfies the three equations, so by uniqueness \( \iota_{\nQ} \) is the identity. In general \( \iota_F \) is the map of Step 2, and it carries \( \nQ \) onto a copy inside \( F \) that adds, multiplies and compares as \( \nQ \) does. So "\( \nQ \subseteq F \)" is an honest abuse of notation, as \( \nN \subseteq \nZ \subseteq \nQ \) was in Chapters 2 and 3, and where only one field is in play we write \( q \) for \( \iota_F(q) \). The statements below keep \( \iota_F \) visible.
 
 ::: {.remark}
 Uniqueness has a consequence that later chapters of this volume use when comparing two ordered fields. Let \( L \) be another ordered field and \( \chi \colon F \to L \) a map with \( \chi(1_F) = 1_L \) that respects \( + \) and \( \cdot \). Then \( \chi \circ \iota_F \colon \nQ \to L \) satisfies the three equations of the theorem, so \( \chi \circ \iota_F = \iota_L \): such a map fixes the rationals.
@@ -165,7 +167,7 @@ Uniqueness has a consequence that later chapters of this volume use when compari
 
 ## The Archimedean property
 
-Section 2.5 proved that every rational lies below a natural number (@thm-rationals-archimedean). By @prp-naturals-in-ordered-field (d), that theorem says: for every \( x \in \nQ \) there is \( n \in \nN \) with \( x < n \cdot 1_{\nQ} \). This statement makes sense in any ordered field, and it deserves a name, because it can fail.
+Section 3.2 proved that every rational lies below a natural number (@thm-rationals-archimedean). By @prp-naturals-in-ordered-field (d), that theorem says: for every \( x \in \nQ \) there is \( n \in \nN \) with \( x < n \cdot 1_{\nQ} \). This statement makes sense in any ordered field, and it deserves a name, because it can fail.
 
 *No element of the field lies above all the natural numbers.*
 
@@ -203,7 +205,7 @@ Let \( \varepsilon \in F_{>0} \). Then \( 1/\varepsilon > 0 \) by @prp-reciproca
 where \( 1/(1/\varepsilon) = (\varepsilon^{-1})^{-1} = \varepsilon \) by @lem-field-fraction-rules (a).
 :::
 
-The order of the quantifiers is as in Section 2.5: \( \varepsilon \) first, then \( N \), depending on \( \varepsilon \), and then **every** \( n \ge N \) at once. That last clause is what Section 4.3 will call "eventually".
+The order of the quantifiers is as in Section 3.2: \( \varepsilon \) first, then \( N \), depending on \( \varepsilon \), and then **every** \( n \ge N \) at once. That last clause is what Section 4.3 will call "eventually".
 
 ::: {.check}
 Find \( n \in \nN \) with \( n > 355/113 \) in \( \nQ \). Then find the least \( n \in \nZ_{>0} \) with \( 1/n < 7/500 \).
@@ -246,7 +248,7 @@ so \( x < x \), against (O1). By symmetry \( m' < m \) is impossible, so \( m = 
 
 For \( F = \nQ \), \( \iota_{\nQ} \) is the identity and this is @prp-rational-integer-part. The constructed real numbers of the next chapter will use it with \( F \) the new field, where \( m \) is an integer approximant of a number not yet known to be anything else.
 
-Between two rationals there is always a third, their midpoint (Section 2.5). In an Archimedean field more is true: between any two elements, however close, lies a **rational**.
+Between two rationals there is always a third, their midpoint (Section 3.2). In an Archimedean field more is true: between any two elements, however close, lies a **rational**.
 
 ::: {#thm-rationals-dense-ordered-field}
 [The Rationals Are Dense in an Archimedean Field]
@@ -270,7 +272,7 @@ Applied again, the theorem shows that an interval of an Archimedean field contai
 
 ## A field that is not Archimedean
 
-Section 2.5 proved the Archimedean property of \( \nQ \) from the construction of \( \nQ \): every rational is a quotient of integers. Nothing in (F1)–(F9) and (O1)–(O4) forces it. The standard witness uses polynomials, which this volume has not built; *Algebraic Preliminaries*, Chapter 3 builds them as formal polynomials. We use the school algebra of polynomials in this one example, and say so. No proof of a numbered result in this chapter cites it; it serves only as a counterexample, in prose, warnings and exercises.
+Section 3.2 proved the Archimedean property of \( \nQ \) from the construction of \( \nQ \): every rational is a quotient of integers. Nothing in (F1)–(F9) and (O1)–(O4) forces it. The standard witness uses polynomials, which this volume has not built; *Algebraic Preliminaries*, Chapter 4 builds them as formal polynomials. We use the school algebra of polynomials in this one example, and say so. No proof of a numbered result in this chapter cites it; it serves only as a counterexample, in prose, warnings and exercises.
 
 ::: {#exm-rational-function-field}
 [A Non-Archimedean Ordered Field]
@@ -484,7 +486,7 @@ Fatal errors (0 for the step): assuming \( 1 \succ 0 \) without \( 1 \ne 0 \) or
 :::
 
 <!-- dependency ledger
-def-naturals-in-ordered-field (claim): N-powers n^k are F3.1's (recursion before prp-omega-powers-parity) | F3.1 §06 (defined there, unlabeled; pointed to via prp-omega-powers-parity)
+def-naturals-in-ordered-field (claim): N-powers n^k are F3.1's (recursion before prp-omega-powers-parity) | F3.1 §03 (defined there, unlabeled; pointed to via prp-omega-powers-parity)
 def-naturals-in-ordered-field (example): 0 + 1_F = 1_F | def-commutative-ring-and-field (F1), (F3)
 prp-naturals-in-ordered-field (proof): n + 1 = S(n) and m S(n) = mn + m on omega | def-omega-arithmetic (b), (c) (cited)
 prp-naturals-in-ordered-field (proof): the zero and one of Q are j(0), j(1) | prp-integers-embed-rationals (j(0) = 0, j(1) = 1; cited)

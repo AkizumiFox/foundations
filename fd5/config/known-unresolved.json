@@ -1,0 +1,47 @@
+[
+  {
+    "why": "The ℚ(√2) group of fd3's old Section 6.4 (def-cof-sqrt2-field, prp-cof-sqrt2-field-archimedean, prp-cof-sqrt2-field-incomplete, exm-cof-sqrt2-conjugation) left fd3 in its re-cut (fd3/authoring/design/layout-proposal.md §4.2, approved 2026-10-26) and is parked verbatim in authoring/parked/from-fd3/from-6.4-q-sqrt2.md; fd5's next revision merges it into Sections 2.3–2.4 with its labels unchanged, and these same-book references then resolve.",
+    "references": [
+      {
+        "ref": "def-cof-sqrt2-field",
+        "in": "src/ch02-fields/03-subfields.md"
+      },
+      {
+        "ref": "prp-cof-sqrt2-field-archimedean",
+        "in": "src/ch02-fields/03-subfields.md"
+      },
+      {
+        "ref": "prp-cof-sqrt2-field-incomplete",
+        "in": "src/ch02-fields/03-subfields.md"
+      },
+      {
+        "ref": "exm-cof-sqrt2-conjugation",
+        "in": "src/ch02-fields/04-field-homomorphisms.md"
+      },
+      {
+        "ref": "prp-cof-sqrt2-field-archimedean",
+        "in": "src/ch02-fields/06-frobenius-and-fermat.md"
+      },
+      {
+        "ref": "prp-cof-sqrt2-field-incomplete",
+        "in": "src/ch02-fields/06-frobenius-and-fermat.md"
+      },
+      {
+        "ref": "def-cof-sqrt2-field",
+        "in": "src/ch02-fields/index.md"
+      },
+      {
+        "ref": "exm-cof-sqrt2-conjugation",
+        "in": "src/ch02-fields/index.md"
+      },
+      {
+        "ref": "prp-cof-sqrt2-field-archimedean",
+        "in": "src/ch02-fields/index.md"
+      },
+      {
+        "ref": "prp-cof-sqrt2-field-incomplete",
+        "in": "src/ch02-fields/index.md"
+      }
+    ]
+  }
+]

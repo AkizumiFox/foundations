@@ -4,7 +4,7 @@ items:
 - key: def-cof-order-preserving-map
   kind: def
   file: 01-completeness-and-archimedes.md
-  line: 15
+  line: 17
   hash: a3946667ef3c
   verdicts:
   - stage: S5a
@@ -41,7 +41,7 @@ items:
 - key: check:01-completeness-and-archimedes:1
   kind: check
   file: 01-completeness-and-archimedes.md
-  line: 43
+  line: 45
   hash: 2267b4406a49
   verdicts:
   - stage: S5a
@@ -63,7 +63,7 @@ items:
 - key: prp-cof-map-fixes-rationals
   kind: prp
   file: 01-completeness-and-archimedes.md
-  line: 53
+  line: 55
   hash: 8f85e47c4a1d
   verdicts:
   - stage: S5a
@@ -86,7 +86,7 @@ items:
 - key: proof:prp-cof-map-fixes-rationals
   kind: proof
   file: 01-completeness-and-archimedes.md
-  line: 62
+  line: 64
   hash: ce657b1ca9d9
   verdicts:
   - stage: S5a
@@ -108,7 +108,7 @@ items:
 - key: thm-cof-complete-archimedean
   kind: thm
   file: 01-completeness-and-archimedes.md
-  line: 76
+  line: 78
   hash: 0ad784ea4b6f
   verdicts:
   - stage: S5a
@@ -129,7 +129,7 @@ items:
 - key: proof:thm-cof-complete-archimedean
   kind: proof
   file: 01-completeness-and-archimedes.md
-  line: 86
+  line: 88
   hash: 0ec1999debdf
   verdicts:
   - stage: S5a
@@ -173,7 +173,7 @@ items:
 - key: exm-cof-sup-one-minus-reciprocals
   kind: exm
   file: 01-completeness-and-archimedes.md
-  line: 110
+  line: 113
   hash: 2214aea683e8
   verdicts:
   - stage: S7r
@@ -189,7 +189,7 @@ items:
 - key: def-cof-rationals-below
   kind: def
   file: 01-completeness-and-archimedes.md
-  line: 135
+  line: 138
   hash: 25c7d578213a
   verdicts:
   - stage: S5a
@@ -211,7 +211,7 @@ items:
 - key: exm-cof-rationals-below-sqrt2
   kind: exm
   file: 01-completeness-and-archimedes.md
-  line: 152
+  line: 155
   hash: 4137b4f92f50
   verdicts:
   - stage: S5a
@@ -234,7 +234,7 @@ items:
 - key: check:01-completeness-and-archimedes:2
   kind: check
   file: 01-completeness-and-archimedes.md
-  line: 171
+  line: 174
   hash: 0cc047678bd6
   verdicts:
   - stage: S5a
@@ -254,7 +254,7 @@ items:
 - key: lem-cof-rationals-separate
   kind: lem
   file: 01-completeness-and-archimedes.md
-  line: 181
+  line: 184
   hash: 11e0b0216d58
   verdicts:
   - stage: S5a
@@ -296,7 +296,7 @@ items:
 - key: proof:lem-cof-rationals-separate
   kind: proof
   file: 01-completeness-and-archimedes.md
-  line: 191
+  line: 194
   hash: c11755223551
   verdicts:
   - stage: S5a
@@ -318,7 +318,7 @@ items:
 - key: prp-cof-square-roots
   kind: prp
   file: 01-completeness-and-archimedes.md
-  line: 209
+  line: 212
   hash: 1647c45dad95
   verdicts:
   - stage: S5a
@@ -341,7 +341,7 @@ items:
 - key: proof:prp-cof-square-roots
   kind: proof
   file: 01-completeness-and-archimedes.md
-  line: 227
+  line: 230
   hash: 9667eff88fa1
   verdicts:
   - stage: S5a
@@ -376,7 +376,7 @@ items:
 - key: exr-completeness-and-archimedes-a1
   kind: exr
   file: 01-completeness-and-archimedes.md
-  line: 262
+  line: 265
   hash: b33351893b38
   verdicts:
   - stage: S5a
@@ -420,7 +420,7 @@ items:
 - key: exr-completeness-and-archimedes-b1
   kind: exr
   file: 01-completeness-and-archimedes.md
-  line: 295
+  line: 298
   hash: 6548db2d6fcd
   verdicts:
   - stage: S5a
@@ -472,7 +472,7 @@ items:
 - key: exr-completeness-and-archimedes-b2
   kind: exr
   file: 01-completeness-and-archimedes.md
-  line: 307
+  line: 310
   hash: a0b0d0d398eb
   verdicts:
   - stage: S5a
@@ -511,7 +511,7 @@ items:
 - key: exr-completeness-and-archimedes-c1
   kind: exr
   file: 01-completeness-and-archimedes.md
-  line: 323
+  line: 326
   hash: 636d9177c540
   verdicts:
   - stage: S5a
@@ -541,7 +541,7 @@ items:
 - key: exr-completeness-and-archimedes-c2
   kind: exr
   file: 01-completeness-and-archimedes.md
-  line: 335
+  line: 338
   hash: 4142ac9d796f
   verdicts:
   - stage: S5a
@@ -584,7 +584,7 @@ items:
 - key: lem-cof-below-sum
   kind: lem
   file: 02-measuring-by-rationals.md
-  line: 23
+  line: 25
   hash: 9a623c73cf8d
   verdicts:
   - stage: S5a
@@ -606,7 +606,7 @@ items:
 - key: proof:lem-cof-below-sum
   kind: proof
   file: 02-measuring-by-rationals.md
-  line: 37
+  line: 39
   hash: 7f8e3c035e87
   verdicts:
   - stage: S5a
@@ -629,7 +629,7 @@ items:
 - key: lem-cof-below-product
   kind: lem
   file: 02-measuring-by-rationals.md
-  line: 47
+  line: 49
   hash: aa765fd94b40
   verdicts:
   - stage: S5a
@@ -651,7 +651,7 @@ items:
 - key: proof:lem-cof-below-product
   kind: proof
   file: 02-measuring-by-rationals.md
-  line: 64
+  line: 66
   hash: 9425e018ae77
   verdicts:
   - stage: S5a
@@ -674,7 +674,7 @@ items:
 - key: check:02-measuring-by-rationals:1
   kind: check
   file: 02-measuring-by-rationals.md
-  line: 75
+  line: 77
   hash: c161802c964d
   verdicts:
   - stage: S5a
@@ -696,7 +696,7 @@ items:
 - key: thm-cof-embedding-into-complete
   kind: thm
   file: 02-measuring-by-rationals.md
-  line: 87
+  line: 89
   hash: 106a58a6fb54
   verdicts:
   - stage: S5a
@@ -729,7 +729,7 @@ items:
 - key: proof:thm-cof-embedding-into-complete
   kind: proof
   file: 02-measuring-by-rationals.md
-  line: 108
+  line: 110
   hash: e47925739ab0
   verdicts:
   - stage: S5a
@@ -764,7 +764,7 @@ items:
 - key: check:02-measuring-by-rationals:2
   kind: check
   file: 02-measuring-by-rationals.md
-  line: 178
+  line: 180
   hash: 753450c30c4a
   verdicts:
   - stage: S5a
@@ -796,7 +796,7 @@ items:
 - key: exr-measuring-by-rationals-a1
   kind: exr
   file: 02-measuring-by-rationals.md
-  line: 190
+  line: 192
   hash: b0261b7d0aea
   verdicts:
   - stage: S5a
@@ -849,7 +849,7 @@ items:
 - key: exr-measuring-by-rationals-b1
   kind: exr
   file: 02-measuring-by-rationals.md
-  line: 215
+  line: 217
   hash: f92a361da5ba
   verdicts:
   - stage: S5a
@@ -890,7 +890,7 @@ items:
 - key: exr-measuring-by-rationals-b2
   kind: exr
   file: 02-measuring-by-rationals.md
-  line: 233
+  line: 235
   hash: dd35ae5581a5
   verdicts:
   - stage: S5a
@@ -936,7 +936,7 @@ items:
 - key: exr-measuring-by-rationals-c1
   kind: exr
   file: 02-measuring-by-rationals.md
-  line: 265
+  line: 267
   hash: 0c2bd4bca5a7
   verdicts:
   - stage: S5a
@@ -982,7 +982,7 @@ items:
 - key: exr-measuring-by-rationals-c2
   kind: exr
   file: 02-measuring-by-rationals.md
-  line: 300
+  line: 302
   hash: 9b0fc3033b5b
   verdicts:
   - stage: S5a
@@ -1025,7 +1025,7 @@ items:
 - key: thm-cof-uniqueness
   kind: thm
   file: 03-the-uniqueness-theorem.md
-  line: 11
+  line: 13
   hash: 6f1544d5bd71
   verdicts:
   - stage: S5a
@@ -1058,7 +1058,7 @@ items:
 - key: proof:thm-cof-uniqueness
   kind: proof
   file: 03-the-uniqueness-theorem.md
-  line: 25
+  line: 27
   hash: 59dc618b7f0b
   verdicts:
   - stage: S5a
@@ -1086,7 +1086,7 @@ items:
 - key: check:03-the-uniqueness-theorem:1
   kind: check
   file: 03-the-uniqueness-theorem.md
-  line: 49
+  line: 51
   hash: 4fe5465616cd
   verdicts:
   - stage: S5a
@@ -1107,7 +1107,7 @@ items:
 - key: cor-cof-isomorphic-to-cauchy-reals
   kind: cor
   file: 03-the-uniqueness-theorem.md
-  line: 79
+  line: 81
   hash: f876b42b1edb
   verdicts:
   - stage: S5a
@@ -1141,7 +1141,7 @@ items:
 - key: proof:cor-cof-isomorphic-to-cauchy-reals
   kind: proof
   file: 03-the-uniqueness-theorem.md
-  line: 85
+  line: 87
   hash: 997d7f91096f
   verdicts:
   - stage: S5a
@@ -1165,7 +1165,7 @@ items:
 - key: exm-cof-two-models
   kind: exm
   file: 03-the-uniqueness-theorem.md
-  line: 107
+  line: 109
   hash: 3ebcdfb541cf
   verdicts:
   - stage: S5a
@@ -1192,7 +1192,7 @@ items:
 - key: cor-cof-order-automorphism-identity
   kind: cor
   file: 03-the-uniqueness-theorem.md
-  line: 129
+  line: 131
   hash: 53e1d71e7c41
   verdicts:
   - stage: S5a
@@ -1223,7 +1223,7 @@ items:
 - key: proof:cor-cof-order-automorphism-identity
   kind: proof
   file: 03-the-uniqueness-theorem.md
-  line: 135
+  line: 137
   hash: de82e748992f
   verdicts:
   - stage: S5a
@@ -1246,7 +1246,7 @@ items:
 - key: thm-cof-field-automorphism-identity
   kind: thm
   file: 03-the-uniqueness-theorem.md
-  line: 141
+  line: 143
   hash: ddff2dd89c3f
   verdicts:
   - stage: S5a
@@ -1290,7 +1290,7 @@ items:
 - key: proof:thm-cof-field-automorphism-identity
   kind: proof
   file: 03-the-uniqueness-theorem.md
-  line: 163
+  line: 165
   hash: f198319459db
   verdicts:
   - stage: S5a
@@ -1317,7 +1317,7 @@ items:
 - key: check:03-the-uniqueness-theorem:2
   kind: check
   file: 03-the-uniqueness-theorem.md
-  line: 191
+  line: 193
   hash: f1a5ec3612f9
   verdicts:
   - stage: S5a
@@ -1352,7 +1352,7 @@ items:
 - key: exr-the-uniqueness-theorem-a1
   kind: exr
   file: 03-the-uniqueness-theorem.md
-  line: 203
+  line: 205
   hash: 230c5afb3680
   verdicts:
   - stage: S5a
@@ -1403,7 +1403,7 @@ items:
 - key: exr-the-uniqueness-theorem-b1
   kind: exr
   file: 03-the-uniqueness-theorem.md
-  line: 234
+  line: 236
   hash: 2a8317e8b3fe
   verdicts:
   - stage: S5a
@@ -1435,7 +1435,7 @@ items:
 - key: exr-the-uniqueness-theorem-b2
   kind: exr
   file: 03-the-uniqueness-theorem.md
-  line: 246
+  line: 248
   hash: c19b82ab7d39
   verdicts:
   - stage: S5a
@@ -1479,7 +1479,7 @@ items:
 - key: exr-the-uniqueness-theorem-c1
   kind: exr
   file: 03-the-uniqueness-theorem.md
-  line: 264
+  line: 266
   hash: 74ab40db3a05
   verdicts:
   - stage: S5a
@@ -1524,7 +1524,7 @@ items:
 - key: exr-the-uniqueness-theorem-c2
   kind: exr
   file: 03-the-uniqueness-theorem.md
-  line: 289
+  line: 291
   hash: 07c38d83ad31
   verdicts:
   - stage: S5a
@@ -1565,1245 +1565,3 @@ items:
       asserts it. The second gap (6), the sum-of-suprema rule, is correct. A grep of fd2/src and fd3/src
       finds no proof of it, so ''this book has not proved it'' holds. ''Route of 6.2 chosen to avoid it''
       matches 02:19. The repair is correct: lem-cof-below-sum in F and in L (L is Archimedean'
-- key: lem-cof-leading-term-sign
-  kind: lem
-  file: 04-two-non-examples.md
-  line: 25
-  hash: 52bde1e216a5
-  verdicts:
-  - stage: S5a
-    verdict: correct
-    by: refereeA
-    hash: 52bde1e216a5
-    date: '2026-10-12'
-    model: claude-opus-5-5
-    evidence: '25-33: T = 1 + A/|a_d| > A/|a_d| and T >= 1. Statement checked; the a_d != 0 hypothesis
-      is used for the division and in the d = 0 case.'
-  - stage: S5b
-    verdict: correct
-    by: refereeB
-    hash: 52bde1e216a5
-    date: '2026-10-12'
-    model: claude-opus-5-5
-    evidence: 04:25-33. T = 1 + sum|a_i|/|a_d| is checked; the d = 0 case gives T = 1 with an empty sum.
-      The sidecar asserts the threshold.
-- key: proof:lem-cof-leading-term-sign
-  kind: proof
-  file: 04-two-non-examples.md
-  line: 39
-  hash: af732a5ab846
-  verdicts:
-  - stage: S5a
-    verdict: correct
-    by: refereeA
-    hash: af732a5ab846
-    date: '2026-10-12'
-    model: claude-opus-5-5
-    evidence: '40-50: the d = 0 case is handled. For d >= 1, t > 1, so 1 <= t^i <= t^(d-1); triangle inequality
-      (e) inductively; |a_d| t > A times t^(d-1) > 0 (ordered-ring-rules (c)); abs (c) gives p >= a_d
-      t^d - |R|. Each step checked against the cited labels.'
-  - stage: S5b
-    verdict: correct
-    by: refereeB
-    hash: af732a5ab846
-    date: '2026-10-12'
-    model: claude-opus-5-5
-    evidence: 04:39-51. t > T >= 1 gives 1 <= t^i <= t^{d-1}. |R| <= A t^{d-1} < |a_d| t^d uses prp-ordered-ring-rules
-      (c), and prp-absolute-value-ordered-field (b), (c), (e) are cited correctly. Finite sums and power
-      laws are in the ledger (04:582-583).
-- key: check:04-two-non-examples:1
-  kind: check
-  file: 04-two-non-examples.md
-  line: 55
-  hash: d461b03763c3
-  verdicts:
-  - stage: S5a
-    verdict: correct
-    by: refereeA
-    hash: d461b03763c3
-    date: '2026-10-12'
-    model: claude-opus-5-5
-    evidence: '60: T = 1 + 100/1 = 101, p(102) = 204. The least working threshold is 100 (p(100) = 0),
-      which agrees with ''not the smallest''.'
-  - stage: S5b
-    verdict: correct
-    by: refereeB
-    hash: d461b03763c3
-    date: '2026-10-12'
-    model: claude-opus-5-5
-    evidence: 04:55-61. T = 1 + 100/1 = 101 and p(102) = 204. T = 100 also works, so 101 is not the smallest
-      threshold, as claimed.
-- key: lem-cof-polynomial-closure
-  kind: lem
-  file: 04-two-non-examples.md
-  line: 65
-  hash: 638bc1a879d4
-  verdicts:
-  - stage: S5a
-    verdict: correct
-    by: refereeA
-    hash: 638bc1a879d4
-    date: '2026-10-12'
-    model: claude-opus-5-5
-    evidence: '68-73: statement for arbitrary lists. (b) length d+e+1, last entry a_d b_e; ordered-ring-rules
-      (f) gives no zero divisors. Sidecar lem-cof-polynomial-closure.py ok.'
-  - stage: S5b
-    verdict: correct
-    by: refereeB
-    hash: 638bc1a879d4
-    date: '2026-10-12'
-    model: claude-opus-5-5
-    evidence: 04:65-75. All three parts are proved, and the consequence at 04:77 cites prp-ordered-ring-rules
-      (f) correctly.
-- key: proof:lem-cof-polynomial-closure
-  kind: proof
-  file: 04-two-non-examples.md
-  line: 79
-  hash: 2ef8e7730633
-  verdicts:
-  - stage: S5a
-    verdict: correct
-    by: refereeA
-    hash: 2ef8e7730633
-    date: '2026-10-12'
-    model: claude-opus-5-5
-    evidence: '80: prp-integer-least-element covers greatest elements of non-empty sets bounded above
-      (checked). Cutting the list, then lem-cof-leading-term-sign, then max{T,T''}+1 gives the contradiction.'
-  - stage: S5b
-    verdict: correct
-    by: refereeB
-    hash: 2ef8e7730633
-    date: '2026-10-12'
-    model: claude-opus-5-5
-    evidence: 04:80. prp-integer-least-element includes the greatest-element clause (ch02 03-ordered-rings.md:372).
-      The max{T,T'}+1 contradiction is valid.
-- key: proof:lem-cof-polynomial-closure#2
-  kind: proof
-  file: 04-two-non-examples.md
-  line: 88
-  hash: 50a0a42feb66
-  verdicts:
-  - stage: S5a
-    verdict: correct
-    by: refereeA
-    hash: 50a0a42feb66
-    date: '2026-10-12'
-    model: claude-opus-5-5
-    evidence: '89-99: (a) by zero extension. (b) by induction on e for all lists at once: base b_0*p;
-      step r = b_0 + t r''. The IH last index d+e-1 shifts to d+e, and the b_0 p list ends at d <= d+e-1,
-      so entry a_d b_e + 0. Quantifier order fine.'
-  - stage: S5b
-    verdict: correct
-    by: refereeB
-    hash: 50a0a42feb66
-    date: '2026-10-12'
-    model: claude-opus-5-5
-    evidence: 04:88-100. In the induction on e, b_0 p has last index d <= d+e-1 when e >= 1, so the last
-      entry is a_d b_e + 0. The sidecar lem-cof-polynomial-closure.py confirms this.
-- key: def-cof-rational-functions
-  kind: def
-  file: 04-two-non-examples.md
-  line: 109
-  hash: 61a7603d9842
-  verdicts:
-  - stage: S5a
-    verdict: correct
-    by: refereeA
-    hash: 61a7603d9842
-    date: '2026-10-12'
-    model: claude-opus-5-5
-    evidence: '112-137: T_q from the lemma on the cut list. Equivalence relation, closure via the remark
-      after lem (b), representative independence via thm-well-defined-on-classes (b),(c) (checked: (c)
-      is the subset clause).'
-  - stage: S5b
-    verdict: correct
-    by: refereeB
-    hash: 61a7603d9842
-    date: '2026-10-12'
-    model: claude-opus-5-5
-    evidence: 04:109-138. The equivalence, the closure of the formulas (via the consequence after lem-cof-polynomial-closure)
-      and independence of representatives are all checked. thm-well-defined-on-classes (a), (b) match
-      their use.
-- key: prp-cof-rational-functions-ordered
-  kind: prp
-  file: 04-two-non-examples.md
-  line: 142
-  hash: 5bda91ef9507
-  verdicts:
-  - stage: S5a
-    verdict: correct
-    by: refereeA
-    hash: 5bda91ef9507
-    date: '2026-10-12'
-    model: claude-opus-5-5
-    evidence: '146-147: ordered field with P as its positives; c -> [c/1] meets def-cof-order-preserving-map
-      (sums, products, 1, strict order).'
-  - stage: S5b
-    verdict: correct
-    by: refereeB
-    hash: 5bda91ef9507
-    date: '2026-10-12'
-    model: claude-opus-5-5
-    evidence: 04:142-149. The statement matches what is proved. def-cof-order-preserving-map requires
-      +, ·, 1 and strict increase, and (b) checks each of these.
-- key: proof:prp-cof-rational-functions-ordered
-  kind: proof
-  file: 04-two-non-examples.md
-  line: 156
-  hash: 49d1f68c2fde
-  verdicts:
-  - stage: S5a
-    verdict: correct
-    by: refereeA
-    hash: 5c2ebaae0d6b
-    date: '2026-10-12'
-    model: claude-opus-5-5
-    evidence: '157-167: identities F1,F2,F5,F6,F9 pointwise; F3,F4,F7 explicit; F8 via (q,p), with p''s
-      list non-zero since f != 0. (P1),(P2) match prp-order-from-positives, which needs a commutative
-      ring and exactly one of three cases; all three cases handled. 1 != 0 checked.'
-  - stage: S5b
-    verdict: minor
-    by: refereeB
-    hash: 5c2ebaae0d6b
-    date: '2026-10-12'
-    model: claude-opus-5-5
-    evidence: '04-two-non-examples.md:177 "Exercise B1 writes out two more" field identities is false:
-      B1 writes out one field identity and one property of P.'
-  - stage: S7r
-    verdict: minor
-    by: rereferee
-    hash: 5c2ebaae0d6b
-    date: '2026-10-12'
-    model: claude-opus-5-5
-    evidence: 'ound. One real citation gap remains at 04:163, (P1): "sums ... of two positive reals, hence
-      positive by (O3) and (O4) in R". (O3) only says a<b ⇒ a+c<b+c (ch02/03:157). Getting 0<u+v from
-      it also needs (O2) (0<v<u+v). The ledger line at 04:609 repeats the same incomplete cite. Fix: cite
-      @prp-ordered-ring-rules (b) for the sum, as B1''s solution at 04:467 already does, and keep (O4)
-      for the product.'
-  - stage: S7r
-    verdict: correct
-    by: rereferee
-    hash: 49d1f68c2fde
-    date: '2026-10-12'
-    model: claude-opus-5-5
-    evidence: 'd negative at a common large t. prp-order-from-positives (ch02/03:168) then gives the ordered
-      commutative ring, with positive set P, and (F8) with 1≠0 makes it an ordered field. (b) is correct:
-      [c/1] has value c at every t, the map is additive and multiplicative pointwise, and c<c'' gives
-      [(c''-c)/1]∈P. The closing note at 04:177 matches B1. Ledger lines 04:593 and 04:609 match the inline
-      citations.'
-- key: prp-cof-rational-functions-not-archimedean
-  kind: prp
-  file: 04-two-non-examples.md
-  line: 188
-  hash: d05db0a02429
-  verdicts:
-  - stage: S5a
-    verdict: correct
-    by: refereeA
-    hash: d05db0a02429
-    date: '2026-10-12'
-    model: claude-opus-5-5
-    evidence: '191: x - n has value t - n > 0 for t > n. Matches def-archimedean-ordered-field (for all
-      x, exists n, x < n*1).'
-  - stage: S5b
-    verdict: minor
-    by: refereeB
-    hash: d05db0a02429
-    date: '2026-10-12'
-    model: claude-opus-5-5
-    evidence: 04-two-non-examples.md:200 "the proposition says it has no supremum" misstates the proposition.
-  - stage: S7r
-    verdict: correct
-    by: rereferee
-    hash: d05db0a02429
-    date: '2026-10-12'
-    model: claude-opus-5-5
-    evidence: 'The earlier finding is resolved. 04:200 no longer says the proposition asserts there is
-      no supremum: "in fact it has no supremum, and Exercise C1 asks for a direct proof of that". The
-      statement and proof at 04:191-197 hold. n·1=ι(n) by thm-rationals-embed-ordered-field, which is
-      the constant n under the convention at 04:180. x−n has value t−n>0 for t>n. Negation via fd1:prp-quantifier-negation,
-      an'
-- key: proof:prp-cof-rational-functions-not-archimedean
-  kind: proof
-  file: 04-two-non-examples.md
-  line: 194
-  hash: 347ef0d5a88c
-  verdicts:
-  - stage: S5a
-    verdict: correct
-    by: refereeA
-    hash: 347ef0d5a88c
-    date: '2026-10-12'
-    model: claude-opus-5-5
-    evidence: '195-197: thm-rationals-embed gives iota(n) = n*1, the class of constant n by line 180.
-      Negation is correct (n*1 < x excludes x < n*1 by asymmetry, implicit). Not complete via thm-cof-complete-archimedean.'
-  - stage: S5b
-    verdict: correct
-    by: refereeB
-    hash: 347ef0d5a88c
-    date: '2026-10-12'
-    model: claude-opus-5-5
-    evidence: 04:194-198. n·1 = ι(n) (thm-rationals-embed-ordered-field) is the constant n by 04:180.
-      x - n has value t - n > 0 for t > n. The negation matches def-archimedean-ordered-field.
-- key: exm-cof-infinitesimal
-  kind: exm
-  file: 04-two-non-examples.md
-  line: 204
-  hash: 0b2f60f88a40
-  verdicts:
-  - stage: S5a
-    verdict: correct
-    by: refereeA
-    hash: 0b2f60f88a40
-    date: '2026-10-12'
-    model: claude-opus-5-5
-    evidence: '211-213: values 1/t and 1/n - 1/t with reciprocal-order (b). epsilon = 1/x gives |1/(n+1)|
-      > epsilon for every n, which matches def-sequence-limit-ordered-field. Remark at 216 checked: only
-      the rationals q <= 0 lie below 1/x and 2/x.'
-  - stage: S5b
-    verdict: correct
-    by: refereeB
-    hash: 0b2f60f88a40
-    date: '2026-10-12'
-    model: claude-opus-5-5
-    evidence: '04:204-214. ε = 1/x, and |1/(n+1)| > ε for all n. def-sequence-limit-ordered-field uses
-      strict <, and prp-reciprocals-null-iff-archimedean is about the same sequence 1/((n+1)·1_F). 04:216:
-      the rationals below 1/x and below 2/x are exactly the q <= 0 (checked: 2/x < 1/n as well).'
-- key: exm-cof-x-not-square
-  kind: exm
-  file: 04-two-non-examples.md
-  line: 218
-  hash: 6b0a2598849f
-  verdicts:
-  - stage: S5a
-    verdict: correct
-    by: refereeA
-    hash: 6b0a2598849f
-    date: '2026-10-12'
-    model: claude-opus-5-5
-    evidence: '227-239: h = t q^2 - p^2 has top degree 2e+1 versus 2d, with parity from cor-integers-even-odd
-      (a). The sum-list entry is non-zero, contradicting (c). The all-zero p case is handled separately.'
-  - stage: S5b
-    verdict: correct
-    by: refereeB
-    hash: 6b0a2598849f
-    date: '2026-10-12'
-    model: claude-opus-5-5
-    evidence: 04:218-240. t·q^2 has top index 2e+1 with entry b_e^2, and -p^2 has top index 2d with entry
-      -a_d^2. The sum list has a nonzero entry at the max index. cor-integers-even-odd (a) is cited correctly.
-  - stage: S8
-    verdict: minor
-    by: seam
-    hash: 6b0a2598849f
-    date: '2026-10-12'
-    model: claude-opus-5-5
-    evidence: index.md:7 What you need under-credits two earlier chapters. Chapter 3 is listed for 'one
-      review exercise' only, but cor-integers-even-odd (Chapter 3) is used in a main-line example that
-      the §04 table relies on. Chapter 1 is listed for 'one analogy' only, but R1 cites its prp-omega-order-arithmetic.
-      The S3 deviation in blueprint ch06.md:85 assigns cor-integers-even-odd to F3.2.
-  - stage: S7r
-    verdict: correct
-    by: rereferee
-    hash: 6b0a2598849f
-    date: '2026-10-12'
-    model: claude-opus-5-5
-    evidence: The S8 finding is resolved. ch06/index.md:7 now credits Chapter 3 with cor-integers-even-odd
-      "used in Section 6.4" (the label is at ch03/01-division-with-remainder.md:158), and Chapter 1 with
-      prp-omega-order-arithmetic "in a review solution" (ch01/06:117). I rechecked the solution at 04:225-239.
-      The list for h is the sum of the lists for t·q² (top degree 2e+1, coefficient b_e²) and −p² (top
-      degree
-- key: check:04-two-non-examples:2
-  kind: check
-  file: 04-two-non-examples.md
-  line: 242
-  hash: 63934d662527
-  verdicts:
-  - stage: S5a
-    verdict: correct
-    by: refereeA
-    hash: 63934d662527
-    date: '2026-10-12'
-    model: claude-opus-5-5
-    evidence: '247: -x < 0 and squares are >= 0 (rules (e)). (x-1)^2 = x^2 - 2x + 1 by prp-ring-algebra
-      (d) with b = -1 (plus (c)).'
-  - stage: S5b
-    verdict: correct
-    by: refereeB
-    hash: 63934d662527
-    date: '2026-10-12'
-    model: claude-opus-5-5
-    evidence: 04:242-248. prp-ordered-ring-rules (e) gives squares >= 0. prp-ring-algebra (d) with b =
-      -1 gives (x-1)^2.
-- key: def-cof-sqrt2-field
-  kind: def
-  file: 04-two-non-examples.md
-  line: 254
-  hash: a100e0a74f84
-  verdicts:
-  - stage: S5a
-    verdict: correct
-    by: refereeA
-    hash: a100e0a74f84
-    date: '2026-10-12'
-    model: claude-opus-5-5
-    evidence: '252-260: sqrt2 is the unique r >= 0 from prp-cof-square-roots (a >= 0 hypothesis met).
-      It equals exm-sqrt2-class''s r (r > 0, r^2 = 2) by uniqueness.'
-  - stage: S5b
-    verdict: correct
-    by: refereeB
-    hash: a100e0a74f84
-    date: '2026-10-12'
-    model: claude-opus-5-5
-    evidence: 04:252-261. √2 comes from prp-cof-square-roots and equals exm-sqrt2-class's r by uniqueness
-      (r > 0, r^2 = 2).
-- key: prp-cof-sqrt2-field-archimedean
-  kind: prp
-  file: 04-two-non-examples.md
-  line: 263
-  hash: 18289b80be87
-  verdicts:
-  - stage: S5a
-    verdict: correct
-    by: refereeA
-    hash: 18289b80be87
-    date: '2026-10-12'
-    model: claude-opus-5-5
-    evidence: '267-272: statements checked. The inverse formula is verified by sidecar.'
-  - stage: S5b
-    verdict: correct
-    by: refereeB
-    hash: 18289b80be87
-    date: '2026-10-12'
-    model: claude-opus-5-5
-    evidence: 04:263-274. The inverse formula is verified, and a^2 - 2b^2 != 0 follows from thm-no-rational-square-two.
-- key: proof:prp-cof-sqrt2-field-archimedean
-  kind: proof
-  file: 04-two-non-examples.md
-  line: 280
-  hash: 40f749a1c7d6
-  verdicts:
-  - stage: S5a
-    verdict: correct
-    by: refereeA
-    hash: 40f749a1c7d6
-    date: '2026-10-12'
-    model: claude-opus-5-5
-    evidence: '281-289: (a) iota_R is injective, then thm-no-rational-square-two. (b) a^2 - 2b^2 != 0
-      in both cases. (c) the universal axioms are inherited, and existence is covered by closure; n*1
-      is common to both fields and R is Archimedean.'
-  - stage: S5b
-    verdict: correct
-    by: refereeB
-    hash: 40f749a1c7d6
-    date: '2026-10-12'
-    model: claude-opus-5-5
-    evidence: 04:280-290. (a) uses injectivity of ι_R. (c) inherits the universal axioms and uses closure
-      for the existential ones (F3, F4, F7, F8). Archimedes comes via thm-cof-complete-archimedean in
-      R.
-- key: prp-cof-sqrt2-field-incomplete
-  kind: prp
-  file: 04-two-non-examples.md
-  line: 294
-  hash: f3a95ea33ba7
-  verdicts:
-  - stage: S5a
-    verdict: correct
-    by: refereeA
-    hash: f3a95ea33ba7
-    date: '2026-10-12'
-    model: claude-opus-5-5
-    evidence: '297: 3 has no square root; the conclusion follows from prp-cof-square-roots (complete,
-      a >= 0).'
-  - stage: S5b
-    verdict: minor
-    by: refereeB
-    hash: f3a95ea33ba7
-    date: '2026-10-12'
-    model: claude-opus-5-5
-    evidence: 04-two-non-examples.md:596 Ledger line for the √3 supremum remark is false bookkeeping.
-  - stage: S7r
-    verdict: correct
-    by: rereferee
-    hash: f3a95ea33ba7
-    date: '2026-10-12'
-    model: claude-opus-5-5
-    evidence: 'The ledger finding is resolved: the supremum claim now has a proof, in the fold at 04:347-349.
-      The ledger line at 04:600 now names the cited labels and no longer says "nothing depends on it".
-      I checked the fold. For the upper bound: y≥0 and y²<3=(√3)² give y<√3 by prp-ordered-ring-rules
-      (g) ("a,b≥0: a<b iff a²<b²", ch02/03:313). For leastness: thm-rationals-dense-ordered-field (Archimedean
-      F; ch04'
-- key: proof:prp-cof-sqrt2-field-incomplete
-  kind: proof
-  file: 04-two-non-examples.md
-  line: 311
-  hash: eca0afe805bc
-  verdicts:
-  - stage: S5a
-    verdict: correct
-    by: refereeA
-    hash: e22e0666017e
-    date: '2026-10-12'
-    model: claude-opus-5-5
-    evidence: '312-329 descent claim: kv < u and u < (k+1)v via rules (g),(c),(e); 0 < v'' < v; ku < nv
-      by cancellation. Identity (k^2-n)(u^2-nv^2) checked by hand and by sidecar. Least element via prp-integer-least-element.'
-  - stage: S5b
-    verdict: minor
-    by: refereeB
-    hash: e22e0666017e
-    date: '2026-10-12'
-    model: claude-opus-5-5
-    evidence: '04-two-non-examples.md:307 The symbol x gets a second meaning: the descent claim and its
-      Idea use x for a rational number, while x is fixed in this section as [id/1] ∈ R(x).'
-  - stage: S7r
-    verdict: correct
-    by: rereferee
-    hash: eca0afe805bc
-    date: '2026-10-12'
-    model: claude-opus-5-5
-    evidence: The notation finding is resolved. The rational would-be root is now y throughout the Idea
-      (04:301), the claim (04:307) and the folded proof (04:312). x keeps its meaning [id/1]. I checked
-      the descent line by line. kv<u and u<(k+1)v use prp-ordered-ring-rules (c), (e), (g). 0<v'<v holds.
-      ku<nv follows from kuv<u²=nv². The identity u'²−nv'²=(k²−n)(u²−nv²) expands correctly, so v'∈D with
-      v'<v contrad
-- key: proof:prp-cof-sqrt2-field-incomplete#2
-  kind: proof
-  file: 04-two-non-examples.md
-  line: 333
-  hash: eeac0ed1796b
-  verdicts:
-  - stage: S5a
-    verdict: correct
-    by: refereeA
-    hash: eeac0ed1796b
-    date: '2026-10-12'
-    model: claude-opus-5-5
-    evidence: '334-342: 1<3<4 and 4<6<9. Unique representation gives 2ab = 0 and a^2 + 2b^2 = 3; then
-      a = 0 or b = 0; (2b)^2 = 6. Completeness would give a square root by prp-cof-square-roots.'
-  - stage: S5b
-    verdict: correct
-    by: refereeB
-    hash: eeac0ed1796b
-    date: '2026-10-12'
-    model: claude-opus-5-5
-    evidence: 04:333-343. 1<3<4 and 4<6<9. 2ab = 0 gives a = 0 or b = 0 (prp-ordered-ring-rules (f), 2
-      != 0). 2b^2 = 3 gives (2b)^2 = 6. prp-cof-square-roots applies to a = 3 >= 0.
-- key: check:04-two-non-examples:3
-  kind: check
-  file: 04-two-non-examples.md
-  line: 351
-  hash: 0dbf86ec8e8f
-  verdicts:
-  - stage: S5a
-    verdict: minor
-    by: refereeA
-    hash: 12f84e08cc41
-    date: '2026-10-12'
-    model: claude-opus-5-5
-    evidence: 04-two-non-examples.md:352 The solution says there is no k with k^2 < 4 < (k+1)^2 but checks
-      only k = 1 and k = 2. Its illustration 'v' = u - 2v = 0' uses k = 2, which does not satisfy the
-      hypothesis.
-  - stage: S5b
-    verdict: minor
-    by: refereeB
-    hash: 12f84e08cc41
-    date: '2026-10-12'
-    model: claude-opus-5-5
-    evidence: 04-two-non-examples.md:352 The solution asserts no k works but checks only k = 1 and k =
-      2.
-  - stage: S7r
-    verdict: correct
-    by: rereferee
-    hash: 0dbf86ec8e8f
-    date: '2026-10-12'
-    model: claude-opus-5-5
-    evidence: 'Both earlier findings are resolved. 04:356 now argues for every k: for k≥2, k²≥4, so k²<4
-      forces k≤1, and then (k+1)²≤4. I solved it independently and the answer agrees. The k=2 illustration
-      is now marked as the "natural choice ... for which k²<n fails", and gives v''=u−2v=0 at y=2. That
-      is correct and no longer presented as satisfying the hypothesis.'
-- key: exm-cof-sqrt2-conjugation
-  kind: exm
-  file: 04-two-non-examples.md
-  line: 361
-  hash: 7eebf4969b13
-  verdicts:
-  - stage: S5a
-    verdict: gap
-    by: refereeA
-    hash: b065512fac03
-    date: '2026-10-12'
-    model: claude-opus-5-5
-    evidence: 04-two-non-examples.md:376 "Every other line of that proof is valid in Q(sqrt 2), which
-      is Archimedean." This is false. Step 3 of the proof of thm-cof-field-automorphism-identity also
-      fails in Q(sqrt 2).
-  - stage: S5b
-    verdict: minor
-    by: refereeB
-    hash: b065512fac03
-    date: '2026-10-12'
-    model: claude-opus-5-5
-    evidence: 04-two-non-examples.md:376 "Every other line of that proof is valid in Q(√2), which is Archimedean"
-      is false. Step 3 also fails in Q(√2) as written.
-  - stage: S7r
-    verdict: correct
-    by: rereferee
-    hash: 7eebf4969b13
-    date: '2026-10-12'
-    model: claude-opus-5-5
-    evidence: The S5a/S5b finding is resolved. 04:380 now handles each step separately, and I checked
-      each against the proof of thm-cof-field-automorphism-identity (ch06/03:157-182). The Step 1 quote
-      "there is b ∈ F with b ≥ 0 and b² = a" matches verbatim. Step 2 uses only ring and order rules.
-      Step 3 cites completeness for the Archimedean property and for the target. The replacement argument
-      for Step 3 is vali
-- key: exm-cof-shift-automorphism
-  kind: exm
-  file: 04-two-non-examples.md
-  line: 389
-  hash: 3fc73c697dc3
-  verdicts:
-  - stage: S5a
-    verdict: correct
-    by: refereeA
-    hash: 3fc73c697dc3
-    date: '2026-10-12'
-    model: claude-opus-5-5
-    evidence: '393-407: p^+ is polynomial by induction (p(t+1) = a_0 + (1+t)p''(t+1)). Fractions go to
-      fractions, since the list of q^+ cannot be all zeros. Well-defined via thm-well-defined-on-classes
-      (a); pointwise sums and products; P preserved; inverse by shifting by -1; sigma(x) = x+1.'
-  - stage: S5b
-    verdict: minor
-    by: refereeB
-    hash: 3fc73c697dc3
-    date: '2026-10-12'
-    model: claude-opus-5-5
-    evidence: '04-two-non-examples.md:412 "Nothing later uses this example" is false: the closing table
-      cites it.'
-  - stage: S7r
-    verdict: correct
-    by: rereferee
-    hash: 3fc73c697dc3
-    date: '2026-10-12'
-    model: claude-opus-5-5
-    evidence: The finding is resolved. 04:416 now says "No proof uses this example; only the table below
-      cites it". A grep over all src dirs finds the label only at 04:389 (definition) and 04:428 (table),
-      plus the ledger. I rechecked solution parts (i)-(vi). (i) The induction on list length with p(t+1)=a_0+(1+t)p'(t+1)
-      uses lem-cof-polynomial-closure (b), (a). (ii) q⁺ is non-zero for t>T_q−1. (iii)-(iv) well-de
-- key: exr-two-non-examples-a1
-  kind: exr
-  file: 04-two-non-examples.md
-  line: 438
-  hash: 49648a0ad7d0
-  verdicts:
-  - stage: S5a
-    verdict: correct
-    by: refereeA
-    hash: bfd648795f44
-    date: '2026-10-12'
-    model: claude-opus-5-5
-    evidence: '445-449: (a) t(t-100) > 0 for t > 100. (b) the failing step is correctly identified. (c)
-      values (t-1)/t^2 and 1/10^6 - 1/t; sidecar ok.'
-  - stage: S5b
-    verdict: minor
-    by: refereeB
-    hash: bfd648795f44
-    date: '2026-10-12'
-    model: claude-opus-5-5
-    evidence: '04-two-non-examples.md:447 The A1(b) solution relies on the unproved claim that sup_R {y
-      ∈ Q(√2) : y ≥ 0, y^2 < 3} = √3, while ledger 04:596 says nothing depends on it.'
-  - stage: S6
-    verdict: minor
-    by: verifier
-    hash: bfd648795f44
-    date: '2026-10-12'
-    model: claude-opus-5-5
-    evidence: '04-two-non-examples.md:447 The counterexample in A1(b) rests on ''sup in R of {y in Q(sqrt2):
-      y >= 0, y^2 < 3} is sqrt3''. The text only asserts this (04:345), and the ledger says nothing depends
-      on it (04:596).'
-  - stage: S7r
-    verdict: correct
-    by: rereferee
-    hash: 49648a0ad7d0
-    date: '2026-10-12'
-    model: claude-opus-5-5
-    evidence: 'Both findings are resolved. A1(b) at 04:451 now writes A={y∈Q(√2): y≥0, y²<3}, says its
-      supremum is √3, and points to the remark after prp-cof-sqrt2-field-incomplete. That remark now carries
-      a proof (fold 04:347-349), and ledger line 04:601 records the dependency. (a) checked: t(t−100)>0
-      for t>100, and T=101 from the lemma. (c) checked: the values (t−1)/t² and 1/10⁶−1/t are positive
-      past 1 and 10⁶'
-- key: exr-two-non-examples-b1
-  kind: exr
-  file: 04-two-non-examples.md
-  line: 458
-  hash: 813c4b9bb1c1
-  verdicts:
-  - stage: S5a
-    verdict: correct
-    by: refereeA
-    hash: 3a6c7b4cfe3d
-    date: '2026-10-12'
-    model: claude-opus-5-5
-    evidence: '461-463: (F5) pointwise beyond max T_q; (O3) via ordered-ring-rules (b); thresholds taken
-      >= T_q.'
-  - stage: S5b
-    verdict: minor
-    by: refereeB
-    hash: 3a6c7b4cfe3d
-    date: '2026-10-12'
-    model: claude-opus-5-5
-    evidence: 04-two-non-examples.md:457 B1 depends on a table that sits inside a second-reading fold,
-      against STYLE §12.0's test that every A and B exercise is doable with folds closed.
-  - stage: S6
-    verdict: correct
-    by: verifier
-    hash: 3a6c7b4cfe3d
-    date: '2026-10-12'
-    model: claude-opus-5-5
-    evidence: '04:461-463. I solved it first: for (fg)h vs f(gh), take T=max of the three T_qi; past T
-      the products q1q2 and q2q3 are non-zero, so the pointwise rule applies and (F5) in R finishes. For
-      P+P, take max{T1,T2} and (O3) via prp-ordered-ring-rules (b), which is item (b) at ch02 03-ordered-rings.md:313.
-      The thresholds are named as asked. The worked model is the (F9)/(F2) table at 04:172-177 and the
-      (P1'
-  - stage: S7r
-    verdict: correct
-    by: rereferee
-    hash: 813c4b9bb1c1
-    date: '2026-10-12'
-    model: claude-opus-5-5
-    evidence: 'The fold finding is resolved. B1 (04:461) no longer depends on the folded table: it states
-      the procedure itself (representatives, threshold, pointwise values, the fact about R that is used),
-      and the pointwise rule is on the main line at 04:130. I solved it independently and it agrees with
-      the solution (04:465-467). Associativity: the values (uv)w=u(vw) by (F5), which is (ab)c=a(bc) at
-      ch02/03:22. '
-- key: exr-two-non-examples-b2
-  kind: exr
-  file: 04-two-non-examples.md
-  line: 470
-  hash: b0209fbc43a3
-  verdicts:
-  - stage: S5a
-    verdict: correct
-    by: refereeA
-    hash: b0209fbc43a3
-    date: '2026-10-12'
-    model: claude-opus-5-5
-    evidence: '473-475: 4<5<9 and 9<10<16 apply the claim; 2ab = 0, a^2 + 2b^2 = 5, (2b)^2 = 10.'
-  - stage: S5b
-    verdict: correct
-    by: refereeB
-    hash: b0209fbc43a3
-    date: '2026-10-12'
-    model: claude-opus-5-5
-    evidence: 04:466-476. 4<5<9 and 9<10<16. 2b^2 = 5 gives (2b)^2 = 10. Unique representation is cited.
-      Sidecar checks (5,2) and (10,3).
-  - stage: S6
-    verdict: correct
-    by: verifier
-    hash: b0209fbc43a3
-    date: '2026-10-12'
-    model: claude-opus-5-5
-    evidence: '04:473-475. The brackets 4<5<9 (k=2) and 9<10<16 (k=3) hold. My script checks the descent
-      identity u''^2-nv''^2=(k^2-n)(u^2-nv^2) on 2000 random integer tuples, and that 5 and 10 are not
-      rational squares. From a^2+2b^2=5 and 2ab=0, the case b=0 gives a^2=5 and the case a=0 gives (2b)^2=10.
-      Both are excluded, so the solution is complete. Worked example: prp-cof-sqrt2-field-incomplete (04:333-343).'
-- key: exr-two-non-examples-b3
-  kind: exr
-  file: 04-two-non-examples.md
-  line: 482
-  hash: 661129547b50
-  verdicts:
-  - stage: S5a
-    verdict: correct
-    by: refereeA
-    hash: 661129547b50
-    date: '2026-10-12'
-    model: claude-opus-5-5
-    evidence: '487-489: top degree 2e+3 (odd) versus 2d (even). The non-zero entry at the max index contradicts
-      (c); the zero-p case is handled.'
-  - stage: S5b
-    verdict: correct
-    by: refereeB
-    hash: 661129547b50
-    date: '2026-10-12'
-    model: claude-opus-5-5
-    evidence: 04:478-490. (1,0,0,1)·q^2 has top index 2e+3 with entry b_e^2 by lem (b). 2d != 2e+3 by
-      cor-integers-even-odd (a). The nonzero entry sits at the max index.
-  - stage: S6
-    verdict: correct
-    by: verifier
-    hash: 661129547b50
-    date: '2026-10-12'
-    model: claude-opus-5-5
-    evidence: '04:487-489. The list for (t^3+1)q^2 has top degree 2e+3 (odd) and top coefficient b_e^2,
-      by lem (b). If p is the zero list, (c) contradicts b_e^2≠0. Otherwise -p^2 has top degree 2d (even),
-      and since 2d≠2e+3 the sum list has a non-zero entry at the larger index. This matches my own solution.
-      Worked example: exm-cof-x-not-square. The hint names the example to adapt, a tool and not a step.'
-- key: exr-two-non-examples-c1
-  kind: exr
-  file: 04-two-non-examples.md
-  line: 498
-  hash: 6522c2e6567e
-  verdicts:
-  - stage: S5a
-    verdict: correct
-    by: refereeA
-    hash: 8cdc0f1cb559
-    date: '2026-10-12'
-    model: claude-opus-5-5
-    evidence: '501-503: bounded by x. A supremum s gives (n+1)*1 <= s, so n*1 <= s-1, hence s <= s-1,
-      i.e. 1 <= 0. Does not use thm-cof-complete-archimedean.'
-  - stage: S5b
-    verdict: correct
-    by: refereeB
-    hash: 8cdc0f1cb559
-    date: '2026-10-12'
-    model: claude-opus-5-5
-    evidence: 04:494-511. (n+1)·1 = n·1 + 1 is def-naturals-in-ordered-field (a). s-1 is an upper bound,
-      which contradicts (S2) since 1 > 0 (prp-ordered-ring-rules (e)). Marking points 2+3+3+2 = 10.
-  - stage: S6
-    verdict: minor
-    by: verifier
-    hash: 8cdc0f1cb559
-    date: '2026-10-12'
-    model: claude-opus-5-5
-    evidence: 04-two-non-examples.md:508 The marking scheme rewards one argument order. A correct contrapositive
-      proof would lose the 3-point and 2-point lines.
-  - stage: S7r
-    verdict: correct
-    by: rereferee
-    hash: 6522c2e6567e
-    date: '2026-10-12'
-    model: claude-opus-5-5
-    evidence: 'The marking-scheme finding is resolved. The lines at 04:512-513 now give credit for the
-      contrapositive route as well: (S2) applied to s−1<s gives n·1>s−1, so (n+1)·1>s, which contradicts
-      (S1). Solution checked: A is non-empty and bounded by x. (S1) on (n+1)·1 gives n·1+1≤s (def-naturals-in-ordered-field
-      (a)), so s−1 is an upper bound. (S2) then gives s≤s−1, i.e. 1≤0, which contradicts 1>0 (prp-ord'
-- key: exr-two-non-examples-c2
-  kind: exr
-  file: 04-two-non-examples.md
-  line: 517
-  hash: a9a81a7e644c
-  verdicts:
-  - stage: S5a
-    verdict: correct
-    by: refereeA
-    hash: a9a81a7e644c
-    date: '2026-10-12'
-    model: claude-opus-5-5
-    evidence: '541-553: tail bound induction (-1/3^(m+1) + 2/3^(m+2) = -1/3^(m+2)); S_k <= 1. First differing
-      index j; Phi(s) >= c + 2/3^(j+1) and Phi(s'') <= c + 1/3^(j+1). Countable implies an injection into
-      N (thm-countable-characterizations). The alternative route cites an exercise inside an exercise
-      solution, which STYLE allows (line 237).'
-  - stage: S5b
-    verdict: minor
-    by: refereeB
-    hash: a9a81a7e644c
-    date: '2026-10-12'
-    model: claude-opus-5-5
-    evidence: 04-two-non-examples.md:537 Hint 2 says the tail "totals less than 1/3^{j+1}", which is false
-      for the total, and the marking scheme lacks the line STYLE §11.6 requires for the alternative route.
-  - stage: S6
-    verdict: minor
-    by: verifier
-    hash: a9a81a7e644c
-    date: '2026-10-12'
-    model: claude-opus-5-5
-    evidence: 04-two-non-examples.md:537 Hint 2 says that what s' adds after index j 'totals less than
-      1/3^{j+1}'. That is false for the total (the supremum), which can equal 1/3^{j+1}. The rung also
-      states the key comparison of (b) rather than only its first line.
-  - stage: S7r
-    verdict: correct
-    by: rereferee
-    hash: a9a81a7e644c
-    date: '2026-10-12'
-    model: claude-opus-5-5
-    evidence: 'Both findings are resolved. Hint 2 (04:541) now only sets up j and c and no longer makes
-      the false tail-total claim or states the key comparison. The marking scheme at 04:563 now has a
-      line for the alternative route, as STYLE §11.6 requires. I solved it independently and it agrees.
-      Tail bound: 0≤S_m−S_k≤3^{-(k+1)}−3^{-(m+1)}, by the step −3^{-(m+1)}+2·3^{-(m+2)}=−3^{-(m+2)}. S_k≤1.
-      For k≥j, S_k(s'''
-- key: exr-two-non-examples-c3
-  kind: exr
-  file: 04-two-non-examples.md
-  line: 567
-  hash: 47adda4054b0
-  verdicts:
-  - stage: S5a
-    verdict: correct
-    by: refereeA
-    hash: 47adda4054b0
-    date: '2026-10-12'
-    model: claude-opus-5-5
-    evidence: '574-578: s - epsilon is not an upper bound, so a_N > s - epsilon. Monotonicity by induction;
-      abs (d) gives |a_n - s| < epsilon. N depends on epsilon only.'
-  - stage: S5b
-    verdict: correct
-    by: refereeB
-    hash: 47adda4054b0
-    date: '2026-10-12'
-    model: claude-opus-5-5
-    evidence: 04:563-579. The statement is well posed. s - ε is not an upper bound, monotonicity is shown
-      by induction, and prp-absolute-value-ordered-field (d) gives |a_n - s| < ε.
-  - stage: S6
-    verdict: correct
-    by: verifier
-    hash: 47adda4054b0
-    date: '2026-10-12'
-    model: claude-opus-5-5
-    evidence: '04:572-578. The faded blank has one reasonable completion: s-ε is not an upper bound, so
-      some a_N>s-ε; monotonicity (by induction) and (S1) give s-ε<a_N<=a_n<=s<s+ε; then prp-absolute-value-ordered-field
-      (d) (ch04 01:152, |x|<r iff -r<x<r). The quantifiers match def-sequence-limit-ordered-field (N in
-      N, n>=N, strict <ε). The named move fits the blueprint''s faded triple (blueprint ch06:65).'
-- key: check:05-axioms-or-model:1
-  kind: check
-  file: 05-axioms-or-model.md
-  line: 53
-  hash: 822fe9738542
-  verdicts:
-  - stage: S5a
-    verdict: correct
-    by: refereeA
-    hash: 822fe9738542
-    date: '2026-10-12'
-    model: claude-opus-5-5
-    evidence: '05:53-59: x^3=((1·x)x)x by def-naturals-in-ordered-field (b) (x^0=1_F, x^{k+1}=x^k x);
-      phi respects 1, products and sums, so phi(x)^3 = phi(x^3) = phi(x+1) = phi(x)+1.'
-  - stage: S5b
-    verdict: correct
-    by: refereeB
-    hash: 822fe9738542
-    date: '2026-10-12'
-    model: claude-opus-5-5
-    evidence: 05:53-59. x^3=((1·x)x)x matches def-naturals-in-ordered-field (b) (x^0=1, x^{k+1}=x^k x),
-      and phi respects 1 and products, so phi(x^3)=phi(x)^3. phi(x+1)=phi(x)+phi(1)=y+1. Well-posed and
-      complete.
-- key: exr-axioms-or-model-a1
-  kind: exr
-  file: 05-axioms-or-model.md
-  line: 114
-  hash: 83b2da94dba0
-  verdicts:
-  - stage: S5a
-    verdict: gap
-    by: refereeA
-    hash: 03482fc01f8a
-    date: '2026-10-12'
-    model: claude-opus-5-5
-    evidence: 05-axioms-or-model.md:130 The proof that the rational 0 is not an element of the Cauchy
-      class r treats a sequence as its graph. The book's definition of a function is the pair (G, Y),
-      not the graph, so the argument given does not establish 0_Q not in r.
-  - stage: S5b
-    verdict: gap
-    by: refereeB
-    hash: 03482fc01f8a
-    date: '2026-10-12'
-    model: claude-opus-5-5
-    evidence: '05-axioms-or-model.md:130 The ''Yes'' answer to A1(a)(ii) rests on the later, optional
-      Chapter 7 (F3.3): the only model shown in which the rational 0 is an element of sqrt2 is the cut
-      model. This is a forward dependency in a solution, and the ledger line 330 (''illustration only,
-      nothing depends on it'') is false for this solution.'
-  - stage: S6
-    verdict: correct
-    by: verifier
-    hash: 03482fc01f8a
-    date: '2026-10-12'
-    model: claude-opus-5-5
-    evidence: '05:128-138. (i) Transporting the unique non-negative square roots is correct, and so is
-      the side computation: (b+c)^2=5+2bc, bc=sqrt6, 6>4 (numerically 9.899>9). (ii) The rational 0 is
-      {(0,q): q in Z>0} by def-rationals-as-classes (ch02 04:45). Its only first coordinate is the integer
-      0, so it is not a function with domain N, and 0 is not in r. The argument is sound. (iii) Countability
-      is carried '
-  - stage: S7r
-    verdict: correct
-    by: rereferee
-    hash: 83b2da94dba0
-    date: '2026-10-12'
-    model: claude-opus-5-5
-    evidence: 'I checked the solution at 05:127-141 from scratch. (a)(i): b and c come from prp-cof-square-roots
-      (ch06/01:188); (P3) and (P5) carry the inequality across; 5+2bc>9 iff bc>2 iff 6>4 follows from
-      prp-ordered-ring-rules (g). (a)(ii): fd2:def-function (fd2 ch01/04:13) makes a function the pair
-      (G,Y), and fd3 ch01/02:103 says this is the Kuratowski pair {{G},{G,Q}}, which has at most two elements.
-      0_Q '
-- key: exr-axioms-or-model-b1
-  kind: exr
-  file: 05-axioms-or-model.md
-  line: 145
-  hash: a4e835828a52
-  verdicts:
-  - stage: S5a
-    verdict: correct
-    by: refereeA
-    hash: a4e835828a52
-    date: '2026-10-12'
-    model: claude-opus-5-5
-    evidence: '05:150-152: phi(0)=0 by (P1), strict increase or equality gives phi(a) >= 0 and phi(b)
-      >= 0, phi(b)^2 = phi(a), and prp-cof-square-roots in L gives uniqueness. The closing remark is true:
-      only additivity, multiplicativity, the unit, strict increase and completeness of L are used.'
-  - stage: S5b
-    verdict: correct
-    by: refereeB
-    hash: a4e835828a52
-    date: '2026-10-12'
-    model: claude-opus-5-5
-    evidence: '05:150-152: 0<=a gives 0=phi(0)<=phi(a); phi(b)>=0; phi(b)^2=phi(a); uniqueness from prp-cof-square-roots
-      in L. The closing meta-claim (only additivity, multiplicativity and order are used, plus completeness
-      of L) is true of the argument.'
-  - stage: S6
-    verdict: correct
-    by: verifier
-    hash: a4e835828a52
-    date: '2026-10-12'
-    model: claude-opus-5-5
-    evidence: '05:150-152. φ(a)>=φ(0)=0 by (P1) and order preservation; φ(b)>=0 and φ(b)^2=φ(a); the uniqueness
-      clause of prp-cof-square-roots in L finishes. The closing remark is true: only additivity, multiplicativity
-      and order preservation are used. Worked pattern in the section: the check at 05:53-59 and the renaming
-      paragraph at 05:51.'
-- key: exr-axioms-or-model-b2
-  kind: exr
-  file: 05-axioms-or-model.md
-  line: 157
-  hash: 8810883d1333
-  verdicts:
-  - stage: S5a
-    verdict: correct
-    by: refereeA
-    hash: 8810883d1333
-    date: '2026-10-12'
-    model: claude-opus-5-5
-    evidence: '05:162-168: the quantifier order is eps in L, then eps'' = phi^{-1}(eps) > 0 by reflection,
-      then N(eps''); (P1), (P4) and (P3) give the bound. (P6) gives the converse. Matches def-cauchy-sequence-ordered-field.'
-  - stage: S5b
-    verdict: correct
-    by: refereeB
-    hash: 8810883d1333
-    date: '2026-10-12'
-    model: claude-opus-5-5
-    evidence: '05:162-168: eps''=phi^{-1}(eps)>0 by reflection of order; (P1),(P4),(P3) give |phi(a_m)-phi(a_n)|<eps;
-      the converse uses (P6). N''s dependence on eps is stated. Matches def-cauchy-sequence-ordered-field.'
-  - stage: S6
-    verdict: correct
-    by: verifier
-    hash: 8810883d1333
-    date: '2026-10-12'
-    model: claude-opus-5-5
-    evidence: 05:162-168. This is the limit-transfer example at 05:41-47 with m,n>=N, matching def-cauchy-sequence-ordered-field
-      (ch04 05:15). The reverse direction applies the argument to φ^{-1} via (P6) and the sequence φ(a_n).
-      Complete.
-- key: exr-axioms-or-model-c1
-  kind: exr
-  file: 05-axioms-or-model.md
-  line: 175
-  hash: c07f1031c271
-  verdicts:
-  - stage: S5a
-    verdict: correct
-    by: refereeA
-    hash: c07f1031c271
-    date: '2026-10-12'
-    model: claude-opus-5-5
-    evidence: '05:196-208: (a) sigma(2)=2 and sigma(sqrt2)^2=2 contradict thm-no-rational-square-two;
-      the inverse respects 1, + and · by the second-reading fold after cor-cof-isomorphic-to-cauchy-reals,
-      whose additive and multiplicative part uses injectivity only. (b) prp-cof-map-fixes-rationals gives
-      psi(n·1)=n·1; with prp-cof-rational-functions-not-archimedean and Archimedes in R (thm-cof-complete-archimedean)'
-  - stage: S5b
-    verdict: minor
-    by: refereeB
-    hash: c07f1031c271
-    date: '2026-10-12'
-    model: claude-opus-5-5
-    evidence: '05:196-214. (a) sigma(2)=2 forces sigma(sqrt2)^2=2, against thm-no-rational-square-two;
-      the inverse direction is right. (b) prp-cof-map-fixes-rationals holds for arbitrary ordered fields
-      (01:53), so it applies to R(x); the contradiction via thm-cof-complete-archimedean is right. (c)
-      prp-cof-rational-functions-not-archimedean does state ''not complete''. Only problem: at 05:206
-      the separating stateme'
-  - stage: S6
-    verdict: minor
-    by: verifier
-    hash: c07f1031c271
-    date: '2026-10-12'
-    model: claude-opus-5-5
-    evidence: '05-axioms-or-model.md:212 The 4-point line for part (b) accepts only the inverse-map route.
-      Two correct alternatives would score 0 on it: transporting Archimedes forward along a surjective
-      χ, and transporting completeness.'
-  - stage: S7r
-    verdict: correct
-    by: rereferee
-    hash: c07f1031c271
-    date: '2026-10-12'
-    model: claude-opus-5-5
-    evidence: 'I checked 05:175-217. (a): sigma(2) = 2 and sigma(sqrt2)^2 = 2 contradict thm-no-rational-square-two.
-      The reverse direction uses the remark''s symmetric argument (ch06/03 fold), which needs no order.
-      (b): psi = chi^{-1} is an order-preserving field map. prp-cof-map-fixes-rationals (ch06/01:53) needs
-      only +, * and 1, and thm-rationals-embed-ordered-field gives n*1 = iota(n). So n*1_R < psi(x) for
-      al'
-- key: exr-axioms-or-model-r1
-  kind: exr
-  file: 05-axioms-or-model.md
-  line: 221
-  hash: 7d96d989cbd1
-  verdicts:
-  - stage: S5a
-    verdict: correct
-    by: refereeA
-    hash: 7d96d989cbd1
-    date: '2026-10-12'
-    model: claude-opus-5-5
-    evidence: '05:232-257: q_0..q_5 = 1, 1, 5/4, 11/8, 11/8, 45/32 recomputed, and the sidecar passes.
-      The least element comes from prp-integer-least-element and discreteness from thm-integers-ordered-ring
-      (c); (g) is the iff for non-negatives. Monotone: 2k_n <= k_{n+1}, then induction and prp-omega-order-arithmetic
-      (a). The gap bound and N(eps) from prp-archimedean-reciprocal are sound. The 5/2^n bound, the squ'
-  - stage: S5b
-    verdict: correct
-    by: refereeB
-    hash: 7d96d989cbd1
-    date: '2026-10-12'
-    model: claude-opus-5-5
-    evidence: 05:232-257. q_0..q_5 = 1,1,5/4,11/8,11/8,45/32, checked by hand and by verify/ch06/exr-axioms-or-model-r1.py,
-      which passes. Existence via prp-integer-least-element and thm-integers-ordered-ring (c); monotonicity
-      2k_n<=k_{n+1}; gap bound <1/2^n<=1/(n+1) (lem-power-two-bound); prp-archimedean-reciprocal gives
-      1/j<eps for all j>=N, as stated (04 02:189); squeeze (c), limit laws (b), thm-cauchy-algebr
-  - stage: S6
-    verdict: correct
-    by: verifier
-    hash: 7d96d989cbd1
-    date: '2026-10-12'
-    model: claude-opus-5-5
-    evidence: 05:232-257. My script reproduces q_0..q_5 = 1,1,5/4,11/8,11/8,45/32. For n<80 it confirms
-      1<=q_n<2, (*), 2k_n<=k_{n+1}, 0<=q_m-q_n<1/2^n<=1/(n+1) for m>=n, and 0<=2-q_n^2<(1/2^n)(2q_n+1/2^n)<=5/2^n<=5/(n+1).
-      The existence argument via the least element of S_n and the Cauchy/squeeze/uniqueness steps are
-      valid. The problem hides its source; the solution names @exm-truncations-equivalent (the previou
-- key: exr-axioms-or-model-r2
-  kind: exr
-  file: 05-axioms-or-model.md
-  line: 262
-  hash: 1c13a8e7ed65
-  verdicts:
-  - stage: S5a
-    verdict: correct
-    by: refereeA
-    hash: 1c13a8e7ed65
-    date: '2026-10-12'
-    model: claude-opus-5-5
-    evidence: '05:267-269: prp-ordered-ring-rules (h) needs 1 != 0, which holds in a field, and gives
-      n·1 > 0 for n >= 1; thm-integers-mod-n-ring (d) gives 5·[1] = [0]; thm-integers-mod-prime-field
-      gives the field. All are F3.5 labels, and the plan edge is recorded.'
-  - stage: S5b
-    verdict: correct
-    by: refereeB
-    hash: 1c13a8e7ed65
-    date: '2026-10-12'
-    model: claude-opus-5-5
-    evidence: '05:267-269: prp-ordered-ring-rules (h) gives n·1>0 for n>=1 when 1!=0, against (O1). thm-integers-mod-prime-field
-      gives the field; thm-integers-mod-n-ring (d) gives 5·[1]=[0], and (e) gives the ring case. Parts
-      checked against 03 04:150.'
-  - stage: S6
-    verdict: correct
-    by: verifier
-    hash: 1c13a8e7ed65
-    date: '2026-10-12'
-    model: claude-opus-5-5
-    evidence: 05:267-269. prp-ordered-ring-rules (h) gives n·1>0 for n>=1 when 1≠0 (ch02 03:320), so n·1=0
-      contradicts (O1). Z/5Z is a field by thm-integers-mod-prime-field, and 5·[1]=[0] by thm-integers-mod-n-ring
-      (d) (ch03 04:159). The solution names the source (e) with @ref, and the problem does not name it.
-      Three chapters back, as STYLE 11.5 requires.
-- key: exr-axioms-or-model-r3
-  kind: exr
-  file: 05-axioms-or-model.md
-  line: 274
-  hash: 0558b9055356
-  verdicts:
-  - stage: S5a
-    verdict: correct
-    by: refereeA
-    hash: 69e262636027
-    date: '2026-10-12'
-    model: claude-opus-5-5
-    evidence: '05:279-297: the inverse respects + and · by applying chi^{-1} to chi(a+b)=u+v; strict increase
-      comes from trichotomy; composites are checked line by line; both bijections come from fd2:thm-bijection-iff-inverse
-      two-sided inverses.'
-  - stage: S5b
-    verdict: correct
-    by: refereeB
-    hash: 69e262636027
-    date: '2026-10-12'
-    model: claude-opus-5-5
-    evidence: '05:279-296: the inverse is bijective via fd2:thm-bijection-iff-inverse; additivity and
-      multiplicativity by applying chi^{-1}; strict increase by trichotomy (O1); the composite is checked
-      clause by clause, with chi^{-1}∘psi^{-1} as two-sided inverse. Matches the remark and fold after
-      cor-cof-isomorphic-to-cauchy-reals. The statement does not name its source (STYLE §6 R rule).'
-  - stage: S6
-    verdict: minor
-    by: verifier
-    hash: 69e262636027
-    date: '2026-10-12'
-    model: claude-opus-5-5
-    evidence: 05-axioms-or-model.md:275 R3 asks the reader to reproduce a proof that is already written
-      out in this chapter, so it is not 'one method ... applied to data it has not seen' (STYLE §6). Its
-      solution also gives no @ref to the in-chapter remark it rewrites.
-  - stage: S8
-    verdict: minor
-    by: seam
-    hash: 69e262636027
-    date: '2026-10-12'
-    model: claude-opus-5-5
-    evidence: 05-axioms-or-model.md:275 R3 asks the reader to prove 'in full' a result the chapter already
-      proves in full in the second-reading fold at 03:95-105, almost line for line. It therefore reviews
-      this chapter rather than reaching back, and it is not taken from the curriculum.md spiral table.
-      NOTATION.md:195 credits the equivalence-relation fact to '§05 R3', but it is proved in §03.
-  - stage: S7r
-    verdict: minor
-    by: rereferee
-    hash: 7b74276278d2
-    date: '2026-10-12'
-    model: claude-opus-5-5
-    evidence: 'uivalence-relation, @fd2:def-equivalence-class and @fd2:def-quotient-set, so it names its
-      fd2 source. R1, R2 and R4 here, and the approved fd3 R items, have no @refs in their problem text.
-      Fix: in the problem, say ''isomorphism is an equivalence relation on S'' and ''equivalence classes''
-      / ''quotient set'' in plain words. Move the four @refs into the solution, for example its first
-      and last paragraphs.'
-  - stage: S7r
-    verdict: correct
-    by: rereferee
-    hash: 0558b9055356
-    date: '2026-10-12'
-    model: claude-opus-5-5
-    evidence: ld-incomplete, 04:297, says exactly this) but is one in ℝ and X (prp-cof-square-roots).
-      Those three facts separate every pair from different classes, so the classes are {ℚ}, {ℚ(√2)}, {ℝ(x)},
-      {ℝ,X} and |S/≅|=4. Every cited label resolves (grep). Ledger lines 342-344 still match the content,
-      and since the change adds no new facts, the dependency ledger needs no change. The verify/ch06 diff
-      is empty.
-- key: exr-axioms-or-model-r4
-  kind: exr
-  file: 05-axioms-or-model.md
-  line: 298
-  hash: abdb17ec8002
-  verdicts:
-  - stage: S5a
-    verdict: correct
-    by: refereeA
-    hash: abdb17ec8002
-    date: '2026-10-12'
-    model: claude-opus-5-5
-    evidence: '05:309-324: induction bound (10·1)^n >= (1+9n)·1 via (c), prp-naturals-in-ordered-field
-      (a) and (b), with a passing sidecar. ''Least'' uses prp-archimedean-reciprocal with eps = 1-b, and
-      (1+9N)·1 >= N·1 > 0 gives 10^{-N} <= 1/(N·1) by prp-reciprocal-order (b). The R(x) contrast is valid:
-      0 < (10^n)·1 < x gives 10^{-n} > 1/x.'
-  - stage: S5b
-    verdict: correct
-    by: refereeB
-    hash: abdb17ec8002
-    date: '2026-10-12'
-    model: claude-opus-5-5
-    evidence: '05:309-324: the induction (10·1)^n>=(1+9n)·1 uses prp-naturals-in-ordered-field (a) (products)
-      and (b) (positivity, monotonicity), as cited (04 02:32). The upper bound, the least-upper-bound
-      step via prp-archimedean-reciprocal and prp-reciprocal-order (b), and the R(x) contrast (1-1/x is
-      an upper bound below 1) are all correct. ''Infinite decimals never defined'' is true: grep shows
-      only finite deci'
-  - stage: S6
-    verdict: correct
-    by: verifier
-    hash: abdb17ec8002
-    date: '2026-10-12'
-    model: claude-opus-5-5
-    evidence: 05:309-324. The bound (10·1)^n>=(1+9n)·1 is proved by induction; my script checks it and
-      the arithmetic (1+9n)·10=10+90n>=10+9n=1+9(n+1) for n<200. The upper bound and leastness, via prp-archimedean-reciprocal
-      (N in Z>0, 1/(n·1)<ε for n>=N; ch04 02:189) and prp-reciprocal-order (b), are correct. The solution
-      names the tool and explains why the look-alike tools fail, as R4 requires. The R(x) illust

@@ -451,7 +451,7 @@ and, with \( j^2 = -1 \),
 \]
 by @def-complex-numbers. This proves (c).
 
-So any field that contains \( \nR \) and a square root \( j \) of \( -1 \) contains an exact copy of \( \nC \), namely \( \{ a + bj : a, b \in \nR \} \), and its arithmetic is forced to be the arithmetic of @def-complex-numbers. *Algebraic Preliminaries*, Chapter 1 meets more fields of this shape, built from a smaller field and one new element, such as \( \{ a + bi : a, b \in \nQ \} \).
+So any field that contains \( \nR \) and a square root \( j \) of \( -1 \) contains an exact copy of \( \nC \), namely \( \{ a + bj : a, b \in \nR \} \), and its arithmetic is forced to be the arithmetic of @def-complex-numbers. *Algebraic Preliminaries*, Chapter 2 meets more fields of this shape, built from a smaller field and one new element, such as \( \{ a + bi : a, b \in \nQ \} \).
 
 **Marking scheme.** (10 points)
 - 2: (a) identifies \( 0 \) and \( 1 \) of \( \nR \) in \( K \) by cancellation, and negatives and inverses of reals by uniqueness.
@@ -478,7 +478,7 @@ prp-power-laws-commutative-ring (claim): the definition of powers: recursion z^0
 prp-power-laws-commutative-ring (proof): m + (n + 1) = (m + n) + 1, m(n + 1) = mn + m in N | arithmetic of N = omega (fd3:cor-omega-identification; the F3.1 laws of omega), used silently
 prp-power-laws-commutative-ring (claim): iota(a^n) = iota(a)^n | prp-reals-embed-complex, fd1:ax-induction; inline
 prp-power-laws-commutative-ring (claim): 1^q = 1 for q in N | fd1:ax-induction with (F7); inline
-lem-difference-of-powers (proof): finite sums in a commutative ring, index from 0, append-last-term recursion, empty sum 0 | fd2:def-sum-product used as a pattern with R as the set of values (cited); its recursive clause and "Finite lists" remark use only fd2:thm-recursion, fd1:ax-induction and the operations of the target set, so they run unchanged in R (same wording as F3.5's ledger line)
+lem-difference-of-powers (proof): finite sums in a commutative ring, index from 0, append-last-term recursion, empty sum 0 | fd2:def-sum-product used as a pattern with R as the set of values (cited); its recursive clause and "Finite lists" remark use only fd2:thm-recursion, fd1:ax-induction and the operations of the target set, so they run unchanged in R (same wording as F5.1's ledger line)
 lem-difference-of-powers (proof): (sum a_k) c = sum (a_k c) | induction on n with (F9) and fd3:prp-ring-algebra (b); inline
 lem-difference-of-powers (proof): induction on m for n = m + 1 >= 1 | fd1:ax-induction through fd3:cor-omega-identification (b) (cited)
 lem-difference-of-powers (claim): 0 <= s < t gives s^n < t^n | prose pointer to Section 1.6 (lem-reals-nth-root (a) proves it); nothing here depends on it
@@ -489,5 +489,5 @@ exr-pairs-of-reals-b2 (solution): (1+i)^2 = 2i, (1+i)^3 = -2 + 2i, (1+i)^4 = -4,
 exr-pairs-of-reals-b3 (solution): (2,1)*(2/3,-1/3) = (1,0); the eliminations a*(first) - b*(second); (a,+-a)*(c,d) = (a(c+-d), +-a(c+-d)) is never (1,0) | arithmetic in R, 1 != 0 in R; verify/ch01/exr-pairs-of-reals-b3.py
 exr-pairs-of-reals-c1 (solution): -1 < 0 in R | fd3:prp-ordered-ring-rules (e), (a) (cited)
 exr-pairs-of-reals-c1 (solution): j != 0 since 0^2 = 0 != -1, so j^2 > 0 | fd3:prp-ring-algebra (b), fd3:prp-ordered-ring-rules (e) (cited)
-exr-pairs-of-reals-c1 (solution): pointer to *Algebraic Preliminaries*, Chapter 1 (subfields such as Q(i), F5.2 exm-subfields-gaussian) | prose pointer; nothing depends on it
+exr-pairs-of-reals-c1 (solution): pointer to *Algebraic Preliminaries*, Chapter 2 (subfields such as Q(i), F5.2 exm-subfields-gaussian) | prose pointer; nothing depends on it
 -->

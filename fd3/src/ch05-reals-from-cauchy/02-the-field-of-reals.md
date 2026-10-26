@@ -1,5 +1,7 @@
 # The Real Numbers and Their Arithmetic
 
+<!-- S3: rewrite per blueprint (layout-proposal.md §3, 5.2, pipeline F). Drop the quotient-ring route: prove the ring laws termwise (thm-well-defined-on-classes plus 'the laws of 𝒞 read on classes'); delete the repeated well-definedness proof; C2 no longer mentions ℤ/4ℤ; one forward sentence that ℝ = 𝒞/𝒩, pointing to *Algebraic Preliminaries*. The references to the ideal and quotient-ring results now resolve in fd5 (@fd5:); they go with the rewrite. -->
+
 Section 5.1 sorted the Cauchy sequences of rationals by a relation, \( a \sim b \) when \( a - b \) is null, and proved it an equivalence relation (@prp-cauchy-equivalent-relation). This section takes the classes as the new numbers. It defines their sum, product and negative on representatives, proves that the definitions do not depend on the representatives, and shows that the result is a field. The construction follows a pattern seen three times already: the integers modulo \( n \) in *Sets and Functions*, Section 5.2, the integers and the rationals in Chapter 2, and the quotient of a ring by an ideal in Chapter 3. The order comes in Section 5.3.
 
 ## The real numbers as classes
@@ -94,13 +96,13 @@ So \( \nR \) has a sum, a product and a negative. For example, \( [(x_n)] + [(1)
 
 ## The null sequences form an ideal
 
-Chapter 3 made the check of well-definedness once and for all, for the quotient of a commutative ring by an ideal (@def-ideal-commutative-ring, @thm-quotient-ring-by-ideal). The construction of \( \nR \) is an instance of it, and seeing it that way gives the laws of arithmetic in \( \nR \) without checking them one by one.
+Chapter 3 made the check of well-definedness once and for all, for the quotient of a commutative ring by an ideal (@fd5:def-ideal-commutative-ring, @fd5:thm-quotient-ring-by-ideal). The construction of \( \nR \) is an instance of it, and seeing it that way gives the laws of arithmetic in \( \nR \) without checking them one by one.
 
 Let \( \sN \subseteq \sC \) be the set of null sequences of rationals; it lies in \( \sC \) by @thm-cauchy-algebra-ordered-field (a). Then
 \[
 a \sim b \iff a - b \in \sN \qquad (a, b \in \sC) ,
 \]
-which is the relation \( \sim_{\sN} \) of @thm-quotient-ring-by-ideal (a). So \( \nR = \sC/{\sim} \) is \( \sC/\sN \) in the notation of Chapter 3, and the rules of @def-reals-operations are the rules of @thm-quotient-ring-by-ideal (b). What must be checked is that \( \sC \) is a commutative ring and \( \sN \) an ideal of it. Once this is checked, @thm-quotient-ring-by-ideal (b) gives the well-definedness in @thm-reals-operations-well-defined a second time. Its proof changes one argument at a time, so the multipliers are \( b \) and \( a' \) rather than \( a \) and \( b' \), and (I3) is supplied by "null times bounded is null".
+which is the relation \( \sim_{\sN} \) of @fd5:thm-quotient-ring-by-ideal (a). So \( \nR = \sC/{\sim} \) is \( \sC/\sN \) in the notation of Chapter 3, and the rules of @def-reals-operations are the rules of @fd5:thm-quotient-ring-by-ideal (b). What must be checked is that \( \sC \) is a commutative ring and \( \sN \) an ideal of it. Once this is checked, @fd5:thm-quotient-ring-by-ideal (b) gives the well-definedness in @thm-reals-operations-well-defined a second time. Its proof changes one argument at a time, so the multipliers are \( b \) and \( a' \) rather than \( a \) and \( b' \), and (I3) is supplied by "null times bounded is null".
 
 ::: {#thm-reals-commutative-ring}
 [The Real Numbers Form a Commutative Ring]
@@ -122,16 +124,16 @@ By @thm-cauchy-algebra-ordered-field, the termwise sum and product of two member
 :::
 
 ::: {.claim}
-\( \sN \) is an ideal of \( \sC \) (@def-ideal-commutative-ring).
+\( \sN \) is an ideal of \( \sC \) (@fd5:def-ideal-commutative-ring).
 :::
 
 ::: {.proof}
 (I1) The zero sequence \( (0)_n \) is null (@exm-first-sequences-ordered-field (a)). (I2) If \( a, b \in \sN \), then \( a + b \in \sN \), by the sum rule @thm-limit-laws-ordered-field (a). (I3) Let \( a \in \sN \) and \( r \in \sC \). Then \( r \) is bounded (@prp-cauchy-bounded-ordered-field), so \( (a_n r_n)_n \) is null (@prp-null-times-bounded-ordered-field), and \( ra = (r_n a_n)_n = (a_n r_n)_n \) by commutativity in \( \nQ \). So \( ra \in \sN \).
 :::
 
-As noted before the theorem, \( \sim \) is the relation \( \sim_{\sN} \), so \( \nR = \sC/\sN \), and the operations of @def-reals-operations are those of @thm-quotient-ring-by-ideal (b). By @thm-quotient-ring-by-ideal (c), \( \nR \) is a commutative ring with zero \( [(0)_n] = 0_{\nR} \) and one \( [(1)_n] = 1_{\nR} \). Its additive inverse of \( [a] \) is \( [-a] = -[a] \), since \( [a] + [-a] = [a + (-a)] = [(0)_n] \) by the first claim.
+As noted before the theorem, \( \sim \) is the relation \( \sim_{\sN} \), so \( \nR = \sC/\sN \), and the operations of @def-reals-operations are those of @fd5:thm-quotient-ring-by-ideal (b). By @fd5:thm-quotient-ring-by-ideal (c), \( \nR \) is a commutative ring with zero \( [(0)_n] = 0_{\nR} \) and one \( [(1)_n] = 1_{\nR} \). Its additive inverse of \( [a] \) is \( [-a] = -[a] \), since \( [a] + [-a] = [a + (-a)] = [(0)_n] \) by the first claim.
 
-Finally, by @thm-quotient-ring-by-ideal (d), \( 1_{\nR} = 0_{\nR} \) if and only if \( \sN = \sC \). But \( (1)_n \in \sC \) is not null: for \( \varepsilon = 1/2 \), every \( n \) has \( \abs{1 - 0} = 1 \ge 1/2 \). So \( \sN \ne \sC \), and \( 0_{\nR} \ne 1_{\nR} \). This proves the theorem.
+Finally, by @fd5:thm-quotient-ring-by-ideal (d), \( 1_{\nR} = 0_{\nR} \) if and only if \( \sN = \sC \). But \( (1)_n \in \sC \) is not null: for \( \varepsilon = 1/2 \), every \( n \) has \( \abs{1 - 0} = 1 \ge 1/2 \). So \( \sN \ne \sC \), and \( 0_{\nR} \ne 1_{\nR} \). This proves the theorem.
 :::
 
 To see what the quotient theorem did, here is distributivity unfolded. For \( a, b, c \in \sC \), using @def-reals-operations at every step but the middle one, and (F9) in \( \sC \) there,
@@ -231,7 +233,7 @@ Multipliers: \( \abs{2 + 1/(n + 1)} \le 3 \), since \( 0 < 1/(n + 1) \le 1 \); a
 ::: {#exr-the-field-of-reals-b1}
 [B1: The negative, directly]
 
-Without using @thm-quotient-ring-by-ideal, prove that the rule \( -[a] \coloneqq [-a] \) defines a function \( \nR \to \nR \), and that \( [a] + (-[a]) = 0_{\nR} \) for every \( a \in \sC \). Deduce that \( [a] - [b] = [a - b] \) for all \( a, b \in \sC \).
+Without using @fd5:thm-quotient-ring-by-ideal, prove that the rule \( -[a] \coloneqq [-a] \) defines a function \( \nR \to \nR \), and that \( [a] + (-[a]) = 0_{\nR} \) for every \( a \in \sC \). Deduce that \( [a] - [b] = [a - b] \) for all \( a, b \in \sC \).
 :::
 
 ::: {.solution}
@@ -319,7 +321,7 @@ The multipliers \( a \) and \( b' \) are in \( \sC \), hence bounded (@prp-cauch
 - 2: boundedness of the two multipliers, justified by "Cauchy implies bounded".
 - 2: concludes with null \( \times \) bounded is null and null \( + \) null is null.
 
-A proof that changes one factor at a time (first \( ab \sim a'b \), then \( a'b \sim a'b' \)) earns the same points; the multipliers are then \( b \) and \( a' \). A proof through the quotient ring is also valid: show that \( \sN \) is an ideal of the commutative ring \( \sC \), and cite @thm-quotient-ring-by-ideal (b). It earns the first two items as above; the decomposition item for identifying \( \sim \) with \( \sim_{\sN} \) and proving (I1) and (I2); the multiplier item for "a Cauchy multiplier is bounded" (@prp-cauchy-bounded-ordered-field); and the last item for (I3), null \( \times \) Cauchy is null, together with a correct citation of the quotient theorem. The ideal clauses must be proved, not cited from @thm-reals-commutative-ring. Fatal errors (0 for the step): "both differences are small, so the product difference is small" with no bound on the multipliers; a bound for \( b \) used where \( b' \) is the multiplier.
+A proof that changes one factor at a time (first \( ab \sim a'b \), then \( a'b \sim a'b' \)) earns the same points; the multipliers are then \( b \) and \( a' \). A proof through the quotient ring is also valid: show that \( \sN \) is an ideal of the commutative ring \( \sC \), and cite @fd5:thm-quotient-ring-by-ideal (b). It earns the first two items as above; the decomposition item for identifying \( \sim \) with \( \sim_{\sN} \) and proving (I1) and (I2); the multiplier item for "a Cauchy multiplier is bounded" (@prp-cauchy-bounded-ordered-field); and the last item for (I3), null \( \times \) Cauchy is null, together with a correct citation of the quotient theorem. The ideal clauses must be proved, not cited from @thm-reals-commutative-ring. Fatal errors (0 for the step): "both differences are small, so the product difference is small" with no bound on the multipliers; a bound for \( b \) used where \( b' \) is the multiplier.
 :::
 
 ::: {#exr-the-field-of-reals-c2}
@@ -336,7 +338,7 @@ A proof that changes one factor at a time (first \( ab \sim a'b \), then \( a'b 
 
 (b) Let \( x = [a] \) with \( a \in \sC \). Then \( x^2 = [a][a] = [(a_n^2)_n] \) by @def-reals-operations. If \( x^2 = 0_{\nR} = [(0)_n] \), then \( (a_n^2)_n \sim (0)_n \) (@fd2:thm-classes-partition (b)), that is, \( (a_n^2)_n \) is null. By (a), \( a \) is null, so \( a \sim (0)_n \) and \( x = 0_{\nR} \).
 
-In a field this also follows from inverses: if \( x \ne 0_{\nR} \), then \( x = x^{-1} x^2 = x^{-1} 0_{\nR} = 0_{\nR} \), a contradiction. The direct proof shows the fact is already visible in the representatives, before any inverse exists. It fails in some commutative rings: in \( \nZ/4\nZ \) of Chapter 3 (@def-integers-mod-n-ring), \( [2]^2 = [4] = [0] \) while \( [2] \ne [0] \).
+In a field this also follows from inverses: if \( x \ne 0_{\nR} \), then \( x = x^{-1} x^2 = x^{-1} 0_{\nR} = 0_{\nR} \), a contradiction. The direct proof shows the fact is already visible in the representatives, before any inverse exists. It fails in some commutative rings: in \( \nZ/4\nZ \) of Chapter 3 (@fd5:def-integers-mod-n-ring), \( [2]^2 = [4] = [0] \) while \( [2] \ne [0] \).
 :::
 
 <!-- dependency ledger
@@ -346,7 +348,7 @@ def-reals-cauchy-classes (claim): x_{n+1} represents the Newton class | exm-fini
 thm-reals-operations-well-defined (proof): (a_n + b_n) - (a'_n + b'_n) = (a_n - a'_n) + (b_n - b'_n); the split a_n b_n - a'_n b'_n = a_n (b_n - b'_n) + (a_n - a'_n) b'_n | field axioms of Q (thm-rationals-ordered-field), prp-ring-algebra; verify/ch05/thm-reals-operations-well-defined.py
 thm-reals-operations-well-defined (proof): both-at-once compatibility gives each one-argument hypothesis by reflexivity | prp-cauchy-equivalent-relation (Eq1) (cited in words)
 thm-reals-commutative-ring (proof): an equality of sequences holds iff it holds at every index | fd2:prp-function-equality (cited)
-thm-reals-commutative-ring (proof): the relation ~ equals ~_N, so C/~ = C/N | def-cauchy-equivalent and thm-quotient-ring-by-ideal (a) (cited)
+thm-reals-commutative-ring (proof): the relation ~ equals ~_N, so C/~ = C/N | def-cauchy-equivalent and fd5:thm-quotient-ring-by-ideal (a) (cited)
 thm-reals-field (proof): |a_n| >= c from a_n >= c > 0 or a_n <= -c | def-absolute-value-ordered-field, prp-ordered-ring-rules (a) (cited)
 thm-reals-field (claim): inverses in a field are unique | lem-field-fraction-rules (a) with F = R
 exm-termwise-reciprocal-ill-defined (solution): (0, 1, 1, 1, ...) is in C (threshold 1) | def-rational-cauchy-sequences; inline
@@ -360,5 +362,5 @@ exr-the-field-of-reals-b3 (solution): 0 < x_n^2 - 2 <= 1/(4n) for n >= 1 | exm-n
 exr-the-field-of-reals-b3 (solution): 1/(4n) <= 1/(n + 1) for n >= 1 | prp-ordered-field-halves (c) (cited)
 exr-the-field-of-reals-a1 (solution): (1/(n + 1)) is null in Q; a, a' in C | exm-first-sequences-ordered-field (b), thm-cauchy-algebra-ordered-field (a), (b) (cited)
 exr-the-field-of-reals-c1 (solution): M * e/(2M) + M * e/(2M) = e | field arithmetic, prp-ordered-field-halves (b)
-exr-the-field-of-reals-c2 (solution): [2]^2 = [0] in Z/4Z | def-integers-mod-n-ring (cited); remark only
+exr-the-field-of-reals-c2 (solution): [2]^2 = [0] in Z/4Z | fd5:def-integers-mod-n-ring (cited); remark only
 -->

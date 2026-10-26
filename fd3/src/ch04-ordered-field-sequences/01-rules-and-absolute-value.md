@@ -1,16 +1,18 @@
 # Working in an Ordered Field
 
-Section 2.3 proved the rules for inequalities from the order axioms, and Section 2.5 added the one rule that needs division: reciprocals reverse order. A limit argument asks for a few more. It halves a tolerance, so it needs \( 0 < \varepsilon/2 < \varepsilon \); it subtracts fractions, so it needs \( 1/b - 1/d = (d - b)/(bd) \); and above all it measures how far apart two numbers are, so it needs the absolute value and the triangle inequality. Each of these is a few lines from the rules we have. This section proves them once, in an arbitrary ordered field, and the rest of the chapter uses them on nearly every page.
+<!-- S3: style revision per S1 change list (layout-proposal.md §3, 4.1, pipeline S): delete B2; cite each rule letter once per idea. -->
+
+Section 2.3 proved the rules for inequalities from the order axioms, and Section 3.2 added the one rule that needs division: reciprocals reverse order. A limit argument asks for a few more. It halves a tolerance, so it needs \( 0 < \varepsilon/2 < \varepsilon \); it subtracts fractions, so it needs \( 1/b - 1/d = (d - b)/(bd) \); and above all it measures how far apart two numbers are, so it needs the absolute value and the triangle inequality. Each of these is a few lines from the rules we have. This section proves them once, in an arbitrary ordered field, and the rest of the chapter uses them on nearly every page.
 
 ## The standing setup
 
 Throughout this chapter, \( F \) is an **ordered field** (@def-ordered-ring-and-field): a field with a relation \( < \) satisfying (O1)–(O4). The rationals are one, by @thm-rationals-ordered-field, and for most of the chapter they are the one that matters: the next chapter applies these results first with \( F = \nQ \), to build the real numbers from Cauchy sequences of rationals, and then again with \( F = \nR \), once \( \nR \) is shown to be an ordered field. We state results for a general \( F \) because the proofs never use anything about \( \nQ \) beyond (F1)–(F9) and (O1)–(O4), and saying so on the page makes it checkable.
 
-We use the results of Sections 2.3 and 2.5 by their letters, without restating them: the algebra of a commutative ring (@prp-ring-algebra), the rules for inequalities (@prp-ordered-ring-rules (a)–(i)), and the reversal of order by reciprocals (@prp-reciprocal-order). In a field \( 1 \ne 0 \), so @prp-ordered-ring-rules (e) gives \( 1 > 0 \) in every ordered field. We write
+We use the results of Sections 2.3 and 3.2 by their letters, without restating them: the algebra of a commutative ring (@prp-ring-algebra), the rules for inequalities (@prp-ordered-ring-rules (a)–(i)), and the reversal of order by reciprocals (@prp-reciprocal-order). In a field \( 1 \ne 0 \), so @prp-ordered-ring-rules (e) gives \( 1 > 0 \) in every ordered field. We write
 \[
 F_{>0} \coloneqq \{ x \in F : x > 0 \} , \qquad F_{\ge 0} \coloneqq \{ x \in F : x \ge 0 \} ,
 \]
-so that \( \nQ_{>0} \) of Section 2.5 is the case \( F = \nQ \). Recall that \( a/b \coloneqq a b^{-1} \) for \( b \ne 0 \), so \( 1/b = b^{-1} \), and that \( 2 \coloneqq 1 + 1 \) and \( x^2 \coloneqq x x \) (@prp-ring-algebra (d)).
+so that \( \nQ_{>0} \) of Section 3.2 is the case \( F = \nQ \). Recall that \( a/b \coloneqq a b^{-1} \) for \( b \ne 0 \), so \( 1/b = b^{-1} \), and that \( 2 \coloneqq 1 + 1 \) and \( x^2 \coloneqq x x \) (@prp-ring-algebra (d)).
 
 ## Fractions
 
@@ -88,7 +90,7 @@ For all \( a, b \in F \) with \( a < b \), \( a < \dfrac{a + b}{2} < b \).
 :::
 
 ::: {.idea}
-Nothing new happens: each part is one or two of the rules of Sections 2.3 and 2.5 in sequence. The only care needed is with \( \le \), which hides an "or": each non-strict hypothesis splits into an equality case and a strict case, and the strict rules apply only to the second.
+Nothing new happens: each part is one or two of the rules of Sections 2.3 and 3.2 in sequence. The only care needed is with \( \le \), which hides an "or": each non-strict hypothesis splits into an equality case and a strict case, and the strict rules apply only to the second.
 :::
 
 ::: {.proof}

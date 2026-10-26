@@ -602,7 +602,7 @@ In @exm-fraction-map-factorization, which of \( q \), \( \bar f \), \( \iota \) 
 ::: {.remark}
 [Looking ahead]
 
-The clock does not stop here. *Number Systems: From \(\nN\) to \(\nR\)*, Section 3.4 builds \( \nZ/n \) again, on the constructed integers, as a quotient ring: the check of @prp-congruence-arithmetic is made once for every ideal, and the sum and product obey the laws of a ring.
+The clock does not stop here. *Algebraic Preliminaries*, Section 1.3 builds \( \nZ/n \) again, on the constructed integers, as a quotient ring: the check of @prp-congruence-arithmetic is made once for every ideal, and the sum and product obey the laws of a ring.
 :::
 
 ## Exercises
@@ -652,7 +652,7 @@ Parts (a)–(d) are about @thm-classes-partition and its proof.
 ::: {.solution}
 (a) (Eq1) \( ab = ba \). (Eq2) If \( ad = bc \), then \( cb = da \). (Eq3) Let \( (a, b) \sim (c, d) \) and \( (c, d) \sim (e, f) \), so \( ad = bc \) and \( cf = de \). Multiply the first equation by \( f \) and use the second: \( adf = bcf = bde \). So \( d(af - be) = 0 \). Since \( d \in \nZ_{>0} \), \( d \ne 0 \), and we may cancel \( d \): \( af = be \), that is, \( (a, b) \sim (e, f) \). The hypothesis \( d \ne 0 \) on the **middle** pair is used here and nowhere else.
 
-The class of \( (1, 2) \) is \( \{ (c, d) \in \nZ \times \nZ_{>0} : d = 2c \} \). Since \( d > 0 \), \( c = d/2 > 0 \), so \( c \in \nZ_{>0} \) (@prp-integers-closed (b)), and the class is \( \{ (k, 2k) : k \in \nZ_{>0} \} = \{ (1, 2), (2, 4), (3, 6), \dots \} \): the ways of writing \( \tfrac12 \) as a fraction. Each class is "one rational number"; *Number Systems: From \(\nN\) to \(\nR\)*, Chapter 2 builds \( \nQ \) as this quotient set.
+The class of \( (1, 2) \) is \( \{ (c, d) \in \nZ \times \nZ_{>0} : d = 2c \} \). Since \( d > 0 \), \( c = d/2 > 0 \), so \( c \in \nZ_{>0} \) (@prp-integers-closed (b)), and the class is \( \{ (k, 2k) : k \in \nZ_{>0} \} = \{ (1, 2), (2, 4), (3, 6), \dots \} \): the ways of writing \( \tfrac12 \) as a fraction. Each class is "one rational number"; *Number Systems: From \(\nN\) to \(\nR\)*, Chapter 3 builds \( \nQ \) as this quotient set.
 
 (b) (Eq1) and (Eq2) hold, by the same two lines as in (a), which did not use \( b, d \ne 0 \). (Eq3) fails: \( (1, 1) \mathrel{R} (0, 0) \), since \( 1 \cdot 0 = 1 \cdot 0 \), and \( (0, 0) \mathrel{R} (2, 1) \), since \( 0 \cdot 1 = 0 \cdot 2 \); but \( (1, 1) \mathrel{\not R} (2, 1) \), since \( 1 \cdot 1 \ne 1 \cdot 2 \). The pair \( (0, 0) \) is related to every pair, so it links any two; this is exactly the cancellation of (a) failing for \( d = 0 \).
 :::
@@ -892,7 +892,7 @@ exm-method-well-definedness (claim): (quick check) 0 != 36; a^2 - a'^2 = (a - a'
 exm-same-size-subsets (solution): sizes 0, 1, 1, 1, 2, 2, 2, 3 of the eight subsets of {1, 2, 3}; |A'| = |A| from |A| = |A'| | arithmetic; prp-equinumerous-properties (a)-(c), prp-subset-finite, cor-finite-size-unique, thm-russell (cited); verify/ch05/exm-same-size-subsets.py
 exr-equivalence-relations-b4 (solution): (f) 1 != -1; (g) equal squares of non-negatives | thm-squares-order (F1, cited); |x|^2 = x^2 since |x| = x or -x | R arithmetic, school fact
 exr-equivalence-relations-b4 (solution): (a-2b) - (a'-2b') = 6(k - 2l); 16/9 - 1/9 = 5/3; 2*5 != 3*3; (a+b)d = ad + bd | prp-integers-closed (a), (c) (cited); thm-classes-partition (b) (cited); R arithmetic; verify/ch05/exr-equivalence-relations-b4.py
-prp-congruence-arithmetic (claim): (Looking ahead) Z/n rebuilt as a quotient ring | F3.5 (prose pointer; paid by thm-quotient-ring-by-ideal, def-integers-mod-n-ring; nothing here depends on it)
+prp-congruence-arithmetic (claim): (Looking ahead) Z/n rebuilt as a quotient ring | F5.1 (prose pointer; paid by thm-quotient-ring-by-ideal, def-integers-mod-n-ring; nothing here depends on it)
 prp-fibres-partition (proof): the fiber over f(a) is the class [a] | exm-fibres-of-function (cited)
 prp-fibres-partition (claim): (quick check) values of n^2 - 2n on {-1, ..., 3} | arithmetic; verify/ch05/prp-fibres-partition.py
 prp-fibres-partition (claim): (same-size payoff) sizes of the eight subsets of {1, 2, 3}; "number of elements" is a function | arithmetic; prp-subset-finite, cor-finite-size-unique (cited); verify/ch05/prp-fibres-partition.py

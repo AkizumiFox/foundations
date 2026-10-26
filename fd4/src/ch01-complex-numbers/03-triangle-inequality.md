@@ -158,7 +158,7 @@ by @thm-complex-triangle-inequality, then the induction hypothesis with @fd3:prp
 (c) Apply (a) to \( z \) and \( -w \). Since \( z - (-w) = z + w \) (@fd3:prp-ring-algebra (a)) and \( \abs{-w} = \abs{-1}\abs{w} = \abs{w} \) as in (a), it reads \( \bigl| \abs{z} - \abs{w} \bigr| \le \abs{z + w} \). By @fd3:prp-absolute-value-ordered-field (c), \( \abs{z} - \abs{w} \le \bigl| \abs{z} - \abs{w} \bigr| \). This proves the corollary.
 :::
 
-Part (b) with \( n = 2 \) is the theorem itself, so the corollary contains it. *Algebraic Preliminaries*, Chapter 4 uses (b) and (c) to show that a polynomial expression of degree at least \( 1 \) is large in modulus when \( \abs{z} \) is large, a step towards the Fundamental Theorem of Algebra.
+Part (b) with \( n = 2 \) is the theorem itself, so the corollary contains it. *Algebraic Preliminaries*, Chapter 5 uses (b) and (c) to show that a polynomial expression of degree at least \( 1 \) is large in modulus when \( \abs{z} \) is large, a step towards the Fundamental Theorem of Algebra.
 
 ::: {.check}
 Take \( z = 5 \) and \( w = 3i \). Compute both sides of (a) and of (c).
@@ -340,7 +340,7 @@ thm-complex-triangle-inequality (claim): pointer to the linear algebra volumes (
 cor-complex-triangle-variants (proof): w - z = (-1)(z - w); z - (-w) = z + w | fd3:prp-ring-algebra (a), (c) in the commutative ring C (prp-complex-arithmetic-laws)
 cor-complex-triangle-variants (proof): from -t <= |z - w| to -|z - w| <= t, both cases | fd3:prp-ordered-ring-rules (a) with -(-t) = t, fd3:prp-ring-algebra (a), cited
 cor-complex-triangle-variants (proof): finite sums in C by appending the last term; induction from n = 1 | fd2:def-sum-product used as a template (its recursion uses only fd2:thm-recursion and the operations of C); fd1:ax-induction through fd3:cor-omega-identification (b), on m = n - 1
-cor-complex-triangle-variants (claim): *Algebraic Preliminaries*, Chapter 4 uses (b) and (c) for polynomial growth | prose pointer (F5.5, lem-complex-polynomial-growth); nothing depends on it
+cor-complex-triangle-variants (claim): *Algebraic Preliminaries*, Chapter 5 uses (b) and (c) for polynomial growth | prose pointer (F5.5, lem-complex-polynomial-growth); nothing depends on it
 cor-complex-triangle-variants (example): quick check values |5 - 3i| = |5 + 3i| = sqrt 34, 2 <= sqrt 34 | inline; verify/ch01/cor-complex-triangle-variants.py
 thm-complex-triangle-inequality (example): quick check |3 + 4i| + |-3 + 4i| = 10, |8i| = 8; warning (2i)^2 = -4, |2i|^2 = 4 | inline; verify/ch01/thm-complex-triangle-inequality.py
 lem-real-part-at-most-modulus (example): values for 3 - 4i, 2, -1, 2i | inline; verify/ch01/lem-real-part-at-most-modulus.py

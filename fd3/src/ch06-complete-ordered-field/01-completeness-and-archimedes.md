@@ -1,6 +1,8 @@
 # What Completeness Gives at Once
 
-Chapter 5 ended with one complete ordered field, the classes of Cauchy sequences of rationals (@thm-reals-complete-ordered-field). The optional Chapter 7 builds another from Dedekind cuts, and *Analysis on the Real Line* simply assumes that one exists. This chapter asks whether these are the same field. Before that question can be asked we need a precise meaning for "the same": a map between ordered fields that respects everything. This section fixes that meaning, and then collects what completeness gives at once: the Archimedean property, a way to tell elements apart by the rationals below them, and square roots.
+<!-- S3: style revision per S1 change list (layout-proposal.md §3, 6.1, pipeline S): the square-root proof (working back to h) with full scratch work; new method box (provisional exm-method-point-as-supremum). -->
+
+Chapter 5 ended with one complete ordered field, the classes of Cauchy sequences of rationals (@thm-reals-complete-ordered-field). *Axiomatic Set Theory* builds another from Dedekind cuts, and *Analysis on the Real Line* simply assumes that one exists. This chapter asks whether these are the same field. Before that question can be asked we need a precise meaning for "the same": a map between ordered fields that respects everything. This section fixes that meaning, and then collects what completeness gives at once: the Archimedean property, a way to tell elements apart by the rationals below them, and square roots.
 
 **Standing setting.** Throughout the chapter, \( F \) and \( L \) are ordered fields (@def-ordered-ring-and-field), so \( \le \) is a total order on each (@prp-ordered-field-halves (a)) and upper bounds and suprema in the sense of *Sets and Functions*, Section 5.3 apply to their subsets (@fd2:def-order-bounds, @fd2:def-order-supremum). "Complete" is always the property of @def-complete-ordered-field: every non-empty subset that is bounded above has a supremum. We do not redefine it.
 
@@ -38,7 +40,7 @@ Two consequences come free. A strictly increasing map is injective: if \( a \ne 
 The zero map \( \chi(a) \coloneqq 0_L \) preserves sums and products, since \( 0 + 0 = 0 \) and \( 0 \cdot 0 = 0 \). It fails the unit clause, because \( 1_L \ne 0_L \) in a field, and it fails strict increase. In @def-cof-order-preserving-map the unit clause in fact follows from the other three: additivity gives \( \chi(0) = \chi(0) + \chi(0) \), so \( \chi(0) = 0 \); strict increase then gives \( \chi(1) > \chi(0) = 0 \); and \( \chi(1) = \chi(1)^2 \) with \( \chi(1) \ne 0 \) forces \( \chi(1) = 1 \). It is stated anyway because @prp-cof-map-fixes-rationals, @thm-cof-field-automorphism-identity and the remark after its proof assume sums, products and the unit but no order. Without the unit hypothesis, the zero map would be a counterexample to each of them.
 :::
 
-**Why this definition.** Preserving sums, products and the unit is what makes \( \chi \) a dictionary for the field operations; strict increase makes it a dictionary for the order. Section 6.4 shows a map of \( \nQ(\sqrt 2) \) to itself that respects sums, products and the unit but sends a positive element to a negative one, so the order clause does not follow from the others in general. Section 6.3 shows that for complete ordered fields it does.
+**Why this definition.** Preserving sums, products and the unit is what makes \( \chi \) a dictionary for the field operations; strict increase makes it a dictionary for the order. *Algebraic Preliminaries*, Chapter 2 shows a map of \( \nQ(\sqrt 2) \) to itself that respects sums, products and the unit but sends a positive element to a negative one, so the order clause does not follow from the others in general. Section 6.3 shows that for complete ordered fields it does.
 
 ::: {.check}
 Which clauses of @def-cof-order-preserving-map does the map \( \chi \colon \nQ \to \nQ \), \( \chi(x) \coloneqq -x \), satisfy?
@@ -71,7 +73,7 @@ This is the remark after @thm-rationals-embed-ordered-field, now with a label. R
 
 ## A complete ordered field is Archimedean
 
-Chapter 4 called \( F \) Archimedean if every element lies below some \( n \cdot 1_F \) (@def-archimedean-ordered-field), and showed that this can fail: in \( \nQ(t) \) the element \( t \) lies above every \( n \cdot 1 \) (@exm-rational-function-field). Chapter 5 assumed it, together with Cauchy-completeness, to prove completeness (@thm-cauchy-archimedean-lub). For the supremum form of completeness, no assumption is needed: it implies the Archimedean property. We write \( \iota_F(\nN) \coloneqq \{ \iota_F(n) : n \in \nN \} = \{ n \cdot 1_F : n \in \nN \} \).
+Chapter 4 called \( F \) Archimedean if every element lies below some \( n \cdot 1_F \) (@def-archimedean-ordered-field), and showed that this can fail: in \( \nQ(t) \) the element \( t \) lies above every \( n \cdot 1 \) (@exm-rational-function-field). Chapter 5 proved it for the constructed \( \nR \) (@thm-constructed-reals-archimedean) on the way to completeness. For the supremum form of completeness, no assumption is needed: it implies the Archimedean property. We write \( \iota_F(\nN) \coloneqq \{ \iota_F(n) : n \in \nN \} = \{ n \cdot 1_F : n \in \nN \} \).
 
 ::: {#thm-cof-complete-archimedean}
 [A Complete Ordered Field Is Archimedean]
@@ -100,7 +102,8 @@ Both hypotheses of completeness were used: "non-empty" through \( 0 \cdot 1_F \)
 The proof never claimed that \( s \) is an element of \( \iota_F(\nN) \); a supremum need not belong to its set. Exercise C2 shows how tempting that claim is.
 
 ::: {.warning}
-Completeness here is about **subsets**, not sequences. Chapter 5 proved that the constructed \( \nR \) is complete by going through Cauchy sequences, and @thm-cauchy-archimedean-lub needed the Archimedean property as a separate hypothesis to get from "every Cauchy sequence converges" to "every bounded non-empty set has a supremum". In this chapter "complete" is the supremum property of @def-complete-ordered-field, and the theorem above shows that it brings the Archimedean property with it. Do not replace it by Cauchy-completeness in the proofs below: Chapter 5 records, without proof, that a Cauchy-complete ordered field need not be Archimedean.
+<!-- S3: re-cut repair; the old text compared with the parked thm-cauchy-archimedean-lub (authoring/parked/an1/from-5.6-cauchy-archimedean-lub.md). -->
+Completeness here is about **subsets**, not sequences. In this chapter "complete" is the supremum property of @def-complete-ordered-field, and the theorem above shows that it brings the Archimedean property with it. Do not replace it by Cauchy-completeness in the proofs below: a Cauchy-complete ordered field need not be Archimedean, a fact this book does not prove and *Analysis on the Real Line*, Chapter 11 returns to.
 :::
 
 Every complete ordered field therefore has the consequences of the Archimedean property that Chapter 4 proved. The one we use most is density (@thm-rationals-dense-ordered-field): in an Archimedean ordered field \( F \), for all \( x < y \) there is \( q \in \nQ \) with \( x < \iota_F(q) < y \). We cite it, not reprove it; Section 6.2 uses it in two fields at once.
@@ -166,7 +169,7 @@ Let \( q \in \nQ \), and recall \( \iota_{\nR} = \kappa \) (@thm-rational-embedd
 Now \( \kappa(q)^2 = \kappa(q^2) \) and \( 2 = \kappa(2) \) (@thm-rational-embedding (a)), and \( \kappa(q^2) < \kappa(2) \) if and only if \( q^2 < 2 \) (@thm-rational-embedding (b)). So for \( q \ge 0 \), \( q \in \nQ_{\nR}(r) \) if and only if \( q^2 < 2 \). Together the two cases give the displayed set.
 :::
 
-The set of Section 2.6, \( \{ x \in \nQ : x^2 < 2 \} \) (@thm-rationals-gap-sqrt2), is **not** \( \nQ_{\nR}(r) \): it omits \( -2 \), whose square is \( 4 \). That set is not closed downward, and a rationals-below set always is.
+The set of Section 3.3, \( \{ x \in \nQ : x^2 < 2 \} \) (@thm-rationals-gap-sqrt2), is **not** \( \nQ_{\nR}(r) \): it omits \( -2 \), whose square is \( 4 \). That set is not closed downward, and a rationals-below set always is.
 
 ::: {.check}
 Let \( F \) be an ordered field and \( x \coloneqq \iota_F(3/2) \). Describe \( \nQ_F(x) \), and say whether \( 3/2 \in \nQ_F(x) \).
@@ -253,7 +256,7 @@ Both cases are impossible, so \( s^2 = a \) by trichotomy (O1), and \( b \colone
 
 For \( a \ge 0 \) in a complete ordered field we write \( \sqrt a \) for this \( b \). In the constructed reals, the class \( r \) of @exm-sqrt2-class has \( r > 0 \) and \( r^2 = 2 \), so \( r = \sqrt 2 \) by the uniqueness clause, and @exm-cof-rationals-below-sqrt2 describes \( \nQ_{\nR}(\sqrt 2) \).
 
-The constants follow the Idea: each \( h \) depends on \( s \) and \( a \) only, and each was found backwards and then placed first. Completeness was used once, to produce \( s \); the rest is arithmetic in an ordered field. Without completeness the statement fails: in \( \nQ \), the element \( 2 \ge 0 \) has no square root (@thm-no-rational-square-two). Section 6.4 meets a field that is Archimedean and still lacks some square roots.
+The constants follow the Idea: each \( h \) depends on \( s \) and \( a \) only, and each was found backwards and then placed first. Completeness was used once, to produce \( s \); the rest is arithmetic in an ordered field. Without completeness the statement fails: in \( \nQ \), the element \( 2 \ge 0 \) has no square root (@thm-no-rational-square-two). *Algebraic Preliminaries*, Chapter 2 meets \( \nQ(\sqrt 2) \), a field that is Archimedean and still lacks some square roots.
 
 ## Exercises
 
@@ -369,7 +372,7 @@ exm-cof-sup-one-minus-reciprocals (solution): iota_F(1 - 1/n) < 1_F; iota_F(1/N)
 exm-cof-sup-one-minus-reciprocals (solution): some 1/(N * 1_F) < 1_F - b for b < 1_F; then 1_F - 1/(N * 1_F) > b | thm-cof-complete-archimedean, prp-archimedean-reciprocal, (O3), totality (prp-ordered-field-halves (a)), fd2:def-order-supremum
 exm-cof-sup-one-minus-reciprocals (claim): the same answer holds in any Archimedean field such as Q | the solution uses completeness only through thm-cof-complete-archimedean; thm-rationals-archimedean; remark, nothing depends on it
 thm-cof-complete-archimedean (claim): Q(t) is not Archimedean | exm-rational-function-field (school polynomial algebra, flagged there); counterexample only
-thm-cof-complete-archimedean (claim): Cauchy-complete need not imply Archimedean | stated without proof in Chapter 5 (remark after thm-cauchy-archimedean-lub); nothing depends on it
+thm-cof-complete-archimedean (claim): Cauchy-complete need not imply Archimedean | stated without proof (AN1.11 returns to it); nothing depends on it
 def-cof-rationals-below (claim): closed downward; x <= y gives inclusion | iota_F strictly increasing (thm-rationals-embed-ordered-field), transitivity (O2); inline
 exm-cof-rationals-below-sqrt2 (solution): kappa(q) >= 0 for q >= 0; kappa(0) = 0 | thm-rational-embedding (a), (b)
 lem-cof-rationals-separate (proof): antisymmetry of <= | prp-ordered-field-halves (a) (total order)

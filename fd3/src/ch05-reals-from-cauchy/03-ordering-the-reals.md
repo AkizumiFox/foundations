@@ -1,6 +1,8 @@
 # Positive Classes and the Order
 
-Section 5.2 made \( \nR \) a field: its elements are classes of Cauchy sequences of rationals, added and multiplied through representatives. A field is not yet a number line. To compare two real numbers we need an order, and it must cooperate with the arithmetic: \( \nR \) should be an ordered field in the sense of @def-ordered-ring-and-field. Chapter 2 ordered \( \nQ \) in two steps. It first said which rationals are positive, and then let \( a < b \) mean that \( b - a \) is positive (@prp-order-from-positives). This section takes the same two steps for \( \nR \). All the work is in the first: deciding which classes are positive, in a way that does not depend on the representative.
+<!-- S3: style revision per S1 change list (layout-proposal.md §3, 5.3, pipeline S): trim; prp-reals-absolute-value-termwise becomes an exercise (label kept); new method box (provisional exm-method-margin-before-index). -->
+
+Section 5.2 made \( \nR \) a field: its elements are classes of Cauchy sequences of rationals, added and multiplied through representatives. A field is not yet a number line. To compare two real numbers we need an order, and it must cooperate with the arithmetic: \( \nR \) should be an ordered field in the sense of @def-ordered-ring-and-field. Chapter 3 ordered \( \nQ \) in two steps. It first said which rationals are positive, and then let \( a < b \) mean that \( b - a \) is positive (@prp-order-from-positives). This section takes the same two steps for \( \nR \). All the work is in the first: deciding which classes are positive, in a way that does not depend on the representative.
 
 Throughout, \( \sC \) is the set of Cauchy sequences of rationals (@def-rational-cauchy-sequences), \( a \sim b \) means that \( a - b \) is null in \( \nQ \) (@def-cauchy-equivalent), and \( [a] \) is the class of \( a \), an element of \( \nR \) (@def-reals-cauchy-classes). Until \( \nR \) has an order, every tolerance, margin and threshold is a rational or a natural number: we are still building \( \nR \), and may not measure anything with it. The operations are those of @def-reals-operations: \( [a] + [b] = [a + b] \), \( [a][b] = [ab] \), \( -[a] = [-a] \), with \( 0_{\nR} = [(0)_n] \) and \( 1_{\nR} = [(1)_n] \), where \( (q)_n \) is the constant sequence with value \( q \). In particular
 \[
@@ -112,7 +114,7 @@ We can now name the set of positive real numbers. Let
 \[
 P \coloneqq \{ [a] : a \in \sC \text{ and } a \text{ is positive} \} \subseteq \nR .
 \]
-Chapter 2 built the positive sets \( P_{\nZ} \) and \( P_{\nQ} \); \( P \) is the same step for \( \nR \). For \( x \in \nR \):
+Chapters 2 and 3 built the positive sets \( P_{\nZ} \) and \( P_{\nQ} \); \( P \) is the same step for \( \nR \). For \( x \in \nR \):
 \[
 x \in P \iff \text{some representative of } x \text{ is positive} \iff \text{every representative of } x \text{ is positive} .
 \]
@@ -161,7 +163,7 @@ Both parts rest on a choice of representatives, and neither depends on it: membe
 
 ## The order of the reals
 
-With \( P \) in hand the definition is the one Chapter 2 used for \( \nZ \) and \( \nQ \).
+With \( P \) in hand the definition is the one Chapters 2 and 3 used for \( \nZ \) and \( \nQ \).
 
 ::: {#def-reals-order}
 [Order on the Reals]

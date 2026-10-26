@@ -1,10 +1,12 @@
 # Sequences That Should Converge
 
+<!-- S3: style revision per S1 change list (layout-proposal.md §3, 5.1, pipeline S): shrink the truncation construction to a sketch or an exercise. -->
+
 Chapter 4 ended with a rational sequence that is Cauchy in \( \nQ \) and converges to no rational (@thm-sqrt2-cauchy-no-rational-limit). Its terms crowd around a place where \( \nQ \) has a hole. This chapter builds the number that belongs in the hole, and the first step is to notice that many different sequences crowd around the same hole. This section sets up the raw material, the set \( \sC \) of Cauchy sequences of rationals, and the relation that will decide when two of them aim at the same number: their difference dies out. Nothing about real numbers is assumed. Every tolerance, bound and threshold in this section is a rational number.
 
 ## Two sequences aimed at one hole
 
-The first sequence is the Newton sequence of Chapter 2 (@exm-newton-rationals-sqrt2): \( x_0 \coloneqq 2 \) and
+The first sequence is the Newton sequence of Chapter 3 (@exm-newton-rationals-sqrt2): \( x_0 \coloneqq 2 \) and
 \[
 x_{n+1} \coloneqq \frac{x_n^2 + 2}{2 x_n} = \frac{x_n}{2} + \frac{1}{x_n} \qquad (n \in \nN) ,
 \]
@@ -20,7 +22,7 @@ From (NS1) and (NS2), \( 0 < x_n^2 - 2 \le 1/(4n) \) for every \( n \ge 1 \). At
 
 The second sequence approaches the hole from below, by decimal truncation. To define it inside \( \nQ \), without the school decimals, we need powers of ten.
 
-**Powers of ten.** For \( k \in \nN \), \( 10^k \) is the power in the ordered field \( \nQ \) of @def-naturals-in-ordered-field (b): \( 10^0 = 1 \) and \( 10^{k+1} = 10^k \cdot 10 \). (Here \( 10 = 10 \cdot 1_{\nQ} \), by the identification \( \nN \subseteq \nZ \subseteq \nQ \) of Chapter 2 and @prp-naturals-in-ordered-field (d).) Two facts about it are used below, both by induction (@fd1:ax-induction, read on \( \nN = \omega \) through @cor-omega-identification (b)) with base \( P(0) \).
+**Powers of ten.** For \( k \in \nN \), \( 10^k \) is the power in the ordered field \( \nQ \) of @def-naturals-in-ordered-field (b): \( 10^0 = 1 \) and \( 10^{k+1} = 10^k \cdot 10 \). (Here \( 10 = 10 \cdot 1_{\nQ} \), by the identification \( \nN \subseteq \nZ \subseteq \nQ \) of Chapters 2 and 3 and @prp-naturals-in-ordered-field (d).) Two facts about it are used below, both by induction (@fd1:ax-induction, read on \( \nN = \omega \) through @cor-omega-identification (b)) with base \( P(0) \).
 
 - \( 10^k \in \nZ \). Base: \( 10^0 = 1 \in \nZ \). Step: if \( 10^k \in \nZ \), then \( 10^{k+1} = 10^k \cdot 10 \) is a product of two integers, and products of integers computed in \( \nQ \) are integers (@prp-integers-embed-rationals: \( j(m) j(n) = j(mn) \)).
 - \( 10^k \ge k + 1 \). Base: \( 10^0 = 1 = 0 + 1 \). Step: suppose \( 10^k \ge y \), where \( y \coloneqq k + 1 \). Then \( y \ge 1 \) (@prp-naturals-in-ordered-field (b)), and multiplying by \( 10 > 0 \) gives \( 10^{k+1} = 10^k \cdot 10 \ge 10y \) (by @prp-ordered-ring-rules (c) if \( 10^k > y \); trivially if \( 10^k = y \)). Moreover \( 10y - (y + 1) = 9y - 1 \ge 9 - 1 > 0 \). So \( 10^{k+1} > y + 1 = k + 2 \), where \( (k + 1) + 1 = k + 2 \) is arithmetic in \( \nN \) (@thm-omega-arithmetic-laws), carried into \( \nQ \) by the sum law of @prp-naturals-in-ordered-field (a).
@@ -405,7 +407,7 @@ exm-finite-change-equivalent (solution): (a) b agrees with a in C from N_0 on, s
 exm-finite-change-equivalent (claim): the example list (5, -3, 7, 1/4, ...) is 1/(n + 1) from n = 3 on | inline
 exm-finite-change-equivalent (claim): |(-1)^{n+1} - (-1)^n| = 2 | inline, as in F3.9's ledger for thm-cauchy-not-null-sign
 exm-finite-change-equivalent (claim): (warning) (0)_n - (1 - 1/(n + 1))_n -> -1, not null | thm-limit-laws-ordered-field (a), (b), exm-first-sequences-ordered-field (a), (b), thm-limit-unique-ordered-field (cited)
-exm-finite-change-equivalent (claim): (check) a: N and N + 1 have one even and one odd; b: n >= 2K splits into odd n and n = 2k with k >= K | prp-omega-powers-parity (d) (F3.1 §06, cited), with order cancellation on N (prp-omega-order-arithmetic)
+exm-finite-change-equivalent (claim): (check) a: N and N + 1 have one even and one odd; b: n >= 2K splits into odd n and n = 2k with k >= K | prp-omega-powers-parity (d) (F3.1 §03, cited), with order cancellation on N (prp-omega-order-arithmetic)
 exr-cauchy-sequences-of-rationals-a1 (solution): |(-1)^n| = 1 | prp-absolute-value-ordered-field (b), induction; inline
 exr-cauchy-sequences-of-rationals-a1 (solution): negation of a ~ b | fd1:prp-bounded-quantifier-negation, fd1:prp-negated-implication (cited)
 exr-cauchy-sequences-of-rationals-b2 (solution): x - 2/x = (x^2 - 2)/x; 4/x^2 < 2 from x^2 > 2 | field arithmetic (lem-field-fraction-rules (b)), prp-reciprocal-order; verify/ch05/exr-cauchy-sequences-of-rationals-b2.py

@@ -1,7 +1,7 @@
 <!-- Parked from fd2 (fd2/authoring/design/layout-six-chapters.md §2, approved 2026-10-26). Not part of any book's src; nothing builds or scans it.
 Old section: fd2 5.3 Binary Operations (src/ch05-building-functions/03-binary-operations.md)
 Labels: def-binary-operation, exm-first-operations, def-operation-properties, exm-subtraction-identity, prp-operation-identity-unique, exm-method-two-ways, prp-operation-inverse-unique, exm-two-inverses, prp-operation-inverse-rules, prp-pointwise-operations, prp-composition-operation, prp-operation-on-quotient, exr-binary-operations-a1, exr-binary-operations-b1, exr-binary-operations-b2, exr-binary-operations-b3, exr-binary-operations-b4, exr-binary-operations-c1, exr-binary-operations-c2, exr-binary-operations-c3
-Intended home: fd5 Algebraic Preliminaries, a later revision (overlaps fd5 Chapter 2 to be resolved then); no fd5 file cites these labels
+Intended home: fd5 Algebraic Preliminaries, a later revision (overlaps fd5 Chapter 3 to be resolved then); no fd5 file cites these labels
 -->
 
 # Binary Operations
@@ -12,7 +12,7 @@ Sections 5.1 and 5.2 built new functions from old ones by cutting, gluing and fa
 
 Nobody writes brackets in \( 2 + 3 + 4 \): whether we add \( 2 + 3 \) first or \( 3 + 4 \) first, the answer is \( 9 \). Subtraction is different. Reading \( 2 - 3 - 4 \) from the left gives \( (2 - 3) - 4 = -5 \), and from the right gives \( 2 - (3 - 4) = 3 \). Powers behave like subtraction: \( 2^{(3^2)} = 2^9 = 512 \), while \( (2^3)^2 = 8^2 = 64 \). School arithmetic settles this by convention (subtraction from the left, towers of powers from the top), and a convention is needed exactly because the bracketing changes the answer.
 
-The same questions arise far from numbers. For subsets of a set \( X \), is \( (A \cup B) \cup C \) the same set as \( A \cup (B \cup C) \)? For functions from \( X \) to itself, is \( h \circ (g \circ f) \) the same function as \( (h \circ g) \circ f \)? On the clock \( \nZ/12 \) of Section 4.2, is there an hour that changes nothing when added, as \( 0 \) does for integers, and can every hour be undone?
+The same questions arise far from numbers. For subsets of a set \( X \), is \( (A \cup B) \cup C \) the same set as \( A \cup (B \cup C) \)? For functions from \( X \) to itself, is \( h \circ (g \circ f) \) the same function as \( (h \circ g) \circ f \)? On the clock \( \nZ/12 \) of Section 5.2, is there an hour that changes nothing when added, as \( 0 \) does for integers, and can every hour be undone?
 
 Each of these questions asks whether some rule of arithmetic holds for some way of combining two things into a third. The aim of this section is to separate the rules and to find out what each rule gives on its own. Here is a test question to keep in mind: can a set with an operation have two different elements that both behave like \( 0 \)? For \( + \) on \( \nZ \) the answer seems obvious, but the reason is not; the answer comes in the subsection "One identity, one inverse".
 
@@ -95,7 +95,7 @@ In words: associativity says brackets may be moved; commutativity says the two i
 
 For \( + \) on \( \nZ \), all four hold: \( + \) is associative and commutative, \( 0 \) is an identity, and \( -x \) is an inverse of \( x \). For \( \cdot \) on \( \nZ \), \( 1 \) is an identity, and only \( 1 \) and \( -1 \) are invertible. For \( \cup \) on \( \powerset{X} \), \( \emptyset \) is an identity, since \( \emptyset \cup A = A = A \cup \emptyset \).
 
-Deciding whether an operation has a property is the work of Section 4.1's method for relations (@exm-method-relation-properties): a property that says "for all" is proved by taking arbitrary elements, and a failure needs one witness, checked. For an identity the quantifiers are the other way round, "there is an \( e \) such that for every \( x \)", so a proof names one \( e \) and checks it against every \( x \), and a refutation must show that **every** candidate \( e \) fails at some \( x \).
+Deciding whether an operation has a property is the work of Section 5.1's method for relations (@exm-method-relation-properties): a property that says "for all" is proved by taking arbitrary elements, and a failure needs one witness, checked. For an identity the quantifiers are the other way round, "there is an \( e \) such that for every \( x \)", so a proof names one \( e \) and checks it against every \( x \), and a refutation must show that **every** candidate \( e \) fails at some \( x \).
 
 ::: {#exm-subtraction-identity}
 [A right identity that is not an identity]
@@ -330,7 +330,7 @@ Associativity and \( f \circ \id_X = f = \id_X \circ f \) are @prp-composition-a
 Now let \( a, b \in X \) with \( a \ne b \), and let \( c_a, c_b \in X^X \) be the constant functions with values \( a \) and \( b \). For every \( x \in X \), \( (c_a \circ c_b)(x) = c_a(b) = a \) and \( (c_b \circ c_a)(x) = c_b(a) = b \). So \( c_a \circ c_b = c_a \) and \( c_b \circ c_a = c_b \), and these differ, since their values at \( a \) differ (@prp-function-equality). This proves the proposition.
 :::
 
-So the invertible elements of \( X^X \) under composition are exactly the bijections from \( X \) to itself, the subject of Section 5.4. For them, @prp-operation-inverse-rules (c) says \( (g \circ f)^{-1} = f^{-1} \circ g^{-1} \). That rule appeared as Exercise B2 of Section 1.6 (@exr-inverses-b2); here it is proved once, for every associative operation, and the rule for bijections of a set to itself is one case of it (Exercise B2 of Section 1.6 allows three different sets).
+So the invertible elements of \( X^X \) under composition are exactly the bijections from \( X \) to itself, the subject of Section 5.4. For them, @prp-operation-inverse-rules (c) says \( (g \circ f)^{-1} = f^{-1} \circ g^{-1} \). That rule appeared as Exercise B2 of Section 2.6 (@exr-inverses-b2); here it is proved once, for every associative operation, and the rule for bijections of a set to itself is one case of it (Exercise B2 of Section 2.6 allows three different sets).
 
 ::: {.check}
 In \( \nR^{\nR} \), find the inverse of \( f(x) = 2x + 1 \) under composition, and its inverse under pointwise \( + \).
@@ -342,7 +342,7 @@ Under \( \circ \): \( g(x) = (x - 1)/2 \), since \( f(g(x)) = (x - 1) + 1 = x \)
 
 ## Operations on a quotient
 
-The clock adds hours, and Section 4.2 checked that the addition is well defined (@prp-congruence-arithmetic). Every operation that respects an equivalence relation passes to the quotient in the same way, and it takes its properties with it.
+The clock adds hours, and Section 5.2 checked that the addition is well defined (@prp-congruence-arithmetic). Every operation that respects an equivalence relation passes to the quotient in the same way, and it takes its properties with it.
 
 ::: {#prp-operation-on-quotient}
 [Operations on a Quotient]
@@ -498,7 +498,7 @@ Prove or disprove each statement. Throughout, \( \ast \) is an operation on a se
 y = (x^{-1} \ast x) \ast y = x^{-1} \ast (x \ast y) = x^{-1} \ast (x \ast z) = (x^{-1} \ast x) \ast z = z .
 \]
 
-(d) False. Take \( X = \nN^{\nN} \) under composition, associative with identity \( \id_{\nN} \) (@prp-composition-operation). Let \( s(n) \coloneqq n + 1 \), and \( p(n) \coloneqq n - 1 \) for \( n \ge 1 \), \( p(0) \coloneqq 0 \): the successor map of Section 1.6 and a left inverse of it. Then \( p \circ s = \id_{\nN} \), since \( p(n + 1) = n \). But \( (s \circ p)(0) = s(0) = 1 \ne 0 \), so \( s \circ p \ne \id_{\nN} \). With \( x = p \) and \( y = s \), \( x \circ y = e \) and \( y \circ x \ne e \).
+(d) False. Take \( X = \nN^{\nN} \) under composition, associative with identity \( \id_{\nN} \) (@prp-composition-operation). Let \( s(n) \coloneqq n + 1 \), and \( p(n) \coloneqq n - 1 \) for \( n \ge 1 \), \( p(0) \coloneqq 0 \): the successor map of Section 2.6 and a left inverse of it. Then \( p \circ s = \id_{\nN} \), since \( p(n + 1) = n \). But \( (s \circ p)(0) = s(0) = 1 \ne 0 \), so \( s \circ p \ne \id_{\nN} \). With \( x = p \) and \( y = s \), \( x \circ y = e \) and \( y \circ x \ne e \).
 
 (e) False. The operation of @exm-two-inverses is commutative with identity \( e \), and not associative.
 :::
@@ -602,7 +602,7 @@ exr-binary-operations-a1 (solution): Z/3 addition table; 2 - 3 not in N; 1/2 not
 exr-binary-operations-b1 (solution): polynomial expansion; inverse x/(x - 1); 1 - x*y = (1 - x)(1 - y) | R arithmetic (a field), school fact; fd5/authoring/parked/from-fd2/verify/exr-binary-operations-b1.py
 exr-binary-operations-b3 (solution): real cube roots exist, cube root of x^3 is x | school fact (NOTATION sqrt[n] row: F2.1 §05-§06 use real cube roots as a school fact); fd5/authoring/parked/from-fd2/verify/exr-binary-operations-b3.py
 exr-binary-operations-b3 (solution): 0 * y = 0 != 1 in R | R arithmetic, school fact
-exr-binary-operations-b4 (solution): n + 1 >= 1 and p(n + 1) = n; s(0) = 1 | arithmetic; the successor map of Section 1.6 (quick check after exm-left-inverses-small-sets), named in prose, not a reason
+exr-binary-operations-b4 (solution): n + 1 >= 1 and p(n + 1) = n; s(0) = 1 | arithmetic; the successor map of Section 2.6 (quick check after exm-left-inverses-small-sets), named in prose, not a reason
 prp-pointwise-operations (claim): the warning that f^n means the iterate | F2.6 §04 def-iterate (prose pointer, same chapter; paid)
 prp-composition-operation (claim): bijections X to X are the subject of Section 5.4 | F2.6 §04 (prose pointer, same chapter; paid)
 exr-binary-operations-c1 (claim): generalized associativity for n factors | not proved here; nothing depends on it (said in the solution); fd5/authoring/parked/from-fd2/verify/exr-binary-operations-c1.py checks the five bracketings on a sample associative operation

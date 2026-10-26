@@ -1,5 +1,7 @@
 # The Algebra and Order of Limits
 
+<!-- S3: style revision per S1 change list (layout-proposal.md §3, 4.4, pipeline S): fewer citations. -->
+
 So far every limit has been found by hand: we computed the distance from \( a_n \) to the candidate limit and bounded it, as in @exm-first-sequences-ordered-field and Exercise B1 of Section 4.3. This section proves the rules that make most such work unnecessary. Sums, multiples, products and quotients of convergent sequences converge to the sum, multiple, product and quotient of the limits; limits respect \( \le \); and a sequence trapped between two sequences with a common limit has that limit too. Everything holds in an arbitrary ordered field \( F \). No result of this section uses the Archimedean property; only the examples and exercises set in \( \nQ \) do, each time through @exm-first-sequences-ordered-field (b) or the non-example after @def-bounded-sequence-ordered-field.
 
 Throughout, \( F \) is an ordered field and \( F_{>0} \) its set of positive elements, as in Section 4.3.

@@ -1,6 +1,8 @@
 # A Cauchy Sequence with No Rational Limit
 
-Section 4.5 proved that every convergent sequence is Cauchy (@prp-convergent-cauchy-ordered-field). In \( \nQ \) the converse fails, and the failure sits exactly at the hole Chapter 2 found at \( \sqrt 2 \): no rational squares to \( 2 \) (@thm-no-rational-square-two). This section proves that the rational sequence of Chapter 2 that closes in on that hole (@exm-newton-rationals-sqrt2) is Cauchy in \( \nQ \) and converges to no rational. Chapter 5 starts from this sequence and builds the number it is aiming at. The section ends by listing what the chapter has not proved, and why, in \( \nQ \), it could not have.
+<!-- S3: style revision per S1 change list (layout-proposal.md §3, 4.6, pipeline S): rewrite R1 as 'null sequences are closed under + and under multiplication by Cauchy sequences', without the vocabulary of ideals (its ideal references now resolve in fd5); What you need drops old 3.4. -->
+
+Section 4.5 proved that every convergent sequence is Cauchy (@prp-convergent-cauchy-ordered-field). In \( \nQ \) the converse fails, and the failure sits exactly at the hole Chapter 3 found at \( \sqrt 2 \): no rational squares to \( 2 \) (@thm-no-rational-square-two). This section proves that the rational sequence of Chapter 3 that closes in on that hole (@exm-newton-rationals-sqrt2) is Cauchy in \( \nQ \) and converges to no rational. Chapter 5 starts from this sequence and builds the number it is aiming at. The section ends by listing what the chapter has not proved, and why, in \( \nQ \), it could not have.
 
 Throughout this section the field is \( F = \nQ \): every tolerance \( \varepsilon \) is a positive rational, and "converges" means "converges in \( \nQ \)" (@def-sequence-limit-ordered-field).
 
@@ -14,7 +16,7 @@ with
 \[
 e_0 = 2 , \quad e_1 = \frac{1}{4} , \quad e_2 = \frac{1}{144} , \quad e_3 = \frac{1}{166464} .
 \]
-Chapter 2 proved, for every \( n \in \nN \), the following facts, and we cite them from @exm-newton-rationals-sqrt2 without proving them again:
+Chapter 3 proved, for every \( n \in \nN \), the following facts, and we cite them from @exm-newton-rationals-sqrt2 without proving them again:
 \[
 \begin{aligned}
 &x_n \in \nQ_{>0} , \qquad e_n > 0 \ \ (\text{so } x_n^2 > 2) , \\
@@ -111,7 +113,7 @@ Looking back over the chapter, three familiar tools of real analysis are absent,
 - **No supremum.** No result uses the supremum of a subset of \( F \) (@fd2:def-order-supremum), so nothing here rests on a least upper bound property.
 - **No monotone convergence theorem, and no Bolzano–Weierstrass theorem.** Neither is stated or used.
 
-In \( \nQ \) each of the three would fail. A least upper bound property fails by Section 2.6: the set of rationals with square below \( 2 \) is non-empty and bounded above, with no rational supremum. A monotone convergence theorem fails by the sequence of this section: \( (x_n) \) is decreasing (clause (iv) of the proof), bounded (the Quick check above) and Cauchy, and it has no limit in \( \nQ \). And so does Bolzano–Weierstrass, which would give the bounded sequence \( (x_n) \) a subsequence converging in \( \nQ \). Indeed, let \( n_0 < n_1 < n_2 < \cdots \) be indices and suppose \( x_{n_k} \to L \in \nQ \) as \( k \to \infty \). By induction, \( n_k \ge k \) for every \( k \) (if \( n_k \ge k \), then \( n_{k+1} > n_k \ge k \), so \( n_{k+1} \ge k + 1 \)). So for \( k \ge 1 \), \( 0 < e_{n_k} \le 1/(4n_k) \le 1/(4k) \le 1/(k + 1) \), and the argument of the proof, run on the sequence \( (x_{n_k})_{k \in \nN} \), gives \( L^2 = 2 \) again.
+In \( \nQ \) each of the three would fail. A least upper bound property fails by Section 3.3: the set of rationals with square below \( 2 \) is non-empty and bounded above, with no rational supremum. A monotone convergence theorem fails by the sequence of this section: \( (x_n) \) is decreasing (clause (iv) of the proof), bounded (the Quick check above) and Cauchy, and it has no limit in \( \nQ \). And so does Bolzano–Weierstrass, which would give the bounded sequence \( (x_n) \) a subsequence converging in \( \nQ \). Indeed, let \( n_0 < n_1 < n_2 < \cdots \) be indices and suppose \( x_{n_k} \to L \in \nQ \) as \( k \to \infty \). By induction, \( n_k \ge k \) for every \( k \) (if \( n_k \ge k \), then \( n_{k+1} > n_k \ge k \), so \( n_{k+1} \ge k + 1 \)). So for \( k \ge 1 \), \( 0 < e_{n_k} \le 1/(4n_k) \le 1/(4k) \le 1/(k + 1) \), and the argument of the proof, run on the sequence \( (x_{n_k})_{k \in \nN} \), gives \( L^2 = 2 \) again.
 
 The reader who knows real analysis will have met all three as theorems about \( \nR \). They are true there because of an axiom about \( \nR \), completeness, that no ordered field satisfies automatically, and this chapter never assumed it. Chapter 5 builds, from Cauchy sequences of rationals, a field in which every Cauchy sequence converges, and proves that in it every non-empty subset that is bounded above has a supremum: a complete ordered field. Chapter 6 proves that any two complete ordered fields are copies of each other, by exactly one order-preserving field isomorphism. *Analysis on the Real Line*, Chapter 1 takes the axioms of a complete ordered field as its starting point, and its Chapter 2 revisits this chapter's sequences, now in \( \nR \).
 
@@ -174,7 +176,7 @@ Let \( (H_n) \) be the sequence of @exm-consecutive-differences-not-cauchy: \( H
 :::
 
 ::: {.solution}
-The powers \( 2^k \) of the natural number \( 2 \) are those of Section 1.6 (defined just before @prp-omega-powers-parity by @thm-omega-recursion), with \( 2^0 = 1 \) and \( 2^{k+1} = 2^k \cdot 2 = 2^k + 2^k \).
+The powers \( 2^k \) of the natural number \( 2 \) are those of Section 1.3 (defined just before @prp-omega-powers-parity by @thm-omega-recursion), with \( 2^0 = 1 \) and \( 2^{k+1} = 2^k \cdot 2 = 2^k + 2^k \).
 
 We use @fd1:ax-induction on \( k \). Base \( P(0) \): \( H_{2^0} = H_1 = H_0 + 1/1 = 1 \ge 1 + 0/2 \). Step: assume \( H_{2^k} \ge 1 + k/2 \). The example shows \( H_{2n} - H_n \ge 1/2 \) for every \( n \ge 1 \); with \( n = 2^k \ge 1 \) (by induction, \( 2^k \ge 1 \)) it gives \( H_{2^{k+1}} \ge H_{2^k} + 1/2 \ge 1 + (k + 1)/2 \).
 
@@ -199,7 +201,7 @@ Let \( y_0 \coloneqq 2 \) and \( y_{n+1} \coloneqq (y_n^2 + 3)/(2y_n) \), a sequ
 ::: {.solution}
 [Hint 1]
 
-For (b), copy facts (i)–(vi) of the proof of @thm-sqrt2-cauchy-no-rational-limit with \( 3 \) in place of \( 2 \). Since only the case \( 2 \) was proved in Chapter 2, prove the analogues of (i), (ii) and the decrease yourself, as @exm-newton-rationals-sqrt2 does for \( 2 \). For (a), run the descent of @thm-no-rational-square-two.
+For (b), copy facts (i)–(vi) of the proof of @thm-sqrt2-cauchy-no-rational-limit with \( 3 \) in place of \( 2 \). Since only the case \( 2 \) was proved in Chapter 3, prove the analogues of (i), (ii) and the decrease yourself, as @exm-newton-rationals-sqrt2 does for \( 2 \). For (a), run the descent of @thm-no-rational-square-two.
 :::
 
 ::: {.solution}
@@ -285,15 +287,15 @@ is a well-defined operation on the quotient set \( \sC/{\sim} \).
 :::
 
 ::: {.solution}
-The tool is Chapter 3's quotient of a commutative ring by an ideal (@thm-quotient-ring-by-ideal). Let \( \sN \) be the set of null sequences in \( \nQ \). We show that \( \sC \) is a commutative ring, that \( \sN \) is an ideal of it, and that \( \sim \) is the relation \( \sim_{\sN} \).
+The tool is the quotient of a commutative ring by an ideal, from *Algebraic Preliminaries*, Chapter 1 (@fd5:thm-quotient-ring-by-ideal). Let \( \sN \) be the set of null sequences in \( \nQ \). We show that \( \sC \) is a commutative ring, that \( \sN \) is an ideal of it, and that \( \sim \) is the relation \( \sim_{\sN} \).
 
 *\( \sC \) is a commutative ring* (@def-commutative-ring-and-field), with termwise \( + \) and \( \cdot \). By @thm-cauchy-algebra-ordered-field, \( \sC \) contains the constant sequences \( 0 \) and \( 1 \) by (a), and it is closed under termwise sums and negatives by (b) and under termwise products by (c); so termwise \( + \) and \( \cdot \) are functions \( \sC \times \sC \to \sC \). Each of (F1)–(F7) and (F9), with the constant \( 0 \) as zero, the constant \( 1 \) as one and \( (-a_n) \) as the negative of \( (a_n) \), is an equation between sequences, and it holds at every index \( n \) because it holds in \( \nQ \) (@thm-rationals-ordered-field). Two sequences that agree at every index are equal, so each clause holds in \( \sC \).
 
-*\( \sN \) is an ideal of \( \sC \)* (@def-ideal-commutative-ring). First, \( \sN \subseteq \sC \) by @thm-cauchy-algebra-ordered-field (a). (I1): the constant sequence \( 0 \) tends to \( 0 \) (@exm-first-sequences-ordered-field (a)). (I2): if \( (y_n), (z_n) \in \sN \), then \( y_n + z_n \to 0 + 0 = 0 \) by @thm-limit-laws-ordered-field (a). (I3): let \( (z_n) \in \sN \) and \( (r_n) \in \sC \). By @prp-cauchy-bounded-ordered-field there is \( M \in \nQ_{>0} \) with \( \abs{r_n} \le M \) for every \( n \), so \( (z_n r_n) \) is null by @prp-null-times-bounded-ordered-field, and \( r_n z_n = z_n r_n \) by (F6) in \( \nQ \). So \( (r_n z_n) \in \sN \).
+*\( \sN \) is an ideal of \( \sC \)* (@fd5:def-ideal-commutative-ring). First, \( \sN \subseteq \sC \) by @thm-cauchy-algebra-ordered-field (a). (I1): the constant sequence \( 0 \) tends to \( 0 \) (@exm-first-sequences-ordered-field (a)). (I2): if \( (y_n), (z_n) \in \sN \), then \( y_n + z_n \to 0 + 0 = 0 \) by @thm-limit-laws-ordered-field (a). (I3): let \( (z_n) \in \sN \) and \( (r_n) \in \sC \). By @prp-cauchy-bounded-ordered-field there is \( M \in \nQ_{>0} \) with \( \abs{r_n} \le M \) for every \( n \), so \( (z_n r_n) \) is null by @prp-null-times-bounded-ordered-field, and \( r_n z_n = z_n r_n \) by (F6) in \( \nQ \). So \( (r_n z_n) \in \sN \).
 
-*The relation is \( \sim_{\sN} \).* The difference \( (a_n) - (b_n) \) in \( \sC \) is the sequence \( (a_n - b_n) \), so \( (a_n) \sim (b_n) \) holds exactly when \( (a_n) - (b_n) \in \sN \). Thus \( \sim \) is \( \sim_{\sN} \) and \( \sC/{\sim} \) is \( \sC/\sN \). By @thm-quotient-ring-by-ideal (a), \( \sim \) is an equivalence relation, and by (b), \( [(a_n)] + [(b_n)] \coloneqq [(a_n + b_n)] \) is well defined; so is the product \( [(a_n)] \cdot [(b_n)] \coloneqq [(a_n b_n)] \), and by (c) \( \sC/\sN \) is a commutative ring.
+*The relation is \( \sim_{\sN} \).* The difference \( (a_n) - (b_n) \) in \( \sC \) is the sequence \( (a_n - b_n) \), so \( (a_n) \sim (b_n) \) holds exactly when \( (a_n) - (b_n) \in \sN \). Thus \( \sim \) is \( \sim_{\sN} \) and \( \sC/{\sim} \) is \( \sC/\sN \). By @fd5:thm-quotient-ring-by-ideal (a), \( \sim \) is an equivalence relation, and by (b), \( [(a_n)] + [(b_n)] \coloneqq [(a_n + b_n)] \) is well defined; so is the product \( [(a_n)] \cdot [(b_n)] \coloneqq [(a_n b_n)] \), and by (c) \( \sC/\sN \) is a commutative ring.
 
-Chapter 3 proved (b) by Chapter 2's lemma on operations on classes (@thm-well-defined-on-classes), the method by which \( \nZ \) and \( \nQ \) were built; here it runs on sequences. Chapter 5 builds \( \nR \) as this quotient, and nothing in this exercise is used there.
+*Algebraic Preliminaries*, Chapter 1 proves (b) by Chapter 2's lemma on operations on classes (@thm-well-defined-on-classes), the method by which \( \nZ \) and \( \nQ \) were built; here it runs on sequences. Chapter 5 builds \( \nR \) as this quotient, and nothing in this exercise is used there.
 :::
 
 ::: {#exr-a-cauchy-sequence-without-a-limit-r2}
@@ -373,17 +375,17 @@ thm-sqrt2-cauchy-no-rational-limit (proof): 4(n + 1) <= 128 n and n + 1 <= 4n fo
 thm-sqrt2-cauchy-no-rational-limit (proof): x_n - 2/x_n = (x_n^2 - 2)/x_n | lem-field-fraction-rules (b); inline
 thm-sqrt2-cauchy-no-rational-limit (proof): constant sequence 2 tends to 2; constant 0 tends to 0 | exm-first-sequences-ordered-field, cited
 thm-sqrt2-cauchy-no-rational-limit (example): values x_0..x_3, e_0..e_3 and e_n <= 1/(4n) for n = 1, 2, 3 | exm-newton-rationals-sqrt2; verify/ch04/thm-sqrt2-cauchy-no-rational-limit.py
-thm-sqrt2-cauchy-no-rational-limit (claim): Section 2.6: {x in Q : x^2 < 2} has no rational supremum | F3.2 section 06 (thm-rationals-gap-sqrt2), prose pointer only, not used in a proof
+thm-sqrt2-cauchy-no-rational-limit (claim): Section 3.3: {x in Q : x^2 < 2} has no rational supremum | F3.2 section 06 (thm-rationals-gap-sqrt2), prose pointer only, not used in a proof
 thm-sqrt2-cauchy-no-rational-limit (claim): subsequence n_k >= k by induction; e_{n_k} <= 1/(4k) <= 1/(k + 1) | inline (discreteness of N, thm-omega-order); argument of the proof rerun
 thm-sqrt2-cauchy-no-rational-limit (claim): closing paragraph, the complete ordered field, its uniqueness, the analysis volume | F3.10, F3.4, AN1.1 and AN1.2 (prose pointers; nothing depends on them)
 exr-a-cauchy-sequence-without-a-limit-a1 (solution): x_2 - x_3 = 1/408, e_2/x_2 = 1/204 | verify/ch04/exr-a-cauchy-sequence-without-a-limit-a1.py
-exr-a-cauchy-sequence-without-a-limit-b2 (solution): 2^{k+1} = 2^k + 2^k and 2^k >= 1 | prp-omega-powers-parity (powers in N, Section 1.6, defined by thm-omega-recursion); omega arithmetic; inline; verify/ch04/exr-a-cauchy-sequence-without-a-limit-b2.py
+exr-a-cauchy-sequence-without-a-limit-b2 (solution): 2^{k+1} = 2^k + 2^k and 2^k >= 1 | prp-omega-powers-parity (powers in N, Section 1.3, defined by thm-omega-recursion); omega arithmetic; inline; verify/ch04/exr-a-cauchy-sequence-without-a-limit-b2.py
 exr-a-cauchy-sequence-without-a-limit-b2 (solution): H_{2n} - H_n >= 1/2 | exm-consecutive-differences-not-cauchy, cited
 exr-a-cauchy-sequence-without-a-limit-c1 (solution): identities for u(s) = (s^2 + 3)/(2s); descent identity (3q - p)^2 - 3(p - q)^2 = 2(3q^2 - p^2); values y_1, y_2, d_0..d_2; d_n <= 1/(16n) | verify/ch04/exr-a-cauchy-sequence-without-a-limit-c1.py
 exr-a-cauchy-sequence-without-a-limit-c1 (solution): (a) follows the route of thm-no-rational-square-two | prp-integer-least-element, prp-ordered-ring-rules (e), (g), cited
 exr-a-cauchy-sequence-without-a-limit-c2 (solution): Q(t) ordered by leading coefficients; t > k * 1 for every k in N | exm-rational-function-field (school fact; formal polynomials in F5.4); exercise only, nothing depends on it
 exr-a-cauchy-sequence-without-a-limit-c2 (solution): 1/(N + 1) - 1/(N + 2) = 1/((N + 1)(N + 2)) | lem-field-fraction-rules (c); verify/ch04/exr-a-cauchy-sequence-without-a-limit-c2.py
-exr-a-cauchy-sequence-without-a-limit-r1 (solution): the Cauchy sequences form a commutative ring, the null sequences an ideal of it, and ~ is ~_N | F3.5 def-ideal-commutative-ring, thm-quotient-ring-by-ideal (a)-(c), cited; def-commutative-ring-and-field, thm-rationals-ordered-field (laws termwise); thm-cauchy-algebra-ordered-field (a)-(c), exm-first-sequences-ordered-field (a), thm-limit-laws-ordered-field (a), prp-cauchy-bounded-ordered-field, prp-null-times-bounded-ordered-field, cited
+exr-a-cauchy-sequence-without-a-limit-r1 (solution): the Cauchy sequences form a commutative ring, the null sequences an ideal of it, and ~ is ~_N | F5.1 fd5:def-ideal-commutative-ring, fd5:thm-quotient-ring-by-ideal (a)-(c), cited; def-commutative-ring-and-field, thm-rationals-ordered-field (laws termwise); thm-cauchy-algebra-ordered-field (a)-(c), exm-first-sequences-ordered-field (a), thm-limit-laws-ordered-field (a), prp-cauchy-bounded-ordered-field, prp-null-times-bounded-ordered-field, cited
 exr-a-cauchy-sequence-without-a-limit-r2 (solution): r_1 = 3/2, r_2 = 7/4; 1 <= r_n < 2 and r_n < r_{n+1}; r_{n+1} - r_n = 1 - r_n/2 | fd2:thm-recursion and fd1:ax-induction via cor-omega-identification (b), cited; verify/ch04/exr-a-cauchy-sequence-without-a-limit-r2.py
 exr-a-cauchy-sequence-without-a-limit-r3 (solution): (-1)^n in {1, -1}, (-1)^{n+1} = -(-1)^n and |a_n| = 1/(n + 1) | prp-ring-algebra (c), prp-absolute-value-ordered-field (b); inline induction
 exr-a-cauchy-sequence-without-a-limit-r3 (solution): negation of "eventually keeps one sign" | fd1:prp-bounded-quantifier-negation, fd1:prp-de-morgan (a), (b), fd1:prp-negated-implication, prp-ordered-field-halves (a), cited

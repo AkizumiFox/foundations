@@ -120,19 +120,20 @@
     {
      "n": 1,
      "id": "F3.1",
-     "title": "The ZF Fragment and the von Neumann Natural Numbers",
+     "title": "The Natural Numbers",
      "ab": 9
     },
     {
      "n": 2,
      "id": "F3.2",
-     "title": "Building the Integers and the Rationals from Equivalence Classes",
+     "title": "The Integers",
      "ab": 10
     },
     {
      "n": 3,
-     "id": "F3.5",
-     "title": "Divisibility, Division with Remainder, and Modular Arithmetic"
+     "id": "F3.11",
+     "title": "The Rationals",
+     "ab": 10
     },
     {
      "n": 4,
@@ -142,20 +143,13 @@
     {
      "n": 5,
      "id": "F3.10",
-     "title": "Constructing the Real Numbers from Cauchy Sequences"
+     "title": "The Real Numbers from Cauchy Sequences"
     },
     {
      "n": 6,
      "id": "F3.4",
      "title": "The Complete Ordered Field Is Unique",
      "ab": 23
-    },
-    {
-     "n": 7,
-     "id": "F3.3",
-     "title": "Constructing the Real Numbers by Dedekind Cuts",
-     "ab": 22,
-     "optional": true
     }
    ]
   },
@@ -214,21 +208,26 @@
    "chapters": [
     {
      "n": 1,
+     "id": "F5.1",
+     "title": "Divisibility and Congruences"
+    },
+    {
+     "n": 2,
      "id": "F5.2",
      "title": "Fields"
     },
     {
-     "n": 2,
+     "n": 3,
      "id": "F5.3",
      "title": "Groups, Subgroups, and Homomorphisms"
     },
     {
-     "n": 3,
+     "n": 4,
      "id": "F5.4",
      "title": "Formal Polynomials"
     },
     {
-     "n": 4,
+     "n": 5,
      "id": "F5.5",
      "title": "Polynomials over a Field"
     }

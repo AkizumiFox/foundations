@@ -97,10 +97,11 @@
   },
   "reading-paths": [],
   "chapters": [
-    "src/ch01-fields",
-    "src/ch02-groups-and-permutations",
-    "src/ch03-formal-polynomials",
-    "src/ch04-polynomials-over-a-field"
+    "src/ch01-divisibility-and-congruences",
+    "src/ch02-fields",
+    "src/ch03-groups-and-permutations",
+    "src/ch04-formal-polynomials",
+    "src/ch05-polynomials-over-a-field"
   ],
   "macros": "../latex/macros.tex",
   "deploy-dir": "site",

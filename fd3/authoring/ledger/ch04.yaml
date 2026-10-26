@@ -4,7 +4,7 @@ items:
 - key: lem-field-fraction-rules
   kind: lem
   file: 01-rules-and-absolute-value.md
-  line: 19
+  line: 21
   hash: c8b27b2dadc4
   verdicts:
   - stage: S5a
@@ -27,7 +27,7 @@ items:
 - key: proof:lem-field-fraction-rules
   kind: proof
   file: 01-rules-and-absolute-value.md
-  line: 36
+  line: 38
   hash: ecbeef5994aa
   verdicts:
   - stage: S5a
@@ -50,7 +50,7 @@ items:
 - key: prp-ordered-field-halves
   kind: prp
   file: 01-rules-and-absolute-value.md
-  line: 73
+  line: 75
   hash: 0507f2dee094
   verdicts:
   - stage: S5a
@@ -82,8 +82,8 @@ items:
 - key: proof:prp-ordered-field-halves
   kind: proof
   file: 01-rules-and-absolute-value.md
-  line: 94
-  hash: f618ea7f0e85
+  line: 96
+  hash: 709a73435103
   verdicts:
   - stage: S5a
     verdict: minor
@@ -115,7 +115,7 @@ items:
 - key: def-absolute-value-ordered-field
   kind: def
   file: 01-rules-and-absolute-value.md
-  line: 123
+  line: 125
   hash: 4dc6750d083a
   verdicts:
   - stage: S5a
@@ -157,7 +157,7 @@ items:
 - key: prp-absolute-value-ordered-field
   kind: prp
   file: 01-rules-and-absolute-value.md
-  line: 143
+  line: 145
   hash: 7e25f18906c9
   verdicts:
   - stage: S5a
@@ -189,8 +189,8 @@ items:
 - key: proof:prp-absolute-value-ordered-field
   kind: proof
   file: 01-rules-and-absolute-value.md
-  line: 162
-  hash: f5cb685ab232
+  line: 164
+  hash: b0d4b418558f
   verdicts:
   - stage: S5a
     verdict: minor
@@ -222,7 +222,7 @@ items:
 - key: check:01-rules-and-absolute-value:1
   kind: check
   file: 01-rules-and-absolute-value.md
-  line: 194
+  line: 196
   hash: 209c28136441
   verdicts:
   - stage: S5a
@@ -244,7 +244,7 @@ items:
 - key: exr-rules-and-absolute-value-a1
   kind: exr
   file: 01-rules-and-absolute-value.md
-  line: 212
+  line: 214
   hash: 3d727ffea7d4
   verdicts:
   - stage: S5a
@@ -276,7 +276,7 @@ items:
 - key: exr-rules-and-absolute-value-b1
   kind: exr
   file: 01-rules-and-absolute-value.md
-  line: 237
+  line: 239
   hash: c17e22232935
   verdicts:
   - stage: S5a
@@ -307,7 +307,7 @@ items:
 - key: exr-rules-and-absolute-value-b2
   kind: exr
   file: 01-rules-and-absolute-value.md
-  line: 256
+  line: 258
   hash: 6f4c7019bb67
   verdicts:
   - stage: S5a
@@ -340,7 +340,7 @@ items:
 - key: exr-rules-and-absolute-value-b3
   kind: exr
   file: 01-rules-and-absolute-value.md
-  line: 278
+  line: 280
   hash: a3c9cd34c0f1
   verdicts:
   - stage: S5a
@@ -370,7 +370,7 @@ items:
 - key: exr-rules-and-absolute-value-c1
   kind: exr
   file: 01-rules-and-absolute-value.md
-  line: 297
+  line: 299
   hash: 4ca433754460
   verdicts:
   - stage: S5a
@@ -414,7 +414,7 @@ items:
 - key: exr-rules-and-absolute-value-c2
   kind: exr
   file: 01-rules-and-absolute-value.md
-  line: 333
+  line: 335
   hash: eb16ddde8dc5
   verdicts:
   - stage: S5a
@@ -444,7 +444,7 @@ items:
 - key: def-naturals-in-ordered-field
   kind: def
   file: 02-naturals-and-archimedes.md
-  line: 9
+  line: 11
   hash: 4e471ebd2d0f
   verdicts:
   - stage: S5a
@@ -477,8 +477,8 @@ items:
 - key: prp-naturals-in-ordered-field
   kind: prp
   file: 02-naturals-and-archimedes.md
-  line: 32
-  hash: f0dbd1cfc37e
+  line: 34
+  hash: 32700ff8d414
   verdicts:
   - stage: S5a
     verdict: minor
@@ -511,8 +511,8 @@ items:
 - key: proof:prp-naturals-in-ordered-field
   kind: proof
   file: 02-naturals-and-archimedes.md
-  line: 49
-  hash: 5c8934b78c6a
+  line: 51
+  hash: e2432268c916
   verdicts:
   - stage: S5a
     verdict: correct
@@ -548,7 +548,7 @@ items:
 - key: thm-rationals-embed-ordered-field
   kind: thm
   file: 02-naturals-and-archimedes.md
-  line: 82
+  line: 84
   hash: c152a3fd9ed4
   verdicts:
   - stage: S5a
@@ -569,7 +569,7 @@ items:
 - key: proof:thm-rationals-embed-ordered-field
   kind: proof
   file: 02-naturals-and-archimedes.md
-  line: 99
+  line: 101
   hash: bdbd9f8a5ab7
   verdicts:
   - stage: S5a
@@ -604,7 +604,7 @@ items:
 - key: def-archimedean-ordered-field
   kind: def
   file: 02-naturals-and-archimedes.md
-  line: 172
+  line: 174
   hash: ce5b27160f15
   verdicts:
   - stage: S5a
@@ -627,7 +627,7 @@ items:
 - key: prp-archimedean-reciprocal
   kind: prp
   file: 02-naturals-and-archimedes.md
-  line: 189
+  line: 191
   hash: 1905ff32b937
   verdicts:
   - stage: S5a
@@ -649,7 +649,7 @@ items:
 - key: proof:prp-archimedean-reciprocal
   kind: proof
   file: 02-naturals-and-archimedes.md
-  line: 198
+  line: 200
   hash: b30fbeaa7b2a
   verdicts:
   - stage: S5a
@@ -672,7 +672,7 @@ items:
 - key: check:02-naturals-and-archimedes:1
   kind: check
   file: 02-naturals-and-archimedes.md
-  line: 208
+  line: 210
   hash: 617ffc6b0bb7
   verdicts:
   - stage: S5a
@@ -695,7 +695,7 @@ items:
 - key: prp-integer-part-ordered-field
   kind: prp
   file: 02-naturals-and-archimedes.md
-  line: 222
+  line: 224
   hash: 7c56c2757a67
   verdicts:
   - stage: S5a
@@ -727,7 +727,7 @@ items:
 - key: proof:prp-integer-part-ordered-field
   kind: proof
   file: 02-naturals-and-archimedes.md
-  line: 235
+  line: 237
   hash: fe4206641610
   verdicts:
   - stage: S5a
@@ -753,7 +753,7 @@ items:
 - key: thm-rationals-dense-ordered-field
   kind: thm
   file: 02-naturals-and-archimedes.md
-  line: 251
+  line: 253
   hash: 69065deabf0d
   verdicts:
   - stage: S5a
@@ -774,7 +774,7 @@ items:
 - key: proof:thm-rationals-dense-ordered-field
   kind: proof
   file: 02-naturals-and-archimedes.md
-  line: 261
+  line: 263
   hash: 16ea90eefd83
   verdicts:
   - stage: S5a
@@ -808,8 +808,8 @@ items:
 - key: exm-rational-function-field
   kind: exm
   file: 02-naturals-and-archimedes.md
-  line: 275
-  hash: 8c2e784b2951
+  line: 277
+  hash: a2bd8dd2d1b2
   verdicts:
   - stage: S5a
     verdict: correct
@@ -841,7 +841,7 @@ items:
 - key: exr-naturals-and-archimedes-a1
   kind: exr
   file: 02-naturals-and-archimedes.md
-  line: 301
+  line: 303
   hash: c9047406edf0
   verdicts:
   - stage: S5a
@@ -872,7 +872,7 @@ items:
 - key: exr-naturals-and-archimedes-b1
   kind: exr
   file: 02-naturals-and-archimedes.md
-  line: 327
+  line: 329
   hash: 868896645d84
   verdicts:
   - stage: S5a
@@ -901,8 +901,8 @@ items:
 - key: exr-naturals-and-archimedes-b2
   kind: exr
   file: 02-naturals-and-archimedes.md
-  line: 337
-  hash: 72179529270e
+  line: 339
+  hash: 63b83895f1b6
   verdicts:
   - stage: S5a
     verdict: minor
@@ -943,7 +943,7 @@ items:
 - key: exr-naturals-and-archimedes-b3
   kind: exr
   file: 02-naturals-and-archimedes.md
-  line: 352
+  line: 354
   hash: 218da0c95886
   verdicts:
   - stage: S5a
@@ -977,7 +977,7 @@ items:
 - key: exr-naturals-and-archimedes-c1
   kind: exr
   file: 02-naturals-and-archimedes.md
-  line: 385
+  line: 387
   hash: 42fedc44f99e
   verdicts:
   - stage: S5a
@@ -1032,8 +1032,8 @@ items:
 - key: exr-naturals-and-archimedes-c2
   kind: exr
   file: 02-naturals-and-archimedes.md
-  line: 426
-  hash: aa7ca9ff378d
+  line: 429
+  hash: fcc108396c53
   verdicts:
   - stage: S5a
     verdict: correct
@@ -1076,7 +1076,7 @@ items:
 - key: exr-naturals-and-archimedes-c3
   kind: exr
   file: 02-naturals-and-archimedes.md
-  line: 449
+  line: 452
   hash: f6d5b8d1c164
   verdicts:
   - stage: S5a
@@ -1119,7 +1119,7 @@ items:
 - key: def-sequence-ordered-field
   kind: def
   file: 03-limits.md
-  line: 11
+  line: 13
   hash: f988dcbb8aac
   verdicts:
   - stage: S5a
@@ -1153,7 +1153,7 @@ items:
 - key: def-sequence-limit-ordered-field
   kind: def
   file: 03-limits.md
-  line: 40
+  line: 42
   hash: 4c026131ee24
   verdicts:
   - stage: S5a
@@ -1179,7 +1179,7 @@ items:
 - key: exm-first-sequences-ordered-field
   kind: exm
   file: 03-limits.md
-  line: 65
+  line: 67
   hash: 584694a3ba24
   verdicts:
   - stage: S5a
@@ -1214,7 +1214,7 @@ items:
 - key: check:03-limits:1
   kind: check
   file: 03-limits.md
-  line: 96
+  line: 98
   hash: 11c89eb9a6e6
   verdicts:
   - stage: S5a
@@ -1237,7 +1237,7 @@ items:
 - key: def-null-sequence-ordered-field
   kind: def
   file: 03-limits.md
-  line: 119
+  line: 121
   hash: 22aa344a2039
   verdicts:
   - stage: S5a
@@ -1265,7 +1265,7 @@ items:
 - key: def-bounded-sequence-ordered-field
   kind: def
   file: 03-limits.md
-  line: 125
+  line: 127
   hash: 038a3246cfbe
   verdicts:
   - stage: S5a
@@ -1297,7 +1297,7 @@ items:
 - key: prp-reciprocals-null-iff-archimedean
   kind: prp
   file: 03-limits.md
-  line: 137
+  line: 139
   hash: 04a9f23b260f
   verdicts:
   - stage: S5a
@@ -1330,8 +1330,8 @@ items:
 - key: proof:prp-reciprocals-null-iff-archimedean
   kind: proof
   file: 03-limits.md
-  line: 147
-  hash: ce8f959d2324
+  line: 149
+  hash: 1960a5cbce8d
   verdicts:
   - stage: S5a
     verdict: minor
@@ -1364,7 +1364,7 @@ items:
 - key: prp-tail-change-ordered-field
   kind: prp
   file: 03-limits.md
-  line: 171
+  line: 173
   hash: a1571089dd17
   verdicts:
   - stage: S5a
@@ -1385,7 +1385,7 @@ items:
 - key: proof:prp-tail-change-ordered-field
   kind: proof
   file: 03-limits.md
-  line: 186
+  line: 188
   hash: 72ee5d4b5851
   verdicts:
   - stage: S5a
@@ -1410,7 +1410,7 @@ items:
 - key: prp-limit-null-shift-ordered-field
   kind: prp
   file: 03-limits.md
-  line: 204
+  line: 206
   hash: 65ea1b1f6fd3
   verdicts:
   - stage: S5a
@@ -1430,7 +1430,7 @@ items:
 - key: proof:prp-limit-null-shift-ordered-field
   kind: proof
   file: 03-limits.md
-  line: 210
+  line: 212
   hash: 53bb2659e96f
   verdicts:
   - stage: S5a
@@ -1450,7 +1450,7 @@ items:
 - key: thm-limit-unique-ordered-field
   kind: thm
   file: 03-limits.md
-  line: 218
+  line: 220
   hash: b87c05b1ddac
   verdicts:
   - stage: S5a
@@ -1471,7 +1471,7 @@ items:
 - key: proof:thm-limit-unique-ordered-field
   kind: proof
   file: 03-limits.md
-  line: 230
+  line: 232
   hash: a27ab56e5402
   verdicts:
   - stage: S5a
@@ -1496,7 +1496,7 @@ items:
 - key: prp-convergent-bounded-ordered-field
   kind: prp
   file: 03-limits.md
-  line: 252
+  line: 254
   hash: 2ced4fc463fd
   verdicts:
   - stage: S5a
@@ -1516,8 +1516,8 @@ items:
 - key: proof:prp-convergent-bounded-ordered-field
   kind: proof
   file: 03-limits.md
-  line: 262
-  hash: 0ee804f47152
+  line: 264
+  hash: 8a5f6f49526e
   verdicts:
   - stage: S5a
     verdict: correct
@@ -1550,8 +1550,8 @@ items:
 - key: exr-limits-a1
   kind: exr
   file: 03-limits.md
-  line: 280
-  hash: e2459f295531
+  line: 282
+  hash: 3a38c78f7e4e
   verdicts:
   - stage: S5a
     verdict: minor
@@ -1592,8 +1592,8 @@ items:
 - key: exr-limits-b1
   kind: exr
   file: 03-limits.md
-  line: 303
-  hash: b4b55d1f89e3
+  line: 305
+  hash: 8c4384dde8fd
   verdicts:
   - stage: S5a
     verdict: minor
@@ -1647,7 +1647,7 @@ items:
 - key: exr-limits-b2
   kind: exr
   file: 03-limits.md
-  line: 329
+  line: 331
   hash: 8a76b7387864
   verdicts:
   - stage: S5a
@@ -1677,8 +1677,8 @@ items:
 - key: exr-limits-b3
   kind: exr
   file: 03-limits.md
-  line: 347
-  hash: 0167de15103b
+  line: 349
+  hash: 3ccbb75e83d7
   verdicts:
   - stage: S5a
     verdict: correct
@@ -1719,7 +1719,7 @@ items:
 - key: exr-limits-c1
   kind: exr
   file: 03-limits.md
-  line: 367
+  line: 369
   hash: d9374d3302a3
   verdicts:
   - stage: S5a
@@ -1750,8 +1750,8 @@ items:
 - key: exr-limits-c2
   kind: exr
   file: 03-limits.md
-  line: 386
-  hash: 1f2c945ec0da
+  line: 388
+  hash: a04775bffa95
   verdicts:
   - stage: S5a
     verdict: correct
@@ -1793,7 +1793,7 @@ items:
 - key: prp-null-times-bounded-ordered-field
   kind: prp
   file: 04-limit-laws.md
-  line: 11
+  line: 13
   hash: 465b752f902d
   verdicts:
   - stage: S5a
@@ -1815,7 +1815,7 @@ items:
 - key: proof:prp-null-times-bounded-ordered-field
   kind: proof
   file: 04-limit-laws.md
-  line: 17
+  line: 19
   hash: b379e0350fa8
   verdicts:
   - stage: S5a
@@ -1839,7 +1839,7 @@ items:
 - key: lem-limit-bounded-away-ordered-field
   kind: lem
   file: 04-limit-laws.md
-  line: 29
+  line: 31
   hash: 5fd64bd33967
   verdicts:
   - stage: S5a
@@ -1872,8 +1872,8 @@ items:
 - key: proof:lem-limit-bounded-away-ordered-field
   kind: proof
   file: 04-limit-laws.md
-  line: 35
-  hash: a38e2b8a2830
+  line: 37
+  hash: 0817cec98e4e
   verdicts:
   - stage: S5a
     verdict: correct
@@ -1906,7 +1906,7 @@ items:
 - key: thm-limit-laws-ordered-field
   kind: thm
   file: 04-limit-laws.md
-  line: 47
+  line: 49
   hash: 1d15e163916c
   verdicts:
   - stage: S5a
@@ -1928,8 +1928,8 @@ items:
 - key: proof:thm-limit-laws-ordered-field
   kind: proof
   file: 04-limit-laws.md
-  line: 68
-  hash: d907f55390bb
+  line: 70
+  hash: 11ce8785a9cc
   verdicts:
   - stage: S5a
     verdict: correct
@@ -1974,8 +1974,8 @@ items:
 - key: check:04-limit-laws:1
   kind: check
   file: 04-limit-laws.md
-  line: 121
-  hash: bd77adeae7b2
+  line: 123
+  hash: b453c2e703e2
   verdicts:
   - stage: S5a
     verdict: correct
@@ -2007,7 +2007,7 @@ items:
 - key: prp-limit-preserves-order-ordered-field
   kind: prp
   file: 04-limit-laws.md
-  line: 137
+  line: 139
   hash: 9937ff712806
   verdicts:
   - stage: S5a
@@ -2030,8 +2030,8 @@ items:
 - key: proof:prp-limit-preserves-order-ordered-field
   kind: proof
   file: 04-limit-laws.md
-  line: 153
-  hash: 2f34bce59a3f
+  line: 155
+  hash: bbc9d1d0cb93
   verdicts:
   - stage: S5a
     verdict: correct
@@ -2064,7 +2064,7 @@ items:
 - key: exr-limit-laws-a1
   kind: exr
   file: 04-limit-laws.md
-  line: 183
+  line: 185
   hash: f00db2e38660
   verdicts:
   - stage: S5a
@@ -2096,8 +2096,8 @@ items:
 - key: exr-limit-laws-b1
   kind: exr
   file: 04-limit-laws.md
-  line: 211
-  hash: 9f15a7886774
+  line: 213
+  hash: 118b889cd2fb
   verdicts:
   - stage: S5a
     verdict: correct
@@ -2136,7 +2136,7 @@ items:
 - key: exr-limit-laws-b2
   kind: exr
   file: 04-limit-laws.md
-  line: 237
+  line: 239
   hash: c54fc9a5b57a
   verdicts:
   - stage: S5a
@@ -2169,7 +2169,7 @@ items:
 - key: exr-limit-laws-b3
   kind: exr
   file: 04-limit-laws.md
-  line: 267
+  line: 269
   hash: 311202c991f7
   verdicts:
   - stage: S5a
@@ -2199,8 +2199,8 @@ items:
 - key: exr-limit-laws-c1
   kind: exr
   file: 04-limit-laws.md
-  line: 291
-  hash: 3e53858f5358
+  line: 293
+  hash: 77055f782ccf
   verdicts:
   - stage: S5a
     verdict: minor
@@ -2241,7 +2241,7 @@ items:
 - key: exr-limit-laws-c2
   kind: exr
   file: 04-limit-laws.md
-  line: 325
+  line: 327
   hash: 5f92b75fad28
   verdicts:
   - stage: S5a
@@ -2284,7 +2284,7 @@ items:
 - key: def-cauchy-sequence-ordered-field
   kind: def
   file: 05-cauchy-sequences.md
-  line: 15
+  line: 17
   hash: d28211bbe31b
   verdicts:
   - stage: S5a
@@ -2319,7 +2319,7 @@ items:
 - key: prp-convergent-cauchy-ordered-field
   kind: prp
   file: 05-cauchy-sequences.md
-  line: 63
+  line: 65
   hash: afcfc9d0359c
   verdicts:
   - stage: S5a
@@ -2340,7 +2340,7 @@ items:
 - key: proof:prp-convergent-cauchy-ordered-field
   kind: proof
   file: 05-cauchy-sequences.md
-  line: 73
+  line: 75
   hash: 5740f95ef87a
   verdicts:
   - stage: S5a
@@ -2363,7 +2363,7 @@ items:
 - key: check:05-cauchy-sequences:1
   kind: check
   file: 05-cauchy-sequences.md
-  line: 83
+  line: 85
   hash: 4b6ec5711b11
   verdicts:
   - stage: S5a
@@ -2387,7 +2387,7 @@ items:
 - key: prp-cauchy-bounded-ordered-field
   kind: prp
   file: 05-cauchy-sequences.md
-  line: 93
+  line: 95
   hash: 6c4ca64acddc
   verdicts:
   - stage: S5a
@@ -2408,7 +2408,7 @@ items:
 - key: proof:prp-cauchy-bounded-ordered-field
   kind: proof
   file: 05-cauchy-sequences.md
-  line: 103
+  line: 105
   hash: b6a1bb48d4cc
   verdicts:
   - stage: S5a
@@ -2432,7 +2432,7 @@ items:
 - key: thm-cauchy-algebra-ordered-field
   kind: thm
   file: 05-cauchy-sequences.md
-  line: 121
+  line: 123
   hash: f3e260899b80
   verdicts:
   - stage: S5a
@@ -2454,8 +2454,8 @@ items:
 - key: proof:thm-cauchy-algebra-ordered-field
   kind: proof
   file: 05-cauchy-sequences.md
-  line: 137
-  hash: eb408e98e501
+  line: 139
+  hash: 67a39b6e36cc
   verdicts:
   - stage: S5a
     verdict: correct
@@ -2500,7 +2500,7 @@ items:
 - key: thm-cauchy-not-null-sign
   kind: thm
   file: 05-cauchy-sequences.md
-  line: 181
+  line: 184
   hash: 721dd4860bf4
   verdicts:
   - stage: S5a
@@ -2524,8 +2524,8 @@ items:
 - key: proof:thm-cauchy-not-null-sign
   kind: proof
   file: 05-cauchy-sequences.md
-  line: 201
-  hash: 0ccf165e9b58
+  line: 204
+  hash: 528c730663c8
   verdicts:
   - stage: S5a
     verdict: correct
@@ -2561,7 +2561,7 @@ items:
 - key: prp-sign-stable-ordered-field
   kind: prp
   file: 05-cauchy-sequences.md
-  line: 232
+  line: 235
   hash: 0de23305f0fa
   verdicts:
   - stage: S5a
@@ -2583,8 +2583,8 @@ items:
 - key: proof:prp-sign-stable-ordered-field
   kind: proof
   file: 05-cauchy-sequences.md
-  line: 238
-  hash: 653c04d360b8
+  line: 241
+  hash: 6a1406535f50
   verdicts:
   - stage: S5a
     verdict: correct
@@ -2615,7 +2615,7 @@ items:
 - key: prp-cauchy-reciprocal-ordered-field
   kind: prp
   file: 05-cauchy-sequences.md
-  line: 248
+  line: 251
   hash: b269690a182c
   verdicts:
   - stage: S5a
@@ -2637,8 +2637,8 @@ items:
 - key: proof:prp-cauchy-reciprocal-ordered-field
   kind: proof
   file: 05-cauchy-sequences.md
-  line: 262
-  hash: 79d66e6fe8e2
+  line: 265
+  hash: d738c1eb8f7f
   verdicts:
   - stage: S5a
     verdict: correct
@@ -2672,8 +2672,8 @@ items:
 - key: exm-consecutive-differences-not-cauchy
   kind: exm
   file: 05-cauchy-sequences.md
-  line: 288
-  hash: 898fc6aa2e1c
+  line: 291
+  hash: eb9cbc82bc15
   verdicts:
   - stage: S5a
     verdict: correct
@@ -2720,7 +2720,7 @@ items:
 - key: exr-cauchy-sequences-a1
   kind: exr
   file: 05-cauchy-sequences.md
-  line: 327
+  line: 330
   hash: 8173fdbd8d5a
   verdicts:
   - stage: S5a
@@ -2751,7 +2751,7 @@ items:
 - key: exr-cauchy-sequences-b1
   kind: exr
   file: 05-cauchy-sequences.md
-  line: 355
+  line: 358
   hash: f1819615e337
   verdicts:
   - stage: S5a
@@ -2783,7 +2783,7 @@ items:
 - key: exr-cauchy-sequences-b2
   kind: exr
   file: 05-cauchy-sequences.md
-  line: 375
+  line: 378
   hash: 014044a5b0dc
   verdicts:
   - stage: S5a
@@ -2812,7 +2812,7 @@ items:
 - key: exr-cauchy-sequences-b3
   kind: exr
   file: 05-cauchy-sequences.md
-  line: 393
+  line: 396
   hash: 755c467827bd
   verdicts:
   - stage: S5a
@@ -2842,8 +2842,8 @@ items:
 - key: exr-cauchy-sequences-c1
   kind: exr
   file: 05-cauchy-sequences.md
-  line: 409
-  hash: 2fcf0a547bbb
+  line: 412
+  hash: 6550818014b1
   verdicts:
   - stage: S5a
     verdict: correct
@@ -2885,8 +2885,8 @@ items:
 - key: exr-cauchy-sequences-c2
   kind: exr
   file: 05-cauchy-sequences.md
-  line: 435
-  hash: 4e3a6f6fa76c
+  line: 438
+  hash: 8f7690307098
   verdicts:
   - stage: S5a
     verdict: correct
@@ -2927,8 +2927,8 @@ items:
 - key: exr-cauchy-sequences-c3
   kind: exr
   file: 05-cauchy-sequences.md
-  line: 461
-  hash: e3e00092cf11
+  line: 464
+  hash: e2d0dc028889
   verdicts:
   - stage: S5a
     verdict: correct
@@ -2972,7 +2972,7 @@ items:
 - key: thm-sqrt2-cauchy-no-rational-limit
   kind: thm
   file: 06-a-cauchy-sequence-without-a-limit.md
-  line: 34
+  line: 36
   hash: faaf495564eb
   verdicts:
   - stage: S5a
@@ -2998,8 +2998,8 @@ items:
 - key: proof:thm-sqrt2-cauchy-no-rational-limit
   kind: proof
   file: 06-a-cauchy-sequence-without-a-limit.md
-  line: 48
-  hash: 5897fdbc1a98
+  line: 50
+  hash: f3efc4c6fcd7
   verdicts:
   - stage: S5a
     verdict: minor
@@ -3032,7 +3032,7 @@ items:
 - key: check:06-a-cauchy-sequence-without-a-limit:1
   kind: check
   file: 06-a-cauchy-sequence-without-a-limit.md
-  line: 98
+  line: 100
   hash: f51db8bba462
   verdicts:
   - stage: S5a
@@ -3054,7 +3054,7 @@ items:
 - key: exr-a-cauchy-sequence-without-a-limit-a1
   kind: exr
   file: 06-a-cauchy-sequence-without-a-limit.md
-  line: 122
+  line: 124
   hash: 42ad2b54a43e
   verdicts:
   - stage: S5a
@@ -3086,8 +3086,8 @@ items:
 - key: exr-a-cauchy-sequence-without-a-limit-b1
   kind: exr
   file: 06-a-cauchy-sequence-without-a-limit.md
-  line: 154
-  hash: 4d8554577300
+  line: 156
+  hash: 0298a0cb076c
   verdicts:
   - stage: S5a
     verdict: correct
@@ -3129,8 +3129,8 @@ items:
 - key: exr-a-cauchy-sequence-without-a-limit-b2
   kind: exr
   file: 06-a-cauchy-sequence-without-a-limit.md
-  line: 170
-  hash: d15e3881d46b
+  line: 172
+  hash: 20b080487efd
   verdicts:
   - stage: S5a
     verdict: minor
@@ -3181,7 +3181,7 @@ items:
 - key: exr-a-cauchy-sequence-without-a-limit-c1
   kind: exr
   file: 06-a-cauchy-sequence-without-a-limit.md
-  line: 188
+  line: 190
   hash: 0f8dc0aa8245
   verdicts:
   - stage: S5a
@@ -3225,7 +3225,7 @@ items:
 - key: exr-a-cauchy-sequence-without-a-limit-c2
   kind: exr
   file: 06-a-cauchy-sequence-without-a-limit.md
-  line: 257
+  line: 259
   hash: c851a693cbb2
   verdicts:
   - stage: S5a
@@ -3258,8 +3258,8 @@ items:
 - key: exr-a-cauchy-sequence-without-a-limit-r1
   kind: exr
   file: 06-a-cauchy-sequence-without-a-limit.md
-  line: 277
-  hash: c3b4ae08f3f7
+  line: 279
+  hash: b229f254e34f
   verdicts:
   - stage: S5a
     verdict: gap
@@ -3315,8 +3315,8 @@ items:
 - key: exr-a-cauchy-sequence-without-a-limit-r2
   kind: exr
   file: 06-a-cauchy-sequence-without-a-limit.md
-  line: 299
-  hash: 0d0c2166f1c8
+  line: 301
+  hash: 26dc14235c35
   verdicts:
   - stage: S5a
     verdict: minor
@@ -3367,8 +3367,8 @@ items:
 - key: exr-a-cauchy-sequence-without-a-limit-r3
   kind: exr
   file: 06-a-cauchy-sequence-without-a-limit.md
-  line: 321
-  hash: 932377d2abca
+  line: 323
+  hash: 39a3ce841109
   verdicts:
   - stage: S5a
     verdict: correct
@@ -3422,7 +3422,7 @@ items:
 - key: exr-a-cauchy-sequence-without-a-limit-r4
   kind: exr
   file: 06-a-cauchy-sequence-without-a-limit.md
-  line: 349
+  line: 350
   hash: d1e5e4ac1691
   verdicts:
   - stage: S5a

@@ -1,1405 +1,10 @@
 chapter: 1
-dir: ch01-zf-and-natural-numbers
+dir: ch01-natural-numbers
 items:
-- key: ax-zf-fragment
-  kind: ax
-  file: 01-sets-from-axioms.md
-  line: 21
-  hash: d0e03bfd8586
-  verdicts:
-  - stage: S5a
-    verdict: minor
-    by: refereeA
-    hash: d0e03bfd8586
-    date: '2026-10-11'
-    model: claude-opus-5-5
-    evidence: '01-sets-from-axioms.md:51 ''(Z1) is the only axiom that proves two sets equal'' is false
-      as written: (Z3) alone proves equalities.'
-  - stage: S5b
-    verdict: minor
-    by: refereeB
-    hash: d0e03bfd8586
-    date: '2026-10-11'
-    model: claude-opus-5-5
-    evidence: 01-sets-from-axioms.md:44 The (Z6) schema forbids the letter B in phi, and 01:56 says the
-      instance phi = 'x notin B' fails. Yet A cap B and A minus B are then given as (Z6) instances with
-      phi = 'x in B' and phi = 'x notin B', using the parameter B. The text never says the schema's B
-      is a bound letter that must be renamed.
-  - stage: S8
-    verdict: minor
-    by: seam
-    hash: d0e03bfd8586
-    date: '2026-10-11'
-    model: claude-opus-5-5
-    evidence: 01-sets-from-axioms.md:60 A move is announced but never named.
-  - stage: S7r
-    verdict: correct
-    by: rereferee
-    hash: d0e03bfd8586
-    date: '2026-10-11'
-    model: claude-opus-5-5
-    evidence: All 7 earlier findings are resolved. (1) 01:52 now says (Z1) is the only axiom that proves
-      equality 'by comparing their elements', which is true. (2) 01:48 says the B of (Z6) is bound and
-      can be renamed (Section 4.2, ch04/02:388, which needs a new letter that appears nowhere in the formula).
-      It gives the renamed instance for A\B with D, and proof (c) at 01:122 points to this. 01:57 now
-      says that t
-- key: prp-zf-basic-sets
-  kind: prp
-  file: 01-sets-from-axioms.md
-  line: 94
-  hash: 0253f483d87a
-  verdicts:
-  - stage: S5a
-    verdict: minor
-    by: refereeA
-    hash: a87fe8b79fef
-    date: '2026-10-11'
-    model: claude-opus-5-5
-    evidence: 01-sets-from-axioms.md:99 Part (c) defines A cup B := union of {A, B} but never states its
-      membership condition. Later labels cite part (c) for exactly that condition, which is proved only
-      inside the proof.
-  - stage: S5b
-    verdict: minor
-    by: refereeB
-    hash: a87fe8b79fef
-    date: '2026-10-11'
-    model: claude-opus-5-5
-    evidence: 01-sets-from-axioms.md:99 Part (c) defines A cup B := U{A,B} but does not state its membership
-      condition, x in A cup B iff x in A or x in B. Later text cites part (c) for exactly that condition.
-  - stage: S8
-    verdict: correct
-    by: seam
-    hash: a87fe8b79fef
-    date: '2026-10-11'
-    model: claude-opus-5-5
-    evidence: 01:44 and 01:56 forbid the letter B in the formula of (Z6), yet 01:121 says 'instances of
-      (Z6), with ambient set A and parameter B', and 02:125 has 'parameters A, B'. [finding refuted by
-      skeptics]
-  - stage: S7r
-    verdict: correct
-    by: rereferee
-    hash: 0253f483d87a
-    date: '2026-10-11'
-    model: claude-opus-5-5
-    evidence: 'The earlier finding is resolved: (c) at 01:100 now states that x in A cup B iff x in A
-      or x in B, and 01:104 states the membership condition of the big intersection of a set S. Both are
-      proved at 01:122-128. The intersection and difference match def-set-operations (ch06/02:11) (b),(c),
-      and the big intersection agrees with def-family-union-intersection (ch06/02:197) when S is a subset
-      of P(X). The '
-- key: proof:prp-zf-basic-sets
-  kind: proof
-  file: 01-sets-from-axioms.md
-  line: 117
-  hash: 7d2d6c428c4a
-  verdicts:
-  - stage: S5a
-    verdict: correct
-    by: refereeA
-    hash: 35289ded0656
-    date: '2026-10-11'
-    model: claude-opus-5-5
-    evidence: 01:116-140 (a)-(c) use the uniqueness move via (Z1), with parameters stated correctly (B
-      for cap and minus; the set-of-sets S for the big intersection, with the ambient set A_0). The A_0-independence
-      argument at 01:127 uses A_0 in S both ways, and the non-empty hypothesis is used to pick A_0. In
-      (d) both cases and all four subcases check, and the step d in {a}, so d = a, is justified by (b).
-      The s
-  - stage: S5b
-    verdict: correct
-    by: refereeB
-    hash: 35289ded0656
-    date: '2026-10-11'
-    model: claude-opus-5-5
-    evidence: '01:116-140: (a)-(c) are uniqueness by (Z1). The bigcap simplification at 01:125-127 is
-      right. In (d), all four subcases (01:133-135) were checked by hand, and verify/ch09/prp-zf-basic-sets.py
-      passes exhaustively on 16 hereditarily finite sets. The last claim (01:139) is right. The only unreferenced
-      steps are logic steps, ledgered at 01:270-271.'
-  - stage: S7r
-    verdict: correct
-    by: rereferee
-    hash: 7d2d6c428c4a
-    date: '2026-10-11'
-    model: claude-opus-5-5
-    evidence: Checked line by line. (a) and (b) use (Z1) on identical membership conditions. (c) gets
-      the union of two sets from (Z4) and (b). A cap B and A\B are instances of (Z6) after renaming the
-      bound letter, as 01:48 sets up. The big intersection is an instance of (Z6) with parameter S, which
-      does not contain the bound letter B. The equivalence at 01:126 holds both ways, and it gives independence
-      from A_0
-- key: check:01-sets-from-axioms:1
-  kind: check
-  file: 01-sets-from-axioms.md
-  line: 147
-  hash: 267d56a78101
-  verdicts:
-  - stage: S5a
-    verdict: correct
-    by: refereeA
-    hash: 267d56a78101
-    date: '2026-10-11'
-    model: claude-opus-5-5
-    evidence: '01:147-151: the union of the empty set is the empty set; the union of {empty set} is the
-      empty set; the union of {{empty set}, {empty set, {empty set}}} is {empty set, {empty set}}. All
-      three are verified by hand, and verify/ch09/ax-zf-fragment.py passes.'
-  - stage: S5b
-    verdict: correct
-    by: refereeB
-    hash: 267d56a78101
-    date: '2026-10-11'
-    model: claude-opus-5-5
-    evidence: '01:147-151: U(empty)=empty, U{empty}=empty, U{{empty},{empty,{empty}}}={empty,{empty}}.
-      Confirmed by verify/ch09/ax-zf-fragment.py (passes) and by hand.'
-- key: exr-sets-from-axioms-a1
-  kind: exr
-  file: 01-sets-from-axioms.md
-  line: 161
-  hash: 0a3fca4a95c9
-  verdicts:
-  - stage: S5a
-    verdict: correct
-    by: refereeA
-    hash: 0a3fca4a95c9
-    date: '2026-10-11'
-    model: claude-opus-5-5
-    evidence: 01:172-178 (a) names the right axioms; P(empty set) = {empty set} and the union of {empty
-      set} is the empty set. (b) uses (d) with c = d = b, which is valid since {b} := {b, b}. (c) uses
-      the membership condition of {a}. (d) gives a set containing every set, refuted by the second claim
-      of thm-russell (ch06 01:331), whose proof uses only Separation.
-  - stage: S5b
-    verdict: correct
-    by: refereeB
-    hash: 0a3fca4a95c9
-    date: '2026-10-11'
-    model: claude-opus-5-5
-    evidence: '01:164-178: the axiom lists in (a) are right. (b) applies (d) with c=d=b. (c) uses the
-      membership of {a}, from (b). (d) uses U T and the second claim of thm-russell (ch06 01:331 ''Hence
-      there is no set of which every set is an element''). Sidecar passes.'
-  - stage: S6
-    verdict: correct
-    by: verifier
-    hash: 0a3fca4a95c9
-    date: '2026-10-11'
-    model: claude-opus-5-5
-    evidence: '01:171-179. I solved it first and my answers agree: (a) the axioms are listed correctly;
-      (b) is true by prp-zf-basic-sets (d) with c=d=b; (c) uses (Z1); (d) answers No, because the union
-      of T would contain every set (thm-russell). My script confirms the union of {a} is a for all 16
-      hereditarily finite sets of rank 3.'
-- key: exr-sets-from-axioms-b1
-  kind: exr
-  file: 01-sets-from-axioms.md
-  line: 184
-  hash: b5f2475eac5a
-  verdicts:
-  - stage: S5a
-    verdict: correct
-    by: refereeA
-    hash: b5f2475eac5a
-    date: '2026-10-11'
-    model: claude-opus-5-5
-    evidence: 01:193-199 (a) P(P(empty set)) = P({empty set}) = {empty set, {empty set}}. (b) proves both
-      inclusions; prp-subset-antisymmetric's (<=) direction is (Z1). The step {x} subset of X uses prp
-      (b). The sidecar passes.
-  - stage: S5b
-    verdict: correct
-    by: refereeB
-    hash: b5f2475eac5a
-    date: '2026-10-11'
-    model: claude-opus-5-5
-    evidence: '01:187-199: P(P(empty))={empty,{empty}} matches 01:70. In U P(X)=X both inclusions are
-      correct, and {x} subset X uses (b). Sidecar passes.'
-  - stage: S6
-    verdict: correct
-    by: verifier
-    hash: b5f2475eac5a
-    date: '2026-10-11'
-    model: claude-opus-5-5
-    evidence: '01:192-200. P(P(∅)) = {∅,{∅}} and the union of P(X) is X for all 16 rank-3 hereditarily
-      finite sets (my script). The two-inclusion proof is complete. Worked examples exist: the power set
-      and union items at 01:69-70 and the A1(c) pattern.'
-- key: exr-sets-from-axioms-b2
-  kind: exr
-  file: 01-sets-from-axioms.md
-  line: 203
-  hash: cc746d9bae9f
-  verdicts:
-  - stage: S5a
-    verdict: correct
-    by: refereeA
-    hash: cc746d9bae9f
-    date: '2026-10-11'
-    model: claude-opus-5-5
-    evidence: 01:213-217 the intersection is {{empty set}} with either choice of A_0. The step {{empty
-      set}} notin X is justified (its element {empty set} is not the empty set). (b) restates the proof's
-      simplification, and (c) appeals to thm-russell correctly. The sidecar passes.
-  - stage: S5b
-    verdict: correct
-    by: refereeB
-    hash: cc746d9bae9f
-    date: '2026-10-11'
-    model: claude-opus-5-5
-    evidence: '01:206-217: computing bigcap{X,Y} gives {{empty}} with both A_0. The reasons given ({{empty}}
-      != empty and != {empty}) are right. (b) and (c) match prp (c) and thm-russell. Sidecar passes.'
-  - stage: S6
-    verdict: correct
-    by: verifier
-    hash: cc746d9bae9f
-    date: '2026-10-11'
-    model: claude-opus-5-5
-    evidence: '01:212-218. My script gives X∩Y = {{∅}}, which matches both computations. Part (b) restates
-      the A0-independence argument of prp-zf-basic-sets (c). Part (c) is correct, citing thm-russell.
-      A worked model of the same type exists: the separation example at 01:71.'
-- key: exr-sets-from-axioms-c1
-  kind: exr
-  file: 01-sets-from-axioms.md
-  line: 223
-  hash: abbfdbe58be9
-  verdicts:
-  - stage: S5a
-    verdict: correct
-    by: refereeA
-    hash: abbfdbe58be9
-    date: '2026-10-11'
-    model: claude-opus-5-5
-    evidence: '01:244-252 (a) {x in A : x != x} is empty by =I, and the remark on deriving the existence
-      of some x with x = x matches Section 4.11 (ch04 11-models.md:227-235). In (b) the choice of A_0
-      is legitimate, because prp (c) proves independence from A_0. The identity of the intersection of
-      {A, B} with A cap B uses the membership condition of {A, B}.'
-  - stage: S5b
-    verdict: minor
-    by: refereeB
-    hash: abbfdbe58be9
-    date: '2026-10-11'
-    model: claude-opus-5-5
-    evidence: 01-sets-from-axioms.md:227 The exercise says 'Deduce that bigcap{A,B} = A cap B', but the
-      solution does not deduce it from the two inclusions just proved. It compares membership conditions
-      afresh.
-  - stage: S6
-    verdict: minor
-    by: verifier
-    hash: abbfdbe58be9
-    date: '2026-10-11'
-    model: claude-opus-5-5
-    evidence: 01-sets-from-axioms.md:258 The last 2 points of the scheme name one route ('by comparing
-      membership conditions'), but the problem says 'Deduce', which invites the route through the inclusions
-      just proved.
-  - stage: S7r
-    verdict: correct
-    by: rereferee
-    hash: abbfdbe58be9
-    date: '2026-10-11'
-    model: claude-opus-5-5
-    evidence: 'I solved it independently and the solution agrees. (a) The set {x in A : x != x} has no
-      elements, by =I. The remark about Infinity replacing (Z2) matches the inductive-set clause at 03:105.
-      The remark that a set exists because domains are non-empty matches Section 4.11 (ch04/11:227). (b)
-      Both halves are correct, and the second half places x in A_0. Both earlier findings are resolved.
-      The deduction'
-- key: def-kuratowski-pair
-  kind: def
-  file: 02-pairs-as-sets.md
-  line: 11
-  hash: e40a78397933
-  verdicts:
-  - stage: S5a
-    verdict: correct
-    by: refereeA
-    hash: e40a78397933
-    date: '2026-10-11'
-    model: claude-opus-5-5
-    evidence: 02:11-27. (Z3) three times (via prp-zf-basic-sets (b)) makes {{a},{a,b}} a set. The examples
-      (a,a)={{a}}, ({∅},∅)={{{∅}},{{∅},∅}} and (∅,{∅})={{∅},{∅,{∅}}} all check by hand and in verify/ch09/thm-kuratowski-pair.py.
-  - stage: S5b
-    verdict: correct
-    by: refereeB
-    hash: e40a78397933
-    date: '2026-10-11'
-    model: claude-opus-5-5
-    evidence: '02:14-21. (a,b)={{a},{a,b}} is a set by (Z3) used three times, matching A1(c) at 02:202.
-      The examples at 02:25-27 check out: (a,a)={{a}}; ({∅},∅)={{{∅}},{{∅},∅}}; (∅,{∅})={{∅},{∅,{∅}}}.
-      The sidecar thm-kuratowski-pair.py passes.'
-- key: exm-failed-pair-encodings
-  kind: exm
-  file: 02-pairs-as-sets.md
-  line: 31
-  hash: a05cb049c547
-  verdicts:
-  - stage: S5a
-    verdict: correct
-    by: refereeA
-    hash: 47afec9485d9
-    date: '2026-10-11'
-    model: claude-opus-5-5
-    evidence: '02:31-54. (i) and (ii) are symmetric, with the stated values. In (iii), a={{∅}}, b=∅, c=d={∅}:
-      {a,{b}}={{{∅}},{∅}}={c,{d}}, and a≠c because ∅∈c and ∅∉a. The sidecar passes.'
-  - stage: S5b
-    verdict: minor
-    by: refereeB
-    hash: 47afec9485d9
-    date: '2026-10-11'
-    model: claude-opus-5-5
-    evidence: 02-pairs-as-sets.md:53 The text asserts that Wiener's encoding 'also works', and the only
-      proof is exercise C3. That breaks the STYLE §9 checklist rule that no claim rests on an exercise.
-  - stage: S7r
-    verdict: correct
-    by: rereferee
-    hash: a05cb049c547
-    date: '2026-10-11'
-    model: claude-opus-5-5
-    evidence: '02-pairs-as-sets.md:43-53. I rechecked the counterexamples. (i) and (ii) are symmetric
-      in a and b. In (iii), {a,{b}} and {c,{d}} are both {{∅},{{∅}}}, so they are equal by Z1, and a≠c
-      because ∅∈c and ∅∉a. The S5b finding is resolved. Line 53 no longer says Wiener''s encoding ''also
-      works''. It now only points to exercise C3 (''exercise C3 asks you to show...''), and nothing in
-      the text depends on that '
-- key: thm-kuratowski-pair
-  kind: thm
-  file: 02-pairs-as-sets.md
-  line: 66
-  hash: 96f8c5a3439f
-  verdicts:
-  - stage: S5a
-    verdict: correct
-    by: refereeA
-    hash: 96f8c5a3439f
-    date: '2026-10-11'
-    model: claude-opus-5-5
-    evidence: 02:66-73. The statement matches fd2 def-ordered-pair (Ch 6 03:16-19) word for word, so it
-      pays the blueprint row 'postulated there, proved here'.
-  - stage: S5b
-    verdict: minor
-    by: refereeB
-    hash: 96f8c5a3439f
-    date: '2026-10-11'
-    model: claude-opus-5-5
-    evidence: 02-pairs-as-sets.md:103 The text misreports Chapter 6's working convention as 'one working
-      convention about pairs and numbers' and then 'The working convention said that a pair is not a number'.
-      It drops the second clause, 'a triple is not a pair'. It also misquotes 6.3's scope ('nothing else
-      ... is used there', meaning Section 6.3, where 6.3 says 'this chapter').
-  - stage: S7r
-    verdict: correct
-    by: rereferee
-    hash: 96f8c5a3439f
-    date: '2026-10-11'
-    model: claude-opus-5-5
-    evidence: I rechecked the proof at :84-96 line by line. Case 1 and Case 2 use the 'in particular'
-      clause of prp-zf-basic-sets (d) (01-sets-from-axioms.md:109) correctly. a≠b is used at :90 and :94,
-      as :99 says. All three S5b findings are resolved. (1) :103 now says 'used in Chapter 6', which matches
-      ch06 03:24 ('in this chapter'), and it gives both clauses of the convention. (2) 9.4 is now limited
-      to the na
-- key: proof:thm-kuratowski-pair
-  kind: proof
-  file: 02-pairs-as-sets.md
-  line: 83
-  hash: e3e19f4575c5
-  verdicts:
-  - stage: S5a
-    verdict: correct
-    by: refereeA
-    hash: e3e19f4575c5
-    date: '2026-10-11'
-    model: claude-opus-5-5
-    evidence: '02:83-97. The case split a=b / a≠b is excluded middle. Case 1: {c,d}={a} gives a=c and
-      c=d by prp-zf-basic-sets (d), ''in particular'' clause. Case 2: c=d would force {a,b}={c}, so a=b,
-      which is excluded. {a}={c,d} is excluded because it gives c=d, so {a}={c} and a=c. {a,b}={c} is
-      excluded because it gives a=b, so {a,b}={a,d}, and both disjuncts of (d) give b=d. Every step cites
-      (d) with hypotheses '
-  - stage: S5b
-    verdict: correct
-    by: refereeB
-    hash: e3e19f4575c5
-    date: '2026-10-11'
-    model: claude-opus-5-5
-    evidence: 02:84-96. Case 1 uses the 'in particular' clause of prp-zf-basic-sets (d) correctly on {c,d}={a}.
-      Case 2 uses a≠b twice, at :90 to exclude c=d and at :94 to exclude {a,b}={c}, and :99 says so correctly.
-      At :94 both disjuncts give b=d. Excluded middle is in the ledger at :322.
-- key: prp-cartesian-product-exists
-  kind: prp
-  file: 02-pairs-as-sets.md
-  line: 109
-  hash: 9961d24cb646
-  verdicts:
-  - stage: S5a
-    verdict: correct
-    by: refereeA
-    hash: 9961d24cb646
-    date: '2026-10-11'
-    model: claude-opus-5-5
-    evidence: 02:109-116. The membership condition is the same as def-cartesian-product (Ch 6 03:71-74).
-      Uniqueness comes from (Z1).
-  - stage: S5b
-    verdict: correct
-    by: refereeB
-    hash: 9961d24cb646
-    date: '2026-10-11'
-    model: claude-opus-5-5
-    evidence: 02:112-115. The statement fits def-cartesian-product (6.3:67-72), and 02:132 identifies
-      the two sets. The blueprint at 02:99 is matched.
-- key: proof:prp-cartesian-product-exists
-  kind: proof
-  file: 02-pairs-as-sets.md
-  line: 122
-  hash: c69694d8705f
-  verdicts:
-  - stage: S5a
-    verdict: correct
-    by: refereeA
-    hash: c69694d8705f
-    date: '2026-10-11'
-    model: claude-opus-5-5
-    evidence: 02:122-130. U=A∪B by (c), and W=P(P(U)) by (Z5). {a},{a,b}⊆U (elements by (b)), so (a,b)∈W.
-      (Z6) is applied with ambient W and parameters A,B, and the property is admissible by 01:58, which
-      lists pairs explicitly. Both directions are checked, and W depends only on A and B.
-  - stage: S5b
-    verdict: correct
-    by: refereeB
-    hash: c69694d8705f
-    date: '2026-10-11'
-    model: claude-opus-5-5
-    evidence: 02:123-129. U=A∪B comes from prp-zf-basic-sets (c) and W=𝒫𝒫U from (Z5) twice. (a,b)⊆𝒫U is
-      checked. Separation is used with parameters A and B, admissibility is justified by the unwinding
-      paragraph of 9.1 (01:58, ledgered at :325), and uniqueness comes from (Z1).
-- key: prp-working-rules-from-axioms
-  kind: prp
-  file: 02-pairs-as-sets.md
-  line: 136
-  hash: cc2dac91161b
-  verdicts:
-  - stage: S5a
-    verdict: minor
-    by: refereeA
-    hash: c7ec843dee50
-    date: '2026-10-11'
-    model: claude-opus-5-5
-    evidence: 02-pairs-as-sets.md:142 (W1) is stated for 'every property P(x)', but the proof '(W1) is
-      (Z6)' covers only admissible properties, those whose unwinding is a formula of the language.
-  - stage: S5b
-    verdict: minor
-    by: refereeB
-    hash: c7ec843dee50
-    date: '2026-10-11'
-    model: claude-opus-5-5
-    evidence: 02-pairs-as-sets.md:3 The intro says the section 'recovers ... the working rules (W1)–(W5)
-      of Section 6.1 from the axioms' with no qualification. The section itself recovers only part of
-      them.
-  - stage: S7r
-    verdict: correct
-    by: rereferee
-    hash: cc2dac91161b
-    date: '2026-10-11'
-    model: claude-opus-5-5
-    evidence: ':139-147 against ch06 01:237-242. (W1) is now limited to admissible properties, with a
-      pointer to 9.1 (01:59 defines ''admissible'' and says every property of the chapter is admissible).
-      The intro (:3) now names the restricted forms of (W2), (W3) and (W5), and says where the remainders
-      are paid. 9.6 pays them through prp-tuples-as-sets (a), (b) and (d) (06:243ff), and Replacement
-      is a prose pointer '
-- key: proof:prp-working-rules-from-axioms
-  kind: proof
-  file: 02-pairs-as-sets.md
-  line: 154
-  hash: ef65fc41f7ba
-  verdicts:
-  - stage: S5a
-    verdict: correct
-    by: refereeA
-    hash: cbb1cb5a5d91
-    date: '2026-10-11'
-    model: claude-opus-5-5
-    evidence: '02:154-168. (W2): the recipe is (Z3), then one ∪ per entry, by prp-zf-basic-sets (c). (W3):
-      the unwinding of x∈f(i) as ∃S((i,S)∈G ∧ x∈S) is correct because i∈I and G is functional. Ambient
-      X with parameters I,G gives the union by (Z6), and the intersection is (Z6) inside X as in def-family-union-intersection
-      (b).'
-  - stage: S5b
-    verdict: correct
-    by: refereeB
-    hash: cbb1cb5a5d91
-    date: '2026-10-11'
-    model: claude-opus-5-5
-    evidence: '02:155-167. (W1)=(Z6), (W4)=(Z5) and (W5)=prp-cartesian-product-exists. (W2) is built entry
-      by entry with ∪, citing prp-zf-basic-sets (c), and is ledgered at :329. For (W3), the unwinding
-      of x∈f(i) as ∃S((i,S)∈G∧x∈S) is right because f is a function. The intersection is a set by (Z6)
-      inside X. The idea at :151, ''three of the rules are already in hand'', is true: (W1), (W4) and
-      (W5).'
-  - stage: S7r
-    verdict: correct
-    by: rereferee
-    hash: ef65fc41f7ba
-    date: '2026-10-11'
-    model: claude-opus-5-5
-    evidence: ':154-168. (W1) is now Z6 applied to the unwinding of P(x), with parameters, which matches
-      the admissible statement. (W2) adds the entries one at a time using ∪, by prp-zf-basic-sets (c),
-      and :170 is honest that this is not a proof for every n. (W3): V is cut from X by Z6 with parameters
-      I and G, ''x∈f(i)'' unwinds correctly through the graph G (def-function, ch06 04:16-20), and A_i⊆X
-      gives the membe'
-- key: check:02-pairs-as-sets:1
-  kind: check
-  file: 02-pairs-as-sets.md
-  line: 174
-  hash: 7a6e591b3b1a
-  verdicts:
-  - stage: S5a
-    verdict: correct
-    by: refereeA
-    hash: 7a6e591b3b1a
-    date: '2026-10-11'
-    model: claude-opus-5-5
-    evidence: 02:174-180. (∅,∅)={{∅}} and (∅,{∅})={{∅},{∅,{∅}}}. Both are correct, and the second has
-      two distinct members since ∅∉{∅}... wait, ∅∈{∅}; it is distinct because {∅,{∅}} contains {∅} and
-      {∅} does not.
-  - stage: S5b
-    verdict: correct
-    by: refereeB
-    hash: 7a6e591b3b1a
-    date: '2026-10-11'
-    model: claude-opus-5-5
-    evidence: 02:175-180. (∅,∅)={{∅}} and (∅,{∅})={{∅},{∅,{∅}}} both match the blueprint check.
-- key: exr-pairs-as-sets-a1
-  kind: exr
-  file: 02-pairs-as-sets.md
-  line: 186
-  hash: 6542d8663a8e
-  verdicts:
-  - stage: S5a
-    verdict: correct
-    by: refereeA
-    hash: 6542d8663a8e
-    date: '2026-10-11'
-    model: claude-opus-5-5
-    evidence: 02:186-205. (a) matches 02:99. (b) a={∅}≠∅=b, so Case 2 applies and the steps give c={∅}
-      and d=∅ (the second disjunct of (d) fails since ∅≠{∅}). (c) (Z3) three times plus (Z1). (d) is fine.
-      The sidecar passes.
-  - stage: S5b
-    verdict: correct
-    by: refereeB
-    hash: 6542d8663a8e
-    date: '2026-10-11'
-    model: claude-opus-5-5
-    evidence: '02:190-204. It has the comprehension parts §11.2 requires: where the hypothesis is used,
-      the proof run on an example, and the idea in two sentences. In (b), {{∅},∅}={{∅},d} gives d=∅ correctly.
-      (c) says three uses of (Z3), consistent with 02:21. (d) is exactly two sentences.'
-  - stage: S6
-    verdict: correct
-    by: verifier
-    hash: 6542d8663a8e
-    date: '2026-10-11'
-    model: claude-opus-5-5
-    evidence: 02:197-205. (a) correctly finds the two uses of a≠b. In (b), my script confirms that ({∅},∅)
-      is a two-member pair and that the run forces c={∅}, d=∅. (c) uses (Z3) three times. (d) gives the
-      idea in two sentences. The comprehension part on the key proof is present.
-- key: exr-pairs-as-sets-b1
-  kind: exr
-  file: 02-pairs-as-sets.md
-  line: 209
-  hash: fd75d4a161f6
-  verdicts:
-  - stage: S5a
-    verdict: correct
-    by: refereeA
-    hash: fd75d4a161f6
-    date: '2026-10-11'
-    model: claude-opus-5-5
-    evidence: 02:209-219. ⋂p={a} and ⋃p={a,b} are computed directly from the membership conditions of
-      prp-zf-basic-sets (c), with p non-empty. The difference is {b} when a≠b.
-  - stage: S5b
-    verdict: correct
-    by: refereeB
-    hash: fd75d4a161f6
-    date: '2026-10-11'
-    model: claude-opus-5-5
-    evidence: 02:212-218. ⋂p={a} and ⋃p={a,b} are computed by membership, and for a≠b the solution shows
-      ⋃p∖⋂p={b}. The statement and solution match. The worked example in the text is the 'Alternatively'
-      paragraph at 02:101.
-  - stage: S6
-    verdict: correct
-    by: verifier
-    hash: fd75d4a161f6
-    date: '2026-10-11'
-    model: claude-opus-5-5
-    evidence: '02:215-219. Checked for all a,b in rank-3 hereditarily finite sets: the intersection of
-      p is {a} and the union is {a,b}. When a≠b, the union minus the intersection is {b}; when a=b it
-      is empty. The worked example is the ''Alternatively'' paragraph at 02:101.'
-- key: exr-pairs-as-sets-b2
-  kind: exr
-  file: 02-pairs-as-sets.md
-  line: 221
-  hash: e91e2b0a5e0f
-  verdicts:
-  - stage: S5a
-    verdict: correct
-    by: refereeA
-    hash: 7138394f3447
-    date: '2026-10-11'
-    model: claude-opus-5-5
-    evidence: '02:221-236. (a) applies thm-kuratowski-pair twice. (b) compares first coordinates: {{∅}}≠∅.
-      The sidecar passes.'
-  - stage: S5b
-    verdict: minor
-    by: refereeB
-    hash: 7138394f3447
-    date: '2026-10-11'
-    model: claude-opus-5-5
-    evidence: 02-pairs-as-sets.md:222 The exercise calls ((a,b),c) a 'triple' ('Triples as nested pairs';
-      'Hence the two triples are different'). This gives 'triple' a second meaning, against the book's
-      convention and this chapter's own definition of n-tuples.
-  - stage: S6
-    verdict: correct
-    by: verifier
-    hash: 7138394f3447
-    date: '2026-10-11'
-    model: claude-opus-5-5
-    evidence: '02:232-236. (a) applies thm-kuratowski-pair twice. (b): my script confirms ((∅,∅),∅) ≠
-      (∅,(∅,∅)), and their first coordinates are {{∅}} and ∅.'
-  - stage: S7r
-    verdict: correct
-    by: rereferee
-    hash: e91e2b0a5e0f
-    date: '2026-10-11'
-    model: claude-opus-5-5
-    evidence: ':221-236. I solved it independently. (a) Applying thm-kuratowski-pair to the outer pairs
-      and then to the inner pair gives a=a'', b=b'', c=c''. (b) The first coordinates are {{∅}} and ∅,
-      which differ because {∅}∈{{∅}}, so the answer is no. This matches the solution. The S5b finding
-      is resolved: the title is now ''Nested pairs'', the solution says ''the two pairs are different'',
-      and ''triple'' no longer app'
-- key: exr-pairs-as-sets-c1
-  kind: exr
-  file: 02-pairs-as-sets.md
-  line: 240
-  hash: 1baaaa8b2d14
-  verdicts:
-  - stage: S5a
-    verdict: correct
-    by: refereeA
-    hash: 0fbb24fa6527
-    date: '2026-10-11'
-    model: claude-opus-5-5
-    evidence: 02:240-259. The outline matches the proof, the marks sum to 1+2+3+3+1=10, and the second-route
-      mapping matches the blueprint (ch09.md:106).
-  - stage: S5b
-    verdict: correct
-    by: refereeB
-    hash: 0fbb24fa6527
-    date: '2026-10-11'
-    model: claude-opus-5-5
-    evidence: 02:243-258. The solution outline is correct. The marking scheme gives 1+2+3+3+1=10, and
-      the second route gives 3+3+2 plus the ⇐ and join points, also 10. The blueprint scheme is matched.
-  - stage: S6
-    verdict: minor
-    by: verifier
-    hash: 0fbb24fa6527
-    date: '2026-10-11'
-    model: claude-opus-5-5
-    evidence: 02-pairs-as-sets.md:250 The C1 marking scheme fails a correct proof that has no case split,
-      and its fatal error 'omitting the case a = b' would zero that proof's step.
-  - stage: S7r
-    verdict: correct
-    by: rereferee
-    hash: 1baaaa8b2d14
-    date: '2026-10-11'
-    model: claude-opus-5-5
-    evidence: ':246-260. The S6 finding is resolved. The fatal error ''omitting a=b'' now applies only
-      to arguments that match members or read b off ⋃p∖⋂p (:256). A third-route line (:260) now credits
-      a proof with no case split. Its points add up correctly: 1+3+3+2+1=10. I checked the math of that
-      route: ⋂(x,y)={x} and ⋃(x,y)={x,y} hold for every pair, without a case split, and {a,b}={a,d}⇒b=d
-      holds by (d) in both'
-- key: exr-pairs-as-sets-c2
-  kind: exr
-  file: 02-pairs-as-sets.md
-  line: 263
-  hash: b76798e2d7dd
-  verdicts:
-  - stage: S5a
-    verdict: correct
-    by: refereeA
-    hash: 525bf3537f6a
-    date: '2026-10-11'
-    model: claude-opus-5-5
-    evidence: 02:261-279. The first failing line is (2), with the dropped case a=b, (N7) and the counterexample
-      (∅,∅)={{∅}}. The lesser point on line (4) is correctly settled by prp-zf-basic-sets (d). This matches
-      blueprint ch09.md:107.
-  - stage: S5b
-    verdict: gap
-    by: refereeB
-    hash: 525bf3537f6a
-    date: '2026-10-11'
-    model: claude-opus-5-5
-    evidence: 02-pairs-as-sets.md:274 The solution's 'counterexample to the step' is not a counterexample,
-      and no counterexample to line (2)'s equations exists. So the exercise as posed asks for something
-      impossible, and STYLE §11.3's 'counterexample to the illegal step' requirement is not met.
-  - stage: S6
-    verdict: correct
-    by: verifier
-    hash: 525bf3537f6a
-    date: '2026-10-11'
-    model: claude-opus-5-5
-    evidence: 02:271-279. The conclusion is true, the first failing line is (2), and the problem is the
-      missing a=b case, (N7) (checked against 05-06:28). The (∅,∅) example defeats the 'smaller/larger
-      member' step. The only other weak line, (4), is acknowledged and justified by prp-zf-basic-sets
-      (d), so the flaw sits where the solution says.
-  - stage: S7r
-    verdict: minor
-    by: rereferee
-    hash: b76798e2d7dd
-    date: '2026-10-11'
-    model: claude-opus-5-5
-    evidence: 'ither proved ... the goal itself (circular reasoning)''). This also answers the exercise''s
-      question ''the rule it breaks'', which the solution currently answers only by naming the false rule
-      that line (2) uses. Fix: add to :276 or :278 a sentence such as ''This is (N9) of @exm-not-allowed-catalogue:
-      line (2) cites a general rule that is false, and for pairs the matching it asserts is the goal itself.'''
-  - stage: S7r
-    verdict: correct
-    by: rereferee
-    hash: 64e1ffcb41d0
-    date: '2026-10-11'
-    model: claude-opus-5-5
-    evidence: 'On line (4): {a,b}={a,d} => b=d follows from prp-zf-basic-sets (d) with c=a. The disjunct
-      a=a∧b=d gives b=d directly. The disjunct a=d∧b=a gives b=a=d. So no hypothesis b≠a is needed, which
-      is correct. (f) The repair, a case split on a=b, matches the proof. Every cited label resolves:
-      thm-kuratowski-pair, prp-zf-basic-sets, exm-not-allowed-catalogue. check_structure: 0 fatal, nothing
-      for 02-pairs.'
-- key: exr-pairs-as-sets-c3
-  kind: exr
-  file: 02-pairs-as-sets.md
-  line: 285
-  hash: 86435d94257e
-  verdicts:
-  - stage: S5a
-    verdict: correct
-    by: refereeA
-    hash: 86435d94257e
-    date: '2026-10-11'
-    model: claude-opus-5-5
-    evidence: 02:281-317. ∅∈P and ∅∉Q (since {b}≠∅) exclude the crossed matches. {{a},∅}={{c},∅} gives
-      {a}={c} by (d), because {a}=∅ is impossible. {{b}}={{d}} gives b=d. The marks sum to 10, and the
-      sidecar passes.
-  - stage: S5b
-    verdict: correct
-    by: refereeB
-    hash: 86435d94257e
-    date: '2026-10-11'
-    model: claude-opus-5-5
-    evidence: 02:284-316. The ∅-marker separates P from Q and P' from Q'. The crossed matches are excluded.
-      {a}=∅ is ruled out by a∈{a}. Marking 3+3+2+2=10. The remark at 02:308 that no a=b case is needed
-      is true of the proof given. The sidecar passes.
-  - stage: S6
-    verdict: correct
-    by: verifier
-    hash: 86435d94257e
-    date: '2026-10-11'
-    model: claude-opus-5-5
-    evidence: '02:287-317. My own script confirms that Wiener''s W(a,b) has the characteristic property
-      for all 16^4 quadruples of rank-3 hereditarily finite sets. The proof is complete: the marker ∅
-      separates the members, then prp-zf-basic-sets (d) finishes. Hint 1 names the tool and hint 2 gives
-      the first line; neither executes the matching. The scheme fits my alternative proof (matching by
-      which member holds t'
-- key: def-set-successor
-  kind: def
-  file: 03-the-set-omega.md
-  line: 11
-  hash: 998e8569cedd
-  verdicts:
-  - stage: S5a
-    verdict: minor
-    by: refereeA
-    hash: 998e8569cedd
-    date: '2026-10-11'
-    model: claude-opus-5-5
-    evidence: 03-the-set-omega.md:24 'The successor keeps every old element and adds one' (also the tagline
-      at 03:9 and 'never returning to one already met' at 03:7) is false for an arbitrary set, because
-      Foundation is not assumed.
-  - stage: S5b
-    verdict: minor
-    by: refereeB
-    hash: 998e8569cedd
-    date: '2026-10-11'
-    model: claude-opus-5-5
-    evidence: 03-the-set-omega.md:24 'The successor keeps every old element and adds one' (also 03:9 'one
-      more element' and 03:7 'never returning to one already met') is stated for every set, but it cannot
-      be proved without Foundation, which the chapter leaves out.
-  - stage: S7r
-    verdict: correct
-    by: rereferee
-    hash: 998e8569cedd
-    date: '2026-10-11'
-    model: claude-opus-5-5
-    evidence: '03:7, 03:9 and 03:24 no longer claim a new element for an arbitrary set. 03:24 says S(x)
-      adds x, ''a new element whenever x notin x'', and points to the next section for n notin n. lem-omega-transitive
-      (c) (04-peano-properties.md:39) is exactly ''n notin n for every n in omega'', and ledger 03:330
-      records the pointer. 03:7 now says only that, started from the empty set, S keeps producing new
-      sets ''as '
-- key: exm-von-neumann-numerals
-  kind: exm
-  file: 03-the-set-omega.md
-  line: 30
-  hash: 289290d2f96b
-  verdicts:
-  - stage: S5a
-    verdict: error
-    by: refereeA
-    hash: 9efe9683321a
-    date: '2026-10-11'
-    model: claude-opus-5-5
-    evidence: 03-the-set-omega.md:90 The claim that x ↦ {x} 'would serve for everything in the next section'
-      is false.
-  - stage: S5b
-    verdict: error
-    by: refereeB
-    hash: 9efe9683321a
-    date: '2026-10-11'
-    model: claude-opus-5-5
-    evidence: 03-the-set-omega.md:90 The prose says the rule x ↦ {x} 'would serve for everything in the
-      next section'. That is false.
-  - stage: S7r
-    verdict: correct
-    by: rereferee
-    hash: 289290d2f96b
-    date: '2026-10-11'
-    model: claude-opus-5-5
-    evidence: 03:50 now writes 4 using only the empty set and braces. I counted 8 brace pairs and 8 copies
-      of the empty set, which matches 03:53, and the TeX braces balance. The false claim that x -> {x}
-      'would serve for everything' is gone. 03:90 now says that rule gives Peano only with its own infinity
-      axiom and other proofs, which is true (Zermelo numerals). {{emptyset}} = (emptyset, emptyset) checks
-      against
-- key: def-zf-inductive-set
-  kind: def
-  file: 03-the-set-omega.md
-  line: 102
-  hash: a5ba0121d901
-  verdicts:
-  - stage: S5a
-    verdict: minor
-    by: refereeA
-    hash: a5ba0121d901
-    date: '2026-10-11'
-    model: claude-opus-5-5
-    evidence: 03-the-set-omega.md:117 S(3) = 4 ∉ 4 is asserted without justification.
-  - stage: S5b
-    verdict: gap
-    by: refereeB
-    hash: a5ba0121d901
-    date: '2026-10-11'
-    model: claude-opus-5-5
-    evidence: 03-the-set-omega.md:117 'S(3) = 4 ∉ 4' is asserted without justification and is not in the
-      ledger.
-  - stage: S7r
-    verdict: correct
-    by: rereferee
-    hash: a5ba0121d901
-    date: '2026-10-11'
-    model: claude-opus-5-5
-    evidence: 03:117 now justifies 4 notin 4. It holds iff 4 equals one of 0..3. 4 has the element 3,
-      0 has no elements, and the elements of 1, 2 and 3 lie among 0, 1, 2, each different from 3 by the
-      distinctness proved in exm-von-neumann-numerals (03:55). The argument is valid. Ledger entry 03:335
-      was added. The definition, the bounded-quantifier display and the {1, 2, 3, ...} non-example are
-      fine. The S5a/S5b
-- key: check:03-the-set-omega:1
-  kind: check
-  file: 03-the-set-omega.md
-  line: 119
-  hash: 8cd438ba1415
-  verdicts:
-  - stage: S5a
-    verdict: correct
-    by: refereeA
-    hash: 8cd438ba1415
-    date: '2026-10-11'
-    model: claude-opus-5-5
-    evidence: '03:124-126: 1 ≠ 0 since 0 ∈ 1; 3 ≠ 0,1,2 since 2 ∈ 3 but 2 ∉ 0,1,2, using exm-von-neumann-numerals.
-      Each step checked.'
-  - stage: S5b
-    verdict: correct
-    by: refereeB
-    hash: 8cd438ba1415
-    date: '2026-10-11'
-    model: claude-opus-5-5
-    evidence: '03:119-127: both failures are justified: 1 ≠ 0 because 0 ∈ 1, and 3 ∉ {0,1,2} because 2
-      ∈ 3. Sidecar asserts the witnesses.'
-- key: ax-infinity
-  kind: ax
-  file: 03-the-set-omega.md
-  line: 131
-  hash: 33e63ad4a927
-  verdicts:
-  - stage: S5a
-    verdict: correct
-    by: refereeA
-    hash: 33e63ad4a927
-    date: '2026-10-11'
-    model: claude-opus-5-5
-    evidence: 03:134 matches the blueprint (ch09.md:118). The claim at 03:129 that (Z1)-(Z6) cannot prove
-      an inductive set exists is true (V_ω is a model), is stated without proof, and nothing depends on
-      it.
-  - stage: S5b
-    verdict: correct
-    by: refereeB
-    hash: 33e63ad4a927
-    date: '2026-10-11'
-    model: claude-opus-5-5
-    evidence: '03:129-137: the unprovability pointer is in the STATUS ST.1 row (03:129, ledger 03:333).
-      (Z7) matches the NOTATION row. 03:137 matches what §§04-07 use (no Replacement or Foundation found
-      in 04-07, except the stated pointers).'
-- key: def-omega
-  kind: def
-  file: 03-the-set-omega.md
-  line: 149
-  hash: 9e204f2ae1b3
-  verdicts:
-  - stage: S5a
-    verdict: minor
-    by: refereeA
-    hash: 9e204f2ae1b3
-    date: '2026-10-11'
-    model: claude-opus-5-5
-    evidence: 03-the-set-omega.md:161 'The only part that is not already in that language is "J is inductive"'
-      overlooks J ⊆ I, which is also an abbreviation.
-  - stage: S5b
-    verdict: minor
-    by: refereeB
-    hash: 9e204f2ae1b3
-    date: '2026-10-11'
-    model: claude-opus-5-5
-    evidence: '03-the-set-omega.md:147 The stated ''obstacle'' (Russell: ''every inductive set'' ranges
-      over all sets) is not what forces us to fix I and restrict to J ⊆ I.'
-  - stage: S7r
-    verdict: correct
-    by: rereferee
-    hash: 9e204f2ae1b3
-    date: '2026-10-11'
-    model: claude-opus-5-5
-    evidence: '03:147 replaces the Russell obstacle with the right one: Separation needs an ambient set,
-      and prp-smallest-closed-set (06/02-set-operations.md:237) intersects a set S of closed subsets of
-      X. The inductive subsets of I form a set by Power set and Separation, as used at 03:190-192. 03:161
-      now notes that J subseteq I abbreviates forall y (y in J -> y in I), which matches def-subset (06/01:75)
-      and the'
-- key: thm-omega-least-inductive
-  kind: thm
-  file: 03-the-set-omega.md
-  line: 173
-  hash: 2b84d073f05a
-  verdicts:
-  - stage: S5a
-    verdict: correct
-    by: refereeA
-    hash: 2b84d073f05a
-    date: '2026-10-11'
-    model: claude-opus-5-5
-    evidence: '03:177-179 matches blueprint ch09.md:120. Dropping parts: without (a), (c) fails (every
-      set containing ω satisfies (b) but not (a) unless it is ω). Without (b), any inductive set satisfies
-      (a).'
-  - stage: S5b
-    verdict: correct
-    by: refereeB
-    hash: 2b84d073f05a
-    date: '2026-10-11'
-    model: claude-opus-5-5
-    evidence: '03:173-181: the statement matches the blueprint. The warning at 03:202 (Replacement builds
-      ω ∪ {ω, S(ω), …}) is in the STATUS ST.1 row, and ''ω ∉ ω'' is paid by the §04 Quick check (04:119).'
-- key: proof:thm-omega-least-inductive
-  kind: proof
-  file: 03-the-set-omega.md
-  line: 187
-  hash: aa226ebfd1f0
-  verdicts:
-  - stage: S5a
-    verdict: correct
-    by: refereeA
-    hash: aa226ebfd1f0
-    date: '2026-10-11'
-    model: claude-opus-5-5
-    evidence: '(a) 03:188-192: 𝒮 is a set by Z5, Z6; I ∈ 𝒮. ⋂𝒮 with A_0 = I is the ω of def-omega (prp-zf-basic-sets
-      (c)). Closedness comes from prp-smallest-closed-set (02-set-operations.md:237), whose ''steps''
-      are informal maps, so they need no graph. (b) 03:194: ω∩J ⊆ I is inductive using (a) and J inductive,
-      so def-omega applies. (c) 03:196: two inclusions via (a),(b), then prp-subset-antisymmetric; the
-      trans'
-  - stage: S5b
-    verdict: correct
-    by: refereeB
-    hash: aa226ebfd1f0
-    date: '2026-10-11'
-    model: claude-opus-5-5
-    evidence: '03:188-196: (a) 𝒮 exists by (Z5)+(Z6) and I ∈ 𝒮. ⋂𝒮 with A0 = I equals ω (prp-zf-basic-sets
-      (c)). The hypotheses of prp-smallest-closed-set (ch06 02:241) are met and are in the ledger at 03:335.
-      (b) ω∩J ⊆ I is inductive. (c) two inclusions, then prp-subset-antisymmetric. The claim that (a)
-      and (b) used only that I is inductive is true.'
-- key: thm-omega-induction
-  kind: thm
-  file: 03-the-set-omega.md
-  line: 209
-  hash: e082d84fa664
-  verdicts:
-  - stage: S5a
-    verdict: correct
-    by: refereeA
-    hash: e082d84fa664
-    date: '2026-10-11'
-    model: claude-opus-5-5
-    evidence: '03:213-214. The hypothesis A ⊆ ω is needed: without it, any inductive A ⊋ ω (for example
-      S(ω)''s closure in the warning, or I itself) satisfies the rest but A ≠ ω. P(0) and P(S(n)) use
-      defined terms, which 01:''Properties written with defined symbols'' allows.'
-  - stage: S5b
-    verdict: minor
-    by: refereeB
-    hash: e082d84fa664
-    date: '2026-10-11'
-    model: claude-opus-5-5
-    evidence: 03-the-set-omega.md:337 The ledger sources n + 1 = S(n) to def-omega-arithmetic (c), which
-      defines the numerals.
-  - stage: S7r
-    verdict: correct
-    by: rereferee
-    hash: e082d84fa664
-    date: '2026-10-11'
-    model: claude-opus-5-5
-    evidence: 'I checked the proof at 03:219-221: (a) uses thm-omega-least-inductive (b) with prp-subset-antisymmetric,
-      and (b) uses (Z6) plus omega inductive. Ledger 03:340 now sources n + 1 = S(n) to def-omega-arithmetic
-      (a) with 1 := S(0) from (c), and to the ''successor is plus one'' paragraph (05-recursion-and-arithmetic.md:143-165).
-      Both say this: n+1 = n+S(0) = S(n+0) = S(n). The worked move at 03:230 now g'
-- key: proof:thm-omega-induction
-  kind: proof
-  file: 03-the-set-omega.md
-  line: 218
-  hash: 3c3fc5dddffb
-  verdicts:
-  - stage: S5a
-    verdict: correct
-    by: refereeA
-    hash: 3c3fc5dddffb
-    date: '2026-10-11'
-    model: claude-opus-5-5
-    evidence: '03:219 uses thm-omega-least-inductive (b) and prp-subset-antisymmetric. 03:221 builds A
-      by Z6 with parameters and uses (a) of the least-inductive theorem for 0 ∈ ω and S(n) ∈ ω. Every
-      hypothesis is used. Promise to ch03 02-induction.md:42 and ch07 §01 (blueprint ch09.md:261,264):
-      paid.'
-  - stage: S5b
-    verdict: correct
-    by: refereeB
-    hash: 3c3fc5dddffb
-    date: '2026-10-11'
-    model: claude-opus-5-5
-    evidence: '03:219-221: (a) A is inductive, then thm (b), then prp-subset-antisymmetric. (b) A by (Z6),
-      0 ∈ ω by (a), closure because ω is inductive. Every step is cited.'
-- key: check:03-the-set-omega:2
-  kind: check
-  file: 03-the-set-omega.md
-  line: 234
-  hash: 690eb39902ae
-  verdicts:
-  - stage: S5a
-    verdict: correct
-    by: refereeA
-    hash: 690eb39902ae
-    date: '2026-10-11'
-    model: claude-opus-5-5
-    evidence: '03:239: S(1) = 2 = {0,1} ∋ 1, and 1 ∉ 0, 1 ∉ 1 (since 0 ≠ 1). Correct.'
-  - stage: S5b
-    verdict: correct
-    by: refereeB
-    hash: 690eb39902ae
-    date: '2026-10-11'
-    model: claude-opus-5-5
-    evidence: '03:235-240: case n = 1 gives 2 = {0,1}. Neither 0 nor 1 contains 1, which is justified.
-      Sidecar asserts that the first such numeral is 2.'
-- key: exr-the-set-omega-a1
-  kind: exr
-  file: 03-the-set-omega.md
-  line: 248
-  hash: 9dc322f921a2
-  verdicts:
-  - stage: S5a
-    verdict: correct
-    by: refereeA
-    hash: 8c07f6d2f657
-    date: '2026-10-11'
-    model: claude-opus-5-5
-    evidence: '(a),(b),(d) are correct: De Morgan (d) and bounded-quantifier negation (a) match 02-...:315
-      and 04-.../09:199. But (c) at 03:254/264 uses the numeral 5, which is never defined: exm-von-neumann-numerals
-      defines only 0-4, and 03:88 has only ''0, 1, 2, 3, …''. [finding refuted by skeptics]'
-  - stage: S5b
-    verdict: minor
-    by: refereeB
-    hash: 8c07f6d2f657
-    date: '2026-10-11'
-    model: claude-opus-5-5
-    evidence: 03-the-set-omega.md:254 A1(c) uses the numeral 5, which is never defined; the numerals stop
-      at 4.
-  - stage: S6
-    verdict: correct
-    by: verifier
-    hash: 8c07f6d2f657
-    date: '2026-10-11'
-    model: claude-opus-5-5
-    evidence: '03:259-275. The numerals are checked by script: 2⊆3 and 2∈3, and 0 through 6 are distinct.
-      (c) applies the closure clause five times. (d) gives ∅∉J ∨ ∃x∈J S(x)∉J, citing prp-de-morgan (d)
-      (¬(P∧Q) ⊢ ¬P∨¬Q, checked at ch02-05) and prp-bounded-quantifier-negation (a) (checked at ch04-09).'
-  - stage: S7r
-    verdict: correct
-    by: rereferee
-    hash: 9dc322f921a2
-    date: '2026-10-11'
-    model: claude-opus-5-5
-    evidence: '03:254 now defines 5 := S(4). I solved the exercise independently: (a) 3 = {0,1,2} and
-      4 = {0,1,2,3}; (b) both yes; (c) true, by five closure steps from the empty set; (d) the empty set
-      notin J, or there is x in J with S(x) notin J. All four match. The (d) citations check: prp-de-morgan
-      (d) and (c) (ch02/05:315) give the equivalence of not(P and Q) with (not P or not Q), and prp-bounded-quantifier'
-- key: exr-the-set-omega-b1
-  kind: exr
-  file: 03-the-set-omega.md
-  line: 279
-  hash: abd0e58c6fa8
-  verdicts:
-  - stage: S5a
-    verdict: correct
-    by: refereeA
-    hash: abd0e58c6fa8
-    date: '2026-10-11'
-    model: claude-opus-5-5
-    evidence: '03:286-288: J∩K is inductive. For J∖{∅}, S(x) ≠ ∅ because x ∈ S(x). Correct.'
-  - stage: S5b
-    verdict: correct
-    by: refereeB
-    hash: abd0e58c6fa8
-    date: '2026-10-11'
-    model: claude-opus-5-5
-    evidence: '03:286-288: J∩K is inductive. J∖{∅} fails only the base clause, because S(x) ≠ ∅ from x
-      ∈ S(x). The ledger at 03:340 covers this.'
-  - stage: S6
-    verdict: correct
-    by: verifier
-    hash: abd0e58c6fa8
-    date: '2026-10-11'
-    model: claude-opus-5-5
-    evidence: 03:285-289. Both inductive clauses are checked for J∩K. For J∖{∅}, the first clause fails
-      and the second holds because x∈S(x) gives S(x)≠∅. The worked model is the proof of thm-omega-least-inductive
-      (b) (ω∩J is inductive).
-- key: exr-the-set-omega-b2
-  kind: exr
-  file: 03-the-set-omega.md
-  line: 291
-  hash: ff412961fe85
-  verdicts:
-  - stage: S5a
-    verdict: correct
-    by: refereeA
-    hash: ff412961fe85
-    date: '2026-10-11'
-    model: claude-opus-5-5
-    evidence: '03:302: A ⊆ ω; S(n) ∈ ω by thm-omega-least-inductive (a), with k := n. The remark at 03:304
-      is accurate.'
-  - stage: S5b
-    verdict: correct
-    by: refereeB
-    hash: ff412961fe85
-    date: '2026-10-11'
-    model: claude-opus-5-5
-    evidence: '03:302-304: A ⊆ ω, the step reaches the second alternative outright, and thm-omega-induction
-      (a) applies. The remark about the unused hypothesis is true of the step.'
-  - stage: S6
-    verdict: correct
-    by: verifier
-    hash: ff412961fe85
-    date: '2026-10-11'
-    model: claude-opus-5-5
-    evidence: 03:301-305. The proof is complete. The worked model is the unlabelled 'show the set is inductive'
-      example at 03:230.
-- key: exr-the-set-omega-c1
-  kind: exr
-  file: 03-the-set-omega.md
-  line: 309
-  hash: 252efec8b207
-  verdicts:
-  - stage: S5a
-    verdict: minor
-    by: refereeA
-    hash: e65f2ffc16f4
-    date: '2026-10-11'
-    model: claude-opus-5-5
-    evidence: '03-the-set-omega.md:325 ''That says again that every natural number has the stated form''
-      is imprecise: the form proved in (b) has witness k ∈ I, which is weaker than the k ∈ ω of (a).'
-  - stage: S5b
-    verdict: minor
-    by: refereeB
-    hash: e65f2ffc16f4
-    date: '2026-10-11'
-    model: claude-opus-5-5
-    evidence: 03-the-set-omega.md:325 The C1(b) solution says ω ⊆ A_I 'says again that every natural number
-      has the stated form'. But A_I's form uses k ∈ I, which is weaker than (a)'s k ∈ ω.
-  - stage: S6
-    verdict: minor
-    by: verifier
-    hash: e65f2ffc16f4
-    date: '2026-10-11'
-    model: claude-opus-5-5
-    evidence: 03-the-set-omega.md:325 Part (b) of the solution says that running the argument on A_I 'says
-      again that every natural number has the stated form', but the form in A_I has k∈I, which is weaker
-      than (a)'s k∈ω.
-  - stage: S7r
-    verdict: correct
-    by: rereferee
-    hash: 252efec8b207
-    date: '2026-10-11'
-    model: claude-opus-5-5
-    evidence: 'I re-solved (a) at 03:319-323: three cases along the disjunction, with S(k) in omega by
-      inductivity, then thm-omega-induction (a). It is correct. For (b) at 03:325, I checked that A_I
-      is inductive: 0 is in A_I; S(0) = 1 is in I; S(1) = S(S(0)) with 0 in I; S(S(S(k))) with S(k) in
-      I; and every S(x) is in I. So omega subseteq A_I by thm-omega-least-inductive (b). The text now
-      says this shows only th'
-- key: def-transitive-set
-  kind: def
-  file: 04-peano-properties.md
-  line: 13
-  hash: 18fde276e477
-  verdicts:
-  - stage: S5a
-    verdict: correct
-    by: refereeA
-    hash: 18fde276e477
-    date: '2026-10-11'
-    model: claude-opus-5-5
-    evidence: '04:13-35: definition matches the blueprint. Examples 0, 1, 3, the non-example {0,2} and
-      the remark on {1} all checked (1 differs from 0 and from 2; 0 is not in {1}).'
-  - stage: S5b
-    verdict: correct
-    by: refereeB
-    hash: 18fde276e477
-    date: '2026-10-11'
-    model: claude-opus-5-5
-    evidence: 04:13-35. Definition matches the blueprint. The examples 0, 1, 3 and the non-examples {0,2}
-      and {1}={{∅}} are correct, and the sidecar lem-omega-transitive.py asserts them and passes.
-- key: lem-omega-transitive
-  kind: lem
-  file: 04-peano-properties.md
-  line: 39
-  hash: cc5fe4d051ed
-  verdicts:
-  - stage: S5a
-    verdict: correct
-    by: refereeA
-    hash: cc5fe4d051ed
-    date: '2026-10-11'
-    model: claude-opus-5-5
-    evidence: '04:39-49: (a)-(e) match blueprint 136 exactly. Downstream uses in 05:42-45, 06:17-62 and
-      07:64,402 need only what is stated.'
-  - stage: S5b
-    verdict: correct
-    by: refereeB
-    hash: cc5fe4d051ed
-    date: '2026-10-11'
-    model: claude-opus-5-5
-    evidence: '04:39-49. Parts (a)-(e) match blueprint ch09.md:136 word for word. Idea meta-claims checked
-      against the proof: (c) is the only part that uses an earlier part, and (d), (e) are false at 0.
-      The self-explanation prompt is present.'
-- key: proof:lem-omega-transitive
-  kind: proof
-  file: 04-peano-properties.md
-  line: 55
-  hash: 076197ae7d97
-  verdicts:
-  - stage: S5a
-    verdict: correct
-    by: refereeA
-    hash: 076197ae7d97
-    date: '2026-10-11'
-    model: claude-opus-5-5
-    evidence: '04:55-72: each part applies thm-omega-induction (b) (03:214) to a first-order P. In (c),
-      the step S(n) in n gives S(n) a subset of n by (a) applied to n in omega, then n in S(n) gives n
-      in n; closed by not-I. In (d) and (e) the disjunctive P is handled correctly, and S(0)={0} holds.
-      No later or optional material is used.'
-  - stage: S5b
-    verdict: correct
-    by: refereeB
-    hash: 076197ae7d97
-    date: '2026-10-11'
-    model: claude-opus-5-5
-    evidence: 04:55-72. Each part is a valid use of thm-omega-induction (b) (03:209). n ⊆ S(n) and y∈S(n)
-      ⇔ y∈n or y=n are ledgered to def-set-successor. (c) uses (a) at n and closes with ¬I.
-- key: thm-omega-peano
-  kind: thm
-  file: 04-peano-properties.md
-  line: 80
-  hash: d9f2ca5496ff
-  verdicts:
-  - stage: S5a
-    verdict: correct
-    by: refereeA
-    hash: d9f2ca5496ff
-    date: '2026-10-11'
-    model: claude-opus-5-5
-    evidence: '04:80-92: (P1)-(P5) plus the function S: omega to omega match blueprint 137. (P4) is what
-      cor-omega-successor-cancellation needs (blueprint 247).'
-  - stage: S5b
-    verdict: minor
-    by: refereeB
-    hash: d9f2ca5496ff
-    date: '2026-10-11'
-    model: claude-opus-5-5
-    evidence: 'NOTATION.md:62 thm-omega-peano introduces the function S: ω → ω (a set) under the same
-      letter as the operation x ↦ S(x), which has no graph. The NOTATION row for S(x) does not record
-      this second use.'
-  - stage: S7r
-    verdict: correct
-    by: rereferee
-    hash: d9f2ca5496ff
-    date: '2026-10-11'
-    model: claude-opus-5-5
-    evidence: '04:80-92. Statement (P1)-(P5) plus the function S: omega -> omega. Checked the cited proof
-      parts against thm-omega-least-inductive (a), thm-omega-induction (a) and lem-omega-transitive (a),(c).
-      The S5b finding is resolved: the NOTATION.md row `\mathrm{S}(x)` (line 62) now records that from
-      Ch 9 §04 the letter also names the function S: omega -> omega with graph {(n,S(n))}, that the two
-      uses agree '
-- key: proof:thm-omega-peano
-  kind: proof
-  file: 04-peano-properties.md
-  line: 98
-  hash: ebb17550ecc2
-  verdicts:
-  - stage: S5a
-    verdict: minor
-    by: refereeA
-    hash: 5d045c326b66
-    date: '2026-10-11'
-    model: claude-opus-5-5
-    evidence: 04-peano-properties.md:101 (P3) cites Extensionality (Z1) for an inequality. Z1 proves equalities,
-      while the inference 'n in S(n) and n not in 0, so S(n) is not 0' uses the other direction, which
-      is the rule =E.
-  - stage: S5b
-    verdict: minor
-    by: refereeB
-    hash: 5d045c326b66
-    date: '2026-10-11'
-    model: claude-opus-5-5
-    evidence: 04-peano-properties.md:101 (P3) cites Extensionality (Z1) for the direction 'equal sets
-      have the same elements'. That direction is the logic rule =E, not Z1.
-  - stage: S7r
-    verdict: correct
-    by: rereferee
-    hash: ebb17550ecc2
-    date: '2026-10-11'
-    model: claude-opus-5-5
-    evidence: 04:98-106. (P3) now uses =E (def-rules-equality, ch04/07:24). The equation S(n)=0 at line
-      i and n in S(n) as phi[S(n)/x] with phi = n in x give n in 0. This is the left-to-right direction
-      the rule licenses (ch04/07 clause 2). The conclusion then follows by not-I (def-rules-negation,
-      ch02/02:15), with bottom reached from 0 = emptyset having no elements. Both S5a and S5b findings
-      (the Z1 citation) a
-- key: check:04-peano-properties:1
-  kind: check
-  file: 04-peano-properties.md
-  line: 112
-  hash: afa9ebb6e2b8
-  verdicts:
-  - stage: S5a
-    verdict: correct
-    by: refereeA
-    hash: afa9ebb6e2b8
-    date: '2026-10-11'
-    model: claude-opus-5-5
-    evidence: '04:112-120: non-surjectivity follows from (P3), and omega not in omega follows from lem
-      (c) applied to n = omega. Both are correct.'
-  - stage: S5b
-    verdict: correct
-    by: refereeB
-    hash: afa9ebb6e2b8
-    date: '2026-10-11'
-    model: claude-opus-5-5
-    evidence: 04:112-120. Not surjective by (P3). ω∉ω because it would be an n with n∈n, which lem (c)
-      rules out. Correct.
 - key: def-peano-system
   kind: def
-  file: 04-peano-properties.md
-  line: 128
+  file: 01-peano-axioms.md
+  line: 13
   hash: bb07ce838a54
   verdicts:
   - stage: S5a
@@ -1432,8 +37,8 @@ items:
       exist) is resolve'
 - key: exm-peano-axioms-independent
   kind: exm
-  file: 04-peano-properties.md
-  line: 147
+  file: 01-peano-axioms.md
+  line: 32
   hash: 0e8a1f8fda0e
   verdicts:
   - stage: S5a
@@ -1466,66 +71,89 @@ items:
       by lem (d), (P3) and (P4) for omega. P3 holds because only row 0 has second coordinate 0, and S(n)
       != 0. P4 holds by row-wise injectivity, with row 1 separated by S(n) != 0. P5 fails via A = omega
       x {0},'
-- key: prp-pair-not-natural
-  kind: prp
-  file: 04-peano-properties.md
-  line: 231
-  hash: 38ae4e7d8f4f
+- key: thm-omega-induction
+  kind: thm
+  file: 01-peano-axioms.md
+  line: 122
+  hash: e082d84fa664
   verdicts:
   - stage: S5a
     verdict: correct
     by: refereeA
-    hash: 38ae4e7d8f4f
+    hash: e082d84fa664
     date: '2026-10-11'
     model: claude-opus-5-5
-    evidence: 04:231-235 matches blueprint 144.
+    evidence: '03:213-214. The hypothesis A ⊆ ω is needed: without it, any inductive A ⊋ ω (for example
+      S(ω)''s closure in the warning, or I itself) satisfies the rest but A ≠ ω. P(0) and P(S(n)) use
+      defined terms, which 01:''Properties written with defined symbols'' allows.'
   - stage: S5b
     verdict: minor
     by: refereeB
-    hash: 38ae4e7d8f4f
+    hash: e082d84fa664
     date: '2026-10-11'
     model: claude-opus-5-5
-    evidence: 04-peano-properties.md:245 The claim that Chapter 6's answer ((1,2),3) ≠ (1,(2,3)) 'now
-      rests on @prp-pair-not-natural' overreaches. Chapter 6's 1 is fd2's 1 ∈ ℕ ⊆ ℝ, not the von Neumann
-      1 ∈ ω.
+    evidence: 03-the-set-omega.md:337 The ledger sources n + 1 = S(n) to def-omega-arithmetic (c), which
+      defines the numerals.
   - stage: S7r
     verdict: correct
     by: rereferee
-    hash: 38ae4e7d8f4f
+    hash: e082d84fa664
     date: '2026-10-11'
     model: claude-opus-5-5
-    evidence: '04:231-245. The proof is valid by lem-omega-transitive (e). The S5b finding is resolved:
-      04:245 now says Chapter 6''s answer (ch06/03:311) is ''borne out'' once 1, 2, 3 are read as elements
-      of omega, as the later chapters read N (Section 9.7). cor-omega-identification is in 07-categoricity.md,
-      which is Section 9.7, and NOTATION''s omega row agrees. With that reading, ((1,2),3) = (1,(2,3))
-      would force '
-- key: proof:prp-pair-not-natural
+    evidence: 'I checked the proof at 03:219-221: (a) uses thm-omega-least-inductive (b) with prp-subset-antisymmetric,
+      and (b) uses (Z6) plus omega inductive. Ledger 03:340 now sources n + 1 = S(n) to def-omega-arithmetic
+      (a) with 1 := S(0) from (c), and to the ''successor is plus one'' paragraph (05-recursion-and-arithmetic.md:143-165).
+      Both say this: n+1 = n+S(0) = S(n+0) = S(n). The worked move at 03:230 now g'
+- key: proof:thm-omega-induction
   kind: proof
-  file: 04-peano-properties.md
-  line: 241
-  hash: a0441cc19942
+  file: 01-peano-axioms.md
+  line: 131
+  hash: 3c3fc5dddffb
   verdicts:
   - stage: S5a
     verdict: correct
     by: refereeA
-    hash: a0441cc19942
+    hash: 3c3fc5dddffb
     date: '2026-10-11'
     model: claude-opus-5-5
-    evidence: '04:242: (a,b) is not 0 because it has the element {a}. lem (e) applies (hypotheses: in
-      omega and nonzero) and gives the empty set in (a,b), so the empty set equals {a} or {a,b}, both
-      impossible since a is in each.'
+    evidence: '03:219 uses thm-omega-least-inductive (b) and prp-subset-antisymmetric. 03:221 builds A
+      by Z6 with parameters and uses (a) of the least-inductive theorem for 0 ∈ ω and S(n) ∈ ω. Every
+      hypothesis is used. Promise to ch03 02-induction.md:42 and ch07 §01 (blueprint ch09.md:261,264):
+      paid.'
   - stage: S5b
     verdict: correct
     by: refereeB
-    hash: a0441cc19942
+    hash: 3c3fc5dddffb
     date: '2026-10-11'
     model: claude-opus-5-5
-    evidence: 04:241-243. (a,b)≠∅. Lem (e) gives ∅∈(a,b), and then ∅={a} or ∅={a,b} is impossible because
-      both contain a. Valid.
+    evidence: '03:219-221: (a) A is inductive, then thm (b), then prp-subset-antisymmetric. (b) A by (Z6),
+      0 ∈ ω by (a), closure because ω is inductive. Every step is cited.'
+- key: check:01-peano-axioms:1
+  kind: check
+  file: 01-peano-axioms.md
+  line: 147
+  hash: 690eb39902ae
+  moved_from: check:03-the-set-omega:2
+  verdicts:
+  - stage: S5a
+    verdict: correct
+    by: refereeA
+    hash: 690eb39902ae
+    date: '2026-10-11'
+    model: claude-opus-5-5
+    evidence: '03:239: S(1) = 2 = {0,1} ∋ 1, and 1 ∉ 0, 1 ∉ 1 (since 0 ≠ 1). Correct.'
+  - stage: S5b
+    verdict: correct
+    by: refereeB
+    hash: 690eb39902ae
+    date: '2026-10-11'
+    model: claude-opus-5-5
+    evidence: '03:235-240: case n = 1 gives 2 = {0,1}. Neither 0 nor 1 contains 1, which is justified.
+      Sidecar asserts that the first such numeral is 2.'
 - key: exr-peano-properties-a1
   kind: exr
-  file: 04-peano-properties.md
-  line: 261
+  file: 01-peano-axioms.md
+  line: 163
   hash: 9f485c8d8e80
   verdicts:
   - stage: S5a
@@ -1557,8 +185,8 @@ items:
       is correct.'
 - key: exr-peano-properties-b1
   kind: exr
-  file: 04-peano-properties.md
-  line: 284
+  file: 01-peano-axioms.md
+  line: 186
   hash: 061f0fb872e0
   verdicts:
   - stage: S5a
@@ -1600,8 +228,8 @@ items:
       explanation'
 - key: exr-peano-properties-b2
   kind: exr
-  file: 04-peano-properties.md
-  line: 320
+  file: 01-peano-axioms.md
+  line: 222
   hash: db36f757f74f
   verdicts:
   - stage: S5a
@@ -1632,8 +260,8 @@ items:
       the object, not a step. Worked model: exm-peano-axioms-independent.'
 - key: exr-peano-properties-c1
   kind: exr
-  file: 04-peano-properties.md
-  line: 338
+  file: 01-peano-axioms.md
+  line: 240
   hash: 22320cb26a30
   verdicts:
   - stage: S5a
@@ -1675,8 +303,8 @@ items:
       {0} meets the hypotheses o'
 - key: exr-peano-properties-c2
   kind: exr
-  file: 04-peano-properties.md
-  line: 357
+  file: 01-peano-axioms.md
+  line: 259
   hash: 00ea15a77ab3
   verdicts:
   - stage: S5a
@@ -1709,8 +337,8 @@ items:
       fine. The closing classification claim is true and marked as needing the order on ω.'
 - key: thm-omega-recursion
   kind: thm
-  file: 05-recursion-and-arithmetic.md
-  line: 11
+  file: 02-recursion-and-arithmetic.md
+  line: 13
   hash: 7c56918c4ecc
   verdicts:
   - stage: S5a
@@ -1756,8 +384,8 @@ items:
       hypothesis).'
 - key: proof:thm-omega-recursion
   kind: proof
-  file: 05-recursion-and-arithmetic.md
-  line: 38
+  file: 02-recursion-and-arithmetic.md
+  line: 40
   hash: 10d5c158d190
   verdicts:
   - stage: S5a
@@ -1792,8 +420,8 @@ items:
       cite lem-omega-transi'
 - key: def-omega-arithmetic
   kind: def
-  file: 05-recursion-and-arithmetic.md
-  line: 143
+  file: 02-recursion-and-arithmetic.md
+  line: 147
   hash: fcf971e634ba
   verdicts:
   - stage: S5a
@@ -1836,8 +464,8 @@ items:
       (a),(b), so citing (a)'
 - key: cor-omega-successor-cancellation
   kind: cor
-  file: 05-recursion-and-arithmetic.md
-  line: 183
+  file: 02-recursion-and-arithmetic.md
+  line: 187
   hash: 02bd0a070857
   verdicts:
   - stage: S5a
@@ -1858,8 +486,8 @@ items:
       06:65 use.
 - key: proof:cor-omega-successor-cancellation
   kind: proof
-  file: 05-recursion-and-arithmetic.md
-  line: 189
+  file: 02-recursion-and-arithmetic.md
+  line: 193
   hash: 2465ad2d4e9a
   verdicts:
   - stage: S5a
@@ -1888,11 +516,12 @@ items:
       and (c) at 05:155 states exactly 'for every n in omega, n+1 = S(n)', proved at 05:163-166 before
       the corollary. The first claim is then (P4) of thm-omega-peano (04:80) and the second is (P3). Both
       are correct.
-- key: check:05-recursion-and-arithmetic:1
+- key: check:02-recursion-and-arithmetic:1
   kind: check
-  file: 05-recursion-and-arithmetic.md
-  line: 193
+  file: 02-recursion-and-arithmetic.md
+  line: 197
   hash: d3652b946e49
+  moved_from: check:05-recursion-and-arithmetic:1
   verdicts:
   - stage: S5a
     verdict: correct
@@ -1912,8 +541,8 @@ items:
       with 0+2 = 2 by unwinding, gives 4. Both are right.'
 - key: thm-omega-arithmetic-laws
   kind: thm
-  file: 05-recursion-and-arithmetic.md
-  line: 213
+  file: 02-recursion-and-arithmetic.md
+  line: 217
   hash: cb2a23d4af04
   verdicts:
   - stage: S5a
@@ -1934,8 +563,8 @@ items:
       = n, 1·n = n, 0·n = 0.'
 - key: proof:thm-omega-arithmetic-laws
   kind: proof
-  file: 05-recursion-and-arithmetic.md
-  line: 233
+  file: 02-recursion-and-arithmetic.md
+  line: 237
   hash: a8e11c7acd87
   verdicts:
   - stage: S5a
@@ -1978,8 +607,8 @@ items:
       sentence (05:234).'
 - key: exr-recursion-and-arithmetic-a1
   kind: exr
-  file: 05-recursion-and-arithmetic.md
-  line: 280
+  file: 02-recursion-and-arithmetic.md
+  line: 284
   hash: f32cc3d1bb72
   verdicts:
   - stage: S5a
@@ -2020,8 +649,8 @@ items:
       {(0,0)}, then '
 - key: exr-recursion-and-arithmetic-b1
   kind: exr
-  file: 05-recursion-and-arithmetic.md
-  line: 305
+  file: 02-recursion-and-arithmetic.md
+  line: 309
   hash: d73344b1c169
   verdicts:
   - stage: S5a
@@ -2051,8 +680,8 @@ items:
       (05:166-178).'
 - key: exr-recursion-and-arithmetic-b2
   kind: exr
-  file: 05-recursion-and-arithmetic.md
-  line: 329
+  file: 02-recursion-and-arithmetic.md
+  line: 333
   hash: 50ec43f3f819
   verdicts:
   - stage: S5a
@@ -2082,8 +711,8 @@ items:
       faded blank can be copied (see finding). [finding refuted by skeptics]
 - key: exr-recursion-and-arithmetic-c1
   kind: exr
-  file: 05-recursion-and-arithmetic.md
-  line: 354
+  file: 02-recursion-and-arithmetic.md
+  line: 358
   hash: 3bcd07bc7f45
   verdicts:
   - stage: S5a
@@ -2125,8 +754,8 @@ items:
       and both of i'
 - key: exr-recursion-and-arithmetic-c2
   kind: exr
-  file: 05-recursion-and-arithmetic.md
-  line: 398
+  file: 02-recursion-and-arithmetic.md
+  line: 402
   hash: e7c6209db773
   verdicts:
   - stage: S5a
@@ -2156,8 +785,8 @@ items:
       is printed verbatim in table row (g) at 05:259 (see finding). [finding refuted by skeptics]
 - key: exr-recursion-and-arithmetic-c3
   kind: exr
-  file: 05-recursion-and-arithmetic.md
-  line: 423
+  file: 02-recursion-and-arithmetic.md
+  line: 427
   hash: 1f000bcee885
   verdicts:
   - stage: S5a
@@ -2189,8 +818,8 @@ items:
       Partial solutions match A1(b).
 - key: def-omega-order
   kind: def
-  file: 06-order-on-omega.md
-  line: 11
+  file: 03-order-and-well-ordering.md
+  line: 13
   hash: 7ad3762454a2
   verdicts:
   - stage: S5a
@@ -2210,8 +839,8 @@ items:
       (2∈4, 4∉2; 0<n by lem-omega-transitive (e)).
 - key: thm-omega-order
   kind: thm
-  file: 06-order-on-omega.md
-  line: 21
+  file: 03-order-and-well-ordering.md
+  line: 23
   hash: 52c1381a3c4c
   verdicts:
   - stage: S5a
@@ -2232,8 +861,8 @@ items:
       (ℕ3) and (ℕ5) need (ch10.md:26,28). The notations {0,…,n} and {1,…,n} agree with NOTATION row 79.'
 - key: proof:thm-omega-order
   kind: proof
-  file: 06-order-on-omega.md
-  line: 37
+  file: 03-order-and-well-ordering.md
+  line: 39
   hash: f5617b96b0c3
   verdicts:
   - stage: S5a
@@ -2268,8 +897,8 @@ items:
       (b), the tran'
 - key: thm-omega-well-ordering
   kind: thm
-  file: 06-order-on-omega.md
-  line: 75
+  file: 03-order-and-well-ordering.md
+  line: 77
   hash: bf473d87852b
   verdicts:
   - stage: S5a
@@ -2301,8 +930,8 @@ items:
       to the warning after'
 - key: proof:thm-omega-well-ordering
   kind: proof
-  file: 06-order-on-omega.md
-  line: 85
+  file: 03-order-and-well-ordering.md
+  line: 87
   hash: 055321a660fc
   verdicts:
   - stage: S5a
@@ -2323,11 +952,12 @@ items:
     evidence: '06:86-98: B is a set by (Z6) and B ⊆ ω, so thm-omega-induction (a) applies. The step S(n)∩A
       = {n}∩A and the least-element contradiction are valid. The RAA framing (:96, :101) is accurate,
       and uniqueness follows by irreflexivity and transitivity.'
-- key: check:06-order-on-omega:1
+- key: check:03-order-and-well-ordering:1
   kind: check
-  file: 06-order-on-omega.md
-  line: 105
+  file: 03-order-and-well-ordering.md
+  line: 107
   hash: d9843455a150
+  moved_from: check:06-order-on-omega:1
   verdicts:
   - stage: S5a
     verdict: correct
@@ -2348,8 +978,8 @@ items:
       on the check.'
 - key: prp-omega-order-arithmetic
   kind: prp
-  file: 06-order-on-omega.md
-  line: 117
+  file: 03-order-and-well-ordering.md
+  line: 119
   hash: 5a434764f1cc
   verdicts:
   - stage: S5a
@@ -2392,8 +1022,8 @@ items:
       prints ok.'
 - key: proof:prp-omega-order-arithmetic
   kind: proof
-  file: 06-order-on-omega.md
-  line: 137
+  file: 03-order-and-well-ordering.md
+  line: 139
   hash: 40928c20208f
   verdicts:
   - stage: S5a
@@ -2437,8 +1067,8 @@ items:
       (a).
 - key: prp-omega-powers-parity
   kind: prp
-  file: 06-order-on-omega.md
-  line: 185
+  file: 03-order-and-well-ordering.md
+  line: 187
   hash: 68d61cd22073
   verdicts:
   - stage: S5a
@@ -2463,8 +1093,8 @@ items:
       (07:231), and n'
 - key: proof:prp-omega-powers-parity
   kind: proof
-  file: 06-order-on-omega.md
-  line: 202
+  file: 03-order-and-well-ordering.md
+  line: 204
   hash: 433afc6e4138
   verdicts:
   - stage: S5a
@@ -2486,82 +1116,10 @@ items:
     evidence: '06:203-232: (a) by induction, using Law (g) for associativity. (b) by Order (d). (c) by
       Order (g) with base 1 and Order (e) with k = b^m ≠ 0. (d) existence: 2(q+1) via Laws (c), (e), (d).
       (d) uniqueness: r = 2 + (2i + r'') ≥ 2 contradicts r ≤ 1. Every step checks out.'
-- key: prp-tuples-as-sets
-  kind: prp
-  file: 06-order-on-omega.md
-  line: 243
-  hash: 83cd916d3daa
-  verdicts:
-  - stage: S5a
-    verdict: minor
-    by: refereeA
-    hash: 3889395f4110
-    date: '2026-10-11'
-    model: claude-opus-5-5
-    evidence: 06-order-on-omega.md:244 Once n ∈ ω is a set, the new X^n (graphs of functions {1,…,n} →
-      X) collides with Ch 6's Y^X (the set of all functions as pairs (G, Y)) read with exponent the set
-      n. The text does not address this, and NOTATION.md:58's 'X^n has a number as exponent; Y^X has a
-      set, and the two never clash' is false from this section on.
-  - stage: S5b
-    verdict: minor
-    by: refereeB
-    hash: 3889395f4110
-    date: '2026-10-11'
-    model: claude-opus-5-5
-    evidence: 06-order-on-omega.md:250 The symbol X^n gets a second meaning in this section. It clashes
-      with the powers b^n defined at line 177, because natural numbers are sets.
-  - stage: S7r
-    verdict: correct
-    by: rereferee
-    hash: 83cd916d3daa
-    date: '2026-10-11'
-    model: claude-opus-5-5
-    evidence: '06:246-266. All three earlier findings are resolved. (1) and (2): the new paragraph at
-      266 says that in X^n the exponent is read as a number. It is never Ch 6''s Y^X; ch06/04:170 confirms
-      that the elements of Y^X are pairs (G, Y), which matches the text. X^n is never written with X ∈
-      ω, and b^n is the power. NOTATION.md:58 and :85 have been updated to match. The example is right:
-      2^2 = 4, and 2×2 h'
-- key: proof:prp-tuples-as-sets
-  kind: proof
-  file: 06-order-on-omega.md
-  line: 272
-  hash: ff29b8708e6d
-  verdicts:
-  - stage: S5a
-    verdict: correct
-    by: refereeA
-    hash: 9f2d2342769b
-    date: '2026-10-11'
-    model: claude-opus-5-5
-    evidence: '06:269-285. 1<2<3≤n puts 1, 2 and 3 in {1..n}. (a): (Z5) and (Z6) inside P({1..n}×X). (b):
-      (Z1) and (Fn2) (ch06 04-functions.md:32). (c): a pair has no three distinct elements, and for n<n''
-      the first coordinate n'' is missing from the n-tuple by trichotomy. (d): (Z6) and def-image. (e):
-      ∅∉t, while 0∈m for m≠0.'
-  - stage: S5b
-    verdict: correct
-    by: refereeB
-    hash: 9f2d2342769b
-    date: '2026-10-11'
-    model: claude-opus-5-5
-    evidence: '06:269-285: 1, 2, 3 are distinct elements of {1,…,n}. (a): X^n is a set by (Z5), (Z6) inside
-      P({1..n}×X), and the (G, X) form matches def-function (G, Y). (b) uses (Z1) and (Fn2). (c): a pair
-      has at most two distinct elements, and tuples of different lengths are told apart by first coordinate
-      n''. (d): Separation, with {1,…,0} = ∅. (e): no element of a tuple is ∅. All steps are valid.'
-  - stage: S7r
-    verdict: correct
-    by: rereferee
-    hash: ff29b8708e6d
-    date: '2026-10-11'
-    model: claude-opus-5-5
-    evidence: '06:273-289. In (a), uniqueness comes from (Z1). For n = 2 the proof uses prp-cartesian-product-exists.
-      For n ≥ 3, separation inside P({1..n}×X) gives exactly the graphs G for which (G, X) is a function,
-      so the elements are exactly the n-tuples. (b) uses (Z1) and (Fn2). (c): three distinct pairs against
-      at most two elements, and first coordinate n'' against k ≤ n with trichotomy. (d) uses (Z6) and
-      d'
 - key: exr-order-on-omega-a1
   kind: exr
-  file: 06-order-on-omega.md
-  line: 298
+  file: 03-order-and-well-ordering.md
+  line: 245
   hash: 1e43a9c442dd
   verdicts:
   - stage: S5a
@@ -2604,8 +1162,8 @@ items:
       finishe'
 - key: exr-order-on-omega-b1
   kind: exr
-  file: 06-order-on-omega.md
-  line: 321
+  file: 03-order-and-well-ordering.md
+  line: 268
   hash: 8454254a9d6d
   verdicts:
   - stage: S5a
@@ -2646,8 +1204,8 @@ items:
       not a natural number. The argument is correct, and 1 ≠ 0 is immediate from (P3).'
 - key: exr-order-on-omega-b2
   kind: exr
-  file: 06-order-on-omega.md
-  line: 335
+  file: 03-order-and-well-ordering.md
+  line: 282
   hash: a2039035aa3c
   verdicts:
   - stage: S5a
@@ -2676,8 +1234,8 @@ items:
       Counterexample m=1, n=0 is valid. Worked example: proof of prp-omega-order-arithmetic (e).'
 - key: exr-order-on-omega-c1
   kind: exr
-  file: 06-order-on-omega.md
-  line: 353
+  file: 03-order-and-well-ordering.md
+  line: 300
   hash: a4b59f787fb7
   verdicts:
   - stage: S5a
@@ -2710,8 +1268,8 @@ items:
       Chapter 3 (ch03 02-induction.md:133), from ax-induction.'
 - key: exr-order-on-omega-c2
   kind: exr
-  file: 06-order-on-omega.md
-  line: 384
+  file: 03-order-and-well-ordering.md
+  line: 331
   hash: a49735e1d7e6
   verdicts:
   - stage: S5a
@@ -2757,8 +1315,8 @@ items:
       scheme (40
 - key: thm-peano-categoricity
   kind: thm
-  file: 07-categoricity.md
-  line: 29
+  file: 04-categoricity.md
+  line: 31
   hash: 4874a5af391c
   verdicts:
   - stage: S5a
@@ -2782,8 +1340,8 @@ items:
       NOTATION.md row 64.'
 - key: proof:thm-peano-categoricity
   kind: proof
-  file: 07-categoricity.md
-  line: 57
+  file: 04-categoricity.md
+  line: 59
   hash: 77f41a35a6e9
   verdicts:
   - stage: S5a
@@ -2813,11 +1371,12 @@ items:
       are symmetric, and the remark after that definition says so outright, so phi is an inverse of phi^{-1}.
       thm-bijection-iff-inverse (<=) then makes phi^{-1} bijective, and thm-composition-injective-surjective
       (c) makes psi bijective. Ledger line 413 records this step. Both S5a and S5b findi
-- key: check:07-categoricity:1
+- key: check:04-categoricity:1
   kind: check
-  file: 07-categoricity.md
-  line: 96
+  file: 04-categoricity.md
+  line: 98
   hash: 6e02ffdfb7d0
+  moved_from: check:07-categoricity:1
   verdicts:
   - stage: S5a
     verdict: correct
@@ -2837,8 +1396,8 @@ items:
       so φ(3)=4 by uniqueness. The step-by-step values are correct.
 - key: prp-isomorphism-preserves-arithmetic
   kind: prp
-  file: 07-categoricity.md
-  line: 108
+  file: 04-categoricity.md
+  line: 110
   hash: 590fc9352297
   verdicts:
   - stage: S5a
@@ -2870,8 +1429,8 @@ items:
       (a), the hypoth'
 - key: proof:prp-isomorphism-preserves-arithmetic
   kind: proof
-  file: 07-categoricity.md
-  line: 131
+  file: 04-categoricity.md
+  line: 133
   hash: 8e8db7923ffb
   verdicts:
   - stage: S5a
@@ -2894,8 +1453,8 @@ items:
       with injectivity and surjectivity from thm (b).
 - key: cor-omega-identification
   kind: cor
-  file: 07-categoricity.md
-  line: 163
+  file: 04-categoricity.md
+  line: 165
   hash: 783342e68106
   verdicts:
   - stage: S5a
@@ -2939,8 +1498,8 @@ items:
       (line 231) is now accurate. cor-product-countable (b) (ch08/02:241) says 'If A_1,...,A_k are countab
 - key: proof:cor-omega-identification
   kind: proof
-  file: 07-categoricity.md
-  line: 183
+  file: 04-categoricity.md
+  line: 185
   hash: be1fc3f4f8dc
   verdicts:
   - stage: S5a
@@ -2985,8 +1544,8 @@ items:
       statement matches its source, which I checked in 06-order-on-omega.md and ch07 01-naturals-and-well-ordering.md.'
 - key: exr-categoricity-a1
   kind: exr
-  file: 07-categoricity.md
-  line: 243
+  file: 04-categoricity.md
+  line: 245
   hash: 5ba3123ba1c3
   verdicts:
   - stage: S5a
@@ -3018,8 +1577,8 @@ items:
       φ(1)=2, φ(2)=3. (d) is a faithful two-sentence idea.
 - key: exr-categoricity-b1
   kind: exr
-  file: 07-categoricity.md
-  line: 268
+  file: 04-categoricity.md
+  line: 270
   hash: 15986a580077
   verdicts:
   - stage: S5a
@@ -3050,8 +1609,8 @@ items:
       at 07:9-13.'
 - key: exr-categoricity-b2
   kind: exr
-  file: 07-categoricity.md
-  line: 282
+  file: 04-categoricity.md
+  line: 284
   hash: 81f00d9e6710
   verdicts:
   - stage: S5a
@@ -3079,8 +1638,8 @@ items:
       Worked example: the check computing φ(3) at 07:122-128.'
 - key: exr-categoricity-c1
   kind: exr
-  file: 07-categoricity.md
-  line: 304
+  file: 04-categoricity.md
+  line: 306
   hash: 24aaf3dc5336
   verdicts:
   - stage: S5a
@@ -3122,8 +1681,8 @@ items:
       long
 - key: exr-categoricity-c2
   kind: exr
-  file: 07-categoricity.md
-  line: 335
+  file: 04-categoricity.md
+  line: 337
   hash: e95569e4099b
   verdicts:
   - stage: S5a
@@ -3154,8 +1713,8 @@ items:
       matches exm-peano-axioms-independent (iii) (04 file). The remark that f(e)=0 is unused is correct.'
 - key: exr-categoricity-r1
   kind: exr
-  file: 07-categoricity.md
-  line: 353
+  file: 04-categoricity.md
+  line: 355
   hash: 5db8d74f1166
   verdicts:
   - stage: S5a
@@ -3196,8 +1755,8 @@ items:
       (d) makes it onto, the sub'
 - key: exr-categoricity-r2
   kind: exr
-  file: 07-categoricity.md
-  line: 363
+  file: 04-categoricity.md
+  line: 365
   hash: a2c0706ed67a
   verdicts:
   - stage: S5a
@@ -3228,8 +1787,8 @@ items:
       the source is hidden and named with @ref.
 - key: exr-categoricity-r3
   kind: exr
-  file: 07-categoricity.md
-  line: 381
+  file: 04-categoricity.md
+  line: 383
   hash: 3aa6a8753383
   verdicts:
   - stage: S5a
@@ -3268,8 +1827,8 @@ items:
       (c). M satisfies P3 and P5 and fails P4. The comparison with thm-unique-readability is accurate.'
 - key: exr-categoricity-r4
   kind: exr
-  file: 07-categoricity.md
-  line: 393
+  file: 04-categoricity.md
+  line: 395
   hash: 55ac60b4f551
   verdicts:
   - stage: S5a

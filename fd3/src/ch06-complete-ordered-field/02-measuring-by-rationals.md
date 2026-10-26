@@ -1,5 +1,7 @@
 # Building the Map from the Rationals Below
 
+<!-- S3: style revision per S1 change list (layout-proposal.md §3, 6.2, pipeline S): the second remark keeps only ℚ(t); trim. -->
+
 Section 6.1 gave every element \( x \) of an ordered field \( F \) a record, the set \( \nQ_F(x) \) of rationals below it, and showed that in an Archimedean field the record determines the element (@lem-cof-rationals-separate). This section turns the record into a map. Given an Archimedean field \( F \) and a complete field \( L \), we send \( x \in F \) to the element of \( L \) with the same record. The result is the main theorem of the chapter in its one-sided form: there is exactly one order-preserving field map \( F \to L \). Section 6.3 applies it twice, in both directions, to compare two complete ordered fields.
 
 Two fields are in play throughout, so every proof here keeps \( \iota_F \) and \( \iota_L \) visible. Only the two lemmas, each about one field, write \( q \) for \( \iota_F(q) \).

@@ -1,7 +1,7 @@
 <!-- Parked from fd2 (fd2/authoring/design/layout-six-chapters.md §2, approved 2026-10-26). Not part of any book's src; nothing builds or scans it.
 Old section: fd2 5.4 Permutations and Iteration (src/ch05-building-functions/04-permutations-and-iteration.md)
 Labels: def-permutation, prp-permutations-closed, def-iterate, prp-iterate-laws, def-orbit, thm-orbits-partition, prp-orbit-cycle, exm-method-follow-the-orbit, exm-three-pile-shuffle, def-permutation-cycle, thm-permutation-cycles, cor-permutation-power-identity, prp-eventually-periodic, exm-squaring-mod-eleven, exr-permutations-and-iteration-a1, exr-permutations-and-iteration-b1, exr-permutations-and-iteration-b2, exr-permutations-and-iteration-b3, exr-permutations-and-iteration-b4, exr-permutations-and-iteration-c1, exr-permutations-and-iteration-c2, exr-permutations-and-iteration-c3, exr-permutations-and-iteration-r1, exr-permutations-and-iteration-r2, exr-permutations-and-iteration-r3, exr-permutations-and-iteration-r4
-Intended home: fd5 Algebraic Preliminaries, a later revision (fd5 Chapter 2 already has def-symmetric-group, def-cycle, thm-disjoint-cycle-decomposition); no fd5 file cites these labels
+Intended home: fd5 Algebraic Preliminaries, a later revision (fd5 Chapter 3 already has def-symmetric-group, def-cycle, thm-disjoint-cycle-decomposition); no fd5 file cites these labels
 -->
 
 # Permutations and Iteration
@@ -156,7 +156,7 @@ O_\sigma(x) \coloneqq \{ \sigma^k(x) : k \in \nZ \} .
 For an arbitrary function \( f \colon X \to X \), the **forward orbit** of \( x \) is \( \{ f^n(x) : n \in \nN \} \). A **fixed point** of \( f \) is an \( x \in X \) with \( f(x) = x \).
 :::
 
-In words: the orbit collects every point reached from \( x \) by applying \( \sigma \) or \( \sigma^{-1} \) any number of times; the forward orbit uses \( f \) only, so it makes sense for every self-map. For a permutation, the forward orbit of \( x \) is contained in \( O_\sigma(x) \), since \( \nN \subseteq \nZ \); on a finite set the two are equal, as the next subsection proves. A fixed point is a point the map does not move, the sense in which Section 3.4 called \( 0 \) a fixed point of a bijection. For the hook's shuffle, \( O_\sigma(1) = \{1, 3, 9, 5, 4\} \): since \( \sigma^5(1) = 1 \), the negative powers give nothing new (\( \sigma^{-1}(1) = \sigma^4(1) \), and so on; @prp-orbit-cycle proves this in general), and \( 0 \) and \( 11 \) are the fixed points.
+In words: the orbit collects every point reached from \( x \) by applying \( \sigma \) or \( \sigma^{-1} \) any number of times; the forward orbit uses \( f \) only, so it makes sense for every self-map. For a permutation, the forward orbit of \( x \) is contained in \( O_\sigma(x) \), since \( \nN \subseteq \nZ \); on a finite set the two are equal, as the next subsection proves. A fixed point is a point the map does not move, the sense in which Section 4.4 called \( 0 \) a fixed point of a bijection. For the hook's shuffle, \( O_\sigma(1) = \{1, 3, 9, 5, 4\} \): since \( \sigma^5(1) = 1 \), the negative powers give nothing new (\( \sigma^{-1}(1) = \sigma^4(1) \), and so on; @prp-orbit-cycle proves this in general), and \( 0 \) and \( 11 \) are the fixed points.
 
 ::: {.warning}
 Forward orbits need not cut a set into pieces. For \( f(n) = n + 1 \) on \( \nN \), the forward orbit of \( 0 \) is \( \nN \) and that of \( 1 \) is \( \{ n \in \nN : n \ge 1 \} \): they overlap and are not equal. Only orbits of a **permutation**, with \( k \) running over \( \nZ \), are guaranteed to be disjoint or equal.
@@ -333,7 +333,7 @@ For \( j = r \): a point \( y \) outside \( U_r \) lies in an orbit with fewer t
 Let \( i \ne j \) and \( y \in X \). If \( y \in O_i \), then \( \gamma_j(y) = y \), so \( \gamma_i(\gamma_j(y)) = \gamma_i(y) = \sigma(y) \); and \( \gamma_i(y) = \sigma(y) \in O_i \) is fixed by \( \gamma_j \), so \( \gamma_j(\gamma_i(y)) = \sigma(y) \). If \( y \in O_j \), the same two lines with \( i \) and \( j \) exchanged give \( \sigma(y) \) on both sides. If \( y \) lies in neither, both cycles fix it, and both composites give \( y \). So \( \gamma_i \circ \gamma_j = \gamma_j \circ \gamma_i \) by @prp-function-equality. For \( i = j \) there is nothing to prove.
 :::
 
-From now on we write \( \gamma\delta \) for \( \gamma \circ \delta \), the right factor applied first, the convention of *Algebraic Preliminaries*, Chapter 2. Two examples. The three-pile shuffle of @exm-three-pile-shuffle is
+From now on we write \( \gamma\delta \) for \( \gamma \circ \delta \), the right factor applied first, the convention of *Algebraic Preliminaries*, Chapter 3. Two examples. The three-pile shuffle of @exm-three-pile-shuffle is
 \[
 \sigma = (1\ 3\ 9\ 5\ 4)(2\ 6\ 7\ 10\ 8) ,
 \]
@@ -420,7 +420,7 @@ Follow the forward orbit of \( [0] \) under \( [a] \mapsto [a^2 + 1] \) on \( \n
 ::: {.remark}
 [Looking ahead]
 
-*Algebraic Preliminaries*, Chapter 2 gives a name, group, to a set with an associative operation that has an identity and inverses, as \( \circ \) on \( S_X \) does by @prp-permutations-closed, and studies \( S_X \) among its examples.
+*Algebraic Preliminaries*, Chapter 3 gives a name, group, to a set with an associative operation that has an identity and inverses, as \( \circ \) on \( S_X \) does by @prp-permutations-closed, and studies \( S_X \) among its examples.
 :::
 
 ## Exercises
@@ -604,7 +604,7 @@ On \( \nR \), let \( x \sim y \) mean \( x - y \in \nZ \). Show that \( [x] \map
 :::
 
 ::: {.solution}
-Here \( \sim \) is the equivalence relation of @exm-reals-mod-integers. Let \( g \colon \nR \to \nR/{\sim} \), \( g(x) \coloneqq [2x] \). If \( x \sim x' \), then \( 2x - 2x' = 2(x - x') \in \nZ \), so \( g \) is constant on classes, and @thm-functions-out-of-quotient (a) gives the function \( [x] \mapsto [2x] \) (@exm-method-factor-through-quotient). It is onto: every class \( [y] \) is the image of \( [y/2] \). It is not injective: \( [0] \mapsto [0] \) and \( [\tfrac12] \mapsto [1] = [0] \), while \( [0] \ne [\tfrac12] \) by @exm-reals-mod-integers. The method is the well-definedness check of Section 4.2 (@exm-method-well-definedness).
+Here \( \sim \) is the equivalence relation of @exm-reals-mod-integers. Let \( g \colon \nR \to \nR/{\sim} \), \( g(x) \coloneqq [2x] \). If \( x \sim x' \), then \( 2x - 2x' = 2(x - x') \in \nZ \), so \( g \) is constant on classes, and @thm-functions-out-of-quotient (a) gives the function \( [x] \mapsto [2x] \) (@exm-method-factor-through-quotient). It is onto: every class \( [y] \) is the image of \( [y/2] \). It is not injective: \( [0] \mapsto [0] \) and \( [\tfrac12] \mapsto [1] = [0] \), while \( [0] \ne [\tfrac12] \) by @exm-reals-mod-integers. The method is the well-definedness check of Section 5.2 (@exm-method-well-definedness).
 :::
 
 ::: {#exr-permutations-and-iteration-r2}
@@ -622,7 +622,7 @@ with @prp-composition-associative at each regrouping, and likewise \( c(d(\tau))
 \[
 c(\sigma)(\varphi(x)) = \varphi\bigl(\sigma(\varphi^{-1}(\varphi(x)))\bigr) = \varphi(\sigma(x)) ,
 \]
-which equals \( \varphi(x) \) if and only if \( \sigma(x) = x \), since \( \varphi \) is injective. The tools are the composites and inverses of Sections 1.5 and 1.6. (Section 3.3's @exr-diagonal-arguments-c2 used bijections of \( \nN \) for a different purpose.)
+which equals \( \varphi(x) \) if and only if \( \sigma(x) = x \), since \( \varphi \) is injective. The tools are the composites and inverses of Sections 2.5 and 2.6. (Section 4.3's @exr-diagonal-arguments-c2 used bijections of \( \nN \) for a different purpose.)
 :::
 
 ::: {#exr-permutations-and-iteration-r3}
@@ -636,7 +636,7 @@ By induction on \( n \) (@fd1:ax-induction), with the powers of @def-power. For 
 \[
 f^{n+1}(x) = 2\bigl(2^n x + 2^n - 1\bigr) + 1 = 2^{n+1} x + 2^{n+1} - 1 ,
 \]
-since \( 2 \cdot 2^n = 2^n \cdot 2 = 2^{n+1} \). The method is the induction of Section 2.2 on a sequence defined by recursion (@thm-recursion).
+since \( 2 \cdot 2^n = 2^n \cdot 2 = 2^{n+1} \). The method is the induction of Section 3.2 on a sequence defined by recursion (@thm-recursion).
 :::
 
 ::: {#exr-permutations-and-iteration-r4}
@@ -650,7 +650,7 @@ For every \( a \), by @def-preimage applied to \( f|_A \colon A \to Y \) and to 
 \[
 a \in (f|_A)^{-1}(B) \iff a \in A \wedge f(a) \in B \iff a \in A \cap f^{-1}(B) ,
 \]
-where the second step uses \( A \subseteq X \). The two sets have the same elements, so they are equal. This is the element-chasing of Section 1.7 applied to a function built in Section 5.1. The tool is the preimage definition (@def-preimage), tested pointwise. The look-alike tools fail: image rules such as @prp-restriction-properties compare images, not preimages, and \( f(A \cap C) \) can be strictly smaller than \( f(A) \cap f(C) \); and \( (f|_A)^{-1} \) here is a preimage, not an inverse function, which \( f|_A \) need not have.
+where the second step uses \( A \subseteq X \). The two sets have the same elements, so they are equal. This is the element-chasing of Section 2.7 applied to a function built in Section 5.1. The tool is the preimage definition (@def-preimage), tested pointwise. The look-alike tools fail: image rules such as @prp-restriction-properties compare images, not preimages, and \( f(A \cap C) \) can be strictly smaller than \( f(A) \cap f(C) \); and \( (f|_A)^{-1} \) here is a preimage, not an inverse function, which \( f|_A \) need not have.
 :::
 
 <!-- dependency ledger
@@ -663,7 +663,7 @@ prp-iterate-laws (proof): m + mn = m(n + 1); exponents in Z add and subtract as 
 prp-iterate-laws (proof): induction on n in N | fd1 ax-induction (cited in (a)), used again in (b), (c)
 prp-iterate-laws (claim): (quick check) (x + 3n) + 3 = x + 3(n + 1) | R arithmetic
 def-orbit (claim): n + 1 >= 1 for n in N, so 1 never reaches 0 | prp-integers-closed (b), lem-naturals-arithmetic (a): naturals are >= 0
-def-orbit (claim): the sense of "fixed point" in Section 3.4 (h(0) = 0) | ch03 §04, prose pointer, nothing depends on it
+def-orbit (claim): the sense of "fixed point" in Section 4.4 (h(0) = 0) | ch03 §04, prose pointer, nothing depends on it
 thm-orbits-partition (claim): (quick check) orbits of the 5-element table | arithmetic; fd5/authoring/parked/from-fd2/verify/thm-orbits-partition.py
 prp-orbit-cycle (proof): {1, ..., n + 1} has n + 1 elements | def-finite with the identity bijection
 prp-orbit-cycle (proof): (q + 1)k = k + qk; -q > 0 for q < 0 | R arithmetic

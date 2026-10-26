@@ -1,5 +1,7 @@
 # Sequences and Limits in an Ordered Field
 
+<!-- S3: style revision per S1 change list (layout-proposal.md §3, 4.3, pipeline S): scratch work finding N from |aₙ − a| (B1 as the worked example); new method box (provisional exm-method-limit-from-definition); ε/2 uniqueness by Idea. -->
+
 In \( \nQ \) the fractions \( 1/2, 2/3, 3/4, \dots \) "tend to \( 1 \)". Sections 4.1 and 4.2 supplied the tools to say what that means without leaving \( \nQ \): an absolute value to measure distance, and the Archimedean property to make \( 1/(n + 1) \) small. This section defines the limit of a sequence in an arbitrary ordered field, with tolerances taken from that field. It then proves that a sequence has at most one limit, and that a convergent sequence is bounded. Chapter 5 applies these results with \( F = \nQ \), at a stage when no other number system is available.
 
 Throughout, \( F \) is an ordered field (@def-ordered-ring-and-field), and \( F_{>0} = \{ x \in F : x > 0 \} \) is its set of positive elements, as in Section 4.1; for \( F = \nQ \) this is \( \nQ_{>0} \). As agreed after @prp-naturals-in-ordered-field, we write \( n \) for \( n \cdot 1_F \) where no confusion arises. So \( 1/(n + 1) \) in \( F \) means \( 1/((n + 1) \cdot 1_F) \), which exists and is positive, since \( (n + 1) \cdot 1_F \ge 1 > 0 \) by @prp-naturals-in-ordered-field (b) and reciprocals of positive elements are positive (@prp-reciprocal-order (a)).
@@ -423,8 +425,8 @@ def-bounded-sequence-ordered-field (example): |c| + 1 > 0 | prp-absolute-value-o
 prp-reciprocals-null-iff-archimedean (proof): negation of def-archimedean-ordered-field; not(x < n 1_F) iff x >= n 1_F | fd1:prp-bounded-quantifier-negation (cited), prp-ordered-field-halves (a)
 prp-reciprocals-null-iff-archimedean (claim): Q(t) is not Archimedean (t > n 1 for every n) | exm-rational-function-field: school fact; formal polynomials in F5.4 (flagged; nothing in fd3 depends on it, and no proof here cites it)
 prp-reciprocals-null-iff-archimedean (claim): (the remark after it) 1/(n+1) in Q(t) is iota(1/(n+1)) (iota respects products, iota(1) = 1), and 1/(n+1) < q eventually in Q, carried over by iota | thm-rationals-embed-ordered-field, exm-first-sequences-ordered-field (b) (cited); Q(t) as above, school fact; formal polynomials in F5.4
-prp-tail-change-ordered-field (proof): finite maximum of elements of F | fd2:prp-finite-max (stated for reals; its proof works in any ordered field, fd2 Section 2.6, prose remark after prp-greatest-maximal)
-prp-convergent-bounded-ordered-field (proof): finite maximum of elements of F | fd2:prp-finite-max (stated for reals; its proof works in any ordered field, fd2 Section 2.6, prose remark after prp-greatest-maximal), as in prp-tail-change-ordered-field (proof)
+prp-tail-change-ordered-field (proof): finite maximum of elements of F | fd2:prp-finite-max (stated for reals; its proof works in any ordered field, fd2 Section 3.3, prose remark after prp-greatest-maximal)
+prp-convergent-bounded-ordered-field (proof): finite maximum of elements of F | fd2:prp-finite-max (stated for reals; its proof works in any ordered field, fd2 Section 3.3, prose remark after prp-greatest-maximal), as in prp-tail-change-ordered-field (proof)
 prp-tail-change-ordered-field (proof): n >= N gives n + k >= N; n >= N + k gives n = m + k with m >= N | prp-omega-order-arithmetic (a), (c) (cited)
 thm-limit-unique-ordered-field (proof): a != b gives a - b != 0 | (F4), prp-ring-algebra (a)
 thm-limit-unique-ordered-field (proof): max{N1, N2} exists in N | thm-omega-order (a); the same in prp-tail-change-ordered-field (proof)

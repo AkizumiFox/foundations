@@ -1,0 +1,4864 @@
+chapter: 5
+dir: ch05-polynomials-over-a-field
+items:
+- key: def-polynomial-divides
+  kind: def
+  file: 01-polynomial-division.md
+  line: 17
+  hash: 0a529a69e04c
+  verdicts:
+  - stage: S5a
+    verdict: correct
+    by: refereeA
+    hash: 0a529a69e04c
+    date: '2026-10-12'
+    model: claude-opus-5-5
+    evidence: '17-39: definition matches the blueprint; the four instances are right (F2: (x+1)^2=x^2+1;
+      Q: evaluating at -1 via thm-evaluation-respects-operations gives 2=0, false); the degenerate cases
+      are right'
+  - stage: S5b
+    verdict: minor
+    by: refereeB
+    hash: 0a529a69e04c
+    date: '2026-10-12'
+    model: claude-opus-5-5
+    evidence: 01-polynomial-division.md:39 The meta-claim 'this is where the field enters for the first
+      time' is false of the page.
+  - stage: S7r
+    verdict: correct
+    by: rereferee
+    hash: 0a529a69e04c
+    date: '2026-10-12'
+    model: claude-opus-5-5
+    evidence: '01-polynomial-division.md:17-39. The definition and the four instances check out: (x-1)(x+1);
+      (2x-2)(x/2+1/2) = x^2-1; (x+1)^2 = x^2+1 over F_2; the Q non-example by evaluation at -1, using
+      thm-evaluation-respects-operations. The quick check gives 5 = 2 != 0 in F_3. The earlier S5b finding
+      is resolved: line 39 now says ''this is (F8), inverses of non-zero elements, at work in general
+      (the cofactor '
+- key: check:01-polynomial-division:1
+  kind: check
+  file: 01-polynomial-division.md
+  line: 41
+  hash: 0aa0da1161ed
+  verdicts:
+  - stage: S5a
+    verdict: correct
+    by: refereeA
+    hash: 0aa0da1161ed
+    date: '2026-10-12'
+    model: claude-opus-5-5
+    evidence: '46: 2^2+1=5=2 and 2+1=0 in F3, so the evaluation gives 2=0, which is false'
+  - stage: S5b
+    verdict: correct
+    by: refereeB
+    hash: 0aa0da1161ed
+    date: '2026-10-12'
+    model: claude-opus-5-5
+    evidence: '01:41-47: 2^2+1 = 5 = 2 ≠ 0 in F_3 and 2+1 = 0, so x+1 ∤ x^2+1. Evaluation is cited (@thm-evaluation-respects-operations).
+      Sidecar def-polynomial-divides.py asserts it.'
+- key: prp-polynomial-divisibility-rules
+  kind: prp
+  file: 01-polynomial-division.md
+  line: 51
+  hash: 2701f33fa252
+  verdicts:
+  - stage: S5a
+    verdict: correct
+    by: refereeA
+    hash: 2701f33fa252
+    date: '2026-10-12'
+    model: claude-opus-5-5
+    evidence: '57-62: every part is true. (f) also covers f=g=0 because 0=1*0'
+  - stage: S5b
+    verdict: minor
+    by: refereeB
+    hash: 2701f33fa252
+    date: '2026-10-12'
+    model: claude-opus-5-5
+    evidence: 01-polynomial-division.md:49 Two meta-claims say (a)-(c), or (a)-(d), are pure commutative-ring
+      identities, but part (a)'s third clause needs the inverse c^{-1} from (F8).
+  - stage: S7r
+    verdict: correct
+    by: rereferee
+    hash: 2701f33fa252
+    date: '2026-10-12'
+    model: claude-opus-5-5
+    evidence: 'Lines 49, 57-62, 67. Statements (a)-(f) are correct. The earlier S5b finding is resolved:
+      both meta-claims now separate out the inverse c^{-1} from (F8) for the last clause of (a). Line
+      49 reads ''plus the inverse of a non-zero constant (F8) for the last clause of (a)'' and the idea
+      block at line 67 reads ''except that the last clause of (a) also uses c^{-1}, from (F8)''. Part
+      (d)''s ''one degree count'''
+- key: proof:prp-polynomial-divisibility-rules
+  kind: proof
+  file: 01-polynomial-division.md
+  line: 70
+  hash: 66319a991e25
+  verdicts:
+  - stage: S5a
+    verdict: correct
+    by: refereeA
+    hash: 64c89b2d63d2
+    date: '2026-10-12'
+    model: claude-opus-5-5
+    evidence: '73-89: (d) uses thm-degree-of-product (b) with F having no zero divisors; (e) uses prp-polynomial-units
+      (stated for an integral domain, which F is by exm-integral-domains); (f) uses cor-polynomial-no-zero-divisors
+      (a) to get uv=1, then (e). Monic associate: lc(cf)=c*lc(f) by thm-polynomial-ring-laws (d), with
+      uniqueness of inverses. Every step checked'
+  - stage: S5b
+    verdict: minor
+    by: refereeB
+    hash: 64c89b2d63d2
+    date: '2026-10-12'
+    model: claude-opus-5-5
+    evidence: '01:70-90. Each part checks: (d) uses @thm-degree-of-product (b), (e) uses @prp-polynomial-units,
+      (f) uses @cor-polynomial-no-zero-divisors (a). Line 87 uses ''a^{-1} ≠ 0'' with no reason and no
+      ledger line (ledger 456 covers only the no-zero-divisors step).'
+  - stage: S7r
+    verdict: correct
+    by: rereferee
+    hash: 66319a991e25
+    date: '2026-10-12'
+    model: claude-opus-5-5
+    evidence: Lines 71-90, checked line by line. (a) uses (F8). (d) uses thm-degree-of-product (b), whose
+      first bullet covers a field via thm-field-basic-properties (f). (e) matches prp-polynomial-units,
+      which is stated for an integral domain, and 0 is not a unit by thm-field-basic-properties (d) and
+      (F7). In (f)(=>), f(1-uv) = 0 and cor-polynomial-no-zero-divisors (a) give uv = 1, so v is a unit.
+      The f = 0 cas
+- key: check:01-polynomial-division:2
+  kind: check
+  file: 01-polynomial-division.md
+  line: 96
+  hash: 1e38405721bc
+  verdicts:
+  - stage: S5a
+    verdict: correct
+    by: refereeA
+    hash: 1e38405721bc
+    date: '2026-10-12'
+    model: claude-opus-5-5
+    evidence: '101: lc=3c must lie in {±1,±2,±3}, and 6c=2*3c is then an integer; the six associates are
+      listed and x+2 is the monic one'
+  - stage: S5b
+    verdict: correct
+    by: refereeB
+    hash: 1e38405721bc
+    date: '2026-10-12'
+    model: claude-opus-5-5
+    evidence: '01:96-102: lc = 3c ∈ {±1,±2,±3} gives ±(x+2), ±(2x+4), ±(3x+6), all with integer coefficients.
+      The monic one is x+2. Sidecar asserts it.'
+- key: thm-polynomial-division-remainder
+  kind: thm
+  file: 01-polynomial-division.md
+  line: 108
+  hash: cc0a4d8dcdc1
+  verdicts:
+  - stage: S5a
+    verdict: correct
+    by: refereeA
+    hash: cc0a4d8dcdc1
+    date: '2026-10-12'
+    model: claude-opus-5-5
+    evidence: '111-118: g≠0 is needed (see 154); with g=0 there is no r with deg r < -inf'
+  - stage: S5b
+    verdict: correct
+    by: refereeB
+    hash: cc0a4d8dcdc1
+    date: '2026-10-12'
+    model: claude-opus-5-5
+    evidence: '01:108-122: statement as in the blueprint, hypotheses F a field and g ≠ 0. What fails without
+      each is shown at 01:154 (g=0) and in the warning at 01:200 (non-invertible leading coefficient).'
+- key: proof:thm-polynomial-division-remainder
+  kind: proof
+  file: 01-polynomial-division.md
+  line: 130
+  hash: cf5ff160b756
+  verdicts:
+  - stage: S5a
+    verdict: correct
+    by: refereeA
+    hash: 2662745b352e
+    date: '2026-10-12'
+    model: claude-opus-5-5
+    evidence: '131-151: quantifier order is fine (n is the least element of D, then q is chosen with deg(f-qg)=n,
+      then t depends on a,b,n,m). lc(t)lc(g)=a≠0 gives deg tg=n; the x^n coefficient a-a=0 gives deg r1<n;
+      r1≠0 because 0∉S. Uniqueness uses thm-degree-of-product (b), which needs no zero divisors. (b) follows
+      from uniqueness. The integer twin matches fd3''s least-element proof'
+  - stage: S5b
+    verdict: minor
+    by: refereeB
+    hash: 2662745b352e
+    date: '2026-10-12'
+    model: claude-opus-5-5
+    evidence: 01-polynomial-division.md:143 The existence step applies @thm-degree-of-sum to a difference
+      before the fact deg(−p) = deg p has been stated.
+  - stage: S7r
+    verdict: correct
+    by: rereferee
+    hash: cf5ff160b756
+    date: '2026-10-12'
+    model: claude-opus-5-5
+    evidence: 'Lines 131-152. Both S5b findings are resolved. (1) Line 143 now states deg(-p) = deg p
+      for every p, because (-p)_k = -p_k, before thm-degree-of-sum is applied to r - tg. The uniqueness
+      step at line 149 refers back to it, and ledger line 459 covers it. (2) Line 139 justifies b^{-1}
+      != 0 by b*0 = 0 != 1 = b b^{-1}, then ab^{-1} != 0 by thm-field-basic-properties (f). The rest checks
+      out: r_1 = f - ('
+- key: exm-polynomial-long-division
+  kind: exm
+  file: 01-polynomial-division.md
+  line: 158
+  hash: 33ef27ec331a
+  verdicts:
+  - stage: S5a
+    verdict: correct
+    by: refereeA
+    hash: 33ef27ec331a
+    date: '2026-10-12'
+    model: claude-opus-5-5
+    evidence: 'sympy: Q division gives quotient x^2-x-3/2 and remainder 11/2 x+7/2, and every intermediate
+      line matches; F3 gives quotient -x^2-1=2x^2+2 and remainder x, and the intermediate line x^2+x-1=x^2+x+2'
+  - stage: S5b
+    verdict: correct
+    by: refereeB
+    hash: 33ef27ec331a
+    date: '2026-10-12'
+    model: claude-opus-5-5
+    evidence: '01:158-189. Recomputed by hand: (i) the passes give quotient x^2 − x − 3/2 and remainder
+      11/2 x + 7/2. (ii) In F_3, 2^{-1} = 2, quotient 2x^2+2, remainder x. Sidecar passes.'
+- key: check:01-polynomial-division:3
+  kind: check
+  file: 01-polynomial-division.md
+  line: 191
+  hash: 49a10aff44f0
+  verdicts:
+  - stage: S5a
+    verdict: minor
+    by: refereeA
+    hash: 818c61a1c699
+    date: '2026-10-12'
+    model: claude-opus-5-5
+    evidence: 01-polynomial-division.md:192 The check asks which 'hypothesis' the second pair violates,
+      but deg r < deg g is a condition in the conclusion, not a hypothesis.
+  - stage: S5b
+    verdict: minor
+    by: refereeB
+    hash: 818c61a1c699
+    date: '2026-10-12'
+    model: claude-opus-5-5
+    evidence: 01-polynomial-division.md:192 The Quick check calls the degree condition on r a 'hypothesis
+      of the theorem', but it is part of the conclusion.
+  - stage: S7r
+    verdict: correct
+    by: rereferee
+    hash: 49a10aff44f0
+    date: '2026-10-12'
+    model: claude-opus-5-5
+    evidence: 'Lines 191-197, the third check block. Both findings are resolved: the question now asks
+      ''Which condition in part (a) of the theorem does the second one fail?'' and the solution says ''fails
+      deg r < deg g = 2''. Solved independently: (1,-1) and (0,x^2) both satisfy x^2 = q(x^2+1) + r with
+      deg r <= 2, and only the first has deg r < 2. This matches the solution.'
+- key: thm-polynomial-remainder-factor
+  kind: thm
+  file: 01-polynomial-division.md
+  line: 207
+  hash: 4aa0cd0e8379
+  verdicts:
+  - stage: S5a
+    verdict: correct
+    by: refereeA
+    hash: 4aa0cd0e8379
+    date: '2026-10-12'
+    model: claude-opus-5-5
+    evidence: '212-215: true for any field and any c'
+  - stage: S5b
+    verdict: correct
+    by: refereeB
+    hash: 4aa0cd0e8379
+    date: '2026-10-12'
+    model: claude-opus-5-5
+    evidence: '01:207-217: (a)-(c) are true for every field F, f ∈ F[x] and c ∈ F.'
+- key: proof:thm-polynomial-remainder-factor
+  kind: proof
+  file: 01-polynomial-division.md
+  line: 223
+  hash: 32345d596f90
+  verdicts:
+  - stage: S5a
+    verdict: correct
+    by: refereeA
+    hash: 32345d596f90
+    date: '2026-10-12'
+    model: claude-opus-5-5
+    evidence: '224-231: (a) divides, then evaluates using thm-evaluation-respects-operations (a constant
+      maps to itself, x maps to c); (b) uses thm-polynomial-division-remainder (b); (c) uses the factorisation
+      ax+b=a(x+a^{-1}b) and transitivity (prp (b))'
+  - stage: S5b
+    verdict: correct
+    by: refereeB
+    hash: 32345d596f90
+    date: '2026-10-12'
+    model: claude-opus-5-5
+    evidence: 01:223-232. (a) gives deg r < 1, so r is constant, then evaluates at c. (b) is via thm (b).
+      (c) uses ax+b = a(x+a^{-1}b) and transitivity (prp (b)). Ledger lines 467-468 cover the unreferenced
+      facts.
+- key: exm-polynomial-remainders-without-dividing
+  kind: exm
+  file: 01-polynomial-division.md
+  line: 236
+  hash: c6b1293a8015
+  verdicts:
+  - stage: S5a
+    verdict: correct
+    by: refereeA
+    hash: c6b1293a8015
+    date: '2026-10-12'
+    model: claude-opus-5-5
+    evidence: 'sympy: f(2)=19; x^5 divided by x^2-x has remainder x and quotient x^3+x^2+x+1'
+  - stage: S5b
+    verdict: correct
+    by: refereeB
+    hash: c6b1293a8015
+    date: '2026-10-12'
+    model: claude-opus-5-5
+    evidence: '01:236-255: f(2) = 32−24+4+7 = 19. For x^5 mod x^2−x: b = 0 and a+b = 1 give x, and x^5
+      − x = x(x^4−1) = (x^2−x)(x^3+x^2+x+1). Sidecar passes.'
+- key: check:01-polynomial-division:4
+  kind: check
+  file: 01-polynomial-division.md
+  line: 257
+  hash: 6a8d2540388f
+  verdicts:
+  - stage: S5a
+    verdict: correct
+    by: refereeA
+    hash: 6a8d2540388f
+    date: '2026-10-12'
+    model: claude-opus-5-5
+    evidence: '262: (-1)^7+1=0 and 1^7+1=2≠0 in Q; over F2 both divisors are x+1'
+  - stage: S5b
+    verdict: correct
+    by: refereeB
+    hash: 6a8d2540388f
+    date: '2026-10-12'
+    model: claude-opus-5-5
+    evidence: '01:257-263: (−1)^7+1 = 0 and 1^7+1 = 2 ≠ 0 in Q. Over F_2, x+1 = x−1 and both remainders
+      are 0.'
+- key: exr-polynomial-division-a1
+  kind: exr
+  file: 01-polynomial-division.md
+  line: 275
+  hash: 6bd3660097be
+  verdicts:
+  - stage: S5a
+    verdict: correct
+    by: refereeA
+    hash: 8906370b374e
+    date: '2026-10-12'
+    model: claude-opus-5-5
+    evidence: '287-293: the statement is complete; the ''two places'' agree with 154; for division by
+      a constant c, q=c^{-1}f and r=0 with deg 0=-inf<0; (d) uses x and 2x over Q, and over F2 the only
+      non-zero constant is 1'
+  - stage: S5b
+    verdict: minor
+    by: refereeB
+    hash: 8906370b374e
+    date: '2026-10-12'
+    model: claude-opus-5-5
+    evidence: 01-polynomial-division.md:281 Exercise A1(c) uses f without introducing it.
+  - stage: S6
+    verdict: correct
+    by: verifier
+    hash: 8906370b374e
+    date: '2026-10-12'
+    model: claude-opus-5-5
+    evidence: '01:275-294. I solved it independently and got the same answers: (c) q=c^{-1}f, r=0; (d)
+      Q false (x, 2x), F2 true (only unit 1, and f=g=0 is covered by (f)). (b) names both uses of the
+      field (b^{-1}; no zero divisors via thm-degree-of-product (b)), matching the proof at 01:130-152.'
+  - stage: S7r
+    verdict: correct
+    by: rereferee
+    hash: 6bd3660097be
+    date: '2026-10-12'
+    model: claude-opus-5-5
+    evidence: 'Lines 275-294. The S5b finding is resolved: (c) now begins ''Let f in F[x], and let c in
+      F be a non-zero constant''. Solved independently. (a) is the theorem with every hypothesis. (b)
+      is the inverse lc(g)^{-1} plus the absence of zero divisors through thm-degree-of-product (b), which
+      matches the paragraph at line 154. (c) q = c^{-1} f and r = 0, since deg 0 = -inf < 0 = deg c, and
+      uniqueness applie'
+- key: exr-polynomial-division-b1
+  kind: exr
+  file: 01-polynomial-division.md
+  line: 298
+  hash: 1a5c26f2a526
+  verdicts:
+  - stage: S5a
+    verdict: correct
+    by: refereeA
+    hash: 1a5c26f2a526
+    date: '2026-10-12'
+    model: claude-opus-5-5
+    evidence: 'sympy: Q gives quotient x^2/3-x+1/9 and remainder x-44/9, and the intermediate lines match;
+      F5 gives quotient -2x^2+x-2=3x^2+x+3 and remainder 2, and the intermediate lines 2x^3+x^2+3x+1,
+      x^2+1, 2 match'
+  - stage: S5b
+    verdict: correct
+    by: refereeB
+    hash: 1a5c26f2a526
+    date: '2026-10-12'
+    model: claude-opus-5-5
+    evidence: '01:298-327. Recomputed: (a) quotient 1/3 x^2 − x + 1/9, remainder x − 44/9, and the check
+      matches. (b) In F_5, 2^{-1} = 3: 3x^2(2x^2+3) = x^4+4x^2, then x^2+1 − (x^2+4) = −3 = 2, so the
+      quotient is 3x^2+x+3 and the remainder 2 ≠ 0. Sidecar passes.'
+  - stage: S6
+    verdict: correct
+    by: verifier
+    hash: 1a5c26f2a526
+    date: '2026-10-12'
+    model: claude-opus-5-5
+    evidence: '01:298-327. Own sympy check: Q quotient x^2/3 - x + 1/9, remainder x - 44/9; F5 quotient
+      -2x^2+x-2 = 3x^2+x+3, remainder 2, so no divisibility. The passes line by line agree. Worked example:
+      exm-polynomial-long-division (01:158).'
+- key: exr-polynomial-division-b2
+  kind: exr
+  file: 01-polynomial-division.md
+  line: 329
+  hash: e0eb49501baf
+  verdicts:
+  - stage: S5a
+    verdict: minor
+    by: refereeA
+    hash: 1602127f9080
+    date: '2026-10-12'
+    model: claude-opus-5-5
+    evidence: 01-polynomial-division.md:345 The re-indexing and the splitting off of the first term are
+      attributed (in the ledger and in the prose 'In the second sum we wrote j+1 as the new index j')
+      to lem-finite-sums-and-powers, which has no rule for either. Sums Σ_{j=1}^{n} are not defined by
+      that lemma's recursion, which starts at 0.
+  - stage: S5b
+    verdict: minor
+    by: refereeB
+    hash: 1602127f9080
+    date: '2026-10-12'
+    model: claude-opus-5-5
+    evidence: 01-polynomial-division.md:348 The B2 solution re-indexes a sum to start at 1 and cancels
+      shared terms with no cited rule. The second proof evaluates x^n at c without a reason for x^n(c)
+      = c^n.
+  - stage: S6
+    verdict: correct
+    by: verifier
+    hash: 1602127f9080
+    date: '2026-10-12'
+    model: claude-opus-5-5
+    evidence: 01:329-351. The telescoping is reindexed correctly (j+1 -> j, terms 1..n-1 cancel). The
+      second proof uses the factor theorem. Both agree with my own proof.
+  - stage: S8
+    verdict: minor
+    by: seam
+    hash: 1602127f9080
+    date: '2026-10-12'
+    model: claude-opus-5-5
+    evidence: '01-polynomial-division.md:332 Exercise B2 re-proves an earlier result: F4.1''s @lem-difference-of-powers,
+      which F4.4 §04 C3 (a) also proves again. The chapter itself cites the lemma at 06:62 and 06:331.'
+  - stage: S7r
+    verdict: correct
+    by: rereferee
+    hash: e0eb49501baf
+    date: '2026-10-12'
+    model: claude-opus-5-5
+    evidence: 'Lines 329-347. All three earlier findings are resolved: there is no re-indexing any more,
+      and the exercise now deduces the identity from F4.1''s lem-difference-of-powers (fd4 Chapter 1,
+      01-pairs-of-reals.md) instead of proving it again. Checked: the lemma (R commutative, n >= 1) gives
+      z^n - w^n = (z-w) sum_{k=0}^{n-1} z^k w^{n-1-k}. With z = c and w = x in F[x] (commutative by thm-polynomial-ring-l'
+- key: exr-polynomial-division-b3
+  kind: exr
+  file: 01-polynomial-division.md
+  line: 349
+  hash: d024eb5672c5
+  verdicts:
+  - stage: S5a
+    verdict: correct
+    by: refereeA
+    hash: 5bce269fb13c
+    date: '2026-10-12'
+    model: claude-opus-5-5
+    evidence: '360-368: the identity holds over every field and uniqueness gives remainder 1; over Q the
+      step 2a=0 ⇒ a=0 is fine; over F2 both (0,1) and (1,0) satisfy a+b=1'
+  - stage: S5b
+    verdict: correct
+    by: refereeB
+    hash: 5bce269fb13c
+    date: '2026-10-12'
+    model: claude-opus-5-5
+    evidence: 01:353-369. The math is correct. 'By B2 with x^2 in the role of x' gives Σ_{j=0}^{49} 1^j
+      (x^2)^{49−j}, which equals Σ x^{2j} only after reversing the order of summation. The substitution
+      x ↦ x^2 is not cited. The text hedges with 'or by multiplying out directly'. [finding refuted by
+      skeptics]
+  - stage: S6
+    verdict: correct
+    by: verifier
+    hash: 5bce269fb13c
+    date: '2026-10-12'
+    model: claude-opus-5-5
+    evidence: '01:353-369. Own check: the remainder of x^100 mod x^2-1 is 1 over Q, F2, F3, F5 and F7.
+      Over Q, evaluation gives 2a=0, so a=0. Over F2 the roots coincide, leaving the single equation a+b=1
+      with solutions (0,1) and (1,0). Worked example: exm-polynomial-remainders-without-dividing (b).'
+  - stage: S7r
+    verdict: correct
+    by: rereferee
+    hash: d024eb5672c5
+    date: '2026-10-12'
+    model: claude-opus-5-5
+    evidence: Lines 349-365. The solution now cites lem-difference-of-powers with z = x^2, w = 1, n =
+      50. This gives x^100 - 1 = (x^2 - 1) sum_{k=0}^{49} x^{2k}, using (x^2)^k = x^{2k} from lem-finite-sums-and-powers
+      (c). Uniqueness then gives remainder 1 over every field, since deg 1 = 0 < 2. Over Q, evaluation
+      gives 1 = a+b and 1 = -a+b, so a = 0 (2 != 0) and b = 1. Over F_2, -1 = 1 leaves one equation, satis
+- key: exr-polynomial-division-c1
+  kind: exr
+  file: 01-polynomial-division.md
+  line: 369
+  hash: 35785e3c1ab0
+  verdicts:
+  - stage: S5a
+    verdict: correct
+    by: refereeA
+    hash: 35785e3c1ab0
+    date: '2026-10-12'
+    model: claude-opus-5-5
+    evidence: '398-406: S_Z is closed under the step because t=a x^{n-m} has integer coefficients when
+      b=1 (or b=-1); deg tg=n because g is monic; uniqueness in Q[x] identifies q and r'
+  - stage: S5b
+    verdict: correct
+    by: refereeB
+    hash: 35785e3c1ab0
+    date: '2026-10-12'
+    model: claude-opus-5-5
+    evidence: 01:373-407. S_Z is closed under r ↦ r − a x^{n−m} g when b = 1. Uniqueness in Q[x] identifies
+      the integer q and r. (b) holds via b^{-1} = −1, or by dividing by −g. (c) is answered. The statement
+      is well-posed.
+  - stage: S6
+    verdict: minor
+    by: verifier
+    hash: 35785e3c1ab0
+    date: '2026-10-12'
+    model: claude-opus-5-5
+    evidence: 01-polynomial-division.md:394 Hint 2 carries out the key idea instead of giving the first
+      line.
+  - stage: S7r
+    verdict: correct
+    by: rereferee
+    hash: 35785e3c1ab0
+    date: '2026-10-12'
+    model: claude-opus-5-5
+    evidence: 'Lines 369-403. The S6 finding is resolved. Hint 2 (line 390) is now only the opening line
+      of the proof (define S_Z, take r of least degree n, suppose n >= deg g). It no longer gives the
+      key step that t = a x^{n-m} is an integer polynomial because b = 1, so it meets STYLE §6/§11.7.
+      Hint 1 names the tool. The full solution is correct: S_Z is closed under the ring operations, r
+      - tg stays in S_Z, min'
+- key: exr-polynomial-division-c2
+  kind: exr
+  file: 01-polynomial-division.md
+  line: 405
+  hash: 965004dfa9a1
+  verdicts:
+  - stage: S5a
+    verdict: minor
+    by: refereeA
+    hash: ccbd97f7caa4
+    date: '2026-10-12'
+    model: claude-opus-5-5
+    evidence: 01-polynomial-division.md:417 The formula divides a polynomial by a field element, as in
+      (x-b)/(a-b), but division is defined only between elements of F.
+  - stage: S5b
+    verdict: minor
+    by: refereeB
+    hash: ccbd97f7caa4
+    date: '2026-10-12'
+    model: claude-opus-5-5
+    evidence: 01-polynomial-division.md:417 The statement divides a polynomial by a field element, and
+      the book defines no such notation.
+  - stage: S6
+    verdict: minor
+    by: verifier
+    hash: ccbd97f7caa4
+    date: '2026-10-12'
+    model: claude-opus-5-5
+    evidence: 01-polynomial-division.md:433 Hint 2 states the key step of (a), not its first line.
+  - stage: S7r
+    verdict: correct
+    by: rereferee
+    hash: 965004dfa9a1
+    date: '2026-10-12'
+    model: claude-opus-5-5
+    evidence: 'Lines 405-445. The S5a/S5b findings are resolved. The statement (line 413) and solution
+      (c) (line 443) now write f(a)(a-b)^{-1}(x-b) + f(b)(b-a)^{-1}(x-a), with no division of a polynomial
+      by a field element. The S6 finding is resolved: Hint 2 (line 429) is now the opening line (write
+      f = q(x-a)(x-b) + r and name s). Solved independently. (a) s(a) = f(a) and s(b) = f(b); r - s has
+      degree <= 1 and '
+- key: def-polynomial-combinations
+  kind: def
+  file: 02-polynomial-gcd.md
+  line: 15
+  hash: ab3b53845e8a
+  verdicts:
+  - stage: S5a
+    verdict: correct
+    by: refereeA
+    hash: ab3b53845e8a
+    date: '2026-10-12'
+    model: claude-opus-5-5
+    evidence: 02:15-42. I checked the (I1)-(I3) verification against lem-finite-sums-and-powers (b), the
+      smallest-ideal argument, the examples I_c = <x-c> (thm-evaluation-respects-operations, thm-polynomial-remainder-factor
+      (b)), and the non-example T via thm-degree-of-product (b), which holds over a field.
+  - stage: S5b
+    verdict: correct
+    by: refereeB
+    hash: ab3b53845e8a
+    date: '2026-10-12'
+    model: claude-opus-5-5
+    evidence: '02:15-42 checked: the ideal clauses, the smallest-ideal property, the examples (<0>, <c>,
+      I_c = <x-c> by thm-polynomial-remainder-factor (b)) and the non-example T. Sidecar def-polynomial-combinations.py
+      passes.'
+- key: check:02-polynomial-gcd:1
+  kind: check
+  file: 02-polynomial-gcd.md
+  line: 44
+  hash: e7d78ae74b4a
+  verdicts:
+  - stage: S5a
+    verdict: correct
+    by: refereeA
+    hash: e7d78ae74b4a
+    date: '2026-10-12'
+    model: claude-opus-5-5
+    evidence: 02:44-50. 0(0)=0≠1 breaks (I1); (1+1)(0)=2≠1 breaks (I2); r=0 breaks (I3).
+  - stage: S5b
+    verdict: correct
+    by: refereeB
+    hash: e7d78ae74b4a
+    date: '2026-10-12'
+    model: claude-opus-5-5
+    evidence: '02:44-50: (I1) fails since 0(0)=0; (I2) fails via 1+1; (I3) fails with r=0. All correct.'
+- key: thm-polynomial-ideals-principal
+  kind: thm
+  file: 02-polynomial-gcd.md
+  line: 56
+  hash: 400fa072cdd8
+  verdicts:
+  - stage: S5a
+    verdict: correct
+    by: refereeA
+    hash: 400fa072cdd8
+    date: '2026-10-12'
+    model: claude-opus-5-5
+    evidence: '02:56-65. The statement matches its proof. Dropping ''field'' breaks division with remainder:
+      in Z[x], <2,x> is not principal.'
+  - stage: S5b
+    verdict: correct
+    by: refereeB
+    hash: 400fa072cdd8
+    date: '2026-10-12'
+    model: claude-opus-5-5
+    evidence: '02:56-65: both parts are true and are what the proof proves, including the least-degree
+      clause.'
+- key: proof:thm-polynomial-ideals-principal
+  kind: proof
+  file: 02-polynomial-gcd.md
+  line: 73
+  hash: 063db1476430
+  verdicts:
+  - stage: S5a
+    verdict: correct
+    by: refereeA
+    hash: 539e4fe0d17b
+    date: '2026-10-12'
+    model: claude-opus-5-5
+    evidence: '02:73-85. Order of choices: n from fd2:thm-well-ordering, then e, then d=lc(e)^{-1}e, with
+      r depending on the arbitrary f. Division uses thm-polynomial-division-remainder (a) with d≠0. Uniqueness
+      uses prp-polynomial-divisibility-rules (f) (two monic polynomials dividing each other are equal).
+      The least-degree clause reruns the proof with d''''. deg d = n is left implicit (scaling by a non-zero
+      const'
+  - stage: S5b
+    verdict: minor
+    by: refereeB
+    hash: 539e4fe0d17b
+    date: '2026-10-12'
+    model: claude-opus-5-5
+    evidence: 02-polynomial-gcd.md:76 'd is monic of degree n' cites prp-polynomial-divisibility-rules
+      (f), which does not give the degree.
+  - stage: S7r
+    verdict: correct
+    by: rereferee
+    hash: 063db1476430
+    date: '2026-10-12'
+    model: claude-opus-5-5
+    evidence: '02-polynomial-gcd.md:76 now cites @prp-polynomial-divisibility-rules (f) together with
+      @thm-degree-of-product (b). (f) at 01-polynomial-division.md:62 gives that lc(e)^{-1}e is the monic
+      associate. thm-degree-of-product (b) at ch04/03-degree.md:105-106 gives deg(a^{-1}e) = 0 + n over
+      a field, which has no zero divisors. The S5b finding is resolved. I checked the rest line by line:
+      (I3)/(I2) at :78'
+- key: def-polynomial-gcd
+  kind: def
+  file: 02-polynomial-gcd.md
+  line: 101
+  hash: 31d45e27ff58
+  verdicts:
+  - stage: S5a
+    verdict: correct
+    by: refereeA
+    hash: 31d45e27ff58
+    date: '2026-10-12'
+    model: claude-opus-5-5
+    evidence: 02:101-113. At-most-one uses divisibility-rules (f). The convention gcd(0,0)=0 is justified
+      with rules (a) and (d).
+  - stage: S5b
+    verdict: minor
+    by: refereeB
+    hash: 31d45e27ff58
+    date: '2026-10-12'
+    model: claude-opus-5-5
+    evidence: 02-polynomial-gcd.md:112 The meta-claim 'The Euclidean algorithm below needs the second'
+      (that <0,0> = <gcd(0,0)>) is false on the page.
+  - stage: S7r
+    verdict: correct
+    by: rereferee
+    hash: 31d45e27ff58
+    date: '2026-10-12'
+    model: claude-opus-5-5
+    evidence: 'The fold at :112 now says that the gcd clause of @lem-polynomial-gcd-remainder-step uses
+      gcd(0,0)=0 when f=g=0. That is true: :196 reads ''if f = g = 0, then r = 0, and both gcds are gcd(0,0)
+      = 0''. The false claim about the Euclidean algorithm is gone, so the S5b finding is resolved. The
+      definition at :104 and the at-most-one argument at :109, which cites (f), are correct, and so is
+      the citation of'
+- key: thm-polynomial-bezout
+  kind: thm
+  file: 02-polynomial-gcd.md
+  line: 115
+  hash: 06349da60c76
+  verdicts:
+  - stage: S5a
+    verdict: correct
+    by: refereeA
+    hash: 06349da60c76
+    date: '2026-10-12'
+    model: claude-opus-5-5
+    evidence: '02:115-129. d exists because <f,g> contains a non-zero element (line 129). ''Not both 0''
+      is needed: with f=g=0 the monic d does not exist.'
+  - stage: S5b
+    verdict: correct
+    by: refereeB
+    hash: 06349da60c76
+    date: '2026-10-12'
+    model: claude-opus-5-5
+    evidence: '02:115-129: all parts are true; the existence of the monic d is justified at 02:129.'
+- key: proof:thm-polynomial-bezout
+  kind: proof
+  file: 02-polynomial-gcd.md
+  line: 135
+  hash: 697dde745780
+  verdicts:
+  - stage: S5a
+    verdict: correct
+    by: refereeA
+    hash: 697dde745780
+    date: '2026-10-12'
+    model: claude-opus-5-5
+    evidence: 02:135-145. (b) uses rules (c). (e) uses rules (d) with d≠0. In d=hu, h and u are non-zero
+      because d≠0, so thm-degree-of-product (b) gives deg u = 0, and u is a non-zero constant.
+  - stage: S5b
+    verdict: correct
+    by: refereeB
+    hash: 697dde745780
+    date: '2026-10-12'
+    model: claude-opus-5-5
+    evidence: '02:135-145: (a)-(d) read off <f,g>=<d>; in (e), d != 0 so (d) of the divisibility rules
+      and thm-degree-of-product (b) apply.'
+- key: def-coprime-polynomials
+  kind: def
+  file: 02-polynomial-gcd.md
+  line: 155
+  hash: 9b475f7dec42
+  verdicts:
+  - stage: S5a
+    verdict: correct
+    by: refereeA
+    hash: 9b475f7dec42
+    date: '2026-10-12'
+    model: claude-opus-5-5
+    evidence: 02:155-161. The x, x+1 example uses the next corollary. A forward use in prose only.
+  - stage: S5b
+    verdict: correct
+    by: refereeB
+    hash: 9b475f7dec42
+    date: '2026-10-12'
+    model: claude-opus-5-5
+    evidence: 02:155-161 is consistent with the convention gcd(0,0)=0.
+- key: cor-polynomial-coprime-iff-combination
+  kind: cor
+  file: 02-polynomial-gcd.md
+  line: 163
+  hash: 77310de9efc8
+  verdicts:
+  - stage: S5a
+    verdict: correct
+    by: refereeA
+    hash: 77310de9efc8
+    date: '2026-10-12'
+    model: claude-opus-5-5
+    evidence: 02:163-167. Holds for all f, g, including (0,0) (both sides false).
+  - stage: S5b
+    verdict: correct
+    by: refereeB
+    hash: 77310de9efc8
+    date: '2026-10-12'
+    model: claude-opus-5-5
+    evidence: '02:163-167: the statement is true for all f, g, including (0,0).'
+- key: proof:cor-polynomial-coprime-iff-combination
+  kind: proof
+  file: 02-polynomial-gcd.md
+  line: 169
+  hash: ee510693711d
+  verdicts:
+  - stage: S5a
+    verdict: correct
+    by: refereeA
+    hash: ee510693711d
+    date: '2026-10-12'
+    model: claude-opus-5-5
+    evidence: 02:169-173. Both directions handle 'not both 0'. (⇐) uses (I3), the uniqueness in thm (b),
+      and Bezout (c).
+  - stage: S5b
+    verdict: correct
+    by: refereeB
+    hash: ee510693711d
+    date: '2026-10-12'
+    model: claude-opus-5-5
+    evidence: '02:169-173: both directions handle ''not both 0'' and use the uniqueness of the monic generator.'
+- key: check:02-polynomial-gcd:2
+  kind: check
+  file: 02-polynomial-gcd.md
+  line: 175
+  hash: 74899d781fdb
+  verdicts:
+  - stage: S5a
+    verdict: correct
+    by: refereeA
+    hash: 1173fa1ee659
+    date: '2026-10-12'
+    model: claude-opus-5-5
+    evidence: 02:175-181. 4x^2-4=(2x-2)(2x+2), and the monic associate x-1 follows from rules (a), (b).
+      Correct.
+  - stage: S5b
+    verdict: minor
+    by: refereeB
+    hash: 1173fa1ee659
+    date: '2026-10-12'
+    model: claude-opus-5-5
+    evidence: 02-polynomial-gcd.md:180 'Its monic associate x - 1 has the same divisors and multiples'
+      cites part (a) of the divisibility rules, which is the wrong part.
+  - stage: S7r
+    verdict: correct
+    by: rereferee
+    hash: 74899d781fdb
+    date: '2026-10-12'
+    model: claude-opus-5-5
+    evidence: 'The citation at :180 is now (f), (b). (f) at 01-polynomial-division.md:62 makes 2x-2 and
+      x-1 mutually dividing associates, and (b), transitivity, then gives them the same divisors and multiples.
+      This is the right justification, so the S5b finding is resolved. I solved the check myself: 4x^2-4
+      = (2x-2)(2x+2), every common divisor divides 2x-2 and hence x-1, and x-1 is a monic common divisor,
+      so the'
+- key: lem-polynomial-gcd-remainder-step
+  kind: lem
+  file: 02-polynomial-gcd.md
+  line: 187
+  hash: 2ba92e02b33f
+  verdicts:
+  - stage: S5a
+    verdict: correct
+    by: refereeA
+    hash: 2ba92e02b33f
+    date: '2026-10-12'
+    model: claude-opus-5-5
+    evidence: 02:187-191. Holds for any q, r with f=qg+r, including all zero cases.
+  - stage: S5b
+    verdict: correct
+    by: refereeB
+    hash: 2ba92e02b33f
+    date: '2026-10-12'
+    model: claude-opus-5-5
+    evidence: '02:187-191: true for any q, r with f = qg + r.'
+- key: proof:lem-polynomial-gcd-remainder-step
+  kind: proof
+  file: 02-polynomial-gcd.md
+  line: 193
+  hash: b06b9996cbb1
+  verdicts:
+  - stage: S5a
+    verdict: correct
+    by: refereeA
+    hash: b06b9996cbb1
+    date: '2026-10-12'
+    model: claude-opus-5-5
+    evidence: 02:193-197. Both inclusions go through the smallest-ideal property. The gcd clause treats
+      f=g=0 separately and otherwise uses Bezout (c) plus uniqueness.
+  - stage: S5b
+    verdict: correct
+    by: refereeB
+    hash: b06b9996cbb1
+    date: '2026-10-12'
+    model: claude-opus-5-5
+    evidence: '02:193-197: both inclusions follow from the smallest-ideal property; the gcd case (0,0)
+      is handled by the convention.'
+- key: thm-euclidean-algorithm-polynomials
+  kind: thm
+  file: 02-polynomial-gcd.md
+  line: 201
+  hash: 22af2ea090d9
+  verdicts:
+  - stage: S5a
+    verdict: correct
+    by: refereeA
+    hash: 22af2ea090d9
+    date: '2026-10-12'
+    model: claude-opus-5-5
+    evidence: 02:201-219. The sequence is well defined (second-reading at 224, via fd2:thm-recursion with
+      step (k,P)↦G(P)). Bounds 1≤K≤deg g+1 are correct. g≠0 is used for K≥1 and in (c).
+  - stage: S5b
+    verdict: correct
+    by: refereeB
+    hash: 22af2ea090d9
+    date: '2026-10-12'
+    model: claude-opus-5-5
+    evidence: '02:201-219: the recursion is well defined (the fold at 224 matches the form of fd2:thm-recursion);
+      the bound 1 <= K <= deg g + 1 is correct; the remark at 02:221 on u_K = r_{K-2} or g is correct.'
+- key: proof:thm-euclidean-algorithm-polynomials
+  kind: proof
+  file: 02-polynomial-gcd.md
+  line: 231
+  hash: 30fd2777cf64
+  verdicts:
+  - stage: S5a
+    verdict: correct
+    by: refereeA
+    hash: 30fd2777cf64
+    date: '2026-10-12'
+    model: claude-opus-5-5
+    evidence: '02:231-243. (a) is induction using the lemma. In (b), Q(k) carries ''v_0..v_k non-zero'';
+      the induction step uses v_k≠0 and v_{k+1}≠0, and Q(deg g+1) gives deg ≤ -1, a contradiction. K≤deg
+      g+1 follows from Q(K-1). (c): u_K=v_{K-1}≠0, and the monic associate generates the same ideal.'
+  - stage: S5b
+    verdict: correct
+    by: refereeB
+    hash: 30fd2777cf64
+    date: '2026-10-12'
+    model: claude-opus-5-5
+    evidence: 'The math is sound. Bookkeeping: 02:236 cites @fd2:thm-well-ordering with no reading on
+      omega, and fd3:cor-omega-identification (b) covers only induction and recursion. 02:76 adds ''on
+      N = omega it is @fd3:thm-omega-well-ordering''; 02:236 and 02:470 do not. 02:234 cites @fd1:ax-induction
+      without the ''through cor-omega-identification (b)'' given in (a) at 02:232. [finding refuted by
+      skeptics]'
+- key: exm-polynomial-euclid-run
+  kind: exm
+  file: 02-polynomial-gcd.md
+  line: 257
+  hash: 927d09aaeb37
+  verdicts:
+  - stage: S5a
+    verdict: correct
+    by: refereeA
+    hash: 927d09aaeb37
+    date: '2026-10-12'
+    model: claude-opus-5-5
+    evidence: 02:257-294. I recomputed all three divisions, the back-substitution, the check (sum is x+1)
+      and the warning's alternative coefficients (degrees 3 and 4) by hand; the sidecar passes.
+  - stage: S5b
+    verdict: correct
+    by: refereeB
+    hash: 927d09aaeb37
+    date: '2026-10-12'
+    model: claude-opus-5-5
+    evidence: '02:257-293: all three divisions, the back-substitution, the check and the alternative pair
+      in the warning recomputed by hand; the coefficient degrees 3 and 4 are right. Sidecar passes.'
+- key: check:02-polynomial-gcd:3
+  kind: check
+  file: 02-polynomial-gcd.md
+  line: 296
+  hash: 16dbdead6691
+  verdicts:
+  - stage: S5a
+    verdict: correct
+    by: refereeA
+    hash: 16dbdead6691
+    date: '2026-10-12'
+    model: claude-opus-5-5
+    evidence: 02:296-302. The divisions are right, and 1 = x·x^3 + (1-x^2)(x^2+1) checks out (x^4 + 1
+      - x^4).
+  - stage: S5b
+    verdict: correct
+    by: refereeB
+    hash: 16dbdead6691
+    date: '2026-10-12'
+    model: claude-opus-5-5
+    evidence: '02:301: x^3 = x(x^2+1) - x; x^2+1 = (-x)(-x)+1; the combination x*x^3 + (1-x^2)(x^2+1)
+      = 1 is verified.'
+- key: prp-polynomial-gcd-field-extension
+  kind: prp
+  file: 02-polynomial-gcd.md
+  line: 310
+  hash: 71dad50a848c
+  verdicts:
+  - stage: S5a
+    verdict: correct
+    by: refereeA
+    hash: 71dad50a848c
+    date: '2026-10-12'
+    model: claude-opus-5-5
+    evidence: 02:310-320. ℚ⊆ℝ⊆ℂ as subfields is established in F4.2 03-subfields.md:31-32.
+  - stage: S5b
+    verdict: correct
+    by: refereeB
+    hash: 71dad50a848c
+    date: '2026-10-12'
+    model: claude-opus-5-5
+    evidence: '02:310-320: true; K[x] subset of L[x] is in the ledger (539-540); R subset of C is the
+      content of F4.2 section 03, line 32.'
+- key: proof:prp-polynomial-gcd-field-extension
+  kind: proof
+  file: 02-polynomial-gcd.md
+  line: 325
+  hash: 90cc6f000699
+  verdicts:
+  - stage: S5a
+    verdict: correct
+    by: refereeA
+    hash: 90cc6f000699
+    date: '2026-10-12'
+    model: claude-opus-5-5
+    evidence: 02:325-332. (a) is uniqueness of division in L[x]. (b) uses division-remainder (b) in each
+      ring. (c) covers g=0≠f (inverse of lc is the same by thm-field-basic-properties (c)) and g≠0 (the
+      runs agree by induction, using (a)). The case f=0≠g falls under the g≠0 branch.
+  - stage: S5b
+    verdict: correct
+    by: refereeB
+    hash: 90cc6f000699
+    date: '2026-10-12'
+    model: claude-opus-5-5
+    evidence: '02:325-332: (a) by uniqueness in L[x]; (b) by thm-polynomial-division-remainder (b); (c)
+      covers every case (0,0), g=0!=f, g!=0, with inverses shared by thm-field-basic-properties (c).'
+- key: check:02-polynomial-gcd:4
+  kind: check
+  file: 02-polynomial-gcd.md
+  line: 336
+  hash: d4edef0d6e80
+  verdicts:
+  - stage: S5a
+    verdict: minor
+    by: refereeA
+    hash: a768ec234225
+    date: '2026-10-12'
+    model: claude-opus-5-5
+    evidence: 02-polynomial-gcd.md:341 The solution says 'the algorithm stops after one division with
+      u_1 = x^2 - 2'. With the pair in the order the check states it (f = x^2-2, g = x^3-2x), thm-euclidean-algorithm-polynomials
+      gives two divisions and u_2 = x^2-2.
+  - stage: S5b
+    verdict: minor
+    by: refereeB
+    hash: a768ec234225
+    date: '2026-10-12'
+    model: claude-opus-5-5
+    evidence: 02-polynomial-gcd.md:341 The solution says the algorithm stops after one division with u_1
+      = x^2 - 2. For the pair as posed, f = x^2 - 2 and g = x^3 - 2x, the theorem's run needs two steps.
+  - stage: S7r
+    verdict: correct
+    by: rereferee
+    hash: d4edef0d6e80
+    date: '2026-10-12'
+    model: claude-opus-5-5
+    evidence: I re-ran thm-euclidean-algorithm-polynomials (:204-217) with f=x^2-2 and g=x^3-2x. Step
+      0 gives (u_0,v_0)=(f,g) and r_0=x^2-2 with q=0. Step 1 gives (u_1,v_1)=(x^3-2x, x^2-2) and r_1=0,
+      since x^3-2x = x(x^2-2). Step 2 gives (u_2,v_2)=(x^2-2,0), so K=2. Text :341 now matches this exactly,
+      and the S5a and S5b findings are resolved. The appeal to prp-polynomial-gcd-field-extension (c)
+      for R[x] is val
+- key: exr-polynomial-gcd-a1
+  kind: exr
+  file: 02-polynomial-gcd.md
+  line: 354
+  hash: 09e73eab5cc1
+  verdicts:
+  - stage: S5a
+    verdict: correct
+    by: refereeA
+    hash: 09e73eab5cc1
+    date: '2026-10-12'
+    model: claude-opus-5-5
+    evidence: '02:354-378. (c): I=I_1∩I_{-1}, and degree ≤1 forces 0 because 2≠0 in ℚ. (d) is prose, flagged
+      as not proved, and nothing depends on it.'
+  - stage: S5b
+    verdict: correct
+    by: refereeB
+    hash: 09e73eab5cc1
+    date: '2026-10-12'
+    model: claude-opus-5-5
+    evidence: '02:354-378: the solutions match the parts. (c): no non-zero element of degree <= 1, so
+      d = x^2-1. (d) is a prose answer, labelled ''not proved'', with a ledger line at 544.'
+  - stage: S6
+    verdict: correct
+    by: verifier
+    hash: 09e73eab5cc1
+    date: '2026-10-12'
+    model: claude-opus-5-5
+    evidence: '02:354-380. (c): I is the intersection I_1 ∩ I_{-1}, x^2-1 is in I, and no non-zero element
+      of degree <=1 is in I (2b=0), so d=x^2-1. (d) names the division step and honestly says the non-principality
+      is not proved. (a), (b), (e) match the proof and the text at 02:87.'
+- key: exr-polynomial-gcd-b1
+  kind: exr
+  file: 02-polynomial-gcd.md
+  line: 382
+  hash: c3e625c161b2
+  verdicts:
+  - stage: S5a
+    verdict: correct
+    by: refereeA
+    hash: c3e625c161b2
+    date: '2026-10-12'
+    model: claude-opus-5-5
+    evidence: 02:382-408. I recomputed the divisions, the combination (-x/2)f + ((x+1)/2)g = x+1 and the
+      check. The common-root argument uses Bezout (b), (e) and rules (f) correctly; the sidecar passes.
+  - stage: S5b
+    verdict: correct
+    by: refereeB
+    hash: c3e625c161b2
+    date: '2026-10-12'
+    model: claude-opus-5-5
+    evidence: '02:382-408: divisions, K=3, u_3=2x+2, x+1 = (-x/2)f + ((x+1)/2)g and the check all recomputed;
+      the common-root argument via Bezout (b), (e) and (f) is valid. Sidecar passes.'
+  - stage: S6
+    verdict: correct
+    by: verifier
+    hash: c3e625c161b2
+    date: '2026-10-12'
+    model: claude-opus-5-5
+    evidence: '02:382-408. Own check: gcd = x+1, and -x/2·f + (x+1)/2·g = x+1. The divisions and back-substitution
+      agree. The common-root argument (x-c divides the gcd; equal degree gives an associate; both monic
+      gives equality) is valid. Worked example: exm-polynomial-euclid-run.'
+- key: exr-polynomial-gcd-b2
+  kind: exr
+  file: 02-polynomial-gcd.md
+  line: 410
+  hash: 0efa0e2fb9b8
+  verdicts:
+  - stage: S5a
+    verdict: correct
+    by: refereeA
+    hash: 0efa0e2fb9b8
+    date: '2026-10-12'
+    model: claude-opus-5-5
+    evidence: '02:410-422. In F_2: f - xg = x^2+1 and (x+1)(x^2+1) = g. Correct.'
+  - stage: S5b
+    verdict: correct
+    by: refereeB
+    hash: 0efa0e2fb9b8
+    date: '2026-10-12'
+    model: claude-opus-5-5
+    evidence: '02:410-422: f - xg = x^2+1 in F_2; g = (x+1)(x^2+1); u_2 = x^2+1. Sidecar passes.'
+  - stage: S6
+    verdict: correct
+    by: verifier
+    hash: 0efa0e2fb9b8
+    date: '2026-10-12'
+    model: claude-opus-5-5
+    evidence: '02:410-422. Own check in F2: gcd = x^2+1 and f + x·g = x^2+1. The two divisions are correct,
+      K=2.'
+- key: exr-polynomial-gcd-c1
+  kind: exr
+  file: 02-polynomial-gcd.md
+  line: 426
+  hash: 74bc5b8eba0b
+  verdicts:
+  - stage: S5a
+    verdict: correct
+    by: refereeA
+    hash: c53ec80a05bc
+    date: '2026-10-12'
+    model: claude-opus-5-5
+    evidence: 02:458-485. The solution reproduces the theorem's proofs correctly. The marking scheme correctly
+      bars circular citations.
+  - stage: S5b
+    verdict: minor
+    by: refereeB
+    hash: c53ec80a05bc
+    date: '2026-10-12'
+    model: claude-opus-5-5
+    evidence: '02:458-485: the solution proves the statement, the marking scheme sums to 10, and the fatal
+      errors are accurate. Bookkeeping only: 02:470 cites @fd2:thm-well-ordering without the reading on
+      omega used at 02:76.'
+  - stage: S6
+    verdict: minor
+    by: verifier
+    hash: c53ec80a05bc
+    date: '2026-10-12'
+    model: claude-opus-5-5
+    evidence: 02-polynomial-gcd.md:481 The scheme ties the uniqueness point to one route ('by mutual divisibility
+      of two monic generators').
+  - stage: S7r
+    verdict: correct
+    by: rereferee
+    hash: 74bc5b8eba0b
+    date: '2026-10-12'
+    model: claude-opus-5-5
+    evidence: 'Scheme line :449 now accepts any route to uniqueness, and the S6 finding is resolved. The
+      alternative route, minimality applied to d-d'', is valid: d'' is in I, so deg d'' ≥ n, and d'' divides
+      d, so deg d'' ≤ n. Then d-d'' is in I with degree below n, so d-d''=0. The points add up to 10 (1+1+3+2+1+2).
+      The solution at :438-442 is correct: well-ordering, division, (I2)/(I3), uniqueness by (f) plus
+      comparin'
+- key: exr-polynomial-gcd-c2
+  kind: exr
+  file: 02-polynomial-gcd.md
+  line: 455
+  hash: af06a9761ba7
+  verdicts:
+  - stage: S5a
+    verdict: correct
+    by: refereeA
+    hash: af06a9761ba7
+    date: '2026-10-12'
+    model: claude-opus-5-5
+    evidence: 02:508 cites cor-polynomial-no-zero-divisors (a), whose hypothesis is 'R an integral domain'.
+      That F is one is not stated. The rest is correct, including <hf,hg> = <hd>, lc(hd)=1, and the counterexample
+      gcd(2x,2)=1. [finding refuted by skeptics]
+  - stage: S5b
+    verdict: correct
+    by: refereeB
+    hash: af06a9761ba7
+    date: '2026-10-12'
+    model: claude-opus-5-5
+    evidence: '02:487-526: <hf,hg> = <hd>; hd is monic by thm-degree-of-product (b); the counterexample
+      gcd(2x,2)=1 holds; the fatal-error counterexample 1 | x*x, x(x+1) is valid; both marking schemes
+      sum to 10.'
+  - stage: S6
+    verdict: correct
+    by: verifier
+    hash: af06a9761ba7
+    date: '2026-10-12'
+    model: claude-opus-5-5
+    evidence: '02:487-530. The ideal equality <hf,hg> = <hd> is shown; hd is monic; the zero case uses
+      gcd(0,0)=0. Counterexamples check out: gcd(2x,2)=1 != 2, and 1 divides both x·x and x(x+1). My alternative
+      (hd = a(hf)+b(hg) is a monic common divisor) is the scheme''s second route and scores 10/10.'
+- key: exr-polynomial-gcd-c3
+  kind: exr
+  file: 02-polynomial-gcd.md
+  line: 496
+  hash: 30c110ea5c2c
+  verdicts:
+  - stage: S7r
+    verdict: correct
+    by: rereferee
+    hash: 30c110ea5c2c
+    date: '2026-10-12'
+    model: claude-opus-5-5
+    evidence: This is B3 renamed and moved to C, as recorded in blueprint ch05.md:88. Its one inbound
+      reference, 06-the-fundamental-theorem.md:662, uses @exr-polynomial-gcd-c3, its sidecar verify/ch05/exr-polynomial-gcd-c3.py
+      exists, the ledger lines at the end of the file are renamed, and no references to b3 remain. I solved
+      it myself and the solution matches line by line. The identity at :509 checks. The indu
+- key: def-irreducible-over-field
+  kind: def
+  file: 03-irreducible-factorization.md
+  line: 13
+  hash: c5449b5f49ea
+  verdicts:
+  - stage: S5a
+    verdict: minor
+    by: refereeA
+    hash: c5449b5f49ea
+    date: '2026-10-12'
+    model: claude-opus-5-5
+    evidence: 03-irreducible-factorization.md:26 The example 'If p is irreducible and a != 0, then ap
+      is irreducible' checks only the factorization clause of the definition. It never checks the first
+      clause, deg(ap) >= 1.
+  - stage: S5b
+    verdict: minor
+    by: refereeB
+    hash: c5449b5f49ea
+    date: '2026-10-12'
+    model: claude-opus-5-5
+    evidence: 03-irreducible-factorization.md:26 'If p is irreducible and a != 0, then ap is irreducible'
+      checks only the factorization clause, not deg(ap) >= 1.
+  - stage: S7r
+    verdict: correct
+    by: rereferee
+    hash: c5449b5f49ea
+    date: '2026-10-12'
+    model: claude-opus-5-5
+    evidence: '03:16 definition checked. 03:19: a constant factor of p != 0 is non-zero, and degrees add
+      by thm-degree-of-product (b), which holds over a field (04/03-degree.md:105-106). 03:26 now checks
+      deg(ap) = deg p >= 1 with @thm-degree-of-product (b) before the factorization clause, and g = a(a^{-1}g)
+      is constant when a^{-1}g is. This resolves the S5a and S5b findings, and ledger line 579 records
+      the step.'
+- key: prp-irreducible-low-degree
+  kind: prp
+  file: 03-irreducible-factorization.md
+  line: 34
+  hash: b32829ae0f7d
+  verdicts:
+  - stage: S5a
+    verdict: correct
+    by: refereeA
+    hash: b32829ae0f7d
+    date: '2026-10-12'
+    model: claude-opus-5-5
+    evidence: 03:40-41. With (a) the reverse direction of (b) holds. Dropping deg in {2,3} fails, e.g.
+      x^4+4 (03:54-58), and the text says so.
+  - stage: S5b
+    verdict: minor
+    by: refereeB
+    hash: b32829ae0f7d
+    date: '2026-10-12'
+    model: claude-opus-5-5
+    evidence: 03-irreducible-factorization.md:51 The sentence 'The same lines work in every ordered field,
+      so x^2+1 is irreducible over R' uses 'R is an ordered field' without a reference. The ledger misdescribes
+      the source. 4 > 0 (03:54) and 2 > 0 (03:66, 03:384) are also uncited.
+  - stage: S7r
+    verdict: correct
+    by: rereferee
+    hash: b32829ae0f7d
+    date: '2026-10-12'
+    model: claude-opus-5-5
+    evidence: 'Proof 03:46-48: thm-polynomial-remainder-factor (b) and (c) say what is used (01-polynomial-division.md:213-215),
+      and so does the degree bookkeeping. 03:51: c^2 >= 0 rests on fd3:prp-ordered-ring-rules (e) plus
+      0^2 = 0, and c^2+1 >= 1 > 0 on (b) and (e); fd3/03-ordered-rings.md:313,316 match. 4 > 0 (03:54)
+      and 2 > 0 (03:66, 03:384) now cite (h), which gives n*1 > 0. The use of ''Q and R are ordered'
+- key: proof:prp-irreducible-low-degree
+  kind: proof
+  file: 03-irreducible-factorization.md
+  line: 45
+  hash: 61f656a7defa
+  verdicts:
+  - stage: S5a
+    verdict: correct
+    by: refereeA
+    hash: 61f656a7defa
+    date: '2026-10-12'
+    model: claude-opus-5-5
+    evidence: 03:46 uses thm-polynomial-remainder-factor (b) (root iff x-c | f) and thm-degree-of-product
+      (b), where q != 0 because p != 0. 03:48 splits 2 or 3 into two parts each >= 1, and (c) gives the
+      root. The ordered-field remark at 03:51 uses fd3:prp-ordered-ring-rules (b),(e), which say this.
+  - stage: S5b
+    verdict: correct
+    by: refereeB
+    hash: 61f656a7defa
+    date: '2026-10-12'
+    model: claude-opus-5-5
+    evidence: 03:46-48 (a) via remainder-factor (b) and degree of product; (b) (=>) contrapositive of
+      (a), (<=) degree split forces a linear factor, then remainder-factor (c)
+- key: check:03-irreducible-factorization:1
+  kind: check
+  file: 03-irreducible-factorization.md
+  line: 61
+  hash: eb4465fc798c
+  verdicts:
+  - stage: S5a
+    verdict: correct
+    by: refereeA
+    hash: 05b059750bc4
+    date: '2026-10-12'
+    model: claude-opus-5-5
+    evidence: 03:66. c^2+2 >= 2 > 0. The associate argument uses the example at 03:26. 1^2+2 = 0 in F_3.
+      Sidecar prp-irreducible-low-degree.py passes.
+  - stage: S5b
+    verdict: correct
+    by: refereeB
+    hash: 05b059750bc4
+    date: '2026-10-12'
+    model: claude-opus-5-5
+    evidence: 03:66 2x^2+4 = 2(x^2+2) is an associate of an irreducible; in F_3, 1^2+2=0 and x^2+2=(x-1)(x+1);
+      sidecar ok
+  - stage: S7r
+    verdict: correct
+    by: rereferee
+    hash: eb4465fc798c
+    date: '2026-10-12'
+    model: claude-opus-5-5
+    evidence: 03:61-67, solved independently. 2x^2+4 = 2(x^2+2) has no rational root since c^2+2 >= 2
+      > 0 (fd3:prp-ordered-ring-rules (e), (h) now cited), so it is irreducible by prp (b), and its associate
+      is irreducible by the example at 03:26. Over F_3, 1+2 = 0 and x^2+2 = x^2-1 = (x-1)(x+1). Correct.
+- key: thm-polynomial-euclid-lemma
+  kind: thm
+  file: 03-irreducible-factorization.md
+  line: 73
+  hash: 7bce2021bf40
+  verdicts:
+  - stage: S5a
+    verdict: correct
+    by: refereeA
+    hash: 7bce2021bf40
+    date: '2026-10-12'
+    model: claude-opus-5-5
+    evidence: 03:76. The hypothesis gcd(f,g)=1 is used (Bezout), and the counterexample x^2 | x*x at 03:87
+      shows it is needed.
+  - stage: S5b
+    verdict: correct
+    by: refereeB
+    hash: 7bce2021bf40
+    date: '2026-10-12'
+    model: claude-opus-5-5
+    evidence: 03:76; the aftermath at 03:87 shows the hypothesis is needed (x^2 | x*x)
+- key: proof:thm-polynomial-euclid-lemma
+  kind: proof
+  file: 03-irreducible-factorization.md
+  line: 79
+  hash: eb1fe7b251b2
+  verdicts:
+  - stage: S5a
+    verdict: correct
+    by: refereeA
+    hash: eb1fe7b251b2
+    date: '2026-10-12'
+    model: claude-opus-5-5
+    evidence: 03:80-84. gcd=1 means coprime by def-coprime-polynomials, so cor-polynomial-coprime-iff-combination
+      gives af+bg=1. prp-polynomial-divisibility-rules (c) is applied with h:=f.
+  - stage: S5b
+    verdict: correct
+    by: refereeB
+    hash: eb1fe7b251b2
+    date: '2026-10-12'
+    model: claude-opus-5-5
+    evidence: 03:80-84 cor-polynomial-coprime-iff-combination, then divisibility-rules (c)
+- key: cor-irreducible-divides-product
+  kind: cor
+  file: 03-irreducible-factorization.md
+  line: 91
+  hash: f7450d4fc065
+  verdicts:
+  - stage: S5a
+    verdict: correct
+    by: refereeA
+    hash: f7450d4fc065
+    date: '2026-10-12'
+    model: claude-opus-5-5
+    evidence: 03:97-100 all hold. (d) fails without 'monic' (x vs 2x, 03:124).
+  - stage: S5b
+    verdict: correct
+    by: refereeB
+    hash: f7450d4fc065
+    date: '2026-10-12'
+    model: claude-opus-5-5
+    evidence: 03:97-100; (c) with l in N is the recorded deviation; 03:124 shows the dropped hypotheses
+      (reducible; non-monic x, 2x)
+- key: proof:cor-irreducible-divides-product
+  kind: proof
+  file: 03-irreducible-factorization.md
+  line: 110
+  hash: 8cd8b7f9cf65
+  verdicts:
+  - stage: S5a
+    verdict: correct
+    by: refereeA
+    hash: 8cd8b7f9cf65
+    date: '2026-10-12'
+    model: claude-opus-5-5
+    evidence: '(a) 03:111: d monic, p=du, both cases checked. (b) cites the Euclid lemma correctly. (c)
+      is induction over all lists of length l; the base case p does not divide 1 uses divisibility-rules
+      (d). (d) q=pu with u a non-zero constant, and comparing lc gives u=1.'
+  - stage: S5b
+    verdict: correct
+    by: refereeB
+    hash: 8cd8b7f9cf65
+    date: '2026-10-12'
+    model: claude-opus-5-5
+    evidence: 03:111 (a) gcd is monic and divides p; 03:117 base case p does not divide 1 by divisibility-rules
+      (d); 03:119 step by (b); 03:121 (d) lc comparison gives u = 1
+- key: prp-polynomial-coprime-divisors-product
+  kind: prp
+  file: 03-irreducible-factorization.md
+  line: 128
+  hash: c96eaa05f6fa
+  verdicts:
+  - stage: S5a
+    verdict: correct
+    by: refereeA
+    hash: c96eaa05f6fa
+    date: '2026-10-12'
+    model: claude-opus-5-5
+    evidence: 03:131. Coprimality is needed (x, x, 03:138).
+  - stage: S5b
+    verdict: correct
+    by: refereeB
+    hash: c96eaa05f6fa
+    date: '2026-10-12'
+    model: claude-opus-5-5
+    evidence: 03:131; counterexample without coprimality at 03:138
+- key: proof:prp-polynomial-coprime-divisors-product
+  kind: proof
+  file: 03-irreducible-factorization.md
+  line: 134
+  hash: 88d9cf317fa2
+  verdicts:
+  - stage: S5a
+    verdict: correct
+    by: refereeA
+    hash: 88d9cf317fa2
+    date: '2026-10-12'
+    model: claude-opus-5-5
+    evidence: 03:135. The gcd symmetry is stated and justified, then the Euclid lemma gives n | k, so
+      h=(mn)t.
+  - stage: S5b
+    verdict: correct
+    by: refereeB
+    hash: 88d9cf317fa2
+    date: '2026-10-12'
+    model: claude-opus-5-5
+    evidence: 03:135 gcd symmetry stated, Euclid lemma, then reassociate
+- key: check:03-irreducible-factorization:2
+  kind: check
+  file: 03-irreducible-factorization.md
+  line: 140
+  hash: 92bf6e143a05
+  verdicts:
+  - stage: S5a
+    verdict: correct
+    by: refereeA
+    hash: 92bf6e143a05
+    date: '2026-10-12'
+    model: claude-opus-5-5
+    evidence: 03:145. (x+1)^2 = x^2+1 in F_2, so the polynomial is reducible. Degree 1 < 2 is cited correctly.
+  - stage: S5b
+    verdict: correct
+    by: refereeB
+    hash: 92bf6e143a05
+    date: '2026-10-12'
+    model: claude-opus-5-5
+    evidence: 03:145 x^2+1 = (x+1)^2 in F_2 is reducible, so the corollary does not apply
+- key: lem-polynomial-irreducible-factor
+  kind: lem
+  file: 03-irreducible-factorization.md
+  line: 152
+  hash: 5443f6d1f302
+  verdicts:
+  - stage: S5a
+    verdict: correct
+    by: refereeA
+    hash: 5443f6d1f302
+    date: '2026-10-12'
+    model: claude-opus-5-5
+    evidence: 03:155. It needs deg f >= 1, and that hypothesis is used to make D non-empty.
+  - stage: S5b
+    verdict: correct
+    by: refereeB
+    hash: 5443f6d1f302
+    date: '2026-10-12'
+    model: claude-opus-5-5
+    evidence: 03:155 statement
+- key: proof:lem-polynomial-irreducible-factor
+  kind: proof
+  file: 03-irreducible-factorization.md
+  line: 162
+  hash: 09d160da6f3b
+  verdicts:
+  - stage: S5a
+    verdict: correct
+    by: refereeA
+    hash: 603b3fa045ac
+    date: '2026-10-12'
+    model: claude-opus-5-5
+    evidence: 03:163-169. D is a non-empty subset of N, so well-ordering gives n0, and p is chosen after
+      n0. The case 'g or h is 0' cannot occur because p != 0. The monic associate g_1 | f gives deg g
+      < n0 in D, a contradiction.
+  - stage: S5b
+    verdict: minor
+    by: refereeB
+    hash: 603b3fa045ac
+    date: '2026-10-12'
+    model: claude-opus-5-5
+    evidence: 03-irreducible-factorization.md:167 Well-ordering on N = omega is credited to @fd3:cor-omega-identification,
+      whose transfer clause (b) does not cover it.
+  - stage: S7r
+    verdict: correct
+    by: rereferee
+    hash: 09d160da6f3b
+    date: '2026-10-12'
+    model: claude-opus-5-5
+    evidence: '03:167 now cites @fd2:thm-well-ordering, and on N = omega @fd3:thm-omega-well-ordering
+      (fd3/06-order-on-omega.md:75-78: every non-empty subset of omega has a least element). This resolves
+      the S5b finding about cor-omega-identification (b). D is non-empty via c^{-1}f. At 03:169: deg g
+      < n_0 by thm-degree-of-product (b); g_1 | g | p | f by transitivity, prp-polynomial-divisibility-rules
+      (b) (01:58);'
+- key: thm-polynomial-unique-factorization
+  kind: thm
+  file: 03-irreducible-factorization.md
+  line: 200
+  hash: ddf14717e0e3
+  verdicts:
+  - stage: S5a
+    verdict: correct
+    by: refereeA
+    hash: ddf14717e0e3
+    date: '2026-10-12'
+    model: claude-opus-5-5
+    evidence: 03:206-207. The statement is correct. c' != 0 and l >= 1 are derived, not assumed.
+  - stage: S5b
+    verdict: correct
+    by: refereeB
+    hash: ddf14717e0e3
+    date: '2026-10-12'
+    model: claude-opus-5-5
+    evidence: 03:203-208; the bijection form is explained at 03:211 and in the remark at 03:246
+- key: proof:thm-polynomial-unique-factorization
+  kind: proof
+  file: 03-irreducible-factorization.md
+  line: 221
+  hash: b96c4194d432
+  verdicts:
+  - stage: S5a
+    verdict: correct
+    by: refereeA
+    hash: 13e25672fcaf
+    date: '2026-10-12'
+    model: claude-opus-5-5
+    evidence: 'Existence 03:222: strong induction; u monic by lc comparison; deg u < n; E(deg u) applies
+      only when deg u >= 1. Uniqueness 03:226-240: U(k) is quantified over all l; base case uses (L1)
+      degree >= l; step uses cor (c),(d), (L2), cancellation (cor-polynomial-no-zero-divisors (b)), then
+      IH with l-1. sigma = tau o sigma'' extended by k+1 -> j is checked to be bijective. The (L1)/(L2)
+      fold proofs at 03:'
+  - stage: S5b
+    verdict: minor
+    by: refereeB
+    hash: 13e25672fcaf
+    date: '2026-10-12'
+    model: claude-opus-5-5
+    evidence: 03-irreducible-factorization.md:222 Strong induction 'read on omega, @fd3:cor-omega-identification'
+      is not among that corollary's transferred statements.
+  - stage: S7r
+    verdict: correct
+    by: rereferee
+    hash: b96c4194d432
+    date: '2026-10-12'
+    model: claude-opus-5-5
+    evidence: '03:222 now justifies strong induction on omega with ''its proof uses only @fd1:ax-induction
+      and @fd3:thm-omega-order (a), (b), (d), as in Section 3.1''. The local pointer is correct: fd4/src/ch03-groups-and-permutations/01-groups.md:5
+      says exactly this, and fd1:thm-strong-induction''s proof is ordinary induction on Q(n) with the
+      order facts (fd1/ch03/02-induction.md:133-145). This resolves the S5b fi'
+- key: exm-factor-x4-minus-one-fields
+  kind: exm
+  file: 03-irreducible-factorization.md
+  line: 249
+  hash: 8bf35c405196
+  verdicts:
+  - stage: S5a
+    verdict: correct
+    by: refereeA
+    hash: 8bf35c405196
+    date: '2026-10-12'
+    model: claude-opus-5-5
+    evidence: 03:256-267. Values of x^2+1 on F_3 are 1,2,2. (x-2)(x-3)=x^2+1 in F_5. (x+1)^4 = x^4+1 in
+      F_2. Sidecar passes.
+  - stage: S5b
+    verdict: correct
+    by: refereeB
+    hash: 8bf35c405196
+    date: '2026-10-12'
+    model: claude-opus-5-5
+    evidence: 03:256-267 values on F_3 are 1, 2, 2; (x-2)(x-3) = x^2+1 in F_5; (x+1)^4 in F_2; sidecar
+      ok
+- key: check:03-irreducible-factorization:3
+  kind: check
+  file: 03-irreducible-factorization.md
+  line: 270
+  hash: 122c36608401
+  verdicts:
+  - stage: S5a
+    verdict: correct
+    by: refereeA
+    hash: 122c36608401
+    date: '2026-10-12'
+    model: claude-opus-5-5
+    evidence: 03:275. (x-1)^2 = x^2-2x+1 = x^2+x+1 in F_3. No root in F_2.
+  - stage: S5b
+    verdict: correct
+    by: refereeB
+    hash: 122c36608401
+    date: '2026-10-12'
+    model: claude-opus-5-5
+    evidence: 03:275 values 1, 1 in F_2; (x-1)^2 = x^2+x+1 in F_3
+- key: thm-rational-root-test
+  kind: thm
+  file: 03-irreducible-factorization.md
+  line: 282
+  hash: 456b4a2b0d75
+  verdicts:
+  - stage: S5a
+    verdict: correct
+    by: refereeA
+    hash: 456b4a2b0d75
+    date: '2026-10-12'
+    model: claude-opus-5-5
+    evidence: 03:285. n >= 1 is used to separate the first and last terms. a_n != 0 is not used in the
+      proof but is harmless (it fixes deg f = n). The aftermath sentence has a separate problem (finding
+      key "").
+  - stage: S5b
+    verdict: correct
+    by: refereeB
+    hash: 456b4a2b0d75
+    date: '2026-10-12'
+    model: claude-opus-5-5
+    evidence: 03:285 statement correct (the 'finitely many' prose after it is reported separately)
+- key: proof:thm-rational-root-test
+  kind: proof
+  file: 03-irreducible-factorization.md
+  line: 292
+  hash: 08151869a478
+  verdicts:
+  - stage: S5a
+    verdict: correct
+    by: refereeA
+    hash: 08151869a478
+    date: '2026-10-12'
+    model: claude-opus-5-5
+    evidence: 03:293-303. (u/v)^i v^i = u^i comes from (st)^n = s^n t^n. The two factorizations are correct.
+      Induction on j with fd3:thm-euclid-lemma-integers (a | bc, gcd(a,b)=1 => a | c) applies with a=u,
+      b=v.
+  - stage: S5b
+    verdict: correct
+    by: refereeB
+    hash: 08151869a478
+    date: '2026-10-12'
+    model: claude-opus-5-5
+    evidence: 03:293-303 the two rearranged sums check out (index ranges verified); the bounded induction
+      on j uses fd3:thm-euclid-lemma-integers; gcd symmetry is stated
+- key: exm-cubic-no-rational-root
+  kind: exm
+  file: 03-irreducible-factorization.md
+  line: 308
+  hash: 73ef93926edd
+  verdicts:
+  - stage: S5a
+    verdict: correct
+    by: refereeA
+    hash: 73ef93926edd
+    date: '2026-10-12'
+    model: claude-opus-5-5
+    evidence: '03:315-321. Recomputed all eight values: 2, -4, 26, -22, -16/9, -2, -2/3, -22/9. None is
+      0, and the degree is 3. Sidecar passes.'
+  - stage: S5b
+    verdict: correct
+    by: refereeB
+    hash: 73ef93926edd
+    date: '2026-10-12'
+    model: claude-opus-5-5
+    evidence: 03:317-321 recomputed all eight values (2, -4, 26, -22, -16/9, -2, -2/3, -22/9); sidecar
+      ok
+- key: check:03-irreducible-factorization:4
+  kind: check
+  file: 03-irreducible-factorization.md
+  line: 324
+  hash: 71f631e41480
+  verdicts:
+  - stage: S5a
+    verdict: correct
+    by: refereeA
+    hash: 71f631e41480
+    date: '2026-10-12'
+    model: claude-opus-5-5
+    evidence: 03:329. (2x-1)(x+2) = 2x^2+3x-2, so the roots are 1/2 and -2.
+  - stage: S5b
+    verdict: correct
+    by: refereeB
+    hash: 71f631e41480
+    date: '2026-10-12'
+    model: claude-opus-5-5
+    evidence: 03:329 roots 1/2 and -2; (2x-1)(x+2) = 2x^2+3x-2
+- key: exr-irreducible-factorization-a1
+  kind: exr
+  file: 03-irreducible-factorization.md
+  line: 342
+  hash: 9519fbb72dfc
+  verdicts:
+  - stage: S5a
+    verdict: correct
+    by: refereeA
+    hash: 9519fbb72dfc
+    date: '2026-10-12'
+    model: claude-opus-5-5
+    evidence: 03:357-365. sigma(4)=1, tau(t)=t+1, and sigma'(i)=4-i gives sigma(i)=5-i, which matches
+      the proof's construction. Sidecar passes.
+  - stage: S5b
+    verdict: correct
+    by: refereeB
+    hash: 9519fbb72dfc
+    date: '2026-10-12'
+    model: claude-opus-5-5
+    evidence: 03:357-365 answers match the proof; sigma(i) = 5-i; sidecar ok
+  - stage: S6
+    verdict: correct
+    by: verifier
+    hash: 9519fbb72dfc
+    date: '2026-10-12'
+    model: claude-opus-5-5
+    evidence: '03:342-368. (c): p4=x-4 is matched with q1 (j=1), then the run goes down, giving sigma(i)=5-i.
+      Own check: (x-1)(x-2)(x-3)(x-4) = x^4-1 in F5. (a), (b) match the text at 03:243.'
+- key: exr-irreducible-factorization-b1
+  kind: exr
+  file: 03-irreducible-factorization.md
+  line: 370
+  hash: c74795bfadd5
+  verdicts:
+  - stage: S5a
+    verdict: correct
+    by: refereeA
+    hash: 72fc37ea1a4d
+    date: '2026-10-12'
+    model: claude-opus-5-5
+    evidence: 03:384-390. (x-1)(x^2+x+2) = x^3+x-2 = x^3+x+1 in F_3. The F_2 reductions are correct. Sidecar
+      passes.
+  - stage: S5b
+    verdict: correct
+    by: refereeB
+    hash: 72fc37ea1a4d
+    date: '2026-10-12'
+    model: claude-opus-5-5
+    evidence: 03:384-390; (x-1)(x^2+x+2) = x^3+x-2 = x^3+x+1 in F_3; sidecar ok
+  - stage: S6
+    verdict: correct
+    by: verifier
+    hash: 72fc37ea1a4d
+    date: '2026-10-12'
+    model: claude-opus-5-5
+    evidence: '03:370-391. Own sympy factorizations: x^2+2 is x^2 in F2 and (x-1)(x+1) in F3; x^3+x+1
+      is irreducible over F2 and equals (x-1)(x^2+x+2) in F3 (checked); x^4+4 = (x^2+2x+2)(x^2-2x+2);
+      3x^3+x^2-2 is x^2(x+1) in F2. Worked examples: exm-factor-x4-minus-one-fields and the low-degree
+      checks.'
+  - stage: S7r
+    verdict: correct
+    by: rereferee
+    hash: c74795bfadd5
+    date: '2026-10-12'
+    model: claude-opus-5-5
+    evidence: 03:384-390, solved independently. (a) Over Q, c^2+2 >= 2 > 0, now cited (e), (h); over F_2
+      it is x^2; over F_3 it is (x-1)(x+1). (b) Over F_2 the values are 1 and 1, so it is irreducible;
+      over F_3, f(1) = 0, and (x-1)(x^2+x+2) = x^3+x-2 = x^3+x+1. (c) This is the factorization from the
+      warning. (d) Over F_2 the polynomial is x^3+x^2 = x^2(x+1), so it is reducible. All correct.
+- key: exr-irreducible-factorization-b2
+  kind: exr
+  file: 03-irreducible-factorization.md
+  line: 393
+  hash: 3e5eb89220e5
+  verdicts:
+  - stage: S5a
+    verdict: correct
+    by: refereeA
+    hash: 8d7c5caa12d7
+    date: '2026-10-12'
+    model: claude-opus-5-5
+    evidence: 03:404-418. The blank's completion (remainder in J, minimal degree) is right. The ending
+      uses deg d <= 2 from divisibility-rules (d), u constant, and both monic. Moving s=-a from R to Q
+      is silent but routine.
+  - stage: S5b
+    verdict: minor
+    by: refereeB
+    hash: 8d7c5caa12d7
+    date: '2026-10-12'
+    model: claude-opus-5-5
+    evidence: 03-irreducible-factorization.md:418 'In the language of this section, x^2 - 2 is irreducible
+      over Q' is asserted without a reason.
+  - stage: S6
+    verdict: correct
+    by: verifier
+    hash: 8d7c5caa12d7
+    date: '2026-10-12'
+    model: claude-opus-5-5
+    evidence: '03:393-419. The blank has one reasonable completion: r=f-qd is in J; if r != 0, its monic
+      associate contradicts minimality, so r=0. The solution handles the ''monic element of least degree''
+      wording correctly. The end (deg d <= 2, cofactor u=1) is completed.'
+  - stage: S7r
+    verdict: correct
+    by: rereferee
+    hash: 3e5eb89220e5
+    date: '2026-10-12'
+    model: claude-opus-5-5
+    evidence: '03:414-418. In the blank, r = f - qd lies in J, and the minimality of a monic element of
+      least degree forces r = 0. At the end, deg d <= 2 by prp-polynomial-divisibility-rules (d); with
+      deg d >= 2, u is constant, and both monic gives u = 1. The S5b finding is resolved: the irreducibility
+      of x^2-2 over Q now gives a reason (a root c would have c^2 = 2, against @fd3:thm-no-rational-square-two,
+      with '
+- key: exr-irreducible-factorization-b3
+  kind: exr
+  file: 03-irreducible-factorization.md
+  line: 421
+  hash: 6c7e36273a53
+  verdicts:
+  - stage: S5a
+    verdict: correct
+    by: refereeA
+    hash: 6c7e36273a53
+    date: '2026-10-12'
+    model: claude-opus-5-5
+    evidence: 03:428-436. f(1) is the coefficient sum mod 2. The list x, x+1, x^2+x+1, x^3+x+1, x^3+x^2+1
+      is complete. Sidecar passes.
+  - stage: S5b
+    verdict: correct
+    by: refereeB
+    hash: 6c7e36273a53
+    date: '2026-10-12'
+    model: claude-opus-5-5
+    evidence: 03:428-436 count 14; parity criterion; list of 5; sidecar ok
+  - stage: S6
+    verdict: correct
+    by: verifier
+    hash: 6c7e36273a53
+    date: '2026-10-12'
+    model: claude-opus-5-5
+    evidence: 03:421-437. Own enumeration of the 14 polynomials of degree 1-3 over F2 gives exactly the
+      irreducibles x, x+1, x^2+x+1, x^3+x+1, x^3+x^2+1. The completeness argument via prp-irreducible-low-degree
+      (b) is valid.
+- key: exr-irreducible-factorization-c1
+  kind: exr
+  file: 03-irreducible-factorization.md
+  line: 441
+  hash: 407652d88574
+  verdicts:
+  - stage: S5a
+    verdict: correct
+    by: refereeA
+    hash: 407652d88574
+    date: '2026-10-12'
+    model: claude-opus-5-5
+    evidence: 03:448. The theorem's uniqueness proof also works for the exercise's form with c, c' given
+      as non-zero coefficients, including k=0.
+  - stage: S5b
+    verdict: correct
+    by: refereeB
+    hash: 407652d88574
+    date: '2026-10-12'
+    model: claude-opus-5-5
+    evidence: 03:448 points to the proof; marking scheme sums to 10 (1+2+3+1+3) with fatal errors and
+      the second route
+  - stage: S6
+    verdict: correct
+    by: verifier
+    hash: 407652d88574
+    date: '2026-10-12'
+    model: claude-opus-5-5
+    evidence: 03:441-457. The solution refers to the proof of thm-polynomial-unique-factorization and
+      lists its steps instead of writing a proof (03:448). The math is right and the scheme handles my
+      strong-induction alternative, but STYLE requires solutions 'complete, not a sketch'. [finding refuted
+      by skeptics]
+- key: exr-irreducible-factorization-c2
+  kind: exr
+  file: 03-irreducible-factorization.md
+  line: 459
+  hash: 5fcd52f08cbe
+  verdicts:
+  - stage: S5a
+    verdict: correct
+    by: refereeA
+    hash: 88401b9bb1b3
+    date: '2026-10-12'
+    model: claude-opus-5-5
+    evidence: 03:472-485. The failing line (3) is identified with counterexample x^4+4. Repair equations
+      c=-a, b+d=a^2, a(d-b)=0, bd=1. Both cases are excluded correctly. Sidecar passes.
+  - stage: S5b
+    verdict: minor
+    by: refereeB
+    hash: 88401b9bb1b3
+    date: '2026-10-12'
+    model: claude-opus-5-5
+    evidence: 03-irreducible-factorization.md:483 'b^2 = 1, so b = +-1' is used without a citation and
+      has no ledger line.
+  - stage: S6
+    verdict: minor
+    by: verifier
+    hash: 88401b9bb1b3
+    date: '2026-10-12'
+    model: claude-opus-5-5
+    evidence: 03-irreducible-factorization.md:483 The repair asserts b^2 = 1 => b = ±1 in Q without a
+      reason.
+  - stage: S7r
+    verdict: minor
+    by: rereferee
+    hash: 3525c7538358
+    date: '2026-10-12'
+    model: claude-opus-5-5
+    evidence: 'lid; the expansion coefficients are right; and the case a=0 gives -b^2 = 1. Remaining problem:
+      at 03:480-483 the split of a(d - b) = 0 into the cases ''a = 0'' and ''d = b'' uses the absence
+      of zero divisors in Q without a reason, and ledger line 575 records only ''case analysis | expansion''.
+      Fix: add ''(Q has no zero divisors, thm-field-basic-properties (f))'' after ''a(d - b) = 0'', or
+      add a ledger line.'
+  - stage: S7r
+    verdict: correct
+    by: rereferee
+    hash: 5fcd52f08cbe
+    date: '2026-10-12'
+    model: claude-opus-5-5
+    evidence: = 0 or d = b. If a = 0, then d = -b and -b^2 = 1, which contradicts b^2 >= 0 (fd3:prp-ordered-ring-rules
+      (e)). If d = b, then b^2 = 1, so b = +-1 by cor-field-squares-equal's 'in particular' clause, and
+      a^2 = 2b = +-2. That is impossible by fd3:thm-no-rational-square-two and by non-negativity of squares.
+      Ledger line 575 lists every citation. verify/ch05/exr-irreducible-factorization-c2.py runs ok.
+- key: exr-irreducible-factorization-c3
+  kind: exr
+  file: 03-irreducible-factorization.md
+  line: 488
+  hash: c2b25b7b0966
+  verdicts:
+  - stage: S5a
+    verdict: correct
+    by: refereeA
+    hash: c2b25b7b0966
+    date: '2026-10-12'
+    model: claude-opus-5-5
+    evidence: 03:510-514. deg(P+1) = deg P by thm-degree-of-sum. q | P by (L2), so q | 1, a contradiction.
+      The count p^n and the finiteness-to-list argument cite fd2:prp-disjoint-union-count, prp-subset-finite
+      and def-finite correctly.
+  - stage: S5b
+    verdict: minor
+    by: refereeB
+    hash: c2b25b7b0966
+    date: '2026-10-12'
+    model: claude-opus-5-5
+    evidence: '03-irreducible-factorization.md:514 N has two meanings in one solution: the polynomial
+      N := P + 1 in (a) (line 510) and a degree bound N in N in (b) (line 514). Line 234 also uses N for
+      a product.'
+  - stage: S6
+    verdict: minor
+    by: verifier
+    hash: c2b25b7b0966
+    date: '2026-10-12'
+    model: claude-opus-5-5
+    evidence: 03-irreducible-factorization.md:517 The scheme awards the first (a) points for one specific
+      object, N = p_1...p_k + 1.
+  - stage: S7r
+    verdict: correct
+    by: rereferee
+    hash: c2b25b7b0966
+    date: '2026-10-12'
+    model: claude-opus-5-5
+    evidence: 03:510-521. In (a), k = 0 is handled with x; P is monic with deg >= 1 by (L1); deg N = deg
+      P by thm-degree-of-sum (04/03-degree.md:69-73, unequal degrees); q = p_i would give q | 1, against
+      prp (d). (b) The bijection with coefficient tuples via def-polynomial is right, the induction counts
+      card T_{n+1} = p*p^n with prp-disjoint-union-count, and finiteness follows from prp-subset-finite
+      and def-fin
+- key: exr-irreducible-factorization-c4
+  kind: exr
+  file: 03-irreducible-factorization.md
+  line: 524
+  hash: c50937bca52f
+  verdicts:
+  - stage: S5a
+    verdict: error
+    by: refereeA
+    hash: 2330cd2d3b7f
+    date: '2026-10-12'
+    model: claude-opus-5-5
+    evidence: 03-irreducible-factorization.md:541 The solution of (c) gives the wrong defining properties
+      for the 'least common multiple' x, and then says x is the only monic polynomial with those properties.
+      That uniqueness claim is false.
+  - stage: S5b
+    verdict: minor
+    by: refereeB
+    hash: 2330cd2d3b7f
+    date: '2026-10-12'
+    model: claude-opus-5-5
+    evidence: 03-irreducible-factorization.md:541 'in general d*L equals fg divided by the product of
+      the leading coefficients' is stated without proof and without its hypothesis f, g != 0. Also, gcd(2x,
+      2x) = x is credited to @thm-polynomial-bezout (e), which says this only indirectly.
+  - stage: S6
+    verdict: correct
+    by: verifier
+    hash: 2330cd2d3b7f
+    date: '2026-10-12'
+    model: claude-opus-5-5
+    evidence: 03:524-540. (a) cancels d in the Bézout identity; (b) f1, g1 are monic, L=fg1=gf1, the Euclid
+      lemma gives g1|k, and dL=fg; (c) x·x=x^2 != 4x^2. The closing general remark (dL = fg/(lc f·lc g))
+      is true for non-zero f,g.
+  - stage: S7r
+    verdict: correct
+    by: rereferee
+    hash: c50937bca52f
+    date: '2026-10-12'
+    model: claude-opus-5-5
+    evidence: '03:537-541. (a) Bezout (d) gives d = af+bg (02-polynomial-gcd.md:124); d is cancelled,
+      then cor-polynomial-coprime-iff-combination applies. (b) f_1 and g_1 are monic via thm-degree-of-product
+      (b); g_1 | k by Euclid''s lemma; dL = fg. (c) The S5a error is fixed: the properties are now ''monic,
+      a common multiple, and dividing every common multiple'', and uniqueness follows by mutual divisibility
+      from p'
+- key: thm-polynomial-root-count
+  kind: thm
+  file: 04-multiple-roots.md
+  line: 11
+  hash: 5b0c90880bc6
+  verdicts:
+  - stage: S5a
+    verdict: correct
+    by: refereeA
+    hash: 5b0c90880bc6
+    date: '2026-10-12'
+    model: claude-opus-5-5
+    evidence: 04:11-19; statement matches proof; both hypotheses (distinct, field) used and the line-46
+      counterexamples for each are valid (x^2-1 over Z/8Z has roots 1,3,5,7)
+  - stage: S5b
+    verdict: correct
+    by: refereeB
+    hash: 5b0c90880bc6
+    date: '2026-10-12'
+    model: claude-opus-5-5
+    evidence: '04:11-19 matches blueprint; hypotheses ''distinct'' and ''field'' each used (04:43) and
+      dropped in the fold at 04:46 (Z/8Z: 3^2-1=8, 5^2-1=24, 7^2-1=48 checked)'
+- key: proof:thm-polynomial-root-count
+  kind: proof
+  file: 04-multiple-roots.md
+  line: 25
+  hash: 7e30853f3a65
+  verdicts:
+  - stage: S5a
+    verdict: correct
+    by: refereeA
+    hash: 7e30853f3a65
+    date: '2026-10-12'
+    model: claude-opus-5-5
+    evidence: 04:25-41; induction on k>=1; factor theorem (b), evaluation, thm-field-basic-properties
+      (g) (bd!=0) and (f) are cited correctly; the degree count via (L1) of 03:178 and thm-degree-of-product
+      (b) is correct
+  - stage: S5b
+    verdict: correct
+    by: refereeB
+    hash: 7e30853f3a65
+    date: '2026-10-12'
+    model: claude-opus-5-5
+    evidence: '04:26-40: base via thm-polynomial-remainder-factor (b); step uses thm-field-basic-properties
+      (g),(f) as stated at 02/01:74-90; base-1 induction covered by fd3:cor-omega-identification (b) (base
+      b form); P_k monic of degree k by (L1) at 03:179; ledger lines 570-572 cover the unreferenced steps'
+- key: check:04-multiple-roots:1
+  kind: check
+  file: 04-multiple-roots.md
+  line: 49
+  hash: ee9121aa08b2
+  verdicts:
+  - stage: S5a
+    verdict: correct
+    by: refereeA
+    hash: ee9121aa08b2
+    date: '2026-10-12'
+    model: claude-opus-5-5
+    evidence: 04:49-55; degree 3 is impossible; for degree at most 3, only 0 works (deg -inf)
+  - stage: S5b
+    verdict: correct
+    by: refereeB
+    hash: ee9121aa08b2
+    date: '2026-10-12'
+    model: claude-opus-5-5
+    evidence: '04:50-55: non-zero cubic has at most 3 roots; only 0 (deg -inf <= 3) vanishes at four points'
+- key: thm-polynomial-identity-from-values
+  kind: thm
+  file: 04-multiple-roots.md
+  line: 61
+  hash: 941759c50ccc
+  verdicts:
+  - stage: S5a
+    verdict: correct
+    by: refereeA
+    hash: a3067f13e47f
+    date: '2026-10-12'
+    model: claude-opus-5-5
+    evidence: 04:61-70; (a) uses distinctness and the degree bound; (b) fails over finite fields, as the
+      warning at 95 shows
+  - stage: S5b
+    verdict: minor
+    by: refereeB
+    hash: a3067f13e47f
+    date: '2026-10-12'
+    model: claude-opus-5-5
+    evidence: 04-multiple-roots.md:95 The letter p means a polynomial (thm-polynomial-identity-from-values,
+      04:64-89) and, in the very next block, a prime (warning 04:95). It then means a prime (remark 04:367)
+      and an irreducible polynomial (cor-polynomial-squarefree-gcd 04:378) in adjacent blocks.
+  - stage: S7r
+    verdict: correct
+    by: rereferee
+    hash: 941759c50ccc
+    date: '2026-10-12'
+    model: claude-opus-5-5
+    evidence: 04:64-68. The statement now uses f, g, so the polynomial p at 04:64-89 no longer sits next
+      to the prime p of the warning at 04:95. The S5b finding is resolved for this item. The remaining
+      pair it named, a prime p in the remark at 04:367 and an irreducible p in cor-polynomial-squarefree-gcd
+      at 04:378, binds p afresh in each block ('For a prime p' / 'If p in F[x] is irreducible'). It is
+      not a NOTATI
+- key: proof:thm-polynomial-identity-from-values
+  kind: proof
+  file: 04-multiple-roots.md
+  line: 76
+  hash: 9e8797132364
+  verdicts:
+  - stage: S5a
+    verdict: correct
+    by: refereeA
+    hash: 270f87678d22
+    date: '2026-10-12'
+    model: claude-opus-5-5
+    evidence: 04:76-90; (a) via thm-degree-of-sum and root count; the claim's induction uses fd2:def-finite/def-infinite
+      correctly (i->s_i is a bijection onto A); the no-choice meta-claim at 89 is right (one existential
+      instantiation per step of an induction on an existential statement); n:=max(deg p,deg q,0)
+  - stage: S5b
+    verdict: correct
+    by: refereeB
+    hash: 270f87678d22
+    date: '2026-10-12'
+    model: claude-opus-5-5
+    evidence: '04:77-89: (a) via thm-degree-of-sum and root count; (b) claim proved by induction with
+      fd2:def-finite/def-infinite, one existential instantiation per step, so the no-choice meta-claim
+      at 04:89 is true of the page'
+  - stage: S7r
+    verdict: correct
+    by: rereferee
+    hash: 9e8797132364
+    date: '2026-10-12'
+    model: claude-opus-5-5
+    evidence: 04:77-89, checked line by line after the renaming. (a) thm-degree-of-sum gives deg(f-g)
+      <= n. thm-evaluation-respects-operations gives n+1 distinct roots, and thm-polynomial-root-count
+      makes n+1 <= deg(f-g) <= n, a contradiction. (b) The claim's induction is correct and uses fd2:def-finite
+      and def-infinite. Taking n = max(deg f, deg g, 0) and m = n+1, part (a) applies. Every f/g substitution
+      is co
+- key: exm-polynomial-function-finite-field
+  kind: exm
+  file: 04-multiple-roots.md
+  line: 98
+  hash: 93af6085c052
+  verdicts:
+  - stage: S5a
+    verdict: correct
+    by: refereeA
+    hash: 93af6085c052
+    date: '2026-10-12'
+    model: claude-opus-5-5
+    evidence: 04:98-117; F_3 values 0,0,6=0; the cofactor has degree 0 and lc 1; (b) x^p-x is monic of
+      degree p as p>=2; sidecar passes
+  - stage: S5b
+    verdict: correct
+    by: refereeB
+    hash: 93af6085c052
+    date: '2026-10-12'
+    model: claude-opus-5-5
+    evidence: '04:110-116: values of x^3-x on F_3 are 0,0,6=0; x(x-1)(x-2)=x^3-3x^2+2x=x^3+2x in F_3;
+      (b) degrees and leading coefficients compared; ledger 578-579'
+- key: thm-polynomial-taylor-shift
+  kind: thm
+  file: 04-multiple-roots.md
+  line: 123
+  hash: 2108c20cb163
+  verdicts:
+  - stage: S5a
+    verdict: correct
+    by: refereeA
+    hash: 2108c20cb163
+    date: '2026-10-12'
+    model: claude-opus-5-5
+    evidence: 04:123-136; deg f = n >= 0 is needed for b_n = lc(f)
+  - stage: S5b
+    verdict: minor
+    by: refereeB
+    hash: 2108c20cb163
+    date: '2026-10-12'
+    model: claude-opus-5-5
+    evidence: 04-multiple-roots.md:138 The meta-claim 'We use this fact twice' is not checkable on the
+      page; the fact is invoked by name only once.
+  - stage: S7r
+    verdict: correct
+    by: rereferee
+    hash: 2108c20cb163
+    date: '2026-10-12'
+    model: claude-opus-5-5
+    evidence: '04:138. The meta-claim now says the uniqueness half of (a) uses the fact, and part (b)
+      uses its first clause ((x-c)^n monic of degree n). Both are checkable on the page: the uniqueness
+      proof at 04:151 cites ''the fact before the Idea'', and the proof of (b) at 04:153 uses ''(x-c)^n
+      is monic of degree n''. The S5b finding is resolved. The statement and the proof at 04:126-155 are
+      unchanged and correct.'
+- key: proof:thm-polynomial-taylor-shift
+  kind: proof
+  file: 04-multiple-roots.md
+  line: 144
+  hash: c2204896b8a0
+  verdicts:
+  - stage: S5a
+    verdict: correct
+    by: refereeA
+    hash: c2204896b8a0
+    date: '2026-10-12'
+    model: claude-opus-5-5
+    evidence: '04:144-156; existence: deg((x-c)q)=n+1 by degree-of-sum (degrees differ), so deg q=n by
+      degree-of-product (b) with x-c monic; uniqueness by the top-term degree fact at 138 (trailing zero
+      terms are dropped silently; harmless); (b), (c) by evaluation'
+  - stage: S5b
+    verdict: correct
+    by: refereeB
+    hash: c2204896b8a0
+    date: '2026-10-12'
+    model: claude-opus-5-5
+    evidence: '04:145-155: existence by induction with thm-polynomial-remainder-factor (a) and thm-degree-of-sum
+      equality case; uniqueness by the degree fact; (b),(c) by evaluation; index shift and 0^j ledgered
+      (581-582)'
+- key: check:04-multiple-roots:2
+  kind: check
+  file: 04-multiple-roots.md
+  line: 160
+  hash: 47495b749f6f
+  verdicts:
+  - stage: S5a
+    verdict: correct
+    by: refereeA
+    hash: 47495b749f6f
+    date: '2026-10-12'
+    model: claude-opus-5-5
+    evidence: '04:160-169; all three divisions recomputed: 1,3,3,1'
+  - stage: S5b
+    verdict: correct
+    by: refereeB
+    hash: 47495b749f6f
+    date: '2026-10-12'
+    model: claude-opus-5-5
+    evidence: '04:165: (x-1)(x^2+x+1)+1=x^3, (x-1)(x+2)+3=x^2+x+1, (x-1)+3=x+2; 1,3,3,1'
+- key: def-polynomial-root-multiplicity
+  kind: def
+  file: 04-multiple-roots.md
+  line: 177
+  hash: d46ff66e39ba
+  verdicts:
+  - stage: S5a
+    verdict: gap
+    by: refereeA
+    hash: d46ff66e39ba
+    date: '2026-10-12'
+    model: claude-opus-5-5
+    evidence: 04-multiple-roots.md:185 '1 in M exactly when f(c)=0, so mult_c(f)=0 iff f(c)!=0' skips
+      a step. The direction f(c)!=0 => mult_c(f)=0 needs that no m>=2 lies in M once 1 is not in M.
+  - stage: S5b
+    verdict: minor
+    by: refereeB
+    hash: d46ff66e39ba
+    date: '2026-10-12'
+    model: claude-opus-5-5
+    evidence: 04-multiple-roots.md:191 The example mult_0(x^2 + x) = 1 is stated without a reason, while
+      the other two examples are justified.
+  - stage: S7r
+    verdict: correct
+    by: rereferee
+    hash: d46ff66e39ba
+    date: '2026-10-12'
+    model: claude-opus-5-5
+    evidence: '04:185-191. The gap is closed at 04:189: for m>=1, (x-c)^m = (x-c)^{m-1}(x-c), which is
+      the defining recursion of lem-finite-sums-and-powers (c), s^{n+1} = s^n s. So x-c | (x-c)^m, and
+      with (x-c)^m | f, transitivity (prp-polynomial-divisibility-rules (b)) gives x-c | f, i.e. 1 in
+      M. Hence M = {0}. Both cited labels say this. The S5b minor is resolved: mult_0(x^2+x)=1 now has
+      its reason. The value '
+- key: lem-polynomial-multiplicity-cofactor
+  kind: lem
+  file: 04-multiple-roots.md
+  line: 195
+  hash: cbdaca45f55d
+  verdicts:
+  - stage: S5a
+    verdict: correct
+    by: refereeA
+    hash: cbdaca45f55d
+    date: '2026-10-12'
+    model: claude-opus-5-5
+    evidence: 04:195-205; (b) is uniqueness for a fixed m; (c) needs f!=0, which the expansion provides
+  - stage: S5b
+    verdict: correct
+    by: refereeB
+    hash: cbdaca45f55d
+    date: '2026-10-12'
+    model: claude-opus-5-5
+    evidence: 04:198-205 matches blueprint; (c) needs deg f = n >= 0, guaranteed by f != 0
+- key: proof:lem-polynomial-multiplicity-cofactor
+  kind: proof
+  file: 04-multiple-roots.md
+  line: 211
+  hash: 3e6ee3863e62
+  verdicts:
+  - stage: S5a
+    verdict: correct
+    by: refereeA
+    hash: 3e6ee3863e62
+    date: '2026-10-12'
+    model: claude-opus-5-5
+    evidence: '04:211-223; (=>) maximality; (<=) via (x-c)^{m+1} | (x-c)^{m''} and cancellation cor-polynomial-no-zero-divisors
+      (b) (F is an integral domain); (c): well-ordering of {j: b_j!=0}, and g(c)=b_J'
+  - stage: S5b
+    verdict: correct
+    by: refereeB
+    hash: 3e6ee3863e62
+    date: '2026-10-12'
+    model: claude-opus-5-5
+    evidence: '04:212-222: cancellation by cor-polynomial-no-zero-divisors (b) (03-degree:188); well-ordering
+      by fd2:thm-well-ordering; set non-empty since b_n = lc(f) != 0; ledger 587-588'
+- key: prp-polynomial-multiplicity-product
+  kind: prp
+  file: 04-multiple-roots.md
+  line: 227
+  hash: d8bb60f862f3
+  verdicts:
+  - stage: S5a
+    verdict: correct
+    by: refereeA
+    hash: d8bb60f862f3
+    date: '2026-10-12'
+    model: claude-opus-5-5
+    evidence: 04:227-231; f,g non-zero is needed for mult to be defined
+  - stage: S5b
+    verdict: correct
+    by: refereeB
+    hash: d8bb60f862f3
+    date: '2026-10-12'
+    model: claude-opus-5-5
+    evidence: 04:230
+- key: proof:prp-polynomial-multiplicity-product
+  kind: proof
+  file: 04-multiple-roots.md
+  line: 233
+  hash: 93a314456ea0
+  verdicts:
+  - stage: S5a
+    verdict: correct
+    by: refereeA
+    hash: 8c85d0ae84f5
+    date: '2026-10-12'
+    model: claude-opus-5-5
+    evidence: 04:233-235; cofactors multiply; u(c)v(c)!=0 by (f) in contrapositive form; lemma (a)
+  - stage: S5b
+    verdict: minor
+    by: refereeB
+    hash: 8c85d0ae84f5
+    date: '2026-10-12'
+    model: claude-opus-5-5
+    evidence: '04-multiple-roots.md:234 The proof uses facts that are neither cited nor ledgered: ''fg
+      != 0'', and fg = (x-c)^{m+n}uv (power law plus commutativity).'
+  - stage: S7r
+    verdict: correct
+    by: rereferee
+    hash: 93a314456ea0
+    date: '2026-10-12'
+    model: claude-opus-5-5
+    evidence: '04:234. fg = (x-c)^{m+n}uv now cites lem-finite-sums-and-powers (c) (s^{m+n} = s^m s^n)
+      and commutativity. fg != 0 cites cor-polynomial-no-zero-divisors (a), which is stated for an integral
+      domain R, together with ''a field is an integral domain''. The rest is unchanged: (uv)(c) = u(c)v(c)
+      != 0 by thm-evaluation-respects-operations and thm-field-basic-properties (f), and the conclusion
+      comes from le'
+- key: check:04-multiple-roots:3
+  kind: check
+  file: 04-multiple-roots.md
+  line: 237
+  hash: 0b9b18449456
+  verdicts:
+  - stage: S5a
+    verdict: correct
+    by: refereeA
+    hash: 0b9b18449456
+    date: '2026-10-12'
+    model: claude-opus-5-5
+    evidence: 04:237-243; x^3(x^2+1) gives cofactor value 1, and x(x+2) at 2 gives 8
+  - stage: S5b
+    verdict: correct
+    by: refereeB
+    hash: 0b9b18449456
+    date: '2026-10-12'
+    model: claude-opus-5-5
+    evidence: '04:242: x^3(x^2+1), cofactor 1 at 0; (x-2)x(x+2), cofactor 2*4=8 at 2'
+- key: thm-polynomial-roots-with-multiplicity
+  kind: thm
+  file: 04-multiple-roots.md
+  line: 247
+  hash: f4df7dc1a97c
+  verdicts:
+  - stage: S5a
+    verdict: correct
+    by: refereeA
+    hash: f4df7dc1a97c
+    date: '2026-10-12'
+    model: claude-opus-5-5
+    evidence: 04:247-255; the finiteness of the root set is justified at 245 by the claim plus the root
+      count
+  - stage: S5b
+    verdict: correct
+    by: refereeB
+    hash: f4df7dc1a97c
+    date: '2026-10-12'
+    model: claude-opus-5-5
+    evidence: 04:250-254; finiteness of the root set justified in the lead-in 04:245 from the claim of
+      thm-polynomial-identity-from-values (b)
+- key: proof:thm-polynomial-roots-with-multiplicity
+  kind: proof
+  file: 04-multiple-roots.md
+  line: 261
+  hash: a46c1ccbf651
+  verdicts:
+  - stage: S5a
+    verdict: correct
+    by: refereeA
+    hash: a46c1ccbf651
+    date: '2026-10-12'
+    model: claude-opus-5-5
+    evidence: 04:261-277; induction on k over all non-zero f; roots of g_1 = c_1..c_k by evaluation and
+      prp-polynomial-multiplicity-product with multiplicity 0 of (x-c_{k+1})^{m} at c_i (via lemma (a)
+      with m=0); degree via (L1)
+  - stage: S5b
+    verdict: correct
+    by: refereeB
+    hash: a46c1ccbf651
+    date: '2026-10-12'
+    model: claude-opus-5-5
+    evidence: '04:262-276: induction on k; mult_{c_i}((x-c_{k+1})^{m}) = 0 by 04:187; prp-polynomial-multiplicity-product;
+      degree by (L1) and thm-degree-of-product (b); ledger 590-592'
+- key: def-splits-over-field
+  kind: def
+  file: 04-multiple-roots.md
+  line: 281
+  hash: 28d40b8065cd
+  verdicts:
+  - stage: S5a
+    verdict: gap
+    by: refereeA
+    hash: 28d40b8065cd
+    date: '2026-10-12'
+    model: claude-opus-5-5
+    evidence: 04-multiple-roots.md:294 The fold that supports the main-line claim at 291 ('if f splits,
+      the multiplicities add up to exactly n') asserts that a monic irreducible factor q of the rootless
+      g 'would appear in the factorization of f into monic irreducibles'. Nothing proved justifies this.
+  - stage: S5b
+    verdict: gap
+    by: refereeB
+    hash: 28d40b8065cd
+    date: '2026-10-12'
+    model: claude-opus-5-5
+    evidence: '04-multiple-roots.md:294 The fold proving that a split polynomial''s multiplicities add
+      up to n relies on an unproved list-concatenation step: putting q into the factorization of f into
+      monic irreducibles.'
+  - stage: S7r
+    verdict: correct
+    by: rereferee
+    hash: 28d40b8065cd
+    date: '2026-10-12'
+    model: claude-opus-5-5
+    evidence: 04:284-297. The fold at 04:294 no longer uses the unproved list-concatenation step. g has
+      degree >= 1, so it has a monic irreducible factor q with g = qh (lem-polynomial-irreducible-factor).
+      Since g | f, transitivity (prp-polynomial-divisibility-rules (b)) gives q | f. f != 0 forces a !=
+      0, and q | a^{-1}f by prp-polynomial-divisibility-rules (c) (take the multiplier a^{-1} for f and
+      0 for the sec
+- key: exm-polynomial-multiplicity-run
+  kind: exm
+  file: 04-multiple-roots.md
+  line: 299
+  hash: 2028dceb0d5f
+  verdicts:
+  - stage: S5a
+    verdict: correct
+    by: refereeA
+    hash: 2028dceb0d5f
+    date: '2026-10-12'
+    model: claude-opus-5-5
+    evidence: 04:299-322; four divisions recomputed; (-2)^3=-8; f=2(x-1)^3+(x-1)^4; sidecar passes
+  - stage: S5b
+    verdict: correct
+    by: refereeB
+    hash: 2028dceb0d5f
+    date: '2026-10-12'
+    model: claude-opus-5-5
+    evidence: '04:306-321: four divisions check; f = (x-1)^3(x+1) = 2(x-1)^3+(x-1)^4; cofactor values
+      2 and -8; no other roots by thm-field-basic-properties (f)'
+- key: thm-polynomial-repeated-root-test
+  kind: thm
+  file: 04-multiple-roots.md
+  line: 334
+  hash: 2d3df9b59f59
+  verdicts:
+  - stage: S5a
+    verdict: correct
+    by: refereeA
+    hash: 2d3df9b59f59
+    date: '2026-10-12'
+    model: claude-opus-5-5
+    evidence: 04:334-343; the m*1!=0 hypothesis is needed (x^3 over F_3, line 364); f!=0 is needed for
+      mult
+  - stage: S5b
+    verdict: correct
+    by: refereeB
+    hash: 2d3df9b59f59
+    date: '2026-10-12'
+    model: claude-opus-5-5
+    evidence: 04:337-343; hypothesis m*1 != 0 of (b) shown necessary at 04:364 (x^3 over F_3)
+  - stage: S8
+    verdict: minor
+    by: seam
+    hash: 2d3df9b59f59
+    date: '2026-10-12'
+    model: claude-opus-5-5
+    evidence: 04-multiple-roots.md:367 The text credits 'p · 1 = 0 in F_p' to @thm-formal-derivative-rules,
+      which says nothing about F_p.
+  - stage: S7r
+    verdict: correct
+    by: rereferee
+    hash: 2d3df9b59f59
+    date: '2026-10-12'
+    model: claude-opus-5-5
+    evidence: 04:337-367. The statement and proof are unchanged and check out. The derivative comes from
+      thm-formal-derivative-rules. B(c) = (m*1)g(c). In (a), the m=1 case gives f' = B and f'(c) = g(c)
+      != 0. In (b), B(c) != 0 gives f' = (x-c)^{m-1}B with mult m-1 by lem-polynomial-multiplicity-cofactor
+      (a). The remark at 04:367 now credits the derivative formula to thm-formal-derivative-rules and
+      credits p*1 =
+- key: proof:thm-polynomial-repeated-root-test
+  kind: proof
+  file: 04-multiple-roots.md
+  line: 349
+  hash: 6fb24c46bfdb
+  verdicts:
+  - stage: S5a
+    verdict: correct
+    by: refereeA
+    hash: 6fb24c46bfdb
+    date: '2026-10-12'
+    model: claude-opus-5-5
+    evidence: 04:349-362; product and power rules (m in Z_{>0}); B(c)=(m*1)g(c); the m=1 and m>=2 cases;
+      (b) by cor-polynomial-no-zero-divisors (a) and lemma (a) for f'
+  - stage: S5b
+    verdict: correct
+    by: refereeB
+    hash: 6fb24c46bfdb
+    date: '2026-10-12'
+    model: claude-opus-5-5
+    evidence: '04:350-361: product and power rule from thm-formal-derivative-rules (b),(c) (05-formal-derivative:101-111);
+      B(c) = (m*1)g(c); ledger 596'
+- key: cor-polynomial-squarefree-gcd
+  kind: cor
+  file: 04-multiple-roots.md
+  line: 372
+  hash: a6853d39c9f7
+  verdicts:
+  - stage: S5a
+    verdict: correct
+    by: refereeA
+    hash: a6853d39c9f7
+    date: '2026-10-12'
+    model: claude-opus-5-5
+    evidence: 04:372-381; characteristic 0 is needed in (b), as C2(b) shows
+  - stage: S5b
+    verdict: correct
+    by: refereeB
+    hash: a6853d39c9f7
+    date: '2026-10-12'
+    model: claude-opus-5-5
+    evidence: '04:375-381; 04:399 meta-claim ''Characteristic 0 is used once'' is true: only at 04:396
+      via prp-formal-derivative-zero (a)'
+- key: proof:cor-polynomial-squarefree-gcd
+  kind: proof
+  file: 04-multiple-roots.md
+  line: 387
+  hash: 85829e466983
+  verdicts:
+  - stage: S5a
+    verdict: correct
+    by: refereeA
+    hash: 85829e466983
+    date: '2026-10-12'
+    model: claude-opus-5-5
+    evidence: '04:387-397; (a) via thm-polynomial-bezout (b) with f!=0; (b): greatest m with p^m | f,
+      bounded by deg p^m = m deg p; m=1 gives p | p''g, then cor-irreducible-divides-product (b) and prp-formal-derivative-zero
+      (a) give the contradiction'
+  - stage: S5b
+    verdict: correct
+    by: refereeB
+    hash: 85829e466983
+    date: '2026-10-12'
+    model: claude-opus-5-5
+    evidence: '04:388-396: thm-polynomial-bezout (b) (02-polynomial-gcd:115), lem-polynomial-irreducible-factor,
+      cor-irreducible-divides-product (b), prp-polynomial-divisibility-rules (c),(d); greatest m via ledger
+      599; x-c irreducible ledger 600'
+- key: check:04-multiple-roots:4
+  kind: check
+  file: 04-multiple-roots.md
+  line: 401
+  hash: ecb2412279b1
+  verdicts:
+  - stage: S5a
+    verdict: correct
+    by: refereeA
+    hash: ecb2412279b1
+    date: '2026-10-12'
+    model: claude-opus-5-5
+    evidence: 04:401-407; f(1)=0, f'(1)=0, (x-1)^2(x+2)=x^3-3x+2
+  - stage: S5b
+    verdict: correct
+    by: refereeB
+    hash: ecb2412279b1
+    date: '2026-10-12'
+    model: claude-opus-5-5
+    evidence: '04:406: f(1)=0, f''(1)=3-3=0; (x-1)^2(x+2)=x^3-3x+2'
+- key: exr-multiple-roots-a1
+  kind: exr
+  file: 04-multiple-roots.md
+  line: 413
+  hash: cb4ce95a6798
+  verdicts:
+  - stage: S5a
+    verdict: correct
+    by: refereeA
+    hash: ff9b85c52743
+    date: '2026-10-12'
+    model: claude-opus-5-5
+    evidence: 04:413-432; all four parts checked
+  - stage: S5b
+    verdict: correct
+    by: refereeB
+    hash: ff9b85c52743
+    date: '2026-10-12'
+    model: claude-opus-5-5
+    evidence: 04:425-431 answers match blueprint and the text
+  - stage: S6
+    verdict: correct
+    by: verifier
+    hash: ff9b85c52743
+    date: '2026-10-12'
+    model: claude-opus-5-5
+    evidence: '04:413-435. I solved it before reading the solution. (a) 3 and 1: sympy factors the polynomial
+      as (x-1)^3(x+1). (b) In F_3, f''=(3·1)x^2=0, so test (a) applies; (b) fails because 3·1=0. (c) True
+      by thm-polynomial-identity-from-values (a). (d) False, witness x^2+x. All agree with the solution.'
+  - stage: S7r
+    verdict: correct
+    by: rereferee
+    hash: cb4ce95a6798
+    date: '2026-10-12'
+    model: claude-opus-5-5
+    evidence: '04:413-431. I solved each part independently first. (a) gives 3 and 1, from (x-1)^3(x+1).
+      In (b), f(0) = 0 and f'' = (3*1)x^2 = 0 in F_3, so 0 is a multiple root by test (a). Part (b) does
+      not apply because 3*1 = 0. (c) is true: thm-polynomial-identity-from-values (a) applies with n=2,
+      the points 1, 2, 3 and g = 0 (deg 0 = -inf <= 2). The renamed ''g = 0'' at 04:429 matches the new
+      statement. (d) is '
+- key: exr-multiple-roots-b1
+  kind: exr
+  file: 04-multiple-roots.md
+  line: 436
+  hash: 00db828680fd
+  verdicts:
+  - stage: S5a
+    verdict: correct
+    by: refereeA
+    hash: 00db828680fd
+    date: '2026-10-12'
+    model: claude-opus-5-5
+    evidence: '04:436-468; seven lines plus two distractors; the admissible-order analysis is complete
+      (three orders of iii/iv/v); Z/8Z: 3-1=2, 3+1=4, product 8=0'
+  - stage: S5b
+    verdict: correct
+    by: refereeB
+    hash: 00db828680fd
+    date: '2026-10-12'
+    model: claude-opus-5-5
+    evidence: '04:439-467: seven lines plus two distractors as STYLE §11.4; the admissible-order analysis
+      (including (v) before (iii)) is correct and wider than the blueprint''s, legitimately; Z/8Z: h =
+      x+1, h(3) = 4 != 0'
+  - stage: S6
+    verdict: correct
+    by: verifier
+    hash: 00db828680fd
+    date: '2026-10-12'
+    model: claude-opus-5-5
+    evidence: 04:436-468. The order (i)-(vii) is admissible. The solution's set of admissible orders (v
+      anywhere after ii and before vi, iv after iii) is exactly right. (v') fails because c_k=0 is allowed.
+      (vi') skips the cancellation. The Z/8Z witness (f=x^2-1, c_1=1, c_2=3, h=x+1, h(3)=4≠0 while 3-1=2≠0)
+      defeats the illegal step. The proof itself is in the section (thm-polynomial-root-count).
+- key: exr-multiple-roots-b2
+  kind: exr
+  file: 04-multiple-roots.md
+  line: 470
+  hash: 5a1a97187d60
+  verdicts:
+  - stage: S5a
+    verdict: correct
+    by: refereeA
+    hash: 5a1a97187d60
+    date: '2026-10-12'
+    model: claude-opus-5-5
+    evidence: '04:470-491; divisions recomputed: 4,1,3,1; at -2, b_0=0 and b_1=9'
+  - stage: S5b
+    verdict: correct
+    by: refereeB
+    hash: 5a1a97187d60
+    date: '2026-10-12'
+    model: claude-opus-5-5
+    evidence: '04:480-490: divisions check (value 9 at x=2 both sides); (x+2)(x^2-2x+1)=x^3-3x+2, (x+2)(x-4)+9=x^2-2x+1,
+      so b_1 = 9 and mult = 1'
+  - stage: S6
+    verdict: correct
+    by: verifier
+    hash: 5a1a97187d60
+    date: '2026-10-12'
+    model: claude-opus-5-5
+    evidence: '04:470-491. f(x+1)=x^3+3x^2+x+4, which gives b=(4,1,3,1). g(x-2)=x^3-6x^2+9x, which gives
+      b_0=0, b_1=9, so mult=1. Every division line was checked. Worked example: exm-polynomial-multiplicity-run
+      and the check after thm-polynomial-taylor-shift.'
+- key: exr-multiple-roots-b3
+  kind: exr
+  file: 04-multiple-roots.md
+  line: 493
+  hash: bb599384dc0a
+  verdicts:
+  - stage: S5a
+    verdict: correct
+    by: refereeA
+    hash: bb599384dc0a
+    date: '2026-10-12'
+    model: claude-opus-5-5
+    evidence: 04:493-505; both directions; x^7-x^3=x^2(x^5-x)
+  - stage: S5b
+    verdict: correct
+    by: refereeB
+    hash: bb599384dc0a
+    date: '2026-10-12'
+    model: claude-opus-5-5
+    evidence: '04:500-504: both directions sound; x^7-x^3 = x^2(x^5-x), so x^3+x works'
+  - stage: S6
+    verdict: correct
+    by: verifier
+    hash: bb599384dc0a
+    date: '2026-10-12'
+    model: claude-opus-5-5
+    evidence: '04:493-507. Both directions are sound and the citations exist (thm-fermat-little (a); exm-polynomial-function-finite-field
+      (b) is proved for general p at 04:116). The two sides agree at every c in F_5, and (x^7+x)-(x^3+x)=x^2(x^5-x)
+      holds. Worked example: exm-polynomial-function-finite-field.'
+- key: exr-multiple-roots-c1
+  kind: exr
+  file: 04-multiple-roots.md
+  line: 509
+  hash: 7cba74b402e3
+  verdicts:
+  - stage: S5a
+    verdict: correct
+    by: refereeA
+    hash: 7cba74b402e3
+    date: '2026-10-12'
+    model: claude-opus-5-5
+    evidence: 04:509-545; induction on j for all i, with the cases j+1<=i, j=i, j>i; j!*1!=0 in characteristic
+      0; f''(1)=6 and 6/2=3
+  - stage: S5b
+    verdict: correct
+    by: refereeB
+    hash: 7cba74b402e3
+    date: '2026-10-12'
+    model: claude-opus-5-5
+    evidence: '04:532-544: induction on j uses thm-formal-derivative-rules (a),(c) and lem-integer-multiples
+      (b); j!*1 != 0 from def-characteristic; f''''(1)=6, b_2=3 agrees with B2 (a)'
+  - stage: S6
+    verdict: correct
+    by: verifier
+    hash: 7cba74b402e3
+    date: '2026-10-12'
+    model: claude-opus-5-5
+    evidence: '04:509-545. The induction for ((x-c)^i)^(j) is correct, using thm-formal-derivative-rules
+      (a) and the power rule (c), lem-integer-multiples (b), and def-formal-derivative, which defines
+      higher derivatives. j!·1≠0 in characteristic 0 is correct. Check: f''''(1)/2=3 (sympy).'
+- key: exr-multiple-roots-c2
+  kind: exr
+  file: 04-multiple-roots.md
+  line: 547
+  hash: d78e95e9564a
+  verdicts:
+  - stage: S5a
+    verdict: correct
+    by: refereeA
+    hash: d78e95e9564a
+    date: '2026-10-12'
+    model: claude-opus-5-5
+    evidence: 04:547-567; Euclidean steps recomputed by hand (remainder -3/4(x-1)^2, then 0); over F_2,
+      f'=0 so gcd=f; x^4+1=(x+1)^4
+  - stage: S5b
+    verdict: correct
+    by: refereeB
+    hash: d78e95e9564a
+    date: '2026-10-12'
+    model: claude-opus-5-5
+    evidence: '04:566 says the proof''s step deg p'' = deg p - 1 ''fails in characteristic 2: (x^2 + 1)''
+      = 0''. But that step is applied only to an irreducible p, and x^2+1 = (x+1)^2 is reducible over
+      F_2, so it is not an instance of the step. The Euclidean run in (a) checks: f - (x/4 - 1/8)f'' =
+      -3/4(x-1)^2, and the gcd is (x-1)^2 [finding refuted by skeptics]'
+  - stage: S6
+    verdict: correct
+    by: verifier
+    hash: d78e95e9564a
+    date: '2026-10-12'
+    model: claude-opus-5-5
+    evidence: '04:547-572. Euclidean run checked with sympy: div(f,f'') gives (x/4-1/8, -3/4(x^2-2x+1)),
+      and the next division has quotient -8/3(2x+1) with remainder 0, so gcd=x^2-2x+1. (b) f''=4x^3=0
+      in F_2, gcd(f,0)=f by thm-polynomial-bezout (c), and x^4+1=(x+1)^4 mod 2. The account of where the
+      proof uses characteristic 0 matches 04:396-399.'
+- key: def-lagrange-polynomials-for-nodes
+  kind: def
+  file: 05-interpolation-and-congruences.md
+  line: 17
+  hash: 019f2d9555a2
+  verdicts:
+  - stage: S5a
+    verdict: minor
+    by: refereeA
+    hash: 019f2d9555a2
+    date: '2026-10-12'
+    model: claude-opus-5-5
+    evidence: 05-interpolation-and-congruences.md:13 The motivation states, falsely, that a polynomial
+      vanishing at the nodes c_j (j≠i) IS the product of the factors x-c_j. The cited result gives only
+      one factor at a time.
+  - stage: S5b
+    verdict: minor
+    by: refereeB
+    hash: 019f2d9555a2
+    date: '2026-10-12'
+    model: claude-opus-5-5
+    evidence: '05-interpolation-and-congruences.md:13 A motivating sentence is false as written: a polynomial
+      vanishing at the nodes c_j (j ≠ i) is a multiple of the product of the x − c_j, not the product
+      itself. Also, the cited factor theorem alone does not give divisibility by the product.'
+  - stage: S7r
+    verdict: correct
+    by: rereferee
+    hash: 019f2d9555a2
+    date: '2026-10-12'
+    model: claude-opus-5-5
+    evidence: '05:13 now says a polynomial vanishing at the c_j (j≠i) is a multiple of their product,
+      citing @thm-polynomial-root-count, whose statement (04-multiple-roots) gives (x-c_1)...(x-c_k) |
+      f for distinct roots. Both S5a and S5b findings are resolved. 05:17-27: the definition, the reason
+      the inverses exist, and the product recursion (@fd2:def-sum-product in F[x], @thm-polynomial-ring-laws
+      (a)) all check'
+- key: thm-polynomial-interpolation
+  kind: thm
+  file: 05-interpolation-and-congruences.md
+  line: 47
+  hash: ccdb9a802ebf
+  verdicts:
+  - stage: S5a
+    verdict: correct
+    by: refereeA
+    hash: ccdb9a802ebf
+    date: '2026-10-12'
+    model: claude-opus-5-5
+    evidence: Lines 47-58. Dropping 'distinct' breaks it (line 42). Dropping deg<=n breaks (c) (warning
+      at line 87, checked).
+  - stage: S5b
+    verdict: correct
+    by: refereeB
+    hash: ccdb9a802ebf
+    date: '2026-10-12'
+    model: claude-opus-5-5
+    evidence: '05:50-56 statement checked. (a)-(d) are consistent with the proof. n=0 case (05:40): ℓ_0
+      = 1, degree 0 = n.'
+  - stage: S8
+    verdict: minor
+    by: seam
+    hash: ccdb9a802ebf
+    date: '2026-10-12'
+    model: claude-opus-5-5
+    evidence: '05-interpolation-and-congruences.md:84 §05 has an untracked forward pointer into the linear
+      algebra book, outside a Looking-ahead box. STYLE §12.1 allows one forward pointer per section, in
+      a box, reported to STATUS. STYLE l.345 asks for the form ''the linear-algebra companion, Chapter
+      N'' or an @la: label.'
+  - stage: S7r
+    verdict: correct
+    by: rereferee
+    hash: ccdb9a802ebf
+    date: '2026-10-12'
+    model: claude-opus-5-5
+    evidence: '05:50-56: the statement is sound. The S8 finding is resolved. The pointer at 05:84 now
+      reads ''the linear-algebra companion, Chapter 6'', which is the form STYLE l.345 allows. linear-algebra/src/ch06-polynomials/06-interpolation-and-crt.md
+      does hold def-lagrange-basis. The pointer is tracked in STATUS l.164 (''F4.5 05:84, LA2.6'') and
+      ledgered at 05:615. Per STATUS l.239, fd4 is not an introductory vo'
+- key: proof:thm-polynomial-interpolation
+  kind: proof
+  file: 05-interpolation-and-congruences.md
+  line: 66
+  hash: b30a45ec6c44
+  verdicts:
+  - stage: S5a
+    verdict: correct
+    by: refereeA
+    hash: 2ccb340a4156
+    date: '2026-10-12'
+    model: claude-opus-5-5
+    evidence: 'Lines 66-82. Each citation checked: thm-evaluation-respects-operations, thm-degree-of-product
+      (a),(b) (no zero divisors in F), thm-degree-of-sum, (Σ3) of lem-finite-sums-and-powers, and thm-polynomial-identity-from-values
+      (a) with n+1 distinct points. The list induction is recorded in the ledger (line 604).'
+  - stage: S5b
+    verdict: minor
+    by: refereeB
+    hash: 2ccb340a4156
+    date: '2026-10-12'
+    model: claude-opus-5-5
+    evidence: '05-interpolation-and-congruences.md:71 Two facts in the proof have neither an @ref nor
+      a ledger line: ''a field has no zero divisors'', and the degree bound for a sum of n+1 terms.'
+  - stage: S7r
+    verdict: correct
+    by: rereferee
+    hash: b30a45ec6c44
+    date: '2026-10-12'
+    model: claude-opus-5-5
+    evidence: '05:67-81. (a): evaluation of the product goes through @thm-evaluation-respects-operations,
+      and the zero-entry product through fd3:prp-ring-algebra (b), ledgered at 05:612. The degree uses
+      @thm-degree-of-product (b), whose statement names the field / no-zero-divisors case explicitly;
+      its extension to n factors is ledgered at 05:612, and n=0 gives the empty product 1. (b): deg(y_i
+      ℓ_i) ≤ n follows f'
+- key: check:05-interpolation-and-congruences:1
+  kind: check
+  file: 05-interpolation-and-congruences.md
+  line: 90
+  hash: c10a774d3122
+  verdicts:
+  - stage: S5a
+    verdict: correct
+    by: refereeA
+    hash: c10a774d3122
+    date: '2026-10-12'
+    model: claude-opus-5-5
+    evidence: 'Line 95: 5(1-x)+8x = 5+3x.'
+  - stage: S5b
+    verdict: correct
+    by: refereeB
+    hash: c10a774d3122
+    date: '2026-10-12'
+    model: claude-opus-5-5
+    evidence: '05:91-96: 5(1-x)+8x = 5+3x; the values at 0 and 1 are 5 and 8.'
+- key: exm-polynomial-interpolation-cubic
+  kind: exm
+  file: 05-interpolation-and-congruences.md
+  line: 100
+  hash: 83fe87c69ae8
+  verdicts:
+  - stage: S5a
+    verdict: correct
+    by: refereeA
+    hash: 2f4597d25808
+    date: '2026-10-12'
+    model: claude-opus-5-5
+    evidence: 'Lines 107-123. I recomputed this with sympy: each ℓ_i is δ at the nodes, and 2ℓ0+ℓ1+2ℓ2+11ℓ3
+      = x^3+x^2-x+1. The coefficient table is also correct.'
+  - stage: S5b
+    verdict: correct
+    by: refereeB
+    hash: 2f4597d25808
+    date: '2026-10-12'
+    model: claude-opus-5-5
+    evidence: '05:110-123 recomputed by hand. The four ℓ_i are right. Coefficients: x^3: (-2+3-6+11)/6
+      = 1; x^2: 1-1+1 = 1; x: (-4-3+12-11)/6 = -1; constant 1. So p = x^3+x^2-x+1, and all four values
+      check.'
+  - stage: S7r
+    verdict: correct
+    by: rereferee
+    hash: 83fe87c69ae8
+    date: '2026-10-12'
+    model: claude-opus-5-5
+    evidence: '05:107-123, recomputed. Denominators: -6, 2, -2, 6. Expansions: x^3-3x^2+2x, x^3-2x^2-x+2,
+      x^3-x^2-2x, x^3-x. Coefficients of 2ℓ0+ℓ1+2ℓ2+11ℓ3: x^3: -1/3+1/2-1+11/6=1; x^2: 1-1+1=1; x: -2/3-1/2+2-11/6=-1;
+      constant: 1. So p=x^3+x^2-x+1, and the four values 2, 1, 2, 11 check. The new inverse notation agrees
+      with the definition (factors regrouped by commutativity, ''denominators computed first'').'
+- key: def-polynomial-congruence
+  kind: def
+  file: 05-interpolation-and-congruences.md
+  line: 130
+  hash: 538b493928a8
+  verdicts:
+  - stage: S5a
+    verdict: correct
+    by: refereeA
+    hash: 538b493928a8
+    date: '2026-10-12'
+    model: claude-opus-5-5
+    evidence: Line 133. m | f-g is the same as f-g ∈ <m> (def-polynomial-combinations, k=1). Line 136
+      checks that <m> is an ideal and cites fd3:thm-quotient-ring-by-ideal (a) for the equivalence relation.
+      The degenerate cases at line 145 cite prp-polynomial-divisibility-rules (a) correctly.
+  - stage: S5b
+    verdict: correct
+    by: refereeB
+    hash: 538b493928a8
+    date: '2026-10-12'
+    model: claude-opus-5-5
+    evidence: 05:133. ∼_I of @fd3:thm-quotient-ring-by-ideal (a) with I = ⟨m⟩ (it is an ideal by the remark
+      after def-polynomial-combinations). Both examples (05:140-141) check.
+- key: check:05-interpolation-and-congruences:2
+  kind: check
+  file: 05-interpolation-and-congruences.md
+  line: 148
+  hash: ccc4acfee52f
+  verdicts:
+  - stage: S5a
+    verdict: correct
+    by: refereeA
+    hash: ccc4acfee52f
+    date: '2026-10-12'
+    model: claude-opus-5-5
+    evidence: 'Line 153: x^3 = x(x^2+1) - x. 2x ≠ 0 in Q[x] and has degree 1 < 2, so (d) applies. In F_2,
+      -2x = 0.'
+  - stage: S5b
+    verdict: correct
+    by: refereeB
+    hash: ccc4acfee52f
+    date: '2026-10-12'
+    model: claude-opus-5-5
+    evidence: '05:153: x^3 - x = x(x^2+1) - 2x. Over ℚ, prp-polynomial-divisibility-rules (d) rules out
+      divisibility. Over 𝔽_2, -2x = 0.'
+- key: thm-polynomial-quotient-ring
+  kind: thm
+  file: 05-interpolation-and-congruences.md
+  line: 160
+  hash: e52d88a427bb
+  verdicts:
+  - stage: S5a
+    verdict: correct
+    by: refereeA
+    hash: e52d88a427bb
+    date: '2026-10-12'
+    model: claude-opus-5-5
+    evidence: Lines 160-171. deg m >= 1 is used for [1]≠[0] in (a), for m≠0 in (b), and for 0<d in (c).
+  - stage: S5b
+    verdict: correct
+    by: refereeB
+    hash: e52d88a427bb
+    date: '2026-10-12'
+    model: claude-opus-5-5
+    evidence: '05:163-169. Each part matches fd3''s twins: thm-integers-mod-n-ring (b) and thm-units-mod-n.'
+- key: proof:thm-polynomial-quotient-ring
+  kind: proof
+  file: 05-interpolation-and-congruences.md
+  line: 177
+  hash: bbaf3cd8d0a4
+  verdicts:
+  - stage: S5a
+    verdict: correct
+    by: refereeA
+    hash: bbaf3cd8d0a4
+    date: '2026-10-12'
+    model: claude-opus-5-5
+    evidence: 'Lines 177-189. Checked: fd3:thm-quotient-ring-by-ideal (a)-(d), prp-polynomial-divisibility-rules
+      (d), thm-polynomial-division-remainder (a), fd2:thm-classes-partition (b),(c), cor-polynomial-coprime-iff-combination,
+      and the uniqueness of inverses from fd3:def-ring-unit.'
+  - stage: S5b
+    verdict: correct
+    by: refereeB
+    hash: bbaf3cd8d0a4
+    date: '2026-10-12'
+    model: claude-opus-5-5
+    evidence: 05:178-188. The citations of fd3:thm-quotient-ring-by-ideal (a)-(d), fd2:thm-classes-partition
+      (b),(c), fd2:def-quotient-set and fd3:def-ring-unit (uniqueness of the inverse) are all checked
+      against their statements.
+- key: check:05-interpolation-and-congruences:3
+  kind: check
+  file: 05-interpolation-and-congruences.md
+  line: 193
+  hash: 820e83b62ed0
+  verdicts:
+  - stage: S5a
+    verdict: correct
+    by: refereeA
+    hash: 765e2de08d0b
+    date: '2026-10-12'
+    model: claude-opus-5-5
+    evidence: 'Line 249: fd3:thm-no-rational-square-two, prp-irreducible-low-degree (b), fd3:prp-cof-square-roots,
+      and the factorization (x-s)(x+s).'
+  - stage: S5b
+    verdict: correct
+    by: refereeB
+    hash: 765e2de08d0b
+    date: '2026-10-12'
+    model: claude-opus-5-5
+    evidence: 05:249 cites fd3:thm-no-rational-square-two and fd3:prp-cof-square-roots. Both exist.
+  - stage: S7r
+    verdict: correct
+    by: rereferee
+    hash: 820e83b62ed0
+    date: '2026-10-12'
+    model: claude-opus-5-5
+    evidence: 'The third check block in the current file is the new one at 05:193-199 (inverse of [x+1]
+      in Q[x]/<x^2-2>). Checked: (x-1)(x+1)-1=x^2-2, and (x-1)(x+1)+(-1)(x^2-2)=1. The gcd is 1 by @cor-polynomial-coprime-iff-combination.
+      @thm-polynomial-quotient-ring (d) applies with a=x-1, and the check x^2-1≡1 holds.'
+- key: thm-polynomial-quotient-field
+  kind: thm
+  file: 05-interpolation-and-congruences.md
+  line: 203
+  hash: 335b9e7c403e
+  verdicts:
+  - stage: S5a
+    verdict: correct
+    by: refereeA
+    hash: 335b9e7c403e
+    date: '2026-10-12'
+    model: claude-opus-5-5
+    evidence: Line 198. If m is a constant the quotient is the zero ring, so the hypothesis deg m >= 1
+      is needed and is used at line 202.
+  - stage: S5b
+    verdict: correct
+    by: refereeB
+    hash: 335b9e7c403e
+    date: '2026-10-12'
+    model: claude-opus-5-5
+    evidence: 05:198. Cites @def-field (fd4 02-field-axioms:26). The meta-claim at 05:209 ('fd3:thm-integers-mod-prime-field
+      with prime replaced by irreducible') matches the fd3 iff statement.
+- key: proof:thm-polynomial-quotient-field
+  kind: proof
+  file: 05-interpolation-and-congruences.md
+  line: 209
+  hash: 206a6f6679e9
+  verdicts:
+  - stage: S5a
+    verdict: correct
+    by: refereeA
+    hash: 206a6f6679e9
+    date: '2026-10-12'
+    model: claude-opus-5-5
+    evidence: 'Lines 201-207. Checked: cor-irreducible-divides-product (a), gcd symmetry (stated after
+      def-polynomial-gcd), def-irreducible-over-field, thm-degree-of-product (b). thm-field-basic-properties
+      (f) gives ''product of non-zero elements is non-zero'' by contrapositive; (g) states it directly.'
+  - stage: S5b
+    verdict: correct
+    by: refereeB
+    hash: 206a6f6679e9
+    date: '2026-10-12'
+    model: claude-opus-5-5
+    evidence: 05:202-206. cor-irreducible-divides-product (a) gives gcd(p,f)=1, and gcd is symmetric by
+      def-polynomial-gcd. The ⇒ direction uses thm-field-basic-properties (f), contrapositive.
+- key: exm-polynomial-quotient-four-elements
+  kind: exm
+  file: 05-interpolation-and-congruences.md
+  line: 219
+  hash: 1ee430079031
+  verdicts:
+  - stage: S5a
+    verdict: minor
+    by: refereeA
+    hash: 1ee430079031
+    date: '2026-10-12'
+    model: claude-opus-5-5
+    evidence: 05-interpolation-and-congruences.md:241 The warning's inequality (c^2+1)^2 >= 1 has no citation,
+      and the ledger line 615 credits it to fd3:prp-ordered-ring-rules (e), which does not give it.
+  - stage: S5b
+    verdict: correct
+    by: refereeB
+    hash: 1ee430079031
+    date: '2026-10-12'
+    model: claude-opus-5-5
+    evidence: 05:220-235. Both tables recomputed. The comparison with exr-finite-fields-from-modular-arithmetic-c1
+      (02:245-255, whose product formula encodes α^2 = 1+α) is accurate.
+- key: check:05-interpolation-and-congruences:4
+  kind: check
+  file: 05-interpolation-and-congruences.md
+  line: 252
+  hash: 765e2de08d0b
+  verdicts:
+  - stage: S5a
+    verdict: correct
+    by: refereeA
+    hash: 4bcd8ad61789
+    date: '2026-10-12'
+    model: claude-opus-5-5
+    evidence: 'Line 343: -(x-1)+x = 1, so e_1 = 1-x and e_2 = x, giving f = 3+2x.'
+  - stage: S5b
+    verdict: correct
+    by: refereeB
+    hash: 4bcd8ad61789
+    date: '2026-10-12'
+    model: claude-opus-5-5
+    evidence: '05:343: with M_1 = x-1, a_1 = -1 and M_2 = x, a_2 = 1, e_1 = 1-x and e_2 = x, so f = 3+2x.'
+  - stage: S7r
+    verdict: correct
+    by: rereferee
+    hash: 765e2de08d0b
+    date: '2026-10-12'
+    model: claude-opus-5-5
+    evidence: '05:252-258. Over Q: no rational root by @fd3:thm-no-rational-square-two, so x^2-2 is irreducible
+      by @prp-irreducible-low-degree (b) (degree 2), and @thm-polynomial-quotient-field applies. Over
+      R: s comes from @fd3:prp-cof-square-roots (unique non-negative root, here s^2=2). (x-s)(x+s)=x^2-2
+      is a product of two degree-1 factors, so the polynomial is reducible and [x-s][x+s]=[0]. Correct.'
+- key: lem-polynomial-coprime-to-product
+  kind: lem
+  file: 05-interpolation-and-congruences.md
+  line: 264
+  hash: a22b57311bc2
+  verdicts:
+  - stage: S5a
+    verdict: correct
+    by: refereeA
+    hash: a22b57311bc2
+    date: '2026-10-12'
+    model: claude-opus-5-5
+    evidence: Lines 256-263. The counterexample without coprimality at line 283 is correct.
+  - stage: S5b
+    verdict: correct
+    by: refereeB
+    hash: a22b57311bc2
+    date: '2026-10-12'
+    model: claude-opus-5-5
+    evidence: 05:260-261. The non-example at 05:283 (m1=m2=h=x) checks.
+  - stage: S7r
+    verdict: correct
+    by: rereferee
+    hash: a22b57311bc2
+    date: '2026-10-12'
+    model: claude-opus-5-5
+    evidence: 'The statement (05:264-272) is unchanged by the diff. Both (a) and (b) are true as stated,
+      with s, k ≥ 1. The counterexample after the proof is right: m1=m2=x and h=x give x² ∤ x, so coprimality
+      is needed in (b).'
+- key: proof:lem-polynomial-coprime-to-product
+  kind: proof
+  file: 05-interpolation-and-congruences.md
+  line: 280
+  hash: 6b63e4cb8b4c
+  verdicts:
+  - stage: S5a
+    verdict: minor
+    by: refereeA
+    hash: 75ce5ff51e9a
+    date: '2026-10-12'
+    model: claude-opus-5-5
+    evidence: 05-interpolation-and-congruences.md:273 Part (a) cites @fd1:ax-induction for an induction
+      'from s = 1', but that axiom starts at 0. Part (b)'s induction on k (line 279) has no citation and
+      no ledger line.
+  - stage: S5b
+    verdict: minor
+    by: refereeB
+    hash: 75ce5ff51e9a
+    date: '2026-10-12'
+    model: claude-opus-5-5
+    evidence: 05-interpolation-and-congruences.md:273 Some induction and product-recursion bookkeeping
+      is missing.
+  - stage: S7r
+    verdict: minor
+    by: rereferee
+    hash: 77154dc575a8
+    date: '2026-10-12'
+    model: claude-opus-5-5
+    evidence: :cor-omega-identification (b), or add a ledger line saying so. The rest checks out. The
+      product recursion is now cited (@fd2:def-sum-product), which resolves the S5b bookkeeping point.
+      The expansion (ap+bQ)(a'p+b'q)=p(aa'p+ab'q+a'bQ)+bb'Qq is correct. In (b), (a) is applied with s=k≥1,
+      gcd symmetry is cited via @def-polynomial-gcd, and @prp-polynomial-coprime-divisors-product is used
+      for the step.
+  - stage: S7r
+    verdict: correct
+    by: rereferee
+    hash: 6b63e4cb8b4c
+    date: '2026-10-12'
+    model: claude-opus-5-5
+    evidence: ' gcd=1. (b) For pairwise coprime m_1..m_{k+1}, all dividing h, the hypothesis gives M |
+      h. (a) applies with p = m_{k+1} and s = k ≥ 1, giving gcd(m_{k+1},M)=1. Symmetry comes from def-polynomial-gcd,
+      and prp-polynomial-coprime-divisors-product (03:128) gives M m_{k+1} | h. The base case k=1 holds
+      trivially. The ledger lines at 05:628-630 cover the expansion, gcd symmetry and the shifted induction.'
+- key: thm-polynomial-chinese-remainder
+  kind: thm
+  file: 05-interpolation-and-congruences.md
+  line: 293
+  hash: 882ea1e2f472
+  verdicts:
+  - stage: S5a
+    verdict: correct
+    by: refereeA
+    hash: 882ea1e2f472
+    date: '2026-10-12'
+    model: claude-opus-5-5
+    evidence: 'Lines 285-303. ''Non-zero'' is needed for (c): m_1=0 with m_2 a constant is pairwise coprime
+      but gives m=0. Pairwise coprimality is needed for (b) and (d).'
+  - stage: S5b
+    verdict: correct
+    by: refereeB
+    hash: 882ea1e2f472
+    date: '2026-10-12'
+    model: claude-opus-5-5
+    evidence: 05:288-301. k=1 is handled (M_1 = 1). Part (c) covers the case where every m_i is constant
+      (deg 0 = -∞ per NOTATION l.261).
+  - stage: S8
+    verdict: minor
+    by: seam
+    hash: 882ea1e2f472
+    date: '2026-10-12'
+    model: claude-opus-5-5
+    evidence: 05-interpolation-and-congruences.md:310 §05 re-proves two facts from §03, and §06 assumes
+      one of them without a source. The cause is NOTATION's limit of (L1)/(L2) to §03–§04.
+  - stage: S7r
+    verdict: correct
+    by: rereferee
+    hash: 882ea1e2f472
+    date: '2026-10-12'
+    model: claude-opus-5-5
+    evidence: '05:296-310: the statement is sound. The S8 finding is resolved in three places. §05 now
+      cites (L1)/(L2) of Section 5.3 by name (05:318) instead of re-proving them. §06:414 and ledger 06:705
+      cite (L2) for x - c | p_1...p_k. NOTATION l.278 now scopes (L1), (L2) to F4.5 §03–§06.'
+- key: proof:thm-polynomial-chinese-remainder
+  kind: proof
+  file: 05-interpolation-and-congruences.md
+  line: 317
+  hash: 5af54c67f318
+  verdicts:
+  - stage: S5a
+    verdict: correct
+    by: refereeA
+    hash: 98ba7a4956a1
+    date: '2026-10-12'
+    model: claude-opus-5-5
+    evidence: 'Lines 309-334. k=1 is handled (M_1=1). For k>=2, lem (a) is used with s=k-1. m_j | M_i
+      | e_i holds by transitivity. Checked: lem (b), prp-polynomial-divisibility-rules (b),(c),(d), fd3:thm-well-defined-on-classes
+      (a) with the identity map, fd2:def-quotient-set, fd2:thm-classes-partition (b).'
+  - stage: S5b
+    verdict: correct
+    by: refereeB
+    hash: 98ba7a4956a1
+    date: '2026-10-12'
+    model: claude-opus-5-5
+    evidence: 05:310-333. Every step is cited or ledgered (619-621). Well-definedness via fd3:thm-well-defined-on-classes
+      (a) follows fd3's own CRT proof.
+  - stage: S7r
+    verdict: correct
+    by: rereferee
+    hash: 5af54c67f318
+    date: '2026-10-12'
+    model: claude-opus-5-5
+    evidence: '05:318: (L2) at 03:180 gives m = M_i m_i (list with entry i removed, increasing order),
+      and its last clause gives m_j | M_i; (L1) gives m ≠ 0. (a): for k=1, M_1=1, a_1=1, b_1=0. For k≥2,
+      lem (a) is applied with s=k-1≥1. e_i-1=-b_i m_i. The sum step uses prp-polynomial-divisibility-rules
+      (c), ledgered. (b) and (c) check, including the degenerate deg m = 0 case. (d): @fd3:thm-well-defined-on-classes'
+- key: check:05-interpolation-and-congruences:5
+  kind: check
+  file: 05-interpolation-and-congruences.md
+  line: 346
+  hash: 4bcd8ad61789
+  verdicts:
+  - stage: S7r
+    verdict: correct
+    by: rereferee
+    hash: 4bcd8ad61789
+    date: '2026-10-12'
+    model: claude-opus-5-5
+    evidence: '05:346-352. The congruences are translated to f(0)=3, f(1)=5 via @thm-polynomial-remainder-factor
+      (b). Interpolation gives 3(1-x)+5x=3+2x, degree ≤1. CRT route: m1=x, m2=x-1, M1=x-1, M2=x. From
+      x-(x-1)=1: a1=-1 so e1=1-x, and a2=1 so e2=x. Same f. Correct.'
+- key: prp-interpolation-as-chinese-remainder
+  kind: prp
+  file: 05-interpolation-and-congruences.md
+  line: 356
+  hash: bb65aab055df
+  verdicts:
+  - stage: S5a
+    verdict: correct
+    by: refereeA
+    hash: bb65aab055df
+    date: '2026-10-12'
+    model: claude-opus-5-5
+    evidence: Lines 348-358.
+  - stage: S5b
+    verdict: correct
+    by: refereeB
+    hash: bb65aab055df
+    date: '2026-10-12'
+    model: claude-opus-5-5
+    evidence: '05:351-356. (c) is well posed: the remainder of e_i is independent of the choice of a_i,
+      b_i.'
+- key: proof:prp-interpolation-as-chinese-remainder
+  kind: proof
+  file: 05-interpolation-and-congruences.md
+  line: 375
+  hash: d6227106c340
+  verdicts:
+  - stage: S5a
+    verdict: correct
+    by: refereeA
+    hash: d6227106c340
+    date: '2026-10-12'
+    model: claude-opus-5-5
+    evidence: 'Lines 367-377. The Bézout identity for x-c_i and x-c_j is correct. (b) follows from thm-polynomial-remainder-factor
+      (b) and evaluation. For the second claim of (c): with right-hand sides δ, the f of CRT (a) is e_i
+      itself, then CRT (b) and the uniqueness in (c) apply.'
+  - stage: S5b
+    verdict: correct
+    by: refereeB
+    hash: d6227106c340
+    date: '2026-10-12'
+    model: claude-opus-5-5
+    evidence: 05:368-376. The Bézout identity with constants checks. Uniqueness comes from CRT (c). deg
+      m is ledgered (623).
+- key: exm-polynomial-chinese-remainder-run
+  kind: exm
+  file: 05-interpolation-and-congruences.md
+  line: 390
+  hash: '314636188407'
+  verdicts:
+  - stage: S5a
+    verdict: correct
+    by: refereeA
+    hash: '314636188407'
+    date: '2026-10-12'
+    model: claude-opus-5-5
+    evidence: 'Lines 391-417, checked with sympy: x^2+1 = (x+2)(x-2)+5. The remainder of e_1+(2x-1)e_2
+      mod m is -2/5 x^2+2x-7/5. f(2)=1, and f ≡ 2x-1 mod x^2+1.'
+  - stage: S5b
+    verdict: correct
+    by: refereeB
+    hash: '314636188407'
+    date: '2026-10-12'
+    model: claude-opus-5-5
+    evidence: '05:392-416 recomputed: (2x-1)(x^2-4) = 2x^3-x^2-8x+4; adding 2m gives -2x^2+10x-7; f(2)
+      = 1; f ≡ 2x-1 mod x^2+1.'
+- key: exm-hermite-by-chinese-remainder
+  kind: exm
+  file: 05-interpolation-and-congruences.md
+  line: 429
+  hash: 2de5383c080d
+  verdicts:
+  - stage: S5a
+    verdict: correct
+    by: refereeA
+    hash: 2de5383c080d
+    date: '2026-10-12'
+    model: claude-opus-5-5
+    evidence: 'Lines 429-449. (a): r = (r0+r1c)+r1(x-c), and f'' follows from thm-formal-derivative-rules
+      (a)-(c); the comparison uses thm-polynomial-quotient-ring (b). (b), checked with sympy: the Bézout
+      identity equals 1, the product is -8x^4+20x^3-12x^2-x+2, the remainder is 4x^3-4x^2-x+2, and all
+      four checks hold.'
+  - stage: S5b
+    verdict: correct
+    by: refereeB
+    hash: 2de5383c080d
+    date: '2026-10-12'
+    model: claude-opus-5-5
+    evidence: '05:430-448 recomputed: (2-x)e_1+(3x-2)e_2 = -8x^4+20x^3-12x^2-x+2; adding 8m gives 4x^3-4x^2-x+2.
+      All four checks hold.'
+- key: exr-interpolation-and-congruences-a1
+  kind: exr
+  file: 05-interpolation-and-congruences.md
+  line: 465
+  hash: ec3774a6689b
+  verdicts:
+  - stage: S5a
+    verdict: correct
+    by: refereeA
+    hash: ec3774a6689b
+    date: '2026-10-12'
+    model: claude-opus-5-5
+    evidence: 'Lines 469-480. p = x^2+x+1 (sympy). (b) uses thm-polynomial-quotient-ring (b),(c) and remainder-factor
+      (a). (c): x^2-1 is reducible. (d) is accurate.'
+  - stage: S5b
+    verdict: correct
+    by: refereeB
+    hash: ec3774a6689b
+    date: '2026-10-12'
+    model: claude-opus-5-5
+    evidence: '05:469-479: ℓ_1 = -x(x-2), and p = x^2+x+1 is verified. (b)-(d) match their statements.'
+  - stage: S6
+    verdict: correct
+    by: verifier
+    hash: ec3774a6689b
+    date: '2026-10-12'
+    model: claude-opus-5-5
+    evidence: 05:457-480. sympy interpolate gives x^2+x+1, and the ℓ_i match. (b) F[x]/<x> ≅ F through
+      f↦f(0), correct. (c) Reducible modulus, with explicit zero divisors. (d) Acceptable.
+- key: exr-interpolation-and-congruences-b1
+  kind: exr
+  file: 05-interpolation-and-congruences.md
+  line: 492
+  hash: 266520d6eae3
+  verdicts:
+  - stage: S5a
+    verdict: correct
+    by: refereeA
+    hash: 266520d6eae3
+    date: '2026-10-12'
+    model: claude-opus-5-5
+    evidence: 'Line 491-495: f-1 = 2x^2 and f+1 = 2(x^2+1). (x^2+1)-x^2 = 1 gives coprimality.'
+  - stage: S5b
+    verdict: correct
+    by: refereeB
+    hash: 266520d6eae3
+    date: '2026-10-12'
+    model: claude-opus-5-5
+    evidence: '05:491-495: f-1 = 2x^2 and f+1 = 2(x^2+1). Uniqueness from CRT (c).'
+  - stage: S6
+    verdict: correct
+    by: verifier
+    hash: 266520d6eae3
+    date: '2026-10-12'
+    model: claude-opus-5-5
+    evidence: '05:484-496. f=1+2x^2: rem(f-1,x^2)=0 and rem(f+1,x^2+1)=0. Uniqueness comes from CRT (c),
+      and coprimality from (x^2+1)-x^2=1. Worked example: exm-polynomial-chinese-remainder-run.'
+- key: exr-interpolation-and-congruences-b2
+  kind: exr
+  file: 05-interpolation-and-congruences.md
+  line: 506
+  hash: 4aef83245fdd
+  verdicts:
+  - stage: S5a
+    verdict: correct
+    by: refereeA
+    hash: 4aef83245fdd
+    date: '2026-10-12'
+    model: claude-opus-5-5
+    evidence: 'Lines 505-523, checked with sympy: both division steps and the back-substitution, (-x^2+2x+1)(x^2+1)+(x-2)(x^3-2)
+      = 5. The inverse check holds.'
+  - stage: S5b
+    verdict: correct
+    by: refereeB
+    hash: 4aef83245fdd
+    date: '2026-10-12'
+    model: claude-opus-5-5
+    evidence: '05:505-523: Euclid steps and back-substitution verified; (x^2+1)(-x^2+2x+1) ≡ 5 mod x^3-2.'
+  - stage: S6
+    verdict: minor
+    by: verifier
+    hash: 4aef83245fdd
+    date: '2026-10-12'
+    model: claude-opus-5-5
+    evidence: 05-interpolation-and-congruences.md:501 B2 (compute [x^2+1]^{-1} in Q[x]/<x^3-2> by extended
+      Euclid) has no worked example of its type in Section 5.5, as STYLE §6 B requires. The section proves
+      thm-polynomial-quotient-ring (d), but its only inverse computations read inverses off the F_4 table.
+      The two-step back-substitution examples are in Section 5.2.
+  - stage: S7r
+    verdict: correct
+    by: rereferee
+    hash: 4aef83245fdd
+    date: '2026-10-12'
+    model: claude-opus-5-5
+    evidence: '05:509-532, solved independently. x^3-2 = x(x^2+1)+(-x-2); x^2+1 = (-x+2)(-x-2)+5. Back-substitution
+      gives 5 = (-x^2+2x+1)(x^2+1)+(x-2)(x^3-2). Check: -x^4+2x^3+2x+1 ≡ -2x+4+2x+1 = 5. The inverse [(−x^2+2x+1)/5]
+      is correct. The S6 finding is resolved: the new check at 05:193-199 is a worked example of this
+      exact type in Section 5.5 (show [f] is a unit and read its inverse off a Bézout identity via'
+- key: exr-interpolation-and-congruences-b3
+  kind: exr
+  file: 05-interpolation-and-congruences.md
+  line: 534
+  hash: e46f37fc4428
+  verdicts:
+  - stage: S5a
+    verdict: minor
+    by: refereeA
+    hash: a976e24d8eb9
+    date: '2026-10-12'
+    model: claude-opus-5-5
+    evidence: 05-interpolation-and-congruences.md:556 The solution cites def-complex-numbers for 'every
+      complex number is a + bi for exactly one real pair', but that definition only defines pairs and
+      i.
+  - stage: S5b
+    verdict: minor
+    by: refereeB
+    hash: a976e24d8eb9
+    date: '2026-10-12'
+    model: claude-opus-5-5
+    evidence: 05-interpolation-and-congruences.md:556 The a + bi representation and its uniqueness are
+      cited to def-complex-numbers, which defines ℂ as pairs.
+  - stage: S6
+    verdict: correct
+    by: verifier
+    hash: a976e24d8eb9
+    date: '2026-10-12'
+    model: claude-opus-5-5
+    evidence: 05:526-561. Both tables match a script reduction mod x^2+x+1 over F_2. (b) The identity
+      (a+bx)(c+dx)=(ac-bd)+(ad+bc)x+bd(x^2+1) holds; the bijection comes from thm-polynomial-quotient-ring
+      (b) and def-complex-numbers.
+  - stage: S7r
+    verdict: correct
+    by: rereferee
+    hash: e46f37fc4428
+    date: '2026-10-12'
+    model: claude-opus-5-5
+    evidence: '05:543-569. (a): both tables were rechecked. (b): the representation a+bi and its uniqueness
+      are now cited to @prp-reals-embed-complex and the comparison paragraph after it. 01-pairs-of-reals.md,
+      after the proposition, states ''a + bi = c + di iff a = c and b = d'', so the S5a/S5b findings are
+      resolved. The product identity (a+bx)(c+dx) = (ac-bd)+(ad+bc)x+bd(x^2+1) is correct, and the bijection
+      uses'
+- key: exr-interpolation-and-congruences-c1
+  kind: exr
+  file: 05-interpolation-and-congruences.md
+  line: 573
+  hash: 49bcd06ca6bb
+  verdicts:
+  - stage: S5a
+    verdict: minor
+    by: refereeA
+    hash: 2d3d4296b5ff
+    date: '2026-10-12'
+    model: claude-opus-5-5
+    evidence: 05-interpolation-and-congruences.md:580 The solution to C1 (b) says it derives thm-polynomial-interpolation
+      (b), but it proves only that some solution of degree <= n exists. Statement (b) asserts that the
+      specific p = Σ y_iℓ_i interpolates.
+  - stage: S5b
+    verdict: minor
+    by: refereeB
+    hash: 2d3d4296b5ff
+    date: '2026-10-12'
+    model: claude-opus-5-5
+    evidence: 05-interpolation-and-congruences.md:580 C1(b) asks to derive thm-polynomial-interpolation
+      (b) and (c) from the CRT, but the solution derives neither (b) as stated nor (c) about the specific
+      p.
+  - stage: S6
+    verdict: error
+    by: verifier
+    hash: 2d3d4296b5ff
+    date: '2026-10-12'
+    model: claude-opus-5-5
+    evidence: 05-interpolation-and-congruences.md:582 Solution (c) says that for moduli of higher degree,
+      'such as (x - c)^2', there is no evaluation test for divisibility and 'only the Chinese remainder
+      route applies'. That is false for (x-c)^2.
+  - stage: S7r
+    verdict: correct
+    by: rereferee
+    hash: 49bcd06ca6bb
+    date: '2026-10-12'
+    model: claude-opus-5-5
+    evidence: 05:576-591. (b) is restated as 'exactly one polynomial of degree ≤ n through the points
+      (the content of (b) and (c), without the formula)'. The solution proves exactly that and notes that
+      identifying it with Σ y_i ℓ_i needs the interpolation theorem, which resolves the S5a/S5b/S6 findings
+      on (b). (c) no longer claims that (x-c)^2 has 'no such test'. It now says single-point evaluation
+      is not enoug
+- key: exr-interpolation-and-congruences-c2
+  kind: exr
+  file: 05-interpolation-and-congruences.md
+  line: 593
+  hash: 0bf4adb6497c
+  verdicts:
+  - stage: S5a
+    verdict: correct
+    by: refereeA
+    hash: 0bf4adb6497c
+    date: '2026-10-12'
+    model: claude-opus-5-5
+    evidence: 'Lines 592-598: def-field-fp (exactly p elements), interpolation (b),(c), and thm-fermat-little
+      (a) for x^p versus x.'
+  - stage: S5b
+    verdict: correct
+    by: refereeB
+    hash: 0bf4adb6497c
+    date: '2026-10-12'
+    model: claude-opus-5-5
+    evidence: 05:592-598. def-field-fp gives the p distinct elements. Existence and uniqueness via thm-polynomial-interpolation
+      (b),(c). The pointer 'warning of Section 5.4' matches 04:94-96.
+  - stage: S6
+    verdict: correct
+    by: verifier
+    hash: 0bf4adb6497c
+    date: '2026-10-12'
+    model: claude-opus-5-5
+    evidence: 05:585-599. Existence via thm-polynomial-interpolation (b) with n=p-1, uniqueness via (c).
+      The p^p count and the x^p versus x remark are correct.
+- key: lem-complex-polynomial-growth
+  kind: lem
+  file: 06-the-fundamental-theorem.md
+  line: 21
+  hash: 534bbdd3a142
+  verdicts:
+  - stage: S5a
+    verdict: correct
+    by: refereeA
+    hash: 534bbdd3a142
+    date: '2026-10-12'
+    model: claude-opus-5-5
+    evidence: 06:21-32. n>=1 and a_n!=0 are both used (R is defined, and |z|^n>=|z|). With A=0, R=1 and
+      the statement still holds.
+  - stage: S5b
+    verdict: correct
+    by: refereeB
+    hash: 534bbdd3a142
+    date: '2026-10-12'
+    model: claude-opus-5-5
+    evidence: 06:21-32. R = max{1, 2A/|a_n|} and both inequalities checked; sidecar passes.
+- key: proof:lem-complex-polynomial-growth
+  kind: proof
+  file: 06-the-fundamental-theorem.md
+  line: 37
+  hash: 1373b3740bb4
+  verdicts:
+  - stage: S5a
+    verdict: correct
+    by: refereeA
+    hash: 1373b3740bb4
+    date: '2026-10-12'
+    model: claude-opus-5-5
+    evidence: 06:38-42. The bound |w|<=A|z|^{n-1} follows from cor-complex-triangle-variants (b) with
+      n>=1 terms. Part (c) gives |p(z)|>=|a_n||z|^n-|w|. From |z|>=2A/|a_n| we get A<=|a_n||z|/2. The
+      factor |z|^{n-1}>=0. Every step checked.
+  - stage: S5b
+    verdict: correct
+    by: refereeB
+    hash: 1373b3740bb4
+    date: '2026-10-12'
+    model: claude-opus-5-5
+    evidence: 06:38-42. cor-complex-triangle-variants (b), (c) and thm-conjugate-properties (d) are cited
+      with the right parts (checked in ch01 03:128, 02:69); the power facts are in the fold and the ledger
+      (672-673).
+- key: lem-complex-polynomial-lipschitz
+  kind: lem
+  file: 06-the-fundamental-theorem.md
+  line: 48
+  hash: 47260f0ee5d9
+  verdicts:
+  - stage: S5a
+    verdict: correct
+    by: refereeA
+    hash: 47260f0ee5d9
+    date: '2026-10-12'
+    model: claude-opus-5-5
+    evidence: 06:48-56. Checked against lem-difference-of-powers and the power facts in the first fold.
+      M>=0 is harmless.
+  - stage: S5b
+    verdict: correct
+    by: refereeB
+    hash: 47260f0ee5d9
+    date: '2026-10-12'
+    model: claude-opus-5-5
+    evidence: 06:48-56. L = Σ j|a_j|M^{j-1}; the bound is checked.
+- key: proof:lem-complex-polynomial-lipschitz
+  kind: proof
+  file: 06-the-fundamental-theorem.md
+  line: 61
+  hash: a48417e9f006
+  verdicts:
+  - stage: S5a
+    verdict: correct
+    by: refereeA
+    hash: a48417e9f006
+    date: '2026-10-12'
+    model: claude-opus-5-5
+    evidence: '06:62-66. Each term of the sum is at most M^{j-1}, there are j terms, and summing the bounds
+      gives L|z-w|. The n=0 case is trivial: both sides are 0.'
+  - stage: S5b
+    verdict: correct
+    by: refereeB
+    hash: a48417e9f006
+    date: '2026-10-12'
+    model: claude-opus-5-5
+    evidence: 06:62-66. lem-difference-of-powers (ch01 01:278) and (Σ1), (Σ2), (Σ4) of lem-finite-sums-and-powers
+      exist as cited; the power facts are ledgered (674).
+- key: check:06-the-fundamental-theorem:1
+  kind: check
+  file: 06-the-fundamental-theorem.md
+  line: 72
+  hash: 919fa997d492
+  verdicts:
+  - stage: S5a
+    verdict: correct
+    by: refereeA
+    hash: 919fa997d492
+    date: '2026-10-12'
+    model: claude-opus-5-5
+    evidence: 06:77. A=1, R=2, L=0+2*1*4=8, and |z+w|<=8 on the disc. All recomputed.
+  - stage: S5b
+    verdict: correct
+    by: refereeB
+    hash: 919fa997d492
+    date: '2026-10-12'
+    model: claude-opus-5-5
+    evidence: 06:72-78. A = 1, R = 2, L = 0 + 2·1·4 = 8, and |z+w| ≤ 8.
+- key: thm-complex-polynomial-minimum
+  kind: thm
+  file: 06-the-fundamental-theorem.md
+  line: 97
+  hash: 61c09c9903e3
+  verdicts:
+  - stage: S5a
+    verdict: correct
+    by: refereeA
+    hash: 61c09c9903e3
+    date: '2026-10-12'
+    model: claude-opus-5-5
+    evidence: 06:100. The statement is true. The constant case is handled at 108.
+  - stage: S5b
+    verdict: correct
+    by: refereeB
+    hash: 61c09c9903e3
+    date: '2026-10-12'
+    model: claude-opus-5-5
+    evidence: 06:97-101. The statement holds for every p, including constants.
+- key: proof:thm-complex-polynomial-minimum
+  kind: proof
+  file: 06-the-fundamental-theorem.md
+  line: 107
+  hash: c443a21c0166
+  verdicts:
+  - stage: S5a
+    verdict: correct
+    by: refereeA
+    hash: c443a21c0166
+    date: '2026-10-12'
+    model: claude-opus-5-5
+    evidence: '06:108-143. Step 1: z not in S_0 gives |Re z|>rho or |Im z|>rho by fd3 abs (d), and (1)
+      follows. Step 3: the least of four reals is attained, so q is a rule. Step 4: fd2:thm-recursion
+      with X the set of triples. Step 5: sup bounds checked for k''<k and k''>=k. Step 6: |z-w|<=2s_k
+      and |z|<=2rho. Quantifier order: z* is fixed before eps; k depends on eps through Archimedean and
+      lem-power-two-bound; w d'
+  - stage: S5b
+    verdict: correct
+    by: refereeB
+    hash: c443a21c0166
+    date: '2026-10-12'
+    model: claude-opus-5-5
+    evidence: '06:107-143. Step 1: ρ ≥ 2|p(0)|/|a_n| gives (1). Step 4''s invariant σ_k ≤ σ_k'' ≤ σ_k
+      + s_k − s_k'' is checked. Step 6: 2^k ≥ k+1 > 8ρL/ε gives 4ρL/2^k < ε/2. Every fd3 label exists
+      with the cited part: prp-ordered-ring-rules (i) is the total order, prp-absolute-value-ordered-field
+      (d), thm-constructed-reals-archimedean, lem-power-two-bound. ''Number Systems, Chapter 5'' (bisection,
+      completeness) is f'
+- key: check:06-the-fundamental-theorem:2
+  kind: check
+  file: 06-the-fundamental-theorem.md
+  line: 156
+  hash: ed44d224a4b1
+  verdicts:
+  - stage: S5a
+    verdict: correct
+    by: refereeA
+    hash: ed44d224a4b1
+    date: '2026-10-12'
+    model: claude-opus-5-5
+    evidence: 06:161. The finite minimum is attained, and the remark on the infinite case is correct.
+  - stage: S5b
+    verdict: correct
+    by: refereeB
+    hash: ed44d224a4b1
+    date: '2026-10-12'
+    model: claude-opus-5-5
+    evidence: 06:156-162. Answer checked.
+- key: lem-complex-direction-negative-real-part
+  kind: lem
+  file: 06-the-fundamental-theorem.md
+  line: 168
+  hash: e2962fde95ff
+  verdicts:
+  - stage: S5a
+    verdict: correct
+    by: refereeA
+    hash: e2962fde95ff
+    date: '2026-10-12'
+    model: claude-opus-5-5
+    evidence: '06:171. Both hypotheses are needed: c=0 fails, and k=0 with c=1 fails.'
+  - stage: S5b
+    verdict: correct
+    by: refereeB
+    hash: e2962fde95ff
+    date: '2026-10-12'
+    model: claude-opus-5-5
+    evidence: 06:168-172. The statement is true.
+- key: proof:lem-complex-direction-negative-real-part
+  kind: proof
+  file: 06-the-fundamental-theorem.md
+  line: 181
+  hash: c686606f50c7
+  verdicts:
+  - stage: S5a
+    verdict: correct
+    by: refereeA
+    hash: e5948105032d
+    date: '2026-10-12'
+    model: claude-opus-5-5
+    evidence: '06:182-186. Strong induction (fd1:thm-strong-induction). Odd case: c*zeta^k runs through
+      ±c and ±ic, and the Re c=0 case is handled. Even case: 1<=j<k, eta!=0, prp-complex-square-roots
+      applies, and zeta^k=eta^j by power laws (b).'
+  - stage: S5b
+    verdict: minor
+    by: refereeB
+    hash: e5948105032d
+    date: '2026-10-12'
+    model: claude-opus-5-5
+    evidence: 06-the-fundamental-theorem.md:184 The case split 'k odd, k = 2j + 1' / 'k even, k = 2j'
+      uses the fact that every natural number is even or odd. The proof gives no @ref for it, and the
+      dependency ledger has no line for it.
+  - stage: S7r
+    verdict: correct
+    by: rereferee
+    hash: c686606f50c7
+    date: '2026-10-12'
+    model: claude-opus-5-5
+    evidence: '06:182-186. The earlier S5b finding is resolved: line 182 now cites @fd3:prp-omega-powers-parity
+      (d) (fd3/src/ch01-zf-and-natural-numbers/06-order-on-omega.md:185, n = 2q + r with r in {0,1}),
+      and ledger line 693 records it. Case 1: i^k = (i^2)^j i, (-1)^k = -1 and (-i)^k = -i^k follow from
+      prp-power-laws-commutative-ring (a)-(c) (fd4 ch01/01:221). The four products are c, -c, ic, -ic,
+      and the sig'
+- key: check:06-the-fundamental-theorem:3
+  kind: check
+  file: 06-the-fundamental-theorem.md
+  line: 192
+  hash: c5cb76494405
+  verdicts:
+  - stage: S5a
+    verdict: correct
+    by: refereeA
+    hash: c5cb76494405
+    date: '2026-10-12'
+    model: claude-opus-5-5
+    evidence: 06:197. zeta=i gives -1. The other real parts, 0, 0 and 1, are right.
+  - stage: S5b
+    verdict: correct
+    by: refereeB
+    hash: c5cb76494405
+    date: '2026-10-12'
+    model: claude-opus-5-5
+    evidence: 06:192-198. ζ = i gives −1; the other three give real parts 0, 0, 1.
+- key: lem-complex-polynomial-descent
+  kind: lem
+  file: 06-the-fundamental-theorem.md
+  line: 202
+  hash: 9bd2e5b0e169
+  verdicts:
+  - stage: S5a
+    verdict: correct
+    by: refereeA
+    hash: 9bd2e5b0e169
+    date: '2026-10-12'
+    model: claude-opus-5-5
+    evidence: '06:205. Both hypotheses are needed: a non-zero constant p, or p(z0)=0, is a counterexample.'
+  - stage: S5b
+    verdict: correct
+    by: refereeB
+    hash: 9bd2e5b0e169
+    date: '2026-10-12'
+    model: claude-opus-5-5
+    evidence: 06:202-206.
+- key: proof:lem-complex-polynomial-descent
+  kind: proof
+  file: 06-the-fundamental-theorem.md
+  line: 212
+  hash: 28e83415c728
+  verdicts:
+  - stage: S5a
+    verdict: correct
+    by: refereeA
+    hash: 28e83415c728
+    date: '2026-10-12'
+    model: claude-opus-5-5
+    evidence: 06:213-247. Taylor shift (b) gives b_0=p(z0) and b_n=lc. k comes from well-ordering. t is
+      fixed before the estimate and depends only on p, z0 and zeta. B=0 iff k=n, since zeta!=0. |1+su|^2=1-2s
+      alpha+s^2|u|^2<=1-s alpha<=(1-s alpha/2)^2, with s alpha<=1. fd3 ordered-ring (g) is used in contrapositive
+      form with totality. tB<=alpha/4 gives the final strict inequality.
+  - stage: S5b
+    verdict: correct
+    by: refereeB
+    hash: 28e83415c728
+    date: '2026-10-12'
+    model: claude-opus-5-5
+    evidence: 06:212-247. thm-polynomial-taylor-shift (b), (c) match 04:123. α ≤ |u| gives sα ≤ 1. s =
+      t^k ≤ t ≤ α/|u|² and t·B ≤ α/4 give the final bound. The ordered-ring-rules (g) contrapositive is
+      ledgered (685).
+- key: exm-complex-polynomial-descent-step
+  kind: exm
+  file: 06-the-fundamental-theorem.md
+  line: 252
+  hash: f10427e014be
+  verdicts:
+  - stage: S5a
+    verdict: correct
+    by: refereeA
+    hash: f10427e014be
+    date: '2026-10-12'
+    model: claude-opus-5-5
+    evidence: '06:259-271. Recomputed: the formula gives zeta=i (a=-1, b=0, r=1), t=1/4, p(i/4)=15/16-i/64,
+      |p|^2=3601/4096<=3969/4096, and p(1/4)=69/64.'
+  - stage: S5b
+    verdict: correct
+    by: refereeB
+    hash: f10427e014be
+    date: '2026-10-12'
+    model: claude-opus-5-5
+    evidence: 06:252-272. The square-root formula at a = −1, b = 0 gives s = 1, x = 0, y = 1, so ζ = i.
+      p(i/4) = 15/16 − i/64, |p|² = 3601/4096 ≤ 3969/4096, p(1/4) = 69/64. Sidecar passes.
+- key: thm-fundamental-theorem-algebra
+  kind: thm
+  file: 06-the-fundamental-theorem.md
+  line: 276
+  hash: d6ee56d34cb8
+  verdicts:
+  - stage: S5a
+    verdict: correct
+    by: refereeA
+    hash: d6ee56d34cb8
+    date: '2026-10-12'
+    model: claude-opus-5-5
+    evidence: '06:279. ''Non-constant'' is needed: x^0=1 has no root.'
+  - stage: S5b
+    verdict: correct
+    by: refereeB
+    hash: d6ee56d34cb8
+    date: '2026-10-12'
+    model: claude-opus-5-5
+    evidence: 06:276-280. 'Chapter 1 announced' matches ch01 06:240-252.
+- key: proof:thm-fundamental-theorem-algebra
+  kind: proof
+  file: 06-the-fundamental-theorem.md
+  line: 282
+  hash: a6cc463c47a0
+  verdicts:
+  - stage: S5a
+    verdict: correct
+    by: refereeA
+    hash: a6cc463c47a0
+    date: '2026-10-12'
+    model: claude-opus-5-5
+    evidence: 06:283. The minimum, then descent at z*, gives the contradiction.
+  - stage: S5b
+    verdict: correct
+    by: refereeB
+    hash: a6cc463c47a0
+    date: '2026-10-12'
+    model: claude-opus-5-5
+    evidence: 06:282-284.
+- key: cor-complex-polynomials-linear-factors
+  kind: cor
+  file: 06-the-fundamental-theorem.md
+  line: 288
+  hash: 9dfdcad5ddc3
+  verdicts:
+  - stage: S5a
+    verdict: correct
+    by: refereeA
+    hash: 9dfdcad5ddc3
+    date: '2026-10-12'
+    model: claude-opus-5-5
+    evidence: 06:292-293. Matches def-splits-over-field, including n=0.
+  - stage: S5b
+    verdict: correct
+    by: refereeB
+    hash: 9dfdcad5ddc3
+    date: '2026-10-12'
+    model: claude-opus-5-5
+    evidence: 06:288-295.
+- key: proof:cor-complex-polynomials-linear-factors
+  kind: proof
+  file: 06-the-fundamental-theorem.md
+  line: 297
+  hash: 3ef48d069146
+  verdicts:
+  - stage: S5a
+    verdict: correct
+    by: refereeA
+    hash: 3ef48d069146
+    date: '2026-10-12'
+    model: claude-opus-5-5
+    evidence: 06:298-300. thm-polynomial-roots-with-multiplicity, the FTA, and thm-degree-of-product (b)
+      (monic factor) give g=a and the degree sum. Part (b) uses the def of irreducible with thm-polynomial-remainder-factor
+      (b).
+  - stage: S5b
+    verdict: correct
+    by: refereeB
+    hash: 3ef48d069146
+    date: '2026-10-12'
+    model: claude-opus-5-5
+    evidence: 06:297-301. thm-polynomial-roots-with-multiplicity (04:247) and thm-degree-of-product (b)
+      (monic case, ch04 03:98) are used correctly; the 'examples after def-irreducible-over-field' exist
+      (03:21).
+- key: exm-factor-x4-plus-one-reals
+  kind: exm
+  file: 06-the-fundamental-theorem.md
+  line: 303
+  hash: 7cd32bba4592
+  verdicts:
+  - stage: S5a
+    verdict: minor
+    by: refereeA
+    hash: b58065d616fb
+    date: '2026-10-12'
+    model: claude-opus-5-5
+    evidence: 06-the-fundamental-theorem.md:310 The factorizations x^2 - i = (x - w_1)(x + w_1) and x^2
+      + i = (x - w_2)(x + w_2) are credited to prp-complex-square-roots (b). Part (b) is the uniqueness
+      statement (u^2 = z iff u = ±w). The factorization actually uses part (a), w^2 = z, together with
+      expanding (x - w)(x + w) = x^2 - w^2.
+  - stage: S5b
+    verdict: minor
+    by: refereeB
+    hash: b58065d616fb
+    date: '2026-10-12'
+    model: claude-opus-5-5
+    evidence: 06-the-fundamental-theorem.md:310 The example cites the wrong part of @prp-complex-square-roots.
+      The factorization x² − i = (x − w1)(x + w1) follows from w1² = i, which is part (a). Part (b) is
+      the characterization 'u² = z iff u = ±w'.
+  - stage: S8
+    verdict: minor
+    by: seam
+    hash: b58065d616fb
+    date: '2026-10-12'
+    model: claude-opus-5-5
+    evidence: 06-the-fundamental-theorem.md:310 The text credits the factorization x^2 - i = (x - w_1)(x
+      + w_1) to part (b) of @prp-complex-square-roots, which states something else.
+  - stage: S7r
+    verdict: minor
+    by: rereferee
+    hash: 7cd32bba4592
+    date: '2026-10-12'
+    model: claude-opus-5-5
+    evidence: 'ATION row 260 finding is fixed here. That finding was about the whole of §06, though, and
+      it is not fully resolved: the A1 (c) solution at 06:457 still writes ''for z = x + yi in it, x,
+      y in [-2, -1] ... |2xy| >= 2'' while p = x^2 + 1 is in play. This uses the indeterminate x as a
+      real number, against NOTATION row 260. Fix: rename to z = a + bi with a, b in [-2, -1] and |2ab|
+      >= 2, or use sigma/tau.'
+  - stage: S7r
+    verdict: correct
+    by: rereferee
+    hash: 7cd32bba4592
+    date: '2026-10-12'
+    model: claude-opus-5-5
+    evidence: '|w_1|^2 = 1/2 + 1/2 = 1 (thm-conjugate-properties (c)). The direct check (x^2+1)^2 - 2x^2
+      = x^4 + 1 is correct. For irreducibility the real variable is c: c^2 +- sqrt2 c + 1 = (c +- sqrt2/2)^2
+      + 1/2 > 0, so neither quadratic has a real root, and prp-irreducible-low-degree (b) applies. The
+      NOTATION concern about x used as a real is now resolved everywhere in §06, since A1 (c) at 06:457
+      uses a + bi.'
+- key: check:06-the-fundamental-theorem:4
+  kind: check
+  file: 06-the-fundamental-theorem.md
+  line: 326
+  hash: b7574a9c3649
+  verdicts:
+  - stage: S5a
+    verdict: correct
+    by: refereeA
+    hash: 3100c0975c05
+    date: '2026-10-12'
+    model: claude-opus-5-5
+    evidence: 06:331. z_±^2=(-1∓i√3)/2 and z^2+z+1=0. The root-count and monic-degree comparison are valid.
+  - stage: S5b
+    verdict: correct
+    by: refereeB
+    hash: 3100c0975c05
+    date: '2026-10-12'
+    model: claude-opus-5-5
+    evidence: 06:326-332. z±² = (−1 ∓ i√3)/2 and z² + z + 1 = 0; thm-polynomial-root-count gives the divisibility.
+  - stage: S7r
+    verdict: correct
+    by: rereferee
+    hash: b7574a9c3649
+    date: '2026-10-12'
+    model: claude-opus-5-5
+    evidence: 06:326-332. x^3 - 1 = (x-1)(x^2+x+1) is lem-difference-of-powers with w = 1. (c + 1/2)^2
+      + 3/4 > 0, so the quadratic is rootless and irreducible by prp-irreducible-low-degree (b) (ch05/03:34).
+      I recomputed z_+^2 = (-1 - i sqrt3)/2 and z^2 + z + 1 = 0. Two distinct roots give the product dividing
+      the quadratic (thm-polynomial-root-count, ch05/04:11), and two monic polynomials of the same degree
+      wit
+- key: prp-real-polynomial-conjugate-roots
+  kind: prp
+  file: 06-the-fundamental-theorem.md
+  line: 340
+  hash: 73934af440ce
+  verdicts:
+  - stage: S5a
+    verdict: correct
+    by: refereeA
+    hash: 73934af440ce
+    date: '2026-10-12'
+    model: claude-opus-5-5
+    evidence: 06:344-345. f!=0 is needed for mult to be defined.
+  - stage: S5b
+    verdict: correct
+    by: refereeB
+    hash: 73934af440ce
+    date: '2026-10-12'
+    model: claude-opus-5-5
+    evidence: 06:340-347.
+  - stage: S8
+    verdict: correct
+    by: seam
+    hash: 73934af440ce
+    date: '2026-10-12'
+    model: claude-opus-5-5
+    evidence: 06:354-360 re-proves conj(z^k) = conj(z)^k and conj(f(z)) = f-bar(conj z), which @prp-real-coefficients-conjugate-roots
+      (F4.1 06:257) already proves for real coefficients, the only case (b) needs; 06:358 says as much
+      [finding refuted by skeptics]
+- key: proof:prp-real-polynomial-conjugate-roots
+  kind: proof
+  file: 06-the-fundamental-theorem.md
+  line: 353
+  hash: 30ab1cfd945a
+  verdicts:
+  - stage: S5a
+    verdict: correct
+    by: refereeA
+    hash: 5d4a6950e21d
+    date: '2026-10-12'
+    model: claude-opus-5-5
+    evidence: 06:354-360. The hypotheses of thm-polynomial-substitution (R=C, S=C[x], phi the composite
+      hom, s=x) are met. The values formula holds via the sum recursion. Part (b) uses both directions
+      of lem-polynomial-multiplicity-cofactor (a).
+  - stage: S5b
+    verdict: minor
+    by: refereeB
+    hash: 5d4a6950e21d
+    date: '2026-10-12'
+    model: claude-opus-5-5
+    evidence: 06-the-fundamental-theorem.md:360 The proof uses 'conj(w) = 0 if and only if w = 0' with
+      no @ref, and the ledger has no line for it.
+  - stage: S7r
+    verdict: correct
+    by: rereferee
+    hash: 30ab1cfd945a
+    date: '2026-10-12'
+    model: claude-opus-5-5
+    evidence: '06:354-360. The S5b finding is resolved: line 360 now justifies ''conj w = 0 iff w = 0''.
+      conj 0 = 0 comes from def-conjugate-modulus (ch01/02:11, where the z = 0 example states it), and
+      the converse from w = conj(conj w), thm-conjugate-properties (a). Part (a) builds phi as conjugation
+      composed with the constants (thm-polynomial-ring-laws (b)) and applies thm-polynomial-substitution
+      with s = x (ch0'
+- key: check:06-the-fundamental-theorem:5
+  kind: check
+  file: 06-the-fundamental-theorem.md
+  line: 363
+  hash: 187fd6181f34
+  verdicts:
+  - stage: S5a
+    verdict: correct
+    by: refereeA
+    hash: 187fd6181f34
+    date: '2026-10-12'
+    model: claude-opus-5-5
+    evidence: 06:368. (x-2)^2+1=x^2-4x+5.
+  - stage: S5b
+    verdict: correct
+    by: refereeB
+    hash: 187fd6181f34
+    date: '2026-10-12'
+    model: claude-opus-5-5
+    evidence: 06:363-369. (x − 2)² + 1 = x² − 4x + 5.
+- key: cor-real-irreducible-polynomials
+  kind: cor
+  file: 06-the-fundamental-theorem.md
+  line: 371
+  hash: dc6f0d6942b2
+  verdicts:
+  - stage: S5a
+    verdict: correct
+    by: refereeA
+    hash: dc6f0d6942b2
+    date: '2026-10-12'
+    model: claude-opus-5-5
+    evidence: 06:374. The statement is true.
+  - stage: S5b
+    verdict: correct
+    by: refereeB
+    hash: dc6f0d6942b2
+    date: '2026-10-12'
+    model: claude-opus-5-5
+    evidence: 06:371-375.
+- key: proof:cor-real-irreducible-polynomials
+  kind: proof
+  file: 06-the-fundamental-theorem.md
+  line: 381
+  hash: 3c9fec75e2f9
+  verdicts:
+  - stage: S5a
+    verdict: correct
+    by: refereeA
+    hash: 3c9fec75e2f9
+    date: '2026-10-12'
+    model: claude-opus-5-5
+    evidence: '06:382-392. Case 2: conj z != z by exm-complex-conjugation-automorphism (i), and root-count
+      needs distinct roots. prp-polynomial-gcd-field-extension (b) with K=R in L=C (exm-subfields-gaussian
+      (iii)) and q!=0. The no-real-root claim follows from prp-irreducible-low-degree (a).'
+  - stage: S5b
+    verdict: correct
+    by: refereeB
+    hash: 3c9fec75e2f9
+    date: '2026-10-12'
+    model: claude-opus-5-5
+    evidence: 06:381-393. exm-complex-conjugation-automorphism (i) proves 'conj z = z iff z ∈ ℝ' (ch02
+      04:111). prp-polynomial-gcd-field-extension (b) needs g ≠ 0, which holds for q. prp-irreducible-low-degree
+      (a), (b) are cited correctly.
+- key: thm-real-polynomial-factorization
+  kind: thm
+  file: 06-the-fundamental-theorem.md
+  line: 395
+  hash: 879ffea08ea7
+  verdicts:
+  - stage: S5a
+    verdict: correct
+    by: refereeA
+    hash: 879ffea08ea7
+    date: '2026-10-12'
+    model: claude-opus-5-5
+    evidence: 06:398. Consistent with thm-polynomial-unique-factorization.
+  - stage: S5b
+    verdict: correct
+    by: refereeB
+    hash: 879ffea08ea7
+    date: '2026-10-12'
+    model: claude-opus-5-5
+    evidence: 06:395-399.
+- key: proof:thm-real-polynomial-factorization
+  kind: proof
+  file: 06-the-fundamental-theorem.md
+  line: 401
+  hash: 7a4b9b17a960
+  verdicts:
+  - stage: S5a
+    verdict: correct
+    by: refereeA
+    hash: 7a4b9b17a960
+    date: '2026-10-12'
+    model: claude-opus-5-5
+    evidence: 06:402. UFD (a) and (b), the previous corollary, and degree additivity.
+  - stage: S5b
+    verdict: correct
+    by: refereeB
+    hash: 7a4b9b17a960
+    date: '2026-10-12'
+    model: claude-opus-5-5
+    evidence: 06:401-403. thm-polynomial-unique-factorization (a), (b) match 03:200; the degree sum is
+      ledgered (694).
+- key: cor-real-odd-degree-root
+  kind: cor
+  file: 06-the-fundamental-theorem.md
+  line: 407
+  hash: b563ab13ec9a
+  verdicts:
+  - stage: S5a
+    verdict: correct
+    by: refereeA
+    hash: b563ab13ec9a
+    date: '2026-10-12'
+    model: claude-opus-5-5
+    evidence: 06:410. True. Odd degree implies non-constant (implicitly).
+  - stage: S5b
+    verdict: correct
+    by: refereeB
+    hash: b563ab13ec9a
+    date: '2026-10-12'
+    model: claude-opus-5-5
+    evidence: 06:407-411.
+- key: proof:cor-real-odd-degree-root
+  kind: proof
+  file: 06-the-fundamental-theorem.md
+  line: 413
+  hash: 07d72852e62e
+  verdicts:
+  - stage: S5a
+    verdict: correct
+    by: refereeA
+    hash: e66d47791e66
+    date: '2026-10-12'
+    model: claude-opus-5-5
+    evidence: 06:414. r=0 forces an even degree (fd3:cor-integers-even-odd (a)). An entry divides the
+      list product by the product recursion, with no reordering needed.
+  - stage: S5b
+    verdict: correct
+    by: refereeB
+    hash: e66d47791e66
+    date: '2026-10-12'
+    model: claude-opus-5-5
+    evidence: 06:413-415. fd3:cor-integers-even-odd (a) is 'even or odd, not both'. 'An entry divides
+      the product' is ledgered (695).
+  - stage: S7r
+    verdict: correct
+    by: rereferee
+    hash: 07d72852e62e
+    date: '2026-10-12'
+    model: claude-opus-5-5
+    evidence: 06:414. An odd degree is not 0, so f is non-constant and thm-real-polynomial-factorization
+      applies. If r = 0, deg f = 2s, and fd3:cor-integers-even-odd (a) (fd3 ch03/01:158, 'not both') rules
+      out an odd number of that form. (L2) of Section 5.3 (ch05/03:180, 'every entry of a list divides
+      its product') gives x - c | p_1...p_k. Transitivity, prp-polynomial-divisibility-rules (b), gives
+      x - c | a p_1
+- key: check:06-the-fundamental-theorem:6
+  kind: check
+  file: 06-the-fundamental-theorem.md
+  line: 417
+  hash: 2bc6505ebc55
+  verdicts:
+  - stage: S7r
+    verdict: correct
+    by: rereferee
+    hash: 2bc6505ebc55
+    date: '2026-10-12'
+    model: claude-opus-5-5
+    evidence: '06:417-423 (new). I solved it independently. Every linear entry divides f and so is x -
+      c. r + 2s = 3 with r >= 1 (odd) gives (r,s) = (1,1) or (3,0). mult_c is additive over the list (prp-polynomial-multiplicity-product,
+      ch05/04:227, with induction as ledger 711 says), quadratic entries contribute 0, so mult_c(f) =
+      r in {1, 3}. The examples x(x^2+1) and x^3 have only the real root 0. This matches '
+- key: exr-the-fundamental-theorem-a1
+  kind: exr
+  file: 06-the-fundamental-theorem.md
+  line: 439
+  hash: 447ad80bd135
+  verdicts:
+  - stage: S5a
+    verdict: correct
+    by: refereeA
+    hash: 6c8d08e937cd
+    date: '2026-10-12'
+    model: claude-opus-5-5
+    evidence: '06:445-451. Recomputed (c): rho=2, S_0=S(-2,-2,4), m=0, S_1=S(-2,-2,2) (contains -i), the
+      first quarter has |2xy|>=2, and S_2=S(-1,-2,1).'
+  - stage: S5b
+    verdict: correct
+    by: refereeB
+    hash: 6c8d08e937cd
+    date: '2026-10-12'
+    model: claude-opus-5-5
+    evidence: 06:431-452. ρ = 2, S0 = S(−2,−2,4), m = 0, S1 = S(−2,−2,2), S2 = S(−1,−2,1); |2xy| ≥ 2 on
+      S(−2,−2,1). Sidecar passes.
+  - stage: S6
+    verdict: correct
+    by: verifier
+    hash: 6c8d08e937cd
+    date: '2026-10-12'
+    model: claude-opus-5-5
+    evidence: '06:431-452. (c) Recomputed by hand: A=1, R=2, ρ=2, S_0=S(-2,-2,4), m=0 (attained at -i).
+      The first quarter S(-2,-2,2) contains -i, so S_1=S(-2,-2,2). On S(-2,-2,1), |2xy|≥2, so S_2 is the
+      second quarter S(-1,-2,1), which contains -i. (a), (b) and (d) match Steps 2, 3 and 5.'
+  - stage: S7r
+    verdict: correct
+    by: rereferee
+    hash: 447ad80bd135
+    date: '2026-10-12'
+    model: claude-opus-5-5
+    evidence: 'string of verify/ch05/exr-the-fundamental-theorem-a1.py: |2xy| becomes |2ab|. This is a
+      sidecar for 06-the-fundamental-theorem.md, outside this packet''s file, most likely from concurrent
+      work. The new docstring matches the solution text (06:457, ''z = a + bi ... |2ab| >= 2'') and its
+      ledger line 707. The script''s code is unchanged and runs ok. Only a doc comment changed; no mathematical
+      content did.'
+- key: exr-the-fundamental-theorem-b1
+  kind: exr
+  file: 06-the-fundamental-theorem.md
+  line: 464
+  hash: 92a66e1ca33b
+  verdicts:
+  - stage: S5a
+    verdict: correct
+    by: refereeA
+    hash: 00355f1a1bbc
+    date: '2026-10-12'
+    model: claude-opus-5-5
+    evidence: 06:463-465. Both factorizations expand correctly. (-1+i)^2=-2i, and the roots check out.
+  - stage: S5b
+    verdict: correct
+    by: refereeB
+    hash: 00355f1a1bbc
+    date: '2026-10-12'
+    model: claude-opus-5-5
+    evidence: 06:456-466. 'The warning of Section 5.3' is at 03:62. The roots −1 ± i and 1 ± i are checked.
+  - stage: S6
+    verdict: correct
+    by: verifier
+    hash: 00355f1a1bbc
+    date: '2026-10-12'
+    model: claude-opus-5-5
+    evidence: '06:456-466. sympy: x^4-x^2-2=(x^2-2)(x^2+1), splitting over Q(√2,i) as stated. x^4+4=(x-1-i)(x-1+i)(x+1-i)(x+1+i).
+      The x^4+4 warning exists at 03:53-59. Worked example: exm-factor-x4-plus-one-reals.'
+  - stage: S7r
+    verdict: correct
+    by: rereferee
+    hash: 92a66e1ca33b
+    date: '2026-10-12'
+    model: claude-opus-5-5
+    evidence: 06:471-473. I checked each step. (x^2-2)(x^2+1) = x^4 - x^2 - 2. Over Q both factors are
+      rootless (fd3:thm-no-rational-square-two; c^2 + 1 > 0 by fd3:prp-ordered-ring-rules (e)), so irreducible
+      by prp-irreducible-low-degree (b). Over R the factorization uses sqrt2, and over C it uses +-i.
+      For x^4 + 4, the factorization (x^2+2)^2 - 4x^2 agrees with the warning of Section 5.3 (ch05/03:53/388),
+      and (
+- key: exr-the-fundamental-theorem-b2
+  kind: exr
+  file: 06-the-fundamental-theorem.md
+  line: 476
+  hash: 8b2afbfb0462
+  verdicts:
+  - stage: S5a
+    verdict: correct
+    by: refereeA
+    hash: 8b2afbfb0462
+    date: '2026-10-12'
+    model: claude-opus-5-5
+    evidence: 06:475-488. b=(-1,3,3,1), t=min{1,1/3,3/16}=3/16, 19^3=6859, 6859-8192=-1333, bound 55/64.
+  - stage: S5b
+    verdict: correct
+    by: refereeB
+    hash: 8b2afbfb0462
+    date: '2026-10-12'
+    model: claude-opus-5-5
+    evidence: 06:468-489. b = (−1,3,3,1), t = 3/16, 19³ = 6859, −1333/4096, bound 1 − 9/64 = 55/64. Sidecar
+      passes.
+  - stage: S6
+    verdict: correct
+    by: verifier
+    hash: 8b2afbfb0462
+    date: '2026-10-12'
+    model: claude-opus-5-5
+    evidence: '06:468-489. (x+1)^3-2 = x^3+3x^2+3x-1, so b=(-1,3,3,1), k=1, c=-3, ζ=1, u=-3, α=3, B=4,
+      t=3/16. p(19/16)=-1333/4096 and the bound 1-tα/4=55/64 both check by script. Worked example: exm-complex-polynomial-descent-step.'
+- key: exr-the-fundamental-theorem-b3
+  kind: exr
+  file: 06-the-fundamental-theorem.md
+  line: 499
+  hash: e688d5345432
+  verdicts:
+  - stage: S5a
+    verdict: correct
+    by: refereeA
+    hash: 9a9c5b940854
+    date: '2026-10-12'
+    model: claude-opus-5-5
+    evidence: 06:498. mult_c(f)=r, with r odd >=1 and (r,s) in {(1,2),(3,1),(5,0)}. The examples are valid.
+  - stage: S5b
+    verdict: correct
+    by: refereeB
+    hash: 9a9c5b940854
+    date: '2026-10-12'
+    model: claude-opus-5-5
+    evidence: 06:491-499. mult_c(f) = r via prp-polynomial-multiplicity-product; (r,s) ∈ {(1,2),(3,1),(5,0)};
+      each example has only the root 0.
+  - stage: S6
+    verdict: minor
+    by: verifier
+    hash: 9a9c5b940854
+    date: '2026-10-12'
+    model: claude-opus-5-5
+    evidence: 06-the-fundamental-theorem.md:494 B3 (determine the possible (r, s) and the multiplicity
+      for a quintic with one real root) has no worked example of its type in Section 5.6. The nearest
+      are the one-line remark 'for x^4+1, r=0 and s=2' (06:405) and the proof of cor-real-odd-degree-root.
+  - stage: S7r
+    verdict: correct
+    by: rereferee
+    hash: e688d5345432
+    date: '2026-10-12'
+    model: claude-opus-5-5
+    evidence: '06:506. I solved it first: (r,s) in {(1,2),(3,1),(5,0)}, mult_c(f) = r in {1,3,5}, and
+      the examples x(x^2+1)^2, x^3(x^2+1), x^5 work. The solution matches. r >= 1 is now justified by
+      fd3:cor-integers-even-odd (a), with ledger line 710 added. Multiplicity additivity with induction
+      is cited, and the multiplicity of the constant a (0) is handled. The S6 finding (no worked example
+      of this type) is res'
+- key: exr-the-fundamental-theorem-c1
+  kind: exr
+  file: 06-the-fundamental-theorem.md
+  line: 511
+  hash: d3e4887d1ec5
+  verdicts:
+  - stage: S5a
+    verdict: correct
+    by: refereeA
+    hash: d3e4887d1ec5
+    date: '2026-10-12'
+    model: claude-opus-5-5
+    evidence: 06:526-551. (a) repeats the text's proof with t fixed first. (b) and (c) are correct.
+  - stage: S5b
+    verdict: correct
+    by: refereeB
+    hash: d3e4887d1ec5
+    date: '2026-10-12'
+    model: claude-opus-5-5
+    evidence: 06:503-552. The marks sum to 10 over 5 steps. fd3:thm-rationals-gap-sqrt2 exists (02 06:58).
+      The hint ladder has two rungs.
+  - stage: S6
+    verdict: minor
+    by: verifier
+    hash: d3e4887d1ec5
+    date: '2026-10-12'
+    model: claude-opus-5-5
+    evidence: 06-the-fundamental-theorem.md:546 The 3-point scheme item rewards the specific inequality
+      |1+su| ≤ 1 - sα/2 on 0 < s ≤ α/|u|^2 ('the constant stated'), so a different correct descent proof
+      loses those points.
+  - stage: S7r
+    verdict: correct
+    by: rereferee
+    hash: d3e4887d1ec5
+    date: '2026-10-12'
+    model: claude-opus-5-5
+    evidence: '06:534-560. Both S6 findings are resolved. The scheme''s 2-point item (06:555) now accepts
+      any explicit kappa > 0 bound on |1+su| or |1+su|^2 (or on the full expression), so a different correct
+      descent proof is not penalised. The solution at 06:542 now justifies 1 - s alpha/2 > 0: s alpha
+      <= alpha^2/|u|^2 <= 1 since alpha <= |u|. It also cites fd3:prp-ordered-ring-rules (g) (fd3 ch02/03:306,
+      a,b >='
+- key: exr-the-fundamental-theorem-c2
+  kind: exr
+  file: 06-the-fundamental-theorem.md
+  line: 563
+  hash: 3be12945b42e
+  verdicts:
+  - stage: S5a
+    verdict: correct
+    by: refereeA
+    hash: 3be12945b42e
+    date: '2026-10-12'
+    model: claude-opus-5-5
+    evidence: '06:561-567. Least degree, then divide. The deg-1 case gives alpha real, which is excluded,
+      and divisibility rules (d) give deg d=2, so d=q. Irreducibility: a degree-1 factor would be in J.'
+  - stage: S5b
+    verdict: correct
+    by: refereeB
+    hash: 3be12945b42e
+    date: '2026-10-12'
+    model: claude-opus-5-5
+    evidence: 06:554-568. Least degree, then divide; deg d = 1 forces α ∈ ℝ; prp-polynomial-divisibility-rules
+      (d) is the degree bound. Well-posed.
+  - stage: S6
+    verdict: correct
+    by: verifier
+    hash: 3be12945b42e
+    date: '2026-10-12'
+    model: claude-opus-5-5
+    evidence: '06:554-568. The proof is correct: d has least degree, deg d=2, d=q, J=<q>, q irreducible.
+      The ''name the move'' blank has a second reasonable completion (divide f by q directly and kill
+      the linear remainder), so the faded item is not uniquely determined (see findings). [finding refuted
+      by skeptics]'
+- key: exr-the-fundamental-theorem-c3
+  kind: exr
+  file: 06-the-fundamental-theorem.md
+  line: 579
+  hash: e1fb2ddd4773
+  verdicts:
+  - stage: S5a
+    verdict: correct
+    by: refereeA
+    hash: fa0337c10859
+    date: '2026-10-12'
+    model: claude-opus-5-5
+    evidence: 06:595-611. Line (4) fails, and the counterexample (-1)^k works. The slips at (2) and (5)
+      are correctly named.
+  - stage: S5b
+    verdict: minor
+    by: refereeB
+    hash: fa0337c10859
+    date: '2026-10-12'
+    model: claude-opus-5-5
+    evidence: 06-the-fundamental-theorem.md:577 The flawed argument fails in a second line that the solution
+      does not name. The Claim is stated for every p ∈ ℂ[x]. For a constant p, line (3) ('By @lem-complex-polynomial-growth,
+      the z_k lie in a bounded set') is false, since the growth lemma assumes n = deg p ≥ 1. STYLE §11.3
+      asks that 'the error sits in one line, and the rest is correct'. The marking scheme giv
+  - stage: S6
+    verdict: minor
+    by: verifier
+    hash: fa0337c10859
+    date: '2026-10-12'
+    model: claude-opus-5-5
+    evidence: 06-the-fundamental-theorem.md:577 The find-the-error argument is also flawed at line (3),
+      and the solution and marking scheme do not mention it. The Claim is for every p ∈ C[x], but lem-complex-polynomial-growth
+      needs deg p ≥ 1, so for constant p the line cites a lemma outside its hypotheses and its conclusion
+      fails.
+  - stage: S7r
+    verdict: correct
+    by: rereferee
+    hash: e1fb2ddd4773
+    date: '2026-10-12'
+    model: claude-opus-5-5
+    evidence: '06:584-620. The S5b/S6 finding on line (3) is resolved. The Claim is now restricted to
+      non-constant p (deg >= 1, the hypothesis of lem-complex-polynomial-growth). Line (3) now gives the
+      reason |p(z_k)| < m + 1 <= |p(0)| + 1, which with the growth bound |p(z)| >= (1/2)|a_n||z| for |z|
+      >= R does confine the z_k to |z| <= max(R, 2(|p(0)|+1)/|a_n|). So line (3) is correct, and line
+      (4) is the failing '
+- key: exr-the-fundamental-theorem-r1
+  kind: exr
+  file: 06-the-fundamental-theorem.md
+  line: 625
+  hash: 7e0ddb134ac7
+  verdicts:
+  - stage: S5a
+    verdict: correct
+    by: refereeA
+    hash: 7e0ddb134ac7
+    date: '2026-10-12'
+    model: claude-opus-5-5
+    evidence: 06:623. 2deg f=2deg g+1 contradicts the parity lemma.
+  - stage: S5b
+    verdict: correct
+    by: refereeB
+    hash: 7e0ddb134ac7
+    date: '2026-10-12'
+    model: claude-opus-5-5
+    evidence: 06:616-624. 2 deg f = 1 + 2 deg g is impossible by fd3:cor-integers-even-odd (a); thm-degree-of-product
+      is in Chapter 4 as the solution says.
+  - stage: S6
+    verdict: correct
+    by: verifier
+    hash: 7e0ddb134ac7
+    date: '2026-10-12'
+    model: claude-opus-5-5
+    evidence: 06:616-624. 2deg f = 1+2deg g is ruled out by fd3:cor-integers-even-odd (a). The problem
+      hides its source and the solution names @thm-degree-of-product.
+- key: exr-the-fundamental-theorem-r2
+  kind: exr
+  file: 06-the-fundamental-theorem.md
+  line: 635
+  hash: ea6836650ed7
+  verdicts:
+  - stage: S5a
+    verdict: correct
+    by: refereeA
+    hash: ea6836650ed7
+    date: '2026-10-12'
+    model: claude-opus-5-5
+    evidence: 06:633. N=a^2-2b^2!=0, and [1+x]^{-1}=[x-1].
+  - stage: S5b
+    verdict: correct
+    by: refereeB
+    hash: ea6836650ed7
+    date: '2026-10-12'
+    model: claude-opus-5-5
+    evidence: 06:626-636. N = a² − 2b² ≠ 0; [1+x]⁻¹ = [x−1]. exm-q-sqrt2-field is in Chapter 2 (ch02 03:90).
+  - stage: S6
+    verdict: correct
+    by: verifier
+    hash: ea6836650ed7
+    date: '2026-10-12'
+    model: claude-opus-5-5
+    evidence: 06:626-636. rem((a+bx)(a-bx), x^2-2)=a^2-2b^2, which is non-zero for (a,b)≠0 by fd3:thm-no-rational-square-two.
+      [1+x]^{-1}=[x-1] is confirmed (remainder 1). The source @exm-q-sqrt2-field is named in the solution
+      only.
+- key: exr-the-fundamental-theorem-r3
+  kind: exr
+  file: 06-the-fundamental-theorem.md
+  line: 647
+  hash: 66b58a12fd2e
+  verdicts:
+  - stage: S5a
+    verdict: correct
+    by: refereeA
+    hash: 27b33537e384
+    date: '2026-10-12'
+    model: claude-opus-5-5
+    evidence: 06:645-651. fd3:lem-gcd-remainder-step allows any q and r with b>0, so 2^{m-n}-1 >= 2^n-1
+      is fine. The strong-induction measure drops. gcd(4095,262143)=63.
+  - stage: S5b
+    verdict: correct
+    by: refereeB
+    hash: 27b33537e384
+    date: '2026-10-12'
+    model: claude-opus-5-5
+    evidence: 06:638-654. fd3:lem-gcd-remainder-step needs only b > 0 and puts no range condition on r
+      (fd3 03 02:143), so it applies with r = 2^{m−n} − 1. gcd(4095, 262143) = 63. exr-polynomial-gcd-b3
+      is the binomial gcd in Section 5.2.
+  - stage: S6
+    verdict: correct
+    by: verifier
+    hash: 27b33537e384
+    date: '2026-10-12'
+    model: claude-opus-5-5
+    evidence: 06:638-654. The strong induction on m+n is valid. fd3:lem-gcd-remainder-step (fd3 ch03/02:146)
+      allows any q, so 2^{m-n}-1 need not be a true remainder. Checked gcd(2^m-1,2^n-1)=2^{gcd}-1 for
+      all m,n<30, and gcd(4095,262143)=63.
+  - stage: S8
+    verdict: correct
+    by: seam
+    hash: 27b33537e384
+    date: '2026-10-12'
+    model: claude-opus-5-5
+    evidence: STYLE §11.5 says R3 is 'taken from the spiral table in curriculum.md'. curriculum.md's spiral
+      table (lines 448-456) has no F4.5 entry at all, so R3 (a spiral back to fd3 F3.5's gcd) is not drawn
+      from it [finding refuted by skeptics]
+  - stage: S7r
+    verdict: correct
+    by: rereferee
+    hash: 66b58a12fd2e
+    date: '2026-10-12'
+    model: claude-opus-5-5
+    evidence: '06:654-662. The only change is the pointer, which now reads ''Exercise C3 of Section 5.2
+      (@exr-polynomial-gcd-c3)''. That label is at ch05/02:496 and is gcd(x^m - 1, x^n - 1) = x^{gcd(m,n)}
+      - 1, so the pointer is correct and local to fd4. The argument is valid: strong induction on m+n,
+      fd3:lem-gcd-remainder-step with b = 2^n - 1 > 0 and with b = n, m - n >= 1 and n + (m - n) < m +
+      n. The example gcd'
+- key: exr-the-fundamental-theorem-r4
+  kind: exr
+  file: 06-the-fundamental-theorem.md
+  line: 665
+  hash: ba7055472b94
+  verdicts:
+  - stage: S5a
+    verdict: correct
+    by: refereeA
+    hash: ba7055472b94
+    date: '2026-10-12'
+    model: claude-opus-5-5
+    evidence: 06:665. No roots. The only rootless monic quadratic is x^2+x+1, and its square is x^4+x^2+1,
+      not f.
+  - stage: S5b
+    verdict: correct
+    by: refereeB
+    hash: ba7055472b94
+    date: '2026-10-12'
+    model: claude-opus-5-5
+    evidence: 06:656-668. The case analysis is checked; 'Exercise C2 of Section 5.3' is the x⁴ + 1 find-the-error
+      (03:459). No Eisenstein in fd4 src (only a prose mention at 03:335). Sidecar passes.
+  - stage: S6
+    verdict: correct
+    by: verifier
+    hash: ba7055472b94
+    date: '2026-10-12'
+    model: claude-opus-5-5
+    evidence: 06:656-668. sympy factor_list mod 2 confirms x^4+x+1 is irreducible, and (x^2+x+1)^2=x^4+x^2+1
+      mod 2. The item gives no hint of its method, and its look-alike references (03 C2, rational root
+      test) are accurate.

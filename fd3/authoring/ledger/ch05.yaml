@@ -4,7 +4,7 @@ items:
 - key: def-rational-cauchy-sequences
   kind: def
   file: 01-cauchy-sequences-of-rationals.md
-  line: 61
+  line: 63
   hash: 0ba6beb6f288
   verdicts:
   - stage: S5a
@@ -29,7 +29,7 @@ items:
 - key: def-cauchy-equivalent
   kind: def
   file: 01-cauchy-sequences-of-rationals.md
-  line: 95
+  line: 97
   hash: cd4d79f02514
   verdicts:
   - stage: S5a
@@ -65,7 +65,7 @@ items:
 - key: prp-cauchy-equivalent-relation
   kind: prp
   file: 01-cauchy-sequences-of-rationals.md
-  line: 122
+  line: 124
   hash: 60743041f03b
   verdicts:
   - stage: S5a
@@ -88,8 +88,8 @@ items:
 - key: proof:prp-cauchy-equivalent-relation
   kind: proof
   file: 01-cauchy-sequences-of-rationals.md
-  line: 132
-  hash: 77ec7ebcb7ba
+  line: 134
+  hash: b48370e2b4ae
   verdicts:
   - stage: S5a
     verdict: minor
@@ -122,8 +122,8 @@ items:
 - key: exm-truncations-equivalent
   kind: exm
   file: 01-cauchy-sequences-of-rationals.md
-  line: 156
-  hash: 049266ce94fe
+  line: 158
+  hash: d33842c5c4d2
   verdicts:
   - stage: S5a
     verdict: minor
@@ -166,8 +166,8 @@ items:
 - key: exm-finite-change-equivalent
   kind: exm
   file: 01-cauchy-sequences-of-rationals.md
-  line: 211
-  hash: 332ea6151c41
+  line: 213
+  hash: 18f45df6d5a3
   verdicts:
   - stage: S5a
     verdict: minor
@@ -202,8 +202,8 @@ items:
 - key: check:01-cauchy-sequences-of-rationals:1
   kind: check
   file: 01-cauchy-sequences-of-rationals.md
-  line: 236
-  hash: eebd396b8b90
+  line: 238
+  hash: f092cef0836d
   verdicts:
   - stage: S5a
     verdict: correct
@@ -239,7 +239,7 @@ items:
 - key: exr-cauchy-sequences-of-rationals-a1
   kind: exr
   file: 01-cauchy-sequences-of-rationals.md
-  line: 256
+  line: 258
   hash: 9f4e29c610bb
   verdicts:
   - stage: S5a
@@ -270,7 +270,7 @@ items:
 - key: exr-cauchy-sequences-of-rationals-b1
   kind: exr
   file: 01-cauchy-sequences-of-rationals.md
-  line: 286
+  line: 288
   hash: 896d393d7075
   verdicts:
   - stage: S5a
@@ -301,7 +301,7 @@ items:
 - key: exr-cauchy-sequences-of-rationals-b2
   kind: exr
   file: 01-cauchy-sequences-of-rationals.md
-  line: 301
+  line: 303
   hash: b8a71c4a754b
   verdicts:
   - stage: S5a
@@ -333,7 +333,7 @@ items:
 - key: exr-cauchy-sequences-of-rationals-b3
   kind: exr
   file: 01-cauchy-sequences-of-rationals.md
-  line: 320
+  line: 322
   hash: c4fe0b499686
   verdicts:
   - stage: S5a
@@ -363,7 +363,7 @@ items:
 - key: exr-cauchy-sequences-of-rationals-c1
   kind: exr
   file: 01-cauchy-sequences-of-rationals.md
-  line: 336
+  line: 338
   hash: 084acef518d2
   verdicts:
   - stage: S5a
@@ -406,7 +406,7 @@ items:
 - key: def-reals-cauchy-classes
   kind: def
   file: 02-the-field-of-reals.md
-  line: 11
+  line: 13
   hash: 96ed05be2be0
   verdicts:
   - stage: S5a
@@ -439,7 +439,7 @@ items:
 - key: def-reals-operations
   kind: def
   file: 02-the-field-of-reals.md
-  line: 39
+  line: 41
   hash: e1a7ccb457fb
   verdicts:
   - stage: S5a
@@ -461,7 +461,7 @@ items:
 - key: thm-reals-operations-well-defined
   kind: thm
   file: 02-the-field-of-reals.md
-  line: 57
+  line: 59
   hash: df6ce48a2cd0
   verdicts:
   - stage: S5a
@@ -492,7 +492,7 @@ items:
 - key: proof:thm-reals-operations-well-defined
   kind: proof
   file: 02-the-field-of-reals.md
-  line: 75
+  line: 77
   hash: 18a61f9c6667
   verdicts:
   - stage: S5a
@@ -518,7 +518,7 @@ items:
 - key: thm-reals-commutative-ring
   kind: thm
   file: 02-the-field-of-reals.md
-  line: 105
+  line: 107
   hash: f284209d9893
   verdicts:
   - stage: S5a
@@ -540,7 +540,7 @@ items:
 - key: proof:thm-reals-commutative-ring
   kind: proof
   file: 02-the-field-of-reals.md
-  line: 115
+  line: 117
   hash: 61dd4dae7e35
   verdicts:
   - stage: S5a
@@ -566,7 +566,7 @@ items:
 - key: thm-reals-field
   kind: thm
   file: 02-the-field-of-reals.md
-  line: 150
+  line: 152
   hash: 1d805949433b
   verdicts:
   - stage: S5a
@@ -607,7 +607,7 @@ items:
 - key: proof:thm-reals-field
   kind: proof
   file: 02-the-field-of-reals.md
-  line: 160
+  line: 162
   hash: b01b2e65c957
   verdicts:
   - stage: S5a
@@ -633,8 +633,8 @@ items:
 - key: exm-termwise-reciprocal-ill-defined
   kind: exm
   file: 02-the-field-of-reals.md
-  line: 174
-  hash: d717bc121c8f
+  line: 176
+  hash: 1afab154f031
   verdicts:
   - stage: S5a
     verdict: minor
@@ -668,8 +668,8 @@ items:
 - key: check:02-the-field-of-reals:1
   kind: check
   file: 02-the-field-of-reals.md
-  line: 190
-  hash: 4010be722f53
+  line: 192
+  hash: a01c6d5f4cba
   verdicts:
   - stage: S5a
     verdict: minor
@@ -701,8 +701,8 @@ items:
 - key: exr-the-field-of-reals-a1
   kind: exr
   file: 02-the-field-of-reals.md
-  line: 204
-  hash: 02a676d68bca
+  line: 206
+  hash: 7a736dd24c8b
   verdicts:
   - stage: S5a
     verdict: correct
@@ -742,7 +742,7 @@ items:
 - key: exr-the-field-of-reals-b1
   kind: exr
   file: 02-the-field-of-reals.md
-  line: 231
+  line: 233
   hash: f1eb3490b20c
   verdicts:
   - stage: S5a
@@ -773,8 +773,8 @@ items:
 - key: exr-the-field-of-reals-b2
   kind: exr
   file: 02-the-field-of-reals.md
-  line: 245
-  hash: cd7f050d275c
+  line: 247
+  hash: 3b227b6a36fc
   verdicts:
   - stage: S5a
     verdict: correct
@@ -815,8 +815,8 @@ items:
 - key: exr-the-field-of-reals-b3
   kind: exr
   file: 02-the-field-of-reals.md
-  line: 274
-  hash: 5b7b4f5de6de
+  line: 276
+  hash: a6ee7177b365
   verdicts:
   - stage: S5a
     verdict: correct
@@ -854,8 +854,8 @@ items:
 - key: exr-the-field-of-reals-c1
   kind: exr
   file: 02-the-field-of-reals.md
-  line: 290
-  hash: a8ea4d670e1d
+  line: 292
+  hash: 9bc0671059ea
   verdicts:
   - stage: S5a
     verdict: correct
@@ -896,7 +896,7 @@ items:
 - key: exr-the-field-of-reals-c2
   kind: exr
   file: 02-the-field-of-reals.md
-  line: 325
+  line: 327
   hash: ed77bf0d1e1c
   verdicts:
   - stage: S5a
@@ -927,7 +927,7 @@ items:
 - key: exm-strict-termwise-order-fails
   kind: exm
   file: 03-ordering-the-reals.md
-  line: 15
+  line: 17
   hash: 50c02d9c36e1
   verdicts:
   - stage: S5a
@@ -951,7 +951,7 @@ items:
 - key: def-positive-cauchy-sequence
   kind: def
   file: 03-ordering-the-reals.md
-  line: 43
+  line: 45
   hash: 3868e385b30b
   verdicts:
   - stage: S5a
@@ -984,7 +984,7 @@ items:
 - key: check:03-ordering-the-reals:1
   kind: check
   file: 03-ordering-the-reals.md
-  line: 85
+  line: 87
   hash: c995a1b70b78
   verdicts:
   - stage: S5a
@@ -1006,7 +1006,7 @@ items:
 - key: prp-positivity-well-defined
   kind: prp
   file: 03-ordering-the-reals.md
-  line: 99
+  line: 101
   hash: 1801bdc61ae0
   verdicts:
   - stage: S5a
@@ -1026,7 +1026,7 @@ items:
 - key: proof:prp-positivity-well-defined
   kind: proof
   file: 03-ordering-the-reals.md
-  line: 105
+  line: 107
   hash: c96fa80ecb7d
   verdicts:
   - stage: S5a
@@ -1049,7 +1049,7 @@ items:
 - key: thm-reals-positive-cone
   kind: thm
   file: 03-ordering-the-reals.md
-  line: 125
+  line: 127
   hash: c19b1d8d15d5
   verdicts:
   - stage: S5a
@@ -1070,7 +1070,7 @@ items:
 - key: proof:thm-reals-positive-cone
   kind: proof
   file: 03-ordering-the-reals.md
-  line: 138
+  line: 140
   hash: 33ae01c1d127
   verdicts:
   - stage: S5a
@@ -1104,7 +1104,7 @@ items:
 - key: def-reals-order
   kind: def
   file: 03-ordering-the-reals.md
-  line: 166
+  line: 168
   hash: fcecccb10084
   verdicts:
   - stage: S5a
@@ -1126,7 +1126,7 @@ items:
 - key: thm-reals-ordered-field
   kind: thm
   file: 03-ordering-the-reals.md
-  line: 174
+  line: 176
   hash: 638a012b7902
   verdicts:
   - stage: S5a
@@ -1147,7 +1147,7 @@ items:
 - key: proof:thm-reals-ordered-field
   kind: proof
   file: 03-ordering-the-reals.md
-  line: 184
+  line: 186
   hash: 13d36fa46f3e
   verdicts:
   - stage: S5a
@@ -1171,7 +1171,7 @@ items:
 - key: lem-termwise-order
   kind: lem
   file: 03-ordering-the-reals.md
-  line: 196
+  line: 198
   hash: db2ffdc02cde
   verdicts:
   - stage: S5a
@@ -1192,7 +1192,7 @@ items:
 - key: proof:lem-termwise-order
   kind: proof
   file: 03-ordering-the-reals.md
-  line: 206
+  line: 208
   hash: 308a356ec836
   verdicts:
   - stage: S5a
@@ -1215,8 +1215,8 @@ items:
 - key: check:03-ordering-the-reals:2
   kind: check
   file: 03-ordering-the-reals.md
-  line: 218
-  hash: 3ac4d07a791a
+  line: 220
+  hash: 2765d8008097
   verdicts:
   - stage: S5a
     verdict: minor
@@ -1247,7 +1247,7 @@ items:
 - key: prp-reals-absolute-value-termwise
   kind: prp
   file: 03-ordering-the-reals.md
-  line: 230
+  line: 232
   hash: 62c397ad7cc5
   verdicts:
   - stage: S5a
@@ -1276,8 +1276,8 @@ items:
 - key: proof:prp-reals-absolute-value-termwise
   kind: proof
   file: 03-ordering-the-reals.md
-  line: 244
-  hash: 7647efee73ae
+  line: 246
+  hash: 1ce8fab6a5d7
   verdicts:
   - stage: S5a
     verdict: minor
@@ -1311,8 +1311,8 @@ items:
 - key: exr-ordering-the-reals-a1
   kind: exr
   file: 03-ordering-the-reals.md
-  line: 264
-  hash: f148c1e711fc
+  line: 266
+  hash: c10d51cd9b07
   verdicts:
   - stage: S5a
     verdict: correct
@@ -1353,7 +1353,7 @@ items:
 - key: exr-ordering-the-reals-b1
   kind: exr
   file: 03-ordering-the-reals.md
-  line: 292
+  line: 294
   hash: 90c1390992fe
   verdicts:
   - stage: S5a
@@ -1384,7 +1384,7 @@ items:
 - key: exr-ordering-the-reals-b2
   kind: exr
   file: 03-ordering-the-reals.md
-  line: 312
+  line: 314
   hash: b1a9a816c94f
   verdicts:
   - stage: S5a
@@ -1414,8 +1414,8 @@ items:
 - key: exr-ordering-the-reals-b3
   kind: exr
   file: 03-ordering-the-reals.md
-  line: 322
-  hash: 38617733ea45
+  line: 324
+  hash: 02cf2d02cbdb
   verdicts:
   - stage: S5a
     verdict: minor
@@ -1457,8 +1457,8 @@ items:
 - key: exr-ordering-the-reals-c1
   kind: exr
   file: 03-ordering-the-reals.md
-  line: 339
-  hash: f33019d8f0a9
+  line: 341
+  hash: 2c6cfb15ed3c
   verdicts:
   - stage: S5a
     verdict: correct
@@ -1509,7 +1509,7 @@ items:
 - key: exr-ordering-the-reals-c2
   kind: exr
   file: 03-ordering-the-reals.md
-  line: 361
+  line: 371
   hash: 45c0804b6b13
   verdicts:
   - stage: S5a
@@ -1551,7 +1551,7 @@ items:
 - key: def-rational-embedding
   kind: def
   file: 04-rationals-inside-the-reals.md
-  line: 11
+  line: 13
   hash: 6cd09b2a654c
   verdicts:
   - stage: S5a
@@ -1574,7 +1574,7 @@ items:
 - key: thm-rational-embedding
   kind: thm
   file: 04-rationals-inside-the-reals.md
-  line: 25
+  line: 27
   hash: 2910c5c7949a
   verdicts:
   - stage: S5a
@@ -1617,7 +1617,7 @@ items:
 - key: proof:thm-rational-embedding
   kind: proof
   file: 04-rationals-inside-the-reals.md
-  line: 42
+  line: 44
   hash: 069ed488b0c8
   verdicts:
   - stage: S5a
@@ -1642,7 +1642,7 @@ items:
 - key: thm-constructed-reals-archimedean
   kind: thm
   file: 04-rationals-inside-the-reals.md
-  line: 75
+  line: 79
   hash: 599e9cfe4737
   verdicts:
   - stage: S5a
@@ -1662,8 +1662,8 @@ items:
 - key: proof:thm-constructed-reals-archimedean
   kind: proof
   file: 04-rationals-inside-the-reals.md
-  line: 85
-  hash: 3ea09761760b
+  line: 89
+  hash: c75686aaa1ec
   verdicts:
   - stage: S5a
     verdict: correct
@@ -1697,7 +1697,7 @@ items:
 - key: thm-constructed-rationals-dense
   kind: thm
   file: 04-rationals-inside-the-reals.md
-  line: 105
+  line: 109
   hash: 320feac11052
   verdicts:
   - stage: S5a
@@ -1725,8 +1725,8 @@ items:
 - key: proof:thm-constructed-rationals-dense
   kind: proof
   file: 04-rationals-inside-the-reals.md
-  line: 119
-  hash: 9a718bf8a175
+  line: 123
+  hash: 93cecda5ccd2
   verdicts:
   - stage: S5a
     verdict: minor
@@ -1758,7 +1758,7 @@ items:
 - key: cor-rational-epsilon-suffices
   kind: cor
   file: 04-rationals-inside-the-reals.md
-  line: 150
+  line: 154
   hash: 8500202ed9b4
   verdicts:
   - stage: S5a
@@ -1780,7 +1780,7 @@ items:
 - key: proof:cor-rational-epsilon-suffices
   kind: proof
   file: 04-rationals-inside-the-reals.md
-  line: 159
+  line: 163
   hash: 9967b825a168
   verdicts:
   - stage: S5a
@@ -1802,7 +1802,7 @@ items:
 - key: thm-terms-converge-to-class
   kind: thm
   file: 04-rationals-inside-the-reals.md
-  line: 173
+  line: 177
   hash: b37c5da6c97b
   verdicts:
   - stage: S5a
@@ -1831,8 +1831,8 @@ items:
 - key: proof:thm-terms-converge-to-class
   kind: proof
   file: 04-rationals-inside-the-reals.md
-  line: 183
-  hash: 5e25c55c2124
+  line: 187
+  hash: 0c4d2210b31c
   verdicts:
   - stage: S5a
     verdict: minor
@@ -1866,8 +1866,8 @@ items:
 - key: exm-sqrt2-class
   kind: exm
   file: 04-rationals-inside-the-reals.md
-  line: 209
-  hash: 62a7132aa8da
+  line: 213
+  hash: c4490a22dd87
   verdicts:
   - stage: S5a
     verdict: correct
@@ -1901,7 +1901,7 @@ items:
 - key: check:04-rationals-inside-the-reals:1
   kind: check
   file: 04-rationals-inside-the-reals.md
-  line: 248
+  line: 252
   hash: 6bb437fc7698
   verdicts:
   - stage: S5a
@@ -1923,8 +1923,8 @@ items:
 - key: exr-rationals-inside-the-reals-a1
   kind: exr
   file: 04-rationals-inside-the-reals.md
-  line: 260
-  hash: e9aab4bfeea5
+  line: 264
+  hash: '747175673781'
   verdicts:
   - stage: S5a
     verdict: minor
@@ -1966,7 +1966,7 @@ items:
 - key: exr-rationals-inside-the-reals-b1
   kind: exr
   file: 04-rationals-inside-the-reals.md
-  line: 291
+  line: 295
   hash: 00148cea2b27
   verdicts:
   - stage: S5a
@@ -1999,8 +1999,8 @@ items:
 - key: exr-rationals-inside-the-reals-b2
   kind: exr
   file: 04-rationals-inside-the-reals.md
-  line: 303
-  hash: 8667ef889557
+  line: 307
+  hash: 9cf0114108fb
   verdicts:
   - stage: S5a
     verdict: minor
@@ -2042,8 +2042,8 @@ items:
 - key: exr-rationals-inside-the-reals-b3
   kind: exr
   file: 04-rationals-inside-the-reals.md
-  line: 319
-  hash: 7948a4a76352
+  line: 323
+  hash: 1e49259fa460
   verdicts:
   - stage: S5a
     verdict: error
@@ -2091,7 +2091,7 @@ items:
 - key: exr-rationals-inside-the-reals-c1
   kind: exr
   file: 04-rationals-inside-the-reals.md
-  line: 347
+  line: 351
   hash: 1663c6bfead1
   verdicts:
   - stage: S5a
@@ -2123,8 +2123,8 @@ items:
 - key: exr-rationals-inside-the-reals-c2
   kind: exr
   file: 04-rationals-inside-the-reals.md
-  line: 362
-  hash: bc8f8a462ba9
+  line: 366
+  hash: bf584bc364bf
   verdicts:
   - stage: S5a
     verdict: correct
@@ -2161,94 +2161,170 @@ items:
       and r), as STYLE 11.7 rung 1 asks. Hint 2 gives the first line (fix q) and a question; it leaves
       the choice of k and the irrationality argument unexecuted. The solution checks out. eps=(y-q)/r>0
       follows from prp-reciprocal-order (a) and (O4). cor-rational-epsilon-suffices (a) gives k with 1/k<e
-- key: thm-constructed-reals-cauchy-complete
-  kind: thm
-  file: 05-completeness.md
+- key: def-complete-ordered-field
+  kind: def
+  file: 05-the-least-upper-bound-property.md
   line: 15
-  hash: 4e01617ef2d4
+  hash: b66c519fe7e9
   verdicts:
   - stage: S5a
     verdict: correct
     by: refereeA
-    hash: 4e01617ef2d4
+    hash: b66c519fe7e9
     date: '2026-10-12'
     model: claude-opus-5-5
-    evidence: 05-completeness.md:15-19. The statement matches def-cauchy-sequence-ordered-field and def-sequence-limit-ordered-field
-      with F = R. Dropping the Cauchy hypothesis fails, as line 74 shows with x_k = k (unbounded by thm-constructed-reals-archimedean,
-      so not convergent by prp-convergent-bounded-ordered-field).
+    evidence: 06:13-24. The display matches fd2:def-order-bounds and def-order-supremum (S1)/(S2). Uniqueness
+      (l.28) follows by antisymmetry. In the {x<0} example (l.32), prp-ordered-field-halves (b) with a=b,
+      b=0 gives b<b/2<0. The non-examples (l.41) are correct.
   - stage: S5b
     verdict: correct
     by: refereeB
-    hash: 4e01617ef2d4
+    hash: b66c519fe7e9
     date: '2026-10-12'
     model: claude-opus-5-5
-    evidence: '05-completeness.md:15-19: the statement cites def-cauchy-sequence-ordered-field and def-sequence-limit-ordered-field
-      with F = R, which thm-reals-ordered-field licenses (line 5). The Try-it-first at line 21 is one
-      of the chapter''s two (the other is in section 04), as blueprint line 52 says.'
-- key: proof:thm-constructed-reals-cauchy-complete
+    evidence: '06:13-24 checked: the formula matches fd2:def-order-supremum (S1)/(S2). The uniqueness
+      at 06:28 and the example at 06:32 are ledgered (06:444-445). The halves (b) step b < b/2 < 0 is
+      valid with a=b, b=0. The non-examples at 06:41 are true.'
+- key: lem-power-two-bound
+  kind: lem
+  file: 05-the-least-upper-bound-property.md
+  line: 58
+  hash: d61191be33fe
+  verdicts:
+  - stage: S5a
+    verdict: correct
+    by: refereeA
+    hash: d61191be33fe
+    date: '2026-10-12'
+    model: claude-opus-5-5
+    evidence: 06:56-64. True in every ordered field. The sidecar lem-power-two-bound.py returns ok.
+  - stage: S5b
+    verdict: correct
+    by: refereeB
+    hash: d61191be33fe
+    date: '2026-10-12'
+    model: claude-opus-5-5
+    evidence: 06:56-64. The power is def-naturals-in-ordered-field (b), as the blueprint asks (bp ch05.md:198).
+      Sidecar lem-power-two-bound.py is present.
+- key: proof:lem-power-two-bound
   kind: proof
-  file: 05-completeness.md
-  line: 40
-  hash: 81e1a0959fbf
+  file: 05-the-least-upper-bound-property.md
+  line: 72
+  hash: 551a9e40ddd3
   verdicts:
   - stage: S5a
-    verdict: correct
-    by: refereeA
-    hash: 81e1a0959fbf
-    date: '2026-10-12'
-    model: claude-opus-5-5
-    evidence: 'Lines 40-70. Step 0: prp-integer-part-ordered-field (exactly one m with iota_R(m) <= x
-      < iota_R(m+1)) applies because R is Archimedean (thm-constructed-reals-archimedean, Section 5.4),
-      and kappa = iota_R by thm-rational-embedding (d). Multiplying by kappa(k+1)^{-1} > 0 (prp-reciprocal-order
-      (a), prp-ordered-ring-rules (c)) gives eq-approximant-bound. Step 1 order: eps in Q>0, then K_1(eps)
-      from co'
-  - stage: S5b
     verdict: minor
-    by: refereeB
-    hash: 81e1a0959fbf
+    by: refereeA
+    hash: 4012af9fd08a
     date: '2026-10-12'
     model: claude-opus-5-5
-    evidence: 05-completeness.md:43 Step 0 identifies iota_R(m_k) with kappa(m_k) without citing thm-rational-embedding
-      (d), and the ledger's source for (d) is false.
+    evidence: 06-the-least-upper-bound-property.md:81 The inequality (k+1)·1_F >= 1_F is credited to the
+      wrong label. It comes from prp-naturals-in-ordered-field (b), but only prp-ordered-ring-rules (e)
+      is cited, and (e) gives only 1_F>0.
+  - stage: S5b
+    verdict: correct
+    by: refereeB
+    hash: 4012af9fd08a
+    date: '2026-10-12'
+    model: claude-opus-5-5
+    evidence: '06:71-81. Base: def (a)/(b) and def-omega-arithmetic (c). Step: halves (b) gives 2>0; ordered-ring-rules
+      (c); (F9),(F7); thm-omega-order (d) gives k+1>=1; prp-naturals (b) gives y>=1_F; rules (b); def
+      (a). Ledger 446-447 covers the N-arithmetic. Every step is cited.'
   - stage: S7r
     verdict: correct
     by: rereferee
-    hash: a419de3e777b
+    hash: 551a9e40ddd3
     date: '2026-10-12'
     model: claude-opus-5-5
-    evidence: fd3/src/ch05-reals-from-cauchy/05-completeness.md:43-69. Both earlier findings are resolved.
-      (1) Step 0 (l.43) now cites @thm-rational-embedding (d) for iota_R = kappa. 04-rationals-inside-the-reals.md:33
-      states (d) as 'kappa is the map iota_R ... kappa(n) = n*1_R', and the ledger line (l.260) now correctly
-      says 'cited in Step 0'. (2) The hypothesis paragraph (l.74) now says the Archimedean proper
-- key: check:05-completeness:1
-  kind: check
-  file: 05-completeness.md
+    evidence: 'fd3/src/ch05-reals-from-cauchy/06-the-least-upper-bound-property.md:70-82. Earlier finding
+      resolved: line 81 now credits (k+1)·1_F >= 1_F > 0 to prp-naturals-in-ordered-field (b), which says
+      n·1_F >= 1_F > 0 for n >= 1. Base (def-naturals-in-ordered-field (a),(b), def-omega-arithmetic (c)),
+      the step 2·1_F = 1_F+1_F > 0 (prp-ordered-field-halves (b)), multiplication by a positive (prp-ordered-ring-'
+- key: thm-reals-complete-ordered-field
+  kind: thm
+  file: 05-the-least-upper-bound-property.md
   line: 90
-  hash: 667f17c156ca
+  hash: 4884a3a89724
   verdicts:
   - stage: S5a
     verdict: correct
     by: refereeA
-    hash: 667f17c156ca
+    hash: 4884a3a89724
     date: '2026-10-12'
     model: claude-opus-5-5
-    evidence: Lines 90-102. 7/5 <= r < 3/2 follows by prp-ordered-ring-rules (g), with both sides >= 0.
-      m_0 = 2, m_1 = 3, m_2 = 5, giving q = 2, 3/2, 5/3. x_2 lies in [26/15, 11/6). I checked these by
-      hand, and verify/ch05/thm-constructed-reals-cauchy-complete.py prints ok.
+    evidence: 06:166-170. The statement matches what the cited results give.
   - stage: S5b
     verdict: correct
     by: refereeB
-    hash: 667f17c156ca
+    hash: 4884a3a89724
     date: '2026-10-12'
     model: claude-opus-5-5
-    evidence: 'Lines 90-102: I recomputed the bounds by hand. 7/5 <= r < 3/2. The values (k+1)r+1 lie
-      in [12/5,5/2), [19/5,4) and [26/5,11/2), so m = 2, 3, 5 and q = 2, 3/2, 5/3. Also x_2 lies in [26/15,11/6).
-      The sidecar verify/ch05/thm-constructed-reals-cauchy-complete.py asserts all of these values.'
+    evidence: 06:166-170 matches the blueprint (bp:203). Forward pointers at 06:206 are in STATUS rows
+      132-136, and F3.4's blueprint (ch06.md:11) promises 'exactly one order-preserving field isomorphism'.
+  - stage: S8
+    verdict: correct
+    by: seam
+    hash: 4884a3a89724
+    date: '2026-10-12'
+    model: claude-opus-5-5
+    evidence: 06:206 and index:5 send a promise to F4.1 ('Algebraic Preliminaries, Chapter 1 builds the
+      complex numbers on this R'). STATUS row 135 records that no fd4 blueprint exists, so there is no
+      blueprint showing F4.1 delivers it. [finding refuted by skeptics]
+- key: proof:thm-reals-complete-ordered-field
+  kind: proof
+  file: 05-the-least-upper-bound-property.md
+  line: 96
+  hash: 867b446535b6
+  verdicts:
+  - stage: S5a
+    verdict: correct
+    by: refereeA
+    hash: 867b446535b6
+    date: '2026-10-12'
+    model: claude-opus-5-5
+    evidence: 06:172-174. thm-reals-ordered-field, thm-constructed-reals-archimedean and thm-constructed-reals-cauchy-complete
+      exist and supply all three hypotheses of thm-cauchy-archimedean-lub. thm-rational-embedding (a)
+      covers + and ·, and (b) covers < and injectivity ('hence kappa is injective'). thm-constructed-rationals-dense
+      gives x<kappa(q)<y.
+  - stage: S5b
+    verdict: correct
+    by: refereeB
+    hash: 867b446535b6
+    date: '2026-10-12'
+    model: claude-opus-5-5
+    evidence: 06:173. thm-reals-ordered-field, constructed-reals-archimedean, cauchy-complete and thm-cauchy-archimedean-lub
+      are cited. thm-rational-embedding (a),(b) (injectivity in (b)) and thm-constructed-rationals-dense
+      match their statements (04:25, 04:105).
+- key: check:05-the-least-upper-bound-property:1
+  kind: check
+  file: 05-the-least-upper-bound-property.md
+  line: 102
+  hash: 29c104714eb5
+  moved_from: check:06-the-least-upper-bound-property:1
+  verdicts:
+  - stage: S5a
+    verdict: correct
+    by: refereeA
+    hash: 29c104714eb5
+    date: '2026-10-12'
+    model: claude-opus-5-5
+    evidence: 06:178-190. Pairs (0,2),(1,2),(1,3/2),(5/4,3/2). 49/25<2<=9/4 and 5/4<7/5. The upper-bound
+      test c>0, c^2>=2 is justified by ring rules (g) with q>c>0. D=2 and u3-l3=1/4=2/8. The sidecar returns
+      ok.
+  - stage: S5b
+    verdict: correct
+    by: refereeB
+    hash: 29c104714eb5
+    date: '2026-10-12'
+    model: claude-opus-5-5
+    evidence: 06:178-190. The pairs (0,2),(1,2),(1,3/2),(5/4,3/2) and u3-l3=1/4=2/8 check out by hand.
+      The sidecar thm-reals-complete-ordered-field.py passes. The test 'c>0, c^2>=2 is an upper bound'
+      uses (g) correctly.
 - key: exm-representatives-need-choice
   kind: exm
-  file: 05-completeness.md
-  line: 108
-  hash: 2b8d25aacacd
+  file: 05-the-least-upper-bound-property.md
+  line: 122
+  hash: c97e5cab6189
   verdicts:
   - stage: S5a
     verdict: correct
@@ -2279,433 +2355,11 @@ items:
       3) ... the Cauchy condition enters only in Step 1''. This is true of the page: x_k appears only
       in Step 0 (integer part of (k+1)x_k), Step 1 (|x_j - kappa(q_j)|, |x_j - x_k|) and Step 3 (|x_k
       - kappa(q_k)|). It does n'
-- key: exr-completeness-a1
-  kind: exr
-  file: 05-completeness.md
-  line: 130
-  hash: 37432ba1e1f3
-  verdicts:
-  - stage: S5a
-    verdict: minor
-    by: refereeA
-    hash: 37432ba1e1f3
-    date: '2026-10-12'
-    model: claude-opus-5-5
-    evidence: '05-completeness.md:151 Notation clash: in item (d), x_k denotes the constant real sequence
-      r, and in the same item ''(x_n)'' denotes the Newton sequence of rationals.'
-  - stage: S5b
-    verdict: minor
-    by: refereeB
-    hash: 37432ba1e1f3
-    date: '2026-10-12'
-    model: claude-opus-5-5
-    evidence: 05-completeness.md:151 The letter x has a second meaning in A1(d).
-  - stage: S6
-    verdict: minor
-    by: verifier
-    hash: 37432ba1e1f3
-    date: '2026-10-12'
-    model: claude-opus-5-5
-    evidence: 05-completeness.md:153 The negation in (e) turns ∀k (k >= K ⇒ …) into ∃k (k >= K ∧ …) without
-      citing negated implication.
-  - stage: S8
-    verdict: minor
-    by: seam
-    hash: 37432ba1e1f3
-    date: '2026-10-12'
-    model: claude-opus-5-5
-    evidence: '05-completeness.md:151 Notation clash within one solution: x_k is the real sequence of
-      the theorem, and x_n is the Newton sequence.'
-  - stage: S7r
-    verdict: correct
-    by: rereferee
-    hash: 79432c0cf78a
-    date: '2026-10-12'
-    model: claude-opus-5-5
-    evidence: '05-completeness.md:145-157. The notation clash is resolved: (d) no longer writes (x_n)
-      and instead says ''the Newton sequence of @exm-newton-rationals-sqrt2 and the truncations (d_k),
-      both in the class r by @exm-sqrt2-class''. That example (04:211-215) proves r = [(x_n)] = [(d_k)].
-      The negation in (e) now cites @fd1:prp-negated-implication (fd1/src/ch04-predicate-logic/09-quantifier-laws.md:134:
-      not'
-- key: exr-completeness-b1
-  kind: exr
-  file: 05-completeness.md
-  line: 162
-  hash: e54b11dbca3d
-  verdicts:
-  - stage: S5a
-    verdict: correct
-    by: refereeA
-    hash: e54b11dbca3d
-    date: '2026-10-12'
-    model: claude-opus-5-5
-    evidence: Lines 165-172. prp-convergent-cauchy-ordered-field and thm-limit-unique-ordered-field are
-      proved for an arbitrary ordered field F; R is an ordered field by thm-reals-ordered-field.
-  - stage: S5b
-    verdict: correct
-    by: refereeB
-    hash: e54b11dbca3d
-    date: '2026-10-12'
-    model: claude-opus-5-5
-    evidence: 'Lines 162-172: prp-convergent-cauchy-ordered-field and thm-limit-unique-ordered-field are
-      F3.9 results for any ordered field, applied with F = R through thm-reals-ordered-field. The deduction
-      of the equivalence is complete.'
-  - stage: S6
-    verdict: correct
-    by: verifier
-    hash: e54b11dbca3d
-    date: '2026-10-12'
-    model: claude-opus-5-5
-    evidence: 05:168-172. prp-convergent-cauchy-ordered-field and thm-limit-unique-ordered-field apply
-      with F=R by thm-reals-ordered-field. The equivalence follows from thm-constructed-reals-cauchy-complete.
-- key: exr-completeness-b2
-  kind: exr
-  file: 05-completeness.md
-  line: 174
-  hash: 28e6ce7d3748
-  verdicts:
-  - stage: S5a
-    verdict: correct
-    by: refereeA
-    hash: 28e6ce7d3748
-    date: '2026-10-12'
-    model: claude-opus-5-5
-    evidence: Lines 177-188. The proof goes Cauchy in R, then rational eps through kappa, then (p_k) in
-      C, then thm-terms-converge-to-class with uniqueness of limits. Each step is justified.
-  - stage: S5b
-    verdict: correct
-    by: refereeB
-    hash: 28e6ce7d3748
-    date: '2026-10-12'
-    model: claude-opus-5-5
-    evidence: 'Lines 174-188: the Cauchy property is transferred through kappa using thm-rational-embedding
-      (a)-(c), and thm-terms-converge-to-class plus uniqueness of limits gives x = [(p_k)]. The closing
-      remark is true.'
-  - stage: S6
-    verdict: correct
-    by: verifier
-    hash: 28e6ce7d3748
-    date: '2026-10-12'
-    model: claude-opus-5-5
-    evidence: '05:182-188. This matches my proof: Cauchy in R, then carried back to Q through kappa as
-      in Step 1, then thm-terms-converge-to-class and uniqueness of limits. The hint names a tool. Step
-      1 of the theorem is the worked example.'
-- key: exr-completeness-c1
-  kind: exr
-  file: 05-completeness.md
-  line: 192
-  hash: 54857029b5ee
-  verdicts:
-  - stage: S5a
-    verdict: correct
-    by: refereeA
-    hash: 54857029b5ee
-    date: '2026-10-12'
-    model: claude-opus-5-5
-    evidence: Lines 195-214. This is a compressed version of the main proof with the same quantifier order.
-      cor-rational-epsilon-suffices (a) supplies n with kappa(1/n) < eps. The marking scheme matches blueprint
-      line 188.
-  - stage: S5b
-    verdict: correct
-    by: refereeB
-    hash: 54857029b5ee
-    date: '2026-10-12'
-    model: claude-opus-5-5
-    evidence: 'Lines 192-214: the solution matches the proof, and cor-rational-epsilon-suffices (a) is
-      used correctly for 1/n < eps. The marking scheme sums to 2+3+1+2+2 = 10 and agrees with blueprint
-      line 188.'
-  - stage: S6
-    verdict: minor
-    by: verifier
-    hash: 54857029b5ee
-    date: '2026-10-12'
-    model: claude-opus-5-5
-    evidence: '05-completeness.md:211 Scheme line ''2: q_k → x in R, justified by the theorem that the
-      terms of a representative converge to its class'' requires one route. A correct direct estimate
-      earns nothing under it.'
-  - stage: S7r
-    verdict: correct
-    by: rereferee
-    hash: 3824d3a68054
-    date: '2026-10-12'
-    model: claude-opus-5-5
-    evidence: '05-completeness.md:199-213. The scheme line at l.211 now accepts either route, @thm-terms-converge-to-class
-      or the direct estimate through @prp-reals-absolute-value-termwise (03-ordering-the-reals.md:230:
-      |[a]| = [(|a_n|)]) and @lem-termwise-order, and notes that the lemma gives only <=. This resolves
-      the earlier finding. The identity |x - kappa(q_k)| = [(|q_m - q_k|)_m] is correct. Points add up '
-- key: exr-completeness-c2
-  kind: exr
-  file: 05-completeness.md
-  line: 216
-  hash: c386e0cec22c
-  verdicts:
-  - stage: S5a
-    verdict: minor
-    by: refereeA
-    hash: c386e0cec22c
-    date: '2026-10-12'
-    model: claude-opus-5-5
-    evidence: '05-completeness.md:247 The solution says line (5) ''would be correct once (4) is''. The
-      conclusion of (4) (that (q_k) is Cauchy) does not make (5) valid: the eps/2 argument through q_k
-      needs |x_k - kappa(q_k)| -> 0, and (4) does not give that.'
-  - stage: S5b
-    verdict: minor
-    by: refereeB
-    hash: c386e0cec22c
-    date: '2026-10-12'
-    model: claude-opus-5-5
-    evidence: '05-completeness.md:247 The solution says line (5) ''would be correct once (4) is''. That
-      is false: (q_k) can be Cauchy while x_k does not tend to [(q_k)].'
-  - stage: S6
-    verdict: error
-    by: verifier
-    hash: c386e0cec22c
-    date: '2026-10-12'
-    model: claude-opus-5-5
-    evidence: '05-completeness.md:247 The solution says line (5) ''is not reached; it would be correct
-      once (4) is''. This is false: line (5) is a second, independent logical failure, so the flawed argument
-      does not have its error in one line only (STYLE §11.3).'
-  - stage: S7r
-    verdict: correct
-    by: rereferee
-    hash: 70615200d4e7
-    date: '2026-10-12'
-    model: claude-opus-5-5
-    evidence: 05-completeness.md:219-256. Line (4) now asserts both that (q_k) is Cauchy and that |x_k
-      - kappa(q_k)| -> 0. Line (5) therefore follows from (4) by @thm-terms-converge-to-class and the
-      triangle inequality, so the flawed argument has its logical error in line (4) only, as STYLE §11.3
-      requires; this resolves the earlier S6 error. The solution's new sentence about (5) (l.247) is true.
-      Its witness als
-- key: def-complete-ordered-field
-  kind: def
-  file: 06-the-least-upper-bound-property.md
-  line: 13
-  hash: b66c519fe7e9
-  verdicts:
-  - stage: S5a
-    verdict: correct
-    by: refereeA
-    hash: b66c519fe7e9
-    date: '2026-10-12'
-    model: claude-opus-5-5
-    evidence: 06:13-24. The display matches fd2:def-order-bounds and def-order-supremum (S1)/(S2). Uniqueness
-      (l.28) follows by antisymmetry. In the {x<0} example (l.32), prp-ordered-field-halves (b) with a=b,
-      b=0 gives b<b/2<0. The non-examples (l.41) are correct.
-  - stage: S5b
-    verdict: correct
-    by: refereeB
-    hash: b66c519fe7e9
-    date: '2026-10-12'
-    model: claude-opus-5-5
-    evidence: '06:13-24 checked: the formula matches fd2:def-order-supremum (S1)/(S2). The uniqueness
-      at 06:28 and the example at 06:32 are ledgered (06:444-445). The halves (b) step b < b/2 < 0 is
-      valid with a=b, b=0. The non-examples at 06:41 are true.'
-- key: lem-power-two-bound
-  kind: lem
-  file: 06-the-least-upper-bound-property.md
-  line: 56
-  hash: d61191be33fe
-  verdicts:
-  - stage: S5a
-    verdict: correct
-    by: refereeA
-    hash: d61191be33fe
-    date: '2026-10-12'
-    model: claude-opus-5-5
-    evidence: 06:56-64. True in every ordered field. The sidecar lem-power-two-bound.py returns ok.
-  - stage: S5b
-    verdict: correct
-    by: refereeB
-    hash: d61191be33fe
-    date: '2026-10-12'
-    model: claude-opus-5-5
-    evidence: 06:56-64. The power is def-naturals-in-ordered-field (b), as the blueprint asks (bp ch05.md:198).
-      Sidecar lem-power-two-bound.py is present.
-- key: proof:lem-power-two-bound
-  kind: proof
-  file: 06-the-least-upper-bound-property.md
-  line: 70
-  hash: 4012af9fd08a
-  verdicts:
-  - stage: S5a
-    verdict: minor
-    by: refereeA
-    hash: 4012af9fd08a
-    date: '2026-10-12'
-    model: claude-opus-5-5
-    evidence: 06-the-least-upper-bound-property.md:81 The inequality (k+1)·1_F >= 1_F is credited to the
-      wrong label. It comes from prp-naturals-in-ordered-field (b), but only prp-ordered-ring-rules (e)
-      is cited, and (e) gives only 1_F>0.
-  - stage: S5b
-    verdict: correct
-    by: refereeB
-    hash: 4012af9fd08a
-    date: '2026-10-12'
-    model: claude-opus-5-5
-    evidence: '06:71-81. Base: def (a)/(b) and def-omega-arithmetic (c). Step: halves (b) gives 2>0; ordered-ring-rules
-      (c); (F9),(F7); thm-omega-order (d) gives k+1>=1; prp-naturals (b) gives y>=1_F; rules (b); def
-      (a). Ledger 446-447 covers the N-arithmetic. Every step is cited.'
-  - stage: S7r
-    verdict: correct
-    by: rereferee
-    hash: 551a9e40ddd3
-    date: '2026-10-12'
-    model: claude-opus-5-5
-    evidence: 'fd3/src/ch05-reals-from-cauchy/06-the-least-upper-bound-property.md:70-82. Earlier finding
-      resolved: line 81 now credits (k+1)·1_F >= 1_F > 0 to prp-naturals-in-ordered-field (b), which says
-      n·1_F >= 1_F > 0 for n >= 1. Base (def-naturals-in-ordered-field (a),(b), def-omega-arithmetic (c)),
-      the step 2·1_F = 1_F+1_F > 0 (prp-ordered-field-halves (b)), multiplication by a positive (prp-ordered-ring-'
-- key: thm-cauchy-archimedean-lub
-  kind: thm
-  file: 06-the-least-upper-bound-property.md
-  line: 88
-  hash: 0c09d49a4f63
-  verdicts:
-  - stage: S5a
-    verdict: correct
-    by: refereeA
-    hash: 0c09d49a4f63
-    date: '2026-10-12'
-    model: claude-opus-5-5
-    evidence: '06:88-92. Every hypothesis is used: Archimedean at l.133, Cauchy-complete at l.143, non-empty
-      and bounded above in Step 1. Dropping Cauchy-complete gives Q as a counterexample. Dropping Archimedean
-      needs the Laurent-series field, which the remark marks as not proved.'
-  - stage: S5b
-    verdict: minor
-    by: refereeB
-    hash: 0c09d49a4f63
-    date: '2026-10-12'
-    model: claude-opus-5-5
-    evidence: 06-the-least-upper-bound-property.md:157 The parenthetical '(Q(t) is not Cauchy-complete
-      either, so it shows only that the line fails, not that the conclusion does.)' is a mathematical
-      claim with no proof, no @ref, no 'not proved here' mark and no ledger line.
-  - stage: S7r
-    verdict: correct
-    by: rereferee
-    hash: 0c09d49a4f63
-    date: '2026-10-12'
-    model: claude-opus-5-5
-    evidence: '06:88-92 statement; warning 06:156-158 and remark 06:160-162. Earlier finding resolved:
-      the unproved claim that Q(t) is not Cauchy-complete is gone, and the parenthetical now says only
-      that the line fails. The Q(t) computation uses exm-rational-function-field (t > n·1), prp-naturals-in-ordered-field
-      (c) and prp-reciprocal-order (b), and the ledger covers it. The Laurent-series claim is marked ''Not'
-- key: proof:thm-cauchy-archimedean-lub
-  kind: proof
-  file: 06-the-least-upper-bound-property.md
-  line: 102
-  hash: 493348d5d8f3
-  verdicts:
-  - stage: S5a
-    verdict: minor
-    by: refereeA
-    hash: 493348d5d8f3
-    date: '2026-10-12'
-    model: claude-opus-5-5
-    evidence: 06-the-least-upper-bound-property.md:147 The step from 'l_K is not an upper bound' to 'some
-      a in A has a not<= l_K' is a negated bounded universal quantifier. The text cites only totality
-      for it, and totality covers only the second half (a not<= l_K, so a > l_K).
-  - stage: S5b
-    verdict: minor
-    by: refereeB
-    hash: 493348d5d8f3
-    date: '2026-10-12'
-    model: claude-opus-5-5
-    evidence: 06-the-least-upper-bound-property.md:137 Step 3 and the Cauchy line use field and absolute-value
-      facts that have no @ref and are not in the ledger.
-  - stage: S7r
-    verdict: correct
-    by: rereferee
-    hash: e74619732108
-    date: '2026-10-12'
-    model: claude-opus-5-5
-    evidence: '06:102-150. Both earlier findings resolved. (1) Line 147 now cites fd1:prp-bounded-quantifier-negation
-      (a) for the step to ''exists a in A with not a <= l_K'', then totality for a > l_K. (2) In Step
-      3, (D/eps)^{-1} = eps/D now cites lem-field-fraction-rules (a). The Cauchy line cites prp-absolute-value-ordered-field
-      (b) and def-absolute-value-ordered-field, and the remaining field facts (D/2^k > 0, '
-- key: thm-reals-complete-ordered-field
-  kind: thm
-  file: 06-the-least-upper-bound-property.md
-  line: 166
-  hash: 4884a3a89724
-  verdicts:
-  - stage: S5a
-    verdict: correct
-    by: refereeA
-    hash: 4884a3a89724
-    date: '2026-10-12'
-    model: claude-opus-5-5
-    evidence: 06:166-170. The statement matches what the cited results give.
-  - stage: S5b
-    verdict: correct
-    by: refereeB
-    hash: 4884a3a89724
-    date: '2026-10-12'
-    model: claude-opus-5-5
-    evidence: 06:166-170 matches the blueprint (bp:203). Forward pointers at 06:206 are in STATUS rows
-      132-136, and F3.4's blueprint (ch06.md:11) promises 'exactly one order-preserving field isomorphism'.
-  - stage: S8
-    verdict: correct
-    by: seam
-    hash: 4884a3a89724
-    date: '2026-10-12'
-    model: claude-opus-5-5
-    evidence: 06:206 and index:5 send a promise to F4.1 ('Algebraic Preliminaries, Chapter 1 builds the
-      complex numbers on this R'). STATUS row 135 records that no fd4 blueprint exists, so there is no
-      blueprint showing F4.1 delivers it. [finding refuted by skeptics]
-- key: proof:thm-reals-complete-ordered-field
-  kind: proof
-  file: 06-the-least-upper-bound-property.md
-  line: 172
-  hash: 867b446535b6
-  verdicts:
-  - stage: S5a
-    verdict: correct
-    by: refereeA
-    hash: 867b446535b6
-    date: '2026-10-12'
-    model: claude-opus-5-5
-    evidence: 06:172-174. thm-reals-ordered-field, thm-constructed-reals-archimedean and thm-constructed-reals-cauchy-complete
-      exist and supply all three hypotheses of thm-cauchy-archimedean-lub. thm-rational-embedding (a)
-      covers + and ·, and (b) covers < and injectivity ('hence kappa is injective'). thm-constructed-rationals-dense
-      gives x<kappa(q)<y.
-  - stage: S5b
-    verdict: correct
-    by: refereeB
-    hash: 867b446535b6
-    date: '2026-10-12'
-    model: claude-opus-5-5
-    evidence: 06:173. thm-reals-ordered-field, constructed-reals-archimedean, cauchy-complete and thm-cauchy-archimedean-lub
-      are cited. thm-rational-embedding (a),(b) (injectivity in (b)) and thm-constructed-rationals-dense
-      match their statements (04:25, 04:105).
-- key: check:06-the-least-upper-bound-property:1
-  kind: check
-  file: 06-the-least-upper-bound-property.md
-  line: 178
-  hash: 29c104714eb5
-  verdicts:
-  - stage: S5a
-    verdict: correct
-    by: refereeA
-    hash: 29c104714eb5
-    date: '2026-10-12'
-    model: claude-opus-5-5
-    evidence: 06:178-190. Pairs (0,2),(1,2),(1,3/2),(5/4,3/2). 49/25<2<=9/4 and 5/4<7/5. The upper-bound
-      test c>0, c^2>=2 is justified by ring rules (g) with q>c>0. D=2 and u3-l3=1/4=2/8. The sidecar returns
-      ok.
-  - stage: S5b
-    verdict: correct
-    by: refereeB
-    hash: 29c104714eb5
-    date: '2026-10-12'
-    model: claude-opus-5-5
-    evidence: 06:178-190. The pairs (0,2),(1,2),(1,3/2),(5/4,3/2) and u3-l3=1/4=2/8 check out by hand.
-      The sidecar thm-reals-complete-ordered-field.py passes. The test 'c>0, c^2>=2 is an upper bound'
-      uses (g) correctly.
 - key: exr-the-least-upper-bound-property-a1
   kind: exr
-  file: 06-the-least-upper-bound-property.md
-  line: 216
-  hash: e91c9340cc3e
+  file: 05-the-least-upper-bound-property.md
+  line: 164
+  hash: 73c2c6d63f38
   verdicts:
   - stage: S5a
     verdict: correct
@@ -2743,8 +2397,8 @@ items:
       display. Parts (a)-(c) agree with Steps 1, 2 and 5 of the proof.'
 - key: exr-the-least-upper-bound-property-b1
   kind: exr
-  file: 06-the-least-upper-bound-property.md
-  line: 248
+  file: 05-the-least-upper-bound-property.md
+  line: 196
   hash: 582dbb0b8876
   verdicts:
   - stage: S5a
@@ -2774,8 +2428,8 @@ items:
       -A (a grep finds none), which STYLE §9 requires for every B task. [finding refuted by skeptics]'
 - key: exr-the-least-upper-bound-property-b2
   kind: exr
-  file: 06-the-least-upper-bound-property.md
-  line: 260
+  file: 05-the-least-upper-bound-property.md
+  line: 208
   hash: 2e727217d2b1
   verdicts:
   - stage: S5a
@@ -2804,9 +2458,9 @@ items:
       have supremum 0' example at 06:32.
 - key: exr-the-least-upper-bound-property-c1
   kind: exr
-  file: 06-the-least-upper-bound-property.md
-  line: 276
-  hash: 497fb7b885de
+  file: 05-the-least-upper-bound-property.md
+  line: 224
+  hash: 68303f5ed46f
   verdicts:
   - stage: S5a
     verdict: correct
@@ -2847,9 +2501,9 @@ items:
       in Step 2''). The Ar'
 - key: exr-the-least-upper-bound-property-c2
   kind: exr
-  file: 06-the-least-upper-bound-property.md
-  line: 302
-  hash: 2dbf4bb819a1
+  file: 05-the-least-upper-bound-property.md
+  line: 250
+  hash: 841a77c4710a
   verdicts:
   - stage: S5a
     verdict: minor
@@ -2887,8 +2541,8 @@ items:
       requires. I solved it myself: (b) gives 0 <= u_k - s < D/2^k and the squeeze (prp-limit-preserves-order-ordered-fie'
 - key: exr-the-least-upper-bound-property-r1
   kind: exr
-  file: 06-the-least-upper-bound-property.md
-  line: 360
+  file: 05-the-least-upper-bound-property.md
+  line: 308
   hash: 639508d8f080
   verdicts:
   - stage: S5a
@@ -2916,9 +2570,9 @@ items:
       names @lem-limit-bounded-away-ordered-field, whose second sentence is exactly this claim (ch04 04:29).
 - key: exr-the-least-upper-bound-property-r2
   kind: exr
-  file: 06-the-least-upper-bound-property.md
-  line: 372
-  hash: ee6b6954c677
+  file: 05-the-least-upper-bound-property.md
+  line: 320
+  hash: 87dc4965b1f7
   verdicts:
   - stage: S5a
     verdict: correct
@@ -2958,8 +2612,8 @@ items:
       The ''iff'' asked for follows from symmetry of ~, and the text says so. The inequality argum'
 - key: exr-the-least-upper-bound-property-r3
   kind: exr
-  file: 06-the-least-upper-bound-property.md
-  line: 386
+  file: 05-the-least-upper-bound-property.md
+  line: 334
   hash: 83f4c8446ad0
   verdicts:
   - stage: S5a
@@ -2993,9 +2647,9 @@ items:
       Positivity gives injectivity, and the cardinality step via fd2 is sound.
 - key: exr-the-least-upper-bound-property-r4
   kind: exr
-  file: 06-the-least-upper-bound-property.md
-  line: 421
-  hash: 4c342528aa50
+  file: 05-the-least-upper-bound-property.md
+  line: 369
+  hash: 651db23a8bd0
   verdicts:
   - stage: S5a
     verdict: minor

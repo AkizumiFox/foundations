@@ -548,3 +548,6 @@ Two blind referees (A: 15 findings, B: 16). Every finding is applied; none is re
 
 
 *Deviation (S3, 2026-10-25):* S4 found no mechanical failures beyond the spelling "labelled" (now "labeled"). Ledger init 1/2 gave no 'no longer in the source' entries for def-divides/def-prime. check_structure counts the whole file: 01 under 5,000, 02-07 above (6.4k-8.1k including exercises); main line to `## Exercises` is 2,766 / 4,662 / 4,665 / 4,267 / 4,887 / 4,620 / 4,729. Unrecorded promises rose 22 to 41, mostly pointers in the new index.
+
+
+*Note (fd3 re-cut, 2026-10-26):* the labels of old fd3 Chapter 3 cited above moved to fd5 Chapter 1 (atlas F3.5 → F5.1), unchanged; division with remainder stayed in fd3 as Section 2.5. No tool reads this blueprint.

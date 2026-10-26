@@ -385,7 +385,7 @@ So extensionality is a fact about sets, not about logic: a theory of sets must t
 ::: {.remark}
 [Looking ahead]
 
-*Number Systems: From \(\nN\) to \(\nR\)*, Chapter 1 takes extensionality as the first axiom of its set theory, (Z1), for exactly this reason: no derivation could supply it.
+*Axiomatic Set Theory* takes extensionality as the first axiom of its set theory, (Z1), for exactly this reason: no derivation could supply it.
 :::
 
 ## Exercises
@@ -897,7 +897,7 @@ exm-three-classes (claim): an instance of a tautology is valid | fold "Why an in
 exm-three-classes (claim): an instance of a tautology is derivable | prp-taut-skeleton (cited)
 exm-three-classes (claim): no mechanical procedure decides derivability (Church, Turing 1936) | stated without proof and marked so; nothing depends on it
 exm-three-classes (claim): extensionality's logical half is derivable; the two-dot reading | exm-extensionality-logical-half (F1.4 §07, cited); inline
-exm-three-classes (claim): (Z1) is the first axiom of the set theory of Number Systems, Chapter 1 | F3.1 §01 (ax-zf-fragment; Looking ahead, no reason rests on it)
+exm-three-classes (claim): (Z1) is the first axiom of Axiomatic Set Theory | ST.1 (ax-zf-fragment; Looking ahead, no reason rests on it)
 exr-counter-models-a1 (solution): (c) exr-models-c1's sentence; (d) the warning's example | exr-models-c1 (cited); inline
 exr-counter-models-a2 (solution): every part | inline; verify/ch07/exr-counter-models-a2.py
 exr-models-b1 (solution): the three finite counter-models | verify/ch07/exr-models-b1.py
