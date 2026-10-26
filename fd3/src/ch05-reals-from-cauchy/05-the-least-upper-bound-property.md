@@ -501,7 +501,7 @@ Let \( x \in \nR \). Prove that there is a **strictly increasing** sequence \( (
 
 *Start.* Let \( p \) be the integer part of \( x \), and \( q_0 \coloneqq p - 1 \). Then \( q_0 < p \le x \), so \( q_0 \in X \).
 
-*Step.* For \( k \in \nN \) and \( q \in X \), let \( L \coloneqq \max\{q, x - 1/(k + 1)\} \), a real number with \( L < x \). Let \( n \) be the integer part of \( 2/(x - L) \), plus \( 1 \): a positive integer (with \( p \) the integer part, \( 0 < 2/(x - L) < p + 1 \) gives \( p + 1 > 0 \), so \( p \ge 0 \) and \( n = p + 1 \ge 1 \)) with \( n > 2/(x - L) \), so \( 2/n < x - L \) (@prp-reciprocal-order (b)). Let \( m \) be the integer part of \( n x \), and put \( g(k, q) \coloneqq (m - 1)/n \). From \( m \le nx < m + 1 \), dividing by \( n \),
+*Step.* For \( k \in \nN \) and \( q \in X \), let \( L \coloneqq \max\{q, x - 1/(k + 1)\} \), a real number with \( L < x \). Let \( n \) be the integer part of \( 2/(x - L) \), plus \( 1 \): a positive integer (with \( r \) the integer part, \( 0 < 2/(x - L) < r + 1 \) gives \( r + 1 > 0 \), so \( r \ge 0 \) and \( n = r + 1 \ge 1 \)) with \( n > 2/(x - L) \), so \( 2/n < x - L \) (@prp-reciprocal-order (b)). Let \( m \) be the integer part of \( n x \), and put \( g(k, q) \coloneqq (m - 1)/n \). From \( m \le nx < m + 1 \), dividing by \( n \),
 \[
 L < x - \frac{2}{n} < \frac{m - 1}{n} \le x - \frac{1}{n} < x .
 \]

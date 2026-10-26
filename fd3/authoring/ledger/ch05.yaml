@@ -123,7 +123,7 @@ items:
   kind: exm
   file: 01-cauchy-sequences-of-rationals.md
   line: 203
-  hash: 8865f4eb802d
+  hash: ab84fdcfd221
   verdicts:
   - stage: S5a
     verdict: minor
@@ -533,7 +533,7 @@ items:
   kind: proof
   file: 02-the-field-of-reals.md
   line: 75
-  hash: 18a61f9c6667
+  hash: bebfde720674
   verdicts:
   - stage: S5a
     verdict: correct
@@ -572,6 +572,14 @@ items:
     model: claude-opus-5-5
     evidence: '02:77: (-a_n)-(-a''_n) = -a_n + a''_n = -(a_n-a''_n) follows from ring-algebra (a) (-(-x)=x)
       and (c) with distributivity. The gloss is informal but true.'
+  - stage: S8
+    verdict: correct
+    by: coordinator
+    hash: bebfde720674
+    date: '2026-10-26'
+    evidence: '02-the-field-of-reals.md:80 Negative step: -(-a''_n)=a''_n and ((-a_n)+a''_n)+(a_n-a''_n)=0
+      by field axioms, so (-a_n)+a''_n=-(a_n-a''_n) by uniqueness, prp-ring-algebra (a); wrong ''reversed''
+      gloss (F036) removed; Sum and Product steps unchanged and checked'
 - key: thm-reals-commutative-ring
   kind: thm
   file: 02-the-field-of-reals.md
@@ -598,7 +606,7 @@ items:
   kind: proof
   file: 02-the-field-of-reals.md
   line: 109
-  hash: a0816d9034c4
+  hash: 2c585bfdad1e
   verdicts:
   - stage: S5a
     verdict: correct
@@ -815,7 +823,7 @@ items:
   kind: exr
   file: 02-the-field-of-reals.md
   line: 190
-  hash: 735117cef6e3
+  hash: acead9f45083
   verdicts:
   - stage: S5a
     verdict: correct
@@ -897,7 +905,7 @@ items:
   kind: exr
   file: 02-the-field-of-reals.md
   line: 217
-  hash: cff2e178973e
+  hash: 630dd3213300
   verdicts:
   - stage: S5a
     verdict: correct
@@ -964,6 +972,13 @@ items:
     model: claude-opus-5-5
     evidence: The negative well-definedness argument is the same as in the proof and is correct. thm-well-defined-on-classes
       (a) is applied correctly.
+  - stage: S8
+    verdict: correct
+    by: coordinator
+    hash: 630dd3213300
+    date: '2026-10-26'
+    evidence: 02-the-field-of-reals.md:224 same uniqueness argument as the proof's Negative step replaces
+      the wrong gloss; Inverse and Differences steps checked against def-reals-operations
 - key: exr-the-field-of-reals-b2
   kind: exr
   file: 02-the-field-of-reals.md
@@ -1077,7 +1092,7 @@ items:
   kind: exr
   file: 02-the-field-of-reals.md
   line: 280
-  hash: a8ea4d670e1d
+  hash: bf1dc8b48d59
   verdicts:
   - stage: S5a
     verdict: correct
@@ -1164,7 +1179,7 @@ items:
   kind: exr
   file: 02-the-field-of-reals.md
   line: 315
-  hash: d3cb58dea465
+  hash: 11531123fb98
   verdicts:
   - stage: S5a
     verdict: correct
@@ -1337,7 +1352,7 @@ items:
   kind: proof
   file: 03-ordering-the-reals.md
   line: 121
-  hash: 417ad959e2a3
+  hash: 9e6331d13c5a
   verdicts:
   - stage: S5a
     verdict: correct
@@ -1395,7 +1410,7 @@ items:
   kind: exm
   file: 03-ordering-the-reals.md
   line: 129
-  hash: 263e511abbd9
+  hash: 63bdb4181c29
   verdicts:
   - stage: S5a
     verdict: minor
@@ -1463,7 +1478,7 @@ items:
   kind: proof
   file: 03-ordering-the-reals.md
   line: 166
-  hash: 5d06235eda74
+  hash: 9abcdb1aa854
   verdicts:
   - stage: S5a
     verdict: correct
@@ -1598,7 +1613,7 @@ items:
   kind: exm
   file: 03-ordering-the-reals.md
   line: 216
-  hash: cade90553a0f
+  hash: 7e9798804c55
   verdicts:
   - stage: S5a
     verdict: minor
@@ -1660,7 +1675,7 @@ items:
   kind: proof
   file: 03-ordering-the-reals.md
   line: 255
-  hash: 1cfb076820a2
+  hash: 523c241952cd
   verdicts:
   - stage: S5a
     verdict: correct
@@ -1750,7 +1765,7 @@ items:
   kind: exr
   file: 03-ordering-the-reals.md
   line: 279
-  hash: 5b0ba72d6e84
+  hash: ab806b8691ac
   verdicts:
   - stage: S5a
     verdict: correct
@@ -1836,7 +1851,7 @@ items:
   kind: exr
   file: 03-ordering-the-reals.md
   line: 310
-  hash: 48f024ef8bb2
+  hash: 295d95c60268
   verdicts:
   - stage: S5a
     verdict: correct
@@ -1909,6 +1924,13 @@ items:
     evidence: 'It adds b in C: (x_n) is in C by thm-sqrt2-cauchy-no-rational-limit, and a constant difference
       is handled by cauchy-algebra (a), (b). The margins 9/10 and 1/5 and the threshold 1 are unchanged
       and correct.'
+  - stage: S8
+    verdict: correct
+    by: coordinator
+    hash: 295d95c60268
+    date: '2026-10-26'
+    evidence: 03-ordering-the-reals.md:319 'Hence' changed to 'From 7/5 < x_n,' so b_n > 2/5 visibly follows
+      from 7/5 < x_n; margins 1/2, 2/5, 9/10, 1/5 and N=1 rechecked
 - key: exr-ordering-the-reals-b2
   kind: exr
   file: 03-ordering-the-reals.md
@@ -2327,6 +2349,14 @@ items:
     evidence: '02-naturals-and-archimedes.md:288 Chapter 4 promises that Chapter 5 uses @thm-rationals-dense-ordered-field
       ''only in an exercise''. That is now false: Chapter 5''s main-line proof of density is that theorem
       with F = R, and Steps 1, 4 and 5 of the completeness proof rest on it.'
+  - stage: S8
+    verdict: correct
+    by: coordinator
+    hash: 320feac11052
+    date: '2026-10-26'
+    evidence: 04-rationals-inside-the-reals.md:107-144 proof is thm-rationals-dense-ordered-field with
+      F = R, correct; the S8 seam minor concerns Chapter 4's stale promise (ch04 02:288), sent to shared-todo,
+      no Ch5 change needed
 - key: proof:thm-constructed-rationals-dense
   kind: proof
   file: 04-rationals-inside-the-reals.md
@@ -2440,7 +2470,7 @@ items:
   kind: exr
   file: 04-rationals-inside-the-reals.md
   line: 168
-  hash: 21de29ad13d4
+  hash: 3f42560c65a3
   verdicts:
   - stage: S5a
     verdict: minor
@@ -2665,7 +2695,7 @@ items:
   kind: exr
   file: 04-rationals-inside-the-reals.md
   line: 236
-  hash: d260e18c5ef6
+  hash: a9e789812dc0
   verdicts:
   - stage: S5a
     verdict: error
@@ -2940,6 +2970,13 @@ items:
     evidence: '05-the-least-upper-bound-property.md:28 Two results from *Sets and Functions* are proved
       again here without citing it: that a supremum is unique (05:28), and that a greatest element is
       the supremum (B3 (c) at 05:321).'
+  - stage: S8
+    verdict: correct
+    by: coordinator
+    hash: b66c519fe7e9
+    date: '2026-10-26'
+    evidence: 05-the-least-upper-bound-property.md:28 and :321 now cite the fd2:def-order-supremum remark
+      and fd2:prp-greatest-unique; seam minor already resolved; definition matches (S1)/(S2)
 - key: lem-power-two-bound
   kind: lem
   file: 05-the-least-upper-bound-property.md
@@ -3053,6 +3090,14 @@ items:
       '*Metric and Topological Spaces*, Chapter 2' names a volume that does not exist. '*Analytic Preliminaries*,
       Chapter 1' points to the wrong chapter under the approved series map. The same two sentences appear
       in index.md:5.
+  - stage: S8
+    verdict: correct
+    by: coordinator
+    hash: 4884a3a89724
+    date: '2026-10-26'
+    evidence: '05:235 and index.md:5 pointers checked against spec/08-map-v2: Analytic Preliminaries Ch5
+      = F4.1 Complex Numbers, AN1 Ch1 = AN1.1, AN1 Ch4 = AN1.2, AN1 Ch5 = AN2.2 completion; the nonexistent
+      MT volume pointer is gone'
 - key: proof:thm-reals-complete-ordered-field
   kind: proof
   file: 05-the-least-upper-bound-property.md
@@ -3125,7 +3170,7 @@ items:
   kind: check
   file: 05-the-least-upper-bound-property.md
   line: 172
-  hash: 3cf9d98bc3c1
+  hash: 8f038ff44265
   moved_from: check:06-the-least-upper-bound-property:1
   verdicts:
   - stage: S5a
@@ -3208,7 +3253,7 @@ items:
   kind: exm
   file: 05-the-least-upper-bound-property.md
   line: 210
-  hash: 32a80465e74c
+  hash: 76cbde5ae10e
   verdicts:
   - stage: S5a
     verdict: correct
@@ -3427,7 +3472,7 @@ items:
   kind: exr
   file: 05-the-least-upper-bound-property.md
   line: 302
-  hash: a1d14e4fde08
+  hash: 1e495640b531
   verdicts:
   - stage: S5a
     verdict: minor
@@ -3567,7 +3612,7 @@ items:
   kind: exr
   file: 05-the-least-upper-bound-property.md
   line: 377
-  hash: 49f9242f3c8d
+  hash: f5db0a585289
   verdicts:
   - stage: S5a
     verdict: minor
@@ -3754,7 +3799,7 @@ items:
   kind: exr
   file: 05-the-least-upper-bound-property.md
   line: 493
-  hash: 9611ee8cf7f3
+  hash: bc1737dd3296
   verdicts:
   - stage: S5a
     verdict: minor
@@ -3837,181 +3882,11 @@ items:
     evidence: The added justification that n >= 1 is correct (0 < 2/(x-L) < p+1 gives p >= 0), and the
       display L < x - 2/n < (m-1)/n <= x - 1/n < x checks out. However, it rebinds p ('with p the integer
       part') while p already names the integer part of x in *Start* (05:503). Rename it, e.g. p'.
-- key: prp-reals-absolute-value-termwise
-  kind: prp
-  file: 03-ordering-the-reals.md
-  line: 232
-  hash: 62c397ad7cc5
-  verdicts:
-  - stage: S5a
-    verdict: correct
-    by: refereeA
-    hash: 62c397ad7cc5
-    date: '2026-10-12'
-    model: claude-opus-5-5
-    evidence: '233-237: the statement is correct. The proof cites an unlabelled step inside another proof
-      (see the proof item). [finding refuted by skeptics]'
-  - stage: S5b
-    verdict: correct
-    by: refereeB
-    hash: 62c397ad7cc5
-    date: '2026-10-12'
-    model: claude-opus-5-5
-    evidence: '03:230-238: the statement is correct and matches its use at 04:188, 04:325.'
   - stage: S8
     verdict: correct
-    by: seam
-    hash: 62c397ad7cc5
-    date: '2026-10-12'
-    model: claude-opus-5-5
-    evidence: 03:247 credits 'a null sequence represents 0_R' to a step inside the proof of thm-reals-positive-cone
-      (i), not to a labelled result. [finding refuted by skeptics]
-  removed: true
-- key: proof:prp-reals-absolute-value-termwise
-  kind: proof
-  file: 03-ordering-the-reals.md
-  line: 246
-  hash: 1ce8fab6a5d7
-  verdicts:
-  - stage: S5a
-    verdict: minor
-    by: refereeA
-    hash: 7647efee73ae
-    date: '2026-10-12'
-    model: claude-opus-5-5
-    evidence: '245: membership is proved by reverse triangle (f), with the same thresholds. 249-255: the
-      three cases are correct, using exm-finite-change-equivalent (a) plus fd2:thm-classes-partition (b),
-      the order characterization at 172, and def-absolute-value. Line 247 cites ''proof of @thm-reals-positive-cone
-      (i)'' for ''a null sequence represents 0_R'', which is a step in a proof, not a citable result (the
-      draf'
-  - stage: S5b
-    verdict: minor
-    by: refereeB
-    hash: 7647efee73ae
-    date: '2026-10-12'
-    model: claude-opus-5-5
-    evidence: 03-ordering-the-reals.md:249 Wrong clause cited for ||a_n|| = |a_n|, and the ledger repeats
-      the error.
-  - stage: S7r
-    verdict: correct
-    by: rereferee
-    hash: 1ce8fab6a5d7
-    date: '2026-10-12'
-    model: claude-opus-5-5
-    evidence: ':249 now cites prp-absolute-value-ordered-field (a) (|y| >= 0) together with def-absolute-value-ordered-field
-      (|y| = y for y >= 0) for ||a_n|| = |a_n|, and ledger :438 matches. The S5b finding is resolved.
-      The rest re-checked. Membership uses (f), the reverse triangle inequality. Case 2 uses exm-finite-change-equivalent
-      (a): eventually equal implies ~. Signs come from :172 (x>0 iff x in P; x<0 iff'
-  removed: true
-- key: cor-rational-epsilon-suffices
-  kind: cor
-  file: 04-rationals-inside-the-reals.md
-  line: 154
-  hash: 8500202ed9b4
-  verdicts:
-  - stage: S5a
-    verdict: correct
-    by: refereeA
-    hash: 8500202ed9b4
-    date: '2026-10-12'
-    model: claude-opus-5-5
-    evidence: 04:150-157. (a) has the same shape as prp-archimedean-reciprocal; (b) matches def-sequence-limit-ordered-field
-      and def-cauchy-sequence-ordered-field.
-  - stage: S5b
-    verdict: correct
-    by: refereeB
-    hash: 8500202ed9b4
-    date: '2026-10-12'
-    model: claude-opus-5-5
-    evidence: '04:150-157: (a) follows from prp-archimedean-reciprocal (ch04 02:192) with thm-rational-embedding
-      (c), (d); (b) is well-posed'
-  removed: true
-- key: proof:cor-rational-epsilon-suffices
-  kind: proof
-  file: 04-rationals-inside-the-reals.md
-  line: 163
-  hash: 9967b825a168
-  verdicts:
-  - stage: S5a
-    verdict: correct
-    by: refereeA
-    hash: 9967b825a168
-    date: '2026-10-12'
-    model: claude-opus-5-5
-    evidence: 04:160-164. (a) uses Archimedes in R, prp-archimedean-reciprocal, n >= N >= 1 so n != 0,
-      and parts (c) and (d). (b, =>) uses kappa(1/n) > 0 by prp-reciprocal-order (a) and (b). (b, <=)
-      takes n := N from (a) and applies (O2).
-  - stage: S5b
-    verdict: correct
-    by: refereeB
-    hash: 9967b825a168
-    date: '2026-10-12'
-    model: claude-opus-5-5
-    evidence: '04:160-164: both directions checked; (O2) is transitivity (ch02 03:154)'
-  removed: true
-- key: thm-terms-converge-to-class
-  kind: thm
-  file: 04-rationals-inside-the-reals.md
-  line: 177
-  hash: b37c5da6c97b
-  verdicts:
-  - stage: S5a
-    verdict: correct
-    by: refereeA
-    hash: b37c5da6c97b
-    date: '2026-10-12'
-    model: claude-opus-5-5
-    evidence: 04:173-177.
-  - stage: S5b
-    verdict: correct
-    by: refereeB
-    hash: b37c5da6c97b
-    date: '2026-10-12'
-    model: claude-opus-5-5
-    evidence: 04:173-177
-  - stage: S8
-    verdict: correct
-    by: seam
-    hash: b37c5da6c97b
-    date: '2026-10-12'
-    model: claude-opus-5-5
-    evidence: 04:196 cites @prp-ordered-ring-rules (i) for 'x <= y < z gives x < z'. Clause (i) of F3.2
-      03:320 states only that <= is a total order with strict part <. The mixed transitivity is in its
-      proof, not its statement. [finding refuted by skeptics]
-  removed: true
-- key: proof:thm-terms-converge-to-class
-  kind: proof
-  file: 04-rationals-inside-the-reals.md
-  line: 187
-  hash: 0c4d2210b31c
-  verdicts:
-  - stage: S5a
-    verdict: minor
-    by: refereeA
-    hash: 5e25c55c2124
-    date: '2026-10-12'
-    model: claude-opus-5-5
-    evidence: 04-rationals-inside-the-reals.md:184 cor-rational-epsilon-suffices (b), applied with x_k
-      = kappa(a_k) and x = [a], requires |kappa(a_k) - [a]| < kappa(1/n). The proof establishes |[a] -
-      kappa(a_k)| < kappa(1/n) and never states that the two are equal.
-  - stage: S5b
-    verdict: correct
-    by: refereeB
-    hash: 5e25c55c2124
-    date: '2026-10-12'
-    model: claude-opus-5-5
-    evidence: '04:196 cites only prp-ordered-ring-rules (i) (total order, strict part <) to get x <= y
-      < z => x < z. Ledger 04:404 says ''with (O2)'', but the text omits (O2) (the drafter flagged this
-      in replies.md). The rest is correct: lem-termwise-order with N_0 = N, and prp-reals-absolute-value-termwise
-      [finding refuted by skeptics]'
-  - stage: S7r
-    verdict: correct
-    by: rereferee
-    hash: 0c4d2210b31c
-    date: '2026-10-12'
-    model: claude-opus-5-5
-    evidence: '04:186-198. The S5a finding is resolved: line 186 now derives |kappa(a_k)-[a]| = |[a]-kappa(a_k)|
-      from prp-absolute-value-ordered-field (b) (|-x|=|x|). The representative (a_m-a_k)_m is in C by
-      thm-cauchy-algebra-ordered-field (a), (b). prp-reals-absolute-value-termwise (03:230) and lem-termwise-order
-      (03:196, which has an N_0 clause) are applied as stated. 1/(2n)<1/n follows from prp-reciprocal-o'
-  removed: true
+    by: coordinator
+    hash: bc1737dd3296
+    date: '2026-10-26'
+    evidence: 05-the-least-upper-bound-property.md:504 integer part of 2/(x-L) renamed r (p stays the
+      integer part of x from Start, :502); r <= 2/(x-L) < r+1 with 2/(x-L) > 0 gives r >= 0, n = r+1 >=
+      1; display L < x-2/n < (m-1)/n <= x-1/n < x checked

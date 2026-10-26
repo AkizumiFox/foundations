@@ -316,7 +316,7 @@ Let \( a_n = 1 - 1/(n + 1) \) and \( b_n = x_n - 1 \), with \( (x_n) \) the Newt
 :::
 
 ::: {.solution}
-*The example.* For \( a \), Exercise A1 (a) gives \( \delta_a = 1/2 \), \( N_a = 1 \). For \( b \): \( x_n > 0 \) and \( x_n^2 > 2 \) for every \( n \) (@exm-newton-rationals-sqrt2), while \( (7/5)^2 = 49/25 < 2 \). Both \( 7/5 \) and \( x_n \) are \( \ge 0 \), so @prp-ordered-ring-rules (g) turns \( (7/5)^2 < x_n^2 \) into \( 7/5 < x_n \). Here \( b \) is in \( \sC \), as the difference of \( (x_n) \), which is in \( \sC \) by @thm-sqrt2-cauchy-no-rational-limit, and a constant (@thm-cauchy-algebra-ordered-field (a), (b)). Hence \( b_n = x_n - 1 > 2/5 \) for every \( n \), and \( \delta_b = 2/5 \), \( N_b = 0 \) work. The proof then gives the threshold \( N = \max\{1, 0\} = 1 \), the margin \( 1/2 + 2/5 = 9/10 \) for \( a + b \), and the margin \( (1/2)(2/5) = 1/5 \) for \( ab \).
+*The example.* For \( a \), Exercise A1 (a) gives \( \delta_a = 1/2 \), \( N_a = 1 \). For \( b \): \( x_n > 0 \) and \( x_n^2 > 2 \) for every \( n \) (@exm-newton-rationals-sqrt2), while \( (7/5)^2 = 49/25 < 2 \). Both \( 7/5 \) and \( x_n \) are \( \ge 0 \), so @prp-ordered-ring-rules (g) turns \( (7/5)^2 < x_n^2 \) into \( 7/5 < x_n \). Here \( b \) is in \( \sC \), as the difference of \( (x_n) \), which is in \( \sC \) by @thm-sqrt2-cauchy-no-rational-limit, and a constant (@thm-cauchy-algebra-ordered-field (a), (b)). From \( 7/5 < x_n \), \( b_n = x_n - 1 > 2/5 \) for every \( n \), and \( \delta_b = 2/5 \), \( N_b = 0 \) work. The proof then gives the threshold \( N = \max\{1, 0\} = 1 \), the margin \( 1/2 + 2/5 = 9/10 \) for \( a + b \), and the margin \( (1/2)(2/5) = 1/5 \) for \( ab \).
 :::
 
 ::: {#exr-ordering-the-reals-b2}

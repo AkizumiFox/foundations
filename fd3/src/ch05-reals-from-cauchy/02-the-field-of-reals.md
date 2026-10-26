@@ -77,7 +77,7 @@ Let \( a, a', b, b' \in \sC \) with \( a \sim a' \) and \( b \sim b' \); so \( a
 
 *Sum.* For every \( n \), \( (a_n + b_n) - (a'_n + b'_n) = (a_n - a'_n) + (b_n - b'_n) \), by the field axioms of \( \nQ \). So \( (a + b) - (a' + b') \) is the sum of two null sequences, which is null by @thm-limit-laws-ordered-field (a). Hence \( a + b \sim a' + b' \).
 
-*Negative.* For every \( n \), \( (-a_n) - (-a'_n) = (-a_n) + a'_n = -(a_n - a'_n) \) (@prp-ring-algebra (a), (c): the negative of a difference is the difference of the negatives, reversed). So \( (-a) - (-a') = -(a - a') \), which is null by @thm-limit-laws-ordered-field (b). Hence \( -a \sim -a' \).
+*Negative.* For every \( n \), \( (-a_n) - (-a'_n) = (-a_n) + a'_n = -(a_n - a'_n) \): the first step is \( -(-a'_n) = a'_n \), and for the second, \( \bigl( (-a_n) + a'_n \bigr) + (a_n - a'_n) = 0 \) by the field axioms of \( \nQ \), so \( (-a_n) + a'_n \) is the negative of \( a_n - a'_n \) by its uniqueness (both by @prp-ring-algebra (a)). So \( (-a) - (-a') = -(a - a') \), which is null by @thm-limit-laws-ordered-field (b). Hence \( -a \sim -a' \).
 
 *Product.* For every \( n \), by the field axioms of \( \nQ \),
 \[
@@ -221,7 +221,7 @@ Directly from @def-reals-operations and @thm-well-defined-on-classes, prove that
 :::
 
 ::: {.solution}
-*Well defined.* \( -a \in \sC \) for \( a \in \sC \) (@thm-cauchy-algebra-ordered-field (b)). Let \( a \sim a' \). For every \( n \), \( (-a_n) - (-a'_n) = (-a_n) + a'_n = -(a_n - a'_n) \) (@prp-ring-algebra (a), (c): the negative of a difference is the difference of the negatives, reversed), and \( (-(a_n - a'_n))_n \) is null because \( a - a' \) is (@thm-limit-laws-ordered-field (b)). So \( -a \sim -a' \), and @thm-well-defined-on-classes (a) gives a function \( \nR \to \nR \).
+*Well defined.* \( -a \in \sC \) for \( a \in \sC \) (@thm-cauchy-algebra-ordered-field (b)). Let \( a \sim a' \). For every \( n \), \( (-a_n) - (-a'_n) = (-a_n) + a'_n = -(a_n - a'_n) \): the first step is \( -(-a'_n) = a'_n \), and for the second, \( \bigl( (-a_n) + a'_n \bigr) + (a_n - a'_n) = 0 \) by the field axioms of \( \nQ \), so \( (-a_n) + a'_n \) is the negative of \( a_n - a'_n \) by its uniqueness (both by @prp-ring-algebra (a)), and \( (-(a_n - a'_n))_n \) is null because \( a - a' \) is (@thm-limit-laws-ordered-field (b)). So \( -a \sim -a' \), and @thm-well-defined-on-classes (a) gives a function \( \nR \to \nR \).
 
 *Inverse.* \( [a] + (-[a]) = [a] + [-a] = [a + (-a)] = [(a_n + (-a_n))_n] = [(0)_n] = 0_{\nR} \), by @def-reals-operations and (F4) in \( \nQ \) at each index.
 
@@ -293,7 +293,7 @@ State precisely what must be proved for the rule \( [a][b] \coloneqq [ab] \) to 
 &\le M \abs{b_m - b_n} + M \abs{a_m - a_n} ,
 \end{aligned}
 \]
-by @prp-absolute-value-ordered-field (b), (e) and @prp-ordered-field-halves (d). Let \( \varepsilon \in \nQ_{>0} \), and let \( N \) be a threshold with tolerance \( \varepsilon/(2M) \) for both \( a \) and \( b \). For \( m, n \ge N \), the right side is less than \( M \cdot \varepsilon/(2M) + M \cdot \varepsilon/(2M) = \varepsilon \) (@prp-ordered-ring-rules (b), (c), as \( M > 0 \)). So \( ab \in \sC \). 
+by @prp-absolute-value-ordered-field (b), (e) and @prp-ordered-field-halves (d). Let \( \varepsilon \in \nQ_{>0} \), and let \( N \) be a threshold with tolerance \( \varepsilon/(2M) \) for both \( a \) and \( b \). For \( m, n \ge N \), the right side is less than \( M \cdot \varepsilon/(2M) + M \cdot \varepsilon/(2M) = \varepsilon \) (@prp-ordered-ring-rules (b), (c), as \( M > 0 \)). So \( ab \in \sC \).
 
 *(ii) The add-and-subtract decomposition.* For every \( n \),
 \[
