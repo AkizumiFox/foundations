@@ -118,7 +118,7 @@ For (a), turn \( a^{-1} \) into a product we can sign: \( a^{-1} = a \cdot (a^{-
 :::
 
 ::: {.proof}
-(a) Let \( a > 0 \). Then \( a \ne 0 \), so \( a^{-1} \) exists, and \( a^{-1} \ne 0 \): otherwise \( 1 = a a^{-1} = a \cdot 0 = 0 \) (@prp-ring-algebra (b)), against \( 1 \ne 0 \) in a field. By @prp-ordered-ring-rules (e), \( (a^{-1})^2 > 0 \). Now
+(a) Let \( a > 0 \). Then \( a \ne 0 \), so \( a^{-1} \) exists, and \( a^{-1} \ne 0 \) by the Quick check after the uniqueness of inverses in Section 2.3. By @prp-ordered-ring-rules (e), \( (a^{-1})^2 > 0 \). Now
 \[
 a \cdot (a^{-1})^2 = (a a^{-1}) a^{-1} = 1 \cdot a^{-1} = a^{-1} ,
 \]
@@ -207,7 +207,7 @@ Let \( \varepsilon \in \nQ_{>0} \). By @prp-reciprocal-order (a), \( 1/\varepsil
 \[
 \frac{1}{n} < \frac{1}{1/\varepsilon} = \varepsilon ,
 \]
-where \( 1/(1/\varepsilon) = \varepsilon \) because \( \varepsilon \) is a multiplicative inverse of \( \varepsilon^{-1} \), and inverses are unique (if \( bc = 1 = bc' \), then \( c = c(bc') = (cb)c' = c' \)). If \( m \ge n \), then either \( m = n \), or \( 0 < n < m \) and \( 1/m < 1/n \) by @prp-reciprocal-order (b); in both cases \( 1/m \le 1/n < \varepsilon \).
+where \( 1/(1/\varepsilon) = \varepsilon \) is \( (a^{-1})^{-1} = a \) for \( a = \varepsilon \), the Quick check after the uniqueness of inverses in Section 2.3. If \( m \ge n \), then either \( m = n \), or \( 0 < n < m \) and \( 1/m < 1/n \) by @prp-reciprocal-order (b); in both cases \( 1/m \le 1/n < \varepsilon \).
 :::
 
 The order of the quantifiers is the point: \( \varepsilon \) is given first, and \( n \) is chosen after it and **depends on \( \varepsilon \)** (Exercise A1 (e) swaps them). Chapter 4 uses the corollary in exactly this form, with \( \varepsilon \in \nQ_{>0} \).
@@ -265,7 +265,7 @@ These questions are about the proof of @thm-rationals-ordered-field and about @c
 :::
 
 ::: {.solution}
-(a) Three times: in the well-definedness check, \( q, q' > 0 \) turn \( p > 0 \) into \( p' > 0 \); in (P1), \( ps > 0 \) and \( rq > 0 \) need \( s > 0 \) and \( q > 0 \); in (a), the difference \( r/s - p/q \) has denominator \( qs > 0 \), so its sign is the sign of its numerator. Without it, the test "numerator positive" is not well defined: in the non-example after @def-rational-order, \( (1, 1) \approx (-1, -1) \) gives two verdicts for one class, and, as the non-example after @def-rational-order shows, "\( ps < rq \)" gives \( 0 < 1 \) for \( (0, 1), (1, 1) \) but \( 0 < -1 \) for \( (0, 1), (-1, -1) \).
+(a) Three times: in the well-definedness check, \( q, q' > 0 \) turn \( p > 0 \) into \( p' > 0 \); in (P1), \( ps > 0 \) and \( rq > 0 \) need \( s > 0 \) and \( q > 0 \); in (a), the difference \( r/s - p/q \) has denominator \( qs > 0 \), so its sign is the sign of its numerator. Without it, the non-example after @def-rational-order shows both failures: \( (1, 1) \approx (-1, -1) \) gives two verdicts for one class, and "\( ps < rq \)" gives \( 0 < 1 \) for \( (0, 1), (1, 1) \) but \( 0 < -1 \) for \( (0, 1), (-1, -1) \).
 
 (b) "At least one" would allow a non-zero \( x \) with both \( x \) and \( -x \) positive, and then \( x < 0 \) and \( 0 < x \) at once, against (O1). The "at most one" half is what makes the order antisymmetric; @prp-order-from-positives uses it to get trichotomy (O1).
 
@@ -459,9 +459,16 @@ in \( \nQ \), where \( a/n = a \cdot n^{-1} \) and \( n \ne 0 \) in \( \nQ \). S
 \[
 qn \le (a \cdot n^{-1}) \cdot n = a < (q + 1)n = qn + n .
 \]
-Subtracting \( qn \) (that is, adding \( -qn \), (O3)) gives \( 0 \le a - qn < n \). Here \( r \coloneqq a - qn \) is an integer, and by @thm-rationals-ordered-field (b) the inequalities \( 0 \le r < n \), proved in \( \nQ \), hold in \( \nZ \). So \( a = qn + r \) with \( 0 \le r < n \).
+Subtracting \( qn \) (that is, adding \( -qn \), (O3)) gives \( 0 \le a - qn < n \). Here \( r \coloneqq a - qn \) is an integer, and by @thm-rationals-ordered-field (b) and @prp-integers-embed-rationals (\( j \) preserves sums and products, so \( j(a) - j(q)j(n) = j(a - qn) \)) the inequalities \( 0 \le r < n \), proved in \( \nQ \), hold in \( \nZ \). So \( a = qn + r \) with \( 0 \le r < n \).
 
 The hypothesis \( n > 0 \) is used when multiplying by \( n \): for \( n < 0 \), multiplication reverses inequalities (@prp-ordered-ring-rules (d)), and the same \( q \) would give \( qn \ge a > qn + n \), so \( n < r \le 0 \) instead. (This exercise is practice with a result already proved; nothing later rests on it.)
+
+**Marking scheme.** (10 points)
+- 2: states \( q \le a/n < q + 1 \) from @prp-rational-integer-part.
+- 3: multiplies by \( n > 0 \), treating both the strict inequality and the equality case.
+- 2: subtracts \( qn \) to get \( 0 \le a - qn < n \).
+- 1: moves the inequalities back to \( \nZ \) for the integer \( r = a - qn \).
+- 2: says where \( n > 0 \) is used, with the reversed inequalities when \( n < 0 \).
 :::
 
 <!-- dependency ledger
@@ -470,10 +477,11 @@ thm-rationals-ordered-field (proof): 0 + 0 = 0 and 0 * q = 0, p * 1 = p in Z | p
 thm-rationals-ordered-field (proof): s q = q s and the regrouping of rq + (-p)s as rq - ps | thm-integers-commutative-ring (F1)-(F9), def-commutative-ring-and-field (a - b := a + (-b))
 thm-rationals-ordered-field (claim): p/q = r/s is [(p, q)] = [(r, s)], and j(m) = m/1 | prp-integers-embed-rationals (a), (b) (cited)
 prp-reciprocal-order (proof): 1 != 0 in a field; a a^{-1} = 1; associativity and commutativity of products | def-commutative-ring-and-field (F7), (F8), (F1)-(F9)
+prp-reciprocal-order (proof): a^{-1} != 0 for a != 0 | the Quick check after the uniqueness of inverses (F3.2 §03, Section 2.3)
 prp-reciprocal-order (proof): 0 < a < b gives 0 < b | def-ordered-ring-and-field (O2)
 thm-rationals-archimedean (proof): N is closed under +, so p + 1 in N for p in N | prp-naturals-embed-integers (iota preserves +; + is a function on omega, def-omega-arithmetic)
 thm-rationals-archimedean (proof): 1 <= q and p > 0 give p * 1 <= p * q (equality case q = 1 separately) | prp-ordered-ring-rules (c), cited
-cor-rationals-archimedean-epsilon (proof): inverses in a field are unique, so 1/(1/eps) = eps | inline (one line)
+cor-rationals-archimedean-epsilon (proof): 1/(1/eps) = eps, i.e. (a^{-1})^{-1} = a | the Quick check after the uniqueness of inverses (F3.2 §03, Section 2.3)
 prp-rational-integer-part (proof): totality of <= on Q (not x < m gives m <= x) | prp-ordered-ring-rules (i), cited
 prp-rational-integer-part (proof): the order of Q restricted to Z is that of Z, so prp-integer-least-element applies to S | thm-rationals-ordered-field (b), cited in the paragraph after the proof
 prp-rational-integer-part (claim): floor(a/n) is the quotient of division with remainder | F3.2 §05 thm-integers-division-remainder (prose pointer, paid by B3, exr-ordered-field-of-rationals-b4)
@@ -492,4 +500,5 @@ exr-ordered-field-of-rationals-b5 (solution): (a) 1/(1/2) = 2, 2 - 1 = 1, 1 - 1/
 exr-ordered-field-of-rationals-b5 (solution): (c) the midpoint of 1 and x lies strictly between them | the midpoint paragraph of this section (inline, after prp-reciprocal-order)
 exr-ordered-field-of-rationals-b5 (solution): (b), (d) the larger of two integers; adding 1 preserves <= and < | prp-ordered-ring-rules (i), def-ordered-ring-and-field (O3)
 exr-division-with-remainder-c1 (solution): (a n^{-1}) n = a in Q | field laws of Q, (F5), (F8)
+exr-division-with-remainder-c1 (solution): the difference a - qn computed in Q is j of the one in Z | prp-integers-embed-rationals (cited)
 -->

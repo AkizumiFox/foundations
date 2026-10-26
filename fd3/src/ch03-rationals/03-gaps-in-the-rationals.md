@@ -6,7 +6,7 @@ The rationals now have everything Section 3.2 asked of them: they form an ordere
 
 Throughout, \( x^2 \coloneqq x \cdot x \), and \( 2 \coloneqq 1 + 1 \), \( 4 = 2 \cdot 2 \) and so on are the natural numbers of these names, read in \( \nQ \) through the identifications of Sections 2.2 and 3.1; their sums, products and comparisons may be computed in \( \nN \) (@prp-naturals-embed-integers, @prp-integers-embed-rationals, @thm-integers-ordered-ring (a), @thm-rationals-ordered-field (b)).
 
-*Logic and Proof*, Chapter 2 proved by parity that \( \sqrt 2 \) is irrational (@fd1:thm-sqrt2-irrational), for the school rationals. Parity is available for the constructed \( \nZ \) too (@cor-integers-even-odd), and Exercise R4 uses it. Here we take a route that needs only the order and the least elements of \( \nZ \), and that adapts to other non-squares (Exercise C2).
+*Logic and Proof*, Chapter 2 proved by parity that \( \sqrt 2 \) is irrational (@fd1:thm-sqrt2-irrational), for the school rationals. Parity is available for the constructed \( \nZ \) too (@cor-integers-even-odd), and Exercise C1 allows it. Here we take a route that needs only the order and the least elements of \( \nZ \), and that adapts to other non-squares (Exercise C2).
 
 ::: {#thm-no-rational-square-two}
 [No Rational Squares to Two]
@@ -146,7 +146,7 @@ In \( \nQ \), is \( 3/2 \) the supremum of \( \{ x \in \nQ : x^2 < 9/4 \} \)? Wh
 :::
 
 ::: {.solution}
-Yes. (S1): \( x > 3/2 > 0 \) gives \( x^2 > 9/4 \) (@prp-ordered-ring-rules (g)), so every element of the set is at most \( 3/2 \). (S2): if \( v < 3/2 \) bounded the set, let \( w \) be the larger of \( v \) and \( 1 \), and \( c \) the midpoint of \( w \) and \( 3/2 \); then \( 0 < c < 3/2 \), so \( c^2 < 9/4 \) and \( c \) is in the set, and \( c > w \ge v \). The step that fails is "\( s^2 \ne 2 \)": here \( s^2 = 9/4 \) is the target value, the third case of the trichotomy, which neither \( t \) nor \( u \) refutes.
+Yes. (S1): \( x > 3/2 > 0 \) gives \( x^2 > 9/4 \) (@prp-ordered-ring-rules (g)), so every element of the set is at most \( 3/2 \). (S2): if \( v < 3/2 \) bounded the set, let \( w \) be the larger of \( v \) and \( 1 \), and \( c \) the midpoint of \( w \) and \( 3/2 \) (Section 3.2); then \( 0 < c < 3/2 \), so \( c^2 < 9/4 \) and \( c \) is in the set, and \( c > w \ge v \). The step that fails is "\( s^2 \ne 2 \)": here \( s^2 = 9/4 \) is the target value, the third case of the trichotomy, which neither \( t \) nor \( u \) refutes.
 :::
 
 ## A rational sequence aimed at the gap
@@ -170,7 +170,7 @@ Compute \( x_0, \dots, x_3 \) and \( e_0, \dots, e_3 \).
 ::: {.solution}
 *The sequence.* For \( s \in \nQ_{>0} \), \( s^2 + 2 > 0 \) and \( 2s > 0 \), so \( t(s) \in \nQ_{>0} \) by (O4) and @prp-reciprocal-order (a): \( t \) maps \( \nQ_{>0} \) to \( \nQ_{>0} \). The recursion theorem (@fd2:thm-recursion, which holds on \( \nN \) by @cor-omega-identification (b)), with \( X = \nQ_{>0} \), starting value \( 2 \) and \( g(n, s) \coloneqq t(s) \), gives exactly one function \( n \mapsto x_n \) from \( \nN \) to \( \nQ_{>0} \) with \( x_0 = 2 \) and \( x_{n+1} = t(x_n) \). So every \( x_n \) is a positive rational, with no further argument.
 
-*(i).* We use @fd1:ax-induction (on \( \nN \) by @cor-omega-identification (b)) for \( P(n) \): \( e_n > 0 \). Base \( P(0) \): \( e_0 = 2^2 - 2 = 2 > 0 \). Step: suppose \( e_n > 0 \). By the first two identities of @eq-newton-identities with \( s = x_n \),
+*(i).* We use @fd1:ax-induction (on \( \nN \) by @cor-omega-identification (b)) for \( P(n) \): \( e_n > 0 \). Base \( P(0) \): \( e_0 = 2^2 - 2 = 2 > 0 \). Step: suppose \( e_n > 0 \). By the first identity of @eq-newton-identities with \( s = x_n \),
 \[
 e_{n+1} = t(x_n)^2 - 2 = \frac{e_n^2}{4x_n^2} .
 \]
@@ -178,7 +178,7 @@ Here \( e_n^2 > 0 \) by @prp-ordered-ring-rules (e), since \( e_n \ne 0 \), and 
 
 *(ii).* The equation was just shown, for every \( n \). By (i), \( x_n^2 > 2 \), so \( 4x_n^2 > 4 \cdot 2 = 8 \) by @prp-ordered-ring-rules (c). From \( 0 < 8 < 4x_n^2 \), @prp-reciprocal-order (b) gives \( 1/(4x_n^2) < 1/8 \), and multiplying by \( e_n^2 > 0 \) (@prp-ordered-ring-rules (c)) gives \( e_{n+1} < e_n^2/8 \); in particular \( e_{n+1} \le e_n^2/8 \).
 
-*(iii).* By the first two identities of @eq-newton-identities with \( s = x_n \), \( x_n - x_{n+1} = e_n/(2x_n) \), a product of the positive elements \( e_n \) and \( 1/(2x_n) \); so it is positive, and \( x_{n+1} < x_n \) by @prp-ordered-ring-rules (a).
+*(iii).* By the second identity of @eq-newton-identities with \( s = x_n \), \( x_n - x_{n+1} = e_n/(2x_n) \), a product of the positive elements \( e_n \) and \( 1/(2x_n) \); so it is positive, and \( x_{n+1} < x_n \) by @prp-ordered-ring-rules (a).
 
 *The first terms.* By the definition of \( t \),
 \[
@@ -347,7 +347,7 @@ By trichotomy one of the two cases holds, and each contradicts the choice of \( 
 
 **Marking scheme.** (10 points)
 - 4: no rational squares to \( 2 \): a least denominator, or another correct route (1); \( q < p < 2q \), or the parity step (2); the contradiction (1).
-- 1: shows that \( A \) is bounded above, with an explicit upper bound, and non-empty.
+- 1: shows \( 1 \in A \), so that a supremum \( s \) satisfies \( s \ge 1 > 0 \) (an upper bound of \( A \) is optional).
 - 2: the case \( s^2 < 2 \): an explicit element of \( A \) larger than \( s \), with both properties verified.
 - 2: the case \( s^2 > 2 \): an explicit smaller rational, verified to be an upper bound of \( A \).
 - 1: concludes by trichotomy, with \( s^2 = 2 \) excluded by the first part.
@@ -442,7 +442,7 @@ Show that the set \( \nQ \), as constructed in this chapter, is countable.
 :::
 
 ::: {.solution}
-The tools are the results on countable sets of *Sets and Functions*, Chapter 4, which apply to \( \nN \) by @cor-omega-identification.
+The tools are the results on countable sets of *Sets and Functions*, Chapter 4, which run on \( \nN \) by the citing rule after @cor-omega-identification (group (i) for @fd2:prp-countable-subset and @fd2:prp-countable-image; group (ii), citable in review exercises, for @fd2:thm-product-countable and @fd2:cor-product-countable (a)).
 
 *\( \nZ \) is countable.* \( \nN \times \nN \) is countable (@fd2:thm-product-countable). The map \( a \mapsto [a] \), from \( \nN \times \nN \) to \( \nZ = (\nN \times \nN)/{\sim} \), is surjective, since every class is the class of each of its elements (@fd2:def-quotient-set). By @fd2:prp-countable-image, \( \nZ \) is countable.
 
@@ -517,7 +517,7 @@ thm-rationals-gap-sqrt2 (claim): A+ has a supremum in R; AN1.1 reproves (b) | AN
 thm-rationals-gap-sqrt2 (claim): check 3/2 = sup { x : x^2 < 9/4 } | prp-ordered-ring-rules (g), (i); midpoint paragraph of F3.11 §02; verify/ch03/thm-rationals-gap-sqrt2.py
 exm-newton-rationals-sqrt2 (example): the sequence N -> Q_{>0} | fd2 thm-recursion via cor-omega-identification (b)
 exm-newton-rationals-sqrt2 (example): induction for (i) | fd1 ax-induction via cor-omega-identification (b)
-exm-newton-rationals-sqrt2 (example): (i), (iii) | eq-newton-identities (s in Q_{>0}), first two
+exm-newton-rationals-sqrt2 (example): (i), (iii) | eq-newton-identities (s in Q_{>0}), first for (i), second for (iii)
 exm-newton-rationals-sqrt2 (example): x_1..x_3, e_0..e_3 and products | verify/ch03/exm-newton-rationals-sqrt2.py
 exm-newton-rationals-sqrt2 (claim): decimals; limit picture; Cauchy, no rational limit | marked as orientation; Chapter 4 (F3.9 §06), pointer, nothing depends on it
 exm-newton-rationals-sqrt2 (claim): closing paragraph, R from rational sequences | Chapter 5 (F3.10), pointer
