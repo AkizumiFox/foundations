@@ -24,7 +24,7 @@ The definition is short, and so it promises little. Nothing in it says that \( 5
 
 ## Order and arithmetic
 
-Cancellation in sums, \( m + k = n + k \Rightarrow m = n \), needs no order at all, and it is what makes the \( j \) of the definition unique. With it, every clause below follows one pattern: translate \( m < n \) into an equation \( n = m + j \) with \( j \ne 0 \), compute with the laws of @thm-omega-arithmetic-laws, and translate back.
+Cancellation in sums, \( m + k = n + k \Rightarrow m = n \), needs no order at all, and it is what makes the \( j \) of the definition unique. With it, the order clauses (c) and (e) follow one pattern: translate \( m < n \) into an equation \( n = m + j \) with \( j \ne 0 \), compute with the laws of @thm-omega-arithmetic-laws, and translate back; the rest are inductions or successor arguments.
 
 ::: {#prp-omega-order-arithmetic}
 [Order and Arithmetic on \( \nN \)]
@@ -75,7 +75,7 @@ by @def-omega-arithmetic (a), which contradicts @cor-omega-successor-cancellatio
 \[
 (m + 1)k = mk + k = mk + (i + 1) = (mk + i) + 1 \ne 0
 \]
-by Law (e), @def-omega-arithmetic (a) and @cor-omega-successor-cancellation. So \( nk \ne 0 \), hence \( n \ne 0 \) (as \( 0 \cdot k = 0 \)), and \( n = n' + 1 \) for some \( n' \in \nN \). Then \( mk + k = (m + 1)k = nk = n'k + k \) by Law (e), so \( mk = n'k \) by (b), and \( m = n' \) by the hypothesis. Hence \( m + 1 = n \).
+by Law (e), @def-omega-arithmetic (a) and @cor-omega-successor-cancellation. So \( nk \ne 0 \), hence \( n \ne 0 \) (as \( 0 \cdot k = 0 \)), and \( n = n' + 1 \) for some \( n' \in \nN \) (@prp-peano-predecessor (a)). Then \( mk + k = (m + 1)k = nk = n'k + k \) by Law (e), so \( mk = n'k \) by (b), and \( m = n' \) by the hypothesis. Hence \( m + 1 = n \).
 
 (g) Let \( Q(i) \) be "\( P(b + i) \)", for \( i \in \nN \). \( Q(0) \) is \( P(b + 0) = P(b) \). If \( Q(i) \) holds, then \( b + i \ge b \) by (a), so the hypothesis gives \( P((b + i) + 1) \); and \( (b + i) + 1 = b + (i + 1) \) by @def-omega-arithmetic (a), so \( Q(i + 1) \) holds. By @thm-omega-induction (b), \( Q(i) \) holds for every \( i \in \nN \). Finally, if \( n \ge b \), then \( n = b + i \) for some \( i \) by (a), and \( P(n) \) is \( Q(i) \).
 :::
@@ -117,7 +117,7 @@ First \( \le \) is a partial order: reflexive (\( j = 0 \)), transitive (associa
 
 *\( \le \) is a partial order* (@fd2:def-partial-order). (PO1) \( n = n + 0 \), so \( n \le n \). (PO3) If \( m = k + i \) and \( n = m + j \), then \( n = k + (i + j) \) by Law (c), so \( k \le n \). (PO2) If \( n = m + j \) and \( m = n + i \), then \( m + 0 = m = m + (j + i) \) by Law (c), so \( j + i = 0 \) by the uniqueness in Order (a). By zero sums \( i = 0 \), and \( m = n + 0 = n \).
 
-*\( \le \) is total.* We induct on \( n \) for "for every \( m \in \nN \), \( m \le n \) or \( n \le m \)". For \( n = 0 \): \( 0 \le m \), since \( m = 0 + m \) by Law (a). Suppose the property holds for \( n \), and let \( m \in \nN \). If \( m \le n \), say \( n = m + j \), then \( n + 1 = m + (j + 1) \) by @def-omega-arithmetic (a), so \( m \le n + 1 \). If \( n \le m \), say \( m = n + j \), there are two cases. If \( j = 0 \), then \( m = n \), and \( n + 1 = m + 1 \) gives \( m \le n + 1 \). If \( j = j' + 1 \), then
+*\( \le \) is total.* We induct on \( n \) for "for every \( m \in \nN \), \( m \le n \) or \( n \le m \)". For \( n = 0 \): \( 0 \le m \), since \( m = 0 + m \) by Law (a). Suppose the property holds for \( n \), and let \( m \in \nN \). If \( m \le n \), say \( n = m + j \), then \( n + 1 = m + (j + 1) \) by @def-omega-arithmetic (a), so \( m \le n + 1 \). If \( n \le m \), say \( m = n + j \), there are two cases. If \( j = 0 \), then \( m = n \), and \( n + 1 = m + 1 \) gives \( m \le n + 1 \). Otherwise \( j \ne 0 \), so \( j = j' + 1 \) for some \( j' \in \nN \) (@prp-peano-predecessor (a)), and
 \[
 m = n + (j' + 1) = (n + j') + 1 = (n + 1) + j'
 \]
@@ -192,7 +192,7 @@ It is \( 4 \). First, \( 3 \cdot 3 = 9 \), \( 4 \cdot 4 = 16 \), and \( 9 < 10 <
 
 ## Powers and parity
 
-*Sets and Functions*, Chapter 4 counted with powers \( 2^m 3^n \) and with even and odd numbers, and took both from the real numbers and the integers. Here are the facts it used, proved on \( \nN \). Section 1.4 cites them in its rule for reading *Sets and Functions* on \( \nN \), and Chapter 4 uses them again.
+*Sets and Functions*, Chapter 4 counted with powers \( 2^m 3^n \) and with even and odd numbers, and took both from the real numbers and the integers. Here are the facts it used, proved on \( \nN \). Section 1.4 cites them in its rule for reading *Sets and Functions* on \( \nN \), and Chapter 4 of this volume uses them again.
 
 For \( b \in \nN \), the powers \( b^n \) (\( n \in \nN \)) are defined by @thm-omega-recursion with \( X = \nN \), \( a = 1 \) and \( g(n, x) = x \cdot b \):
 \[
@@ -262,7 +262,7 @@ If \( n = 2q = 2q + 0 \) and \( n = 2q' + 1 \), the pairs \( (q, 0) \) and \( (q
 :::
 :::
 
-Any other definition of powers on \( \nN \) by the same two equations, \( c(0) = 1 \) and \( c(n + 1) = c(n) \cdot b \), gives these powers, by the uniqueness half of @thm-omega-recursion. Section 1.4 and Chapter 4 use the proposition.
+Any other definition of powers on \( \nN \) by the same two equations, \( c(0) = 1 \) and \( c(n + 1) = c(n) \cdot b \), gives these powers, by the uniqueness half of @thm-omega-recursion. Section 1.4 and Chapter 4 of this volume use the proposition.
 
 ## Exercises
 
@@ -344,20 +344,20 @@ If that set is non-empty, @thm-omega-well-ordering gives it a least element \( a
 ::: {.solution}
 Let \( A \coloneqq \{ n \in \nN : P(n) \text{ fails} \} \), a set by @fd2:def-set-builder, and suppose, for a contradiction, that \( A \ne \emptyset \). By @thm-omega-well-ordering, \( A \) has a least element \( a \). Let \( k \in \nN \) with \( k < a \). If \( k \in A \), then \( a \le k \), and with \( k < a \) this gives \( k < k \) (by transitivity, or directly if \( a = k \)), contradicting irreflexivity (@thm-omega-order (a)). So \( k \notin A \), that is, \( P(k) \) holds. This holds for every \( k < a \), so the hypothesis gives \( P(a) \), contradicting \( a \in A \). Hence \( A = \emptyset \), and \( P(n) \) holds for every \( n \in \nN \).
 
-This is the statement of @fd1:thm-strong-induction, read on \( \nN \). There it was derived from @fd1:ax-induction directly; here the route goes through well-ordering, which was itself proved from @thm-omega-induction. The proof is the move of @fd2:exm-method-smallest-counterexample: a least failure, below which everything holds. As in *Logic and Proof*, the hypothesis at \( n = 0 \) is vacuous (no \( k < 0 \)), so it hands us \( P(0) \) outright.
+This is the statement of @fd1:thm-strong-induction, read on \( \nN \). There it was derived from @fd1:ax-induction directly; here the route goes through well-ordering, which was itself proved from @thm-omega-induction. The proof is the move of @fd2:exm-method-smallest-counterexample: a least failure, below which everything holds. As in *Logic and Proof*, the hypothesis at \( n = 0 \) is vacuous (no \( k < 0 \), since \( k \le 0 \) forces \( k = 0 \) by @thm-omega-order (c)), so it hands us \( P(0) \) outright.
 
 **Marking scheme.** (10 points)
 - 2: considers the set of failures (or argues by contradiction from a failure) and makes it a set.
 - 3: applies @thm-omega-well-ordering, with the set non-empty, to obtain a least failure \( a \).
 - 3: shows \( P(k) \) for every \( k < a \), using that \( a \) is least and the order facts.
 - 2: applies the hypothesis at \( a \) and reaches the contradiction.
-Fatal errors (0 for the step): citing @fd1:thm-strong-induction (a statement about the natural numbers of *Logic and Proof*, Chapter 4, not proved from @ax-natural-numbers) instead of proving the result; taking a least element of a set not shown to be non-empty. A route by @thm-omega-induction (b) on "\( P(k) \) for every \( k < n \)" earns the same points: 2 for the property, 3 for the base (vacuous) and the use of @thm-omega-order (b) in the step, 3 for the step, 2 for deducing \( P(n) \) from the property at \( n + 1 \).
+Fatal errors (0 for the step): citing @fd1:thm-strong-induction (a statement about the natural numbers of *Logic and Proof*, Chapter 4, not proved from @ax-natural-numbers) instead of proving the result; taking a least element of a set not shown to be non-empty. A route by @thm-omega-induction (b) on "\( P(k) \) for every \( k < n \)" earns the same points: 2 for the property \( Q(n) \): \"\( P(k) \) for every \( k < n \)\"; 2 for the vacuous base (no \( k < 0 \), by @thm-omega-order (c)); 4 for the step (\( P(n) \) from the hypothesis, then \( k < n + 1 \) gives \( k \le n \) by @thm-omega-order (b), so \( k < n \) or \( k = n \)); 2 for deducing \( P(n) \) from \( Q(n + 1) \).
 :::
 
 ::: {#exr-order-on-omega-c2}
 [C2: Find the error]
 
-Here is an attempted proof that any two natural numbers are comparable. Is the conclusion true? Is the proof correct? If not, give the first line that fails, the error, and a counterexample to the step.
+Here is an attempted proof that any two natural numbers are comparable. The proof is meant to replace the totality step in the proof of @thm-omega-order, so it may cite only results stated before that theorem. Is the conclusion true? Is the proof correct? If not, give the first line that fails, the error, and a counterexample to the step.
 
 > **Claim.** For all \( m, n \in \nN \): \( m \le n \) or \( n \le m \).
 >
@@ -371,7 +371,7 @@ The conclusion is **true**: it is the totality proved inside @thm-omega-order, a
 
 First, \( n \le m \) includes the case \( n = m \), where the conclusion \( n + 1 \le n \) is false (the Quick check after @prp-omega-order-arithmetic). This is a missing case, entry (N7) of @fd1:exm-not-allowed-catalogue. *Counterexample to the step:* \( m = n = 0 \). The hypothesis of line (3) holds, since \( 0 \le 0 \), and so does \( n \le m \); but \( n + 1 = 1 \le 0 \) is false, since \( 0 < 1 \) (@thm-omega-order (d)).
 
-Second, even when \( n < m \), the stated reason does not give \( n + 1 \le m \) without comparing \( m \) with \( n + 1 \): "nothing lies strictly between \( n \) and \( n + 1 \)" excludes \( n < m < n + 1 \), and one still needs that \( m < n + 1 \), \( m = n + 1 \) or \( n + 1 < m \). That is trichotomy, and @thm-omega-order (b), which the reason quotes, was itself proved from trichotomy, that is, from the claim being proved. So the line rests on a fact that is not available: entry (N9).
+Second, even when \( n < m \), the stated reason does not give \( n + 1 \le m \) without comparing \( m \) with \( n + 1 \): "nothing lies strictly between \( n \) and \( n + 1 \)" excludes \( n < m < n + 1 \), and one still needs that \( m < n + 1 \), \( m = n + 1 \) or \( n + 1 < m \). That is trichotomy, and @thm-omega-order (b), which the reason quotes, was itself proved from trichotomy, that is, from the claim being proved. So the line rests on a fact not available at that point of the proof of @thm-omega-order: entry (N9).
 
 *Repair.* Replace (5) by two cases. If \( n = m \), then \( m \le n + 1 \), since \( n + 1 = m + 1 \). If \( n < m \), then \( m = n + j \) with \( j \ne 0 \) (@prp-omega-order-arithmetic (a)), so \( j = j' + 1 \) for some \( j' \), and \( m = (n + 1) + j' \) by @def-omega-arithmetic (a) and @thm-omega-arithmetic-laws (a); this uses no comparison. Lines (1)–(4), (6) and (7) are correct; fixing \( m \) is harmless, since the step never needs the property for another \( m \).
 
@@ -379,7 +379,7 @@ Second, even when \( n < m \), the stated reason does not give \( n + 1 \le m \)
 - 2: says that the conclusion is true and that the proof is not correct.
 - 3: names line (5) as the failing line, with either defect: the case \( n = m \), or the hidden comparison of \( m \) with \( n + 1 \).
 - 2: classifies the error as (N7), a missing case, or as (N9), a line resting on an unavailable fact (the claim itself).
-- 2: gives a counterexample to the step, such as \( m = n = 0 \) (or, for an (N9) answer, names the circular citation of @thm-omega-order (b)).
+- 2: gives a counterexample to the step, such as \( m = n = 0 \) (a case with \( n = m \); the (N9) defect alone has none, since the conclusion of (5) is true when \( n < m \)).
 - 1: gives a repair through \( m = n + j \) with \( j \ne 0 \).
 Fatal errors (0 for the step): declaring the conclusion false; blaming line (1).
 :::

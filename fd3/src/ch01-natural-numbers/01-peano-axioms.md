@@ -95,7 +95,7 @@ We fix one Peano system for the rest of the volume and write it \( (\nN, 0, \mat
 - (P4) \( \mathrm{S}(m) = \mathrm{S}(n) \) implies \( m = n \);
 - (P5) every \( A \subseteq \nN \) that contains \( 0 \) and is closed under \( \mathrm{S} \) is \( \nN \).
 
-Why believe the assumption? If the school real numbers are trusted, the \( \nN \) of *Sets and Functions*, with start \( 0 \) and step \( x \mapsto x + 1 \), is a Peano system; Section 1.4 checks this. And *Axiomatic Set Theory* builds a Peano system from sets alone, assuming nothing about numbers; Section 1.5 describes how. Which Peano system we fix does not matter: Section 1.4 proves that any two are copies of each other, matched by exactly one bijection that sends start to start and step to step.
+Why believe the assumption? If the school real numbers are trusted, the \( \nN \) of *Sets and Functions*, with start \( 0 \) and step \( x \mapsto x + 1 \), is a Peano system; Section 1.4 checks this. And *Axiomatic Set Theory*, Chapter 1 builds a Peano system from sets alone, assuming nothing about numbers; Section 1.5 describes how. Which Peano system we fix does not matter: Section 1.4 proves that any two are copies of each other, matched by exactly one bijection that sends start to start and step to step.
 
 From here on, every fact about \( \nN \) is proved from @ax-natural-numbers. We do not borrow the order, the subtraction or the arithmetic of \( \nR \). Addition and multiplication are not defined yet; Section 1.2 defines them. Even the numeral \( 1 \) is not available until then, and the element after \( 0 \) is written \( \mathrm{S}(0) \).
 
@@ -108,7 +108,7 @@ Show that each of the following structures \( (M, e, s) \), with \( s \colon M \
 
 ::: {.enumerate options="label=(\roman*)"}
 1. \( M \coloneqq \{0\} \), \( e \coloneqq 0 \), \( s(0) \coloneqq 0 \).
-2. \( M \coloneqq \{0, 1\} \), \( e \coloneqq 0 \), \( s(0) \coloneqq 1 \), \( s(1) \coloneqq 1 \).
+2. \( M \coloneqq \{0, \mathrm{S}(0)\} \), \( e \coloneqq 0 \), \( s(0) \coloneqq \mathrm{S}(0) \), \( s(\mathrm{S}(0)) \coloneqq \mathrm{S}(0) \).
 3. (**Two copies of \( \nN \).**) Let \( a \ne b \) be two objects, \( M \coloneqq \nN \times \{a, b\} \), \( e \coloneqq (0, a) \), and \( s(n, t) \coloneqq (\mathrm{S}(n), t) \) for \( n \in \nN \) and \( t \in \{a, b\} \).
 :::
 :::
@@ -116,9 +116,9 @@ Show that each of the following structures \( (M, e, s) \), with \( s \colon M \
 ::: {.solution}
 (i) **Fails (P3)**: \( s(0) = 0 = e \). (P4) holds: \( M \) has one element, so two inputs with equal outputs are equal. (P5) holds: a subset of \( \{0\} \) containing \( e = 0 \) is \( \{0\} \).
 
-(ii) **Fails (P4)**: \( s(0) = s(1) \) with \( 0 \ne 1 \). (P3) holds: both values are \( 1 \ne 0 = e \). (P5) holds: if \( A \subseteq \{0, 1\} \) has \( 0 \) as an element and is closed under \( s \), then \( s(0) = 1 \in A \), so \( A = \{0, 1\} \).
+(ii) Here \( 0 \ne \mathrm{S}(0) \) by (P3) for \( \nN \), so \( M \) has two elements. **Fails (P4)**: \( s(0) = s(\mathrm{S}(0)) \) with \( 0 \ne \mathrm{S}(0) \). (P3) holds: both values are \( \mathrm{S}(0) \ne 0 = e \). (P5) holds: if \( A \subseteq M \) has \( 0 \) as an element and is closed under \( s \), then \( s(0) = \mathrm{S}(0) \in A \), so \( A = M \).
 
-(iii) First, \( s \) is a function \( M \to M \). Each element of \( M \) is \( (n, t) \) for exactly one \( n \in \nN \) and one \( t \in \{a, b\} \), by @fd2:def-ordered-pair, so the formula names one value; and \( (\mathrm{S}(n), t) \in M \), since \( \mathrm{S} \) maps \( \nN \) into \( \nN \).
+(iii) First, \( s \) is a function \( M \to M \). Each element of \( M \) is \( (n, t) \) for some \( n \in \nN \) and \( t \in \{a, b\} \) (@fd2:def-cartesian-product), and for exactly one such pair (@fd2:def-ordered-pair), so the formula names one value; and \( (\mathrm{S}(n), t) \in M \), since \( \mathrm{S} \) maps \( \nN \) into \( \nN \).
 
 **(P3) holds.** If \( s(n, t) = (0, a) \), then \( (\mathrm{S}(n), t) = (0, a) \) gives \( \mathrm{S}(n) = 0 \) (@fd2:def-ordered-pair), against (P3) for \( \nN \).
 
@@ -190,7 +190,7 @@ The base case holds: \( P(0) \) says \( 0 = 0 \). The step fails at \( n = 0 \):
 
 ## Every natural number except 0 has one predecessor
 
-*Sets and Functions* used that \( n - 1 \in \nN \) for every natural number \( n \ne 0 \) (@fd2:lem-naturals-arithmetic (c)), with the subtraction done in \( \nR \). Our \( \nN \) has no subtraction. Yet Sections 1.2–1.4 split, again and again, into the cases "\( n = 0 \)" and "\( n = \mathrm{S}(k) \) for some \( k \)". For that we need every \( n \ne 0 \) to be a successor, and of exactly one \( k \). The fact holds in every Peano system, and we prove it there, because Section 1.4 uses it for systems other than \( \nN \).
+*Sets and Functions* used that \( n - 1 \in \nN \) for every natural number \( n \ne 0 \) (@fd2:lem-naturals-arithmetic (c)), with the subtraction done in \( \nR \). Our \( \nN \) has no subtraction. Yet Sections 1.2–1.4 split, again and again, into the cases "\( n = 0 \)" and "\( n = \mathrm{S}(k) \) for some \( k \)". For that we need every \( n \ne 0 \) to be a successor, and of exactly one \( k \). The fact holds in every Peano system, and the proof is no harder there; Exercises B3 and C2 use it in that generality.
 
 ::: {#prp-peano-predecessor}
 [Predecessors in a Peano System]
@@ -206,7 +206,7 @@ Let \( (M, e, s) \) be a Peano system.
 ::: {.idea}
 [Scratch work]
 
-For (a), "at most one" is (P4): if \( s(y) = x = s(y') \), then \( y = y' \). "At least one" is the real question. Of the three clauses, only (P5) tells us anything about **all** elements of \( M \), and (P5) speaks of subsets. So we must choose a subset \( A \) of \( M \) and show \( A = M \). That choice is the new point. Inside an abstract \( M \) nothing can be computed: there is no subtraction that would produce \( y \) from \( x \).
+For (a), "at most one" is (P4): if \( s(y) = x = s(y') \), then \( y = y' \). "At least one" is the real question. Of the three clauses, only (P5) can prove that every element of \( M \) has a given property, and (P5) speaks of subsets. So we must choose a subset \( A \) of \( M \) and show \( A = M \). That choice is the new point. Inside an abstract \( M \) nothing can be computed: there is no subtraction that would produce \( y \) from \( x \).
 
 The first candidate is the set of values of \( s \), \( \{ z \in M : z = s(y) \text{ for some } y \in M \} \). It fails at the start, since \( e \) is not a value, by (P3). The cure is the shape of @fd2:lem-naturals-arithmetic (c): carry "\( z = e \) or …".
 
@@ -254,7 +254,7 @@ In structure (ii) of @exm-peano-axioms-independent, which element has two predec
 :::
 
 ::: {.solution}
-The element \( 1 \): \( s(0) = 1 = s(1) \). So "exactly one" in (a) fails at \( x = 1 \), because (P4) fails; and (b) fails at \( x = 1 \), since \( s(1) = 1 \).
+The element \( \mathrm{S}(0) \): \( s(0) = \mathrm{S}(0) = s(\mathrm{S}(0)) \). So "exactly one" in (a) fails at \( x = \mathrm{S}(0) \), because (P4) fails; and (b) fails at \( x = \mathrm{S}(0) \), since \( s(\mathrm{S}(0)) = \mathrm{S}(0) \).
 :::
 
 ::: {.check}
@@ -265,7 +265,7 @@ Does the loop (\( e = p \), \( s(p) = q \), \( s(q) = r \), \( s(r) = p \)) sati
 Yes. Every element, \( e \) included, has exactly one element stepping to it: \( r \) to \( p \), \( p \) to \( q \), \( q \) to \( r \). Yet the loop is not a Peano system, since it fails (P3). So the conclusion of (a) does not give back the axioms; Exercise C2 shows that it does not even together with (P3) and (P4).
 :::
 
-The next section uses (P3), (P4) and (P5) once each to prove that a function on \( \nN \) can be defined by recursion, and then defines addition and multiplication.
+The next section uses each of (P3), (P4) and (P5) to prove that a function on \( \nN \) can be defined by recursion, and then defines addition and multiplication.
 
 ## Exercises
 
@@ -321,7 +321,7 @@ An admissible order is (ii), (iv), (i), (v), (iii), (vi):
 
 > Let \( A \coloneqq \{ x \in M : s(s(x)) \ne x \} \). Then \( e \in A \), since \( s(s(e)) \) is a value of \( s \), so it is not \( e \), by (P3). Let \( x \in A \); we show \( s(x) \in A \). Suppose \( s(s(s(x))) = s(x) \). Then \( s(s(x)) = x \) by (P4), contradicting \( x \in A \). So \( s(s(s(x))) \ne s(x) \), that is, \( s(x) \in A \); by (P5), \( A = M \).
 
-Line (ii) comes first, since every other line mentions \( A \). Lines (i), (v), (iii), (vi) come in that order: (i) opens the closure step, (v) opens a supposition, (iii) applies (P4) to the inputs \( s(s(x)) \) and \( x \) and reaches a contradiction, and (vi) closes the supposition and applies (P5), which needs both \( e \in A \) and the closure step. So (iv) may stand anywhere after (ii) and before (vi); stating the base case first, as above, is the convention.
+Line (ii) comes first, since every other line mentions \( A \). Lines (i), (v), (iii), (vi) come in that order: (i) opens the closure step, (v) opens a supposition, (iii) applies (P4) to the inputs \( s(s(x)) \) and \( x \) and reaches a contradiction, and (vi) closes the supposition and applies (P5), which needs both \( e \in A \) and the closure step. So (iv) may stand right after (ii) or right after (i), before the supposition (v) opens; it must come before (vi), which uses it. Stating the base case first, as above, is the convention.
 
 Line (vii) cites a false fact: \( s \) is not surjective, since \( e \) is not a value, by (P3). Citing an unavailable "fact" is (N9) of @fd1:exm-not-allowed-catalogue. Line (viii) is an "and so on" with nothing behind it: "every element is reached from \( e \) by steps" is (P5) only if the step from \( x \) to \( s(x) \) is proved, and line (viii) never proves it. That is (N13).
 :::
@@ -422,7 +422,7 @@ For (d), try the set \( \nN \times \{a\} \).
 :::
 
 ::: {.solution}
-(a) Each element of \( M \) is \( (n, t) \) for exactly one \( n \in \nN \) and one \( t \in \{a, b, c\} \) (@fd2:def-ordered-pair). For \( t = a \) and \( t = b \), one formula applies and names one value. For \( t = c \), the first coordinate is \( 0 \) or \( \mathrm{S}(k) \) for some \( k \in \nN \), by @prp-peano-predecessor (a) for \( \nN \); never both, by (P3) for \( \nN \); and the \( k \) is unique. So exactly one line of the definition applies to each element, and it names one value. The values lie in \( M \), since \( \mathrm{S}(n), 0, k \in \nN \).
+(a) Each element of \( M \) is \( (n, t) \) for some \( n \in \nN \) and \( t \in \{a, b, c\} \) (@fd2:def-cartesian-product), and for exactly one such pair (@fd2:def-ordered-pair). For \( t = a \) and \( t = b \), one formula applies and names one value. For \( t = c \), the first coordinate is \( 0 \) or \( \mathrm{S}(k) \) for some \( k \in \nN \), by @prp-peano-predecessor (a) for \( \nN \); never both, by (P3) for \( \nN \); and the \( k \) is unique. So exactly one line of the definition applies to each element, and it names one value. The values lie in \( M \), since \( \mathrm{S}(n), 0, k \in \nN \).
 
 (b) Sort the values by their second coordinates (@fd2:def-ordered-pair):
 \[
@@ -451,7 +451,8 @@ ax-natural-numbers (claim): if the school reals are trusted, the N of Sets and F
 ax-natural-numbers (claim): Axiomatic Set Theory builds a Peano system from sets | ST.1, described in F3.1 §05 (prose pointer; nothing here depends on it)
 ax-natural-numbers (claim): any two Peano systems are matched by exactly one bijection respecting start and step | F3.1 §04 thm-peano-categoricity (prose pointer; nothing here depends on it)
 thm-omega-induction (claim): (the paragraph after it) n + 1 = S(n) once addition is defined | F3.1 §02 def-omega-arithmetic (c) (prose pointer; nothing in this section depends on it)
-exm-peano-axioms-independent (claim): (the paragraph after the picture) the sentences true in N hold in a structure with a non-standard element; a first-order schema speaks only of definable subsets | fd1:exm-non-standard-naturals (cited) and the Looking ahead closing F1.7 §06 (prose only)
+exm-peano-axioms-independent (claim): each element of N x {a, b} (and N x {a, b, c} in C2) is a pair (n, t) | fd2:def-cartesian-product (cited)
+exm-peano-axioms-independent (claim): (the paragraph after the picture) the sentences true in N hold in a structure with a non-standard element; a first-order schema speaks only of definable subsets | fd1:exm-non-standard-naturals (cited) and the Looking ahead closing F1.6 §06 (prose only)
 exr-peano-properties-b2 (solution): d reaches only every second number | prose description only; parity is defined in F3.1 §03 and nothing uses this sentence
 exr-peano-properties-c2 (solution): reading (k, c) as -(k + 1) | prose reading only; no integer arithmetic is used in any proof
 -->

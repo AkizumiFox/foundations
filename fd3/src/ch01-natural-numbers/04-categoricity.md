@@ -109,7 +109,7 @@ Functions \( f, g \colon \nN \to \nN \) satisfy \( f(0) = g(0) = 3 \), \( f(n + 
 :::
 
 ::: {.solution}
-Step (2): both satisfy the equations of @thm-omega-recursion with \( X = \nN \), \( a = 3 \) and \( g(n, x) = x + 2 \), so they are equal by its uniqueness. From the equations, \( f(1) = 3 + 2 = 5 \) and \( f(2) = 5 + 2 = 7 \).
+Step (2): both satisfy the equations of @thm-omega-recursion with \( X = \nN \), \( a = 3 \) and step \( h(n, x) = x + 2 \), so they are equal by its uniqueness. From the equations, \( f(1) = 3 + 2 = 5 \) and \( f(2) = 5 + 2 = 7 \).
 :::
 
 Step (2) also finds the map of the theorem without computing it. For the Peano system \( (\nN \setminus \{0\}, 1, \mathrm{S}) \) of the first subsection, the map \( n \mapsto \mathrm{S}(n) \) sends \( \nN \) into \( \nN \setminus \{0\} \) by (P3), sends \( 0 \) to \( \mathrm{S}(0) = 1 \), the starting point, and its value \( \mathrm{S}(\mathrm{S}(n)) \) at \( \mathrm{S}(n) \) is the step \( s = \mathrm{S} \) applied to its value \( \mathrm{S}(n) \) at \( n \). By the uniqueness in @thm-peano-categoricity (a), \( \varphi(n) = \mathrm{S}(n) = n + 1 \) (@def-omega-arithmetic (c)). In particular \( \varphi(3) = 4 \); step by step, \( \varphi(0) = 1 \), \( \varphi(1) = \mathrm{S}(1) = 2 \), \( \varphi(2) = 3 \), \( \varphi(3) = 4 \).
@@ -192,12 +192,12 @@ For \( (\nN \setminus \{0\}, 1, \mathrm{S}) \) and its map \( \varphi(n) = n + 1
 :::
 
 ::: {.solution}
-No. The proposition uses the \( \oplus \) of the target system, defined by \( x \oplus e = x \) with \( e = 1 \), not the \( + \) of \( \nN \). From its equations, \( 3 \oplus 1 = 3 \), \( 3 \oplus 2 = \mathrm{S}(3 \oplus 1) = 4 \), \( 3 \oplus 3 = 5 \) and \( 3 \oplus 4 = 6 \). So \( \varphi(2) \oplus \varphi(3) = 3 \oplus 4 = 6 = \varphi(5) \), as the proposition says.
+No. The proposition uses the \( \oplus \) of the target system, not the \( + \) of \( \nN \). That system carries one: \( x \oplus y \coloneqq x + j \) where \( y = \mathrm{S}(j) \) (@prp-peano-predecessor (a)) satisfies \( x \oplus 1 = x \) and \( x \oplus \mathrm{S}(y) = \mathrm{S}(x \oplus y) \) by @def-omega-arithmetic (a). From these equations, \( 3 \oplus 1 = 3 \), \( 3 \oplus 2 = \mathrm{S}(3 \oplus 1) = 4 \), \( 3 \oplus 3 = 5 \) and \( 3 \oplus 4 = 6 \). So \( \varphi(2) \oplus \varphi(3) = 3 \oplus 4 = 6 = \varphi(5) \), as the proposition says.
 :::
 
 ## Identifying the two sets of natural numbers
 
-Now apply all this to the natural numbers of *Sets and Functions*, Chapter 3. To keep them apart from \( \nN \), write \( \nN_{\nR} \) for them. Two different things are true. Clause (a) below is about \( \nN_{\nR} \), a subset of the familiar real numbers: it is a Peano system, so it is a copy of \( \nN \), and the proof uses the school arithmetic of \( \nR \). Clauses (b) and (c) are about \( \nN \) alone: the principles that *Logic and Proof*, Chapter 4, and *Sets and Functions*, Chapter 3 assumed or proved for natural numbers are theorems about \( \nN \), proved from @ax-natural-numbers.
+Now apply all this to the natural numbers of *Sets and Functions*, Chapter 3. To keep them apart from \( \nN \), write \( \nN_{\nR} \) for them. Two different things are true. Clause (a) below is about \( \nN_{\nR} \), a subset of the familiar real numbers: it is a Peano system, so it is a copy of \( \nN \), and the proof uses the school arithmetic of \( \nR \). Clauses (b) and (c) are about \( \nN \) alone: the principles that *Logic and Proof*, Chapter 4, and *Sets and Functions*, Chapter 3 assumed (induction, recursion, and the arithmetic of @fd2:lem-naturals-arithmetic) are theorems about \( \nN \), proved from @ax-natural-numbers.
 
 ::: {#cor-omega-identification}
 [Our ℕ and the ℕ of Sets and Functions]
@@ -348,11 +348,11 @@ Prove each true statement by @exm-method-build-by-recursion, and refute each fal
 &= \bigl(n \cdot n + (n + n)\bigr) + 1 = (n \cdot n + 2n) + 1 ,
 \end{aligned}
 \]
-by @def-omega-arithmetic (b), @thm-omega-arithmetic-laws (e), associativity (c) twice, and \( 2n = (1 + 1)n = 1 \cdot n + n = n + n \) by (e). So it is \( f \), by step (2) of the box.
+by @def-omega-arithmetic (b), @thm-omega-arithmetic-laws (e), associativity (c) three times, and \( 2n = (1 + 1)n = 1 \cdot n + n = n + n \) by (e). So it is \( f \), by step (2) of the box.
 
 (c) **False.** For any such \( f \), \( f(1) = f(0) \) with \( 1 \ne 0 \), so \( f \) is not injective.
 
-(d) **True.** Both satisfy the equations of @thm-omega-recursion with \( X = \nN \), \( a = f(0) \) and \( g(n, x) = x + n \); by its uniqueness (step (2) of the box), \( f = g \).
+(d) **True.** Both satisfy the equations of @thm-omega-recursion with \( X = \nN \), \( a = f(0) \) and step \( h(n, x) = x + n \); by its uniqueness (step (2) of the box), \( f = g \).
 
 (e) **False.** The bijection \( \tau \) of the first warning exchanges \( 1 \) and \( 2 \) and has \( \tau(0) = 0 \), but \( \tau(\mathrm{S}(0)) = 2 \ne 1 = \mathrm{S}(\tau(0)) \).
 :::

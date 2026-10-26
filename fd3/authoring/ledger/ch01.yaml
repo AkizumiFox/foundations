@@ -96,6 +96,14 @@ items:
     evidence: '01:86-100: Section 1.4 pointers match cor-omega-identification (a) and thm-peano-categoricity
       (c) (04:29-37); ''Section 1.2 defines them'' matches def-omega-arithmetic. The ST pointer at 01:98
       is a separate finding (key "").'
+  - stage: S7r
+    verdict: correct
+    by: rereferee
+    hash: e83fb7df2039
+    date: '2026-10-26'
+    model: claude-opus-5-5
+    evidence: '01:98: the pointer now reads ''*Axiomatic Set Theory*, Chapter 1 builds ...'', in the cross-volume
+      format. The ledger line at 01:451 matches. The STATUS promise row is still deferred (F005).'
 - key: exm-peano-axioms-independent
   kind: exm
   file: 01-peano-axioms.md
@@ -149,6 +157,24 @@ items:
     evidence: 01-peano-axioms.md:121 The set ℕ × {a, b} (and ℕ × {a, b, c} in C2, 01:395, 01:425) and
       the fact that each of its elements is a pair (n, t) are used with only @fd2:def-ordered-pair cited.
       The definition of the Cartesian product is not referenced and not ledgered.
+  - stage: S7r
+    verdict: correct
+    by: rereferee
+    hash: ca6af4134a28
+    date: '2026-10-26'
+    model: claude-opus-5-5
+    evidence: '01:111 and 01:119: (ii) is {0, S(0)}, with 0≠S(0) by (P3), and the (P3), (P4) and (P5)
+      checks are correct. 01:121 cites def-cartesian-product for existence and def-ordered-pair for uniqueness.
+      The sidecar runs ''ok''.'
+  - stage: S7r
+    verdict: correct
+    by: rereferee
+    hash: ca6af4134a28
+    date: '2026-10-26'
+    model: claude-opus-5-5
+    evidence: Structure (ii) is now on {0, S(0)}, with 0 ≠ S(0) by (P3) for N. The (P3), (P4) and (P5)
+      checks still hold. (iii) now cites fd2:def-cartesian-product for 'some pair' and fd2:def-ordered-pair
+      for uniqueness. The ledger line was added.
 - key: thm-omega-induction
   kind: thm
   file: 01-peano-axioms.md
@@ -258,6 +284,14 @@ items:
     date: '2026-10-26'
     model: claude-opus-5-5
     evidence: '01:183-189: the base case holds, and the step fails at n=0 by (P3).'
+  - stage: S7r
+    verdict: correct
+    by: rereferee
+    hash: bc662609d910
+    date: '2026-10-26'
+    model: claude-opus-5-5
+    evidence: The text that follows this check (the predecessor lead-in at 01:193) now gives a true reason,
+      supported by B3 (01:364) and C2.
 - key: prp-peano-predecessor
   kind: prp
   file: 01-peano-axioms.md
@@ -280,6 +314,22 @@ items:
     model: claude-opus-5-5
     evidence: '01-peano-axioms.md:193 False meta-claim: the proposition is stated for every Peano system
       ''because Section 1.4 uses it for systems other than ℕ''.'
+  - stage: S7r
+    verdict: correct
+    by: rereferee
+    hash: 48c962f12ba6
+    date: '2026-10-26'
+    model: claude-opus-5-5
+    evidence: '01:193: the motivation is now true. 01:209: the scratch work correctly says that only (P5)
+      can prove a universal property.'
+  - stage: S7r
+    verdict: correct
+    by: rereferee
+    hash: 48c962f12ba6
+    date: '2026-10-26'
+    model: claude-opus-5-5
+    evidence: The scratch work now says 'only (P5) can prove that every element has a given property'.
+      This is accurate, and the proof is unchanged.
 - key: proof:prp-peano-predecessor
   kind: proof
   file: 01-peano-axioms.md
@@ -303,6 +353,13 @@ items:
     model: claude-opus-5-5
     evidence: 01-peano-axioms.md:209 'Of the three clauses, only (P5) tells us anything about **all**
       elements of M' is false as written.
+  - stage: S7r
+    verdict: correct
+    by: rereferee
+    hash: 74de0dfd3416
+    date: '2026-10-26'
+    model: claude-opus-5-5
+    evidence: Its scratch-work claim (01:209) is now accurate. The proof itself is unchanged.
 - key: exm-method-closed-subset
   kind: exm
   file: 01-peano-axioms.md
@@ -346,6 +403,22 @@ items:
     date: '2026-10-26'
     model: claude-opus-5-5
     evidence: '01:252-258: in structure (ii) the only x≠e is 1, with s(0)=s(1)=1, and s(1)=1 breaks (b).'
+  - stage: S7r
+    verdict: correct
+    by: rereferee
+    hash: 35482f422e9b
+    date: '2026-10-26'
+    model: claude-opus-5-5
+    evidence: '01:257: S(0) has the two predecessors 0 and S(0). (a) fails there because (P4) fails, and
+      (b) fails because s(S(0))=S(0).'
+  - stage: S7r
+    verdict: correct
+    by: rereferee
+    hash: 35482f422e9b
+    date: '2026-10-26'
+    model: claude-opus-5-5
+    evidence: 'The solution was rewritten in terms of S(0): s(0) = S(0) = s(S(0)), so (a) and (b) fail
+      at S(0). This is consistent with the new structure (ii).'
 - key: check:01-peano-axioms:4
   kind: check
   file: 01-peano-axioms.md
@@ -368,6 +441,22 @@ items:
     model: claude-opus-5-5
     evidence: '01:260-266: the loop satisfies (a) but fails (P3); C2(e) does show that (a) together with
       (P3) and (P4) does not give (P5).'
+  - stage: S7r
+    verdict: correct
+    by: rereferee
+    hash: 349c734aae2e
+    date: '2026-10-26'
+    model: claude-opus-5-5
+    evidence: The closing sentence at 01:268 now reads 'uses each of (P3), (P4) and (P5)', which matches
+      02:64.
+  - stage: S7r
+    verdict: correct
+    by: rereferee
+    hash: 349c734aae2e
+    date: '2026-10-26'
+    model: claude-opus-5-5
+    evidence: The closing sentence now reads 'uses each of (P3), (P4) and (P5)', which avoids the overclaim
+      'once each'.
 - key: exr-peano-properties-a1
   kind: exr
   file: 01-peano-axioms.md
@@ -494,6 +583,22 @@ items:
     model: claude-opus-5-5
     evidence: '01-peano-axioms.md:321 The solution''s description of the admissible orders goes too far:
       (iv) cannot stand ''anywhere after (ii) and before (vi)''.'
+  - stage: S7r
+    verdict: correct
+    by: rereferee
+    hash: 29ab44e2ad50
+    date: '2026-10-26'
+    model: claude-opus-5-5
+    evidence: '01:324: the possible positions for (iv) are stated exactly. Both orders it allows give
+      valid proofs.'
+  - stage: S7r
+    verdict: correct
+    by: rereferee
+    hash: 29ab44e2ad50
+    date: '2026-10-26'
+    model: claude-opus-5-5
+    evidence: Order (ii),(iv),(i),(v),(iii),(vi) is valid. (iii) applies (P4) to s(s(x)) and x. The diagnoses
+      of (vii) as N9 and (viii) as N13 stand.
 - key: exr-peano-properties-b2
   kind: exr
   file: 01-peano-axioms.md
@@ -711,6 +816,23 @@ items:
     evidence: '01:392-450. Checked: s is well defined; (P3); (P4) by sorting rows; every x≠e is a value;
       ℕ×{a} defeats (P5); no fixed points. All verified on a 30-level window (chk.py). The marker ''used
       later'' is justified: 04-categoricity.md:125,396,406 cite it.'
+  - stage: S7r
+    verdict: correct
+    by: rereferee
+    hash: 349458df53d5
+    date: '2026-10-26'
+    model: claude-opus-5-5
+    evidence: '01:425: solution (a) cites def-cartesian-product for existence and def-ordered-pair for
+      uniqueness. The rest of the solution is unchanged and correct.'
+  - stage: S7r
+    verdict: correct
+    by: rereferee
+    hash: 349458df53d5
+    date: '2026-10-26'
+    model: claude-opus-5-5
+    evidence: (a) now cites def-cartesian-product for the existence of (n,t) and def-ordered-pair for
+      its uniqueness. The rest of the case analysis by prp-peano-predecessor (a) and (P3) is unchanged
+      and correct.
 - key: thm-omega-recursion
   kind: thm
   file: 02-recursion-and-arithmetic.md
@@ -1095,6 +1217,14 @@ items:
     model: claude-opus-5-5
     evidence: 02:178-192. Every clause is true, and the verify/ch01/thm-omega-arithmetic-laws.py sidecar
       asserts each
+  - stage: S7r
+    verdict: correct
+    by: rereferee
+    hash: ebb70cf8673a
+    date: '2026-10-26'
+    model: claude-opus-5-5
+    evidence: The surrounding prose (line 160 scope, line 194 'the identities of this section') is now
+      accurate. The statement is unchanged.
 - key: exm-method-induct-on-recursion-variable
   kind: exm
   file: 02-recursion-and-arithmetic.md
@@ -1118,6 +1248,22 @@ items:
     evidence: '02-recursion-and-arithmetic.md:199 The method box uses b^n (''the exponent of \( b^n \)''),
       but neither the letter b nor the power on N has been introduced. This breaks STYLE §9: ''No symbol
       is used before it is introduced''.'
+  - stage: S7r
+    verdict: correct
+    by: rereferee
+    hash: b97806d3b41b
+    date: '2026-10-26'
+    model: claude-opus-5-5
+    evidence: Step (1) of the template now names u^n with a correct pointer to fd2 Section 3.3 (def-power)
+      and to fd3 1.3 (b^n on N, line 197). No symbol is used before it is introduced.
+  - stage: S7r
+    verdict: correct
+    by: rereferee
+    hash: b97806d3b41b
+    date: '2026-10-26'
+    model: claude-opus-5-5
+    evidence: The template now says the exponent of u^n is from Sets and Functions §3.3 and on N in the
+      next section. The lead sentence is narrowed to 'the identities of this section'. Both are accurate.
 - key: proof:exm-method-induct-on-recursion-variable
   kind: proof
   file: 02-recursion-and-arithmetic.md
@@ -1143,6 +1289,14 @@ items:
     evidence: 02-recursion-and-arithmetic.md:207 Line 207 says 'Every clause is proved by @exm-method-induct-on-recursion-variable',
       and the page itself contradicts it. Lines 3 ('all of them by one move') and 194 ('every identity
       ... is proved with it') overstate the same way.
+  - stage: S7r
+    verdict: correct
+    by: rereferee
+    hash: 11a80f76c989
+    date: '2026-10-26'
+    model: claude-opus-5-5
+    evidence: The idea block now excludes the second half of (d) and the last part of (e). This matches
+      the second-reading text (line 236) and the table rows marked 'no induction'.
 - key: check:02-recursion-and-arithmetic:4
   kind: check
   file: 02-recursion-and-arithmetic.md
@@ -1164,6 +1318,22 @@ items:
     model: claude-opus-5-5
     evidence: 02-recursion-and-arithmetic.md:267 The solution says n is the recursion variable of the
       outer product on both sides. That is false for k(mn).
+  - stage: S7r
+    verdict: correct
+    by: rereferee
+    hash: 56726f201d6a
+    date: '2026-10-26'
+    model: claude-opus-5-5
+    evidence: New check on m(n+k)=mn+mk. Inducting on k is correct. The five-link step is valid with justifications
+      Def +, Def ·, IH, (c), Def ·, and (c) comes before (d). It no longer duplicates C2.
+  - stage: S7r
+    verdict: correct
+    by: rereferee
+    hash: 56726f201d6a
+    date: '2026-10-26'
+    model: claude-opus-5-5
+    evidence: 'Rechecked: m(n+(k+1)) = m((n+k)+1) [Def +] = m(n+k)+m [Def ·] = (mn+mk)+m [IH] = mn+(mk+m)
+      [(c)] = mn+m(k+1) [Def ·]. The induction is on k, and (c) is proved before (d), as the table requires.'
 - key: exr-recursion-and-arithmetic-a1
   kind: exr
   file: 02-recursion-and-arithmetic.md
@@ -1416,6 +1586,22 @@ items:
     model: claude-opus-5-5
     evidence: 02-recursion-and-arithmetic.md:392 Hint 2 of the exit check states the two lemmas exactly,
       which executes the key idea instead of giving a first line.
+  - stage: S7r
+    verdict: correct
+    by: rereferee
+    hash: f2546ae1b2b3
+    date: '2026-10-26'
+    model: claude-opus-5-5
+    evidence: Hint 2 gives the first line (0+n=n by induction on n, base from the first equation at m=0)
+      and does not state Lemma 2. It agrees with the full solution's Lemma 1.
+  - stage: S7r
+    verdict: correct
+    by: rereferee
+    hash: f2546ae1b2b3
+    date: '2026-10-26'
+    model: claude-opus-5-5
+    evidence: The hint now gives only the first lemma, 0+n = n, with base m+0 = m at m = 0, and leaves
+      the second lemma to the reader. The hint is correct.
 - key: exr-recursion-and-arithmetic-c2
   kind: exr
   file: 02-recursion-and-arithmetic.md
@@ -1629,6 +1815,14 @@ items:
     evidence: '03-order-and-well-ordering.md:27 Meta-claim ''With it, every clause below follows one pattern:
       translate m < n into an equation n = m + j with j != 0, compute ..., and translate back'' is false
       of the page.'
+  - stage: S7r
+    verdict: correct
+    by: rereferee
+    hash: 50a29843f15e
+    date: '2026-10-26'
+    model: claude-opus-5-5
+    evidence: The lead-in meta-claim at 03:27 is narrowed to clauses (c) and (e) and now agrees with the
+      proofs and the idea box.
 - key: proof:prp-omega-order-arithmetic
   kind: proof
   file: 03-order-and-well-ordering.md
@@ -1693,6 +1887,22 @@ items:
     evidence: '03:52-80 checked clause by clause: (b) induction on k with cor-omega-successor-cancellation;
       (c) Laws c,b,c; (d) predecessor + successor != 0; (e) Law (d) + (d); (f) induction on m via Law
       (e); (g) shift Q(i)=P(b+i). All steps valid'
+  - stage: S7r
+    verdict: correct
+    by: rereferee
+    hash: 73bf1d3331bd
+    date: '2026-10-26'
+    model: claude-opus-5-5
+    evidence: 03:78 now cites @prp-peano-predecessor (a) for n = n'+1 once n != 0 is established. The
+      rest of (f) is unchanged and valid.
+  - stage: S7r
+    verdict: correct
+    by: rereferee
+    hash: 73bf1d3331bd
+    date: '2026-10-26'
+    model: claude-opus-5-5
+    evidence: It now cites prp-peano-predecessor (a) for n = n'+1 when n ≠ 0. The cancellation of a non-zero
+      factor via (b) is unchanged.
 - key: check:03-order-and-well-ordering:1
   kind: check
   file: 03-order-and-well-ordering.md
@@ -1825,6 +2035,23 @@ items:
     evidence: 03-order-and-well-ordering.md:120 In the totality step, splitting into 'j = 0' and 'j =
       j' + 1' uses the fact that a non-zero natural number is a successor. There is no @ref for it, and
       the ledger does not list it.
+  - stage: S7r
+    verdict: correct
+    by: rereferee
+    hash: 8f60d7267845
+    date: '2026-10-26'
+    model: claude-opus-5-5
+    evidence: In the totality step at 03:120, the case split is now j = 0 or j != 0, with the predecessor
+      from @prp-peano-predecessor (a). The computation m = (n+1)+j' uses @def-omega-arithmetic (a) and
+      Law (a). Everything else is unchanged and correct.
+  - stage: S7r
+    verdict: correct
+    by: rereferee
+    hash: 8f60d7267845
+    date: '2026-10-26'
+    model: claude-opus-5-5
+    evidence: The totality induction is unchanged in substance. The base is 0 ≤ m by Law (a). The step's
+      case split stands.
 - key: check:03-order-and-well-ordering:2
   kind: check
   file: 03-order-and-well-ordering.md
@@ -2307,6 +2534,23 @@ items:
     model: claude-opus-5-5
     evidence: 03-order-and-well-ordering.md:354 The point split for the alternative induction route counts
       the inductive step twice.
+  - stage: S7r
+    verdict: correct
+    by: rereferee
+    hash: f1fa333eb020
+    date: '2026-10-26'
+    model: claude-opus-5-5
+    evidence: 03:347 gives a valid reason for 'no k < 0' via @thm-omega-order (c). The alternative-route
+      scheme at 03:354 sums to 10, does not double-count, and its step is correct via @thm-omega-order
+      (b).
+  - stage: S7r
+    verdict: correct
+    by: rereferee
+    hash: f1fa333eb020
+    date: '2026-10-26'
+    model: claude-opus-5-5
+    evidence: The smallest-counterexample route and the fatal-error rubric are unchanged in substance.
+      The citation wording was adjusted.
 - key: exr-order-on-omega-c2
   kind: exr
   file: 03-order-and-well-ordering.md
@@ -2383,6 +2627,25 @@ items:
     evidence: 03-order-and-well-ordering.md:374 The solution's second defect of line (5), N9 circularity,
       is a defect only if the attempted proof must avoid thm-omega-order, and the exercise never says
       so. The marking scheme still rewards that route at full value.
+  - stage: S7r
+    verdict: correct
+    by: rereferee
+    hash: 0e159434b8d6
+    date: '2026-10-26'
+    model: claude-opus-5-5
+    evidence: 'The problem frame (03:360) makes the (N9) defect real: (b) is not available inside the
+      proof of the theorem. The (N7) defect with counterexample m = n = 0 is correct. The repair uses
+      only earlier results. In the scheme (03:378-384), the counterexample points now require an n = m
+      case.'
+  - stage: S7r
+    verdict: correct
+    by: rereferee
+    hash: 0e159434b8d6
+    date: '2026-10-26'
+    model: claude-opus-5-5
+    evidence: The statement now restricts citations to results stated before thm-omega-order. The rubric
+      now says the N9 defect alone has no counterexample, because the conclusion of (5) is true when n
+      < m. This is consistent with the first defect, the counterexample m = n = 0.
 - key: thm-peano-categoricity
   kind: thm
   file: 04-categoricity.md
@@ -2539,6 +2802,21 @@ items:
     model: claude-opus-5-5
     evidence: '04-categoricity.md:112 The letter g has two meanings in one solution: it is one of the
       two functions being compared, and it is also the recursion step of thm-omega-recursion.'
+  - stage: S7r
+    verdict: correct
+    by: rereferee
+    hash: f8885c4e9e30
+    date: '2026-10-26'
+    model: claude-opus-5-5
+    evidence: Solution at 04:112 now uses step h(n,x)=x+2 for thm-omega-recursion. Uniqueness gives f=g,
+      and f(1)=5, f(2)=7 are correct.
+  - stage: S7r
+    verdict: correct
+    by: rereferee
+    hash: f8885c4e9e30
+    date: '2026-10-26'
+    model: claude-opus-5-5
+    evidence: The step was renamed h(n,x) = x+2 to avoid clashing with g. f(1) = 5 and f(2) = 7 are right.
 - key: check:04-categoricity:2
   kind: check
   file: 04-categoricity.md
@@ -2673,6 +2951,22 @@ items:
     model: claude-opus-5-5
     evidence: '04:191-196: with e=1, x(+)y = x+y-1, so 3(+)4 = 6 = phi(5); the four steps are computed
       correctly'
+  - stage: S7r
+    verdict: minor
+    by: rereferee
+    hash: e4f4daef8fc7
+    date: '2026-10-26'
+    model: claude-opus-5-5
+    evidence: The witness x ⊕ y := x + j (y=S(j)) satisfies both equations, and 3⊕4=6=φ(5) is right. The
+      solution never says that x + j lies in N\{0}, which ⊕ needs in order to be an operation on M.
+  - stage: S7r
+    verdict: correct
+    by: rereferee
+    hash: e4f4daef8fc7
+    date: '2026-10-26'
+    model: claude-opus-5-5
+    evidence: 'Rechecked: x⊕y := x+j with y = S(j) gives x⊕1 = x+0 = x and x⊕S(y) = x+S(j) = S(x+j) =
+      S(x⊕y). Then 3⊕4 = 3+3 = 6, φ(2) = 3, φ(3) = 4 and φ(5) = 6.'
 - key: cor-omega-identification
   kind: cor
   file: 04-categoricity.md
@@ -2737,6 +3031,14 @@ items:
       (c) are said to make 'the principles that Logic and Proof, Chapter 4, and Sets and Functions, Chapter
       3 assumed or proved for natural numbers' into theorems about N, but they cover only induction, recursion,
       induction from a base, and fd2:lem-naturals-arithmetic.
+  - stage: S7r
+    verdict: minor
+    by: rereferee
+    hash: 6abcb8ff2426
+    date: '2026-10-26'
+    model: claude-opus-5-5
+    evidence: The statement is unchanged and correct. The lead-in at 04:200 calls recursion and fd2:lem-naturals-arithmetic
+      'assumed', but Sets and Functions, Chapter 3 proves them (see F019).
 - key: proof:cor-omega-identification
   kind: proof
   file: 04-categoricity.md
@@ -3005,6 +3307,24 @@ items:
       (e) with m = n, and 2n = 1*n + n = n + n is Law (e) as well (02:188). My script checks f(n) = n^2
       for n <= 50. (e) uses tau from the warning at 04:22. Worked examples: the Quick check at 04:108
       and the warning.'
+  - stage: S7r
+    verdict: correct
+    by: rereferee
+    hash: ad1f2383df10
+    date: '2026-10-26'
+    model: claude-opus-5-5
+    evidence: '(b): the justification ''associativity (c) three times'' matches the derivation. (d): the
+      step is renamed h, and f=g follows from the uniqueness in thm-omega-recursion. (a), (c), (e) are
+      unchanged and correct.'
+  - stage: S7r
+    verdict: minor
+    by: rereferee
+    hash: ad1f2383df10
+    date: '2026-10-26'
+    model: claude-opus-5-5
+    evidence: '(b): (n+1)(n+1) = (n+1)n+(n+1) [Def (b)] = (n·n+n)+(n+1) [(e)] = ((n·n+n)+n)+1 [(c)] =
+      (n·n+(n+n))+1 [(c)]. That is two uses of associativity, but the text at 04:349 now says ''three
+      times''; the old ''twice'' was right. (d) was renamed to step h, which is fine.'
 - key: exr-categoricity-c1
   kind: exr
   file: 04-categoricity.md
@@ -3245,6 +3565,22 @@ items:
     evidence: 05-where-n-comes-from.md:129 Part (a) says the numeral n has n elements because its elements
       'are different numerals'. It never says why 0,...,4 are pairwise different, and (c) leans on (a)
       for that count.
+  - stage: S7r
+    verdict: correct
+    by: rereferee
+    hash: 83b488f9db01
+    date: '2026-10-26'
+    model: claude-opus-5-5
+    evidence: (a) now proves the counts step by step (k ∉ k since its elements are earlier numerals with
+      fewer elements), so 0..5 are distinct. (b) and (c) are unchanged and correct.
+  - stage: S7r
+    verdict: correct
+    by: rereferee
+    hash: 83b488f9db01
+    date: '2026-10-26'
+    model: claude-opus-5-5
+    evidence: (a) now explains why S(k) = k ∪ {k} adds exactly one element (k ∉ k). The argument is informal,
+      but the section is declared proof-free and the answer is correct.
 - key: exr-where-n-comes-from-b2
   kind: exr
   file: 05-where-n-comes-from.md
@@ -3278,6 +3614,22 @@ items:
     evidence: 05:136-148. My script confirms (0,1) = {1,2}, (1,0) = {{1},2}, (1,1) = {{1}}, that 1 is
       in (0,1) but not in (1,0), and the sizes 2 and 1. The direct argument is sound. The worked example
       is the check at 05:84.
+  - stage: S7r
+    verdict: correct
+    by: rereferee
+    hash: ac1d5a94b6d5
+    date: '2026-10-26'
+    model: claude-opus-5-5
+    evidence: 'Pair computations are unchanged. The parenthetical now rules out every numeral: not ∅,
+      and a nonzero numeral contains 0 while {1,2} does not.'
+  - stage: S7r
+    verdict: correct
+    by: rereferee
+    hash: ac1d5a94b6d5
+    date: '2026-10-26'
+    model: claude-opus-5-5
+    evidence: 'It now proves that {1,2} is not a numeral: it is not ∅, and it lacks 0, which every other
+      numeral contains, since 1 and 2 are non-empty. This is correct.'
 - key: exr-where-n-comes-from-c1
   kind: exr
   file: 05-where-n-comes-from.md
@@ -3313,6 +3665,22 @@ items:
     evidence: '05:152-170. I agree: P4 holds in all three; P3 fails only in R (s(-1) = 0); P5 fails in
       all three, witnessed by the subset N_R (missing -1, 1/2, 1/2). Least set: T n N_R is closed, so
       by the set form of induction N_R is contained in T. Complete.'
+  - stage: S7r
+    verdict: correct
+    by: rereferee
+    hash: f11accc6b5b8
+    date: '2026-10-26'
+    model: claude-opus-5-5
+    evidence: P3, P4 and P5 are justified with fd2:lem-naturals-arithmetic (a) and (e) (n=0) cited at
+      fd2 ch03-01:48,52. The leastness part is unchanged, and the ledger lines match.
+  - stage: S7r
+    verdict: correct
+    by: rereferee
+    hash: f11accc6b5b8
+    date: '2026-10-26'
+    model: claude-opus-5-5
+    evidence: -1 ∉ N_R and -1 ∉ [0,∞) follow from fd2:lem-naturals-arithmetic (a), n ≥ 0. Also n+1/2 ≥
+      1/2 > -1. 1/2 ∉ N_R follows from (e) with n = 0. The ledger lines were updated.
 - key: exr-categoricity-r1
   kind: exr
   file: 05-where-n-comes-from.md
@@ -3383,6 +3751,24 @@ items:
     evidence: 05-where-n-comes-from.md:177 R1 asks for exactly the computation the reader already did
       in a Quick check in fd2. This breaks the STYLE rule that an R item applies its source method to
       data the reader has not seen.
+  - stage: S7r
+    verdict: correct
+    by: rereferee
+    hash: 5fce876eef83
+    date: '2026-10-26'
+    model: claude-opus-5-5
+    evidence: 'Bijection S|A: N∖{0} → N∖{0,1} via P3, P4 and prp-peano-predecessor (a); proper subset
+      since 1 ∈ A∖B; then fd2:thm-finite-no-proper-copy (group (i), cor-omega-identification). Trivial:
+      the first ledger line still says ''read on N'' while the solution says ''on subsets of N''.'
+  - stage: S7r
+    verdict: correct
+    by: rereferee
+    hash: 5fce876eef83
+    date: '2026-10-26'
+    model: claude-opus-5-5
+    evidence: The statement is now 'N∖{0} is infinite'. S restricted to A = N∖{0} maps into B = N∖{0,1}
+      by (P3) and (P4), is injective by (P4), and is onto by prp-peano-predecessor (a) with k ≠ 0. B ⊊
+      A because 1 ∈ A∖B. thm-finite-no-proper-copy then gives that A is infinite. The ledger lines match.
 - key: exr-categoricity-r2
   kind: exr
   file: 05-where-n-comes-from.md
@@ -3443,6 +3829,24 @@ items:
     model: claude-opus-5-5
     evidence: 05-where-n-comes-from.md:187 R2 repeats an fd2 Quick check almost word for word (the successor
       map, does it have a left or a right inverse). This breaks the same 'data it has not seen' rule.
+  - stage: S7r
+    verdict: correct
+    by: rereferee
+    hash: ad6d1199ae19
+    date: '2026-10-26'
+    model: claude-opus-5-5
+    evidence: 'D = S∘S: not surjective by P3. The graph of L is a function (P3, P4, prp-peano-predecessor
+      (a) twice) and L∘D = id. D is injective by P4 twice. L'' with L''(0)=5 shows the left inverse is
+      not unique.'
+  - stage: S7r
+    verdict: correct
+    by: rereferee
+    hash: ad6d1199ae19
+    date: '2026-10-26'
+    model: claude-opus-5-5
+    evidence: 'D = S∘S has no value 0 by (P3), so it is not surjective. The graph G is functional: n =
+      0 and n = 1 by (P3)/(P4), and n ∉ {0,1} by applying predecessor (a) twice. So L∘D = id. L'' differs
+      from L at 0, so the left inverse is not unique.'
 - key: exr-categoricity-r3
   kind: exr
   file: 05-where-n-comes-from.md
@@ -3511,6 +3915,14 @@ items:
     evidence: 05:202-212. f(1) = S(f(1)) contradicts prp-peano-predecessor (b) (01:202). The answer P3
       and P4, compared with fd1:thm-unique-readability and fd1:thm-structural-recursion, is right. The
       source is hidden in the problem and named in the solution.
+  - stage: S7r
+    verdict: correct
+    by: rereferee
+    hash: fc878da71bf5
+    date: '2026-10-26'
+    model: claude-opus-5-5
+    evidence: Only the ledger line f(1) = S(0) = 1 (def-omega-arithmetic (c)) changed. The solution is
+      unchanged and correct.
 - key: proof:thm-omega-arithmetic-laws
   kind: proof
   file: 02-recursion-and-arithmetic.md

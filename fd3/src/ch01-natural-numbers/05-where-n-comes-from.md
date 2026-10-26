@@ -4,7 +4,7 @@ Section 1.1 assumed one thing: that a Peano system exists (@ax-natural-numbers).
 
 ## Sets as the raw material
 
-*Sets and Functions* used sets as a working language. It named the few principles it needed as it went: a set may be cut out of a given set by a property (@fd2:def-set-builder), the subsets of a set form a set (@fd2:def-power-set), and sets have unions. It never asked which sets exist, or whether everything else is a set too.
+*Sets and Functions* used sets as a working language. Its Section 1.2 stated a short list of working rules (W1)–(W6) that say which sets exist: a set may be cut out of a given set by a property (@fd2:def-set-builder), finitely many objects may be listed, sets have unions, the subsets of a set form a set (@fd2:def-power-set), pairs from two sets form a product, and the number sets are sets. It did not derive these rules from more basic principles, and it took numbers and pairs as given objects. It never asked whether everything else is a set too.
 
 Set theory asks both questions and answers them with a list of axioms. The construction below uses seven of them, each of which can be said in one line:
 
@@ -18,13 +18,13 @@ Set theory asks both questions and answers them with a list of axioms. The const
 
 *Axiomatic Set Theory* states the rest of the list (replacement, foundation and choice) and proves everything this section only describes.
 
-Two features of the list matter for us. First, every axiom but extensionality says that **some set exists**, and each one builds its set out of sets already given. The empty set is the only starting point. Second, there is nothing on the list except sets: no numbers, no points, no pairs as separate objects. So if natural numbers are to exist in this world, they must be particular sets. The question is which ones.
+Two features of the list matter for us. First, every axiom but extensionality says that **some set exists**. All of them except the empty set and infinity build their set out of sets already given; infinity is the one axiom that hands us a set no finite chain of building steps reaches. Second, there is nothing on the list except sets: no numbers, no points, no pairs as separate objects. So if natural numbers are to exist in this world, they must be particular sets. The question is which ones.
 
 The answer is a matter of choice, not discovery. We need a set \( \omega \), an element of it to call zero and a function on it to call the successor, such that the three satisfy (P3), (P4) and (P5) of @def-peano-system. By @thm-peano-categoricity, any two such choices are copies of each other, so it does not matter much which one we make. It only has to be made from the empty set by the operations on the list.
 
 ## Zero and the successor as sets
 
-There is only one set we are given outright, so it plays zero. For the successor we need a step that always produces something new, and the axioms offer a natural one: add the set itself as a new element. In this section, and only here, \( 0 \) and \( \mathrm{S} \) stand for these sets:
+There is only one set we are given outright, so it plays zero. For the successor we need a step that always produces something new, and the axioms offer a natural one: add the set itself as a new element. From here through Exercise B2, \( 0 \) and \( \mathrm{S} \) stand for these sets, except in a sentence that names \( \nN \), \( \nN_{\nR} \) or \( \nR \), where they keep their usual meanings; elsewhere in the section, and in the rest of the book, they mean what they meant before:
 \[
 0 \coloneqq \emptyset , \qquad \mathrm{S}(x) \coloneqq x \cup \{x\} .
 \]
@@ -126,7 +126,7 @@ Yes: \( (0, 0) = \{\{0\}, \{0, 0\}\} = \{\{0\}\} \), since \( \{0, 0\} = \{0\} \
 :::
 
 ::: {.solution}
-(a) \( \mathrm{S}(4) = \{0, 1, 2, 3\} \cup \{4\} = \{0, 1, 2, 3, 4\} \), the numeral \( 5 \). The numeral \( n \) is \( \{0, 1, \dots, n - 1\} \), so it has \( n \) elements: \( 0 = \emptyset \) has none, \( 1 = \{0\} \) has one, and so on up to \( 5 \), whose five elements are different numerals.
+(a) \( \mathrm{S}(4) = \{0, 1, 2, 3\} \cup \{4\} = \{0, 1, 2, 3, 4\} \), the numeral \( 5 \). The numeral \( n \) is \( \{0, 1, \dots, n - 1\} \), and it has \( n \) elements: \( 0 = \emptyset \) has none, \( 1 = \{0\} \) has one, and so on, going up one numeral at a time. The step \( \mathrm{S}(k) = k \cup \{k\} \) gives one more element than \( k \) has, because \( k \notin k \): the elements of \( k \) are earlier numerals, which have fewer elements than \( k \), so none of them is \( k \). So \( 0, 1, \dots, 5 \) have \( 0, 1, \dots, 5 \) elements, and in particular they are all different.
 
 (b) \( 2 = \{0, 1\} \) and \( 3 = \{0, 1, 2\} \), so \( 2 \cup 3 = \{0, 1, 2\} = 3 \) and \( 2 \cap 3 = \{0, 1\} = 2 \): the union is the larger numeral and the intersection the smaller.
 
@@ -144,7 +144,7 @@ Write \( (0, 1) \), \( (1, 0) \) and \( (1, 1) \) as Kuratowski pairs, using num
 
 The set \( 1 \) is an element of \( (0, 1) \). It is not an element of \( (1, 0) \): it is not \( \{1\} \), since \( 0 \in 1 \) while the only element of \( \{1\} \) is \( 1 \ne 0 \); and it is not \( 2 \), since \( 1 \in 2 \) while \( 1 \notin 1 = \{0\} \). So the two sets have different elements, and \( (0, 1) \ne (1, 0) \).
 
-If \( a \ne b \), then \( \{a\} \ne \{a, b\} \), because \( b \) lies in the second and not in the first; so \( (a, b) \) has two elements. If \( a = b \), then \( (a, a) = \{\{a\}\} \) has one. (Note also that \( (0, 1) = \{1, 2\} \) does not contain \( 0 \), so it is not a numeral, although both its elements are.)
+If \( a \ne b \), then \( \{a\} \ne \{a, b\} \), because \( b \) lies in the second and not in the first; so \( (a, b) \) has two elements. If \( a = b \), then \( (a, a) = \{\{a\}\} \) has one. (Note also that \( (0, 1) = \{1, 2\} \) is not a numeral, although both its elements are: it is not \( 0 = \emptyset \), since it has elements, and every other numeral \( \{0, 1, \dots, n - 1\} \) contains \( 0 \), which \( \{1, 2\} \) does not, since \( 1 \) and \( 2 \) have elements and \( 0 \) has none.)
 :::
 
 ### C. Going deeper
@@ -156,13 +156,13 @@ Each of the sets \( \nR \), \( [0, \infty) \) and \( \nN_{\nR} \cup \{ n + \tfra
 :::
 
 ::: {.solution}
-This exercise is about subsets of the real numbers of *Sets and Functions*, so it uses their arithmetic, as @cor-omega-identification (a) does.
+This exercise is about subsets of the real numbers of *Sets and Functions*, so it uses their arithmetic freely, as @cor-omega-identification (a) does; facts about \( \nN_{\nR} \) itself come from @fd2:lem-naturals-arithmetic.
 
 *(P4)* holds in all three: \( x + 1 = y + 1 \) gives \( x = y \).
 
-*(P3)* fails only in \( \nR \), where \( s(-1) = -1 + 1 = 0 \). In the other two sets, \( x + 1 = 0 \) would need \( x = -1 \), which lies in neither.
+*(P3)* fails only in \( \nR \), where \( s(-1) = -1 + 1 = 0 \). In the other two sets, \( x + 1 = 0 \) would need \( x = -1 \). But every \( n \in \nN_{\nR} \) has \( n \ge 0 \) (@fd2:lem-naturals-arithmetic (a)), so \( -1 \notin \nN_{\nR} \), \( -1 \notin [0, \infty) \), and \( n + \tfrac12 \ge \tfrac12 > -1 \).
 
-*(P5)* fails in all three. The subset \( \nN_{\nR} \) of each contains \( 0 \) and is closed under \( x \mapsto x + 1 \), but it is not the whole set: it misses \( -1 \in \nR \), \( \tfrac12 \in [0, \infty) \), and \( \tfrac12 \) in the third set.
+*(P5)* fails in all three. The subset \( \nN_{\nR} \) of each contains \( 0 \) and is closed under \( x \mapsto x + 1 \) (it lies in \( [0, \infty) \) by the same clause (a)), but it is not the whole set: it misses \( -1 \in \nR \) (as above), and \( \tfrac12 \), which lies in \( [0, \infty) \) and in the third set, by @fd2:lem-naturals-arithmetic (e) with \( n = 0 \) (no natural number lies strictly between \( 0 \) and \( 1 \)).
 
 *The least such set is \( \nN_{\nR} \).* It contains \( 0 \) and is closed under \( x \mapsto x + 1 \). Let \( T \subseteq \nR \) be any set with these two properties. Then \( T \cap \nN_{\nR} \) contains \( 0 \), and it is closed: if \( n \in T \cap \nN_{\nR} \), then \( n + 1 \in T \) and \( n + 1 \in \nN_{\nR} \). By the set form of @fd1:ax-induction (the remark at the start of *Sets and Functions*, Section 3.1), the only such subset of \( \nN_{\nR} \) is \( \nN_{\nR} \) itself, so \( T \cap \nN_{\nR} = \nN_{\nR} \), that is, \( \nN_{\nR} \subseteq T \).
 
@@ -174,29 +174,29 @@ The three sets show the point of the warning above: closure under the step is ch
 ::: {#exr-categoricity-r1}
 [R1]
 
-Prove that \( \nN \) is infinite.
+Prove that \( \nN \setminus \{0\} \) is infinite.
 :::
 
 ::: {.solution}
-We read @fd2:def-infinite and @fd2:thm-finite-no-proper-copy on \( \nN \), through the citing rule of Section 1.4 (group (i)). Consider \( \mathrm{S} \) with codomain \( \nN \setminus \{0\} \); its values lie there by (P3) for \( \nN \) (@ax-natural-numbers). It is injective by (P4) for \( \nN \), and onto \( \nN \setminus \{0\} \) by @prp-peano-predecessor (a): every \( n \ne 0 \) is \( \mathrm{S}(k) \) for some \( k \in \nN \). So it is a bijection \( \nN \to \nN \setminus \{0\} \). The set \( \nN \setminus \{0\} \) is a proper subset of \( \nN \), since \( 0 \in \nN \) and \( 0 \notin \nN \setminus \{0\} \). By @fd2:thm-finite-no-proper-copy, a finite set is not equinumerous with any proper subset; so \( \nN \) is not finite, that is, it is infinite (@fd2:def-infinite). This is the Quick check after @fd2:exm-hilbert-hotel (every guest moves up one room), built from (P3) and (P4).
+We read @fd2:def-infinite and @fd2:thm-finite-no-proper-copy on subsets of \( \nN \), through the citing rule of Section 1.4 (group (i)). Write \( A \coloneqq \nN \setminus \{0\} \) and \( B \coloneqq \nN \setminus \{0, 1\} \), where \( 1 = \mathrm{S}(0) \) (@def-omega-arithmetic (c)). Consider \( \mathrm{S} \) restricted to \( A \), with codomain \( B \). Its values lie in \( B \): for \( n \in A \), \( \mathrm{S}(n) \ne 0 \) by (P3) for \( \nN \) (@ax-natural-numbers), and \( \mathrm{S}(n) \ne \mathrm{S}(0) = 1 \) by (P4), since \( n \ne 0 \). It is injective by (P4). It is onto \( B \): if \( m \in B \), then \( m \ne 0 \), so \( m = \mathrm{S}(k) \) for some \( k \in \nN \) by @prp-peano-predecessor (a), and \( k \ne 0 \) because \( m \ne 1 = \mathrm{S}(0) \); so \( k \in A \). Hence it is a bijection \( A \to B \). The set \( B \) is a proper subset of \( A \): \( B \subseteq A \) is clear, and \( 1 \in A \), since \( 1 = \mathrm{S}(0) \ne 0 \) by (P3), while \( 1 \notin B \). By @fd2:thm-finite-no-proper-copy, a finite set is not equinumerous with any proper subset; so \( A \) is not finite, that is, it is infinite (@fd2:def-infinite).
 :::
 
 ::: {#exr-categoricity-r2}
 [R2]
 
-Show that the successor function \( \mathrm{S} \colon \nN \to \nN \) has a left inverse and no right inverse. Write a left inverse down explicitly. Is it the only one?
+Let \( D \colon \nN \to \nN \) be \( D(n) \coloneqq \mathrm{S}(\mathrm{S}(n)) \). Show that \( D \) has a left inverse and no right inverse. Write a left inverse down explicitly. Is it the only one?
 :::
 
 ::: {.solution}
-*No right inverse.* A function with a right inverse is surjective (@fd2:prp-right-inverse-surjective), and \( \mathrm{S} \) is not: \( 0 \) is not a value, by (P3) for \( \nN \).
+*No right inverse.* A function with a right inverse is surjective (@fd2:prp-right-inverse-surjective), and \( D \) is not: \( 0 \) is not a value, since \( D(n) = \mathrm{S}(\mathrm{S}(n)) \ne 0 \) by (P3) for \( \nN \).
 
-*A left inverse.* Let \( L \colon \nN \to \nN \) have the graph
+*A left inverse.* Write \( 1 = \mathrm{S}(0) \) (@def-omega-arithmetic (c)). Let \( L \colon \nN \to \nN \) have the graph
 \[
-G \coloneqq \bigl\{ (n, k) \in \nN \times \nN : (n = 0 \text{ and } k = 0) \text{ or } n = \mathrm{S}(k) \bigr\} .
+G \coloneqq \bigl\{ (n, k) \in \nN \times \nN : (n \in \{0, 1\} \text{ and } k = 0) \text{ or } n = \mathrm{S}(\mathrm{S}(k)) \bigr\} .
 \]
-Each \( n \in \nN \) has exactly one partner. If \( n = 0 \), the partner \( k = 0 \) works, and no \( k \) has \( 0 = \mathrm{S}(k) \), by (P3). If \( n \ne 0 \), then \( n = \mathrm{S}(k) \) for exactly one \( k \), by @prp-peano-predecessor (a). So \( L \) is a function (@fd2:def-function) with \( L(0) = 0 \) and \( L(\mathrm{S}(k)) = k \). Hence \( L(\mathrm{S}(n)) = n \) for every \( n \in \nN \), that is, \( L \circ \mathrm{S} = \id_{\nN} \): \( L \) is a left inverse of \( \mathrm{S} \) (@fd2:def-left-right-inverse (a)). This matches @fd2:thm-left-inverse-iff-injective: \( \mathrm{S} \) is injective and \( \nN \ne \emptyset \).
+Each \( n \in \nN \) has exactly one partner. If \( n = 0 \), the partner \( k = 0 \) works, and no \( k \) has \( 0 = \mathrm{S}(\mathrm{S}(k)) \), by (P3). If \( n = 1 \), the partner \( k = 0 \) works, and no \( k \) has \( \mathrm{S}(0) = \mathrm{S}(\mathrm{S}(k)) \): by (P4) that would give \( 0 = \mathrm{S}(k) \), against (P3). If \( n \notin \{0, 1\} \), then \( n \ne 0 \), so \( n = \mathrm{S}(m) \) for exactly one \( m \), by @prp-peano-predecessor (a); this \( m \) is not \( 0 \), since \( n \ne \mathrm{S}(0) \), so \( m = \mathrm{S}(k) \) for exactly one \( k \), by @prp-peano-predecessor (a) again. Thus \( n = \mathrm{S}(\mathrm{S}(k)) \) for exactly one \( k \). So \( L \) is a function (@fd2:def-function) with \( L(0) = L(1) = 0 \) and \( L(\mathrm{S}(\mathrm{S}(k))) = k \). Hence \( L(D(n)) = n \) for every \( n \in \nN \), that is, \( L \circ D = \id_{\nN} \): \( L \) is a left inverse of \( D \) (@fd2:def-left-right-inverse (a)). This matches @fd2:thm-left-inverse-iff-injective: \( D \) is injective, by (P4) applied twice, and \( \nN \ne \emptyset \).
 
-*Not unique.* The value of a left inverse at \( 0 \) is never used, since \( 0 \) is not of the form \( \mathrm{S}(n) \); setting \( L'(0) \coloneqq 5 \) and \( L'(\mathrm{S}(k)) \coloneqq k \) gives another left inverse.
+*Not unique.* The values of a left inverse at \( 0 \) and \( 1 \) are never used, since neither is of the form \( D(n) \); setting \( L'(0) \coloneqq 5 \), \( L'(1) \coloneqq 0 \) and \( L'(\mathrm{S}(\mathrm{S}(k))) \coloneqq k \) gives another left inverse.
 :::
 
 ::: {#exr-categoricity-r3}
@@ -212,12 +212,17 @@ The trouble is that \( 1 \) is built in two ways, as \( s(0) \) and as \( s(1) \
 :::
 
 <!-- dependency ledger
-exr-where-n-comes-from-c1 (solution): x + 1 = y + 1 gives x = y; -1 + 1 = 0; -1 and 1/2 are not in N_R, -1 not in [0, inf) or the third set | school fact about the reals of fd2 (as in cor-omega-identification (a))
+exr-where-n-comes-from-c1 (solution): x + 1 = y + 1 gives x = y; -1 + 1 = 0; n + 1/2 >= 1/2 > -1 | real arithmetic, school fact of fd2 (as in cor-omega-identification (a))
+exr-where-n-comes-from-c1 (solution): n >= 0 for n in N_R, so -1 not in N_R, N_R inside [0, inf); 1/2 not in N_R | fd2:lem-naturals-arithmetic (a), (e) with n = 0 (cited)
 exr-where-n-comes-from-c1 (solution): a subset of N_R containing 0 and closed under n -> n + 1 is N_R | the remark opening fd2:ch03-01 (unlabeled; set form of fd1:ax-induction, cited)
 exr-where-n-comes-from-c1 (solution): n in N_R gives n + 1 in N_R | (N S) in the description of N opening fd2:ch03-01 (school fact, fd2)
 exr-categoricity-r1 (solution): def-infinite and thm-finite-no-proper-copy read on N | the citing rule of Section 1.4, group (i) (cor-omega-identification (b), (c))
-exr-categoricity-r1 (solution): S is injective on N; 0 is not a value of S | (P4), (P3) for N, ax-natural-numbers with def-peano-system (cited)
+exr-categoricity-r1 (solution): S is injective on N; 0 is not a value of S; S(n) = 1 = S(0) gives n = 0 | (P4), (P3) for N, ax-natural-numbers with def-peano-system (cited)
+exr-categoricity-r1 (solution): 1 = S(0) | def-omega-arithmetic (c) (numerals)
+exr-categoricity-r1 (solution): every m != 0 in N is S(k) for some k | prp-peano-predecessor (a) (cited)
 exr-categoricity-r2 (solution): G is a set (a subset of N x N cut out by a property) | fd2:def-set-builder
+exr-categoricity-r2 (solution): 1 = S(0); D = S o S injective; D(n) != 0; S(0) = S(S(k)) impossible | def-omega-arithmetic (c); (P4) twice, (P3) for N (cited)
+exr-categoricity-r2 (solution): n not in {0, 1} is S(S(k)) for exactly one k | prp-peano-predecessor (a) twice (cited)
 exr-categoricity-r3 (solution): f(1) = S(0) = 1 | def-omega-arithmetic (c) (numerals)
 exr-categoricity-r3 (solution): (structure M) M satisfies (P5): the only subset of {0, 1} containing 0 and closed under s is {0, 1} | inline (a closed subset containing 0 contains s(0) = 1)
 -->

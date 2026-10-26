@@ -1,6 +1,6 @@
 # The Recursion Theorem; Addition and Multiplication
 
-The natural numbers now have a zero, a successor map and induction (@thm-omega-induction), and nothing else: no addition, no multiplication. *Sets and Functions*, Section 3.3 had the same need and met it with @fd2:thm-recursion, a theorem that turns two equations into a function. Its proof built partial solutions on the sets \( \{0, \dots, n\} \) and compared them using the order of the real numbers. The natural numbers of @ax-natural-numbers have no order yet; the order is defined in the next section, from the addition of this one. So this section proves the recursion theorem by a construction that needs no order at all: it takes the smallest set of pairs that the two equations force, and shows that this set is the graph of a function. Then it defines addition and multiplication as school does, and proves the laws of arithmetic, all of them by one move.
+The natural numbers now have a zero, a successor map and induction (@thm-omega-induction), and nothing else: no addition, no multiplication. *Sets and Functions*, Section 3.3 had the same need and met it with @fd2:thm-recursion, a theorem that turns two equations into a function. Its proof built partial solutions on the sets \( \{0, \dots, n\} \) and compared them using the order of the real numbers. The natural numbers of @ax-natural-numbers have no order yet; the order is defined in the next section, from the addition of this one. So this section proves the recursion theorem by a construction that needs no order at all: it takes the smallest set of pairs that the two equations force, and shows that this set is the graph of a function. Then it defines addition and multiplication as school does, and proves the laws of arithmetic by one move and its consequences.
 
 ## Recursion on ℕ
 
@@ -157,7 +157,7 @@ and \( 0 + 2 = \mathrm{S}(0 + 1) = \mathrm{S}(\mathrm{S}(0 + 0)) = \mathrm{S}(\m
 
 ## The laws of arithmetic
 
-Every law of arithmetic that *Sets and Functions*, Chapter 3 took from the real numbers must now be proved, and the only tools are the four defining equations and induction. The equations are lopsided: they say what happens when the **second** argument goes up by one, and nothing about the first. So in every induction below we fix all variables but one and induct on the variable that the recursion runs on, the second argument of \( + \) or \( \cdot \).
+Every law of arithmetic that *Sets and Functions*, Chapter 3 took from the real numbers must now be proved, and the only tools are the four defining equations and induction. The equations are lopsided: they say what happens when the **second** argument goes up by one, and nothing about the first. So in every induction in the proof of @thm-omega-arithmetic-laws we fix all variables but one and induct on the variable that the recursion runs on, the second argument of \( + \) or \( \cdot \).
 
 ::: {.idea}
 [Scratch work]
@@ -191,12 +191,12 @@ For all \( k, m, n \in \nN \):
 :::
 :::
 
-The move of the scratch work is worth naming, because every identity between terms built by recursion is proved with it.
+The move of the scratch work is worth naming, because the identities of this section are proved with it.
 
 ::: {#exm-method-induct-on-recursion-variable}
 [Method: fix the others, induct on the recursion variable]
 
-**Template.** (1) Find the variable the definition is a recursion on: the second argument of \( + \) and \( \cdot \), the exponent of \( b^n \). (2) Fix the other variables. (3) Induct on it: the base is the defining equation at \( 0 \); the step opens the term at \( n + 1 \) by the other equation, applies the hypothesis inside, and closes up. (4) If the variable sits where no equation applies (a first argument), first prove the lemma that moves it.
+**Template.** (1) Find the variable the definition is a recursion on: the second argument of \( + \) and \( \cdot \), the exponent of a power \( u^n \) (*Sets and Functions*, Section 3.3; on \( \nN \) in the next section). (2) Fix the other variables. (3) Induct on it: the base is the defining equation at \( 0 \); the step opens the term at \( n + 1 \) by the other equation, applies the hypothesis inside, and closes up. (4) If the variable sits where no equation applies (a first argument), first prove the lemma that moves it.
 
 **When to use it.** Identities between terms built by recursion: laws of \( + \) and \( \cdot \), of powers, of sums.
 
@@ -204,7 +204,7 @@ The move of the scratch work is worth naming, because every identity between ter
 :::
 
 ::: {.idea}
-Every clause is proved by @exm-method-induct-on-recursion-variable, in an order where each uses only earlier ones. Commutativity (b) needs both halves of (a), which move a successor out of the **first** argument, where no defining equation reaches.
+Every clause except the second half of (d) and the last part of (e), which follow from earlier clauses directly, is proved by @exm-method-induct-on-recursion-variable, in an order where each uses only earlier ones. Commutativity (b) needs both halves of (a), which move a successor out of the **first** argument, where no defining equation reaches.
 :::
 
 ::: {.proof}
@@ -251,7 +251,7 @@ The other clauses follow the same pattern; the table gives, for each, the proper
 In the step of (b), the last equality is (a), second half, read from right to left. In the long step of (e), the equalities after IH use, in order, (c), Def, (b), Def, (c), Def. In the last part of (e), \( 1 = 0 + 1 \) is the first half of (a), and \( (0 + 1) \cdot n = 0 \cdot n + n \) is the second part of (e) with \( m = 0 \). In (g), \( k(mn + m) = k(mn) + km \) is the first half of (d). This proves the theorem.
 :::
 
-The laws (a)–(g) are the rules of school arithmetic, now proved from @ax-natural-numbers. The next section defines the order by them.
+The laws (a)–(g) are the rules of school arithmetic, now proved from @ax-natural-numbers. The next section defines the order from addition and proves its properties with these laws.
 
 ::: {.warning}
 **Do not assume \( 0 + n = n \).** It is clause (a) of @thm-omega-arithmetic-laws, proved by induction; the defining equation is \( n + 0 = n \). For the same reason, inducting on \( m \) in \( m + n = n + m \) gets stuck: the step would need \( (m + 1) + n \), and the definition says nothing about a sum whose **first** argument is a successor until (a) is proved.
@@ -260,15 +260,15 @@ The laws (a)–(g) are the rules of school arithmetic, now proved from @ax-natur
 The order of the table is forced by the lopsided definition. Commutativity, which lets us move a successor from the second place to the first, comes only after the two facts in (a) that move it by hand; once it is available, (e) and (f) follow the same way for multiplication.
 
 ::: {.check}
-Which variable would you induct on to prove \( (km)n = k(mn) \), and which law opens the step?
+Which variable would you induct on to prove \( m(n + k) = mn + mk \), and which earlier law lets the step close?
 :::
 
 ::: {.solution}
-On \( n \), which is the recursion variable of the outer product on both sides; \( k \) and \( m \) are fixed. The step is
+On \( k \), the second argument of \( n + k \) and of \( mk \), where the recursion runs; \( m \) and \( n \) are fixed. The step is
 \[
-(km)(n + 1) = (km)n + km = k(mn) + km = k(mn + m) = k\bigl(m(n + 1)\bigr) ,
+m\bigl(n + (k + 1)\bigr) = m\bigl((n + k) + 1\bigr) = m(n + k) + m = (mn + mk) + m = mn + (mk + m) = mn + m(k + 1) ,
 \]
-by Def (b) of @def-omega-arithmetic, IH, the first half of law (d) read from right to left, and Def (b) again. Law (d) is the one that lets the step close.
+by Def of \( + \), Def of \( \cdot \), IH, associativity (c), and Def of \( \cdot \) again. Law (c) is the one that lets the step close.
 :::
 
 ## Exercises
@@ -392,7 +392,7 @@ The definition says what happens when the second argument is \( 0 \) or a succes
 ::: {.solution}
 [Hint 2]
 
-The lemmas are \( 0 + n = n \) and \( (m + 1) + n = (m + n) + 1 \), each by induction on \( n \).
+Start with the first lemma, \( 0 + n = n \), by induction on \( n \); the base is the first equation with \( m = 0 \). Then find the second lemma, about \( (m + 1) + n \), yourself.
 :::
 
 ::: {.solution}
