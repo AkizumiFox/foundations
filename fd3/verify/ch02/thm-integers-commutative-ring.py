@@ -1,4 +1,4 @@
-"""thm-integers-commutative-ring (Section 10.3): every row of the axiom table, the (F5)
+"""thm-integers-commutative-ring (Section 2.3): every row of the axiom table, the (F5)
 expansion written out below it, and 1 != 0. Integers are classes of pairs (a, b) of natural
 numbers, (p, q) ~ (r, s) iff p + s = q + r. Pairs are compared as polynomials in a..f."""
 # --- exact multivariate polynomials over Z (self-contained; no CAS needed) ---

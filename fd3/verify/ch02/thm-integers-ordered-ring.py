@@ -1,4 +1,4 @@
-"""thm-integers-ordered-ring (Section 10.3): the product identity ac + bd = (ad + bc) + kl for
+"""thm-integers-ordered-ring (Section 2.4): the product identity ac + bd = (ad + bc) + kl for
 a = b + k, c = d + l; sums of positive classes; (a) iota(n) - iota(m) = [(n, m)]; and the
 'two minimal changes' paragraph after the theorem (checked on sample integers)."""
 # --- exact multivariate polynomials over Z (self-contained; no CAS needed) ---

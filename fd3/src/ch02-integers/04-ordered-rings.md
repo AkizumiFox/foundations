@@ -161,11 +161,11 @@ With the identification of Section 2.2, (a) says that the order of \( \nZ \) **e
 
 The rules below hold in every ordered commutative ring: in \( \nZ \) now, and in \( \nQ \) once Section 3.2 orders it. One of them needs multiples first.
 
-**Multiples.** Let \( R \) be a commutative ring and \( a \in R \). By @fd2:thm-recursion, read on \( \nN \) through @cor-omega-identification (b), with \( X = R \), starting value \( 0 \) and step \( (n, y) \mapsto y + a \), there is exactly one function \( \nN \to R \), written \( n \mapsto n \cdot a \), with
+**Multiples.** Let \( R \) be a commutative ring and \( a \in R \). By @thm-omega-recursion, with \( X = R \), starting value \( 0 \) and \( g(n, y) = y + a \) (and \( n + 1 = \mathrm{S}(n) \), @def-omega-arithmetic (c)), there is exactly one function \( \nN \to R \), written \( n \mapsto n \cdot a \), with
 \[
 0 \cdot a = 0 , \qquad (n + 1) \cdot a = n \cdot a + a \quad \text{for every } n \in \nN .
 \]
-So \( 1 \cdot a = a \) and \( 2 \cdot a = a + a \). From here to the end of the section, a dot with a natural number on its left means this multiple, and the product of two elements of \( R \) is written by juxtaposition, \( ab \). When \( R = \nZ \), the two readings agree, by @fd1:ax-induction (through @cor-omega-identification (b)): \( 0 \cdot a = 0 = 0a \) by @prp-ring-algebra (b) and (F6), and \( n \cdot a = na \) gives \( (n + 1) \cdot a = na + a = (n + 1)a \), since \( (n + 1)a = a(n + 1) = an + a = na + a \) by (F6), then (F9) with (F7), then (F6) (the sum \( n + 1 \) is the same in \( \nN \) and \( \nZ \) by @prp-naturals-embed-integers (a)).
+So \( 1 \cdot a = a \) and \( 2 \cdot a = a + a \). From here to the end of the section, a dot with a natural number on its left means this multiple, and the product of two elements of \( R \) is written by juxtaposition, \( ab \). When \( R = \nZ \), the two readings agree, by @thm-omega-induction (b): \( 0 \cdot a = 0 = 0a \) by @prp-ring-algebra (b) and (F6), and \( n \cdot a = na \) gives \( (n + 1) \cdot a = na + a = (n + 1)a \), since \( (n + 1)a = a(n + 1) = an + a = na + a \) by (F6), then (F9) with (F7), then (F6) (the sum \( n + 1 \) is the same in \( \nN \) and \( \nZ \) by @prp-naturals-embed-integers (a)).
 
 ::: {#prp-ordered-ring-rules}
 [Rules for Inequalities in an Ordered Ring]
@@ -217,9 +217,9 @@ Part (d) is (c) with \( -c \) in place of \( c \); (e) and (f) apply (O4) to whi
 
 (g) Let \( a, b \ge 0 \). (\( \Rightarrow \)) If \( a < b \), then \( b > 0 \) by (i), and (c) gives \( ab < b^2 \). Also \( a^2 \le ab \): by (c) if \( a > 0 \), and by @prp-ring-algebra (b) if \( a = 0 \). So \( a^2 < b^2 \) by (i). (\( \Leftarrow \)) If \( a^2 < b^2 \) but not \( a < b \), then \( b = a \) or \( b < a \) by (O1), giving \( a^2 = b^2 \) or, by (\( \Rightarrow \)), \( b^2 < a^2 \); both contradict (O1).
 
-(h) Fix \( m \in \nN \). We prove the sum law by @fd1:ax-induction on \( k \) (through @cor-omega-identification (b)), for \( P(k) \): "\( (m + k) \cdot a = m \cdot a + k \cdot a \)". The base case is \( (m + 0) \cdot a = m \cdot a + 0 \cdot a \), by @def-omega-arithmetic (a), (F3) and \( 0 \cdot a = 0 \). For the step, \( P(k) \) gives \( (m + (k + 1)) \cdot a = (m + k) \cdot a + a = (m \cdot a + k \cdot a) + a = m \cdot a + (k + 1) \cdot a \), by associativity in \( \nN \) (@thm-omega-arithmetic-laws (c)) with the definition of multiples, \( P(k) \), and (F2) with the definition of multiples again.
+(h) Fix \( m \in \nN \). We prove the sum law by @thm-omega-induction (b) on \( k \), for \( P(k) \): "\( (m + k) \cdot a = m \cdot a + k \cdot a \)". The base case is \( (m + 0) \cdot a = m \cdot a + 0 \cdot a \), by @def-omega-arithmetic (a), (F3) and \( 0 \cdot a = 0 \). For the step, \( P(k) \) gives \( (m + (k + 1)) \cdot a = (m + k) \cdot a + a = (m \cdot a + k \cdot a) + a = m \cdot a + (k + 1) \cdot a \), by associativity in \( \nN \) (@thm-omega-arithmetic-laws (c)) with the definition of multiples, \( P(k) \), and (F2) with the definition of multiples again.
 
-Now let \( 1 \ne 0 \). By @fd1:ax-induction on \( n \), for \( Q(n) \): "\( (n + 1) \cdot 1 > 0 \)": the base is \( 1 \cdot 1 = 0 + 1 = 1 > 0 \) by (e), and the step is \( (n + 2) \cdot 1 = (n + 1) \cdot 1 + 1 > 0 \) by (b) and (e). Every \( n \ge 1 \) in \( \nN \) is \( j + 1 \) for some \( j \) (@prp-omega-order-arithmetic (a)), so \( n \cdot 1 > 0 \). Finally, if \( m < n \), then \( n = m + k \) with \( k \ne 0 \) (@prp-omega-order-arithmetic (a)), so \( k \ge 1 \) (@thm-omega-order (d)), and by the sum law and (b),
+Now let \( 1 \ne 0 \). By @thm-omega-induction (b) on \( n \), for \( Q(n) \): "\( (n + 1) \cdot 1 > 0 \)": the base is \( 1 \cdot 1 = 0 + 1 = 1 > 0 \) by (e), and the step is \( (n + 2) \cdot 1 = (n + 1) \cdot 1 + 1 > 0 \) by (b) and (e). Every \( n \ge 1 \) in \( \nN \) is \( j + 1 \) for some \( j \) (@prp-omega-order-arithmetic (a)), so \( n \cdot 1 > 0 \). Finally, if \( m < n \), then \( n = m + k \) with \( k \ne 0 \) (@prp-omega-order-arithmetic (a)), so \( k \ge 1 \) (@thm-omega-order (d)), and by the sum law and (b),
 \[
 n \cdot 1 = m \cdot 1 + k \cdot 1 > m \cdot 1 + 0 = m \cdot 1 .
 \]
@@ -269,7 +269,7 @@ Which positive element shows that \( a < b \) gives \( a + a < b + b \)?
 :::
 
 ::: {.solution}
-The element \( b - a \), taken twice: \( (b + b) - (a + a) = (b - a) + (b - a) \) by the ring laws (regrouping by (F1), (F2), with \( -(a + a) = (-a) + (-a) \) as in the proof of @prp-order-from-positives). It is a sum of two positive elements, so it is positive by (P1), and \( a + a < b + b \) by @prp-ordered-ring-rules (a).
+The element \( b - a \), taken twice: \( (b + b) - (a + a) = (b - a) + (b - a) \) by the ring laws (regrouping by (F1), (F2), with \( -(a + a) = (-a) + (-a) \) as in the proof of @prp-order-from-positives). It is a sum of two positive elements, so it is positive by (P1) for the positive set (@prp-order-from-positives, converse), and \( a + a < b + b \) by @prp-ordered-ring-rules (a).
 :::
 
 ::: {.check}
@@ -277,7 +277,7 @@ Is \( \nZ \) a field?
 :::
 
 ::: {.solution}
-No: \( 1 + 1 \) is non-zero (it is \( > 1 > 0 \)) and has no inverse. Suppose \( (1 + 1)x = 1 \). Since \( (1 + 1)x = x(1 + 1) = x + x \) by (F6), (F9) and (F7), this says \( x + x = 1 \). If \( x \le 0 \), then \( x + x \le 0 < 1 \) by @prp-ordered-ring-rules (b), (e). If \( x > 0 \), then \( x \ge 1 \) by discreteness (@thm-integers-ordered-ring (c)), so \( x + x \ge 1 + 1 > 1 \) by @prp-ordered-ring-rules (b), (e). Both contradict \( x + x = 1 \) by (O1).
+No: \( 1 + 1 \) is non-zero (it is \( > 1 > 0 \), where \( 1 > 0 \) by @prp-ordered-ring-rules (e), as \( 1 \ne 0 \) in \( \nZ \) by @thm-integers-commutative-ring) and has no inverse. Suppose \( (1 + 1)x = 1 \). Since \( (1 + 1)x = x(1 + 1) = x + x \) by (F6), (F9) and (F7), this says \( x + x = 1 \). If \( x \le 0 \), then \( x + x \le 0 < 1 \) by @prp-ordered-ring-rules (b), (e). If \( x > 0 \), then \( x \ge 1 \) by discreteness (@thm-integers-ordered-ring (c)), so \( x + x \ge 1 + 1 > 1 \) by @prp-ordered-ring-rules (b), (e). Both contradict \( x + x = 1 \) by (O1).
 :::
 
 ## Least elements, and a ring that cannot be ordered
@@ -446,7 +446,7 @@ Suppose \( R \) has \( m \) elements; consider \( k \mapsto k \cdot 1 \) on \( \
 :::
 
 ::: {.solution}
-(a) Fix \( R \), \( a \in R \), \( m \in \nN \), and use @fd1:ax-induction (through @cor-omega-identification (b)) on \( k \), for \( P(k) \): "\( (m + k) \cdot a = m \cdot a + k \cdot a \)". *Base:* \( (m + 0) \cdot a = m \cdot a = m \cdot a + 0 = m \cdot a + 0 \cdot a \), by @def-omega-arithmetic (a), (F3) and \( 0 \cdot a = 0 \). *Step:* assume \( P(k) \). Then
+(a) Fix \( R \), \( a \in R \), \( m \in \nN \), and use @thm-omega-induction (b) on \( k \), for \( P(k) \): "\( (m + k) \cdot a = m \cdot a + k \cdot a \)". *Base:* \( (m + 0) \cdot a = m \cdot a = m \cdot a + 0 = m \cdot a + 0 \cdot a \), by @def-omega-arithmetic (a), (F3) and \( 0 \cdot a = 0 \). *Step:* assume \( P(k) \). Then
 \[
 \begin{aligned}
 (m + (k + 1)) \cdot a &= ((m + k) + 1) \cdot a = (m + k) \cdot a + a \\
@@ -476,7 +476,7 @@ exm-finite-ring-not-orderable (claim): the remark after it, that the integers mo
 prp-ordered-ring-rules (solution): the Quick check "Is Z a field?" uses (1 + 1)x = x + x | def-commutative-ring-and-field (F6), (F9), (F7) (cited inline)
 prp-order-from-positives (proof): -(b - a) = a - b, (c - b) + (b - a) = c - a, -(a + c) = (-a) + (-c), -0 = 0 | inline (from prp-ring-algebra (a))
 thm-integers-ordered-ring (proof): (a, b) ~ (0, 0) iff a = b | def-integers-as-classes with def-omega-arithmetic (a) (cited)
-prp-ordered-ring-rules (proof): the multiples n.a exist and are unique | thm-recursion via cor-omega-identification (b) (cited before the statement)
+prp-ordered-ring-rules (proof): the multiples n.a exist and are unique | thm-omega-recursion with g(n, y) = y + a, n + 1 = S(n) by def-omega-arithmetic (c) (cited before the statement)
 prp-ordered-ring-rules (proof): a natural number n >= 1 is j + 1 for some j | prp-omega-order-arithmetic (a) (cited), with 1 + j = j + 1 by thm-omega-arithmetic-laws (b)
 prp-integer-least-element (proof): T = {s - b : s in S} is a set | image of S under s |-> s - b (F2.1, def-image); not cited by label
 prp-integer-least-element (proof): -S = {-s : s in S} is a set | image of S under s |-> -s (F2.1, def-image); not cited by label

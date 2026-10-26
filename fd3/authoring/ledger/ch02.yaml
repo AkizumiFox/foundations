@@ -187,6 +187,25 @@ items:
       The text gives no citation for this, and the ledger has no row for it. The [(4,1)] case two lines
       later justifies the same kind of step ('no natural number lies strictly between 3 and S(3)') with
       @thm-om
+  - stage: S7r
+    verdict: correct
+    by: rereferee
+    hash: 2086904a0fb7
+    date: '2026-10-26'
+    model: claude-opus-5-5
+    evidence: 'Line 118 now cites @thm-omega-order (c), which defines {0,...,n} := {k in N : k <= n} and
+      gives the recursion {0,...,S(n)} = {0,...,n} ∪ {S(n)}. Unwinding it with the numerals gives {k :
+      k <= 4} = {0,1,2,3,4}, so both lists (0,2)..(4,6) and (0,0)..(4,4) are complete and correct. The
+      ''likewise'' at line 120 points back to the same citation. The [(4,1)] case is unchanged and correct.
+      The new ledger r'
+  - stage: S7r
+    verdict: correct
+    by: rereferee
+    hash: 2086904a0fb7
+    date: '2026-10-26'
+    model: claude-opus-5-5
+    evidence: The new reason given for 'x ≤ 4 are exactly 0,…,4' is @thm-omega-order (c), which defines
+      {0,…,n} recursively. The ledger line was added.
 - key: prp-integer-normal-form
   kind: prp
   file: 01-integers-as-classes.md
@@ -292,6 +311,15 @@ items:
     evidence: 01-integers-as-classes.md:354 Ledger row 354 files the check at line 216 under 'def-integers-as-classes
       (claim)'. The check comes after prp-integer-normal-form and its solution cites @prp-integer-normal-form
       (a). The parallel check at line 204 is filed under prp-integer-normal-form (row 351).
+  - stage: S7r
+    verdict: correct
+    by: rereferee
+    hash: 0d447ab29f3a
+    date: '2026-10-26'
+    model: claude-opus-5-5
+    evidence: The ledger row is now keyed prp-integer-normal-form (claim), matching row 351 and the solution's
+      citation of @prp-integer-normal-form (a). Cross sums 2+15=17=7+10 and 2+10=12≠22=7+15 are right,
+      and so are 7=2+5 and 15=10+5. The sidecar def-integers-as-classes.py passes.
 - key: exr-integers-as-classes-a1
   kind: exr
   file: 01-integers-as-classes.md
@@ -540,6 +568,24 @@ items:
     evidence: 02-well-defined-operations.md:57 The main-line (b) sentence credits Fn1 (an output for every
       pair of classes) to the paragraph above, def-ordered-pair and thm-classes-partition (b). None of
       these gives existence.
+  - stage: S7r
+    verdict: correct
+    by: rereferee
+    hash: c94a4293c745
+    date: '2026-10-26'
+    model: claude-opus-5-5
+    evidence: (a) checks Fn1 and Fn2 and then uniqueness. In (b), transitivity chains the two one-argument
+      hypotheses. The summary sentence at line 57 now cites the right sources for existence (cartesian
+      product, quotient set) and for uniqueness (ordered pair, classes-partition (b)). The second-reading
+      block at line 60 gives the full check.
+  - stage: S7r
+    verdict: correct
+    by: rereferee
+    hash: c94a4293c745
+    date: '2026-10-26'
+    model: claude-opus-5-5
+    evidence: The new clause says each pair of classes is ([x],[y]), justified by fd2:def-cartesian-product
+      and def-quotient-set. This is (Fn1) as in the second-reading fold.
 - key: def-integer-operations
   kind: def
   file: 02-well-defined-operations.md
@@ -826,6 +872,23 @@ items:
     model: claude-opus-5-5
     evidence: 02-well-defined-operations.md:275 The step [(0,3)] = -3 (and [(0,9)] = -9) uses the negative
       of def-integer-operations together with the identification. It is neither cited nor ledgered.
+  - stage: S7r
+    verdict: correct
+    by: rereferee
+    hash: 877669eec6a1
+    date: '2026-10-26'
+    model: claude-opus-5-5
+    evidence: (2·4+5·1, 2·1+5·4) = (13,22). By normal form, [(2,5)] = [(0,3)], [(4,1)] = [(3,0)] and [(13,22)]
+      = [(0,9)]. The negative -[(a,b)] = [(b,a)] gives [(0,3)] = -[(3,0)] = -3 and [(0,9)] = -9. So (-3)·3
+      = -9, which is correct, and it is cited.
+  - stage: S7r
+    verdict: correct
+    by: rereferee
+    hash: 877669eec6a1
+    date: '2026-10-26'
+    model: claude-opus-5-5
+    evidence: '[(0,3)] = -[(3,0)] by the negative of def-integer-operations (-[(a,b)] = [(b,a)]). [(13,22)]
+      = [(0,9)] since 22 = 13 + 9.'
 - key: exr-well-defined-operations-a1
   kind: exr
   file: 02-well-defined-operations.md
@@ -1102,6 +1165,22 @@ items:
       Chapter 1', and that is an1's title (an1/config/config.json:16). an1 ch01 §01:31 has (F7) with 1
       != 0, as the text says. 'the linear-algebra companion, Chapter 0' is the form STYLE.md:342 allows.
       At :43 the Z/6
+  - stage: S7r
+    verdict: correct
+    by: rereferee
+    hash: f8fdda87bc4f
+    date: '2026-10-26'
+    model: claude-opus-5-5
+    evidence: The warning (:43) now restricts the claim to the ring axioms. The field case is correctly
+      justified by b = a^{-1}(ab), with a forward pointer to lem-field-fraction-rules (d) in Section 4.1.
+  - stage: S7r
+    verdict: correct
+    by: rereferee
+    hash: f8fdda87bc4f
+    date: '2026-10-26'
+    model: claude-opus-5-5
+    evidence: In the warning, a field has no zero divisors, since b = a^{-1}(ab) = a^{-1}·0 = 0. The forward
+      pointer to Section 4.1 is recorded in the ledger. The ring axioms are now named (F1)–(F7), (F9).
 - key: thm-integers-commutative-ring
   kind: thm
   file: 03-commutative-rings.md
@@ -1209,6 +1288,22 @@ items:
       (b) is cancellation, and the sidecar exm-integer-laws-two-routes.py asserts it. But :127 says prp-ring-algebra
       (a) proves uniqueness ''in every commutative ring, from (F1)–(F9) alone'', and (F8) is not a ring
       axiom (see findings).'
+  - stage: S7r
+    verdict: correct
+    by: rereferee
+    hash: 380a9b360f88
+    date: '2026-10-26'
+    model: claude-opus-5-5
+    evidence: Commutativity, then right cancellation, matches prp-omega-order-arithmetic (b) as stated.
+      The arithmetic (5+d)+2 = d+7 is right, and '(F1)–(F7) and (F9)' is accurate.
+  - stage: S7r
+    verdict: correct
+    by: rereferee
+    hash: 380a9b360f88
+    date: '2026-10-26'
+    model: claude-opus-5-5
+    evidence: From 2 + c = 2 + (5+d), commutativity (thm-omega-arithmetic-laws (b)) gives c + 2 = (5+d)
+      + 2, and cancellation (prp-omega-order-arithmetic (b)) gives c = 5 + d.
 - key: prp-ring-algebra
   kind: prp
   file: 03-commutative-rings.md
@@ -1288,6 +1383,22 @@ items:
     model: claude-opus-5-5
     evidence: 03-commutative-rings.md:175 The phrase 'from (F1)–(F9) alone' is used for results about
       commutative rings, and for Z, where (F8) does not hold.
+  - stage: S7r
+    verdict: correct
+    by: rereferee
+    hash: 6581375170b2
+    date: '2026-10-26'
+    model: claude-opus-5-5
+    evidence: The statement says (F1)–(F7) and (F9). The closing remark is accurate, and the following
+      paragraph now cites prp-ring-algebra (a)/(b) unambiguously.
+  - stage: S7r
+    verdict: correct
+    by: rereferee
+    hash: 6581375170b2
+    date: '2026-10-26'
+    model: claude-opus-5-5
+    evidence: The statement now says (F1)–(F7), (F9). The paragraph after it now cites prp-ring-algebra
+      (a) and (b) by label. The uniqueness-of-inverses chain uses (F7), (F5), (F6) and is correct.
 - key: check:03-commutative-rings:2
   kind: check
   file: 03-commutative-rings.md
@@ -1370,6 +1481,24 @@ items:
       ring laws are taken for granted, which the warning at line 43 marks. (d) The chain F9/F6, prp-ring-algebra
       (c) a(-b)=-(ab), F1/F2/F4/F3 and u-v:=u+(-v) is valid. prp-ring-algebra item (c) is the right one
       (line 140'
+  - stage: S7r
+    verdict: correct
+    by: rereferee
+    hash: 2f19740c6cd5
+    date: '2026-10-26'
+    model: claude-opus-5-5
+    evidence: '(c) Z×Z counterexample, from proved material only: (1,0)(0,1) = (0,0), and 1 ≠ 0 in Z by
+      thm-integers-commutative-ring. (d) The display and citations now match: (F9), then (F6)+(F9) on
+      each summand, then prp-ring-algebra (c) and (F6).'
+  - stage: S7r
+    verdict: correct
+    by: rereferee
+    hash: 2f19740c6cd5
+    date: '2026-10-26'
+    model: claude-opus-5-5
+    evidence: (c) ℤ×ℤ with componentwise operations has (1,0)(0,1) = (0,0) by prp-ring-algebra (b) with
+      (F6), and both factors are non-zero since 1 ≠ 0 (thm-integers-commutative-ring). (d) The expansion
+      (a+b)a = a(a+b) = aa+ab and (a+b)(-b) = (-b)a + (-b)b, then (-b)a = -(ba) = -(ab), is correct.
 - key: exr-ordered-rings-b1
   kind: exr
   file: 03-commutative-rings.md
@@ -1437,6 +1566,22 @@ items:
       idempotents of Z/6 are {0,1,3,4}; the book's [3] is valid, and 3 and 2 are not multiples of 6. (c)
       The zero is forced to be (0,0) via thm-omega-arithmetic-laws (a) 0+n=n (line 184 of ch01 §02); (1+x,y)=(0,0)
       is im
+  - stage: S7r
+    verdict: correct
+    by: rereferee
+    hash: 87a1aeb21f88
+    date: '2026-10-26'
+    model: claude-opus-5-5
+    evidence: (b) In Z×Z, (1,0)(1,0) = (1,0), and (1,0) is neither (0,0) nor (1,1). The Z/6 example is
+      kept as a marked illustration, and the sidecar exr-commutative-rings-b2.py passes.
+  - stage: S7r
+    verdict: correct
+    by: rereferee
+    hash: 87a1aeb21f88
+    date: '2026-10-26'
+    model: claude-opus-5-5
+    evidence: (b) In ℤ×ℤ, (1,0)(1,0) = (1,0) by (F7) and prp-ring-algebra (b), and (1,0) is neither (0,0)
+      nor (1,1). The sidecar asserts this and runs.
 - key: exr-commutative-rings-c1
   kind: exr
   file: 03-commutative-rings.md
@@ -1469,6 +1614,22 @@ items:
     evidence: 03-commutative-rings.md:341 The marking scheme for (c) awards 1 point for 'shows phi injective'
       and 2 for 'concludes by injectivity'. A correct proof that uses phi∘phi = id directly, with no injectivity
       step, would lose points under it.
+  - stage: S7r
+    verdict: correct
+    by: rereferee
+    hash: 3f3384009312
+    date: '2026-10-26'
+    model: claude-opus-5-5
+    evidence: The opening now cites prp-ring-algebra (a)–(c), and -(u+v) = (-u)+(-v) cites (F1)–(F4).
+      The marking scheme now accepts the φ∘φ = id route, and the fatal error is unchanged.
+  - stage: S7r
+    verdict: correct
+    by: rereferee
+    hash: 3f3384009312
+    date: '2026-10-26'
+    model: claude-opus-5-5
+    evidence: The solution now uses prp-ring-algebra (a)–(c), and -(u+v) = (-u)+(-v) via (F1)–(F4). The
+      marking scheme now also accepts φ∘φ = id in place of injectivity, which is a valid alternative.
 - key: def-ordered-ring-and-field
   kind: def
   file: 04-ordered-rings.md
@@ -1707,6 +1868,15 @@ items:
       (F6) and ring-algebra (c). (d) applies (c) with -c and then (a). (f) uses -0 = 0 from the proof
       of prp-order-from-positives. The rewritten (h) is right: the base case uses def-omega-arithmetic
       (a), (F3) and 0*a = 0'
+  - stage: S7r
+    verdict: correct
+    by: rereferee
+    hash: 6abd62c96ebc
+    date: '2026-10-26'
+    model: claude-opus-5-5
+    evidence: Multiples come from @thm-omega-recursion with g(n,y) = y + a, and n+1 = S(n) from def-omega-arithmetic
+      (c). The ℤ agreement, the sum law (h) and Q(n) use @thm-omega-induction (b), the property form.
+      The steps are unchanged and valid.
 - key: exm-method-one-positive-element
   kind: exm
   file: 04-ordered-rings.md
@@ -1781,6 +1951,22 @@ items:
     evidence: 04-ordered-rings.md:272 The solution cites '(P1)' for closure of the positive elements of
       an ordered ring under sums. That fact is the converse half of prp-order-from-positives, and the
       solution does not cite it.
+  - stage: S7r
+    verdict: correct
+    by: rereferee
+    hash: 95871d25bcd1
+    date: '2026-10-26'
+    model: claude-opus-5-5
+    evidence: 'L272 now cites closure of positives under sums as (P1) for the positive set via the converse
+      of prp-order-from-positives (L44: the converse states P = {a > 0} satisfies (P1), (P2)). The identity
+      (b+b)-(a+a) = (b-a)+(b-a) and the final step via prp-ordered-ring-rules (a) are correct.'
+  - stage: S7r
+    verdict: correct
+    by: rereferee
+    hash: 95871d25bcd1
+    date: '2026-10-26'
+    model: claude-opus-5-5
+    evidence: (P1) for {x > 0} is cited from the converse of prp-order-from-positives, which states it.
 - key: check:04-ordered-rings:3
   kind: check
   file: 04-ordered-rings.md
@@ -1804,6 +1990,24 @@ items:
     model: claude-opus-5-5
     evidence: 04-ordered-rings.md:280 The solution uses 1 > 0 in Z through prp-ordered-ring-rules (e)
       but never says why 1 != 0 in Z, and (e) has that as a hypothesis.
+  - stage: S7r
+    verdict: correct
+    by: rereferee
+    hash: c1e6d5390590
+    date: '2026-10-26'
+    model: claude-opus-5-5
+    evidence: 'L280 now justifies 1 > 0 by prp-ordered-ring-rules (e), whose hypothesis is 1 != 0, and
+      gets 1 != 0 in Z from thm-integers-commutative-ring (03-commutative-rings.md L53 states it). 1+1
+      > 1 follows from (b), strict. The rest of the argument is unchanged and sound: x+x=1, case x<=0
+      via (b),(e), case x>0 via discreteness (thm-integers-ordered-ring (c)), contradiction by (O1).'
+  - stage: S7r
+    verdict: correct
+    by: rereferee
+    hash: c1e6d5390590
+    date: '2026-10-26'
+    model: claude-opus-5-5
+    evidence: 1 > 0 by prp-ordered-ring-rules (e), using 1 ≠ 0 from thm-integers-commutative-ring, which
+      states '1 ≠ 0'.
 - key: prp-integer-least-element
   kind: prp
   file: 04-ordered-rings.md
@@ -2130,6 +2334,14 @@ items:
       The solution display at :521-528 is a complete sentence. (b) cites fd2:def-finite, the identity
       map for {1, ..., m+1}, and fd2:cor-pigeonhole-finite-sets (a) (m+1 > m gives no injection). That
       label is not in the
+  - stage: S7r
+    verdict: correct
+    by: rereferee
+    hash: 9696e0dcb9a2
+    date: '2026-10-26'
+    model: claude-opus-5-5
+    evidence: (a) uses @thm-omega-induction (b) on k. The base step is def-omega-arithmetic (a) with (F3),
+      and the step is unchanged.
 - key: prp-divisibility-rules-integers
   kind: prp
   file: 05-division-with-remainder.md
@@ -2311,6 +2523,14 @@ items:
     model: claude-opus-5-5
     evidence: '05:82-95. The statement matches @fd2:thm-division-algorithm (fd2 3.2 L157-164). The single
       item (a) is by design (recut-ch02.md:26: ''(b) is parked''). n=0 failure at 05:131 is true by (O1).'
+  - stage: S7r
+    verdict: correct
+    by: rereferee
+    hash: 3211ee2940c9
+    date: '2026-10-26'
+    model: claude-opus-5-5
+    evidence: The idea at :98 now reads 'the proof is that volume's', following the @fd2:thm-division-algorithm
+      reference. Its content is unchanged.
 - key: proof:thm-integers-division-remainder
   kind: proof
   file: 05-division-with-remainder.md
@@ -2382,6 +2602,26 @@ items:
     model: claude-opus-5-5
     evidence: 05-division-with-remainder.md:110 Reader-facing prose calls another volume by its internal
       code "fd2" instead of its title.
+  - stage: S7r
+    verdict: correct
+    by: rereferee
+    hash: 4d609edcedd9
+    date: '2026-10-26'
+    model: claude-opus-5-5
+    evidence: '05:123-127 Uniqueness: adding -r''-qn to qn+r=q''n+r'' gives r-r''=q''n-qn by (F1)-(F4);
+      q''n-qn=(q''-q)n via (-q)n=-(qn) (prp-ring-algebra (c), 03:140) and (F9), cited the same way as
+      the existence step at 05:121. qn=q''n by adding -r; (q-q'')n=qn-q''n=0 via prp-ring-algebra (c),
+      (F9) (the ''=0'' then follows from qn=q''n and (F4)); q=(q-q'')+q''=q'' by (F1)-(F4). Rest unchanged
+      and sound. Ledger 05:349-350: sta'
+  - stage: S7r
+    verdict: correct
+    by: rereferee
+    hash: 4d609edcedd9
+    date: '2026-10-26'
+    model: claude-opus-5-5
+    evidence: 'At :110 the text now names *Sets and Functions*, Section 3.2. Uniqueness: adding -r''-qn
+      gives r - r'' = q''n - qn = (q''-q)n, by (F1)–(F4), prp-ring-algebra (c) and (F9). Then qn = q''n,
+      (q-q'')n = 0, and q = (q-q'') + q''. Every step is valid, and the new ledger line records it.'
 - key: check:05-division-with-remainder:2
   kind: check
   file: 05-division-with-remainder.md
@@ -2613,6 +2853,24 @@ items:
     evidence: 05-division-with-remainder.md:270 The scheme's fatal error 'omitting uniqueness in (b)',
       together with bullet 4 'concludes by uniqueness', fails a correct alternative proof of (b) that
       never says the word 'uniqueness'.
+  - stage: S7r
+    verdict: correct
+    by: rereferee
+    hash: 5bc9bfb28b83
+    date: '2026-10-26'
+    model: claude-opus-5-5
+    evidence: '05:255 now notes 4>0 via thm-integers-ordered-ring (b) (04:115: N={x>=0}, Z_{>0}={x>0})
+      before using uniqueness with n=4. Marking scheme 05:268-270 accepts the prp-divisibility-rules-integers
+      (e) route (05:30) and the fatal error now targets a missing 0<=s+t<4 check, so a correct alternative
+      proof is no longer zeroed. Solution content unchanged and correct.'
+  - stage: S7r
+    verdict: correct
+    by: rereferee
+    hash: 5bc9bfb28b83
+    date: '2026-10-26'
+    model: claude-opus-5-5
+    evidence: 4 > 0 from thm-integers-ordered-ring (b), since 4 ≥ 0 and 4 ≠ 0, so uniqueness applies.
+      The (b) marking scheme now accepts the divisibility route, and the fatal-error clause matches.
 - key: exr-division-with-remainder-r1
   kind: exr
   file: 05-division-with-remainder.md
@@ -2688,6 +2946,23 @@ items:
     evidence: 05:300-320. STYLE §11.5 says R2 reaches 3-4 chapters back. This item uses the injectivity
       and surjectivity methods of fd2 Chapter 2, about 6-7 chapters back. The recut-ch02 blueprint planned
       it this way (:213), so it is a recorded deviation, not a mistake.
+  - stage: S7r
+    verdict: correct
+    by: rereferee
+    hash: 9a70104c1c4f
+    date: '2026-10-26'
+    model: claude-opus-5-5
+    evidence: '05:317 (c): -1!=1 from -1<0<1 (both facts proved in the same paragraph), (O2) transitivity
+      (04:67) gives -1<1, (O1) trichotomy excludes equality. The forward reference ''shown below'' is
+      accurate.'
+  - stage: S7r
+    verdict: correct
+    by: rereferee
+    hash: 9a70104c1c4f
+    date: '2026-10-26'
+    model: claude-opus-5-5
+    evidence: (c) -1 ≠ 1, because -1 < 0 < 1 gives -1 < 1 by (O2), and (O1) rules out equality. (a) and
+      (b) are unchanged and correct.
 - key: exr-division-with-remainder-r3
   kind: exr
   file: 05-division-with-remainder.md
@@ -2732,6 +3007,22 @@ items:
       curriculum.md has no spiral-table entry for this chapter. R3 is supposed to be taken from the spiral
       table, which has no row on parity or divisibility and no row naming F3.2 or The Integers. R2 reaches
       about 6-7 chapters back (fd2 Chapter 2) where the rule says 3-4.
+  - stage: S7r
+    verdict: correct
+    by: rereferee
+    hash: d62fe47518e8
+    date: '2026-10-26'
+    model: claude-opus-5-5
+    evidence: 05:329 adds 3>0 via thm-integers-ordered-ring (b) before applying thm-integers-division-remainder
+      (a) with n=3; remainder of the contrapositive argument unchanged and correct.
+  - stage: S7r
+    verdict: correct
+    by: rereferee
+    hash: d62fe47518e8
+    date: '2026-10-26'
+    model: claude-opus-5-5
+    evidence: '3 > 0 by thm-integers-ordered-ring (b) before division by 3. The cases r = 1, 2: (3q+1)²
+      = 3(3q²+2q)+1 and (3q+2)² = 3(3q²+4q+1)+1. Both are correct, and the sidecar runs.'
 - key: exr-division-with-remainder-c1
   kind: exr
   file: 05-division-with-remainder.md

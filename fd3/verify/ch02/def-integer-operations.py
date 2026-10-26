@@ -1,4 +1,4 @@
-"""def-integer-operations: the warning's values and the Quick check of Section 10.2.
+"""def-integer-operations: the warning's values and the Quick check of Section 2.2.
 Warning: (1, 0) ~ (2, 1); with (c, d) = (1, 2) the rule [(ac, bd)] gives (1, 0) and
 (2, 2), not related; twisted rule [(ad + bc, ac + bd)] at (0, 1), (0, 1) gives (0, 1).
 Check: [(2, 5)] * [(4, 1)] = [(13, 22)]; normal forms (0, 3), (3, 0), (0, 9)."""

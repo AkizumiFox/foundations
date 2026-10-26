@@ -1,4 +1,4 @@
-"""exr-ordered-rings-b1 (Section 10.3): rows (F9), (F4), (F6) in detail."""
+"""exr-ordered-rings-b1 (Section 2.3, [B1: Three rows in detail]): rows (F9), (F4), (F6) in detail."""
 # --- exact multivariate polynomials over Z (self-contained; no CAS needed) ---
 class P:
     """Polynomial with integer coefficients: dict {sorted tuple of variable names: coeff}."""

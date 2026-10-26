@@ -1,4 +1,4 @@
-"""prp-ordered-ring-rules (Section 10.3): the warning after it, the Quick check 'Is Z a field?',
+"""prp-ordered-ring-rules (Section 2.4): the warning after it, the Quick check 'Is Z a field?',
 the identity (a + b)^2 = a^2 + 2ab + b^2 of prp-ring-algebra (d), and the multiples n.a."""
 # --- exact multivariate polynomials over Z (self-contained; no CAS needed) ---
 class P:

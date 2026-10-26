@@ -1,4 +1,4 @@
-"""def-integers-as-classes: the Quick check of Section 10.1, the non-example
+"""def-integers-as-classes: the Quick check of Section 2.1, the non-example
 (a, b) ~ (c, d) iff ad = bc on N x N, and the normal forms quoted in the check."""
 import sys
 

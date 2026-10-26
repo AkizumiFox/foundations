@@ -1,4 +1,4 @@
-"""exr-ordered-rings-c1 (Section 10.3), part (c): the tables mod 3 satisfy (F1)-(F9), and
+"""exr-ordered-rings-c1 (Section 2.4), part (c): the tables mod 3 satisfy (F1)-(F9), and
 1.1 = 1, 2.1 = 2, 3.1 = 0."""
 from itertools import product
 

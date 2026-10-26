@@ -54,7 +54,7 @@ g(x, y) \sim g(x', y) \quad \text{and} \quad g(x', y) \sim g(x', y') ,
 \]
 by the first hypothesis (with \( y \) fixed) and the second (with \( x' \) fixed). By transitivity, (Eq3) of @fd2:def-equivalence-relation, \( g(x, y) \sim g(x', y') \).
 
-The rest is the proof of (a) with pairs of classes in place of classes: the graph of all \( (([x], [y]), [g(x, y)]) \) has an output for each pair of classes, and only one, by the paragraph above, @fd2:def-ordered-pair (equal pairs of classes have equal entries) and @fd2:thm-classes-partition (b); so it defines a function \( G \), and \( G \) is unique as in (a) (@fd2:prp-function-equality).
+The rest is the proof of (a) with pairs of classes in place of classes: the graph of all \( (([x], [y]), [g(x, y)]) \) has an output for each pair of classes, since each pair of classes is \( ([x], [y]) \) for some \( x, y \) (@fd2:def-cartesian-product, @fd2:def-quotient-set), and only one, by the paragraph above, @fd2:def-ordered-pair (equal pairs of classes have equal entries) and @fd2:thm-classes-partition (b); so it defines a function \( G \), and \( G \) is unique as in (a) (@fd2:prp-function-equality).
 
 ::: {.second-reading title="The graph of G, checked as in (a)"}
 Now let \( G_G \) be the set of \( (P, E) \in \bigl((X/{\sim}) \times (X/{\sim})\bigr) \times (X/{\sim}) \) such that \( P = ([x], [y]) \) and \( E = [g(x, y)] \) for some \( x, y \in X \), a set by specification. (Fn1): an element of \( (X/{\sim}) \times (X/{\sim}) \) is a pair \( (C, D) \) of classes (@fd2:def-cartesian-product), and \( C = [x] \), \( D = [y] \) for some \( x, y \in X \) (@fd2:def-quotient-set); then \( ((C, D), [g(x, y)]) \in G_G \). (Fn2): suppose \( (P, E) \) and \( (P, E') \) lie in \( G_G \), with \( P = ([x], [y]) \), \( E = [g(x, y)] \), and \( P = ([x'], [y']) \), \( E' = [g(x', y')] \). From \( ([x], [y]) = ([x'], [y']) \) the characteristic property of pairs (@fd2:def-ordered-pair) gives \( [x] = [x'] \) and \( [y] = [y'] \), so \( x \sim x' \) and \( y \sim y' \) by @fd2:thm-classes-partition (b). By the first paragraph, \( g(x, y) \sim g(x', y') \), so \( E = E' \) by @fd2:thm-classes-partition (b). So \( G_G \), with codomain \( X/{\sim} \), defines a function \( G \) with \( G([x], [y]) = [g(x, y)] \). Uniqueness is as in (a), by @fd2:prp-function-equality.
@@ -272,7 +272,7 @@ Compute \( [(2, 5)] \cdot [(4, 1)] \) from @def-integer-operations, and write th
 :::
 
 ::: {.solution}
-\( [(2, 5)] \cdot [(4, 1)] = [(2 \cdot 4 + 5 \cdot 1, \ 2 \cdot 1 + 5 \cdot 4)] = [(13, 22)] \). By @prp-integer-normal-form (a): \( 5 = 2 + 3 \), so \( [(2, 5)] = [(0, 3)] = -3 \); \( 4 = 1 + 3 \), so \( [(4, 1)] = [(3, 0)] = 3 \); and \( 22 = 13 + 9 \), so \( [(13, 22)] = [(0, 9)] = -9 \). So the product of \( -3 \) and \( 3 \) is \( -9 \), as school predicts; here it is a computation in \( \nN \), not a rule of signs.
+\( [(2, 5)] \cdot [(4, 1)] = [(2 \cdot 4 + 5 \cdot 1, \ 2 \cdot 1 + 5 \cdot 4)] = [(13, 22)] \). By @prp-integer-normal-form (a): \( 5 = 2 + 3 \), so \( [(2, 5)] = [(0, 3)] = -[(3, 0)] = -3 \) (the negative of @def-integer-operations); \( 4 = 1 + 3 \), so \( [(4, 1)] = [(3, 0)] = 3 \); and \( 22 = 13 + 9 \), so \( [(13, 22)] = [(0, 9)] = -[(9, 0)] = -9 \). So the product of \( -3 \) and \( 3 \) is \( -9 \), as school predicts; here it is a computation in \( \nN \), not a rule of signs.
 :::
 
 The integers now have a sum, a product and a negative, each a function on classes, and they contain a copy of \( \nN \) with its arithmetic. Section 2.3 checks that these operations obey the usual laws, by reducing each law to a law of \( \nN \); Section 2.4 orders \( \nZ \).
@@ -455,7 +455,7 @@ prp-naturals-embed-integers (claim): (identification) Z>0 recalled from F2.2 §0
 prp-naturals-embed-integers (claim): order on Z matches order on N | F3.2 §04 (prose pointer, paid by thm-integers-ordered-ring (a); nothing here depends on it)
 prp-naturals-embed-integers (claim): a - b := a + (-b) | F3.2 §03 (prose pointer, paid by def-commutative-ring-and-field; nothing here depends on it)
 prp-naturals-embed-integers (claim): (closing) Section 2.4 orders Z | F3.2 §04 (prose pointer, paid by def-integer-order; nothing here depends on it)
-def-integer-operations (claim): (check) [(2, 5)] * [(4, 1)] = [(13, 22)] = -9 | numeral arithmetic; verify/ch02/def-integer-operations.py
+def-integer-operations (claim): (check) [(2, 5)] * [(4, 1)] = [(13, 22)] = -9 | numeral arithmetic; negative of def-integer-operations (cited); verify/ch02/def-integer-operations.py
 exr-well-defined-operations-a1 (solution): numerical run of the key proof | numeral arithmetic; verify/ch02/exr-well-defined-operations-a1.py
 exr-well-defined-operations-b2 (solution): 2n = n + n; counterexample values | def-omega-arithmetic (c), thm-omega-arithmetic-laws (d), (e) (cited); verify/ch02/exr-well-defined-operations-b2.py
 exm-method-one-argument-at-a-time (claim): (quick check) 0 + 1 = 0 + 1; 0 + 1 != 0 + 2; outputs (0, 0), (2, 1) | numeral arithmetic by def-omega-arithmetic; distinct numerals; verify/ch02/exm-method-one-argument-at-a-time.py

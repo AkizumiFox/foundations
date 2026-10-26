@@ -1,4 +1,4 @@
-"""def-integer-order (Section 10.3): the examples after the definition and the Quick check.
+"""def-integer-order (Section 2.4): the examples after the definition and the Quick check.
 Integers are pairs (a, b) of naturals; [(a, b)] is positive iff b < a."""
 def add(x, y):
     return (x[0] + y[0], x[1] + y[1])

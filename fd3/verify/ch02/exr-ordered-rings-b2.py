@@ -1,4 +1,4 @@
-"""exr-ordered-rings-b2 (Section 10.3): [(0, 1)] . [(0, 1)] = [(1, 0)], not in P'."""
+"""exr-ordered-rings-b2 (Section 2.4, [B1: The wrong positive set]): [(0, 1)] . [(0, 1)] = [(1, 0)], not in P'."""
 def mul(x, y):
     return (x[0] * y[0] + x[1] * y[1], x[0] * y[1] + x[1] * y[0])
 

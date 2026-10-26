@@ -115,9 +115,9 @@ List the elements \( (x, y) \) with \( x \le 4 \) of each of the classes \( [(3,
 \[
 [(3, 5)] = \{ (x, x + 2) : x \in \nN \} ,
 \]
-and the elements with \( x \le 4 \) are \( (0, 2) \), \( (1, 3) \), \( (2, 4) \), \( (3, 5) \), \( (4, 6) \).
+and, since the natural numbers \( x \le 4 \) are exactly \( 0, 1, 2, 3, 4 \) (@thm-omega-order (c)), the elements with \( x \le 4 \) are \( (0, 2) \), \( (1, 3) \), \( (2, 4) \), \( (3, 5) \), \( (4, 6) \).
 
-*The class \( [(0, 0)] \).* Here the condition is \( x + 0 = y + 0 \), that is, \( x = y \), since \( n + 0 = n \) (@def-omega-arithmetic (a)). So \( [(0, 0)] = \{ (x, x) : x \in \nN \} \), the diagonal, and the elements with \( x \le 4 \) are \( (0, 0) \), \( (1, 1) \), \( (2, 2) \), \( (3, 3) \), \( (4, 4) \).
+*The class \( [(0, 0)] \).* Here the condition is \( x + 0 = y + 0 \), that is, \( x = y \), since \( n + 0 = n \) (@def-omega-arithmetic (a)). So \( [(0, 0)] = \{ (x, x) : x \in \nN \} \), the diagonal, and, likewise, the elements with \( x \le 4 \) are \( (0, 0) \), \( (1, 1) \), \( (2, 2) \), \( (3, 3) \), \( (4, 4) \).
 
 *The class \( [(4, 1)] \).* The condition \( x + 1 = y + 4 \) holds if and only if \( x = y + 3 \), by the same two steps as for \( [(3, 5)] \). So \( [(4, 1)] = \{ (y + 3, y) : y \in \nN \} \). Its elements with \( x \le 4 \) are \( (3, 0) \) and \( (4, 1) \) only: \( x = y + 3 = 3 + y \) gives \( 3 \le x \) (@prp-omega-order-arithmetic (a)); with \( x \le 4 = \mathrm{S}(3) \), \( x \) is \( 3 \) or \( 4 \), since no natural number lies strictly between \( 3 \) and \( \mathrm{S}(3) \) (@thm-omega-order (b)); and then \( y + 3 = 3 = 0 + 3 \) or \( y + 3 = 4 = 1 + 3 \), so \( y \) is \( 0 \) or \( 1 \) by cancellation.
 
@@ -345,13 +345,14 @@ def-integers-as-classes (claim): (naive attempt) the case structure of signed ad
 prp-integer-pairs-equivalence (proof): adding two equations: x = y and u = v give x + u = y + v | substitution of equals, def-rules-equality (F1.4 §07), used silently
 prp-integer-pairs-equivalence (proof): rearranging four terms (a + d) + (c + f) = (a + f) + (c + d) | thm-omega-arithmetic-laws (b), (c) (cited); verify/ch02/prp-integer-pairs-equivalence.py
 exm-integer-pair-classes (solution): (x + 2) + 3 = x + 5; 2 + 3 = 5 and similar numeral sums | thm-omega-arithmetic-laws (c) (cited) and numeral arithmetic by def-omega-arithmetic (as in the F3.1 §02 Quick check); verify/ch02/exm-integer-pair-classes.py
+exm-integer-pair-classes (solution): {x : x <= 4} = {0, ..., 4} | thm-omega-order (c) (cited)
 exm-integer-pair-classes (solution): 3 <= x <= 4 = S(3) gives x in {3, 4}; y + 3 in {0 + 3, 1 + 3} gives y in {0, 1} | prp-omega-order-arithmetic (a), thm-omega-order (b) (cited); y + 3 = 3 + y and cancellation: thm-omega-arithmetic-laws (b), prp-omega-order-arithmetic (b), cited earlier in the section and not repeated
 exm-integer-pair-classes (claim): (picture) no two diagonals share a lattice point | thm-classes-partition (cited); that every class is a diagonal is shown after prp-integer-normal-form
 prp-integer-pairs-equivalence (claim): (check) (4, 4) ~ (0, 0) by 4 + 0 = 4 + 0; 4 + 4 != 0 + 0, 4 + 0 != 0 + 0, 0 + 0 != 4 + 0 | numeral arithmetic by def-omega-arithmetic, distinct numerals distinct (thm-omega-order (a)); distinct classes disjoint: thm-classes-partition (cited); verify/ch02/prp-integer-pairs-equivalence.py
 prp-integer-normal-form (claim): (check) 17 = 9 + 8, so [(17, 9)] = [(8, 0)], [(9, 17)] = [(0, 8)]; 17 + 10 = 9 + 18 | numeral arithmetic by def-omega-arithmetic; prp-integer-normal-form (a) (cited); verify/ch02/prp-integer-normal-form.py
 prp-integer-normal-form (claim): (picture) [(n, 0)] = {(y + n, y)} and [(0, n)] = {(x, x + n)}, so every class is a diagonal | prp-integer-normal-form (a), def-omega-arithmetic (a) (cited)
-def-integers-as-classes (claim): (non-example) 1*0 = 1*0, 0*1 = 0*2, 1*1 != 1*2 | numeral arithmetic by def-omega-arithmetic, thm-omega-arithmetic-laws (e); verify/ch02/def-integers-as-classes.py
-def-integers-as-classes (claim): (check) cross sums 17 = 17, 12 != 22; 7 = 2 + 5, 15 = 10 + 5 | numeral arithmetic by def-omega-arithmetic; distinct numerals are distinct (thm-omega-order (a)); verify/ch02/def-integers-as-classes.py
+def-integers-as-classes (claim): (non-example) 1*0 = 1*0, 0*1 = 0*2, 1*1 != 1*2 | numeral arithmetic by def-omega-arithmetic, thm-omega-arithmetic-laws (e), (f); verify/ch02/def-integers-as-classes.py
+prp-integer-normal-form (claim): (check) cross sums 17 = 17, 12 != 22; 7 = 2 + 5, 15 = 10 + 5 | numeral arithmetic by def-omega-arithmetic; distinct numerals are distinct (thm-omega-order (a)); verify/ch02/def-integers-as-classes.py
 prp-integer-normal-form (claim): (warning) b < a and (a, b) ~ (a', b') give b' < a' | F3.2 §04 (prose pointer, paid by def-integer-order; nothing here depends on it)
 exr-integers-as-classes-a1 (solution): 6 < 9; 9 = 3 + 6 | numeral arithmetic and order on omega; verify/ch02/exr-integers-as-classes-a1.py
 exr-integers-as-classes-b1 (solution): 0 != 2, 1 != 2 (distinct numerals) | thm-omega-order (a) (0 < 2 gives 0 != 2), covered by the numeral-comparison exemption in the intro; verify/ch02/exr-integers-as-classes-b1.py

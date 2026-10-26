@@ -1,4 +1,4 @@
-"""exm-finite-ring-not-orderable (Section 10.3): the two-element tables satisfy (F1)-(F9)
+"""exm-finite-ring-not-orderable (Section 2.4): the two-element tables satisfy (F1)-(F9)
 (all eight triples), the case descriptions used in the solution, and 2.1 = 0."""
 from itertools import product
 

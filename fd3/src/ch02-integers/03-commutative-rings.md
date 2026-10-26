@@ -40,7 +40,7 @@ In words: (F1)–(F4) say that addition is commutative and associative, with a n
 **Why these clauses.** No axiom says that \( ab = 0 \) forces \( a = 0 \) or \( b = 0 \): that is true in \( \nZ \) but fails in other commutative rings (the warning below), so it must be proved where it holds. The condition \( 1 \ne 0 \) is kept out of the ring axioms, so that the zero ring is a ring, and put into the field axioms, so that \( \{0\} \), where (F8) holds vacuously, is not a field.
 
 ::: {.warning}
-A commutative ring may have **zero divisors**: non-zero \( a, b \) with \( ab = 0 \). The integers modulo \( 6 \) of *Sets and Functions*, Section 5.2 (built there from the school integers, with well-defined operations by @fd2:prp-congruence-arithmetic) form a commutative ring: each of (F1)–(F7) and (F9) passes from the school integers to classes through representatives, a check we do not need and do not carry out here. In this ring \( [2] \ne [0] \) and \( [3] \ne [0] \), yet \( [2][3] = [6] = [0] \). So "\( ab = 0 \), hence \( a = 0 \) or \( b = 0 \)" is not a consequence of (F1)–(F9). In an **ordered** ring it is a theorem, proved in Section 2.4 from the order axioms.
+A commutative ring may have **zero divisors**: non-zero \( a, b \) with \( ab = 0 \). The integers modulo \( 6 \) of *Sets and Functions*, Section 5.2 (built there from the school integers, with well-defined operations by @fd2:prp-congruence-arithmetic) form a commutative ring: each of (F1)–(F7) and (F9) passes from the school integers to classes through representatives, a check we do not need and do not carry out here. In this ring \( [2] \ne [0] \) and \( [3] \ne [0] \), yet \( [2][3] = [6] = [0] \). So "\( ab = 0 \), hence \( a = 0 \) or \( b = 0 \)" is not a consequence of the ring axioms (F1)–(F7) and (F9). In a field it is, since \( b = a^{-1}(ab) \) when \( a \ne 0 \) (Section 4.1). In an **ordered** ring it is a theorem, proved in Section 2.4 from the order axioms.
 :::
 
 ## The integers form a commutative ring
@@ -124,7 +124,7 @@ Which class is the negative of \( [(2, 7)] \)? Show by reducing to \( \nN \) tha
 :::
 
 ::: {.solution}
-\( -[(2, 7)] = [(7, 2)] \) (@def-integer-operations). Now suppose \( [(2 + c, \ 7 + d)] = [(0, 0)] \). By @fd2:thm-classes-partition (b) and @def-integers-as-classes, \( (2 + c) + 0 = (7 + d) + 0 \), so \( 2 + c = 7 + d = 2 + (5 + d) \), and \( c = 5 + d \) by cancellation (@prp-omega-order-arithmetic (b)). Then \( c + 2 = (5 + d) + 2 = d + 7 \), that is, \( (c, d) \sim (7, 2) \), and \( [(c, d)] = [(7, 2)] \) (@fd2:thm-classes-partition (b)). @prp-ring-algebra (a) below proves the same uniqueness in every commutative ring, from (F1)–(F9) alone.
+\( -[(2, 7)] = [(7, 2)] \) (@def-integer-operations). Now suppose \( [(2 + c, \ 7 + d)] = [(0, 0)] \). By @fd2:thm-classes-partition (b) and @def-integers-as-classes, \( (2 + c) + 0 = (7 + d) + 0 \), so \( 2 + c = 7 + d = 2 + (5 + d) \). Hence \( c + 2 = (5 + d) + 2 \) by @thm-omega-arithmetic-laws (b), and \( c = 5 + d \) by cancellation (@prp-omega-order-arithmetic (b)). Then \( c + 2 = (5 + d) + 2 = d + 7 \), that is, \( (c, d) \sim (7, 2) \), and \( [(c, d)] = [(7, 2)] \) (@fd2:thm-classes-partition (b)). @prp-ring-algebra (a) below proves the same uniqueness in every commutative ring, from (F1)–(F7) and (F9) alone.
 :::
 
 What the definition does not list must be derived, and the derivations work in every commutative ring at once.
@@ -172,7 +172,7 @@ Every law of @prp-ring-algebra could also be checked in \( \nZ \) by the method 
 ::: {#exm-integer-laws-two-routes}
 [One law, two routes]
 
-Prove that \( (-x)y = -(xy) \) for all \( x, y \in \nZ \) in two ways: (a) by reducing to the level below; (b) from (F1)–(F9) alone.
+Prove that \( (-x)y = -(xy) \) for all \( x, y \in \nZ \) in two ways: (a) by reducing to the level below; (b) from (F1)–(F7) and (F9) alone.
 :::
 
 ::: {.solution}
@@ -184,10 +184,10 @@ and \( xy = [(ac + bd, \ ad + bc)] \), so \( -(xy) = [(ad + bc, \ ac + bd)] \). 
 
 (b) \( \nZ \) is a commutative ring (@thm-integers-commutative-ring), so @prp-ring-algebra (c), with \( a = x \) and \( b = y \), gives \( (-x)y = -(xy) \).
 
-Route (a) is shorter here, but it proves the law only for \( \nZ \). Route (b) proves it in every commutative ring at once, which is why @prp-ring-algebra is stated for rings.
+Route (a) needs nothing beyond the definitions of the operations, but it proves the law only for \( \nZ \). Route (b) proves it in every commutative ring at once, which is why @prp-ring-algebra is stated for rings.
 :::
 
-The argument of (a) with multiplication shows that in a **field** a non-zero \( a \) has only one inverse: if \( ab = 1 \) and \( ac = 1 \), then \( b = b \cdot 1 = b(ac) = (ba)c = (ab)c = 1 \cdot c = c \), by (F7), (F5) and (F6). So \( a^{-1} \), and with it \( a/b \), names a single element. And (b) explains the zero ring: if \( 1 = 0 \) in a commutative ring, then \( a = a \cdot 1 = a \cdot 0 = 0 \) for every \( a \), so the ring is \( \{0\} \).
+The argument of @prp-ring-algebra (a), with multiplication in place of addition, shows that in a **field** a non-zero \( a \) has only one inverse: if \( ab = 1 \) and \( ac = 1 \), then \( b = b \cdot 1 = b(ac) = (ba)c = (ab)c = 1 \cdot c = c \), by (F7), (F5) and (F6). So \( a^{-1} \), and with it \( a/b \), names a single element. And @prp-ring-algebra (b) explains the zero ring: if \( 1 = 0 \) in a commutative ring, then \( a = a \cdot 1 = a \cdot 0 = 0 \) for every \( a \), so the ring is \( \{0\} \).
 
 ::: {.check}
 In a field, let \( a \ne 0 \). Show that \( (a^{-1})^{-1} = a \).
@@ -208,7 +208,7 @@ First, \( a^{-1} \ne 0 \): otherwise \( 1 = a a^{-1} = a \cdot 0 = 0 \), by (F8)
 1. State (F4) with its quantifiers, and say why the zero ring satisfies it.
 2. Name the move by which @thm-integers-commutative-ring was proved, and say which row of its table needed \( \sim \) rather than equality of pairs.
 3. True or false, with a reason: in every commutative ring, \( ab = 0 \) implies \( a = 0 \) or \( b = 0 \).
-4. Prove from (F1)–(F9) and @prp-ring-algebra that \( (a + b)(a - b) = a^2 - b^2 \) in every commutative ring, where \( x^2 \coloneqq xx \).
+4. Prove from (F1)–(F7), (F9) and @prp-ring-algebra that \( (a + b)(a - b) = a^2 - b^2 \) in every commutative ring, where \( x^2 \coloneqq xx \).
 :::
 :::
 
@@ -217,16 +217,16 @@ First, \( a^{-1} \ne 0 \): otherwise \( 1 = a a^{-1} = a \cdot 0 = 0 \), by (F8)
 
 (b) **Reduce to the level below** (@exm-method-reduce-to-level-below). Only (F4) needed \( \sim \): the pair \( (a + b, b + a) \) is related to \( (0, 0) \), but it is not that pair.
 
-(c) False. In the integers modulo \( 6 \), \( [2][3] = [6] = [0] \) with \( [2] \ne [0] \) and \( [3] \ne [0] \) (the warning after @def-commutative-ring-and-field, where the ring laws are taken for granted).
+(c) False. Give \( \nZ \times \nZ \) the componentwise operations \( (x, y) + (u, v) \coloneqq (x + u, \ y + v) \) and \( (x, y)(u, v) \coloneqq (xu, \ yv) \). It is a commutative ring, with zero \( (0, 0) \), one \( (1, 1) \) and \( -(x, y) = (-x, -y) \): each of (F1)–(F7) and (F9) holds in each coordinate by @thm-integers-commutative-ring. In it \( (1, 0)(0, 1) = (1 \cdot 0, \ 0 \cdot 1) = (0, 0) \) by @prp-ring-algebra (b) and (F6), while \( (1, 0) \ne (0, 0) \) and \( (0, 1) \ne (0, 0) \), since \( 1 \ne 0 \) in \( \nZ \). (The integers modulo \( 6 \) of the warning after @def-commutative-ring-and-field, with \( [2][3] = [0] \), illustrate the same, with their ring laws taken for granted.)
 
-(d) By (F9), (F6) and (F9) again,
+(d) By (F9), and then (F6) and (F9) on each summand (\( (a + b)a = a(a + b) \), \( (a + b)(-b) = (-b)(a + b) \)),
 \[
 \begin{aligned}
 (a + b)\bigl(a + (-b)\bigr) &= (a + b)a + (a + b)(-b) \\
-&= \bigl(aa + ba\bigr) + \bigl(a(-b) + b(-b)\bigr) .
+&= \bigl(aa + ab\bigr) + \bigl((-b)a + (-b)b\bigr) .
 \end{aligned}
 \]
-By @prp-ring-algebra (c), \( a(-b) = -(ab) \) and \( b(-b) = -(bb) \); and \( ba = ab \) by (F6). Regrouping by (F1) and (F2), the sum is
+By @prp-ring-algebra (c), \( (-b)a = -(ba) = -(ab) \), the last step by (F6), and \( (-b)b = -(bb) \). Regrouping by (F1) and (F2), the sum is
 \[
 a^2 + \bigl(ab + (-(ab))\bigr) + \bigl(-(b^2)\bigr) = a^2 + 0 + \bigl(-(b^2)\bigr) = a^2 - b^2 ,
 \]
@@ -267,7 +267,7 @@ Prove or disprove.
 ::: {.solution}
 (a) **True**, by reducing to the level below. Let \( x = [(a, b)] \) and \( y = [(c, d)] \). By @def-integer-operations, \( -(x + y) = -[(a + c, \ b + d)] = [(b + d, \ a + c)] \), and \( (-x) + (-y) = [(b, a)] + [(d, c)] = [(b + d, \ a + c)] \). The pairs are equal, so the classes are.
 
-(b) **False.** In the integers modulo \( 6 \) (ring laws taken for granted, as in the warning after @def-commutative-ring-and-field), \( [3][3] = [9] = [3] \), since \( 9 - 3 = 6 \); and \( [3] \) is neither \( [0] \) nor \( [1] \), since neither \( 3 \) nor \( 2 \) is a multiple of \( 6 \).
+(b) **False.** In the commutative ring \( \nZ \times \nZ \) with componentwise operations (Exercise A1 (c)), \( (1, 0)(1, 0) = (1 \cdot 1, \ 0 \cdot 0) = (1, 0) \) by (F7) and @prp-ring-algebra (b); and \( (1, 0) \) is neither the zero \( (0, 0) \) nor the one \( (1, 1) \), since \( 1 \ne 0 \) in \( \nZ \). (In the integers modulo \( 6 \), ring laws taken for granted as in the warning after @def-commutative-ring-and-field, \( [3][3] = [9] = [3] \) illustrates the same.)
 
 (c) **False:** (F4) fails. A zero \( z = (z_1, z_2) \) would satisfy \( (a, b) + z = (a, b) \) for all pairs; taking \( (a, b) = (0, 0) \) gives \( (0, 0) + z = (0 + z_1, \ 0 + z_2) = z \) by @thm-omega-arithmetic-laws (a), so \( z = (0, 0) \). But \( (1, 0) + (x, y) = (1 + x, \ y) \ne (0, 0) \) for every pair \( (x, y) \), since \( 1 + x = x + 1 \ne 0 \) (@thm-omega-arithmetic-laws (b), @cor-omega-successor-cancellation). So \( (1, 0) \) has no negative. Passing to classes is what supplies negatives.
 
@@ -305,7 +305,7 @@ In (c), apply \( \varphi \) to both sides of (F5) and use that \( \varphi \) is 
 :::
 
 ::: {.solution}
-All computations below are in the commutative ring \( \nZ \) (@thm-integers-commutative-ring), with the rules of @prp-ring-algebra (c). We also use \( -(u + v) = (-u) + (-v) \): both sides are negatives of \( u + v \), by (F1), (F2) and (F4), and negatives are unique (@prp-ring-algebra (a)).
+All computations below are in the commutative ring \( \nZ \) (@thm-integers-commutative-ring), with the rules of @prp-ring-algebra (a)–(c). We also use \( -(u + v) = (-u) + (-v) \): both sides are negatives of \( u + v \), by (F1)–(F4), and negatives are unique (@prp-ring-algebra (a)).
 
 (a) The zero is \( 1 \): \( x \oplus 1 = x + 1 - 1 = x \). The one is \( 0 \): \( x \odot 0 = x + 0 - x \cdot 0 = x \). The negative of \( x \) is \( 2 - x \): \( x \oplus (2 - x) = x + (2 - x) - 1 = 1 \), the zero.
 
@@ -341,22 +341,25 @@ The level below is now \( \nZ \) itself, and \( \varphi \) carries every law of 
 - 3: (a) finds the zero \( 1 \), the one \( 0 \) and the negative \( 2 - x \), each checked by a computation.
 - 3: (b) expands both sides to one expression, with the laws of \( \nZ \) used.
 - 1: (c) verifies the three identities for \( \varphi \).
-- 1: (c) shows that \( \varphi \) is injective from \( \varphi(\varphi(x)) = x \).
-- 2: (c) carries (F5) across \( \varphi \) and concludes by injectivity.
+- 1: (c) shows that \( \varphi \) is injective from \( \varphi(\varphi(x)) = x \), or otherwise uses \( \varphi(\varphi(x)) = x \) to recover arguments.
+- 2: (c) carries (F5) across \( \varphi \) and concludes, by injectivity or by applying \( \varphi \) once more (\( \varphi \circ \varphi = \id_\nZ \)).
 Fatal errors (0 for the step): assuming the laws for \( \oplus \), \( \odot \) in (b); applying \( \varphi \) and concluding equality of the arguments without injectivity. A reader who proves (F5) for \( \odot \) by direct expansion earns the 2 points of the last step only if the expansion is complete and correct, and loses none of the others.
 :::
 
 <!-- dependency ledger
 def-commutative-ring-and-field (example): the integers modulo 6 satisfy (F1)-(F7), (F9), and [2][3] = [0] (the warning after the definition) | not proved here: operations well defined by F2.5 §02 (prp-congruence-arithmetic, school integers), laws pass to classes through representatives; marked in the text; illustration only, nothing depends on it; F5.1 (Algebraic Preliminaries, Chapter 1) rebuilds it on the constructed Z
 def-commutative-ring-and-field (claim): prose pointer, (F1)-(F9) match the field axioms of the linear-algebra companion, Chapter 0, and of the ordered fields of AN1.1 | AN1.1, companion ch 0 (prose pointer; nothing here depends on it)
+def-commutative-ring-and-field (claim): (the warning) in a field ab = 0 forces a = 0 or b = 0, since b = a^{-1}(ab) | F3.9 §01 lem-field-fraction-rules (d) (forward prose pointer, Section 4.1; nothing here depends on it)
 def-commutative-ring-and-field (example): the zero ring satisfies (F1)-(F7), (F9) | inline (every equation reads 0 = 0)
 thm-integers-commutative-ring (proof): substituting equal natural numbers inside sums and products | equality rules of F1.4 (=E)
 exm-method-reduce-to-level-below (claim): (quick check) 2 + c = 7 + d gives c = 5 + d, and (5 + d) + 2 = d + 7 | numeral arithmetic by def-omega-arithmetic (2 + 5 = 7), thm-omega-arithmetic-laws (b), (c); cancellation cited; verify/ch02/exm-integer-laws-two-routes.py
 prp-ring-algebra (claim): (quick check after the field paragraph) uniqueness of inverses in a field | inline (the paragraph after prp-ring-algebra, no label)
 exm-integer-laws-two-routes (solution): the pairs (bc + ad, bd + ac) and (ad + bc, ac + bd) are equal | thm-omega-arithmetic-laws (b) (cited); verify/ch02/exm-integer-laws-two-routes.py
-exr-commutative-rings-a1 (solution): (c) [2][3] = [0] in the integers modulo 6 | as the first line (illustration only; ring laws not proved here, marked)
+exr-commutative-rings-a1 (solution): (c) Z x Z with componentwise operations is a commutative ring, (1,0)(0,1) = (0,0), (1,0), (0,1) != (0,0) | thm-integers-commutative-ring coordinatewise (cited); prp-ring-algebra (b), (F6); 1 != 0 in Z from thm-integers-commutative-ring
+exr-commutative-rings-a1 (solution): (c) (second illustration) [2][3] = [0] in the integers modulo 6 | as the first line (illustration only; ring laws not proved here, marked)
 exr-commutative-rings-a1 (solution): (d) u - v = u + (-v) | def-commutative-ring-and-field (cited by clause)
-exr-commutative-rings-b2 (solution): (b) [3][3] = [9] = [3] in the integers modulo 6, 3 and 2 not multiples of 6 | ring laws as for the modulo-6 example (illustration only, marked); F2.5 §02 def-congruence; verify/ch02/exr-commutative-rings-b2.py
+exr-commutative-rings-b2 (solution): (b) (1,0)(1,0) = (1,0) in Z x Z, and (1,0) is neither (0,0) nor (1,1) | the ring Z x Z of exr-commutative-rings-a1 (c); (F7), prp-ring-algebra (b) (cited); 1 != 0 in Z; verify/ch02/exr-commutative-rings-b2.py
+exr-commutative-rings-b2 (solution): (b) (second illustration) [3][3] = [9] = [3] in the integers modulo 6 | ring laws as for the modulo-6 example (illustration only, marked); F2.5 §02 def-congruence; verify/ch02/exr-commutative-rings-b2.py
 exr-commutative-rings-b2 (solution): (c) the only additive zero of N x N is (0, 0); (1, 0) has no negative | inline; verify/ch02/exr-commutative-rings-b2.py
 exr-commutative-rings-c1 (solution): the arithmetic of 2 = 1 + 1, x + 0 = x, x.0 = 0 in Z, and the regroupings of (b), (c) | thm-integers-commutative-ring, prp-ring-algebra (cited at the start of the solution); -(u + v) = (-u) + (-v) inline; verify/ch02/exr-commutative-rings-c1.py
 exr-commutative-rings-c1 (solution): phi injective from phi(phi(x)) = x | inline
