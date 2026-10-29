@@ -149,5 +149,5 @@ The 170 hand hits: 117 are plain "Chapter N"/"Section N.M" pointers on a line th
 - **"Chapter 2"** (19 downstream hits): screen by hand; none is known to mean the search method (which is now Chapter 3).
 - **fd2 Gate 0 map** (`07-gate-0.md` 94, 363, 365): re-check after the sweep (layout-final §5.5).
 - **Ledger evidence** in `fd3/authoring/ledger/ch03–05.yaml` and `fd4/authoring/ledger/ch02–03.yaml` (6 old fd1 path mentions): history, leave.
-- **analysis-series `authoring/series.json`**: regenerate there with `tools/series.py refresh ../math-atlas/registry` once the atlas commit lands (foundations' copy was refreshed in D2).
+- **analysis-series `authoring/series.json`**: regenerate there with `tools/series.py refresh ../../registry` once the atlas commit lands (foundations' copy was refreshed in D2).
 - **fd1 Chapter 1** (excluded from D2 while its referee runs): its forward pointers are written new-style by `ch01-deepen`; confirm with the fd1 gate grep after the referee finishes.

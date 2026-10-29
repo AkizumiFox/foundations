@@ -81,7 +81,7 @@ These decisions were made on 2026-09-27, across two planning conversations and t
 - **`complex-early`** (roadmap A6 / route R6): Parts 0 → I → II → V. Part V needs nothing from Parts III–IV beyond the Poisson/Abel link, and wherever it cites Part IV (Green's identities, now in `surfaces-divergence-theorem`) it keeps a self-contained disc-case fallback, so the path is valid.
 
 ## Source policy
-- Original prose only. The converted reference books (`~/coding/analysis/converted/`) may be used to check truth and coverage and for nothing else.
+- Original prose only. The converted reference books (`~/math-refs/analysis/converted/`) may be used to check truth and coverage and for nothing else.
 - `blueprint/originality.py` flags shared n-grams against the source sections listed for each chapter.
 - Converted text is never committed.
 

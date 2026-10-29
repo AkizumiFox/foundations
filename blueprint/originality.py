@@ -4,7 +4,7 @@
 
 Sources are the DAG nodes listed for the chapter in book.yaml (plus --extra nodes). Their
 text is read from the converted library (env ANALYSIS_SOURCES, default
-~/coding/analysis/converted): the section files named by the node's `files` range in
+~/math-refs/analysis/converted): the section files named by the node's `files` range in
 dag.json. Shared n-grams made only of mathematical boilerplate are ignored. A clean chapter
 reports a handful of stock phrases at most; any run of prose is a copying defect.
 """
@@ -17,7 +17,7 @@ from pathlib import Path
 import yaml
 
 ROOT = Path(__file__).resolve().parent.parent
-LIBRARY = Path(os.environ.get("ANALYSIS_SOURCES", Path.home() / "coding/analysis/converted"))
+LIBRARY = Path(os.environ.get("ANALYSIS_SOURCES", Path.home() / "math-refs/analysis/converted"))
 COMMON = {"the", "of", "a", "is", "and", "to", "in", "that", "for", "be", "by", "with", "if", "then",
           "on", "as", "an", "are", "this", "it", "we", "let", "there", "exists", "every", "all", "such"}
 

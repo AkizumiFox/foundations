@@ -19,7 +19,7 @@ clean tally here after the first clean run: a tally that drops silently is how a
 measurement looks.
 
 ```bash
-cd /home/akizumi/coding/math-books/book-engine
+cd /home/akizumi/coding/math-atlas/books/book-engine
 ./build.py html
 cp tools/_measure.html _build/html/_measure.html
 (python3 -m http.server 8774 --directory _build/html >/dev/null 2>&1 &)

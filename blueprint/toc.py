@@ -5,7 +5,7 @@
     python blueprint/toc.py --all --brief  # every book in blueprint/sources.yaml
 
 The converted library lives outside this repository (env ANALYSIS_SOURCES, default
-~/coding/analysis/converted); each book there has sections/NNN-*.md files whose YAML front
+~/math-refs/analysis/converted); each book there has sections/NNN-*.md files whose YAML front
 matter records `section`, `pdf_pages` and `headings`. Only titles and page numbers are
 printed -- enough to build DAG nodes and coverage lists without reading the text.
 """
@@ -17,7 +17,7 @@ from pathlib import Path
 import yaml
 
 ROOT = Path(__file__).resolve().parent.parent
-LIBRARY = Path(os.environ.get("ANALYSIS_SOURCES", Path.home() / "coding/analysis/converted"))
+LIBRARY = Path(os.environ.get("ANALYSIS_SOURCES", Path.home() / "math-refs/analysis/converted"))
 
 
 def books() -> dict:

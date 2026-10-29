@@ -1,12 +1,12 @@
 # Brief: build one Part's DAG fragment and chapter plan
 
-You are planning **one or two Parts** of a proof-based analysis textbook, "the book", written in English. The book runs in one sequence from logic to Sobolev spaces. This repository, `~/coding/analysis-book`, holds it. Its engine and workflow copy a finished sibling, `~/coding/regression`: read that repository's `blueprint/book.yaml` and `blueprint/dag.json` to see the target shape.
+You are planning **one or two Parts** of a proof-based analysis textbook, "the book", written in English. The book runs in one sequence from logic to Sobolev spaces. This repository, `~/coding/analysis-book`, holds it. Its engine and workflow copy a finished sibling, `~/coding/math-atlas/books/regression`: read that repository's `blueprint/book.yaml` and `blueprint/dag.json` to see the target shape.
 
 ## Read first
 - `authoring/design/decisions.md` sets the Part structure and the rules.
 - `authoring/design/curriculum.md` lists, stage by stage, what the reader must know and prove. Your chapters have to cover your stage **completely**.
 - `blueprint/sources.yaml` lists the reference books, their codes and their roles.
-- `.venv/bin/python blueprint/toc.py CODE` prints a reference book's table of contents: section files, PDF pages and headings. Open a section file under `~/coding/analysis/converted/<dir>/sections/` when a heading alone does not tell you what the section covers. Never copy any text from these books; you only read them to plan.
+- `.venv/bin/python blueprint/toc.py CODE` prints a reference book's table of contents: section files, PDF pages and headings. Open a section file under `~/math-refs/analysis/converted/<dir>/sections/` when a heading alone does not tell you what the section covers. Never copy any text from these books; you only read them to plan.
 
 ## Write: `blueprint/fragments/part-<X>.yaml`
 Use exactly this schema. The sample entries are illustrative.

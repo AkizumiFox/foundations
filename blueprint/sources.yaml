@@ -1,7 +1,7 @@
 # The reference books a chapter's coverage is checked against. Codes are used as the
 # prefix of DAG node ids (blueprint/dag.json): <CODE>.<chapter>, e.g. ABB.1, SS3.6.
 # `dir` is relative to the converted library (env ANALYSIS_SOURCES, default
-# ~/coding/analysis/converted). Converted text is never committed to this repository.
+# ~/math-refs/analysis/converted). Converted text is never committed to this repository.
 # role: scaffolding = the book whose chapter sequence a Part follows most closely;
 #       depth = fuller or more general treatment; motivation = the "why" and history;
 #       problems = exercise and counterexample reservoirs; bridge = gentler on-ramp.

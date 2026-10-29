@@ -4,7 +4,7 @@ Written 2026-09-28. It answers one question: how should the remaining 70 chapter
 
 The report draws on four bodies of evidence:
 - published work on how reliable LLM proofs are, how well LLMs judge proofs, and autoformalization;
-- the histories of the two finished sibling books (`~/coding/linear-algebra`, `~/coding/regression`);
+- the histories of the two finished sibling books (`~/coding/math-atlas/books/linear-algebra`, `~/coding/math-atlas/books/regression`);
 - two read-only adversarial referee passes run on this book's pilot chapters for this report;
 - this repository's plan (`blueprint/book.yaml`, the blueprints, STYLE, DRAFTING, decisions).
 

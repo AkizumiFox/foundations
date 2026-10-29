@@ -20,7 +20,7 @@ repository belongs to and of its sibling series, in reading order, with its pref
 `@prefix:label` of cross-book references), title, repository, directory and chapters. It is
 generated from math-atlas's registry:
 
-    python3 tools/series.py refresh ../math-atlas/registry   # rewrite authoring/series.json
+    python3 tools/series.py refresh ../../registry   # rewrite authoring/series.json
     python3 tools/series.py show                             # the map, one chapter a line
     python3 tools/series.py where                            # the volume of the current directory
 

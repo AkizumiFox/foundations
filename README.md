@@ -26,7 +26,7 @@ Shared at the root: `engine/` (the book engine, a git submodule), `tools/` (the 
 |---|---|
 | After a clone or in a new worktree | `git submodule update --init` |
 | Build a volume | `cd fd1 && ./build.py html` (`all`, `check`, `serve`, ...) |
-| Against a working copy of the engine | `BOOK_ENGINE=~/coding/book-engine ./build.py html` |
+| Against a working copy of the engine | `BOOK_ENGINE=~/coding/math-atlas/books/book-engine ./build.py html` |
 | A book tool on a volume | `python3 tools/ledger.py --book fd2 stale 1`, or `cd fd2 && python3 ../tools/ledger.py stale 1` |
 | Promises of the whole repository | `python3 tools/promises.py --reconcile` |
 | Book tool tests | `python3 -m unittest discover -s tests` |
