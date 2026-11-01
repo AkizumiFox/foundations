@@ -49,6 +49,13 @@ items:
       argument (M ≥ N, so k > M implies k > N) is right. The zero-ring count is right: there is one function
       ℕ → {0}, so x = 0. The R and C pointers resolve (fd3 Ch5, fd4 Ch1). Every hook claim has a ledger
       line.'
+  - stage: S7r
+    verdict: correct
+    by: rereferee
+    hash: 5c907723e6ed
+    date: '2026-11-01'
+    evidence: The only change is the pointer at 01:39, now 'reduce to the level below' of Number Systems
+      Section 2.3, which matches the method box at fd3 ch02/03:109. The mathematics is unchanged.
 - key: exm-elements-of-rx
   kind: exm
   file: 01-polynomials-as-sequences.md
@@ -155,11 +162,20 @@ items:
       cites Chapter 1''s @lem-ring-finite-sums. Three credits are also wrong: ''Chapter 4'' for lem-ring-finite-sums
       (it is Chapter 1), ''Chapter 3'' for the power laws (Chapter 1), and ''Number Systems, Section 3.3''
       for Multiples (fd3 Section 2.4).'
+  - stage: S7r
+    verdict: correct
+    by: rereferee
+    hash: 8edc6349f7b4
+    date: '2026-11-01'
+    evidence: (c) now rests on prp-power-laws-commutative-ring (a)-(c) (ch01:31-39, same recursion, any
+      commutative ring), with existence from fd2:thm-recursion. (b) is credited to Chapter 1 (lem-ring-finite-sums)
+      and (d) to Chapter 4 (lem-integer-multiples), both confirmed by grep. Multiples is fd3 Section 2.4.
+      Ledger lines 01:280-283 match.
 - key: proof:lem-finite-sums-and-powers
   kind: proof
   file: 01-polynomials-as-sequences.md
   line: 147
-  hash: 1d7387c8c6c4
+  hash: a02a4bee6938
   verdicts:
   - stage: S5a
     verdict: correct
@@ -201,10 +217,19 @@ items:
       (b), m·0 = 0. The step uses the first law and m(n+1) = mn+m from laws (d), (e). Third law: the base
       case is 1 = 1·1 by (F7), now named. The step regroups (s^n t^n)(st) = (s^n s)(t^n t) using (F5)
       and (F6), which is valid because R is commutative. Every law used is named, as the idea box promises.'
+  - stage: S7r
+    verdict: correct
+    by: rereferee
+    hash: a02a4bee6938
+    date: '2026-11-01'
+    evidence: The second-reading block is retitled 'Proof of (a)'. It keeps the recursion construction,
+      uniqueness by induction on k, list dependence by induction on j, and the product of a list. The
+      idea text ('no law beyond 0+u=u') is accurate. The (c) induction was removed because (c) is now
+      cited. The ledger now says induction is on k and j.
 - key: exr-polynomials-as-sequences-a1
   kind: exr
   file: 01-polynomials-as-sequences.md
-  line: 166
+  line: 162
   hash: fd40414fec5d
   verdicts:
   - stage: S5a
@@ -246,7 +271,7 @@ items:
 - key: exr-polynomials-as-sequences-b1
   kind: exr
   file: 01-polynomials-as-sequences.md
-  line: 189
+  line: 185
   hash: 022e6e37c045
   verdicts:
   - stage: S5a
@@ -288,7 +313,7 @@ items:
 - key: exr-polynomials-as-sequences-b2
   kind: exr
   file: 01-polynomials-as-sequences.md
-  line: 211
+  line: 207
   hash: cdccc5531edf
   verdicts:
   - stage: S5a
@@ -322,7 +347,7 @@ items:
 - key: exr-polynomials-as-sequences-c1
   kind: exr
   file: 01-polynomials-as-sequences.md
-  line: 240
+  line: 236
   hash: 933544deca97
   verdicts:
   - stage: S5a
@@ -2325,6 +2350,13 @@ items:
     evidence: 04-evaluation-and-substitution.md:516 says "Chapter 3's difference-of-powers identity (@lem-difference-of-powers)",
       but the label is in fd4 Chapter 1 (ch01.../01-finite-sums.md:426). The ledger at :601 says F4.1
       where it should say F4.6.
+  - stage: S7r
+    verdict: correct
+    by: rereferee
+    hash: 6c802ab506a5
+    date: '2026-11-01'
+    evidence: 04:516 now credits Chapter 1's lem-difference-of-powers (fd4 ch01/01-finite-sums.md). It
+      is a prose comparison, and the proof above it does not use it. The ledger at 04:601 says F4.6.
 - key: exr-evaluation-and-substitution-c4
   kind: exr
   file: 04-evaluation-and-substitution.md
@@ -2922,7 +2954,7 @@ items:
   kind: exr
   file: 05-formal-derivative.md
   line: 509
-  hash: 40bc6c508303
+  hash: a5ce291de415
   verdicts:
   - stage: S5a
     verdict: correct
@@ -3009,10 +3041,38 @@ items:
       The rewritten closing sentence at :526 claims the algebraic numbers are countable 'by the same count',
       which needs a finite-roots fact the chapter never states, and the series no longer defines algebraic
       numbers (thm-algebraic-countable is parked to ST, blueprint ch06.md:343).
+  - stage: S7r
+    verdict: correct
+    by: rereferee
+    hash: a5ce291de415
+    date: '2026-11-01'
+    evidence: 'I checked each part of the R3 solution. Z is countable by the class-map surjection (unchanged).
+      F_2 = {[0],[1]} by thm-integers-mod-n-ring (b). For A_N: thm-recursion (step map N x X -> X with
+      X = functions N -> R[x]) gives s_N via fd3:cor-omega-identification (b), and induction shows that
+      s_N maps N onto A_N. The base case is A_0 = the constants. For the step, s_N(q_1 n) is in A_N, which
+      lies inside A_{N+1}, and f = h + f_{N+1}x^{N+1}. For the union, (N, m) -> s_N(m) maps N x N onto
+      R[x], and composing with q gives a surjection N -> R[x], so R[x] is countable by def-countable.
+      For the sequences, {0,1} -> F_2 is a bijection by thm-integers-mod-n-ring (b) with n = 2, and fd2:thm-binary-sequences-uncountable
+      (group i) plus prp-countable-image then give uncountability. The only group (ii) result used is
+      thm-product-countable, which is allowed in an R item. Neither cor-product-countable (b) nor thm-countable-union
+      is used. The three ledger lines match the text. The ref density at line 518 is §13 wording and is
+      deferred (F011).'
+  - stage: S7r
+    verdict: correct
+    by: rereferee
+    hash: a5ce291de415
+    date: '2026-11-01'
+    evidence: 'I rechecked the recursion. s_0 = g gives exactly the constants A_0. s_{N+1}(n) = s_N(q_1
+      n) + g(q_2 n) x^{N+1} lies in A_{N+1}. Onto: for f in A_{N+1}, f = h + f_{N+1}x^{N+1} with h in
+      A_N; pick a, b, then n with q(n) = (a, b). (N, m) -> s_N(m), composed with q, is a surjection N
+      -> R[x]. No choice is used. thm-product-countable is in group (ii) and allowed in an R item. The
+      F_2 bijection now cites thm-integers-mod-n-ring (b) with n = 2. The unsupported algebraic-numbers
+      sentence is gone. Left for the deferred §13 pass (D1): ref density, and the reader-facing words
+      ''citing rule'' / ''group (ii)'' at 05:516 (STYLE B4).'
 - key: exr-formal-derivative-r4
   kind: exr
   file: 05-formal-derivative.md
-  line: 529
+  line: 533
   hash: 484b4ea5746e
   verdicts:
   - stage: S5a

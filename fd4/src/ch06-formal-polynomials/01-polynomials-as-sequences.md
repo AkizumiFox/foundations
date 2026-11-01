@@ -1,6 +1,6 @@
 # Polynomials as Coefficient Sequences
 
-At school a polynomial is an expression such as \( 3x^2 - x + 2 \), and \( x \) is a number that has not been chosen yet. This chapter replaces that picture by a definition that works over every commutative ring of *Number Systems: From \( \nN \) to \( \nR \)*, Chapter 3 (@fd3:def-commutative-ring-and-field): over \( \nQ \), over the fields \( \nF_p \) of Chapter 4, and over rings such as \( \nZ/6\nZ \), where a product of two non-zero elements can be zero. This section makes the one decision the whole chapter rests on: a polynomial **is** its list of coefficients. It then collects the finite sums, powers and multiples that the next sections compute with.
+At school a polynomial is an expression such as \( 3x^2 - x + 2 \), and \( x \) is a number that has not been chosen yet. This chapter replaces that picture by a definition that works over every commutative ring of *Number Systems: From \( \nN \) to \( \nR \)*, Chapter 2 (@fd3:def-commutative-ring-and-field): over \( \nQ \), over the fields \( \nF_p \) of Chapter 4, and over rings such as \( \nZ/6\nZ \), where a product of two non-zero elements can be zero. This section makes the one decision the whole chapter rests on: a polynomial **is** its list of coefficients. It then collects the finite sums, powers and multiples that the next sections compute with.
 
 Throughout, \( R \) is a commutative ring, with \( a - b \coloneqq a + (-b) \).
 
@@ -36,7 +36,7 @@ In words: the first clause says that a polynomial is an infinite list of element
 \[
 p = q \quad \Longleftrightarrow \quad p_k = q_k \ \text{ for every } k \in \nN .
 \]
-To prove an identity between polynomials we therefore compute the \( k \)-th coefficient of both sides, for an arbitrary \( k \). We call this move **compare coefficients**. It is *Number Systems: From \( \nN \) to \( \nR \)*, Chapter 3's "reduce to the level below" once more: a statement about polynomials becomes a statement about elements of \( R \), one position at a time.
+To prove an identity between polynomials we therefore compute the \( k \)-th coefficient of both sides, for an arbitrary \( k \). We call this move **compare coefficients**. It is the "reduce to the level below" of *Number Systems: From \( \nN \) to \( \nR \)*, Section 2.3, once more: a statement about polynomials becomes a statement about elements of \( R \), one position at a time.
 
 **The display.** If \( N \) is admissible for \( p \), we write
 \[
@@ -96,7 +96,7 @@ In \( (\nZ/6\nZ)[x] \), yes: \( 6x^2 \) is the monomial \( [6] \, x^2 \), and \(
 
 ## Sums, powers and multiples
 
-The next section defines the product of two polynomials by a formula whose \( k \)-th coefficient is a finite sum \( \sum_{i=0}^{k} p_i q_{k-i} \) of products in \( R \). Later sections raise elements of \( R \), and polynomials, to powers, and use multiples \( k \cdot a \). This subsection collects what we use about all three. Most of it is already proved: finite sums and multiples in a commutative ring are Chapter 4's (@lem-ring-finite-sums, @lem-integer-multiples), and the recursions follow the patterns that *Sets and Functions*, Section 3.3 set up for real numbers (@fd2:def-sum-product, @fd2:def-power). The patterns are reused; no fact about \( \nR \) is.
+The next section defines the product of two polynomials by a formula whose \( k \)-th coefficient is a finite sum \( \sum_{i=0}^{k} p_i q_{k-i} \) of products in \( R \). Later sections raise elements of \( R \), and polynomials, to powers, and use multiples \( k \cdot a \). This subsection collects what we use about all three. Most of it is already proved: finite sums and powers in a commutative ring are Chapter 1's (@lem-ring-finite-sums, @prp-power-laws-commutative-ring), multiples are Chapter 4's (@lem-integer-multiples), and the recursions follow the patterns that *Sets and Functions*, Section 3.3 set up for real numbers (@fd2:def-sum-product, @fd2:def-power). The patterns are reused; no fact about \( \nR \) is.
 
 One point deserves care before we start. The sums of polynomials in Section 6.2 must be formed **before** we know that \( R[x] \) is a commutative ring, because they are used to prove it. So part (a) below asks for an addition and a left-neutral element \( 0 \), and nothing more.
 
@@ -135,13 +135,13 @@ s^{m+n} = s^m s^n , \qquad (s^m)^n = s^{mn} , \qquad (st)^n = s^n t^n .
 :::
 :::
 
-In words: (a) says that a finite list in a set with an addition has a sum, built one term at a time, and that terms beyond the list do not matter; it needs no law of addition beyond \( 0 + u = u \). (b) says that a finite sum of ring elements can be split into two sums, multiplied through by a constant, collapsed to its one non-zero term, or negated term by term. (c) is the three laws of exponents in a commutative ring. (d) is the arithmetic of the multiples \( m \cdot a \) of *Number Systems: From \( \nN \) to \( \nR \)*, Section 3.3 ("Multiples"), extended to \( m \in \nZ \) in Chapter 4: a dot with an integer on its left is always a multiple, and the product of two ring elements is written by juxtaposition.
+In words: (a) says that a finite list in a set with an addition has a sum, built one term at a time, and that terms beyond the list do not matter; it needs no law of addition beyond \( 0 + u = u \). (b) says that a finite sum of ring elements can be split into two sums, multiplied through by a constant, collapsed to its one non-zero term, or negated term by term. (c) is the three laws of exponents in a commutative ring. (d) is the arithmetic of the multiples \( m \cdot a \) of *Number Systems: From \( \nN \) to \( \nR \)*, Section 2.4 ("Multiples"), extended to \( m \in \nZ \) in Chapter 4: a dot with an integer on its left is always a multiple, and the product of two ring elements is written by juxtaposition.
 
-Parts (b) and (d) are cited from Chapter 4: (Σ1)–(Σ4) are @lem-ring-finite-sums (a), (b), (d), (e) (for (Σ3), apply @lem-ring-finite-sums (d) to the sequence that agrees with \( u_0, \dots, u_k \) and is \( 0 \) beyond \( k \); by the finite-lists clause of part (a) above it has the same sum), and the five rules of part (d) above are @lem-integer-multiples (c), (d). Parts (a) and (c) are the recursions of *Sets and Functions*, Section 3.3, read in \( T \) and in \( R \); each is built by @fd2:thm-recursion, and each of its laws is one short induction. Chapter 3 proves the same three power laws for every commutative ring (@prp-power-laws-commutative-ring); we only compare with it, and prove (c) again from the template, so that this chapter's main line rests on Chapter 4 and not on Chapter 3.
+Part (b) is cited from Chapter 1 and part (d) from Chapter 4: (Σ1)–(Σ4) are @lem-ring-finite-sums (a), (b), (d), (e) (for (Σ3), apply @lem-ring-finite-sums (d) to the sequence that agrees with \( u_0, \dots, u_k \) and is \( 0 \) beyond \( k \); by the finite-lists clause of part (a) above it has the same sum), and the five rules of part (d) above are @lem-integer-multiples (c), (d). In (c), the powers are the recursion of @fd2:def-power read in \( R \): @fd2:thm-recursion with \( X = R \), starting value \( 1 \) and step \( (n, y) \mapsto y s \) gives exactly one such \( s^n \) for every \( n \), and the three laws are @prp-power-laws-commutative-ring (a), (b), (c) of Chapter 1. Part (a) is the recursion of *Sets and Functions*, Section 3.3, read in \( T \); it is built by @fd2:thm-recursion, and its uniqueness and the dependence on the list are short inductions.
 
-::: {.second-reading title="Proofs of (a) and (c)"}
+::: {.second-reading title="Proof of (a)"}
 ::: {.idea}
-Each statement comes from @fd2:thm-recursion, and each law is one induction on one index, following the clauses of the recursion: the base case uses the starting value, and the step peels off the last term or factor. Only the laws of \( R \) named at each step are used.
+The sum comes from @fd2:thm-recursion, and each claim about it is one induction on one index, following the clauses of the recursion: the base case uses the starting value, and the step peels off the last term. No law of addition beyond \( 0 + u = u \) is used.
 :::
 
 ::: {.proof}
@@ -149,11 +149,7 @@ Each statement comes from @fd2:thm-recursion, and each law is one induction on o
 
 For the dependence on \( u_0, \dots, u_k \), let \( (v_i) \) be a second sequence with \( v_i = u_i \) for \( i \le k \), and let \( (S'_j) \) be its sequence of partial sums. We prove by @fd1:ax-induction on \( j \) the statement "if \( j \le k + 1 \), then \( S_j = S'_j \)". For \( j = 0 \) both are \( 0 \). If \( j + 1 \le k + 1 \), then \( j \le k + 1 \) and \( j \le k \), so \( S_j = S'_j \) by the hypothesis and \( u_j = v_j \); hence \( S_{j+1} = S_j + u_j = S'_j + v_j = S'_{j+1} \). At \( j = k + 1 \) this gives \( \sum_{i=0}^{k} u_i = \sum_{i=0}^{k} v_i \). The argument used only that \( + \) is a function on \( T \). The product of a list is @fd2:thm-recursion with \( X = R \), starting value \( 1 \) and step \( (j, y) \mapsto y \, s_{j+1} \) (with \( s_j \coloneqq 1 \), say, for \( j > r \)), the pattern of the product in @fd2:def-sum-product; its dependence on \( s_1, \dots, s_r \) only is the same induction.
 
-*(c)* The powers are @fd2:thm-recursion with \( X = R \), starting value \( 1 \) and step \( (n, y) \mapsto y s \), the pattern of @fd2:def-power. For the first law fix \( m \) and induct on \( n \) (@fd1:ax-induction). For \( n = 0 \): \( s^{m+0} = s^m = s^m \cdot 1 = s^m s^0 \), by (F7). If \( s^{m+n} = s^m s^n \), then
-\[
-s^{m+(n+1)} = s^{(m+n)+1} = s^{m+n} s = (s^m s^n) s = s^m (s^n s) = s^m s^{n+1} ,
-\]
-using \( m + (n + 1) = (m + n) + 1 \) (@fd3:thm-omega-arithmetic-laws (c)), the recursion, the hypothesis and (F5). For the second law fix \( m \): \( (s^m)^0 = 1 = s^0 = s^{m \cdot 0} \) (@fd3:def-omega-arithmetic (b)), and if \( (s^m)^n = s^{mn} \), then \( (s^m)^{n+1} = (s^m)^n s^m = s^{mn} s^m = s^{mn + m} = s^{m(n+1)} \), by the first law and \( m(n + 1) = mn + m \) (@fd3:thm-omega-arithmetic-laws (d), (e)). For the third: \( (st)^0 = 1 = 1 \cdot 1 = s^0 t^0 \), by (F7), and if \( (st)^n = s^n t^n \), then \( (st)^{n+1} = (st)^n (st) = (s^n t^n)(st) = (s^n s)(t^n t) = s^{n+1} t^{n+1} \), regrouping by (F5) and (F6). This proves (a) and (c).
+This proves (a).
 :::
 :::
 
@@ -264,7 +260,7 @@ Fatal errors (0 for the step): using a greatest element of \( S \) without justi
 
 <!-- dependency ledger
 def-polynomial (claim): (opening) F_p from Chapter 4; Z/6Z has [2][3] = [0] | def-field-fp (cited); exm-integers-mod-six (cited)
-def-polynomial (claim): (hook) 0*0 + 0 = 0 and 1*1 + 1 = 0 in F_2; also x^3 + x and x^4 + x^2 vanish at 0 and 1 | exm-finite-fields (cited, tables of F_2); verify/ch04/def-polynomial.py
+def-polynomial (claim): (hook) 0*0 + 0 = 0 and 1*1 + 1 = 0 in F_2; also x^3 + x and x^4 + x^2 vanish at 0 and 1 | exm-finite-fields (cited, tables of F_2); verify/ch06/def-polynomial.py
 def-polynomial (claim): (hook) the two rules are equal functions | fd2:prp-function-equality (cited)
 def-polynomial (claim): (hook) over Q a non-zero polynomial is not the zero function | F5.5 (forward prose pointer, Section 7.4; thm-polynomial-identity-from-values (b)); motivation only, nothing depends on it
 def-polynomial (claim): (hook) over a finite ring with 1 != 0 the function picture fails | prp-polynomial-function-map (d), Section 6.4 (within the chapter); motivation only, nothing depends on it
@@ -276,19 +272,17 @@ def-polynomial (claim): Section 6.2 proves the display is an honest sum; Section
 def-polynomial (claim): the zero ring {0} with 1 = 0; exactly one function N -> {0} | fd3 examples after def-commutative-ring-and-field (cited by position); fd2:def-function (one graph N x {0}), used silently
 def-polynomial (claim): R and C are commutative rings; R[x], C[x] are the companion's main examples | fd3 F3.10 (thm-reals-field) and Chapter 3 (thm-complex-numbers-field), prose only, not cited; nothing depends on it
 exm-elements-of-rx (claim): a natural number m in Z/nZ stands for m*[1] = [m] | thm-integers-mod-n-ring (d) (cited); def-field-fp (cited)
-exm-elements-of-rx (solution): [7] = [2] in Z/5Z (7 - 2 = 5); 7 = 1 in F_2 (7 - 1 = 6 = 3*2) | def-field-fp, def-integers-mod-n-ring (definition of the classes); verify/ch04/exm-elements-of-rx.py
-def-polynomial (claim): (warning) value of x^2 + 1 at 2 is 5 | arithmetic in Z; evaluation is defined in Section 6.4 (prose pointer); verify/ch04/def-polynomial.py
+exm-elements-of-rx (solution): [7] = [2] in Z/5Z (7 - 2 = 5); 7 = 1 in F_2 (7 - 1 = 6 = 3*2) | def-field-fp, def-integers-mod-n-ring (definition of the classes); verify/ch06/exm-elements-of-rx.py
+def-polynomial (claim): (warning) value of x^2 + 1 at 2 is 5 | arithmetic in Z; evaluation is defined in Section 6.4 (prose pointer); verify/ch06/def-polynomial.py
 def-polynomial (claim): (check) [6] = [0] in Z/6Z; 6 != 0 in Z | thm-quotient-ring-by-ideal (d) with 6 in 6Z, used silently; fd3:thm-integers-commutative-ring (1 != 0 and 6 = 6*1 > 0), used silently
-lem-finite-sums-and-powers (proof): induction on k, j, n | fd1:ax-induction read on omega through fd3:cor-omega-identification (b)
-lem-finite-sums-and-powers (proof): m + (n + 1) = (m + n) + 1; m(n + 1) = mn + m | fd3:thm-omega-arithmetic-laws (c), (d), (e) (cited)
-lem-finite-sums-and-powers (proof): m*0 = 0 | fd3:def-omega-arithmetic (b) (cited)
+lem-finite-sums-and-powers (proof): induction on k, j | fd1:ax-induction read on omega through fd3:cor-omega-identification (b)
 lem-finite-sums-and-powers (proof): j + 1 <= k + 1 gives j <= k + 1 and j <= k | j < j + 1 <= k + 1 and transitivity give j < k + 1, hence j <= k (fd3:thm-omega-order (a), (b)), used silently
-lem-finite-sums-and-powers (claim): (b) and (d) cited from Chapter 4 | lem-ring-finite-sums (a), (b), (d), (e) (cited; for (Σ3) the list is extended by zeros, as part (a) allows); lem-integer-multiples (c), (d) (cited)
-lem-finite-sums-and-powers (claim): Chapter 3 proves the same power laws | prp-power-laws-commutative-ring (F4.1, see edge; prose comparison, not cited in the proof of (c))
+lem-finite-sums-and-powers (claim): (b) cited from Chapter 1, (d) from Chapter 4 | lem-ring-finite-sums (a), (b), (d), (e) (cited; for (Σ3) the list is extended by zeros, as part (a) allows); lem-integer-multiples (c), (d) (cited)
+lem-finite-sums-and-powers (claim): (c) powers exist by recursion; the three power laws | fd2:thm-recursion (cited), pattern of fd2:def-power; prp-power-laws-commutative-ring (a), (b), (c) (F4.6, Chapter 1, cited)
 lem-finite-sums-and-powers (claim): 0 + u = u in R and in R[x] | (F1), (F3) of R; in R[x] position by position (the addition of def-polynomial-ring, Section 6.2)
-exr-polynomials-as-sequences-a1 (solution): [4] = [0] in Z/4Z | definition of the classes; verify/ch04/exr-polynomials-as-sequences-a1.py
-exr-polynomials-as-sequences-b1 (solution): the eight triples over F_2 | listing; verify/ch04/exr-polynomials-as-sequences-b1.py
-exr-polynomials-as-sequences-b2 (solution): 2^k = 4 * 2^(k - 2) for k >= 2; k^2 = 4(j^2 + j) + 1; 2k = 4j + 2 | lem-finite-sums-and-powers (c) in Z; ring algebra in Z; verify/ch04/exr-polynomials-as-sequences-b2.py
+exr-polynomials-as-sequences-a1 (solution): [4] = [0] in Z/4Z | definition of the classes; verify/ch06/exr-polynomials-as-sequences-a1.py
+exr-polynomials-as-sequences-b1 (solution): the eight triples over F_2 | listing; verify/ch06/exr-polynomials-as-sequences-b1.py
+exr-polynomials-as-sequences-b2 (solution): 2^k = 4 * 2^(k - 2) for k >= 2; k^2 = 4(j^2 + j) + 1; 2k = 4j + 2 | lem-finite-sums-and-powers (c) in Z; ring algebra in Z; verify/ch06/exr-polynomials-as-sequences-b2.py
 exr-polynomials-as-sequences-b2 (solution): one of k, k - 1, k - 2, k - 3 equals 4q | fd3:thm-integers-division-remainder (a) (cited); r <= 3 from 0 <= r < 4 by discreteness (fd3:thm-integers-ordered-ring (c)), used silently
 exr-polynomials-as-sequences-c1 (solution): {0, ..., N} has N + 1 elements; empty set has 0 elements | fd2 examples after def-finite (cited by position); fd2:prp-subset-finite (cited)
 exr-polynomials-as-sequences-c1 (solution): restriction of a bijection; max of two naturals | inline (marking scheme also accepts fd2:cor-remove-point, cited); fd3:thm-omega-order (a) (cited)

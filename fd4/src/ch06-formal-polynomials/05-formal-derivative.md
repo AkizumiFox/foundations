@@ -513,17 +513,21 @@ Show that \( \nZ[x] \) and \( \nF_2[x] \) are countable, and that the set of all
 :::
 
 ::: {.solution}
-The tools are the countability results of *Sets and Functions*, Chapter 4, read on \( \nN = \omega \) through @fd3:cor-omega-identification.
+The tools are recursion and the countability results of *Sets and Functions*, Chapters 3 and 4, read on \( \nN = \omega \) through @fd3:cor-omega-identification. @fd2:thm-product-countable is in group (ii) of that citing rule, so it may be cited here, in a review exercise.
 
 *\( \nZ \) and \( \nF_2 \) are countable.* \( \nN \times \nN \) is countable (@fd2:thm-product-countable). The class map \( \nN \times \nN \to \nZ = (\nN \times \nN)/{\sim} \) is surjective (@fd2:def-quotient-set), so \( \nZ \) is countable by @fd2:prp-countable-image; this is the count of @fd3:exr-gaps-in-the-rationals-r2. The map \( \nN \to \nF_2 \), \( n \mapsto [n] \), is surjective, since every class is \( [0] \) or \( [1] \) (@thm-integers-mod-n-ring (b)); so \( \nF_2 \) is countable (@fd2:def-countable).
 
-*Polynomials of bounded length.* Let \( R \) be \( \nZ \) or \( \nF_2 \), and for \( N \in \nN \) let \( A_N \coloneqq \{ f \in R[x] : f_k = 0 \text{ for every } k > N \} \). By @exr-polynomials-as-sequences-b1, \( A_N \) is in bijection with \( R^{N+1} \). For \( N \ge 1 \), \( R^{N+1} \) is countable by @fd2:cor-product-countable (b); for \( N = 0 \) it is \( R \) itself. So each \( A_N \) is countable, as the image of a countable set under a bijection (@fd2:prp-countable-image).
+*Polynomials of bounded length.* Let \( R \) be \( \nZ \) or \( \nF_2 \), and for \( N \in \nN \) let \( A_N \coloneqq \{ f \in R[x] : f_k = 0 \text{ for every } k > N \} \). We list every \( A_N \) at once, with no choices. Fix a surjection \( g \colon \nN \to R \) (it exists, since \( R \) is countable and not empty) and a surjection \( q = (q_1, q_2) \colon \nN \to \nN \times \nN \) (by @fd2:thm-product-countable). By recursion on \( N \) (@fd3:cor-omega-identification (b)), with values in the set of functions \( \nN \to R[x] \), define
+\[
+s_0(n) \coloneqq g(n) , \qquad s_{N+1}(n) \coloneqq s_N\bigl(q_1(n)\bigr) + g\bigl(q_2(n)\bigr) \, x^{N+1} .
+\]
+We show by induction on \( N \) that \( s_N \) maps \( \nN \) onto \( A_N \). For \( N = 0 \), the constants \( g(n) \) are exactly the elements of \( A_0 \). Suppose \( s_N \) maps onto \( A_N \). Each \( s_{N+1}(n) \) lies in \( A_{N+1} \): \( s_N(q_1(n)) \in A_N \), and adding the monomial changes only the coefficient at \( N + 1 \) (@def-polynomial-ring). Conversely, let \( f \in A_{N+1} \), and let \( h \) be \( f \) with its coefficient at \( N + 1 \) replaced by \( 0 \). Then \( h \in A_N \) and \( f = h + f_{N+1} x^{N+1} \), comparing coefficients. Pick \( a \) with \( s_N(a) = h \), \( b \) with \( g(b) = f_{N+1} \), and \( n \) with \( q(n) = (a, b) \); then \( s_{N+1}(n) = f \).
 
-*The union.* Every polynomial lies in some \( A_N \) (@def-polynomial), so \( R[x] = \bigcup_{N \in \nN} A_N \), a countable union of countable sets, which is countable by @fd2:thm-countable-union (a). (That theorem uses the axiom of countable choice to pick a list of each \( A_N \).)
+*The union.* Every polynomial lies in some \( A_N \) (@def-polynomial), so the map \( \nN \times \nN \to R[x] \), \( (N, m) \mapsto s_N(m) \), is surjective. Composed with \( q \), it is a surjection \( \nN \to R[x] \), and \( R[x] \) is countable. The single recursion replaces the choice of a list for each \( A_N \) that @fd2:thm-countable-union would make.
 
-*All sequences.* The set \( \{0, 1\}^{\nN} \) is uncountable (@fd2:thm-binary-sequences-uncountable). The map \( \{0, 1\} \to \nF_2 \), \( 0 \mapsto [0] \), \( 1 \mapsto [1] \), is a bijection; composing a sequence with its inverse turns every sequence \( \nN \to \nF_2 \) into a sequence of zeros and ones, and this is a surjection onto \( \{0, 1\}^{\nN} \). If the sequences \( \nN \to \nF_2 \) were countable, so would be \( \{0, 1\}^{\nN} \), by @fd2:prp-countable-image. So they are uncountable.
+*All sequences.* The set \( \{0, 1\}^{\nN} \) is uncountable (@fd2:thm-binary-sequences-uncountable). The map \( \{0, 1\} \to \nF_2 \), \( 0 \mapsto [0] \), \( 1 \mapsto [1] \), is a bijection by @thm-integers-mod-n-ring (b) with \( n = 2 \); composing a sequence with its inverse turns every sequence \( \nN \to \nF_2 \) into a sequence of zeros and ones, and this is a surjection onto \( \{0, 1\}^{\nN} \). If the sequences \( \nN \to \nF_2 \) were countable, so would be \( \{0, 1\}^{\nN} \), by @fd2:prp-countable-image. So they are uncountable.
 
-*The clause.* The difference is the clause **only finitely many** of @def-polynomial: a polynomial is a sequence that is \( 0 \) from some point on, so it is determined by a finite tuple, and there are countably many finite tuples. A general sequence carries infinitely many independent choices. The same count, with the polynomials written as integer tuples, shows that the algebraic numbers are countable (by @fd2:cor-product-countable and @fd2:thm-countable-union).
+*The clause.* The difference is the clause **only finitely many** of @def-polynomial: a polynomial is a sequence that is \( 0 \) from some point on, so it is determined by a finite tuple, and there are countably many finite tuples. A general sequence carries infinitely many independent choices.
 :::
 
 ::: {#exr-formal-derivative-r4}
@@ -558,43 +562,43 @@ def-formal-derivative (claim): formula (M) for (a x^n)' | def-polynomial (the mo
 def-formal-derivative (claim): 1 + 1 = 0 in F_2, so (x^2)' = 0 | exm-finite-fields, cited where repeated in exm-formal-derivatives (iii)
 def-formal-derivative (claim): (why this definition) uniqueness of the derivation with delta(x) = 1 | exr-formal-derivative-c1, a pointer only; nothing in the text rests on it
 def-formal-derivative (claim): (warning) sum_k (k * f_k) x^k = x f' | coefficient comparison with lem-monomial-product (a), m = 1; inline, not used
-exm-formal-derivatives (example): 1 * 1 = 1, n * 1 = n in Z | the recursion of multiples, "Multiples" paragraph of F3.2 Section 4.4 (cited by position, as F5.1 does)
+exm-formal-derivatives (example): 1 * 1 = 1, n * 1 = n in Z | the recursion of multiples, "Multiples" paragraph of F3.2 §04 (cited by position, as F5.1 does)
 exm-formal-derivatives (example): n * 1 = n in Q by induction | fd3:prp-naturals-embed-integers, fd3:prp-integers-embed-rationals, cited; fd1:ax-induction read on omega; inline
-exm-formal-derivatives (example): all quoted coefficients (2, 0, -6, 4; 1; 0; [6] = [0]); (vi) (x^4)', (x^4)'', (x^4)''' = 4x^3, 12x^2, 24x over Q and x^3, 0, 0 over F_3 | verify/ch04/exm-formal-derivatives.py
-def-formal-derivative (claim): (quick check) (x^3 + x^2 + x + 1)' = x^2 + 1 over F_2 | verify/ch04/def-formal-derivative.py
+exm-formal-derivatives (example): all quoted coefficients (2, 0, -6, 4; 1; 0; [6] = [0]); (vi) (x^4)', (x^4)'', (x^4)''' = 4x^3, 12x^2, 24x over Q and x^3, 0, 0 over F_3 | verify/ch06/exm-formal-derivatives.py
+def-formal-derivative (claim): (quick check) (x^3 + x^2 + x + 1)' = x^2 + 1 over F_2 | verify/ch06/def-formal-derivative.py
 thm-formal-derivative-rules (proof): regrouping four terms in R[x]; f'g + fg' = g'f + gf' | (F1), (F2), (F6) of R[x] via thm-polynomial-ring-laws (a); inline
 thm-formal-derivative-rules (proof): (i - 1) + j = i + (j - 1) = i + j - 1 in N for i, j >= 1 | fd3:thm-omega-arithmetic-laws, fd3:prp-naturals-embed-integers; inline
 thm-formal-derivative-rules (proof): two monomials in the same position add coefficientwise | def-polynomial-ring (coefficientwise +), cited
-thm-formal-derivative-rules (proof): induction on m >= 1; g^(m-1) g = g^m; (m + 1) * 1 = m * 1 + 1 | fd1:ax-induction read on omega (fd3:cor-omega-identification); lem-finite-sums-and-powers (c) (power recursion); the recursion of multiples (F3.2 Section 4.4, by position)
+thm-formal-derivative-rules (proof): induction on m >= 1; g^(m-1) g = g^m; (m + 1) * 1 = m * 1 + 1 | fd1:ax-induction read on omega (fd3:cor-omega-identification); lem-finite-sums-and-powers (c) (power recursion); the recursion of multiples (F3.2 §04, "Multiples" paragraph, by position)
 thm-formal-derivative-rules (proof): (f - g)' = f' - g' | from (a), proved inline in (c)
 thm-formal-derivative-rules (claim): (aftermath) (x - c)^p has derivative 0 over F_p | thm-formal-derivative-rules (c) and p * 1 = 0 in F_p (thm-integers-mod-n-ring (d)); inline
 thm-formal-derivative-rules (claim): (remark) over Q and over the reals f' agrees with the derivative of calculus | prose only; no an1 citation; nothing depends on it
-thm-formal-derivative-rules (claim): (quick check) ((x + 1)^3)' = 0 over F_3; (x + 1)^3 = x^3 + 1 | verify/ch04/thm-formal-derivative-rules.py
+thm-formal-derivative-rules (claim): (quick check) ((x + 1)^3)' = 0 over F_3; (x + 1)^3 = x^3 + 1 | verify/ch06/thm-formal-derivative-rules.py
 prp-formal-derivative-zero (claim): (opening) a function with derivative 0 on an interval is constant | school calculus, motivation only; nothing rests on it
 prp-formal-derivative-zero (proof): as k runs through k >= 1, k - 1 runs through N | index arithmetic, fd3:prp-naturals-embed-integers; inline
 prp-formal-derivative-zero (proof): k * 1 = 0 iff p | k | prp-characteristic-divides (a) with c = p, cited
 prp-formal-derivative-zero (proof): p | 0, so p does not divide k forces k != 0 | fd3:prp-divisibility-rules-integers (a); inline
 prp-formal-derivative-zero (proof): pj >= j > N for p >= 1, j > N; k = pj_0, k >= 0, p > 0 implies j_0 >= 0; pj = pj' implies j = j' | fd3:thm-integers-ordered-ring with fd3:prp-ordered-ring-rules (c), (f); inline
 prp-formal-derivative-zero (proof): the k-th coefficient of a finite sum in F[x] is the sum of the k-th coefficients | def-polynomial-ring (coefficientwise +) and the sum recursion of lem-finite-sums-and-powers (a), induction on the number of terms; inline
-prp-formal-derivative-zero (claim): (aftermath) x^2 + 1 = (x + 1) o x^2 over F_2; x^6 + 2x^3 + 1 = (x^2 + 2x + 1) o x^3 over F_3 with derivative 0 | verify/ch04/prp-formal-derivative-zero.py
+prp-formal-derivative-zero (claim): (aftermath) x^2 + 1 = (x + 1) o x^2 over F_2; x^6 + 2x^3 + 1 = (x^2 + 2x + 1) o x^3 over F_3 with derivative 0 | verify/ch06/prp-formal-derivative-zero.py
 prp-formal-derivative-zero (claim): (warning) (x^p)' = 0 and (x^p - x)' = -1 over F_p; Chapter 7 shows x^p - x has no repeated roots | (M) and thm-integers-mod-n-ring (d), inline; Chapter 7 = F5.5 (promised; prose pointer, nothing here depends on it)
-prp-formal-derivative-zero (claim): (quick check) (x^5 + x)' = 1 over F_5 | verify/ch04/prp-formal-derivative-zero.py
-exr-formal-derivative-a1 (solution): (x^5 - x)' = 5x^4 - 1 over Q and -1 = 4 over F_5; deg f' in {1, 0, -infinity} with witnesses | verify/ch04/exr-formal-derivative-a1.py
+prp-formal-derivative-zero (claim): (quick check) (x^5 + x)' = 1 over F_5 | verify/ch06/prp-formal-derivative-zero.py
+exr-formal-derivative-a1 (solution): (x^5 - x)' = 5x^4 - 1 over Q and -1 = 4 over F_5; deg f' in {1, 0, -infinity} with witnesses | verify/ch06/exr-formal-derivative-a1.py
 exr-formal-derivative-b1 (solution): a ring homomorphism sends 0 to 0 and preserves powers | def-ring-homomorphism (its consequences paragraph), cited
-exr-formal-derivative-b1 (solution): check (x^2 + 1)^2 = x^4 + 2x^2 + 1, derivative 4x^3 + 4x | verify/ch04/exr-formal-derivative-b1.py
-exr-formal-derivative-b2 (solution): P(n, k + 1) = P(n, k)(n - k); the added factor is j + 1; P(4, 3) = 24 | arithmetic in N, fd3:thm-omega-arithmetic-laws; verify/ch04/exr-formal-derivative-b2.py
+exr-formal-derivative-b1 (solution): check (x^2 + 1)^2 = x^4 + 2x^2 + 1, derivative 4x^3 + 4x | verify/ch06/exr-formal-derivative-b1.py
+exr-formal-derivative-b2 (solution): P(n, k + 1) = P(n, k)(n - k); the added factor is j + 1; P(4, 3) = 24 | arithmetic in N, fd3:thm-omega-arithmetic-laws; verify/ch06/exr-formal-derivative-b2.py
 exr-formal-derivative-b2 (solution): one of p consecutive integers is divisible by p; a product with such a factor is divisible by p | fd3:thm-integers-division-remainder, fd3:prp-divisibility-rules-integers (c), cited; induction on the number of factors, inline
 exr-formal-derivative-c1 (solution): induction for delta(x^n) | fd1:ax-induction read on omega; inline
 exr-formal-derivative-c2 (solution): k * 1 = k in Q | as in exm-formal-derivatives (i): fd3:prp-naturals-embed-integers, fd3:prp-integers-embed-rationals, cited
-exr-formal-derivative-r1 (solution): (f')_n = 0 at n = deg f; E(0) = 0 + 0' = 0; E(x)E(x) = x^2 + 2x + 1 and E(x^2) = x^2 + 2x differ in position 0 when 1 != 0 | def-formal-derivative ((M) for 0' = 0), def-degree, fd3:prp-ring-algebra (d), cited; verify/ch04/exr-formal-derivative-r1.py
+exr-formal-derivative-r1 (solution): (f')_n = 0 at n = deg f; E(0) = 0 + 0' = 0; E(x)E(x) = x^2 + 2x + 1 and E(x^2) = x^2 + 2x differ in position 0 when 1 != 0 | def-formal-derivative ((M) for 0' = 0), def-degree, fd3:prp-ring-algebra (d), cited; verify/ch06/exr-formal-derivative-r1.py
 exr-formal-derivative-r1 (solution): R1 reaches back to F5.3 (group homomorphisms and kernels) | def-group-homomorphism, prp-homomorphism-injective-iff-kernel-trivial, cited; R review item
 exr-formal-derivative-r2 (solution): conj 1 = 1, conj a = a for real a, conj 0 = 0 | def-conjugate-modulus, cited (a + 0i notation of prp-reals-embed-complex)
 exr-formal-derivative-r2 (solution): R is an ordered field (2 != 0, no zero divisors) | R of F3.10, through def-complex-numbers (C := R^2); fd3:prp-ordered-ring-rules (f), (h), cited; R review item under the see edge to F4.1
-exr-formal-derivative-r3 (solution): {0, 1} -> F_2 is a bijection ([0] != [1]) | thm-integers-mod-n-ring (b), (c); inline
-exr-formal-derivative-r3 (solution): fd2 countability results read on omega | fd3:cor-omega-identification, cited; fd2:thm-countable-union (a) uses countable choice (flagged in the text)
-exr-formal-derivative-r3 (solution): A_N in bijection with R^(N+1) | exr-polynomials-as-sequences-b1, an exercise cited from an exercise solution, which STYLE allows
+exr-formal-derivative-r3 (solution): {0, 1} -> F_2 is a bijection | thm-integers-mod-n-ring (b) with n = 2, cited
+exr-formal-derivative-r3 (solution): fd2 countability results read on omega | fd3:cor-omega-identification, cited; fd2:thm-product-countable is group (ii), cited in this R item; fd2:cor-product-countable (b) and fd2:thm-countable-union not used (no choice)
+exr-formal-derivative-r3 (solution): lists s_N of A_N by one recursion, s_{N+1}(n) = s_N(q_1 n) + g(q_2 n) x^(N+1); s_N onto A_N by induction; (N, m) -> s_N(m) onto R[x] | fd2:thm-recursion and fd1:ax-induction read on omega via fd3:cor-omega-identification (b); def-polynomial-ring, def-polynomial (monomials, admissible N), compare coefficients; inline
 exr-formal-derivative-r4 (solution): the coefficients of f o x^2 = sum_j f_j x^(2j) | the computation in the proof of prp-formal-derivative-zero (b), (ii) => (iii), with p = 2
 exr-formal-derivative-r4 (solution): 2k < n + k < 2n and n + k = 2j imply k < j < n | order in N; inline
 exr-formal-derivative-r4 (solution): over F_2, (u + v)^2 = u^2 + v^2 and c^2 = c, extended to a finite sum by induction | fd3:prp-ring-algebra (d) with 2 = 0 in F_2; inline
-exr-formal-derivative-r4 (solution): brute-force sanity check of the answer for small degrees and coefficients over Q, and of "every f works" over F_2 | verify/ch04/exr-formal-derivative-r4.py
+exr-formal-derivative-r4 (solution): brute-force sanity check of the answer for small degrees and coefficients over Q, and of "every f works" over F_2 | verify/ch06/exr-formal-derivative-r4.py
 -->

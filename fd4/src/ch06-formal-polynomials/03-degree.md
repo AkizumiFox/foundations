@@ -445,9 +445,9 @@ The argument can also be repaired at the **bottom**. Let \( i_0 \) and \( j_0 \)
 :::
 
 <!-- dependency ledger
-def-degree (claim): (opening, warning) ([2]x + [1])([3]x^2 + x) = [5]x^2 + x; 6x^3 + 5x^2 + x over Z; coefficients 0, 1, 5, 6 | def-polynomial-ring (cited), arithmetic in Z and Z/6Z (exm-integers-mod-six cited); verify/ch04/def-degree.py
+def-degree (claim): (opening, warning) ([2]x + [1])([3]x^2 + x) = [5]x^2 + x; 6x^3 + 5x^2 + x over Z; coefficients 0, 1, 5, 6 | def-polynomial-ring (cited), arithmetic in Z and Z/6Z (exm-integers-mod-six cited); verify/ch06/def-degree.py
 def-degree (claim): degree exists: S non-empty, bounded above by an admissible N, greatest element | fd3:prp-naturals-embed-integers, fd3:prp-integer-least-element (cited)
-def-degree (example): 6x^3 + 5x^2 + x read in Z/5Z is x^3 + x | [6] = [1], [5] = [0] in Z/5Z (def-integers-mod-n-ring, numerals; numeral convention of exm-elements-of-rx, cited); verify/ch04/def-degree.py
+def-degree (example): 6x^3 + 5x^2 + x read in Z/5Z is x^3 + x | [6] = [1], [5] = [0] in Z/5Z (def-integers-mod-n-ring, numerals; numeral convention of exm-elements-of-rx, cited); verify/ch06/def-degree.py
 def-degree (example): if 1 = 0 then R = {0} | fd3:prp-ring-algebra (b) (cited), (F7)
 def-degree (claim): (why -infty) 0 . q = 0 for every q | fd3:prp-ring-algebra (b) applied coefficientwise, as in the proof of thm-degree-of-product (a)
 thm-degree-of-sum (proof): k > M implies k > deg p and k > deg q; max on N u {-infty} | order of N (fd3:thm-omega-order) with the conventions of def-degree
@@ -459,17 +459,17 @@ exm-integral-domains (solution): Z x Z componentwise is a commutative ring | eac
 exm-integral-domains (solution): n >= 2 not prime gives n = rs with 1 < r < n, 0 < s < n | fd2:def-prime (cited), then as in the proof of thm-integers-mod-prime-field (=>) (cited); [r][s] = [rs] by thm-quotient-ring-by-ideal (b) through def-integers-mod-n-ring (cited)
 cor-polynomial-no-zero-divisors (proof): q - r = 0 gives q = r; p(q - r) = pq - pr | (F1)-(F4), (F9), fd3:prp-ring-algebra (c) (cited)
 cor-polynomial-no-zero-divisors (claim): R = Q is the polynomial algebra behind fd3:exm-rational-function-field | pays STATUS row F3.9 §02 (polynomial half); prose
-cor-polynomial-no-zero-divisors (claim): [2] . [3]x = [0] in (Z/6Z)[x] | def-polynomial-ring with thm-polynomial-ring-laws (d); [6] = [0]; verify/ch04/def-degree.py
+cor-polynomial-no-zero-divisors (claim): [2] . [3]x = [0] in (Z/6Z)[x] | def-polynomial-ring with thm-polynomial-ring-laws (d); [6] = [0]; verify/ch06/def-degree.py
 prp-polynomial-units (proof): two natural numbers with sum 0 are both 0 | fd3:thm-omega-arithmetic-laws / fd3:thm-omega-order (m <= m + n), used silently
 prp-polynomial-units (proof): deg p = 0 gives p = p_0 x^0; 0 . q = 0 in R[x] | prp-polynomial-sum-of-monomials with N = 0 and the facts after def-degree (cited); fd3:prp-ring-algebra (b) in R[x] via thm-polynomial-ring-laws (a) (cited)
 prp-polynomial-units (claim): units of Z[x] are 1, -1; 0 is not a unit of a field | Z an integral domain (exm-integral-domains, cited), Z^x = {1, -1} (examples after def-ring-unit, cited); 0 . b = 0 by fd3:prp-ring-algebra (b), (F6) (cited)
-prp-polynomial-units (claim): (warning) (1 + [2]x)^2 = 1 + [4]x + [4]x^2 = 1 in (Z/4Z)[x] | product formula; verify/ch04/prp-polynomial-units.py
+prp-polynomial-units (claim): (warning) (1 + [2]x)^2 = 1 + [4]x + [4]x^2 = 1 in (Z/4Z)[x] | product formula; verify/ch06/prp-polynomial-units.py
 def-polynomials-bounded-degree (claim): -0 = 0 | fd3:prp-ring-algebra (a) (uniqueness of negatives, 0 + 0 = 0), used silently
-def-polynomials-exact-degree (example): F_3[x]_{<=1} has 3 . 3 = 9 elements, F_3[x]_{=1} has 3 . 2 = 6, 3 constants | thm-integers-mod-n-ring (b), prp-polynomial-sum-of-monomials (cited); counted by listing; verify/ch04/exr-degree-b3.py
+def-polynomials-exact-degree (example): F_3[x]_{<=1} has 3 . 3 = 9 elements, F_3[x]_{=1} has 3 . 2 = 6, 3 constants | thm-integers-mod-n-ring (b), prp-polynomial-sum-of-monomials (cited); counted by listing; verify/ch06/exr-degree-b3.py
 def-polynomials-bounded-degree (claim): interpolation through n + 1 points; the linear-algebra companion treats R[x]_{<=n} as a vector space | prose motivation; interpolation is F5.5's (blueprint ch05.md), no chapter named; nothing depends on it
 exm-comparing-notations (claim): in the linear-algebra companion one set is a subspace, the other not | companion (LA1.1), prose pointer; nothing depends on it
-exr-degree-a1 (solution): (b) (pq)_3 = 6 resp. [0] | verify/ch04/def-degree.py
-exr-degree-b2 (solution): (1 + [3]x)(1 - [3]x) = 1 in Z/9Z; -[3] = [6]; (1 + [2]x + [2]x^2)^2 coefficients 1, [4], [8], [8], [4] | product formula; verify/ch04/exr-degree-b2.py
-exr-degree-b3 (solution): n-tuples are functions {1, ..., n+1} -> F_p; counts p^(n+1), (p - 1)p^n; {1, ..., p - 1} has p - 1 elements; n = 0 reads F_p^1 as F_p (convention of exr-polynomials-as-sequences-b1) | fd2:exr-finite-sets-c2 (a), (b) (cited; an exercise citing an earlier exercise), exr-polynomials-as-sequences-b1 (cited), thm-integers-mod-n-ring (b) restricted to {1, ..., p - 1} (used silently); verify/ch04/exr-degree-b3.py
+exr-degree-a1 (solution): (b) (pq)_3 = 6 resp. [0] | verify/ch06/def-degree.py
+exr-degree-b2 (solution): (1 + [3]x)(1 - [3]x) = 1 in Z/9Z; -[3] = [6]; (1 + [2]x + [2]x^2)^2 coefficients 1, [4], [8], [8], [4] | product formula; verify/ch06/exr-degree-b2.py
+exr-degree-b3 (solution): n-tuples are functions {1, ..., n+1} -> F_p; counts p^(n+1), (p - 1)p^n; {1, ..., p - 1} has p - 1 elements; n = 0 reads F_p^1 as F_p (convention of exr-polynomials-as-sequences-b1) | fd2:exr-finite-sets-c2 (a), (b) (cited; an exercise citing an earlier exercise), exr-polynomials-as-sequences-b1 (cited), thm-integers-mod-n-ring (b) restricted to {1, ..., p - 1} (used silently); verify/ch06/exr-degree-b3.py
 exr-degree-c2 (solution): least non-zero positions exist | fd3:prp-integer-least-element (cited)
 -->

@@ -382,25 +382,25 @@ def-polynomial-ring (claim): k - i in N for i <= k | fd3:prp-naturals-embed-inte
 def-polynomial-ring (claim): closure: for k > m + n and i <= m, k - i >= k - m > n | index arithmetic in Z (fd3:thm-integers-ordered-ring, fd3:prp-ordered-ring-rules (O3)), used silently; terms 0 by fd3:prp-ring-algebra (b) with (F6) (cited); (Sigma3) of lem-finite-sums-and-powers with j = k + 1
 def-polynomial-ring (claim): -0 = 0 | 0 + 0 = 0 by (F3), uniqueness fd3:prp-ring-algebra (a) (cited)
 def-polynomial-ring (claim): Section 6.3 degree of a product; Section 6.4 explains reduction of coefficients; Sections 6.4, 6.5 reuse the move | ch04 blueprint (within the chapter: thm-degree-of-product, cor-polynomial-coefficient-change, thm-evaluation-respects-operations, thm-formal-derivative-rules); nothing here depends on them
-exm-polynomial-product (solution): coefficients 2, 1, 2, 3 over Q; 2, 1, 2 over F_3; [2], [1], [2], [3] over Z/6Z; [-1] = [5], [7] = [1], [8] = [2] | arithmetic in Z, def-field-fp, def-integers-mod-n-ring; verify/ch04/exm-polynomial-product.py
-def-polynomial-ring (claim): (warning) coefficientwise product would give x * x = x | arithmetic; verify/ch04/def-polynomial-ring.py
+exm-polynomial-product (solution): coefficients 2, 1, 2, 3 over Q; 2, 1, 2 over F_3; [2], [1], [2], [3] over Z/6Z; [-1] = [5], [7] = [1], [8] = [2] | arithmetic in Z, def-field-fp, def-integers-mod-n-ring; verify/ch06/exm-polynomial-product.py
+def-polynomial-ring (claim): (warning) coefficientwise product would give x * x = x | arithmetic; verify/ch06/def-polynomial-ring.py
 prp-polynomial-sum-of-monomials (proof): induction on N | fd1:ax-induction read on omega through fd3:cor-omega-identification (b), as in Section 6.1
 lem-monomial-product (proof): k - m = n iff k = m + n; k < m implies k != m + n | index arithmetic in N (fd3:thm-omega-arithmetic-laws, fd3:thm-omega-order), used silently
 lem-monomial-product (proof): a * 0 = 0 in (b) | fd3:prp-ring-algebra (b) (cited)
 lem-check-on-monomials (proof): induction on N; every polynomial has an admissible N | fd1:ax-induction; def-polynomial (cited)
 lem-check-on-monomials (claim): (answer) (p + p')(q + q') = 1 and pq + p'q' = 0 for p = q' = 1, p' = q = 0 | products of constants by lem-monomial-product (b) with m = n = 0, (F7) and fd3:prp-ring-algebra (b) in R; 1 != 0 in R[x] from 1 != 0 in R (positions 0), used silently
-thm-polynomial-ring-laws (idea): Try-it-first coefficients of x^2 | verify/ch04/thm-polynomial-ring-laws.py (identity checked on random integers)
+thm-polynomial-ring-laws (idea): Try-it-first coefficients of x^2 | verify/ch06/thm-polynomial-ring-laws.py (identity checked on random integers)
 thm-polynomial-ring-laws (proof): m + n = n + m; (m + n) + l = m + (n + l) in N | fd3:thm-omega-arithmetic-laws (b), (c) (cited)
 thm-polynomial-ring-laws (proof): 0 + 0 = 0 and 0 + n = n in N, in (b) and (c) | fd3:thm-omega-arithmetic-laws (a), used silently
 thm-polynomial-ring-laws (claim): (meta) the proof never reorders a double sum; its sums are the single-index sums of def-polynomial-ring and of prp-polynomial-sum-of-monomials | meta-claim about this section: closure paragraph, (*), (**), lem-monomial-product, prp-polynomial-sum-of-monomials (sums of monomials, single index)
 thm-polynomial-ring-laws (claim): (remark) ideals and quotient rings apply to R[x]; Chapter 7 builds F[x]/<f>; (R[x], +) is an abelian group in the sense of Chapter 5 | def-ideal-commutative-ring, thm-quotient-ring-by-ideal (cited); F5.5 (prose pointer, ch05 blueprint thm-polynomial-quotient-ring); F5.3 def-group (prose, not cited); nothing depends on them
-thm-polynomial-ring-laws (claim): (check) (x + 1)^2 over Q and F_2; 2 = 1 + 1 = 0 in F_2 | (x + 1)^2 = (x + 1)(x + 1) by lem-finite-sums-and-powers (c) and thm-polynomial-ring-laws (a) (4) (cited); exm-finite-fields (tables of F_2), used silently; verify/ch04/thm-polynomial-ring-laws.py
-exr-polynomial-ring-a1 (solution): 2*3 = 6, exponents 1 + 2 + 1 = 4 | numerals; verify/ch04/exr-polynomial-ring-a1.py
-exr-polynomial-ring-b1 (solution): coefficients 12, -3, 4, -3, 2, 2, -4; reduction mod 2 | arithmetic in Z and F_2; verify/ch04/exr-polynomial-ring-b1.py
-exr-polynomial-ring-b2 (solution): sigma(a x^m) = ((-1)^m a) x^m; (-1)^m (-1)^n = (-1)^(m+n) | lem-finite-sums-and-powers (c) (cited); verify/ch04/exr-polynomial-ring-b2.py (sigma multiplicative on random pairs over Z/nZ)
+thm-polynomial-ring-laws (claim): (check) (x + 1)^2 over Q and F_2; 2 = 1 + 1 = 0 in F_2 | (x + 1)^2 = (x + 1)(x + 1) by lem-finite-sums-and-powers (c) and thm-polynomial-ring-laws (a) (4) (cited); exm-finite-fields (tables of F_2), used silently; verify/ch06/thm-polynomial-ring-laws.py
+exr-polynomial-ring-a1 (solution): 2*3 = 6, exponents 1 + 2 + 1 = 4 | numerals; verify/ch06/exr-polynomial-ring-a1.py
+exr-polynomial-ring-b1 (solution): coefficients 12, -3, 4, -3, 2, 2, -4; reduction mod 2 | arithmetic in Z and F_2; verify/ch06/exr-polynomial-ring-b1.py
+exr-polynomial-ring-b2 (solution): sigma(a x^m) = ((-1)^m a) x^m; (-1)^m (-1)^n = (-1)^(m+n) | lem-finite-sums-and-powers (c) (cited); verify/ch06/exr-polynomial-ring-b2.py (sigma multiplicative on random pairs over Z/nZ)
 exr-polynomial-ring-b2 (claim): Section 6.4 writes sigma(p) as p(-x) | ch04 blueprint def-polynomial-composition (prose pointer within the chapter)
 exr-polynomial-ring-c1 (solution): reduction to monomials: coefficients of s_N by induction on N, then the one-argument case by induction on N, then one argument at a time | fd1:ax-induction, lem-finite-sums-and-powers (a), fd2:prp-function-equality (cited); the proofs of prp-polynomial-sum-of-monomials and lem-check-on-monomials, rewritten inside the solution (the exercise forbids every result of the section after def-polynomial-ring)
-exr-polynomial-ring-c2 (solution): (1 - x)s = 1 | (Sigma1), (Sigma3), (F1), (F3), (F7), (F4), fd3:prp-ring-algebra (b) (cited); verify/ch04/exr-polynomial-ring-c2.py
+exr-polynomial-ring-c2 (solution): (1 - x)s = 1 | (Sigma1), (Sigma3), (F1), (F3), (F7), (F4), fd3:prp-ring-algebra (b) (cited); verify/ch06/exr-polynomial-ring-c2.py
 exr-polynomial-ring-c2 (claim): the ring laws hold for formal power series | not proved here; stated as such; nothing depends on it
 exr-polynomial-ring-c2 (claim): Section 6.3 shows 1 - x is not a unit of Z[x] | ch04 blueprint prp-polynomial-units (prose pointer within the chapter)
 -->

@@ -513,7 +513,7 @@ For (b), let \( N \) be admissible for \( p \) and start from \( p - p(c) = \sum
 - at \( k = n \): \( u_{n-1} - c u_n = c^0 - 0 = 1 \);
 - at \( k > n \): \( 0 - 0 = 0 \).
 
-These are the coefficients of \( x^n - c^n \). This is Chapter 3's difference-of-powers identity (@lem-difference-of-powers), read in the commutative ring \( R[x] \) with \( z = x \) and \( w = c \); the proof above does not use it.
+These are the coefficients of \( x^n - c^n \). This is Chapter 1's difference-of-powers identity (@lem-difference-of-powers), read in the commutative ring \( R[x] \) with \( z = x \) and \( w = c \); the proof above does not use it.
 
 (b) \( (\Leftarrow) \) By @thm-evaluation-respects-operations, \( p(c) = (c - c)\, q(c) = 0 \cdot q(c) = 0 \).
 
@@ -566,24 +566,24 @@ This is the second proof of @thm-fermat-little (b); the first, in Chapter 4, wen
 
 <!-- dependency ledger
 def-polynomial-evaluation (claim): well defined: enlarging N adds 0 . c^k = 0 | sum recursion of lem-finite-sums-and-powers (a), fd3:prp-ring-algebra (b), (F3), induction on j (fd1:ax-induction through fd3:cor-omega-identification (b)); written out
-def-polynomial-evaluation (example): x^2 - 3x + 2 at 0, 1, 2 is 2, 0, 0; x^3 + 2 over F_3 at 0, 1, 2 is 2, 0, 1 | arithmetic in Q and F_3; verify/ch04/def-polynomial-evaluation.py
+def-polynomial-evaluation (example): x^2 - 3x + 2 at 0, 1, 2 is 2, 0, 0; x^3 + 2 over F_3 at 0, 1, 2 is 2, 0, 1 | arithmetic in Q and F_3; verify/ch06/def-polynomial-evaluation.py
 def-polynomial-evaluation (example): value of a monomial a x^m is a c^m | (Sigma3) of lem-finite-sums-and-powers (b) (cited), fd3:prp-ring-algebra (b)
-def-polynomial-evaluation (claim): (warning) p_2 = 1, p(2) = 0, p_0 = p(0) = 2 | verify/ch04/def-polynomial-evaluation.py
+def-polynomial-evaluation (claim): (warning) p_2 = 1, p(2) = 0, p_0 = p(0) = 2 | verify/ch06/def-polynomial-evaluation.py
 thm-evaluation-respects-operations (proof): common admissible N | max of two admissible N is admissible; order of N (fd3:thm-omega-order), used silently
 thm-evaluation-respects-operations (claim): (remark) polynomials of a square matrix, linear-algebra companion (its Chapter 0) | companion (LA1.0), prose pointer; nothing depends on it
-thm-evaluation-respects-operations (claim): (x - 1)(x - 2) = x^2 - 3x + 2 in Q[x] | product formula; verify/ch04/def-polynomial-evaluation.py
+thm-evaluation-respects-operations (claim): (x - 1)(x - 2) = x^2 - 3x + 2 in Q[x] | product formula; verify/ch06/def-polynomial-evaluation.py
 thm-evaluation-respects-operations (claim): roots of (x - 1)(x - 2) in Q are exactly 1, 2 | exm-integral-domains (cited); sum rule and value of a constant (cited)
 def-ring-homomorphism (claim): phi(s^n) = phi(s)^n | induction on n, written out; power recursion of lem-finite-sums-and-powers (c)
 def-ring-homomorphism (claim): between fields it is def-field-homomorphism; the consequences are the ring versions of prp-field-homomorphism-properties (a), (e) (composites), (f) (powers); (b)-(d) fail since Z -> Z/nZ is not injective | def-field-homomorphism, prp-field-homomorphism-properties (prose comparison; the consequences are proved here); exm-ring-homomorphisms (i)
 exm-ring-homomorphisms (solution): Z/mZ x Z/nZ is a commutative ring componentwise | each axiom componentwise (thm-chinese-remainder-two (b) takes the componentwise operations); stated, one line
 exm-ring-homomorphisms (claim): complex conjugation, rules proved in F4.1; used in a review exercise of the next section | F4.1 (def-conjugate-modulus, thm-conjugate-properties; blueprint ch01.md), backward prose pointer; the review exercise R2 of the chapter's last section (within the chapter); nothing here depends on it
-thm-polynomial-substitution (claim): (try it first / idea) 3x^2 + 1 -> [3][2][2] + [1] = [13] = [3] in Z/5Z | verify/ch04/thm-polynomial-substitution.py
+thm-polynomial-substitution (claim): (try it first / idea) 3x^2 + 1 -> [3][2][2] + [1] = [13] = [3] in Z/5Z | verify/ch06/thm-polynomial-substitution.py
 thm-polynomial-substitution (claim): (answer to prompt) commutativity of S used essentially once (monomial line); other (F6) uses only mirror (F7), (F9), a . 0 = 0; phi(1) = 1 used twice (Phi(1), Phi(x)) | meta-claim about the proof on the page; checkable line by line; well-definedness uses phi(0) = 0, which follows from additivity alone
 thm-polynomial-substitution (claim): (answer to prompt) noncommutative S: proof goes through if s commutes with every phi(b) | the monomial line is the only use of (F6) in S beyond the mirror forms of (F7), (F9) and a . 0 = 0, which two-sided ring axioms give directly; (F5) and the power law hold without commutativity; prose
-cor-polynomial-coefficient-change (claim): 2x^2 + 3x - 1 -> x + 1 over F_2; 6x^3 + 5x^2 + x -> [5]x^2 + x mod 6 | arithmetic mod 2 and mod 6; verify/ch04/cor-polynomial-coefficient-change.py
+cor-polynomial-coefficient-change (claim): 2x^2 + 3x - 1 -> x + 1 over F_2; 6x^3 + 5x^2 + x -> [5]x^2 + x mod 6 | arithmetic mod 2 and mod 6; verify/ch06/cor-polynomial-coefficient-change.py
 cor-polynomial-coefficient-change (claim): the algebra volumes reduce integer polynomials modulo a prime to test factorization | AL2.6 (prose pointer, no chapter number); nothing depends on it
 cor-polynomial-coefficient-change (claim): composition is used in Section 6.5 | ch04 §05 cites def-polynomial-composition; forward pointer within the chapter; nothing here depends on it
-def-polynomial-composition (claim): (x^2 + 1) o (x + 1) = x^2 + 2x + 2; (x + 1)^2 = x^2 + 2x + 1; (-x)^k = (-1)^k x^k | product formula; (-x)^k by the power law (st)^n = s^n t^n of lem-finite-sums-and-powers (c) with -x = (-1)x (fd3:prp-ring-algebra (c)); verify/ch04/def-polynomial-composition.py
+def-polynomial-composition (claim): (x^2 + 1) o (x + 1) = x^2 + 2x + 2; (x + 1)^2 = x^2 + 2x + 1; (-x)^k = (-1)^k x^k | product formula; (-x)^k by the power law (st)^n = s^n t^n of lem-finite-sums-and-powers (c) with -x = (-1)x (fd3:prp-ring-algebra (c)); verify/ch06/def-polynomial-composition.py
 def-polynomial-composition (claim): p(-x) is the map sigma of exr-polynomial-ring-b2 | prose comparison with an earlier exercise; no proof rests on it
 prp-polynomial-function-map (proof): (a) pointwise axioms | fd2:prp-function-equality (cited) and (F1)-(F7), (F9) of R
 prp-polynomial-function-map (proof): (d) r >= 1 since R contains 0; x - c has coefficients -c, 1 | fd2:def-finite (cited); def-polynomial-ring (sum of x and the constant -c), used silently
@@ -592,13 +592,13 @@ prp-polynomial-function-map (proof): (d) (-a)(c) = -a for a constant | value of 
 exm-polynomial-vs-function-f2 (solution): 1 + 1 = 0 and -1 = 1 in F_2 | exm-finite-fields (cited)
 exm-polynomial-vs-function-f2 (claim): (warning) F5.5 proves p(c) = 0 for all c implies p = 0 over infinite fields | F5.5 (forward prose pointer; blueprint ch05.md thm-polynomial-identity-from-values); nothing here depends on it
 exm-polynomial-vs-function-f2 (claim): (warning) the same over Z, via Q[x] | not proved here (marked in the text); nothing depends on it
-exr-evaluation-and-substitution-a1 (solution): [1 + 6 + 4] = [11] = [1]; [3][2]^2 = [12] = [2]; values 2, 0, 1 in F_3; (x + 2)(x^2 + x + 1) = x^3 + 3x^2 + 3x + 2 = x^3 + 2 | verify/ch04/exr-evaluation-and-substitution-a1.py
+exr-evaluation-and-substitution-a1 (solution): [1 + 6 + 4] = [11] = [1]; [3][2]^2 = [12] = [2]; values 2, 0, 1 in F_3; (x + 2)(x^2 + x + 1) = x^3 + 3x^2 + 3x + 2 = x^3 + 2 | verify/ch06/exr-evaluation-and-substitution-a1.py
 exr-evaluation-and-substitution-b1 (solution): deg q^k = k deg q by induction; ke < de for k < d, e >= 1 | fd1:ax-induction; order of N (fd3:thm-omega-order, fd3:prp-ordered-ring-rules (c) in Z), used silently
-exr-evaluation-and-substitution-b2 (solution): table of F_2[x]_{<=2}; 4 functions, two polynomials each | verify/ch04/exr-evaluation-and-substitution-b2.py; count 2 . 2 = 4 by fd2:exr-finite-sets-c2 (b), used silently
-exr-evaluation-and-substitution-c3 (solution): coefficients of (x - c)u; squares mod 8; [2][4] = [8] = [0] | verify/ch04/exr-evaluation-and-substitution-c3.py
+exr-evaluation-and-substitution-b2 (solution): table of F_2[x]_{<=2}; 4 functions, two polynomials each | verify/ch06/exr-evaluation-and-substitution-b2.py; count 2 . 2 = 4 by fd2:exr-finite-sets-c2 (b), used silently
+exr-evaluation-and-substitution-c3 (solution): coefficients of (x - c)u; squares mod 8; [2][4] = [8] = [0] | verify/ch06/exr-evaluation-and-substitution-c3.py
 exr-evaluation-and-substitution-c3 (solution): sum_k p_k x^k - sum_k p_k c^k = sum_k p_k (x^k - c^k) | (Sigma1), (Sigma4) of lem-finite-sums-and-powers (b), thm-polynomial-ring-laws (b) (constants respect sums), used silently
 exr-evaluation-and-substitution-c3 (claim): F5.5 proves the factor theorem by division | F5.5 (forward prose pointer; blueprint ch05.md); nothing depends on it
-exr-evaluation-and-substitution-c3 (claim): (a) is Chapter 3's difference-of-powers identity in R[x] | lem-difference-of-powers (F4.1, see edge; prose comparison, no step rests on it)
+exr-evaluation-and-substitution-c3 (claim): (a) is Chapter 1's difference-of-powers identity in R[x] | lem-difference-of-powers (F4.6; prose comparison, no step rests on it)
 exr-evaluation-and-substitution-c4 (solution): order-independence of a finite product in a commutative ring | proved inline by induction on the length (blueprint open question 4)
 exr-evaluation-and-substitution-c4 (solution): Q != 0 for a product of non-zero elements; cancellation | thm-field-basic-properties (b), (f) (cited), induction on the length
 exr-evaluation-and-substitution-c4 (solution): the first proof of Fermat in F5.2 via Frobenius | thm-fermat-little (cited), F5.2 §06 (backward pointer)
