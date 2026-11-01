@@ -4,8 +4,8 @@ items:
 - key: exm-translate-limit
   kind: exm
   file: 01-translation.md
-  line: 47
-  hash: a285c7d46648
+  line: 48
+  hash: 4bafc4945962
   verdicts:
   - stage: S5a
     verdict: minor
@@ -73,10 +73,17 @@ items:
     evidence: '01:84: the parenthesis now just calls the last step an order fact about ℕ, which is accurate.
       Ledger lines 786/792/797 match the text. 5.1 ''Mixing kinds of number'' (ch05/01:238) is indeed
       one sentence.'
+  - stage: S5e
+    verdict: correct
+    by: s5e-01-translation
+    hash: 4bafc4945962
+    date: '2026-11-01'
+    evidence: 'Wording only: (c),(d) sentence splits; the follow-up paragraph restates the order of choices
+      (challenger eps, defender N/delta, challenger n/x). Sidecar passes.'
 - key: check:01-translation:1
   kind: check
   file: 01-translation.md
-  line: 95
+  line: 97
   hash: b6231bf6c6d0
   verdicts:
   - stage: S5a
@@ -114,10 +121,17 @@ items:
     model: claude-opus-5-5
     evidence: Text unchanged. Its (0,1) ledger line is rekeyed and has lost the stale AN1.1 pointer. The
       fact (bounded by 1, no maximum since m<(m+1)/2<1) is right and checked by verify/ch06/exm-translate-limit.py.
+  - stage: S5e
+    verdict: correct
+    by: s5e-01-translation
+    hash: b6231bf6c6d0
+    date: '2026-11-01'
+    evidence: 'Wording only: warning (2) split at semicolons; counterexample f(x)=x on [0,1], bound 1
+      unchanged.'
 - key: exm-translation-traps
   kind: exm
   file: 01-translation.md
-  line: 111
+  line: 113
   hash: 7848799a8bb4
   verdicts:
   - stage: S5a
@@ -141,10 +155,17 @@ items:
       is. (b) A={1}, B={-1} has no common element. (c) fails at n=2. (d) at n=1: 6|6 holds and 1 is odd.
       (e) A=∅. Pointers check out: ''only if'' at 01/01:147 and the ''any'' warning at 05/01:317. The
       sidecar passes.'
+  - stage: S5e
+    verdict: correct
+    by: s5e-01-translation
+    hash: 7848799a8bb4
+    date: '2026-11-01'
+    evidence: Table untouched; 'eventually' and a_n=(-1)^n readings reworded with the same truth values.
+      Sidecar passes.
 - key: check:01-translation:2
   kind: check
   file: 01-translation.md
-  line: 137
+  line: 141
   hash: cacc031644cf
   verdicts:
   - stage: S5a
@@ -179,11 +200,17 @@ items:
     model: claude-opus-5-5
     evidence: ':138-143: ∃N∈ℕ ∀n∈ℕ (n≥N → a_n≠0) is right. Finitely many exceptions (zero included) all
       lie below some N.'
+  - stage: S5e
+    verdict: correct
+    by: s5e-01-translation
+    hash: cacc031644cf
+    date: '2026-11-01'
+    evidence: Wording only; @prp-vacuous-implication kept; bounded-rules motivation reworded truthfully.
 - key: prp-bounded-quantifier-rules
   kind: prp
   file: 01-translation.md
-  line: 153
-  hash: 2585ba1a362e
+  line: 159
+  hash: 8bd7cd38842b
   verdicts:
   - stage: S5a
     verdict: correct
@@ -220,11 +247,18 @@ items:
     model: claude-opus-5-5
     evidence: 'The :365 sentence now points forward correctly to the full derivation at :374. The ledger
       line for the Archimedean remark is accurate: :419 names no book, and the pointer is in index.md:35.'
+  - stage: S5e
+    verdict: correct
+    by: s5e-01-translation
+    hash: 8bd7cd38842b
+    date: '2026-11-01'
+    evidence: 'Statement: side conditions now a displayed list, word for word apart from ''it'' -> ''the
+      name x_0'' (same antecedent).'
 - key: proof:prp-bounded-quantifier-rules
   kind: proof
   file: 01-translation.md
-  line: 233
-  hash: 07f7742c8c97
+  line: 245
+  hash: 9cfc23a7ed28
   verdicts:
   - stage: S5a
     verdict: correct
@@ -256,10 +290,17 @@ items:
       (4.2:347ff: atomic formulas are always free-for). ∃I: the same. ∀I: the flagged box with no assumption
       containing the →I box matches 12:196. Citing i-m follows the range convention of 4.4, as 07:190
       recalls. '
+  - stage: S5e
+    verdict: correct
+    by: s5e-01-translation
+    hash: 9cfc23a7ed28
+    date: '2026-11-01'
+    evidence: Steps in the same order, sentences split; Uses line @def-bounded-quantifier (earlier definition).
+      check_fitch 0 errors.
 - key: check:01-translation:3
   kind: check
   file: 01-translation.md
-  line: 318
+  line: 338
   hash: 8a2c14e69bd8
   verdicts:
   - stage: S5a
@@ -280,10 +321,24 @@ items:
     model: claude-opus-5-5
     evidence: ':319-324: the single-assumption box is the unbounded ∃E on the unfolded formula. The two
       ∧E lines make it one line longer, which matches :316 and A2(l).'
+  - stage: S5e
+    verdict: minor
+    by: s5e-01-translation
+    hash: 8a2c14e69bd8
+    date: '2026-11-01'
+    evidence: 01-translation.md:385 new 'which comes next' misplaces the full derivation, which follows
+      check:01-translation:4; mathematics (line ranges 1-6, 7-12, 13-16) unchanged.
+  - stage: S8
+    verdict: correct
+    by: coordinator
+    hash: 8a2c14e69bd8
+    date: '2026-11-01'
+    evidence: 01-translation.md:385 now 'which follows the check below', as before the rewrite; line ranges
+      unchanged.
 - key: check:01-translation:4
   kind: check
   file: 01-translation.md
-  line: 367
+  line: 387
   hash: 26a2a7af7445
   verdicts:
   - stage: S5a
@@ -318,11 +373,17 @@ items:
     model: claude-opus-5-5
     evidence: '01:372: at ε_0 the premise gives |2a_n−2L| < 2ε_0, which does not reach the goal (correct).
       01:365: the full derivation does follow the check block.'
+  - stage: S5e
+    verdict: correct
+    by: s5e-01-translation
+    hash: 26a2a7af7445
+    date: '2026-11-01'
+    evidence: Line-15 bullet reworded truthfully (line 14 is bounded exists-I at N_0); 22-line count unchanged.
 - key: exr-translation-a1
   kind: exr
   file: 01-translation.md
-  line: 431
-  hash: 44a718e49bab
+  line: 451
+  hash: efd48d9f5836
   verdicts:
   - stage: S5a
     verdict: correct
@@ -362,10 +423,16 @@ items:
       (0=1·0). (b): only (i) is correct. (ii) is true vacuously with x=7∉{0}, A={0}, B={5}. (iii) is true
       for A=B=ℕ with x=y+1, while the English is false. (c): no free variables. (d): ∧I then ∃I. Ledger
       line 510 covers '
+  - stage: S5e
+    verdict: correct
+    by: s5e-01-translation
+    hash: efd48d9f5836
+    date: '2026-11-01'
+    evidence: Statement (i)-(v) separated by full stops; same content. Sidecar passes.
 - key: exr-translation-a2
   kind: exr
   file: 01-translation.md
-  line: 453
+  line: 473
   hash: adf596373481
   verdicts:
   - stage: S5a
@@ -398,8 +465,8 @@ items:
 - key: exr-translation-b1
   kind: exr
   file: 01-translation.md
-  line: 502
-  hash: 47e50ebf16bc
+  line: 522
+  hash: 72c352e23896
   verdicts:
   - stage: S5a
     verdict: correct
@@ -463,11 +530,17 @@ items:
     model: claude-opus-5-5
     evidence: 01-translation.md:502-526. The formulas, the symbol kinds and the swapped (c) with M=|a_n|
       match my solutions. The worked example is exm-translate-limit.
+  - stage: S5e
+    verdict: correct
+    by: s5e-01-translation
+    hash: 72c352e23896
+    date: '2026-11-01'
+    evidence: Signature lists rewritten as sentences; same symbols, arities and formulas.
 - key: exr-translation-b2
   kind: exr
   file: 01-translation.md
-  line: 528
-  hash: 4063b43db07d
+  line: 548
+  hash: e3fe4c48f822
   verdicts:
   - stage: S5a
     verdict: correct
@@ -495,10 +568,16 @@ items:
     evidence: '08-translation.md:397-420. My derivation matches the book''s: bounded exists-E box, forall
       x in A E at 1,3, ->E, exists x in A I at 3,6. Side conditions hold. I listed the unbounded version
       line by line and got 11 = 8+3, as claimed. Worked example: the limit derivation at :256-283.'
+  - stage: S5e
+    verdict: correct
+    by: s5e-01-translation
+    hash: e3fe4c48f822
+    date: '2026-11-01'
+    evidence: Wording only; 8 + 3 = 11 unchanged.
 - key: exr-translation-b3
   kind: exr
   file: 01-translation.md
-  line: 563
+  line: 583
   hash: efe58f2512c4
   verdicts:
   - stage: S5a
@@ -531,8 +610,8 @@ items:
 - key: exr-translation-b4
   kind: exr
   file: 01-translation.md
-  line: 615
-  hash: af71616726e8
+  line: 635
+  hash: e677e63f34e9
   verdicts:
   - stage: S5a
     verdict: correct
@@ -559,11 +638,18 @@ items:
     evidence: '01-translation.md:615-650. (a)-(e) match mine. Script: with A={1}, B={2}, C=empty, the
       union inclusion is false and formula (e) is true. The worked example is trap (b) at line 119. The
       scheme totals 10 points and accepts any separating pair.'
+  - stage: S5e
+    verdict: correct
+    by: s5e-01-translation
+    hash: e677e63f34e9
+    date: '2026-11-01'
+    evidence: '''Fold back'' -> ''Abbreviate with subset, union, intersection''; solutions (d), (e) unchanged;
+      marking-scheme heading per B4. Sidecar passes.'
 - key: exr-translation-c1
   kind: exr
   file: 01-translation.md
-  line: 653
-  hash: e214920a695b
+  line: 673
+  hash: 1bdf68b1aaeb
   verdicts:
   - stage: S5a
     verdict: correct
@@ -600,11 +686,17 @@ items:
       of ∀x∈A, correctly described, and so is its effect on δ. The earlier meta-claim finding is resolved:
       line 444 now credits non-derivability to Section 7.2. 11-models.md:311 says exactly that: exm-square-not-uniform
       (Section 6.4) shows x² is continuous and not uniformly continuous, which makes ℝ a counte'
+  - stage: S5e
+    verdict: correct
+    by: s5e-01-translation
+    hash: 1bdf68b1aaeb
+    date: '2026-11-01'
+    evidence: Wording only; references to Sections 6.4 and 7.2 kept.
 - key: exr-translation-c2
   kind: exr
   file: 01-translation.md
-  line: 674
-  hash: d72964db7f3b
+  line: 694
+  hash: 4750a1e2025f
   verdicts:
   - stage: S5a
     verdict: correct
@@ -635,11 +727,18 @@ items:
       exists y via an exists-E box works. Truth-value table, by hand: F=(F,F), L=(T,T), Mx=(T,F), Mz=(F,T).
       All rows differ. Marking scheme sums to 10, and an alternative grouping proof still earns its points.
       The hints name a tool and a first line.'
+  - stage: S5e
+    verdict: correct
+    by: s5e-01-translation
+    hash: 4750a1e2025f
+    date: '2026-11-01'
+    evidence: Statement split into sentences with the same definitions; separation as a 3-item list with
+      the same pairs. Sidecar passes.
 - key: exr-translation-c3
   kind: exr
   file: 01-translation.md
-  line: 725
-  hash: fb2f19fc1657
+  line: 751
+  hash: 404f0da90994
   verdicts:
   - stage: S5a
     verdict: correct
@@ -683,10 +782,17 @@ items:
     model: claude-opus-5-5
     evidence: 'Marking line 776: the flagged box of M_0 and the ∃E box may nest either way before the
       witness is chosen, which is valid. (b): 2M ≥ M is even, and the line carries ''(Section 7.2)''.'
+  - stage: S5e
+    verdict: correct
+    by: s5e-01-translation
+    hash: 404f0da90994
+    date: '2026-11-01'
+    evidence: Only marking-scheme heading and 'Slips that lose the step' changed; points unchanged. Sidecar
+      passes.
 - key: prp-quantifier-negation
   kind: prp
   file: 02-quantifier-laws.md
-  line: 19
+  line: 21
   hash: a18d404b2027
   verdicts:
   - stage: S5a
@@ -709,8 +815,8 @@ items:
 - key: proof:prp-quantifier-negation
   kind: proof
   file: 02-quantifier-laws.md
-  line: 39
-  hash: 2e4f51763942
+  line: 41
+  hash: 522dc5e3de99
   verdicts:
   - stage: S5a
     verdict: gap
@@ -740,10 +846,17 @@ items:
       ∀I), 09:80 (line 6 ∃E) and 09:115 ((c) line 6 ∀I, second derivation as in (b)) now follow from the
       convention. I rechecked all four derivations line by line (∃I/∀E at x_0, ¬E order, box ranges 3-5,
       2-8, 3-6, 2-6, 3
+  - stage: S5e
+    verdict: correct
+    by: s5e-02-quantifier-laws
+    hash: 522dc5e3de99
+    date: '2026-11-01'
+    evidence: 'Wording only: idea and side-condition paragraph split into sentences, same steps and order;
+      Fitch blocks identical; @thm-raa-independent kept.'
 - key: check:02-quantifier-laws:1
   kind: check
   file: 02-quantifier-laws.md
-  line: 126
+  line: 128
   hash: 886d5a9d3f3e
   verdicts:
   - stage: S5a
@@ -765,7 +878,7 @@ items:
 - key: prp-negated-implication
   kind: prp
   file: 02-quantifier-laws.md
-  line: 140
+  line: 146
   hash: ca52697b50bd
   verdicts:
   - stage: S5a
@@ -787,8 +900,8 @@ items:
 - key: proof:prp-negated-implication
   kind: proof
   file: 02-quantifier-laws.md
-  line: 154
-  hash: 757dc5802858
+  line: 160
+  hash: d90a85464325
   verdicts:
   - stage: S5a
     verdict: correct
@@ -806,10 +919,17 @@ items:
     model: claude-opus-5-5
     evidence: 09:151-188. 12 lines plus 7 lines; checked by hand and by check_fitch. The R at line 8 and
       the VI at line 3 are justified.
+  - stage: S5e
+    verdict: correct
+    by: s5e-02-quantifier-laws
+    hash: d90a85464325
+    date: '2026-11-01'
+    evidence: 'Wording only: @def-derived-rule moved to a Uses line; line 3, line 8 and the single RAA
+      unchanged.'
 - key: prp-bounded-quantifier-negation
   kind: prp
   file: 02-quantifier-laws.md
-  line: 205
+  line: 219
   hash: 0a97f34e2e38
   verdicts:
   - stage: S5a
@@ -831,8 +951,8 @@ items:
 - key: proof:prp-bounded-quantifier-negation
   kind: proof
   file: 02-quantifier-laws.md
-  line: 224
-  hash: c6a80538043f
+  line: 242
+  hash: a698476186d5
   verdicts:
   - stage: S5a
     verdict: correct
@@ -851,10 +971,17 @@ items:
     model: claude-opus-5-5
     evidence: 09:219-286. The left derivation's RAA comes only through QN (a) and NIm ⊢, as 247 says.
       The bounded rules match prp-bounded-quantifier-rules (08:93). (x>a)[x_0/x]=x_0>a holds.
+  - stage: S5e
+    verdict: correct
+    by: s5e-02-quantifier-laws
+    hash: a698476186d5
+    date: '2026-11-01'
+    evidence: 'Wording only: @prp-bounded-quantifier-rules to Uses line; push steps in the same order;
+      worked case over R (x>0, x^2>x) true and in the ledger.'
 - key: prp-replacement
   kind: prp
   file: 02-quantifier-laws.md
-  line: 319
+  line: 340
   hash: b67b34996ffe
   verdicts:
   - stage: S5a
@@ -887,8 +1014,8 @@ items:
 - key: proof:prp-replacement
   kind: proof
   file: 02-quantifier-laws.md
-  line: 330
-  hash: c9dc63367072
+  line: 351
+  hash: 6da138f09464
   verdicts:
   - stage: S5a
     verdict: minor
@@ -935,11 +1062,19 @@ items:
     evidence: '02:331: exchanging the ∀ order through k flags with ∀E/∀I is sound. 02:339 cites def-rules-negation.
       02:356: ↔I joins the two directions before the k flagged boxes. 02:359: the renaming closure and
       chain are checked (see F043).'
+  - stage: S5e
+    verdict: correct
+    by: s5e-02-quantifier-laws
+    hash: 6da138f09464
+    date: '2026-11-01'
+    evidence: 'Wording only: closure argument split, same steps; @def-rules-biconditional to Uses line;
+      fresh x0 defined in words in place of ''as in the fold above''; worked case via double negation
+      true.'
 - key: exm-negating-definitions
   kind: exm
   file: 02-quantifier-laws.md
-  line: 362
-  hash: 1997dfb72591
+  line: 395
+  hash: 912bd7c583ca
   verdicts:
   - stage: S5a
     verdict: minor
@@ -979,11 +1114,18 @@ items:
       and the converse via (b) and (c); then QN (a)/(b) and NIm under exists q. The ledger line at 09:970
       lists the new dependencies (forall-I side condition; psi[t/x] = psi from Section 5.2). check_structure:
       0 fatal.'
+  - stage: S5e
+    verdict: correct
+    by: s5e-02-quantifier-laws
+    hash: 912bd7c583ca
+    date: '2026-11-01'
+    evidence: 'Wording only: citations split; Prime paragraph names both directions of not(a and b) -||-
+      a -> not b, checked against De Morgan (c),(d) and implication-as-disjunction (a),(b).'
 - key: check:02-quantifier-laws:2
   kind: check
   file: 02-quantifier-laws.md
-  line: 436
-  hash: 835cb424c959
+  line: 469
+  hash: 30033b66ba75
   verdicts:
   - stage: S5a
     verdict: correct
@@ -1029,10 +1171,16 @@ items:
     date: '2026-10-25'
     model: claude-opus-5-5
     evidence: '02:436-446: QN (a)/(b), then prp-negated-implication, give ∃A((E∧B)∧¬S). Correct.'
+  - stage: S5e
+    verdict: correct
+    by: s5e-02-quantifier-laws
+    hash: 30033b66ba75
+    date: '2026-11-01'
+    evidence: Wording only; negation exists A((E(A) and B(A)) and not S(A)) unchanged; QN to Uses line.
 - key: check:02-quantifier-laws:3
   kind: check
   file: 02-quantifier-laws.md
-  line: 448
+  line: 485
   hash: d3cf4915710c
   verdicts:
   - stage: S5a
@@ -1067,7 +1215,7 @@ items:
 - key: exm-square-of-opposition
   kind: exm
   file: 02-quantifier-laws.md
-  line: 484
+  line: 521
   hash: 35b3fc608b69
   verdicts:
   - stage: S5a
@@ -1092,7 +1240,7 @@ items:
 - key: check:02-quantifier-laws:4
   kind: check
   file: 02-quantifier-laws.md
-  line: 496
+  line: 533
   hash: 1ff45af17a69
   verdicts:
   - stage: S5a
@@ -1112,7 +1260,7 @@ items:
 - key: prp-arbitrarily-close-equal
   kind: prp
   file: 02-quantifier-laws.md
-  line: 510
+  line: 547
   hash: ee218243d9ec
   verdicts:
   - stage: S5a
@@ -1133,7 +1281,7 @@ items:
 - key: proof:prp-arbitrarily-close-equal
   kind: proof
   file: 02-quantifier-laws.md
-  line: 520
+  line: 557
   hash: 1cc83cb89e7a
   verdicts:
   - stage: S5a
@@ -1167,7 +1315,7 @@ items:
 - key: prp-quantifier-distribution
   kind: prp
   file: 02-quantifier-laws.md
-  line: 532
+  line: 569
   hash: a677a4e207cd
   verdicts:
   - stage: S5a
@@ -1189,7 +1337,7 @@ items:
 - key: prp-quantifier-passage
   kind: prp
   file: 02-quantifier-laws.md
-  line: 557
+  line: 596
   hash: 51eabc546425
   verdicts:
   - stage: S5a
@@ -1220,8 +1368,8 @@ items:
 - key: proof:prp-quantifier-passage
   kind: proof
   file: 02-quantifier-laws.md
-  line: 580
-  hash: 09538a6c3fa0
+  line: 627
+  hash: 12d2e9c6c741
   verdicts:
   - stage: S5a
     verdict: minor
@@ -1285,10 +1433,18 @@ items:
     model: claude-opus-5-5
     evidence: 02:581 attributes (a)/(d)/(b) of prp-quantifier-distribution to prp-forall-and, prp-exists-and
       and exm-existential-elimination-derivations (a). This is attribution wording only.
+  - stage: S5e
+    verdict: correct
+    by: coordinator
+    hash: 12d2e9c6c741
+    date: '2026-11-01'
+    evidence: 'Equivalence check against 9f9dbb8 by the chapter finisher. 02: idea''s run of the search
+      method now a displayed list with the same five steps; ''intuitionistic direction'' -> ''direction
+      derived without RAA''; distribution proof cites as a list. Derivations unchanged.'
 - key: proof:prp-quantifier-passage#2
   kind: proof
   file: 02-quantifier-laws.md
-  line: 610
+  line: 663
   hash: 7e1e2326a31f
   verdicts:
   - stage: S5a
@@ -1329,8 +1485,8 @@ items:
 - key: check:02-quantifier-laws:5
   kind: check
   file: 02-quantifier-laws.md
-  line: 821
-  hash: 9cba912473cd
+  line: 874
+  hash: c5a93f1ef055
   verdicts:
   - stage: S5a
     verdict: correct
@@ -1349,11 +1505,18 @@ items:
     model: claude-opus-5-5
     evidence: '02:821-827: law (e) under ∀x with ψ = x>0 and y not free in it. This is the classical direction
       ⊣ of (e). Correct.'
+  - stage: S5e
+    verdict: correct
+    by: coordinator
+    hash: c5a93f1ef055
+    date: '2026-11-01'
+    evidence: 'Equivalence check against 9f9dbb8 by the chapter finisher. 02: solution reworded; law (e)
+      under forall x with psi x>0, phi y*y=x, y not free in psi; replacement cited in words. Same mathematics.'
 - key: exm-prenex-conversion
   kind: exm
   file: 02-quantifier-laws.md
-  line: 846
-  hash: ba17fbf1b4ef
+  line: 899
+  hash: 9584b202b610
   verdicts:
   - stage: S5a
     verdict: correct
@@ -1372,10 +1535,18 @@ items:
     model: claude-opus-5-5
     evidence: '02:846-865: law (b) with ψ=∃yQ(y), then law (e) under ∀x. Going down uses the classical
       direction of (e), which is correct.'
+  - stage: S5e
+    verdict: correct
+    by: coordinator
+    hash: 9584b202b610
+    date: '2026-11-01'
+    evidence: 'Equivalence check against 9f9dbb8 by the chapter finisher. 02: ''Its hypothesis is checked
+      in the fold'' -> ''The passage laws meet the hypothesis of the replacement rule''. Steps (b) then
+      (e) unchanged.'
 - key: check:02-quantifier-laws:6
   kind: check
   file: 02-quantifier-laws.md
-  line: 869
+  line: 922
   hash: 72a51feb31c9
   verdicts:
   - stage: S5a
@@ -1397,7 +1568,7 @@ items:
 - key: exr-quantifier-laws-a1
   kind: exr
   file: 02-quantifier-laws.md
-  line: 887
+  line: 940
   hash: 43364356ae18
   verdicts:
   - stage: S5a
@@ -1438,8 +1609,8 @@ items:
 - key: exr-quantifier-laws-a2
   kind: exr
   file: 02-quantifier-laws.md
-  line: 913
-  hash: 6cd2f0a336e0
+  line: 966
+  hash: e5e310eb7648
   verdicts:
   - stage: S5a
     verdict: correct
@@ -1468,11 +1639,18 @@ items:
     evidence: '02-quantifier-laws.md:913-958. All parts match mine. (k) is law (b) of prp-quantifier-passage
       (line 564). Script: (i) 6 is a multiple of 3 and even; (j) the values P(a)=Q(b)=1, P(b)=Q(a)=0 work;
       (l) the premise is true over Z and the line fails at 2.'
+  - stage: S5e
+    verdict: correct
+    by: coordinator
+    hash: e5e310eb7648
+    date: '2026-11-01'
+    evidence: 'Equivalence check against 9f9dbb8 by the chapter finisher. 02: (g) parenthesis -> semicolon;
+      same parts.'
 - key: exr-quantifier-laws-b1
   kind: exr
   file: 02-quantifier-laws.md
-  line: 962
-  hash: cffa2f528fdb
+  line: 1015
+  hash: fe29d6b3e965
   verdicts:
   - stage: S5a
     verdict: minor
@@ -1510,11 +1688,19 @@ items:
       I solved (b), (c) and (d) myself: ∃x∈A∃y∈A(x<y ∧ f(x)>f(y)); the limit negation with the unbounded
       ∀x handled by QN (a)/(b); Cauchy with four bounded laws. These match, and no ⊣⊢ crosses an order
       fact.'
+  - stage: S5e
+    verdict: correct
+    by: coordinator
+    hash: fe29d6b3e965
+    date: '2026-11-01'
+    evidence: 'Equivalence check against 9f9dbb8 by the chapter finisher. 02: solution (a)-(d) reworded
+      (''bounded negation'', ''negated implication''); displays unchanged; Uses line added for earlier
+      results.'
 - key: exr-quantifier-laws-b2
   kind: exr
   file: 02-quantifier-laws.md
-  line: 1009
-  hash: 241ae12d790f
+  line: 1066
+  hash: 8a774e37ceb3
   verdicts:
   - stage: S5a
     verdict: correct
@@ -1579,10 +1765,17 @@ items:
     evidence: 02-quantifier-laws.md:1009-1042. The 8-line derivation is valid and uses no RAA. It applies
       law (b) (phi=P(x), psi=forall y Q(y)) and then law (a) under forall x (psi=P(x), phi=Q(y), moving
       y). Both label assignments match lines 563-564.
+  - stage: S5e
+    verdict: correct
+    by: coordinator
+    hash: 8a774e37ceb3
+    date: '2026-11-01'
+    evidence: 'Equivalence check against 9f9dbb8 by the chapter finisher. 02: law (b) then law (a) under
+      forall x; same psi, phi, moving variable y and not-free condition; replacement in words.'
 - key: exr-quantifier-laws-b3
   kind: exr
   file: 02-quantifier-laws.md
-  line: 1044
+  line: 1101
   hash: 131b16f6c03e
   verdicts:
   - stage: S5a
@@ -1613,8 +1806,8 @@ items:
 - key: exr-quantifier-laws-b4
   kind: exr
   file: 02-quantifier-laws.md
-  line: 1060
-  hash: 1efd7d5be6af
+  line: 1117
+  hash: cc7db7e2abf4
   verdicts:
   - stage: S5a
     verdict: correct
@@ -1643,11 +1836,18 @@ items:
       The derivations are valid and their side conditions are checked. All three readings were checked
       by script over [-20,20]: premise true and conclusion false in each. The phrasing follows binding
       rule D5 of the blueprint.'
+  - stage: S5e
+    verdict: correct
+    by: coordinator
+    hash: cc7db7e2abf4
+    date: '2026-11-01'
+    evidence: 'Equivalence check against 9f9dbb8 by the chapter finisher. 02: only the marking-scheme
+      heading and ''Slips that lose the part'' changed; readings and points unchanged. Sidecar passes.'
 - key: exr-quantifier-laws-b5
   kind: exr
   file: 02-quantifier-laws.md
-  line: 1181
-  hash: 9f315435d88b
+  line: 1238
+  hash: ff48441e5bca
   verdicts:
   - stage: S5a
     verdict: minor
@@ -1693,10 +1893,18 @@ items:
     model: claude-opus-5-5
     evidence: '02:1205: the ∃E explanation (the witness is a fresh variable, never a constant; the box
       closes on a line free of the witness; here no box is opened) is accurate.'
+  - stage: S5e
+    verdict: correct
+    by: coordinator
+    hash: ff48441e5bca
+    date: '2026-11-01'
+    evidence: 'Equivalence check against 9f9dbb8 by the chapter finisher. 02: exists-E is not a one-line
+      step, sentences split; counter-reading over Z (P even, Q positive, c=0) with the same truth values;
+      marking-scheme heading. Sidecar passes.'
 - key: exr-quantifier-laws-c1
   kind: exr
   file: 02-quantifier-laws.md
-  line: 1242
+  line: 1299
   hash: ca29746eed2a
   verdicts:
   - stage: S5a
@@ -1730,8 +1938,8 @@ items:
 - key: exr-quantifier-laws-c2
   kind: exr
   file: 02-quantifier-laws.md
-  line: 1289
-  hash: 043376f90b7c
+  line: 1346
+  hash: 6f35330ed57f
   verdicts:
   - stage: S5a
     verdict: correct
@@ -1770,10 +1978,17 @@ items:
       it complies with STYLE §11.7 (STYLE.md:228, 404-406). Both earlier findings are resolved. Solved
       myself: (a) needs four bounded laws plus NIm and the order fact, giving ∃ε>0∀N∈ℕ∃n∈ℕ∃x∈A(n≥N ∧ |f_n(x)−f(x)|≥ε).
       (b) '
+  - stage: S5e
+    verdict: correct
+    by: coordinator
+    hash: 6f35330ed57f
+    date: '2026-11-01'
+    evidence: 'Equivalence check against 9f9dbb8 by the chapter finisher. 02: negation, eps=1 construction
+      unchanged; slips as a 3-item list, same content; NIm to Uses line.'
 - key: exr-quantifier-laws-c3
   kind: exr
   file: 02-quantifier-laws.md
-  line: 1342
+  line: 1409
   hash: fbcee4b32015
   verdicts:
   - stage: S5a
@@ -1832,7 +2047,7 @@ items:
 - key: exm-search-with-witnesses
   kind: exm
   file: 03-first-order-search.md
-  line: 83
+  line: 87
   hash: e37cb6b491c4
   verdicts:
   - stage: S5a
@@ -1864,8 +2079,8 @@ items:
 - key: check:03-first-order-search:1
   kind: check
   file: 03-first-order-search.md
-  line: 162
-  hash: d5f0aeb56bd5
+  line: 166
+  hash: e59acf7e26f4
   verdicts:
   - stage: S5a
     verdict: correct
@@ -1883,11 +2098,18 @@ items:
     model: claude-opus-5-5
     evidence: '166-167: line 8 is ∀E on premise 2 at x0. Line 7 is the only line asserting R of particular
       terms before line 8.'
+  - stage: S5e
+    verdict: correct
+    by: coordinator
+    hash: e59acf7e26f4
+    date: '2026-11-01'
+    evidence: 'Equivalence check against 9f9dbb8 by the chapter finisher. 03: ''move'' -> ''strategy''
+      in the solution; the reason (line 7 names x_0, y_0) unchanged.'
 - key: def-propositional-skeleton
   kind: def
   file: 03-first-order-search.md
-  line: 174
-  hash: 70a571906005
+  line: 180
+  hash: d0869f8e0a92
   verdicts:
   - stage: S5a
     verdict: minor
@@ -1922,10 +2144,18 @@ items:
     model: claude-opus-5-5
     evidence: '03:179: ''alike up to renaming'' is now defined as a chain of finitely many renamings,
       an equivalence relation, so the atom assignment is well defined. 03:188 wording change is harmless.'
+  - stage: S5e
+    verdict: correct
+    by: coordinator
+    hash: d0869f8e0a92
+    date: '2026-11-01'
+    evidence: 'Equivalence check against 9f9dbb8 by the chapter finisher. 03: ''same atom exactly when
+      renaming'' sentence reordered; recursion clauses as a list, identical. New unlabelled instance p
+      -> (q or p) is a tautology (sidecar updated, passes).'
 - key: prp-taut-skeleton
   kind: prp
   file: 03-first-order-search.md
-  line: 196
+  line: 206
   hash: a2e5f6e184d1
   verdicts:
   - stage: S5a
@@ -1966,8 +2196,8 @@ items:
 - key: proof:prp-taut-skeleton
   kind: proof
   file: 03-first-order-search.md
-  line: 211
-  hash: 09d8d6f8b52e
+  line: 221
+  hash: 95b7167abacc
   verdicts:
   - stage: S5a
     verdict: minor
@@ -2015,11 +2245,19 @@ items:
     model: claude-opus-5-5
     evidence: 'S7 leftover resolved by the coordinator per the re-referee''s fix, re-read after the edit:
       Step 1 heading and Step 2''s appeal to Step 1 now use the outside-all-quantifiers reading'
+  - stage: S5e
+    verdict: correct
+    by: coordinator
+    hash: 95b7167abacc
+    date: '2026-11-01'
+    evidence: 'Equivalence check against 9f9dbb8 by the chapter finisher. 03: Step 2 split into sentences,
+      same order of steps; @lem-substitution moved to Uses line; Step 1 rewording ''substitution of formulas
+      for letters ... now for atoms'' says the same.'
 - key: check:03-first-order-search:2
   kind: check
   file: 03-first-order-search.md
-  line: 231
-  hash: 9d5eb1bf9646
+  line: 245
+  hash: 7132efd5f5ba
   verdicts:
   - stage: S5a
     verdict: correct
@@ -2036,10 +2274,17 @@ items:
     model: claude-opus-5-5
     evidence: '236: (a) p∧q ⊨ q∧p. (b) two atoms; prp-quantifier-distribution (a). (c) ¬p vs q; QN (a)
       uses RAA (02:19-27).'
+  - stage: S5e
+    verdict: correct
+    by: coordinator
+    hash: 7132efd5f5ba
+    date: '2026-11-01'
+    evidence: 'Equivalence check against 9f9dbb8 by the chapter finisher. 03: (c) adds the words ''quantifier
+      negation''; verdicts (a) yes, (b), (c) no unchanged.'
 - key: exm-propositional-core
   kind: exm
   file: 03-first-order-search.md
-  line: 253
+  line: 267
   hash: e803c21bfbce
   verdicts:
   - stage: S5a
@@ -2077,7 +2322,7 @@ items:
 - key: check:03-first-order-search:3
   kind: check
   file: 03-first-order-search.md
-  line: 282
+  line: 296
   hash: 0e83fe48c60d
   verdicts:
   - stage: S5a
@@ -2099,8 +2344,8 @@ items:
 - key: exm-four-tasks-with-quantifiers
   kind: exm
   file: 03-first-order-search.md
-  line: 325
-  hash: 29ca12817200
+  line: 345
+  hash: dccb504960c3
   verdicts:
   - stage: S5a
     verdict: correct
@@ -2120,10 +2365,17 @@ items:
     evidence: (a)-(d) derivations pass check_fitch. E/A/O forms match 02:465ff. Lines 3-6 of (d) are exm-universal-introduction-derivations
       (b) (05/04:274). The converse reading over Z fails at 0. Pointers 4.7 (test the subgoal, 04/07:439)
       and 7.2 (blueprint G10, STATUS row 87) are right.
+  - stage: S5e
+    verdict: correct
+    by: coordinator
+    hash: dccb504960c3
+    date: '2026-11-01'
+    evidence: 'Equivalence check against 9f9dbb8 by the chapter finisher. 03: (b), (c) name the E, A and
+      O forms in words; (d) reading reworded; derivations and verdicts unchanged.'
 - key: check:03-first-order-search:4
   kind: check
   file: 03-first-order-search.md
-  line: 429
+  line: 449
   hash: 62e087d8bca6
   verdicts:
   - stage: S5a
@@ -2146,7 +2398,7 @@ items:
 - key: check:03-first-order-search:5
   kind: check
   file: 03-first-order-search.md
-  line: 437
+  line: 457
   hash: 2d4f8fa6e313
   verdicts:
   - stage: S5a
@@ -2166,8 +2418,8 @@ items:
 - key: exr-first-order-search-a1
   kind: exr
   file: 03-first-order-search.md
-  line: 488
-  hash: 4e25bc82c8df
+  line: 515
+  hash: d0fcfe2aeb2c
   verdicts:
   - stage: S5a
     verdict: correct
@@ -2194,11 +2446,18 @@ items:
     evidence: '03:509-519. (a) ¬p∨(q∧p) is not a tautology (p=1, q=0), confirmed by script. (b) p∧¬q is
       satisfiable, and the ⊥ route is right: ∃E, TAUT, ∃I, clash. (c) (i) yes, (ii) no, (iii) yes, all
       checked. (d) and (e) agree with the text and C1 (core cites 7.2 only).'
+  - stage: S5e
+    verdict: correct
+    by: coordinator
+    hash: d0fcfe2aeb2c
+    date: '2026-11-01'
+    evidence: 'Equivalence check against 9f9dbb8 by the chapter finisher. 03: ''move'' -> ''strategy'';
+      same answer.'
 - key: exr-first-order-search-b1
   kind: exr
   file: 03-first-order-search.md
-  line: 514
-  hash: 810ad29235cb
+  line: 541
+  hash: b655506e71e1
   verdicts:
   - stage: S5a
     verdict: correct
@@ -2229,11 +2488,18 @@ items:
       6, 7 and 11. Side conditions verified. exm-existential-introduction-derivations (c) is ∀xR(x,x)⊢∀x∃yR(x,y),
       as claimed. Worked examples: exm-four-tasks (d), exm-search-with-witnesses. Scheme weights sum to
       10.'
+  - stage: S5e
+    verdict: correct
+    by: coordinator
+    hash: b655506e71e1
+    date: '2026-11-01'
+    evidence: 'Equivalence check against 9f9dbb8 by the chapter finisher. 03: group labels ''move'' ->
+      ''strategy''; marking-scheme heading; twelve verdicts and readings unchanged.'
 - key: exr-first-order-search-b2
   kind: exr
   file: 03-first-order-search.md
-  line: 695
-  hash: 7871648e48c9
+  line: 724
+  hash: 01683e70cbb3
   verdicts:
   - stage: S5a
     verdict: minor
@@ -2278,11 +2544,18 @@ items:
     model: claude-opus-5-5
     evidence: '03:752: lines 4 (∀E of 1 at c) and 7 (∀E of 2 at c) instantiate at c; lines 8 and 10 at
       y_0. Marking line 757 lists c, c, y_0, y_0, which matches.'
+  - stage: S5e
+    verdict: correct
+    by: coordinator
+    hash: 01683e70cbb3
+    date: '2026-11-01'
+    evidence: 'Equivalence check against 9f9dbb8 by the chapter finisher. 03: ''move'' -> ''strategy'';
+      marking-scheme heading; derivation unchanged.'
 - key: exr-first-order-search-b3
   kind: exr
   file: 03-first-order-search.md
-  line: 762
-  hash: f3bf1b8c98ff
+  line: 793
+  hash: ad1cffaf31d8
   verdicts:
   - stage: S5a
     verdict: correct
@@ -2309,10 +2582,16 @@ items:
     evidence: '03:762-818. Both derivations are valid: 6 and 10 lines. Skeleton p→q, q→¬p ⊨ ¬p confirmed
       by script. (b) is right: both formulas are prime with distinct atoms. Worked example: exm-propositional-core
       and its write-out check.'
+  - stage: S5e
+    verdict: correct
+    by: coordinator
+    hash: ad1cffaf31d8
+    date: '2026-11-01'
+    evidence: 'Equivalence check against 9f9dbb8 by the chapter finisher. 03: marking-scheme heading only.'
 - key: exr-first-order-search-c1
   kind: exr
   file: 03-first-order-search.md
-  line: 820
+  line: 853
   hash: 71781ecc23ac
   verdicts:
   - stage: S5a
@@ -2362,8 +2641,8 @@ items:
 - key: exr-first-order-search-c2
   kind: exr
   file: 03-first-order-search.md
-  line: 899
-  hash: 42c45e2a1416
+  line: 938
+  hash: 5b3a105fa832
   verdicts:
   - stage: S5a
     verdict: correct
@@ -2408,10 +2687,16 @@ items:
     model: claude-opus-5-5
     evidence: '03:934: line 7''s TAUT (m, m→p, m→s ⊨ s∧p) needs M(x_0) from line 4, which only premise
       3''s box supplies. Correct. Marking line 893 is fine.'
+  - stage: S5e
+    verdict: correct
+    by: coordinator
+    hash: 5b3a105fa832
+    date: '2026-11-01'
+    evidence: 'Equivalence check against 9f9dbb8 by the chapter finisher. 03: marking-scheme heading only.'
 - key: check:04-uniform-continuity-rule-by-rule:1
   kind: check
   file: 04-uniform-continuity-rule-by-rule.md
-  line: 20
+  line: 22
   hash: b7a8612c4e55
   verdicts:
   - stage: S5a
@@ -2435,8 +2720,8 @@ items:
 - key: check:04-uniform-continuity-rule-by-rule:2
   kind: check
   file: 04-uniform-continuity-rule-by-rule.md
-  line: 51
-  hash: a15ee24f680d
+  line: 55
+  hash: 860d8d4b64e0
   verdicts:
   - stage: S5a
     verdict: correct
@@ -2482,10 +2767,17 @@ items:
     evidence: 04:51-57. delta_0 is absent from line 5, from line 1 (the premise and the exists line) and
       from every open assumption. The box of x_0 has none. Line 4 matches line 5. All the exists-E clauses
       hold.
+  - stage: S5e
+    verdict: correct
+    by: coordinator
+    hash: 860d8d4b64e0
+    date: '2026-11-01'
+    evidence: 'Equivalence check against 9f9dbb8 by the chapter finisher. 04: ''The answer to the prompt''
+      -> question in words; dependency chain line 5 <- 4 <- 1, 3 unchanged.'
 - key: exm-uniform-implies-continuous
   kind: exm
   file: 04-uniform-continuity-rule-by-rule.md
-  line: 61
+  line: 65
   hash: af8f0a950e53
   verdicts:
   - stage: S5a
@@ -2513,7 +2805,7 @@ items:
 - key: check:04-uniform-continuity-rule-by-rule:3
   kind: check
   file: 04-uniform-continuity-rule-by-rule.md
-  line: 122
+  line: 128
   hash: 9f2b05ebf06f
   verdicts:
   - stage: S5a
@@ -2535,7 +2827,7 @@ items:
 - key: exm-converse-fails
   kind: exm
   file: 04-uniform-continuity-rule-by-rule.md
-  line: 142
+  line: 148
   hash: a8feba498ac5
   verdicts:
   - stage: S5a
@@ -2560,7 +2852,7 @@ items:
 - key: exm-square-not-uniform
   kind: exm
   file: 04-uniform-continuity-rule-by-rule.md
-  line: 222
+  line: 228
   hash: 8d8d781a6b2d
   verdicts:
   - stage: S5a
@@ -2593,8 +2885,8 @@ items:
 - key: exm-not-uniform-derived
   kind: exm
   file: 04-uniform-continuity-rule-by-rule.md
-  line: 258
-  hash: be1c9e6dd57b
+  line: 264
+  hash: 52e4c960f05f
   verdicts:
   - stage: S5a
     verdict: correct
@@ -2624,10 +2916,17 @@ items:
     model: claude-opus-5-5
     evidence: Lead-in at 256 now limits the claim to E before its last order fact; the derivation (lines
       1-20) passes check_fitch; line 15 TAUT on p∧¬q, p→q ⊨ ⊥ is valid.
+  - stage: S5e
+    verdict: correct
+    by: coordinator
+    hash: 52e4c960f05f
+    date: '2026-11-01'
+    evidence: 'Equivalence check against 9f9dbb8 by the chapter finisher. 04: ''move'' -> ''advice ...
+      of Section 5.6''; line 15 skeleton and closing-line witnesses unchanged.'
 - key: exm-converse-proof-critique
   kind: exm
   file: 04-uniform-continuity-rule-by-rule.md
-  line: 319
+  line: 325
   hash: 9d138cd2cf40
   verdicts:
   - stage: S5a
@@ -2667,7 +2966,7 @@ items:
 - key: check:04-uniform-continuity-rule-by-rule:4
   kind: check
   file: 04-uniform-continuity-rule-by-rule.md
-  line: 336
+  line: 342
   hash: 9db9be6b997a
   verdicts:
   - stage: S5a
@@ -2689,8 +2988,8 @@ items:
 - key: exr-uniform-continuity-rule-by-rule-a1
   kind: exr
   file: 04-uniform-continuity-rule-by-rule.md
-  line: 354
-  hash: 8f51ff01f008
+  line: 360
+  hash: a49817a121f0
   verdicts:
   - stage: S5a
     verdict: correct
@@ -2729,10 +3028,17 @@ items:
       derivation knows only lines 5 and 6 about it, and that ε0/3 is one such witness (any 0<δ≤ε0/3 works,
       which is correct for 3x+1). The check |(3x0+1)−(3y+1)| = 3|x0−y| < ε0 is right. The S5b and S6 findings
       are resolv'
+  - stage: S5e
+    verdict: correct
+    by: coordinator
+    hash: a49817a121f0
+    date: '2026-11-01'
+    evidence: 'Equivalence check against 9f9dbb8 by the chapter finisher. 04: (a) sentence split; same
+      lines 2, 6, 7 and boxes.'
 - key: exr-uniform-continuity-rule-by-rule-a2
   kind: exr
   file: 04-uniform-continuity-rule-by-rule.md
-  line: 380
+  line: 386
   hash: 283581ffc638
   verdicts:
   - stage: S5a
@@ -2782,8 +3088,8 @@ items:
 - key: exr-uniform-continuity-rule-by-rule-b1
   kind: exr
   file: 04-uniform-continuity-rule-by-rule.md
-  line: 442
-  hash: b9c7b94ad338
+  line: 448
+  hash: 24cccf4c4fb5
   verdicts:
   - stage: S5a
     verdict: minor
@@ -2835,11 +3141,18 @@ items:
       10 \Ae{9,7}, 12 \ii{8-11}, 13 \Ai{7-12}, 14 \Ai{6-13}, 15 \Ei{5,14} (bound on line 5), 16 \Ee{1,3-15}
       and 17 \Ai{2-16}; every side condition stated at line 273 holds. The parenthetical in the statement
       now '
+  - stage: S5e
+    verdict: correct
+    by: coordinator
+    hash: 24cccf4c4fb5
+    date: '2026-11-01'
+    evidence: 'Equivalence check against 9f9dbb8 by the chapter finisher. 04: Lipschitz statement: parentheses
+      removed, L >= 0 remark unchanged.'
 - key: exr-uniform-continuity-rule-by-rule-b2
   kind: exr
   file: 04-uniform-continuity-rule-by-rule.md
-  line: 494
-  hash: c7b3edfdab5a
+  line: 502
+  hash: 5da9a56c6293
   verdicts:
   - stage: S5a
     verdict: gap
@@ -2892,11 +3205,18 @@ items:
       not depend on x, (vii) reduces to (vi). Optional nit, not introduced by this diff: the solution
       quotes (iv) as "since ε and x were arbitrary", but (iv) actually reads ''Since ε > 0 and x ∈ A were
       arbitrary''.'
+  - stage: S5e
+    verdict: correct
+    by: coordinator
+    hash: 5da9a56c6293
+    date: '2026-11-01'
+    evidence: 'Equivalence check against 9f9dbb8 by the chapter finisher. 04: admissible orders (three)
+      unchanged; swap sentence split; distractor (vii) reworded with the same blocked forall-I.'
 - key: exr-uniform-continuity-rule-by-rule-b3
   kind: exr
   file: 04-uniform-continuity-rule-by-rule.md
-  line: 523
-  hash: cc28ac06a1a4
+  line: 531
+  hash: 7fea111ae3d6
   verdicts:
   - stage: S5a
     verdict: correct
@@ -2922,11 +3242,18 @@ items:
     model: claude-opus-5-5
     evidence: 10:307-319. delta=epsilon^2 gives |sqrt x - sqrt y| <= sqrt|x-y| < epsilon. The script checks
       the school inequality on random pairs. The dependence on epsilon only is stated.
+  - stage: S5e
+    verdict: correct
+    by: coordinator
+    hash: 7fea111ae3d6
+    date: '2026-11-01'
+    evidence: 'Equivalence check against 9f9dbb8 by the chapter finisher. 04: sqrt solution: delta = eps^2,
+      same inequality and monotonicity; reworded only.'
 - key: exr-uniform-continuity-rule-by-rule-b4
   kind: exr
   file: 04-uniform-continuity-rule-by-rule.md
-  line: 537
-  hash: ff53cd953e68
+  line: 545
+  hash: ef0547a5745a
   verdicts:
   - stage: S5a
     verdict: correct
@@ -2969,11 +3296,18 @@ items:
     model: claude-opus-5-5
     evidence: '04:561: the marking now requires ||x|−|y|| ≤ |x−y| proved (the triangle inequality used
       twice). This is correct and matches the ledger.'
+  - stage: S5e
+    verdict: correct
+    by: coordinator
+    hash: ef0547a5745a
+    date: '2026-11-01'
+    evidence: 'Equivalence check against 9f9dbb8 by the chapter finisher. 04: marking-scheme heading and
+      slips wording only.'
 - key: exr-uniform-continuity-rule-by-rule-c1
   kind: exr
   file: 04-uniform-continuity-rule-by-rule.md
-  line: 569
-  hash: 2cd1e0baa0ee
+  line: 579
+  hash: fd07bcfbd22d
   verdicts:
   - stage: S5a
     verdict: correct
@@ -3001,10 +3335,17 @@ items:
     evidence: '10:323-356. The faded blank (last half) has one reasonable completion, matching mine, and
       the move is named. Problem: the last scheme line (10:354) gives 2 points for ''says delta depends
       on epsilon only'', which the problem never asks for. [finding refuted by skeptics]'
+  - stage: S5e
+    verdict: correct
+    by: coordinator
+    hash: fd07bcfbd22d
+    date: '2026-11-01'
+    evidence: 'Equivalence check against 9f9dbb8 by the chapter finisher. 04: ''move'' -> ''method'';
+      fix, obtain at eta, choose unchanged; marking-scheme heading.'
 - key: exr-uniform-continuity-rule-by-rule-c2
   kind: exr
   file: 04-uniform-continuity-rule-by-rule.md
-  line: 604
+  line: 616
   hash: 56e382095d59
   verdicts:
   - stage: S5a
@@ -3059,8 +3400,8 @@ items:
 - key: exr-uniform-continuity-rule-by-rule-c3
   kind: exr
   file: 04-uniform-continuity-rule-by-rule.md
-  line: 649
-  hash: 2f1dea37279a
+  line: 663
+  hash: a439d7b416ec
   verdicts:
   - stage: S5a
     verdict: correct
@@ -3100,10 +3441,17 @@ items:
       the convention of 04-universal-introduction.md (c)). The line 8 bullet now correctly says that line
       7 is the last line of the box of x0, is a line of that box itself, and is the formula line 8 repeats.
       This resolves '
+  - stage: S5e
+    verdict: correct
+    by: coordinator
+    hash: a439d7b416ec
+    date: '2026-11-01'
+    evidence: 'Equivalence check against 9f9dbb8 by the chapter finisher. 04: (a) side-condition bullets
+      reworded, same conditions; (b) two-element reading unchanged (parenthesis removed). Sidecar passes.'
 - key: exr-uniform-continuity-rule-by-rule-r1
   kind: exr
   file: 04-uniform-continuity-rule-by-rule.md
-  line: 703
+  line: 719
   hash: a1e37312641f
   verdicts:
   - stage: S5a
@@ -3136,7 +3484,7 @@ items:
 - key: exr-uniform-continuity-rule-by-rule-r2
   kind: exr
   file: 04-uniform-continuity-rule-by-rule.md
-  line: 729
+  line: 745
   hash: 1107d118d0c9
   verdicts:
   - stage: S5a
@@ -3192,8 +3540,8 @@ items:
 - key: exr-uniform-continuity-rule-by-rule-r3
   kind: exr
   file: 04-uniform-continuity-rule-by-rule.md
-  line: 773
-  hash: 385e4e1b154f
+  line: 789
+  hash: ede4009f44f1
   verdicts:
   - stage: S5a
     verdict: correct
@@ -3239,3 +3587,10 @@ items:
     evidence: '04:808: line 3 is TAUT on the skeleton p∧(q∨r) ⊨ (p∧q)∨(p∧r), and is the same as the derived
       rule prp-distributivity. At line 11, x_0 is in neither line 11, line 1 nor the premise, and no assumption
       is open.'
+  - stage: S5e
+    verdict: correct
+    by: coordinator
+    hash: ede4009f44f1
+    date: '2026-11-01'
+    evidence: 'Equivalence check against 9f9dbb8 by the chapter finisher. 04: wording only; no change
+      to the mathematics.'

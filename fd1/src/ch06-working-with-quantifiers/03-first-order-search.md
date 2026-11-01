@@ -1,11 +1,11 @@
 # Finding First-Order Derivations
 
-Chapter 5 added one step to the search method in each rule section, and Section 6.2 added laws. This section puts the steps into one method, puts in order the moves that do most of the work with quantifiers and names a third, admits the propositional step TAUT into derivations with quantifiers, and runs the four kinds of task of Section 3.2 again. The new difficulty is names: which term to instantiate at, when to open a box for a witness, and which names a line may mention when a box closes.
+Chapter 5 added one step to the search method in each rule section, and Section 6.2 added laws. This section puts the steps into one method. It puts in order the two strategies that do most of the work with quantifiers, and adds a third. It allows the propositional step TAUT in derivations with quantifiers, and runs the four kinds of task of Section 3.2 again. The new difficulty is names: which term to instantiate at, when to open a box for a witness, and which names a line may mention when a box closes.
 
 ::: {.remark}
 [Looking back]
 
-Section 3.1 assembled the search method for the connectives, and Section 3.2 sorted the tasks it serves. Here both return with flags and witnesses. Backward from the goal and forward from the premises is unchanged; what is new is that a box may carry a name, and a closing line must not mention it.
+Section 3.1 assembled the search method for the connectives, and Section 3.2 sorted the tasks it serves. Here both return with flags and witnesses. Working backward from the goal and forward from the premises is unchanged; what is new is that a box may carry a name, and a closing line must not mention it.
 :::
 
 ## The search method, extended
@@ -31,24 +31,28 @@ Section 3.1 put the moves for the connectives in order. Each of Sections 5.3–5
 4. **Clash.** As in Section 3.1: for the goal \( \bot \), find or manufacture a pair \( \chi \), \( \neg\chi \); an impossible case closes itself by \( \rulename{\bot E} \).
 5. **Stuck.** As in Section 3.1: \( \rulename{RAA} \) on the current goal, or \( \rulename{LEM} \) on a well-chosen statement.
 
-When no gap is left, number the lines and check the derivation as @def-derivation, extended in Section 5.4, says: every citation is available, and every side condition holds (\( t \) free for \( x \) at \( \rulename{\forall E} \) and \( \rulename{\exists I} \), bounded or not; \( t_1 \) and \( t_2 \) free for \( x \) at \( \rulename{{=}E} \); a fresh name at each line that closes a flagged box).
+When no gap is left, number the lines and check the derivation as @def-derivation, extended in Section 5.4, says. Every citation must be available, and every side condition must hold:
+
+- \( t \) free for \( x \) at \( \rulename{\forall E} \) and \( \rulename{\exists I} \), bounded or not;
+- \( t_1 \) and \( t_2 \) free for \( x \) at \( \rulename{{=}E} \);
+- a fresh name at each line that closes a flagged box.
 :::
 
-Two of the new steps deserve a word on their place in the order. The goal step for \( \forall \) is safe in the same way as the goal steps for \( \to \) and \( \neg \) (Section 3.1): if \( \forall x\, \psi \) is derivable at all, then so is \( \psi[x_0/x] \) for a fresh \( x_0 \), by one more \( \rulename{\forall E} \); so opening the box loses nothing. The goal step for \( \exists \) is unsafe in the same way as the one for \( \vee \): a witness chosen too early may be the wrong one, as in @exm-existential-introduction-derivations, where "take \( y = c \)" stalled. That is why \( \exists \) is postponed and the \( \rulename{\exists E} \) boxes of the premises are opened early: the witnesses they supply are often the terms the postponed goal is waiting for, as \( N_0 \) was in the limit derivation of Section 6.1.
+Two of the new steps have a reason for their place in the order. The goal step for \( \forall \) is safe in the same way as the goal steps for \( \to \) and \( \neg \) (Section 3.1). If \( \forall x\, \psi \) is derivable at all, then so is \( \psi[x_0/x] \) for a fresh \( x_0 \), by one more \( \rulename{\forall E} \). So opening the box loses nothing. The goal step for \( \exists \) is unsafe in the same way as the one for \( \vee \): a witness chosen too early may be the wrong one. That happened in @exm-existential-introduction-derivations, where "take \( y = c \)" stalled. So \( \exists \) is postponed, and the \( \rulename{\exists E} \) boxes of the premises are opened early. The witnesses they supply are often the terms the postponed goal is waiting for, as \( N_0 \) was in the limit derivation of Section 6.1.
 
-## Three moves for quantifiers
+## Three strategies for quantifiers
 
-Most first-order searches turn on three moves. The first two carry the names Chapter 5 gave them; what is new here is their order, which the method above already follows.
+Most first-order searches turn on three strategies. Chapter 5 named the first two; what is new here is their order, which the method above already follows.
 
 **Name the witness early** (Section 5.6). When an \( \exists \) line is among the resources, open its box at once, with a fresh witness, and make the box's last line the current goal. The witness costs nothing to name, and it is often the very term that a \( \forall \) line or the goal is waiting for.
 
 **Instantiate at the term you need** (Section 5.3), and so not before that term is known. A \( \forall \) line can be instantiated at any term at all, which is exactly why instantiating it before the goal or a witness names the term is a blind choice. Wait for the witnesses, then instantiate at them.
 
-**The propositional core.** Once the boxes are open and the \( \forall \) lines are instantiated, what is left is often a step that holds for propositional reasons alone. The subsection "The propositional core" below names this move and gives it a one-line step.
+**The propositional core.** Once the boxes are open and the \( \forall \) lines are instantiated, what is left is often a step that holds for propositional reasons alone. Below, such a step becomes a single line of the derivation.
 
 Two pairs of steps recur: \( \rulename{\forall E} \) followed by \( \rulename{{\to}E} \), which applies a general law at one point, and \( \rulename{\exists E} \) followed, inside its box, by \( \rulename{\exists I} \) with a term built from the names in hand.
 
-The next move, read off the goal and the lines in hand:
+The next step, read off the goal and the lines in hand:
 
 ```{=latex}
 \begin{center}
@@ -78,7 +82,7 @@ The next move, read off the goal and the lines in hand:
 \end{center}
 ```
 
-The last edge reads "no", not "impossible": the chart is a guide to the next move, and it makes no claim that every derivable sequent is found by following it. It leaves out the premise-directed connective steps, the clash and the propositional core (TAUT, below); for those, follow the method above.
+The last edge reads "no", not "impossible": the chart is a guide to the next step, and it makes no claim that every derivable sequent is found by following it. It leaves out three kinds of step: the premise-directed steps for connectives, the clash, and the propositional core (TAUT, below). For those, follow the method above.
 
 ::: {#exm-search-with-witnesses}
 [A search that waits for its witnesses]
@@ -154,7 +158,7 @@ $\begin{nd}
 
 At line 12, \( y_0 \) is not in line 12, in line 6, in the premises, or in the open assumption on line 4. At line 13, \( x_0 \) is not in line 13, in line 3, or in the premises, and no assumption is open.
 
-Read over \( \nZ \), with \( P(x) \) as "\( x > 0 \)", \( R(x, y) \) as "\( y = 2x + 1 \)" and \( Q(y) \) as "\( y \) is odd": every positive integer has a \( 2x + 1 \); every number of the form \( 2x + 1 \) is odd; some integer is positive; so some integer is odd.
+Read over \( \nZ \), with \( P(x) \) as "\( x > 0 \)", \( R(x, y) \) as "\( y = 2x + 1 \)" and \( Q(y) \) as "\( y \) is odd". The premises say that every positive integer has a \( 2x + 1 \), that every number of the form \( 2x + 1 \) is odd, and that some integer is positive. So some integer is odd.
 
 Compare a search that starts with premise 1, before any witness is named. It must instantiate at some term, a variable or a constant that nothing mentions, say \( c \); the line \( P(c) \to \exists y\, R(c, y) \) then waits for \( P(c) \), which no premise gives. The box of premise 3 supplies the term that makes premise 1 usable.
 :::
@@ -164,28 +168,34 @@ Why is line 8 an instance at \( x_0 \), and not at some other term?
 :::
 
 ::: {.solution}
-Line 7, the only line that asserts \( R \) of particular terms, mentions \( x_0 \) and \( y_0 \). Premise 2 is useful only at the terms that line names. This is the move "instantiate at the term you need": the terms were known only once the witnesses were named.
+Line 7, the only line that asserts \( R \) of particular terms, mentions \( x_0 \) and \( y_0 \). Premise 2 is useful only at the terms that line names. This is the strategy "instantiate at the term you need": the terms were known only once the witnesses were named.
 :::
 
 ## Steps that are right for propositional reasons
 
 Inside the boxes of a first-order derivation, many steps are propositional: \( \rulename{\wedge E} \), \( \rulename{{\to}E} \), a contrapositive, a case split. Section 4.8 let a propositional derivation take such steps in one line, as TAUT. With quantifiers the step must not look inside a quantifier, and the next definition says exactly what it may look at.
 
+Start with one formula, \( \forall x\, P(x) \to (Q(c) \vee \forall x\, P(x)) \). Cover each part that begins with a quantifier, and each atomic part, by a letter: \( \forall x\, P(x) \) becomes \( p \) both times, and \( Q(c) \) becomes \( q \). What is left is \( p \to (q \vee p) \). A truth table on \( p \) and \( q \) shows it is a tautology, whatever \( \forall x\, P(x) \) and \( Q(c) \) say. The definition makes this covering exact.
+
 ::: {#def-propositional-skeleton}
 [Propositional Skeleton]
 
 Call a first-order formula **prime** if it is atomic and not \( \bot \), or begins with a
-quantifier, bounded or not. Assign to each prime formula a propositional atom, the **same** atom to two prime
-formulas exactly when one can be turned into the other by finitely many renamings of bound variables (Section 5.2), in either direction; this is an equivalence relation, so the assignment is well defined. The
-**propositional skeleton** \( \mathrm{sk}(\varphi) \) of a formula \( \varphi \) is defined by
-recursion: \( \mathrm{sk}(\bot) = \bot \); \( \mathrm{sk}(\pi) \) is the atom of \( \pi \) for a
-prime formula \( \pi \); \( \mathrm{sk}(\neg\varphi) = \neg\,\mathrm{sk}(\varphi) \); and
-\( \mathrm{sk}(\varphi \circ \psi) = \mathrm{sk}(\varphi) \circ \mathrm{sk}(\psi) \) for each of
-\( \wedge \), \( \vee \), \( \to \), \( \leftrightarrow \). The formulas of one list take their
-skeletons from one assignment.
+quantifier, bounded or not. Assign to each prime formula a propositional atom. Two prime
+formulas get the **same** atom exactly when one can be turned into the other by finitely many renamings of bound variables (Section 5.2), in either direction. This is an equivalence relation, so the assignment is well defined.
+
+The **propositional skeleton** \( \mathrm{sk}(\varphi) \) of a formula \( \varphi \) is defined by
+recursion:
+
+- \( \mathrm{sk}(\bot) = \bot \);
+- \( \mathrm{sk}(\pi) \) is the atom of \( \pi \) for a prime formula \( \pi \);
+- \( \mathrm{sk}(\neg\varphi) = \neg\,\mathrm{sk}(\varphi) \);
+- \( \mathrm{sk}(\varphi \circ \psi) = \mathrm{sk}(\varphi) \circ \mathrm{sk}(\psi) \) for each of \( \wedge \), \( \vee \), \( \to \), \( \leftrightarrow \).
+
+The formulas of one list take their skeletons from one assignment.
 :::
 
-The skeleton keeps the connectives outside every quantifier and hides everything else; this is not the skeleton of a derivation that Section 3.1 reads off the goal, and wherever the two could be confused, the book says "propositional skeleton" for this one. For example,
+The skeleton keeps the connectives outside every quantifier and hides everything else. It is not the skeleton of a derivation that Section 3.1 reads off the goal; where the two could be confused, we say "propositional skeleton" for this one. For example,
 \[
 \mathrm{sk}\bigl( \forall x\, P(x) \to (\exists y\, R(y, c) \vee \neg\forall z\, P(z)) \bigr) = p \to (q \vee \neg p),
 \]
@@ -205,17 +215,21 @@ Chapters 1 and 2.
 
 *In words: a step that is right for propositional reasons alone is derivable, with the quantified parts carried along untouched.*
 
-The proof takes the propositional derivation that completeness provides and puts the prime formulas back in place of their atoms; it is in the fold below.
+The proof takes the propositional derivation that completeness provides, and puts the prime formulas back in place of their atoms.
 
 ::: {.second-reading title="The proof: completeness on the skeleton, then substitution"}
 ::: {.proof}
-*Step 1: no two different prime formulas outside all quantifiers share an atom.* By @cor-derivable-iff-valid (completeness, Section 4.8) there is a derivation \( D \) of \( \mathrm{sk}(\Gamma) \vdash \mathrm{sk}(\psi) \) with the rules of Chapters 1 and 2; its lines are propositional formulas. Replace, in every line of \( D \), each atom of \( \mathrm{sk}(\Gamma) \), \( \mathrm{sk}(\psi) \) by the prime formula of \( \Gamma \), \( \psi \) to which it was assigned, and any other atom by \( \bot \). This is the substitution of formulas for atoms that @def-derived-rule makes for letters, and that @lem-substitution makes for meaning. Every rule of Chapters 1 and 2 is a schema in formulas, and the replacement commutes with each connective and leaves \( \bot \) alone. So each line keeps its rule and its citations, and each box keeps its extent and its assumption; this holds for \( \rulename{RAA} \), \( \rulename{LEM} \) and \( \rulename{\bot E} \) as for the others. \( D \) has no flagged box, so no side condition about names arises. Each premise \( \mathrm{sk}(\gamma) \) becomes \( \gamma \), and the last line becomes \( \psi \). So the result is a first-order derivation of \( \Gamma \vdash \psi \) (@def-derivation, as Section 5.4 extended it), and it uses only the rules of Chapters 1 and 2. This is the second sentence of the statement.
+*Step 1: no two different prime formulas outside all quantifiers share an atom.* By @cor-derivable-iff-valid (completeness, Section 4.8) there is a derivation \( D \) of \( \mathrm{sk}(\Gamma) \vdash \mathrm{sk}(\psi) \) with the rules of Chapters 1 and 2; its lines are propositional formulas. Replace, in every line of \( D \), each atom of \( \mathrm{sk}(\Gamma) \), \( \mathrm{sk}(\psi) \) by the prime formula of \( \Gamma \), \( \psi \) to which it was assigned, and any other atom by \( \bot \). This is the substitution of formulas for letters that @def-derived-rule makes, now for atoms. Every rule of Chapters 1 and 2 is a schema in formulas, and the replacement commutes with each connective and leaves \( \bot \) alone. So each line keeps its rule and its citations, and each box keeps its extent and its assumption; this holds for \( \rulename{RAA} \), \( \rulename{LEM} \) and \( \rulename{\bot E} \) as for the others. \( D \) has no flagged box, so no side condition about names arises. Each premise \( \mathrm{sk}(\gamma) \) becomes \( \gamma \), and the last line becomes \( \psi \). So the result is a first-order derivation of \( \Gamma \vdash \psi \) (@def-derivation, as Section 5.4 extended it), and it uses only the rules of Chapters 1 and 2. This is the second sentence of the statement.
 
-*Step 2: the general case.* Choose one prime formula for each atom, and let \( \gamma^* \) be \( \gamma \) with every prime formula occurring outside all quantifiers (the occurrences the skeleton sees) replaced by the chosen one of its atom. Prime formulas with one atom differ only by renaming. A renaming is a provable equivalence whose closure is derivable (the renaming sentence after @prp-replacement), so @prp-replacement, applied one occurrence and one renaming step at a time (through a letter new to the formula where needed), with the steps chained by @lem-weakening-cut (c), gives \( \gamma \dashv\vdash \gamma^* \) for each formula \( \gamma \) of the list, and \( \psi \dashv\vdash \psi^* \). The formulas \( \Gamma^* \) and \( \psi^* \) have the same skeletons as \( \Gamma \) and \( \psi \), and in them no two different prime formulas outside all quantifiers share an atom, so Step 1 gives \( \Gamma^* \vdash \psi^* \). Now @lem-weakening-cut (Section 2.3) chains \( \Gamma \vdash \gamma^* \) for each \( \gamma \), then \( \Gamma^* \vdash \psi^* \), then \( \psi^* \vdash \psi \). Each pasted block's flags are first renamed to names new to the whole derivation, as "The laws as one line" (Section 6.2) argues. Then no flag of a pasted block occurs in a premise or an open assumption of the derivation it is pasted into, so every \( \rulename{\forall I} \) and \( \rulename{\exists E} \) side condition of the block still holds, and @lem-weakening-cut (c) holds for these first-order derivations by the same pasting. So \( \Gamma \vdash \psi \).
+*Step 2: the general case.* Choose one prime formula for each atom, and let \( \gamma^* \) be \( \gamma \) with every prime formula occurring outside all quantifiers (the occurrences the skeleton sees) replaced by the chosen one of its atom. Prime formulas with one atom differ only by renaming. A renaming is a provable equivalence whose closure is derivable, by the sentence on renaming after @prp-replacement. So @prp-replacement can be applied one occurrence and one renaming step at a time, through a letter new to the formula where needed. Chaining these steps by @lem-weakening-cut (c) gives \( \gamma \dashv\vdash \gamma^* \) for each formula \( \gamma \) of the list, and \( \psi \dashv\vdash \psi^* \). The formulas \( \Gamma^* \) and \( \psi^* \) have the same skeletons as \( \Gamma \) and \( \psi \). In them, no two different prime formulas outside all quantifiers share an atom, so Step 1 gives \( \Gamma^* \vdash \psi^* \). Now @lem-weakening-cut (Section 2.3) chains \( \Gamma \vdash \gamma^* \) for each \( \gamma \), then \( \Gamma^* \vdash \psi^* \), then \( \psi^* \vdash \psi \). Each pasted block's flags are first renamed to names new to the whole derivation, as "The laws as one line" (Section 6.2) argues. Then no flag of a pasted block occurs in a premise or an open assumption of the derivation it is pasted into. So every \( \rulename{\forall I} \) and \( \rulename{\exists E} \) side condition of the block still holds. By the same pasting, @lem-weakening-cut (c) holds for these first-order derivations. So \( \Gamma \vdash \psi \).
+
+::: {.uses}
+@lem-substitution (the same substitution, for meaning).
 :::
 :::
+:::
 
-**TAUT on the skeleton.** From now on, a line of a derivation may be justified \( \rulename{TAUT} \), citing available lines, when their skeletons semantically entail its skeleton (@def-valid-argument), all from one assignment; with no cited lines, when its skeleton is a tautology. This is @def-rule-taut of Section 4.8, applied to skeletons. By @prp-taut-skeleton the line abbreviates a block of primitive steps, pasted in with any flags renamed to names new to the whole derivation, as "The laws as one line" (Section 6.2) allows. As in Section 4.8, use TAUT only for a step a written proof would leave unsaid.
+**TAUT on the skeleton.** From now on, a line of a derivation may be justified \( \rulename{TAUT} \), citing available lines, when their skeletons semantically entail its skeleton (@def-valid-argument). All these skeletons are taken from one assignment. A TAUT line may also cite no lines, when its skeleton is a tautology. This is @def-rule-taut of Section 4.8, applied to skeletons. By @prp-taut-skeleton the line abbreviates a block of primitive steps, pasted in with any flags renamed to names new to the whole derivation, as "The laws as one line" (Section 6.2) allows. As in Section 4.8, use TAUT only for a step a written proof would leave unsaid.
 
 These are TAUT steps:
 
@@ -233,7 +247,7 @@ Which are TAUT steps? (a) From \( \exists x\, P(x) \wedge \forall y\, Q(y) \) to
 :::
 
 ::: {.solution}
-(a) Yes: \( p \wedge q \models q \wedge p \). (b) No: the skeletons are two different atoms; the step is @prp-quantifier-distribution (a), which looks inside \( \forall x \). (c) No: the skeletons are \( \neg p \) and \( q \); the step is QN (a) of Section 6.2, which needs the quantifier rules and \( \rulename{RAA} \).
+(a) Yes: \( p \wedge q \models q \wedge p \). (b) No: the skeletons are two different atoms; the step is @prp-quantifier-distribution (a), which looks inside \( \forall x \). (c) No: the skeletons are \( \neg p \) and \( q \); the step is quantifier negation, QN (a) of Section 6.2, which needs the quantifier rules and \( \rulename{RAA} \).
 :::
 
 ::: {.warning}
@@ -277,7 +291,7 @@ The skeleton of line 5's step is \( p \to (q \vee r), \neg q \models p \to r \).
 Read over \( \nZ \), with \( P(n) \) as "\( n > 1 \)", \( Q(n) \) as "\( n^2 = 2 \)" and \( R(n) \) as "\( n > 0 \)". The first premise says "if \( n > 1 \), then \( n^2 = 2 \) or \( n > 0 \)", true since \( n > 1 \) gives \( n > 0 \); the second says that no integer squares to \( 2 \). Both premises are true under this reading, and so is the conclusion, which says that every integer greater than \( 1 \) is positive. The quantifier part of the derivation is two instantiations and one generalization, and its core is propositional.
 :::
 
-The order of the steps is the point. TAUT could not have been applied to the premises themselves: their skeletons are two atoms \( p \) and \( q \), and the goal's is a third, \( r \), and \( p, q \not\models r \). Only after the flagged box is open and both premises are instantiated at its flag do the lines show the connectives that the table needs. So the move reads: boxes first, instances at the flag second, and the table last.
+The order of the steps is the point. TAUT could not have been applied to the premises themselves: their skeletons are two atoms \( p \) and \( q \), and the goal's is a third, \( r \), and \( p, q \not\models r \). Only after the flagged box is open and both premises are instantiated at its flag do the lines show the connectives that the table needs. So the order is: boxes first, instances at the flag second, and the table last.
 
 ::: {.check}
 Write out what line 5 abbreviates, with the rules of Chapters 1 and 2.
@@ -320,7 +334,13 @@ That is nine lines in place of one. A written proof would say "so \( R(x_0) \), 
 
 ## Four kinds of task, with quantifiers
 
-Section 3.2 sorted propositional problems into four kinds, and the kind decides how the search begins. The same four come back. A **theorem** \( \vdash \varphi \) has no premises; an **equivalence** \( \varphi \dashv\vdash \psi \) needs two derivations; **inconsistency** of a list is a derivation of \( \bot \) from it (Section 3.2's definition reads the same for first-order formulas, now with all the rules); and **derive or break** withholds the verdict. A claim is broken by a counter-reading, which makes every member of its counterexample set true (Section 7.2).
+Section 3.2 sorted propositional problems into four kinds, and the kind decides how the search begins. The same four come back:
+
+- A **theorem** \( \vdash \varphi \) has no premises.
+- An **equivalence** \( \varphi \dashv\vdash \psi \) needs two derivations.
+- **Inconsistency** of a list is a derivation of \( \bot \) from it. Section 3.2's definition reads the same for first-order formulas, now with all the rules.
+- **Derive or break** does not say in advance whether the claim holds.
+ A claim is broken by a counter-reading, which makes every member of its counterexample set true (Section 7.2).
 
 ::: {#exm-four-tasks-with-quantifiers}
 [One pair of predicates, four tasks]
@@ -352,7 +372,7 @@ $\begin{nd}
 
 Line 2 instantiates at the variable \( x \) itself, and line 4 uses \( \rulename{\exists I} \) at \( x \), as in @prp-forall-implies-exists. Any term would have done as the witness, since line 1 holds at every term; the variable \( x \) is simply the term at hand, and no constant has to be invented.
 
-*(b)* The E form of Section 6.2 says the same with its two predicates exchanged: "no \( P \) is \( Q \)" is "no \( Q \) is \( P \)". An equivalence is two searches, and here the second is the first with the letters exchanged, so one search does the work of both. Each direction opens a flagged box, instantiates at its flag, takes one TAUT step and generalizes:
+*(b)* The premise is "no \( P \) is \( Q \)", the E form of Section 6.2, and that form says the same with its two predicates exchanged: "no \( P \) is \( Q \)" is "no \( Q \) is \( P \)". An equivalence is two searches, and here the second is the first with the letters exchanged, so one search does the work of both. Each direction opens a flagged box, instantiates at its flag, takes one TAUT step and generalizes:
 
 ```{=latex}
 \begin{center}
@@ -378,7 +398,7 @@ $\begin{nd}
 
 The skeletons are \( p \to \neg q \models q \to \neg p \) and the same with \( p \) and \( q \) exchanged.
 
-*(c)* An A form and its O form (Section 6.2). The goal is \( \bot \), so the clash step of the method applies, but no pair \( \chi \), \( \neg\chi \) is in sight among the premises: the clash lives at a witness. The \( \exists \) premise opens its box at once, the \( \forall \) premise is instantiated at the witness, and the clash is propositional:
+*(c)* The list is an A form, "every \( P \) is \( Q \)", with its O form, "some \( P \) is not \( Q \)" (Section 6.2). The goal is \( \bot \), so the clash step of the method applies. But no pair \( \chi \), \( \neg\chi \) is in sight among the premises: the clash appears only at a witness. The \( \exists \) premise opens its box at once, the \( \forall \) premise is instantiated at the witness, and the clash is propositional:
 
 ```{=latex}
 \begin{center}
@@ -397,7 +417,7 @@ $\begin{nd}
 
 Line 5's skeleton is \( p \wedge \neg q, p \to q \models \bot \).
 
-*(d)* With the verdict withheld, spend a minute on each side before committing. For the first claim, a reading that makes the premise true and the conclusion false would need every \( P \) to be a \( Q \), every element to be a \( P \), and some element not a \( Q \), which cannot happen; so try to derive it. For the converse, a false hypothesis \( \forall x\, P(x) \) makes the premise true cheaply, which suggests a break.
+*(d)* With the verdict withheld, spend a minute on each side before committing. Take the first claim, and a reading that makes its premise true and its conclusion false. It would need every \( P \) to be a \( Q \), every element to be a \( P \), and some element not a \( Q \). That cannot happen, so try to derive it. For the converse, a false hypothesis \( \forall x\, P(x) \) makes the premise true cheaply, which suggests a break.
 
 The first claim derives. Lines 3–6 are @exm-universal-introduction-derivations (b), run inside the box of line 2:
 
@@ -424,7 +444,7 @@ At line 6, \( x_0 \) is not in the premise, in line 6, or in the open assumption
 The converse breaks. Over \( \nZ \), read \( P \) as "even" and \( Q \) as "positive". "Every integer is even" is false, so the premise "if every integer is even, then every integer is positive" is true; the conclusion "every even integer is positive" is false at \( 0 \).
 :::
 
-**Test the subgoal by a counter-reading.** Section 4.7 tested a propositional subgoal by a refuting row before chasing it. The first-order form of the move is the same. When a search produces a subgoal, look for a reading that makes the available lines true and the subgoal false before you chase it. If you find one, the subgoal is the wrong one: Section 7.2 states that such a reading rules out every derivation of it from those lines. Return to the step that produced it, and choose differently there: another term for a \( \forall E \), a box opened earlier, or a different case split. A reading takes a minute to find, and it can save the search a long chase.
+**Test the subgoal by a counter-reading.** Section 4.7 tested a propositional subgoal by a refuting row before chasing it. The first-order form is the same. When a search produces a subgoal, look for a reading that makes the available lines true and the subgoal false before you chase it. If you find one, the subgoal is the wrong one: Section 7.2 states that such a reading rules out every derivation of it from those lines. Return to the step that produced it, and choose differently there: another term for a \( \forall E \), a box opened earlier, or a different case split. A reading takes a minute to find, and it can save the search a long chase.
 
 ::: {.check}
 A search for the limit derivation of Section 6.1 instantiates the premise at \( \varepsilon_0 \) instead of \( \varepsilon_0/2 \), and reaches the subgoal \( \abs{2 a_{n_0} - 2L} < \varepsilon_0 \) with \( \abs{a_{n_0} - L} < \varepsilon_0 \) available. Find a sequence and numbers that make every available line true and the subgoal false.
@@ -462,18 +482,25 @@ Here is what the book has proved about quantifiers, grouped by use; a search tha
 | Use | Sequent | Where |
 |---|---|---|
 | exchange two like quantifiers | \( \forall x\, \forall y\, \varphi \dashv\vdash \forall y\, \forall x\, \varphi \) | @exm-universal-introduction-derivations (c) |
-| rename a bound variable | \( \forall y\, \varphi \dashv\vdash \forall z\, \varphi[z/y] \), and the same for \( \exists \) | Section 5.4 (the fold after @exm-universal-introduction-derivations); [Section 5.6](#existential-renaming) |
+| rename a bound variable | \( \forall y\, \varphi \dashv\vdash \forall z\, \varphi[z/y] \), and the same for \( \exists \) | Section 5.4, "The front renaming, derived", after @exm-universal-introduction-derivations; [Section 5.6](#existential-renaming) |
 | every gives some | \( \forall x\, \varphi \vdash \exists x\, \varphi \) | @prp-forall-implies-exists |
 | some-all gives all-some | \( \exists x\, \forall y\, R(x, y) \vdash \forall y\, \exists x\, R(x, y) \) | @prp-exists-forall-swap |
-| distribute | \( \forall \) over \( \wedge \) and \( \exists \) over \( \vee \) both ways; \( \forall \) over \( \vee \) and \( \exists \) over \( \wedge \) one way | @prp-quantifier-distribution (the instances for \( P \), \( Q \) first in @prp-forall-and and @prp-exists-and) |
-| negate | "not every" and "some not"; "none" and "every not"; a negated implication; bounded forms | @prp-quantifier-negation, @prp-negated-implication, @prp-bounded-quantifier-negation |
+| distribute | \( \forall \) over \( \wedge \) and \( \exists \) over \( \vee \) both ways; \( \forall \) over \( \vee \) and \( \exists \) over \( \wedge \) one way | @prp-quantifier-distribution (first for letters \( P \), \( Q \) in Sections 5.4 and 5.6) |
+| negate | "not every" and "some not"; "none" and "every not" | @prp-quantifier-negation |
+| negate an implication | \( \neg(\varphi \to \psi) \) and \( \varphi \wedge \neg\psi \) | @prp-negated-implication |
+| negate a bounded quantifier | the same laws, bounded | @prp-bounded-quantifier-negation |
 | move across a connective | the passage laws | @prp-quantifier-passage |
 | replace a part | a provable equivalence, inside any formula | @prp-replacement |
-| equality | symmetric and transitive; equals share every property | @prp-equality-symmetric-transitive, @prp-leibniz-law |
+| equality | symmetric and transitive | @prp-equality-symmetric-transitive |
+| equals share every property | Leibniz's law | @prp-leibniz-law |
 | bounds in one step | the bounded rules | @prp-bounded-quantifier-rules |
 | propositional steps | TAUT on the skeleton | @prp-taut-skeleton |
 
-The laws of Section 6.2 may already be used as one line, by "The laws as one line"; the other rows are patterns to copy. Either way, a row is used by matching its shape and then checking its conditions: the passage laws need the moved variable not free in the other side, a renaming needs a letter new to the formula, and an instance of a row's letters must be free for the variables it replaces.
+The laws of Section 6.2 may already be used as one line, as "The laws as one line" there allows; the other rows are patterns to copy. Either way, use a row by matching its shape and then checking its conditions:
+
+- the passage laws need the moved variable not free in the other side;
+- a renaming needs a letter new to the formula;
+- an instance of a row's letters must be free for the variables it replaces.
 
 ::: {.remark}
 [Looking ahead]
@@ -504,7 +531,7 @@ Every claim this section broke, it broke by a counter-reading. Chapter 7 gives c
 
 *(c)* (i) Yes: \( p, p \to q \models q \). (ii) No: \( p, q \not\models r \); it is \( \rulename{\forall E} \) at \( c \), then \( \rulename{{\to}E} \). (iii) Yes: \( \neg\neg p \models p \).
 
-*(d)* Premise 1 is a \( \forall \) whose useful term is not yet known, and the box supplies it, \( x_0 \). These are the moves "name the witness early" and "instantiate at the term you need", in that order.
+*(d)* Premise 1 is a \( \forall \) whose useful term is not yet known, and the box supplies it, \( x_0 \). These are the strategies "name the witness early" and "instantiate at the term you need", in that order.
 
 *(e)* Now: the claim breaks, and a search for it is abandoned. Section 7.2 states that such a claim has no derivation.
 :::
@@ -514,7 +541,7 @@ Every claim this section broke, it broke by a counter-reading. Chapter 7 gives c
 ::: {#exr-first-order-search-b1}
 [B1: Derive or break, twelve claims]
 
-Derive each claim, with TAUT allowed, or break it by a reading over \( \nZ \) that makes every member of its counterexample set true. The groups say which move to try first; they do not say which claims hold. Claims 1–3: name the witness early. Claims 4 and 5: instantiate at the term you need. Claims 6–8: the propositional core. Claims 9–12: move a quantifier, or derive \( \bot \).
+Derive each claim, with TAUT allowed, or break it by a reading over \( \nZ \) that makes every member of its counterexample set true. The groups say which strategy to try first; they do not say which claims hold. Claims 1–3: name the witness early. Claims 4 and 5: instantiate at the term you need. Claims 6–8: the propositional core. Claims 9–12: move a quantifier, or derive \( \bot \).
 
 1. \( \exists x\, (P(x) \wedge Q(x)), \ \forall x\, (P(x) \to (Q(x) \to R(f(x)))) \vdash \exists y\, R(y) \).
 2. \( \exists x\, R(x, x) \vdash \forall x\, \exists y\, R(x, y) \).
@@ -685,11 +712,13 @@ Line 6's skeleton is \( p \leftrightarrow \neg q, p, q \models \bot \): no row m
 
 Seven claims derive and five break. Four breaks sit beside a derivable look-alike: 5 beside 4, 8 beside 7, 10 beside 9, and 12 beside 11. Claim 2 weakens the premise of the derivable \( \forall x\, R(x, x) \vdash \forall x\, \exists y\, R(x, y) \) of @exm-existential-introduction-derivations (c). Every break is a counter-reading (Section 7.2).
 
-**Marking scheme.** (10 points)
+**What a complete answer needs.** (10 points)
+
 - 4: the twelve verdicts, \( \tfrac13 \) point for each correct one, rounded down.
 - 3: the seven derivations, each with every closing side condition checked and every TAUT line's skeleton named.
 - 3: the five readings, each with every premise and the conclusion evaluated.
-Fatal errors (0 for the claim): a TAUT line that looks inside a quantifier; a "break" with a premise false.
+
+Slips that lose the claim (0 for it): a TAUT line that looks inside a quantifier; a "break" with a premise false.
 :::
 
 ::: {#exr-first-order-search-b2}
@@ -715,11 +744,11 @@ $\begin{nd}
 \end{center}
 ```
 
-*Name the move, then complete it.*
+*Name the strategy, then complete it.*
 :::
 
 ::: {.solution}
-The move is "name the witness early", twice, with each \( \forall \) line instantiated only at the terms in hand: \( c \) (premise 3) first, then the witness \( y_0 \).
+The strategy is "name the witness early", twice, with each \( \forall \) line instantiated only at the terms in hand: \( c \) (premise 3) first, then the witness \( y_0 \).
 
 ```{=latex}
 \begin{center}
@@ -751,12 +780,14 @@ $\begin{nd}
 
 Lines 4 and 7 instantiate at \( c \), and lines 8 and 10 at \( y_0 \); line 15 is \( \rulename{\exists I} \) at \( y_0 \), which is free for \( y \). At line 16, \( z_0 \) is not in line 16, in line 11, in the premises, or in the open assumption on line 6. At line 17, \( y_0 \) is not in line 17, in line 5, or in the premises.
 
-**Marking scheme.** (10 points)
-- 2: names the move.
+**What a complete answer needs.** (10 points)
+
+- 2: names the strategy.
 - 3: opens the two boxes as soon as their \( \exists \) lines exist.
 - 3: the \( \rulename{\forall E} \) lines at \( c \), \( c \), \( y_0 \) and \( y_0 \), the terms read off the lines in hand.
 - 2: the two side conditions.
-Fatal error (0 for the step): \( \rulename{\exists I} \) on line 15 before line 14, so that the witness \( z_0 \) appears in the box's last line.
+
+Slips that lose the step (0 for it): \( \rulename{\exists I} \) on line 15 before line 14, so that the witness \( z_0 \) appears in the box's last line.
 :::
 
 ::: {#exr-first-order-search-b3}
@@ -807,12 +838,14 @@ Line 5 on the left has the skeleton \( p \to q, q \to \neg p \models \neg p \).
 
 *(b)* No: the two formulas are prime and not renamings of each other, so their skeletons are two different atoms. The step is derivable by instantiating, one TAUT line (\( p \to q \models \neg q \to \neg p \)) and generalizing, the pattern of @exm-four-tasks-with-quantifiers (b).
 
-**Marking scheme.** (10 points)
+**What a complete answer needs.** (10 points)
+
 - 3: the TAUT derivation, with the skeleton named.
 - 4: the derivation without TAUT.
 - 1: the count.
 - 2: (b), with the reason.
-Fatal error (0 for the step): a TAUT line citing the \( \forall \) lines directly to reach \( \neg P(x_0) \).
+
+Slips that lose the step (0 for it): a TAUT line citing the \( \forall \) lines directly to reach \( \neg P(x_0) \).
 :::
 
 ### C. Going deeper
@@ -872,7 +905,7 @@ $\begin{nd}
 \end{center}
 ```
 
-Line 6 is \( \rulename{\exists I} \) at the variable \( n \) itself, as in the proof of passage law (d); as there, the step is sound because every domain is non-empty (Section 7.1). Line 11 is \( \rulename{\exists I} \) at \( m_0 \). At line 12, \( m_0 \) is not in line 12, in line 8, or in the open assumption on line 7.
+Line 8 uses quantifier negation, QN (a), and line 10 uses vacuous implication, VI; Section 6.2 allows each as one line. Line 6 is \( \rulename{\exists I} \) at the variable \( n \) itself, as in the proof of passage law (d); as there, the step is sound because every domain is non-empty (Section 7.1). Line 11 is \( \rulename{\exists I} \) at \( m_0 \). At line 12, \( m_0 \) is not in line 12, in line 8, or in the open assumption on line 7.
 
 *(b)*
 
@@ -887,13 +920,19 @@ $\begin{nd}
 
 The two prime formulas of line 1 differ only by renaming, so the skeleton is \( p \to p \), a tautology. Line 2 is @prp-quantifier-passage (d), the direction \( \dashv \), used as one line ("The laws as one line"), with \( \varphi \) the formula \( D(n) \) and \( \psi \) the formula \( \forall m\, D(m) \), in which \( n \) is not free.
 
-*(c)* If every term is positive, any index will do; if not, an index with \( a_n \le 0 \) does, since then the implication is vacuously true. The derivation splits on which case holds without deciding it (\( \rulename{LEM} \) in (a), the classical direction of (d) in (b)), so it never names the index.
+*(c)* If every term is positive, any index will do; if not, an index with \( a_n \le 0 \) does, since then the implication is vacuously true. The derivation splits on which case holds without deciding it, so it never names the index. In (a) the split is \( \rulename{LEM} \); in (b) it is inside law (d), whose direction \( \dashv \) was derived with \( \rulename{LEM} \).
 
-**Marking scheme.** (10 points)
+**What a complete answer needs.** (10 points)
+
 - 4: (a), with the \( \rulename{LEM} \) split, both cases closed, with the side condition of every line that closes a flagged box checked.
 - 3: (b), with the TAUT line justified by renaming, and law (d) with its condition checked.
 - 3: (c).
-Fatal errors (0 for the step): giving \( \forall n\, D(n) \) and \( \forall m\, D(m) \) different atoms and then claiming the TAUT line anyway; \( \rulename{\exists I} \) at \( m_0 \) after its box has closed.
+
+Slips that lose the step (0 for it): giving \( \forall n\, D(n) \) and \( \forall m\, D(m) \) different atoms and then claiming the TAUT line anyway; \( \rulename{\exists I} \) at \( m_0 \) after its box has closed.
+
+::: {.uses}
+@prp-quantifier-negation (QN, line 8); @prp-vacuous-implication (VI, line 10).
+:::
 :::
 
 ::: {#exr-first-order-search-c2}
@@ -933,11 +972,13 @@ Line 7's skeleton is \( m, m \to p, m \to s \models s \wedge p \). At line 9, \(
 
 *(c)* Line 7: its TAUT needs \( M(x_0) \), line 4, which only the box of premise 3 supplies. Without it, \( \rulename{\exists I} \) could still be applied at some term, but no line would say that term is \( S \) and \( P \). A "for every" claims no instance, so the old reading of "every \( M \) is \( P \)" as also saying that there are \( M \)s is not the book's reading. With that reading the inference was valid; without it, the premise must be added.
 
-**Marking scheme.** (10 points)
+**What a complete answer needs.** (10 points)
+
 - 3: (a), with all three truth values justified.
 - 4: (b).
 - 3: (c).
-Fatal error (0 for the step): a "break" whose \( M \) is true of some number.
+
+Slips that lose the step (0 for it): a "break" whose \( M \) is true of some number.
 :::
 
 <!-- dependency ledger
@@ -953,15 +994,16 @@ prp-taut-skeleton (proof): alike prime formulas are provably equivalent with der
 prp-taut-skeleton (proof): lem-weakening-cut (c) for first-order derivations, after each pasted block's flags are renamed to names new to the whole derivation | lem-weakening-cut (cited); argued inline, as "The laws as one line" (F1.8 §02)
 prp-taut-skeleton (claim): TAUT on the skeleton: a TAUT line abbreviates a pasted block | prp-taut-skeleton (cited); def-rule-taut (F1.3 §08, cited)
 def-propositional-skeleton (claim): TAUT examples and the Quick check: the skeleton verdicts | truth tables; checked by verify/ch06/def-propositional-skeleton.py
+def-propositional-skeleton (claim): the unlabelled instance before the definition: the skeleton of forall x P(x) -> (Q(c) or forall x P(x)) is p -> (q or p), a tautology | truth table; checked by verify/ch06/def-propositional-skeleton.py
 exm-propositional-core (solution): n > 1 gives n > 0; no integer squares to 2 | school facts; checked by verify/ch06/exm-propositional-core.py
 exm-four-tasks-with-quantifiers (solution): (a) exists-I at the variable x itself | prp-forall-implies-exists (cited); non-empty domains, F1.6 §01 (prose pointer, via that proposition)
 exm-four-tasks-with-quantifiers (solution): (d) the converse's reading over Z | school arithmetic; checked by verify/ch06/exm-four-tasks-with-quantifiers.py
 exm-four-tasks-with-quantifiers (claim): test the subgoal: a counter-reading rules out every derivation of the subgoal | F1.6 §02 (prose pointer; forward claim, nothing here rests on it); F1.3 §07 (the propositional move, cited by section)
 exm-four-tasks-with-quantifiers (solution): the test-the-subgoal Quick check: the reading a_n = L except a_{n_0} = L + 0.75, eps_0 = 1, N_0 = n_0 | arithmetic; checked by verify/ch06/exm-four-tasks-with-quantifiers.py
-prp-taut-skeleton (claim): the library table: each row's sequent is the one its label proves | the cited labels (F1.4, F1.8 §01, §02); exm-universal-introduction-derivations' fold (F1.4 §04) and #existential-renaming (F1.4 §06)
+prp-taut-skeleton (claim): the library table: each row's sequent is the one its label proves | the cited labels (F1.4, F1.8 §01, §02); exm-universal-introduction-derivations' second-reading block "The front renaming, derived" (F1.4 §04) and #existential-renaming (F1.4 §06); the distribution row's instances for letters P, Q are prp-forall-and (F1.4 §04) and prp-exists-and (F1.4 §06), named in the table by section since the S3e rewrite
 exr-first-order-search-b1 (solution): the five readings over Z; the TAUT skeletons of 1, 6, 7, 11 | school arithmetic, truth tables; checked by verify/ch06/exr-first-order-search-b1.py
 exr-first-order-search-c1 (solution): exists-I at n itself | non-empty domains, F1.6 §01 (prose pointer, as in prp-quantifier-passage's proof); nothing rests on it
-exr-first-order-search-c1 (solution): QN (a), VI and passage (d) as one line | prp-quantifier-negation, prp-vacuous-implication, prp-quantifier-passage (cited, "The laws as one line", F1.8 §02)
+exr-first-order-search-c1 (solution): QN (a), VI and passage (d) as one line | prp-quantifier-negation, prp-vacuous-implication, prp-quantifier-passage (cited in the solution's Uses line and inline, "The laws as one line", F1.8 §02); (d)'s direction -| derived with LEM: prp-quantifier-passage's proof (F1.8 §02)
 exr-first-order-search-c1 (solution): the skeleton p -> p; the case split on which index serves | truth table; checked by verify/ch06/exr-first-order-search-c1.py
 exr-first-order-search-c2 (solution): no even prime is greater than 2 | school fact; checked by verify/ch06/exr-first-order-search-c2.py
 -->

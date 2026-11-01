@@ -1,10 +1,12 @@
 # Uniformly Continuous Implies Continuous, Rule by Rule
 
-Chapter 5 opened with a question. Continuity and uniform continuity differ only in where one quantifier stands; why does one imply the other in a few lines, while the converse is false? Section 5.1 gave the informal answer: a variable may depend on the variables quantified to its left, and only on them. @exr-translation-c1 of Section 6.1 asked for both translations into formulas, and Section 6.2 negated uniform continuity (@exm-negating-definitions (c)). This section answers the question with the rules. It derives "uniformly continuous implies continuous" in full, line by line, with the bounded rules of @prp-bounded-quantifier-rules. It then reads off the derivation the one thing this section adds: **which boxes are open where a constant is chosen**, and what that says about what the constant may depend on. The same reading locates the exact lines at which the converse breaks down, and the function \( x^2 \) shows that the converse is not merely unproved but false.
+Chapter 5 opened with a question. Continuity and uniform continuity differ only in where one quantifier stands. Why does one imply the other in a few lines, while the converse is false? Section 5.1 gave the informal answer: a variable may depend on the variables quantified to its left, and only on them. Section 6.1 asked you to write both definitions as formulas (@exr-translation-c1). Section 6.2 negated uniform continuity (@exm-negating-definitions (c)). This section answers the question with the rules: it derives "uniformly continuous implies continuous" in full, line by line, with the bounded rules of @prp-bounded-quantifier-rules. The derivation shows **which boxes are open where a constant is chosen**, and so what the constant may depend on. The same reading finds the exact lines where the converse breaks down. The function \( x^2 \) then shows that the converse is not merely unproved but false.
 
 ## Two definitions that differ in one place {#two-definitions-that-differ-in-one-place}
 
-Let \( A \) be a set of real numbers and \( f \) a function defined on \( A \). We work over the domain \( \nR \), with \( f \) a one-place function symbol, \( \in A \) a one-place predicate symbol (Section 5.2), and \( \abs{\cdot} \) the absolute value. Here the two definitions are only **quantifier patterns**, and nothing is used about \( f \) except that \( f(x) \) is a term. (A function symbol has a value at every real number; the values outside \( A \) are never used, because \( f \) is only applied to variables bounded by \( \in A \), as with sequences in Section 5.1.)
+Let \( A \) be a set of real numbers and \( f \) a function defined on \( A \). We work over the domain \( \nR \), with \( f \) a one-place function symbol, \( \in A \) a one-place predicate symbol (Section 5.2), and \( \abs{\cdot} \) the absolute value. Here the two definitions are only **quantifier patterns**, and nothing is used about \( f \) except that \( f(x) \) is a term. A function symbol has a value at every real number. The values outside \( A \) are never used, because \( f \) is only applied to variables bounded by \( \in A \), as with sequences in Section 5.1.
+
+First a case with numbers. Take \( f(x) = 2x \) on \( A = \nR \), and \( \varepsilon = 1 \). If \( \abs{x - y} < 1/2 \), then \( \abs{f(x) - f(y)} = 2\abs{x - y} < 1 \). So the one number \( \delta = 1/2 \) works at every point at once. The first definition below asks for such a \( \delta \) at every \( \varepsilon > 0 \); the second lets \( \delta \) change from point to point.
 
 \( f \) is **uniformly continuous on \( A \)** (UC) when
 \[
@@ -46,14 +48,16 @@ $\begin{nd}
 \end{center}
 ```
 
-Fix a point, obtain the one \( \delta \) that works everywhere, choose it for this point. The converse, from \( \forall x\, \exists \delta\, K \) to \( \exists \delta\, \forall x\, K \), is the swap whose search stalled in Section 5.6. The rest of this section puts \( \varepsilon \) and the bounds back and writes \( K \) out. That costs five lines: the premise UC itself (line 1), the assumptions \( x_0 \in A \), \( \varepsilon_0 > 0 \) and \( \delta_0 > 0 \) (lines 2, 3 and 5), and the line that closes the box of \( \varepsilon_0 \) (line 10). The skeleton's line 1 becomes line 4 of the derivation below (UC at \( \varepsilon_0 \)), its lines 2–5 become lines 6–9, and its line 6 becomes line 11, which closes the box of \( x_0 \).
+Fix a point, obtain the one \( \delta \) that works everywhere, choose it for this point. In plain words: the derivation takes a point \( x_0 \), gets the single \( \delta_0 \) that works at every point, and uses that \( \delta_0 \) at \( x_0 \). The converse, from \( \forall x\, \exists \delta\, K \) to \( \exists \delta\, \forall x\, K \), is the swap whose search stalled in Section 5.6.
+
+Next we put \( \varepsilon \) and the bounds back and write \( K \) out. That costs five lines. They are line 1, the premise UC itself; lines 2, 3 and 5, the assumptions \( x_0 \in A \), \( \varepsilon_0 > 0 \) and \( \delta_0 > 0 \); and line 10, which closes the box of \( \varepsilon_0 \). The six lines above become lines 4, 6–9 and 11 of the derivation below, so line 4 is UC at \( \varepsilon_0 \) and line 11 closes the box of \( x_0 \).
 
 ::: {.check}
 Why may line 5 of the skeleton close the box of \( \delta_0 \)?
 :::
 
 ::: {.solution}
-\( \delta_0 \) does not appear in line 5, \( \exists \delta\, K(x_0, \delta) \), nor in the existential of line 1, which is also the only premise, and the one box still open, that of \( x_0 \), has no assumption. Every clause of \( \rulename{\exists E} \) holds.
+\( \delta_0 \) does not appear in line 5, \( \exists \delta\, K(x_0, \delta) \). Nor does it appear in the existential of line 1, which is also the only premise. The one box still open, that of \( x_0 \), has no assumption. So every clause of \( \rulename{\exists E} \) holds.
 :::
 
 ## The derivation
@@ -100,14 +104,14 @@ Every line is tagged with its rule; lines 4, 7 and 8 are the one-line bounded ru
 - Line 4: \( \rulename{\forall E} \) at \( \varepsilon_0 \), with its bound on line 3. The term \( \varepsilon_0 \) is a variable that does not appear in line 1, so it is free for \( \varepsilon \).
 - Line 7: \( \rulename{\forall E} \) at \( x_0 \), with its bound on line 2, which is available because the box of line 2 is still open.
 - Line 8: \( \rulename{\exists I} \) with the witness \( \delta_0 \), its bound on line 5 and the instance on line 7.
-- Line 9 (\( \rulename{\exists E} \), flag \( \delta_0 \)): \( \delta_0 \) does not appear in line 9 (the witness was forgotten at line 8), in line 4, in the premise, or in the assumptions still open at line 9, lines 2 and 3.
+- Line 9 (\( \rulename{\exists E} \), flag \( \delta_0 \)): \( \delta_0 \) does not appear in line 9, since the witness was forgotten at line 8. Nor does it appear in line 4, in the premise, or in the assumptions still open at line 9, lines 2 and 3.
 - Line 10 (\( \rulename{\forall I} \), flag \( \varepsilon_0 \)): \( \varepsilon_0 \) does not appear in the premise, in line 10, or in the assumption still open at line 10, line 2.
 - Line 11 (\( \rulename{\forall I} \), flag \( x_0 \)): \( x_0 \) does not appear in the premise or in line 11, and no assumption is open.
 
-The answer to the prompt: line 5 is the assumption of the \( \rulename{\exists E} \) box, so it rests on line 4, which rests on lines 1 and 3. None of the three mentions \( x_0 \). The witness \( \delta_0 \) was obtained from the premise at \( \varepsilon_0 \) alone, before \( x_0 \) played any part. That is uniformity, read off the lines.
+So which lines does \( \delta_0 \) rest on? Line 5 is the assumption of the \( \rulename{\exists E} \) box, so it rests on line 4, which rests on lines 1 and 3. None of the three mentions \( x_0 \). The witness \( \delta_0 \) was obtained from the premise at \( \varepsilon_0 \) alone, before \( x_0 \) played any part. That is uniformity, read off the lines.
 :::
 
-The derivation has 11 lines. Written with the unbounded rules it has 17, since each of its six bounded steps (lines 4, 7, 8, 9, 10 and 11) costs one line more (Section 6.1). The bounded rules keep it at the level at which a mathematician thinks, and the same argument in prose is three sentences, each aligned with the lines it abbreviates:
+The derivation has 11 lines. Written with the unbounded rules it has 17. Each of its six bounded steps, lines 4, 7, 8, 9, 10 and 11, costs one line more (Section 6.1). The bounded rules keep it at the level at which a mathematician thinks. The same argument in prose is three sentences, each followed by the lines it abbreviates:
 
 > Let \( x \in A \) and \( \varepsilon > 0 \) [lines 2, 3, 10, 11]. By uniform continuity there is \( \delta > 0 \) such that \( \abs{u - v} < \delta \) implies \( \abs{f(u) - f(v)} < \varepsilon \) for all \( u, v \in A \); choose such a \( \delta \) [4, 5, 6, 9]. Applied with \( u = x \), this gives \( \abs{f(x) - f(y)} < \varepsilon \) for every \( y \in A \) with \( \abs{x - y} < \delta \), so this \( \delta \) works for \( x \) and \( \varepsilon \) [7, 8].
 
@@ -119,6 +123,8 @@ The derivation shows something the informal proof leaves unsaid: the exact place
 
 *A constant chosen in a box may depend on the names of the boxes open around that box, and it does depend only on the names in the line it comes from.*
 
+So two questions can be asked of a chosen constant. Which names is it allowed to depend on? Which names does it actually depend on?
+
 ::: {.check}
 In the derivation above, which flagged boxes surround the box of \( \delta_0 \), opened at line 5? What may \( \delta_0 \) therefore depend on, and what does it in fact depend on?
 :::
@@ -127,13 +133,13 @@ In the derivation above, which flagged boxes surround the box of \( \delta_0 \),
 The boxes of \( x_0 \) (opened at line 2) and of \( \varepsilon_0 \) (opened at line 3). So \( \delta_0 \) may depend on \( x_0 \) and on \( \varepsilon_0 \), as C allows. In fact it depends only on \( \varepsilon_0 \): it comes from line 4, which mentions \( \varepsilon_0 \) and not \( x_0 \).
 :::
 
-Why "may"? Inside the boxes of \( x_0 \) and \( \varepsilon_0 \), every term built from \( x_0 \) and \( \varepsilon_0 \) is available, so a premise could have been instantiated at such a term, and a witness obtained from the resulting \( \exists \) line would depend on both names. The side conditions permit that here, because the goal C puts \( \exists \delta \) inside both \( \forall \)'s: the witness is forgotten by \( \rulename{\exists I} \) (line 8) before either box closes. Why "does"? Because everything known about \( \delta_0 \) is what its \( \exists \) line says, and line 4 mentions \( \varepsilon_0 \) alone.
+Why "may"? Inside the boxes of \( x_0 \) and \( \varepsilon_0 \), every term built from \( x_0 \) and \( \varepsilon_0 \) is available. So a premise could have been instantiated at such a term. A witness obtained from the resulting \( \exists \) line would then depend on both names. The side conditions permit that here, because the goal C puts \( \exists \delta \) inside both \( \forall \)'s: the witness is forgotten by \( \rulename{\exists I} \) (line 8) before either box closes. Why "does"? Because everything known about \( \delta_0 \) is what its \( \exists \) line says, and line 4 mentions \( \varepsilon_0 \) alone.
 
 ::: {.second-reading title="Choosing the delta before the point"}
-So \( \delta_0 \) could have been obtained before \( x_0 \) entered at all: fix \( \varepsilon_0 \), obtain \( \delta_0 \), and only then let \( x_0 \in A \). That is the order of UC itself. A derivation in that order nests the boxes as \( \varepsilon_0 \), \( \delta_0 \), \( x_0 \) (the box of \( \delta_0 \) rests on line 4, so it stays inside the box of \( \varepsilon_0 \)), and it ends in \( \forall \varepsilon > 0 \; \forall x \in A \; \exists \delta > 0 \; \forall y \in A \; (\dots) \), which is C with its first two quantifiers exchanged. C follows by exchanging them back, as in the swap of @exm-universal-introduction-derivations (c), here with the bounded rules: boxes for \( x_1 \in A \) and \( \varepsilon_1 > 0 \), \( \rulename{\forall E} \) at \( \varepsilon_1 \) and then at \( x_1 \), and two \( \rulename{\forall I} \) lines. C's order of choices allows more dependence than this proof uses.
+So \( \delta_0 \) could have been obtained before \( x_0 \) entered at all: fix \( \varepsilon_0 \), obtain \( \delta_0 \), and only then let \( x_0 \in A \). That is the order of UC itself. A derivation in that order nests the boxes as \( \varepsilon_0 \), \( \delta_0 \), \( x_0 \). The box of \( \delta_0 \) rests on line 4, so it stays inside the box of \( \varepsilon_0 \). The derivation ends in \( \forall \varepsilon > 0 \; \forall x \in A \; \exists \delta > 0 \; \forall y \in A \; (\dots) \), which is C with its first two quantifiers exchanged. C follows by exchanging them back, as in the swap of @exm-universal-introduction-derivations (c). With the bounded rules this takes boxes for \( x_1 \in A \) and \( \varepsilon_1 > 0 \), \( \rulename{\forall E} \) at \( \varepsilon_1 \) and then at \( x_1 \), and two \( \rulename{\forall I} \) lines. C's order of choices allows more dependence than this proof uses.
 :::
 
-The limit derivation of Section 6.1 showed the same thing on a smaller scale: its witness \( N_0 \) came from a line obtained at \( \varepsilon_0 / 2 \), inside the box of \( \varepsilon_0 \) only, and so it depended on \( \varepsilon_0 \).
+The limit derivation of Section 6.1 showed the same thing on a smaller scale. Its witness \( N_0 \) came from a line obtained at \( \varepsilon_0 / 2 \), inside the box of \( \varepsilon_0 \) only. So it depended on \( \varepsilon_0 \).
 
 ## The converse breaks at a side condition
 
@@ -148,7 +154,7 @@ Run the search method on the sequent with premise C and goal UC, and find where 
 *Try it first (ten minutes): start the search. Where does a \( \delta \) come from, and at what moment can you get one?*
 
 ::: {.idea}
-The obvious plan copies the derivation above: fix \( \varepsilon_0 \), obtain \( \delta_0 \) from the premise, choose it as the witness. It runs into an obstacle at the second step. In C, \( \exists \delta \) stands behind \( \forall x \in A \), so to reach it the premise must first be instantiated at a point, and the bounded \( \rulename{\forall E} \) needs a line \( t \in A \). No such line exists until we assume one, in a box for some \( x_0 \). The \( \delta_0 \) obtained inside that box comes from a line that mentions \( x_0 \), and both side conditions then hold it in: it cannot leave its own box while a line about it still mentions it, and \( x_0 \) cannot be generalized while a line about \( \delta_0 \) still mentions \( x_0 \).
+The obvious plan copies the derivation above: fix \( \varepsilon_0 \), obtain \( \delta_0 \) from the premise, choose it as the witness. It runs into an obstacle at the second step. In C, \( \exists \delta \) stands behind \( \forall x \in A \), so to reach it the premise must first be instantiated at a point, and the bounded \( \rulename{\forall E} \) needs a line \( t \in A \). No such line exists until we assume one, in a box for some \( x_0 \). The \( \delta_0 \) obtained inside that box comes from a line that mentions \( x_0 \). Then both side conditions block the way out. First, \( \delta_0 \) cannot leave its own box while a line about it still mentions it. Second, \( x_0 \) cannot be generalized while a line about \( \delta_0 \) still mentions \( x_0 \).
 :::
 
 ::: {.solution}
@@ -180,19 +186,19 @@ $\begin{nd}
 
 The goal inside the box of \( \varepsilon_0 \) needs a \( \delta \) that works for **all** points: the line \( \forall x \in A \; \forall y \in A \; (\abs{x - y} < \delta_0 \to \abs{f(x) - f(y)} < \varepsilon_0) \), so that \( \rulename{\exists I} \) at \( \delta_0 \) could finish. Line 7 says this only for the point \( x_0 \). There are two ways to try to generalize it, and each is stopped by a side condition.
 
-- **Generalize inside the box of \( \delta_0 \).** After line 7, open a new flagged box with the name \( x_0 \) and the assumption \( x_0 \in A \), repeat line 7 in it, and close it by \( \rulename{\forall I} \) with the conclusion \( \forall x \in A \; \forall y \in A \; (\abs{x - y} < \delta_0 \to \dots) \). That line breaks the side condition of \( \rulename{\forall I} \): \( x_0 \) appears in assumptions still open there, line 3 and line 7. (With a different name \( x_1 \) the box is legal, but line 7 says nothing about \( x_1 \), so the box cannot reach its last line.)
+- **Generalize inside the box of \( \delta_0 \).** After line 7, open a new flagged box with the name \( x_0 \) and the assumption \( x_0 \in A \), repeat line 7 in it, and close it by \( \rulename{\forall I} \) with the conclusion \( \forall x \in A \; \forall y \in A \; (\abs{x - y} < \delta_0 \to \dots) \). That line breaks the side condition of \( \rulename{\forall I} \): \( x_0 \) appears in assumptions still open there, line 3 and line 7. With a different name \( x_1 \) the box is legal, but line 7 says nothing about \( x_1 \), so the box cannot reach its last line.
 - **Leave the box of \( \delta_0 \) first, carrying line 7.** Close the \( \rulename{\exists E} \) box with line 7 itself as its conclusion, in order to generalize over \( x_0 \) outside it. That line breaks the side condition of \( \rulename{\exists E} \): its conclusion mentions the witness \( \delta_0 \).
 
 The only legal way out of the box of \( \delta_0 \) is to forget \( \delta_0 \), as line 8 does with \( \rulename{\exists I} \) before line 9 closes the box. Then \( \rulename{\forall I} \) on \( x_0 \) is legal, and line 10 is what it gives: \( \forall x \in A \; \exists \delta > 0 \), with \( \delta \) still behind \( x \). That is C at \( \varepsilon_0 \) again, not UC, and closing the box of \( \varepsilon_0 \) gives line 11, which is C with its first two quantifiers exchanged. The search has gone round in a circle.
 
-These are the same two blocks that stopped the converse of @prp-exists-forall-swap: a \( \rulename{\forall I} \) blocked by an open assumption that mentions its name, and an \( \rulename{\exists E} \) box that cannot close on a line mentioning its witness. That is no coincidence: with the bounds and the matrix stripped away, C to UC is the swap \( \forall x\, \exists \delta \) to \( \exists \delta\, \forall x \).
+These are the same two blocks that stopped the converse of @prp-exists-forall-swap. One is a \( \rulename{\forall I} \) blocked by an open assumption that mentions its name. The other is an \( \rulename{\exists E} \) box that cannot close on a line mentioning its witness. That is no coincidence: with the bounds and the matrix stripped away, C to UC is the swap \( \forall x\, \exists \delta \) to \( \exists \delta\, \forall x \).
 :::
 
-A failed search proves nothing about all derivations; a counter-reading does, and the next subsection gives one: a function for which C is true and UC false. Section 7.2 explains why that settles the question.
+A failed search proves nothing about all derivations; a counter-reading does. Here is one: a function for which C is true and UC false. Section 7.2 explains why that settles the question.
 
 ## A function that is continuous and not uniformly continuous
 
-Here is the picture first; the example proves it.
+The picture shows what goes wrong for \( x^2 \), and the example after it proves it.
 
 ```{=latex}
 \begin{center}
@@ -250,10 +256,10 @@ Since \( \delta \) was arbitrary, UC fails.
 The \( \delta \) for C grows smaller as \( \abs{x} \) grows, and no single \( \delta \) serves the whole line. The proof of failure says why: however small \( \delta \) is, far enough out (at \( x = 1/\delta \)) the graph is so steep that two points \( \delta/2 \) apart have values more than \( 1 \) apart. Read in the real numbers, with \( f \) as squaring, the premise C is true and the conclusion UC is false: a counter-reading, and by Section 7.2 no derivation of UC from C exists.
 
 ::: {.warning}
-**"Depending on \( \varepsilon \)" is a claim, and it can be false.** When a proof says "choose \( \delta \) (depending on \( \varepsilon \))", the parenthesis records which boxes are open where \( \delta \) is chosen, and which names its formula uses. This is the logical origin of the book's rule that every chosen constant says what it depends on: the dependence is a record of the open boxes, and a reader can check it. A proof of uniform continuity must be able to write "depending on \( \varepsilon \)" truthfully. A "proof" that \( x^2 \) is uniformly continuous on \( \nR \) that takes \( \delta = \min(1, \varepsilon/(2\abs{x} + 1)) \) "(depending on \( \varepsilon \))" has a formula for \( \delta \) that mentions \( x \): the \( \delta \) was chosen inside the box of \( x \), so the proof shows only C, and @exm-square-not-uniform shows that UC is false.
+**"Depending on \( \varepsilon \)" is a claim, and it can be false.** When a proof says "choose \( \delta \) (depending on \( \varepsilon \))", the parenthesis records which boxes are open where \( \delta \) is chosen, and which names its formula uses. That is why a careful proof says what each chosen constant depends on: the dependence is a record of the open boxes, and a reader can check it. A proof of uniform continuity must be able to write "depending on \( \varepsilon \)" truthfully. Here is a "proof" that \( x^2 \) is uniformly continuous on \( \nR \). It takes \( \delta = \min(1, \varepsilon/(2\abs{x} + 1)) \) "(depending on \( \varepsilon \))". But this formula for \( \delta \) mentions \( x \). The \( \delta \) was chosen inside the box of \( x \), so the proof shows only C, and @exm-square-not-uniform shows that UC is false.
 :::
 
-The proof that UC fails for \( x^2 \) established, with numbers, the positive form of the negation from Section 6.2. That form, taken before its last order fact, refutes UC by logic alone, and a derivation shows how; one TAUT line (Section 6.3) carries its propositional core.
+The proof that UC fails for \( x^2 \) established, with numbers, the positive form of the negation from Section 6.2. That form, taken before its last order fact, refutes UC by logic alone. The derivation below shows how. One TAUT line (Section 6.3) handles its propositional core.
 
 ::: {#exm-not-uniform-derived}
 [The negation at work, in one derivation]
@@ -299,7 +305,7 @@ $\begin{nd}
 \end{center}
 ```
 
-Line 15's propositional skeleton is \( p \wedge \neg q, \ p \to q \models \bot \), so the line replaces \( \rulename{\wedge E} \) twice, \( \rulename{{\to}E} \) and \( \rulename{\neg E} \), four lines. The boxes on the witness lines 5, 8 and 10 are opened as soon as those lines exist, the move "name the witness early" (Section 5.6), which Section 6.3 puts first. Every closing line's witness (\( y_1 \), \( x_1 \), \( \delta_1 \), \( \varepsilon_1 \)) is absent from \( \bot \), from the \( \exists \) line it cites, from the premise, and from the assumptions still open.
+Line 15's propositional skeleton is \( p \wedge \neg q, \ p \to q \models \bot \), so the line replaces \( \rulename{\wedge E} \) twice, \( \rulename{{\to}E} \) and \( \rulename{\neg E} \), four lines. The boxes on the witness lines 5, 8 and 10 are opened as soon as those lines exist. This follows the advice "name the witness early" of Section 5.6, which Section 6.3 puts first. Every closing line's witness (\( y_1 \), \( x_1 \), \( \delta_1 \), \( \varepsilon_1 \)) is absent from \( \bot \), from the \( \exists \) line it cites, from the premise, and from the assumptions still open.
 :::
 
 ## Witness functions {#witness-functions}
@@ -308,7 +314,7 @@ UC says that for every \( \varepsilon > 0 \) some \( \delta > 0 \) works for all
 
 For C the witness may depend on the point too: \( \delta(x, \varepsilon) \). For \( x^2 \), @exm-square-not-uniform gave \( \delta(x, \varepsilon) = \min(1, \varepsilon/(2\abs{x} + 1)) \).
 
-A derivation shows which arguments a witness function needs. A witness obtained inside the boxes of \( \varepsilon_0 \) and \( x_0 \) may be a function of both, and one obtained inside the box of \( \varepsilon_0 \) alone is a function of \( \varepsilon_0 \) alone. "May depend" and "does depend" are exactly the two readings of "Reading dependence off the boxes". So UC holds when some witness function for C ignores its point argument, and the derivation of @exm-uniform-implies-continuous does the reverse: it turns a \( \delta(\varepsilon) \) for UC into a \( \delta(x, \varepsilon) \coloneqq \delta(\varepsilon) \) for C, one that ignores \( x \).
+A derivation shows which arguments a witness function needs. A witness obtained inside the boxes of \( \varepsilon_0 \) and \( x_0 \) may be a function of both, and one obtained inside the box of \( \varepsilon_0 \) alone is a function of \( \varepsilon_0 \) alone. These are the two readings found earlier: the open boxes say what a witness may depend on, and its own line says what it does depend on. So UC holds when some witness function for C ignores its point argument. The derivation of @exm-uniform-implies-continuous does the reverse. It turns a \( \delta(\varepsilon) \) for UC into a \( \delta(x, \varepsilon) \coloneqq \delta(\varepsilon) \) for C, one that ignores \( x \).
 
 In the game of Section 5.1, a witness function is a strategy for the defender: a rule that answers every challenge, and the defender wins by following it.
 
@@ -365,7 +371,7 @@ These parts are about the derivation of @exm-uniform-implies-continuous.
 :::
 
 ::: {.solution}
-*(a)* Line 7 is the bounded \( \rulename{\forall E} \) at the term \( x_0 \). It cites line 6, \( \forall x \in A \; \forall y \in A \; (\dots) \), and line 2, \( x_0 \in A \), the bound's instance. Line 6 is the assumption of the \( \rulename{\exists E} \) box that contains line 7, and line 2 is the assumption of the box of \( x_0 \), which also contains line 7; both boxes are still open at line 7. The term \( x_0 \) is a variable not appearing in line 6, so it is free for \( x \).
+*(a)* Line 7 is the bounded \( \rulename{\forall E} \) at the term \( x_0 \). It cites line 6, \( \forall x \in A \; \forall y \in A \; (\dots) \), and line 2, \( x_0 \in A \), the bound's instance. Line 6 is the assumption of the \( \rulename{\exists E} \) box that contains line 7, and line 2 is the assumption of the box of \( x_0 \), which also contains line 7. Both boxes are still open at line 7. The term \( x_0 \) is a variable not appearing in line 6, so it is free for \( x \).
 
 *(b)* At line 7, at the term \( x_0 \). Line 6 says that \( \delta_0 \) works for **all** pairs of points of \( A \), and line 7 uses that for pairs with first point \( x_0 \).
 
@@ -446,7 +452,9 @@ A function \( f \) is **Lipschitz** on \( A \) when
 \[
 \exists L \ge 0 \; \forall x \in A \; \forall y \in A \; \bigl( \abs{f(x) - f(y)} \le L \cdot \abs{x - y} \bigr).
 \]
-Prove that a function that is Lipschitz on \( A \) is uniformly continuous on \( A \), first as a derivation with the bounded rules (lines of arithmetic justified "arith"), then as a short proof in prose. Say what your \( \delta \) depends on. (The bound \( L \ge 0 \) is part of the definition: if \( A \) has at most one point, then \( x = y \) in the matrix, and any \( L \), even \( L = -1 \), would satisfy it. The bound rules this out, so a proof may use \( L \ge 0 \), for instance to divide by \( L + 1 \).)
+Prove that a function that is Lipschitz on \( A \) is uniformly continuous on \( A \). Do it first as a derivation with the bounded rules, with lines of arithmetic justified "arith", then as a short proof in prose. Say what your \( \delta \) depends on.
+
+The bound \( L \ge 0 \) is part of the definition. If \( A \) has at most one point, then \( x = y \) in the matrix, and any \( L \), even \( L = -1 \), would satisfy it. The bound rules this out, so a proof may use \( L \ge 0 \), for instance to divide by \( L + 1 \).
 :::
 
 ::: {.solution}
@@ -513,11 +521,11 @@ Below are ten sentences. Eight of them, in a suitable order, form a proof that a
 ::: {.solution}
 An admissible order: (v), (viii), (iii), (vi), (x), (i), (ix), (iv).
 
-(v) is the hypothesis of the implication being proved, so it opens the proof (its \( \rulename{{\to}I} \) box is the outermost one). After it, other orders are admissible as long as each sentence comes after what it uses. (vi) uses the \( \varepsilon \) of (iii); (x) uses the \( \delta \) of (vi) and the \( x \) of (viii); then (i), (ix), (iv) follow in that order. So exactly three orders are admissible: (viii), (iii), (vi); or (iii), (viii), (vi); or (iii), (vi), (viii), each preceded by (v) and followed by (x), (i), (ix), (iv). Only the first matches the derivation of @exm-uniform-implies-continuous directly. The second and the third fix \( \varepsilon \) before \( x \); the third even chooses \( \delta \) before any point is given, which is possible because uniform continuity supplies \( \delta \) from \( \varepsilon \) alone. They correspond to variants of that derivation in which the box of \( \varepsilon_0 \) (in the third, also that of \( \delta_0 \)) is opened outside the box of \( x_0 \). Both variants end in \( \forall \varepsilon > 0 \; \forall x \in A \; \exists \delta > 0 \; \forall y \in A \; (\dots) \), and C follows by exchanging the two bounded universal quantifiers (the swap of @exm-universal-introduction-derivations (c), with the bounded rules); sentence (iv), "since \( \varepsilon \) and \( x \) were arbitrary", covers both steps in prose.
+(v) is the hypothesis of the implication being proved, so it opens the proof (its \( \rulename{{\to}I} \) box is the outermost one). After it, other orders are admissible as long as each sentence comes after what it uses. (vi) uses the \( \varepsilon \) of (iii); (x) uses the \( \delta \) of (vi) and the \( x \) of (viii); then (i), (ix), (iv) follow in that order. So exactly three orders are admissible: (viii), (iii), (vi); or (iii), (viii), (vi); or (iii), (vi), (viii), each preceded by (v) and followed by (x), (i), (ix), (iv). Only the first matches the derivation of @exm-uniform-implies-continuous directly. The second and the third fix \( \varepsilon \) before \( x \); the third even chooses \( \delta \) before any point is given, which is possible because uniform continuity supplies \( \delta \) from \( \varepsilon \) alone. They correspond to variants of that derivation in which the box of \( \varepsilon_0 \) (in the third, also that of \( \delta_0 \)) is opened outside the box of \( x_0 \). Both variants end in \( \forall \varepsilon > 0 \; \forall x \in A \; \exists \delta > 0 \; \forall y \in A \; (\dots) \). C follows by exchanging the two bounded universal quantifiers, as in the swap of @exm-universal-introduction-derivations (c) done with the bounded rules. Sentence (iv), "since \( \varepsilon \) and \( x \) were arbitrary", covers both steps in prose.
 
 Distractor (ii) introduces \( \delta \) as an arbitrary object, by \( \rulename{\forall I} \). But in "continuous at \( x \)" the \( \delta \) is under \( \exists \): the proof must **produce** it, by a choice from the hypothesis, not receive it from a challenger. A proof that took \( \delta \) arbitrary would have to show that every \( \delta > 0 \) works, which is false in general.
 
-Distractor (vii) chooses \( \delta \) and only afterwards lets \( x \) be arbitrary. It looks legitimate, because when (vii) is read after (viii), \( x \) is already fixed, and continuity at \( x \) does allow \( \delta \) to depend on \( x \). But the sentence reverses the order of the two steps: a \( \delta \) fitted to one particular \( x \) is followed by "let \( x \) be arbitrary", which claims that the same \( \delta \) works for every \( x \). In the rules: if \( \delta \) really was chosen for this \( x \), its \( \rulename{\exists E} \) box assumes a line that mentions \( x \), and generalizing over \( x \) while that assumption is open breaks the side condition of \( \rulename{\forall I} \), the first blocked line of @exm-converse-fails. If \( \delta \) does not depend on \( x \), as here, then "for this \( x \)" is idle and the sentence should be (vi).
+Distractor (vii) chooses \( \delta \) and only afterwards lets \( x \) be arbitrary. It looks legitimate, because when (vii) is read after (viii), \( x \) is already fixed, and continuity at \( x \) does allow \( \delta \) to depend on \( x \). But the sentence reverses the order of the two steps: a \( \delta \) fitted to one particular \( x \) is followed by "let \( x \) be arbitrary", which claims that the same \( \delta \) works for every \( x \). In the rules: if \( \delta \) really was chosen for this \( x \), its \( \rulename{\exists E} \) box assumes a line that mentions \( x \). Generalizing over \( x \) while that assumption is open breaks the side condition of \( \rulename{\forall I} \). That is the first blocked line of @exm-converse-fails. If \( \delta \) does not depend on \( x \), as here, then "for this \( x \)" is idle and the sentence should be (vi).
 :::
 
 ::: {#exr-uniform-continuity-rule-by-rule-b3}
@@ -527,11 +535,11 @@ Prove that \( f(x) = \sqrt{x} \) is uniformly continuous on \( A = [0, \infty) \
 :::
 
 ::: {.solution}
-Let \( \varepsilon > 0 \), and let \( \delta \coloneqq \varepsilon^2 \), which is positive and depends on \( \varepsilon \) only. Let \( x, y \in [0, \infty) \) with \( \abs{x - y} < \delta \). Then, by the inequality given and because the square root is strictly increasing on \( [0, \infty) \),
+Let \( \varepsilon > 0 \), and let \( \delta \coloneqq \varepsilon^2 \), which is positive and depends on \( \varepsilon \) only. Let \( x, y \in [0, \infty) \) with \( \abs{x - y} < \delta \). The inequality given, and the fact that the square root is strictly increasing on \( [0, \infty) \), give
 \[
 \abs{\sqrt{x} - \sqrt{y}} \le \sqrt{\abs{x - y}} < \sqrt{\varepsilon^2} = \varepsilon .
 \]
-Since \( x \) and \( y \) were arbitrary, this \( \delta \) works for all pairs of points; since \( \varepsilon \) was arbitrary, \( f \) is uniformly continuous on \( [0, \infty) \). The \( \delta \) was chosen before the points: in a derivation of this proof, its \( \rulename{\exists I} \) line would lie inside the box of \( \varepsilon_0 \) only.
+Since \( x \) and \( y \) were arbitrary, this \( \delta \) works for all pairs of points. Since \( \varepsilon \) was arbitrary, \( f \) is uniformly continuous on \( [0, \infty) \). The \( \delta \) was chosen before the points: in a derivation of this proof, its \( \rulename{\exists I} \) line would lie inside the box of \( \varepsilon_0 \) only.
 :::
 
 ::: {#exr-uniform-continuity-rule-by-rule-b4}
@@ -557,11 +565,13 @@ It depends on \( \varepsilon \) and on the bound \( 3 \) of the set, and on no p
 
 *(c)* On \( \nR \), \( \abs{x + y} \) has no bound, so no constant can replace the \( 6 \), and @exm-square-not-uniform shows that no witness function exists there at all.
 
-**Marking scheme.** (10 points)
+**What a complete answer needs.** (10 points)
+
 - 3: (a), with \( \abs{\abs{x} - \abs{y}} \le \abs{x - y} \) proved (for instance by the triangle inequality twice).
 - 4: (b): 1 for the bound \( \abs{x + y} \le 6 \), 2 for the chain, 1 for the dependence.
 - 3: (c).
-Fatal error (0 for the step): a "witness" that mentions \( x \) or \( y \).
+
+Slips that lose the step: a "witness" that mentions \( x \) or \( y \).
 :::
 
 ### C. Going deeper
@@ -573,7 +583,7 @@ Let \( f \) be uniformly continuous on \( A \), with \( f(x) \in B \) for every 
 
 > Fix \( \varepsilon > 0 \). By the uniform continuity of \( g \), choose \( \eta > 0 \) such that \( \abs{u - v} < \eta \) implies \( \abs{g(u) - g(v)} < \varepsilon \) for all \( u, v \in B \).
 
-The rest is blank. *Name the move, then complete it.*
+The rest is blank. *Name the proof method, then complete the proof.*
 :::
 
 ::: {.solution}
@@ -589,16 +599,18 @@ The goal asks for a \( \delta \). Which hypothesis can produce one, and at which
 :::
 
 ::: {.solution}
-*The move* is fix, obtain, choose: \( \varepsilon \) was fixed (\( \rulename{\forall I} \)), \( \eta \) obtained from the hypothesis on \( g \) (\( \rulename{\forall E} \) at \( \varepsilon \), then \( \rulename{\exists E} \)); now obtain \( \delta \) from the hypothesis on \( f \) at the term the goal needs, \( \eta \) (\( \rulename{\forall E} \) at \( \eta \), then \( \rulename{\exists E} \)), and choose that \( \delta \) as the witness (\( \rulename{\exists I} \)).
+*The method* is fix, obtain, choose. So far \( \varepsilon \) was fixed (\( \rulename{\forall I} \)), and \( \eta \) was obtained from the hypothesis on \( g \) by \( \rulename{\forall E} \) at \( \varepsilon \), then \( \rulename{\exists E} \). Now obtain \( \delta \) from the hypothesis on \( f \) at the term the goal needs, \( \eta \), by \( \rulename{\forall E} \) at \( \eta \), then \( \rulename{\exists E} \). Then choose that \( \delta \) as the witness (\( \rulename{\exists I} \)).
 
 *Completion.* Since \( \eta > 0 \), the uniform continuity of \( f \), applied to \( \eta \), gives \( \delta > 0 \) such that \( \abs{x - y} < \delta \) implies \( \abs{f(x) - f(y)} < \eta \) for all \( x, y \in A \); choose such a \( \delta \). It depends on \( \eta \), hence on \( \varepsilon \), and on no point. Let \( x, y \in A \) with \( \abs{x - y} < \delta \). Then \( \abs{f(x) - f(y)} < \eta \), and \( f(x), f(y) \in B \), so the choice of \( \eta \), applied to \( u = f(x) \) and \( v = f(y) \), gives \( \abs{g(f(x)) - g(f(y))} < \varepsilon \). Since \( x, y \) were arbitrary, this \( \delta \) works for all pairs of points of \( A \); since \( \varepsilon > 0 \) was arbitrary, \( x \mapsto g(f(x)) \) is uniformly continuous on \( A \).
 
-**Marking scheme.** (10 points)
-- 2: names the move (fix, obtain, choose), or the rules \( \rulename{\forall E} \) at \( \eta \), \( \rulename{\exists E} \), \( \rulename{\exists I} \).
+**What a complete answer needs.** (10 points)
+
+- 2: names the method (fix, obtain, choose), or the rules \( \rulename{\forall E} \) at \( \eta \), \( \rulename{\exists E} \), \( \rulename{\exists I} \).
 - 3: applies the uniform continuity of \( f \) at \( \eta \) (not at \( \varepsilon \)), using \( \eta > 0 \), and chooses \( \delta \) before any point.
 - 3: for arbitrary \( x, y \in A \) with \( \abs{x - y} < \delta \), gets \( \abs{f(x) - f(y)} < \eta \) and then \( \abs{g(f(x)) - g(f(y))} < \varepsilon \), using \( f(x), f(y) \in B \).
 - 2: concludes with the quantifiers in the order \( \varepsilon \), \( \delta \), points, and says \( \delta \) depends on \( \varepsilon \) only.
-Fatal errors (0 for the step): \( \delta \) chosen after \( x \) or depending on \( x \); the uniform continuity of \( g \) applied to points not known to lie in \( B \).
+
+Slips that lose the step: \( \delta \) chosen after \( x \) or depending on \( x \); the uniform continuity of \( g \) applied to points not known to lie in \( B \).
 :::
 
 ::: {#exr-uniform-continuity-rule-by-rule-c2}
@@ -625,7 +637,7 @@ For (b), apply the two hypotheses at \( \varepsilon/2 \) and take \( \delta = \m
 :::
 
 ::: {.solution}
-*(a)* On \( A = (0, 1) \), \( f \) is constantly \( 0 \), so every \( \delta > 0 \) works for every \( \varepsilon > 0 \): \( \abs{f(x) - f(y)} = 0 < \varepsilon \). The same holds on \( B = (1, 2) \), where \( f \) is constantly \( 1 \). On \( S \) we prove the negation of uniform continuity (@exm-negating-definitions (c)). Take \( \varepsilon = 1 \). Let \( \delta > 0 \), and let \( \eta \coloneqq \min(\delta/4, \tfrac12) \), \( x \coloneqq 1 - \eta \), \( y \coloneqq 1 + \eta \). Then \( \tfrac12 \le x < 1 \), so \( x \in A \subseteq S \); \( 1 < y \le \tfrac32 \), so \( y \in B \subseteq S \); \( \abs{x - y} = 2\eta \le \delta/2 < \delta \); and \( \abs{f(x) - f(y)} = \abs{0 - 1} = 1 \ge \varepsilon \). So \( f \) is not uniformly continuous on \( S \). The gluing fails because the two sets come arbitrarily close at \( 1 \) but have no point in common: points close to \( 1 \) on opposite sides are each controlled only by their own set, and no common point links them.
+*(a)* On \( A = (0, 1) \), \( f \) is constantly \( 0 \), so every \( \delta > 0 \) works for every \( \varepsilon > 0 \): \( \abs{f(x) - f(y)} = 0 < \varepsilon \). The same holds on \( B = (1, 2) \), where \( f \) is constantly \( 1 \). On \( S \) we prove the negation of uniform continuity (@exm-negating-definitions (c)). Take \( \varepsilon = 1 \). Let \( \delta > 0 \), and let \( \eta \coloneqq \min(\delta/4, \tfrac12) \), \( x \coloneqq 1 - \eta \), \( y \coloneqq 1 + \eta \). Then \( \tfrac12 \le x < 1 \), so \( x \in A \subseteq S \), and \( 1 < y \le \tfrac32 \), so \( y \in B \subseteq S \). Also \( \abs{x - y} = 2\eta \le \delta/2 < \delta \), and \( \abs{f(x) - f(y)} = \abs{0 - 1} = 1 \ge \varepsilon \). So \( f \) is not uniformly continuous on \( S \). The gluing fails because the two sets come arbitrarily close at \( 1 \) but have no point in common. Points close to \( 1 \) on opposite sides are each controlled only by their own set, and no common point links them.
 
 *(b)* Let \( \varepsilon > 0 \). By the uniform continuity on \( A \) at \( \varepsilon/2 \), choose \( \delta_1 > 0 \) such that \( \abs{f(x) - f(y)} < \varepsilon/2 \) for all \( x, y \in A \) with \( \abs{x - y} < \delta_1 \); likewise choose \( \delta_2 > 0 \) for \( B \). Let \( \delta \coloneqq \min(\delta_1, \delta_2) > 0 \), which depends on \( \varepsilon \) only. Let \( x, y \in S \) with \( \abs{x - y} < \delta \). There are three cases.
 
@@ -638,16 +650,18 @@ For (b), apply the two hypotheses at \( \varepsilon/2 \) and take \( \delta = \m
 
 Every point of \( S \) lies in \( A \) or in \( B \), so the cases cover all pairs. So \( f \) is uniformly continuous on \( S \). The common point \( b \) is what (a) lacked: there, \( A \) and \( B \) came arbitrarily close at \( 1 \) but had no point in common.
 
-**Marking scheme.** (10 points)
+**What a complete answer needs.** (10 points)
+
 - 3: (a) uniform continuity on \( A \) and on \( B \) checked, and the negation on \( S \) proved: \( \varepsilon \) first, then for arbitrary \( \delta \) two points depending on \( \delta \), with all three conditions checked.
 - 2: (b) \( \delta_1 \) for \( A \) at some \( \varepsilon_1 > 0 \) and \( \delta_2 \) for \( B \) at some \( \varepsilon_2 > 0 \) with \( \varepsilon_1 + \varepsilon_2 \le \varepsilon \) (the solution takes \( \varepsilon_1 = \varepsilon_2 = \varepsilon/2 \)), and \( \delta = \min(\delta_1, \delta_2) \), depending on \( \varepsilon \) only.
 - 2: the cases with both points in one set.
 - 3: the mixed case, through the point \( b \), with \( \abs{x - b}, \abs{b - y} \le \abs{x - y} \) justified and the triangle inequality cited.
-Fatal errors (0 for the step): a \( \delta \) depending on \( x \) or \( y \); the mixed case omitted; in (a), points chosen before \( \delta \).
+
+Slips that lose the step: a \( \delta \) depending on \( x \) or \( y \); the mixed case omitted; in (a), points chosen before \( \delta \).
 :::
 
 ::: {#exr-uniform-continuity-rule-by-rule-c3}
-[C3: Exit check: a quantifier derivation]
+[C3: Chapter check: a quantifier derivation]
 
 ::: {.enumerate options="label=(\alph*)"}
 1. Give a full derivation of
@@ -655,7 +669,7 @@ Fatal errors (0 for the step): a \( \delta \) depending on \( x \) or \( y \); t
 \exists x\, \bigl( P(x) \wedge \forall y\, R(x, y) \bigr) \vdash \forall y\, \exists x\, \bigl( P(x) \wedge R(x, y) \bigr),
 \]
 and check the side condition of every line that closes a flagged box.
-2. For the converse, \( \forall y\, \exists x\, \bigl( P(x) \wedge R(x, y) \bigr) \vdash \exists x\, \bigl( P(x) \wedge \forall y\, R(x, y) \bigr) \), give a domain with two elements and a reading of \( P \) and \( R \) under which the premise is true and the conclusion false, checking both with the informal reading of Section 5.1.
+2. For the converse, \( \forall y\, \exists x\, \bigl( P(x) \wedge R(x, y) \bigr) \vdash \exists x\, \bigl( P(x) \wedge \forall y\, R(x, y) \bigr) \), give a domain with two elements and a reading of \( P \) and \( R \) under which the premise is true and the conclusion false. Check both with the informal reading of Section 5.1.
 :::
 :::
 
@@ -682,20 +696,22 @@ $\begin{nd}
 \end{center}
 ```
 
-- Line 8 (\( \rulename{\exists E} \), flag \( x_0 \)): \( x_0 \) does not appear in line 8, in line 1 (the premise), or in any assumption still open at line 8 (there is none: the box of \( y_0 \) has no assumption). Line 7, the last line of the box of \( x_0 \), is a line of that box itself and is the formula \( \exists x\, (P(x) \wedge R(x, y_0)) \) that line 8 repeats (@def-rules-existential).
+- Line 8 (\( \rulename{\exists E} \), flag \( x_0 \)): \( x_0 \) does not appear in line 8, in the premise on line 1, or in any assumption still open at line 8. There is no such assumption, since the box of \( y_0 \) has none. Line 7, the last line of the box of \( x_0 \), is a line of that box itself and is the formula \( \exists x\, (P(x) \wedge R(x, y_0)) \) that line 8 repeats (@def-rules-existential).
 - Line 9 (\( \rulename{\forall I} \), flag \( y_0 \)): \( y_0 \) does not appear in the premise or in line 9, and no assumption is open. Line 8, the last line of the box of \( y_0 \), is the instance at \( y_0 \) of \( \exists x\, (P(x) \wedge R(x, y)) \).
 
-The other nesting, with the box of \( y_0 \) inside the box of \( x_0 \), works too: \( \rulename{\forall I} \) at the end of the inner box (its name \( y_0 \) is in no open assumption, since the assumption on line 2 does not mention it), then \( \rulename{\exists E} \) on a conclusion without \( x_0 \).
+The other nesting, with the box of \( y_0 \) inside the box of \( x_0 \), works too. The inner box ends with \( \rulename{\forall I} \): its name \( y_0 \) is in no open assumption, since the assumption on line 2 does not mention it. Then \( \rulename{\exists E} \) closes on a conclusion without \( x_0 \).
 
-*(b)* Take a domain with two elements \( a \), \( b \); let \( P \) be true of both, and let \( R(x, y) \) mean "\( x \) is \( y \)". The premise is true: for \( y = a \) the witness \( x = a \) has \( P(a) \) and \( R(a, a) \), and for \( y = b \) the witness \( x = b \) works. The conclusion is false: \( x = a \) fails \( \forall y\, R(a, y) \) at \( y = b \), and \( x = b \) fails it at \( y = a \). The witness in the premise depends on \( y \); the conclusion asks for one \( x \) that serves every \( y \). (Section 7.2 makes this informal reading a structure, and shows that it proves the converse is not derivable.)
+*(b)* Take a domain with two elements \( a \), \( b \); let \( P \) be true of both, and let \( R(x, y) \) mean "\( x \) is \( y \)". The premise is true: for \( y = a \) the witness \( x = a \) has \( P(a) \) and \( R(a, a) \), and for \( y = b \) the witness \( x = b \) works. The conclusion is false: \( x = a \) fails \( \forall y\, R(a, y) \) at \( y = b \), and \( x = b \) fails it at \( y = a \). The witness in the premise depends on \( y \); the conclusion asks for one \( x \) that serves every \( y \). Section 7.2 makes this informal reading a structure, and shows that it proves the converse is not derivable.
 
-**Marking scheme.** (10 points)
+**What a complete answer needs.** (10 points)
+
 - 2: a flagged box with a fresh name \( y_0 \) for the \( \rulename{\forall I} \), closed correctly.
 - 3: an \( \rulename{\exists E} \) box with a fresh witness \( x_0 \), whose conclusion does not contain \( x_0 \), with the side condition checked.
 - 2: \( \rulename{\wedge E} \), \( \rulename{\forall E} \) at \( y_0 \) and \( \rulename{\exists I} \) with the witness \( x_0 \), with the correct terms.
 - 3: the two-element reading: domain, meaning of \( P \) and \( R \), the premise checked for each \( y \) and the conclusion refuted for each \( x \).
 Either nesting of the two boxes earns full marks.
-Fatal errors (0 for the step): \( \rulename{\forall I} \) on a name that appears in an open assumption; an \( \rulename{\exists E} \) conclusion containing the witness.
+
+Slips that lose the step: \( \rulename{\forall I} \) on a name that appears in an open assumption; an \( \rulename{\exists E} \) conclusion containing the witness.
 :::
 
 ### R. Review
@@ -805,7 +821,7 @@ $\begin{nd}
 \end{center}
 ```
 
-Line 3, justified by TAUT on the skeleton \( p \wedge (q \vee r) \models (p \wedge q) \vee (p \wedge r) \), is the propositional law @prp-distributivity of Section 1.6; citing it as a derived rule (@def-derived-rule) gives the same line. At line 11, \( x_0 \) is not in line 11 or in line 1, the premise, and no assumption is open. The quantifier steps frame the law: this is the propositional core of Section 6.3.
+Line 3, justified by TAUT on the skeleton \( p \wedge (q \vee r) \models (p \wedge q) \vee (p \wedge r) \), is the propositional law @prp-distributivity of Section 1.6. Citing it as a derived rule (@def-derived-rule) gives the same line. At line 11, \( x_0 \) is not in line 11 or in line 1, the premise, and no assumption is open. The quantifier steps frame the law: this is the propositional core of Section 6.3.
 :::
 
 <!-- dependency ledger
@@ -827,6 +843,7 @@ exr-uniform-continuity-rule-by-rule-b3 (solution): |sqrt x - sqrt y| <= sqrt |x 
 exr-uniform-continuity-rule-by-rule-c1 (solution): the composite x -> g(f(x)) and the hypothesis f(x) in B for x in A | defined and stated in the item
 exr-uniform-continuity-rule-by-rule-c2 (solution): eta = min(delta/4, 1/2); 1/2 <= 1 - eta < 1 < 1 + eta <= 3/2; x <= b <= y gives |x - b|, |b - y| <= |x - y|; triangle inequality | school algebra; exm-triangle-inequality-cases (cited); checked by verify/ch06/exr-uniform-continuity-rule-by-rule-c2.py
 exr-uniform-continuity-rule-by-rule-c3 (solution): the two-element reading makes the premise true and the conclusion false | informal truth (F1.4 §01); checked by verify/ch06/exr-uniform-continuity-rule-by-rule-c3.py; F1.6 §02 (prose pointer) makes it a structure
+exm-uniform-implies-continuous (claim): the instance before the definitions: f(x) = 2x on R, eps = 1, delta = 1/2: |f(x) - f(y)| = 2|x - y| < 1 | school algebra; |uv| = |u||v| exm-abs-product-cases (F1.1); unlabelled, nothing rests on it
 exm-uniform-implies-continuous (claim): the skeleton first: the six-line skeleton is prp-exists-forall-swap with other letters; 6 + 5 = 11 lines | prp-exists-forall-swap (F1.4 §06, cited); inline count
 exm-square-not-uniform (claim): figure D: with eps = 1 the largest delta that works for x^2 at x >= 0 is sqrt(x^2 + 1) - x; values 1, 0.4142, 0.2361, 0.1623 | school algebra; checked by verify/ch06/exm-square-not-uniform.py
 exm-not-uniform-derived (solution): the bounded rules | prp-bounded-quantifier-rules (F1.8 §01, cited)

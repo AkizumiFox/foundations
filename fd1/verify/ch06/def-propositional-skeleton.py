@@ -3,6 +3,8 @@ by explicit truth tables over the skeletons quoted in the text."""
 from _tt import entails, satisfiable, imp
 # the example skeleton p -> (q or not p) (not asked to be a tautology; check it is not one)
 assert not entails("pq", [], lambda v: imp(v["p"], v["q"] or not v["p"]))
+# the instance before the definition: p -> (q or p) is a tautology
+assert entails("pq", [], lambda v: imp(v["p"], v["q"] or v["p"]))
 # TAUT examples
 assert entails("pq", [lambda v: not (v["p"] and v["q"]), lambda v: v["q"]], lambda v: not v["p"])
 assert entails("pr", [lambda v: imp(v["p"], v["r"]), lambda v: not v["r"]], lambda v: not v["p"])
