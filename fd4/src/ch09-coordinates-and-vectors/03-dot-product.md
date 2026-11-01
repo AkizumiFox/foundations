@@ -33,11 +33,11 @@ In words: pair the coordinates place by place, multiply each pair in \( \nR \), 
 
 *Signs.* \( \inner{(1, 2)}{(-2, 1)} = -2 + 2 = 0 \), and \( \inner{(1, 0)}{(-1, 0)} = -1 \). The dot product can be zero or negative even when neither point is \( 0 \).
 
-*On the line, \( n = 1 \).* A sum with one term is that term (\( \sum_{k=1}^{1} a_k = 0 + a_1 = a_1 \)), so for \( x, y \in \nR = \nR^1 \) the dot product is the ordinary product: \( \inner{x}{y} = xy \). This is why the definition deserves the name *product*. It also explains why the dot product of a point with itself can only be \( \ge 0 \): on the line it is \( x^2 \).
+*On the line, \( n = 1 \).* A sum with one term is that term (\( \sum_{k=1}^{1} a_k = 0 + a_1 = a_1 \)), so for \( x, y \in \nR = \nR^1 \) the dot product is the ordinary product: \( \inner{x}{y} = xy \). This is why the definition deserves the name *product*. On the line, the dot product of a point with itself is \( x^2 \ge 0 \); in \( \nR^n \) it is a sum of such squares (law (c) below).
 
-**Change one sign.** On \( \nR^2 \), try \( [x, y] \coloneqq x_1 y_1 - x_2 y_2 \). It is still symmetric, and it still respects sums and scalar multiples in each slot. So it satisfies laws (a) and (b) of the next proposition. Law (c) fails: \( [e_2, e_2] = -1 < 0 \), and \( [(1, 1), (1, 1)] = 0 \) although \( (1, 1) \ne 0 \). So this bracket cannot be the square of a length. The plus signs of the definition are what make \( \inner{x}{x} \) a sum of squares.
+**Change one sign.** On \( \nR^2 \), try \( B(x, y) \coloneqq x_1 y_1 - x_2 y_2 \). It is still symmetric, and it still respects sums and scalar multiples in each slot. So it satisfies laws (a) and (b) of the next proposition. Law (c) fails: \( B(e_2, e_2) = -1 < 0 \), and \( B((1, 1), (1, 1)) = 0 \) although \( (1, 1) \ne 0 \). So \( B \) cannot be the square of a length. The plus signs of the definition are what make \( \inner{x}{x} \) a sum of squares.
 
-**Why this definition.** Two features are deliberate. First, the output is a number. A product returning a point, such as the coordinatewise product \( (x_1 y_1, \dots, x_n y_n) \), would not measure anything, and Section 9.2's warning already set products of points aside: in this chapter \( (1, 2)(3, 4) \) has no meaning. Second, the dot product of a point with itself is \( \sum_k x_k^2 \), the expression under Pythagoras' root. That is exactly what Section 9.4 needs to define length.
+**A number, not a point.** Two features are deliberate. First, the output is a number. A product returning a point, such as the coordinatewise product \( (x_1 y_1, \dots, x_n y_n) \), would not measure anything, and Section 9.2 already set products of points aside: in this chapter \( (1, 2)(3, 4) \) has no meaning. Second, the dot product of a point with itself is \( \sum_k x_k^2 \), the expression under Pythagoras' root. That is exactly what Section 9.4 needs to define length.
 
 ## The laws of the dot product
 
@@ -80,10 +80,6 @@ Throughout, \( \inner{x}{y} = \sum_{k=1}^{n} x_k y_k \), and the coordinates of 
 \]
 For scalars, \( (c x_k) z_k = c (x_k z_k) \) because multiplication is associative, (F5). A constant factor comes out of a finite sum, so \( \sum_k c (x_k z_k) = c \sum_k x_k z_k \). The second-slot rules follow from the first-slot rules and (a): \( \inner{z}{x + y} = \inner{x + y}{z} = \inner{x}{z} + \inner{y}{z} = \inner{z}{x} + \inner{z}{y} \), and in the same way \( \inner{z}{cx} = c\inner{z}{x} \).
 
-::: {.uses}
-@def-dot-product-rn; @def-vector-operations-rn (coordinates of \( x + y \), \( cx \)); @fd3:def-commutative-ring-and-field (F5), (F6), (F9); @lem-ring-finite-sums (a), (b) (splitting sums, constant factors).
-:::
-
 (e) The zero vector is the scalar \( 0 \) times the zero vector: \( 0 = 0 \cdot 0 \) (@prp-vector-space-laws-rn (i)). So (b) gives \( \inner{0}{x} = \inner{0 \cdot 0}{x} = 0 \cdot \inner{0}{x} = 0 \), since a product with a factor \( 0 \) is \( 0 \) in \( \nR \). And \( \inner{x}{0} = \inner{0}{x} \) by (a). We prove (e) before (c), which uses it.
 
 (c) Here \( x_k y_k \) with \( y = x \) is \( x_k x_k = x_k^2 \), which gives the formula. Each term is \( \ge 0 \). If \( x_k \ne 0 \), then \( x_k^2 > 0 \), since the square of a non-zero number is positive. If \( x_k = 0 \), then \( x_k^2 = 0 \). A sum of non-negative terms is non-negative, the empty sum being \( 0 \). So \( \inner{x}{x} \ge 0 \).
@@ -95,7 +91,7 @@ For scalars, \( (c x_k) z_k = c (x_k z_k) \) because multiplication is associati
 (d) Fix \( k \). The \( j \)-th coordinate of \( e_k \) is \( 1 \) if \( j = k \) and \( 0 \) otherwise (@def-standard-basis-rn). So the terms of \( \inner{x}{e_k} = \sum_{j=1}^{n} x_j (e_k)_j \) are \( x_j \cdot 0 = 0 \) for \( j \ne k \) and \( x_k \cdot 1 = x_k \) for \( j = k \). A sum with one non-zero term is that term (@lem-ring-finite-sums (d)), so \( \inner{x}{e_k} = x_k \). Taking \( x = e_j \) gives \( \inner{e_j}{e_k} = (e_j)_k \), which is \( 1 \) if \( j = k \) and \( 0 \) otherwise. This proves the proposition.
 
 ::: {.uses}
-@fd3:prp-ring-algebra (b) (\( a \cdot 0 = 0 \)); @fd3:prp-ordered-ring-rules (e), (f) (squares); @prp-sum-order (b) with \( m = -1 \) (sums of terms \( \ge 0 \)); @def-real-n-space (equality of tuples).
+@def-dot-product-rn; @def-vector-operations-rn (coordinates of \( x + y \), \( cx \)); @fd3:def-commutative-ring-and-field (F5), (F6), (F9); @lem-ring-finite-sums (a), (b) (splitting sums, constant factors); @fd3:prp-ring-algebra (b) (\( a \cdot 0 = 0 \)); @fd3:prp-ordered-ring-rules (e), (f) (squares); @prp-sum-order (b) with \( m = -1 \) (sums of terms \( \ge 0 \)); @def-real-n-space (equality of tuples).
 :::
 :::
 
@@ -139,9 +135,9 @@ In words: one number, the dot product, must vanish. The relation is symmetric, \
 
 *The zero vector.* \( 0 \perp x \) for **every** \( x \), by @prp-dot-product-laws-rn (e). This matters: the zero vector is orthogonal to everything, including itself, so "orthogonal" does not mean "pointing in different directions". And \( 0 \) is the **only** vector orthogonal to itself: \( x \perp x \) means \( \inner{x}{x} = 0 \), which forces \( x = 0 \) by @prp-dot-product-laws-rn (c).
 
-**A small change that breaks it.** Change \( (-2, 1) \) to \( (-2, 2) \). Then \( \inner{(1, 2)}{(-2, 2)} = -2 + 4 = 2 \ne 0 \), so \( (1, 2) \) and \( (-2, 2) \) are not orthogonal. The one condition \( \inner{x}{y} = 0 \) fails: the dot product is \( 2 \).
+**Moving one coordinate.** Change \( (-2, 1) \) to \( (-2, 2) \). Then \( \inner{(1, 2)}{(-2, 2)} = -2 + 4 = 2 \ne 0 \), so \( (1, 2) \) and \( (-2, 2) \) are not orthogonal. The one condition \( \inner{x}{y} = 0 \) fails: the dot product is \( 2 \).
 
-**Why this definition.** We could have defined a right angle by a picture, or by the Pythagorean relation itself. The dot product is better: it is one equation, linear in each vector, so orthogonality to a fixed \( a \) is the solution set of \( \inner{a}{x} = 0 \), an equation in the coordinates of \( x \). Chapter 10 builds its hyperplanes from equations of exactly this form.
+**One equation, linear in each vector.** We could have defined a right angle by a picture, or by the Pythagorean relation itself. The dot product is better: it is one equation, linear in each vector, so orthogonality to a fixed \( a \) is the solution set of \( \inner{a}{x} = 0 \), an equation in the coordinates of \( x \). Chapter 10 builds its hyperplanes from equations of exactly this form.
 
 Orthogonality also gives a way to prove that two vectors are **equal**. A vector orthogonal to everything is zero, and two vectors with the same dot products are the same vector.
 
@@ -162,7 +158,7 @@ Let \( n \ge 1 \) and \( x, y \in \nR^n \).
 (b) (i) \( \Rightarrow \) (ii): equal vectors have equal dot products with every \( z \). (ii) \( \Rightarrow \) (iii): take \( z = e_k \). (iii) \( \Rightarrow \) (i): by @prp-dot-product-laws-rn (d), (iii) says \( x_k = y_k \) for every \( k \). Tuples that agree in every place are equal (@def-real-n-space).
 :::
 
-The hypothesis of (a) is a "for every \( z \)" statement, and the proof uses it once, at the one vector that settles the question. Choosing \( z = e_1 \) instead would give only \( x_1 = 0 \); Exercise C1 examines that mistake.
+The hypothesis of (a) is a "for every \( z \)" statement, and the proof uses it once, at the one vector that settles the question.
 
 ::: {#exm-dot-products-computed}
 [Dot products and orthogonality computed]
@@ -244,11 +240,11 @@ Prove that \( \inner{x - y}{x + y} = \inner{x}{x} - \inner{y}{y} \) for all \( x
 :::
 
 ::: {.solution}
-Write \( x - y = x + (-1)y \). By linearity in the first slot,
+Write \( x - y = x + (-1)y \). By linearity in the first slot, and \( (-1)s = -s \) in \( \nR \),
 \[
 \inner{x - y}{x + y} = \inner{x}{x + y} - \inner{y}{x + y} .
 \]
-By linearity in the second slot, this is
+By linearity in the second slot, and \( -(s + t) = (-1)(s + t) = -s - t \) in \( \nR \) by the distributive law, this is
 \[
 \inner{x}{x} + \inner{x}{y} - \inner{y}{x} - \inner{y}{y} .
 \]
@@ -259,7 +255,7 @@ For the deduction: \( x - y \perp x + y \) means \( \inner{x - y}{x + y} = 0 \) 
 In the plane this says that the diagonals \( x + y \) and \( x - y \) of the parallelogram on \( x \) and \( y \) are orthogonal exactly when the two sides have equal "squared length".
 
 ::: {.uses}
-@def-vector-operations-rn (\( x - y = x + (-1)y \)); @prp-dot-product-laws-rn (a), (b) (symmetry, linearity).
+@def-vector-operations-rn (\( x - y = x + (-1)y \)); @prp-dot-product-laws-rn (a), (b) (symmetry, linearity); @fd3:prp-ring-algebra (c) (\( (-1)s = -(1 \cdot s) = -s \)); @fd3:def-commutative-ring-and-field (F9) (distributive law).
 :::
 :::
 
@@ -272,7 +268,7 @@ Let \( a \in \nR^n \) with \( a \ne 0 \), and let \( r \in \nR \). Show that \( 
 ::: {.solution}
 *The division is allowed.* Since \( a \ne 0 \), \( \inner{a}{a} \ne 0 \) by @prp-dot-product-laws-rn (c), and \( \inner{a}{a} \ge 0 \), so \( \inner{a}{a} > 0 \).
 
-*Existence.* By linearity in the second slot, \( \inner{a}{x} = \dfrac{r}{\inner{a}{a}} \inner{a}{a} = r \).
+*Existence.* By linearity in the second slot, \( \inner{a}{x} = \dfrac{r}{\inner{a}{a}} \inner{a}{a} = r \). Also \( x \) is parallel to \( a \) by @def-parallel-rn, since \( x = ca \) with \( c = r/\inner{a}{a} \).
 
 *Uniqueness among vectors parallel to \( a \).* Let \( w \) be parallel to \( a \) with \( \inner{a}{w} = r \). Since \( a \ne 0 \), \( w = ta \) for some \( t \in \nR \), as Section 9.2 showed for vectors parallel to a non-zero vector (@def-parallel-rn). Then \( r = \inner{a}{ta} = t\inner{a}{a} \), so \( t = r/\inner{a}{a} \) and \( w = x \).
 
@@ -311,16 +307,16 @@ def-dot-product-rn (example): <(1,2),(3,4)> = 11, <(3,4),(3,4)> = 25 = |3 + 4i|^
 def-dot-product-rn (example): instance before the definition: (2,1).(1,4) = 6, (2,1).(2,1) = 5 = sqrt(5)^2 | arithmetic; verify/ch09/def-dot-product-rn.py
 prp-dot-product-laws-rn (example): instance before the proposition: <(1,2),(3,4)> = <(3,4),(1,2)> = 11, <(2,4),(3,4)> = 22 = 2 * 11, <(1,2),(1,2)> = 5 | arithmetic; verify/ch09/def-dot-product-rn.py
 def-dot-product-rn (example): a sum with one term is that term, sum_{k=1}^{1} a_k = 0 + a_1 = a_1 | fd2:def-sum-product (cited), (F3)
-def-dot-product-rn (claim): the bracket x_1y_1 - x_2y_2 is symmetric and linear in each slot; [e_2, e_2] = -1, [(1,1),(1,1)] = 0 | inline by the field laws; verify/ch09/def-dot-product-rn.py
+def-dot-product-rn (claim): B(x, y) = x_1y_1 - x_2y_2 is symmetric and linear in each slot; B(e_2, e_2) = -1, B((1,1),(1,1)) = 0 | inline by the field laws; verify/ch09/def-dot-product-rn.py
 prp-dot-product-laws-rn (proof): sum rules for sums indexed 1..n via the shift sum_{k=1}^{n} a_k = sum_{k=0}^{n-1} a_{k+1} (n - 1 in N since n >= 1) | fd2:def-sum-product, remark "Shifting the index" with p = -1 (cited); applied to lem-ring-finite-sums and prp-sum-order
-prp-dot-product-laws-rn (proof): prp-sum-order (b) with m = -1 and (e): a sum of non-negative terms is >= 0, and = 0 only if every term is 0 | ch01 (promised): merged-ch01-f46.md, prp-sum-order (b), (e) (answers this chapter's request lem-nonnegative-sum-zero)
+prp-dot-product-laws-rn (proof): prp-sum-order (b) with m = -1 and (e): a sum of non-negative terms is >= 0, and = 0 only if every term is 0 | ch01 §01 (cited): prp-sum-order (b), (e) (answers this chapter's request lem-nonnegative-sum-zero)
 prp-dot-product-laws-rn (proof): commutativity (F6), associativity (F5), distributivity (F9) of multiplication in R | fd3:def-commutative-ring-and-field (cited in the Uses line; codes now match fd3's list, the earlier draft had (F5) and (F6) swapped)
 prp-dot-product-laws-rn (proof): a * 0 = 0; x_k != 0 gives x_k^2 > 0; x_k^2 = 0 gives x_k = 0; equality of tuples | fd3:prp-ring-algebra (b), fd3:prp-ordered-ring-rules (e), (f), def-real-n-space (cited in the Uses line)
-prp-dot-product-laws-rn (proof): lem-ring-finite-sums (a), (b), (d) | cited ((a), (b) in the Uses line); now in fd4/src/ch04-fields/06-frobenius-and-fermat.md, moving to Chapter 1 under merged-ch01-f46.md (label unchanged)
+prp-dot-product-laws-rn (proof): lem-ring-finite-sums (a), (b), (d) | ch01 §01 (cited): (a), (b) in the Uses line, (d) inline
 prp-dot-product-laws-rn (proof): coordinates of e_k: (e_k)_j = 1 if j = k, 0 otherwise | def-standard-basis-rn (cited; ch09 §02)
 prp-dot-product-laws-rn (proof): 0 = 0 * 0 (scalar zero times zero vector) | prp-vector-space-laws-rn (i) (cited; ch09 §02)
 prp-dot-product-laws-rn (proof): x_j * 0 = 0, x_k * 1 = x_k in R | fd3:prp-ring-algebra (b), (F7) of fd3:def-commutative-ring-and-field
-prp-dot-product-laws-rn (claim): expansion of <x +- y, x +- y>; a + a = 2a; (-1)^2 = 1 | prp-dot-product-laws-rn (a), (b) (cited); fd3:prp-ring-algebra (c), (F9) with 2 = 1 + 1; inline
+prp-dot-product-laws-rn (claim): expansion of <x +- y, x +- y>; a + a = 2a; (-1)^2 = 1 | prp-dot-product-laws-rn (a), (b) (cited); fd3:prp-ring-algebra (c), (d) (the (a +- b)^2 analogy, cited), (F9) with 2 = 1 + 1; inline
 def-orthogonal-rn (claim): 2 != 0 in R, so 2t = 0 iff t = 0 | fd3:prp-ordered-ring-rules (h) (2 = 2 * 1 > 0) and (f); inline
 def-orthogonal-rn (claim): (1,2), (-2,1) "look perpendicular" (quarter turn) | motivation only, no proof uses it
 def-orthogonal-rn (example): (1,1,0) . (1,-1,5) = 0; (1,2) . (-2,2) = 2 | arithmetic; verify/ch09/def-orthogonal-rn.py
@@ -333,6 +329,7 @@ exr-dot-product-a1 (solution): -1; <2x, 2y> = 4<x, y>; n = 1 case: R has no zero
 exr-dot-product-b1 (solution): x = t(1,-1,1) | verify/ch09/exr-dot-product-b1.py
 exr-dot-product-b3 (solution): a vector parallel to a != 0 is ta | the remark after def-parallel-rn (ch09 §02, stated and proved in the text there)
 exr-dot-product-b3 (solution): v = a_k e_j - a_j e_k has <a, v> = 0, v != 0; example a = (1,1), r = 2: x = (1,1), (2,0) | verify/ch09/exr-dot-product-b3.py
-exr-dot-product-b2 (solution): x - y = x + (-1)y; linearity and symmetry | def-vector-operations-rn, prp-dot-product-laws-rn (a), (b) (cited in the Uses line)
+exr-dot-product-b2 (solution): x - y = x + (-1)y; linearity and symmetry | def-vector-operations-rn, prp-dot-product-laws-rn (a), (b), fd3:prp-ring-algebra (c) ((-1)s = -s), (F9) (-(s + t) = -s - t) (cited in the Uses line)
+exr-dot-product-b3 (solution): x = (r/<a,a>) a is parallel to a | def-parallel-rn, first clause (cited; ch09 §02)
 exr-dot-product-c1 (solution): (N1) | fd1:exm-not-allowed-catalogue (cited)
 -->

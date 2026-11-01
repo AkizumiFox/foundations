@@ -34,6 +34,15 @@ items:
     date: '2026-11-01'
     evidence: NOTATION.md has no rows for R^n, R^1:=R, e_k, x⊥y, d(x,y) or proj_y x, although blueprint
       merged-ch09-f48.md:77 and :302 say they were added
+  - stage: S7r
+    verdict: minor
+    by: rereferee
+    hash: 58e97d1f2762
+    date: '2026-11-01'
+    evidence: The text is now correct. 01:29 cites *Sets and Functions* Section 1.4 for the n-tuple equality
+      (fd2 04-products-and-relations.md:70) and @fd2:def-ordered-pair for pairs. The only open problem
+      is the S8 one, that NOTATION.md has no R^n or R^1:=R row. That is in a shared file and is deferred,
+      not a fault in the section text.
 - key: check:01-points-and-coordinates:1
   kind: check
   file: 01-points-and-coordinates.md
@@ -59,7 +68,7 @@ items:
   kind: exm
   file: 01-points-and-coordinates.md
   line: 74
-  hash: 33c167a5bd51
+  hash: 57382570c3b9
   verdicts:
   - stage: S5a
     verdict: correct
@@ -78,6 +87,21 @@ items:
       matches the pointer. However, line 97 claims ''Section 9.4 rewrites the condition as "the length
       of x is at most 1"''. No line of 04-length-and-distance.md does this (grep for x_1^2, x_2^2 and
       ''le 1'' finds nothing), so the pointer is false.'
+  - stage: S7r
+    verdict: correct
+    by: rereferee
+    hash: 57382570c3b9
+    date: '2026-11-01'
+    evidence: '01:97 (e): 9/25+16/25=1<=1 and 1+1=2>1 are correct. The forward pointer now says only that
+      the condition means length<=1 once 9.4 defines length. That is true and no longer promises a rewrite
+      in 9.4.'
+  - stage: S7r
+    verdict: correct
+    by: rereferee
+    hash: 57382570c3b9
+    date: '2026-11-01'
+    evidence: Only the wording of (e) changed ('once Section 9.4 has defined length…'). The arithmetic
+      9/25 + 16/25 = 1 and 1 + 1 = 2 > 1 is unchanged and correct.
 - key: def-box-rn
   kind: def
   file: 01-points-and-coordinates.md
@@ -105,6 +129,15 @@ items:
       is never argued. Line 123''s empty ''box'' {x in R^2 : 1 <= x_1 <= 0} has no bound on x_2, so it
       is not of box form even formally. The pointer to Sets and Functions Section 4.2 (fd2 ch04/02:266)
       and to Section 1.4 (pair/interval convention) both check out.'
+  - stage: S7r
+    verdict: correct
+    by: rereferee
+    hash: 555c363f59d1
+    date: '2026-11-01'
+    evidence: '01:123: the degenerate [1,0]x[0,1] is in box form. 01:129: the closed case is unchanged
+      and correct. The open case, from (0,0) and (1,1), gives p_i<0 and q_i>1, so (0,1) is in the box
+      and not in T. That covers both kinds of box in def-box-rn. The ledger line now says ''closed or
+      open box''. verify/ch09/exr-points-and-coordinates-b2.py passes, including the new open-box loop.'
 - key: exr-points-and-coordinates-a1
   kind: exr
   file: 01-points-and-coordinates.md
@@ -166,7 +199,7 @@ items:
   kind: exr
   file: 01-points-and-coordinates.md
   line: 175
-  hash: 7dbf5af6743e
+  hash: 1d81ba8bd57a
   verdicts:
   - stage: S5a
     verdict: correct
@@ -192,6 +225,21 @@ items:
     date: '2026-11-01'
     evidence: '01:175-192; max/min characterization correct; (3/2,0) in the box and in neither square
       (script). Worked model: triangle T, 01:125-129'
+  - stage: S7r
+    verdict: correct
+    by: rereferee
+    hash: 1d81ba8bd57a
+    date: '2026-11-01'
+    evidence: '01:182: the union is parenthesized. 01:189: corners u, v with u_k=max{a_k,c_k}, v_k=min{b_k,d_k},
+      and u_k<=v_k is the hypothesis def-box-rn needs. The proof of (a) and the (3/2,0) argument in (b)
+      are unchanged and correct. The sidecar passes.'
+  - stage: S7r
+    verdict: correct
+    by: rereferee
+    hash: 1d81ba8bd57a
+    date: '2026-11-01'
+    evidence: The union is now bracketed. The (a) solution names the corners u_k = max, v_k = min and
+      checks u_k ≤ v_k as def-box-rn requires. The verify script runs clean.
 - key: exr-points-and-coordinates-c1
   kind: exr
   file: 01-points-and-coordinates.md
@@ -223,6 +271,14 @@ items:
     evidence: 01:196-225; proof correct; my direct alternative (a in P=Q, c in Q=P) scores 10 under the
       scheme, which allows the corner route; hints name the tool/first line only. The closing remark at
       01:217 misstates what B1 needed (see finding)
+  - stage: S7r
+    verdict: correct
+    by: rereferee
+    hash: 67a0baea1936
+    date: '2026-11-01'
+    evidence: '01:217: B1 needs a_k<=b_k only for the box on the left (B1 solution, 01:172). C1 applies
+      B1 both ways, so it needs both hypotheses. The example of two equal empty sets with different ''corners''
+      is valid. The proof is unchanged and correct.'
 - key: def-vector-operations-rn
   kind: def
   file: 02-vector-operations.md
@@ -245,6 +301,14 @@ items:
     evidence: 02:13-26; well defined via def-real-n-space (n>=2, R^1:=R, 01-points-and-coordinates.md:15);
       examples (3,5,2), (0,-5,-5) verified by verify/ch09/def-vector-operations-rn.py (runs ok); complex
       product (c,0)(a,b)=(ca,cb) correct
+  - stage: S7r
+    verdict: correct
+    by: rereferee
+    hash: bb44f6c76dbb
+    date: '2026-11-01'
+    evidence: '02:34: 0·x_k = 0 by prp-ring-algebra (b) with (F6) is correct. 02:52: the table now uses
+      r(s+t) = rs + rt, (F9). The ledger lines for a_k + (b_k + (-a_k)) = b_k, citing (F1), (F2), (F4),
+      (F3), and for 0x = 0 are correct.'
 - key: exm-method-coordinatewise
   kind: exm
   file: 02-vector-operations.md
@@ -288,7 +352,7 @@ items:
   kind: proof
   file: 02-vector-operations.md
   line: 105
-  hash: 8d39a1735add
+  hash: 5897b51f5944
   verdicts:
   - stage: S5a
     verdict: minor
@@ -307,6 +371,23 @@ items:
     evidence: 02:113 bracket for (i) names only '(-1)a=-a with (F7)' but (-c)x_k=-(cx_k) and c(-x_k)=-(cx_k)
       need (-a)b=a(-b)=-(ab) of fd3:prp-ring-algebra (c), or (F5),(F6); F-codes checked against fd3 03-commutative-rings.md:11
       (F1..F9 match); (j) cites fd3:lem-field-fraction-rules (d) inline, correct
+  - stage: S7r
+    verdict: correct
+    by: rereferee
+    hash: 5897b51f5944
+    date: '2026-11-01'
+    evidence: '02:109 (d): (-1)a = -(1·a) = -a by fd3 prp-ring-algebra (c), (F6), (F7). 02:113 (i): all
+      three expressions reduce to -(cx_k) by (-a)b = a(-b) = -(ab) and (d). The Uses line at 02:118 is
+      glossed correctly. The remark at 02:125 is cut down to the any-field observation, which is true
+      because only (F1)-(F9) and no-zero-divisors were used.'
+  - stage: S7r
+    verdict: correct
+    by: rereferee
+    hash: 5897b51f5944
+    date: '2026-11-01'
+    evidence: '(d): (-1)a = -(1·a) = -a by fd3:prp-ring-algebra (c), which says (-a)b = a(-b) = -(ab),
+      with (F6), (F7). (i): (-c)x_k = (-1)(cx_k) = c((-1)x_k) = -(cx_k) by the same part (c). The Uses
+      line and the ledger line are updated.'
 - key: lem-vector-sums-coordinatewise
   kind: lem
   file: 02-vector-operations.md
@@ -331,11 +412,20 @@ items:
     hash: 351280b3216c
     date: '2026-11-01'
     evidence: 02:414 ledger line says "Ch4's sum from 0", a stale pre-merge chapter number
+  - stage: S7r
+    verdict: minor
+    by: rereferee
+    hash: 351280b3216c
+    date: '2026-11-01'
+    evidence: 'The main-line shift paragraph at 02:155 is correct: for m >= 1, m-1 is in N and lem-ring-finite-sums
+      applies to the shifted sum. However, the updated ledger line for the re-index claim still reads
+      "Ch4''s sum from 0", the stale pre-merge chapter number from the open S8 finding. It should name
+      lem-ring-finite-sums or F4.x by atlas id or say ''Chapter 1''.'
 - key: proof:lem-vector-sums-coordinatewise
   kind: proof
   file: 02-vector-operations.md
-  line: 160
-  hash: c885573794f0
+  line: 162
+  hash: 0a4ecfbc974b
   verdicts:
   - stage: S5a
     verdict: gap
@@ -354,6 +444,22 @@ items:
       n in N; reindexing sum_{j=1}^m = sum_{j=0}^{m-1} gives n=-1 when m=0, outside the lemma, so (b)
       is unproved for m=0 (trivial 0=0+0 but not said); also Uses omits def-real-n-space for the final
       ''the two sides are equal'''
+  - stage: S7r
+    verdict: correct
+    by: rereferee
+    hash: 0a4ecfbc974b
+    date: '2026-11-01'
+    evidence: '02:172: the m = 0 case is the empty sum 0 on the left and 0 + 0 = 0 by (c) on the right.
+      For m >= 1 the proof applies lem-ring-finite-sums (a) via the shift, then (a) of the lemma, then
+      def-real-n-space. The Uses line at 02:177 is complete.'
+  - stage: S7r
+    verdict: correct
+    by: rereferee
+    hash: 0a4ecfbc974b
+    date: '2026-11-01'
+    evidence: '(b) now treats m = 0: both sides are 0, and 0 + 0 = 0 by prp-vector-space-laws-rn (c).
+      For m ≥ 1 it uses the shift paragraph, now placed before the proof with m - 1 ∈ ℕ, and lem-ring-finite-sums
+      (a). The Uses line is complete.'
 - key: def-standard-basis-rn
   kind: def
   file: 02-vector-operations.md
@@ -374,6 +480,13 @@ items:
     evidence: 02:185-192 introduces e_k, the zero vector 0 and (v)_k, but NOTATION.md has no row for them
       (grep finds no e_k/R^n row though blueprint merged-ch09-f48.md:77 promises them); in the merged
       volume the group row (NOTATION.md:285) uses e, e_G for a group identity (Ch5)
+  - stage: S7r
+    verdict: minor
+    by: rereferee
+    hash: e6df7a5a3ce4
+    date: '2026-11-01'
+    evidence: '02:193: the cut leaves ''We need one fact about them.'', which is fine. The S5b NOTATION.md
+      row for e_k and R^n is still missing, but NOTATION.md is a shared file and that fix is deferred.'
 - key: prp-standard-basis-expansion
   kind: prp
   file: 02-vector-operations.md
@@ -396,7 +509,7 @@ items:
   kind: proof
   file: 02-vector-operations.md
   line: 210
-  hash: 90ad88489ffa
+  hash: fdb3e2c7169a
   verdicts:
   - stage: S5a
     verdict: correct
@@ -414,6 +527,20 @@ items:
     evidence: 02:215 applies lem-ring-finite-sums (d) 'for sums indexed from 1', justified only at 02:178
       inside the second-reading fold of the lemma's proof; main line with folds closed lacks the reason
       (STYLE §9 checklist, folds). n>=1 so the n-1>=0 range is fine.
+  - stage: S7r
+    verdict: correct
+    by: rereferee
+    hash: fdb3e2c7169a
+    date: '2026-11-01'
+    evidence: '02:215: lem-ring-finite-sums (d), shifted as at 02:155, is valid since n >= 1 (ch09 01:31
+      convention). With the terms extended by 0 beyond n, the sum equals c_j.'
+  - stage: S7r
+    verdict: correct
+    by: rereferee
+    hash: fdb3e2c7169a
+    date: '2026-11-01'
+    evidence: It cites lem-ring-finite-sums (d) (a_k = 0 for k ≠ j gives the sum a_j), shifted as after
+      the lemma, with n ≥ 1 noted.
 - key: def-parallel-rn
   kind: def
   file: 02-vector-operations.md
@@ -458,7 +585,7 @@ items:
   kind: exm
   file: 02-vector-operations.md
   line: 262
-  hash: 48eaad2bcc41
+  hash: b7b66eb2d301
   verdicts:
   - stage: S5a
     verdict: correct
@@ -476,11 +603,26 @@ items:
     evidence: '02:267 states the equivalence ''b-a=c-d exactly when 1/2(a+c)=1/2(b+d)'' as fact and 02:277
       defers its proof to Exercise B2(b): a claim resting on an exercise (STYLE §9 checklist). Numbers
       (3,1), (2,-3), (2,3/2) correct; sidecar ok'
+  - stage: S7r
+    verdict: correct
+    by: rereferee
+    hash: b7b66eb2d301
+    date: '2026-11-01'
+    evidence: '02:267: (b) now only poses a check. The data check out: b - a = (3,1) = c - d and a + c
+      = (4,3) = b + d. The solution at 02:277 defers the general equivalence to B2 (b), which proves it.'
+  - stage: S7r
+    verdict: correct
+    by: rereferee
+    hash: b7b66eb2d301
+    date: '2026-11-01'
+    evidence: (b) is restated as two conditions to check. The computations b - a = c - d = (3,1) and a
+      + c = b + d = (4,3), midpoint (2, 3/2), are unchanged. The picture is now said not to be a reason,
+      and B2 (b) proves the equivalence.
 - key: exr-vector-operations-a1
   kind: exr
   file: 02-vector-operations.md
   line: 284
-  hash: a16a5ad77477
+  hash: b5422346511e
   verdicts:
   - stage: S5a
     verdict: correct
@@ -505,11 +647,27 @@ items:
     evidence: 02:284-308; (a) (3,-2,-4)=3e1-2e2-4e3 checked; (b)-(d) correct; (e) verdict 'Yes' conflicts
       with the section's own statement that parallelism is not coordinatewise (02:75, 02:252), and the
       instruction sits after the list (see findings)
+  - stage: S7r
+    verdict: correct
+    by: rereferee
+    hash: b5422346511e
+    date: '2026-11-01'
+    evidence: 'The stem at 02:289 precedes the list. Answers: (a) (3,-2,-4) = 3e_1 - 2e_2 - 4e_3 is correct.
+      (e) ''No, as written'', with the shared t and an equivalence to x_k = 0 for k >= 2 proved both ways,
+      is consistent with 02:75 and 02:252.'
+  - stage: S7r
+    verdict: correct
+    by: rereferee
+    hash: b5422346511e
+    date: '2026-11-01'
+    evidence: 'The instruction now comes before the parts. (e) answers ''No, as written'': the condition
+      is one shared t, and since e_1 ≠ 0 this is equivalent to x_k = 0 for k ≥ 2 by eq-standard-expansion.
+      The answer is consistent.'
 - key: exr-vector-operations-b1
   kind: exr
   file: 02-vector-operations.md
   line: 312
-  hash: 1b1a69076739
+  hash: 83c101d3fd89
   verdicts:
   - stage: S5a
     verdict: correct
@@ -533,11 +691,25 @@ items:
     date: '2026-11-01'
     evidence: '02:312-336; (a) T, (b) F with c=0,e1,e2, (c) T via (c-d)x=0 and (j), (d) F with y=0, (e)
       T: all agree with my answers; side remarks (nonzero y transitive; n=1 true) checked'
+  - stage: S7r
+    verdict: correct
+    by: rereferee
+    hash: 83c101d3fd89
+    date: '2026-11-01'
+    evidence: '02:331 (c): cx + (-d)x = (c - d)x by (h), dx + (-(dx)) = 0 by (d), and -(dx) = (-d)x by
+      (i). Then (j) applies since x ≠ 0.'
+  - stage: S7r
+    verdict: correct
+    by: rereferee
+    hash: 83c101d3fd89
+    date: '2026-11-01'
+    evidence: (c) now also cites (d) of prp-vector-space-laws-rn for adding -(dx). Then (c-d)x = 0 with
+      x ≠ 0, and (j) gives c = d.
 - key: exr-vector-operations-b2
   kind: exr
   file: 02-vector-operations.md
   line: 338
-  hash: 839dca6b56bd
+  hash: e027947e09e8
   verdicts:
   - stage: S5a
     verdict: correct
@@ -559,6 +731,20 @@ items:
     date: '2026-11-01'
     evidence: '02:338-353; (a) t=3 with s=2 (script: unique solution (2,3)); (b) both directions use the
       named laws correctly. Worked model: exm-midpoints-and-parallelograms and 02:128'
+  - stage: S7r
+    verdict: correct
+    by: rereferee
+    hash: e027947e09e8
+    date: '2026-11-01'
+    evidence: 02:343 (b) is reworded to 'the two conditions ... agree'. The solution proves both directions
+      with (a)-(f).
+  - stage: S7r
+    verdict: correct
+    by: rereferee
+    hash: e027947e09e8
+    date: '2026-11-01'
+    evidence: The (b) statement is reworded to 'the two conditions agree'. The added contrapositive rubric
+      (3 + 2 = 5 points, using (j) for ty = 0 ⇒ y = 0) is consistent with the 5-point step.
 - key: exr-vector-operations-c1
   kind: exr
   file: 02-vector-operations.md
@@ -587,6 +773,14 @@ items:
     date: '2026-11-01'
     evidence: 02:357-400; proof correct (s!=0 gives x=(-ts^{-1})y; y!=0 justified; (j)); hints fine; but
       the scheme gives no mapping for the natural contrapositive route of (=>) (see finding)
+  - stage: S7r
+    verdict: minor
+    by: rereferee
+    hash: d01e12213fdb
+    date: '2026-11-01'
+    evidence: 'The added line at 02:397 grades the contrapositive (⇒) cases correctly (3 + 2): if s ≠
+      0 then x = (-ts^{-1})y; if s = 0 then t ≠ 0, so y = 0 by (j), and 0 = 0x is parallel to x. The 2-point
+      setup item at 02:388 still fits only the direct route (see F085).'
 - key: def-dot-product-rn
   kind: def
   file: 03-dot-product.md
@@ -609,6 +803,14 @@ items:
     evidence: '03-dot-product.md:19-40. Definition, paraphrase, the sum source (@fd2:def-sum-product)
       and the arithmetic (11, 25, 0, -1, 6, 5) are correct. Minor: the n = 1 meta-claim on line 36 overreaches,
       the bracket on line 38 reuses [ , ], and line 40 has a ''Why this definition.'' lead-in (see findings).'
+  - stage: S7r
+    verdict: correct
+    by: rereferee
+    hash: dba1a4294ec7
+    date: '2026-11-01'
+    evidence: Line 36 now gives a correct reason (sum of squares, law (c)). Line 38 renames the bracket
+      B, and B is symmetric and bilinear with B(e_2,e_2) = -1 and B((1,1),(1,1)) = 0, both checked by
+      hand. The line 40 lead-in is now mathematical and the 9.2 reference is accurate.
 - key: prp-dot-product-laws-rn
   kind: prp
   file: 03-dot-product.md
@@ -640,7 +842,7 @@ items:
   kind: proof
   file: 03-dot-product.md
   line: 72
-  hash: 04c55f1d50e0
+  hash: bf0c8f059ebf
   verdicts:
   - stage: S5a
     verdict: minor
@@ -662,10 +864,25 @@ items:
       (b) all exist in fd4 Ch1 / fd3. The shift with p = -1 matches fd2''s ''Shifting the index'' remark.
       Minor: one Uses block (line 83) sits in the middle of the proof, not at the end. The dependency
       ledger lines 316 and 319 are stale.'
+  - stage: S7r
+    verdict: correct
+    by: rereferee
+    hash: bf0c8f059ebf
+    date: '2026-11-01'
+    evidence: A single final Uses block remains, and every step's source is either cited inline (prp-vector-space-laws-rn
+      (i), prp-sum-order (e), def-standard-basis-rn, lem-ring-finite-sums (d)) or listed in the Uses line.
+      The ledger entries now point to ch01 §01, where both labels live.
+  - stage: S7r
+    verdict: correct
+    by: rereferee
+    hash: bf0c8f059ebf
+    date: '2026-11-01'
+    evidence: The Uses line from the middle of the proof is merged into the final one, which now covers
+      (a)/(b) (F5, F6, F9, lem-ring-finite-sums (a), (b)) and (c)–(e). The ledger lines cite ch01 §01.
 - key: def-orthogonal-rn
   kind: def
   file: 03-dot-product.md
-  line: 126
+  line: 122
   hash: 44c4655ef131
   verdicts:
   - stage: S5a
@@ -684,10 +901,17 @@ items:
     evidence: '03-dot-product.md:126-146. The definition, symmetry and the examples are correct ((1,1,0)·(1,-1,5)=0,
       (1,2)·(-2,2)=2). The Ch10 pointer matches def-hyperplane-rn (a≠0, <a,x>=c). Minor: bold lead-ins
       ''A small change that breaks it.'' and ''Why this definition.'' (STYLE §3 note / §13 B4).'
+  - stage: S7r
+    verdict: correct
+    by: rereferee
+    hash: 44c4655ef131
+    date: '2026-11-01'
+    evidence: 'Only the lead-ins at lines 138 and 140 changed. The mathematics is unchanged: <(1,2),(-2,2)>
+      = -2 + 4 = 2.'
 - key: prp-orthogonal-test-rn
   kind: prp
   file: 03-dot-product.md
-  line: 148
+  line: 144
   hash: c2d2cf2d6fb1
   verdicts:
   - stage: S5a
@@ -706,7 +930,7 @@ items:
 - key: proof:prp-orthogonal-test-rn
   kind: proof
   file: 03-dot-product.md
-  line: 159
+  line: 155
   hash: 492f1058f22b
   verdicts:
   - stage: S5a
@@ -724,10 +948,16 @@ items:
     date: '2026-11-01'
     evidence: 03-dot-product.md:159-163. (a) takes z = x and uses law (c). (b) closes the cycle i⇒ii⇒iii⇒i
       using law (d) and tuple equality (@def-real-n-space). All sources are cited.
+  - stage: S7r
+    verdict: correct
+    by: rereferee
+    hash: 492f1058f22b
+    date: '2026-11-01'
+    evidence: The proof is unchanged. The remark after it (line 161) no longer mentions z = e_1 or C1.
 - key: exm-dot-products-computed
   kind: exm
   file: 03-dot-product.md
-  line: 167
+  line: 163
   hash: 34691f657c25
   verdicts:
   - stage: S5a
@@ -749,7 +979,7 @@ items:
 - key: check:03-dot-product:1
   kind: check
   file: 03-dot-product.md
-  line: 189
+  line: 185
   hash: e2bae180ba5b
   verdicts:
   - stage: S5a
@@ -767,7 +997,7 @@ items:
 - key: exr-dot-product-a1
   kind: exr
   file: 03-dot-product.md
-  line: 201
+  line: 197
   hash: c5ad175dbe90
   verdicts:
   - stage: S5a
@@ -796,7 +1026,7 @@ items:
 - key: exr-dot-product-b1
   kind: exr
   file: 03-dot-product.md
-  line: 224
+  line: 220
   hash: c737845ab9c6
   verdicts:
   - stage: S5a
@@ -822,8 +1052,8 @@ items:
 - key: exr-dot-product-b2
   kind: exr
   file: 03-dot-product.md
-  line: 240
-  hash: a507188f66f9
+  line: 236
+  hash: f7985d0e846e
   verdicts:
   - stage: S5a
     verdict: minor
@@ -847,11 +1077,25 @@ items:
     date: '2026-11-01'
     evidence: '03:240-264; identity checked symbolically (difference 0); each step names linearity/symmetry;
       deduction is a chain of equivalences. Worked model: the expansion at 03:104-116'
+  - stage: S7r
+    verdict: correct
+    by: rereferee
+    hash: f7985d0e846e
+    date: '2026-11-01'
+    evidence: 'Every step now names its law: linearity plus (-1)s = -s, then linearity plus -(s+t) = -s
+      - t, then symmetry. The Uses line adds fd3:prp-ring-algebra (c) and (F9), which match fd3 03-commutative-rings.md:140.'
+  - stage: S7r
+    verdict: correct
+    by: rereferee
+    hash: f7985d0e846e
+    date: '2026-11-01'
+    evidence: (-1)s = -s (prp-ring-algebra (c) with F7) and -(s + t) = -s - t (distributive law) are now
+      stated and cited. The identity <x-y, x+y> = <x,x> - <y,y> follows by symmetry.
 - key: exr-dot-product-b3
   kind: exr
   file: 03-dot-product.md
-  line: 266
-  hash: 7648c2bc6350
+  line: 262
+  hash: 6c397d54a248
   verdicts:
   - stage: S5a
     verdict: gap
@@ -877,10 +1121,25 @@ items:
     date: '2026-11-01'
     evidence: 03:266-280; existence/uniqueness via the one-scalar test correct; <a,v>=a_k a_j - a_j a_k=0
       checked symbolically; example a=(1,1), r=2 gives x=(1,1), (2,0) also a solution (script)
+  - stage: S7r
+    verdict: correct
+    by: rereferee
+    hash: 6c397d54a248
+    date: '2026-11-01'
+    evidence: The solution now proves positivity of <a,a>, existence, that x is parallel to a (x = ca,
+      the first clause of def-parallel-rn), and uniqueness among parallel vectors. The example a = (1,1),
+      r = 2 gives x = (1,1), and (2,0) is a non-parallel solution.
+  - stage: S7r
+    verdict: correct
+    by: rereferee
+    hash: 6c397d54a248
+    date: '2026-11-01'
+    evidence: The added sentence says x = (r/<a,a>) a is parallel to a by the first clause of def-parallel-rn
+      ('y = cx for some c'). This is correct, and a ledger line is added.
 - key: exr-dot-product-c1
   kind: exr
   file: 03-dot-product.md
-  line: 284
+  line: 280
   hash: 5d65b23385cb
   verdicts:
   - stage: S5a
@@ -907,6 +1166,13 @@ items:
     evidence: 03:284-306; flaw sits exactly at 'Hence x = 0'; earlier lines are valid; counterexample
       e2 defeats the step; (N1) cited with the error in words; repair correct. But main text at 03:165
       explains this exact error beforehand (see finding)
+  - stage: S7r
+    verdict: correct
+    by: rereferee
+    hash: 5d65b23385cb
+    date: '2026-11-01'
+    evidence: The main text no longer gives away the z = e_1 error before C1. C1 and its solution are
+      unchanged and correct. The ledger lines at the end of the file, which the diff updates, are accurate.
 - key: check:04-length-and-distance:1
   kind: check
   file: 04-length-and-distance.md
@@ -946,6 +1212,13 @@ items:
     date: '2026-11-01'
     evidence: 04:31 meta-claim 'Every computation of a norm below ends with the same check' is false (04:114,
       282, 352, 354 compute norms with no sign/square check); see findings
+  - stage: S7r
+    verdict: correct
+    by: rereferee
+    hash: 8a261b4e694f
+    date: '2026-11-01'
+    evidence: 'The prose after the definition (l.31-37) now makes accurate claims: the checking sentence,
+      the citation of (g) together with trichotomy, and a counterexample for each sign hypothesis.'
 - key: prp-norm-basic-rn
   kind: prp
   file: 04-length-and-distance.md
@@ -968,7 +1241,7 @@ items:
   kind: proof
   file: 04-length-and-distance.md
   line: 58
-  hash: b5affe0476c7
+  hash: 1d8fedd236b1
   verdicts:
   - stage: S5a
     verdict: correct
@@ -985,6 +1258,20 @@ items:
     date: '2026-11-01'
     evidence: 04:73 uses t0 = 1/||x|| > 0 to get |±t0| = t0; positivity of the reciprocal is ledgered
       (04:468, fd3:prp-reciprocal-order) but absent from the Uses line 04:76
+  - stage: S7r
+    verdict: correct
+    by: rereferee
+    hash: 1d8fedd236b1
+    date: '2026-11-01'
+    evidence: In part (f), the positivity of t_0 = 1/||x|| is now sourced by @fd3:prp-reciprocal-order
+      (a) on the Uses line. The rest of the Uses line is unchanged.
+  - stage: S7r
+    verdict: correct
+    by: rereferee
+    hash: 1d8fedd236b1
+    date: '2026-11-01'
+    evidence: The Uses line adds fd3:prp-reciprocal-order for t_0 = 1/||x|| > 0 in (f), which the proof
+      needs.
 - key: def-unit-vector-rn
   kind: def
   file: 04-length-and-distance.md
@@ -1041,6 +1328,13 @@ items:
     date: '2026-11-01'
     evidence: 04:114 'the distance on the line that the analysis of sequences already uses' points into
       another volume (fd3 Ch4) without naming it (STYLE §13 B10)
+  - stage: S7r
+    verdict: correct
+    by: rereferee
+    hash: c8127a97a5f2
+    date: '2026-11-01'
+    evidence: The example d((1,2),(4,6)) = ||(-3,-4)|| = 5 is correct. The n = 1 remark now points to
+      fd3 Chapter 4 by title and label (@fd3:def-absolute-value-ordered-field, which is in fd3 ch04).
 - key: prp-distance-basic-rn
   kind: prp
   file: 04-length-and-distance.md
@@ -1142,11 +1436,18 @@ items:
     date: '2026-11-01'
     evidence: 04-length-and-distance.md:203-211 works out the expansion of <x±y, x±y> again, although
       03-dot-product.md:104-115 already did it
+  - stage: S7r
+    verdict: correct
+    by: rereferee
+    hash: 75f7607d6cb3
+    date: '2026-11-01'
+    evidence: The instance before it (<(3,0),(0,4)> = 0, ||(3,4)||^2 = 25 = 9 + 16) is checked by verify/ch09/def-norm-rn.py,
+      which runs ok, and the ledger line now points there.
 - key: proof:prp-pythagoras-rn
   kind: proof
   file: 04-length-and-distance.md
   line: 202
-  hash: d883fad5fef3
+  hash: 0ab0dbcddbab
   verdicts:
   - stage: S5a
     verdict: correct
@@ -1163,10 +1464,25 @@ items:
     evidence: 04:222 meta-claim that eq-expand-norm-squared 'is behind every proof in the rest of this
       section' is false for prp-norm-coordinate-bounds and cor-balls-and-boxes-rn; proof itself correct,
       lem-field-fraction-rules (d) is no zero divisors
+  - stage: S7r
+    verdict: correct
+    by: rereferee
+    hash: 0ab0dbcddbab
+    date: '2026-11-01'
+    evidence: The closing remark at l.222 now limits the role of @eq-expand-norm-squared to the parallelogram
+      law and polarization, which is accurate.
+  - stage: S7r
+    verdict: correct
+    by: rereferee
+    hash: 0ab0dbcddbab
+    date: '2026-11-01'
+    evidence: It cites the expansion at 03:100-115, which shows both signs, then prp-norm-basic-rn (c),
+      and keeps eq-expand-norm-squared. 2 ≠ 0 and no zero divisors give <x,y> = 0. The Uses and ledger
+      lines are updated.
 - key: exm-method-expand-the-square
   kind: exm
   file: 04-length-and-distance.md
-  line: 224
+  line: 216
   hash: d84df846fb7b
   verdicts:
   - stage: S5a
@@ -1185,7 +1501,7 @@ items:
 - key: prp-parallelogram-law-rn
   kind: prp
   file: 04-length-and-distance.md
-  line: 241
+  line: 233
   hash: 185416ea1650
   verdicts:
   - stage: S5a
@@ -1201,10 +1517,17 @@ items:
     date: '2026-11-01'
     evidence: 04:239 instance (10 + 2 = 12 = 2*4 + 2*2) correct but has no sidecar (ledger 04:480 says
       'inline'); see findings
+  - stage: S7r
+    verdict: correct
+    by: rereferee
+    hash: 185416ea1650
+    date: '2026-11-01'
+    evidence: The instance x = (2,0), y = (1,1) has diagonals (3,1) and (1,-1), and 10 + 2 = 12 = 2*4
+      + 2*2. This is asserted in def-norm-rn.py (runs ok), and the ledger line points there.
 - key: proof:prp-parallelogram-law-rn
   kind: proof
   file: 04-length-and-distance.md
-  line: 250
+  line: 242
   hash: 3ed1d6f115db
   verdicts:
   - stage: S5a
@@ -1222,7 +1545,7 @@ items:
 - key: prp-polarization-rn
   kind: prp
   file: 04-length-and-distance.md
-  line: 263
+  line: 255
   hash: 98dbb1d05710
   verdicts:
   - stage: S5a
@@ -1247,7 +1570,7 @@ items:
 - key: proof:prp-polarization-rn
   kind: proof
   file: 04-length-and-distance.md
-  line: 274
+  line: 266
   hash: 48b5b06aeb04
   verdicts:
   - stage: S5a
@@ -1265,7 +1588,7 @@ items:
 - key: prp-norm-coordinate-bounds
   kind: prp
   file: 04-length-and-distance.md
-  line: 284
+  line: 276
   hash: b866ff166b2f
   verdicts:
   - stage: S5a
@@ -1281,10 +1604,17 @@ items:
     hash: b866ff166b2f
     date: '2026-11-01'
     evidence: 04:284-293; M exists by fd2:prp-finite-max (n>=1 by the chapter's standing setting)
+  - stage: S7r
+    verdict: correct
+    by: rereferee
+    hash: b866ff166b2f
+    date: '2026-11-01'
+    evidence: The instance (1,-2,2) has M = 2, ||x|| = 3 and 9 <= 12. This is asserted in prp-norm-coordinate-bounds.py
+      (runs ok), and the ledger line points there.
 - key: proof:prp-norm-coordinate-bounds
   kind: proof
   file: 04-length-and-distance.md
-  line: 299
+  line: 291
   hash: ae212ece9d0c
   verdicts:
   - stage: S5a
@@ -1303,10 +1633,17 @@ items:
     evidence: '04:300-308: prp-sum-order (b),(c) (01-finite-sums.md:276-283) with reindexing ledgered
       04:485; fd3:prp-ordered-field-halves (d) is 0<=a<=b, 0<=c<=d => ac<=bd; fd3:prp-ordered-ring-rules
       (e) squares'
+  - stage: S7r
+    verdict: correct
+    by: rereferee
+    hash: ae212ece9d0c
+    date: '2026-11-01'
+    evidence: The prose after the proof at l.313 now writes the open box as a Cartesian product of intervals,
+      in the notation of def-box-rn. The argument is unchanged.
 - key: cor-balls-and-boxes-rn
   kind: cor
   file: 04-length-and-distance.md
-  line: 315
+  line: 307
   hash: bcbc11ad023b
   verdicts:
   - stage: S5a
@@ -1334,7 +1671,7 @@ items:
 - key: proof:cor-balls-and-boxes-rn
   kind: proof
   file: 04-length-and-distance.md
-  line: 326
+  line: 318
   hash: 892059dffeeb
   verdicts:
   - stage: S5a
@@ -1354,7 +1691,7 @@ items:
 - key: exr-length-and-distance-a1
   kind: exr
   file: 04-length-and-distance.md
-  line: 336
+  line: 328
   hash: e0601c4dbacd
   verdicts:
   - stage: S5a
@@ -1382,8 +1719,8 @@ items:
 - key: exr-length-and-distance-b1
   kind: exr
   file: 04-length-and-distance.md
-  line: 365
-  hash: 2a26e09eaba9
+  line: 357
+  hash: fc7db208ebd3
   verdicts:
   - stage: S5a
     verdict: correct
@@ -1407,10 +1744,23 @@ items:
     evidence: '04:365-389. All five verdicts agree with mine; (b)-(d) are proved correctly. Cited letters
       checked: prp-norm-basic-rn (e) is ||e_k||=1, prp-dot-product-laws-rn (d) gives e_j.e_k. In (e),
       04:388 writes e1-e2 as (1,-1), which is right only for n=2, and the statement covers n>=2.'
+  - stage: S7r
+    verdict: correct
+    by: rereferee
+    hash: fc7db208ebd3
+    date: '2026-11-01'
+    evidence: In (e), e_1 - e_2 = (1,-1,0,...,0) has squared norm 2, so d = sqrt 2 != 2 for every n >=
+      2.
+  - stage: S7r
+    verdict: correct
+    by: rereferee
+    hash: fc7db208ebd3
+    date: '2026-11-01'
+    evidence: '(e): e_1 - e_2 = (1, -1, 0, …, 0) in ℝⁿ with n ≥ 2, its norm is √2, and √2 ≠ 2.'
 - key: exr-length-and-distance-b2
   kind: exr
   file: 04-length-and-distance.md
-  line: 391
+  line: 383
   hash: 5f759405dd3e
   verdicts:
   - stage: S5a
@@ -1435,7 +1785,7 @@ items:
 - key: exr-length-and-distance-b3
   kind: exr
   file: 04-length-and-distance.md
-  line: 401
+  line: 393
   hash: 2cceef556c71
   verdicts:
   - stage: S5a
@@ -1464,8 +1814,8 @@ items:
 - key: exr-length-and-distance-c1
   kind: exr
   file: 04-length-and-distance.md
-  line: 431
-  hash: 927a6c7426fd
+  line: 423
+  hash: ab22169a2909
   verdicts:
   - stage: S5a
     verdict: minor
@@ -1492,6 +1842,21 @@ items:
       (1), (2), (4) and (5) are valid, and the repair is valid. (N9) is indeed ''citing a line that is
       not available ... a false fact never qualifies'' (fd1 catalogue item 9). Wording: the cross-volume
       pointer does not name the volume (STYLE §13 B10).'
+  - stage: S7r
+    verdict: correct
+    by: rereferee
+    hash: ab22169a2909
+    date: '2026-11-01'
+    evidence: The cross-volume pointer now names *Logic and Proof* and cites (N9), the entry for citing
+      what is not proved. The counterexample a = -3 and the corrected fact sqrt(a^2) = |a| (prp-norm-basic-rn
+      (d)) are correct.
+  - stage: S7r
+    verdict: correct
+    by: rereferee
+    hash: ab22169a2909
+    date: '2026-11-01'
+    evidence: It now refers to '(N9) in the list of *Logic and Proof* (@fd1:exm-not-allowed-catalogue)'.
+      The fd1 title 'Logic and Proof' matches series.py show. The mathematics is unchanged.
 - key: thm-cauchy-schwarz-rn
   kind: thm
   file: 05-cauchy-schwarz-and-the-triangle-inequality.md
@@ -1522,7 +1887,7 @@ items:
   kind: proof
   file: 05-cauchy-schwarz-and-the-triangle-inequality.md
   line: 69
-  hash: 292d1d11286c
+  hash: f09e53ad4a13
   verdicts:
   - stage: S5a
     verdict: minor
@@ -1540,6 +1905,20 @@ items:
     evidence: '05:69-101; every step is cited or in the ledger (05:489-494): the normalized identity,
       both expansions, cancellation, |t| = r iff t = ±r, and the one-scalar test after def-parallel-rn
       (02:248).'
+  - stage: S7r
+    verdict: correct
+    by: rereferee
+    hash: f09e53ad4a13
+    date: '2026-11-01'
+    evidence: The Uses line now includes @prp-vector-space-laws-rn (i), which covers the sign rules used
+      in (c′). The rest of the proof is unchanged and was previously correct.
+  - stage: S7r
+    verdict: correct
+    by: rereferee
+    hash: f09e53ad4a13
+    date: '2026-11-01'
+    evidence: The Uses line adds prp-vector-space-laws-rn (i) for -y = (-1)y and -(cx) = (-c)x, used in
+      the (c′) step. The ledger line is updated.
 - key: check:05-cauchy-schwarz-and-the-triangle-inequality:1
   kind: check
   file: 05-cauchy-schwarz-and-the-triangle-inequality.md
@@ -1603,7 +1982,7 @@ items:
   kind: exm
   file: 05-cauchy-schwarz-and-the-triangle-inequality.md
   line: 139
-  hash: 10080f4f1b43
+  hash: 8431dc2367cd
   verdicts:
   - stage: S5a
     verdict: correct
@@ -1619,11 +1998,25 @@ items:
     date: '2026-11-01'
     evidence: '05:150: ''‖u + v‖ ≤ 2 holds for all unit u, v'' has no reason given; the triangle inequality
       that implies it is only stated at 05:181.'
+  - stage: S7r
+    verdict: correct
+    by: rereferee
+    hash: 8431dc2367cd
+    date: '2026-11-01'
+    evidence: The Common-mistakes example now justifies ||u+v|| ≤ 2 from the expansion, C–S and comparing
+      squares, all earlier on the page. ||x+y|| = ||4e1|| = 4 > 2 is correct.
+  - stage: S7r
+    verdict: correct
+    by: rereferee
+    hash: 8431dc2367cd
+    date: '2026-11-01'
+    evidence: '||u+v||^2 = 2 + 2<u,v> ≤ 2 + 2||u|| ||v|| = 4 by Cauchy–Schwarz (proved earlier on the
+      page). Comparing squares gives ≤ 2. For x = y = 2e_1, ||x+y|| = 4 > 2. A ledger line is added.'
 - key: exm-cauchy-schwarz-applications
   kind: exm
   file: 05-cauchy-schwarz-and-the-triangle-inequality.md
   line: 155
-  hash: 21d21fcf7297
+  hash: 6e40d0689049
   verdicts:
   - stage: S5a
     verdict: minor
@@ -1639,6 +2032,20 @@ items:
     date: '2026-11-01'
     evidence: 05:153 calls the whole example a second use of normalizing, but part (a) does not normalize.
       Part (b) scales back to every x (05:170) without settling x = 0, which is step 1 of the method.
+  - stage: S7r
+    verdict: correct
+    by: rereferee
+    hash: 6e40d0689049
+    date: '2026-11-01'
+    evidence: (b) now settles x = 0 before scaling back. The maximum √14 at p/√14 is unchanged and correct,
+      and 'Part (b) below is a second' fixes the lead-in.
+  - stage: S7r
+    verdict: correct
+    by: rereferee
+    hash: 6e40d0689049
+    date: '2026-11-01'
+    evidence: It adds the x = 0 case, where both sides of <p,x> ≤ √14||x|| are 0. For x ≠ 0 it scales
+      back from the unit maximum √14, which is correct.
 - key: thm-triangle-inequality-rn
   kind: thm
   file: 05-cauchy-schwarz-and-the-triangle-inequality.md
@@ -1662,7 +2069,7 @@ items:
   kind: proof
   file: 05-cauchy-schwarz-and-the-triangle-inequality.md
   line: 199
-  hash: 236eb8fd6737
+  hash: 534f17beb0bb
   verdicts:
   - stage: S5a
     verdict: minor
@@ -1680,6 +2087,20 @@ items:
     evidence: '05:219: the Uses line lists @thm-complex-triangle-inequality, which the proof does not
       use. The proof''s actual pointer is @cor-complex-triangle-variants (a) at 05:210. The mathematics
       is fine.'
+  - stage: S7r
+    verdict: correct
+    by: rereferee
+    hash: 534f17beb0bb
+    date: '2026-11-01'
+    evidence: The Uses line drops the unused @thm-complex-triangle-inequality. All remaining citations
+      are used in (a)–(c).
+  - stage: S7r
+    verdict: correct
+    by: rereferee
+    hash: 534f17beb0bb
+    date: '2026-11-01'
+    evidence: '@thm-complex-triangle-inequality is dropped from the Uses line. The proof cites only cor-complex-triangle-variants
+      (a), inline at the (b) transfer, so nothing it uses is now uncited.'
 - key: check:05-cauchy-schwarz-and-the-triangle-inequality:2
   kind: check
   file: 05-cauchy-schwarz-and-the-triangle-inequality.md
@@ -1717,11 +2138,18 @@ items:
     date: '2026-11-01'
     evidence: '05:241-250: a general statement over v₁,…,vₘ, but no worked instance precedes it (STYLE
       §13 B5).'
+  - stage: S7r
+    verdict: correct
+    by: rereferee
+    hash: 354033c72345
+    date: '2026-11-01'
+    evidence: The instance before the statement, ||(1,1,1)|| = √3 ≤ 3 = 1+1+1 since 3 ≤ 9, is correct.
+      The sidecar passes, and there is a ledger claim line.
 - key: proof:cor-triangle-finite-sums-rn
   kind: proof
   file: 05-cauchy-schwarz-and-the-triangle-inequality.md
   line: 252
-  hash: f34c7fa3c3db
+  hash: 48f43aeb60dd
   verdicts:
   - stage: S5a
     verdict: minor
@@ -1736,6 +2164,21 @@ items:
     hash: f34c7fa3c3db
     date: '2026-11-01'
     evidence: 05:252-261; base case m = 0 and the step check out, with the ledger at 05:503-504.
+  - stage: S7r
+    verdict: correct
+    by: rereferee
+    hash: 48f43aeb60dd
+    date: '2026-11-01'
+    evidence: The base case m = 0 now cites prp-norm-basic-rn (a) for ||0|| = 0. The inductive step is
+      unchanged and correct.
+  - stage: S7r
+    verdict: correct
+    by: rereferee
+    hash: 48f43aeb60dd
+    date: '2026-11-01'
+    evidence: The Uses line adds prp-norm-basic-rn (a) (||0|| = 0) for the empty-sum base case. The instance
+      before the statement (√3 ≤ 3 since 3 ≤ 9) is in verify/ch09/cor-triangle-finite-sums-rn.py, which
+      runs clean.
 - key: cor-norm-sum-bound
   kind: cor
   file: 05-cauchy-schwarz-and-the-triangle-inequality.md
@@ -1779,7 +2222,7 @@ items:
   kind: exr
   file: 05-cauchy-schwarz-and-the-triangle-inequality.md
   line: 291
-  hash: 79b4722cd774
+  hash: b06f0d656d11
   verdicts:
   - stage: S5a
     verdict: correct
@@ -1801,6 +2244,20 @@ items:
     date: '2026-11-01'
     evidence: '05:291-317. Script: u=(3/5,4/5), v=(4/5,3/5), <u,v>=24/25, ||u-v||^2=2/25=2-48/25. (d)
       matches the scratch work at 05:55: (a^2+b^2)/2 >= ab, with equality iff a=b.'
+  - stage: S7r
+    verdict: correct
+    by: rereferee
+    hash: b06f0d656d11
+    date: '2026-11-01'
+    evidence: (d) now gives ½(a²+b²) − ab = ½(a−b)² > 0 for a ≠ b, which justifies 'exceeds ||u|| ||v||
+      unless ||u|| = ||v||'.
+  - stage: S7r
+    verdict: correct
+    by: rereferee
+    hash: b06f0d656d11
+    date: '2026-11-01'
+    evidence: '(d): ½(a² + b²) - ab = ½(a - b)², which is > 0 for a ≠ b. This justifies ''exceeds ||u||
+      ||v|| unless equal''. The (e) rubric is reworded consistently.'
 - key: exr-cauchy-schwarz-and-the-triangle-inequality-b1
   kind: exr
   file: 05-cauchy-schwarz-and-the-triangle-inequality.md
@@ -1833,7 +2290,7 @@ items:
   kind: exr
   file: 05-cauchy-schwarz-and-the-triangle-inequality.md
   line: 347
-  hash: 7c1ecdad8d06
+  hash: 9e6f9f79719e
   verdicts:
   - stage: S5a
     verdict: minor
@@ -1862,6 +2319,22 @@ items:
     date: '2026-11-01'
     evidence: 05:358 works out ||x+y||^2-||x-y||^2=4<x,y> again instead of citing prp-polarization-rn
       (a)
+  - stage: S7r
+    verdict: minor
+    by: rereferee
+    hash: 9e6f9f79719e
+    date: '2026-11-01'
+    evidence: 'The math is correct: the zero-product rule plus 4 > 0. After the inserted ''Indeed'' sentences,
+      though, the last sentence''s ''that holds'' (l.358) reads as if it referred to ''4 ≠ 0''. Wording
+      only.'
+  - stage: S7r
+    verdict: correct
+    by: rereferee
+    hash: 9e6f9f79719e
+    date: '2026-11-01'
+    evidence: The difference ||x+y||² - ||x-y||² = 4<x,y> is identified as polarization (a) times 4, and
+      4 ≠ 0 from 4 > 0 with the zero-product rule. The comparing-squares step is unchanged. The Uses and
+      ledger lines are added.
 - key: exr-cauchy-schwarz-and-the-triangle-inequality-b3
   kind: exr
   file: 05-cauchy-schwarz-and-the-triangle-inequality.md
@@ -1891,7 +2364,7 @@ items:
   kind: exr
   file: 05-cauchy-schwarz-and-the-triangle-inequality.md
   line: 391
-  hash: 2341d0717cf0
+  hash: dc1d55e7cc5c
   verdicts:
   - stage: S5a
     verdict: minor
@@ -1916,6 +2389,20 @@ items:
     evidence: '05:391-410. (a) matches cor-cauchy-schwarz-sums (05:118-122), whose equality case is ''parallel''.
       (b): a Lagrange-multiplier script gives the minimum 9 at (1,2,2) only. The use of thm (c) (05:45)
       is correct. Worked example: exm-cauchy-schwarz-applications (05:155).'
+  - stage: S7r
+    verdict: correct
+    by: rereferee
+    hash: dc1d55e7cc5c
+    date: '2026-11-01'
+    evidence: (b) now writes 9 = <p,x> ≤ |<p,x>| ≤ 3||x|| and states p ≠ 0 before applying (c). t ≤ |t|
+      is added to the Uses line. The minimum 9 at (1,2,2) is correct.
+  - stage: S7r
+    verdict: correct
+    by: rereferee
+    hash: dc1d55e7cc5c
+    date: '2026-11-01'
+    evidence: '(b) now writes 9 = <p,x> ≤ |<p,x>| ≤ 3||x|| (t ≤ |t| is cited) and states p ≠ 0 before
+      using CS (c). The minimum 9 is attained only at (1,2,2), which checks: 1 + 4 + 4 = 9.'
 - key: exr-cauchy-schwarz-and-the-triangle-inequality-c1
   kind: exr
   file: 05-cauchy-schwarz-and-the-triangle-inequality.md
@@ -1944,10 +2431,17 @@ items:
     evidence: '05:412-445. The solution is complete and correct, and it scores 10/10. The marking scheme
       fails the projection route that 06:144-150 calls ''a complete second proof ... as asked in C1'':
       see the findings.'
+  - stage: S7r
+    verdict: correct
+    by: rereferee
+    hash: 16e007d2d3c4
+    date: '2026-11-01'
+    evidence: Bullet 2 is generalized, and the projection-route paragraph scores 1+2+3+1+3 = 10, consistent
+      with the Lagrange paragraph. There is no forward reference.
 - key: exr-cauchy-schwarz-and-the-triangle-inequality-c2
   kind: exr
   file: 05-cauchy-schwarz-and-the-triangle-inequality.md
-  line: 447
+  line: 449
   hash: 0d6207f8fb4d
   verdicts:
   - stage: S5a
@@ -1996,6 +2490,13 @@ items:
       (e)); this is neither cited nor in the ledger. The symbol proj_y x has no row in NOTATION.md (grep
       ''proj'' finds nothing), although blueprint merged-ch09-f48.md:77 lists it. The rest of the definition
       is correct: 06:56 computes 2√2(1,1) and the dot product 4−4√2 correctly.'
+  - stage: S7r
+    verdict: correct
+    by: rereferee
+    hash: e24435bf2031
+    date: '2026-11-01'
+    evidence: 06:50 now cites prp-norm-basic-rn (e) (||e_k|| = 1, checked at 04:39ff), and a ledger line
+      was added. The NOTATION row for proj_y x is correctly deferred, since it is a shared file.
 - key: check:06-projection-and-angle:1
   kind: check
   file: 06-projection-and-angle.md
@@ -2018,7 +2519,7 @@ items:
   kind: exm
   file: 06-projection-and-angle.md
   line: 68
-  hash: 1a393b663ecd
+  hash: aeeb9ca47466
   verdicts:
   - stage: S5a
     verdict: minor
@@ -2036,6 +2537,19 @@ items:
     evidence: '06:81 says ''Two worked examples follow: the closest-point theorem, and @exm-distance-…''.
       A theorem is not a worked example. The sentence describes the page rather than the mathematics (STYLE
       §13 B3). The B2 (e) pointer at 06:79 is correct.'
+  - stage: S7r
+    verdict: correct
+    by: rereferee
+    hash: aeeb9ca47466
+    date: '2026-11-01'
+    evidence: 06:81 now describes how the method is used. It no longer calls the theorem a worked example.
+  - stage: S7r
+    verdict: correct
+    by: rereferee
+    hash: aeeb9ca47466
+    date: '2026-11-01'
+    evidence: Only the closing sentence changed ('The closest-point theorem below is proved this way…'),
+      and it is accurate.
 - key: thm-projection-closest-point
   kind: thm
   file: 06-projection-and-angle.md
@@ -2063,6 +2577,13 @@ items:
     hash: c4bda4eaa436
     date: '2026-11-01'
     evidence: 06:84 and 06:138 say what later text quotes (STYLE §13 B3)
+  - stage: S7r
+    verdict: correct
+    by: rereferee
+    hash: c4bda4eaa436
+    date: '2026-11-01'
+    evidence: The lead-in at 06:84 now describes (b) mathematically. The false claim 'every later use
+      quotes' is gone.
 - key: proof:thm-projection-closest-point
   kind: proof
   file: 06-projection-and-angle.md
@@ -2087,10 +2608,17 @@ items:
       The ''Alternatively'' route at 06:140-150 claims ''a complete second proof … with its equality case''.
       Its y = 0 bullet only says both sides are 0 and never shows that x and 0 are parallel, which the
       remark after def-parallel-rn supplies.'
+  - stage: S7r
+    verdict: correct
+    by: rereferee
+    hash: 697ae194aa46
+    date: '2026-11-01'
+    evidence: 06:138 is rephrased without a meta-claim. The y = 0 bullet now gives 0 = 0x, so x and 0
+      are parallel and the equality case of Cauchy–Schwarz is covered.
 - key: exm-distance-to-a-line-through-the-origin
   kind: exm
   file: 06-projection-and-angle.md
-  line: 152
+  line: 146
   hash: 55790b1318c4
   verdicts:
   - stage: S5a
@@ -2110,7 +2638,7 @@ items:
 - key: check:06-projection-and-angle:2
   kind: check
   file: 06-projection-and-angle.md
-  line: 193
+  line: 187
   hash: 64c2f060c49f
   verdicts:
   - stage: S5a
@@ -2128,7 +2656,7 @@ items:
 - key: def-angle-cosine-rn
   kind: def
   file: 06-projection-and-angle.md
-  line: 201
+  line: 195
   hash: f75b0a52c058
   verdicts:
   - stage: S5a
@@ -2146,10 +2674,18 @@ items:
     date: '2026-11-01'
     evidence: '06:204-218: lengths are positive by norm-basic (a); the cosine lies in [−1,1] by Cauchy–Schwarz
       (a) and absolute-value (d). NOTATION row 315 matches.'
+  - stage: S7r
+    verdict: correct
+    by: rereferee
+    hash: f75b0a52c058
+    date: '2026-11-01'
+    evidence: 06:214 names the fd3 volume with a single link to prp-absolute-value-ordered-field (d),
+      which gives |a| <= b iff -b <= a <= b. The \( \nN \) spacing differs from the other title instances
+      only cosmetically.
 - key: prp-angle-cosine-properties
   kind: prp
   file: 06-projection-and-angle.md
-  line: 224
+  line: 218
   hash: 368bf40e9ebf
   verdicts:
   - stage: S5a
@@ -2168,7 +2704,7 @@ items:
 - key: proof:prp-angle-cosine-properties
   kind: proof
   file: 06-projection-and-angle.md
-  line: 241
+  line: 235
   hash: 5188cff6e8a3
   verdicts:
   - stage: S5a
@@ -2188,8 +2724,8 @@ items:
 - key: exm-angles-computed
   kind: exm
   file: 06-projection-and-angle.md
-  line: 261
-  hash: f98e6ec6d555
+  line: 255
+  hash: 3bf9afc0a040
   verdicts:
   - stage: S5a
     verdict: correct
@@ -2212,10 +2748,24 @@ items:
     hash: f98e6ec6d555
     date: '2026-11-01'
     evidence: 06:278 uses sqrt3 sqrt2 = sqrt6 with no citation; the ledger at 06:591 is stale "ch01 (promised)"
+  - stage: S7r
+    verdict: correct
+    by: rereferee
+    hash: 3bf9afc0a040
+    date: '2026-11-01'
+    evidence: 'The new Uses line cites lem-root-rules (a) (ch01 05:92: the n-th root of ab is the n-th
+      root of a times the n-th root of b). That justifies sqrt3 sqrt2 = sqrt6, and the ledger is re-pointed.'
+  - stage: S7r
+    verdict: correct
+    by: rereferee
+    hash: 3bf9afc0a040
+    date: '2026-11-01'
+    evidence: The Uses line @lem-root-rules (a) covers √3√2 = √6 (a, b ≥ 0, n = 2). 2/√6 = √6/3 is in
+      verify/ch09/exm-angles-computed.py.
 - key: check:06-projection-and-angle:3
   kind: check
   file: 06-projection-and-angle.md
-  line: 283
+  line: 281
   hash: 9307bd721673
   verdicts:
   - stage: S5a
@@ -2230,10 +2780,20 @@ items:
     hash: 9307bd721673
     date: '2026-11-01'
     evidence: '06:284-289: the cosine is −1 both ways; correct.'
+  - stage: S7r
+    verdict: minor
+    by: rereferee
+    hash: 9307bd721673
+    date: '2026-11-01'
+    evidence: The Looking-ahead remark that follows this check is now true. (T4) of ax-cosine-sine (ch03
+      05:61) gives theta for (c, sqrt(1-c^2)), because c^2 <= 1. *Analysis on the Real Line*, Chapter
+      10 matches the volume ax-cosine-sine names. Two problems remain. The new existence claim has no
+      ledger line. 'In any R^n, the point (c, sqrt(1-c^2)) ... lies on the unit circle' can be read as
+      putting the point in R^n.
 - key: exr-projection-and-angle-a1
   kind: exr
   file: 06-projection-and-angle.md
-  line: 301
+  line: 299
   hash: 6f724296c272
   verdicts:
   - stage: S5a
@@ -2260,8 +2820,8 @@ items:
 - key: exr-projection-and-angle-b1
   kind: exr
   file: 06-projection-and-angle.md
-  line: 329
-  hash: 0a9d806fae75
+  line: 327
+  hash: f2edb562545b
   verdicts:
   - stage: S5a
     verdict: correct
@@ -2285,10 +2845,22 @@ items:
     date: '2026-11-01'
     evidence: 06:329-354. Sympy checks the median identity symbolically. The faded completion is unique
       and natural (expand both, add). The parallelogram-law remark is correct.
+  - stage: S7r
+    verdict: correct
+    by: rereferee
+    hash: f2edb562545b
+    date: '2026-11-01'
+    evidence: The prompt now uses the prescribed wording from STYLE §11.4.
+  - stage: S7r
+    verdict: correct
+    by: rereferee
+    hash: f2edb562545b
+    date: '2026-11-01'
+    evidence: Only the prompt is reworded ('Say which method this is, then complete it').
 - key: exr-projection-and-angle-b2
   kind: exr
   file: 06-projection-and-angle.md
-  line: 356
+  line: 354
   hash: f88cfc609f2d
   verdicts:
   - stage: S5a
@@ -2316,8 +2888,8 @@ items:
 - key: exr-projection-and-angle-b3
   kind: exr
   file: 06-projection-and-angle.md
-  line: 390
-  hash: 2e890fa5feea
+  line: 388
+  hash: 6319ef1cab03
   verdicts:
   - stage: S5a
     verdict: correct
@@ -2342,10 +2914,24 @@ items:
       sqrt26/3, orthogonality 0. (b) is correct: deg f=2, and thm-polynomial-root-count (ch07 04:11-18)
       applies. Wording: ''this is why the vector is called v here'' is a sentence about the text (STYLE
       §13 B3). Worked example for (a): exm-distance-to-a-line-through-the-origin.'
+  - stage: S7r
+    verdict: correct
+    by: rereferee
+    hash: 6319ef1cab03
+    date: '2026-11-01'
+    evidence: The sentence about the text's own naming is deleted. The polynomial argument is unchanged
+      and correct.
+  - stage: S7r
+    verdict: correct
+    by: rereferee
+    hash: 6319ef1cab03
+    date: '2026-11-01'
+    evidence: Only a side remark about the name v is deleted. The polynomial argument (deg f = 2, at most
+      2 roots) is unchanged.
 - key: exr-projection-and-angle-c1
   kind: exr
   file: 06-projection-and-angle.md
-  line: 415
+  line: 413
   hash: 8e258382ceb9
   verdicts:
   - stage: S5a
@@ -2372,10 +2958,27 @@ items:
     evidence: 06:415-463. The solution is complete. The scheme sums to 10 and admits the completing-the-square
       route; I also graded a direct-expansion proof, and it scores 10. Hint 2 at 06:430 carries out the
       key idea (the decomposition plus Pythagoras is the whole proof).
+  - stage: S7r
+    verdict: correct
+    by: rereferee
+    hash: 8e258382ceb9
+    date: '2026-11-01'
+    evidence: 'The statement now allows Sections 9.2–9.4. Hint 2 gives only the first line. The Uses line
+      covers linearity (dot-product (b)), the decomposition (vector-space laws), and the two fd3 ordered-ring-rules
+      facts: (e) a^2 > 0 for a != 0, and (g) comparing squares of non-negative numbers. The ledger is
+      updated.'
+  - stage: S7r
+    verdict: correct
+    by: rereferee
+    hash: 8e258382ceb9
+    date: '2026-11-01'
+    evidence: The statement now allows Sections 9.2–9.4, which the proof uses through prp-vector-space-laws-rn.
+      Hint 2 is changed to a question. The Uses line adds dot-product laws (b), the vector space laws
+      and fd3:prp-ordered-ring-rules (e), (g), each of which the solution uses.
 - key: exr-projection-and-angle-c2
   kind: exr
   file: 06-projection-and-angle.md
-  line: 465
+  line: 463
   hash: 64ddafbf9ba5
   verdicts:
   - stage: S5a
@@ -2410,11 +3013,19 @@ items:
     date: '2026-11-01'
     evidence: 06:498 uses sqrt(ab)=sqrt a sqrt b with no citation, and the ledger at 06:601 still marks
       it as owed by ch01; Chapter 1 now proves it as lem-root-rules (a)
+  - stage: S7r
+    verdict: correct
+    by: rereferee
+    hash: 64ddafbf9ba5
+    date: '2026-11-01'
+    evidence: 'The new Hint 2 first line is right: ||y||^2(||x||^2 - ||p||^2) = ||x||^2||y||^2 - <x,y>^2
+      by thm (c). The root-of-a-product step now cites lem-root-rules (a). ''later volumes'' replaces
+      the unnamed volume pointer.'
 - key: exr-projection-and-angle-r1
   kind: exr
   file: 06-projection-and-angle.md
-  line: 505
-  hash: c81e50db7abd
+  line: 503
+  hash: 3dc9d82a6afd
   verdicts:
   - stage: S5a
     verdict: minor
@@ -2440,10 +3051,26 @@ items:
     evidence: 06:505-520. Sympy confirms (t-t0)^2-(s-t0)^2=(t-s)(t+s-2t0). The strictness argument and
       the passage from squares to lengths are correct. The problem hides its source, and the solution
       names thm-projection-closest-point, exm-method-factor-difference and def-monotone-function (ch08).
+  - stage: S7r
+    verdict: correct
+    by: rereferee
+    hash: 3dc9d82a6afd
+    date: '2026-11-01'
+    evidence: 'The statement now defines p := t0 y. The inline fd3 cites moved to the Uses line: (b) gives
+      the strict sum and (g) compares squares of non-negatives, both checked at fd3 04-ordered-rings.md:170.
+      The ch08 ledger entry now reads ''(cited)''.'
+  - stage: S7r
+    verdict: correct
+    by: rereferee
+    hash: 3dc9d82a6afd
+    date: '2026-11-01'
+    evidence: p ≔ t_0 y is now defined in the statement, and the solution uses it (g(t)² = ||x-p||² +
+      (t-t_0)²||y||²). The Uses line cites prp-ordered-ring-rules (b), (g) for the strict sum and comparing
+      squares. The factorization (t-s)(t+s-2t_0)||y||² is correct.
 - key: exr-projection-and-angle-r2
   kind: exr
   file: 06-projection-and-angle.md
-  line: 522
+  line: 524
   hash: fbd043ba56b2
   verdicts:
   - stage: S5a
@@ -2472,7 +3099,7 @@ items:
 - key: exr-projection-and-angle-r3
   kind: exr
   file: 06-projection-and-angle.md
-  line: 540
+  line: 542
   hash: 780a76926841
   verdicts:
   - stage: S5a
@@ -2501,8 +3128,8 @@ items:
 - key: exr-projection-and-angle-r4
   kind: exr
   file: 06-projection-and-angle.md
-  line: 562
-  hash: 8b1665360fd5
+  line: 564
+  hash: 6b45d0101922
   verdicts:
   - stage: S5a
     verdict: correct
@@ -2530,3 +3157,10 @@ items:
     hash: 8b1665360fd5
     date: '2026-11-01'
     evidence: 06:569 says "which clearly works" (STYLE §1, Stay calm)
+  - stage: S7r
+    verdict: correct
+    by: rereferee
+    hash: 6b45d0101922
+    date: '2026-11-01'
+    evidence: '''It works, since both sums are n'': Σ1 = n and Σ1² = n. The rest of the Cauchy–Schwarz
+      argument is unchanged.'

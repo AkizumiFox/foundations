@@ -26,7 +26,7 @@ In words: a point of \( \nR^n \) is an ordered list of \( n \) real numbers, and
 \[
 x = y \iff x_k = y_k \text{ for every } k \in \{1, \dots, n\} .
 \]
-*Sets and Functions* defined this equality of \( n \)-tuples (@fd2:def-ordered-pair). For \( n = 1 \) it says only that \( x_1 = y_1 \). So one equation between points of \( \nR^n \) is \( n \) equations between real numbers. For \( n = 2 \) the definition gives \( \nR^2 = \nR \times \nR \). This is also the underlying set of the complex numbers: \( \nC \coloneqq \nR^2 \) in @def-complex-numbers. A complex number and a point of the plane are the same object; Section 9.4 compares what the two readings do with it.
+*Sets and Functions*, Section 1.4, defined this equality of \( n \)-tuples, just after ordered pairs (@fd2:def-ordered-pair). For \( n = 1 \) it says only that \( x_1 = y_1 \). So one equation between points of \( \nR^n \) is \( n \) equations between real numbers. For \( n = 2 \) the definition gives \( \nR^2 = \nR \times \nR \). This is also the underlying set of the complex numbers: \( \nC \coloneqq \nR^2 \) in @def-complex-numbers. A complex number and a point of the plane are the same object; Section 9.4 compares what the two readings do with it.
 
 The case \( n = 1 \) is a **convention**, not a theorem. *Sets and Functions* defines tuples only of length at least \( 2 \), and a real number is not a tuple. We declare \( \nR^1 \) to be \( \nR \) so that every statement "for all \( n \ge 1 \)" in this chapter includes the line, with \( x_1 \) meaning \( x \) itself.
 
@@ -94,7 +94,7 @@ For each of the following subsets of \( \nR^2 \), name one point that lies in it
 
 (d) Here the set is described by listing its points, one for each real \( t \), rather than by a condition. It has a description by a condition too: \( G = \{ x \in \nR^2 : x_2 = x_1^2 \} \). Indeed \( (t, t^2) \) satisfies \( x_2 = x_1^2 \); and if \( x_2 = x_1^2 \), then \( x = (t, t^2) \) with \( t \coloneqq x_1 \). So \( (3, 9) \in G \), while \( (9, 3) \notin G \), because \( 3 \ne 81 = 9^2 \). Section 8.1 treats the graph of any real function in the same way.
 
-(e) The point \( (3/5, 4/5) \) is in \( E \): \( 9/25 + 16/25 = 1 \le 1 \). The point \( (1, 1) \) is not: \( 1 + 1 = 2 > 1 \). In the picture \( E \) is a disk, but the picture is not the definition; Section 9.4 rewrites the condition as "the length of \( x \) is at most \( 1 \)", once length has been defined.
+(e) The point \( (3/5, 4/5) \) is in \( E \): \( 9/25 + 16/25 = 1 \le 1 \). The point \( (1, 1) \) is not: \( 1 + 1 = 2 > 1 \). In the picture \( E \) is a disk, but the picture is not the definition; once Section 9.4 has defined length, the condition says that the length of \( x \) is at most \( 1 \).
 :::
 
 ## Boxes
@@ -120,13 +120,13 @@ The notation is the product of sets from *Sets and Functions*, Section 4.2, appl
 
 **Examples.** For \( n = 1 \) a closed box is a closed interval \( [a_1, b_1] \) and an open box an open interval. For \( n = 2 \) the closed box \( [0, 1] \times [0, 1] \) is the unit square. In \( \nR^3 \), the closed box \( [-1, 1] \times [0, 1] \times [2, 2] \) is flat: its third interval is \( [2, 2] = \{2\} \), so every point of it has third coordinate \( 2 \). The definition allows this, since it asks only \( a_3 \le b_3 \). At the extreme, \( a = b \) gives a box with exactly one point, \( a \) itself.
 
-Every box is **non-empty**, and we can name a point in it. The corner \( a \) lies in the closed box, since \( a_k \le a_k \le b_k \) for every \( k \); so does \( b \). The open box contains the center \( c \) with \( c_k \coloneqq (a_k + b_k)/2 \), because \( a_k < b_k \) gives \( a_k < (a_k + b_k)/2 < b_k \) (@fd3:prp-ordered-field-halves (b)). This is why the definition demands \( a_k \le b_k \), and \( a_k < b_k \) for the open box. Without it, \( \{ x \in \nR^2 : 1 \le x_1 \le 0 \} \) would be "a box", an empty one, and its "corners" would mean nothing. Exercise C1 shows that with the condition in place, a closed box determines its corners.
+Every box is **non-empty**, and we can name a point in it. The corner \( a \) lies in the closed box, since \( a_k \le a_k \le b_k \) for every \( k \); so does \( b \). The open box contains the center \( c \) with \( c_k \coloneqq (a_k + b_k)/2 \), because \( a_k < b_k \) gives \( a_k < (a_k + b_k)/2 < b_k \) (@fd3:prp-ordered-field-halves (b)). This is why the definition demands \( a_k \le b_k \), and \( a_k < b_k \) for the open box. Without it, \( [1, 0] \times [0, 1] = \{ x \in \nR^2 : 1 \le x_1 \le 0 \text{ and } 0 \le x_2 \le 1 \} \) would be "a box", an empty one, and its "corners" would mean nothing. Exercise C1 shows that with the condition in place, a closed box determines its corners.
 
 **A set that is not a box.** Let one bound depend on another coordinate:
 \[
 T \coloneqq \{ x \in \nR^2 : 0 \le x_2 \le x_1 \le 1 \} ,
 \]
-a triangle in the picture. Each coordinate still lies in \( [0, 1] \), but the bound \( x_2 \le x_1 \) links the two. That one change makes \( T \) no box. Suppose \( T = [p_1, q_1] \times [p_2, q_2] \). The points \( (0, 0) \) and \( (1, 1) \) lie in \( T \), so \( p_1 \le 0 \), \( p_2 \le 0 \), \( 0 \le q_1 \) and \( 1 \le q_2 \). Then \( (0, 1) \) satisfies \( p_1 \le 0 \le q_1 \) and \( p_2 \le 1 \le q_2 \), so it lies in the box. But \( (0, 1) \notin T \), since \( 1 \le 0 \) fails. To show a set is not a box, read bounds off points of the set, then build a point the box must contain.
+a triangle in the picture. Each coordinate still lies in \( [0, 1] \), but the bound \( x_2 \le x_1 \) links the two. That one change makes \( T \) no box. Suppose \( T = [p_1, q_1] \times [p_2, q_2] \). The points \( (0, 0) \) and \( (1, 1) \) lie in \( T \), so \( p_1 \le 0 \), \( p_2 \le 0 \), \( 0 \le q_1 \) and \( 1 \le q_2 \). Then \( (0, 1) \) satisfies \( p_1 \le 0 \le q_1 \) and \( p_2 \le 1 \le q_2 \), so it lies in the box. But \( (0, 1) \notin T \), since \( 1 \le 0 \) fails. An open box fails the same way: if \( T = (p_1, q_1) \times (p_2, q_2) \), the points \( (0, 0) \) and \( (1, 1) \) give \( p_1, p_2 < 0 \) and \( q_1, q_2 > 1 \), so again \( (0, 1) \) lies in the box but not in \( T \). To show a set is not a box, read bounds off points of the set, then build a point the box must contain.
 
 ## Exercises
 
@@ -179,14 +179,14 @@ Let \( P = [a_1, b_1] \times \dots \times [a_n, b_n] \) and \( Q = [c_1, d_1] \t
 
 ::: {.enumerate options="label=(\alph*)"}
 1. Prove that \( P \cap Q = \{ x \in \nR^n : \max\{a_k, c_k\} \le x_k \le \min\{b_k, d_k\} \text{ for every } k \} \). Deduce that \( P \cap Q \) is a closed box if \( \max\{a_k, c_k\} \le \min\{b_k, d_k\} \) for every \( k \), and is empty otherwise.
-2. Prove that \( [0, 1] \times [0, 1] \cup [2, 3] \times [0, 1] \) is not a closed box.
+2. Prove that \( ([0, 1] \times [0, 1]) \cup ([2, 3] \times [0, 1]) \) is not a closed box.
 :::
 :::
 
 ::: {.solution}
 (a) Fix \( k \) and a real \( t \). Since \( \le \) is a total order on \( \nR \) (@fd3:prp-ordered-ring-rules (i)), \( \max\{a_k, c_k\} \) is one of \( a_k \), \( c_k \) and is \( \ge \) both, so \( a_k \le t \) and \( c_k \le t \) hold together exactly when \( \max\{a_k, c_k\} \le t \). In the same way \( t \le b_k \) and \( t \le d_k \) hold together exactly when \( t \le \min\{b_k, d_k\} \). Now \( x \in P \cap Q \) means \( a_k \le x_k \le b_k \) and \( c_k \le x_k \le d_k \) for every \( k \), which by the two equivalences, with \( t = x_k \), is the displayed condition.
 
-If \( \max\{a_k, c_k\} \le \min\{b_k, d_k\} \) for every \( k \), the displayed set is the closed box with corners \( (\max\{a_k, c_k\})_k \) and \( (\min\{b_k, d_k\})_k \), as @def-box-rn requires. If \( \max\{a_k, c_k\} > \min\{b_k, d_k\} \) for some \( k \), no real \( x_k \) satisfies \( \max\{a_k, c_k\} \le x_k \le \min\{b_k, d_k\} \), by transitivity, so \( P \cap Q = \varnothing \).
+If \( \max\{a_k, c_k\} \le \min\{b_k, d_k\} \) for every \( k \), the displayed set is the closed box with corners \( u \) and \( v \), where \( u_k \coloneqq \max\{a_k, c_k\} \) and \( v_k \coloneqq \min\{b_k, d_k\} \); the hypothesis is the condition \( u_k \le v_k \) that @def-box-rn requires. If \( \max\{a_k, c_k\} > \min\{b_k, d_k\} \) for some \( k \), no real \( x_k \) satisfies \( \max\{a_k, c_k\} \le x_k \le \min\{b_k, d_k\} \), by transitivity, so \( P \cap Q = \varnothing \).
 
 (b) Call the union \( U \) and suppose \( U = [p_1, q_1] \times [p_2, q_2] \). The points \( (0, 0) \) and \( (3, 0) \) lie in \( U \), so \( p_1 \le 0 \) and \( 3 \le q_1 \), and \( p_2 \le 0 \le q_2 \). Then \( (3/2, 0) \) lies in the box, since \( p_1 \le 0 \le 3/2 \le 3 \le q_1 \) and \( p_2 \le 0 \le q_2 \). But \( (3/2, 0) \) lies in neither square: \( 3/2 > 1 \) and \( 3/2 < 2 \). So \( (3/2, 0) \notin U \), a contradiction. Hence \( U \) is not a closed box. The argument is the one used above to show that the triangle \( T \) is not a box.
 :::
@@ -214,7 +214,7 @@ From \( P \subseteq Q \) and \( Q \subseteq P \), write down four inequalities f
 ::: {.solution}
 Suppose \( P = Q \) and fix \( k \). Since \( P \subseteq Q \), Exercise B1 gives \( c_k \le a_k \) and \( b_k \le d_k \). Since \( Q \subseteq P \), the same exercise with the roles of the boxes exchanged gives \( a_k \le c_k \) and \( d_k \le b_k \). The order of \( \nR \) is antisymmetric, being a total order (@fd3:prp-ordered-ring-rules (i)), so \( a_k = c_k \) and \( b_k = d_k \). As \( k \) was arbitrary, this proves the claim.
 
-So a closed box, as a set, determines the numbers \( a_k \) and \( b_k \). This is what makes "the box \( [a_1, b_1] \times \dots \times [a_n, b_n] \)" an unambiguous name, and "the corners of a box" meaningful. Exercise B1 needed \( a_k \le b_k \) and \( c_k \le d_k \), and so does this result: the empty sets \( \{ x \in \nR : 1 \le x \le 0 \} \) and \( \{ x \in \nR : 5 \le x \le 2 \} \) are equal, with different "corners".
+So a closed box, as a set, determines the numbers \( a_k \) and \( b_k \). This is what makes "the box \( [a_1, b_1] \times \dots \times [a_n, b_n] \)" an unambiguous name, and "the corners of a box" meaningful. Exercise B1 needed \( a_k \le b_k \) for the box on the left. This result applies B1 both ways, so it needs both \( a_k \le b_k \) and \( c_k \le d_k \): the empty sets \( \{ x \in \nR : 1 \le x \le 0 \} \) and \( \{ x \in \nR : 5 \le x \le 2 \} \) are equal, with different "corners".
 
 **What a complete answer needs.** (10 points)
 - 2: fixes \( k \) and states the goal \( a_k = c_k \), \( b_k = d_k \).
@@ -239,7 +239,7 @@ def-box-rn (claim): product notation [a_1, b_1] x ... x [a_n, b_n] read coordina
 def-box-rn (claim): intervals [a, b], (a, b) and the pair/interval reading of (a, b) | NOTATION row "intervals"; fd2 F2.1 section 04 convention
 def-box-rn (claim): a_k <= a_k <= b_k (reflexivity) | fd3:prp-ordered-ring-rules (i) (total order); used silently
 def-box-rn (claim): a_k < (a_k + b_k)/2 < b_k | fd3:prp-ordered-field-halves (b) (cited)
-def-box-rn (example): non-example T: (0,1) in the box, not in T | inline; order of R
+def-box-rn (example): non-example T: (0,1) in the closed or open box, not in T | inline; order of R
 exr-points-and-coordinates-a1 (solution): all values of (a)-(e), the count 3*2*1 = 6 | verify/ch09/exr-points-and-coordinates-a1.py
 exr-points-and-coordinates-b1 (solution): transitivity of <= | fd3:prp-ordered-ring-rules (i); used silently
 exr-points-and-coordinates-b2 (solution): max{a, c}, min{b, d} of two reals and their characterization | fd3:prp-ordered-ring-rules (i) (total order); inline

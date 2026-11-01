@@ -35,4 +35,8 @@ assert in_closed(w, [(0, 3), (0, 0)])
 T = lambda x: 0 <= x[1] <= x[0] <= 1
 assert T((0, 0)) and T((1, 1)) and not T(QUOTED["witness_T"])
 assert in_closed(QUOTED["witness_T"], [(0, 1), (0, 1)])
+# open box containing (0,0) and (1,1): p_i < 0, q_i > 1, so (0,1) is inside it
+in_open = lambda x, box: all(lo < xk < hi for xk, (lo, hi) in zip(x, box))
+for pq in [[(Fr(-1, 10), Fr(11, 10))] * 2, [(-5, 2), (Fr(-1, 3), 7)]]:
+    assert in_open((0, 0), pq) and in_open((1, 1), pq) and in_open(QUOTED["witness_T"], pq)
 print("exr-points-and-coordinates-b2: OK")

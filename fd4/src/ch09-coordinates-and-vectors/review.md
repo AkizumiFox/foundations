@@ -48,10 +48,12 @@ What is open: the angle itself, which needs the function \( \cos \). Lines, hype
 ## Results used from earlier chapters
 
 - Chapter 1, Section 1.1: the rules for finite sums (@lem-ring-finite-sums), comparing sums termwise (@prp-sum-order) and double sums over a rectangle (@prp-double-sum), for the dot product laws and Cauchy–Schwarz for sums.
-- Chapter 3, for Section 9.4: the complex numbers as pairs (@def-complex-numbers, @prp-reals-embed-complex), the modulus and the conjugate (@def-conjugate-modulus, @prp-modulus-of-real, @thm-conjugate-properties).
+- Chapter 3, for Sections 9.2 and 9.4: the complex numbers as pairs (@def-complex-numbers, @prp-reals-embed-complex), the modulus and the conjugate (@def-conjugate-modulus, @prp-modulus-of-real, @thm-conjugate-properties).
 - Chapter 3, for Section 9.5: the triangle inequality in \( \nC \) and its variants (@thm-complex-triangle-inequality, @cor-complex-triangle-variants, @lem-real-part-at-most-modulus).
 - Chapter 3, for Section 9.6 only: the unit circle and polar form (@prp-polar-form) and the borrowed cosine and sine (@ax-cosine-sine).
-- For the review exercises of Section 9.6 only: fields (@def-field), groups and homomorphisms with their kernels (@def-group, @def-group-homomorphism, @prp-homomorphism-injective-iff-kernel-trivial), degree and evaluation of polynomials (@def-degree, @thm-evaluation-respects-operations, @thm-polynomial-root-count), and monotone functions (@def-monotone-function, @exm-method-factor-difference).
+- Chapter 4, for one remark in Section 9.2: fields (@def-field).
+- Chapters 6 and 7, for one exercise of Section 9.6: degree and evaluation of polynomials (@def-degree, @thm-evaluation-respects-operations, @thm-polynomial-root-count).
+- Chapters 5 and 8, for the review exercises of Section 9.6 only: groups and homomorphisms with their kernels (@def-group, @def-group-homomorphism, @prp-homomorphism-injective-iff-kernel-trivial), and monotone functions (@def-monotone-function, @exm-method-factor-difference).
 
 ## Borrowed facts
 
@@ -59,6 +61,6 @@ The chapter borrows nothing new. It defines the cosine of the angle between two 
 
 ## Threads
 
-- **Same statement, three places.** The triangle inequality for the plane is proved in Section 3.3 for \( \nC \) and again in Section 9.5 for every \( \nR^n \), by a different route. Cauchy–Schwarz is stated here only for \( \nR^n \) and for finite sums. The linear algebra volumes prove it for abstract inner product spaces.
+- **Same statement, three places.** The triangle inequality is proved three times: for \( \nR \) in *Number Systems: From \(\nN\) to \(\nR\)*, Section 4.1 (@fd3:prp-absolute-value-ordered-field), for \( \nC \) in Section 3.3, and for every \( \nR^n \) in Section 9.5, each time by a different route. Cauchy–Schwarz is stated here only for \( \nR^n \) and for finite sums. The linear algebra volumes prove it for abstract inner product spaces.
 - **Chapter 10 on distances.** Hyperplanes \( \inner{a}{x} = c \), nearest points on lines and hyperplanes, and betweenness stated by distances all come from the dot product and the projection of this chapter.
 - **The angle.** Section 9.6 defines only the cosine of the angle between two vectors. An angle \( \theta \) with that cosine needs the function \( \cos \). For \( n = 2 \) Chapter 3 supplies it through polar form, and for general \( n \) the analysis volumes do.

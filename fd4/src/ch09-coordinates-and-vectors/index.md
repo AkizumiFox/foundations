@@ -10,7 +10,7 @@ Calculus on \( \nR^n \) is built on this. A ball is the set of points at distanc
 - Finite sums, from *Sets and Functions*, Chapter 3, with their rules from Chapter 1, Section 1.1 (@lem-ring-finite-sums).
 - The rules of an ordered field, the absolute value and square roots in \( \nR \), from *Number Systems: From \(\nN\) to \(\nR\)* (@fd3:prp-cof-square-roots).
 - The complex numbers, the modulus and the triangle inequality in \( \nC \), from Chapter 3 (@thm-complex-triangle-inequality).
-- For the review exercises of Section 9.6 only: fields, groups, polynomials and monotone functions, from Chapters 4 to 8.
+- Fields (Chapter 4) for one remark in Section 9.2, polynomials (Chapters 6 and 7) for one exercise of Section 9.6, and groups (Chapter 5) and monotone functions (Chapter 8) for the review exercises of Section 9.6.
 
 **Time.** About 25 hours if you read the main text and do every A exercise and one B and one C exercise per section; about 30 hours for everything.
 

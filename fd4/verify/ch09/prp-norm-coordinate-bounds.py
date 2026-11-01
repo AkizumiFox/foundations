@@ -24,4 +24,6 @@ for _ in range(3000):
     d = [Fr(random.randint(-100, 100), 101) for _ in range(n)]
     if all(dk * dk < r2 / n for dk in d):
         assert sq(d) < r2
+# instance: x = (1,-2,2): M = 2, ||x||^2 = 9 = 3^2, and 3 <= 2 sqrt 3 since 9 <= 12 = (2 sqrt 3)^2 = 4 * 3
+x0 = (1, -2, 2); assert max(abs(a) for a in x0) == 2 and sq(x0) == 9 == 3 * 3 and 9 <= 4 * 3
 print("ok")

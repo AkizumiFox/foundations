@@ -15,4 +15,8 @@ assert dot((1, 1), (1, 1)) == 2 and not is_root(2, 2)  # ||(1,1)||^2 = 2, and 2 
 diff = (1 - 4, 2 - 6)
 assert diff == (-3, -4) and is_root(QUOTED["d"], dot(diff, diff))
 assert is_root(0, 0) and is_root(1, 1) and is_root(7, 49) and is_root(3, 9)
+# Pythagoras instance: (3,0) . (0,4) = 0, ||(3,4)||^2 = 25 = 9 + 16
+assert dot((3, 0), (0, 4)) == 0 and dot((3, 4), (3, 4)) == 25 == 9 + 16
+# parallelogram instance: x = (2,0), y = (1,1); diagonals (3,1), (1,-1)
+assert dot((3, 1), (3, 1)) == 10 and dot((1, -1), (1, -1)) == 2 and 10 + 2 == 12 == 2 * dot((2, 0), (2, 0)) + 2 * dot((1, 1), (1, 1))
 print("ok")

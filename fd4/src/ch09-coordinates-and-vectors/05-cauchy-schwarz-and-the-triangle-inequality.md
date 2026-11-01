@@ -4,7 +4,7 @@ Section 9.4 gave \( \nR^n \) a length and a distance and proved every basic prop
 
 ## Two earlier proofs, and why neither transfers
 
-The triangle inequality has been proved twice before in this series. Each proof used a tool that \( \nR^n \) lacks.
+The triangle inequality has been proved before in this series in two settings, for real numbers and for complex numbers. Each proof used a tool that \( \nR^n \) lacks.
 
 **In \( \nR \).** *Number Systems: From \(\nN\) to \(\nR\)*, Section 4.1, trapped each number between \( \pm \) its absolute value, \( -\abs{x} \le x \le \abs{x} \), and added the two traps. That is how it proved the triangle inequality for absolute values, @fd3:prp-absolute-value-ordered-field (c)–(e). The trap compares \( x \) with the number \( \abs{x} \). For a vector \( x \in \nR^n \) with \( n \ge 2 \), "\( x \le \norm{x} \)" compares a vector with a number, and \( \nR^n \) has been given no order at all.
 
@@ -25,13 +25,13 @@ Everything matches except the cross terms. So the triangle inequality in \( \nR^
 \[
 \inner{x}{y} \le \sum_{k=1}^{n} \abs{x_k}\,\abs{y_k} \le n \, \norm{x} \, \norm{y} ,
 \]
-which is off by the factor \( n \). Try \( x = y = (1, \dots, 1) \): then \( \inner{x}{y} = n \) and \( \norm{x}\,\norm{y} = n \), so the inequality we want holds with equality, while the attempt only gives \( n \le n^2 \). Each bound \( \abs{x_k} \le \norm{x} \) is sharp only when all of \( x \) sits in coordinate \( k \), and the \( n \) bounds cannot all be sharp at once. A coordinate-by-coordinate bound loses the geometry. The proof below uses the length of a whole vector instead.
+which is off by the factor \( n \). Try \( x = y = (1, \dots, 1) \): then \( \inner{x}{y} = n \) and \( \norm{x}\,\norm{y} = n \), so the inequality we want holds with equality, while the attempt only gives \( n \le n^2 \). Each bound \( \abs{x_k} \le \norm{x} \) is sharp only when all of \( x \) sits in coordinate \( k \). For \( x \ne 0 \) and \( n \ge 2 \), the \( n \) bounds cannot all be sharp at once. A coordinate-by-coordinate bound loses the geometry. The proof below uses the length of a whole vector instead.
 
 ## The Cauchy–Schwarz inequality
 
 Start with two vectors of \( \nR^2 \), \( x = (3, 4) \) and \( y = (4, 3) \). Their dot product is \( \inner{x}{y} = 12 + 12 = 24 \), and both have length \( 5 \), so \( \norm{x}\,\norm{y} = 25 \). The dot product is a little smaller than the product of the lengths. Now take \( y = 2x = (6, 8) \) instead. Then \( \inner{x}{y} = 18 + 32 = 50 \) and \( \norm{x}\,\norm{y} = 5 \cdot 10 = 50 \): the two are equal. The theorem says that the dot product never exceeds the product of the lengths, and that equality up to sign happens exactly for parallel vectors.
 
-We state the inequality together with its equality cases. Part (c′) is the mirror image of (c); Section 9.6 needs it for angles.
+Equality can hold with either sign, and the sign tells which way \( y \) points along \( x \).
 
 ::: {#thm-cauchy-schwarz-rn}
 [Cauchy–Schwarz Inequality]
@@ -96,7 +96,7 @@ Add \( 2\inner{u}{v} \) to the first line and \( -2 \) to the second, and multip
 (b) Since \( \norm{x}\,\norm{y} \ge 0 \), the definition of the absolute value gives \( \abs{\inner{x}{y}} = \norm{x}\,\norm{y} \) if and only if \( \inner{x}{y} = \pm\norm{x}\,\norm{y} \). By (c) and (c′) this holds if and only if \( x = 0 \) or \( y = cx \) for some real \( c \). That is exactly the statement that \( x \) and \( y \) are parallel. Indeed, \( 0 \) is parallel to every vector, and for \( x \ne 0 \), \( y \) is parallel to \( x \) if and only if \( y = cx \) for some \( c \). Section 9.2 noted this right after defining parallel vectors (@def-parallel-rn). This proves the theorem.
 
 ::: {.uses}
-@prp-dot-product-laws-rn (a), (b), (e) (symmetry, scalars, zero vector); @prp-norm-basic-rn (a)–(c) (length zero, scaling, squares); @def-unit-vector-rn; @prp-vector-space-laws-rn (e), (f) (scalar rules); @fd3:prp-ordered-ring-rules (b), (c), (e) (adding, multiplying, squares); @fd3:prp-absolute-value-ordered-field (b), (d) (products, two-sided bounds); @fd3:def-absolute-value-ordered-field.
+@prp-dot-product-laws-rn (a), (b), (e) (symmetry, scalars, zero vector); @prp-norm-basic-rn (a)–(c) (length zero, scaling, squares); @def-unit-vector-rn; @prp-vector-space-laws-rn (e), (f), (i) (scalar rules, signs); @fd3:prp-ordered-ring-rules (b), (c), (e) (adding, multiplying, squares); @fd3:prp-absolute-value-ordered-field (b), (d) (products, two-sided bounds); @fd3:def-absolute-value-ordered-field.
 :::
 :::
 
@@ -130,7 +130,7 @@ Let \( x \coloneqq (x_1, \dots, x_n) \) and \( y \coloneqq (y_1, \dots, y_n) \).
 :::
 :::
 
-In the example above the inequality is strict, because the two triples are not parallel. This is the form in which the analysis volumes quote the inequality. Exercise C2 below proves it a second way, from Lagrange's identity. For \( n = 2 \) that identity reads \( (ac + bd)^2 + (ad - bc)^2 = (a^2 + b^2)(c^2 + d^2) \). Chapter 3 used it in a second proof for its chapter check, Exercise C1 of Section 3.3 (@exr-triangle-inequality-c1).
+In the example above the inequality is strict, because the two triples are not parallel. Exercise C2 below proves it a second way, from Lagrange's identity. For \( n = 2 \) that identity reads \( (ac + bd)^2 + (ad - bc)^2 = (a^2 + b^2)(c^2 + d^2) \). Chapter 3 mentioned this case as a second route in the solution of its chapter check, Exercise C1 of Section 3.3 (@exr-triangle-inequality-c1).
 
 ## The method: normalize
 
@@ -147,10 +147,10 @@ The proof of @thm-cauchy-schwarz-rn did its work for unit vectors and then scale
 
 **When to use it.** Inequalities between \( \inner{x}{y} \) and products of lengths; statements about directions rather than sizes.
 
-**Common mistakes.** Normalizing the zero vector is impossible: it has no direction, and \( x/\norm{x} \) would divide by \( 0 \). Scaling by a negative factor breaks the method, since \( x \mapsto -x \) changes the sign of \( \inner{x}{y} \) but not of \( \norm{x}\,\norm{y} \). A statement that is not homogeneous cannot be normalized. For example, \( \norm{u + v} \le 2 \) holds for all unit \( u, v \), and yet \( \norm{x + y} \le 2 \) fails for \( x = y = 2e_1 \).
+**Common mistakes.** Normalizing the zero vector is impossible: it has no direction, and \( x/\norm{x} \) would divide by \( 0 \). Scaling by a negative factor breaks the method, since \( x \mapsto -x \) changes the sign of \( \inner{x}{y} \) but not of \( \norm{x}\,\norm{y} \). A statement that is not homogeneous cannot be normalized. For example, \( \norm{u + v} \le 2 \) holds for all unit \( u, v \). By Cauchy–Schwarz, \( \norm{u + v}^2 = 2 + 2\inner{u}{v} \le 2 + 2\norm{u}\,\norm{v} = 4 \), and comparing squares of non-negative numbers gives \( \norm{u + v} \le 2 \). And yet \( \norm{x + y} \le 2 \) fails for \( x = y = 2e_1 \), where \( \norm{x + y} = 4 \).
 :::
 
-The proof of @thm-cauchy-schwarz-rn is the first worked example. It settles the zero case, proves the bound for unit vectors by expanding \( \norm{u \mp v}^2 \), and scales back by multiplying by \( \norm{x}\,\norm{y} \). Here is a second.
+The proof of @thm-cauchy-schwarz-rn is the first worked example. It settles the zero case, proves the bound for unit vectors by expanding \( \norm{u \mp v}^2 \), and scales back by multiplying by \( \norm{x}\,\norm{y} \). Part (b) below is a second.
 
 ::: {#exm-cauchy-schwarz-applications}
 [Two uses of Cauchy–Schwarz]
@@ -167,7 +167,7 @@ The proof of @thm-cauchy-schwarz-rn is the first worked example. It settles the 
 \[
 \inner{p}{x} \le \abs{\inner{p}{x}} \le \norm{p}\,\norm{x} = \sqrt{14} .
 \]
-The value \( \sqrt{14} \) is attained at \( x_0 \coloneqq p/\sqrt{14} \), a unit vector, since \( \inner{p}{x_0} = 14/\sqrt{14} = \sqrt{14} \) (because \( \sqrt{14} \cdot \sqrt{14} = 14 \)). Conversely, suppose \( \inner{p}{x} = \sqrt{14} = \norm{p}\,\norm{x} \). Since \( p \ne 0 \), @thm-cauchy-schwarz-rn (c), with \( p \) in the first place, gives \( x = cp \) with \( c \ge 0 \). Then \( 1 = \norm{x} = c\sqrt{14} \), so \( c = 1/\sqrt{14} \) and \( x = x_0 \). The largest value is \( \sqrt{14} \), attained only at \( (2, 3, -1)/\sqrt{14} \). Scaling back, \( 2x_1 + 3x_2 - x_3 \le \sqrt{14}\,\norm{x} \) for every \( x \in \nR^3 \).
+The value \( \sqrt{14} \) is attained at \( x_0 \coloneqq p/\sqrt{14} \), a unit vector, since \( \inner{p}{x_0} = 14/\sqrt{14} = \sqrt{14} \) (because \( \sqrt{14} \cdot \sqrt{14} = 14 \)). Conversely, suppose \( \inner{p}{x} = \sqrt{14} = \norm{p}\,\norm{x} \). Since \( p \ne 0 \), @thm-cauchy-schwarz-rn (c), with \( p \) in the first place, gives \( x = cp \) with \( c \ge 0 \). Then \( 1 = \norm{x} = c\sqrt{14} \), so \( c = 1/\sqrt{14} \) and \( x = x_0 \). The largest value is \( \sqrt{14} \), attained only at \( (2, 3, -1)/\sqrt{14} \). For \( x = 0 \) both sides of \( \inner{p}{x} \le \sqrt{14}\,\norm{x} \) are \( 0 \). Scaling back the other \( x \), \( 2x_1 + 3x_2 - x_3 \le \sqrt{14}\,\norm{x} \) for every \( x \in \nR^3 \).
 
 ::: {.uses}
 @def-parallel-rn and the remark after it (parallel to \( w \ne 0 \)); @fd3:prp-absolute-value-ordered-field (c) (\( t \le \abs{t} \)).
@@ -216,7 +216,7 @@ d(x, z) = \norm{(x - y) + (y - z)} \le \norm{x - y} + \norm{y - z} = d(x, y) + d
 This proves the theorem.
 
 ::: {.uses}
-@eq-expand-norm-squared; @fd3:prp-absolute-value-ordered-field (c), (d) (\( t \le \abs{t} \), two-sided bounds); @fd3:prp-ordered-ring-rules (b) (adding inequalities); @prp-norm-basic-rn (b) with \( c = -1 \); @thm-complex-triangle-inequality; @def-distance-rn.
+@eq-expand-norm-squared; @fd3:prp-absolute-value-ordered-field (c), (d) (\( t \le \abs{t} \), two-sided bounds); @fd3:prp-ordered-ring-rules (b) (adding inequalities); @prp-norm-basic-rn (b) with \( c = -1 \); @def-distance-rn.
 :::
 :::
 
@@ -238,7 +238,7 @@ Let \( x = (1, -2, 3) \) and \( y = -2x \). Is \( \abs{\inner{x}{y}} = \norm{x}\
 
 ## Sums of many vectors
 
-Adding one vector at a time extends (a) to any finite number of terms.
+Adding one vector at a time extends (a) to any finite number of terms. For instance, in \( \nR^3 \), \( e_1 + e_2 + e_3 = (1, 1, 1) \) has length \( \sqrt 3 \), while the three lengths add up to \( 3 \), and \( \sqrt 3 \le 3 \) because \( 3 \le 9 \).
 
 ::: {#cor-triangle-finite-sums-rn}
 [Triangle Inequality for Finite Sums]
@@ -256,7 +256,7 @@ We use induction on \( m \ge 0 \). The sums are defined by recursion, as in @lem
 \]
 
 ::: {.uses}
-@fd2:thm-induction; @fd3:prp-ordered-ring-rules (b) (adding inequalities).
+@fd2:thm-induction; @prp-norm-basic-rn (a) (\( \norm{0} = 0 \)); @fd3:prp-ordered-ring-rules (b) (adding inequalities).
 :::
 :::
 
@@ -309,7 +309,7 @@ These questions are about the proof of @thm-cauchy-schwarz-rn.
 
 (c) \( \norm{x} = \norm{y} = 5 \), \( u = (\tfrac35, \tfrac45) \), \( v = (\tfrac45, \tfrac35) \), \( \inner{u}{v} = \tfrac{24}{25} \), and \( \norm{u - v}^2 = \tfrac1{25} + \tfrac1{25} = \tfrac{2}{25} = 2 - \tfrac{48}{25} \). Scaling back, \( \inner{x}{y} = 25 \cdot \tfrac{24}{25} = 24 \le 25 \).
 
-(d) The expansion becomes \( \norm{u - v}^2 = \norm{u}^2 - 2\inner{u}{v} + \norm{v}^2 \), not \( 2 - 2\inner{u}{v} \). It only gives \( \inner{u}{v} \le \tfrac12(\norm{u}^2 + \norm{v}^2) \), which exceeds \( \norm{u}\,\norm{v} \) unless \( \norm{u} = \norm{v} \).
+(d) The expansion becomes \( \norm{u - v}^2 = \norm{u}^2 - 2\inner{u}{v} + \norm{v}^2 \), not \( 2 - 2\inner{u}{v} \). It only gives \( \inner{u}{v} \le \tfrac12(\norm{u}^2 + \norm{v}^2) \), which exceeds \( \norm{u}\,\norm{v} \) unless \( \norm{u} = \norm{v} \), since \( \tfrac12(a^2 + b^2) - ab = \tfrac12(a - b)^2 > 0 \) for real \( a \ne b \).
 
 (e) The inequality is homogeneous, so after disposing of zero vectors it is enough to prove \( \abs{\inner{u}{v}} \le 1 \) for unit vectors. That follows from \( \norm{u \mp v}^2 = 2 \mp 2\inner{u}{v} \ge 0 \).
 :::
@@ -355,10 +355,10 @@ Prove that \( \norm{x - y} = \norm{x + y} \) if and only if \( x \perp y \). You
 :::
 
 ::: {.solution}
-The method is to expand the square (@exm-method-expand-the-square). Both lengths are non-negative, so they are equal if and only if their squares are (comparing squares, Section 9.4). Subtracting the two expansions, \( \norm{x + y}^2 - \norm{x - y}^2 = 4\inner{x}{y} \). This is \( 0 \) if and only if \( \inner{x}{y} = 0 \), since \( 4 \ne 0 \) in \( \nR \) (@fd3:lem-field-fraction-rules (d)). By the definition of orthogonal vectors, that holds if and only if \( x \perp y \).
+The method is to expand the square (@exm-method-expand-the-square). Both lengths are non-negative, so they are equal if and only if their squares are (comparing squares, Section 9.4). Subtracting the two expansions gives \( \norm{x + y}^2 - \norm{x - y}^2 = 4\inner{x}{y} \), which is @prp-polarization-rn (a) multiplied by \( 4 \). This is \( 0 \) if and only if \( \inner{x}{y} = 0 \). Indeed, if \( 4\inner{x}{y} = 0 \), then \( 4 = 0 \) or \( \inner{x}{y} = 0 \) (@fd3:lem-field-fraction-rules (d)), and \( 4 \ne 0 \) since \( 4 > 0 \) in the ordered field \( \nR \). By the definition of orthogonal vectors, that holds if and only if \( x \perp y \).
 
 ::: {.uses}
-@def-orthogonal-rn.
+@prp-polarization-rn (a); @def-orthogonal-rn.
 :::
 :::
 
@@ -400,10 +400,10 @@ For each statement about all \( x, y \in \nR^n \) (or all unit vectors \( u, v \
 ::: {.solution}
 (a) Apply @cor-cauchy-schwarz-sums to \( x \) and \( w \coloneqq (1, \dots, 1) \), with \( \sum_k 1^2 = n \). Equality holds if and only if \( x \) is parallel to \( w \ne 0 \), that is, \( x = tw \) for some \( t \): all \( x_k \) are equal.
 
-(b) Let \( p \coloneqq (1, 2, 2) \), so \( \norm{p} = 3 \) and the condition is \( \inner{p}{x} = 9 \). By @thm-cauchy-schwarz-rn (a), \( 9 \le \norm{p}\,\norm{x} = 3\norm{x} \). So \( \norm{x} \ge 3 \), and squaring gives \( \norm{x}^2 \ge 9 \). If \( \norm{x}^2 = 9 \), then \( \norm{x} = 3 \) and \( \inner{p}{x} = 9 = \norm{p}\,\norm{x} \). So \( x = cp \) with \( c \ge 0 \) by @thm-cauchy-schwarz-rn (c), and the condition gives \( 9c = 9 \), so \( x = (1, 2, 2) \). This point satisfies the condition, \( 1 + 4 + 4 = 9 \), and \( \norm{(1, 2, 2)}^2 = 9 \). The smallest value is \( 9 \), attained only at \( (1, 2, 2) \).
+(b) Let \( p \coloneqq (1, 2, 2) \), so \( \norm{p} = 3 \) and the condition is \( \inner{p}{x} = 9 \). By @thm-cauchy-schwarz-rn (a), \( 9 = \inner{p}{x} \le \abs{\inner{p}{x}} \le \norm{p}\,\norm{x} = 3\norm{x} \). So \( \norm{x} \ge 3 \), and squaring gives \( \norm{x}^2 \ge 9 \). If \( \norm{x}^2 = 9 \), then \( \norm{x} = 3 \) and \( \inner{p}{x} = 9 = \norm{p}\,\norm{x} \). Since \( p \ne 0 \), @thm-cauchy-schwarz-rn (c) gives \( x = cp \) with \( c \ge 0 \), and the condition gives \( 9c = 9 \), so \( x = (1, 2, 2) \). This point satisfies the condition, \( 1 + 4 + 4 = 9 \), and \( \norm{(1, 2, 2)}^2 = 9 \). The smallest value is \( 9 \), attained only at \( (1, 2, 2) \).
 
 ::: {.uses}
-@def-parallel-rn and the remark after it (parallel to \( w \ne 0 \)); @fd3:prp-ordered-field-halves (d) (squaring keeps \( \le \)).
+@def-parallel-rn and the remark after it (parallel to \( w \ne 0 \)); @fd3:prp-absolute-value-ordered-field (c) (\( t \le \abs{t} \)); @fd3:prp-ordered-field-halves (d) (squaring keeps \( \le \)).
 :::
 :::
 
@@ -434,12 +434,14 @@ For unit \( u, v \), expand \( \norm{u - v}^2 \) and \( \norm{u + v}^2 \).
 
 **What a complete answer needs.** (10 points)
 - 1: settles \( x = 0 \) or \( y = 0 \).
-- 2: reduces to unit vectors, saying why: the statement is homogeneous and the factor \( \norm{x}\,\norm{y} \) is positive.
+- 2: reduces the general case to one it can bound, saying why the reduction is legitimate; for unit vectors: the statement is homogeneous and the factor \( \norm{x}\,\norm{y} \) is positive.
 - 3: proves \( \abs{\inner{u}{v}} \le 1 \) for unit vectors, by any correct route.
 - 1: scales back to (a).
 - 3: proves the equality case in both directions, zero vectors included.
 
 A proof through Lagrange's identity (C2) scores on the same points. It gets 1 for the zero cases, which are automatic there. It gets 2 + 3 + 1 for proving the identity, reading off \( \inner{x}{y}^2 \le \norm{x}^2\norm{y}^2 \) and taking roots. It gets 3 for "all \( x_j y_k - x_k y_j = 0 \) if and only if parallel".
+
+A proof that normalizes nothing, expanding \( \norm{x - t_0 y}^2 \ge 0 \) with \( t_0 \coloneqq \inner{x}{y}/\norm{y}^2 \), also scores on the same points. It gets 1 for \( y = 0 \), 2 for setting up \( t_0 \) using \( y \ne 0 \), 3 for the inequality on squares, 1 for taking roots, and 3 for the equality case through \( \norm{x - t_0 y} = 0 \).
 
 Slips that lose the step: dividing by \( \norm{x} \) without \( x \ne 0 \); proving only \( \inner{x}{y} \le \norm{x}\,\norm{y} \) and claiming the absolute value; omitting the converse of (b).
 :::
@@ -490,7 +492,7 @@ thm-cauchy-schwarz-rn (proof): from 0 <= 2 - 2t infer t <= 1, from 0 <= 2 + 2t i
 thm-cauchy-schwarz-rn (proof): |t| = r with r >= 0 iff t = r or t = -r | fd3:def-absolute-value-ordered-field, by cases, cited in the Uses line
 thm-cauchy-schwarz-rn (proof): cancelling the non-zero factor ||x|| ||y|| | multiplicative inverse in the field R, fd3:def-commutative-ring-and-field
 thm-cauchy-schwarz-rn (proof): a real s >= 0 with s^2 = 0 is 0 | fd3:prp-ordered-ring-rules (e), cited in the Uses line
-thm-cauchy-schwarz-rn (proof): dot product with 0, scalars out of the dot product, unit vectors, x = ||x|| u, |ab| = |a||b|, -1 <= t <= 1 iff |t| <= 1 | prp-dot-product-laws-rn (a), (b), (e); prp-norm-basic-rn (a)-(c); def-unit-vector-rn; prp-vector-space-laws-rn (e), (f); fd3:prp-absolute-value-ordered-field (b), (d); moved from the prose to the Uses line, still cited
+thm-cauchy-schwarz-rn (proof): dot product with 0, scalars out of the dot product, unit vectors, x = ||x|| u, |ab| = |a||b|, -1 <= t <= 1 iff |t| <= 1, -y = (-1)y and -(cx) = (-c)x | prp-dot-product-laws-rn (a), (b), (e); prp-norm-basic-rn (a)-(c); def-unit-vector-rn; prp-vector-space-laws-rn (e), (f), (i); fd3:prp-absolute-value-ordered-field (b), (d); moved from the prose to the Uses line, still cited
 thm-cauchy-schwarz-rn (proof): for x != 0, y parallel to x iff y = tx; 0 parallel to everything | Section 9.2, the two paragraphs after def-parallel-rn (unlabelled; cited as "Section 9.2 noted this right after defining parallel vectors (@def-parallel-rn)")
 cor-cauchy-schwarz-sums (claim): instance before the statement, 4 + 10 + 18 = 32, 1 + 4 + 9 = 14, 16 + 25 + 36 = 77 | inline arithmetic; verify/ch09/cor-cauchy-schwarz-sums.py
 cor-cauchy-schwarz-sums (proof): the sums are <x,y>, ||x||^2, ||y||^2; squaring non-negative inequalities; |t|^2 = t^2 | def-dot-product-rn, prp-norm-basic-rn (c), fd3:prp-ordered-field-halves (d), fd3:prp-absolute-value-ordered-field (b); cited in the Uses line
@@ -501,7 +503,8 @@ thm-triangle-inequality-rn (proof): expansion, t <= |t|, adding inequalities, ||
 thm-triangle-inequality-rn (proof): comparing squares of non-negative reals (weak and equality forms) | Section 9.4 recall of Section 3.3 (unlabelled)
 thm-triangle-inequality-rn (proof): (b) by transfer of the proof of cor-complex-triangle-variants (a) | cor-complex-triangle-variants, cited; every step written out with its reason
 cor-triangle-finite-sums-rn (proof): sum of vectors by recursion, empty sum 0 | lem-vector-sums-coordinatewise, cited
-cor-triangle-finite-sums-rn (proof): induction; adding inequalities | fd2:thm-induction, fd3:prp-ordered-ring-rules (b); cited in the Uses line
+cor-triangle-finite-sums-rn (claim): instance before the statement, e1 + e2 + e3 = (1,1,1), ||(1,1,1)||^2 = 3 <= 9 = 3^2 | inline arithmetic; verify/ch09/cor-triangle-finite-sums-rn.py
+cor-triangle-finite-sums-rn (proof): induction; ||0|| = 0; adding inequalities | fd2:thm-induction, prp-norm-basic-rn (a), fd3:prp-ordered-ring-rules (b); cited in the Uses line
 cor-norm-sum-bound (claim): instance before the statement, x = (3,4): ||x|| = 5, |3| + |4| = 7, 5 <= 7, 7^2 = 49 <= 50 = 2 * 5^2 | inline arithmetic; verify/ch09/cor-norm-sum-bound.py
 cor-norm-sum-bound (proof): ||x_k e_k|| = |x_k|; |t|^2 = t^2; t <= |t| | prp-norm-basic-rn (b), (e), fd3:prp-absolute-value-ordered-field (b), (c); cited in the Uses line
 cor-norm-sum-bound (proof): <w, w> = n for w = (1, ..., 1), so ||w|| = sqrt n | a sum of n ones is n, by the recursion of fd2:def-sum-product
@@ -509,7 +512,11 @@ cor-cauchy-schwarz-sums (claim): 32^2 = 1024 <= 14 * 77 = 1078 | inline arithmet
 exm-cauchy-schwarz-applications (solution): ||(2, 3, -1)||^2 = 14; 14/sqrt 14 = sqrt 14 | inline arithmetic; verify/ch09/exm-cauchy-schwarz-applications.py
 exr-cauchy-schwarz-and-the-triangle-inequality-b2 (solution): comparing squares (equality form) | Section 9.4 recall of Section 3.3 (unlabelled)
 exr-cauchy-schwarz-and-the-triangle-inequality-b2 (solution): definition of orthogonal | def-orthogonal-rn, cited in the Uses line
-exr-cauchy-schwarz-and-the-triangle-inequality-b4 (solution): parallel to w != 0 iff a multiple of w; squaring keeps <= | remark after def-parallel-rn, fd3:prp-ordered-field-halves (d); cited in the Uses line
+exr-cauchy-schwarz-and-the-triangle-inequality-b2 (solution): ||x+y||^2 - ||x-y||^2 = 4<x,y> | prp-polarization-rn (a) (Section 9.4), cited inline and in the Uses line
+exr-cauchy-schwarz-and-the-triangle-inequality-b2 (solution): 4 > 0, so 4 != 0 | 1 > 0 and adding positives, fd3:prp-ordered-ring-rules; zero-product rule fd3:lem-field-fraction-rules (d), cited inline
+exm-method-normalize (claim): ||u + v|| <= 2 for unit u, v | eq-expand-norm-squared, thm-cauchy-schwarz-rn (a) (earlier on the page), comparing squares, Section 9.4 (unlabelled)
+exr-cauchy-schwarz-and-the-triangle-inequality-a1 (solution): (a^2 + b^2)/2 - ab = (a - b)^2/2 > 0 for a != b | stated inline; ring arithmetic and fd3:prp-ordered-ring-rules (e)
+exr-cauchy-schwarz-and-the-triangle-inequality-b4 (solution): parallel to w != 0 iff a multiple of w; t <= |t|; squaring keeps <= | remark after def-parallel-rn, fd3:prp-absolute-value-ordered-field (c), fd3:prp-ordered-field-halves (d); cited in the Uses line
 exr-cauchy-schwarz-and-the-triangle-inequality-c2 (solution): sums from k = 1 read as sums from 0 for lem-ring-finite-sums, prp-double-sum, prp-sum-order | the reindexing line of the chapter's prerequisite ledger (k = m form of fd2:def-sum-product)
 exr-cauchy-schwarz-and-the-triangle-inequality-c2 (solution): a sum of non-negative terms is >= 0 | prp-sum-order (b) with m = -1 (the empty sum is 0), cited as prp-sum-order (b)
 exr-cauchy-schwarz-and-the-triangle-inequality-c2 (solution): squares are non-negative | fd3:prp-ordered-ring-rules (e), cited in the Uses line

@@ -2,7 +2,7 @@
 
 Section 9.1 made \( \nR^n \) a set of lists of reals. A set alone has no geometry: nothing in it says how to move from one point to another, or what it means to go twice as far in the same direction. Two operations supply this. A **displacement** is added to a point, coordinate by coordinate, and a displacement is **scaled** by stretching every coordinate by the same factor. Both are already familiar in the plane: the sum of @def-complex-numbers adds two points of \( \nC = \nR^2 \) coordinate by coordinate.
 
-This section defines the two operations on \( \nR^n \) and proves their laws. Every law turns out to be a law of \( \nR \), used once in each coordinate. That observation is the section's method, **work coordinatewise**. The method has one trap: a statement such as "\( x \ne 0 \)" is not a statement about every coordinate.
+This section defines the two operations on \( \nR^n \) and proves their laws. Every equation among the laws turns out to be a law of \( \nR \), used once in each coordinate. That observation is the section's method, **work coordinatewise**. The method has one trap: a statement such as "\( x \ne 0 \)" is not a statement about every coordinate.
 
 ## The two operations
 
@@ -31,7 +31,7 @@ In words: the \( k \)-th coordinate of \( x + y \) is \( x_k + y_k \), and the \
 \[
 x + y = (3, 5, 2) , \qquad 2x - y = (2, 0, -2) + (-2, -5, -3) = (0, -5, -5) .
 \]
-The extreme scalar is \( c = 0 \). Then \( 0x = (0 \cdot x_1, \dots, 0 \cdot x_n) = 0 \) for every \( x \), by @fd3:prp-ring-algebra (b), so scaling by \( 0 \) collapses every vector to the origin.
+The extreme scalar is \( c = 0 \). Then \( 0x = (0 \cdot x_1, \dots, 0 \cdot x_n) = 0 \) for every \( x \), by @fd3:prp-ring-algebra (b) and commutativity of multiplication, (F6), so scaling by \( 0 \) collapses every vector to the origin.
 
 **In the plane.** On \( \nR^2 = \nC \) the sum is the sum of complex numbers (@def-complex-numbers). The scalar multiple \( c(a, b) = (ca, cb) \) is the complex product \( (c, 0)(a, b) \). That is, it is the product of \( (a, b) \) with the real number \( c \), read as a complex number (@prp-reals-embed-complex). So nothing new happens for \( n = 2 \); what is new is that every \( n \) works the same way.
 
@@ -49,7 +49,7 @@ Take the law \( c(x + y) = cx + cy \). In \( \nR^2 \), with \( c = 2 \), \( x = 
 | \( x, y \in \nR^n \), \( c \in \nR \) | \( c(x + y) = cx + cy \) |
 | the same; two points are equal when they agree in every place (@def-real-n-space) | \( \bigl(c(x + y)\bigr)_k = (cx + cy)_k \) **for every** \( k \in \{1, \dots, n\} \) |
 | fix \( k \); unwind both sides with @def-vector-operations-rn | \( c(x_k + y_k) = c x_k + c y_k \), an equation in \( \nR \) |
-| what is left: an equation between real numbers | true by the distributive law \( a(b + c) = ab + ac \) of \( \nR \), (F9) |
+| what is left: an equation between real numbers | true by the distributive law \( r(s + t) = rs + rt \) of \( \nR \), (F9) |
 
 The second row is the key step: one equation in \( \nR^n \) became \( n \) equations in \( \nR \), and each of them is a field law.
 :::
@@ -106,23 +106,23 @@ Parts (a)–(i) are equations, so @exm-method-coordinatewise applies directly: e
 Let \( k \in \{1, \dots, n\} \). In (a)–(i) we compute the \( k \)-th coordinate of each side with @def-vector-operations-rn. The two coordinates agree by the law of \( \nR \) named in brackets. Since \( k \) is arbitrary, the two sides agree in every place, so they are equal.
 
 - (a) \( (x_k + y_k) + z_k = x_k + (y_k + z_k) \) [addition is associative, (F2)]. (b) \( x_k + y_k = y_k + x_k \) [addition is commutative, (F1)]. (c) \( x_k + 0 = x_k \) [\( 0 \) is neutral for addition, (F3)].
-- (d) \( (-x)_k = (-1)x_k = -x_k \) [\( (-1)a = -a \), with \( 1 \) neutral for multiplication, (F7)], so \( (x + (-x))_k = x_k + (-x_k) = 0 \) [negatives, (F4)].
+- (d) \( (-x)_k = (-1)x_k = -x_k \) [\( (-1)a = -(1 \cdot a) = -a \), by @fd3:prp-ring-algebra (c) with (F6) and (F7)], so \( (x + (-x))_k = x_k + (-x_k) = 0 \) [negatives, (F4)].
 - (e) \( c(d x_k) = (cd) x_k \) [multiplication is associative, (F5)]. (f) \( 1 \cdot x_k = x_k \) [multiplication is commutative, (F6), and \( 1 \) is neutral, (F7)].
 - (g) \( c(x_k + y_k) = c x_k + c y_k \) [(F9)], as in the table above.
 - (h) \( (c + d)x_k = c x_k + d x_k \) [(F6), (F9)].
-- (i) \( 0 \cdot x_k = 0 \) and \( c \cdot 0 = 0 \) [\( a \cdot 0 = 0 \), with (F6)]. For the last equations, \( (-c)x_k \), \( (-1)(c x_k) \) and \( c\bigl((-1)x_k\bigr) \) are all equal to \( -(c x_k) \) [\( (-1)a = -a \), with (F7)]. These are the \( k \)-th coordinates of \( (-c)x \), \( -(cx) \) and \( c(-x) \).
+- (i) \( 0 \cdot x_k = 0 \) and \( c \cdot 0 = 0 \) [\( a \cdot 0 = 0 \), with (F6)]. For the last equations, \( (-c)x_k \), \( (-1)(c x_k) \) and \( c\bigl((-1)x_k\bigr) \) are all equal to \( -(c x_k) \) [\( (-a)b = a(-b) = -(ab) \), @fd3:prp-ring-algebra (c), and \( (-1)a = -a \) as in (d)]. These are the \( k \)-th coordinates of \( (-c)x \), \( -(cx) \) and \( c(-x) \).
 
 (j) Suppose \( cx = 0 \). If \( x = 0 \), the conclusion holds. Otherwise \( x \ne 0 \), so \( x \) and \( (0, \dots, 0) \) differ in **some** place: there is one index \( k \) with \( x_k \ne 0 \). The \( k \)-th coordinate of \( cx = 0 \) gives \( c x_k = 0 \). Since \( \nR \) has no zero divisors (@fd3:lem-field-fraction-rules (d)), \( c = 0 \) or \( x_k = 0 \), and the second is false. Hence \( c = 0 \). This proves the proposition.
 
 ::: {.uses}
-@def-real-n-space (equal means equal in every place); @fd3:def-commutative-ring-and-field (the field laws); @fd3:prp-ring-algebra (b) and (c) (\( a \cdot 0 = 0 \) and \( (-1)a = -a \)).
+@def-real-n-space (equal means equal in every place); @fd3:def-commutative-ring-and-field (the field laws); @fd3:prp-ring-algebra (b) and (c) (\( a \cdot 0 = 0 \) and \( (-a)b = a(-b) = -(ab) \)).
 :::
 :::
 
 Only the proof of (j) does not use every coordinate. It uses exactly one, the index \( k \) that "\( x \ne 0 \)" provides, and the other coordinates of \( x \) may be zero. This is how a condition that is not "for every \( k \)" is handled: it is first unwound into a statement about one chosen coordinate.
 
 ::: {.remark}
-The proof used only the field laws of \( \nR \), never its order or its completeness. So the same definitions and the same proof work verbatim for \( n \)-tuples over **any** field \( F \) (@def-field), for instance over \( \nC \) or over the field with two elements. The linear-algebra volumes turn the situation around: they take (a)–(h) as the axioms of a vector space, and \( \nR^n \) becomes their first example.
+The proof used only the field laws of \( \nR \), never its order or its completeness. So the same definitions and the same proof work verbatim for \( n \)-tuples over **any** field \( F \) (@def-field), for instance over \( \nC \) or over the field with two elements.
 :::
 
 From now on we compute with vectors as with numbers, expanding brackets and collecting terms. Each such step is one of the laws of @prp-vector-space-laws-rn. For example, \( x + y = x + z \) gives \( y = z \): add \( -x \) to both sides and use (a)–(d).
@@ -152,6 +152,8 @@ Let \( m \in \nN \), let \( v_1, \dots, v_m, w_1, \dots, w_m \in \nR^n \), and l
 
 In words: the \( k \)-th coordinate of a sum of vectors is the sum of their \( k \)-th coordinates, and sums of vectors may be split termwise. Part (a) is the coordinatewise method for sums of any length, and part (b) is its first use.
 
+For \( m \ge 1 \), a sum indexed from \( 1 \) is a sum indexed from \( 0 \) after a shift: \( \sum_{j=1}^{m} a_j = \sum_{j=0}^{m-1} a_{j+1} \) with \( m - 1 \in \nN \), which is the general form of @fd2:def-sum-product with lower index \( 0 \). So every part of @lem-ring-finite-sums, stated for sums from \( 0 \), applies to non-empty sums from \( 1 \).
+
 ::: {.second-reading title="Proof of the lemma"}
 ::: {.idea}
 Part (a) is an induction on the number of terms: the recursion adds one vector at the end, and adding one vector adds one real in each coordinate. Part (b) is then @exm-method-coordinatewise, with (a) supplying the coordinates.
@@ -168,14 +170,12 @@ Part (a) is an induction on the number of terms: the recursion adds one vector a
 \]
 The first equality is the recursion for vector sums, read in coordinate \( k \). The second is the induction hypothesis. The third is the recursion for sums of reals.
 
-(b) Fix \( k \). By (a), the \( k \)-th coordinate of the left side is \( \sum_j \bigl(c_j (v_j)_k + d_j (w_j)_k\bigr) \). By @lem-ring-finite-sums (a), which holds for sums indexed from \( 1 \) as well, this is \( \sum_j c_j (v_j)_k + \sum_j d_j (w_j)_k \). By (a) applied to each sum, that is the \( k \)-th coordinate of the right side. Since \( k \) is arbitrary, the two sides are equal.
+(b) For \( m = 0 \) both sides are the zero vector: the left side is the empty sum, and the right side is \( 0 + 0 = 0 \) by @prp-vector-space-laws-rn (c). Let \( m \ge 1 \), and fix \( k \). By (a), the \( k \)-th coordinate of the left side is \( \sum_j \bigl(c_j (v_j)_k + d_j (w_j)_k\bigr) \). By @lem-ring-finite-sums (a), which holds for non-empty sums indexed from \( 1 \) as well, this is \( \sum_j c_j (v_j)_k + \sum_j d_j (w_j)_k \). By (a) applied to each sum, that is the \( k \)-th coordinate of the right side. Since \( k \) is arbitrary, the two sides are equal.
 
 ::: {.uses}
-@def-vector-operations-rn (coordinates of sums, multiples); @fd2:def-sum-product (recursion for real sums).
+@def-vector-operations-rn (coordinates of sums, multiples); @fd2:def-sum-product (recursion for real sums); @lem-ring-finite-sums (a) (split termwise); @prp-vector-space-laws-rn (c) (\( 0 + 0 = 0 \)); @def-real-n-space (equal in every place).
 :::
 :::
-
-A sum indexed from \( 1 \) is a sum indexed from \( 0 \) after a shift: \( \sum_{j=1}^{m} a_j = \sum_{j=0}^{m-1} a_{j+1} \), which is the general form of @fd2:def-sum-product with lower index \( 0 \). So every part of @lem-ring-finite-sums, stated for sums from \( 0 \), applies to sums from \( 1 \).
 :::
 
 ## The standard vectors
@@ -191,7 +191,7 @@ For \( k \in \{1, \dots, n\} \), the **\( k \)-th standard vector** \( e_k \in \
 \]
 :::
 
-For \( n = 3 \): \( e_1 = (1, 0, 0) \), \( e_2 = (0, 1, 0) \), \( e_3 = (0, 0, 1) \). For \( n = 1 \) there is one standard vector, \( e_1 = 1 \). The linear-algebra volumes call the list \( e_1, \dots, e_n \) the standard basis of \( \nR^n \); here we need only the following fact.
+For \( n = 3 \): \( e_1 = (1, 0, 0) \), \( e_2 = (0, 1, 0) \), \( e_3 = (0, 0, 1) \). For \( n = 1 \) there is one standard vector, \( e_1 = 1 \). We need one fact about them.
 
 ::: {#prp-standard-basis-expansion}
 [Expansion in the Standard Vectors]
@@ -212,7 +212,7 @@ Let \( c_1, \dots, c_n \in \nR \) and \( j \in \{1, \dots, n\} \). By @lem-vecto
 \[
 \Bigl( \sum_{k=1}^{n} c_k e_k \Bigr)_j = \sum_{k=1}^{n} c_k (e_k)_j .
 \]
-For \( k \ne j \) the term is \( c_k \cdot 0 = 0 \), and for \( k = j \) it is \( c_j \cdot 1 = c_j \), since \( 1 \) is neutral for multiplication (F7). A sum with one possibly non-zero term equals that term, by @lem-ring-finite-sums (d) for sums indexed from \( 1 \). So the \( j \)-th coordinate is \( c_j \). Since \( j \) is arbitrary,
+For \( k \ne j \) the term is \( c_k \cdot 0 = 0 \), and for \( k = j \) it is \( c_j \cdot 1 = c_j \), since \( 1 \) is neutral for multiplication (F7). A sum with one possibly non-zero term equals that term, by @lem-ring-finite-sums (d), shifted to sums indexed from \( 1 \) as after @lem-vector-sums-coordinatewise (here \( n \ge 1 \)). So the \( j \)-th coordinate is \( c_j \). Since \( j \) is arbitrary,
 \[
 \sum_{k=1}^{n} c_k e_k = (c_1, \dots, c_n) .
 \]{#eq-standard-expansion}
@@ -264,7 +264,7 @@ Yes: \( (2, 4, -6) = -2 \cdot (-1, -2, 3) \). No: \( (1, 2) \ne 0 \), so by the 
 
 (a) For \( a, b \in \nR^n \), let \( m \coloneqq \tfrac{1}{2}(a + b) \). Show that \( m - a = b - m \), and compute \( m \) for \( a = (1, 4) \), \( b = (5, -2) \).
 
-(b) Four points \( a, b, c, d \) satisfy \( b - a = c - d \) exactly when \( \tfrac{1}{2}(a + c) = \tfrac{1}{2}(b + d) \). Check both conditions for \( a = (0, 0) \), \( b = (3, 1) \), \( c = (4, 3) \), \( d = (1, 2) \).
+(b) For four points \( a, b, c, d \), consider the two conditions \( b - a = c - d \) and \( \tfrac{1}{2}(a + c) = \tfrac{1}{2}(b + d) \). Check both for \( a = (0, 0) \), \( b = (3, 1) \), \( c = (4, 3) \), \( d = (1, 2) \).
 :::
 
 ::: {.solution}
@@ -274,7 +274,7 @@ m_k - a_k = \tfrac{1}{2}(a_k + b_k) - a_k = \tfrac{1}{2}(b_k - a_k) = b_k - \tfr
 \]
 by the field laws of \( \nR \) and \( \tfrac{1}{2} + \tfrac{1}{2} = 1 \). So the displacement from \( a \) to \( m \) equals the displacement from \( m \) to \( b \): \( m \) is the **midpoint** of \( a \) and \( b \). For \( a = (1, 4) \) and \( b = (5, -2) \), \( a + b = (6, 2) \) and \( m = (3, 1) \); indeed \( m - a = (2, -3) = b - m \).
 
-(b) Here \( b - a = (3, 1) \) and \( c - d = (3, 1) \), so the first condition holds. Also \( a + c = (4, 3) = b + d \), so \( \tfrac{1}{2}(a + c) = (2, \tfrac{3}{2}) = \tfrac{1}{2}(b + d) \). In a picture, \( b - a = c - d \) says that the sides from \( a \) to \( b \) and from \( d \) to \( c \) are the same displacement, as in a parallelogram \( abcd \). The second condition says that the diagonals from \( a \) to \( c \) and from \( b \) to \( d \) share their midpoint. The picture only suggests the equivalence; Exercise B2 (b) proves it from the laws.
+(b) Here \( b - a = (3, 1) \) and \( c - d = (3, 1) \), so the first condition holds. Also \( a + c = (4, 3) = b + d \), so \( \tfrac{1}{2}(a + c) = (2, \tfrac{3}{2}) = \tfrac{1}{2}(b + d) \). In a picture, \( b - a = c - d \) says that the sides from \( a \) to \( b \) and from \( d \) to \( c \) are the same displacement, as in a parallelogram \( abcd \). The second condition says that the diagonals from \( a \) to \( c \) and from \( b \) to \( d \) share their midpoint. The picture suggests that the two conditions always hold together. A picture is not a reason; Exercise B2 (b) proves the equivalence from the laws.
 :::
 
 ## Exercises
@@ -284,6 +284,8 @@ by the field laws of \( \nR \) and \( \tfrac{1}{2} + \tfrac{1}{2} = 1 \). So the
 :::: {#exr-vector-operations-a1}
 [A1]
 
+In (b)–(e), \( x, y \in \nR^n \) with \( n \ge 2 \). Decide whether the condition is a condition "for every \( k \)" on the coordinates, and if it is not, say what it asks.
+
 ::: {.enumerate options="label=(\alph*)"}
 1. Compute \( 2(1, 0, -1) - 3(0, 1, 1) + (1, 1, 1) \) and write it in the form \( \sum_k c_k e_k \).
 2. \( x = y \).
@@ -291,8 +293,6 @@ by the field laws of \( \nR \) and \( \tfrac{1}{2} + \tfrac{1}{2} = 1 \). So the
 4. \( x + y = 0 \).
 5. \( x \) is parallel to \( e_1 \).
 :::
-
-In (b)–(e), \( x, y \in \nR^n \) with \( n \ge 2 \). Decide whether the condition is a condition "for every \( k \)" on the coordinates, and if it is not, say what it asks.
 ::::
 
 ::: {.solution}
@@ -304,7 +304,7 @@ In (b)–(e), \( x, y \in \nR^n \) with \( n \ge 2 \). Decide whether the condit
 
 (d) Yes: \( x_k + y_k = 0 \) for every \( k \).
 
-(e) Yes, once rewritten. Since \( e_1 \ne 0 \), the one-scalar test says that \( x \) is parallel to \( e_1 \) if and only if \( x = te_1 \) for some \( t \). That holds if and only if \( x_k = 0 \) for every \( k \ge 2 \): if \( x = te_1 \), then \( x_k = t \cdot 0 = 0 \) for \( k \ge 2 \); conversely, if those coordinates vanish, then \( x = x_1 e_1 \) by @eq-standard-expansion. The original wording, with its "some \( c \)", is not of this kind; the rewritten one is.
+(e) No, as written: since \( e_1 \ne 0 \), the one-scalar test says that \( x \) is parallel to \( e_1 \) if and only if \( x = te_1 \) for **one** \( t \) shared by all coordinates. Because \( e_1 \) has only one non-zero coordinate, this one condition is equivalent to "\( x_k = 0 \) for every \( k \ge 2 \)", which puts no condition on \( x_1 \): if \( x = te_1 \), then \( x_k = t \cdot 0 = 0 \) for \( k \ge 2 \); conversely, if those coordinates vanish, then \( x = x_1 e_1 \) by @eq-standard-expansion.
 :::
 
 ### B. Practice
@@ -328,7 +328,7 @@ Let \( n \ge 2 \), \( x, y, z \in \nR^n \) and \( c, d \in \nR \). Prove or disp
 
 (b) **False.** Take \( c = 0 \), \( x = e_1 \), \( y = e_2 \): then \( cx = 0 = cy \) by @prp-vector-space-laws-rn (i), but \( e_1 \ne e_2 \), as their first coordinates are \( 1 \) and \( 0 \). (The statement is true when \( c \ne 0 \): multiply by \( c^{-1} \).)
 
-(c) **True.** From \( cx = dx \), adding \( -(dx) = (-d)x \) gives \( (c - d)x = 0 \), by (h) and (i) of @prp-vector-space-laws-rn. Since \( x \ne 0 \), (j) gives \( c - d = 0 \), so \( c = d \).
+(c) **True.** From \( cx = dx \), adding \( -(dx) = (-d)x \) gives \( (c - d)x = 0 \), by (d), (h) and (i) of @prp-vector-space-laws-rn. Since \( x \ne 0 \), (j) gives \( c - d = 0 \), so \( c = d \).
 
 (d) **False.** Take \( x = e_1 \), \( y = 0 \), \( z = e_2 \). The zero vector is parallel to every vector, so the hypotheses hold. But \( e_2 = te_1 \) fails for every \( t \) (second coordinates \( 1 \ne t \cdot 0 \)), so \( e_2 \) is not parallel to \( e_1 \), by the one-scalar test, since \( e_1 \ne 0 \). The counterexample needs the zero vector: for non-zero \( y \), the one-scalar test gives \( x = sy \) and \( z = ty \), and then \( x \) and \( z \) are parallel (if \( t \ne 0 \), \( x = (st^{-1})z \); if \( t = 0 \), \( z = 0 = 0x \)). In \( \nR^1 \) the statement is true, since any two reals are parallel; that is why \( n \ge 2 \) is assumed.
 
@@ -340,7 +340,7 @@ Let \( n \ge 2 \), \( x, y, z \in \nR^n \) and \( c, d \in \nR \). Prove or disp
 
 ::: {.enumerate options="label=(\alph*)"}
 1. Find every \( t \in \nR \) for which \( (1, t, 2) \) is parallel to \( (2, 6, 4) \).
-2. Prove part (b) of @exm-midpoints-and-parallelograms for all \( a, b, c, d \in \nR^n \): \( b - a = c - d \) if and only if \( \tfrac{1}{2}(a + c) = \tfrac{1}{2}(b + d) \). Name the laws of @prp-vector-space-laws-rn you use.
+2. Prove that the two conditions of @exm-midpoints-and-parallelograms (b) agree for all \( a, b, c, d \in \nR^n \): \( b - a = c - d \) if and only if \( \tfrac{1}{2}(a + c) = \tfrac{1}{2}(b + d) \). Name the laws of @prp-vector-space-laws-rn you use.
 :::
 ::::
 
@@ -392,6 +392,8 @@ by (f), (e) and (i) of @prp-vector-space-laws-rn. Then \( x = cy \) with \( c = 
 - 2: \( (\Leftarrow) \) by contrapositive (or contradiction), producing \( (s, t) \ne (0, 0) \) in **both** clauses of the definition.
 - 1: concludes the equivalence.
 
+A contrapositive route for \( (\Rightarrow) \) earns the same 5 points: 3 for the case \( s \ne 0 \), writing \( x \) as a multiple of \( y \); 2 for the case \( s = 0 \), \( t \ne 0 \), deducing \( y = 0 \) from \( ty = 0 \) by (j) and noting that \( 0 \) is parallel to \( x \).
+
 **Slips that lose the step** (0 for the step):
 
 - Dividing by \( s \) without checking that \( s \ne 0 \).
@@ -404,14 +406,15 @@ def-vector-operations-rn (claim): n-tuples, equality in every place; n = 1 read 
 def-vector-operations-rn (example): (1,0,-1) + (2,5,3) = (3,5,2); 2x - y = (0,-5,-5) | numeral arithmetic in R; verify/ch09/def-vector-operations-rn.py
 prp-vector-space-laws-rn (example): instance in the scratch work, 2((1,-3)+(4,5)) = (10,4) = (2,-6) + (8,10) | numeral arithmetic; verify/ch09/def-vector-operations-rn.py
 lem-vector-sums-coordinatewise (example): (1,2) + (0,3) + (4,-1) = (5,4) | numeral arithmetic; verify/ch09/def-vector-operations-rn.py
-prp-vector-space-laws-rn (proof): field laws (F1)-(F9), fd3:prp-ring-algebra (b), (c), def-real-n-space | Uses line of the proof (moved from prose)
-lem-vector-sums-coordinatewise (proof): def-vector-operations-rn, fd2:def-sum-product (recursion) | Uses line of the proof (moved from prose)
+prp-vector-space-laws-rn (proof): field laws (F1)-(F9), fd3:prp-ring-algebra (b), (c) ((-a)b = a(-b) = -(ab)), def-real-n-space | Uses line of the proof (moved from prose)
+lem-vector-sums-coordinatewise (proof): def-vector-operations-rn, fd2:def-sum-product (recursion), lem-ring-finite-sums (a) (m >= 1), prp-vector-space-laws-rn (c) (case m = 0), def-real-n-space | Uses line of the proof (moved from prose)
 prp-standard-basis-expansion (proof): def-vector-operations-rn, fd3:prp-ring-algebra (b), def-real-n-space | Uses line of the proof (moved from prose)
-def-vector-operations-rn (claim): a_k + (b_k + (-a_k)) = b_k | field laws of R (fd3:def-commutative-ring-and-field), (F2), (F4), (F3)
-prp-vector-space-laws-rn (proof): (-1)a = -a in R | fd3:prp-ring-algebra (c) with (F7) (cited)
+def-vector-operations-rn (claim): a_k + (b_k + (-a_k)) = b_k | field laws of R (fd3:def-commutative-ring-and-field), (F1), (F2), (F4), (F3)
+def-vector-operations-rn (claim): 0x = 0 | fd3:prp-ring-algebra (b) with (F6) (cited)
+prp-vector-space-laws-rn (proof): (-1)a = -a and (-a)b = a(-b) = -(ab) in R | fd3:prp-ring-algebra (c) with (F6), (F7) (cited)
 exm-method-coordinatewise (claim): x + y = x + z gives y = z (closing paragraph after the remark) | prp-vector-space-laws-rn (a)-(d) (cited)
 lem-vector-sums-coordinatewise (claim): finitely many vectors v_1..v_m fed to the recursion theorem (which takes a sequence) | finite-lists convention, as in lem-ring-finite-sums's "finite-lists remark"
-lem-vector-sums-coordinatewise (proof): Σ_{j=1}^m a_j = Σ_{j=0}^{m-1} a_{j+1}, so lem-ring-finite-sums (from 0) applies to sums from 1; Ch4's sum from 0 agrees with fd2's def-sum-product at lower index 0 | fd2:def-sum-product (general form, cited in the fold); ledgered re-indexing line of the blueprint
+lem-vector-sums-coordinatewise (claim): for m >= 1, Σ_{j=1}^m a_j = Σ_{j=0}^{m-1} a_{j+1}, so lem-ring-finite-sums (from 0) applies to non-empty sums from 1 (main line, after the lemma); Chapter 1's (lem-ring-finite-sums, F4.6 §01) sum from 0 agrees with fd2's def-sum-product at lower index 0 | fd2:def-sum-product (general form, cited on the main line); ledgered re-indexing line of the blueprint
 prp-standard-basis-expansion (proof): lem-ring-finite-sums (d) applied to the re-indexed sum (terms extended by 0 beyond n) | lem-ring-finite-sums (d) (cited), re-indexing line above
 def-parallel-rn (claim): the one-scalar test (form for a non-zero x) | proved inline
 exm-midpoints-and-parallelograms (solution): 1/2 + 1/2 = 1; m = (3,1); midpoints (2, 3/2) | field laws of R (fd3:def-commutative-ring-and-field); verify/ch09/exm-midpoints-and-parallelograms.py
