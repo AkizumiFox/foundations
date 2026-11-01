@@ -22,4 +22,6 @@ for eps in [2, 1, 0.1, 0.01]:
     for f in [1.0001, 2, 10]:
         x = 4 / eps ** 2 * f
         assert log(x) < 2 * x ** 0.5 <= eps * x * (1 + 1e-12)
+# instance before the proposition: exp 5 >= 6, so exp 10 = (exp 5)^2 >= 36; (E2) alone gives 11
+assert 6 ** 2 == 36 and 1 + 10 == 11 and exp(10) >= 36
 print("ok")

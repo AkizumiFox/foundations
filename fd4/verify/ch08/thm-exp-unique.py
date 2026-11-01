@@ -22,4 +22,7 @@ for x in xs:
         assert float(lo) >= E - float(x * x + 1) * E / n - 1e-9 * E
 # failing case of A1 (d): x = -3, n = 2
 assert (1 + Fr(-3, 2)) ** 2 == Fr(1, 4) and math.exp(-3) < 0.25
+# instance before the theorem: x = 1, n = 2, 3, 4
+assert [(1 + Fr(1, n)) ** n for n in (2, 3, 4)] == [Fr(9, 4), Fr(64, 27), Fr(625, 256)]
+assert round(64 / 27, 3) == 2.370 and round(625 / 256, 3) == 2.441 and 9 / 4 == 2.25
 print("ok")

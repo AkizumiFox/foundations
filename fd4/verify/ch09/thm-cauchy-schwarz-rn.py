@@ -26,4 +26,8 @@ x, y = (1, 2, 2), (2, 0, 1)
 assert dot(x, y) == QUOTED["qc_dot"] and n2(x) == QUOTED["qc_nx2"] and n2(y) == QUOTED["qc_ny2"]
 assert (dot(x, y) ** 2, n2(x) * n2(y)) == QUOTED["qc_sq"]
 assert parallel(x, y) == QUOTED["qc_parallel"]
+# instance before the statement: (3,4), (4,3): 24 vs 25; y = 2x = (6,8): 50 = 5*10
+x, y = (3, 4), (4, 3)
+assert dot(x, y) == 24 == 12 + 12 and n2(x) == 25 == n2(y)
+assert sc(2, x) == (6, 8) and dot(x, (6, 8)) == 50 == 18 + 32 and n2((6, 8)) == 100 and 5 * 10 == 50
 print("ok")

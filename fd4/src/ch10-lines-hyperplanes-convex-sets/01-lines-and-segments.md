@@ -56,15 +56,19 @@ For \( (\Rightarrow) \), two points of the second line, \( p' \) and \( p' + v' 
 ::: {.proof}
 \( (\Leftarrow) \) Let \( p' = p + sv \) and \( v' = \lambda v \) with \( \lambda \ne 0 \). For every \( t \in \nR \),
 \[
-p' + tv' = p + (s + t\lambda) v \in p + \nR v ,
+p' + tv' = p + (s + t\lambda) v \in p + \nR v .
 \]
-by @prp-vector-space-laws-rn (e), (h). Conversely, for every \( t \),
+Conversely, for every \( t \),
 \[
 p + tv = p' + \frac{t - s}{\lambda} \, v' \in p' + \nR v' ,
 \]
 since the right side is \( p + sv + (t - s)v \); the division is allowed because \( \lambda \ne 0 \). The two inclusions give equality.
 
-\( (\Rightarrow) \) The points \( p' \) and \( p' + v' \) (parameters \( 0 \) and \( 1 \)) lie on \( p' + \nR v' = p + \nR v \). So \( p' = p + sv \) and \( p' + v' = p + uv \) for some \( s, u \in \nR \); in particular \( p' \in p + \nR v \). Subtracting, \( v' = (u - s)v \). If \( u - s \) were \( 0 \), then \( v' = 0 \) by @prp-vector-space-laws-rn (i), against the hypothesis. So \( \lambda \coloneqq u - s \) is non-zero, as claimed.
+\( (\Rightarrow) \) The points \( p' \) and \( p' + v' \) (parameters \( 0 \) and \( 1 \)) lie on \( p' + \nR v' = p + \nR v \). So \( p' = p + sv \) and \( p' + v' = p + uv \) for some \( s, u \in \nR \); in particular \( p' \in p + \nR v \). Subtracting, \( v' = (u - s)v \). If \( u - s \) were \( 0 \), then \( v' = 0v = 0 \), against the hypothesis \( v' \ne 0 \). So \( \lambda \coloneqq u - s \) is non-zero, as claimed.
+
+::: {.uses}
+@prp-vector-space-laws-rn (e), (h) (regrouping multiples), (i) (\( 0v = 0 \)).
+:::
 :::
 
 The direction of a line is fixed only up to a non-zero factor, and the base point can be any of its points. Through two different points there is exactly one line.
@@ -77,6 +81,10 @@ Let \( p, q \in \nR^n \) with \( p \ne q \). Then \( p + \nR(q - p) \) is a line
 
 ::: {.proof}
 Since \( p \ne q \), the direction \( q - p \) is non-zero, so \( p + \nR(q - p) \) is a line; its points with parameters \( 0 \) and \( 1 \) are \( p \) and \( q \). Let \( r + \nR v \) be any line containing \( p \) and \( q \), say \( p = r + sv \) and \( q = r + uv \). Then \( q - p = (u - s)v \), and \( u \ne s \) because \( q \ne p \). So \( p \in r + \nR v \) and \( q - p = \lambda v \) with \( \lambda \coloneqq u - s \ne 0 \), and @prp-line-parametrizations gives \( r + \nR v = p + \nR(q - p) \).
+
+::: {.uses}
+@prp-vector-space-laws-rn (vector algebra).
+:::
 :::
 
 ::: {#def-collinear}
@@ -110,13 +118,13 @@ Do \( L_1 \) and \( L_2 \) meet? Do \( L_1 \) and \( L_3 \)?
 
 A common point of \( L_1 \) and \( L_2 \) is a point that has **some** parameter on \( L_1 \) and **some** parameter on \( L_2 \). Nothing says the two parameters are equal: the point with parameter \( 1 \) on one line may have parameter \( 5 \) on the other. So we need two letters, \( s \) for \( L_1 \) and \( t \) for \( L_2 \).
 
-| Givens | Goal |
+| We know | We want |
 |---|---|
 | \( x \in L_1 \): \( x = (1 + s, s, 1) \) for some \( s \) | is there such an \( x \)? |
 | \( x \in L_2 \): \( x = (t, 2, t) \) for some \( t \) | find \( s, t \) with \( (1 + s, s, 1) = (t, 2, t) \) |
 | equal triples: one equation per coordinate | \( 1 + s = t \), \( s = 2 \), \( 1 = t \): solve, then check all three |
 
-The gap is closed by solving two of the equations and testing the third.
+We solve two of the equations and test the third.
 :::
 
 ::: {.solution}
@@ -133,16 +141,16 @@ The points of \( L_3 \) are \( (2, 1 + u, 1 + u) \). Equality with \( (1 + s, s,
 The third equation gives \( u = 0 \), the second then gives \( s = 1 \), and the first holds: \( 1 + 1 = 2 \). So \( L_1 \) and \( L_3 \) meet, at \( (1 + 1, 1, 1) = (2, 1, 1) \), the base point of \( L_3 \).
 :::
 
-The pair \( L_1, L_2 \) is the non-example to keep in mind: two lines can fail to meet although their directions are not multiples of each other, which Exercise B2 rules out in the plane. The move used twice in the example has a name.
+Keep the pair \( L_1, L_2 \) in mind. Two lines in space can fail to meet although their directions are not multiples of each other. Exercise B2 shows that this cannot happen in the plane. The method used twice in the example is worth stating on its own.
 
 ::: {#exm-method-parametrize}
 [Method: parametrize and solve]
 
-**Template.** Give each line or segment its own parameter, with a different letter for each. Write "the point lies on both" as one equation per coordinate. Solve some of the equations, then check **every** equation with the values found; for a segment, also check that the parameter lies in \( [0, 1] \).
+**How it goes.** Give each line or segment its own parameter, with a different letter for each. Write "the point lies on both" as one equation per coordinate. Solve some of the equations, then check **every** equation with the values found. For a segment, also check that the parameter lies in \( [0, 1] \).
 
-**When to use it.** Deciding whether a point lies on a line, a segment or a ray; finding where two lines meet, or showing that they do not; later, where a line meets a sphere or a hyperplane.
+**When to use it.** Deciding whether a point lies on a line, a segment or a ray. Finding where two lines meet, or showing that they do not. Later, finding where a line meets a sphere or a hyperplane.
 
-**The usual failure.** Using one letter for both parameters, which looks for a point reached "at the same time" on both lines and misses most meeting points; solving two equations and forgetting to test the rest.
+**Common mistakes.** Using one letter for both parameters looks only for a point reached "at the same time" on both lines, and so misses most meeting points. Solving two equations and forgetting to test the rest can produce a meeting point that does not exist.
 :::
 
 ## Segments
@@ -161,9 +169,9 @@ Let \( p, q \in \nR^n \). The **segment** from \( p \) to \( q \) is
 Its **midpoint** is \( \frac12 (p + q) \), the point with \( t = \frac12 \).
 :::
 
-Three remarks. First, \( (1 - t)p + tq = p + t(q - p) \), so for \( p \ne q \) the segment is the part of the line \( p + \nR(q - p) \) with parameters in \( [0, 1] \). Second, \( [p, q] = [q, p] \): the point with \( t \) in the first is the point with \( 1 - t \) in the second, and \( t \in [0, 1] \) if and only if \( 1 - t \in [0, 1] \). Third, \( [p, p] = \{p\} \), since \( (1 - t)p + tp = p \); this degenerate segment is allowed, and it is not a line. The midpoint is the point of Chapter 9 (@exm-midpoints-and-parallelograms), equally displaced from both ends.
+Three remarks. First, \( (1 - t)p + tq = p + t(q - p) \), so for \( p \ne q \) the segment is the part of the line \( p + \nR(q - p) \) with parameters in \( [0, 1] \). Second, \( [p, q] = [q, p] \): the point with \( t \) in the first is the point with \( 1 - t \) in the second, and \( t \in [0, 1] \) if and only if \( 1 - t \in [0, 1] \). Third, \( [p, p] = \{p\} \), since \( (1 - t)p + tp = p \). This one-point segment is allowed, and it is not a line. The midpoint is the point of Chapter 9 (@exm-midpoints-and-parallelograms), equally displaced from both ends.
 
-**Segments and intervals.** The bracket \( [p, q] \) also names a closed interval of \( \nR \). For \( n = 1 \) the two readings agree when \( p \le q \): every \( (1 - t)p + tq = p + t(q - p) \) with \( t \in [0, 1] \) lies between \( p \) and \( q \), and for \( p < q \) every \( y \) with \( p \le y \le q \) has this form, with \( t \coloneqq (y - p)/(q - p) \). For \( p > q \), the segment \( [p, q] \) is the interval \( [q, p] \), while the interval \( [p, q] \) is empty. In this chapter \( [p, q] \) is a segment whenever \( p \) and \( q \) have been declared as points of \( \nR^n \).
+**Segments and intervals.** The bracket \( [p, q] \) also names a closed interval of \( \nR \). For \( n = 1 \) the two readings agree when \( p \le q \). Every \( (1 - t)p + tq = p + t(q - p) \) with \( t \in [0, 1] \) lies between \( p \) and \( q \). For \( p < q \), every \( y \) with \( p \le y \le q \) has this form, with \( t \coloneqq (y - p)/(q - p) \). For \( p > q \), the segment \( [p, q] \) is the interval \( [q, p] \), while the interval \( [p, q] \) is empty. In this chapter \( [p, q] \) is a segment whenever \( p \) and \( q \) have been declared as points of \( \nR^n \).
 
 A segment contains, with any two of its points, the segment between them. This is the first instance of the property that Section 10.3 names.
 
@@ -178,11 +186,15 @@ Write \( x \) and \( y \) with their parameters on \( [p, q] \). A point of \( [
 :::
 
 ::: {.proof}
-Let \( x = p + s(q - p) \) and \( y = p + u(q - p) \) with \( s, u \in [0, 1] \), and let \( t \in [0, 1] \). By @prp-vector-space-laws-rn,
+Let \( x = p + s(q - p) \) and \( y = p + u(q - p) \) with \( s, u \in [0, 1] \), and let \( t \in [0, 1] \). Then
 \[
 (1 - t)x + ty = p + \bigl( (1 - t)s + tu \bigr)(q - p) .
 \]
-The numbers \( 1 - t \), \( t \), \( s \), \( u \) are all \( \ge 0 \), and \( s, u \le 1 \). By @fd3:prp-ordered-field-halves (d), \( 0 \le (1 - t)s \le (1 - t) \cdot 1 \) and \( 0 \le tu \le t \cdot 1 \). Adding (@fd3:prp-ordered-ring-rules (b)) gives \( 0 \le (1 - t)s + tu \le (1 - t) + t = 1 \). So \( (1 - t)x + ty \in [p, q] \).
+The numbers \( 1 - t \), \( t \), \( s \), \( u \) are all \( \ge 0 \), and \( s, u \le 1 \). Multiplying \( 0 \le s \le 1 \) by \( 1 - t \ge 0 \) keeps both inequalities, so \( 0 \le (1 - t)s \le (1 - t) \cdot 1 \). In the same way \( 0 \le tu \le t \cdot 1 \). Adding the two gives \( 0 \le (1 - t)s + tu \le (1 - t) + t = 1 \). So \( (1 - t)x + ty \in [p, q] \).
+
+::: {.uses}
+@prp-vector-space-laws-rn (the displayed identity); @fd3:prp-ordered-field-halves (d) (multiply by a number \( \ge 0 \)); @fd3:prp-ordered-ring-rules (b) (add inequalities).
+:::
 :::
 
 ::: {.check}
@@ -195,7 +207,7 @@ No. A point of the segment is \( (1, -1, 2) + t(2, 1, -2) \) with \( t \in [0, 1
 
 ## Between by distances
 
-For any three points the triangle inequality gives \( \norm{p - q} \le \norm{p - x} + \norm{x - q} \): the detour through \( x \) is never shorter. A picture suggests that the detour costs nothing exactly when \( x \) lies on the segment \( [p, q] \). Chapter 9 already knows when the triangle inequality is an equality: \( \norm{u + w} = \norm{u} + \norm{w} \) holds if and only if \( u = 0 \) or \( w = cu \) for some real \( c \ge 0 \) (@thm-triangle-inequality-rn (a)). That is all we need.
+For any three points the triangle inequality gives \( \norm{p - q} \le \norm{p - x} + \norm{x - q} \): the detour through \( x \) is never shorter. A picture suggests that the detour costs nothing exactly when \( x \) lies on the segment \( [p, q] \). Chapter 9 found exactly when the triangle inequality is an equality: \( \norm{u + w} = \norm{u} + \norm{w} \) holds if and only if \( u = 0 \) or \( w = cu \) for some real \( c \ge 0 \) (@thm-triangle-inequality-rn (a)). That is all we need.
 
 ::: {#thm-betweenness}
 [Points Between Two Points]
@@ -215,28 +227,32 @@ Moreover, if \( x = (1 - t)p + tq \) with \( t \in [0, 1] \), then
 
 The direction \( (\Rightarrow) \) is a computation: the two pieces of the segment are multiples of \( q - p \) by \( t \) and \( 1 - t \). For \( (\Leftarrow) \) we have an equality and want a parameter. Name the two displacements, \( u \coloneqq x - p \) and \( w \coloneqq q - x \), so that \( u + w = q - p \), and plan with a table.
 
-| Givens | Goal |
+| We know | We want |
 |---|---|
 | \( \norm{p - x} + \norm{x - q} = \norm{p - q} \) | \( x = p + t(q - p) \) for some \( t \in [0, 1] \) |
 | \( \norm{u} + \norm{w} = \norm{u + w} \), as \( \norm{-v} = \norm{v} \) | the same |
 | \( u = 0 \), **or** \( w = cu \) with \( c \ge 0 \) (Chapter 9) | case \( u = 0 \): \( x = p \), \( t = 0 \) |
 | \( w = cu \), so \( q - p = (1 + c)u \) | \( u = \frac{1}{1 + c}(q - p) \): \( t = \frac{1}{1 + c} \in (0, 1] \) |
 
-The third row is the equality case of the triangle inequality; it turns one equation between numbers into a relation between vectors, and the rest is solving for \( u \).
+The third row is the equality case of the triangle inequality. It turns one equation between numbers into a relation between vectors. The rest is solving for \( u \).
 :::
 
 ::: {.proof}
-\( (\Rightarrow) \) and the moreover clause. Let \( x = (1 - t)p + tq \) with \( t \in [0, 1] \). Then \( x - p = t(q - p) \) and \( q - x = (1 - t)(q - p) \), by @prp-vector-space-laws-rn. Since \( t \ge 0 \) and \( 1 - t \ge 0 \), @prp-norm-basic-rn (b) gives
+\( (\Rightarrow) \) and the moreover clause. Let \( x = (1 - t)p + tq \) with \( t \in [0, 1] \). Then \( x - p = t(q - p) \) and \( q - x = (1 - t)(q - p) \). Since \( t \ge 0 \) and \( 1 - t \ge 0 \), the rule \( \norm{cv} = \abs{c} \, \norm{v} \) of @prp-norm-basic-rn (b) gives
 \[
-\norm{p - x} = \norm{x - p} = t \norm{q - p} , \qquad \norm{x - q} = (1 - t) \norm{q - p} ,
+\norm{p - x} = \norm{x - p} = t \norm{q - p} , \qquad \norm{x - q} = (1 - t) \norm{q - p} .
 \]
-where \( \norm{p - x} = \norm{x - p} \) and \( \norm{q - x} = \norm{x - q} \) are @prp-norm-basic-rn (b) with \( c = -1 \). Also \( \norm{q - p} = \norm{p - q} \). This is the moreover clause, and adding the two equations gives \( \norm{p - x} + \norm{x - q} = (t + 1 - t) \norm{p - q} = \norm{p - q} \).
+Here \( \norm{p - x} = \norm{x - p} \) and \( \norm{q - x} = \norm{x - q} \) are the same rule with \( c = -1 \). Also \( \norm{q - p} = \norm{p - q} \). This is the moreover clause, and adding the two equations gives \( \norm{p - x} + \norm{x - q} = (t + 1 - t) \norm{p - q} = \norm{p - q} \).
 
-\( (\Leftarrow) \) Let \( u \coloneqq x - p \) and \( w \coloneqq q - x \), so that \( u + w = q - p \). By @prp-norm-basic-rn (b) with \( c = -1 \), the hypothesis reads \( \norm{u} + \norm{w} = \norm{u + w} \). By @thm-triangle-inequality-rn (a), \( u = 0 \) or \( w = cu \) for some real \( c \ge 0 \).
+\( (\Leftarrow) \) Let \( u \coloneqq x - p \) and \( w \coloneqq q - x \), so that \( u + w = q - p \). Since \( \norm{-v} = \norm{v} \) for every \( v \), the hypothesis reads \( \norm{u} + \norm{w} = \norm{u + w} \). By @thm-triangle-inequality-rn (a), \( u = 0 \) or \( w = cu \) for some real \( c \ge 0 \).
 
 *Case \( u = 0 \).* Then \( x = p = (1 - 0)p + 0q \in [p, q] \).
 
-*Case \( w = cu \) with \( c \ge 0 \).* Then \( q - p = u + cu = (1 + c)u \). Since \( 1 + c \ge 1 > 0 \), the number \( t \coloneqq 1/(1 + c) \) exists and \( t > 0 \); and \( t \le 1 \) by @fd3:prp-ordered-field-halves (c), applied to \( 1 \le 1 + c \). Multiplying by \( t \) gives \( u = t(q - p) \), so \( x = p + u = p + t(q - p) = (1 - t)p + tq \) with \( t \in [0, 1] \). This proves the theorem.
+*Case \( w = cu \) with \( c \ge 0 \).* Then \( q - p = u + cu = (1 + c)u \). Since \( 1 + c \ge 1 > 0 \), the number \( t \coloneqq 1/(1 + c) \) exists and \( t > 0 \). Taking reciprocals of the positive numbers in \( 1 \le 1 + c \) reverses the inequality, so \( t \le 1 \). Multiplying by \( t \) gives \( u = t(q - p) \). So \( x = p + u = p + t(q - p) = (1 - t)p + tq \) with \( t \in [0, 1] \). This proves the theorem.
+
+::: {.uses}
+@prp-vector-space-laws-rn (vector algebra); @prp-norm-basic-rn (b) (\( \norm{cv} = \abs{c} \, \norm{v} \)); @fd3:prp-ordered-field-halves (c) (reciprocals reverse \( \le \)).
+:::
 :::
 
 Where is \( c \ge 0 \) used? It makes \( 1 + c \) positive, so that \( t \) exists and lies in \( [0, 1] \). A negative multiplier would be a point of the line outside the segment, and the equality case rules it out.
@@ -246,11 +262,11 @@ The right side of the theorem mentions only distances, no sums of vectors and no
 ::: {#exm-method-equality-case}
 [Method: use the equality case]
 
-**Template.** A known inequality \( A \le B \) is given, or proved, to hold with \( A = B \). Recall its **exact** equality condition, typically "one vector is a non-negative multiple of the other, or is zero". Write that condition with a named multiplier, and solve for what you want, keeping every case of the condition.
+**How it goes.** A known inequality \( A \le B \) is given, or proved, to hold with \( A = B \). Recall its **exact** equality condition. Typically it reads "one vector is a non-negative multiple of the other, or is zero". Write that condition with a named multiplier. Then solve for what you want, keeping every case of the condition.
 
-**When to use it.** A sum of distances equals a distance; Cauchy–Schwarz is sharp; a question asks for all extreme cases of an inequality.
+**When to use it.** A sum of distances equals a distance. Cauchy–Schwarz holds with equality. A question asks for all extreme cases of an inequality.
 
-**The usual failure.** Dropping the sign condition: \( c \ge 0 \) is exactly what separates \( [p, q] \) from the rest of the line through \( p \) and \( q \). Forgetting the case \( u = 0 \), where no multiplier exists.
+**Common mistakes.** Dropping the sign condition loses the point: \( c \ge 0 \) is exactly what separates \( [p, q] \) from the rest of the line through \( p \) and \( q \). Forgetting the case \( u = 0 \) leaves a gap, because in that case no multiplier exists.
 :::
 
 The moreover clause of the theorem also tells us where on the segment a point sits: its distance from \( p \) fixes it.
@@ -266,9 +282,9 @@ if \( p = q \), it is \( p \).
 :::
 
 ::: {.proof}
-Let \( p \ne q \), so \( \norm{p - q} > 0 \) (@prp-norm-basic-rn (a)), and put \( t \coloneqq s/\norm{p - q} \). From \( 0 \le s \le s + r = \norm{p - q} \), dividing by the positive number \( \norm{p - q} \) gives \( 0 \le t \le 1 \). The point \( x \coloneqq p + t(q - p) = (1 - t)p + tq \) therefore lies on \( [p, q] \), and by the moreover clause of @thm-betweenness, \( \norm{p - x} = t\norm{p - q} = s \) and \( \norm{x - q} = (1 - t)\norm{p - q} = \norm{p - q} - s = r \).
+Let \( p \ne q \), so \( \norm{p - q} > 0 \) (@prp-norm-basic-rn (a)), and put \( t \coloneqq s/\norm{p - q} \). From \( 0 \le s \le s + r = \norm{p - q} \), dividing by the positive number \( \norm{p - q} \) gives \( 0 \le t \le 1 \). So the point \( x \coloneqq p + t(q - p) = (1 - t)p + tq \) lies on \( [p, q] \). By the moreover clause of @thm-betweenness, \( \norm{p - x} = t\norm{p - q} = s \) and \( \norm{x - q} = (1 - t)\norm{p - q} = \norm{p - q} - s = r \).
 
-Now let \( y \) be any point with \( \norm{p - y} = s \) and \( \norm{y - q} = r \). Then \( \norm{p - y} + \norm{y - q} = \norm{p - q} \), so \( y \in [p, q] \) by @thm-betweenness, say \( y = (1 - t')p + t'q \) with \( t' \in [0, 1] \). The moreover clause gives \( s = t' \norm{p - q} \), so \( t' = t \) and \( y = x \). The case \( p = q \) is in the fold below.
+Now let \( y \) be any point with \( \norm{p - y} = s \) and \( \norm{y - q} = r \). Then \( \norm{p - y} + \norm{y - q} = \norm{p - q} \), so \( y \in [p, q] \) by @thm-betweenness, say \( y = (1 - t')p + t'q \) with \( t' \in [0, 1] \). The moreover clause gives \( s = t' \norm{p - q} \), so \( t' = t \) and \( y = x \). The case \( p = q \), where the formula would divide by \( 0 \), is treated next.
 :::
 
 ::: {.second-reading title="The case p = q"}
@@ -283,7 +299,7 @@ Show that the midpoint of \( [p, q] \) is the only point of \( \nR^n \) at dista
 Take \( s = r = \frac12 \norm{p - q} \). Both are \( \ge 0 \) and \( s + r = \norm{p - q} \), so by @cor-point-pinned-on-segment exactly one point has these two distances. The midpoint, with \( t = \frac12 \), has them, by the moreover clause of @thm-betweenness. So it is that one point.
 :::
 
-The condition in the Quick check is two equations, one for each distance. Keeping only "equally far from both ends" loses the point.
+Being the midpoint takes two equations, one for each distance. Keeping only "equally far from both ends" loses the point.
 
 ::: {.warning}
 **Equal distances do not make a midpoint.** Let \( p = (-1, 0) \), \( q = (1, 0) \) and \( x = (0, 1) \). Then \( \norm{p - x} = \norm{(-1, -1)} = \sqrt 2 \) and \( \norm{x - q} = \norm{(-1, 1)} = \sqrt 2 \), so \( x \) is equally far from \( p \) and \( q \). But \( x \notin [p, q] \): every point \( (1 - t)p + tq \) has second coordinate \( 0 \). The sum \( 2\sqrt 2 \) is not \( \norm{p - q} = 2 \). Section 10.2 finds all points equally far from \( p \) and \( q \).
@@ -338,7 +354,7 @@ Let \( p, v \in \nR^n \) with \( v \ne 0 \), and let \( a < b \) be real numbers
 \]
 so \( p + tv \in [p + av, p + bv] \).
 
-\( (\Rightarrow) \) Let \( p + tv = (1 - s)(p + av) + s(p + bv) \) with \( s \in [0, 1] \). The right side is \( p + (a + s(b - a))v \). A point of \( p + \nR v \) has only one parameter (the Quick check after @def-line-rn), so \( t = a + s(b - a) \). Since \( 0 \le s(b - a) \le b - a \) (@fd3:prp-ordered-field-halves (d)), adding \( a \) gives \( a \le t \le b \).
+\( (\Rightarrow) \) Let \( p + tv = (1 - s)(p + av) + s(p + bv) \) with \( s \in [0, 1] \). The right side is \( p + (a + s(b - a))v \). A point of \( p + \nR v \) has only one parameter, as shown after @def-line-rn, so \( t = a + s(b - a) \). Since \( 0 \le s(b - a) \le b - a \) (@fd3:prp-ordered-field-halves (d)), adding \( a \) gives \( a \le t \le b \).
 :::
 
 :::: {#exr-lines-and-segments-b2}
@@ -393,9 +409,9 @@ Prove or disprove each statement, for points \( p, q, x \in \nR^n \) and directi
 ::::
 
 ::: {.solution}
-(a) **True.** This is the Quick check after @cor-point-pinned-on-segment.
+(a) **True.** This is the check that follows @cor-point-pinned-on-segment.
 
-(b) **False.** The warning before these exercises: \( p = (-1, 0) \), \( q = (1, 0) \), \( x = (0, 1) \).
+(b) **False.** Equal distances do not make a midpoint: take \( p = (-1, 0) \), \( q = (1, 0) \), \( x = (0, 1) \), as in the warning at the end of the section.
 
 (c) **False.** By @prp-line-through-two-points, the only line through \( (0, 0) \) and \( (1, 0) \) is \( \nR(1, 0) \), whose points have second coordinate \( 0 \); so \( (0, 1) \) is not on it.
 
@@ -407,26 +423,28 @@ Prove or disprove each statement, for points \( p, q, x \in \nR^n \) and directi
 ### C. Going deeper
 
 ::: {#exr-lines-and-segments-c1}
-[C1: Exit check: one point in the middle]
+[C1: Chapter check: one point in the middle]
 
 Prove that of three distinct collinear points of \( \nR^n \), exactly one lies on the segment between the other two.
 :::
 
 ::: {.solution}
-Let the three points lie on the line \( p + \nR v \), \( v \ne 0 \). Each has one parameter, and distinct points have distinct parameters, since equal parameters give equal points. Name the points \( x_i = p + t_i v \) so that \( t_1 < t_2 < t_3 \) (three distinct reals can be listed in increasing order, as \( \le \) is a total order, @fd3:prp-ordered-ring-rules (i)).
+Let the three points lie on the line \( p + \nR v \), \( v \ne 0 \). Each has one parameter, and distinct points have distinct parameters, since equal parameters give equal points. Since \( \le \) is a total order (@fd3:prp-ordered-ring-rules (i)), three distinct reals can be listed in increasing order. So we can name the points \( x_i = p + t_i v \) with \( t_1 < t_2 < t_3 \).
 
 *Existence.* By @exr-lines-and-segments-b1 with \( a = t_1 \), \( b = t_3 \) and \( t = t_2 \), \( x_2 \in [x_1, x_3] \).
 
 *Uniqueness.* Suppose \( x_1 \in [x_2, x_3] \). By @exr-lines-and-segments-b1 with \( a = t_2 < b = t_3 \), this gives \( t_2 \le t_1 \), against \( t_1 < t_2 \). Suppose \( x_3 \in [x_1, x_2] \). The same exercise with \( a = t_1 < b = t_2 \) gives \( t_3 \le t_2 \), against \( t_2 < t_3 \). So \( x_2 \) is the only one of the three between the other two.
 
-**Marking scheme.** (10 points)
+**What a complete answer needs.** (10 points)
 - 2: puts the three points on one parametrization, with distinct parameters, and says why they are distinct.
 - 2: orders the parameters.
 - 2: shows that the point with the middle parameter is between the others (by B1 or directly).
 - 2: uses that a point has only one parameter on the line, at the step where B1's \( (\Rightarrow) \) or its replacement needs it.
 - 2: excludes each of the two outer points.
 
-A route through @thm-betweenness (comparing \( \norm{x_1 - x_3} = (t_3 - t_1)\norm{v} \) with the sums of the other distances) earns the same points step for step. Fatal errors (0 for the step): using one parameter for a point on two different parametrizations; excluding only one of the outer points.
+A route through @thm-betweenness (comparing \( \norm{x_1 - x_3} = (t_3 - t_1)\norm{v} \) with the sums of the other distances) earns the same points step for step.
+
+Slips that lose the step (0 points for it): using one parameter for a point on two different parametrizations; excluding only one of the outer points.
 :::
 
 <!-- dependency ledger
@@ -434,17 +452,18 @@ def-line-rn (example): (1,0,0) + t(-1,1,0) = (1 - t, t, 0) | def-vector-operatio
 def-line-rn (claim): Quick check (d): p + tv = p + uv gives (t - u)v = 0 | prp-vector-space-laws-rn (additive cancellation and (h)); inline
 def-line-rn (claim): Quick check (a)-(c): 0 + R*1 = R; (1,1,1) + 2(1,2,3) = (3,5,7) | verify/ch10/def-line-rn.py
 def-line-rn (claim): each point of a line has exactly one parameter, used without comment after the Quick check | proved in the Quick check's solution (d) on the page; inline
-prp-line-parametrizations (proof): p + sv + (t - s)v = p + tv; division by lambda != 0 | prp-vector-space-laws-rn (cited); field axioms of R (fd3:def-commutative-ring-and-field)
-prp-line-through-two-points (proof): q - p != 0 when p != q; u != s because q != p | vector algebra in R^n (prp-vector-space-laws-rn); inline
+prp-line-parametrizations (proof): p + sv + (t - s)v = p + tv; division by lambda != 0; u - s = 0 gives v' = 0 | prp-vector-space-laws-rn (e), (h), (i) (cited, Uses line); field axioms of R (fd3:def-commutative-ring-and-field)
+prp-line-through-two-points (proof): q - p != 0 when p != q; u != s because q != p | vector algebra in R^n (prp-vector-space-laws-rn, cited, Uses line); inline
 def-collinear (claim): (1,0,0), (0,1,0), (0,0,1) not collinear; they satisfy x1 + x2 + x3 = 1 | prp-line-through-two-points (cited); verify/ch10/def-line-rn.py
 def-collinear (claim): skew: v' = lambda v with v' != 0 forces lambda != 0, and v = lambda^{-1} v' | prp-vector-space-laws-rn (i), (e), (f); inline
 exm-two-lines-in-space (solution): the two systems and their solutions; meeting point (2,1,1); directions not multiples | verify/ch10/exm-two-lines-in-space.py
 def-segment-rn (claim): [p,q] = [q,p] via t <-> 1 - t; [p,p] = {p}; (1 - t)p + tq = p + t(q - p) | prp-vector-space-laws-rn; inline
 def-segment-rn (claim): segments and intervals for n = 1: p + t(q - p) between p and q for t in [0,1]; t = (y - p)/(q - p) | fd3:prp-ordered-field-halves (d), fd3:prp-ordered-ring-rules (b), (c); inline (remark only, nothing depends on it)
-lem-subsegment (proof): (1 - t)x + ty = p + ((1 - t)s + tu)(q - p) | prp-vector-space-laws-rn (cited); verify/ch10/lem-subsegment.py (identity, exact)
+lem-subsegment (proof): (1 - t)x + ty = p + ((1 - t)s + tu)(q - p) | prp-vector-space-laws-rn (cited, Uses line); verify/ch10/lem-subsegment.py (identity, exact)
+lem-subsegment (proof): 0 <= (1 - t)s <= 1 - t, 0 <= tu <= t, adding | fd3:prp-ordered-field-halves (d), fd3:prp-ordered-ring-rules (b) (cited, Uses line)
 lem-subsegment (claim): Quick check: (1,1,-1) not a multiple of (2,1,-2) | verify/ch10/lem-subsegment.py
-thm-betweenness (proof): t >= 0 and 1 - t >= 0 for t in [0,1]; |t| = t for t >= 0 | fd3:def-absolute-value-ordered-field; fd3:prp-ordered-ring-rules (a)
-thm-betweenness (proof): 1 + c >= 1 > 0 for c >= 0; 1/(1 + c) > 0 | fd3:prp-ordered-ring-rules (b), (e); positive reciprocal (fd3:prp-reciprocal-order); fd3:prp-ordered-field-halves (c) (cited) for t <= 1
+thm-betweenness (proof): t >= 0 and 1 - t >= 0 for t in [0,1]; |t| = t for t >= 0; x - p = t(q - p) | fd3:def-absolute-value-ordered-field; fd3:prp-ordered-ring-rules (a); prp-vector-space-laws-rn and prp-norm-basic-rn (b) (cited, Uses line)
+thm-betweenness (proof): 1 + c >= 1 > 0 for c >= 0; 1/(1 + c) > 0 | fd3:prp-ordered-ring-rules (b), (e); positive reciprocal (fd3:prp-reciprocal-order); fd3:prp-ordered-field-halves (c) (cited, Uses line) for t <= 1
 thm-betweenness (claim): aftermath pointers to Real Numbers, Metric Spaces, and Derivatives (AN1) and Affine and Projective Geometry (GEO) | prose pointers by title (blueprint thread 1); nothing depends on them
 cor-point-pinned-on-segment (proof): 0 <= s <= s + r; dividing by ||p - q|| > 0 keeps <= | fd3:prp-ordered-ring-rules (b), (c) with a positive reciprocal (fd3:prp-reciprocal-order); inline
 cor-point-pinned-on-segment (proof): s = t' ||p - q|| with ||p - q|| > 0 gives t' = s/||p - q|| | field: cancel a non-zero factor (fd3:lem-field-fraction-rules); inline

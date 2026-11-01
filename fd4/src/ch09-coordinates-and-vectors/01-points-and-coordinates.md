@@ -8,6 +8,8 @@ In school the plane comes first as a picture, a sheet with two axes drawn on it,
 
 Coordinates entered geometry so that a curve could become an equation and a construction a computation; a proof about the plane then needs the laws of \( \nR \) and nothing else. We take that step for every number of coordinates.
 
+For example, the pair \( (3, -1) \) is a point of the plane, with first coordinate \( 3 \) and second coordinate \( -1 \). The triple \( (2, 0, 5) \) is a point of space. A list of four reals, such as \( (1, -2, 0, 3) \), is just as good a point, though we can no longer draw it. In each case the point is nothing but the list.
+
 *A point is its list of coordinates.*
 
 ::: {#def-real-n-space}
@@ -24,22 +26,27 @@ In words: a point of \( \nR^n \) is an ordered list of \( n \) real numbers, and
 \[
 x = y \iff x_k = y_k \text{ for every } k \in \{1, \dots, n\} .
 \]
-This is the equality of \( n \)-tuples from *Sets and Functions*, Section 1.4 (the paragraph "Longer lists" after @fd2:def-ordered-pair), and for \( n = 1 \) it says only that \( x_1 = y_1 \). So one equation between points of \( \nR^n \) is \( n \) equations between real numbers. For \( n = 2 \) the definition gives \( \nR^2 = \nR \times \nR \), which is also the underlying set of the complex numbers: \( \nC \coloneqq \nR^2 \) in @def-complex-numbers. A complex number and a point of the plane are the same object; Section 9.4 compares what the two readings do with it.
+*Sets and Functions* defined this equality of \( n \)-tuples (@fd2:def-ordered-pair). For \( n = 1 \) it says only that \( x_1 = y_1 \). So one equation between points of \( \nR^n \) is \( n \) equations between real numbers. For \( n = 2 \) the definition gives \( \nR^2 = \nR \times \nR \). This is also the underlying set of the complex numbers: \( \nC \coloneqq \nR^2 \) in @def-complex-numbers. A complex number and a point of the plane are the same object; Section 9.4 compares what the two readings do with it.
 
 The case \( n = 1 \) is a **convention**, not a theorem. *Sets and Functions* defines tuples only of length at least \( 2 \), and a real number is not a tuple. We declare \( \nR^1 \) to be \( \nR \) so that every statement "for all \( n \ge 1 \)" in this chapter includes the line, with \( x_1 \) meaning \( x \) itself.
 
-**Examples.** The point \( (1, -2, 0, 3) \) lies in \( \nR^4 \); its third coordinate is \( 0 \). The point \( (0, 0, 0) \) lies in \( \nR^3 \), and it is not the real number \( 0 \): it is a triple, and a tuple is not a number (the convention stated after @fd2:def-ordered-pair). And the degenerate case: \( \nR^1 \) is the line \( \nR \), where a point has one coordinate, and the equality rule above reads \( x = y \).
+**Examples.** The point \( (1, -2, 0, 3) \) lies in \( \nR^4 \); its third coordinate is \( 0 \). The point \( (0, 0, 0) \) lies in \( \nR^3 \). It is not the real number \( 0 \): it is a triple, and *Sets and Functions* agreed that a tuple is never a number (@fd2:def-ordered-pair). And the smallest case: \( \nR^1 \) is the line \( \nR \), where a point has one coordinate, and the equality rule above reads \( x = y \).
 
-**A non-example by minimal change.** Replace the list by a set. The set \( \{1, 2\} \) holds the same two numbers as the point \( (1, 2) \), but it forgets their order, \( \{1, 2\} = \{2, 1\} \), and it forgets repetitions, \( \{1, 1\} = \{1\} \). The points \( (1, 2) \), \( (2, 1) \) and \( (1, 1) \) are three different points of \( \nR^2 \). What a coordinate system needs is exactly what sets lose: which number sits in which place.
+**A list is not a set.** Replace the list by a set. The set \( \{1, 2\} \) holds the same two numbers as the point \( (1, 2) \), but it forgets their order, \( \{1, 2\} = \{2, 1\} \), and it forgets repetitions, \( \{1, 1\} = \{1\} \). The points \( (1, 2) \), \( (2, 1) \) and \( (1, 1) \) are three different points of \( \nR^2 \). What a coordinate system needs is exactly what sets lose: which number sits in which place.
 
-**Why this definition.** A point defined as "a position in the plane" cannot be reasoned about: there is no rule for positions, only pictures of them. A point defined as a list of reals carries all the rules of the field \( \nR \) with it, one coordinate at a time. The price is that every geometric word now needs a definition in coordinates, and the rest of this chapter pays it: Section 9.2 defines the sum of two points, Section 9.3 the dot product, Section 9.4 length and distance, and Section 9.6 the cosine of an angle, each by a formula in the coordinates.
+**Why this definition.** A point defined as "a position in the plane" cannot be reasoned about: there is no rule for positions, only pictures of them. A point defined as a list of reals carries all the rules of the field \( \nR \) with it, one coordinate at a time. The price is that every geometric word now needs a definition in coordinates. The rest of this chapter supplies these definitions, each by a formula in the coordinates:
+
+- the sum of two points (Section 9.2);
+- the dot product (Section 9.3);
+- length and distance (Section 9.4);
+- the cosine of an angle (Section 9.6).
 
 ::: {.remark}
 The familiar model of the plane, with an origin, a unit of length and two perpendicular axes, is how we draw a point of \( \nR^2 \) and choose what to prove. It is motivation only. In this chapter a picture is never a reason: every claim is proved from the definitions and the laws of \( \nR \).
 :::
 
 ::: {.warning}
-Order and nesting matter. The points \( (1, 2) \) and \( (2, 1) \) of \( \nR^2 \) are different, and the point \( (1, 2) \) is not the set \( \{1, 2\} \). Nor is \( \nR^2 \times \nR \) literally \( \nR^3 \): its elements are pairs \( ((x_1, x_2), x_3) \) whose first entry is itself a pair, while the elements of \( \nR^3 \) are triples, and a triple is not a pair (*Sets and Functions*, Section 1.4).
+Order and nesting matter. The points \( (1, 2) \) and \( (2, 1) \) of \( \nR^2 \) are different, and the point \( (1, 2) \) is not the set \( \{1, 2\} \). Nor is \( \nR^2 \times \nR \) literally \( \nR^3 \). Its elements are pairs \( ((x_1, x_2), x_3) \) whose first entry is itself a pair. The elements of \( \nR^3 \) are triples, and a triple is not a pair (*Sets and Functions*, Section 1.4).
 :::
 
 ::: {.second-reading title="Gluing two lists into one"}
@@ -47,7 +54,7 @@ Although \( \nR^m \times \nR^n \) and \( \nR^{m+n} \) are different sets, nothin
 \[
 g\bigl((x_1, \dots, x_m), (y_1, \dots, y_n)\bigr) \coloneqq (x_1, \dots, x_m, y_1, \dots, y_n) ,
 \]
-with a real number read as a list of length one when \( m = 1 \) or \( n = 1 \). Then \( g \) is a bijection (@fd2:def-bijective). It is injective: if two pairs have the same image, the images agree in all \( m + n \) places, so the first lists agree in every place, the second lists agree in every place, and the two pairs are equal by @fd2:def-ordered-pair. It is surjective: a list \( (z_1, \dots, z_{m+n}) \) is the image of the pair \( \bigl((z_1, \dots, z_m), (z_{m+1}, \dots, z_{m+n})\bigr) \). The book uses this identification only in words, as in "a point of \( \nR^3 \) is a point of the plane together with a height".
+with a real number read as a list of length one when \( m = 1 \) or \( n = 1 \). Then \( g \) is a bijection (@fd2:def-bijective). It is injective. Suppose two pairs have the same image. The images agree in all \( m + n \) places, so the first lists agree in every place and so do the second lists. The two pairs are therefore equal by @fd2:def-ordered-pair. It is surjective: a list \( (z_1, \dots, z_{m+n}) \) is the image of the pair \( \bigl((z_1, \dots, z_m), (z_{m+1}, \dots, z_{m+n})\bigr) \). We use this identification only in words, as in "a point of \( \nR^3 \) is a point of the plane together with a height".
 :::
 
 ::: {.check}
@@ -55,14 +62,14 @@ Which of \( (0, 0, 0) \), \( (1, 2) \) and \( ((1, 2), 3) \) lie in \( \nR^3 \)?
 :::
 
 ::: {.solution}
-Only \( (0, 0, 0) \). The point \( (1, 2) \) is a pair, a list of length two. The object \( ((1, 2), 3) \) is also a pair, whose first entry is the pair \( (1, 2) \); it lies in \( \nR^2 \times \nR \), and by the warning it is not a triple.
+Only \( (0, 0, 0) \). The point \( (1, 2) \) is a pair, a list of length two. The object \( ((1, 2), 3) \) is also a pair, whose first entry is the pair \( (1, 2) \); it lies in \( \nR^2 \times \nR \), and a pair is not a triple.
 
 The set \( \{0, 1\}^3 \) has **eight** points: each of the three coordinates is \( 0 \) or \( 1 \), and the choices are independent, so there are \( 2 \cdot 2 \cdot 2 = 8 \) lists. Written out, they are \( (0, 0, 0) \), \( (0, 0, 1) \), \( (0, 1, 0) \), \( (0, 1, 1) \), \( (1, 0, 0) \), \( (1, 0, 1) \), \( (1, 1, 0) \) and \( (1, 1, 1) \).
 :::
 
 ## Sets described by conditions
 
-With points as lists, a subset of \( \nR^n \) is described by a condition on coordinates: the set of all \( x \in \nR^n \) whose coordinates satisfy it. Deciding whether a given point belongs is then a computation with real numbers. The next example collects the subsets of the plane that return most often.
+With points as lists, a subset of \( \nR^n \) is described by a condition on coordinates: the set of all \( x \in \nR^n \) whose coordinates satisfy it. Deciding whether a given point belongs is then a computation with real numbers. Here are the subsets of the plane that return most often.
 
 ::: {#exm-subsets-of-the-plane}
 [Subsets of the Plane by Conditions]
@@ -92,7 +99,9 @@ For each of the following subsets of \( \nR^2 \), name one point that lies in it
 
 ## Boxes
 
-Some conditions treat the coordinates **separately**: one condition on \( x_1 \), one on \( x_2 \), and so on, with no condition linking two coordinates. The quadrant \( Q \) of @exm-subsets-of-the-plane is of this kind; the diagonal \( D \) is not, since \( x_1 = x_2 \) ties the two coordinates together. The simplest separate conditions bound each coordinate between two numbers. On the line that gives a closed interval \( [a, b] \), and in the plane a rectangle \( [a_1, b_1] \times [a_2, b_2] \) with sides parallel to the axes. The analysis volumes trap points inside their analogues in \( \nR^n \), so we name them.
+Some conditions treat the coordinates **separately**: one condition on \( x_1 \), one on \( x_2 \), and so on, with no condition linking two coordinates. The quadrant \( Q \) of @exm-subsets-of-the-plane is of this kind; the diagonal \( D \) is not, since \( x_1 = x_2 \) ties the two coordinates together. The simplest separate conditions bound each coordinate between two numbers. On the line that gives a closed interval \( [a, b] \), and in the plane a rectangle \( [a_1, b_1] \times [a_2, b_2] \) with sides parallel to the axes. Later work in analysis traps points inside such sets in \( \nR^n \), so we give them names.
+
+For example, take \( a = (0, 1) \) and \( b = (2, 3) \). The points \( x \) of \( \nR^2 \) with \( 0 \le x_1 \le 2 \) and \( 1 \le x_2 \le 3 \) form the rectangle \( [0, 2] \times [1, 3] \), with corners \( (0, 1) \) and \( (2, 3) \). The point \( (1, 2) \) lies in it. The point \( (3, 2) \) does not, since its first coordinate \( 3 \) is larger than \( 2 \).
 
 ::: {#def-box-rn}
 [Boxes]
@@ -107,13 +116,13 @@ If \( a_k < b_k \) for every \( k \), the **open box** with corners \( a \) and 
 \]
 :::
 
-The notation is the product of sets of *Sets and Functions*, Section 4.2, applied to intervals: a point lies in the box exactly when its \( k \)-th coordinate lies in the \( k \)-th interval, for every \( k \). In the open box each \( (a_k, b_k) \) is an interval, not a pair; *Sets and Functions*, Section 1.4 lets context decide between the two readings of \( (a, b) \), and inside a product of this kind it always means the interval.
+The notation is the product of sets from *Sets and Functions*, Section 4.2, applied to intervals. A point lies in the box exactly when its \( k \)-th coordinate lies in the \( k \)-th interval, for every \( k \). In the open box each \( (a_k, b_k) \) is an interval, not a pair. *Sets and Functions*, Section 1.4 lets context decide between the two readings of \( (a, b) \). Inside a product of this kind it always means the interval.
 
 **Examples.** For \( n = 1 \) a closed box is a closed interval \( [a_1, b_1] \) and an open box an open interval. For \( n = 2 \) the closed box \( [0, 1] \times [0, 1] \) is the unit square. In \( \nR^3 \), the closed box \( [-1, 1] \times [0, 1] \times [2, 2] \) is flat: its third interval is \( [2, 2] = \{2\} \), so every point of it has third coordinate \( 2 \). The definition allows this, since it asks only \( a_3 \le b_3 \). At the extreme, \( a = b \) gives a box with exactly one point, \( a \) itself.
 
-Every box is **non-empty**, and we can name a point in it. The corner \( a \) lies in the closed box, since \( a_k \le a_k \le b_k \) for every \( k \); so does \( b \). The open box contains the center \( c \) with \( c_k \coloneqq (a_k + b_k)/2 \), because \( a_k < b_k \) gives \( a_k < (a_k + b_k)/2 < b_k \) (@fd3:prp-ordered-field-halves (b)). This is why the definition demands \( a_k \le b_k \), and \( a_k < b_k \) for the open box: without it, \( \{ x \in \nR^2 : 1 \le x_1 \le 0 \} \) would be "a box", an empty one, and its "corners" would mean nothing. Exercise C1 shows that with the condition in place, a closed box determines its corners.
+Every box is **non-empty**, and we can name a point in it. The corner \( a \) lies in the closed box, since \( a_k \le a_k \le b_k \) for every \( k \); so does \( b \). The open box contains the center \( c \) with \( c_k \coloneqq (a_k + b_k)/2 \), because \( a_k < b_k \) gives \( a_k < (a_k + b_k)/2 < b_k \) (@fd3:prp-ordered-field-halves (b)). This is why the definition demands \( a_k \le b_k \), and \( a_k < b_k \) for the open box. Without it, \( \{ x \in \nR^2 : 1 \le x_1 \le 0 \} \) would be "a box", an empty one, and its "corners" would mean nothing. Exercise C1 shows that with the condition in place, a closed box determines its corners.
 
-**A non-example by minimal change.** Let one bound depend on another coordinate:
+**A set that is not a box.** Let one bound depend on another coordinate:
 \[
 T \coloneqq \{ x \in \nR^2 : 0 \le x_2 \le x_1 \le 1 \} ,
 \]
@@ -179,7 +188,7 @@ Let \( P = [a_1, b_1] \times \dots \times [a_n, b_n] \) and \( Q = [c_1, d_1] \t
 
 If \( \max\{a_k, c_k\} \le \min\{b_k, d_k\} \) for every \( k \), the displayed set is the closed box with corners \( (\max\{a_k, c_k\})_k \) and \( (\min\{b_k, d_k\})_k \), as @def-box-rn requires. If \( \max\{a_k, c_k\} > \min\{b_k, d_k\} \) for some \( k \), no real \( x_k \) satisfies \( \max\{a_k, c_k\} \le x_k \le \min\{b_k, d_k\} \), by transitivity, so \( P \cap Q = \varnothing \).
 
-(b) Call the union \( U \) and suppose \( U = [p_1, q_1] \times [p_2, q_2] \). The points \( (0, 0) \) and \( (3, 0) \) lie in \( U \), so \( p_1 \le 0 \) and \( 3 \le q_1 \), and \( p_2 \le 0 \le q_2 \). Then \( (3/2, 0) \) lies in the box, since \( p_1 \le 0 \le 3/2 \le 3 \le q_1 \) and \( p_2 \le 0 \le q_2 \). But \( (3/2, 0) \) lies in neither square: \( 3/2 > 1 \) and \( 3/2 < 2 \). So \( (3/2, 0) \notin U \), a contradiction. Hence \( U \) is not a closed box. This is the argument of the non-example \( T \) in the text.
+(b) Call the union \( U \) and suppose \( U = [p_1, q_1] \times [p_2, q_2] \). The points \( (0, 0) \) and \( (3, 0) \) lie in \( U \), so \( p_1 \le 0 \) and \( 3 \le q_1 \), and \( p_2 \le 0 \le q_2 \). Then \( (3/2, 0) \) lies in the box, since \( p_1 \le 0 \le 3/2 \le 3 \le q_1 \) and \( p_2 \le 0 \le q_2 \). But \( (3/2, 0) \) lies in neither square: \( 3/2 > 1 \) and \( 3/2 < 2 \). So \( (3/2, 0) \notin U \), a contradiction. Hence \( U \) is not a closed box. The argument is the one used above to show that the triangle \( T \) is not a box.
 :::
 
 ### C. Going deeper
@@ -207,16 +216,16 @@ Suppose \( P = Q \) and fix \( k \). Since \( P \subseteq Q \), Exercise B1 give
 
 So a closed box, as a set, determines the numbers \( a_k \) and \( b_k \). This is what makes "the box \( [a_1, b_1] \times \dots \times [a_n, b_n] \)" an unambiguous name, and "the corners of a box" meaningful. Exercise B1 needed \( a_k \le b_k \) and \( c_k \le d_k \), and so does this result: the empty sets \( \{ x \in \nR : 1 \le x \le 0 \} \) and \( \{ x \in \nR : 5 \le x \le 2 \} \) are equal, with different "corners".
 
-**Marking scheme.** (10 points)
+**What a complete answer needs.** (10 points)
 - 2: fixes \( k \) and states the goal \( a_k = c_k \), \( b_k = d_k \).
 - 3: obtains \( c_k \le a_k \) and \( b_k \le d_k \) from \( P \subseteq Q \) (by B1, or directly from the corners \( a, b \in P \)).
 - 3: obtains the reverse inequalities from \( Q \subseteq P \).
 - 2: concludes by antisymmetry, for every \( k \).
-Fatal errors (0 for the step): using one inclusion only; reading the corners off the notation without proof (that is the claim).
+Slips that lose the step: using one inclusion only; reading the corners off the notation without proof (that is the claim).
 :::
 
 <!-- dependency ledger
-def-real-n-space (claim): equality of n-tuples is equality in every place; n-tuples defined for n >= 2 only | fd2 F2.1 section 04, paragraph "Longer lists" after fd2:def-ordered-pair (cited in prose)
+def-real-n-space (claim): equality of n-tuples is equality in every place; n-tuples defined for n >= 2 only | fd2 F2.1 section 04, paragraph "Longer lists" after fd2:def-ordered-pair (cited)
 def-real-n-space (claim): a tuple is not a number; a triple is not a pair | fd2 F2.1 section 04, the working convention after fd2:def-ordered-pair (cited)
 def-real-n-space (claim): R^1 := R is a convention, x_1 := x | inline (definition)
 def-real-n-space (claim): Sections 9.2, 9.3, 9.4, 9.6 define sum, dot product, length/distance, cosine of an angle by formulas in coordinates | prose pointer, this chapter's blueprint (merged-ch09-f48.md, section 3); nothing depends on it
@@ -225,6 +234,7 @@ def-real-n-space (claim): second-reading fold, gluing map R^m x R^n -> R^{m+n} i
 def-real-n-space (solution): Quick check, {0,1}^3 has 2*2*2 = 8 points | listed in full in the solution; verify/ch09/def-real-n-space.py
 exm-subsets-of-the-plane (solution): (-1)(-1) = 1, 3 != 81, 9/25 + 16/25 = 1, 1 + 1 = 2 > 1 | arithmetic in R (fd3:prp-ring-algebra (c), fd3:prp-ordered-ring-rules); verify/ch09/exm-subsets-of-the-plane.py
 exm-subsets-of-the-plane (solution): pointer to Section 8.1 (graphs of real functions, merged-ch08-f47.md def-real-function) and Section 9.4 (length) | prose pointers; nothing depends on them
+def-box-rn (example): instance [0,2] x [1,3] with corners (0,1), (2,3); (1,2) in it, (3,2) not | inline; order of R
 def-box-rn (claim): product notation [a_1, b_1] x ... x [a_n, b_n] read coordinatewise | fd2 Section 4.2 product A_1 x ... x A_k (before fd2:cor-product-countable; NOTATION row); for n = 1 the interval itself
 def-box-rn (claim): intervals [a, b], (a, b) and the pair/interval reading of (a, b) | NOTATION row "intervals"; fd2 F2.1 section 04 convention
 def-box-rn (claim): a_k <= a_k <= b_k (reflexivity) | fd3:prp-ordered-ring-rules (i) (total order); used silently

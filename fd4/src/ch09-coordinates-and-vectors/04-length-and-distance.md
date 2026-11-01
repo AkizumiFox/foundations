@@ -4,7 +4,7 @@ Section 9.3 attached a number to a pair of vectors, the dot product. Taken with 
 
 ## Length
 
-In the plane, the point \( x = (x_1, x_2) \) is the far corner of a right triangle with legs \( \abs{x_1} \) and \( \abs{x_2} \). By Pythagoras its distance from the origin is \( \sqrt{x_1^2 + x_2^2} \), and Chapter 3 gave this number a name, the modulus \( \abs{x_1 + x_2 i} \) (@def-conjugate-modulus). In space the same picture, used twice, gives \( \sqrt{x_1^2 + x_2^2 + x_3^2} \). The pictures stop at three coordinates, but the formula does not, and the expression under the root is the dot product \( \inner{x}{x} \). The pictures are motivation only. What we need from them is one property: a length is zero only for the point at the origin.
+In the plane, the point \( x = (x_1, x_2) \) is the far corner of a right triangle with legs \( \abs{x_1} \) and \( \abs{x_2} \). By Pythagoras its distance from the origin is \( \sqrt{x_1^2 + x_2^2} \). For \( x = (3, 4) \) the legs are \( 3 \) and \( 4 \), and the distance is \( \sqrt{9 + 16} = 5 \). Chapter 3 gave this number a name, the modulus \( \abs{x_1 + x_2 i} \) (@def-conjugate-modulus). In space the same picture, used twice, gives \( \sqrt{x_1^2 + x_2^2 + x_3^2} \). The pictures stop at three coordinates, but the formula does not, and the expression under the root is the dot product \( \inner{x}{x} \). The pictures are motivation only. What we need from them is one property: a length is zero only for the point at the origin.
 
 ::: {.check}
 Is there a vector \( x \ne 0 \) in some \( \nR^n \) with \( \inner{x}{x} = 0 \)?
@@ -14,9 +14,9 @@ Is there a vector \( x \ne 0 \) in some \( \nR^n \) with \( \inner{x}{x} = 0 \)?
 No. By @prp-dot-product-laws-rn (c), \( \inner{x}{x} = \sum_k x_k^2 \ge 0 \), with equality only for \( x = 0 \). A nonzero \( x \) has some \( x_k \ne 0 \), and that one term already makes the sum positive.
 :::
 
-So \( \inner{x}{x} \) is never negative, and its root exists: \( \nR \) is complete (@fd3:thm-reals-complete-ordered-field), and every non-negative element of a complete ordered field has exactly one non-negative square root (@fd3:prp-cof-square-roots). This is where the completeness of \( \nR \) enters the chapter.
+So \( \inner{x}{x} \) is never negative. Every non-negative element of a complete ordered field has exactly one non-negative square root (@fd3:prp-cof-square-roots). The field \( \nR \) is complete (@fd3:thm-reals-complete-ordered-field), so the root of \( \inner{x}{x} \) exists. This is where the completeness of \( \nR \) enters the chapter.
 
-*Length is the root of the dot product of a vector with itself.*
+*Length is the root of the dot product of a vector with itself.* We take this root as the length of \( x \).
 
 ::: {#def-norm-rn}
 [Norm]
@@ -28,7 +28,7 @@ Let \( x \in \nR^n \). The **norm** (or **length**) of \( x \) is the real numbe
 the non-negative square root of @fd3:prp-cof-square-roots.
 :::
 
-For example, \( \norm{(3, 4)} = \sqrt{9 + 16} = \sqrt{25} = 5 \), because \( 5 \ge 0 \) and \( 5^2 = 25 \): the uniqueness clause of @fd3:prp-cof-square-roots identifies the root by these two properties. Every computation of a norm below ends with the same check. The norm is well defined, since \( \inner{x}{x} \ge 0 \) by @prp-dot-product-laws-rn (c).
+For example, \( \norm{(3, 4)} = \sqrt{9 + 16} = \sqrt{25} = 5 \), because \( 5 \ge 0 \) and \( 5^2 = 25 \). The uniqueness clause of @fd3:prp-cof-square-roots identifies the root by these two properties. Every computation of a norm below ends with the same check. The norm is well defined, since \( \inner{x}{x} \ge 0 \) by @prp-dot-product-laws-rn (c).
 
 Two facts about roots carry most of the proofs in this section. The first is the uniqueness clause just used: *if \( s \ge 0 \) and \( s^2 = t \), then \( s = \sqrt t \).* The second is the rule of **comparing squares** from Section 3.3, a consequence of @fd3:prp-ordered-ring-rules (g): for real \( p, q \ge 0 \),
 \[
@@ -58,22 +58,28 @@ Each part is a statement about a root, so it is checked on squares: compute the 
 ::: {.proof}
 (c) This is the defining property of the root: \( (\sqrt t)^2 = t \).
 
-(a) A square root is non-negative by definition. If \( x = 0 \), then \( \inner{x}{x} = 0 \) (@prp-dot-product-laws-rn (e)), and \( \sqrt 0 = 0 \) by uniqueness, as \( 0 \ge 0 \) and \( 0^2 = 0 \). Conversely, if \( \norm{x} = 0 \), then \( \inner{x}{x} = \norm{x}^2 = 0 \) by (c), so \( x = 0 \) by @prp-dot-product-laws-rn (c).
+(a) A square root is non-negative by definition. If \( x = 0 \), then \( \inner{x}{x} = 0 \), and \( \sqrt 0 = 0 \) by uniqueness, as \( 0 \ge 0 \) and \( 0^2 = 0 \). Conversely, if \( \norm{x} = 0 \), then \( \inner{x}{x} = \norm{x}^2 = 0 \) by (c), so \( x = 0 \) by @prp-dot-product-laws-rn (c).
 
-(b) By @prp-dot-product-laws-rn (b), used in each slot, and (c),
+(b) A scalar comes out of each slot of the dot product. Then (c) turns the dot products back into squared norms:
 \[
 \norm{cx}^2 = \inner{cx}{cx} = c^2 \inner{x}{x} = c^2 \norm{x}^2 .
 \]
-The number \( \abs{c} \, \norm{x} \) is \( \ge 0 \), as a product of two non-negative numbers (@fd3:prp-absolute-value-ordered-field (a), and (a) above), and its square is \( \abs{c}^2 \norm{x}^2 = c^2 \norm{x}^2 \) by @fd3:prp-absolute-value-ordered-field (b). So \( \norm{cx} \) and \( \abs{c} \, \norm{x} \) are non-negative with the same square, and they are equal by comparing squares.
+The number \( \abs{c} \, \norm{x} \) is \( \ge 0 \), as a product of two non-negative numbers: \( \abs{c} \ge 0 \), and \( \norm{x} \ge 0 \) by (a) above. Its square is \( \abs{c}^2 \norm{x}^2 = c^2 \norm{x}^2 \). So \( \norm{cx} \) and \( \abs{c} \, \norm{x} \) are non-negative with the same square, and they are equal by comparing squares.
 
-(d) For \( n = 1 \), \( \inner{x}{x} = x^2 \) (@def-dot-product-rn), so \( \norm{x} = \sqrt{x^2} \). As in @prp-modulus-of-real, \( \abs{x} \ge 0 \) and \( \abs{x}^2 = x^2 \) (@fd3:prp-absolute-value-ordered-field (a), (b)), so \( \abs{x} = \sqrt{x^2} \) by uniqueness.
+(d) For \( n = 1 \), \( \inner{x}{x} = x^2 \) (@def-dot-product-rn), so \( \norm{x} = \sqrt{x^2} \). As in @prp-modulus-of-real, \( \abs{x} \ge 0 \) and \( \abs{x}^2 = x^2 \), so \( \abs{x} = \sqrt{x^2} \) by uniqueness.
 
 (e) \( \inner{e_k}{e_k} = 1 \) by @prp-dot-product-laws-rn (d), and \( \sqrt 1 = 1 \) since \( 1 \ge 0 \) and \( 1^2 = 1 \).
 
-(f) Let \( x \ne 0 \), so \( \norm{x} > 0 \) by (a), and put \( t_0 \coloneqq \frac{1}{\norm{x}} \). The vectors \( \pm t_0 x \) are parallel to \( x \) (@def-parallel-rn), and by (b) their norms are \( \abs{\pm t_0} \, \norm{x} = t_0 \norm{x} = 1 \). Conversely, let \( \norm{u} = 1 \) with \( u \) parallel to \( x \). Since \( x \ne 0 \), the remark after @def-parallel-rn gives \( u = tx \) for some \( t \in \nR \). Then \( 1 = \norm{tx} = \abs{t} \, \norm{x} \) by (b), so \( \abs{t} = t_0 \), and \( t = t_0 \) or \( t = -t_0 \), since \( \abs{t} \) is \( t \) or \( -t \) (@fd3:def-absolute-value-ordered-field). This proves the proposition.
+(f) Let \( x \ne 0 \), so \( \norm{x} > 0 \) by (a), and put \( t_0 \coloneqq \frac{1}{\norm{x}} \). The vectors \( \pm t_0 x \) are parallel to \( x \) (@def-parallel-rn), and by (b) their norms are \( \abs{\pm t_0} \, \norm{x} = t_0 \norm{x} = 1 \). Conversely, let \( \norm{u} = 1 \) with \( u \) parallel to \( x \). Since \( x \ne 0 \), a vector parallel to \( x \) is a multiple of \( x \) (Section 9.2, after @def-parallel-rn), so \( u = tx \) for some \( t \in \nR \). Then \( 1 = \norm{tx} = \abs{t} \, \norm{x} \) by (b), so \( \abs{t} = t_0 \). Since \( \abs{t} \) is \( t \) or \( -t \), we get \( t = t_0 \) or \( t = -t_0 \). This proves the proposition.
+
+::: {.uses}
+@prp-dot-product-laws-rn (e), (b): the zero vector, scalars come out. @fd3:prp-absolute-value-ordered-field (a), (b): \( \abs{c} \ge 0 \), \( \abs{c}^2 = c^2 \). @fd3:def-absolute-value-ordered-field: \( \abs{t} \) is \( \pm t \).
+:::
 :::
 
 Part (b) says that stretching a vector by \( c \) stretches its length by \( \abs{c} \); the absolute value is needed, since \( \norm{-x} = \norm{x} \). Part (d) says that on \( \nR^1 = \nR \) the norm is the old absolute value, so the double bars extend the single ones and nothing clashes.
+
+Dividing a nonzero vector by its norm gives a vector of length \( 1 \). For example, \( (3, 4) \) has norm \( 5 \), and by (b) the vector \( \frac15 (3, 4) = (3/5, 4/5) \) has norm \( \frac15 \cdot 5 = 1 \).
 
 ::: {#def-unit-vector-rn}
 [Unit Vector]
@@ -81,7 +87,7 @@ Part (b) says that stretching a vector by \( c \) stretches its length by \( \ab
 A **unit vector** is a vector \( u \in \nR^n \) with \( \norm{u} = 1 \). For \( x \ne 0 \) we write \( \dfrac{x}{\norm{x}} \coloneqq \dfrac{1}{\norm{x}} \, x \), and call it the **unit vector in the direction of \( x \)**.
 :::
 
-The division is allowed because \( \norm{x} \ne 0 \) for \( x \ne 0 \) (@prp-norm-basic-rn (a)), and \( x / \norm{x} \) is a unit vector by @prp-norm-basic-rn (b). By part (f), the only other unit vector parallel to \( x \) is \( -x / \norm{x} \). Replacing \( x \) by \( x / \norm{x} \) is called **normalizing** \( x \). For example, \( (3, 4)/5 = (3/5, 4/5) \) is the unit vector in the direction of \( (3, 4) \), and the standard vectors \( e_k \) are unit vectors by (e).
+The division is allowed because \( \norm{x} \ne 0 \) for \( x \ne 0 \), by part (a) of @prp-norm-basic-rn. Part (b) shows that \( x / \norm{x} \) is a unit vector. By part (f), the only other unit vector parallel to \( x \) is \( -x / \norm{x} \). Replacing \( x \) by \( x / \norm{x} \) is called **normalizing** \( x \). For example, \( (3, 4)/5 = (3/5, 4/5) \) is the unit vector in the direction of \( (3, 4) \), and the standard vectors \( e_k \) are unit vectors by (e).
 
 ::: {.check}
 Compute \( \norm{(1, 2, 2)} \). Is \( (3/5, 0, 4/5) \) a unit vector?
@@ -121,7 +127,7 @@ For all \( x, y, z \in \nR^n \) and \( c \in \nR \):
 :::
 
 ::: {.proof}
-Each part rests on a vector identity that is checked coordinatewise (@exm-method-coordinatewise). (a) By @prp-norm-basic-rn (a), and \( x - y = 0 \) if and only if \( x = y \). (b) \( y - x = (-1)(x - y) \), so @prp-norm-basic-rn (b) with \( \abs{-1} = 1 \) gives \( \norm{y - x} = \norm{x - y} \). (c) \( (x + z) - (y + z) = x - y \). (d) \( cx - cy = c(x - y) \), then @prp-norm-basic-rn (b).
+Each part rests on a vector identity that is checked coordinatewise (@exm-method-coordinatewise). (a) This is @prp-norm-basic-rn (a), since \( x - y = 0 \) if and only if \( x = y \). (b) \( y - x = (-1)(x - y) \), so @prp-norm-basic-rn (b) with \( \abs{-1} = 1 \) gives \( \norm{y - x} = \norm{x - y} \). (c) \( (x + z) - (y + z) = x - y \). (d) \( cx - cy = c(x - y) \), then @prp-norm-basic-rn (b).
 :::
 
 Part (c) says that sliding both points by the same vector does not change their distance; (d) says that scaling the picture by \( c \) scales distances by \( \abs{c} \). The property that matters most is missing from the list: the triangle inequality \( d(x, z) \le d(x, y) + d(y, z) \). It is the one property of distance that needs an idea, and Section 9.5 supplies it.
@@ -136,7 +142,7 @@ Chapter 3 defined \( \nC \) as the set \( \nR^2 \) (@def-complex-numbers) and me
 Let \( z = (a, b) \) and \( w = (c, d) \) be elements of \( \nR^2 = \nC \), and let \( t \in \nR \).
 
 ::: {.enumerate options="label=(\alph*)"}
-1. The sum \( z + w \) is the same in \( \nR^2 \) (@def-vector-operations-rn) and in \( \nC \) (@def-complex-numbers), and so is the difference \( z - w \). The scalar multiple \( tz \) equals the complex product \( (t, 0)\, z \), that is, the product in \( \nC \) of the real number \( t \) with \( z \) (@prp-reals-embed-complex).
+1. The sum \( z + w \) is the same in \( \nR^2 \) and in \( \nC \), and so is the difference \( z - w \). The scalar multiple \( tz \) equals the complex product \( (t, 0)\, z \), that is, the product in \( \nC \) of the real number \( t \) with \( z \) (@prp-reals-embed-complex).
 2. \( \inner{z}{w} = \operatorname{Re}(z \conj{w}) \).
 3. \( \norm{z} = \abs{z} \), and so \( d(z, w) = \abs{z - w} \).
 :::
@@ -149,20 +155,24 @@ Every part compares two formulas in the coordinates \( a, b, c, d \). Write both
 ::: {.proof}
 (a) Both sums are \( (a + c, b + d) \) by the two definitions. By the multiplication rule of @def-complex-numbers, \( (t, 0)(a, b) = (ta - 0 \cdot b, \; tb + 0 \cdot a) = (ta, tb) \), which is \( tz \). In particular \( (-1)w = (-c, -d) \), and \( (c, d) + (-c, -d) = (0, 0) \), so \( (-c, -d) \) is the negative of \( w \) in \( \nC \) as well; hence both differences are \( (a - c, b - d) \).
 
-(b) By @def-conjugate-modulus, \( \conj{w} = (c, -d) \), and by the multiplication rule,
+(b) The conjugate of \( w \) is \( \conj{w} = (c, -d) \) (@def-conjugate-modulus). By the multiplication rule,
 \[
 z \conj{w} = \bigl(ac - b(-d), \; a(-d) + bc\bigr) = (ac + bd, \; bc - ad) .
 \]
 Its real part is \( ac + bd = \inner{z}{w} \) (@def-dot-product-rn).
 
-(c) Both are \( \sqrt{a^2 + b^2} \), by @def-norm-rn and @def-conjugate-modulus. Then \( d(z, w) = \norm{z - w} = \abs{z - w} \) by (a).
+(c) Both are \( \sqrt{a^2 + b^2} \), by the definitions of the norm and of the modulus. Then \( d(z, w) = \norm{z - w} = \abs{z - w} \) by (a).
+
+::: {.uses}
+@def-vector-operations-rn: the sum in \( \nR^2 \). @def-complex-numbers: sum and product in \( \nC \). @def-norm-rn. @def-conjugate-modulus: the modulus.
+:::
 :::
 
-So every result of this chapter about \( \nR^n \), read at \( n = 2 \), is a result about \( \nC \), and the order of the factors in (b) is immaterial: \( \operatorname{Re}(z \conj{w}) = \operatorname{Re}(\conj{z} w) \), since the two products are conjugate (@thm-conjugate-properties (a), (b)). The coordinate bound (a) at the end of this section is, for \( n = 2 \), the first two inequalities of @lem-real-part-at-most-modulus. In the other direction, the multiplication of \( \nC \) has no counterpart in \( \nR^n \) for general \( n \) in this chapter; Section 9.5 explains why that matters.
+So every result of this chapter about \( \nR^n \), read at \( n = 2 \), is a result about \( \nC \). The order of the factors in (b) does not matter: \( \operatorname{Re}(z \conj{w}) = \operatorname{Re}(\conj{z} w) \), since the two products are conjugate (@thm-conjugate-properties (a), (b)). The coordinate bound (a) at the end of this section is, for \( n = 2 \), the first two inequalities of @lem-real-part-at-most-modulus. In the other direction, the multiplication of \( \nC \) has no counterpart in \( \nR^n \) for general \( n \) in this chapter; Section 9.5 explains why that matters.
 
 ## Comparing lengths through their squares
 
-Norms do not expand: \( \norm{x + y} \) is the root of a sum, and nothing splits it. Squared norms do, because \( \norm{v}^2 = \inner{v}{v} \) and the dot product is linear in each slot. The first example is the theorem of Pythagoras, now with "right angle" read as "dot product zero" (@def-orthogonal-rn).
+Norms do not expand: \( \norm{x + y} \) is the root of a sum, and nothing splits it. Squared norms do, because \( \norm{v}^2 = \inner{v}{v} \) and the dot product is linear in each slot. The first example is the theorem of Pythagoras, with "right angle" read as "dot product zero" (@def-orthogonal-rn). For instance, \( \inner{(3, 0)}{(0, 4)} = 0 \), and indeed \( \norm{(3, 0) + (0, 4)}^2 = \norm{(3, 4)}^2 = 25 = 9 + 16 \).
 
 ::: {#prp-pythagoras-rn}
 [Theorem of Pythagoras]
@@ -177,20 +187,20 @@ and the same holds with \( x - y \) in place of \( x + y \).
 ::: {.idea}
 [Scratch work]
 
-The Goal is an equivalence between a statement about norms and a statement about a dot product. Norms cannot be expanded, so the first move rewrites every squared norm as a dot product, and the second expands.
+We want an equivalence between a statement about norms and a statement about a dot product. Norms cannot be expanded. So first we rewrite every squared norm as a dot product, and then we expand.
 
-| Givens | Goal |
+| We know | We want |
 |---|---|
 | \( x, y \in \nR^n \) | \( \norm{x + y}^2 = \norm{x}^2 + \norm{y}^2 \iff \inner{x}{y} = 0 \) |
 | \( \norm{v}^2 = \inner{v}{v} \) (@prp-norm-basic-rn (c)) | \( \inner{x + y}{x + y} = \inner{x}{x} + \inner{y}{y} \iff \inner{x}{y} = 0 \) |
 | linearity and symmetry (@prp-dot-product-laws-rn (a), (b)) | \( \inner{x}{x} + 2\inner{x}{y} + \inner{y}{y} = \inner{x}{x} + \inner{y}{y} \iff \inner{x}{y} = 0 \) |
-| cancel \( \inner{x}{x} + \inner{y}{y} \); \( 2 \ne 0 \) | \( 2\inner{x}{y} = 0 \iff \inner{x}{y} = 0 \): the gap closes |
+| cancel \( \inner{x}{x} + \inner{y}{y} \); \( 2 \ne 0 \) | \( 2\inner{x}{y} = 0 \iff \inner{x}{y} = 0 \), which is true |
 
 The case \( x - y \) is the same table with \( -2\inner{x}{y} \) in the third row.
 :::
 
 ::: {.proof}
-By @prp-dot-product-laws-rn (b), applied first in the left slot and then in the right one, and then (a),
+Expand by linearity, first in the left slot and then in the right one, and then use symmetry:
 \[
 \begin{aligned}
 \inner{x + y}{x + y} &= \inner{x}{x + y} + \inner{y}{x + y} \\
@@ -198,26 +208,35 @@ By @prp-dot-product-laws-rn (b), applied first in the left slot and then in the 
 &= \inner{x}{x} + 2\inner{x}{y} + \inner{y}{y} .
 \end{aligned}
 \]
-In the same way, with \( x - y = x + (-1)y \) and linearity in each slot, \( \inner{x - y}{x - y} = \inner{x}{x} - 2\inner{x}{y} + \inner{y}{y} \). By @prp-norm-basic-rn (c), these read
+In the same way, with \( x - y = x + (-1)y \) and linearity in each slot, we get \( \inner{x - y}{x - y} = \inner{x}{x} - 2\inner{x}{y} + \inner{y}{y} \). By @prp-norm-basic-rn (c), these read
 \[
 \norm{x \pm y}^2 = \norm{x}^2 \pm 2\inner{x}{y} + \norm{y}^2 .
 \]{#eq-expand-norm-squared}
-So \( \norm{x \pm y}^2 = \norm{x}^2 + \norm{y}^2 \) holds if and only if \( \pm 2\inner{x}{y} = 0 \), if and only if \( \inner{x}{y} = 0 \), since \( 2 \ne 0 \) in \( \nR \) and \( \nR \) has no zero divisors (@fd3:lem-field-fraction-rules (d)). By @def-orthogonal-rn, \( \inner{x}{y} = 0 \) says \( x \perp y \).
+So \( \norm{x \pm y}^2 = \norm{x}^2 + \norm{y}^2 \) holds if and only if \( \pm 2\inner{x}{y} = 0 \). This holds if and only if \( \inner{x}{y} = 0 \), since \( 2 \ne 0 \) in \( \nR \) and \( \nR \) has no zero divisors (@fd3:lem-field-fraction-rules (d)). By @def-orthogonal-rn, \( \inner{x}{y} = 0 \) says \( x \perp y \).
+
+::: {.uses}
+@prp-dot-product-laws-rn (a), (b): symmetry, linearity.
+:::
 :::
 
-The proof never mentions an angle or a triangle. Pythagoras' theorem is now an identity about squares of norms, with a dot product as the error term, and @eq-expand-norm-squared is the identity behind every proof in the rest of this section. The move has a name.
+The proof never mentions an angle or a triangle. Pythagoras' theorem is now an identity about squares of norms, with a dot product as the error term. The identity @eq-expand-norm-squared is behind every proof in the rest of this section, so the way of working deserves a name.
 
 ::: {#exm-method-expand-the-square}
 [Method: expand the square]
 
-**Template.** To prove an identity or an inequality between norms: (1) if lengths are compared, compare their squares instead, which is allowed because both sides are \( \ge 0 \); (2) write each squared norm as a dot product, \( \norm{v}^2 = \inner{v}{v} \); (3) expand by linearity and symmetry, as in @eq-expand-norm-squared; (4) compare the expansions, then return from squares to lengths by comparing squares.
+**How it goes.** To prove an identity or an inequality between norms:
+
+1. If lengths are compared, compare their squares instead. This is allowed because both sides are \( \ge 0 \).
+2. Write each squared norm as a dot product, \( \norm{v}^2 = \inner{v}{v} \).
+3. Expand by linearity and symmetry, as in @eq-expand-norm-squared.
+4. Compare the expansions. Then return from squares to lengths by comparing squares.
 
 **When to use it.** Identities and inequalities among the norms of sums, differences and multiples of vectors; conditions such as \( d(x, a) = d(x, b) \).
 
-**The usual failure.** Dropping the cross term \( 2\inner{x}{y} \), which turns every expansion into Pythagoras; squaring a side that may be negative, such as \( \norm{x} - \norm{y} \), where comparing squares does not apply.
+**Common mistakes.** A common mistake is to drop the cross term \( 2\inner{x}{y} \), which turns every expansion into Pythagoras. Another is to square a side that may be negative, such as \( \norm{x} - \norm{y} \); comparing squares does not apply there.
 :::
 
-The second worked example is the law of the parallelogram. In the plane, the diagonals of the parallelogram spanned by \( x \) and \( y \) are \( x + y \) and \( x - y \), and the law says that the squares of the two diagonals add up to the squares of the four sides.
+The second worked example is the law of the parallelogram. In the plane, the parallelogram spanned by \( x \) and \( y \) has diagonals \( x + y \) and \( x - y \). The law says that the squares of the two diagonals add up to the squares of the four sides. For \( x = (2, 0) \) and \( y = (1, 1) \), the diagonals are \( (3, 1) \) and \( (1, -1) \), and \( 10 + 2 = 12 = 2 \cdot 4 + 2 \cdot 2 \).
 
 ::: {#prp-parallelogram-law-rn}
 [Parallelogram Law]
@@ -229,14 +248,14 @@ For all \( x, y \in \nR^n \),
 :::
 
 ::: {.proof}
-We follow the method of @exm-method-expand-the-square. No lengths are compared, only squares, so step (1) is empty. By step (2), each side is a sum of dot products: \( \norm{x \pm y}^2 = \inner{x \pm y}{x \pm y} \) by @prp-norm-basic-rn (c). By step (3), @eq-expand-norm-squared expands both:
+We expand the squares, as in @exm-method-expand-the-square. No lengths are compared, only squares, so we never pass to roots. Each side is a sum of dot products: \( \norm{x \pm y}^2 = \inner{x \pm y}{x \pm y} \) by @prp-norm-basic-rn (c). The identity @eq-expand-norm-squared expands both:
 \[
 \begin{aligned}
 \norm{x + y}^2 &= \norm{x}^2 + 2\inner{x}{y} + \norm{y}^2 , \\
 \norm{x - y}^2 &= \norm{x}^2 - 2\inner{x}{y} + \norm{y}^2 .
 \end{aligned}
 \]
-By step (4), we compare: adding the two lines, the cross terms \( 2\inner{x}{y} \) and \( -2\inner{x}{y} \) cancel, and what is left is \( 2\norm{x}^2 + 2\norm{y}^2 \). This proves the law.
+Now add the two lines: the cross terms \( 2\inner{x}{y} \) and \( -2\inner{x}{y} \) cancel, and what is left is \( 2\norm{x}^2 + 2\norm{y}^2 \). This proves the law.
 :::
 
 Subtracting the two lines instead of adding them makes the norms cancel and keeps the cross term. That gives the dot product back from lengths.
@@ -260,7 +279,7 @@ Polarization says that lengths determine dot products: whoever knows every dista
 
 ## Length against coordinates
 
-Analysis in several variables keeps changing between two ways of saying that \( x \) is small: \( \norm{x} \) is small, or every coordinate \( x_k \) is small. The two are equivalent, with constants that depend only on \( n \). For the comparison, let \( M \coloneqq \max\{ \abs{x_1}, \dots, \abs{x_n} \} \), the largest size of a coordinate; the maximum exists and is one of the listed numbers (@fd2:prp-finite-max).
+Analysis in several variables keeps changing between two ways of saying that \( x \) is small: \( \norm{x} \) is small, or every coordinate \( x_k \) is small. The two are equivalent, with constants that depend only on \( n \). For example, for \( x = (1, -2, 2) \) the largest size of a coordinate is \( 2 \), and \( \norm{x} = \sqrt 9 = 3 \). So \( 2 \le 3 \le 2\sqrt 3 \), where the second inequality holds since \( 3^2 = 9 \le 12 = (2\sqrt 3)^2 \). In general, let \( M \coloneqq \max\{ \abs{x_1}, \dots, \abs{x_n} \} \), the largest size of a coordinate; the maximum exists and is one of the listed numbers (@fd2:prp-finite-max).
 
 ::: {#prp-norm-coordinate-bounds}
 [Norm against Coordinates]
@@ -278,16 +297,20 @@ The square \( \norm{x}^2 = x_1^2 + \dots + x_n^2 \) is a sum of \( n \) non-nega
 :::
 
 ::: {.proof}
-By @prp-norm-basic-rn (c) and @prp-dot-product-laws-rn (c), \( \norm{x}^2 = \sum_{j=1}^{n} x_j^2 \), and every term \( x_j^2 \) is \( \ge 0 \) (@fd3:prp-ordered-ring-rules (e), with \( 0^2 = 0 \)).
+By @prp-norm-basic-rn (c), \( \norm{x}^2 = \inner{x}{x} = \sum_{j=1}^{n} x_j^2 \). Every term \( x_j^2 \) is \( \ge 0 \), since a square is never negative.
 
-(a) Fix \( k \). A sum of non-negative terms is at least each of its terms (@prp-sum-order (b)), so \( x_k^2 \le \sum_{j=1}^{n} x_j^2 = \norm{x}^2 \). Since \( x_k^2 = \abs{x_k}^2 \) (@fd3:prp-absolute-value-ordered-field (b)), this reads \( \abs{x_k}^2 \le \norm{x}^2 \). Both \( \abs{x_k} \) and \( \norm{x} \) are \( \ge 0 \), so comparing squares gives \( \abs{x_k} \le \norm{x} \). The maximum \( M \) is one of the numbers \( \abs{x_k} \), so \( M \le \norm{x} \).
+(a) Fix \( k \). A sum of non-negative terms is at least each of its terms (@prp-sum-order (b)), so \( x_k^2 \le \sum_{j=1}^{n} x_j^2 = \norm{x}^2 \). Since \( x_k^2 = \abs{x_k}^2 \), this reads \( \abs{x_k}^2 \le \norm{x}^2 \). Both \( \abs{x_k} \) and \( \norm{x} \) are \( \ge 0 \), so comparing squares gives \( \abs{x_k} \le \norm{x} \). The maximum \( M \) is one of the numbers \( \abs{x_k} \), so \( M \le \norm{x} \).
 
 (b) For every \( j \), \( 0 \le \abs{x_j} \le M \), so \( \abs{x_j} \abs{x_j} \le M M \) by @fd3:prp-ordered-field-halves (d), that is, \( x_j^2 \le M^2 \). A sum of \( n \) terms, each at most \( M^2 \), is at most \( n M^2 \) (@prp-sum-order (c)), so \( \norm{x}^2 \le n M^2 \). The number \( \sqrt n \, M \) is \( \ge 0 \), and its square is \( (\sqrt n)^2 M^2 = n M^2 \). So \( \norm{x}^2 \le (\sqrt n \, M)^2 \), and comparing squares gives \( \norm{x} \le \sqrt n \, M \).
+
+::: {.uses}
+@prp-dot-product-laws-rn (c): \( \inner{x}{x} \) as a sum. @fd3:prp-ordered-ring-rules (e): squares are \( \ge 0 \). @fd3:prp-absolute-value-ordered-field (b): \( \abs{a}^2 = a^2 \).
+:::
 :::
 
 Neither constant can be improved. For \( x = e_1 \), \( M = \norm{x} = 1 \), so (a) is an equality. For \( x = (1, \dots, 1) \), \( M = 1 \) and \( \norm{x} = \sqrt{1 + \dots + 1} = \sqrt n \), so (b) is an equality. For \( n = 1 \) both parts say \( \norm{x} = \abs{x} \).
 
-The proposition is used mostly in the following form, about the points near a given point \( a \). Recall that \( \abs{x_k - a_k} < r \) says \( a_k - r < x_k < a_k + r \) (@fd3:prp-absolute-value-ordered-field (d)), so "\( \abs{x_k - a_k} < r \) for every \( k \)" says that \( x \) lies in the open box \( \prod_k (a_k - r, a_k + r) \) of @def-box-rn, centered at \( a \).
+The proposition is used mostly in the following form, about the points near a given point \( a \). Recall that \( \abs{x_k - a_k} < r \) says \( a_k - r < x_k < a_k + r \) (@fd3:prp-absolute-value-ordered-field (d)). So "\( \abs{x_k - a_k} < r \) for every \( k \)" says that \( x \) lies in the open box \( \prod_k (a_k - r, a_k + r) \) of @def-box-rn, centered at \( a \).
 
 ::: {#cor-balls-and-boxes-rn}
 [Balls and Boxes]
@@ -301,10 +324,10 @@ Let \( a \in \nR^n \) and \( r > 0 \), and let \( x \in \nR^n \).
 :::
 
 ::: {.proof}
-The \( k \)-th coordinate of \( x - a \) is \( x_k - a_k \). (a) By @prp-norm-coordinate-bounds (a) for \( x - a \), \( \abs{x_k - a_k} \le \norm{x - a} < r \). (b) Let \( M \coloneqq \max_k \abs{x_k - a_k} \). It is one of the numbers \( \abs{x_k - a_k} \), so \( M < r/\sqrt n \). Since \( \sqrt n > 0 \) (it is \( \ge 0 \), and not \( 0 \), as \( 0^2 \ne n \)), multiplying by \( \sqrt n \) keeps the strict inequality (@fd3:prp-ordered-ring-rules (c)), and @prp-norm-coordinate-bounds (b) for \( x - a \) gives \( \norm{x - a} \le \sqrt n \, M < r \).
+The \( k \)-th coordinate of \( x - a \) is \( x_k - a_k \). (a) By @prp-norm-coordinate-bounds (a) for \( x - a \), \( \abs{x_k - a_k} \le \norm{x - a} < r \). (b) Let \( M \coloneqq \max_k \abs{x_k - a_k} \). It is one of the numbers \( \abs{x_k - a_k} \), so \( M < r/\sqrt n \). We have \( \sqrt n > 0 \), since \( \sqrt n \ge 0 \) and \( \sqrt n \ne 0 \), as \( 0^2 \ne n \). So multiplying by \( \sqrt n \) keeps the strict inequality (@fd3:prp-ordered-ring-rules (c)). Then @prp-norm-coordinate-bounds (b) for \( x - a \) gives \( \norm{x - a} \le \sqrt n \, M < r \).
 :::
 
-In words: the set of points at distance less than \( r \) from \( a \), a disc in the plane, sits inside the open square of half-side \( r \) centered at \( a \), and it contains the smaller open square of half-side \( r / \sqrt 2 \), whose corners lie on the boundary circle. In \( \nR^n \) the same holds with boxes, and the inner box shrinks as \( n \) grows. The analysis volumes use the corollary to pass between "close in distance" and "close in every coordinate", so that a limit in \( \nR^n \) can be taken one coordinate at a time.
+In words: take the set of points at distance less than \( r \) from \( a \), a disc in the plane. It sits inside the open square of half-side \( r \) centered at \( a \). It contains the smaller open square of half-side \( r / \sqrt 2 \), whose corners lie on the boundary circle. In \( \nR^n \) the same holds with boxes, and the inner box shrinks as \( n \) grows. The analysis volumes use the corollary to pass between "close in distance" and "close in every coordinate", so that a limit in \( \nR^n \) can be taken one coordinate at a time.
 
 ## Exercises
 
@@ -388,15 +411,19 @@ and check that the midpoint \( \frac12 (a + b) \) satisfies this equation.
 :::
 
 ::: {.solution}
-By @exm-method-expand-the-square. Both distances are non-negative, so by comparing squares \( d(x, a) = d(x, b) \) if and only if \( \norm{x - a}^2 = \norm{x - b}^2 \). By @eq-expand-norm-squared,
+We expand the squares (@exm-method-expand-the-square). Both distances are non-negative, so by comparing squares \( d(x, a) = d(x, b) \) if and only if \( \norm{x - a}^2 = \norm{x - b}^2 \). By @eq-expand-norm-squared,
 \[
 \norm{x - a}^2 = \norm{x}^2 - 2\inner{x}{a} + \norm{a}^2 , \qquad \norm{x - b}^2 = \norm{x}^2 - 2\inner{x}{b} + \norm{b}^2 .
 \]
-Cancelling \( \norm{x}^2 \), the two are equal if and only if \( 2\inner{x}{b} - 2\inner{x}{a} = \norm{b}^2 - \norm{a}^2 \), that is (linearity, @prp-dot-product-laws-rn (b)), \( 2\inner{x}{b - a} = \norm{b}^2 - \norm{a}^2 \). Divide by \( 2 \).
+Cancelling \( \norm{x}^2 \), the two are equal if and only if \( 2\inner{x}{b} - 2\inner{x}{a} = \norm{b}^2 - \norm{a}^2 \), that is, by linearity, \( 2\inner{x}{b - a} = \norm{b}^2 - \norm{a}^2 \). Divide by \( 2 \).
 
 For \( x = \frac12 (a + b) \): by linearity and symmetry, \( \inner{a + b}{b - a} = \norm{b}^2 - \inner{a}{b} + \inner{a}{b} - \norm{a}^2 = \norm{b}^2 - \norm{a}^2 \), so \( \inner{\frac12 (a + b)}{b - a} = \frac12 (\norm{b}^2 - \norm{a}^2) \).
 
 The hypothesis \( a \ne b \) is not used in the equivalence, which holds for \( a = b \) too (both sides then hold for every \( x \)). It makes the vector \( b - a \) nonzero, so that the equation is a genuine condition on \( x \); Chapter 10 calls such a set a hyperplane, and this one is the perpendicular bisector of \( a \) and \( b \).
+
+::: {.uses}
+@prp-dot-product-laws-rn: linearity and symmetry.
+:::
 :::
 
 ### C. Going deeper
@@ -412,11 +439,22 @@ The conclusion of the following argument is true. Is the argument correct? If no
 :::
 
 ::: {.solution}
-The conclusion is true: it is @prp-norm-coordinate-bounds (a). The argument is not correct. The one bad line is (3): it cites the "fact" \( \sqrt{a^2} = a \) for every real \( a \), which is false, and a false general fact cannot be cited (entry (N9) of @fd1:exm-not-allowed-catalogue). A counterexample to the step: for \( a = -3 \), \( \sqrt{(-3)^2} = \sqrt 9 = 3 \ne -3 \). The correct fact is \( \sqrt{a^2} = \abs{a} \) (@prp-norm-basic-rn (d), or @prp-modulus-of-real).
+The conclusion is true: it is @prp-norm-coordinate-bounds (a). The argument is not correct. The one bad line is (3). It cites the "fact" \( \sqrt{a^2} = a \) for every real \( a \), which is false. Citing a false general fact is never allowed; it is entry (N9) of the catalogue of errors in @fd1:exm-not-allowed-catalogue. A counterexample to the step: for \( a = -3 \), \( \sqrt{(-3)^2} = \sqrt 9 = 3 \ne -3 \). The correct fact is \( \sqrt{a^2} = \abs{a} \), by @prp-norm-basic-rn (d).
 
-The other lines are correct. Line (1) is @prp-sum-order (b); line (2) is comparing squares, since \( \norm{x} \) and \( \sqrt{x_k^2} \) are non-negative with squares \( \norm{x}^2 \ge x_k^2 \); line (4) uses \( \norm{-x} = \norm{x} \) (@prp-norm-basic-rn (b)); and line (5) holds because \( \abs{x_k} \) is \( x_k \) or \( -x_k \). Even line (3) would be rescued by the true inequality \( \sqrt{a^2} \ge a \) (as \( \sqrt{a^2} = \abs{a} \ge a \), @fd3:prp-absolute-value-ordered-field (c)): with it, lines (3)–(5) prove the claim. So the argument reaches a true conclusion, and only one of its lines needs a different justification. That is the point of the exercise: a correct conclusion does not make every line correct.
+The other lines are correct:
+
+- Line (1) is @prp-sum-order (b).
+- Line (2) is comparing squares, since \( \norm{x} \) and \( \sqrt{x_k^2} \) are non-negative with squares \( \norm{x}^2 \ge x_k^2 \).
+- Line (4) uses \( \norm{-x} = \norm{x} \) (@prp-norm-basic-rn (b)).
+- Line (5) holds because \( \abs{x_k} \) is \( x_k \) or \( -x_k \).
+
+Even line (3) can be saved. The true inequality \( \sqrt{a^2} \ge a \) holds, as \( \sqrt{a^2} = \abs{a} \ge a \) (@fd3:prp-absolute-value-ordered-field (c)). With it, lines (3)–(5) prove the claim. So the argument reaches a true conclusion, and only one of its lines needs a different justification. A correct conclusion does not make every line correct.
 
 *Repair.* Replace (3) by "\( \sqrt{x_k^2} = \abs{x_k} \) (@prp-norm-basic-rn (d))"; then (2) gives \( \norm{x} \ge \abs{x_k} \) at once, and lines (4) and (5) become unnecessary.
+
+::: {.uses}
+@prp-modulus-of-real: the same fact, in Chapter 3.
+:::
 :::
 
 <!-- dependency ledger
@@ -428,6 +466,7 @@ prp-norm-basic-rn (proof): <cx, cx> = c^2 <x, x>, using (b) of prp-dot-product-l
 prp-norm-basic-rn (proof): |c| ||x|| >= 0 as a product of non-negatives | (O4) of fd3:def-ordered-ring-and-field and fd3:prp-ring-algebra (b) (zero factor); used silently as in fd4 ch03 §02
 prp-norm-basic-rn (proof): |t| is t or -t; |-t0| = t0 for t0 > 0 | fd3:def-absolute-value-ordered-field (cited); fd3:prp-absolute-value-ordered-field (b)
 prp-norm-basic-rn (proof): 1/||x|| exists and is > 0 for ||x|| > 0 | fd3:prp-reciprocal-order (positive reciprocal); field axiom (F8)
+def-unit-vector-rn (claim): instance before it: (1/5)(3, 4) = (3/5, 4/5) has norm (1/5) * 5 = 1 | prp-norm-basic-rn (b) (on the page); verify/ch09/def-norm-rn.py
 def-unit-vector-rn (claim): (3, 4)/5 = (3/5, 4/5); (3/5, 0, 4/5) has norm 1 | verify/ch09/def-norm-rn.py
 def-unit-vector-rn (claim): warning: ||(1, 1)|| = sqrt 2 != 2 = ||e1|| + ||e2|| since 2^2 = 4 != 2 | arithmetic; verify/ch09/def-norm-rn.py
 def-distance-rn (claim): d((1,2),(4,6)) = 5 | verify/ch09/def-norm-rn.py
@@ -435,10 +474,13 @@ prp-distance-basic-rn (proof): x - y = 0 iff x = y; (x + z) - (y + z) = x - y; y
 prp-plane-is-complex-plane (proof): (t,0)(a,b) = (ta, tb); (c,d) + (-c,-d) = (0,0) so (-c,-d) is the negative in C; z conj(w) = (ac + bd, bc - ad) | def-complex-numbers multiplication rule (cited); negatives unique in the ring C (fd3:prp-ring-algebra (a), via prp-complex-arithmetic-laws); verify/ch09/prp-plane-is-complex-plane.py
 prp-plane-is-complex-plane (claim): Re(z conj w) = Re(conj z w), the products being conjugate | thm-conjugate-properties (a), (b) (cited); Re conj u = Re u from def-conjugate-modulus (prose after it in ch03 §02)
 prp-plane-is-complex-plane (claim): bound (a) of prp-norm-coordinate-bounds at n = 2 is lem-real-part-at-most-modulus's first two inequalities; pointer to Section 9.5 | comparison, nothing depends on it; prose pointer within the chapter
+prp-pythagoras-rn (claim): instance before it: <(3,0),(0,4)> = 0 and ||(3,4)||^2 = 25 = 9 + 16 | arithmetic; inline
 prp-pythagoras-rn (proof): 2 != 0 in R; cancelling a common summand | fd3:prp-ordered-ring-rules (h) (2 = 2 * 1 > 0); fd3:lem-field-fraction-rules (d) (cited); additive cancellation in a ring (fd3:prp-ring-algebra)
 prp-pythagoras-rn (proof): <x - y, x - y> expansion with x - y = x + (-1)y | prp-vector-space-laws-rn (definition of x - y in def-vector-operations-rn); prp-dot-product-laws-rn (a), (b) (cited); inline
+prp-parallelogram-law-rn (claim): instance before it: x = (2,0), y = (1,1): diagonals (3,1), (1,-1), 10 + 2 = 12 = 2*4 + 2*2 | arithmetic; inline
 prp-polarization-rn (proof): dividing by 4 != 0 | fd3:prp-ordered-ring-rules (h); field (F8)
 prp-polarization-rn (claim): a distance-preserving map fixing 0 preserves norms and dot products; pointer to the linear algebra volumes | prp-polarization-rn (b) (on the page); prose pointer, nothing depends on it
+prp-norm-coordinate-bounds (claim): instance before it: x = (1,-2,2): largest coordinate size 2, ||x|| = sqrt 9 = 3, 3 <= 2 sqrt 3 since 9 <= 12 | arithmetic; uniqueness of roots and comparing squares (as in def-norm-rn); inline
 prp-norm-coordinate-bounds (proof): x_j^2 >= 0 | fd3:prp-ordered-ring-rules (e) and 0^2 = 0 (fd3:prp-ring-algebra (b)) (cited)
 prp-norm-coordinate-bounds (proof): prp-sum-order (b), (c) are stated for sums over 0 <= k <= n; our sums run over 1 <= j <= n | reindexing: sum_{j=1}^{n} a_j is sum_{k=0}^{n-1} a_{k+1}, the k = m form of fd2:def-sum-product (template line, as in ch09 §02/§03); (c) then gives n M^2 for n terms
 prp-norm-coordinate-bounds (proof): the maximum M exists and is one of the |x_k| | fd2:prp-finite-max (cited) with the definition of maximum (F2.2)

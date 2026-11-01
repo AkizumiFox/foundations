@@ -20,4 +20,7 @@ assert (n2(add(e1, m1)), 1 + 1) == (0, 2) == QUOTED["warn"]
 x = (1, -2, 3); y = sc(-2, x)
 assert dot(x, y) == QUOTED["qc_dot"] and n2(x) * n2(y) == QUOTED["qc_prod"] ** 2
 assert n2(add(x, y)) == QUOTED["qc_sum_norm2"] and (n2(x) ** 1 * 9) == 126   # (3 sqrt 14)^2
+# instance before the statement: (3,4) + (4,3) = (7,7), ||x+y||^2 = 98 < 100 = (5+5)^2
+x, y = (3, 4), (4, 3)
+assert add(x, y) == (7, 7) and n2(add(x, y)) == 98 < 100 == (5 + 5) ** 2 and n2(x) == 25 == n2(y)
 print("ok")

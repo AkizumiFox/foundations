@@ -4,7 +4,9 @@ Section 10.1 described a line by a parametrization, one free parameter. In the p
 
 ## Hyperplanes
 
-Chapter 9 met equations of this kind twice. The vectors orthogonal to a fixed \( a \) are the solutions of \( \inner{a}{x} = 0 \) (@def-orthogonal-rn), and the points equidistant from two given points satisfy an equation \( \inner{x}{b - a} = \text{constant} \) (@exr-length-and-distance-b3). In \( \nR^2 \) such a set is a line. In \( \nR^3 \) it is not: the opening of Section 10.1 found three points of \( \{ x_1 + x_2 + x_3 = 1 \} \) on no common line. The solution set of one equation deserves its own name.
+Chapter 9 met equations of this kind twice. The vectors orthogonal to a fixed \( a \) are the solutions of \( \inner{a}{x} = 0 \) (@def-orthogonal-rn). The points equidistant from two given points satisfy an equation \( \inner{x}{b - a} = \text{constant} \) (@exr-length-and-distance-b3). In \( \nR^2 \) such a set is a line. In \( \nR^3 \) it is not: the opening of Section 10.1 found three points of \( \{ x_1 + x_2 + x_3 = 1 \} \) on no common line. The solution set of one equation deserves its own name.
+
+Here is a small case. Take \( a = (1, 1, 1) \) and \( c = 1 \) in \( \nR^3 \), so the equation is \( x_1 + x_2 + x_3 = 1 \). The points \( (1, 0, 0) \), \( (0, 1, 0) \) and \( (0, 0, 1) \) satisfy it. The point \( 0 \) gives \( 0 < 1 \), and the point \( (1, 1, 1) \) gives \( 3 > 1 \). So these two points lie on opposite sides of the solution set.
 
 *A hyperplane is the set where one non-zero linear expression takes one value.*
 
@@ -24,7 +26,7 @@ A hyperplane is never empty. The point
 \[
 p_0 \coloneqq \frac{c}{\norm{a}^2} \, a
 \]
-is defined since \( \norm{a}^2 > 0 \) (@prp-norm-basic-rn (a), (c)), and \( \inner{a}{p_0} = (c/\norm{a}^2)\norm{a}^2 = c \) by @prp-dot-product-laws-rn (b). By linearity again, \( \inner{a}{x} - c = \inner{a}{x - p_0} \), so
+is defined, since \( \norm{a}^2 > 0 \) by @prp-norm-basic-rn (a), (c). It lies on the hyperplane: \( \inner{a}{p_0} = (c/\norm{a}^2)\norm{a}^2 = c \) by linearity (@prp-dot-product-laws-rn (b)). By linearity again, \( \inner{a}{x} - c = \inner{a}{x - p_0} \), so
 \[
 x \in H_{a,c} \iff x - p_0 \perp a .
 \]
@@ -33,10 +35,10 @@ The hyperplane is the set of points reached from \( p_0 \) by a step orthogonal 
 **Examples.**
 
 - **\( n = 1 \).** For \( a \ne 0 \) in \( \nR \), \( H_{a,c} = \{ c/a \} \): a hyperplane of the line is one point. Its sides are the two open rays.
-- **\( n = 2 \).** \( H_{(1,1),1} \) is the line \( x_1 + x_2 = 1 \); the example below shows that every hyperplane of \( \nR^2 \) is a line.
+- **\( n = 2 \).** \( H_{(1,1),1} \) is the line \( x_1 + x_2 = 1 \). We will see shortly that every hyperplane of \( \nR^2 \) is a line.
 - **Coordinate hyperplanes.** \( H_{e_k, 0} = \{ x : x_k = 0 \} \) by @prp-dot-product-laws-rn (d). In \( \nR^3 \), \( H_{e_3, 0} \) is the plane of the first two axes.
 
-**Non-example by minimal change.** Change \( a = (1, 1) \) to \( a = (0, 0) \). Then \( \inner{0}{x} = 0 \) for every \( x \) (@prp-dot-product-laws-rn (e)), so \( \{ x : \inner{0}{x} = c \} \) is \( \nR^n \) when \( c = 0 \) and empty when \( c \ne 0 \). Neither looks like the sets above, and the formula for \( p_0 \) would divide by \( 0 \). The clause \( a \ne 0 \) is what fails.
+**What goes wrong when \( a = 0 \).** Change \( a = (1, 1) \) to \( a = (0, 0) \). Then \( \inner{0}{x} = 0 \) for every \( x \) (@prp-dot-product-laws-rn (e)), so \( \{ x : \inner{0}{x} = c \} \) is \( \nR^n \) when \( c = 0 \) and empty when \( c \ne 0 \). Neither looks like the sets above, and the formula for \( p_0 \) would divide by \( 0 \). The clause \( a \ne 0 \) is what fails.
 
 **Why "a" normal and not "the" normal.** The equations \( x_1 + x_2 = 1 \) and \( 2x_1 + 2x_2 = 2 \) have the same solutions. So one hyperplane has many pairs \( (a, c) \), and the next result says exactly how many.
 
@@ -51,7 +53,7 @@ The direction \( (\Leftarrow) \) multiplies an equation by \( \lambda \). For \(
 :::
 
 ::: {.proof}
-\( (\Leftarrow) \) If \( a' = \lambda a \) and \( c' = \lambda c \) with \( \lambda \ne 0 \), then \( \inner{a'}{x} = \lambda\inner{a}{x} \) by @prp-dot-product-laws-rn (b), and \( \lambda\inner{a}{x} = \lambda c \) holds if and only if \( \inner{a}{x} = c \), multiplying by \( \lambda \) or by \( 1/\lambda \).
+\( (\Leftarrow) \) If \( a' = \lambda a \) and \( c' = \lambda c \) with \( \lambda \ne 0 \), then \( \inner{a'}{x} = \lambda\inner{a}{x} \) by linearity, and \( \lambda\inner{a}{x} = \lambda c \) holds if and only if \( \inner{a}{x} = c \), multiplying by \( \lambda \) or by \( 1/\lambda \).
 
 \( (\Rightarrow) \) Suppose \( H_{a,c} = H_{a',c'} \), and let \( p_0 = (c/\norm{a}^2) a \). For every \( w \perp a \), the point \( p_0 + w \) lies in \( H_{a,c} \), hence in \( H_{a',c'} \): \( \inner{a'}{p_0 + w} = c' \). Taking \( w = 0 \) gives \( \inner{a'}{p_0} = c' \), and subtracting, \( \inner{a'}{w} = 0 \) for every \( w \perp a \).
 
@@ -59,11 +61,15 @@ Let \( \mu \coloneqq \inner{a'}{a}/\norm{a}^2 \) and \( w \coloneqq a' - \mu a =
 \[
 \norm{w}^2 = \inner{a' - \mu a}{w} = \inner{a'}{w} - \mu \inner{a}{w} = 0 - 0 = 0 ,
 \]
-and \( w = 0 \) by @prp-norm-basic-rn (a). So \( a' = \mu a \). Since \( a' \ne 0 \), \( \mu \ne 0 \). Finally \( c' = \inner{a'}{p_0} = \mu \inner{a}{p_0} = \mu c \). This proves the claim with \( \lambda = \mu \).
+and \( w = 0 \), since only the zero vector has norm \( 0 \). So \( a' = \mu a \). Since \( a' \ne 0 \), \( \mu \ne 0 \). Finally \( c' = \inner{a'}{p_0} = \mu \inner{a}{p_0} = \mu c \). This proves the claim with \( \lambda = \mu \).
+
+::: {.uses}
+@prp-dot-product-laws-rn (b): linearity; @prp-norm-basic-rn (a): norm zero only at 0.
+:::
 :::
 
 ::: {.warning}
-**A hyperplane has many normal vectors, and \( a = 0 \) gives none.** \( H_{(1,1),1} = H_{(2,2),2} = H_{(-1,-1),-1} \). "The normal" of a hyperplane means "a normal": it is fixed only up to a non-zero factor (@prp-hyperplane-normals). So a formula that uses a normal, such as the distance and nearest-point formulas below, is only meaningful if it gives the same answer for \( (\lambda a, \lambda c) \) as for \( (a, c) \); we check that it does. And \( a = 0 \) is excluded on purpose: \( \{ x : \inner{0}{x} = c \} \) is \( \emptyset \) or \( \nR^n \), neither of them a hyperplane: every \( H_{a,c} \) contains \( p_0 \), and misses \( p_0 + a \), where the value is \( c + \norm{a}^2 \ne c \).
+**A hyperplane has many normal vectors, and \( a = 0 \) gives none.** \( H_{(1,1),1} = H_{(2,2),2} = H_{(-1,-1),-1} \). "The normal" of a hyperplane means "a normal": it is fixed only up to a non-zero factor (@prp-hyperplane-normals). So a formula that uses a normal, such as the distance and nearest-point formulas below, is only meaningful if it gives the same answer for \( (\lambda a, \lambda c) \) as for \( (a, c) \). We check that it does. And \( a = 0 \) is excluded on purpose: \( \{ x : \inner{0}{x} = c \} \) is \( \emptyset \) or \( \nR^n \), and neither is a hyperplane. Indeed, every \( H_{a,c} \) contains \( p_0 \) and misses \( p_0 + a \), where the value is \( c + \norm{a}^2 \ne c \).
 :::
 
 In the plane, hyperplanes and lines are the same sets, and each description converts into the other by swapping two coordinates and changing one sign.
@@ -99,12 +105,18 @@ Write the line through \( (1, 3) \) and \( (4, -1) \) as an equation \( a_1 x_1 
 :::
 
 ::: {.solution}
-A direction is \( v = (4, -1) - (1, 3) = (3, -4) \) (@prp-line-through-two-points), so by @exm-lines-in-the-plane (b) a normal is \( (4, 3) \) and \( c = 4 \cdot 1 + 3 \cdot 3 = 13 \): the line is \( 4x_1 + 3x_2 = 13 \). Check at the second point: \( 16 - 3 = 13 \).
+A direction is \( v = (4, -1) - (1, 3) = (3, -4) \). By @exm-lines-in-the-plane (b), a normal is \( (4, 3) \) and \( c = 4 \cdot 1 + 3 \cdot 3 = 13 \). So the line is \( 4x_1 + 3x_2 = 13 \). Check at the second point: \( 16 - 3 = 13 \).
+
+::: {.uses}
+@prp-line-through-two-points: direction \( q - p \).
+:::
 :::
 
 ## Equidistant points
 
-The warning at the end of Section 10.1 found a point at equal distances from \( p \) and \( q \) that is not their midpoint, and asked for all such points. Chapter 9 found their equation in @exr-length-and-distance-b3. Here that set is named as a hyperplane, and the two sides of it are read off: the points nearer to \( p \) and the points nearer to \( q \).
+At the end of Section 10.1 we found a point at equal distances from \( p \) and \( q \) that is not their midpoint, and asked for all such points. Chapter 9 found their equation in @exr-length-and-distance-b3. Here that set is named as a hyperplane. Its two sides are the points nearer to \( p \) and the points nearer to \( q \).
+
+A small case first. In \( \nR^2 \), take \( p = (0, 0) \) and \( q = (2, 0) \). A point \( x \) is equally far from both exactly when \( x_1^2 + x_2^2 = (x_1 - 2)^2 + x_2^2 \), that is, when \( 4x_1 = 4 \), or \( x_1 = 1 \). This is a line through the midpoint \( (1, 0) \). The points with \( x_1 < 1 \) are nearer to \( p \).
 
 ::: {#prp-perpendicular-bisector}
 [The Perpendicular Bisector]
@@ -123,7 +135,7 @@ Expand the square (@exm-method-expand-the-square): compare squares instead of no
 :::
 
 ::: {.proof}
-For non-negative reals \( s, u \), \( s < u \) if and only if \( s^2 < u^2 \) (@fd3:prp-ordered-ring-rules (g)), and, as \( \le \) is total (item (i)), \( s = u \) if and only if \( s^2 = u^2 \). Norms are non-negative (@prp-norm-basic-rn (a)), so both claims may be checked on squares. By @eq-expand-norm-squared and linearity,
+For non-negative reals \( s, u \), we have \( s < u \) if and only if \( s^2 < u^2 \). Since the order of \( \nR \) is total, also \( s = u \) if and only if \( s^2 = u^2 \). Norms are non-negative, so both claims may be checked on squares. By @eq-expand-norm-squared and linearity,
 \[
 \begin{aligned}
 \norm{x - p}^2 - \norm{x - q}^2
@@ -132,9 +144,13 @@ For non-negative reals \( s, u \), \( s < u \) if and only if \( s^2 < u^2 \) (@
 \end{aligned}
 \]
 So \( \norm{x - p}^2 = \norm{x - q}^2 \) if and only if \( \inner{q - p}{x} = c \), and \( \norm{x - p}^2 < \norm{x - q}^2 \) if and only if \( \inner{q - p}{x} < c \). Since \( p \ne q \), \( q - p \ne 0 \), so \( H_{q - p, c} \) is a hyperplane. For the midpoint, linearity and symmetry give \( \inner{q - p}{p + q} = \norm{q}^2 - \norm{p}^2 \), so \( \inner{q - p}{\frac12 (p + q)} = c \).
+
+::: {.uses}
+@fd3:prp-ordered-ring-rules (g), (i): squares keep order, order is total; @prp-norm-basic-rn (a): norms are non-negative.
+:::
 :::
 
-The open half-space \( \inner{q - p}{x} < c \) is the side of the bisector that contains \( p \): the points strictly nearer to \( p \) than to \( q \). The midpoint is the only point of the segment \( [p, q] \) on the bisector (by @thm-betweenness its two distances add up to \( \norm{p - q} \), and @cor-point-pinned-on-segment with equal distances), but for \( n \ge 2 \) the bisector has many other points.
+The open half-space \( \inner{q - p}{x} < c \) is the side of the bisector that contains \( p \): the points strictly nearer to \( p \) than to \( q \). The midpoint is the only point of the segment \( [p, q] \) on the bisector. Indeed, for a point of \( [p, q] \) the two distances add up to \( \norm{p - q} \), by @thm-betweenness. If they are also equal, the point is the midpoint (@cor-point-pinned-on-segment). For \( n \ge 2 \), though, the bisector has many other points.
 
 ::: {.check}
 Find the points of \( \nR^2 \) equidistant from \( (0, 0) \) and \( (2, 4) \).
@@ -147,6 +163,8 @@ Here \( q - p = (2, 4) \) and \( c = \frac12 (20 - 0) = 10 \), so the set is \( 
 ## Nearest points
 
 Chapter 9 found the point of a line **through the origin** nearest to a given point (@thm-projection-closest-point). A general line \( p + \nR v \) is the line \( \nR v \) slid by \( p \), and distances do not change under sliding (@prp-distance-basic-rn (c)). So the answer carries over: slide \( x \) by \( -p \), project, slide back.
+
+For example, take the horizontal line \( (0, 1) + \nR(1, 0) \) in \( \nR^2 \) and the point \( x = (3, 5) \). The point of the line nearest to \( x \) is \( (3, 1) \), straight below \( x \), at distance \( 4 \). The step from it to \( x \) is \( (0, 4) \), orthogonal to the direction \( (1, 0) \).
 
 ::: {#prp-nearest-point-on-line}
 [The Nearest Point on a Line]
@@ -170,6 +188,8 @@ Since \( m \) is described as the nearest point, it depends only on \( L \) and 
 
 For a hyperplane the roles turn around. On a line we search along the direction \( v \) and the error is orthogonal to \( v \). On a hyperplane the error should be **parallel** to the normal \( a \): from \( x \), move along \( a \) until the equation \( \inner{a}{x} = c \) holds.
 
+For example, take \( x_1 + x_2 = 2 \) in \( \nR^2 \), so \( a = (1, 1) \), and the point \( x = (3, 3) \). Moving to \( x - s(1, 1) \) changes the value \( x_1 + x_2 = 6 \) by \( -2s \). The value is \( 2 \) when \( s = 2 \), at the point \( (1, 1) \). Its distance from \( x \) is \( \norm{(2, 2)} = 2\sqrt 2 \).
+
 ::: {#prp-nearest-point-on-hyperplane}
 [Distance to a Hyperplane]
 
@@ -188,14 +208,18 @@ Hence \( x^* \) is the **unique** point of \( H_{a,c} \) nearest to \( x \), and
 :::
 
 ::: {.proof}
-Write \( s \coloneqq (\inner{a}{x} - c)/\norm{a}^2 \), so \( x^* = x - sa \). By linearity, \( \inner{a}{x^*} = \inner{a}{x} - s\norm{a}^2 = c \), so \( x^* \in H_{a,c} \). Let \( y \in H_{a,c} \). Then \( x - y = (x - x^*) + (x^* - y) \), where \( x - x^* = sa \) and \( \inner{a}{x^* - y} = c - c = 0 \). Hence \( \inner{x - x^*}{x^* - y} = s \cdot 0 = 0 \), and Pythagoras (@prp-pythagoras-rn) gives the identity. It shows \( \norm{x - y}^2 \ge \norm{x - x^*}^2 \), with equality if and only if \( \norm{x^* - y} = 0 \), that is, \( y = x^* \) (@prp-norm-basic-rn (a)); comparing squares of non-negative numbers, as in the proof of @prp-perpendicular-bisector, gives the same for the norms. Finally, by @prp-norm-basic-rn (b),
+Write \( s \coloneqq (\inner{a}{x} - c)/\norm{a}^2 \), so \( x^* = x - sa \). By linearity, \( \inner{a}{x^*} = \inner{a}{x} - s\norm{a}^2 = c \), so \( x^* \in H_{a,c} \). Let \( y \in H_{a,c} \). Then \( x - y = (x - x^*) + (x^* - y) \), where \( x - x^* = sa \) and \( \inner{a}{x^* - y} = c - c = 0 \). Hence \( \inner{x - x^*}{x^* - y} = s \cdot 0 = 0 \), and Pythagoras (@prp-pythagoras-rn) gives the identity. The identity shows \( \norm{x - y}^2 \ge \norm{x - x^*}^2 \). Equality holds if and only if \( \norm{x^* - y} = 0 \), that is, \( y = x^* \). Comparing squares of non-negative numbers, as in the proof of @prp-perpendicular-bisector, gives the same for the norms. Finally, since \( \norm{sa} = \abs{s} \, \norm{a} \),
 \[
 \norm{x - x^*} = \abs{s} \, \norm{a} = \frac{\abs{\inner{a}{x} - c}}{\norm{a}^2} \, \norm{a} = \frac{\abs{\inner{a}{x} - c}}{\norm{a}} ,
 \]
-using \( \abs{u/w} = \abs{u}/w \) for \( w > 0 \) (@fd3:prp-absolute-value-ordered-field (b)).
+using \( \abs{u/w} = \abs{u}/w \) for \( w > 0 \).
+
+::: {.uses}
+@prp-norm-basic-rn (a), (b): norm zero only at 0, \( \norm{sa} = \abs{s}\norm{a} \); @fd3:prp-absolute-value-ordered-field (b): \( \abs{u/w} = \abs{u}/\abs{w} \).
+:::
 :::
 
-The formula passes the test of the warning. Replacing \( (a, c) \) by \( (\lambda a, \lambda c) \) multiplies the numerator \( \abs{\inner{a}{x} - c} \) by \( \abs{\lambda} \) and the denominator \( \norm{a} \) by \( \abs{\lambda} \); in \( x^* \) the coefficient is multiplied by \( \lambda/\lambda^2 \) and the vector by \( \lambda \). Nothing changes. The sign of \( \inner{a}{x} - c \), which the absolute value discards, says on which side of the hyperplane \( x \) lies.
+The formula does not depend on which normal is used. Replacing \( (a, c) \) by \( (\lambda a, \lambda c) \) multiplies the numerator \( \abs{\inner{a}{x} - c} \) by \( \abs{\lambda} \) and the denominator \( \norm{a} \) by \( \abs{\lambda} \); in \( x^* \) the coefficient is multiplied by \( \lambda/\lambda^2 \) and the vector by \( \lambda \). Nothing changes. The sign of \( \inner{a}{x} - c \), which the absolute value discards, says on which side of the hyperplane \( x \) lies.
 
 ::: {.check}
 Find the distance from \( (1, 2, 3) \) to the hyperplane \( x_1 + x_2 + x_3 = 0 \), and the nearest point.
@@ -207,7 +231,7 @@ Here \( a = (1, 1, 1) \), \( c = 0 \), \( \inner{a}{x} - c = 6 \) and \( \norm{a
 
 ## Spheres meet lines; segments cross hyperplanes
 
-A sphere is the set of points at one fixed distance from a center.
+A sphere is the set of points at one fixed distance from a center. In the plane, the points at distance \( 1 \) from the origin form the unit circle \( x_1^2 + x_2^2 = 1 \). On the number line, the points at distance \( r \) from \( c \) are the two points \( c \pm r \).
 
 ::: {#def-sphere-rn}
 [Sphere]
@@ -215,9 +239,9 @@ A sphere is the set of points at one fixed distance from a center.
 For \( c \in \nR^n \) and a real \( r > 0 \), the **sphere** with center \( c \) and radius \( r \) is \( S(c, r) \coloneqq \{ x \in \nR^n : \norm{x - c} = r \} \). In \( \nR^2 \) a sphere is called a **circle**.
 :::
 
-For example, \( S(0, 1) \) in \( \nR^2 \) is the unit circle \( x_1^2 + x_2^2 = 1 \), and in \( \nR^1 \) the sphere \( S(c, r) \) is the two points \( c \pm r \).
+So the unit circle is \( S(0, 1) \) in \( \nR^2 \).
 
-How many points can a line share with a sphere? The answer depends only on the distance from the center to the line.
+How many points can a line share with a sphere? Try the unit circle and the horizontal line \( x_2 = h \). A common point has \( x_1^2 = 1 - h^2 \). So there are two common points if \( \abs{h} < 1 \), one if \( \abs{h} = 1 \), and none if \( \abs{h} > 1 \). Here \( \abs{h} \) is the distance from the center to the line. In general, too, the answer depends only on that distance.
 
 ::: {#prp-line-meets-sphere}
 [A Line Meets a Sphere]
@@ -236,11 +260,11 @@ Parametrize (@exm-method-parametrize): the point \( p + tv \) lies on the sphere
 :::
 
 ::: {.proof}
-By @prp-nearest-point-on-line, applied to the point \( c \), and @prp-distance-basic-rn (b),
+Apply @prp-nearest-point-on-line to the point \( c \). Since \( \norm{y - c} = \norm{c - y} \) for every \( y \), its identity reads
 \[
 \norm{(p + tv) - c}^2 = d^2 + (t - t_0)^2 \norm{v}^2 \quad \text{for every } t \in \nR .
 \]
-Both \( \norm{(p + tv) - c} \) and \( r \) are non-negative, so \( p + tv \in S(c, r) \) if and only if the squares agree (comparing squares, as in the proof of @prp-perpendicular-bisector), that is, if and only if
+Both \( \norm{(p + tv) - c} \) and \( r \) are non-negative, so we may compare squares, as in the proof of @prp-perpendicular-bisector. Thus \( p + tv \in S(c, r) \) if and only if
 \[
 (t - t_0)^2 = k , \qquad k \coloneqq \frac{r^2 - d^2}{\norm{v}^2} .
 \]
@@ -250,12 +274,16 @@ Since \( d, r \ge 0 \), @fd3:prp-ordered-ring-rules (g) and totality give: \( k 
 
 (b) For \( k = 0 \), \( (t - t_0)^2 = 0 \) forces \( t = t_0 \) (@fd3:prp-ordered-ring-rules (f)), and the only common point is \( m \).
 
-(c) For \( k > 0 \), let \( \rho \coloneqq \sqrt k \) (@fd3:prp-cof-square-roots, with @fd3:thm-reals-complete-ordered-field); \( \rho > 0 \), since \( \rho \ge 0 \) and \( \rho^2 = k \ne 0 \). Then \( (t - t_0)^2 = \rho^2 \) says \( (t - t_0 - \rho)(t - t_0 + \rho) = 0 \), so \( t = t_0 + \rho \) or \( t = t_0 - \rho \) (@fd3:prp-ordered-ring-rules (f)), and both work. They differ, as \( \rho > 0 \), and distinct parameters give distinct points: \( p + tv = p + uv \) gives \( \abs{t - u}\,\norm{v} = 0 \) (@prp-norm-basic-rn (b)), so \( t = u \). Finally \( \rho = \sqrt{r^2 - d^2}/\norm{v} \), since the right side is non-negative and its square is \( k \) (uniqueness in @fd3:prp-cof-square-roots).
+(c) For \( k > 0 \), let \( \rho \coloneqq \sqrt k \), the non-negative real whose square is \( k \) (@fd3:prp-cof-square-roots). Then \( \rho > 0 \), since \( \rho \ge 0 \) and \( \rho^2 = k \ne 0 \). The equation \( (t - t_0)^2 = \rho^2 \) says \( (t - t_0 - \rho)(t - t_0 + \rho) = 0 \). So \( t = t_0 + \rho \) or \( t = t_0 - \rho \) (@fd3:prp-ordered-ring-rules (f)), and both work. They differ, as \( \rho > 0 \). Distinct parameters give distinct points: \( p + tv = p + uv \) gives \( \abs{t - u}\,\norm{v} = 0 \), so \( t = u \). Finally \( \rho = \sqrt{r^2 - d^2}/\norm{v} \), since the right side is non-negative and its square is \( k \). Here we use that the non-negative square root is unique.
+
+::: {.uses}
+@prp-distance-basic-rn (b): distance is symmetric. @fd3:thm-reals-complete-ordered-field: square roots exist in \( \nR \). @fd3:prp-cof-square-roots: the root is unique. @prp-norm-basic-rn (b): \( \norm{sv} = \abs{s}\norm{v} \).
+:::
 :::
 
 When \( d = r \) the line is **tangent** to the sphere at \( m \). Exercise B3 shows that the tangent lines at a point \( m \) of the sphere are exactly the lines through \( m \) whose direction is orthogonal to \( m - c \).
 
-The last result of the section is about segments. If \( p \) and \( q \) are on opposite sides of a hyperplane, the segment between them must cross it, and it crosses exactly once.
+The last result of the section is about segments. If \( p \) and \( q \) are on opposite sides of a hyperplane, the segment between them must cross it, and it crosses exactly once. For example, \( p = (0, 0) \) and \( q = (4, 0) \) lie on opposite sides of the line \( x_1 = 1 \). The point \( (1 - t)p + tq = (4t, 0) \) is on the line only for \( t = 1/4 \), at \( (1, 0) \).
 
 ::: {#prp-segment-crosses-hyperplane}
 [A Segment Crosses a Hyperplane Once]
@@ -274,7 +302,7 @@ Write \( \alpha \coloneqq \inner{a}{p} \) and \( \beta \coloneqq \inner{a}{q} \)
 This equals \( c \) if and only if \( t(\beta - \alpha) = c - \alpha \), and since \( \beta - \alpha > 0 \), if and only if \( t = t_1 \). Moreover \( 0 < c - \alpha < \beta - \alpha \), so \( 0 < t_1 < 1 \). Hence the point with parameter \( t_1 \) lies on \( [p, q] \) and on \( H_{a,c} \), and every common point has parameter \( t_1 \), so it is that point.
 :::
 
-Along the segment, the value of \( \inner{a}{x} \) grows from \( \alpha \) to \( \beta \) at a constant rate in \( t \), so it passes the level \( c \) once. When \( p \) and \( q \) are on the **same** side, the segment does not reach \( H_{a,c} \) at all (B4 (d)); Section 10.3 calls a set that contains the segment between any two of its points convex.
+Along the segment, the value of \( \inner{a}{x} \) grows from \( \alpha \) to \( \beta \) at a constant rate in \( t \), so it passes the level \( c \) once. When \( p \) and \( q \) are on the **same** side, the segment does not reach \( H_{a,c} \) at all. Exercise B4 (d) asks you to prove this. Section 10.3 calls a set **convex** if it contains the segment between any two of its points.
 
 ## Exercises
 
@@ -345,11 +373,15 @@ Let \( m \in S(c, r) \) and \( v \ne 0 \). Prove that the line \( m + \nR v \) m
 :::
 
 ::: {.solution}
-By @eq-expand-norm-squared and @prp-norm-basic-rn (b), and since \( \norm{m - c} = r \),
+Expand the square (@eq-expand-norm-squared), and use \( \norm{tv} = \abs{t}\,\norm{v} \) and \( \norm{m - c} = r \):
 \[
 \norm{(m + tv) - c}^2 = r^2 + 2t\inner{m - c}{v} + t^2 \norm{v}^2 .
 \]
 Comparing squares of non-negative numbers, \( m + tv \in S(c, r) \) if and only if this equals \( r^2 \), that is, \( t \bigl( 2\inner{m - c}{v} + t\norm{v}^2 \bigr) = 0 \), that is, \( t = 0 \) or \( t = t' \coloneqq -2\inner{m - c}{v}/\norm{v}^2 \). Distinct parameters give distinct points (as in the proof of @prp-line-meets-sphere), so \( m \) (at \( t = 0 \)) is the only common point if and only if \( t' = 0 \), if and only if \( \inner{m - c}{v} = 0 \). Hence the tangent lines at \( m \) are those whose direction is orthogonal to the radius \( m - c \).
+
+::: {.uses}
+@prp-norm-basic-rn (b): \( \norm{tv} = \abs{t}\norm{v} \).
+:::
 :::
 
 ::: {#exr-hyperplanes-and-nearest-points-b4}
@@ -381,7 +413,7 @@ Throughout, \( a \ne 0 \).
 ### C. Going deeper
 
 ::: {#exr-hyperplanes-and-nearest-points-c1}
-[C1: Exit check: the circle through three points]
+[C1: Chapter check: the circle through three points]
 
 Prove that three non-collinear points \( p, q, r \) of \( \nR^2 \) lie on exactly one circle. Find it for \( (0, 0) \), \( (4, 0) \), \( (0, 2) \).
 :::
@@ -405,7 +437,7 @@ The three points are distinct: if two coincided, the line through the two distin
 
 *The normals are not multiples.* If \( r - q = \lambda(q - p) \), then \( r = p + (1 + \lambda)(q - p) \) lies on the line \( p + \nR(q - p) \), which contains \( p \) and \( q \) too, against non-collinearity. So, by @exr-lines-and-segments-b2 (a), with \( a \coloneqq q - p \ne 0 \) and \( a' \coloneqq r - q \ne 0 \), \( D \coloneqq a_1 a'_2 - a_2 a'_1 \ne 0 \).
 
-*The bisectors meet once.* By @exm-lines-in-the-plane (a), \( B_1 \) and \( B_2 \) are lines with directions \( (-a_2, a_1) \) and \( (-a'_2, a'_1) \). The expression of @exr-lines-and-segments-b2 (a) for these two directions is \( (-a_2) a'_1 - a_1 (-a'_2) = D \ne 0 \), so neither direction is a multiple of the other, and by @exr-lines-and-segments-b2 (b) the lines meet in exactly one point \( z \).
+*The bisectors meet once.* By @exm-lines-in-the-plane (a), \( B_1 \) and \( B_2 \) are lines with directions \( (-a_2, a_1) \) and \( (-a'_2, a'_1) \). For these two directions, the expression of @exr-lines-and-segments-b2 (a) is \( (-a_2) a'_1 - a_1 (-a'_2) = D \ne 0 \). So neither direction is a multiple of the other. By part (b) of the same exercise, the lines meet in exactly one point \( z \).
 
 *Existence.* \( z \in B_1 \cap B_2 \) gives \( \norm{z - p} = \norm{z - q} = \norm{z - r} \); call this number \( \rho \). Then \( \rho > 0 \): \( \rho = 0 \) would give \( z = p = q \). So \( p, q, r \in S(z, \rho) \).
 
@@ -413,7 +445,7 @@ The three points are distinct: if two coincided, the line through the two distin
 
 *The example.* \( B_1 \): \( q - p = (4, 0) \), \( c_1 = \frac12 (16 - 0) = 8 \), so \( 4x_1 = 8 \), \( x_1 = 2 \). \( B_2 \): \( r - q = (-4, 2) \), \( c_2 = \frac12 (4 - 16) = -6 \), so \( -4x_1 + 2x_2 = -6 \), and with \( x_1 = 2 \), \( x_2 = 1 \). The center is \( (2, 1) \), and \( \rho = \norm{(2, 1)} = \sqrt 5 \); indeed \( \norm{(2, 1) - (4, 0)}^2 = 4 + 1 \) and \( \norm{(2, 1) - (0, 2)}^2 = 4 + 1 \).
 
-**Marking scheme.** (10 points)
+**What a complete answer needs.** (10 points)
 
 - 2: reduces "\( p, q, r \) on \( S(z, \rho) \)" to "\( z \) on both perpendicular bisectors", citing the bisector result.
 - 2: shows the normals \( q - p \), \( r - q \) are not multiples, from non-collinearity, and carries this to the directions of the two lines.
@@ -421,7 +453,9 @@ The three points are distinct: if two coincided, the line through the two distin
 - 2: existence: the common point is equidistant from all three, with \( \rho > 0 \).
 - 2: uniqueness of the center and hence of the radius.
 
-A route that solves the two bisector equations as a linear system in \( z \), with \( D \ne 0 \) shown, earns the middle three items at once (6 points). Fatal errors (0 for the step): assuming the bisectors meet without using non-collinearity; checking only the example; forgetting that the radius must be positive.
+A route that solves the two bisector equations as a linear system in \( z \), with \( D \ne 0 \) shown, earns the middle three items at once (6 points).
+
+**Slips that lose the step.** Each of these earns 0 for its step: assuming the bisectors meet without using non-collinearity; checking only the example; forgetting that the radius must be positive.
 :::
 
 <!-- dependency ledger
@@ -430,8 +464,8 @@ def-hyperplane-rn (example): for n = 1, ax = c iff x = c/a (a != 0) | field arit
 prp-hyperplane-normals (proof): lambda u = lambda c iff u = c for lambda != 0 | multiply by 1/lambda (field axioms of R), inline
 prp-hyperplane-normals (proof): mu != 0 since a' = mu a and a' != 0 | 0 * a = 0 (prp-vector-space-laws-rn), inline
 exm-lines-in-the-plane (solution): (-a2, a1) != 0 iff a != 0 | coordinatewise, inline
-prp-perpendicular-bisector (proof): s = u iff s^2 = u^2 for s, u >= 0 | fd3:prp-ordered-ring-rules (g) with totality (i) (cited), as in Ch9's "comparing squares" (Section 3.3 prose)
-prp-nearest-point-on-hyperplane (proof): |u / w| = |u| / w for w > 0 | fd3:prp-absolute-value-ordered-field (b) (cited) with |w| = w for w > 0
+prp-perpendicular-bisector (proof): s = u iff s^2 = u^2 for s, u >= 0 | fd3:prp-ordered-ring-rules (g) with totality (i) (cited, Uses line), as in Ch9's "comparing squares" (Section 3.3 prose)
+prp-nearest-point-on-hyperplane (proof): |u / w| = |u| / w for w > 0 | fd3:prp-absolute-value-ordered-field (b) (cited, Uses line) with |w| = w for w > 0
 prp-line-meets-sphere (proof): k < 0, = 0, > 0 according as d > r, d = r, d < r | fd3:prp-ordered-ring-rules (g), (i) (cited) and division by ||v||^2 > 0 (fd3:prp-ordered-ring-rules (c))
 prp-line-meets-sphere (proof): (s - rho)(s + rho) = s^2 - rho^2 | commutative ring algebra in R, inline
 prp-line-meets-sphere (proof): sqrt(r^2 - d^2)/||v|| has square k | fd3:lem-field-fraction-rules (b), inline

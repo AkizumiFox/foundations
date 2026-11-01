@@ -4,7 +4,7 @@ The later volumes will define continuity, limits of functions and the integral, 
 
 ## Irrationals between any two reals
 
-Most of the functions below treat rational and irrational points differently, so we need both kinds in every interval. The rationals are dense (@fd3:thm-rationals-dense-ordered-field). The irrationals are too; *Number Systems* asked for this as an exercise (@fd3:exr-rationals-inside-the-reals-c2). We record it as a lemma, with its proof, because the rest of this section cites it. A real number is **irrational** if it is not in \( \nQ \).
+Most of the functions below treat rational and irrational points differently, so we need both kinds in every interval. The rationals are dense (@fd3:thm-rationals-dense-ordered-field). The irrationals are dense too. *Number Systems* left this as an exercise (@fd3:exr-rationals-inside-the-reals-c2), and we prove it here. A real number is **irrational** if it is not in \( \nQ \).
 
 ::: {#lem-irrationals-dense}
 [Irrationals Are Dense]
@@ -13,12 +13,16 @@ For all \( a, b \in \nR \) with \( a < b \) there is an irrational \( x \) with 
 :::
 
 ::: {.proof}
-Let \( a < b \). Since \( \nR \) is a complete ordered field (@fd3:thm-reals-complete-ordered-field), @fd3:prp-cof-square-roots gives \( \sqrt 2 \ge 0 \) with \( (\sqrt 2)^2 = 2 \), and \( \nR \) is Archimedean (@fd3:thm-cof-complete-archimedean). Since \( a - \sqrt 2 < b - \sqrt 2 \), @fd3:thm-rationals-dense-ordered-field gives \( q \in \nQ \) with \( a - \sqrt 2 < q < b - \sqrt 2 \). Put \( x \coloneqq q + \sqrt 2 \); then \( a < x < b \).
+Let \( a < b \). The real numbers form a complete ordered field (@fd3:thm-reals-complete-ordered-field). So there is \( \sqrt 2 \ge 0 \) with \( (\sqrt 2)^2 = 2 \), and \( \nR \) is Archimedean. Since \( a - \sqrt 2 < b - \sqrt 2 \), the density of the rationals gives \( q \in \nQ \) with \( a - \sqrt 2 < q < b - \sqrt 2 \) (@fd3:thm-rationals-dense-ordered-field). Put \( x \coloneqq q + \sqrt 2 \); then \( a < x < b \).
 
-Suppose \( x \) were rational. Then \( r \coloneqq x - q \in \nQ \) and \( r = \sqrt 2 \), so \( r^2 = 2 \) in \( \nR \). The copy of \( \nQ \) in \( \nR \) is injective and respects products (@fd3:thm-rationals-embed-ordered-field), so \( r^2 = 2 \) already in \( \nQ \), against @fd3:thm-no-rational-square-two. Hence \( x \) is irrational.
+Suppose \( x \) were rational. Then \( r \coloneqq x - q \in \nQ \) and \( r = \sqrt 2 \), so \( r^2 = 2 \) in \( \nR \). The copy of \( \nQ \) inside \( \nR \) is injective and respects products, so \( r^2 = 2 \) already holds in \( \nQ \). No rational squares to \( 2 \) (@fd3:thm-no-rational-square-two), a contradiction. Hence \( x \) is irrational.
+
+::: {.uses}
+@fd3:prp-cof-square-roots (square roots exist); @fd3:thm-cof-complete-archimedean (\( \nR \) is Archimedean); @fd3:thm-rationals-embed-ordered-field (\( \nQ \) sits inside \( \nR \)).
+:::
 :::
 
-The second paragraph of the proof works for every rational \( q \): \( q + \sqrt 2 \) is irrational. With \( q = 0 \), \( \sqrt 2 \) itself is irrational.
+The argument for irrationality works for every rational \( q \): \( q + \sqrt 2 \) is irrational. With \( q = 0 \), \( \sqrt 2 \) itself is irrational.
 
 ::: {.check}
 Why does the proof shift by \( \sqrt 2 \), and not by \( 1/2 \)?
@@ -51,9 +55,13 @@ The **Dirichlet function** is \( D \coloneqq \ind_{\nQ} \colon \nR \to \nR \) (@
 ::: {.proof}
 (a) Let \( p \in \nQ \), \( p \ne 0 \). Since \( \nQ \) is closed under sums and negatives, \( x \in \nQ \) if and only if \( x + p \in \nQ \), so \( D(x + p) = D(x) \) for every \( x \). Let \( p \notin \nQ \). Then \( D(0) = 1 \) and \( D(0 + p) = 0 \), so \( p \) is not a period.
 
-(b) Every value of \( D \) is \( 0 \) or \( 1 \). By @fd3:thm-rationals-dense-ordered-field there is a rational in \( (a, b) \), where \( D \) is \( 1 \); by @lem-irrationals-dense there is an irrational in \( (a, b) \), where \( D \) is \( 0 \). An upper bound of \( D((a, b)) \) that is itself a value is its supremum (@fd2:def-order-supremum), so \( \sup_{(a, b)} D = 1 \) is attained; likewise \( \inf_{(a, b)} D = 0 \). Since \( D \) is bounded on the non-empty set \( (a, b) \), @prp-sup-oscillation gives \( \sup \{ \abs{D(x) - D(y)} : x, y \in (a, b) \} = 1 - 0 = 1 \).
+(b) Every value of \( D \) is \( 0 \) or \( 1 \). The interval \( (a, b) \) contains a rational, where \( D \) is \( 1 \) (@fd3:thm-rationals-dense-ordered-field). It also contains an irrational, where \( D \) is \( 0 \) (@lem-irrationals-dense). An upper bound of \( D((a, b)) \) that is itself a value is its supremum, so \( \sup_{(a, b)} D = 1 \) is attained; likewise \( \inf_{(a, b)} D = 0 \). Since \( D \) is bounded on the non-empty set \( (a, b) \), @prp-sup-oscillation gives \( \sup \{ \abs{D(x) - D(y)} : x, y \in (a, b) \} = 1 - 0 = 1 \).
 
-(c) By @lem-irrationals-dense there is an irrational \( t \in (a, b) \), and by @fd3:thm-rationals-dense-ordered-field there are rationals \( q_1 \in (a, t) \) and \( q_2 \in (t, b) \). Then \( q_1 < t \) and \( D(q_1) = 1 > 0 = D(t) \), so \( D \) is not increasing on \( (a, b) \); and \( t < q_2 \) with \( D(t) = 0 < 1 = D(q_2) \), so it is not decreasing.
+(c) By @lem-irrationals-dense there is an irrational \( t \in (a, b) \). The rationals are dense, so there are rationals \( q_1 \in (a, t) \) and \( q_2 \in (t, b) \). Then \( q_1 < t \) and \( D(q_1) = 1 > 0 = D(t) \), so \( D \) is not increasing on \( (a, b) \). Also \( t < q_2 \) with \( D(t) = 0 < 1 = D(q_2) \), so it is not decreasing.
+
+::: {.uses}
+@fd2:def-order-supremum (a bound that is a value); @fd3:thm-rationals-dense-ordered-field (the rationals are dense).
+:::
 :::
 
 ```{=latex}
@@ -80,7 +88,7 @@ by the triangle inequality (@fd3:prp-absolute-value-ordered-field (e)). So every
 
 ## Thomae's function
 
-The Dirichlet function gives every rational the same value. Thomae's function gives a rational a value that shrinks with its denominator.
+The Dirichlet function gives every rational the same value. Thomae's function gives a rational a value that shrinks with its denominator. For example, it gives \( 1/2 \) the value \( 1/2 \), both \( 1/3 \) and \( 2/3 \) the value \( 1/3 \), and \( 3/4 \) the value \( 1/4 \). At an irrational point it is \( 0 \).
 
 ::: {#def-thomae-function}
 [Thomae's Function]
@@ -102,8 +110,13 @@ Compute \( T(3/4) \), \( T(-6/8) \), \( T(0.6) \) and \( T(\sqrt 2/2) \).
 :::
 
 ::: {.solution}
-\( 1/4 \); \( 1/4 \), since \( -6/8 = -3/4 \) and \( \gcd(-3, 4) = 1 \); \( 1/5 \), since \( 0.6 = 3/5 \); and \( 0 \), since \( \sqrt 2/2 \) is irrational: if \( \sqrt 2/2 = r \in \nQ \), then \( \sqrt 2 = 2r \in \nQ \), but \( \sqrt 2 \) is irrational (the remark after @lem-irrationals-dense).
+- \( T(3/4) = 1/4 \).
+- \( T(-6/8) = 1/4 \), since \( -6/8 = -3/4 \) and \( \gcd(-3, 4) = 1 \).
+- \( T(0.6) = 1/5 \), since \( 0.6 = 3/5 \).
+- \( T(\sqrt 2/2) = 0 \), since \( \sqrt 2/2 \) is irrational. Indeed, if \( \sqrt 2/2 = r \in \nQ \), then \( \sqrt 2 = 2r \in \nQ \). But \( \sqrt 2 \) is irrational, as shown just after @lem-irrationals-dense.
 :::
+
+Large values of \( T \) are rare. On \( [0, 1] \), the points with \( T(x) \ge 1/3 \) have denominator \( 1 \), \( 2 \) or \( 3 \). They are \( 0 \), \( 1 \), \( 1/2 \), \( 1/3 \) and \( 2/3 \): only five.
 
 ::: {#prp-thomae-large-values}
 [Thomae's Function Has Few Large Values]
@@ -126,15 +139,19 @@ A large value needs a small denominator: \( T(x) \ge \varepsilon \) forces \( q 
 \[
 S_q \coloneqq \{ p/q : p \in \nZ,\ \floor{aq} \le p \le \floor{bq} \} .
 \]
-*\( E \subseteq S_1 \cup \dots \cup S_Q \).* Let \( x \in E \). Then \( T(x) \ge \varepsilon > 0 \), so \( x \in \nQ \); write \( x = p/q \) in lowest terms. From \( 1/q \ge \varepsilon \) we get \( q \le 1/\varepsilon \), so \( q \le Q \) by @prp-floor-rules (g). From \( a \le p/q \le b \) and \( q > 0 \) we get \( aq \le p \le bq \), so \( \floor{aq} \le aq \le p \) by @prp-floor-rules (a), and \( p \le \floor{bq} \) by @prp-floor-rules (g). So \( x \in S_q \) with \( 1 \le q \le Q \). (If \( Q = 0 \), no \( q \) qualifies and \( E = \emptyset \).)
+*\( E \subseteq S_1 \cup \dots \cup S_Q \).* Let \( x \in E \). Then \( T(x) \ge \varepsilon > 0 \), so \( x \in \nQ \); write \( x = p/q \) in lowest terms. From \( 1/q \ge \varepsilon \) we get \( q \le 1/\varepsilon \), so \( q \le Q \) by @prp-floor-rules (g). From \( a \le p/q \le b \) and \( q > 0 \) we get \( aq \le p \le bq \). Hence \( \floor{aq} \le aq \le p \), and \( p \le \floor{bq} \) by @prp-floor-rules (g). So \( x \in S_q \) with \( 1 \le q \le Q \). (If \( Q = 0 \), no \( q \) qualifies and \( E = \emptyset \).)
 
 *Each \( S_q \) is finite.* If \( \floor{aq} > \floor{bq} \), then \( S_q = \emptyset \). Otherwise let \( m \coloneqq \floor{aq} \) and \( k \coloneqq \floor{bq} - m + 1 \). The map \( \{1, \dots, k\} \to S_q \), \( j \mapsto (m + j - 1)/q \), is onto by the definition of \( S_q \), and injective because \( q \ne 0 \). So \( S_q \) has \( k \) elements (@fd2:def-finite).
 
-*A finite union of finite sets is finite* (@fd2:exr-finite-sets-b3). For two finite sets \( A \), \( B \): \( A \cup B \) is the union of the disjoint sets \( A \) and \( B \setminus A \), the second finite by @fd2:prp-subset-finite, so \( A \cup B \) is finite by @fd2:prp-disjoint-union-count. Induction on the number of sets (@fd1:ax-induction) gives \( S_1 \cup \dots \cup S_Q \) finite.
+*A finite union of finite sets is finite* (@fd2:exr-finite-sets-b3). Let \( A \) and \( B \) be finite sets. Then \( A \cup B \) is the union of the disjoint sets \( A \) and \( B \setminus A \). The second is finite, as a subset of \( B \). So \( A \cup B \) is finite by @fd2:prp-disjoint-union-count. Induction on the number of sets gives \( S_1 \cup \dots \cup S_Q \) finite.
 
 Hence \( E \), a subset of a finite set, is finite by @fd2:prp-subset-finite.
 
-(c) By @fd3:thm-rationals-dense-ordered-field there is a rational in \( (a, b) \), where \( T > 0 \); by @lem-irrationals-dense there is an irrational in \( (a, b) \), where \( T = 0 \).
+(c) The interval \( (a, b) \) contains a rational, where \( T > 0 \) (@fd3:thm-rationals-dense-ordered-field). It also contains an irrational, where \( T = 0 \) (@lem-irrationals-dense).
+
+::: {.uses}
+@prp-floor-rules (a) (the floor is at most the number); @fd2:prp-subset-finite (subsets of finite sets); @fd1:ax-induction (induction).
+:::
 :::
 
 ```{=latex}
@@ -189,7 +206,11 @@ For \( 0 < x \le 1 \) we have \( 1/x \ge 1 \), so \( \floor{1/x} \ge 1 \) by @pr
 \[
 \floor{1/x} = n \iff n \le 1/x < n + 1 \iff \frac{1}{n + 1} < x \le \frac{1}{n} ,
 \]
-by @def-floor-ceiling and @fd3:prp-reciprocal-order. So \( s = 1/n \) on \( (1/(n + 1), 1/n] \): a step at height \( 1/n \) whose right end lies on the line \( y = x \).
+The first equivalence is the definition of the floor. The second takes reciprocals of positive numbers, which reverses inequalities (@fd3:prp-reciprocal-order). So \( s = 1/n \) on \( (1/(n + 1), 1/n] \): a step at height \( 1/n \) whose right end lies on the line \( y = x \).
+
+::: {.uses}
+@def-floor-ceiling (the floor).
+:::
 :::
 
 ```{=latex}
@@ -225,9 +246,9 @@ by @def-floor-ceiling and @fd3:prp-reciprocal-order. So \( s = 1/n \) on \( (1/(
 :::
 
 ::: {.proof}
-(a) Let \( 0 < x < y \le 1 \). Then \( 1/y < 1/x \) (@fd3:prp-reciprocal-order), so \( \floor{1/y} \le \floor{1/x} \) by @prp-floor-rules (c); both are at least \( 1 \), so \( s(x) = 1/\floor{1/x} \le 1/\floor{1/y} = s(y) \), again by @fd3:prp-reciprocal-order. For \( x = 0 < y \), \( s(0) = 0 < s(y) \).
+(a) Let \( 0 < x < y \le 1 \). Taking reciprocals reverses the inequality, so \( 1/y < 1/x \) (@fd3:prp-reciprocal-order). Then \( \floor{1/y} \le \floor{1/x} \) by @prp-floor-rules (c). Both are at least \( 1 \), so taking reciprocals again gives \( s(x) = 1/\floor{1/x} \le 1/\floor{1/y} = s(y) \). For \( x = 0 < y \), \( s(0) = 0 < s(y) \).
 
-(b) For \( n \in \nZ_{>0} \), \( s(1/n) = 1/\floor{n} = 1/n \) (@prp-floor-rules (a)). If \( s \) took finitely many values, the set \( V \coloneqq \{ 1/n : n \in \nZ_{>0} \} \) of some of them would be finite (@fd2:prp-subset-finite) and non-empty, so it would have a minimum \( 1/N \) (@fd2:prp-finite-max). But \( 1/(N + 1) \in V \) and \( 1/(N + 1) < 1/N \).
+(b) For \( n \in \nZ_{>0} \), \( s(1/n) = 1/\floor{n} = 1/n \) (@prp-floor-rules (a)). Suppose \( s \) took finitely many values. The set \( V \coloneqq \{ 1/n : n \in \nZ_{>0} \} \) consists of some of them, so it would be finite (@fd2:prp-subset-finite). It is non-empty, so it would have a minimum \( 1/N \) (@fd2:prp-finite-max). But \( 1/(N + 1) \in V \) and \( 1/(N + 1) < 1/N \).
 
 (c) Let \( 0 < x \le 1 \) and \( n \coloneqq \floor{1/x} \ge 1 \). By the solution of @exm-strange-staircase, \( 1/(n + 1) < x \le 1/n \), so \( s(x) - x = 1/n - x \ge 0 \), and
 \[
@@ -323,7 +344,7 @@ Let \( M \colon [0, 1] \to \nR \), \( M(x) \coloneqq x \) for \( 0 \le x < 1 \) 
 Every value is at most \( 1 \): it is \( x < 1 \) or it is \( 0 \). For \( \varepsilon > 0 \), put \( x \coloneqq \max\{0, 1 - \varepsilon/2\} \in [0, 1) \); then \( M(x) = x \ge 1 - \varepsilon/2 > 1 - \varepsilon \). By @prp-real-sup-approximation, \( \sup_{[0, 1]} M = 1 \). Every value is in fact **strictly** below \( 1 \), so the supremum is not attained.
 :::
 
-Both \( R \) and \( M \) are defined everywhere on the closed bounded interval \( [0, 1] \). Which further hypothesis would rule out both behaviors is one of the questions in the table.
+Both \( R \) and \( M \) are defined everywhere on the closed bounded interval \( [0, 1] \). The table below asks which further hypothesis would rule out both behaviors.
 
 ## The table
 
@@ -348,7 +369,7 @@ Each row names a function, recalls its definition, lists what this section prove
 ::: {.remark}
 [Looking ahead]
 
-*Analysis on the Real Line* answers these questions: the continuity and extreme-value ones once it has continuous functions, the integrability ones once it has the integral, and it replaces \( \dist(1/x, \nZ) \) in the zigzag by the sine, once it has one. No proof in the main text of this section uses a limit, continuity or a derivative.
+*Analysis on the Real Line* answers these questions. It settles the continuity and extreme-value questions once it has continuous functions, and the integrability questions once it has the integral. Once it has the sine, it replaces \( \dist(1/x, \nZ) \) in the zigzag by the sine. No proof in the main text of this section uses a limit, continuity or a derivative.
 :::
 
 ## Exercises
@@ -412,7 +433,7 @@ Seven points; \( 2/4 \) is not new, since it is \( 1/2 \), with value \( 1/2 \).
 :::
 
 ::: {.solution}
-(a) True. If \( x \) and \( x + \sqrt 2 \) were both rational, so would be their difference \( \sqrt 2 \), which is irrational (the remark after @lem-irrationals-dense). So at most one of the two values is \( 1 \).
+(a) True. If \( x \) and \( x + \sqrt 2 \) were both rational, so would be their difference \( \sqrt 2 \), which is irrational, as shown just after @lem-irrationals-dense. So at most one of the two values is \( 1 \).
 
 (b) True. On \( \nQ \), \( J \) is the identity, and \( q_1 < q_2 \) gives \( J(q_1) = q_1 < q_2 = J(q_2) \).
 
@@ -458,14 +479,14 @@ By @exr-real-functions-and-graphs-c1 (a) and (c), \( f(0) = 0 \) and \( f(q) = c
 
 *Case \( c = 0 \).* Take rationals \( p < x < q \) (@fd3:thm-rationals-dense-ordered-field, in \( (x - 1, x) \) and \( (x, x + 1) \)). Then \( 0 = f(p) \le f(x) \le f(q) = 0 \), so \( f(x) = 0 = cx \).
 
-Without "increasing", additivity alone does not force \( f(x) = cx \) in general, but a non-linear additive function cannot be written down without the axiom of choice (ZF alone does not prove that one exists); this series builds none.
+Without "increasing", additivity alone does not force \( f(x) = cx \) in general. But an additive function that is not of this form cannot be written down without the axiom of choice. The other axioms of set theory do not prove that one exists, and this series builds none.
 
-**Marking scheme.** (10 points)
+**What a complete answer needs.** (10 points)
 - 2: obtains \( f(q) = cq \) on \( \nQ \) and \( c \ge 0 \), each with its reason.
 - 4: for \( c > 0 \), refutes \( f(x) > cx \) with a rational between \( x \) and \( f(x)/c \), using monotonicity in the right direction.
 - 2: the symmetric case \( f(x) < cx \).
 - 2: the case \( c = 0 \).
-Fatal errors (0 for the step): dividing by \( c \) without \( c > 0 \); assuming \( f \) continuous or taking a limit of rationals.
+Slips that lose the step: dividing by \( c \) without \( c > 0 \); assuming \( f \) continuous or taking a limit of rationals.
 :::
 
 ::: {#exr-strange-functions-c2}
@@ -503,7 +524,7 @@ Prove that the strictly increasing bijections \( \nR \to \nR \) form a subgroup 
 ::: {.solution}
 The bijections of \( \nR \) form a group under \( \circ \) (@exm-groups (c)). Let \( G \) be the set of strictly increasing bijections. We use @thm-subgroup-test.
 
-\( G \ne \emptyset \), since \( \id_{\nR} \in G \). Let \( f, g \in G \). Since \( g \) is strictly increasing and onto, @thm-monotone-inverse (b) gives that \( g^{-1} \colon g(\nR) = \nR \to \nR \) is strictly increasing; it is a bijection by @fd2:thm-bijection-iff-inverse. Then \( f \circ g^{-1} \) is strictly increasing by @prp-monotone-algebra (e) and bijective by @fd2:thm-composition-injective-surjective (c). So \( f \circ g^{-1} \in G \), and \( G \) is a subgroup.
+\( G \ne \emptyset \), since \( \id_{\nR} \in G \). Let \( f, g \in G \). Since \( g \) is strictly increasing and onto, @thm-monotone-inverse (b) gives that \( g^{-1} \colon g(\nR) = \nR \to \nR \) is strictly increasing. It is a bijection by @fd2:thm-bijection-iff-inverse. Then \( f \circ g^{-1} \) is strictly increasing by @prp-monotone-algebra (e). It is bijective by @fd2:thm-composition-injective-surjective (c). So \( f \circ g^{-1} \in G \), and \( G \) is a subgroup.
 
 The strictly decreasing bijections do not form a subgroup. A subgroup contains the identity, and \( \id_{\nR} \) is not strictly decreasing (\( 0 < 1 \), \( \id(0) < \id(1) \)). They are not even closed under composition: \( x \mapsto -x \) composed with itself is \( \id_{\nR} \).
 :::
@@ -533,7 +554,7 @@ The tool is that a polynomial is fixed by finitely many values. Two look-alikes 
 <!-- dependency ledger
 lem-irrationals-dense (proof): Q is identified with its copy in R (q written for kappa(q)) | fd3 ch05 §04 identification remark (NOTATION row for \nQ, \nR)
 prp-dirichlet-properties (proof): Q is closed under sums and negatives | Q is a field (fd3 ch03)
-prp-dirichlet-properties (proof): an upper bound of a set that lies in the set is its supremum (and max) | @fd2:def-order-supremum, inline
+prp-dirichlet-properties (proof): an upper bound of a set that lies in the set is its supremum (and max) | @fd2:def-order-supremum, Uses line
 prp-thomae-large-values (proof): a common divisor of p + q and q divides p | inline (Ch2 divisibility)
 prp-thomae-large-values (proof): j -> (m + j - 1)/q is a bijection {1..k} -> S_q | inline
 prp-thomae-large-values (proof): q <= 1/eps with q integer gives q <= floor(1/eps) | @prp-floor-rules (g)

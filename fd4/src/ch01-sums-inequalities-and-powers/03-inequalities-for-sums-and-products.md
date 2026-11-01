@@ -1,10 +1,10 @@
 # Inequalities for Sums and Products
 
-Bernoulli's inequality (@fd2:thm-bernoulli) compares a power with a linear function: \( (1 + x)^n \ge 1 + nx \) whenever \( x \ge -1 \). Estimates in analysis keep needing comparisons of this kind, and they usually need a little more than the plain statement gives. This section sharpens Bernoulli's inequality to a strict one, extends it from a power of one factor to a product of different factors, and then uses it to prove the inequality between the arithmetic and the geometric mean. That last inequality is the tool for bounding a product by a power. The inequality of Cauchy and Schwarz, which bounds a sum of products, waits for vectors in Chapter 9.
+Bernoulli's inequality (@fd2:thm-bernoulli) compares a power with a linear function: \( (1 + x)^n \ge 1 + nx \) whenever \( x \ge -1 \). Estimates in analysis keep needing comparisons of this kind, and they usually need a little more than the plain statement gives. This section first sharpens Bernoulli's inequality to a strict one. It then extends the inequality from a power of one factor to a product of different factors. Finally it uses Bernoulli's inequality to prove the inequality between the arithmetic and the geometric mean. That last inequality is the tool for bounding a product by a power. The inequality of Cauchy and Schwarz, which bounds a sum of products, waits for vectors in Chapter 9.
 
 ## Bernoulli's inequality, sharpened and extended
 
-The proof of @fd2:thm-bernoulli multiplied out \( (1 + nx)(1 + x) = 1 + (n + 1)x + nx^2 \) and threw away the term \( nx^2 \) because it is non-negative. When \( x \ne 0 \) and \( n \ge 1 \), that term is positive, and something is lost by throwing it away. Keeping it gives a strict inequality.
+The proof of @fd2:thm-bernoulli multiplied out \( (1 + nx)(1 + x) = 1 + (n + 1)x + nx^2 \) and threw away the term \( nx^2 \) because it is non-negative. When \( x \ne 0 \) and \( n \ge 1 \), that term is positive, and something is lost by throwing it away. For example, at \( x = \frac12 \) and \( n = 2 \), the power is \( \bigl(\frac32\bigr)^2 = \frac94 \), while \( 1 + 2 \cdot \frac12 = 2 \). Keeping the term gives a strict inequality.
 
 ::: {#lem-bernoulli-strict}
 [Strict Bernoulli Inequality]
@@ -21,9 +21,9 @@ We use @fd2:thm-induction with base \( 2 \). For \( n = 2 \),
 \[
 (1 + x)^2 = 1 + 2x + x^2 > 1 + 2x ,
 \]
-because \( x^2 > 0 \) for \( x \ne 0 \) (@fd3:prp-ordered-ring-rules (e)).
+because \( x^2 > 0 \) for \( x \ne 0 \): the square of a nonzero number is positive.
 
-Let \( n \ge 2 \) and suppose \( (1 + x)^n > 1 + nx \). Since \( x \ge -1 \), we have \( 1 + x \ge 0 \). Multiplying an inequality by a non-negative number keeps its direction, though perhaps not its strictness: if \( 1 + x > 0 \) the product is strict by @fd3:prp-ordered-ring-rules (c), and if \( 1 + x = 0 \) both sides become \( 0 \). So
+Let \( n \ge 2 \) and suppose \( (1 + x)^n > 1 + nx \). Since \( x \ge -1 \), we have \( 1 + x \ge 0 \). Multiplying an inequality by a non-negative number keeps its direction, though perhaps not its strictness. If \( 1 + x > 0 \), multiplying by it keeps the inequality strict. If \( 1 + x = 0 \), both sides become \( 0 \). So
 \[
 \begin{aligned}
 (1 + x)^{n+1} &= (1 + x)^n (1 + x) \ge (1 + nx)(1 + x) \\
@@ -31,6 +31,10 @@ Let \( n \ge 2 \) and suppose \( (1 + x)^n > 1 + nx \). Since \( x \ge -1 \), we
 \end{aligned}
 \]
 where the last step holds because \( n > 0 \) and \( x^2 > 0 \), so \( nx^2 > 0 \). The strictness of the conclusion comes from this last step, not from the hypothesis. This proves the lemma for every \( n \ge 2 \).
+
+::: {.uses}
+@fd3:prp-ordered-ring-rules (c), (e), (h): signs of products and squares. @fd3:prp-ring-algebra (b): times zero is zero.
+:::
 :::
 
 At \( x = -1 \) the lemma says \( 0 > 1 - n \), which is true for \( n \ge 2 \): the endpoint is allowed, and the proof used it only through \( 1 + x \ge 0 \).
@@ -43,7 +47,7 @@ Why does the lemma exclude \( x = 0 \) and \( n = 1 \)?
 Both give equality, so a strict inequality would be false. For \( x = 0 \): \( (1 + 0)^n = 1 = 1 + n \cdot 0 \). For \( n = 1 \): \( (1 + x)^1 = 1 + x = 1 + 1 \cdot x \). (For \( n = 0 \) both sides are \( 1 \) as well.)
 :::
 
-Put \( x = -a \) with \( 0 \le a \le 1 \). Bernoulli's inequality becomes \( (1 - a)^n \ge 1 - na \): a product of \( n \) equal factors just below \( 1 \) is at least \( 1 \) minus the total of what each factor misses. The same holds when the factors differ.
+Put \( x = -a \) with \( 0 \le a \le 1 \). Bernoulli's inequality becomes \( (1 - a)^n \ge 1 - na \): a product of \( n \) equal factors just below \( 1 \) is at least \( 1 \) minus the total of what each factor misses. The same holds when the factors differ. For example, \( (1 - 0.1)(1 - 0.2) = 0.72 \), which is at least \( 1 - (0.1 + 0.2) = 0.7 \).
 
 ::: {#prp-weierstrass-product}
 [Products of Factors Below One]
@@ -61,7 +65,7 @@ Induct on \( n \), as for Bernoulli: multiply the hypothesis by the next factor 
 ::: {.proof}
 We induct on \( n \in \nN \) (@fd1:ax-induction). For \( n = 0 \) the product is empty and the sum is empty, so the claim reads \( 1 \ge 1 - 0 \).
 
-Suppose the claim holds for \( n \), and let \( a_1, \dots, a_{n+1} \in [0, 1] \). Write \( s \coloneqq \sum_{k=1}^{n} a_k \). Every \( a_k \ge 0 \), so \( s \ge 0 \) by @prp-sum-order (a), compared with the list of zeros. Since \( a_{n+1} \le 1 \), the factor \( 1 - a_{n+1} \) is non-negative, and multiplying the hypothesis \( \prod_{k=1}^{n} (1 - a_k) \ge 1 - s \) by it keeps the direction (as in the proof of @lem-bernoulli-strict). By @fd2:def-sum-product,
+Suppose the claim holds for \( n \), and let \( a_1, \dots, a_{n+1} \in [0, 1] \). Write \( s \coloneqq \sum_{k=1}^{n} a_k \). Every \( a_k \ge 0 \), so \( s \) is at least the sum of \( n \) zeros, that is, \( s \ge 0 \). Since \( a_{n+1} \le 1 \), the factor \( 1 - a_{n+1} \) is non-negative. Multiplying the hypothesis \( \prod_{k=1}^{n} (1 - a_k) \ge 1 - s \) by it keeps the direction, as in the proof of the strict Bernoulli inequality. Splitting off the last factor of the product, we get
 \[
 \begin{aligned}
 \prod_{k=1}^{n+1} (1 - a_k) &\ge (1 - s)(1 - a_{n+1}) = 1 - s - a_{n+1} + s\, a_{n+1} \\
@@ -69,6 +73,10 @@ Suppose the claim holds for \( n \), and let \( a_1, \dots, a_{n+1} \in [0, 1] \
 \end{aligned}
 \]
 where the second inequality drops \( s\, a_{n+1} \ge 0 \), a product of two non-negative numbers. This is the claim for \( n + 1 \).
+
+::: {.uses}
+@prp-sum-order (a): sums respect order. @lem-bernoulli-strict: multiplying by non-negatives. @fd2:def-sum-product: empty and last factor.
+:::
 :::
 
 With all \( a_k \) equal to \( a \), the proposition is Bernoulli's inequality at \( x = -a \). It is useful when the \( a_k \) are small and their sum is under control, for then the product stays close to \( 1 \). The analysis volumes use it to study infinite products, products of infinitely many factors \( 1 - a_k \).
@@ -89,9 +97,9 @@ A rectangle with perimeter \( 4 \) has sides \( a \) and \( b \) with \( a + b =
 \]
 so \( ab \le \bigl(\frac{a + b}{2}\bigr)^2 \), with equality exactly when \( a = b \). A product of two numbers is at most the square of their average.
 
-For three numbers we would like \( abc \le \bigl(\frac{a + b + c}{3}\bigr)^3 \), and for \( n \) numbers the analogous statement. A single square no longer does the job: the difference of the two sides is not a square of anything simple. We need a proof that handles every \( n \) at once.
+For three numbers we would like \( abc \le \bigl(\frac{a + b + c}{3}\bigr)^3 \), and for \( n \) numbers the analogous statement. A single square no longer does the job: the difference of the two sides is not a square of anything simple. Still, it holds in examples: the numbers \( 1, 2, 6 \) have average \( 3 \), and \( 1 \cdot 2 \cdot 6 = 12 \le 27 = 3^3 \). We need a proof that handles every \( n \) at once.
 
-*The arithmetic mean of the numbers is their average; a product is at most the matching power of the average.*
+*The arithmetic mean of the numbers is their average; a product is at most the matching power of the average.* In plain words: if \( n \) numbers are non-negative, their product is at most their average raised to the power \( n \).
 
 ::: {#thm-am-gm}
 [Arithmetic and Geometric Means]
@@ -104,7 +112,7 @@ Let \( n \ge 1 \) be an integer, let \( a_1, \dots, a_n \in \nR \) with \( a_k \
 :::
 :::
 
-The number \( A \) is the **arithmetic mean** of \( a_1, \dots, a_n \). The **geometric mean** is the non-negative number whose \( n \)-th power is the product \( a_1 \cdots a_n \); since this chapter has not yet built \( n \)-th roots, the theorem is stated with powers, and its form with roots comes in Section 1.5.
+The number \( A \) is the **arithmetic mean** of \( a_1, \dots, a_n \). The **geometric mean** is the non-negative number whose \( n \)-th power is the product \( a_1 \cdots a_n \). This chapter has not yet built \( n \)-th roots, so the theorem is stated with powers. Its form with roots comes in Section 1.5.
 
 *Try it first (ten minutes): prove (a) for \( n = 3 \), or explain what goes wrong when you add a third number to the case \( n = 2 \).*
 
@@ -127,7 +135,7 @@ a power on the left and something linear on the right: the shape of Bernoulli's 
 \]
 so \( 1 + (n + 1)x = \frac{a_{n+1}}{A_n} \), exactly the right side. Bernoulli closes the gap.
 
-| Givens | Goal |
+| We know | We want |
 |---|---|
 | every \( a_k > 0 \); \( a_1 \cdots a_n \le A_n^n \) | \( a_1 \cdots a_{n+1} \le A_{n+1}^{n+1} \) |
 | multiply by \( a_{n+1} > 0 \): \( a_1 \cdots a_{n+1} \le A_n^n\, a_{n+1} \) | enough: \( A_n^n\, a_{n+1} \le A_{n+1}^{n+1} \) |
@@ -139,15 +147,15 @@ Zeros are handled first and separately: a zero factor makes the product \( 0 \).
 :::
 
 ::: {.proof}
-(a) If \( a_j = 0 \) for some \( j \), the product \( a_1 \cdots a_n \) is \( 0 \). Also \( A \ge 0 \), since the sum of the \( a_k \) is non-negative (@prp-sum-order (a)) and \( \frac1n > 0 \). So \( A^n \ge 0 \): by @fd2:prp-power-laws (e) if \( A > 0 \), and because \( 0^n = 0 \) for \( n \ge 1 \) if \( A = 0 \). Hence \( a_1 \cdots a_n = 0 \le A^n \).
+(a) If \( a_j = 0 \) for some \( j \), the product \( a_1 \cdots a_n \) is \( 0 \). Also \( A \ge 0 \), since the sum of the \( a_k \) is non-negative and \( \frac1n > 0 \). So \( A^n \ge 0 \). If \( A > 0 \), this holds because every power of a positive number is positive. If \( A = 0 \), it holds because \( 0^n = 0 \) for \( n \ge 1 \). Hence \( a_1 \cdots a_n = 0 \le A^n \).
 
-It remains to treat lists of positive numbers. For \( m \ge 1 \) let \( A_m \coloneqq \frac{1}{m} \sum_{k=1}^{m} a_k \). We prove by @fd2:thm-induction, with base \( 1 \), that for every integer \( n \ge 1 \) and **all** positive \( a_1, \dots, a_n \), \( a_1 \cdots a_n \le A_n^n \). For \( n = 1 \), \( a_1 = A_1 \).
+It remains to treat lists of positive numbers. For \( m \ge 1 \) let \( A_m \coloneqq \frac{1}{m} \sum_{k=1}^{m} a_k \). We prove by induction from base \( 1 \) (@fd2:thm-induction) that \( a_1 \cdots a_n \le A_n^n \) for every integer \( n \ge 1 \) and **all** positive \( a_1, \dots, a_n \). For \( n = 1 \), \( a_1 = A_1 \).
 
-Let \( n \ge 1 \), suppose the claim for \( n \), and let \( a_1, \dots, a_{n+1} > 0 \). Then \( A_n > 0 \) and \( A_{n+1} > 0 \), as means of positive numbers (@prp-sum-order (a), strict). Put \( x \coloneqq A_{n+1}/A_n - 1 \). Then \( 1 + x = A_{n+1}/A_n > 0 \), so \( x > -1 \), and from \( (n + 1)A_{n+1} = nA_n + a_{n+1} \) we get \( 1 + (n + 1)x = a_{n+1}/A_n \). By @fd2:thm-bernoulli with exponent \( n + 1 \),
+Let \( n \ge 1 \), suppose the claim for \( n \), and let \( a_1, \dots, a_{n+1} > 0 \). Then \( A_n > 0 \) and \( A_{n+1} > 0 \), as means of positive numbers. Put \( x \coloneqq A_{n+1}/A_n - 1 \). Then \( 1 + x = A_{n+1}/A_n > 0 \), so \( x > -1 \), and from \( (n + 1)A_{n+1} = nA_n + a_{n+1} \) we get \( 1 + (n + 1)x = a_{n+1}/A_n \). By @fd2:thm-bernoulli with exponent \( n + 1 \),
 \[
 \Bigl(\frac{A_{n+1}}{A_n}\Bigr)^{n+1} \ge \frac{a_{n+1}}{A_n} .
 \]
-Multiply by \( A_n^{n+1} \), which is positive by @fd2:prp-power-laws (e); this keeps the inequality (@fd3:prp-ordered-ring-rules (c), and trivially in the case of equality). Since \( \bigl(A_{n+1}/A_n\bigr)^{n+1} A_n^{n+1} = A_{n+1}^{n+1} \) by @prp-power-laws-commutative-ring (c), and \( A_n^{n+1} \cdot a_{n+1}/A_n = A_n^n\, a_{n+1} \) by part (a) of the same proposition, this gives \( A_{n+1}^{n+1} \ge A_n^n\, a_{n+1} \). Multiplying the induction hypothesis by \( a_{n+1} > 0 \) gives the other half, and together
+Multiply both sides by \( A_n^{n+1} \), which is positive because \( A_n > 0 \). Multiplying by a positive number keeps the inequality: a strict inequality stays strict, and an equality stays an equality. The power laws give \( \bigl(A_{n+1}/A_n\bigr)^{n+1} A_n^{n+1} = A_{n+1}^{n+1} \) and \( A_n^{n+1} \cdot a_{n+1}/A_n = A_n^n\, a_{n+1} \). So the inequality becomes \( A_{n+1}^{n+1} \ge A_n^n\, a_{n+1} \). Multiplying the induction hypothesis by \( a_{n+1} > 0 \) gives the other half, and together
 \[
 a_1 \cdots a_n\, a_{n+1} \le A_n^n\, a_{n+1} \le A_{n+1}^{n+1} .
 \]
@@ -155,15 +163,19 @@ This is the claim for \( n + 1 \), and (a) is proved.
 
 (b) \( (\Leftarrow) \) If every \( a_k \) equals \( a \), then \( A = \frac1n (na) = a \), and both sides of (a) are \( a^n \).
 
-\( (\Rightarrow) \) We prove the contrapositive: if the \( a_k \) are not all equal, then \( a_1 \cdots a_n < A^n \). With a zero among them this is immediate, and for positive numbers the induction of (a) runs again, with @lem-bernoulli-strict in place of Bernoulli's inequality. The details are in the fold below.
+\( (\Rightarrow) \) We prove the contrapositive: if the \( a_k \) are not all equal, then \( a_1 \cdots a_n < A^n \). With a zero among them this is immediate. For positive numbers, the induction of (a) runs again, with the strict Bernoulli inequality (@lem-bernoulli-strict) in place of Bernoulli's inequality. The details follow under *The equality case of the means*.
+
+::: {.uses}
+@prp-sum-order (a): sums respect order. @fd2:prp-power-laws (e): powers of positives. @fd3:prp-ordered-ring-rules (c): multiplying by a positive. @prp-power-laws-commutative-ring (a), (c): power laws.
+:::
 :::
 
 ::: {.second-reading title="The equality case of the means"}
 Suppose \( a_1, \dots, a_n \ge 0 \) are not all equal; we show \( a_1 \cdots a_n < A^n \).
 
-If some \( a_j = 0 \), then some \( a_i \ne 0 \), since the numbers are not all equal; so \( a_i > 0 \). The sum of the \( a_k \) is then positive (@prp-sum-order (a), strict at \( i \)), so \( A > 0 \) and \( A^n > 0 = a_1 \cdots a_n \) by @fd2:prp-power-laws (e).
+If some \( a_j = 0 \), then some \( a_i \ne 0 \), since the numbers are not all equal; so \( a_i > 0 \). The sum of the \( a_k \) is then positive, because one term is positive and none is negative. So \( A > 0 \), and \( A^n > 0 = a_1 \cdots a_n \).
 
-If every \( a_k > 0 \), we prove by @fd2:thm-induction, with base \( 2 \), that for every \( n \ge 2 \) and all positive \( a_1, \dots, a_n \) that are not all equal, \( a_1 \cdots a_n < A_n^n \). (For \( n = 1 \) there is nothing to prove: one number is always "all equal".) For \( n = 2 \), \( a_1 \ne a_2 \), and the computation before the theorem gives \( A_2^2 - a_1 a_2 = \bigl(\frac{a_1 - a_2}{2}\bigr)^2 > 0 \) (@fd3:prp-ordered-ring-rules (e)).
+If every \( a_k > 0 \), we use induction from base \( 2 \) (@fd2:thm-induction). The claim for \( n \ge 2 \) is: for all positive \( a_1, \dots, a_n \) that are not all equal, \( a_1 \cdots a_n < A_n^n \). (For \( n = 1 \) there is nothing to prove: one number is always "all equal".) For \( n = 2 \), \( a_1 \ne a_2 \), and the computation before the theorem gives \( A_2^2 - a_1 a_2 = \bigl(\frac{a_1 - a_2}{2}\bigr)^2 > 0 \), since the square of a nonzero number is positive.
 
 Let \( n \ge 2 \), suppose the claim for \( n \), and let \( a_1, \dots, a_{n+1} > 0 \) be not all equal. The proof of (a) gave the chain
 \[
@@ -171,11 +183,15 @@ a_1 \cdots a_n\, a_{n+1} \le A_n^n\, a_{n+1} \le A_{n+1}^{n+1} ,
 \]
 and it is enough to make one of its two inequalities strict.
 
-*Case 1: \( a_1, \dots, a_n \) are not all equal.* By the induction hypothesis \( a_1 \cdots a_n < A_n^n \), and multiplying by \( a_{n+1} > 0 \) keeps it strict (@fd3:prp-ordered-ring-rules (c)). The left inequality is strict.
+*Case 1: \( a_1, \dots, a_n \) are not all equal.* By the induction hypothesis \( a_1 \cdots a_n < A_n^n \), and multiplying by \( a_{n+1} > 0 \) keeps it strict. The left inequality is strict.
 
 *Case 2: \( a_1 = \dots = a_n \).* Then each of them equals \( A_n \), so \( a_{n+1} \ne A_n \), since otherwise all \( n + 1 \) numbers would be equal. Hence \( (n + 1)x = (a_{n+1} - A_n)/A_n \ne 0 \), so \( x \ne 0 \); also \( x > -1 \) and \( n + 1 \ge 2 \). So @lem-bernoulli-strict gives \( (1 + x)^{n+1} > 1 + (n + 1)x \), and multiplying by \( A_n^{n+1} > 0 \) as in (a) makes the right inequality strict.
 
 In both cases \( a_1 \cdots a_{n+1} < A_{n+1}^{n+1} \), which is the claim for \( n + 1 \).
+
+::: {.uses}
+@prp-sum-order (a): sums respect order. @fd2:prp-power-laws (e): powers of positives. @fd3:prp-ordered-ring-rules (c), (e): signs of products and squares.
+:::
 :::
 
 The one real step of the proof is the right inequality of the displayed chain, and that step is Bernoulli's inequality after the substitution found in the scratch work. The left inequality is only the induction hypothesis multiplied by \( a_{n+1} \).
@@ -183,11 +199,11 @@ The one real step of the proof is the right inequality of the displayed chain, a
 ::: {#exm-method-am-gm}
 [Method: bound a product by a power]
 
-**Template.** To bound a product of non-negative factors from above, arrange the factors so that their sum is known, or at least bounded, and apply @thm-am-gm: the product is at most the \( n \)-th power of their mean. For a strict inequality, check that the factors are not all equal.
+**How it goes.** To bound a product of non-negative factors from above, arrange the factors so that their sum is known, or at least bounded. Then apply @thm-am-gm: the product is at most the \( n \)-th power of their mean. For a strict inequality, check that the factors are not all equal.
 
 **When to use it.** Products such as \( n! \), \( x(1 - x) \) or \( \bigl(1 + \frac1n\bigr)^n \); and any problem that asks for the largest product under a condition on the sum.
 
-**The usual failure.** Applying the theorem to factors that may be negative, where it is false; and choosing factors whose sum is not under control, which gives a bound that grows faster than the product.
+**Common mistakes.** One mistake is to apply the theorem to factors that may be negative, where it is false. Another is to choose factors whose sum is not under control. That gives a bound that grows faster than the product.
 :::
 
 The first example bounds a factorial. Its factors \( 1, 2, \dots, n \) have a sum we know.
@@ -341,20 +357,20 @@ The base case and the multiplication by \( a_{n+1} \) are correct. The line that
 - for \( a = (2, 1) \): \( A_1 = 2 > A_2 = \frac32 \), so adding a number can lower the mean;
 - for \( a = (1, 2) \): \( a_2 = 2 > A_2 = \frac32 \), so the new number can exceed the new mean.
 
-In fact the two halves can hold together only in the dull case. Since \( (n + 1)A_{n+1} = nA_n + a_{n+1} \), the new mean lies between \( A_n \) and \( a_{n+1} \), so if both are at most \( A_{n+1} \), then \( A_n = a_{n+1} = A_{n+1} \). These are counterexamples to the step, not to the claim, which has none. The proof in the text closes the same gap with Bernoulli's inequality.
+In fact the two halves can hold together only in the dull case. Since \( (n + 1)A_{n+1} = nA_n + a_{n+1} \), the new mean lies between \( A_n \) and \( a_{n+1} \), so if both are at most \( A_{n+1} \), then \( A_n = a_{n+1} = A_{n+1} \). These are counterexamples to the step, not to the claim, which has none. The proof of @thm-am-gm closes the same gap with Bernoulli's inequality.
 
-**Marking scheme.** (10 points)
+**What a complete answer needs.** (10 points)
 
 - 3: says that the conclusion is true (citing @thm-am-gm or equivalent) and that the argument nevertheless fails.
 - 3: names the line "\( A_n \le A_{n+1} \) and \( a_{n+1} \le A_{n+1} \)" as the failing step, and accepts the multiplication step.
 - 4: gives a concrete list on which that line fails (one list for either half earns the points).
 
-Fatal errors (0 for the step): calling the conclusion false; offering a "counterexample" to the conclusion; blaming the multiplication by \( a_{n+1} \).
+Slips that lose the step (0 for the step): calling the conclusion false; offering a "counterexample" to the conclusion; blaming the multiplication by \( a_{n+1} \).
 :::
 
 <!-- dependency ledger
-lem-bernoulli-strict (proof): multiplying an inequality by 0 gives 0 on both sides | fd3:prp-ring-algebra (b), recalled in prose
-lem-bernoulli-strict (proof): n > 0 in R for an integer n >= 2 | fd3:prp-ordered-ring-rules (h)
+lem-bernoulli-strict (proof): multiplying an inequality by 0 gives 0 on both sides | fd3:prp-ring-algebra (b), cited in the Uses line
+lem-bernoulli-strict (proof): n > 0 in R for an integer n >= 2 | fd3:prp-ordered-ring-rules (h), cited in the Uses line
 prp-weierstrass-product (proof): a product of two non-negative reals is non-negative | fd3:prp-ordered-ring-rules (c) and (O4), with the zero case
 prp-weierstrass-product (proof): the empty product is 1 and the empty sum 0 | fd2:def-sum-product
 thm-am-gm (proof): a finite product with a zero factor is 0 | induction on fd2:def-sum-product with fd3:prp-ring-algebra (b)
@@ -362,7 +378,7 @@ thm-am-gm (proof): 0^n = 0 for n >= 1 | fd2:def-power, one step
 thm-am-gm (proof): (n+1)A_{n+1} = nA_n + a_{n+1} | fd2:def-sum-product and the definition of A_m
 thm-am-gm (proof): (A_{n+1}/A_n)^{n+1} A_n^{n+1} = A_{n+1}^{n+1} and A_n^{n+1} a_{n+1}/A_n = A_n^n a_{n+1} | prp-power-laws-commutative-ring (a), (c), fd3:lem-field-fraction-rules
 thm-am-gm (proof): the sum of n copies of a is na | the constant-sum induction written out in exm-odd-sum-reversal (1.1)
-thm-am-gm (proof): x^2 > 0 for x != 0 | fd3:prp-ordered-ring-rules (e), cited
+thm-am-gm (proof): x^2 > 0 for x != 0 | fd3:prp-ordered-ring-rules (e), cited in the Uses line
 exm-am-gm-compound (solution): n(1 + 1/n) + 1 = n + 2, a sum of n equal terms | constant sum as above; fd3:lem-field-fraction-rules
 exr-inequalities-for-sums-and-products-b1 (solution): 8abc > 0 and P > 0 as products of positives | (O4) of fd3:def-ordered-ring-and-field
 exr-inequalities-for-sums-and-products-b2 (solution): (1 + x)^3 = 1 + 3x + 3x^2 + x^3 | school expansion (fd3:prp-ring-algebra)

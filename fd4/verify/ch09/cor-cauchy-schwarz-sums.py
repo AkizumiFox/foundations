@@ -11,4 +11,6 @@ random.seed(1)
 for _ in range(2000):
     a, b, c, d = (random.randint(-20, 20) for _ in range(4))
     assert (a*c + b*d)**2 + (a*d - b*c)**2 == (a*a + b*b) * (c*c + d*d)
+# instance before the corollary: 4 + 10 + 18 = 32, 1 + 4 + 9 = 14, 16 + 25 + 36 = 77
+assert 4 + 10 + 18 == 32 == dot((1, 2, 3), (4, 5, 6)) and 1 + 4 + 9 == 14 and 16 + 25 + 36 == 77
 print("ok")

@@ -11,4 +11,7 @@ for n in range(1, 8):
     e = (1,) + (0,) * (n - 1); w = (1,) * n
     assert n2(e) == sum(abs(t) for t in e) ** 2
     assert sum(w) ** 2 == n * n2(w)
+# instance before the statement: x = (3,4): ||x|| = 5, sum 7, 49 <= 50 = 2 * 25
+x = (3, 4)
+assert n2(x) == 25 and abs(3) + abs(4) == 7 and 25 <= 49 and 49 <= 2 * 25 == 50
 print("ok")
