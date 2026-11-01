@@ -584,13 +584,13 @@ lem-integer-multiples (proof): (m + 1)k = mk + k, m - k in N for m >= k with (m 
 lem-integer-multiples (proof): -0 = 0; -(u + v) = (-u) + (-v); -(x - y) = y - x | uniqueness of negatives, fd3:prp-ring-algebra (a); inline
 lem-integer-multiples (proof): in Z, (-m)k = m(-k) = -(mk), (-m)(-k) = mk; m < 0 implies -m in N | fd3:prp-ring-algebra (c); fd3:thm-integers-ordered-ring (b), cited (paragraph before the lemma)
 lem-integer-multiples (claim): (paragraph before it) n . a = na in Z for n < 0 | fd3:prp-ring-algebra (c), (a); F3.2 Section 4.4 remark for n in N (cited by position)
-lem-integer-multiples (claim): (quick check) (-3).[2] = [4] in Z/5Z | inline; verify/ch02/lem-integer-multiples.py
-def-characteristic (example): char F2 = 2, char F3 = 3, Z/6Z has characteristic 6, zero ring characteristic 1 | exm-finite-fields table; thm-integers-mod-n-ring (d); verify/ch02/def-characteristic.py
+lem-integer-multiples (claim): (quick check) (-3).[2] = [4] in Z/5Z | inline; verify/ch04/lem-integer-multiples.py
+def-characteristic (example): char F2 = 2, char F3 = 3, Z/6Z has characteristic 6, zero ring characteristic 1 | exm-finite-fields table; thm-integers-mod-n-ring (d); verify/ch04/def-characteristic.py
 def-characteristic (claim): first examples, char Q = 0 | forward pointer to exm-characteristics in the same section, not used as a reason before it
 prp-characteristic-divides (proof): positive divisors of 2 are 1 and 2 | 2 prime, fd2:def-prime (the example after it)
 thm-characteristic-prime (proof): r != 1, r <= c, r != c gives 1 < r < c | discreteness of Z, fd3:thm-integers-ordered-ring (c) (via fd3:prp-integer-least-element's setting); fd3:prp-divisibility-rules-integers (e), cited
 thm-characteristic-prime (proof): s > 0 from r, c > 0 (s = 0 gives c = 0; s < 0 gives rs < 0); rc = c with c != 0 gives r = 1 | fd3:prp-ordered-ring-rules (c), (f) on Z (fd3:thm-integers-ordered-ring)
-exm-completing-square-f3 (solution): 2.2 = 4 = 1, 3 = 0 in F3; 4(x^2 + x + 1) = (2x + 1)^2; root 1; values 1, 3, 7 | verify/ch02/exm-completing-square-f3.py
+exm-completing-square-f3 (solution): 2.2 = 4 = 1, 3 = 0 in F3; 4(x^2 + x + 1) = (2x + 1)^2; root 1; values 1, 3, 7 | verify/ch04/exm-completing-square-f3.py
 prp-characteristic-invariant (proof): induction on n | fd1:ax-induction read on omega (fd3:cor-omega-identification (b))
 exm-characteristics (example): R is an ordered field; Q subfield of R; R subfield of C | fd3:thm-reals-ordered-field (F3.10, soft); exm-subfields-gaussian (iii); F4.1 labels through it (soft, example only)
 exm-characteristics (example): four-element field has characteristic 2 | exr-finite-fields-from-modular-arithmetic-c1 and exr-characteristic-and-prime-subfield-c3; named only, nothing rests on it
@@ -603,12 +603,12 @@ thm-prime-subfield (claim): (remark after it) comparison with fd3:thm-rationals-
 cor-finite-field-prime-characteristic (proof): {1, ..., N + 1} has N + 1 elements | fd2:def-finite (identity bijection)
 cor-finite-field-prime-characteristic (claim): a finite field has p^n elements | not proved here; linear-algebra volumes; nothing uses it
 cor-finite-field-prime-characteristic (claim): (quick check) no field has 6 elements | the p^n fact, marked not proved; the answer rests on prp-characteristic-invariant only
-exm-characteristics (claim): (quick check) 7.[3] = [21] = [1] in F5 | verify/ch02/exm-characteristics.py
-exr-characteristic-and-prime-subfield-b1 (solution): 300 = 42 * 7 + 6, 100 = 14 * 7 + 2 | verify/ch02/exr-characteristic-and-prime-subfield-b1.py
-exr-characteristic-and-prime-subfield-b2 (solution): roots 4, 2 of x^2 + x + 1 in F7; 2^{-1} = 4; no root in F2 | verify/ch02/exr-characteristic-and-prime-subfield-b2.py
+exm-characteristics (claim): (quick check) 7.[3] = [21] = [1] in F5 | verify/ch04/exm-characteristics.py
+exr-characteristic-and-prime-subfield-b1 (solution): 300 = 42 * 7 + 6, 100 = 14 * 7 + 2 | verify/ch04/exr-characteristic-and-prime-subfield-b1.py
+exr-characteristic-and-prime-subfield-b2 (solution): roots 4, 2 of x^2 + x + 1 in F7; 2^{-1} = 4; no root in F2 | verify/ch04/exr-characteristic-and-prime-subfield-b2.py
 exr-characteristic-and-prime-subfield-b2 (solution): (2x)^2 = 4x^2 | power and product regrouping (F5), (F6) with lem-integer-multiples (b); inline
 exr-characteristic-and-prime-subfield-c1 (solution): r = 0 when c | n, by uniqueness of the remainder | fd3:thm-integers-division-remainder (a), cited
 exr-characteristic-and-prime-subfield-c1 (solution): s > 0, s != 1, s != c in c = rs; 1 < r, s < c | as in the proof of thm-characteristic-prime: fd3:prp-ordered-ring-rules (c), (f) on Z, discreteness fd3:thm-integers-ordered-ring (c)
-exr-characteristic-and-prime-subfield-c2 (solution): 7.1 = 1.1 = 1 in F3, 7 - 1 = 6 | verify/ch02/exr-characteristic-and-prime-subfield-c2.py
-exr-characteristic-and-prime-subfield-c3 (solution): the field of exr-finite-fields-from-modular-arithmetic-c1, its tables | an exercise cited from an exercise solution (STYLE 9); verify/ch02/exr-characteristic-and-prime-subfield-c3.py
+exr-characteristic-and-prime-subfield-c2 (solution): 7.1 = 1.1 = 1 in F3, 7 - 1 = 6 | verify/ch04/exr-characteristic-and-prime-subfield-c2.py
+exr-characteristic-and-prime-subfield-c3 (solution): the field of exr-finite-fields-from-modular-arithmetic-c1, its tables | an exercise cited from an exercise solution (STYLE 9); verify/ch04/exr-characteristic-and-prime-subfield-c3.py
 -->

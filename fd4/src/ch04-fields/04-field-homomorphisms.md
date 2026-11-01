@@ -312,6 +312,6 @@ exr-field-homomorphisms-b2 (solution): n.1 = n in Q(i) for n in N (rationals ins
 exr-field-homomorphisms-c2 (solution): n.1 = n in Q for n in N | F3.2 Section 4.4 "Multiples" remark (n.a = na in Z) with fd3:prp-integers-embed-rationals (j preserves sums), by induction
 exr-field-homomorphisms-b4 (solution): 2 != 0 and sqrt 2 != 0 in R | 2 = 2.1 > 0, fd3:prp-ordered-ring-rules (h), fd3:thm-reals-ordered-field; sqrt 2 != 0 inline (0^2 = 0 != 2)
 exr-field-homomorphisms-b3 (solution): (Q, +, odot) is a field with one 1/2 | exr-field-axioms-b3 (a), an exercise cited by an exercise solution only
-exr-field-homomorphisms-a1 (solution): conj(2i) = -2i; conj(1 + i) = 1 - i | def-conjugate-modulus (F4.1, see edge; exercise only); verify/ch02/exr-field-homomorphisms-a1.py
-prp-field-homomorphism-properties (claim): the warning's f(1.1) = 2 != 4 = f(1)f(1); B3's f(a odot b) = f(a)f(b), f(1/2) = 1 | inline; verify/ch02/exr-field-homomorphisms-a1.py, verify/ch02/exr-field-homomorphisms-b3.py
+exr-field-homomorphisms-a1 (solution): conj(2i) = -2i; conj(1 + i) = 1 - i | def-conjugate-modulus (F4.1, see edge; exercise only); verify/ch04/exr-field-homomorphisms-a1.py
+prp-field-homomorphism-properties (claim): the warning's f(1.1) = 2 != 4 = f(1)f(1); B3's f(a odot b) = f(a)f(b), f(1/2) = 1 | inline; verify/ch04/exr-field-homomorphisms-a1.py, verify/ch04/exr-field-homomorphisms-b3.py
 -->

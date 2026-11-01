@@ -118,7 +118,7 @@ Let \( p \) be a prime.
 
 Primality is needed in (c). For the modulus \( 4 \) and \( a = 2 \), \( 2^4 - 2 = 14 \) is not a multiple of \( 4 \) (in \( \nZ/4\nZ \) this is \( ([1] + [1])^4 = [0] \ne [2] \), from the warning above), and although \( 4 \nmid 2 \), \( 2^3 - 1 = 7 \) is not a multiple of \( 4 \) either.
 
-Part (b) gives a second way to invert in \( \nF_p \), besides the Euclidean algorithm of Chapter 2: \( a^{-1} = a^{p-2} \). It also reduces large exponents: for non-zero \( a \), only the remainder of the exponent on division by \( p - 1 \) matters, since \( a^{q(p-1)+r} = (a^{p-1})^q a^r = a^r \). Exercise C2 below gives a second proof of (a), by induction, and Chapter 6 gives another proof of (b), from a product of all the non-zero elements.
+Part (b) gives a second way to invert in \( \nF_p \), besides the Euclidean algorithm of Chapter 2 (@thm-euclidean-algorithm-integers): \( a^{-1} = a^{p-2} \). It also reduces large exponents: for non-zero \( a \), only the remainder of the exponent on division by \( p - 1 \) matters, since \( a^{q(p-1)+r} = (a^{p-1})^q a^r = a^r \). Exercise C2 below gives a second proof of (a), by induction, and Chapter 6 gives another proof of (b), from a product of all the non-zero elements.
 
 ::: {#exm-frobenius-computations}
 [Powers and inverses in prime fields]
@@ -341,27 +341,27 @@ so \( \sigma(\sqrt 2) = \sqrt 2 \) or \( \sigma(\sqrt 2) = -\sqrt 2 \) by @cor-f
 :::
 
 <!-- dependency ledger
-lem-prime-divides-binomial (claim): (check) C(7, 3) = 35 | verify/ch02/lem-prime-divides-binomial.py
+lem-prime-divides-binomial (claim): (check) C(7, 3) = 35 | verify/ch04/lem-prime-divides-binomial.py
 lem-prime-divides-binomial (proof): coefficients read in N subset Z; p - 1, k - 1 in N | fd3:prp-naturals-embed-integers (a); arithmetic of omega
 thm-frobenius-homomorphism (proof): (xy)^p = x^p y^p; 1^p = 1 | prp-power-laws-commutative-ring (c); inline induction for 1^n
-thm-frobenius-homomorphism (idea): try-it-first coefficients of (x + y)^5, (x + y)^6 in F5 | verify/ch02/thm-frobenius-homomorphism.py
-thm-frobenius-homomorphism (claim): (warning) (1 + 1)^2 = 1 in F3; ([1] + [1])^4 = [0] in Z/4Z; C(4, 2) = 6 | verify/ch02/thm-frobenius-homomorphism.py
-thm-frobenius-homomorphism (claim): (opening) 3^5 = 243 = 3, 1 + 32 = 33 = 3 in F5 | verify/ch02/thm-frobenius-homomorphism.py
+thm-frobenius-homomorphism (idea): try-it-first coefficients of (x + y)^5, (x + y)^6 in F5 | verify/ch04/thm-frobenius-homomorphism.py
+thm-frobenius-homomorphism (claim): (warning) (1 + 1)^2 = 1 in F3; ([1] + [1])^4 = [0] in Z/4Z; C(4, 2) = 6 | verify/ch04/thm-frobenius-homomorphism.py
+thm-frobenius-homomorphism (claim): (opening) 3^5 = 243 = 3, 1 + 32 = 33 = 3 in F5 | verify/ch04/thm-frobenius-homomorphism.py
 thm-frobenius-homomorphism (claim): (after the proof) Fr exchanges two elements of the four-element field | exr-characteristic-and-prime-subfield-c3, named only, nothing rests on it
 thm-fermat-little (proof): p - 1, p - 2 in N for p >= 2 | arithmetic of omega
 thm-fermat-little (proof): [a]^n = [a^n] by induction; [u] = [v] iff p | u - v | thm-quotient-ring-by-ideal (a), (b); fd1:ax-induction; inline
-thm-fermat-little (claim): (after the proof) 2^4 - 2 = 14 and 2^3 - 1 = 7 are not multiples of 4; 4 does not divide 2 | verify/ch02/thm-fermat-little.py
+thm-fermat-little (claim): (after the proof) 2^4 - 2 = 14 and 2^3 - 1 = 7 are not multiples of 4; 4 does not divide 2 | verify/ch04/thm-fermat-little.py
 thm-fermat-little (claim): (after the proof) a^{q(p-1)+r} = (a^{p-1})^q a^r | prp-power-laws-commutative-ring (a), (b); inline
 thm-fermat-little (claim): Chapter 6 gives another proof of (b) | F5.4 blueprint, section 04 C4 (prose pointer; nothing depends on it)
-exm-frobenius-computations (example): 7, 101, 31 prime; 100 = 16 * 6 + 4; 81 = 4 in F7; repeated squares of 7 in F31; 31 = 4 * 7 + 3 | small-primes remark (F5.1 §02); remark after lem-least-divisor-prime; verify/ch02/exm-frobenius-computations.py
-thm-fermat-little (claim): (check) 2^6 = 1 in F7; 3^5 = 243 = 1 in F11 | verify/ch02/thm-fermat-little.py
-exr-frobenius-and-fermat-a1 (solution): rows 5 and 6 | verify/ch02/exr-frobenius-and-fermat-a1.py
-exr-frobenius-and-fermat-b1 (solution): 13 prime; 5^38 = 12, 5^{-1} = 8 in F13 | remark after lem-least-divisor-prime; verify/ch02/exr-frobenius-and-fermat-b1.py
+exm-frobenius-computations (example): 7, 101, 31 prime; 100 = 16 * 6 + 4; 81 = 4 in F7; repeated squares of 7 in F31; 31 = 4 * 7 + 3 | small-primes remark (F5.1 §02); remark after lem-least-divisor-prime; verify/ch04/exm-frobenius-computations.py
+thm-fermat-little (claim): (check) 2^6 = 1 in F7; 3^5 = 243 = 1 in F11 | verify/ch04/thm-fermat-little.py
+exr-frobenius-and-fermat-a1 (solution): rows 5 and 6 | verify/ch04/exr-frobenius-and-fermat-a1.py
+exr-frobenius-and-fermat-b1 (solution): 13 prime; 5^38 = 12, 5^{-1} = 8 in F13 | remark after lem-least-divisor-prime; verify/ch04/exr-frobenius-and-fermat-b1.py
 exr-frobenius-and-fermat-b2 (solution): (x^m)^n = x^{mn}; empty sum 0 | prp-power-laws-commutative-ring (b); empty sum of the sums paragraph of Section 1.1
-exr-frobenius-and-fermat-c2 (solution): [a]^n = [a^n] for every a in Z | induction as in the proof of thm-fermat-little (c), with thm-quotient-ring-by-ideal (b); verify/ch02/exr-frobenius-and-fermat-c2.py
-exr-frobenius-and-fermat-r1 (solution): |-3 + 4i| = 5, (1 + 2i)^2 = -3 + 4i | prp-complex-square-roots (F4.1, see edge; R item); verify/ch02/exr-frobenius-and-fermat-r1.py
-exr-frobenius-and-fermat-r2 (solution): (a + b sqrt2)^2 = (a^2 + 2b^2) + 2ab sqrt2; 4 < 7 < 9, 9 < 14 < 16 | prp-cof-sqrt2-field-archimedean (a); the claim stated with prp-cof-sqrt2-field-incomplete (F3.4, soft); verify/ch02/exr-frobenius-and-fermat-r2.py
+exr-frobenius-and-fermat-c2 (solution): [a]^n = [a^n] for every a in Z | induction as in the proof of thm-fermat-little (c), with thm-quotient-ring-by-ideal (b); verify/ch04/exr-frobenius-and-fermat-c2.py
+exr-frobenius-and-fermat-r1 (solution): |-3 + 4i| = 5, (1 + 2i)^2 = -3 + 4i | prp-complex-square-roots (F4.1, see edge; R item); verify/ch04/exr-frobenius-and-fermat-r1.py
+exr-frobenius-and-fermat-r2 (solution): (a + b sqrt2)^2 = (a^2 + 2b^2) + 2ab sqrt2; 4 < 7 < 9, 9 < 14 < 16 | prp-cof-sqrt2-field-archimedean (a); the claim stated with prp-cof-sqrt2-field-incomplete (F3.4, soft); verify/ch04/exr-frobenius-and-fermat-r2.py
 exr-frobenius-and-fermat-r3 (solution): i^2 = -1 in Q(i), whose operations are those of C | prp-reals-embed-complex (F4.1, see edge; R item); exm-subfields-gaussian (i)
-exr-frobenius-and-fermat-r3 (solution): 1 + 1 = 0 in the four-element field | definition of the sum in exr-finite-fields-from-modular-arithmetic-c1, with 1 + 1 = 0 in F_2; verify/ch02/exr-frobenius-and-fermat-r3.py
+exr-frobenius-and-fermat-r3 (solution): 1 + 1 = 0 in the four-element field | definition of the sum in exr-finite-fields-from-modular-arithmetic-c1, with 1 + 1 = 0 in F_2; verify/ch04/exr-frobenius-and-fermat-r3.py
 exr-frobenius-and-fermat-r4 (solution): Q is a subfield of Q(sqrt2) and of R; sqrt2 > 0 | exm-q-sqrt2-field, exm-subfields-gaussian (iii); fd3:prp-cof-square-roots (soft)
 -->

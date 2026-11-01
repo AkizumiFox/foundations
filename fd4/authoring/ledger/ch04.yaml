@@ -683,6 +683,15 @@ items:
     date: '2026-10-12'
     model: claude-opus-5-5
     evidence: 02:71 has the same content as fd3:thm-integers-mod-prime-field (n >= 2)
+  - stage: S8
+    verdict: correct
+    by: coordinator
+    hash: 2268a3660fbc
+    date: '2026-11-01'
+    evidence: '02-finite-fields-from-modular-arithmetic.md:68-76: statement checked; the idea at 75 now
+      credits the argument to Section 2.4 (@thm-integers-mod-prime-field, ch02/04-units-and-crt.md:120-135,
+      which uses @thm-units-mod-n), not Number Systems (F012); Bezout gives [a][x]=[1] for p prime, [r][s]=[0]
+      for n=rs contradicts thm-field-basic-properties (f)'
 - key: proof:thm-zp-field-iff-prime
   kind: proof
   file: 02-finite-fields-from-modular-arithmetic.md
@@ -706,6 +715,13 @@ items:
     model: claude-opus-5-5
     evidence: 02:79 cites fd3:thm-integers-mod-prime-field and the remark after def-field (01:59), which
       proves the two definitions equivalent; the Idea's unreferenced facts are in the ledger at 02:395
+  - stage: S8
+    verdict: correct
+    by: coordinator
+    hash: 3a59132cf5db
+    date: '2026-11-01'
+    evidence: '02-finite-fields-from-modular-arithmetic.md:78-80: cites thm-integers-mod-prime-field (Section
+      2.4) and the equivalence remark after def-field; both checked'
 - key: def-field-fp
   kind: def
   file: 02-finite-fields-from-modular-arithmetic.md
@@ -1898,6 +1914,14 @@ items:
     date: '2026-11-01'
     evidence: 04-field-homomorphisms.md:190,196 print 'Name the move, then complete it' and '*The move*
       is'. These are §13 B4 forbidden wordings.
+  - stage: S8
+    verdict: correct
+    by: coordinator
+    hash: 4c0cdc084b30
+    date: '2026-11-01'
+    evidence: '04-field-homomorphisms.md:187-203: a=(a/b)b by (F5),(F6),(F8),(F7); phi(b)!=0 by prp-field-homomorphism-properties
+      (b); multiply by phi(b)^{-1}. Mathematics correct; ''Name the move''/''The move'' is §13 wording
+      deferred'
 - key: exr-field-homomorphisms-b2
   kind: exr
   file: 04-field-homomorphisms.md
@@ -1944,6 +1968,14 @@ items:
     hash: 44a9a93bfe94
     date: '2026-11-01'
     evidence: 04-field-homomorphisms.md:208,214 have the same 'Name the move' / '*The move*' wording (B4).
+  - stage: S8
+    verdict: correct
+    by: coordinator
+    hash: 44a9a93bfe94
+    date: '2026-11-01'
+    evidence: '04-field-homomorphisms.md:205-223: rationals fixed via (f),(a),B1 and fd3:prp-integers-embed-rationals
+      (b); sigma(i)^2=i^2 so sigma(i)=±i by cor-field-squares-equal; both maps are automorphisms and differ
+      at i. Mathematics correct; ''Name the move'' is §13 wording deferred'
 - key: exr-field-homomorphisms-b3
   kind: exr
   file: 04-field-homomorphisms.md
@@ -3071,6 +3103,15 @@ items:
     evidence: '06:80 now gives (xy)^p = x^p y^p by @prp-power-laws-commutative-ring (c) ((zw)^n = z^n
       w^n in any commutative ring, ch01 01-finite-sums.md:38), and a field is one. 1^p = 1 by an explicit
       induction: 1^0 = 1, 1^{n+1} = 1^n.1 = 1. The ledger line at 06:346 matches.'
+  - stage: S8
+    verdict: correct
+    by: coordinator
+    hash: 40bf85711ca8
+    date: '2026-11-01'
+    evidence: '06-frobenius-and-fermat.md:71-80: the earlier S8 gap is closed: (xy)^p=x^p y^p now cites
+      prp-power-laws-commutative-ring (c) (Ch1), 1^p=1 by the inline induction, matching the dependency-ledger
+      line at 06:346; middle terms vanish by lem-prime-divides-binomial, prp-characteristic-divides (a),
+      lem-integer-multiples (c); lem-ring-finite-sums (a),(d) now lives in Section 1.1 (F018 re-anchor)'
 - key: thm-fermat-little
   kind: thm
   file: 06-frobenius-and-fermat.md
@@ -3592,171 +3633,3 @@ items:
       (b) is now applied with its hypothesis checked, since Q(sqrt2) and R both have characteristic 0
       (exm-characteristics). The rest checks out: the inclusion is a homomorphism by exm-complex-conjugation-automorphism
       (ii); sigma o iota_{Q(sqrt2)} = iota_R by cor-homomorphisms-fix-prime-subfield (a); sigma('
-- key: lem-ring-finite-sums
-  kind: lem
-  file: 06-frobenius-and-fermat.md
-  line: 21
-  hash: 2574f15b1d58
-  verdicts:
-  - stage: S5a
-    verdict: correct
-    by: refereeA
-    hash: 2574f15b1d58
-    date: '2026-10-12'
-    model: claude-opus-5-5
-    evidence: 06:21-33; statement is what the proofs and later uses (thm-binomial, Frobenius) need; m
-      ∈ ℤ in (c) is covered by lem-integer-multiples (d)
-  - stage: S5b
-    verdict: correct
-    by: refereeB
-    hash: 2574f15b1d58
-    date: '2026-10-12'
-    model: claude-opus-5-5
-    evidence: 06:21-33. Parts (a)-(f) are well-posed for sequences on N. The opening paragraph (06:9-17)
-      covers sums of reals read in R, matching fd2:def-sum-product 159-183 (general bounds, empty sum,
-      the three remarks).
-  removed: true
-- key: proof:lem-ring-finite-sums
-  kind: proof
-  file: 06-frobenius-and-fermat.md
-  line: 42
-  hash: babf80d56119
-  verdicts:
-  - stage: S5a
-    verdict: correct
-    by: refereeA
-    hash: babf80d56119
-    date: '2026-10-12'
-    model: claude-opus-5-5
-    evidence: 06:42-64; (a),(b),(d),(f) inductions checked step by step against fd2 splitting-off remark;
-      (c) via lem-integer-multiples (c)+(d) (m·a=(m·1)a for m∈ℤ) then (b); (e) via (-1)·x=-(1·x)=-x, (d)
-      there
-  - stage: S5b
-    verdict: correct
-    by: refereeB
-    hash: babf80d56119
-    date: '2026-10-12'
-    model: claude-opus-5-5
-    evidence: '06:42-64. Checked each base case and step: (a) uses (F1),(F2); (b) uses (F9); (c) uses
-      lem-integer-multiples (c) via (d), which holds for m in Z (05:31-37); (e) uses (-m)·a=-(m·a); in
-      (f) the n=0 case a_0+a_1 and the re-indexed step are right. Sum_{0}^{0}=a_0 is in the ledger (06:511).'
-  removed: true
-- key: def-binomial-coefficients
-  kind: def
-  file: 06-frobenius-and-fermat.md
-  line: 70
-  hash: 294012de380b
-  verdicts:
-  - stage: S5a
-    verdict: correct
-    by: refereeA
-    hash: 294012de380b
-    date: '2026-10-12'
-    model: claude-opus-5-5
-    evidence: 06:70-80; recursion on n into ℕ^ℕ is well-formed; the three facts at 86-88 checked (fact
-      1 uses j>n and j+1>n); table rows match, sidecar def-binomial-coefficients.py ok
-  - stage: S5b
-    verdict: correct
-    by: refereeB
-    hash: 294012de380b
-    date: '2026-10-12'
-    model: claude-opus-5-5
-    evidence: '06:70-100. The recursion through fd2:thm-recursion with X = N^N is valid. The three inline
-      facts are right (C(n,1): C(n+1,1)=C(n,0)+C(n,1)=1+n). Table rows 0-6 are correct and the sidecar
-      def-binomial-coefficients.py passes. The remark 06:103 (''neither prove nor use'' the factorial
-      formula) holds on the page.'
-  removed: true
-- key: prp-binomial-absorption
-  kind: prp
-  file: 06-frobenius-and-fermat.md
-  line: 108
-  hash: 11abdb064ae9
-  verdicts:
-  - stage: S5a
-    verdict: correct
-    by: refereeA
-    hash: 11abdb064ae9
-    date: '2026-10-12'
-    model: claude-opus-5-5
-    evidence: 06:108-115; identity true for all n,k (sidecar ok); k>n cases both sides 0
-  - stage: S5b
-    verdict: correct
-    by: refereeB
-    hash: 11abdb064ae9
-    date: '2026-10-12'
-    model: claude-opus-5-5
-    evidence: '06:108-119. Idea examples: n=2,k=0 gives 1·3=3·1; n=3,k=1 gives 2·6=12=4·3. The sidecar
-      passes.'
-  removed: true
-- key: proof:prp-binomial-absorption
-  kind: proof
-  file: 06-frobenius-and-fermat.md
-  line: 121
-  hash: 9532358a19e1
-  verdicts:
-  - stage: S5a
-    verdict: correct
-    by: refereeA
-    hash: 9532358a19e1
-    date: '2026-10-12'
-    model: claude-opus-5-5
-    evidence: 06:121-136; induction on n over all k; base k=0 and k≥1 via fact 1; step k=0 via C(n,1)=n,
-      C(n,0)=1; k=j+1 uses IH at j and j+1 then Pascal; each line checked
-  - stage: S5b
-    verdict: correct
-    by: refereeB
-    hash: 9532358a19e1
-    date: '2026-10-12'
-    model: claude-opus-5-5
-    evidence: 06:121-136. Base n=0 checked for k=0 and k>=1. Step k=0 gives n+2=n+2. In the k=j+1 step,
-      the hypothesis is used at k=j ((j+1)C(n+1,j+1)=(n+1)C(n,j)) and at k=j+1, then Pascal. All verified.
-      The N arithmetic is in the ledger (06:514).
-  removed: true
-- key: thm-binomial-commutative-ring
-  kind: thm
-  file: 06-frobenius-and-fermat.md
-  line: 142
-  hash: f39530cc74b3
-  verdicts:
-  - stage: S5a
-    verdict: correct
-    by: refereeA
-    hash: f39530cc74b3
-    date: '2026-10-12'
-    model: claude-opus-5-5
-    evidence: 06:142-149; commutativity hypothesis used (F6) at regroupings; n-k∈ℕ noted
-  - stage: S5b
-    verdict: correct
-    by: refereeB
-    hash: f39530cc74b3
-    date: '2026-10-12'
-    model: claude-opus-5-5
-    evidence: 06:142-151 statement is correct. The prose after it (06:183), 'the linear-algebra volumes
-      meet matrices', is a forward pointer to later volumes. STATUS row 161 lists only F4.2 §05 (05:187,
-      05:399) for this kind of pointer, not 06:183. [finding refuted by skeptics]
-  removed: true
-- key: proof:thm-binomial-commutative-ring
-  kind: proof
-  file: 06-frobenius-and-fermat.md
-  line: 157
-  hash: 35f7940dfc28
-  verdicts:
-  - stage: S5a
-    verdict: correct
-    by: refereeA
-    hash: 35f7940dfc28
-    date: '2026-10-12'
-    model: claude-opus-5-5
-    evidence: 06:157-181; t_k x=u_{k+1} (z_{k+1}=x^{k+1}y^{n-k}), t_k y=w_k (needs k≤n), lem (f) with
-      u_0=0, w_{n+1}=0·z=0 by C(n,n+1)=0, sum rule (m+k)·a of lem-integer-multiples (d) and Pascal; base
-      1·(1·1)=1
-  - stage: S5b
-    verdict: correct
-    by: refereeB
-    hash: 35f7940dfc28
-    date: '2026-10-12'
-    model: claude-opus-5-5
-    evidence: '06:157-181. Checked: t_k x = u_{k+1} with z_{k+1}=x^{k+1}y^{n-k}; t_k y = w_k; w_{n+1}=0
-      since C(n,n+1)=0; lem (f) with u_0=0 lines up the shifted sum; u_k+w_k=C(n+1,k)·z_k by the sum rule
-      in lem-integer-multiples (d) and Pascal, including j=n.'
-  removed: true

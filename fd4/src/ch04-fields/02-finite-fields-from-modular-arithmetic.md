@@ -72,7 +72,7 @@ Let \( n \ge 2 \) be an integer. Then \( \nZ/n\nZ \) is a field (@def-field) if 
 :::
 
 ::: {.idea}
-By @exm-finite-fields, only (F8) is in question. If \( n = p \) is prime and \( [a] \ne [0] \), then \( p \nmid a \), so the only positive common divisor of \( a \) and \( p \) is \( 1 \), and @lem-bezout-integers hands over \( ax + py = 1 \), that is, \( [a][x] = [1] \). If instead \( n = rs \) with \( 1 < r, s < n \), then \( [r][s] = [n] = [0] \) with both factors non-zero, which @thm-field-basic-properties (f) forbids in a field. *Number Systems* ran this argument, with @thm-units-mod-n in the role of the lemma.
+By @exm-finite-fields, only (F8) is in question. If \( n = p \) is prime and \( [a] \ne [0] \), then \( p \nmid a \), so the only positive common divisor of \( a \) and \( p \) is \( 1 \), and @lem-bezout-integers hands over \( ax + py = 1 \), that is, \( [a][x] = [1] \). If instead \( n = rs \) with \( 1 < r, s < n \), then \( [r][s] = [n] = [0] \) with both factors non-zero, which @thm-field-basic-properties (f) forbids in a field. Section 2.4 ran this argument (@thm-integers-mod-prime-field), with @thm-units-mod-n in the role of the lemma.
 :::
 
 ::: {.proof}
@@ -101,7 +101,7 @@ Find the inverse of \( 3 \) in \( \nF_7 \).
 The inverse is the \( x \in \{1, \dots, 6\} \) with \( 7 \mid 3x - 1 \). Testing the candidates in turn, the products \( 3, 6, 9, 12, 15 \) leave remainders \( 3, 6, 2, 5, 1 \), and \( 3 \cdot 5 = 15 = 2 \cdot 7 + 1 \). So \( 3^{-1} = 5 \) in \( \nF_7 \), and by @thm-field-basic-properties (c) it is the only inverse.
 :::
 
-For small \( p \), trial is fast. For larger \( p \) the Euclidean algorithm of Chapter 2 finds the inverse directly: if \( ax + py = 1 \), then \( \gcd(a, p) = 1 \) by @cor-coprime-iff-combination, and @thm-units-mod-n gives \( [a]^{-1} = [x] \).
+For small \( p \), trial is fast. For larger \( p \) the Euclidean algorithm of Chapter 2 (@thm-euclidean-algorithm-integers) finds the inverse directly: if \( ax + py = 1 \), then \( \gcd(a, p) = 1 \) by @cor-coprime-iff-combination, and @thm-units-mod-n gives \( [a]^{-1} = [x] \).
 
 ::: {#exm-inverses-in-fp}
 [Inverses in \( \nF_7 \) and in \( \nF_{101} \)]
@@ -388,29 +388,29 @@ The three answers differ in number (none, one, two), although the equation looks
 <!-- dependency ledger
 exm-finite-fields (claim): (paragraph before it) the class test [a] = [b] iff n | a - b | thm-quotient-ring-by-ideal (a) with def-integers-mod-n-ring, cited
 exm-finite-fields (solution): well-defined operations, commutative ring, [1] != [0] iff n >= 2, n elements | thm-quotient-ring-by-ideal (b), def-integers-mod-n-ring, thm-integers-mod-n-ring (a)-(c), cited
-exm-finite-fields (solution): tables of Z/2Z | inline, class test; verify/ch02/exm-finite-fields.py
+exm-finite-fields (solution): tables of Z/2Z | inline, class test; verify/ch04/exm-finite-fields.py
 exm-finite-fields (claim): (aftermath) same tables as fd3:exm-finite-ring-not-orderable | inline comparison of tables
 lem-bezout-integers (proof): gcd(a, n) >= 1 is a common divisor when (a, n) != (0, 0) | def-integer-gcd and its well-definedness paragraph, cited; coprime means gcd = 1 (fd3 def-coprime-integers, named in cor-coprime-iff-combination)
 thm-zp-field-iff-prime (proof): Z/nZ is a field iff n prime, fd3's sense | thm-integers-mod-prime-field, cited; translated by the remark after def-field
 thm-zp-field-iff-prime (idea): p does not divide a gives gcd(a, p) = 1; n = rs with 1 < r, s < n | cor-prime-divides-product (a) (as in fd3's proof), named in the idea only; the proof cites fd3
 def-field-fp (claim): primality by trial divisors d with d * d <= p | the remark after lem-least-divisor-prime (F5.1 §02; not in the blueprint's allowed list; reported)
-def-field-fp (claim): 3 * 5 = 1 in F_7; squares equal to 1 in F_p; (quick check after it) remainders of 3x mod 7; (remark on order) 1 + (p - 1) = 0 | inline; cor-field-squares-equal; verify/ch02/def-field-fp.py
-exm-inverses-in-fp (solution): inverses in F_7; 101 prime (remainders on division by 2..10); Euclid on (101, 17); 17 * 6 = 102 | inline arithmetic; thm-units-mod-n, cited; verify/ch02/exm-inverses-in-fp.py
+def-field-fp (claim): 3 * 5 = 1 in F_7; squares equal to 1 in F_p; (quick check after it) remainders of 3x mod 7; (remark on order) 1 + (p - 1) = 0 | inline; cor-field-squares-equal; verify/ch04/def-field-fp.py
+exm-inverses-in-fp (solution): inverses in F_7; 101 prime (remainders on division by 2..10); Euclid on (101, 17); 17 * 6 = 102 | inline arithmetic; thm-units-mod-n, cited; verify/ch04/exm-inverses-in-fp.py
 exm-inverses-in-fp (solution): 101 prime, stopping at d = 10 | the remark after lem-least-divisor-prime (as in def-field-fp), pointed to inline
 exm-inverses-in-fp (solution): ax + py = 1 gives gcd(a, p) = 1, the precondition of thm-units-mod-n | cor-coprime-iff-combination (<=), cited
-exm-elimination-f5 (solution): inverses in F_5, elimination, formula values | prp-field-linear-equation (b); verify/ch02/exm-elimination-f5.py
-exm-elimination-f5 (claim): (quick check after it) x^2 = 1 in F_11 iff x in {1, 10}; 100 = 9 * 11 + 1 | cor-field-squares-equal; verify/ch02/exm-elimination-f5.py
-exm-elimination-f5 (claim): (warning after it) [2]x in {[0], [2], [4]} in Z/6Z; [2]x = [4] iff x in {[2], [5]} | inline, all six classes; verify/ch02/exm-elimination-f5.py
+exm-elimination-f5 (solution): inverses in F_5, elimination, formula values | prp-field-linear-equation (b); verify/ch04/exm-elimination-f5.py
+exm-elimination-f5 (claim): (quick check after it) x^2 = 1 in F_11 iff x in {1, 10}; 100 = 9 * 11 + 1 | cor-field-squares-equal; verify/ch04/exm-elimination-f5.py
+exm-elimination-f5 (claim): (warning after it) [2]x in {[0], [2], [4]} in Z/6Z; [2]x = [4] iff x in {[2], [5]} | inline, all six classes; verify/ch04/exm-elimination-f5.py
 exm-elimination-f5 (claim): (remark after it) no order on Z/nZ | thm-integers-mod-n-ring (e), cited
-exr-finite-fields-from-modular-arithmetic-a1 (solution): 4 * 4 + 3 = 4 in F_5; 13 prime; [2][4] = [0] in Z/8Z | inline; remark after lem-least-divisor-prime; verify/ch02/exr-finite-fields-from-modular-arithmetic-a1.py
-exr-finite-fields-from-modular-arithmetic-b1 (solution): x = 6; (x, y) = (4, 3), ad - bc = 2 | prp-field-linear-equation; verify/ch02/exr-finite-fields-from-modular-arithmetic-b1.py
-exr-finite-fields-from-modular-arithmetic-b2 (solution): [3][3] = [0] mod 9; 91 = 7 * 13 | verify/ch02/exr-finite-fields-from-modular-arithmetic-b2.py
-exr-finite-fields-from-modular-arithmetic-b3 (solution): squares in F_7 and F_5 | cor-field-squares-equal; verify/ch02/exr-finite-fields-from-modular-arithmetic-b3.py
-exr-finite-fields-from-modular-arithmetic-c1 (solution): tables; (F5), (F9) coefficient identities; u + u = 0 in F_2 | inline; verify/ch02/exr-finite-fields-from-modular-arithmetic-c1.py (all axioms by exhaustion, and no additive-multiplicative bijection to Z/4Z among the 24 bijections)
+exr-finite-fields-from-modular-arithmetic-a1 (solution): 4 * 4 + 3 = 4 in F_5; 13 prime; [2][4] = [0] in Z/8Z | inline; remark after lem-least-divisor-prime; verify/ch04/exr-finite-fields-from-modular-arithmetic-a1.py
+exr-finite-fields-from-modular-arithmetic-b1 (solution): x = 6; (x, y) = (4, 3), ad - bc = 2 | prp-field-linear-equation; verify/ch04/exr-finite-fields-from-modular-arithmetic-b1.py
+exr-finite-fields-from-modular-arithmetic-b2 (solution): [3][3] = [0] mod 9; 91 = 7 * 13 | verify/ch04/exr-finite-fields-from-modular-arithmetic-b2.py
+exr-finite-fields-from-modular-arithmetic-b3 (solution): squares in F_7 and F_5 | cor-field-squares-equal; verify/ch04/exr-finite-fields-from-modular-arithmetic-b3.py
+exr-finite-fields-from-modular-arithmetic-c1 (solution): tables; (F5), (F9) coefficient identities; u + u = 0 in F_2 | inline; verify/ch04/exr-finite-fields-from-modular-arithmetic-c1.py (all axioms by exhaustion, and no additive-multiplicative bijection to Z/4Z among the 24 bijections)
 exr-finite-fields-from-modular-arithmetic-c1 (solution): additive cancellation in the ring Z/4Z | first half of the proof of thm-field-basic-properties (b), which uses (F1)-(F4) only; thm-integers-mod-n-ring (a)
 exr-finite-fields-from-modular-arithmetic-c1 (claim): (after the solution) Chapter 7 builds the field from polynomials over F_2 | F5.5 prose pointer (exm-polynomial-quotient-four-elements); nothing rests on it
 exr-finite-fields-from-modular-arithmetic-c2 (solution): (N9) | fd1:exm-not-allowed-catalogue, cited
 exr-finite-fields-from-modular-arithmetic-c2 (solution): 1/a in Z iff a = +-1; [a] != [0] gives p does not divide a; gcd(a, p) = 1 for a prime p not dividing a; p | ax - 1 gives [ax] = [1] | fd3:prp-divisibility-rules-integers (g), thm-quotient-ring-by-ideal (d), cor-prime-divides-product (a), thm-quotient-ring-by-ideal (a) with def-integers-mod-n-ring
-exr-finite-fields-from-modular-arithmetic-c3 (solution): values of x^2 + x + 1 in F_2, F_3, F_7 | verify/ch02/exr-finite-fields-from-modular-arithmetic-c3.py
+exr-finite-fields-from-modular-arithmetic-c3 (solution): values of x^2 + x + 1 in F_2, F_3, F_7 | verify/ch04/exr-finite-fields-from-modular-arithmetic-c3.py
 exr-finite-fields-from-modular-arithmetic-c3 (solution): Section 4.5 explains completing the square | prose pointer within the chapter (exr-characteristic-and-prime-subfield-b2); nothing rests on it
 -->

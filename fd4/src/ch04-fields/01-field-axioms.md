@@ -488,22 +488,22 @@ thm-field-basic-properties (claim): (aftermath) 0 + a = a, 1 * a = a; (a + b)^2,
 thm-field-basic-properties (claim): (remark after it) (g) is fd3:lem-field-fraction-rules (a), (b) | comparison only (F3.9 soft citation); nothing rests on it
 cor-field-squares-equal (proof): (x - y)(x + y) = x^2 - y^2 | (F9), (F6), (F4), fd3:prp-ring-algebra (c), inline
 cor-field-squares-equal (claim): (remark after it) -1 = 1 in the two-element field | exm-finite-fields (next section), prose pointer within the chapter; nothing rests on it
-cor-field-squares-equal (claim): (remark after it) [3]^2 = [1] in Z/8Z, [3] != [1], [7] | thm-quotient-ring-by-ideal (b), (d) on representatives, inline; verify/ch02/cor-field-squares-equal.py
+cor-field-squares-equal (claim): (remark after it) [3]^2 = [1] in Z/8Z, [3] != [1], [7] | thm-quotient-ring-by-ideal (b), (d) on representatives, inline; verify/ch04/cor-field-squares-equal.py
 cor-field-squares-equal (claim): (remark after it) the case of C | prp-complex-square-roots (b) (F4.1, see edge; comparison only)
-prp-field-linear-equation (proof): expanding d(ax + by) - b(cx + dy) and the existence identities | (F5), (F6), (F9), fd3:prp-ring-algebra (c), inline; verify/ch02/prp-field-linear-equation.py (identity checked on a grid of rationals)
+prp-field-linear-equation (proof): expanding d(ax + by) - b(cx + dy) and the existence identities | (F5), (F6), (F9), fd3:prp-ring-algebra (c), inline; verify/ch04/prp-field-linear-equation.py (identity checked on a grid of rationals)
 prp-field-linear-equation (claim): (aftermath) x + y = 1, x + y = 0 inconsistent; (t, -t) solutions, t = 0, 1 distinct | inline, (F7)
 exm-fields (solution): Q, R, C are fields | fd3:thm-rationals-field, fd3:thm-reals-field (F3.10 soft citation, example), thm-complex-numbers-field, prp-complex-arithmetic-laws, prp-complex-inverse (F4.1 see edge, example only), cited
 exm-fields (claim): (after it) Q, R, C infinite | fd3:prp-naturals-embed-integers (a), fd3:prp-integers-embed-rationals, fd3:thm-rational-embedding (b) (F3.10 soft; reported), prp-reals-embed-complex, fd2:exm-hilbert-hotel, fd2:prp-subset-finite, cited
-exm-field-negated-product (solution): (F1)-(F9) for a o b = -(ab) | in Q (exm-fields), fd3:prp-ring-algebra (a), (c), thm-field-basic-properties (c), (e); verify/ch02/exm-field-negated-product.py
+exm-field-negated-product (solution): (F1)-(F9) for a o b = -(ab) | in Q (exm-fields), fd3:prp-ring-algebra (a), (c), thm-field-basic-properties (c), (e); verify/ch04/exm-field-negated-product.py
 exm-field-nonexamples (solution): N inside Z | fd3:prp-naturals-embed-integers (a), cited (blueprint names (c); reported)
 exm-field-nonexamples (solution): N satisfies (F1)-(F3), (F5)-(F7), (F9), fails (F4) at 1 | the non-example paragraph after fd3:def-commutative-ring-and-field (F3.2), quoted, not reproved
 exm-field-nonexamples (solution): Z is a commutative ring with 1 != 0 | fd3:thm-integers-commutative-ring (F3.2; not in the blueprint's allowed list, which names F3.2's def-commutative-ring-and-field and prp-ring-algebra; reported)
-exm-field-nonexamples (solution): Z/6Z commutative ring, [1] != [0], [2][3] = [0], 6 does not divide 2, 3 | thm-integers-mod-n-ring (a), (c), exm-integers-mod-six, cited; fd3:prp-divisibility-rules-integers (e); verify/ch02/exm-field-nonexamples.py
+exm-field-nonexamples (solution): Z/6Z commutative ring, [1] != [0], [2][3] = [0], 6 does not divide 2, 3 | thm-integers-mod-n-ring (a), (c), exm-integers-mod-six, cited; fd3:prp-divisibility-rules-integers (e); verify/ch04/exm-field-nonexamples.py
 exm-field-nonexamples (claim): (paragraph after it; why these axioms) square matrices fail (F6); n equations in n unknowns | the linear-algebra volumes, prose pointers; nothing rests on them
 exm-field-nonexamples (claim): (warning on order after it) i^2 = -1 in C | def-complex-numbers (F4.1), prose
-exr-field-axioms-a1 (solution): witnesses in Z/6Z; the system 3x + 2y = 1, x - y = 2 | verify/ch02/exr-field-axioms-a1.py
+exr-field-axioms-a1 (solution): witnesses in Z/6Z; the system 3x + 2y = 1, x - y = 2 | verify/ch04/exr-field-axioms-a1.py
 exr-field-axioms-b1 (solution): -0 = 0 | (F3) with uniqueness of negatives, inline
-exr-field-axioms-b3 (solution): the axioms for (Q, +, odot), inverse 1/(4a); (F9) failing for ab + 1 | computed in the field Q (exm-fields); verify/ch02/exr-field-axioms-b3.py
+exr-field-axioms-b3 (solution): the axioms for (Q, +, odot), inverse 1/(4a); (F9) failing for ab + 1 | computed in the field Q (exm-fields); verify/ch04/exr-field-axioms-b3.py
 exr-field-axioms-b3 (solution): Section 4.4 B3 shows (Q, +, odot) is isomorphic to Q | prose pointer within the chapter (exr-field-homomorphisms-b3); nothing rests on it
 exr-field-axioms-c2 (solution): (N9) | fd1:exm-not-allowed-catalogue, cited
 -->
